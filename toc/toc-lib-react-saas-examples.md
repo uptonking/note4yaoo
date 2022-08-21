@@ -53,6 +53,11 @@ modified: 2022-08-13T06:59:54.741Z
 - https://github.com/alan2207/bulletproof-react
   - 依赖 react-query.v3, headless-ui, zustand
 
+- https://github.com/santospatrick/nextjs-boilerplate-advanced
+  - https://sample-nextjs-app.santospatrick.com/
+  - Next.js boilerplate made with Chakra-UI + Typescript + React-table + React-hook-form
+  - 依赖 react-table.v7、react-query
+
 - https://github.com/ThaddeusJiang/react-app-starter
   - 依赖 nextjs、tailwindcss、react-hook-form、react-query、react-table、storybook、react-testing、mock-service-worker
 - https://github.com/gabriel-hahn/react-next-boilerplate
@@ -62,6 +67,19 @@ modified: 2022-08-13T06:59:54.741Z
 - https://github.com/Kamahl19/react-starter
   - Full-featured typescript starter for React application
   - recoil, recoil-persist
+
+- https://github.com/prisma/blogr-nextjs-prisma
+  - starter project for the fullstack tutorial with Next.js and Prisma. 
+- https://github.com/nemanjam/nextjs-prisma-boilerplate
+  - https://nextjs-prisma-boilerplate.localhost3000.live/
+  - Full stack boilerplate with Next.js, Prisma, Tailwind
+  - React Query 4-beta, Axios, React Hook Form 8-alpha, React Dropzone, Zod, msw, TailwindCSS 3, Jest 28
+- https://github.com/SeanCassiere/nextshop-mern
+  - following Brad Traversy's MERN stack online course. udemy
+
+- https://github.com/wmartzh/r-rubi-react
+  - https://github.com/wmartzh/r-rubi-nest
+  - 前端js、后端ts
 # react-dashboard
 - https://github.com/themesberg/volt-react-dashboard
   - dashboard + components + pages

@@ -14,6 +14,12 @@ modified: 2021-05-13T16:14:15.415Z
   - It specifies a standardized language-independent columnar memory format for flat and hierarchical data, organized for efficient analytic operations on modern hardware. 
   -  It also provides computational libraries and zero-copy streaming messaging and interprocess communication
 # data-tools
+- https://github.com/dbt-labs/dbt-core
+  - https://getdbt.com/
+  - dbt enables data analysts and engineers to transform their data using the same practices that software engineers use to build applications.
+  - Analysts using dbt can transform their data by simply writing select statements, while dbt handles turning these statements into tables and views in a data warehouse.
+  - dbt makes it easy to manage relationships between models(select statements), and visualize these relationships
+
 - https://github.com/uwdata/arquero
   - https://uwdata.github.io/arquero
   - /438Star/BSD/202105/js

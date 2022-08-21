@@ -58,9 +58,14 @@ modified: 2020-11-11T13:16:24.994Z
   - Data on COVID-19 (coronavirus) cases, deaths, hospitalizations, tests • All countries
   - Updated daily by Our World in Data
   - 数据大多数是csv，少部分是json
-
+# api-toy
+- [前端需要的免费在线api接口](https://juejin.cn/post/7041461420818432030)
+  - hacker news api
+  - 返回100条数据，每条内容都有帖子 ID、发贴人 ID、标题、以及简介。
+    - http://jsonplaceholder.typicode.com/posts
+  - 每次请求都会随机返回一张猫的图片。
+    - https://api.thecatapi.com/v1/images/search?limit=1
 # cn-no-auth
-
 - [天气JSON API，不限次数获取十五天的天气预报](https://www.sojson.com/blog/305.html)
 - http://t.weather.itboy.net/api/weather/city/101030100
   - 不能使用ajax，必须后端语言，比如 Java、PHP、C#，PY等。 注：Android，iOS 之类直接调用，我发现后会封掉，建议后端调用。
@@ -109,13 +114,9 @@ modified: 2020-11-11T13:16:24.994Z
   - https://github.com/zce/douban-api-docs
   - https://douban-api-docs.zce.me/
   - 全部需要apikey，已经无法使用
-
 # cn-auth
-
 - [美团餐饮开放平台openAPI文档](https://open.waimai.meituan.com/openapi_docs/)
-
 # ww
-
 - https://github.com/public-apis/public-apis
 
 - the widely known Hacker News API 

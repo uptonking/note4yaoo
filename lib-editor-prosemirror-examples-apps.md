@@ -152,8 +152,11 @@ modified: 2022-08-18T16:57:15.296Z
   - This is the whole frontend for Game Jolt. It powers the site and the desktop app.
 
 - https://github.com/isle-project/isle-editor
+  - https://isledocs.com/
   - Editor for ISLE (Integrated Statistics Learning Environment) lessons.
   - A desktop-application that can be used to author and preview integrated statistics learning environment (ISLE) lessons before they are deployed online. 
+  - https://github.com/isle-project/isle-server
+  - https://github.com/isle-project/isle-dashboard
 
 - https://github.com/blinkk/editor.dev-ui
   - https://editor.dev/example/

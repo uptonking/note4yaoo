@@ -1,8 +1,8 @@
 ---
 title: lib-excel-ag-grid-examples
-tags: [ag-grid, examples, grid, list]
+tags: [ag-grid, examples, grid, list, toc]
 created: 2021-07-20T13:44:45.705Z
-modified: 2022-08-21T09:55:11.019Z
+modified: 2022-08-21T10:39:10.445Z
 ---
 
 # lib-excel-ag-grid-examples
@@ -10,84 +10,78 @@ modified: 2022-08-21T09:55:11.019Z
 # guide
 - ag-grid-pkg dependents
   - https://github.com/search?q=ag-grid-react+filename%3Apackage.json&type=Code
+  - `ag-grid-enterprise` contains the Enterprise features only, it does not contain the core grid, hence you still need `ag-grid-community` and `ag-grid-react`. Versions of all three must match.
 # popular
-- Talend Datagrid /108Star/Apache2/202202/js
+- Talend Datagrid /141Star/Apache2/202208/ts
   - https://github.com/Talend/ui/tree/master/packages/datagrid
   - http://talend.surge.sh/datagrid
-  - 依赖 ag-grid-community/react.v25.3.0
+  - 依赖 ag-grid-community/react、@talend/design-system、i18next、focus-trap-react
+  - 提供了数据加载、编辑的示例
   - It's an enhanced Ag-Grid.
   - Custom Avro Renderer
     - IntCellRenderer: Renderer for the avro type int
     - StringCellRenderer: Renderer for avro the type string
-  - a list of issues encountered with ag-grid that DataGrid resolved.
+  - issues encountered with ag-grid that DataGrid resolved.
     - ag-grid doesn't manage a style when the column is active.
-    - Ag-grid set the current cell selected by a click. If we navigate with the keyboard, ag-grid sent a new event onCellFocused but the cell isn't selected. 
+    - Ag-grid set the current cell selected by a click. 
+      - If we navigate with the keyboard, ag-grid sent a new event onCellFocused but the cell isn't selected. 
     - Although that Ag-Grid recommands to avoid to use custom cell renderer to renderer the cell, we used because a cell can't have only text but many elements on this: quality indicator, comments, invisible chars, ...
 
-- GoodData. UI Pivot Table /53Star/Free4NonCommercial/ts/202109/inactive
+- gant-design /48Star/MIT/202208/ts/多种数据与表单组件
+  - https://github.com/gantFDT/gant-design
+  - http://docs.gant.design/
+  - 依赖antd.v3
+  - 面向B端管理型软件、专注于数据密集型业务场景、基于Antd聚合型React组件库
+  - 基于数据驱动模式快速开发组件、如数据驱动表单
+  - grid-g这个子包依赖ag-grid
+  - smartGrid相比于grid增加了视图的概念，用户可以自定义列的各种状态并保存到本地存储或者远端，解决的是不同的用户或角色对业务关注点不同的痛点。
+  - https://github.com/gantFDT/gant-design-2
+    - 新版 gantd， 依赖了antd4, 使用了dumi , 还未全部改造完成
+
+- pro-components /2Star/MIT/202208/ts
+  - https://github.com/svl-fe/pro-components
+  - https://svl-fe.github.io/pro-components/components/conditions
+  - 杭州薮猫科技中后台业务组件库业务组件库，包含了大量的第三方组件库
+  - 依赖 antd.v4、ag-grid、rc-virtual-list
+
+- GoodDataUI Pivot Table /53Star/Free4NonCommercial/ts/202104/inactive
   - https://github.com/gooddata/gooddata-react-components/tree/develop/src/components/core/pivotTable
   - https://gooddata-examples.herokuapp.com/pivot-table
   - A React-based JavaScript library for building data-driven applications
   - PivotTable基于ag-grid，Table是普通div
+  - https://www.gooddata.com/
+    - Modern BI for the modern data stack
 
-- https://github.com/ag-grid/react-data-grid
-  - React Data Grid Examples used on the AG Grid blog.
-- https://github.com/ag-grid/ag-grid-react-example
-  - Example of ag-Grid running with React
-  - standard - shows a typical grid demonstrating many AG Grid features
-  - large - shows a very large grid (767 columns and 1, 000 rows) using React cell renderers
+- https://github.com/mui/mui-x/blob/master/benchmark/browser
+  - mui-x将 mui-data-grid-pro与ag-grid做了比较
 
 - https://github.com/urbandataanalytics/bento-components/tree/master/src/components/Table
   - https://urbandataanalytics.github.io/bento-components/
   - Bento Components Library
   - 表格的样式被大改
-# extensions
-- https://github.com/avallete/ag-grid-autocomplete-editor
-  - Quick implementation of autocompletion into ag-Grid cell using autocompleter package.
-  - https://github.com/superman-lopez/ag-grid-auto-complete
 
-- https://github.com/gantFDT/gant-design
-  - 面向B端管理型软件、专注于数据密集型业务场景、基于Antd聚合型React组件库
-  - 基于数据驱动模式快速开发组件、如数据驱动表单
-  - grid-g这个子包依赖ag-grid
+- https://github.com/lee-chun-91/dashboard
+  - https://lee-chun-91.github.io/
+  - 可拖拽的仪表板示例，卡片不能重叠，表格和图表不能联动
+  - 依赖ag-grid、chartjs3、react-grid-layout
 
-- https://github.com/edit-ag-grid/edit-ag-grid
-  - 高性能、满足复杂交互的编辑表格
-  - 基于 antd.v4, ag-grid
-- https://github.com/is-not-lie/react-editable
-  - 基于 Antd 的 React 编辑组件
+- https://github.com/onur-yildiz/epias-reports
+  - http://epias-reports.vercel.app/
+  - 依赖mui5、ag-grid、chartjs3、redux-toolkit、react-window
+- https://github.com/cybowind/data-grid
+  - This exercise addresses the challenge of how to view, sort and filter big amount of the data in grid efficiently.
+# ag-grid-react
+- ag-grid-react-example /150Star/MIT/202208/js/官方
+  - https://github.com/ag-grid/ag-grid-react-example
+  - Example of ag-Grid running with React
+  - standard - shows a typical grid demonstrating many AG Grid features
+  - large - shows a very large grid (767 columns and 1, 000 rows) using React cell renderers
 
-- https://github.com/bchariot/ReactCRUD
-  - AG Grid allowing CRUD operations written in React.js
-  - https://github.com/RSC01/Crud-Demo
-    - purpose to check skills useFormik, Ag-Grid and react-bootstrap
+- https://github.com/ag-grid/react-data-grid
+  - React Data Grid Examples used on the AG Grid blog.
 
-- https://github.com/target/table-model
-  - TableModel is an in-memory data model that automatically calculates your data based on provided equations. 
-  - It keeps track of dependencies between data and equations and automatically updates cells quickly and efficiently.
-  - TableModel works especially well with UI components like AgGrid because it simplifies your data flow and can add additional features such as predicting which cells in your table are going to be impacted by a change 
-
-- https://github.com/VoyagerScientific/react-jsonschema-form-ui
-  - Alternative widgets for the react-jsonschema-form package.
-- https://gitlab.com/dgothrek/ipyaggrid
-  - The power of ag-Grid in Jupyter notebooks
-- https://github.com/lowdefy/blocks-aggrid
-  - Lowdefy blocks for AgGrid.
-  - Lowdefy is an open-source (Apache-2.0) low-code framework. lowdefy依赖graphql
-
-- https://github.com/ag-grid/ag-grid-customise-theme
-  - showcases how the ag-Grid built-in themes can be customized by overriding Sass variables.
-- https://github.com/RocketCommunicationsInc/ag-grid-theme
-  - AG Grid theme using Astro UXDS styling
-
-- https://github.com/SenyaMur/ag-grid-odata
-  - https://codesandbox.io/s/ag-grid-server-side-row-model-sample-zqujt
-  - Implementation Odata ServerSideDatasource for ag-grid
-
-- https://github.com/bryntum/grid-performance
-  - A performance comparison of popular JavaScript data grid components. 
-  - Measures the initial rendering time and scroll performance for the following data grids
-  - ag-grid, bryntum, devextreme, dhtmlx, extjs
+- https://github.com/samjulien/ag-grid-react-thinkster
+  - Sample code and resources for my tutorials on ag-Grid and React on Thinkster.io.
 # design-system-using-ag-grid
 - https://github.com/Client-Relationship-Consultancy/open-source-design-system
   - react-modal, react-select
@@ -95,12 +89,29 @@ modified: 2022-08-21T09:55:11.019Z
 - https://github.com/baloise/design-system/tree/master/packages/components-table
   - vanillajs 实现
 
+- https://github.com/anthony-y-zhu14/MikoshiUI
+  - https://62fc0f7c0d92b3b43bd42f5d-aftsqdiujd.chromatic.com/?path=/story/application-data-grid--data-grid-demo
+  - A React UI Component library features Google's Material Design system and glassmorphis.
+
 - https://github.com/blackbaud/skyux-ag-grid
   - angular示例
 # examples
 - https://github.com/carlyrichmond/data-grid-alternatives
   - 依赖ag-grid-react.v27、react-redux、recharts、highcharts
   - This repository contains the accompanying examples for the talk Oh No! Not Another Data Grid.
+
+- https://github.com/railmapgen/rmg-palette
+  - https://railmapgen.github.io/rmg-palette
+  - Line colour resources of multiple railway systems
+
+- https://github.com/tolopsy/react-trader
+  - A stock trading react application
+  - 依赖mui5、redux-toolkit、ag-grid、highcharts
+  - I created a mock server for the stock trading app. 
+    - To start the mock server: Run node `./src/server`
+- https://github.com/kychoiyohoho/ag-gridCRUD
+  - 模拟后台基于 json-server
+  - 简单示例
 
 - https://github.com/Akashamba/Coronavirus-Tracker
   - https://coronavirus-tracker-live.netlify.app/
@@ -112,7 +123,18 @@ modified: 2022-08-21T09:55:11.019Z
 - https://github.com/eddy-hu/react-ag-grid
   - A simple demo using React, Redux, Ag-Grid and Ant Design3
 - https://github.com/AhmedAGadir/ag-grid-todo-list-react-typescript
-  - 依赖material-ui
+  - 依赖material-ui.v4
+
+- https://github.com/shuheb/ag-grid-pomodoro
+  - https://shuheb.github.io/ag-grid-pomodoro/
+  - A productivity app built with React and AG Grid. 
+
+- https://github.com/lab49/quickbits-react-ag-grid-speed-demo
+  - a quickbits showcase of a React & Redux + AG Grid application
+
+- https://github.com/huangyuanzhen/react-node-test
+  - A system about human resource management; A practice of react & node; 
+  - 包含前后端
 
 - https://github.com/whitebrick/whitebrick
   - Open Source Airtable Alternative (No Code DB)
@@ -146,7 +168,10 @@ modified: 2022-08-21T09:55:11.019Z
 
 - https://github.com/MapColonies/discrete-layer-client
   - React app written in typescript to define manage and browse discrete layers image catalog.
-# more-repos
+
+- https://github.com/abbasKareem/dashboard-using-electron-react
+  - Admin Dashbord
+# examples-more
 - https://github.com/terrestris/react-geo
   - https://terrestris.github.io/react-geo/
   - A set of geo related components to use in combination with react, antd and ol.
@@ -157,6 +182,7 @@ modified: 2022-08-21T09:55:11.019Z
 
 - https://github.com/AdaptableTools/adaptable-demo
   - https://github.com/AdaptableTools/example-adaptable-react-aggrid
+  - https://github.com/AdaptableTools/example-adaptable-aggrid
   - AdapTable does not provide a DataGrid control of its own; 
   - AdapTable is most commonly used together with ag-Grid as the 2 products complement each other very well.
   - [AdapTable Overview](https://docs.adaptabletools.com/docs/)
@@ -173,3 +199,9 @@ modified: 2022-08-21T09:55:11.019Z
   - 简单玩具
 - https://github.com/dongjay00/react-trading-app
   - React Trading App with Redux toolkit | Typescript | Material ui | AG Grid and HighCharts
+
+- https://github.com/ghostfuel/amplified-tools-ui
+  - React UI for amplified.tools, to provide more powerful, automated ways of interacting with your Spotify playlists.
+
+- https://github.com/mongodb-js/compass
+  - The GUI for MongoDB.

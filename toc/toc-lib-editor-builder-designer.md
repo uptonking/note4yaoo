@@ -8,6 +8,15 @@ modified: 2020-11-17T13:38:19.107Z
 # toc-lib-editor-builder-designer
 - 拖拽编辑器可用于界面设计、图表设计、产品原型设计
 # popular
+- grida /104Star/Apache2/202206/ts
+  - https://github.com/gridaco/grida
+  - https://grida.co/
+  - Skia based performant live design collaboration & workspace app - redesigned for both designers and developers
+  - Grida is a platform that will automatically transform your Figma design to developer-friendly code for Web & Mobile apps.
+  - studio is built uppon skia graphics library
+  - studio's surface is built on react
+  - https://github.com/gridaco/design-server
+
 - craft.js /MIT/3kStar/202009/ts
   - https://github.com/prevwong/craft.js
   - https://craft.js.org/
@@ -146,8 +155,18 @@ modified: 2020-11-17T13:38:19.107Z
   - Since React UI Builder is based on a visual Web application builder - Webcodesk
   - we use Webcodesk to create the component library locally.
 # misc
-- https://github.com/chriskitson/react-drag-drop-layout-builder
-  - simple
+- react-drag-drop-layout-builder /NALic/172Star/201904/ts
+  - https://github.com/chriskitson/react-drag-drop-layout-builder
+  - 依赖material-ui.v3、immutablejs4、react-dnd7
+  - [Build a Drag and Drop (DnD) layout builder with React and ImmutableJS](https://javascript.plainenglish.io/build-a-drag-and-drop-dnd-layout-builder-with-react-and-immutablejs-78a0797259a6)
+
+- react-dnd-example /45Star/NALic/202106/js
+  - https://github.com/kustomer/react-dnd-example
+  - https://codesandbox.io/s/github/annezhou920/react-dnd-example/
+  - [Building Complex Nested Drag and Drop User Interfaces With React DnD](https://medium.com/kustomerengineering/building-complex-nested-drag-and-drop-user-interfaces-with-react-dnd-87ae5b72c803)
+  - ref
+    - https://github.com/annezhou920/react-dnd-example
+
 - https://github.com/h5ds/h5ds
   - 只开源了部分前端组件和功能
 - https://www.plasmic.app/

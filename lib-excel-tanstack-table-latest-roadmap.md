@@ -14,15 +14,18 @@ modified: 2022-08-21T10:19:58.757Z
   - Consider Col/Row-span plugin requirements (not the actual plugin) (#1342, #1933) (Non v7 release, but soon after hopefully)
   - Ensure no infinite rendering loops like in #1911
   - Ensure prop getter utilities and column decorators can and will generate stable callbacks and values (#1936)
+# changelog
 
+## v8.0.0-20220627
+
+- https://github.com/TanStack/table/releases/tag/v8.0.0
+- https://github.com/TanStack/table/releases/tag/v8.0.0-alpha.0
+  - 20220126
 # work-in-progress
-
 - 20200923
   - I'm currently planning React Table v8 and an entire dedicated course for it.
   - It's possible that when v8 becomes available, I might only allow my Github Sponsors access at first and even give away free courses to all of my sponsors similar to React Query Essentials.
-
 # react-table v8
-
 - [pr: /2335/ WIP v8](https://github.com/tannerlinsley/react-table/pull/2335)
 - The external API in v8 will be almost identical (with breaking changes for only a couple of apis, mostly around controlled state).  
 - Other breaking changes will be focused around the plugin system as well, but only in boilerplate structure and types.

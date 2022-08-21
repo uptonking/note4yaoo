@@ -235,6 +235,7 @@ modified: 2022-06-03T21:34:54.893Z
 # more
 - https://github.com/unigraph-dev/unigraph-dev
   - A local-first and universal knowledge graph, personal search engine, and workspace for your life.
+  - Your data is private and never leaves your computer. Query or sync all of your data in JSON format using a variant of GraphQL.
 
 - https://github.com/mraht-apps/notie
   - Notion-like workspace with offline mode and encryption

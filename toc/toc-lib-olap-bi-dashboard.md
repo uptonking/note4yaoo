@@ -30,6 +30,14 @@ modified: 2020-12-09T09:30:24.694Z
   - 前端依赖 antd4、animejs、mobx、re-resizable、react-dnd、react-moveable
   - 后端依赖 fastify、mysql、mongodb、typeorm、next10
 
+- lightdash /1.3kStar/MIT/202208/ts
+  - https://github.com/lightdash/lightdash
+  - https://lightdash.com/
+  - BI for teams that move fast.
+  - An open source alternative to Looker built using dbt. Made for analysts
+  - 后端依赖 express、pg、knex、passport
+  - 前端依赖 blueprintjs、echarts、jspdf、react-ace、react-beautiful-dnd
+
 - https://github.com/rawgraphs/rawgraphs-app
   - https://rawgraphs.io/
   - RAWGraphs is an open web tool to create custom vector-based visualizations on top of the amazing d3.js

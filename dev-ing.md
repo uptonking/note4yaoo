@@ -59,6 +59,12 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - app-knowledge-base--0904
 # dev-08
 
+## 0821
+
+- log202011
+  - 完全俩东西，streamlit是基于tornado的，应该拿flask和tornado比较。flask活的比tornado滋润
+  - Streamlit does not support the WSGI protocol at this time, so deploying Streamlit with (for example) gunicorn is not currently possible.
+
 ## 0818
 
 - RESTFul 架构下的两个缺点：

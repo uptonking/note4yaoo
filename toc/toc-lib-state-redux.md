@@ -122,6 +122,8 @@ modified: 2020-11-02T19:13:04.103Z
   - Supervisor Backend (NestJS + Moment + TypeORM + JWT)
   - https://github.com/typinghare/supervisor-frontend
     - Supervisor Frontend (React + MUI + Redux + ApexCharts + Moment + Axios + Lodash)
+
+- https://github.com/strlrd-29/bg-react
 # redux-repos
 - https://github.com/rematch/rematch
   - Rematch is Redux best practices without the boilerplate.

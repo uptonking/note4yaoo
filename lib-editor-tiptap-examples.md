@@ -106,6 +106,9 @@ modified: 2022-08-19T23:00:22.162Z
 
 - https://github.com/bons-space/bons-editor
   - A WYSIWYG rich-text editor using tiptap and Element Plus for Vue3
+
+- https://github.com/AventusKent/tiptap-react
+  - Super light rich text editor based on TipTap and React
 # tiptap-utils
 - https://github.com/sereneinserenade
   - https://github.com/sereneinserenade/tiptap-comment-extension-react

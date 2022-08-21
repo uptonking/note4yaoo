@@ -16,6 +16,9 @@ modified: 2021-08-30T19:30:56.453Z
   - This is a version of the Microsoft Access 2000 Northwind sample database, re-engineered for SQLite3.
   - The Northwind sample database was provided with Microsoft Access as a tutorial schema for managing small business customers, orders, inventory, purchasing, suppliers, shipping, and employees.
   - All the TABLES and VIEWS from the MSSQL-2000 version have been converted to Sqlite3 and included here.
+
+- https://github.com/railmapgen/rmg-palette
+  - Line colour resources of multiple railway systems
 # data application
 - Very excited to publish our new project, http://realtimeinequality.org 
   - https://twitter.com/gabriel_zucman/status/1488151132161523714

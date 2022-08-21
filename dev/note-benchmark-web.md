@@ -39,6 +39,9 @@ modified: 2020-07-14T09:28:43.976Z
   - different ways to render the same table with the same data. 
   - The purpose is to experiment different Javascript template engines and benchmark them with Vanilla implementation.
   - tested: hyperhtml lighterhtml lit-html nanomorph pug pug + nanomorph + nanohtml svelte
+
+- https://github.com/mui/mui-x/blob/master/benchmark/browser
+  - mui-x将 mui-data-grid-pro与ag-grid做了比较
 # react
 - https://github.com/paularmstrong/react-component-benchmark
   - This project aims to provide a method for gathering benchmarks of component tree mount, update, and unmount timings.

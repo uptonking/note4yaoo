@@ -16,10 +16,10 @@ modified: 2021-01-28T21:31:18.697Z
   - https://github.com/STRML/react-grid-layout
   - https://strml.github.io/react-grid-layout/examples/0-showcase.html
   - A draggable and resizable grid layout with responsive breakpoints, for React
-- react-drag-drop-layout-builder /NALic/172Star/201904
+- react-drag-drop-layout-builder /NALic/172Star/201904/ts
   - https://github.com/chriskitson/react-drag-drop-layout-builder
-  - https://medium.com/@kitson.mac/build-a-drag-and-drop-dnd-layout-builder-with-react-and-immutablejs-78a0797259a6
-  - Drag and drop (DnD) UI layout builder using React and ImmutableJS
+  - 依赖material-ui.v3、immutablejs4、react-dnd7
+  - [Build a Drag and Drop (DnD) layout builder with React and ImmutableJS](https://javascript.plainenglish.io/build-a-drag-and-drop-dnd-layout-builder-with-react-and-immutablejs-78a0797259a6)
 - https://github.com/haltu/muuri
   - https://muuri.dev/
   - a JavaScript layout engine that allows you to build all kinds of layouts 
@@ -40,9 +40,7 @@ modified: 2021-01-28T21:31:18.697Z
   - https://github.com/coryrylan/blueprint-css
   - https://blueprintcss.dev/
   - a modern responsive CSS layout library & grid built on top of CSS Grid and Flexbox
-
 # css-grid-layout
-
 - styled-css-grid /MIT/501Star/201905
   - https://github.com/azz/styled-css-grid
   - https://styled-css-grid.js.org/
@@ -64,9 +62,7 @@ modified: 2021-01-28T21:31:18.697Z
   - based on CSS Grid Layout to build various types of grids
 - react-css-grid-table /MIT/122Star/201807
   - https://github.com/RebeccaPark/react-css-grid-table
-
 # more
-
 - animate-css-grid /NALicense/909Star/201912
   - https://github.com/aholachek/animate-css-grid
   - https://codepen.io/aholachek/pen/VXjOPB
@@ -76,9 +72,7 @@ modified: 2021-01-28T21:31:18.697Z
   - The Eclipse Layout Kernel (ELK) implements an infrastructure to connect diagram editors or viewers to automatic layout algorithms. 
   - This library takes the layout-relevant part of ELK and makes it available to the JavaScript world. 
   - ELK's flagship is a layer-based layout algorithm that is particularly suited for node-link diagrams with an inherent direction and ports (explicit attachment points on a node's border). 
-
 # ref
-
 - [csslayout](https://github.com/phuoc-ng/csslayout)
   - https://csslayout.io/
   - A collection of popular layouts and patterns made with CSS

@@ -85,6 +85,10 @@ modified: 2021-11-05T13:31:12.802Z
 - https://github.com/Roslovets-Inc/strapi-plugin-ckeditor5
   - Replace Strapi default WYSIWYG editor with enhanced build of CKEditor 5
 
+- https://github.com/zendricom/ckeditor5-no-wrap
+  - Add no-wrap to text elements in CKEditor 5.
+- https://github.com/zendricom/ckeditor5-clear-float
+
 - https://github.com/CoreMedia/ckeditor-plugins
   - Plugins dedicated for integrating CKEditor 5 into CoreMedia CMS with focus on CoreMedia RichText editing.
 
