@@ -62,7 +62,7 @@ modified: 2022-05-15T18:45:27.570Z
   - Angular view layer for Slate
 
 - edu-editor /2Star/MIT/202207/ts/slate
-  - https://github.com/kiaksarg/edu-editor  
+  - https://github.com/kiaksarg/edu-editor
   - https://edu-editor.netlify.app/
   - a basic medium/notion like rich text editor based on Slate.js framework
   - 依赖 chakra-ui、nextjs、react-table.v7、slate.v0.72

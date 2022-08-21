@@ -51,9 +51,12 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 ```
 
 # dev-review
-- dev-to
-  - 事项--重要性(ll/ml/hl)--截止日期(0730+放松)
-  - search notion like block editor for recursive rendering
+- dev-to/log/xp
+  - 事项--截止日期(0730+放松)--重要性(ll/ml/hl)
+  - dashboard--0901
+  - pivot-table/grid--0828
+  - mirror-based-editor-vanillajs--0825
+  - app-knowledge-base--0904
 # dev-08
 
 ## 0818
@@ -77,6 +80,9 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - https://codepen.io/uptonking/pen/LYdpPBW
 
 ## 0812
+
+- dev-to
+  - [x] search notion like block editor for recursive rendering
 
 - 百度网盘倍速播放的扩展
   - global speed

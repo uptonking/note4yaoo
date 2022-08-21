@@ -13,10 +13,11 @@ modified: 2020-10-22T06:50:36.740Z
   - https://github.com/nicolaskruchten/pivottable
   - https://pivottable.js.org/examples/
   - a JS Pivot Table library with drag'n'drop functionality built on top of jQuery/jQueryUI
-- react-pivottable /629Star/MIT/202006
+- react-pivottable /852Star/MIT/202011/js
   - https://github.com/plotly/react-pivottable
   - https://react-pivottable.js.org/
-  - React-based drag'n'drop pivot table with Plotly.js charts
+  - a React-based pivot table library with drag'n'drop functionality. 
+  - It is a React port of the jQuery-based PivotTable.js by the same author.
   - 基于table标签实现
   - 创建透视表后，可快速展示图表
   - 依赖react-draggable, sortablejs
