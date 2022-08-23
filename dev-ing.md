@@ -59,6 +59,141 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - app-knowledge-base--0904
 # dev-08
 
+## 0822
+
+- lesson-luckiikawayii-js基础 - 数组、对象、函数
+- 数组常用方法
+
+```JS
+arr1 = [11, 22, 33];
+
+arr2 = new Array();
+arr2.push(11, 22, 33)
+```
+
+- 对象理解
+  - 内置对象
+  - 创建可复用的对象不要使用构造函数 new FuncName 的形式
+
+```JS
+obj1 = { p1: 11, p2: 22 };
+
+obj2 = new Object();
+obj2.p1 = 11;
+obj2.p2 = 22;
+
+function createObj(name, age) {
+
+  return {
+    name: name,
+    age: age
+  }
+}
+```
+
+- 函数理解
+  - 函数里面不要用this，
+
+```JS
+function fn1(text) {
+  console.log('; 打印', text);
+  return text;
+}
+
+const fn2 = function(text) {
+  console.log('; 打印', text);
+  return text;
+}
+
+const fn3 = (text) => {
+  console.log('; 打印', text);
+  return text;
+}
+
+let sum = (a, b) => a + b;
+// 等价于
+let sum = function(a, b) {
+  return a + b;
+};
+
+fn1('hello');
+fn2('hello');
+```
+
+### [略微探究React StrictMode两次渲染的问题](https://juejin.cn/post/7009189602506309640)
+
+- 👉🏻 严格模式下，组件mount时，effect逻辑会执行2次；通常state更新触发rerender会导致，render执行2次，effect还是只执行1次
+  - mount时，就算useEffect第二个参数是`[]`，也会按照以下顺序执行，先执行2次render，再执行effect > effect-cleanup > effect
+  - 可以通过useRef变量来控制effect的执行次数
+
+- strict mode的开发模式下确实会渲染两次
+  - 在App组件里面debugger之后也发现了确实是走了两遍的render阶段。
+  - 为了验证App被调用了两次，很自然的想到了用console来验证
+
+- 第二次渲染中console会经历修改和还原，这导致第二次渲染的console不会输出; 
+  - Starting with React 17, React automatically modifies the console methods like `console.log()` to silence the logs in the second call to lifecycle functions.
+  - Starting from React 18, React does not suppress any logs. 
+    - However, if you have React DevTools installed, the logs from the second call will appear slightly dimmed. 
+    - React DevTools also offers a setting (off by default) to suppress them completely.
+  - Apparently, it doesn't do so when the console.log is called from Promise callback. But it does so when it is called from render. 
+  - There is a second run of your render function when strict mode is enabled (only in development mode), but as discussed here, React will monkey patch console methods (calling disableLogs(); ) for the duration of that second (synchronous) run, so that it does not output.
+  - In my opinion, this log-suppression is a really bad design choice
+  - 如果把APP中的console换成alert，或者把原生的console引用起来使用，就应该能得到预期的结果
+
+- intentionally double-invoking the following functions:
+  - Class component constructor, render, and shouldComponentUpdate methods
+  - Class component static getDerivedStateFromProps method
+  - Function component bodies 👈🏻 函数体内render逻辑和effect逻辑都会执行2次
+  - State updater functions (the first argument to `setState`)
+  - Functions passed to useState, useMemo, or useReducer
+
+- React 18 introduces a new development-only check to Strict Mode. 
+  - This new check will automatically unmount and remount every component, whenever a component mounts for the first time, restoring the previous state on the second mount.
+  - On the second mount, React will restore the state from the first mount.
+
+### [React 18 - Avoiding Use Effect Getting Called Twice](https://dev.to/ag-grid/react-18-avoiding-use-effect-getting-called-twice-4i9e)
+
+- This happens only in development mode not in production mode . So should we change the code to handle behaviour only for the development mode.
+
+```typescript
+/** 👀 只能用在挂载时只执行一次的场景，后续state变化参数里的effect逻辑也不会执行 */
+export const useEffectOnce = (effect: () => void | (() => void)) => {
+  const destroyFn = useRef<void | (() => void)>();
+  const effectCalled = useRef(false);
+  const renderAfterCalled = useRef(false);
+  const [, setVal] = useState<number>(0);
+
+  if (effectCalled.current) {
+    renderAfterCalled.current = true;
+  }
+
+  useEffect(() => {
+    // only execute the effect first time around
+    if (!effectCalled.current) {
+      destroyFn.current = effect();
+      effectCalled.current = true;
+    }
+
+    // this forces one render after the effect is run
+    // 执行完effect后，触发修改 renderAfterCalled
+    setVal((val) => val + 1);
+
+    return () => {
+      // if the comp didn't render since the useEffect was called,
+      // we know it's the dummy React cycle
+      if (!renderAfterCalled.current) {
+        return;
+      }
+      if (destroyFn.current) {
+        destroyFn.current();
+      }
+    };
+  }, []);
+};
+```
+
+- [React 18, useEffect is getting called two times on mount](https://stackoverflow.com/questions/72238175)
+
 ## 0821
 
 - log202011
