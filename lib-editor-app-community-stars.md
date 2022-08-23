@@ -16,8 +16,9 @@ modified: 2022-08-21T10:12:02.964Z
     - 开放api
     - 双向链接
 
- - not-yet
-    - 将bibtex插入编辑器的逻辑实现有问题，如何只在光标点击editor内容后才执行插入bibtex的command，否则就会出现现在的问题，鼠标若不再editor中点击一下就不执行该逻辑
+- not-yet
+  - 搜索编辑器内容时，如何搜索带格式的文本，如关键词为 解构`props` 时如何搜索
+  - 将bibtex插入编辑器的逻辑实现有问题，如何只在光标点击editor内容后才执行插入bibtex的command，否则就会出现现在的问题，鼠标若不再editor中点击一下就不执行该逻辑
 
 - 浏览器的键盘输入事件顺序
   - [Keyboard Event Viewer](https://w3c.github.io/uievents/tools/key-event-viewer.html)

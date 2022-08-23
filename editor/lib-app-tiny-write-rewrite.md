@@ -24,12 +24,25 @@ import { Store, createStore, createMutable, unwrap } from 'solid-js/store';
 import { render } from 'solid-js/web';
 ```
 
+- component functions run only once in Solid.
+  - In Solid, if we want to conditionally display JSX in a component, we need that condition to reside within the returned JSX.
+
 - Solid's JSX compiler doesn't just compile JSX to JavaScript; 
   - it also extracts reactive values and makes things more efficient along the way.
   - This is more involved than React's JSX compiler, but much less involved than something like Svelte's compiler. 
   - Solid's compiler doesn't touch your JavaScript, only your JSX.
 
 - destructuring props is usually a bad idea in Solid. 
-  - Under the hood, Solid uses proxies to hook into props objects to know when a prop is accessed.
-  - When we destructure our props object in the function signature, we immediately access the object's properties and lose reactivity.
+  - Under the hood, Solid uses proxies to hook into `props` objects to know when a prop is accessed.
+  - When we destructure our `props` object in the function signature, we immediately access the object's properties and lose reactivity.
+
+- stores: proxy objects that allow a tree of signals to be independently tracked and modified.
+- When nested objects are accessed, stores will produce nested store objects, and this applies all the way down the tree. 
+  - However, this only applies to arrays and plain objects. 
+  - Classes are not wrapped, so objects like Date, HTMLElement, RegExp, Map, Set won't be granularly reactive as properties on a store.
+- Objects are always shallowly merged. Set values to `undefined` to delete them from the Store.
+
+- Context provides a form of dependency injection in Solid. It is used to save from needing to pass data as props through intermediate components.
+  - The value passed to provider is passed to useContext as is. That means wrapping as a reactive expression will not work. 
+  - You should pass in Signals and Stores directly instead of accessing them in the JSX.
 # more
