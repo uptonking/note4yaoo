@@ -16,12 +16,16 @@ modified: 2022-08-22T16:23:59.496Z
 - 对solidjs的依赖
 
 ```JS
-import { Show, onCleanup, createEffect, createSignal, onCleanup, onError, onMount, untrack, For, Switch, Match, splitProps } from 'solid-js';
+// tiny-write
+import { Show, onCleanup, createEffect, createSignal, onError, onMount, untrack, For, Switch, Match, splitProps } from 'solid-js';
 import { createContext, useContext } from 'solid-js';
 
 import { Store, createStore, createMutable, unwrap } from 'solid-js/store';
 
 import { render } from 'solid-js/web';
+
+// noteworthy
+import { createResource, Suspense } from "solid-js";
 ```
 
 - component functions run only once in Solid.
@@ -35,6 +39,13 @@ import { render } from 'solid-js/web';
 - destructuring props is usually a bad idea in Solid. 
   - Under the hood, Solid uses proxies to hook into `props` objects to know when a prop is accessed.
   - When we destructure our `props` object in the function signature, we immediately access the object's properties and lose reactivity.
+
+- createMemo
+  - 当一个signal被多次取值时，memo后只执行一次，不memo则每次取值都执行
+  - Memos are both an observer, like an effect, and a read-only signal. 
+  - Since they are aware of both their dependencies and their observers, they can ensure that they run only once for any change. 
+  - This **makes them preferable to registering effects that write to signals**. 
+  - Generally, what can be derived, should be derived.
 
 - stores: proxy objects that allow a tree of signals to be independently tracked and modified.
 - When nested objects are accessed, stores will produce nested store objects, and this applies all the way down the tree. 

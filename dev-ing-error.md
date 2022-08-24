@@ -11,6 +11,12 @@ modified: 2021-03-29T19:29:32.505Z
 
  
 
+- libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+  - [Unable to Launch AppImages on Fedora 35 - libva Error](https://www.linuxquestions.org/questions/showthread.php?p=6312963)
+  - 打开本地 appimage 时，无法看到错误，可先挂载或使用软件linux-unpacked未打包版本启动，就可在控制台开到错误
+  - 临时的解决方案 `./app1-1.7.1-x64.AppImage --no-sandbox`; 
+  - When Electron-based AppImages catch up and publish versions based on Electron >=13.5, you'd better run them sandboxed as they were intended to be run.
+
 - Definition for rule '@typescript-eslint/no-duplicate-enum-values' was not found
   - 统一升级eslint 8即可，部分子包未升级会找不到规则
 

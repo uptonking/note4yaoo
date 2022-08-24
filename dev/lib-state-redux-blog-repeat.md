@@ -7,8 +7,13 @@ modified: 2021-05-13T03:20:00.313Z
 
 # lib-state-redux-blog-repeat
 
-# [You Might Not Need Redux_2016](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
+# guide
 
+- 基于hooks模仿redux的api
+  - [State Management with React Hooks and Context API](https://devsmitra.medium.com/state-management-with-react-hooks-and-context-api-2968a5cf5c83)
+  - [React doesn't need state management tool, I said](https://dev.to/tolgee_i18n/react-doesnt-need-state-management-tool-i-said-31l4)
+    - https://github.com/tolgee/tolgee-platform/blob/main/webapp/src/fixtures/createProvider.tsx
+# [You Might Not Need Redux_2016](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
 - Redux offers a tradeoff. It asks you to:
   - Describe application state as plain objects and arrays.[state]
   - Describe changes in the system as plain objects.[action]
@@ -28,7 +33,7 @@ modified: 2021-05-13T03:20:00.313Z
   - Come back to Redux if you find a real need for it, or if you want to try something new.
 - Finally, don’t forget that you can apply ideas from Redux without using Redux.
 
-``` typescript
+```typescript
 import React, { Component } from 'react';
 
 class Counter extends Component {
@@ -61,7 +66,7 @@ class Counter extends Component {
 - The tradeoff that Redux offers is to add indirection to decouple “what happened” from “how things change”.
   - Is it always a good thing to do? No. It’s a tradeoff.
 
-``` typescript
+```typescript
 import React, { Component } from 'react';
 
 const counter = (state = { value: 0 }, action) => {

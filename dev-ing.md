@@ -59,6 +59,13 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - app-knowledge-base--0904
 # dev-08
 
+## 0824
+
+- 基于hooks模仿redux的api
+  - [State Management with React Hooks and Context API](https://devsmitra.medium.com/state-management-with-react-hooks-and-context-api-2968a5cf5c83)
+  - [React doesn't need state management tool, I said](https://dev.to/tolgee_i18n/react-doesnt-need-state-management-tool-i-said-31l4)
+    - https://github.com/tolgee/tolgee-platform/blob/main/webapp/src/fixtures/createProvider.tsx
+
 ## 0822
 
 - lesson-luckiikawayii-js基础 - 数组、对象、函数

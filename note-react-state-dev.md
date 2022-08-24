@@ -6,16 +6,22 @@ modified: 2020-12-08T13:40:02.577Z
 ---
 
 # note-react-state-dev
+
 # guide
 
 - [A community-maintained spec for global state libraries](https://github.com/reactwg/react-18/discussions/116)
   - https://github.com/dai-shi/will-this-react-global-state-work-in-concurrent-rendering
 
 - context selector的主要实现
-  - 依赖scheduler: dashi/use-context-selector,@fluentui/react-context-selector
+  - 依赖scheduler: dashi/use-context-selector, @fluentui/react-context-selector
   - 其他实现: mohebifar/react-use-context-selector(无依赖)
-# guide
 
+- 基于hooks模仿redux的api
+  - [State Management with React Hooks and Context API](https://devsmitra.medium.com/state-management-with-react-hooks-and-context-api-2968a5cf5c83)
+  - [React doesn't need state management tool, I said](https://dev.to/tolgee_i18n/react-doesnt-need-state-management-tool-i-said-31l4)
+    - https://github.com/tolgee/tolgee-platform/blob/main/webapp/src/fixtures/createProvider.tsx
+    - this aproach will have problems when hot module enabled. I have also developed this kind of lib for Form and FormElements. When you build form there will be no problem but when you change the body (main sate) and hot module updates it the Provider context will lost its value and recreate it from scratch since Form and form element is attached to previous context the render will fail. (using CreateContext from React)
+# guide
 - ## [Implement naive version of context selectors](https://github.com/facebook/react/pull/20646)
 - `const selection = useSelectedContext(Context, c => select(c));`
 - For internal experimentation only.
@@ -54,7 +60,7 @@ modified: 2020-12-08T13:40:02.577Z
   - Now any change of `AppContext` won't re-render `ThemeContext` consumers.
   - This is the preferred fix. Then you don't need any special bailout.
 
-``` JS
+```JS
   function Button() {
     let theme = useContext(ThemeContext);
     // The rest of your rendering logic
@@ -66,7 +72,7 @@ modified: 2020-12-08T13:40:02.577Z
   - If for some reason you can't split out contexts, you can still optimize rendering by splitting a component in two, and passing more specific props to the inner one.
   - You'd still render the outer one, but it should be cheap since it doesn't do anything.
 
-``` JS
+```JS
 function Button() {
   let appContextValue = useContext(AppContext);
   let theme = appContextValue.theme; // Your "selector"
@@ -83,7 +89,7 @@ const ThemedButton = memo(({ theme }) => {
   - Finally, we could make our code a bit more verbose but keep it in a single component by wrapping return value in `useMemo` and specifying its dependencies. 
   - Our component would still re-execute, but React wouldn't re-render the child tree if all `useMemo` inputs are the same.
 
-``` JS
+```JS
 function Button() {
   let appContextValue = useContext(AppContext);
   let theme = appContextValue.theme; // Your "selector"
@@ -101,7 +107,7 @@ function Button() {
   - To implement subscribe function, you can use something like Observables or EventEmitter, or just write a basic subscription logic yourself
   - we stopped passing the store state in context (the v6 implementation) and switched back to direct store subscriptions (the v7 implementation) due to a combination of performance problems and the inability to bail out of updates caused by context (which made it impossible to create a React-Redux hooks API based on the v6 approach).
 
-``` JS
+```JS
 const MyContext = createContext();
 export const Provider = ({ children }) => (
   <MyContext.provider value={{subscribe: listener => ..., getValue: () => ...}}>
@@ -121,7 +127,7 @@ export const useSelector = (selector, equalityFunction = (a, b) => a === b) => {
     }
 ```
 
-``` JS
+```JS
 function StateProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const listeners = useRef([]);
@@ -148,9 +154,7 @@ function StateProvider({ children }) {
 
 - ### Option x1: use an unofficial workaround.
   - useContextSelector proposal and use-context-selector library in userland.
-
 # pieces
-
 - state management
   1. Context + useState
   2. Context + useReducer
@@ -197,9 +201,7 @@ function StateProvider({ children }) {
   - Background work:
     - If I have long running API calls/processing that would be complex to manage, I'd use redux-observable
   - https://twitter.com/cwbuecheler/status/1253711795459588097
-
 # discuss
-
 - ## [5 Layers of State Management in React Applications](https://joelhooks.com/5-layers-react-state)
 - local
 - shared
@@ -347,7 +349,7 @@ function StateProvider({ children }) {
   - 为了不在组件函数内调用 createSelector，我们需要尽可能将用到外部变量的地方抽象成一个通用 Selector，并作为 createSelector 的一个先手环节
   - 对于外部变量结合的环节，还需要 useMemo 与 useSelector 结合使用，useMemo 处理外部变量依赖的引用缓存，useSelector 处理 Store 相关引用缓存。
 
-``` JS
+```JS
 // 只用context
 const CountContext = createContext();
 
@@ -399,9 +401,7 @@ function Child() {
   - 定义了一个Provider组件，但是它的 value 是一个通过 useRef 创建的值。
   - 只有触发 forceUpdate 才会更新组件
   - 总不能每次改变应用状态的时候，都要调用一次 forceupdate 吧，再对上面的示例做一次优化，请看这个优化版本 ，在这个版本中，我们实现一个简单的发布订阅库，在 useStore 方法中订阅子组件的 forceUpdate 到 subscribers 中 ，在 Provider 组件 render 的时候，调用 notify 方法依次调用 subscribers 中的所有 foreUpdate，以此来触发子组件rerender。
-
 # survey: state management
-
 - [How are you currently managing your state? Redux/hooks/MobX/something else?](https://twitter.com/kefimochi/status/1248006010972692481)
 - [How are you handling React state today?](https://twitter.com/housecor/status/1252306374375149568)
   - react
@@ -433,9 +433,7 @@ function Child() {
     - Use the hook directly or hide it behind something else. Either works.
     - I went with react-query because of the quality of it's docs too. Redux and Apollo have had GREAT docs for a long time. As long as I have used react-query, it has too. TypeScript support was also a must for me. Even though swr has better ts support, React-query's was good enough.
   - With Firestore I’m using Redux + Redux-observable as middleware. Next time I’ll go with react query but I should pay attention to the number of reads/writes because u pay for those with Firebase
-
 # context vs redux
-
 - viewpoint
   - My personal summary is that new context is ready to be used for low frequency unlikely updates (like locale/theme). It's also good to use it in the same way as old context was used. I.e. for static values and then propagate updates through subscriptions. It's not ready to be used as a replacement for all Flux-like state propagation.
   - The Context API (currently) is not built for high-frequency updates (quote of Sebastian Markbage, React Team), it’s not optimized for that. The react-redux people ran into this problem when they tried to switch to React Context internally in their package
@@ -516,7 +514,6 @@ function Child() {
 - ref
   - [Redux - Not Dead Yet!](https://blog.isquaredsoftware.com/2018/03/redux-not-dead-yet/)
   - [Do React Hooks Replace Redux?](https://medium.com/javascript-scene/do-react-hooks-replace-redux-210bab340672)
-
 # fetchData
 
 # 基于context
@@ -541,9 +538,7 @@ function Child() {
 - 比较难解决的是thunk，redux中在dispatch执行前对action做判断，如果是异步action则传入middlewareAPI并执行，如果是同步action则立即dispatch。react中的dispatcher是一个用于启动performWork的scheduler（用于安排调度任务到任务队列）。redux的dispatch是原子操作，只有当所有reducers执行完毕才会通知订阅者进行下一步操作（redux理念中reducers是纯函数，subscriptions是副作用），确保getState不会脏读state，但是react是吗？ReactDispatcher执行单元是一个fiber，每个hook fiber实例（使用了useReducer）执行reducer后进行setState操作，组件实例执行的同时也等于通知订阅，它并不会关心（或者等）其他组件是否执行完毕，也就是在reducers没有全部执行完就去读全局state，造成脏读。（如果此时往全局state写入新值就更加错误了，也可以说没有保证事务隔离。）这也是concurrent并发调度模式所存在的难题。所以，既然难以保证IO操作拥有足够的隔离性，所以可以使用惰性求值（或者异步）来进行IO操作，即将所有组件pure纯化（访问全局context就不纯），将所有IO操作推迟到纯函数执行之后。譬如ReactDOM.render的第三个参数表示在一次完整的render之后执行一次操作，此时进行副作用IO。
 - 全局变量共享是一个复杂的问题，在并发访问时尤为突出。不过只要保证组件足够纯，再隔离副作用就好了。纯函数的优势就是并发，副作用IO可以交给异步任务队列执行，或者是用Monad来处理IO，保证IO操作次序，IO操作是需要保证先后顺序的，纯函数不需要
 - react的useEffect就是pure操作，将副作用包裹在了Monad里（可以理解为外面又包了一层函数），react调度机制会在一轮渲染之后执行这些副作用操作，保证了副作用与函数组件主体的充分隔离。也就是目前的react已经实现了部分Monad机制。（说是部分因为现在还没有join运算，没办法把一个IO操作映射为另一个IO操作，即(a -> b) -> IO a -> IO b，也就是Functor，可以将Monad解包运算后再封包，，好吧其实这个理解了之后可以自己实现，封包就是f变成()=>f()，解包就是执行封包后的函数即(()=>f())()，解包运算之后再包一层函数纯化返回到Monad即可。）
-
 # recoil
-
 - ref
   - [Recoil - Facebook官方React状态管理器](https://juejin.im/post/5ec0f5905188256d8c4a99b8)
 - 优点
@@ -556,9 +551,7 @@ function Child() {
   - API偏多，一共19个，同类可以合并
   - 消费状态需要import多项，useRecoilState, store
   - 没有足够的亮点吸引用户
-
 # state management using subscription
-
 - ref 
   - [使用React Hooks进行状态管理 - 无Redux和Context](https://juejin.im/post/5d783fca6fb9a06af50ff577)
   - [State Management with React Hooks — No Redux or Context API](https://medium.com/javascript-in-plain-english/state-management-with-react-hooks-no-redux-or-context-api-8b3035ceecf8)
@@ -567,7 +560,7 @@ function Child() {
 
     - The best way is to separate the business logic by creating actions which manipulate the state.
 
-``` JS
+```JS
 import { useState, useEffect } from 'react;
 
 // 设置为let因为清理时会替换
@@ -668,9 +661,7 @@ const Counter = () => {
       - This is only possible with state inside React. 
       - So, react-hooks-global-state won't get benefits from that feature. 
       - react-hooks-global-state should still be CM-safe though.
-
 # ref
-
 - [精读《React Hooks 数据流》](https://zhuanlan.zhihu.com/p/126476910)
 - [精读《Hooks 取数 - swr 源码》](https://zhuanlan.zhihu.com/p/91228591)
 - [精读《recoil》](https://zhuanlan.zhihu.com/p/143335599)
