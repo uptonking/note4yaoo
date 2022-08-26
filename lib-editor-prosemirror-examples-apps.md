@@ -65,7 +65,7 @@ modified: 2022-08-18T16:57:15.296Z
   - https://github.com/danloh/mdSilo-web
   - https://mdsilo.com/
   - 核心编辑器mdsmirror基于rich-markdown-editor，未开源
-  - 依赖 react、tauri、dnd-kit、headlessui、popperjs、react-spring、tailwindcss、d3-drag/selection、fuse.js、immer、codemirror.v6、styled-comp、react-virtualized、zustand
+  - 依赖 react、tauri/rust、dnd-kit、headlessui、popperjs、react-spring、tailwindcss、d3-drag/selection、fuse.js、immer、codemirror.v6、styled-comp、react-virtualized、zustand
   - A mind silo for storing ideas, thought, knowledge with a powerful writing tool.
   - Available for Web, Linux, Windows and macOS. 
 - mdSilo-app /93Star/AGPL.v3/202208/ts
@@ -135,6 +135,9 @@ modified: 2022-08-18T16:57:15.296Z
   - Heterocube Cloud Collaborative Docs. 
   - Built with Vue3 + TypeScript + ProseMirror + Y.js + DeepKit
 
+- https://github.com/abingham/prosemirror-tauri
+  - an experiment to try using the ProseMirror editor widget with the Tauri application framework.
+
 - https://github.com/dec0dOS/standard-notes-ultimate-editor
   - This is a text editor for the encrypted note-taking app https://standardnotes.org/. A mobile-friendly and high-performance editor.
 
@@ -144,9 +147,6 @@ modified: 2022-08-18T16:57:15.296Z
 
 - https://github.com/herrdu/prosemirror /202008/ts
   - 个人使用的prosemirror合集版本，手动ts化
-
-- https://github.com/abingham/prosemirror-tauri
-  - an experiment to try using the ProseMirror editor widget with the Tauri application framework.
 
 - https://github.com/gamejolt/gamejolt
   - This is the whole frontend for Game Jolt. It powers the site and the desktop app.

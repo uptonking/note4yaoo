@@ -34,7 +34,7 @@ modified: 2022-08-18T16:57:29.058Z
   - 支持拖拽block修改顺序
   - 依赖solid-js、codemirror6、idb-keyval、date-fns、markdown-it、y-prosemirror
   - Just a little writing tool with markdown shortcuts that saves every change to local indexeddb.
-  - 跨平台客户端基于tauri实现，tari部分使用rust实现
+  - 跨平台客户端基于tauri实现，tauri部分使用rust实现
 
 - rino /26Star/GPL.v3/202208/ts/remirror/markdown-it
   - https://github.com/ocavue/rino

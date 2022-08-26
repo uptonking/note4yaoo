@@ -23,6 +23,27 @@ modified: 2022-08-21T10:13:31.691Z
   - 依赖 plate、slate、styled-components
   - Rich text editor component for React. Built with Plate and MUI
 
+- autodox /4Star/MIT/202203/ts/rust/inactive
+  - https://github.com/aliscie/autodox
+  - this app is Notion.so clone, roamresearch clone and obsidian clone. 
+  - The main purpose of this app is not to just clone these note taking apps but to make an all in one **Open source note taking app** with automation features.
+  - 依赖 udecode、mui5、mui4、headlessui、redux-toolkit
+  - tauri部分使用rust
+  - apollojs (not used yet but coming soon)
+
+- https://github.com/frontify/arcade
+  - Design System of Frontify
+
+- https://github.com/pathfindertools/microgen
+  - an open source visual site builder developers can get along with.
+
+- https://github.com/stippi/plate-yjs-test
+  - Embed a Yjs-based Slate editor in Plate
+
+- https://github.com/palerdot/remindoro
+  - https://remindoro.app/
+  - Chrome/Firefox Extension to get reminders(repeat/one-time). Edit notes with live rich text editor.
+
 - https://github.com/ok3-8/dolphin-rich-editor
   - Rich Editor
 # plate-plugins

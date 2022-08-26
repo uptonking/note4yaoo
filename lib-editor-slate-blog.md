@@ -11,7 +11,7 @@ modified: 2022-05-15T21:14:14.339Z
 
 # slate-blogs
 
-## [Adding A Commenting System To A WYSIWYG Editor](https://www.smashingmagazine.com/2021/05/commenting-system-wysiwyg-editor/)
+## [Adding A Commenting System To A WYSIWYG Editor/Slate](https://www.smashingmagazine.com/2021/05/commenting-system-wysiwyg-editor/)
 
 - https://github.com/shalabhvyas/wysiwyg-editor
   - /202106
