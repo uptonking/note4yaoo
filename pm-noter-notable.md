@@ -44,6 +44,7 @@ modified: 2022-03-17T17:50:28.967Z
 
 - editor
   - copy as markdown link
+  - core-text-mode，整体页面突出文字，淡化链接样式
 
 - headless/unstyled design
   - 基于场景预定义react组件接口，允许替换默认使用的各个组件

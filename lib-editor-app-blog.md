@@ -72,6 +72,32 @@ modified: 2022-08-21T10:11:37.453Z
   - Google Docs Spread - 设计比较像Excel，但是使用的protobuf
   - Notion - 很明显是结构化的属性数据，并且使用CRDT的冲突解决数据结构
 - 在Startup阶段，找到对应领域的合适技术选型，选择做出你协作软件的MVP，当自研能够成为你的壁垒或者优势，再选择自研
+# editor-ide
+
+## [LSP-language-server-protocol规范学习](https://zhuanlan.zhihu.com/p/343218679)
+
+- LSP(Language Server Protocol) 语言服务协议，该协议定义了在编辑器或IDE与语言服务器之间使用的协议，该语言服务器提供了例如自动补全，转到定义，查找所有引用等的功能；语言服务器索引格式的目标是支持在开发工具中进行丰富的代码导航或者一个无需本地源码副本的WebUI。
+
+- 每个开发IDE，都要为语言实现类如自动补全，转动定义，悬停在单词上提供文档的功能，传统上，需要个IDE根据自己的API实现上述工作，即使是相同的功能，也要根据不同IDE实现一遍重复的功能，代码却不同。
+- LSP设计的目标是使该语言服务器和开发工具进行标准化的通信，这个语言服务可以在多个开发工具中重复使用，从而以最小的改动支持多种语言。语言服务器后端可以用PHP，Python或Java编写，LSP可以轻松地将其集成到各种工具中，该协议提供通用抽象级别的协议，以便工具可以提供丰富的语言服务，从而无需完全理解特定于底层域模型的细微差别。
+
+- 语言服务器会作为单独的进程运行，同时开发工具使用基于JSON-RPC的语言协议与服务器进行通信。
+  - 用户在IDE中打开文件时: IDE会通知语言服务器文件已打开(textDocument/didOpen)，此时文档的内容不会存在于真实的文件系统中，而是保存在IDE内存中。必须在IDE和语言服务器之间同步内容。
+  - 用户编辑文件时：IDE会通知语言服务器文件更新(textDocument/didChange)，并且语言服务器会更新文件的语言表示。之后语言服务器会分析此消息，并将检测到的错误和警告，响应(textDocument/publishDiagnostics)通知IDE。
+  - 用户执行"Goto Definition" 指令时: IDE发送带有参数的请求(textDocument/definition), params: {documentURI, position} 到语言服务器，语言服务器以文档URI和definition的Location作为响应。
+  - 上述示例说明了协议如何在文档引用（URI）和文档位置级别与语言服务器进行通信。这些数据类型与编程语言无关，适用于所有编程语言。
+- 当用户使用不同的语言时，IDE会为每种编程语言启动语言服务器
+  - 并不是每种语言服务器都可以支持协议定义的所有功能，因此LSP提供了capabilities，一个capabilities可以将一组语言capability组合在一起，IDE和语言服务器使用能力宣布其支持的功能。
+  - 需要注意：语言服务器到特定IDE的实现集成不是由语言服务器协议定义的，而是由IDE实现者决定
+
+### [如何评价微软的 Language Server Protocol？](https://www.zhihu.com/question/50218554)
+
+- 我只有一个问题， 这玩意会上传代码到服务器么？
+  - 服务器就在你本地。。。懂了没？？只是和编辑器分开了，通过通信来交流
+  - 网络传输会让你的ide跑的慢死 目前的都是本地服务器也就是个跨进程通讯而已
+- 
+- 
+
 # more
 - [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)
 - [TEXT EDITING HATES YOU TOO](https://lord.io/text-editing-hates-you-too/)

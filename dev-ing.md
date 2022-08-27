@@ -59,6 +59,45 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - app-knowledge-base--0904
 # dev-08
 
+## 0826
+
+- [k8s 1.20版本为什么不推荐docker？](https://www.zhihu.com/question/433124795/answer/2144110676)
+  - Containerd 调用链更短，组件更少，占用节点资源也比较少。
+- docker公司在云原生时代，已然成为打工仔，在容器领域的话语权已经被云计算厂商挤压
+  - 对于桌面端，docker也有了可以竞争者，那就是redhat的podman，你可以alise podman=docker，docker有的基础功能podman都有
+
+- [被k8s弃用的docker还值得学吗？](https://juejin.cn/post/7031472527725559816)
+  - 首先抛出答案：Docker依然值得学习。
+  - 为什么k8s会弃用Docker作为其容器运行时？ Docker在设计之初，并不是为了运行在k8s上的，它是一个功能完备的开发者工具，实际上k8s运行时依赖的是Docker中的containerd组件，即然如此把containerd单独拿出来就可以了，而不需要Docker额外的组件，虽然containerd被集成在Docker中，但是k8无法直接调用Docker中的containerd，而是需要通过一个叫Dockershim的组件，这个组件也是需要额外的开发维护成本的
+  - 为什么用Docker打包的镜像依然可以在k8s上使用？ 我们在上面说到Docker的核心利用了存在已久的Namespace和Cgroup技术，这并不是Docker的创新，但镜像绝对是Docker的一项重要创新， Docker镜像解决了应用程序的分发问题，并制定了统一的镜像标准：opencontainers.org/ 所以依据此标准制作的镜像，都可以在k8s上使用。
+
+- [Are networks now faster than disks?](https://serverfault.com/questions/238417)
+  - 要考虑的因素过多，要具体情况具体分析
+  - 机房内网通信比公网数据传输要快，公网还存在不稳定的问题
+  - 固态硬盘+顺序读写 比机械硬盘/raid磁盘阵列随机读写要快
+- I used to work on the following rule for speed
+  - cache memory > memory > disk > network
+- Sometimes yes, sometimes no. What network? What disk?
+
+```text
+L1 cache reference                             0.5 ns
+Branch mispredict                              5 ns
+L2 cache reference                             7 ns
+Mutex lock/unlock                            100 ns (25)
+Main memory reference                        100 ns
+Compress 1K bytes with Zippy              10,000 ns (3,000)
+Send 2K bytes over 1 Gbps network         20,000 ns
+Read 1 MB sequentially from memory       250,000 ns
+Round trip within same datacenter        500,000 ns
+Disk seek                             10,000,000 ns
+Read 1 MB sequentially from network   10,000,000 ns
+Read 1 MB sequentially from disk      30,000,000 ns (20,000,000)
+Send packet CA->Netherlands->CA      150,000,000 ns
+```
+
+- There are a lot of variables when it comes to network vs. disk, but in general, disk is faster.
+  - if you are transporting over the network is going to or coming from disk anyway...so.......again, disk is faster
+
 ## 0824
 
 - 基于hooks模仿redux的api

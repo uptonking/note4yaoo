@@ -32,6 +32,9 @@ modified: 2022-06-01T18:55:39.088Z
     - 不支持在线图片链接，只支持本地图片
 
 - user-xp
+
+- resources
+  - [如何评价思源笔记?](https://www.zhihu.com/question/434530733/answers/updated)
 # changelog
 - [Use Protyle instead of Vditor for the editor__202104](https://github.com/siyuan-note/siyuan/issues/1981)
   - Protyle is a brand new editor for SiYuan.
@@ -43,3 +46,6 @@ modified: 2022-06-01T18:55:39.088Z
   - 使用人类可读的文本在跨系统平台时存在大小写问题，比如 Linux 上允许同时存在 SiYuan 和 siyuan 文件，但是 Windows 上则不允许，该情况一旦发生数据就可能会被损坏
 
 - 如果确实对 id 和文件名的对应关系有需求，在 sy 文件里面有，随便找个 json 解析工具一提取就搞定了，只是稍微费一点功夫而已。
+# news
+- [完整开源界面和内核_202205](https://github.com/siyuan-note/siyuan/issues/5013)
+  - [关于思源笔记开源的疑问](https://ld246.com/article/1653560278248)
