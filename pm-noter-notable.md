@@ -13,20 +13,6 @@ modified: 2022-03-17T17:50:28.967Z
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好
 
-- 云同步提供商
-  - 网盘：百度OAuth2.0, 腾讯文档/微云，onedrive
-    - https://github.com/reruin/sharelist
-      - ShareList 是一个易用的网盘工具，支持快速挂载 GoogleDrive、OneDrive
-    - 基于 OneDrive API 的图床
-      - https://github.com/harrisoff/onedrive
-      - https://github.com/beetcb/sosf
-    - https://github.com/golf1052/code-sync
-      - Sync VSCode extensions using your favorite file synchronization service
-    - https://github.com/OneDrive/onedrive-texteditor-js
-      - sample application provides a simple markdown (text) editor experience for files stored in OneDrive.
-  - 云服务商：七牛
-  - 非主流存储：github、gitee
-
 - 主要功能模块
   - file-explorer
     - 复刻vscode的文件管理器
@@ -41,6 +27,9 @@ modified: 2022-03-17T17:50:28.967Z
   - hero block
     - 类似在一页ppt上只显示一个大号的单词/短语，以醒目突出
   - examples as notes
+  - instant-preview
+    - 类似typora的即时预览，可选择 行内 / 上下 两种结构
+    - 类似observable-notebook的上下结构可减少页面reflow
 
 - editor
   - copy as markdown link
@@ -76,6 +65,22 @@ modified: 2022-03-17T17:50:28.967Z
   - https://github.com/phryneas/remark-typescript-tools
   - https://github.com/shikijs/twoslash
   - 两种方案需要选择取舍
+
+## sync-cloud-drive
+
+- 云同步提供商
+  - 网盘：百度OAuth2.0, 腾讯文档/微云，onedrive
+    - https://github.com/reruin/sharelist
+      - ShareList 是一个易用的网盘工具，支持快速挂载 GoogleDrive、OneDrive
+    - 基于 OneDrive API 的图床
+      - https://github.com/harrisoff/onedrive
+      - https://github.com/beetcb/sosf
+    - https://github.com/golf1052/code-sync
+      - Sync VSCode extensions using your favorite file synchronization service
+    - https://github.com/OneDrive/onedrive-texteditor-js
+      - sample application provides a simple markdown (text) editor experience for files stored in OneDrive.
+  - 云服务商：七牛
+  - 非主流存储：github、gitee
 # experimental
 - notion like block editor
 - roam like editor with bidirectional links，国内思源笔记

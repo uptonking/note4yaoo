@@ -163,6 +163,11 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
   - 在设置里面关闭退出chrome后在后台继续运行app
   - chrome点击标题栏不能全屏，方法1是打开系统标题栏，方法2是拖拽到屏幕顶部会自动全屏
 
+- typora
+  - [Typora软件打不开了](https://www.csdn.net/tags/MtTaMgzsNDE4OTgzLWJsb2cO0O0O.html)
+    - https://download.typora.io/linux/typora_0.9.98_amd64.deb
+    - https://download.typora.io/windows/typora-update-x64-1213.exe
+
 ## dev
 
 - ubuntu-mysql

@@ -10,6 +10,9 @@ modified: 2022-06-03T21:34:54.893Z
 # guide
 
 - 想要分析notion的block架构设计，可以参考clone示例
+
+- resources
+  - search: knowledge-base/workspace/wiki
 # notion-like-workspace
 - siyuan /6.6kStar/AGPL.v3/202208/ts/go/支持协作
   - https://github.com/siyuan-note/siyuan
