@@ -59,7 +59,19 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - app-knowledge-base--0904
 # dev-08
 
-## 0829
+## 0828
+
+- [TypeScript `React.FC<Props>` confusion](https://stackoverflow.com/questions/59988667)
+- React Function components can be written as normal functions that take a props argument and return a JSX element.
+- `React.FC` why:
+  - It provides an implicit definition of `children`  - however there are some issues with the implicit `children` type 
+    - 👀 React v18已移除children定义
+    - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
+    - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
+    - children is a regular prop and is not something special. 
+  - It provides typechecking and autocomplete for static properties like `displayName`,         `propTypes`, and `defaultProps`; 
+    - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
+  - It is explicit about the return type, while the normal function version is implicit
 
 ## 0826
 
