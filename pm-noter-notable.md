@@ -34,6 +34,8 @@ modified: 2022-03-17T17:50:28.967Z
 - editor
   - copy as markdown link
   - core-text-mode，整体页面突出文字，淡化链接样式
+  - statistics-in-editor
+    - 自动统计链接点击次数、图片分享次数
 
 - headless/unstyled design
   - 基于场景预定义react组件接口，允许替换默认使用的各个组件
@@ -46,6 +48,8 @@ modified: 2022-03-17T17:50:28.967Z
 
 - 按键书写
   - `[ctrl]`+`[c]`
+# vip
+- 作品默认使用系统预览图，允许vip上传自定义截图
 # draft
 - 功能或菜单太多容易使人迷茫，考虑设计多个版本的前端：lite、pro、customized
 

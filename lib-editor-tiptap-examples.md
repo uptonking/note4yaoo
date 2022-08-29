@@ -38,6 +38,16 @@ modified: 2022-08-19T23:00:22.162Z
   - https://evitanrelta.github.io/markgh/
   - 依赖 mui5、redux-toolkit、tiptap、dexie、highlight.js、markdown-it、quill
 
+- linked-daily /561Star/GPL.v3/202208/js/vue/electron
+  - https://github.com/lostdesign/linked
+  - https://uselinked.com/
+  - Daily journaling without distraction.
+  - Search across all days
+  - 依赖 vue2、highlight.js、electron-store
+- https://github.com/m1911star/mermaid-editor-example
+  - 依赖tiptap2、mermaid、react、electron
+  - 代码少，适合入门
+
 - gitlab-editor /3916Star/MIT/202208/js/vue2/tiptap2
   - https://gitlab.com/gitlab-org/gitlab/-/tree/master/app/assets/javascripts/content_editor
   - [WYSIWYG editor toolkit architecture proposal__2021](https://gitlab.com/gitlab-org/gitlab/-/issues/273238)

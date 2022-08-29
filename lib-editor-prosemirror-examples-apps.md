@@ -11,7 +11,7 @@ modified: 2022-08-18T16:57:15.296Z
 
 # prosemirror-starter
 - https://github.com/syfxlin/tiptap-starter-kit
-  - Tiptap 编辑器的非官方套件，包含了常见的扩展集合，以及斜杠菜单，浮动菜单，Markdown 解析、序列化等功能。
+  - Tiptap编辑器的非官方套件，包含了常见的扩展集合，以及斜杠菜单，浮动菜单，Markdown解析、序列化等功能。
 
 - https://github.com/mfoitzik/prosemirror-breakout-starter-kit
   - This is a ProseMirror starter kit that uses Webpack.
@@ -44,7 +44,7 @@ modified: 2022-08-18T16:57:15.296Z
   - https://edp1096.github.io/hello-prosemirror/
   - 测试
 # office/notebook
-- noteworthy /166Star/AGPL.v3/202207/ts
+- noteworthy /166Star/AGPL.v3/202207/ts/electron
   - https://github.com/benrbray/noteworthy
   - https://noteworthy.ink/
   - Markdown editor with bidirectional links and excellent math support
@@ -61,10 +61,28 @@ modified: 2022-08-18T16:57:15.296Z
   - 编辑器已分离，基于rich-markdown-editor和prosemirror
   - 前端基于lit
 
+- codex /195Star/CC-BY-NC-4.0/202202/js/electron
+  - https://github.com/jcv8000/Codex
+  - https://codexnotes.com/
+  - 依赖 prosemirror、katex、bootstrap4、jquery、highlight.js
+  - A free note-taking software for programmers and Computer Science students
+
+- yana /175Star/MIT/202201/ts/electron/atlaskit
+  - https://github.com/lukasbach/yana
+  - https://yana.js.org/
+  - 依赖electron、sqlite3
+  - 可选编辑器 atlaskit/monaco
+  - 文章内容保存在本地sqlite，而不是markdown文件
+  - 产品功能简洁，体验友好
+  - note-taking app with nested documents, full-text search, rich-text editor, code snippet editor
+  - a powerful notebook app which allows you to manage local workspaces of hierarchically structured taggable and searchable notes.
+  - Rich notes editor powered by the Atlassian editor core
+  - Multiple local workspaces
+
 - mdSilo-web /208Star/AGPL.v3/202208/ts
   - https://github.com/danloh/mdSilo-web
   - https://mdsilo.com/
-  - 核心编辑器mdsmirror基于rich-markdown-editor，未开源
+  - 核心编辑器mdsmirror未开源，基于rich-markdown-editor
   - 依赖 react、tauri/rust、dnd-kit、headlessui、popperjs、react-spring、tailwindcss、d3-drag/selection、fuse.js、immer、codemirror.v6、styled-comp、react-virtualized、zustand
   - A mind silo for storing ideas, thought, knowledge with a powerful writing tool.
   - Available for Web, Linux, Windows and macOS. 
@@ -82,7 +100,8 @@ modified: 2022-08-18T16:57:15.296Z
   - https://ureeka.biz/
     - Ureeka is the ultimate small business growth engine built by successful entrepreneurs who know the formula proven to drive growth.
 
-- https://github.com/gfrancine/mnote
+- mnote /1Star/MPL.v2/202208/ts/tauri/提交多
+  - https://github.com/gfrancine/mnote
   - Mnote: a desktop app to write notes in more than just text
 # prosemirror-apps
 - oak /4Star/MIT/202208/js/提交多
@@ -109,6 +128,14 @@ modified: 2022-08-18T16:57:15.296Z
   - 旧编辑器tiptap，新编辑器直接使用prosemirror
   - MashCard is an all-in-one workspace and low-code platform with Compound Document at its core. 
   - It's not only an open source alternative to Coda and Notion
+
+- tropy /637Star/AGPL.v3/202208/js
+  - https://github.com/tropy/tropy
+  - https://tropy.org/
+  - help to organize and describe your research photos so you can quickly find your sources 
+  - use tags and lists to organize your research items
+  - annotation tools allow you to transcribe documents, select image details
+  - exports your research projects as JSON‑LD, CSV, and even directly to Omeka S. 
 
 - https://github.com/pageboard/client /4Star/MIT/202208/js
   - uses prosemirror to drive HTML wysiwyg editing.

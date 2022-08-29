@@ -36,10 +36,17 @@ modified: 2021-07-14T15:36:09.702Z
   - 依赖styled-components、@amcharts/amcharts4、d3、@cubejs-client/react、react-table、twin.macro
   - These components are Atlassian Design Guidelines(ADG) compliant
 
-- https://github.com/lukasbach/yana
+- yana /175Star/MIT/202201/ts/electron/atlaskit
+  - https://github.com/lukasbach/yana
+  - https://yana.js.org/
   - 依赖electron、sqlite3
-  - 可选编辑器atlaskit/monaco
-  - note-taking app with nested documents, full-text search, rich-text editor, code snippet editor 
+  - 可选编辑器 atlaskit/monaco
+  - 文章内容保存在本地sqlite，而不是markdown文件
+  - 产品功能简洁，体验友好
+  - note-taking app with nested documents, full-text search, rich-text editor, code snippet editor
+  - a powerful notebook app which allows you to manage local workspaces of hierarchically structured taggable and searchable notes.
+  - Rich notes editor powered by the Atlassian editor core
+  - Multiple local workspaces
 
 - https://github.com/yeojono/goji /201909
   - 依赖@atlaskit/editor-core@90.3.4, emotion9, react-intl2, unstated2

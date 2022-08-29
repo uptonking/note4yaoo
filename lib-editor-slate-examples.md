@@ -13,7 +13,7 @@ modified: 2022-05-15T18:45:27.570Z
   - https://github.com/udecode/plate
   - https://plate.udecode.io/
   - 支持跨block选择部分文字
-  - 支持拖拽block修改顺序
+  - 支持拖拽block修改顺序，但list内所有item不支持拖拽
   - code-block自研实现，不依赖第三方代码编辑器
   - A plugin framework for building rich text editors with slate.
 

@@ -153,6 +153,12 @@ modified: 2022-08-18T16:57:46.405Z
   - https://github.com/lastnigtic/syllepsis-collab
     - Example of `Syllepsis` collaborative editing using `prosemirror-collab`
 
+- zotero-note-editor /16Star/AGPL.v3/202208/js
+  - https://github.com/zotero/note-editor
+  - 依赖 prosemirror、katex、react、react-intl
+  - Note editor for Zotero 6
+  - 提供了 web/ios 两个ui入口
+
 - gitlab-editor /3916Star/MIT/202208/js/vue2/tiptap2
   - https://gitlab.com/gitlab-org/gitlab/-/tree/master/app/assets/javascripts/content_editor
   - [WYSIWYG editor toolkit architecture proposal__2021](https://gitlab.com/gitlab-org/gitlab/-/issues/273238)
@@ -270,9 +276,11 @@ modified: 2022-08-18T16:57:46.405Z
   - Inspect active marks
   - See document stats – size, child count
   - ref
-    - https://github.com/NovelAI/prosemirror-dev-tools
-      - a monkey patched fork of https://github.com/d4rkr00t/prosemirror-dev-tools which fixed the wrong indexing problem
-    - https://github.com/luke-john-atlassian/prosemirror-devtools
+    - https://github.com/NovelAI/prosemirror-dev-tools /提交多
+      - a monkey patched fork which fixed the wrong indexing problem
+      - 合并了其他人的修复 https://github.com/kepta/prosemirror-dev-tools
+    - https://github.com/luke-john-atlassian/prosemirror-devtools /单独app或extension/inactive
+    - [Is there a good way to understand the “pos” that is used all over?](https://discuss.prosemirror.net/t/is-there-a-good-way-to-understand-the-pos-that-is-used-all-over/3458)
 # tiptap/milkdown/remirror/atlassian/wax
 - better-virgool /9Star/MIT/NALic/202208/ts/tiptap
   - https://github.com/ahhshm/better-virgool

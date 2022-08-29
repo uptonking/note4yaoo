@@ -31,6 +31,11 @@ modified: 2021-01-16T20:50:23.893Z
   - Electron React Boilerplate uses Electron, React, React Router, Webpack and React Fast Refresh.
 - https://github.com/sprout2000/electron-react-ts
   - An Electron boilerplate with hot reloading for React and TypeScript.
+- https://github.com/fantasticit/electron-react-boilerplate
+  - 各窗口均采用 React 开发，也可根据需要更改为其他框架
+  - 支持多窗口：修改 erb.config.js 中 windows 配置
+  - 支持 Touchbar、Tray、Dock
+  - 支持更新
 - https://github.com/Devtography/electron-react-typescript-webpack-boilerplate
   - Ready to use Electron project template with React, Webpack and TypeScript seamlessly integrated
   - electron-builder for app packaging, with basic build config for Windows macOS included.
