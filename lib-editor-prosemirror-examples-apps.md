@@ -53,6 +53,15 @@ modified: 2022-08-18T16:57:15.296Z
     - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
   - https://github.com/benrbray/prosemirror-math
 
+- tiny-write /4Star/NALic/202208/ts/prosemirror/markdown-it/web版+桌面版
+  - https://github.com/dennis84/tiny-write
+  - https://tiny-write.pages.dev/
+  - 支持跨block选择部分文字
+  - 支持拖拽block修改顺序
+  - 依赖solid-js、codemirror6、idb-keyval、date-fns、markdown-it、y-prosemirror
+  - Just a little writing tool with markdown shortcuts that saves every change to local indexeddb.
+  - 跨平台客户端基于tauri实现，tauri部分使用rust实现
+
 - Starboard Notebook /889Star/MPLv2/202206/ts
   - https://github.com/gzuidhof/starboard-notebook
   - https://unpkg.com/starboard-notebook/dist/index.html

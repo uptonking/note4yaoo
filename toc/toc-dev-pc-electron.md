@@ -57,9 +57,13 @@ modified: 2021-01-16T20:50:23.893Z
 - https://github.com/weolar/miniblink49
   - 一个小巧、轻量的浏览器内核，用来取代wke和libcef
 # examples
-- https://github.com/zonetti/zonote
+- https://github.com/zonetti/zonote /202105/inactive
   - Cross-platform desktop note-taking app. 
   - Sticky notes with Markdown and Tabs. All in one .txt file.
+
+- https://github.com/pkolchanov/tablesapp
+  - Tablesapp is an local-first table design tool.
+  - All tables are ready for one-click cloud sharing. Hosted on Google Firebase.
 # boilerplate
 - https://github.com/ccorcos/electron-architecture /4Star/CC0-1/202108/ts
   - This project is a boilerplate electron app with a thoughtfully designed architecture

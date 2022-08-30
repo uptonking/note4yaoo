@@ -167,16 +167,6 @@ imageAlt: {
   - That way, the node can’t get in a state where the image is missing, since it’s not part of its editable content.
   - Alternatively, use 'image? p' as content expression, so that the image isn’t required and doesn’t ever need to be generated.
 
-- ## Block structure editor by prosemirror
-- https://discuss.prosemirror.net/t/block-structure-editor-by-prosemirror/2620
-- notion’s block is an independent contenteditable dom, which only has an independent node (table/calendar or other nodeType)
-  - I am wandering if separate all my schema into each mini-prosemirror editor and have a doc container that holds all the mini-prosemirror, can i achieve the block structure style new editor as notion.
-- You can, but I don’t see why you’d want that. **Separating your document into multiple editors breaks things like cross-block selections**. This type of setup complicates user interaction, and I never really understood what advantage it brings.
-  - in my opinion, notion block structure makes it flexible to save the data, cus doc can be described as two part: block-id-list, block-content-data-hashmap
-  - besides, each block has it's own menubar popover, so user don't need move mouse up to top menubar and down to editor frequently, make user experience better.
-  - in my project, i want treat table as database to make table data accessable and sharable between different user's docs, maybe block style can be a little bit easier.
-  - Notion’s solution to this is quite nice: dragging a selection across two blocks creates a selection containing the whole of both blocks.
-
 - ## ProseMirror for editing page layout
 - https://discuss.prosemirror.net/t/prosemirror-for-editing-page-layout/1045
   - I’m thinking about using ProseMirror for editing the layout of a blog post or similar. 

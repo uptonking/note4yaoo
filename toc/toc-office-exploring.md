@@ -7,8 +7,19 @@ modified: 2021-01-04T17:31:49.998Z
 
 # toc-office-exploring
 
-# office4j
+# guide
 
+# office-suite
+- dadadash /136Star/AGPL.v3/202201/js/vue
+  - https://github.com/daptin/dadadash
+  - 依赖 vue?、ckeditor5、vue-quill-editor、tabulator-tables、fullcalendar、codemirror5、jspdf、mermaid、markdown-it、moment、jquery
+  - Office suite with file browser, document editor, spreadsheet editor, calendar and data tables with CRUD API's ready to deploy
+  - File/folder manager
+  - Rich document editor
+  - Spreadsheet editor
+  - Calendar
+  - Data tables with CRUD API's
+# office4j
 - https://github.com/asciidocfx/asciidocfx
   - Asciidoc FX is a book/document editor to build PDF, Epub, Mobi and HTML books, documents and slides
 - https://github.com/wooio/htmltopdf-java

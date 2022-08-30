@@ -67,6 +67,18 @@ modified: 2022-08-18T16:57:46.405Z
     - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
     - https://github.com/pioug/atlassian-frontend-mirror
 
+- BlockNote /14Star/MPL.v2/202208/ts
+  - https://github.com/YousefED/BlockNote
+  - https://blocknote-main.vercel.app/
+  - A "Notion-style" block-based extensible text editor built on top of Prosemirror and Tiptap.
+  - 支持跨block选择部分文字
+  - 支持拖拽block修改顺序，特别是支持将list item拖入拖出列表
+  - 支持斜杠菜单、悬浮菜单修改标题层级、多级列表、顺滑动画
+  - 支持协作
+  - 依赖tiptap.v2、tippyjs、styled-components
+  - bugs
+    - 复制粘贴多行文本
+
 - bangle.dev-editor /527Star/MIT/202208/ts
   - https://github.com/bangle-io/bangle.dev
   - https://bangle.dev/docs/examples/markdown-editor

@@ -10,7 +10,19 @@ modified: 2022-08-19T23:00:22.162Z
 # guide
 
 # popular
-- think /1kStar/MIT/202208/ts/nestjs/tiptap
+- BlockNote /14Star/MPL.v2/202208/ts
+  - https://github.com/YousefED/BlockNote
+  - https://blocknote-main.vercel.app/
+  - A "Notion-style" block-based extensible text editor built on top of Prosemirror and Tiptap.
+  - 支持跨block选择部分文字
+  - 支持拖拽block修改顺序，特别是支持将list item拖入拖出列表
+  - 支持斜杠菜单、悬浮菜单修改标题层级、多级列表、顺滑动画
+  - 支持协作
+  - 依赖tiptap.v2、tippyjs、styled-components
+  - bugs
+    - 复制粘贴多行文本
+
+- think /1kStar/MIT/202208/ts/nestjs
   - https://github.com/fantasticit/think
   - https://think.codingit.cn/
   - 依赖 MySQL/NextJS/nestjs/tiptap
@@ -32,6 +44,13 @@ modified: 2022-08-19T23:00:22.162Z
   - [editor demo with addons](https://neeto-editor.onrender.com/?path=/docs/examples-customize-options-addons--addons)
   - 支持定义变量
   - neetoEditor library drives the rich text experience in the neeto products built at BigBinary
+
+- boring-editor /10Star/MIT/202205/ts/tiptap
+  - https://github.com/gridaco/boring
+  - A very boring text editor engine like notion.
+  - 不支持block-ui
+  - 支持斜杠菜单、协作
+  - 依赖tiptap2、yjs
 
 - markgh /6Star/NALic/202208/ts/提交多
   - https://github.com/EvitanRelta/markgh

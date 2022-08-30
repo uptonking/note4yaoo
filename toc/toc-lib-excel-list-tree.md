@@ -7,7 +7,7 @@ modified: 2022-08-21T10:02:41.845Z
 
 # toc-lib-excel-list-tree
 
-# tree
+# tree-ui
 
 - dnd-kit /3.9kStar/MIT/202201/ts
   - https://github.com/clauderic/dnd-kit
@@ -109,8 +109,20 @@ modified: 2022-08-21T10:02:41.845Z
   - Flexible tree rendering
   - Dynamic tree expansion with lazy loading
 # tree-data-structure
+- treemate /54Star/MIT/202208/ts
+  - https://github.com/07akioni/treemate
+  - https://treemate.vercel.app/guide.html
+  - All in one solution for tree structure in component developling.
+  - It helps you manipulate tree data structure for user interface. (Can be used in Tree, Select, Dropdown, Table, Menu components and ...)
+  - In treemate, a tree is composed of node (optional group node and optional ignored).
+
 - https://github.com/philipstanislaus/performant-array-to-tree
   - Converts an array of items with ids and parent ids to a nested tree in a performant O(n) way. Runs in browsers and Node.js.
+
+- https://github.com/jlxw/static-json-db
+  - A NoSQL key-value database stored as a directory tree of small JSON files which can be deployed as part of a static website and queried from client browsers in an efficient manner. 
+  - Data is stored in JSON files which are branched into smaller JSON files as size tresholds are met. 
+  - static-json-db can be a lower-cost alternative to traditional databases that do not need to be updated frequently. 
 
 - https://github.com/mihneadb/node-directory-tree
   - Creates a JavaScript object representing a directory tree.
@@ -120,12 +132,20 @@ modified: 2022-08-21T10:02:41.845Z
 
 - https://github.com/kwhitley/treeize
   - Converts row data (in JSON/associative array format or flat array format) to object/tree structure based on simple column naming conventions.
+  - https://github.com/panosoft/untreeize
+    - Reverse treeize library - takes hierarchical data produced by treeize and flattens it
 
 - https://github.com/arqex/freezer
   - A tree data structure that emits events on updates, even if the modification is triggered by one of the leaves, making it easier to think in a reactive way.
 
 - https://github.com/joaonuno/tree-model-js
   - Manipulate and traverse tree-like structures in javascript.
+
+- https://github.com/wshager/frink
+  - Standards-based hierarchical data processing library
+  - Parse XML into a DOM level 4 compatible, persistent (AKA immutable) virtual tree.
+  - Parse JSON into similar, traversable trees, or mix with XML.
+  - Generate L3, a lightweight, flat representation of XML or JSON trees (or mixed) for fast storage and retrieval.
 # file-folder-directory-scan-watch
 - 文件编辑浏览的实现思路
   - edit > ~~save(内存或本地)~~ > render

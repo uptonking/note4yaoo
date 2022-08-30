@@ -18,4 +18,8 @@ modified: 2021-05-06T09:46:30.944Z
 
 - who is using
   - gitlab
+
+- resources
+  - [General block dragging feature](https://github.com/ueberdosis/tiptap/issues/323)
+  - https://tiptap.dev/guide/node-views/examples#drag-handles
 # faq-not-yet

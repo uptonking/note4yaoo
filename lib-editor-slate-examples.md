@@ -42,9 +42,12 @@ modified: 2022-05-15T18:45:27.570Z
     - Artibox - A complete rich text editor based on Slate framework.
 
 - whim-notion-like /6Star/MIT/202108/ts
-  - https://github.com/coniel/whim 
+  - https://github.com/coniel/whim-editor
   - A highly customisable block based rich text editor inspired by Notion.
-  - 依赖 slate.v0.65.3，fuse.js(fuzzy-search)
+  - core依赖 slate.v0.65.3，fuse.js(fuzzy-search)
+  - ui依赖@braindrop-editor/core
+  - 不支持跨block选择部分文字
+  - 支持拖拽block修改顺序，特别是支持将list item拖入拖出列表
   - Whim is currently undergoing a complete re-write for version 2.0, with an initial release planned for the end of August 2022. 
     - Version 2.0 will include a much improved API, detailed docs, and solid test coverage.
 

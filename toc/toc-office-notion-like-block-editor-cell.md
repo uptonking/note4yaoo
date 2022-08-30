@@ -128,6 +128,8 @@ modified: 2022-08-14T16:26:48.558Z
   - 它不同于传统的文本编辑器，所有的内容都是以模块的概念来打造。灵感来自Notion
   - 所有的模块都以VUE组件的形式编写，可以灵活插拔。
   - 所有组件保存的数据，都以Json的形式存储在Vuex里供不同组件调用
+  - ref
+    - https://github.com/renmu123/v-block-editor
 # editorjs-plugins
 - https://github.com/yijian166/all-in-one-editorjs
 

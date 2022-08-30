@@ -17,6 +17,8 @@ modified: 2022-06-03T22:07:23.308Z
 - 想要分析notion的block架构设计，可以参考clone示例
 - block可以抽象成ast，结构设计可参考 gutenberg
 - 除了数据模型层、视图层的设计，还要考虑持久化保存和实时更新的实现
+  - 甚至可以考虑更通用的场景，如何将树型数据结构保存到数据库的表，如何打平更高效
+  - 分层级的数据，探索更高效的方式
 
 - notion-resources
   - [The data model behind Notion's flexibility](https://www.notion.so/blog/data-model-behind-notion)
@@ -61,9 +63,12 @@ modified: 2022-06-03T22:07:23.308Z
   - 暂不支持块级拖拽
 
 - whim-notion-like /6Star/MIT/202108/ts
-  - https://github.com/coniel/whim 
+  - https://github.com/coniel/whim-editor
   - A highly customisable block based rich text editor inspired by Notion.
-  - 依赖 slate.v0.65.3，fuse.js(fuzzy-search)
+  - core依赖 slate.v0.65.3，fuse.js(fuzzy-search)
+  - ui依赖@braindrop-editor/core
+  - 不支持跨block选择部分文字
+  - 支持拖拽block修改顺序，特别是支持将list item拖入拖出列表
   - Whim is currently undergoing a complete re-write for version 2.0, with an initial release planned for the end of August 2022. 
     - Version 2.0 will include a much improved API, detailed docs, and solid test coverage.
 
@@ -95,6 +100,13 @@ modified: 2022-06-03T22:07:23.308Z
   - A pluginable, intuitive medium/notion like rich text editor
   - built on draft-js, and its plugin system is based on tapable which is famous as the engine of webpack.
 
+- boring-editor /10Star/MIT/202205/ts/tiptap
+  - https://github.com/gridaco/boring
+  - A very boring text editor engine like notion.
+  - 不支持block-ui
+  - 支持斜杠菜单、协作
+  - 依赖tiptap2、yjs
+
 - https://github.com/ericyip/hexx /archived
   - https://hexx.vercel.app/
   - notion like block editor in react
@@ -112,7 +124,7 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/fouita/tailwind-editor
   - notion like tailwindcss editor built with svelte
-# notion-block-structure
+# notion-block-api-structure
 - https://github.com/dragonman225/nast
   - A block-based intermediate representation for document-like content.
   - `nast-types`: A TypeScript type definition module to specify data models for intermediate representation of data.
@@ -128,15 +140,20 @@ modified: 2022-06-03T22:07:23.308Z
 - https://github.com/tyleregeto/autoblock-editor
   - Very minimal multi-user block based document editor to play with CRDT in that context. 
   - Uses automerge for CRDT implementation. Doesn't do anything useful.
-# notion-clone-with-workspace
+
 - https://github.com/brenogcota/simple-notion-api-clone
   - a simple Notion API clone, made with Typescript, Express, Prisma ORM
 
 - https://github.com/Mabloq/mabloq-notion
   - An implementation of the popular Workspace App: Notion.
   - 依赖 nestjs、mongoose、passport、rxjs
-  - [Minimalist Notion Implementation: Part 1-Everything Is a Block](https://medium.com/@arcilamatt/minimalist-notion-implementation-part-1-everything-is-a-block-debda338b61a)
+  - [Minimalist Notion Implementation: Part 1-Everything Is a Block_202203](https://medium.com/@arcilamatt/minimalist-notion-implementation-part-1-everything-is-a-block-debda338b61a)
 
+- notionapi /1.7kStar/BSD/202208/go
+  - https://github.com/kjk/notionapi
+  - https://developers.notion.com/reference/block
+  - [Using Notion API Go client ](https://blog.kowalczyk.info/article/c9df78cbeaae4e0cb2848c9964bcfc94/using-notion-api-go-client.html)
+# notion-clone-with-workspace
 - https://github.com/minwook-shin/notion-database
   - https://notion-database.readthedocs.io/
   - Notion API Database Python Implementation
@@ -145,6 +162,10 @@ modified: 2022-06-03T22:07:23.308Z
 - https://github.com/JPDesignTech/NotionAPI
   - This project's main goal is to show off all the cool things you can do with the Official Notion API. 
   - This project will use Nest.js as a framework to create a simple RESTful API whose endpoints will plug into Notion's API References
+
+- https://github.com/justjake/monorepo/tree/main/packages/notion-api
+  - Use Notion as a headless content management system a la Contentful.
+  - Recursively fetch page content while building backlinks.
 
 - https://github.com/zhaowb/notion-params
   - a helper to build Notion API params, parse markdown text into Notion API blocks, include a simple client support all APIs version
@@ -228,6 +249,9 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/Lalit2005/pagely /inactive
   - Launch beautiful websites straight from your Notion workspace or from your GitHub repo
+
+- https://github.com/Dashibase/lotion
+  - An open-source Notion UI built with Vue 3
 # more-notion-like
 - https://anytype.io/
   - Anytype is a next generation software that breaks down barriers between applications, **gives back privacy and data ownership to users**.
@@ -235,9 +259,6 @@ modified: 2022-06-03T22:07:23.308Z
 - https://github.com/mraht-apps/notie
   - Notion-like workspace with offline mode and encryption
   - Completely offline (online synchronisation by storing encrypted file in cloud folder possible)
-
-- https://github.com/gridaco/boring
-  - A very boring text editor engine like notion. 
 
 - https://github.com/likhaCMS/likhaCMS
   - https://likhacms.github.io/

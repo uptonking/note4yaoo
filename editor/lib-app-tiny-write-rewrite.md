@@ -8,7 +8,13 @@ modified: 2022-08-22T16:23:59.496Z
 # lib-app-tiny-write-rewrite
 
 # guide
+- block拖拽如何实现？
+  - 跨block选择部分文本通过编辑器内置选区实现
+  - 注意将段落拖拽到列表和将列表项拖出列表
 
+- 基于block保存数据
+
+- 基于electron如何实现crdt
 # codebase
 
 # solidjs-dev
