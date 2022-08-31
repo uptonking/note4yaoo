@@ -364,6 +364,11 @@ modified: 2022-08-18T16:57:46.405Z
   - 高级功能未开源如comment/collab
   - Nib not only has good rich text editing capabilities but also addresses complex editing requirements like tracking changes made to a document, adding comments in document, collaborative editing and more...
 
+- humhub-prosemirror /15Star/Apache2/202108/js
+  - https://github.com/humhub/humhub-prosemirror
+  - Prosemirror based richtext implementation for the humhub social network
+  - 依赖 prosemirror-example-setup、markdown-it
+
 - gem /10Star/MIT/202205/ts/代码量少
   - https://github.com/tanishqkancharla/gem
   - 只依赖prosemirror，不依赖react

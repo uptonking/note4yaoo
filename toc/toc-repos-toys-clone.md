@@ -54,4 +54,7 @@ modified: 2022-08-13T05:10:32.238Z
   - 类似windows风格
     - https://dinhquangtrung.net/windows7/
     - https://github.com/PiyushSuthar/Windows-11-Web
+
+- https://github.com/vivek9patel/vivek9patel.github.io
+  - Personal portfolio website of theme Ubuntu 20.04, made using NEXT.js & tailwind CSS
 # more-repos

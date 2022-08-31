@@ -57,9 +57,11 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - pivot-table/grid--0828
   - mirror-based-editor-vanillajs--0825
   - app-knowledge-base--0904
-# dev-08
+# dev-09
 
-## 0830
+## 0901
+
+# dev-08
 
 ## 0829
 
@@ -76,7 +78,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                       `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                          `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

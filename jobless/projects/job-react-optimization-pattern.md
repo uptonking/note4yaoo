@@ -16,6 +16,7 @@ modified: 2021-10-10T09:25:37.896Z
 ## 
 
 ## redux与mobx的区别?
+
 - redux将数据保存在单一的store中
   - mobx将数据保存在分散的多个store中
 - redux使用plain object保存数据，需要手动处理变化后的操作
@@ -28,36 +29,44 @@ modified: 2021-10-10T09:25:37.896Z
   - mobx中有更多的抽象和封装，调试会比较困难，同时结果也难以预测；
 
 ## redux的原理
+
 - 整个工作流程：
   - 用户（通过View）发出Action，发出方式就用到了dispatch方法。
   - Store自动调用Reducer，并且传入两个参数：当前State和收到的Action，Reducer会返回新的State
   - State一旦有变化，Store就会调用监听函数，来更新View。
 
 ## redux中如何进行异步操作?
-- 可以在`componentDidmount中直接进行请求无须借助redux.
-- 在一定规模的项目中,上述方法很难进行异步流的管理,通常情况下我们会借助redux的异步中间件进行异步处理.
 
+- 可以在`componentDidmount中直接进行请求无须借助redux.
+- 在一定规模的项目中, 上述方法很难进行异步流的管理, 通常情况下我们会借助redux的异步中间件进行异步处理.
 # faq
 
 ## 
 
 ## 
 
-## 
+## the "object map lookup" pattern (whatever you want to call it) is extremely useful and more concise than switch/ternary/if-statements IMO
+
+- https://twitter.com/DavidKPiano/status/1564950527477252098
+
+- Relevant not only for React, but for any switch/case or if/else logic in JS, when you're mapping one set of values to another
+  - This should not just be a react tip but a programming tip. Use clear mappings vs long conditional statements. #developer
+  - I believe this is called the “Strategy Pattern” 
 
 ## React组件通信如何实现?
+
 - 父组件向子组件通讯
   - 父组件可以向子组件通过传 props 的方式，向子组件进行通讯
 - 子组件向父组件通讯
-  - props+回调的方式,父组件向子组件传递props进行通讯，此props为作用域为父组件自身的函数，子组件调用该函数，将子组件想要传递的信息，作为参数，传递到父组件的作用域中
+  - props+回调的方式, 父组件向子组件传递props进行通讯，此props为作用域为父组件自身的函数，子组件调用该函数，将子组件想要传递的信息，作为参数，传递到父组件的作用域中
 - 兄弟组件通信
-  - 找到这两个兄弟节点共同的父节点,结合上面两种方式由父节点转发信息进行通信
+  - 找到这两个兄弟节点共同的父节点, 结合上面两种方式由父节点转发信息进行通信
 - 跨层级通信
-  - Context设计目的是为了共享那些对于一个组件树而言是“全局”的数据，例如当前认证的用户、主题或首选语言,对于跨越多层的全局数据通过Context通信再适合不过
+  - Context设计目的是为了共享那些对于一个组件树而言是“全局”的数据，例如当前认证的用户、主题或首选语言, 对于跨越多层的全局数据通过Context通信再适合不过
 - 发布订阅模式
-  - 发布者发布事件，订阅者监听事件并做出反应,我们可以通过引入event模块进行通信
+  - 发布者发布事件，订阅者监听事件并做出反应, 我们可以通过引入event模块进行通信
 - 全局状态管理工具
-  - 借助Redux或者Mobx等全局状态管理工具进行通信,这种工具会维护一个全局状态中心Store,并根据不同的事件产生新的状态
+  - 借助Redux或者Mobx等全局状态管理工具进行通信, 这种工具会维护一个全局状态中心Store, 并根据不同的事件产生新的状态
 
 ## flux vs mvc
 

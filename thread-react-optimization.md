@@ -10,7 +10,29 @@ modified: 2021-09-24T06:50:31.330Z
 # discuss
 - ## 
 
-- ## 
+- ## React tip: when conditionally rendering component based on some string enum (like a role), use an object to map enum values to components.
+- https://twitter.com/DavidKPiano/status/1564950527477252098
+  - This can be cleaner than using conditional operators, and it keeps the logic organized & clear.
+- Honestly, I like to use objects instead of the switch statement, it's more clear and easy to add new options
+  - Surprisingly, it's faster too! JS doesn't optimize for switch statements I believe (O(n) instead of O(1)), so many case statements can have a noticeable performance impact.
+  - [Is a hash faster than a Switch in JavaScript?](https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/)
+  - It comes down to the fact that switch statements in JS don't use jump tables (AFAIK).
+
+- the "object map lookup" pattern (whatever you want to call it) is extremely useful and more concise than switch/ternary/if-statements IMO
+
+- Relevant not only for React, but for any switch/case or if/else logic in JS, when you're mapping one set of values to another
+  - This should not just be a react tip but a programming tip. Use clear mappings vs long conditional statements. #developer
+  - I believe this is called the “Strategy Pattern” 
+
+- This is a great pattern, and works really well with dynamic imports which reduce the bundled JS size and load time. 
+  - Why bother loading the views for the roles that cannot access those components?
+
+- I'm hoping https://github.com/tc39/proposal-pattern-matching happens soon enough for the more complex cases where you can't express as key+value map.
+
+- I think this works for RBAC, but in general for more complex apps (especially B2B apps) I wouldn't recommend using roles this way.
+  - Instead, you often look at permissions — e.g., if `hasPermission(user, EDIT, Product)`, you get `EditorView`; otherwise you get `DefaultView`.
+
+- A functional alternative. It is possible to extend the "when" function with lazy imports (dynamic imports).
 
 - ## helping someone debug react perf got me thinking about a generic high-level approach
 - https://twitter.com/_paulshen/status/1441177985512468485

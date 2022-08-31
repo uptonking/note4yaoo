@@ -140,6 +140,8 @@ modified: 2021-09-20T09:00:43.564Z
 
 - [v2ex 工作板块](https://v2ex.com/?tab=jobs)
 
+- [955公司白名单](https://github.com/formulahendry/955.WLB/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
+
 - [leetcode-cn 力扣](https://leetcode-cn.com/circle/career/newest)
 
 - [牛客网 社招广场](https://nowpick.nowcoder.com/w/fulltime/center?recruitType=3&careerJobId=11022&order=1)
