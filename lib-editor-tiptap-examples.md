@@ -176,6 +176,10 @@ modified: 2022-08-19T23:00:22.162Z
   - https://notes.keymorph.com/
   - A free web application for creating and editing notes.
 
+- https://github.com/verbb/vizy
+  - A flexible visual editor for Craft CMS
+  - 依赖tiptap2、vue3、tippy.js、codemirror-editor-vue
+
 - https://github.com/lostdesign/linked
   - https://uselinked.com/
   - Daily journaling without distraction.

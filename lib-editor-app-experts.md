@@ -7,14 +7,37 @@ modified: 2022-08-21T10:16:52.004Z
 
 # lib-editor-app-experts
 
-
 # guide
 
+- resources
+  - https://www.rich-text-js-jobs.com/
 # popular
 
+# prosemirror-experts
+- https://github.com/benrbray
+  - https://github.com/benrbray/noteworthy
+  - https://github.com/benrbray/prosemirror-math
+
+- https://github.com/ocavue
+  - Core team member at remirror
+  - https://github.com/ocavue/rino
+    - A better way to write Markdown
+
+- https://github.com/YousefED
+  - https://github.com/YousefED/BlockNote
+  - https://github.com/YousefED/Matrix-CRDT
+  - https://github.com/YousefED/SyncedStore
+
+## prosemirror-lovers
+
+- https://github.com/namiwang
+  - https://discuss.prosemirror.net/u/namiwang
+  - https://github.com/namiwang/fiber-note
+
+- https://discuss.prosemirror.net/u/Julian123
+  - 块编辑器
+
+- https://github.com/zlv-thisF?tab=stars
+  - https://discuss.prosemirror.net/u/zlv-thisF
+  - 块编辑器
 # more
-
-
-
-
-

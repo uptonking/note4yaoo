@@ -8,25 +8,12 @@ modified: 2021-06-12T02:41:33.389Z
 # lib-editor-prosemirror-community
 
 # guide
-- prosemirror-experts
-  - https://github.com/benrbray
-    - https://github.com/benrbray/noteworthy
-    - https://github.com/benrbray/prosemirror-math
-  - https://github.com/ocavue
-    - Core team member at remirror
-    - https://github.com/ocavue/rino
-      - A better way to write Markdown
-  - https://github.com/YousefED
-    - https://github.com/YousefED/BlockNote
-    - https://github.com/YousefED/Matrix-CRDT
-    - https://github.com/YousefED/SyncedStore
-
-- prosemirror-lovers
-  - https://github.com/namiwang
-  - https://discuss.prosemirror.net/u/zlv-thisF
-    - 块编辑器
-  - https://discuss.prosemirror.net/u/Julian123
-    - 块编辑器
+- search
+  - notion block editor
+  - save to database
+  - block data model
+  - virtualize/viewport
+  - form
 # discuss
 - ## 
 
@@ -37,7 +24,7 @@ modified: 2021-06-12T02:41:33.389Z
 - the code is now typed using strict TypeScript
 - No breaking changes should have been made to the JavaScript interface.
 
-- ##  Why did you pick that over Slate or Draft?
+- ## Why did you pick that over Slate or Draft?
 - https://twitter.com/nikgraf/status/1415726807446401024
 - Afaik all of the are maintained.
   - Draft’s data updates don’t allow for an integration with a CRDT.

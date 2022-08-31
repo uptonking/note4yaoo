@@ -34,10 +34,6 @@ modified: 2021-06-12T02:40:42.535Z
   - Is this something that is changed in an outside system? Then probably it is best to just store an ID in ProseMirror where you want the link to go and then replace the metadata post editing.
   - Maybe someone else gets it better than me, or you may want to post a screenshot or something before I can recommend a pattern.
 
-- ## Theoretical saving question
-- https://discuss.prosemirror.net/t/theoretical-saving-question/656
-  - Better to save a user document from ProseMirror in a whole file on the database or as separate individual changes?
-
 - ## Tooltip inline menu fights with iOS selection menu
 - https://github.com/ProseMirror/prosemirror/issues/7
 - Since control over the tooltip menu is impossible for web pages, the **recommendation** here is to either not use the tooltip menu on iOS, or set its `position` option to "below" to prevent the two tooltips from overlapping.

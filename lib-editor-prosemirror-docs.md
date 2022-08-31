@@ -147,7 +147,7 @@ modified: 2021-06-02T17:12:56.049Z
 
 - The editor below talks to a simple server-side service to allow real-time collaborative editing.
 - The demo also (crudely) shows how ProseMirror can be used to implement something like out-of-line annotations. 
-# library guide
+# prosemirror-guide
 
 ## Introduction
 
@@ -421,10 +421,11 @@ tr.delete(5, 7).split(5) // ok too
 - We often do need to preserve positions across document changes, 
   - steps can give you a `map()` that can convert between positions in the document before and after applying the step.
   - map(old-pos) will return new-pos
+  - a step map indicates a difference between the docs before and after that step.
 - Transform objects automatically accumulate a set of maps for the steps in them, using an abstraction called Mapping, 
   - which collects a series of step maps and allows you to `map` through them in one go.
 - There are cases where it's not entirely clear what a given position should be mapped to. 
-  - `map` method on step maps and mappings accepts a second parameter,  `bias`, which you can set to `-1` to keep your position in place when content is inserted on top of it.
+  - `map` method on step maps and mappings accepts a second parameter,     `bias`, which you can set to `-1` to keep your position in place when content is inserted on top of it.
 - The reason that individual steps are defined as small, straightforward things is that it makes this kind of mapping possible, along with inverting steps in a lossless way, and mapping steps through each other's position maps.
 
 - Rebasing
@@ -444,7 +445,7 @@ stepB '(docA) = docAB
 
 ## The editor state
 
-- There are the three main components of a ProseMirror state, and exist on state objects as `doc`,  `selection`, and `storedMarks`.
+- There are the three main components of a ProseMirror state, and exist on state objects as `doc`,     `selection`, and `storedMarks`.
   - But plugins may also need to store state
   - This is why the set of active plugins is also stored in the state, and these plugins can define additional slots for storing their own state.
 

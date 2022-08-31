@@ -9,33 +9,7 @@ modified: 2022-08-30T01:46:22.149Z
 
 # guide
 
-# discuss-block-editor
-- ## 
-
-- ## 
-
-- ## Block structure editor by prosemirror_202003
-- https://discuss.prosemirror.net/t/block-structure-editor-by-prosemirror/2620
-  - notion’s block is an independent contenteditable dom, which only has an independent node (table/calendar or other nodeType)
-  - I am wandering if separate all my schema into each mini-prosemirror editor and have a doc container that holds all the mini-prosemirror, can i achieve the block structure style new editor as notion.
-  - besides, doc contains too many prosemirror instance will affect performance severely ？
-
-- You can, but I don’t see why you’d want that. **Separating your document into multiple editors breaks things like cross-block selections**. This type of setup complicates user interaction, and I never really understood what advantage it brings.
-  - in my opinion, notion block structure makes it flexible to save the data, cus doc can be described as two part: block-id-list, block-content-data-hashmap
-  - besides, each block has it's own menubar popover, so user don't need move mouse up to top menubar and down to editor frequently, make user experience better.
-  - in my project, i want treat table as database to make table data accessable and sharable between different user's docs, maybe block style can be a little bit easier.
-  - Notion’s solution to this is quite nice: dragging a selection across two blocks creates a selection containing the whole of both blocks.
-
-- Presumably it allows for larger documents without scaling issues, as the editor only needs to run calculations for the block currently being edited.
-
-- Notion style block editor can be done using Prosemirror without multiple editors as you can hook into hover events and get all the information you need using `posAtCoords`.
-
-- ## more
-- [I’m building a heavily-customized editor like roam-research](https://discuss.prosemirror.net/t/im-building-a-heavily-customized-editor-like-roam-research/3006)
-  - https://github.com/namiwang/fiber-note
-  - [building a roam-like, networked, heavily-customized realtime editor, part 1](https://namiwang.github.io/2020/11/12/building-a-roam-like-networked-heavily-customized-realtime-editor-part-1.html)
-
-# discuss-stars
+# discuss
 - ## 
 
 - ## 
