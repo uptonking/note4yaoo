@@ -13,6 +13,23 @@ modified: 2021-09-29T06:38:35.002Z
 
 ## 
 
+## [Mattermost Mobile Search Optimization Challenge](https://www.youtube.com/watch?v=_qYFonJoyZI)
+
+- This PR speeds up the response time when a user switches between the Messages and Files tabs in the search results screen.
+  - https://github.com/mattermost/mattermost-mobile/pull/6579
+  - 👉🏻 This was accomplished by mounting the Files and Messages in a view that is twice the device width and transitioning the View left and Right when clicking the Messages or Files tabs. This greatly increases the speed because the posts and files are only rendered once.
+  - Another change was to let the two results views scroll independently so the user can scroll in one view, view the other, and upon returning to the original view, their scroll position will have been persisted.
+
+## [design crew, which would you pick for a mobile layout?](https://twitter.com/steveruizok/status/1564893253274673152)
+
+- Wow, Miro’s mobile team has some great solutions here.
+- Maybe go back to what we're doing currently, which is to put all styles into a menu that's either open or closed? Basically the same layout as in desktop, but hidden behind a button.
+
+- I think in a case of mobile, less is more.  Kinda like you show with Miro below, hide what's not needed.
+  - Also, buttons have to be notably larger to avoid fat-fingering, so delicate, loaded toolbars probably need to avoided entirely in favor of a few larger ones (when applicable)
+
+- Not a designer, but most mobile apps for editing photos and the like (that I’ve used on iOS) have the tool selection at the bottom like C.
+
 ## [hacker news: I Replaced My Native iOS App with a Cross-Platform Web App and No One Noticed](https://news.ycombinator.com/item?id=31243501)
 
 - This post makes very big claims based on a very basic application that doesn't seem to be much more than a few toggle buttons and a couple of animations thrown in, and some 'statistics' that don't appear to be based on any actual facts.

@@ -11,7 +11,26 @@ modified: 2021-02-26T16:42:06.878Z
 
 - ## 
 
-- ## 
+- ## Putting the finishing touches on my new Tree component. There are half a million fairly complex items in this demo
+- https://twitter.com/fabiospampinato/status/1564010912822034434
+- I like this tiny virtualized list implementation
+  - https://github.com/developit/preact-virtual-list
+- Is this position:absolute based virtualization?
+  - Yeah he said that in a previous post
+
+- Bare-bones and hacky implementation, but this is near-optimal virtualized list rendering on the web, while scrolling no nodes are created, destroyed or attached/detached/moved in the DOM, and no VDOMs are diffed. There's barely anything happening, just pure performance 
+  - https://twitter.com/fabiospampinato/status/1562481426833977345
+  - I optimized some internal details, now it does sub-millisecond scripting while scrolling, for a list containing half a million items. 
+- 👉🏻 Are you doing something funky like position absolute changing on those 6 elements, so you don't need to key it?
+  - Yeah exactly, here's a version with the "top" property animated, you can see items changing position. It's that plus rendering the same number of items all the time, plus reusing nodes if possible, plus keeping the order of nodes fixed, plus using Solid-like signals.
+- I was always sad about having to remove recycling from Preact. It was clever and a huge performance win.
+  - Why did this have to be removed?
+  - It does unexpected things with any stateful DOM elements, like form inputs,      `<video>, <img>`, etc. Everything doing recycling runs into it eventually, just takes a while. Not a showstopper for some use-cases, but often makes for a confusing default.
+- This is non-keyed isn't it. That's always the tradeoff with going hyper-optimized. Data swap on fixed nodes using reactive bindings. What's the hacky part?
+  - Yeah it's 99% just a non-keyed `<For>` that keeps the same nodes around and updates the signals. The user code, at least for this very simple use case, looks identical to what one may write for a regular `<For>` though, so the performance is kinda hassle-free.
+  - The hacky (mainly just ugly really) parts are: 
+  - 1) I didn't think about the fact that `<For>` could return nodes in a different order, and that would trigger the diff function, which would mess up with the near-optimality, so I patched `<ForValue>` in Voby to sort results for now.
+  - 2) I didn't realize that depending on the exact scrolling state the number of items visible could vary, like maybe you can fit exactly 10 25px items in a 250px container, but if two of them are partially visible then you can see 11 items. But I need the number to be constant.
 
 - ## how browsers parse HTML – do most browsers start parsing parts of the html _as_ they are still downloading or they have to wait until the whole HTML document is completely downloaded?
 - https://twitter.com/he_zhenghao/status/1534379242657660930

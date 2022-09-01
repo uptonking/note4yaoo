@@ -267,6 +267,7 @@ modified: 2022-08-21T10:02:27.788Z
 - https://github.com/developit/preact-virtual-list
   - https://jsfiddle.net/developit/qqan9pdo/
   - Virtual List that only renders visible items. Supports millions of rows.
+  - 单文件，代码过于简单
 
 ## div-more
 
