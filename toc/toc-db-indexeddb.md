@@ -101,9 +101,15 @@ modified: 2022-06-03T22:06:16.249Z
 
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb
-  - A realtime Database for JavaScript Applications
+  - https://rxdb.info/
+  - 依赖rxjs7
+  - A fast, offline-first, reactive database for JavaScript Applications
   - a NoSQL-database for JavaScript Applications like Websites, hybrid Apps, Electron-Apps and NodeJs. 
-  - RxDB is not a self contained database. It is a wrapper around another database that implements the `RxStorage` interface. At the moment you can either use PouchDB or Dexie.js or LokiJS as underlaying storage. Each of them respectively has it's own adapters that can be swapped out, depending on your needs. For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
+  - 👉🏻 RxDB is not a self contained database. 
+    - It is a wrapper around another database that implements the `RxStorage` interface. 
+    - At the moment you can either use `PouchDB` or `Dexie.js` or `LokiJS` as underlaying storage. 
+    - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
+    - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
 
 - https://github.com/gruns/ImmortalDB
   - the best way to store persistent key-value data in the browser. 

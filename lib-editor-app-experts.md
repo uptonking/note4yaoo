@@ -14,6 +14,14 @@ modified: 2022-08-21T10:16:52.004Z
 # popular
 
 # prosemirror-experts
+
+- https://github.com/ccorcos
+  - https://github.com/ccorcos/prosemirror-examples
+
+- https://github.com/tanishqkancharla
+  - https://github.com/tanishqkancharla/gem
+  - https://discuss.prosemirror.net/u/moonrise-tk
+
 - https://github.com/benrbray
   - https://github.com/benrbray/noteworthy
   - https://github.com/benrbray/prosemirror-math

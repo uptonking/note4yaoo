@@ -14,7 +14,21 @@ modified: 2022-08-30T19:04:37.774Z
 
 - ## 
 
-- ## 
+- ## Data structure with ids
+- https://discuss.prosemirror.net/t/data-structure-with-ids/33
+  - We have a data structure where blocks need to remain associated with ids (and metadata). 
+  - Is there a way to keep the edited html tied to a specific id, so we can convert back to the original data structure?
+  - Now we’re using a `data-grid-id` attribute on each top-level child of our editable. We have a function to make a new id if new blocks are made by the editor.
+
+- I see this is a very old thread, I’d like to know going down this road with Prosemirror is a good solution. 
+  - My company is looking to switch over to Prosemirror from another rich text editor, but we need to keep our existing data structure and update system. 
+  - Basically like above, 👉🏻 we store each top level node by a unique key, and we persist updates to the doc by a transaction with the key of the top level node that was changed, and the new data within. 
+  - Will this mesh ok with Prosemirror or should I look at other editors?
+- You should be able to map between such a system and ProseMirror transactions, if you really want to. Getting collaborative editing working with such a representation is another issue, but maybe that’s not a requirement for you.
+
+- There are very concrete plans to add the ability to modularly define new attributes for node types, but that doesn’t exist yet. So you could kludge something up that attaches ids to nodes after parsing (node.attrs.id = 100), and those will survive editing and stay present in the document. You could even (though again, the API sucks) extend serializers to somehow include these IDs in a given document output format. But to be able to do this in a clean and modular way, you’ll have to wait for the schema work to materialize. I’ll keep this specific use case in mind as I work on that.
+
+- You could try putting your data directly into attributes, but you’ll have many of the same issues: what happens when the node is split? what happens when it is copied? You no longer have to worry about uniqueness though, which might be helpful.
 
 - ## how to turn the current paragraph into a heading and wraps it into a section.
 - https://discuss.prosemirror.net/t/how-to-make-changes-that-temporarily-violate-the-schema/4836

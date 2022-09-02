@@ -130,6 +130,11 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/davvidbaker/prosemirror-position-debugger
   - I wouldn't say the code in here is exemplary by any means. Lots of mutation, no tests (yet), no strong typing
 
+- https://github.com/ccorcos/prosemirror-decouple-plugins
+  - Problem: Prosemirror plugins couple both schema and view.
+  - [Separating state and view plugins](https://discuss.prosemirror.net/t/separating-state-and-view-plugins/3970)
+  - [Generalized State Architecture](https://discuss.prosemirror.net/t/generalized-state-architecture/3908)
+
 - https://github.com/ccorcos/prosemirror-architecture
   - Since I'm already using ProseMirror, what if we were to model an entire application with a similar style for state management a'la Elm Architecture.
 

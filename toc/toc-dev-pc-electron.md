@@ -25,6 +25,21 @@ modified: 2021-01-16T20:50:23.893Z
   - draw.io is the old name for diagrams.net
 - https://github.com/Foundry376/Mailspring
   - maintained fork of @nylas Mail by one of the original authors.
+# extensions
+- https://github.com/sindresorhus/electron-store
+  - Simple data persistence for your Electron app or module
+    - Save and load user preferences, app state, cache, etc
+
+- https://github.com/weolar/miniblink49
+  - 一个小巧、轻量的浏览器内核，用来取代wke和libcef
+# boilerplate
+- https://github.com/ccorcos/electron-architecture /4Star/CC0-1/202108/ts
+  - This project is a boilerplate electron app with a thoughtfully designed architecture
+  - Main and renderer processes manage state using a Redux-like state machine.
+  - Electron BrowserWindows are controlled declaratively through the application state.
+  - Electron IPC uses a Proxy enabling "Rename Symbol" and "Find All References" in VSCode.
+- https://github.com/ccorcos/electron-boilerplate
+  - uses TypeScript and demonstrates using a preload script to interact with the native APIs.
 
 - https://github.com/electron-react-boilerplate/electron-react-boilerplate
   - https://electron-react-boilerplate.js.org/
@@ -47,15 +62,6 @@ modified: 2021-01-16T20:50:23.893Z
   - https://github.com/Doubleshotjs/doubleshot
     - A split node backend and electron main process.
     - integrating the nodejs backend framework with electron to build a desktop application. 
-# extensions
-- https://github.com/sindresorhus/electron-store
-  - Simple data persistence for your Electron app or module
-    - Save and load user preferences, app state, cache, etc
-
- 
-
-- https://github.com/weolar/miniblink49
-  - 一个小巧、轻量的浏览器内核，用来取代wke和libcef
 # examples
 - https://github.com/zonetti/zonote /202105/inactive
   - Cross-platform desktop note-taking app. 
@@ -64,12 +70,6 @@ modified: 2021-01-16T20:50:23.893Z
 - https://github.com/pkolchanov/tablesapp
   - Tablesapp is an local-first table design tool.
   - All tables are ready for one-click cloud sharing. Hosted on Google Firebase.
-# boilerplate
-- https://github.com/ccorcos/electron-architecture /4Star/CC0-1/202108/ts
-  - This project is a boilerplate electron app with a thoughtfully designed architecture
-  - Main and renderer processes manage state using a Redux-like state machine.
-  - Electron BrowserWindows are controlled declaratively through the application state.
-  - Electron IPC uses a Proxy enabling "Rename Symbol" and "Find All References" in VSCode.
 # more
 - https://github.com/uptick/react-keyed-file-browser
   - https://uptick.github.io/react-keyed-file-browser/

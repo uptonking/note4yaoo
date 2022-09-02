@@ -136,7 +136,7 @@ modified: 2021-07-11T08:30:03.165Z
   - This is horrible for accessibility and a great example of what *not* to do. 
   - I’m surprised no one flagged this
   - [google docs canvas preview](https://docs.google.com/document/d/1N1XaAI4ZlCUHNWJBXJUBFjxSTlsD5XctCz6LB3Calcg/preview)
-  - [Google Docs will now use canvas based rendering](https://news.ycombinator.com/item?id=27129858)
+  - [Google Docs will now use canvas based rendering__202105](https://news.ycombinator.com/item?id=27129858)
 - They could have worked with the Chrome team to help improve standards where they are lacking and make the web better for all of us, 
   - but instead decided to reimplement the browser themselves. Very disappointing.
   - Well, to be fair, the old one was also very broken. But at least it had the potential for improvement. Switching to canvas kinda prevents that.

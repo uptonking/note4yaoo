@@ -50,6 +50,10 @@ modified: 2022-02-05T18:45:34.558Z
 - https://github.com/wouterraateland/use-pan-and-zoom
   - https://codesandbox.io/s/n3rpmj60w0
   - React hook for panning and zooming a container
+
+- https://github.com/tanishqkancharla/draggable-list
+  - https://github.com/ccorcos/draggable-list
+  - A well-contained abstraction with simple performant animations.
 #  zoomable ui
 - https://github.com/aarondail/react-zoomable-ui
   - https://aarondail.github.io/react-zoomable-ui/example/

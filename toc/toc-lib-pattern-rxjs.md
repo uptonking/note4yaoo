@@ -49,12 +49,19 @@ modified: 2020-12-13T14:36:15.618Z
     - we will also provide support for Flutter soon
 - https://github.com/marblejs/marble
   - functional reactive Node.js framework for building server-side applications, based on TypeScript and RxJS.
-- https://github.com/pubkey/rxdb
-  - A realtime Database for JavaScript Applications
+
+- rxdb /17.6kStar/Apache2/202206/ts
+  - https://github.com/pubkey/rxdb
+  - https://rxdb.info/
+  - 依赖rxjs7
+  - A fast, offline-first, reactive database for JavaScript Applications
   - a NoSQL-database for JavaScript Applications like Websites, hybrid Apps, Electron-Apps and NodeJs. 
-  - Reactive means that you can not only query the current state, but subscribe to all state changes like the result of a query or even a single field of a document.
-  - RxDB implements rxjs to make your data reactive. 
-    - This makes it easy to always show the real-time database-state in the dom without manually re-submitting your queries.
+  - 👉🏻 RxDB is not a self contained database. 
+    - It is a wrapper around another database that implements the `RxStorage` interface. 
+    - At the moment you can either use `PouchDB` or `Dexie.js` or `LokiJS` as underlaying storage. 
+    - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
+    - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
+
 - https://github.com/Nozbe/WatermelonDB
   - Reactive & asynchronous database for powerful React and React Native apps
 
@@ -87,9 +94,7 @@ modified: 2020-12-13T14:36:15.618Z
 - https://github.com/AveroLLC/types-first-ui
   - an opinionated framework for building long-lived, maintainable UI
   - Epics(backed by redux-observable) as mechanism for side effects/middleware (vs. thunks or sagas)
-
 # rxjs-state
-
 - https://github.com/TalkingData/rxloop /201910
   - 基于RxJS的可预测状态管理容器，redux + redux-observable架构(Inspired by dva)
   - redux自身的300行代码只处理简单的同步数据流，把脏活、累活比如异步数据流全扔给各种适配和插件处理了。
@@ -123,9 +128,7 @@ modified: 2020-12-13T14:36:15.618Z
   - Dead simple state management built with RxJS
 - https://github.com/shayeLee/floway
   - 基于 RxJS v6 的前端应用状态管理解决方案
-
 # examples
-
 - https://github.com/baadal/starter-web
   - 依赖@motion/styled、express、react-router-dom、rxjs6
   - React Starter Kit for building API-driven Modern Web Apps.
@@ -151,9 +154,7 @@ modified: 2020-12-13T14:36:15.618Z
   - Learning how to do autocomplete using RxJS and redux-observable
 - https://github.com/nem035/rxjs-autocomplete-example
   - demonstration of an autocomplete box for Wikipedia using RxJS.
-
 # extensions
-
 - https://github.com/cartant/rxjs-spy
   - A debugging library for RxJS
   - The engineers at Slack have adopted rxjs-spy
@@ -198,9 +199,7 @@ modified: 2020-12-13T14:36:15.618Z
   - A very flexible and simple websocket library for rxjs
 - https://github.com/kondi/rxjs-grpc
   - Typesafe gRPC with RxJS in TypeScript
-
 # more-repos
-
 - https://github.com/recksjs/recks
   - React-like RxJS-based framework
 - https://github.com/grammarly/focal

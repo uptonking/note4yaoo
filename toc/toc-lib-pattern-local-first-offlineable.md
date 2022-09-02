@@ -17,12 +17,14 @@ modified: 2021-09-04T14:03:39.046Z
   - Use with React, React Native, or as standalone state container for any web app.
   - 🤔 没必要执着于寻找已有的offline方案，使用 persist + crdt 也可以实现协作
 
-- https://github.com/jaredly/local-first /191Star/202104/js/inactive
+- local-first /191Star/202104/js/inactive
+  - https://github.com/jaredly/local-first
   - This aims to eventually be a fully-featured solution for managing, syncing, and storing application data, in a way that works offline, and collaboratively.
   - Currently implemented
     - a hybrid logical clock (blog post, code)
     - a nested object CRDT (code)
     - a rich-text CRDT (code, example integration with quill, visualization of the data structure)
+  - [Local-first database: RxDB + PouchDB](https://jaredforsyth.com/posts/local-first-database-rxdb-pouchdb/)
 
 - tuple-database /200Star/NALic/202208/ts
   - https://github.com/ccorcos/tuple-database
@@ -80,9 +82,17 @@ modified: 2021-09-04T14:03:39.046Z
   - Indexing, metrics, relationships - and even an undo stack for your app state!
   - Easily sync your data to local or remote storage, and use idiomatic bindings to your React UI.
 
-- https://github.com/pubkey/rxdb
-  - A client side, offline-first, reactive database for JavaScript Applications
-  - RxDB is not a self contained database. It is a wrapper arround another database that implements the `RxStorage` interface. At the moment you can either use PouchDB or Dexie.js or LokiJS as underlaying storage. Each of them respectively has it's own adapters that can be swapped out, depending on your needs. For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
+- rxdb /17.6kStar/Apache2/202206/ts
+  - https://github.com/pubkey/rxdb
+  - https://rxdb.info/
+  - 依赖rxjs7
+  - A fast, offline-first, reactive database for JavaScript Applications
+  - a NoSQL-database for JavaScript Applications like Websites, hybrid Apps, Electron-Apps and NodeJs. 
+  - 👉🏻 RxDB is not a self contained database. 
+    - It is a wrapper around another database that implements the `RxStorage` interface. 
+    - At the moment you can either use `PouchDB` or `Dexie.js` or `LokiJS` as underlaying storage. 
+    - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
+    - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
 # local-first examples
 - https://github.com/unigraph-dev/unigraph-dev
   - A local-first and universal knowledge graph, personal search engine, and workspace for your life.

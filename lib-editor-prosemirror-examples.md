@@ -33,7 +33,7 @@ modified: 2022-08-18T16:57:46.405Z
   - pageboard/client(页面搭建), noteworthy(solidjs)
   - 建站编辑器应该参考gutenberg、wix
 # prosemirror-popular
-- tiptap /16.1kStar/MIT/202208/ts/prosemirror
+- tiptap /16.1kStar/MIT/202208/ts
   - https://github.com/ueberdosis/tiptap
   - https://tiptap.dev/
   - https://tiptap.dev/examples/default
@@ -82,6 +82,9 @@ modified: 2022-08-18T16:57:46.405Z
 - bangle.dev-editor /527Star/MIT/202208/ts
   - https://github.com/bangle-io/bangle.dev
   - https://bangle.dev/docs/examples/markdown-editor
+  - https://app.bangle.io/
+  - 支持拖拽标题section，但不支持拖拽section内的段落
+  - 使用了浏览器文件系统api来支持打开本地文件
   - Collection of higher level rich text editing tools. It powers the local only note taking app https://bangle.io
   - bangle.io /711Star/AGPL.v3/202208/ts
     - https://github.com/bangle-io/bangle-io
@@ -125,18 +128,23 @@ modified: 2022-08-18T16:57:46.405Z
 
 - curvenote-editor /140Star/MIT/202208/ts
   - https://github.com/curvenote/editor
+  - https://curvenote.github.io/editor/
   - https://curvenote.com/
   - 依赖 redux-toolkit、codemirror.v5、material-ui.v4、date-fns
   - 支持 footnote、comment、很多latex特性
+    - 评论与block顶部对齐，不与评论位置水平对齐
   - 👀 支持在编辑器内定义变量和滑块
+  - 支持同步，基于prosemirror-collab+firebase+redux
+  - 支持斜杠菜单，并且表格单元格内的斜杠菜单解决了插入上下行的问题
   - interactive scientific editor built with ProseMirror, React and Redux
   - A collaborative, rich text editor for interactive technical & scientific content., implementing the MyST standard, and integrating with JupyterLab, JupyterBook and Sphinx. 
   - We aim to lower the barriers to writing computational narratives.
     - Today, narrative is often moved out of computational notebooks into static document creation tools (Microsoft Word, Google Docs, LaTeX, Slides/PPT).
   - https://github.com/curvenote/curvenote /7Star/MIT/202208/ts
     - curvenote is an open source library and command line interface (CLI) to create share and publish technical documents.
-  - https://github.com/curvenote/blocks
-    - Schemas, types and utilities for Curvenote APIs and DTOs.
+    - https://github.com/curvenote/blocks
+      - Schemas, types and utilities for Curvenote APIs and DTOs.
+    - [Curvenote - scientific editor, explorable explanations & floating comments__202102](https://discuss.prosemirror.net/t/curvenote-scientific-editor-explorable-explanations-floating-comments/3503)
 
 - guardian-prosemirror-elements /21Star/MIT/202208/ts
   - https://github.com/guardian/prosemirror-elements
@@ -216,6 +224,19 @@ modified: 2022-08-18T16:57:46.405Z
   - Prosemirror based text editor with markdown shortcuts and serialization
   - It is highly inspired by rich-markdown-editor, linear-app-editor
 
+- gem /10Star/MIT/202205/ts/代码量少
+  - https://github.com/tanishqkancharla/gem
+  - https://gem.tanishqkancharla.dev/
+  - 只依赖prosemirror，不依赖react
+  - Gem (previously called Editor) is a performant and simple plain text editor, 
+  - The design is very inpsired by Paco Coursey's [Writer]().
+  - https://github.com/pacocoursey/writer /291Star/NALic/202110/js/inactive
+    - https://writer.paco.sh/
+    - Plain text editor from scratch, made for the web. Drag and drop files to open them.
+    - Buffer is an array of array of lines
+    - Text is manually measured and wrapped with canvas
+    - Lines are virtualized on scroll and drawn as divs
+
 - smartblock /249Star/MIT/202003/ts/inactive/prosemirror
   - https://github.com/appleple/smartblock
   - https://appleple.github.io/smartblock/
@@ -224,7 +245,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 不支持拖拽block修改顺序，但有上下箭头按钮
   - intuitive block based wysiwyg editor built with React and ProseMirror
 
-- NotionEditor /30Star/GPL.v2/202103/ts/inactive
+- Xheldon/NotionEditor /30Star/GPL.v2/202103/ts/inactive
   - https://github.com/Xheldon/NotionEditor
   - A Notion's editor implement based on ProseMirror, just for feasibility studies.
   - 不允许跨 block 选择部分文本内容
@@ -232,6 +253,28 @@ modified: 2022-08-18T16:57:46.405Z
   - 基础 schema 是两个 doc 和 text, 这是 Prosemirror 默认的两个最大和最小可编辑 schema. 而设计 schema 的时候我使用的最小编辑单元是 textblock, 表现形式是一个 div 中包含着 text
   - 所有的元素都是使用 div 进行模拟, 而不是使用语义化的 p/ul/ol 等进行, 这是为了摆脱浏览器的限制, 如段落嵌套段落的时候, p 标签无法嵌套块级元素等.
   - 使用了 React 构建界面的有: Slash
+
+- manuscript-editor /7Star/apache2/202208/ts
+  - https://gitlab.com/mpapp-public/manuscripts-manuscript-editor
+  - https://gitlab.com/mpapp-public/manuscripts-frontend
+    - /CPAL-1.0; 类似MPL
+  - A React + ProseMirror editor for manuscripts.
+  - 编辑器依赖prosemirror、@jupyterlab/services、codemirror5、popperjs、react-dnd
+  - 编辑器样式采用论文简洁风格，支持 摘要、脚注、交叉引用、评论
+  - Manuscripts.io web frontend which makes API calls to manuscripts-api and manuscripts-sync
+  - This repository contains the browser client for the Manuscripts collaborative authoring environment, in a single-page React app (desktop and mobile app embeddable using cocos).
+  - ref
+    - https://gitlab.com/mpapp-public/manuscripts-api
+    - https://gitlab.com/mpapp-public/manuscripts-sync
+    - https://gitlab.com/mpapp-public/manuscripts-data
+    - https://gitlab.com/mpapp-public/manuscripts-examples
+  - [Manuscripts.io is a ProseMirror-based editor in a React application_202011](https://discuss.prosemirror.net/t/manuscripts-io/3299), 
+    - served as a PWA that works offline and can be installed as a desktop application via Chrome.
+    - instead of using ProseMirror’s standard collaboration plugin, 👉🏻 Manuscripts serializes each block of the document to a JSON object with an id, which is stored in the browser’s local storage (IndexedDB) using RxDB/PouchDB and then synced with Couchbase via Sync Gateway, which handles permissions and validates each object according to a defined schema. 
+    - Manuscripts.io 64 is built by a team within Atypon; Atypon成立于1996年，是一家为全球期刊发展服务的软件系统公司，Atypon旗下出版平台Literatum为全球近100000本期刊和919家出版商网站、45%的英文同行评审学术期刊和其他语种的出版物提供服务。
+    - Conflict resolution is handled in each client, with any conflicting changes in the document’s content presented to the user for them to choose the most appropriate resolution.
+    - Collaboration in Manuscripts.io 64 works at the project level — each project can contain several manuscripts — and collaborators can either be responsible for editing parts of the document or can simply comment by adding annotations to blocks or ranges of the manuscript.
+    - Manuscripts.io 64 includes some innovations: figures that can be (re)generated dynamically by evaluating code in a hosted Jupyter kernel; built-in searching of online reference databases; configurable paragraph, section and inline styles, and output to multiple formats (DOCX, PDF, JATS XML, HTML, and others).
 
 - use-prosemirror /321Star/MIT/202201/ts
   - https://github.com/ponymessenger/use-prosemirror
@@ -368,18 +411,6 @@ modified: 2022-08-18T16:57:46.405Z
   - https://github.com/humhub/humhub-prosemirror
   - Prosemirror based richtext implementation for the humhub social network
   - 依赖 prosemirror-example-setup、markdown-it
-
-- gem /10Star/MIT/202205/ts/代码量少
-  - https://github.com/tanishqkancharla/gem
-  - 只依赖prosemirror，不依赖react
-  - Gem (previously called Editor) is a performant and simple plain text editor, 
-  - The design is very inpsired by Paco Coursey's [Writer]().
-  - https://github.com/pacocoursey/writer /291Star/NALic/202110/js/inactive
-    - https://writer.paco.sh/
-    - Plain text editor from scratch, made for the web. Drag and drop files to open them.
-    - Buffer is an array of array of lines
-    - Text is manually measured and wrapped with canvas
-    - Lines are virtualized on scroll and drawn as divs
 
 - kangxi-editor /2Star/MIT/202208/ts
   - https://github.com/mgenware/kangxi-editor

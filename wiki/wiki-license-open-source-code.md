@@ -22,15 +22,11 @@ modified: 2021-09-14T18:58:58.275Z
   - https://tldrlegal.com/
   - https://choosealicense.com/licenses/
   - linkware, watermark
-
 # pieces
-
 - Copyright”指软件的版权和其它一切权利归软件作者所私有，用户只有使用权，没有其它如复制、重新修改发布等权利。
 - 而“Copyleft”的特点是仅有版权归原作者所有，其他一切权利可以与任何人共享。
   - “Copyleft”通常被译作“著佐权”，即通过许可证的形式，补足、辅佐著作权（Copyright）不足的版权授权，相当于一种权利与义务的契约
-
 # Apache Licence 2.0(ASLv2)
-
 - ref
   - https://choosealicense.com/licenses/apache-2.0/
   - https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)
@@ -56,16 +52,12 @@ modified: 2021-09-14T18:58:58.275Z
 - 如果你修改了代码，需要再被修改的文件中说明。
 - 在延伸的代码中（修改和有源代码衍生的代码中）需要带有原来代码中的协议，商标，专利声明和其他原来作者规定需要包含的说明。
 - 如果再发布的产品中包含一个Notice文件，则在Notice文件中需要带有Apache Licence。你可以在Notice中增加自己的许可，但不可以表现为对Apache Licence构成更改。
-
 # MulanPSL - 2.0
-
 - ref
   - https://opensource.org/licenses/MulanPSL-2.0
 
 - Apache License要求列出每个修改文件，其实很多项目做不到这一点，所以MulanPSL直接取消了这项要求
-
 # GPL (General Public License)
-
 - ref
   - https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)
 
@@ -94,9 +86,7 @@ modified: 2021-09-14T18:58:58.275Z
 - 开发或维护遵循GPL协议开发的软件的公司或个人，可以对使用者收取一定的服务费用
 - GPL只是规定用户在获取你的程序的时候必须可以获得源代码，但并没有规定必须免费
 - 如果你的确需要发布你的程序，但又不想开源，规避GPL的方法是通过LPC或者RPC间接调用库里的接口。只要库和你的程序不运行在同一进程下，就不需要开源
-
 # LGPL (Lesser GPL)
-
 - ref
   - https://tldrlegal.com/license/gnu-lesser-general-public-license-v3-(lgpl-3)
 
@@ -123,18 +113,14 @@ modified: 2021-09-14T18:58:58.275Z
 - LGPL允许商业软件通过类库引用(link)方式使用LGPL类库而不需要开源商业软件的代码。这使得采用LGPL协议的开源代码可以被商业软件作为类库引用并发布和销售。
 - 如果修改LGPL协议的代码或者衍生，则所有修改的代码，涉及修改部分的额外代码和衍生的代码都必须采用LGPL协议。因此LGPL协议的开源代码很适合作为第三方类库被商业软件引用，但不适合希望以LGPL协议代码为基础，通过修改和衍生的方式做二次开发的商业软件采用。
 - 采用LGPL的代码，一般情况下它本身就是一个第三方库，这时候开发人员仅仅用到了它的功能，而没有对库本身进行任何修改，那么开发人员也不必公布自己的商业源代码。但是如果你修改了这个库的代码，那么你修改的代码必须全部开源，并且协议也是LGPL，但除了库源码之外的商业代码，仍不必公布
-
 # AGPL (Affero General Public License)
-
 - you have to allow the source to be downloaded even if you never distribute the binary but do provide a service
 - GPL v2和v3还有一个非常大的“漏洞”，就是软件“发布” 才必须开源。
   - 如果软件不发布，即使使用GPL v2和v3也可以不用开源。
   - 随着以Google为代表的软件作为服务的互联网公司的兴起，它们的“不分发软件，为客户提供网络服务”的商业模式就不受GPL协议的约束
 - AGPL = GPL + 一条限制
 - 一条限制：如果使用AGPL许可的软件与用户通过网络进行交互，也需要提供源代码给用户，所有的修改也要给用户
-
 # BSD
-
 - ref
   - https://tldrlegal.com/license/bsd-3-clause-license-(revised)
   - https://tldrlegal.com/license/bsd-2-clause-license-(freebsd)
@@ -162,9 +148,7 @@ modified: 2021-09-14T18:58:58.275Z
 - 不可以用开源代码的作者/机构名字和原来产品的名字做市场推广
 
 - BSD 3-Clause License is a permissive license similar to the BSD 2-Clause License, but with a 3rd clause that prohibits others from using the name of the project or its contributors to promote derived products without written consent(允许、批准).
-
 # MIT
-
 - ref
   - https://www.tldrlegal.com/l/mit
 
@@ -190,9 +174,7 @@ modified: 2021-09-14T18:58:58.275Z
 - 被授权人可根据程式的需要修改授权条款为适当的内容。
 - 在软件和软件的所有副本中都必须包含版权声明和许可声明
 - 甚至可以用原作者名字来推广
-
 # ISC License
-
 - ref
   - https://tldrlegal.com/license/-isc-license
   - https://choosealicense.com/licenses/isc/
@@ -203,9 +185,7 @@ modified: 2021-09-14T18:58:58.275Z
 - must include copyright/license
 
 - The ISC license is functionally equivalent to the BSD 2-Clause and MIT licenses, removing some language that is no longer necessary.
-
 # MPL (Mozilla Public License)
-
 - ref
   - https://tldrlegal.com/license/mozilla-public-license-2.0-(mpl-2)
 
@@ -262,9 +242,7 @@ modified: 2021-09-14T18:58:58.275Z
 - No. The license requires that Modifications (as defined in Section 1.10 of the license) must be licensed under the MPL and made available to anyone to whom you distribute the Source Code. 
 - However, new files containing no MPL-licensed code are not Modifications, and therefore do not need to be distributed under the terms of the MPL, even if you create a Larger Work (as defined in Section 1.7) by using, compiling, or distributing the non-MPL files together with MPL-licensed files. 
 - This allows, for example, programs using MPL-licensed code to be statically linked to and distributed as part of a larger proprietary piece of software, which would not generally be possible under the terms of stronger copyleft licenses.
-
 # EPL (Eclipse Public License)
-
 - ref
   - https://tldrlegal.com/license/eclipse-public-license-1.0-(epl-1.0)
   - https://www.eclipse.org/legal/epl-2.0/faq.php
@@ -297,43 +275,38 @@ modified: 2021-09-14T18:58:58.275Z
 - EPLv1 is copyleft, because it requires you to release any changes you made to the EPL code while working on your main app. 
   - The difference from GPL is that it's a commercial-friendly copyleft, requiring you only to make those changes available and only if you distribute your commercial app. 
   - And if you made no changes, no source code to release
+# Common Public Attribution License
+- ref
+  - https://tldrlegal.com/license/common-public-attribution-license-version-1.0-(cpal-1.0)
 
+- This license is like EPL or MPL, but it has extra requirements that apply even if you use the software as a service (instead of distributing it). 
+  - Depending on the notice requirements required by a particular author who releases software under this license, you may need to include the licensor’s logo on splash screens of your software.
 # Microsoft Public License (Ms-PL)
-
 - ref
   - https://tldrlegal.com/license/microsoft-public-license-(ms-pl)
 
 - You can do anything you want with the software, so long as you include this license and existing copyrights. 
   - You can only use this with compatible licenses.
 - must include copyright/license
-
 # Common Public License 1.0 (CPL-1.0) 
-
 - ref
   - https://tldrlegal.com/license/common-public-license-1.0-(cpl-1.0)
 
 - A precursor to the Eclipse license that is also very explicit in its terms. 
   - This is a weak copyleft license, like MPL and EPL. This is superseded by the Eclipse Public License. 
 - must include copyright/license, disclose source
-
 # Free Public License 1.0.0
-
 - ref
   - https://tldrlegal.com/license/free-public-license-1.0.0
 
 - Let anyone do anything as long as they don't hold you liable.
-
-
 # The Unlicense
-
 - ref
   - https://choosealicense.com/licenses/unlicense/
 
 - A license with no conditions whatsoever which dedicates works to the public domain. 
 - Unlicensed works, modifications, and larger works may be distributed under different terms and without source code.
-
 # Universal Permissive License (UPL) 
-
 - ref
   - https://oss.oracle.com/licenses/upl/
   - https://tldrlegal.com/license/universal-permissive-license-1.0-(upl-1.0)
@@ -365,9 +338,7 @@ modified: 2021-09-14T18:58:58.275Z
     - Oracle expressed concerns with using other open-source licenses for reference implementation technology due to its need to license this technology under both proprietary licenses (with patent grants) and the GPLv2.
   - At a high level, the UPL copyright and patent licenses are overly broad. 
     - They extend to current and future versions of both the UPL-licensed code as well as any software or hardware identified in a file included with the UPL-licensed code. 
-
 # linkware
-
 - ref
   - [wiki: linkware](https://en.wiktionary.org/wiki/linkware)
 

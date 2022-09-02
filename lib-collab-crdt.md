@@ -245,4 +245,4 @@ modified: 2022-04-05T10:10:08.537Z
   - supports overlapping inline formatting, and shown how to implement it efficiently.
   - it simply allows two versions of a rich-text document to be merged automatically.
 
-- [Are CRDTs suitable for shared editing?](https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing/)
+- [Are CRDTs suitable for shared editing?_202008](https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing/)
