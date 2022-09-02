@@ -230,6 +230,8 @@ modified: 2022-08-18T16:57:46.405Z
   - 只依赖prosemirror，不依赖react
   - Gem (previously called Editor) is a performant and simple plain text editor, 
   - The design is very inpsired by Paco Coursey's [Writer]().
+  - [Gem, a plain-text editor based on prosemirror_202111](https://discuss.prosemirror.net/t/gem-a-plain-text-editor-based-on-prosemirror/4231)
+    - I worked on moving to codemirror 6 
   - https://github.com/pacocoursey/writer /291Star/NALic/202110/js/inactive
     - https://writer.paco.sh/
     - Plain text editor from scratch, made for the web. Drag and drop files to open them.
