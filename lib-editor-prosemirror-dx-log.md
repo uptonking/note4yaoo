@@ -7,6 +7,11 @@ modified: 2021-09-19T15:14:41.307Z
 
 # lib-editor-prosemirror-dx-log
 
+# guide
+
+- faq
+  - 编辑器多实例时，如何从插件中获取状态
+    - 插件对象可以复用，但取插件对象的状态依赖唯一的editorState对象
 # upgrading
 
 # issues-not-yet

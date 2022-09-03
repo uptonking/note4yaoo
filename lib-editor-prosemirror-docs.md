@@ -13,6 +13,27 @@ modified: 2021-06-02T17:12:56.049Z
 - tips
   - cursor-motion, mouse-actions, typing都由browsers处理
 
+- resources
+  - [guide中文翻译](https://www.xheldon.com/tech/prosemirror-guide-chinese.html)
+
+- 可以通过 schema 手动指定例外，允许节点包含不规范的内容
+- 虽然 document 的开关标签不被认为是 document 的一部分, 但是仍然计数，doc.nodeSize始终比doc.content.size大2
+- 在两个 position 之间的 content 就是一个 slice. 
+  - 这种 slice 与一个完整的 node 或者 fragment 不同, slice 可能是 “open”(意思即一个 slice 包含的标签可能没有关闭, 比如 `<p>123</p><p>456</p>` 中, 一个 slice 可能是 `23</p><p>45` ——译者注).
+  - slice存储了一个含有两侧 open depth (意思就是相对于根节点的层级深度——译者注)信息的 fragment
+- 不是每个 Prosemirror 库中的 node 操作函数都会检查它当前处理 content 的可用性
+  - 高级概念例如 transforms 会检查, 但是底层的 node 新建方法通常不会, 这些底层方法通常将可用性检查交给它们的调用者
+- editorState 有一个方式可以存储 marks 设置的变更(storeMarks), 比如当你还没有开始编辑时, 启用或者禁用一个 mark 的时候.(即是为了满足一个常见的需求: 先点击 mark(如 bold/font-size 等, 然后再编辑))
+- 新建一个 transaction 最简单的方式就是在编辑器的 state 对象上调用 tr getter(就是 view.state.tr ——译者注).
+- 在一些情况下, 比如更新输入的文本, 这些文本已经被浏览器自己的编辑操作添加进 DOM 中(即浏览器已经修改了 DOM, Prosemirror 监听 DOM change 事件, 然后由此触发 transaction 将 DOM 的输入变化同步过来, 不需要再修改 DOM), 确保 Prosemirror 和 DOM 一致并不需要任何的 DOM 更新.(当这种同步 DOM 状态到 Prosemirror 的 transaction 被取消的时候, view 将会修改 undo DOM 去确保 DOM 和 state 保持同步)
+- 当给的 prop 被(多个 Plugin 等)声明多次的时候, 这些 prop 如何被处理取决于它们自己. 
+  - 总体来说, (editor view)直接提供的 props 优先, 之后按每个 plugin 声明的顺序处理. 
+  - 对于一些 props 来说, 比如 domParser, 最先声明的值被使用, 之后声明的就被忽略了. 
+  - 对于(props中的)处理函数来说, 返回一个 boolean 值表示它们是否处理该事件, 第一个返回 true 的处理该事件(然后其他同类型事件的处理函数被忽略——译者注). 
+  - 最后, 对于另一些 props 来说, 比如 attributes(可以在 editable DOM 上设置 attributes), 和 decorations(下一节会讲到), 使用的是它们合并后的值.
+- 在一些情况下, 不同的行为, 即使通常绑定到单个按键也会被放入不同的 commands 中(即一个按键可能在不同的情况由不同的 command 来处理——译者注). 
+  - 工具函数函数 chainCommands 可用于组合多个命令——它们将一个接一个地尝试, 直到一个返回true.
+
 - **repeat**
 - prosemirror state updates happen by applying a transaction to an existing state, producing a new state.
   - pm-state的更新一般都是这一种方式
@@ -425,7 +446,7 @@ tr.delete(5, 7).split(5) // ok too
 - Transform objects automatically accumulate a set of maps for the steps in them, using an abstraction called Mapping, 
   - which collects a series of step maps and allows you to `map` through them in one go.
 - There are cases where it's not entirely clear what a given position should be mapped to. 
-  - `map` method on step maps and mappings accepts a second parameter,     `bias`, which you can set to `-1` to keep your position in place when content is inserted on top of it.
+  - `map` method on step maps and mappings accepts a second parameter,                     `bias`, which you can set to `-1` to keep your position in place when content is inserted on top of it.
 - The reason that individual steps are defined as small, straightforward things is that it makes this kind of mapping possible, along with inverting steps in a lossless way, and mapping steps through each other's position maps.
 
 - Rebasing
@@ -445,7 +466,7 @@ stepB '(docA) = docAB
 
 ## The editor state
 
-- There are the three main components of a ProseMirror state, and exist on state objects as `doc`,     `selection`, and `storedMarks`.
+- There are the three main components of a ProseMirror state, and exist on state objects as `doc`,                     `selection`, and `storedMarks`.
   - But plugins may also need to store state
   - This is why the set of active plugins is also stored in the state, and these plugins can define additional slots for storing their own state.
 
