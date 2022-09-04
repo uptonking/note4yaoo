@@ -14,6 +14,12 @@ modified: 2021-05-13T16:14:28.745Z
   - https://www.npmtrends.com/arquero-vs-apache-arrow-vs-data-forge-vs-dataframe
   - [@stdlib/stdlib vs mathjs vs ndarray vs numjs vs simple-statistics](https://www.npmtrends.com/@stdlib/stdlib-vs-mathjs-vs-ndarray-vs-numjs-vs-simple-statistics)
 # popular
+- danfojs /3.8kStar/MIT/202208/ts/inactive
+  - https://github.com/javascriptdata/danfojs
+  - https://github.com/opensource9ja/danfojs
+  - provides fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive
+  - heavily inspired by Pandas library, and provides a similar API
+
 - numjs /2.1kStar/MIT/202109/js/inactive
   - https://github.com/nicolaspanel/numjs
   - Like NumPy, in JavaScript, for scientific computing with JavaScript.
@@ -24,9 +30,9 @@ modified: 2021-05-13T16:14:28.745Z
   - NumJs can also be used as an efficient multi-dimensional container of generic data.
   - It works both in node.js and in the browser
 
-- https://github.com/uwdata/arquero
+- arquero /438Star/BSD/202105/js
+  - https://github.com/uwdata/arquero
   - https://uwdata.github.io/arquero
-  - /438Star/BSD/202105/js
   - a JavaScript library for query processing and transformation of array-backed data tables. 
   - Following the relational algebra and inspired by the design of dplyr, Arquero provides a fluent API for manipulating column-oriented data frames.
   - Arquero supports a range of data transformation tasks, including filter, sample, aggregation, window, join, and reshaping operations.
@@ -49,11 +55,6 @@ modified: 2021-05-13T16:14:28.745Z
   - Tidy up your data with JavaScript, inspired by dplyr and the tidyverse
   - tidy.js attempts to bring the ergonomics of data manipulation from R to javascript
   - No wrapper classes needed — all tidy.js needs is an array of plain old-fashioned JS objects to get started. Simple in, simple out.
-
-- https://github.com/opensource9ja/danfojs
-  - /1.1kStar/MIT/202011/js
-  - provides fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive
-  - heavily inspired by Pandas library, and provides a similar API
 
 - https://github.com/tensorflow/tfjs
   - /14.3kStar/Apache2/202012/ts

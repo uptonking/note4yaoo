@@ -50,10 +50,13 @@ modified: 2022-06-03T22:07:23.308Z
   - Just a little writing tool with markdown shortcuts that saves every change to local indexeddb.
   - 跨平台客户端基于tauri实现，tari部分使用rust实现
 
-- https://github.com/sereneinserenade/notitap
+- notitap /39Star/MIT/202209/ts
+  - https://github.com/sereneinserenade/notitap
   - https://sereneinserenade.github.io/notitap/
+  - 依赖daisyui、tippyjs、floating-ui、fuzzysort
   - Notion like editor built on top of tiptap.
-  - 块级拖拽是pro版，暂无预览体验
+  - 支持跨block选择部分文字
+  - 支持拖拽block修改顺序，但list item不支持拖入拖出
 
 - https://github.com/kiaksarg/edu-editor  /slate
   - https://edu-editor.netlify.app/

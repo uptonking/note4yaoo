@@ -40,7 +40,7 @@ modified: 2022-08-21T10:16:52.004Z
 
 - https://github.com/namiwang
   - https://discuss.prosemirror.net/u/namiwang
-  - https://github.com/namiwang/fiber-note
+  - https://github.com/namiwang/fiber-note /inactive
 
 - https://discuss.prosemirror.net/u/Julian123
   - 块编辑器

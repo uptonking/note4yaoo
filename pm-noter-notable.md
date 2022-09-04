@@ -89,6 +89,9 @@ modified: 2022-03-17T17:50:28.967Z
 - notion like block editor
 - roam like editor with bidirectional links，国内思源笔记
 - remotion
+
+- 在文本加书签或标记
+  - https://github.com/StarlaneStudios/vscode-comment-anchors
 # faq
 - 如何不使用图床而将图片直接嵌入到笔记生成的html中
 

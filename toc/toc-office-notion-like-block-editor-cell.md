@@ -21,7 +21,7 @@ modified: 2022-08-14T16:26:48.558Z
   - https://github.com/udecode/plate
   - https://plate.udecode.io/
   - 支持跨block选择部分文字
-  - 支持拖拽block修改顺序
+  - 支持拖拽block修改顺序，但不支持拖入拖出list item
   - code-block自研实现，不依赖第三方代码编辑器
   - A plugin framework for building rich text editors with slate.
 
@@ -34,11 +34,32 @@ modified: 2022-08-14T16:26:48.558Z
   - an editor which supports the concept of blocks. It can help you to build an editor like Notion. 
   - Extensible. Extend the editor with custom blocks and spans.
 
+- BlockNote /14Star/MPL.v2/202208/ts
+  - https://github.com/YousefED/BlockNote
+  - https://blocknote-main.vercel.app/
+  - A "Notion-style" block-based extensible text editor built on top of Prosemirror and Tiptap.
+  - 支持跨block选择部分文字
+  - 支持拖拽block修改顺序，特别是支持将list item拖入拖出列表
+  - 支持斜杠菜单、悬浮菜单修改标题层级、多级列表、顺滑动画
+  - 支持协作
+  - 依赖tiptap.v2、tippyjs、styled-components
+  - bugs
+    - 复制粘贴多行文本
+
+- notitap /39Star/MIT/202209/ts
+  - https://github.com/sereneinserenade/notitap
+  - https://sereneinserenade.github.io/notitap/
+  - 依赖daisyui、tippyjs、floating-ui、fuzzysort
+  - Notion like editor built on top of tiptap.
+  - 支持跨block选择部分文字
+  - 支持拖拽block修改顺序，但不支持拖入拖出list item
+
 - tiny-write /4Star/NALic/202208/ts/prosemirror/markdown-it/web版+桌面版
   - https://github.com/dennis84/tiny-write
   - https://tiny-write.pages.dev/
   - 支持跨block选择部分文字
-  - 支持拖拽block修改顺序
+  - 支持拖拽block修改顺序，但不支持拖入拖出list item
+  - 不支持/斜杠菜单
   - 依赖solid-js、codemirror6、idb-keyval、date-fns、markdown-it、y-prosemirror
   - Just a little writing tool with markdown shortcuts that saves every change to local indexeddb.
   - 跨平台客户端基于tauri实现，tari部分使用rust实现
@@ -57,7 +78,7 @@ modified: 2022-08-14T16:26:48.558Z
   - https://github.com/WordPress/gutenberg
   - https://wordpress.org/gutenberg/
   - 支持跨block选择部分文字
-  - 支持拖拽block修改顺序
+  - 支持拖拽block修改顺序，但不支持拖入拖出list item，蓝色拖拽指示器已实现
   - The Block Editor project for WordPress and beyond
   - 第三方的插件特别丰富
 
@@ -71,6 +92,7 @@ modified: 2022-08-14T16:26:48.558Z
 
 - MoEditor /2Star/NALic/202208/ts
   - https://github.com/spaced-all/MoEditor
+  - https://github.com/spaced-all/Mono.editor
   - 一款基于 React 的、块级风格的、Markdown 友好的，富文本编辑器。
   - 跨block选区实现存在问题
   - 不支持拖拽block修改顺序

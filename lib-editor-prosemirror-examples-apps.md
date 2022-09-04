@@ -57,7 +57,8 @@ modified: 2022-08-18T16:57:15.296Z
   - https://github.com/dennis84/tiny-write
   - https://tiny-write.pages.dev/
   - 支持跨block选择部分文字
-  - 支持拖拽block修改顺序
+  - 支持拖拽block修改顺序，但不支持拖入拖出list item
+  - 不支持/斜杠菜单
   - 依赖solid-js、codemirror6、idb-keyval、date-fns、markdown-it、y-prosemirror
   - Just a little writing tool with markdown shortcuts that saves every change to local indexeddb.
   - 跨平台客户端基于tauri实现，tauri部分使用rust实现

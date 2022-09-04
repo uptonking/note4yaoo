@@ -9,6 +9,8 @@ modified: 2022-08-19T23:00:22.162Z
 
 # guide
 
+- resources
+  - https://github.com/ueberdosis/awesome-tiptap
 # popular
 - BlockNote /14Star/MPL.v2/202208/ts
   - https://github.com/YousefED/BlockNote
@@ -148,7 +150,8 @@ modified: 2022-08-19T23:00:22.162Z
   - https://github.com/sereneinserenade/tiptap-snippets-extension
     - drag-n-drop snippets into Tiptap. 
   - https://github.com/sereneinserenade/tiptap-extension-video
-    - https://github.com/sereneinserenade/tiptap-media-resize
+  - https://github.com/sereneinserenade/tiptap-media-resize
+    - https://github.com/breakerh/tiptap-image-resize
 
 - https://github.com/GoCapsule/tiptap-extensions
   - https://codesandbox.io/p/github/leonard-henriquez/column-extension/main
@@ -167,6 +170,12 @@ modified: 2022-08-19T23:00:22.162Z
 - https://github.com/panGenerator/extension-small
   - `<small>` tag 小一号的字体
   - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small
+
+- https://github.com/farscrl/tiptap-extension-spellchecker
+  - This is an extension to integrate a spellchecker into the tiptap editor.
+  - The extension does not implement a spellchecker itself: you have to pass it a proofreader object implementing the IProofreaderInterface interface. 
+  - That proofreader can work locallyin the browser, or it can call an online service, 
+  - This extension is inspired by the tiptap-languagetool extension.
 # examples
 - https://github.com/justinmoon/tiptap-markdown-demo
   - TipTap rich text editor doesn't support markdown, but this repo shows how to hack it in yourself.
@@ -174,6 +183,7 @@ modified: 2022-08-19T23:00:22.162Z
 - notes /4Star/GPL.v3/202208/js
   - https://github.com/keymorph/notes
   - https://notes.keymorph.com/
+  - 依赖tiptap2、dnd-kit、mui、tanstack-query、nextjs、@azure/cosmos--db
   - A free web application for creating and editing notes.
 
 - https://github.com/verbb/vizy

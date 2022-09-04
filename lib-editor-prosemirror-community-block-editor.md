@@ -74,5 +74,5 @@ modified: 2022-08-30T19:04:37.774Z
 - Notion style block editor can be done using Prosemirror without multiple editors as you can hook into hover events and get all the information you need using `posAtCoords`.
 
 - ## [I’m building a heavily-customized editor like roam-research](https://discuss.prosemirror.net/t/im-building-a-heavily-customized-editor-like-roam-research/3006)
-- https://github.com/namiwang/fiber-note
+- https://github.com/namiwang/fiber-note /inactive
   - [building a roam-like, networked, heavily-customized realtime editor, part 1](https://namiwang.github.io/2020/11/12/building-a-roam-like-networked-heavily-customized-realtime-editor-part-1.html)

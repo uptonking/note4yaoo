@@ -39,8 +39,6 @@ modified: 2022-08-18T16:57:46.405Z
   - https://tiptap.dev/examples/default
   - A headless, framework-agnostic and extendable rich text editor, based on ProseMirror.
   - It’s headless and comes without any CSS. You are in full control over markup, styling and behaviour.
-  - ref
-    - https://github.com/ueberdosis/awesome-tiptap
 
 - remirror /1.8kStar/MIT/202208/ts
   - https://github.com/remirror/remirror
@@ -78,6 +76,14 @@ modified: 2022-08-18T16:57:46.405Z
   - 依赖tiptap.v2、tippyjs、styled-components
   - bugs
     - 复制粘贴多行文本
+
+- notitap /39Star/MIT/202209/ts
+  - https://github.com/sereneinserenade/notitap
+  - https://sereneinserenade.github.io/notitap/
+  - 依赖daisyui、tippyjs、floating-ui、fuzzysort
+  - Notion like editor built on top of tiptap.
+  - 支持跨block选择部分文字
+  - 支持拖拽block修改顺序，但list item不支持拖入拖出
 
 - bangle.dev-editor /527Star/MIT/202208/ts
   - https://github.com/bangle-io/bangle.dev

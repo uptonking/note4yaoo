@@ -16,9 +16,13 @@ modified: 2022-08-22T16:23:59.496Z
 
 - 基于electron如何实现crdt
 # codebase
-
+- dragHandle 作为一个PME-plugin插件实现
+  - 拖拽按钮元素通过 `decorations` 渲染
+  - 在mousedown事件中更新选区
+# codebase-not-yet
+- updateEditorState中为什么要重新创建editorState对象
+  - 若直接创建新的editorState对象，会破坏协作
 # solidjs-dev
-
 - 对solidjs的依赖
 
 ```JS
