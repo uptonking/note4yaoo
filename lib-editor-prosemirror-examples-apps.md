@@ -9,40 +9,6 @@ modified: 2022-08-18T16:57:15.296Z
 
 # guide
 
-# prosemirror-starter
-- https://github.com/syfxlin/tiptap-starter-kit
-  - Tiptap编辑器的非官方套件，包含了常见的扩展集合，以及斜杠菜单，浮动菜单，Markdown解析、序列化等功能。
-
-- https://github.com/mfoitzik/prosemirror-breakout-starter-kit
-  - This is a ProseMirror starter kit that uses Webpack.
-  - https://github.com/buzz-software/prosemirror-webpack-project
-    - 只有单文件，过于简单
-- https://github.com/KyleMit/prosemirror-sample
-  - https://prosemirror-sample.netlify.app/
-  - Interactive view of the basic example from the ProseMirror website.
-
-- https://github.com/ccorcos/prosemirror-examples
-  - https://ccorcos.github.io/prosemirror-examples/
-  - ProseMirror rich text editor with @mentions with autocomplete and nested inline nodes.
-
-- https://github.com/TeemuKoivisto/prosemirror-bug-template
-  - Github template to reproduce ProseMirror bugs in simplest form possible
-
-- DoX /5Star/NALic/202208/js
-  - https://github.com/AlbertCerfeda/DoX
-  - https://doxeditor.herokuapp.com/
-  - 依赖 express、passport、socket.io、bootstrap4
-  - DoX Editor aims to be a web text editor application that allows users to create, edit, store and share several documents.
-  - A web text editor application that allows users to create, edit, store and share several documents, with support for real-time collaborative editing.
-  - DoX is clearly inspired to well known online word processors such as Google Docs
-
-- https://github.com/vivaxy/examples/tree/master/libraries/prosemirror
-  - https://vivaxy.github.io/examples/libraries/prosemirror/
-  - 日常积累的各种demo，包括prosemirror/yjs/算法
-
-- https://github.com/edp1096/hello-prosemirror
-  - https://edp1096.github.io/hello-prosemirror/
-  - 测试
 # office/notebook
 - noteworthy /166Star/AGPL.v3/202207/ts/electron
   - https://github.com/benrbray/noteworthy

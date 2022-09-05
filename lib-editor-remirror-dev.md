@@ -63,5 +63,14 @@ modified: 2021-06-27T19:16:51.396Z
 - The second decision was to base the structure of the editor on blocks of functionality called `Extensions`. 
   - Each extension would be designed to fulfil a specific purpose in the editor. 
   - Due to this structure, users would be able to craft a fully custom implementation.
-- Every single part of the editor is controlled by extensions. 
+
+- Every single part of the editor is controlled by extensions. For example, the core (Schema) is managed by a built-in extension.
 - Multi-framework support is being added in the future. Currently the focus is on React and the DOM.
+
+- Features
+  - A11y focused and ARIA compatible.
+  - I18n support via lingui.
+  - Collaborative editing with yjs.
+  - 30+ extensions for creating fully customized editing experiences.
+  - Zero configuration support for Server Side Rendering (SSR).
+  - Cross platform and cross-framework, with an Angular solution coming later this year.

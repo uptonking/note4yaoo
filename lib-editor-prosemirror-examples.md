@@ -155,10 +155,12 @@ modified: 2022-08-18T16:57:46.405Z
 - guardian-prosemirror-elements /21Star/MIT/202208/ts
   - https://github.com/guardian/prosemirror-elements
   - This Prosemirror plugin adds the ability to add custom 'elements' to a document.
+  - 使用prosemirror编辑器作为NodeViews，嵌套多实例编辑器
+  - Prosemirror-elements provides a way of expressing an Element and its Fields in the UI framework of your choice, and we provide React bindings as a default.
+  - What is an Element?
     - Modelling non-text content in Prosemirror can be tricky. 
-    - it provides an abstraction that makes it easy to write custom elements
-  - A ProseMirror plugin for adding user-defined 'elements' containing arbitrary fields to a document.
-  - renderer-agnostic (we use React as a default)
+    - Elements contain user-defined Fields that can model many different kinds of content, including rich text fields and arbitrary data.
+    - Each Element is made up of Fields, which represent a data type – for example, text, rich text, or custom data types.
 
 - Stacks-Editor /218Star/MIT/202208/ts
   - https://github.com/StackExchange/Stacks-Editor

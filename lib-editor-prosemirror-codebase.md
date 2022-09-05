@@ -14,9 +14,13 @@ modified: 2021-06-02T17:13:37.692Z
   - ??? 输入时如何更新dom元素
   - plugin如何更新state
 
-- parseDOM实现解析
-- 编辑时要toDOM，特殊节点如footnote/编辑操作一般是通过insert菜单
+- PMENode与DOM
+  - parseDOM实现解析
+  - 编辑时要toDOM，特殊节点如footnote/编辑操作一般是通过insert菜单
 # not-yet
+- 如何实现virtualized虚拟化渲染
+  - 参考思路，先实现分页，再渲染前后2页
+
 - ？NodeView.update() 和plugin.view().update()的先后顺序
   - 简单测试结果
     - 先执行NodeView，再执行plugin.view的更新

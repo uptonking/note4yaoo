@@ -66,6 +66,24 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - dashboard/webapp-template--0901
 # dev-09
 
+## 0905
+
+- [CodeSandbox为创建好的项目增加terminal](https://lipanpanx.com/codesandboxwei-chuang-jian-hao-de-xiang-mu-zeng-jia-terminal/)
+  - 有些人在创建的时候会出现报错 比如: 502: Bad Gateway, 一般情况下 按照报错提示修改下配置文件之类的
+  - 👉🏻 碰到502时，直接新建terminal执行npm start命令，就能看到异常详细信息
+  - 建议直接参考公开的项目示例
+
+- 在codesandbox配置webpack和热加载很难work，直接用官方create-react-app模版更方便
+
+## 0904
+
+- [为什么 APNG 图像格式没有被广泛应用？](https://www.zhihu.com/question/20030489)
+  - GIF格式的图像只支持8位颜色，即256中颜色，不能呈现真彩色画面。所以这种算法对于图像的边缘处理与整体渲染都还停留在上个世纪。
+  - APNG（Animated PNG）。从字面上理解，这种格式的图像就是一个“会动”的PNG图像。这个最早是由Mozilla的两名程序员设计出来的，当时Mozilla放弃了MNG图像格式，转而自己开发了APNG用以存储动态多图文件。
+  - 首先缺乏浏览器支持，这就让APNG很难普及。
+  - 其次，没有PNG发开组的支持。目前，支持MNG的PNG开发组与支持APNG的Mozilla在动态图标准上已经形成了对立。
+  - 从另一个角度讲，GIF这么低劣的画质之所以能“横行”网络二十多年，就是因为人们对于动态图画质的需求并不高。
+
 ## 0901
 
 - [Can I have an element with an ID that starts with a number?](https://stackoverflow.com/questions/5672903)
@@ -75,7 +93,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,       `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                        `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -94,7 +112,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                          `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                           `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

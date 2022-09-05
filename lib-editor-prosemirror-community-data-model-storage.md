@@ -1,11 +1,11 @@
 ---
-title: lib-editor-prosemirror-community-model-storage
+title: lib-editor-prosemirror-community-data-model-storage
 tags: [community, data-model, prosemirror, storage]
 created: 2022-08-30T21:49:04.687Z
-modified: 2022-08-30T22:00:29.366Z
+modified: 2022-09-05T03:25:02.690Z
 ---
 
-# lib-editor-prosemirror-community-model-storage
+# lib-editor-prosemirror-community-data-model-storage
 
 # guide
 

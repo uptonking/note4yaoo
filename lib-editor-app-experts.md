@@ -26,6 +26,11 @@ modified: 2022-08-21T10:16:52.004Z
   - https://github.com/benrbray/noteworthy
   - https://github.com/benrbray/prosemirror-math
 
+- https://github.com/lastnigtic
+  - https://github.com/bytedance/syllepsis
+  - https://github.com/lastnigtic/syllepsis-collab
+  - https://discuss.prosemirror.net/u/lastnigtic
+
 - https://github.com/ocavue
   - Core team member at remirror
   - https://github.com/ocavue/rino

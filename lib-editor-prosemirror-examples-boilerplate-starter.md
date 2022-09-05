@@ -1,0 +1,95 @@
+---
+title: lib-editor-prosemirror-examples-boilerplate-starter
+tags: [boilerplate, examples, prosemirror]
+created: 2022-09-05T03:40:38.434Z
+modified: 2022-09-05T03:41:15.727Z
+---
+
+# lib-editor-prosemirror-examples-boilerplate-starter
+
+# guide
+
+- resources
+  - [codesandbox prosemirror-state deps](https://codesandbox.io/examples/package/prosemirror-state)
+  - [codesandbox tiptap deps](https://codesandbox.io/examples/package/@tiptap/core)
+# prosemirror-starter
+- https://github.com/syfxlin/tiptap-starter-kit
+  - Tiptap编辑器的非官方套件，包含了常见的扩展集合，以及斜杠菜单，浮动菜单，Markdown解析、序列化等功能。
+
+- https://github.com/mfoitzik/prosemirror-breakout-starter-kit
+  - This is a ProseMirror starter kit that uses Webpack.
+  - https://github.com/buzz-software/prosemirror-webpack-project
+    - 只有单文件，过于简单
+- https://github.com/KyleMit/prosemirror-sample
+  - https://prosemirror-sample.netlify.app/
+  - Interactive view of the basic example from the ProseMirror website.
+
+- https://github.com/ccorcos/prosemirror-examples
+  - https://ccorcos.github.io/prosemirror-examples/
+  - ProseMirror rich text editor with @mentions with autocomplete and nested inline nodes.
+
+- https://github.com/TeemuKoivisto/prosemirror-bug-template
+  - Github template to reproduce ProseMirror bugs in simplest form possible
+
+- DoX /5Star/NALic/202208/js
+  - https://github.com/AlbertCerfeda/DoX
+  - https://doxeditor.herokuapp.com/
+  - 依赖 express、passport、socket.io、bootstrap4
+  - DoX Editor aims to be a web text editor application that allows users to create, edit, store and share several documents.
+  - A web text editor application that allows users to create, edit, store and share several documents, with support for real-time collaborative editing.
+  - DoX is clearly inspired to well known online word processors such as Google Docs
+
+- https://github.com/vivaxy/examples/tree/master/libraries/prosemirror
+  - https://vivaxy.github.io/examples/libraries/prosemirror/
+  - 日常积累的各种demo，包括prosemirror/yjs/算法
+
+- https://github.com/edp1096/hello-prosemirror
+  - https://edp1096.github.io/hello-prosemirror/
+  - 测试
+# example-online
+- prosemirror-react-example-setup-minimal-js
+  - https://codesandbox.io/s/l9n6667ooz
+
+- prosemirror-example-setup-minimal-js
+  - https://codesandbox.io/s/prosemirror-drag-and-drop-forked-9kl4lr
+
+- prosemirror-minimal-no-keymap-js
+  - https://codesandbox.io/s/qzhtb
+  - https://codesandbox.io/s/prosemirror-simple-nodeview-forked-r62bk8
+
+- prosemirror-mui-v4-js
+  - https://codesandbox.io/s/react-prosemirror-t3num
+
+- prosemirror-collab
+  - https://codesandbox.io/s/yjs-react-eb3n1
+
+- prosemirror-table
+  - https://codesandbox.io/s/condescending-kirch-3gmyc
+
+- tiptap-react-minimal
+  - https://codesandbox.io/s/tiptap-react-editor-y8zsg?
+
+- tiptap-mui-v5-js
+  - https://codesandbox.io/s/w75ob2
+  - https://codesandbox.io/s/editor-w75ob2
+
+- tiptap-codemirror5-ts
+  - https://codesandbox.io/s/0jiqt
+
+- tiptap-examples-list-cra-ts
+  - https://codesandbox.io/s/tiptap-h56o9 示例列表
+
+- prosemirror-react-custom-plugins-js
+  - https://codesandbox.io/s/gcgwc
+
+- tiptap-react
+  - https://codesandbox.io/s/simple-text-editor-59z32
+
+- tiptap-react-slash-command
+  - https://codesandbox.io/s/tiptap-react-slash-command-e3j3u
+
+- tiptap-collab
+  - https://codesandbox.io/s/tiptap-react-forked-fuqvg
+
+- tiptap-demo-tailwindcss
+  - https://codesandbox.io/s/iqjz0
