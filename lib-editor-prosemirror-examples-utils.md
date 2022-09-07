@@ -61,7 +61,7 @@ modified: 2022-08-18T16:57:29.058Z
   - A personal experiment libraries over prosemirror project
   - prosemirror + remark demos
   - https://www.npmjs.com/package/@marduke182/prosemirror-react-view
-    - This library is a full React implementation of the official prosemirror-view package. 
+    - This library is a full React implementation of the official `prosemirror-view` package. 
     - Aims to implement a simple React Component that uses ProseMirror Data Model to render the document and bind the right events to synchronize the user selection and created ProseMirror transaction based on user inputs.
 
 - https://github.com/Novartis/mdx-utils  /mdx

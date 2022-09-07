@@ -32,6 +32,7 @@ modified: 2022-08-18T16:57:46.405Z
 - more-prosemirror
   - pageboard/client(页面搭建), noteworthy(solidjs)
   - 建站编辑器应该参考gutenberg、wix
+  - [npmtrends for pme](https://npmtrends.com/@remirror/react-vs-@tiptap/core-vs-prosemirror-view-vs-remirror-vs-slate)
 # prosemirror-popular
 - tiptap /16.1kStar/MIT/202208/ts
   - https://github.com/ueberdosis/tiptap

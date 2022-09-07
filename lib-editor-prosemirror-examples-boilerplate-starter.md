@@ -13,23 +13,29 @@ modified: 2022-09-05T03:41:15.727Z
   - [codesandbox prosemirror-state deps](https://codesandbox.io/examples/package/prosemirror-state)
   - [codesandbox tiptap deps](https://codesandbox.io/examples/package/@tiptap/core)
 # prosemirror-starter
-- https://github.com/syfxlin/tiptap-starter-kit
-  - Tiptap编辑器的非官方套件，包含了常见的扩展集合，以及斜杠菜单，浮动菜单，Markdown解析、序列化等功能。
+- https://github.com/ueberdosis/tiptap/tree/main/packages/starter-kit
+  - 官方提供了模版工具箱 `@tiptap/starter-kit` npm包
+  - https://github.com/syfxlin/tiptap-starter-kit
+    - /inactive
+    - 非官方套件，包含了常见的扩展集合，以及斜杠菜单，浮动菜单，Markdown解析、序列化等功能。
 
 - https://github.com/mfoitzik/prosemirror-breakout-starter-kit
   - This is a ProseMirror starter kit that uses Webpack.
-  - https://github.com/buzz-software/prosemirror-webpack-project
-    - 只有单文件，过于简单
+  - 未使用prosemirror-example-setup包，提供了具体配置示例
+  - https://github.com/buzz-software/prosemirror-webpack-project /201805
+    - 只有单文件，过于简单，只依赖prosemirror-example-setup包
 - https://github.com/KyleMit/prosemirror-sample
   - https://prosemirror-sample.netlify.app/
   - Interactive view of the basic example from the ProseMirror website.
+  - 使用vite版和无需打包的js版
+
+- https://github.com/TeemuKoivisto/prosemirror-bug-template
+  - Github template to reproduce ProseMirror bugs in simplest form possible
+  - Loads the basic `prosemirror-example-setup` with `prosemirror-dev-toolkit` as ES modules using `importmap`
 
 - https://github.com/ccorcos/prosemirror-examples
   - https://ccorcos.github.io/prosemirror-examples/
   - ProseMirror rich text editor with @mentions with autocomplete and nested inline nodes.
-
-- https://github.com/TeemuKoivisto/prosemirror-bug-template
-  - Github template to reproduce ProseMirror bugs in simplest form possible
 
 - DoX /5Star/NALic/202208/js
   - https://github.com/AlbertCerfeda/DoX
@@ -45,7 +51,7 @@ modified: 2022-09-05T03:41:15.727Z
 
 - https://github.com/edp1096/hello-prosemirror
   - https://edp1096.github.io/hello-prosemirror/
-  - 测试
+  - 测试图片上传，服务端基于go
 # example-online
 - prosemirror-react-example-setup-minimal-js
   - https://codesandbox.io/s/l9n6667ooz

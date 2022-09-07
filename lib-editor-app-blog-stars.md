@@ -9,11 +9,24 @@ modified: 2022-08-21T10:11:43.095Z
 
 # guide
 
+- 编辑器入门经典示例
+  - slate
+    - minimal-render > event-keydown > custom-element > custom-format > commands > save-to-local > api/transform
+    - rich-text-editor, mention, search-highlight
+  - ckeditor5
+    - timestamp-plugin > abbreviation-plugin > box/card-widget > inline-word-widget > react-add-product
+    - demos for every feature
+  - prosemirror
+    - example-setup > custom-node > toolbar-menu > tooltip > custom-schema > > img-upload > markdown
+    - footnotes: inline node
+    - linter
+    - track-change
+    - collab
+
 - [基于 Google Doc 思想的L2编辑器演示项目](https://zhuanlan.zhihu.com/p/392055486)
   - https://github.com/cg0101/docs
   - https://cg0101.github.io/docs/
 
-- [现代编辑器技术原理](https://www.wenxi.tech/principles-of-modern-editor-technology)
 - [现代编辑器技术原理](https://www.wenxi.tech/principles-of-modern-editor-technology)
 # [Are CRDTs suitable for shared editing?__202008](https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing/)
 - CRDT don't require a central authority to resolve sync conflicts

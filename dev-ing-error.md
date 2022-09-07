@@ -11,6 +11,16 @@ modified: 2021-03-29T19:29:32.505Z
 
  
 
+- npm ERR! Invalid Version
+  - 👉🏻 备用的参考思路是，将可疑包移出package.json的workspaces配置项
+  - [[BUG] npm ERR! Invalid Version: 0.4.0rc7](https://github.com/npm/cli/issues/4992)
+    - I found one possible thing that may work by adding `--no-audit` flag, it went through once for me.
+    - [Invalid semver in package history causes crash when installing a package](https://github.com/npm/cli/issues/5017)
+      - run npm i with `--no-audit` to get a package-lock.json
+      - npm-why yui
+      - npm ls yui
+      - npm explain yui
+
 - libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
   - [Unable to Launch AppImages on Fedora 35 - libva Error](https://www.linuxquestions.org/questions/showthread.php?p=6312963)
   - 打开本地 appimage 时，无法看到错误，可先挂载或使用软件linux-unpacked未打包版本启动，就可在控制台开到错误

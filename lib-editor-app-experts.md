@@ -13,8 +13,11 @@ modified: 2022-08-21T10:16:52.004Z
   - https://www.rich-text-js-jobs.com/
 # popular
 
-# prosemirror-experts
+# slate
 
+- https://github.com/pubuzhixing8
+  - https://github.com/worktile/slate-angular
+# prosemirror
 - https://github.com/ccorcos
   - https://github.com/ccorcos/prosemirror-examples
 
@@ -53,4 +56,7 @@ modified: 2022-08-21T10:16:52.004Z
 - https://github.com/zlv-thisF?tab=stars
   - https://discuss.prosemirror.net/u/zlv-thisF
   - 块编辑器
+
+- https://github.com/herrdu
+  - https://github.com/herrdu/DEditor
 # more
