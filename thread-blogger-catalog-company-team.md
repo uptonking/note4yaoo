@@ -11,6 +11,11 @@ modified: 2020-10-22T13:06:52.353Z
 - 看再多技术文章和资讯，不如动手写一写
 - 确定某一个技术方向后，应该集中精力到某一方面的技术和深入
 # 团队专栏
+- [ELab 字节跳动大力教育前端团队](https://juejin.cn/user/4169764695465239/posts)
+  - [最小编译器the-super-tiny-compiler](https://juejin.cn/post/7110217567221841933)
+  - [由 Babel 理解前端编译原理](https://juejin.cn/post/7080832945136599077)
+  - [前端大概要知道的 AST](https://juejin.cn/post/7087075805884809252)
+
 - [360 奇舞周刊](https://weekly.75.team/)
   - [奇舞周刊 知乎专栏 半停更](https://www.zhihu.com/column/75weekly)
 

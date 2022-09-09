@@ -95,9 +95,6 @@ modified: 2022-08-21T10:11:37.453Z
 - 我只有一个问题， 这玩意会上传代码到服务器么？
   - 服务器就在你本地。。。懂了没？？只是和编辑器分开了，通过通信来交流
   - 网络传输会让你的ide跑的慢死 目前的都是本地服务器也就是个跨进程通讯而已
-- 
-- 
-
 # more
 - [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)
 - [TEXT EDITING HATES YOU TOO](https://lord.io/text-editing-hates-you-too/)
@@ -105,6 +102,8 @@ modified: 2022-08-21T10:11:37.453Z
 - [为什么 ContentEditable 很恐怖](https://www.oschina.net/translate/why-contenteditable-is-terrible)
 
 - [Slate.js - 革命性的富文本编辑框架](https://s1973.top/blog/0015499011852838c3eb8e0d6d14a3f97bee6e61fa1cd26000)
+
+- [富文本编辑器的技术演进之路_UC-Hugo.js_201908](https://developer.aliyun.com/article/712971)
 
 - [How we use WebAssembly at Fiberplane_202205](https://fiberplane.dev/blog/how-we-use-webassembly-at-fiberplane/)
 - [Creating a Rich Text Editor using Rust and React_202204](https://fiberplane.dev/blog/creating-a-rich-text-editor-using-rust-and-react/)

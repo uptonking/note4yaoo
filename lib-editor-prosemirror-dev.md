@@ -60,3 +60,5 @@ modified: 2021-05-06T09:39:53.522Z
   - tiptap的drawing示例，可以在空svg元素上画路径
   - atlaskit-editor开源了自定义renderer可以参考
   - atlaskit-editor实现了layout多列插件和图片排版插件
+# not-yet
+- 支持动态改变schema的变通实现方式？

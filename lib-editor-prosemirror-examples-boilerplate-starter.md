@@ -53,10 +53,11 @@ modified: 2022-09-05T03:41:15.727Z
   - https://edp1096.github.io/hello-prosemirror/
   - 测试图片上传，服务端基于go
 # example-online
-- prosemirror-react-example-setup-minimal-js
-  - https://codesandbox.io/s/l9n6667ooz
+- prosemirror-react-example-setup-js
+  - https://codesandbox.io/s/prosemirror-react-hooks-6qvlfr
 
 - prosemirror-example-setup-minimal-js
+  - https://codesandbox.io/s/l9n6667ooz
   - https://codesandbox.io/s/prosemirror-drag-and-drop-forked-9kl4lr
 
 - prosemirror-minimal-no-keymap-js
