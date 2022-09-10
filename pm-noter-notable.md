@@ -35,7 +35,7 @@ modified: 2022-03-17T17:50:28.967Z
   - copy as markdown link
   - core-text-mode，整体页面突出文字，淡化链接样式
   - statistics-in-editor
-    - 自动统计链接点击次数、图片分享次数
+    - 自动统计链接点击次数、图片分享次数、page或问题的访问次数
 
 - headless/unstyled design
   - 基于场景预定义react组件接口，允许替换默认使用的各个组件
@@ -74,15 +74,6 @@ modified: 2022-03-17T17:50:28.967Z
 
 - 云同步提供商
   - 网盘：百度OAuth2.0, 腾讯文档/微云，onedrive
-    - https://github.com/reruin/sharelist
-      - ShareList 是一个易用的网盘工具，支持快速挂载 GoogleDrive、OneDrive
-    - 基于 OneDrive API 的图床
-      - https://github.com/harrisoff/onedrive
-      - https://github.com/beetcb/sosf
-    - https://github.com/golf1052/code-sync
-      - Sync VSCode extensions using your favorite file synchronization service
-    - https://github.com/OneDrive/onedrive-texteditor-js
-      - sample application provides a simple markdown (text) editor experience for files stored in OneDrive.
   - 云服务商：七牛
   - 非主流存储：github、gitee
 # experimental

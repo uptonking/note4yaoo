@@ -11,7 +11,7 @@ modified: 2020-12-31T15:32:40.135Z
 
 - https://github.com/alibaba/DataX
   - /7.3kStar/Apache2/202009
-  - 离线数据同步工具/平台，实现包括 MySQL、Oracle、Postgre、HDFS等各种异构数据源之间高效的数据同步功能
+  - 离线数据同步工具/平台，实现包括 MySQL、Oracle、Postgres、HDFS等各种异构数据源之间高效的数据同步功能
 - https://github.com/alibaba/easyexcel
   - /17.1kStar/Apache2/202009
   - 简单且能避免OOM的java处理Excel工具
@@ -27,11 +27,8 @@ modified: 2020-12-31T15:32:40.135Z
     - 跨平台GUI工具(Windows/Linux/macOS)
   - https://github.com/xresloader/xresconv-cli
     - 跨平台命令行工具，兼容python2和python3
-
 # infrastructure
-
 - https://github.com/coollabsio/coolify
   - https://coollabs.io/coolify
   - An open-source, hassle-free, self-hostable Heroku & Netlify alternative
-
 # more-tools

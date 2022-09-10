@@ -61,6 +61,10 @@ modified: 2021-01-13T19:30:59.508Z
   - http://fxaeberhard.github.io/handdrawn.css/
   - Handdrawn.css lets you prototype your web site with a hand drawn look and feel.
 # paper
+- https://github.com/imrishabh18/text-to-handwriting
+  - https://imrishabh18.github.io/text-to-handwriting
+  - convert text copied or typed into handwriting, which can be downloaded in images making it look real.
+
 - https://github.com/papercss/papercss /字体变成手写体
   - https://www.getpapercss.com/
   - The Less Formal CSS Framework

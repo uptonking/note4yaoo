@@ -37,6 +37,7 @@ modified: 2022-08-21T10:16:52.004Z
 
 - https://github.com/edeity
   - https://ede.ink/
+  - [2021，挑战和机遇: 开源syllepsis](https://ede.ink/half_year_in_toutiao.html)
 
 - https://github.com/ocavue
   - Core team member at remirror

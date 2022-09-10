@@ -37,6 +37,15 @@ modified: 2022-08-18T16:57:15.296Z
   - 编辑器已分离，基于rich-markdown-editor和prosemirror
   - 前端基于lit
 
+- notesnook /2.8kStar/GPL.v3/202209/js+ts/tiptap
+  - https://github.com/streetwriters/notesnook
+  - https://notesnook.com/
+  - open source & end-to-end encrypted note taking alternative to Evernote.
+  - web编辑器和移动端编辑器都依赖tiptap2、zustand、unfurl.js(oembed)、re-resizable、katex
+  - @notesnook/streamable-fs: Streaming interface around an IndexedDB based file system
+  - Notesnook encrypts everything on your device using XChaCha20-Poly1305 & Argon2.
+  - 服务端数据同步代码未找到
+
 - codex /195Star/CC-BY-NC-4.0/202202/js/electron
   - https://github.com/jcv8000/Codex
   - https://codexnotes.com/

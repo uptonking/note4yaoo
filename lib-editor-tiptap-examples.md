@@ -34,6 +34,15 @@ modified: 2022-08-19T23:00:22.162Z
   - 后端依赖 nestjs、passport、typeorm、mysql、yjs
   - Think 是一款开源知识管理工具。通过独立的知识库空间，结构化地组织在线协作文档，实现知识的积累与沉淀，促进知识的复用与流通。同时支持多人协作文档。
 
+- notesnook /2.8kStar/GPL.v3/202209/js+ts/tiptap
+  - https://github.com/streetwriters/notesnook
+  - https://notesnook.com/
+  - open source & end-to-end encrypted note taking alternative to Evernote.
+  - web编辑器和移动端编辑器都依赖tiptap2、zustand、unfurl.js(oembed)、re-resizable、katex
+  - @notesnook/streamable-fs: Streaming interface around an IndexedDB based file system
+  - Notesnook encrypts everything on your device using XChaCha20-Poly1305 & Argon2.
+  - 服务端数据同步代码未找到
+
 - better-virgool /9Star/MIT/NALic/202208/ts/tiptap
   - https://github.com/ahhshm/better-virgool
   - https://ahhshm.github.io/better-virgool/

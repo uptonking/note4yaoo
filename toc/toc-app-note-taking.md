@@ -7,18 +7,34 @@ modified: 2020-10-22T10:03:50.526Z
 
 # toc-app-note-taking
 
-# note-experimental
-
-- [interactive notebooks](https://nteract.io/)
-  - We build SDKs, applications, and libraries that help you and your team make the most of interactive (particularly Jupyter) notebooks and REPLs.
-  - nteract provides a client-side SDK for integrating notebook and REPL UIs into your software. 
+# guide
+- notes-solutions
 # popular
-- https://github.com/gzuidhof/starboard-notebook
-  - https://starboard.gg/
-  - /633Star/MPLv2/202005/ts
-  - In-browser literal notebook runtime used in Starboard.
+- TiddlyWiki5 /6.9kStar/BSD/202209/ts
+  - https://github.com/Jermolene/TiddlyWiki5
+  - https://tiddlywiki.com/dev/
+  - A self-contained JavaScript wiki for the browser, Node.js, AWS Lambda etc.
+  - view层基于tid文件
 
-- notable /16.4kStar/MIT |AGPLv3/202007/ts/桌面版
+- Standard Notes /3.6kStar/AGPL.v3/202208/ts
+  - https://github.com/standardnotes/app
+  - https://standardnotes.com/
+  - an end-to-end encrypted note-taking app
+  - An all-in-one personal knowledge base
+  - 提供了多种编辑器，包括代码、markdown
+  - https://github.com/standardnotes/server
+    - 后端依赖express
+
+- notesnook /2.8kStar/GPL.v3/202209/js+ts/tiptap
+  - https://github.com/streetwriters/notesnook
+  - https://notesnook.com/
+  - open source & end-to-end encrypted note taking alternative to Evernote.
+  - web编辑器和移动端编辑器都依赖tiptap2、zustand、unfurl.js(oembed)、re-resizable、katex
+  - @notesnook/streamable-fs: Streaming interface around an IndexedDB based file system
+  - Notesnook encrypts everything on your device using XChaCha20-Poly1305 & Argon2.
+  - 服务端数据同步代码未找到
+
+- notable /16.4kStar/MIT > AGPLv3/202007/ts/桌面版
   - https://github.com/notable/notable
   - https://notable.md/
   - The Markdown-based note-taking app that doesn't suck.
@@ -39,6 +55,16 @@ modified: 2020-10-22T10:03:50.526Z
   - 参考了prosemirror、zettlr、vscode、notable
     - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
 
+- siyuan /6.6kStar/AGPL.v3/202208/ts/go/支持协作
+  - https://github.com/siyuan-note/siyuan
+  - https://b3log.org/siyuan/
+  - a local-first personal knowledge management system
+  - 思源笔记是一款本地优先的个人知识管理系统，支持完全离线使用，同时也支持端到端加密同步。
+    - 所有本地功能都是免费的，云端服务需要年付订阅。
+    - 不支持网页版，要使用桌面版或移动版
+  - SiYuan is made possible by the Vditor and Lute(golang)
+  - 用户自己创建的笔记本文件夹下，.sy 后缀的文件用于保存文档数据，数据格式为JSON
+
 - yn /3.6kStar/AGPL.v3/202208/ts/vue/网页版+桌面版
   - https://github.com/purocean/yn
   - https://yank-note.vercel.app/
@@ -56,43 +82,55 @@ modified: 2020-10-22T10:03:50.526Z
   - 依赖React、Tiptap、tesseract.js、pdfmake、html-to-pdfmake
   - You can take notes, convert images to text, download notes to pdf, and more.
 
-- https://github.com/vicjohnson1213/Medley
-  - 依赖angular7、hightlight.js、marked、monaco-editor、rxjs、subsink、zone.js
-  - A tag-based note taking app using Markdown for formatting.
-  - I drew some design inspiration (specifically the tag-based organization) from Notable
-
-- https://github.com/BoostIO/Boostnote
-  - /17.2kStar/GPLv3/202009/js
-  - A markdown editor for developers on Mac, Windows and Linux.
-- https://github.com/BoostIO/BoostNote.next
-  - /1.9kStar/GPLv3/202009/ts
-  - An intuitive and stylish markdown note app for the developers
-  - We've developed a collaborative workspace app called "Boost Hub" for developer teams.
-  - BoostNote.next is a renewal of the Boostnote app.
-- https://github.com/laurent22/joplin
-  - /18.4kStar/MIT/202010
+- joplin /31.9kStar/MIT/202209/ts/web需付费+pc+mobile
+  - https://github.com/laurent22/joplin
   - https://joplinapp.org/
   - note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS
-- https://github.com/vnotex/vnote
-  - /7.5kStar/MIT/202009/cpp
+
+- BoostNote /3.1kStar/GPLv3/202209/ts
+  - https://github.com/BoostIO/BoostNote-App
+  - https://boostnote.io/
+  - a document driven project management tool that maximizes remote DevOps team velocity.
+
+- vnote /7.5kStar/MIT/202009/cpp
+  - https://github.com/vnotex/vnote
   - 依赖Qt5, turndown, markdown-it
   - a note-taking application that knows programmers and Markdown better.
-- https://github.com/Automattic/simplenote-electron
-  - /5.2kStar/GPLv2/202009/ts
-  - A Simplenote React client packaged in Electron.
+
+- takenote /2.8kStar/MIT/202010/ts
+  - https://github.com/taniarascia/takenote
+  - https://takenote.dev/app
+  - 依赖react-beautiful-dnd、react-router、@reduxjs/toolkit、redux-saga、react-markdown、axios、codemirror、express、jszip
+  - A free, open-source notes app for the web
+  - TakeNote was made by developers for developers - a plain-text note-taking app for the web with Markdown support. 
+  - 👉🏻 What you see is what you paste. No WYSIWIG, no formatting pasted from the web, and no features you don't need or want. 
+
+- trilium /17.1kStar/AGPL.v3/202208/js/ckeditor5/支持多端
+  - https://github.com/zadam/trilium
+  - https://github.com/zadam/trilium/wiki/
+  - 依赖 electron、express、jsdom、turndown、ckeditor.v5、codemirror、fancytree、bootstrap
+  - a hierarchical note taking application with focus on building large personal knowledge bases. 
+  - Synchronization with self-hosted sync server
+  - Trilium is provided as either desktop application (Linux and Windows) or web application hosted on your server (Linux). 
+    - Mac OS desktop build is available, but it is unsupported.
+    - If you want to install Trilium on server,currently only recent Chrome and Firefox are supported (tested) browsers.
+  - [Notion like database](https://github.com/zadam/trilium/issues/822)
+# more-note-app
+- simplenote-electron /4.1kStar/GPLv2/202201/ts/inactive
+  - https://github.com/Automattic/simplenote-electron
+  - https://simplenote.com/
+  - Simplenote for Web, Windows, and Linux
   - import notes from Simplenote(.json) exports, Evernote(.enex) export, Plain text files(.txt)
+  - node-simperium for Simperium syncing. 服务端未开源
+  - Simplenote API features such as sharing and publishing will not work with development
+  - ref
+    - https://github.com/Automattic/simplenote-android
+    - https://github.com/Automattic/simplenote-ios
+
 - https://github.com/codex-team/codex.notes
   - /79Star/MIT/202009/js
   - crossplatform desktop notes application based on Electron and Editor.js
 
-- https://github.com/taniarascia/takenote
-  - https://takenote.dev/app
-  - /2.8kStar/MIT/202010/ts
-  - 依赖react-beautiful-dnd、react-router、@reduxjs/toolkit、redux-saga、react-markdown、axios、codemirror、express、jszip
-  - A free, open-source notes app for the web
-  - TakeNote was made by developers for developers - a plain-text note-taking app for the web with Markdown support. 
-  - What you see is what you paste. No WYSIWIG, no formatting pasted from the web, and no features you don't need or want. 
-# more-note-app
 - https://github.com/0xGG/crossnote
   - /404Star/AGPLv3/202009/ts
   - markdown notes reader & editor Progressive Web Application that works offline and supports syncing with arbitrary git repository right inside your browser
@@ -103,3 +141,10 @@ modified: 2020-10-22T10:03:50.526Z
   - Realtime collaborative markdown notes on all platforms.
   - HackMD helps developers write better documents and build active communities with open collaboration
   - CodiMD is the free software version of HackMD, developed by the HackMD team with reduced features (without book mode)
+- https://github.com/hedgedoc/hedgedoc
+  - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.
+
+- https://github.com/vicjohnson1213/Medley /202007/inactive
+  - 依赖angular7、hightlight.js、marked、monaco-editor、rxjs、subsink、zone.js
+  - A tag-based note taking app using Markdown for formatting.
+  - I drew some design inspiration (specifically the tag-based organization) from Notable

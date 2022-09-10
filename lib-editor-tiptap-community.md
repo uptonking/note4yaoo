@@ -1,6 +1,6 @@
 ---
 title: lib-editor-tiptap-community
-tags: [community, editor, tiptap]
+tags: [community, editor, prosemirror, tiptap]
 created: 2022-08-19T23:08:02.074Z
 modified: 2022-08-19T23:08:45.274Z
 ---

@@ -10,6 +10,10 @@ modified: 2021-05-13T16:08:15.067Z
 # guide
 
 # js-notebook
+- starboard-notebook /633Star/MPLv2/202005/ts
+  - https://github.com/gzuidhof/starboard-notebook
+  - https://starboard.gg/
+  - In-browser literal notebook runtime used in Starboard.
 
 - https://github.com/ottomatica/docable-notebooks
   - https://docable.cloud/ottomatica/docable-examples/script.md
@@ -42,8 +46,10 @@ modified: 2021-05-13T16:08:15.067Z
   - 一款面向程序员的 Markdown 笔记应用。
   - 支持加密文档，代码片段运行，内置终端，图表嵌入，HTML 小工具。
 
+- [interactive notebooks](https://nteract.io/)
+  - We build SDKs, applications, and libraries that help you and your team make the most of interactive (particularly Jupyter) notebooks and REPLs.
+  - nteract provides a client-side SDK for integrating notebook and REPL UIs into your software. 
 # python-notebook
-
 - https://github.com/jupyter/notebook
   - a web-based notebook environment for interactive computing.
   - The IPython Notebook is now known as the Jupyter Notebook.
@@ -52,8 +58,6 @@ modified: 2021-05-13T16:08:15.067Z
 - https://github.com/ales-tsurko/cells
 - Live coding environment. 
 - Use SuperCollider, Python, TidalCycles, Node.js etc. in the same project.
-
 # ref
-
 - https://github.com/jsvine/notebookjs
   - Notebook.js parses raw Jupyter/IPython notebooks, and lets you render them as HTML
