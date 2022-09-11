@@ -9,7 +9,7 @@ modified: 2021-10-12T08:13:20.183Z
 
 # guide
 
-# [富文本编辑框架Prosemirror - 如何对state进行修改](https://lastnigtic.cn/prosemirror-state-modify/)
+# [富文本编辑框架Prosemirror - 如何对state进行修改__202010](https://lastnigtic.cn/prosemirror-state-modify/)
 - doc就是当前整篇文档的数据内容，
   - doc是一个Node类型元素，Node可以理解为prosemirror文章树中的一个节点，代表着一个文档中的元素。
   - Node包含一个content属性，代表它的子节点，是一个Fragment类型的元素，它代表着一个文档片段，可以理解为当前节点的所有子元素的一个集合。
@@ -83,13 +83,13 @@ editHandlers.keypress = (view, event) => {
 - prosemirror通过维护自己的文档数据树，并把所有对dom的操作都转换成对state的操作，抹平了不同浏览器带来的数据结构不一致的问题，
   - 并提升了prosemirror本身的视图层的可移植性，理论上可以通过自身实现视图层在任何平台上都实现编辑器。
   - 维护自身文档数据结构也可以说是一个比较主流解决方案，因为它让内容可控，状态可以变，并且为实现协同编辑提供了结构上的支撑。
-# [富文本编辑框架Prosemirror - 从State到DOM](https://lastnigtic.cn/prosemirror-state-to-dom/)
-- 使用 prosemirror 时我们有以下三种定义编辑器内视图渲染的方式：
+# [富文本编辑框架Prosemirror - 从State到DOM__202009](https://lastnigtic.cn/prosemirror-state-to-dom/)
+- 使用prosemirror时我们有以下三种定义编辑器内视图渲染的方式：
   - 直接使用 nodeType/markType 中的 `toDOM` 属性，实际渲染由`prosemirror-model`提供的`DOMSerializer.renderSpec`负责
   - 使用 `nodeView` 渲染自定义的节点
   - 使用 `decoration` 渲染与 doc 内容无关的节点
 
-- 从使用者的角度看，我们在 doc 插入了什么内容，dom 中就会渲染出相应类型的内容，这一种方式看起来很像 React 的数据驱动视图的形式。
+- 从使用者的角度看，我们在doc插入了什么内容，dom中就会渲染出相应类型的内容，这一种方式看起来很像React的数据驱动视图的形式。
 
 - ​prosemirror内部存在一种用于描述视图对象的特殊结构——ViewDesc，
   - 他会绑定在编辑器的 DOM 中的 pmViewDesc 属性上，整篇文档的 desc 挂载在 view 实例的 docView 上。
@@ -186,7 +186,7 @@ editHandlers.keypress = (view, event) => {
 
 - 初窥prosemirror的渲染流程，与 react 一样，使用 prosemirror 时我们一般不需要关心到视图这一层，这也是现在各主流富文本编辑器框的一套思路。
 - 后面的文章会继续探究用户形如何被捕获，state内部如何更新，索引如何构建等的流程。
-# [富文本编辑器Prosemirror - 入门](https://lastnigtic.cn/prosemirror-first/)
+# [富文本编辑器Prosemirror - 入门__202008](https://lastnigtic.cn/prosemirror-first/)
 - prosemirror-model：负责 prosemirror 的内容结构。
   - 定义了编辑器的文档模型，用于描述编辑器内容的数据结构，并实现了对编辑器内容的一原子的操作。
   - 实现了一套索引系统，用于处理位置信息。
@@ -224,6 +224,7 @@ paragraph: {
 
 - Attributes
   - Node 以及 Mark 都可以附加一些信息，但需要在初始化是定义好支持的属性
+  - attrs 中包含 align 的 paragraph 节点，可以用作单纯的信息存储，也可以配合 toDOM 修改渲染输出。
 
 - prosemirror的内容被描述成一棵树，他的特征属性（isBlock、isInline 等）由我们所定义的节点特征来确定
 - Node 的 content 由一个 Fragment 表示，Fragment 的 content 则是由 Node 组成的数组，prosemirror 通过这样嵌套形成的树形结构来描述一个文档。
@@ -237,15 +238,18 @@ paragraph: {
   - 文本节点中的每个内容都使做是一个 token。
   - 叶子节点（不能包含其他节点内容）也视作是一个 token。
 - 按照这个规则，想象我们有一个指针，从开头 0 开始进入一个节点时索引加 1，每越过一个文本内容加 1，退出一个节点时也加 1，通过这样的形式，就可以描述文档中的每个位置。
-  - nodeSize 可以理解为我们的指针从进入到退出节点时走过的距离
+  - `nodeSize` 可以理解为我们的指针从进入到退出节点时走过的距离
 
 - 如何修改文档
-  - 可以是修改 doc 的 content 属性或者是直接修改文字内容亦或是删除内容后再插入，我们选择第一种方式来实现。
+  - 可以是修改doc的content属性或者是直接修改文字内容亦或是删除内容后再插入，我们选择第一种方式来实现。
 - prosemirror 中的数据更新实际上都是对 state 的修改，通过 state 提供的 updateState 的 API 接受一个新的 state 来更新 state，编辑器实例 view 中帮我封装好了这一步操作，对外暴露出来的 API 是 dispatch。
 - 修改文档的操作是由prosemirror-transform来实现的，而prosemirror-state中的tr属性继承了 transform，state 又是作为prosemirror-view实例的一个属性
-  - 所以更新操作都可以通过 view 来实现，翻阅API 文档，看到replaceRangeWith这个 API 符合我们的需求，
+  - 所以更新操作都可以通过 view 来实现，翻阅API 文档，看到`replaceRangeWith`这个 API 符合我们的需求，
 - replaceRangeWith 做了什么操作呢？
   - 实际上创建了一个 ReplaceStep 去修改文档。
-  - step对文档的修改不一定是成功的，结果由 StepResult 表示，如果失败了会抛出一个 TransformError，
-  - 如果成功了，则会返回新的文档的内容，transform 会把旧文档内容保存在 docs 属性中，新的应用到 doc 属性中，并把 step 保存在 steps 属性中，可以实现撤销的操作。最后通过 dispatch 更新到 state。
+  - step对文档的修改不一定是成功的，结果由 StepResult 表示，
+  - 如果失败了，会抛出一个 TransformError，
+  - 如果成功了，则会返回新的文档的内容，
+  - transform 会把旧文档内容保存在 `docs` 属性中，新的应用到 `doc` 属性中，并把 step 保存在 steps 属性中，可以实现撤销的操作。
+- 最后通过 dispatch 更新到 state。
   - 因此，我们可以把 state.tr 可以看成是一个事务，每一个 step 可以看作是一次原子操作，通过 dispatch 提交事务并应用到 state 上生效，实现了对文档的修改。

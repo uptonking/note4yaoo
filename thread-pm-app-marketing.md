@@ -30,7 +30,37 @@ modified: 2021-10-29T15:06:33.422Z
 
 - ## 
 
-- ## 
+- ## How can I test if an open source model might work for my prototype product? Open source it. 
+- https://twitter.com/iantien/status/1564987665312649216
+  - If it takes off, you can go back to closed source--giving away a prototype isn't losing much. 
+  - But if no one cares, then consider switching ideas.
+
+- If you’re making an OSS project open core, say so as early as possible.
+  - Community can work well in both open core & non-open core models, but the goals of those communities are often very different. 
+
+- How do I choose between starting an open source cloud business vs. on-prem business? 
+- ### [The Identity Crisis Facing Open Source Companies in the Cloud](https://tomtunguz.com/open-source-cloud-identity-crisis/)
+- So open source companies have two paths in front of them:
+  - Start on-premises and evolve to managed service. Capture more revenue sooner but face the transition from on-prem to cloud, and that entails later.
+  - Forgo the on-premises and provide the managed service immediately. Wait a longer to generate meaningful revenue, but be cloud-ready first, and tackle the competitive differentiation sooner.
+- There’s no universal answer. But there are factors to consider when deciding:
+  - where is the the traction today, in the mid-market or the enterprise?
+  - how competitive is the space today and in the next 3 years?
+  - what differentiators does the product offer beyond open-source? and does the buyer care?
+  - how important is it to the business to generate revenue sooner rather than later?
+
+- How do I package an open core offering? 
+  - Open source is developers/practitioners without budget. 
+  - Paid versions for buyers with budget access--managers, leaders and IT professionals--who purchase after validation of value.
+
+- ## How do you start an open source business? 
+- https://twitter.com/iantien/status/1564970778386280450
+- Sell one of the following: 
+  1. Services/expertise (e.g. Percona) 
+  2. Hosting (e.g. http://Wordpress.com, WPEngine, etc.)
+  3. An open core version (e.g. GitLab, HashiCorp) 
+  - Be explicit with your community on which.
+- Or do all three, maybe at the same time, depending on your stage …
 
 - ## @sketch ’s “vs. @figma ” page is surprisingly misleading. At the same time, Figma’s page is actually quite respectful of Sketch’s role in the UI design toolkit.
 - https://twitter.com/efedorenko/status/1535352502891192321
