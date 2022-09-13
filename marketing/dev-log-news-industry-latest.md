@@ -16,6 +16,7 @@ modified: 2021-08-07T15:30:42.655Z
 - 202012-ONES 收购知名协作工具 Tower 
 
 # 2021
+- 202111-bi-tableau退出中国市场，阿里接手相关业务，阿里看中了Tableau的客户，但会推自己的QuickBI
 - 202109-tech-Footnotes now supported in Markdown fields
 - 202107-market-因政策原因，K12校外教育培训遇冷；字节跳动大力教育大裁员
 - 202106-career-腾讯、快手、字节等头部一线公司开始取消996加班规定

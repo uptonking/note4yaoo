@@ -7,12 +7,15 @@ modified: 2021-01-01T15:57:59.157Z
 
 # toc-datasource-gov-cn
 
-# gov-org
+# gis-cn
 
+- 自然资源部 标准地图服务
+  - http://bzdt.ch.mnr.gov.cn/
+  - 提供了全国、分省的各类地图
+  - 未找到数据
+# gov-enterprise
 - 国家企业信用信息公示系统
   - http://www.gsxt.gov.cn/
-
-# gov-cn
-
+# gov-regions
 - 深圳市政府数据开放平台
   - https://opendata.sz.gov.cn/

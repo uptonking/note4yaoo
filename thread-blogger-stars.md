@@ -14,12 +14,6 @@ modified: 2021-02-09T19:27:07.664Z
 
 - 在开源项目comments多的issue里面，很容易找到项目难点和业务使用场景
   - 甚至直接找到其他扩展开发者，以及他们的插件、轮子
-# text-editor
-- [张驰技术博客](https://juejin.cn/user/3456520286121437/posts)
-
-- https://github.com/fantasticit
-  - https://github.com/fantasticit/think
-  - 低代码、文档
 # d3-notebook
 - Taras Novak
   - https://github.com/RandomFractals
@@ -41,14 +35,26 @@ modified: 2021-02-09T19:27:07.664Z
   - 百度，echarts、claygl(formerly qtek)
   - https://github.com/pissang
   - https://www.zhihu.com/people/chen-yi-11/answers
+
+- 史丹青
+  - https://github.com/sdq
+  - https://github.com/narchart/narrative-chart
+
 - 陈屹(流形)
   - 阿里， 深入React技术栈作者
   - https://www.zhihu.com/people/arcthur/answers
+
 - 吴多益
   - 百度，百度智能云Sugar BI
   - https://github.com/nwind
   - https://www.zhihu.com/people/wuduoyi/posts
-# geo
+# gis
+- 遥想公瑾当年
+  - webgis
+  - https://www.zhihu.com/people/yao-xiang-gong-jin-dang-nian-88-8
+  - [WebGIS引擎现状与未来](https://zhuanlan.zhihu.com/p/344576177)
+  - [WebGIS数据不切片或是时代必然](https://zhuanlan.zhihu.com/p/512298212)
+
 - 盛政
   - greengis
   - 中国农大
@@ -68,11 +74,18 @@ modified: 2021-02-09T19:27:07.664Z
   - https://www.zhihu.com/people/onsummer
   - https://www.cnblogs.com/onsummer/p/12082568.html
 
+- x123abc123abcx
+  - https://www.zhihu.com/people/zhou-ming-rui-15-17/posts
+  - [MapBox源码解读 mapbox-gl-js](https://zhuanlan.zhihu.com/p/526423894)
+
 - 魏守峰
   - geotrellis(inactive)
   - 武汉一格空间法人
   - https://www.cnblogs.com/shoufengwei/
   - http://www.phitrellis.com/#/about
+
+- 张志敏
+  - https://beginor.github.io/pages.html
 # data-analysis
 - 空白白白白
   - 数据分析专家，pointer创始人

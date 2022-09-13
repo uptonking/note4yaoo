@@ -33,10 +33,12 @@ modified: 2020-12-14T11:29:00.678Z
 - Implementations
   - rxjs
   - core-js
+  - https://github.com/vobyjs/oby
+    - A tiny Observable implementation
 
 - Example: Observing Keyboard Events
 
-``` JS
+```JS
 // create a function which returns an observable stream of events
 function listen(element, eventName) {
   return new Observable(observer => {

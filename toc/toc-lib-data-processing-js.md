@@ -37,6 +37,9 @@ modified: 2021-05-13T16:14:28.745Z
   - Following the relational algebra and inspired by the design of dplyr, Arquero provides a fluent API for manipulating column-oriented data frames.
   - Arquero supports a range of data transformation tasks, including filter, sample, aggregation, window, join, and reshaping operations.
   - query over arrays, typed arrays, array-like objects, or Apache Arrow columns.
+- https://github.com/uwdata/arquero-sql
+  - Arquero-SQL is a SQL backend support for Arquero. 
+  - With Arquero-SQL, your data is stored in a disk and can be transformed with a powerful remote machine, suited for big data analysis tasks.
 
 - https://github.com/vega/datalib
   - http://vega.github.io/datalib/

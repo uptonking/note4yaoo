@@ -21,8 +21,10 @@ modified: 2020-10-22T10:23:02.892Z
   - /39Star/Apache2/201808
   - a general purpose data visualization library built for both static and streaming data.
 
+- narrative-chart /42Star/BSD/202208/js
+  - https://github.com/narchart/narrative-chart
+  - visualization library specialized for authoring charts that facilitate data storytelling with a high-level action-oriented declarative grammar.
 # d3-app
-
 - https://github.com/paulhoughton/mortgage
   - /202Star/MIT/201902
   - Mortgage overpayment calculator using React and D3
@@ -32,16 +34,15 @@ modified: 2020-10-22T10:23:02.892Z
   - /160Star/MIT/201808
   - This d3.js heatmap representing time series data is used to visualize tracked time over the past year, showing details for each of the days on demand.
   - https://github.com/DKirwan/calendar-heatmap
-
 # d3-geo
-
 - https://github.com/d3/d3-geo
   - /637Star/BSD/202009
   - Geographic projections, spherical shapes and spherical trigonometry.
 - https://github.com/yaph/d3-geomap
   - A library for creating geographical maps based on D3.js
-
 # d3-pieces
+- https://github.com/uwdata/d3-tutorials
+  - D3 Tutorials for CSE512 Data Visualization Course at University of Washington
 
 - https://github.com/Swizec/d3blackbox
   - A simple React wrapper for any D3 code you want

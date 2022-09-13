@@ -10,6 +10,9 @@ modified: 2020-12-26T12:01:39.746Z
 # popular
 
 # json
-
 - https://github.com/WebReflection/flatted
   - A super light (0.5K) and fast circular JSON parser, directly from the creator of CircularJSON.
+
+- https://github.com/TexteaInc/json-viewer
+  - a React component for displaying and editing JavaScript/TypeScript arrays and JSON objects.
+  - https://github.com/mac-s-g/react-json-view

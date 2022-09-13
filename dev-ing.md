@@ -66,9 +66,25 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - dashboard/webapp-template--0901
 # dev-09
 
+## 0912
+
+- `caretRangeFromPoint(x,y)`只有firefox浏览器不支持，其他浏览器都支持，是非标准属性
+  - `caretPositionFromPoint(x,y)`只有firefox浏览器支持，是标准属性
+  - 返回光标所在节点及光标在该节点内的offset
+  - 两个方法参数完全相同，都是 x/y position within the current viewport，即clientX/Y
+
+- `elementFromPoint(x,y)` 不包含offset
+  - returns the topmost `Element` at the specified coordinates (relative to the viewport)
+
+- ts变量类型声明时， : vs as
+  - [What is the difference between using the colon and as syntax for declaring type?](https://stackoverflow.com/questions/54684886)
+  - You should always prefer a type annotation to an assertion.
+  - assertation forces Typescript to think that it will always return a number (even that it could be not true).
+  - annotation, Typescript will verify and ensure that there could not be another case (Even that it could never happen).
+
 ## 0906
 
-- 导入css文件并限定范围，推荐用类styled-components的运行时方案
+- 导入css文件到一个限定的范围，推荐用类styled-components的运行时方案
 - [How to make React CSS import component-scoped?](https://stackoverflow.com/questions/47090574)
 
 ```JSX
@@ -111,7 +127,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                        `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                         `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -130,7 +146,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                           `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                            `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

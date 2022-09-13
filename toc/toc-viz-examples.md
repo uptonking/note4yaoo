@@ -7,8 +7,28 @@ modified: 2020-10-22T16:09:43.158Z
 
 # toc-viz-examples
 
-# amazing
+# storytelling
 
+- StoryMapJS /109Star/MPLv2/202202/js/inactive
+  - https://github.com/NUKnightLab/StoryMapJS
+  - https://storymap.knightlab.com/
+  - a simple tool to help you tell stories with maps.
+
+- TimelineJS /2.6kStar/MPLv2/202209/js
+  - https://github.com/NUKnightLab/TimelineJS3
+  - http://timeline.knightlab.com/
+  - A Storytelling Timeline built in JavaScript.
+
+- narrative-chart /42Star/BSD/202208/js/d3
+  - https://github.com/narchart/narrative-chart
+  - visualization library specialized for authoring charts that facilitate data storytelling with a high-level action-oriented declarative grammar.
+
+- https://github.com/mapbox/storytelling
+  - Storytelling with maps template
+  - Updated to Mapbox GL JS V2.0.0
+  - This template is designed to accelerate building out a "scrollytelling" map story. The primary input is a story broken into sections (chapters), each hooked to a particular view of a map.
+  - This template is for data journalists and digital storytellers of any kind. No coding experience is required.
+# amazing
 - https://github.com/Jannchie/Historical-ranking-data-visualization-based-on-d3.js
   - /4.5kStar/GPLv3/202008
   - 将历史数据排名转化为动态柱状图图表

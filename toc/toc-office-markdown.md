@@ -21,23 +21,29 @@ modified: 2021-01-04T17:26:25.032Z
   - zettlr
   - mermaid
 # markdown-parser-generator
-- https://github.com/markdown-it/markdown-it
+- markdown-it /10.4kStar/MIT/202009
+  - https://github.com/markdown-it/markdown-it
   - https://markdown-it.github.io/
-  - /10.4kStar/MIT/202009
   - Markdown parser. 
   - 100% CommonMark support, extensions, syntax plugins & high speed
-- https://github.com/remarkjs/remark/tree/main/packages/remark-parse
+
+- remark 
+  - https://github.com/remarkjs/remark/tree/main/packages/remark-parse
   - Parses Markdown to mdast syntax trees. 
   - Built on micromark and mdast-util-from-markdown
-- https://github.com/markedjs/marked
-  - /24kStar/MIT/202012/js
+
+- marked /24kStar/MIT/202012/js
+  - https://github.com/markedjs/marked
   - A markdown parser and compiler. Built for speed.
   - light-weight while implementing all markdown features from the supported flavors & specification
-- https://github.com/eczn/down-parse /ts/2019
-  - markdown parser with a wonderful plugin system
-- https://github.com/developit/snarkdown
+
+- snarkdown /2kStar/MIT/202201/js/单文件
+  - https://github.com/developit/snarkdown
   - pass a Markdown string, get back an HTML string
   - it's basically one regex and a huge if statement
+
+- https://github.com/eczn/down-parse /ts/2019
+  - markdown parser with a wonderful plugin system
 # markdown-editor
 - https://github.com/iddan/react-universal-markdown
   - Markdown component for Web and Native powered by CommonMark

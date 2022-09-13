@@ -12,9 +12,12 @@ modified: 2022-08-21T10:16:52.004Z
 - resources
   - https://www.rich-text-js-jobs.com/
 # popular
+- [张驰技术博客](https://juejin.cn/user/3456520286121437/posts)
 
+- https://github.com/fantasticit
+  - https://github.com/fantasticit/think
+  - 低代码、文档
 # slate
-
 - https://github.com/pubuzhixing8
   - https://github.com/worktile/slate-angular
 # prosemirror
