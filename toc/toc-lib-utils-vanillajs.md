@@ -16,6 +16,10 @@ modified: 2021-03-01T10:54:24.828Z
 
 - https://github.com/blakeembrey/change-case
   - Transform a string between camelCase, PascalCase, Capital Case, snake_case, param-case, CONSTANT_CASE, dot.case, Header-Case, no case, path/case, Sentence case and others.
+# images-utils
+- https://github.com/TonySpegel/image-comparison
+  - Compare two images using a slider, an overlay, or a side by side split view.
+  - This webcomponent follows the open-wc recommendation
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

@@ -9,24 +9,19 @@ modified: 2021-06-15T00:07:49.228Z
 
 # guide
 
-## [Why we picked Remirror/Prosemirror as WYSIWYG editor in our React application__202108](https://medium.com/collaborne-engineering/rich-text-editor-for-react-f7d71746867f)
-
+# [Why we picked Remirror/Prosemirror as WYSIWYG editor in our React application__202108](https://medium.com/collaborne-engineering/rich-text-editor-for-react-f7d71746867f)
 - We could address some of these points with Quill’s many config options and modules. 
   - Yet, in the end, we realized that we got it all wrong: A monolithic editor with tons of config options would never bring us there. 
   - We needed the opposite: a bag of “LEGO bricks” to build our own editor from the ground up.
 - Remirror: Functional blocks, like link handling, were encapsulated into extensions. Next to these standard extensions, we could simply add our own extensions to tailor the editor to our needs.
-
-## [Switching Rich Text Editors, Part 1: Picking Tiptap](https://www.ashbyhq.com/blog/engineering/tiptap-part-1)
-
+# [Switching Rich Text Editors, Part 1: Picking Tiptap](https://www.ashbyhq.com/blog/engineering/tiptap-part-1)
 - slate maintainers introduced significant breaking changes to the API and document model in 0.50.x
-- There's no longer much difference between ReMirror and tiptap, and it's a great example of how quickly a library can change. 
+- 👉🏻 There's no longer much difference between ReMirror and tiptap, and it's a great example of how quickly a library can change. 
 
 ---
 
 - [Switching Rich Text Editors, Part 1: Picking Tiptap](https://news.ycombinator.com/item?id=30299800)
-
-## [ContentEditable困境与破局 prosemirror的基础实现原理](https://zhuanlan.zhihu.com/p/123341288)
-
+# [ContentEditable困境与破局--prosemirror的基础实现原理](https://zhuanlan.zhihu.com/p/123341288)
 - 现在市面上针对富文本编辑器的方案大概分为以下三种
   - textarea
   - contenteditable
@@ -95,7 +90,7 @@ modified: 2021-06-15T00:07:49.228Z
 - 我专门去看过有道云笔记的html，里面全部都是span+style，每个span都把所有的style写到里面去了。不知道这种做法算哪一类？可能存在什么问题
   - 对于一篇文章来说，html是提供了更加清晰，更语义化的标签的
   - 一般做富文本的话，文章内容是需要后台分析处理的，语义化的标签写正则会方便一些，span+style简直不敢想
-# [富文本编辑器Prosemirror - 入门](https://zhuanlan.zhihu.com/p/263454334)
+# [富文本编辑器Prosemirror - 入门_lastnigtic](https://zhuanlan.zhihu.com/p/263454334)
 - prosemirror-model：
   - 负责prosemirror的内容结构。
   - 定义了编辑器的文档模型，用于描述编辑器内容的数据结构，并实现了对编辑器内容的一原子的操作。
@@ -189,13 +184,46 @@ dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
 - step对文档的修改不一定是成功的，结果由`StepResult`表示，如果失败了会抛出一个TransformError，如果成功了，则会返回新的文档的内容，
   - transform会把旧文档内容保存在`docs`属性中，新的应用到`doc`属性中，并把step保存在`steps`属性中，可以实现撤销的操作。最后通过dispatch更新到state。
   - 因此，我们可以把`state.tr`可以看成是一个事务，每一个step可以看作是一次原子操作，通过dispatch提交事务并应用到state上生效，实现了对文档的修改。
+# [基于JavaScript的富文本编辑器](https://marvinsblog.net/post/2018-10-02-js-rich-text-editors/)
+
+> 本文是一篇关于编辑器原理和现有开发方案的综述，比较精简和全面
+
+- 富文本编辑器可以分为下面几类：
+  - 基于TextArea的
+  - 基于ContentEditable的
+  - 基于ContentEditable + Virtual DOM的
+  - 其他类的
+- 首先基于TextArea的编辑器功能相对比较简单，只能对TextArea区域内的文字做一定的格式化。但是这种编辑器功能不强，只能在简单的场景下使用。
+- 更多的富文本编辑器是基于ContentEditable，因为可以实现更复杂的功能。
+  - 像常见的TinyMCE和CKEditor都是基于ContentEditable的。但是ContentEditable存在一些问题，如 Why ContentEditable is Terrible 一文所述，不同的浏览器针对ContentEditable存在着相当大的差异，导致使用ContentEditable实现一个跨平台的编辑器会十分困难。
+- 一种解决办法只使用ContentEditable跨平台的部分，而剩下的部分另外解决。使用这种做法的前提是编辑器要截获所有的用户输入，只把需要让ContentEditable处理的部分才传给它。这就要要求在DOM之上加一层抽象层，也就是VirtualDOM。
+  - VirtualDOM除了帮助实现跨平台特性以外，还允许用户有自己定义的数据模型，而不是直接使用HTML作为内容的格式。使用ContentEditable + Virtual DOM的编辑器有Medium网站自带的编辑器、ProseMirror、Slate、CkEditor5等等。
+- 最后是其他类的编辑器，最典型的例子是Google Docs的编辑器。
+  - 它不基于ContentEditable，而是自己实现了一个编辑层，捕获所有的用户输入，并根据用户输入，自己排版显示输出（而不像ContentEditable那样，排版输出是由浏览器自行处理的）
+
+- [rich-text-html-editors.md 将编辑器开发分为三类](https://gist.github.com/manigandham/65543a0bc2bf7006a487)
+- Strictly Frameworks
+  - Mobiledoc
+  - ShareDB
+  - Bangle.dev
+- Abstracted Editors 模型与视图分离
+  - ProseMirror
+  - Lexical
+  - CKEditor 5
+  - Editor.js
+  - Etherpad
+- Dom-Based Editors
+  - TinyMCE
+  - Froala
+
+- 基于block的编辑器存在如何跨区选取的问题，一般需要编辑器来模拟
 # [探究富文本编辑器ProseMirror（一）绪论](https://marvinsblog.net/post/2018-10-06-prosemirror-1/)
 - 基于ContentEditable的传统编辑器
 - 传统的编辑器大都是基于HTML的ContentEditable特性做成的
-  - ContentEditable其实是HTML元素的属性，若ContentEditable为真，那么浏览器会在相应的HTML元素所述内容区域内显示光标（Caret），允许用户使用鼠标和键盘对这些内容进行修改。
+  - ContentEditable其实是HTML元素的属性，若ContentEditable为true，那么浏览器会在相应的HTML元素所述内容区域内显示光标（Caret），允许用户使用鼠标和键盘对这些内容进行修改。
   - 同时，对于用户在ContentEditable区域内选中的内容，可以使用Document.execCommand()函数对选中的部分执行一揽子操作，比如把字体改成粗体，改变对齐方向等等。
 - 但是，由于ContentEditable存在的缺陷，要让这些富文本编辑器在不同浏览器下变现得一致，则十分困难。
-- 核心问题在于ContentEditable只定义了操作，而没有定义操作的效果。
+- 👉🏻 核心问题在于ContentEditable只定义了操作，而没有定义操作的效果。即操作的输出结果不明确。
   - 比如对于字体加粗这个操作，一些浏览器会在需要加粗的字体上加上`<strong>`标签，而另外一些浏览器可能会采取另辟蹊径的做法
 - 其次，Document.execCommand()支持的命令，大部分都是基于鼠标选取的。鼠标选取（也就是Selection API）在各个平台的表现也不一致。
   - DOM是树形结构，在网页上选取一些内容，就相当于选取了DOM树的一部分子树。表面上看起来同样的选取操作，在不同的浏览器下可能会选中不同的DOM子树，造成处理上的麻烦。

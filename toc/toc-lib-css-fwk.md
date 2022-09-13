@@ -111,24 +111,34 @@ modified: 2021-01-28T21:14:14.667Z
   - https://borderliner.github.io/Meshki/
   - Meshki: A Black-Colored, Responsive Boilerplate for UI Development
 # classless
+- MVP.css /4.2kStar/MIT/202209/css/单文件
+  - https://github.com/andybrewer/mvp
+  - https://andybrewer.github.io/mvp/
+  - https://andybrewer.github.io/mvp/mvp.html
+  - Minimalist classless CSS stylesheet for HTML elements
+  - 
+
 - water.css /5.7kStar/MIT/202010/css/classless
   - https://github.com/kognise/water.css
   - https://watercss.kognise.dev/
   - theming基于css vars实现，文档单页比较简单
   - I commonly make quick demo pages or websites with simple content. 
     - For these, I don't want to spend time styling them but don't like the ugliness of the default styles.
-  - Water.css is a CSS framework that doesn't require any classes. 
+  - Water.css is a CSS framework that doesn't require any classes.
+
 - new.css /3.2kStar/MIT/202009/css
   - https://github.com/xz/new.css
   - https://newcss.net/demo/
   - theming基于css vars实现，文档单页很标准
   - A classless CSS framework to write modern site using only HTML.
+
 - sakura /2.9kStar/MIT/202012/scss
   - https://github.com/oxalorg/sakura
   - https://oxal.org/projects/sakura/demo/
   - theming基于scss vars实现，提供了dark、ink、vader、earthy等多个主题
   - 文档单页很标准
   - a minimal classless css framework/theme
+
 - https://github.com/yegor256/tacit
   - http://yegor256.github.io/tacit/
   - No classes, no layouts. Just design plain and simple web pages compliant with HTML5

@@ -757,11 +757,11 @@ type Variants = (typeof VARIANTS_BY_ID)[keyof typeof VARIANTS_BY_ID];
   - [x] 使用command方式迁移text bold/italic
 
 - 鼠标事件顺序
-  - mousedown --> mouseup --> click
+  - mousedown -> mouseup -> click
   - 鼠标先点击input，再点击button，触发的事件顺序
-    - mousedown -->  onblur(input) --> mouseup --> click
+    - mousedown ->  onblur(input) -> mouseup -> click
   - 注意
-    - 👀 在mouseup回调中可以拿到selection取位置，但click回调中selection就变为空了
+    - ❓ 在mouseup回调中可以拿到selection取位置，但click回调中selection就变为空了
 
 - 更新text或其他block的流程
   - 理想流程：action  发布_command_  修改blockdb  只通知相关block数据更新  更新blockView

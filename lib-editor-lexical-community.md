@@ -7,8 +7,19 @@ modified: 2022-05-15T18:35:39.272Z
 
 # lib-editor-lexical-community
 
-# discuss
+# discuss-stars
 
+- ## Differences between Prosemirror and Lexical_202204
+- https://discuss.prosemirror.net/t/differences-between-prosemirror-and-lexical/4557
+- They(lexical) affirm that their value proposition differentiates them from RTE as Prosemirror in the following points:
+  - Mutable state approach: I don’t really understand how this can be an advantage or disadvantage in reality, so I would appreciate if someone can elaborate on this point.
+  - React +18 support: The main point here and the one that is the biggest new thing in React 18 is concurrency. This feature allows you to choose which nodes to render instead of the whole tree/page
+  - Prevent the DOM from being manipulated externally (i.e. extensions) to guarantee that the DOM always matches the EditorState
+- 
+- 
+- 
+
+# discuss
 - ## 
 
 - ## 

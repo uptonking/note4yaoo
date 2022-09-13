@@ -14,10 +14,6 @@ modified: 2022-08-31T00:23:09.227Z
 
 - ## 
 
-- ## Render a virtual section instead of put in the dom_202110
-- https://discuss.prosemirror.net/t/render-a-virtual-section-instead-of-put-in-the-dom/4142
-- Virtual rendering is not something this library supports, sorry.
-
 - ## Optimize prosemirror-view with intersection observer api?_202103
 - https://discuss.prosemirror.net/t/optimize-prosemirror-view-with-intersection-observer-api/3580
   - I find that one hot spot is iterDeco(…) in prosemirror-view. 
@@ -27,6 +23,19 @@ modified: 2022-08-31T00:23:09.227Z
 - Viewport-based drawing is out of scope for ProseMirror. 
   - It’s just too much extra complexity and failure modes. (It might be possible to rig something up with an external plugin, but it’s not going to be easy.)
   - That being said, the expected bottleneck for huge documents is the DOM. iterDeco being the slow part isn’t expected. 
+
+- ## Render a virtual section instead of put in the dom_202110
+- https://discuss.prosemirror.net/t/render-a-virtual-section-instead-of-put-in-the-dom/4142
+- Virtual rendering is not something this library supports, sorry.
+
+- ## Different parsing strategy for large documents_201710
+- https://discuss.prosemirror.net/t/different-parsing-strategy-for-large-documents/1017
+  - We’d like to support very large documents (500+ pages) in our application. 
+  - Therefore we thought it would be a good solution to only parse/render the nodes which are currently displayed in the viewport
+  - As far as I understand CodeMirror supports exactly this. Perhaps there is an approach for this already implemented or in planning for ProseMirror?
+- Nope, this is considered out of scope for ProseMirror. I don’t have a strategy for this, and I am not planning to incur all the complexity that this entails in the core library. 
+  - 👉🏻 Some users have gotten good results from structuring their interface so that each chapter has its own ProseMirror instance. 
+  - You can use offset maps to map changes from such sub-editors into a larger document.
 
 - ## Efficient Viewport rendering? (like CodeMirror)_201701
 - https://discuss.prosemirror.net/t/efficient-viewport-rendering-like-codemirror/577

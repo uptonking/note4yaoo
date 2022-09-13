@@ -66,6 +66,18 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - dashboard/webapp-template--0901
 # dev-09
 
+## 0913
+
+- `document.activeElement` focus vs selection
+  - activeElement returns the Element within the DOM that currently has focus.
+  - Typically a user can press the tab key to move the focus around the page among focusable elements, and use the space bar to activate one
+  - 👉🏻 Focus (which element is receiving user input events) is not the same thing as selection (the currently highlighted part of the document). 
+
+- [How to allow bolding, underlining and italics in textarea](https://stackoverflow.com/questions/19074391)
+  - It is not possible to format text in text area. You may try using div and then ContentEditable
+
+- [调查如何实现Web页面的Minimap（缩略图）](https://marvinsblog.net/post/2022-04-16-web-minimap/)
+
 ## 0912
 
 - `caretRangeFromPoint(x,y)`只有firefox浏览器不支持，其他浏览器都支持，是非标准属性
@@ -127,7 +139,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                         `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                    `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -146,7 +158,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                            `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                                       `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

@@ -25,8 +25,18 @@ modified: 2022-08-21T10:12:02.964Z
     - 输入英文字母时 keydown > keypress > beforeinput > input > keyup
     - 输入中文时 keyup > keydown > beforeinput > input > keyup
       - 输入中文拼音字母时，触发的是keyup，选完词后时keydown
+    - keypress强调输入文本字符，按键ctrl/shift/alt都不会触发此事件
+    - 👉🏻 按功能键如ctrl/shift/alt/cap时，只触发keydown/up，不触发beforeinput
+    - 按tab只触发keydown，无up
   - [Keyboard Event Viewer for contenteditable](https://w3c.github.io/uievents/tools/key-event-viewer-ce.html)
     - 事件顺序与上面一致
+
+- 鼠标事件顺序
+  - mousedown -> mouseup -> click
+  - 鼠标先点击input，再点击button，触发的事件顺序
+    - mousedown ->  onblur(input) -> mouseup -> click
+  - 注意
+    - ❓ 在mouseup回调中可以拿到selection取位置，但click回调中selection就变为空了
 
 - events-deprecated
   - keypress  >  keydown/beforeinput
@@ -44,7 +54,8 @@ modified: 2022-08-21T10:12:02.964Z
 # discuss
 - ## [国内有做类似于Google Docs级别「富文本编辑器」的团队吗？](https://www.zhihu.com/question/397012334)
 - 一个叫“一起写”的产品，创始人是 Google docs 出来的，做的就是类似产品，不过好像已经被快手收购了
-- ## 
+
+- ## [对可多人协同编辑的在线编辑器，如何设计其 undo/redo 的逻辑？](https://www.zhihu.com/question/367915946/answer/985845505)
 
 - ## 
 
