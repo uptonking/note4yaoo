@@ -66,12 +66,93 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - dashboard/webapp-template--0901
 # dev-09
 
+## 0914
+
+- 💡 prosemirror交互流程： DOMObserver更新state > 更新viewDesc-vdom > 更新dom
+
+- [Textarea Auto height](https://stackoverflow.com/questions/17772260)
+  - contenteditable元素里面回车可以换行，且元素高度自动增加
+  - textarea里面回车元素高度不会增加，可能出现滚动条，需要手动 `<textarea oninput="auto_grow(this)"></textarea>`
+
+### [这几个高级前端常用的API，你用到了吗？](https://segmentfault.com/a/1190000040942225)
+
+- 💡 MutationObserver 是一个可以监听 DOM 结构变化的接口。
+  - 当 DOM 对象树发生任何变动时，MutationObserver 会得到通知。
+- MutationObserver 有以下特点：
+  - 它等待所有脚本任务完成后才会运行，即采用异步方式
+  - 它把DOM变动记录封装成一个数组进行处理，而不是一条条地个别处理 DOM 变动。
+  - 它既可以观察发生在DOM节点的所有变动，也可以观察某一类变动
+- MutationObserver 与事件有一个本质不同：事件是同步触发，也就是说 DOM 发生变动立刻会触发相应的事件；
+  - MutationObserver 则是异步触发，DOM 发生变动以后，并不会马上触发，而是要等到当前所有 DOM 操作都结束后才触发。
+  - 举例来说，如果在文档中连续插入 1000 个段落（p 元素），会连续触发 1000 个插入事件，执行每个事件的回调函数，这很可能造成浏览器的卡顿；而 MutationObserver 完全不同，只在 1000 个段落都插入结束后才会触发，而且只触发一次，大大有利于性能。
+
+- 💡 IntersectionObserver
+  - 网页开发时，常常需要了解某个元素是否进入了"视口"（viewport），即用户能不能看到它。
+- 传统的实现方法是，监听到 scroll 事件后，调用目标元素的 getBoundingClientRect()方法，得到它对应于视口左上角的坐标，再判断是否在视口之内。
+  - 这种方法的缺点是，由于 scroll 事件密集发生，计算量很大，容易造成性能问题。
+- 新的 IntersectionObserver API，可以自动"观察"元素是否可见，Chrome 51+ 已经支持。由于可见（visible）的本质是，目标元素与视口产生一个交叉区，所以这个 API 叫做"交叉观察器"。
+- 相比于 getBoundingClientRect，它的优点是不会引起重绘回流
+  - 图片懒加载的原理主要是判断当前图片是否到了可视区域这一核心逻辑实现的。这样可以节省带宽，提高网页性能。
+  - 传统的突破懒加载是通过监听 scroll 事件实现的，但是 scroll 事件会在很短的时间内触发很多次，严重影响页面性能。
+  - 为提高页面性能，我们可以使用 IntersectionObserver 来实现图片懒加载。
+- 无限滚动（infinite scroll）的实现也很简单
+
+- 💡 window.getComputedStyle(element[, pseudo-element])
+  - 返回一个 CSSStyleDeclaration 对象（与 style 属性的类型一样），包含元素的计算样式。
+- getComputedStyle 和 element.style 的相同点就是二者返回的都是 CSSStyleDeclaration 对象。而不同点就是：
+  - element.style 读取的只是元素的内联样式，即写在元素的 style 属性上的样式；而 getComputedStyle 读取的样式是最终样式，包括了内联样式、嵌入样式和外部样式。
+  - element.style 既支持读也支持写，我们通过 element.style 即可改写元素的样式。而 getComputedStyle 仅支持读并不支持写入。我们可以通过使用 getComputedStyle 读取样式，通过 element.style 修改样式
+
+- 💡 Element.getBoundingClientRect()
+  - 返回元素的大小及其相对于视口的位置。
+  - 返回值是一个 DOMRect 对象，这个对象是由该元素的 getClientRects() 方法返回的一组矩形的集合，就是该元素的 CSS 边框大小。返回的结果是包含完整元素的最小矩形
+- 获取 dom 元素相对于网页左上角定位的距离
+- 判断元素是否在可视区域内
+
+- 💡 requestAnimationFrame(cb)
+  - 告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。
+  - 与 setTimeout 相比，requestAnimationFrame 最大的优势是由系统来决定回调函数的执行时机
+  - 保证回调函数在屏幕每一次的刷新间隔中只被执行一次
+- 监听 scroll 函数
+- 大量数据渲染
+
+### [MutationObserver用法总结( 监听DOM变化 )](https://juejin.cn/post/7016956024561074213)
+
+- Mutation Observer是在DOM4中定义的，用于代替Mutation events作为观察DOM树结构发生变化时，做出相应处理的API
+- Mutation Events是在DOM3中定义的，用于监听DOM树结构变化的事件；
+  - IE9不支持Mutation Events； Webkit内核不支持DOMAttrModified特性；  DOMElementNameChanged和DOMAttributeNameChanged在Firefox上不被支持；
+  - Mutation Events是同步执行的：它的每次调用，都需要从事件队列中取出事件并执行，然后事件队列中移除，期间需要移动队列元素；如果事件触发的较为频繁的话，每一次都需要执行上面的这些步骤，那么浏览器会被拖慢；
+  - Mutation Events本身是事件，所以捕获是采用的是事件冒泡的形式；如果冒泡捕获期间又触发了其他的Mutation Events的话，很有可能就会导致阻塞Javascript线程，甚至导致浏览器崩溃；
+- 如果目标节点为characterData节点(一种抽象接口，具体可以为文本节点、注释节点，以及处理指令节点)时，也要观察该节点的文本内容是否发生变化；
+- 这是因为在new MutationObserver传入的函数并不会监听到修改了就立即执行，而是等到同步代码都执行完了，才会去调用我们传入的回调函数；
+- 在观察者对象上调用takeRecords会返回其观察节点上的变化记录(MutationRecord)数组
+  - 其中MutationRecord数组也会作为观察者初始化时的回调函数的第一个参数；
+  - 同时也会从MutationObserver的通知队列中删除所有待处理的通知；
+  - takeRecords方法是同步执行，可以即时获取；
+
+- [MutationObserver 监听 DOM 树变化](https://segmentfault.com/a/1190000017804945)
+- 
+- 
+
+### [DOM MutationObserver – reacting to DOM changes without killing browser performance.](https://hacks.mozilla.org/2012/05/dom-mutationobserver-reacting-to-dom-changes-without-killing-browser-performance/)
+
+- DOM Mutation Events were a major performance and stability issue and have been deprecated 
+  - Google and Mozilla engineers announced a new proposal that would offer similar functionality with improved performance: DOM MutationObserver. 
+
+- The key advantage to this new specification over the deprecated DOM Mutation Events spec is one of efficiency. 
+  - 👉🏻 If you are observing a node for changes, your callback will not be fired until the DOM has finished changing. 
+  - When the callback is triggered, it is supplied a list of the changes to the DOM, which you can then loop through and choose to react to.
+- This is an important distinction to be made from other techniques such as binding events to key presses or more common events like ‘click’. 
+  - 👉🏻 MutationObservers work differently from these techniques because they are triggered by changes in the DOM itself, not by events generated either via JS or user interaction.
+
+- Another use case would be situations where you are using frameworks that manipulate the DOM and need to react to these modifications efficiently ( and without `setTimeout` hacks! ).
+
 ## 0913
 
 - `document.activeElement` focus vs selection
   - activeElement returns the Element within the DOM that currently has focus.
   - Typically a user can press the tab key to move the focus around the page among focusable elements, and use the space bar to activate one
-  - 👉🏻 Focus (which element is receiving user input events) is not the same thing as selection (the currently highlighted part of the document). 
+  - 👉🏻 Focus (which element is receiving user input events) is not the same thing as selection (the currently highlighted part of the document).
 
 - [How to allow bolding, underlining and italics in textarea](https://stackoverflow.com/questions/19074391)
   - It is not possible to format text in text area. You may try using div and then ContentEditable
@@ -139,7 +220,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                    `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                        `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -158,7 +239,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                                       `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                                                                                                           `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

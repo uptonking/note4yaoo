@@ -87,6 +87,10 @@ modified: 2021-07-27T15:12:39.959Z
 - https://github.com/yjs/y-codemirror.next
   - https://demos.yjs.dev/codemirror/codemirror.html
   - Collaborative extensions for CodeMirror6
+# open-editors
+- wiz-editor /237Star/MIT/202207/ts/为知笔记
+  - https://github.com/WizTeam/wiz-editor
+  - 支持多人实时协同编辑的网页富文本编辑
 # more-editor
 - https://github.com/liferay/alloy-editor /ckeditor.v4
   - http://alloyeditor.com/

@@ -41,13 +41,20 @@ modified: 2022-03-17T17:50:28.967Z
   - 基于场景预定义react组件接口，允许替换默认使用的各个组件
   - 因为允许替换，所以经常需要动态导入
 # features
-- ## text-editing
+
+## text-editing
+
 - 选择一段文字，将其中的空格替换成`-`，方便区分比较双方，如 a-bvs c-d
 - 选择多行文字，批量在行首添加`- `转换成列表显示，甚至`- [ ]`转换成待办列表
 - 选择复制列表的多行文字，提供菜单，粘贴时用逗号拼接成一行文字
 
 - 按键书写
   - `[ctrl]`+`[c]`
+
+## export
+
+- 文本优先版编辑器会丢失部分数据
+- 标准版会导出所有编辑数据，以sqlite格式
 # vip
 - 作品默认使用系统预览图，允许vip上传自定义截图
 # draft
@@ -84,7 +91,8 @@ modified: 2022-03-17T17:50:28.967Z
 - 在文本加书签或标记
   - https://github.com/StarlaneStudios/vscode-comment-anchors
 # faq
-- 如何不使用图床而将图片直接嵌入到笔记生成的html中
+- 如何不使用图床而将图片直接嵌入到笔记中
+  - [MarkDown图片存储格式-Textbundle格式](https://zhuanlan.zhihu.com/p/368463926)
 
 - 参考
   - jupytext: jupyter notebooks as readable, editable documents
