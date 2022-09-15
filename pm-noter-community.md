@@ -9,6 +9,10 @@ modified: 2021-06-30T11:10:52.271Z
 
 # guide
 
+- 笔记或效率工具博主、测评
+  - [原创专栏 - 笔记与写作工具深度测评](https://www.yuque.com/deerain/gannbs)
+  - [数字花园的呓语 笔记软件/生产力工具综合评测](https://www.zhihu.com/people/yu199820)
+  - [绝妙的个人生产力（Awesome Productivity 中文版）](https://github.com/eastlakeside/awesome-productivity-cn)
 # 笔记类产品使用体验
 - [RoamResearch 比其他笔记工具，好在哪里](https://zhuanlan.zhihu.com/p/136832140)
 - 大多数人最先接触的笔记工具，都是线性笔记工具，这些线性笔记工具有个致命的弱点就是：笔记内容难以结构化，软件工具很难从一沱文字中提取足够多的特征
