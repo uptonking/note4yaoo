@@ -8,34 +8,31 @@ modified: 2021-03-29T19:18:55.989Z
 # dev-log-faq-lang-js
 
 # not-yet
+- 对于index.js中的`export * from './A.js`,                                         `export * from './B.js`，如果A.js和B.js中都有`export default`，那最后index.js中有导出default吗
 
-- [是否应该在production里使用typescript的decorator？](https://www.zhihu.com/question/404724504)
-  - decorator提案已有三版草案，尤其第三版是对前两版的推倒重来
-  - 前两版是类似于python decorator的语义，第三版是静态语义，类似于弱化的宏
-  - 但是这三版都无法推进到 stage 3（主要的障碍来自于引擎厂商）
-  - 现在TypeScript所实现的 decorator，基于第一版的草案
-    - 现在TS团队拒绝投入精力到与 decorator 相关的任何改进
-    - Vue 3放弃了class component而转向 composition API，也有部分原因源于 decorator 前景不明
-  - [TypeScript装饰器(Decorators)具体做了什么工作）](https://www.zhihu.com/question/68257128)
-    - Angular使用的根本不是装饰器（Decorator），而是注解（Annotation）
-    - 装饰器的定位是通过对应的装饰函数，修改内容本身的定义，从而实现不同的行为。
-    - 而注解并不产生任何行为，仅仅添加附加内容，需要相应的Scanner读取并识别其中的内容，从而使得Scanner自身产生不同的行为。
-    - Angular是通过装饰器来模拟了注解的功能
+## [是否应该在production里使用typescript的decorator？](https://www.zhihu.com/question/404724504)
 
-- 对于index.js中的`export * from './A.js`, `export * from './B.js`，如果A.js和B.js中都有`export default`，那最后index.js中有导出default吗
-
+- decorator提案已有三版草案，尤其第三版是对前两版的推倒重来
+- 前两版是类似于python decorator的语义，第三版是静态语义，类似于弱化的宏
+- 但是这三版都无法推进到 stage 3（主要的障碍来自于引擎厂商）
+- 现在TypeScript所实现的 decorator，基于第一版的草案
+  - 现在TS团队拒绝投入精力到与 decorator 相关的任何改进
+  - Vue 3放弃了class component而转向 composition API，也有部分原因源于 decorator 前景不明
+- [TypeScript装饰器(Decorators)具体做了什么工作）](https://www.zhihu.com/question/68257128)
+  - Angular使用的根本不是装饰器（Decorator），而是注解（Annotation）
+  - 装饰器的定位是通过对应的装饰函数，修改内容本身的定义，从而实现不同的行为。
+  - 而注解并不产生任何行为，仅仅添加附加内容，需要相应的Scanner读取并识别其中的内容，从而使得Scanner自身产生不同的行为。
+  - Angular是通过装饰器来模拟了注解的功能
 # 
 
 # .js vs .jsx
 - The distinction between .js and .jsx files was useful before Babel, but it’s not that useful anymore.
   - There are other syntax extensions (e.g. Flow). What would you call a JS file that uses Flow? .flow.js? What about JSX file that uses Flow? .flow.jsx? What about some other experimental syntax? .flow.stage-1.jsx?
   - Most editors are configurable so you can tell them to use a JSX-capable syntax scheme for .js files. Since JSX (or Flow) are strict supersets of JS, I don’t see this as an issue.
-
 - It's a bit concerning that many devs insist on putting JSX inside .js files "just because it's common practice" 
 - https://twitter.com/youyuxi/status/1362049928139321348
   - The reason Vite requires .jsx extension for JSX processing is because in most cases plain .js files shouldn't need full AST transforms to work in the browser. Allowing JSX in .js files means every served file must be full-AST-processed just in case it contains JSX.
 - Try .tsx
-
 - ref
 # In js, what does `this` refer to?
 - tips
@@ -45,11 +42,9 @@ modified: 2021-03-29T19:18:55.989Z
     - The variable can have any name, but common ones are `self` and `that` .
   - Explicitly set this of the callback 
     - use `bind`
-
 - `this` is a property of an execution context (global, function or eval) that, 
   - in non–strict mode, is always a reference to an object 
   - and in strict mode can be any value.
-
 - A function's `this` keyword behaves a little differently in JavaScript compared to other languages. 
   - It also has some differences between strict mode and non-strict mode.
 - In most cases, the **value of `this` is determined by how a function is called (runtime binding)**. 
@@ -57,10 +52,8 @@ modified: 2021-03-29T19:18:55.989Z
 - ES5 introduced the `bind()` method to set the value of a function's this regardless of how it's called, 
   - and ES2015 introduced arrow functions which don't provide their own `this` binding 
   - (it retains the `this` value of the enclosing lexical context).
-
 - In the global execution context (outside of any function),  `this` refers to the global object( `window` ) whether in strict mode or not.
   - You can always easily get the global object using the global `globalThis` property, regardless of the current context in which your code is running.
-
 - **Inside a function, the value of `this` depends on how the function is called**.
 - Since the following code is not in strict mode, and because the value of `this` is not set by the call,  `this` will default to the global object, which is `window` in a browser
 
@@ -80,7 +73,6 @@ f1() === globalThis; // true
   - Note that in non–strict mode, with call and apply, if the value passed as this is not an object, an attempt will be made to convert it to an object. 
   - Values null and undefined become the global object. 
   - Primitives like 7 or 'foo' will be converted to an Object using the related constructor, so the primitive number 7 is converted to an object as if by new Number(7) and the string 'foo' to an object as if by new String('foo')
-
 - The behavior of `this` in classes and functions is similar, since classes are functions under the hood.
 - Within a class constructor,  `this` is a regular object. 
   - All non-static methods within the class are added to the prototype of `this`
@@ -90,7 +82,6 @@ f1() === globalThis; // true
 - Calling `super()` creates a `this` binding within the constructor, like evaluating `this = new Base(); `
 - Referring to this before calling super() will throw an error.
 - Derived classes must not return before calling super(), unless they return an Object or have no constructor at all. 
-
 - Calling `f.bind(thisArg,arg1,arg2)` creates a new function with the same body and scope as `f` , 
   - but where `this` occurs in the original function, 
   - in the new function it is permanently bound to the first argument of `bind` , regardless of how the function is being used.
@@ -101,13 +92,10 @@ f1() === globalThis; // true
 function f() {
   return this.a;
 }
-
 var g = f.bind({ a: 'azerty' });
 console.log(g()); // azerty
-
 var h = g.bind({ a: 'yoo' }); // bind only works once!
 console.log(h()); // azerty
-
 var o = { a: 37, f: f, g: g, h: h };
 console.log(o.a, o.f(), o.g(), o.h()); // 37,37, azerty, azerty
 ```
@@ -116,7 +104,6 @@ console.log(o.a, o.f(), o.g(), o.h()); // 37,37, azerty, azerty
   -  In global code, it will be set to the global object
 - If `this` arg is passed to `call/apply` , or `bind` on invocation of an arrow function, it will be ignored. 
   - You can still prepend arguments to the call, but the first argument (thisArg) should be set to `null`
-
 - **When a function is called as a method of an object, its `this` is set to the object the method is called on**.
   - In the following example, when `o.f()` is invoked, inside the function `this` is bound to the `o` object.
   - **Note that this behavior is not at all affected by how or where the function was defined**.
@@ -131,13 +118,11 @@ var o = {
   }
 };
 console.log(o.f()); // 37
-
 function independent() {
   return this.prop;
 }
 o.f1 = independent;
 console.log(o.f1()); // 37
-
 o.b = { g: independent, prop: 42 };
 console.log(o.b.g()); // 42
 ```
@@ -171,7 +156,6 @@ Object.defineProperty(o, 'sum', {
   enumerable: true,
   configurable: true
 });
-
 console.log(o.average, o.sum); // 2, 6
 ```
 
@@ -227,15 +211,12 @@ class Bird {
     return 'Tweety';
   }
 }
-
 const car = new Car();
 const bird = new Bird();
-
 // The value of 'this' in methods depends on their caller
 car.sayHi(); // Hello from Ferrari
 bird.sayHi = car.sayHi;
 bird.sayHi(); // Hello from Tweety
-
 // For bound methods, 'this' doesn't depend on the caller
 bird.sayBye = car.sayBye;
 bird.sayBye(); // Bye from Ferrari
@@ -244,9 +225,10 @@ bird.sayBye(); // Bye from Ferrari
 - ref
   - [mdn this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
   - [How to access the correct `this` inside a callback?](https://stackoverflow.com/questions/20279484/how-to-access-the-correct-this-inside-a-callback)
-
 # js: `Ctr.prototype` vs `obj.__proto__`
 
+- ref
+  - 案例分析可参考笔记 job-js-prototype-class.md
 - `Ctr.prototype` 显式原型: explicit prototype property
   - 每个函数在创建之后都会拥有一个名为 `prototype` 的属性，这个属性指向函数的原型对象。
   - 通过 `Function.prototype.bind` 方法构造出来的函数是个例外，它没有prototype属性
@@ -255,30 +237,29 @@ bird.sayBye(); // Bye from Ferrari
   - Instead objects may be created in various ways including via a literal notation or via constructors which create objects 
     - and then execute code that initialises all or part of them by assigning initial values to their properties. 
   - Each constructor is a function that has a property named `prototype` that is used to implement prototype-based inheritance and shared properties.
-    - Objects are created by using constructors in `new` expressions; for example, new Date(2009,11) creates a new Date object. ----ECMAScript Language Specification
-
+    - Objects are created by using constructors in `new` expressions; for example, `new Date(2009,11)` creates a new Date object. ----ECMAScript Language Specification
 - `obj.__proto__` 隐式原型: implicit prototype link
-  - js中任意对象都有一个内置属性[[prototype]]，在ES5之前没有标准的方法访问这个内置属性，但是大多数浏览器都支持通过 `__proto__` 来访问。
+  - js中任意对象都有一个内置属性`[[Prototype]]`，在ES5之前没有标准的方法访问这个内置属性，但是大多数浏览器都支持通过 `__proto__` 来访问。
   - 对象的隐式原型指向创建这个对象的构造函数(constructor)的prototype
+  - `obj.__proto__ === obj.constructor.prototype` // true
   - ES5中有了对于这个内置属性标准的Get方法 `Object.getPrototypeOf()` .
   - **隐式原型的作用：构成原型链查找属性，同样用于实现基于原型的继承**
     - 举个例子，当我们访问obj这个对象中的x属性时，如果在obj中找不到，那么就会沿着__proto__依次查找。
   - Every object created by a constructor has an implicit reference (called the object’s `prototype` ) to the value of its constructor’s `prototype` ----ECMAScript Language Specification
-
-- The `__proto__` property of `Object.prototype` is an accessor property (a getter function and a setter function) that exposes the internal [[Prototype]] (either an object or null) of the object through which it is accessed.
+- The `__proto__` property is an accessor property (a getter function and a setter function) that exposes the internal [[Prototype]] (either an object or null) of the object through which it is accessed.
 - The `__proto__` getter function exposes the value of the internal [[Prototype]] of an object. 
   - For objects created using an object literal, this value is `Object.prototype` .
   - For objects created using array literals, this value is `Array.prototype` . 
   - For functions, this value is `Function.prototype` . 
   - For objects created using `new fun` , where `fun` is one of the built-in constructor functions provided by JavaScript (Array, Boolean, Date, Number, Object, String, and so on — including new constructors added as JavaScript evolves), this value is always `fun.prototype` .
+  - `Object.prototype` 这个对象是个例外，`Object.prototype.__proto__ === null` // true
+  - `Array/Function.prototype.__proto__ === Object.prototype` // true
 - The `__proto__` setter allows the [[Prototype]] of an object to be mutated.
-    - Changing the [[Prototype]] of an object is, by the nature of how modern JavaScript engines optimize property accesses, a **very slow** operation, in every browser and JavaScript engine
-    - The effects on the performance of altering inheritance are subtle(不易察觉的，不明显的) and far-flung(广泛的), and are not limited to simply the time spent in `obj.__proto__ = ...` statements, but may extend to any code that has access to any object whose [[Prototype]] has been altered.
-    - If you care about performance you should avoid setting the [[Prototype]] of an object. 
-    - Instead, create a new object with the desired [[Prototype]] using `Object.create()` .
-- `Object.prototype` 这个对象是个例外，它的 `__proto__` 值为 `null`.
-
-- __proto__的指向
+  - Changing the [[Prototype]] of an object is, by the nature of how modern JavaScript engines optimize property accesses, a **very slow** operation, in every browser and JavaScript engine
+  - The effects on the performance of altering inheritance are subtle(不易察觉的，不明显的) and far-flung(广泛的), and are not limited to simply the time spent in `obj.__proto__ = ...` statements, but may extend to any code that has access to any object whose [[Prototype]] has been altered.
+  - If you care about performance you should avoid setting the [[Prototype]] of an object. 
+  - Instead, create a new object with the desired [[Prototype]] using `Object.create()` .
+- `__proto__`的指向
   - 根据ECMA定义 'to the value of its constructor’s "prototype" ' ----指向创建这个对象的函数(构造函数)的显式原型
   - JS中对象被创建的方式，一眼看过去似乎有三种方式：（1）对象字面量 `{}` 的方式 （2） `new` 的方式 （3）ES5中的 `Object.create()`
   - 但是我认为本质上只有一种方式，也就是通过 `new` 来创建。
@@ -310,8 +291,7 @@ f.__proto__ === o;
   - `Foo.prototype.__proto__ === Object.prototype` //true 理由同上
 - 如果构造函数带返回值且为对象，则该对象直接赋给变量，那么当然 `__proto__` 属性指向该对象的prototype咯。
   - 但一般来说，当函数作为构造器使用，不应该带返回值。
-
-- instanceof
+- `instanceof`原理
   - instanceof的左值一般是一个对象，右值一般是一个构造函数，用来判断左值是否是右值的实例
   - 它的内部实现原理是这样
   - 也就是沿着L的__proto__一直寻找到原型链末端，直到等于R.prototype为止
@@ -328,44 +308,61 @@ Object instanceof Object // true
 Number instanceof Number //false
 ```
 
+- [一张图搞定JS原型&原型链](https://segmentfault.com/a/1190000021232132)
+- js中对象和函数的关系，函数其实是对象的一种。
+- 函数、构造函数的区别，任何函数都可以作为构造函数，但是并不能将任意函数叫做构造函数，只有当一个函数通过new关键字调用的时候才可以成为构造函数。
+- 1.`__proto__`、 constructor属性是对象所独有的；
+- 2.prototype属性是函数独有的；
+- 3. 上面说过js中函数也是对象的一种，那么函数同样也有属性`__proto__`、 constructor；
+- prototype设计之初就是为了实现继承，让由特定函数创建的所有实例共享属性和方法，也可以说是让某一个构造函数实例化的所有对象可以找到公共的方法和属性。
+- Parent.prototype上添加的属性和方法叫做原型属性和原型方法，该构造函数的实例都可以访问调用。那这个构造函数的原型对象上的属性和方法，怎么能和构造函数的实例联系在一起呢，就是通过__proto__属性。
+- __proto__通常称为隐式原型，prototype通常称为显式原型，那我们可以说一个对象的隐式原型指向了该对象的构造函数的显式原型。
+- 通过输出看到Parent函数的构造函数是Function()，这点也不奇怪，因为我们每次定义函数其实都是调用了new Function()，下面两种效果是一样的。
+
+```JS
+var fn1 = new Function('msg', 'alert(msg)');
+
+function fn1(msg) {
+  alert(msg);
+}
+```
+
+- constructor属性的作用是从一个对象指向一个函数，这个函数就是该对象的构造函数。
+  - `Function.constructor === Function` // true
+  - Function是所有函数的根构造函数。
+  - `f.prototype.constructor === f` // true
+
 - misc
   - __proto__是每个对象都有的一个属性，而prototype是函数才会有的属性。
-  - __proto__指向的是当前对象的原型对象，而prototype指向的，是以当前函数作为构造函数构造出来的对象的原型对象。
 - ref
   - [js中__proto__和prototype的区别和关系？](https://www.zhihu.com/question/34183746)
+# es6 class `extends` vs node `util.inherits`
 
-# es6 class extends vs node util.inherits
 - Since the class and extends keywords are only syntactic sugar on top of prototypal inheritance, 
   - the answer simply is: Yes, you can replace `util.inherits` by `extends` and keep the same behavior.
 - Of course, there are minor things to watch out for, 
   - e.g. you need to make sure to call the `super` constructor in your derived class's constructor, 
   - whereas with `util.inherits` you had to call the constructor function and `apply` it to `this`. 
   - But effectively, these things are only other syntactic constructs, semantically, they are equivalent.
-
-- [Why do people hate `class` so much](https://twitter.com/steveruizok/status/1437321061935243264)
-  - classes feel kind of loose for an library API. 
-  - Functions give better defaults and stricter types for methods, feels more on rails. 
-  - But after spending the day making a factory pattern work here… I think we might be heading back to classes.
-
+# [Why do people hate `class` so much](https://twitter.com/steveruizok/status/1437321061935243264)
+- classes feel kind of loose for an library API. 
+- Functions give better defaults and stricter types for methods, feels more on rails. 
+- But after spending the day making a factory pattern work here… I think we might be heading back to classes.
 - ref
   - [Can i replace util.inherits with es6's extend keyword?](https://stackoverflow.com/questions/44226524/can-i-replace-util-inherits-with-es6s-extend-keyword)
-
 # when should I use es6 class
-
 - es6的class提供了一个class实现的标准，之前无标准而较乱
 - Opinionated take: 
   - Class inheritance, getters and setters makes your modules overly complex and hard to debug. 
   - Should have complicated syntax to discourage use, ES6 made it too easy.
 - ref
   - [Why use classes instead of functions?](https://stackoverflow.com/questions/6480676/why-use-classes-instead-of-functions)
-
   - [5 reasons not to use ES6 classes in React](https://blog.krawaller.se/posts/5-reasons-not-to-use-es6-classes-in-react/)
     - Inconsistent context
     - No mixin support
     - Inconsistent state handling
     - Inconsistent definition
     - Dealing with super
-
   - [Not Awesome: ES6 Classes](https://github.com/petsel/not-awesome-es6-classes)
     - Instead of ES6 classes, you should consider factory functions, object composition, and/or prototypal inheritance via the use of prototypes, object literals, Object.create(), Object.assign(), etc. while avoiding constructors and the `new` keyword altogether.
 
@@ -397,7 +394,6 @@ function Foo() {
 ```JS
 var num1 = Number(26);
 var num2 = new Number(26);
-
 num1 == num2; // returns true
 num1 === num2; // returns false
 ```
@@ -409,12 +405,9 @@ num1 === num2; // returns false
     - For instance, the `Date` constructor returns the date as a string (and not a `Date` object) when called as a function.
   - Precisely. The only way to know what happens is to read the spec (or a derivative work that tries to be more accessible :-). 
     - And again, most constructors in the wild (not part of the spec) probably don't implement specific non-construction behaviors (unless they say they do!).
-
 - ref
   - [JavaScript: using constructor without operator 'new'](https://stackoverflow.com/questions/1928342/javascript-using-constructor-without-operator-new)
-
-## call constructor function without new keyword. 使用构造函数代替类
-
+# call constructor function without new keyword. 使用构造函数代替类
 - Here's a pattern I've come across that really helps me.
 - It doesn't use a `class`, but it doesn't require the use of `new` either.
 
@@ -425,7 +418,6 @@ const Foo = x => ({
   increment: () => Foo(x + 1),
   add: ({ x: y }) => Foo(x + y)
 })
-
 console.log(Foo(1).x) // 1
 console.log(Foo(1).hello()) // hello 1
 console.log(Foo(1).increment().hello()) // hello 2
@@ -447,27 +439,21 @@ const assoc = (prop, value, obj) =>
   Object.assign({}, obj, {
     [prop]: value
   })
-
 const reducer = ($values, accumulate, [key, val]) => assoc(key, val.bind(undefined, ...$values), accumulate)
-
 const bindValuesToMethods = ($methods, ...$values) =>
   Object.entries($methods).reduce(reducer.bind(undefined, ...$values), {})
-
 const prepareInstance = (instanceMethods, staticMethods = ({})) => Object.assign(
   bindValuesToMethods.bind(undefined, instanceMethods),
   staticMethods
 )
-
 // Let's make our class-like function
 const Right = prepareInstance(RightInstanceMethods, RightStaticMethods)
-
 const RightInstanceMethods = ({
   chain: (x, f) => f(x),
   map: (x, f) => Right(f(x)),
   fold: (x, l, r) => r(x),
   inspect: (x) => `Right(${x})`
 })
-
 const RightStaticMethods = ({
   of: x => Right(x)
 })
@@ -491,11 +477,9 @@ const RightStaticMethods = ({
   - While they did not explicitly deprecate the class-based components yet, they are likely to in the near future.
   - One of the design constraints and motivations for hooks was to represent a component being multiple states concurrently. That's something classes cannot express properly. 使用class组件对并发操作状态不友好
   - 想象一下这种场景，一个组件的render函数结构基本一致，但是它的数据层states可能会根据环境条件有不同的变化逻辑（相似的state结构，但是计算state的逻辑不同）
-
     - 这种情况下用class写就免不了大量的if else，
     - 但是hooks就可以把每种条件下的state变化逻辑抽离出来，
     - hooks比class组件更优雅的实现了states的多态
-
 - Using a standard function+object+prototype chain "classes" is a good way to learn how JS works, but hiding all that behind the class sugar is too much abstraction to me.
   - Main benefit I get out of ES6 classes is defining the shape of data I am dealing with, so I can talk and think about it in precise terms. 
   - When I say "Customer", I know exactly what fields and properties that entails (and IDE will help me remember it too).
@@ -507,7 +491,6 @@ const RightStaticMethods = ({
 - ref
   - https://everyday.codes/javascript/please-stop-using-classes-in-javascript/
   - https://dev.to/smalluban/do-we-really-need-classes-in-javascript-after-all-91n
-
 # function declaration vs function expression(named vs anonymous)
 - namedFunc pros
   - 调试时的可读性更好
@@ -518,7 +501,6 @@ const RightStaticMethods = ({
     - I prefer function because python and java both use it and I don’t get confused.
     - 用在class中时常需要bind(this)
     - `export default function Button() {}` vs `const Button = () => {}; export default Button;` 前者更方便export
-
 - funcExpression pros
   - 更好的scoped，namedFunc总是提升，而箭头函数是先声明再使用
   - 方便动态修改调用的函数
@@ -526,7 +508,6 @@ const RightStaticMethods = ({
     - Arrow functions are especially meant to be placed inline, anonymously. 函数能写为一行时常用
     - 箭头函数常用作事件监听器函数
     - 箭头函数内部没有自己的局部this
-
 - Availability (scope) of the function，函数或变量会自动提升hoist
   - one difference that concerns me is when the machine creates the function object. Which in the case of declarations is before any statement is executed but after a statement body is invoked (be that the global code body or a sub-function's), and in the case of expressions is when the statement it is in gets executed. 
 - `(function(){}).name === ""` ，匿名函数表达式会返回true
@@ -538,8 +519,7 @@ const RightStaticMethods = ({
 - Function Declarations are only allowed to appear in Program or FunctionBody. Syntactically, they can not appear in Block ( `{ ... }` ) — such as that of if, while or for statements. This is because Blocks can only contain Statements, not SourceElements, which Function Declaration is. 
   - The only way Expression is allowed directly within Block is when it is part of ExpressionStatement. 
   - However, ExpressionStatement is explicitly defined to not begin with "function" keyword, and this is exactly why Function Declaration cannot appear directly within a Statement or Block (note that Block is merely a list of Statements).
-
-- [Is there a reason that we've started to use the function key word for function components in the React community? `function Button() {}` vs. `const Button = () => {}` ](https://twitter.com/kyleshevlin/status/1116041620342730754)
+# [Is there a reason that we've started to use the function key word for function components in the React community? `function Button() {}` vs. `const Button = () => {}` ](https://twitter.com/kyleshevlin/status/1116041620342730754)
 - I went back to using `function` keywords again because of hooks. 
   - It's easier to add hooks without the implicit return.
   - Now I follow a pattern: if it's top level, I use `function` keyword. Otherwise, arrow functions.
@@ -549,11 +529,9 @@ const RightStaticMethods = ({
 - If I'm gonna return straight away, I'll use the const syntax and make use of the implicit return, if not I'll use the function syntax. Most of the time I don't even think about it but that's as much logic as I can come up.
 - IIRC there was a time when the `.name` prop mattered (for React dev tools maybe?) and function decl’s have that implicitly while arrow func don’t. I remember HoC code would set displayName (the fallback for .name) manually, so there’s some value to that I guess.
 - React docs mostly I think. And for me I just decided that the arrow functions weren’t really adding much there. The declaration syntax is more consistent, no implicit returns, always using parens for params. Refactoring is easier, don’t need to change much to add a console log
-
 - ref
   - http://kangax.github.io/nfe/
   - https://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname
-
 # essentials
 
 ## Map vs Object
@@ -591,6 +569,5 @@ const RightStaticMethods = ({
   - for-of遍历集合的值，在遍历数组arr时会打印arr[0], arr[1], ...
 - tips
   - Don't use for..in for Array iteration
-
 - ref
   - [Difference between for...of and for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)

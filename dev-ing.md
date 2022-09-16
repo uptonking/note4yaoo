@@ -50,13 +50,13 @@ https://meeting.tencent.com/p/9606972663
 console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 ```
 
-# dev-review
+# dev-plan-review
 - dev-goals
   - block-editor
   - pivot-table
   - collaboration
   - local-database
-  - whiteboard
+  - annotation/whiteboard
 
 - dev-to/log/xp
   - 事项--截止日期(0730+休整)--重要性(ll/ml/hl)
@@ -65,8 +65,43 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - app-knowledge-base--0904
   - dashboard/webapp-template--0901
 # dev-09
+- eg-prosemirror-examples
+- eg-tiptap-examples
+- eg-BlockNote
+- eg-collab
+- eg-focalboard
+- eg-tanstack-table-v8
 
 ## 0916
+
+- 原型链的理解
+  - class的实例属性会屏蔽class.prototype上定义的同名属性
+  - When trying to access a property of an object, the property will not only be sought on the object but on the prototype of the object, the prototype of the prototype, and so on until either a property with a matching name is found or the end of the prototype chain is reached.
+
+- [How can I add a property to a class dynamically in typescript?](https://stackoverflow.com/questions/44882416)
+  - You can add index signature to your class
+  - Yet note that thereby you are loosing the strict typechecks and introduce potential bugs that a prone to happen in weakly typed languages.
+
+```JS
+export class UserInfo {
+  [index: string]: any;
+  public name: string;
+  public age: number;
+}
+```
+
+- [Declare dynamically added class properties in TypeScript](https://stackoverflow.com/questions/41038812)
+
+```JS
+class Augmentable {
+  constructor(augment: any = {}) {
+    Object.assign(this, augment)
+  }
+  static create < T extends typeof Augmentable, U > (this: T, augment ? : U) {
+    return new this(augment) as InstanceType < T > & U
+  }
+}
+```
 
 ## 0914
 
@@ -133,8 +168,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - takeRecords方法是同步执行，可以即时获取；
 
 - [MutationObserver 监听 DOM 树变化](https://segmentfault.com/a/1190000017804945)
-- 
-- 
+  - 给出了开发编辑器的简单示例
 
 ### [DOM MutationObserver – reacting to DOM changes without killing browser performance.](https://hacks.mozilla.org/2012/05/dom-mutationobserver-reacting-to-dom-changes-without-killing-browser-performance/)
 
@@ -222,7 +256,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                         `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                    `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -241,7 +275,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                                                                                                            `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                                                                                                                                       `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

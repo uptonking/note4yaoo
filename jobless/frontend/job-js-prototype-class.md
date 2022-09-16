@@ -15,7 +15,7 @@ modified: 2021-10-10T09:31:04.461Z
   - **显式原型的作用：用来实现基于原型的继承与属性共享**
 
 - `obj.__proto__` 隐式原型: implicit prototype link
-  - js中任意对象都有一个内置属性[[prototype]]，在ES5之前没有标准的方法访问这个内置属性，但是大多数浏览器都支持通过 `__proto__` 来访问。
+  - js中任意对象都有一个内置属性`[[Prototype]]`，在ES5之前没有标准的方法访问这个内置属性，但是大多数浏览器都支持通过 `__proto__` 来访问。
   - **对象的隐式原型指向创建这个对象的构造函数(constructor)的prototype**
   - ES5中有了对于这个内置属性标准的Get方法 `Object.getPrototypeOf()` .
   - **隐式原型的作用：构成原型链查找属性，同样用于实现基于原型的继承**
@@ -26,7 +26,7 @@ modified: 2021-10-10T09:31:04.461Z
 - 构造函数：任何情况下创建一个函数，都会在内部为其创建一个prototype属性，该属性是一个指向原型对象的引用。使用原型对象可以允许上面定义的属性与方法被对象实例共享。
 - 原型对象：原型对象会默认自动获得一个constructor属性，该属性是指回构造函数的引用。自定义构造函数的原型对象默认只会获得constructor属性，其余方法都继承自Object
 - 原型对象的原型：原型对象本身是Object或父类的实例，它也有一个暴露为__proto__的属性指向父类构造函数的原型对象（隐式原型）。特别的，Object的原型对象是原型链的起点，其constructor指向Object()构造函数，同时Object原型对象的不再有原型，其不再具有__proto__
-- 对象实例：每个被构造的实例内部也有__proto__，同样指向其构造函数原型对象
+- 对象实例：每个对象实例内部也有__proto__，同样指向其构造函数原型对象
 
 ```JS
 var a = function() { this.b = 3; }
@@ -48,6 +48,7 @@ aa.__proto__ === Function.prototype // true
 Object.getPrototypeOf(aa) === Function.prototype // true
 aa.prototype === Function.prototype // false
 aa.prototype.__proto__ === Object.prototype // true
+aa.prototype.constructor === aa // true，注意此时不能是箭头函数定义
 
 let aaObj = new aa();
 aaObj.constructor === aa // true
@@ -57,15 +58,20 @@ aaObj.__proto__ === aa.prototype // true
 ```JS
 // 关于类与继承
 
-class A {}
-class B extends A {}
+class A { aa = '11'; }
+class B extends A { bb = '22' }
 
+// 可以将class作为function来分析结果
+A.__proto__ === Function.prototype // true
+A.prototype.__proto__ === Object.prototype // true
+
+// 👇🏻 继承实现的原理
 B.__proto__ === A // true
 B.prototype.__proto__ === A.prototype // true
 
 // 继承实现的原理
-// Object.setPrototypeOf(B.prototype , A.prototype) // B 的实例继承 A 的实例
-// Object.setPrototypeOf (B, A)  // B 的实例继承 A 的静态属性
+// Object.setPrototypeOf(B.prototype, A.prototype) // B的实例继承A的实例
+// Object.setPrototypeOf(B, A)  // B的实例继承A的静态属性
 
 class A extends Object {}
 A.__proto__ === Object // true
@@ -84,10 +90,12 @@ function A() {};
 var a = new A();
 
 // 查找属性时会沿着原型链查找
-// a.__proto__ === A.prototype  // true
-// A.prototype.__proto__ === Object.prototype  // true
-a.a();
-a.b(); // Uncaught TypeError: a.a is not a functionI
+a.__proto__ === A.prototype // true
+A.prototype.__proto__ === Object.prototype // true
+a.__proto__.__proto__ === Object.prototype // true
+
+a.a(); // Uncaught TypeError: a.a is not a function
+a.b(); // 2
 ```
 
 ```JS

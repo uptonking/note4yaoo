@@ -9,6 +9,8 @@ modified: 2020-07-07T08:10:16.774Z
 
 # proposals-toc
 
+- [finished proposals](https://github.com/tc39/proposals/blob/main/finished-proposals.md)
+
 - https://babeljs.io/docs/en/plugins
 - https://github.com/babel/proposals
 - [top tc39 proposals](https://github.com/search?o=desc&q=user%3Atc39&s=stars&type=Repositories)

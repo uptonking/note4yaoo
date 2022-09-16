@@ -41,7 +41,6 @@ modified: 2021-05-13T02:58:45.832Z
       - 对于交互不频繁、性能要求不极限的场景，使用styled组件时可行的
       - 因为就算自己用js计算新的样式名本身也有一定的计算，样式变化不多的情况下对性能影响可忽略
     - 会创建重复的样式
-
 # linaria
 
 ## basic
@@ -91,7 +90,7 @@ modified: 2021-05-13T02:58:45.832Z
   - className属性的值是字符串，想在生成字符串的过程中获取组件props，要么显式传入this.props，要么创建高阶组件隐式获取props再计算，所以通用的方法推荐使用css prop
   - className example
 
-``` js
+```js
   <div
     className={css({
       backgroundColor: 'hotpink',
@@ -114,7 +113,7 @@ modified: 2021-05-13T02:58:45.832Z
 
   - css prop example
 
-``` js
+```js
   <div
     css={{
         backgroundColor: 'hotpink',
@@ -149,7 +148,7 @@ modified: 2021-05-13T02:58:45.832Z
   - Server side rendering requires additional work to set up
   - Emotion is not using a "standard" autoprefixer (which works during build) - it ships with its own runtime parser ( thysultan/stylis.js ) which comes with autoprefixing and it's enabled for you by default.
 
-``` js
+```js
   import { css, cx } from 'emotion'
   const colorW = 'white'
   render(
@@ -185,13 +184,57 @@ modified: 2021-05-13T02:58:45.832Z
   - emotion itself is react-independent. it doesn't really have theming built in 
 - changelog
   - 10.0.0-201810-new package name, better css prop, Global comp
-
 # styled-components
 
 ## basic
 
 - https://www.styled-components.com/docs/basics
 - https://github.com/styled-components/styled-components
+
+## community
+
+- ### [Styled components fills head tag with additional unused style tags, doesn't clean them up](https://github.com/styled-components/styled-components/issues/1431)
+- Yeah, we don't remove styles as it'd add unnecessary performance overhead—why does it hurt you to have more style tags in the head?
+  - Also, how are you using styled-components so that you "add anywhere between 5 to 20 additional classes appearing on every click/navigation in our app"? That seems like a usage problem rather than a library problem
+- A separate component will be created every time you call styled(). This component receives a componentId and injects it’s styles under there with a hash.
+  - The amount of styles you have there might mean that you have a large app.
+  - But it might also indicate that you’re calling styled() in a render function / stateless component and are recreating it every time. Or it might mean that you’re passing arbitrarily complex float values to it
+- It's not something on our roadmap to change in the near future, since it doesn't appear to be a burning issue. I'd recommend following @kitten's advice and working on reducing the dynamicness of whichever component(s) is generating all that excess CSS.
+
+- ### [How to remove component styles for unmouned components?](https://stackoverflow.com/questions/56950754)
+- use the new style-loader API, something like this via injectType
+  - `{ loader: "style-loader", options: { injectType: "lazyStyleTag" } }` lazy配置
+- styleTag
+  - Automatically injects styles into the DOM using multiple `<style></style>`. It is default behaviour.
+- lazyStyleTag
+  - Injects styles into the DOM using multiple `<style></style>` on demand.
+  - injects the styles lazily making them useable on-demand via `style.use()` / `style.unuse()`.
+- lazySingletonStyleTag
+  - Source maps do not work.
+
+- ### [Feature Request: Remove global (createGlobalStyles) styles on unmount](https://github.com/styled-components/styled-components/issues/2487)
+- We do remove it, not sure what's going on for the OP but we absolutely do remove it on unmount.
+
+- ### [emotion: Styles are not being removed from DOM after component unmount](https://github.com/emotion-js/emotion/issues/488)
+- emotion is built around a function that returns a class name so it has no knowledge of whether or not it's being used. Keeping all the rules also means we can heavily cache rules. Is there a reason to not keep them?
+- Some browsers (old-ish IE) have rules about the maximum number of stylesheets and/or styles you can have at once.
+  - 💡 There will only be many style tags in development, in production we use one style tag per 65000 rules.
+- What do you think of having too many CSS rules in a style element, will it affect a performance? have you guys done any performance tests on that?
+  - It won't, it's been discussed in the past with glamor but it was found out that it didn't cause any problems and no one has ever reported it causing a problem.
+
+- AFAIK styled-components doesn't remove "unused" styled from the DOM either.
+
+- ### [Remove unused styles from a React SPA app](https://github.com/postcss/postcss/issues/1108)
+- Sorry, I didn't hear about any uncss for React pensive.
+  - My suggestion is to split CSS into small components as you split React components. Next put CSS and React code of each component in same dir. 
+  - So when you will delete React code, you will delete CSS code as well.
+
+- ### [PurgeCSS & styled-components: Does It Work?_202204](https://www.useanvil.com/blog/engineering/purgecss-styled-components/)
+- 构建时 vs 运行时
+- PurgeCSS analyzes your HTML and internally keeps track of which selectors are being used or not.
+  - After finding which selectors are actually being used, PurgeCSS analyzes your CSS files and deletes the ones that aren't used. 
+- Automatic critical CSS: styled-components keeps track of which components are rendered on a page and injects their styles and nothing else, fully automatically. 
+  - Combined with code splitting, this means your users load the least amount of code necessary.
 
 ## faq
 
@@ -381,7 +424,7 @@ modified: 2021-05-13T02:58:45.832Z
 
 - demo
 
-``` js
+```js
 import styled from 'styled-components';
 const Wrapper = styled.div `
 margin: 0 auto;
@@ -400,7 +443,7 @@ render(
 
 - demo2
 
-``` js
+```js
 const Button = () => <button></button>
 const StyledButton = styled(Button)
 `
@@ -428,7 +471,7 @@ const StyledButton = styled(Button)
     - https://medium.com/@_jmoller/how-does-styled-components-work-under-the-hood-28cb035d48c6
 - styled用法
 
-``` js
+```js
 const Button = styled.button `
 color: coral; 
 padding: 0.25rem 1rem; 
@@ -446,7 +489,7 @@ const Button = styled('button')([
 
 - 自定义styled
 
-``` js
+```js
 // styled(Button)返回一个tag function，而标签函数返回高阶组件而不是拼接后的字符串
 const myStyled = (TargetComponent) =>
   // tag function第一个参数是字符串字面量数组，随后参数是占位符表达式的值
@@ -487,7 +530,6 @@ border-radius: 3px;
 ```
 
 # bootstrap
-
 - bootstrap-components
   - bootstrap中input添加.form-control类，表示为input元素添加表单控件样式
 - faq
