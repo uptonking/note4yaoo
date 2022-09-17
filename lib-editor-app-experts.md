@@ -18,9 +18,19 @@ modified: 2022-08-21T10:16:52.004Z
   - https://github.com/fantasticit/think
   - 低代码、文档
 # slate
-- https://github.com/pubuzhixing8
+- 杨振兴
+  - https://github.com/pubuzhixing8
   - https://github.com/worktile/slate-angular
+  - https://www.zhihu.com/people/pubuzhixing/posts
+
+- 王福朋 wangEditor
+  - https://juejin.cn/user/1714893868765373
+  - https://www.zhihu.com/people/wangfupeng1988
 # prosemirror
+- https://github.com/marduke182
+  - https://www.npmjs.com/package/@marduke182/prosemirror-react-view
+  - https://jquintanab.com/resume/
+
 - https://github.com/ccorcos
   - https://github.com/ccorcos/prosemirror-examples
 
@@ -40,6 +50,7 @@ modified: 2022-08-21T10:16:52.004Z
 
 - https://github.com/edeity
   - https://ede.ink/
+  - 李健乐 金山 字节 syllepsis
   - [2021，挑战和机遇: 开源syllepsis](https://ede.ink/half_year_in_toutiao.html)
 
 - https://github.com/ocavue

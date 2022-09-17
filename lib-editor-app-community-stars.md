@@ -31,6 +31,15 @@ modified: 2022-08-21T10:12:02.964Z
   - [Keyboard Event Viewer for contenteditable](https://w3c.github.io/uievents/tools/key-event-viewer-ce.html)
     - 事件顺序与上面一致
 
+- 中文输入法输入单个普通字符事件顺序
+  - keydown
+  - compositionstart
+  - beforeinput
+  - compositionupdate
+  - input
+  - compositionend
+  - keyup
+
 - 鼠标事件顺序
   - mousedown -> mouseup -> click
   - 鼠标先点击input，再点击button，触发的事件顺序

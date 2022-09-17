@@ -46,6 +46,13 @@ modified: 2021-10-31T15:56:24.071Z
 - ckeditor5的locale方案会往全局变量`window. CKEDITOR_TRANSLATIONS`上挂载映射用的字典信息
 # blogging
 
+## [CKEditor 5: New approach to rich text editing on the web_201710](https://news.ycombinator.com/item?id=15497972)
+
+- That's always the way I thought it should be done, with a separation of display and structure.
+
+- Former member of the CKE team here. Three words: it was hell.
+  - The CKE people are some of the most hard working devs I've ever encountered in my life. I still find it funny how making little details like backspace/delete key behavior work is such a gargantuan task. And almost nobody gets it right.
+
 ## [CKEditor 5: The Future of Rich Text Editing_201510](https://medium.com/content-uneditable/ckeditor-5-the-future-of-rich-text-editing-2b9300f9df2c)
 
 - Why CKEditor 5?

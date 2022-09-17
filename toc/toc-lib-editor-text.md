@@ -7,8 +7,11 @@ modified: 2021-07-27T15:12:39.959Z
 
 # toc-lib-editor-text
 
-# known-text-editor
+# guide
 
+- ref
+  - https://github.com/JefMari/awesome-wysiwyg
+# known-text-editor
 - prosemirror /6kStar/MIT/202208/ts
   - https://github.com/ProseMirror/prosemirror
   - http://prosemirror.net/

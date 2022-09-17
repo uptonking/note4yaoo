@@ -14,7 +14,13 @@ modified: 2022-09-05T03:25:02.690Z
 
 - ## 
 
-- ## 
+- ## my question is whether PM uses timeouts internally to wait for things, especially during initialisation but also during transactions and state updates. 
+- https://discuss.prosemirror.net/t/timeouts-and-synchronising-external-dom-state/3928
+  - And if yes, if there’s an API I could use to get a callback when an EditorView is fully initialised and attached to the DOM element.
+- 👉🏻 ProseMirror updates (and initializes) synchronously. 
+  - It does in some cases wait a moment before responding to DOM mutations in order to allow events related to the same change (which the browser models as a sequence of mutations and events) to accumulate, and has a few timeouts internally for other hacks, but that doesn’t sound like it would be the issue here.
+- if I stick to responding to various PM events I should be back in synchronous land?
+  - Yes, the API should protect you from these almost entirely (except possibly when you’re doing your own thing in response to DOM events without preventDefault-ing them).
 
 - ## Theoretical saving question
 - https://discuss.prosemirror.net/t/theoretical-saving-question/656

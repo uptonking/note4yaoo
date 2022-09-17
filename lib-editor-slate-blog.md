@@ -95,7 +95,73 @@ modified: 2022-05-15T21:14:14.339Z
   - 对中文输入支持不足，详见此 链接
   - 社区驱动开发，问题可能得不到及时修复
 
-## [富文本编辑器 wangEditor v5 渲染逻辑 - Model ，DOM，HTML 三者的关系](https://juejin.cn/post/7055206586175717390)
+## [基于 slate.js（不依赖 React）设计富文本编辑器_王福朋_202105](https://juejin.cn/post/6968061014046670884)
+
+- 为何要基于 slate.js ？ 为何不是自研内核？
+  - 核心目的，是做出一款稳定、易用、高扩展性的开源产品，并不是搞极客精神和造轮子。
+  - 自研成本非常高，耗时长，bug 多。
+  - PS：如果你有深度的技术追求，可以先从解读源码、写 demo 开始，看个人精力和能力
+- 基于 slate.js 并不意味着就很简单
+  - 不依赖 React ，重写 View
+  - 设计各种操作功能，如 toolbar 、tooltip 等
+  - 设计扩展性，全面插件化
+  - 开发各个富文本编辑器功能，特别是复杂的功能，如表格、代码高亮
+
+- 整体设计
+- 底层依赖
+  - slate.js - 编辑器内核
+  - snbbdom - view model 分离，使用 vdom 渲染 view
+- view core
+  - core 本身没有任何实际功能。需要通过 module 来扩展 formats、menus、plugins 等，来定义具体的功能。
+  - editor - 定义 slate 用于 DOM UI 的一些 API
+  - text-area - 输入区域 DOM 渲染，DOM 事件，选区同步，
+  - formats - 输入区域不同数据的渲染规则，如怎样渲染加粗、颜色、图片、list 等。可扩展注册。
+  - menus - 菜单，包括 toolbar、悬浮菜单、tooltip、右键菜单、DropPanel、Modal 等。可扩展注册。
+- view-core 。它的核心作用：
+  - 劫持用户输入和修改，使用 editor API 去触发 model 修改（或者 selection 修改）
+  - editor change 要实时更新到 DOM ，保持 DOM 和 model（或 selection）的同步
+  - 定义扩展机制（它本身没有什么实际功能），通过扩展 module 来实现具体的功能
+
+- beforeinput 是一个比较新的 DOM 事件，去年还没有得到普遍支持。当前看来，主流浏览器已经支持了，特别是 FireFox 87 发布之后，参考 caniuse 
+  - 对于还不支持的浏览器，可以用 keydown/keypress 来兼容
+  - 监听 beforeinput 事件，然后根据不同的 inputType 执行不同的 editor API 。
+- selection同步
+  - DOM selection 变化会触发 document.addEvenListener('selectionchange', fn)
+  - editor selection 变化会触发 editor.onChange事件。这样就可以做到相互同步。
+- updateView 同步视图
+  - editor onChange 时会触发更新视图，以保证 view 和 model 实时同步。分为两步：
+  - 根据 model 生成 vnode
+  - patch vnode
+  - 第二步很简单，我们利用 snabbdom.js 来做 vdom 渲染
+  - 关键在于第一步，生成 vnode 。 我们将逻辑拆分为两段： renderElement 和 renderText
+- menu 应该是一个抽象，基于它来生成各种类型的菜单：
+  - 传统的工具栏
+  - 选中文字、元素之后的悬浮菜单
+  - 右键菜单等
+  - 还要支持各种类型：button select 等
+- editor API 和 plugins
+  - 参考 slate-react 源码，定义了一些全局 command ，在渲染 DOM 时很有用
+- module 的设计
+  - core 没有任何基础功能，所有功能都是 module 来扩展实现。module 可扩展的有：
+  - menu
+  - formats
+    - renderElement
+    - addTextStyle
+  - plugin（即 slate plugin）
+- 后续计划
+  - 粘贴
+  - 上传
+  - i18n
+
+## [富文本编辑器 L1 能力调研记录_王福朋_202104](https://juejin.cn/post/6954896971370856485)
+
+## [Web 富文本编辑器 embed 卡片机制的设计与实践_王福朋_202103](https://juejin.cn/post/6939724738818211870)
+
+## [slate.js - 从基本使用到核心概念_王福朋_202101](https://juejin.cn/post/6917123466307698696)
+
+## [【译】自己实现 document.execCommand 富文本编辑器核心 API_王福朋_202008](https://juejin.cn/post/6864916875390910472)
+
+## [富文本编辑器 wangEditor v5 渲染逻辑 - Model ，DOM，HTML 三者的关系_王福朋_202201](https://juejin.cn/post/7055206586175717390)
 
 > 暂不支持移动端。
 

@@ -46,7 +46,8 @@ modified: 2021-06-02T18:24:28.052Z
   - defaultViewMode/defaultEditMode
   - indentationSpace
 # 存储与持久化的问题
-- why choose db instead of files
+- ❓ why choose db instead of files
+  - 👉🏻 移动端不需要纯文本文件
   - 思源笔记已抛弃纯本文而只支持数据库，notable也受到文本困扰而考虑单文件数据库
   - 数据库和本地文件的双向同步很难，db>file简单，file>db需要打开软件或长期后台服务才行
   - 基于文本文件难以实现版本管理

@@ -9,9 +9,11 @@ modified: 2022-09-01T18:37:15.430Z
 
 # guide
 
+- pm-history.v1.2.0-202108
+  - history plugin now listens for beforeInput events with historyUndo or historyRedo type, and applies the undo/redo commands when they occur.
 # changelog
 
-## v202205-1.4.0
+## v202205-view-1.4.0
 
 - [ProseMirror is now a TypeScript project](https://discuss.prosemirror.net/t/prosemirror-is-now-a-typescript-project/4624)
 - prosemirror-tables is currently unmaintained.

@@ -12,6 +12,12 @@ modified: 2022-08-30T22:07:26.164Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## props to plugin views
 - https://discuss.prosemirror.net/t/props-to-plugin-views/4672
   - What’s the best way to pass props into plugin views so that they update when props change (not only when state changes)?
