@@ -210,3 +210,5 @@ modified: 2022-08-21T10:11:37.453Z
   - A view that renders the state of said data model and that handles the user interactions.
 
 - [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)
+
+- [Over 14 years of todos recorded in text: My productivity app is a never-ending .txt file](https://jeffhuang.com/productivity_text_file/)

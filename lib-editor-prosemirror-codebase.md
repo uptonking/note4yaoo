@@ -9,23 +9,66 @@ modified: 2021-06-02T17:13:37.692Z
 
 # guide
 
+- 编辑器的设计与实现
+  - 最核心的文档数据结构
+  - 节点类型与约束
+  - 文档操作 operation与transform
+  - 选区与slice
+  - editorState
+  - editorView
+  - 协作
+
 - 要关注的重点
   - 编辑器state数据结构是如何设计的
-  - ??? 输入时如何更新dom元素
   - plugin如何更新state
+
+- 用户输入时如何更新editorState
+  - 获取输入内容，beforeinput/keydown/MutationObserver
+  - 寻找合适的插入位置
+  - 替换节点
+  - 返回新文档
+  - 更新选取等其他状态
+
+- editorState变化时如何更新dom元素
+  - 更新viewDesc
+  - node
+  - mark
+  - decoration
+  - renderDescs 更新dom
 
 - PMENode与DOM
   - parseDOM实现解析
   - 编辑时要toDOM，特殊节点如footnote/编辑操作一般是通过insert菜单
 # not-yet
-- 如何实现virtualized虚拟化渲染
-  - 参考思路，先实现分页，再渲染前后2页
+- ## 支持动态改变schema的变通实现方式？
 
-- ？NodeView.update() 和plugin.view().update()的先后顺序
-  - 简单测试结果
-    - 先执行NodeView，再执行plugin.view的更新
-  - 很多时候NodeView无需更新，就不会触发update
-  - 要测试复杂的例子，观察声明顺序和触发顺序是否一致
+- ## beforeinput的优点与使用
+
+- ## setTimeout的回避方法
+- 目前setTimeout的主要使用场景
+  - android输入、ios
+  - composition事件
+  - 鼠标相关事件，如拖拽mightDrag
+  - focus事件
+
+- ## decoration与NodeView的理解
+- 装饰集是作用于文档内容的，而不是作用于文档模型的。
+- Decoration与编辑器模型/Node/Mark并无直接关系，可以用于高亮文档之类的目的
+
+- NodeView是与schema中的node定义直接相关的
+
+- ## prosemirror的step与ot的operation的关系
+
+- ## readonly即editable为false时，编辑器不支持什么行为
+
+- ## 如何实现virtualized虚拟化渲染
+- 参考思路，先实现分页，再渲染前后2页
+
+- ## ？NodeView.update() 和plugin.view().update()的先后顺序
+- 简单测试结果
+  - 先执行NodeView，再执行plugin.view的更新
+- 很多时候NodeView无需更新，就不会触发update
+- 要测试复杂的例子，观察声明顺序和触发顺序是否一致
 # tutorials-examples
 - 渲染出来的编辑器，默认内容为 `<p><br></p>`，`transaction.before.content.size`默认大小为2
 - 编辑器默认支持按backspace退格键删除、del删除键

@@ -6,13 +6,10 @@ modified: 2021-01-30T16:05:48.466Z
 ---
 
 # toc-features-preview-screenshot
-
 - guide
   - preview实时预览更适合直接展示dom，支持动态交互
   - screenshot更适合静态内容
-
 # react-comp-screenshot
-
 - https://github.com/fayeed/use-screenshot
   - https://use-screenshot.now.sh/
   - React hook to take screenshot for React components.
@@ -21,9 +18,7 @@ modified: 2021-01-30T16:05:48.466Z
   - https://codesandbox.io/s/nostalgic-poincare-7xfrl?file=/src/App.js
   - Export component as jpeg, png or pdf
   - 依赖html2Canvas、jspdf
-
 # js-screenshot
-
 - https://github.com/niklasvh/html2canvas
   - https://html2canvas.hertzen.com/
   - Screenshots with JavaScript
@@ -53,17 +48,17 @@ modified: 2021-01-30T16:05:48.466Z
       - HTML content needs to be serialized to XML, and all styles have to be inlined.
     - The DOM object is not linked, but copied 
     - Content outside the bounding box of the element will be cut of per default if painted to Canvas. Don't worry though, simply pass a more comfortable offset to the toImage function 
-
 # source-code-screenshot
-
 - https://github.com/carbon-app/carbon
   - https://carbon.now.sh/
   - Create and share beautiful images of your source code
   - 对源码生成截图时支持多种theme
 
+- https://unhtml.com/code
+  - unhtml for code/markdown/picture
+
 - https://ray.so/
-
+  - code screenshot
 # more
-
 - https://github.com/antfu/broz
   - A simple, frameless browser for screenshots
