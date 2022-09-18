@@ -6,13 +6,15 @@ modified: 2021-05-06T09:58:23.803Z
 ---
 
 # guide
-
 - icons
   - https://fonts.google.com/icons?selected=Material+Icons
   - https://primer.style/octicons/
 
 - 搜索矢量图标
   - https://uxwing.com/
+
+- google-play 应用商店可以获取到图标url
+  - 商店的图标大小一般都是512x512，但部分图标可能偏高
 
 - ## “How to make complex icons with only CSS”. Don’t do this.
 - https://twitter.com/SaraSoueidan/status/643803332117704704
@@ -40,9 +42,7 @@ modified: 2021-05-06T09:58:23.803Z
 - There’s Already a Better Way
   - svg is a vector image format with optional support for CSS
 - 不要墨守陈规，盲目模仿
-
 # icons-css-svg
-
 - https://github.com/erikflowers/weather-icons
   - https://erikflowers.github.io/weather-icons/
   - Weather Icons is the only icon font and CSS with 222 weather themed icons
@@ -59,7 +59,6 @@ modified: 2021-05-06T09:58:23.803Z
 - https://iconpark.oceanengine.com/home
   - IconPark图标库是一个通过技术驱动矢量图标样式的开源图标库
 # icons
-
 - feather  /MIT/16kStar/201908
   - https://github.com/feathericons/feather
   - https://feathericons.com/
@@ -97,9 +96,7 @@ modified: 2021-05-06T09:58:23.803Z
   - System UIcons is a collection of icons designed for products and systems in mind. 
   - Each icon is on a 21x21 grid.
   - Use the icons how you want, for free, and without any attribution.
-
 # font icons
-
 - catalog
   - https://getbootstrap.com/docs/4.0/extend/icons/
   - http://iconfont.cn/ 
@@ -255,9 +252,7 @@ modified: 2021-05-06T09:58:23.803Z
           - Large font files have a negative impact on a webpage or app’s Time to First Paint, which makes for a subpar user experience and has been known to lower PWA Lighthouse scores. 
           - On top of that, adding any custom icons to a font icon is far from easy.
       - All of the benefits of font icons (vector-based and styling with CSS) can be achieved just as easily with SVGs, but without all the baggage.
-
 # ref
-
 - https://github.com/fontello/fontello
   - This tool lets you combine icon webfonts
   - shrink glyph collections, minimizing font size

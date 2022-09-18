@@ -21,6 +21,9 @@ modified: 2021-03-29T19:29:32.505Z
       - npm ls yui
       - npm explain yui
 
+- ❓ error Invalid Version: 2.0.0111
+  - 改成 2.0.1111 就可以work
+
 - libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
   - [Unable to Launch AppImages on Fedora 35 - libva Error](https://www.linuxquestions.org/questions/showthread.php?p=6312963)
   - 打开本地 appimage 时，无法看到错误，可先挂载或使用软件linux-unpacked未打包版本启动，就可在控制台开到错误

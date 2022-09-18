@@ -237,7 +237,7 @@ modified: 2022-08-18T16:57:46.405Z
   - https://github.com/tanishqkancharla/gem
   - https://gem.tanishqkancharla.dev/
   - 只依赖prosemirror，不依赖react
-  - Gem (previously called Editor) is a performant and simple plain text editor, 
+  - Gem (previously called Editor) is a performant and simple plain text editor 
   - The design is very inpsired by Paco Coursey's [Writer]().
   - [Gem, a plain-text editor based on prosemirror_202111](https://discuss.prosemirror.net/t/gem-a-plain-text-editor-based-on-prosemirror/4231)
     - I worked on moving to codemirror 6 
