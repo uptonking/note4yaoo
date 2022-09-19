@@ -15,6 +15,8 @@ modified: 2021-05-06T09:58:23.803Z
 
 - google-play 应用商店可以获取到图标url
   - 商店的图标大小一般都是512x512，但部分图标可能偏高
+- https://logos.fandom.com/wiki/Android_Studio
+  - 记录了logo变更
 
 - ## “How to make complex icons with only CSS”. Don’t do this.
 - https://twitter.com/SaraSoueidan/status/643803332117704704

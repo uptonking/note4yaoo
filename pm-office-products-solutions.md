@@ -115,6 +115,20 @@ modified: 2021-07-11T08:31:00.660Z
 - xheldon公司产品插件使用了rxjs和webpack-tapable
 # trending-office-products
 
+## Notion竞品分析
+
+- [Top 12 Notion Alternatives 2022 (Free & Paid Competitors)](https://clickup.com/blog/notion-alternatives/)
+  - 点评了最新的notion竞品，总结了features和pros
+  - 大多给出了特性比较表
+  - clickup的官方博客给出了很多竞品调研报告
+    - [Monday.com Review 2022 (Features, Pros, Cons, Pricing)](https://clickup.com/blog/monday-com-review/)
+- [16 Best Notion Alternatives In 2022 (Free & Paid)](https://marketsplash.com/notion-alternatives/)
+- [Best Notion Alternatives in 2022: Review and Comparison](https://www.nuclino.com/alternatives/notion-alternatives)
+- [8 Notion Alternatives To Change Your Project Management Game](https://hive.com/blog/notion-alternatives/)
+- [11 Best Notion Alternatives for Your Company Home](https://friday.app/p/notion-alternatives)
+- [16 Best Notion Alternatives to Use in 2022](https://www.ntaskmanager.com/blog/best-notion-alternatives/)
+- [18 Best Notion Alternatives to Boost Your Productivity](https://everhour.com/blog/notion-alternatives/)
+
 ## [almanac](https://almanac.io/features)
 
 - features-selling-points
