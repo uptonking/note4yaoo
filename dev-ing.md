@@ -72,6 +72,40 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-focalboard
 - eg-tanstack-table-v8
 
+## 0921
+
+- [Argument of type 'EventTarget' is not assignable to parameter of type 'Node'.](https://stackoverflow.com/questions/71193818)
+  - 在使用前先判断类型  `e.target instanceof HTMLElement && doSth(e.target)`
+
+- [TSX: Property does not exist on type 'JSX. IntrinsicElements'](https://github.com/microsoft/TypeScript/issues/15449)
+  - 处理html自定义标签的方法
+
+```typescript
+import * as React from 'react';
+declare global {
+    namespace JSX {
+        interface IntrinsicElements {
+            'my-html-custom-tag': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+        }
+    }
+}
+```
+
+## 0920
+
+```JS
+document instanceof HTMLElement // false
+document.body instanceof HTMLElement // true
+document.documentElement instanceof HTMLElement // true
+
+document.body.parentElement === document.documentElement // true
+document.body.parentElement === document.body.parentNode // true
+```
+
+- [How do you check if a JavaScript Object is a DOM Object?](https://stackoverflow.com/questions/384286)
+  - obj instanceof HTMLElement
+  - Using W3 DOM2 (works for FF, Opera and Chrome)
+
 ## 0919
 
 - eclipse che vs theia
@@ -283,7 +317,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                               `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                         `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -302,7 +336,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                                                                                                                                                                  `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                                                                                                                                                                                            `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

@@ -36,9 +36,7 @@ modified: 2021-01-01T20:21:10.887Z
 - SVG结构更像是html的dom结构，它的每一块图形元素都是一个“dom”元素，每一个元素可以通过属性和样式去控制
   - 它比较有优势的地方是动画能力，一方面可以直接在dom上去表现动画，借助`<animate />`和<`transformAnimate />`这两个元素去实现，除此之外它仍然可以通过css3和javascript方式等去实现动画
   - 我认为，svg适合去做一些插入html中的有动画要求的展现，特别是富文本中去实现一些动画（可以不借助css3和js实现）; 
-
 # canvas
-
 - 通过Javascript来绘制2D图形。
 - 是逐像素进行渲染的。
 - 在canvas中，一旦图形被绘制完成，它就不会继续得到浏览器的关注，如果其位置发生变化，那么整个场景也需要重新绘制，包括任何或许已被图形覆盖的对象。
@@ -73,9 +71,7 @@ modified: 2021-01-01T20:21:10.887Z
   - 绘制过程中的样式需要提前设置后再去执行绘画命令，相对于svg比较生硬一些
   - 其动画的实现上也只能通过js里的计时器，设置好绘制间隔去一遍遍重绘来达到动画的效果。
   - canvas适合去做一些复杂丰富的数据可视化展示的，如图表等，配合当前一些插件EchartJs等，能够快速实现很多复杂多样的数据展示。
-
 # svg vs canvas
-
 - overview
   - SVG is vector based and Canvas is a bitmap you draw on. Scaling with SVG is natural and with Canvas it requires a redraw.
   - SVG is built with elements, like DOM elements, and therefore you can draw a circle and attach mouse *events* to it very naturally with Javascript.  Canvas does not give you this ability natively, requiring much more work.
@@ -93,8 +89,11 @@ modified: 2021-01-01T20:21:10.887Z
   - https://blogs.msdn.microsoft.com/ie/2011/04/22/thoughts-on-when-to-use-canvas-and-svg/
   - http://jack-kelly.com/html5_canvas_versus_svg_for_interactive_charts_and_graphical
 
-# canvas vs webgl
+## for svg/html
 
+- https://twitter.com/steveruizok/status/1572613782006018049
+  - Placing native web content in a customer renderer (i.e. something built with HMTL Canvas) is virtually impossible. Figma has a great system for writing widgets in React, but those are rendering with its primitives rather than HTML/CSS—something closer to React Native.
+# canvas vs webgl
 - canvas(cpu) vs webgl(gpu)
 
 - ## [What's better: Canvas vs. WebGL](https://hashnode.com/post/whats-better-canvas-vs-webgl-for-a-newbie-cje7kxq2n046tiqwu94uv44lu)
@@ -115,8 +114,6 @@ modified: 2021-01-01T20:21:10.887Z
 - If you want fast prototypes with less than 100 sprites, some basic shape primitives, filters with globalAlpha and sheer image/pixel manipulation, go for canvas.
 - If you have a lot of sprites and many layers choose WebGl. WebGl will offer better performance. 2 key points where WebGl will beat any other approach: shaders + sprite count
 - If you want a lot of easy to implement interactivity with less than ~30000 elements, you can also in principle venture into SVG. In principle you can also get very nice and interesting effects with combining SVGFilter, linearGradient and masks so you might want to give it a try.
-
 # ref
-
 - [SVG 与 HTML5的canvas各有什么优点，哪个更有前途？](https://www.zhihu.com/question/19690014/answers/updated)
 - [三种绘图技术SVG、Canvas、WebGL 3D比较](https://zhuanlan.zhihu.com/p/81226852)

@@ -29,7 +29,20 @@ modified: 2021-08-06T07:36:05.864Z
 
 - ## 
 
-- ## 
+- ## Specifically, each shape in tldraw is an absolutely positioned div. 
+- https://twitter.com/kriswuollett/status/1572572261890297856
+  - Could contain an SVG image (like these) but it could also contain anything—arbitrary html, video, whatever. 
+  - When moving lots of shapes at once, Chrome takes some time to "composite layers".
+  - Note that each shape is not on its own layer! They aren't using position fixed, matrix3d, will-change or anything else that would trigger that.
+- you may need to eventually rewrite your renderer in WebGL? Figma, which is in the news lately does that. It’s probably table stakes performance for a commercial engine.
+  - https://twitter.com/steveruizok/status/1572613782006018049
+  - 👉🏻 I get this question a lot! I'm building tldraw more for productivity apps than graphics, hence its "native web" canvas. There's a perf cost for art vs. custom renderer, but being able to interactive elements on the canvas—and to develop those in React!—is absolutely worth it. 
+  - Drawing and annotation are a great base set of components for an app like this. They're just a start though. You could really build anything here!
+  - 👉🏻 Placing native web content in a customer renderer (i.e. something built with HTML Canvas) is virtually impossible. Figma has a great system for writing widgets in React, but those are rendering with its primitives rather than HTML/CSS—something closer to React Native.
+  - My guess is that most developers who want to build the next generation of spatial UI apps (figma for X, etc) would want to be using native web content. Yes, it has tradeoffs, though they're the same sort of tradeoffs we already make on the web. And the browser can be *very* fast.
+
+- How are you doing that? tldraw has support for iframes?
+  - Anything you can put in a div, you can put on tldraw's canvas! Our shapes are literally React components, no magic.
 
 - ## dialing in minimap UX with @CantBeFaraz
 - https://twitter.com/steveruizok/status/1551712864473419777

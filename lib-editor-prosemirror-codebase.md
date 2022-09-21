@@ -42,6 +42,8 @@ modified: 2021-06-02T17:13:37.692Z
 # not-yet
 - ## 支持动态改变schema的变通实现方式？
 
+- ### schema中node约束的定义使用context-expression字符串，如何设计为更好的/类型友好的方式
+
 - ## beforeinput的优点与使用
 
 - ## setTimeout的回避方法
