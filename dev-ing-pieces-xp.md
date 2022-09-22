@@ -13,6 +13,17 @@ modified: 2021-04-28T20:54:58.126Z
 
 ## 
 
+## 
+
+## prosemirror官方示例，图片上传完成后，点击图片会很卡，但点击编辑器其他位置文字时光标正常
+
+> 官网线上却无此问题
+
+- 在实现上传图片demo时，发现图片上传完成后，从点击图片到点击的图片出现蓝框即选中状态，耗时很长，体验很卡
+  - 通过浏览器perf面板分析调用栈定位到问题
+  - mouseup > selectClickedLeaf > updateSelection > dispatch > appendNewHistoryEntry(来自prosemirror-dev-toolkit)
+  - `appendNewHistoryEntry`并不来自prosemirror源码，而是开发者工具引入的，这也解释了官网案例不卡的原因
+
 ## 排查webpack一直热更新的问题花了很多时间，搜索也没人碰到过
 
 - [webpack-dev-server] App updated. Recompiling...
@@ -20,13 +31,17 @@ modified: 2021-04-28T20:54:58.126Z
 - 解决方式是将代码回退，找到没问题的版本，原因大致是monorepo其他地方修改了配置
   - 其他同事也是这么解决的
 
+- 后来其他同事通过打印webpack提供的import.meta，确定问题来自style9
+
 ## slate设置文本对齐的方式示例在官方示例rich-text，自己却在其他地方找了很久，浪费时间
 
 ## block-editor拖动鼠标形成选区后快捷键如加粗失效，但双击自动形成选取后快捷键仍可用
 
+- 使用多编辑器实例实现block-editor时，跨block的选区实现很困难，还要考虑键盘、滚动等事件
+
 > 自研实现选区的方案都要考虑此问题
 
-## slate编辑器的悬浮工具条做了一个月没做完
+## slate编辑器的悬浮工具条做了一个月没做完，如何在编辑器组件外部操作编辑器数据
 
 - 思路💡️： slate-text和其他组件都从外部如database获取数据，这样更新database数据的方法就在外部了，到处都可以拿到
 
@@ -87,7 +102,7 @@ cc[bb] = 'cc22'; // {[object Object]: 'cc22'}
 
 - 不要漏写return
 
-## arr.forEach 遍历action reducer 函数时，return无法立即结束forEach 
+## arr.forEach 遍历 action reducer 函数时，return无法立即结束forEach 
 
 - 可改用传统for循环
 

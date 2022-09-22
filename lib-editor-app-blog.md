@@ -48,6 +48,26 @@ modified: 2022-08-21T10:11:37.453Z
 - With CKEditor 5 we are planning to conclude this process by letting the browser insert text only, but with CKEditor’s control.
 # blogging
 
+## [CKEditor 5 - comparing Revision History with Track Changes](https://ckeditor.com/blog/ckeditor-5-comparing-revision-history-with-track-changes/)
+
+- These two features of CKEditor 5 include Revision History and Track Changes, also known as Suggestion Mode.
+- Both Track Changes and Revision History are premium plugins and features within CKEditor 5
+- Track Changes is the ability to work collaboratively with others, not necessarily in real time, by seeing the suggestions they made to a document and being able to accept or reject them.
+- Revision History revolves around the ability for users to analyze earlier versions of a document, compare them with one another and revert to a chosen version if desired.
+  - Writers will need to periodically save states, or versions of their document, so that they show up on the chronological list 
+
+- they are used at different stages of a document editing workflow. 
+  - Track Changes enables users to apply suggestions that need to be reviewed by another user. This mode suggests what could be changed in the future; 
+  - Revision History looks at what was already changed in the past. However, it may also include suggestions that haven’t been accepted yet within the revisions, if both features are enabled simultaneously.
+
+- Revision History, on the other hand, focuses on providing users with three additional and key functionalities that Track Changes does not have. 
+  - creating snapshots (revisions) of content, where such a snapshot is the state of the content at the time the user makes a save
+  - comparing individual revisions with each other
+  - restoring individual revisions
+
+- In summary, Track Changes is more of a functionality improving the aspect of collaboration between users, 
+  - while Revision History extends the application’s capabilities with content audit-trail and versioning functionality.
+
 ## [从流行的编辑器架构聊聊富文本编辑器的困境_202003](http://yoyoyohamapi.me/2020/03/01/%E4%BB%8E%E6%B5%81%E8%A1%8C%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E6%9E%B6%E6%9E%84%E8%81%8A%E8%81%8A%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%9B%B0%E5%A2%83/)
 
 - 几年前，Medium Editor 的开发者写过一篇著名的博文：Why ContentEditable is Terrible?，当中列举了一些 contenteditable 存在的一些问题：
@@ -212,3 +232,5 @@ modified: 2022-08-21T10:11:37.453Z
 - [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)
 
 - [Over 14 years of todos recorded in text: My productivity app is a never-ending .txt file](https://jeffhuang.com/productivity_text_file/)
+
+- [前端富文本基础及实现, 偏综述，基于contenteditable+document.execCommand](https://juejin.cn/post/7124839474575441934)

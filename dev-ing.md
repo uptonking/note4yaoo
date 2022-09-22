@@ -9,7 +9,6 @@ modified: 2022-05-24T17:53:08.400Z
 
 # dev-2022
 - 分析核心需求和问题，拆分问题，梳理任务、子任务
-
 金瑶 邀请您加入【金瑶的个人会议室】
 点击链接直接加入腾讯会议：
 https://meeting.tencent.com/p/9606972663
@@ -57,13 +56,14 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - collaboration
   - local-database
   - annotation/whiteboard
-
 - dev-to/log/xp
   - 事项--截止日期(0730+休整)--重要性(ll/ml/hl)
   - mirror-based-editor-vanillajs--0825--hl
   - pivot-table/grid--0828--hl
   - app-knowledge-base--0904
   - dashboard/webapp-template--0901
+- not-yet
+  - prosemirror图片上传的示例，上传较大图片如90k时点击图片会出现卡顿，但官方示例无此问题
 # dev-09
 - eg-prosemirror-examples
 - eg-tiptap-examples
@@ -72,11 +72,50 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-focalboard
 - eg-tanstack-table-v8
 
+## 0922
+
+- [How to use radio buttons in ReactJS?](https://stackoverflow.com/questions/27784212)
+
+```JS
+class App extends React.Component {
+
+  setGender(event) {
+    console.log(event.target.value);
+  }
+
+  render() {
+    return (
+      <div onChange={this.setGender.bind(this)}>
+        <input type="radio" value="MALE" name="gender"/> Male
+        <input type="radio" value="FEMALE" name="gender"/> Female
+      </div>
+    )
+  }
+}
+```
+
+- [currentTarget VS target](https://juejin.cn/post/6844904047913205767)
+  - target在事件流的目标阶段；
+  - currentTarget在事件流的捕获，目标及冒泡阶段。只有当事件流处在目标阶段的时候，两个的指向才是一样的， 而当处于捕获和冒泡阶段的时候，
+  - target指向被单击的对象
+  - currentTarget指向当前事件活动的对象（一般为父级）。
+- [React Profiler 的使用](https://juejin.cn/post/7008337341634854942)
+  - 虽然 Display 在 React.memo 的比较函数之下，已经不再重新 render。但是 Display 的渲染时间和应用的渲染时间相比改写之前都变大了，这说明 memo 函数的比较时间大于组件自身的渲染时间，在当前这个简单的应用程序下，以 React.memo 来 "优化" 应用是得不偿失的。
+- ### [Chrome Dev Tools 性能分析&调试技巧](https://juejin.cn/post/7076277971392135176)
+- Main中展示的是火焰图，也就是函数调用的堆栈火焰图 
+  - x轴表示时间，最上面的第一条名为Task就是事件触发的地方，直到结束，这条线是最长的 
+  - y轴表示调用的函数，函数中还包含依次调用的函数，越到下面数量越少
+- 在火焰图中选择Task时，统计区域显示与事件相关的其他信息
+  - Summary：统计报表，展示各个事件阶段耗费的时间。
+  - Bottom-Up: 事件时长排序，可以看到各个事件消耗事件的排序。（self-time: 事件本身耗时。 total-time: 包含子事件，从开始到结束的耗时。）
+  - Call-Tree: 调用栈，在Main选中一个事件，可以看到整个事件的调用栈（从最顶层到最底层，而不是只有当前事件）
+  - Event Log: 事件日志。（多了一个start time, 指事件在多少毫秒开始触发。右边有事件描述信息）
+- 面板中会有很多的 Task，如果是耗时长的 Task，其右上角会有红色三角号，这是chrome自动帮助识别出有问题的部分，图中没有，说明页面首屏的逻辑处理分配得还不错。点任一任务，都可在下面统计区域里看其具体的信息
+
 ## 0921
 
 - [Argument of type 'EventTarget' is not assignable to parameter of type 'Node'.](https://stackoverflow.com/questions/71193818)
   - 在使用前先判断类型  `e.target instanceof HTMLElement && doSth(e.target)`
-
 - [TSX: Property does not exist on type 'JSX. IntrinsicElements'](https://github.com/microsoft/TypeScript/issues/15449)
   - 处理html自定义标签的方法
 
@@ -97,7 +136,6 @@ declare global {
 document instanceof HTMLElement // false
 document.body instanceof HTMLElement // true
 document.documentElement instanceof HTMLElement // true
-
 document.body.parentElement === document.documentElement // true
 document.body.parentElement === document.body.parentNode // true
 ```
@@ -138,7 +176,6 @@ document.body.parentElement === document.body.parentNode // true
 - 原型链的理解
   - class的实例属性会屏蔽class.prototype上定义的同名属性
   - When trying to access a property of an object, the property will not only be sought on the object but on the prototype of the object, the prototype of the prototype, and so on until either a property with a matching name is found or the end of the prototype chain is reached.
-
 - [How can I add a property to a class dynamically in typescript?](https://stackoverflow.com/questions/44882416)
   - You can add index signature to your class
   - Yet note that thereby you are loosing the strict typechecks and introduce potential bugs that a prone to happen in weakly typed languages.
@@ -167,7 +204,6 @@ class Augmentable {
 ## 0914
 
 - 💡 prosemirror交互流程： DOMObserver更新state > 更新viewDesc-vdom > 更新dom
-
 - [Textarea Auto height](https://stackoverflow.com/questions/17772260)
   - contenteditable元素里面回车可以换行，且元素高度自动增加
   - textarea里面回车元素高度不会增加，可能出现滚动条，需要手动 `<textarea oninput="auto_grow(this)"></textarea>`
@@ -183,7 +219,6 @@ class Augmentable {
 - MutationObserver 与事件有一个本质不同：事件是同步触发，也就是说 DOM 发生变动立刻会触发相应的事件；
   - MutationObserver 则是异步触发，DOM 发生变动以后，并不会马上触发，而是要等到当前所有 DOM 操作都结束后才触发。
   - 举例来说，如果在文档中连续插入 1000 个段落（p 元素），会连续触发 1000 个插入事件，执行每个事件的回调函数，这很可能造成浏览器的卡顿；而 MutationObserver 完全不同，只在 1000 个段落都插入结束后才会触发，而且只触发一次，大大有利于性能。
-
 - 💡 IntersectionObserver
   - 网页开发时，常常需要了解某个元素是否进入了"视口"（viewport），即用户能不能看到它。
 - 传统的实现方法是，监听到 scroll 事件后，调用目标元素的 getBoundingClientRect()方法，得到它对应于视口左上角的坐标，再判断是否在视口之内。
@@ -194,19 +229,16 @@ class Augmentable {
   - 传统的突破懒加载是通过监听 scroll 事件实现的，但是 scroll 事件会在很短的时间内触发很多次，严重影响页面性能。
   - 为提高页面性能，我们可以使用 IntersectionObserver 来实现图片懒加载。
 - 无限滚动（infinite scroll）的实现也很简单
-
 - 💡 window.getComputedStyle(element[, pseudo-element])
   - 返回一个 CSSStyleDeclaration 对象（与 style 属性的类型一样），包含元素的计算样式。
 - getComputedStyle 和 element.style 的相同点就是二者返回的都是 CSSStyleDeclaration 对象。而不同点就是：
   - element.style 读取的只是元素的内联样式，即写在元素的 style 属性上的样式；而 getComputedStyle 读取的样式是最终样式，包括了内联样式、嵌入样式和外部样式。
   - element.style 既支持读也支持写，我们通过 element.style 即可改写元素的样式。而 getComputedStyle 仅支持读并不支持写入。我们可以通过使用 getComputedStyle 读取样式，通过 element.style 修改样式
-
 - 💡 Element.getBoundingClientRect()
   - 返回元素的大小及其相对于视口的位置。
   - 返回值是一个 DOMRect 对象，这个对象是由该元素的 getClientRects() 方法返回的一组矩形的集合，就是该元素的 CSS 边框大小。返回的结果是包含完整元素的最小矩形
 - 获取 dom 元素相对于网页左上角定位的距离
 - 判断元素是否在可视区域内
-
 - 💡 requestAnimationFrame(cb)
   - 告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。
   - 与 setTimeout 相比，requestAnimationFrame 最大的优势是由系统来决定回调函数的执行时机
@@ -227,7 +259,6 @@ class Augmentable {
   - 其中MutationRecord数组也会作为观察者初始化时的回调函数的第一个参数；
   - 同时也会从MutationObserver的通知队列中删除所有待处理的通知；
   - takeRecords方法是同步执行，可以即时获取；
-
 - [MutationObserver 监听 DOM 树变化](https://segmentfault.com/a/1190000017804945)
   - 给出了开发编辑器的简单示例
 
@@ -235,13 +266,11 @@ class Augmentable {
 
 - DOM Mutation Events were a major performance and stability issue and have been deprecated 
   - Google and Mozilla engineers announced a new proposal that would offer similar functionality with improved performance: DOM MutationObserver. 
-
 - The key advantage to this new specification over the deprecated DOM Mutation Events spec is one of efficiency. 
   - 👉🏻 If you are observing a node for changes, your callback will not be fired until the DOM has finished changing. 
   - When the callback is triggered, it is supplied a list of the changes to the DOM, which you can then loop through and choose to react to.
 - This is an important distinction to be made from other techniques such as binding events to key presses or more common events like ‘click’. 
   - 👉🏻 MutationObservers work differently from these techniques because they are triggered by changes in the DOM itself, not by events generated either via JS or user interaction.
-
 - Another use case would be situations where you are using frameworks that manipulate the DOM and need to react to these modifications efficiently ( and without `setTimeout` hacks! ).
 
 ## 0913
@@ -250,10 +279,8 @@ class Augmentable {
   - activeElement returns the Element within the DOM that currently has focus.
   - Typically a user can press the tab key to move the focus around the page among focusable elements, and use the space bar to activate one
   - 👉🏻 Focus (which element is receiving user input events) is not the same thing as selection (the currently highlighted part of the document).
-
 - [How to allow bolding, underlining and italics in textarea](https://stackoverflow.com/questions/19074391)
   - It is not possible to format text in text area. You may try using div and then ContentEditable
-
 - [调查如何实现Web页面的Minimap（缩略图）](https://marvinsblog.net/post/2022-04-16-web-minimap/)
 
 ## 0912
@@ -262,10 +289,8 @@ class Augmentable {
   - `caretPositionFromPoint(x,y)`只有firefox浏览器支持，是标准属性
   - 返回光标所在节点及光标在该节点内的offset
   - 两个方法参数完全相同，都是 x/y position within the current viewport，即clientX/Y
-
 - `elementFromPoint(x,y)` 不包含offset
   - returns the topmost `Element` at the specified coordinates (relative to the viewport)
-
 - ts变量类型声明时， : vs as
   - [What is the difference between using the colon and as syntax for declaring type?](https://stackoverflow.com/questions/54684886)
   - You should always prefer a type annotation to an assertion.
@@ -280,7 +305,6 @@ class Augmentable {
 ```JSX
 // ❌ 以下方式不可行，className值为 [object Object]
 import styles from './index.module.scss';
-
 const MyPage = () => {
     return (
         <div className={styles}>
@@ -296,7 +320,6 @@ const MyPage = () => {
   - 有些人在创建的时候会出现报错 比如: 502: Bad Gateway, 一般情况下 按照报错提示修改下配置文件之类的
   - 👉🏻 碰到502时，直接新建terminal执行npm start命令，就能看到异常详细信息
   - 建议直接参考公开的项目示例
-
 - 在codesandbox配置webpack和热加载很难work，直接用官方create-react-app模版更方便
 
 ## 0904
@@ -313,11 +336,10 @@ const MyPage = () => {
 - [Can I have an element with an ID that starts with a number?](https://stackoverflow.com/questions/5672903)
 - From the HTML 4.01 specs, no
   - 👉🏻 From the HTML 5 specs, yes
-
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                         `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                  `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -336,7 +358,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                                                                                                                                                                                            `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                                                                                                                                                                                                                     `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 
@@ -346,12 +368,10 @@ const MyPage = () => {
   - Containerd 调用链更短，组件更少，占用节点资源也比较少。
 - docker公司在云原生时代，已然成为打工仔，在容器领域的话语权已经被云计算厂商挤压
   - 对于桌面端，docker也有了可以竞争者，那就是redhat的podman，你可以alise podman=docker，docker有的基础功能podman都有
-
 - [被k8s弃用的docker还值得学吗？](https://juejin.cn/post/7031472527725559816)
   - 首先抛出答案：Docker依然值得学习。
   - 为什么k8s会弃用Docker作为其容器运行时？ Docker在设计之初，并不是为了运行在k8s上的，它是一个功能完备的开发者工具，实际上k8s运行时依赖的是Docker中的containerd组件，即然如此把containerd单独拿出来就可以了，而不需要Docker额外的组件，虽然containerd被集成在Docker中，但是k8无法直接调用Docker中的containerd，而是需要通过一个叫Dockershim的组件，这个组件也是需要额外的开发维护成本的
   - 为什么用Docker打包的镜像依然可以在k8s上使用？ 我们在上面说到Docker的核心利用了存在已久的Namespace和Cgroup技术，这并不是Docker的创新，但镜像绝对是Docker的一项重要创新， Docker镜像解决了应用程序的分发问题，并制定了统一的镜像标准：opencontainers.org/ 所以依据此标准制作的镜像，都可以在k8s上使用。
-
 - [Are networks now faster than disks?](https://serverfault.com/questions/238417)
   - 要考虑的因素过多，要具体情况具体分析
   - 机房内网通信比公网数据传输要快，公网还存在不稳定的问题
@@ -393,7 +413,6 @@ Send packet CA->Netherlands->CA      150,000,000 ns
 
 ```JS
 arr1 = [11, 22, 33];
-
 arr2 = new Array();
 arr2.push(11, 22, 33)
 ```
@@ -404,13 +423,11 @@ arr2.push(11, 22, 33)
 
 ```JS
 obj1 = { p1: 11, p2: 22 };
-
 obj2 = new Object();
 obj2.p1 = 11;
 obj2.p2 = 22;
 
 function createObj(name, age) {
-
   return {
     name: name,
     age: age
@@ -426,23 +443,19 @@ function fn1(text) {
   console.log('; 打印', text);
   return text;
 }
-
 const fn2 = function(text) {
   console.log('; 打印', text);
   return text;
 }
-
 const fn3 = (text) => {
   console.log('; 打印', text);
   return text;
 }
-
 let sum = (a, b) => a + b;
 // 等价于
 let sum = function(a, b) {
   return a + b;
 };
-
 fn1('hello');
 fn2('hello');
 ```
@@ -452,11 +465,9 @@ fn2('hello');
 - 👉🏻 严格模式下，组件mount时，effect逻辑会执行2次；通常state更新触发rerender会导致，render执行2次，effect还是只执行1次
   - mount时，就算useEffect第二个参数是`[]`，也会按照以下顺序执行，先执行2次render，再执行effect > effect-cleanup > effect
   - 可以通过useRef变量来控制effect的执行次数
-
 - strict mode的开发模式下确实会渲染两次
   - 在App组件里面debugger之后也发现了确实是走了两遍的render阶段。
   - 为了验证App被调用了两次，很自然的想到了用console来验证
-
 - 第二次渲染中console会经历修改和还原，这导致第二次渲染的console不会输出; 
   - Starting with React 17, React automatically modifies the console methods like `console.log()` to silence the logs in the second call to lifecycle functions.
   - Starting from React 18, React does not suppress any logs. 
@@ -466,14 +477,12 @@ fn2('hello');
   - There is a second run of your render function when strict mode is enabled (only in development mode), but as discussed here, React will monkey patch console methods (calling disableLogs(); ) for the duration of that second (synchronous) run, so that it does not output.
   - In my opinion, this log-suppression is a really bad design choice
   - 如果把APP中的console换成alert，或者把原生的console引用起来使用，就应该能得到预期的结果
-
 - intentionally double-invoking the following functions:
   - Class component constructor, render, and shouldComponentUpdate methods
   - Class component static getDerivedStateFromProps method
   - Function component bodies 👈🏻 函数体内render逻辑和effect逻辑都会执行2次
   - State updater functions (the first argument to `setState`)
   - Functions passed to useState, useMemo, or useReducer
-
 - React 18 introduces a new development-only check to Strict Mode. 
   - This new check will automatically unmount and remount every component, whenever a component mounts for the first time, restoring the previous state on the second mount.
   - On the second mount, React will restore the state from the first mount.
@@ -489,22 +498,18 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
   const effectCalled = useRef(false);
   const renderAfterCalled = useRef(false);
   const [, setVal] = useState<number>(0);
-
   if (effectCalled.current) {
     renderAfterCalled.current = true;
   }
-
   useEffect(() => {
     // only execute the effect first time around
     if (!effectCalled.current) {
       destroyFn.current = effect();
       effectCalled.current = true;
     }
-
     // this forces one render after the effect is run
     // 执行完effect后，触发修改 renderAfterCalled
     setVal((val) => val + 1);
-
     return () => {
       // if the comp didn't render since the useEffect was called,
       // we know it's the dummy React cycle
@@ -551,7 +556,6 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
 
 - dev-to
   - [x] search notion like block editor for recursive rendering
-
 - 百度网盘倍速播放的扩展
   - global speed
 
@@ -632,11 +636,9 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
   - `innerText` is aware of things like `<br>` elements, and ignores hidden elements
   - `innerText` is aware of styling and won't return the text of "hidden" elements.
   - `textContent` gets the content of all elements, including `<script>` and `<style>` elements. In contrast,  `innerText` only shows "human-readable" elements.
-
 - [Is it possible to calculate the Viewport Width (vw) without scrollbar?](https://stackoverflow.com/questions/33606565)
   - the viewport relative length units do not take scrollbars into account (and in fact, assume that they don't exist).
   - According to the [specs](https://drafts.csswg.org/css-values-3/#viewport-relative-lengths),  `vw` does take scrollbar width away UNLESS the overflow is on auto, then it works like "hidden" for the vw value. So if the page must overflow, set it to "scroll". With overflow-x & overflow-y you choose which scrollbar to display
-
 - 100vw会在超长内容时出现水平滚动条的问题
   - 具体宽度需要实测，很多资料的信息是过时的
     - https://codepen.io/uptonking/pen/zYWdRLO
@@ -645,14 +647,12 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
     - document.documentElement.clientWidth  610
     - 100vw.div.clientWidth  625
     - 给容器设置100vw时，若出现竖直滚动条，因为vw默认没考虑滚动条，此时总宽度是100vw+竖直滚动条宽度，就会导致出现水平滚动条
-
 - [解决 100vw 下滚动条引发的问题](https://juejin.cn/post/6844904062702321672)
   - 通过js工具函数计算滚动条宽度
   - 解决100vw出现水平滚动条的问题
     - .container  { width: calc(100vw - var(--scrollbar)); }
   - 解决出现滚动条时右边距和上边距不相同的问题
     - right: calc(40px + var(--scrollbar));
-
 - [深入浅出 Viewport 设计原理](https://www.cnblogs.com/onepixel/p/12144364.html)
 - css 中写的 px 指的就是逻辑像素，而不是物理像素，一个逻辑像素可以代表一个或多个物理像素
 - 简单来说：viewport 是屏幕背后的一张画布。
@@ -668,13 +668,11 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
   - 100vw  === innerWidth
   - layout viewport 是innerWidth/Height内区域
   - visual viewport是layout viewport去掉不可见部分，一般是 键盘
-
 - [Visual Viewport API](https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API)
   - The visual viewport is the visual portion of a screen excluding on-screen keyboards, areas outside of a pinch-zoom area, or any other on-screen artifact that doesn't scale with the dimensions of a page.
 - What happens when a web page element needs to be visible on screen regardless of the visible portion of a web page? 
   - For example, what if you need a set of image controls to remain on screen regardless of the pinch zoom level of the device? Current browsers vary in how they handle this. 
   - The visual viewport lets web developers solve this by positioning elements relative to what's shown on screen.
-
 - A viewport represents the area in computer graphics being currently viewed. 
   - In web browser terms, it is generally the same as the browser window, excluding the UI, menu bar, etc. 
   - That is the part of the document you are viewing.
@@ -700,7 +698,6 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
   - If you have a sticky header or footer, they will still be stuck to the top or bottom of the layout viewport, but they may not be visible at the top and bottom of the device's screen — which is the visual viewport. 
   - The visual viewport is the currently visible portion of the layout viewport.
   - If you scroll down, you are changing the contents of the visual viewport and bringing the bottom of the layout viewport into view, displaying the sticky footer, which will then stay stuck at the bottom.
-
 - 现代桌面浏览器有两种缩放操作。
   - 你在菜单栏上的缩放是改变像素大小（同时缩放layout viewport和visual viewport），
   - 用触摸板双指操作才是只缩放visual viewport。
@@ -711,7 +708,6 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
 - [Does adding too many event listeners affect performance?](https://stackoverflow.com/questions/28627606)
   - dding additional event handlers to an element DOES decrease performance. 
   - Keep in mind that those tests are done with an empty function. When adding a real function that performs some additional tasks, the performance will slow down even further.
-
 - [git error: failed to push some refs to remote](https://stackoverflow.com/questions/24114676)
   - 修改git仓库地址后，其他分支无法push
   - 简单的解决办法是直接重命名无法push的分支
@@ -731,7 +727,6 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
 - [`<span>` element refuses to go inline in flexbox](https://stackoverflow.com/questions/20363441)
   - by the flexbox spec -- children of a flex container are forced to have a block-flavored display type.
   - If you don't want this behavior, just wrap your `<span>` in a `<div>`, and then the `<div>` will play the role of the flex item so that the `<span>` can keep its display type.
-
 - [css flex-item default height issue](https://stackoverflow.com/questions/47106934)
   - All items in a flex row will take the largest height of them by default.
   - After calling container as display:flex, may i consider all its contained items will behave like inline-block elements?
@@ -743,7 +738,6 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
   - BOM是Unicode规范中推荐的标记字节顺序的方法。比如说对于UTF-16，如果接收者收到的BOM是FEFF，表明这个字节流是Big-Endian的；如果收到FFFE，就表明这个字节流是Little-Endian的。
   - UTF-8不需要BOM来表明字节顺序，但可以用BOM来表明“我是UTF-8编码”。BOM的UTF-8编码是EF BB BF（用UltraEdit打开文本、切换到16进制可以看到）。所以如果接收者收到以EF BB BF开头的字节流，就知道这是UTF-8编码了。
 - [Python 读取文件首行多了"\ufeff"字符串](https://blog.csdn.net/chenmozhe22/article/details/89472790)
-
 - [json字符串头部出现非法字符“\ufeff”的问题处理](https://segmentfault.com/a/1190000010292346)
   - 今天在处理将数组转为json 字符串后，然后获取到解析时，出现解析的json字符串为空的现象，首先看了下，我的json转换脚本之前没有任何输出，但还是出现json转化乱码，后来查了下，原来是脚本编码格式的问题。
   - 其实解决方法很简单，就是涉及json转换的脚本文件的UTF-8格式编码 改成 UTF-8无BOM格式编码即可。
@@ -764,7 +758,6 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
   - Unicode: U+200F  HTML: &rlm; &#x200F; 或&#8207; 
 - 字节顺序标记（byte-order mark，BOM）常被用来当做标示文件是以UTF-8、UTF-16或UTF-32编码的标记。
   - Unicode: U+FEFF
-
 - 零宽度字符在JavaScript的应用
 - 数据防爬
   - 将零宽度字符插入文本中, 干扰关键字匹配。
@@ -786,14 +779,11 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
 const App = () => {
   const [value, setValue] = useState(0)
   const throttled = useRef(throttle((newValue) => console.log(newValue), 1000))
-
   useEffect(() => throttled.current(value), [value])
-
   return (
     <button onClick={() => setValue(value + 1)}>{value}</button>
   )
 }
-
 // It may work too
 const throttled = useCallback(throttle(newValue => console.log(newValue), 1000), []);
 ```
@@ -826,7 +816,6 @@ const asyncLocalStorage = {
     });
   }
 };
-
 const asyncLocalStorage2 = {
   setItem: async function(key, value) {
     await null;

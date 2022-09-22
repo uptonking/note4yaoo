@@ -25,9 +25,10 @@ modified: 2021-02-09T19:25:11.641Z
 - [Drawing Graphics with the CSS Paint API](https://tympanus.net/codrops/2021/06/18/drawing-graphics-with-the-css-paint-api/)
   - CSS Paint is an API that allows developers to programatically generate and draw graphics where CSS expects an image.
 # frontend-engineering
-
 - [详细设计一个文章页的目录插件](https://juejin.cn/post/6883292908649185288)
 - [Encoding data for POST requests](https://jakearchibald.com/2021/encoding-data-for-post-requests/)
+# toolchain
+- [CodeSandbox浏览器端的webpack是如何工作的？](https://www.yuque.com/wangxiangzhong/aob8up/nb1gp2)
 # mobile
 - [移动端web开发基础 gitbook](https://zhenchao125.gitbooks.io/html5_4_atguigu/content/di-3-zhang-yi-dong-duan-shi-jian/1dian-ji-shi-jian-zai-yi-dong-duan-de-wen-ti.html)
 # backend-dev
@@ -39,6 +40,5 @@ modified: 2021-02-09T19:25:11.641Z
   - 实战一：上传图片预览
   - 实战二：以Blob URL加载网络视频
   - 可以自己解析m3u8拿到ts视频片段，用mux.js转码一下再播放。或者直接使用hls.js来播放
-
 
 - [Building an awesome image loading experience__202110](https://kentcdodds.com/blog/building-an-awesome-image-loading-experience)

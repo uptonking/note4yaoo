@@ -11,6 +11,12 @@ modified: 2020-10-22T13:06:52.353Z
 - 看再多技术文章和资讯，不如动手写一写
 - 确定某一个技术方向后，应该集中精力到某一方面的技术和深入
 # 团队专栏
+- [政采云前端团队](https://juejin.cn/user/3456520257288974/posts)
+  - [我在工作中是如何使用 git 的, rebase清晰解释](https://juejin.cn/post/6974184935804534815)
+  - [前端工程实践之可视化搭建系统（一） 鲁班](https://juejin.cn/post/6844903950508883982)
+  - [鲁班H5(开源可视化搭建系统) 核心实现原理](https://juejin.cn/post/6844903933589241869)
+  - https://github.com/ly525/luban-h5
+
 - [ELab 字节跳动大力教育前端团队](https://juejin.cn/user/4169764695465239/posts)
   - [最小编译器the-super-tiny-compiler](https://juejin.cn/post/7110217567221841933)
   - [由 Babel 理解前端编译原理](https://juejin.cn/post/7080832945136599077)

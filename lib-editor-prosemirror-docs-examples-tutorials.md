@@ -54,6 +54,11 @@ modified: 2022-09-05T03:48:18.133Z
 
 ## [Upload handling](https://prosemirror.net/examples/upload/)
 
+- 在实现上传图片demo时，发现图片上传完成后，从点击图片到点击的图片出现蓝框即选中状态，耗时很长，体验很卡
+  - 通过浏览器perf面板分析调用栈定位到问题
+  - mouseup > selectClickedLeaf > updateSelection > dispatch > appendNewHistoryEntry(来自prosemirror-dev-toolkit)
+  - `appendNewHistoryEntry`并不来自prosemirror源码，而是开发者工具引入的，这也解释了官网案例不卡的原因
+
 - Some types of editing involve asynchronous operations, but you want to present them to your users as a single action. 
   - For example, when inserting an image from the user's local filesystem, you won't have access to the actual image until you've uploaded it and created a URL for it.
 - Since the upload might take a moment, and the user might make more changes while waiting for it, 

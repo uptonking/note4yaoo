@@ -61,6 +61,35 @@ modified: 2022-08-21T10:12:02.964Z
   - 但是利用第2种方式，不管第三方编辑器如何改变编辑器内容，只要让etherpad定时去检测到变化，就能生成diff，后续流程完全和原生etherpad一致
   - 将etherpad对内置编辑器的绑定解耦，通过设计api暴露出来，可绑定到第三方编辑器上。这样第三方编辑器就具备了和原生etherpad相同的整套实时协作编辑的能力
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [在基于前端技术的编辑器中，ObjectURL 的生命周期如何管理？](https://www.zhihu.com/question/553426184)
+  - 编辑器中对本地添加的图片素材以 URL.createObjectURL() 生成的 URL 来引用。但是这样生成的链接引用的文件会常驻内存而不会自动回收，需要 URL.revokeURL来释放。
+
+- 的确没有用过 revokeObjectURL()，你是真实发现页面有内存问题了吗，比如会 OOM？
+  - 如果你现在引用计数的方式可行，那我下面说的这个设想也许会更方便一点
+  - 就是把原生的 createObjectURL() 返回的 URL 字符串包装成字符串对象，如果能不覆盖 URL.createObjectURL，最好不要覆盖，把 new String 的逻辑放在自己的模块里。
+  - 这个时候就可以在这个字符串对象被垃圾回收的时候，执行 revokeObjectURL()：
+
+```JS
+const _createObjectURL = URL.createObjectURL;
+URL.createObjectURL = function(blob) {
+  return new String(_createObjectURL(blob))
+}
+
+const registry = new FinalizationRegistry(objectURL => {
+  URL.revokeObjectURL(objectURL)
+})
+
+registry.register(objectURL, objectURL + '') // 第二个参数需要是字符串原始值
+```
+
+- ObjectURL需要手动释放是因为它引用了blob对象，导致blob本身不能释放，反而这个引用对内存来说微乎其微。这个场景下可以存储文件的File对象，点击下载时才生成blob再创建引用，下载完成就释放引用，从而让blob对象被回收。
+
 - ## [国内有做类似于Google Docs级别「富文本编辑器」的团队吗？](https://www.zhihu.com/question/397012334)
 - 一个叫“一起写”的产品，创始人是 Google docs 出来的，做的就是类似产品，不过好像已经被快手收购了
 

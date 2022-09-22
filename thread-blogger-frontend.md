@@ -21,6 +21,10 @@ modified: 2021-02-09T19:27:01.319Z
     - Build React from Scratch
     - [从0到1实现React](http://muyunyun.cn/blog/React/%E4%BB%8E0%E5%88%B01%E5%AE%9E%E7%8E%B0React/0.%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87)
 # react-blogger
+- 荒山
+  - react
+  - https://juejin.cn/user/430664257386558/posts
+
 - kentcdodds
   - react course
   - https://github.com/kentcdodds

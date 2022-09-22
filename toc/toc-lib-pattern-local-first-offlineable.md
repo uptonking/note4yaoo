@@ -46,6 +46,16 @@ modified: 2021-09-04T14:03:39.046Z
   - Directly read/write indexes with the ability to index graph/relational queries.
   - Suitable for frontend state management.
 
+- tinybase /1.3kStar/MIT/202209/ts
+  - https://github.com/tinyplex/tinybase
+  - https://tinybase.org/
+  - A tiny, reactive JavaScript library for structured state and tabular data.
+  - Familiar concepts of tables, rows, and cells, and schematization to model your data domain.
+  - Flexibly reactive to reconciled updates, so you only spend cycles on the data that changes.
+  - Indexing, metrics, relationships - and even an undo stack for your app state!
+  - Easily sync your data to local or remote storage, and use idiomatic bindings to your React UI.
+  - Powerful query engine to select, join, filter, group, sort and paginate data - reactively.
+
 - https://github.com/ccorcos/game-counter
   - A simple application for keeping score in games. For example, golf or Settlers of Catan.
   - External effects interface through services defined on the Environment.
@@ -73,14 +83,6 @@ modified: 2021-09-04T14:03:39.046Z
 - https://github.com/local-first-web/state
   - A Redux-based state container for local-first software, offering seamless synchronization using Automerge CRDTs. (Formerly known as fish Cevitxe).
   - @localfirst/state is an automatically replicated Redux store that gives your app offline capabilities and secure peer-to-peer synchronization superpowers.
-
-- https://github.com/tinyplex/tinybase
-  - https://tinybase.org/
-  - TinyBase is a smarter way to structure your application state
-  - Familiar concepts of tables, rows, and cells, and schematization to model your data domain.
-  - Flexibly reactive to reconciled updates, so you only spend cycles on the data that changes.
-  - Indexing, metrics, relationships - and even an undo stack for your app state!
-  - Easily sync your data to local or remote storage, and use idiomatic bindings to your React UI.
 
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb

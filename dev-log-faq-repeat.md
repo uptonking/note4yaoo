@@ -7,7 +7,7 @@ modified: 2021-03-29T19:17:20.657Z
 
 # dev-log-faq-repeat
 
-# is `JSON.parse` faster than declaring an object literal.
+# is `JSON.parse` faster than declaring an object literal
 
 - [The cost of parsing JSON](https://v8.dev/blog/cost-of-javascript-2019#json)
   - Because the JSON grammar is much simpler than JavaScript’s grammar, JSON can be parsed more efficiently than JavaScript. 
