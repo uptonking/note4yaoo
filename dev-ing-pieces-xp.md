@@ -13,7 +13,12 @@ modified: 2021-04-28T20:54:58.126Z
 
 ## 
 
-## 
+## prosemirror官方示例，footnote弹框打开后，其中所有文本出现浏览器默认选区蓝色背景色
+
+- 首先分析父编辑器而不是子编辑器选区范围，确实存在
+- 发现是设置弹框内`::selection`的css规则未生效
+
+- 结果是由于以前调整prosemirror的源码不细心导致，Selection的默认visible是true，但NodeSelection的默认visible是false
 
 ## prosemirror官方示例，图片上传完成后，点击图片会很卡，但点击编辑器其他位置文字时光标正常
 

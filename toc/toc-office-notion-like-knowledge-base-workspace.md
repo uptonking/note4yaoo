@@ -204,7 +204,7 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/huangwei9527/Ink-wash-docs
   - 水墨文档，一款基于egg+vue开发的在线文档管理平台，支持markdown文档， excel文档，原型托管等功能.
   - 依赖vue、element-ui、vditor、egg、x-spreadsheet
-# vscode
+# workspace built with vscode
 - foam /12.5kStar/MIT/202208/ts/vscode
   - https://github.com/foambubble/foam
   - https://foambubble.github.io/foam/
@@ -236,6 +236,11 @@ modified: 2022-06-03T21:34:54.893Z
   - 自动更新文库导航目录，支持多级目录
   - 无需服务端的全文库内容搜索与计分排序
 # more
+- https://github.com/zhyd1997/DragonLi
+  - https://dragon-li.on.fleek.co/
+  - a blog platform and alternative to Mirror
+  - support favourite writers in seconds stream for readers by integrated with Superfluid instead of one-time payment.
+
 - https://github.com/unigraph-dev/unigraph-dev
   - A local-first and universal knowledge graph, personal search engine, and workspace for your life.
   - Your data is private and never leaves your computer. Query or sync all of your data in JSON format using a variant of GraphQL.
