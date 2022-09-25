@@ -9,6 +9,10 @@ modified: 2021-09-30T08:30:09.395Z
 
 # guide
 
+- resources
+  - [地图瓦片加载计算原理介绍](https://zhuanlan.zhihu.com/p/546459841)
+    - https://github.com/antvis/L7/tree/master/packages/utils/src/tileset-manager
+
 ## pmtiles vs mbtiles
 
 - I believe this is protomaps approach: re-encode the mbtiles (sqlite-based ) format in to something that can be requested with a http range request and thus served from a single dumb webserver that doesn't need to understand sqlite or mbtiles parsing

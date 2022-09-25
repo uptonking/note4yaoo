@@ -72,10 +72,37 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-focalboard
 - eg-tanstack-table-v8
 
+## 0925
+
+- `Content-Disposition` response header is a header indicating if the content is expected to be displayed inline in the browser, that is, as a Web page or as part of a Web page, or as an attachment, that is downloaded and saved locally.
+
+```
+Content-Disposition: inline
+Content-Disposition: attachment
+Content-Disposition: attachment; filename="filename.jpg"
+```
+
+- [screenkey: Missing support for wayland](https://gitlab.com/screenkey/screenkey/-/issues/61)
+  - GDK_BACKEND=x11
+  - https://github.com/AlynxZhou/showmethekey
+  - https://github.com/WhiredPlanck/showmethekey-rs
+
+- [Wayland 下使用腾讯会议](https://icooper.cc/archives/445)
+  - sudo vim /etc/gdm3/custom.conf
+  - WaylandEnable=false
+  - sudo service gdm3 restart
+
+```shell
+export XDG_SESSION_TYPE=x11
+export QT_QPA_PLATFORM=xcb
+unset WAYLAND_DISPLAY
+# 上面设置变量位置要找对
+if [ "$XDG_SESSION_TYPE" = "wayland" ]
+```
+
 ## 0924
 
 - [Button type "button" vs. "submit" ](https://stackoverflow.com/questions/37736056)
-
 - submit: 
   - The button submits the form data to the server. 
   - This is the default if the attribute is not specified, or if the attribute is dynamically changed to an empty or invalid value.
@@ -84,7 +111,6 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - button: 
   - The button has no default behavior. 
   - It can have client-side scripts associated with the element's events, which are triggered when the events occur.
-
 - As for the difference between button and input:
 - A `button` can have a separate value as data, while for an `input` the data and button text are always the same
 
@@ -95,7 +121,6 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - A button can have HTML content (e.g. images), while an input can only have text.
 - 
-
 - [Property 'value' does not exist on type 'EventTarget'](https://stackoverflow.com/questions/42066421)
 
 ```JS
@@ -400,7 +425,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                 `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -419,7 +444,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                                                                                                                                                                                                                                                   `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                                                                                                                                                                                                                                                                    `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

@@ -13,6 +13,10 @@ modified: 2020-12-22T12:42:14.745Z
 
 ## guide
 
+- 不要过于执着寻找linux下对应的windows软件体验，双系统切换使用省时省力
+  - 录屏时显示键盘按键，类似screenkey，但wayland不支持
+  - 腾讯会议不支持wayland
+
 ## os-starter
 
 - [装了5次Ubuntu，告诉你win10+Ubuntu双系统的正确打开方式](https://zhuanlan.zhihu.com/p/101307629)

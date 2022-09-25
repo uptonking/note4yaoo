@@ -7,7 +7,14 @@ modified: 2020-12-13T09:22:29.232Z
 
 # toc-lib-fwk-spring-alternatives
 
+# guide
+
+- 团队协作时统一且易理解的架构抽象、功能隔离、插件设计更重要
+  - 不一定用spring，MERN或Nestjs更主流，问题易解决
 # spring-like
+- https://github.com/892280082/j-spring
+  - Spring framework for Node.
+  - https://github.com/892280082/j-spring-mvc
 
 - rester-core /2Star/MIT/202012/ts/commits-700
   - https://github.com/DevinDon/rester-core
@@ -60,19 +67,14 @@ modified: 2020-12-13T09:22:29.232Z
 - https://github.com/haalcala/node-spring
   - This project is to achieve similar functionality as SpringFramework for Java
   - 基于json配置，而不是xml
-
-
 # ioc
-
 - https://github.com/yyyar/autowired-js
   - IoC library for Node.js ES2015 classes inspired by Spring Framework IoC
 - https://github.com/yyyar/jean.js
   - small IoC library for Node.js inspired by Spring Framework IoC container
 - https://github.com/rvanasa/sorcerer
   - dependency injection library for Node.js, inspired by AngularJS and the Java Spring Framework
-
 # more-spring-repos
-
 - https://github.com/webstyle/express-starter
   - Express.js, TypeScript web application starter Like Spring Boot(Java)
 - https://github.com/singhfulda/loopback4

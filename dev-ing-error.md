@@ -11,6 +11,13 @@ modified: 2021-03-29T19:29:32.505Z
 
  
 
+- ModuleNotFoundError: No module named 'mesonbuild'
+  - 问题是pip安装的包在用户目录
+    - /home/yaoo/.local/lib/python3.10/site-packages/meson-0.63.2.dist-info/
+  - https://github.com/mesonbuild/meson/issues/7258
+    - sudo pip install meson
+    - 安装在root目录 /usr/local/lib/python3.10/dist-packages/
+
 - npm ERR! Invalid Version
   - 👉🏻 备用的参考思路是，将可疑包移出package.json的workspaces配置项
   - [[BUG] npm ERR! Invalid Version: 0.4.0rc7](https://github.com/npm/cli/issues/4992)

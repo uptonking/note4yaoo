@@ -31,6 +31,10 @@ modified: 2020-11-11T13:16:42.423Z
   - ref
     - [COVID-19 Dashboard by JHU](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6)
 
+- https://github.com/nytimes/covid-19-data
+  - An ongoing repository of data on coronavirus cases and deaths in the US.
+  - 数据全为csv
+
 - 美国各州各城市2019新型冠状病毒COVID19数据
   - https://www.kesci.com/home/dataset/5e844c33246a590036b97646
 

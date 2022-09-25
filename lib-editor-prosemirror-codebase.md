@@ -40,6 +40,13 @@ modified: 2021-06-02T17:13:37.692Z
   - parseDOM实现解析
   - 编辑时要toDOM，特殊节点如footnote/编辑操作一般是通过insert菜单
 # not-yet
+- ## editor pluginState、pluginView的更新顺序
+- ？NodeView.update() 和plugin.view().update()的先后顺序
+- 简单测试结果
+  - 先执行NodeView，再执行plugin.view的更新
+- 很多时候NodeView无需更新，就不会触发update
+- 要测试复杂的例子，观察声明顺序和触发顺序是否一致
+
 - ## 支持动态改变schema的变通实现方式？
 
 - ### schema中node约束的定义使用context-expression字符串，如何设计为更好的/类型友好的方式
@@ -65,12 +72,6 @@ modified: 2021-06-02T17:13:37.692Z
 
 - ## 如何实现virtualized虚拟化渲染
 - 参考思路，先实现分页，再渲染前后2页
-
-- ## ？NodeView.update() 和plugin.view().update()的先后顺序
-- 简单测试结果
-  - 先执行NodeView，再执行plugin.view的更新
-- 很多时候NodeView无需更新，就不会触发update
-- 要测试复杂的例子，观察声明顺序和触发顺序是否一致
 # tutorials-examples
 - 渲染出来的编辑器，默认内容为 `<p><br></p>`，`transaction.before.content.size`默认大小为2
 - 编辑器默认支持按backspace退格键删除、del删除键

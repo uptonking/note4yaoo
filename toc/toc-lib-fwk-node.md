@@ -6,6 +6,11 @@ modified: 2021-01-04T16:18:39.667Z
 ---
 
 # toc-lib-fwk-node
+
+# guide
+
+- 团队协作时统一且易理解的架构抽象、功能隔离、插件设计更重要
+
 - ref
   - keyword: backend-for-frontend, spring-like, restful-api, node-framework
   - [下一代前端框架会去解决什么问题？ blitz、redwood](https://www.zhihu.com/question/433673833/answer/1616521720)

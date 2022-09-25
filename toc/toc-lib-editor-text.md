@@ -11,6 +11,7 @@ modified: 2021-07-27T15:12:39.959Z
 
 - ref
   - https://github.com/JefMari/awesome-wysiwyg
+  - https://github.com/xjh22222228/awesome-web-editor
 # known-text-editor
 - prosemirror /6kStar/MIT/202208/ts
   - https://github.com/ProseMirror/prosemirror
@@ -94,6 +95,12 @@ modified: 2021-07-27T15:12:39.959Z
 - wiz-editor /237Star/MIT/202207/ts/为知笔记
   - https://github.com/WizTeam/wiz-editor
   - 支持多人实时协同编辑的网页富文本编辑
+
+- https://github.com/JiHong88/SunEditor
+  - Pure javscript based WYSIWYG web editor, with no dependencies
+
+- https://github.com/margox/braft-editor /archived
+  - 美观易用的React富文本编辑器，基于draft-js开发
 # more-editor
 - https://github.com/liferay/alloy-editor /ckeditor.v4
   - http://alloyeditor.com/

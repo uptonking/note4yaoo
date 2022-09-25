@@ -145,51 +145,65 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/BlueMona/prosemirror-react-renderer /201710/ts
   - An alternative to ProseMirror's DOMSerializer that converts documents into React elements instead of DOM fragments.
 # collab
+- https://github.com/TeemuKoivisto/prosemirror-react-typescript-example/tree/master/packages/api-collab
+  - an example collaboration server based on this example https://github.com/ProseMirror/website/tree/master/src/collab to show how one can integrate it with ProseMirror editor.
+
 - https://github.com/ProseMirror/prosemirror-collab
   - Collaborative editing for ProseMirror
   - This module implements a plugin that helps track and merge changes for collaborative editing.
+
 - https://github.com/benaubin/prosemirror-collab-plus /202008/ts/inactive
   - Improvements over prosemirror-collab:
-  - Server-side rebasing drastically reduces network round-trips
-  - Steps are queued and sent as commits, reducing overhead
-  - When possible, steps are merged prior to network transport
+    - Server-side rebasing drastically reduces network round-trips
+    - Steps are queued and sent as commits, reducing overhead
+    - When possible, steps are merged prior to network transport
+
+- https://github.com/Yxwww/prosemirror-collab-example
+  - Stripped out prosemirror website collab example into a stand alone environment for learning and toying around.
+  - 官方示例client/server代码未改动，替换了启动代码
+
+- https://github.com/raydwaipayan/collaborate
+  - an project to build a multi user online editor based on ProseMirror
+  - 官方示例client/server代码未改动，替换了启动代码
 
 - https://github.com/yjs/y-prosemirror
   - ProseMirror editor binding for Yjs
 - https://github.com/ocavue/y-prosemirror-playground
   - 依赖 yjs, y-webrtc, y-prosemirror
 
-- https://github.com/saranrapjs/prosemirror-automerge /201904/js/inactive
-  - experiment with wiring automerge up to ProseMirror
-  - The basic idea is to have a ProseMirror plugin that works similarly to the collab plugin: steps which originate from the editor are translated to an Automerge document, and changes to a "remote" Automerge document are translated back to the ProseMirror document as steps.
-
-- https://github.com/Yxwww/prosemirror-collab-example
-  - Stripped out prosemirror website collab example into a stand alone environment for learning and toying around.
-
-- https://github.com/raydwaipayan/collaborate
-  - an project to build a multi user online editor based on ProseMirror
-
 - https://github.com/fadiquader/prosemirror-collaborative-editor
   - collaborative editor for React built with Prosemirror + Yjs framework + mongodb
-
-- https://github.com/lukesmurray/prosemirror-async-query
-  - A simple declarative API for using promises in prosemirror plugin state.
 
 - https://github.com/alihesari/prosemirror-demo
   - a demo of a ProseMirror editor that was made collaborative with Yjs & y-prosemirror.
   - We use the y-websocket provider to share document updates through a server. 
 
+- https://github.com/tororosoba0534/collab-note-yjs-wsserver
+  - Collab-Note-YJS is a multi-repo project which divided by two repositories (frontend and backend). 
+
+- https://github.com/saranrapjs/prosemirror-automerge /201904/js/inactive
+  - experiment with wiring automerge up to ProseMirror
+  - The basic idea is to have a ProseMirror plugin that works similarly to the collab plugin: steps which originate from the editor are translated to an Automerge document, and changes to a "remote" Automerge document are translated back to the ProseMirror document as steps.
+
 - https://github.com/microsoft/FluidFramework/tree/main/examples/data-objects/prosemirror
   - An experimental implementation of how to take the open source ProseMirror rich text editor and enable real-time coauthoring using the Fluid Framework.
   - Fluid Framework is a library for building distributed, real-time collaborative web applications using JavaScript or TypeScript.
-
-- https://github.com/tororosoba0534/collab-note-yjs-wsserver
-  - Collab-Note-YJS is a multi-repo project which divided by two repositories (frontend and backend). 
 # prosemirror-table
 - prosemirror-datagrid /3Star/MIT/202109/ts
   - https://github.com/hedgerwang/prosemirror-datagrid
   - https://hedgerwang.github.io/prosemirror-datagrid/dist/demo.html
   - This module defines a schema extension to support datagrid with virtual scrolling and editing support.
+# prosemirror-elements-node
+- https://gitlab.com/emergence-engineering/prosemirror-codemirror-block
+  - CodeMirror 6 code_block in ProseMirror
+    - Legacy ( CodeMirror 5 ) language support trough @codemirror/legacy-modes
+  - Customizable language selector
+  - Lazy-loaded language support
+
+- https://gitlab.com/emergence-engineering/prosemirror-image-plugin
+  - Upload images to endpoints, showing placeholder until the upload finishes
+  - Customizable overlay for alignment 
+  - Image resizing with body resize listeners, so the image always fits the editor ( inspired by czi-prosemirror )
 # prosemirror-media/embed
 - https://github.com/OrkhanAlikhanov/prosemirror-image-uploader
   - The necessary image uploader for prosemirror based editors like (tiptap, remirror).
@@ -212,7 +226,7 @@ modified: 2022-08-18T16:57:29.058Z
 
 - https://github.com/Holoon/ProseMirror.Model
   - C# definitions of ProseMirror's content model, the data structures used to represent and work with documents.
-# prosemirror-utils-extensions
+# utils-extensions
 - https://github.com/ueberdosis/prosemirror-to-html
   - Takes ProseMirror JSON and outputs HTML. 基于php实现
 - https://github.com/enVolt/prosemirror-to-html
@@ -232,6 +246,9 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/joelewis/prosemirror-mentions
   - https://star-drug.glitch.me/
   - A ProseMirror plugin that enables @mentions and #hashtags in a prosemirror view.
+
+- https://github.com/lukesmurray/prosemirror-async-query
+  - A simple declarative API for using promises in prosemirror plugin state.
 
 - https://github.com/thomasgafner/prosemirror-br-encoded-hierarchy-base
   - Use this module to interpret leading and trailing line breaks (br) in paragraphs as a hint for levels of a hierarchy. 

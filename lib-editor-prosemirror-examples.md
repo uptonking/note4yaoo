@@ -266,6 +266,8 @@ modified: 2022-08-18T16:57:46.405Z
   - 使用了 React 构建界面的有: Slash
 
 - manuscript-editor /7Star/apache2/202208/ts
+  - https://github.com/Atypon-OpenSource/manuscripts-article-editor
+  - the editor package of Manuscripts app to be used in a react application.
   - https://gitlab.com/mpapp-public/manuscripts-manuscript-editor
   - https://gitlab.com/mpapp-public/manuscripts-frontend
     - /CPAL-1.0; 类似MPL

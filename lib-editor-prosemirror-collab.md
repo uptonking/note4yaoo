@@ -7,6 +7,38 @@ modified: 2021-10-14T05:03:19.234Z
 
 # lib-editor-prosemirror-collab
 
+# guide
+
+# examples
+
+## [Collaborative text editor with ProseMirror and a syncing database](https://emergence-engineering.com/blog/prosemirror-sync-1)
+
+- [blog src code](https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1)
+
+- tldr
+  - web-based collaborative editor based on ProseMirror
+  - use PouchDB (CouchDB) to abstract away all the hassle that comes with directly managing WebSockets
+  - Any database with real-time syncing functionality can be used
+
+- Although the `prosemirror-collab` module is not very hard to use, a communication layer is necessary for the clients to receive new steps to update their local document, keeping them in sync. 
+  - This is usually done with WebSockets, which adds another layer in the stack where bugs can hide. 
+  - This article shows a path to get rid of that layer by using a well-tested layer in the form as a syncing database. (PouchDB/CouchDB)
+  - This approach has also been tested with Firestore.
+
+- step: an object which describes the necessary information to update a document ( like add/delete a letter from a given position in a document.
+- ProseMirror document version: A version of the document starts from 0 and incremented every time a new step is applied.
+
+- Sync database: A database which is capable of automatically replicating the state of a remote database, so they both contain the same content eventually. For example CouchDB, Google Firestore etc...
+- PouchDB: A JS implementation of the CouchDB protocol. This means that it can run in the browser, and sync up to another database which implements the CouchDB protocol.
+- listener: A callback which is called every time the there is new data in the database
+
+- This is very similar to a REST API, but the server now can push data to the clients directly. 
+  - Of course this can be done with just WebSockets ( and that's what behind the implementation of most sync databases ), 
+  - but that's usually a quite complex hard-to-test part, and using a well-tested database has some obvious benefits in that sense. 
+
+- In this demo there are two ProseMirror editors and each of them has a dedicated PouchDB instance. 
+  - These databases sync up to a third database, which belongs to a "server". 
+  - If client A is updated, then the server is updated which ideally propagates client B.
 # [Collaborative Editing in ProseMirror__201507](https://marijnhaverbeke.nl/blog/collaborative-editing.html)
 
 ## The Problem

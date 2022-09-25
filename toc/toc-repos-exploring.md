@@ -20,6 +20,9 @@ modified: 2020-11-03T06:55:09.225Z
     - ioc container for JavaScript & Node.js apps powered by TypeScript.
     - An IoC container uses a class constructor to identify and inject its dependencies. 
     - InversifyJS has a friendly API and encourages the usage of the best OOP and IoC practices.
+  - https://github.com/892280082/j-spring
+    - Spring framework for Node.
+    - https://github.com/892280082/j-spring-mvc
   - https://github.com/thiagobustamante/typescript-ioc
   - https://github.com/typestack/typedi
   - [Typescript Dependency Injection in 200 LOC](https://dev.to/darcyrayner/typescript-dependency-injection-in-200-loc-12j7)
