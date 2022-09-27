@@ -71,39 +71,57 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-collab
 - eg-focalboard
 - eg-tanstack-table-v8
+- prosemirror-collab-eg change-docs
+
+## 0928
 
 ## 0927
 
-- [How to allow CORS with Node.js (without using Express)](https://stackoverflow.com/questions/44405448)
+- ### [How to allow CORS with Node.js (without using Express)](https://stackoverflow.com/questions/44405448)
 
 ```JS
 const http = require('http');
 const port = 8080;
-
 http.createServer((req, res) => {
   const headers = {
-    'Access-Control-Allow-Origin': '*',
-    /* @dev First, read about security */
+    'Access-Control-Allow-Origin': '*', // dev First, read about security
     'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
     'Access-Control-Max-Age': 2592000, // 30 days
+    'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
     /** add other headers as per requirement */
   };
-
   if (req.method === 'OPTIONS') {
+    // /👉🏻 cors时，post前会先发options，所以需要单独处理
     res.writeHead(204, headers);
     res.end();
     return;
   }
-
   if (['GET', 'POST'].indexOf(req.method) > -1) {
     res.writeHead(200, headers);
     res.end('Hello World');
     return;
   }
-
   res.writeHead(405, headers);
   res.end(`${req.method} is not allowed for the request.`);
 }).listen(port);
+```
+
+- ### [XMLHttpRequest changes POST to OPTION](https://stackoverflow.com/questions/8153832)
+- Yes, this is a "problem with same-origin policy". You are making your request either to a different server or to a different port, meaning that it is a cross-site HTTP request. Here is what the documentation has to say about such requests:
+  - Additionally, for HTTP request methods that can cause side-effects on server's data (in particular, for HTTP methods other than GET, or for POST usage with certain MIME types), the specification 👉🏻 mandates that browsers "preflight" the request, soliciting supported methods from the server with an HTTP OPTIONS request method, and then, upon "approval" from the server, sending the actual request with the actual HTTP request method.
+- I was having this exact problem from a JavaScript code that sent an ajax content.
+  - In order to allow the Cross-Origin Request with Preflight I had to do this in the . ASPX that was receiving the petition:
+
+```JS
+//Check the petition Method
+if (Request.HttpMethod == "OPTIONS") {
+  //In case of an OPTIONS, we allow the access to the origin of the petition
+  string vlsOrigin = Request.Headers["ORIGIN"];
+  Response.AddHeader("Access-Control-Allow-Origin", vlsOrigin);
+  Response.AddHeader("Access-Control-Allow-Methods", "POST");
+  Response.AddHeader("Access-Control-Allow-Headers", "accept, content-type");
+  Response.AddHeader("Access-Control-Max-Age", "1728000");
+}
 ```
 
 ## 0925
@@ -458,7 +476,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                      `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                           `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -477,7 +495,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                                                                                                                                                                                                                                                                         `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                                                                                                                                                                                                                                                                                              `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 
