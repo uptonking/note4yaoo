@@ -20,6 +20,11 @@ modified: 2021-08-12T14:36:02.148Z
 - todo
   - jwt的核心功能的示例
   - 切换 fake backend api的例子，不必执着，全局的替换需要考虑的场景太多
+# auth-examples
+- https://github.com/Swizec/useAuth
+  - The simplest way to add authentication to your React app.
+  - You'll need an account with Auth0 or Netlify Identity and the appropriate access keys.
+  - We use XState behind the scenes to manage authentication state for you.
 # jwt-blogs
 
 ## [五分钟带你了解啥是JWT](https://zhuanlan.zhihu.com/p/86937325)
@@ -265,7 +270,6 @@ HMACSHA256(
   - Agreed; cookies have their place, but both JWTs and session IDs can be sent via multiple avenues (cookies, headers, request bodies, URLs, etc)
 - If you're building a normal frontend, you're often much better off using traditional sessions with the session cookie being httpOnly so JavaScript does not even have access to it.
 # ref
-
 - [Next.js 11 - JWT Authentication Tutorial with Example App](https://jasonwatmore.com/post/2021/08/04/next-js-11-jwt-authentication-tutorial-with-example-app)
 - [Next.js - Basic HTTP Authentication Tutorial with Example App](https://jasonwatmore.com/post/2021/08/29/next-js-basic-http-authentication-tutorial-with-example-app)
 

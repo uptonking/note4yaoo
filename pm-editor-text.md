@@ -33,6 +33,30 @@ modified: 2021-05-14T14:33:52.786Z
   - 考虑设计成类似trello这类数据卡片，可以任意拖动、缩放、auto-layout自动对齐
 
 - 编辑器文内拖动有什么用
+  - 这是word很早就提供的特性，也是浏览器contenteditable默认支持的特性
+  - 但浏览器实现得并不好，如拖动blockquote的p标签内的文本时，chrome会添加新标签span，但firefox不会
+# 协作相关
+
+# track-changes 和 评论在UI上具有相似性
+
+- UI上
+  - 一般都放在侧边栏
+  - 都提供操作按钮，如track-changes支持accept/reject，评论支持resolve/delete
+  - 都支持回复
+
+- 评论只能自己删除自己的
+
+- 实时协作时，一般会自动生成track-changes的消息，如insert/remove
+# track-changes vs revision-history
+- [CKEditor 5 - comparing Revision History with Track Changes](https://ckeditor.com/blog/ckeditor-5-comparing-revision-history-with-track-changes/)
+
+- Revision History, on the other hand, focuses on providing users with three additional and key functionalities that Track Changes does not have. 
+  - creating snapshots (revisions) of content, where such a snapshot is the state of the content at the time the user makes a save
+  - comparing individual revisions with each other
+  - restoring individual revisions
+
+- In summary, Track Changes is more of a functionality improving the aspect of collaboration between users, 
+  - while Revision History extends the application’s capabilities with content audit-trail and versioning functionality.
 # notion细节记录
 
 ## 文本格式相关

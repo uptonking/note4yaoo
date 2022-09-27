@@ -25,6 +25,9 @@ modified: 2020-10-22T13:06:52.353Z
 - [360 奇舞周刊](https://weekly.75.team/)
   - [奇舞周刊 知乎专栏 半停更](https://www.zhihu.com/column/75weekly)
 
+- [网易云音乐技术团队](https://www.zhihu.com/column/musicfe)
+  - [基于 React Native 的动态列表方案探索](https://zhuanlan.zhihu.com/p/564034476)
+
 - [阿里 前端新能源](https://www.zhihu.com/column/ne-fe)
   - [图表库源码剖析 - Chart.js 最流行的 Canvas 图表库](https://zhuanlan.zhihu.com/p/32740553)
   - [图表库源码剖析 - 你不知道的 Frappé Charts](https://zhuanlan.zhihu.com/p/31902446)

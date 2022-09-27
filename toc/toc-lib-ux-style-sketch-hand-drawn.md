@@ -121,3 +121,9 @@ modified: 2021-01-13T19:30:59.508Z
   - Signature Pad is a JavaScript library for drawing smooth signatures. 
   - It's HTML5 canvas based and uses variable width Bézier curve interpolation based on Smoother Signatures post by Square. 
   - It doesn't depend on any external libraries.
+
+- d3-canvas
+  - https://observablehq.com/@d3/draw-me
+
+- d3-svg
+  - [Build a free-hand drawing app with React Hooks](https://reactfordataviz.com/articles/mouse-events-with-d3v6-react-hooks/)

@@ -13,16 +13,12 @@ modified: 2020-12-21T07:46:58.910Z
   - 浏览器本身支持svg使用WAAPI实现动画
   - 但可能只支持一部分，如Edge对svg transform支持不完善
   - [Animating strokeWidth doesn't work in Safari](https://github.com/web-animations/web-animations-js/issues/217)
-
 # pieces
-
 - Not all svg attributes can be manipulated with CSS. Only those designated as "properties" can be changed with CSS and animated.
 - Do not try manipulate the properties of SVG elements until SVG 2.0 standard release. (working only Chrome correctly)
 - ref
   - [SVG animate Web animate API](https://stackoverflow.com/questions/51985634/svg-animate-web-animate-api)
-
 # svg-grammar
-
 - transform  
   - translate(x, y)  
   - 不提供y时，默认y为0  
@@ -40,11 +36,35 @@ modified: 2020-12-21T07:46:58.910Z
 
 - preserveAspectRatio  
   - 属性采用由空格分割的两个值，告诉视图框如何在视口内对齐，这个值本身由两部分组成    
-  - 第二个值（如果有的话）指示如何保留宽高比，可选值meet, slice, none  
+  - 第二个值（如果有的话）指示如何保留宽高比，可选值meet, slice, none
+# svg-community
 
-# Why you should use SVG images: how to animate your SVGs and make them lightning fast
+## [为什么svg格式在前端设计中未能普及？](https://www.zhihu.com/question/21376597)
 
-- [Why you should use SVG images: how to animate your SVGs and make them lightning fast](https://www.freecodecamp.org/news/a-fresh-perspective-at-why-when-and-how-to-use-svg/)
+- 总的来说svg在静态icon上是未来王者，在动画方面是优势利剑，在文字排版，定位布局及滤镜效果上难普及。
+
+### svg-优缺点
+
+- 优点
+1. 用户可以任意缩放图像显示，而不会破坏图像的清晰度、细节等。 
+2. SVG图像中的文字独立于图像，文字保留可编辑和可搜寻的状态。也不会再有字体的限制，用户系统即使没有安装某一字体，也会看到和他们制作时完全相同的画面。 
+3. 总体来讲，SVG文件比那些GIF和JPEG格式的文件要小很多，因而下载也很快。 
+4. SVG图像在屏幕上总是边缘清晰，它的清晰度适合任何屏幕分辨力和打印分辨力。 
+5. SVG图像提供一个1600万种颜色的调色板，支持ICC颜色描述文件标准、RGB、线X填充、渐变和蒙版。 
+6. 交互X和智能化。SVG面临的主要问题一个是如何和已经占有重要市场份额的矢量图形格式Flash竞争的问题，另一个问题就是SVG的本地运行环境下的厂家支持程度。
+
+ 
+
+- 缺点
+1. DOM比正常的图形慢，而且如果其结点多而杂，就更慢。
+2. SVG画点报表还可以；在网页游戏前，就束手无策了，可以结合Canvas+SVG来实现。 
+3. 不能动态的修改动画内容。 
+4. 可惜的是，svg不是所有浏览器都能支持，目前他的支持情况：Internet Explorer 9、Firefox、Opera、Chrome 以及 Safari 支持内联 SVG。 
+
+- 总的来说svg在静态icon上是未来王者，在动画方面是优势利剑，在文字排版，定位布局及滤镜效果上难普及。
+# svg-blogging
+
+## [Why you should use SVG images: how to animate your SVGs and make them lightning fast](https://www.freecodecamp.org/news/a-fresh-perspective-at-why-when-and-how-to-use-svg/)
 
 - Benefits of SVG
   - Scalable
@@ -68,9 +88,7 @@ modified: 2020-12-21T07:46:58.910Z
   - A lot of recalculation needs to be done if you adjust timing.
   - CSS and SVG graphics on mobile sometimes require strange hacks.
 
-# Animating SVG with CSS
-
-- ## [Animating SVG with CSS_201904](https://blog.logrocket.com/animating-svg-with-css-83e8e27d739c/)
+## [Animating SVG with CSS_201904](https://blog.logrocket.com/animating-svg-with-css-83e8e27d739c/)
 
 - Now, you may be wondering: Why CSS? Why not animate with SMIL, the native SVG animation specification? 
   - As it turns out, there’s declining support for SMIL. 
@@ -105,14 +123,14 @@ modified: 2020-12-21T07:46:58.910Z
   - For further control, use the animation property.
   - Use the ` @keyframes` at-rule to tell it how to change at intermediary steps.
 
-- ## [Animating SVG with CSS_2014](https://css-tricks.com/animating-svg-css/)
+## [Animating SVG with CSS_2014](https://css-tricks.com/animating-svg-css/)
 
 - There isn’t just one way to animate SVG. 
   - There is the `<animate>` tag that goes right into the SVG code. 
   - There are libraries that help with it like `Snap.svg` or `SVG.js` . 
   - We’re going to look at another way: using inline SVG (SVG code right inside HTML) and animating the parts right through CSS.
 
-- ## [Styling And Animating SVGs With CSS_2014](https://www.smashingmagazine.com/2014/11/styling-and-animating-svgs-with-css/)
+## [Styling And Animating SVGs With CSS_2014](https://www.smashingmagazine.com/2014/11/styling-and-animating-svgs-with-css/)
 
 - Scalable vector graphics (SVG) is an XML-based vector image format for two-dimensional graphics, with support for interactivity and animation. 
 - In other words, SVGs are XML tags that render shapes and graphics, and these shapes and graphics can be interacted with and animated much like HTML elements can be.
@@ -120,10 +138,10 @@ modified: 2020-12-21T07:46:58.910Z
 - The line between HTML and CSS is clear: HTML is about content and structure, and CSS is about the look. 
 - SVG blurs this line, to say the least. SVG 1.1 did not require CSS to style SVG nodes — styles were applied to SVG elements using attributes known as “presentation attributes.”
 - Presentation attributes are a shorthand for setting a CSS property on an element. Think of them as special style properties. They even contribute to the style cascade, but we’ll get to that shortly.
-- The `fill` ,   `stroke` and `stroke-width` attributes are presentation attributes.
+- The `fill` ,  `stroke` and `stroke-width` attributes are presentation attributes.
 - In SVG, a subset of all CSS properties may be set by SVG attributes, and vice versa. 
 - The SVG specification lists the SVG attributes that may be set as CSS properties. 
-- Some of these attributes are shared with CSS, such as `opacity` and `transform` , among others, while some are not, such as `fill` ,   `stroke` and `stroke-width` , among others.
+- Some of these attributes are shared with CSS, such as `opacity` and `transform` , among others, while some are not, such as `fill` ,  `stroke` and `stroke-width` , among others.
 - In SVG 2, this list will include x, y, width, height, cx, cy and a few other presentation attributes that were not possible to set via CSS in SVG 1.1. The new list of attributes can be found in the SVG 2 specification.
 - Another way to set the styles of an SVG element is to use CSS properties in `style` attribute. 
 - Indeed, presentation attributes count as low-level “author style sheets” and are overridden by any other style definitions: external style sheets, document style sheets and inline styles.
@@ -158,10 +176,10 @@ modified: 2020-12-21T07:46:58.910Z
 - SVG accepts and responds to CSS media queries as well. 
   - You can use media queries to change the styles of an SVG at different viewport sizes.
   - note that the viewport that the SVG responds to is the viewport of the SVG itself, not the page’s viewport, unless you are embedding the SVG inline in the document (using `<svg>` ).
-
 # ref
-
 - [Appendix H: SVG Property Index](https://www.w3.org/TR/SVG/propidx.html)
 - [Appendix D: Animating SVG Documents](https://www.w3.org/TR/SVG2/animate.html)
 
 - [A Generative SVG Starter Kit](https://dev.to/georgedoescode/a-generative-svg-starter-kit-5cm1)
+
+- [SVG基础及其动画应用浅析](https://zhuanlan.zhihu.com/p/383245453)
