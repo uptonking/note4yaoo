@@ -58,6 +58,12 @@ modified: 2020-10-05T06:22:02.107Z
 - animations.js /3Star/MIT/202006
   - https://github.com/robertoentringer/animations.js
   - Web Animations API based in Animate.css
+# animation-editor
+- https://github.com/theatre-js/theatre
+  - https://www.theatrejs.com/
+  - Motion design editor for the web
+  - Theatre.js is an animation library for high-fidelity motion graphics.
+  - Theatre.js can be used both programmatically and visually.
 # react-native
 - https://github.com/LegendApp/legend-motion
   - Supports react-native and react-native-web

@@ -59,8 +59,11 @@ modified: 2020-11-11T13:16:24.994Z
   - Updated daily by Our World in Data
   - 数据大多数是csv，少部分是json
 # api-toy
+- hacker news api
+  - https://github.com/HackerNews/API
+  - https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty
+
 - [前端需要的免费在线api接口](https://juejin.cn/post/7041461420818432030)
-  - hacker news api
   - 返回100条数据，每条内容都有帖子 ID、发贴人 ID、标题、以及简介。
     - http://jsonplaceholder.typicode.com/posts
   - 每次请求都会随机返回一张猫的图片。

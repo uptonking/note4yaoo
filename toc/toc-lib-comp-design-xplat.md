@@ -7,6 +7,9 @@ modified: 2021-05-25T12:02:08.398Z
 
 # toc-lib-comp-design-xplat
 
+# guide
+
+- 关于样式，特别是web端的样式，要考虑build-time/runtime的区别
 # popular
 
 # react-native-web
@@ -24,6 +27,8 @@ modified: 2021-05-25T12:02:08.398Z
 
 - dripsy /648Star/MIT/202105/ts
   - https://github.com/nandorojo/dripsy
+  - https://dripsy.xyz/
+  - Responsive, unstyled UI primitives for React Native + Web.
   - A responsive, theme-based design system for Expo + React Native Web.
   - Heavily inspired by React's theme-ui.
   - Universal (Android, iOS, Web, & more)
