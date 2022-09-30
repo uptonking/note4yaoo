@@ -29,7 +29,8 @@ modified: 2021-03-29T19:29:32.505Z
       - npm explain yui
 
 - ❓ error Invalid Version: 2.0.0111
-  - 改成 2.0.1111 就可以work
+  - 💡️ 改成 2.0.1111 就可以work
+    - 又碰到此问题，将所有 .0111 改成 .1111 就可解决问题
 
 - libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
   - [Unable to Launch AppImages on Fedora 35 - libva Error](https://www.linuxquestions.org/questions/showthread.php?p=6312963)

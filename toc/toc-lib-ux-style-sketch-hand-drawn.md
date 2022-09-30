@@ -60,6 +60,10 @@ modified: 2021-01-13T19:30:59.508Z
 - https://github.com/fxaeberhard/handdrawn.css /201606
   - http://fxaeberhard.github.io/handdrawn.css/
   - Handdrawn.css lets you prototype your web site with a hand drawn look and feel.
+# infinite-canvas-drawing-tools
+- https://infinitecanvas.tools/gallery/
+  - 画板类产品列表
+  - The infinite canvas is the foundation of a new class of apps from design tools, to code editors, and workspaces.
 # paper
 - https://github.com/imrishabh18/text-to-handwriting
   - https://imrishabh18.github.io/text-to-handwriting
