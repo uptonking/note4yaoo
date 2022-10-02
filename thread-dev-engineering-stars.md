@@ -11,6 +11,21 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## With colour palettes, they often use specific colours as a bridge between many different colours. This often comes in the form of neutral tones like greys.
+- https://twitter.com/JungleSilicon/status/1518090012004618240
+  - This same system can be used to reduce the amount of compatible tiles that are necessary in tile sets.
+  - For example if you have grass, ice, dirt and water tile types, you would generally need to create transitions between each type. Instead you could treat the dirt as the bridging tile type and then you only need to create transitions between dirt and the other types.
+  - 👉🏻️ This flattens the workload required to create new tiles from `O(n)` into `O(1)`.
+  - This kind of algorithm has inspired my thinking around interoperability and distributed computing. Not everything needs to be compatible, just create bridges.
+- it reminds me of pipelining different programs together in a shell, and how the unix philosophy regards text as the "universal interface"
+
+
 - ## A fundamental truth of development: You will spend much more time reading code than you will creating it.
 - https://twitter.com/codecapers/status/1533937511222784000
   - That's why frameworks & tools that get rid of "boilerplate" code are practically useless.

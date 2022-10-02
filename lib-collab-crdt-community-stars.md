@@ -7,7 +7,53 @@ modified: 2022-04-05T10:09:51.343Z
 
 # lib-collab-crdt-community-stars
 
+# guide
+
+- https://github.com/siliconjungle/crdt-likes
+  - A simple example of how to build offline-first likes using CRDT's.
+
+- https://github.com/siliconjungle/recycle-list-crdt
+  - A crdt that recycles tombstones.
+
+- https://github.com/siliconjungle/delta-crdt
+  - A simple delta CRDT implementation.
 # discuss
+- ## If anyone has been curious about how to build a CRDT but thought the idea was too daunting. 
+- https://twitter.com/JungleSilicon/status/1526123548753858560
+  - I've created one with as much of the complexity stripped out as I could whilst keeping it useful.
+  - I call it Tiny CRDT.
+  - Refactored it by separating the ram from the crdt & added a sequencer.
+
+- https://github.com/siliconjungle/tiny-merge-ts
+  - A Tiny CRDT library.
+  - I converted the trimmed-down version of Tiny Merge to Typescript and swapped the objects out for maps.
+  - https://github.com/siliconjungle/tiny-merge-ts/tree/feature-rich
+
+- https://github.com/siliconjungle/tiny-merge-legacy
+  - A tiny CRDT implementation in Javascript.
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## It's becoming really clear that CRDT's become much more powerful and easy to reason about when you break them down into their tiniest pieces.
+- https://twitter.com/JungleSilicon/status/1525515082876063750
+  - Below I've separated where values are defined from the keys that reference them. This separation allows you to easily modify the data and change which keys point to which data in memory.
+- https://github.com/siliconjungle/reference-crdt
+  - An implementation of CRDT object references.
+
+- ## I made a simple list CRDT that only supports push and replace operations. (No inserts before the end).
+- https://twitter.com/JungleSilicon/status/1511523633294094337
+  - It requires no history and is extremely light-weight. Useful for things like message histories or posts.
+
+- ## For anyone interested in collaborative editing, I've implemented a new approach to the shelf CRDT.
+- https://twitter.com/JungleSilicon/status/1504446998329499653
+  - 基于json
+  - It's operation based but it's very easy to consume and cull(cull sth from sth 选出，挑出) those operations.
+- https://github.com/siliconjungle/cabinet
+  - A key value store & subscriptions wrapping a json blob crdt (shelf).
 
 - ## The future of apps is local-first and CRDTs
 - https://twitter.com/AdventureBeard/status/1495973698846736387

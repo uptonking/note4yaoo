@@ -15,7 +15,18 @@ modified: 2022-04-05T13:25:40.892Z
 
 - ## 
 
-- ## 
+- ## An example of how to build a todo list app using state-based CRDTs.
+- https://twitter.com/JungleSilicon/status/1576015894618451968
+- A CRDT is just a data structure that is replicable across many different devices, regardless of the order in which operations arrive. (Doesn't rely on a centralised server for ordering). In this you can infer what has been deleted too.
+  - In this implementation, to infer what has been deleted you need to store a latest seq per agent who has modified the document.
+- Ah so your implementation is kind of history-based? You can delete the document but you still need to store the delete operation right?
+  - Yes, but the history gets dropped over time. So say you delete something, everybody agrees, and the delete op stays the last one. The cached version is already deleted. Someday you'll drop the delete op too, and all trace of the doc is gone.
+- If one of the people who've made an edit never comes back online, does that op stay forever? Or is it time / operation based where after a certain amount of time / operations has passed old changes are no longer valid?
+  - Eventually the server decides to forget clients if they don't connect and forces them to drop local changes and reset on reconnect.
+- I wonder why you store last timestamp for each replicaId. If you don't care about p2p, shouldn't storing: 
+  - last timestamp on server by userid, and 
+  - last timestamp on client 
+  - On client is enough?
 
 - ## A thread on practical local-first + multiplayer app development. 
 - https://twitter.com/AdventureBeard/status/1510668678538309634
