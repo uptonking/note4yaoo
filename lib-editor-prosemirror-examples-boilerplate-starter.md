@@ -59,6 +59,7 @@ modified: 2022-09-05T03:41:15.727Z
 # example-online
 - prosemirror-react-example-setup-js
   - https://codesandbox.io/s/prosemirror-react-hooks-6qvlfr
+  - https://codesandbox.io/s/prosemirror-template-8vcykp
 
 - prosemirror-example-setup-minimal-js
   - https://codesandbox.io/s/l9n6667ooz

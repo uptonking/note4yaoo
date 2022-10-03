@@ -1,11 +1,11 @@
 ---
-title: lib-editor-prosemirror-community-data-async-server
+title: lib-editor-prosemirror-community-data-async
 tags: [community, data-model, prosemirror]
-created: 2022-09-05T03:23:36.125Z
-modified: 2022-09-05T03:24:32.564Z
+created: '2022-09-05T03:23:36.125Z'
+modified: '2022-10-03T10:47:44.104Z'
 ---
 
-# lib-editor-prosemirror-community-data-async-server
+# lib-editor-prosemirror-community-data-async
 
 # guide
 
@@ -13,6 +13,16 @@ modified: 2022-09-05T03:24:32.564Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## my question is whether PM uses timeouts internally to wait for things, especially during initialisation but also during transactions and state updates. 
+- https://discuss.prosemirror.net/t/timeouts-and-synchronising-external-dom-state/3928
+  - And if yes, if there’s an API I could use to get a callback when an EditorView is fully initialised and attached to the DOM element.
+- 👉🏻 ProseMirror updates (and initializes) synchronously. 
+  - It does in some cases wait a moment before responding to DOM mutations in order to allow events related to the same change (which the browser models as a sequence of mutations and events) to accumulate, and has a few timeouts internally for other hacks, but that doesn’t sound like it would be the issue here.
+- if I stick to responding to various PM events I should be back in synchronous land?
+  - Yes, the API should protect you from these almost entirely (except possibly when you’re doing your own thing in response to DOM events without preventDefault-ing them).
 
 - ## Creating Plugin that make request to backend
 - https://discuss.prosemirror.net/t/creating-plugin-that-make-request-to-backend/4684

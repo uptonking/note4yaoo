@@ -9,7 +9,9 @@ modified: 2022-08-31T00:15:07.200Z
 
 # guide
 
-# discuss-transform-operation
+- 编辑器协作在线示例
+  - https://atlaskit.atlassian.com/examples.html?groupId=editor&packageId=editor-core&exampleId=collab
+# discuss-collab-transform-operation
 - ## 
 
 - ## 
@@ -17,6 +19,37 @@ modified: 2022-08-31T00:15:07.200Z
 - ## 
 
 - ## 
+
+
+
+- ## A simple implementation of prosemirror-collab__201905
+- https://discuss.prosemirror.net/t/a-simple-implementation-of-prosemirror-collab/1930
+  - the prosemirror-collab example on the ProseMirror website is very complex
+  - On my example a websocket-server on glitch.com is used (nice service which you can run a public socket server for free). There is also support to debounce all changes so everything is asynchronous.
+
+- https://glitch.com/edit/#!/tiptap-sockets?path=server.js%3A31%3A0
+
+- ## Collaborative Editor: Show Other Users Cursor Position
+- https://discuss.prosemirror.net/t/collaborative-editor-show-other-users-cursor-position/1862
+- A widget decoration is the easiest way to do this. Alternatively, use `coordsAtPos` to overlay something over the editor.
+
+- Showing selections/carets of collaborators
+- https://discuss.prosemirror.net/t/showing-selections-carets-of-collaborators/3155
+
+- ## Horizontally Scaling the Central Authority
+- https://discuss.prosemirror.net/t/horizontally-scaling-the-central-authority/1356
+  - By that I mean having more than one process running (potentially on different machines) and then always sending the requests to a given canvas doc to the right process and also handing what has to be done when one of the nodes goes down and things like that.
+
+- Having that many authors in a single document likely never makes sense.
+  - 👉🏻️ What makes more sense when scaling up to many servers, is to filter by URL and have different servers handle different individual documents. 
+  - So for example one server can handle all messages for document 4, 10, 15, 21 and 78 and another for document 5, 6, 7, 12, 14, 99 and 278.
+- 
+- 
+- 
+
+- ## Socalled “Tracked changes” using ProseMirror_201806
+- https://discuss.prosemirror.net/t/socalled-tracked-changes-using-prosemirror/1365
+- https://github.com/fiduswriter/fiduswriter/blob/main/fiduswriter/document/static/js/modules/editor/track/accept.js
 
 - ## I believe ProseMirror's OT handles all the intent-preservation requirements in the article. Without being truly distributed, of course, unless you add a vector clock or something.
 - https://twitter.com/MarijnJH/status/1463272309544861706
@@ -59,11 +92,6 @@ modified: 2022-08-31T00:15:07.200Z
   - That explains why in this thread and in other articles on the internet, Prosemirror has been understood as a different model from the OT. 
   - It is true that many models like ShareDB require convergence in different orders of operations. 
   - But if you check the OT literature, you will see that there are other undo-do-redo type algorithms, like GOT, which are still OT after all, since as the name suggests, they somehow “transform operations”.
-# discuss-server
-- ## 
 
-- ## 
-
-- ## Editing different “views” of the same document
-- https://discuss.prosemirror.net/t/editing-different-views-of-the-same-document/3156
-- I think it should be possible, if you use size-1 leaf nodes for the redacted nodes on the client but have the unredacted document on the server, to create a step map that conceptually replaces each of these (in the pre-change doc) with their actual size (by directly building up the vector and wrapping it in a StepMap). That represents the mapping from the client document to the full document, and mapping the client’s step through that should be able to create a step that can be applied to the full document. (And the other way around, you could map server steps through its inverse to get steps that the client can apply locally.)
+- ## How we went about prosemirror-collab at the New York Times__201908
+- https://discuss.prosemirror.net/t/how-we-went-about-prosemirror-collab-at-the-new-york-times/2119

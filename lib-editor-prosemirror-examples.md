@@ -435,9 +435,10 @@ modified: 2022-08-18T16:57:46.405Z
 - BrianHung-editor /10Star/NALic/202110/ts/inactive
   - https://github.com/BrianHung/editor
   - https://editor-brianhung.vercel.app/
-  - 依赖prosemirror-markdown、codemirror6、katex，不依赖react、tiptap、rich-markdown-editor
+  - 依赖prosemirror-markdown、codemirror6、katex
   - a rich text editor built upon the ProseMirror framework. 
   - It is based off tiptap and rich-markdown-editor, but tries to stay agnostic to Vue and React.
+    - 其实不依赖react、tiptap、rich-markdown-editor
 
 - https://github.com/IsaacAderogba/pine /1Star/MIT/202208/ts
   - https://www.craft.do/s/yE0O3cmWP35qHQ

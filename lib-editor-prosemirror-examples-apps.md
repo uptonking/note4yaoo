@@ -89,6 +89,13 @@ modified: 2022-08-18T16:57:15.296Z
   - https://github.com/gfrancine/mnote
   - Mnote: a desktop app to write notes in more than just text
 # prosemirror-apps
+- fiduswriter /455Star/AGPLv3/202209/python/js
+  - https://github.com/fiduswriter/fiduswriter
+  - https://github.com/fiduswriter/fiduswriter/blob/main/fiduswriter/document/static/js/modules/editor/index.js
+  - 依赖@vivliostyle/print、prosemirror、sortablejs、mathlive
+  - Fidus Writer is an online collaborative editor especially made for academics who need to use citations and/or formulas.
+  - The editor focuses on the content rather than the layout, so that with the same text, you can later on publish it in multiple ways: On a website, as a printed book, or as an ebook. 
+
 - oak /4Star/MIT/202208/js/提交多
   - https://github.com/p3ol/oak
   - 整体上是一个可切换文本编辑器的页面编辑器

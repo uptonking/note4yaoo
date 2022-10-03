@@ -16,32 +16,24 @@ modified: 2022-08-30T22:07:26.164Z
 
 - ## 
 
-- ## 
+- ## How to update plugin state from handleKeydown props
+- https://discuss.prosemirror.net/t/how-to-update-plugin-state-from-handlekeydown-props/3420
+  - I’m struggling to figure out how to mutate the plugin’s state from the `handleKeyDown` callback props.
+- The typical way to do this is to have your plugin state’s `apply` method check the transaction for some specific metadata property, and update based on that. Your key handler would then dispatch a transaction with that metadata property.
 
-- ## props to plugin views
-- https://discuss.prosemirror.net/t/props-to-plugin-views/4672
-  - What’s the best way to pass props into plugin views so that they update when props change (not only when state changes)?
+- ## Separating state and view plugins__202108
+- https://discuss.prosemirror.net/t/separating-state-and-view-plugins/3970
+- It wouldn’t be too difficult to add a field that allows the injection of additional plugins to DirectEditorProps. 
+  - But that does mean the ordering of view versus state plugins would be fixed—you can’t fine-tune their order, since they don’t appear in the same array. 
+  - 👉🏻️ View plugins would either always take precedence, or never take precedence (not sure which would be more appropriate).
 
-- This is Prosemirror tied into a bigger system, and the problem I’m having. 
-  - I can’t pass props i.e. app state (or app services, but I didn’t show them here) into editor plugin views.
-  - Like state about the theme colors, or global user font preference, etc.
-- Here are four possible options to fix the problem.
-- You can use a “props” plugin which goes into the editor state, and you just have to make sure to update it every time the app state changes.
-- The second option is to just lift plugin views out of prosemirror and just make it your app view’s responsibility. 
-  - Now you just read the plugin state through the editor state and use whatever services you need. 
-  - Basically you make it the App’s responsibility to render the plugin views.
-  - This is, imo, the “right” approach. 
-  - In an ideal world, you shouldn’t even need the EditorView component when integrating Prosemirror into a bigger system. 
-  - It gets replaced by the App view and EditorState gets rendered as part of it.
-- The third approach is using observables/subscriptions like cole suggested or in my initial post. 
-  - I didn’t bother to figure out how to draw this, but in mount you pass in those subscriptions as the “initial” props to the Editor View.
-- The fourth approach is inventing some new concept in Prosemirror to support this. I’m not really sure what it would look like; Maybe the EditorView becomes a function of state and props where props is any object.
+- ## Generalized State Architecture
+- https://discuss.prosemirror.net/t/generalized-state-architecture/3908
+  - I wanted to see if I could generalize an entire React frontend state management with a similar structure and actually route all transactions through a global state system.
+- why is EditorState a class as opposed to a plain JSON object?
+  - It seems like the only reason to use a class is to add helper methods to the classes for syntactic convenience. Is that correct?
+  - I was hoping maybe you (@marijn) could share some of your thoughts on these trade-offs. Did you consider a pure-functional approach and if so, what led you to your decision to use classes?
+- No, it is also so that we can control the internal data structures used in order to optimize functional updates and possibly other things. 
+  - See for example the use of `rope-sequence` in the undo history, and at one point I was planning to use a representation other than a flat array for very long fragments (though that turned out to not be enough of a win to justify the complexity).
 
-- Plugin views have their update method called as normal when the editor’s props change. Except when the state is reconfigured—then they are destroyed and recreated entirely.
-- That sounds like a concept entirely outside ProseMirror. Put it in a state field and update it when it changes using a transaction, if you want to tie it into ProseMirror’s update cycle.
-
-- ## state and view plugins
-
- - [Separating state and view plugins](https://discuss.prosemirror.net/t/separating-state-and-view-plugins/3970)
-
-- [Generalized State Architecture](https://discuss.prosemirror.net/t/generalized-state-architecture/3908)
+- I see. So you things like serializing to a JSON array but but using a LinkedList internally… That makes sense!

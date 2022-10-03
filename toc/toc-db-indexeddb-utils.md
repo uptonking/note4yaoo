@@ -31,6 +31,30 @@ modified: 2022-06-13T03:05:27.313Z
     - Abstract chunk store built on idb-kv: the lightweight and simple API for indexeddb with automatic batching
 - https://github.com/simplifyjs/indexeddb-crud
   - Comparison between native IndexedDB API and using IDB library in operating CRUD workaround
+# filesystem-on-indexeddb
+- https://github.com/filerjs/filer
+  - Filer is a drop-in replacement for node's fs module, a POSIX-like file system for browsers.
+  - Filer uses IndexedDB
+
+- https://github.com/fagbokforlaget/simple-fs
+  - Handles files on indexeddb like you would do in node.js (promise)
+
+- https://github.com/playerony/indexeddb-fs
+  - An "fs" kind of library dedicated to the browser.
+
+- https://github.com/piatkowski/filequeue.js
+  - FileQueue in JS - set, store, get, delete, clear Files in IndexedDB. To be used as a upload queue.
+
+- https://github.com/BrianHung/filesystem /2019/inactive
+  - https://brianhung.info/filesystem/demo
+  - a FileSystem built on IndexedDB
+
+- https://github.com/lecepin/file-proxy-indexedDB
+  - https://lecepin.github.io/file-proxy-indexedDB/
+  - 使用ServiceWorker实现本地图片上传到IndexedDB，并进行 proxy 进行读取操作
+
+- https://github.com/jvilk/BrowserFS
+  - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
 # indexeddb-utils
 - https://github.com/dabblewriter/browserbase
   - IndexedDB wrapper providing promises, easy versioning, and events, including change events across tabs

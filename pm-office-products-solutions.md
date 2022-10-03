@@ -266,27 +266,10 @@ modified: 2021-07-11T08:31:00.660Z
 - Paged.js
   - https://gitlab.pagedmedia.org/tools/pagedjs
   - library to display paginated content in the browser and to generate print books using web technology.
-
 - PubSweet
   - https://gitlab.coko.foundation/pubsweet/pubsweet
   - The open toolkit for building publishing workflows
-  - a server and client that work together, components that can modify or extend the functionality of the server and/or client, 
-
-- [Fidus Writer](https://www.fiduswriter.org/how-it-works/)
-  - https://github.com/fiduswriter/fiduswriter
-    - /420Star/AGPLv3/202107/python
-    - 依赖@vivliostyle/print、prosemirror、sortablejs、mathlive
-    - 子项目很多，很复杂
-  - Fidus Writer is an online collaborative editor especially made for academics who need to use citations and/or formulas.
-  - The editor focuses on the content rather than the layout, so that with the same text, you can later on publish it in multiple ways: On a website, as a printed book, or as an ebook. 
-  - Export as PDF, EPUB or HTML
-  - In each case, you can choose from a number of layouts that are adequate for the medium of choice.
-
-- bibliothecula
-  - https://github.com/epilys/bibliothecula
-  - https://epilys.github.io/bibliothecula/
-  - document organizer with tags and full-text-search, in a simple and clean sqlite3 schema
-  - Store plain text notes with automatic full-text search and back-reference indexing
+  - a server and client that work together, components that can modify or extend the functionality of the server and/or client
 # more-products
 - [9 products you can build with TinyMCE](https://www.tiny.cloud/blog/tinymce-examples-products-you-can-build-wysiwyg-editor/)
 1. Blogging platforms

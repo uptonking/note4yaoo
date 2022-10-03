@@ -145,6 +145,10 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/BlueMona/prosemirror-react-renderer /201710/ts
   - An alternative to ProseMirror's DOMSerializer that converts documents into React elements instead of DOM fragments.
 # collab
+- 基于yjs
+  - tiptap.v2
+  - milkdown
+
 - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example/tree/master/packages/api-collab
   - an example collaboration server based on this example https://github.com/ProseMirror/website/tree/master/src/collab to show how one can integrate it with ProseMirror editor.
 
@@ -194,6 +198,10 @@ modified: 2022-08-18T16:57:29.058Z
   - https://hedgerwang.github.io/prosemirror-datagrid/dist/demo.html
   - This module defines a schema extension to support datagrid with virtual scrolling and editing support.
 # prosemirror-elements-node
+- https://github.com/MH4GF/prosemirror-details-list
+  - https://prosemirror-details-list.vercel.app/
+  - an open/closeable details element that works with rich text editor based on ProseMirror.
+
 - https://gitlab.com/emergence-engineering/prosemirror-codemirror-block
   - CodeMirror 6 code_block in ProseMirror
     - Legacy ( CodeMirror 5 ) language support trough @codemirror/legacy-modes

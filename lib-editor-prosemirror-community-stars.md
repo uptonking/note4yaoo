@@ -18,10 +18,38 @@ modified: 2022-08-30T01:46:22.149Z
 
 - ## 
 
+- ## props to plugin views__202206
+- https://discuss.prosemirror.net/t/props-to-plugin-views/4672
+  - What’s the best way to pass props into plugin views so that they update when props change (not only when state changes)?
+  - I mean plugin view specific props. Like if user preference for accent color is stored higher up in the app, and its passed as a prop to a view for a plugin. Not editor state props, basically.
+  - [Some thoughts on Prosemirror's API to improve it](https://tanishqkancharla.dev/thoughts/prosemirrorapi)
+
+- Plugin views have their `update` method called as normal when the editor’s props change. Except when the state is reconfigured—then they are destroyed and recreated entirely.
+- That sounds like a concept entirely outside ProseMirror. 
+  - 👉🏻️ Put it in a state field and update it when it changes using a transaction, if you want to tie it into ProseMirror’s update cycle.
+
+- This is Prosemirror tied into a bigger system, and the problem I’m having. 
+  - I can’t pass props i.e. app state (or app services, but I didn’t show them here) into editor plugin views.
+  - Like state about the theme colors, or global user font preference, etc.
+- Here are four possible options to fix the problem.
+- You can use a “props” plugin which goes into the editor state, and you just have to make sure to update it every time the app state changes.
+- The second option is to just lift plugin views out of prosemirror and just make it your app view’s responsibility. 
+  - Now you just read the plugin state through the editor state and use whatever services you need. 
+  - Basically you make it the App’s responsibility to render the plugin views.
+  - This is, imo, the “right” approach. 
+  - In an ideal world, you shouldn’t even need the EditorView component when integrating Prosemirror into a bigger system. 
+  - It gets replaced by the App view and EditorState gets rendered as part of it.
+- The third approach is using observables/subscriptions like cole suggested or in my initial post. 
+  - I didn’t bother to figure out how to draw this, but in mount you pass in those subscriptions as the “initial” props to the Editor View.
+- The fourth approach is inventing some new concept in Prosemirror to support this. I’m not really sure what it would look like; Maybe the EditorView becomes a function of state and props where props is any object.
+
+- Plugin views have their update method called as normal when the editor’s props change. Except when the state is reconfigured—then they are destroyed and recreated entirely.
+- That sounds like a concept entirely outside ProseMirror. Put it in a state field and update it when it changes using a transaction, if you want to tie it into ProseMirror’s update cycle.
+
 - ## I'm curious what you would consider "Prosemirror regrets" -- things that you'd do different or things you dont like about the current implementation
 - https://twitter.com/moonriseTK/status/1487832468308774918
-  - Writing correct document-changing commands, especially schema-agnostic ones, is ridiculously hard right now. 
-  - Also the extension system is not as powerful as that in codemirror 6.
+- Writing correct document-changing commands, especially schema-agnostic ones, is ridiculously hard right now. 
+- Also the extension system is not as powerful as that in codemirror 6.
 
 - Can you talk more about the formalisms ProseMirror adopts that you admire?
   - I'm still discovering it but mostly the transaction and NodeView systems. Make it really easy to add custom behaviour. I just added checkbox support for my notetaking app in a few lines of code.
@@ -82,7 +110,7 @@ modified: 2022-08-30T01:46:22.149Z
 
 - ## [主流的开源「富文本编辑器」都有什么缺陷？](https://www.zhihu.com/question/404836496/answers/updated)
 
-- [关于 slate 和 prosemirror](https://www.zhihu.com/question/404836496/answer/1319381793)
+- [关于 slate 和 prosemirror_by-杨振兴](https://www.zhihu.com/question/404836496/answer/1319381793)
 - 美团的学城、印象笔记的超级笔记都是 ProseMirror。
   - 另外，PM并不是一个开箱即用的编辑器，需要写Schema定结构；其渲染出来的内容是完全的html；标准用法就是按照Schema中确定的结构来渲染DOM，特殊用法比如表格，或者自定义元素渲染可以使用 Angular、React 这种做视图层。
 - 我必须要再提下最新 slate 5.* 以上的版本，大概做了下面几件事：

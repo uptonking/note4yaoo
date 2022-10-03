@@ -14,9 +14,20 @@ modified: 2022-09-05T02:20:41.366Z
 
 - ## 
 
-- ## 
+- ## Split editor with custom views
+- https://discuss.prosemirror.net/t/split-editor-with-custom-views/3779
+  - Our team is trying to implement a split editor with two synchronized views of the same underlying document. The left pane should show the entire document contents, while the right pane should show a custom view based on the node under the cursor.
+- The basic idea would be to sync your right-side pane to the proper node every time the ProseMirror editor updates its state (either via dispatchTransaction 6 or with a plugin view 8. And then, when the user manipulates the current node through that pane, dispatch a transaction to the editor to apply the changes.
 
-- ## 
+- ## Conceptual architecture for “mentions” plugin?
+- https://discuss.prosemirror.net/t/conceptual-architecture-for-mentions-plugin/3918/4
+
+- Suggestions and autocomplete plugin library,  `prosemirror-autocomplete` from curvenote
+  - https://discuss.prosemirror.net/t/suggestions-and-autocomplete-plugin-library-prosemirror-autocomplete/4151
+  - There are a few related projects, prosemirror-suggestions , prosemirror-mentions , prosemirror-suggest
+  - https://github.com/curvenote/editor/tree/main/packages/prosemirror-autocomplete
+
+- https://github.com/ccorcos/prosemirror-examples/blob/master/src/app/components/Autocomplete.tsx
 
 - ## https://discuss.prosemirror.net/t/making-decoration-node-play-nice-with-node-views/3776
 - https://discuss.prosemirror.net/t/making-decoration-node-play-nice-with-node-views/3776

@@ -62,3 +62,13 @@ modified: 2020-10-22T06:51:07.421Z
 - https://github.com/lucaong/minisearch
   - a tiny but powerful in-memory fulltext search engine written in JavaScript. 
   - It is respectful of resources, and it can comfortably run both in Node and in the browser.
+
+- bibliothecula /152Star/GPLv3/202107/rust/archived
+  - https://github.com/epilys/bibliothecula
+  - https://epilys.github.io/bibliothecula/
+  - document organizer with tags and full-text-search, in a simple and clean sqlite3 schema
+  - Store plain text notes with automatic full-text search and back-reference indexing
+  - a virtual FUSE filesystem written in Rust.
+  - an HTTP GUI written in python3 using django.
+  - a GTK3 UI in Rust that was written early and isn't functional.
+  - an interactive python shell, bibl-shell.py, with convenient types and methods for working with your database:

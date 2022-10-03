@@ -9,6 +9,8 @@ modified: 2022-08-19T23:08:45.274Z
 
 # guide
 
+- resources
+  - https://discuss.prosemirror.net/search?q=tiptap
 # discuss-stars
 - ## [Markdown input and output_201810](https://github.com/ueberdosis/tiptap/issues/66)
 - [prosemirror official Friendly Markdown example](https://prosemirror.net/examples/markdown/)
@@ -27,7 +29,7 @@ modified: 2022-08-19T23:08:45.274Z
   - It has a huge ecosystem, and new community projects pop up every week. 
   - If you want to go the OT-way, you can do that with tiptap as you would do it with ProseMirror. 
   - All parts and APIs of ProseMirror are accessible through tiptap.
-# discuss
+
 - ## Tiptap 2 beta is here_202104
 - https://discuss.prosemirror.net/t/tiptap-2-beta-is-here/3710
   - Commands are chainable. 
@@ -62,3 +64,5 @@ modified: 2022-08-19T23:08:45.274Z
   - And sure, you’re not using pub/sub per say although one could think of editor transactions that change the plugin state as published events. 
   - But any state that would not be inside plugin state and still be relevant, eg API/UI stuff, you would have to engineer your own method of triggering changes somehow and relaying them forward.
   - Using React context for that purpose sucks.
+# discuss
+- ## 

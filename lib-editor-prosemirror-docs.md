@@ -15,6 +15,8 @@ modified: 2021-06-02T17:12:56.049Z
 
 - resources
   - [guide中文翻译](https://www.xheldon.com/tech/prosemirror-guide-chinese.html)
+  - [Marijn Haverbeke's blog](https://marijnhaverbeke.nl/blog/)
+  - [Pragmatic ProseMirror guide/cookbook](https://github.com/PierBover/prosemirror-cookbook)
 
 - 可以通过 schema 手动指定例外，允许节点包含不规范的内容
 - 虽然 document 的开关标签不被认为是 document 的一部分, 但是仍然计数，doc.nodeSize始终比doc.content.size大2
@@ -46,10 +48,6 @@ modified: 2021-06-02T17:12:56.049Z
   - For some props, such as `domParser`, the first value that is found is used, and others are ignored. 
   - For **handler functions** that return a boolean to indicate whether they handled the event, **the first one that returns `true` gets to handle the event**. 
   - And finally, for some props, such as attributes and decorations, the union of all provided values is used.
-
-- ref
-  - [Marijn Haverbeke's blog](https://marijnhaverbeke.nl/blog/)
-  - [Pragmatic ProseMirror guide/cookbook](https://github.com/PierBover/prosemirror-cookbook)
 # overview
 - ProseMirror tries to bridge the gap between editing explicit, unambiguous content like Markdown or XML, and classical WYSIWYG editors.
   - It does this by implementing a WYSIWYG-style editing interface for documents more constrained and structured than plain HTML. 
@@ -332,7 +330,7 @@ tr.delete(5, 7).split(5) // ok too
 - Transform objects automatically accumulate a set of maps for the steps in them, using an abstraction called Mapping, 
   - which collects a series of step maps and allows you to `map` through them in one go.
 - There are cases where it's not entirely clear what a given position should be mapped to. 
-  - `map` method on step maps and mappings accepts a second parameter,                                 `bias`, which you can set to `-1` to keep your position in place when content is inserted on top of it.
+  - `map` method on step maps and mappings accepts a second parameter,                                  `bias`, which you can set to `-1` to keep your position in place when content is inserted on top of it.
 - The reason that individual steps are defined as small, straightforward things is that it makes this kind of mapping possible, along with inverting steps in a lossless way, and mapping steps through each other's position maps.
 
 - Rebasing
