@@ -39,9 +39,43 @@ modified: 2022-05-15T18:35:39.272Z
 
 - ## 
 
-- ## 
+- ## 	Lexical is now open-source (web text-editor)
+- https://news.ycombinator.com/item?id=31017943
+- They are intentionally similar, ProseMirror has some great ideas. 
+- We tried to tackle those ideas from an extensible angle where nodes themselves, which form part of a tree, are the core to everything in Lexical. 
+- There are no "marks", instead you just use properties on the given nodes and treat them in an immutable sense. 
+- Nodes also present a set of createDOM/updateDOM methods, that allow you to define you DOM element, and its properties, to be passed back to Lexical's DOM reconciler.
+- You can imagine the EditorState in Lexical as not only the source-of-truth for your editor's data, but also the virtual DOM for your view. 
+  - Lexical diff's both and applies delta based on dirty node logic to improve performance. 
+  - Furthermore, any mutations to the DOM outside of Lexical and reverted back to Lexical's EditorState – to preserver source of truth.
+- Lexical also promotes different types of "text" properties on the TextNode class. Such as if the node is segmented, tokenized etc. This is a far better accessibility experience, as it ensures you can build rich text nodes – like custom emojis, or hashtags, or mentions without bailing out to contentEditable="false" which is what almost every other editor promotes. Which is also a major hinderance in terms of the ability to properly utilizie NVDA, Jaws and VoiceOver to move selection through the characters (in most cases, they skip non contenteditable elements entirely, which is terrible).
 
-- ## 
+- ## Facebook open sources Lexical, an extensible text editor library__202204
+- https://news.ycombinator.com/item?id=31019778
+- I have quite a few questions though:
+1. Is there any specific motivation behind building one from scratch?
+2. How is this different from Facebook's own DraftJS lib?
+3. What's the story of realtime collaboration support with OT/CRDT? Prosemirror had this in mind when designing its state model and delta model, so it comes with out of the box support for realtime collaborations. Can we expect the same with Lexical?
+4. What's the cross platform strategy for Lexical? If I store the editor's state as JSON on the server, how will I render it on devices and native desktop apps?
+- Internally, we've been replacing Draft.js with Lexical. To be clear though, they're different projects with little API compatibility. no deps; types; modern events
+- Lexical is not strictly tied to collaboration but its plugin system was built to be extensible enough to cater all developers needs. 
+  - Collaboration is just another plugin (@lexical/yjs) and does listen and perform the conversion every time there's changes in the EditorState.
+  - This model of independent plugins that can be plugged-and-played without further ado also simplifies devX as collaboration can be added later when the application is mature without the need to rethink any of the plugins that were originally created for non-collab plain/rich text.
+- Lexical Web is just the first of many. We want to port the API and fundamentals to various others platforms, including iOS for which we are already performing the initial set of testing. 
+  - Cross-platform means the API, including Node's will look alike and EditorState and node's properties will be compatible even if behind the scenes the reconciler is constrained by the toolkit available on each platform (and doesn't render or behave 100% like Web's).
+
+- I'm keener to understand the different between Prosemirror vs Lexical. 
+- I think we've just taken a different approach when it comes to the design of things. 
+- In Lexical, you rarely concern yourself with the DOM – and typically you deal with Lexical's node API directly and that's really all you touch.
+- Lexical also treat its own EditorState as the source of truth. 
+  - We use DOM MutationObservers to ensure the DOM matches the EditorState at all times. 
+  - We do allow external mutations from things like spellcheckers update Lexical – otherwise people wouldn't be able to use Grammarly and other tools with Lexical. However, that's really constrained so that they don't overreach.
+- Lexical also has the notion of double-buffering. 
+  - When you update Lexical, or use a node transform, you're actually mutating the "work in progress" EditorState. Once Lexical feels that the EditorState is ready, it will commit it to the DOM, and that EditorState will become immutable and will reflect what you see on the page.
+- 
+- 
+- 
+- 
 
 - ## Lexical is now open-source
 - https://twitter.com/trueadm/status/1514298427840024581

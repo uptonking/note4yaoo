@@ -16,6 +16,15 @@ modified: 2022-04-05T10:08:25.947Z
   - B2: Two users producing conflicts
   - B3: Many conflicts
   - B4: Real-world editing dataset
+# crdt-rewrite
+- https://github.com/siliconjungle/crdt-likes
+  - A simple example of how to build offline-first likes using CRDT's.
+
+- https://github.com/siliconjungle/recycle-list-crdt
+  - A crdt that recycles tombstones.
+
+- https://github.com/siliconjungle/delta-crdt
+  - A simple delta CRDT implementation.
 # yjs-crdt
 - https://github.com/yousefed/SyncedStore
   - https://syncedstore.org/docs/

@@ -287,9 +287,6 @@ modified: 2021-05-14T15:04:55.849Z
   - 依赖lute(go语言实现md解析)、hightlight、echarts、katex、mermaid、mathjax，注意依赖文件直接在源码的js/文件夹，不在package.json
 - https://github.com/react-monaco-editor/react-monaco-editor
   - Monaco Editor for React.
-- https://github.com/tinymce/tinymce
-  - /8.5kStar/LGPL/202009
-  - web-based WYSIWYG editor. Available for React, Vue and Angular
 - https://github.com/deckgo/deckdeckgo
   - The open source web editor for presentations
 

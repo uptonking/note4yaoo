@@ -288,6 +288,16 @@ modified: 2021-07-11T08:31:00.660Z
   - document organizer with tags and full-text-search, in a simple and clean sqlite3 schema
   - Store plain text notes with automatic full-text search and back-reference indexing
 # more-products
+- [9 products you can build with TinyMCE](https://www.tiny.cloud/blog/tinymce-examples-products-you-can-build-wysiwyg-editor/)
+1. Blogging platforms
+2. Real-time chat apps
+3. Design tools
+4. Document processors
+5. Note-taking apps
+6. Email service providers
+7. Collaborative workspaces
+8. Comments apps
+9. Form builders
 
 ## teamind
 

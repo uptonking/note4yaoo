@@ -9,6 +9,13 @@ modified: 2021-10-14T05:03:19.234Z
 
 # guide
 
+- [Collaborative Editing in CodeMirror_202005](https://marijnhaverbeke.nl/blog/collaborative-editing-cm.html)
+- To recap, ProseMirror uses something similar to OT, but without a converging transformation function. 
+  - It can transform changes relative to each other, but not in a way that guarantees convergence. 
+  - ProseMirror's document structure is a tree, and it supports various types of changes, including user-defined changes, that manipulate this tree. 
+  - I didn't have the courage to try and define a converging transformation function there. 
+  - When a client receives conflicting remote changes, it first undoes all its local pending changes, applies the remote changes, and then the transformed form of its local changes. 
+  - This means that everybody ends up applying the changes in the same order, so convergence is trivial.
 # examples
 
 ## [Collaborative text editor with ProseMirror and a syncing database](https://emergence-engineering.com/blog/prosemirror-sync-1)
@@ -41,6 +48,18 @@ modified: 2021-10-14T05:03:19.234Z
   - If client A is updated, then the server is updated which ideally propagates client B.
 # [Collaborative Editing in ProseMirror__201507](https://marijnhaverbeke.nl/blog/collaborative-editing.html)
 
+## [「译」ProseMirror 中的协同编辑实现](https://www.xheldon.com/tech/Collaborative-Editing-in-ProseMirror.html)
+
+- Unlike OT, it does not try to guarantee that applying changes in a different order will produce the same document.
+
+- Unlike in git, the history of the document is linear in this model, and a given version of the document can simply be denoted by an integer.
+- Also unlike git, all clients are constantly pulling (or, in a push model, listening for) new changes to the document, and track the server's state as quickly as the network allows.
+
+- my initial impulse was to split ReplaceStep up into steps that remove and insert content. But because the position map created by a replace step needs to treat the step as atomic (positions have to be pushed out of all replaced content), I got better results with making it a single step.
+
+- For doing offline work (where you keep editing when not connected) or for a branching type of work flow, where you do a bunch of work and then merge it with whatever other people have done in the meantime, the model I described here is useless (as is OT).
+  - In cases like this, I think a diff-based approach is more appropriate.
+
 ## The Problem
 
 - A real-time collaborative editing system ensures that the documents stay synchronized—changes made by individual users are sent to other users, and show up in their representation of the document.
@@ -68,7 +87,7 @@ modified: 2021-10-14T05:03:19.234Z
 - The design decisions that make the OT mechanism complex largely stem from the need to have it be truly distributed. 
   - Distributed systems have nice properties, both practically and politically, and they tend to be interesting to work on.
 - But you can save oh so much complexity by introducing a central point. 
-  - I am, to be honest, extremely bewildered by Google's decision to use OT for their Google Docs—a centralized system.
+  - I am, to be honest, extremely bewildered(困惑的) by Google's decision to use OT for their Google Docs—a centralized system.
 
 - **ProseMirror's algorithm is centralized**, 
   - in that it has a single node (that all users are connected to) making decisions about the order in which changes are applied. 
@@ -76,10 +95,11 @@ modified: 2021-10-14T05:03:19.234Z
 - And I don't actually believe that this property represents a huge barrier to actually running the algorithm in a distributed way. 
   - Instead of a central server calling the shots, you could use a consensus algorithm like Raft to pick an arbiter.
 
-## Centralization
+## The Algorithm
 
 - Like OT, ProseMirror uses a change-based vocabulary and transforms changes relative to each other.
 - Unlike OT, it does not try to guarantee that applying changes in a different order will produce the same document.
+
 - By using a central server, it is possible—easy even—to have clients all apply changes in the same order. 
   - You can use a mechanism much like the one used in code versioning systems. 
   - When a client has made a change, they try to push that change to the server. 

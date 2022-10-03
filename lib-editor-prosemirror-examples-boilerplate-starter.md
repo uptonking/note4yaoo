@@ -33,6 +33,10 @@ modified: 2022-09-05T03:41:15.727Z
   - Github template to reproduce ProseMirror bugs in simplest form possible
   - Loads the basic `prosemirror-example-setup` with `prosemirror-dev-toolkit` as ES modules using `importmap`
 
+- https://github.com/hedgerwang/learn-prosemirror-typescript-react-app
+  - https://hedgerwang.github.io/learn-prosemirror-typescript-react-app/
+  - 案例
+
 - https://github.com/ccorcos/prosemirror-examples
   - https://ccorcos.github.io/prosemirror-examples/
   - ProseMirror rich text editor with @mentions with autocomplete and nested inline nodes.

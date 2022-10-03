@@ -76,6 +76,12 @@ modified: 2021-07-27T15:12:39.959Z
   - core无依赖，react封装很少(只有2个文件)，不依赖prosemirror
   - 大量使用es6 class
   - 自己实现了依赖注入，设计了model/service/component
+
+
+- tinymce  /12kStar/MIT/202209/ts
+  - https://github.com/tinymce/tinymce
+  - https://www.tiny.cloud/
+  - web-based WYSIWYG editor. Available for React, Vue and Angular
 # collaborative-editor
 - https://github.com/yjs/yjs
   - https://docs.yjs.dev/

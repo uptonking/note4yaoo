@@ -1,23 +1,25 @@
 ---
 title: lib-collab-crdt-community-stars
 tags: [collaboration, community, crdt]
-created: 2021-11-24T17:08:48.275Z
-modified: 2022-04-05T10:09:51.343Z
+created: '2021-11-24T17:08:48.275Z'
+modified: '2022-04-05T10:09:51.343Z'
 ---
 
 # lib-collab-crdt-community-stars
 
 # guide
 
-- https://github.com/siliconjungle/crdt-likes
-  - A simple example of how to build offline-first likes using CRDT's.
+ 
 
-- https://github.com/siliconjungle/recycle-list-crdt
-  - A crdt that recycles tombstones.
-
-- https://github.com/siliconjungle/delta-crdt
-  - A simple delta CRDT implementation.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## If anyone has been curious about how to build a CRDT but thought the idea was too daunting. 
 - https://twitter.com/JungleSilicon/status/1526123548753858560
   - I've created one with as much of the complexity stripped out as I could whilst keeping it useful.
