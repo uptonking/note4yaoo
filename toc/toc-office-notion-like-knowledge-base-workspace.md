@@ -42,6 +42,8 @@ modified: 2022-06-03T21:34:54.893Z
   - 与slack集成很好
   - 样式与airframe-react dashboard风格类似
   - [Adopt BSL 1.1 license__202003.v0.41.0](https://github.com/outline/outline/pull/1197)
+  - ref
+    - https://github.com/ProseWorker/ProseWriter
 
 - logseq /15.9kStar/AGPL.v3/202208/clojure/ts
   - https://github.com/logseq/logseq
@@ -273,3 +275,7 @@ modified: 2022-06-03T21:34:54.893Z
 
 - https://github.com/vikingcms/viking
   - The main repository for Viking CMS. Currently in Development.
+
+- https://github.com/haxzie/snipp.in
+  - Notes, Snippet manager and code editor directly inside your browser
+  - Built with Vue.js, Dexie and Monaco Editor .

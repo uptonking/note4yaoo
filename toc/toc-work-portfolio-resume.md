@@ -50,6 +50,10 @@ modified: 2021-01-09T16:56:35.339Z
     - https://news.ycombinator.com/item?id=27084995 (作者实现只用了10天时间)
   - 类似macOS风格的例子
     - https://github.com/puruvj/macos-web
+
+- https://lzb.im/
+  - https://github.com/fredliang44/site
+  - 背景动画很酷，文字渐变色动画很酷
 # portfolio-react
 - https://github.com/braydoncoyer/braydoncoyer.dev
   - https://braydoncoyer.dev/

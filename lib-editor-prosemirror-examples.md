@@ -96,6 +96,7 @@ modified: 2022-08-18T16:57:46.405Z
   - bangle.io /711Star/AGPL.v3/202208/ts
     - https://github.com/bangle-io/bangle-io
     - https://bangle.io/
+    - 提供了 indexed-db-storage-provider, fs
     - A web only WYSIWYG note taking app that saves notes locally in markdown format
 
 - tui.editor.v3 /15.1kStar/MIT/202208/ts/popular
@@ -268,6 +269,7 @@ modified: 2022-08-18T16:57:46.405Z
 - manuscript-editor /7Star/apache2/202208/ts
   - https://github.com/Atypon-OpenSource/manuscripts-article-editor
   - the editor package of Manuscripts app to be used in a react application.
+  - 数据保存支持 pouchdb-adapter-idb
   - https://gitlab.com/mpapp-public/manuscripts-manuscript-editor
   - https://gitlab.com/mpapp-public/manuscripts-frontend
     - /CPAL-1.0; 类似MPL
@@ -355,6 +357,7 @@ modified: 2022-08-18T16:57:46.405Z
   - https://ahhshm.github.io/better-virgool/
   - An attempt to create a better rich text editor than virgool.io. Powered by Tiptap and ProseMirror
   - 实现了RTL国际化方向
+  - 数据保存使用了 idb-keyval
 
 - element-tiptap /825Star/MIT/202208/ts/vue/tiptap/inactive
   - https://github.com/Leecason/element-tiptap
@@ -390,6 +393,14 @@ modified: 2022-08-18T16:57:46.405Z
 
 - https://github.com/equinor/fusion-components/tree/master/src/customElements/components/markdown-editor
   - https://equinor.github.io/fusion-components/?path=/story/general-markdown-editor--default
+
+- https://github.com/becomesco/cms-ui
+  - 依赖tiptap.v2、vue3、markdown-it
+  - Core module of the BCMS. It is a dashboard for the BCMS and provides UI features.
+  - BCMS is a Headless CMS.
+  - It provides a powerful API, best-in-class model builder, and intuitive content editor.
+  - https://github.com/becomesco/cms-backend
+    - 后端基于express自研
 # prosemirror-editors-collection
 - licit /33Star/MIT/202208/js
   - https://github.com/MO-Movia/licit
@@ -502,6 +513,10 @@ modified: 2022-08-18T16:57:46.405Z
   - https://the-grid.github.io/ed/#fixture
   - Using ProseMirror with data from the Grid API
   - The demo shows translating from ProseMirror to the the Grid API JSON and back.
+
+- https://github.com/RobinJadoul/nuboard
+  - A collaborative minimalist latex/math editor, inspired by muboard.
+  - 代码量很少
 
 - https://github.com/binary-is/prosearea /202005/js/inactive
   - ProseArea is a drop-in replacement for HTML textareas, providing WYSIWYG editing of markdown, based on the ProseMirror web library.

@@ -17,7 +17,7 @@ modified: 2021-01-08T11:48:16.590Z
 
 - ref
   - 几乎所有的窗口布局组件的例子，整体最外层布局都是不能下滑滚动的，但窗口内部内容可以滚动
-    - 比较适合做表格，做文档要考虑
+    - 比较适合做表格，做文档要考虑跳转到锚点
 # panel-window-manager
 - ref
   - [search: window manager](https://github.com/search?o=desc&p=1&q=window+manager+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories)
@@ -137,6 +137,9 @@ modified: 2021-01-08T11:48:16.590Z
   - A minimal window manager that may be included in your ReactJS app.
 - https://github.com/openopus/ng-pane-manager2
   - Angular version of the AngularJS version of the web window management system.
+
+- https://github.com/idealjs/layout-manager
+  - Building Multi-Window Application's Frameworkless Library
 
 - https://github.com/davidjbradshaw/iframe-resizer
   - This library enables the automatic resizing of the height and width of both same and cross domain iFrames to fit their contained content. 

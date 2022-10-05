@@ -99,16 +99,16 @@ modified: 2022-06-03T22:07:23.308Z
   - 不支持跨block选择部分文字
   - 支持拖拽block修改顺序
 
-- https://github.com/ryuever/react-tapable-editor  /328Star/MIT/202010/ts
-  - A pluginable, intuitive medium/notion like rich text editor
-  - built on draft-js, and its plugin system is based on tapable which is famous as the engine of webpack.
-
 - boring-editor /10Star/MIT/202205/ts/tiptap
   - https://github.com/gridaco/boring
   - A very boring text editor engine like notion.
   - 不支持block-ui
   - 支持斜杠菜单、协作
   - 依赖tiptap2、yjs
+
+- https://github.com/ryuever/react-tapable-editor  /328Star/MIT/202010/ts
+  - A pluginable, intuitive medium/notion like rich text editor
+  - built on draft-js, and its plugin system is based on tapable which is famous as the engine of webpack.
 
 - https://github.com/ericyip/hexx /archived
   - https://hexx.vercel.app/

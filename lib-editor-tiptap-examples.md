@@ -48,6 +48,7 @@ modified: 2022-08-19T23:00:22.162Z
   - https://ahhshm.github.io/better-virgool/
   - An attempt to create a better rich text editor than virgool.io. Powered by Tiptap and ProseMirror
   - 实现了RTL国际化方向
+  - 数据保存使用了 idb-keyval
 
 - neeto-editor-tiptap /10Star/MIT/202208/js/tiptap/提交多
   - https://github.com/bigbinary/neeto-editor-tiptap
@@ -134,6 +135,23 @@ modified: 2022-08-19T23:00:22.162Z
   - Text editor library behind rich text editor is changed to tiptap@2.0
   - As a first step only those text editing features are implemented
   - More new things (managing tables, embedding, etc.) are coming in the following releases.
+
+
+- https://github.com/pierre-lgb/slashwriter
+  - 依赖tiptap.v2、redux-toolkit、supabase、express、yjs
+
+- https://github.com/bcc-code/bcc-live-transcriber
+  - 依赖tiptap.v2、yjs、vue3
+  - A live transcribing app for sharing a meeting with deaf people.
+  - The idea is to offer a simplistic keyboard only transcriber app with real time streaming and support for insterting bible verses.
+
+- https://github.com/iojanis/Lity
+  - 依赖tiptap.v2、yjs、vue3
+  - Graph-based document editor with collaborative features
+  - Create nodes by mouse, keyboard shortcuts or using markup (like @ and soon #)
+
+- https://github.com/Young6118/dudu-editor
+  - 基于 tiptap v2 的富文本编辑器
 
 - https://github.com/primo-af/primo
   - https://primo.af/
@@ -260,3 +278,7 @@ modified: 2022-08-19T23:00:22.162Z
 
 - https://github.com/Leosouthey/Raphael
   - 开源的个人/团队知识库系统
+
+- https://github.com/nanmenyu/inking
+  - inking是个人开发的开源桌面码字软件，面向的群体主要是网文写手，包含写作（核心）和阅读（附带）两大模块
+  - 内置关系图、灵感备忘、时间线、地图、webview等辅助模块

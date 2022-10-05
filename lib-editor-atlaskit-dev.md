@@ -14,6 +14,19 @@ modified: 2021-07-14T15:36:09.702Z
     - 所有NodeView组件的实现都很复杂！！！
     - 大量依赖atlassian design system中的react组件
   - 使用atlassian editor重写outline，抽象出替换可编辑器的接口，考虑可替换的协作同步方案
+
+# atlaskit-collab
+
+- ref
+  - https://atlaskit.atlassian.com/examples/editor/editor-core/collab
+  - [How to implement real time collaboration in atlaskit editor? 参考 yjs-atlaskit](https://stackoverflow.com/questions/59622112)
+
+
+- https://github.com/yjs/yjs-demos/tree/main/atlaskit
+  -  Atlaskit editor collaborative with Yjs & y-prosemirror. 
+
+- https://github.com/jure/pubsweet-blogger/tree/master/server/component-atlaskit-collab
+  - This is a PubSweet component that provides a collaboration server for the Atlaskit editor, intially assembled together from ProseMirror's collab example 
 # examples-repos
 - https://github.com/jungpaeng/playground-test-atlaskit-editor
   - /202002

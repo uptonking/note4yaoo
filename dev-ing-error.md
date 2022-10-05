@@ -11,6 +11,9 @@ modified: 2021-03-29T19:29:32.505Z
 
  
 
+- invalid hook call mismatching versions of React
+  - 子项目较多时，容易产生react版本冲突，此时解决方法是统一react版本，一般是升级
+
 - ModuleNotFoundError: No module named 'mesonbuild'
   - 问题是pip安装的包在用户目录
     - /home/yaoo/.local/lib/python3.10/site-packages/meson-0.63.2.dist-info/

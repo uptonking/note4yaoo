@@ -46,6 +46,13 @@ modified: 2022-08-18T16:57:15.296Z
   - Notesnook encrypts everything on your device using XChaCha20-Poly1305 & Argon2.
   - 服务端数据同步代码未找到
 
+- bear-plus /5Star/ISC/202008/js/ejs
+  - https://github.com/yk9331/bear-plus
+  - https://bear-plus.yenchenkuo.com/@bear-plus/features
+  - 依赖codemirror.v5、express、markdown-it、sequelize、express、multer
+  - A web-based writing application with real-time collaboration and Markdown syntax support for crafting and sharing notes. 
+  - Group and find note easily with hashtag and full text search. Inspired by Bear note and HackMD.
+
 - codex /195Star/CC-BY-NC-4.0/202202/js/electron
   - https://github.com/jcv8000/Codex
   - https://codexnotes.com/
@@ -88,6 +95,20 @@ modified: 2022-08-18T16:57:15.296Z
 - mnote /1Star/MPL.v2/202208/ts/tauri/提交多
   - https://github.com/gfrancine/mnote
   - Mnote: a desktop app to write notes in more than just text
+
+- neno /365Star/GPLv3/202205/js/svelte
+  - https://github.com/openneno/neno
+  - https://neno.pages.dev/
+  - 使用svelte+tailwindcss 仿照 浮墨 写的pwa应用
+  - 支持同步内容到Notion(使用gihub action)
+  - 编辑器迁移到了quill
+- https://github.com/juner0608/neno /inactive
+  - 仿照浮墨的开源版本
+  - svelte+tailwindcss构建的PWA应用
+    - 依赖prosemirror、idb
+  - 无需后端, 完全使用github进行存储你的所有数据, 文字和图片
+  - 支持完全离线使用
+  - 支持完整版数据导入导出
 # prosemirror-apps
 - fiduswriter /455Star/AGPLv3/202209/python/js
   - https://github.com/fiduswriter/fiduswriter
@@ -96,7 +117,16 @@ modified: 2022-08-18T16:57:15.296Z
   - Fidus Writer is an online collaborative editor especially made for academics who need to use citations and/or formulas.
   - The editor focuses on the content rather than the layout, so that with the same text, you can later on publish it in multiple ways: On a website, as a printed book, or as an ebook. 
 
-- oak /4Star/MIT/202208/js/提交多
+- binder /24Star/NALic/202210/ts
+  - https://github.com/mpazik/binder
+  - https://docland.app/
+  - 依赖 prosemirror、linki(自研框架)、pdfjs
+  - allows a user to display, organize, search and store all the articles and ebooks a person has ever read, together with personal annotations and comments.
+  - The application is right now a distraction-free web reader 
+  - PDFs and EPUBs support (in future other formats)
+  - data are stored in open formats on a personal cloud drive, so good privacy, no-vendor lock-in
+
+- oak /4Star/MIT/202208/js/提交多/page-builder
   - https://github.com/p3ol/oak
   - 整体上是一个可切换文本编辑器的页面编辑器
   - 页面从上到下由块构成，内容文字默认不可编辑，需要点击悬浮编辑按钮
@@ -131,6 +161,22 @@ modified: 2022-08-18T16:57:15.296Z
 
 - https://github.com/pageboard/client /4Star/MIT/202208/js
   - uses prosemirror to drive HTML wysiwyg editing.
+
+- https://github.com/pierre-lgb/slashwriter
+  - 依赖tiptap.v2、redux-toolkit、supabase、express、yjs
+
+- https://github.com/bcc-code/bcc-live-transcriber
+  - 依赖tiptap.v2、yjs、vue3
+  - A live transcribing app for sharing a meeting with deaf people.
+  - The idea is to offer a simplistic keyboard only transcriber app with real time streaming and support for insterting bible verses.
+
+- https://github.com/iojanis/Lity
+  - 依赖tiptap.v2、yjs、vue3
+  - Graph-based document editor with collaborative features
+  - Create nodes by mouse, keyboard shortcuts or using markup (like @ and soon #)
+
+- https://github.com/HarshvardhanMor/online-code-editor
+  - - 依赖tiptap.v2、vue2
 # more-prosemirror-examples
 - https://github.com/devmnj/react-editor-framework-examples
   - This is a set of Editor Example (React) with TinyMCE, RMirror, Draftjs, MuiEditor and Slatejs .
@@ -215,3 +261,19 @@ modified: 2022-08-18T16:57:15.296Z
 
 - https://github.com/pierre-lgb/slashwriter
 - https://github.com/martinemmert/fleeting-notes-editor
+
+- https://github.com/diffgram/diffgram
+  - https://diffgram.com/
+  - Modern Training Data platform for machine learning delivered as a single application.
+  - Training Data (Data Labeling, Annotation, Catalog, Workflow) for all Data Types (Image, Video, 3D, Text, Geo, Audio, more) at scale.
+
+- https://github.com/lyn-2k1/fullstackReactjs
+
+- https://github.com/primodotso/primo
+  - https://primo.so/
+  - ui基于svelte
+  - Primo is a component-based CMS that makes it easy to build visually-editable static sites
+
+- https://github.com/gracious-tech/stello
+  - A new way to send newsletters 
+  - 依赖tiptap.v2

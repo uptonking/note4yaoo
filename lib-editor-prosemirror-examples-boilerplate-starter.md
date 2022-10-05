@@ -41,10 +41,15 @@ modified: 2022-09-05T03:41:15.727Z
   - https://ccorcos.github.io/prosemirror-examples/
   - ProseMirror rich text editor with @mentions with autocomplete and nested inline nodes.
 
-- DoX /5Star/NALic/202208/js
+- DoX /6Star/NALic/202208/js
   - https://github.com/AlbertCerfeda/DoX
   - https://doxeditor.herokuapp.com/
   - 依赖 express、passport、socket.io、bootstrap4
+  - features
+    - 文档支持简单分享、权限设置
+    - 协作支持显示光标
+  - bugs
+    - 协作时对方的光标会跳动然后恢复到正常位置
   - DoX Editor aims to be a web text editor application that allows users to create, edit, store and share several documents.
   - A web text editor application that allows users to create, edit, store and share several documents, with support for real-time collaborative editing.
   - DoX is clearly inspired to well known online word processors such as Google Docs

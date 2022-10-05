@@ -10,7 +10,9 @@ modified: 2022-08-31T00:15:07.200Z
 # guide
 
 - 编辑器协作在线示例
-  - https://atlaskit.atlassian.com/examples.html?groupId=editor&packageId=editor-core&exampleId=collab
+  - https://atlaskit.atlassian.com/examples/editor/editor-core/collab
+  - https://github.com/jure/pubsweet-blogger/tree/master/server/component-atlaskit-collab
+  - [How to implement real time collaboration in atlaskit editor? 参考 yjs-atlaskit](https://stackoverflow.com/questions/59622112)
 # discuss-collab-transform-operation
 - ## 
 
