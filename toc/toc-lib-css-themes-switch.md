@@ -11,7 +11,7 @@ modified: 2021-02-09T13:40:11.536Z
 
 - 设计样式theming时可参考
   - dark/darcula, material, apple/ios, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss)
-  - try: glass-ui, web-map-theme, gradient, globs,generative, ink
+  - try: glass-ui, web-map-theme, gradient, globs, generative, ink
   - vendor: tailwindui(paid/clone), infima(参考官网文档)
   - 甚至所有的theme主题样式都可以在bootstrap的基础上修改得来
   - 基于粒子/particles的设计，或偏向于某一种dot dash的设计
@@ -81,38 +81,33 @@ modified: 2021-02-09T13:40:11.536Z
   - search: pure css, css only, css framework, css vars
   - https://github.com/topics/css-framework?o=desc&s=updated
   - https://github.com/troxler/awesome-css-frameworks
+# ready-themes
+- https://github.com/ciucacristi/elementric
+  - https://ciucacristi.github.io/elementric/
+  - 样式设计基于白底的圆角方形，设计感很强
+  - 圆角弧度特殊，整体偏宽
+  - Elementric is a free front-end package of UI element
+
+- https://github.com/saadeghi/daisyui
+  - https://daisyui.com/
+  - free and open-source Tailwind CSS component library
+
+- https://tailwindui.com/components/preview
+  - crafted components and templates, built by the makers of Tailwind CSS.
+
+- https://github.com/anguriostegui/heros
+  - https://heros-rouge.vercel.app/
+  - 适合落地页，主内容是带搜索动画的列表
+  - 依赖next、formspree-react表单、framer-motion6、swr
+  - https://github.com/anguriostegui/portfolio
+    - https://portfolio-anyelos.vercel.app/
+  - https://github.com/anguriostegui/white-wolf
+    - https://white-wolf-murex.vercel.app/
+
+- https://chakra-ui.com/community/showcase
+  - https://pro.chakra-ui.com/components
+  - https://saas-ui.dev/docs/components/data-display/list
 # themes-popular
-
-## origami
-
-- https://github.com/amandaghassaei/OrigamiSimulator
-  - https://origamisimulator.org/
-  - 依赖jquery、bootstrap、threejs
-  - Realtime WebGL origami simulator
-
-- https://github.com/robbykraft/Origami
-  - a Javascript library for modeling, designing, and diagramming origami.
-  - https://github.com/robbykraft/Math
-    - math for origami. linear algebra, geometry, 2D and 3D, good interoperability with SVG
-
-- https://github.com/xizhonghua/origami
-  - http://masc.cs.gmu.edu/origami/folder.html
-  - Visualize the folding process.
-  - 依赖threejs、jquery
-
-- https://github.com/georgiee/origami
-  - https://georgiee.github.io/origami/editor/
-  - Origami Building in threejs
-
-- https://github.com/MuTsunTsai/box-pleating-studio
-  - https://origami.abstreamace.com/zh/2021/06/02/the-story-of-box-pleating-studio/
-  - https://bpstudio.abstreamace.com/
-  - 箱形褶单轴基本形中的广义错位毕氏伸展（Generalized Offset Pythagorean Stretches in Box-Pleated Uniaxial Bases）
-- ref
-  - https://github.com/search?o=desc&q=origami+language%3Ajavascript+language%3Atypescript&s=stars&type=Repositories
-  - https://github.com/raphamorim/origami.js
-    - https://raphamorim.io/origamijs/
-    - Origami began as a project to teach javascript and geometry to children and today has been used to simplify the way we work with canvas
 
 ## material
 
@@ -158,6 +153,13 @@ modified: 2021-02-09T13:40:11.536Z
   - iCSS is a open source CSS component library based on Apple's iOS 11 design.
 - https://github.com/deepak-kumbhar/glass-ui-like-mac-big-sur
   - The basic HTML and CSS to design glass UI as like the Apple Big sur os
+
+- https://github.com/konstaui/konsta
+  - https://konstaui.com/
+  - Mobile UI components made with Tailwind CSS
+  - All Konsta UI components come with pixel perfect native-like iOS and Material Design themes
+  - Konsta UI mostly designed to be used with "parent" frameworks like Ionic or Framework7.
+
 - https://github.com/hbang/iOS-7-CSS
   - Basic iOS 7 CSS
 - https://github.com/codedgar/Puppertino
@@ -320,17 +322,37 @@ modified: 2021-02-09T13:40:11.536Z
 - https://github.com/luukdv/gooey-react
   - https://gooey-react.netlify.app/
   - The gooey effect for React, used for shape blobbing/metaballs
-# themes-ui-design
-- https://github.com/ciucacristi/elementric
-  - https://ciucacristi.github.io/elementric/
-  - 样式设计基于白底的圆角方形，设计感很强
-  - Elementric is a free front-end package of UI element
 
-- https://github.com/arwes/arwes
-  - https://arwes.dev/
-  - Arwes is a web framework to build user interfaces based on futuristic science fiction designs, animations, and sound effects.
-  - The concepts behind are opinionated with influences from Cyberpunk, Cyberprep, and Synthwave, and productions like Star Citizen, Halo, and TRON: Legacy.
-  - It tries to inspire advanced space and alien technology.
+## origami 折纸艺术
+
+- https://github.com/amandaghassaei/OrigamiSimulator
+  - https://origamisimulator.org/
+  - 依赖jquery、bootstrap、threejs
+  - Realtime WebGL origami simulator
+
+- https://github.com/robbykraft/Origami
+  - a Javascript library for modeling, designing, and diagramming origami.
+  - https://github.com/robbykraft/Math
+    - math for origami. linear algebra, geometry, 2D and 3D, good interoperability with SVG
+
+- https://github.com/xizhonghua/origami
+  - http://masc.cs.gmu.edu/origami/folder.html
+  - Visualize the folding process.
+  - 依赖threejs、jquery
+
+- https://github.com/georgiee/origami
+  - https://georgiee.github.io/origami/editor/
+  - Origami Building in threejs
+
+- https://github.com/MuTsunTsai/box-pleating-studio
+  - https://origami.abstreamace.com/zh/2021/06/02/the-story-of-box-pleating-studio/
+  - https://bpstudio.abstreamace.com/
+  - 箱形褶单轴基本形中的广义错位毕氏伸展（Generalized Offset Pythagorean Stretches in Box-Pleated Uniaxial Bases）
+- ref
+  - https://github.com/search?o=desc&q=origami+language%3Ajavascript+language%3Atypescript&s=stars&type=Repositories
+  - https://github.com/raphamorim/origami.js
+    - https://raphamorim.io/origamijs/
+    - Origami began as a project to teach javascript and geometry to children and today has been used to simplify the way we work with canvas
 # more-themes
 - https://github.com/yashdiniz/FRUI
   - Flat & Round User Interface, is a minimalistic and professional UI framework 

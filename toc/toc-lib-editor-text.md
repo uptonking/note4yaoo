@@ -103,6 +103,7 @@ modified: 2021-07-27T15:12:39.959Z
   - 支持多人实时协同编辑的网页富文本编辑
 
 - https://github.com/JiHong88/SunEditor
+  - http://suneditor.com/sample/index.html
   - Pure javscript based WYSIWYG web editor, with no dependencies
 
 - https://github.com/margox/braft-editor /archived

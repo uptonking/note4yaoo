@@ -21,13 +21,20 @@ modified: 2020-09-25T05:56:32.022Z
   - A lib for generating Style Sheets with JavaScrip
   - Is it possible to fully extract CSS and use it with link tag?
     - Yes. The easiest way to do so is to export styles from modules.
-
 # near-zero-runtime css in js
-
-- linaria /6kStar/MIT/202009
+- compiled /1.7kStar/Apache2/202210/ts/atomic
+  - https://github.com/atlassian-labs/compiled
+  - A familiar and performant compile time CSS-in-JS library for React.
+  - css-prop样式对象的写法支持后代选择器
+  - [不支持theming](https://github.com/atlassian-labs/compiled/issues/18)
+    - https://github.com/atlassian-labs/compiled/issues/1190
+- linaria /6kStar/MIT/202009/非atomic
   - https://github.com/callstack/linaria
   - Write CSS in JS, but with zero runtime, CSS is extracted to CSS files during build
   - 基于css variables实现
+  - 支持后代选择器
+  - 支持theming
+  - 不支持style object
 - treat /975Star/MIT/202009
   - https://github.com/seek-oss/treat
   - Themeable, statically extracted CSS‑in‑JS with near‑zero runtime.
@@ -83,9 +90,7 @@ modified: 2020-09-25T05:56:32.022Z
   - Combine the css-in-js and css-modules approaches or choose which fits you better
   - Compile-time styles processing and efficient runtime
   - 静态样式支持静态提取，动态样式基于styled，书写样式使用css字符串
-
 # atomic css in js
-
 - compiled /797Star/Apache2/202009
   - https://github.com/atlassian-labs/compiled
   - Build time atomic CSS in JS without the runtime cost.
@@ -107,9 +112,7 @@ modified: 2020-09-25T05:56:32.022Z
   - CSS-in-JS compiler inspired by Facebook's stylex
   - Compiles to atomic CSS
   - issues未开
-
 # more-css-in-js
-
 - trousers /284Star/MIT/202007
   - https://github.com/danieldelcore/trousers
   - hooks-first CSS-in-JS library, focused on semantics and runtime performance

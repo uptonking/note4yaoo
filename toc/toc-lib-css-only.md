@@ -6,7 +6,6 @@ modified: 2021-01-08T11:48:16.590Z
 ---
 
 # toc-lib-css-only
-
 - ref
   - [You-Dont-Need-JavaScript](https://github.com/you-dont-need/You-Dont-Need-JavaScript)
   - https://chokcoco.github.io/CSS-Inspiration/#/
@@ -16,9 +15,7 @@ modified: 2021-01-08T11:48:16.590Z
   - https://github.com/yyeexin/bilibili-html-demo
   - https://github.com/Zhangjd/awesome-pure-css-no-javascript
   - https://twitter.com/search?q=pure%20css%20icon&src=typed_query
-
 # popular
-
 - https://github.com/bansal-io/pattern.css
   - https://bansal.io/pattern-css#cross-dots
   - CSS only library to fill empty background with beautiful patterns.
@@ -62,9 +59,7 @@ modified: 2021-01-08T11:48:16.590Z
   - A pure CSS library to beautify checkbox and radio buttons.
 - https://github.com/andriussev/timelined
   - A customizable CSS-only vertical timeline
-
 # css-tools
-
 - https://github.com/1000ch/grd
   - A CSS grid framework using Flexbox. Only 321 bytes (Gzipped).
 - https://github.com/jh3y/driveway
@@ -84,9 +79,7 @@ modified: 2021-01-08T11:48:16.590Z
     - http://marvelapp.github.io/devices.css/
   - https://github.com/picturepan2/devices.css /1.9kStar/2018
     - https://picturepan2.github.io/devices.css/
-
 # css-examples
-
 - https://github.com/javierbyte/img2css
   - I also made a per-pixel animation experiment, see morphin.
   - Convert any image to pure CSS.

@@ -57,8 +57,8 @@ modified: 2021-01-28T21:14:14.667Z
   - http://purecss.io/
   - A set of small, responsive CSS modules
 - https://github.com/andrearufo/nova.css
-  - https://andrearufo.github.io/nova.css/
-  - 文档单页，样式非常友好，白底绿字
+  - https://andrearufo.github.io/nova.c ss/
+  - 文档单页，样式友好，白底绿字
   - minimalistic CSS framework for your webpages.
   - Made in pure SCSS and compiled with Gulp.
 - cirrus /694Star/MIT/202101/scss
@@ -69,10 +69,7 @@ modified: 2021-01-28T21:14:14.667Z
   - A fully responsive CSS framework with beautiful controls and simplistic structure. 
   - Cirrus is designed to be adaptable to existing themes or when starting fresh.
   - The only component that requires the use of jQuery is the Header component for toggling the dropdown menu on mobile.
-# tailwindcss
-- https://github.com/saadeghi/daisyui
-  - https://daisyui.com/
-  - free and open-source Tailwind CSS component library
+
 # css-framework-ui
 - milligram /8.8kStar/MIT/202006
   - https://github.com/milligram/milligram

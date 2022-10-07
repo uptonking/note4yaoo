@@ -32,6 +32,7 @@ modified: 2021-02-09T13:39:41.705Z
 - pico.css /65Star/MIT/202010/scss/文档优秀
   - https://github.com/picocss/pico
   - https://picocss.com/
+  - https://picocss.com/examples/preview/
   - theming通过添加`data-theme` + css vars到html标签实现
     - theming只处理了颜色
     - 最顶层处理了 `prefers-color-scheme: dark`
@@ -48,6 +49,7 @@ modified: 2021-02-09T13:39:41.705Z
   - https://github.com/halfmoonui/halfmoon
   - https://www.gethalfmoon.com/
   - https://codepen.io/tahmid-hm-dev/pens/public
+  - [Complete page demo](https://www.gethalfmoon.com/page-sections-demo/)
   - theming基于css vars，dark-mode变量名前缀为`--dm`
   - 组件级css vars易分离出来
   - 未模块化，一个css文件一万多行
@@ -57,7 +59,6 @@ modified: 2021-02-09T13:39:41.705Z
   - Halfmoon comes with a built-in, toggleable dark mode
   - The framework is built entirely using CSS variables 
     - There are close to 1,500 CSS variables, which means that almost everything can be customized by overriding a property
-  - [Complete page demo](https://www.gethalfmoon.com/page-sections-demo/)
   - [Starter template generator](https://www.gethalfmoon.com/docs/page-building/#starter-template-generator)
   - Optional JS library—Many of the components found in Halfmoon are built to work without JavaScript. 
     - However, the framework still comes with a powerful JavaScript library with no extra dependencies, such as jQuery.
@@ -68,8 +69,8 @@ modified: 2021-02-09T13:39:41.705Z
 - infima /60kStar/MIT/202102/css
   - https://github.com/facebookincubator/infima
   - https://facebookincubator.github.io/infima/
-  - A modern styling framework for content-driven websites 
-  - It's just CSS, so it works with React, Vue, Angular, anything!
+  - A modern styling framework for content-driven websites, being developed alongside Docusaurus 2.
+  - It's just CSS
   - Built using modern CSS approaches - CSS variables and Postcss, BEM naming.
   - built-in support for theming and dark mode!
   - The main difference between Infima and existing CSS frameworks (e.g. Bootstrap, Bulma) is that it's built with a modern theming approach (CSS variables), modern tooling and has dark mode support out of the box, which makes it perfect for building content-driven websites such as documentation websites.

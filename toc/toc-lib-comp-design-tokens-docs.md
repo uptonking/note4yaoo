@@ -27,7 +27,7 @@ modified: 2021-01-11T18:34:20.713Z
   - 不必搜索所有最新样式项目的仓库
     - 深入理解主流css framework的文档实现更好，大多都是多页文档
 
-- primitive/skeleton-css  /760Star/MIT/202010/scss/NoDeps
+- primitive /760Star/MIT/202010/scss/NoDeps
   - https://github.com/taniarascia/primitive
   - https://taniarascia.github.io/primitive/
   - https://taniarascia.github.io/primitive/test.html
