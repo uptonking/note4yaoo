@@ -191,10 +191,15 @@ modified: 2022-08-18T16:57:15.296Z
 - https://github.com/NoteHub-official/RetroFlux
   - fully-customizable collaborative knowledge management app featuring note-taking, note-sharing, community, knowledge graph functionalities.
 
-- https://github.com/PelagicCreatures/marlin /inactive
+- https://github.com/PelagicCreatures/marlin /20224/js/inactive
   - An ExpressJS CMS for sites with Sequelize db backends
   - This package implements a relational typed admin backend built from sequelize model definitions with granular access control for editing tables using ACLs for users and roles.
   - https://github.com/PelagicCreatures/marlin-app
+    - a boilerplate app that includes many common functions of a web site/app featuring registered users. 
+    - we use HIJAX to load pages after the initial load. 
+    - 【DOM编程艺术】 Hijax---渐进增强地使用Ajax 
+    - 按照老传统，让表单把整个页面都提交到服务器，然后服务器再发回来一个包含反馈的新页面，所有处理操作都在服务器上完成
+    - 为了给这个登录表单添加AJAX功能，就需要拦截提交表单的请求,让XMLHttpRequest请求来代为发送
 
 - https://github.com/ShenQingchuan/HeteroDoc
   - Heterocube Cloud Collaborative Docs. 

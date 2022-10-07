@@ -40,6 +40,7 @@ modified: 2021-01-12T18:49:07.422Z
 - https://github.com/ailon/markerjs2
   - https://markerjs.com/
   - Add image annotation to your web apps.
+  - 效果类似图片上的画板草稿
   - Linkware license for v2; MIT for v1
   - https://github.com/ailon/markerjs
 

@@ -34,7 +34,6 @@ modified: 2022-06-04T00:44:40.955Z
       - The new architecture also supports finer control over the middleware lifecycle.
     - Strongly typed by default
       - TypeScript is a first-class citizen
-
 - https://github.com/popperjs/popper-core
   - https://popper.js.org/
   - https://github.com/popperjs/react-popper
@@ -46,6 +45,8 @@ modified: 2022-06-04T00:44:40.955Z
   - https://atomiks.github.io/tippyjs/v6/headless-tippy/
   - The complete tooltip, popover, dropdown, and menu solution for the web
   - 依赖 @popperjs/core.v2
+  - https://github.com/atomiks/tippyjs-react
+    - we recommend using Floating UI's React DOM Interactions package
   - [Stretching the popover to the full width and height of the screen](https://github.com/atomiks/tippyjs/issues/897)
 # examples-repos
 - https://github.com/ycs77/headlessui-float
@@ -78,5 +79,5 @@ modified: 2022-06-04T00:44:40.955Z
   - @wordpress/components
     - https://www.npmjs.com/package/@wordpress/components
     - github.com/WordPress/gutenberg
-# more-popper-repos
+# more-popper-layer-examples
 - https://github.com/wix/ricos/tree/master/packages/toolbars-v3

@@ -44,6 +44,13 @@ modified: 2021-01-17T06:18:28.855Z
   - 示例和文档都很详细
   - [proposal: Render tooltip popup programmatically](https://github.com/yjose/reactjs-popup/issues/185)
 
+- react-laag /824Star/MIT/202204/ts
+  - https://github.com/everweij/react-laag
+  - https://storybook.react-laag.com/
+  - https://storybook.react-laag.com/?path=/docs/text-selection--page
+  - Hooks to build things like tooltips, dropdown menu's and popovers in React
+  - no dependencies
+
 - react-element-popper /2Star/MIT/202109/js/NoDeps
   - https://github.com/shahabyazdi/react-element-popper
   - https://shahabyazdi.github.io/react-element-popper/
@@ -82,6 +89,32 @@ modified: 2021-01-17T06:18:28.855Z
 - https://github.com/iamhosseindhv/notistack
   - https://notistack.com/
   - customizable notification snackbars (toasts) that can be stacked on top of each other
+# examples-menu-toolbar
+- toolbar
+  - https://www.radix-ui.com/docs/primitives/components/toolbar
+  - https://carbondesignsystem.com/patterns/text-toolbar-pattern/
+  - https://github.com/carbon-design-system/carbon/tree/v10/packages/react/src/components/Toolbar
+  - https://v7-react.carbondesignsystem.com/?path=/story/deprecated-toolbar--default
+  - https://codepen.io/team/carbon/pens/public
+  - v11已移除，v10可访问，效果偏向带filter的表格工具条
+  - Deprecate Header, Shell, and Toolbar in favor of UNSTABLE__Shell
+  - toolbar is a set of buttons and menus that allows users to edit text, search keywords, attach files, and embed links
+
+- context-menu
+  - https://react.carbondesignsystem.com/?path=/story/experimental-unstable-menu-contextmenu--context-menu
+
+- https://github.com/szhsin/react-menu /js
+  - https://szhsin.github.io/react-menu/
+  - for building accessible menu, dropdown, submenu, context menu and more
+
+- https://github.com/fkhadra/react-contexify /ts
+  - https://fkhadra.github.io/react-contexify/
+  - Add a context menu to your react app with ease
+
+- https://github.com/pacocoursey/cmdk
+  - https://cmdk.paco.me/
+  - unstyled command menu React component.
+  - 依赖 @radix-ui/react-dialog
 # modal/portal
 - https://github.com/wellyshen/react-cool-portal
   - hook for Portals, which renders modals, dropdowns, tooltips etc. to `<body>` or else.

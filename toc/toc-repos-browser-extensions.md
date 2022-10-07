@@ -9,6 +9,11 @@ modified: 2020-11-19T12:44:36.463Z
 
 # extensions
 
+- https://github.com/flybayer/twitter-bookmarks-search
+  - adds the ability to search your bookmarked tweets inside Twitter.
+- https://github.com/twitterdev/bookmarks-search
+  - uses the Bookmarks lookup endpoint to get your bookmarks
+
 - https://github.com/jawil/GayHub
   - 优化GitHub的阅读体验
 - https://github.com/FallenMax/smart-toc

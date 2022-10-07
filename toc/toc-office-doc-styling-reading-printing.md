@@ -13,6 +13,9 @@ modified: '2022-10-05T04:57:38.647Z'
   - markdown theme/extensions/like
   - toc
 # editor-styling
+- atlaskit-editor 样式使用 styled-components
+  - https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink
+
 - https://react-notion-x-demo.transitivebullsh.it/
   - https://github.com/NotionX/react-notion-x/blob/master/packages/react-notion-x/src/styles.css
   - /MIT
@@ -21,6 +24,12 @@ modified: '2022-10-05T04:57:38.647Z'
   - https://www.tiny.cloud/docs/tinymce/6/full-featured-open-source-demo/
   - https://github.com/tinymce/tinymce/blob/develop/modules/tinymce/src/core/demo/css/content_editable.css
   - /MIT
+
+- editor相关设计
+  - https://www.radix-ui.com/docs/primitives/components/toolbar
+  - https://v7-react.carbondesignsystem.com/?path=/story/deprecated-toolbar--default
+  - https://react.carbondesignsystem.com/?path=/story/experimental-unstable-menu-contextmenu--context-menu
+  - https://szhsin.github.io/react-menu/
 
 - https://editorjs.io/
   - https://github.com/codex-team/editor.js/blob/next/src/styles/ui.css

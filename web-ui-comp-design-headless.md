@@ -13,25 +13,28 @@ modified: 2021-04-11T17:37:29.528Z
   - 只提供状态管理和事件行为，将组件样式和dom结构都暴露给外传入
   - 基于场景预定义react组件接口，允许替换默认使用的各个组件
 
+- 💡️ 不必执着于完整的现有组件库，可分析其他组件支持多个框架的方法，如tanstack-table
+
 - headless-ui-examples
+  - radix-ui
+    - 提供了自研stitches的样式解决方案
+  - react-spectrum
+    - based on react-stately,react-aria
   - headlessui
     - listbox/select,dropdown/menu,switch,radio-group
     - dialog,popover,disclosure,transition
     - 示例组件的动画体验非常好
-  - react-spectrum
-    - based on react-stately,react-aria
-  - radix-ui
-    - 提供了自研stitches的样式解决方案
-  - renderlesskit-react
-    - 依赖reakit,react-aria,chakra-ui
   - reakit/ariakit
     - who is using: bumbag-ui
+  - adaptui/renderlesskit-react
+    - 依赖reakit,react-aria,chakra-ui
+  - zendesk-garden-react-containers: 2种使用方式 hook, render-prop
+  - zag
   - reach-ui
-  - react-containers: 有2种使用方式: hook, render prop
   - downshift
   - react-bootstrap依赖的restart/hooks
 
-- more-headless-examples
+- ref
   - https://github.com/jxom/awesome-react-headless-components
 # headless-ui-comparison
 

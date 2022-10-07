@@ -67,3 +67,9 @@ modified: 2020-11-03T06:55:09.225Z
 
 - https://github.com/Surile/Abraham
   - 垃圾分类小程序
+
+- https://github.com/medusajs/medusa
+  - https://medusajs.com/
+  - The open-source Shopify alternative
+  - https://github.com/medusajs/admin
+    - Admin system for Medusa Stores

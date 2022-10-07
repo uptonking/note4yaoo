@@ -9,76 +9,129 @@ modified: 2021-04-11T06:17:51.318Z
 
 # guide
 
-- 有状态无渲染，有渲染无状态，且状态尽量与具体业务解耦，状态逻辑尽量通用，这也是hooks设计的思路
+- 💡️ 不必执着于完整的现有组件库，可分析其他组件支持多个框架的方法，如tanstack-table
 - headless, renderless, no styling, unstyled, accessible
+- 有状态无渲染，有渲染无状态，且状态尽量与具体业务解耦，状态逻辑尽量通用，这也是hooks设计的思路
 - I wonder... should these be called ui patterns rather than components.
 
 - headless-ui-examples
+  - radix-ui
+    - 提供了自研stitches的样式解决方案
+  - react-spectrum
+    - based on react-stately,react-aria
   - headlessui
     - listbox/select,dropdown/menu,switch,radio-group
     - dialog,popover,disclosure,transition
     - 示例组件的动画体验非常好
-  - react-spectrum
-    - based on react-stately,react-aria
-  - radix-ui
-    - 提供了自研stitches的样式解决方案
-  - renderlesskit-react
-    - 依赖reakit,react-aria,chakra-ui
   - reakit/ariakit
     - who is using: bumbag-ui
+  - adaptui/renderlesskit-react
+    - 依赖reakit,react-aria,chakra-ui
+  - zendesk-garden-react-containers: 2种使用方式 hook, render-prop
+  - zag
   - reach-ui
-  - react-containers: 有2种使用方式: hook, render prop
   - downshift
   - react-bootstrap依赖的restart/hooks
-# popular-headless-ui
-- https://github.com/tailwindlabs/headlessui
-  - /992Star/MIT/202009
+
+- ref
+  - https://github.com/jxom/awesome-react-headless-components
+# headless-ui
+- radix-ui /6.2kStar/MIT/202210/ts
+  - https://github.com/radix-ui/primitives
+  - https://www.radix-ui.com/docs/primitives/components/toolbar
+  - Unstyled, accessible components for building high‑quality design systems and web apps in React.
+  - https://github.com/radix-ui/design-system
+    - https://design-system.modulz-deploys.com/
+    - Design system maintained and used by WorkOS.
+    - Built with Stitches and Radix UI Primitives.
+  - https://github.com/radix-ui/icons
+    - https://icons.radix-ui.com/
+    - A crisp set of 15×15 icons designed by the WorkOS team.
+
+- react-spectrum /7.3kStar/Apache2/202210
+  - https://github.com/adobe/react-spectrum
+  - A React implementation of Spectrum, Adobe’s design system
+  - 组件基于hooks实现
+  - React Aria: library of React Hooks that provides accessible UI primitives for your design system.
+  - React Stately: library of React Hooks that provides cross-platform state management for your design system.
+  - https://github.com/adobe/spectrum-css
+    - CSS implementation of the Spectrum design language.
+
+- headlessui /17kStar/MIT/202009/ts
+  - https://github.com/tailwindlabs/headlessui
   - unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS
   - [Headless UI: Unstyled, Accessible UI Components](https://blog.tailwindcss.com/headless-ui-unstyled-accessible-ui-components)
-  - [@headlessui/react](https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-react), @headlessui/vue
-  - https://github.com/GavinJoyce/ember-headlessui
-    - a work-in-progress implementation of: tailwindlabs/headlessui
-- https://github.com/timelessco/renderlesskit-react
+  - [Any way of using headlessui without react or vue](https://github.com/tailwindlabs/headlessui/discussions/984)
+    - Headless UI is created and coupled to React & Vue right now
+
+- zag /1.5kStar/MIT/202210/ts
+  - https://github.com/chakra-ui/zag
+  - https://zagjs.com/overview/introduction
+  - Finite state machines for accessible JavaScript components
+  - The component interactions are modelled in a framework agnostic way. 
+  - We provide adapters for JS frameworks like React, Solid, or Vue.
+  - The machine APIs are completely unstyled and gives you the control to use any styling solution you prefer.
+  - Zag is built on top of the latest ideas in Statecharts. We don't follow the SCXML specifications
+
+- ariakit/reakit /6.2kStar/MIT/202210/ts
+  - https://github.com/ariakit/ariakit
+  - https://github.com/reakit/reakit
+  - https://ariakit.org/
+  - https://ariakit.org/components/toolbar
+  - https://reakit.io/
+  - Toolkit for building accessible rich web apps with React.
+
+- renderlesskit-react/AdaptUI /197Star/MIT/202207/ts
+  - https://github.com/adaptui/react
+  - https://github.com/timelessco/renderlesskit-react
   - https://renderlesskit-react.vercel.app/
   - Collection of headless components/hooks that are accessible, composable, customizable from low level to build your own UI & Design System powered by Reakit System.
-- https://github.com/zendeskgarden/react-containers
+
+- Zendesk Garden /1kStar/Apache2/202210/ts
+  - https://github.com/zendeskgarden/react-containers
+  - https://zendeskgarden.github.io/react-containers/
+  - React (no-UI) containers
+  - provide an accessible foundation to to build a11y, keyboard navigable and RTL aware components.
   - https://github.com/zendeskgarden/react-components
+  - https://zendeskgarden.github.io/react-components/
   - https://garden.zendesk.com/components/
   - /873Star/Apache2/202105/ts
   - 依赖styled-components
   - Garden React provides consistent styling and behavior for Garden components. 
 
-- makeup-js /7Star/MIT/202105/js
+- makeup-js /26Star/MIT/202210/js/vanillajs
   - https://github.com/makeup/makeup-js
   - https://makeup.github.io/makeup-js/
   - A suite of vanilla JavaScript modules for building accessible user interfaces.
-  - (i.e. they come with no styles or branding out of the box).
+  - come with no styles or branding out of the box
   - They are fully compatible with Skin CSS.
   - https://github.com/eBay/skin
     - https://ebay.github.io/skin/
     - Pure CSS framework designed & developed by eBay
-
+# headless-component
 - tiptap /16.1kStar/MIT/202208/ts/prosemirror
   - https://github.com/ueberdosis/tiptap
   - https://tiptap.dev/
-  - A headless, framework-agnostic and extendable rich text editor, based on ProseMirror.
-  - It’s headless and comes without any CSS. You are in full control over markup, styling and behaviour.
+  - A headless, framework-agnostic and extendable rich text editor, comes without any CSS. You are in full control over markup, styling and behaviour.
 
-- https://github.com/jieter/leaflet-headless
-  - Leaflet for node.(Has Leaflet 1.1.x as dependency.)
-  - Uses jsdom to fake ad DOM.
-  - Uses Image implementation and canvas from node-canvas. 
-  - Tiles, Markers and vector layers work well with leaflet-image
 - https://github.com/atomiks/tippyjs
   - https://atomiks.github.io/tippyjs/
   - 只依赖 @popperjs/core.v2
   - Tippy.js is the complete tooltip, popover, dropdown, and menu solution for the web, powered by Popper.
   - "Headless Tippy" refers to Tippy without any of the default element rendering or CSS. 
     - This allows you to create your own element from scratch and use Tippy for its logic only.
+
+- neodrag /509Star/MIT/202210/ts
+  - https://github.com/PuruVJ/neodrag
+  - https://stackblitz.com/edit/typescript-wvnloa
+  - A vanilla JS draggable library
+  - Lightweight multi-framework libraries for draggability on the web.
+
 - https://github.com/elastic/search-ui
   - https://github.com/elastic/search-ui/tree/master/packages/search-ui
   - 依赖date-fns、history、qs
   - The "Headless Search UI" that serves as a foundation for the react-search-ui library.
+
 - https://github.com/algolia/autocomplete
   - https://www.algolia.com/doc/ui-libraries/autocomplete/introduction/what-is-autocomplete/
   - JavaScript library for building autocomplete experiences.
@@ -86,6 +139,7 @@ modified: 2021-04-11T06:17:51.318Z
   - You can use whatever you want in your sources: a static set of searches terms, search results from an external source like an Algolia index, recent searches, and more.
   - The library creates an input and provides the interactivity and accessibility attributes, but you’re in full control of the DOM elements to output.
   - Unlike InstantSearch, Autocomplete doesn’t provide a library of ready-made UI widgets
+
 - https://github.com/TBear79/headless-datepicker
   - Provides the logic for a datepicker. Apply your own UI on top.
   - Relies on moment.js
@@ -100,6 +154,7 @@ modified: 2021-04-11T06:17:51.318Z
   - 依赖 formik
   - https://github.com/formium/formik
     - Formik is the world's most popular open source form library for React and React Native.
+
 - https://github.com/ivan-dalmet/formiz
   - https://formiz-react.com/
   - React forms with ease! Composable, headless & with built-in multi steps
@@ -107,37 +162,44 @@ modified: 2021-04-11T06:17:51.318Z
   - https://github.com/accessible-ui
   - Accessible style-agnostic components for React
 
+- https://github.com/jieter/leaflet-headless
+  - Leaflet for node.(Has Leaflet 1.1.x as dependency.)
+  - Uses jsdom to fake ad DOM.
+  - Uses Image implementation and canvas from node-canvas. 
+  - Tiles, Markers and vector layers work well with leaflet-image
+
 - https://github.com/jshjohnson/Choices
   - https://joshuajohnson.co.uk/Choices/
   - configurable select box/text input plugin.
   - Similar to Select2 and Selectize but without the jQuery dependency.
   - Flexible styling
-# framework-agnostic
-- https://github.com/appbaseio/searchbox
-  - https://github.com/appbaseio/searchbox
-  - a lightweight and performance focused search UI component library to query and display results from your ElasticSearch index using declarative props. 
-  - It's available for React, Vue, React Native and Flutter.
-- https://github.com/appbaseio/reactivesearch
-  - https://opensource.appbase.io/reactivesearch
-  - Search UI components for React and Vue: powered by appbase.io / Elasticsearch
-- https://github.com/appbaseio/reactivecore
-  - Core architecture of reactive UI libraries
-  - 依赖redux、redux-thunk、xdate
-# headless-based-on-browser-puppeteer
-- https://github.com/PDFTron/web-to-pdf
-  - Convert any web technology to PDF (HTML to PDF, html2pdf)
-  - 依赖chokidar、live-server、passport、puppeteer、react
-  - Please note that React components are not required for web-to-pdf to work. It supports all frameworks, and even vanilla JS/HTML/CSS.
 # headless-react
 - https://github.com/chatscope/use-chat
-  - https://chatscope.io/
+  - https://chatscope.io/demo/
+  - https://demo.chatscope.io/
+  - 示例非常丰富，ui交互完整
   - React hook for state management in chat applications.
   - This is a headless chat library. Think of it as something like a Formik but for chat apps.
   - https://github.com/chatscope/chat-ui-kit-react
-- https://github.com/Resetand/textarea-markdown-editor
-  - UI headless simple markdown editor using only textarea
-  - You can choose any markdown parser, any layout.
-  - Can use any existing textarea Component and style it as you prefer
+    - open source UI toolkit for developing web chat applications.
+  - https://github.com/Resetand/textarea-markdown-editor
+    - UI headless simple markdown editor using only textarea
+    - You can choose any markdown parser, any layout.
+    - Can use any existing textarea Component and style it as you prefer
+
+- webrix /399Star/Apache2/202210/js
+  - https://github.com/open-amdocs/webrix
+  - https://webrix.amdocs.com/
+  - building blocks for React-based web applications
+  - Movable, Scalable, Collapsible, Stackable, Scrollable, Pannable, Resizable, Poppable
+
+- vechaiui /1kStar/MIT/202206/ts
+  - https://github.com/vechai/vechaiui
+  - 组件实现都很简单，复杂组件直接import三方
+  - A set of accessibility React components & pre-designed headlessui + radix-ui components + tailwindcss
+
+- https://github.com/op-ent/unstyled-ui
+  - an headless react library.
 
 - https://github.com/nrkno/core-components
   - https://static.nrk.no/core-components/latest/
@@ -167,10 +229,23 @@ modified: 2021-04-11T06:17:51.318Z
 - https://github.com/headless-components/headless-components-react
   - /2Star/NALic/202004
   - Headless component in React with Custom hooks
+# framework-agnostic
+- https://github.com/appbaseio/searchbox
+  - https://github.com/appbaseio/searchbox
+  - a lightweight and performance focused search UI component library to query and display results from your ElasticSearch index using declarative props. 
+  - It's available for React, Vue, React Native and Flutter.
+- https://github.com/appbaseio/reactivesearch
+  - https://opensource.appbase.io/reactivesearch
+  - Search UI components for React and Vue: powered by appbase.io / Elasticsearch
+- https://github.com/appbaseio/reactivecore
+  - Core architecture of reactive UI libraries
+  - 依赖redux、redux-thunk、xdate
+# headless-based-on-browser-puppeteer
+- https://github.com/PDFTron/web-to-pdf
+  - Convert any web technology to PDF (HTML to PDF, html2pdf)
+  - 依赖chokidar、live-server、passport、puppeteer、react
+  - Please note that React components are not required for web-to-pdf to work. It supports all frameworks, and even vanilla JS/HTML/CSS.
 # more-headless-ui
-- ref
-  - https://github.com/jxom/awesome-react-headless-components
-
 - https://github.com/coveo/ui-kit
   - Coveo UI kit repository, home of @coveo/headless, @coveo/atomic, and more.
 - https://github.com/ice9js/headless-components /article
@@ -188,3 +263,6 @@ modified: 2021-04-11T06:17:51.318Z
 - https://github.com/ianstormtaylor/react-values
   - components for handling state with render props.
 - https://github.com/mohammedabualsoud/react-headless-table
+
+- https://github.com/lxsmnsyc/solid-headless
+  - Headless UI for SolidJS

@@ -10,6 +10,8 @@ modified: 2021-05-24T16:55:40.481Z
 # guide
 
 - rest api本身就是headless的设计
+- 国内有很多快速开发框架如jeesite/jeecg，国外对应的是headless/cms框架
+  - https://github.com/n370/awesome-headless-cms
 # popular
 - netlify-cms /14kStar/MIT/202105/js
   - https://github.com/netlify/netlify-cms

@@ -34,6 +34,9 @@ modified: 2022-06-04T00:44:30.749Z
   - Presets
     - Check out @dnd-kit/sortable, which is a thin layer built on top of @dnd-kit/core. 
     - More presets coming in the future.
+
+- alternatives
+  - react-dnd
 # not-yet-dnd-kit
 - [ ] onDragEnd delta.y property inaccurate when inside position fixed container
   - https://github.com/clauderic/dnd-kit/issues/298

@@ -13,7 +13,10 @@ modified: 2020-11-13T07:29:00.948Z
   - /10.2kStar/MIT/202010/js
   - https://evergreen.segment.com/
   - Evergreen React UI Framework by Segment
+  - Evergreen uses CSS-in-JS and builds on top of the Box component in ui-box.
   - Evergreen bundles 2 CSS-in-JS solutions, from glamor and ui-box. 
+  - https://github.com/segmentio/ui-box
+    - ui-box is a low level CSS-in-JS solution
 - https://github.com/autoguru-au/overdrive
   - /28Star/MIT/202010/ts
   - http://overdrive.autoguru.io/

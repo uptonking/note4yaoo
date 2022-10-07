@@ -72,3 +72,7 @@ modified: 2020-10-22T06:51:07.421Z
   - an HTTP GUI written in python3 using django.
   - a GTK3 UI in Rust that was written early and isn't functional.
   - an interactive python shell, bibl-shell.py, with convenient types and methods for working with your database:
+
+- https://github.com/superhuman/command-score
+  - Yet another javascript fuzzy string matching library!
+  - We use this in email client in autocompletion contexts where the set of results is relatively bounded

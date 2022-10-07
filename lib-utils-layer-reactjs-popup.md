@@ -34,7 +34,6 @@ modified: 2022-06-04T00:45:01.403Z
 - [is it possible to place popup code in one place and trigger in another?](https://github.com/yjose/reactjs-popup/issues/182)
 - change trigger={refToInput.current} by ref={refToInput} and you ref should have access to Native Components functions such us openPopup
 
-# 
 # docs
 - Starting from v2 you can customize where the popup is rendered on the page!
   - By default a `div` with id `popup-root` is appended to the very end of the `body` tag and the popup content is rendered inside, 

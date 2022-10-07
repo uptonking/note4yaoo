@@ -9,13 +9,6 @@ modified: 2020-11-13T07:28:27.824Z
 
 # framework-agnostic components
 
-- https://github.com/chakra-ui/zag
-  - https://zagjs.com/overview/introduction
-  - UI components powered by State Machines.
-  - Zag is a collection of framework agnostic, accessible widgets (like accordion, menu, dialog, etc.) that can be used in React, Vue, & Solid.js.
-  - This project leans heavily on my recent experiments with XState and finite state machines.
-  - Zag will be used within Chakra UI components. 
-
 - https://github.com/material-components/material-components-web/
   - /14.9kStar/MIT/202009/ts/agnostic/MDC-Web
   - https://material.io/develop/web/components/buttons

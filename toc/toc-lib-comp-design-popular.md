@@ -22,7 +22,7 @@ modified: 2020-11-13T07:29:55.201Z
 
 - ## Apache Superset UI /Preset
   - /212Star/Apache2/202105/ts
-  - https://github.com/apache-superset/superset-ui
+  - https://github.com/apache/superset/tree/master/superset-frontend/packages/superset-ui-core
   - https://apache-superset.github.io/superset-ui/
   - Collection of packages that power the Apache Superset UI, and can be used to craft custom data applications that leverage a Superset backend
 

@@ -10,6 +10,8 @@ modified: 2021-01-04T16:18:39.667Z
 # guide
 
 - 团队协作时统一且易理解的架构抽象、功能隔离、插件设计更重要
+- 国内有很多快速开发框架如jeesite/jeecg，国外对应的是cms框架
+  - https://github.com/n370/awesome-headless-cms
 
 - ref
   - keyword: backend-for-frontend, spring-like, restful-api, node-framework

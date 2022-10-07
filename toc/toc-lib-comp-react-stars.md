@@ -15,12 +15,6 @@ modified: 2021-01-12T18:49:02.623Z
   - https://reach.tech/
   - The Accessible Foundation for React Apps and Design Systems
   - [Reach UI Philosophy](https://gist.github.com/ryanflorence/e5c794e6093d16a69fa88d2112a292f7)
-- Reakit/ariakit /Diego Haz
-  - /4.4kStar/MIT/202010/ts
-  - https://github.com/ariakit/ariakit
-  - https://github.com/reakit/reakit
-  - https://reakit.io/
-  - Toolkit for building accessible rich web apps with React.
 
 - ref
   - https://github.com/accessible-ui
@@ -61,9 +55,10 @@ modified: 2021-01-12T18:49:02.623Z
   - core无依赖，不依赖react
   - Any Virtual DOM solution (JavaScript, Preact, React, Vue, etc.)
 
-- https://github.com/tanvesh01/notion-components
-  - A React Component Library for the minimalists. 
-  - Highly inspired by Notion - The all-in-one workplace.
+- https://github.com/CJY0208/react-activation
+  - Vue 中 `<keep-alive />` 功能在 React 中的黑客实现
+  - 建议关注 React 18.x 中的官方实现 Offscreen  api
+  - 由于 `<Keeper />` 不会被卸载，故能实现缓存功能
 
 - https://github.com/nikxda/react-xray
   - https://react-xray.vercel.app/

@@ -30,20 +30,33 @@ modified: 2022-02-05T18:45:34.558Z
   - https://react-grid-layout.github.io/react-resizable/index.html
   - A simple React component that is resizable with a handle.
   - 依赖react-draggable
+
 - react-dnd /14.5kStar/MIT/202009/ts
   - https://github.com/react-dnd/react-dnd
   - https://react-dnd.github.io/react-dnd/examples/sortable/simple
   - core依赖于redux
   - Drag and Drop for React
   - 拖拽列表项的示例，没有显示底层被拖拽项的阴影
-- react-beautiful-dnd /26.2kStar/Apache2/202110/js
+- react-beautiful-dnd /26.2kStar/Apache2/202110/js/inactive
   - https://github.com/atlassian/react-beautiful-dnd
   - https://react-beautiful-dnd.netlify.app/
   - Beautiful and accessible drag and drop for lists with React
 
-- https://github.com/daybrush/moveable
+- neodrag /509Star/MIT/202210/ts
+  - https://github.com/PuruVJ/neodrag
+  - https://stackblitz.com/edit/typescript-wvnloa
+  - A vanilla JS draggable library
+  - Lightweight multi-framework libraries for draggability on the web.
+- dflex /1.4kSStar/MIT/202209/ts
+  - https://github.com/dflex-js/dflex
+  - https://www.dflex.dev/demo/lists/nested/
+  - built with vanilla Javascript and implemented an enhanced transformation mechanism to manipulate DOM elements. 
+  - It is by far the only Drag and Drop library on the internet that manipulates the DOM instead of reconstructing it and has its own scheduler and reconciler.
+  - Support strict transformation between containers.
+
+- moveable /4.8kStar/MIT/202009/ts
+  - https://github.com/daybrush/moveable
   - https://daybrush.com/moveable/
-  - /4.8kStar/MIT/202009/ts
   - https://daybrush.com/moveable/
   - Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable! Pinchable! Groupable! Snappable!
 

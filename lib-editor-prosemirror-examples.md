@@ -386,13 +386,14 @@ modified: 2022-08-18T16:57:46.405Z
     - If your use case for drag-n-drop behaviour is simple, it may be more worthwhile to remove react-beautiful-dnd's abstraction layer, and use the native implementation instead.
 # prosemirror-editors-for-design-system
 - https://github.com/cultureamp/rich-text-toolkit
+  - https://cultureamp.design/storybook/?path=/story/components-rich-text-editor-rich-text-editor--default
   - helpers for building a rich text editor (WYSIWYG) with ProseMirror.
   - If you only need basic rich text editing functions (bold, italics, lists, links)—take a look at the Kaizen Rich Text Editor, which uses these helpers to create a plug-and-play component.
   - https://github.com/cultureamp/kaizen-design-system/tree/master/packages/rich-text-editor
-  - https://cultureamp.design/storybook/?path=/story/components-rich-text-editor-rich-text-editor--default
 
 - https://github.com/equinor/fusion-components/tree/master/src/customElements/components/markdown-editor
   - https://equinor.github.io/fusion-components/?path=/story/general-markdown-editor--default
+  - 依赖prosemirror、prosemirror-markdown、lit
 
 - https://github.com/becomesco/cms-ui
   - 依赖tiptap.v2、vue3、markdown-it

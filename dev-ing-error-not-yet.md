@@ -9,6 +9,13 @@ modified: 2021-03-29T19:29:15.528Z
 
 # pieces
 
+- ## What does status=canceled for a resource mean in Chrome Developer Tools?
+- https://stackoverflow.com/questions/12009423
+
+- [Get cancelled xhr Status in javascript](https://stackoverflow.com/questions/52033901)
+  - when making the xhr request & in transferFailed function, you will get this.response is null
+  - 请求结果为null时可能出现此问题 ？ 
+
 - ## ubuntu The following packages have been kept back:
 - https://askubuntu.com/questions/1399734
 
@@ -22,9 +29,10 @@ modified: 2021-03-29T19:29:15.528Z
 
 - ## 编译latex生成的pdf文档中参考文献的链接为什么有cyan色的边框
   - 因为网页上pdf是canvas显示，下面的文字在canvas上有个默认色，当选中时又有一个dom颜色
+
 - ## input设置`border: none; `后，仍然显示边框的问题
   - 排查失败
-  - MuiPickersUtilsProvider   DatePicker
+  - MuiPickersUtilsProvider DatePicker
   - . MuiInputBase-input{ border: 0; }
   - https://codesandbox.io/s/material-demo-forked-fg5xk?file=/demo.js
 
