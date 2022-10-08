@@ -7,8 +7,13 @@ modified: 2021-10-14T05:03:19.234Z
 
 # lib-editor-prosemirror-collab
 
-# guide
+# not-yet
 
+- ❓️ 基于轮询的服务端和基于socket的服务端示例，是如何决定接收一个op，然后拒绝其他op的
+  - If two editors make changes concurrently, they will both go to this authority with their changes. 
+  - The authority will accept the changes from one of them, and broadcast these changes to all editors. 
+  - The other's changes will not be accepted, and when that editor receives new changes from the server, it'll have to rebase its local changes on top of those from the other editor, and try to submit them again.
+# guide
 - [Collaborative Editing in CodeMirror_202005](https://marijnhaverbeke.nl/blog/collaborative-editing-cm.html)
 - To recap, ProseMirror uses something similar to OT, but without a converging transformation function. 
   - It can transform changes relative to each other, but not in a way that guarantees convergence. 
@@ -16,9 +21,9 @@ modified: 2021-10-14T05:03:19.234Z
   - I didn't have the courage to try and define a converging transformation function there. 
   - When a client receives conflicting remote changes, it first undoes all its local pending changes, applies the remote changes, and then the transformed form of its local changes. 
   - This means that everybody ends up applying the changes in the same order, so convergence is trivial.
-# examples
+# blogs
 
-## [Collaborative text editor with ProseMirror and a syncing database](https://emergence-engineering.com/blog/prosemirror-sync-1)
+## [Collaborative text editor with ProseMirror and a syncing database](https://emergence-engineering.com/blog/prosemirror-sync-1_202007)
 
 - [blog src code](https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1)
 

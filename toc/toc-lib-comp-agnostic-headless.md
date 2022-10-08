@@ -42,6 +42,7 @@ modified: 2021-04-11T06:17:51.318Z
   - Unstyled, accessible components for building high‑quality design systems and web apps in React.
   - https://github.com/radix-ui/design-system
     - https://design-system.modulz-deploys.com/
+    - 使用纯.css样式文件，未使用自研的stitches
     - Design system maintained and used by WorkOS.
     - Built with Stitches and Radix UI Primitives.
   - https://github.com/radix-ui/icons

@@ -90,7 +90,7 @@ modified: 2021-01-17T06:18:28.855Z
   - https://notistack.com/
   - customizable notification snackbars (toasts) that can be stacked on top of each other
 # examples-menu-toolbar
-- toolbar
+- toolbar/button-group
   - https://www.radix-ui.com/docs/primitives/components/toolbar
   - https://carbondesignsystem.com/patterns/text-toolbar-pattern/
   - https://github.com/carbon-design-system/carbon/tree/v10/packages/react/src/components/Toolbar
