@@ -19,24 +19,30 @@ modified: '2022-10-04T23:32:30.824Z'
   - dox
   - paper-editor
 # collab-starter-simplified
-- 👉🏻️ 基于y-prosemirror实现协作的示例
+
+## 基于y-prosemirror实现协作的示例
+
 - https://github.com/alihesari/prosemirror-demo
   - https://demos.yjs.dev/prosemirror/prosemirror.html
   - collaborative with Yjs & y-prosemirror + y-websocket
 - https://github.com/ocavue/y-prosemirror-playground
   - 依赖 yjs, y-webrtc, y-prosemirror
-- https://github.com/nandit123/crdt-text-editor-2
-  - https://github.com/FleekHQ/crdt-text-editor
-  - A p2p decentralized text-editor based on CRDTs
-  - 依赖y-prosemirror、lit-html
 
-- 👉🏻️ 基于prosemirror-collab + websocket实现协作的示例
+## 基于prosemirror-collab + websocket实现协作的示例
+
 - https://github.com/mehri-amin/meditor
   - 根据官方文档的最精简示例，基于socket.io而不是轮询
+- https://github.com/raydwaipayan/collaborate
+  - 官方示例client/server代码未改动，替换了启动代码
+  - an project to build a multi user online editor based on ProseMirror
+- https://github.com/Yxwww/prosemirror-collab-example
+  - 官方示例client/server代码未改动，替换了启动代码
+  - Stripped out prosemirror website collab example into a stand alone environment for learning and toying around.
 - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example/tree/master/packages/api-collab
   - an example collaboration server based on prosemirror-collab
 
-- 👉🏻️ tiptap.v1、vue2 实现协作的示例
+## tiptap.v1、vue2 实现协作的示例
+
 - https://github.com/dekunma/tiptap-collaboration
   - 包含client+server
 - https://github.com/powlaa/text-editor
@@ -48,6 +54,11 @@ modified: '2022-10-04T23:32:30.824Z'
 
 - https://github.com/idealjs/chao-feng
   - 依赖 yjs
+
+- https://github.com/nandit123/crdt-text-editor-2
+  - https://github.com/FleekHQ/crdt-text-editor
+  - A p2p decentralized text-editor based on CRDTs
+  - 依赖y-prosemirror、lit-html
 
 - https://github.com/pamphlets/editorial
   - https://github.com/pamphlets/pamphlet /pm-editor
@@ -90,12 +101,10 @@ modified: '2022-10-04T23:32:30.824Z'
    - https://github.com/mms-gianni/prosemirror-collaborationserver
     - https://github.com/mms-gianni/tiptap-collaboration-demo
     - 依赖 tiptap.v1、vue2
-
 # collab-using-database
 - https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1
   - using a sync database ( PouchDB, but it works with firebase ) as a communication layer between client and server.
   - [Article / code about prosemirror collab & PouchDB](https://discuss.prosemirror.net/t/article-code-about-prosemirror-collab-pouchdb/3045)
-
 # collab-examples
 - https://github.com/dlemrry/editor
   - real time collaborative documents using web socket
@@ -103,13 +112,6 @@ modified: '2022-10-04T23:32:30.824Z'
   - 展示了 quill、prosemirror、draftjs 几个示例
   - 提供了client+server，可作为通用协作方案
 # more-collab
-- https://github.com/Yxwww/prosemirror-collab-example
-  - Stripped out prosemirror website collab example into a stand alone environment for learning and toying around.
-  - 官方示例client/server代码未改动，替换了启动代码
-- https://github.com/raydwaipayan/collaborate
-  - an project to build a multi user online editor based on ProseMirror
-  - 官方示例client/server代码未改动，替换了启动代码
-
 - https://github.com/sakheli/sync-doc
   - 未实现实时协作
 

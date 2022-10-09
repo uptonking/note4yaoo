@@ -20,7 +20,7 @@ modified: 2022-09-05T03:48:18.133Z
 
 ## [basic example](https://prosemirror.net/examples/basic/)
 
-- prosemirror-example-setup package creates an array of plugins
+- `prosemirror-example-setup` package creates an array of plugins
 - These plugins are created by the example setup:
   - Input rules, which are input macros that fire when certain patterns are typed. 
     - In this case, it is set up to provide things like smart quotes and some Markdown-like behavior, such as starting a blockquote when you type “> ”.
@@ -53,6 +53,9 @@ modified: 2022-09-05T03:48:18.133Z
   - u can use a **plugin view** to create a view component tied to the editor's life cycle.
 
 ## [Upload handling](https://prosemirror.net/examples/upload/)
+
+- prosemirror图片上传的示例，上传较大图片如90k时点击图片会出现卡顿，但官方示例无此问题
+  - 最后发现是自己添加pm-dev-toolkit导致的
 
 - 在实现上传图片demo时，发现图片上传完成后，从点击图片到点击的图片出现蓝框即选中状态，耗时很长，体验很卡
   - 通过浏览器perf面板分析调用栈定位到问题

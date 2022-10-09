@@ -11,7 +11,16 @@ modified: 2021-04-28T20:54:58.126Z
 
 # pieces
 
-## 
+## npm idealTree 很慢的排查
+
+```shell
+DEBUG=* npm install --legacy-peer-deps  --loglevel silly
+```
+
+```shell
+--noproxy 127.0.0.1:8889
+--noproxy registry.npmmirror.com
+```
 
 ## prosemirror官方示例，footnote弹框打开后，其中所有文本出现浏览器默认选区蓝色背景色
 

@@ -23,7 +23,7 @@ modified: 2021-07-14T15:36:09.702Z
 
 
 - https://github.com/yjs/yjs-demos/tree/main/atlaskit
-  -  Atlaskit editor collaborative with Yjs & y-prosemirror. 
+  - Atlaskit editor collaborative with Yjs & y-prosemirror. 
 
 - https://github.com/jure/pubsweet-blogger/tree/master/server/component-atlaskit-collab
   - This is a PubSweet component that provides a collaboration server for the Atlaskit editor, intially assembled together from ProseMirror's collab example 
