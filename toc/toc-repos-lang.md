@@ -15,8 +15,9 @@ modified: 2020-11-03T06:56:19.448Z
 - https://github.com/Tencent/rapidjson
   - /9.8kStar/MIT/202008
   - JSON parser/generator for C++ with both SAX/DOM style API
+  - https://github.com/miloyip/json-tutorial
+    - 从零开始的JSON库教程，教程对象适合学习过基本 C/C++ 
   - ref
-    - https://github.com/miloyip/json-tutorial
     - https://github.com/miloyip/nativejson-benchmark
 - https://github.com/yandex/ClickHouse
   - /12.3kStar/Apache2/202009

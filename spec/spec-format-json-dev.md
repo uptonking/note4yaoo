@@ -8,7 +8,14 @@ modified: 2021-02-27T15:31:23.130Z
 # spec-format-json-dev
 
 # guide
+# json-parser/generator
 
+- https://github.com/Tencent/rapidjson
+  - JSON parser/generator for C++ with both SAX/DOM style API
+ - https://github.com/miloyip/json-tutorial
+    - 从零开始的JSON库教程，教程对象适合学习过基本 C/C++
+
+- [基于状态机的JSON解析](https://juejin.cn/post/7032491400516075557)
 # discuss
 - ## [JSON 可以替代 XML，为什么网页不用 JSON 格式来写呢？](https://www.zhihu.com/question/373946861)
 - XML 和 JSON 的复杂度完全不在一个数量级上。JSON 的 ECMA-404 规范，其 PDF 内容部分仅 4 页。而 XML 1.0 规范 则有整整 50 多页。

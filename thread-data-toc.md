@@ -18,7 +18,11 @@ modified: 2021-01-31T08:40:11.675Z
 
 - ## 
 
-- ## 
+- ## The Most Visited Website in Every Country 
+- https://twitter.com/decohack/status/1579305267921309697
+  - 网络托管提供商 @Hostinger 绘制了一份全球每个国家/地区访问量最大的网站地图，维基百科是 43 个国家/地区访问量最大的网站。
+  - 另外，没有中国的数据。
+  - [The Most Visited Website in Every Country (That Isn’t A Search Engine)](https://www.hostinger.com/tutorials/the-most-visited-website-in-every-country)
 
 - ## arXiv dataset and metadata of 1.7M+ scholarly papers across STEM
 - https://www.kaggle.com/datasets/Cornell-University/arxiv

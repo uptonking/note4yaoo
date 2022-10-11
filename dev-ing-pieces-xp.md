@@ -11,7 +11,24 @@ modified: 2021-04-28T20:54:58.126Z
 
 # pieces
 
-## npm idealTree 很慢的排查
+## 
+
+## 
+
+## ide总是添加过多的分号 semicolon
+
+- 排查的方向一开始就错了，不是eslint造成的
+  - 因为关闭ide后执行eslint fix 是通过的，这也可作为一种变通方案
+- 确定原因是prettier
+# webpack: ReferenceError: Cannot access x before initialization
+- 临时方案，禁用webpack hmr热加载
+  - 使用插件提前检查并处理 https://github.com/aackerman/circular-dependency-plugin
+
+- https://github.com/pmmmwh/react-refresh-webpack-plugin/issues/190
+
+- To be clear, this is not a problem that only exists on our side - it is a limitation of HMR of Webpack (or potentially any other bundlers that creates a module graph). When a graph needs to be created and there exists cyclic references, the order of which node is created first can be nondeterministic, which means while your app could work in production, it will not work in development with HMR enabled.
+
+## npm idealTree 很慢 
 
 ```shell
 DEBUG=* npm install --legacy-peer-deps  --loglevel silly

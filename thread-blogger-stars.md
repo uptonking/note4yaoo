@@ -14,6 +14,9 @@ modified: 2021-02-09T19:27:07.664Z
 
 - 在开源项目comments多的issue里面，很容易找到项目难点和业务使用场景
   - 甚至直接找到其他扩展开发者，以及他们的插件、轮子
+# pm-产品经理
+- 侯乔 兴趣是生产力工具
+  - https://houjoe.notion.site/
 # d3-notebook
 - Taras Novak
   - https://github.com/RandomFractals
