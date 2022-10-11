@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-community-pm-products
 tags: [community, editor, pm, products, prosemirror]
-created: '2022-09-01T18:51:39.578Z'
-modified: '2022-10-03T10:41:14.480Z'
+created: 2022-09-01T18:51:39.578Z
+modified: 2022-10-03T10:41:14.480Z
 ---
 
 # lib-editor-prosemirror-community-pm-products

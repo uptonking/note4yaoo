@@ -17,7 +17,16 @@ modified: 2020-12-22T12:42:14.745Z
   - 录屏时显示键盘按键，类似screenkey，但wayland不支持
   - 腾讯会议不支持wayland
 
+- 查看已安装
+  - apt list --installed
+  - snap list / snap list --all 包含旧版本
+  - flatpak list / flatpak list --app 只包含app，不包含runtime
+
+
+
 ## os-starter
+
+
 
 - [装了5次Ubuntu，告诉你win10+Ubuntu双系统的正确打开方式](https://zhuanlan.zhihu.com/p/101307629)
 
@@ -40,6 +49,7 @@ modified: 2020-12-22T12:42:14.745Z
     - sudo flatpak remote-add --if-not-exists flathub https://mirror.sjtu.edu.cn/flathub/flathub.flatpakrepo
     - 应用图标不可见的问题
       - /var/lib/flatpak/app/*application_name*/current/active/files/share/applications 拷贝到 /usr/share/applications
+      - /var/lib/flatpak/app/org.mozilla.firefox/current/active/export/share/applications/
 
 - ubuntu开机自动挂载win-ntfs硬盘
   - [ubuntu 配置/etc/fstab参数实现开机自动挂载硬盘](https://blog.csdn.net/u010632165/article/details/89597522)
@@ -139,6 +149,14 @@ sudo snap refresh
 sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
 ```
 
+- [Pin your favorite apps to the dash](https://help.ubuntu.com/stable/ubuntu-help/shell-apps-favorites.html.en)
+  - Right-click the application icon and select Add to Favorites.
+  - Alternatively, you can click-and-drag the icon into the dash.
+  - 直接在spotlight搜索界面将图标拖到dock
+
+- [Adding A Custom 'Open With' Program In Ubuntu 20.04](https://blog.robertelder.org/custom-open-with-program-ubuntu/)
+  - 方法很简单，只要将.desktop文件复制到指定位置即可，直接支持设置default open
+
 ## software
 
 - 常用软件都可以直接在ubuntu官方包repository找到
@@ -171,6 +189,10 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
   - [Typora软件打不开了](https://www.csdn.net/tags/MtTaMgzsNDE4OTgzLWJsb2cO0O0O.html)
     - https://download.typora.io/linux/typora_0.9.98_amd64.deb
     - https://download.typora.io/windows/typora-update-x64-1213.exe
+
+- screenkey不支持wayland的解决方案
+  - GDK_BACKEND=x11 screenkey
+  - [Missing support for wayland](https://gitlab.com/screenkey/screenkey/-/issues/61)
 
 ## dev
 

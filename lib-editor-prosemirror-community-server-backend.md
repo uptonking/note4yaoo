@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-community-server-backend
 tags: [backend, community, prosemirror]
-created: '2022-10-03T10:14:22.925Z'
-modified: '2022-10-03T10:15:05.904Z'
+created: 2022-10-03T10:14:22.925Z
+modified: 2022-10-03T10:15:05.904Z
 ---
 
 # lib-editor-prosemirror-community-server-backend

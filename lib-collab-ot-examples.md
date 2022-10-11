@@ -1,8 +1,8 @@
 ---
 title: lib-collab-ot-examples
 tags: [collaboration, examples, ot]
-created: '2022-10-02T20:50:54.901Z'
-modified: '2022-10-02T20:51:30.444Z'
+created: 2022-10-02T20:50:54.901Z
+modified: 2022-10-02T20:51:30.444Z
 ---
 
 # lib-collab-ot-examples

@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-examples-collab
 tags: [collaboration, examples, prosemirror]
-created: '2022-10-04T23:32:13.096Z'
-modified: '2022-10-04T23:32:30.824Z'
+created: 2022-10-04T23:32:13.096Z
+modified: 2022-10-04T23:32:30.824Z
 ---
 
 # lib-editor-prosemirror-examples-collab

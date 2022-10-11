@@ -1,8 +1,8 @@
 ---
 title: toc-office-doc-styling-reading-printing
 tags: [documentation, read, styling, template, toc]
-created: '2020-10-05T09:49:50.474Z'
-modified: '2022-10-05T04:57:38.647Z'
+created: 2020-10-05T09:49:50.474Z
+modified: 2022-10-05T04:57:38.647Z
 ---
 
 # toc-office-doc-styling-reading-printing

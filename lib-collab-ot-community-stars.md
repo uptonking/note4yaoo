@@ -1,8 +1,8 @@
 ---
 title: lib-collab-ot-community-stars
 tags: [collaboration, community, ot]
-created: '2022-10-02T20:53:52.128Z'
-modified: '2022-10-02T20:54:07.621Z'
+created: 2022-10-02T20:53:52.128Z
+modified: 2022-10-02T20:54:07.621Z
 ---
 
 # lib-collab-ot-community-stars

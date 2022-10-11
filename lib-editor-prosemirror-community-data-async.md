@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-community-data-async
 tags: [community, data-model, prosemirror]
-created: '2022-09-05T03:23:36.125Z'
-modified: '2022-10-03T10:47:44.104Z'
+created: 2022-09-05T03:23:36.125Z
+modified: 2022-10-03T10:47:44.104Z
 ---
 
 # lib-editor-prosemirror-community-data-async

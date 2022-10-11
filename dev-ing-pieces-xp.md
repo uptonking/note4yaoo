@@ -13,7 +13,12 @@ modified: 2021-04-28T20:54:58.126Z
 
 ## 
 
-## 
+## yjs的源码，各子文件夹都使用import顶层./internals文件中的导出，极易导致循环依赖
+
+- 很难解决循环依赖问题，耗费时间过多，对A文件import B, B文件又import A，解决需要资源过多
+  - 临时方案是直接使用npm打包分发的.mjs文件，可能会丢失注释
+
+- 可借助webpack circular-dependency-plugin插件尽早发现和解决问题
 
 ## ide总是添加过多的分号 semicolon
 
