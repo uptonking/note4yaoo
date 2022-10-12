@@ -27,10 +27,11 @@ modified: 2022-10-05T04:57:38.647Z
 
 - editor相关设计
   - https://www.radix-ui.com/docs/primitives/components/toolbar
+    - radix-ui支持自家workos产品
+  - https://jetbrains.github.io/ring-ui/master/?path=/story/components-button-toolbar--button-toolbar
   - https://v7-react.carbondesignsystem.com/?path=/story/deprecated-toolbar--default
   - https://react.carbondesignsystem.com/?path=/story/experimental-unstable-menu-contextmenu--context-menu
   - https://szhsin.github.io/react-menu/
-  - https://jetbrains.github.io/ring-ui/master/?path=/story/components-button-toolbar--button-toolbar
 
 - https://editorjs.io/
   - https://github.com/codex-team/editor.js/blob/next/src/styles/ui.css

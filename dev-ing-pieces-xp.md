@@ -20,6 +20,8 @@ modified: 2021-04-28T20:54:58.126Z
 
 - 可借助webpack circular-dependency-plugin插件尽早发现和解决问题
 
+- 手动补充ts类型有时就是方向错了不该做，工具根据jsdoc自动打包出来的类型定义比手写的更好
+
 ## ide总是添加过多的分号 semicolon
 
 - 排查的方向一开始就错了，不是eslint造成的

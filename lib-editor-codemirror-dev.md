@@ -9,6 +9,9 @@ modified: 2021-05-06T09:38:31.520Z
 
 # guide
 
+- 代码编辑器体验
+  - 在github页面，每行代码的行号是确定的，不会显示软换行
+    - 方便实现高亮搜索结果、查找引用
 
 - resources
   - [Ace, CodeMirror, and Monaco: A Comparison of the Code Editors You Use in the Browser__202112](https://blog.replit.com/code-editors)

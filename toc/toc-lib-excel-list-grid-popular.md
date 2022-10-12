@@ -341,6 +341,10 @@ modified: 2022-08-21T10:02:27.788Z
   - online excel built with canvas
   - 半成品玩具
 
+
+- x-sheet /50Star/MPL/202209/js/luckysheet开发者
+  - https://github.com/eiji-th/x-sheet
+  - 高性能 web javaScript 电子表格
 - OpenWebSheet /MIT/14Star/202003/ts/vue/inactive
   - https://github.com/SiamandMaroufi/OpenWebSheet
   - https://siamandmaroufi.github.io/OpenWebSheet/
