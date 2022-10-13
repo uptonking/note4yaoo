@@ -140,3 +140,6 @@ modified: 2022-10-13T07:59:45.878Z
 
 - [Operational Transformation, the real-time collaborative editing algorithm](https://srijancse.medium.com/operational-transformation-the-real-time-collaborative-editing-algorithm-bf8756683f66)
   - In this post, I would be digging deep into the transformation function, how clients wait for acknowledgement from the server before sending more operations and the compound operational transformation.
+
+- [Operational Transformations as an algorithm for automatic conflict resolution](https://medium.com/coinmonks/operational-transformations-as-an-algorithm-for-automatic-conflict-resolution-3bf8920ea447)
+  - 示例流程图较多

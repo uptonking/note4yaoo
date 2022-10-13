@@ -345,6 +345,13 @@ modified: 2022-08-21T10:02:27.788Z
 - x-sheet /50Star/MPL/202209/js/luckysheet开发者
   - https://github.com/eiji-th/x-sheet
   - 高性能 web javaScript 电子表格
+- simple-sheet /89Star/MIT/202208/ts
+  - https://github.com/lvming6816077/simple-sheet
+  - https://www.nihaoshijie.com.cn/mypro/simple-sheet/index.html
+  - 高性能（使用canvas进行渲染）
+  - React.js+Mobx+TypeScript
+  - 支持行、列宽度高度、自动筛选视图、单元格样式和格式设置等
+  - [【simple-sheet】前端在线Sheet文档技术解析](https://juejin.cn/post/7125360490347397127)
 - OpenWebSheet /MIT/14Star/202003/ts/vue/inactive
   - https://github.com/SiamandMaroufi/OpenWebSheet
   - https://siamandmaroufi.github.io/OpenWebSheet/

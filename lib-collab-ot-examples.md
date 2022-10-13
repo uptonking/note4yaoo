@@ -9,23 +9,53 @@ modified: 2022-10-02T20:51:30.444Z
 
 # guide
 
-- [I'm looking for a library that would allow me to synchronize text in real-time between multiple users (ala Google Docs).](https://stackoverflow.com/questions/2043165)
+- [am-editor 协同编辑配置](https://editor.aomao.com/zh-CN/config/ot)
+  - 编辑器基于 sharedb 与 json0 协议交互协作操作数据
+  - 客户端（编辑器）通过 WebSocket 与服务端建立长连接通信，编辑器每次的 dom 结构变更都将转换为json0格式操作命令（ops）发送到服务端并修改服务端数据后再分发给各个客户端
+  - sharedb 会把每次客户端与服务端的操作数据保存为日志，并且在每次操作后都会把最新生成的文档数据保留下来。这些操作都在 ot-server 中进行
+
+- [协同编辑OT算法server端实现原理](http://hupengfoot.github.io/2019/01/08/OT-server.html)
+  - [协同编辑OT算法client端实现原理](http://hupengfoot.github.io/2019/01/08/OT-client.html)
 # popular
 - https://github.com/Progyan1997/Operational-Transformation
   - http://operational-transformation.github.io/
   - A collection of Algorithms to Synchronise changes across multiple clients using Operational Transformation
 # ot-rewrite
-- https://github.com/vitotafuni/JSOTTEST
-  - http://vitotafuni.github.io/jsottest/
-  - a simple simulator for Operational Transformation algorithms written in JavaScript.
-
 - https://github.com/Operational-Transformation/ot.js /js
   - http://operational-transformation.github.io/
   - Visualization of OT with a central server
   - Requires CodeMirror >= 4.0
   - [Operational Transformation in JavaScript](http://operational-transformation.boltdoggy.com/ot-for-javascript.html)
+- ref
+  - https://github.com/Xing-Chuan/ot.js-demo
+  - https://github.com/DonaldY/ot.js-demo
+    - [ot.js demo解析](https://juejin.cn/post/7027113667107749918)
   - https://github.com/YingshanDeng/ot.js-demo
   - https://github.com/abucraft/operational-transform
+  - [OT 算法的 transform 源码走读](https://nicodechal.github.io/2020/08/10/ot-js-transform-analysis/)
+
+- https://github.com/GarinZ/collaborative-textarea
+  - 支持协作编辑的文本框
+  - 依赖 reduxjs/toolkit、diff-match-patch、ot.js源码
+  - A text area supporting real-time collaborative editing plain text. And display all the online attendees.
+  - [如何实现协同编辑 - 理解Operational Transformation](https://garinzhang.com/coding/how-to-implemente-collaborative-editing-understanding-operational-transformation.html)
+
+- https://github.com/srtucker22/text-operation
+  - Classes for Rich Text Operations using Operational Transformation
+  - This package is heavily based on firepad's OT operations, which were in turn based on ot.js. 
+  - This package is a conversion of their masterful work into Typescript + ES6
+
+- https://github.com/cricklet/operational-transform-demo /201702
+  - https://cricklet.github.io/sites/blue/index.html
+  - 包含服务端代码
+  - an implementation/demo of collaborative text editing via operational transforms.
+
+- https://github.com/substance/operator /201402
+  - Operational Transformation for strings, arrays and objects.
+
+- https://github.com/JoshData/jot
+  - This module implements operational transformation (OT) on a JSON data model, written in JavaScript for use either in node.js or browsers.
+  - Similar work: ShareDB, ottypes/json0, Apache Wave
 
 - https://github.com/ottypes/text-unicode /ts
   - This OT type can be used to edit plaintext documents, like sourcecode or markdown. 
@@ -58,17 +88,16 @@ modified: 2022-10-02T20:51:30.444Z
     - Set if null (object insert with first writer wins semantics)
     - Efficient list insert-of-many-items
 
+- https://github.com/vitotafuni/JSOTTEST
+  - http://vitotafuni.github.io/jsottest/
+  - a simple simulator for Operational Transformation algorithms written in JavaScript.
+
 - https://github.com/yiminghe/ot-engine
   - https://ot-engine-rich-text.herokuapp.com/
   - Operational transformation engine
-  - 示例使用quill
+  - 示例使用quill，不依赖sharedb
   - support presence(cursors)
   - support local undo/redo
-
-- https://github.com/josephg/appstate
-  - This is a little toy prototype exploring the idea that each client shares a single JSON object with the server. 
-  - Both the client and the server can read & edit the session object using OT. 
-  - The object has all the data the client needs to know to run the app.
 
 - https://github.com/tOkeshu/ot.js /js/2013
   - ot.js is a pure JavaScript library to work with operational transformations.
@@ -76,17 +105,23 @@ modified: 2022-10-02T20:51:30.444Z
 - https://github.com/otjs/ot /js
   - A line-based operational transform algorithm
 
-- https://github.com/cricklet/operational-transform-demo
-  - http://cricklet.github.io/sites/blue/index.html
-  - an implementation/demo of collaborative text editing via operational transforms.
+- https://github.com/fitzgen/operational-transformation-example /2013
+  - an implementation of a real time collaborative document editor which uses my Operational Transformation library.
+  - [Operational Transformation: An Introduction_2011](https://fitzgeraldnick.com/2011/03/26/operational-transformation-an-introduction.html)
+  - [Operational Transformation Part 2: Operations](https://fitzgeraldnick.com/2011/04/05/operational-transformation-operations.html)
   - https://github.com/fitzgen/operational-transformation
 
-- https://github.com/fitzgen/operational-transformation-example
-  - an implementation of a real time collaborative document editor which uses my Operational Transformation library.
+- https://github.com/gatlin/otis
+  - another operational transformation library for JSON values.
+  - 依赖robot3，A functional, immutable Finite State Machine library
+  - https://github.com/gatlin/cauldron
+    - this is a nestjs based operational transform service for arbitrary json data, using my library otis.
 
 - https://github.com/rclarey/simple-ot
   - A simple operational transform library that uses the domain-agnostic GOTO control algorithm.
+  - For an example application using this library, see cloudcode
   - https://github.com/rclarey/cloudcode
+    - developing and deploying a small Deno backend (see server.ts).
 
 - https://github.com/kizahasi/ot-string
   - Operational Transfomation library for string.
@@ -98,16 +133,27 @@ modified: 2022-10-02T20:51:30.444Z
 - https://github.com/hanupratap/Operational-Transform
   - Operational Transform algorithm used by google Docs
   - https://github.com/kshitij86/operational_transform
-# ot-examples
-- https://github.com/GarinZ/collaborative-textarea
-  - 支持协作编辑的文本框
-  - A text area supporting real-time collaborative editing plain text. And display all the online attendees.
-  - 依赖 reduxjs/toolkit、iff-match-patch
-  - [如何实现协同编辑 - 理解Operational Transformation](https://garinzhang.com/coding/how-to-implemente-collaborative-editing-understanding-operational-transformation.html)
 
+- https://github.com/vaziliybober/operlib
+  - An operational transformation library
+
+- https://github.com/BrotherJing/scalable-ot
+  - A scalable concurrent collaboration framework based on Operational Transformation (OT).
+  - 前端依赖 ot-json0、ot-text、google-protobuf
+  - Clients send operations through API.
+  - Operations are pushed into MQ, partitioned by document id.
+  - OT server receives operations of same document sequentially and performs conflict solving.
+  - Broadcast server sends conflict-free operations to clients.
+  - Conflict-free operations are pushed into another MQ(or db stream), trigger a consumer which apply them on document snapshot sequentially.
+# ot-examples
 - https://github.com/YingshanDeng/SharedPen
   - A (web-based) rich-text real-time collaborative editor using CodeMirror and ot.js
   - [SharedPen 之 Operational Transformation](http://objcer.com/2018/03/05/SharePen-Operational-Transformation/)
+
+- https://github.com/josephg/appstate /201407
+  - This is a little toy prototype exploring the idea that each client shares a single JSON object with the server. 
+  - Both the client and the server can read & edit the session object using OT. 
+  - The object has all the data the client needs to know to run the app.
 # ot-utils
 - https://github.com/kbadk/json0-ot-diff
   - Finds differences between two JSON object and generates operational transformation (OT) operations for transforming the first object into the second according to the JSON0 OT Type.
@@ -116,3 +162,5 @@ modified: 2022-10-02T20:51:30.444Z
   - a reference implementation for OT protocol described introduced in Google Wave and described in their documentation
 - https://github.com/Fleischers/OT_example /java
   - simple local console implementation of Operational Transformation
+# more-ot
+- [I'm looking for a library that would allow me to synchronize text in real-time between multiple users (ala Google Docs).](https://stackoverflow.com/questions/2043165)
