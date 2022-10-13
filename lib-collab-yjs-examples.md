@@ -21,6 +21,21 @@ modified: 2022-09-21T15:47:41.340Z
   - There is no authentication mechanisms nor additional backend logic implemented
   - All the rooms are publicly accessible (only protected by a random unique id, thanks nanoid)
   - Since a room is basically a shared document, any user could eventually rewrite the whole document by writing their own client application
+# yjs-bindings
+- https://github.com/joebobmiles/yjson
+  - YJSON wraps yjs to make using Yjs as simple as working with Plain Data Objects.
+
+- https://github.com/sanalabs/collaboration-kit
+  - packages that facilitate working with arbitrary JSON structures in Yjs
+  - @sanalabs/y-redux Two-way sync of Redux and Yjs
+- ref-redux-yjs
+  - [Yjs Redux binding](https://discuss.yjs.dev/t/yjs-redux-binding/755)
+  - https://github.com/lscheibel/redux-yjs-bindings
+
+- https://github.com/joebobmiles/zustand-middleware-yjs
+  - Zustand middleware that enables sharing of state between clients via Yjs.
+- ref-zustand-yjs
+  - https://github.com/tandem-pt/zustand-yjs
 # yjs-examples
 - https://github.com/ToolJet/yjs-crdt-game
   - [Building a realtime multiplayer game using React & Yjs + y-webrtc](https://blog.tooljet.com/multiplayer-tic-tac-toe-using-react-crdt-yjs/)

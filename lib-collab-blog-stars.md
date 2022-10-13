@@ -9,7 +9,44 @@ modified: 2022-04-05T10:10:22.091Z
 
 # guide
 
-# [To OT or CRDT, that is the question_202001](https://www.tiny.cloud/blog/real-time-collaboration-ot-vs-crdt/)
+- ## Collaborative Editing in ProseMirror__201508
+- https://news.ycombinator.com/item?id=10002553
+- Hi! Joseph Gentle here, author of ShareJS.
+- You're right about OT - it gets crazy complicated if you implement it in a distributed fashion. But implementing it in a centralized fashion is actually not so bad. Its the perfect choice for google docs.
+- Here is my implementation of OT for plain text
+  - https://github.com/ottypes/text
+  - https://github.com/josephg/appstate
+  - Note that its only 400 lines of javascript, with liberal comments. 
+  - To actually use OT code like that, you need to do a little bookkeeping. 
+  - Its nowhere near as bad as you suggest.
+- Yes, but that implementation deals only with plain text. The complexity seems to ramp up pretty quickly as you support more types of operations, and since extendability is an important concern for my project, I decided to avoid OT.
+# [tinymce: To OT or CRDT, that is the question_202001](https://www.tiny.cloud/blog/real-time-collaboration-ot-vs-crdt/)
+- At a very high level, this is what we're dealing with:
+  - OT relies on an active server connection (not quite correct but we'll get to that in a moment) to coordinate and guarantee all clients operate correctly.
+  - CRDT is capable of working peer-to-peer with end-to-end encryption; if a server is used at all it only needs to coordinate connections between clients. It is resilient to transient network connections. It even works if clients go offline for a period of time, make changes, and synchronise when the network returns.
+- There is a reason Google, Microsoft, CKSource and many others depend on OT. 
+  - Tiny has chosen to also build our solution around OT; 
+
+- In OT, every user action is broken down into one or more operations. 
+  - These operations are transmitted between clients along with their baseline reference; 
+  - if two users perform actions at the same time, incoming operations must be transformed to include the local operations that have happened since that baseline. 
+  - They are then applied locally and form the new baseline.
+  - This constant transformation of operations turned out to have too many edge cases where clients were found to not produce the same baseline (the "wrong" papers above). 
+  - When that happens, the clients will never converge on the same result and break the fundamental assumption of collaboration.
+
+- Only two reliable forms of OT have survived the test of time
+- Server-based OT
+  - splitting multi-user collaboration into groups where each client pairs individually with the server. 
+  - The server coordinates the document state and operation list to ensure that transformation only ever occurs within these pairs, thus avoiding the complexity (and edge cases) of three-way transforms.
+- OT with what's known as "transform property 2". 
+  - CP2/TP2 finally gave the community a provably correct multi-way transformation algorithm, but it turned out to be so complex that very few data structures have working TP2 implementations.
+
+- The magic of CRDT is due in large part to how it breaks down data into such small pieces that it generally doesn't need to transform the change itself, only the position of the change. 
+  - For example, text data collaboration with CRDT treats every character as a separate entity.
+- The limitations of CRDT are similar to what happened when the TP2 restriction was proposed for OT; the difficulty is in the data type. 
+  - It is not as difficult as TP2 - there is a working OT+TP2 for JSON, but my impression is the CRDT implementation was easier to achieve - but it's still only appropriate for simple use cases.
+- When it comes to more advanced structures such as rich text editing, the crux of the problem with CRDTs is user intent. 
+
 - Conclusions
 - CRDT is the holy grail of collaboration, it's an active area of research, and the prospect of peer-to-peer editing with end-to-end encryption is an exciting one. 
   - The technology isn't ready for our needs yet, but I believe in the future some incredible products will be made possible. 
@@ -28,3 +65,43 @@ modified: 2022-04-05T10:10:22.091Z
   - A layer that loads TinyMCE configuration and content to set up and compose the low-level features into a working editor
   - Collaboration control (transforms, cursors, server interaction)
   - Hooks in the TinyMCE core to relinquish control of ContentEditable and redirect all model APIs to the external RTC code
+# [ckeditor5: Lessons learned from creating a rich-text editor with real-time collaboration_201810](https://ckeditor.com/blog/Lessons-learned-from-creating-a-rich-text-editor-with-real-time-collaboration/)
+- Our take on Operational Transformation
+  - CKEditor 5 uses OT to make sure it is able to resolve conflicts. 
+  - OT is based on a set of operations (objects describing changes) and algorithms that transform these operations accordingly, so that all users end up with the same editor content regardless of the order in which these operations were received. 
+- OT in its basic form defines three operations: insert, delete, and set attribute. 
+  - These operations are meant to be executed on a linear data model.
+  - It is possible to represent simple, flat structured data in a linear model, but this model falls short when it comes to complex data structures, like tables, captioned images or lists containing block elements. 
+  - Elements simply cannot contain other elements.
+- Hence, we needed to make a step further and provide Operational Transformation algorithms that work for a tree data structure. 
+-  We quickly realized that the basic set of operations (insert, delete, set attribute) is insufficient to handle real-life scenarios in a graceful way. 
+- The most important enhancement that we made was adding a set of new operations to the basic three (insert, remove, set attribute). 
+  - The rename operation, to handle element’s renaming (used, for example, to change a paragraph into a heading or a list item).
+  - The split, merge, wrap, unwrap operations to better describe the user intention.
+  - The insert text operation, to differentiate between inserting text content and elements.
+  - Unrelated to conflict solving, we have also introduced the marker operation.
+
+- Dedicated collaboration features
+  - Our editing framework is built in a way to support all rich-text editor features in the collaboration mode. 
+    - From simple ones like text styling, through image drag and drop and captioning, to complex ones like undo and redo, nested lists or tables.
+    - Support for third-party plugins
+  - Comments feature
+    - Adding comments in real time, as other users edit, to any selected part of the content (commenting in “read-only mode” is supported, too).
+  - Users’ selection feature
+    - Visual highlights at exact places where other users are editing
+  - Presence list feature
+    - Showing photos or avatars of users who are currently editing the document.
+  - more collaborative features
+    - Suggestion mode (aka track changes) 
+    - Mentions feature – insert and link names or phrases
+    - Versioning and diffing – Save versions of your document and compare them
+
+- Real-time collaboration requires a server (backend) to propagate changes between connected clients.
+  - Your changes will not be lost if you accidentally close the document. A temporary backup in the cloud will always be available.
+  - Your changes will be propagated to other connected users even if you temporarily lose your internet connection.
+
+- Summary
+  - We started building our next generation rich-text editor with the assumption that real-time collaborative editing must be the core feature that lies at its very foundation — and this meant a rewrite from scratch. 
+  - we created an Operational Transformation implementation, extended to support tree-based data structures (rich-text content) for advanced conflict resolution. 
+# [A light exploration of collaborative editing and synchronization algorithms_202108](https://blog.jakubholy.net/2021/light-exploration-of-collaborative-editing/)
+- 引用和总结了很多协作编辑器相关的技术选型

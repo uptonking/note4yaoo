@@ -16,6 +16,10 @@ modified: 2022-04-05T10:08:25.947Z
   - B2: Two users producing conflicts
   - B3: Many conflicts
   - B4: Real-world editing dataset
+
+- https://github.com/streamich/json-joy
+  - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
+
 # crdt-rewrite
 - https://github.com/siliconjungle/crdt-likes
   - A simple example of how to build offline-first likes using CRDT's.

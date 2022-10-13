@@ -12,11 +12,18 @@ modified: 2022-08-21T10:16:52.004Z
 - resources
   - https://www.rich-text-js-jobs.com/
 # popular
-- [张驰技术博客](https://juejin.cn/user/3456520286121437/posts)
+- 张驰
+  - [张驰技术博客](https://juejin.cn/user/3456520286121437/posts)
 
 - https://github.com/fantasticit
   - https://github.com/fantasticit/think
   - 低代码、文档
+
+- 行舟
+  - https://juejin.cn/user/2066737588867223/posts
+  - [我的2021-从在线教育到新能源汽车](https://juejin.cn/post/7043089265575591949)
+  - [基于CRDT的一种文档冲突算法 YATA/yjs](https://juejin.cn/post/7064236095440961550)
+
 # editor-oriented-teams
 - [emergence engine0e100r1in0g](https:/0/
 - emergence-engineering.com/blog)
@@ -88,3 +95,6 @@ modified: 2022-08-21T10:16:52.004Z
 - https://github.com/herrdu
   - https://github.com/herrdu/DEditor
 # more
+
+- [介绍在线文档、在线Excel等在线协作场景](https://www.zhihu.com/column/c_1412741892215459840)
+ 

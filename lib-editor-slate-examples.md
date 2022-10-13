@@ -315,11 +315,19 @@ modified: 2022-05-15T18:45:27.570Z
   - [Platforms Starter Kit: a template for site builders, multi-tenant platforms, and low-code tools.](https://demo.vercel.pub/platforms-starter-kit)
   - [How to Build a Multi-Tenant App with Custom Domains Using Next.js](https://vercel.com/guides/nextjs-multi-tenant-application)
 # slate-collab
-- https://github.com/solidoc/slate-ot
+- https://github.com/solidoc/slate-ot /ts/202006
   - Operation Transformations for slate 0.5x.
+  - 依赖sharedb
+- https://github.com/Immortalin/slate-operational-transform
+  - Slate JS Editor Operational Transform Example using ShareDB (used in production at Narration Box)
+  - Invoking JSON0-ot-diff on every edit is not very efficient.
 
-- https://github.com/BitPhinix/slate-yjs
-  - Yjs binding for Slate
+- https://github.com/BitPhinix/slate-yjs-example
+  - https://bitphinix.github.io/slate-yjs-example
+  - Minimal example project for slate-yjs
+  - [How to boostrap slate with a persisted doc?](https://github.com/BitPhinix/slate-yjs-example/issues/80)
+  - https://github.com/BitPhinix/slate-yjs
+    - Yjs binding for Slate
 
 - https://github.com/6thfdwp/crdt-editor
   - A collaborating editor based on Slate and Yjs

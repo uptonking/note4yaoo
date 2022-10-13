@@ -98,3 +98,74 @@ modified: 2022-04-05T10:09:51.343Z
 - Interesting! Offhand, **maybe could store/sync a SQLite table storing the history of CRDT operations, and replay that into a text doc format?** Although that table would get fairly large, and wouldn't get the benefit of a custom file format to compress down at all
   - That's pretty much what I want to do - I figure I can have a table of operations and every 10 days or so compress it down to a single savepoint and start building up the operations again to avoid size problems
   - Yeah seems sensible, and not much of a loss if you rarely have edits come in on top of a really stale version
+
+- ## if you were building a collaborative web application today, you'd use 
+- https://twitter.com/tmcw/status/1433436431658196997
+  - automerge or yjs
+  - replicache
+  - ot
+- going down this rabbit hole again today. it's been a mental block because the lock-in for these systems is so big - you're replacing state management, rewriting all of the places you transform your application's data, etc. i've been collecting notes
+- i'm no longer considering yjs or gun, because they require transforming data back to native js structures for things like 'updating the map' - similar feeling to using immutable.js
+- automerge's removal of built-in undo/history in the 1.x branch i think also removes it from the running, because history is sort of more important than collaboration for my usecase and i don't want a redundant history implementation. OT with immer might be the way.
+- an oversimplified gist here is that "ot is theoretically inferior, practically superior, and not P2P, but you probably, unfortunately, aren't building true P2P"
+  - a sicko approach i'm considering is to write application logic _as_ json patches instead of generating them.
+- I'd use @CroquetIO where the data is only processed client-side but you still get to write server-like code (it's not a database, OT or CRDT).
+- i picked OT but with a hefty dose of “other”. my biggest problem with all the frameworks in the poll is that they are javascript on the server side. that’s a show-stopper for me; i’ve found it a major pain to build stuff beyond PoCs in node.
+  - replicache is implementable in whatever language you want, though tbh i am using all typescript on the server because it's what's comfortable
+- CRDTs, we make collaborative apps for the maritime industry where internet is very bad and intermittent... everything needs to work offline and reach consensus on state without coordination and with minimum amount of data transfer
+- I think it's application specific which is the right answer.
+  - OT/CRDT when you really have multiple clients manipulating the exact same block of data at the same time and you can't represent the work as deltas to stream to a data owner.
+  - It does happen, but rarer than you think.
+
+- natto: I feel this pain going from nothing -> yjs -> hybrid replicache. one thing that I'm happy with is having a unified subscription and mutator interface so it's easier to make these changes
+  - i'm intrigued(好奇的), what makes your replicache setup hybrid? so far i like replicache but totally missing the low-boilerplate bliss of @blitz_js 's query/mutation system
+  - it's hybrid in that there are two types of natto canvases. 
+  - "browser drafts" (single-player local-only) don't use replicache. 
+  - "user canvases" (ugh - synced to server) use replicache.
+  - mutators are implemented 3 times.. twice on client (one for local-only mode, one for client replicache) and once on server for persistence (replicache)
+  - but if i want to switch to yjs or something else, i can just swap out the implementation of the mutators and subscriptions in a single file.
+
+- ## Great writeup by @josephgentle on making CRDTs orders of magnitude faster. 
+- https://twitter.com/martinkl/status/1423230479222939648
+  - [5000x faster CRDTs: An Adventure in Optimization](https://josephg.com/blog/crdts-go-brrr/)
+  - We're working on a similar approach for Automerge, and it's encouraging to see how much performance improvement is possible!
+- Are either of you aware of any efforts to make CRDTs based on 3-way merging? Like a self pruning git history, with peer branches, retaining only the bare minimum of common ancestors to support future merges?
+  - https://gowthamk.github.io/docs/mrdt.pdf
+
+- ## every collaboration tech that i'm seeing is either: closed-source, limited to small data, limited to text-like data, inefficient, or all of the above
+- https://twitter.com/tmcw/status/1422934838873571342
+- replicache is [open-source](https://github.com/rocicorp) but not free. Their approach is giving you a spec to implement for the backend; they're not hosting anything for you. I also think approach handles scale pretty well because it doesn't keep history like some CRDTs
+- Very hard to build a generic collab tech without diving into the domain. 
+  - Text editing collab has requirements like intent preservation while drawing, say, requires lots more data shipped around. 
+  - And CRDTs eschew(回避，避免) centralization but very few apps don’t need authority.
+  - And if you to ship a lot of data, say megabytes, you basically need something like a CAS (like git for binaries), which means you need to remember all the hierarchy of files and/or do things to actually separate content to its data/metadata
+  - Gaming is instructive here. Every type of multiplayer game has diff strategies. Some send pure inputs from the clients, others do a lot more simulation locally and most do a bit of both, depending on the game and reqs(RTS, FPS, cheating) And it’s never good enough!
+- The best examples I can think of violate #1 (game server architectures), and they are generally written custom for every game, or at least every studio/franchise. Even Unity has very limited support for a generic solution, despite being a slam dunk feature.
+
+
+- ## Why CRDT didn't work out as well for collaborative editing xi-editor _201905
+- https://news.ycombinator.com/item?id=19886883
+- TL; DR 
+  - CRDT is completely irrelevant to any of the highlighting/etc stuff
+  - Most highlighters are lexers. Advanced highlighters/folders are parsers.
+  - The lexing/parsing that is required for highlighting is easy to make incremental for all sane programming languages.
+  - for LL(star) grammars, adding incrementality is completely trivial (i sent patches to ANTLR4 to do this)
+  - for LR(k) grammars, it's more annoying but possible (tree-sitter does this)
+  - For lexing, doing it optimally is annoying, doing it near optimally is very easy.
+  - optimal incremental lexing requires tracking, on a per token basis, how far ahead in the character stream the recognizer looked (easy), and computing the affected sets (annoying)
+  - Most real programming languages have a lookahead of 1 or 2. Near-optimally requires tracking only the max lookahead used, and assuming all tokens need that max-lookahead. In a world where min token length is 1, that means you only need to re-lex an additional (max lookahead) tokens before the changed range. In a world where min token length is 0, it's all zero length tokens + (max lookahead) tokens before the changed range. This does not require any explicit per-token computation.
+  - Again for basically all programming languages, this ends up re-lexing 1 or 2 more tokens total than strictly necessary.
+  - Tree-sitter does context-aware on-demand lexing. i have patches on the way for ANTLR to do the same.
+  - The **only thing CRDT helps with in this equation at all is knowing what changed and producing the sequence of tree-edits for the lexer/parser**.
+  - The lexer only cares about knowing what character ranges changed, which does not require CRDT. The typical model for this kind of edit is what vscode's document text changes provide (IE For a given text edit, old start , old end, new start , new end)
+  - **The parser only cares about what token ranges changed, which does not require CRDT**.
+
+- ## more-discuss
+- OT and CRDT trade-offs for Real-Time collaboration_202001
+  - https://news.ycombinator.com/item?id=22039950
+- Open source collaborative text editors _201905
+  - https://news.ycombinator.com/item?id=19845776
+- An Introduction to Conflict-Free Replicated Data Types _202006
+  - https://news.ycombinator.com/item?id=23737639
+- CRDTs: The Hard Parts [video]_202007
+  - https://news.ycombinator.com/item?id=23802208
