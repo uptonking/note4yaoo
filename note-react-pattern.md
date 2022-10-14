@@ -7,8 +7,29 @@ modified: 2021-05-11T14:36:13.256Z
 
 # note-react-pattern
 
-# [4 Common Patterns You Can Easily Focus On In Your React Code Reviews](https://www.chakshunyu.com/blog/4-common-patterns-you-can-easily-focus-on-in-your-react-code-reviews/)
+# guide
 
+- [ariakit RFC: Component stores](https://github.com/ariakit/ariakit/issues/1875)
+  - https://codesandbox.io/s/ariakit-component-stores-forked-248do5
+- The problems
+  - We can't reuse the state logic outside of React
+  - Host components render on every state update
+  - Methods as deps in useEffect, useCallback, etc.
+- Component stores
+  - The store would be implemented with vanilla JS so we can reuse it in other frameworks. 
+  - The React hook would use the `useSyncExternalStore` hook internally, so we can keep it compatible with concurrent rendering.
+  - Accessing state inside event handlers without re-rendering
+  - Computed selectors can be easily achieved in userland
+
+
+
+- [ariakit RFC: Support controlled state hooks](https://github.com/ariakit/ariakit/issues/487)
+  - another proposal will be fully possible in Reakit v3: a single parameter that can receive both uncontrolled and controlled state.
+  - `const state = useDialogState({ initialVisible: false })`; 
+  - `const state = useDialogState({ visible, setVisible })`; 
+
+
+# [4 Common Patterns You Can Easily Focus On In Your React Code Reviews](https://www.chakshunyu.com/blog/4-common-patterns-you-can-easily-focus-on-in-your-react-code-reviews/)
 - Prop Drilling
 - A common (anti-)pattern to solve this issue is to pass the value from the parent component all the way to the child component that needs it. 
 -  While this works, it means that all the components in between also have to accept that prop.
@@ -641,9 +662,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 - https://github.com/jquense/uncontrollable
   - Wrap a controlled react component, to allow specific prop/handler pairs to be omitted by Component consumers. 
   - Uncontrollable allows you to write React components, with minimal state, and then wrap them in a component that will manage state for prop/handlers if they are excluded.
-
 # ref
-
 - [How to write performant React code: rules, patterns, do's and don'ts](https://www.developerway.com/posts/how-to-write-performant-react-code)
   - Rule #1: If the only reason why you want to extract your inline functions in props into useCallback is to avoid re-renders of children components: don’t. It doesn’t work.
   - Rule #2: If your component manages state, find parts of the render tree that don’t depend on the changed state and memoise them to minimize their re-renders.

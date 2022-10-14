@@ -36,6 +36,22 @@ modified: 2021-01-12T18:49:07.422Z
 - https://github.com/DKirwan/calendar-heatmap
   - A d3 heatmap for representing time series data similar to github's contribution chart
   - 依赖d3 v3
+# keyboard-shortcuts
+- https://github.com/pacocoursey/cmdk
+  - https://cmdk.paco.me/
+  - Fast, unstyled command menu React component.
+
+- https://github.com/ssleptsov/ninja-keys
+  - https://ninja-keys-demo.vercel.app/
+  - hits ⌘+k (or ctrl+k) and a search UI dialog appears.
+  - Keyboard shortcut interface for your website that works with Vanilla JS, Vue, and React.
+  - [You can now use the cmd-k / ctrl-k keyboard shortcut to navigate around GitHub without taking your hands off the keyboard](https://twitter.com/github/status/1453389061478043652)
+    - IMO something like `^j` and `^k` for ⬇️ and ⬆️, respectively, would be great 
+    - Ctrl K is a browser shortcut to the address bar, why hijack that?
+
+- https://github.com/timc1/kbar
+  - https://kbar.vercel.app/
+  - React component to add a fast, portable, and extensible command + k (command palette) interface to your site.
 # img-capture
 - https://github.com/ailon/markerjs2
   - https://markerjs.com/

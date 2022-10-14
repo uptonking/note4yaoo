@@ -31,8 +31,10 @@ modified: 2022-10-02T20:51:30.444Z
   - https://github.com/DonaldY/ot.js-demo
     - [ot.js demo解析](https://juejin.cn/post/7027113667107749918)
   - https://github.com/YingshanDeng/ot.js-demo
-  - https://github.com/abucraft/operational-transform
   - [OT 算法的 transform 源码走读](https://nicodechal.github.io/2020/08/10/ot-js-transform-analysis/)
+- https://github.com/abucraft/operational-transform
+  - https://abucraft.github.io/operational-transform/
+  - 效果和ot.js相同，但ts重写了
 
 - https://github.com/GarinZ/collaborative-textarea
   - 支持协作编辑的文本框
@@ -99,11 +101,13 @@ modified: 2022-10-02T20:51:30.444Z
   - support presence(cursors)
   - support local undo/redo
 
-- https://github.com/tOkeshu/ot.js /js/2013
-  - ot.js is a pure JavaScript library to work with operational transformations.
-
 - https://github.com/otjs/ot /js
   - A line-based operational transform algorithm
+  - https://github.com/otjs/ot-client
+  - https://github.com/otjs/ot-server
+
+- https://github.com/tOkeshu/ot.js /js/2013
+  - ot.js is a pure JavaScript library to work with operational transformations.
 
 - https://github.com/fitzgen/operational-transformation-example /2013
   - an implementation of a real time collaborative document editor which uses my Operational Transformation library.

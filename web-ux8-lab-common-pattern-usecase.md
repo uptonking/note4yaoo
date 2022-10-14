@@ -25,9 +25,8 @@ modified: 2021-09-13T13:34:01.331Z
 - https://twitter.com/timcchang/status/1437393810049359872
   - From Spotlight to @linear & @vercel, they've always sparked my curiosity in implementation.
   - I spent a few days building a little library that enable anyone to have this experience for their site
-  - https://github.com/timc1/kbar
-
-    - https://kbar.vercel.app/
+- https://github.com/timc1/kbar
+  - https://kbar.vercel.app/
 
 - Functionally, kbar is built on the concept of "actions", wherein each action can trigger some type of explicit event. 
   - Static actions can be registered up front; e.g. basic page nav. 

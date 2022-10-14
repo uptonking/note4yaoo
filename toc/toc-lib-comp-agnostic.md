@@ -49,6 +49,29 @@ modified: 2020-11-13T07:28:27.824Z
   - https://github.com/Gitjinfeiyang/vue-easy-canvas
     - 将 easy-canvas 封装成vue组件进行使用 注意：内部实现是将vue节点转换成目标节点，转换过程中会有性能损失，渲染与转换时间大概4:1
 
+- zag /1.5kStar/MIT/202210/ts
+  - https://github.com/chakra-ui/zag
+  - https://zagjs.com/overview/introduction
+  - Finite state machines for accessible JavaScript components
+  - The component interactions are modelled in a framework agnostic way. 
+  - We provide adapters for JS frameworks like React, Solid, or Vue.
+  - The machine APIs are completely unstyled and gives you the control to use any styling solution you prefer.
+  - Zag is built on top of the latest ideas in Statecharts. We don't follow the SCXML specifications
+
+- https://github.com/AgnosticUI/agnosticui
+  - https://agnosticui.github.io/agnosticui
+  - /3Star/Apache2/202101/js
+  - 主要是复用css，组件逻辑并未复用
+  - an agnostic UI component library prioritizing clean HTML and CSS, but built to agnostically work with many popular JavaScript frameworks
+  - the philosophy of AgnosticUI is to curate the top-level component.html and component.css, and then to synchronize the css down into the framework-based variants. 
+    - This is done via a simple Node script which literally copies the CSS over.
+
+- Reef /631Star/MIT/202010/js/NoDeps
+  - https://github.com/cferdinandi/reef
+  - https://reefjs.com/
+  - A lightweight library for creating reactive, state-based components and UI. 
+  - Reef is a simpler alternative to React, Vue, and other large frameworks.
+
 - https://github.com/prasannavl/icomponent
   - /28Star/MIT/201902/ts
   - 只提供了一致的接口和架构，没有实现具体组件
@@ -72,12 +95,6 @@ modified: 2020-11-13T07:28:27.824Z
     - React wrappers for the Tradeshift ui components.
     - class组件的render方法都是`return null`，完全通过js操作dom
     - tradeshift对象会被添加到window，然后在didUpdate方法中创建并操作dom
-- https://github.com/AgnosticUI/agnosticui
-  - https://agnosticui.github.io/agnosticui
-  - /3Star/Apache2/202101/js
-  - an agnostic UI component library prioritizing clean HTML and CSS, but built to agnostically work with many popular JavaScript frameworks
-  - the philosophy of AgnosticUI is to curate the top-level component.html and component.css, and then to synchronize the css down into the framework-based variants. 
-    - This is done via a simple Node script which literally copies the CSS over.
 # more
 - https://github.com/vicentedealencar/react-agnostic
   - you can write your components without any direct dependencies from platform specific components. 
@@ -189,3 +206,5 @@ modified: 2020-11-13T07:28:27.824Z
   - https://github.com/qlik-demo-team/qdt-components
     - 封装一个通过ReactDOM.render渲染出DOM节点的方法，每个单独的组件都会命令式地调用此方法渲染
     - React Components to be used with Angular 6, React 16 and Vue 2.
+
+- [The Vanilla Javascript Component Pattern](https://dev.to/megazear7/the-vanilla-javascript-component-pattern-37la)
