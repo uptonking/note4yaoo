@@ -27,8 +27,9 @@ modified: 2022-10-02T20:51:30.444Z
   - Requires CodeMirror >= 4.0
   - [Operational Transformation in JavaScript](http://operational-transformation.boltdoggy.com/ot-for-javascript.html)
 - ref
-  - https://github.com/Xing-Chuan/ot.js-demo
-  - https://github.com/DonaldY/ot.js-demo
+  - https://github.com/Xing-Chuan/ot.js-demo /202009
+    - 服务端只是传递操作的话，不能满足协同编辑的文档一致性，服务端还要保证推送出去的操作正确
+  - https://github.com/DonaldY/ot.js-demo /202109
     - [ot.js demo解析](https://juejin.cn/post/7027113667107749918)
   - https://github.com/YingshanDeng/ot.js-demo
   - [OT 算法的 transform 源码走读](https://nicodechal.github.io/2020/08/10/ot-js-transform-analysis/)
@@ -41,6 +42,7 @@ modified: 2022-10-02T20:51:30.444Z
   - 依赖 reduxjs/toolkit、diff-match-patch、ot.js源码
   - A text area supporting real-time collaborative editing plain text. And display all the online attendees.
   - [如何实现协同编辑 - 理解Operational Transformation](https://garinzhang.com/coding/how-to-implemente-collaborative-editing-understanding-operational-transformation.html)
+  - https://github.com/GarinZ/Blog/issues/1
 
 - https://github.com/srtucker22/text-operation
   - Classes for Rich Text Operations using Operational Transformation
@@ -158,6 +160,10 @@ modified: 2022-10-02T20:51:30.444Z
   - This is a little toy prototype exploring the idea that each client shares a single JSON object with the server. 
   - Both the client and the server can read & edit the session object using OT. 
   - The object has all the data the client needs to know to run the app.
+
+- https://github.com/jatfret/OT-server
+  - https://github.com/jatfret/OT
+  - 一个基于 operational transformation 思想的协同编辑应用
 # ot-utils
 - https://github.com/kbadk/json0-ot-diff
   - Finds differences between two JSON object and generates operational transformation (OT) operations for transforming the first object into the second according to the JSON0 OT Type.

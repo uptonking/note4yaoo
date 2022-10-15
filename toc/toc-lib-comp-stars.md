@@ -52,7 +52,7 @@ modified: 2021-01-12T18:49:07.422Z
 - https://github.com/timc1/kbar
   - https://kbar.vercel.app/
   - React component to add a fast, portable, and extensible command + k (command palette) interface to your site.
-# img-capture
+# img-editor/capture
 - https://github.com/ailon/markerjs2
   - https://markerjs.com/
   - Add image annotation to your web apps.
@@ -66,6 +66,9 @@ modified: 2021-01-12T18:49:07.422Z
   - how it works
     - This program renders whatever is displayed in the given Window into an image, thanks to svg's `<foreignObject>`.
     - No server side code is required to produce the screenshot.
+
+- https://github.com/jiechud/fast-image-editor
+  - 一款开源图片编辑器，采用React + Typescript + React-knova 框架开发.
 # embeddable-widget
 - https://github.com/shobhitsharma/embedo
   - It adds a layer on top of third party embed APIs while ensuring best practices and native guidelines for each component. 
