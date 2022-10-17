@@ -52,5 +52,6 @@ modified: 2022-04-05T10:08:25.947Z
     - An interactive demo UI where you can try out the editor
     - A test suite
 # examples
-
+- https://github.com/wangdashuaihenshuai/crdt-edit
+  - [我自己从零实现的一个文本文档的协同编辑demo，上面是输入框，下面是数据结构的可视化](https://zhuanlan.zhihu.com/p/48229762)
 # crdt-repos

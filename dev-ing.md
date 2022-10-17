@@ -81,10 +81,45 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - fwk-灵活的tag系统
 
+## 1016
+
+- [socket.io Emit cheatsheet](https://socket.io/docs/v4/emit-cheatsheet)
+- [io.emit vs socket.emit](https://stackoverflow.com/questions/32674391)
+
+- [are socket io rooms automatically destroyed if empty?](https://stackoverflow.com/questions/44523007)
+  - The room is automatically removed from the array and the nodeJSs' V8 Garbage Collector finishes the job of completely removing the room from ram. You don't have to worry about any of that.
+  - Remember that all users are automatically put on a room on joining the server ( the socket.id named room ). 
+  - `io.emit` should be used when you want to send a message from the server to anyone and 
+  - `socket.emit` should be used when you want to send a message only to the sender.
+
+- [ES6 Class Multiple inheritance](https://stackoverflow.com/questions/29879267)
+  - a very clean (imho) way to compose multiple classes into one using the fact that in ES2015, classes can be created with class expressions.
+
+- you can solve this by creating A and B not directly as classes, but as class factories (using arrow functions for brevity)
+
+```JS
+class MyClass {} // class declaration
+var MyClass = class {} // class expression
+
+class A {}
+class B extends A {}
+class C extends B {} // C extends both A and B
+// The problem with this is that it's very static. 
+// If you later decide you want to make a class D that extends B but not A, you have a problem.
+
+class Base {} // some base class to keep the arrow functions simple
+var A = (superclass) => class A extends superclass
+var B = (superclass) => class B extends superclass
+var C = B(A(Base))
+var D = B(Base)
+```
+
 ## 1014
 
-
-
+```JS
+// 注意zIndex的类型是字符串，而不是数字
+ele.style.zIndex = "2"
+```
 
 - [CSS force image resize and keep aspect ratio](https://stackoverflow.com/questions/12991351)
 
@@ -545,7 +580,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                         `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                              `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -564,7 +599,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,         `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,              `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 
