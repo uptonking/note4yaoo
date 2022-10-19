@@ -20,23 +20,23 @@ modified: 2021-11-19T06:53:19.649Z
 ### face
 
 - 😂
-  - 笑哭  
+  - ime 笑哭  
   - :joy: 
   - face with tears of joy
 - 🙃 
-  - 倒脸 呵呵
+  - ime 倒脸 呵呵
   - upside-down face
 - 🤔 
-  - 思考
+  - ime 思考
   - thinking face
 - 🤗
-  - 拥抱 欢迎
+  - ime 拥抱 欢迎
   - smiling face with open hands
 - 🙄
-  - 白眼
+  - ime 白眼
   - face with rolling eyes
 - 😱
-  - 尖叫
+  - ime 尖叫
   - :scream:
   - face screaming in fear
 - smirk
@@ -52,15 +52,15 @@ modified: 2021-11-19T06:53:19.649Z
 ### hands/fingers
 
 - 👍
-  - 点赞
+  - ime 点赞
   - :+1:
   - thumbs up
 - 👎
-  - 点踩
+  - ime 点踩
   - :-1:
   - thumbs down
 - 👌
-  - 好的 知道了
+  - ime 好的 知道了
   - :ok_hand:
   - OK hand
 - 👉
@@ -106,6 +106,7 @@ modified: 2021-11-19T06:53:19.649Z
 - 🐛
   - :bug:
   - 修复 bug
+  - ime 虫
 - 🐞
   - :beetle:
 - 🚨
@@ -117,6 +118,7 @@ modified: 2021-11-19T06:53:19.649Z
 - ✨
   - :sparkles:
   - 火花 新功能、new features
+  - ime 闪烁
 - ⚡
   - :zap:
   - 闪电 提升性能
@@ -132,6 +134,7 @@ modified: 2021-11-19T06:53:19.649Z
 - 🔨
   - :hammer:
   - 重大重构
+  - ime 锤子
 - ♻️
   - :recycle:
   - 重构代码
@@ -141,6 +144,7 @@ modified: 2021-11-19T06:53:19.649Z
 - 💄
   - :lipstick:
   - 更新 UI 和样式文件
+  - ime 口红
 - 🗑️
   - :wastebasket:
   - 废弃或删除
@@ -156,7 +160,7 @@ modified: 2021-11-19T06:53:19.649Z
 - 📝
   - :memo:
   - 备忘录 文档
-- 📝
+- 📝 
   - :pencil:
   - 编写Doc文档
 - 📄
@@ -176,6 +180,7 @@ modified: 2021-11-19T06:53:19.649Z
 - 📌
   - :pushpin:
   - 将依赖固定到特定版
+  - ime 图钉
 - 🔊
   - :loud_sound:
   - 添加日志

@@ -30,17 +30,18 @@ modified: 2022-10-02T20:51:30.444Z
   - https://github.com/Xing-Chuan/ot.js-demo /202009
     - 服务端只是传递操作的话，不能满足协同编辑的文档一致性，服务端还要保证推送出去的操作正确
   - https://github.com/DonaldY/ot.js-demo /202109
-    - [ot.js demo解析](https://juejin.cn/post/7027113667107749918)
+    - [ot.js demo解析，仅服务端](https://juejin.cn/post/7027113667107749918)
 - https://github.com/YingshanDeng/SharedPen
   - 包含了otjs源码和针对SharedPen的修改版，转换成了es6 class版
   - https://github.com/YingshanDeng/ot.js-demo
 - https://github.com/abucraft/operational-transform
   - https://abucraft.github.io/operational-transform/
-  - 效果和ot.js相同，但ts重写了，仅前端
+  - 效果和ot.js相同，但ts重写了，无需服务端
 
 - https://github.com/GarinZ/collaborative-textarea
   - 支持协作编辑的文本框
-  - 依赖 reduxjs/toolkit、diff-match-patch、ot.js源码
+  - 依赖 reduxjs/toolkit、diff-match-patch
+  - 引入了ot.js源码
   - A text area supporting real-time collaborative editing plain text. And display all the online attendees.
   - [如何实现协同编辑 - 理解Operational Transformation](https://garinzhang.com/coding/how-to-implemente-collaborative-editing-understanding-operational-transformation.html)
   - https://github.com/GarinZ/Blog/issues/1

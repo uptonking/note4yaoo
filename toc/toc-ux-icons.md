@@ -6,6 +6,14 @@ modified: 2021-05-06T09:58:23.803Z
 ---
 
 # guide
+
+- ✨ icons-pack
+- https://icon-sets.iconify.design/
+  - https://github.com/iconify/iconify
+  - 100+ open source icon sets.
+  - collection of SVG icons created by various authors, released under various free licenses.
+  - Icon sets are stored in `IconifyJSON` format
+
 - icons
   - https://fonts.google.com/icons?selected=Material+Icons
   - https://primer.style/octicons/

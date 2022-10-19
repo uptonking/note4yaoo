@@ -9,6 +9,9 @@ modified: 2020-12-01T14:24:22.252Z
 
  
 
+
+- churn rate
+  - 订户下跌率; （尤指有线电视，卫星电视的）年度中止服务比率;
 - Epilogue
   - 后记
 - blue bird
