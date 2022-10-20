@@ -24,6 +24,8 @@ modified: 2021-02-09T19:25:11.641Z
 - [React Context for Dependency Injection Not State Management](https://blog.testdouble.com/posts/2021-03-19-react-context-for-dependency-injection-not-state/)
 - [Drawing Graphics with the CSS Paint API](https://tympanus.net/codrops/2021/06/18/drawing-graphics-with-the-css-paint-api/)
   - CSS Paint is an API that allows developers to programatically generate and draw graphics where CSS expects an image.
+
+- [js实现监测一个普通对象的变化, vue原理简单实现](https://github.com/z2014/Blog/issues/2)
 # frontend-engineering
 - [详细设计一个文章页的目录插件](https://juejin.cn/post/6883292908649185288)
 - [Encoding data for POST requests](https://jakearchibald.com/2021/encoding-data-for-post-requests/)

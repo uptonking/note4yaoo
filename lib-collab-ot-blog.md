@@ -129,13 +129,6 @@ modified: 2022-10-13T07:59:45.878Z
   - 指针要更随文本变化移动到正确的位置
   - 支持undo
 # more-blogs
-- [浅谈在线文档的那些事儿](https://www.cnblogs.com/cangqinglang/p/16016117.html)
-  - 解释了 ot.js 的代码，ot.js 是针对纯文本的一种实现
-  - 简单解释了easysync，easysync也是OT算法的一种实现，它被使用在etherpad中，实现较复杂
-
-- [腾讯文档 揭开在线协作的神秘面纱 – OT算法_201907](http://www.alloyteam.com/2019/07/13659/)
-  - 简单注释了ot.js
-
 - [An Intro to Operational Transformation](https://davidwalsh.name/collaborative-editing-javascript-intro-operational-transformation)
 
 - [Operational Transformation, the real-time collaborative editing algorithm](https://srijancse.medium.com/operational-transformation-the-real-time-collaborative-editing-algorithm-bf8756683f66)

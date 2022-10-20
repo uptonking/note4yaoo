@@ -9,6 +9,28 @@ modified: 2022-04-05T10:09:36.436Z
 
 # guide
 
+- not-yet
+  - otjs示例
+    - undo/redo未分析源码
+    - codemirror内容的变更changes事件转换为TextOperation的流程
+    - 中文输入法优化
+
+- [SharedPen 之 Operational Transformation](http://objcer.com/2018/03/05/SharePen-Operational-Transformation/)
+  - 比较全面地介绍了operation指令、apply、compose、transform、undo/redo、服务端时序
+
+- [浅谈在线文档的那些事儿： ot.js + easysync](https://www.cnblogs.com/cangqinglang/p/16016117.html)
+  - 使用示例解释了 diff-match-patch 和 ot.js 的原理，ot.js是针对纯文本的一种实现
+  - 分析循环过程解释了ot transform
+  - 简单解释了easysync，easysync也是OT算法的一种实现，它被使用在etherpad中，定义了changeset的概念去描述文档的变更。
+
+- [腾讯文档 揭开在线协作的神秘面纱 – OT算法_201907](http://www.alloyteam.com/2019/07/13659/)
+  - 解释了ot.js的transform代码、时序控制
+
+- [协同编辑 - OT算法](https://github.com/z2014/Blog/issues/28)
+  - compose + transform 流程图
+  - compose一般是同一用户的两个操作且有序，transform一般是不同用户的两个操作且可无序，注意分析baseLength和targetLength的关系
+
+- [协同编辑冲突处理算法之OT算法](https://www.douzhixuan.com/xie-tong-bian-ji-chong-tu-chu-li-suan-fa-zhi-otsuan-fa/)
 # dev
 
 ## [OT wiki](https://en.wikipedia.org/wiki/Operational_transformation)

@@ -89,9 +89,8 @@ function range(start, end) {
 - codesandbox
   - Online Code Editor Tailored for Web Application
 - lint: eslint
-- tes
-  - tjest
-  - enzyme
+- test
+  - jest
 - webpack
   - entry
   - output

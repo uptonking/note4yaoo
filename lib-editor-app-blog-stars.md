@@ -23,21 +23,16 @@ modified: 2022-08-21T10:11:43.095Z
     - track-change
     - collab
 
+- [《从零开始, 开发一个 Web Office 套件》系列博客目录_赵康_202202](https://www.cnblogs.com/forzhaokang/p/15907371.html)
+  - https://github.com/zhaokang555/canvas-text-editor
+  - https://zhaokang555.github.io/canvas-text-editor/
+  - 基于 HTML Canvas 的富文本编辑器.
+
 - [基于 Google Doc 思想的L2编辑器演示项目](https://zhuanlan.zhihu.com/p/392055486)
   - https://github.com/cg0101/docs
   - https://cg0101.github.io/docs/
 
 - [现代编辑器技术原理](https://www.wenxi.tech/principles-of-modern-editor-technology)
-# [Are CRDTs suitable for shared editing?__202008](https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing/)
-- CRDT don't require a central authority to resolve sync conflicts
-  - They open up new possibilities to scale the backend infrastructure and are also well-suited as a data-model for distributed apps that don't require a server at all.
-- However, several text editor developers report not to use them because they impose a too significant overhead.
-- Marijn Haverbeke wrote about his considerations against using CRDTs as a data model for CodeMirror 6
-  - the cost of such a representation is significant, and in the end, I judged the requirement for converging positions to be too obscure to justify that level of extra complexity and memory use
-- The Xi Editor used a CRDT as its data model to allow different processes (syntax highlighter, type checker, ..) to concurrently access the editor state without blocking the process. They reverted to a synchronous model because
-- [CRDT is not pulling its (considerable) weight.__201905](https://github.com/xi-editor/xi-editor/issues/1187#issuecomment-491473599)
-  - By now we have lots of examples where trying to design features around the structure imposed by CRDT turned out to be a lot more complicated than it would be in a more synchronous world - we saw the auto-indent stuff above, difficulty getting the selection right in transpose
-  - CRDT is a tradeoff
 # [Concept of Block Style Editor](https://domino-editor.psyhyde.vercel.app/docs/)
 - https://github.com/psyhyde/domino-editor
   - A Playbook for Block Style Editor (BSE): Text Styling, Block Components, Misc Functions & Theme Switcher
