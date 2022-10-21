@@ -21,6 +21,9 @@ modified: 2022-04-05T10:08:25.947Z
   - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
 
 # crdt-rewrite
+- https://github.com/josephg/crdt-examples
+  - CRDT examples from a DWEB talk
+
 - https://github.com/siliconjungle/crdt-likes
   - A simple example of how to build offline-first likes using CRDT's.
 

@@ -28,6 +28,17 @@ modified: 2020-10-22T16:09:43.158Z
   - Updated to Mapbox GL JS V2.0.0
   - This template is designed to accelerate building out a "scrollytelling" map story. The primary input is a story broken into sections (chapters), each hooked to a particular view of a map.
   - This template is for data journalists and digital storytellers of any kind. No coding experience is required.
+# platform
+
+- https://github.com/vizhub-core/vizhub
+  - https://vizhub.community/
+  - Self Hosted CMS for Web-based Dataviz
+  - VizHub 2 has been used in Data Visualization Course 2018, Datavis 2020
+    - iFrame-based code execution environment.
+  - VizHub 3
+    - possible to self-host your own instance
+    - possible to extend the core with plugins
+
 # amazing
 - https://github.com/Jannchie/Historical-ranking-data-visualization-based-on-d3.js
   - /4.5kStar/GPLv3/202008

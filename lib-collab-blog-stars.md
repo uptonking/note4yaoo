@@ -9,17 +9,35 @@ modified: 2022-04-05T10:10:22.091Z
 
 # guide
 
-- ## Collaborative Editing in ProseMirror__201508
+# Collaborative Editing in ProseMirror__201508
 - https://news.ycombinator.com/item?id=10002553
 - Hi! Joseph Gentle here, author of ShareJS.
-- You're right about OT - it gets crazy complicated if you implement it in a distributed fashion. But implementing it in a centralized fashion is actually not so bad. Its the perfect choice for google docs.
+  - You're right about OT - it gets crazy complicated if you implement it in a distributed fashion. 
+  - But implementing it in a centralized fashion is actually not so bad. Its the perfect choice for google docs.
 - Here is my implementation of OT for plain text
   - https://github.com/ottypes/text
   - https://github.com/josephg/appstate
   - Note that its only 400 lines of javascript, with liberal comments. 
   - To actually use OT code like that, you need to do a little bookkeeping. 
   - Its nowhere near as bad as you suggest.
+
 - Yes, but that implementation deals only with plain text. The complexity seems to ramp up pretty quickly as you support more types of operations, and since extendability is an important concern for my project, I decided to avoid OT.
+
+- If you have insert, update, and delete then you can build any other operation from those primitives as long as you have the ability to batch a composite operation. 
+  - So there's no need to extend the OT algorithm to support other kinds of primitive operation. 
+  - For nested structures, addressing via ids or linear addresses has to be taken into account but that doesn't affect the OT transforms, it's one layer above. 
+  - So it's possible (though not easy) to have an extensible OT system without exponential complexity. 
+  - Still, avoiding OT has led to some interesting new ideas and I look forward to seeing how things progress.
+
+- Initially, I thought to wire this all up using the sharejs project, but never could quite grok that codebase.
+  - Instead, I've been working on a similar system to one you describe, with changes applied in order based on sequential version number, and concurrent updates forced to "rebase" against earlier changes 
+  - Because applying changes in a different order might create a different document, rebasing isn't quite as easy as transforming all of our own changes through all of the remotely made changes.
+  - Can you explain more about how you arrived this conclusion? From my understanding, a correct transform function should allow exactly this, according to transformation property 1. Perhaps your algorithm doesn't exactly satisfy this property; what characteristics does it have instead?
+- A correct OT transform, yes. But I'm not using OT's invariants, so this is not something my transforms do. For example, in my system, if you have "insert X at pos 5" and "insert Y at pos 5", the document will contain "XY" or "YX", depending on which arrived first.
+
+- A minimal backend can be extremely simple, just relaying changes, but if you want it to keep a running snapshot of the current document, you'll need the capacity to apply those changes to document, so you'd need to use the module used by the client, or a port of that.
+
+
 # [tinymce: To OT or CRDT, that is the question_202001](https://www.tiny.cloud/blog/real-time-collaboration-ot-vs-crdt/)
 - At a very high level, this is what we're dealing with:
   - OT relies on an active server connection (not quite correct but we'll get to that in a moment) to coordinate and guarantee all clients operate correctly.

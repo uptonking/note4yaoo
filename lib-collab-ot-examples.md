@@ -13,9 +13,6 @@ modified: 2022-10-02T20:51:30.444Z
   - 编辑器基于 sharedb 与 json0 协议交互协作操作数据
   - 客户端（编辑器）通过 WebSocket 与服务端建立长连接通信，编辑器每次的 dom 结构变更都将转换为json0格式操作命令（ops）发送到服务端并修改服务端数据后再分发给各个客户端
   - sharedb 会把每次客户端与服务端的操作数据保存为日志，并且在每次操作后都会把最新生成的文档数据保留下来。这些操作都在 ot-server 中进行
-
-- [协同编辑OT算法server端实现原理](http://hupengfoot.github.io/2019/01/08/OT-server.html)
-  - [协同编辑OT算法client端实现原理](http://hupengfoot.github.io/2019/01/08/OT-client.html)
 # popular
 - https://github.com/Progyan1997/Operational-Transformation
   - http://operational-transformation.github.io/
@@ -31,12 +28,23 @@ modified: 2022-10-02T20:51:30.444Z
     - 服务端只是传递操作的话，不能满足协同编辑的文档一致性，服务端还要保证推送出去的操作正确
   - https://github.com/DonaldY/ot.js-demo /202109
     - [ot.js demo解析，仅服务端](https://juejin.cn/post/7027113667107749918)
-- https://github.com/YingshanDeng/SharedPen
+
+- https://github.com/YingshanDeng/SharedPen  /js
   - 包含了otjs源码和针对SharedPen的修改版，转换成了es6 class版
+  - 关于扩展 ot.js 支持富文本属性，可以参考文件 TextAction.js 和 TextOperation.js
+  - A (web-based) rich-text real-time collaborative editor using CodeMirror and ot.js
+  - [SharedPen 之 Operational Transformation](http://objcer.com/2018/03/05/SharePen-Operational-Transformation/)
   - https://github.com/YingshanDeng/ot.js-demo
+
+- https://github.com/srtucker22/text-operation /ts
+  - 复用了大部分ot.js的TextOperation类，扩展并支持在operation上添加属性，是否支持富文本❓
+  - Classes for Rich Text Operations using Operational Transformation
+  - This package is heavily based on firepad's OT operations, which were in turn based on ot.js. 
+  - This package is a conversion of their masterful work into Typescript + ES6
+
 - https://github.com/abucraft/operational-transform
   - https://abucraft.github.io/operational-transform/
-  - 效果和ot.js相同，但ts重写了，无需服务端
+  - 效果和ot.js相同，但ts重写了，仅前端展示无需服务端
 
 - https://github.com/GarinZ/collaborative-textarea
   - 支持协作编辑的文本框
@@ -45,11 +53,6 @@ modified: 2022-10-02T20:51:30.444Z
   - A text area supporting real-time collaborative editing plain text. And display all the online attendees.
   - [如何实现协同编辑 - 理解Operational Transformation](https://garinzhang.com/coding/how-to-implemente-collaborative-editing-understanding-operational-transformation.html)
   - https://github.com/GarinZ/Blog/issues/1
-
-- https://github.com/srtucker22/text-operation
-  - Classes for Rich Text Operations using Operational Transformation
-  - This package is heavily based on firepad's OT operations, which were in turn based on ot.js. 
-  - This package is a conversion of their masterful work into Typescript + ES6
 
 - https://github.com/cricklet/operational-transform-demo /201702
   - https://cricklet.github.io/sites/blue/index.html
@@ -147,21 +150,30 @@ modified: 2022-10-02T20:51:30.444Z
 
 - https://github.com/BrotherJing/scalable-ot
   - A scalable concurrent collaboration framework based on Operational Transformation (OT).
-  - 前端依赖 ot-json0、ot-text、google-protobuf
+  - 后端依赖 ot-json0、ot-text、google-protobuf、mongodb、ws、express
   - Clients send operations through API.
   - Operations are pushed into MQ, partitioned by document id.
   - OT server receives operations of same document sequentially and performs conflict solving.
   - Broadcast server sends conflict-free operations to clients.
   - Conflict-free operations are pushed into another MQ(or db stream), trigger a consumer which apply them on document snapshot sequentially.
 # ot-examples
-- https://github.com/YingshanDeng/SharedPen
-  - A (web-based) rich-text real-time collaborative editor using CodeMirror and ot.js
-  - [SharedPen 之 Operational Transformation](http://objcer.com/2018/03/05/SharePen-Operational-Transformation/)
+- json0前端示例
+  - https://codesandbox.io/s/s828w
+    - useCollaboration.ts
 
 - https://github.com/josephg/appstate /201407
   - This is a little toy prototype exploring the idea that each client shares a single JSON object with the server. 
   - Both the client and the server can read & edit the session object using OT. 
   - The object has all the data the client needs to know to run the app.
+
+- https://github.com/datavis-tech/json0-presence-demo
+  - A demo of plain text presence using json0+ShareDB and html-text-collab-ext.
+  - The original application was simplified by Curran Kelleher down to a single textarea with presence
+  - https://github.com/convergencelabs/html-text-collab-ext
+    - Utilities that enable real time collaboration in HTML TextAreas
+
+- https://github.com/ausnorris/leaderboard
+  - json0+sharedb
 
 - https://github.com/jatfret/OT-server
   - https://github.com/jatfret/OT
@@ -176,3 +188,4 @@ modified: 2022-10-02T20:51:30.444Z
   - simple local console implementation of Operational Transformation
 # more-ot
 - [I'm looking for a library that would allow me to synchronize text in real-time between multiple users (ala Google Docs).](https://stackoverflow.com/questions/2043165)
+

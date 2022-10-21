@@ -129,6 +129,10 @@ modified: 2022-10-13T07:59:45.878Z
   - 指针要更随文本变化移动到正确的位置
   - 支持undo
 # more-blogs
+- ot.js相关
+  - [协同编辑OT算法server端实现原理](http://hupengfoot.github.io/2019/01/08/OT-server.html)
+  - [协同编辑OT算法client端实现原理](http://hupengfoot.github.io/2019/01/08/OT-client.html)
+
 - [An Intro to Operational Transformation](https://davidwalsh.name/collaborative-editing-javascript-intro-operational-transformation)
 
 - [Operational Transformation, the real-time collaborative editing algorithm](https://srijancse.medium.com/operational-transformation-the-real-time-collaborative-editing-algorithm-bf8756683f66)

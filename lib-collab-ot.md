@@ -11,11 +11,11 @@ modified: 2022-04-05T10:09:36.436Z
 
 - not-yet
   - otjs示例
-    - undo/redo未分析源码
+    - ❓ undo/redo未分析计算逻辑，以及ot里undo和cm组件undo的执行流程
     - codemirror内容的变更changes事件转换为TextOperation的流程
     - 中文输入法优化
 
-- [SharedPen 之 Operational Transformation](http://objcer.com/2018/03/05/SharePen-Operational-Transformation/)
+- [SharedPen 之 Operational Transformation，基于ot.js](http://objcer.com/2018/03/05/SharePen-Operational-Transformation/)
   - 比较全面地介绍了operation指令、apply、compose、transform、undo/redo、服务端时序
 
 - [浅谈在线文档的那些事儿： ot.js + easysync](https://www.cnblogs.com/cangqinglang/p/16016117.html)
@@ -33,7 +33,16 @@ modified: 2022-04-05T10:09:36.436Z
 - [协同编辑冲突处理算法之OT算法](https://www.douzhixuan.com/xie-tong-bian-ji-chong-tu-chu-li-suan-fa-zhi-otsuan-fa/)
 # dev
 
-## [OT wiki](https://en.wikipedia.org/wiki/Operational_transformation)
+## Transform Property 2
+
+- [TP2 Properties](https://github.com/ottypes/docs#tp2-properties)
+- Transform property 2 is an additional requirement on your `transform` function. 
+  - Specifically,  `transform(op3, compose(op1, transform(op2, op1))` == `transform(op3, compose(op2, transform(op1, op2))`
+- If your OT type supports transform property 2, set the `tp2` property to true and define a prune function.
+  - `tp2`: (optional) Boolean property. Make this truthy to declare that the type has tp2 support. Types with TP2 support must define prune.
+  - `prune(op, otherOp)`: The inverse of transform. Formally, apply(snapshot, op1) == apply(snapshot, prune(transform(op1, op2), op2)). Usually, prune will simply be the inverse of transform and prune(transform(op1, op2), op2) == op1.
+
+- [OT wiki](https://en.wikipedia.org/wiki/Operational_transformation)
 
 - Various transformation properties for ensuring OT system correctness have been identified. 
   - These properties can be maintained by either the transformation control algorithm or by the transformation functions.

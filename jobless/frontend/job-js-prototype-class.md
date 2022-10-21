@@ -40,6 +40,9 @@ a.prototype // {b:9, constructor}
 
 Function.prototype.__proto__ === Object.prototype // true
 
+Array.constructor === Function  //true
+Function.constructor === Function  //true
+
 function aa() {}
 
 aa.constructor === Function // true

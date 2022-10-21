@@ -151,13 +151,15 @@ modified: 2022-08-31T00:15:07.200Z
 - ## I believe ProseMirror's OT handles all the intent-preservation requirements in the article. Without being truly distributed, of course, unless you add a vector clock or something.
 - https://twitter.com/MarijnJH/status/1463272309544861706
 
-- ## Rails Gem for Collaborative Editing with ProseMirror
+- ## Rails Gem for Collaborative Editing with ProseMirror_202008
 - https://discuss.prosemirror.net/t/rails-gem-for-collaborative-editing-with-prosemirror/3055
-  - I also plan to use prosemirror-recreate-steps 11 to handle a client who goes offline for a long period with uncommitted changes. 
+- I’m working on a Rails gem to make collaborative editing with ProseMirror drop-in for Rails apps.
+  - I also plan to use prosemirror-recreate-steps to handle a client who goes offline for a long period with uncommitted changes. 
   - The gem stores old steps, but a client could go offline for long enough that old steps were thrown out - in this case, it would be important to not only recover the changes, but support some type of interactive merging. 
   - Again though, this likely would require UI which would have to be implemented by library users. 
   - How has this been handled by others?
-- prosemirror-collab’s OT algorithm isn’t ideal and wastes a lot of bandwidth retransmitting steps unnecessarily - but it’s basically possible to implement any OT algorithm on top of prosemirror.
+- 👉🏻 prosemirror-collab’s OT algorithm isn’t ideal and wastes a lot of bandwidth retransmitting steps unnecessarily
+  - but it’s basically possible to implement any OT algorithm on top of prosemirror.
   - For rails-collab, I rewrote the collaboration algorithm based on Apache Wave/Google Doc’s approach to OT. 
   - I’ve actually extracted that into an npm module
   - https://github.com/benaubin/prosemirror-collab-plus
@@ -175,6 +177,9 @@ modified: 2022-08-31T00:15:07.200Z
   - Basically, an app starts a session by providing a serialized document to our server. 
   - We spin up a V8 isolate and clients use a session key to connect to our gateway. 
   - Later, your the app issues an HTTP request to get the edited document.
+
+- 202009 https://discuss.prosemirror.net/t/freelance-implementation-with-yjs/3115
+  - to get decent performance and scaling for collaborative editing, you want to keep documents in RAM to avoid having to serialize and deserialize them, which means you preferably want to keep have every client on a document connected to the same server. We’re building custom infrastructure for this, and are considering offering it as a service.
 
 - ## What is the difference between ProseMirror, and Quill + ShareDB?
 - https://discuss.prosemirror.net/t/what-is-the-difference-between-prosemirror-and-quill-sharedb/879
