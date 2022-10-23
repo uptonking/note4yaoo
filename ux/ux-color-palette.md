@@ -1,56 +1,91 @@
 ---
-title: ux-color-patette
+title: ux-color-palette
 tags: [color, ux]
 created: 2020-07-17T09:55:30.767Z
-modified: 2021-01-01T20:08:01.651Z
+modified: 2022-10-23T14:57:23.473Z
 ---
 
-# ux-color-patette
+# ux-color-palette
 
+# nice css named colors: variant/alike/light
+- Grey: #808080
+  - slategrey/lightslategrey: #708090 / #778899
+  - silver: #c0c0c0 银灰色，比grey浅
+  - snow: #fffafa
+  - ghostwhite: #f8f8ff
+  - dimgrey/grey/silver/lightgrey/lavender/gainsboro/whitesmoke：灰色，由深到浅
+- Red: #ff0000
+  - coral: #ff7f50 珊瑚红，有点黄
+  - tomato: #ff6347
+  - linen: #faf0e6 亚麻布
+  - seashell: #fff5ee 海贝壳
+  - blueviolet: #8a2be2
+  - mediumpurple: #9370db
+  - mediumslateblue: #7b68ee
+  - slateblue: #6a5acd
+  - darkslateblue: #483d8b
+  - lavender: #e6e6fa 薰衣草
+  - darkorchid: #9932cc
+  - purple: #800080
+  - darkorchid: #9932cc
+  - darkviolet: #9400d3
+  - violet: #ee82ee 紫罗兰
+  - plum: #dda0dd 偏紫
+  - indigo: #4b0082
+  - antiquewhite/oldlace：古董白，粉红色
+  - orangered: #ff4500
+  - fuchsia/magenta: #ff00ff
+  - lightcoral: #f08080 珊瑚红，艳丽
+  - lightpink: #ffb6c1 粉红
+- Yellow: #ffff00
+  - darkorange: #ff8c00
+  - gold: #ffd700 金黄色
+  - lightyellow: #ffffe0
+  - khaki: #f0e68c 卡其色，米黄色
+  - lemonchiffon：粉黄色，有点浅
+  - orange: #ffa500
+  - wheat: #f5deb3
+  - bisque: #ffe4c4 浅黄，有点红
+  - darkorange：深橙色
+  - lavenderblush：淡紫红，有点浅
+  - cornsilk：玉米穗黄，极浅黄偏白，适合背景色
+- Green: #008000 ~~#00ff00~~
+  - teal: #008080 深青色
+  - mediumseagreen: #3cb371 海绿色，适合文字
+  - beige: #f5f5dc 浅绿泛黄
+  - ivory: #fffff0
+  - lightgreen: #90ee90 亮绿色，艳丽
+  - seagreen: #2e8b57 深海绿，都有点深
+  - darkseagreen: #8fbc8f
+  - lightseagreen: #20b2aa
+  - darkcyan: #008b8b 深青绿
+  - yellowgreen: #9acd32
+  - lightskyblue: 深蓝色
+  - mediumslateblue：中暗蓝，深蓝偏紫
+  - lightgoldenrodyellow：浅金黄，新绿活力
+  - 松柏绿: #21a675
+  - 松花绿: #057748
+  - 竹青: #789262
+  - 碧绿: #2add9c
+  - 青碧: #48c0a3
+  - 黛绿: #426666
+  - 苍翠: #519a73 
+  - 铜绿: #549688
+- Blue: #0000ff
+  - royalblue: #4169e1 墨蓝，又亮又深
+  - dodgerblue: #1e90ff
+  - aliceblue: #f0f8ff 浅灰蓝
+  - azure: #f0ffff 亮蓝色，有点浅
+  - lightblue: #add8e6 淡蓝，有点深，有点陈旧感
+  - skyblue: #87ceeb
+  - deepskyblue: #00bfff
+  - cyan/aqua: #00ffff
+
+- ref
+  - https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
 # guide
-
 - tips
   - 各设计系统都会有自己的调色板
-
-- nice css standard color
-  - Grey
-    - silver：银灰色，比grey浅
-    - snow/ghostwhite：浅白
-    - dimgrey/grey/silver/lightgrey/lavender/gainsboro/whitesmoke：灰色，由深到浅
-  - Red/Yellow
-    - coral：珊瑚红，有点黄
-    - lightcoral：珊瑚红，艳丽
-    - lightpink: 粉红
-    - bisque：浅黄，有点红
-    - gold: 金黄色
-    - lightyellow/lemonchiffon：粉黄色，有点浅
-    - darkorange：深橙色
-    - antiquewhite/linen/oldlace：古董白，粉红色
-    - lavenderblush：淡紫红，有点浅
-    - cornsilk：玉米穗黄，极浅黄偏白，适合背景色
-    - khaki：卡其色，米黄色
-  - Green/Blue
-    - mediumseagreen：海绿色，适合文字
-    - beige：浅绿泛黄
-    - teal：深青色
-    - lightgreen：亮绿色，艳丽
-    - darkseagreen/seagreen：深海绿，都有点深
-    - darkcyan：深青绿
-    - deepskyblue/lightskyblue: 深蓝色
-    - mediumslateblue：中暗蓝，深蓝偏紫
-    - aliceblue：浅灰蓝
-    - lightblue：淡蓝，有点深，有点陈旧感
-    - azure：亮蓝色，有点浅
-    - royalblue：墨蓝，又亮又深
-    - lightgoldenrodyellow：浅金黄，新绿活力
-    - 松柏绿: #21a675
-    - 松花绿: #057748
-    - 竹青: #789262
-    - 碧绿: #2add9c
-    - 青碧: #48c0a3
-    - 黛绿: #426666
-    - 苍翠: #519a73 
-    - 铜绿: #549688
 
 - bolivian beauty  偏冷小暖又干净
   - https://www.color-hex.com/color-palette/25309

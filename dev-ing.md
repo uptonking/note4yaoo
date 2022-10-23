@@ -81,6 +81,38 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - fwk-灵活的tag系统
 
+## 1023
+
+- [MurmurHash算法](https://www.cnblogs.com/july-sunny/p/15880549.html)
+- Murmur哈希是一种非加密散列函数，适用于一般的基于散列的查找
+  - 该名称来自两个基本操作，乘法（MU）和旋转（R），在其内部循环中使用。
+  - 与加密散列函数不同，它不是专门设计为难以被对手逆转，因此不适用于加密目的。　
+- 使用的场景有以下特点
+　　1. 要求随机分布特征表现好，不容易被猜测，例如相比于自增ID，出于安全考虑，不会暴露增长量等相关敏感的业务；
+　　2. 生成性能要好(该算法的性能强于MD5)；
+　　3. 函数产生的数据量大  MurmurHash2（产⽣32位或64位值）, MurmurHash3（产⽣32位或128位值), MurmurHash的 32 bit 能表示的最⼤值近 43 亿的10进制；
+
+- 例如，在短链生成，MurmurHash这里比较好的适用于该场景
+  - MurmurHash生成得到的是一个long类型的10进制数，通常我们为了缩短短链的位数，可以适用Base62将结果转换为62进制数
+
+- [MurmurHash算法简单介绍](https://www.cnblogs.com/strongmore/p/14493705.html)
+  - 哈希算法简单来说就是将一个元素映射成另一个元素，可以简单分类两类，
+  - 加密哈希，如MD5，SHA256等，
+  - 非加密哈希，如MurMurHash，CRC32，DJB等。
+  - MurMurHash由Austin Appleby在2008年发明，与其它流行的哈希函数相比，对于规律性较强的key，MurMurHash的随机分布特征表现更良好，Redis，Memcached，Cassandra，HBase，Lucene中都使用到了这种hash算法
+
+- [Generate random string/characters in JavaScript](https://stackoverflow.com/questions/1349404)
+
+```JS
+Math.random().toString(36).substring(7);
+// If random returns 0, 0.5, 0.25, 0.125... will result in empty or short string. 
+(1.25).toString(36).substr(2, 5) // 9
+
+('0000' + Math.random().toString(36).replace('.', '')).substr(-5);
+
+(Date.now() * Math.random()).toString(36).substring(0, 5);
+```
+
 ## 1017
 
 - The global property `Infinity` is a numeric value representing infinity.
@@ -596,7 +628,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                   `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -615,7 +647,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                   `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 
