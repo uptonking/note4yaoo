@@ -33,6 +33,14 @@ modified: 2022-08-21T10:16:52.004Z
   - [有道AI情报局 网易有道技术团队](https://juejin.cn/user/1882007127197694/posts)
   - [有道云笔记新版编辑器架构设计（上）](https://juejin.cn/post/6920054071571251208)
   - [有道云笔记新版编辑器架构设计（下）](https://juejin.cn/post/6922343979325325319)
+# coolab
+- Bartosz Sypytkowski
+  - Distributed systems, databases and protocols enthusiast
+  - https://twitter.com/Horusiath
+  - https://bartoszsypytkowski.com/
+  - https://github.com/Horusiath
+
+
 # slate
 - 杨振兴
   - https://github.com/pubuzhixing8

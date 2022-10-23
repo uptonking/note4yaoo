@@ -36,8 +36,10 @@ modified: 2021-09-04T14:03:39.046Z
     - Polished applications these days require realtime reactivity.
     - And it's not just for collaboration — reactivity necessary when a user has multiple windows or tabs showing the same data.
     - Many systems have record-level or table-level reactivity, but I want all queries to be reactive. I'm tired of having to engineer custom solutions on top of databases with brittle logic where a developer might forget to emit an update event.
-  - 👉🏻 Schemaless — schemas are enforced by the application, not the database.
+  - 👉🏻 ✨ Schemaless — schemas are enforced by the application, not the database.
     - It took me some time to realize the the value of maintaining schemas in the application rather than the database. 
+    - a schemaless database should be flexible enough to accept incoming data and allow the application to resolve conflicts or schema issues.
+    - I want to build apps like Notion and Airtable where end-users define their own schemas. 
   - 👉🏻 Asynchronous or Synchronous, Persisted or In-Memory Storage
     - I want to be able to persist data. And most persistence layers are asynchronous: LevelDb or even a cloud database. But even when persistence is synchronous, like SQLite, you might have to asynchronously cross a process boundary, such as an Electron window interacting with a database on the main process.
     - I want to use a synchronous in-memory database for frontend state management 
@@ -45,8 +47,12 @@ modified: 2021-09-04T14:03:39.046Z
   - Transactional read/writes written in TypeScript.
   - Directly read/write indexes with the ability to index graph/relational queries.
   - Suitable for frontend state management.
+- https://github.com/ccorcos/game-counter
+  - A simple application for keeping score in games. For example, golf or Settlers of Catan.
+  - External effects interface through services defined on the Environment.
+  - TupleDatabase as a UI state management system.
 
-- tinybase /1.3kStar/MIT/202209/ts
+- tinybase /1.3kStar/MIT/202209/ts/NoDeps
   - https://github.com/tinyplex/tinybase
   - https://tinybase.org/
   - A tiny, reactive JavaScript library for structured state and tabular data.
@@ -56,10 +62,10 @@ modified: 2021-09-04T14:03:39.046Z
   - Easily sync your data to local or remote storage, and use idiomatic bindings to your React UI.
   - Powerful query engine to select, join, filter, group, sort and paginate data - reactively.
 
-- https://github.com/ccorcos/game-counter
-  - A simple application for keeping score in games. For example, golf or Settlers of Catan.
-  - External effects interface through services defined on the Environment.
-  - TupleDatabase as a UI state management system.
+- https://github.com/evoluhq/evolu
+  - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
+  - writing local-first software has been challenging because of the lack of libraries and design patterns. I personally failed several times, and that's why I created Evolu.
+  - Evolu architecture is almost a clone of James Long CRDT for mortals. Rewritten and improved,
 
 - https://github.com/logux/client
   - https://logux.io/

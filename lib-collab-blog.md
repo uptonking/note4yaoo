@@ -274,3 +274,5 @@ modified: 2022-04-05T10:10:27.212Z
   - Merge-Types to specify OT or CRDT behavior
 # ref
 - [How Figma’s multiplayer technology works__201910](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
+
+- [CRDT与协同编辑 简介](https://www.herui.club/archives/1066)

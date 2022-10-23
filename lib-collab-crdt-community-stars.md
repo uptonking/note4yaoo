@@ -20,7 +20,7 @@ modified: 2022-04-05T10:09:51.343Z
 
 - ## 
 
-- ## If anyone has been curious about how to build a CRDT but thought the idea was too daunting. 
+- ## If anyone has been curious about how to build a CRDT but thought the idea was too daunting. tiny-merge-legacy_202205
 - https://twitter.com/JungleSilicon/status/1526123548753858560
   - I've created one with as much of the complexity stripped out as I could whilst keeping it useful.
   - I call it Tiny CRDT.
@@ -38,7 +38,18 @@ modified: 2022-04-05T10:09:51.343Z
 
 - ## 
 
-- ## 
+- ## The main trade offs between history and state based CRDT's is this:
+- https://twitter.com/JungleSilicon/status/1559749305467957248
+- History:
+  - More capabilities (rewinding time, more complex merging logic).
+  - Requires more storage.
+  - Can have smaller network messages.
+  - Is more complicated.
+- State:
+  - Simpler.
+  - Less capabilities.
+  - Less storage required.
+  - Larger message sizes (especially on connect).
 
 - ## It's becoming really clear that CRDT's become much more powerful and easy to reason about when you break them down into their tiniest pieces.
 - https://twitter.com/JungleSilicon/status/1525515082876063750
@@ -49,13 +60,6 @@ modified: 2022-04-05T10:09:51.343Z
 - ## I made a simple list CRDT that only supports push and replace operations. (No inserts before the end).
 - https://twitter.com/JungleSilicon/status/1511523633294094337
   - It requires no history and is extremely light-weight. Useful for things like message histories or posts.
-
-- ## For anyone interested in collaborative editing, I've implemented a new approach to the shelf CRDT.
-- https://twitter.com/JungleSilicon/status/1504446998329499653
-  - 基于json
-  - It's operation based but it's very easy to consume and cull(cull sth from sth 选出，挑出) those operations.
-- https://github.com/siliconjungle/cabinet
-  - A key value store & subscriptions wrapping a json blob crdt (shelf).
 
 - ## The future of apps is local-first and CRDTs
 - https://twitter.com/AdventureBeard/status/1495973698846736387
@@ -99,7 +103,7 @@ modified: 2022-04-05T10:09:51.343Z
   - That's pretty much what I want to do - I figure I can have a table of operations and every 10 days or so compress it down to a single savepoint and start building up the operations again to avoid size problems
   - Yeah seems sensible, and not much of a loss if you rarely have edits come in on top of a really stale version
 
-- ## if you were building a collaborative web application today, you'd use 
+- ## if you were building a collaborative web application today, you'd use_202109
 - https://twitter.com/tmcw/status/1433436431658196997
   - automerge or yjs
   - replicache
@@ -141,7 +145,6 @@ modified: 2022-04-05T10:09:51.343Z
   - And if you to ship a lot of data, say megabytes, you basically need something like a CAS (like git for binaries), which means you need to remember all the hierarchy of files and/or do things to actually separate content to its data/metadata
   - Gaming is instructive here. Every type of multiplayer game has diff strategies. Some send pure inputs from the clients, others do a lot more simulation locally and most do a bit of both, depending on the game and reqs(RTS, FPS, cheating) And it’s never good enough!
 - The best examples I can think of violate #1 (game server architectures), and they are generally written custom for every game, or at least every studio/franchise. Even Unity has very limited support for a generic solution, despite being a slam dunk feature.
-
 
 - ## Why CRDT didn't work out as well for collaborative editing xi-editor _201905
 - https://news.ycombinator.com/item?id=19886883

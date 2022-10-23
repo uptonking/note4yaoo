@@ -9,9 +9,21 @@ modified: 2022-04-05T10:10:08.537Z
 
 # guide
 
-- A collection of reproducible benchmarks. 
-  - https://github.com/dmonad/crdt-benchmarks
-# [yjs Compared to Automerge](https://github.com/yjs/yjs/issues/145)
+- crdt的实现思路
+  - 基于state
+    - yjs
+  - 基于operation
+    - cabinet
+  - ？基于history
+
+- [An introduction to state-based CRDTs_201712](https://bartoszsypytkowski.com/the-state-of-a-state-based-crdts/)
+
+- [Pure operation-based CRDTs_202104](https://bartoszsypytkowski.com/pure-operation-based-crdts/)
+- [Operation-based CRDTs: JSON document_202103](https://bartoszsypytkowski.com/operation-based-crdts-json-document/)
+# yjs vs automerge
+
+## [yjs Compared to Automerge](https://github.com/yjs/yjs/issues/145)
+
 - You are welcome to ask about the differences. 
 - I don't have much experience with automerge. 
   - If I understand correctly, automerge was primarily build for sharing application state. 
@@ -28,7 +40,6 @@ modified: 2022-04-05T10:10:08.537Z
 - I created a set of benchmarks to compare Yjs with Automerge
   - https://github.com/dmonad/crdt-benchmarks
 # ref
-
 - [KeyValueCRDT](https://bdewey.com/til/2021/08/21/)
   - https://github.com/bdewey/KeyValueCRDT /swift
   - My goal with KeyValueCRDT is to provide a CRDT implementation that can work as a file format for a wide range of applications.

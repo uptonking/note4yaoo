@@ -334,7 +334,7 @@ modified: 2020-07-14T11:03:53.196Z
   - Use redux devtools to inspect useState and useReducer 
   - API: StateInspector, useState(initialState, id?), useReducer(reducer, initialState, initializer?, id?)
 
-- tinybase /1.3kStar/MIT/202209/ts
+- tinybase /1.3kStar/MIT/202209/ts/NoDeps
   - https://github.com/tinyplex/tinybase
   - https://tinybase.org/
   - A tiny, reactive JavaScript library for structured state and tabular data.

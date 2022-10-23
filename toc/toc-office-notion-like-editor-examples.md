@@ -256,6 +256,10 @@ modified: 2022-06-03T22:07:23.308Z
 - https://github.com/Dashibase/lotion
   - An open-source Notion UI built with Vue 3
 # more-notion-like
+- https://github.com/tzhangchi/Travel
+  - https://tzhangchi.github.io/Travel/
+  - Building travels and blocks , presentation like a doc, travel is written by react+ lit + yjs + vite + tailwind.css
+
 - https://anytype.io/
   - Anytype is a next generation software that breaks down barriers between applications, **gives back privacy and data ownership to users**.
 

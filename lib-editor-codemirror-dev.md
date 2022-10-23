@@ -15,6 +15,10 @@ modified: 2021-05-06T09:38:31.520Z
 
 - resources
   - [Ace, CodeMirror, and Monaco: A Comparison of the Code Editors You Use in the Browser__202112](https://blog.replit.com/code-editors)
+# examples
+- https://github.com/MyoniM/mirror-code-react-js
+  - https://mirror-code.web.app/
+  - A collaborative Web IDE with Code Mirror's CRDT Server and Socket.io
 # docs
 
 # [styling](https://codemirror.net/6/examples/styling/)

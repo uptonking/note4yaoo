@@ -35,6 +35,8 @@ modified: 2020-11-11T13:16:42.423Z
   - An ongoing repository of data on coronavirus cases and deaths in the US.
   - 数据全为csv
 
+- [Wikidata:WikiProject COVID-19](https://www.wikidata.org/wiki/Wikidata:WikiProject_COVID-19)
+
 - 美国各州各城市2019新型冠状病毒COVID19数据
   - https://www.kesci.com/home/dataset/5e844c33246a590036b97646
 

@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-community-collab-transform
-tags: [collab, community, prosemirror]
+tags: [collaboration, community, prosemirror]
 created: 2022-08-30T21:50:15.380Z
-modified: 2022-08-31T00:15:07.200Z
+modified: 2022-10-22T18:47:16.228Z
 ---
 
 # lib-editor-prosemirror-community-collab-transform

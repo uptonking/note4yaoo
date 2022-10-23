@@ -1,8 +1,8 @@
 ---
 title: dev-log-2022
-tags: ['2022', dev-log, dev-xp]
+tags: [dev-log, dev-xp, stage-2022]
 created: 2022-05-24T17:56:50.063Z
-modified: 2022-05-24T17:57:03.592Z
+modified: 2022-10-21T21:06:47.860Z
 ---
 
 # dev-log-2022

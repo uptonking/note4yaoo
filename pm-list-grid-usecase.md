@@ -41,6 +41,8 @@ modified: 2021-05-14T14:34:59.116Z
 
 # usecase-examples
 
+- [Rico's cheatsheets: a modest collection of cheatsheets I've written](https://devhints.io/)
+
 - [js web frameworks benchmark](https://krausest.github.io/js-framework-benchmark/2020/table_chrome_86.0.4240.75.html)
 
 - [Yarn Lock Changes](https://github.com/Simek/yarn-lock-changes)

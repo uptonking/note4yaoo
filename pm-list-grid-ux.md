@@ -18,6 +18,13 @@ modified: 2021-05-23T16:34:42.918Z
   - I try to base all my tips on established ux laws and science
   - For example, the whitespace over divider idea is derived by the law of Proximity which states: "Objects that are near, or proximate to each other, tend to be grouped together."
 
+
+# [A case study of complex table design](https://archive.jlongster.com/case-study-complex-table-design)
+
+- I just released a new version of Actual and a big change is a rewrite of the budget table.
+
+
+
 # [The complete guide to building a smart data table in React_201911](https://blog.logrocket.com/complete-guide-building-smart-data-table-react/)
 
 - Some common use cases for table UIs include displaying data for finance reports, sports leaderboards, and pricing and comparison pages.
