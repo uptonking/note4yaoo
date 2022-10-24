@@ -92,7 +92,7 @@ modified: 2021-08-16T06:56:58.774Z
   - maybe don't need to go full CRDT but need something where you preserve intention history on the client.
 - Interesting to compare approach of Google Docs where the collaboration has a slight delay (I assume due to CRDT syncing) vs Figma which uses (what looks like) real-time connections
   - while not "offline-first", Figma is definitely offline-capable. that combined with having multiple writer clients requires CRDT-adjacent methods. They dive into this here!
-  - [How Figma’s multiplayer technology works](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
+  - [How Figma’s multiplayer technology works__201910](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
 - a devtool i'm excited about is @replicache, which provides a solution similar to figma's where you have a centralized authoritative server.
 
 - ## Are there any great text editor libraries out there that work like GitHub’s? Markdown, with drag and drop upload support, APIs for things like tagging people., etc?

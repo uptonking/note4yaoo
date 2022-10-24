@@ -15,7 +15,23 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## For a new project, I’m experimenting with putting test code next to library modules: utl.test.ts
+- https://twitter.com/rauschma/status/1584271399606054913
+  - Definitely a downside. During development, it mostly doesn’t matter. But it’s important when publishing packages. I’m leaning towards simply publishing the tests, too.
+  - `rm dist/**/*.test.js`
+- I found this pattern more useful and ergonomic than a test folder. I reserved a dedicated test folder for local integration ones that requires fixtures or more complex scenarios. For smaller projects don’t see bigger differences between each other benefits
+- This puts an emphasis on unit tests (because where do you put the integration tests that combine multiple modules?).
+  - Which is (the main reason) why I prefer the regular "test" folder: because I want to emphasize integration tests.
+
+- I started using this method recently, and it's pretty good. When you see GitHub PR, the code and its test is always a pair. It'd be better if you could store VS Code nesting setting in .vscode/settings.json file so that other engineers can have the same experience.
+- I've generalized this into what I've dubbed "the co-location principle", which means that the tighter coupling between two files, the closer they should be in the directory hierarchy. Shared files are moved to the lowest possible level that are in all paths of the consumers.
+
+- I’ve been doing this since forever. I prefer it because:
+  01. It’s very easy to see which files have no tests
+  02. I can easily jump from test to implementation 
+  03. I never have to decide how to name test files
+  - IMHO the (anti) pattern of putting test files in a separate folder stems from compiled languages like Java where otherwise tests would end up in the compiled code. JavaScript doesn’t have this issue.
+  - Rust is even sillier. It puts the test (optionally) in the same sourcefiles 
 
 - ## What is your equivalent to "making a blueprint" before coding? Is it whiteboarding? Diagramming? Writing a spec? Or do you just jump straight into code?
 - https://twitter.com/DavidKPiano/status/1550884682014892033

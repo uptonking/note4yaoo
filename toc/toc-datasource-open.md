@@ -24,6 +24,9 @@ modified: 2020-11-11T13:22:28.098Z
   - json
 - https://github.com/olbat/nvdcve
   - JSON files describing vulnerabilities from the NVD and CVE® dictionaries
+
+- ArcGIS Open Data
+  - https://hub.arcgis.com/search
 # organization
 
 - 北京大学开放研究数据平台

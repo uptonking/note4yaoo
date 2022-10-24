@@ -54,6 +54,7 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/wangdashuaihenshuai/crdt-edit /201810/vue/js
   - [我自己从零实现的一个文本文档的协同编辑demo，上面是输入框，下面是数据结构的可视化](https://zhuanlan.zhihu.com/p/48229762)
   - operation-based crdt
+  - 依赖konva的画图app
 
 - https://github.com/siliconjungle/cabinet 
   - https://github.com/siliconjungle/cabinet-client

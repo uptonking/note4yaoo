@@ -36,6 +36,11 @@ modified: 2021-01-13T19:30:59.508Z
   - https://github.com/UreekaBiz/svg-poc
     - An Excalidraw-like SVG Proof-of-Concept
 
+- https://github.com/phedkvist/whiteboard
+  - https://whiteboard-umber.vercel.app/
+  - a simple whiteboard application.
+  - 只依赖react
+
 - roughViz /MIT/5.4kStar/202006
   - https://github.com/jwilber/roughViz
   - https://github.com/rough-stuff/rough

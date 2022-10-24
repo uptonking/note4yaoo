@@ -50,6 +50,9 @@ modified: 2022-10-22T18:47:16.228Z
 - https://github.com/clintharris/IDBSideSync
   - https://idbsidesync-todo-demo.vercel.app/
   - IDBSideSync is an experimental JavaScript library that makes it possible to sync browser-based IndexedDB databases using CRDT concepts
+  - As your app makes CRUD calls to its IndexedDB database, IDBSideSync proxies/intercepts those calls and records the operations to a log (the "oplog").
+  - IDBSideSync will upload the client's oplog entries (CRDT state mutation messages) to the remote data store using the registered plugins, and also download other client's oplog entries
+  - A hybrid logical clock (i.e., time + counter) is maintained among the clients to help figure out which operations "win" if more than one exists for the same database store/record/property.
 
 - https://github.com/hesselbom/crdtmap-indexeddb
   - https://github.com/hesselbom/crdtmap

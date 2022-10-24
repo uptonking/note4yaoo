@@ -130,12 +130,15 @@ modified: 2022-08-19T23:00:22.162Z
   - Next-generation editor for BobaBoard (and beyond). 
   - 代码量很少
 
+- https://github.com/KonnorRogers/tip-tap-element
+  - http://tip-tap-element.vercel.app/
+  - WYSIWYG editing experience that can hook into Ruby on Rails ActionText backend. 
+
 - @sensenet/editor-react
   - https://github.com/SenseNet/sn-client
   - Text editor library behind rich text editor is changed to tiptap@2.0
   - As a first step only those text editing features are implemented
   - More new things (managing tables, embedding, etc.) are coming in the following releases.
-
 
 - https://github.com/pierre-lgb/slashwriter
   - 依赖tiptap.v2、redux-toolkit、supabase、express、yjs

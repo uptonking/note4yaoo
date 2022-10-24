@@ -47,6 +47,8 @@ https://meeting.tencent.com/p/9606972663
     - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-minimal
     - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-with-toolbar
     - https://ckeditor.com/docs/ckeditor5/latest/examples/builds-custom/full-featured-editor.html
+  - more-editor
+    - https://demo.grammarly.com/
 
 ```JS
 console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
@@ -83,6 +85,24 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - state/operation-based crdt
 - tiptap-yjs
+
+## 1025
+
+- sqlite常用命令
+  - sudo apt install -y sqlite3 
+  - sqlite3 new.db
+  - .databases
+  - .tables
+  - .read test.sql
+
+- [Prevent ESModules from being deferred when imported with script tag](https://stackoverflow.com/questions/56823415)
+  - es-module里面挂载变量v1到window会被延迟，所以后面的es5脚本访问不到v1
+  - Module scripts behave like defer by default – there's no way to make a module script block the HTML parser while it fetches.
+
+- [Error [ERR_MODULE_NOT_FOUND]: Cannot find module](https://stackoverflow.com/questions/65384754)
+  - When you are using ECMAScript modules you are forced to provide the file extension
+  - You can also create a script in your package.json
+  - NODE_OPTIONS="--experimental-specifier-resolution=node" node server.js
 
 ## 1023
 

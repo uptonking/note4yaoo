@@ -22,11 +22,7 @@ modified: 2020-12-22T12:42:14.745Z
   - snap list / snap list --all 包含旧版本
   - flatpak list / flatpak list --app 只包含app，不包含runtime
 
-
-
 ## os-starter
-
-
 
 - [装了5次Ubuntu，告诉你win10+Ubuntu双系统的正确打开方式](https://zhuanlan.zhihu.com/p/101307629)
 
@@ -162,6 +158,11 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
 - 常用软件都可以直接在ubuntu官方包repository找到
   - 包括 vlc，clementine，goldendict, gimp, inkscape
   - https://packages.ubuntu.com/
+
+```shell
+
+sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
+```
 
 - 如何运行 . AppImage 文件
   - chmod a+x *. AppImage
