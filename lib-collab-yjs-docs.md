@@ -6,7 +6,20 @@ modified: 2022-04-05T10:11:21.023Z
 ---
 
 # lib-collab-yjs-docs
+# [Yjs Internals](https://github.com/yjs/yjs/blob/main/INTERNALS.md)
 
+
+- The Yjs CRDT algorithm is described in the YATA paper from 2016.
+- At its heart, Yjs is a list CRDT. 
+  - Everything is squeezed into a list in order to reuse the CRDT resolution algorithm
+  - Arrays are  lists of arbitrary items.
+  - Text is a list of characters, optionally punctuated(不时打断) by formatting markers and embeds for rich text support. 
+  - Maps are lists of entries. The last inserted entry for each key is used
+- Each client is assigned a unique clientID property on first insert. js-safe random 53-bit integer
+
+
+- Deletions in Yjs are treated very differently from insertions. 
+  - 👉🏻 Insertions are implemented as a sequential operation based CRDT, but deletions are treated as a simpler state based CRDT.
 # yjs-docs
 
 - Yjs documents are collections of shared objects that sync automatically.

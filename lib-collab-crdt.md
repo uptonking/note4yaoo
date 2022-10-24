@@ -14,13 +14,11 @@ modified: 2022-04-05T10:10:08.537Z
     - yjs
   - 基于operation
     - cabinet
-  - ？基于history
 
 - [An introduction to state-based CRDTs_201712](https://bartoszsypytkowski.com/the-state-of-a-state-based-crdts/)
 
-- [Pure operation-based CRDTs_202104](https://bartoszsypytkowski.com/pure-operation-based-crdts/)
 - [Operation-based CRDTs: JSON document_202103](https://bartoszsypytkowski.com/operation-based-crdts-json-document/)
-# [聊聊CRDT](https://cloud.tencent.com/developer/article/1422458)
+# [聊聊CRDT](https://segmentfault.com/a/1190000019109149)
 - CRDT是Conflict-free Replicated Data Type的简称，也称为a passive synchronisation，即免冲突的可复制的数据类型，这种数据类型可以用于数据跨网络复制并且可以自动解决冲突达到一致，非常适合使用AP架构的系统在各个partition之间复制数据时使用；
   - 具体实现上可以分为State-based的CvRDT、Operation-based的CmRDT、Delta-based、Pure operation-based等
 
@@ -40,6 +38,13 @@ modified: 2022-04-05T10:10:08.537Z
 - Pure operation-based
   - 通常Operation-based的方式需要prepare方法生成operations，这里可能存在延时，
   - Pure operation-based是指prepare的实现不是通过对比state生成operations，而是仅仅返回现成的operations，这就需要记录每一步对object state操作的operations
+
+- A sequence, list, or ordered set CRDT can be used to build a Collaborative real-time editor, as an alternative to Operational transformation (OT).
+  - Some known Sequence CRDTs are Treedoc, RGA, Woot, Logoot, and LSEQ
+- Industrial sequence CRDTs are known to out-perform academic implementations due to optimizations and a more realistic testing methodology.
+  - The main popular example is Yjs CRDT, a pioneer in using a plain list instead of a tree (ala Kleppmann's automerge).
+  - Deletions in Yjs are treated very differently from insertions. 
+  - 👉🏻 Insertions are implemented as a sequential operation based CRDT, but deletions are treated as a simpler state based CRDT.
 
 - Convergent Operations
   - 对于CRDT来说，为了实现Conflict-free Replicated对数据结构的一些操作需要满足如下条件：
@@ -74,8 +79,36 @@ modified: 2022-04-05T10:10:08.537Z
 - Observed-remove set(OR-Set)
   - 类似2P-Set，有一个addSet，一个removeSet，不过对于元素增加了tag信息，对于同一个tag的操作add优先于remove
 
-- https://github.com/netopyr/wurmloch-crdt
-  - Experimental implementations of conflict-free replicated data types (CRDTs) for the JVM
+- https://github.com/gbogard/crdts-introduction
+  - https://crdt.guillaumebogard.dev/
+  - A gentle introduction to Conflict-free replicated data types, including visual demos
+  - A state-based CRDT is a data structure, together with a binary operation that can produce a single state out of two possibly different states. More formally, a state-based CRDT is a tuple (S, s0, q, u, m)
+  - operation-based CRDT is a data-structure whose updates are encoded by operations, and operations are sent over the network. 
+    - A new state can be produced given the current state and an operation. 
+    - When the structure is modified, the replica responsible for the update generates one or many operations, applies them locally, and then propagates them across the network. 
+    - Operation-based CRDTs guarantee that, when operations are successfully propagated, all replicas converge to the same state.
+    - Like merging state-based CRDTs, applying operations is associative and commutative, i.e. operations can be applied in any order, however, unlike it isn't necessarily idempotent. It is the responsibility of the transport layer to make sure operations are properly delivered, and not applied more than once.
+
+- https://github.com/pfrazee/crdt_notes
+- Operation Based vs. State Based replication
+  - There are two fundamental methods to propagate updates among replicas. 
+  - In State based replication, updates contain the full object state (or in optimized versions, a delta of the state). 
+  - In operation based, the updates contain the operations that modify the object and must be executed in all replicas. 
+  - The size of an object is typically larger than the size of an operation. Transmitting the whole state of an object can introduce a large overhead in message size. 
+  - On the other hand, if the number of operations is high it can be better to transmit the whole state instead of all operations. 
+  - Also, it can be simpler to update the state of an object than applying the operations on it, as discussed in 2.1.5.
+
+- [Data Laced with History: Causal Trees & Operational CRDTs](http://archagon.net/blog/2018/03/24/data-laced-with-history/)
+- CmRDTs, or operation-based CRDTs, only require peers to exchange mutation events, but place some constraints on the transport layer. 
+  - (For instance, exactly-once and/or causal delivery, depending on the CmRDT in question.) 
+- With CvRDTs, or state-based CRDTs, peers must exchange their full data structures and then merge them locally, placing no constraints on the transport layer but taking up far more bandwidth and possibly CPU time. 
+- Both types of CRDT are equivalent and can be converted to either form.
+
+- https://github.com/mpareja/node-uncorded
+  - A state-based CRDT was chosen over an operation-based CRDT so we could forego the requirement of a reliable network ensuring idempotent message delivery. 
+  - The downside of a state-based CRDT is that we always replicate a node's entire state. 
+  - Uncorded's small and short-lived state is a great fit here so long as we don't hold remove-set values indefinitely.
+  - Nodes publish changes to listeners via newline delimited JSON representations of their state. Listeners apply the state changes according to the 2P-set merge algorithm.
 # yjs vs automerge
 
 ## [yjs Compared to Automerge](https://github.com/yjs/yjs/issues/145)

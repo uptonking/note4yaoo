@@ -37,6 +37,10 @@ modified: 2022-09-21T15:47:41.340Z
 - ref-zustand-yjs
   - https://github.com/tandem-pt/zustand-yjs
 # yjs-examples
+
+- https://github.com/jaqarrick/yjs-lab
+  - This repo serves as an in-depth explanation of Yjs.
+
 - https://github.com/ToolJet/yjs-crdt-game
   - [Building a realtime multiplayer game using React & Yjs + y-webrtc](https://blog.tooljet.com/multiplayer-tic-tac-toe-using-react-crdt-yjs/)
 # yjs-more

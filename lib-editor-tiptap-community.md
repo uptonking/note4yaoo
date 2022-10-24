@@ -66,3 +66,46 @@ modified: 2022-08-19T23:08:45.274Z
   - Using React context for that purpose sucks.
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Just in case anyone tries to use Hocuspocus with NestJS in the future, this code allows me to run hocuspocus (although a bit hacky) without issues_20221005
+- https://discord.com/channels/818568566479257641/818569767149371444/1027216475179712692
+
+```JS
+import { WebSocket, Server } from 'ws';
+import { OnGatewayInit, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
+import { hocuspocus } from '@/hocuspocus';
+import { Request } from 'express';
+import url from 'url';
+
+const extractString = (x: (string | string[]) | undefined) => (x && Array.isArray(x) ? x[0] : x) as string | undefined;
+
+@WebSocketGateway({ path: `/collaboration` })
+export class CollaborationGateway implements OnGatewayInit {
+  @WebSocketServer()
+  server: Server;
+
+  afterInit(server: Server) {
+    server.on(`connection`, (socket: WebSocket, request: Request) => {
+      const query = url.parse(request.url, true).query;
+
+      const documentId = extractString(query?.documentId);
+
+      if (documentId) {
+        hocuspocus.handleConnection(socket, request, documentId);
+      }
+    });
+  }
+}
+
+new HocuspocusProvider({
+  url: `${protocol}//${providerUrl.host}/collaboration?documentId=${documentId}&ignore=`,
+  name: documentId,
+  document: new Y.Doc({ guid: documentId }),
+})
+```

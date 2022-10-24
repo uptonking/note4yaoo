@@ -30,6 +30,9 @@ modified: 2022-10-11T09:03:07.297Z
 - https://github.com/caiya/webrtc-p2p-datachannel
   - p2p视频聊天，加入datachannel进行简单的消息发送
 
+- https://github.com/hughfenghen/rtc-live-show
+  - 基于WEB RTC + rrweb实现的页面“直播”demo
+
 - WebRTC目的是无插件实现web端的实时通信的能力。
 - WebRTC提供了视频会议的核心技术，包括音视频的采集、编解码、网络传输、展示等功能，并且还支持跨平台，包括linux、windows、mac、android等。
 
@@ -64,7 +67,6 @@ modified: 2022-10-11T09:03:07.297Z
   - 即不传递媒体消息，绕过服务器直接传递数据。
   - 相比WebSocket、http消息，数据通道支持流量大、延迟低。
 - 单个对等连接中的多个数据通道底层共享一个流，所以只需一次offer、answer即可建立首个数据通道。之后再建立数据通道无需再次进行offer、answer交换。
-
 
 ## [到底什么是WebRTC服务器，以及它是如何联接通话的](https://webrtc.org.cn/webrtc-server/)
 

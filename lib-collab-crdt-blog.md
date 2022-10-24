@@ -9,12 +9,33 @@ modified: 2022-10-13T08:00:21.260Z
 
 # guide
 
-# [基于CRDT的一种文档冲突算法 YATA/yjs](https://juejin.cn/post/7064236095440961550)
-- 本文我们主要介绍基于CRDT的一种文档合并算法-YATA。它有自己的开源实现Yjs
+# [去中心化在线协作：Feakin 的图形协作是如何设计的？_202209](https://www.phodal.com/blog/collaboration-with-crdt/)
+- 通讯协议：WebSocket vs HTTP
+- 数据格式：JSON vs Binary
+- 协作算法：中心化还是去中心化？ OT 算法 vs CRDT
 
-- [Near Real-Time Peer-to-Peer Shared Editing on Extensible Data Types](https://www.researchgate.net/publication/310212186_Near_Real-Time_Peer-to-Peer_Shared_Editing_on_Extensible_Data_Types)
-# [Delta-state CRDTs: indexed sequences with YATA](https://bartoszsypytkowski.com/yata/)
-- This time we'll cover YATA (Yet Another Transformation Approach): a delta-state based variant, introduced and popularized by Yjs framework used to build collaborative documents.
+- 服务端：Actix + Diamond Types + CRDT
+- 客户端：编辑生成 patches
+- 客户端：编辑器应用 patches
+# [CRDT——解决最终一致问题的利器_201809](https://juejin.cn/post/6844903672032264199)
+- 先简单统一一下概念
+  - object: 可以理解为“副本”
+  - operation: 操作接口，由客户端调用，分为两种，读操作query和写操作update
+  - query: 查询操作，仅查询本地副本
+  - update: 👉🏻 更新操作，先尝试进行本地副本更新，若更新成功则将本地更新同步至远端副本
+  - merge: update在远端副本的合并操作
+
+- 一个数据结构符合CRDT的条件是update操作和merge操作需满足交换律、结合律和幂等律
+- 如果update操作本身满足以上三律，merge操作仅需要对update操作进行回放即可，这种形式称为op-based CRDT，最简单的例子是集合求并集。
+- 如果update操作无法满足条件，则可以考虑同步副本数据，同时附带额外元信息，通过元信息让update和merge操作具备以上三律，这种形式称为state-based CRDT。
+- 让元信息满足条件的方式是让其更新保持__单调__，这个关系一般被称为__偏序关系__。
+  - 举一个简单例子，每次update操作都带上时间戳，在merge时对本地副本时间戳及同步副本时间戳进行比对，取更新的结果，这样总能保证结果最新并且最终一致，这种方式称为Last Write Wins
+- update操作无法满足三律，如果能将元信息附加在操作或者增量上，会是一个相对state-based方案更优化的选择
+- 如果同步过程能确保exactly once的语义，幂等律条件是可以被放宽掉，比如说加法本身满足交换律结合律但不幂等，如果能保证加法操作只回放一次，其结果还是最终一致的。
+# [如何设计 CRDT 算法](https://www.zxch3n.com/crdt-intro/design-crdt/)
+- 以 Op-based CRDT 的思路设计 Last-write-wins Set(LWWSet)
+# [数据库系统小报：CRDT初探](https://zhuanlan.zhihu.com/p/510797688)
+
 # [I was wrong. CRDTs are the future_202009](https://josephg.com/blog/crdts-are-the-future/)
 - I saw Martin Kleppmann’s talk a few weeks ago about his approach to realtime editing with CRDTs, and I felt a deep sense of despair(绝望). 
   - Maybe all the work I’ve been doing for the past decade won’t be part of the future after all, because Martin’s work will supersede it. Its really good.
@@ -152,3 +173,6 @@ modified: 2022-10-13T08:00:21.260Z
 - It seems like CRDTs would be useful for contact tracing in that distributed contact tracers collect data on cases and potential cases. They operate independently for hours through the day with occasional network access or at least end of day.
   - Since there is no concurrency in contact tracing (only you will manipulate your own data), a CRDT might be an unnecessary overhead. 
   - There is concurrency in contact tracing. In developing nations it’s like a map reduce problem. You send out the contact tracers in the morning, they gather results and sync up at the end of the day.
+# more-crdt
+
+- [CRDTs and Realtime Collaboration](https://nyxtom.dev/2020/09/01/intro-to-crdts)
