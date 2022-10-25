@@ -68,12 +68,12 @@ modified: 2020-10-22T10:03:50.526Z
 - yn /3.6kStar/AGPL.v3/202208/ts/vue/网页版+桌面版
   - https://github.com/purocean/yn
   - https://yank-note.vercel.app/
-  - 一款面向程序员的 Markdown 笔记应用
-  - 使用 Monaco 内核，专为 Markdown 优化，拥有和 VSCode 一样的编辑体验
-  - 支持历史版本回溯；可在文档中嵌入小工具、可运行的代码块、表格、PlantUML 图形、Drawio 图形、宏替换等；支持接入 OpenAI 自动补全。
-  - 兼容性强：数据保存为本地 Markdown 文件；拓展功能尽量用 Markdown 原有的语法实现。
+  - 一款面向程序员的Markdown笔记应用
+  - 使用 vscode-Monaco 内核，专为 Markdown 优化
+  - 支持历史版本回溯；可在文档中嵌入小工具、可运行的代码块、表格、PlantUML图形、Drawio图形、宏替换等；支持接入 OpenAI 自动补全。
+  - 兼容性强：数据保存为本地Markdown文件；拓展功能尽量用 Markdown 原有的语法实现。
   - 支持用户编写自己的插件来拓展编辑器的功能。
-  - 加密文件的加密解密操作均在前端完成，请务必牢记自己的密码。
+  - 加密文件的加密解密操作均在前端完成，请务必牢记自己的密码。一旦密码丢失，只能暴力破解了。
 
 - note-it /16Star/Apache2/202208/ts/tiptap
   - https://github.com/MuhametSmaili/note-it

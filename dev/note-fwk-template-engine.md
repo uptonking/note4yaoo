@@ -11,7 +11,6 @@ modified: 2020-12-08T13:29:35.248Z
 
 - 常用模版引擎
   - handlebars、ejs、lit-html
-
 # faq
 
 ## [随着前端 MVC， MVVM 框架的壮大，后端模版引擎是否可以退出历史舞台了？(https://www.zhihu.com/question/47189015)](https://www.zhihu.com/question/47189015)
@@ -104,9 +103,7 @@ modified: 2020-12-08T13:29:35.248Z
 - 相比之下dom-based模板引擎可以实现像Matt-Esch/virtual-dom 这类的东西，
   - 在数据更新的时候实现最小操作，并不像string-based模板引擎那样，可能改了一个值就要重新生成巨大的一部分字符串。
 - 个人认为，在浏览器端，string-based模板引擎的应用场景越来越有限，string-based模板引擎对现在提倡的组件化开发其实是挺不友好的。
-
 # popular
-
 - https://github.com/mde/ejs
   - http://ejs.co/
   - /5.1kStar/Apache2/202009/js
@@ -115,21 +112,29 @@ modified: 2020-12-08T13:29:35.248Z
     - When `true`, compiles a function that can be rendered in the browser without needing to load the EJS Runtime (ejs.min.js).
     - includes do not work unless you use an include callback
   - Complies with the Express view system
+
 - https://github.com/handlebars-lang/handlebars.js
   - https://handlebarsjs.com/guide/
   - /15.8kStar/MIT/202011/js
   - Handlebars let you build semantic templates effectively
   - Handlebars is largely compatible with Mustache templates.
-  - syntax of Handlebars.js templates is a superset of Mustache templates.
+  - 👉🏻 syntax of Handlebars.js templates is a superset of Mustache templates.
 
+- https://github.com/userpixel/micromustache
+  - fast and small sub-implementation of the {{mustache}} template engine for JavaScript
+  - No dependencies
+  - less than 350 source lines of code, easy to audit
+  - dropping the following features from MustacheJS
+    - Array iterations: {{# ...}}
+    - Partials: {{> ...}}
+    - Inverted selection: {{^ ...}}
+    - Comments: {{! ...}}
+    - HTML sanitization: {{{ propertyName }}}
 # pieces
-
 - [用20行代码带你了解模板引擎实现原理](https://zhuanlan.zhihu.com/p/267830144)
   - 模板引擎就是将数据（data）和模板（template）合并然后生成 HTML 文本。
   - 使用 ejs 的语法来实现一个模板引擎，整个代码实现只有 20 行。
-
 # discuss
-
 - ## [differences between handlebars.java and handlebars.js](https://github.com/jknack/handlebars.java/issues/346)
 - handlebars.java is a server side template engine (like freemarker, velocity, etc..)
 - That's all handlebars.java is about, just a template engine for Java.
@@ -143,7 +148,5 @@ modified: 2020-12-08T13:29:35.248Z
   - This feature works good most of the times, but not always.
 - Handlebars.js doesn't look in the context stack for missing attributes in the current scope (this is consistent with the Mustache Spec).
   - Hopefully, you can turn-off the context stack lookup in Handlebars.java by qualifying the attribute with this.
-
 # ref
-
 - [Comparison of web template engines](https://en.wikipedia.org/wiki/Comparison_of_web_template_engines)
