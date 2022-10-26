@@ -390,7 +390,8 @@ global.gc();
 ```
 
 - ES2021 推出了 WeakRef ，能实现保留对另一个对象的弱引用，而不会阻止该弱引用对象被GC回收
-# valueOf vs toString (+号运算符) 类似java的自动拆箱装箱/隐式类型转换
+# valueOf vs toString (+号运算符) 
+> ❓ 类似java的自动拆箱装箱/隐式类型转换
 
 ## [Object.prototype.valueOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf)
 

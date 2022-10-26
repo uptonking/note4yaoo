@@ -17,6 +17,11 @@ modified: 2021-08-30T18:56:18.632Z
   - DB Browser for SQLite, Previously known as "SQLite Database Browser"
   - 基于qt和c++实现
 
+- https://github.com/wangfenjin/simple
+  - 支持中文和拼音的 SQLite fts5 全文搜索扩展
+  - A SQLite3 fts5 tokenizer which supports Chinese and PinYin
+  - https://www.sqlite.org/fts5.html
+
 - https://github.com/dumblob/mysql2sqlite
   - Converts MySQL dump to SQLite3 compatible dump (including MySQL KEY xxxxx statements from the CREATE block).
   - The script is written in awk (tested with gawk, but should work with original awk, and the lightning fast mawk) and shall be fully POSIX compliant.

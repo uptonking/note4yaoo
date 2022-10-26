@@ -19,36 +19,42 @@ modified: 2021-11-19T06:53:19.649Z
 
 ### face
 
+- 🙃 🥲
+  - ime 呵呵 倒脸
+  - upside-down face
+- 🤔 
+  - ime 思考 为啥
+  - thinking face
+- 😏
+  - ime 嘿嘿 偷笑
 - 😂
   - ime 笑哭  
   - :joy: 
   - face with tears of joy
-- 🙃 
-  - ime 倒脸 呵呵
-  - upside-down face
-- 🤔 
-  - ime 思考
-  - thinking face
 - 🤗
-  - ime 拥抱 欢迎
+  - ime 抱抱 欢迎
   - smiling face with open hands
+- 😱
+  - ime 尖叫 吓人
+  - :scream:
+  - face screaming in fear
+- 😩 😦 😫
+  - ime 惨 难过
+- 😑 😑
+  - ime 噢 o
+- 🥱
+  - ime 哈欠
+- 🤪
+  - ime 切 呃
 - 🙄
   - ime 白眼
   - face with rolling eyes
-- 😱
-  - ime 尖叫
-  - :scream:
-  - face screaming in fear
-- smirk
-  - :smirk:
+- 🤧 😮‍💨
+  - ime 喷嚏 叹气
 - 
 - 
 - 
-- 
-- 
-- 
-- 
-- 
+
 ### hands/fingers
 
 - 👍
@@ -314,5 +320,4 @@ modified: 2021-11-19T06:53:19.649Z
 - 🇺🇸
   - :us:
   - flag: United States
-
 # ref

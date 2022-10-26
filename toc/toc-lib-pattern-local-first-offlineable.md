@@ -67,6 +67,9 @@ modified: 2021-09-04T14:03:39.046Z
   - writing local-first software has been challenging because of the lack of libraries and design patterns. I personally failed several times, and that's why I created Evolu.
   - Evolu architecture is almost a clone of James Long CRDT for mortals. Rewritten and improved,
 
+- https://github.com/gildas-lormeau/SingleFile
+  - a Web Extension (and a CLI tool) compatible with Chrome, Firefox to save a complete web page into a single HTML file.
+
 - https://github.com/logux/client
   - https://logux.io/
   - Logux is a new way to connect client and server. 

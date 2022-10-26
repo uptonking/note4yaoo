@@ -54,6 +54,7 @@ modified: 2022-10-23T14:57:23.473Z
   - mediumseagreen: #3cb371 海绿色，适合文字
   - beige: #f5f5dc 浅绿泛黄
   - ivory: #fffff0
+  - 浅绿: #add
   - lightgreen: #90ee90 亮绿色，艳丽
   - seagreen: #2e8b57 深海绿，都有点深
   - darkseagreen: #8fbc8f
@@ -69,7 +70,7 @@ modified: 2022-10-23T14:57:23.473Z
   - 碧绿: #2add9c
   - 青碧: #48c0a3
   - 黛绿: #426666
-  - 苍翠: #519a73 
+  - 苍翠: #519a73
   - 铜绿: #549688
 - Blue: #0000ff
   - royalblue: #4169e1 墨蓝，又亮又深
