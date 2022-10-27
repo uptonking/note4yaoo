@@ -10,9 +10,8 @@ modified: 2021-01-01T22:13:44.013Z
 # 前端工程化工具相关
 
 ```shell
-python -m SimpleHTTPServer 8000
-
 python -m http.server 8000
+python2 -m SimpleHTTPServer 8000
 ```
 
 - prettier

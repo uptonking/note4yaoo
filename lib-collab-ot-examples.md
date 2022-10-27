@@ -108,6 +108,10 @@ modified: 2022-10-02T20:51:30.444Z
   - support presence(cursors)
   - support local undo/redo
 
+- https://github.com/ryneli/ot-crdt-papers
+  - intersection of Operational Transformation and Conflict-free Replicated Data Types (CRDT's).
+  - Running the prototype collaborative editor，实现简单
+
 - https://github.com/otjs/ot /js
   - A line-based operational transform algorithm
   - https://github.com/otjs/ot-client
@@ -169,8 +173,10 @@ modified: 2022-10-02T20:51:30.444Z
 - https://github.com/datavis-tech/json0-presence-demo
   - A demo of plain text presence using json0+ShareDB and html-text-collab-ext.
   - The original application was simplified by Curran Kelleher down to a single textarea with presence
-  - https://github.com/convergencelabs/html-text-collab-ext
-    - Utilities that enable real time collaboration in HTML TextAreas
+- https://github.com/convergencelabs/html-text-collab-ext
+  - A set of utilities that enhances a normal HTML `<textarea>` element with collaborative editing capabilities. 
+  - This library has no dependency on Convergence.
+  - 只依赖textarea-caret，不依赖其他
 
 - https://github.com/ausnorris/leaderboard
   - json0+sharedb
@@ -188,4 +194,3 @@ modified: 2022-10-02T20:51:30.444Z
   - simple local console implementation of Operational Transformation
 # more-ot
 - [I'm looking for a library that would allow me to synchronize text in real-time between multiple users (ala Google Docs).](https://stackoverflow.com/questions/2043165)
-

@@ -9,14 +9,42 @@ modified: 2022-04-05T10:10:08.537Z
 
 # guide
 
+- state-based和operation-based没必要二选一，两者可转换
+  - 两者的主要区别
+    - 基于op的数据更新操作数据结构设计起来可能较复杂
+    - 基于op的节点间交换的数据量一般较少
+    - 基于op依赖可靠的传输来保证操作的因果性 Reliable Causal Broadcast(RCB)，不可丢失或重复
+  - 对于业界成熟的实现如yjs，是结合两种方式来优化性能的
+
 - crdt的实现思路
+  - base-data-structures
+    - Counter
+    - Last Write Wins Register
+    - Multi Value Register
   - 基于state
-    - yjs
+    - Growing-only Counter
+    - PNCounter
+    - Growing-only Set
+    - 2-Phase Set
+    - Observed Remove Set
+    - Delta-state growing-only counter
+    - (replica-id, sequence-nr), aka. dot
+    - Delta-aware Add-Wins Observed Remove Set
   - 基于operation
     - cabinet
+    - Lseq
+    - RGA
+    - Block-wise Replicated Growable Arrays
+  - 基于sequence
+    - woot
+    - logoot/lseq
+    - treedoc
+    - conclave
+    - yata/yjs
+    - chronofold
 
 - [An introduction to state-based CRDTs_201712](https://bartoszsypytkowski.com/the-state-of-a-state-based-crdts/)
-
+- [Operation based CRDTs: protocol_202008](https://bartoszsypytkowski.com/operation-based-crdts-protocol/)
 - [Operation-based CRDTs: JSON document_202103](https://bartoszsypytkowski.com/operation-based-crdts-json-document/)
 # [CRDTs for Mortals_James Long_201912](https://www.youtube.com/watch?v=DEcwa68f-jY)
 - Why haven’t “offline-first” apps taken off?
@@ -73,13 +101,6 @@ modified: 2022-04-05T10:10:08.537Z
   - 通常Operation-based的方式需要prepare方法生成operations，这里可能存在延时，
   - Pure operation-based是指prepare的实现不是通过对比state生成operations，而是仅仅返回现成的operations，这就需要记录每一步对object state操作的operations
 
-- A sequence, list, or ordered set CRDT can be used to build a Collaborative real-time editor, as an alternative to Operational transformation (OT).
-  - Some known Sequence CRDTs are Treedoc, RGA, Woot, Logoot, and LSEQ
-- Industrial sequence CRDTs are known to out-perform academic implementations due to optimizations and a more realistic testing methodology.
-  - The main popular example is Yjs CRDT, a pioneer in using a plain list instead of a tree (ala Kleppmann's automerge).
-  - Deletions in Yjs are treated very differently from insertions. 
-  - 👉🏻 Insertions are implemented as a sequential operation based CRDT, but deletions are treated as a simpler state based CRDT.
-
 - Convergent Operations
   - 对于CRDT来说，为了实现Conflict-free Replicated对数据结构的一些操作需要满足如下条件：
   - Associative
@@ -113,6 +134,24 @@ modified: 2022-04-05T10:10:08.537Z
 - Observed-remove set(OR-Set)
   - 类似2P-Set，有一个addSet，一个removeSet，不过对于元素增加了tag信息，对于同一个tag的操作add优先于remove
 
+- A sequence, list, or ordered set CRDT can be used to build a Collaborative real-time editor, as an alternative to Operational transformation (OT).
+  - Some known Sequence CRDTs are Treedoc, RGA, Woot, Logoot, and LSEQ
+- Industrial sequence CRDTs are known to out-perform academic implementations due to optimizations and a more realistic testing methodology.
+  - The main popular example is Yjs CRDT, a pioneer in using a plain list instead of a tree (ala Kleppmann's automerge).
+  - Deletions in Yjs are treated very differently from insertions. 
+  - 👉🏻 Insertions are implemented as a sequential operation based CRDT, but deletions are treated as a simpler state based CRDT.
+# [A comprehensive study of Convergent and Commutative Replicated Data Types_201101](https://www.researchgate.net/publication/50949847)
+- CvRDT
+  - State-based mechanisms (CvRDTs) are simple to reason about, since all necessary information is captured by the state. 
+  - They require weak channel assumptions, allowing for unknown numbers of replicas. 
+  - However, sending state may be inefficient for large objects; this can be tackled by shipping deltas, but this requires mechanisms similar to the op-based approach. 
+  - Historically, the state-based approach is used in ﬁle systems such as NFS, AFS, Coda, and in key-value stores such as Dynamo and Riak. 
+- CmRDT
+  - Specifying operation-based objects (CmRDTs) can be more complex since it requires reasoning about history, but conversely they have greater expressive power. 
+  - The payload can be simpler since some state is effectively offloaded to the channel. 
+  - Op-based replication is more demanding of the channel, since it requires reliable broadcast, which in general requires tracking group membership. 
+  - Historically, op-based approaches have been used in cooperative systems such as Bayou, Rover, IceCube, Telex.
+
 - https://github.com/gbogard/crdts-introduction
   - https://crdt.guillaumebogard.dev/
   - A gentle introduction to Conflict-free replicated data types, including visual demos
@@ -122,6 +161,22 @@ modified: 2022-04-05T10:10:08.537Z
     - When the structure is modified, the replica responsible for the update generates one or many operations, applies them locally, and then propagates them across the network. 
     - Operation-based CRDTs guarantee that, when operations are successfully propagated, all replicas converge to the same state.
     - Like merging state-based CRDTs, applying operations is associative and commutative, i.e. operations can be applied in any order, however, unlike it isn't necessarily idempotent. It is the responsibility of the transport layer to make sure operations are properly delivered, and not applied more than once.
+
+- [An introduction to Conflict-Free Replicated Data Types](https://lars.hupel.info/topics/crdt/08-outlook/)
+  - state-based CRDTs, or CvRDTs
+    - They are simple and elegant because you can merge any two values (of the same data type, of course) and obtain a well-defined result. 
+    - Their requirements to the communication channel are simple: to achieve convergence, you need messages to be delivered every once in a while. Because of their properties, it also doesn’t matter if messages get duplicated.
+    - a big disadvantage: You need to send the entire value over the wire. This could become prohibitively expensive once the data structures grow larger.
+  - operation-based CRDTs, or CmRDTs
+    - While their design goals are the same as state-based CRDTs (convergence), they achieve this in a completely different way. 
+    - They work by transmitting only the operations that have been applied since the last sync.
+    - State-based CRDTs achieve convergence by the lattice properties. 
+    - But in operation-based CRDTs, replicas never actually see each other’s entire state. Instead, we must make sure that operations commute. This means that no matter in what order the operations from one replica are applied to another replica, they end up reconstructing the same state.
+    - The convergence theorem for them requires reliable broadcast channels.
+    - Specifying operation-based objects can be more complex since it requires reasoning about history, but conversely, they have greater expressive power. The payload can be simpler since some state is effectively offloaded to the channel. Op-based replication is more demanding of the channel, since it requires reliable broadcast, which in general requires tracking group membership.
+  - There’s no clear winner here
+    - You need to decide which one to use based on your concrete use case and channel assumptions. 
+    - But one more thing: A Git-like approach where before syncing, both replicas negotiate the precise subset of objects that they need to exchange, may give you the benefits of small message sizes while keeping the conceptual simplicity of state-based CRDTs, at the cost of introducing a more complex protocol.
 
 - https://github.com/pfrazee/crdt_notes
 - Operation Based vs. State Based replication

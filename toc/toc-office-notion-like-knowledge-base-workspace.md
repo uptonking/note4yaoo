@@ -56,6 +56,11 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/toeverything/AFFiNE
   - https://affine.pro/
   - Affine is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.
+- blocksuite /50Star/MPLv2/202210/ts
+  - https://github.com/toeverything/blocksuite
+  - https://pathfinder.affine.pro/
+  - 支持跨block选择部分文字，但不支持跨block加粗快捷键
+  - 不支持拖拽block修改顺序，不支持拖入拖出list item
 # github-wiki-confluence-like
 - MrDoc /2.1kStar/GPL.v3/202208/js/python/仅网页版
   - https://github.com/zmister2016/MrDoc

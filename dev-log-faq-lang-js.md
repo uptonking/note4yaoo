@@ -8,7 +8,7 @@ modified: 2021-03-29T19:18:55.989Z
 # dev-log-faq-lang-js
 
 # not-yet
-- 对于index.js中的`export * from './A.js`,                                         `export * from './B.js`，如果A.js和B.js中都有`export default`，那最后index.js中有导出default吗
+- 对于index.js中的`export * from './A.js`； `export * from './B.js`，如果A.js和B.js中都有`export default`，那最后index.js中有导出default吗
 
 ## [是否应该在production里使用typescript的decorator？](https://www.zhihu.com/question/404724504)
 

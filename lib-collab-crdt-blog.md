@@ -176,3 +176,6 @@ modified: 2022-10-13T08:00:21.260Z
 # more-crdt
 
 - [CRDTs and Realtime Collaboration](https://nyxtom.dev/2020/09/01/intro-to-crdts)
+
+- [Introduction to CRDTs for Realtime Collaboration](https://dev.to/nyxtom/introduction-to-crdts-for-realtime-collaboration-2eb1)
+  - 对各种数据类型进行了简介

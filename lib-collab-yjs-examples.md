@@ -9,7 +9,20 @@ modified: 2022-09-21T15:47:41.340Z
 
 # guide
 
+# yjs-examples
+- https://github.com/jaqarrick/yjs-lab
+  - This repo serves as an in-depth explanation of Yjs.
+
+- https://github.com/ToolJet/yjs-crdt-game
+  - [Building a realtime multiplayer game using React & Yjs + y-webrtc](https://blog.tooljet.com/multiplayer-tic-tac-toe-using-react-crdt-yjs/)
+
+- https://github.com/dairyisscary/syn
+  - Syn is a demo box drawing application that utilizes CRDTs, in this case Yjs.
+
+- https://github.com/jaqarrick/yjs-canvas
+  - Collaborative canvas using Yjs CRDT
 # yjs-utils
+
 
 # yjs-apps
 - yboard /301Star/MIT/202206/js/vue
@@ -22,8 +35,14 @@ modified: 2022-09-21T15:47:41.340Z
   - All the rooms are publicly accessible (only protected by a random unique id, thanks nanoid)
   - Since a room is basically a shared document, any user could eventually rewrite the whole document by writing their own client application
 # yjs-bindings
+- https://github.com/joebobmiles/y-react
+  - React bindings for Yjs.
+
 - https://github.com/joebobmiles/yjson
   - YJSON wraps yjs to make using Yjs as simple as working with Plain Data Objects.
+
+- https://github.com/YPAKK/crdt-backend
+  - Example of horizontally scalable websocket backend for y-js to be used with y-websocket provider with persitence to postgresql using knex.
 
 - https://github.com/sanalabs/collaboration-kit
   - packages that facilitate working with arbitrary JSON structures in Yjs
@@ -36,11 +55,4 @@ modified: 2022-09-21T15:47:41.340Z
   - Zustand middleware that enables sharing of state between clients via Yjs.
 - ref-zustand-yjs
   - https://github.com/tandem-pt/zustand-yjs
-# yjs-examples
-
-- https://github.com/jaqarrick/yjs-lab
-  - This repo serves as an in-depth explanation of Yjs.
-
-- https://github.com/ToolJet/yjs-crdt-game
-  - [Building a realtime multiplayer game using React & Yjs + y-webrtc](https://blog.tooljet.com/multiplayer-tic-tac-toe-using-react-crdt-yjs/)
 # yjs-more
