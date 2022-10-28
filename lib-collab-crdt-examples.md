@@ -78,8 +78,8 @@ modified: 2022-04-05T10:08:25.947Z
   - Commutative Replicated Data Types for easy collaborative/distributed systems.
   - commute - give the same result independent of the order in which they are applied.
   - 提供了简单和复杂多个示例
-- https://github.com/adelriosantiago/easy-crdt
-  - up-to-date real-time collaborative editor sample based on dominictarr/crdt
+  - https://github.com/adelriosantiago/easy-crdt
+    - up-to-date real-time collaborative editor sample based on dominictarr/crdt
 
 - https://github.com/patreu22/react-crdt
   - part of a bachelor thesis dealing with conflict-free data types in web development.
@@ -133,9 +133,9 @@ modified: 2022-04-05T10:08:25.947Z
   - A simple delta CRDT implementation.
 
 - https://github.com/mkdynamic/logoot
+  - 👉🏻 包含服务端，编辑器使用textarea
   - Collaborative text editor using Logoot CRDT algorithm. 
   - Adds an informal versioning scheme based on state vectors to ensure casual ordering of operations is maintained.
-  - 包含服务端，不依赖编辑器框架
 
 - https://github.com/t-mullen/logoot-crdt
   - Replicate text or sequences over networks without conflicts.
@@ -144,7 +144,7 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/SDharan93/replicated-document
   - A replicated document that allows collaborative editing. 
-  - This document is built on the CRDT algorihtm "Logoot". 
+  - This document is built on the CRDT algorithm "Logoot". 
 
 - https://github.com/dglittle/shelf
   - Here is a shelf: [VALUE, VERSION_NUMBER]
@@ -161,8 +161,7 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/bcherny/crdt-demo
   - WOOT-style CRDT implementation
-  - 提供了server
-  - 前端依赖draftjs
+  - 👉🏻 提供了server，编辑器使用draftjs
   - WOOT propagates identifier-based operations defined on the internal object
 
 - https://github.com/phedkvist/crdt-woot
@@ -172,9 +171,11 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/t-mullen/woot-crdt /Sequence-CRDTs
   - Replicate text or sequences over networks.
+- https://github.com/kana-sama/edita
+  - 无编辑器
 
 - https://github.com/phedkvist/crdt-server
-  - A text based CRDT server storing, sending and receving updates using Express and Websockets
+  - A text based CRDT server storing, sending and receiving updates using Express and Websockets
 
 - https://github.com/tobiasbrodd/crdt
   - 编辑note，每次发送全量数据
@@ -192,14 +193,15 @@ modified: 2022-04-05T10:08:25.947Z
   - CRDT-counter based video hosting visits counter
   - the choice is State-based
   - 使用了redis和mq，过于复杂
-# crdt-editing
+# crdt-editing(no WOOT)
 - https://github.com/KristoferSundequist/Collaborative-texteditor
   - Collaborative texteditor based on a Conflict free replicated datatype(CRDT) with a NodeJS client/server. 
-  - 数据结构是 treedoc，示例使用textarea
+  - 数据结构是 treedoc，编辑器使用textarea
 
 - https://github.com/AdarshNaidu/CollabEdit
   - Collaborative text editor built using CRDT data structure
   - 依赖express、handlebars、mongoose
+  - 编辑器使用textarea
 
 - https://github.com/Xuzhiqian/WYJPad
   - 基于CRDT的多人实时协作编辑器
@@ -211,12 +213,9 @@ modified: 2022-04-05T10:08:25.947Z
   - 编辑器依赖ace
   - 服务端依赖mongodb
 
-- https://github.com/jimpick/delta-crdt-ordering-demo
-  - Shows how deltas need to be applied in a constrained order
-
 - https://github.com/drstarry/A-Tour-of-Colleberative-Editing
-  - A simple list-based CRDT to implement collaborate editor
-  - A list-based CmRDT
+  - A simple list-based CmRDT to implement collaborate editor
+  - 依赖mongodb
 
 - https://github.com/geetesh-gupta/py-crdt-collab-editor
   - CRDT based collaborative code/text editor.
@@ -294,10 +293,6 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/AntidoteDB/crdt-visualizer
   - https://www.antidotedb.eu/crdt-visualizer/
   - Visualized CRDT executions in a web page to explain their semantics
-
-- https://github.com/PsychoLlama/utahjs-crdt-presentation
-  - An overview of state-based CRDTs in real-time systems
-  - 只有ppt
 
 - https://github.com/theJian/crdt-todo-app
   - sync未实现

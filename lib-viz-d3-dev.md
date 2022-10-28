@@ -9,6 +9,9 @@ modified: 2020-12-08T13:32:22.331Z
 
 # guide
 
+- d3-ecosystem
+  - vega: academic supported
+  - plotly: multi-lang, company-promoted
 # faq
 
 ## `sel.datum()` vs `sel.data()`

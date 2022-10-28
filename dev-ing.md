@@ -54,13 +54,13 @@ https://meeting.tencent.com/p/9606972663
 console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 ```
 
-# dev-plan-review
+# dev-review
 - dev-goals
   - block-editor
   - pivot-table
   - collaboration
   - local-database
-  - annotation/whiteboard
+  - annotation/comment/whiteboard
 - dev-to/log/xp
   - 事项--截止日期(0730+休整)--重要性(ll/ml/hl)
   - *mirror-based-editor-vanillajs--0825--hl
@@ -70,8 +70,8 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - dashboard/webapp-template--0901
 
 - not-yet
-  
-
+  - state/operation-based crdt
+  - tiptap-yjs-server-src
 # dev-10
 - eg-prosemirror-examples+collab
   - 重写collab示例的交互，参考blocky-editor在一个页面展示多个编辑器且支持实时协作
@@ -84,13 +84,40 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-focalboard
 - eg-tanstack-table-v8
 
-- state/operation-based crdt
-- tiptap-yjs-server-src
+## 1029
+
+- dev-to
+  - crdt-hlc hlc
+  - crdt-hlc merkle
+
+## 1028
+
+- [vscode断点调试配置-结合nodemon自动重启](https://juejin.cn/post/6988035414586032158)
+
+- [node调试工具对比](https://juejin.cn/post/6987396078848966663)
+  - 首推 ndb，因为最起码是谷歌在维护的项目，network 面板看情况也快了
+  - 第二推荐. devtool，同为 Chromium 的控制台，热更新的速度和支持插件这点真的无敌
+  - 第三推荐. vscode，vscode 对调试这块非常友好，加上nodemon热更新加持，只可惜看打印的对象真的太难受了
+  - 第四推荐 nodemon，因为 --inspect 体验感实在是太差了，nodemon 还不至于最后
+
+- [Getting SQLite to delete all records in a table](https://stackoverflow.com/questions/38297873)
+  - `DELETE FROM TABLE_NAME`  语句
+  - When the WHERE is omitted from a DELETE statement and the table being deleted has no triggers, SQLite uses an optimization to erase the entire table content without having to visit each row of the table individually. This "truncate" optimization makes the delete run much faster.
+
+- [MySQL 正则表达式：NOT LIKE 操作符](https://learnku.com/mysql/wikis/36430)
+  - Not like 是 MySQL 用于模式匹配的运算符。
+  - 它将列与给定值进行比较，并返回与模式不同的列。
+
+```SQL
+select field from table_name where column_name not like 'pattern';
+
+SELECT word FROM table WHERE word NOT LIKE '%a%' AND word NOT LIKE '%b%'
+
+```
 
 ## 1026
 
 - dev-to
-  - crdt-hlc hlc+merkle
   - crdt-hlc server
 
 - `HTMLFormElement.elements` 在form元素的提交事件中可以获取到`event.target.elements`
@@ -106,12 +133,14 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 ## 1024
 
-- sqlite常用命令
+- sqlite-常用命令
   - sudo apt install -y sqlite3 
   - sqlite3 new.db
   - .databases
   - .tables
   - .read test.sql
+  - .mode list/column/line
+  - [sqlite3 常用命令](https://www.jianshu.com/p/590607baa0db)
 
 - [Prevent ESModules from being deferred when imported with script tag](https://stackoverflow.com/questions/56823415)
   - es-module里面挂载变量v1到window会被延迟，所以后面的es5脚本访问不到v1
@@ -669,7 +698,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                         `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                               `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -688,7 +717,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                         `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                               `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

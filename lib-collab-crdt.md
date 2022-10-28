@@ -21,10 +21,10 @@ modified: 2022-04-05T10:10:08.537Z
     - Counter
     - Last Write Wins Register
     - Multi Value Register
+    - Growing-only Set
   - 基于state
     - Growing-only Counter
     - PNCounter
-    - Growing-only Set
     - 2-Phase Set
     - Observed Remove Set
     - Delta-state growing-only counter
@@ -49,14 +49,14 @@ modified: 2022-04-05T10:10:08.537Z
 # [CRDTs for Mortals_James Long_201912](https://www.youtube.com/watch?v=DEcwa68f-jY)
 - Why haven’t “offline-first” apps taken off?
   - syncing is hard
--  local apps are a distributed system
+  - local apps are a distributed system
 - why local-first
   - offlineable
   - fast
   - privacy
   - ad-hoc queries
 
-- hard parts 1: unreliable ordering
+- 👉🏻 hard parts 1: unreliable ordering
 - 传统数据库是strong consistency
 - 最近流行 eventual consistency，允许操作order不同
   - 每个客户端接收的changes顺序不同，最终达到最终一致
@@ -68,16 +68,49 @@ modified: 2022-04-05T10:10:08.537Z
   - assign clock to a change, 以便于可以比较change
   - hlc比较大小
  
-- hard parts 2: conflicts
+- 👉🏻 hard parts 2: conflicts
 - 根据时间戳保证交换律(乱序)、幂等
 - 基础数据结构：lww-map(处理changes) + g-set(处理数据状态)
-  - 使用grow-only set因为可能后面会有相关操作
+  - 使用grow-only set因为可能后面changes会有相关操作
 - How to take basic relational data and turn it into CRDTs?
   - SQLite table  =>  G-Set of LWW-Maps
   - msg-table, 若id不存在，就插入新row
 - 读取查询很快
 - 更新数据时，update-self，push changes to others
 - 删除时，添加tombstone字段，并未物理删除
+
+```JS
+update("transactions", {
+  id: "30127b2e-f74c-4a19-af65-debfb7a6a55b",
+  name: "Kroger",
+  amount: 450
+})
+
+// becomes
+
+[{
+  dataset: "transactions",
+  row: "30127b2e-f74c-4a19-af65-debfb7a6a55b",
+  column: "name",
+  value: "Kroger",
+  timestamp: "2019-11-02T15:35:32.743Z-0000-85b8c0d2bbb57d99"
+}, {
+  dataset: "transactions",
+  row: "30127b2e-f74c-4a19-af65-debfb7a6a55b",
+  column: "amount",
+  value: 450,
+  timestamp: "2019-11-02T15:35:32.743Z-0001-85b8c0d2bbb57d99"
+}]
+```
+
+- Other features
+  - Ensuring consistency with a merkle tree 
+  - End-to-end encryption
+
+- 👉🏻 Conclusion
+  - Local apps have superior UX. They are super fast, no latency, and work offline
+  - We’ve got to start simplifying our solutions
+  - Clocks (particularly HLCs) and CRDTs are an elegant solution to distributed apps
 
 - [crdt-example-app with notes that help describe how things work](https://github.com/clintharris/crdt-example-app_annotated/blob/master/NOTES.md)
 # [聊聊CRDT](https://segmentfault.com/a/1190000019109149)
