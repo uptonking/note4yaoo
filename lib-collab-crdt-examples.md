@@ -274,6 +274,12 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/junjizhi/lww-element-set
   - Last-Writer-Wins Element Set(lww-set) data structure implemented in Python
 
+- https://github.com/aphrodite-sh/cr-sqlite
+  - Convergent, Replicated SQLite. Multi-writer and CRDT support for SQLite
+  - This project implements CRDTs and CRRs in SQLite, allowing databases that share a common schema to merge their state together.
+  - crsqlite works by adding metadata tables and triggers around your existing database schema. 
+  - crsqlite only keeps an extra int per column and a clock per row.
+
 - https://github.com/orda-io/orda
   - Orda: A client and server written in Go. CRDT-based data synchronization supporting document database.
   - Orda project is a multi-device data synchronization platform based on MongoDB (which could be other document databases such as CouchBase). 

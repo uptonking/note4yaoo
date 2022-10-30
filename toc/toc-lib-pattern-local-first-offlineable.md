@@ -65,10 +65,15 @@ modified: 2021-09-04T14:03:39.046Z
 - https://github.com/evoluhq/evolu
   - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
   - writing local-first software has been challenging because of the lack of libraries and design patterns. I personally failed several times, and that's why I created Evolu.
-  - Evolu architecture is almost a clone of James Long CRDT for mortals. Rewritten and improved,
+  - Evolu architecture is almost a clone of James Long CRDT for mortals. Rewritten and improved, 
 
 - https://github.com/gildas-lormeau/SingleFile
   - a Web Extension (and a CLI tool) compatible with Chrome, Firefox to save a complete web page into a single HTML file.
+
+- https://github.com/aphrodite-sh/aphrodite
+  - Aphrodite is a schema layer whose first goal is to make P2P & Local-First software as easy to develop as traditional client-server software.
+  - You can think of Aphrodite as an ORM of sorts that is designed for the needs of Local-First applications and P2P data transfer.
+  - everything in Aphrodite begins with a schema. This schema encodes the application's data
 
 - https://github.com/logux/client
   - https://logux.io/
@@ -139,3 +144,12 @@ modified: 2021-09-04T14:03:39.046Z
 
 - https://github.com/madipta/offline-first
   - Sample offline first using Nx monorepo, React, RxDb, NestJs, Prisma, GraphQl, PostgreSql
+
+- https://github.com/rjmackay/offline-db-preso
+  - Offline-first data sharing talk for nz.js(con)
+
+- https://docs.amplify.aws/lib/datastore/getting-started/q/platform/js/
+  - allows you to start persisting data locally to your device with DataStore, even without an AWS account.
+  - Amplify DataStore provides a programming model for leveraging shared and distributed data without writing additional code for offline and online scenarios, which makes working with distributed, cross-user data just as simple as working with local-only data.
+
+

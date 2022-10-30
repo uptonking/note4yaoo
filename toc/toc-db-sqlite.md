@@ -56,4 +56,10 @@ modified: 2021-08-30T18:56:18.632Z
   - Express/Nodejs Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
   - Authentication Flow uses json web tokens via Passport library - passport-jwt strategy.
   - 典型的dashboard的后端示例
+# collab/sync
+- https://github.com/aphrodite-sh/cr-sqlite
+  - Convergent, Replicated SQLite. Multi-writer and CRDT support for SQLite
+  - This project implements CRDTs and CRRs in SQLite, allowing databases that share a common schema to merge their state together.
+  - crsqlite works by adding metadata tables and triggers around your existing database schema. 
+  - crsqlite only keeps an extra int per column and a clock per row.
 # more
