@@ -21,6 +21,12 @@ modified: 2021-06-27T19:16:51.396Z
   - https://remirror-editor-demo.vercel.app/
   - A editor with the main features created using Remirror and with a special code block 
 # discuss
+- ## React Native
+- https://github.com/remirror/remirror/discussions/779
+- remirror__extension-react-native-bridge and remirror/react-native. Why were they deprecated?_20220617
+  - We deprecated those because we couldn't find a maintainer who has deep enough understanding about ReactNative. We decided it's best to communicate this transparently to the community by deprecating.
+  - Having said that, if you know somebody who would maintain ReactNative support: we could surely discuss to bring them back. Let us know :)
+
 - ## Typing in remirror can feel pretty slow compared to typing in e.g. a normal html textarea or in a wysiwyg editor such as tiptap.dev
 - https://github.com/remirror/remirror/issues/1366
 - It seems like the Toolbar is rerendering for every state change, blocking the typing. Do you have any ideas on how to improve performance?

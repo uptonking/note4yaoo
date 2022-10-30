@@ -12,6 +12,27 @@ modified: 2020-12-21T07:47:02.451Z
 - tips
   - 基于webgl实现数据可视化的重点在处理空间数据，然后渲染
   - 关注点可放在mapbox-gl、deck.gl，而不是threejs、babylonjs
+
+- 👉🏻 webgl vs canvas
+- webgl-pros
+  - canvas可以使用webgl实现，使用webgl可以定制计算和优化细节
+- webgl-cons
+  - 基于webgl的开发更依赖图形学和数学知识，canvas被封装得更好，canvas开发更容易
+
+- [cesium大牛-四季留歌-小结](https://www.zhihu.com/question/457815533/answer/2611385063)
+  - 喜欢手撸原生但是懒得封装基本过程用 twgl
+  - 不想写原生的过程式代码用 regl
+  - 不想接触底层api用 threejs
+  - 不想关注渲染知识用基于 threejs 之上的 ifc.js
+  - 想深入定制长期发展的有时间研究的用 bbl
+  - 有地理数据业务用 cesium
+
+- [吴多益-webgl小结](https://zhuanlan.zhihu.com/p/162878354)
+  - 对于一般WebGL开发，推荐使用 Babylon.js。
+  - 如果要支持微信小程序，最好用国内的 LayaAir 和 Cocos，但需要注意它们只是源码开放，并不是无条件免费使用，需要仔细阅读使用协议。
+  - 如果只想写原生WebGL特效，建议用 regl。
+  - 如想支持大量光源和后期特效，又不需要支持iOS，用 Claygl。
+  - 如果熟悉 Unity，直接用它导出 WebGL 也是可行的。
 # faq
 
 ## webgl vs regl

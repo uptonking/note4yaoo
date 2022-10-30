@@ -35,11 +35,30 @@ modified: 2022-05-15T18:35:39.272Z
 # discuss
 - ## 
 
-- ## 
+- ## React Native Support
+- https://github.com/facebook/lexical/discussions/2410
+- 20220417
+  - As Dominic has hinted elsewhere, I’m leading a project to build native Lexical on iOS. I’m in the very early days of looking in to what a React Native wrapper around Lexical iOS would look like. 
+  - 👉🏻 The main sticking point is ensuring synchronous callbacks from JS to native, which requires bleeding edge RN features, but aside from that the issue will be the completely different layout engine for TextKit on iOS compared with DOM/CSS. So even if we enable building node subclasses in JS under RN, those node subclasses will have to use iOS semantics (providing string attributes rather than Dom nodes). That’s why I’m trying to find out what the most useful level of RN support would be, to ensure we focus on making that a good experience first.
+  - I know I’ve not mentioned Android either. We have nothing to talk about there yet, alas
 
-- ## 
+- ## is there an ETA for react-native support yet?_20221002
+- https://discord.com/channels/953974421008293909/955972012541628456/1026124845232177224
+- Not that I’m aware of
 
-- ## 	Lexical is now open-source (web text-editor)
+- ## I'm storing the output as JSON. I also need to consume the JSON on my ReactNative app and allow the user to edit the post_20220910
+- https://discord.com/channels/953974421008293909/1017916026249281627
+- 👉🏻 I've read the older questions about ReactNative support for Lexical on this Discord and understand from the answers that I need to use WebView till the time official ReactNative support is available.
+- Here is what I think is the only way forward for me to achieve a working Lexical Editor on React Native:
+  1. Write an HTML file consisting of HTML & inline CSS and inline JS. The lexical editor related HTML markup, styles and lexical related vanilla JS functions all needs to be included in this HTML file so I can call it inside web-view. 
+  2. Import the HTML file and pass the file into web-view component using uri prop.
+  3. Since I need an external dependency like Lexical, I need to add it using `<script>` tag in my HTML file.
+
+- I've been trying to implement something like this, ended up having a uri endpoint serving only the lexical editor instance for webview usage and communicate between RN / lexical by assigning methods on `window` object or  `postMessage` from lexical -> RN; 4. So far it's looking good 🙂
+  - May I know whether you have hosted the endpoint on some domain or did you have to write all the functions in an HTML file ?
+  - i hosted in my web app and simply just render that uri with webview. after all that it's just a website with a lexical editor in it
+
+- ## Lexical is now open-source (web text-editor)
 - https://news.ycombinator.com/item?id=31017943
 - They are intentionally similar, ProseMirror has some great ideas. 
 - We tried to tackle those ideas from an extensible angle where nodes themselves, which form part of a tree, are the core to everything in Lexical. 

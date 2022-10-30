@@ -94,6 +94,11 @@ modified: 2020-10-05T06:17:42.467Z
   - it is possible by embedding the HTML into an SVG image as a `<foreignObject>` and then drawing the resulting image via `ctx.drawImage()`.
   - SVG is not allowed to link to external resources and so rasterizeHTML.js will load external images, fonts and stylesheets and store them inline via data: URIs (or inline style elements respectively).
 
+- https://github.com/samizdatco/skia-canvas
+  - Skia Canvas is a browser-less implementation of the HTML Canvas drawing API for Node.js. 
+  - While the primary goal of this project is to provide a reliable emulation of the standard canvas API
+  - It is based on Google’s Skia graphics engine and, accordingly, produces very similar results to Chrome’s `<canvas>` element.
+
 - https://github.com/eKoopmans/html2pdf.js
   - Client-side HTML-to-PDF rendering using pure JS.
   - html2pdf.js converts any webpage or element into a printable PDF entirely client-side using html2canvas and jsPDF.
