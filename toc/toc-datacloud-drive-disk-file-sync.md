@@ -14,6 +14,14 @@ modified: 2022-09-10T02:26:52.062Z
   - 云服务商：七牛
   - 非主流存储：github、gitee
 # cloud-drive-alternatives
+- https://github.com/alist-org/alist
+  - 一个支持多存储的文件列表程序，基于 go-Gin 和 Solidjs。
+  - 支持 国内外主流网盘
+
+- https://github.com/subnub/myDrive
+  - https://mydrive-storage.com/
+  - Node.js and mongoDB Google Drive Clone
+
 - https://github.com/internxt/drive-web
   - https://internxt.com/
   - at Internxt, we've created a suite of services truly focused on you. Switch to Internxt Drive, Photos, Send
@@ -22,7 +30,7 @@ modified: 2022-09-10T02:26:52.062Z
   - based on NestJS and implements DDD (Domain Driven Design). 
   - Our implementation has these layers: Use cases; Persistence; Domain; Controllers
   - https://github.com/internxt/drive-server
-    - 依赖express实现
+    - 依赖express实现，旧版
 # cloud-drive-sync
 - https://github.com/reruin/sharelist
   - ShareList 是一个易用的网盘工具，支持快速挂载 GoogleDrive、OneDrive

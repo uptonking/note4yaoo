@@ -84,6 +84,31 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-focalboard
 - eg-tanstack-table-v8
 
+## 1101
+
+- 分析浏览器环境下多个async方法的执行顺序
+  - 在async方法`initSync/initUser/initTodoTypes`内都存在await的异步逻辑，然后分别在await逻辑前后打印1、2
+
+```JS
+setTimeout(initSync, 1000);
+initUser();
+initTodoTypes();
+
+// ;; init-user  1
+// ;; init-todo-type  1
+// [IDBSideSync] init() 初始化indexeddb
+// ;; init-user  2
+// ;; init-todo-type  2
+// ;; init-sync  1
+// ;; init-sync  2
+```
+
+- google-drive-api-query
+  - 查询结构：`query_term operator values`，注意最前面可以加not
+
+- [Store application-specific data](https://developers.google.com/drive/api/guides/appdata)
+  - `appDataFolder` 在ui上始终不可见
+
 ## 1031
 
 - dev-to
@@ -111,6 +136,10 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - google-drive-api
   - [Google Workspace > Google Drive for Developers > Drive API  > Guides](https://developers.google.com/drive/api/quickstart/js)
+- guide
+  - https://developers.google.com/drive/api/guides/folder
+  - https://developers.google.com/drive/api/guides/search-files
+- api
   - https://developers.google.com/drive/api/v3/reference
   - https://developers.google.com/drive/api/v3/reference/files/list
   - https://developers.google.com/identity/oauth2/web/guides/use-token-model
@@ -796,7 +825,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                                        `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                                           `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -815,7 +844,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                        `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                           `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 
