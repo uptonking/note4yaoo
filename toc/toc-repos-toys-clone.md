@@ -19,6 +19,11 @@ modified: 2022-08-13T05:10:32.238Z
   - Collaboat is an open source web application for project management designed to help teams control, organize and manage their project. 
   - Frontend Create-react-app React/Typescript Redux + thunk SASS Ant Design
   - Backend Express.js JWT MySQL Socket.io
+# clone-apps
+- https://github.com/imMatheus/twitter-clone
+  - https://twitter-clone-immatheus.vercel.app/
+  - a complete Twitter clone with a lot of the functionality you would see on the real website
+
 # clone-known
 - https://win11.blueedge.me/
   - https://github.com/blueedgetechno/win11React

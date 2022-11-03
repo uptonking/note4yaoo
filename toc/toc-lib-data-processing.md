@@ -10,9 +10,11 @@ modified: 2021-05-13T16:14:15.415Z
 # data-model
 
 - https://github.com/apache/arrow
-  - Apache Arrow is a cross-language development platform for in-memory data. 
-  - It specifies a standardized language-independent columnar memory format for flat and hierarchical data, organized for efficient analytic operations on modern hardware. 
-  -  It also provides computational libraries and zero-copy streaming messaging and interprocess communication
+  - https://github.com/apache/arrow/tree/master/js    /ts
+   - Apache Arrow is a columnar memory layout specification for encoding vectors and table-like containers of flat and nested data. 
+  - The Arrow spec aligns columnar data in memory to minimize cache misses and take advantage of the latest SIMD (Single input multiple data) and GPU operations on modern processors.
+  - 👉🏻 Apache Arrow is the emerging standard for large in-memory columnar data (Spark, Pandas, Drill, Graphistry, ...). 
+    - By standardizing on a common binary interchange format, big data systems can reduce the costs and friction associated with cross-system communication.
 # data-tools
 - https://github.com/dbt-labs/dbt-core
   - https://getdbt.com/

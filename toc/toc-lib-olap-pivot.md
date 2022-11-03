@@ -48,6 +48,17 @@ modified: 2020-10-22T06:50:36.740Z
   - [How to Use Excel Pivot Tables to Organize Data](https://www.timeatlas.com/excel-pivot-tables/)
   - Excel_notes 教學檔案
     - https://github.com/jeanetsai/Excel_notes
+
+# pivot-computation
+- https://github.com/steelbreeze/pivot
+  - A minimalist pivot table library for TypeScript/JavaScript.
+  - It provides a minimalist pivot table capability, slicing data into cells defined by two dimensions. 
+  - This is a spin-off(副产品，派生物) from the steelbreeze/landscape project, where instead of aggregating numerical data from the pivot cube, non-numerical data is needed.
+  - It also focuses just on dimension and cube creation, without any layout considerations keeping it small and unopinionated.
+
+
+- https://github.com/vinnik-dmitry07/db-comp
+  - A comparison of DuckDB columnar database and relational PostgreSQL.
 # more-olap
 - https://github.com/altair-viz/altair
   - Declarative statistical visualization library for Python

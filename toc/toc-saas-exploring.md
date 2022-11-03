@@ -7,15 +7,22 @@ modified: 2021-05-14T14:30:22.685Z
 
 # toc-saas-exploring
 
+# guide
+
+- [翻译服务商价格](https://doc.tern.1c7.me/zh/folder/pricing/#%E7%BF%BB%E8%AF%91%E6%9C%8D%E5%8A%A1%E5%95%86%E4%BB%B7%E6%A0%BC)
+
 # exploring
+
+- https://github.com/opentestimonials/opentestimonials
+  - https://opentestimonials.typedream.app/
+  - Collect and showcase testimonials using Airtable
+  - 类似"大家都说好"的marketing
 
 - https://github.com/tagspaces/tagspaces
   - an offline, open source, document manager with tagging support
   - no backend, no login, file manager, organizer and browser
   - It helps you organize your files, photos and other documents with tags
   - The application is available for Windows, Linux, Mac OS and Android. 
-
- 
 
 - https://github.com/soxoj/maigret
   - https://maigret.readthedocs.io/

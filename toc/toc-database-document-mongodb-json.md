@@ -1,20 +1,30 @@
 ---
-title: toc-db-mongodb
-tags: [mongodb, toc]
+title: toc-database-document-mongodb-json
+tags: [database, json, mongodb, toc]
 created: 2022-06-13T03:56:47.999Z
-modified: 2022-06-13T03:57:09.891Z
+modified: 2022-11-03T04:14:11.987Z
 ---
 
-# toc-db-mongodb
+# toc-database-document-mongodb-json
+
+# guide
 - 更适合block-editor的数据结构是否是 mongodb ？
-# popular
+# db-document-json
 
-# object-storage
+# mongodb-like
 
-- https://github.com/minio/minio
+# object-storage/s3
+- minio /36.1kStar/AGPLv3/202211/go
+  - https://github.com/minio/minio
   - https://min.io/download
-  - MinIO is a High Performance Object Storage released under GNU Affero General Public License v3.0. 
+  - MinIO is a High Performance Object Storage
   - It is API compatible with Amazon S3 cloud storage service.
+
+- https://github.com/blahah/yunodb
+  - A portable, persistent, electron-embeddable fulltext search + document store database for node.js
+  - yuno is a JSON document store with fulltext search. 
+  - The document store, which is just the raw JSON objects stored in leveldb/browser-level
+  - yuno is being built to serve my use-case of embedding pre-made databases in electron apps
 # tree-like/nested
 - https://github.com/Voronenko/Storing_TreeView_Structures_WithMongoDB
   - Educational repository demonstrating approaches for storing tree structures with NoSQL database MongoDB
@@ -30,4 +40,4 @@ modified: 2022-06-13T03:57:09.891Z
   - LevelDB backend for hierarchical data.
 # mongodb-render-ui
 
-# more-mongodb
+# more-document-json

@@ -100,6 +100,16 @@ modified: 2022-06-13T03:05:27.313Z
 
 - https://github.com/eldomagan/vuex-orm-localforage
   - VuexORMLocalforage is a plugin for the amazing VuexORM that let you sync your Vuex Store with an IndexedDB database using LocalForage.
+# indexeddb-json-key-value
+- minimongo /1kStar/LGPLv3/202207/ts
+  - https://github.com/mWater/minimongo
+  - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
+  - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
+  - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries 
+
+- zangodb /1kStar/MIT/201710/js
+  - https://github.com/erikolson186/zangodb
+  - ZangoDB is a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
 # more-indexeddb-repos
 - https://github.com/jurca/indexed-db.es6
   - The indexed-db.es6 is ES2015-style wrapper of the native IndexedDB HTML5 document-oriented database.
@@ -108,11 +118,3 @@ modified: 2022-06-13T03:05:27.313Z
 - https://github.com/JayPuff/browser-file-storage
   - Abstracts the complexity of indexed DB so that a user can easily save files/blobs by key/filename on the browser
   - Browser must support the IndexedDB API as it cannot be polyfilled
-
-- https://github.com/erikolson186/zangodb
-  - ZangoDB is a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
-
-- https://github.com/mWater/minimongo
-  - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
-  - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
-  - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries 

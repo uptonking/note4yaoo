@@ -76,6 +76,10 @@ modified: 2021-01-04T16:18:39.667Z
     - where Remix is just the react framework part.
     - You could totally build a Blitz/Redwood type thing on top of Remix.
 
+- https://github.com/ts-rest/ts-rest
+  - https://ts-rest.com/
+  - RPC-like client, contract, and server implementation for a pure REST API
+
 - feathers
   - https://github.com/feathersjs/feathers
   - A framework for real-time applications and REST APIs with JavaScript and TypeScript
@@ -196,25 +200,6 @@ modified: 2021-01-04T16:18:39.667Z
 
 - more-loopback
   - https://github.com/NguyenVanDo51/base_project_react_loopback
-# express-examples
-- https://github.com/stemmlerjs/ddd-forum
-  - Hacker news-inspired forum app built with TypeScript using DDD practices from solidbook.io.
-  - 后端依赖 express、sequelize、redis
-  - 前端依赖 react、redux
-
-- cnode
-  - https://github.com/cnodejs/nodeclub
-    - Nodeclub 是使用 Node.js 和 MongoDB 开发的社区系统
-    - 依赖mongodb4、redis4
-  - https://github.com/cnodejs/egg-cnode
-    - CNode 社区 Egg 版本; /201810
-- https://github.com/ChenJiaH/react-cnode
-  - 基于react&react-router-dom，利用CNode API重写CNode社区。
-  - 依赖只有react-router.v5, react, axios
-
-- https://github.com/proshoumma/ReForum
-  - A minimal forum board application. 只是仪表板
-  - Built on top of React-Redux frontend, ExpressJS-NodeJS backend (with PassportJS for OAuth) and MongoDB databse.
 # more-app-framework
 - https://github.com/ladjs/lad
   - Lad is the best Node.js framework. 可替代express或koa

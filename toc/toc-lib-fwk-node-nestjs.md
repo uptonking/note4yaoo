@@ -1,11 +1,11 @@
 ---
-title: toc-lib-nestjs
+title: toc-lib-fwk-node-nestjs
 tags: [lib, nestjs, toc]
 created: 2020-12-13T13:14:12.113Z
-modified: 2020-12-13T13:14:40.141Z
+modified: 2022-11-03T09:22:08.670Z
 ---
 
-# toc-lib-nestjs
+# toc-lib-fwk-node-nestjs
 
 # guide
 - 不必执着于查找模版，但选择主流框架可以参考很多已有问题的解决方案
@@ -131,6 +131,11 @@ modified: 2020-12-13T13:14:40.141Z
   - rxjs 配合mobx和其它异步的事件
 
 ## blog/forum
+
+- node-blog /111Star/MIT/202207/ts
+  - https://github.com/bs32g1038/node-blog
+  - https://www.lizc.net/
+  - react blog project base on nodejs, nestjs, mongoose, typescript, react, ant-design, nextjs
 
 - https://github.com/fantasticit/wipi
   - https://blog.codingit.cn/

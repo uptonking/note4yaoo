@@ -56,6 +56,11 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/knex/knex
   - http://knexjs.org/
   - A query builder for MSSQL, MySQL, PostgreSQL, SQLite3, Oracle
+- https://github.com/bookshelf/bookshelf
+  - Bookshelf is a JavaScript ORM for Node.js, built on the Knex SQL query builder. 
+  - It features both Promise-based and traditional callback interfaces, 
+  - It is designed to work with PostgreSQL, MySQL, and SQLite3.
+  - Bookshelf aims to provide a simple library for common tasks when querying databases in JavaScript, and forming relations between these objects, taking a lot of ideas from the Data Mapper Pattern.
 
 - https://github.com/orbitjs/orbit
   - Orbit is a composable data framework for managing the complex needs of today's web applications.

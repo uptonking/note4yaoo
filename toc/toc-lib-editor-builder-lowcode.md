@@ -68,3 +68,8 @@ modified: 2020-12-28T12:24:09.275Z
   - 华炎魔方是Salesforce低代码平台的开源替代方案
   - 华炎魔方前端使用 React 开发表单、列表视图控件，并基于 Meteor 实现完整界面。
 # more-lowcode
+
+- https://github.com/Budibase/budibase /GPLv3
+  - Low code platform for creating internal tools, workflows, and admin panels in minutes. 
+  - 前端依赖svelte
+  - unlike other platforms, with Budibase you can start from scratch and create business apps with no datasources

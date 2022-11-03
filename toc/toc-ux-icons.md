@@ -6,13 +6,14 @@ modified: 2021-05-06T09:58:23.803Z
 ---
 
 # guide
-
 - ✨ icons-pack
-- https://icon-sets.iconify.design/
-  - https://github.com/iconify/iconify
-  - 100+ open source icon sets.
-  - collection of SVG icons created by various authors, released under various free licenses.
-  - Icon sets are stored in `IconifyJSON` format
+  - https://icon-sets.iconify.design/
+    - https://github.com/iconify/iconify
+    - 100+ open source icon sets.
+    - collection of SVG icons created by various authors, released under various free licenses.
+    - Icon sets are stored in `IconifyJSON` format
+  - https://icones.js.org/
+    - https://github.com/antfu/icones
 
 - icons
   - https://fonts.google.com/icons?selected=Material+Icons
@@ -69,11 +70,41 @@ modified: 2021-05-06T09:58:23.803Z
 - https://iconpark.oceanengine.com/home
   - IconPark图标库是一个通过技术驱动矢量图标样式的开源图标库
 # icons
+- tabler-icons
+  - https://github.com/tabler/tabler-icons
+  - https://tabler-icons.io/
+  - A set of 2925 free MIT-licensed high-quality SVG icons
+  - Each icon is designed on a 24x24 grid and a 2px stroke.
+
 - feather  /MIT/16kStar/201908
   - https://github.com/feathericons/feather
   - https://feathericons.com/
   - At its core, Feather is a collection of SVG files. Each icon is designed on a 24x24 grid with an emphasis on simplicity
+  - https://github.com/lucide-icons/lucide
+    - https://lucide.dev/
+    - fork of Feather Icons, hundreds of icons more than Feather 
   - https://github.com/feathericons/react-feather
+
+- iconpark
+  - https://github.com/bytedance/iconpark
+  - https://iconpark.oceanengine.com/official
+  - Transform an SVG icon into multiple themes, and generate React icons，Vue icons，svg icons
+  - more than 2000 high-quality icons
+
+- simple-icons /CC0-1.0/svg/主流产品的logo图标
+  - https://github.com/simple-icons/simple-icons
+  - https://simpleicons.org/
+  - SVG icons for popular brands
+  - Creative Commons Zero v1.0 Universal 无著作权，可商用
+    - 500+ icons
+
+- phosphor-icons /212Star/MIT/202112
+  - https://github.com/phosphor-icons/phosphor-icons
+  - https://phosphoricons.com/
+  - 总共6套图标6282=6x1047个，包括thin/light/regular/fill/bold/duotone，可下载svg
+  - providing icons as a webfont that uses Unicode's Private Use Area character codes to map normally non-rendering characters to icons. 
+  - Since the icons are just text under the hood, they can be colored and styled with CSS
+
 - font-awesome  /MIT/60kStar/201610
   - https://github.com/FortAwesome/Font-Awesome/tree/v4.7.0
   - https://fontawesome.com/v4.7.0/
@@ -229,10 +260,6 @@ modified: 2021-05-06T09:58:23.803Z
       - v2: https://github.com/konpa/devicon
       - v1: https://github.com/vorillaz/devicons/
       - 78 icons and 200+ versions
-  - https://github.com/simple-icons/simple-icons
-      - SVG icons for popular brands
-      - Creative Commons Zero v1.0 Universal 无著作权，可商用
-      - 500+ icons
   - http://labs.mapbox.com/maki-icons/
       - poi icon set made for cartographers
       - https://github.com/mapbox/maki

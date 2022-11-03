@@ -296,6 +296,11 @@ modified: 2020-07-14T11:03:53.196Z
   - js ex machina - finite state machines in JavaScript
 - https://github.com/matthewp/robot
   - A functional, immutable Finite State Machine library
+
+- https://github.com/steelbreeze/state
+  - Hierarchical/Executable finite state machine for TypeScript and JavaScript
+  - v8 does not yet contain any support for serialization due to the challanges brought by the introduction of deferred events
+
 - https://github.com/thefrontside/microstates
   - Microstates makes working with pure functions over immutable data feel like working with the classic, mutable models we all know
   - A Microstate is just an object that is created from a value and a type. 

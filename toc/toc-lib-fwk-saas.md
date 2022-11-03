@@ -18,6 +18,7 @@ modified: 2021-05-25T09:41:29.066Z
 # netlify/vercel/self-hostable
 - https://github.com/coollabsio/coolify
   - https://coollabs.io/coolify
+  - 前端依赖svelte
   - An open-source, hassle-free, self-hostable Heroku & Netlify alternative
 # sass-examples
 

@@ -7,7 +7,25 @@ modified: 2020-12-20T08:23:22.808Z
 
 # toc-lib-comment
 
+# comment-examples
+
+- https://github.com/lawrencecchen/threaded-comments
+  - https://debussy.vercel.app/
+  - Reddit styled threaded comments using Supabase and Next.js
+  - 支持voting、sorting、pagination、dark-mode
+
+- https://github.com/guardian/discussion-rendering
+  - Standalone React UI for Guardian comments
 # comment-github
+- giscus /3.3kStar/MIT/202211/ts
+  - https://github.com/giscus/giscus
+  - https://giscus.app/
+  - A comments system powered by GitHub Discussions. inspired by utterances.
+  - No database needed. All data is stored in GitHub Discussions.
+  - https://github.com/giscus/giscus-component
+    - https://giscus-component.vercel.app/
+    - A wrapper component for giscus gem, a comments system powered by GitHub Discussions. 
+    - available for React, Vue, Svelte, and as a Web Component.
 
 - https://github.com/utterance/utterances /202012
   - A lightweight comments widget built on GitHub issues.
@@ -18,6 +36,8 @@ modified: 2020-12-20T08:23:22.808Z
   - a modern comment component based on Github Issue and Preact.
 - https://github.com/imsun/gitment /201804
   - a comment system based on GitHub Issues, which can be used in the frontend without any server-side implementation.
+# comment-backend-api
+
 # comment-js
 - https://github.com/walinejs/waline
   - https://valine.js.org/

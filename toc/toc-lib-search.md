@@ -76,3 +76,9 @@ modified: 2020-10-22T06:51:07.421Z
 - https://github.com/superhuman/command-score
   - Yet another javascript fuzzy string matching library!
   - We use this in email client in autocompletion contexts where the set of results is relatively bounded
+
+- https://github.com/fergiemcdowall/search-index
+  - A persistent, network resilient, full text search library for the browser and Node.js
+# search-non-js
+- https://github.com/meilisearch/meilisearch /rust
+  - fast search engine that fits effortlessly into your apps, websites, and workflow.

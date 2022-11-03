@@ -1,11 +1,11 @@
 ---
-title: toc-lib-fwk-lit-html
+title: toc-lib-view-lit-html
 tags: [framework, lit-element, lit-html, toc]
 created: 2021-01-01T19:15:20.376Z
-modified: 2021-01-01T19:16:38.879Z
+modified: 2022-11-03T09:19:47.061Z
 ---
 
-# toc-lib-fwk-lit-html
+# toc-lib-view-lit-html
 
 # popular
 

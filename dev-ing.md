@@ -71,7 +71,8 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - not-yet
   - crdt-hlc merkle 如何在op-log中找到上次相等的timestamp
-# dev-10
+    - make indexeddb optional
+# dev-11
 - eg-prosemirror-examples+collab
   - 重写collab示例的交互，参考blocky-editor在一个页面展示多个编辑器且支持实时协作
   - [x] 用websocket替换轮询，可基于socket.io

@@ -7,8 +7,12 @@ modified: 2022-08-13T06:59:54.741Z
 
 # toc-lib-react-saas-examples
 
+# guide
+- 经典示例
+  - todo-mvc
+  - realworld
+  - bookshelf
 # popular
-
 - https://github.com/async-labs/saas /ts
   - Build your own SaaS business with SaaS boilerplate. 
   - 依赖React, Material-UI, Next, MobX, WebSockets, Express, Node, Mongoose, MongoDB. 
@@ -36,7 +40,7 @@ modified: 2022-08-13T06:59:54.741Z
   - Optimized template repository for React component libraries.
 
 - https://github.com/nanlabs/react-webpack-boilerplate
-  - This project was generated using create-react-webpack-app. DON'T USE THIS TEMPLATE AS IT! 
+  - This project was generated using create-react-webpack-app.
   - https://github.com/Create-Node-App/create-react-webpack-app
 
 - https://github.com/GR34SE/react-typescript-starter

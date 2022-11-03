@@ -195,7 +195,7 @@ modified: 2021-05-14T15:05:02.456Z
 - https://github.com/ben-manes/caffeine
   - A high performance caching library for Java 8
 - https://github.com/neo4j/neo4j
-  - Graphs for Everyone
+  - the world’s leading Graph Database
 - https://github.com/didi/VirtualAPK
   - A powerful and lightweight plugin framework for Android
 - https://github.com/OpenFeign/feign

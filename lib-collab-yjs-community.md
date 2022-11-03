@@ -14,6 +14,10 @@ modified: 2022-04-05T10:11:40.379Z
 
 - ## 
 
+- ## Published a small react library to make adding presence (live cursors/avatars) to multiplayer applications easy using Yjs. 
+- https://twitter.com/nayajunimesh/status/1482192104503713792
+  - https://codesandbox.io/s/y-presence-demo-live-avatars-65xpc
+
 - ## yjs vs peritext
 - https://news.ycombinator.com/item?id=29328431
 - They way I see it there are two (or maybe more of a spectrum of) types of CRDT, from generic and to domain specific. 
@@ -23,12 +27,6 @@ modified: 2022-04-05T10:11:40.379Z
   - Peritext does not yet have support for block types.
 - So, although the most common use of Yjs is for collaborative rich text editing, it can be used for many other things such as 2D/3D drawing or even gaming.
 
-
-
-
-
-
-
 - ## Main takeaways from toying with both Yjs and Automerge
 - https://news.ycombinator.com/item?id=29507948
 
@@ -37,8 +35,6 @@ modified: 2022-04-05T10:11:40.379Z
 3. Watch out implementations of underline libraries. Trace lib0 libraries usage and internals in Yjs for example;JavaScript engines use UTF-16 encoding. Golang (my main backend language) is using UTF-8 ... reimplementing Yjs code in Golang with algorithms and optimization and futher scaling might become impossible for small startups.
 4. Rich editing similar to Google Doc is very very complicated subject with lot of landmines
 5. There's ProseMirror editor for collaborative editing. However you might not like its internals compare to Slatejs 
-
-
 # automerge
 - ## Automerge: A JSON-like data structure (a CRDT) that can be modified concurrently_202202
 - https://news.ycombinator.com/item?id=30412550

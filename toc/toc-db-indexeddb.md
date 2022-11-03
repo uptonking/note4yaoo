@@ -71,6 +71,7 @@ modified: 2022-06-03T22:06:16.249Z
 - minimongo /1kStar/LGPLv3/202205/ts
   - https://github.com/mWater/minimongo
   - Client-side in-memory mongodb backed by localstorage with server sync over http
+  - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
   - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries. It was forked in January 2014.
   - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
   - sqlite plugin is also supported when available
