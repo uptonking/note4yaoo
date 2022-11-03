@@ -51,6 +51,11 @@ modified: 2021-01-08T11:48:16.590Z
     - css only dashboard
     - dashboard ui
 # bootstrap-dashboard
+- https://github.com/SoftwareBrothers/adminjs-design-system
+  - https://adminjs-demo.herokuapp.com/admin/login
+  - DesignSystem on which AdminJS is based on
+  - 依赖styled-components、styled-system
+
 - AdminLTE /35.8kStar/MIT/202008
   - https://github.com/ColorlibHQ/AdminLTE
   - https://adminlte.io/

@@ -25,6 +25,10 @@ modified: 2021-01-16T20:50:23.893Z
   - draw.io is the old name for diagrams.net
 - https://github.com/Foundry376/Mailspring
   - maintained fork of @nylas Mail by one of the original authors.
+
+- https://github.com/low-teck/vault
+  - A react-electron app that secures user data locally using AES algorithm with the help of nedb and crypto-js ans styled with chakra-ui.
+  - https://github.com/codegiik/electron-react-nedb-boilerplate
 # extensions
 - https://github.com/sindresorhus/electron-store
   - Simple data persistence for your Electron app or module
@@ -44,6 +48,7 @@ modified: 2021-01-16T20:50:23.893Z
 - https://github.com/electron-react-boilerplate/electron-react-boilerplate
   - https://electron-react-boilerplate.js.org/
   - Electron React Boilerplate uses Electron, React, React Router, Webpack and React Fast Refresh.
+  - https://github.com/codegiik/electron-react-nedb-boilerplate
 - https://github.com/sprout2000/electron-react-ts
   - An Electron boilerplate with hot reloading for React and TypeScript.
 - https://github.com/fantasticit/electron-react-boilerplate

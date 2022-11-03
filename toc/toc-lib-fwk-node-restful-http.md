@@ -30,6 +30,11 @@ modified: 2021-06-02T16:35:46.166Z
 
 - https://github.com/albingroen/typescript-express-server
   - express server template with Typescript
+
+- https://github.com/dalenguyen/rest-api-node-typescript
+  - Building RESTful Web APIs with Node.js, Express, MongoDB and TypeScript
+- https://github.com/nerdeveloper/hackathon-starter-kit
+  - A Node-Typescript/Express Boilerplate with Authentication(Local, Github, Facebook, Twitter, Google, LinkedIn, Dropbox, Slack, Discord), Authorization, and CRUD functionality + PWA Support!
 # rest-examples
 - https://github.com/taniarascia/node-api-postgres
   - https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/

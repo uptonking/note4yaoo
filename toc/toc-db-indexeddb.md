@@ -28,7 +28,7 @@ modified: 2022-06-03T22:06:16.249Z
     - Poor queries
     - Code complexity
     - Ambiguous error handling
-  - Reactive (Since v3.2)
+  - Reactive (since v3.2)
     - Query the db without boilerplate and let your components mirror the database in real time.
 - https://dexie.org/docs/Syncable/Dexie. Syncable.js
   - Enables two-way synchronization with a remote server of any kind.
@@ -64,17 +64,19 @@ modified: 2022-06-03T22:06:16.249Z
   - Databases are organised into Collections and Documents (just like Firebase Cloud Firestore).
     - Databases contain Collections (e.g. users)
     - Collections contain Documents (e.g. { id: 1, name: 'Bill', age: 47 }
+  - https://github.com/kkosmowski/react-notes-2
 - https://github.com/creately/rxdata
   - RxData is a schemaless reactive document database for web browsers. 
   - It is inspired by rxdb but uses localForage instead of pouchdb to store data.
 
-- minimongo /1kStar/LGPLv3/202205/ts
+- minimongo /1kStar/LGPLv3/202207/ts
   - https://github.com/mWater/minimongo
   - Client-side in-memory mongodb backed by localstorage with server sync over http
   - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
   - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries. It was forked in January 2014.
   - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
   - sqlite plugin is also supported when available
+
 - ZangoDB /1kStar/MIT/201710/js
   - https://github.com/erikolson186/zangodb
   - https://erikolson186.github.io/zangodb/
@@ -118,7 +120,7 @@ modified: 2022-06-03T22:06:16.249Z
 
 - https://github.com/akirarika/kurimudb
   - 一款渐进式的 Web 端本地存储库，可将数据保存到 LocalStorage、IndexedDB、Cookie 等地方，和订阅值的变更。
-  - 除了持久化数据之外，若你愿意，Kurimudb 还能成为你应用的 Model 层 抽象，接任你应用中状态管理库的职责 (如 Vuex、Redux、Mobx)，使你应用真正拥有单一数据来源。
+  - 除了持久化数据之外，若你愿意，Kurimudb 还能成为你应用的 Model 层抽象，接任你应用中状态管理库的职责 (如 Vuex、Redux、Mobx)，使你应用真正拥有单一数据来源。
 
 - https://github.com/piotr-cz/swr-idb-cache
   - IndexedDB Cache Provider for SWR
@@ -165,12 +167,20 @@ modified: 2022-06-03T22:06:16.249Z
   - var connection = new JsStore. Instance('jsstore worker path'); 
   - connection.$sql.run("select * from Customers").then(function(result) { console.log(result); }); 
 
+- https://github.com/codewithkyle/jsql
+  - Asynchronously access and manage your IndexedDB databases using SQL queries.
+
 - https://github.com/webqit/objective-sql
   - The object-oriented, adaptive SQL for modern apps - query anything from the plain JSON object, to the client-side IndexedDB, to the server-side DB.
 
 - https://github.com/ScarletsFiction/SFDatabase-js
   - SFDatabase-js is a database library that can help you build a SQL Query and execute it to the server from Nodejs or local browser with WebSQL. 
   - It will fallback to IndexedDB or LocalStorage for saving the database if running on browser.
+
+- https://github.com/YeloPartyHat/LocalDatabase
+  - A simple queryable embedded database designed for front-end that wraps IndexedDB.
+  - A limitation of IndexedDB is that you can only perform 1 write operation at a time. Currently, IndexedDB also limits you to only having 1 instance open per browser!
+    - This means that if you implement this you won't be able to run this database in multiple tabs due to limitations of IndexedDB.
 # indexeddb-orm
 - https://github.com/maxgaurav/indexeddb-orm
   - https://maxgaurav.github.io/indexeddb-orm

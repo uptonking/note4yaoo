@@ -81,11 +81,16 @@ modified: 2021-08-30T18:56:09.644Z
   - https://github.com/baomidou/mybatis-plus
   - https://github.com/abel533/Mapper
 # popular database
-- https://github.com/typicode/lowdb
+- https://github.com/typicode/lowdb /ts
   - a small local JSON database powered by Lodash 
   - supports Node, Electron and the browser
+  - If you have large JavaScript objects (~10-100MB) you may hit some performance issues. 
+    - This is because whenever you call db.write, the whole db.data is serialized using JSON.stringify and written to storage.
+    - If you plan to scale, it's highly recommended to use databases like PostgreSQL or MongoDB instead.
   - who is using
     - json-server
+- https://github.com/sius/fakerdb
+  - Generate an unlimited stream of JSON schema instances using json-schema-faker, faker, chance and insert the data into a supported database, e.g.: nedb, mongodb, postgres, mssql.
 
 - https://github.com/pubkey/rxdb
   - A realtime Database for JavaScript Applications

@@ -15,7 +15,11 @@ modified: 2022-08-13T06:59:54.741Z
 # popular
 - https://github.com/async-labs/saas /ts
   - Build your own SaaS business with SaaS boilerplate. 
-  - 依赖React, Material-UI, Next, MobX, WebSockets, Express, Node, Mongoose, MongoDB. 
+  - 依赖React, Material-UI, Next, MobX, WebSockets, Express, Node, Mongoose, MongoDB.
+
+- https://github.com/saas-js/saas-ui
+  - https://saas-ui.dev/docs/pro/overview
+  - The React component library for startups, built with Chakra UI.
 
 - https://github.com/marmelab/react-admin
   - https://marmelab.com/react-admin-demo/#/
@@ -110,7 +114,7 @@ modified: 2022-08-13T06:59:54.741Z
   - 教程示例丰富
   - [React Hooks CRUD example with Axios and Web API](https://www.bezkoder.com/react-hooks-crud-axios-api/)
   - [build a server api: Express, Sequelize & PostgreSQL](https://www.bezkoder.com/node-express-sequelize-postgresql/)
-# fullstack
+# fullstack-api/mern
 - https://github.com/gilamran/fullstack-typescript
   - FAST FullStack React with TypeScript starter kit.
   - Client and server can share code (And types)
@@ -118,6 +122,12 @@ modified: 2022-08-13T06:59:54.741Z
   - The server is emitted by TypeScript because node now supports es6.
 - https://github.com/shanhuiyang/TypeScript-MERN-Starter
   - Build a real fullstack app (backend+website+mobile) in 100% Typescript
+- https://github.com/afteracademy/nodejs-backend-architecture-typescript
+  - build a backend server for Blogging platform like Medium, FreeCodeCamp
+  - 依赖express、mongoose
+  - Open-Source Project By AfterAcademy
+- https://github.com/sidhantpanda/docker-express-typescript-boilerplate
+  - A dockerized TypeScript-Express App boilerplate with MongoDB and Github Actions
 
 - https://github.com/flaviuse/mern-authentication
   - authentication boilerplate: password reset, email verification, server sessions, redux, typescripts, hooks and docker for dev and prod.

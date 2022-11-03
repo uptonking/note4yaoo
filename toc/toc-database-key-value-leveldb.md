@@ -55,10 +55,4 @@ modified: 2022-11-03T04:14:00.563Z
   - An abstract-level database for browsers, backed by IndexedDB. 
   - The successor to level-js
   - browser-level has first-class support of binary keys and values, using either Uint8Array or Buffer.
-- 
-- 
-- 
-- 
-- 
-
 # more-key-value

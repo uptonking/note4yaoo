@@ -253,6 +253,10 @@ modified: 2022-06-03T21:34:54.893Z
   - 自动更新文库导航目录，支持多级目录
   - 无需服务端的全文库内容搜索与计分排序
 # more
+- https://github.com/notea-org/notea
+  - Self hosted note taking app stored on S3
+  - Support storage in Amazon S3, MinIO, Aliyun OSS, etc
+
 - https://github.com/zhyd1997/DragonLi
   - https://dragon-li.on.fleek.co/
   - a blog platform and alternative to Mirror

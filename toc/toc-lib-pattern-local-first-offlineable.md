@@ -17,15 +17,6 @@ modified: 2021-09-04T14:03:39.046Z
   - Use with React, React Native, or as standalone state container for any web app.
   - 🤔 没必要执着于寻找已有的offline方案，使用 persist + crdt 也可以实现协作
 
-- local-first /191Star/202104/js/inactive
-  - https://github.com/jaredly/local-first
-  - This aims to eventually be a fully-featured solution for managing, syncing, and storing application data, in a way that works offline, and collaboratively.
-  - Currently implemented
-    - a hybrid logical clock (blog post, code)
-    - a nested object CRDT (code)
-    - a rich-text CRDT (code, example integration with quill, visualization of the data structure)
-  - [Local-first database: RxDB + PouchDB](https://jaredforsyth.com/posts/local-first-database-rxdb-pouchdb/)
-
 - tuple-database /200Star/NALic/202208/ts
   - https://github.com/ccorcos/tuple-database
   - The architecture of this database draws inspiration from a bunch of different places (although, primarily from FoundationDb).
@@ -47,10 +38,10 @@ modified: 2021-09-04T14:03:39.046Z
   - Transactional read/writes written in TypeScript.
   - Directly read/write indexes with the ability to index graph/relational queries.
   - Suitable for frontend state management.
-- https://github.com/ccorcos/game-counter
-  - A simple application for keeping score in games. For example, golf or Settlers of Catan.
-  - External effects interface through services defined on the Environment.
-  - TupleDatabase as a UI state management system.
+  - https://github.com/ccorcos/game-counter
+    - A simple application for keeping score in games. For example, golf or Settlers of Catan.
+    - External effects interface through services defined on the Environment.
+    - TupleDatabase as a UI state management system.
 
 - tinybase /1.3kStar/MIT/202209/ts/NoDeps
   - https://github.com/tinyplex/tinybase
@@ -62,10 +53,17 @@ modified: 2021-09-04T14:03:39.046Z
   - Easily sync your data to local or remote storage, and use idiomatic bindings to your React UI.
   - Powerful query engine to select, join, filter, group, sort and paginate data - reactively.
 
-- https://github.com/evoluhq/evolu
+- evolu /101Star/GPLv3/202210/ts
+  - https://github.com/evoluhq/evolu
+  - https://www.evolu.dev/
   - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
   - writing local-first software has been challenging because of the lack of libraries and design patterns. I personally failed several times, and that's why I created Evolu.
-  - Evolu architecture is almost a clone of James Long CRDT for mortals. Rewritten and improved, 
+  - Evolu architecture is almost a clone of James Long CRDT for mortals. Rewritten and improved
+  - Evolu uses end-to-end encryption and generates strong and safe passwords for you. 
+    - Evolu sync and backup server see only timestamps. Nothing more. 
+    - We plan to do at least two security audits.
+  - Evolu is not pure P2P software. For syncing and backup, there needs to be a server. 
+  - Evolu CRDT has no support for transactions because CRDT transactions are still an unsolved issue. 
 
 - https://github.com/gildas-lormeau/SingleFile
   - a Web Extension (and a CLI tool) compatible with Chrome, Firefox to save a complete web page into a single HTML file.
@@ -74,6 +72,19 @@ modified: 2021-09-04T14:03:39.046Z
   - Aphrodite is a schema layer whose first goal is to make P2P & Local-First software as easy to develop as traditional client-server software.
   - You can think of Aphrodite as an ORM of sorts that is designed for the needs of Local-First applications and P2P data transfer.
   - everything in Aphrodite begins with a schema. This schema encodes the application's data
+
+- local-first /191Star/202104/js/inactive
+  - https://github.com/jaredly/local-first
+  - This aims to eventually be a fully-featured solution for managing, syncing, and storing application data, in a way that works offline, and collaboratively.
+  - Currently implemented
+    - a hybrid logical clock (blog post, code)
+    - a nested object CRDT (code)
+    - a rich-text CRDT (code, example integration with quill, visualization of the data structure)
+  - [Local-first database: RxDB + PouchDB](https://jaredforsyth.com/posts/local-first-database-rxdb-pouchdb/)
+
+- https://github.com/pubkey/broadcast-channel
+  - BroadcastChannel allows you to send data between different browser-tabs or nodejs-processes.
+  - It works completely client-side and offline, 
 
 - https://github.com/logux/client
   - https://logux.io/
@@ -151,5 +162,3 @@ modified: 2021-09-04T14:03:39.046Z
 - https://docs.amplify.aws/lib/datastore/getting-started/q/platform/js/
   - allows you to start persisting data locally to your device with DataStore, even without an AWS account.
   - Amplify DataStore provides a programming model for leveraging shared and distributed data without writing additional code for offline and online scenarios, which makes working with distributed, cross-user data just as simple as working with local-only data.
-
-

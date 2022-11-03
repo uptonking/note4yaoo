@@ -136,6 +136,7 @@ modified: 2020-07-14T09:28:43.976Z
 # db
 - https://github.com/pubkey/client-side-databases
   - An implementation of the exact same app in Firestore, AWS Datastore, PouchDB, RxDB and WatermelonDB
+  - I have implemented the exact same chat application with different database technologies.
 # engineering
 - https://github.com/seancdavis/ssg-build-performance-tests
   - A comparison on build performance of popular SSGs, as they are tasked with processing local markdown files as the data source

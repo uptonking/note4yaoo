@@ -35,6 +35,12 @@ modified: 2020-11-02T19:13:04.103Z
 - https://github.com/piotr-cz/redux-persist-idb-storage
   - Storage adapter to use IndexedDB via idb v3 with `redux-persist` ripped from idb v3
 
+- https://github.com/react-stack/redux-storage
+  - Persistence layer for redux with flexible backends
+  - install at least one redux-storage-engine, as redux-storage is only the "management core".
+  - https://github.com/michaelcontento/redux-storage
+    - Persistence layer for redux with flexible backends
+
 - https://github.com/redux-observable/redux-observable
   - RxJS-based middleware for Redux. 
   - Compose and cancel async actions to create side effects and more.
@@ -42,6 +48,13 @@ modified: 2020-11-02T19:13:04.103Z
 - https://github.com/redux-offline/redux-offline
   - Build Offline-First Apps for Web and React Native
   - 🤔 没必要执着于寻找已有的offline方案，使用 persist + crdt 也可以实现协作
+
+- redux-database /18Star/MIT/202005/ts/NoDeps
+  - https://github.com/nerdgeschoss/redux-database
+  - https://nerdgeschoss.github.io/redux-database
+  - Simple reducer based in-memory database with strong typings and immutable documents, with plugins for redux and react.
+  - Client side data normalization is hard. This library helps you to organize your state in a relational way, with queries and joins as you would expect from an SQL based database. 
+  - There is a storage adaper for redux or you can use it as a standalone library (redux-database has no dependencies!).
 
 - https://github.com/lscheibel/redux-yjs-bindings
   - https://lscheibel.github.io/redux-yjs-bindings/

@@ -17,7 +17,7 @@ modified: 2022-10-22T18:47:16.228Z
 - https://github.com/Polarisation/indexeddb-export-import
   - Export/import an IndexedDB database to/from JSON. Can be used to backup and restore.
 
-- nedb /13.1kStar/MIT/2016/js/deprecated
+- nedb /13.1kStar/MIT/201602/js/deprecated
   - https://github.com/louischatriot/nedb
   - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency. 
   - API is a subset of MongoDB's and it's plenty fast.
@@ -25,10 +25,18 @@ modified: 2022-10-22T18:47:16.228Z
   - One datastore is the equivalent of a MongoDB collection
   - Under the hood, NeDB's persistence uses an append-only format, meaning that all updates and deletes actually result in lines added at the end of the datafile, for performance reasons.
   - If you specify a filename, the database will be persistent, and automatically select the best storage method available (IndexedDB, WebSQL or localStorage) depending on the browser.
+  - [Is this still maintained?](https://github.com/louischatriot/nedb/issues/492)
   - forks
     - https://github.com/seald/nedb
+    - https://github.com/HalleyAssist/nedb
     - https://github.com/bajankristof/nedb-promises
-    - https://github.com/typicode/lowdb
+- https://github.com/tedb-org/teDB /ts
+  - A structure sane embedded database with pluggable storage and clean concise documentation.
+  - TeDB uses an AVL balanced binary tree binary-type-tree to save indexed fields of documents.
+  - a storage driver that can either work to persists data to disk or save data to memory. 
+- https://github.com/typicode/lowdb /ts
+  - a small local JSON database powered by Lodash 
+  - supports Node, Electron and the browser
 
 - https://github.com/logux/core
   - https://logux.io/

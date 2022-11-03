@@ -9,5 +9,5 @@ modified: 2022-11-03T09:43:37.252Z
 
 # guide
 
-
-
+- tips
+  - 简单验证poc原型可直接express+orm，计划长期时选择trpc框架
