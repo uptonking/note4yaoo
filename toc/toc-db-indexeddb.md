@@ -50,6 +50,8 @@ modified: 2022-06-03T22:06:16.249Z
 
 - https://github.com/jaetask/dexie-easy-encrypt
   - Easy, unopinionated, table encryption middleware for Dexie
+- https://github.com/mark43/dexie-encrypted
+  - Transparent encryption for IndexedDB using Dexie
 
 - more-dexie
   - https://github.com/stutrek/dexie-hooks
@@ -96,7 +98,8 @@ modified: 2022-06-03T22:06:16.249Z
     - Currently, AceBase has built-in adapters for MSSQL, SQLite in Node.js environments; and IndexedDB, LocalStorage, SessionStorage for the browser. 
   - When you're using AceBase with an IndexedDB or LocalStorage backend, you might notice that if you change data in one open tab, those changes do not raise change events in other open tabs monitoring that same data.
 
-- https://github.com/AlaSQL/alasql
+- alasql /6kStar/MIT/202211/js
+  - https://github.com/AlaSQL/alasql
   - an open source SQL database for JavaScript with a strong focus on query speed and data source flexibility for both relational data and schemaless data. 
   - It works in the web browser, Node.js, and mobile apps.
   - Handles both traditional relational tables and nested JSON data (NoSQL). 
@@ -118,7 +121,7 @@ modified: 2022-06-03T22:06:16.249Z
     - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
     - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
 
-- https://github.com/gruns/ImmortalDB
+- https://github.com/gruns/ImmortalDB /inactive
   - the best way to store persistent key-value data in the browser. 
   - Data saved to ImmortalDB is redundantly stored in Cookies, IndexedDB, and LocalStorage, and relentlessly self heals if any data therein is deleted or corrupted.
 
@@ -151,7 +154,7 @@ modified: 2022-06-03T22:06:16.249Z
   - We developed ObjectStoreProvider after needing a simplified interface toobject storage/retrieval that worked not only across all browsers. We also have built a fully in-memory database provider that has no persistence but supports fully transactional semantics
   - This project has some notable differences to NoSqlProvider
     - It uses red-black tree based indices for better performance of the inMemory provider
-- https://github.com/microsoft/NoSQLProvider
+- https://github.com/microsoft/NoSQLProvider /ts/inactive
   - A cross-browser/platform indexeddb-like client library
   - We developed NoSQLProvider after needing a simplified interface to NoSQL-style object storage/retrieval that worked not only across all browsers, but also for native app development (initially Cordova-based, later moving to React Native.) 
   - Across the browsers, this required unifying WebSQL and IndexedDB, with the nuances of all the different IndexedDB issues

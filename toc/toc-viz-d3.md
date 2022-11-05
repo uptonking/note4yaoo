@@ -7,8 +7,17 @@ modified: 2020-10-22T10:23:02.892Z
 
 # toc-viz-d3
 
+# echarts
+- https://github.com/ggntju/chart-helper
+  - Open Source Cross-Platform Desktop Client for Apache ECharts
+  - Chart Helper uses JSON as data exchanging format. 
+  - 依赖echarts、react、semantic-ui、electron
+- https://github.com/violetiu/yuanliu
+  - 跨平台的原型设计工具，目前以设计桌面原型为主。
+  - 支持echarts库，实现丰富的图表，也可以手动绘制。
+  - 原型可导出为html演示版、vue版、react版和数据库备份
+  - 内置git、sftp工具，团队协同、实时发布轻松搞定
 # d3-chart
-
 - https://github.com/c3js/c3
   - /8.9kStar/MIT/202008
   - A D3-based reusable chart library

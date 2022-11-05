@@ -77,7 +77,6 @@ modified: 2021-07-27T15:12:39.959Z
   - 大量使用es6 class
   - 自己实现了依赖注入，设计了model/service/component
 
-
 - tinymce  /12kStar/MIT/202209/ts
   - https://github.com/tinymce/tinymce
   - https://www.tiny.cloud/
@@ -98,9 +97,29 @@ modified: 2021-07-27T15:12:39.959Z
   - https://demos.yjs.dev/codemirror/codemirror.html
   - Collaborative extensions for CodeMirror6
 # open-editors
-- wiz-editor /237Star/MIT/202207/ts/为知笔记
+- wiz-editor /237Star/MIT/202207/ts/为知笔记/似乎未开源
   - https://github.com/WizTeam/wiz-editor
+  - https://github.com/live-editor/live-editor
   - 支持多人实时协同编辑的网页富文本编辑
+  - [以 MIT 协议开源，不怕竞品直接拿走吗？](https://github.com/WizTeam/wiz-editor/issues/5)
+    - 目前并未完全开源，只是将打包后的代码通过npm发布。开源的部分是编辑器的使用例子。
+  - [项目会开源么？](https://github.com/WizTeam/wiz-editor/issues/15)
+    - 目前没有计划开源
+
+- overleaf /10.5kStar/AGPLv3/202211/js/latex
+  - https://github.com/overleaf/overleaf
+  - https://github.com/overleaf/overleaf/wiki
+  - A web-based collaborative LaTeX editor
+  - 编辑器依赖ace
+  - https://github.com/overleaf/ace
+    - https://github.com/ajaxorg/ace
+    - Ace is a standalone code editor written in JavaScript.
+
+- firepad /3.7kStar/MIT/202010/js
+  - https://github.com/FirebaseExtended/firepad
+  - Collaborative Text Editor Powered by Firebase
+  - Firepad requires Firebase in order to sync and store data. 
+  - rich text editing with CodeMirror5 and code editing via Ace-c9.
 
 - https://github.com/JiHong88/SunEditor
   - http://suneditor.com/sample/index.html

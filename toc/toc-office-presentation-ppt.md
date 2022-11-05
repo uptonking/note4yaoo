@@ -7,6 +7,10 @@ modified: 2021-04-30T20:14:17.669Z
 
 # toc-office-presentation-ppt
 
+# guide
+- ppt
+  - 专业的演示更偏向类似tableau的图形编辑器，而不是文字
+
 # page-viewer 偏向页面展示
 
 - slidev /4.8kStar/MIT/202105/ts

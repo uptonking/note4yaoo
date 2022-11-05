@@ -7,6 +7,13 @@ modified: 2020-12-12T19:32:36.255Z
 
 # toc-repos-solutions
 
+
+# crawler
+- https://github.com/open-data-plan/crawler
+  - Web crawler based on Puppeteer
+  - 只依赖puppeteer
+
+# gis
 - https://github.com/lionsoul2014/ip2region
   - 准确率99.9%的离线IP地址定位库，0.0x毫秒级查询
   - ip2region.db数据库只有数MB

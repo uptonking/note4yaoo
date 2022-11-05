@@ -87,6 +87,27 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-focalboard
 - eg-tanstack-table-v8
 
+## 1105
+
+- [前端本地存储IndexedDB数据库最新教程 视频教程](https://www.bilibili.com/video/BV1T3411874j)
+  - [前端本地存储数据库IndexedDB完整教程](https://www.bilibili.com/video/BV1T3411874j)
+- 使用场景
+  - im聊天消息存储在本地
+- 创建索引后，key
+- crud
+  - add添加
+  - put会添加或更新数据
+  - delete删除单条主键，cursor.delete可删除多条
+
+- [Google PageSpeed vs Lighthouse: How Are They Different?](https://medium.com/@OPTASY.com/google-pagespeed-vs-lighthouse-how-are-they-different-and-which-tool-should-you-use-3f03270c674)
+  - Lighthouse is now incorporated into PageSpeed Insights. It is PageSpeed’s integrated analysis engine
+  - PageSpeed Insights measures the performance metric only, whereas Lighthouse audits other aspects of a website, as well (SEO, accessibility, progressive web app, etc.)
+
+- [Chrome Developer Tools console $](https://stackoverflow.com/questions/35682890/)
+  - `$()` Returns the first element that matches the specified CSS selector. It is a shortcut for document.querySelector().
+  - `$$()` Returns an array of all the elements that match the specified CSS selector. This is an alias for document.querySelectorAll()
+  - `$x()` Returns an array of elements that match the specified XPath.
+
 ## 1103
 
 - searched-tech-stacks
@@ -169,6 +190,29 @@ initTodoTypes();
 
 - electron和react-native-webview都支持加载local html file
   - html中的link js文件路径可能要特殊处理
+
+- [计算机的时钟（二）：Lamport逻辑时钟](http://yang.observer/2020/07/26/time-lamport-logical-time/)
+- 既然物理时钟不可靠，那就人为构造一个递增的序列来为事件排序，这就是Lamport逻辑时钟的基本思想。
+- 首先需要定义先后关系(happened before)，我把事件 a 发生在 b 之前定义为 a → b。
+  - 如果a和b没有先后关系，则称两个事件是并发的，记作 a || b。
+- a → b 除了可以表示两个事件的先后关系，也可以理解为两个事件的因果关系，a事件导致了b事件的发生，或者说a事件影响了b事件，
+  - 而 a || b 也可以理解成两个事件没有因果关系
+- 我们引入逻辑时钟算法：分布式系统中每个进程Pi保存一个本地逻辑时钟值Ci，Ci (a) 表示进程Pi发生事件a时的逻辑时钟值，Ci的更新算法
+- 对于任意两个事件a和b，如果 a → b，那么 C (a) < C (b)。
+  - 如果 C (a) < C (b)，那么可以得出 a → b 吗？
+  - 答案是不能，举个反例，图二中C (e) = 2，C (d) = 3，虽然 C (e) < C (d)，但并不能得出 e → d
+
+- [计算机的时钟（三）：向量时钟](https://yang.observer/2020/09/12/vector-clock/)
+- 在《计算机的时钟（二）：Lamport逻辑时钟》中，我们介绍过对于任意两个事件a和b，如果 a → b，那么 C (a) < C (b)，但是反向并不成立，C(a) < C(b)推不出来a→b。本文介绍的向量时钟(Vector Clocks)可以保证反向也能成立
+- 向量时钟可以解决这两个问题，它的思想是进程间通信的时候，不光同步本进程的时钟值，还同步自己知道的其他进程的时钟值。
+
+- [分布式系统：向量时钟 vector clock](https://blog.xiaohansong.com/vertor-clock.html)
+  - 本文中的因果关系指的是时序关系，即时间的前后，并不是逻辑上的原因和结果
+    - 本文中提及的时间戳如无特别说明，都指的是逻辑时钟的时间戳，不是物理时钟的时间戳
+  - Lamport 逻辑时钟帮助我们得到了分布式系统中的事件全序关系，但是对于同时发生的关系却不能很好的描述，导致无法描述事件的因果关系。
+    - Lamport 逻辑时钟算法，它提供了一种判断分布式系统中事件全序关系的方法：如果 a -> b，那么 C(a) < C(b)，但是 C(a) < C(b) 并不能说明 a -> b。也就是说C(a) < C(b) 是 a -> b 的必要不充分条件，我们不能通过 Lamport 时间戳对事件 a、b 的因果关系进行判断。
+    - Lamport 逻辑时钟算法中每个进程只拥有自己的本地时间，没有其他进程的时间，导致无法描述事件的因果关系。
+  - 向量时钟是在 Lamport 时间戳基础上演进的另一种逻辑时钟方法，它通过向量结构不但记录本节点的 Lamport 时间戳，同时也记录了其他节点的 Lamport 时间戳，因此能够很好描述同时发生关系以及事件的因果关系。
 
 - [XOR — 神奇的按位运算符](https://segmentfault.com/a/1190000021519228)
 3.1 使某些特定的位翻转
@@ -841,7 +885,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                                             `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                                                   `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -860,7 +904,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                             `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                   `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

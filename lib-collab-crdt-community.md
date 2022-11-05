@@ -13,7 +13,9 @@ modified: 2022-04-05T13:25:40.892Z
 
 - ## 
 
-- ## 
+- ## Or simply “conflict resolution algorithm”? Maybe a data structure API is just one (kinda object-oriented) way of thinking about conflict resolution, and we could also envisage other APIs that allow replicas to converge?
+- https://twitter.com/martinkl/status/1504888983851053058
+- The object-oriented concept is exactly what I would like to describe because I feel the term CRDT is misused (or at least very Confusing).
 
 - ## An example of how to build a todo list app using state-based CRDTs.
 - https://twitter.com/JungleSilicon/status/1576015894618451968

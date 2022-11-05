@@ -7,8 +7,11 @@ modified: 2020-12-09T09:30:24.694Z
 
 # toc-lib-olap-bi-dashboard
 
+# guide
+- [乐居中后台管理系统教程](http://doc.bufanui.com/docs/leju-admin/leju-admin-1cmave6kurtts)
+  - [day7主页大屏数据展示, vue+echarts](http://doc.bufanui.com/docs/leju-admin/leju-admin-1cmgcm5kelp3c)
+  - [不凡学院 文档](http://doc.bufanui.com/)
 # analytics-dashboard
-
 - Superset /Apache2/29.3kStar/202007
   - https://github.com/apache/incubator-superset
   - http://superset.apache.org/

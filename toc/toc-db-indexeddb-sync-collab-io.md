@@ -14,8 +14,10 @@ modified: 2022-10-22T18:47:16.228Z
   - 是否需要中心化服务器
   - 不必过于纠结crdt的集成或三方库，关注于官方同步示例，如block-editor/y-indexeddb/dexie-sync
 # sync
-- https://github.com/Polarisation/indexeddb-export-import
-  - Export/import an IndexedDB database to/from JSON. Can be used to backup and restore.
+- remotestorage.js /2.2kStar/MIT/202211/ts
+  - https://github.com/remotestorage/remotestorage.js
+  - a JavaScript library for storing user data locally in the browser, as well as connecting to remoteStorage servers and syncing data across devices and applications.
+  - It is also capable of connecting and syncing data with a person's Dropbox or Google Drive account (optional).
 
 - nedb /13.1kStar/MIT/201602/js/deprecated
   - https://github.com/louischatriot/nedb
@@ -37,6 +39,9 @@ modified: 2022-10-22T18:47:16.228Z
 - https://github.com/typicode/lowdb /ts
   - a small local JSON database powered by Lodash 
   - supports Node, Electron and the browser
+
+- https://github.com/azer/indexeddb
+  - Well-tested, low-level wrapper around the IndexedDB API. It can sync locally and remotely.
 
 - https://github.com/logux/core
   - https://logux.io/
@@ -66,6 +71,9 @@ modified: 2022-10-22T18:47:16.228Z
   - https://github.com/hesselbom/crdtmap
   - Inspired by yjs and the CRDT-variant LWW-Element-Set, this is a simple key-value map that can sync between different clients by letting latest timestamp always win.
   - Key is always a string but value could be anything as long as it's just primitive values.
+# export/import
+- https://github.com/Polarisation/indexeddb-export-import
+  - Export/import an IndexedDB database to/from JSON. Can be used to backup and restore.
 # more
 - https://github.com/SyncProxy/sync-client
   - SyncProxy javascript client with support for all major embedded databases (IndexedDB, SQLite, WebSQL, LokiJS...)

@@ -34,3 +34,14 @@ modified: 2022-06-13T02:56:51.029Z
 - IDB uses versioning as a way to let you change the structure. You can only modify object stores when the version changes.
 - So you are barking up the wrong tree here, using versioning as a way of partitioning data. I think your solution of an archive table actually makes much more sense.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## ios supports indexeddb?
+- https://stackoverflow.com/questions/25818860
+- To sum up, indexedDB would run on android 4.4+ and iOS8+.

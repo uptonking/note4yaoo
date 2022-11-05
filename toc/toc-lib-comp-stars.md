@@ -69,6 +69,10 @@ modified: 2021-01-12T18:49:07.422Z
 
 - https://github.com/jiechud/fast-image-editor
   - 一款开源图片编辑器，采用React + Typescript + React-knova 框架开发.
+# media
+- https://github.com/cookpete/react-player
+  - React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, DailyMotion and Kaltura.
+  - If you aren’t using React, you can still render a player using the standalone library
 # embeddable-widget
 - https://github.com/shobhitsharma/embedo
   - It adds a layer on top of third party embed APIs while ensuring best practices and native guidelines for each component. 

@@ -7,6 +7,16 @@ modified: 2020-11-11T13:16:24.994Z
 
 # toc-data-api
 
+# metadata
+
+- https://github.com/open-metadata/OpenMetadata
+  - https://open-metadata.org/
+  - Open Standard for Metadata. A Single place to Discover, Collaborate and Get your data right.
+  - OpenMetadata is an all-in-one platform for data discovery, data lineage, data quality, observability, governance, and team collaboration. 
+
+- https://github.com/GeoNode/geonode
+  - GeoNode is an open source platform that facilitates the creation, sharing, and collaborative use of geospatial data.
+  - 
 # covid-19
 
 - https://github.com/BlankerL/DXY-COVID-19-Crawler

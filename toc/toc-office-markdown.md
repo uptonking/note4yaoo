@@ -99,12 +99,13 @@ modified: 2021-01-04T17:26:25.032Z
 - https://github.com/shd101wyy/markdown-preview-enhanced
   - One of the 'BEST' markdown preview extensions for Atom editor
 # markdown-slide
-- https://github.com/hiroppy/fusuma
+- https://github.com/hiroppy/fusuma /js
   - https://hiroppy.github.io/fusuma
   - Fusuma makes slides with Markdown easily.
   - Markdown and MDX
   - core依赖mdx、webpack.v5、express
   - client依赖react-modal、prismjs、swiper、screenfull、react-burger-menu、react-event-timeline
+  - 支持导出pdf
   - https://github.com/nolimits4web/swiper
     - https://swiperjs.com/
     - Most modern mobile touch slider with hardware accelerated transitions

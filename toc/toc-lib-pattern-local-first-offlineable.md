@@ -11,12 +11,6 @@ modified: 2021-09-04T14:03:39.046Z
 
 - search: local-first, local first, offline first
 # popular
-- https://github.com/redux-offline/redux-offline
-  - Build Offline-First Apps for Web and React Native
-  - Persistent Redux store for Reasonaboutable Offline-First applications, with first-class support for optimistic UI. 
-  - Use with React, React Native, or as standalone state container for any web app.
-  - 🤔 没必要执着于寻找已有的offline方案，使用 persist + crdt 也可以实现协作
-
 - tuple-database /200Star/NALic/202208/ts
   - https://github.com/ccorcos/tuple-database
   - The architecture of this database draws inspiration from a bunch of different places (although, primarily from FoundationDb).
@@ -65,6 +59,22 @@ modified: 2021-09-04T14:03:39.046Z
   - Evolu is not pure P2P software. For syncing and backup, there needs to be a server. 
   - Evolu CRDT has no support for transactions because CRDT transactions are still an unsolved issue. 
 
+- redux-offline /6.1kStar/202012/MIT/js
+  - https://github.com/redux-offline/redux-offline
+  - https://github.com/redux-offline/offline-side-effects /202101/ts
+  - Build Offline-First Apps for Web and React Native
+  - Persistent Redux store for Reasonaboutable Offline-First applications, with first-class support for optimistic UI. 
+  - Use with React, React Native, or as standalone state container for any web app.
+  - 🤔 没必要执着于寻找已有的offline方案，使用 persist + crdt 也可以实现协作，甚至普通的协作同步
+
+- turtleDB /443Star/MIT/201809/js
+  - https://github.com/turtle-DB/turtleDB
+  - turtleDB is a JavaScript framework and in-browser database for developers to build offline-first, collaborative web applications. 
+  - It provides a developer-friendly API to access an in-browser database built on top of IndexedDB.
+  - It comes with built in document versioning and automatic server synchronization when paired with our back-end package tortoiseDB
+  - https://github.com/turtle-DB/tortoiseDB
+    - NodeJS server and mongoDB wrapper for clients to sync to when using turtleDB. 
+
 - https://github.com/gildas-lormeau/SingleFile
   - a Web Extension (and a CLI tool) compatible with Chrome, Firefox to save a complete web page into a single HTML file.
 
@@ -108,6 +118,8 @@ modified: 2021-09-04T14:03:39.046Z
 - https://github.com/local-first-web/state
   - A Redux-based state container for local-first software, offering seamless synchronization using Automerge CRDTs. (Formerly known as fish Cevitxe).
   - @localfirst/state is an automatically replicated Redux store that gives your app offline capabilities and secure peer-to-peer synchronization superpowers.
+  - https://github.com/local-first-web/auth
+  - https://github.com/local-first-web/relay
 
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb
@@ -140,6 +152,9 @@ modified: 2021-09-04T14:03:39.046Z
   - Instant offline SQL-powered data visualisation in your browser
   - Sqliteviz is a single-page offline-first PWA for fully client-side visualisation of SQLite databases or CSV files.
   - run SQL queries against a SQLite database and create Plotly charts and pivot tables based on the result sets
+
+- https://github.com/cloudpeers/tlfs  /rust
+  - offers a stack to write applications as productively as when using state-of-the-art cloud-based architectures, while providing the Seven Ideals for Local-First Software
 # collab
 - https://github.com/YousefED/Matrix-CRDT
   - Use Matrix as a backend for local-first applications with the Matrix-CRDT Yjs provider.

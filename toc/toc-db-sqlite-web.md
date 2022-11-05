@@ -9,7 +9,8 @@ modified: 2022-06-03T22:12:42.368Z
 
 # popular
 
-- https://github.com/jlongster/absurd-sql
+- absurd-sql /3.6kStar/MIT/202110/js
+  - https://github.com/jlongster/absurd-sql
   - sqlite3 in ur indexeddb (hopefully a better backend soon)
   - It implements a backend for sql.js (sqlite3 compiled for the web) that treats IndexedDB like a disk and stores data in blocks there. 
   - That means your sqlite3 database is persisted. 

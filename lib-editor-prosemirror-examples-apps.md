@@ -43,8 +43,10 @@ modified: 2022-08-18T16:57:15.296Z
   - open source & end-to-end encrypted note taking alternative to Evernote.
   - web编辑器和移动端编辑器都依赖tiptap2、zustand、unfurl.js(oembed)、re-resizable、katex
   - @notesnook/streamable-fs: Streaming interface around an IndexedDB based file system
-  - Notesnook encrypts everything on your device using XChaCha20-Poly1305 & Argon2.
+  - Notesnook encrypts everything on your device using `XChaCha20-Poly1305` & `Argon2`.
   - 服务端数据同步代码未找到
+  - [Option to add custom server url in notesnook apps_20221010](https://github.com/streetwriters/notesnook/issues/1162)
+    - We are planning to open source sync server early next month.
 
 - bear-plus /5Star/ISC/202008/js/ejs
   - https://github.com/yk9331/bear-plus
@@ -78,7 +80,7 @@ modified: 2022-08-18T16:57:15.296Z
   - 依赖 react、tauri/rust、dnd-kit、headlessui、popperjs、react-spring、tailwindcss、d3-drag/selection、fuse.js、immer、codemirror.v6、styled-comp、react-virtualized、zustand
   - A mind silo for storing ideas, thought, knowledge with a powerful writing tool.
   - Available for Web, Linux, Windows and macOS. 
-- mdSilo-app /93Star/AGPL.v3/202208/ts
+- mdSilo-app /93Star/AGPL.v3/202208/ts/tauri
   - https://github.com/danloh/mdSilo-app
   - https://mdsilo.com/
   - A mind silo for storing ideas, thought, knowledge with a powerful writing tool. 

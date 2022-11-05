@@ -61,6 +61,12 @@ modified: 2022-06-03T21:34:54.893Z
   - https://pathfinder.affine.pro/
   - 支持跨block选择部分文字，但不支持跨block加粗快捷键
   - 不支持拖拽block修改顺序，不支持拖入拖出list item
+  - 模型层基于yjs、y-indexeddb，渲染层将每个block的数据渲染成一个contenteditable，输入层依赖beforeinput，编辑操作抽象成了command
+  - 多编辑器实例的优点
+    - 容易实现虚拟滚动
+  - 多编辑器实例的缺点
+    - 自定义选区的同步和更新变得复杂
+    - 跨block的操作变得复杂
 # github-wiki-confluence-like
 - MrDoc /2.1kStar/GPL.v3/202208/js/python/仅网页版
   - https://github.com/zmister2016/MrDoc

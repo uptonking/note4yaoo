@@ -32,6 +32,14 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/streamich/json-joy
   - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
+
+- liveblocks /1.1kStar/Apache2/202211/ts
+  - https://github.com/liveblocks/liveblocks
+  - https://liveblocks.io/
+  - The all-in-one toolkit to build collaborative products like Figma, Notion, and more.
+  - 三大类数据：storage、presense、analytics
+  - To provide better conflict resolution, we can use the CRDT-like LiveObject to store each rectangle’s data. 
+  - Liveblocks storage can contain nested data structures, and in our example, shapes is a LiveMap containing multiple LiveObject items.
 # crdt-rewrite
 - https://github.com/josephg/crdt-examples
   - CRDT examples from a DWEB talk
@@ -242,6 +250,15 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/Haotian-Yang/CRDTree
   - 服务端基于ws
+# collab-examples
+- https://github.com/Sambigeara/fuzzynote /go
+  - Terminal-based, hyper-fast, CRDT-backed, collaborative note-taking tool
+
+- https://github.com/courajs/referent
+  - An offline-first, realtime-collaborative wiki engine
+
+- https://github.com/markandre13/workflow
+  - A Collaborative Real-Time White- and Kanban Board
 # yjs-crdt
 - https://github.com/yousefed/SyncedStore
   - https://syncedstore.org/docs/

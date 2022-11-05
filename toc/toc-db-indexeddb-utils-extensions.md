@@ -20,7 +20,8 @@ modified: 2022-11-04T14:22:17.373Z
 - https://github.com/haixiangyan/my-idb-keyval
   - 最近用到了 idb-keyval 这个库，阅读了一下源码后终于是有点感觉了
   - 手把手带你造一个 idb-keyval 轮子
-- https://github.com/azu/kvs
+- kvs /125Star/MIT/202209/ts
+  - https://github.com/azu/kvs
   - Key Value storage for Browser, Node.js, and In-Memory.
   - I want to get universal storage library that works on Browser and Node.js.
   - Previously, I've created localstorage-ponyfill for this purpose. However,  `Window.localStorage` does not work on Web Workers or Service Worker
@@ -31,6 +32,11 @@ modified: 2022-11-04T14:22:17.373Z
     - Abstract chunk store built on idb-kv: the lightweight and simple API for indexeddb with automatic batching
 - https://github.com/simplifyjs/indexeddb-crud
   - Comparison between native IndexedDB API and using IDB library in operating CRUD workaround
+
+- https://github.com/willgm/web-crypto-storage
+  - tiny promise-based crypto keyval storage using IndexedDB and the native Web Crypto API
+- https://github.com/AKASHAorg/secure-webstore
+  - A secure IndexedDB store with built-in encryption
 # filesystem-on-indexeddb
 - https://github.com/filerjs/filer
   - Filer is a drop-in replacement for node's fs module, a POSIX-like file system for browsers.

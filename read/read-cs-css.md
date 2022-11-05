@@ -68,17 +68,16 @@ modified: 2020-12-08T14:44:40.651Z
     - `+` ：紧邻元素选择器，E+F选择紧随E元素之后的第一个同级元素F，只会影响后面对应标签的第一个（相邻的）兄弟节点的标签样式，若是li+li,则会影响除第一个li的所有li
     - `~` ：普通同级元素选择器，E~F选择E后的所有同级F，若是li+li则除第一个都影响
     - [CSS的兄弟选择器+和~的区别](https://blog.csdn.net/jarisMA/article/details/100105595)
+  - 属性选择器
+    - `el[attrName]，.class[attrName]`,可以筛选出设定了特定属性的标签 
+    - `el[attrName="value"]`，还可以选取属性值以特定值开头 `^=` 、结尾 `$=` 或包含指定值 `*=` 的元素
+    - el[att~=val]匹配所有att属性具有多个空格分隔的值、其中一个值等于val的E元素
   - 伪类 :link/visited/hover/active/focus，:first-child，:enable/checked
     - 反选伪类：用于选择不符合指定条件的标签，如el:not(.clsName),not不用连用
     - 结构性伪类:	E:root, E:nth-child(n)
     - E:target,	常用于点击后让另一个元素具有特殊的外观，依赖于id属性，功能类似js
   - 伪元素 ::before/after, ::first-letter/line, ::selection
     - 伪类和伪元素用来选择页面中不由标签表示但易于标识的部分
-  - 属性选择器
-    - el[attrName]，.class[attrName],可以筛选出设定了特定属性的标签 
-    - el[attrName="value"]
-    - 还可以选取属性值以特定值开头 `^=` 、结尾 `$=` 或包含指定值 `*=` 的元素
-    - el[att~=val]匹配所有att属性具有多个空格分隔的值、其中一个值等于val的E元素
 
 - 通过css继承来简化样式表
   - 影响元素在页面所在位置的属性，以及外边距、背景色和边框的属性不会被继承

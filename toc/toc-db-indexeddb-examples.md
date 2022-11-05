@@ -127,9 +127,6 @@ modified: 2022-06-03T22:06:47.464Z
 - https://github.com/yued-fe/yux-storage
   - yux-storage 是一个基于 HTML5 IndexedDB 封装的 Web 本地数据离线存储库。
 
-- https://github.com/assuncaocharles/react-indexed-db
-  - wraps IndexedDB database in an "easier to use" service. 
-  - It exposes very simple promises API to enable the usage of IndexedDB without most of it plumbing.
 
 - https://github.com/BinaryBitBytes/JustAnotherTextEditor
   - A progressive web application that utilizes IndexedDB API to log text in a database

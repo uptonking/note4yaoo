@@ -30,6 +30,7 @@ modified: 2022-03-17T17:50:28.967Z
   - instant-preview
     - 类似typora的即时预览，可选择 行内 / 上下 两种结构
     - 类似observable-notebook的上下结构可减少页面reflow
+  - dev-tools, instead of wrapper like react-ag-grid，需要大量时间，可跨平台
 
 - editor
   - copy as markdown link
