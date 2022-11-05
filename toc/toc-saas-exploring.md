@@ -18,12 +18,6 @@ modified: 2021-05-14T14:30:22.685Z
   - Collect and showcase testimonials using Airtable
   - 类似"大家都说好"的marketing
 
-- https://github.com/tagspaces/tagspaces
-  - an offline, open source, document manager with tagging support
-  - no backend, no login, file manager, organizer and browser
-  - It helps you organize your files, photos and other documents with tags
-  - The application is available for Windows, Linux, Mac OS and Android. 
-
 - https://github.com/soxoj/maigret
   - https://maigret.readthedocs.io/
   - Maigret collects a dossier(卷宗；档案) on a person by username only, checking for accounts on a huge number of sites and gathering all the available information from web pages. 

@@ -44,6 +44,8 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
   - git config --global alias.ci commit
   - git config --global alias.st status
   - git config --global core.autocrlf true 
+  - git config --global --add --bool push.autoSetupRemote true
+    - 本地新分支，自动创建关联，直接push
 
 - "autocrlf" should be "input" on Unix (Mac/Linux) while "true" on Windows. 
   - This is very well-explained on Git's official document under the[ "Formatting and Whitespacing"](https://stackoverflow.com/questions/44720236) section

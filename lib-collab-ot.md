@@ -15,6 +15,10 @@ modified: 2022-04-05T10:09:36.436Z
     - codemirror内容的变更changes事件转换为TextOperation的流程
     - 中文输入法优化
 
+- ot vs crdt
+  - ot的主流实现依赖中心服务器决定op的顺序
+    - crdt的op可乱序到达其他节点
+
 - [SharedPen 之 Operational Transformation，基于ot.js](http://objcer.com/2018/03/05/SharePen-Operational-Transformation/)
   - 比较全面地介绍了operation指令、apply、compose、transform、undo/redo、服务端时序
 

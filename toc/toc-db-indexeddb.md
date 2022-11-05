@@ -18,7 +18,7 @@ modified: 2022-06-03T22:06:16.249Z
 
 - 用indexeddb如何保存和更新层数很深的树型数据？
   - 可以将tree打平为索引号 1.1, 1.2.1
-# popular
+# dexie
 - Dexie.js /8kStar/Apache2/202206/ts
   - https://github.com/dexie/Dexie.js
   - https://dexie.org/
@@ -30,6 +30,7 @@ modified: 2022-06-03T22:06:16.249Z
     - Ambiguous error handling
   - Reactive (since v3.2)
     - Query the db without boilerplate and let your components mirror the database in real time.
+
 - https://dexie.org/docs/Syncable/Dexie. Syncable.js
   - Enables two-way synchronization with a remote server of any kind.
   - https://github.com/nponiros/sync_server
@@ -39,19 +40,22 @@ modified: 2022-06-03T22:06:16.249Z
     - It supports the poll pattern using AJAX and the react pattern using nodejs-websocket.
   - [Offline use with Sync to Server](https://github.com/only-cliches/Nano-SQL/issues/18)
     - Dexie.Syncable the Sync Server just uses Nedb as a quick way to get a sample running. You would replace that with MongoDB or whatever backend DB you wanted so you con isn't relevant here.
+
 - https://github.com/subshell/data-repositories
   - This is a wrapper around Dexie, which itself is already a wrapper around IndexedDB. 
   - This wrapper allows to create repository classes, similar as you might be used to from Java and Spring Data.
   - It is recommended to have separate Dexie databases for every repository (due to some issues with Dexie and the versioning across multiple repositories). 
   - The repositories naturally work with RxJS and Observables. If you want to use JavaScript Promises instead you can just call .toPromise() on every returned Observable. 
   - **Due to the nature of IndexedDB, there is no synchronous way to read or write any data**.
+
 - https://github.com/jaetask/dexie-easy-encrypt
   - Easy, unopinionated, table encryption middleware for Dexie
+
 - more-dexie
   - https://github.com/stutrek/dexie-hooks
   - https://www.npmjs.com/package/@3fv/dexie-orm
-
-- localForage /20.5kStar/Apache2/202110/js
+# popular
+- localForage /20.5kStar/Apache2/202110/js/inactive
   - https://github.com/localForage/localForage
   - https://localforage.github.io/localForage
   - localForage is a fast and simple storage library for JavaScript. 
@@ -157,7 +161,8 @@ modified: 2022-06-03T22:06:16.249Z
     - ReactXP is a library for cross-platform app development using React and React Native.
 
 - https://github.com/google/lovefield
-  - Lovefield is a relational database written in pure JavaScript. It provides SQL-like syntax and works cross-browser
+  - Lovefield is a relational database written in pure JavaScript.
+  - It provides SQL-like syntax and works cross-browser
   - [Lovefield wraps IndexedDB objects in different classes](https://github.com/google/lovefield/blob/master/docs/dd/02_data_store.md)
 # indexeddb-query-sql
 - https://github.com/ujjwalguptaofficial/JsStore

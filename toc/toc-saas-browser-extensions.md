@@ -1,18 +1,13 @@
 ---
-title: toc-repos-browser-extensions
-tags: [browser, extensions, repos, toc]
+title: toc-saas-browser-extensions
+tags: [browser, extensions, toc]
 created: 2020-10-05T07:49:04.680Z
-modified: 2020-11-19T12:44:36.463Z
+modified: 2022-11-04T15:11:24.012Z
 ---
 
-# toc-repos-browser-extensions
+# toc-saas-browser-extensions
 
 # extensions
-
-- https://github.com/flybayer/twitter-bookmarks-search
-  - adds the ability to search your bookmarked tweets inside Twitter.
-- https://github.com/twitterdev/bookmarks-search
-  - uses the Bookmarks lookup endpoint to get your bookmarks
 
 - https://github.com/jawil/GayHub
   - 优化GitHub的阅读体验
@@ -23,7 +18,7 @@ modified: 2020-11-19T12:44:36.463Z
 
 - https://github.com/int128/bntp
   - Chrome extension providing Bookmarks in the New Tab Page
-- ## table
+# table
 - https://github.com/jamesandres/ColumnCopy
   - Google Chrome extension which enables selecting columns from table.
 - https://github.com/gebrkn/copytables
@@ -36,8 +31,7 @@ modified: 2020-11-19T12:44:36.463Z
     - Javascript library making HTML tables filterable and a bit more
 - https://github.com/table-of-contents-sidebar/table-of-contents-sidebar
   - An outline tool makes it easier to navigate your novel. 
-
-- ## wiki
+# wiki
 - https://github.com/n3nikita/WikiCopy
   - Google chrome extension which helps you to copy from Wikipedia.
 - https://github.com/gambolputty/wikitable2csv

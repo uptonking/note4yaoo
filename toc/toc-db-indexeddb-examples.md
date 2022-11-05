@@ -39,7 +39,17 @@ modified: 2022-06-03T22:06:47.464Z
   - Generate a type-safe IndexedDB client from a simple schema file.
   - https://github.com/kevinbgreene/indeksd-example
     - Example app for using indeksd IndexedDB code generation
-# indexeddb-apps
+# indexeddb-react-vue
+- https://github.com/assuncaocharles/react-indexed-db
+  - wraps IndexedDB database in an Declarative way. 
+  - It exposes very simple promises API to enable the usage of IndexedDB 
+
+- https://github.com/hc-oss/use-indexeddb
+  - hook w/ promises for easy IndexedDB access in React
+
+- https://github.com/eldomagan/vuex-orm-localforage
+  - VuexORMLocalforage is a plugin for the amazing VuexORM that let you sync your Vuex Store with an IndexedDB database using LocalForage.
+# apps
 - https://github.com/mohitk0208/notes-pwa
   - https://notes-ysau.pages.dev/
   - Make notes page_with_curl in the browser itself, it runs offline and the data is saved in the browser.
@@ -108,7 +118,7 @@ modified: 2022-06-03T22:06:47.464Z
 - https://github.com/googlecodelabs/workbox-indexeddb
   - use IndexedDB and Workbox to create a fully offline-capable, data-driven app. 
   - You'll also use Background Sync to sync your app with the server even when your web app is closed.
-# more-indexeddb-examples
+# more-indexeddb
 - https://github.com/chenstarx/GoDB.js
   - indexedDB with Intuitive API, CRUD with one line of code.
 - https://github.com/ismaelcallerojas/CRUD-indexeddb

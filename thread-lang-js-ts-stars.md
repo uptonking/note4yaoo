@@ -13,6 +13,40 @@ modified: 2021-06-22T11:54:44.506Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I'm not a fan of premature optimisation but if you know a structure is going to be created *a lot* you're probably better off with a class over a factory function.
+- https://twitter.com/mattgperry/status/1588479452908060673
+  - There's an upcoming Motion PR that makes this switch, leading to 20-25% lower memory usage across all @framer sites
+  - With a factory function, everything is created anew. 
+  - Whereas with a class, a method is defined once and shared in memory.
+  - This has clear ramifications(结果，后果) for memory usage if these structures are being created 1000s of times, especially when, as in our case, the structures are big.
+  - This is more of dorky(stupid) interest than something you should account for when making these architectural decisions
+
+```JS
+// before
+function createThing() {
+  return {
+    method1: () => {}
+  }
+}
+
+createThing().method1 === createThing().method1 // false
+
+// after
+
+class Thing {
+  /** class instance methods are shared on the prototype */
+  method1() {}
+}
+
+new Thing().method1 === new Thing().method1 // true
+```
+
+- In JSC, classes have a prototype object, a constructor and instances. The instance’s JSC:: Structure is created with a prototype object. The prototype’s functions are allocated once, on the prototype. Reusing the same prototype skips allocating the functions again
+
 - ## ag-grid: Been experimenting further with #TypeScript and seeing what the user experience might be like if I was to create a "generic bag" type builder. 
 - https://twitter.com/SCooperDev/status/1556743650394181633
   - Enabling users to provide generic params and not have to worry about providing defaults for all the previous params is intriguing.

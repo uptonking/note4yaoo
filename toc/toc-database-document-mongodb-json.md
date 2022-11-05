@@ -50,6 +50,8 @@ modified: 2022-11-03T04:14:11.987Z
     - https://github.com/HalleyAssist/nedb
     - https://github.com/Akumzy/nedb-async
       - promise base wrapper methods for Nedb
+    - https://github.com/JamesMGreene/nestdb
+      - originally forked from NeDB
 - https://github.com/Techpire/db
   - 👉🏻 nedb typescript conversion
   - differences
@@ -75,6 +77,8 @@ modified: 2022-11-03T04:14:11.987Z
   - A react-electron app that secures user data locally using AES algorithm with the help of nedb and crypto-js ans styled with chakra-ui.
 - https://github.com/abeegit/bibliothek
   - React and Express + NeDB app that lets you add, edit and display books in the inventory. 
+- https://github.com/bi-tm/express-nedb-rest
+  - REST API for NeDB database, based on express HTTP server.
 - https://github.com/rwl-dev-archive/learn-nedb-json-api
   - Express + NeDB = JSON API
   - https://github.com/gaoliveira21/nedb-crud

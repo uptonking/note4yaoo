@@ -14,10 +14,18 @@ modified: 2022-06-13T06:14:26.048Z
   - 如何同步 mongodb-like 的结构，是否用 crdt，还是 http
   - 是否需要中心化服务器
   - 不必过于纠结crdt的集成或三方库，关注于官方同步示例，如block-editor/y-indexeddb/dexie-sync
+# Dexie
 
-## Dexie 
+## [Prior art for PSD?](https://github.com/dexie/Dexie.js/discussions/1617)
 
-### [Is Dexie. Syncable using OT?](https://github.com/dexie/Dexie.js/issues/587)
+- When first implemented PSD in dexie, I was not aware of other context-preserving techniques, which is the reason for its proprietary naming which is unique to Dexie.js. The concept is more known as zones (like angular's zone.js) or contexts, as known in libraries such as react, vue, svelte and solidjs. Dexie's PSD context is unique compared to other libraries in that it is preserved across async calls.
+
+## [What is the future of dexie-observable and dexie-syncable?_202104](https://github.com/dexie/Dexie.js/issues/1289)
+
+- dexie-cloud-addon contains a smarter and less complex version of dexie-syncable so once it has been through it's beta phase (some months ahead) there will be a stable, faster and more reliable code base to use as a template for a rewritten dexie-syncable. 
+  - Might at that point break out the pure sync part out from dexie-cloud-addon into a new dexie-syncable. This time not dependent on dexie-observable. 
+
+## [Is Dexie. Syncable using OT?_201709](https://github.com/dexie/Dexie.js/issues/587)
 
 - Hmm this sounds correct, at least from what I understand by reading a bit about operational transforms. But this only holds true for dexie syncable itself. What the server does with the data is another issue. There are 2 server implementations that I know of that are open source. Both consider the last change when changing the same object from two different clients so data might get lost there. At least this is what I remember about the implementations.
 

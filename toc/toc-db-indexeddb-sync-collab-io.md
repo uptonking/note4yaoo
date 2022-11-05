@@ -13,7 +13,7 @@ modified: 2022-10-22T18:47:16.228Z
   - 如何同步 mongodb-like 的结构，是否用 crdt，还是 http
   - 是否需要中心化服务器
   - 不必过于纠结crdt的集成或三方库，关注于官方同步示例，如block-editor/y-indexeddb/dexie-sync
-# popular
+# sync
 - https://github.com/Polarisation/indexeddb-export-import
   - Export/import an IndexedDB database to/from JSON. Can be used to backup and restore.
 

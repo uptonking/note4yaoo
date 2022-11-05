@@ -41,21 +41,7 @@ modified: 2021-08-30T18:56:18.632Z
 - more-conversion-tools
   - https://github.com/fitnr/sqlite-json
   - https://github.com/isaiahnields/csv-to-sqlite
-# examples
-- https://github.com/patrickmoffitt/local-sqlite-example
-  - This project demonstrates how to install and use a local SQLite3 database in Electron using SQL.js.
 
-- https://github.com/lana-k/sqliteviz
-  - https://lana-k.github.io/sqliteviz/
-  - 依赖vue2、jquery、pivottable、plotly.js.v1、sql.js、react-chart-editor
-  - 依赖很多plotly的产品
-  - Instant offline SQL-powered data visualisation in your browser
-  - Sqliteviz is a single-page offline-first PWA for fully client-side visualisation of SQLite databases or CSV files.
-
-- https://github.com/app-generator/api-server-nodejs
-  - Express/Nodejs Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
-  - Authentication Flow uses json web tokens via Passport library - passport-jwt strategy.
-  - 典型的dashboard的后端示例
 # collab/sync
 - https://github.com/aphrodite-sh/cr-sqlite
   - Convergent, Replicated SQLite. Multi-writer and CRDT support for SQLite

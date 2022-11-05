@@ -1,11 +1,11 @@
 ---
-title: toc-db-indexeddb-utils
+title: toc-db-indexeddb-utils-extensions
 tags: [indexeddb, toc, utils]
 created: 2022-06-04T00:43:13.971Z
-modified: 2022-06-13T03:05:27.313Z
+modified: 2022-11-04T14:22:17.373Z
 ---
 
-# toc-db-indexeddb-utils
+# toc-db-indexeddb-utils-extensions
 
 # popular
 
@@ -90,17 +90,7 @@ modified: 2022-06-13T03:05:27.313Z
 
 - https://github.com/WebReflection/indexed-values
   - An ever growing Set based utility to optimize JSON, IndexedDB, or postMessage.
-# indexeddb-react-vue
-- https://github.com/assuncaocharles/react-indexed-db
-  - wraps IndexedDB database in an Declarative way. 
-  - It exposes very simple promises API to enable the usage of IndexedDB 
-
-- https://github.com/hc-oss/use-indexeddb
-  - hook w/ promises for easy IndexedDB access in React
-
-- https://github.com/eldomagan/vuex-orm-localforage
-  - VuexORMLocalforage is a plugin for the amazing VuexORM that let you sync your Vuex Store with an IndexedDB database using LocalForage.
-# indexeddb-json-key-value
+# json-key-value
 - minimongo /1kStar/LGPLv3/202207/ts
   - https://github.com/mWater/minimongo
   - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
@@ -110,7 +100,7 @@ modified: 2022-06-13T03:05:27.313Z
 - zangodb /1kStar/MIT/201710/js
   - https://github.com/erikolson186/zangodb
   - ZangoDB is a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
-# more-indexeddb-repos
+# more-utils
 - https://github.com/jurca/indexed-db.es6
   - The indexed-db.es6 is ES2015-style wrapper of the native IndexedDB HTML5 document-oriented database.
   - declarative schema with data-migration support

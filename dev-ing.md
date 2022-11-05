@@ -39,7 +39,7 @@ https://meeting.tencent.com/p/9606972663
 - 产品日历组件
   - headless-date-picker
 - module/fwk/server
-  - 灵活的tag系统
+  - 灵活的tag/bookmark系统
 - 编辑器参考
   - atlassian-editor
     - https://atlaskit.atlassian.com/packages/editor/editor-core
@@ -73,6 +73,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - crdt-hlc merkle 如何在op-log中找到上次相等的timestamp
     - make indexeddb optional
   - url-as-state-management
+  - 灵活的tag/bookmark系统
 # dev-11
 - eg-prosemirror-examples+collab
   - 重写collab示例的交互，参考blocky-editor在一个页面展示多个编辑器且支持实时协作

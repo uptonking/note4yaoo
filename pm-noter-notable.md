@@ -57,6 +57,9 @@ modified: 2022-03-17T17:50:28.967Z
 - 标准版会导出所有编辑数据，以sqlite格式
 # vip
 - 作品默认使用系统预览图，允许vip上传自定义截图
+- 剪藏扩展 web cliper
+  - local-first pocket, any links
+  - 支持批量导出
 # draft
 - 功能或菜单太多容易使人迷茫，考虑设计多个版本的前端：lite、pro、customized
 
