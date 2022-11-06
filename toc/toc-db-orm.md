@@ -47,6 +47,11 @@ modified: 2021-08-30T18:56:09.644Z
       - 数据库和数据模型来自同一个地方
       - 控制力高于SQL构造器，低于手写SQL； 但生产力最高
 
+- https://github.com/sequelize/sequelize
+  - An easy-to-use multi SQL dialect ORM for Node.js
+  - https://github.com/nielsgl/sequelize-paper-trail
+    - Sequelize plugin for tracking revision history of model instances.
+
 - https://github.com/mikro-orm/mikro-orm
   - https://mikro-orm.io/
   - TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns. 
@@ -61,6 +66,8 @@ modified: 2021-08-30T18:56:09.644Z
   - It features both Promise-based and traditional callback interfaces, 
   - It is designed to work with PostgreSQL, MySQL, and SQLite3.
   - Bookshelf aims to provide a simple library for common tasks when querying databases in JavaScript, and forming relations between these objects, taking a lot of ideas from the Data Mapper Pattern.
+- https://github.com/seegno/bookshelf-json-columns
+  - Parse JSON columns with Bookshelf.js
 
 - https://github.com/orbitjs/orbit
   - Orbit is a composable data framework for managing the complex needs of today's web applications.
@@ -80,6 +87,11 @@ modified: 2021-08-30T18:56:09.644Z
   - https://github.com/pagehelper/Mybatis-PageHelper
   - https://github.com/baomidou/mybatis-plus
   - https://github.com/abel533/Mapper
+
+- https://github.com/SpoonX/wetland
+  - A Node.js ORM, mapping-based. Works with MySQL, PostgreSQL, SQLite and more.
+- https://github.com/alfateam/rdb /js
+  - ORM for nodejs. Supports postgres, msSql, mySql, Sybase SAP and sqlite.
 # popular database
 - https://github.com/typicode/lowdb /ts
   - a small local JSON database powered by Lodash 

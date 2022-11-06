@@ -18,6 +18,11 @@ modified: 2021-04-12T17:41:42.395Z
 - Presidential Election 2020
   - [FOX News Presidential Election Results](https://www.foxnews.com/elections/2020/general-results)
 
+## 粒子特效
+- https://github.com/VincentGarreau/particles.js
+  - https://codepen.io/VincentGarreau/pen/bGxvQd
+  - 红背景，白粒子
+
 # discuss
 
 - ## 7 Powerful UX Laws explained for normal people. 

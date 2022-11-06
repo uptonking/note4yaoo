@@ -9,43 +9,59 @@ modified: 2021-08-30T18:56:18.632Z
 
 # popular
 
-# extensions
-- https://github.com/olsonpm/sqlite-to-rest
-  - Koa routing middleware allowing you to expose a sqlite database via RESTful CRUD
+- https://github.com/nalgeon/sqlime
+  - http://sqlime.org/
+  - an online SQLite playground for debugging and sharing SQL snippets. 
+  - Kinda like JSFiddle, but for SQL instead of JavaScript.
+  - backed by SQLite, provided by an excellent sql.js project.
+  - Connect any local or remote SQLite database. Both files and URLs are supported. 
+    - For example, try loading the Employees database from the GitHub repo.
+
+- https://github.com/WebReflection/sqlite-tag-spawned
+  - Template literal tag based sqlite3 queries.
+  - The same sqlite-tag ease but without the native sqlite3 dependency, aiming to replace dblite.
+  - requires SQLite 3.33 or higher (it uses the -json output mode)
+- https://github.com/WebReflection/sqlite-worker
+  - persistent, SQLite database for Web and Workers, based on sql.js and sqlite-tag.
+
+- kikko /75Star/MIT/202211/ts
+  - https://github.com/kikko-land/kikko
+  - Kikko is a wrapper around SQLite interfaces. 
+  - It brings transaction support, middlewares for queries, and SQLite adapters for the most popular platforms.
+- https://github.com/quolpr/harika
+  - Harika is an offline-first, performance-focused note taking app for organizing your knowledge database.
+  - Synchronization with server. It's done with LWW CRDT per field on top of SQLite. 
+    - It also stores all changes locally and sends them to server. 
+    - Server also store all the changes and recalculate snapshots on new received changes and send those snapshots back to the client. 
+    - Due to we store all the changes at server, it is also planned to add time travel, when CRDT is not what user expect at some cases.
+# viewer
+- https://github.com/qwtel/sqlite-viewer-vscode  /ts
+  - https://sqliteviewer.app/
+  - easy SQLite viewer for VSCode, inspired by DB Browser for SQLite and Airtable.
+
+- https://github.com/inukshuk/sqleton
+  - Visualizes your SQLite database schema.
 
 - https://github.com/sqlitebrowser/sqlitebrowser
   - DB Browser for SQLite, Previously known as "SQLite Database Browser"
   - 基于qt和c++实现
 
-- https://github.com/wangfenjin/simple
-  - 支持中文和拼音的 SQLite fts5 全文搜索扩展
-  - A SQLite3 fts5 tokenizer which supports Chinese and PinYin
-  - https://www.sqlite.org/fts5.html
+- https://github.com/egoist/querybase
+  - Desktop GUI for PostgreSQL, SQLite, and MySQL.
 
-- https://github.com/dumblob/mysql2sqlite
-  - Converts MySQL dump to SQLite3 compatible dump (including MySQL KEY xxxxx statements from the CREATE block).
-  - The script is written in awk (tested with gawk, but should work with original awk, and the lightning fast mawk) and shall be fully POSIX compliant.
-- https://github.com/techouse/sqlite3-to-mysql
-  - simple Python tool to transfer data from SQLite 3 to MySQL.
-
-- https://github.com/caiiiycuk/postgresql-to-sqlite
-  - create sqlite database from postgresql dump.
-  - 依赖scala
-- https://github.com/nikotrone/sqlite-to-postgres
-  - convert an SQLite database dump into a PostgreSQL importable dump
-
-- https://github.com/dimitri/pgloader
-  - Migrate to PostgreSQL in a single command!
-  - MySQL/SQLite/MSSQL to PSQL
-
-- more-conversion-tools
-  - https://github.com/fitnr/sqlite-json
-  - https://github.com/isaiahnields/csv-to-sqlite
-
-# collab/sync
-- https://github.com/aphrodite-sh/cr-sqlite
-  - Convergent, Replicated SQLite. Multi-writer and CRDT support for SQLite
-  - This project implements CRDTs and CRRs in SQLite, allowing databases that share a common schema to merge their state together.
-  - crsqlite works by adding metadata tables and triggers around your existing database schema. 
-  - crsqlite only keeps an extra int per column and a clock per row.
+- https://github.com/cyrilbois/Web-GUI-for-SQLite
+  - a web-based SQLite browser written in JavaScript.
+# db-powered-by-sqlite
+- https://github.com/rqlite/rqlite
+  - distributed relational database built on SQLite
+  - https://github.com/rqlite/rqlite-js
+    - promise based client library for rqlite
 # more
+- https://github.com/haltcase/trilogy
+  - trilogy is a simple Promise-based wrapper for SQLite databases. 
+  - It supports both the native C++ sqlite3 driver and the pure JavaScript sql.js backend
+  - It's not an ORM and isn't intended to be one — it doesn't have any relationship features. 
+  - Instead it focuses on providing a simple, clear API that's influenced more by Mongoose than by SQL.
+
+- https://github.com/subzerocloud/showcase
+  - subZero is a library implemented in Rust with JS/TypeScript bindings that allows you to expose a PostgREST compatible backend on top of any database.

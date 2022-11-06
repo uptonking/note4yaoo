@@ -14,6 +14,17 @@ modified: 2022-10-02T20:51:30.444Z
   - 客户端（编辑器）通过 WebSocket 与服务端建立长连接通信，编辑器每次的 dom 结构变更都将转换为json0格式操作命令（ops）发送到服务端并修改服务端数据后再分发给各个客户端
   - sharedb 会把每次客户端与服务端的操作数据保存为日志，并且在每次操作后都会把最新生成的文档数据保留下来。这些操作都在 ot-server 中进行
 # popular
+- https://github.com/Starcounter-Jack/JSON-Patch
+  - Update JSON documents using delta patches.
+  - JSON-Patch (RFC6902) is a standard format that allows you to update a JSON document by sending the changes rather than the whole document. 
+  - JSON Patch plays well with the HTTP PATCH verb (method) and REST style programming.
+  - Lean and mean Javascript implementation of the JSON-Patch standard (RFC 6902).
+
+- https://github.com/Palindrom/Palindrom
+  - Library for two-way data binding between local and remote JSON models. 
+  - It uses JSON-Patch for data updates and Operational Transformation for versioning and data consistency. 
+  - It operates via HTTP or WebSocket or both.
+
 - https://github.com/Progyan1997/Operational-Transformation
   - http://operational-transformation.github.io/
   - A collection of Algorithms to Synchronise changes across multiple clients using Operational Transformation

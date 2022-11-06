@@ -18,44 +18,6 @@ modified: 2022-06-03T22:06:16.249Z
 
 - 用indexeddb如何保存和更新层数很深的树型数据？
   - 可以将tree打平为索引号 1.1, 1.2.1
-# dexie
-- Dexie.js /8kStar/Apache2/202206/ts
-  - https://github.com/dexie/Dexie.js
-  - https://dexie.org/
-  - https://dexie.org/docs/Tutorial/Hello-World
-  - A Minimalistic Wrapper for IndexedDB
-  - Dexie solves three main issues with the native IndexedDB API:
-    - Poor queries
-    - Code complexity
-    - Ambiguous error handling
-  - Reactive (since v3.2)
-    - Query the db without boilerplate and let your components mirror the database in real time.
-
-- https://dexie.org/docs/Syncable/Dexie. Syncable.js
-  - Enables two-way synchronization with a remote server of any kind.
-  - https://github.com/nponiros/sync_server
-    - A small node server which uses NeDB to write data to the disk. 
-    - The server can be used with a client for example SyncClient to save change sets which can later be synchronized with other devices. 
-    - The server was made to work with the ISyncProtocol and Dexie.Syncable. 
-    - It supports the poll pattern using AJAX and the react pattern using nodejs-websocket.
-  - [Offline use with Sync to Server](https://github.com/only-cliches/Nano-SQL/issues/18)
-    - Dexie.Syncable the Sync Server just uses Nedb as a quick way to get a sample running. You would replace that with MongoDB or whatever backend DB you wanted so you con isn't relevant here.
-
-- https://github.com/subshell/data-repositories
-  - This is a wrapper around Dexie, which itself is already a wrapper around IndexedDB. 
-  - This wrapper allows to create repository classes, similar as you might be used to from Java and Spring Data.
-  - It is recommended to have separate Dexie databases for every repository (due to some issues with Dexie and the versioning across multiple repositories). 
-  - The repositories naturally work with RxJS and Observables. If you want to use JavaScript Promises instead you can just call .toPromise() on every returned Observable. 
-  - **Due to the nature of IndexedDB, there is no synchronous way to read or write any data**.
-
-- https://github.com/jaetask/dexie-easy-encrypt
-  - Easy, unopinionated, table encryption middleware for Dexie
-- https://github.com/mark43/dexie-encrypted
-  - Transparent encryption for IndexedDB using Dexie
-
-- more-dexie
-  - https://github.com/stutrek/dexie-hooks
-  - https://www.npmjs.com/package/@3fv/dexie-orm
 # popular
 - localForage /20.5kStar/Apache2/202110/js/inactive
   - https://github.com/localForage/localForage
@@ -109,6 +71,7 @@ modified: 2022-06-03T22:06:16.249Z
     - Easy ETL and options for persistence by data import / manipulation / export of several formats
     - All major browsers, Node.js, and mobile applications
 
+# db-powered-by-indexeddb
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb
   - https://rxdb.info/
@@ -142,6 +105,14 @@ modified: 2022-06-03T22:06:16.249Z
     - Other NoSQL embedded databases seem to be largely abandoned
     - Most other NoSQL embedded databases seem to be limited by V8's hard string length limits
 
+- kvs /125Star/MIT/202209/ts
+  - https://github.com/azu/kvs
+  - Key Value storage for Browser, Node.js, and In-Memory.
+  - I want to get universal storage library that works on Browser and Node.js.
+  - Previously, I've created localstorage-ponyfill for this purpose. 
+    - However,  `Window.localStorage` does not work on Web Workers or Service Worker
+  - @kvs/* packages provide async storage API using IndexedDB etc and resolve this issue.
+
 - https://github.com/SourceCodeBot/crudodb
   - CrudoDb allows you to write offline-first webapps without any backend implementation.
   - Offline-first IndexedDb wrapper written in TypeScript, which is able to sync with backend services by passing optional service implementation.
@@ -170,6 +141,9 @@ modified: 2022-06-03T22:06:16.249Z
 # indexeddb-query-sql
 - https://github.com/ujjwalguptaofficial/JsStore
   - A complete IndexedDB wrapper with SQL like syntax.
+  - https://github.com/ujjwalguptaofficial/jsstore-examples
+- https://github.com/ujjwalguptaofficial/idbstudio
+  - a cli tool for indexeddb library jsstore. It helps users to execute , debug and learn jsstore query.
 - https://github.com/ujjwalguptaofficial/sqlweb
   - SqlWeb is an extension of JsStore which allows to use sql query for performing database operation in IndexedDB.
   - var connection = new JsStore. Instance('jsstore worker path'); 
@@ -201,7 +175,7 @@ modified: 2022-06-03T22:06:16.249Z
   - plan to support indexeddb and sqlite
 - https://github.com/arashi-dev/local-orm
   - a minified library to manage local storages (e.g. localStorage, sessionStorage, indexedDB etc.) just like a real database with more functionality
-# more-indexeddb-repos
+# more-indexeddb
 - https://github.com/falsandtru/clientchannel
   - Persist objects and sync them between tabs via IndexedDB or LocalStorage.
 - https://github.com/pubkey/broadcast-channel
@@ -211,7 +185,7 @@ modified: 2022-06-03T22:06:16.249Z
   - Storage adapter to use IndexedDB via idb v3 with `redux-persist` ripped from idb v3 
 
 - https://github.com/EmanHerawy/web3Drive
-  - This project combines a browser-based frontend with web API crypto, 3box identity, 3box storage, and ifps storage to allow users to upload/share large files securely through end to end clientside based encryption
+  - This project combines a browser-based frontend with web API crypto, 3box identity, 3box storage, and ipfs storage to allow users to upload/share large files securely through end to end clientside based encryption
 
 - https://gist.github.com/robnyman/1894032
   - IndexedDB storing and retrieving files

@@ -68,6 +68,7 @@ modified: 2022-08-21T10:03:52.222Z
   - SeaTable is an online lightweight database with a spreadsheet interface
   - dtable-web: The web site for manage tables.
   - dtable-server: Store the tables and provide collaborating feature.
+  - https://github.com/seatable/dtable-ui-component
 - https://github.com/antonycourtney/tad
   - /2kStar/MIT/201903
   - Tad is an Electron application written in ES2015 using flow type annotations. 

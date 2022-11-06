@@ -77,15 +77,16 @@ modified: 2022-08-21T10:02:41.845Z
   - https://swiftcarrot.github.io/react-ui-tree/
   - React tree component with drag & drop
   - 依赖js-tree
-- rc-tree /MIT/689Star/202006
-  - https://github.com/react-component/tree
-  - http://react-component.github.io/tree/
-  - Tree component based on rc-virtual-list, rc-animate
+
 - react-treebeard /MIT/1.5kStar/201909/js
   - https://github.com/storybookjs/react-treebeard
   - http://storybookjs.github.io/react-treebeard/
   - Tree Component. Data-Driven, Fast, Efficient and Customisable.
   - 依赖emotion、velocity-animate
+- rc-tree /MIT/689Star/202006
+  - https://github.com/react-component/tree
+  - http://react-component.github.io/tree/
+  - Tree component based on rc-virtual-list, rc-animate
 - https://github.com/drcmda/react-animated-tree
   - configurable tree view with full support for drop-in animations
   - 依赖react-spring.v5
@@ -108,6 +109,77 @@ modified: 2022-08-21T10:02:41.845Z
   - A modified version of @atlaskit/tree library.
   - Flexible tree rendering
   - Dynamic tree expansion with lazy loading
+
+- https://github.com/Vigneshbabuvb/tree-implementation
+  - https://heuristic-clarke-aa0809.netlify.app/
+  - A simple CRUD operation tree implementation using React library
+
+- https://github.com/5achinJani/table-dnd-tree
+  - https://5achinjani-table-dnd-tree.netlify.app/
+  - Table with dnd, indent and oudent rows with flat data-structure and preserving parent-child relationship.
+
+- https://github.com/TheGuardianWolf/treepack
+  - Pack tree nodes into a flat object and unpack them again!
+  - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
+# tree-crud-operations
+- https://github.com/TheGuardianWolf/treepack
+  - Pack tree nodes into a flat object and unpack them again!
+  - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
+  - Limitations
+    - It is assumed that you have children of each node in a single array object
+    - Self referencing objects at any point in the tree are not supported
+    - An id field is required to perform better change detection (using idKey option).
+
+- https://github.com/PerimeterX/flast
+  - Provides a flat Abstract Syntax Tree and an Arborist to trim and modify the tree
+  - Adds a unique id to each node to simplify tracking and understanding relations between nodes.
+  - Arborist - marks nodes for replacement or deletion and applies all changes in a single iteration over the tree.
+
+- https://github.com/iyegoroff/un-flatten-tree /ts
+  - converting trees to lists and vice versa. Can be used in browser and Node.
+
+- https://github.com/kwhitley/treeize
+  - Converts row data (in JSON/associative array format or flat array format) to object/tree structure based on simple column naming conventions.
+- https://github.com/panosoft/untreeize
+  - Reverse treeize library - takes hierarchical data produced by treeize and flattens it
+
+- https://github.com/philipstanislaus/performant-array-to-tree
+  - Converts an array of items with ids and parent ids to a nested tree in a performant O(n) way. 
+  - Runs in browsers and Node.js.
+- https://github.com/DenQ/list-to-tree
+  - Convert list to tree
+
+- https://github.com/mafintosh/flat-tree
+  - A series of functions to map a binary tree to a list
+- https://github.com/cheton/flattree
+  - Convert hierarchical tree structure to flat structure.
+
+- https://github.com/tibdex/tree-to-flat-map
+  - converts a tree to a flat map with dot-separated keys.
+
+- freezer /1.3kStar/MIT/201803/js/NoDeps
+  - https://github.com/arqex/freezer
+  - A tree data structure that emits events on updates, even if the modification is triggered by one of the leaves, making it easier to think in a reactive way.
+  - Immutable trees to make fast comparison among nodes.
+  - Eventful nodes to notify updates to other parts of the app.
+  - Freezer is inspired by other tree cursor libraries, specifically Cortex, that try to solve an inconvenience of the Flux architecture
+    - It creates a new tree every time a modification is required, referencing the non modified nodes from the previous tree. 
+    - Sharing node references among frozen objects saves memory and boosts the performance of creating new frozens.
+  - https://github.com/arqex/react-json-table
+    - A simple but flexible table react component to display JSON data.
+- https://github.com/mquan/cortex
+  - Cortex is an immutable data store for managing deeply nested structure with React
+  - uses immutable data, which allows fast comparison in shouldComponentUpdate
+
+- https://github.com/couralex/treem
+  - treem converts flat data (like SQL rows) into an object tree. 
+  - The tree structure is determined by the columns' names.
+
+- https://github.com/filiplipinski/tree-view-rest-api
+  - Categories Tree View + CRUD Rest Api
+
+- https://github.com/Pierre-LouisDeu/NoSQL-Folders
+  - A CRUD API to manage your documents in a NoSQL folder tree.
 # tree-data-structure
 - treemate /54Star/MIT/202208/ts
   - https://github.com/07akioni/treemate
@@ -115,9 +187,6 @@ modified: 2022-08-21T10:02:41.845Z
   - All in one solution for tree structure in component developling.
   - It helps you manipulate tree data structure for user interface. (Can be used in Tree, Select, Dropdown, Table, Menu components and ...)
   - In treemate, a tree is composed of node (optional group node and optional ignored).
-
-- https://github.com/philipstanislaus/performant-array-to-tree
-  - Converts an array of items with ids and parent ids to a nested tree in a performant O(n) way. Runs in browsers and Node.js.
 
 - https://github.com/jlxw/static-json-db
   - A NoSQL key-value database stored as a directory tree of small JSON files which can be deployed as part of a static website and queried from client browsers in an efficient manner. 
@@ -127,17 +196,6 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/mihneadb/node-directory-tree
   - Creates a JavaScript object representing a directory tree.
 
-- https://github.com/DenQ/list-to-tree
-  - Convert list to tree
-
-- https://github.com/kwhitley/treeize
-  - Converts row data (in JSON/associative array format or flat array format) to object/tree structure based on simple column naming conventions.
-  - https://github.com/panosoft/untreeize
-    - Reverse treeize library - takes hierarchical data produced by treeize and flattens it
-
-- https://github.com/arqex/freezer
-  - A tree data structure that emits events on updates, even if the modification is triggered by one of the leaves, making it easier to think in a reactive way.
-
 - https://github.com/joaonuno/tree-model-js
   - Manipulate and traverse tree-like structures in javascript.
 
@@ -146,6 +204,13 @@ modified: 2022-08-21T10:02:41.845Z
   - Parse XML into a DOM level 4 compatible, persistent (AKA immutable) virtual tree.
   - Parse JSON into similar, traversable trees, or mix with XML.
   - Generate L3, a lightweight, flat representation of XML or JSON trees (or mixed) for fast storage and retrieval.
+
+- https://github.com/qwertie/btree-typescript
+  - fast in-memory B+ tree with a powerful API based on the standard Map. 
+  - B+ trees are ordered collections of key-value pairs, sorted by key.
+  - data structures in JavaScript tend to be slower than the built-in Array and Map data structures in typical cases, because the built-in data structures are mostly implemented in a faster language such as C++
+- https://github.com/w8r/splay-tree
+  - This tree is based on top-down splaying algorithm by D. Sleator.
 # file-folder-directory-scan-watch
 - 文件编辑浏览的实现思路
   - edit > ~~save(内存或本地)~~ > render
@@ -295,3 +360,6 @@ modified: 2022-08-21T10:02:41.845Z
   - JavaScript/TypeScript implementation of Behavior Trees.
   - @btree/core - Framework agnostic behavior trees implementation
   - With Behavior Tree notation all your code will be wrapped with nodes - that allows to visualize how it works. 
+
+- https://github.com/imsnif/nmtree
+  - Get a (flat) tree representation of the modules in your node_modules folder

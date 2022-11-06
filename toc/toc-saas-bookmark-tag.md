@@ -42,6 +42,9 @@ modified: 2022-11-04T15:10:01.262Z
 
 - https://github.com/clebert/bookmark.wtf
   - A free and open-source bookmark manager that uses GitHub Gist as database.
+
+- https://github.com/helloxz/onenav
+  - 使用PHP + SQLite 3开发的书签管理系统，将浏览器书签集中式管理，做到一处部署，随处访问。
 # tag
 - https://github.com/FelipeCortez/bmarks /django2
   - https://bmarks.net/felipecortez

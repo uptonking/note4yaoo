@@ -89,9 +89,13 @@ modified: 2022-11-03T04:14:11.987Z
   - A Lightweight Cloud based JSON Database with a MongoDB like API for Node.
   - You will never know that you are interacting with a Github
 
-- https://github.com/arvindr21/diskDB
+- https://github.com/arvindr21/diskDB /201712/js
   - A Lightweight Disk based JSON Database with a MongoDB like API for Node
   - You will never know that you are interacting with a File System
+
+- https://github.com/Belphemur/node-json-db
+  - A simple "database" that use JSON file for Node.JS.
+  - Every method are now asynchronous
 
 - picodb /31Star/MIT/202201/js
   - https://github.com/jclo/picodb
@@ -141,6 +145,14 @@ modified: 2022-11-03T04:14:11.987Z
   - SQLite doesn't (by default) return native JS data types (Dates in particular)
   - We use Mingo for aggregation - currently lookup commands aren't supported.
 # tree-like/nested
+- https://github.com/TheGuardianWolf/treepack
+  - Pack tree nodes into a flat object and unpack them again!
+  - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
+  - Limitations
+    - It is assumed that you have children of each node in a single array object
+    - Self referencing objects at any point in the tree are not supported
+    - An id field is required to perform better change detection (using idKey option).
+
 - https://github.com/Voronenko/Storing_TreeView_Structures_WithMongoDB
   - Educational repository demonstrating approaches for storing tree structures with NoSQL database MongoDB
   - using five typical approaches plus one combination of operating with hierarchy data on example of the MongoDB database.

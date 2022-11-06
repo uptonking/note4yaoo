@@ -137,6 +137,7 @@ modified: 2022-08-21T10:02:05.129Z
   - SeaTable is a spreadsheet/database like Airtable.
   - SeaTable is originally built by the Seafile team (haiwen/seafile). 
   - The source code will be uploaded to GitHub later. 
+  - https://github.com/seatable/dtable-ui-component
 # examples
 - https://github.com/qwtel/sqlite-viewer-vscode
   - A quick and easy SQLite viewer for VSCode, inspired by DBBrowser for SQLite and Airtable.

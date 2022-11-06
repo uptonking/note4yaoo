@@ -13,6 +13,9 @@ modified: 2022-10-22T18:47:16.228Z
   - 如何同步 mongodb-like 的结构，是否用 crdt，还是 http
   - 是否需要中心化服务器
   - 不必过于纠结crdt的集成或三方库，关注于官方同步示例，如block-editor/y-indexeddb/dexie-sync
+# export/import
+- https://github.com/Polarisation/indexeddb-export-import
+  - Export/import an IndexedDB database to/from JSON. Can be used to backup and restore.
 # sync
 - remotestorage.js /2.2kStar/MIT/202211/ts
   - https://github.com/remotestorage/remotestorage.js
@@ -40,7 +43,7 @@ modified: 2022-10-22T18:47:16.228Z
   - a small local JSON database powered by Lodash 
   - supports Node, Electron and the browser
 
-- https://github.com/azer/indexeddb
+- https://github.com/azer/indexeddb /202005/ts/inactive
   - Well-tested, low-level wrapper around the IndexedDB API. It can sync locally and remotely.
 
 - https://github.com/logux/core
@@ -71,9 +74,6 @@ modified: 2022-10-22T18:47:16.228Z
   - https://github.com/hesselbom/crdtmap
   - Inspired by yjs and the CRDT-variant LWW-Element-Set, this is a simple key-value map that can sync between different clients by letting latest timestamp always win.
   - Key is always a string but value could be anything as long as it's just primitive values.
-# export/import
-- https://github.com/Polarisation/indexeddb-export-import
-  - Export/import an IndexedDB database to/from JSON. Can be used to backup and restore.
 # more
 - https://github.com/SyncProxy/sync-client
   - SyncProxy javascript client with support for all major embedded databases (IndexedDB, SQLite, WebSQL, LokiJS...)

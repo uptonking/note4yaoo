@@ -22,3 +22,6 @@ modified: 2022-11-03T17:10:38.600Z
 
 - https://github.com/dneflas/shop-shoppe /js
   - A MERN stack e-commerce platform, featuring persistent shopping cart, offline capabilities and stripe payment processing
+
+- https://github.com/kt946/awesome-shop-shop-redux
+  - An e-commerce MERN application that uses Redux to manage global state. 

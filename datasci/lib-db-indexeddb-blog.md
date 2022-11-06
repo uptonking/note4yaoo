@@ -42,7 +42,7 @@ modified: 2022-06-13T02:57:07.648Z
 - Keeping your app performant
   - As a general rule, reads and writes to IndexedDB should not be larger than required for the data being accessed.
   - While IndexedDB makes is possible to store large, nested objects as a single record, this practice should be avoided. 
-    - The reason is because when IndexedDB stores an object, it must first create a structured clone of that object, and the structured cloning process happens on the main thread. 
+    - 👀 The reason is because when IndexedDB stores an object, it must first create a structured clone of that object, and the structured cloning process happens on the main thread. 
     - The larger the object, the longer the blocking time will be.
   - while simply storing the entire state tree as a single record in IndexedDB may be tempting and convenient, doing this after every change (even if throttled/debounced) will result in unnecessary blocking of the main thread, it will increase the likelihood of write errors, and in some cases it will even cause the browser tab to crash or become unresponsive.
   - 👉🏻 Instead of storing the entire state tree in a single record, you should break it up into individual records and only update the records that actually change.

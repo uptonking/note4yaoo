@@ -42,6 +42,11 @@ modified: 2021-01-04T16:21:40.119Z
   - https://github.com/manuelbieh/geolib
   - Zero dependency library to provide some basic geo functions
   - This library is currently 2D, meaning that altitude/elevation is not yet supported by any of its functions!
+
+- https://github.com/alexbol99/flatten-js
+  - flatten-js is a javascript library for manipulating abstract geometrical shapes like point, vector, line, ray, segment, circle, arc and polygon. 
+  - Shapes may be organized into Planar(二维平面的) Set - searchable container which support spatial queries.
+  - flatten-js provides a lot of useful methods and algorithms like finding intersections, checking inclusion, calculating distance, applying affine transformations, performing boolean operations and more.
 # spatial-index
 - https://github.com/mourner/flatbush
   - A really fast static spatial index for 2D points and rectangles in JavaScript.

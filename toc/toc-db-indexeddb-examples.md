@@ -9,16 +9,23 @@ modified: 2022-06-03T22:06:47.464Z
 
 # popular
 
+- https://github.com/HiWayne/large-file-uploader
+  - 专为上传功能而优化，file uploader, supporting file segmentation, resume from break point, offline storage...
+  - 断点续传，不必重头再来
+  - 基于 indexedDB 的文件缓存，离线也能恢复进度
+  - 多线程计算，面对大文件处理更快
+  - 只提供下载队列的状态数据，你可以自由定制 UI
+  - 丰富的配置，你可以限制文件类型、每个切片大小、线程数、请求并发数、是否开启离线缓存等
+
+- https://github.com/rpecuch/text-editor /js
+  - The purpose of this project was to build a single-page application that meets Progressive Web Application criteria. 
+  - 后端只依赖express
+  - 前端依赖idb、codemirror5、workbox
+
 - https://github.com/madmoizo/backinfront
   - Backinfront is both the manager of your browser database and a router which handles requests locally. 
   - If you are building an offline first web app which needs sync capabilities, Backinfront is probably the tool your are looking for.
   - Backinfront is designed to work inside a Service Worker make sure to NOT use it in a window context
-
-- https://github.com/stoxy-js/stoxy
-  - Stoxy is a state management API for all modern Web Technologies.
-  - Stoxy stores the data in a in-browser Database called IndexedDB, only keeping the latest 5 accessed objects in-memory for faster access.
-  - Stoxy utilizes a promise-based use flow making it really easy to asynchronously read and write from the storage.
-  - If your browser doesn't support IndexedDB, there's no need to worry. Stoxy recognizes these cases automatically, and opts out of using it and utilizes a in-memory system only.
 
 - https://github.com/mWater/offline-leaflet-map
   - Offline maps in Leaflet using IndexedDb to store tiles
@@ -27,6 +34,9 @@ modified: 2022-06-03T22:06:47.464Z
 - https://github.com/yagajs/indexed-db-tile-cache /inactive
   - Spatial tile cache that saves its data into the IndexedDB of your browser
 
+- https://github.com/nareshbhusal/roadmap
+  - A kanban board, project and idea management app built with React and IndexedDB.
+  - 依赖TailwindCSS、Chakra-ui、dexie、dnd-kit
 - https://github.com/eyalzh/simple-kanban
   - A lightweight offline kanban board
   - Completely offline (IndexedDB backend)
@@ -39,10 +49,16 @@ modified: 2022-06-03T22:06:47.464Z
   - Generate a type-safe IndexedDB client from a simple schema file.
   - https://github.com/kevinbgreene/indeksd-example
     - Example app for using indeksd IndexedDB code generation
-# indexeddb-react-vue
+# react-vue
 - https://github.com/assuncaocharles/react-indexed-db
   - wraps IndexedDB database in an Declarative way. 
   - It exposes very simple promises API to enable the usage of IndexedDB 
+
+- https://github.com/bernabe9/redux-react-session
+  - Simple Session API storage for Redux and React
+
+- https://github.com/jpodwys/preact-journal /202103
+  - 14k offline-capable journaling PWA using preact, node, MySQL, and IndexedDB.
 
 - https://github.com/hc-oss/use-indexeddb
   - hook w/ promises for easy IndexedDB access in React
@@ -50,9 +66,23 @@ modified: 2022-06-03T22:06:47.464Z
 - https://github.com/eldomagan/vuex-orm-localforage
   - VuexORMLocalforage is a plugin for the amazing VuexORM that let you sync your Vuex Store with an IndexedDB database using LocalForage.
 # apps
+- https://github.com/wizexplorer/excel-clone /js
+  - An excel clone using HTML-CSS-JavaScript. Change properties of different cells. 
+  - Capable of applying formulas, copying/cutting/pasting multiple cells. 
+
 - https://github.com/mohitk0208/notes-pwa
   - https://notes-ysau.pages.dev/
   - Make notes page_with_curl in the browser itself, it runs offline and the data is saved in the browser.
+
+- https://github.com/graphcentral/graph
+  - Performant graph visualization on the web with WebGL + Webworkers + IndexedDB
+
+- https://github.com/Tesfaye-Eshetie/movie-search-pwa /js
+  - Movie Search PWA using React, vite, PWA and IndexedDB
+
+- https://github.com/crossjs/cofe
+  - No-Code System
+  - core依赖unist-builder
 
 - https://github.com/AlisherKonratbaev/Shop
   - https://shop-ruddy.vercel.app/index.html
@@ -84,6 +114,7 @@ modified: 2022-06-03T22:06:47.464Z
   - https://kkosmowski-notes.netlify.app/
   - Advanced To-Do app with custom drag-to-select, categories and multiple customization options.
   - 依赖localbase操作indexeddb
+
 - https://github.com/SimonPe25/Apple-Note
   - React v18.0, React Router v6, React Context, react Hooks, Ant Design, Sass, BEM, IndexedDB, Markdown
 - https://github.com/familyfriendlymikey/JILU
@@ -100,8 +131,6 @@ modified: 2022-06-03T22:06:47.464Z
   - 14k offline-capable journaling PWA using preact, node, MySQL, and IndexedDB.
   - 使用体验类似文章列表
 
-- https://github.com/AldoHub/React-Dexie
-  - React implementation using Hooks, IndexedDb with Dexiejs and file uploading
 - https://github.com/brookslybrand/react-indexeddb-example
   - Example of using the Indexed API to persist changes to a simple form in React with dexie.js
 
@@ -127,6 +156,8 @@ modified: 2022-06-03T22:06:47.464Z
 - https://github.com/yued-fe/yux-storage
   - yux-storage 是一个基于 HTML5 IndexedDB 封装的 Web 本地数据离线存储库。
 
+- https://github.com/Jeremy664K/crud-drag-drop
+  - App that contains the indexedDB API and Drag-And-Drop API.
 
 - https://github.com/BinaryBitBytes/JustAnotherTextEditor
   - A progressive web application that utilizes IndexedDB API to log text in a database
@@ -154,9 +185,6 @@ modified: 2022-06-03T22:06:47.464Z
 
 - https://github.com/HondryTravis/TinyDB
   - easy to use multi-table indexedDB lib
-
-- https://github.com/tykoth/ra-data-dexie
-  - Experimental React-Admin data provider using Dexie (IndexedDB)
 
 - https://github.com/Hacker233/IndexedDB
   - 前端本地存储数据库IndexedDB完整教程，仅文字

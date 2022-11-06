@@ -1,11 +1,11 @@
 ---
-title: toc-db-sqlite-web
-tags: [sqlite, toc, web]
+title: toc-db-sqlite-web-indexeddb
+tags: [indexeddb, sqlite, toc, web]
 created: 2022-06-03T22:12:22.597Z
-modified: 2022-06-03T22:12:42.368Z
+modified: 2022-11-06T03:19:28.284Z
 ---
 
-# toc-db-sqlite-web
+# toc-db-sqlite-web-indexeddb
 
 # popular
 
@@ -16,25 +16,36 @@ modified: 2022-06-03T22:12:42.368Z
   - That means your sqlite3 database is persisted. 
   - And not in the terrible way of reading and writing the whole image at once -- it reads and writes your db in small chunks.
 
-- https://github.com/sql-js/sql.js
+- https://github.com/uglyer/storelite.js
+  - 基于 sql.js(sqlite)实现的状态仓库，支持 web worker、react 绑定
+
+- sql.js /10.8kStar/MIT/202209/js
+  - https://github.com/sql-js/sql.js
   - http://sql.js.org/
   - A javascript library to run SQLite on the web.
   - sql.js is a javascript SQL database. 
   - It allows you to create a relational database and query it entirely in the browser.
-  - sql.js uses emscripten to compile SQLite to webassembly (or to javascript code for compatibility with older browsers). 
+  - sql.js uses `emscripten` to compile SQLite to webassembly (or to javascript code for compatibility with older browsers). 
   - It uses a virtual database file stored in memory, and thus doesn't persist the changes made to the database. 
   - However, it allows you to import any existing sqlite file, and to export the created database as a JavaScript typed array.
+- https://github.com/wireapp/websql
+  - websql is a fork of sql.js 
+  - Database is persisted to IndexedDB, and can be synced using the saveChanges API
 
 - https://github.com/ccorcos/tuple-database
   - The local-first, "end-user database" database.
   - All queries are reactive.
 
-- https://github.com/realm/realm-js
-  - https://realm.io/
-  - Realm is a mobile database: an alternative to SQLite & key-value stores
-  - Realm is a mobile database that runs directly inside phones, tablets or wearables. 
-  - Currently we support React Native (both iOS & Android), Node.js and Electron (on Windows, MacOS and Linux).
+- https://github.com/tr1ckydev/great.db
+  - human-friendly database library for JavaScript using SQLite. 
+  - great.db automatically detects which runtime you are using and uses the respective fastest between better-sqlite3/bun-sqlite  
+# sqlite-web-examples
+- https://github.com/lunu-bounir/sqlite-manager
+  - a browser extension to read, manipulate, plot and write SQLite databases
 # sqlite-indexeddb
+- https://github.com/yanli0303/sql-js-worker-test
+  - sql.js tests with IndexedDB as storage and Worker.
+
 - https://github.com/littledivy/indexeddb-sqlite
   - Indexed DB Implementation
   - 单文件测试idea

@@ -46,6 +46,8 @@ modified: 2020-12-08T14:24:07.931Z
     - 依赖bootstrap4,Reactstrap
   - https://github.com/creativetimofficial/argon-dashboard
     - Argon Dashboard for Bootstrap 4
+- https://github.com/creativetimofficial/argon-dashboard-react-nodejs  /js
+  - 开源了dashboard的react前端和后端
 
 - Impact Design System /Creative Tim
   - /65Star/MIT/202004/js

@@ -14,9 +14,27 @@ modified: 2022-04-05T10:08:25.947Z
   - Collaborative editing of technical resources, article translation
   - [OT 与 CRDT 的Battle，堪称神仙打架](https://github.com/pubuzhixing8/awesome-collaboration/blob/master/fairy-fight/collaborative-editing.md)
 
+- evolu /101Star/GPLv3/202210/ts
+  - https://github.com/evoluhq/evolu
+  - https://www.evolu.dev/
+  - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
+  - writing local-first software has been challenging because of the lack of libraries and design patterns. I personally failed several times, and that's why I created Evolu.
+  - Evolu architecture is almost a clone of James Long CRDT for mortals. Rewritten and improved
+  - Evolu uses end-to-end encryption and generates strong and safe passwords for you. 
+    - Evolu sync and backup server see only timestamps. Nothing more. 
+    - We plan to do at least two security audits.
+  - Evolu is not pure P2P software. For syncing and backup, there needs to be a server. 
+  - Evolu CRDT has no support for transactions because CRDT transactions are still an unsolved issue. 
+
+- https://github.com/quolpr/harika
+  - Harika is an offline-first, performance-focused note taking app for organizing your knowledge database.
+  - Synchronization with server. It's done with LWW CRDT per field on top of SQLite. 
+    - It also stores all changes locally and sends them to server. 
+    - Server also store all the changes and recalculate snapshots on new received changes and send those snapshots back to the client. 
+    - Due to we store all the changes at server, it is also planned to add time travel, when CRDT is not what user expect at some cases.
+
 - https://github.com/Horusiath/crdt-examples
-  - An example implementations of various CRDTs
-  - 实现语言为F#
+  - An example implementations of various CRDTs，实现语言为F#
   - It serves mainly academic purposes (the implementations are meant to be simple and easy to understand, not optimized)
 
 - https://github.com/dmonad/crdt-benchmarks
@@ -250,7 +268,7 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/Haotian-Yang/CRDTree
   - 服务端基于ws
-# collab-examples
+# apps-examples
 - https://github.com/Sambigeara/fuzzynote /go
   - Terminal-based, hyper-fast, CRDT-backed, collaborative note-taking tool
 

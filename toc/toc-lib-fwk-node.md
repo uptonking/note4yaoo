@@ -205,10 +205,19 @@ modified: 2021-01-04T16:18:39.667Z
   - Memoria is an in-memory/off-memory state management solution for JavaScript apps on client and/or server side. 
   - It is a very flexible typeorm-like entity definition API that just use JS classes and decorators to define or generate the schema.
 
-- https://github.com/SoftwareBrothers/adminjs
+- https://github.com/SoftwareBrothers/adminjs /hapi
   - AdminJS is an automatic admin interface that can be plugged into your application. 
   - You, as a developer, provide database models (like posts, comments, stores, products or whatever else your application uses), and AdminJS generates UI which allows you (or other trusted users) to manage content.
   - It uses (for example) Hapi.js for rendering a couple of REST routes and mongoose as the connector to the database.
+
+- https://github.com/simov/express-admin
+  - https://simov.github.io/express-admin/
+  - a NodeJS tool for easy creation of user friendly administrative interface for MySQL, MariaDB, SQLite and PostgreSQL databases.
+  - It's built with: Hogan.js (mustache.js), Express, mysql and Bootstrap.
+
+- https://github.com/creativetimofficial/argon-dashboard-react-nodejs  /js
+  - 开源了dashboard的react前端和后端
+
 # more-app-framework
 - https://github.com/ladjs/lad
   - Lad is the best Node.js framework. 可替代express或koa

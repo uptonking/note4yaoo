@@ -12,6 +12,10 @@ modified: 2020-12-12T19:32:36.255Z
 - https://github.com/open-data-plan/crawler
   - Web crawler based on Puppeteer
   - 只依赖puppeteer
+- https://github.com/get-set-fetch/scraper /ts
+  - a plugin based, nodejs web scraper(刮刀). 
+  - It scrapes, stores and exports data.
+  - At its core, an ordered list of plugins is executed against each to be scraped URL.
 
 # gis
 - https://github.com/lionsoul2014/ip2region

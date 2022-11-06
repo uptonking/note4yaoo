@@ -35,6 +35,10 @@ modified: 2021-06-02T16:35:46.166Z
   - Building RESTful Web APIs with Node.js, Express, MongoDB and TypeScript
 - https://github.com/nerdeveloper/hackathon-starter-kit
   - A Node-Typescript/Express Boilerplate with Authentication(Local, Github, Facebook, Twitter, Google, LinkedIn, Dropbox, Slack, Discord), Authorization, and CRUD functionality + PWA Support!
+
+- https://github.com/aichbauer/express-rest-api-boilerplate
+  - Express REST API with JWT Authentication and support for sqlite, mysql, and postgresql
+  - routes mapping via express-routes-mapper
 # rest-examples
 - https://github.com/taniarascia/node-api-postgres
   - https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/

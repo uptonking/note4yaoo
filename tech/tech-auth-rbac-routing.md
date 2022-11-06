@@ -143,6 +143,10 @@ modified: 2022-01-06T17:30:03.280Z
   - Easy to add/remove route access from user role
   - Synchronization between routes and navigation
   - Single + Multiple role support
+# rbac-api
+- https://github.com/HiWayne/rainbow-bridge
+  - nestjs+mysql+typeorm实现的，高安全性用户账号系统、基于RBAC的权限系统
+  - 用户系统采用加盐 SHA512 哈希+10000 次派生算法加密，保证了密码存储的高安全性。用户身份使用双 token (access token + refresh token) 验证，非对称加密算法使用 HS512。权限系统基于 RBAC 设计。
 # rbac-blogs-more
 - [RBAC权限系统分析、设计与实现](https://juejin.cn/post/6844903940752932878)
   - 简洁概括了rbac模型的原理

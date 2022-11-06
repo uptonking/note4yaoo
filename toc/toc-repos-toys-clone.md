@@ -13,6 +13,9 @@ modified: 2022-08-13T05:10:32.238Z
   - A clone of Discord that allows realtime chatting (private/group), video/audio calls and screen sharing. Also allows creation of groups and inviting friends.
   - 包含前后端2个文件夹
   - 后端依赖 express, mongoose, jwt, socket.io
+
+- https://github.com/brojor/dev.to-clone
+  - An DEV.to clone created with Adonis.js, SQLite and Vue.js 3
 # toys
 - https://github.com/hoangviet97/collabo
   - https://app.collaboat.cz/

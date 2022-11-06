@@ -60,13 +60,18 @@ modified: 2021-07-25T10:48:21.307Z
     - 开源了多个主题，但作者弃更了
     - 依赖redux
 
+
+- https://appseed.us/app-generator
+  - https://github.com/app-generator
+  - AppSeed: Production-ready seed projects crafted on top of modern UI Kits. 
+
+
 - dashboards examples
   - [Bootstrap Themes](https://themes.getbootstrap.com/shop/?orderby=popularity)
   - https://www.admin-dashboards.com/
     - https://github.com/admin-dashboards
     - 只是自愿提交展示
-  - https://appseed.us/app-generator
-    - https://github.com/app-generator
+
 # popular dashboards
 - Volt Bootstrap 5 Dashboard
   - [free](https://demo.themesberg.com/volt/pages/dashboard/dashboard.html)

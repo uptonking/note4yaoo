@@ -29,6 +29,9 @@ modified: 2021-01-16T20:50:23.893Z
 - https://github.com/low-teck/vault
   - A react-electron app that secures user data locally using AES algorithm with the help of nedb and crypto-js ans styled with chakra-ui.
   - https://github.com/codegiik/electron-react-nedb-boilerplate
+# utils
+- https://github.com/alexiusacademia/electron-db
+  - let you simplify database creation and operation on a json file.
 # extensions
 - https://github.com/sindresorhus/electron-store
   - Simple data persistence for your Electron app or module

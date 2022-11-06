@@ -14,6 +14,11 @@ modified: 2022-11-03T04:14:00.563Z
   - a distributed database designed to handle large volumes of structured data across clusters of commodity servers.
   - It organizes data as an ordered key-value store and employs ACID transactions for all operations. 
   - It is especially well-suited for read/write workloads but also has excellent performance for write-intensive workloads.
+
+- https://github.com/jaredwray/keyv /js
+  - Simple key-value storage with support for multiple backends
+
+
 # leveldb-like
 - https://github.com/google/leveldb /BSD/c++
   - LevelDB is a fast key-value storage library written at Google that provides an ordered mapping from string keys to string values.

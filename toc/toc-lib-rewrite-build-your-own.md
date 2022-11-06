@@ -51,3 +51,8 @@ modified: 2021-09-29T13:23:09.969Z
 - Build your own react-three-fiber
   - https://codesandbox.io/s/build-your-own-react-three-fiber-zlq3c
   - The only issue is that events are blocking the render loop, but I'm not sure what's causing this.
+
+# vue
+
+- https://github.com/HiWayne/Self-Vue
+  - 自己实现的vue监听数据变化和双向绑定源码，单文件
