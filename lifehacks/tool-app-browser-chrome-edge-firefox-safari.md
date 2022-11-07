@@ -9,6 +9,12 @@ modified: 2021-08-19T13:02:28.478Z
 
 # guide
 
+# ideas
+
+## browser extensions
+
+- search-helper
+  - 过滤google搜索结果到中文，mozilla-mdn文档语言切换
 # edge-linux体验
 - 优点
   - 同步无需vpn

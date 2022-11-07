@@ -1,11 +1,11 @@
 ---
-title: tool-app-common-habit
-tags: [app, software, tool]
+title: tool-app-collection-software-common
+tags: [app, software, subscription, tool]
 created: 2019-07-08T04:10:28.254Z
-modified: 2020-12-29T17:53:03.684Z
+modified: 2022-11-07T10:26:22.510Z
 ---
 
-# tool-app-common-habit
+# tool-app-collection-software-common
 
 # 软件选择参考  
 

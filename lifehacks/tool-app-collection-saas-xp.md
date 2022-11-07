@@ -1,11 +1,11 @@
 ---
-title: tool-app-common-saas-xp
+title: tool-app-collection-saas-xp
 tags: [app, saas, tool, xp]
 created: 2020-07-12T15:27:22.003Z
-modified: 2020-12-29T17:52:31.539Z
+modified: 2022-11-07T10:25:12.034Z
 ---
 
-# tool-app-common-saas-xp
+# tool-app-collection-saas-xp
 
 # saas-xp
 - https://github.com/iamadamdev/bypass-paywalls-chrome
@@ -15,17 +15,20 @@ modified: 2020-12-29T17:52:31.539Z
 - 有时候评论的内容比回答的内容更有意思
 
 - [知乎违规记录](https://www.zhihu.com/community/reported)
-# search
+# search-google
 - [Tips for efficiently Googling. Search by:](https://twitter.com/addyosmani/status/1444195449095737346)
-  - Exact match > "javascript modules"
-  - Scope to site > site:github.com js
-  - After a date > javascript after:2021
-  - Before > javascript before:2019
-  - Exclude a phrase > javascript -es5
-  - Number range > javascript 2015..2021
-  - Wildcard > "fix the * error"
+  - Exact match > `"javascript modules"`
+  - Scope to site > `site:github.com js`
+  - After a date > `javascript after:2021`
+  - Before > `javascript before:2019`
+  - Exclude a phrase > `javascript -es5`
+  - Number range > `javascript 2015..2021`
+  - Wildcard > `"fix the * error"`
 
 - 实测 `after:2020` 的搜索结果都是2021年的，after:2021当前年份就显示搜索结果为空了
+
+- [知乎怎么查看自己评论过的问题？](https://www.zhihu.com/question/35126639/answers/updated)
+  - [如何找到自己在知乎里发表的评论？](https://www.zhihu.com/question/19585656/answers/updated)
 
 - dogedoge 多吉搜索被知乎屏蔽了
 # twitter

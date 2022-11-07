@@ -1,14 +1,24 @@
 ---
-title: pm-saas-xp-github
-tags: [devtools, github, pm, saas, xp]
+title: tool-app-github-xp
+tags: [devtools, github, pm, xp]
 created: 2020-07-31T11:59:56.787Z
-modified: 2021-08-02T15:19:42.036Z
+modified: 2022-11-07T10:24:02.543Z
 ---
 
-# pm-saas-xp-github
+# tool-app-github-xp
 
+# improvements
+
+- github-release
+  - app store
+  - pkg store
+
+- features
+  - navigation within issue answers with shortcut J
+  - sort repos of an organization by stars
+  - toggle github repo and github page
+  - go to npm package page
 # github-usage
-
 - nice-to-have
   - 空仓库标记，如搜索时标记出空仓库可省去点开查看
   - 搜索时显示 latest-push-time, 而不是bot机器人push的时间，方便判断废弃仓库
@@ -110,6 +120,9 @@ modified: 2021-08-02T15:19:42.036Z
 - 读取某个package的所有dependencies，查询下载量后排序
   - https://github.com/pkgjs/dependents
 # github-proxy
+- https://github.com/521xueweihan/GitHub520
+  - https://raw.hellogithub.com/hosts 服务器续费了3年到2024.12
+
 - download release and repo
   - https://pd.zwc365.com/
   - https://shrill-pond-3e81.hunsh.workers.dev/
