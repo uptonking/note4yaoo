@@ -15,6 +15,10 @@ modified: 2021-05-14T15:04:15.333Z
   - 考虑导出数据的功能，可导出本论坛管理员和会员的交流帖子及评论
     - 开源论坛可直接copy数据库，不存在此问题
     - 付费产品如vanilla forum可导出mysql dump
+# im-messaging
+- https://github.com/Linen-dev/linen.dev
+  - Linen is a Google-searchable community chat tool. 
+  - Linen was built as an alternative to closed tools like Slack and Discord.
 # forum-for-dev
 - slack
 - gitter

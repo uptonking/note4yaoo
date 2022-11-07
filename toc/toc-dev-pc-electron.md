@@ -65,6 +65,9 @@ modified: 2021-01-16T20:50:23.893Z
 - https://github.com/codesbiome/electron-react-webpack-typescript-2022
   - Electron React Webpack Typescript Boilerplate with Custom Window and Titlebar Menus.
 
+- https://github.com/garrylachman/ElectroCRUD
+  - ElectroCRUD is Open Source Database CRUD (Create, Read, Update, Delete) Software. No Code Needed
+
 - https://github.com/ArcherGu/fast-vite-nestjs-electron
   - build vite + electron + nestjs projects. Build with Doubleshot, crazy fast!
   - https://github.com/Doubleshotjs/doubleshot

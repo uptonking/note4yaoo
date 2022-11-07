@@ -7,25 +7,6 @@ modified: 2022-11-04T14:20:37.172Z
 
 # toc-db-sqlite-utils-extensions
 
-# rest-api
-
-- https://github.com/olsonpm/sqlite-to-rest
-  - Koa routing middleware allowing you to expose a sqlite database via RESTful CRUD
-
-- https://github.com/thevahidal/soul
-  - Soul is command line tool, 
-  - after installing it, Run soul -d sqlite.db -p 8000 and it'll start a REST API on http://localhost:8000 and a Websocket server on ws://localhost:8000.
-  - It should return a list of the tables inside sqlite.db database.
-
-- https://github.com/assafmo/SQLiteProxy
-  - A simple HTTP JSON proxy for SQLite.
-  - Must use HTTP POST with content-type=application/json.
-
-- https://github.com/TeamThinkpad/express-typescript-api
-  - API created using Typescript, Express, and SQLite using the Prisma ORM
-
-- https://github.com/machelslack/api-with-sqlite
-  - node express api using a sqlite in memory database
 # extensions
 - https://github.com/asg017/sqlite-lines  /clang/python
   - A SQLite extension for reading large files line-by-line (NDJSON, logs, txt, etc.)
@@ -51,18 +32,13 @@ modified: 2022-11-04T14:20:37.172Z
   - Migrate to PostgreSQL in a single command!
   - MySQL/SQLite/MSSQL to PSQL
 # utils
+- https://github.com/simonw/sqlite-utils
+  - Python CLI utility and library for manipulating SQLite databases
 
+- https://github.com/simonw/csvs-to-sqlite
+  - Convert CSV files into a SQLite database
 # mobile
 
-# wasm
-- https://github.com/mandel59/sqlite-wasm
-  - SQLite compiled to WebAssembly
-- https://github.com/rhashimoto/wa-sqlite
-  - This is a WebAssembly build of SQLite with experimental support for writing SQLite virtual filesystems and virtual table modules completely in Javascript. 
-  - This allows alternative browser storage options such as IndexedDB and File System Access.
-
-- https://github.com/overtone-app/sqlite-wasm-esm
-  - The new SQLite WASM build is rather hard to use in modern JS apps, so this wrapper package tries to make this easier.
 # gis
 - https://github.com/ngageoint/geopackage-js
   - http://ngageoint.github.io/geopackage-viewer-js/

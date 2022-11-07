@@ -206,7 +206,7 @@ modified: 2021-01-04T16:18:39.667Z
 
 - more-loopback
   - https://github.com/NguyenVanDo51/base_project_react_loopback
-# nodejs-examples
+# nodejs-crud/admin
 - https://github.com/izelnakri/memoria
   - Memoria is an in-memory/off-memory state management solution for JavaScript apps on client and/or server side. 
   - It is a very flexible typeorm-like entity definition API that just use JS classes and decorators to define or generate the schema.

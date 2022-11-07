@@ -7,8 +7,6 @@ modified: 2022-06-03T22:06:16.249Z
 
 # toc-db-indexeddb
 
-> https://github.com/search?o=desc&q=indexeddb+stars%3A%3E0&s=updated&type=Repositories
-
 # guide
 - search
   - big json store/update
@@ -70,8 +68,28 @@ modified: 2022-06-03T22:06:16.249Z
     - Fast in-memory SQL data processing for BI and ERP applications on fat clients
     - Easy ETL and options for persistence by data import / manipulation / export of several formats
     - All major browsers, Node.js, and mobile applications
-
 # db-powered-by-indexeddb
+- nedb /13.1kStar/MIT/201602/js/deprecated
+  - https://github.com/louischatriot/nedb
+  - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency. 
+  - API is a subset of MongoDB's and it's plenty fast.
+  - You can use NeDB as an in-memory only datastore or as a persistent datastore. 
+  - One datastore is the equivalent of a MongoDB collection
+  - Under the hood, NeDB's persistence uses an append-only format, meaning that all updates and deletes actually result in lines added at the end of the datafile, for performance reasons.
+  - If you specify a filename, the database will be persistent, and automatically select the best storage method available (IndexedDB, WebSQL or localStorage) depending on the browser.
+  - [Is this still maintained?](https://github.com/louischatriot/nedb/issues/492)
+  - forks
+    - https://github.com/seald/nedb
+    - https://github.com/HalleyAssist/nedb
+    - https://github.com/bajankristof/nedb-promises
+- https://github.com/tedb-org/teDB /ts
+  - A structure sane embedded database with pluggable storage and clean concise documentation.
+  - TeDB uses an AVL balanced binary tree binary-type-tree to save indexed fields of documents.
+  - a storage driver that can either work to persists data to disk or save data to memory. 
+- https://github.com/typicode/lowdb /ts
+  - a small local JSON database powered by Lodash 
+  - supports Node, Electron and the browser
+
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb
   - https://rxdb.info/
@@ -97,7 +115,7 @@ modified: 2022-06-03T22:06:16.249Z
   - Synchronize SWR Cache with IndexedDB to get offline cache.
   - Library reads current state of cache stored in IndexedDB into memory using idb during initialization. Then it resolves into Cache Provider which should be passed to SWR.
 
-- https://github.com/elmarti/camadb
+- https://github.com/elmarti/camadb /ts/inactive
   - CamaDB is a NoSQL embedded database written in pure TypeScript for Node, Electron and browser-based environments
   - I was struggling to find a solution for Electron-based projects that deal with larger datasets in the main thread.
     - I had issues getting SQLite to work with webpack due to its native build
@@ -134,7 +152,7 @@ modified: 2022-06-03T22:06:16.249Z
   - https://github.com/microsoft/reactxp /inactive
     - ReactXP is a library for cross-platform app development using React and React Native.
 
-- https://github.com/google/lovefield
+- https://github.com/google/lovefield  /6.8kStar/Apache2/202005/js
   - Lovefield is a relational database written in pure JavaScript.
   - It provides SQL-like syntax and works cross-browser
   - [Lovefield wraps IndexedDB objects in different classes](https://github.com/google/lovefield/blob/master/docs/dd/02_data_store.md)

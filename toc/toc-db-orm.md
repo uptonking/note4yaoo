@@ -113,7 +113,7 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/Nozbe/WatermelonDB
   - Reactive & asynchronous database for powerful React and React Native apps
 
-- https://github.com/google/lovefield
+- https://github.com/google/lovefield /6.8kStar/Apache2/202005/js
   - Lovefield is a relational database for web apps. 
   - Written in JavaScript, works cross-browser. 
   - Provides SQL-like APIs that are fast, safe, and easy to use.
@@ -131,6 +131,12 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/codefollower/H2-Research
   - H2数据库源代码学习研究
   - 包括代码注释、文档、用于代码分析的测试用例
+# db-uniform-interface
+- https://github.com/only-cliches/Nano-SQL /201911/ts/inactive
+  - Universal database layer for the client, server & mobile devices. It's like Lego for databases.
+  - [Offline use with Sync to Server](https://github.com/only-cliches/Nano-SQL/issues/18)
+  - [Is this project still maintained?](https://github.com/only-cliches/Nano-SQL/issues/217)
+    - https://github.com/only-cliches/snap-db  /inactive
 # rdbms
 - https://github.com/PostgREST/postgrest
   - https://postgrest.org/

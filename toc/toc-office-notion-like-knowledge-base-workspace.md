@@ -67,6 +67,9 @@ modified: 2022-06-03T21:34:54.893Z
   - 多编辑器实例的缺点
     - 自定义选区的同步和更新变得复杂
     - 跨block的操作变得复杂
+- https://github.com/JhinBoard/jhin
+  - Next-Gen Collaborative Knowledge Base, A free replacement for Notion & Miro
+
 # github-wiki-confluence-like
 - MrDoc /2.1kStar/GPL.v3/202208/js/python/仅网页版
   - https://github.com/zmister2016/MrDoc

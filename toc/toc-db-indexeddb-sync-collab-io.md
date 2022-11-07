@@ -22,26 +22,11 @@ modified: 2022-10-22T18:47:16.228Z
   - a JavaScript library for storing user data locally in the browser, as well as connecting to remoteStorage servers and syncing data across devices and applications.
   - It is also capable of connecting and syncing data with a person's Dropbox or Google Drive account (optional).
 
-- nedb /13.1kStar/MIT/201602/js/deprecated
-  - https://github.com/louischatriot/nedb
-  - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency. 
-  - API is a subset of MongoDB's and it's plenty fast.
-  - You can use NeDB as an in-memory only datastore or as a persistent datastore. 
-  - One datastore is the equivalent of a MongoDB collection
-  - Under the hood, NeDB's persistence uses an append-only format, meaning that all updates and deletes actually result in lines added at the end of the datafile, for performance reasons.
-  - If you specify a filename, the database will be persistent, and automatically select the best storage method available (IndexedDB, WebSQL or localStorage) depending on the browser.
-  - [Is this still maintained?](https://github.com/louischatriot/nedb/issues/492)
-  - forks
-    - https://github.com/seald/nedb
-    - https://github.com/HalleyAssist/nedb
-    - https://github.com/bajankristof/nedb-promises
-- https://github.com/tedb-org/teDB /ts
-  - A structure sane embedded database with pluggable storage and clean concise documentation.
-  - TeDB uses an AVL balanced binary tree binary-type-tree to save indexed fields of documents.
-  - a storage driver that can either work to persists data to disk or save data to memory. 
-- https://github.com/typicode/lowdb /ts
-  - a small local JSON database powered by Lodash 
-  - supports Node, Electron and the browser
+- https://github.com/madmoizo/backinfront  /1Star/ISC/202206/js
+  - Backinfront is both the manager of your browser database and a router which handles requests locally. 
+  - If you are building an offline first web app which needs sync capabilities, Backinfront is probably the tool your are looking for.
+  - Backinfront is designed to work inside a Service Worker make sure to NOT use it in a window context
+  - 依赖idb
 
 - https://github.com/azer/indexeddb /202005/ts/inactive
   - Well-tested, low-level wrapper around the IndexedDB API. It can sync locally and remotely.

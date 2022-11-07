@@ -13,12 +13,22 @@ modified: 2020-11-11T13:16:24.994Z
   - https://open-metadata.org/
   - Open Standard for Metadata. A Single place to Discover, Collaborate and Get your data right.
   - OpenMetadata is an all-in-one platform for data discovery, data lineage, data quality, observability, governance, and team collaboration. 
+- https://github.com/GuinsooLab/darkseal
+  - A Single place to Discover, Collaborate, and Get your data right
+  - Darkseal depends on following components to build a metadata platform:
+    - JsonSchemas for defining Metadata Schemas
+    - Dropwizard/Jetty for REST APIs
+    - MySQL 8.x to store Metadata (Guinsoo is coming)
+    - ElasticSearch/OpenElasticsearch 7.x to index Metadata and power
 
 - https://github.com/GeoNode/geonode
   - GeoNode is an open source platform that facilitates the creation, sharing, and collaborative use of geospatial data.
-  - 
-# covid-19
 
+- https://github.com/simonw/datasette  /python
+  - https://global-power-plants.datasettes.com/global-power-plants/global-power-plants
+  - a tool for exploring and publishing data. 
+  - It helps people take data of any shape or size and publish that as an interactive, explorable website and accompanying API.
+# covid-19
 - https://github.com/BlankerL/DXY-COVID-19-Crawler
   - https://lab.isaaclin.cn/nCoV/
   - 上次更新于202004

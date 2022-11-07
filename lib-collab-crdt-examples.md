@@ -251,6 +251,9 @@ modified: 2022-04-05T10:08:25.947Z
   - A collaborative text editor demo based on Causal Tree CRDT (variant of RGA).
   - currently no STUN/TURN servers are configured, so it only works with local peers
   - Uses WebSockets for signaling and WebRTC Data Channels for p2p communication. 
+
+- https://github.com/conclave-team/conclave
+  - CRDT and WebRTC based real-time, peer-to-peer, collaborative text editor
 # crdt-utils
 - https://github.com/danielstaleiny/CRDT-sqlite
   - 依赖 idb

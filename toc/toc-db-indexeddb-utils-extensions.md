@@ -59,7 +59,7 @@ modified: 2022-11-04T14:22:17.373Z
   - Filer is a drop-in replacement for node's fs module, a POSIX-like file system for browsers.
   - Filer uses IndexedDB
 
-- https://github.com/fagbokforlaget/simple-fs
+- https://github.com/fagbokforlaget/simple-fs  /js
   - Handles files on indexeddb like you would do in node.js (promise)
 
 - https://github.com/playerony/indexeddb-fs
@@ -98,7 +98,7 @@ modified: 2022-11-04T14:22:17.373Z
 
 - https://github.com/knadh/indexed-cache
   - library for sideloading static assets on pages and caching them in the browser's IndexedDB 
-# storage-interface
+# storage-uniform-interface
 - https://github.com/idleberg/web-porridge /ts
   - Feature-enhanced wrapper for both, Storage API and IndexedDB API, sharing a common, familiar interface.
   - automatic (de)serialization

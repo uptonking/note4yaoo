@@ -326,7 +326,7 @@ modified: 2022-05-15T18:45:27.570Z
   - Slate JS Editor Operational Transform Example using ShareDB (used in production at Narration Box)
   - Invoking JSON0-ot-diff on every edit is not very efficient.
 
-- https://github.com/itoumlilt/crdt-md-editor
+- https://github.com/itoumlilt/crdt-md-editor /ts/slate
   - React Typescript CRDT based Collaborative Markdown Editor
 
 - https://github.com/BitPhinix/slate-yjs-example

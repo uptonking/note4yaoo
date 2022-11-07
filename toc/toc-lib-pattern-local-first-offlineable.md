@@ -149,8 +149,8 @@ modified: 2021-09-04T14:03:39.046Z
   - A generic backend with a client API for Offline First applications
 
 - https://github.com/lana-k/sqliteviz
-  - Instant offline SQL-powered data visualisation in your browser
   - Sqliteviz is a single-page offline-first PWA for fully client-side visualisation of SQLite databases or CSV files.
+  - Instant offline SQL-powered data visualisation in your browser
   - run SQL queries against a SQLite database and create Plotly charts and pivot tables based on the result sets
 
 - https://github.com/cloudpeers/tlfs  /rust

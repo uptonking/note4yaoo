@@ -22,7 +22,7 @@ modified: 2022-11-06T03:18:26.506Z
   - Reactive (since v3.2)
     - Query the db without boilerplate and let your components mirror the database in real time.
 
-- https://dexie.org/docs/Syncable/Dexie. Syncable.js
+- https://dexie.org/docs/Syncable/Dexie.syncable.js
   - Enables two-way synchronization with a remote server of any kind.
   - https://github.com/nponiros/sync_server
     - A small node server which uses NeDB to write data to the disk. 
@@ -41,6 +41,26 @@ modified: 2022-11-06T03:18:26.506Z
 
 - https://github.com/riapacheco/indexedDB_dexie
   - Architecture testing app for utilizing IndexedDB with Dexie. 
+# examples
+- https://github.com/AldoHub/React-Dexie
+  - React implementation using Hooks, IndexedDb with Dexiejs and file uploading
+
+- https://github.com/bignerdranch/dexie-fulltextsearch  /201704/js
+  - Full text search for IndexedDB databases, powered by Dexie.
+  - 依赖lunr
+
+- https://github.com/agilworld/reactjs-redux-form-builder-indexedDB-dexie
+  - Form Builder under React JS + Redux + Dexie Indexed DB
+
+- https://github.com/ebenezerdon/market-list-app
+  - A market-list application built with React.js, IndexedDB and Dexie.js for offline storage.
+
+- https://github.com/tykoth/ra-data-dexie
+  - Experimental React-Admin data provider using Dexie (IndexedDB)
+  - 依赖react-admin
+
+- https://github.com/ttessarolo/useDexie
+  - React Hooks to use Dexie.js IndexDB library with ease
 # utils
 - https://github.com/ignasbernotas/dexie-relationships
   - provides an API to ease the loading of relational data from foreign tables
@@ -58,25 +78,6 @@ modified: 2022-11-06T03:18:26.506Z
 
 - https://github.com/dfahlander/poc-dexie-cloud-encryption
   - POC dexie-cloud with dexie-encrypted
-# examples
-- https://github.com/AldoHub/React-Dexie
-  - React implementation using Hooks, IndexedDb with Dexiejs and file uploading
-
-- https://github.com/agilworld/reactjs-redux-form-builder-indexedDB-dexie
-  - Form Builder under React JS + Redux + Dexie Indexed DB
-
-- https://github.com/ebenezerdon/market-list-app
-  - A market-list application built with React.js, IndexedDB and Dexie.js for offline storage.
-
-- https://github.com/bignerdranch/dexie-fulltextsearch
-  - Full text search for IndexedDB databases, powered by Dexie.
-
-- https://github.com/tykoth/ra-data-dexie
-  - Experimental React-Admin data provider using Dexie (IndexedDB)
-  - 依赖react-admin
-
-- https://github.com/ttessarolo/useDexie
-  - React Hooks to use Dexie.js IndexDB library with ease
 # more-dexie
 - https://github.com/stutrek/dexie-hooks
   - There is now an official replacement for this!

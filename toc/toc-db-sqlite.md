@@ -9,6 +9,19 @@ modified: 2021-08-30T18:56:18.632Z
 
 # popular
 
+- kikko /75Star/MIT/202211/ts
+  - https://github.com/kikko-land/kikko
+  - Build data heavy reactive interfaces on top of SQLite for any platform with any framework or lib.
+  - Kikko is a wrapper around SQLite interfaces. 
+  - It brings transaction support, middlewares for queries, and SQLite adapters for the most popular platforms.
+
+- https://github.com/quolpr/harika
+  - Harika is an offline-first, performance-focused note taking app for organizing your knowledge database.
+  - Synchronization with server. It's done with LWW CRDT per field on top of SQLite. 
+    - It also stores all changes locally and sends them to server. 
+    - Server also store all the changes and recalculate snapshots on new received changes and send those snapshots back to the client. 
+    - Due to we store all the changes at server, it is also planned to add time travel, when CRDT is not what user expect at some cases.
+
 - https://github.com/nalgeon/sqlime
   - http://sqlime.org/
   - an online SQLite playground for debugging and sharing SQL snippets. 
@@ -23,18 +36,7 @@ modified: 2021-08-30T18:56:18.632Z
   - requires SQLite 3.33 or higher (it uses the -json output mode)
 - https://github.com/WebReflection/sqlite-worker
   - persistent, SQLite database for Web and Workers, based on sql.js and sqlite-tag.
-
-- kikko /75Star/MIT/202211/ts
-  - https://github.com/kikko-land/kikko
-  - Kikko is a wrapper around SQLite interfaces. 
-  - It brings transaction support, middlewares for queries, and SQLite adapters for the most popular platforms.
-- https://github.com/quolpr/harika
-  - Harika is an offline-first, performance-focused note taking app for organizing your knowledge database.
-  - Synchronization with server. It's done with LWW CRDT per field on top of SQLite. 
-    - It also stores all changes locally and sends them to server. 
-    - Server also store all the changes and recalculate snapshots on new received changes and send those snapshots back to the client. 
-    - Due to we store all the changes at server, it is also planned to add time travel, when CRDT is not what user expect at some cases.
-# viewer
+# sqlite-viewer
 - https://github.com/qwtel/sqlite-viewer-vscode  /ts
   - https://sqliteviewer.app/
   - easy SQLite viewer for VSCode, inspired by DB Browser for SQLite and Airtable.
@@ -51,6 +53,9 @@ modified: 2021-08-30T18:56:18.632Z
 
 - https://github.com/cyrilbois/Web-GUI-for-SQLite
   - a web-based SQLite browser written in JavaScript.
+
+- https://github.com/inloop/sqlite-viewer
+  - View SQLite file online
 # db-powered-by-sqlite
 - https://github.com/rqlite/rqlite
   - distributed relational database built on SQLite

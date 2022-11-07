@@ -20,17 +20,10 @@ modified: 2022-06-03T22:06:47.464Z
 - https://github.com/rpecuch/text-editor /js
   - The purpose of this project was to build a single-page application that meets Progressive Web Application criteria. 
   - 后端只依赖express
-  - 前端依赖idb、codemirror5、workbox
-
-- https://github.com/madmoizo/backinfront
-  - Backinfront is both the manager of your browser database and a router which handles requests locally. 
-  - If you are building an offline first web app which needs sync capabilities, Backinfront is probably the tool your are looking for.
-  - Backinfront is designed to work inside a Service Worker make sure to NOT use it in a window context
+  - 前端依赖codemirror5、idb、workbox
 
 - https://github.com/mWater/offline-leaflet-map
   - Offline maps in Leaflet using IndexedDb to store tiles
-- https://github.com/helgasoft/leaflet.dexie
-  - A Leaflet plugin for local persistent storage using library Dexie.js
 - https://github.com/yagajs/indexed-db-tile-cache /inactive
   - Spatial tile cache that saves its data into the IndexedDB of your browser
 
@@ -49,6 +42,14 @@ modified: 2022-06-03T22:06:47.464Z
   - Generate a type-safe IndexedDB client from a simple schema file.
   - https://github.com/kevinbgreene/indeksd-example
     - Example app for using indeksd IndexedDB code generation
+# crud-api
+- https://github.com/simplifyjs/indexeddb-crud
+  - Comparison between native IndexedDB API and using IDB library in operating CRUD workaround
+
+- https://github.com/chenstarx/GoDB.js
+  - indexedDB with Intuitive API, CRUD with one line of code.
+- https://github.com/ismaelcallerojas/CRUD-indexeddb
+  - CRUD con la api indexed db 单文件使用示例
 # react-vue
 - https://github.com/assuncaocharles/react-indexed-db
   - wraps IndexedDB database in an Declarative way. 
@@ -148,11 +149,6 @@ modified: 2022-06-03T22:06:47.464Z
   - use IndexedDB and Workbox to create a fully offline-capable, data-driven app. 
   - You'll also use Background Sync to sync your app with the server even when your web app is closed.
 # more-indexeddb
-- https://github.com/chenstarx/GoDB.js
-  - indexedDB with Intuitive API, CRUD with one line of code.
-- https://github.com/ismaelcallerojas/CRUD-indexeddb
-  - CRUD con la api indexed db 单文件使用示例
-
 - https://github.com/yued-fe/yux-storage
   - yux-storage 是一个基于 HTML5 IndexedDB 封装的 Web 本地数据离线存储库。
 

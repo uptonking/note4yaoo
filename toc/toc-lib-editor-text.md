@@ -28,6 +28,12 @@ modified: 2021-07-27T15:12:39.959Z
     - Plugins are now plain functions that augment the Editor object they receive and return it again.
     - The codebase now uses TypeScript.
 
+- etherpad-lite /13.5kStar/Apache2/202211/js
+  - https://github.com/ether/etherpad-lite
+  - https://etherpad.org/
+  - Etherpad is a real-time collaborative editor scalable to thousands of simultaneous real time users. 
+  - It provides full data export capabilities, and runs on your server, under your control.
+
 - textbus /648Star/GPL.v3/202208/ts
   - https://github.com/tbhuabi/textbus
   - https://textbus.io/collab

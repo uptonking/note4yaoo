@@ -8,6 +8,8 @@ modified: 2022-11-06T03:19:28.284Z
 # toc-db-sqlite-web-indexeddb
 
 # popular
+- https://github.com/uglyer/storelite.js
+  - 基于 sql.js(sqlite)实现的状态仓库，支持 web worker、react 绑定
 
 - absurd-sql /3.6kStar/MIT/202110/js
   - https://github.com/jlongster/absurd-sql
@@ -15,9 +17,6 @@ modified: 2022-11-06T03:19:28.284Z
   - It implements a backend for sql.js (sqlite3 compiled for the web) that treats IndexedDB like a disk and stores data in blocks there. 
   - That means your sqlite3 database is persisted. 
   - And not in the terrible way of reading and writing the whole image at once -- it reads and writes your db in small chunks.
-
-- https://github.com/uglyer/storelite.js
-  - 基于 sql.js(sqlite)实现的状态仓库，支持 web worker、react 绑定
 
 - sql.js /10.8kStar/MIT/202209/js
   - https://github.com/sql-js/sql.js
@@ -28,7 +27,7 @@ modified: 2022-11-06T03:19:28.284Z
   - sql.js uses `emscripten` to compile SQLite to webassembly (or to javascript code for compatibility with older browsers). 
   - It uses a virtual database file stored in memory, and thus doesn't persist the changes made to the database. 
   - However, it allows you to import any existing sqlite file, and to export the created database as a JavaScript typed array.
-- https://github.com/wireapp/websql
+- https://github.com/wireapp/websql  /202005/inactive
   - websql is a fork of sql.js 
   - Database is persisted to IndexedDB, and can be synced using the saveChanges API
 
@@ -49,4 +48,13 @@ modified: 2022-11-06T03:19:28.284Z
 - https://github.com/littledivy/indexeddb-sqlite
   - Indexed DB Implementation
   - 单文件测试idea
+# wasm
+- https://github.com/mandel59/sqlite-wasm
+  - SQLite compiled to WebAssembly
+- https://github.com/rhashimoto/wa-sqlite
+  - This is a WebAssembly build of SQLite with experimental support for writing SQLite virtual filesystems and virtual table modules completely in Javascript. 
+  - This allows alternative browser storage options such as IndexedDB and File System Access.
+
+- https://github.com/overtone-app/sqlite-wasm-esm
+  - The new SQLite WASM build is rather hard to use in modern JS apps, so this wrapper package tries to make this easier.
 # more-sqlite-web

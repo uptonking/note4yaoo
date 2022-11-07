@@ -45,7 +45,6 @@ modified: 2021-02-28T08:06:19.703Z
   - Any format people can read and use easily. http://data.ny.gov, http://humdata.org, http://datacatalog.worldbank.org etc: data needs eyeballs and motives to live
 - AirTable and APIs
 - https://github.com/simonw/datasette
-  - https://global-power-plants.datasettes.com/global-power-plants/global-power-plants
   - a tool for exploring and publishing data. 
   - It helps people take data of any shape or size and publish that as an interactive, explorable website and accompanying API.
 

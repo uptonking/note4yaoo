@@ -25,6 +25,13 @@ modified: 2022-10-02T20:51:30.444Z
   - It uses JSON-Patch for data updates and Operational Transformation for versioning and data consistency. 
   - It operates via HTTP or WebSocket or both.
 
+- sharedb /5.4kStar/MIT/202210/js
+  - https://github.com/share/sharedb
+  - ShareDB is a realtime database backend based on Operational Transformation (OT) of JSON documents. 
+  - It is the realtime backend for the DerbyJS web application framework.
+  - https://github.com/derbyjs/derby
+    - MVC framework making it easy to write realtime, collaborative applications that run in both Node.js and browsers
+
 - https://github.com/Progyan1997/Operational-Transformation
   - http://operational-transformation.github.io/
   - A collection of Algorithms to Synchronise changes across multiple clients using Operational Transformation
