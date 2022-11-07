@@ -87,6 +87,14 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-focalboard
 - eg-tanstack-table-v8
 
+## 1107
+
+- [pjax使用小结](https://zhuanlan.zhihu.com/p/498415741)
+  - 虽然传统的 ajax 方式可以异步无刷新改变页面内容，但无法改变页面 URL，
+    - 因此有种方案是在内容发生改变后通过改变 URL 的 hash 的方式获得更好的可访问性，但是 hash 的方式有时候不能很好的处理浏览器的前进、后退，而且常规代码要切换到这种方式还要做不少额外的处理。
+  - 而 pjax 的出现就是为了解决这些问题，简单的说就是对 ajax 的加强。
+  - pjax 结合 pushState 和 ajax 技术， 不需要重新加载整个页面就能从服务器加载 Html 到你当前页面，这个 ajax 请求会有永久链接、title 并支持浏览器的回退/前进按钮。
+
 ## 1106
 
 

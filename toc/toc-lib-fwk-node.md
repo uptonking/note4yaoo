@@ -20,6 +20,12 @@ modified: 2021-01-04T16:18:39.667Z
     - 现在的graphql，apollo，next，prisma这些感觉还是繁琐，未成简洁体系。
   - [@nestjs/core vs koa vs fastify vs restify vs loopback](https://www.npmtrends.com/@nestjs/core-vs-koa-vs-fastify-vs-restify-vs-loopback)
 # popular-node-framework
+- trpc /14.9kStar/MIT/202211/ts
+  - https://github.com/trpc/trpc
+  - https://trpc.io/
+  - tRPC allows you to easily build & consume fully typesafe APIs, without schemas or code generation.
+  - The client above is not importing any code from the server, only its type declarations.
+
 - nestjs /32.4kStar/MIT/202012/ts
   - https://github.com/nestjs/nest
   - core依赖reflect-metadata、rxjs6、websockets、express、axios
@@ -217,7 +223,6 @@ modified: 2021-01-04T16:18:39.667Z
 
 - https://github.com/creativetimofficial/argon-dashboard-react-nodejs  /js
   - 开源了dashboard的react前端和后端
-
 # more-app-framework
 - https://github.com/ladjs/lad
   - Lad is the best Node.js framework. 可替代express或koa

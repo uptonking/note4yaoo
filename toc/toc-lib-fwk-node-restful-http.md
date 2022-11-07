@@ -39,7 +39,24 @@ modified: 2021-06-02T16:35:46.166Z
 - https://github.com/aichbauer/express-rest-api-boilerplate
   - Express REST API with JWT Authentication and support for sqlite, mysql, and postgresql
   - routes mapping via express-routes-mapper
-# rest-examples
+# rest-starter
+- https://github.com/criscunas/todo-server
+  - Backend API for Todo App built with Node & Express.
+  - Data is stored in an empty JSON file.
+  - https://github.com/criscunas/todo-client
+    - Built with Vue3 and Tailwind CSS
+# ajax/pjax
+- https://github.com/defunkt/jquery-pjax
+  - pjax = pushState + ajax
+  - pjax works by fetching HTML from your server via ajax and replacing the content of a container element on your page with the loaded HTML. 
+    - It then updates the current URL in the browser using pushState. 
+    - No page resources (JS, CSS) get re-executed or re-applied;
+
+- https://github.com/falsandtru/pjax-api
+  - https://falsandtru.github.io/pjax-api/
+  - The pjax-api provides almost complete original web experience. 
+  - Most SPA frameworks and pjax libraries lack many essential functions to keep the original web experience such as follows.
+# more-rest-examples
 - https://github.com/taniarascia/node-api-postgres
   - https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
   - Create, read, update, delete in a Node.js app with an Express server and Postgres database.
