@@ -14,7 +14,7 @@ modified: 2020-12-22T12:42:14.745Z
 ## guide
 
 - 不要过于执着寻找linux下对应的windows软件体验，双系统切换使用省时省力
-  - 录屏时显示键盘按键，类似screenkey，但wayland不支持
+  - 录屏时显示键盘按键，类似screenkey，但wayland不支持，可解决
   - 腾讯会议不支持wayland
 
 - 查看已安装
@@ -28,13 +28,17 @@ modified: 2020-12-22T12:42:14.745Z
 
 - 在ubuntu software update打勾可选源，以及配置apt mirror
 
-- snap 安装的软件包无法访问隐藏目录。默认安全模式太严格了。
+- 当三方apt源很慢时，可以尝试手机移动网络，而不是电信宽带网络
+  - 特别是安装 git-core/ppa
+
+- snap安装的软件包无法访问隐藏目录。默认安全模式太严格了。
   - 改安全模式必须重新安装软件
   - sudo snap remove firefox
   - sudo snap install firefox --devmode 
-  - 考虑flatpak的自动更新软件包 firefox, chrome, vscode
-    - 缺点是flathub软件少，且安装体积大，snap体积也大
-    - 优点是支持自动更新，支持替换为国内源sjtu
+- flatpak支持自动更新软件包 firefox, chrome, vscode
+  - flatpack常用：shadowsocks、v2ray
+  - 缺点是flathub软件少，且安装体积大，snap体积也大
+  - 优点是支持自动更新，支持替换为国内源sjtu
   - flatpak也存在无法访问目录的问题
     - 方法1: 使用软件添加目录权限 Flatseal
     - 方法2: flatpak override pkg.id --filesystem=/home/user
@@ -43,9 +47,15 @@ modified: 2020-12-22T12:42:14.745Z
   - sudo flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
   - [给flatpak添加国内镜像源](https://seekstar.github.io/2021/12/30/%E7%BB%99flatpak%E6%B7%BB%E5%8A%A0%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90/)
     - sudo flatpak remote-add --if-not-exists flathub https://mirror.sjtu.edu.cn/flathub/flathub.flatpakrepo
-    - 应用图标不可见的问题
-      - /var/lib/flatpak/app/*application_name*/current/active/files/share/applications 拷贝到 /usr/share/applications
-      - /var/lib/flatpak/app/org.mozilla.firefox/current/active/export/share/applications/
+  - 应用图标不可见的问题
+    - /var/lib/flatpak/app/*application_name*/current/active/files/share/applications 拷贝到 /usr/share/applications
+    - /var/lib/flatpak/app/org.mozilla.firefox/current/active/export/share/applications/
+
+- pip安装的包在用户目录
+  - /home/yaoo/.local/lib/python3.10/site-packages/meson-0.63.2.dist-info/
+  - sudo pip install meson 安装在root目录 
+    - /usr/local/lib/python3.10/dist-packages/
+  - 还可以安装本地 pip install local-ss-master.zip -U
 
 - ubuntu开机自动挂载win-ntfs硬盘
   - [ubuntu 配置/etc/fstab参数实现开机自动挂载硬盘](https://blog.csdn.net/u010632165/article/details/89597522)
@@ -53,9 +63,8 @@ modified: 2020-12-22T12:42:14.745Z
     - [Device] [Mount Point] [File System Type] [Options] [Dump/backup] [Pass]
     - [pass]: Controls the order in which fsck checks the device/partition for errors at boot time. The root device should be 1. Other partitions should be 2, or 0 to disable checking.
 
-- 当三方apt源很慢时，可以尝试手机移动网络，而不是电信宽带网络
-  - 特别是安装 vscode、git-core/ppa
-
+- 代理 shadowsocks
+  - 如何在 Ubuntu 中使用网络代理
 - [Qv2ray 使用详解](https://www.rultr.com/tutorials/4200.html)
   - 和win平台的v2ray客户端一样简单，导入账号信息即可科学上网
   - [Qv2ray使用教程](https://xtrojan.org/client/qv2ray%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html)
@@ -66,7 +75,7 @@ modified: 2020-12-22T12:42:14.745Z
     - 改为水平方向，需要新建文件，设置内容
       - ibus_rime.custom.yaml
       - patch: style: horizontal: true
-  - sogou ubuntu
+  - 搜狗 ubuntu
   - [在Ubuntu下安装讯飞输入法linux版以及卸载方法](https://yoki.moe/Intstu/24.html)
     - xunfei  http://packages.deepin.com/deepin/pool/non-free/i/iflyime/
   - baidu https://srf.baidu.com/site/guanwang_linux/index.html
@@ -115,11 +124,11 @@ sudo snap refresh
 
 - ubuntu安装字体ttf
   - 创建目录 ~/.fonts，只需将字体粘贴到那里，支持 .ttf 或 .otf
-  - 字体对所有用户生效， /usr/local/share/fonts
+  - 要使字体对所有用户生效，/usr/local/share/fonts
   - [Ubuntu 18.04 LTS 上安装Windows 字体](https://zhuanlan.zhihu.com/p/40434062)
   - [Linux 安装 Windows 字体教程](https://www.bilibili.com/read/cv16481012/)
 
-- ubuntu定时关机
+- ubuntu定时关机，可flatpak安装time-switch
   - sudo apt install -y gshutdown
   - sudo shutdown -h now
   - sudo shutdown -h +60 (just replace 60 with whatever number of minutes you want)
@@ -156,11 +165,11 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
 ## software
 
 - 常用软件都可以直接在ubuntu官方包repository找到
-  - 包括 vlc，clementine，goldendict, gimp, inkscape
+  - apt支持 vlc，clementine，goldendict, gimp, inkscape
+  - 更推荐使用flatpak安装，支持自动更新
   - https://packages.ubuntu.com/
 
 ```shell
-
 sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 ```
 

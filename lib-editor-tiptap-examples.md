@@ -69,6 +69,12 @@ modified: 2022-08-19T23:00:22.162Z
   - https://evitanrelta.github.io/markgh/
   - 依赖 mui5、redux-toolkit、tiptap、dexie、highlight.js、markdown-it、quill
 
+- typist /8Star/MIT/202211/ts
+  - https://github.com/Doist/typist
+  - https://typist.doist.dev/
+  - Typist is the mighty Tiptap-based rich-text editor React component that powers Doist products
+  - Typist also supports a plain-text mode, and comes with HTML/Markdown serializers.
+
 - linked-daily /561Star/GPL.v3/202208/js/vue/electron
   - https://github.com/lostdesign/linked
   - https://uselinked.com/
@@ -87,6 +93,11 @@ modified: 2022-08-19T23:00:22.162Z
     - Solution 2: Relying on the Markdown preview endpoint
   - ref
     - https://github.com/gitlabhq/gitlabhq/tree/master/app/assets/javascripts/content_editor
+
+- neeto-editor /3Star/MIT/202211/js
+  - https://github.com/bigbinary/neeto-editor
+  - https://neeto-editor.onrender.com/
+  - The neetoEditor library drives the rich text experience in the neeto products built at BigBinary.
 # editors-collection
 - dante3 /1.7kStar/MIT/202208/js
   - https://github.com/michelson/Dante

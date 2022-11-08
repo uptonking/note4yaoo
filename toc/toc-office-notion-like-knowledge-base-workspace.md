@@ -69,7 +69,6 @@ modified: 2022-06-03T21:34:54.893Z
     - 跨block的操作变得复杂
 - https://github.com/JhinBoard/jhin
   - Next-Gen Collaborative Knowledge Base, A free replacement for Notion & Miro
-
 # github-wiki-confluence-like
 - MrDoc /2.1kStar/GPL.v3/202208/js/python/仅网页版
   - https://github.com/zmister2016/MrDoc
@@ -230,6 +229,12 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/huangwei9527/Ink-wash-docs
   - 水墨文档，一款基于egg+vue开发的在线文档管理平台，支持markdown文档， excel文档，原型托管等功能.
   - 依赖vue、element-ui、vditor、egg、x-spreadsheet
+
+- https://github.com/RealRong/Rendevoz
+  - open-source knowledge management application built with React and TypeScript
+  - 依赖slate、yjs、rxjs
+  - WYSIWYG Block Editor built upon Slate.js, with drag & drop, custom block rendering, etc.
+  - Cross platform powered by Electron.
 # workspace built with vscode
 - foam /12.5kStar/MIT/202208/ts/vscode
   - https://github.com/foambubble/foam

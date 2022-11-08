@@ -48,9 +48,18 @@ modified: 2021-01-04T17:26:25.032Z
 - https://github.com/iddan/react-universal-markdown
   - Markdown component for Web and Native powered by CommonMark
 
-- react-markdown-editor-lite /446Star/MIT/202008
+- react-markdown-editor-lite /833Star/MIT/202207/ts/markdown-it/非所见即所得
   - https://github.com/HarryChen0506/react-markdown-editor-lite
+  - https://harrychen0506.github.io/react-markdown-editor-lite/
   - 基于textarea和React的markdown编辑器，实现简单且清晰
+  - UI可配置, 如只显示编辑区或预览区，支持编辑区和预览区同步滚动
+- https://github.com/uiwjs/react-md-editor
+  - A simple markdown editor with preview, implemented with React.js and TypeScript.
+  - This is based on textarea encapsulation, so it does not depend on any modern code editors such as Acs, CodeMirror, Monaco etc.
+- https://github.com/uiwjs/react-markdown-editor
+  - A markdown editor with preview, implemented with React.js and TypeScript.
+  - 依赖react-markdown、codemirror、highlight.js
+
 - rich-markdown-editor /2kStar/BSD/202105/ts
   - https://github.com/outline/rich-markdown-editor
   - 依赖prosemirror-markdown
@@ -78,12 +87,6 @@ modified: 2021-01-04T17:26:25.032Z
 - https://github.com/StackExchange/Stacks-Editor
   - Stack Overflow's Combination Rich Text/Markdown Editor
   - 依赖prosemirror, hightlight.js，不依赖react
-- https://github.com/uiwjs/react-markdown-editor
-  - A markdown editor with preview, implemented with React.js and TypeScript.
-  - 依赖react-markdown、codemirror、highlight.js
-- https://github.com/uiwjs/react-md-editor
-  - A simple markdown editor with preview, implemented with React.js and TypeScript.
-  - This is based on textarea encapsulation, so it does not depend on any modern code editors such as Acs, CodeMirror, Monaco etc.
 
 - https://github.com/benweet/stackedit
   - In-browser Markdown editor

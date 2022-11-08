@@ -23,7 +23,6 @@ modified: 2022-09-21T15:47:41.340Z
   - Collaborative canvas using Yjs CRDT
 # yjs-utils
 
-
 # yjs-apps
 - yboard /301Star/MIT/202206/js/vue
   - https://github.com/felipeleivav/yboard
@@ -56,3 +55,19 @@ modified: 2022-09-21T15:47:41.340Z
 - ref-zustand-yjs
   - https://github.com/tandem-pt/zustand-yjs
 # yjs-more
+
+# collaborative
+- https://github.com/yjs/yjs
+  - https://docs.yjs.dev/
+  - Yjs is a CRDT implementation that exposes its internal data structure as shared types. 
+  - Shared types are common data types like Map or Array with superpowers: changes are automatically distributed to other peers and merged without merge conflicts.
+
+- https://github.com/josephg/reference-crdts
+  - This repository contains simple proof-of-concept reference implementations of yjs, automerge and sync9's list types - all implemented in the same codebase. 
+
+- https://github.com/YousefED/reactive-crdt
+  - It's built on top of Yjs, a proven, high performance CRDT implementation.
+
+- https://github.com/yjs/y-codemirror.next
+  - https://demos.yjs.dev/codemirror/codemirror.html
+  - Collaborative extensions for CodeMirror6

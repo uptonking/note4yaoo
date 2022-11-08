@@ -26,5 +26,4 @@ modified: 2022-05-15T18:37:07.368Z
   - framework agnostic
 
 - lexical-resources
-  - https://github.com/facebook/lexical
   - https://lexical.dev/docs/intro

@@ -57,6 +57,7 @@ modified: 2022-05-15T18:45:27.570Z
   - Prezly software built upon Slate
   - 悬浮工具条使用卡片的形式
   - https://www.prezly.com/
+    - Successful businesses need a fanbase. Use Prezly to build yours.
     - With Prezly, you can publish and share your content with your audience, directly. No algorithms, no middlemen, no BS.
 
 - slate-angular /93Star/MIT/202205/ts
@@ -81,12 +82,24 @@ modified: 2022-05-15T18:45:27.570Z
   - 使用slatejs数据模型，借助 react 使用自绘光标的模式渲染，不再依赖 contenteditable 属性
   - 主要对一些 unicode 字符进行索引的计算。因为有些字符占位所占的字节数不确定，造成某些字符拆分后的索引不准确，所以需要这个工具包来解决这个问题。
 
-- hero-editor /10Star/MIT/202205/js/代码少
+- hero-editor /10Star/MIT/202205/js/代码少/mobile
   - https://github.com/Thinkei/hero-editor
   - http://hero-editor.surge.sh/
   - Hero editor is a WYSIWYG built on top of Slate (v0.58.3).
   - It's designed for mobile-first, hence all of the communications from plugins to the editor must go through message channel. 
   - This package also includes serializers and renderers for the Slate content.
+
+- taze-editor /6Star/MIT/202211/ts
+  - https://github.com/taze-editor/taze-editor
+  - http://taze-editor.vercel.app/
+  - Create your own plugin-based rich text editor easily
+  - Taze Editor is built on top of Slate and heavily inspired by Plate.
+
+- circu /1Star/MIT/202211/ts
+  - https://github.com/Flrande/circu
+  - 一个支持多人协同的在线文档应用
+  - 修改了slate-react
+  - 协作基于yjs
 
 - react-rich-editor /3Star/MIT/202203/js
   - https://github.com/Rajatm544/react-rich-editor
@@ -307,6 +320,12 @@ modified: 2022-05-15T18:45:27.570Z
   - a learning project to obtain knowledge and skills about the MERN stack
   - Redux, Redux Thunk, axios, Slate, Lodash
   - Sign-in with JWT token
+
+- https://github.com/RealRong/Rendevoz
+  - open-source knowledge management application built with React and TypeScript
+  - 依赖slate、yjs、rxjs
+  - WYSIWYG Block Editor built upon Slate.js, with drag & drop, custom block rendering, etc.
+  - Cross platform powered by Electron.
 
 - https://github.com/wwsalmon/postulate
   - http://postulate.us/

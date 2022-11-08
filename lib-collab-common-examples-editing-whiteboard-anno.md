@@ -24,7 +24,7 @@ modified: 2022-11-07T17:36:22.236Z
   - NodeJS collaborative Whiteboard/Sketchboard which can easily be customized
 
 - https://github.com/toger5/TheBoard
-  - collaborative Whiteboard powered by the [matrix] protocol and infrastucture.
+  - collaborative Whiteboard powered by the [matrix] protocol and infrastructure.
 
 - https://github.com/muaz-khan/Canvas-Designer
   - Collaborative, extendable, JavaScript Canvas2D drawing tool, supports dozens of builtin tools, as well as generates JavaScript code for 2D animations.
@@ -69,6 +69,7 @@ modified: 2022-11-07T17:36:22.236Z
 # collab-editing
 - https://github.com/convergencelabs/html-text-collab-ext
   - A set of utilities that enhances a normal HTML `<textarea>` element with collaborative editing capabilities. 
+  - The enhanced `<textarea>` is able to render the cursor and selection of other collaborators.
   - This library has no dependency on Convergence.
   - 只依赖textarea-caret，不依赖其他
 

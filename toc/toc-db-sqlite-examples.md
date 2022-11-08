@@ -29,10 +29,9 @@ modified: 2022-06-03T22:07:49.519Z
   - https://usememos.com/
   - 后端依赖 go
   - 前端依赖 redux-toolkit, dayjs, axios
-  - 编辑器使用的是简单 textarea
   - ui高度复刻flomo，中文开发者作品，代码量不大
   - self-hosted knowledge base that works with a SQLite db file.
-  - Write in the plain textarea without any burden
+  - 编辑器使用的是简单 textarea，Write in the plain textarea without any burden
   - It has no external dependency.
 
 - https://github.com/thevahidal/soul

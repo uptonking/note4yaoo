@@ -31,6 +31,11 @@ modified: 2020-11-17T13:38:19.107Z
   - Craft.js is an abstraction where you implement your own page editor upon. 
     - For example, it does not come with a ready-made user interface.
     - However, you could still consider using the examples as a starting point.
+
+- https://github.com/plasmicapp/plasmic
+  - https://www.plasmic.app/
+  - Visual page builder and web design tool for any website or web app tech stack
+
 - blocks /MIT/3.6kStar/202006
   - https://github.com/blocks/blocks
   - https://blocks-ui.com/

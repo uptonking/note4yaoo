@@ -1,6 +1,6 @@
 ---
 title: dev-log-repeat-solutions
-tags: [dev, repeat, solutions]
+tags: [dev, pm, repeat, solutions]
 favorited: true
 created: 2021-01-08T00:10:18.987Z
 modified: 2021-07-20T13:50:23.433Z
@@ -14,41 +14,43 @@ modified: 2021-07-20T13:50:23.433Z
   - rendering(~~web~~) is the future, but not the present.
   - 参考各种解决方案的优点，积累方案、算法、库、框架、应用
 
-- techstacks: rich editor
-  - design system
-    - themeable/headless/a11y
-  - text editor
-    - modular/extensible/collab
-    - slashable-block
-    - pictures and text wrapping
-    - pdf
-  - data table/grid
-    - pivotable/formulas/stream-updates/server-side-infinite-row-model
-    - scripting/themeable/canvas/viztable/apache-arrow
-    - ~~excel-like~~/~~headless~~
+## techstacks: rich-editor/builder
 
-- solutions: live/inter(re)active/reproducible doc
+- design system
+  - themeable; unstyled/headless; a11y/keyboard-ux
+- text editor
+  - modular/extensible; collaborative; easy-pivotable
+  - block-editor with slash-menu/backlinks
+  - pdf
+- data table/grid
+  - pivotable; formulas; collaborative
+  - stream-updates/server-side-infinite-row-model
+  - scripting/themeable/canvas/viztable/apache-arrow
+  - ~~excel-like~~/~~headless~~
+
+## solutions: inter(re)active knowledge-base/wiki
+
+- features
+  - local-first/offlineable/localizable
+  - collaborative
+  - easy pivot table in document
+  - interactive-contents: variable, attachment, viz
+  - backlinks/bidirectional: [[Wikilinks (stub)]], providing more context around backlink reference
+  - relations: trilium-relation-map, trilium-link-map, dendron-hierarchical
+  - scientific writing: latex, bibtex, citation，data
+  - rich-ui: collapsible, floating, emoji
+  - portable format: text format; no vendor lock in; partially export cuz mobile
+  - templates
+  - es search-ui experience, algolia-docsearch/autocomplete
+
+- byproduct-apps
+  - live/reactive-notebook
+    - cell-style/nonlinear; reproducible/computational; math
   - dashboard/spaces
-    - themeable/configurable/widgets
-  - wiki/knowledge-base/markdown-editor
-    - offlineable/localizable; ~~local-first~~
-    - portable format: markdown-based text format; no vendor lock in
-    - collaborative
-    - backlink/bidirectional: [[Wikilinks (stub)]],providing more context around backlink reference
-    - relations:trilium-relation-map,trilium-link-map,dendron-hierarchical
-    - interactive: collapsible, floating
-    - scientific writing: latex, bibtex, citation，data
-    - templates
-    - es search-ui experience, algolia-docsearch/autocomplete
-  - live-notebook
-    - cell-style/nonlinear
-    - reproducible
-    - collaborative
-    - easy pivot table in document
-    - more: easy viz
+    - themeable/configurable/widgets-blocks
 
 - integrations/connections
-  - wechat小程序、公众号、实时通知
+  - wechat-miniprogram、公众号、实时通知
   - github/gitee
   - 腾讯文档
   - 类似outline集成slack
@@ -63,7 +65,11 @@ modified: 2021-07-20T13:50:23.433Z
   - rich-markdown-editor; outline
   - milkdown
 
+- react-markdown-editor-lite
+  - 基于textarea和React的markdown编辑器，实现简单且清晰，非所见即所得
+
 - more-editor
+  - google-docs-like-editor
   - monaco-editor
     - code editor that powers desktop vscode
     - not supported in mobile browsers. not for IE.

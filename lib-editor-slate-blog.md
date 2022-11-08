@@ -73,6 +73,8 @@ modified: 2022-05-15T21:14:14.339Z
   - is-resolved
   - is-active
 
+- [Building A Rich Text Editor (WYSIWYG)](https://www.smashingmagazine.com/2021/05/building-wysiwyg-editor-javascript-slatejs/)
+
 ## [Slate 介绍分析与实践](https://coldstone.fun/post/2020/12/13/slate-intro/)
 
 - 特点

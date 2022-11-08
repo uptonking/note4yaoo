@@ -183,10 +183,10 @@ modified: 2021-04-11T06:17:51.318Z
   - This is a headless chat library. Think of it as something like a Formik but for chat apps.
   - https://github.com/chatscope/chat-ui-kit-react
     - open source UI toolkit for developing web chat applications.
-  - https://github.com/Resetand/textarea-markdown-editor
-    - UI headless simple markdown editor using only textarea
-    - You can choose any markdown parser, any layout.
-    - Can use any existing textarea Component and style it as you prefer
+- https://github.com/Resetand/textarea-markdown-editor  /ts
+  - UI headless simple markdown editor using only textarea
+  - 依赖react
+  - You can choose any markdown parser, create your own layout, and use your own textarea component that is styled and behaves however you like
 
 - webrix /399Star/Apache2/202210/js
   - https://github.com/open-amdocs/webrix

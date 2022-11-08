@@ -191,8 +191,10 @@ modified: 2022-10-02T20:51:30.444Z
 - https://github.com/datavis-tech/json0-presence-demo
   - A demo of plain text presence using json0+ShareDB and html-text-collab-ext.
   - The original application was simplified by Curran Kelleher down to a single textarea with presence
+
 - https://github.com/convergencelabs/html-text-collab-ext
   - A set of utilities that enhances a normal HTML `<textarea>` element with collaborative editing capabilities. 
+  - The enhanced `<textarea>` is able to render the cursor and selection of other collaborators.
   - This library has no dependency on Convergence.
   - 只依赖textarea-caret，不依赖其他
 

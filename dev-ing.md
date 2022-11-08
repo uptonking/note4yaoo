@@ -87,6 +87,11 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-focalboard
 - eg-tanstack-table-v8
 
+## 1108
+
+- [AttributeError: module ‘collections‘ has no attribute ‘MutableMapping‘](https://blog.csdn.net/lishuaigell/article/details/125221750)
+  - `collections.MutableMapping`  改成  `collections.abc.MutableMapping`
+
 ## 1107
 
 - [pjax使用小结](https://zhuanlan.zhihu.com/p/498415741)
@@ -96,8 +101,6 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - pjax 结合 pushState 和 ajax 技术， 不需要重新加载整个页面就能从服务器加载 Html 到你当前页面，这个 ajax 请求会有永久链接、title 并支持浏览器的回退/前进按钮。
 
 ## 1106
-
-
 
 - [diff 算法深入一下？](https://zhuanlan.zhihu.com/p/401340016)
   - diff 算法是 vue2.x/vue3.x 以及 react 中关键核心点，理解 diff 算法，更有助于理解各个框架本质。
@@ -902,7 +905,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                                                           `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                                                              `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -921,7 +924,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                                           `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                              `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 
