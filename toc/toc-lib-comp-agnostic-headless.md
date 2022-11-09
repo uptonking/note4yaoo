@@ -183,10 +183,17 @@ modified: 2021-04-11T06:17:51.318Z
   - This is a headless chat library. Think of it as something like a Formik but for chat apps.
   - https://github.com/chatscope/chat-ui-kit-react
     - open source UI toolkit for developing web chat applications.
+
 - https://github.com/Resetand/textarea-markdown-editor  /ts
   - UI headless simple markdown editor using only textarea
   - 依赖react
   - You can choose any markdown parser, create your own layout, and use your own textarea component that is styled and behaves however you like
+
+- https://github.com/wellyshen/react-cool-virtual
+  - A tiny React hook for rendering large datasets like a breeze.
+  - Renders millions of items with highly performant way, using DOM recycling.
+  - react-virtual is flexible and headless but using and styling it can be verbose (because it's a low-level hook).
+  - React Cool Virtual is a tiny React hook that gives you a better DX and modern way for virtualizing a large amount of data
 
 - webrix /399Star/Apache2/202210/js
   - https://github.com/open-amdocs/webrix

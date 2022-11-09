@@ -177,8 +177,9 @@ modified: 2022-06-03T21:34:54.893Z
 
 - https://github.com/hamsterbase/hamsterbase
   - https://hamsterbase.com/
-  - a self-hosted, local-first web archive application.
+  - 一个本地优先的网页存档应用。 a self-hosted, local-first web archive application.
   - 本地部署 + 完全离线 + 点对点同步（马上发布了）
+  - 开源 SDK，目前免费。
   - Store, manage, and preview HTML, MHTML and Webarchive documents.
   - Webpages can be highlighted, annotated and annotated retroactively.
   - No dependency on any server, all data is local first.
@@ -296,7 +297,8 @@ modified: 2022-06-03T21:34:54.893Z
   - MashCard is an all-in-one workspace and low-code platform with Compound Document at its core. 
   - It's not only an open source alternative to Coda and Notion
 
-- https://github.com/hashintel/hash
+- hash /636Star/MIT+Elastic+AGPL/202211/ts/rust
+  - https://github.com/hashintel/hash
   - https://hash.dev/
   - Data management, integration and modeling with blocks
   - The Block Protocol is an open-source standard and registry for sharing interactive blocks connected to structured data.

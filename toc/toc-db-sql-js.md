@@ -26,6 +26,10 @@ modified: 2021-08-30T18:56:14.863Z
 - https://github.com/tobymao/sqlglot
   - Python SQL Parser and Transpiler
 # examples
+- https://github.com/prostgles/ui
+  - https://prostgles.com/ui
+  - Web dashboard and SQL Editor for Postgres
+  - Sorting, Filtering and Cross-Filtering joined tables
 
 # more
 - https://github.com/webqit/objective-sql

@@ -149,6 +149,8 @@ modified: 2022-11-08T19:04:00.289Z
   - https://github.com/bustle/mobiledoc-kit
   - https://bustle.github.io/mobiledoc-kit/demo/
   - Mobiledoc Kit is a framework-agnostic library for building WYSIWYG editors supporting rich content via cards.
+  - Posts are serialized to a JSON format called Mobiledoc instead of to HTML.
+  - Mobiledoc is a deliberately simple and terse format, and you are encouraged to write your own renderer if you have other target output formats (e.g., a PDF renderer, an iOS Native Views Renderer, etc.).
 
 - edtr-io /696Star/MIT/202206/ts
   - https://github.com/edtr-io/edtr-io

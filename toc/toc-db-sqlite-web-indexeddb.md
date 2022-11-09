@@ -9,7 +9,7 @@ modified: 2022-11-06T03:19:28.284Z
 
 # popular
 - https://github.com/uglyer/storelite.js
-  - 基于 sql.js(sqlite)实现的状态仓库，支持 web worker、react 绑定
+  - 基于sql.js(sqlite)实现的状态仓库，支持 web worker、react 绑定
 
 - absurd-sql /3.6kStar/MIT/202110/js
   - https://github.com/jlongster/absurd-sql

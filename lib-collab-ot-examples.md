@@ -35,6 +35,13 @@ modified: 2022-10-02T20:51:30.444Z
 - https://github.com/Progyan1997/Operational-Transformation
   - http://operational-transformation.github.io/
   - A collection of Algorithms to Synchronise changes across multiple clients using Operational Transformation
+
+- https://github.com/startupjs/startupjs
+  - https://startupjs-ui.dev.dmapper.co/
+  - A React Native framework to build cross-platform apps for web and mobile.
+  - 前端依赖react-native-web
+  - 后端依赖express、mongoose、sharedb
+  - Observer pattern: When you subscribe to a channel, you are being added to the list of subscribers who then will be notified about new
 # ot-rewrite
 - https://github.com/Operational-Transformation/ot.js /js
   - http://operational-transformation.github.io/

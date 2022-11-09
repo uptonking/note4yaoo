@@ -61,6 +61,8 @@ modified: 2022-03-17T17:50:28.967Z
 - 剪藏扩展 web cliper
   - local-first pocket, any links
   - 支持批量导出
+
+- 同步 拼写检查cSpell、自定义短语、语法检查
 # draft
 - 功能或菜单太多容易使人迷茫，考虑设计多个版本的前端：lite、pro、customized
 
@@ -94,6 +96,10 @@ modified: 2022-03-17T17:50:28.967Z
 
 - 在文本加书签或标记
   - https://github.com/StarlaneStudios/vscode-comment-anchors
+
+- 管理链接的多维表格
+  - 链接添加tag
+  - 链接导出markdown，tag放在下一行
 # faq
 - 如何不使用图床而将图片直接嵌入到笔记中
   - [MarkDown图片存储格式-Textbundle格式](https://zhuanlan.zhihu.com/p/368463926)

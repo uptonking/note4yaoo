@@ -20,11 +20,15 @@ modified: 2020-12-09T09:30:24.694Z
   - https://github.com/apache-superset/superset-ui
   - https://github.com/apache-superset/examples-data
   - https://github.com/dropbox/incubator-superset-internal
+
+
 - turnilo /Apache2/335Star/202007
   - https://github.com/allegro/turnilo
   - https://allegro.tech/2018/10/turnilo-lets-change-the-way-people-explore-big-data.html
   - Business intelligence, data exploration and viz web application for Druid
   - https://github.com/implydata/pivot
+
+
 - https://github.com/drinkjs/mojito
   - http://mojito.drinkjs.com/
   - Mojito是一个可视化数据分析、数据展示和轻业务开发的平台
@@ -40,6 +44,11 @@ modified: 2020-12-09T09:30:24.694Z
   - An open source alternative to Looker built using dbt. Made for analysts
   - 后端依赖 express、pg、knex、passport
   - 前端依赖 blueprintjs、echarts、jspdf、react-ace、react-beautiful-dnd
+
+- https://github.com/Spotrix/spotrix
+  - https://spotrix.github.io/spotrix-web/
+  - A modern, enterprise-ready business intelligence web application.
+  - 依赖flask-appbuilder、sqlalchemy
 
 - https://github.com/rawgraphs/rawgraphs-app
   - https://rawgraphs.io/

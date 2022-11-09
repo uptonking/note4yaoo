@@ -98,7 +98,7 @@ modified: 2022-08-19T23:00:22.162Z
   - https://github.com/bigbinary/neeto-editor
   - https://neeto-editor.onrender.com/
   - The neetoEditor library drives the rich text experience in the neeto products built at BigBinary.
-# editors-collection
+# tiptap-editors
 - dante3 /1.7kStar/MIT/202208/js
   - https://github.com/michelson/Dante
   - https://www.dante-editor.dev/
@@ -218,6 +218,13 @@ modified: 2022-08-19T23:00:22.162Z
   - That proofreader can work locallyin the browser, or it can call an online service, 
   - This extension is inspired by the tiptap-languagetool extension.
 # examples
+- https://github.com/SkyGuardian42/piko.space
+  - Collaborate at the speed of light and seamlessly sync offline work
+  - tiptap的协作示例
+  - redis、yjs、tiptap
+  - 前端依赖tiptap、radix-ui、tan-query、yjs、zustand
+  - 后端依赖trpc、express、yjs、zod
+
 - https://github.com/justinmoon/tiptap-markdown-demo
   - TipTap rich text editor doesn't support markdown, but this repo shows how to hack it in yourself.
 

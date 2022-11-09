@@ -21,7 +21,6 @@ modified: 2022-11-06T03:18:26.506Z
     - Ambiguous error handling
   - Reactive (since v3.2)
     - Query the db without boilerplate and let your components mirror the database in real time.
-
 - https://dexie.org/docs/Syncable/Dexie.syncable.js
   - Enables two-way synchronization with a remote server of any kind.
   - https://github.com/nponiros/sync_server
@@ -40,9 +39,37 @@ modified: 2022-11-06T03:18:26.506Z
   - **Due to the nature of IndexedDB, there is no synchronous way to read or write any data**.
 
 - https://github.com/riapacheco/indexedDB_dexie
-  - Architecture testing app for utilizing IndexedDB with Dexie. 
+  - Architecture testing app for utilizing IndexedDB with Dexie.
+
+- https://github.com/amjadbouhouch/markup
+  - https://mark-up.netlify.app/
+  - The mobile first markdow editor for web & desktop with tiptap plugins and more
+  - 依赖pouchdb、dexie、daisyui、tiptap、react-query
 # examples
-- https://github.com/AldoHub/React-Dexie
+- https://github.com/deechris27/browserStorage
+  - https://deechris27.github.io/browserStorage/
+  - Reactjs file upload, Dexie-indexeddb browser storage
+
+- https://github.com/saypa95/NotesApp
+  - https://saypa95.github.io/NotesApp/
+  - Notes App (React, Dexie.js)
+  - https://github.com/jrgrimshaw/notes-app-tutorial
+
+- https://github.com/sgkandale/TypNote
+  - https://typnote.netlify.app/
+  - TypNote is an offline note taking app
+  - Dexie is used to store notes inside IndexedDB of browser.
+
+- https://github.com/DarthAmun/pnptome
+  - https://darthamun.github.io/pnptome/
+  - project written in react/typescript for managing once collection of homebrew. 
+  - The project itself is a PWA and was made primarily to learn said technologies.
+
+- https://github.com/tykoth/ra-data-dexie
+  - Experimental React-Admin data provider using Dexie (IndexedDB)
+  - 依赖react-admin
+
+- https://github.com/AldoHub/React-Dexie /201907/js
   - React implementation using Hooks, IndexedDb with Dexiejs and file uploading
 
 - https://github.com/bignerdranch/dexie-fulltextsearch  /201704/js
@@ -54,10 +81,6 @@ modified: 2022-11-06T03:18:26.506Z
 
 - https://github.com/ebenezerdon/market-list-app
   - A market-list application built with React.js, IndexedDB and Dexie.js for offline storage.
-
-- https://github.com/tykoth/ra-data-dexie
-  - Experimental React-Admin data provider using Dexie (IndexedDB)
-  - 依赖react-admin
 
 - https://github.com/ttessarolo/useDexie
   - React Hooks to use Dexie.js IndexDB library with ease
@@ -86,3 +109,6 @@ modified: 2022-11-06T03:18:26.506Z
 - https://github.com/helgasoft/leaflet.dexie
   - A Leaflet plugin for offline maps storage using library Dexie.js.
   - The source code is based on leaflet.offline
+
+- https://github.com/Vissie2/dexie-2d-geospatial-index
+  - A playground to test the performance of H3 geospatial indexing using Dexie.

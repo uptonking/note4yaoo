@@ -15,10 +15,10 @@ modified: 2022-11-03T04:14:00.563Z
   - It organizes data as an ordered key-value store and employs ACID transactions for all operations. 
   - It is especially well-suited for read/write workloads but also has excellent performance for write-intensive workloads.
 
-- https://github.com/jaredwray/keyv /js
+- keyv /2kStar/MIT/202211/js
+  - https://github.com/jaredwray/keyv
   - Simple key-value storage with support for multiple backends
-
-
+  - Storage Adapters: etcd, mongodb, redis, sqlite
 # leveldb-like
 - https://github.com/google/leveldb /BSD/c++
   - LevelDB is a fast key-value storage library written at Google that provides an ordered mapping from string keys to string values.

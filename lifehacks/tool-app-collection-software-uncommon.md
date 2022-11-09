@@ -10,7 +10,6 @@ modified: 2022-11-07T10:27:48.956Z
 # guide
 
 # os
-
 - SwitchHosts
   - https://github.com/oldj/SwitchHosts
   - an App for managing hosts file, it is based on Electron , React, UmiJS , Chakra UI, CodeMirror, etc.
@@ -21,6 +20,11 @@ modified: 2022-11-07T10:27:48.956Z
   - file count column is not implemented
 
 ## linux
+
+- Gromit-MPX
+  - https://github.com/bk138/gromit-mpx
+  - Gromit-MPX is an on-screen annotation tool that works with any Unix desktop environment under X11 as well as Wayland.
+  - Its main use is for making presentations of some application. 
 
 ### ubuntu
 

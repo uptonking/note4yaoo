@@ -39,6 +39,13 @@ modified: 2022-08-21T10:03:52.222Z
   - https://gitlab.com/bramw/baserow
   - Baserow is an open source online database tool and Airtable alternative.
   - 依赖Django、Nuxt.js、PostgreSQL
+
+- https://github.com/IreliaTable/irelia
+  - https://ireliatable.github.io/irelia-web/
+  - Irelia is a modern relational spreadsheet. 
+  - Python formulas. Full Python syntax is supported, and the standard library.
+  - A portable, self-contained format based on SQLite
+
 - https://github.com/nocodb/nocodb
   - https://www.nocodb.com/
   - The Open Source Airtable alternative

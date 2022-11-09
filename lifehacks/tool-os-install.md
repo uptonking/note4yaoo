@@ -162,6 +162,7 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
 - [Adding A Custom 'Open With' Program In Ubuntu 20.04](https://blog.robertelder.org/custom-open-with-program-ubuntu/)
   - 方法很简单，只要将.desktop文件复制到指定位置即可，直接支持设置default open
 
+- [How to Change Mouse Cursor on Ubuntu](https://www.omgubuntu.co.uk/2022/03/how-to-change-mouse-cursor-on-ubuntu)
 ## software
 
 - 常用软件都可以直接在ubuntu官方包repository找到

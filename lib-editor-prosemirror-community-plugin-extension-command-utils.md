@@ -14,7 +14,9 @@ modified: 2022-08-30T22:07:26.164Z
 
 - ## 
 
-- ## 
+- ## Remove contenteditable completely?_201901
+- https://discuss.prosemirror.net/t/remove-contenteditable-completely/1766
+- All the editing apps need to use contenteditable to some extent because certain text editing features (IME, etc.) don’t really work without it. 
 
 - ## How to update plugin state from handleKeydown props
 - https://discuss.prosemirror.net/t/how-to-update-plugin-state-from-handlekeydown-props/3420

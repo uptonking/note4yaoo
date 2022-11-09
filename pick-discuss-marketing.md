@@ -7,7 +7,6 @@ modified: 2021-04-12T16:30:53.968Z
 
 # pick-discuss-marketing
 
-
 # discuss
 
 ## 
@@ -16,7 +15,9 @@ modified: 2021-04-12T16:30:53.968Z
 
 ## 
 
-## 
+## [2022年了，居然还有人搞PWA？](https://zhuanlan.zhihu.com/p/453318680)
+
+- pwa动了app store的蛋糕，不然早推了，所以最早做这个的苹果和谷歌都限制web app，现在只有利益影响没那么大的微软在推
 
 ## [媒体报道称工信部召开行政指导会，阿里、腾讯等企业参会，限期解除屏蔽网址链接，意味着什么？](https://www.zhihu.com/question/486212129)
 

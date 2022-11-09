@@ -11,6 +11,7 @@ modified: 2022-05-15T18:42:42.839Z
 
 - 渲染长文档的思路
   - virtualized render
+    - 参考 ajaxorg/ace、codemirror
   - defer render
 # discuss
 - ## 

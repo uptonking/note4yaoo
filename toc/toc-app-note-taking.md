@@ -115,6 +115,12 @@ modified: 2020-10-22T10:03:50.526Z
     - Mac OS desktop build is available, but it is unsupported.
     - If you want to install Trilium on server,currently only recent Chrome and Firefox are supported (tested) browsers.
   - [Notion like database](https://github.com/zadam/trilium/issues/822)
+# note-extensions
+- graph /7Star/MIT/202210/ts
+  - https://github.com/graphcentral/graph
+  - https://graphcentral.github.io/graph
+  - Performant graph visualization on the web with WebGL + Webworkers + IndexedDB
+  - You can visualize Notion pages on force layout graph using this library
 # more-note-app
 - simplenote-electron /4.1kStar/GPLv2/202201/ts/inactive
   - https://github.com/Automattic/simplenote-electron

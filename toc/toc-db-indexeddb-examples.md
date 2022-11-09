@@ -48,6 +48,7 @@ modified: 2022-06-03T22:06:47.464Z
 
 - https://github.com/chenstarx/GoDB.js
   - indexedDB with Intuitive API, CRUD with one line of code.
+
 - https://github.com/ismaelcallerojas/CRUD-indexeddb
   - CRUD con la api indexed db 单文件使用示例
 # react-vue
@@ -67,7 +68,7 @@ modified: 2022-06-03T22:06:47.464Z
 - https://github.com/eldomagan/vuex-orm-localforage
   - VuexORMLocalforage is a plugin for the amazing VuexORM that let you sync your Vuex Store with an IndexedDB database using LocalForage.
 # apps
-- https://github.com/wizexplorer/excel-clone /js
+- https://github.com/wizexplorer/excel-clone /202210/js
   - An excel clone using HTML-CSS-JavaScript. Change properties of different cells. 
   - Capable of applying formulas, copying/cutting/pasting multiple cells. 
 
@@ -75,8 +76,11 @@ modified: 2022-06-03T22:06:47.464Z
   - https://notes-ysau.pages.dev/
   - Make notes page_with_curl in the browser itself, it runs offline and the data is saved in the browser.
 
-- https://github.com/graphcentral/graph
+- graph /7Star/MIT/202210/ts
+  - https://github.com/graphcentral/graph
+  - https://graphcentral.github.io/graph
   - Performant graph visualization on the web with WebGL + Webworkers + IndexedDB
+  - You can visualize Notion pages on force layout graph using this library
 
 - https://github.com/Tesfaye-Eshetie/movie-search-pwa /js
   - Movie Search PWA using React, vite, PWA and IndexedDB

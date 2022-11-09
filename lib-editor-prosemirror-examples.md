@@ -176,7 +176,7 @@ modified: 2022-08-18T16:57:46.405Z
   - https://bytedance.github.io/syllepsis/#/zh-cn/about
   - [编辑器在线例子](https://bytedance.github.io/syllepsis/#/zh-cn/playground)
   - 支持格式刷、调整文字间距、段落间距
-  - 支持[Card或Block插件](https://bytedance.github.io/syllepsis/#/zh-cn/chapters/card-plugin)，但不支持拖拽
+  - 支持[Card或Block插件](https://bytedance.github.io/syllepsis/#/zh-cn/chapters/card-plugin)，但不支持拖拽，块比卡片拥有更广的定义，但我们无意增加开发者的心智负担，也可以认为卡片是一种块
   - 设计了占位插件，可实现左侧加号按钮
   - rich text editor compatible with mainstream modern browsers.
   - We re-encapsulate Prosemirror to provide more concise APIs, a large number of basic plugins

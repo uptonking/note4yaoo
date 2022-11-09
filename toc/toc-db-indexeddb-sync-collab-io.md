@@ -19,8 +19,12 @@ modified: 2022-10-22T18:47:16.228Z
 # sync
 - remotestorage.js /2.2kStar/MIT/202211/ts
   - https://github.com/remotestorage/remotestorage.js
+  - https://remotestoragejs.readthedocs.io/
   - a JavaScript library for storing user data locally in the browser, as well as connecting to remoteStorage servers and syncing data across devices and applications.
   - It is also capable of connecting and syncing data with a person's Dropbox or Google Drive account (optional).
+  - The first prototype of rs.js was written in November 2010. The library is well-tested and actively maintained.
+  - rs.js optionally supports Dropbox and Google Drive as storage backends which users can connect.
+  - Data modules make your app and its data interoperable with other apps. 
 
 - https://github.com/madmoizo/backinfront  /1Star/ISC/202206/js
   - Backinfront is both the manager of your browser database and a router which handles requests locally. 
@@ -48,7 +52,8 @@ modified: 2022-10-22T18:47:16.228Z
   - Minimizes the amount of data exchanged between server and client
   - Makes offline editing possible
 
-- https://github.com/clintharris/IDBSideSync
+- IDBSideSync /8Star/MIT/202104/ts
+  - https://github.com/clintharris/IDBSideSync
   - https://idbsidesync-todo-demo.vercel.app/
   - IDBSideSync is an experimental JavaScript library that makes it possible to sync browser-based IndexedDB databases using CRDT concepts
   - As your app makes CRUD calls to its IndexedDB database, IDBSideSync proxies/intercepts those calls and records the operations to a log (the "oplog").
@@ -60,5 +65,5 @@ modified: 2022-10-22T18:47:16.228Z
   - Inspired by yjs and the CRDT-variant LWW-Element-Set, this is a simple key-value map that can sync between different clients by letting latest timestamp always win.
   - Key is always a string but value could be anything as long as it's just primitive values.
 # more
-- https://github.com/SyncProxy/sync-client
-  - SyncProxy javascript client with support for all major embedded databases (IndexedDB, SQLite, WebSQL, LokiJS...)
+- https://github.com/SyncProxy/sync-client /202012/js/inactive
+  - SyncProxy-client is a javascript client for SyncProxy that enables one-single line of code implementation of synchronization for javascript offline applications using embedded database (IndexedDB, SQLite, SQLJS, WebSQL, LokiJS...).

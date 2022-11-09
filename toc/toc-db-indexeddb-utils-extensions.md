@@ -79,6 +79,15 @@ modified: 2022-11-04T14:22:17.373Z
 - https://github.com/jvilk/BrowserFS
   - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
 # indexeddb-cache
+- https://github.com/akirarika/kurimudb /202202/ts
+  - 一款渐进式的 Web 端本地存储库，可将数据保存到 LocalStorage、IndexedDB、Cookie 等地方，和订阅值的变更。
+  - 除了持久化数据之外，若你愿意，Kurimudb 还能成为你应用的 Model 层抽象，接任你应用中状态管理库的职责 (如 Vuex、Redux、Mobx)，使你应用真正拥有单一数据来源。
+
+- https://github.com/piotr-cz/swr-idb-cache
+  - IndexedDB Cache Provider for SWR
+  - Synchronize SWR Cache with IndexedDB to get offline cache.
+  - Library reads current state of cache stored in IndexedDB into memory using idb during initialization. Then it resolves into Cache Provider which should be passed to SWR.
+
 - https://github.com/yishiashia/indexeddb-image-cache
   - A example of images cached with indexedDB.
 
@@ -172,7 +181,6 @@ modified: 2022-11-04T14:22:17.373Z
   - https://github.com/mWater/minimongo
   - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
   - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
-  - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries 
 
 - ZangoDB /1kStar/MIT/201710/js
   - https://github.com/erikolson186/zangodb

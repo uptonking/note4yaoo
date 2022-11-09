@@ -9,7 +9,7 @@ modified: 2022-06-03T22:06:16.249Z
 
 # guide
 - search
-  - big json store/update
+  - big json store/update > json patch
   - react indexeddb， 编辑器数据频繁的更新可参考编辑器实时协作的更新
 
 - 更适合block-editor的数据结构是否是 mongodb ？
@@ -17,12 +17,49 @@ modified: 2022-06-03T22:06:16.249Z
 - 用indexeddb如何保存和更新层数很深的树型数据？
   - 可以将tree打平为索引号 1.1, 1.2.1
 # popular
+- minimongo /1kStar/LGPLv3/202207/ts
+  - https://github.com/mWater/minimongo
+  - Client-side in-memory mongodb backed by localstorage with server sync over http
+  - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
+  - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
+  - sqlite plugin is also supported when available
+  - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries. It was forked in January 2014.
+
+- nedb /13.1kStar/MIT/201602/js
+  - https://github.com/louischatriot/nedb
+  - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency.
+  - API is a subset of MongoDB's and it's plenty fast.
+  - You can use NeDB as an in-memory only datastore or as a persistent datastore. 
+  - One datastore is the equivalent of a MongoDB collection
+  - Under the hood, NeDB's persistence uses an append-only format, meaning that all updates and deletes actually result in lines added at the end of the datafile, for performance reasons.
+  - If you specify a filename, the database will be persistent, and automatically select the best storage method available (IndexedDB, WebSQL or localStorage) depending on the browser.
+  - [Is this still maintained?](https://github.com/louischatriot/nedb/issues/492)
+  - forks
+    - https://github.com/seald/nedb
+    - https://github.com/HalleyAssist/nedb
+    - https://github.com/bajankristof/nedb-promises
+- https://github.com/tedb-org/teDB /ts
+  - A structure sane embedded database with pluggable storage and clean concise documentation.
+  - TeDB uses an AVL balanced binary tree binary-type-tree to save indexed fields of documents.
+  - a storage driver that can either work to persists data to disk or save data to memory. 
+- https://github.com/typicode/lowdb /ts
+  - a small local JSON database powered by Lodash 
+  - supports Node, Electron and the browser
+
+- remotestorage.js /2.2kStar/MIT/202211/ts
+  - https://github.com/remotestorage/remotestorage.js
+  - https://remotestoragejs.readthedocs.io/
+  - a JavaScript library for storing user data locally in the browser, as well as connecting to remoteStorage servers and syncing data across devices and applications.
+  - It is also capable of connecting and syncing data with a person's Dropbox or Google Drive account (optional).
+  - The first prototype of rs.js was written in November 2010. The library is well-tested and actively maintained.
+  - rs.js optionally supports Dropbox and Google Drive as storage backends which users can connect.
+
 - localForage /20.5kStar/Apache2/202110/js/inactive
   - https://github.com/localForage/localForage
   - https://localforage.github.io/localForage
   - localForage is a fast and simple storage library for JavaScript. 
   - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple, localStorage-like API.
-- https://github.com/dannyconnell/localbase
+- https://github.com/dannyconnell/localbase /202012/js/inactive
   - A Firebase-Style Database ... Offline!
   - Localbase is built on top of LocalForage.
   - Localbase gives you an offline database with the simplicity & power of Firebase, all stored in the user's browser (in an IndexedDB database).
@@ -31,17 +68,10 @@ modified: 2022-06-03T22:06:16.249Z
     - Databases contain Collections (e.g. users)
     - Collections contain Documents (e.g. { id: 1, name: 'Bill', age: 47 }
   - https://github.com/kkosmowski/react-notes-2
-- https://github.com/creately/rxdata
+    - 依赖localbase操作indexeddb
+- https://github.com/creately/rxdata /202106/ts/inactive
   - RxData is a schemaless reactive document database for web browsers. 
   - It is inspired by rxdb but uses localForage instead of pouchdb to store data.
-
-- minimongo /1kStar/LGPLv3/202207/ts
-  - https://github.com/mWater/minimongo
-  - Client-side in-memory mongodb backed by localstorage with server sync over http
-  - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
-  - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries. It was forked in January 2014.
-  - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
-  - sqlite plugin is also supported when available
 
 - ZangoDB /1kStar/MIT/201710/js
   - https://github.com/erikolson186/zangodb
@@ -69,27 +99,6 @@ modified: 2022-06-03T22:06:16.249Z
     - Easy ETL and options for persistence by data import / manipulation / export of several formats
     - All major browsers, Node.js, and mobile applications
 # db-powered-by-indexeddb
-- nedb /13.1kStar/MIT/201602/js/deprecated
-  - https://github.com/louischatriot/nedb
-  - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency. 
-  - API is a subset of MongoDB's and it's plenty fast.
-  - You can use NeDB as an in-memory only datastore or as a persistent datastore. 
-  - One datastore is the equivalent of a MongoDB collection
-  - Under the hood, NeDB's persistence uses an append-only format, meaning that all updates and deletes actually result in lines added at the end of the datafile, for performance reasons.
-  - If you specify a filename, the database will be persistent, and automatically select the best storage method available (IndexedDB, WebSQL or localStorage) depending on the browser.
-  - [Is this still maintained?](https://github.com/louischatriot/nedb/issues/492)
-  - forks
-    - https://github.com/seald/nedb
-    - https://github.com/HalleyAssist/nedb
-    - https://github.com/bajankristof/nedb-promises
-- https://github.com/tedb-org/teDB /ts
-  - A structure sane embedded database with pluggable storage and clean concise documentation.
-  - TeDB uses an AVL balanced binary tree binary-type-tree to save indexed fields of documents.
-  - a storage driver that can either work to persists data to disk or save data to memory. 
-- https://github.com/typicode/lowdb /ts
-  - a small local JSON database powered by Lodash 
-  - supports Node, Electron and the browser
-
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb
   - https://rxdb.info/
@@ -102,27 +111,6 @@ modified: 2022-06-03T22:06:16.249Z
     - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
     - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
 
-- https://github.com/gruns/ImmortalDB /inactive
-  - the best way to store persistent key-value data in the browser. 
-  - Data saved to ImmortalDB is redundantly stored in Cookies, IndexedDB, and LocalStorage, and relentlessly self heals if any data therein is deleted or corrupted.
-
-- https://github.com/akirarika/kurimudb
-  - 一款渐进式的 Web 端本地存储库，可将数据保存到 LocalStorage、IndexedDB、Cookie 等地方，和订阅值的变更。
-  - 除了持久化数据之外，若你愿意，Kurimudb 还能成为你应用的 Model 层抽象，接任你应用中状态管理库的职责 (如 Vuex、Redux、Mobx)，使你应用真正拥有单一数据来源。
-
-- https://github.com/piotr-cz/swr-idb-cache
-  - IndexedDB Cache Provider for SWR
-  - Synchronize SWR Cache with IndexedDB to get offline cache.
-  - Library reads current state of cache stored in IndexedDB into memory using idb during initialization. Then it resolves into Cache Provider which should be passed to SWR.
-
-- https://github.com/elmarti/camadb /ts/inactive
-  - CamaDB is a NoSQL embedded database written in pure TypeScript for Node, Electron and browser-based environments
-  - I was struggling to find a solution for Electron-based projects that deal with larger datasets in the main thread.
-    - I had issues getting SQLite to work with webpack due to its native build
-    - SQLite doesn't (by default) return native JS data types (Dates in particular)
-    - Other NoSQL embedded databases seem to be largely abandoned
-    - Most other NoSQL embedded databases seem to be limited by V8's hard string length limits
-
 - kvs /125Star/MIT/202209/ts
   - https://github.com/azu/kvs
   - Key Value storage for Browser, Node.js, and In-Memory.
@@ -131,14 +119,28 @@ modified: 2022-06-03T22:06:16.249Z
     - However,  `Window.localStorage` does not work on Web Workers or Service Worker
   - @kvs/* packages provide async storage API using IndexedDB etc and resolve this issue.
 
-- https://github.com/SourceCodeBot/crudodb
+- https://github.com/gruns/ImmortalDB /202008/js/inactive
+  - the best way to store persistent key-value data in the browser. 
+  - Data saved to ImmortalDB is redundantly stored in Cookies, IndexedDB, and LocalStorage, and relentlessly self heals if any data therein is deleted or corrupted.
+
+- https://github.com/elmarti/camadb /202110/ts/inactive
+  - CamaDB is a NoSQL embedded database written in pure TypeScript for Node, Electron and browser-based environments
+  - I was struggling to find a solution for Electron-based projects that deal with larger datasets in the main thread.
+    - I had issues getting SQLite to work with webpack due to its native build
+    - SQLite doesn't (by default) return native JS data types (Dates in particular)
+    - Other NoSQL embedded databases seem to be largely abandoned
+    - Most other NoSQL embedded databases seem to be limited by V8's hard string length limits
+
+- https://github.com/google/lovefield  /6.8kStar/Apache2/202005/js
+  - Lovefield is a relational database written in pure JavaScript.
+  - It provides SQL-like syntax and works cross-browser
+  - [Lovefield wraps IndexedDB objects in different classes](https://github.com/google/lovefield/blob/master/docs/dd/02_data_store.md)
+
+- https://github.com/SourceCodeBot/crudodb /202112/archived
   - CrudoDb allows you to write offline-first webapps without any backend implementation.
   - Offline-first IndexedDb wrapper written in TypeScript, which is able to sync with backend services by passing optional service implementation.
 
-- https://github.com/yanli0303/sql-js-worker-test
-  - sql.js tests with IndexedDB as storage and Worker
-
-- https://github.com/microsoft/ObjectStoreProvider
+- https://github.com/microsoft/ObjectStoreProvider /202207/ts
   - A cross-browser/platform indexeddb-like client library
   - We developed ObjectStoreProvider after needing a simplified interface toobject storage/retrieval that worked not only across all browsers. We also have built a fully in-memory database provider that has no persistence but supports fully transactional semantics
   - This project has some notable differences to NoSqlProvider
@@ -151,11 +153,6 @@ modified: 2022-06-03T22:06:16.249Z
   - https://github.com/Microsoft/reactxp/tree/master/samples/TodoList
   - https://github.com/microsoft/reactxp /inactive
     - ReactXP is a library for cross-platform app development using React and React Native.
-
-- https://github.com/google/lovefield  /6.8kStar/Apache2/202005/js
-  - Lovefield is a relational database written in pure JavaScript.
-  - It provides SQL-like syntax and works cross-browser
-  - [Lovefield wraps IndexedDB objects in different classes](https://github.com/google/lovefield/blob/master/docs/dd/02_data_store.md)
 # indexeddb-query-sql
 - https://github.com/ujjwalguptaofficial/JsStore
   - A complete IndexedDB wrapper with SQL like syntax.
@@ -177,6 +174,9 @@ modified: 2022-06-03T22:06:16.249Z
   - SFDatabase-js is a database library that can help you build a SQL Query and execute it to the server from Nodejs or local browser with WebSQL. 
   - It will fallback to IndexedDB or LocalStorage for saving the database if running on browser.
 
+- https://github.com/yanli0303/sql-js-worker-test
+  - sql.js tests with IndexedDB as storage and Worker
+
 - https://github.com/YeloPartyHat/LocalDatabase
   - A simple queryable embedded database designed for front-end that wraps IndexedDB.
   - A limitation of IndexedDB is that you can only perform 1 write operation at a time. Currently, IndexedDB also limits you to only having 1 instance open per browser!
@@ -185,14 +185,17 @@ modified: 2022-06-03T22:06:16.249Z
 - https://github.com/maxgaurav/indexeddb-orm
   - https://maxgaurav.github.io/indexeddb-orm
   - An indexedDB wrapper for accessing indexedDB as a promise base api implementation.
+
+- https://github.com/arashi-dev/local-orm
+  - a minified library to manage local storages (e.g. localStorage, sessionStorage, indexedDB etc.) just like a real database with more functionality
+
 - https://github.com/leegeunhyeok/bxd
   - https://bxd.vercel.app/
   - Object relational mapping for IndexedDB
+
 - https://github.com/BackdoorTech/Beast-ORM
   - ORM for accessing indexedDB as a promise base api implementation.
   - plan to support indexeddb and sqlite
-- https://github.com/arashi-dev/local-orm
-  - a minified library to manage local storages (e.g. localStorage, sessionStorage, indexedDB etc.) just like a real database with more functionality
 # more-indexeddb
 - https://github.com/falsandtru/clientchannel
   - Persist objects and sync them between tabs via IndexedDB or LocalStorage.

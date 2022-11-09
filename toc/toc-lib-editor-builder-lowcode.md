@@ -7,10 +7,27 @@ modified: 2020-12-28T12:24:09.275Z
 
 # toc-lib-editor-builder-lowcode
 
-# low-code
+# guide
 
+- lowcode vs builder
+  - 建站侧重于自动生成并发布页面，而不是编辑器
+# low-code-popular
 - ref
   - https://github.com/taowen/awesome-lowcode
+
+- https://github.com/baidu/amis
+  - /4.3kStar//Apache2/202009
+  - 依赖mobx、react、jquery、sortablejs、tinymce
+  - 前端低代码框架，通过JSON配置就能生成各种后台页面，不适合大量交互、定制ui
+  - https://github.com/aisuda/amis-editor-demo
+    - http://aisuda.github.io/amis-editor-demo
+    - amis 可视化编辑器示例
+    - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
+
+- https://github.com/alibaba/lowcode-engine
+  - https://lowcode-engine.cn/
+  - 一套面向扩展设计的企业级低代码技术体系 
+  - 引擎完整实现了《低代码引擎搭建协议规范》和《低代码引擎物料协议规范》，协议栈是低代码领域的物料能否流通的关键部分。
 
 - https://github.com/appsmithorg/appsmith
   - /340Star/Apache2/202009/ts/java
@@ -28,15 +45,6 @@ modified: 2020-12-28T12:24:09.275Z
   - No-Code System
   - core依赖unist-builder
 # lowcode-solutions
-- https://github.com/baidu/amis
-  - /4.3kStar//Apache2/202009
-  - 依赖mobx、react、jquery、sortablejs、tinymce
-  - 前端低代码框架，通过JSON配置就能生成各种后台页面，不适合大量交互、定制ui
-  - https://github.com/aisuda/amis-editor-demo
-    - http://aisuda.github.io/amis-editor-demo
-    - amis 可视化编辑器示例
-    - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
-
 - https://github.com/umijs/sula
   - Pluggable enterprise-level configurable framework based on antd and umi.
   - sula-builder：可视化搭建平台

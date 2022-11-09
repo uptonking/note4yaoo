@@ -9,6 +9,20 @@ modified: 2022-04-05T10:10:22.091Z
 
 # guide
 
+# Portable Text
+- portabletext /1kStar/MIT/202202/md/text
+  - https://github.com/portabletext/portabletext
+  - Portable Text is a JSON based rich text specification for modern content editing platforms.
+  - Portable Text is presented by Sanity.io
+
+- Portable Text is an agnostic abstraction of rich text that can be serialized into pretty much any markup language, be it HTML, Markdown, SSML, XML, etc. 
+  - It's designed to be efficient for real-time collaborative interfaces, and makes it possible to annotate rich text with additional data structures recursively.
+- Portable Text is built on the idea of rich text as an array of blocks, themselves arrays of children spans. 
+  - Each block can have a style and a set of mark definitions, which describe data structures distributed on the children spans. 
+  - Portable Text also allows for custom content objects in the root array, enabling editing- and rendering environments to mix rich text with custom content types.
+# Block Protocol
+- https://github.com/blockprotocol/blockprotocol
+  - The Block Protocol is an open standard for building and using data-driven blocks.
 # Collaborative Editing in ProseMirror__201508
 - https://news.ycombinator.com/item?id=10002553
 - Hi! Joseph Gentle here, author of ShareJS.
@@ -36,8 +50,6 @@ modified: 2022-04-05T10:10:22.091Z
 - A correct OT transform, yes. But I'm not using OT's invariants, so this is not something my transforms do. For example, in my system, if you have "insert X at pos 5" and "insert Y at pos 5", the document will contain "XY" or "YX", depending on which arrived first.
 
 - A minimal backend can be extremely simple, just relaying changes, but if you want it to keep a running snapshot of the current document, you'll need the capacity to apply those changes to document, so you'd need to use the module used by the client, or a port of that.
-
-
 # [tinymce: To OT or CRDT, that is the question_202001](https://www.tiny.cloud/blog/real-time-collaboration-ot-vs-crdt/)
 - At a very high level, this is what we're dealing with:
   - OT relies on an active server connection (not quite correct but we'll get to that in a moment) to coordinate and guarantee all clients operate correctly.

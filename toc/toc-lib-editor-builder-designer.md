@@ -6,9 +6,12 @@ modified: 2020-11-17T13:38:19.107Z
 ---
 
 # toc-lib-editor-builder-designer
-- 拖拽编辑器可用于界面设计、图表设计、产品原型设计
+
+# guide
+- designer侧重编辑器和图形
+  - 将可拖拽编辑器用于界面设计、图表设计、产品原型设计
 # popular
-- grida /104Star/Apache2/202206/ts
+- grida /104Star/Apache2/202206/ts/design2code
   - https://github.com/gridaco/grida
   - https://grida.co/
   - Skia based performant live design collaboration & workspace app - redesigned for both designers and developers
@@ -26,11 +29,19 @@ modified: 2020-11-17T13:38:19.107Z
 - craft.js /MIT/3kStar/202009/ts
   - https://github.com/prevwong/craft.js
   - https://craft.js.org/
-  - core依赖immer，layers依赖redux、react-contenteditable、s-c
+  - core依赖immer，layers依赖react-contenteditable、s-c
   - A React Framework for building extensible drag and drop page editors
   - Craft.js is an abstraction where you implement your own page editor upon. 
     - For example, it does not come with a ready-made user interface.
     - However, you could still consider using the examples as a starting point.
+
+- brick-design/react-visual-editor /MIT/2.3kStar/202008
+  - https://github.com/brick-design/brick-design
+  - https://brick-design.github.io/brick-design/
+  - 组件可视化拖拽，页面搭建，源码生成工具, 自由拖拽嵌套
+  - 基于antd
+  - old-repo
+    - https://github.com/brick-design/react-visual-editor
 
 - https://github.com/plasmicapp/plasmic
   - https://www.plasmic.app/
@@ -73,13 +84,6 @@ modified: 2020-11-17T13:38:19.107Z
 - UI-Builder /Apache2/19Star/201901
   - https://github.com/iwangbowen/UI-Builder
   - 基于 bootstrap 4和jquery实现
-- react-visual-editor /MIT/2.3kStar/202008
-  - https://github.com/brick-design/brick-design
-  - https://brick-design.github.io/brick-design/
-  - 组件可视化拖拽，页面搭建，源码生成工具, 自由拖拽嵌套
-  - 基于antd
-  - old-repo
-    - https://github.com/brick-design/react-visual-editor
 - react-design-editor /556Star/MIT/202009
   - https://github.com/salgum1114/react-design-editor
   - https://salgum1114.github.io/react-design-editor/
@@ -137,17 +141,32 @@ modified: 2020-11-17T13:38:19.107Z
   - 依赖：antd4, braft-editor, koa, react-dnd, redux-thunk2, styled-components, swiper 
   - 一个页面构建平台demo，项目以展示思路为主，只有打包和预览部分运用了node，并未使用数据库
   - 当前项目中所包含的页面以及页面中的组件和组件中的状态，均以json格式存在redux store当中
-- amis-editor
+
+- amis /12.4kStar/Apache2/202211/ts
+  - https://github.com/baidu/amis
+  - https://baidu.github.io/amis/
+  - 前端低代码框架，通过 JSON 配置就能生成各种页面。
+  - core依赖react-json-view、uncontrollable、mobx-state-tree
+  - ui依赖codemirror5、echarts5、froala-editor、monaco-editor
+- amis-editor /1.6kStar/NotOpen/202210/ts
   - https://github.com/fex-team/amis-editor
   - http://fex-team.github.io/amis-editor
   - 可视化编辑器在线工具 
   - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
 # h5-editor
-- h5-dooring /5.4kStar/GPL/202109/ts
+- h5-dooring /7kStar/GPLv3/202211/ts
   - https://github.com/MrXujiang/h5-Dooring
   - http://h5.dooring.cn/
   - H5可视化页面配置解决方案
-  - 依赖umi、antd、redux、react-dnd、koa、braft-editor
+  - 技术栈以react和typescript为主， 后台采用nodejs开发, 正在探索h5-lowcode解决方案
+  - editor依赖antd4、braft-editor、react-dnd
+  - ui依赖umi、antd-pro、react-grid-layout
+
+- luban-h5 /5.6kStar/GPLv3/202209/js/vue
+  - https://github.com/ly525/luban-h5
+  - https://ly525.gitee.io/luban-h5
+  - 鲁班H5是基于Vue2.0开发、通过拖拽快速生成页面的平台
+  - 类似 易企秀、Maka、百度 H5 等平台
 
 - react-designer /1.7kStar/MIT/201906/js
   - https://github.com/react-designer/react-designer

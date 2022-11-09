@@ -74,6 +74,10 @@ modified: 2021-05-14T14:46:37.026Z
   - Juniper is a lightweight JavaScript library for adding interactive, editable and runnable code snippets to any website. 
   - It uses JupyterLab components and Binder, inspired by Min RK's Thebelab
 
+- https://github.com/ElixirNote/elixirnote
+  - https://elixirnote.github.io/elixir-web/
+  - An extensible environment for interactive and reproducible computing, based on the Jupyter Notebook and Ecosystem.
+
 - https://github.com/datalayer/jupyter-react
   - https://datalayer.tech/
   - React.js components to create a data product compatible with the Jupyter ecosystem .

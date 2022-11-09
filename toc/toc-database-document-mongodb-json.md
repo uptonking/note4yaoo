@@ -9,18 +9,6 @@ modified: 2022-11-03T04:14:11.987Z
 
 # guide
 - 更适合block-editor的数据结构是否是 mongodb？
-# db-document-json
-- redux-database /18Star/MIT/202005/ts/NoDeps
-  - https://github.com/nerdgeschoss/redux-database
-  - https://nerdgeschoss.github.io/redux-database
-  - Simple reducer based in-memory database with strong typings and immutable documents, with plugins for redux and react.
-  - Client side data normalization is hard. This library helps you to organize your state in a relational way, with queries and joins as you would expect from an SQL based database. 
-  - There is a storage adaper for redux or you can use it as a standalone library (redux-database has no dependencies!).
-
-- redux-db /25Star/MIT/201902/ts
-  - https://github.com/msolvaag/redux-db
-  - redux-db provides a normalized redux store and easy object management.
-  - Having a normalized state is a good strategy if your data is nested in different ways. 
 # mongodb-like
 - minimongo /1kStar/LGPLv3/202207/ts
   - https://github.com/mWater/minimongo
@@ -28,7 +16,7 @@ modified: 2022-11-03T04:14:11.987Z
   - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
   - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries 
 
-- nedb /13.1kStar/MIT/201602/js/deprecated
+- nedb /13.1kStar/MIT/201602/js
   - https://github.com/louischatriot/nedb
   - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency. 
   - API is a subset of MongoDB's and it's plenty fast.
@@ -38,11 +26,12 @@ modified: 2022-11-03T04:14:11.987Z
   - If you specify a filename, the database will be persistent, and automatically select the best storage method available (IndexedDB, WebSQL or localStorage) depending on the browser.
   - [Is this still maintained?](https://github.com/louischatriot/nedb/issues/492)
   - forks
-    - https://github.com/seald/nedb
+    - https://github.com/seald/nedb  /active
+      - Embedded persistent or in memory database for Node.js, Electron and browsers, 100% JavaScript, no binary dependency
     - https://github.com/bajankristof/nedb-promises
       - A dead-simple promise wrapper for nedb.
       - As of nedb-promises 5.0.0 nedb package has been replaced with a fork seald/nedb
-    - https://github.com/ArcBlock/nedb
+    - https://github.com/ArcBlock/nedb  /js/no-browser
       - NEDB fork and multi-process support
       - Use @nedb/mongoose-driver as a drop-in replacement for mongoose + mongodb to make apps lightweight
       - if you want to use nedb in browser, please use the original version.
@@ -58,13 +47,14 @@ modified: 2022-11-03T04:14:11.987Z
     - Index field with an array value are explicitly not supported.
     - Inserting a duplicate key will overwrite the existing key.
     - Keys must all be the same data type.
-- https://github.com/tedb-org/teDB /ts
+- https://github.com/tedb-org/teDB /201908/ts/inactive
   - A structure sane embedded database with pluggable storage and clean concise documentation.
   - TeDB uses an AVL balanced binary tree binary-type-tree to save indexed fields of documents.
   - a storage driver that can either work to persists data to disk or save data to memory. 
-- https://github.com/typicode/lowdb /ts
+- https://github.com/typicode/lowdb /active/ts
   - a small local JSON database powered by Lodash 
   - supports Node, Electron and the browser
+  - Change storage, file format (JSON, YAML, ...) or add encryption via adapters
 - https://github.com/ivrusson/mockon
   - Mock Server with data persistency based on MockJS and NeDB
 - https://github.com/harshgupta97/localhostdb
@@ -85,7 +75,7 @@ modified: 2022-11-03T04:14:11.987Z
   - https://github.com/bluesky50/ts-api-server-express-multi-db
   - https://github.com/caickdias/crud-api-express-nedb-joi
 
-- https://github.com/usmakestwo/githubDB
+- https://github.com/usmakestwo/githubDB /201811/js
   - A Lightweight Cloud based JSON Database with a MongoDB like API for Node.
   - You will never know that you are interacting with a Github
 
@@ -93,8 +83,17 @@ modified: 2022-11-03T04:14:11.987Z
   - A Lightweight Disk based JSON Database with a MongoDB like API for Node
   - You will never know that you are interacting with a File System
 
+- yunodb /246Star/CC0/201704/js/leveldb
+  - https://github.com/blahah/yunodb
+  - A portable, persistent, electron-embeddable fulltext search + document store database for node.js
+  - yuno is a JSON document store with fulltext search. 
+  - The document store, which is just the raw JSON objects stored in leveldb/browser-level
+  - yuno is being built to serve my use-case of embedding pre-made databases in electron apps
+  - forks
+    - https://github.com/pdepip/yunodb
+
 - https://github.com/Belphemur/node-json-db
-  - A simple "database" that use JSON file for Node.JS.
+  - A simple "database" that use JSON file for NodeJS
   - Every method are now asynchronous
 
 - picodb /31Star/MIT/202201/js
@@ -112,15 +111,20 @@ modified: 2022-11-03T04:14:11.987Z
   - MongoDB-like query language
   - Persistence built on LevelUP - you can pick back-end
 
-- yunodb /246Star/CC0/201704/js
-  - https://github.com/blahah/yunodb
-  - A portable, persistent, electron-embeddable fulltext search + document store database for node.js
-  - yuno is a JSON document store with fulltext search. 
-  - The document store, which is just the raw JSON objects stored in leveldb/browser-level
-  - yuno is being built to serve my use-case of embedding pre-made databases in electron apps
-
 - https://github.com/kofrasa/mingo
   - MongoDB query language for in-memory objects
+# db-document-json
+- redux-database /18Star/MIT/202005/ts/NoDeps
+  - https://github.com/nerdgeschoss/redux-database
+  - https://nerdgeschoss.github.io/redux-database
+  - Simple reducer based in-memory database with strong typings and immutable documents, with plugins for redux and react.
+  - Client side data normalization is hard. This library helps you to organize your state in a relational way, with queries and joins as you would expect from an SQL based database. 
+  - There is a storage adaper for redux or you can use it as a standalone library (redux-database has no dependencies!).
+
+- redux-db /25Star/MIT/201902/ts
+  - https://github.com/msolvaag/redux-db
+  - redux-db provides a normalized redux store and easy object management.
+  - Having a normalized state is a good strategy if your data is nested in different ways. 
 # object-storage/s3
 - https://github.com/jamhall/s3rver /js
   - A fake S3 server written in NodeJs

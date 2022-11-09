@@ -76,7 +76,7 @@ modified: 2022-11-08T21:14:54.399Z
 
 - https://github.com/Bistard/nota
   - open-sourced note-taking desktop application / markdown editor that provides WYSIWYG and noteTaking-like user experience.
-  - 依赖toast-ui
+  - 依赖toast-ui-editor
 # markdown-utils
 - https://github.com/marionebl/prosemirror  /mdx
   -基于react重新实现了部分prosemirror-view的功能，视图层用了pm-EditorState但没用pm-EditorView

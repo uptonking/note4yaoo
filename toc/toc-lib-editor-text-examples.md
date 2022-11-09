@@ -26,6 +26,10 @@ modified: 2022-11-08T19:03:33.865Z
 
 - https://github.com/lovasoa/react-contenteditable
   - React component for a div with editable contents
+
+- https://github.com/FormidableLabs/use-editable
+  - `useEditable` is a small hook that enables elements to be `contenteditable` while still being fully renderable. 
+  - This is ideal for creating small code editors or prose textareas in just 2kB!
 # computational-editor
 - https://github.com/jaredreich/calcutext
   - Calcutext is a web app where you can do calculations with your written text.

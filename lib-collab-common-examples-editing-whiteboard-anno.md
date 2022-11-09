@@ -11,7 +11,7 @@ modified: 2022-11-07T17:36:22.236Z
 
 # whiteboard-annotation
 - https://github.com/feakin/feakin-web
-  - Feakin 是一个架构资产可视化管理工具。
+  - Feakin是一个架构资产可视化管理工具。
   - 基于 图表即代码 的思想体系，支持导入 Mermaid, PlantUML, Excalidraw, Dot 等图形资产格式。
 
 - https://github.com/lovasoa/whitebophir /1.5kStar/AGPLv2/202211/js
@@ -79,7 +79,10 @@ modified: 2022-11-07T17:36:22.236Z
 
 - https://github.com/SkyGuardian42/piko.space
   - Collaborate at the speed of light and seamlessly sync offline work
+  - tiptap的协作示例
   - redis、yjs、tiptap
+  - 前端依赖tiptap、radix-ui、tan-query、yjs、zustand
+  - 后端依赖trpc、express、yjs、zod
 
 - https://github.com/baktiaditya/cother
   - A real-time collaborative code editor and previewer.
