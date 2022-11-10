@@ -1,6 +1,6 @@
 ---
 title: toc-lib-excel-list-tree
-tags: [lib, toc, tree]
+tags: [lib, toc, file-manager, tree]
 created: 2020-07-12T18:55:54.993Z
 modified: 2022-08-21T10:02:41.845Z
 ---
@@ -126,6 +126,7 @@ modified: 2022-08-21T10:02:41.845Z
   - Pack tree nodes into a flat object and unpack them again!
   - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
   - Limitations
+
     - It is assumed that you have children of each node in a single array object
     - Self referencing objects at any point in the tree are not supported
     - An id field is required to perform better change detection (using idKey option).
@@ -211,7 +212,7 @@ modified: 2022-08-21T10:02:41.845Z
   - data structures in JavaScript tend to be slower than the built-in Array and Map data structures in typical cases, because the built-in data structures are mostly implemented in a faster language such as C++
 - https://github.com/w8r/splay-tree
   - This tree is based on top-down splaying algorithm by D. Sleator.
-# file-folder-directory-scan-watch
+# file-folder-dir-scan-watch
 - 文件编辑浏览的实现思路
   - edit > ~~save(内存或本地)~~ > render
   - 文件逐个处理

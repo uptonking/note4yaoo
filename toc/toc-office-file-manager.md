@@ -53,81 +53,37 @@ modified: 2021-08-23T05:27:08.068Z
 
 - https://github.com/reactfilemanager/core
   - https://github.com/reactfilemanager/php-server
-# git-file-tree
-- https://github.com/ovity/octotree
-  - 旧版v3依赖jquery、jstree
-  - Octotree is a proprietary software. 
-  - This repository contains the old source code of a very limited version of Octotree.
+# file-manager-web
+- https://github.com/MrWangJustToDo/file-manager
+  - 依赖redux-thunk、sqlite3、jquery、codemirror、echarts
+  - 个人网盘，支持用户的登录、注册，文件/文件夹的新建、删除，文件的上传、下载、编辑、提交、预览、重命名、复制、回收、搜索
+  - 上传后文件保存为服务器本地文件，而不是数据库中，所以搜索不方便
+  - https://github.com/MrWangJustToDo/requestModule
+    - 可能是后端的简单测试
 
-- https://github.com/EnixCoda/Gitako
-  - 依赖 nprogress、react-window
-  - File tree extension for GitHub on Chrome & Firefox & Edge
-
-- https://github.com/brumm/tako
-  - 依赖react-query、styled-components、rehype-dom-parse、zustand
-  - Tako replaces the default Github repository file list with an expandable file tree and file preview
-- https://github.com/ineo6/git-master
-  - 依赖jquery、jquery-ui、jstree
-  - Git file tree (GitHub && GitLab && Gitee && Gitea && Gogs)
-  - Show GitHub repo size and file download support
-- https://github.com/FrankFan/gitlab-tree
-  - 依赖jquery、jstree
-  - Chrome extension to display Gitlab code in tree format.
-- https://github.com/jawil/GayHub
-  - 依赖monaco-editor、pjax、wolfy-eventemitter
-  - 文件目录树、toc
-
-- https://github.com/kaushiknishchay/better-git-viewer
-  - http://nkaushik.in/better-git-viewer/
-  - react based git repo viewer with file tree for better navigation.
-  - 依赖 isomorphic-git、@isomorphic-git/lightning-fs、material-ui
-
-- https://github.com/jpwilliams/gitree
-  - Print a directory tree that shows Git status and ignores files dictated by .gitignore.
-  - 命令行工具
-# gdrive-file-manager
 - https://github.com/rocketseat-content/youtube-clone-dropbox-menu
   - https://github.com/maykbrito/vanilla-ui-clone-dropbox-home
   - 模仿dropbox的首页，简洁大方
   - https://cranky-einstein-aff725.netlify.app/
-- https://github.com/emkis/dropbox-clone
+
+- https://github.com/emkis/dropbox-clone /202011/js
   - an easy way to store, share and access files from anywhere
   - 依赖后端
-- https://github.com/leoronne/dropbox-homepage-ui-clone
-  - https://dropbox.ui-clone.ronne.dev/
-  - 首页放了很多截图
+
 - https://github.com/tompdriscoll/DroppyBoy
   - https://droppyboy.herokuapp.com/#/
   - A Dropbox clone
   - 后端：nodejs+PostgreSQL
   - 前端：react+redux
   - 实现了登录认证、上传文件到aws s3
+
 - https://github.com/dhruska/node-dropbox
   - a simple Dropbox clone built in Node.js.
 
-- https://github.com/pqina/filepond
-  - https://github.com/pqina/filepond
-  - /NoDeps/active
-  - A flexible JavaScript file upload library that can upload anything you throw at it, optimizes images for faster uploads, and offers a great, accessible, silky smooth user experience.
-  - Accepts directories, files, blobs, local URLs, remote URLs and Data URIs.
-  - Drop files, select on filesystem, copy and paste files, or add files using the API.
-  - Async uploading with AJAX, or encode files as base64 data and send along form post.
-  - Image optimization, automatic image resizing, cropping, and fixes EXIF orientation.
-  - https://github.com/pqina/react-filepond
-    - a handy wrapper component for FilePond
-  - https://github.com/wladiston/filepond-server-example
-    - FilePond Server example using Express and AWS
-  - https://github.com/shahnawaz-pabon/File-Upload-With-Multer
-    - Uploading files with Multer in Node
+- https://github.com/leoronne/dropbox-homepage-ui-clone
+  - https://dropbox.ui-clone.ronne.dev/
+  - 首页放了很多截图
 
-- https://github.com/FineUploader/fine-uploader
-  - Multiple file upload plugin with image previews, drag and drop, progress bars. 
-  - Dependency-free
-  - [Fine Uploader is shutting down](https://github.com/FineUploader/fine-uploader/issues/2073)
-  - https://github.com/FineUploader/server-examples
-    - Server-side examples for the Fine Uploader library
-    - Traditional upload examples (upload to your own server): java, nodejs, php, python
-    - Fine Uploader S3/Azure examples
 - https://github.com/OpusCapita/filemanager
   - React based FileManager for browser ( + FS REST API for Node.js and Express)
   - supports connectors to different file storages like google drive, node server
@@ -164,6 +120,62 @@ modified: 2021-08-23T05:27:08.068Z
 
 - https://github.com/mickael-kerjean/filestash
   - A Dropbox-like file manager that let you manage your data anywhere it is located: FTP • FTPS • SFTP • WebDAV • Git • S3 • LDAP • Mysql CardDAV • CalDAV • Backblaze B2 • Minio Dropbox • Google Drive
+# file-uploader
+- https://github.com/pqina/filepond
+  - https://github.com/pqina/filepond
+  - /NoDeps/active
+  - A flexible JavaScript file upload library that can upload anything you throw at it, optimizes images for faster uploads, and offers a great, accessible, silky smooth user experience.
+  - Accepts directories, files, blobs, local URLs, remote URLs and Data URIs.
+  - Drop files, select on filesystem, copy and paste files, or add files using the API.
+  - Async uploading with AJAX, or encode files as base64 data and send along form post.
+  - Image optimization, automatic image resizing, cropping, and fixes EXIF orientation.
+  - https://github.com/pqina/react-filepond
+    - a handy wrapper component for FilePond
+  - https://github.com/wladiston/filepond-server-example
+    - FilePond Server example using Express and AWS
+  - https://github.com/shahnawaz-pabon/File-Upload-With-Multer
+    - Uploading files with Multer in Node
+
+- https://github.com/FineUploader/fine-uploader
+  - Multiple file upload plugin with image previews, drag and drop, progress bars. 
+  - Dependency-free
+  - [Fine Uploader is shutting down](https://github.com/FineUploader/fine-uploader/issues/2073)
+  - https://github.com/FineUploader/server-examples
+    - Server-side examples for the Fine Uploader library
+    - Traditional upload examples (upload to your own server): java, nodejs, php, python
+    - Fine Uploader S3/Azure examples
+# git-file-tree
+- https://github.com/ovity/octotree
+  - 旧版v3依赖jquery、jstree
+  - Octotree is a proprietary software. 
+  - This repository contains the old source code of a very limited version of Octotree.
+
+- https://github.com/EnixCoda/Gitako
+  - 依赖 nprogress、react-window
+  - File tree extension for GitHub on Chrome & Firefox & Edge
+
+- https://github.com/brumm/tako
+  - 依赖react-query、styled-components、rehype-dom-parse、zustand
+  - Tako replaces the default Github repository file list with an expandable file tree and file preview
+- https://github.com/ineo6/git-master
+  - 依赖jquery、jquery-ui、jstree
+  - Git file tree (GitHub && GitLab && Gitee && Gitea && Gogs)
+  - Show GitHub repo size and file download support
+- https://github.com/FrankFan/gitlab-tree
+  - 依赖jquery、jstree
+  - Chrome extension to display Gitlab code in tree format.
+- https://github.com/jawil/GayHub
+  - 依赖monaco-editor、pjax、wolfy-eventemitter
+  - 文件目录树、toc
+
+- https://github.com/kaushiknishchay/better-git-viewer
+  - http://nkaushik.in/better-git-viewer/
+  - react based git repo viewer with file tree for better navigation.
+  - 依赖 isomorphic-git、@isomorphic-git/lightning-fs、material-ui
+
+- https://github.com/jpwilliams/gitree
+  - Print a directory tree that shows Git status and ignores files dictated by .gitignore.
+  - 命令行工具
 # file-electron
 - https://github.com/warpdesign/react-explorer
   - File manager written in TypeScript, React, Blueprint and packaged with Electron
@@ -177,7 +189,6 @@ modified: 2021-08-23T05:27:08.068Z
 - https://github.com/sindresorhus/electron-serve
   - Static file serving for Electron apps
 
- 
 - https://github.com/vasylhoban/electron-file-manager
   - File manager created on Electron/React/Redux (Windows, in future cross-browser)
 - https://github.com/warpdesign/react-explorer /202011
@@ -229,12 +240,6 @@ modified: 2021-08-23T05:27:08.068Z
   - You can mount a remote repository's branch locally, and any subsequent changes made to the files will be automatically committed to the remote.
   - 但vscode不是直接集成git了吗
 # more-files-manager
-- https://github.com/MrWangJustToDo/file-manager
-  - 依赖redux-thunk、sqlite3、jquery、codemirror、echarts
-  - 个人网盘，支持用户的登录、注册，文件/文件夹的新建、删除，文件的上传、下载、编辑、提交、预览、重命名、复制、回收、搜索
-  - https://github.com/MrWangJustToDo/requestModule
-    - 可能是后端的简单测试
-
 - https://github.com/imshubhamsingh/file-system-react
   - 依赖redux、styled-components、formik
   - File System UI in Web using react

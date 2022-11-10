@@ -126,17 +126,19 @@ modified: 2022-11-03T04:14:11.987Z
   - redux-db provides a normalized redux store and easy object management.
   - Having a normalized state is a good strategy if your data is nested in different ways. 
 # object-storage/s3
-- https://github.com/jamhall/s3rver /js
-  - A fake S3 server written in NodeJs
-  - It is extremely useful for testing S3 in a sandbox environment without actually making calls to Amazon.
-
 - minio /36.1kStar/AGPLv3/202211/go
   - https://github.com/minio/minio
   - https://min.io/download
   - MinIO is a High Performance Object Storage
   - It is API compatible with Amazon S3 cloud storage service.
 
-- https://github.com/scality/cloudserver
+- s3rver /471Star/MIT/202110/js
+  - https://github.com/jamhall/s3rver
+  - A fake S3 server written in NodeJs
+  - It is extremely useful for testing S3 in a sandbox environment without actually making calls to Amazon.
+
+- cloudserver /1.4kStar/apache2/202211/js
+  - https://github.com/scality/cloudserver
   - Zenko CloudServer, an open-source Node.js implementation of the Amazon S3 protocol on the front-end and backend storage capabilities to multiple clouds, including Azure and Google.
   - CloudServer (formerly S3 Server) is an open-source Amazon S3-compatible object storage server 
   - CloudServer is useful for Developers, either to run as part of a continous integration test environment to emulate the AWS S3 service locally or as an abstraction layer

@@ -82,3 +82,11 @@ modified: 2020-10-22T06:51:07.421Z
 # search-non-js
 - https://github.com/meilisearch/meilisearch /rust
   - fast search engine that fits effortlessly into your apps, websites, and workflow.
+
+# search-ui-examples
+
+- https://github.com/hemantwasthere/GitHub-Clone
+  - search any github authorized user in this app and checkout there profile
+
+- https://github.com/mohamedbenattia99/Github-repositories-clone
+  - a Github repositories clone with search functionality. The project uses THE GITHUB API.

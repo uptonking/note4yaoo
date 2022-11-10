@@ -53,3 +53,5 @@ modified: 2020-08-03T13:29:04.709Z
   - 俄罗斯方块
   - https://github.com/ceolter/tetris
   - https://github.com/superchu/blocks
+  - https://github.com/antonioolf/tetriss
+    - Tetris clone written in JavaScript

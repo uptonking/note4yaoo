@@ -51,9 +51,10 @@ modified: 2021-11-19T06:53:19.649Z
   - face with rolling eyes
 - 🤧 😮‍💨
   - ime 喷嚏 叹气
-- 
-- 
-- 
+- 🚨
+  - 出警 
+- ⛔️
+  - 停
 
 ### hands/fingers
 

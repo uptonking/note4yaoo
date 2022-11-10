@@ -17,7 +17,11 @@ modified: 2021-08-16T06:46:12.800Z
 
 - ## 
 
-- ## 
+- ## Angel Uriostegui 设计师，白背景圆角
+- https://angel-seven.vercel.app/
+- https://twitter.com/anguriostegui
+- https://powerkit.app/
+  - https://vedio-alpha.vercel.app/
 
 - ## Revisiting an old brainstorm I had for a personal site design.
 - https://twitter.com/vincentriemer/status/1535700481246343168

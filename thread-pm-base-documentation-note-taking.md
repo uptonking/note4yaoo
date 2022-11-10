@@ -15,9 +15,7 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 
 
-- ## 
-
-- ## . @logseq users in my timeline. How do define when to go block-based vs going page-based in your graphs?
+- ## @logseq users in my timeline. How do define when to go block-based vs going page-based in your graphs?
 - https://twitter.com/PabloBernardoTW/status/1534193024934326273
 - Here's my writing process in @RoamResearch 
   - 1. DNP for 95% of my writing 

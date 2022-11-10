@@ -7,7 +7,11 @@ modified: 2022-11-04T14:20:37.172Z
 
 # toc-db-sqlite-utils-extensions
 
+# popular
+- https://github.com/benbjohnson/litestream /go
+  - Streaming replication for SQLite.
 # extensions
+
 - https://github.com/asg017/sqlite-lines  /clang/python
   - A SQLite extension for reading large files line-by-line (NDJSON, logs, txt, etc.)
 

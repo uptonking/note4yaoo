@@ -26,6 +26,7 @@ modified: 2020-11-11T13:16:24.994Z
 
 - https://github.com/simonw/datasette  /python
   - https://global-power-plants.datasettes.com/global-power-plants/global-power-plants
+  - 不依赖flask和django，依赖jinjia
   - a tool for exploring and publishing data. 
   - It helps people take data of any shape or size and publish that as an interactive, explorable website and accompanying API.
 # covid-19

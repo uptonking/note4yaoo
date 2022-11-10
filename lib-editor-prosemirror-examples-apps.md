@@ -193,7 +193,7 @@ modified: 2022-08-18T16:57:15.296Z
 - https://github.com/NoteHub-official/RetroFlux
   - fully-customizable collaborative knowledge management app featuring note-taking, note-sharing, community, knowledge graph functionalities.
 
-- https://github.com/PelagicCreatures/marlin /20224/js/inactive
+- https://github.com/PelagicCreatures/marlin /202204/js/inactive
   - An ExpressJS CMS for sites with Sequelize db backends
   - This package implements a relational typed admin backend built from sequelize model definitions with granular access control for editing tables using ACLs for users and roles.
   - https://github.com/PelagicCreatures/marlin-app

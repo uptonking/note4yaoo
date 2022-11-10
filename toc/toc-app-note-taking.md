@@ -122,6 +122,12 @@ modified: 2020-10-22T10:03:50.526Z
   - Performant graph visualization on the web with WebGL + Webworkers + IndexedDB
   - You can visualize Notion pages on force layout graph using this library
 # more-note-app
+- https://github.com/dvstechlabs/Noteslify /202211/js
+  - A Notes Taking Web App Built With Simplicity.
+  - Your Privacy Friendly, Open Source. Alternative to EverNote.
+  - 编辑器是简单textarea
+  - ui界面和后台功能基本实现
+
 - simplenote-electron /4.1kStar/GPLv2/202201/ts/inactive
   - https://github.com/Automattic/simplenote-electron
   - https://simplenote.com/
