@@ -90,12 +90,13 @@ modified: 2020-10-22T10:03:50.526Z
   - 依赖Qt5, turndown, markdown-it
   - a note-taking application that knows programmers and Markdown better.
 
-- takenote /2.8kStar/MIT/202010/ts
+- takenote /2.8kStar/MIT/202108/ts/数据可选local或github
   - https://github.com/taniarascia/takenote
   - https://takenote.dev/app
   - 依赖react-beautiful-dnd、react-router、@reduxjs/toolkit、redux-saga、react-markdown、axios、codemirror、express、jszip
   - A free, open-source notes app for the web
-  - TakeNote was made by developers for developers - a plain-text note-taking app for the web with Markdown support. 
+  - The notes are persisted temporarily in local storage, but you can download all notes in markdown format as a zip.
+  - Hidden within the code is an alternate version that contain a Node/Express server and integration with GitHub.
   - 👉🏻 What you see is what you paste. No WYSIWIG, no formatting pasted from the web, and no features you don't need or want. 
 
 - trilium /17.1kStar/AGPL.v3/202208/js/ckeditor5/支持多端

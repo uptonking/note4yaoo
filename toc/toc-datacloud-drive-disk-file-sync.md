@@ -121,10 +121,7 @@ modified: 2022-09-10T02:26:52.062Z
 
 - https://github.com/OneDrive/onedrive-texteditor-js
   - sample application provides a simple markdown (text) editor experience for files stored in OneDrive.
-# sync-protocol
-
 # google-drive
-
 - https://github.com/ErickWendel/semana-javascript-expert05
   - JS Expert 5.0 Week classes - Google Drive Clone
   - This is the starting code to start our journey.
@@ -181,10 +178,18 @@ modified: 2022-09-10T02:26:52.062Z
 - https://github.com/trnwrckd/drive-clone-ui
   - https://relaxed-kheer-00772d.netlify.app/
   - Tried cloning parts of Google Drive
-# dropbox
+# known-drive-dropbox
 - https://github.com/eltonlazzarin/dropbox-fake-app
   - RocketBox - A Full Stack Project App
   - react native
+
+- takenote /2.8kStar/MIT/202108/ts/数据可选local或github
+  - https://github.com/taniarascia/takenote
+  - https://takenote.dev/app
+  - 依赖react-beautiful-dnd、react-router、@reduxjs/toolkit、redux-saga、react-markdown、axios、codemirror、express、jszip
+  - A free, open-source notes app for the web
+  - The notes are persisted temporarily in local storage, but you can download all notes in markdown format as a zip.
+  - Hidden within the code is an alternate version that contain a Node/Express server and integration with GitHub.
 # more-drive
 - https://github.com/FazioNico/dDrive
   - An alternative storage solution to Google Drive
