@@ -10,7 +10,6 @@ modified: 2021-04-12T17:41:42.395Z
 # ux
 
 - 浏览器tab页的标题可在适合的场景展示下载进度、播放进度
-
 # interactions
 
 # examples
@@ -19,12 +18,15 @@ modified: 2021-04-12T17:41:42.395Z
   - [FOX News Presidential Election Results](https://www.foxnews.com/elections/2020/general-results)
 
 ## 粒子特效
+
 - https://github.com/VincentGarreau/particles.js
   - https://codepen.io/VincentGarreau/pen/bGxvQd
   - 红背景，白粒子
 
+- https://github.com/catdad/canvas-confetti
+  - https://www.kirilv.com/canvas-confetti/
+  - 彩带碎屑
 # discuss
-
 - ## 7 Powerful UX Laws explained for normal people. 
 - https://twitter.com/d__raptis/status/1389161572958937092
 - Hick's Law

@@ -24,9 +24,12 @@ modified: 2022-11-11T03:09:56.491Z
   - [Appscope](https://appsco.pe/)
     - https://appsco.pe/toplist
 # pwa-sites
+- ref
+  - https://github.com/hemanth/awesome-pwa
+
 - MConverter - File Converter: AVIF, JXL, WebP
   - https://mconverter.eu/
-# pwa-open-examples
+# pwa-product-examples
 - crossnote
   - https://crossnote.app/
 
@@ -37,6 +40,54 @@ modified: 2022-11-11T03:09:56.491Z
 
 - https://github.com/blenderskool/blaze
   - File sharing progressive web app built using WebTorrent and WebSockets
+- https://github.com/The-Robin-Hood/dropit
+  - PWA shares your files locally at ease
+# pwa-open-examples
+- https://github.com/soup-bowl/whatsth.is
+  - https://whatsth.is/
+  - React-based progressive web app proof-of-concept designed to provide a toolbox of assorted helpful development tools.
+
+- https://github.com/bangle-io/bangle-io
+  - A web only WYSIWYG note taking app that saves notes locally in markdown format.
+
+- https://github.com/ygkn/emoji-picker
+  - https://ygkn.github.io/emoji-picker/
+  - A PWA to pick and copy emoji as text or image.
+
+- https://github.com/benji6/moodtracker
+  - A serverless and offline-first PWA that lets you track your mood
+  - 后端python
+# pwa-starter
+- https://github.com/preactjs/preact-cli
+  - Start building a Preact Progressive Web App in seconds
+
+- https://github.com/cTux/vitejs-react-ts-template
+  - PWA manifest
+
+- https://github.com/cra-template/pwa
+  - source code for the cra-template-pwa and cra-template-pwa-typescript packages.
+- https://github.com/Atyantik/react-pwa
+  - An upgradable boilerplate for Progressive web applications (PWA) with server side rendering, build with SEO in mind
+  - This framework utilizes the power of React 18 with Suspense.
+- https://github.com/suren-atoyan/react-pwa
+  - a modern production-ready setup created by developers for developers 
+
+- https://github.com/pwa-builder/pwa-starter
+  - The PWABuilder pwa-starter is our opinionated, best practices, production tested starter that we use to build all of our PWAs, including PWABuilder itself!
+
+- https://github.com/shadowwalker/next-pwa
+  - Zero config PWA plugin for Next.js, with workbox
+- https://github.com/vite-pwa/vite-plugin-pwa
+  - Zero-config PWA Framework-agnostic Plugin for Vite
+  - generate service worker with offline support (via Workbox)
+  - built-in support for Vanilla JavaScript, Vue 3, React, Svelte, SolidJS and Preact
+- https://github.com/Tomburgs/pwa-boilerplate
+  - Offline Mode with effective cache policies.
+- https://github.com/williamluke4/Nitro
+  - An Example of a PWA using Nextjs, Material-UI, Typescript and Auth0
+
+- https://github.com/ErKeLost/react-music-pwa
+  - react18 + ts + vite4.0 + pwa Music
 # pwa-utils
 - https://github.com/GoogleChrome/workbox  /inactive
   - JavaScript libraries for Progressive Web Apps

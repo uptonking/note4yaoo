@@ -41,4 +41,15 @@ modified: 2022-11-04T15:11:24.012Z
 # extension-starter
 - https://github.com/chibat/chrome-extension-typescript-starter
   - Chrome Extension TypeScript Starter
+
+- https://github.com/mikesprague/clean-start /202211/js/提交多
+  - Open source new tab extension
+  - Layout/design based on what I liked from the Momentum browser extension
+  - Demo available as a progressive web app (PWA)
+# browser-extensions-utils
+
+- https://github.com/PlasmoHQ/plasmo
+  - The Plasmo Framework is a battery-packed browser extension SDK made by hackers for hackers
+  - https://github.com/yousefamar/bookmarkdown
+    - A browser extension that turns a webpage into a useful markdown note
 # more-extensions

@@ -135,6 +135,9 @@ modified: 2020-10-22T10:03:50.526Z
   - Save to local storage/browser sync
   - Vim mode
 
+- https://github.com/wizardion/chrome-notes /ts/非tab而是弹出框
+  - Work-Note - save your notes where you are. 
+
 - https://github.com/braydenwerner/Atlas /202203/ts
   - A comprehensive tool for drawing, taking notes, and staying organized all on your chrome homepage.
 
@@ -157,8 +160,29 @@ modified: 2020-10-22T10:03:50.526Z
   - Auto save content and position
   - I am using Manifest version 2, because version 3 is new and doc is not complete and not much tutorials exist yet, but i will switch to MV3 later on.
 
+- https://github.com/simov/markdown-viewer
+  - Markdown Viewer / Browser Extension
 - https://github.com/volca/markdown-preview /js
   - Markdown Preview Plus -- Enables Chrome to render markdown files as HTML
+
+- https://github.com/md-reader/md-reader
+  - A markdown reader extension for Chrome.
+
+- https://github.com/dfhoughton/amanuensis
+  - This project is a browser extension to facilitate taking notes on web pages. It was originally conceived as a language learning aid
+
+## note-editor
+
+- https://github.com/mpkelly/journal
+  - Embeddable Wiki available as Chrome extension, PWA or React component.
+
+- https://github.com/m19e/memorandum
+  - Chrome/Edge Extension: Memorandum provides Markdown WYSIWYG Editor.
+
+- https://github.com/hediet/browser-ext-github-monaco
+  - Chrome/Firefox extension brings the famous Monaco editor to GitHub!
+  - This extension replaces all GitHub text areas for authoring markdown with a monaco editor.
+  - 替换issues编辑器
 
 ## non-open
 

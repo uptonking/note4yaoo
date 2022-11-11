@@ -119,8 +119,26 @@ modified: 2022-11-11T11:04:29.007Z
 - https://github.com/olahol/react-tagsinput
   - customizable React component for inputing tags.
 # browser-bookmark-utils
+- https://github.com/ips21blank/offlinebookmarkmanager
+  - Bookmark manager/editor extension for chrome browsers
+  - written in TypeScript and uses React with React-Redux and sass for styles.
+
+- https://github.com/prajjwalkapoor/kairy
+  - a browser extension to manage your bookmark shortcuts and reading lists.
+
+- https://github.com/camellia-app/camellia /好看
+  - a browser extension that helps you access hundreds of bookmarks on the page that appears when you open new tab in your browser.
+
+- https://github.com/JQuinzell/react-bookmarker
+  - bookmarking browser extension implemented in react.
+
 - https://github.com/flybayer/twitter-bookmarks-search
   - adds the ability to search your bookmarked tweets inside Twitter.
 - https://github.com/twitterdev/bookmarks-search
   - uses the Bookmarks lookup endpoint to get your bookmarks
 # more-bookmark
+
+- https://github.com/masonmcelvain/hop
+  - 好看但不实用
+  - a browser extension that stores links to your favorite sites in a more visually pleasing way than traditional bookmarks. 
+  - Hop will try to find an icon for each link automatically, but you can use your own image if you prefer.
