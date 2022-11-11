@@ -7,16 +7,6 @@ modified: 2022-11-04T15:11:24.012Z
 
 # toc-saas-browser-extensions
 
-# editor/note
-
-- https://github.com/penge/my-notes
-  - Chrome extension for simple and fast note-taking
-  - Back up notes to Google Drive
-  - Drag and drop image with automatic image upload to Google Drive
-  - Works offline
-
-
-
 # extensions
 
 - https://github.com/jawil/GayHub

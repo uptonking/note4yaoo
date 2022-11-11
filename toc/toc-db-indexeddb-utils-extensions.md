@@ -200,3 +200,5 @@ modified: 2022-11-04T14:22:17.373Z
 - https://github.com/JayPuff/browser-file-storage
   - Abstracts the complexity of indexed DB so that a user can easily save files/blobs by key/filename on the browser
   - Browser must support the IndexedDB API as it cannot be polyfilled
+
+- [Indexed DB URLs via Service Workers](https://gist.github.com/inexorabletash/687e7c5914049536f5a3)

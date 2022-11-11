@@ -75,6 +75,7 @@ modified: 2022-11-06T03:18:26.506Z
 - https://github.com/bignerdranch/dexie-fulltextsearch  /201704/js
   - Full text search for IndexedDB databases, powered by Dexie.
   - 依赖lunr
+  - [IndexedDB+Dexie+Lunr MTG full-text search demo](https://gist.github.com/nolanlawson/6f69f4a573c1da862e92)
 
 - https://github.com/agilworld/reactjs-redux-form-builder-indexedDB-dexie
   - Form Builder under React JS + Redux + Dexie Indexed DB
@@ -112,3 +113,9 @@ modified: 2022-11-06T03:18:26.506Z
 
 - https://github.com/Vissie2/dexie-2d-geospatial-index
   - A playground to test the performance of H3 geospatial indexing using Dexie.
+
+- https://gist.github.com/JamesMessinger/a0d6389a5d0e3a24814b
+  - Very Simple IndexedDB Example
+  - I would not recommend coding against the raw indexedDB API unless you really have to. 
+  - Performance is also a reason to use a wrapper library like dexie that can do multiple operations in a single transaction without sacrificing code readability and error handling.
+  - [IndexedDB: When to close a connection](https://stackoverflow.com/questions/34915581)

@@ -75,13 +75,6 @@ modified: 2020-10-22T10:03:50.526Z
   - 支持用户编写自己的插件来拓展编辑器的功能。
   - 加密文件的加密解密操作均在前端完成，请务必牢记自己的密码。一旦密码丢失，只能暴力破解了。
 
-- note-it /16Star/Apache2/202208/ts/tiptap
-  - https://github.com/MuhametSmaili/note-it
-  - https://www.youtube.com/watch?v=jxBAMwxbk78
-  - NoteIt is a feature-packed, note-taking extension with OCR support for chrome.
-  - 依赖React、Tiptap、tesseract.js、pdfmake、html-to-pdfmake
-  - You can take notes, convert images to text, download notes to pdf, and more.
-
 - joplin /31.9kStar/MIT/202209/ts/web需付费+pc+mobile
   - https://github.com/laurent22/joplin
   - https://joplinapp.org/
@@ -115,7 +108,67 @@ modified: 2020-10-22T10:03:50.526Z
     - Mac OS desktop build is available, but it is unsupported.
     - If you want to install Trilium on server,currently only recent Chrome and Firefox are supported (tested) browsers.
   - [Notion like database](https://github.com/zadam/trilium/issues/822)
-# note-extensions
+# note-browser-extensions
+- note-it /16Star/Apache2/202208/ts/tiptap
+  - https://github.com/MuhametSmaili/note-it
+  - https://www.youtube.com/watch?v=jxBAMwxbk78
+  - NoteIt is a feature-packed, note-taking extension with OCR support for chrome.
+  - 依赖React、Tiptap、tesseract.js、pdfmake、html-to-pdfmake
+  - You can take notes, convert images to text, download notes to pdf, and more.
+
+- placenoter /30Star/MIT/202211/ts
+  - https://github.com/sereneinserenade/placenoter
+  - This extension replaces your new tab with a note taking app
+  - 依赖dnd-kit、tiptap
+
+- my-notes /198Star/MIT/202211/ts
+  - https://github.com/penge/my-notes
+  - note-taking in Chrome with Google Drive support.
+  - Chrome extension for simple and fast note-taking
+  - Back up notes to Google Drive; Auto Sync notes to Google Drive
+  - Drag and drop image with automatic image upload to Google Drive
+  - Works offline
+
+- mdtab /8Star/MIT/202209/ts
+  - https://github.com/shaoruu/mdtab
+  - Write quick notes in Markdown on any new tabs!
+  - Save to local storage/browser sync
+  - Vim mode
+
+- https://github.com/braydenwerner/Atlas /202203/ts
+  - A comprehensive tool for drawing, taking notes, and staying organized all on your chrome homepage.
+
+- https://github.com/plibither8/markdown-new-tab /202101/js
+  - Take down notes spiral_notepad, save reminders alarm_clock, paste links link, create checklists ballot_box_with_check or tables, all using markdown... directly in your 'New Tab' page! 
+
+- https://github.com/shuowu/yi-note /js
+  - YiNote, aka TurboNote Chrome Extension, is an effective tool to take and share notes while watching online videos.
+  - Take time-stamped note while watching online video, currently supported video formats/platform: youtube/html5-video
+  - Send notes to popular note platforms:google-docs/evernote
+- https://github.com/ahmedelq/NattyNote
+  - Take time-stamped YouTube notes
+- https://github.com/hidao80/fast-logbook
+  - Time-stamped work notes Chrome Extension
+
+- https://github.com/wildskyf/tab-notes /js
+  - Open new tab and write anything.
+
+- https://github.com/qiweiii/markdown-sticky-notes /js
+  - Auto save content and position
+  - I am using Manifest version 2, because version 3 is new and doc is not complete and not much tutorials exist yet, but i will switch to MV3 later on.
+
+- https://github.com/volca/markdown-preview /js
+  - Markdown Preview Plus -- Enables Chrome to render markdown files as HTML
+
+## non-open
+
+- TabNotes
+  - https://chrome.google.com/webstore/detail/tabnotes/omgomlnnfccahaaicaphjjgkjplfkjai
+  - https://github.com/bansal-io
+
+- OFFLINE-NOTE
+  - https://chrome.google.com/webstore/detail/offline-note/naobhcifpdffdokgdboppeldefdnooic
+# note-utils
 - graph /7Star/MIT/202210/ts
   - https://github.com/graphcentral/graph
   - https://graphcentral.github.io/graph

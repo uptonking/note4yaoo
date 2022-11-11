@@ -1,12 +1,56 @@
 ---
-title: toc-saas-bookmark-tag
-tags: [bookmark, saas, tag, toc]
+title: toc-app-bookmark-web-clipper-tagging
+tags: [bookmark, tag, toc, web-clipper]
 created: 2022-11-04T15:09:05.417Z
-modified: 2022-11-04T15:10:01.262Z
+modified: 2022-11-11T11:04:29.007Z
 ---
 
-# toc-saas-bookmark-tag
+# toc-app-bookmark-web-clipper-tagging
 
+# guide
+
+# web-clipper
+- web-clipper /4.7kStar/GPLv2/202208/ts
+  - https://github.com/webclipper/web-clipper
+  - https://clipper.website/
+  - use Web Clipper to save anything on the web to anywhere.
+
+- maoxian-web-clipper /596Star/MIT/202209/js
+  - https://github.com/mika-cn/maoxian-web-clipper
+  - A web extension to clip information from web page. Save it to your local machine 
+## known
+
+- https://github.com/coddingtonbear/obsidian-web /ts
+  - You can use Obsidian Web for sending any web content from Chrome to your Obsidian Notes easily by just clicking on a button in your toolbar.
+  - use Obsidian Local REST API
+  - https://github.com/SettingDust/obsidian-web-clipper
+  - https://github.com/ganesshkumar/obsidian-bookmarklet-maker
+
+- https://github.com/OneNoteDev/WebClipper /ts
+  - The OneNote Web Clipper extension
+
+## open-web-clipper
+
+- https://github.com/zadam/trilium-web-clipper /js
+  - allows user to clip text, screenshots, whole pages and short notes and save them directly to Trilium Notes.
+  - Some parts of the code are based on the Joplin Notes browser extension.
+  - The extension needs to connect to a running Trilium instance. 
+    - By default, it scans a port range on the local computer to find a desktop Trilium instance.
+
+- https://github.com/snowyu/h2doc.js
+  - Process html to a specified format document(markdown currently), build-in Joplin Web Clipper Server for Joplin Web Clipper
+
+- https://github.com/owenschoppe/Citable
+  - The open source codebase for Citable, a Google Chrome Extension for saving quotes and notes from the web into Google spreadsheets.
+
+- QOwnNotes Web Companion
+  - https://chrome.google.com/webstore/detail/qownnotes-web-companion/pkgkfnampapjbopomdpnkckbjdnpkbkp?hl=en
+  - a companion extension for QOwnNotes to interact with the note taking desktop application.
+  - To use this extension QOwnNotes needs to be running.
+
+- https://github.com/tagspaces/browser-extensions
+  - https://www.tagspaces.org/products/webclipper/
+  - TagSpaces Web Clipper for Chrome and Firefox
 # xplat-bookmark
 - https://github.com/floccusaddon/floccus
   - Sync your bookmarks privately across browsers and devices

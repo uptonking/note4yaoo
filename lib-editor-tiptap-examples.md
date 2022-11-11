@@ -73,6 +73,7 @@ modified: 2022-08-19T23:00:22.162Z
   - https://github.com/Doist/typist
   - https://typist.doist.dev/
   - Typist is the mighty Tiptap-based rich-text editor React component that powers Doist products
+  - 提供了纯文本和富文本2种输入模式
   - Typist also supports a plain-text mode, and comes with HTML/Markdown serializers.
 
 - linked-daily /561Star/GPL.v3/202208/js/vue/electron

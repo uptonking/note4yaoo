@@ -154,8 +154,27 @@ modified: 2022-06-03T22:06:16.249Z
   - https://github.com/microsoft/reactxp /inactive
     - ReactXP is a library for cross-platform app development using React and React Native.
 # indexeddb-query-sql
-- https://github.com/ujjwalguptaofficial/JsStore
+- [Support full text indexes](https://github.com/w3c/IndexedDB/issues/44)
+
+- https://gist.github.com/inexorabletash/a279f03ab5610817c0540c83857e4295
+  - IndexedDB Full Text Search (Proof of Concept)
+- https://gist.github.com/deissh/b4ec45197365fd607fe0367ca275c9ac
+  - indexedDB search by regex
+
+- https://github.com/Treora/indexeddb-full-text-search-comparison
+  - 依赖levi
+  - https://github.com/cshum/levi /201901/js
+    - Stream based full-text search for Node.js and browsers. Using LevelDB as storage backend.
+    - Full-text search using TF-IDF and cosine similarity plus query-time field boost options. 
+    - Levi is built on LevelUP
+  - https://github.com/raine/taim 
+    - measure execution time of functions and promises
+
+- JsStore /663Star/MIT/202211/ts
+  - https://github.com/ujjwalguptaofficial/JsStore
   - A complete IndexedDB wrapper with SQL like syntax.
+  - Executes In Web Worker
+  - Sql Support - through an extension sqlweb
   - https://github.com/ujjwalguptaofficial/jsstore-examples
 - https://github.com/ujjwalguptaofficial/idbstudio
   - a cli tool for indexeddb library jsstore. It helps users to execute , debug and learn jsstore query.
@@ -211,5 +230,8 @@ modified: 2022-06-03T22:06:16.249Z
 - https://gist.github.com/robnyman/1894032
   - IndexedDB storing and retrieving files
 
-- https://gist.github.com/inexorabletash/a279f03ab5610817c0540c83857e4295
-  - IndexedDB Full Text Search (Proof of Concept)
+- https://github.com/yathit/ydn-db /201902/js/inactive
+  - Unified data access layer on IndexedDB, WebDatabase and WebStorage storage mechanisms.
+  - https://github.com/yathit/ydn-db-fulltext
+    - Full text search module for YDN-DB 
+    - build on top of two excellent full text search libraries, [natural](https://github.com/NaturalNode/natural) for stemming, normalization, analyzer and fullproof for tokenization.

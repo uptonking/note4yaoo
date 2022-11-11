@@ -75,8 +75,13 @@ modified: 2021-09-04T14:03:39.046Z
   - https://github.com/turtle-DB/tortoiseDB
     - NodeJS server and mongoDB wrapper for clients to sync to when using turtleDB. 
 
-- https://github.com/gildas-lormeau/SingleFile
+- SingleFile /9.5kStar/AGPLv3/202211/js
+  - https://github.com/gildas-lormeau/SingleFile
   - a Web Extension (and a CLI tool) compatible with Chrome, Firefox to save a complete web page into a single HTML file.
+  - 比较了各种格式：singleFile、mhtml、webarchive、html-folder
+  - For security reasons, SingleFile is sometimes unable to save the image representation of canvas and snapshots of video elements.
+  - https://github.com/gildas-lormeau/SingleFileZ
+    - a fork of SingleFile that allows you to save a webpage as a self-extracting HTML file
 
 - https://github.com/aphrodite-sh/aphrodite
   - Aphrodite is a schema layer whose first goal is to make P2P & Local-First software as easy to develop as traditional client-server software.
@@ -106,7 +111,7 @@ modified: 2021-09-04T14:03:39.046Z
     - Offline-first for the next billion users or New York City Subway. Logux saves Redux actions to IndexedDB and has a lot of features to merge changes from different users.
     - Compatible with modern stack: Redux, Vuex and pure JS API, works with any back-end language and any database.
 
-- https://github.com/nornagon/autowiki
+- https://github.com/nornagon/autowiki /automerge
   - Autowiki is a tool for creating networked documents.
   - Autowiki is a local-first app: you own all the data you put into it, and your data never leaves your own machine unless you want it to.
   - Autowiki uses automerge under the hood to resolve edit conflicts automatically.
@@ -132,7 +137,19 @@ modified: 2021-09-04T14:03:39.046Z
     - At the moment you can either use `PouchDB` or `Dexie.js` or `LokiJS` as underlaying storage. 
     - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
     - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
-# local-first examples
+# local-first-examples
+- hamsterbase /158Star/MIT/202211/ts/仅开源sdk
+  - https://github.com/hamsterbase/hamsterbase
+  - https://hamsterbase.com/zh/
+  - 一个本地优先的网页存档应用。 a self-hosted, local-first web archive application.
+  - 本地部署 + 完全离线 + 点对点同步（马上发布了）
+  - 储存、管理和预览 HTML, MHTML and Webarchive 格式的文档。
+  - 对保存的页面进行高亮、批注。
+  - 开源 SDK，目前免费。
+  - Full Text Search
+  - Open source SDK
+  - 推荐使用 SingleFile 保存 html 页面
+
 - https://github.com/unigraph-dev/unigraph-dev
   - A local-first and universal knowledge graph, personal search engine, and workspace for your life.
 

@@ -14,21 +14,14 @@ modified: 2021-04-30T15:26:55.024Z
   - ChromeOS支持的太少
   - 普通的办公软件支持的多不多
   - 专业软件如ps设计、机械、地图几乎都不可能支持
-
-- [Google proposes way for Fuchsia OS to run Android and Linux programs ‘natively’](https://9to5google.com/2021/02/12/google-fuchsia-os-android-linux-programs-starnix/)
-  - [[rfc] Running unmodified Linux programs on Fuchsia](https://fuchsia-review.googlesource.com/c/fuchsia/+/485181)
-  - the expectation was that Fuchsia could accomplish this in the same way that Chrome OS is currently able to run Linux apps, by running a full instance of Linux in a virtual machine.
-  - Chrome OS is even set to use this same strategy for its ability to run Android apps, thanks to a project called arcvm.
-  - a new [proposal](https://fuchsia-review.googlesource.com/c/fuchsia/+/485181/1/docs/contribute/governance/rfcs/NNNN_starnix.md) has been put forward for an alternative solution for Fuchsia to run programs meant for Linux and Android. 
-    - Instead of running Linux itself, Fuchsia would gain a system called “Starnix,” which would act as a translator between instructions for the Linux kernel and instructions for Fuchsia’s Zircon kernel.
-
 # pieces
-
 - ## 
 
 - ## 
 
-- ## 
+- ## 有哪些使用 PWA 的 app ？
+- https://www.zhihu.com/question/59108831/answers/updated
+
 
 - ## if I were working on React Native stuff, I would seriously consider statically linking JavaScriptCore on iOS. 
 - https://twitter.com/jarredsumner/status/1416842049823772673
@@ -68,3 +61,11 @@ modified: 2021-04-30T15:26:55.024Z
   - Because there's the whole ecosystem of Android apps, and they know very well an os without them is nothing. 
   - So, they **could easily prefer an headless Fuchsia** running Android on top of it, to a phone running the Fuchsia shell, which will run Android apps against Android running within Fuchsia. 
   - Because Fuchsia is declarative with nouns and verbs, so it could take some time to adapt it to phones. But maybe you're right and this comes faster than I think
+
+- ## [Google proposes way for Fuchsia OS to run Android and Linux programs ‘natively’](https://9to5google.com/2021/02/12/google-fuchsia-os-android-linux-programs-starnix/)
+  - [[rfc] Running unmodified Linux programs on Fuchsia](https://fuchsia-review.googlesource.com/c/fuchsia/+/485181)
+  - the expectation was that Fuchsia could accomplish this in the same way that Chrome OS is currently able to run Linux apps, by running a full instance of Linux in a virtual machine.
+  - Chrome OS is even set to use this same strategy for its ability to run Android apps, thanks to a project called arcvm.
+  - a new [proposal](https://fuchsia-review.googlesource.com/c/fuchsia/+/485181/1/docs/contribute/governance/rfcs/NNNN_starnix.md) has been put forward for an alternative solution for Fuchsia to run programs meant for Linux and Android. 
+
+    - Instead of running Linux itself, Fuchsia would gain a system called “Starnix,” which would act as a translator between instructions for the Linux kernel and instructions for Fuchsia’s Zircon kernel.

@@ -1,11 +1,11 @@
 ---
-title: toc-lib-format-ooxml-docx-utils
+title: toc-lib-format-office-docx-utils
 tags: [docx, format, ooxml, toc, utils]
 created: 2022-11-06T15:56:39.587Z
-modified: 2022-11-06T15:58:57.690Z
+modified: 2022-11-11T10:45:37.068Z
 ---
 
-# toc-lib-format-ooxml-docx-utils
+# toc-lib-format-office-docx-utils
 
 # guide
 

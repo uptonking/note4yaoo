@@ -1,11 +1,11 @@
 ---
-title: toc-lib-format-ooxml-xlsx-utils
+title: toc-lib-format-office-xlsx-utils
 tags: [excel, format, ooxml, toc, utils, xlsx]
 created: 2022-11-06T15:46:14.325Z
-modified: 2022-11-06T15:59:22.251Z
+modified: 2022-11-11T10:46:29.097Z
 ---
 
-# toc-lib-format-ooxml-xlsx-utils
+# toc-lib-format-office-xlsx-utils
 
 # guide
 
@@ -37,4 +37,6 @@ modified: 2022-11-06T15:59:22.251Z
 
 - https://github.com/kinddde/js-export-excel
   - json导出excel（纯js 支持中文）
+# xls
+
 # more

@@ -45,6 +45,10 @@ modified: 2021-06-02T18:24:28.052Z
 - globalOptions
   - defaultViewMode/defaultEditMode
   - indentationSpace
+# 本地服务api
+- 采用非web方案而在本地开启rest服务可支持的功能
+  - 协作冲突处理
+  - 本地书签/剪藏服务
 # 存储与持久化的问题
 - ❓ why choose db instead of files
   - 👉🏻 移动端不需要纯文本文件

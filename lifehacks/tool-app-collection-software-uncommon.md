@@ -21,7 +21,7 @@ modified: 2022-11-07T10:27:48.956Z
 
 ## linux
 
-- Gromit-MPX
+- Gromit-MPX 屏幕标注，适合演示
   - https://github.com/bk138/gromit-mpx
   - Gromit-MPX is an on-screen annotation tool that works with any Unix desktop environment under X11 as well as Wayland.
   - Its main use is for making presentations of some application. 

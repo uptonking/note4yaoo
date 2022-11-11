@@ -175,16 +175,17 @@ modified: 2022-06-03T21:34:54.893Z
   - 「 太记 」是一个基于「 太微 TiddlyWiki 」的知识管理桌面应用，能保护隐私内容、高级自动化、自动Git云备份、部署为博客，且可通过RESTAPI与Anki等应用连接。
   - 太微的 NodeJS 版本有无缝的自动保存体验，这是利用 SyncAdaptor 技术（而不是 Saver ）带来的的优势，太记对 NodeJS wiki 有更好的支持，而 TD 主要支持 HTML 版单文件 WIKI，各有优势
 
-- https://github.com/hamsterbase/hamsterbase
-  - https://hamsterbase.com/
+- hamsterbase /158Star/MIT/202211/ts/仅开源sdk
+  - https://github.com/hamsterbase/hamsterbase
+  - https://hamsterbase.com/zh/
   - 一个本地优先的网页存档应用。 a self-hosted, local-first web archive application.
   - 本地部署 + 完全离线 + 点对点同步（马上发布了）
+  - 储存、管理和预览 HTML, MHTML and Webarchive 格式的文档。
+  - 对保存的页面进行高亮、批注。
   - 开源 SDK，目前免费。
-  - Store, manage, and preview HTML, MHTML and Webarchive documents.
-  - Webpages can be highlighted, annotated and annotated retroactively.
-  - No dependency on any server, all data is local first.
   - Full Text Search
   - Open source SDK
+  - 推荐使用 SingleFile 保存 html 页面
 
 - Metagraph /19Star/NALic/202205/ts/vue
   - https://github.com/Wizard-wen/Metagraph

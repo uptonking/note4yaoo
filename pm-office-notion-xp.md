@@ -24,3 +24,6 @@ modified: 2022-03-17T17:49:45.743Z
 ## block操作类
 
 # guide
+- [Notion保姆级公开课](https://www.bilibili.com/video/BV1EP4y1s7Bp/)
+
+- [Obsidian的保姆级公开课](https://www.bilibili.com/video/BV1H44y1n71k/)

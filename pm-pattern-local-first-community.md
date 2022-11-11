@@ -17,6 +17,7 @@ modified: 2022-03-03T18:20:12.075Z
 - ## Downsides of Offline First__202110
 - https://news.ycombinator.com/item?id=28717848
   - https://news.ycombinator.com/from?site=rxdb.info
+  - [rxdb: Downsides of Offline First](https://rxdb.info/downsides-of-offline-first.html)
 - I’m a “true believer” in CRDTs, which I have some experience in. 
   - You can implement a useful CRDT for simple applications in under 100 lines if all you care about are standard database objects - like maps, sets and values. 
   - List CRDTs are where they get complicated, but most applications aren’t collaborative text editors.

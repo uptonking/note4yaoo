@@ -67,6 +67,9 @@ modified: 2021-05-14T14:33:33.975Z
   - 类似github的readme，点击顶部标题，只显示一级目录大纲
   - [Tips and Tricks for using Markdown](https://github.com/MishManners/GitHub-Like-A-Boss/blob/main/markdowntricks.md)
 # draft
+- links
+  - 在即时渲染模式下，弱化链接url样式，突出链接文字
+
 - code highlighting
 
 - 允许半个符号而不抛出异常，如`>, 1)`

@@ -68,6 +68,15 @@ modified: 2022-06-03T22:06:47.464Z
 - https://github.com/eldomagan/vuex-orm-localforage
   - VuexORMLocalforage is a plugin for the amazing VuexORM that let you sync your Vuex Store with an IndexedDB database using LocalForage.
 # apps
+- https://github.com/Tesfaye-Eshetie/movie-search-pwa /js
+  - https://tesfaye-eshetie.github.io/movie-search-pwa/
+  - Movie Search PWA using React, vite, PWA and IndexedDB
+
+- https://github.com/alexeagleson/template-indexeddb
+  - A simple template for getting started with IndexedDB
+  - IndexedDB is known to be quite fast on inserting reasonably large quantities of data on a single transaction, but can slow down significantly when these inserts/updates are made across multiple transactions.
+  - ensure you are developing your application to batch data modifications into as few transactions as possible.
+
 - https://github.com/wizexplorer/excel-clone /202210/js
   - An excel clone using HTML-CSS-JavaScript. Change properties of different cells. 
   - Capable of applying formulas, copying/cutting/pasting multiple cells. 
@@ -82,8 +91,6 @@ modified: 2022-06-03T22:06:47.464Z
   - Performant graph visualization on the web with WebGL + Webworkers + IndexedDB
   - You can visualize Notion pages on force layout graph using this library
 
-- https://github.com/Tesfaye-Eshetie/movie-search-pwa /js
-  - Movie Search PWA using React, vite, PWA and IndexedDB
 
 - https://github.com/crossjs/cofe
   - No-Code System

@@ -24,6 +24,28 @@ modified: 2021-08-22T08:05:39.413Z
   - 百度网盘替换部分视频为8秒短视频
   - 百度网盘后期限速，就算开了超级会员仍然可能因为带宽流量消耗过多而被系统限制
   - 腾讯起诉DD373交易平台，庭审时腾讯代表称「账号主人不可转卖自己的手机游戏账号」
+# [rxdb: Downsides of Offline First](https://rxdb.info/downsides-of-offline-first.html)
+
+## It only works with small datasets
+
+## Browser storage is not really persistent
+
+## There can be conflicts
+
+## Realtime is a lie
+
+## Eventual consistency
+
+## Permissions and authentication
+
+## You have to migrate the client database
+
+## Performance is not native
+
+## Nothing is predictable
+
+## There is no relational data
+
 # [Local-first software__201910](https://www.inkandswitch.com/local-first.html)
 - Cloud apps like Google Docs and Trello are popular because they enable real-time collaboration with colleagues, and they make it easy for us to access our work ~~from all of our devices~~ anytime anywhere. 
   - However, by centralizing data storage on servers, cloud apps also take away ownership and agency from users. 
@@ -256,7 +278,7 @@ modified: 2021-08-22T08:05:39.413Z
   - in many cases, SQLite is a far better choice than either a custom file format, a pile-of-files, or a wrapped pile-of-files. 
   - SQLite is a high-level, stable, reliable, cross-platform, widely-deployed, extensible, performant, accessible, concurrent file format. 
   - It deserves your consideration as the standard file format on your next application design.
-# [Building data-centric apps with a reactive relational database Riffle](https://riffle.systems/essays/prelude/)
+# [Riffle: Building data-centric apps with a reactive relational database__202203](https://riffle.systems/essays/prelude/)
 - We’re exploring a new way to manage data in apps by storing all app state—including the state of the UI—in a single reactive database. 
   - Instead of imperatively fetching data from the database, the user writes reactive queries that update with fresh results whenever their dependencies change.
 - As an initial prototype, we have built a reactive layer around SQLite that populates data in a React app, and used it to build a music library app.

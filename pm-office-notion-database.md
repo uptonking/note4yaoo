@@ -32,6 +32,15 @@ modified: 2022-03-17T17:50:05.384Z
   - 飞书多维表格安全性特别高，一个对比表无法复制下来
 # draft
 - cell auto convert to tag
+# obsidian-dataview
+
+- 查询依据
+  - 文件自带的元数据，如createTime
+  - 手动添加yaml，如
+
+- 查询语法，类似sql
+  - 输出：list、table
+
 # notion-database
 - [Working with databases](https://developers.notion.com/docs/working-with-databases)
 # notion-like-database
