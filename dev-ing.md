@@ -88,6 +88,32 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-tanstack-table-v8
 - sync-service: google-drive、网盘、七牛
 
+## 1112
+
+- [bbcode这种格式是否还有存在的必要性？ - 知乎](https://www.zhihu.com/question/20296125)
+  - 在国内目前很多的网站是由phpwind和discuz论坛程序建成，而他们采用的还是很多年前开始流行的bbcode编辑器。bbcode转换出来的html过于简单和不标准，但是在处理xss攻击上确有它的好处。
+
+- [How to install Microsoft Edge extension (addon) in Chrome](https://superuser.com/questions/1630300)
+  - With browser extensions today being built using the WebExtensions API, extensions should for the most part be cross-browser compatible between Chrome, Edge, Opera and even Firefox
+  - Microsoft will not give you the option to.
+
+- [Make a desktop shortcut of Chrome Extensions - Ask Ubuntu](https://askubuntu.com/questions/1301710/make-a-desktop-shortcut-of-chrome-extensions)
+  - All you really would have to do is get the Chrome Extension ID of the app and then add it to a `.desktop` file.
+  - Exec=google-chrome --app="chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html"
+
+- [Extending Chrome App Support on Chrome OS_202110](https://blog.chromium.org/2021/10/extending-chrome-app-support-on-chrome.html)
+  - we have made the decision to extend Chrome app support for those users on Chrome OS until at least January 2025. 
+  - We continue to invest and have made significant progress in rich new capabilities on the Web platform with Progressive Web Apps (PWA), 
+  - 👉🏻 and we recommend that Chrome app developers migrate to PWAs as soon as possible
+
+- ### [Chrome Extension and IndexDB Integration](https://stackoverflow.com/questions/55147450)
+- You can store tons of data in any HTML5 storage (including IndexedDB or localStorage) and `chrome.storage.local` with "unlimitedStorage" permission.
+- HTML5 data is stored per URL origin and each extension has its own one that looks like `chrome-extension://id` where id is a 32-character string that is the extension's id. In Firefox the origin looks like `moz-extension://id`.
+- Extension's own HTML5 storage:
+  - can be accessed in any extension page (popup, options, background) just like you would do it in a web page, there are no differences.
+  - cannot be accessed in a content script as it runs in a web page and thus can only access HTML5 storage of the web page's URL origin.
+- `chrome.storage.local` can be accessed in any extension page and in a content script.
+
 ## 1110
 
 - [Command-line "code ." not available with flatpak app](https://github.com/flathub/com.visualstudio.code/issues/19)
@@ -919,7 +945,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                                                                `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                                                                      `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -938,7 +964,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                      `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

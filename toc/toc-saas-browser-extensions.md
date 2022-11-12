@@ -7,17 +7,19 @@ modified: 2022-11-04T15:11:24.012Z
 
 # toc-saas-browser-extensions
 
-# extensions
+# popular
 
-- https://github.com/jawil/GayHub
-  - 优化GitHub的阅读体验
 - https://github.com/FallenMax/smart-toc
   - A Chrome extension for auto-generating a table of contents
+
 - https://github.com/arthurhammer/github-toc
   - Browser extension that adds a table of contents to GitHub repos, wikis and gists.
 
 - https://github.com/int128/bntp
   - Chrome extension providing Bookmarks in the New Tab Page
+
+- https://github.com/jawil/GayHub
+  - 优化GitHub的阅读体验
 # table
 - https://github.com/jamesandres/ColumnCopy
   - Google Chrome extension which enables selecting columns from table.
@@ -47,9 +49,15 @@ modified: 2022-11-04T15:11:24.012Z
   - Layout/design based on what I liked from the Momentum browser extension
   - Demo available as a progressive web app (PWA)
 # browser-extensions-utils
-
 - https://github.com/PlasmoHQ/plasmo
   - The Plasmo Framework is a battery-packed browser extension SDK made by hackers for hackers
   - https://github.com/yousefamar/bookmarkdown
     - A browser extension that turns a webpage into a useful markdown note
 # more-extensions
+- https://github.com/SanderRonde/CustomRightClickMenu
+  - A browser extension to add links and run scripts/stylesheets all from your right-click menu
+
+- https://github.com/joelshepherd/tabliss /202207/ts
+  - A beautiful, customisable New Tab page for Firefox, Chrome, and Edge.
+- https://github.com/unicar9/jizhi
+  - 支持自定义新标签页的 Chrome/Firefox/Edge 扩展，几枝将在新标签页上展示中国传统色的层叠波浪动画效果搭配经典诗词。

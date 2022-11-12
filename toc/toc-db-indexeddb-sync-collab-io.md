@@ -14,7 +14,7 @@ modified: 2022-10-22T18:47:16.228Z
   - 是否需要中心化服务器
   - 不必过于纠结crdt的集成或三方库，关注于官方同步示例，如block-editor/y-indexeddb/dexie-sync
 # export/import
-- https://github.com/Polarisation/indexeddb-export-import
+- https://github.com/Polarisation/indexeddb-export-import /202210/js
   - Export/import an IndexedDB database to/from JSON. Can be used to backup and restore.
 # sync
 - remotestorage.js /2.2kStar/MIT/202211/ts
@@ -24,16 +24,25 @@ modified: 2022-10-22T18:47:16.228Z
   - It is also capable of connecting and syncing data with a person's Dropbox or Google Drive account (optional).
   - The first prototype of rs.js was written in November 2010. The library is well-tested and actively maintained.
   - rs.js optionally supports Dropbox and Google Drive as storage backends which users can connect.
-  - Data modules make your app and its data interoperable with other apps. 
+  - Data modules make your app and its data interoperable with other apps.
+
+- https://github.com/darrachequesne/synceddb
+  - a fork of the awesome idb library, which adds the ability to sync an IndexedDB database with a remote REST API.
+  - https://github.com/darrachequesne/synceddb-todo-example
+
+- https://github.com/azer/indexeddb /202005/ts/inactive
+  - Well-tested, low-level wrapper around the IndexedDB API. It can sync locally and remotely.
+
+- https://github.com/theShagod/indexeddb-mysql-sync-testing
+  - Playing with service workers, indexeddb and background sync.
+  - https://www.jawsdb.com/
+    - Database as a service
 
 - https://github.com/madmoizo/backinfront  /1Star/ISC/202206/js
   - Backinfront is both the manager of your browser database and a router which handles requests locally. 
   - If you are building an offline first web app which needs sync capabilities, Backinfront is probably the tool your are looking for.
   - Backinfront is designed to work inside a Service Worker make sure to NOT use it in a window context
   - 依赖idb
-
-- https://github.com/azer/indexeddb /202005/ts/inactive
-  - Well-tested, low-level wrapper around the IndexedDB API. It can sync locally and remotely.
 
 - https://github.com/logux/core
   - https://logux.io/

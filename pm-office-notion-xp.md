@@ -22,6 +22,11 @@ modified: 2022-03-17T17:49:45.743Z
   - [How to center text alignment like this?__202201](https://www.reddit.com/r/Notion/comments/rry43b)
 
 ## block操作类
+# notion教程-沙牛清单
+- notion三大特性
+  - 模块化操作：拖拽、转换、分栏
+  - 内容结构化：子页面
+  - 数据化
 
 # guide
 - [Notion保姆级公开课](https://www.bilibili.com/video/BV1EP4y1s7Bp/)

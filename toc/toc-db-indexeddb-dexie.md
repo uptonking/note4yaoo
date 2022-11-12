@@ -102,6 +102,11 @@ modified: 2022-11-06T03:18:26.506Z
 
 - https://github.com/dfahlander/poc-dexie-cloud-encryption
   - POC dexie-cloud with dexie-encrypted
+
+- https://github.com/nponiros/sync_client
+  - This module can be used to write data to IndexedDB using Dexie and to synchronize the data in IndexedDB with a server. 
+  - Dexie. Syncable is used for the synchronization. This module contains an implementation of the ISyncProtocol. 
+  - It was primarily written to work with sync-server but should work with other servers which offer the same API.
 # more-dexie
 - https://github.com/stutrek/dexie-hooks
   - There is now an official replacement for this!

@@ -9,6 +9,16 @@ modified: 2020-11-13T07:28:27.824Z
 
 # framework-agnostic components
 
+- papanasi /298Star/MIT/202211/ts
+  - https://github.com/CKGrafico/papanasi
+  - http://papanasi.js.org/
+  - a UI library to use cross Frameworks. 
+  - A set of components to use in Angular, Preact, Qwik, React, Solid, Svelte, Vue and Web Components. 
+  - Is based on the Mitosis library 
+  - https://github.com/BuilderIO/mitosis
+    - Write components once, compile to every framework
+    - While Zag.js focuses on writing framework-agnostic interactions, Mitosis focuses on writing framework-specific components.
+
 - https://github.com/material-components/material-components-web/
   - /14.9kStar/MIT/202009/ts/agnostic/MDC-Web
   - https://material.io/develop/web/components/buttons
@@ -38,12 +48,14 @@ modified: 2020-11-13T07:28:27.824Z
   - carbon-components-react: 基于class组件实现
   - @carbon/elements: IBM Design Language elements like colors, type, iconography, and more
 
-- easy-canvas /106Star/MIT/202010/js/NoDeps
+- easy-canvas /555Star/MIT/202208/js/NoDeps
   - https://github.com/Gitjinfeiyang/easy-canvas
   - https://gitjinfeiyang.github.io/easy-canvas/example/ui.html
+  - 使用render函数在canvas中创建文档流布局，海报图、小程序朋友圈分享图。
   - 支持文档流，参照 web，无需设置 x、y 以及宽高
-  - 提供了一套比较完整的组件库
-  - 使用render函数在canvas中创建文档流布局。Tag: 海报图、小程序朋友圈分享图。
+  - 支持组件化，全局组件以及局部组件
+  - 高性能，scroll-view 支持脏矩形，只绘制可视部分
+  - 支持操作 element，类似操作 dom 修改文档流
   - [easyCanvas实现原理解析](https://juejin.im/post/6871124987550531592)
   - 之前做dom截图用过 html2canvas 发现太慢了，然后换成 dom-to-image 好很多。foreignObject 是真香啊
   - https://github.com/Gitjinfeiyang/vue-easy-canvas

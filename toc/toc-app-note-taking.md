@@ -113,6 +113,7 @@ modified: 2020-10-22T10:03:50.526Z
 - note-it /16Star/Apache2/202208/ts/tiptap
   - https://github.com/MuhametSmaili/note-it
   - https://www.youtube.com/watch?v=jxBAMwxbk78
+  - 支持截图及批注
   - NoteIt is a feature-packed, note-taking extension with OCR support for chrome.
   - 依赖React、Tiptap、tesseract.js、pdfmake、html-to-pdfmake
   - You can take notes, convert images to text, download notes to pdf, and more.
@@ -136,7 +137,7 @@ modified: 2020-10-22T10:03:50.526Z
   - Save to local storage/browser sync
   - Vim mode
 
-- https://github.com/wizardion/chrome-notes /ts/非tab而是弹出框
+- https://github.com/wizardion/chrome-notes /202201/ts/非tab而是弹出框
   - Work-Note - save your notes where you are. 
 
 - https://github.com/braydenwerner/Atlas /202203/ts
@@ -145,7 +146,59 @@ modified: 2020-10-22T10:03:50.526Z
 - https://github.com/plibither8/markdown-new-tab /202101/js
   - Take down notes spiral_notepad, save reminders alarm_clock, paste links link, create checklists ballot_box_with_check or tables, all using markdown... directly in your 'New Tab' page! 
 
-- https://github.com/shuowu/yi-note /js
+- https://github.com/wildskyf/tab-notes /202203/js
+  - Open new tab and write anything.
+
+- https://github.com/qiweiii/markdown-sticky-notes /202110/js
+  - Auto save content and position
+  - I am using Manifest version 2, because version 3 is new and doc is not complete and not much tutorials exist yet, but i will switch to MV3 later on.
+
+- https://github.com/chenzhiwei/chrome-markdown-editor /202202/js/自用
+  - A Github Flavored Markdown Editor.
+  - Repackage of markdown-editor with some modifications
+  - 不支持多文件
+
+- https://github.com/simov/markdown-viewer /202101/js/自用
+  - Markdown Viewer/Browser Extension
+  - Full control over the compiler options (marked or remark)
+  - Renders local and remote URLs
+
+- https://github.com/volca/markdown-preview /202207/js
+  - Markdown Preview Plus -- Enables Chrome to render markdown files as HTML
+
+- https://github.com/md-reader/md-reader /202210/ts
+  - A markdown reader extension for Chrome.
+
+- https://github.com/kbravh/table-to-markdown /202101/js
+  - convert an HTML Table to Markdown for easy export.
+
+## more-note-editor
+
+- https://github.com/deathau/markdownload /202210/js
+  - an extension to clip websites and download them into a readable markdown file. 
+  - Turndown is used to convert the simplified HTML (from Readability.js) into markdown.
+
+- https://github.com/m19e/memorandum /202007/ts
+  - Chrome/Edge Extension: Memorandum provides Markdown WYSIWYG Editor.
+
+- https://github.com/mpkelly/journal
+  - Embeddable Wiki available as Chrome extension, PWA or React component.
+
+- https://github.com/hediet/browser-ext-github-monaco
+  - Chrome/Firefox extension brings the famous Monaco editor to GitHub!
+  - This extension replaces all GitHub text areas for authoring markdown with a monaco editor.
+  - 替换issues编辑器
+
+- https://github.com/willklein/markdown-menu
+  - for github readme.md, This extension will automagically generate and add navigation menu with a table of contents.
+
+- https://github.com/lvxianchao/confluence-markdown-editor /202207/js
+  - 为 Confluence Wiki 页面提供一个 Markdown 编辑器。
+
+- https://github.com/siebevd/Moment
+  - simple chrome new tab extension combining notes with pictures
+
+- https://github.com/shuowu/yi-note /202110/js
   - YiNote, aka TurboNote Chrome Extension, is an effective tool to take and share notes while watching online videos.
   - Take time-stamped note while watching online video, currently supported video formats/platform: youtube/html5-video
   - Send notes to popular note platforms:google-docs/evernote
@@ -154,37 +207,11 @@ modified: 2020-10-22T10:03:50.526Z
 - https://github.com/hidao80/fast-logbook
   - Time-stamped work notes Chrome Extension
 
-- https://github.com/wildskyf/tab-notes /js
-  - Open new tab and write anything.
-
-- https://github.com/qiweiii/markdown-sticky-notes /js
-  - Auto save content and position
-  - I am using Manifest version 2, because version 3 is new and doc is not complete and not much tutorials exist yet, but i will switch to MV3 later on.
-
-- https://github.com/simov/markdown-viewer
-  - Markdown Viewer / Browser Extension
-- https://github.com/volca/markdown-preview /js
-  - Markdown Preview Plus -- Enables Chrome to render markdown files as HTML
-
-- https://github.com/md-reader/md-reader
-  - A markdown reader extension for Chrome.
-
 - https://github.com/dfhoughton/amanuensis
   - This project is a browser extension to facilitate taking notes on web pages. It was originally conceived as a language learning aid
 
-## note-editor
-
-- https://github.com/mpkelly/journal
-  - Embeddable Wiki available as Chrome extension, PWA or React component.
-
-- https://github.com/m19e/memorandum
-  - Chrome/Edge Extension: Memorandum provides Markdown WYSIWYG Editor.
-
-- https://github.com/hediet/browser-ext-github-monaco
-  - Chrome/Firefox extension brings the famous Monaco editor to GitHub!
-  - This extension replaces all GitHub text areas for authoring markdown with a monaco editor.
-  - 替换issues编辑器
-
+- https://github.com/KeithLRobertson/markdown-viewer
+  - Markdown (.md file) Viewer WebExtension for firefox
 ## non-open
 
 - TabNotes

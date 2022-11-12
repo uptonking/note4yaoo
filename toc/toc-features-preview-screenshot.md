@@ -47,7 +47,63 @@ modified: 2021-01-30T16:05:48.466Z
     - I brought CSS transforms to browsers that did not have them.
       - HTML content needs to be serialized to XML, and all styles have to be inlined.
     - The DOM object is not linked, but copied 
-    - Content outside the bounding box of the element will be cut of per default if painted to Canvas. Don't worry though, simply pass a more comfortable offset to the toImage function 
+    - Content outside the bounding box of the element will be cut of per default if painted to Canvas. Don't worry though, simply pass a more comfortable offset to the toImage function
+# page-screenshot-browser-extensions
+- https://github.com/mrcoles/full-page-screen-capture-chrome-extension
+  - Go FullPage
+  - takes a screen capture of a full web page.
+
+- note-it /16Star/Apache2/202208/ts/tiptap
+  - https://github.com/MuhametSmaili/note-it
+  - 支持截图及批注
+  - NoteIt is a feature-packed, note-taking extension with OCR support for chrome.
+  - 依赖React、Tiptap、tesseract.js、pdfmake、html-to-pdfmake
+  - You can take notes, convert images to text, download notes to pdf, and more.
+
+- https://github.com/lxieyang/screenshot-extension /202011/ts
+  - browser extension that takes full-page or partial screenshots!
+  - 仅截图全屏，无滚动和编辑
+
+- https://github.com/Chromo-lib/screenshot-fullpage-extension /202210/js
+  - Screenshot tool for making a full page or partial screen capture with further edit, download.
+  - 只支持firefox和edge，不支持chrome
+  - built with Chrome DevTools Protocol 
+
+- https://github.com/timii/Snapper /202207/js
+  - An easy-to-use extension for taking screenshots in your browser
+
+- https://github.com/Aminadav/1click-webpage-screenshot /201902/js
+  - Entire page Screenshot extension for Google Chrome
+  - Annotate it with rectangles, circles, arrows, lines and text.
+
+- https://github.com/folletto/Blipshot /202108/js
+  - simple one-click full-page screenshots with drag and drop.
+
+- https://github.com/ashrene-roy/blackboard /202107/js
+  - annotate webpages, capture and save full page screenshots
+
+- https://github.com/felixfbecker/svg-screenshots
+  - Browser extension to take scalable, semantic, accessible screenshots of websites in SVG format.
+  - The SVG will not run any JavaScript.
+  - 截图某些动态元素时，可能会变颜色
+
+- https://github.com/simov/screenshot-capture /202012/js
+  - Screenshot Capture / Browser Extension
+
+- https://github.com/CamilleCharp/browsershot
+  - take a screenshot and put it in a browser-like window, it is inspired by code-snapshot on VsCode.
+  - Use the chrome extension api to capture the tab and html2canvas to download the final image.
+
+- https://github.com/balduvian/ebetshot
+  - A video screenshot extension for Chrome.
+
+- https://github.com/williamemir/driveshot
+  - takes screenshots and uploads to google drive, only for testing of manifest v3 
+
+## screenshot-for-vscode
+
+- https://github.com/jeffersonlicet/snipped
+  - Save SVG or PNG screenshots of code selection or all lines of your file.
 # source-code-screenshot
 - https://github.com/carbon-app/carbon
   - https://carbon.now.sh/

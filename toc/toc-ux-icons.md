@@ -22,7 +22,11 @@ modified: 2021-05-06T09:58:23.803Z
 - 搜索矢量图标
   - https://uxwing.com/
 
+- ✨ brand-icons
+- apple-store
+  - https://www.apple.com/us/search/notion?src=globalnav
 - google-play 应用商店可以获取到图标url
+  - https://play.google.com/store/apps
   - 商店的图标大小一般都是512x512，但部分图标可能偏高
 - https://logos.fandom.com/wiki/Android_Studio
   - 记录了logo变更

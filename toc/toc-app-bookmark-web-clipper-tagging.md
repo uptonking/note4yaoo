@@ -17,7 +17,13 @@ modified: 2022-11-11T11:04:29.007Z
 
 - maoxian-web-clipper /596Star/MIT/202209/js
   - https://github.com/mika-cn/maoxian-web-clipper
-  - A web extension to clip information from web page. Save it to your local machine 
+  - A web extension to clip information from web page.
+  - All file will save in local hard disk, you can control your data totally
+
+- https://github.com/deathau/markdownload /202210/js
+  - an extension to clip websites and download them into a readable markdown file. 
+  - Turndown is used to convert the simplified HTML (from Readability.js) into markdown.
+
 ## known
 
 - https://github.com/coddingtonbear/obsidian-web /ts
@@ -51,6 +57,9 @@ modified: 2022-11-11T11:04:29.007Z
 - https://github.com/tagspaces/browser-extensions
   - https://www.tagspaces.org/products/webclipper/
   - TagSpaces Web Clipper for Chrome and Firefox
+
+- https://github.com/butterops/refer /202105/js/inactive
+  - Cross browser web clipper. Takes video notes, screenshots and extract texts or images from supported web br
 # xplat-bookmark
 - https://github.com/floccusaddon/floccus
   - Sync your bookmarks privately across browsers and devices
@@ -132,12 +141,14 @@ modified: 2022-11-11T11:04:29.007Z
 - https://github.com/JQuinzell/react-bookmarker
   - bookmarking browser extension implemented in react.
 
+- https://github.com/deweyapp/dewey /inactive
+  - a Chrome app for tagging, searching and sorting your Chrome bookmarks.
+
 - https://github.com/flybayer/twitter-bookmarks-search
   - adds the ability to search your bookmarked tweets inside Twitter.
 - https://github.com/twitterdev/bookmarks-search
   - uses the Bookmarks lookup endpoint to get your bookmarks
 # more-bookmark
-
 - https://github.com/masonmcelvain/hop
   - 好看但不实用
   - a browser extension that stores links to your favorite sites in a more visually pleasing way than traditional bookmarks. 

@@ -28,7 +28,7 @@ modified: 2022-03-17T17:50:28.967Z
     - 类似在一页ppt上只显示一个大号的单词/短语，以醒目突出
   - examples as notes
   - instant-preview
-    - 类似typora的即时预览，可选择 行内 / 上下 两种结构
+    - 类似typora的即时预览，可选择 行内/上下 两种结构
     - 类似observable-notebook的上下结构可减少页面reflow
   - dev-tools, instead of wrapper like react-ag-grid，需要大量时间，可跨平台
 
@@ -69,6 +69,10 @@ modified: 2022-03-17T17:50:28.967Z
 - unlocalizable
   - 移动本地文件时，自动更新其他文件中引用的链接
   - 图床
+
+## page
+
+- 保存各级标题、字体的样式为类似页面格式刷
 
 ## toc
 
