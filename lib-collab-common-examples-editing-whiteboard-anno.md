@@ -40,6 +40,12 @@ modified: 2022-11-07T17:36:22.236Z
 - https://github.com/wx-chevalier/web-whiteboard
   - 在线电子白板，你画我猜，图片编辑，网页注解
 
+- https://github.com/givek/sketch-canvas
+  - Canvas app lets you create multiple collaborative virtual whiteboards for free-hand sketching.
+  - This is the sketch-canvas web client developed to consume the sketch-canvas-api.
+  - https://github.com/givek/sketch-canvas-api/
+    - 依赖mongoose、zod
+
 - https://github.com/off-by-some/Whiteboard
   - A collaborative whiteboard powered by WebGL + react-fiber
 
@@ -73,7 +79,7 @@ modified: 2022-11-07T17:36:22.236Z
   - This library has no dependency on Convergence.
   - 只依赖textarea-caret，不依赖其他
 
-- https://github.com/cchaonie/collaborative-editor
+- https://github.com/cchaonie/collaborative-editor /ts/slate+sharedb
   - Learn collaborative softwares by creating a collaborative editor
   - The slate handles the UI part, and the sharedb handles the collaborative part.
 
@@ -158,6 +164,8 @@ modified: 2022-11-07T17:36:22.236Z
 - https://github.com/slashbaseide/slashbase
   - Slashbase is an open-source minimal collaborative IDE for your databases in browser.
   - It's written in Golang and Nextjs React Framework and runs as a single binary.
+  - Connect to your database, browse data, run a bunch of queries or share queries within your team, right from your browser. 
+  - Works with two types of databases: PostgreSQL and MongoDB.
 
 - https://github.com/mathematicalthinking/vmt
   - Collaborative workspaces for exploring the world of math

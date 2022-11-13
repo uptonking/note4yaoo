@@ -85,11 +85,26 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - tiptap-yjs-server-src
 - eg-BlockNote
 - eg-focalboard
+  - olap-cube-js
 - eg-tanstack-table-v8
 - sync-service: google-drive、网盘、七牛
 
 ## 1113
 
+- js-receiver
+  - Reflect.get(target, propertyKey, receiver)
+  - Proxy.get(target, property, receiver)
+  - The value of `this` provided for the call to `target` if a getter is encountered. When used with Proxy, it can be an object that inherits from `target`.
+
+- IDBObjectStore.put()
+  - updates a given record in a database, or inserts a new record if the given item does not already exist
+  - It returns an IDBRequest object, and, in a separate thread, creates a structured clone of the value and stores the cloned value in the object store
+  - The put method is an update or insert method. See the `IDBObjectStore.add` method for an insert only method.
+  - `IDBCursor.update()` is preferable to using `IDBObjectStore.put()` for updating existing record
+
+- indexeddb Transactions are started when the transaction is created, not when the first request is placed; 
+
+- When you create a new database or increase the version number of an existing database (by specifying a higher version number than you did previously, when Opening a database), the `onupgradeneeded` event will be triggered and an `IDBVersionChangeEvent` object will be passed to any `onversionchange` event handler 
 
 - blog #sharing
   - [记一次 Canvas 内引用了 OSS 域的图片标签绘制时出现的 CORS 错误问题](https://nolebase.ayaka.io/%E7%AC%94%E8%AE%B0/%E2%98%95%EF%B8%8F%20%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/%E8%AE%B0%E4%B8%80%E6%AC%A1%20canvas%20%E5%86%85%E5%BC%95%E7%94%A8%E4%BA%86%20oss%20%E5%9F%9F%E7%9A%84%E5%9B%BE%E7%89%87%E6%A0%87%E7%AD%BE%E7%BB%98%E5%88%B6%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%20cors%20%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%98.html)
@@ -955,7 +970,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                                                                      `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                                                                        `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -974,7 +989,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                      `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                        `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

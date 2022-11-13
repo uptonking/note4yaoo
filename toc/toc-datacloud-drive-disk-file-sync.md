@@ -142,6 +142,13 @@ modified: 2022-09-10T02:26:52.062Z
   - Gdocwiki combines a folder tree view in a sidebar (equivalent to drive.google.com) with a document viewer in the main panel (equivalent to docs.google.com, etc).
   - This is not an official PingCAP product.
 
+- https://github.com/misterfresh/react-drive-cms /202204/js
+  - http://misterfresh.github.io/react-drive-cms/
+  - Publish articles directly from Google Drive to your blog with React JS
+  - A dynamic site, but no backend to manage, no database, no server, no hosting & no maintenance (almost)
+  - ReactDrive CMS was started in October 2015. 
+  - It uses Github Pages to host static assets, and uses React to generate the HTML on the client.
+
 - wikiGDrive /7Star/ISC/202211/ts/vue
   - https://github.com/mieweb/wikiGDrive
   - WikiGDrive is a node app that uses the Google Drive API to transform Google Docs and Drawings into markdown.
@@ -178,6 +185,9 @@ modified: 2022-09-10T02:26:52.062Z
 - https://github.com/trnwrckd/drive-clone-ui
   - https://relaxed-kheer-00772d.netlify.app/
   - Tried cloning parts of Google Drive
+
+- https://github.com/stravo1/obsidian-grive-sync
+  - sync notes across devices in Obsidian via Google Drive
 # known-drive-dropbox
 - https://github.com/eltonlazzarin/dropbox-fake-app
   - RocketBox - A Full Stack Project App

@@ -9,6 +9,11 @@ modified: 2021-03-29T19:29:15.528Z
 
 # pieces
 
+- ## event argument has no target.result property on IDBRequest: success event_201903
+- https://github.com/microsoft/TypeScript/issues/30669
+  - 没人修
+  - https://stackoverflow.com/questions/61162942
+
 - ## What does status=canceled for a resource mean in Chrome Developer Tools?
 - https://stackoverflow.com/questions/12009423
 

@@ -20,9 +20,9 @@ modified: 2022-10-23T14:57:23.473Z
   - linen: #faf0e6 亚麻布
   - seashell: #fff5ee 海贝壳
   - blueviolet: #8a2be2
+  - slateblue: #6a5acd
   - mediumpurple: #9370db
   - mediumslateblue: #7b68ee
-  - slateblue: #6a5acd
   - darkslateblue: #483d8b
   - lavender: #e6e6fa 薰衣草
   - darkorchid: #9932cc
@@ -30,7 +30,6 @@ modified: 2022-10-23T14:57:23.473Z
   - darkorchid: #9932cc
   - darkviolet: #9400d3
   - violet: #ee82ee 紫罗兰
-  - plum: #dda0dd 偏紫
   - indigo: #4b0082
   - antiquewhite/oldlace：古董白，粉红色
   - orangered: #ff4500
