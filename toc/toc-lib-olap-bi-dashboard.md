@@ -21,13 +21,11 @@ modified: 2020-12-09T09:30:24.694Z
   - https://github.com/apache-superset/examples-data
   - https://github.com/dropbox/incubator-superset-internal
 
-
 - turnilo /Apache2/335Star/202007
   - https://github.com/allegro/turnilo
   - https://allegro.tech/2018/10/turnilo-lets-change-the-way-people-explore-big-data.html
   - Business intelligence, data exploration and viz web application for Druid
   - https://github.com/implydata/pivot
-
 
 - https://github.com/drinkjs/mojito
   - http://mojito.drinkjs.com/
@@ -36,6 +34,11 @@ modified: 2020-12-09T09:30:24.694Z
   - 100%开源，支持私有化部署
   - 前端依赖 antd4、animejs、mobx、re-resizable、react-dnd、react-moveable
   - 后端依赖 fastify、mysql、mongodb、typeorm、next10
+
+- https://github.com/abilian/olapy
+  - an experimental OLAP engine based on Pandas
+  - https://github.com/abilian/olapy-web
+    -  web-based tool for exploring and analyzing OLAP databases served by the OlaPy.
 
 - lightdash /1.3kStar/MIT/202208/ts
   - https://github.com/lightdash/lightdash
@@ -73,6 +76,14 @@ modified: 2020-12-09T09:30:24.694Z
   -  a web-based spreadsheet application with full integration of the Python programming language.
   - 依赖Flask、golang、plotly、jquery
 
+- tabix /1.1kStar/apache2/202205/ts
+  - https://github.com/tabixio/tabix
+  - http://dash.tabix.io/
+  - simple business intelligence application and sql editor tool for Clickhouse.
+
+- https://github.com/mprove-io/mprove
+  - Open Source Self-service Business Intelligence with Version Control
+
 - countly /4.7kStar/AGPLv3/202101/js
   - https://github.com/Countly/countly-server
   - built with mongodb, express
@@ -82,8 +93,6 @@ modified: 2020-12-09T09:30:24.694Z
   - https://github.com/grafana/grafana
   - https://grafana.com/
   - The tool for monitoring and metric analytics & dashboards for Graphite, InfluxDB & Prometheus & More
-- https://github.com/tabixio/tabix /1.1kStar/2011903
-  - simple business intelligence application and sql editor tool for Clickhouse.
 - https://github.com/saasforge/open-source-saas-boilerpate
   - Free SaaS boilerplate (Python/PostgreSQL/ReactJS/Webpack)
 - https://github.com/keen/dashboards /10.8kStar/201911

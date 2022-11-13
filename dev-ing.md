@@ -88,6 +88,16 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-tanstack-table-v8
 - sync-service: google-drive、网盘、七牛
 
+## 1113
+
+
+- blog #sharing
+  - [记一次 Canvas 内引用了 OSS 域的图片标签绘制时出现的 CORS 错误问题](https://nolebase.ayaka.io/%E7%AC%94%E8%AE%B0/%E2%98%95%EF%B8%8F%20%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/%E8%AE%B0%E4%B8%80%E6%AC%A1%20canvas%20%E5%86%85%E5%BC%95%E7%94%A8%E4%BA%86%20oss%20%E5%9F%9F%E7%9A%84%E5%9B%BE%E7%89%87%E6%A0%87%E7%AD%BE%E7%BB%98%E5%88%B6%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%20cors%20%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%98.html)
+  - 如果不使用 CORS 策略（即打开 html2canvas 配置选项中的 useCORS: true 选项）请求图片的话，会导致 canvas 变成不安全的 canvas，或者说是被污染的 canvas
+  - 在这样的情况下，将不可使用 canvas 上下文 context 调用下列函数：getImageData()/toDataURL()/toBlob()
+  - 实际的情况是，由 `<img>` 标签参与的 DOM 树需要预先渲染一遍到浏览器中，然后再被 `html2canvas` 库读取到内部，再去使用独属于 `<canvas>` 标签上下文的处理逻辑来处理图片，此时此刻图片又会再次被通过 XHR 请求读取一次
+  - Vary 是一个 HTTP 响应头部信息，它决定了对于未来的一个请求头，应该用一个缓存的回复 (response) 还是向源服务器请求一个新的回复。
+
 ## 1112
 
 - [bbcode这种格式是否还有存在的必要性？ - 知乎](https://www.zhihu.com/question/20296125)

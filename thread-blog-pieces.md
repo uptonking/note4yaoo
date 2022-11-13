@@ -12,7 +12,9 @@ modified: 2021-02-09T19:25:11.641Z
 - [Guideline from the 70's on how to split your React components](https://joaoforja.com/blog/guideline-on-how-to-decompose-a-react-component/)
 - [React Design Patterns: Generating User-configured UI Using The Visitor Pattern](https://www.arahansen.com/react-design-patterns-generating-user-configured-ui-using-the-visitor-pattern/)
   - While this article covered building a configurable "form generator" component, this pattern could be applicable for many situations where you need configuration (aka, schema) driven UI.
-# frontend-design-system-components
+# sharing
+
+# design-system-components
 - [How we use Web Components at GitHub](https://github.blog/2021-05-04-how-we-use-web-components-at-github/)
 - [8 Examples of Icon-Based Navigation, Enhanced with CSS and JavaScript](https://speckyboy.com/icon-based-navigation-css-javascript/)
 # frontend-dev

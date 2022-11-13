@@ -9,10 +9,6 @@ modified: 2021-02-09T19:23:39.082Z
 
 # watching
 
-# B站UP主
-- 萤火剪辑师
-  - 专注于恐怖片
-  - https://space.bilibili.com/652158386/video?tid=0&page=1&keyword=&order=pubdate
 # data/saas
 - Mike Bostock
   - info

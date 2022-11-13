@@ -14,6 +14,10 @@ modified: 2021-02-09T19:27:07.664Z
 
 - 在开源项目comments多的issue里面，很容易找到项目难点和业务使用场景
   - 甚至直接找到其他扩展开发者，以及他们的插件、轮子
+# olap
+- xianfengyi
+  - https://github.com/xianfengyi/MixQuery
+  - [知乎](https://www.zhihu.com/people/yi-xian-feng-19/posts)
 # pm-产品经理
 - 侯乔 兴趣是生产力工具
   - https://houjoe.notion.site/
@@ -103,6 +107,15 @@ modified: 2021-02-09T19:27:07.664Z
   - 商业智能数据分析师，花随花心
   - https://www.zhihu.com/people/huagongzi-vip4/answers
 # watchlist
+- phodal
+  - js
+  - https://github.com/phodal
+
+- 蒋继发
+  - https://twitter.com/ThaddeusJiang/status/1460096795996950530
+  - 现在叫スマカン，English: SmartCompany
+和公司核心产品名保持一致。
+
 - 许雪里
   - java, xxl-job, xxl-sso
   - https://github.com/xuxueli
@@ -117,11 +130,7 @@ modified: 2021-02-09T19:27:07.664Z
 - 朴灵
   - node
   - https://github.com/JacksonTian
-- phodal
-  - js
-  - https://github.com/phodal
-
-- 蒋继发
-  - https://twitter.com/ThaddeusJiang/status/1460096795996950530
-  - 现在叫スマカン，English: SmartCompany
-和公司核心产品名保持一致。
+# B站UP主
+- 萤火剪辑师
+  - 专注于恐怖片
+  - https://space.bilibili.com/652158386/video?tid=0&page=1&keyword=&order=pubdate
