@@ -7,16 +7,18 @@ modified: 2020-12-12T19:32:36.255Z
 
 # toc-repos-solutions
 
-
 # crawler
-- https://github.com/open-data-plan/crawler
-  - Web crawler based on Puppeteer
-  - 只依赖puppeteer
+- getsetfetch-extension /202108/ts/inactive
+  - https://github.com/get-set-fetch/extension
+  - https://getsetfetch.org/extension/getting-started.html
+  - open source web scraper available as a cross-browser (chrome, firefox, edge) extension with csv and zip export capabilities.
+  - parses pages and stores relevant data in the builtin browser database (IndexedDB)
+  - Binary data (images, pdf files, …) can be exported as zip archives. Text based data can be exported as csv files.
+
 - https://github.com/get-set-fetch/scraper /ts
   - a plugin based, nodejs web scraper(刮刀). 
   - It scrapes, stores and exports data.
   - At its core, an ordered list of plugins is executed against each to be scraped URL.
-
 # gis
 - https://github.com/lionsoul2014/ip2region
   - 准确率99.9%的离线IP地址定位库，0.0x毫秒级查询

@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-community-compatibility-interoperability
-tags: [community, compatibility, prosemirror]
+tags: [community, compatibility, interoperability, prosemirror]
 created: 2022-08-30T22:02:27.964Z
-modified: 2022-08-30T22:04:36.710Z
+modified: 2022-11-14T20:12:58.259Z
 ---
 
 # lib-editor-prosemirror-community-compatibility-interoperability

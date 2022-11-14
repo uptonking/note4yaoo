@@ -7,6 +7,29 @@ modified: 2021-09-20T18:01:39.932Z
 
 # thread-blogger-subscription-regular
 
+# regular-topics
+
+- react-native flutter
+  - wechat miniprogram
+  - webview
+
+- electron tauri
+  - pwa (无需打包到apk)
+  - qt
+
+- prosemirror lexical
+  - slate
+
+- luckysheet/univer ag-grid
+  - tanstack-table
+
+- notion logseq
+  - obsidian
+  - mirror
+  - clickup
+
+- local-first/offline
+  - indexeddb
 # subscription
 - [remirror(MIT) blog](https://remirror.io/blog)
 - [curvenote(MIT) blog](https://curvenote.com/blog)

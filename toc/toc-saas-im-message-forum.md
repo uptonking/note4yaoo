@@ -20,8 +20,11 @@ modified: 2021-05-14T15:04:15.333Z
   - Telegram 很多方面都比微信优胜，单是支持导出数据（包括 chat 和自己创建的 channel）这一点就有足够的优势了
   - 而且导出的格式可以选择 HTML 或 JSON，HTML 格式方便普通用户直接用浏览器打开查看，而支持导出为 JSON 格式，则考虑到二次开发的便利性，足够良心
   - 但是之前的无故封号事件还是太伤害我对电报的信任了
-
 # im-messaging
+- https://github.com/mastodon/mastodon
+  - Your self-hosted, globally interconnected microblogging community
+  - 依赖ruby
+
 - https://github.com/Linen-dev/linen.dev
   - Linen is a Google-searchable community chat tool. 
   - Linen was built as an alternative to closed tools like Slack and Discord.

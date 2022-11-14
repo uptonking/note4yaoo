@@ -10,9 +10,26 @@ modified: 2022-11-11T03:09:56.491Z
 > is inactive ❓
 
 # guide
+- pwa-cons
+  - ❓ 更换设备时，pwa如何同步
 
+- 考虑用pwa只处理桌面端跨端离线使用的问题，不处理移动端
+  - 对移动端需要简化逻辑和调整ui
+  - 不要在自动打包上折腾过多精力，一个store一个标准
+  - react-native封装webview的方式也许更好
+
+- 实现离线时不使用浏览器扩展的形式
+  - indexeddb的访问存在same-origin的限制，不应该维护两套数据(在线url和扩展页url不同)
+  - pwa支持离线使用，使用webview打包也简单
+
+- pwa的离线
+  - service worker只处理离线资源，不拦截请求而做缓存
+  - 用户操作local-first，缓存用indexeddb而不用service worker
+
+- ref
+  - [PWA技术理论+实战全解析](https://zhuanlan.zhihu.com/p/144512343)
+  - https://github.com/hemanth/awesome-pwa
 # usecase
-
 - 国外案例
   - [excalidraw](https://excalidraw.com/)
   - [tldraw](https://www.tldraw.com/)
@@ -23,6 +40,7 @@ modified: 2022-11-11T03:09:56.491Z
 - PWA 应用商店
   - [Appscope](https://appsco.pe/)
     - https://appsco.pe/toplist
+    - https://0data.app/glance/
 # pwa-sites
 - ref
   - https://github.com/hemanth/awesome-pwa
@@ -42,55 +60,6 @@ modified: 2022-11-11T03:09:56.491Z
   - File sharing progressive web app built using WebTorrent and WebSockets
 - https://github.com/The-Robin-Hood/dropit
   - PWA shares your files locally at ease
-# pwa-open-examples
-- https://github.com/soup-bowl/whatsth.is
-  - https://whatsth.is/
-  - React-based progressive web app proof-of-concept designed to provide a toolbox of assorted helpful development tools.
-
-- https://github.com/bangle-io/bangle-io
-  - A web only WYSIWYG note taking app that saves notes locally in markdown format.
-
-- https://github.com/ygkn/emoji-picker
-  - https://ygkn.github.io/emoji-picker/
-  - A PWA to pick and copy emoji as text or image.
-
-- https://github.com/benji6/moodtracker
-  - A serverless and offline-first PWA that lets you track your mood
-  - 后端python
-# pwa-starter
-- https://github.com/preactjs/preact-cli
-  - Start building a Preact Progressive Web App in seconds
-
-- https://github.com/cTux/vitejs-react-ts-template
-  - PWA manifest
-
-- https://github.com/cra-template/pwa
-  - source code for the cra-template-pwa and cra-template-pwa-typescript packages.
-- https://github.com/Atyantik/react-pwa
-  - An upgradable boilerplate for Progressive web applications (PWA) with server side rendering, build with SEO in mind
-  - This framework utilizes the power of React 18 with Suspense.
-- https://github.com/suren-atoyan/react-pwa
-  - a modern production-ready setup created by developers for developers 
-
-- https://github.com/pwa-builder/pwa-starter
-  - The PWABuilder pwa-starter is our opinionated, best practices, production tested starter that we use to build all of our PWAs, including PWABuilder itself!
-
-- https://github.com/shadowwalker/next-pwa
-  - Zero config PWA plugin for Next.js, with workbox
-- https://github.com/vite-pwa/vite-plugin-pwa
-  - Zero-config PWA Framework-agnostic Plugin for Vite
-  - generate service worker with offline support (via Workbox)
-  - built-in support for Vanilla JavaScript, Vue 3, React, Svelte, SolidJS and Preact
-- https://github.com/Tomburgs/pwa-boilerplate
-  - Offline Mode with effective cache policies.
-- https://github.com/williamluke4/Nitro
-  - An Example of a PWA using Nextjs, Material-UI, Typescript and Auth0
-
-- https://github.com/ErKeLost/react-music-pwa
-  - react18 + ts + vite4.0 + pwa Music
-# pwa-utils
-- https://github.com/GoogleChrome/workbox  /inactive
-  - JavaScript libraries for Progressive Web Apps
 # discuss
 - ## 
 

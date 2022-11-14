@@ -7,8 +7,12 @@ modified: 2022-06-03T22:06:47.464Z
 
 # toc-db-indexeddb-examples
 
-# popular
+# guide
 
+- 放弃使用浏览器扩展的形式来实现离线
+  - indexeddb的访问存在same-origin的限制，不应该维护两套数据
+  - pwa支持离线使用，使用webview打包也简单
+# popular
 - https://github.com/HiWayne/large-file-uploader
   - 专为上传功能而优化，file uploader, supporting file segmentation, resume from break point, offline storage...
   - 断点续传，不必重头再来
@@ -59,19 +63,26 @@ modified: 2022-06-03T22:06:47.464Z
 - https://github.com/bernabe9/redux-react-session
   - Simple Session API storage for Redux and React
 
-- https://github.com/jpodwys/preact-journal /202103
-  - 14k offline-capable journaling PWA using preact, node, MySQL, and IndexedDB.
-
 - https://github.com/hc-oss/use-indexeddb
   - hook w/ promises for easy IndexedDB access in React
 
 - https://github.com/eldomagan/vuex-orm-localforage
   - VuexORMLocalforage is a plugin for the amazing VuexORM that let you sync your Vuex Store with an IndexedDB database using LocalForage.
-# apps
-- https://github.com/Tesfaye-Eshetie/movie-search-pwa /js
-  - https://tesfaye-eshetie.github.io/movie-search-pwa/
-  - Movie Search PWA using React, vite, PWA and IndexedDB
+# browser-extension
+- getsetfetch-extension /202108/ts/inactive
+  - https://github.com/get-set-fetch/extension
+  - https://getsetfetch.org/extension/getting-started.html
+  - open source web scraper available as a cross-browser (chrome, firefox, edge) extension with csv and zip export capabilities.
+  - parses pages and stores relevant data in the builtin browser database (IndexedDB)
+  - Binary data (images, pdf files, …) can be exported as zip archives. Text based data can be exported as csv files.
 
+- https://github.com/MVMS1994/idb-utils
+  - A chrome extension to import/export indexed db.
+
+- https://github.com/darx/IndexedDBEdit
+  - Devtools panel for changing IndexedDB key values
+  - 基于svelte+js
+# apps
 - https://github.com/alexeagleson/template-indexeddb
   - A simple template for getting started with IndexedDB
   - IndexedDB is known to be quite fast on inserting reasonably large quantities of data on a single transaction, but can slow down significantly when these inserts/updates are made across multiple transactions.
@@ -81,16 +92,11 @@ modified: 2022-06-03T22:06:47.464Z
   - An excel clone using HTML-CSS-JavaScript. Change properties of different cells. 
   - Capable of applying formulas, copying/cutting/pasting multiple cells. 
 
-- https://github.com/mohitk0208/notes-pwa
-  - https://notes-ysau.pages.dev/
-  - Make notes page_with_curl in the browser itself, it runs offline and the data is saved in the browser.
-
 - graph /7Star/MIT/202210/ts
   - https://github.com/graphcentral/graph
   - https://graphcentral.github.io/graph
   - Performant graph visualization on the web with WebGL + Webworkers + IndexedDB
   - You can visualize Notion pages on force layout graph using this library
-
 
 - https://github.com/crossjs/cofe
   - No-Code System
@@ -107,26 +113,6 @@ modified: 2022-06-03T22:06:47.464Z
   - show how to use IndexedDB internal browser database with dexie
   - MyPhonebook is a web-based phone book page with ability to add contacts and search betweens with internal browser database supporting (IndexedDB full cache), styled powered by TailwindCSS.
 
-- https://github.com/wisdomekpotu/PWA-TodoApp
-  - https://wisdomekpotu.github.io/PWA-TodoApp/
-  - A simple Todo PWA(Progressive Web Application) using indexedDB as database and can be used offline.
-- https://github.com/JamieVaughn/react-todo
-  - A todo app with react and indexedDB
-- https://github.com/mdn/to-do-notifications
-  - an Enhanced version of my basic to-do app, which stores to-do items via IndexedDB, and then also aims to provide notifications when to-do item deadlines are up, via the Notification and Vibration APIs.
-- https://github.com/DevTony101/js-todo-app-indexed_db
-  - https://indexed-todo-app.netlify.app/
-  - The aim is to teach/learn the basics of the IndexedDB API
-- https://github.com/RayJune/JustToDo
-  - 就是去做：a sample todolist web-app written by plain JavaScript
-- more-todo
-  - https://github.com/sycancodes/sycan-todo-app
-
-- https://github.com/kkosmowski/react-notes-2
-  - https://kkosmowski-notes.netlify.app/
-  - Advanced To-Do app with custom drag-to-select, categories and multiple customization options.
-  - 依赖localbase操作indexeddb
-
 - https://github.com/SimonPe25/Apple-Note
   - React v18.0, React Router v6, React Context, react Hooks, Ant Design, Sass, BEM, IndexedDB, Markdown
 - https://github.com/familyfriendlymikey/JILU
@@ -138,11 +124,6 @@ modified: 2022-06-03T22:06:47.464Z
   - A Web browser application for browsing and editing PeriodO data.
   - Because browsers do not support IndexedDB for pages served from local file systems, during development, you will need to run a process that will serve the root directory over HTTP.
 
-- https://github.com/jpodwys/preact-journal
-  - https://preact-journal.herokuapp.com/
-  - 14k offline-capable journaling PWA using preact, node, MySQL, and IndexedDB.
-  - 使用体验类似文章列表
-
 - https://github.com/brookslybrand/react-indexeddb-example
   - Example of using the Indexed API to persist changes to a simple form in React with dexie.js
 
@@ -152,9 +133,6 @@ modified: 2022-06-03T22:06:47.464Z
   - Budget Tracker is a progressive web application that allows the user to add and subtract funds online and offline.
 - https://github.com/jorgeabrahan/budgtcalc
   - (Responsive) (CRUD) (IndexedDB) budget calculator developed using vanilla JS and storing data on IndexedDB
-- https://github.com/JColeCodes/cash-cache
-  - https://budget-tracker-jcolecodes.herokuapp.com/index.html
-  - A simple budget tracker webpage has been upgraded to a progressive web app (PWA)!
 
 - https://github.com/googlecodelabs/workbox-indexeddb
   - use IndexedDB and Workbox to create a fully offline-capable, data-driven app. 

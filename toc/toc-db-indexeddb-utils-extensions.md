@@ -25,6 +25,8 @@ modified: 2022-11-04T14:22:17.373Z
   - a fork of the awesome idb library, which adds the ability to sync an IndexedDB database with a remote REST API.
 - https://github.com/sylvia1106/idb-managed
   - Easy IndexedDB API, using DB manager to manage local database. Based on idb.
+- https://github.com/PsychoSanchez/secure-idb
+  - Encryption extension for idb package
 
 - https://github.com/jakearchibald/idb-keyval
   - a super-simple promise-based keyval store implemented with IndexedDB, originally based on async-storage by Mozilla.
@@ -106,7 +108,10 @@ modified: 2022-11-04T14:22:17.373Z
   - IndexedDB Cache Provider for SWR
 
 - https://github.com/knadh/indexed-cache
-  - library for sideloading static assets on pages and caching them in the browser's IndexedDB 
+  - library for sideloading static assets on pages and caching them in the browser's IndexedDB
+
+- https://github.com/make-github-pseudonymous-again/idb-lru-cache
+  - IndexedDB-based persisting LRU cache for the browser
 # storage-uniform-interface
 - https://github.com/idleberg/web-porridge /ts
   - Feature-enhanced wrapper for both, Storage API and IndexedDB API, sharing a common, familiar interface.
@@ -119,15 +124,13 @@ modified: 2022-11-04T14:22:17.373Z
 - https://github.com/badbatch/cachemap
   - An extensible, isomorphic cache with modules to interface with Redis, LocalStorage, IndexedDB and an in-memory Map.
 # indexeddb-utils
-- https://github.com/NullixAT/browstorjs  /ts
+- https://github.com/NullixAT/browstorjs  /202208/ts
   - Persistent key/value data storage for your Browser and/or PWA, promisified, including file support and service worker support, all with IndexedDB.
 
-- https://github.com/dabblewriter/browserbase
-  - IndexedDB wrapper providing promises, easy versioning, and events, including change events across tabs
-
-- https://github.com/dumbmatter/fakeIndexedDB
+- https://github.com/dumbmatter/fakeIndexedDB /202207/ts
   - A pure JS in-memory implementation of the IndexedDB API
-- https://github.com/bigeasy/indexeddb
+  - for testing IndexedDB-dependent code in Node.js.
+- https://github.com/bigeasy/indexeddb /202111/js
   - A pure-JavaScript, persistent implementation of IndexedDB.
 
 - https://github.com/YeloPartyHat/LocalDatabase
@@ -137,6 +140,9 @@ modified: 2022-11-04T14:22:17.373Z
   - asynchronous wrapper around Javascript IndexedDB. 
 - https://github.com/westhide/async-idb
   - async, easy to use, fully typed indexedDB library
+
+- https://github.com/dabblewriter/browserbase
+  - IndexedDB wrapper providing promises, easy versioning, and events, including change events across tabs
 
 - https://github.com/Doxor-js/doxor.js
   - Offline database in Front-End library for interacting with IndexedDB
@@ -188,6 +194,7 @@ modified: 2022-11-04T14:22:17.373Z
 # encryption-security
 - https://github.com/willgm/web-crypto-storage
   - tiny promise-based crypto keyval storage using IndexedDB and the native Web Crypto API
+  - two small dependencies: IDB for a better devxp using IndexedDB and Web Crypto Tools for a better devxp using the Web Crypto API.
 - https://github.com/AKASHAorg/secure-webstore
   - A secure IndexedDB store with built-in encryption
 - https://github.com/desiic/enindex

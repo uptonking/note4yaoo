@@ -65,6 +65,9 @@ modified: 2022-11-06T03:18:26.506Z
   - project written in react/typescript for managing once collection of homebrew. 
   - The project itself is a PWA and was made primarily to learn said technologies.
 
+- https://github.com/agilworld/reactjs-redux-form-builder-indexedDB-dexie /201904/js
+  - Form Builder under React JS + Redux + Dexie Indexed DB
+
 - https://github.com/tykoth/ra-data-dexie
   - Experimental React-Admin data provider using Dexie (IndexedDB)
   - 依赖react-admin
@@ -76,9 +79,6 @@ modified: 2022-11-06T03:18:26.506Z
   - Full text search for IndexedDB databases, powered by Dexie.
   - 依赖lunr
   - [IndexedDB+Dexie+Lunr MTG full-text search demo](https://gist.github.com/nolanlawson/6f69f4a573c1da862e92)
-
-- https://github.com/agilworld/reactjs-redux-form-builder-indexedDB-dexie
-  - Form Builder under React JS + Redux + Dexie Indexed DB
 
 - https://github.com/ebenezerdon/market-list-app
   - A market-list application built with React.js, IndexedDB and Dexie.js for offline storage.

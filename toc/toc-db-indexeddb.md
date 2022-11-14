@@ -72,6 +72,9 @@ modified: 2022-06-03T22:06:16.249Z
 - https://github.com/creately/rxdata /202106/ts/inactive
   - RxData is a schemaless reactive document database for web browsers. 
   - It is inspired by rxdb but uses localForage instead of pouchdb to store data.
+- https://github.com/UltimatePro-Grammer/websystem /202205/js
+  - a fully functioning operating system built in pure Javascript, HTML and CSS.
+  - Files are Saved Locally Through IndexedDB/WebSQL (localForage)
 
 - ZangoDB /1kStar/MIT/201710/js
   - https://github.com/erikolson186/zangodb
@@ -186,6 +189,10 @@ modified: 2022-06-03T22:06:16.249Z
 - https://github.com/codewithkyle/jsql
   - Asynchronously access and manage your IndexedDB databases using SQL queries.
 
+- https://github.com/jjcapellan/SIXDB /202211/js
+  - IndexedDB lacks a query language, is asynchronous and can be complex to manage.
+  - SIXDB adds an abstraction layer over indexedDB that hides that complexity.
+
 - https://github.com/webqit/objective-sql
   - The object-oriented, adaptive SQL for modern apps - query anything from the plain JSON object, to the client-side IndexedDB, to the server-side DB.
 
@@ -201,7 +208,10 @@ modified: 2022-06-03T22:06:16.249Z
   - A limitation of IndexedDB is that you can only perform 1 write operation at a time. Currently, IndexedDB also limits you to only having 1 instance open per browser!
     - This means that if you implement this you won't be able to run this database in multiple tabs due to limitations of IndexedDB.
 # indexeddb-orm
-- https://github.com/maxgaurav/indexeddb-orm
+- https://github.com/ahricode/iorm /202211/ts
+  - IORM 是 IndexedDB 工具包和对象关系映射器，提供了 IndexdbDB 的全部功能，具有灵活性。
+
+- https://github.com/maxgaurav/indexeddb-orm /201910/ts
   - https://maxgaurav.github.io/indexeddb-orm
   - An indexedDB wrapper for accessing indexedDB as a promise base api implementation.
 

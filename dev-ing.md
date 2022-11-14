@@ -89,6 +89,42 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-tanstack-table-v8
 - sync-service: google-drive、网盘、七牛
 
+## 1114
+
+- 放弃使用浏览器扩展的形式来实现离线
+  - indexeddb的访问存在same-origin的限制，不应该维护两套数据
+  - pwa支持离线使用，使用webview打包也简单
+
+- [how to access IndexedDB (of current opened domain/tab) from chrome extension - Stack Overflow](https://stackoverflow.com/questions/38589075/how-to-access-indexeddb-of-current-opened-domain-tab-from-chrome-extension)
+  - To access indexeddb of current tab add "activeTab" to "permissions" tag in manifest.json, 
+  - Then create a content script, content script will be helpful in accessing the indexeddb as it runs in context of webpages, then add the content script created to the "content_scripts" tag in manifest.json file. 
+
+```JS
+{
+  "permissions": ["activeTab"],
+  "content_scripts": [{
+    "matches": ["add the domains of the webpages where content script needs to run"],
+    "js": ["contentScript.js"]
+  }]
+}
+```
+
+- Content-addressable storage (CAS), also referred to as content-addressed storage or fixed-content storage, 
+  - is a way to store information so it can be retrieved based on its content, not its name or location. 
+  - It has been used for high-speed storage and retrieval of fixed content, such as documents stored for compliance with government regulations. 
+  - [内容可寻址（CAS）](https://blog.csdn.net/qq_34902437/article/details/120683847)，是一种基于内容的寻址方式。它主要被用于高速存储，且存储的内容不发生改变。
+  - 目前的 IPFS 协议就借鉴了 CAS 的思想
+  - 目前的互联网中，我们最常见的是地址可寻址，比如给你一个 IP 地址，你可以找到相应地存储在这个地址上的内容。再比如，在 windows 下，我们可以通过路径找到自己文件存储的位置，如，D:\aaa\bbb\ccc.txt。
+  - 而 CAS 则是通过文件内容生成内容地址（通常是通过 hash 算法），在通过内容地址找到文件。
+  - CAS可以保证文件内容的完整性（不被篡改），因为内容地址是通过文件内容被 hash 之后得到的，一旦文件内容发生任何改变，则内容地址也会发生改变
+  - https://github.com/dstanesc/idb-block-store
+    - Local content-addressable storage (CAS) based on IndexedDB and IDB-Keyval wrapper
+
+- mastodon服务器选区
+  - https://joinmastodon.org/servers
+  - https://mastodon.social/
+  - https://mapstodon.space/
+
 ## 1113
 
 - js-receiver
@@ -970,7 +1006,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                                                                        `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                                                                            `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -989,7 +1025,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                        `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                            `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

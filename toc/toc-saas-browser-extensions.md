@@ -7,8 +7,12 @@ modified: 2022-11-04T15:11:24.012Z
 
 # toc-saas-browser-extensions
 
-# popular
+# guide
 
+- extension的settings同步
+  - 可考虑用浏览器提供的api如chrome-sync，检测浏览器账户而自动拉取数据
+  - 可考虑自定义实现，需要用户先提供一次身份和云存储位置(自建或第三方)，然后拉取数据
+# popular
 - https://github.com/FallenMax/smart-toc
   - A Chrome extension for auto-generating a table of contents
 
@@ -53,6 +57,10 @@ modified: 2022-11-04T15:11:24.012Z
   - The Plasmo Framework is a battery-packed browser extension SDK made by hackers for hackers
   - https://github.com/yousefamar/bookmarkdown
     - A browser extension that turns a webpage into a useful markdown note
+# devtools
+- https://github.com/shanebell/JaSON /202104/ts/inactive
+  - a Google Chrome extension for testing APIs and making HTTP network requests.
+  - Automatically sends cookies from Chrome. This is extremely handy for APIs which require authentication. 
 # more-extensions
 - https://github.com/SanderRonde/CustomRightClickMenu
   - A browser extension to add links and run scripts/stylesheets all from your right-click menu
@@ -61,3 +69,6 @@ modified: 2022-11-04T15:11:24.012Z
   - A beautiful, customisable New Tab page for Firefox, Chrome, and Edge.
 - https://github.com/unicar9/jizhi
   - 支持自定义新标签页的 Chrome/Firefox/Edge 扩展，几枝将在新标签页上展示中国传统色的层叠波浪动画效果搭配经典诗词。
+# settings-sync
+- https://github.com/shanalikhan/code-settings-sync
+  - Synchronize your Visual Studio Code Settings Across Multiple Machines using GitHub GIST
