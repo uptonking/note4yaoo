@@ -122,6 +122,7 @@ modified: 2020-10-22T10:03:50.526Z
   - https://github.com/sereneinserenade/placenoter
   - This extension replaces your new tab with a note taking app
   - 依赖dnd-kit、tiptap
+  - 支持写笔记和添加链接
 
 - my-notes /198Star/MIT/202211/ts
   - https://github.com/penge/my-notes
@@ -144,6 +145,7 @@ modified: 2020-10-22T10:03:50.526Z
   - A comprehensive tool for drawing, taking notes, and staying organized all on your chrome homepage.
 
 - https://github.com/plibither8/markdown-new-tab /202101/js
+  - https://mdnt.mihir.ch/
   - Take down notes spiral_notepad, save reminders alarm_clock, paste links link, create checklists ballot_box_with_check or tables, all using markdown... directly in your 'New Tab' page! 
 
 - https://github.com/wildskyf/tab-notes /202203/js
@@ -172,6 +174,8 @@ modified: 2020-10-22T10:03:50.526Z
 - https://github.com/kbravh/table-to-markdown /202101/js
   - convert an HTML Table to Markdown for easy export.
 
+- https://github.com/zhuowenli/githuber /202011/js/vue
+  - 帮助 GitHub 开发者每日发现优质内容的浏览器主页拓展。
 ## more-note-editor
 
 - https://github.com/deathau/markdownload /202210/js

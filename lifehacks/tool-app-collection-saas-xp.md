@@ -34,6 +34,15 @@ modified: 2022-11-07T10:25:12.034Z
 # twitter
 - search
   - 搜索关键词时，可加上'min_replies:1'的条件，筛选出被讨论过的质量更高的内容
+  - https://github.com/igorbrigadir/twitter-advanced-search
+
+- how-to follow hashtag
+  - twitter-deck，添加搜索关键词作为自定义栏
+    - https://github.com/eramdam/BetterTweetDeck
+    - [不支持添加bookmark](https://github.com/eramdam/BetterTweetDeck/issues/730)
+  - 使用twitter search，然后保存搜索
+  - 不使用hashtag，使用list收集相关用户
+  - [How To Follow a Hashtag on Twitter - Qwitter](https://useqwitter.com/how-to-follow-a-hashtag-on-twitter/)
 
 - download-video
   - 浏览器扩展经常失效，更好的方式是在github查找下载工具的源码，自己修改

@@ -21,6 +21,7 @@ modified: 2022-11-14T20:12:25.671Z
   - [remoteStorage](https://github.com/remotestorage/remotestorage.js)
   - [Solid](https://solidproject.org/about)
   - [fission](https://fission.codes/)
+  - [m-ld](https://m-ld.org/)
 # protocol
 - hash /636Star/MIT+Elastic+AGPL/202211/ts/rust
   - https://github.com/hashintel/hash
@@ -45,3 +46,14 @@ modified: 2022-11-14T20:12:25.671Z
   - Building protocols for the future of the Internet
   - Protocol Labs pioneered decentralized storage with the introduction of IPFS. 
   - Protocol Labs is an open-source R&D lab. We build protocols, tools, and services to radically improve the internet
+
+- m-ld
+  - https://m-ld.org/
+  - With m-ld, information is available where it's used—on mobiles, in browsers, in microservices, anywhere—and it stays up-to-date, automatically. It's live and sharable.
+  - At the heart of m-ld is a decentralised protocol for distributing live information among clones. 
+  - Using m-ld, every instance of an app has read-write access to the shared information via its local clone, with zero network latency. 
+    - Changes to the information are propagated to all other app instances, so they are all eventually consistent.
+  - https://github.com/m-ld/m-ld-spec
+    - m-ld is a decentralised live information sharing component with a JSON-based API.
+  - https://github.com/m-ld/m-ld-js
+    - the code of the Javascript engine for m-ld, for node.js, modern browsers and other Javascript platforms

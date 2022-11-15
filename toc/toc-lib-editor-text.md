@@ -58,6 +58,12 @@ modified: 2021-07-27T15:12:39.959Z
   - designed to behave as native textarea as much as possible. Supports formik and react-hook-form. 
   - IME composition handling: IME related events have some cross browser problems. This library handles them for easy to use.
 
+- text-editor /394Star/apache2/202011/js/NoDeps
+  - https://github.com/GoogleChromeLabs/text-editor
+  - https://googlechromelabs.github.io/text-editor/
+  - simple text editor designed to experiment with and demonstrate the new File System Access APIs.
+  - 编辑器基于textarea，撤销重做基于浏览器而不是自己实现
+
 - https://github.com/TheNocoder/ncSimpleHtmlEditor  /js
   - 偏向页面编辑器
   - smallest WYSIWYG web content editor, entire document, body and head, no dependencies.
@@ -68,6 +74,13 @@ modified: 2021-07-27T15:12:39.959Z
   - modular WYSIWYG rich text editor
   - 代码量很少
 # more-editor
+- hypertext-editor /28Star/MIT/202211/js/tinymce
+  - https://github.com/russellbeattie/hypertext-editor
+  - https://www.hypertext.plus/
+  - a new rich-text editor for creating documents using HTML instead of using an 18 year old text format or complex word processor files.
+  - Hypertext is both a web app for creating and editing these documents, as well as a proposal for a new `.htmd` document format. 
+  - The vision is to create a specification for a standard, safe, guaranteed-editable document using a strict-subset of HTML and CSS which replaces the variety of Markdown, AsciiText, Office file formats, etc. 
+
 - https://github.com/digabi/rich-text-editor
   - http://digabi.github.io/rich-text-editor/
   - Rich text editor with math support for Finnish Matriculation Examination Board

@@ -13,6 +13,14 @@ modified: 2021-09-20T20:12:38.499Z
   - js: preact, didact, fre.v1, luy, mini-react
   - ts: inferno, nerv
 # react-alternatives
+- million /5.4kStar/MIT/202211/ts
+  - https://github.com/aidenybai/million
+  - https://millionjs.org/
+  - Million is a drop-in replacement for React with a lightweight (<1kb) Virtual DOM
+  - By computing the user interface beforehand with a compiler, Million reduces the overhead of traditional Virtual DOM.
+  - While alternative libraries like Preact reduce bundle sizes by efficient code design, Million takes it a step further by leveraging compilation to make a quantum leap in improving bundle size and render speed.
+  - https://github.com/aidenybai/million-react
+    - React Fiber is not supported by default, some features, particularly Suspense, are implemented only as passthrough components.
 
 ## preact
 
