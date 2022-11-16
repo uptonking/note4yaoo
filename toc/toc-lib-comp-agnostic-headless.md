@@ -36,6 +36,14 @@ modified: 2021-04-11T06:17:51.318Z
 - ref
   - https://github.com/jxom/awesome-react-headless-components
 # headless-ui
+- NextUI /8.3kStar/MIT/202211/ts
+  - https://github.com/nextui-org/nextui
+  - https://nextui.org/
+  - React UI library: themeable, fast
+  - 依赖stitches-css-in-js、
+  - created with React.js and Stitches, based on React Aria and inspired by Vuesax(vue).
+  - modal的模糊背景特效很好
+
 - radix-ui /6.2kStar/MIT/202210/ts
   - https://github.com/radix-ui/primitives
   - https://www.radix-ui.com/docs/primitives/components/toolbar

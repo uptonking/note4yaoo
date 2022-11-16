@@ -15,7 +15,17 @@ modified: 2021-07-31T20:02:07.392Z
 - 功能上
   - tree一般支持移动节点nodes，accordion一般不移动且不删除节点
   - accordion的嵌套层数一般不深
+# discuss-stars
+- ## tabulator: Provide a way to lazy load tree node sub-items.
+- https://github.com/olifolkerd/tabulator/issues/1801
+- The table is simply not setup to load data asynchronously into child rows, and even if it were it would be a terrible user experience for users to click an element and nothing happen for a while untill the data loaded.
+  - For that reason i have no intention of adding this as a feature to Tabulator.
+  - That being said, if you wanted to implement something yourself it should be achievable.
+  - I would recommend that you populate your rows with a dummy "loading" row that displays an ajax spinner when it is opened, that way the user is then aware that they are waiting for data.
+
+- You don't need to load all data into a table at once. Tabulator comes with Progressive Ajax Loading to cover that scenario, 
 # discuss
+- ## 
 
 - ## Accordion versus TreeView and the DataGrid in the navigation data in Silverlight.__201207
 - https://www.codeproject.com/Articles/415759/TreeView-vs-Accordion-vs-DataGrid

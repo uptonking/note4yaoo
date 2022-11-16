@@ -9,6 +9,9 @@ modified: 2022-11-14T20:12:25.671Z
 
 # guide
 
+- protocols
+  - [decentralized social ecosystem structured by protocols](https://gitlab.com/bluesky-community1/decentralized-ecosystem/-/tree/master)
+
 # usecase
 - pwa
   - https://github.com/hemanth/awesome-pwa

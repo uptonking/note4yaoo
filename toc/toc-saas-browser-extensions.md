@@ -84,7 +84,7 @@ modified: 2022-11-04T15:11:24.012Z
 - https://github.com/mue/mue /202208/js
   - https://demo.muetab.com/
   - 自定义主页，可添加链接
-  - 样式类似macOS，大量运用白背景圆角卡片
+  - 样式类似macos-like ui，大量运用白背景圆角卡片
   - 依赖mui5
 
 - https://github.com/allister-grange/startertab /202211/ts

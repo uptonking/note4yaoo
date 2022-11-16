@@ -8,8 +8,14 @@ modified: 2021-04-11T17:38:29.829Z
 
 # web-ui-comp-catalog
 
-# component-api-design
+# guide
 
+# ui-design-choices
+- 常用组件比较
+  - button, card
+  - checkbox, dropdown-list
+  - accordion, modal/dialog
+# component-api-design
 - awesome-list
   - https://open-ui.org/analysis/component-matrix
   - [Material-UI API Design Approach](https://next.material-ui.com/guides/api/)
@@ -20,9 +26,7 @@ modified: 2021-04-11T17:38:29.829Z
 - more-comp-libs
   - https://www.npmtrends.com/@material-ui/core-vs-antd-vs-react-bootstrap
   - https://ant.design/components/button-cn/
-
 # general 
-
 - Button
   - gradient
 - Image
@@ -33,9 +37,7 @@ modified: 2021-04-11T17:38:29.829Z
 
 - Box
   - flexible one-off component that can live outside the design system constraints
-
 # foundation
-
 - 大多数组件通用的非dom元素或操作
 
 - component-theme
@@ -47,18 +49,14 @@ modified: 2021-04-11T17:38:29.829Z
 - typing
   - 文字逐个打出
   - 在文字较多时，自动换行；多到占满容器时，自动缩小
-
 # layout
-
 - Flex
 - Box vs Container vs Grid
 
  
 
   - https://spectrum.chat/material-ui/help/grid-vs-box-and-now-vs-container~73cef09f-1eb9-4d0f-a3a3-d46c44232524
-
 # navigation
-
 - FloatingActionButton
 - ## Sidebar
   - variant: window-manager
@@ -67,9 +65,7 @@ modified: 2021-04-11T17:38:29.829Z
   - 空白样式的组件可代替Spacer空行
 - NavBar
   - 下滑时显示，上滑时隐藏
-
 # input
-
 - ## InputText
 - 公式输入
 - as form control
@@ -106,9 +102,7 @@ modified: 2021-04-11T17:38:29.829Z
 - ## Search
   - [appbaseio/reactivesearch](https://github.com/appbaseio/reactivesearch)
   - 搜索结果预览，类似豆瓣输入后
-
 # display
-
 - ## Collapse/Accordion
   - 默认显示前N个字符串，也可显示设置内容，点击会切换展开与折叠状态
   - 内容显示为可折叠的card，或者显示为浮动的modal()
@@ -157,9 +151,7 @@ modified: 2021-04-11T17:38:29.829Z
 - Timeline
 - DiffViewer
 - Comparator
-
 # feedback
-
 - ## Modal/Dialog/弹出窗口对话框
 
 - 一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
@@ -281,14 +273,10 @@ modified: 2021-04-11T17:38:29.829Z
 - BulletComment/弹幕
 
 - ## alert/callout
-
 # experimental
-
 - table-of-contents
   - 内容显示为可折叠的card，或者显示为浮动的modal()
-
 # ui-components-catalog
-
 - 组件类别summary
   - 作为单独库实现的组件
     - list

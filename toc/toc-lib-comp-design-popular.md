@@ -482,9 +482,7 @@ modified: 2020-11-13T07:29:55.201Z
     - 依赖mr-ui，提供的react组件更偏向业务层，如demo-iframe/phone/search
     - Frontend tools for Mapbox documentation websites.
     - On Mapbox projects, pair these components with version 0.26.0 of Mapbox's custom Assembly build.
-
 # known-design-system
-
 - Bootstrap /Twitter
   - /138kStar/MIT/202001/js/scss
   - https://github.com/twbs/bootstrap

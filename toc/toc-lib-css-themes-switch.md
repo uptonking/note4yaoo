@@ -162,6 +162,7 @@ modified: 2021-02-09T13:40:11.536Z
 
 - https://github.com/hbang/iOS-7-CSS
   - Basic iOS 7 CSS
+
 - https://github.com/codedgar/Puppertino
   - https://codedgar.github.io/Puppertino/
   - A CSS framework based on Human Guidelines from apple
@@ -252,11 +253,12 @@ modified: 2021-02-09T13:40:11.536Z
 - https://github.com/cihankoseoglu/shades
   - A Sass/CSS framework for minimalist websites that use black, white and shades of gray as a design choice
 
-## glass ui
+## glass ui/mac/blur
 
 - https://github.com/heypoom/glassmorphic-ui
   - https://glassmorphic.netlify.app/
   - Glassmorphic-style UI components for the web.
+
 - https://github.com/harshhhdev/glassmorphicssm
   - https://dev.to/harshhhdev/ui-design-trend-of-2021-4fb7
 

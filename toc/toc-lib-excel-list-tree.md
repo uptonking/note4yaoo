@@ -121,6 +121,10 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!
   - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
+
+- https://github.com/jakezatecky/react-checkbox-tree
+  - https://jakezatecky.github.io/react-checkbox-tree/
+  - a feature-rich React component for a checkbox treeview.
 # tree-crud-operations
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!
@@ -345,6 +349,28 @@ modified: 2022-08-21T10:02:41.845Z
   - An accessible vanilla JS accordion with extensible API
 - https://github.com/cferdinandi/houdini
   - A simple, accessible show-and-hide/accordion script.
+# lazy-load-tree
+- use-tree /6Star/MIT/202207/ts
+  - https://github.com/elseu/use-tree
+  - useTree is a set of components and hooks that make it ridiculously easy to work with lazy-loaded tree structures like navigation menus or tables of contents.
+
+- react-lazy-tree /12Star/MIT/201808/js
+  - https://github.com/ethanselzer/react-lazy-tree
+  - https://ethanselzer.github.io/react-lazy-tree
+  - Recursively render tree data structures. Render lazily or greedily.
+  - 侧边导航栏经典示例，一次仅展开一个第一层
+
+- https://github.com/velovsky/Derived-D3.js-Collapsible-Tree
+  - https://rawgit.com/velovsky/Derived-D3.js-Collapsible-Tree/master/src/test.html
+  - a D3 tree performing lazy loadings on click
+  - 类似思维导图
+
+- https://github.com/legharir/react-lazy-paginated-tree /201808/js
+  - https://boweihan.github.io/rlpt-example/
+  - 依赖material-ui.v1
+
+- https://github.com/diogofcunha/react-virtualized-tree
+  - a tree view react library built on top of react-virtualized
 # misc
 - https://github.com/daniel-hauser/react-organizational-chart
   - Simple react hierarchy tree - any React children accepted for nodes

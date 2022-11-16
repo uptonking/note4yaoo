@@ -52,6 +52,10 @@ modified: 2021-01-12T18:49:07.422Z
 - https://github.com/timc1/kbar
   - https://kbar.vercel.app/
   - React component to add a fast, portable, and extensible command + k (command palette) interface to your site.
+
+- https://github.com/harshhhdev/kmenu
+  - https://kmenu.hxrsh.in/
+  - An animated and accessible command menu
 # img-editor/capture
 - https://github.com/ailon/markerjs2
   - https://markerjs.com/

@@ -6,6 +6,20 @@ modified: 2022-10-05T04:56:59.409Z
 ---
 
 # draft-202x
+
+- yaoo-accounts-social
+- mastodon
+  - https://fosstodon.org/
+    - open source software
+  - https://vis.social/
+    - data viz and d3
+  - https://en.osm.town/
+    - OpenStreetMap
+  - https://mapstodon.space/
+    - map
+  - https://m.cmx.im/
+    - 中文社区
+
 - wechat-luckiikawayii
   - 技术积累
     - 前端基础html/css/js语法 👉🏻 笔记

@@ -210,3 +210,38 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/weissthorn/weiss
   - Modern, Minimalistic Discussion Software
   - 依赖rethinkdb
+# mastodon
+- mastodon /34.8kStar/AGPLv3/202211/js/ruby
+  - https://github.com/mastodon/mastodon
+  - https://joinmastodon.org/
+  - Your self-hosted, globally interconnected microblogging community
+  - https://github.com/mastodon/mastodon-android
+
+- https://github.com/tleb/awesome-mastodon
+  - Curated list of awesome Mastodon-related stuff
+  - https://github.com/nathanlesage/academics-on-mastodon
+    - lists consisting of academics on Mastodon
+
+- pinafore /808Star/AGPLv3/202211/js
+  - https://github.com/nolanlawson/pinafore
+  - https://pinafore.social/
+  - Alternative web client for Mastodon
+  - Offline support in read-only mode
+  - Progressive Web App features
+  - Multi-instance support
+  - Support non-Mastodon instances (e.g. Pleroma) as well as possible
+  - Non-goals
+    - React Native / NativeScript / hybrid-native version
+    - Android/iOS apps (using Cordova or similar)
+    - Multi-column support
+
+- whalebird-desktop /672Star/MIT/202211/ts+vue
+  - https://github.com/h3poteto/whalebird-desktop
+  - An Electron based Mastodon, Pleroma and Misskey client for Windows, Mac and Linux
+
+- https://github.com/NicolasConstant/sengi
+  - Mastodon & Pleroma Multi-account Desktop Client
+
+- https://github.com/tuskyapp/Tusky
+  - An Android client for the microblogging server Mastodon
+  - Completely open-source - no non-free dependencies like Google services
