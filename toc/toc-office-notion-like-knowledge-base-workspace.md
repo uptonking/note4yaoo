@@ -38,7 +38,8 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/outline/outline
   - https://www.getoutline.com/
   - The fastest wiki and knowledge base for growing teams.
-  - 依赖rich-markdown-editor、mobx-react、dnd-kit、framer-motion、i18next、markdown-it、reakit、postgres、redis、koa、sequelize、yjs、y-prosemirror、y-indexeddb
+  - 依赖rich-markdown-editor、mobx-react、dnd-kit、framer-motion、i18next、markdown-it、reakit
+  - 后端依赖postgres、redis、koa、sequelize、yjs、y-prosemirror、y-indexeddb
   - 与slack集成很好
   - 样式与airframe-react dashboard风格类似
   - [Adopt BSL 1.1 license__202003.v0.41.0](https://github.com/outline/outline/pull/1197)
@@ -158,10 +159,10 @@ modified: 2022-06-03T21:34:54.893Z
 
 - monotome /151Star/AGPL.v3/202208/js
   - https://github.com/cblgh/monotome
+  - a personal knowledge base system. markdown markup, runs in the browser
   - 依赖 marked
   - 原理是 根据url动态读取解析markdown文件，并渲染显示所有文件名
   - 代码量不大，思路清晰
-  - a personal knowledge base system. markdown markup, runs in the browser
   - Monotome has support for the common `[[wiki]]` syntax, 
   - Subjects are ordered into a simple directory structure which is mirrored by index.json.
 
@@ -271,18 +272,23 @@ modified: 2022-06-03T21:34:54.893Z
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3
+  - 依赖自己维护的@notea/rich-markdown-editor
   - Support storage in Amazon S3, MinIO, Aliyun OSS, etc
 
-- https://github.com/zhyd1997/DragonLi
+- https://github.com/zhyd1997/DragonLi /202209/ts
   - https://dragon-li.on.fleek.co/
   - a blog platform and alternative to Mirror
   - support favourite writers in seconds stream for readers by integrated with Superfluid instead of one-time payment.
 
-- https://github.com/unigraph-dev/unigraph-dev
+- https://github.com/unigraph-dev/unigraph-dev /
+  - https://unigraph.dev/
   - A local-first and universal knowledge graph, personal search engine, and workspace for your life.
-  - Your data is private and never leaves your computer. Query or sync all of your data in JSON format using a variant of GraphQL.
+  - Your data is private and never leaves your computer. 
+  - Query or sync all of your data in JSON format using a variant of GraphQL.
+  - [Subscription support and sample todo app](https://github.com/unigraph-dev/unigraph-dev/pull/10)
+    - Subscriptions are implemented with polling + querying after insertion/update/deletion.
 
-- https://github.com/mraht-apps/notie
+- https://github.com/mraht-apps/notie /202201/js/inactive
   - Notion-like workspace with offline mode and encryption
   - Completely offline (online synchronisation by storing encrypted file in cloud folder possible)
 

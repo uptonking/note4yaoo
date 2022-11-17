@@ -19,6 +19,7 @@ modified: 2022-11-11T03:09:56.491Z
   - 对移动端需要简化逻辑和调整ui
   - 不要在自动打包上折腾过多精力，一个store一个标准
   - react-native封装webview的方式也许更好
+  - 移动端使用sqlite嵌入式数据库更通用
 
 - 实现离线时不使用浏览器扩展的形式
   - indexeddb的访问存在same-origin的限制，不应该维护两套数据(在线url和扩展页url不同)
@@ -39,10 +40,10 @@ modified: 2022-11-11T03:09:56.491Z
 - 国内案例
   - [微博 移动版](https://m.weibo.cn/)
 
-- PWA 应用商店
+- PWA应用商店
   - [Appscope](https://appsco.pe/)
     - https://appsco.pe/toplist
-    - https://0data.app/glance/
+  - [zero data app](https://0data.app/glance/)
 # pwa-sites
 - ref
   - https://github.com/hemanth/awesome-pwa
@@ -55,8 +56,8 @@ modified: 2022-11-11T03:09:56.491Z
 
 - https://github.com/RobinLinus/snapdrop
   - local file sharing in your browser. Inspired by Apple's Airdrop.
-  - Vanilla HTML5 / ES6 / CSS3 frontend
-  - WebRTC / WebSockets
+  - Vanilla HTML5/ES6/CSS3 frontend
+  - WebRTC/WebSockets
 
 - https://github.com/blenderskool/blaze
   - File sharing progressive web app built using WebTorrent and WebSockets

@@ -13,11 +13,14 @@ modified: 2022-11-14T15:12:02.783Z
   - https://notes-ysau.pages.dev/
   - Make notes in the browser itself, it runs offline and the data is saved in the browser.
   - service worker + workbox + indexeddb + vite
+
 - https://github.com/kkosmowski/react-notes-2 /202210/ts/localbase
   - https://kkosmowski-notes.netlify.app/
   - Advanced To-Do app with custom drag-to-select, categories and multiple customization options.
   - 依赖localbase操作indexeddb、redux、mui
   - 界面较完整
+
+
 - https://github.com/aaltoo/pwa-notes /202211/ts/vue
   - https://pwa-notes-two.vercel.app/
   - This template should help get you started developing with Vue 3 in Vite.
@@ -35,7 +38,7 @@ modified: 2022-11-14T15:12:02.783Z
   - 14k offline-capable journaling PWA using preact, node, MySQL, and IndexedDB.
   - 使用体验类似文章列表
 
-- https://github.com/Tesfaye-Eshetie/movie-search-pwa /js
+- https://github.com/Tesfaye-Eshetie/movie-search-pwa /202210/js
   - https://tesfaye-eshetie.github.io/movie-search-pwa/
   - Movie Search PWA using React, vite, PWA and IndexedDB
 

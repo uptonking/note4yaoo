@@ -23,7 +23,7 @@ modified: 2021-07-20T13:50:23.433Z
   - block-editor with slash-menu/backlinks
   - pdf
 - data table/grid
-  - pivotable; formulas; collaborative
+  - pivotable; collaborative; formulas
   - stream-updates/server-side-infinite-row-model
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~

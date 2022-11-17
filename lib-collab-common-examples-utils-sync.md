@@ -23,8 +23,9 @@ modified: 2022-11-07T17:37:27.579Z
   - 后台管理界面使用 Ant Design Pro
   - 支持多人协作文档（使用 Quill 富文本编辑器）
 
-- https://github.com/IdrisIsra/phantom-notepad-T3
+- https://github.com/IdrisIsra/phantom-notepad-T3 /202210/ts
   - A collaborative notepad using T3 stack with websockets and Redis
+  - 依赖nextjs、tanstack-query.v4、trpc
 
 - https://github.com/Unleash/unleash
   - https://demo.unleash-hosted.com/
