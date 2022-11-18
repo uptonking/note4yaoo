@@ -21,7 +21,14 @@ modified: 2021-03-31T06:50:19.936Z
 
 - ## 
 
-- ## 
+- ## 在我看来，大型系统的开发，核心的挑战其实只有一个，就是“控制复杂性”。
+- https://twitter.com/xuwenhao/status/1593469165892820992
+  - 即使是工程师，也不要自己被自己骗了。无论是“高并发”还是“大数据”，并不是大部分互联网公司遇到的核心技术挑战。
+  - 事实上，过去几年这些问题，其实根本不是拿着高薪资的软件工程师们解决的。大部分是靠硬件解决的。
+- 持久层存储从机械硬盘变成SSD，以及I/O走PCI/E通道，解决了IOPS和吞吐量问题
+  - 硬件的持续降价，使得大家用得起几百GB级别的Redis Cache
+- 软件和系统上，从BigTable到Spanner其实都是Google解决的。Google让跨数据中心，跨州的分布式系统的一致性问题，得到了解决。
+- 那当我们回到业务系统之后，其实面对的核心技术问题，就是“如何管理复杂性”。
 
 - ## There’s a very real possibility local dev may be dead in 10 years. (The Death of Localhost)
 - https://twitter.com/swyx/status/1533910738942562304

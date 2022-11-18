@@ -11,7 +11,7 @@ modified: 2022-06-13T02:57:07.648Z
 
 # [Best Practices for Using IndexedDB_201706](https://web.dev/indexeddb-best-practices/)
 
-> Learn best practices for syncing application state between IndexedDB an popular state management libraries.
+> Learn best practices for syncing application state between IndexedDB and (in-memory) popular state management libraries.
 
 - When a user first loads a website or application, there's often a fair amount of work involved in constructing the initial application state that's used to render the UI.
   - For example, sometimes the app needs to authenticate the user client-side and then make several API requests before it has all the data it needs to display on the page.

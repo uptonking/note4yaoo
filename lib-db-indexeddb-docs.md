@@ -1,26 +1,15 @@
 ---
-title: lib-db-indexeddb-dev
-tags: [indexeddb]
-created: 2022-06-13T02:56:15.518Z
-modified: 2022-06-13T02:56:32.537Z
+title: lib-db-indexeddb-docs
+tags: [docs, indexeddb]
+created: 2022-06-13T02:57:15.478Z
+modified: 2022-06-13T02:57:31.829Z
 ---
 
-# lib-db-indexeddb-dev
+# lib-db-indexeddb-docs
 
 # guide
 
 # docs
-
-## [Indexeddb API 3.0 Spec](https://www.w3.org/TR/IndexedDB/#key-generator-construct)
-
-- in-line key: A key that is stored as part of the stored value.
-
-- An object store optionally has a key path. 
-  - 👉🏻 If the object store has a key path, it is said to use in-line keys. 
-  - Otherwise it is said to use out-of-line keys.
-- An object store optionally has a key generator.
-  - A key generator is used to generate keys for records inserted into an object store if not otherwise specified.
-- Every object store that uses key generators uses a separate generator. That is, interacting with one object store never affects the key generator of any other object store.
 
 ## [Using IndexedDB - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
 
@@ -58,4 +47,3 @@ modified: 2022-06-13T02:56:32.537Z
   - you should combine the clear and the write into a single transaction.
   - you should never tie database transactions to unload events. because they are asynchronous they will be aborted before they can execute.
   - In fact, there is no way to guarantee that IndexedDB transactions will complete, even with normal browser shutdown.
-# more

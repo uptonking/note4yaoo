@@ -11,6 +11,8 @@ modified: 2021-08-22T16:08:42.552Z
 
 - 如何去掉未使用的类名，或放心删除未使用的类名
   - 可以间接通过ide的find references找引用的方式，去掉未被引用过的类名
+
+- compiled-css-in-js会编译出atomic css
 # examples
 - online
   - https://codesandbox.io/s/vanilla-extract-esbuild-9h490m

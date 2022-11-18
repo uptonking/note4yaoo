@@ -11,8 +11,9 @@ modified: 2022-06-13T02:56:51.029Z
 
 # discuss-stars
 - ## [How to update in indexeddb instead of override all the data?](https://stackoverflow.com/questions/49846187)
-- I would point out that calling put is not equivalent to SQL update. 
-  - When putting a new object into a store, if another object with the same keypath (id) already exists, that existing object will be replaced, entirely. indexedDB does not modify the existing object in the store, a property at a time, instead it completely replaces the old object with a new object.
+- I would point out that calling `put` is not equivalent to SQL update. 
+  - When putting a new object into a store, if another object with the same keypath (id) already exists, that existing object will be replaced, entirely. 
+  - indexedDB does not modify the existing object in the store, a property at a time, instead it completely replaces the old object with a new object.
 - If you want to only replace some properties of an object, use two requests. 
   - One request to get the existing object in the store, 
   - and a second request to store the modified object. 
@@ -40,7 +41,12 @@ modified: 2022-06-13T02:56:51.029Z
 
 - ## 
 
-- ## 
+- ## [IndexedDB - Is keyPath already an Index? - Stack Overflow](https://stackoverflow.com/questions/31908605/indexeddb-is-keypath-already-an-index)
+- It doesn't technically create an index, but it's basically the same thing. 
+  - Every object in the database is associated with a key. 
+  - If you set a key path, then they key is whatever the key path evaluates to. 
+  - Then you can query with for that key (e.g. IDBObjectStore.get), no index needed.
+- Indexes only come into play when you want to efficiently query your database for something besides the key.
 
 - ## ios supports indexeddb?
 - https://stackoverflow.com/questions/25818860

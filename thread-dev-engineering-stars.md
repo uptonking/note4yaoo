@@ -13,7 +13,9 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
+- ## Auto Generating Code Demo via ASTs for ag-grid
+- https://www.slideshare.net/StephenCooper95/auto-generating-code-demo-via-asts
+
 
 - ## TanStack Query v5 Roadmap_20221001
 - https://github.com/TanStack/query/discussions/4252

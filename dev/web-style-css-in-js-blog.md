@@ -7,8 +7,46 @@ modified: 2021-01-01T20:06:12.929Z
 
 # web-style-css-in-js-blog
 
-# [CSS-in-JS：一个充满争议的技术方案](https://zhuanlan.zhihu.com/p/165089496)
+# [精读《我们为何弃用 css-in-js》 - 知乎_202210](https://zhuanlan.zhihu.com/p/583155810)
 
+- emotion排名第二的维护者 Sam 所在公司弃用了 css-in-js 方案
+  - [Why We're Breaking Up with CSS-in-JS_20221026](https://dev.to/srmagura/why-were-breaking-up-wiht-css-in-js-4g9b)
+  - We've been using Sass Modules and utility classes for new components for several weeks now and are quite happy with it.
+
+- 优点：
+  - 无全局样式冲突。
+    - 就像 js 文件天然支持模块化的好处一样，原生 css 因为没有模块化能力，天然容易导致全局样式污染，如果不是特意用 BEM 方式命名，想要避免冲突就只能借助 css-in-js 了。（css-modules 也一样能做到）
+  - 与 js 代码合在一起。
+    - 天然融合进 js 代码方便模块化管理，使 css 可以与某个局部模块绑定。（css-modules 也一样能做到，只是必须单独拆一个样式文件）
+  - 能将js变量应用到样式上。
+    - 虽然 css 变量也能解决这个问题，但不如 css-in-js 那么直观，inline-style 也能解决这个问题，但会产生大量重复的局部样式，且这个优势 css-modules 做不到。
+  - 配合ts的时候有充分的类型提示，开发的时候用得很爽
+
+- 缺点：
+  - css-in-js 运行时解析的实现版本增加了运行时性能压力，尤其在 React18 调度机制模式下，存在无法解决的性能问题（运行时插入样式会导致 React 渲染暂停，浏览器解析一遍样式，渲染再继续，然后浏览器又解析一遍样式）。
+    - This effectively causes a recalculation of all CSS rules against all DOM nodes every frame while React is rendering. This is VERY slow.
+    - This quote from Sebastian is specifically referring to performance in React Concurrent Mode, without `useInsertionEffect`.
+  - 增加了包体积。相比原生或者 css-modules 方案来说，增加了运行时框架代码 8kb 左右。
+  - 让 ReactDevTools 结构变得复杂，因为 css-in-js 会包裹额外的 React 组件层用来实现样式插入。
+  - 多个不同（甚至是相同）版本的 css-in-js 库同时加载时可能导致错误。
+  - 样式插入优先级无法自定义，这就导致产生样式覆盖时，业务对样式覆盖的优先级无法产生稳定的预期。class 优先级由 header 定义顺序决定，而非 className 的字符顺序决定，而 header 定义顺序又由资源加载与 css-in-js 插入执行时机决定
+  - 不同 React 版本的 SSR，css-in-js 需要适配不同的实现，这对框架作者不太友好。
+
+- discuss
+
+- 不是所有项目都需要长期维护，所以随着设计迭代不断持续交付的场景也覆盖不了全部。所以我感觉快速输出结果的方案肯定还是会持续有市场的。不过像GitHub这种，现在utility class用得欢，以后有改版的时候动得肯定也不会少。
+
+- 样式个人看法是要解耦，由设计去做持续交付。css in js的问题是挺违背这点的，带来的各种问题就如这个大神所说；而原子样式的问题是样式耦合到结构，以及有些逻辑（本来是js部分）要预设到classname里面去搞（比如变体 dark：large：），业务如果复杂，这些抽象都要前置考虑和定义，这个动作到底是设计做还是研发做，都很难。tailwind和 uno都没有志提供dsm去解决这些问题（本质是构建符合他们设计系统的dsm），相当于没有衔接设计和研发的配套。那配套业界不是没有，比如figma支持token和dsm再多一些扩大设计dsl能表达的的范围，css支持动态性（主要是函数能力）再多一些以支持一些规范的动态化，样式解耦这事基本就能成了，走到这步就是token->css(顶多再用个css modules)，其他都多余。
+  - 我不看好css in js 也不看好原子化css。后者看着美好，实践起来问题挺多，没法高效融入到设计向研发交付的工作流中。个人看法解决方案还是在标准里，w3c token 和css（比如CSS Color Module Level 5）是基础协议，现在还不够成熟很多但很多feat都是实现design dsl和生产环境代码必要的，至于信息流转就靠社区工具（设计工具，dsm，开源库）去做集成交付。
+
+## [Why We're Breaking Up with CSS-in-JS_20221026](https://dev.to/srmagura/why-were-breaking-up-wiht-css-in-js-4g9b)
+
+- While I have not used any compile-time CSS-in-JS libraries myself, I still think they have drawbacks when compared with Sass Modules. 
+- Here are the drawbacks I saw when looking at Compiled in particular:
+  - Styles are still inserted when a component mounts for the first time, which forces the browser to recalculate the styles on every DOM node. 
+  - Dynamic styles like the color prop in this example cannot be extracted at build time
+  - The library still inserts boilerplate components into your React tree
+# [CSS-in-JS：一个充满争议的技术方案](https://zhuanlan.zhihu.com/p/165089496)
 - CSS-in-JS（后文简称为 CIJ）在2014年由Facebook的员工Vjeux在NationJS会议上提出：可以借用 JS 解决许多 CSS 本身的一些“缺陷”，比如全局作用域、死代码移除、生效顺序依赖于样式加载顺序、常量共享等等问题。
 - CIJ 的一大特点是它的方案众多。发展初期，社区在各个方向上探索着用 JS 开发和维护 CSS 的可能性。每隔一段时间，都会有新的语法方案或实现，尝试补充、增强或是修复已有实现。
 - 随着时间流逝，他们中的大多数不是被官方宣布废弃，就是长时间不再维护
@@ -37,9 +75,7 @@ modified: 2021-01-01T20:06:12.929Z
   - CIJ 给 CSS 原子化带来了一些新的可能性，社区正在探索利用 CIJ 完成自动化的原子化 CSS 的可能性，比如 Styletron、Fela、Otion 等
   - 原子化 CSS 可能会给 CIJ 带来不少好处，比如CSS规则去重。CIJ 在运行时会产生许多新的CSS类，增加浏览器的负担，遗憾的是这需要框架本身支持把CSS抽离为静态文件的需求。目前流行的CSS-in-JS框架，比如Emotion，暂时还无法支持这样的特性。
 - 经过了一段时间的探索与实践，FreeWheel最终确定使用Emotion作为目前的 CIJ 方案，将其应用于部分前端项目
-
 # [Tip: ChromeDevTools now supports CSS-in-JS!](https://twitter.com/addyosmani/status/1289818213983883270)
-
 - This should be a standard for all other browsers. They should help  Frontend Developers' lives and make life easy. 
 - Thanks for the tip! Can you recommend us posts about performance comparison of css in js vs CSS modules? Seems like CSS in JS always will be slower because it's overloading the JS main thread.
 - There's CSS-in-JS libraries with zero overhead; I've used Linaria. The CSS becomes real .css files as part of the build, and there's no JS overhead (it just compiles to class name strings).
@@ -57,15 +93,11 @@ modified: 2021-01-01T20:06:12.929Z
     - For example, the h1 styles added with CSSStyleSheet (CSSOM APIs) are not editable previously. There are editable now in the Styles pane
 
   - [Firefox 79: Better source map references for SCSS and CSS-in-JS](https://hacks.mozilla.org/2020/07/firefox-79/)
-
 # CSS-in-JS - styled vs css prop
-
 - ## [CSS-in-JS - styled vs css prop](https://dev.to/a_sandrina_p/css-in-js-styled-vs-css-prop-229e)
 
 - I like to use styled, since css prop depends on a bit more setup using babel or macro to reach the same result.
-
 # style9: build-time CSS-in-JS
-
 - [style9: build-time CSS-in-JS_202007](https://css-tricks.com/style9-build-time-css-in-js/)
 
 - In April of last year, Facebook revealed its big new redesign, a rebuild of a large site with a massive amount of users. 
@@ -96,12 +128,10 @@ modified: 2021-01-01T20:06:12.929Z
   - With CSS-in-JS, we are imposing a performance cost when embedding styles in our code. 
   - By extracting the values during build-time we can have the best of both worlds. 
   - We benefit from co-locating our styles with our markup and the ability to use existing JavaScript infrastructure, while also being able to generate optimal stylesheets.
-
 # Facebook's CSS-in-JS Approach - stylex
-
 - [Facebook's CSS-in-JS Approach - Frank Yan at React Conf 2019](https://www.infoq.com/news/2020/04/facebook-cssinjs-react-conf-2019/)
 
-``` typescript
+```typescript
 const styles = stylex.create({
   blue: {color: 'blue'},
   red: {color: 'red'}
@@ -117,12 +147,11 @@ function MyComponent(props) {
 ```
 
 # Why use css in js
-
 - ## [Write CSS in JavaScript_mxstbr_201902](https://mxstbr.com/thoughts/css-in-js)
 
 - What Does CSS-in-JS Look Like?
 
-``` typescript
+```typescript
 import styled from "styled-components";
 
 const Title = styled.h1`
@@ -155,9 +184,7 @@ const App = () => <Title>Hello World!</Title>;
   - The component will apply the correct styles automatically when I dynamically change that context.
 - CSS-in-JS still offers **all the important features of CSS preprocessors**. 
   - All libraries support auto-prefixing, and JavaScript offers most other features like mixins (functions) and variables natively.
-
 # Styled Components vs. CSS Stylesheets
-
 - [Styled Components vs. CSS Stylesheets_202001](https://getstream.io/blog/styled-components-vs-css-stylesheets/)
 
 - s-c pros
@@ -185,9 +212,7 @@ const App = () => <Title>Hello World!</Title>;
   - Global Scope & Specificity
   - No True Dynamic Styling
   - Maintaining Consistency for theme, variables
-
 # ref
-
 - [CSS and JS Are at War, Here’s How to Stop It_201901](https://dev.to/evilmartians/css-and-js-are-at-war-heres-how-to-stop-it-158a)
   - The warring factions are often labeled as:
     - “JS-JS-JS”: Developers who create SPA with client-side JavaScript frameworks like React, Vue.js, and Angular. They are heavy users of innumerable build tools (Babel, webpack, etc.) and JS libraries.
