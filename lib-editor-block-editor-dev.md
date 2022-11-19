@@ -114,7 +114,14 @@ modified: 2022-06-08T11:14:10.668Z
 # discuss
 - ## 
 
-- ## 
+- ## GitHub is experimenting with interactive README components, called "blocks."
+- https://twitter.com/FredKSchott/status/1590438076677238784
+  - https://blocks.githubnext.com/
+  - https://www.youtube.com/watch?v=wKZg0DScucw&t=23782s
+- “I’m a README developer”
+- Interesting! My hopes: implemented via directives (hopefully) or fenced code lang flags (like their new task lists, also okay).
+- That's cool but i did it first, built with Astro
+  - https://github.com/nikolaxhristov/nikolaxhristov
 
 - ## Anyone else sort of let down by Block Editor?_202006
 - https://www.reddit.com/r/Wordpress/comments/fxatkr/anyone_else_sort_of_let_down_by_block_editor/

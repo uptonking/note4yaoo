@@ -7,8 +7,31 @@ modified: 2022-11-07T10:24:02.543Z
 
 # tool-app-github-xp
 
-# improvements
+# guide
 
+# github-mirror
+- [Gitee 极速下载，每日同步一次。](https://gitee.com/mirrors)
+  - https://gitee.com/organizations/mirrors/projects
+
+- github-mirrors
+  - https://hub.nuaa.cf/
+
+- git-only
+  - https://github.zhlh6.cn/
+  - https://gitclone.com/
+
+- git-download
+  - https://gh.api.99988866.xyz/
+  - https://ghproxy.com/
+  - http://toolwa.com/github/
+
+- dead?
+  - https://hub.fastgit.xyz/
+
+- questions
+  - search github 镜像 一月内
+  - [Github国内镜像网站，解决Github访问的神器 - 知乎](https://zhuanlan.zhihu.com/p/360677731)
+# improvements
 - github-release
   - app store
   - pkg store

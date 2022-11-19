@@ -36,6 +36,10 @@ modified: 2022-11-07T10:25:12.034Z
   - 搜索关键词时，可加上'min_replies:1'的条件，筛选出被讨论过的质量更高的内容
   - https://github.com/igorbrigadir/twitter-advanced-search
 
+- export
+  - 支持导出tweets、replies、likes
+  - 不支持导出bookmarks
+
 - how-to follow hashtag
   - twitter-deck，添加搜索关键词作为自定义栏
     - https://github.com/eramdam/BetterTweetDeck

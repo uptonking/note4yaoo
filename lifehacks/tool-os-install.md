@@ -9,6 +9,15 @@ modified: 2020-12-22T12:42:14.745Z
 
 # guide
 
+# proxy-usecase
+- browser-proxy
+  - edge浏览器右上角一直无法登录同步因为国内网络问题，折中方案是点击右侧边栏的outlook或office按钮，在侧边栏登录后，整个浏览器也会登录
+  - flatpak安装的chrome默认支持系统代理，但edge浏览器未支持，所以edge不能访问特殊网站
+    - [edge: Add proxy support?](https://github.com/flathub/com.microsoft.Edge/pull/181)
+
+- chrome应用商店 #镜像站点
+  - [极简插件\_Chrome扩展插件商店\_优质crx应用下载](https://chrome.zzzmh.cn/)
+  - [收藏猫插件](https://chrome.pictureknow.com/)
 # ubuntu22.04
 
 ## guide
@@ -163,6 +172,7 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
   - 方法很简单，只要将.desktop文件复制到指定位置即可，直接支持设置default open
 
 - [How to Change Mouse Cursor on Ubuntu](https://www.omgubuntu.co.uk/2022/03/how-to-change-mouse-cursor-on-ubuntu)
+
 ## software
 
 - 常用软件都可以直接在ubuntu官方包repository找到

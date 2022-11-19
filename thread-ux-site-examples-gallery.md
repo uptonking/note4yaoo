@@ -17,6 +17,8 @@ modified: 2021-08-16T06:46:12.800Z
 
 - ## 
 
+- ## 
+
 - ## Angel Uriostegui 设计师，白背景圆角
 - https://angel-seven.vercel.app/
 - https://twitter.com/anguriostegui
@@ -30,8 +32,10 @@ modified: 2021-08-16T06:46:12.800Z
 - ## What are great OSS project websites you like? Looks nice, good docs, useful, etc?
 - https://twitter.com/wooorm/status/1432825380604420097
   - Specifically excluding stuff like:
+
     - companies/startups
     - giant stuff like python/deno/node
+
 # illustrations
 - Multicolor illustrations by Scale
   - https://2.flexiple.com/scale/multi-color-illustrations
@@ -49,6 +53,7 @@ modified: 2021-08-16T06:46:12.800Z
   - 卡通人物的眼睛跟随鼠标移动，超级可爱
   - /amazing/theming-绿色
   - https://codepen.io/uptonking/pen/QWdqEmr
+
     - [Making lil' me - part 1.](https://www.cassie.codes/posts/making-a-lil-me-part-1/)
 
 - ## This Clubhouse clone with Next.js/Vercel

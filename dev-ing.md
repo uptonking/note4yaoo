@@ -92,9 +92,25 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - collab-data-structure
   - undo/redo
 
-## 1119
+## 1120
 
 - idb-sync gdrive
+
+## 1119
+
+- [writing style - Abbreviation of "number (of)" in a table heading - Academia Stack Exchange](https://academia.stackexchange.com/questions/90816/abbreviation-of-number-of-in-a-table-heading)
+  - If the suggested abbreviations are not short enough, you could do `"# items"` or `"No. Items"`. Any of these should be sufficiently clear with some surrounding explanatory text.
+
+- [YouTube标签解读：Hashtag和Tag的区别 - 知乎](https://zhuanlan.zhihu.com/p/368827431)
+- 相同点：
+  提供视频的相关信息；
+  有助于视频排名；
+  不宜使用过多；
+  需要使用关键词
+
+- 不同点：
+  主题标签用户可见，而标签不是；
+  主题标签对用户粘度有较大影响，因为用户点击主题标签会跳到搜索页；
 
 ## 1118
 
@@ -1054,7 +1070,7 @@ const MyPage = () => {
 - Yes you can, but selecting/styling it with a CSS selector will be a pain.
   - id values that consist solely of digits are perfectly valid in HTML; anything but a space is okay. 
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
-  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`,                                                                                                                                                                                                                                                                                                                                                                                                                                   `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
+  - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`, / `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
 # dev-08
 
@@ -1073,7 +1089,7 @@ const MyPage = () => {
     - [React 18 TypeScript children FC](https://stackoverflow.com/questions/71788254)
     - children prop was removed from `React.FunctionComponent (React.FC)` so you have to declare it explicitly.
     - children is a regular prop and is not something special. 
-  - It provides typechecking and autocomplete for static properties like `displayName`,                                                                                   `propTypes`, and `defaultProps`; 
+  - It provides typechecking and autocomplete for static properties like `displayName`, / `propTypes`, and `defaultProps`; 
     - However, there are currently known issues using defaultProps with `React.FunctionComponent`. 
   - It is explicit about the return type, while the normal function version is implicit
 

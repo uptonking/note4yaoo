@@ -18,7 +18,6 @@ modified: 2021-08-22T07:29:34.045Z
 - Interesting! My hopes: implemented via directives (hopefully) or fenced code lang flags (like their new task lists, also okay).
 - That's cool but i did it first, built with Astro
   - https://github.com/nikolaxhristov/nikolaxhristov
-- 
 
 
 - ## 想从零实现一个富文本编辑器是不是天坑……

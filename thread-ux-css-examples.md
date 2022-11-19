@@ -36,7 +36,12 @@ modified: 2021-02-05T14:00:02.922Z
 
 - ## 
 
-- ## 
+- ## 60° Gradient Morphing Blob
+- https://twitter.com/HiTw93/status/1593816335594684416
+  - https://codepen.io/georgedoescode/pen/oNzamjV
+  - 动态水滴的效果，渐变形状和颜色
+  - 水滴采用科幻风格的渐变色
+  - 基于svg实现
 
 - ## Holograms, light-leaks and how to build CSS-only shaders.
 - https://robbowen.digital/wrote-about/css-blend-mode-shaders/

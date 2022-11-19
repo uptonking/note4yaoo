@@ -48,6 +48,10 @@ modified: 2021-08-12T20:21:51.264Z
   - https://github.com/stordco/msw-toolbar
     - a little utility package that helps toggle between your mocks + a real API. 
 
+- https://github.com/Matsuuu/Bulle /202011/ts
+  - Bulle is a modern solution for mocking HTTP API's.
+  - Bulle will start a fastify HTTP server to serve the endpoints, and provide a CLI interface for monitoring requests.
+
 - https://github.com/fiverr/react-fetch-mock-provider
   - wrapper around fetch-mock, that provides a more React-friendly interface.
 - https://github.com/mbugerald/react-requests-fetch

@@ -19,6 +19,17 @@ modified: 2022-11-04T14:22:17.373Z
   - 在 worker 中 indexeddb 的读写速度比在主线程中慢很多。原因未知，可能与 cpu 占用有关。
   - worker transfer 能大大增加主线程与 worker 间的数据传输速度。但要注意交出控制权后，处理逻辑会有相应变化。
 
+- stoxy /74Star/ISC/202205/js
+  - https://github.com/stoxy-js/stoxy
+  - Stoxy is a state management API for all modern Web Technologies.
+  - Stoxy stores the data in a in-browser Database called IndexedDB, only keeping the latest 5 accessed objects in-memory for faster access.
+  - Stoxy utilizes a promise-based use flow making it really easy to asynchronously read and write from the storage.
+  - 👉🏻 If your browser doesn't support IndexedDB, there's no need to worry. Stoxy recognizes these cases automatically, and opts out of using it and utilizes a in-memory system only.
+  - The motivation behind Stoxy as to provide a simpler solution for cross-app state management.
+  - Stoxy ships with a small set of Web Component, which are framework agnostic
+  - https://github.com/stoxy-js/hooks /202106/js
+    - Stoxy Hooks for (P)React
+
 - https://github.com/jakearchibald/idb
   - IndexedDB, but with promises
 - https://github.com/darrachequesne/synceddb
@@ -44,15 +55,6 @@ modified: 2022-11-04T14:22:17.373Z
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!
   - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
-
-- https://github.com/stoxy-js/stoxy
-  - Stoxy is a state management API for all modern Web Technologies.
-  - Stoxy stores the data in a in-browser Database called IndexedDB, only keeping the latest 5 accessed objects in-memory for faster access.
-  - Stoxy utilizes a promise-based use flow making it really easy to asynchronously read and write from the storage.
-  - If your browser doesn't support IndexedDB, there's no need to worry. Stoxy recognizes these cases automatically, and opts out of using it and utilizes a in-memory system only.
-- https://github.com/phanhuyanh/choxy
-  - reactive state management system and wrapper for IndexedDB.
-  - Choxy allows you to easily handle, save data to IndexedDB
 
 - https://github.com/falsandtru/clientchannel
   - Persist objects and sync them between tabs via IndexedDB or LocalStorage.
@@ -80,15 +82,24 @@ modified: 2022-11-04T14:22:17.373Z
 
 - https://github.com/jvilk/BrowserFS
   - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
-# indexeddb-cache
-- https://github.com/akirarika/kurimudb /202202/ts
-  - 一款渐进式的 Web 端本地存储库，可将数据保存到 LocalStorage、IndexedDB、Cookie 等地方，和订阅值的变更。
-  - 除了持久化数据之外，若你愿意，Kurimudb 还能成为你应用的 Model 层抽象，接任你应用中状态管理库的职责 (如 Vuex、Redux、Mobx)，使你应用真正拥有单一数据来源。
+# idb-state-cache
+- choxy /3Star/ISC/202106/js
+  - https://github.com/phanhuyanh/choxy
+  - reactive state management system and wrapper for IndexedDB.
+  - Choxy allows you to easily handle, save data to IndexedDB
 
 - https://github.com/piotr-cz/swr-idb-cache
   - IndexedDB Cache Provider for SWR
   - Synchronize SWR Cache with IndexedDB to get offline cache.
   - Library reads current state of cache stored in IndexedDB into memory using idb during initialization. Then it resolves into Cache Provider which should be passed to SWR.
+
+- https://github.com/akirarika/kurimudb /202202/ts
+  - 一款渐进式的 Web 端本地存储库，可将数据保存到 LocalStorage、IndexedDB、Cookie 等地方，和订阅值的变更。
+  - 除了持久化数据之外，若你愿意，Kurimudb 还能成为你应用的 Model 层抽象，接任你应用中状态管理库的职责 (如 Vuex、Redux、Mobx)，使你应用真正拥有单一数据来源。
+
+- https://github.com/craigbuckler/asayer-idbstate
+  - This project demonstrates how to use the browser's IndexedDB database to manage state in applications.
+  - An example todo application demonstrates usage
 
 - https://github.com/yishiashia/indexeddb-image-cache
   - A example of images cached with indexedDB.
@@ -100,6 +111,9 @@ modified: 2022-11-04T14:22:17.373Z
 
 - https://github.com/StudentOfJS/query-plus
   - fetch and process data in web worker, store in indexedDB.
+
+- https://github.com/JamesLMilner/serviceworker-statemanagement
+  - Putting Redux state management in a Service Worker
 
 - https://github.com/zmkwjx/baikbingo-cache
   - 基于indexedDB的缓存解决

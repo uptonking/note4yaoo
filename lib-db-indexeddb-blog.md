@@ -9,6 +9,35 @@ modified: 2022-06-13T02:57:07.648Z
 
 # guide
 
+# [The pain and anguish of using IndexedDB: problems, bugs and oddities](https://gist.github.com/pesterhazy/4de96193af89a6dd5ce682ce2adff49a)
+- This gist lists challenges you run into when building offline-first applications based on IndexedDB, including open-source libraries like Firebase, pouchdb and AWS amplify 
+
+- State deleted after 7 days of inactivity (Safari)
+  - After 7 days of inactivity, Safari deletes all browser storage, including cookies, localstorage, websql and indexeddb. Other browsers don't do this.
+  - The feature, called Intelligent Tracking Prevention (ITP), is meant to prevent advertisers from abusing indexeddb as a way to track users.
+
+- Is IndexedDB ACID compliant?
+  - IndexedDB does not provide transaction isolation. As far as I know, concurrent transactions (in multiple tabs or even in a single tab) are never rolled back because they touch the same object stores. The only exception, as far as I can tell, is exceptions thrown when a primary key constraint is violated. This can be used to achieve some level of transaction isolation. However, the guarantees are nowhere near as extensive as those provided by SQL databases.
+
+- No locking primitives (Safari, Firefox)
+  - The Web Platform lacks a standardized way - or any proper way, really - to lock a resource across multiple tabs of the same browser. Multiple tabs of an app using IndexedDB will invariably write to the same IndexedDb database. Without cross-tab locking, database corruption is hard to avoid.
+
+- Private Browsing Mode (Firefox)
+  - Firefox is the only major browser without support for IndexedDB in Private Browsing mode. 
+  - Because there is no API to tell if Private Browsing is active, the only workaround is to try to open a test database and to regard the API as unavailable if this fails.
+
+- Web SQL - the database that could have been
+  - Before IndexedDB there was Web SQL, a thin wrapper around the legendary SQLite embedded database. Web SQL is more powerful (a proper superset of IndexedDB) and arguably better designed than IndexedDB.
+  - Mozilla objected to the Web SQL interface as having no alternative implementation available. 
+  - Ironically, IndexedDB is internally implemented based on SQLite in Firefox (Chrome uses the simpler LevelDB instead).
+
+- [Notion's page load and navigation times just got faster_202104](https://www.notion.so/blog/faster-page-load-navigation)
+  - We decided to migrate our desktop apps to SQLite because it's a hardened storage solution that's shown marked performance improvements on our mobile applications for the past year.
+  - Before SQLite, we relied on IndexedDB for client-side storage. 
+  - But we encountered storage quotas, a number of bugs, and performance concerns on Windows machines in particular, which meant IndexedDB wouldn’t scale with Notion’s growing user base.
+
+- Bugs, bugs, bugs (Safari)
+  - The Webkit team keeps shipping critical storage-related bugs into production, again and again
 # [Best Practices for Using IndexedDB_201706](https://web.dev/indexeddb-best-practices/)
 
 > Learn best practices for syncing application state between IndexedDB and (in-memory) popular state management libraries.

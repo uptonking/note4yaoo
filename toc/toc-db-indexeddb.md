@@ -156,7 +156,7 @@ modified: 2022-06-03T22:06:16.249Z
   - https://github.com/Microsoft/reactxp/tree/master/samples/TodoList
   - https://github.com/microsoft/reactxp /inactive
     - ReactXP is a library for cross-platform app development using React and React Native.
-# indexeddb-query-sql
+# idb-query-sql
 - [Support full text indexes](https://github.com/w3c/IndexedDB/issues/44)
 
 - https://gist.github.com/inexorabletash/a279f03ab5610817c0540c83857e4295
@@ -207,7 +207,7 @@ modified: 2022-06-03T22:06:16.249Z
   - A simple queryable embedded database designed for front-end that wraps IndexedDB.
   - A limitation of IndexedDB is that you can only perform 1 write operation at a time. Currently, IndexedDB also limits you to only having 1 instance open per browser!
     - This means that if you implement this you won't be able to run this database in multiple tabs due to limitations of IndexedDB.
-# indexeddb-orm
+# idb-orm
 - https://github.com/ahricode/iorm /202211/ts
   - IORM 是 IndexedDB 工具包和对象关系映射器，提供了 IndexdbDB 的全部功能，具有灵活性。
 

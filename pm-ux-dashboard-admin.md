@@ -9,6 +9,8 @@ modified: 2021-07-27T09:09:48.459Z
 
 # guide
 
+- [design patterns for dashboard design](https://dashboarddesignpatterns.github.io/patterns.html)
+
 - 实现的要点
   - 路由配置：嵌套路由、显示隐藏、显示名称、额外参数
   - 布局配置：sidebar、header、footer、自定义布局

@@ -15,6 +15,8 @@ modified: 2021-01-08T11:48:16.590Z
   - 仪表板上的内容一般基于网格或拖拽实现，如react-grid-layout
   - 深入一个基于css实现的和一个基于框架实现的dashboard
 
+- [design patterns for dashboard design](https://dashboarddesignpatterns.github.io/patterns.html)
+
 - usecase示例
   - 案例集合示例demo-showcase，甚至可以参考 [doc ui kit pages](https://htmlstream.com/preview/docs-ui-kit/index.html)
   - 海致bdp的仪表板，白色主题
