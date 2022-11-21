@@ -92,9 +92,64 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - collab-data-structure
   - undo/redo
 
-## 1120
+## 1121
 
 - idb-sync gdrive
+
+## 1120
+
+- promise的then
+  - 会返回一个promise
+  - then里面改变then这个promise的state为fullfilled/rejected有2种方法
+    - return value，隐式变为resolve/reject
+    - return new Promise()在里面显式执行resole/reject
+
+- [javascript - document.createElement("script") synchronously - Stack Overflow](https://stackoverflow.com/questions/3248384/document-createelementscript-synchronously)
+
+```JS
+function include(jsFile) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = file;
+    script.type = 'text/javascript';
+    script.defer = true;
+    document.getElementsByTagName('head').item(0).appendChild(script);
+
+    script.onload = function() {
+      resolve()
+    }
+    script.onerror = function() {
+      reject()
+    }
+  })
+}
+
+// 使用
+
+include('js/somefile.js').then(() => {
+  console.log('loaded');
+}, function() {
+  console.log('not loaded');
+})
+```
+
+```JS
+async function importScript(url) {
+
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = url;
+
+  document.head.appendChild(script);
+
+  console.log(`import ${url} ...`);
+
+  await new Promise((resolve) => script.onload = resolve);
+}
+
+// 使用
+await importScript('https://cdnjs.cloudflare.com/ajax/libs/...js');
+```
 
 ## 1119
 

@@ -8,6 +8,10 @@ modified: 2020-12-29T17:51:22.482Z
 # tool-app-wiki-baike-xp
 
 # guide
+# spell-checker
+
+- [LanguageTool - Online Grammar, Style & Spell Checker](https://languagetool.org/)
+  - LanguageTool is your intelligent writing assistant for all common browsers and word processors. 
 
 # wiki-mirror
 - wikipedia
