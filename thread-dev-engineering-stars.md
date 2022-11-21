@@ -11,7 +11,9 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
+- ## engineering上的好的决策是重构出来的。
+- https://twitter.com/geniusvczh/status/1594452820459388929
+  - 最近在升级自己的parser生成器，为了检验它的能力我决定用它来parse C++，发现了很多缺陷，加了一些feature。
 
 - ## Auto Generating Code Demo via ASTs for ag-grid
 - https://www.slideshare.net/StephenCooper95/auto-generating-code-demo-via-asts

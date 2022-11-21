@@ -13,14 +13,24 @@ modified: 2022-11-16T16:09:02.278Z
   - backdrop
   - glassmorphism
   - https://caniuse.com/css-backdrop-filter
+
+- blogs
+  - [Glassmorphism designs, themes, templates and downloadable graphic elements on Dribbble](https://dribbble.com/tags/glassmorphism)
+  - [Glassmorphism UI - new design trend used by Apple & Microsoft_202103](https://www.creative-tim.com/blog/web-design/glassmorphism-new-design-trend/)
 # popular
 - Creative-Cloud-App-Redesign /13Star/NALic/202206/js
   - https://github.com/peter-kimanzi/Creative-Cloud-App-Redesign
   - https://peter-kimanzi.github.io/Creative-Cloud-App-Redesign/
   - 毛玻璃效果的控制台，带有明亮和暗黑2个主题
+  - https://codepen.io/TurkAysenur/pen/ZEpxeYm
 - https://github.com/mrArpanM/Glassmorphism-Design
   - https://mrarpanm.github.io/Glassmorphism-Design/
   - Layout for future use purposes
+
+- https://github.com/themesberg/glass-ui /NonOpen/白背景示例
+  - https://ui.glass/
+  - https://ui.glass/generator/
+  - https://codepen.io/themesberg/pen/RwKNMeY
 
 - NextUI /8.3kStar/MIT/202211/ts
   - https://github.com/nextui-org/nextui
@@ -41,22 +51,6 @@ modified: 2022-11-16T16:09:02.278Z
     - The instant on-demand Atomic CSS engine.
     - Pure CSS Icons - use any icon as a single class.
 
-- https://github.com/Vishnuxx/GlassMorphism-generator
-  - https://vishnuxx.github.io/GlassMorphism-generator/
-  - 可调整2个参数，blur、透明度
-- https://github.com/divyaxavier/glassmorphism-css-generator
-  - http://glassui-generator.divyaxavier.vercel.app/
-  - Glassmorphim Generator that built for hackathon powered by vercel
-- https://github.com/miralsuthar/tailwind-glassmorphism
-  - https://tailwindcss-glassmorphism.vercel.app/
-  - Tailwindcss Glassmorphism Generator
-- https://github.com/reallyUndefined/MakeGlassmorphism
-  - https://undefined-make-glassmorphism.netlify.app/
-  - A react project to create glassmorphism CSS.
-  - 依赖redux-toolkit、tailwindcss
-- https://github.com/bedirhandogan/css-glass-creator
-  - https://cssglasscreator.netlify.app/
-  - A web application that lets you create css frosted glass effect.
 
 - https://github.com/AmreshSinha/glassFolio
   - https://amreshsinha.github.io/glassFolio/
@@ -140,7 +134,31 @@ modified: 2022-11-16T16:09:02.278Z
 
 - https://github.com/damolabolaji/gaming-dashboard /绿色仪表板
   - https://gamingglassdash.netlify.app/
-  - a mini dashboard to test out the glass effect using backdrop-filter CSS property. 
+  - a mini dashboard to test out the glass effect using backdrop-filter CSS property.
+
+# glassmorphism-generator
+
+- https://github.com/Vishnuxx/GlassMorphism-generator
+  - https://vishnuxx.github.io/GlassMorphism-generator/
+  - 可调整2个参数，blur、透明度
+- https://github.com/divyaxavier/glassmorphism-css-generator
+  - http://glassui-generator.divyaxavier.vercel.app/
+  - Glassmorphim Generator that built for hackathon powered by vercel
+- https://github.com/miralsuthar/tailwind-glassmorphism
+  - https://tailwindcss-glassmorphism.vercel.app/
+  - Tailwindcss Glassmorphism Generator
+- https://github.com/reallyUndefined/MakeGlassmorphism
+  - https://undefined-make-glassmorphism.netlify.app/
+  - A react project to create glassmorphism CSS.
+  - 依赖redux-toolkit、tailwindcss
+- https://github.com/bedirhandogan/css-glass-creator
+  - https://cssglasscreator.netlify.app/
+  - A web application that lets you create css frosted glass effect.
+- https://github.com/daniektj/Glass-Morphism-Generator
+  - https://glassgenerator.netlify.app/
+  - Glass Morphism is a CSS Code Generator
+
+
 # blur-ui-examples
 - https://github.com/MauriceNino/dashdot /202211/ts
   - https://dash.mauz.io/

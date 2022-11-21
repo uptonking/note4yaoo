@@ -31,21 +31,20 @@ https://us05web.zoom.us/j/7754416829?pwd=TUlMR3dMWEpaajdVR1VNdDR5N29NZz09
     - 6212251809000758487
 
 ```JS
-
 const unsubscribe2 = editor.selection.onSelectionChange(info => {
-        console.log(';; sel-chge ', info.type);
-    });
+  console.log(';; sel-chge ', info.type);
+});
 
-    const unsubscribe = editor.selection.onSelectEnd(info => {
-        const { type, browserSelection, anchorNode } = info;
+const unsubscribe = editor.selection.onSelectEnd(info => {
+      const { type, browserSelection, anchorNode } = info;
 
-        const current_selection_in_text_block =
-            editor.blockHelper.getCurrentSelection(anchorNode?.id);
-        console.log(
-            ';; sel-chge-end ',
-            type,
-            current_selection_in_text_block
-        );
+      const current_selection_in_text_block =
+        editor.blockHelper.getCurrentSelection(anchorNode?.id);
+      console.log(
+        ';; sel-chge-end ',
+        type,
+        current_selection_in_text_block
+      );
 ```
 
 - 拼多多 链接分析

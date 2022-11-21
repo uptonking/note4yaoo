@@ -9,50 +9,16 @@ modified: 2021-02-05T14:00:02.922Z
 
 # guide
 
-- generative art/shapes
-# examples-stars
-- ## a demo of a Smooth-Scrolling Sticky ScrollSpy Menu: as you scroll down, the correct navigation item gets highlighted … using only CSS!
-- https://twitter.com/bramus/status/1395494519420899330
-  - https://codepen.io/bramus/pen/LYbBoRj
-- You might recognise this demo from some of my earlier work, as it's a “Pure CSS” rework of a demo from 2020.
-  - https://codepen.io/bramus/pen/ExaEqMJ (js version)
-  - 下滑时会自动高亮toc的对应菜单
-
-- ## an interactive CSS box model experience
-- https://twitter.com/argyleink/status/1355161023221813250
-  - 显示box model的三维效果
-  - 无依赖，纯css实现
-  - https://codepen.io/argyleink/pen/BaLedvd
-
-- ## This collection of CSS-only loaders is for you 👇 ✅ One `<div>` = One loader
-- https://twitter.com/ChallengesCss/status/1508017861033439237
-  - https://codepen.io/t_afif/pen/PopXpXr
-# css-ux-examples
-- css firework
-
+# ux-examples
 - ## 
 
 - ## 
 
 - ## 
-
-- ## 60° Gradient Morphing Blob
-- https://twitter.com/HiTw93/status/1593816335594684416
-  - https://codepen.io/georgedoescode/pen/oNzamjV
-  - 动态水滴的效果，渐变形状和颜色
-  - 水滴采用科幻风格的渐变色
-  - 基于svg实现
 
 - ## Holograms, light-leaks and how to build CSS-only shaders.
 - https://robbowen.digital/wrote-about/css-blend-mode-shaders/
   - With `mix-blend-mode` finally gaining wide browser-support, we now have access to many of most common shading techniques in CSS. 
-
-- ## 流星雨扑面而来的效果
-- https://codepen.io/danwilson/pen/qGdJGq
-
-- ## Skateboard-Like Preloader
-- https://twitter.com/jonkantner/status/1502270615998369793
-  - https://codepen.io/jkantner/pen/abEoyeK
 
 - ## CSS blooming flowers 🌷 with falling leaves 🍃
 - https://twitter.com/MdUsmanAnsari_/status/1493194247499296773
@@ -81,27 +47,24 @@ modified: 2021-02-05T14:00:02.922Z
 - ## 纯css实现的键盘
 - https://codepen.io/lillian-kodi/pen/poeXoXr
 
-- ## CSS Gradient Shadow
-- https://twitter.com/argyleink/status/1429075313158496261
-  - https://codepen.io/argyleink/pen/WNxeBKa
-  - A pseudo-element, sized and positioned within the container, offset + scaled with transforms, then blurred with filters
-- Whats browser support like?
-  - Great if you add fallbacks to `inset` with left, top, right, bottom 
-
-- played around with some other color combos
-  - https://codepen.io/wyoung2020/pen/6b497f38821567e6b0578b2f427e5132
-
 - ## implementing the cut-out effect in CSS and SVG.
 - https://twitter.com/shadeed9/status/1419956367486500887
   - [Thinking About The Cut-Out Effect: CSS or SVG?](https://ishadeed.com/article/thinking-about-the-cut-out-effect/)
 - Love the way you approach this; so much consideration for the details! Discussing the pros and cons of each solution, simple and more complex. The demos are great, too!
 
+- ## a demo of a Smooth-Scrolling Sticky ScrollSpy Menu: as you scroll down, the correct navigation item gets highlighted … using only CSS!
+- https://twitter.com/bramus/status/1395494519420899330
+  - https://codepen.io/bramus/pen/LYbBoRj
+- You might recognise this demo from some of my earlier work, as it's a “Pure CSS” rework of a demo from 2020.
+  - https://codepen.io/bramus/pen/ExaEqMJ (js version)
+  - 下滑时会自动高亮toc的对应菜单
+
+- ## This collection of CSS-only loaders is for you 👇 ✅ One `<div>` = One loader
+- https://twitter.com/ChallengesCss/status/1508017861033439237
+  - https://codepen.io/t_afif/pen/PopXpXr
+
 - ## 奥运五环丝带形成环的动画
 - https://codepen.io/ste-vg/pen/kXzXYW
-
-- ## Segmented Progress Bar
-- https://twitter.com/jonkantner/status/1418182789493571587
-  - https://codepen.io/jkantner/pen/poPWVbV
 
 - ## Did a quick little #CSS animation based off the merch for the #TokyoOlympics2020
 - https://codepen.io/lukemeyrick/pen/qBmjeLr
@@ -111,11 +74,6 @@ modified: 2021-02-05T14:00:02.922Z
 - https://twitter.com/argyleink/status/1417521640905183232
   - https://codepen.io/argyleink/pen/rNmzGzW
   - @counter-style supports images, svg and more! 
-
-- ## Made this Glassmorphic credit card
-- https://twitter.com/theShounakDas/status/1415326842102468610
-  - https://codepen.io/dasshounak/pen/xxERLqZ
-  - [Create a Glassmorphic Credit Card with CSS](https://codecrunch.hashnode.dev/create-a-glassmorphic-credit-card-with-css)
 
 - ## I like this idea of providing a single page collecting all demos.
 - https://twitter.com/bramus/status/1415240625872642049
@@ -134,20 +92,6 @@ modified: 2021-02-05T14:00:02.922Z
 - ## mimicking a flashlight
 - https://twitter.com/bramus/status/1409625298212200449
   - https://codepen.io/bramus/pen/GRmROgE
-
-- ## a gradient text effect
-- https://twitter.com/argyleink/status/1409590647187656706
-  - angled hard color stops
-  - mock gaps (black hard color stops)
-  - background-clip: text
-  - 在文字上面添加斜杠、碎玻璃等特效
-  - https://codepen.io/TajShireen/pen/YzZmbep
-  - https://codepen.io/argyleink/pen/XWRWagg
-- https://twitter.com/bramus/status/1409618011900760065
-- https://codepen.io/bramus/pen/abWbvXJ
-  - Add some Houdini to animate it 斜杠角度自动旋转
-- https://codepen.io/bramus/pen/PomoJym
-  - Make the center follow the mouse
 
 - ## circular grid melt with Houdini
 - https://twitter.com/anatudor/status/1409162407902072843
@@ -179,20 +123,6 @@ modified: 2021-02-05T14:00:02.922Z
   - 动态渐变色的边框
 - To cater for the latter I had to StackOverflow my way into some nasty @​supports and @​media combination to target Chromium only. Ugh!
 
-- ## Experimenting with some generative grid layouts
-- https://twitter.com/georgedoescode/status/1407298514758082566
-  - https://codepen.io/georgedoescode/pen/YzZgKyO
-  - Generative Quadtree Based Grid Layouts
-  - 不同大小的圆形、方形的集合
-  - [Building Generative Grid Layouts With Quadtrees](https://georgefrancis.dev/writing/generative-grid-layouts-with-quadtrees/)
-  - https://codepen.io/georgedoescode/pen/rNygYMz
-- [pattern generator for a machine learning hardware start-up.](https://www.pentagram.com/work/graphcore/story)
-
-- ## We can use % values for positioning animations on timelines.
-- https://twitter.com/cassiecodes/status/1405254957507428353
-  - https://codepen.io/GreenSock/pen/PopXddg
-  - 依赖gsap、vue，实现刻度进度的显示
-
 - ## Pure HTML + CSS Calculator
 - https://www.bram.us/2021/06/07/pure-html-css-calculator/
   - https://codepen.io/lillian-kodi/pen/YzZLebR
@@ -202,10 +132,6 @@ modified: 2021-02-05T14:00:02.922Z
 - https://twitter.com/anatudor/status/1399837321479004161
   - Uses Houdini magic, so Chromium only.
   - https://codepen.io/thebabydino/pen/LYWeOPP
-
-- ## Generative Houdini Stuff! I love the CSS Paint API for this kind of “Generative UI”, expect a lot more from me soon! 
-- https://twitter.com/georgedoescode/status/1399630980625932289
-  - https://codepen.io/uptonking/pen/JjWMabN
 
 - ## Scroll-Linked Animations: Coverflow (CSS @scroll-timeline version)
 - https://twitter.com/bramus/status/1397134003707256834
@@ -257,20 +183,6 @@ modified: 2021-02-05T14:00:02.922Z
   - 使用按键移动焦点时，元素外框出现波纹动画
 - Is there a way to preserve the nicely rounded corners when supplying your own outline style (e.g. to compensate for a background color) in Chrome or am i just out of luck?
   - FocusRing: The discord accessibility team built a library so we could use another element to position and style focus rings correctly. It’s solved a number of issues and it looks great for users who need them
-
-- ## I made the new @Apple iMac (#imac2021) with only HTML & CSS, and it rotates in 3D while you can change colors with the buttons at the bottom.
-- https://twitter.com/adircode/status/1393927970205614080
-  - https://codepen.io/Adir-SL/pen/JjWXZEq
-
-- ## I made a Mac mini with HTML & CSS.
-- https://twitter.com/_georgemoller/status/1388528849600847874
-  - https://codepen.io/george2106/pen/MWJdQYV?editors=1100
-- Neither are real. They are both just pictures produced by pixels on our screens. To see a real one, you need to see it in real life.
-
-- ## I've created a fake 3D iPhone mockup with a bunch of CSS and @framer Motion magic.
-- https://twitter.com/linuz90/status/1390226030024138752
-  - https://mailbrew.com/
-  - The mockup is made of two images that parallax to fake the 3D perspective 
 
 - ## I tried making the purple iPhone with CSS: Mine vs the real pic
 - https://twitter.com/ece_minaa/status/1386335568548831237
@@ -384,25 +296,10 @@ modified: 2021-02-05T14:00:02.922Z
   - https://codepen.io/prathamkumar/pen/bGBOzXj
 - The :hover selector changes the CSS when a mouse hovers over the element. I had issues too so I used JS to help. 
 
-- ## This is my implementation of @AndrewGlassner 's glob shape
-- https://twitter.com/steveruizok/status/1369756871041683457
-  - https://4qr7f.csb.app/
-  - https://codesandbox.io/s/glob-4qr7f
-- I think this is the strategy used by @GoodNotesApp for their lines (which are great btw). Those look like globs to me. 👀 And they erase well—glob by glob.
-- The first challenge: the points of a glob need to be far enough away from each-other to allow us to draw tangents between them. (If the handles end up inside of the circles, the glob breaks.) We'll need to lose points, but we still may need those points to inform the curve.
-- TIL about Glob! Thinking of using them in your drawing tool? What's the application? Other than being somehow adorable
-  - Yeah, I think we can link them together to create dynamic lines! (Also, you can spin those circles and curves if you want to try this in 3D! See the link at the bottom of the demo.)
-
 - ## For those unfamiliar with negative margin magic, check out the comparison
 - https://twitter.com/hexagoncircle/status/1288510365756612608
   - Flexbox gap = less HTML elements, less CSS tricks, and cleaner, easier to manage code to get the job done
   - https://codepen.io/hexagoncircle/pen/oNbrbjP
-
-- ## Infinity Squares 
-- https://twitter.com/jh3yy/status/1368647671381188608
-  - https://codepen.io/jh3y/pen/xxRaoKP
-  - 方形旋转一圈回原点，基于GSAP
-- This would be perfect for a loader
 
 - ## Conic gradients can be so beautiful.
 - https://twitter.com/JoshWComeau/status/1367492015836049413
@@ -468,13 +365,13 @@ modified: 2021-02-05T14:00:02.922Z
   - https://codepen.io/uptonking/pen/OJbNgLd
   - 卡片切换时使用图层交错的效果
 
-- ##  Tweak numbers to create neat-o shapes, and then nab the CSS to generate them.
+- ## Tweak numbers to create neat-o shapes, and then nab the CSS to generate them.
 - https://twitter.com/JoshWComeau/status/1357033108898410496
   - https://codepen.io/yuanchuan/pen/QWGWXPz
 - Because it's `clip-path` , it can be applied to your images, HTML nodes, anything!
   - No more weird border hacks for basic shapes
 
-- ##  Focus outlines are important for accessibility, but they can't be rounded. Simulate 'em with box-shadow!
+- ## Focus outlines are important for accessibility, but they can't be rounded. Simulate 'em with box-shadow!
 - https://twitter.com/JoshWComeau/status/1356713502954635274
   - https://codepen.io/joshwcomeau/pen/LYbEQMa
 - Don't forget a little dash of `border: 2px solid transparent` for Windows High Contrast Mode support!

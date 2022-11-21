@@ -92,9 +92,102 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - collab-data-structure
   - undo/redo
 
+## 1122
+
+- idb-sync gdrive
+  - 上传op记录数为0的问题
+
 ## 1121
 
 - idb-sync gdrive
+  - 删除MetaStore表的同步配置信息就可以避免同步接口相关的异常
+
+- google oauth2 登录 token 返回值
+
+```JSON
+{
+  "access_token": "test-token",
+  "token_type": "Bearer",
+  "expires_in": 3599,
+  "scope": "https://www.googleapis.com/auth/drive.file"
+}
+```
+
+- google 获取用户信息示例
+  - 👉🏻 http req指定了需要返回email，但resp中没有的原因是，gg-oauth2初始化时需要指定待访问数据的scope中有email
+
+```JS
+const googleUserProfile = await window.gapi.client.people.people.get({
+  'resourceName': 'people/me',
+  'personFields': 'emailAddresses,names,nicknames,clientData,photos'
+});
+
+// 默认的response是HTTPResponse，开发需要的数据只需要 response.result
+const response = {
+  "resourceName": "people/107020065805753979519",
+  "etag": "%EgoBAgMJCicuNz0+GgQBAgUH",
+  "names": [{
+    "metadata": {
+      "primary": true,
+      "source": {
+        "type": "PROFILE",
+        "id": "107020065805753979519"
+      },
+      "sourcePrimary": true
+    },
+    "displayName": "Yao King",
+    "familyName": "King",
+    "givenName": "Yao",
+    "displayNameLastFirst": "King, Yao",
+    "unstructuredName": "Yao King"
+  }],
+  "photos": [{
+    "metadata": {
+      "primary": true,
+      "source": {
+        "type": "PROFILE",
+        "id": "107020065805753979519"
+      }
+    },
+    "url": "https://lh3.googleusercontent.com/a/ALm5wu1xoBYzURUZmqHKYCWV5fz00kKloOn02bzyOSfemJE=s100"
+  }],
+  "emailAddresses": [{
+      "metadata": {
+        "primary": true,
+        "verified": true,
+        "source": {
+          "type": "ACCOUNT",
+          "id": "107020065805753979519"
+        },
+        "sourcePrimary": true
+      },
+      "value": "jinyaoo86@gmail.com"
+    },
+    {
+      "metadata": {
+        "verified": true,
+        "source": {
+          "type": "ACCOUNT",
+          "id": "107020065805753979519"
+        }
+      },
+      "value": "jinyaoo@qq.com"
+    }
+  ]
+}
+```
+
+- [OAuth 2.0 Scopes for Google APIs  |  Authorization  |  Google Developers](https://developers.google.com/identity/protocols/oauth2/scopes)
+  - https://www.googleapis.com/auth/userinfo.profile
+  - https://www.googleapis.com/auth/drive
+
+- [Google OAuth API to get user's email address? - Stack Overflow](https://stackoverflow.com/questions/24442668/google-oauth-api-to-get-users-email-address)
+
+- [OAuth 2.0 Scopes for Google APIs  |  Authorization  |  Google Developers](https://developers.google.com/identity/protocols/oauth2/scopes)
+
+- google 获取用户信息示例
+  - [JavaScript quickstart  |  People API  |  Google Developers](https://developers.google.com/people/quickstart/js)
+  - [google-api-javascript-client/start.md at master · google/google-api-javascript-client · GitHub](https://github.com/google/google-api-javascript-client/blob/master/docs/start.md)
 
 ## 1120
 
