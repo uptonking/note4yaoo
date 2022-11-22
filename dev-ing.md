@@ -92,7 +92,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - collab-data-structure
   - undo/redo
 
-## 1122
+## 1123
 
 - idb-sync gdrive
   - 上传op记录数为0的问题

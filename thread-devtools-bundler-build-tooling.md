@@ -11,7 +11,16 @@ modified: 2021-09-22T05:47:54.470Z
 
 - ## 
 
-- ## 
+- ## [Is Webpack going anywhere? Turbopack and the future of Webpack_202210](https://github.com/webpack/webpack/discussions/16418)
+- from @sokra (creator of webpack), turbopack is young, need more time to be stable and mature, and many next.js configurations use custom webpack configuration, so webpack will get fixes and improvements
+
+
+- Currently we have webpack-6 label, but I think it can be convert them to cards and provide the better roadmap
+
+
+- https://twitter.com/wsokra/status/1585033634427596800?s=46&t=LzBAaPY8H2yoHh_p0cdflA
+- Webpack is definitely not deprecated. But the larger vision of Turbopack is to provide 95% of webpack features, ideas (include extensibility) and also a great migration story. We want to make it easy to transition, but you don't have to
+- 
 
 - ## https://github.com/wclr/yalc
 - When developing and authoring multiple packages (private or public), you often find yourself in need of using the latest/WIP versions in other projects that you are working on in your local environment without publishing those packages to the remote registry. 

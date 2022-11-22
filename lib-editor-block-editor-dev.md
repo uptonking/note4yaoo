@@ -111,6 +111,25 @@ modified: 2022-06-08T11:14:10.668Z
 - 现在 block 们最讨厌、最影响写作体验的有两点：
   - 自动把一个段落（哪怕只有一个字）转成一个 block，不方便把一组段落设置为一个 block
   - 很难跨 block 选两句话，一跨 block 选择、就自动变成了选中两个 block
+# discuss-block-protocol
+- ## [Block protocol - a great fit for TiddlyWiki?_202202](https://talk.tiddlywiki.org/t/block-protocol-a-great-fit-for-tiddlywiki/2258)
+
+- ## [The Block Protocol | Hacker News_202201](https://news.ycombinator.com/item?id=30103401)
+
+- I helped start Fluid Framework, which is the underlying tech for Microsoft Loop. These are just my opinions and I no longer work for Microsoft.
+  - Historically, OpenDoc is pretty relevant. So is OLE. More recently Notion, Coda, Microsoft Loop [1], Anytype.io, etc lean on the same concepts to allow you to break documents into independent & reassemble-able components. 
+
+- Exactly what I was thinking. The Semantic Web done the heavy lifting of defining general schemas (https://schema.org) and extending JSON (https://json-ld.org) and yet people don't subscribe to it. On the other hand, it has a lot of historical baggage (RDF, old schemas) that maybe a new standard can actually be better
+- Why is RDF a bad thing?
+  * Layers upon layers of complexity: Implementing CURIs alone is a non trivial task, although all that's really needed to describe entities and attributes is 128bit UUIDs.
+  * There is no good build-in way for authentication and trust.
+  * Description Logic (the foundation of OWL) has a fundamentally prescriptive philosophy, which makes it inappropriate for most practical applications.
+  * No good library and tool support in general, due to the complexity.
+  * Blank Nodes
+  * No good consistency mechanism for distributed data generation, and Quads (having multiple graphs) don't properly solve this.
+  * Using human readable entity and attr id's leads to more bike-shedding and accidental collisions than it's worth.
+  * High barriers to entry.
+  * After years of developer disappointment the earth is pretty much salted.
 # discuss
 - ## 
 

@@ -11,7 +11,6 @@ modified: 2022-11-14T20:12:25.671Z
 
 - protocols
   - [decentralized social ecosystem structured by protocols](https://gitlab.com/bluesky-community1/decentralized-ecosystem/-/tree/master)
-
 # usecase
 - pwa
   - https://github.com/hemanth/awesome-pwa
@@ -21,11 +20,34 @@ modified: 2022-11-14T20:12:25.671Z
 ## [zero data app](https://0data.app/)
 
 - Protocols
+  - [ActivityPub](https://github.com/BasixKOR/awesome-activitypub)
   - [remoteStorage](https://github.com/remotestorage/remotestorage.js)
   - [Solid](https://solidproject.org/about)
   - [fission](https://fission.codes/)
   - [m-ld](https://m-ld.org/)
+  - [nostr(Notes and Other Stuff Transmitted by Relays): a truly censorship-resistant alternative to Twitter](https://github.com/nostr-protocol/nostr)
 # protocol
+- ActivityPub
+  - https://github.com/BasixKOR/awesome-activitypub
+  - ActivityPub is W3C standard, decentralized social networking protocol.
+
+- Block Protocol
+  - https://github.com/blockprotocol/blockprotocol
+  - https://blockprotocol.org/
+  - The Block Protocol is an open standard for building and using data-driven blocks.
+  - HASH is an example embedding application that uses the Block Protocol to enable users to insert arbitrary blocks from the Hub at runtime. 
+- [Leonardo Losoviz: Would WordPress be better off by Joining the Block Protocol?_202205](https://masterwp.com/would-wordpress-be-better-off-by-joining-the-block-protocol/)
+  - I can provide my answer:No, it will not be better off. Adopting the Block Protocol is not worth it
+  - Treating the Block Protocol as an “idea”, not an “implementation”
+  - I don't think we lack ways of passing structured data to components. We lack standardized interpretation that works for everyone's use cases.
+    - If your use case is "building a rich-text editor", you might even be able to build something meaningful around this.
+    - But everything that goes further away from the default HTML use case will need opinionated UI/UX.
+    - Take Gutenberg as an example...
+    - It has a more limited scope than your proposal, but already hitting major BC/FC issues even though it is not feature-complete yet.
+    - As an example, how do you deal with intra-block(在...内) dependencies and their conflicts?
+    - The web as we know it was always block-driven (divs vs spans).
+    - However, it only provides (some) standardization for very low-level use cases (paragraphs, lists, ...)
+    - For any higher-level use cases (gallery, slider), all prior standardization efforts have failed ...for a reason.
 - hash /636Star/MIT+Elastic+AGPL/202211/ts/rust
   - https://github.com/hashintel/hash
   - https://hash.dev/
@@ -60,3 +82,8 @@ modified: 2022-11-14T20:12:25.671Z
     - m-ld is a decentralised live information sharing component with a JSON-based API.
   - https://github.com/m-ld/m-ld-js
     - the code of the Javascript engine for m-ld, for node.js, modern browsers and other Javascript platforms
+
+- nostr(Notes and Other Stuff Transmitted by Relays)
+  - https://github.com/nostr-protocol/nostr
+  - The simplest open protocol that is able to create a censorship-resistant global "social" network once and for all.
+  - https://github.com/aljazceru/awesome-nostr

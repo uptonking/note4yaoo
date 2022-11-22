@@ -250,3 +250,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 - adobe 大师版全家桶、sp版独立包
   - https://www.nite07.com/adobe/
   - 密码 nite07
+# mac
+
+- [macos 如何实现 windows 的双击触摸板进行拖动 - V2EX](https://v2ex.com/t/846111)
+  - 触控板拖动有三种方式可以设置。

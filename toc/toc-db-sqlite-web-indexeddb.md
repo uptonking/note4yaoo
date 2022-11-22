@@ -17,6 +17,12 @@ modified: 2022-11-06T03:19:28.284Z
   - It implements a backend for sql.js (sqlite3 compiled for the web) that treats IndexedDB like a disk and stores data in blocks there. 
   - That means your sqlite3 database is persisted. 
   - And not in the terrible way of reading and writing the whole image at once -- it reads and writes your db in small chunks.
+  - https://github.com/nikochan2k/absurd-sql-ts
+    - Typescript version of absurd-sql
+  - https://github.com/monlovesmango/nostr-absurd-sql
+    - nostr utility for sqlite3 saved to indexeddb
+
+
 
 - sql.js /10.8kStar/MIT/202209/js
   - https://github.com/sql-js/sql.js

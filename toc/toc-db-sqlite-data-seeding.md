@@ -18,4 +18,5 @@ modified: 2022-06-03T22:05:05.732Z
 
 - https://github.com/harryho/db-samples
   - Northwind sample database for MySql, PostgresQL etc.
+  - 提供了ER图
 # more-sqlite-db-data

@@ -77,7 +77,6 @@ modified: 2020-10-22T06:50:36.740Z
   - pivot chart is build based on cube-core: an MOLAP cube solution in js.
   - Sync Pivot Chart 的计算都发生在前端。这里叫sync其实有点不合适，因为后续优化这些计算也可以发生在webworker中。
   - Async Pivot Chart的cube计算是服务端或用户自己提供的。组件本身会帮助用户缓存一些已经计算过的结果
-
 - cube-core /30Star/GPLv3/201912/ts/NoDeps
   - https://github.com/ObservedObserver/cube-core
   - cube-core是一个高效的Cube求解工具，你可以借助它来实现快速的Cube运算或搭建pivot table组件
@@ -150,9 +149,6 @@ modified: 2020-10-22T06:50:36.740Z
   - Cube is a system for collecting timestamped events and deriving metrics. 
   - By collecting events rather than metrics, Cube lets you compute aggregate statistics post hoc. 
   - Cube is built on MongoDB
-- https://github.com/fibo/OLAP-cube
-  - /17Star/MIT/202001
-  - An OLAP cube is a multidimensional array of data you can explore and analyze
 
 - https://github.com/ankoh/dashql /ts+cpp
   - Scalable Analytics Dashboards powered by WebAssembly

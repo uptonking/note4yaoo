@@ -51,6 +51,12 @@ modified: 2021-08-30T18:56:09.644Z
   - An easy-to-use multi SQL dialect ORM for Node.js
   - https://github.com/nielsgl/sequelize-paper-trail
     - Sequelize plugin for tracking revision history of model instances.
+  - https://github.com/sequelize/sequelize-typescript
+    - Decorators and some other features for sequelize (v6).
+
+- https://github.com/drizzle-team/drizzle-orm
+  - TypeScript ORM for SQL
+  - 代码量少
 
 - https://github.com/mikro-orm/mikro-orm
   - https://mikro-orm.io/

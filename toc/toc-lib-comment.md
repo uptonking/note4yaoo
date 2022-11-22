@@ -47,7 +47,13 @@ modified: 2020-12-20T08:23:22.808Z
 - https://github.com/imsun/gitment /201804
   - a comment system based on GitHub Issues, which can be used in the frontend without any server-side implementation.
 # comment-backend-api
-
+- chirpy /328Star/Apache2/202208/ts
+  - https://github.com/devrsi0n/chirpy
+  - https://chirpy.dev/
+  - a privacy-friendly and customizable Disqus(comment system) alternate. 
+  - for analytics, we self-hosted a plausible instance to avoid sharing your customer's data with third-party companies
+  - https://github.com/plausible/analytics
+    - 基于elixir
 # more-repos-commnet
 - more
   - 基于gitter.im的聊天系统

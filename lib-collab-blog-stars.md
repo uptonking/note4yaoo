@@ -20,9 +20,6 @@ modified: 2022-04-05T10:10:22.091Z
 - Portable Text is built on the idea of rich text as an array of blocks, themselves arrays of children spans. 
   - Each block can have a style and a set of mark definitions, which describe data structures distributed on the children spans. 
   - Portable Text also allows for custom content objects in the root array, enabling editing- and rendering environments to mix rich text with custom content types.
-# Block Protocol
-- https://github.com/blockprotocol/blockprotocol
-  - The Block Protocol is an open standard for building and using data-driven blocks.
 # Collaborative Editing in ProseMirror__201508
 - https://news.ycombinator.com/item?id=10002553
 - Hi! Joseph Gentle here, author of ShareJS.
