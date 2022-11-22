@@ -48,6 +48,12 @@ modified: 2020-10-22T06:50:36.740Z
   - [How to Use Excel Pivot Tables to Organize Data](https://www.timeatlas.com/excel-pivot-tables/)
   - Excel_notes 教學檔案
     - https://github.com/jeanetsai/Excel_notes
+# pivot/olap-data
+- [Get samples for Power BI - Power BI | Microsoft Learn](https://learn.microsoft.com/en-us/power-bi/create-reports/sample-datasets)
+  - An Excel workbook version of the AdventureWorks dimensional model
+
+- [Curated Datasets Overview / ObservableHQ](https://observablehq.com/@observablehq/curated-datasets)
+  - [Sample Datasets / Observable](https://observablehq.com/@observablehq/sample-datasets)
 # pivot-computation
 - ref
   - clickhouse in js

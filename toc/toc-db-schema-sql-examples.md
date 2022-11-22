@@ -26,6 +26,7 @@ modified: 2021-08-30T18:57:27.645Z
 - https://github.com/microsoft/sql-server-samples/tree/master/samples/databases
   - code samples that demonstrate how to use Microsoft's Azure Data products including SQL Server, Azure SQL Database, Azure Synapse, and Azure SQL Edge. 
   - 经典示例包括 wide-world-importers、contoso-data-warehouse、AdventureWorks
+  - AdventureWorks is the OLTP sample, and AdventureWorksDW is the data warehouse sample.
 
 - https://github.com/awesomejt/database-schema-examples
   - 经典的shopping_cart例子
@@ -80,9 +81,12 @@ modified: 2021-08-30T18:57:27.645Z
 - https://github.com/therealyo/northwind2
   - northwind traders task implementation using different ORMS
 # db-examples
+- https://github.com/gregorybarros/QyonAdventureWorks
+  - Backend JSON-Server, frontend Reactjs com TS e Material-ui
+
 - https://github.com/marcelopwmendes/adventure-works-api-basic-auth
-  - A small TypeScript API that connects to the MS SQL Server sample database "Adventure Works";
-  - Authentication was done with Json Web Token based on the Email and Password of the user that comes in the request body;
+  - A small TypeScript API that connects to the MS SQL Server sample database "Adventure Works"; 
+  - Authentication was done with Json Web Token based on the Email and Password of the user that comes in the request body; 
 - https://github.com/Deividwb/QyonAdventureWorks
   - front-web-react + 后端仅json
 
