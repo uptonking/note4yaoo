@@ -14,6 +14,9 @@ modified: 2020-12-08T13:28:50.105Z
 - vert.x实在是太好用了，根本不需要rxjava，promise这些，自带扁平化callback hell的工具
 
 - ## [Vert.x未来会取代tomcat和现在流行的spring全家桶吗？](https://www.zhihu.com/question/302482388/answers/updated)
+- vert.x 说简单点就是一个evenloop 的api封装，用来取代传统的同步多线程编程模式。
+  - Spring 是传统 Servlet WEB framework的杰出代表，事件驱动方面也有 spring flux 。vertx 跟他抢用户当然是不明智的，但是在纯异步编程这块，我个人还是倾向于使用vert.x 简单小巧。
+
 - vert.x没有servlet, 看似是个优点, 但是就没法集成其他基于servlet的框架
 - tomcat完全可以，Spring不可能
   - 不是说Vert.x不好，也不是说Spring现在多强，Spring最强大的地方是它本身是一直进化的。

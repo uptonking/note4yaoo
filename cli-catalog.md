@@ -7,6 +7,13 @@ modified: 2021-01-01T22:13:44.013Z
 
 # cli-catalog
 
+# browser-devtools
+
+```JS
+// 浏览器控制台只输出log不输出行号位置VM信息，方便copy； 将代码中的console.log替换为log
+const log = (...args) => queueMicrotask(console.log.bind(console, ...args));
+```
+
 # 前端工程化工具相关
 
 ```shell

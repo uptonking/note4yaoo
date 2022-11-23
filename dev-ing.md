@@ -91,11 +91,140 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - sync-service: google-drive、网盘、七牛
   - collab-data-structure
   - undo/redo
+  - 系统预置待办类型合并时出现名称相同的情况，用户添加时也会出现
 
 ## 1123
 
 - idb-sync gdrive
   - 上传op记录数为0的问题
+
+- generator fn
+  - yield表达式的值返回给外部调用表达式，函数内的值暴露到外部
+  - next(val)传入的参数会作为上一个yield的声明变量，函数外的值传入函数内部
+
+- async-await
+  - 检查多个顺序执行的await，是否可用Promise.all/Settled
+  - forEach内部的await会立即返回，应用该传统for循环
+  - 想要循环内部的await并发执行，应该用 `for await (let p of promises)`，会等到for内所有异步完成后才继续执行后面的代码
+  - 简洁写法 (async ()=>{ await asyncFn1() })()
+
+- [javascript - Paging with IndexedDB cursor - Stack Overflow](https://stackoverflow.com/questions/5164037/paging-with-indexeddb-cursor)
+  - One thing that took me a while to figure out so may be useful to others is if you want to advance the cursor and iterate through the results you will either need to call them in separate openCursor().onsuccess handlers, or implement some kind of tracking to prevent them both being called in the same request or an InvalidStateError exception with be thrown. 
+
+```JS
+// 💡 Separate Handlers
+
+// advance first
+store.openCursor().onsuccess = function(event) {
+  var cursor = event.target.result;
+  cursor.advance(40);
+};
+
+// then iterate
+objectStore.openCursor().onsuccess = function(event) {
+var cursor = event.target.result;
+cursor.continue();
+});
+```
+
+```js
+// 💡 Same Handler
+
+// create flag for advancing
+var advancing = true;
+
+store.openCursor().onsuccess = function(event) {
+
+  var cursor = event.target.result;
+
+  // advancing
+  if (advancing === true) {
+    cursor.advance(40);
+    // set advancing flag to false so we don't advance again
+    advancing = false;
+  }
+  // continuing
+  else {
+    cursor.continue();
+  }
+
+}
+```
+
+- [How to do pagination with indexeddb (client side data base) - Stack Overflow](https://stackoverflow.com/questions/35700158/jqgrid-how-to-do-pagination-with-indexeddb-client-side-data-base)
+
+```JS
+// 💡 Same Handler 2
+
+function query() {
+  var advanced = false;
+  db.transaction('').objectStore().openCursor().onsuccess = function(event) {
+    var cursor = event.target.result;
+
+    if (!cursor) {
+      return;
+    }
+
+    if (!advanced) {
+      advanced = true;
+      cursor.advance(10);
+      return;
+    }
+
+    var value = cursor.value;
+    console.log(value);
+    // ...
+  }
+}
+```
+
+- [Reorx on Twitter: "朋友向我推荐了 Orval, 一个基于 OpenAPI 的前端 API 开发工具，只需要输入 yaml 文件，就可以生成 TypeScript 数据模型定义、HTTP API 函数、用于测试的 mock。今天研究了下文档和 demo，和 react-query 搭配非常顺畅，已预定在下一个项目中使用](https://twitter.com/novoreorx/status/1595358984487473152)
+  - [orval - Restful client generator](https://orval.dev/)
+
+- [e2e框架对比：Cypress和Playwright_202201](https://boylosthair.com/?p=56)
+
+- [What means "breaking ties" in context of sorting - Software Engineering Stack Exchange](https://softwareengineering.stackexchange.com/questions/403743/what-means-breaking-ties-in-context-of-sorting)
+  - A tie-break is an extra play when two players have the same number of points, to decide who is the winner.
+
+- [You Might Not Need jQuery](https://youmightnotneedjquery.com/)
+- [You Might Not Need Electron](https://youmightnotneedelectron.com/)
+
+- [事件调度层：为什么 EventLoop 是 Netty 的精髓？.md](https://learn.lianglianglee.com/%E4%B8%93%E6%A0%8F/Netty%20%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90%E4%B8%8E%20RPC%20%E5%AE%9E%E8%B7%B5-%E5%AE%8C/04%20%E4%BA%8B%E4%BB%B6%E8%B0%83%E5%BA%A6%E5%B1%82%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%20EventLoop%20%E6%98%AF%20Netty%20%E7%9A%84%E7%B2%BE%E9%AB%93%EF%BC%9F.md)
+
+### [Event Loop 事件循环 - 知乎](https://zhuanlan.zhihu.com/p/343643559)
+
+- HTTP 服务器是常见的服务器类型，往往需要同时处理大量的请求。
+
+- Serialization 单线程串行顺序处理
+  - 单线程串行，一个个请求顺序处理：处理请求1 -> 处理请求2 -> 处理请求 X。
+  - 简单，资源消耗少。但是资源利用率不高，效率低。如果阻塞会导致等待，并发能力低。
+
+- Parallellism 多线程并发处理
+  - 一个线程处理一个请求：A 线程处理请求 1，B 线程处理请求 2，N 线程处理请求 X。
+  - 复杂，并发性高，但是消耗大量资源，还有线程切换成本。这个是 Java Web 常用的模式。
+
+- Concurrency 单线程并发处理
+  - 一个线程同时处理多个请求
+  - 略复杂，并发性高，资源消耗低，效率高，但是一个线程的处理能力有限。
+  - 通过 I/O Multiplexing 实现，比如 Select、Epoll 等。这个 Nginx 和 Node.js 用的模式。
+
+- 对于 CPU 来说，CPU 的计算能力也是一定的，也就是每个时间段可以做的事情也是有限的，所以如何高效的利用 CPU 尤为重要。
+  - CPU 时间片分给线程，目的是为了可以同时处理多任务。但是多线程带来了线程资源的消耗以及线程切换带来的时间片损耗。
+  - 如果我们可以在一个线程同时处理多个任务，那么就可以避免这个问题，并且保持 CPU 的高效利用。
+  - I/O 多路复用让单线程可以同时处理多网络请求，同时 CPU 的速度远远大于网络速度，明显的时间差，所以使用 EL 模型处理多网络请求是一种比较高效的的方式。
+  - 我们熟知的高性能网络应用 Nginx 和 Redis 都使用了 EL。
+
+- Node 为服务端开发设计，不止是网络功能，还需要支持定时器、文件管理、加解密等。
+  - 对于阻塞和 CPU 密集型操作，我们可以在 EL 主线程开一个线程完成这些任务，EL 继续处理其他事件。等其他线程把耗时任务完成，通过事件通知 EL，EL 根据优先级处理这些事件，这样 EL 就可以应对阻塞和 CPU 密集型的耗时任务了。
+
+### [event-loop异步模型为什么比多线程模型在IO密集场景中更高效？ - 知乎](https://www.zhihu.com/question/67751355)
+
+- 最著名的 event-loop 的程序莫过于 redis 和 nginx ，而两个恰好都是 single-threaded，一个进程占满一个核。
+- 有些应用中请求处理可能需要一定的 CPU 时间，那么可能会分到另外的线程去计算，为的也是保证 I/O 这一个线程能够不被阻塞。
+  - 那一个自然的想法就是用更轻量的用户级线程替换OS线程，然而根据资料，JVM最初就是LWT，但后来却改为了OS线程，
+- 用户线程的问题主要在于操作系统无法提供足够的支持，因为从操作系统的角度来看，一个时间只有一个线程在运行而已。
+  - Linux 以线程为调度单位，不管多少个用户线程都在这一个核上运行；一旦这个 OS 线程被抢占或挂起了（比如 blocking syscall），所有的用户线程都被一起挂起。
+  - 这也回到了为什么在处理 I/O 的时候，用 event-loop + non-blocking I/O 要好过 multi-threading + blocking I/O 的原因：防止 OS 线程被 blocking I/O 强制挂起。
 
 ## 1121
 
@@ -423,7 +552,7 @@ myStore.get(['a', 'b']) // look for id1=a + id2=b
 ## 1105
 
 - [前端本地存储IndexedDB数据库最新教程 视频教程](https://www.bilibili.com/video/BV1T3411874j)
-  - [前端本地存储数据库IndexedDB完整教程](https://www.bilibili.com/video/BV1T3411874j)
+  - [前端本地存储数据库IndexedDB完整教程 - 知乎](https://zhuanlan.zhihu.com/p/429086021)
 - 使用场景
   - im聊天消息存储在本地
 - 创建索引后，key

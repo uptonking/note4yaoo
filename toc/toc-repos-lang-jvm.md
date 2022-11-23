@@ -27,9 +27,11 @@ modified: 2021-05-14T15:05:02.456Z
   - Distributed scheduled job framework
 
 - https://github.com/apache/poi 
-
+# big-data
+- https://github.com/shunfei/indexr /201907/inactive
+  - IndexR：实时、基于Hadoop的数据仓库
+  - 它基于Hadoop生态，可以对海量数据集做快速统计分析（OLAP），数据可实时导入并且对于查询零延迟。
 # java-app
-
 - https://github.com/java-decompiler/jd-gui
   - /9.1kStar/GPLv3/202009
   - A standalone Java Decompiler GUI
@@ -39,9 +41,7 @@ modified: 2021-05-14T15:05:02.456Z
 - https://github.com/lionsoul2014/ip2region
   - /8.3kStar/Apache2/202009
   - a offline IP location library with accuracy rate of 99.9% and 0.0x millseconds searching performance
-
 # starred
-
 - https://github.com/code4craft/webmagic
   - /9.3kStar/Apache2/202009
   - A scalable crawler framework
@@ -80,7 +80,6 @@ modified: 2021-05-14T15:05:02.456Z
   - /1.4kStar/BSD/202006
   - CommonMark/Markdown Java parser with source level AST.
 # popular
-
 - https://github.com/elastic/elasticsearch
   - /51.4kStar/Apache2/202009/java
   - a distributed RESTful search engine built for the cloud.
@@ -183,9 +182,7 @@ modified: 2021-05-14T15:05:02.456Z
   - /5.6kStar/GPL+LGPL/202009
   - source code for the Processing Development Environment (PDE)
   - Processing is a software sketchbook and a language for learning how to code within the context of the visual arts
-
 # java-repos
-
 - https://github.com/dbeaver/dbeaver
   - Free universal database tool and SQL client
 - https://github.com/seaswalker/spring-analysis

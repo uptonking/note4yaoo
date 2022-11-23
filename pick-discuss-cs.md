@@ -11,7 +11,32 @@ modified: 2021-04-12T16:30:53.967Z
 
 ## 
 
-## 
+## [machine learning 在 Java 上的开发是不是已经没落？ - 知乎](https://www.zhihu.com/question/68177121)
+
+- 对于ml engineer，其实最重要的标准是“好写好改”，而不是语言运行效率以及语法有没有真泛型之类的东西。
+  - 配合jupyter这样的互动式notebook，python这样的dynamic脚本语言是非常适合ds/ml engineer日常工作的。
+  - 而对于infra engineer，我觉得你是不会去想java和c++没落的，因为你天天都在用啊。
+
+- 易用性才是王道，你看pytorch速度牺牲成这个样子还是能一统江湖。
+  - 比Java、c++写起来更容易（代码短，写的快，不用考虑各种次要东西）
+
+- 实际工作中，模型调试只占整体工作的很小一部分，大部分时间都在分析数据和pipeline开发上。所以想把算法落地上线，工程能力是必不可少的。毕竟基建完备，无需开发的大厂就那么几家。
+
+- 使用一项编程语言除了语言本身，还要看社区。Python下面这么多ml的包，大势已成，很难动摇。很多想把ml从R&D向production转变的库也开始自己实现一些类型检查，依赖注入的方案。同时ml是一个很复杂的综合性领域，要形成产出，需要涉猎很广，Python作为胶水语言，有它独特的优势所在。
+
+- 纯Python代码当然是比纯Java代码慢得多。但是，无论Python还是Java代码（特别是考虑到GPU, NPU），跟C/C++相比都是渣。所以关键是谁调用C/C++快。这方面Java完败。
+  - 与C的接口，很少有语言能比Python效率高的。
+  - 毕竟，Python VM没有任何内置类型。这个语言里连int都要通过Python/C扩展API调用C代码实现。这使得Python的int很慢，但也使得Python里调用C扩展的开销不比使用int大。
+  - 没有堆内堆外，没有类型转换。对于C来说每个Python对象就是一个C struct。对于Python来说每个C struct只要有PyObject header就是Python对象。
+  - 纯Python代码的慢换来了调用C扩展的快
+
+- 搞数据科学的重点在于数据，而不在于编程，对他们来说，怎么简单怎么来才是最正确的做法。
+
+- 最近机器学习Oracle 开源了Tribuo支持主流机器学习算法，AWS开源了 DJL 专攻深度学习实现。主要是也没有python那么火爆吧，功能性一直都不会很差。
+  - aws 为啥不推deepleaning4j？
+  - DL4J依赖项比较多，同时架构也很陈旧。再有一点就是只支持TF 1.x而且输出结果和python都有出入
+
+- 实际上大家是用Hive/Spark取数，放到Python里训练，然后再用Spring接Python上线的...
 
 ## [用A4纸记录一个G的数据需要多少钱？](https://www.zhihu.com/question/483838337)
 

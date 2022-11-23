@@ -9,6 +9,32 @@ modified: 2022-11-07T17:36:22.236Z
 
 # guide
 
+# whiteboard-blogs
+- [Excalidraw: Building Excalidraw's P2P Collaboration Feature_202003](https://blog.excalidraw.com/building-excalidraw-p2p-collaboration-feature/)
+  - 协作编辑同一个shape时，协作算法并未特殊处理，可能会有数据丢失，但versionNonce保证了最终一致
+  - We did not want to store anything server-side. Therefore, we opted for a pseudo-P2P model, where a central server relays end-to-end encrypted messages to all the peers in the room, but does no centralized coordination.
+  - our encrypted messages can be passed between the client and the server back to other clients as `ArrayBuffer`, so we don’t need to convert them to other data structures at any point in the transit.
+  - when elements were added, we adopted an architecture of merging states when we receive them. 
+    - local client A looks at all the ExcalidrawElement.ids it has locally, and all of the incoming ExcalidrawElement.ids, and creates a new ExcalidrawElement array containing the union of both the local and incoming set.
+  - Peers would set `isDeleted` field to `true` to delete an element, and would filter the deleted elements out of the array at runtime.
+    - we do remove any element with `isDeleted` set to `true` when saving to persistent storage, so long-lived drawings where this may become a problem are cleaned up.
+  - Concurrent edits will still be lost, as our merge algorithm only looks at new elements being added or removed, and not changes to existing elements themselves.
+    - when we merge multiple peers state together, we throw out old versions of each element and just keep the latest ones.
+    - This algorithm is simple but effective, and solved most of our collaboration problems.
+  - The version number only solves race conditions when players are editing different elements concurrently. What if they’re editing the same element concurrently?
+    - For Excalidraw, we don’t really care! We think this will be a pretty rare situation, and that users will tolerate some jankiness if it happens.
+    - With that said, it is important that all peers converge on the same state. 
+    - Any time we increment the version of an element, we set `versionNonce` to a random integer. 
+    - At merge time, if we encounter two elements with the same version number but different data (i.e. two players editing the same element at the same time), we break the tie by favoring the one with the lower `versionNonce`. 
+    - This ensures that one player will deterministically “win” on every peer.
+  - One problem we haven’t solved yet is implementing multiplayer undo/redo. 
+    - Our hack around this was to clear the undo/redo stack whenever you receive an update from a new peer.
+
+- [Excalidraw: End-to-End Encryption in the Browser_202003](https://blog.excalidraw.com/end-to-end-encryption/)
+  - Web Cryptography APIs are now widely available to all the browsers that let us implement this. 
+  - That said, the APIs to deal with encryption, keys and binary data are not the most straightforward
+
+- [Excalidraw: Deprecating Excalidraw Electron in favor of the Web version_202012](https://blog.excalidraw.com/deprecating-excalidraw-electron/)
 # whiteboard/annotation
 - https://github.com/feakin/feakin-web
   - Feakin是一个架构资产可视化管理工具。
