@@ -7,6 +7,9 @@ modified: 2021-01-09T16:56:35.339Z
 
 # toc-work-portfolio-resume
 
+# nice
+
+- [Kent C. Dodds: react consultant](https://kentcdodds.com/)
 # resume-markdown
 - https://github.com/youngyangyang04/Markdown-Resume-Template
   - BAT程序员自己的简历模板分享出来了。技术简历追求简单明了

@@ -20,6 +20,7 @@ modified: 2022-10-21T21:03:38.124Z
 
 - ## poc: Blocknote lexical_202210
 - https://github.com/YousefED/BlockNote/pull/45
+  - [Decoupling plugin and nodes · Issue #1262 · facebook/lexical](https://github.com/facebook/lexical/issues/1262)
 - This PR is a PoC of an implementation of BlockNote on top of Lexical
 - We're currently investigating the structure of "nested" blocks. 
 - In editors like Notion and also in BlockNote ProseMirror, indented blocks are considered children of their parent blocks. 

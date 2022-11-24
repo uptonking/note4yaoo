@@ -11,7 +11,7 @@ modified: 2022-11-19T18:58:27.409Z
 
 - ## 
 
-- ## 
+- ## [Wrap — Capture & Edit Beautiful Screenshots](https://wrap.so/)
 
 - ## 话说 http://cal.com 用的这套风格 UI 库是哪个来着? 印象中是基于 tailwind css 的某个 UI 库
 - https://twitter.com/strrlthedev/status/1593949682371547136

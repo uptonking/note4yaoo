@@ -101,7 +101,34 @@ modified: 2021-05-13T03:11:31.620Z
 
 - ## 
 
-- ## 
+- ## [如何评价微信小程序新渲染引擎skyline?_202208](https://www.zhihu.com/question/546709238/answers/updated)
+- 旧架构：小程序基于 Webview 的渲染架构
+  - 当小程序基于 WebView 环境下时，WebView 的 JS 逻辑、DOM 树创建、CSS 解析、样式计算、Layout、Paint (Composite) 都发生在同一线程，在 WebView 上执行过多的 JS 逻辑可能阻塞渲染，导致界面卡顿。以此为前提，小程序同时考虑了性能与安全，采用了目前称为「双线程模型」的架构。
+  - AppService：
+
+    - 执行业务代码（app + page + component 的 js 逻辑）
+    - 调用 jsbridge 将 data 序列化传递给 PageFrame
+
+  - PageFrame：
+
+    - 初始化 Webview，执行 render(data) 函数（由 wxml 转译而来），得到 vdom，然后patch到dom；
+    - 响应用户事件，序列化后通过 jsbridge 传递给 AppService
+
+  - 内存占用大：每个 Page() 实例对应一个独立的 Webview （相当于 MPA），那么用户打开的每个小程序都对应 n+1 个 Webview。
+  - 无法在页面之间共享元素：都是不同的渲染实例了，那当然共享元素就做不了。
+- Skyline 创建了一条渲染线程来负责 Layout, Composite 和 Paint 等渲染任务，并在 AppService 中划出一个独立的上下文，来运行之前 WebView 承担的 JS 逻辑、DOM 树创建等逻辑。
+  - AppService 新增渲染上下文 （个人猜测是 JSCContex / v8::context）; 
+    - 接收和执行 render(data)，vdom diff -> patch 节点 op
+  - 渲染层
+    - 多个 Page() 实例复用一个渲染器
+  - Skyline 采用的是同步光栅化的策略，WebView 是异步分块光栅化的策略
+  - 抓到 Skyline 与 flutter 相关日志，确认是 flutter 绘制方案。
+
+- 但需要注意的是微信小程序开发框架自身的失控风险。
+
+- 除非你是叫小程序标准，而不是什么微信小程序，xx小程序
+
+- 因为小程序的限制，渲染层的改进带来的优势极其不明显。
 
 - ## [2022年了，uniapp发展的怎么样了?](https://www.zhihu.com/question/444976489/answer/1978635281)
 - 优点是：
@@ -113,6 +140,11 @@ modified: 2021-05-13T03:11:31.620Z
 
 - 我觉得吧，虽说uni能一次开发那么多平台，但是如果公司或者个人处于初创阶段，自然也不需要那么多平台，react native或flutter 加微信小程序足以。如果业务足够大，那自然也不缺开发人员，大家可以专注自己的平台做的更好，甚至搞出自己公司的一套框架。
   - 我发现一种情况，就是那种帮其它公司开发app或者小程序的公司，或者给其它公司兼职的程序员，他们为了节约成本，用一种模板，一种技术，来应付各种需求，我觉得这大概是uni最大的市场。
+
+- ## [如何评价微信小程序内嵌网页功能开放？_201711](https://www.zhihu.com/question/67564075)
+- 腾讯为了自己获得绝对的控制权，模仿html5标准搞出了小程序这么个怪胎出来。
+
+- 小程序的开发成本有了很大的下降。具体来看，开发者登陆小程序后台配置业务域名，即可实现小程序内嵌网页。此后，用户使用小程序时，可以从小程序直接进入到内嵌网页，同时也支持用户从内嵌网页返回小程序。
 
 - ## [小程序的机制（支付宝&微信的区别）](https://zhuanlan.zhihu.com/p/403869900)
 - 在不同环境下的javascript脚本运行环境是不同的，微信小程序运行在三端：iOS（iPhone/iPad）、Android 和 用于调试的开发者工具。

@@ -37,6 +37,11 @@ modified: 2022-11-11T10:46:29.097Z
 
 - https://github.com/kinddde/js-export-excel
   - json导出excel（纯js 支持中文）
+# csv
+
+- https://github.com/washingtonpost/crosswalker
+  - https://crosswalker.washingtonpost.com/
+  - Crosswalker is a general purpose tool for joining columns of text data(csv/json) that don't perfectly match
 # xls
 
 # more

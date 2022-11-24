@@ -161,6 +161,10 @@ modified: 2020-10-05T06:17:42.467Z
 # more-repos
 - https://github.com/c-zhuo/easycanvas /2019
   - 一个同时支持2D和3D渲染、轻量、高效、MVVM模式的渐进式canvas渲染库
+
+- https://github.com/limboy/canvasdraw
+  - `CanvasRenderingContext2D` is powerful on drawing, but it's API is not user friendly, especially if you want to draw a bunch of stuff. 
+  - this library make it easier to draw.
 # ref
 - [Best low level canvas library for making interactive animations?](https://stackoverflow.com/questions/24468958/best-low-level-canvas-library-for-making-interactive-animations)
   - KineticJS, Greensock

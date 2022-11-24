@@ -7,13 +7,12 @@ modified: 2022-11-18T17:01:54.103Z
 
 # lib-db-indexeddb-spec
 
-
 # guide
-
 
 # [Indexeddb API 3.0 Spec](https://www.w3.org/TR/IndexedDB/)
 
 ## key
+
 - in-line key: A key that is stored as part of the stored value.
 
 - An object store optionally has a key path. 
@@ -31,3 +30,11 @@ modified: 2022-11-18T17:01:54.103Z
 
 - { foo: { bar: "bla" } }
   - If you want to query the bar property the keypath will be "foo.bar"
+# [WebFinger - Mastodon documentation](https://docs.joinmastodon.org/spec/webfinger/)
+- WebFinger as described in RFC 7033 is a spec that defines a method for resolving links to a resource, given only a URI on a particular server. 
+  - This allows anyone to look up where a resource is located without having to know its exact location beforehand; for example, by email or phone number. 
+  - This lookup is directed at the endpoint `/.well-known/webfinger`, and a `resource` query parameter is passed along with the lookup. 
+  - The resource URI used with Mastodon is the `acct:` URI as described in RFC 7565, with the username of a profile that is hosted on a particular domain.
+- Because Mastodon heavily relies on mentions for addressing other profiles, WebFinger is required for fully interoperating with Mastodon. 
+  - Mastodon’s internal logic depends almost completely on `acct:` URIs or `username@domain` representations. 
+  - Searching for any objects or profiles from an ActivityPub implementation without WebFinger will fail because the author cannot be converted to a user in the local database.

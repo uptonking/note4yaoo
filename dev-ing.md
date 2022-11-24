@@ -91,12 +91,19 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - sync-service: google-drive、网盘、七牛
   - collab-data-structure
   - undo/redo
-  - 系统预置待办类型合并时出现名称相同的情况，用户添加时也会出现
+  - 系统预置数据如待办类型合并时可能出现名称相同的情况，用户添加数据时也可能出现
+
+## 1125
+
+- dev-to
+  - idb sync
+  - crdt tutorials
 
 ## 1123
 
 - idb-sync gdrive
   - 上传op记录数为0的问题
+    - 开发测试时用户/数据id变化导致未上传
 
 - generator fn
   - yield表达式的值返回给外部调用表达式，函数内的值暴露到外部
