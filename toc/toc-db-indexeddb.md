@@ -46,19 +46,12 @@ modified: 2022-06-03T22:06:16.249Z
   - a small local JSON database powered by Lodash 
   - supports Node, Electron and the browser
 
-- remotestorage.js /2.2kStar/MIT/202211/ts
-  - https://github.com/remotestorage/remotestorage.js
-  - https://remotestoragejs.readthedocs.io/
-  - a JavaScript library for storing user data locally in the browser, as well as connecting to remoteStorage servers and syncing data across devices and applications.
-  - It is also capable of connecting and syncing data with a person's Dropbox or Google Drive account (optional).
-  - The first prototype of rs.js was written in November 2010. The library is well-tested and actively maintained.
-  - rs.js optionally supports Dropbox and Google Drive as storage backends which users can connect.
-
 - localForage /20.5kStar/Apache2/202110/js/inactive
   - https://github.com/localForage/localForage
   - https://localforage.github.io/localForage
   - localForage is a fast and simple storage library for JavaScript. 
   - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple, localStorage-like API.
+  - localForage uses localStorage in browsers with no IndexedDB or WebSQL support.
 - https://github.com/dannyconnell/localbase /202012/js/inactive
   - A Firebase-Style Database ... Offline!
   - Localbase is built on top of LocalForage.
@@ -90,17 +83,6 @@ modified: 2022-06-03T22:06:16.249Z
     - However, it is also possible to use AceBase's realtime capabilities, and have the actual data stored in other databases. 
     - Currently, AceBase has built-in adapters for MSSQL, SQLite in Node.js environments; and IndexedDB, LocalStorage, SessionStorage for the browser. 
   - When you're using AceBase with an IndexedDB or LocalStorage backend, you might notice that if you change data in one open tab, those changes do not raise change events in other open tabs monitoring that same data.
-
-- alasql /6kStar/MIT/202211/js
-  - https://github.com/AlaSQL/alasql
-  - an open source SQL database for JavaScript with a strong focus on query speed and data source flexibility for both relational data and schemaless data. 
-  - It works in the web browser, Node.js, and mobile apps.
-  - Handles both traditional relational tables and nested JSON data (NoSQL). 
-    - Export, store, and import data from localStorage, IndexedDB, or Excel.
-  - This library is designed for:
-    - Fast in-memory SQL data processing for BI and ERP applications on fat clients
-    - Easy ETL and options for persistence by data import / manipulation / export of several formats
-    - All major browsers, Node.js, and mobile applications
 # db-powered-by-indexeddb
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb
@@ -134,7 +116,8 @@ modified: 2022-06-03T22:06:16.249Z
     - Other NoSQL embedded databases seem to be largely abandoned
     - Most other NoSQL embedded databases seem to be limited by V8's hard string length limits
 
-- https://github.com/google/lovefield  /6.8kStar/Apache2/202005/js
+- lovefield /6.8kStar/Apache2/202005/js
+  - https://github.com/google/lovefield
   - Lovefield is a relational database written in pure JavaScript.
   - It provides SQL-like syntax and works cross-browser
   - [Lovefield wraps IndexedDB objects in different classes](https://github.com/google/lovefield/blob/master/docs/dd/02_data_store.md)
@@ -175,6 +158,7 @@ modified: 2022-06-03T22:06:16.249Z
 
 - JsStore /663Star/MIT/202211/ts
   - https://github.com/ujjwalguptaofficial/JsStore
+  - http://jsstore.net/
   - A complete IndexedDB wrapper with SQL like syntax.
   - Executes In Web Worker
   - Sql Support - through an extension sqlweb

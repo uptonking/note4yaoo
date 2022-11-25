@@ -9,7 +9,128 @@ modified: 2022-06-13T02:57:07.648Z
 
 # guide
 
-# [The pain and anguish of using IndexedDB: problems, bugs and oddities](https://gist.github.com/pesterhazy/4de96193af89a6dd5ce682ce2adff49a)
+# [rxdb: Why IndexedDB is slow and what to use instead](https://rxdb.info/slow-indexeddb.html)
+- [Why IndexedDB is slow and what to use instead](https://github.com/pubkey/rxdb/blob/master/docs-src/slow-indexeddb.md)
+
+- For in-browser data storage, you have some options:
+- **Cookies** are sent with each HTTP request, <= 4kb.
+- **LocalStorage** is a synchronous API over asynchronous IO-access. 
+  - Storing and reading data can fully block the JavaScript process 
+  - <=5mb. you cannot use LocalStorage for more then few simple key-value pairs.
+- **IndexedDB** is an indexed key-object database. 
+  - It can store json data and iterate over its indexes. 
+  - It is [widely supported](https://caniuse.com/indexeddb) and stable.
+- The **FileSystem API** could be used to store plain binary files, 
+  - but it is [only supported in chrome](https://caniuse.com/filesystem) for now.
+- **WebSQL** [is deprecated](https://hacks.mozilla.org/2010/06/beyond-html5-database-apis-and-the-road-to-indexeddb/)
+  - because it never was a real standard and turning it into a standard would have been too difficult.
+
+- IndexedDB is slow. 
+  - Inserting a few hundred documents can take up several seconds. 
+  - Even sending data over the internet to the backend can be faster then storing it inside of an IndexedDB database.
+
+- the key point here is that all these documents get written in a single transaction.
+- 👉🏻 I forked the comparison tool here and changed it to use one transaction per document write. 
+  - And there we have it. Inserting 1k documents with one transaction per write, takes about 2 seconds.
+  - Interestingly if we increase the document size to be 100x bigger, it still takes about the same time to store them. 
+  - This makes clear that the limiting factor to IndexedDB performance is the transaction handling, not the data throughput.
+
+- To fix your IndexedDB performance problems you have to make sure to use as less data transfers/transactions as possible. 
+- But most of the time is not so easy. 
+  - Your user clicks around, data gets replicated from the backend, another browser tab writes data. 
+  - All these things can happen at random time and you cannot crunch all that data in a single transaction.
+- Another solution is to just not care about performance at all. 
+  - In a few releases the browser vendors will have optimized IndexedDB and everything is fast again. 
+  - The chromium devs made a statement to focus on optimizing read performance, not write performance.
+
+- In the following I lay out some performance optimizations than can be made to have faster reads and writes in IndexedDB.
+
+## Batched Cursor
+
+- With the `getAll()` method, a faster alternative to the old `openCursor()` can be created which improves performance when reading data from the IndexedDB store.
+- Interestingly choosing a high batch size is important. 
+  - When you known that all results of a given `IDBKeyRange` are needed, you should not set a batch size at all and just directly query all documents via `getAll()`.
+
+## IndexedDB Sharding
+
+- Sharding is a technique, normally used in server side databases, where the database is partitioned horizontally. 
+  - Instead of storing all documents at one table/collection, the documents are split into so called shards and each shard is stored on one table/collection. 
+  - This is done in server side architectures to spread the load between multiple physical servers which increases scalability.
+
+- When you use IndexedDB in a browser, there is of course no way to split the load between the client and other servers. 
+- Partitioning the documents horizontally into multiple IndexedDB stores, has shown to have a big performance improvement in write- and read operations while only increasing initial pageload slightly.
+  - sharding should always be done by IDBObjectStore and not by database. 
+  - Running a batched cursor over the whole dataset with 10 store shards in parallel is about 28% faster then running it over a single store.
+- As downside, getting 10k documents by their id is slower when it has to run over the shards.
+
+## Custom Indexes
+
+- Indexes improve the query performance of IndexedDB significant. 
+  - Instead of fetching all data from the storage when you search for a subset of it, you can iterate over the index and stop iterating when all relevant data has been found.
+
+- As shown, using a custom index can further improve the performance of running a batched cursor by about 10%.
+- Another big benefit of using custom indexes, is that you can also encode `boolean` values in them, which cannot be done with normal IndexedDB indexes.
+
+## Relaxed durability
+
+- Chromium based browsers allow to set durability to `relaxed` when creating an IndexedDB transaction. 
+  - Which runs the transaction in a less secure durability mode, which can improve the performance.
+  - The user agent may consider that the transaction has successfully committed as soon as all outstanding changes have been written to the operating system, without subsequent verification.
+
+## Explicit transaction commits
+
+- By explicitly committing a transaction, another slight performance improvement can be achieved. 
+  - Instead of waiting for the browser to commit an open transaction, we call the `commit()` method to explicitly close it.
+  - The improvement of this technique is minimal, but observable as these tests show.
+
+## In-Memory on top of IndexedDB
+
+- 👉🏻 To prevent transaction handling and to fix the performance problems, we need to stop using IndexedDB as a database. 
+- Instead all data is loaded into the memory on the initial page load. 
+  - Here all reads and writes happen in memory which is about 100x faster. 
+  - Only some time after a write occurred, the memory state is persisted into IndexedDB with a single write transaction. 
+  - In this scenario IndexedDB is used as a filesystem, not as a database.
+- There are some libraries that already do that:
+  - LokiJS with the [IndexedDB Adapter](https://techfort.github.io/LokiJS/LokiIndexedAdapter.html)
+  - [Absurd-SQL](https://github.com/jlongster/absurd-sql)
+  - SQL.js with the [empscripten Filesystem API](https://emscripten.org/docs/api_reference/Filesystem-API.html#filesystem-api-idbfs)
+  - [DuckDB Wasm](https://duckdb.org/2021/10/29/duckdb-wasm.html)
+
+### In-Memory: Persistence
+
+- One downside of not directly using IndexedDB, is that your data is not persistent all the time. 
+  - And when the JavaScript process exists without having persisted to IndexedDB, data can be lost. 
+- One point is make persisting as fast as possible. 
+  - LokiJS for example has the incremental-indexeddb-adapter which only saves new writes to the disc instead of persisting the whole state. 
+- Another point is to run the persisting at the correct point in time
+  - When the database is idle and no write or query is running.
+  - When the window fires the beforeunload event we can assume that the JavaScript process is exited any moment and we have to persist the state. After beforeunload there are several seconds time which are sufficient to store all new changes. This has shown to work quite reliable.
+- The only missing event that can happen is when the browser exists unexpectedly like when it crashes or when the power of the computer is shut of.
+
+### In-Memory: Multi Tab Support
+
+- when you have all database state in memory and only periodically write it to disc, multiple browser tabs could overwrite each other and you would loose data. 
+  - This might not be a problem when you rely on a client-server replication, because the lost data might already be replicated with the backend and therefore with the other tabs. 
+  - But this would not work when the client is offline.
+- The ideal way to solve that problem, is to use a SharedWorker. 
+  - A SharedWorker is like a WebWorker that runs its own JavaScript process only that the SharedWorker is shared between multiple contexts. 
+  - You could create the database in the SharedWorker and then all browser tabs could request the Worker for data instead of having their own database. 
+- But unfortunately the SharedWorker API does not work in all browsers. 
+  - Safari dropped its support and InternetExplorer or Android Chrome, never adopted it. 
+  - Also it cannot be polyfilled. 
+- Instead, we could use the `BroadcastChannel` API to communicate between tabs and then apply a leader election between them. 
+  - The leader election ensures that, no matter how many tabs are open, always one tab is the Leader.
+- The disadvantage is that the leader election process takes some time on the initial page load (about 150 milliseconds). 
+  - Also the leader election can break when a JavaScript process is fully blocked for a longer time. 
+  - When this happens, a good way is to just reload the browser tab to restart the election process.
+# [re: Why IndexedDB is slow and what to use instead - RavenDB NoSQL Database_202112](https://ravendb.net/articles/re-why-indexeddb-is-slow-and-what-to-use-instead)
+- I don’t actually know anything about IndexedDB, but I have been working with databases for a sufficiently long time to understand what the root problem here is.
+- the trouble is not with the number of documents that are being saved, but the number of transactions.
+- I dug a bit and found that IndexedDB is based on LevelDB (and I do know that one quite a bit). The underlying issue is that each transaction commit needs to issue an fsync(), and fsync is slow!
+- Pretty much all database engines have to deal with that, the usual answer is to allow transaction merging of some sort. Many relational databases will write to the log and commit multiple transactions in a single fsync(), RavenDB will do explicit transaction merging in order to batch writes to disk.
+- However, for pretty much every database out there with durability guarantees, the worst thing you can do is write a lot of data one transaction at a time. Server databases still benefit from being able to amortize multiple operations across different requests, but a client side database is effectively forced to do serial work with no chance for optimization.
+- From the client perspective, the only viable option here is to batch writes to get better performance. Then again, if you are working on the client side, you are either responding to a user action (in which case you have plenty of time to commit) or running in the background, which means that you have the ability to batch.
+# [The pain and anguish of using IndexedDB: problems, bugs and oddities_202211](https://gist.github.com/pesterhazy/4de96193af89a6dd5ce682ce2adff49a)
 - This gist lists challenges you run into when building offline-first applications based on IndexedDB, including open-source libraries like Firebase, pouchdb and AWS amplify 
 
 - State deleted after 7 days of inactivity (Safari)

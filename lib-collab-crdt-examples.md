@@ -58,6 +58,20 @@ modified: 2022-04-05T10:08:25.947Z
   - 三大类数据：storage、presense、analytics
   - To provide better conflict resolution, we can use the CRDT-like LiveObject to store each rectangle’s data. 
   - Liveblocks storage can contain nested data structures, and in our example, shapes is a LiveMap containing multiple LiveObject items.
+
+- https://github.com/marcello3d/trimerge-sync
+  - implement synchronization using the trimerge algorithm.
+  - Conflicts are resolved on the client side (as in @mweststrate's “Distributing state changes using snapshots, patches and actions”)
+  - Data structure design can limit conflicts (as in CRDT)
+  - Limitations:
+    - Assumes application is built on immutable data structures
+    - Does not scale to high number of concurrent edits (conflict thrashing)
+    - Requires the full document model to be in all clients' memory
+  - https://github.com/marcello3d/trimerge
+    - Three-way merge JSON structures
+    - 三路归并
+  - https://github.com/marcello3d/collabodux
+    - library for realtime collaboration on JSON structures. It is a client-oriented, declarative-functional approach to shared application state.
 # crdt-rewrite
 - https://github.com/josephg/crdt-examples
   - CRDT examples from a DWEB talk

@@ -96,6 +96,7 @@ modified: 2022-08-21T10:03:52.222Z
 - https://github.com/AntlerVC/firetable
   - https://firetable.io/
   - Excel/Google Sheets like UI for Firebase/Firestore. 
+  - https://github.com/FiretableProject/firetable
 - https://github.com/jamovi/jamovi
   - jamovi is a free statistics package, which is designed to be familiar to users of SPSS. 
   - It provides a spreadsheet editor, and a range of statistical analyses. 

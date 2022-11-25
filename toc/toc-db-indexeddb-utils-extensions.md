@@ -19,6 +19,10 @@ modified: 2022-11-04T14:22:17.373Z
   - 在 worker 中 indexeddb 的读写速度比在主线程中慢很多。原因未知，可能与 cpu 占用有关。
   - worker transfer 能大大增加主线程与 worker 间的数据传输速度。但要注意交出控制权后，处理逻辑会有相应变化。
 
+- https://github.com/pubkey/indexeddb-performance-tests
+  - Performance tests for IndexedDB use cases
+  - [rxdb: Why IndexedDB is slow and what to use instead](https://rxdb.info/slow-indexeddb.html)
+
 - stoxy /74Star/ISC/202205/js
   - https://github.com/stoxy-js/stoxy
   - Stoxy is a state management API for all modern Web Technologies.
@@ -141,7 +145,8 @@ modified: 2022-11-04T14:22:17.373Z
 - https://github.com/NullixAT/browstorjs  /202208/ts
   - Persistent key/value data storage for your Browser and/or PWA, promisified, including file support and service worker support, all with IndexedDB.
 
-- https://github.com/dumbmatter/fakeIndexedDB /202207/ts
+- fakeIndexedDB /469Star/apache2/202207/ts
+  - https://github.com/dumbmatter/fakeIndexedDB
   - A pure JS in-memory implementation of the IndexedDB API
   - for testing IndexedDB-dependent code in Node.js.
 - https://github.com/bigeasy/indexeddb /202111/js

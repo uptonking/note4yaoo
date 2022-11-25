@@ -11,6 +11,30 @@ modified: 2021-04-12T16:30:53.967Z
 
 ## 
 
+## 
+
+## 
+
+## 
+
+## [后端可以直接从cookie里取到token，为什么前端还要token设置到Authorization？ - 知乎](https://www.zhihu.com/question/558219586)
+
+- 两种方案：
+- 将 token 放在 cookie 里；
+  - 前端可以完全不写代码，设置 cookie 可以依赖后端的 Set-Cookie 响应头，同域名的情况下发送所有请求的时候 cookie 也是自动带上的（也有坏处，这样经常会造成网络流量和带宽的浪费）；
+  - 在安全性方面，cookie 可以设置 HttpOnly 来保护 cookie 无法被 JS 代码捕获，避免 XSS 等攻击，还可以设置 Secure 来确保只在 https 环境下传输 token；这些能力由浏览器提供，Authorization 无法实现；
+  - 但是，cookie 会存在 CSRF 攻击的问题，虽然浏览器厂商在逐步禁止第三方 cookie（似乎推迟到 2024 年了），但是这个问题还是不得不防（如果想使用第三方 cookie，可以在后端响应中设置 cookie 的 SameSite 属性）；
+  - 在一级域名相同的情况下，cookie 可以实现跨子域名互通，比如 a.example.com 和 b.example.com 之间可以实现 cookie 互通（设置 cookie 时提供 Domain=example.com 属性），这个能力也是 Authorization 不具备的；
+  - 网页中的图片 `<img />` 请求时也会自动带上 cookie，便于控制网络图片的访问权限，这个是 Authorization 做不到的，必须把 token 放在 url 查询里面才行。
+- 将 token 放在请求头里，用 Authorization 字段。
+  - 此字段需要由 JS 代码来写入，请求想要带上 Authorization 字段则需要用 JS 代码来给请求方法添加全局拦截器，因此它天生具备防止 CSRF 的功能；
+  - 只有浏览器使用 cookie，而小程序、Node.js 等环境，都是没有 cookie 的，只能使用 Authorization；因为此字段完全由 JS 来操作，我们可以自己实现诸如 cookie 的 Secure、Expires 等功能；
+  - 前端将 token 持久存储，一般会存储在 LocalStorage 里面，此时存在 XSS 攻击盗取 token 的问题（建议将 LocalStorage 里的 token 加密），而且它是无法跨域互通的，即使两个网站的一级域名相同也无法互通；
+  - 部分认证规范要求使用 Authorization 字段，例如 JWT，如果使用了相关的认证（尤其是第三方服务），则必须使用此字段。
+- 无论对于前端还是后端而言，这两种方案都是各有利弊的
+
+- 还有一点补充一下，如果用cdn之类，导致前端和后端域名不同的话带cookie实现跨域比较麻烦。反之如果前端和后端是同域名，也不限制path会导致请求静态文件也带上cookie比较吃流量
+
 ## [machine learning 在 Java 上的开发是不是已经没落？ - 知乎](https://www.zhihu.com/question/68177121)
 
 - 对于ml engineer，其实最重要的标准是“好写好改”，而不是语言运行效率以及语法有没有真泛型之类的东西。

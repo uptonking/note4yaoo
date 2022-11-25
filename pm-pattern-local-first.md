@@ -9,6 +9,10 @@ modified: 2021-08-22T08:05:39.413Z
 
 # guide
 
+- 对indexeddb/外部存储的取舍
+  - 对于基础库，应该以内存数据模型为主，因为idb读写要慢得多
+  - 对于应用层，可对indexeddb的数据模型进行可扩展的设计，方便迁移到其他数据库如sqlite
+
 - 自己选择数据存储位置的缺点
   - 第一次拉取数据耗时较长
   - 不能使用服务端集群搜索，只能在本地搜索
@@ -32,28 +36,6 @@ modified: 2021-08-22T08:05:39.413Z
   - 百度网盘替换部分视频为8秒短视频
   - 百度网盘后期限速，就算开了超级会员仍然可能因为带宽流量消耗过多而被系统限制
   - 腾讯起诉DD373交易平台，庭审时腾讯代表称「账号主人不可转卖自己的手机游戏账号」
-# [rxdb: Downsides of Offline First](https://rxdb.info/downsides-of-offline-first.html)
-
-## It only works with small datasets
-
-## Browser storage is not really persistent
-
-## There can be conflicts
-
-## Realtime is a lie
-
-## Eventual consistency
-
-## Permissions and authentication
-
-## You have to migrate the client database
-
-## Performance is not native
-
-## Nothing is predictable
-
-## There is no relational data
-
 # [Local-first software__201910](https://www.inkandswitch.com/local-first.html)
 - Cloud apps like Google Docs and Trello are popular because they enable real-time collaboration with colleagues, and they make it easy for us to access our work ~~from all of our devices~~ anytime anywhere. 
   - However, by centralizing data storage on servers, cloud apps also take away ownership and agency from users. 

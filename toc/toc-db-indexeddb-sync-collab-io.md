@@ -23,20 +23,18 @@ modified: 2022-10-22T18:47:16.228Z
   - a JavaScript library for storing user data locally in the browser, as well as connecting to remoteStorage servers and syncing data across devices and applications.
   - It is also capable of connecting and syncing data with a person's Dropbox or Google Drive account (optional).
   - The first prototype of rs.js was written in November 2010. The library is well-tested and actively maintained.
-  - rs.js optionally supports Dropbox and Google Drive as storage backends which users can connect.
+  - for `remoteStorage.local`, a choice is made between `RemoteStorage.IndexedDB`,  `RemoteStorage.LocalStorage` and `RemoteStorage.InMemoryCaching`, depending on what the environment (browser, node.js, Electron, WebView, or other) supports.
   - Data modules make your app and its data interoperable with other apps.
 
-- https://github.com/darrachequesne/synceddb
+- https://github.com/darrachequesne/synceddb /202203/ts
   - a fork of the awesome idb library, which adds the ability to sync an IndexedDB database with a remote REST API.
   - https://github.com/darrachequesne/synceddb-todo-example
 
 - https://github.com/azer/indexeddb /202005/ts/inactive
-  - Well-tested, low-level wrapper around the IndexedDB API. It can sync locally and remotely.
-
-- https://github.com/theShagod/indexeddb-mysql-sync-testing
-  - Playing with service workers, indexeddb and background sync.
-  - https://www.jawsdb.com/
-    - Database as a service
+  - Well-tested, low-level wrapper around the IndexedDB API. 
+  - It can sync locally and remotely.
+  - You can use the `sync` method to keep multiple local indexeddb database instances easily.
+  - You can sync your IndexedDB remotely. To accomplish this, you'll need to customize `Push` and `Pull` classes. 
 
 - https://github.com/madmoizo/backinfront  /1Star/ISC/202206/js
   - Backinfront is both the manager of your browser database and a router which handles requests locally. 
@@ -44,15 +42,23 @@ modified: 2022-10-22T18:47:16.228Z
   - Backinfront is designed to work inside a Service Worker make sure to NOT use it in a window context
   - 依赖idb
 
-- https://github.com/logux/core
+- https://github.com/theShagod/indexeddb-mysql-sync-testing
+  - Playing with service workers, indexeddb and background sync.
+  - https://www.jawsdb.com/
+    - Database as a service
+
+- https://github.com/logux/core /202209/ts
   - https://logux.io/
-  - Logux is a new way to connect client and server. Instead of sending HTTP requests (e.g., AJAX and GraphQL) it synchronizes log of operations between client, server, and other clients.
+  - Logux is a new way to connect client and server. Instead of sending HTTP requests (e.g., AJAX and GraphQL), it synchronizes log of operations between client, server, and other clients.
   - when multiple users work with the same document. Logux has features inspired by CRDT to resolve edit conflicts between users. 
   - Time travel to keep actions order the same on every client. A distributed timer to detect the latest changes.
   - offline first: Logux saves Redux actions to IndexedDB and has a lot of features to merge changes from different users.
   - Logux combines WebSocket with modern reactive client architecture. It synchronizes Redux actions between clients and servers, and keeps the same order of actions.
   - Optimistic UI to improve UI performance by updating UI without waiting for an answer from the server. Time travel will revert changes later if the server refuses them.
   - Compatible with modern stack: Redux, Vuex and pure JS API, works with any back-end language and any database.
+
+- https://github.com/paldepind/synceddb /201803/js
+  - makes it easy to write offline-first applications with real-time syncing and server-side persistence.
 # collab
 - https://github.com/yjs/y-indexeddb
   - IndexedDB database adapter for Yjs

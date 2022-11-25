@@ -17,12 +17,13 @@ modified: 2022-11-06T03:19:28.284Z
   - It implements a backend for sql.js (sqlite3 compiled for the web) that treats IndexedDB like a disk and stores data in blocks there. 
   - That means your sqlite3 database is persisted. 
   - And not in the terrible way of reading and writing the whole image at once -- it reads and writes your db in small chunks.
-  - https://github.com/nikochan2k/absurd-sql-ts
-    - Typescript version of absurd-sql
-  - https://github.com/monlovesmango/nostr-absurd-sql
-    - nostr utility for sqlite3 saved to indexeddb
-
-
+- https://github.com/nikochan2k/absurd-sql-ts /202209/ts
+  - Typescript version of absurd-sql
+- https://github.com/kikko-land/better-absurd-sql /202209/js
+  - a fork of absurd-sql.
+  - Right now you need to use my fork of sql.js, but I'm going to open a PR and hopefully get it merged. 
+- https://github.com/monlovesmango/nostr-absurd-sql
+  - nostr utility for sqlite3 saved to indexeddb
 
 - sql.js /10.8kStar/MIT/202209/js
   - https://github.com/sql-js/sql.js
@@ -36,6 +37,8 @@ modified: 2022-11-06T03:19:28.284Z
 - https://github.com/wireapp/websql  /202005/inactive
   - websql is a fork of sql.js 
   - Database is persisted to IndexedDB, and can be synced using the saveChanges API
+- - https://github.com/phiresky/sql.js-httpvfs
+  - Hosting read-only SQLite databases on static file hosters like Github Pages
 
 - https://github.com/ccorcos/tuple-database
   - The local-first, "end-user database" database.
@@ -55,12 +58,13 @@ modified: 2022-11-06T03:19:28.284Z
   - Indexed DB Implementation
   - 单文件测试idea
 # wasm
-- https://github.com/mandel59/sqlite-wasm
-  - SQLite compiled to WebAssembly
+- https://github.com/overtone-app/sqlite-wasm-esm
+  - The new SQLite WASM build is rather hard to use in modern JS apps, so this wrapper package tries to make this easier.
+
 - https://github.com/rhashimoto/wa-sqlite
   - This is a WebAssembly build of SQLite with experimental support for writing SQLite virtual filesystems and virtual table modules completely in Javascript. 
   - This allows alternative browser storage options such as IndexedDB and File System Access.
 
-- https://github.com/overtone-app/sqlite-wasm-esm
-  - The new SQLite WASM build is rather hard to use in modern JS apps, so this wrapper package tries to make this easier.
+- https://github.com/mandel59/sqlite-wasm
+  - SQLite compiled to WebAssembly
 # more-sqlite-web

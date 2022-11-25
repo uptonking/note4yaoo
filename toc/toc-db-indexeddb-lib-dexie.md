@@ -1,11 +1,11 @@
 ---
-title: toc-db-indexeddb-dexie
+title: toc-db-indexeddb-lib-dexie
 tags: [dexie, indexeddb, lib, toc]
 created: 2022-11-06T03:18:08.698Z
-modified: 2022-11-06T03:18:26.506Z
+modified: 2022-11-25T17:19:08.656Z
 ---
 
-# toc-db-indexeddb-dexie
+# toc-db-indexeddb-lib-dexie
 
 # guide
 

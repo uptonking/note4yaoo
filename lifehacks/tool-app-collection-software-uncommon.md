@@ -26,6 +26,11 @@ modified: 2022-11-07T10:27:48.956Z
   - Gromit-MPX is an on-screen annotation tool that works with any Unix desktop environment under X11 as well as Wayland.
   - Its main use is for making presentations of some application. 
 
+- [App Outlet](https://app-outlet.github.io/)
+  - https://github.com/app-outlet/app-outlet
+  - A Universal linux app store
+  - It currently supports AppImages, Flatpaks and Snaps packages.
+
 ### ubuntu
 
 - sysget

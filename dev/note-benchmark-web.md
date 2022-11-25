@@ -29,6 +29,7 @@ modified: 2020-07-14T09:28:43.976Z
 # data-grid-table
 - https://github.com/handsontable/performance-lab
   - JavaScript performance tests for Handsontable
+
 - https://github.com/bryntum/grid-performance
   - A performance comparison of popular JavaScript data grid components. 
   - Measures the initial rendering time and scroll performance for the following data grids
@@ -134,7 +135,13 @@ modified: 2020-07-14T09:28:43.976Z
   - To be fair to React, these pitfalls likely exist in many VDOM frameworks, because the nature of them adds necessary overhead to manage all sorts of things 
   - if you use React or any VDOM library, you should spend some time investigating its impact on an array of devices
 # db
+- https://github.com/nolanlawson/database-comparison
+  - http://nolanlawson.github.io/database-comparison/
+  - Compare DOM-blocking in browser databases
+  - Demo app to test different browser databases (memory, LocalStorage, IndexedDB, WebSQL) and in particular see whether or not they block the DOM.
+
 - https://github.com/pubkey/client-side-databases
+  - https://pubkey.github.io/client-side-databases/database-comparison/index.html
   - An implementation of the exact same app in Firestore, AWS Datastore, PouchDB, RxDB and WatermelonDB
   - I have implemented the exact same chat application with different database technologies.
 # engineering

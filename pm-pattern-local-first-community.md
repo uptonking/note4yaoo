@@ -14,27 +14,6 @@ modified: 2022-03-03T18:20:12.075Z
 
 - ## 
 
-- ## Downsides of Offline First__202110
-- https://news.ycombinator.com/item?id=28717848
-  - https://news.ycombinator.com/from?site=rxdb.info
-  - [rxdb: Downsides of Offline First](https://rxdb.info/downsides-of-offline-first.html)
-- I’m a “true believer” in CRDTs, which I have some experience in. 
-  - You can implement a useful CRDT for simple applications in under 100 lines if all you care about are standard database objects - like maps, sets and values. 
-  - List CRDTs are where they get complicated, but most applications aren’t collaborative text editors.
-  - The promise of CRDTs is that unlike most conflict resolution systems, you can layer over a crdt library and basically ignore all the implantation details. 
-  - Applications should (can) mostly ignore how a CRDT works when building up the stack.
-- The biggest roadblock to their use is that they’re poorly understood. Well, that and implementation maturity. 
-  - Automerge-rs merged a PR the other day which brought a 5 minute benchmark run down to 2 seconds. But by bit we’re getting there.
-
-- My biggest open question is how to design my centralized server side storage system for CRDT data. 
-  - To service writes from old clients I need to retain a total history of a document, but I don’t want to force new clients to download the entire history nor do I want these big histories in my cache, so I end up wanting a hot/cold system; 
-  - and building that kind of thing and dealing with the edge cases seems like more than 100 lines of code.
-- It seems like the Yjs authors also recognize that CRDT storage on the server is an area to address, there was some work on a custom database in 2018, although my thinking is more about how to retrofit(改进，翻新) text CRDTs into my existing very conservative production cloud software stack than about writing to block storage.
-
-- For prose text, what do you think about combining a document-scale CRDT, with fine-grained locking — e.g. splitting the document into a "list of lines/sentences", where lines have identity, and then only allowing one person to be modifying a given line at a time?
-  - I almost thought Notion would be a good example of this, but apparently not — they actually do allow multiple users to be editing the same leaf-node content block at the same time, and so have taken on the full scope of the CRDT problem.
-
-
 - ## My goal is to build a database that makes it easier to build local-first software.
 - https://twitter.com/ccorcos/status/1532185301438738433
   - Embedded, reactive, schemaless, and transactional read/write directly to indexes (inspired by FoundationDb)

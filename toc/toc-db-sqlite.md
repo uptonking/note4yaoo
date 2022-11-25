@@ -14,6 +14,11 @@ modified: 2021-08-30T18:56:18.632Z
   - Build data heavy reactive interfaces on top of SQLite for any platform with any framework or lib.
   - Kikko is a wrapper around SQLite interfaces. 
   - It brings transaction support, middlewares for queries, and SQLite adapters for the most popular platforms.
+  - https://github.com/kikko-land/boono
+    - While other builders tend to be universal, Boono is specially tailored for SQLite. 
+    - That allows supporting all the features SQLite offers.
+  - https://github.com/kikko-land/wa-sqlite-web-backend
+    - 依赖 wa-sqlite
 
 - https://github.com/quolpr/harika
   - Harika is an offline-first, performance-focused note taking app for organizing your knowledge database.

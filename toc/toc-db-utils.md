@@ -14,7 +14,10 @@ modified: 2022-11-06T11:21:27.612Z
   - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
   - It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
 # utils
-
+- https://github.com/multiprocessio/datastation /ts/go
+  - App to easily query, script, and visualize data from every database, file, and API.
+  - DataStation is an open-source data IDE for developers. It allows you to easily build graphs and tables with data pulled from SQL databases, logging databases, metrics databases, HTTP servers, and all kinds of text and binary files.
+  - Write embedded scripts as needed in languages like Python, JavaScript, R or SQL.
 # more
 
 - https://github.com/mlaanderson/database-js

@@ -40,13 +40,38 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/linyows/notionate
   - React components that uses the Notion API to display the Notion's database and page.
 
-- https://github.com/rowyio/rowy
+- rowy /3.8kStar/apache2/202208/ts
+  - https://github.com/rowyio/rowy
   - http://rowy.io/
+  - https://demo.rowy.io/
   - Rowy is an open-source low-code platform for Firebase and Firestore. 
-    - Airtable-like UI with cloud functions workflows in JS/TS, all in your browser.
-    - Manage Firestore data in a spreadsheet-like UI, write Cloud Functions effortlessly in the browser
+  - Airtable-like UI with cloud functions workflows in JS/TS, all in your browser.
+  - Manage Firestore data in a spreadsheet-like UI, write Cloud Functions effortlessly in the browser
+  - Powerful spreadsheet interface for Firestore
+  - 30+ fields supported
+  - [Abstracting the UI to be compatible with any database · Issue #228 · rowyio/rowy](https://github.com/rowyio/rowy/issues/228)
   - https://demo.rowy.io/table/allFieldTypes
     - 给出了常用字段类型的示例
+
+- https://github.com/nocodb/nocodb
+  - The Open Source Airtable Alternative
+  - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
+  - Search, sort, filter, hide columns with uber ease
+  - Create Views : Grid, Gallery, Kanban, Form
+  - Frontend: Vue.js
+  - Backend: express.js, knex, 
+  - Database: Any SQL (postgres, mysql, sqlite, maria DB, SQL server)
+  - API: REST and graphql
+
+- https://github.com/gristlabs/grist-core
+  - https://support.getgrist.com/
+  - 不直接支持视图切换，但支持各种widgets
+  - 前端基于backbone、jquery
+  - Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database to organize your data and make you more productive.
+  - Columns work like they do in databases.
+  - Columns can be filled by formula
+  - A portable, self-contained format. Based on SQLite
+  - Full Python syntax is supported, and the standard library.
 
 - https://github.com/mukulchugh/kanboard-notion-kanban-react
   - https://notion-kanboard-mukul.netlify.app/
@@ -104,15 +129,7 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/souvikinator/notion-to-md
   - Convert notion pages, block and list of blocks to markdown (supports nesting) using notion-sdk-js
 # airtable-like
-- https://github.com/gristlabs/grist-core
-  - https://support.getgrist.com/
-  - 不直接支持视图切换，但支持各种widgets
-  - 前端基于backbone、jquery
-  - Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database to organize your data and make you more productive.
-  - Columns work like they do in databases.
-  - Columns can be filled by formula
-  - A portable, self-contained format. Based on SQLite, the most widely deployed database engine.
-  - Full Python syntax is supported, and the standard library.
+
 
 - https://github.com/bram2w/baserow
   - Baserow is an open source no-code database tool and Airtable alternative. 
@@ -120,15 +137,6 @@ modified: 2022-08-21T10:02:05.129Z
   - Headless and API first.
   - Uses popular frameworks and tools like Django, Vue.js and PostgreSQL.
 
-- https://github.com/nocodb/nocodb
-  - The Open Source Airtable Alternative
-  - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
-  - Search, sort, filter, hide columns with uber ease
-  - Create Views : Grid, Gallery, Kanban, Form
-  - Frontend: Vue.js
-  - Backend: express.js, knex, 
-  - Database: Any SQL (postgres, mysql, sqlite, maria DB, SQL server)
-  - API: REST and graphql
 - https://github.com/nocobase/nocobase
   - https://www.nocobase.com/
   - NocoBase is a scalability-first, open-source no-code/low-code development platform.

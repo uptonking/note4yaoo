@@ -9,6 +9,9 @@ modified: 2022-04-05T10:10:22.091Z
 
 # guide
 
+- 没必要执着于通用且高性能的全场景协作方案
+  - 具体的业务对于协作的粒度要求不同，特别是是否要支持字符级别的协作
+  - 子元素是否要支持协作编辑，如编辑器内的表格、白板内的表格
 # Portable Text
 - portabletext /1kStar/MIT/202202/md/text
   - https://github.com/portabletext/portabletext

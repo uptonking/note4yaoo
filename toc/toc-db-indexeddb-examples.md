@@ -134,9 +134,10 @@ modified: 2022-06-03T22:06:47.464Z
 - https://github.com/jorgeabrahan/budgtcalc
   - (Responsive) (CRUD) (IndexedDB) budget calculator developed using vanilla JS and storing data on IndexedDB
 
-- https://github.com/googlecodelabs/workbox-indexeddb
+- https://github.com/googlecodelabs/workbox-indexeddb /202012/js/inactive
   - use IndexedDB and Workbox to create a fully offline-capable, data-driven app. 
   - You'll also use Background Sync to sync your app with the server even when your web app is closed.
+  - Follow the Google Codelabs instructions.
 # more-indexeddb
 - https://github.com/yued-fe/yux-storage
   - yux-storage 是一个基于 HTML5 IndexedDB 封装的 Web 本地数据离线存储库。

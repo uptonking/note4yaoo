@@ -125,6 +125,9 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/jakezatecky/react-checkbox-tree
   - https://jakezatecky.github.io/react-checkbox-tree/
   - a feature-rich React component for a checkbox treeview.
+
+- [Tree views in CSS](https://iamkate.com/code/tree-views/)
+  - A tree view (collapsible list) can be created using only html and css, without the need for JavaScript.
 # tree-crud-operations
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!

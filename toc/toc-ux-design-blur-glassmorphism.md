@@ -17,6 +17,10 @@ modified: 2022-11-16T16:09:02.278Z
 - blogs
   - [Glassmorphism designs, themes, templates and downloadable graphic elements on Dribbble](https://dribbble.com/tags/glassmorphism)
   - [Glassmorphism UI - new design trend used by Apple & Microsoft_202103](https://www.creative-tim.com/blog/web-design/glassmorphism-new-design-trend/)
+
+- dark-glass
+  - [Rowy - Low-code backend on Google Cloud and Firebase](https://www.rowy.io/)
+  - [Anton Lapko on Twitter: "All beautiful details of the new @linear in one video. https://t.co/wYBYpAXiBc" / Twitter](https://twitter.com/anronkai/status/1583478139811901441)
 # popular
 - Creative-Cloud-App-Redesign /13Star/NALic/202206/js
   - https://github.com/peter-kimanzi/Creative-Cloud-App-Redesign
@@ -50,7 +54,6 @@ modified: 2022-11-16T16:09:02.278Z
   - https://github.com/unocss/unocss
     - The instant on-demand Atomic CSS engine.
     - Pure CSS Icons - use any icon as a single class.
-
 
 - https://github.com/AmreshSinha/glassFolio
   - https://amreshsinha.github.io/glassFolio/
@@ -135,9 +138,7 @@ modified: 2022-11-16T16:09:02.278Z
 - https://github.com/damolabolaji/gaming-dashboard /绿色仪表板
   - https://gamingglassdash.netlify.app/
   - a mini dashboard to test out the glass effect using backdrop-filter CSS property.
-
 # glassmorphism-generator
-
 - https://github.com/Vishnuxx/GlassMorphism-generator
   - https://vishnuxx.github.io/GlassMorphism-generator/
   - 可调整2个参数，blur、透明度
@@ -157,8 +158,6 @@ modified: 2022-11-16T16:09:02.278Z
 - https://github.com/daniektj/Glass-Morphism-Generator
   - https://glassgenerator.netlify.app/
   - Glass Morphism is a CSS Code Generator
-
-
 # blur-ui-examples
 - https://github.com/MauriceNino/dashdot /202211/ts
   - https://dash.mauz.io/

@@ -39,8 +39,12 @@ modified: 2022-11-04T15:11:24.012Z
   - Google chrome extension which helps you to copy from Wikipedia.
 - https://github.com/gambolputty/wikitable2csv
   - A web tool to convert Wiki tables to CSV
-# local-files
+# local-filesystem
+- https://github.com/rxliuli/image-viewer
+  - 尝试使用 web fs api 的图片查看器
 
+- https://github.com/nikochan2k/kura
+  - The FileSystem API abstraction library.
 # extension-starter
 - https://github.com/chibat/chrome-extension-typescript-starter
   - Chrome Extension TypeScript Starter

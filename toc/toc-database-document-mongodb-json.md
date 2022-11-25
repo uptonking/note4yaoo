@@ -24,6 +24,7 @@ modified: 2022-11-03T04:14:11.987Z
   - One datastore is the equivalent of a MongoDB collection
   - Under the hood, NeDB's persistence uses an append-only format, meaning that all updates and deletes actually result in lines added at the end of the datafile, for performance reasons.
   - If you specify a filename, the database will be persistent, and automatically select the best storage method available (IndexedDB, WebSQL or localStorage) depending on the browser.
+  - I consider NeDB to be feature-complete, i.e. it does everything I think it should and nothing more. As a general rule I will not accept pull requests anymore
   - [Is this still maintained?](https://github.com/louischatriot/nedb/issues/492)
   - forks
     - https://github.com/seald/nedb  /active

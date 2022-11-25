@@ -96,8 +96,10 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 ## 1125
 
 - dev-to
-  - idb sync
   - crdt tutorials
+
+- idb sync
+  - 框架层偏向处理内存计算，应用层偏向处理持久化与同步
 
 ## 1123
 

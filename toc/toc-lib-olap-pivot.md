@@ -137,6 +137,12 @@ modified: 2020-10-22T06:50:36.740Z
   - /48Star/MIT/201903
   - Quickly format data to create a pivot table
 
+- https://github.com/antonycourtney/tad
+  - Tad desktop application enables you to quickly view and explore tabular data in several of the most popular tabular data file formats: CSV, Parquet, and SQLite and DuckDb database files. 
+  - Internally, the application is powered by an in-memory instance of DuckDb, a fast, embeddable database engine optimized for analytic queries.
+  - The core of Tad is a React UI component that implements a hierarchical pivot table that allows you to specify a combination of pivot, filter, aggregate, sort, column selection
+  - Tad uses SlickGrid for rendering the data grid. 
+
 - https://github.com/cube-js/cube.js
   - /MIT/9kStar/202010
   - https://cube.dev/docs/

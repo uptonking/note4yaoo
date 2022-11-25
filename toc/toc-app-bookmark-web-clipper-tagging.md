@@ -148,6 +148,10 @@ modified: 2022-11-11T11:04:29.007Z
   - adds the ability to search your bookmarked tweets inside Twitter.
 - https://github.com/twitterdev/bookmarks-search
   - uses the Bookmarks lookup endpoint to get your bookmarks
+
+- https://github.com/raucao/webmarks
+  - a bookmarking app, which lets you choose your server or provider for storing all data. 
+  - It is a user-first, open-source alternative to proprietary, hosted bookmarking services like e.g. Delicious, Pinboard, et cetera.
 # more-bookmark
 - https://github.com/masonmcelvain/hop
   - 好看但不实用
