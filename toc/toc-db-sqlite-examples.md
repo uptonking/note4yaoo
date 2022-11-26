@@ -42,6 +42,11 @@ modified: 2022-06-03T22:07:49.519Z
 - https://github.com/assafmo/SQLiteProxy
   - A simple HTTP JSON proxy for SQLite.
   - Must use HTTP POST with content-type=application/json.
+
+- https://github.com/gromnitsky/naif-blog-engine
+  - A static blog generator powered by GNU Make, Node.js & SQLite. 
+  - Includes support for podcast feeds & FTS (full text search).
+  - write blog posts in markdown, and create themes using ejs.
 # crud-rest-api
 - https://github.com/machelslack/api-with-sqlite
   - node express api using a sqlite in memory database

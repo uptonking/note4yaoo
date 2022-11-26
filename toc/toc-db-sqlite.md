@@ -11,8 +11,8 @@ modified: 2021-08-30T18:56:18.632Z
 
 - kikko /75Star/MIT/202211/ts
   - https://github.com/kikko-land/kikko
-  - Build data heavy reactive interfaces on top of SQLite for any platform with any framework or lib.
-  - Kikko is a wrapper around SQLite interfaces. 
+  - https://kikko-doc.netlify.app/
+  - Powerful SQLite adapter for web, mobile and desktop. Build reactive UI on top of it
   - It brings transaction support, middlewares for queries, and SQLite adapters for the most popular platforms.
   - https://github.com/kikko-land/boono
     - While other builders tend to be universal, Boono is specially tailored for SQLite. 
@@ -20,14 +20,18 @@ modified: 2021-08-30T18:56:18.632Z
   - https://github.com/kikko-land/wa-sqlite-web-backend
     - 依赖 wa-sqlite
 
-- https://github.com/quolpr/harika
-  - Harika is an offline-first, performance-focused note taking app for organizing your knowledge database.
-  - Synchronization with server. It's done with LWW CRDT per field on top of SQLite. 
+- harika-note /111Star/AGPLv3/202208/ts
+  - https://github.com/quolpr/harika
+  - https://app-dev.harika.io/
+  - an offline-first, performance-focused note taking app for organizing your knowledge database.
+  - Synchronization with server. 
+    - It's done with LWW CRDT per field on top of SQLite. 
     - It also stores all changes locally and sends them to server. 
     - Server also store all the changes and recalculate snapshots on new received changes and send those snapshots back to the client. 
     - Due to we store all the changes at server, it is also planned to add time travel, when CRDT is not what user expect at some cases.
 
-- https://github.com/nalgeon/sqlime
+- sqlime /338Star/MIT/202204/js
+  - https://github.com/nalgeon/sqlime
   - http://sqlime.org/
   - an online SQLite playground for debugging and sharing SQL snippets. 
   - Kinda like JSFiddle, but for SQL instead of JavaScript.

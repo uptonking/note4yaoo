@@ -17,21 +17,20 @@ modified: 2022-11-14T15:12:02.783Z
 - https://github.com/kkosmowski/react-notes-2 /202210/ts/localbase
   - https://kkosmowski-notes.netlify.app/
   - Advanced To-Do app with custom drag-to-select, categories and multiple customization options.
-  - 依赖localbase操作indexeddb、redux、mui
+  - 依赖localbase/localforage操作indexeddb、redux、mui
   - 界面较完整
 
-
+- https://github.com/maytiara/pwa-text-editor
+  - Text editor that runs in the browser, single-page application that meets PWA criteria.
+  - It includes a method to store and retrieve data using the IndexedDB database
+  - https://github.com/laurelthorburn/Text-Editor
+  - https://github.com/sgamit09/13-2022-UCF-FS-Bootcamp-JATE.from.State.Farm
 - https://github.com/aaltoo/pwa-notes /202211/ts/vue
   - https://pwa-notes-two.vercel.app/
   - This template should help get you started developing with Vue 3 in Vite.
 - https://github.com/kkeisuke/note /202209/ts/vue
   - web application that uses IndexedDB and LocalStorage.
   - @toast-ui/editor + dexie
-- https://github.com/maytiara/pwa-text-editor
-  - Text editor that runs in the browser, single-page application that meets PWA criteria.
-  - It includes a method to store and retrieve data using the IndexedDB database
-  - https://github.com/laurelthorburn/Text-Editor
-  - https://github.com/sgamit09/13-2022-UCF-FS-Bootcamp-JATE.from.State.Farm
 
 - https://github.com/jpodwys/preact-journal /202103/js/inactive
   - https://preact-journal.herokuapp.com/

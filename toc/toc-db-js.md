@@ -30,6 +30,17 @@ modified: 2022-11-25T15:50:48.226Z
   - PouchDB is an open-source JavaScript database inspired by Apache CouchDB that is designed to run well within the browser.
   - It enables applications to store data locally while offline, then synchronize it with CouchDB and compatible servers when the application is back online
 
+- acebase /158Star/MIT/202206/js
+  - https://github.com/appy-one/acebase
+  - A fast, low memory, transactional, index & query enabled NoSQL database engine and server for node.js and browser with realtime data change notifications.
+  - Inspired by (and largely compatible with) the Firebase realtime database, with additional functionality and less data sharding/duplication.
+  - By default, AceBase uses its own binary database format in Node.js environments, and IndexedDB (or LocalStorage) in the browser to store its data. 
+    - However, it is also possible to use AceBase's realtime capabilities, and have the actual data stored in other databases. 
+    - Currently, AceBase has built-in adapters for MSSQL, SQLite in Node.js environments; and IndexedDB, LocalStorage, SessionStorage for the browser. 
+  - When you're using AceBase with an IndexedDB or LocalStorage backend, you might notice that if you change data in one open tab, those changes do not raise change events in other open tabs monitoring that same data.
+  - AceBase is designed to run in a Node.js environment, as it (by default) requires the 'fs' filesystem to store its data and indexes. 
+    - However, since v0.9.0 it is now also possible to use AceBase databases in the browser! 
+
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb
   - https://rxdb.info/
@@ -56,12 +67,9 @@ modified: 2022-11-25T15:50:48.226Z
 - WatermelonDB /8.7kStar/MIT/202211/js
   - https://github.com/Nozbe/WatermelonDB
   - Reactive & asynchronous database for powerful React and React Native apps
-  - Lazy: Nothing is loaded until it's requested. 
   - And since all querying is performed directly on the rock-solid SQLite database on a separate native thread, most queries resolve in an instant.
+  - Lazy: Nothing is loaded until it's requested. 
   - But unlike using SQLite directly, Watermelon is fully observable.
-
-- https://github.com/sius/fakerdb
-  - Generate an unlimited stream of JSON schema instances using json-schema-faker, faker, chance and insert the data into a supported database, e.g.: nedb, mongodb, postgres, mssql.
 
 - lovefield /6.8kStar/Apache2/202005/js/inactive
   - https://github.com/google/lovefield
@@ -102,8 +110,15 @@ modified: 2022-11-25T15:50:48.226Z
   - who is using
     - json-server
 
+- https://github.com/sius/fakerdb /202209/js
+  - Generate an unlimited stream of JSON schema instances using json-schema-faker, faker, chance and insert the data into a supported database, e.g.: nedb, mongodb, postgres, mssql.
+
 - https://github.com/fwd/database /202210/js
   - SQL-like JSON Database
+
+- https://github.com/Belphemur/node-json-db
+  - A simple "database" that use JSON file for NodeJS
+  - Every method are now asynchronous
 # db-with-fallback-storage
 - Nano-SQL /201911/ts/inactive
   - https://github.com/only-cliches/Nano-SQL

@@ -150,9 +150,12 @@ modified: 2022-11-04T15:11:24.012Z
 - https://github.com/shanebell/JaSON /202104/ts/inactive
   - a Google Chrome extension for testing APIs and making HTTP network requests.
   - Automatically sends cookies from Chrome. This is extremely handy for APIs which require authentication. 
-# more-extensions
-- https://github.com/SanderRonde/CustomRightClickMenu
-  - A browser extension to add links and run scripts/stylesheets all from your right-click menu
 # settings-sync
 - https://github.com/shanalikhan/code-settings-sync
   - Synchronize your Visual Studio Code Settings Across Multiple Machines using GitHub GIST
+# twitter
+- https://github.com/tweetback/tweetback
+  - Take ownership of your Twitter data. 
+# more-extensions
+- https://github.com/SanderRonde/CustomRightClickMenu
+  - A browser extension to add links and run scripts/stylesheets all from your right-click menu

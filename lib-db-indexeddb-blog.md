@@ -199,6 +199,59 @@ modified: 2022-06-13T02:57:07.648Z
     - In cases where it's not feasible to break up a state object and just write the minimal change-set, breaking up the data into sub-trees and only writing those is still preferable to always writing the entire state tree. 
   - The same is true if you store large items like images, music, or video in IndexedDB.
 - Lastly, you should always be measuring the performance impact of the code you write.
+# firefox: indexeddb
+- mozilla-firefox-indexeddb - sqlite
+  - https://hg.mozilla.org/mozilla-central/file/default/dom/indexedDB
+
+- Mozilla objected to the Web SQL interface as having no alternative implementation available. 
+  - So IndexedDB, an API with less surface, was chosen instead. Ironically, IndexedDB is internally implemented based on SQLite in Firefox (Chrome uses the simpler LevelDB instead).
+
+- [Firefox uses SQLite to implement IDB, while Chrome uses leveldb. SQLite wins again.](https://twitter.com/jlongster/status/1425833031068180481)
+# safari-webkit: indexeddb
+- webkit的indexeddb基于sqlite实现
+  - 提供了 SQLiteIDBBackingStore.cpp、MemoryIDBBackingStore.cpp
+  - https://github.com/WebKit/WebKit/blob/main/Source/WebCore/Modules/indexeddb/server/SQLiteIDBBackingStore.cpp
+# chrome: indexeddb
+- chromium/blink - backendStore没找到leveldb
+  - https://chromium.googlesource.com/chromium/blink/+/refs/heads/main/Source/modules/indexeddb/
+
+## [IndexedDB](https://chromium.googlesource.com/chromium/src/+/master/content/browser/indexed_db/docs/README.md)
+
+- (IndexedDB) Backing Store
+  - The backing store represents all IndexedDB data for an origin. 
+  - This includes all IndexedDB databases for that origin. 
+- 👉🏻 A backing store has a dedicated leveldb database where all data for that origin is stored.
+- A leveldb database represents a leveldatabase database. Each backing store has a unique leveldb database, located at: `IndexedDB/<serialized_origin>.leveldb/`.
+
+- An IndexedDB database represents a database in the IndexedDB API. 
+  - The backing store can contain many IndexedDB databases. 
+  - 👉🏻 So a single LevelDB database has multiple IndexedDB databases.
+  - IndexedDB databases are identified by a unique auto-incrementing int64_t database_id.
+
+- Blob Storage
+  - Blob are supported in IndexedDB to allow large values to be stored in IndexedDB without needing to save them directly into leveldb (which doesn't work well with large values). 
+  - Blobs are a special type of “External Object”, i.e. objects where some other subsystem in chrome is involved in managing them.
+
+## [chrome: IndexedDB Data Path](https://chromium.googlesource.com/chromium/src/+/a77a9a172b05957ad025104fc62979d5e2b87323/third_party/blink/renderer/modules/indexeddb/docs/idb_data_path.md)
+
+- This document is a quick overview of the Blink implementation of IndexedDB read/write requests.
+- Chrome's IndexedDB implementation is logically split into two components.
+- The Blink side, also called the frontend in older code, implements the interfaces in the IndexedDB specification, translates requests from Web applications into lower-level requests for the IndexedDB backing stores, and performs a fair amount of error checking.
+- The browser side, also called the backend in older code, implements the IndexedDB backing store, which executes the low-level requests coming from the Blink side.
+- The two components are currently (Q4 2017) hosted in separate processes and bridged by a couple of glue layers. As part of the OnionSoup 2.0 effort, we hope to most of the backing store implementation in Blink, and remove the glue layers.
+- The backing store implementation is built on top of two storage systems:
+  - Blobs, managed by the Blob system, are stored as individual files in a per-origin directory. Blobs are specifically designed for storing large amounts of data.
+  - LevelDB is a key-value store optimized for small keys (10s-100s of bytes) and fairly small values (10s-1000s of bytes). Chrome creates a per-origin LevelDB database that holds the data for all the origin's IndexedDB databases. The LevelDB database also holds references to the Blobs stored in the Blob system.
+# [How the browsers store IndexedDB data_201210](https://www.aaron-powell.com/posts/2012-10-05-indexeddb-storage/)
+- At the time of writing the IndexedDB implementation of WebKit, and by extension Chrome, is still prefixed
+  - leveldb
+
+- firefox is using SQLite as IndexedDB replaced the WebSQL proposal which was based on SQLite 
+  - `%AppData%\Roaming\Mozilla\Firefox\Profiles\your profile id\indexedDB\domain`
+
+- Internet Explorer 10 uses the Extensible Storage Engine as its underlying storage model. 
+  - This is the same database format that many of Windows features use including the Desktop Search (very common in Windows 8), Active Directory on Windows Servers and even Exchange.
+  - `%AppData%\Local\Microsoft\Internet Explorer\Indexed DB\Internet.edb`
 # rxdb
 
 ## [Alternatives for realtime offline-first JavaScript applications](https://rxdb.info/alternatives.html)

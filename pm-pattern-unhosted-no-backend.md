@@ -27,6 +27,24 @@ modified: 2022-11-25T18:11:56.985Z
 - One of the unique features of rs.js is that users are not required to have their storage connected in order to use the app; you can require connecting storage if it fits your use case.
 - The recommended way is to use the private and public BaseClient instances, which are available in so-called data modules.
 
+## api
+
+- A `BaseClient` instance is the main endpoint you will use for interacting with a connected storage: listing, reading, creating, updating and deleting documents, as well as handling incoming changes.
+
+- A `BaseClient` deals with three types of data: folders, objects and files:
+  - `getListing` returns a mapping of all items within a folder.
+  - `getObject` and `storeObject` operate on JSON objects. Each object has a type.
+  - `getFile` and `storeFile` operates on files. Each file has a MIME type.
+    - A file is raw data, as opposed to a JSON object 
+    - return: Raw data of the document (either a string or an ArrayBuffer)
+  - `getAll` returns all objects or files for the given folder path.
+  - `remove` operates on either objects or files (but not folders; folders  are created and removed implicitly).
+
+- Conflict Resolution
+  - Conflicts are resolved by calling storeObject() or storeFile() on the device where the conflict surfaced.
+  - Other devices are not aware of the conflict.
+  - If there is an algorithm to merge the differences between local and remote versions of the data, conflicts may be automatically resolved.
+
 ## Data modules
 
 - A core idea of the remoteStorage protocol is that the same data can be used by multiple apps.

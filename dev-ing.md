@@ -93,13 +93,54 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - undo/redo
   - 系统预置数据如待办类型合并时可能出现名称相同的情况，用户添加数据时也可能出现
 
-## 1125
+- log2022
+  - 08-block-editor-tiny-write
+  - 09-prosemirror-examples
+  - 10-prosemirror-collab - ot - crdt
+  - 11-idb-sync
+
+## 1126
 
 - dev-to
   - crdt tutorials
 
-- idb sync
+- vscode断点调试配置
+  - 参考npm scripts的可运行命令，将参数复制到launch.json的`runtimeArgs`.
+  - 还可以直接使用npm scripts
+    - [node.js - Can Visual Studio Code be configured to launch with nodemon - Stack Overflow](https://stackoverflow.com/questions/34450175/can-visual-studio-code-be-configured-to-launch-with-nodemon)
+
+```JSON
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run Nodemon",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run-script", "dev"],
+            "envFile": "${workspaceFolder}/.env",
+        }
+    ]
+}
+
+```
+
+- ReferenceError: exports is not defined in ES module scope
+  - 忘记创建 tsconfig.json 文件
+
+- [node.js - Why does node prefer error-first callback? - Stack Overflow](https://stackoverflow.com/questions/40511513/why-does-node-prefer-error-first-callback)
+  - This is just a convention.
+  - Because without this convention, developers would have to maintain different signatures and APIs, without knowing where to place the error in the arguments array.
+  - [The Node.js Way - Understanding Error-First Callbacks](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/)
+
+## 1125
+
+- 对idb的取舍
   - 框架层偏向处理内存计算，应用层偏向处理持久化与同步
+
+- remoteStorage偏向于使用类似文件系统的方式进行同步
+  - IDBSideSync采用的也是这种方式，对于同步是够用的
 
 ## 1123
 

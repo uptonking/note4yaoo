@@ -151,8 +151,10 @@ modified: 2022-11-07T17:36:22.236Z
 - https://github.com/KB1RD/matrix-notepad
   - A buggy way to collaborate on text documents using the Matrix protocol. 
 
-- https://github.com/iamlemec/elltwo
+- https://github.com/iamlemec/elltwo /js/python
   - a browser-based platform collaborative technical document creation. 
+  - Collaborative technical document creation: SQLite backend, browser frontend. 
+  - Markdown, math, images, references, citations. Full text search.
   - Articles are written in a simple markup language borrowing elements of Markdown and LaTeX.
 
 - https://github.com/Rowadz/real-time-collaborative-code-editor

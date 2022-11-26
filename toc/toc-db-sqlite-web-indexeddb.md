@@ -34,11 +34,18 @@ modified: 2022-11-06T03:19:28.284Z
   - sql.js uses `emscripten` to compile SQLite to webassembly (or to javascript code for compatibility with older browsers). 
   - It uses a virtual database file stored in memory, and thus doesn't persist the changes made to the database. 
   - However, it allows you to import any existing sqlite file, and to export the created database as a JavaScript typed array.
-- https://github.com/wireapp/websql  /202005/inactive
-  - websql is a fork of sql.js 
-  - Database is persisted to IndexedDB, and can be synced using the saveChanges API
-- - https://github.com/phiresky/sql.js-httpvfs
+  - https://github.com/wireapp/websql  /202005/ts/inactive
+    - websql is a fork of sql.js 
+    - Database is persisted to IndexedDB, and can be synced using the saveChanges API
+
+- sql.js-httpvfs /3kStar/apache2/202209/ts
+  - https://github.com/phiresky/sql.js-httpvfs
   - Hosting read-only SQLite databases on static file hosters like Github Pages
+  - sql.js is a light wrapper around SQLite compiled with EMScripten for use in the browser (client-side).
+  - This repo is a fork of and wrapper around sql.js to provide a read-only HTTP-Range-request based virtual file system for SQLite.
+  - It allows hosting an SQLite database on a static file hoster and querying that database from the browser without fully downloading it.
+  - sql.js-httpvfs also provides a proof-of-concept level implementation of a DOM virtual table that allows interacting (read/write) with the browser DOM directly from within SQLite queries.
+  - [Hosting SQLite databases on Github Pages (or any static file hoster) - phiresky's blog_202104](https://phiresky.github.io/blog/2021/hosting-sqlite-databases-on-github-pages/)
 
 - https://github.com/ccorcos/tuple-database
   - The local-first, "end-user database" database.
@@ -48,6 +55,11 @@ modified: 2022-11-06T03:19:28.284Z
   - human-friendly database library for JavaScript using SQLite. 
   - great.db automatically detects which runtime you are using and uses the respective fastest between better-sqlite3/bun-sqlite  
 # sqlite-web-examples
+- https://github.com/mstrahov/hnsql /实现简单
+  - https://mstrahov.github.io/hnsql/
+  - a cross between sqlite in a browser (sql.js) and hackernews API.
+  - create a reliable searcher for HN Who's hiring thread in SQLite db stored locally.
+
 - https://github.com/lunu-bounir/sqlite-manager
   - a browser extension to read, manipulate, plot and write SQLite databases
 # sqlite-indexeddb
@@ -60,6 +72,7 @@ modified: 2022-11-06T03:19:28.284Z
 # wasm
 - https://github.com/overtone-app/sqlite-wasm-esm
   - The new SQLite WASM build is rather hard to use in modern JS apps, so this wrapper package tries to make this easier.
+  - Currently only tested with Vite. 
 
 - https://github.com/rhashimoto/wa-sqlite
   - This is a WebAssembly build of SQLite with experimental support for writing SQLite virtual filesystems and virtual table modules completely in Javascript. 

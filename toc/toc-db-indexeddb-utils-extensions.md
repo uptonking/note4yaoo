@@ -210,6 +210,8 @@ modified: 2022-11-04T14:22:17.373Z
 - ZangoDB /1kStar/MIT/201710/js
   - https://github.com/erikolson186/zangodb
   - ZangoDB is a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
+  - an implementation of IndexedDB is required. 
+    - For environments without a native implementation of IndexedDB, Fake IndexedDB can be used
 # encryption-security
 - https://github.com/willgm/web-crypto-storage
   - tiny promise-based crypto keyval storage using IndexedDB and the native Web Crypto API

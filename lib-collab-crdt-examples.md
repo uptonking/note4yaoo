@@ -26,7 +26,8 @@ modified: 2022-04-05T10:08:25.947Z
   - Evolu is not pure P2P software. For syncing and backup, there needs to be a server. 
   - Evolu CRDT has no support for transactions because CRDT transactions are still an unsolved issue. 
 
-- https://github.com/quolpr/harika
+- harika-note /111Star/AGPLv3/202208/ts
+  - https://github.com/quolpr/harika
   - Harika is an offline-first, performance-focused note taking app for organizing your knowledge database.
   - Synchronization with server. It's done with LWW CRDT per field on top of SQLite. 
     - It also stores all changes locally and sends them to server. 

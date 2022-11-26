@@ -17,15 +17,14 @@ modified: 2022-06-03T22:06:16.249Z
 - 用indexeddb如何保存和更新层数很深的树型数据？
   - 可以将tree打平为索引号 1.1, 1.2.1
 # popular
-- minimongo /1kStar/LGPLv3/202207/ts
+- minimongo /1kStar/LGPLv3/202207/ts/多种web存储
   - https://github.com/mWater/minimongo
-  - Client-side in-memory mongodb backed by localstorage with server sync over http
   - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
   - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
   - sqlite plugin is also supported when available
   - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries. It was forked in January 2014.
 
-- nedb /13.1kStar/MIT/201602/js
+- nedb /13.1kStar/MIT/201602/js/多种web存储
   - https://github.com/louischatriot/nedb
   - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency.
   - API is a subset of MongoDB's and it's plenty fast.
@@ -69,20 +68,14 @@ modified: 2022-06-03T22:06:16.249Z
   - a fully functioning operating system built in pure Javascript, HTML and CSS.
   - Files are Saved Locally Through IndexedDB/WebSQL (localForage)
 
-- ZangoDB /1kStar/MIT/201710/js
+- ZangoDB /1kStar/MIT/201710/js/inactive
   - https://github.com/erikolson186/zangodb
   - https://erikolson186.github.io/zangodb/
   - a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
+  - The following aggregation pipeline stages are supported: $match, $project, $group, $unwind, $sort, $skip, and $limit.
+  - an implementation of IndexedDB is required. 
+    - For environments without a native implementation of IndexedDB, Fake IndexedDB can be used
 
-- acebase /158Star/MIT/202206/js
-  - https://github.com/appy-one/acebase
-  - A fast, low memory, transactional, index & query enabled NoSQL database engine and server for node.js and browser with realtime data change notifications
-  - AceBase is designed to run in a Node.js environment, as it (by default) requires the 'fs' filesystem to store its data and indexes. 
-    - However, since v0.9.0 it is now also possible to use AceBase databases in the browser! 
-  - By default, AceBase uses its own binary database format in Node.js environments, and IndexedDB (or LocalStorage) in the browser to store its data. 
-    - However, it is also possible to use AceBase's realtime capabilities, and have the actual data stored in other databases. 
-    - Currently, AceBase has built-in adapters for MSSQL, SQLite in Node.js environments; and IndexedDB, LocalStorage, SessionStorage for the browser. 
-  - When you're using AceBase with an IndexedDB or LocalStorage backend, you might notice that if you change data in one open tab, those changes do not raise change events in other open tabs monitoring that same data.
 # db-powered-by-indexeddb
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb
@@ -122,7 +115,7 @@ modified: 2022-06-03T22:06:16.249Z
   - It provides SQL-like syntax and works cross-browser
   - [Lovefield wraps IndexedDB objects in different classes](https://github.com/google/lovefield/blob/master/docs/dd/02_data_store.md)
 
-- https://github.com/SourceCodeBot/crudodb /202112/archived
+- https://github.com/SourceCodeBot/crudodb /202112/ts/archived
   - CrudoDb allows you to write offline-first webapps without any backend implementation.
   - Offline-first IndexedDb wrapper written in TypeScript, which is able to sync with backend services by passing optional service implementation.
 
