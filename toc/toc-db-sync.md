@@ -10,6 +10,11 @@ modified: 2022-11-25T15:41:47.534Z
 # guide
 
 # db-sync
+- clientdb /506Star/apache2/202207/ts
+  - https://github.com/clientdb/clientdb
+  - ClientDB is an in-memory database for enabling real-time web apps.
+  - The architecture of clientdb is inspired by the Linear app
+
 - pouchdb /15.4kStar/apache2/202211/js
   - https://github.com/pouchdb/pouchdb
   - https://pouchdb.com/

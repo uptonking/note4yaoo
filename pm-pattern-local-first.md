@@ -9,6 +9,10 @@ modified: 2021-08-22T08:05:39.413Z
 
 # guide
 
+- 存储层逻辑
+  - 业务代码appCode > sqlite-opfs > os-fs
+  - 业务代码appCode > indexeddb > leveldb/sqlite > os-fs
+
 - 对indexeddb/外部存储的取舍
   - 对于基础库，应该以内存数据模型为主，因为idb读写要慢得多
   - 对于应用层，可对indexeddb的数据模型进行可扩展的设计，方便迁移到其他数据库如sqlite

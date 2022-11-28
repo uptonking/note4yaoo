@@ -126,7 +126,18 @@ modified: 2020-10-22T06:50:36.740Z
 
 - https://github.com/codenautas/sql-tools /js
   - Transfor a SQL sentence in a SQL with totals.
+
+
 # more-olap
+
+- https://github.com/rilldata/rill-developer
+  - https://docs.rilldata.com/
+  - transform your datasets with SQL and create powerful, opinionated dashboards.
+  - powered by Sveltekit & DuckDB
+  - works with your local and remote datasets – imports and exports Parquet and CSV
+
+
+
 - https://github.com/altair-viz/altair
   - Declarative statistical visualization library for Python
   - built on top of the powerful Vega-Lite JSON specification.
@@ -137,7 +148,7 @@ modified: 2020-10-22T06:50:36.740Z
   - /48Star/MIT/201903
   - Quickly format data to create a pivot table
 
-- https://github.com/antonycourtney/tad
+- https://github.com/antonycourtney/tad /202211/ts
   - Tad desktop application enables you to quickly view and explore tabular data in several of the most popular tabular data file formats: CSV, Parquet, and SQLite and DuckDb database files. 
   - Internally, the application is powered by an in-memory instance of DuckDb, a fast, embeddable database engine optimized for analytic queries.
   - The core of Tad is a React UI component that implements a hierarchical pivot table that allows you to specify a combination of pivot, filter, aggregate, sort, column selection

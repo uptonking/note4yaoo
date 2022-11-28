@@ -18,21 +18,13 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## Here are 8 ways to simplify a fetch function.
+- https://twitter.com/housecor/status/1596944108794548224
+- Why I prefer function declarations for top-level functions
+  1. They're more scannable - It's easier to see at a glance that they're functions, not mere variables.
+  2. Order doesn't matter. Function declarations are hoisted.
+  3. Can export default on the same line if desired.
 
-- ## Is there a tool for #TypeScript that checks static type assertions similar to the following one?
-- https://fosstodon.org/@rauschma/109400498171074927
-
-```JS
-// %inferred-type: (string | number | boolean)[]
-const arr = [1, 'a', true];
-```
-
-- https://github.com/JoshuaKGoldberg/eslint-plugin-expect-type
-  - ESLint plugin with $ExpectType and $ExpectError type assertions
-  - This plugin also supports twoslash annotations, which is a comment line that starts with two slashes (`//`) and the `^?` identifier to annotate the symbol 
-
-- [typescript - How to test if two types are exactly the same - Stack Overflow](https://stackoverflow.com/questions/53807517/how-to-test-if-two-types-are-exactly-the-same)
 
 - ## JavaScript Map usually performs better than plain objects when you have a large dataset and/or often set new key/value pairs.
 - https://twitter.com/diegohaz/status/1534888291732013058

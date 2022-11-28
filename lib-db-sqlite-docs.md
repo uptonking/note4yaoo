@@ -9,6 +9,8 @@ modified: 2021-08-30T17:33:20.586Z
 
 # guide
 
+# sqlite3_vfs
+
 # [CREATE TABLE](https://www.sqlite.org/lang_createtable.html)
 - Each table in SQLite may have at most one PRIMARY KEY. 
   - If the keywords PRIMARY KEY are added to a column definition, then the primary key for the table consists of that single column. 

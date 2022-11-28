@@ -18,6 +18,24 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Is there a tool for #TypeScript that checks static type assertions similar to the following one?
+- https://fosstodon.org/@rauschma/109400498171074927
+
+```JS
+// %inferred-type: (string | number | boolean)[]
+const arr = [1, 'a', true];
+```
+
+- https://github.com/JoshuaKGoldberg/eslint-plugin-expect-type
+  - ESLint plugin with $ExpectType and $ExpectError type assertions
+  - This plugin also supports twoslash annotations, which is a comment line that starts with two slashes (`//`) and the `^?` identifier to annotate the symbol 
+
+- [typescript - How to test if two types are exactly the same - Stack Overflow](https://stackoverflow.com/questions/53807517/how-to-test-if-two-types-are-exactly-the-same)
+
 - ## I'm still horrified that a certain subset of TypeScript developers think coercing(强制、强迫) types unsafely during decoding (JSON to structured data types) without checking the JSON is in the least bit reasonable. We have io-ts and many more libs that do the right things.
 - https://twitter.com/SusanPotter/status/1531309620857294851
 - There may also be a literacy problem here... people just don't understand why `unknown` is so much better than `any` or why type coercion ( `as` ) is bad, but type assertion ( `is` ) can be a great tool when used right.

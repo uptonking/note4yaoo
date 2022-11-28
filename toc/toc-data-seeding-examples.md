@@ -20,6 +20,12 @@ modified: 2021-08-30T19:30:56.453Z
 - https://github.com/railmapgen/rmg-palette
   - Line colour resources of multiple railway systems
 # data application
+
+- https://github.com/pkosiec/mongo-seeding
+  - Mongo Seeding is a flexible set of tools for importing data into MongoDB database.
+  - Define MongoDB documents in JSON, JavaScript or even TypeScript files.
+  - Use JS library, install CLI or run Docker image to import them!
+
 - Very excited to publish our new project, http://realtimeinequality.org 
   - https://twitter.com/gabriel_zucman/status/1488151132161523714
   - Fulfilling an old dream: being able to know in real time who benefits from economic growth

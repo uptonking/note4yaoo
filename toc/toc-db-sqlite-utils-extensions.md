@@ -19,6 +19,10 @@ modified: 2022-11-04T14:20:37.172Z
   - A SQLite3 fts5 tokenizer which supports Chinese and PinYin
   - https://www.sqlite.org/fts5.html
 
+- https://github.com/cldellow/sqlite-parquet-vtable
+  - A SQLite virtual table extension to expose Parquet files as SQL tables. 
+  - You may also find csv2parquet useful.
+
 - https://github.com/dumblob/mysql2sqlite
   - Converts MySQL dump to SQLite3 compatible dump (including MySQL KEY xxxxx statements from the CREATE block).
   - The script is written in awk (tested with gawk, but should work with original awk, and the lightning fast mawk) and shall be fully POSIX compliant.

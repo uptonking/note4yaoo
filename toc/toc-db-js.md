@@ -33,7 +33,7 @@ modified: 2022-11-25T15:50:48.226Z
 - acebase /158Star/MIT/202206/js
   - https://github.com/appy-one/acebase
   - A fast, low memory, transactional, index & query enabled NoSQL database engine and server for node.js and browser with realtime data change notifications.
-  - Inspired by (and largely compatible with) the Firebase realtime database, with additional functionality and less data sharding/duplication.
+  - 👉🏻 Inspired by (and largely compatible with) the Firebase realtime database, with additional functionality and less data sharding/duplication.
   - By default, AceBase uses its own binary database format in Node.js environments, and IndexedDB (or LocalStorage) in the browser to store its data. 
     - However, it is also possible to use AceBase's realtime capabilities, and have the actual data stored in other databases. 
     - Currently, AceBase has built-in adapters for MSSQL, SQLite in Node.js environments; and IndexedDB, LocalStorage, SessionStorage for the browser. 
@@ -75,7 +75,7 @@ modified: 2022-11-25T15:50:48.226Z
   - https://github.com/google/lovefield
   - Lovefield is a relational database for web apps. 
   - Written in JavaScript, works cross-browser. 
-  - Provides SQL-like APIs that are fast, safe, and easy to use.
+  - 👉🏻 Provides SQL-like APIs that are fast, safe, and easy to use.
   - https://github.com/teambition/ReactiveDB
     - Reactive ORM for Lovefield
     - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS
@@ -101,9 +101,12 @@ modified: 2022-11-25T15:50:48.226Z
 # db-json
 - lowdb /18.7Star/MIT/202211/ts
   - https://github.com/typicode/lowdb
-  - a small local JSON database powered by Lodash 
+  - Simple to use local JSON database.
   - supports Node, Electron and the browser
   - adapters: JSONFile/Memory/LocalStorage/TextFile
+    - Change storage, file format (JSON, YAML,XML,remote-storage ...) or add encryption via adapters
+    - An adapter is a simple class that just needs to expose two methods: read/write
+  - Lowdb doesn't support Node's cluster module.
   - If you have large JavaScript objects (~10-100MB) you may hit some performance issues. 
     - This is because whenever you call `db.write`, the whole `db.data` is serialized using `JSON.stringify` and written to storage.
     - If you plan to scale, it's highly recommended to use databases like PostgreSQL or MongoDB instead.
@@ -140,6 +143,14 @@ modified: 2022-11-25T15:50:48.226Z
   - localForage is a fast and simple storage library for JavaScript. 
   - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple, localStorage-like API.
   - localForage uses localStorage in browsers with no IndexedDB or WebSQL support.
+# db-collab
+- https://github.com/orbitdb/orbit-db
+  - OrbitDB is a serverless, distributed, peer-to-peer database. 
+  - OrbitDB uses IPFS as its data storage and IPFS Pubsub to automatically sync databases with peers. 
+  - It's an eventually consistent database that uses CRDTs for conflict-free database merges making OrbitDB an excellent choice for decentralized apps (dApps), blockchain applications and local-first web applications.
+- https://github.com/dappkit/aviondb
+  - A Distributed, MongoDB-like Database
+  - AvionDB uses OrbitDB stores to model MongoDB-like Databases.
 # more-db-js
 - https://github.com/typicaljoe/taffydb /201509/js/单文件
   - TaffyDB is an open source JavaScript library that provides powerful in-memory database capabilities to both browser and server applications.

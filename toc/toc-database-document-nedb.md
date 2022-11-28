@@ -60,10 +60,20 @@ modified: 2022-11-26T17:35:24.870Z
   - A class-based ES6 ODM for Mongo-like databases.
   - Camo was created for two reasons: to bring traditional-style classes to MongoDB JavaScript, and to support NeDB as a backend
   - Camo was designed and built with multiple Mongo-like backends in mind, like NeDB, LokiJS*, and TaffyDB*.
-- https://github.com/typicode/lowdb /active/ts
-  - a small local JSON database powered by Lodash 
+
+- lowdb /18.7Star/MIT/202211/ts
+  - https://github.com/typicode/lowdb
+  - Simple to use local JSON database.
   - supports Node, Electron and the browser
-  - Change storage, file format (JSON, YAML, ...) or add encryption via adapters
+  - adapters: JSONFile/Memory/LocalStorage/TextFile
+    - Change storage, file format (JSON, YAML,XML,remote-storage ...) or add encryption via adapters
+    - An adapter is a simple class that just needs to expose two methods: read/write
+  - Lowdb doesn't support Node's cluster module.
+  - If you have large JavaScript objects (~10-100MB) you may hit some performance issues. 
+    - This is because whenever you call `db.write`, the whole `db.data` is serialized using `JSON.stringify` and written to storage.
+    - If you plan to scale, it's highly recommended to use databases like PostgreSQL or MongoDB instead.
+  - who is using
+    - json-server
 
 - https://github.com/ivrusson/mockon
   - Mock Server with data persistency based on MockJS and NeDB

@@ -60,18 +60,22 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - pivot-table
   - collaboration
   - local-database
-  - annotation/comment/whiteboard
-- dev-to/log/xp
-  - 事项--截止日期(0730+休整)--重要性(ll/ml/hl)
+  - annotation/comment/whiteboard/pdf
+  - 事项--截止日期(0730+休整)--重要性(p1-p3/s1-s3)
   - *mirror-based-editor-vanillajs--0825--hl
   - pivot-table/grid--0828--hl
     - dropdown-menu vs tabs
   - app-wiki-knowledge-base--0904
   - dashboard/webapp-template--0901
 
-- not-yet
-  - crdt-hlc merkle 如何在op-log中找到上次相等的timestamp
-    - make indexeddb optional
+- dev-to/log/xp
+
+- later
+  - crdt-hlc 
+    - merkle 如何在op-log中找到上次相等的timestamp
+  - idb-side-sync
+    - storage adapter: indexeddb/memory/sqlite-opfs
+    - 系统预置数据如待办类型合并时可能出现名称相同的情况，用户添加数据时也可能出现
   - url-as-state-management
   - 灵活的tag/bookmark系统
   - docker打包前端
@@ -88,10 +92,13 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-focalboard
   - olap-cube-js
 - eg-tanstack-table-v8
-- sync-service: google-drive、网盘、七牛
-  - collab-data-structure
+- sync-service
+  - collab-data-structure: hlc/lww
   - undo/redo
-  - 系统预置数据如待办类型合并时可能出现名称相同的情况，用户添加数据时也可能出现
+  - remoteStorage: google-drive、网盘、七牛
+- sqlite-web
+  - evolu
+  - kikko
 
 - log2022
   - 08-block-editor-tiny-write
@@ -99,10 +106,21 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 10-prosemirror-collab - ot - crdt
   - 11-idb-sync
 
-## 1126
+## 1128
 
 - dev-to
   - crdt tutorials
+  - nedb
+
+## 1126
+
+- ReferenceError: exports is not defined in ES module scope
+  - 忘记创建 tsconfig.json 文件
+
+- [node.js - Why does node prefer error-first callback? - Stack Overflow](https://stackoverflow.com/questions/40511513/why-does-node-prefer-error-first-callback)
+  - This is just a convention.
+  - Because without this convention, developers would have to maintain different signatures and APIs, without knowing where to place the error in the arguments array.
+  - [The Node.js Way - Understanding Error-First Callbacks](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/)
 
 - vscode断点调试配置
   - 参考npm scripts的可运行命令，将参数复制到launch.json的`runtimeArgs`.
@@ -125,14 +143,6 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 }
 
 ```
-
-- ReferenceError: exports is not defined in ES module scope
-  - 忘记创建 tsconfig.json 文件
-
-- [node.js - Why does node prefer error-first callback? - Stack Overflow](https://stackoverflow.com/questions/40511513/why-does-node-prefer-error-first-callback)
-  - This is just a convention.
-  - Because without this convention, developers would have to maintain different signatures and APIs, without knowing where to place the error in the arguments array.
-  - [The Node.js Way - Understanding Error-First Callbacks](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/)
 
 ## 1125
 

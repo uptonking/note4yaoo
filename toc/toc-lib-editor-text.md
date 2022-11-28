@@ -61,7 +61,7 @@ modified: 2021-07-27T15:12:39.959Z
 - text-editor /394Star/apache2/202011/js/NoDeps
   - https://github.com/GoogleChromeLabs/text-editor
   - https://googlechromelabs.github.io/text-editor/
-  - simple text editor designed to experiment with and demonstrate the new File System Access APIs.
+  - simple text editor designed to experiment with and demonstrate the new `File System Access API`s.
   - 编辑器基于textarea，撤销重做基于浏览器而不是自己实现
 
 - https://github.com/TheNocoder/ncSimpleHtmlEditor  /js

@@ -20,7 +20,30 @@ modified: 2022-11-11T10:46:29.097Z
 - https://github.com/harunou/SheetsDB
   - SheetsDB is a simple tool to read and write data from/to Google spreadsheet as JavaScript objects
 # utils
+- https://github.com/joway/sheetsql
+  - Google Spreadsheet as a Database.
 
+- https://github.com/hyperjumptech/xcs-translator
+  - a web app to convert EXCEL file to JSON and SQL so that you can quickly and easily import data from your sheets to your database.
+# excel-db
+- https://github.com/vkareh/spreaddb /201406/js
+  - SpreadDB is a spreadsheet-oriented database server. 
+  - It currently exposes csv, xls, and xlsx files as JSON data through a REST API. 
+  - This is work in progress and currently only exposes non-indexed read-only data.
+
+- https://github.com/ngudbhav/excel-to-mongoDB
+  - This module converts your correctly formatted Excel spreadsheet to a collection in specified database in MongoDB.
+  - Supported Excel formats are XLS/XLSX/CSV
+
+- https://github.com/CotalkerPartners/mongo-xlsx
+  - convert excel spreadsheets into/from MongoDB data. (MongoDB data -> Array of JSONs)
+
+- https://github.com/ngudbhav/TriCo-electron-app
+  - This App Converts your correctly formatted Excel Spreadsheet to a specified table/collection in specified Database in MYSQL/MongoDB.
+  - Dump your excel/csv sheet into your preferred your DB.
+
+- https://github.com/RyanXu-jn/excel2db /java/js
+  - 实现excel导入数据库的一个web项目
 # export/import
 - https://github.com/huanz/tableExport
   - table导出文件，支持导出json、txt、csv、xml、doc、xls、image、 pdf
@@ -38,10 +61,12 @@ modified: 2022-11-11T10:46:29.097Z
 - https://github.com/kinddde/js-export-excel
   - json导出excel（纯js 支持中文）
 # csv
-
 - https://github.com/washingtonpost/crosswalker
   - https://crosswalker.washingtonpost.com/
   - Crosswalker is a general purpose tool for joining columns of text data(csv/json) that don't perfectly match
 # xls
 
 # more
+
+- https://github.com/rohanhrk/Excel-clone
+  - I've made a google sheet clone using HTML, CSS, Javascript

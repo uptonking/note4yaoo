@@ -80,6 +80,11 @@ modified: 2022-11-07T17:37:27.579Z
 - https://github.com/elicesw2-project2/synergy
   - All-in-one Workspace Collaboration Tools
 # sync
+- clientdb /506Star/apache2/202207/ts
+  - https://github.com/clientdb/clientdb
+  - ClientDB is an in-memory database for enabling real-time web apps.
+  - The architecture of clientdb is inspired by the Linear app
+
 - https://github.com/Bhavik-ag/B-Docs
   - an online document editor to create, edit and collaborate on online documents.
   - Version Control and Hosting : Git for Source Code Management and Github for Hosting

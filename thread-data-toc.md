@@ -14,7 +14,9 @@ modified: 2021-01-31T08:40:11.675Z
 # pieces
 - ## 
 
-- ## 
+- ## data of key catalogs and collections of mythology(神话) and folklore
+- https://github.com/j-hagedorn/trilogy
+- This repository houses tidy data of key catalogs and collections of mythology(神话) and folklore, for use in discovery of patterns using natural language processing and others statistical methods.
 
 - ## Programming Languages and their File Extensions
 - https://gist.github.com/ppisarczyk/43962d06686722d26d176fad46879d41

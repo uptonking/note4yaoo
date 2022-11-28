@@ -29,6 +29,7 @@ modified: 2021-08-30T18:56:18.632Z
     - It also stores all changes locally and sends them to server. 
     - Server also store all the changes and recalculate snapshots on new received changes and send those snapshots back to the client. 
     - Due to we store all the changes at server, it is also planned to add time travel, when CRDT is not what user expect at some cases.
+  - [I managed to pause work on it because I don't have enough resources (money/time) to keep working on it_202208](https://twitter.com/quolpr/status/1558852687956951044)
 
 - sqlime /338Star/MIT/202204/js
   - https://github.com/nalgeon/sqlime

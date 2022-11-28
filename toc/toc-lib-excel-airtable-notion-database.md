@@ -63,7 +63,8 @@ modified: 2022-08-21T10:02:05.129Z
   - Database: Any SQL (postgres, mysql, sqlite, maria DB, SQL server)
   - API: REST and graphql
 
-- https://github.com/gristlabs/grist-core
+- grist-core /3.4kStar/apache2/202211/ts/python
+  - https://github.com/gristlabs/grist-core
   - https://support.getgrist.com/
   - 不直接支持视图切换，但支持各种widgets
   - 前端基于backbone、jquery

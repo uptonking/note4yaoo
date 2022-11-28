@@ -41,9 +41,6 @@ modified: 2022-06-03T22:06:16.249Z
   - A structure sane embedded database with pluggable storage and clean concise documentation.
   - TeDB uses an AVL balanced binary tree binary-type-tree to save indexed fields of documents.
   - a storage driver that can either work to persists data to disk or save data to memory. 
-- https://github.com/typicode/lowdb /ts
-  - a small local JSON database powered by Lodash 
-  - supports Node, Electron and the browser
 
 - localForage /20.5kStar/Apache2/202110/js/inactive
   - https://github.com/localForage/localForage
