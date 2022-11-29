@@ -16,7 +16,14 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
-- ## 
+- ## TIL be careful with `Array.every` and empty arrays.
+- https://twitter.com/steveruizok/status/1597207156436393984
+  - if you dig into the chromium source, this is exactly how it's implemented
+
+```JS
+[].every(item => false) //true
+[].some(item => false) //false
+```
 
 - ## Here are 8 ways to simplify a fetch function.
 - https://twitter.com/housecor/status/1596944108794548224
@@ -24,7 +31,6 @@ Symbol('a') === Symbol('a') //false
   1. They're more scannable - It's easier to see at a glance that they're functions, not mere variables.
   2. Order doesn't matter. Function declarations are hoisted.
   3. Can export default on the same line if desired.
-
 
 - ## JavaScript Map usually performs better than plain objects when you have a large dataset and/or often set new key/value pairs.
 - https://twitter.com/diegohaz/status/1534888291732013058

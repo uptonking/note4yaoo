@@ -20,7 +20,9 @@ modified: 2021-08-05T04:31:02.298Z
 
 - ## 
 
-- ## 
+- ## ts-unused-exports deserves a TypeScript tip.
+- https://twitter.com/JNYBGR/status/1597178235804012544
+  - It is a underrated but invaluable tool for finding code you can safely delete!
 
 - ## Is there a tool for #TypeScript that checks static type assertions similar to the following one?
 - https://fosstodon.org/@rauschma/109400498171074927

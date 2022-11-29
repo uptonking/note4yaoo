@@ -15,6 +15,32 @@ modified: 2021-08-12T20:21:51.264Z
 - mock
   - mock的主要使用场景是测试，而不是切换app的测试环境
   - 应用自身常常存在很多请求处理的其他逻辑和中间件，所以不一定要在全局实现mock和test，将更多的精力放在测试重要的场景
+# blogs
+
+## [Choosing a JavaScript testing framework: Jest vs. Jasmine vs. Mocha_202205](https://mattermost.com/blog/comparing-javascript-testing-frameworks/)
+
+- Jest’s primary use is strong front-end testing. 
+  - Its main goal is to be a zero-config framework, which it achieves by being built on top of one of the other frameworks we’re looking at today: Jasmine.
+  - Jest also pairs well with React apps. It’s the main in-house framework for JS testing with React at Facebook. 
+- Jasmine, is great for both front-end and back-end testing. 
+  - Jasmine’s front-end suite works better with Angular than it does with React. 
+  - Jasmine is one of the oldest frameworks in the JavaScript community and has been a stable anchor for JS testing.
+- Mocha is probably the most flexible of the three. 
+  - The main problem with Mocha is that it has more dependencies than the other two frameworks. 
+
+- Final Thoughts: Selecting Your Javascript Testing Framework
+
+- Jest, optimally paired with React, is best for front-end development, 
+  - but it isn’t ideal when paired with convoluted backend systems that require lots of dependencies.
+- Jasmine is optimally paired with Angular. 
+  - It’s best used on complex backend systems that require a stable testing suite but might not be suitable for tough front-end frameworks that require lots of UI testing. 
+- Mocha, the most flexible of the three, is best when paired with simple projects and simple tests, 
+  - but isn’t as strong in more technically complex projects where Jest or Jasmine would be a better fit. 
+
+- [Mocha vs Jest Comparison of Testing Tools in 2022](https://www.blog.duomly.com/mocha-vs-jest/)
+
+- Jest is designed to be simple and straightforward, while Mocha has more options and can be more difficult to learn.
+- Jest is also faster than Mocha. It has built-in support for snapshot testing, which means tests are run automatically on each change to the code. This makes it easy to keep your tests up to date as you work.
 # discuss
 - ## fetch-mock mocking all requests
 - https://stackoverflow.com/questions/41868698

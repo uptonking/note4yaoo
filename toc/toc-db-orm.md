@@ -125,3 +125,6 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/lealone/Lealone
   - /1.6kStar/Apache2+H2MPL2/202012/java
   - 兼具RDBMS、NoSQL优点的面向OLTP场景的异步化NewSQL单机与分布式关系数据库
+
+- https://github.com/Jianxff/NEDB /cpp/B+Tree
+  - NEDB 是基于 C++ 的简单数据库. 项目参考 SQLite 底层原理与 InnoDB 引擎, 实现数据库[增-删-查-改]的基本操作, 并提供控制台界面与外部接口.

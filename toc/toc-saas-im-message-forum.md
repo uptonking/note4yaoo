@@ -80,6 +80,7 @@ modified: 2021-05-14T15:04:15.333Z
   - 基于react&react-router-dom，利用CNode API重写CNode社区。
   - 依赖只有react-router.v5, react, axios
 
+
 - https://github.com/matevsh/web-forum /ts/代码少
   - SPA full-stack app mainly focused on forum functionality
   - 后端依赖express、prisma
@@ -88,6 +89,11 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/mightofcode/v3ex-react
   - https://v3ex.mocyx.com/
   - 技术栈： Koa、React、Nextjs、Mongodb、mongoose
+
+- - https://github.com/youknowznm/rhaego /202204/js
+  - 基于 react + koa, 开箱即用的 Material Design 风格博客系统
+  - 基于嵌入式数据库 NeDB, 即插即用
+  - 未使用任何组件库 / 样式库 / 动画库
 
 - https://github.com/amirfakhrullah/bloqdown
   - Simple Markdown Forum/Blog site using Next.js, NextAuth, TypeScript, tRPC, Prisma and PlanetScale

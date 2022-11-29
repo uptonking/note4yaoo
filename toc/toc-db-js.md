@@ -57,12 +57,9 @@ modified: 2022-11-25T15:50:48.226Z
   - https://github.com/louischatriot/nedb
   - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency. 
   - API is a subset of MongoDB's and it's plenty fast.
+    - One datastore is the equivalent of a MongoDB collection
+  - A copy of the whole database is kept in memory. This is not much on the expected kind of datasets (20MB for 10, 000 2KB documents).
   - You can use NeDB as an in-memory only datastore or as a persistent datastore. 
-  - One datastore is the equivalent of a MongoDB collection
-  - Under the hood, NeDB's persistence uses an append-only format, meaning that all updates and deletes actually result in lines added at the end of the datafile, for performance reasons.
-  - If you specify a filename, the database will be persistent, and automatically select the best storage method available (IndexedDB, WebSQL or localStorage) depending on the browser.
-  - I consider NeDB to be feature-complete, i.e. it does everything I think it should and nothing more. As a general rule I will not accept pull requests anymore
-  - [Is this still maintained?](https://github.com/louischatriot/nedb/issues/492)
 
 - WatermelonDB /8.7kStar/MIT/202211/js
   - https://github.com/Nozbe/WatermelonDB

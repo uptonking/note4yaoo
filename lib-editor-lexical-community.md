@@ -35,6 +35,17 @@ modified: 2022-05-15T18:35:39.272Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Out of curiosity why’d you choose lexical?
+- https://twitter.com/trueadm/status/1596600189913296898
+- We looked at using Slate before even starting on Lexical. 
+  - It has far too many issues around IME/Android and with browser extension and text autocomplete replacement. Hold down e so it becomes è at the start of an empty editor to see what I mean. This was also a common Draft bug
+
 - ## React Native Support
 - https://github.com/facebook/lexical/discussions/2410
 - 20220417

@@ -68,6 +68,10 @@ modified: 2022-11-11T11:04:29.007Z
   - Install the floccus Android app to access your bookmarks on your phone
   - (eventual) consistency is more important than intention preservation
 
+- https://github.com/bdTechies/book-manager /201901/js
+  - https://book-manager.bdtechies.com/
+  - cross-platform desktop app to manage personal library.
+
 - https://github.com/Daniel31x13/link-warden
   - a self-hosted, open-source bookmark + archive manager to collect, and save websites for offline use.
   - LinkWarden also saves a copy of the link as screenshot and PDF

@@ -22,3 +22,11 @@ modified: 2022-11-24T11:36:36.445Z
   - https://replit.com/@AbhijeetNandvik/frontend-file-encryption-demo
 
 ## [End-to-End Encrypted Chat with JS & Web Crypto API](https://getstream.io/blog/web-crypto-api-chat/)
+
+# encryption-examples
+
+# encryption-utils
+- https://github.com/seald/sscrypto
+  - a wrapper around other cryptography libraries, intended to be simple to use, provide a consistent interface for multiple encryption backends (for now, forge, nodeJS crypto, and WebCrypto.subtle), and well-chosen parameters.
+  - https://github.com/digitalbazaar/forge
+    - A native implementation of TLS in Javascript and tools to write crypto-based and network-heavy webapps

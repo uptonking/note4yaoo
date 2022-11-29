@@ -7,8 +7,11 @@ modified: 2021-03-29T19:29:15.528Z
 
 # dev-ing-error-not-yet
 
-# pieces
+# not-yet
 
+- vscode 的 quick fix 偶尔会缺少
+  - Add all missing members
+# done
 - ## event argument has no target.result property on IDBRequest: success event_201903
 - https://github.com/microsoft/TypeScript/issues/30669
   - 没人修

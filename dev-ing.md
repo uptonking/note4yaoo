@@ -106,11 +106,30 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 10-prosemirror-collab - ot - crdt
   - 11-idb-sync
 
-## 1128
+## 1129
 
 - dev-to
   - crdt tutorials
   - nedb
+
+## 1128
+
+
+- [mocha: typescript with ts-node and ESM support · Issue #47 · mochajs/mocha-examples](https://github.com/mochajs/mocha-examples/issues/47)
+  - npx mocha --loader=ts-node/esm/transpile-only --experimental-specifier-resolution=node --extensions ts,tsx 'tests/**/*.test.ts' --reporter spec --timeout 10000
+
+- [database - What is the difference between an ORM and an ODM? - Stack Overflow](https://stackoverflow.com/questions/12261866/what-is-the-difference-between-an-orm-and-an-odm)
+  - MySQL is an example of a relational database - you would use an ORM to translate between your objects in code and the relational representation of the data.
+  - MongoDB is an example of a document database - you would use an ODM to translate between your objects in code and the document representation of the data (if needed).
+  - an ORM use a SQL database Driver like ODBC, JDBC or OLEDB to translate the object notation to relational notation 
+  - an ODM use a JSON or JSONB api to translate the Object notation to Document notation.
+  - an ODM use a JSON or JSONB api to translate the Object notation to Document notation.
+
+- [法语字母表&音符 - 知乎](https://zhuanlan.zhihu.com/p/45223570)
+  - 闭音符（l'accent aigu）
+    - 闭音符只出现在字母e上 => é。它的作用是改变e原先的发音。
+  - 重音符（l'accent grave）
+    - 这个音符可以在字母a，e或者u上找到（à/è/ù）。
 
 ## 1126
 

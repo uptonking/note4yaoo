@@ -19,6 +19,10 @@ modified: 2020-12-12T19:32:36.255Z
   - a plugin based, nodejs web scraper(刮刀). 
   - It scrapes, stores and exports data.
   - At its core, an ordered list of plugins is executed against each to be scraped URL.
+
+- https://github.com/xiyuan-fengyu/ppspider
+  - 基于puppeteer的web爬虫框架，提供灵活的任务队列管理调度方案，提供便捷的数据保存方案（nedb/mongodb），提供数据可视化和用户交互的实现方案
+
 # gis
 - https://github.com/lionsoul2014/ip2region
   - 准确率99.9%的离线IP地址定位库，0.0x毫秒级查询

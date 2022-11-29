@@ -60,12 +60,7 @@ modified: 2021-01-12T18:49:13.490Z
   - /538Star/Apache2/202009
   - open source platform for sharing, finding, citing, and preserving research data 
   - 依赖glassfish、postgresql、smtp、solr、DOI/Handle.net
-
 # collection
-
-- https://github.com/xiyuan-fengyu/ppspider
-  - 基于puppeteer的web爬虫框架，提供灵活的任务队列管理调度方案，提供便捷的数据保存方案（nedb/mongodb），提供数据可视化和用户交互的实现方案
-
 - https://github.com/microsoft/vscode-webview-ui-toolkit
   - A component library for building webview-based extensions in Visual Studio Code.
   - 基于微软自研的fast-element和react-wrapper实现

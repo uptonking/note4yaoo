@@ -24,19 +24,13 @@ modified: 2022-06-03T22:06:16.249Z
   - sqlite plugin is also supported when available
   - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries. It was forked in January 2014.
 
-- nedb /13.1kStar/MIT/201602/js/多种web存储
+- nedb /13.1kStar/MIT/201602/js
   - https://github.com/louischatriot/nedb
-  - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency.
+  - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency. 
   - API is a subset of MongoDB's and it's plenty fast.
+    - One datastore is the equivalent of a MongoDB collection
+  - A copy of the whole database is kept in memory. This is not much on the expected kind of datasets (20MB for 10, 000 2KB documents).
   - You can use NeDB as an in-memory only datastore or as a persistent datastore. 
-  - One datastore is the equivalent of a MongoDB collection
-  - Under the hood, NeDB's persistence uses an append-only format, meaning that all updates and deletes actually result in lines added at the end of the datafile, for performance reasons.
-  - If you specify a filename, the database will be persistent, and automatically select the best storage method available (IndexedDB, WebSQL or localStorage) depending on the browser.
-  - [Is this still maintained?](https://github.com/louischatriot/nedb/issues/492)
-  - forks
-    - https://github.com/seald/nedb
-    - https://github.com/HalleyAssist/nedb
-    - https://github.com/bajankristof/nedb-promises
 - https://github.com/tedb-org/teDB /ts
   - A structure sane embedded database with pluggable storage and clean concise documentation.
   - TeDB uses an AVL balanced binary tree binary-type-tree to save indexed fields of documents.

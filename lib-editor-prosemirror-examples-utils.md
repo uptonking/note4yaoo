@@ -128,6 +128,14 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/ShreyRavi/prosemirror-toc
   - An implementation of a table of contents using prosemirror within React.
 
+- https://github.com/ocavue/prosemirror-virtual-cursor
+  - https://prosemirror-virtual-cursor.vercel.app/
+  - a plugin that adds a virtual cursor (or caret) to your editor. 
+  - It implements the bike-style cursor, which shows a tail under the cursor between mark boundary.
+  - 在光标竖线的底部显示向左或向右的短横，来表名行内marker的边界
+  - Under the hood, I hide the native cursor and use `Decoration.widget` to insert a `<span>` element to the cursor position
+    - 👉🏻 I refactored prosemirror-virtual-cursor and overlay the cursor over the editor.
+
 - https://github.com/joelewis/prosemirror-mentions
   - https://star-drug.glitch.me/
   - A ProseMirror plugin that enables @mentions and #hashtags in a prosemirror view.
