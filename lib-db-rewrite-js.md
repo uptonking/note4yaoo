@@ -12,7 +12,7 @@ modified: 2022-11-27T19:20:02.987Z
 
 # [Creating a database from scratch with Node.js](https://dev.to/ciochetta/creating-a-database-from-scratch-with-node-js-4dmk)
 
-- https://github.com/ciochetta/learndb
+- https://github.com/ciochetta/learndb /202101/js/mongodb
   - my first attempt at creating my own database from scratch.
   - I will not be doing a SQL database, instead, I will follow his steps but try to create a document database, like MongoDB
 

@@ -36,8 +36,6 @@ modified: 2022-11-04T14:22:17.373Z
 
 - https://github.com/jakearchibald/idb
   - IndexedDB, but with promises
-- https://github.com/darrachequesne/synceddb
-  - a fork of the awesome idb library, which adds the ability to sync an IndexedDB database with a remote REST API.
 - https://github.com/sylvia1106/idb-managed
   - Easy IndexedDB API, using DB manager to manage local database. Based on idb.
 - https://github.com/PsychoSanchez/secure-idb

@@ -7,8 +7,21 @@ modified: 2020-12-27T10:32:58.026Z
 
 # page-engineering-api
 
-# [Material-UI API Design Approach](https://material-ui.com/guides/api/)
+# [GitHub: To infinity and beyond: enabling the future of GitHub's REST API with API versioning_202211](https://github.blog/2022-11-28-to-infinity-and-beyond-enabling-the-future-of-githubs-rest-api-with-api-versioning/)
 
+- We launched version 3 (“V3”) of our API more than a decade ago. 
+  - It has served us well, 
+  - but we haven’t had the right tools and processes in place to make occasional breaking changes AND give existing users a smooth migration path and plenty of time to upgrade their integrations.
+- we’re introducing calendar-based versioning for the REST API.
+
+- Versions will be named based on the date when they were released. 
+  - We’ll only use versioning for breaking changes. 
+  - Non-breaking changes will continue to be available across all API versions.
+  - Picking what version you want to use is easy. 
+  - You just specify the version you want to use on a request-by-request basis using the `X-GitHub-Api-Version` header.
+- When a new REST API version is released, we’re committed to supporting the previous version for at least two years (24 months).
+  - After two years, we reserve the right to retire a version
+# [Material-UI API Design Approach](https://material-ui.com/guides/api/)
 - As Sebastian Markbage pointed out, no abstraction is superior to wrong abstractions. 
   - We are providing low-level components to maximize composition capabilities.
 

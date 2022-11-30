@@ -22,5 +22,9 @@ modified: 2022-11-25T16:16:52.713Z
 
 - https://github.com/pubkey/client-side-databases
   - https://pubkey.github.io/client-side-databases/database-comparison/index.html
-  - An implementation of the exact same app in Firestore, AWS Datastore, PouchDB, RxDB and WatermelonDB
   - I have implemented the exact same chat application with different database technologies.
+  - PouchDB with IndexedDB adapter & CouchDB replication
+  - RxDB PouchDB with PouchDB Storage & GraphQL replication
+  - RxDB LokiJS with LokiJS Storage & GraphQL replication
+  - RxDB Dexie.js with Dexie.js Storage & GraphQL replication
+  - WatermelonDB with LokiJS adapter (no backend sync atm)

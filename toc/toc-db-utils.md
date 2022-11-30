@@ -24,12 +24,16 @@ modified: 2022-11-06T11:21:27.612Z
   - Internally, the application is powered by an in-memory instance of DuckDb, a fast, embeddable database engine optimized for analytic queries.
   - The core of Tad is a React UI component that implements a hierarchical pivot table that allows you to specify a combination of pivot, filter, aggregate, sort, column selection
   - Tad uses SlickGrid for rendering the data grid. 
-
 # utils
 - https://github.com/w3tecch/typeorm-seeding
   - A delightful way to seed test data into your database.
   - Inspired by the awesome framework laravel in PHP and of the repositories from pleerock
-
+# db-cache
+- https://github.com/CyCraft/magnetar
+  - Magnetar is a state management library.
+  - A library that brings a simple syntax for reading and writing data and allows you to easily work with this data in your app like a global store.
+  - A framework-agnostic syncing solution that auto-connects any DB/API with your local data store and has optimistic-UI built in
+  - Magnetar has 2-way sync database integration for Google Firestore (and others coming). You do not need to learn to work with the database SDK.
 # db-client
 - https://github.com/mlaanderson/database-js
   - Database-js implements a common, promise-based interface for SQL database access. 
@@ -38,8 +42,6 @@ modified: 2022-11-06T11:21:27.612Z
 - https://github.com/slashbaseide/slashbase /ts/go
   - Collaborative in-browser database IDE for your team. 
   - Supports PostgreSQL & MongoDB.
-
-
 
  - https://github.com/dbeaver/cloudbeaver
    - CloudBeaver is a web server which provides rich web interface. 

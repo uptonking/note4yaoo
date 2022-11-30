@@ -18,7 +18,35 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss
 - ## 
 
-- ## 
+- ## I've changed my mind about interface vs type again
+- https://twitter.com/mattpocockuk/status/1597561667520299008
+- My old opinion:
+  - Prefer interface over type where possible
+- My recent opinion:
+  - Doesn't matter, as long as you stay consistent
+- My new opinion:
+  - Prefer type unless you need a specific feature of interfaces
+- Why? Because at the end of the day, interfaces give you lots of features that you don't usually anticipate needing. Like declaration merging
+  - These make them behave subtly different to types in some circumstances.
+  - A type is a type is a type. Can't be extended, can't be declaration merged, can't be messed about.
+- If you want to use 'extends', or just love the 'mental model' of interfaces - go right ahead.
+  - But I think I'll be defining my object types as types from now on.
+
+- Exactly our take as well! Everything is a `type` until you need to extend it or some interface features!
+
+- I would argue that if you expect your types to be used by others (eg in a library) keep them as interfaces. Your users may want those extra features
+  - Imo the only use-case for declaration merging. In an app, declaration merging just hurts maintainability in the long run.
+- Yeah in lib code you should default to interface. And absolutely, this is a big ol' bikeshed.
+
+- Exactly where I landed and exactly for the same reasons.
+  - I'd even go as far as to say that most of the examples of "good uses" of declaration merging are actually wrong, because they distribute the ultimate type definition over multiple places, which hurts maintainability.
+
+- I've been pretty consistently in the type camp specifically because declaration merging feels an anti-feature that shouldn't ever be used.
+
+- Interfaces for OOP in general and types for everything else (like react function components)?
+
+- unfortunately typescript suggests preferring interfaces in the docs
+  - Yeah I think this is out-of-date advice based on tweets I've exchanged with the team.
 
 - ## ts-unused-exports deserves a TypeScript tip.
 - https://twitter.com/JNYBGR/status/1597178235804012544

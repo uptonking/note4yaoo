@@ -75,9 +75,15 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/seegno/bookshelf-json-columns
   - Parse JSON columns with Bookshelf.js
 
-- https://github.com/orbitjs/orbit
+- orbit /2.3kStar/MIT/202209/ts
+  - https://github.com/orbitjs/orbit
   - Orbit is a composable data framework for managing the complex needs of today's web applications.
   - Although Orbit is primarily used as a flexible client-side ORM, it can also be used server-side in Node.js.
+  - Interact with data from a variety of sources: a REST server, a WebSocket stream, an IndexedDB backup, an in-memory store, etc.
+  - Work offline, work online, and seamlessly transition between both modes.
+  - Support undo / redo.gg
+
+
 
 - https://github.com/Fibonacci-Solucoes-Ageis/MyBatisNodeJs /js
   - MyBatisNodeJs is a port from the The MyBatis data mapper framework for Node. Js.

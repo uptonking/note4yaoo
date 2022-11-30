@@ -42,7 +42,7 @@ modified: 2022-06-03T22:06:16.249Z
   - localForage is a fast and simple storage library for JavaScript. 
   - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple, localStorage-like API.
   - localForage uses localStorage in browsers with no IndexedDB or WebSQL support.
-- https://github.com/dannyconnell/localbase /202012/js/inactive
+- https://github.com/dannyconnell/localbase /202012/js/localforage/inactive
   - A Firebase-Style Database ... Offline!
   - Localbase is built on top of LocalForage.
   - Localbase gives you an offline database with the simplicity & power of Firebase, all stored in the user's browser (in an IndexedDB database).
@@ -66,7 +66,6 @@ modified: 2022-06-03T22:06:16.249Z
   - The following aggregation pipeline stages are supported: $match, $project, $group, $unwind, $sort, $skip, and $limit.
   - an implementation of IndexedDB is required. 
     - For environments without a native implementation of IndexedDB, Fake IndexedDB can be used
-
 # db-powered-by-indexeddb
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb
@@ -208,8 +207,10 @@ modified: 2022-06-03T22:06:16.249Z
 - https://gist.github.com/robnyman/1894032
   - IndexedDB storing and retrieving files
 
-- https://github.com/yathit/ydn-db /201902/js/inactive
+- ydn-db /502Star/apache2/201902/js/inactive
+  - https://github.com/yathit/ydn-db
   - Unified data access layer on IndexedDB, WebDatabase and WebStorage storage mechanisms.
+  - Basic support for high level query using SQL.
   - https://github.com/yathit/ydn-db-fulltext
     - Full text search module for YDN-DB 
     - build on top of two excellent full text search libraries, [natural](https://github.com/NaturalNode/natural) for stemming, normalization, analyzer and fullproof for tokenization.

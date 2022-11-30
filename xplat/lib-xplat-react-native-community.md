@@ -15,7 +15,19 @@ modified: 2021-09-10T14:15:55.903Z
 
 - ## 
 
-- ## 
+- ## Give me your best one-line explanation of why React Native's new renderer "Fabric" is better than the old one "Paper".
+- https://twitter.com/jamonholmgren/status/1595530569580179457
+- It enables sync rendering, interruptions, and concurrent features
+  - Sync rendering: the legacy async architecture didn't play well with UIKit/Android View because they expect things like layout, measurement, and events to be sync. This is the main reason why React Native surfaces "jump" when they load; the UI layer expects it to be sync.
+  - Interruptions: the old architecture wasn’t immutable and so it couldn’t handle renders being interrupted. That means if you started rendering a tree and suspended, we wouldn’t be able to handle it. Fabric can!
+  - Concurrent features: because the old architecture want immutable or sync, it wasn’t able to render multiple trees for things like transitions, or render components in parallel across multiple threads. Fabric (conceptually) can!
+  - React Native Fabric isn’t a perf win on its own. For the initial roll out, we’re targeting neutral perf compared to paper. The benefit of Fabric and the rest of the New Architecture is what that architecture unlocks in the future.
+  - tl; dr: the New Architecture interops better with the native platform making React Native even more Native.
+
+- 
+- 
+- 
+- 
 
 - ## React Native's `fetch` could be so much faster.... 👀
 - https://twitter.com/mrousavy/status/1502321672296226831

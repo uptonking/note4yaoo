@@ -23,7 +23,7 @@ modified: 2021-08-30T18:56:14.863Z
   - A web app for writing and running SQL queries and visualizing the results. 
   - Supports Postgres, MySQL, SQL Server, ClickHouse, Crate, Vertica, Trino, Presto, SAP HANA, Cassandra, Snowflake, Google BigQuery, SQLite
 
-- https://github.com/slashbaseide/slashbase
+- https://github.com/slashbaseide/slashbase /ts/go
   - Slashbase is an open-source minimal collaborative IDE for your databases in browser.
   - It's written in Golang and Nextjs React Framework and runs as a single binary.
   - Connect to your database, browse data, run a bunch of queries or share queries within your team, right from your browser. 

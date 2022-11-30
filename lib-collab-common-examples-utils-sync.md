@@ -88,6 +88,20 @@ modified: 2022-11-07T17:37:27.579Z
 - https://github.com/Bhavik-ag/B-Docs
   - an online document editor to create, edit and collaborate on online documents.
   - Version Control and Hosting : Git for Source Code Management and Github for Hosting
+
+- sync_server-nedb /33Star/MIT/201807/js
+  - https://github.com/nponiros/sync_server
+  - A simple server which can be used to synchronize data from multiple devices
+  - A small node server which uses NeDB to write data to the disk. 
+    - The database used to store the data. Currently only NeDB is supported
+  - The server can be used with a client for example `SyncClient` to save change sets which can later be synchronized with other devices. 
+    - The server was made to work with the `ISyncProtocol` and `Dexie.Syncable`. 
+    - 👉🏻 It supports the poll pattern using AJAX and the react pattern using nodejs-websocket.
+- sync_client-dexie /29Star/MIT/201804/js
+  - https://github.com/nponiros/sync_client
+  - This module can be used to write data to IndexedDB using `Dexie` and to synchronize the data in IndexedDB with a server.
+  - `Dexie.Syncable` is used for the synchronization. This module contains an implementation of the `ISyncProtocol`. 
+  - It was primarily written to work with `sync-server` but should work with other servers which offer the same API.
 # collab-apps
 - https://github.com/configu/configu
   - A generic standard for managing and collaborating software configurations 

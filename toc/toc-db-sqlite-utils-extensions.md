@@ -38,6 +38,12 @@ modified: 2022-11-04T14:20:37.172Z
 - https://github.com/dimitri/pgloader
   - Migrate to PostgreSQL in a single command!
   - MySQL/SQLite/MSSQL to PSQL
+# excel
+- https://github.com/x2bool/xlite /202210/rust
+  - SQLite extension for querying Excel (.xlsx, .xls, .ods) files as virtual tables
+
+- https://github.com/thombashi/sqlitebiter /202203/python
+  - a CLI tool to convert CSV / Excel / HTML / JSON / Jupyter Notebook / LDJSON / LTSV / Markdown / SQLite / SSV / TSV / Google-Sheets to a SQLite database file.
 # search
 - https://github.com/kbumsik/blogsearch /202007/ts
   - a pure client-side, full-text search engine for static websites, powered by SQLite compiled to WebAssembly.

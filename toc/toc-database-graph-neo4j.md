@@ -9,6 +9,9 @@ modified: 2022-11-03T04:49:42.587Z
 
 # guide
 
+- blogs
+  - [一文了解各大图数据库查询语言（Gremlin vs Cypher vs nGQL）| 操作入门篇 - 知乎](https://zhuanlan.zhihu.com/p/110995885)
+
 # db-graph
 - https://github.com/neo4j/neo4j  /java
   - the world’s leading Graph Database

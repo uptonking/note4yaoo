@@ -189,7 +189,7 @@ modified: 2022-11-07T17:36:22.236Z
 - https://github.com/team-watchdog/databank-sri-lanka
   - We are building a collaborative platform to create and collect key datasets.
 
-- https://github.com/slashbaseide/slashbase
+- https://github.com/slashbaseide/slashbase /ts/go
   - Slashbase is an open-source minimal collaborative IDE for your databases in browser.
   - It's written in Golang and Nextjs React Framework and runs as a single binary.
   - Connect to your database, browse data, run a bunch of queries or share queries within your team, right from your browser. 

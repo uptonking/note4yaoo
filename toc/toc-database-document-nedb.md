@@ -9,6 +9,10 @@ modified: 2022-11-26T17:35:24.870Z
 
 # guide
 
+# community
+- ## [It is possibile do operations (find, update, etc..) in synchronous mode?](https://github.com/louischatriot/nedb/issues/445)
+- When using memory-only mode, synchronous operations will be very useful, for example, if using NeDB as storage provider for redux. Also, when working in memory-only mode, there is no requirement to perform async operations, due there is not any read I/O
+- I would say it is more a result of his design goal to have a consistent API regardless of what backing store is being used (in-memory, localStorage, IndexedDB, Node.js file system, etc.).
 # nedb-like
 - nedb /13.1kStar/MIT/201602/js
   - https://github.com/louischatriot/nedb
@@ -85,6 +89,20 @@ modified: 2022-11-26T17:35:24.870Z
     - If you plan to scale, it's highly recommended to use databases like PostgreSQL or MongoDB instead.
   - who is using
     - json-server
+
+- sync_server-nedb /33Star/MIT/201807/js
+  - https://github.com/nponiros/sync_server
+  - A simple server which can be used to synchronize data from multiple devices
+  - A small node server which uses NeDB to write data to the disk. 
+    - The database used to store the data. Currently only NeDB is supported
+  - The server can be used with a client for example `SyncClient` to save change sets which can later be synchronized with other devices. 
+    - The server was made to work with the `ISyncProtocol` and `Dexie.Syncable`. 
+    - 👉🏻 It supports the poll pattern using AJAX and the react pattern using nodejs-websocket.
+- sync_client-dexie /29Star/MIT/201804/js
+  - https://github.com/nponiros/sync_client
+  - This module can be used to write data to IndexedDB using `Dexie` and to synchronize the data in IndexedDB with a server.
+  - `Dexie.Syncable` is used for the synchronization. This module contains an implementation of the `ISyncProtocol`. 
+  - It was primarily written to work with `sync-server` but should work with other servers which offer the same API.
 # examples
 - rhaego(blog starter) /29Star/ISC/202204/js
   - https://github.com/youknowznm/rhaego
@@ -204,3 +222,8 @@ modified: 2022-11-26T17:35:24.870Z
 
 - https://github.com/Jianxff/NEDB /cpp/B+Tree
   - NEDB 是基于 C++ 的简单数据库. 项目参考 SQLite 底层原理与 InnoDB 引擎, 实现数据库[增-删-查-改]的基本操作, 并提供控制台界面与外部接口.
+
+
+- https://github.com/seppevs/migrate-mongo
+  - A database migration tool for MongoDB in Node
+

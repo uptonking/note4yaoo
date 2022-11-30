@@ -80,11 +80,33 @@ modified: 2020-10-22T06:51:07.421Z
 - https://github.com/fergiemcdowall/search-index
   - A persistent, network resilient, full text search library for the browser and Node.js
 # search-non-js
-- https://github.com/meilisearch/meilisearch /rust
+- https://github.com/opensearch-project/OpenSearch
+  - a community-driven, open source fork of Elasticsearch 
+
+- https://github.com/meilisearch/meilisearch /202211/rust
   - fast search engine that fits effortlessly into your apps, websites, and workflow.
+  - [Elasticsearch like alternative · Issue #20743 · mastodon/mastodon](https://github.com/mastodon/mastodon/issues/20743)
 
+- https://github.com/valeriansaliou/sonic /202210/rust
+  - lightweight & schema-less search backend. 
+  - An alternative to Elasticsearch that runs on a few MBs of RAM.
+
+- https://github.com/toshi-search/Toshi /202204/rust
+  - Toshi is meant to be a full-text search engine similar to Elasticsearch.
+  - https://github.com/quickwit-oss/tantivy
+    - Tantivy is a full-text search engine library inspired by Apache Lucene and written in Rust
+
+- https://github.com/zinclabs/zinc /202211/go
+  - a search engine that does full text indexing
+  - lightweight alternative to elasticsearch that requires minimal resources, written in Go.
+
+- https://github.com/typesense/typesense /202211/cpp
+  - Open Source alternative to Algolia and an Easier-to-Use alternative to ElasticSearch
+
+- https://github.com/manticoresoftware/manticoresearch /202211/cpp
+  - an easy to use open source fast database for search. 
+  - Good alternative for Elasticsearch. 
 # search-ui-examples
-
 - https://github.com/hemantwasthere/GitHub-Clone
   - search any github authorized user in this app and checkout there profile
 

@@ -10,6 +10,13 @@ modified: 2022-11-03T04:14:00.563Z
 # guide
 
 # db-key-value
+- snap-db /58Star/MIT/202001/ts/Nano-SQL
+  - https://github.com/only-cliches/snap-db
+  - Simple & Robust LSM Powered Javascript key-value store
+  - SnapDB is a pure javascript persistent key-value store that provides ordered mapping from keys to string values. 
+  - Data is persisted to disk using a Log Structure Merge Tree (LSM Tree) inspired by LevelDB / RocksDB. 
+  - SnapDB has 100% API compatibility with LevelDB & RocksDB and also includes additional functionality.
+
 - https://github.com/apple/foundationdb /Apache2/c++
   - a distributed database designed to handle large volumes of structured data across clusters of commodity servers.
   - It organizes data as an ordered key-value store and employs ACID transactions for all operations. 

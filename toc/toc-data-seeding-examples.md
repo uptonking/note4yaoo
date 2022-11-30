@@ -18,9 +18,30 @@ modified: 2021-08-30T19:30:56.453Z
   - All the TABLES and VIEWS from the MSSQL-2000 version have been converted to Sqlite3 and included here.
 
 - https://github.com/railmapgen/rmg-palette
-  - Line colour resources of multiple railway systems
-# data application
+  - https://railmapgen.github.io/rmg-palette
+  - list of colours used in the city's public transportation system.
 
+- [MongoDB Atlas: Load Sample Data](https://www.mongodb.com/docs/atlas/sample-data/)
+Sample AirBnB Listings Dataset
+Contains details on AirBnB listings.
+Sample Analytics Dataset
+Contains training data for a mock financial services application.
+Sample Geospatial Dataset
+Contains shipwreck data.
+Sample Guides Dataset
+Contains planet data.
+Sample Mflix Dataset
+Contains movie data.
+Sample Restaurants Dataset
+Contains restaurant data.
+Sample Supply Store Dataset
+Contains data from a mock office supply store.
+Sample Training Dataset
+Contains MongoDB training services dataset.
+Sample Weather Dataset
+Contains detailed weather reports.
+
+# data application
 - https://github.com/pkosiec/mongo-seeding
   - Mongo Seeding is a flexible set of tools for importing data into MongoDB database.
   - Define MongoDB documents in JSON, JavaScript or even TypeScript files.

@@ -224,6 +224,8 @@ modified: 2022-08-21T10:37:01.349Z
   - display布局： table.div-block, tr.div-flex, td.div-flex
   - 支持3种单元格类型 number, text, select，弹出框很好用
   - 没有全局工具条，但表头每列的下拉菜单很完整；不支持分组
+  - https://github.com/hermanbanken/editable-react-table
+    - /ts
   - https://github.com/koyal-tech/editable-react-table
 
 - react-table-ui /7Star/MIT/202107/ts

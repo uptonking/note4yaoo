@@ -1,18 +1,18 @@
 ---
-title: toc-data-topic-img
+title: toc-data-topic-image
 tags: [data, image, toc]
 created: 2020-01-22T14:37:18.500Z
-modified: 2020-06-22T09:23:56.117Z
+modified: 2022-11-29T14:41:19.209Z
 ---
 
-# toc-data-topic-img
+# toc-data-topic-image
 
 # popular
 
-# pieces
-
+# image-search
+- https://github.com/transitive-bullshit/lexica-api
+  - API wrapper around Lexica.art for searching Stable Diffusion images.
 # img
-
 - 搜索页图标
   - 百度搜索旧图标 白底背景
     - https://www.baidu.com/img/bd_logo1.png
@@ -23,7 +23,6 @@ modified: 2020-06-22T09:23:56.117Z
   - 搜狗搜索 透明背景
     - https://www.sogou.com/web/index/images/logo_440x140.v.4.png
     - https://dlweb.sogoucdn.com/pcsearch/web/index/images/logo_440x140_31de1d2.png
-
 # gif
 
 # video

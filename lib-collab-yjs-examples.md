@@ -71,3 +71,9 @@ modified: 2022-09-21T15:47:41.340Z
 - https://github.com/yjs/y-codemirror.next
   - https://demos.yjs.dev/codemirror/codemirror.html
   - Collaborative extensions for CodeMirror6
+# collab-non-yjs
+- https://github.com/hypercore-protocol/hypercore /202211/js
+  - a secure, distributed append-only log.
+  - Built for sharing large datasets and streams of real time data
+  - [hypercore and Yjs : how to make them work together](https://github.com/hypercore-protocol/hypercore/issues/296)
+    - the y-dat implementation does not actually use the core feature of the hypercore’s append only merkle tree signed log, due to the mutable nature of the Yjs CRDT implementation.

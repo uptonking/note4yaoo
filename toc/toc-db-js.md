@@ -9,9 +9,12 @@ modified: 2022-11-25T15:50:48.226Z
 
 # guide
 
+- db-latest
+  - sync/collab/local-first
+
 - ref
   - [Offline-First Database Options for Web Applications in 2020](https://joshuatz.com/posts/2020/offline-first-database-options-for-web-applications-in-2020/)
-# database-js
+# db-js
 - supabase /41.1kStar/apache2/202211/ts
   - https://github.com/supabase/supabase
   - https://supabase.com/
@@ -29,6 +32,9 @@ modified: 2022-11-25T15:50:48.226Z
   - https://pouchdb.com/
   - PouchDB is an open-source JavaScript database inspired by Apache CouchDB that is designed to run well within the browser.
   - It enables applications to store data locally while offline, then synchronize it with CouchDB and compatible servers when the application is back online
+  - PouchDB is not a self-contained database; 
+    - it is a CouchDB-style abstraction layer over other databases. By default, 
+    - PouchDB ships with the IndexedDB adapter for the browser, and a LevelDB adapter in Node.js.
 
 - acebase /158Star/MIT/202206/js
   - https://github.com/appy-one/acebase
@@ -40,6 +46,12 @@ modified: 2022-11-25T15:50:48.226Z
   - When you're using AceBase with an IndexedDB or LocalStorage backend, you might notice that if you change data in one open tab, those changes do not raise change events in other open tabs monitoring that same data.
   - AceBase is designed to run in a Node.js environment, as it (by default) requires the 'fs' filesystem to store its data and indexes. 
     - However, since v0.9.0 it is now also possible to use AceBase databases in the browser! 
+  - https://github.com/appy-one/acebase-core
+    - rxjs dependency is optional and only needed when using methods that require them
+  - https://github.com/appy-one/acebase-server
+    - 依赖socket.io、express
+  - https://github.com/appy-one/acebase-client
+    - 依赖socket.io
 
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb
@@ -52,6 +64,12 @@ modified: 2022-11-25T15:50:48.226Z
     - At the moment you can either use `PouchDB` or `Dexie.js` or `LokiJS` as underlaying storage. 
     - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
     - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
+
+- realm-js /5kStar/apache2/202211/ts/cpp
+  - https://github.com/realm/realm-js
+  - Realm is a mobile database that runs directly inside phones, tablets or wearables. This project hosts the JavaScript versions of Realm.
+  - Currently we support React Native (JSC & Hermes on iOS & Android), Node.js and Electron (on Windows, MacOS and Linux).
+  - Mobile-first: Realm is the first database built from the ground up to run directly inside phones, tablets and wearables.
 
 - nedb /13.1kStar/MIT/201602/js
   - https://github.com/louischatriot/nedb
@@ -84,7 +102,7 @@ modified: 2022-11-25T15:50:48.226Z
   - Its purpose is to store javascript objects as documents in a nosql fashion and retrieve them with a similar mechanism. 
   - Runs in node (including cordova/phonegap and node-webkit), nativescript and the browser.
 
-- alasql /6kStar/MIT/202211/js
+- alasql /6kStar/MIT/202211/js/bi
   - https://github.com/AlaSQL/alasql
   - an open source SQL database for JavaScript with a strong focus on query speed and data source flexibility for both relational data and schemaless data. 
   - It works in the web browser, Node.js, and mobile apps.
@@ -95,6 +113,21 @@ modified: 2022-11-25T15:50:48.226Z
     - Easy ETL and options for persistence by data import / manipulation / export of several formats
     - All major browsers, Node.js, and mobile applications
   - it's working towards a full database engine complying with most of the SQL-99 language, spiced up with additional syntax for NoSQL (schema-less) data and graph networks.
+
+- https://github.com/typicaljoe/taffydb /201509/js/单文件
+  - TaffyDB is an open source JavaScript library that provides powerful in-memory database capabilities to both browser and server applications.
+  - We created TaffyDB easily and efficiently manipulate these 'tables' with a uniform and familiar SQL-like interface.
+  - SQL inspired features such as insert, update, unique, count, and more
+
+- https://github.com/knadh/localStorageDB /202011/js
+  - a simple layer over localStorage (and sessionStorage) that provides a set of functions to store structured data like databases and tables. 
+  - It provides basic insert/update/delete/query capabilities. 
+  - localStorageDB has no dependencies, and is not based on WebSQL. 
+  - Underneath it all, the structured data is stored as serialized JSON in localStorage or sessionStorage.
+
+- https://github.com/anywhichway/reasondb /201906/js/不支持同步
+  - A multi model 100% JavaScript database supporting: key/values, graphs, documents
+  - Industry standard Storage API (except ReasonDB is asynchronous), or a graph API similar to GunDB, or SQL like syntax.
 # db-json
 - lowdb /18.7Star/MIT/202211/ts
   - https://github.com/typicode/lowdb
@@ -119,10 +152,14 @@ modified: 2022-11-25T15:50:48.226Z
 - https://github.com/Belphemur/node-json-db
   - A simple "database" that use JSON file for NodeJS
   - Every method are now asynchronous
+
+- https://github.com/syamdanda/jsonbase
+  - A database software completely built as JSON files in backend
 # db-with-fallback-storage
-- Nano-SQL /201911/ts/inactive
+- Nano-SQL /201911/ts/inactive/未实现同步
   - https://github.com/only-cliches/Nano-SQL
   - https://nanosql.io/
+  - 依赖snap-db(kv)
   - Universal database layer for the client, server & mobile devices. It's like Lego for databases.
   - Graph, Join, Filter, Select and Order your data in dozens of ways.
   - NanoSQL supports a wide range of ways to save your data in the browser, on the phone, and on the server.
@@ -133,6 +170,17 @@ modified: 2022-11-25T15:50:48.226Z
   - [Offline use with Sync to Server](https://github.com/only-cliches/Nano-SQL/issues/18)
   - [Is this project still maintained?](https://github.com/only-cliches/Nano-SQL/issues/217)
     - https://github.com/only-cliches/snap-db  /inactive
+  - https://github.com/only-cliches/snap-db
+    - Simple & Robust LSM Powered Javascript key-value store
+
+- ydn-db /502Star/apache2/201902/js/inactive
+  - https://github.com/yathit/ydn-db
+  - Unified data access layer on IndexedDB, WebDatabase and WebStorage storage mechanisms.
+  - Basic support for high level query using SQL.
+  - Client-server Synchronization (via ydn-db-sync module).
+  - https://github.com/yathit/ydn-db-fulltext
+    - Full text search module for YDN-DB 
+    - build on top of two excellent full text search libraries, [natural](https://github.com/NaturalNode/natural) for stemming, normalization, analyzer and fullproof for tokenization.
 
 - localForage /20.5kStar/Apache2/202110/js/inactive
   - https://github.com/localForage/localForage
@@ -140,18 +188,10 @@ modified: 2022-11-25T15:50:48.226Z
   - localForage is a fast and simple storage library for JavaScript. 
   - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple, localStorage-like API.
   - localForage uses localStorage in browsers with no IndexedDB or WebSQL support.
-# db-collab
-- https://github.com/orbitdb/orbit-db
-  - OrbitDB is a serverless, distributed, peer-to-peer database. 
-  - OrbitDB uses IPFS as its data storage and IPFS Pubsub to automatically sync databases with peers. 
-  - It's an eventually consistent database that uses CRDTs for conflict-free database merges making OrbitDB an excellent choice for decentralized apps (dApps), blockchain applications and local-first web applications.
-- https://github.com/dappkit/aviondb
-  - A Distributed, MongoDB-like Database
-  - AvionDB uses OrbitDB stores to model MongoDB-like Databases.
 # more-db-js
-- https://github.com/typicaljoe/taffydb /201509/js/单文件
-  - TaffyDB is an open source JavaScript library that provides powerful in-memory database capabilities to both browser and server applications.
-  - We created TaffyDB easily and efficiently manipulate these 'tables' with a uniform and familiar SQL-like interface.
+- https://github.com/ciochetta/learndb /202101/js/mongodb
+  - my first attempt at creating my own database from scratch.
+  - I will not be doing a SQL database, instead, I will follow his steps but try to create a document database, like MongoDB
 
 - https://github.com/codemix/ts-sql
   - a SQL database implemented purely in TypeScript type annotations.

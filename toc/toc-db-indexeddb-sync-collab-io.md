@@ -26,15 +26,54 @@ modified: 2022-10-22T18:47:16.228Z
   - for `remoteStorage.local`, a choice is made between `RemoteStorage.IndexedDB`,  `RemoteStorage.LocalStorage` and `RemoteStorage.InMemoryCaching`, depending on what the environment (browser, node.js, Electron, WebView, or other) supports.
   - Data modules make your app and its data interoperable with other apps.
 
-- https://github.com/darrachequesne/synceddb /202203/ts
+- lo-fi /7Star/MIT/202211/ts
+  - https://github.com/a-type/lo-fi
+  - https://lo-fi.gfor.rest/
+  - An IndexedDB-powered database and data sync solution for lightweight, local-first web apps.
+  - server依赖sqlite、jwt、ws
+  - Undo and redo changes
+  - it includes an optional server which unlocks the power of sync and realtime
+  - the goal of lo-fi is to be simple and recognizable.
+    - One small, generic syncing server is all you need
+    - NO. Infinitely growing storage usage
+    - NO. Having to deeply understand CRDTs
+    - NO. Peer to peer networking
+    - NO. WASM-compiled databases in your browser
+  - https://github.com/a-type/aglio
+    - The web app is designed to work local-first and local-only. 
+    - React-based PWA.
+
+- synceddb-multi-backends /388Star/MIT/201803/js/indexeddb/支持多种后端存储
+  - https://github.com/paldepind/synceddb
+  - makes it easy to write offline-first applications with real-time syncing and server-side persistence.
+  - SyncedDB is a lightweight layer on top of IndexedDB. 
+    - It strips away all the boilerplate that the IndexedDB API requires
+    - Uses promises for all async operations — even inside IndexedDB transactions
+    - 未暴露cursor api
+  - Server side SyncedDB stores a list of changes that clients can request/subscribe and post/publish to. 
+    - Synchronizes data through WebSockets and sends only compact diffs down the wire
+  - The SyncedDB client communicates with the backend through WebSockets to achieve synchronization in real time. 
+    - the client provides elegant conflict handling and events for reacting to changes from the server.
+  - Persistence options are provided based on the following currently supported databases:
+    - In memory, MySQL, PostgreSQL, CouchDB
+
+- synceddb-idb /7Star/ISC/202203/ts/idb
+  - https://github.com/darrachequesne/synceddb
   - a fork of the awesome idb library, which adds the ability to sync an IndexedDB database with a remote REST API.
+  - 后端api，fetchChanges, pushChanges
+  - Every change is tracked in a store. 
+    - The `SyncManager` then sync these changes with the remote REST API when the connection is available, making it easier to build offline-first applications.
+    - The `LiveQuery` provides a way to run a query every time the underlying stores are updated
+  - Entities without `keyPath` are not currently supported.
+  - Only the last version of each entity is kept on the client side.
+  - conflict: The last write wins (though you can customize the behavior in the `onpusherror` handler).
   - https://github.com/darrachequesne/synceddb-todo-example
 
 - https://github.com/azer/indexeddb /202005/ts/inactive
-  - Well-tested, low-level wrapper around the IndexedDB API. 
-  - It can sync locally and remotely.
+  - Well-tested wrapper around the IndexedDB API. It can sync locally and remotely.
   - You can use the `sync` method to keep multiple local indexeddb database instances easily.
   - You can sync your IndexedDB remotely. To accomplish this, you'll need to customize `Push` and `Pull` classes. 
+  - Well-tested, low-level wrapper around the IndexedDB API. 
 
 - https://github.com/madmoizo/backinfront  /1Star/ISC/202206/js
   - Backinfront is both the manager of your browser database and a router which handles requests locally. 
@@ -56,9 +95,6 @@ modified: 2022-10-22T18:47:16.228Z
   - Logux combines WebSocket with modern reactive client architecture. It synchronizes Redux actions between clients and servers, and keeps the same order of actions.
   - Optimistic UI to improve UI performance by updating UI without waiting for an answer from the server. Time travel will revert changes later if the server refuses them.
   - Compatible with modern stack: Redux, Vuex and pure JS API, works with any back-end language and any database.
-
-- https://github.com/paldepind/synceddb /201803/js
-  - makes it easy to write offline-first applications with real-time syncing and server-side persistence.
 # collab
 - https://github.com/yjs/y-indexeddb
   - IndexedDB database adapter for Yjs
@@ -80,5 +116,5 @@ modified: 2022-10-22T18:47:16.228Z
   - Inspired by yjs and the CRDT-variant LWW-Element-Set, this is a simple key-value map that can sync between different clients by letting latest timestamp always win.
   - Key is always a string but value could be anything as long as it's just primitive values.
 # more
-- https://github.com/SyncProxy/sync-client /202012/js/inactive
+- https://github.com/SyncProxy/sync-client /202012/js/inactive/服务端未开源
   - SyncProxy-client is a javascript client for SyncProxy that enables one-single line of code implementation of synchronization for javascript offline applications using embedded database (IndexedDB, SQLite, SQLJS, WebSQL, LokiJS...).

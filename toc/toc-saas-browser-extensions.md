@@ -156,6 +156,11 @@ modified: 2022-11-04T15:11:24.012Z
 # twitter
 - https://github.com/tweetback/tweetback
   - Take ownership of your Twitter data. 
+
+- https://github.com/transitive-bullshit/twitter-search
+  - https://twitter-search.transitivebullsh.it/
+  - Instantly search across your entire Twitter history with a beautiful UI powered by Algolia.
+  - Built using Algolia, Twitter API, and Vercel
 # more-extensions
 - https://github.com/SanderRonde/CustomRightClickMenu
   - A browser extension to add links and run scripts/stylesheets all from your right-click menu

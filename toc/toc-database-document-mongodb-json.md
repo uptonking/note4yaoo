@@ -57,6 +57,9 @@ modified: 2022-11-03T04:14:11.987Z
 
 - https://github.com/kofrasa/mingo
   - MongoDB query language for in-memory objects
+
+- https://github.com/sergeyksv/tingodb /201901/js
+  - an embedded JavaScript in-process filesystem or in-memory database upwards compatible with MongoDB at the v1.4 API level.
 # db-document-json
 - redux-database /18Star/MIT/202005/ts/NoDeps
   - https://github.com/nerdgeschoss/redux-database
@@ -118,3 +121,9 @@ modified: 2022-11-03T04:14:11.987Z
 # mongodb-render-ui
 
 # more-document-json
+
+- https://github.com/Irrelon/ForerunnerDB /202006/js
+  - ForerunnerDB is a NoSQL JavaScript JSON database with a query language based on MongoDB (with some differences) and runs on browsers and Node.js.
+  - ForerunnerDB is the most advanced, battle-tested and production ready browser-based JSON database system available today.
+  - https://github.com/Irrelon/forerunnerdb-core
+    - This project contains the core query/match/update functionality of ForerunnerDB 3.x 

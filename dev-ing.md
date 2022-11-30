@@ -114,9 +114,8 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 ## 1128
 
-
 - [mocha: typescript with ts-node and ESM support · Issue #47 · mochajs/mocha-examples](https://github.com/mochajs/mocha-examples/issues/47)
-  - npx mocha --loader=ts-node/esm/transpile-only --experimental-specifier-resolution=node --extensions ts,tsx 'tests/**/*.test.ts' --reporter spec --timeout 10000
+  - npx mocha --loader=ts-node/esm/transpile-only --experimental-specifier-resolution=node --extensions ts, tsx 'tests/**/*.test.ts' --reporter spec --timeout 10000
 
 - [database - What is the difference between an ORM and an ODM? - Stack Overflow](https://stackoverflow.com/questions/12261866/what-is-the-difference-between-an-orm-and-an-odm)
   - MySQL is an example of a relational database - you would use an ORM to translate between your objects in code and the relational representation of the data.
