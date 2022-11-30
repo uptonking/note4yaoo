@@ -176,6 +176,7 @@ modified: 2020-10-22T10:03:50.526Z
 
 - https://github.com/zhuowenli/githuber /202011/js/vue
   - 帮助 GitHub 开发者每日发现优质内容的浏览器主页拓展。
+
 ## more-note-editor
 
 - https://github.com/deathau/markdownload /202210/js
@@ -216,6 +217,7 @@ modified: 2020-10-22T10:03:50.526Z
 
 - https://github.com/KeithLRobertson/markdown-viewer
   - Markdown (.md file) Viewer WebExtension for firefox
+
 ## non-open
 
 - TabNotes
@@ -269,3 +271,7 @@ modified: 2020-10-22T10:03:50.526Z
   - 依赖angular7、hightlight.js、marked、monaco-editor、rxjs、subsink、zone.js
   - A tag-based note taking app using Markdown for formatting.
   - I drew some design inspiration (specifically the tag-based organization) from Notable
+
+- https://github.com/FoxUSA/OpenNote /201802/js
+  - OpenNote was built to be an open web-based alternative to Microsoft OneNote (T) and EverNote.
+  - OpenNote is a progressive web application(PWA)/HTML5 offline app, web based text editor/note taking software

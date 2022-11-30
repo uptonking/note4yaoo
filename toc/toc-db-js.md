@@ -79,7 +79,7 @@ modified: 2022-11-25T15:50:48.226Z
   - A copy of the whole database is kept in memory. This is not much on the expected kind of datasets (20MB for 10, 000 2KB documents).
   - You can use NeDB as an in-memory only datastore or as a persistent datastore. 
 
-- WatermelonDB /8.7kStar/MIT/202211/js
+- WatermelonDB /8.7kStar/MIT/202211/js/rxjs/lokijs
   - https://github.com/Nozbe/WatermelonDB
   - Reactive & asynchronous database for powerful React and React Native apps
   - And since all querying is performed directly on the rock-solid SQLite database on a separate native thread, most queries resolve in an instant.

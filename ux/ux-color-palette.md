@@ -30,6 +30,7 @@ modified: 2022-10-23T14:57:23.473Z
   - darkorchid: #9932cc
   - darkviolet: #9400d3
   - violet: #ee82ee 紫罗兰
+  - hotpink: #ff69b4
   - indigo: #4b0082
   - antiquewhite/oldlace：古董白，粉红色
   - orangered: #ff4500

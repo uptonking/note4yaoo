@@ -8,13 +8,14 @@ modified: 2022-11-25T15:41:47.534Z
 # toc-db-sync
 
 # guide
-- db-latest
+- alternatives
   - sync/collab/local-first
-  - rxdb alternative
   - database realtime
+  - meteor minimongo
+  - [rxdb alternatives](https://rxdb.info/alternatives.html)
 
 - [Comparison of Offline Sync Protocols and Implementations](https://offlinefirst.org/sync/)
-  - couchcb/realm/firebase
+  - couchdb/realm/firebase
 - [rxdb: Replication](https://rxdb.info/replication.html)
   - 支持websocket、graphql、couchdb、p2p
   - The RxDB replication protocol provides the ability to replicate the database state in realtime between the clients and the server.
@@ -93,7 +94,7 @@ modified: 2022-11-25T15:41:47.534Z
   - Undo/Redo capabilities
   - PouchDB/RxDB are great and very mature solutions for replicating databases, but being forced to build your services on top of CouchDB can be unfitting for some users. 
   - Debe, and having the whole data flow in Javascript, offers some cool possibilities to control data access and filter & transform incoming/outgoing data according to user permissions. This works through middlewares.
-  - https://github.com/bkniffler/workerdb
+  - https://github.com/bkniffler/workerdb /201901/ts
     - offline-first, syncable Database in WebWorker based on PouchDB/RxDB
 
 - clientdb /506Star/apache2/202207/ts/同步未完成
@@ -112,20 +113,6 @@ modified: 2022-11-25T15:41:47.534Z
   - The first prototype of rs.js was written in November 2010. The library is well-tested and actively maintained.
   - for `remoteStorage.local`, a choice is made between `RemoteStorage.IndexedDB`,  `RemoteStorage.LocalStorage` and `RemoteStorage.InMemoryCaching`, depending on what the environment (browser, node.js, Electron, WebView, or other) supports.
   - Data modules make your app and its data interoperable with other apps.
-
-- pouchdb /15.4kStar/apache2/202211/js
-  - https://github.com/pouchdb/pouchdb
-  - https://pouchdb.com/
-  - PouchDB is an open-source JavaScript database inspired by Apache CouchDB that is designed to run well within the browser.
-  - It enables applications to store data locally while offline, then synchronize it with CouchDB and compatible servers when the application is back online
-  - PouchDB is not a self-contained database; 
-    - it is a CouchDB-style abstraction layer over other databases. By default, 
-    - PouchDB ships with the IndexedDB adapter for the browser, and a LevelDB adapter in Node.js.
-
-- couchdb /5.5kStar/apache2/202211/erlang
-  - https://github.com/apache/couchdb
-  - https://couchdb.apache.org/
-  - Seamless multi-master syncing database with an intuitive HTTP/JSON API, designed for reliability
 
 - orbit /2.3kStar/MIT/202209/ts/概念特别多
   - https://github.com/orbitjs/orbit
@@ -160,6 +147,15 @@ modified: 2022-11-25T15:41:47.534Z
     - We even have a system for keeping track of remote databases that feels a lot like git.
     - if you have two database instances locally you can easily merge one into the other without using the remote system.
 # sync-utils
+- https://github.com/siliconjungle/tick-network-server
+  - An example of a server that sends messages at a regular interval.
+  - 依赖express、ws、messagepack
+  - https://github.com/siliconjungle/tick-network-client
+    - A demo of a client that sends messages at a regular interval.
+
+- https://github.com/NangoHQ/nango
+  - Nango continuously syncs data from any API endpoint (that returns JSON) to your database.
+
 - https://github.com/leapfrogtechnology/sync-db
   - Command line utility to synchronize and version control relational database objects across databases.
 
@@ -174,7 +170,7 @@ modified: 2022-11-25T15:41:47.534Z
   - Keeping a list of data which still needs to be sent to the server.
   - Supplying the App with all data required to handle version conflicts when they occur.
 # db-collab
-- https://github.com/orbitdb/orbit-db
+- https://github.com/orbitdb/orbit-db /202208/js
   - OrbitDB is a serverless, distributed, peer-to-peer database. 
   - OrbitDB uses IPFS as its data storage and IPFS Pubsub to automatically sync databases with peers. 
   - It's an eventually consistent database that uses CRDTs for conflict-free database merges making OrbitDB an excellent choice for decentralized apps (dApps), blockchain applications and local-first web applications.
@@ -196,6 +192,13 @@ modified: 2022-11-25T15:41:47.534Z
     - NO. Peer to peer networking
     - NO. WASM-compiled databases in your browser
 
+- https://github.com/rethinkdb/rethinkdb /202211/cpp/python
+  - The open-source database for the realtime web.
+  - NoSQL database that stores schemaless JSON documents
+- https://github.com/rethinkdb/horizon
+  - Horizon is an open-source developer platform for building sophisticated realtime apps. 
+  - Horizon is built on top of RethinkDB and consists of four components
+
 - https://github.com/hypercore-protocol/hypercore /202211/js
   - a secure, distributed append-only log.
   - Built for sharing large datasets and streams of real time data
@@ -207,3 +210,14 @@ modified: 2022-11-25T15:41:47.534Z
 
 - https://github.com/SyncProxy/sync-client /202012/js/inactive/服务端未开源
   - SyncProxy-client is a javascript client for SyncProxy that enables one-single line of code implementation of synchronization for javascript offline applications using embedded database (IndexedDB, SQLite, SQLJS, WebSQL, LokiJS...).
+
+- https://github.com/malerba118/react-use-database
+  - This library is no longer maintained, please consider react-query and apollo-graphql as more robust solutions 
+  - react-use-database gives you an opinionated interface, efficient data flow, and concise global state management. 
+  - It forces you to think about your client-side data in the context of a queryable database. 
+  - It gives you two global data stores: an entity store and a query store.
+  - The entity store contains all of your model data. 
+    - It’s just a big json blob that is the source of truth for any database entity that you have defined via Normalizr’s notion of schemas 
+
+- https://github.com/digitallyinduced/thin-backend
+  - Thin Backend is a Blazing Fast, Universal Web App Backend for Making Realtime Single Page Apps

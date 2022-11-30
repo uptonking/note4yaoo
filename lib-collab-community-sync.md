@@ -16,7 +16,8 @@ modified: 2022-11-29T20:41:25.566Z
 
 - ## 
 
-- ## 
+- ## [Couchdb有在实际生产环境中使用的例子吗？ - 知乎](https://www.zhihu.com/question/20112928/answers/updated)
+- CouchDB是HTTP Restful API来操作数据库的，其它数据库系统使用TCP，在传输大量数据的情况下，HTTP协议在TCP协议之上，可能HTTP协议会比数据库自身实现的数据交互协议payload要大，造成网络性能略差
 
 - ## [Nano-SQL: Offline use with Sync to Server_201801](https://github.com/only-cliches/Nano-SQL/issues/18)
 - Hey gents, I'm getting close to implementing this as a core feature.

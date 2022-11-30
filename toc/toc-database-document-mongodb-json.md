@@ -13,8 +13,14 @@ modified: 2022-11-03T04:14:11.987Z
 - minimongo /1kStar/LGPLv3/202207/ts
   - https://github.com/mWater/minimongo
   - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
-  - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
-  - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries 
+    - Uses code from Meteor.js minimongo package(2014), reworked to support more geospatial queries 
+  - It is either IndexedDb backed (IndexedDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
+  - sqlite plugin is also supported when available
+  - ReplicatingDb: Keeps two local databases in sync. Finds go only to master.
+  - Minimongo is designed to work with a server that performs three-way merging of documents that are being upserted by multiple users.
+  - Compared to RxDB, Minimongo has no concept of revisions or conflict handling, which might lead to undefined behavior when used with replication or in multiple browser tabs. Minimongo has no observable queries or changestream.
+
+
 
 - https://github.com/usmakestwo/githubDB /201811/js
   - A Lightweight Cloud based JSON Database with a MongoDB like API for Node.

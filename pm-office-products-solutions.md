@@ -30,6 +30,7 @@ modified: 2021-07-11T08:31:00.660Z
 - pm-business
   - 直播卖课用的编辑器，专注于知识付费的方向
   - carbon-like screenshot for doc/table/markdown
+    - [其他预览效果，类似渐变色背景上的卡片](https://twitter.com/hashnode/status/1597902218606149632?s=20&t=QD2NjvJuc-5zOZt6lBrViA)
 
 - [2022年协作文档的发展趋势与技术选型](https://juejin.cn/post/7049275631774728199)
 

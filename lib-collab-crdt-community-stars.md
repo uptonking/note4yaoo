@@ -18,7 +18,24 @@ modified: 2022-04-05T10:09:51.343Z
 
 - ## 
 
-- ## 
+- ## I've begun building out a server tick rate for message sending in Tiny Merge._202211
+- https://twitter.com/JungleSilicon/status/1597770904716865538
+  - 轮询：Starting out with 30 messages per connection per second.
+  - I'm thinking I'll eventually move to something like a minimum send rate and a maximum depending on activity.
+
+- we should talk more, I'd argue for pull-based with some good use cases there.
+- I think it depends on the kind of application you're building. 
+  - For real-time applications like a game a tick-rate would be more ideal. 
+  - For something like a notion or linear something pull-based could be more ideal.
+- ooh yeah, I think about modern multiplayer techniques there and I agree with that.
+  - rollback-based multiplayer I think is what I'm thinking of there.
+
+- ## Building the first Byzantine Fault Tolerant JSON CRDT
+- https://twitter.com/_jzhao/status/1594732151400189953
+  - A deep dive into what CRDTs are, how CRDTs are different from traditional consensus, what makes them tick, and how we can adapt them to tolerate malicious actors
+  - [Building a BFT JSON CRDT](https://jzhao.xyz/posts/bft-json-crdt/)
+- https://github.com/jackyzha0/bft-json-crdt /202211/rust
+  - the first JSON-like Byzantine Fault Tolerant CRDT in Rust
 
 - ## If anyone has been curious about how to build a CRDT but thought the idea was too daunting. tiny-merge-legacy_202205
 - https://twitter.com/JungleSilicon/status/1526123548753858560

@@ -7,9 +7,7 @@ modified: 2020-12-20T16:01:15.556Z
 
 # pattern-dev-functional
 
-# A Simple, Functional Module Pattern for TypeScript
-
-- [A Simple, Functional Module Pattern for TypeScript](https://spin.atomicobject.com/2017/10/26/typescript-functional-module-pattern/)
+# [A Simple, Functional Module Pattern for TypeScript](https://spin.atomicobject.com/2017/10/26/typescript-functional-module-pattern/)
 
 - We’ve been using TypeScript with our React apps quite a bit recently. 
 - One common need that we have when programming in a functional style is a good pattern for creating small abstractions that can be used widely in an application.

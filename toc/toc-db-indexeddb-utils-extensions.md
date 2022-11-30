@@ -203,7 +203,7 @@ modified: 2022-11-04T14:22:17.373Z
 - minimongo /1kStar/LGPLv3/202207/ts
   - https://github.com/mWater/minimongo
   - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
-  - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
+  - It is either IndexedDb backed (IndexedDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
 
 - ZangoDB /1kStar/MIT/201710/js
   - https://github.com/erikolson186/zangodb

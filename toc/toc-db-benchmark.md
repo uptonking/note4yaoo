@@ -23,6 +23,7 @@ modified: 2022-11-25T16:16:52.713Z
 - https://github.com/pubkey/client-side-databases
   - https://pubkey.github.io/client-side-databases/database-comparison/index.html
   - I have implemented the exact same chat application with different database technologies.
+  - The chat app is a web based angular application, with functionality similar to Whatsapp Web.
   - PouchDB with IndexedDB adapter & CouchDB replication
   - RxDB PouchDB with PouchDB Storage & GraphQL replication
   - RxDB LokiJS with LokiJS Storage & GraphQL replication

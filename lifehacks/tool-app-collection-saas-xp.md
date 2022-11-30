@@ -48,6 +48,9 @@ modified: 2022-11-07T10:25:12.034Z
   - 不使用hashtag，使用list收集相关用户
   - [How To Follow a Hashtag on Twitter - Qwitter](https://useqwitter.com/how-to-follow-a-hashtag-on-twitter/)
 
+- tweetdeck
+  - 点击一条tweet的右上角时间，可以在新标签页打开原网站；知乎也才用这种设计
+
 - download-video
   - 浏览器扩展经常失效，更好的方式是在github查找下载工具的源码，自己修改
   - video-url-4test

@@ -112,6 +112,15 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - crdt tutorials
   - nedb
 
+## 1130
+
+- [被动事件监听器（Passive Event Listeners） - 掘金](https://juejin.cn/post/6924554199766319112)
+  - 被动事件监听器是针对移动端滚动体验的一次优化。
+  - 因为 touchstart 和 touchmove 的 preventDefault 会阻止这个滚动行为。浏览器一开始并不知道回调中是否有 preventDefault ，只能等回调执行完毕。
+  - 能不能让浏览器早点知道会不会阻塞滚动，passive应运而生。
+  - passive 是否开启被动事件监听器, 如果设置为true，表明回调不会调用 preventDefault()
+  - 某些浏览器（特别是Chrome和Firefox）已将文档级节点Window，Document和Document.body上的touchstart和touchmove事件的Passive选项的默认值更改为true
+
 ## 1128
 
 - [mocha: typescript with ts-node and ESM support · Issue #47 · mochajs/mocha-examples](https://github.com/mochajs/mocha-examples/issues/47)

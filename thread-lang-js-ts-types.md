@@ -18,6 +18,25 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## What are your favourite type helpers? I.e. helpers which return types from other types.
+- https://twitter.com/mattpocockuk/status/1597955503480414208
+- Zod's Infer
+
+```typescript
+type Truthy<T> = T extends false | '' | 0 | null | undefined ? never : T;
+
+function truthy<T>(value: T): value is Truthy<T> {
+return Boolean(value);
+}
+
+type NonEmptyArray<T> = [T, ...Array<T>]
+
+```
+
 - ## I've changed my mind about interface vs type again
 - https://twitter.com/mattpocockuk/status/1597561667520299008
 - My old opinion:
