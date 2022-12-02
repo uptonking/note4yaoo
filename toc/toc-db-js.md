@@ -47,6 +47,7 @@ modified: 2022-11-25T15:50:48.226Z
   - When you're using AceBase with an IndexedDB or LocalStorage backend, you might notice that if you change data in one open tab, those changes do not raise change events in other open tabs monitoring that same data.
   - AceBase is designed to run in a Node.js environment, as it (by default) requires the 'fs' filesystem to store its data and indexes. 
     - However, since v0.9.0 it is now also possible to use AceBase databases in the browser! 
+  - [Protocol for other languages · Discussion #79 · appy-one/acebase](https://github.com/appy-one/acebase/discussions/79)
   - https://github.com/appy-one/acebase-core
     - rxjs dependency is optional and only needed when using methods that require them
   - https://github.com/appy-one/acebase-server
@@ -68,9 +69,14 @@ modified: 2022-11-25T15:50:48.226Z
 
 - realm-js /5kStar/apache2/202211/ts/cpp
   - https://github.com/realm/realm-js
-  - Realm is a mobile database that runs directly inside phones, tablets or wearables. This project hosts the JavaScript versions of Realm.
+  - Realm is a mobile database that runs directly inside phones, tablets or wearables. 
+  - This project hosts the JavaScript versions of Realm.
   - Currently we support React Native (JSC & Hermes on iOS & Android), Node.js and Electron (on Windows, MacOS and Linux).
-  - Mobile-first: Realm is the first database built from the ground up to run directly inside phones, tablets and wearables.
+  - This is still using Realm Core(cpp), but exposed via JavaScript API
+  - https://github.com/realm/realm-core /202212/cpp
+    - Core database component for the Realm Mobile Database SDKs
+
+
 
 - nedb /13.1kStar/MIT/201602/js
   - https://github.com/louischatriot/nedb

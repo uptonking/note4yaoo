@@ -13,8 +13,11 @@ modified: 2022-11-04T14:20:37.172Z
   - https://github.com/beenotung/better-sqlite3-proxy
     - Efficiently proxy sqlite tables and access data as typical array of objects
 
-- https://github.com/benbjohnson/litestream /go
+- https://github.com/benbjohnson/litestream /202211/go
   - Streaming replication for SQLite.
+  - Litestream is a standalone disaster recovery tool for SQLite. 
+  - It runs as a background process and safely replicates changes incrementally to another file or S3. 
+  - Litestream only communicates with SQLite through the SQLite API so it will not corrupt your database.
 # extensions
 - https://github.com/asg017/sqlite-lines  /clang/python
   - A SQLite extension for reading large files line-by-line (NDJSON, logs, txt, etc.)
@@ -47,7 +50,6 @@ modified: 2022-11-04T14:20:37.172Z
 - https://github.com/jayralencar/sqlite-sync.js /202108/js
   - Node module to sqlite sync and async
   - node.js package for database connection with SQLite , and execute SQL commands synchronously or asynchronously.
-
 # excel
 - https://github.com/x2bool/xlite /202210/rust
   - SQLite extension for querying Excel (.xlsx, .xls, .ods) files as virtual tables

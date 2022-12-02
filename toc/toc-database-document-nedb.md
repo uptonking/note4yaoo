@@ -168,6 +168,9 @@ modified: 2022-11-26T17:35:24.870Z
 
 - https://github.com/hutia/pwd-mgr /202203/ts/antd
   - personal infomation and password management.
+
+- https://github.com/jasonbrandoo/react-express-nedb
+  - Simple react auth with express
 # nedb-starter-crud
 - ts-api-server-express-multi-db /1Star/NALic/201804/ts/nedb/多种db/inactive
   - https://github.com/bluesky50/ts-api-server-express-multi-db
@@ -206,6 +209,13 @@ modified: 2022-11-26T17:35:24.870Z
 - https://github.com/rwl-dev-archive/learn-nedb-json-api /202009/ts
   - Express + NeDB = JSON API
 # nedb-utils
+- https://github.com/OneBitAhead/nedb-x /202203/js
+  - Functional extension to NeDB
+  - Group by with aggregates
+ Substructure database with model attribute
+ - Joining (left join) model data
+ - Tree data (with open/closed nodes)
+
 - https://github.com/ivrusson/mockon /202111/ts
   - Mock Server with data persistency based on MockJS and NeDB
 

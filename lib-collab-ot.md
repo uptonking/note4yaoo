@@ -15,6 +15,10 @@ modified: 2022-04-05T10:09:36.436Z
     - codemirror内容的变更changes事件转换为TextOperation的流程
     - 中文输入法优化
 
+- who is using ot
+  - ckeditor/tinymce
+  - mongodb realm Atlas Device Sync Protocol
+
 - ot vs crdt
   - ot的主流实现依赖中心服务器决定op的顺序
     - crdt的op可乱序到达其他节点

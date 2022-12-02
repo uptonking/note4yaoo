@@ -11,6 +11,7 @@ modified: 2022-11-25T17:19:52.013Z
 
 - 提供的同步方式偏向于类似文件系统，如google-drive/dropbox
 
+- [remoteStorage Protocol: defines a simple key/value store for apps to save and retrieve data](https://remotestorage.io/protocol/)
 - [remoteStorage Apps](https://remotestorage.io/apps/)
 # popular
 - remotestorage.js /2.2kStar/MIT/202211/ts

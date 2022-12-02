@@ -22,6 +22,10 @@ modified: 2022-09-10T02:26:52.062Z
 
 - 其他云存储
   - 国外：dropbox clone
+
+- https://github.com/syncthing/syncthing
+  - Syncthing is a continuous file synchronization program. 
+  - It synchronizes files between two or more computers. 
 # 国外云存储
 - icloud 需付费成为apple-developer
   - [iOS独立开发-基于iCloud构建用户体系](https://zhuanlan.zhihu.com/p/392378738)

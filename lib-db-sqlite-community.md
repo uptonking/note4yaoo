@@ -18,7 +18,25 @@ modified: 2021-08-30T17:33:46.086Z
 
 - ## 
 
-- ## 
+- ## [ What is the SQLite of nosql databases? | Hacker News](https://news.ycombinator.com/item?id=27490361)
+- As others have mentioned you have lots of options: LMDB, LevelDB/RocksDB, BerkeleyDB. 
+  - For what it's worth, I spent a long time looking for an embedded key-value store for my current native project since I didn't need the full complexity of SQL. In the end I chose... SQLite.
+  - All of these embedded NoSQL databases seem to be missing critical features. 
+  - One such feature for my use case is database compaction. 
+  - Last I checked, an LMDB database file can never shrink. 
+  - Full compaction of LevelDB is slow and complicated (as I understand it essentially breaks the levels optimization which is the whole point of the thing.) 
+  - SQLite meanwhile supports fast incremental vacuum(清洁；真空), and it can be triggered manually or automatically.
+  - SQLite just has everything. Plus the reliability is unmatched. 
+  - Even if you just need a single table that maps blob keys to blob values, I would still recommend SQLite over any NoSQL database today.
+
+- The SQLite of NoSQL is still SQLite: https://www.sqlite.org/json1.html
+
+- Filesystem. Linux has VFS cache which is very robust and efficient.
+  - Remember that it is typical for programs to read /etc/nsswitch.conf, /etc/resolve.conf and tons of others at startup time - the filesystem is the datasource in Unix tradition, so the machinery is very well optimized.
+- SQLite has a backend which is well suited as a key-value store.
+  - Here is a NoSql database based on the SQLite backend
+  - https://github.com/symisc/unqlite
+    - UnQLite is an embedded NoSQL (Key/Value store and Document-store) database engine.
 
 - ## [sqlite rowid after deleting rows](https://stackoverflow.com/questions/35876171)
   - I delete rows with id 3 and 4 and run above query again.

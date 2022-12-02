@@ -19,6 +19,10 @@ modified: 2022-11-29T20:41:25.566Z
 - ## [Couchdb有在实际生产环境中使用的例子吗？ - 知乎](https://www.zhihu.com/question/20112928/answers/updated)
 - CouchDB是HTTP Restful API来操作数据库的，其它数据库系统使用TCP，在传输大量数据的情况下，HTTP协议在TCP协议之上，可能HTTP协议会比数据库自身实现的数据交互协议payload要大，造成网络性能略差
 
+- ## [meteor: Improve offline support_202110](https://github.com/meteor/meteor/discussions/11656)
+  - With Minimongo there is a touch of offline support. This could be taken further and improved. First step most likely being the ability to not loose offline only changes when the app is closed and then improved syncing once connection is restored. The final step possibly being that you could create offline-first Meteor app.
+  - There is also Hoodie which uses PouchDB and CouchDB as a pair to achieve this
+
 - ## [Nano-SQL: Offline use with Sync to Server_201801](https://github.com/only-cliches/Nano-SQL/issues/18)
 - Hey gents, I'm getting close to implementing this as a core feature.
 - [Here's what I'm thinking:](https://github.com/only-cliches/Nano-SQL/issues/18#issuecomment-392220931)

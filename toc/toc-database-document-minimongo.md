@@ -9,6 +9,9 @@ modified: 2022-11-30T18:57:26.459Z
 
 # guide
 
+- faq
+  - 是否同步的是全量数据，如何只同步用户相关的
+
 - minimongo/meteor 的replication协议参考 [Distributed Data Protocol (DDP)](https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md)
 
 - meteor

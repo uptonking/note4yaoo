@@ -105,9 +105,37 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/alfateam/rdb /js
   - ORM for nodejs. Supports postgres, msSql, mySql, Sybase SAP and sqlite.
 # database
+
+
+
 - https://github.com/codefollower/H2-Research
   - H2数据库源代码学习研究
   - 包括代码注释、文档、用于代码分析的测试用例
+# sqlite-like
+- sqlite /3.3kStar/public/202212/clang
+  - https://github.com/sqlite/sqlite
+  - https://sqlite.org/
+  - a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. 
+- https://github.com/CsharpDatabase/csharp-sqlite
+  - C# port of the SQLite library
+  - https://code.google.com/archive/p/csharp-sqlite/
+
+
+- dqlite /3.2kStar/LGPLv3/202212/clang
+  - https://github.com/canonical/dqlite
+  - dqlite is a C library that implements an embeddable and replicated SQL database engine with high-availability and automatic failover.
+  - dqlite extends SQLite with a network protocol that can connect together various instances of your application and have them act as a highly-available cluster, with no dependency on external databases.
+
+
+- https://github.com/rqlite/rqlite /202212/go
+  - distributed relational database, which uses SQLite as its storage engine. 
+
+- https://github.com/erikgrinaker/toydb /202205/rust
+  - Distributed SQL database in Rust, written as a learning project
+  - 内部自己实现了SQL Parser、Query Planner、Storage（包括一个B+Tree）和Raft，都是直接编写的（简化版本）的源码而不是用外部库，确实很适合用来学习
+
+- https://github.com/nukep/llamadb /201712/rust
+  - a simple SQL database, written entirely in Rust 
 # rdbms
 - https://github.com/PostgREST/postgrest
   - https://postgrest.org/

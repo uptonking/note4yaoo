@@ -12,8 +12,10 @@ modified: 2022-11-25T15:41:47.534Z
   - sync/collab/local-first
   - 最好支持切换存储层
   - database realtime
-  - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
   - minimongo/meteor 的replication协议参考 [meteor: Distributed Data Protocol (DDP)](https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md)
+  - [MongoDB Realm: Device Sync Protocol](https://www.mongodb.com/docs/atlas/app-services/sync/details/protocol/)
+  - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
+  - [remoteStorage Protocol](https://remotestorage.io/protocol/): defines a simple key/value store for apps to save and retrieve data
   - [Watermelon sync protocol](https://nozbe.github.io/WatermelonDB/Advanced/Sync.html)
   - firebase-like: supabase
   - [rxdb alternatives](https://rxdb.info/alternatives.html)

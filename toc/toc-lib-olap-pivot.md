@@ -54,6 +54,12 @@ modified: 2020-10-22T06:50:36.740Z
 
 - [Curated Datasets Overview / ObservableHQ](https://observablehq.com/@observablehq/curated-datasets)
   - [Sample Datasets / Observable](https://observablehq.com/@observablehq/sample-datasets)
+
+- duckdb /7.5kStar/MIT/202212/cpp
+  - https://github.com/duckdb/duckdb
+  - http://www.duckdb.org/
+  - DuckDB is an in-process SQL OLAP Database Management System
+  - DuckDB supports arbitrary and nested correlated subqueries, window functions, collations, complex types (arrays, structs), and more. 
 # pivot-computation
 - ref
   - clickhouse in js
