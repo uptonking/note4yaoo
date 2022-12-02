@@ -9,6 +9,11 @@ modified: 2021-08-30T18:56:09.644Z
 
 # orm
 
+- https://github.com/edgedb/imdbench
+  - A benchmark intended to compare various Python and JavaScript ORMs with realistic queries required for a hypothetical IMDB-style movie database application.
+  - js: prisma、typeorm、sequelize、edgedb
+  - python: django、sqlalchemy、edgedb
+
 - https://github.com/typeorm/typeorm
   - /22kStar/MIT/202011/ts
   - TypeORM is an ORM that can run in NodeJS, Browser, Cordova, PhoneGap, Ionic, React Native, NativeScript, Expo, and Electron platforms
@@ -83,8 +88,6 @@ modified: 2021-08-30T18:56:09.644Z
   - Work offline, work online, and seamlessly transition between both modes.
   - Support undo / redo.gg
 
-
-
 - https://github.com/Fibonacci-Solucoes-Ageis/MyBatisNodeJs /js
   - MyBatisNodeJs is a port from the The MyBatis data mapper framework for Node. Js.
   - MyBatisNodeJs understands the same xml files as input like MyBatis Java.
@@ -105,9 +108,6 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/alfateam/rdb /js
   - ORM for nodejs. Supports postgres, msSql, mySql, Sybase SAP and sqlite.
 # database
-
-
-
 - https://github.com/codefollower/H2-Research
   - H2数据库源代码学习研究
   - 包括代码注释、文档、用于代码分析的测试用例
@@ -120,12 +120,10 @@ modified: 2021-08-30T18:56:09.644Z
   - C# port of the SQLite library
   - https://code.google.com/archive/p/csharp-sqlite/
 
-
 - dqlite /3.2kStar/LGPLv3/202212/clang
   - https://github.com/canonical/dqlite
   - dqlite is a C library that implements an embeddable and replicated SQL database engine with high-availability and automatic failover.
   - dqlite extends SQLite with a network protocol that can connect together various instances of your application and have them act as a highly-available cluster, with no dependency on external databases.
-
 
 - https://github.com/rqlite/rqlite /202212/go
   - distributed relational database, which uses SQLite as its storage engine. 

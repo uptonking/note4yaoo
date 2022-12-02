@@ -70,6 +70,10 @@ modified: 2022-03-17T17:50:28.967Z
   - 支持批量导出
 
 - 同步 拼写检查cSpell、自定义短语、语法检查
+
+- marketplace
+  - template/page
+  - data/block
 # draft
 - 功能或菜单太多容易使人迷茫，考虑设计多个版本的前端：lite、pro、customized
 

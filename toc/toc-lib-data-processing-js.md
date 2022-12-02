@@ -20,6 +20,12 @@ modified: 2021-05-13T16:14:28.745Z
   - provides fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive
   - heavily inspired by Pandas library, and provides a similar API
 
+- data-forge-ts /1.2kStar/MIT/202208/ts
+  - https://github.com/data-forge/data-forge-ts
+  - http://www.data-forge-js.com/
+  - JavaScript data transformation and analysis toolkit inspired by Pandas and LINQ.
+  - As of v1.6.9 the dependencies Sugar, Lodash and Moment have been factored out
+
 - numjs /2.1kStar/MIT/202109/js/inactive
   - https://github.com/nicolaspanel/numjs
   - Like NumPy, in JavaScript, for scientific computing with JavaScript.

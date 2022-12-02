@@ -10,9 +10,10 @@ modified: 2021-08-30T18:57:27.645Z
 # database-schema-examples
 
 - https://github.com/prisma/database-schema-examples
+  - Database Schema Examples we strive to support in Prisma
   - This repository contains examples for database schemas, grouped by database. 
   - Useful whenever we need a real world example
-  - 很多常用的公开数据集，提供了mysql/pg/sqlite
+  - 提供了很多常用的公开数据集，在mysql/pg/sqlite各文件夹下数据不同
 
 - https://github.com/oracle/db-sample-schemas
   - Oracle Database Sample Schemas

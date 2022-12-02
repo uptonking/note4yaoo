@@ -106,13 +106,20 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 10-prosemirror-collab - ot - crdt
   - 11-idb-sync
 
-## 1201
+## 1203
 
 - dev-to
   - crdt tutorials
   - nedb
 
+## 1202
 
+- [宝塔配置mongodb - 掘金](https://juejin.cn/post/7064135651431546916)
+- [宝塔配置mongodb - 掘金](https://juejin.cn/post/7064135651431546916)
+
+- [Install MongoDB Community Edition on Ubuntu — MongoDB Manual](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
+
+## 1201
 
 - [Have Fragments support dangerouslySetInnerHTML · Issue #12014 · facebook/react](https://github.com/facebook/react/issues/12014)
   - this is a hack but for my use case this allows me to inject arbitrary html inside `head` tags
@@ -135,7 +142,6 @@ const EmailHead = ({ title = "" }) => {
 
 - [LGPL开源协议开发的库，能否商用？ - 知乎](https://www.zhihu.com/question/395491237)
   - LGPL 允许以动态链接使用开源库，同时，调用了该库的函数的那部分代码还是要开源的，除此之外的部分不需要开源。
-
 # dev-11
 
 ## 1130

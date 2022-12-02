@@ -119,7 +119,7 @@ modified: 2022-08-21T10:37:01.349Z
   - Team management app with authentication(MERN project)
   - 依赖 redux、reactstrap、socket.io
 
-- https://github.com/lawrencecchen/planetsheet
+- https://github.com/lawrencecchen/planetsheet /202207/ts/inactive
   - https://planetsheet.vercel.app/
   - 依赖 glide-data-grid、radix-ui、trpc、knex、react-query.v3
   - A SQL editor designed for developers and content editors.
