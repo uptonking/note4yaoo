@@ -48,7 +48,8 @@ modified: 2020-12-09T09:30:24.694Z
   - 后端依赖 express、pg、knex、passport
   - 前端依赖 blueprintjs、echarts、jspdf、react-ace、react-beautiful-dnd
 
-- https://github.com/Spotrix/spotrix
+- spotrix /11Star/apache2/202211/ts/flask
+  - https://github.com/Spotrix/spotrix
   - https://spotrix.github.io/spotrix-web/
   - A modern, enterprise-ready business intelligence web application.
   - 依赖flask-appbuilder、sqlalchemy

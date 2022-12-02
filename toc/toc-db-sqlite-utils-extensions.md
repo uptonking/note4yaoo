@@ -8,6 +8,11 @@ modified: 2022-11-04T14:20:37.172Z
 # toc-db-sqlite-utils-extensions
 
 # popular
+- https://github.com/WiseLibs/better-sqlite3
+  - The fastest and simplest library for SQLite3 in Node.js.
+  - https://github.com/beenotung/better-sqlite3-proxy
+    - Efficiently proxy sqlite tables and access data as typical array of objects
+
 - https://github.com/benbjohnson/litestream /go
   - Streaming replication for SQLite.
 # extensions
@@ -38,6 +43,11 @@ modified: 2022-11-04T14:20:37.172Z
 - https://github.com/dimitri/pgloader
   - Migrate to PostgreSQL in a single command!
   - MySQL/SQLite/MSSQL to PSQL
+
+- https://github.com/jayralencar/sqlite-sync.js /202108/js
+  - Node module to sqlite sync and async
+  - node.js package for database connection with SQLite , and execute SQL commands synchronously or asynchronously.
+
 # excel
 - https://github.com/x2bool/xlite /202210/rust
   - SQLite extension for querying Excel (.xlsx, .xls, .ods) files as virtual tables

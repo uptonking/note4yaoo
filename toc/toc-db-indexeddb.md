@@ -17,6 +17,23 @@ modified: 2022-06-03T22:06:16.249Z
 - 用indexeddb如何保存和更新层数很深的树型数据？
   - 可以将tree打平为索引号 1.1, 1.2.1
 # popular
+- lo-fi /7Star/MIT/202211/ts/依赖少
+  - https://github.com/a-type/lo-fi
+  - https://lo-fi.gfor.rest/docs/intro
+  - An IndexedDB-powered database and data sync solution for lightweight, local-first web apps.
+  - server依赖sqlite、jwt、ws
+  - Undo and redo changes
+  - it includes an optional server which unlocks the power of sync and realtime
+  - One small, generic syncing server is all you need
+  - the goal of lo-fi is to be simple and recognizable.
+    - NO. Infinitely growing storage usage
+    - NO. Having to deeply understand CRDTs
+    - NO. Peer to peer networking
+    - NO. WASM-compiled databases in your browser
+  - https://github.com/a-type/aglio
+    - The web app is designed to work local-first and local-only. 
+    - React-based PWA.
+
 - minimongo /1kStar/LGPLv3/202207/ts/多种web存储
   - https://github.com/mWater/minimongo
   - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.

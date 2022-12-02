@@ -79,7 +79,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - url-as-state-management
   - 灵活的tag/bookmark系统
   - docker打包前端
-# dev-11
+# dev-12
 - eg-prosemirror-examples+collab
   - 重写collab示例的交互，参考blocky-editor在一个页面展示多个编辑器且支持实时协作
   - [x] 用websocket替换轮询，可基于socket.io
@@ -106,11 +106,37 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 10-prosemirror-collab - ot - crdt
   - 11-idb-sync
 
-## 1129
+## 1201
 
 - dev-to
   - crdt tutorials
   - nedb
+
+
+
+- [Have Fragments support dangerouslySetInnerHTML · Issue #12014 · facebook/react](https://github.com/facebook/react/issues/12014)
+  - this is a hack but for my use case this allows me to inject arbitrary html inside `head` tags
+
+```typescript
+const RawHtml = ({ html = "" }) => (
+  <script dangerouslySetInnerHTML={{ __html: `</script>${html}<script>` }} />
+);
+
+const EmailHead = ({ title = "" }) => {
+  return (
+    <head>
+      <title>{title}</title>
+      <RawHtml html={`<!--[if !mso]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge"><!--<![endif]-->`} />
+    </head>
+  )
+}
+
+```
+
+- [LGPL开源协议开发的库，能否商用？ - 知乎](https://www.zhihu.com/question/395491237)
+  - LGPL 允许以动态链接使用开源库，同时，调用了该库的函数的那部分代码还是要开源的，除此之外的部分不需要开源。
+
+# dev-11
 
 ## 1130
 
@@ -694,6 +720,7 @@ initTodoTypes();
 
 - [Store application-specific data](https://developers.google.com/drive/api/guides/appdata)
   - `appDataFolder` 在ui上始终不可见
+# dev-10
 
 ## 1031
 

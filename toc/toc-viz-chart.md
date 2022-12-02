@@ -73,8 +73,16 @@ modified: 2020-10-22T10:22:33.292Z
   - https://www.rgraph.net/
   - started in 2008 and was initially canvas only.
   - Now it has support for over 60 responsive chart types across SVG and canvas
-# geo-charts
-- cedar /227Star/Apache2/201905/ts
+# gis-charts
+- bertin /222Star/MIT/202212/js/d3js
+  - https://github.com/neocarto/bertin
+  - https://observablehq.com/collection/@neocartocnrs/bertin
+  - Bertin.js is a JavaScript library for visualizing geospatial data and make thematic maps for the web.
+  - mainly based on D3.js 
+  - The principle is to work with layers stacked on top of one other.
+  - some of common layers are: header, footer, graticule, outline, choro, typo, prop, shadow, scalebar, text etc.
+
+- cedar /242Star/Apache2/202101/ts/amcharts
   - https://github.com/Esri/cedar
   - https://esri.github.io/cedar
   - JavaScript Charts for ArcGIS

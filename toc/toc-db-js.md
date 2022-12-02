@@ -11,6 +11,7 @@ modified: 2022-11-25T15:50:48.226Z
 
 - db-latest
   - sync/collab/local-first
+  - 最好支持切换存储层
 
 - ref
   - [Offline-First Database Options for Web Applications in 2020](https://joshuatz.com/posts/2020/offline-first-database-options-for-web-applications-in-2020/)
@@ -79,12 +80,57 @@ modified: 2022-11-25T15:50:48.226Z
   - A copy of the whole database is kept in memory. This is not much on the expected kind of datasets (20MB for 10, 000 2KB documents).
   - You can use NeDB as an in-memory only datastore or as a persistent datastore. 
 
-- WatermelonDB /8.7kStar/MIT/202211/js/rxjs/lokijs
+- alasql /6kStar/MIT/202211/js/bi
+  - https://github.com/AlaSQL/alasql
+  - an open source SQL database for JavaScript with a strong focus on query speed and data source flexibility for both relational data and schemaless data. 
+  - It works in the web browser, Node.js, and mobile apps.
+  - Handles both traditional relational tables and nested JSON data (NoSQL). 
+    - Export, store, and import data from localStorage, IndexedDB, or Excel.
+  - This library is designed for:
+    - Fast in-memory SQL data processing for BI and ERP applications on fat clients
+    - Easy ETL and options for persistence by data import / manipulation / export of several formats
+    - All major browsers, Node.js, and mobile applications
+  - it's working towards a full database engine complying with most of the SQL-99 language, spiced up with additional syntax for NoSQL (schema-less) data and graph networks.
+  - https://github.com/agershun/alamdx
+    - MDX OLAP JavaScript library for Alasql database
+- https://github.com/gratico/satya /starter
+  - WIP: Satya is a distributed database using Apache Arrow as a Storage format and aims to support both OTLP(transaction processing) and OLAP(analytical processing) workloads. 
+  - 依赖 duckdb-wasm、apache-arrow
+
+- WatermelonDB /8.7kStar/MIT/202211/js/lokijs
   - https://github.com/Nozbe/WatermelonDB
+  - https://nozbe.github.io/WatermelonDB/
   - Reactive & asynchronous database for powerful React and React Native apps
-  - And since all querying is performed directly on the rock-solid SQLite database on a separate native thread, most queries resolve in an instant.
+  - Relational. Built on rock-solid SQLite foundation
+  - Framework-agnostic. Use JS API to plug into other UI frameworks
+  - Reactive. (Optional) RxJS API
   - Lazy: Nothing is loaded until it's requested. 
-  - But unlike using SQLite directly, Watermelon is fully observable.
+    - And since all querying is performed directly on the rock-solid SQLite database on a separate native thread, most queries resolve in an instant.
+    - But unlike using SQLite directly, Watermelon is fully observable.
+  - [Adapters - WatermelonDB documentation](https://nozbe.github.io/WatermelonDB/Implementation/Adapters.html)
+    - The idea for the Watermelon architecture is to be database-agnostic.
+    - Collection/Model/Query is the reactive layer
+    - DatabaseAdapter is the imperative layer
+    - SQLiteAdapter is an adapter for React Native, based on SQLite
+    - LokiJSAdapter is an adapter for the web, based around LokiJS
+  - [Sync - WatermelonDB documentation](https://nozbe.github.io/WatermelonDB/Advanced/Sync.html)
+    - Note that Watermelon is only a local database — you need to bring your own backend.
+    - You can build your own custom sync engine using synchronization primitives
+    - You can use the sync engine(built-in sync adapter) Watermelon provides out of the box, and you only need to provide two API endpoints on your backend that conform to Watermelon sync protocol
+    - `synchronize(dbName, pullChanges, pushChanges)` 在客户端调用
+    - "Turbo Login" syncing can only be used for the initial (login) sync, not for incremental syncs.
+    - WatermelonDB has been designed with the assumption that there is no difference between Local IDs (IDs of records and their relations in a WatermelonDB database) and Remote IDs (IDs on the backend server). 
+    - So a local app can create new records, generating their IDs, and the backend server will use this ID as the true ID.
+    - sync could only send changed fields and server could automatically always just apply those changed fields to the server version (since that's what per-column client-wins resolver will do anyway)
+  - [Sync implementation - WatermelonDB documentation](https://nozbe.github.io/WatermelonDB/Implementation/SyncImpl.html)
+    - master/replica - server is the source of truth, client has a full copy and syncs back to server (no peer-to-peer syncs)
+    - two phase sync: first pull remote changes to local app, then push local changes to server
+    - client resolves conflicts
+    - content-based, not time-based conflict resolution
+    - eventual consistency (client and server are consistent at the moment of successful pull if no local changes need to be pushed)
+    - conflicts are resolved using per-column client-wins strategy: in conflict, server version is taken except for any column that was changed locally since last sync.
+    - sync is performed for the entire database at once, not per-collection
+    - non-blocking: local database writes (but not reads) are only momentarily locked when writing data but user can safely make new changes throughout the process
 
 - lovefield /6.8kStar/Apache2/202005/js/inactive
   - https://github.com/google/lovefield
@@ -101,18 +147,6 @@ modified: 2022-11-25T15:50:48.226Z
   - The super fast in-memory javascript document oriented database.
   - Its purpose is to store javascript objects as documents in a nosql fashion and retrieve them with a similar mechanism. 
   - Runs in node (including cordova/phonegap and node-webkit), nativescript and the browser.
-
-- alasql /6kStar/MIT/202211/js/bi
-  - https://github.com/AlaSQL/alasql
-  - an open source SQL database for JavaScript with a strong focus on query speed and data source flexibility for both relational data and schemaless data. 
-  - It works in the web browser, Node.js, and mobile apps.
-  - Handles both traditional relational tables and nested JSON data (NoSQL). 
-    - Export, store, and import data from localStorage, IndexedDB, or Excel.
-  - This library is designed for:
-    - Fast in-memory SQL data processing for BI and ERP applications on fat clients
-    - Easy ETL and options for persistence by data import / manipulation / export of several formats
-    - All major browsers, Node.js, and mobile applications
-  - it's working towards a full database engine complying with most of the SQL-99 language, spiced up with additional syntax for NoSQL (schema-less) data and graph networks.
 
 - https://github.com/typicaljoe/taffydb /201509/js/单文件
   - TaffyDB is an open source JavaScript library that provides powerful in-memory database capabilities to both browser and server applications.

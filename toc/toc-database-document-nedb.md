@@ -8,11 +8,7 @@ modified: 2022-11-26T17:35:24.870Z
 # toc-database-document-nedb
 
 # guide
-
-# community
-- ## [It is possibile do operations (find, update, etc..) in synchronous mode?](https://github.com/louischatriot/nedb/issues/445)
-- When using memory-only mode, synchronous operations will be very useful, for example, if using NeDB as storage provider for redux. Also, when working in memory-only mode, there is no requirement to perform async operations, due there is not any read I/O
-- I would say it is more a result of his design goal to have a consistent API regardless of what backing store is being used (in-memory, localStorage, IndexedDB, Node.js file system, etc.).
+- 不支持同步
 # nedb-like
 - nedb /13.1kStar/MIT/201602/js
   - https://github.com/louischatriot/nedb
@@ -54,11 +50,13 @@ modified: 2022-11-26T17:35:24.870Z
       - Inserting a duplicate key will overwrite the existing key.
       - Keys must all be the same data type.
 
-- https://github.com/tedb-org/teDB /201908/ts/inactive
+- teDB /83Star/MIT/201908/ts/inactive
+  - https://github.com/tedb-org/teDB
   - A structure sane embedded database with pluggable storage and clean concise documentation.
   - TeDB uses an AVL balanced binary tree `binary-type-tree` to save indexed fields of documents.
   - a storage driver that can either work to persists data to disk or save data to memory. 
   - It is not exactly like nedb. It should be able to handle very large collections.
+  - Tedb was made with pure intention to work on electron. The only storage driver I have written is the tedb electron storage driver. There is also a utils package.
   - https://github.com/marcusjwhelan/binary-type-tree
     - AVL Tree for Node and the browser with TypeScript
     - I forked the binary tree written in nedb and rewrote most of it and added some extra restrictions and capabilities
@@ -126,6 +124,17 @@ modified: 2022-11-26T17:35:24.870Z
 - https://github.com/RodgerLai/nodejs-nedb-excel /201703/js
   - 基于nodejs+webpack, 以nosql轻量级嵌入式数据库nedb作为存储，页面渲染采用react+redux, 样式框架为ant design, 实现了excel表格上传导出以及可视化
   - 依赖 https://github.com/jiangxy/react-antd-admin
+
+- openKB /636Star/MIT/202205/js/inactive/view层handlebars/nedb
+  - https://github.com/mrvautin/openKB
+  - https://openkb.markmoffat.com/
+  - 体验和helpkb基本一致
+  - 依赖nedb、express、jquery、lunr、markdown-it
+  - openKB is a Markdown Knowledge base application (FAQ) built with Nodejs and ExpressJS. 
+  - The application uses an embedded database (nedb) by default but can also use a MongoDB server by changing the config
+  - openKB is a search based Knowledge base (FAQ) backed by Lunr.js indexing 
+  - openKB uses the pure Javascript nedb embedded database by default or a MongoDB server.
+  - openKB uses Markdown-it
 
 - https://github.com/leonardporteria/weight-recording-app
   - https://weight-recording-app.herokuapp.com/
@@ -223,7 +232,5 @@ modified: 2022-11-26T17:35:24.870Z
 - https://github.com/Jianxff/NEDB /cpp/B+Tree
   - NEDB 是基于 C++ 的简单数据库. 项目参考 SQLite 底层原理与 InnoDB 引擎, 实现数据库[增-删-查-改]的基本操作, 并提供控制台界面与外部接口.
 
-
 - https://github.com/seppevs/migrate-mongo
   - A database migration tool for MongoDB in Node
-

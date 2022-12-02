@@ -124,19 +124,18 @@ modified: 2020-10-22T06:50:36.740Z
 - https://github.com/vinnik-dmitry07/db-comp
   - A comparison of DuckDB columnar database and relational PostgreSQL.
 
+- https://github.com/gratico/satya
+  - WIP: Satya is a distributed database using Apache Arrow as a Storage format and aims to support both OTLP(transaction processing) and OLAP(analytical processing) workloads. 
+  - 依赖 duckdb-wasm、apache-arrow
+
 - https://github.com/codenautas/sql-tools /js
   - Transfor a SQL sentence in a SQL with totals.
-
-
 # more-olap
-
 - https://github.com/rilldata/rill-developer
   - https://docs.rilldata.com/
   - transform your datasets with SQL and create powerful, opinionated dashboards.
   - powered by Sveltekit & DuckDB
   - works with your local and remote datasets – imports and exports Parquet and CSV
-
-
 
 - https://github.com/altair-viz/altair
   - Declarative statistical visualization library for Python

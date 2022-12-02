@@ -137,9 +137,13 @@ modified: 2022-11-07T17:37:27.579Z
   - A social media React web app for musicians to connect and collaborate. 
   - Built with NextJS, ReactJS, Supabase
 # utils
-- https://github.com/amark/gun
+- https://github.com/amark/gun /202212/js
   - GUN is an ecosystem of tools that let you build community run and encrypted applications - like an Open Source Firebase or a Decentralized Dropbox.
   - Multiplayer by default with realtime p2p state synchronization!
+
+- https://github.com/holochain/holochain /202212/rust
+  - Holochain is an open-source framework to develop peer-to-peer applications with high levels of security, reliability, and performance.
+  - simplified version of Holochain on Rust (sometimes called Holochain RSM for Refactored State Model)
 
 - https://github.com/gundb/panic-server
   - Panic is an end-to-end testing framework, designed specifically for distributed systems and collaborative apps.

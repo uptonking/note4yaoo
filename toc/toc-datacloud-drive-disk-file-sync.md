@@ -69,7 +69,7 @@ modified: 2022-09-10T02:26:52.062Z
   - 一个支持多存储的文件列表程序，基于 go-Gin 和 Solidjs。
   - 支持 国内外主流网盘
 
-- firefiles /133Star/GPLv3/202207/ts
+- firefiles /133Star/GPLv3/202207/ts/inactive
   - https://github.com/faisalsayed10/firefiles
   - https://firefiles.vercel.app/
   - https://firefiles.vercel.app/docs/self-host
@@ -88,7 +88,7 @@ modified: 2022-09-10T02:26:52.062Z
   - MyDrive uses mongoDB to store file/folder metadata, and supports multiple databases to store the file chunks, such as Amazon S3, the Filesystem, or just MongoDB. 
   - https://github.com/vitstef/myDrive
 
-- ezshare /202207/js
+- ezshare /324Star/MIT/202207/js/inactive
   - https://github.com/mifi/ezshare
   - A simple file server that lets you easily share many big files like photos and videos with friends (or between your devices) over a local network without requiring an internet connection.
   - If you don't want to install Node.js, you can download a zipped executable of ezshare
@@ -96,20 +96,21 @@ modified: 2022-09-10T02:26:52.062Z
   - Then anyone can then connect to the server and download files or automatically generated ZIP of whole directories (kind of like Google Drive.) 
   - The client can also upload files to the server via their browser, and clipboard card be shared both ways. A QR code is generated for convenience.
 
-- https://github.com/internxt/drive-web
+- internxt-drive-web /78Star/AGPLv3/202212/ts
+  - https://github.com/internxt/drive-web
   - https://internxt.com/drive
   - 类似dropbox
   - 依赖reduxjs/toolkit、idb、react-dnd
   - at Internxt, we've created a suite of services truly focused on you. Switch to Internxt Drive, Photos, Send
-- https://github.com/internxt/drive-server-wip
-  - WIP: New version of Drive Server based in NestJS
-  - based on NestJS and implements DDD (Domain Driven Design). 
-  - Our implementation has these layers: Use cases; Persistence; Domain; Controllers
+  - https://github.com/internxt/drive-server-wip
+    - WIP: New version of Drive Server based in NestJS
+    - based on NestJS and implements DDD (Domain Driven Design). 
+    - Our implementation has these layers: Use cases; Persistence; Domain; Controllers
   - https://github.com/internxt/drive-server
     - 依赖express实现，旧版
     - Database setup (MariaDB)
-- https://github.com/internxt/drive-mobile
-  - Current react-native-reanimated fails with Android using RN 0.64
+  - https://github.com/internxt/drive-mobile
+    - Current react-native-reanimated fails with Android using RN 0.64
 # cloud-drive-sync
 - https://github.com/reruin/sharelist
   - ShareList 是一个易用的网盘工具，支持快速挂载 GoogleDrive、OneDrive

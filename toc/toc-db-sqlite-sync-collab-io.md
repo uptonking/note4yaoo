@@ -16,6 +16,13 @@ modified: 2022-11-04T14:21:31.365Z
 - https://github.com/isaiahnields/csv-to-sqlite
   - A desktop app to convert CSV files to SQLite databases!
 # sync
+
+- https://github.com/aNinjaMonk/sync-server /201911/js
+  - Syncing between local SQLite & remote PostgreSQL
+
+- https://github.com/rla/sql-sync /201306/js
+  - Offline replication between SQLite (clients) and MySQL (master). 
+
 - https://github.com/rkusa/do-sqlite
   - Persist SQLite in a Cloudflare Durable Object
 # collab

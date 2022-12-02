@@ -9,8 +9,10 @@ modified: 2022-11-30T18:56:07.072Z
 
 # guide
 
+- pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
+
 - alternatives
-  - pouchdb server
+  - pouchdb server    /inactive
 
 - [CouchDB Best Practices](https://jo.github.io/couchdb-best-practices/)
   - https://github.com/jo/couchdb-best-practices
@@ -30,7 +32,7 @@ modified: 2022-11-30T18:56:07.072Z
     - RxDB was originally build around PouchDB until the storage layer was abstracted out in version 10.0.0(202107)
     - PouchDB has some performance issues because of how it has to store the document revision tree to stay compatible with the CouchDB API.
 
-- pouchdb-server /894Star/apache2/202108/js
+- pouchdb-server /894Star/apache2/202108/js/内存/sqlite
   - https://github.com/pouchdb/pouchdb-server
   - PouchDB Server is a drop-in replacement for CouchDB, using PouchDB and Node.js.
   - 依赖pouchdb、bluebird、couchdb-render、express、xhr2

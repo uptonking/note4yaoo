@@ -22,13 +22,25 @@ modified: 2021-05-25T09:40:55.797Z
   - Auto-generated APIs
   - Dashboard
 
-- https://github.com/parse-community/parse-server
-  - Parse Server works with the Express web application framework.
-
 - appwrite /27.4kStar/BSD/202211/ts/php
   - https://github.com/appwrite/appwrite
   - https://appwrite.io/
   - Appwrite is an end-to-end backend server for Web, Mobile, Native, or Backend apps packaged as a set of Docker microservices. 
+
+- https://github.com/parse-community/parse-server
+  - Parse Server works with the Express web application framework.
+
+- https://github.com/asheghi/NeoBase /202209/ts/inactive
+  - The open source Firebase alternative
+  - NeoBase is a hosted platform. You can sign up and start using NeoBase without installing anything. You can also self-host and develop locally.
+  - 依赖 express、mongoose、vue
+
+- https://github.com/asheghi/waterbase /202104/js
+  - an attempt to create an alternative for CloudFlare realtime database, Cloud FireStore
+  - add `Subscription` to Keystone.js CMS GraphQL api
+
+- https://github.com/TheHadiAhmadi/minibase /202211/js
+  - minimal (and slow) firebase alternative
 
 - https://github.com/pocketbase/pocketbase /go/svelte
   - PocketBase is an open source Go backend
@@ -43,3 +55,6 @@ modified: 2021-05-25T09:40:55.797Z
   - http://docs.kinto-storage.org/
   - A generic JSON document store with sharing and synchronisation capabilities.
   - Backends: In-memory (development), PostgreSQL 9.5+ (production)
+
+- https://github.com/nils-simons/spackoDB /202206/js/starter
+  - Firestore Alternative

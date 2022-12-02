@@ -13,7 +13,7 @@ modified: 2022-04-23T18:48:32.550Z
 
 - ## 
 
-- ## 
+- ## [Google Sheets Advent Calendar](https://www.benlcollins.com/spreadsheets/google-sheets-advent-calendar/)
 
 - ## Introducing:  Observable for Excel Users! 
  - https://observablehq.com/@observablehq/excel-introduction?collection=%40observablehq%2Fobservable-blog

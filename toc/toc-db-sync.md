@@ -8,20 +8,28 @@ modified: 2022-11-25T15:41:47.534Z
 # toc-db-sync
 
 # guide
-- alternatives
+- sync-protocols
   - sync/collab/local-first
+  - 最好支持切换存储层
   - database realtime
-  - meteor minimongo
+  - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
+  - minimongo/meteor 的replication协议参考 [meteor: Distributed Data Protocol (DDP)](https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md)
+  - [Watermelon sync protocol](https://nozbe.github.io/WatermelonDB/Advanced/Sync.html)
+  - firebase-like: supabase
   - [rxdb alternatives](https://rxdb.info/alternatives.html)
 
-- [Comparison of Offline Sync Protocols and Implementations](https://offlinefirst.org/sync/)
-  - couchdb/realm/firebase
-- [rxdb: Replication](https://rxdb.info/replication.html)
+- [RxDB replication protocol](https://rxdb.info/replication.html)
   - 支持websocket、graphql、couchdb、p2p
   - The RxDB replication protocol provides the ability to replicate the database state in realtime between the clients and the server.
   - The backend server does not have to be a RxDB instance; you can build a replication with any infrastructure. For example you can replicate with a custom GraphQL endpoint or a http server on top of a PostgreSQL database.
   - 👉🏻 RxDB resolves all conflicts on the client so it would call the conflict handler of the RxCollection and create a new document state D that can then be written to the master.
+  - The default conflict handler will always drop the fork/client state and use the master/server state.
+    - This ensures that clients that are offline for a very long time, do not accidentally overwrite other peoples changes when they go online again. 
+    - You can specify a custom conflict handler by setting the property `conflictHandler` when calling addCollection().
   - It is not possible to do a multi-master replication, like with CouchDB. RxDB always assumes that the backend is the single source of truth.
+
+- [Comparison of Offline Sync Protocols and Implementations](https://offlinefirst.org/sync/)
+  - couchdb/realm/firebase
 # db-sync
 - synceddb-multi-backends /388Star/MIT/201803/js/indexeddb/支持多种后端存储
   - https://github.com/paldepind/synceddb

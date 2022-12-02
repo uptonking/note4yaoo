@@ -29,6 +29,16 @@ modified: 2021-08-06T07:36:05.864Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## On iPadOS, when connected to a keyboard, holding Command brings up this menu. 
+- https://twitter.com/steveruizok/status/1598287351373234178
+  - This is breaking for a bunch of apps that use the Command modifier. 
+  - Has anyone been able to prevent it?
+- I recommend @figurativeapp if you want to use Figma on iPadOS, it resolves a lot of issues and allows you to use custom fonts installed via the Fontcase app
+
 - ## Specifically, each shape in tldraw is an absolutely positioned div. 
 - https://twitter.com/kriswuollett/status/1572572261890297856
   - Could contain an SVG image (like these) but it could also contain anything—arbitrary html, video, whatever. 

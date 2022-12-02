@@ -41,6 +41,9 @@ modified: 2022-06-13T02:56:51.029Z
 
 - ## 
 
+- ## [Indexing array values in an object in an IndexedDB - Stack Overflow](https://stackoverflow.com/questions/36921561/indexing-array-values-in-an-object-in-an-indexeddb)
+- the missing of the possibility to index object values in arrays, makes using indexedDB really unneeded complicated. It's a failure in design. This forces the developer to do things like in relational DBs, while lacking all the possibilities of SQL. 
+
 - ## [IndexedDB - Is keyPath already an Index? - Stack Overflow](https://stackoverflow.com/questions/31908605/indexeddb-is-keypath-already-an-index)
 - It doesn't technically create an index, but it's basically the same thing. 
   - Every object in the database is associated with a key. 

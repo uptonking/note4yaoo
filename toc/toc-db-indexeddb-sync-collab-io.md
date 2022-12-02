@@ -26,15 +26,15 @@ modified: 2022-10-22T18:47:16.228Z
   - for `remoteStorage.local`, a choice is made between `RemoteStorage.IndexedDB`,  `RemoteStorage.LocalStorage` and `RemoteStorage.InMemoryCaching`, depending on what the environment (browser, node.js, Electron, WebView, or other) supports.
   - Data modules make your app and its data interoperable with other apps.
 
-- lo-fi /7Star/MIT/202211/ts
+- lo-fi /7Star/MIT/202211/ts/依赖少
   - https://github.com/a-type/lo-fi
-  - https://lo-fi.gfor.rest/
+  - https://lo-fi.gfor.rest/docs/intro
   - An IndexedDB-powered database and data sync solution for lightweight, local-first web apps.
   - server依赖sqlite、jwt、ws
   - Undo and redo changes
   - it includes an optional server which unlocks the power of sync and realtime
+  - One small, generic syncing server is all you need
   - the goal of lo-fi is to be simple and recognizable.
-    - One small, generic syncing server is all you need
     - NO. Infinitely growing storage usage
     - NO. Having to deeply understand CRDTs
     - NO. Peer to peer networking

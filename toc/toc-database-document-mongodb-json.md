@@ -8,27 +8,18 @@ modified: 2022-11-03T04:14:11.987Z
 # toc-database-document-mongodb-json
 
 # guide
+- alternatives
+  - minimongo
+  - nedb
+
 - 更适合block-editor的数据结构是否是 mongodb？
 # mongodb-like
-- minimongo /1kStar/LGPLv3/202207/ts
-  - https://github.com/mWater/minimongo
-  - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
-    - Uses code from Meteor.js minimongo package(2014), reworked to support more geospatial queries 
-  - It is either IndexedDb backed (IndexedDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
-  - sqlite plugin is also supported when available
-  - ReplicatingDb: Keeps two local databases in sync. Finds go only to master.
-  - Minimongo is designed to work with a server that performs three-way merging of documents that are being upserted by multiple users.
-  - Compared to RxDB, Minimongo has no concept of revisions or conflict handling, which might lead to undefined behavior when used with replication or in multiple browser tabs. Minimongo has no observable queries or changestream.
-
-
-
-- https://github.com/usmakestwo/githubDB /201811/js
-  - A Lightweight Cloud based JSON Database with a MongoDB like API for Node.
-  - You will never know that you are interacting with a Github
-
-- https://github.com/arvindr21/diskDB /201712/js
-  - A Lightweight Disk based JSON Database with a MongoDB like API for Node
-  - You will never know that you are interacting with a File System
+- zangodb /1kStar/MIT/201710/js
+  - https://github.com/erikolson186/zangodb
+  - https://erikolson186.github.io/zangodb/
+  - ZangoDB is a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
+  - an implementation of IndexedDB is required. 
+    - For environments without a native implementation of IndexedDB, Fake IndexedDB can be used
 
 - yunodb /246Star/CC0/201704/js/leveldb
   - https://github.com/blahah/yunodb
@@ -39,33 +30,36 @@ modified: 2022-11-03T04:14:11.987Z
   - forks
     - https://github.com/pdepip/yunodb
 
-- https://github.com/Belphemur/node-json-db
-  - A simple "database" that use JSON file for NodeJS
-  - Every method are now asynchronous
-
 - picodb /31Star/MIT/202201/js
   - https://github.com/jclo/picodb
   - A tiny in-memory database (MongoDB like) that stores JSON documents
   - It runs both on Node.js and in the ES6 compliant browsers.
   - A document is a Javascript literal object. It is similar to a JSON object. 
 
-- zangodb /1kStar/MIT/201710/js
-  - https://github.com/erikolson186/zangodb
-  - https://erikolson186.github.io/zangodb/
-  - ZangoDB is a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
-  - an implementation of IndexedDB is required. 
-    - For environments without a native implementation of IndexedDB, Fake IndexedDB can be used
+- https://github.com/usmakestwo/githubDB /201811/js
+  - A Lightweight Cloud based JSON Database with a MongoDB like API for Node.
+  - You will never know that you are interacting with a Github
+
+- https://github.com/arvindr21/diskDB /201712/js
+  - A Lightweight Disk based JSON Database with a MongoDB like API for Node
+  - You will never know that you are interacting with a File System
+
+- https://github.com/Belphemur/node-json-db
+  - A simple "database" that use JSON file for NodeJS
+  - Every method are now asynchronous
 
 - https://github.com/Ivshti/linvodb3
   - LinvoDB is a Node.js/NW.js/Electron persistent DB with MongoDB/Mongoose-like features and interface.
   - MongoDB-like query language
   - Persistence built on LevelUP - you can pick back-end
 
-- https://github.com/kofrasa/mingo
-  - MongoDB query language for in-memory objects
-
 - https://github.com/sergeyksv/tingodb /201901/js
   - an embedded JavaScript in-process filesystem or in-memory database upwards compatible with MongoDB at the v1.4 API level.
+
+- https://github.com/elmarti/camadb /202110/ts/inactive
+  - a NoSQL embedded database written in pure TypeScript for Node, Electron and browser
+  - SQLite doesn't (by default) return native JS data types (Dates in particular)
+  - We use Mingo for aggregation - currently lookup commands aren't supported.
 # db-document-json
 - redux-database /18Star/MIT/202005/ts/NoDeps
   - https://github.com/nerdgeschoss/redux-database
@@ -98,11 +92,6 @@ modified: 2022-11-03T04:14:11.987Z
 
 - https://github.com/sanity-io/groq-store
   - In-memory GROQ store. Streams all available documents from Sanity into an in-memory database and allows you to query them there.
-
-- https://github.com/elmarti/camadb /202110/ts/inactive
-  - a NoSQL embedded database written in pure TypeScript for Node, Electron and browser
-  - SQLite doesn't (by default) return native JS data types (Dates in particular)
-  - We use Mingo for aggregation - currently lookup commands aren't supported.
 # tree-like/nested
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!
@@ -124,10 +113,15 @@ modified: 2022-11-03T04:14:11.987Z
 - https://github.com/epochtalk/treedb
   - Database for tree structured data
   - LevelDB backend for hierarchical data.
-# mongodb-render-ui
+# mongodb-utils
+- https://github.com/kofrasa/mingo /202211/ts
+  - MongoDB query language for in-memory objects
+
+- https://github.com/slacy/minimongo /202001/python
+  - a lightweight, schemaless, Pythonic Object-Oriented interface to MongoDB
+# mongodb-examples
 
 # more-document-json
-
 - https://github.com/Irrelon/ForerunnerDB /202006/js
   - ForerunnerDB is a NoSQL JavaScript JSON database with a query language based on MongoDB (with some differences) and runs on browsers and Node.js.
   - ForerunnerDB is the most advanced, battle-tested and production ready browser-based JSON database system available today.

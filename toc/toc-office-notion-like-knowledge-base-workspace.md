@@ -140,7 +140,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 前端依赖 react、redux-toolkit、codemirror.v6、bootstrap.v4、flowchart.js、markdown-it.v12、katex、vega、i18next、next.v12、react-bootstrap、yjs
   - 支持markdown的分屏预览，一边源码、一边预览，同步滚动
 
-- helpkb /8Star/MIT/202208/js
+- helpkb /8Star/MIT/202209/js
   - https://github.com/mrvautin/helpkb
   - https://docs.helpkb.org/
   - 后端依赖 express、sequelize、gray-matter
@@ -152,7 +152,9 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/mrvautin/openKB
   - https://openkb.markmoffat.com/
   - 体验和helpkb基本一致
-  - openKB is a Markdown Knowledge base application (FAQ) built with Nodejs and ExpressJS. The application uses an embedded database (nedb) by default but can also use a MongoDB server by changing the config (see below)
+  - 依赖nedb、express、jquery、lunr、markdown-it
+  - openKB is a Markdown Knowledge base application (FAQ) built with Nodejs and ExpressJS. 
+  - The application uses an embedded database (nedb) by default but can also use a MongoDB server by changing the config
   - openKB is a search based Knowledge base (FAQ) backed by Lunr.js indexing 
   - openKB uses the pure Javascript nedb embedded database by default or a MongoDB server.
   - openKB uses Markdown-it
