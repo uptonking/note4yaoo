@@ -14,6 +14,13 @@ modified: 2022-11-03T04:14:11.987Z
 
 - 更适合block-editor的数据结构是否是 mongodb？
 # mongodb-like
+
+- sift.js /1.6kStar/MIT/202211/ts
+  - https://github.com/crcn/sift.js
+  - Use Mongodb queries in JavaScript
+  - Supports node.js, and web
+
+
 - zangodb /1kStar/MIT/201710/js
   - https://github.com/erikolson186/zangodb
   - https://erikolson186.github.io/zangodb/

@@ -59,8 +59,8 @@ modified: 2022-06-13T02:57:07.648Z
 
 - When you use IndexedDB in a browser, there is of course no way to split the load between the client and other servers. 
 - Partitioning the documents horizontally into multiple IndexedDB stores, has shown to have a big performance improvement in write- and read operations while only increasing initial pageload slightly.
-  - sharding should always be done by IDBObjectStore and not by database. 
-  - Running a batched cursor over the whole dataset with 10 store shards in parallel is about 28% faster then running it over a single store.
+  - sharding should always be done by `IDBObjectStore` and not by database. 
+  - 👉🏻 Running a batched cursor over the whole dataset with 10 store shards in parallel is about 28% faster then running it over a single store.
 - As downside, getting 10k documents by their id is slower when it has to run over the shards.
 
 ## Custom Indexes
@@ -93,7 +93,7 @@ modified: 2022-06-13T02:57:07.648Z
 - There are some libraries that already do that:
   - LokiJS with the [IndexedDB Adapter](https://techfort.github.io/LokiJS/LokiIndexedAdapter.html)
   - [Absurd-SQL](https://github.com/jlongster/absurd-sql)
-  - SQL.js with the [empscripten Filesystem API](https://emscripten.org/docs/api_reference/Filesystem-API.html#filesystem-api-idbfs)
+  - SQL.js with the [empscripten Filesystem API](https://emscripten.org/docs/api_reference/Filesystem-API.html#filesystem-api-idbfs). This is provided to overcome the limitation that browsers do not offer synchronous APIs for persistent storage, and so (by default) all writes exist only temporarily in-memory.
   - [DuckDB Wasm](https://duckdb.org/2021/10/29/duckdb-wasm.html)
 
 ### In-Memory: Persistence

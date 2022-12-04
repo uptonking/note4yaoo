@@ -9,9 +9,62 @@ modified: 2022-11-27T19:20:24.273Z
 
 # guide
 
+- nedb不足
+  - 不支持事务 transaction
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [atomic update + insert? · Issue #398 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/398)
+- I've been trying to figure out how to orchestrate an atomic update + insert. My situation is that I'm adding a bunch of documents, while also updating a reference in an existing document to include the new documents.
+
+- unfortunately there is no way to guarantee atomicity or use transactions with NeDB, and I am not planning on adding that. 
+  - For the vast majority of projects using NeDB this is not an issue but if this is crucial to your project I suggest you use a full-blown DB such as Mongo or Postgres
+
+- ## [Memory usage seems unexpectedly high (RAM usage is 10x disk usage) · Issue #472 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/472)
+- We are facing high memory usage when a collection reaches thousands of documents.
+
+- When loaded, the collection is fully kept in memory as "real" JavaScript objects, not strings.
+- Indices are holding the entire document in memory rather than a reference to the data on disk. This means no matter what storage driver is being used your entire dataset is going to be in memory the minute you create a single index.
+
+- 👉🏻 By default, a persistent NeDB datafile's format is ndjson (newline-delimited JSON). 
+  - However, the moment you add a custom `afterSerialization` and `beforeDeserialization` hook functions, that default format completely goes out the window at the whim of your hook functions.
+
+- ## [Data persistentance question? · Issue #503 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/503)
+- isn't nedb not stored as JSON?  an object per each line
+  - AFAIK* it's stored as JSONL
+  - http://jsonlines.org/
+- Not sure I understand all of this, but do bear in mind the RAM memory implications.
+  - NeDB loads the whole opened DB to RAM, so if your DB is 30 MB, it occupies 30 MB of RAM.
+  - BUT, If your app opens 30 MB of data (for serialising), then copies the 30 MB of data into NeDB, then just for a moment there you might need 30 (open) + 30 (copy) + 30 (NeDB) = at least 90 MB of RAM for this operation.
+- 
+- 
+- 
+
+- ## [README misleading when comparing to SQLite · Issue #265 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/265)
+- NeDB doesn't support concurrent connections out of the box indeed, but it is crash safe (at least designed to be, still investigating the recent bug report).
+- As of v1.4.1, NeDB will always force OS to physically write data to disk whenever a compaction or database load happens, so that you can never lose the whole database in case of a machine crash. 
+  - It doesn't flush on every append for performance reasons, but potential data loss in that case is very limited, a few docs at most. That's what major databases do.
+  - Note that fsync doesn't work on Windows. Not sure whether that's an issue with my machine or you simply can't fsync on Windows. 
+- All major databases sync after each transaction - which, with autocommit, is after each document. 
+  - This is the part in SQLite explaining this
+  - A similar option is in MySQL/PostgreSQL/CouchDB
+- I finished rewriting the crash safe write function, mimicing how Redis AOF basically works
+- There is no real consistency in the RDBMS sense as NeDB doesn't implement transactions, foreign keys, constraints and so on ... 
+  - Integrity is guaranteed by the append-only, one-line-per-operation format of the datafile. 
+  - Any corrupt line is discarded, which can be the case if there is a power loss during an append, but that can only affect the end of the file so that's the same as losing latest data.
+  - 👉🏻 Also there cannot indeed be any rollback, since the datafile is replaced only after a successful write.
+- Durability is not enforced on every write, only during compaction since a power loss at that moment can result in 100% data loss.
+  - For all appends to the datafile durability is the responsibility of the OS, which usually syncs to the disk every 30 seconds so you cannot lose more than 30 seconds of data. That's what most databases do (they do provide an option to force sync on every wrtie though, nedb doesn't).
+
 - ## [boosting nedb performance in big databases](https://github.com/louischatriot/nedb/issues/583)
   - I disagree. NedB is a drop-in replacement for MongoDB, which does and behaves exactly the way you want to convert NedB.
+
     - NedB is meant to be simple, not only in functionality, but behavior, and it's simplicity is the sole reason I'm using it for as much as I do. 
     - Making NedB memory-based will instantly require and consume more of the server, you make NedB faster, but at the cost of needing more resources (RAM).
 

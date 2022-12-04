@@ -7,8 +7,10 @@ modified: 2021-05-25T09:40:55.797Z
 
 # toc-lib-fwk-baas
 
-# backend-as-a-service
+# guide
 
+- 比较了parse、firebase、couchdb、kuzzle、remoteStorage、Hoodie
+  - [How does Kinto compare to other solutions?](https://docs.kinto-storage.org/en/stable/faq.html)
 # firebase-like
 - supabase /41.1kStar/apache2/202211/ts
   - https://github.com/supabase/supabase
@@ -30,6 +32,14 @@ modified: 2021-05-25T09:40:55.797Z
 - https://github.com/parse-community/parse-server
   - Parse Server works with the Express web application framework.
 
+- kuzzle /1.3kStar/apache2/202211/js
+  - https://github.com/kuzzleio/kuzzle
+  - https://kuzzle.io/
+  - Kuzzle is a generic backend offering the basic building blocks common to every application.
+  - API First: use a standardised multi-protocol API.
+  - Realtime Notifications: use the pub/sub system or subscribe to database notifications.
+  - User Management: login, logout and security rules are no more a burden.
+
 - https://github.com/asheghi/NeoBase /202209/ts/inactive
   - The open source Firebase alternative
   - NeoBase is a hosted platform. You can sign up and start using NeoBase without installing anything. You can also self-host and develop locally.
@@ -42,19 +52,19 @@ modified: 2021-05-25T09:40:55.797Z
 - https://github.com/TheHadiAhmadi/minibase /202211/js
   - minimal (and slow) firebase alternative
 
-- https://github.com/pocketbase/pocketbase /go/svelte
-  - PocketBase is an open source Go backend
-  - embedded database (SQLite) with realtime subscriptions
-  - built-in files and users management
-# baas
-
-# more
-
 - kinto /4.2kStar/apache2/202210/python
   - https://github.com/Kinto/kinto
   - http://docs.kinto-storage.org/
   - A generic JSON document store with sharing and synchronisation capabilities.
   - Backends: In-memory (development), PostgreSQL 9.5+ (production)
+
+- https://github.com/pocketbase/pocketbase /go/svelte
+  - PocketBase is an open source Go backend
+  - embedded database (SQLite) with realtime subscriptions
+  - built-in files and users management
+# baas backend-as-a-service
+
+# more
 
 - https://github.com/nils-simons/spackoDB /202206/js/starter
   - Firestore Alternative

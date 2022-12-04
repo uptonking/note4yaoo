@@ -7,8 +7,20 @@ modified: 2021-03-29T19:17:20.657Z
 
 # dev-log-faq-repeat
 
-# is `JSON.parse` faster than declaring an object literal
+# guide
 
+# [How to autosave small changes to big settings file without lag?](https://stackoverflow.com/questions/41232606)
+- Provided that you want to keep the model with a multi-MB settings file, the most reasonable solution would be to use **atomic writes** to avoid the problem of the app being quit in the middle of a save.
+- Assuming your file is called `settings.json`, atomic writes would work something like this:
+  - App decides to update settings, starts writing to a temporary file (to avoid overwriting the existing file halfway), say `settings.json.tmp-1482198169` (1482198169 being current unix timestamp).
+  - Once writing to `settings.json.tmp-1482198169` is complete, copy the current `settings.json` to `settings.json.bak`.
+  - Rename `settings.json.tmp-1482198169` to `settings.json`, overwriting the old one.
+- The basic idea is to construct a process where you always have a valid copy of `settings.json`, so it's only replaced with a complete copy.
+- npm has a number of implementations of this, like this one. I'd recommend you try one of those instead of writing your own, since any bugs in the implementation of the atomic write dance could cause you data loss, and it's tricky to get everything right when dealing with asynchronous code.
+  - https://github.com/npm/write-file-atomic
+  - Write files in an atomic fashion w/configurable ownership
+  - This is an extension for node's fs.writeFile that makes its operation atomic and allows you set ownership (uid/gid of the file).
+# is `JSON.parse` faster than declaring an object literal
 - [The cost of parsing JSON](https://v8.dev/blog/cost-of-javascript-2019#json)
   - Because the JSON grammar is much simpler than JavaScript’s grammar, JSON can be parsed more efficiently than JavaScript. 
   - This knowledge can be applied to improve start-up performance for web apps that ship large JSON-like configuration object literals (such as inline Redux stores).

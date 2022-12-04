@@ -45,4 +45,10 @@ modified: 2022-12-04T16:33:23.817Z
 - [Meteor的工作原理及优势与不足](https://cloud.tencent.com/developer/article/1643568)
   - 优势：易学、偏向客户端、实时响应、生态
   - 不足：nodejs单线程不适合计算密集型、约束少、NoSQL、非静态、首次加载时间长
-# more
+# discuss
+
+- ## [How efficient is Meteor's DDP at syncing very large collections? - Stack Overflow](https://stackoverflow.com/questions/18734507/how-efficient-is-meteors-ddp-at-syncing-very-large-collections)
+- After some empirical experience with this, I have to conclude that the answer is "not very efficient". 
+
+
+- [benchmarking - How efficient can Meteor be while sharing a huge collection among many clients? - Stack Overflow](https://stackoverflow.com/questions/13113256/how-efficient-can-meteor-be-while-sharing-a-huge-collection-among-many-clients/21835534#21835534)

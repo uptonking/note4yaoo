@@ -59,6 +59,7 @@ modified: 2022-11-07T10:24:02.543Z
     - ~~可作为查找dependents被依赖被使用项目的一种变通方式~~
     - react-table filename:package.json
       - 此时搜索的是 Code，而不是 Repositories
+      - 新版搜索要将filename改为path
     - 甚至可以搜索同时包含多个依赖的仓库
       - https://github.com/search?q=%22next-mdx-enhanced%22+%22%40tailwindcss%2Ftypography%22+filename%3Apackage.json&type=Code
   - 搜索条件使用日期 pushed:2021-11-11

@@ -237,8 +237,10 @@ modified: 2022-11-25T15:50:48.226Z
 
 # db-js-utils
 
-- https://github.com/pubkey/event-reduce
+- https://github.com/pubkey/event-reduce /202212/ts
+  - https://pubkey.github.io/event-reduce/
   - An algorithm to optimize database queries that run multiple times
+  - 提供了使用示例，包括minimongo、nedb、pouchdb
 # more-db-js
 - https://github.com/ciochetta/learndb /24Star/202101/js/mongodb
   - my first attempt at creating my own database from scratch.

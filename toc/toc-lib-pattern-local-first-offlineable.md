@@ -10,6 +10,11 @@ modified: 2021-09-04T14:03:39.046Z
 # guide
 
 - search: local-first, local first, offline first
+
+- local-first + realtime协作的示例
+  - https://github.com/gongojs/project
+  - https://github.com/a-type/lo-fi
+
 # popular
 - tuple-database /200Star/NALic/202208/ts
   - https://github.com/ccorcos/tuple-database

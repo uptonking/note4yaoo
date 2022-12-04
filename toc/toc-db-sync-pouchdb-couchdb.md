@@ -109,6 +109,12 @@ modified: 2022-11-30T18:56:07.072Z
     - Hapi plugin for Hoodie’s server core module
   - https://github.com/hoodiehq/hoodie-client
     - Client API for the Hoodie server
+
+- https://github.com/cloudant/meteor-couchdb
+  - Meteor database driver for CouchDB and Cloudant
+  - an efficient Livequery implementation providing real-time updates from the database by consuming the CouchDB _changes feed
+  - Distributed Data Protocol (DDP) RPC end-points for updating the data from clients connected over the wire
+
 # mobile-pc
 - https://github.com/craftzdog/pouchdb-adapter-react-native-sqlite /202108/js
   - PouchDB adapter using ReactNative SQLite as its backing store

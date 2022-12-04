@@ -17,6 +17,14 @@ modified: 2020-10-15T13:41:01.275Z
 
 - BSON is short for "Binary JSON"
   - https://github.com/mongodb/js-bson
+  - jsonb
+
+- JSONL
+  - http://jsonlines.org/
+- ndjson / Newline delimited JSON
+  - http://ndjson.org/
+  - 
+
 # guide
 - 类json格式的操作
   - 从devDependencies移动到dependencies后，需要手动添加逗号和删除逗号

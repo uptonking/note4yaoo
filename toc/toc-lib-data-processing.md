@@ -16,6 +16,12 @@ modified: 2021-05-13T16:14:15.415Z
   - 👉🏻 Apache Arrow is the emerging standard for large in-memory columnar data (Spark, Pandas, Drill, Graphistry, ...). 
     - By standardizing on a common binary interchange format, big data systems can reduce the costs and friction associated with cross-system communication.
 # data-tools
+- https://github.com/malloydata/malloy
+  - https://www.malloydata.dev/
+  - Malloy is an experimental language for describing data relationships and transformations.
+  - Each query you write in Malloy is a building block for the next level of understanding. 
+  - https://djouallah.github.io/composer/
+
 - https://github.com/dbt-labs/dbt-core
   - https://getdbt.com/
   - dbt enables data analysts and engineers to transform their data using the same practices that software engineers use to build applications.

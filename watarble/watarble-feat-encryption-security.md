@@ -9,6 +9,8 @@ modified: 2022-11-24T11:36:36.445Z
 
 # guide
 
+- encrypt
+  - [end-to-end-encryption · GitHub Topics](https://github.com/topics/end-to-end-encryption?l=javascript&o=desc&s=)
 # blogs
 
 ## [Excalidraw: End-to-End Encryption in the Browser_202003](https://blog.excalidraw.com/end-to-end-encryption/)

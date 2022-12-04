@@ -32,6 +32,9 @@ modified: 2022-11-26T17:35:24.870Z
     - As of nedb-promises 5.0.0 nedb package has been replaced with a fork seald/nedb
 - https://github.com/rmanibus/nedb
   - [Implement Compound Indexes ](https://github.com/seald/nedb/pull/27)
+- https://github.com/salmanff/nedb-asyncfs /202203/js
+  - This fork allows you to store the database files on async storage mediums like aws or dropbox. 
+  - You should not use nedb-asyncfs for in-browser functionality.
 
 - nedb-forks
   - https://github.com/ArcBlock/nedb  /202210/MIT/js/no-browser/多线程
@@ -51,6 +54,11 @@ modified: 2022-11-26T17:35:24.870Z
       - Index field with an array value are explicitly not supported.
       - Inserting a duplicate key will overwrite the existing key.
       - Keys must all be the same data type.
+
+- https://github.com/abhishiv/qbase /202012/ts
+  - lightweight and fast in-memory data store with support for lazy queries, watchable queries, transactions, H1/HM/MTM/BT relationships, and MongoDB styled selectors.
+  - 依赖sift
+  - Written to be an lightweight functional alternative to @apollo/client
 
 - teDB /83Star/MIT/201908/ts/inactive
   - https://github.com/tedb-org/teDB

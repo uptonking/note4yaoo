@@ -96,6 +96,11 @@ modified: 2022-11-30T18:57:26.459Z
     - It is very similar to Meteor
   - https://github.com/c58/marsdb-sync-server
     - It's a Meteor compatible DDP server, based on MarsDB
+
+- https://github.com/pubkey/event-reduce /202212/ts
+  - https://pubkey.github.io/event-reduce/
+  - An algorithm to optimize database queries that run multiple times
+  - 提供了使用示例，包括minimongo、nedb、pouchdb
 # utils
 - https://github.com/serby/save /202209/js
   - A simple CRUD based persistence abstraction for storing objects to any backend data store. eg. Memory, MongoDB, Redis, CouchDB, Postgres, Punch Card etc.
@@ -108,6 +113,11 @@ modified: 2022-11-30T18:57:26.459Z
 - https://github.com/ezzatisawesome/ChromeStorageSync /202112/js
   - completed MVP of syncing db using minimongo
 
+- https://github.com/kasivisu4/d3-gallery
+  - https://kasivisu4.github.io/d3-gallery/
+  - user can search the d3 graph 
+  - Used the Minimongo IndexDB to store the data in the Browser Storage.
+
 - https://github.com/yianchen0131/Preorder-Marketplace /202207/js
   - http://giantpreorderplace.surge.sh/
   - Preorder website is an ecommerce platform for users to place preorders on products listed. 
@@ -117,6 +127,8 @@ modified: 2022-11-30T18:57:26.459Z
 
 - https://github.com/john-guerra/reactHooksMiniMongo /202204/js
   - a simple example created in my class to demonstrate functional programming with React and Minimongo
+- https://github.com/yianan261/Shopping-Cart
+  - Hooks implementation of a shopping cart where users can add product items to cart
 
 - https://github.com/Dev1an/Quill-Operational-Transform /201706/js
   - A demo on how to transform Deltas obtained from the Quill text editor to resolve conflicts in text documents. 
