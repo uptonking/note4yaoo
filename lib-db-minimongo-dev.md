@@ -9,6 +9,7 @@ modified: 2022-12-02T11:12:29.905Z
 
 # guide
 
+- minimongo/meteor 的replication协议参考 [Distributed Data Protocol (DDP)](https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md)
 # discuss
 - ## 
 
@@ -28,10 +29,6 @@ modified: 2022-12-02T11:12:29.905Z
   - As a bonus, Dexie allowed me to use bulk reads/writes, which decreased load times by an enormous amount
   - https://gist.github.com/banjerluke/554cb2274c4f55c2254288aa243994ed
 
-- 
-- 
-- 
-
 - ## why Minimongo in Meteor don’t support indexeddb or websql like Minimongo official project?_202101
 - https://forums.meteor.com/t/minimongo-and-store/54877
 - What would you like to do offline?
@@ -41,7 +38,7 @@ modified: 2022-12-02T11:12:29.905Z
   - However, when we both have the same document and we both want to edit it offline… if online, there is conflict
   - What I am saying here with this story is that you can very well do a lot of offline, away from Minimongo, using Methods and writing to a local DB (I prefer RealmDB because it is … possibly the best mobile JS DB). It is not that you cannot and it is not that it can be built natively into Meteor (my opinion). This is subject to application design for each an every individual app.
 
-- Is to difficult ? is not right to do because is not suitable for Meteor ?
+- Is to difficult? is not right to do because is not suitable for Meteor ?
   - One major downside I see so far is that many of the calls are asynchronous (based on callbacks) and could therefore only be introduced on the client if we would switch to a promise-based interface for database-calls.
   - Such a change would force virtually everyone to make a lot of changes to their projects.
 - I tested a few of these offline-minimongo packages in the past (at least 3 years back) and I think ground:db was the one that worked for us the most.

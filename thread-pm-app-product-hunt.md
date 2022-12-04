@@ -1,7 +1,8 @@
 ---
 title: thread-pm-app-product-hunt
+tags: [pm, products]
 created: 2022-11-07T10:13:21.757Z
-modified: 2022-11-07T10:13:32.795Z
+modified: 2022-12-04T16:34:29.342Z
 ---
 
 # thread-pm-app-product-hunt

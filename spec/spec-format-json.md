@@ -9,8 +9,14 @@ modified: 2020-10-15T13:41:01.275Z
 
 # spec
 
-- https://www.json.org/json-en.html
-- https://json5.org
+- json
+  - https://www.json.org/json-en.html
+
+- json5
+  - https://json5.org
+
+- BSON is short for "Binary JSON"
+  - https://github.com/mongodb/js-bson
 # guide
 - 类json格式的操作
   - 从devDependencies移动到dependencies后，需要手动添加逗号和删除逗号
@@ -36,7 +42,6 @@ modified: 2020-10-15T13:41:01.275Z
   - this package began its life as an internal module to express-state
 - https://github.com/blitz-js/superjson
   - Safely serialize JavaScript expressions to a superset of JSON, which includes Dates, BigInts, and more.
-
 # faq
 
 - 

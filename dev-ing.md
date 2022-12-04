@@ -100,7 +100,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - evolu
   - kikko
 
-- log2022
+- log2022 数据同步、冲突处理、本地存储
   - 08-block-editor-tiny-write
   - 09-prosemirror-examples
   - 10-prosemirror-collab - ot - crdt

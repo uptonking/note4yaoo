@@ -14,11 +14,9 @@ modified: 2022-11-30T18:57:26.459Z
 
 - minimongo/meteor 的replication协议参考 [Distributed Data Protocol (DDP)](https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md)
 
-- meteor
-  - a whole framework with its own package manager, database management and replication protocol.
-  - hard to integrate it with other modern JavaScript frameworks like angular, vue.js or svelte
-  - Meteor uses MongoDB in the backend and can replicate with a Minimongo database in the frontend
-  - to make a meteor app offline first capable. There are some projects that might do this, but all are unmaintained.
+- [Meteor的工作原理及优势与不足](https://cloud.tencent.com/developer/article/1643568)
+  - 优势：易学、偏向客户端、实时响应、生态
+  - 不足：nodejs单线程不适合计算密集型、约束少、NoSQL、非静态、首次加载时间长
 # minimongo-like
 - minimongo /1kStar/LGPLv3/202207/ts
   - https://github.com/mWater/minimongo
@@ -31,30 +29,43 @@ modified: 2022-11-30T18:57:26.459Z
   - Minimongo is designed to work with a server that performs three-way merging of documents that are being upserted by multiple users.
   - Compared to RxDB, Minimongo has no concept of revisions or conflict handling, which might lead to undefined behavior when used with replication or in multiple browser tabs. Minimongo has no observable queries or changestream.
 
-- gongojs-project
+- gongojs-project: v1-js-websocket，v2-ts-轮询
   - https://github.com/gongojs/project
   - Reactive, realtime, offline queries with a ok_hand developer experience.
   - Client-side mongo-like database makes CRUD operations a joy
   - Works with any server-side database (currently MongoDB supported, FaunDB planned)
   - Queries are reactive and realtime* (live), with optimistic updates for free
     - Client-side queries are realtime, but depend on your subscription transports. 
-    - Due to feedback, we have refocused attention to serverless polling ("near-realtime") vs the original websocket server (true realtime).
+    - 👉🏻 Due to feedback, we have refocused attention to serverless polling ("near-realtime") vs the original websocket server (true realtime).
+    - 旧版v1采用websocket，新版采用polling
   - Works offline, syncs on reconnect, persists with IndexedDB
   - the concept and data flow is very similar to Meteor.
     - I spent years working with Meteor and have a lot of love for the team
   - https://github.com/gongojs/gongo-client
     - WIP: DX focused in-browser database with offline and realtime.
-    - 依赖idb、modifyjs
+    - 依赖idb、modifyjs、arson(encoder and decoder)、bson、ejson
   - https://github.com/gongojs/gongo-client-react
     - React hooks for gongo-client
     - 依赖 gongo-client
   - https://github.com/gongojs/gongo-server
     - Server(less) components for GongoJS fullstack data and auth
+    - 依赖express，不依赖websocket
   - https://github.com/gongojs/gongo-server-db-mongo
     - MongoDB DatabaseAdapter for GongoJS server
     - 依赖 jsonpatch-to-mongodb
+  - https://github.com/gongojs/old-v1
+    - Backup of original v1 code
+  - https://github.com/lgandecki/modifyjs /201803/js
+    - Modify your objects with a mongo like syntax. 
+    - This is based on a modify function of Meteor's brilliant minimongo package, cleaned up, rewritten to es6, changed to work without Meteor context
+  - https://github.com/crcn/sift.js
+    - Use Mongodb queries in JavaScript
+  - https://github.com/oortcloud/ddp-ejson /201405/js
+    - Extended JSON library; used in Meteor's Distributed Data Protocol.
+    - 支持 $date/$binary
 
-- https://github.com/Jantje19/ddp /202207/ts
+- ddp /1Star/MIT/202207/ts
+  - https://github.com/Jantje19/
   - a library version of the DDP features that Meteor offers. 
   - This library allows you to use the Meteor features without having to install the framework and without being tied into the NodeJS
   - https://github.com/Jantje19/ddp-react
@@ -65,6 +76,13 @@ modified: 2022-11-30T18:57:26.459Z
   - simplify the process of working with Meteor.js server over DDP protocol using external JS environments (like Node.js, Cordova, Ionic, ReactNative, etc).
   - It is battle tested in production and ready to use
   - written in ES6 and uses modern features like promises. 
+
+- https://github.com/mondora/ddp.js /201710/js
+  - javascript isomorphic/universal ddp client.
+  - to give the developer a clear, consistent API to communicate with the ddp server
+
+- https://github.com/stubailo/meteor-rest /201605/js
+  - makes it easy to make your Meteor app's data accessible over HTTP.
 
 - https://github.com/c58/marsdb /201609/js
   - MarsDB is a lightweight client-side database. 
@@ -129,8 +147,6 @@ modified: 2022-11-30T18:57:26.459Z
   - The Store contains a players collection which is a key value store ( very similar to minimongo )
   - I find that using key value objects for a collection inside a Store is much easier to deal with than using an Array.
   - the UI is updated optimistically.
-  - https://github.com/mondora/ddp.js
-    - javascript isomorphic/universal ddp client.
 
 - https://github.com/rclai/redux-ddp /201602/js/client+server
   - Getting Meteor DDP collection data to get synced straight into a Redux store instead of minimongo and figuring out how to apply optimistic updates.
@@ -145,6 +161,7 @@ modified: 2022-11-30T18:57:26.459Z
   - well-maintained Meteor.js package for files management using MongoDB Collection API.
   - Upload via HTTP and DDP transports
   - Compatible with all front-end frameworks from Blaze to React
+  - 比较了 websockets-ddp/http/webrtc-udp: [About upload Transports](https://github.com/veliovgroup/Meteor-Files/blob/master/docs/about-transports.md)
 
 - https://github.com/oortcloud/node-ddp-client /201612/js
   - A callback style DDP (Meteor's Distributed Data Protocol) node client
