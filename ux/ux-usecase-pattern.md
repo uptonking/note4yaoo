@@ -39,6 +39,21 @@ modified: 2021-01-01T20:10:11.503Z
   - 回复内容可以包含类似 `01:30` 这样的时间数字，点击时间数字会直接跳转到视频指定位置
 # 通用类
 - 搜索记录多端同步：google、B站
+# menu with icons
+
+## [Icon or no icon? Why?](https://twitter.com/soren_iverson/status/1598705801371058177)
+
+- Great feedback in this thread. Some updates:
+  - Keeping the icons
+  - Reduced icon visual weight
+  - Updated cancel icon for clarity
+  - Increased shadow intensity of popover
+  - Remove word "order" since all actions refer to an order
+- Icons + text, here’s why:
+  ✅ faster to recognise once learned
+  ✅ looks nicer
+  ✅ helps differentiate the menu
+
 # [Laws of UX](https://lawsofux.com/)
 
 > a collection of best practices that designers can consider when building user interfaces.

@@ -12,6 +12,9 @@ modified: 2021-03-29T19:29:15.528Z
 - vscode 的 quick fix 偶尔会缺少
   - Add all missing members
 # done
+- ## Type of 'await' operand must either be a valid promise or must not contain a callable 'then' member
+- 尽量不要自定义名称叫then的方法
+
 - ## event argument has no target.result property on IDBRequest: success event_201903
 - https://github.com/microsoft/TypeScript/issues/30669
   - 没人修

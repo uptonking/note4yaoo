@@ -112,9 +112,68 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - crdt tutorials
   - nedb
 
+- Type of 'await' operand must either be a valid promise or must not contain a callable 'then' member
+  - [javascript - Method chaining with async in Typescript (just found out a solution) - Stack Overflow](https://stackoverflow.com/questions/62833241/method-chaining-with-async-in-typescript-just-found-out-a-solution)
+  - `[rv] = await expression;` await表达式
+  - expression: A Promise or any value to wait for.
+  - rv: Returns the fulfilled value of the promise, or the value itself if it's not a Promise.
+
+```JS
+async function f2() {
+  const thenable = {
+    then: function(resolve, _reject) {
+      resolve('resolved!')
+    }
+  };
+  console.log(await thenable); // resolved!
+}
+
+f2();
+
+await { then(): void {} }
+```
+
+```typescript
+// 推荐的解决方法
+class CustomThenable {
+  async foo() {
+    return await 'something';
+  }
+
+  async then(
+    onFulfilled?: ((value: string) => any | PromiseLike<string>) | undefined | null,
+  ): Promise<string | never> {
+    const foo = await this.foo();
+    if (onFulfilled) { return await onFulfilled(foo) }
+    return foo;
+  }
+}
+
+async function main() {
+  const foo = await new CustomThenable();
+  console.log(foo);
+  const bar = await new CustomThenable().then((arg) => console.log(arg));
+  console.log(bar);
+}
+
+main();
+```
+
+- TypeScript's source code is helpfully commented.
+  - The type was not a promise, so it could not be unwrapped any further. As long as the type does not have a callable "then" property, it is safe to return the type; otherwise, an error is reported and we return undefined.
+  - The "thenable" does not match the minimal definition for a promise. When a Promise/A+-compatible or ES6 promise tries to adopt this value, the promise will never settle. 
+  - If the user wants to return this value from an async function, they would need to wrap it in some other value. If they want it to be treated as a promise, they can cast to `<any>`.
+
+- [Open-sourcing the new TypeScript type checker_202210](https://kdy1.dev/posts/2022/10/open-sourcing-stc)
+  - I was working on the Rust-based TypeScript type checker before switching to Go. But I decided to switch back to Rust. 
+  - With the Go version, I had to port needless parts too.
+
+- [How can I get the full object in Node.js's console.log(), rather than '[Object]'? - Stack Overflow](https://stackoverflow.com/questions/10729276/how-can-i-get-the-full-object-in-node-jss-console-log-rather-than-object)
+  - console.dir(myObject, { depth: null }); // `depth: null` ensures unlimited recursion
+  - console.log() and console.dir() as well as the Node.js REPL use `util.inspect()` implicitly.
+
 ## 1202
 
-- [宝塔配置mongodb - 掘金](https://juejin.cn/post/7064135651431546916)
 - [宝塔配置mongodb - 掘金](https://juejin.cn/post/7064135651431546916)
 
 - [Install MongoDB Community Edition on Ubuntu — MongoDB Manual](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)

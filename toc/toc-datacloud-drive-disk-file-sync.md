@@ -216,6 +216,10 @@ modified: 2022-09-10T02:26:52.062Z
   - An alternative storage solution to Google Drive
   - open-source and fully decentralized that is built on top of the InterPlanetary File System (IPFS)
 
+- https://github.com/storj/storj /202212/go
+  - Storj is an S3-compatible platform and suite of decentralized applications that allows you to store data in a secure and decentralized manner. 
+  - Your files are encrypted, broken into little pieces and stored in a global decentralized network of computers. 
+
 - https://github.com/enochbayode/google-drive-web-app
   - Storage web app like Google drive
   - 无前端

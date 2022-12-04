@@ -55,6 +55,7 @@ modified: 2022-11-07T17:37:27.579Z
   - File Storage
   - Team Calendar
   - Task Management
+  - 前端依赖minimongo
 
 - https://github.com/plankanban/planka
   - The realtime kanban board for workgroups built with React and Redux.

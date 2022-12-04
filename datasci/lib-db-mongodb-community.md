@@ -12,9 +12,15 @@ modified: 2022-06-13T02:59:04.350Z
 # discuss
 - ## 
 
-- ## 
+- ## [mongoDB 4.0(201806)支持事务了，还有多少人想用MySQL呢？ - 知乎](https://www.zhihu.com/question/279843849)
+- mongDb不支持子查询，类似于mysql语句。Select * from orders where orders.sellerid in (select eid from employee where employee.state= 'California'), mongodb做不到。
+- 另外联表查询也不友好
 
-- ## 
+- ## [MongoDB 的表上怎么做 JOIN？ - 知乎](https://www.zhihu.com/question/486997525/answers/updated)
+- mongodb的aggregate功能很强大。连表可用$lookup。
+- 我在去年也问过这个问题，现在我可以回答你，如果你问这个问题，说明你需要切换成postgres或者mysql
+
+- [详解MongoDB中的多表关联查询（$lookup） - 东山絮柳仔 - 博客园](https://www.cnblogs.com/xuliuzai/p/10055535.html)
 
 - ## [国内有没有成功使用MongoDB作为主存数据库的案例？ - 知乎](https://www.zhihu.com/question/35635370/answers/updated)
 - 我们公司，Bmob后端云，http://www.bmobapp.com。 

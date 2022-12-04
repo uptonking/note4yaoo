@@ -30,6 +30,8 @@ modified: 2022-11-26T17:35:24.870Z
   - https://github.com/bajankristof/nedb-promises /202209/js
     - A dead-simple promise wrapper for nedb.
     - As of nedb-promises 5.0.0 nedb package has been replaced with a fork seald/nedb
+- https://github.com/rmanibus/nedb
+  - [Implement Compound Indexes ](https://github.com/seald/nedb/pull/27)
 
 - nedb-forks
   - https://github.com/ArcBlock/nedb  /202210/MIT/js/no-browser/多线程

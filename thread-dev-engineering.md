@@ -13,7 +13,10 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## 网上很多文章喜欢讲滑动窗口、拥塞算法，在我看来这些不"务实"。内核交给我们控制的是发送buffer(对应发送窗口)/接收buffer, 以及 rt、带宽时延积BDP，这些才是日常头痛可以去改变的，所以今天推荐的这篇文章就是一锤子到底分析透彻、无比实用，一定要看
+- https://twitter.com/plantegg/status/1598861467440513024
+- [TCP性能和发送接收窗口、Buffer的关系 | plantegg](https://plantegg.github.io/2019/09/28/%E5%B0%B1%E6%98%AF%E8%A6%81%E4%BD%A0%E6%87%82TCP--%E6%80%A7%E8%83%BD%E5%92%8C%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6Buffer%E7%9A%84%E5%85%B3%E7%B3%BB/)
+
 
 - ## For a new project, I’m experimenting with putting test code next to library modules: utl.test.ts
 - https://twitter.com/rauschma/status/1584271399606054913
@@ -32,6 +35,8 @@ modified: 2021-01-21T17:52:13.333Z
   03. I never have to decide how to name test files
   - IMHO the (anti) pattern of putting test files in a separate folder stems from compiled languages like Java where otherwise tests would end up in the compiled code. JavaScript doesn’t have this issue.
   - Rust is even sillier. It puts the test (optionally) in the same sourcefiles 
+
+- [webmansa on Twitter: "@housecor i have a question how do you manage your test files, do you write the test in the same folder, OR you have a different folder called tests and all the test files are there ?" / Twitter](https://twitter.com/don_csay/status/1598748749781663751)
 
 - ## What is your equivalent to "making a blueprint" before coding? Is it whiteboarding? Diagramming? Writing a spec? Or do you just jump straight into code?
 - https://twitter.com/DavidKPiano/status/1550884682014892033
@@ -90,9 +95,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 提高编程水平的一个高效的方式: 
 - https://twitter.com/ivyliner/status/1519472859239923712
-  01.        自己先写一个中等复杂度的项目(在写的时候自己会知道哪些地方写得不够好, 当然也会有不知道的地方) 
-  02.        开始学习相关的知识, 看别人的代码
-  03.        这时候你会意识到哦原来还能这样用,  嗯用这个 API 看起来更优雅, 我去还能这样写. ..
+  1.         自己先写一个中等复杂度的项目(在写的时候自己会知道哪些地方写得不够好, 当然也会有不知道的地方) 
+  2.         开始学习相关的知识, 看别人的代码
+  3.         这时候你会意识到哦原来还能这样用,  嗯用这个 API 看起来更优雅, 我去还能这样写. ..
   整个过程自我会感觉到不断精进.
 
 - 我个人最难的是代码边界控制。如何做到适当的业务上可扩展性和尽量缩小业务变更所带来的代码变更问题。

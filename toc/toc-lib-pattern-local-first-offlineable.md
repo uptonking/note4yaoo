@@ -37,15 +37,18 @@ modified: 2021-09-04T14:03:39.046Z
     - External effects interface through services defined on the Environment.
     - TupleDatabase as a UI state management system.
 
-- tinybase /1.3kStar/MIT/202209/ts/NoDeps
+- tinybase /1.4kStar/MIT/202212/ts/NoDeps
   - https://github.com/tinyplex/tinybase
   - https://tinybase.org/
-  - A tiny, reactive JavaScript library for structured state and tabular data.
+  - TinyBase is a smart new way to structure your local app data
+  - 查询基于自定义TinyQL，类似SQL
   - Familiar concepts of tables, rows, and cells, and schematization to model your data domain.
   - Flexibly reactive to reconciled updates, so you only spend cycles on the data that changes.
   - Indexing, metrics, relationships - and even an undo stack for your app state!
   - Easily sync your data to local or remote storage, and use idiomatic bindings to your React UI.
   - Powerful query engine to select, join, filter, group, sort and paginate data - reactively.
+  - The Queries object lets you query data across tables, with filtering and aggregation - using a SQL-adjacent syntax called `TinyQL`.
+  - A Persister object lets you save and load Store data to and from different locations, or underlying storage types.
 
 - evolu /101Star/GPLv3/202210/ts
   - https://github.com/evoluhq/evolu

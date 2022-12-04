@@ -16,6 +16,14 @@ modified: 2022-11-25T15:50:48.226Z
 - ref
   - [Offline-First Database Options for Web Applications in 2020](https://joshuatz.com/posts/2020/offline-first-database-options-for-web-applications-in-2020/)
 # db-js
+- pg-mem /1.1kStar/MIT/202211/ts
+  - https://github.com/oguimbal/pg-mem
+  - An in memory postgres DB instance for your unit tests
+  - It works both in Node or in the browser.
+  - https://github.com/oguimbal/pgsql-ast-parser
+    - a Postgres SQL syntax parser. 基于nearley、moo实现
+    - This parser does not support (yet) PL/pgSQL.
+
 - supabase /41.1kStar/apache2/202211/ts
   - https://github.com/supabase/supabase
   - https://supabase.com/
@@ -75,8 +83,6 @@ modified: 2022-11-25T15:50:48.226Z
   - This is still using Realm Core(cpp), but exposed via JavaScript API
   - https://github.com/realm/realm-core /202212/cpp
     - Core database component for the Realm Mobile Database SDKs
-
-
 
 - nedb /13.1kStar/MIT/201602/js
   - https://github.com/louischatriot/nedb
@@ -143,7 +149,7 @@ modified: 2022-11-25T15:50:48.226Z
   - Lovefield is a relational database for web apps. 
   - Written in JavaScript, works cross-browser. 
   - 👉🏻 Provides SQL-like APIs that are fast, safe, and easy to use.
-  - https://github.com/teambition/ReactiveDB
+  - https://github.com/teambition/ReactiveDB /201707/ts
     - Reactive ORM for Lovefield
     - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS
 
@@ -228,8 +234,13 @@ modified: 2022-11-25T15:50:48.226Z
   - localForage is a fast and simple storage library for JavaScript. 
   - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple, localStorage-like API.
   - localForage uses localStorage in browsers with no IndexedDB or WebSQL support.
+
+# db-js-utils
+
+- https://github.com/pubkey/event-reduce
+  - An algorithm to optimize database queries that run multiple times
 # more-db-js
-- https://github.com/ciochetta/learndb /202101/js/mongodb
+- https://github.com/ciochetta/learndb /24Star/202101/js/mongodb
   - my first attempt at creating my own database from scratch.
   - I will not be doing a SQL database, instead, I will follow his steps but try to create a document database, like MongoDB
 
