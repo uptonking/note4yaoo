@@ -11,7 +11,12 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## Tips on get a deeper understanding of the library you are using:
+- https://twitter.com/lihautan/status/1362791830648016899
+  - Try implement the library based on the public API and test cases, figure out how it might be implemented.
+  - Peek into the source code if you are stucked.
+  - Watch how I did it for #valtio 
+  - https://twitter.com/lihautan/status/1361481299970592770?s=19p
 
 - ## 网上很多文章喜欢讲滑动窗口、拥塞算法，在我看来这些不"务实"。内核交给我们控制的是发送buffer(对应发送窗口)/接收buffer, 以及 rt、带宽时延积BDP，这些才是日常头痛可以去改变的，所以今天推荐的这篇文章就是一锤子到底分析透彻、无比实用，一定要看
 - https://twitter.com/plantegg/status/1598861467440513024
@@ -30,9 +35,9 @@ modified: 2021-01-21T17:52:13.333Z
 - I've generalized this into what I've dubbed "the co-location principle", which means that the tighter coupling between two files, the closer they should be in the directory hierarchy. Shared files are moved to the lowest possible level that are in all paths of the consumers.
 
 - I’ve been doing this since forever. I prefer it because:
-  01. It’s very easy to see which files have no tests
-  02. I can easily jump from test to implementation 
-  03. I never have to decide how to name test files
+  1.  It’s very easy to see which files have no tests
+  2.  I can easily jump from test to implementation 
+  3.  I never have to decide how to name test files
   - IMHO the (anti) pattern of putting test files in a separate folder stems from compiled languages like Java where otherwise tests would end up in the compiled code. JavaScript doesn’t have this issue.
   - Rust is even sillier. It puts the test (optionally) in the same sourcefiles 
 

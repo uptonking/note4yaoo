@@ -9,16 +9,33 @@ modified: 2022-11-27T19:20:24.273Z
 
 # guide
 
-- nedb不足
-  - 不支持事务 transaction
+## nedb不足-roadmap
+
+- 不支持事务 transaction
+  - [atomic update + insert? · Issue #398 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/398)
+
+- 批量插入超大量数据会受浏览器限制
+  - [Batch insert help · Issue #62 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/62)
 # discuss
 - ## 
 
-- ## 
+- ## [Location of datafile? · Issue #531 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/531)
+- I just figured out that when using some bundling tools like webpack, its default target is browser, which means the nedb will use IndexedDB instead (see browser-specific/lib/storage.js below for details).
+  - The browser field tells webpack to use browser-specific version of storage.js instead, which will not create any files.
+  - The solution is to change the target to, in my case, electron-main in webpack.config.js.
 
-- ## 
+- ## [Nedb Encryption & Decryption](https://gist.github.com/bllohar/28ee29b3304d8bf6dbc11d1b16b00130)
+- Note that I don't process any JSON because there's really no need to since `afterSerialization` takes a string and `beforeDeserialization` returns a string.
+  - [Database encryption with NeDB](https://gist.github.com/jordanbtucker/e9dde26b372048cf2cbe85a6aa9618de)
 
-- ## 
+- ## [can multiple processes write to same db? · Issue #479 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/479)
+- the answer is no, you should never access the same nedb instance from multiple processes. Typically it would not work, as the first process will get a lock on writing to the data file.
+
+- ## [Batch insert help · Issue #62 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/62)
+- I'm trying to insert about 2000+ records(directory listing) at once
+  - The following code works for arrays with 20 records or so. 
+  - My application crashes at what seems like a threshold.
+- If I'm correct, you tried that in a browser environment ? (Node Webkit counts as one). If that's the case, this is a browser limitation, where you can't fire too many functions at once (which is exactly what `async.each` does). You should try to `use async.eachSeries` which does the same thing but sequentially, not in parallel.
 
 - ## [atomic update + insert? · Issue #398 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/398)
 - I've been trying to figure out how to orchestrate an atomic update + insert. My situation is that I'm adding a bunch of documents, while also updating a reference in an existing document to include the new documents.
@@ -42,9 +59,6 @@ modified: 2022-11-27T19:20:24.273Z
 - Not sure I understand all of this, but do bear in mind the RAM memory implications.
   - NeDB loads the whole opened DB to RAM, so if your DB is 30 MB, it occupies 30 MB of RAM.
   - BUT, If your app opens 30 MB of data (for serialising), then copies the 30 MB of data into NeDB, then just for a moment there you might need 30 (open) + 30 (copy) + 30 (NeDB) = at least 90 MB of RAM for this operation.
-- 
-- 
-- 
 
 - ## [README misleading when comparing to SQLite · Issue #265 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/265)
 - NeDB doesn't support concurrent connections out of the box indeed, but it is crash safe (at least designed to be, still investigating the recent bug report).
@@ -63,14 +77,15 @@ modified: 2022-11-27T19:20:24.273Z
   - For all appends to the datafile durability is the responsibility of the OS, which usually syncs to the disk every 30 seconds so you cannot lose more than 30 seconds of data. That's what most databases do (they do provide an option to force sync on every wrtie though, nedb doesn't).
 
 - ## [boosting nedb performance in big databases](https://github.com/louischatriot/nedb/issues/583)
-  - I disagree. NedB is a drop-in replacement for MongoDB, which does and behaves exactly the way you want to convert NedB.
+- with every operation (CRUD), nedb tries to read from the database or write to database file. i think its not necessary, we can do some refines in nedb structure to be super powerful in heavy databases.
 
-    - NedB is meant to be simple, not only in functionality, but behavior, and it's simplicity is the sole reason I'm using it for as much as I do. 
-    - Making NedB memory-based will instantly require and consume more of the server, you make NedB faster, but at the cost of needing more resources (RAM).
+- I disagree. NedB is a drop-in replacement for MongoDB, which does and behaves exactly the way you want to convert NedB.
+  - NedB is meant to be simple, not only in functionality, but behavior, and it's simplicity is the sole reason I'm using it for as much as I do. 
+  - Making NedB memory-based will instantly require and consume more of the server, you make NedB faster, but at the cost of needing more resources (RAM).
 
 - ## [It is possibile do operations (find, update, etc..) in synchronous mode?](https://github.com/louischatriot/nedb/issues/445)
-  - When using memory-only mode, synchronous operations will be very useful, for example, if using NeDB as storage provider for redux. Also, when working in memory-only mode, there is no requirement to perform async operations, due there is not any read I/O
-  - I would say it is more a result of his design goal to have a consistent API regardless of what backing store is being used (in-memory, localStorage, IndexedDB, Node.js file system, etc.).
+- When using memory-only mode, synchronous operations will be very useful, for example, if using NeDB as storage provider for redux. Also, when working in memory-only mode, there is no requirement to perform async operations, due there is not any read I/O
+- I would say it is more a result of his design goal to have a consistent API regardless of what backing store is being used (in-memory, localStorage, IndexedDB, Node.js file system, etc.).
 
 - ## [Deprecate NeDB in favour of another embedded db(acebase)](https://github.com/Ylianst/MeshCentral/issues/4398)
 - Acebase is a current nosql (firebase) compatible embedded database that uses (among other options) sqlite as the backend storage, meaning that (theoretically) the proven performance and reliability of sqlite can be leveraged with mongodb syntax queries.
@@ -91,6 +106,3 @@ modified: 2022-11-27T19:20:24.273Z
 - PouchDB isn't a self-contained database at all, it's an abstraction layer. 
   - That said, PouchDB can be used on-disk by either embedding a CouchDB instance (super heavyweight solution) or by using a LevelDOWN adapter (default on Node and an acceptable solution)
   - I just think PouchDB is so overly concerned about synchronization/replication across instances and revision control that I feel like their API is much more basic in order to align with the CouchDB protocol vs having their own more expressive API on top of it for the many users who may just want to use it on a single isolated instance like NeDB.
-- 
-- 
-- 

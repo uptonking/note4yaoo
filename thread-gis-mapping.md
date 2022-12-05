@@ -13,7 +13,15 @@ modified: 2021-05-25T08:41:02.257Z
 
 - ## 
 
-- ## 
+- ## I haven't checked in on the harp.gl WebGL vector tile renderer in a while, but it looks like it's either stopped development or gone closed source
+- https://twitter.com/bdon/status/1599698770262118403
+  - Without harp/tangram, @maplibre is the only open source WebGL option left?
+- https://gitlab.com/IvanSanchez/gleo is promising! I don’t think it has implemented labeling yet, which in my (biased) opinion is >50% of the complexity of these libraries
+- At some point I'll make a Gleo plugin for Leaflet, but right now it's a standalone one-person project (I know, website is lacking).
+  - Text label collisions are, indeed, a (very) hard problem to solve (and the collision algorithms can only run in CPU, not GPU)
+  - Also, Gleo is the only GPL-licensed WebGL map library out there. That **should** please folks worried about libraries going closed-source.
+
+- deck.gl can render manually styled data from MVT. There is no support for Mapbox style spec yet though
 
 - ## Maps in Slack using quick-map
 - https://sparkgeo.com/quick-map-landing-page/

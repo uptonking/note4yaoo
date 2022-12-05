@@ -32,16 +32,26 @@ modified: 2022-11-26T17:35:24.870Z
     - As of nedb-promises 5.0.0 nedb package has been replaced with a fork seald/nedb
 - https://github.com/rmanibus/nedb
   - [Implement Compound Indexes ](https://github.com/seald/nedb/pull/27)
+- https://github.com/ArcBlock/nedb  /202210/MIT/js/no-browser/多线程
+  - a NEDB fork used by ArcBlock products.
+  - Use @nedb/multi to read and write to the same database in different node.js processes
+  - Use @nedb/mongoose-driver as a drop-in replacement for mongoose + mongodb to make apps lightweight
+  - if you want to use nedb in browser, please use the original version.
 - https://github.com/salmanff/nedb-asyncfs /202203/js
   - This fork allows you to store the database files on async storage mediums like aws or dropbox. 
   - You should not use nedb-asyncfs for in-browser functionality.
+- https://github.com/OneBitAhead/nedb-x /202203/js/很多小功能
+  - Functional extension to NeDB
+  - Group by with aggregates
+ Substructure database with model attribute
+ - Joining (left join) model data
+ - Tree data (with open/closed nodes)
+
+- [Nedb Encryption & Decryption](https://gist.github.com/bllohar/28ee29b3304d8bf6dbc11d1b16b00130)
+  - Note that I don't process any JSON because there's really no need to since `afterSerialization` takes a string and `beforeDeserialization` returns a string.
+  - [Database encryption with NeDB](https://gist.github.com/jordanbtucker/e9dde26b372048cf2cbe85a6aa9618de)
 
 - nedb-forks
-  - https://github.com/ArcBlock/nedb  /202210/MIT/js/no-browser/多线程
-    - a NEDB fork used by ArcBlock products.
-    - Use @nedb/multi to read and write to the same database in different node.js processes
-    - Use @nedb/mongoose-driver as a drop-in replacement for mongoose + mongodb to make apps lightweight
-    - if you want to use nedb in browser, please use the original version.
   - https://github.com/HalleyAssist/nedb /202211/js
     - Embedded datastore for node.js
   - https://github.com/Akumzy/nedb-async
@@ -81,6 +91,7 @@ modified: 2022-11-26T17:35:24.870Z
   - A class-based ES6 ODM for Mongo-like databases
 - https://github.com/4strid/nekodb /201910/js
   - Tiny ODM for MongoDB/NeDB
+  - NekoDB comes with NeDB built in
 - https://github.com/bengl/mongosmash
   - simple ODM for MongoDB and NeDB on Node.js (using JS Harmony).
 
@@ -219,12 +230,12 @@ modified: 2022-11-26T17:35:24.870Z
 - https://github.com/rwl-dev-archive/learn-nedb-json-api /202009/ts
   - Express + NeDB = JSON API
 # nedb-utils
-- https://github.com/OneBitAhead/nedb-x /202203/js
-  - Functional extension to NeDB
-  - Group by with aggregates
- Substructure database with model attribute
- - Joining (left join) model data
- - Tree data (with open/closed nodes)
+- https://github.com/czwbig/nedb-mongoose-driver /202206/js
+  - A Mongoose driver for NeDB, most APIs are compatible.
+  - fork from https://github.com/ArcBlock/nedb
+- https://github.com/aerys/mongoose-nedb /201612/js
+  - A Mongoose driver for NeDB.
+  - [extend nedb to support mongoose like schema](https://gist.github.com/dhigginbotham/5922171)
 
 - https://github.com/ivrusson/mockon /202111/ts
   - Mock Server with data persistency based on MockJS and NeDB

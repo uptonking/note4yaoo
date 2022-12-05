@@ -81,6 +81,10 @@ modified: 2021-05-23T16:34:27.206Z
   - table-clone: 或复制粘贴表格到同一文档，需要设计布局，auto-layout自动对齐
   - table from table: 大表中copy部分小表进行分析
   - data(~~viz~~)-replay: 两种方案，puppeteer、rrweb
+
+- 表格版本区分
+  - readonly，适合分析
+  - edit，适合编辑
 # draft
 - 功能相关
   - 搜索结果

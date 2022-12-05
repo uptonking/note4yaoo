@@ -110,7 +110,89 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - dev-to
   - crdt tutorials
-  - nedb
+  - nedb- src
+
+- mongo-like api 示例
+
+```JS
+// ✨ minimongo
+
+var minimongo = require("minimongo");
+
+var LocalDb = minimongo.MemoryDb;
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.addCollection("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+  // Success:
+
+  // Query dog (with no query options beyond a selector)
+  db.animals.findOne({ species: "dog" }, {}, function(res) {
+    console.log("Dog's name is: " + res.name);
+  });
+});
+
+// Access collections via collection for Typescript
+await db.collection["animals"].upsert(doc)
+```
+
+```JS
+// ✨ nedb
+
+const Datastore = require('@seald-io/nedb');
+
+// init: Persistent datastore with manual loading
+const db = new Datastore({ filename: 'path/to/datafile' })
+try {
+  await db.loadDatabaseAsync()
+} catch (error) {
+  // loading has failed
+}
+
+const newDoc = await db.insertAsync(doc);
+
+// Find all documents in the collection
+const docs = await db.findAsync({})
+```
+
+```JS
+// ✨ mongodb + nodejs 查询是异步
+
+const { MongoClient } = require("mongodb");
+
+// Replace the uri string with your connection string.
+const uri =
+  "mongodb+srv://<user>:<password>@<cluster-url>?retryWrites=true&w=majority";
+
+const client = new MongoClient(uri);
+
+async function run() {
+  try {
+    const database = client.db('sample_mflix');
+    const movies = database.collection('movies');
+
+    const doc = { title: 'hello-mongo' };
+    const result = await movies.insertOne(doc);
+    const result2 = await movies.insertMany([doc,doc]);
+
+    // Query for a movie that has the title
+    const query = { title: 'hello-mongo' };
+    const movie = await movies.findOne(query);
+
+    console.log(movie);
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
+```
 
 ## 1204
 

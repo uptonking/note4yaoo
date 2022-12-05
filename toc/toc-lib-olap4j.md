@@ -13,11 +13,11 @@ modified: 2020-10-22T06:50:47.668Z
   - https://github.com/TuiQiao/CBoard
   - https://tuiqiao.github.io/CBoardDoc/#/
   - An easy to use, self-service open BI reporting and BI dashboard platform
-- davinci /Apache2/2.5kStar/202007
+- davinci /4.5kStar/Apache2/202111/ts/java/inactive
   - https://github.com/edp963/davinci
   - https://edp963.github.io/davinci
   - Davinci is a DVsaaS (Data Visualization as a Service) Platform
-- poli /MIT/1.7kStar/202005
+- poli /1.7kStar/MIT/202005/java/inactive
   - https://github.com/shzlw/poli
   - https://shzlw.github.io/poli
   - An easy-to-use BI server built for SQL lovers. Power data analysis in SQL and gain faster business insights.
