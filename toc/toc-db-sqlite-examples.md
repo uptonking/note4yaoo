@@ -11,11 +11,17 @@ modified: 2022-06-03T22:07:49.519Z
 - https://github.com/ShivamJoker/SQL-Play
   - Simple app to practice and learn SQL in React Native using SQLite
 
-- https://github.com/app-generator/api-server-nodejs
-  - Express Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
-  - Authentication Flow uses json web tokens via Passport library - passport-jwt strategy.
-  - Express/SQLite/TypeORM
+- api-server-nodejs-mongo /11Star/MIT/202212/ts/代码简单
+  - https://github.com/app-generator/api-server-nodejs-mongo
+  - Can be used with other React Starters for a complete Full-Stack experience
   - 典型的dashboard的后端示例
+  - 依赖express、mongoose、passport-jwt
+- api-server-nodejs /178Star/Paid/202212/ts
+  - https://github.com/app-generator/api-server-nodejs
+  - Express Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
+  - 依赖Express, SQLite, TypeORM, passport-jwt
+  - Authentication Flow uses json web tokens via Passport library - passport-jwt strategy.
+  - TypeScript, Joy for validation
 
 - https://github.com/lana-k/sqliteviz
   - https://lana-k.github.io/sqliteviz/

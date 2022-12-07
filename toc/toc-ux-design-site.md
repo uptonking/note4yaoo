@@ -9,6 +9,7 @@ modified: 2020-10-22T13:17:19.943Z
 
 # guide
 
+- 常见设计可参考主流设计销售网站，如Creative-Tim/WrapPixel，很容易找到卡片
 # dark-mode
 - [🌘 Dark Mode Design – Handpicked website inspiration](https://www.darkmodedesign.com/)
 # 白色主题

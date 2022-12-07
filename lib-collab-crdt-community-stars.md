@@ -16,7 +16,21 @@ modified: 2022-04-05T10:09:51.343Z
 
 - ## 
 
-- ## 
+- ## RFC! TinyBase HLC format. Needs to be small and fast for packing into binary tries & CRDTs
+- https://twitter.com/jamespearce/status/1599796118014918658
+- 11 byte(88 bits) bigint of
+  - 42 bits, millis (~139 years)
+  - 14 bits, counter (~16k)
+  - 32 bits, hash of client id (~4 billion)
+- You may want to consider using a `TypedArray` with `DataView` instead of `BigInt` to store the data if you really care about in memory size and layout. 
+  - I wouldn't trust that bigint for such small sizes would not have a lot of additional memory overhead.
+- Interesting. I was more worried about performance initially but that seems within 10% of Number (at least for the operations I need like shift, xor, gt, lt). I should check memory though - good point.
+- Also I should mention I ideally need this as a key for a Map (or member of a Set).
+  - You can use the index in the typedarray for key
+  - Not sure I follow. If I have two HLCs coming from different systems with the same binary value, I'll want them to key the same value from a local map. (I'd need to convert to BigInt to do by value rather than differing reference, no?)
+  - If it's coming from different system, just ignore me
+  - Otherwise, whenever you generate a bigint key, you would use the index as reference going forward. But it may not be practical in many cases.
+  - One thing I could do is use an array of two 53-bit or three 32-bit Numbers, and then have a map of maps (or map of map of maps)
 
 - ## I've begun building out a server tick rate for message sending in Tiny Merge._202211
 - https://twitter.com/JungleSilicon/status/1597770904716865538

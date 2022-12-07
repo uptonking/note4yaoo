@@ -9,9 +9,29 @@ modified: 2022-12-05T16:05:40.690Z
 
 # guide
 
-- [MongoDB TPC-H Queries - Factors Influencing NoSQL Adoption](https://alronz.github.io/Factors-Influencing-NoSQL-Adoption/site/MongoDB/Examples/TPC-H%20Queries/)
-
 - [TPC-H in MongoDB_2013](https://www.slideshare.net/aungthurhahein/tpch-in-mongodb)
+# Star Schema Benchmark
+- https://github.com/ClickHouse/ClickBench
+  - https://benchmark.clickhouse.com/
+  - ClickBench: a Benchmark For Analytical Databases
+  - It covers the typical queries in ad-hoc analytics and real-time dashboards.
+  - The dataset is available in CSV, TSV, JSONlines and Parquet formats
+  - 比较了很多数据库，包括clickhouse、sqlite、mysql、pg、duckdb、doris、druid、mongodb、es
+
+- ref
+  - [ssb.pdf](https://www.cs.umb.edu/~poneil/StarSchemaB.PDF)
+  - [《Star Schema Benchmark》阅读笔记_202012](https://andrewei1316.github.io/2020/12/12/star-schema-benchmark/)
+  - [数据库】Star Schema Benchmark 标准测试集优化（一）_202209](https://www.jianshu.com/p/271cb880c0b5)
+  - [【数据库】Star Schema Benchmark 标准测试集优化（二） - 简书](https://www.jianshu.com/p/c804d4c21c70)
+  - [【数据库】Star Schema Benchmark 标准测试集优化（三） - 简书](https://www.jianshu.com/p/acacce2a7293)
+
+- [ClickHouse: Star Schema Benchmark](https://clickhouse.com/docs/en/getting-started/example-datasets/star-schema/)
+
+- [Oracle: Sample Star Schema Benchmark (SSB) Queries and Analytic Views](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sample-queries.html)
+
+- [Apache Doris: Star-Schema-Benchmark](https://doris.apache.org/zh-CN/docs/benchmark/ssb/)
+  - SSB 基于 TPC-H 提供了一个简化版的星型模型数据集，主要用于测试在星型模型下，多表关联查询的性能表现。
+  - 业界内通常也会将 SSB 打平为宽表模型（以下简称：SSB flat），来测试查询引擎的性能，参考Clickhouse。
 # TPC-H 侧重ad-hoc queres
 - TPC-H用于评测数据库的分析型查询能力。
   - TPC-H 查询包含 8 张数据表、22 条复杂的 SQL 查询，大多数查询包含若干表 Join、子查询和 Group-by 聚合等。
@@ -56,3 +76,5 @@ modified: 2022-12-05T16:05:40.690Z
   - DI describes the process of extracting and combining data from a variety of data source formats, transforming that data into a unified data model representation and loading it into a data store. 
   - The TPC-DI benchmark combines and transforms data extracted from an On-Line Transaction Processing (OLTP) system along with other sources of data, and loads it into a data warehouse. 
   - The source and destination data models, data transformations and implementation rules have been designed to be broadly representative of modern data integration requirements.
+# more
+- [MongoDB TPC-H Queries - Factors Influencing NoSQL Adoption](https://alronz.github.io/Factors-Influencing-NoSQL-Adoption/site/MongoDB/Examples/TPC-H%20Queries/)

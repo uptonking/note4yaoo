@@ -69,7 +69,12 @@ modified: 2022-03-17T17:50:28.967Z
   - local-first pocket, any links
   - 支持批量导出
 
-- 同步 拼写检查cSpell、自定义短语、语法检查
+- multi-accounts
+  - 支持新建账户(匿名)，然后临时操作
+
+- 同步
+  - 拼写检查cSpell、自定义短语、语法检查
+  - 同步编辑器设置项，如缩进、特性启用
 
 - marketplace
   - template/page

@@ -194,7 +194,67 @@ modified: 2021-01-04T16:18:39.667Z
 
 - https://github.com/nodosjs/nodos
   - https://nodosjs.github.io/
-  - Node.js framework for humans (inspired by rails, phoenix, django) 
+  - Node.js framework for humans (inspired by rails, phoenix, django)
+# nodejs-crud/admin
+- api-server-nodejs /178Star/MIT/202212/ts
+  - https://github.com/app-generator/api-server-nodejs
+  - Express Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
+  - 依赖Express, SQLite, TypeORM, passport-jwt
+  - Authentication Flow uses json web tokens via Passport library - passport-jwt strategy.
+  - TypeScript, Joy for validation
+  - https://github.com/app-generator/api-server-nodejs-demo
+- api-server-nodejs-mongo /11Star/MIT/202212/ts/代码简单
+  - https://github.com/app-generator/api-server-nodejs-mongo
+  - 典型的dashboard的后端示例
+  - 依赖express、mongoose、passport-jwt
+  - Can be used with other React Starters for a complete Full-Stack experience
+- https://github.com/app-generator/sample-docker-nodejs-react
+  - docker compose up --build 
+
+- adminjs /6.2kStar/MIT/202211/ts/仅参考db设计
+  - https://github.com/SoftwareBrothers/adminjs
+  - https://adminjs-demo.herokuapp.com/
+  - AdminJS is an automatic admin interface that can be plugged into your application. 
+  - 亮点是可切换数据库(mongo/pg/mysql)、后端框架(express/hapi/nest)
+  - 自动生成简单的crud界面，前后端打包被自动化了，不利于自定义打包
+  - You, as a developer, provide database models (like posts, comments, stores, products or whatever else your application uses), and AdminJS generates UI which allows you (or other trusted users) to manage content.
+  - It uses (for example) Hapi.js+mongoose for rendering a couple of REST routes and mongoose as the connector to the database.
+  - Inspired by: django admin, rails admin and active admin.
+  - By default, AdminJS is equipped with a powerful `quill` editor, which makes it a perfect tool as a Content Management System
+  - https://github.com/SoftwareBrothers/adminjs-example-app
+    - Example application using adminjs
+  - https://github.com/SoftwareBrothers/adminjs-dev
+  - https://github.com/SoftwareBrothers/adminjs-design-system
+
+- https://github.com/creativetimofficial/argon-dashboard-react-nodejs /202101/js
+  - 开源了dashboard的react前端和后端
+  - https://github.com/creativetimofficial/argon-dashboard-nodejs
+  - https://github.com/creativetimofficial/material-dashboard-react-nodejs
+
+- https://github.com/thomas4019/expressa /202210/js/vue
+  - makes it easy to create basic APIs by using JSON schema
+  - django-like admin interface for creating collection-REST endpoints and managing permissions
+
+- https://github.com/heerey525/express_mongoDB /202203/js
+  - https://heerey525.github.io/express_mongoDB/apidoc/
+  - express+mongoDB的一套后台管理系统
+  - 功能点：邮箱验证、注册、登录、jwt验证、用户管理、权限列表、角色列表、商品的增删改查、国际化管理（增删改查、批量添加、excel导入导出、导出js文件）、图片上传等
+  - 依赖mongoose
+  - https://github.com/heerey525/express_mongodb_web /202012/js/vue
+
+
+- https://github.com/AndhikaBukh/Storify /202208/ts/starter
+  - http://storify-six.vercel.app/
+  - Storify is a social media app built with React. 
+  - We are building a platform for users to share their stories and connect with others.
+  - 前端依赖react-router、react  /ts
+  - 后端依赖express、mongoose    /js
+
+- https://github.com/simov/express-admin /201409/js
+  - https://simov.github.io/express-admin/
+  - a NodeJS tool for easy creation of user friendly administrative interface for MySQL, MariaDB, SQLite and PostgreSQL databases.
+  - It's built with: Hogan.js (mustache.js), Express, mysql and Bootstrap.
+  - https://github.com/simov/express-admin-examples /201407/js
 # loopback-examples
 - https://github.com/loopbackio/loopback4-example-shopping
   - LoopBack 4 Example: Online Shopping APIs
@@ -206,34 +266,6 @@ modified: 2021-01-04T16:18:39.667Z
 
 - more-loopback
   - https://github.com/NguyenVanDo51/base_project_react_loopback
-# nodejs-crud/admin
-- https://github.com/izelnakri/memoria
-  - Memoria is an in-memory/off-memory state management solution for JavaScript apps on client and/or server side. 
-  - It is a very flexible typeorm-like entity definition API that just use JS classes and decorators to define or generate the schema.
-
-- https://github.com/SoftwareBrothers/adminjs /hapi
-  - AdminJS is an automatic admin interface that can be plugged into your application. 
-  - You, as a developer, provide database models (like posts, comments, stores, products or whatever else your application uses), and AdminJS generates UI which allows you (or other trusted users) to manage content.
-  - It uses (for example) Hapi.js for rendering a couple of REST routes and mongoose as the connector to the database.
-
-- https://github.com/simov/express-admin
-  - https://simov.github.io/express-admin/
-  - a NodeJS tool for easy creation of user friendly administrative interface for MySQL, MariaDB, SQLite and PostgreSQL databases.
-  - It's built with: Hogan.js (mustache.js), Express, mysql and Bootstrap.
-
-- https://github.com/creativetimofficial/argon-dashboard-react-nodejs  /js
-  - 开源了dashboard的react前端和后端
-
-- https://github.com/AndhikaBukh/Storify
-  - http://storify-six.vercel.app/
-  - Storify is a social media app built with React. 
-  - We are building a platform for users to share their stories and connect with others.
-  - 前端依赖react-router、react  /ts
-  - 后端依赖express、mongoose    /js
-
-- https://github.com/heerey525/express_mongoDB
-  - https://heerey525.github.io/express_mongoDB/apidoc/
-  - express+mongoDB的一套后台管理系统，功能点：邮箱验证、注册、登录、jwt验证、用户管理、权限列表、角色列表、商品的增删改查、国际化管理（增删改查、批量添加、excel导入导出、导出js文件）、图片上传等
 # more-app-framework
 - https://github.com/ladjs/lad
   - Lad is the best Node.js framework. 可替代express或koa

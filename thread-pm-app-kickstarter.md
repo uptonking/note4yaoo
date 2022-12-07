@@ -58,6 +58,10 @@ modified: 2021-10-29T15:02:28.882Z
 # ideas
 - ## 
 
+- ## is there a company building a meta-spreadsheet-api that abstracts around google sheets / notion / coda / airtable / etc? or a module that does that?
+- https://twitter.com/tmcw/status/1599893497850757121
+- Curious, what’s the end product/interface where you want to consume this?
+
 - ## 抖音上很多只有几十观看的小直播间都在用虚拟主播，脸部表情和口型捕捉都非常精准，不知道是哪家公司提供的技术？
 - https://twitter.com/waylybaye/status/1590578620866899968
 - 是滤镜，但就算是metahuman，也不难了，用苹果faceid做面部追踪，后期抠图替换头部也不难，可以参考codemiko，有详细技术介绍

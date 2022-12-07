@@ -11,21 +11,49 @@ modified: 2021-06-02T16:35:46.166Z
 
 - mock-api
   - [fetch-mock vs json-server vs nock](https://www.npmtrends.com/fetch-mock-vs-json-server-vs-nock)
-# rest-api
-- https://github.com/heerey525/express_mongoDB
-  - https://heerey525.github.io/express_mongoDB/apidoc/
-  - express+mongoDB的一套后台管理系统，功能点：邮箱验证、注册、登录、jwt验证、用户管理、权限列表、角色列表、商品的增删改查、国际化管理（增删改查、批量添加、excel导入导出、导出js文件）、图片上传等
 
-- https://github.com/restify/node-restify
+
+# api-spec
+- https://github.com/json-api/json-api
+  - https://jsonapi.org/
+  - a specification for APIs that use JSON. 
+
+- https://github.com/OData/odata.net
+  - OData . NET Libraries project includes the implementation of core functionalities of OData protocol on the . NET platform, including URI parsing, request and response reading and writing, Entity Data Model (EDM) building
+  - [OData简介 - 知乎](https://zhuanlan.zhihu.com/p/56639241)
+  - [Why not OData? | Documentation](https://docs.servicestack.net/why-not-odata)
+  - [olingo - Why is ODATA not widely adopted by the developers for RESTful development? - Stack Overflow](https://stackoverflow.com/questions/55266573/why-is-odata-not-widely-adopted-by-the-developers-for-restful-development)
+  - https://github.com/zackyang000/node-odata
+# rest-api
+- api-server-nodejs /178Star/MIT/202212/ts
+  - https://github.com/app-generator/api-server-nodejs
+  - Express Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
+  - 依赖Express, SQLite, TypeORM, passport-jwt
+  - Authentication Flow uses json web tokens via Passport library - passport-jwt strategy.
+  - TypeScript, Joy for validation
+- api-server-nodejs-mongo /11Star/MIT/202212/ts/代码简单
+  - https://github.com/app-generator/api-server-nodejs-mongo
+  - 典型的dashboard的后端示例
+  - 依赖express、mongoose、passport-jwt
+  - Can be used with other React Starters for a complete Full-Stack experience
+
+- https://github.com/heerey525/express_mongoDB /202203/js
+  - https://heerey525.github.io/express_mongoDB/apidoc/
+  - express+mongoDB的一套后台管理系统
+  - 功能点：邮箱验证、注册、登录、jwt验证、用户管理、权限列表、角色列表、商品的增删改查、国际化管理（增删改查、批量添加、excel导入导出、导出js文件）、图片上传等
+  - 依赖mongoose
+  - https://github.com/heerey525/express_mongodb_web /202012/js/vue
+
+- https://github.com/restify/node-restify /202211/js
   - 依赖mime、qs、http-signature、send(for streaming files)
   - restify is a framework, utilizing connect style middleware for building REST APIs.
   - There are actually three separate clients shipped in restify: JsonClient, StringClient, HttpClient
   - One of the coolest features of restify is that it automatically creates DTrace probes for you whenever you add a new route/handler.
 
-- https://github.com/typicode/json-server
+- https://github.com/typicode/json-server /202211/js
   - Get a full fake REST API with zero coding in less than 30 seconds (seriously)
 
-- https://github.com/thiagobustamante/typescript-rest
+- https://github.com/thiagobustamante/typescript-rest /202106/ts
   - annotation-based expressjs extension for typescript.
   - typescript-rest、typescript-ioc、typescript-rest-ioc
 
@@ -49,6 +77,12 @@ modified: 2021-06-02T16:35:46.166Z
   - Data is stored in an empty JSON file.
   - https://github.com/criscunas/todo-client
     - Built with Vue3 and Tailwind CSS
+# mock-fetch
+- https://github.com/izelnakri/memoria
+  - Single JS/TS ORM for frontend, backend & in-memory testing
+  - It is a very flexible typeorm-like entity definition API that just use JS classes and decorators to define or generate the schema. 
+  - You can choose different adapters and use the same CRUD interface: MemoryAdapter, RESTAdapter or SQLAdapter.
+  - The http mock server(@memoria/server) can be run in-browser and node environments, thus allows for running your in-memory test suite in SSR(server-side rendering) environment if it is needed.
 # ajax/pjax
 - https://github.com/defunkt/jquery-pjax
   - pjax = pushState + ajax

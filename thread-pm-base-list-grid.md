@@ -15,7 +15,9 @@ modified: 2021-08-16T06:57:03.570Z
 # discuss
 - ## 
 
-- ## 
+- ## is there a company building a meta-spreadsheet-api that abstracts around google sheets / notion / coda / airtable / etc? or a module that does that?
+- https://twitter.com/tmcw/status/1599893497850757121
+- Curious, what’s the end product/interface where you want to consume this?
 
 - ## This is a fantastic blog post about how to implement an efficient spreadsheet-like reactive computation system. 
 - https://twitter.com/geoffreylitt/status/1460618741696372743

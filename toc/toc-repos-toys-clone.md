@@ -9,7 +9,7 @@ modified: 2022-08-13T05:10:32.238Z
 
 # popular-clone
 
-- https://github.com/NayeemNishaat/discord
+- https://github.com/NayeemNishaat/discord /202209/ts
   - A clone of Discord that allows realtime chatting (private/group), video/audio calls and screen sharing. Also allows creation of groups and inviting friends.
   - 包含前后端2个文件夹
   - 后端依赖 express, mongoose, jwt, socket.io

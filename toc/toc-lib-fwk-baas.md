@@ -1,6 +1,6 @@
 ---
 title: toc-lib-fwk-baas
-tags: [baas, framework, toc]
+tags: [baas, firebase, framework, toc]
 created: 2021-05-25T09:40:21.484Z
 modified: 2021-05-25T09:40:55.797Z
 ---

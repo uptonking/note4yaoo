@@ -12,6 +12,13 @@ modified: 2021-08-30T19:30:56.453Z
 - https://github.com/apache-superset/examples-data
   - This repo holds/serves the small data files that `superset load_examples` uses to load the example data into user databases.
 
+- https://github.com/ClickHouse/ClickBench
+  - https://benchmark.clickhouse.com/
+  - ClickBench: a Benchmark For Analytical Databases
+  - It covers the typical queries in ad-hoc analytics and real-time dashboards.
+  - The dataset is available in CSV, TSV, JSONlines and Parquet formats
+  - 比较了很多数据库，包括clickhouse、sqlite、mysql、pg、duckdb、doris、druid
+
 - https://github.com/jpwhite3/northwind-SQLite3
   - This is a version of the Microsoft Access 2000 Northwind sample database, re-engineered for SQLite3.
   - The Northwind sample database was provided with Microsoft Access as a tutorial schema for managing small business customers, orders, inventory, purchasing, suppliers, shipping, and employees.

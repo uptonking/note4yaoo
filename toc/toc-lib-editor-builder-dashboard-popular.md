@@ -14,6 +14,8 @@ modified: 2021-07-25T10:48:21.307Z
   - ct-material-dashboard
 
 - open dashboards vendors
+  - 针对admin的框架包括adminjs/react-admin
+  - 开源项目的集合包括app-generator
   - 大厂的dashboard一般会提供多种框架实现的版本，但有些较新的也会只提供一个版本
   - creativetimofficial的仓库要比bootstrapdash多很多，更容易长期维护
   - https://www.creative-tim.com/
@@ -60,18 +62,15 @@ modified: 2021-07-25T10:48:21.307Z
     - 开源了多个主题，但作者弃更了
     - 依赖redux
 
-
-- https://appseed.us/app-generator
+- https://appseed.us/app-generator /开源项目的集合
   - https://github.com/app-generator
   - AppSeed: Production-ready seed projects crafted on top of modern UI Kits. 
-
 
 - dashboards examples
   - [Bootstrap Themes](https://themes.getbootstrap.com/shop/?orderby=popularity)
   - https://www.admin-dashboards.com/
     - https://github.com/admin-dashboards
     - 只是自愿提交展示
-
 # popular dashboards
 - Volt Bootstrap 5 Dashboard
   - [free](https://demo.themesberg.com/volt/pages/dashboard/dashboard.html)

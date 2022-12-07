@@ -13,7 +13,7 @@ modified: 2022-08-13T06:59:54.741Z
   - realworld
   - bookshelf
 # popular
-- https://github.com/async-labs/saas /ts
+- https://github.com/async-labs/saas /202209/ts
   - Build your own SaaS business with SaaS boilerplate. 
   - 依赖React, Material-UI, Next, MobX, WebSockets, Express, Node, Mongoose, MongoDB.
 
@@ -122,7 +122,7 @@ modified: 2022-08-13T06:59:54.741Z
   - The server is emitted by TypeScript because node now supports es6.
 - https://github.com/shanhuiyang/TypeScript-MERN-Starter
   - Build a real fullstack app (backend+website+mobile) in 100% Typescript
-- https://github.com/afteracademy/nodejs-backend-architecture-typescript
+- https://github.com/afteracademy/nodejs-backend-architecture-typescript /202010/ts
   - build a backend server for Blogging platform like Medium, FreeCodeCamp
   - 依赖express、mongoose
   - Open-Source Project By AfterAcademy

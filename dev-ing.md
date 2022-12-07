@@ -106,11 +106,36 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 10-prosemirror-collab - ot - crdt
   - 11-idb-sync
 
-## 1205
+## 1206
 
 - dev-to
   - crdt tutorials
-  - nedb- src
+  - nedb-src
+
+## 1206
+
+- [Install Docker Engine on Ubuntu | Docker Documentation](https://docs.docker.com/engine/install/ubuntu/)
+
+- [Docker设置国内镜像源 并且修改文件存储路径 - Terry Chan's Blog](https://www.terrychan.org/2022/05/docker%E8%AE%BE%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90/)
+
+- vim /etc/docker/daemon.json 
+  - sudo systemctl daemon-reload
+  - sudo systemctl restart docker
+
+
+```JSON
+{
+  "registry-mirrors": [
+    "http://hub-mirror.c.163.com",
+    "https://reg-mirror.qiniu.com",
+    "https://reg-mirror.qiniu.com",
+    "https://mirror.ccs.tencentyun.com"
+  ],
+  "data-root": "自定义目录"
+}
+```
+
+## 1205
 
 - mongo-like api 示例
 
@@ -163,6 +188,7 @@ const docs = await db.findAsync({})
 
 ```JS
 // ✨ mongodb + nodejs 查询是异步
+// you can choose between an insert and update by using the `upsert` option available in: updateOne() replaceOne() updateMany()
 
 const { MongoClient } = require("mongodb");
 
@@ -179,11 +205,14 @@ async function run() {
 
     const doc = { title: 'hello-mongo' };
     const result = await movies.insertOne(doc);
-    const result2 = await movies.insertMany([doc,doc]);
+    const result2 = await movies.insertMany([doc, doc]);
 
     // Query for a movie that has the title
     const query = { title: 'hello-mongo' };
     const movie = await movies.findOne(query);
+
+    // update
+    const result = await movies.updateOne(filter, updateDoc, options);
 
     console.log(movie);
   } finally {
@@ -1810,6 +1839,7 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
 
 - log202011
   - 完全俩东西，streamlit是基于tornado的，应该拿flask和tornado比较。flask活的比tornado滋润
+  - Streamlit lets you turn data scripts into shareable web apps in minutes
   - Streamlit does not support the WSGI protocol at this time, so deploying Streamlit with (for example) gunicorn is not currently possible.
 
 ## 0818
@@ -1867,7 +1897,7 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
 
 ## 0730
 
-- replace mutator with reduxStore
+- focalboard-dev-to: replace mutator with reduxStore
 
 ## 0729
 

@@ -53,13 +53,15 @@ modified: 2021-05-14T15:04:15.333Z
   - 前端依赖 react、redux、react-quill
   - https://github.com/dyarleniber/typescript-ddd-forum
 
-- orca 1.1kStar/MIT/202203/ts
+- orca /1.1kStar/MIT/202203/ts
   - https://github.com/DimiMikadze/orca
   - https://dimimikadze.github.io/orca-docs/
+  - Build modern community apps with React and Node.
   - 后端依赖express、mongoose、passport、nodemailer
   - 前端依赖redux、styled-components、react-query
-  - Build modern community apps with React and Node.
   - 实现了私信messenger、通知notification、newsfeed，即im+博客文章
+  - forks
+    - https://github.com/BrunoAmerio/orca
 
 - MBBS /52Star/MIT/202207/ts
   - https://github.com/linfaxin/MBBS

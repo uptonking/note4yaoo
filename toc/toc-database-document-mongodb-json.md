@@ -14,12 +14,10 @@ modified: 2022-11-03T04:14:11.987Z
 
 - 更适合block-editor的数据结构是否是 mongodb？
 # mongodb-like
-
 - sift.js /1.6kStar/MIT/202211/ts
   - https://github.com/crcn/sift.js
   - Use Mongodb queries in JavaScript
   - Supports node.js, and web
-
 
 - zangodb /1kStar/MIT/201710/js
   - https://github.com/erikolson186/zangodb
@@ -55,7 +53,7 @@ modified: 2022-11-03T04:14:11.987Z
   - A simple "database" that use JSON file for NodeJS
   - Every method are now asynchronous
 
-- https://github.com/Ivshti/linvodb3
+- https://github.com/Ivshti/linvodb3 /202008/js
   - LinvoDB is a Node.js/NW.js/Electron persistent DB with MongoDB/Mongoose-like features and interface.
   - MongoDB-like query language
   - Persistence built on LevelUP - you can pick back-end
@@ -126,6 +124,11 @@ modified: 2022-11-03T04:14:11.987Z
 
 - https://github.com/slacy/minimongo /202001/python
   - a lightweight, schemaless, Pythonic Object-Oriented interface to MongoDB
+
+- https://github.com/scottrogowski/mongita /202210/python
+  - Mongita is a lightweight embedded document database that implements a commonly-used subset of the MongoDB/PyMongo interface
+  - instead of being a server, Mongita is a self-contained Python library. 
+  - Mongita can be configured to store its documents either on disk or in memory.
 # mongodb-examples
 
 # more-document-json

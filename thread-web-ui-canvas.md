@@ -31,7 +31,16 @@ modified: 2021-08-06T07:36:05.864Z
 
 - ## 
 
-- ## 
+- ## Chrome on Android (second browser) seems to handle pointer drag events differently - firing only at the start. 
+- https://twitter.com/steveruizok/status/1600074444172664832
+  - Firefox (first browser) has the behaviour I expected. 
+  - Any way to fix this?
+  - BTW, this is three js/react three fiber.
+- Could be a touch-action issue? Put on a `touch-action: none` and see what happens; it could be something for the 3js channels tho
+- touch action is a CSS property (https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action), 
+  - 👉🏻 it usually tells the browser that you want to handle gestures internally rather than deferring to the browser's native handling (e.g. for scrolling, zooming)
+- would it make sense to add it into the default styles of the div that holds the canvas? 
+  - I think if you do it, you need to write a huge warning in the documentation, i've used r3f in places where the canvas is not supposed to be full screen and i've specifically omitted the touch-action css rule. It's a warning in use-gesture and recommends you add it fwiw.
 
 - ## On iPadOS, when connected to a keyboard, holding Command brings up this menu. 
 - https://twitter.com/steveruizok/status/1598287351373234178

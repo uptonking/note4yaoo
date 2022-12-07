@@ -13,6 +13,16 @@ modified: 2021-05-24T16:55:40.481Z
 - 国内有很多快速开发框架如jeesite/jeecg，国外对应的是headless/cms框架
   - https://github.com/n370/awesome-headless-cms
 # popular
+- https://github.com/refinedev/refine
+  - https://refine.dev/
+  - headless web application framework developed with flexibility in mind.
+  - It eliminates repetitive tasks demanded by CRUD operations and provides industry standard solutions for critical parts like authentication, access control, routing, networking, state management, and i18n.
+  - Connectors for 15+ backend services including REST API
+  - refine seamlessly works with any custom design or UI framework that you favor. For convenience, it ships with ready-made integrations for Ant Design System, Material UI, Mantine, and Chakra UI.
+  - Auto-generated CRUD UIs from your API data structure
+  - state management & mutations with React Query
+  - Out-of-the-box support for live/real-time applications
+
 - netlify-cms /14kStar/MIT/202105/js
   - https://github.com/netlify/netlify-cms
   - 核心功能是提供了通过ui操作执行读写github的能力、文件编辑器、自动构建和发布

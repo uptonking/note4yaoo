@@ -298,9 +298,8 @@ modified: 2022-11-30T18:56:07.072Z
   - Each client has it's own local database. 
 
 - https://github.com/roldaojr/ra-data-pouchdb /202204/js
-  - PouchDB/CouchDB data provider for react-admin
+  - PouchDB/CouchDB data provider for [react-admin](https://github.com/marmelab/react-admin)
   - This data provider takes a PouchDB object as input, then creates a client-side data provider around it.
-  - https://github.com/marmelab/react-admin
 
 - https://github.com/starikan/pouchdb-viewer /202104/js
   - Standalone PouchDB viewer powered by Electron and pouchdb-server

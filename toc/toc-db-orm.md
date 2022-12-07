@@ -107,6 +107,12 @@ modified: 2021-08-30T18:56:09.644Z
   - A Node.js ORM, mapping-based. Works with MySQL, PostgreSQL, SQLite and more.
 - https://github.com/alfateam/rdb /js
   - ORM for nodejs. Supports postgres, msSql, mySql, Sybase SAP and sqlite.
+
+- https://github.com/izelnakri/memoria
+  - Single JS/TS ORM for frontend, backend & in-memory testing
+  - It is a very flexible typeorm-like entity definition API that just use JS classes and decorators to define or generate the schema. 
+  - You can choose different adapters and use the same CRUD interface: MemoryAdapter, RESTAdapter or SQLAdapter.
+  - The http mock server(@memoria/server) can be run in-browser and node environments, thus allows for running your in-memory test suite in SSR(server-side rendering) environment if it is needed.
 # database
 - https://github.com/codefollower/H2-Research
   - H2数据库源代码学习研究
