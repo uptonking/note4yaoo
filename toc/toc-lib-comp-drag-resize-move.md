@@ -80,4 +80,7 @@ modified: 2022-02-05T18:45:34.558Z
   - https://zircleui.github.io/docs/
   - Enjoy a different UI/UX with the built-in zoomable navigation.
   - Circles everywhere: Breaking away from the conventional UI with a circular UI Kit.
+
+- https://github.com/allain/zuite /202205/js
+  - A toolkit for building modern zoomable user interfaces
 # repos

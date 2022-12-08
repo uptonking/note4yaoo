@@ -99,6 +99,12 @@ modified: 2022-08-19T23:00:22.162Z
   - https://github.com/bigbinary/neeto-editor
   - https://neeto-editor.onrender.com/
   - The neetoEditor library drives the rich text experience in the neeto products built at BigBinary.
+
+- rhino-editor /26Star/MIT/202212/ts/ruby
+  - https://github.com/KonnorRogers/rhino-editor
+  - https://rhino-editor.vercel.app/
+  - a grab and go WYSIWYG editing experience that can hook into Ruby on Rails ActionText backend.
+  - Currently this package does so using TipTap but will most likely include another integration for ProseMirror to allow for both Markdown + WYSIWYG editing.
 # tiptap-editors
 - dante3 /1.7kStar/MIT/202208/js
   - https://github.com/michelson/Dante

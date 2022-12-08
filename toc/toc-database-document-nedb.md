@@ -37,6 +37,20 @@ modified: 2022-11-26T17:35:24.870Z
   - Use @nedb/multi to read and write to the same database in different node.js processes
   - Use @nedb/mongoose-driver as a drop-in replacement for mongoose + mongodb to make apps lightweight
   - if you want to use nedb in browser, please use the original version.
+  - https://github.com/vangelov/nedb-multi /201705/js
+    - A proxy for NeDB which allows for multi-process access
+    - I decided to try a similar, but lock-free approach, using the axon framework
+    - There's still only one master process that the others connect to, but there are no locks. 
+    - Also, both callback- and cursor-based methods are supported. 
+    - https://github.com/tj/axon
+      - message-oriented socket library for node.js heavily inspired by zeromq
+    - https://github.com/thelarz/nedb-multi
+      - Allow host listen ip arg so I can run on machine without internet access
+  - https://github.com/allain/nedb-party /201703/js
+    - A library for making nedb multi-process capable.
+    - Basically, it'll check to see if another process has the db locked, if it does, it'll send requests to that process, through rpc, to perform change operations.
+    - it does not support methods that return cursors. 
+    - It also relies on each process starting a http server on the same port and whichever manages to start listening becomes the master and the others connect to it.
 - https://github.com/salmanff/nedb-asyncfs /202203/js
   - This fork allows you to store the database files on async storage mediums like aws or dropbox. 
   - You should not use nedb-asyncfs for in-browser functionality.
@@ -198,6 +212,7 @@ modified: 2022-11-26T17:35:24.870Z
   - a rest API server built with Express. 
     - The server has API endpoints for Posts and Users. 
   - It aims to demonstrate the ability to provide rest services. 
+  - 依赖express、mongoose、sequelize
   - Also, it aims to highlight the ability for the server to have modular controllers that can connect and query data from a variety of databases. 
     - The Server can connect with a variety of database types: mongo, nedb, and sqlite.
   - https://github.com/bluesky50/ts-api-server-koa-postgres /201805/ts
@@ -236,6 +251,9 @@ modified: 2022-11-26T17:35:24.870Z
 - https://github.com/aerys/mongoose-nedb /201612/js
   - A Mongoose driver for NeDB.
   - [extend nedb to support mongoose like schema](https://gist.github.com/dhigginbotham/5922171)
+
+- https://github.com/Mido22/sqlite-to-nedb /201611
+  - Util for converting a sqlite database into a nedb database
 
 - https://github.com/ivrusson/mockon /202111/ts
   - Mock Server with data persistency based on MockJS and NeDB

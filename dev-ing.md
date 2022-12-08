@@ -92,6 +92,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-focalboard
   - olap-cube-js
 - eg-tanstack-table-v8
+
 - sync-service
   - collab-data-structure: hlc/lww
   - undo/redo
@@ -106,11 +107,20 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 10-prosemirror-collab - ot - crdt
   - 11-idb-sync
 
-## 1206
+## 1208
 
 - dev-to
   - crdt tutorials
   - nedb-src
+
+## 1207
+
+- [Typescript Error: setInterval - Type 'Timer' is not assignable to type 'number' - Stack Overflow](https://stackoverflow.com/questions/53189729/typescript-error-setinterval-type-timer-is-not-assignable-to-type-number)
+
+```typescript
+let onSizeChangeSetInterval: ReturnType<typeof setInterval> | undefined;
+onSizeChangeSetInterval = setInterval(() => {...}, 30);
+```
 
 ## 1206
 
@@ -121,7 +131,6 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - vim /etc/docker/daemon.json 
   - sudo systemctl daemon-reload
   - sudo systemctl restart docker
-
 
 ```JSON
 {
@@ -140,7 +149,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - mongo-like api 示例
 
 ```JS
-// ✨ minimongo
+// ✨ minimongo db.cName.crud()
 
 var minimongo = require("minimongo");
 
@@ -168,7 +177,7 @@ await db.collection["animals"].upsert(doc)
 ```
 
 ```JS
-// ✨ nedb
+// ✨ nedb cName.crud()
 
 const Datastore = require('@seald-io/nedb');
 
@@ -187,7 +196,7 @@ const docs = await db.findAsync({})
 ```
 
 ```JS
-// ✨ mongodb + nodejs 查询是异步
+// ✨ mongodb + nodejs db.c(cName).crud()
 // you can choose between an insert and update by using the `upsert` option available in: updateOne() replaceOne() updateMany()
 
 const { MongoClient } = require("mongodb");

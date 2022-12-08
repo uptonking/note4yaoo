@@ -46,6 +46,17 @@ modified: 2021-08-30T18:56:18.632Z
   - requires SQLite 3.33 or higher (it uses the -json output mode)
 - https://github.com/WebReflection/sqlite-worker
   - persistent, SQLite database for Web and Workers, based on sql.js and sqlite-tag.
+
+- libsql /1.8kStar/MIT/202212/clang
+  - https://github.com/libsql/libsql
+  - https://libsql.org/
+  - a fork of SQLite, to suit many more use cases than SQLite was originally designed for
+  - libSQL will always be compatible with the SQLite file format.
+  - libSQL will keep 100% compatibility with the SQLite API, but we may add additional APIs.
+  - libSQL will always be embeddable, meaning it runs inside your process without needing a network connection. 
+  - features
+    - randomized ROWID
+    - WebAssembly User Defined Functions
 # sqlite-viewer
 - https://github.com/qwtel/sqlite-viewer-vscode  /ts
   - https://sqliteviewer.app/

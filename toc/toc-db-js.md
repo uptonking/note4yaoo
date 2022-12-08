@@ -164,6 +164,10 @@ modified: 2022-11-25T15:50:48.226Z
   - TaffyDB is an open source JavaScript library that provides powerful in-memory database capabilities to both browser and server applications.
   - We created TaffyDB easily and efficiently manipulate these 'tables' with a uniform and familiar SQL-like interface.
   - SQL inspired features such as insert, update, unique, count, and more
+- https://github.com/chjj/tiny /201406/js/单文件
+  - tiny is an in-process document/object store for node.js.
+  - inspired by nStore, however, its goal was to implement real querying which goes easy on the memory.
+  - It supports mongo-style querying, or alternatively a "mapreduce-like" interface similar to CouchDB's views.
 
 - https://github.com/knadh/localStorageDB /202011/js
   - a simple layer over localStorage (and sessionStorage) that provides a set of functions to store structured data like databases and tables. 
@@ -234,9 +238,7 @@ modified: 2022-11-25T15:50:48.226Z
   - localForage is a fast and simple storage library for JavaScript. 
   - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple, localStorage-like API.
   - localForage uses localStorage in browsers with no IndexedDB or WebSQL support.
-
 # db-js-utils
-
 - https://github.com/pubkey/event-reduce /202212/ts
   - https://pubkey.github.io/event-reduce/
   - An algorithm to optimize database queries that run multiple times

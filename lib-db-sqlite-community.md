@@ -35,7 +35,7 @@ modified: 2021-08-30T17:33:46.086Z
   - Remember that it is typical for programs to read /etc/nsswitch.conf, /etc/resolve.conf and tons of others at startup time - the filesystem is the datasource in Unix tradition, so the machinery is very well optimized.
 - SQLite has a backend which is well suited as a key-value store.
   - Here is a NoSql database based on the SQLite backend
-  - https://github.com/symisc/unqlite
+  - https://github.com/symisc/unqlite /202205/clang
     - UnQLite is an embedded NoSQL (Key/Value store and Document-store) database engine.
 
 - ## [sqlite rowid after deleting rows](https://stackoverflow.com/questions/35876171)

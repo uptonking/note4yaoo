@@ -16,6 +16,17 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
+
+- ## 
+
+
+- ## 
+
+
+- ## 
+
+
+
 - ## TIL be careful with `Array.every` and empty arrays.
 - https://twitter.com/steveruizok/status/1597207156436393984
   - if you dig into the chromium source, this is exactly how it's implemented

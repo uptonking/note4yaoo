@@ -150,6 +150,10 @@ modified: 2022-08-21T10:02:05.129Z
 # examples
 - https://github.com/qwtel/sqlite-viewer-vscode
   - A quick and easy SQLite viewer for VSCode, inspired by DBBrowser for SQLite and Airtable.
+
+- https://github.com/vikadata/vika.js
+  - Vika JavaScript SDK 是对维格表 Fusion API 的官方封装，可以很方便的对你的维格表中的数据进行增删改查操作。
+  - 你可以轻松的将维格表中的数据集成到你自己的应用中
 # discuss
 - ## Alternative for Notion
 - https://www.reddit.com/r/selfhosted/comments/qhm1v2/alternative_for_notion/
