@@ -22,6 +22,17 @@ modified: 2022-11-27T19:20:24.273Z
 
 - 批量插入超大量数据会受浏览器限制
   - [Batch insert help](https://github.com/louischatriot/nedb/issues/62)
+
+# codebase
+
+## Datastore
+
+## Persistence
+
+
+
+## Executor
+
 # discuss
 - ## 
 
@@ -167,7 +178,6 @@ so is not suited for large applications where you have more than 1M records, If 
 - PouchDB isn't a self-contained database at all, it's an abstraction layer. 
   - That said, PouchDB can be used on-disk by either embedding a CouchDB instance (super heavyweight solution) or by using a LevelDOWN adapter (default on Node and an acceptable solution)
   - I just think PouchDB is so overly concerned about synchronization/replication across instances and revision control that I feel like their API is much more basic in order to align with the CouchDB protocol vs having their own more expressive API on top of it for the many users who may just want to use it on a single isolated instance like NeDB.
-
 
 - ## [NeDB, a pure Javascript database for Node.js and Node Webkit_201306](https://news.ycombinator.com/item?id=5912125)
 - The trend continues where all things eventually get implemented in Javascript. Waiting for JS.js

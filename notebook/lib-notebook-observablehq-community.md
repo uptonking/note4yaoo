@@ -9,6 +9,18 @@ modified: 2021-05-14T14:55:00.191Z
 
 # discuss
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## it's too easy to get stuck in an infinite loop with autorun enabled. 
+- https://twitter.com/zxch3n/status/1600659901080297472
+  - if natto guesses you're writing a loop, it'll now automatically disable autorun.
+- CodePen solved this by injecting custom code into loops if I remember correctly. The code will abort the loop if it takes too long to run
+- yep! that's the most robust approach but i'd like to avoid injecting code if possible (1. needs to load parser before code can run. 2. changes runtime behavior)
+
 - ## One great thing about using @observablehq is that I am not "locked in". 
 - https://twitter.com/steren/status/1525226330039521280
   - notebooks can be exported in idiomatic JavaScript, and later loaded on my own website:

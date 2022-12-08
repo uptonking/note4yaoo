@@ -10,7 +10,23 @@ modified: 2020-12-29T17:46:00.207Z
 # nice-to-have
 
 - ctrl+p: 搜索文件名时，没有像在左边搜索文字那样方便，左边搜文字时可以一次性展示所有文件及匹配点
-# extensions-docs
+# extensions-stars
+- ## import sorter
+
+- [Option to allow for only sorting · Issue #36 · daidodo/format-imports-vscode](https://github.com/daidodo/format-imports-vscode/issues/36)
+  - I guess what you want is that the extension formats imports/exports first, and then prettier format the whole file?
+  - If yes, you could install prettier AFTER this extension in VSCode, e.g. uninstall prettier and then install again. (I'm not sure how to specify formatter orders in VSCode but did once enter the situation that prettier ran after this extension.)
+
+```JSON
+{
+   "tsImportSorter.configuration.wrappingStyle": {
+    "maxBindingNamesPerLine": 0,
+    "maxDefaultAndBindingNamesPerLine": 0,
+    "maxLineLength": 0
+  }
+}
+```
+
 - ## region folding /maptz.regionfolder
 - 优点是利用文件格式支持的注释来确定fold的范围，自身不会渲染显示出来
 - 无法fold的格式

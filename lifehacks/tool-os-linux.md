@@ -10,7 +10,6 @@ modified: 2020-12-22T12:42:14.745Z
 # pieces
 
 # ubuntu
-
 - 系统升级的困扰
   - 可能变化的ui：系统图标、字体
   - ubuntu18版的postgresql-10数据库会保留到u20
@@ -33,9 +32,7 @@ modified: 2020-12-22T12:42:14.745Z
 - 单位
   - 文件管理器显示文件的大小基于1KB=1000bytes(SI standard)
   - 而终端`ls -lh`显示大小基于1KiB=1024bytes(IEC standard)
-
 # centos
-
 - CentOS 8将在2021年结束支持，往后CentOS 7作为长期支持版本将继续被支持直到其生命周期结束，CentOS Stream将作为工作重点
   - centos 7的支持，持续到2024年
   - CentOS 创始人开辟新项目 Rocky Linux，一个社区版的企业操作系统，旨在与 Red Hat Enterprise Linux 100％ 兼容
@@ -46,3 +43,8 @@ modified: 2020-12-22T12:42:14.745Z
   - CentOS Stream就成为了介于Fedora和RHEL中间的那个发行版，centos stream就是rhel beta的定位
   - CentOS Stream，既可以提供一个下一代RHEL的公测平台，又可以让CentOS社区完成一部分RHEL的开发工作，还可以给无法接受Fedora更新频率，但希望使用RPM系列操作系统的人一个选择，这才是对Red Hat有用的子项目。
 - Oracle Linux 8，这个发行版也是基于RHEL8的重构发行版，和CentOS 8没什么区别，软件基本通用。
+# linux-open
+- https://github.com/app-outlet/app-outlet
+  - http://app-outlet.github.io/
+  - App Outlet is a Universal application store.
+  -  It currently supports AppImages, Flatpaks and Snaps packages.

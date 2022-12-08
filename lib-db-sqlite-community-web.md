@@ -14,6 +14,38 @@ modified: 2022-11-25T09:47:43.079Z
 
 - ## 
 
+- ## 
+
+- ## What’s the advantage of using WASM SQLite over IndexedDB for a web application?
+- https://twitter.com/frankdilo/status/1600579551771377674
+- IndexedDB can never be as fast, plus SQLite is just way more advanced to use...
+- Indexeddb has an awful api, is way less performant, and you cant use it on other platforms (desktop/mobile apps) if you're sharing persistence code!
+- Are you using it for Reader?
+  - Both, sadly. Would love to only use wasm sqlite but it doesnt support persistence to disk yet!
+  - That’s what I was wondering about. Does it use IndexedDB under the hood to save data?
+  - We only use the wasm sqlite for full-text-search right now, and we just dump the whole db to disk periodically. Everything else (storing document data, syncing, etc) is on indexeddb still yes 😢 it's too critical to trust with wasm sqlite
+- 
+- 
+- 
+
+
+
+
+- ## I’ve been playing with SQLite in the browser via WASM the past few days. 
+- https://twitter.com/devongovett/status/1600679294833156097
+  - I have to say, it’s really nice to have a full database available locally. 
+  - Once you’ve downloaded the data, you can sort, filter, join, etc basically instantly with no network requests. And it works offline!
+- Is the reason to use SQL lite vs index db a preference for the API? Or is there some reason why indexeddb doesn't work in some use cases?
+  - It’s much easier to do complex queries and joins with SQL in a high level, declarative way. 
+- I guess what I’m missing is why you’d want to send a large amount of data to each user. I’ve always found using SQL on the server side to be plenty fast, and you still have to send incremental updates and incorporate them into the local copy of the database.
+  - Depends how much data you’re expected to have! But even then, you can load it incrementally in some cases too. This architecture is super common with native mobile apps. Won’t work for everything but could make subsequent updates much faster in many cases.
+- @meteorjs has had this for 10+ years with #minimongo.
+- I've worked on a kiosk app developed as a PWA that used IndexedDB to permanently store a SQLite database on the client and load it when the app started. There was a service worker that periodically checked if the database had a new version and would download it in background.
+- I've seen this done well in AWS amplify stack with the data store library. Client has the db synced. Mutations happen locally and sync when back online. Tradeoff of course is initial sync being large depending on use case, but UI is fast after the sync since the data is local.
+
+
+
+
 - ## Now that SQLite can be run in a browser as a 296KB (compressed) WASM file, 
 - https://twitter.com/quolpr/status/1563502562531086337
   - I think it's time we all forgave W3C/Mozilla for rejecting it as a core browser component in Web SQL

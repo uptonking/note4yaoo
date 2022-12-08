@@ -107,11 +107,20 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 10-prosemirror-collab - ot - crdt
   - 11-idb-sync
 
-## 1208
+## 1209
 
 - dev-to
   - crdt tutorials
   - nedb-src
+
+## 1208
+
+- [Why the question mark for type tag? · Issue #178 · jsdoc/jsdoc.github.io](https://github.com/jsdoc/jsdoc.github.io/issues/178)
+  - I'm curious of why JSDoc allows a ? symbol to denote a nullable type. Why {?number} when {null|number} is available, which is more readable and explicit?
+  - It's because JSDoc supports Closure Compiler's syntax for type expressions, and that's what the Closure Compiler folks picked.
+
+- [Inherit JSDoc from generic parameter in TypeScript - Stack Overflow](https://stackoverflow.com/questions/64590450/inherit-jsdoc-from-generic-parameter-in-typescript)
+  - 示例太具体，未找到更通用的方法
 
 ## 1207
 

@@ -7,7 +7,7 @@ modified: 2021-05-23T16:34:32.755Z
 
 # pm-list-grid-blog
 
-# [在线Excel项目到底有多刺激](https://mp.weixin.qq.com/s/f1vwzuPryc8ag6nd5Ngr5A)
+# [在线Excel项目到底有多刺激-腾讯文档Excel_202012](https://mp.weixin.qq.com/s/f1vwzuPryc8ag6nd5Ngr5A)
 
 - 冲突处理
 - 版本管理
@@ -18,7 +18,7 @@ modified: 2021-05-23T16:34:32.755Z
 - 复制粘贴
 - 表格渲染有多复杂
 - 数据管理的难题
-# [精读《高性能表格》](https://zhuanlan.zhihu.com/p/364094849)
+# [精读《高性能表格》_202104](https://zhuanlan.zhihu.com/p/364094849)
 - 要做表格首先要选择基于 DOM 还是 Canvas，这是技术选型的第一步
   - Canvas 渲染效率比 DOM 高，这是浏览器实现导致的。
   - DOM 可拓展性比 Canvas 好，渲染自定义内容首选 DOM 而非 Canvas。
@@ -82,6 +82,23 @@ modified: 2021-05-23T16:34:32.755Z
     - ag-grid: 53
     - extjs: 54
     - brytum: 59
+# [The Fastest JavaScript Data Grid — A Performance Analysis_202006](https://dzone.com/articles/the-fastest-javascript-data-grid-a-performance-ana)
+
+
+- The data grid performance was measured on 3 main metrics. 
+  - Initial Load Time — How long does it take to load the initial set of static data.
+  - Filtering speed — Time to dynamically filter on a field (eg: characters in a name).
+  - Scrolling speed — How long does it take to scroll through various portions of the grid (eg: first few entries, scroll through a certain section of the grid and back up, mid grid and up a few entries, scroll to end of grid etc.)
+
+- Experiments were conducted on server-side data containing small (10, 000), medium (100, 000)  and large (1 million+) datasets (number of rows). 
+- For each vendor, their respective Grid Infinite/Virtual Scrolling capabilities were used to gather the metrics.
+
+- Performance Results 
+  - Test results indicate that while most grids do equally well with initial static load time and dynamic filtering speeds, Ext JS and DevExtreme data grid outperformed other competitors on scrolling performance when tested with medium to large datasets (100,000 to 1,000,000+ data volumes). 
+  - Although other metrics are important, scrolling performance is a key indicator of grid stability given a user’s frequent need to scroll through huge amounts of filtered data. 
+  - Data grids provide different scrolling experiences but efficiently implemented virtual scrolling feature retrieves and displays large data requests within a second vs minutes for certain grids as observed in this experiment. 
+
+
 # The simplest way to create a Data Grid in React - Tabelify
 - [The simplest way to create a Data Grid in React_201606](https://medium.com/myntra-engineering/the-simplest-way-to-create-a-data-grid-in-react-ccdd4368ee7a)
   - [react-tabelify](https://github.com/rishabhbits038/react-tabelify)
