@@ -14,6 +14,11 @@ modified: 2021-07-20T13:50:23.433Z
   - rendering(~~web~~) is the future, but not the present.
   - 参考各种解决方案的优点，积累方案、算法、库、框架、应用
 
+- 技术方向js: 富文本编辑器，多维表格，协作
+- 技术扩展js/py: 页面编辑器LowCode，Excel，图表
+- 技术可选1: 画板，图形编辑器
+- 技术可选2: olap，bi，数据工程，数据库
+
 ## techstacks: rich-editor/builder
 
 - design system

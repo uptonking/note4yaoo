@@ -113,6 +113,58 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - crdt tutorials
   - nedb-src
 
+## 1209
+
+- [javascript - Promise : then vs then + catch - Stack Overflow](https://stackoverflow.com/questions/33278280/promise-then-vs-then-catch)
+
+```JS
+myPromise.then(function() {
+  // Some error may happen
+  throw ('An exception that would be caught');
+}).catch(function() {
+  console.log('error');
+});
+// Is the same as this, the errHandle tries to catch any unhandled error
+// from previous result.
+myPromise.then(func, null).then(null, errHandle);
+
+myPromise.then(function() {
+  // Some error may happen
+  throw ('An unhandled exception.');
+}, function() {
+  // This won't log the error if it happens in the 
+  // some error may happen block.
+  console.log('error');
+});
+// Is the same as this, the errHandle will handle errors from previous result,
+// but it won't handle errs in func.
+myPromise.then(func, errHandle)
+```
+
+- [javascript - Is it an anti-pattern to use async/await inside of a new Promise() constructor? - Stack Overflow](https://stackoverflow.com/questions/43036229/is-it-an-anti-pattern-to-use-async-await-inside-of-a-new-promise-constructor)
+
+```JS
+let p = new Promise(resolve => {
+  ""(); // TypeError
+  resolve();
+});
+
+(async () => {
+  await p;
+})().catch(e => console.log("Caught: " + e)); // Catches it.
+
+// ----
+
+let p = new Promise(async resolve => {
+  ""(); // TypeError
+  resolve();
+});
+
+(async () => {
+  await p;
+})().catch(e => console.log("Caught: " + e)); // Doesn't catch it!
+```
+
 ## 1208
 
 - [Why the question mark for type tag? · Issue #178 · jsdoc/jsdoc.github.io](https://github.com/jsdoc/jsdoc.github.io/issues/178)
