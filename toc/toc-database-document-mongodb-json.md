@@ -53,11 +53,6 @@ modified: 2022-11-03T04:14:11.987Z
   - A simple "database" that use JSON file for NodeJS
   - Every method are now asynchronous
 
-- https://github.com/Ivshti/linvodb3 /202008/js
-  - LinvoDB is a Node.js/NW.js/Electron persistent DB with MongoDB/Mongoose-like features and interface.
-  - MongoDB-like query language
-  - Persistence built on LevelUP - you can pick back-end
-
 - https://github.com/sergeyksv/tingodb /201901/js
   - an embedded JavaScript in-process filesystem or in-memory database upwards compatible with MongoDB at the v1.4 API level.
 
@@ -122,6 +117,13 @@ modified: 2022-11-03T04:14:11.987Z
 - https://github.com/kofrasa/mingo /202211/ts
   - MongoDB query language for in-memory objects
 
+- https://github.com/nodkz/mongodb-memory-server /202211/ts
+  - This package spins up an actual/real MongoDB server programmatically from within nodejs, for testing or mocking during development. 
+  - By default it holds the data in memory. 
+
+- https://github.com/tkssharma/nodejs-db-orm-world /202003/ts
+  - Node JS with different ORM like Typeorm, Knex, Prisma and Sequelize with Node JS API Development Node JS with without any ORM (MYSQL raw queries)
+
 - https://github.com/slacy/minimongo /202001/python
   - a lightweight, schemaless, Pythonic Object-Oriented interface to MongoDB
 
@@ -129,8 +131,84 @@ modified: 2022-11-03T04:14:11.987Z
   - Mongita is a lightweight embedded document database that implements a commonly-used subset of the MongoDB/PyMongo interface
   - instead of being a server, Mongita is a self-contained Python library. 
   - Mongita can be configured to store its documents either on disk or in memory.
-# mongodb-examples
+# mongoose
+- https://github.com/arqo123/speedgoose
+  - Next-level mongoose caching layer with event based cache clearing
 
+- https://github.com/eherve/mongoose-datatable
+  - Server side dataTable request support for mongoose.
+
+- https://github.com/victorteokw/seedgoose
+  - Mongoose data seeding with smart id references tracking.
+# mongodb-examples
+- https://github.com/callmenikk/Hipika /202201/ts
+  - this is mini social platform
+  - Create Account, Create Posts, Edit or Delete Them, Explore Others Posts, Follow User
+
+- https://github.com/ngduc/node-rem /202203/ts
+  - Express MongoDB and more: typescript, passport, JWT, socket.io, HTTPS, HTTP2, async/await, nodemailer, templates, pagination, docker, etc. 
+- https://github.com/saisilinus/node-express-mongoose-typescript-boilerplate /202211/ts
+  - a production-ready Node.js TypeScript app installed and fully configured
+  - authentication using JWT, request validation, unit and integration tests, continuous integration, docker support, API documentation
+  - https://github.com/saisilinus/react-redux-typescript-boilerplate
+    - A react redux typescript for building production ready react apps
+
+- https://github.com/wpcodevo/trpc-react-node-mongodb
+  - [Build tRPC API with React.js, Express & Node.js: Project Setup 2022](https://codevoweb.com/trpc-api-reactjs-nodejs-mongodb-project-setup/)
+
+- https://github.com/sunnysidelabs/mongoose-express-ts /202210/ts
+  - show a good end-to-end project setup and workflow for writing a strongly-typed Mongoose Node.js Express code in TypeScript complete with middleware, models, routes, and types
+- https://github.com/kingRayhan/quick-crud /202205/ts
+  - An easy CRUD operation based on Factory pattern with Mongoose
+
+- https://github.com/mongodb-university/mflix-ui /201906/js
+  - https://github.com/mongodb-university/mflix-js
+  - 提供了json数据
+  - Most of your work will be implementing methods in the dao directory, which contains all database interfacing methods.
+  - [Sample Mflix Dataset — MongoDB Atlas](https://www.mongodb.com/docs/atlas/sample-data/sample-mflix/)
+- https://github.com/broksainis/mflix
+  - Typescript Express + Mongo + React sample application
+  - Lets you search for movies through IMDB movies database (years 1893-2015) by providing fragment of the title and movie rating
+- https://github.com/tony-sn/mflix
+  - Build a full stack MERN app
+- https://github.com/SeptBlast/silver-happiness
+  - Quick CRUD API Handler for the Sample_Mflix DB associated with MongoDB
+
+- https://github.com/Toxocious/fleiya-dashboard
+  - Fleiya Dashboard is the web-facing user interface for Fleiya — an injectable Windows .dll that enhances the user's playing experience 
+
+- https://github.com/jerrychong25/node-express-mongo-passport-jwt-typescript /202104/ts
+  - a Node.js back end web application written in TypeScript, which features REST API interface via Express.js, user JWT authentication via Passport.js, and MongoDB data storage via Mongoose.js.
+- https://github.com/ooboqoo/koa-mongo /202102/ts
+  - Koa2 + MongoDB + TypeScript Playground
+
+- https://github.com/ljlm0402/typescript-express-starter /202210/ts
+  - Express RESTful API Boilerplate Using TypeScript
+  - 通用后端，支持切换db
+- https://github.com/janishar/nodejs-backend-architecture-typescript /202010/ts
+  - Node.js Backend Architecture Typescript
+  - Open-Source Project By AfterAcademy
+
+- https://github.com/csandoval18/movie-app /202212/ts/client+server
+  - Movie information app using MongoDB/Mongoose for session handling with JWT. 
+  - The front end uses React, Redux Toolkit, & React Router. PostCSS with Tailwind, Styled Components, and DaisyUI is used to style the UI. 
+  - The movie data is fetched from OMDB API
+
+- https://github.com/NedcloarBR/N-D-B
+  - A Multi Function Discord Bot based on Discord. JS Library
+
+- https://github.com/ivan3123708/fullstack-shopping-cart /202101/ts+js
+  - MERN stack shopping cart
+
+- https://github.com/onderonur/onurl
+  - URL Shortener created w/ Next.js, TypeScript, Mongoose
+
+- https://github.com/flash-oss/medici
+  - Double-entry accounting system for nodejs + mongoose
+  - The cardinal rule of double-entry accounting is that "for every debit entry, there must be a corresponding credit entry" which means "everything must balance out to zero"
+
+- https://github.com/kira0x1/mikaela
+  - a discord music bot that gives users the ability to store their favorite songs, and create playlists on discord.
 # more-document-json
 - https://github.com/Irrelon/ForerunnerDB /202006/js
   - ForerunnerDB is a NoSQL JavaScript JSON database with a query language based on MongoDB (with some differences) and runs on browsers and Node.js.

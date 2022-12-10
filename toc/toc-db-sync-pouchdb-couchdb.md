@@ -114,7 +114,6 @@ modified: 2022-11-30T18:56:07.072Z
   - Meteor database driver for CouchDB and Cloudant
   - an efficient Livequery implementation providing real-time updates from the database by consuming the CouchDB _changes feed
   - Distributed Data Protocol (DDP) RPC end-points for updating the data from clients connected over the wire
-
 # mobile-pc
 - https://github.com/craftzdog/pouchdb-adapter-react-native-sqlite /202108/js
   - PouchDB adapter using ReactNative SQLite as its backing store
@@ -162,7 +161,8 @@ modified: 2022-11-30T18:56:07.072Z
 
 - https://github.com/pouchdb-community/pouchdb-quick-search /201702/js
   - efficient and accurate full-text search engine built on top of PouchDB
-  - The underlying tokenization/stemming/stopword engine is Lunr
+  - The underlying tokenization/stemming/stopword engine is Lunr, which is optimized for English text, using a variant of the Porter stemmer. 
+  - This is a local plugin, so it is not designed to work against CouchDB/Cloudant/etc. If you'd like to search against the server, use the CouchDB Lucene plugin, Cloudant's search indexes, or something similar.
 
 - https://github.com/onyxcodes/dbmanager-ui /202208/ts
   - UI for managing PouchDB databases through DBManager interface layer

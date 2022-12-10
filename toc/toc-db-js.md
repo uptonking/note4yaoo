@@ -193,7 +193,7 @@ modified: 2022-11-25T15:50:48.226Z
   - who is using
     - json-server
 
-- https://github.com/sius/fakerdb /202209/js
+- https://github.com/sius/fakerdb /202005/js
   - Generate an unlimited stream of JSON schema instances using json-schema-faker, faker, chance and insert the data into a supported database, e.g.: nedb, mongodb, postgres, mssql.
 
 - https://github.com/fwd/database /202210/js

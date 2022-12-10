@@ -30,6 +30,12 @@ modified: 2022-06-03T22:07:49.519Z
   - 依赖很多plotly的产品
   - Instant offline SQL-powered data visualisation in your browser
 
+- https://github.com/cloudflare/d1-northwind /202211/js
+  - https://northwind.d1sql.com/
+  - Northwind Traders D1 Demo
+  - 使用cf全家桶
+  - a demo of the Northwind dataset, running on Cloudflare Workers, and D1 - Cloudflare's newest SQL database, running on SQLite.
+
 - memos /260Star/NALic/202206/ts/go
   - https://github.com/usememos/memos
   - https://usememos.com/

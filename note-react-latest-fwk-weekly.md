@@ -10,8 +10,11 @@ modified: 2021-03-22T18:46:03.513Z
 # guide
 
 - [React Status Weekly](https://react.statuscode.com/issues)
+
 - [React Weekly 法语版](https://www.getrevue.co/profile/sebastien-lorber)
   - 英文版 https://twitter.com/sebastienlorber
+
+- vanillajs toolkit [Daily Developer Tips | Go Make Things](https://gomakethings.com/articles/)
 # 2021
 
 ## w1011-1017

@@ -147,10 +147,6 @@ modified: 2022-11-03T09:22:08.670Z
   - admin控制台依赖antd4、echarts4、monaco-editor、next10、showdown
   - server依赖nestjs6、typeorm、marked、mysql、rxjs6、passport
 
-- https://github.com/bs32g1038/node-blog
-  - https://www.lizc.net/
-  - react blog project base on nodejs, nestjs, mongoose, typescript, react, ant-design, nextjs
-
 - https://github.com/coderinblack08/presage
   - https://www.joinpresage.com/
   - A Medium alternative built for referral podcasts and blogs

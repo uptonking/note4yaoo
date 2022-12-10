@@ -11,8 +11,10 @@ modified: 2022-11-27T19:20:24.273Z
 
 ## nedb不足-roadmap
 
-- 不支持事务 transaction
-  - [atomic update + insert?](https://github.com/louischatriot/nedb/issues/398)
+- 不支持全文索引 full text search
+  - 可参考 indexeddb, dexie, rxdb, pouchdb, ydn-db-fulltext
+  - 类似mongodb的 $text 
+  - [IndexedDB Full Text Search (Proof of Concept)](https://gist.github.com/inexorabletash/a279f03ab5610817c0540c83857e4295)
 
 - 不支持多线程访问，但有第三方扩展支持
   - [can multiple processes write to same db?](https://github.com/louischatriot/nedb/issues/479)
@@ -20,35 +22,72 @@ modified: 2022-11-27T19:20:24.273Z
 - 读取数据超过256mb时会抛出异常
   - [Stream files line by line when parsing to avoid memory limits](https://github.com/louischatriot/nedb/pull/463)
 
+- 不支持事务 transaction
+  - [atomic update + insert?](https://github.com/louischatriot/nedb/issues/398)
+
 - 批量插入超大量数据会受浏览器限制
   - [Batch insert help](https://github.com/louischatriot/nedb/issues/62)
-
 # codebase
+- not-yet
+  - bst, l398 if (!this.compareKeys(key, this.key) === 0) return; 这个写法很奇怪
 
-## Datastore
+- create database
+  - new Datastore()，保存在内存中，内存数据模型就是Datastore
+- add/update/remove
+  - db.insertAsync([{ a: 5 }, { a: 42 }])
+    - _addToIndexes
+  - db.updateAsync(query, update, options)
+    - modifiedDoc = model.modify(candidate, update);
+    - 修改内存中数据 this._updateIndexes(modifications);
+    - 修改持久化数据 this.persistence.persistNewStateAsync(newDocs);
+  - db.removeAsync(query, options)
+    - 更新内存 this._removeFromIndexes
+    - 更新本地 this.persistence.persistNewStateAsync(removedDocs);
+  - update和remove都依赖 _getCandidatesAsync
+- index
+  - new Index()
+  - this.indexes[fieldName].insert(this.getAllData()); 
+- find
+  - findAsync(query, projection = {})
+- count/operators
+- persist
 
-## Persistence
+## Datastore/crud-api
 
+## Index/Cursor
 
+## Persistence/Storage
 
-## Executor
+## more-nedb-src
 
+- Executor 支持buffer和main两个执行队列
 # discuss
 - ## 
 
-- ## 
+- ## [rxdb: Full Text Search](https://github.com/pubkey/rxdb/issues/259)
+- The question is, if it should be baked into rxdb or not. Apart from search-index, there are other really good fuzzy search libraries like fuse.js and lunr.js.
+  - https://github.com/doriandrn/rxdb-search
+  - They work differently and different use cases. It would be cool, if we have a pluggable interface to write mango queries with the $text operator. This is how mongodb supports fulltext search.
 
-- ## 
+- ## [MongoDB到Nedb的迁移_202106](https://blog.csdn.net/qq_43171049/article/details/117661855)
+- 为了实现项目的轻量化，对项目中原本使用的MongoDB进行替换，替换成相似的嵌入式数据库Nedb。
+- 由于NeDB没有创建ObjectID的方法，因此引入了bson来实例化ObjectID，且传入数据库中的 _id需转为字符串类型
+- nedb 没有全文检索，环境匹配的时候并不能解析原来代码的 $text 操作, 因此在改写成nedb的时候使用普通的查询进行替换
+- nedb没有aggregate函数，无法分组，因此需自行编写代码分组，然后通过count进行聚合
 
-- ## 
+- ## [Persist data in BSON on disk · Issue #112 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/112)
+- Right now all data persisted on disk is stored in utf8, maybe it can be optional to store it in BSON as this will result in smaller file sizes (but also more computational power to read/write data).
+- I'm not sure whether it would make NeDB faster as there is no native BSON codec in the V8 (that I know of). Also, I'm not too worried about file size (storage is cheap and with NeDB's scope it will not be more than ~500 MB) or performance (already plenty fast enough with indexing for the usecases it's designed to handled). 
+- I agree with you, introducing BSON will always have a performance overhead. I also agree with you that storage is cheap, however memory is not
+  - Though it would be hard to decrease this footprint in memory by using BSON.
 
-- ## [node.js - Does NeDB use the disk to do find queries? - Stack Overflow](https://stackoverflow.com/questions/45502484/does-nedb-use-the-disk-to-do-find-queries)
+- ## [Does NeDB use the disk to do find queries? - Stack Overflow](https://stackoverflow.com/questions/45502484/does-nedb-use-the-disk-to-do-find-queries)
 - Depends, if you create indexes on fields, those fields will be held in memory for faster lookup and access. 
 - Unindexed field lookups will be hitting disk. 
   - This is true for SQLite, as well as most other persistent databases (e.g PostgreSQL, MySQL, MongoDB, and many more)
 - NeDB is an in-memory database, which means that all data will be held in memory (similar to Redis). That being said, you still have to index fields for faster lookup.
-- Indexes for NeDB are kept as a Binary Search Tree. At startup, NeDB will load the entire file.db into memory, which is why you can still work with the data even if you delete file.db.
-- NeDB is an in-memory database. It only persist data to disk so that you don't lose it if the process crashes or restarts. That's why it loads the entire file.db into memory at startup, and operates purely on the in-memory data structures from then on. 
+- Indexes for NeDB are kept as a Binary Search Tree. At startup, NeDB will load the entire `file.db` into memory, which is why you can still work with the data even if you delete `file.db` .
+- NeDB is an in-memory database. It only persist data to disk so that you don't lose it if the process crashes or restarts. That's why it loads the entire `file.db` into memory at startup, and operates purely on the in-memory data structures from then on. 
   - SQLite however only keeps indexes in memory, while the rest of the columns for that row is kept on disk. So if you query for a field that isn't indexed, it will hit the disk.
 
 - ## [Read file as Buffer to mitigate V8's 256MB max string size · Issue #6 · JamesMGreene/nestdb](https://github.com/JamesMGreene/nestdb/issues/6)
@@ -58,12 +97,12 @@ modified: 2022-11-27T19:20:24.273Z
 - [how to handle if a db size larger then 256mb? · Issue #363 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/363)
 - From what you say switch to MongoDB now. And don't forget to use the 64 bit version of MongoDB, the 32 bit version also comes with memory limitations.
 
-- ## [Multiple node processes support with a single datastore file · Issue #105 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/105)
+- ## [Multiple node processes support with a single datastore file](https://github.com/louischatriot/nedb/issues/105)
   - I was running two node servers, each on different ports, but both reading and writing to the same persistent datastore file. It looks like each node process is reading its own copy of the doc from the file.
   - For example, node process one creates the first record below, and second node process creates the second record. 
   - The dump of the data file contains both record, but each process can only read one that has been created by itself.
-- One thing you should keep in mind though is that NeDB keeps a copy of the database in RAM
-so is not suited for large applications where you have more than 1M records, If that's your case you should go with mongodb
+- 👉🏻 One thing you should keep in mind though is that NeDB keeps a copy of the database in RAM, 
+  - so is not suited for large applications where you have more than 1M records, If that's your case you should go with mongodb
 
 - Someone else talked about simply copying the updated db file periodically - which would be fine if there were a mechanism to schedule a copy of the db file at a point it's guaranteed to be consistent (e.g. when all updates have been written and none are pending).
   - You'd also need a way to tell the query processes to re-read the file of course - and you'd lose any performance benefits from the query processes working from an in-memory copy - which may be considerable.
@@ -79,28 +118,26 @@ so is not suited for large applications where you have more than 1M records, If 
 - Recently I struggled with this problem and came up with a solution that is similar to nedb-party but a bit more robust: vangelov/nedb-multi, hope it helps someone.
   - https://github.com/vangelov/nedb-multi
 
-- ## [How is writing and reading at the same time handled? · Issue #99 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/99)
+- ## [How is writing and reading at the same time handled?](https://github.com/louischatriot/nedb/issues/99)
 - It is not possible. Only workaround is to create dedicated process responsible for database, and talk to it from other processes.
-  - NEDB is loading at startup whole dataset from file into memory, and works on this in-memory representation of data. So if you will load the same data on two different computers, on each computer NEDB will make local copy of that data and both instances couldn't possibly stay in sync with each other.
+  - NEDB is loading at startup whole dataset from file into memory, and works on this in-memory representation of data. 
+  - So if you will load the same data on two different computers, on each computer NEDB will make local copy of that data and both instances couldn't possibly stay in sync with each other.
   - Workaround I was talking about is essentially to make very primitive server. So you have one extra process whose only task is to handle the NEDB, so you have only one dataset to which every other process is writing and reading from. This way your data are always in sync.
   - I can't tell you any further stuff, because I have never done something like this. Just know this is possible.
 - there is no built-in method to do it and keeping 2 databases in sync is not an easy problem. Maybe what you would need is to create a simple http server around nedb to have only one central database (reachable by network).
 - So, the solution is to build up a network layer on nedb.. just like leveldb.
-- My only two comments are that if you're curious about sharing data directly between processes, NeDB is probably not for you. I'd also add that you shouldn't really be reading the datafile directly, it's meant for NeDB, not for easy access to your data. As I see it, no one reads MySQL or mongo databases without MySQL or mongo, so why would I to try to read/manipulate and NeDB datafile without an NeDB instance? I'd say that if you'd like to compare the contents of two NeDB data stores, then load them both into memory using NeDB. Compare them programatically using the NeDB API.
+- My only two comments are that if you're curious about sharing data directly between processes, NeDB is probably not for you. 
+  - I'd also add that you shouldn't really be reading the datafile directly, it's meant for NeDB, not for easy access to your data. 
+  - As I see it, no one reads MySQL or mongo databases without MySQL or mongo, so why would I to try to read/manipulate and NeDB datafile without an NeDB instance? 
+  - I'd say that if you'd like to compare the contents of two NeDB data stores, then load them both into memory using NeDB. Compare them programatically using the NeDB API.
 - I assume from your question that you are trying to access the same db from two distinct processes. In that case the only clean way I see of doing so is to set up an http server as a third process and query it from any number of processes you want, read only or not. Pretty much what mongodb does. 
 
-- [Two processes sharing datastorefile · Issue #222 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/222)
+- ## [Two processes sharing datastorefile · Issue #222 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/222)
+- If you need to share state between processes I would suggest looking into using something like Redis. 
+  - Matt Ranney did a great talk a while back on Voxer's architecture. In it he outlines how they use Redis to bridge processes. Here's a link if you're interested => http://youtube.com/watch?v=pa8utCw7zmY
+- Note that you could create an HTTP API over NeDB, much as what MongoDB does, and thus share state without affecting performance, I even begun this work but stopped since it's very easy so I didn't see a point in me doing it. But if you need this you probably want to directly use Mongo Redis or whatever DB that suits your needs.
 
-- ## [Location of datafile? · Issue #531 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/531)
-- I just figured out that when using some bundling tools like webpack, its default target is browser, which means the nedb will use IndexedDB instead (see browser-specific/lib/storage.js below for details).
-  - The browser field tells webpack to use browser-specific version of storage.js instead, which will not create any files.
-  - The solution is to change the target to, in my case, electron-main in webpack.config.js.
-
-- ## [Nedb Encryption & Decryption](https://gist.github.com/bllohar/28ee29b3304d8bf6dbc11d1b16b00130)
-- Note that I don't process any JSON because there's really no need to since `afterSerialization` takes a string and `beforeDeserialization` returns a string.
-  - [Database encryption with NeDB](https://gist.github.com/jordanbtucker/e9dde26b372048cf2cbe85a6aa9618de)
-
-- ## [can multiple processes write to same db? · Issue #479 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/479)
+- ## [can multiple processes write to same db?](https://github.com/louischatriot/nedb/issues/479)
 - the answer is no, you should never access the same nedb instance from multiple processes. Typically it would not work, as the first process will get a lock on writing to the data file.
 
 - ## [Batch insert help · Issue #62 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/62)
@@ -124,6 +161,13 @@ so is not suited for large applications where you have more than 1M records, If 
 - 👉🏻 By default, a persistent NeDB datafile's format is ndjson (newline-delimited JSON). 
   - However, the moment you add a custom `afterSerialization` and `beforeDeserialization` hook functions, that default format completely goes out the window at the whim of your hook functions.
 
+- ## [boosting nedb performance in big databases](https://github.com/louischatriot/nedb/issues/583)
+- with every operation (CRUD), nedb tries to read from the database or write to database file. i think its not necessary, we can do some refines in nedb structure to be super powerful in heavy databases.
+
+- I disagree. NedB is a drop-in replacement for MongoDB, which does and behaves exactly the way you want to convert NedB.
+  - NedB is meant to be simple, not only in functionality, but behavior, and it's simplicity is the sole reason I'm using it for as much as I do. 
+  - Making NedB memory-based will instantly require and consume more of the server, you make NedB faster, but at the cost of needing more resources (RAM).
+
 - ## [Data persistentance question? · Issue #503 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/503)
 - isn't nedb not stored as JSON?  an object per each line
   - AFAIK* it's stored as JSONL
@@ -131,6 +175,11 @@ so is not suited for large applications where you have more than 1M records, If 
 - Not sure I understand all of this, but do bear in mind the RAM memory implications.
   - NeDB loads the whole opened DB to RAM, so if your DB is 30 MB, it occupies 30 MB of RAM.
   - BUT, If your app opens 30 MB of data (for serialising), then copies the 30 MB of data into NeDB, then just for a moment there you might need 30 (open) + 30 (copy) + 30 (NeDB) = at least 90 MB of RAM for this operation.
+
+- ## [Location of datafile? · Issue #531 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/531)
+- I just figured out that when using some bundling tools like webpack, its default target is browser, which means the nedb will use IndexedDB instead (see browser-specific/lib/storage.js below for details).
+  - The browser field tells webpack to use browser-specific version of storage.js instead, which will not create any files.
+  - The solution is to change the target to, in my case, electron-main in webpack.config.js.
 
 - ## [README misleading when comparing to SQLite · Issue #265 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/265)
 - NeDB doesn't support concurrent connections out of the box indeed, but it is crash safe (at least designed to be, still investigating the recent bug report).
@@ -148,16 +197,13 @@ so is not suited for large applications where you have more than 1M records, If 
 - Durability is not enforced on every write, only during compaction since a power loss at that moment can result in 100% data loss.
   - For all appends to the datafile durability is the responsibility of the OS, which usually syncs to the disk every 30 seconds so you cannot lose more than 30 seconds of data. That's what most databases do (they do provide an option to force sync on every wrtie though, nedb doesn't).
 
-- ## [boosting nedb performance in big databases](https://github.com/louischatriot/nedb/issues/583)
-- with every operation (CRUD), nedb tries to read from the database or write to database file. i think its not necessary, we can do some refines in nedb structure to be super powerful in heavy databases.
-
-- I disagree. NedB is a drop-in replacement for MongoDB, which does and behaves exactly the way you want to convert NedB.
-  - NedB is meant to be simple, not only in functionality, but behavior, and it's simplicity is the sole reason I'm using it for as much as I do. 
-  - Making NedB memory-based will instantly require and consume more of the server, you make NedB faster, but at the cost of needing more resources (RAM).
-
 - ## [It is possibile do operations (find, update, etc..) in synchronous mode?](https://github.com/louischatriot/nedb/issues/445)
 - When using memory-only mode, synchronous operations will be very useful, for example, if using NeDB as storage provider for redux. Also, when working in memory-only mode, there is no requirement to perform async operations, due there is not any read I/O
 - I would say it is more a result of his design goal to have a consistent API regardless of what backing store is being used (in-memory, localStorage, IndexedDB, Node.js file system, etc.).
+
+- ## [Nedb Encryption & Decryption](https://gist.github.com/bllohar/28ee29b3304d8bf6dbc11d1b16b00130)
+- Note that I don't process any JSON because there's really no need to since `afterSerialization` takes a string and `beforeDeserialization` returns a string.
+  - [Database encryption with NeDB](https://gist.github.com/jordanbtucker/e9dde26b372048cf2cbe85a6aa9618de)
 
 - ## [Deprecate NeDB in favour of another embedded db(acebase)](https://github.com/Ylianst/MeshCentral/issues/4398)
 - Acebase is a current nosql (firebase) compatible embedded database that uses (among other options) sqlite as the backend storage, meaning that (theoretically) the proven performance and reliability of sqlite can be leveraged with mongodb syntax queries.
@@ -183,5 +229,3 @@ so is not suited for large applications where you have more than 1M records, If 
 - The trend continues where all things eventually get implemented in Javascript. Waiting for JS.js
 - What does this have to do with node-webkit? My understanding is that nodejs is a subset of node-webkit, so by saying "this is for nodejs", you imply "this is for node-webkit".
   - That's true, but I want to stress Node Webkit because NW apps are probably one of the best usecases.
-- 
-- 

@@ -107,11 +107,30 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 10-prosemirror-collab - ot - crdt
   - 11-idb-sync
 
-## 1209
+## 1211
 
 - dev-to
   - crdt tutorials
   - nedb-src
+
+## 1210
+
+- mongodb导入 .bson.gz
+  - mongorestore --gzip --db $DB_NAME --drop $PATH/
+  - mongorestore --drop --gzip --uri   "mongodb://localhost:27017/" data
+
+- [javascript - Typescript class variables and error: "refers to a value, but is being used as a type here. . Did you mean typeof' ...". Why exactly? - Stack Overflow](https://stackoverflow.com/questions/67697742/typescript-class-variables-and-error-refers-to-a-value-but-is-being-used-as-a)
+
+```JS
+// 一个变量的值为class时，如何定义类型
+
+const BinarySearchTree = AVLTree;
+
+class Index {
+  tree: InstanceType < typeof BinarySearchTree > ;
+  tree: BinarySearchTree; // 👈🏻 不要这样写，它的声明是变量而不是类型
+}
+```
 
 ## 1209
 

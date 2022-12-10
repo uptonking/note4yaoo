@@ -27,6 +27,13 @@ modified: 2022-08-13T05:10:32.238Z
   - https://twitter-clone-immatheus.vercel.app/
   - a complete Twitter clone with a lot of the functionality you would see on the real website
 
+- https://github.com/lachlanbardwell/quackle-frontend
+  - Twitter clone using mongoose db
+
+- https://github.com/soft-coded/tiktok
+  - https://sc-react-tiktok.netlify.app/
+  - https://github.com/soft-coded/tiktok-server
+  - TikTok in React
 # clone-known
 - https://win11.blueedge.me/
   - https://github.com/blueedgetechno/win11React

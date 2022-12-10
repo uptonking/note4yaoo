@@ -34,15 +34,7 @@ modified: 2020-10-22T06:51:07.421Z
   - /7kStar/MIT/202008
   - The Missing Web UI for Elasticsearch: Import, browse and edit data with rich filters
 # search-js
-- lunr.js /MIT/7.1kStar/202008
-  - https://github.com/olivernn/lunr.js
-  - http://lunrjs.com/
-  - A bit like Solr, but much smaller and not as bright.
-  - For web applications with all their data already sitting in the client, it makes sense to be able to search that data on the client too. 
-  - It saves adding extra, compacted services on the server. 
-  - A local search index will be quicker, there is no network overhead, and will remain available and usable even without a network connection.
-
-- flexsearch /6.7kStar/Apache2/202111/js/inactive
+- flexsearch /6.7kStar/Apache2/202111/js
   - https://github.com/nextapps-de/flexsearch
   - Next-Generation full text search library for Browser and Node.js
 
@@ -52,10 +44,28 @@ modified: 2020-10-22T06:51:07.421Z
   - It has since expanded to include a rich feature set- supporting stemming, stop-words, and TF-IDF ranking.
   - Js Search enables efficient client-side searches of JavaScript and JSON objects
 
+- lunr.js /MIT/7.1kStar/202008/inactive
+  - https://github.com/olivernn/lunr.js
+  - http://lunrjs.com/
+  - A bit like Solr, but much smaller and not as bright.
+  - For web applications with all their data already sitting in the client, it makes sense to be able to search that data on the client too. 
+  - It saves adding extra, compacted services on the server. 
+  - A local search index will be quicker, there is no network overhead, and will remain available and usable even without a network connection.
+
 - libsearch /114Star/MIT/202207/js/单文件
   - https://github.com/thesephist/libsearch
   - https://thesephist.github.io/libsearch/
   - Simple, index-free text search for JavaScript, used across my personal projects
+
+- lyra /4.6kStar/apache2/202212/ts
+  - https://github.com/LyraSearch/lyra
+  - Fast, in-memory, typo-tolerant, full-text search engine written in TypeScript.
+
+- https://github.com/cshum/levi /201901/js
+  - Stream based full-text search for Node.js and browsers. Using LevelDB as storage backend.
+  - Full-text search using TF-IDF and cosine similarity plus query-time field boost options. 
+  - By default, it uses LevelDB on Node.js and IndexedDB on browser. Also works with a variety of LevelDOWN compatible backends.
+  - Using stream based query mechanism with Highland.js, Levi is designed to be memory efficient
 
 - https://github.com/krisk/Fuse
   - a lightweight fuzzy-search, in JS, with zero dependencies.

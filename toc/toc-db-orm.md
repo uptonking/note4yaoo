@@ -113,6 +113,13 @@ modified: 2021-08-30T18:56:09.644Z
   - It is a very flexible typeorm-like entity definition API that just use JS classes and decorators to define or generate the schema. 
   - You can choose different adapters and use the same CRUD interface: MemoryAdapter, RESTAdapter or SQLAdapter.
   - The http mock server(@memoria/server) can be run in-browser and node environments, thus allows for running your in-memory test suite in SSR(server-side rendering) environment if it is needed.
+
+- https://github.com/balderdashy/waterline /202208/js/inactive
+  - An adapter-based ORM for Node.js with support for mysql, mongo, postgres, mssql (SQL Server), and more
+  - Waterline is a next-generation storage and retrieval engine, and the default ORM used in the Sails framework.
+
+- https://github.com/tkssharma/nodejs-db-orm-world /202003/ts
+  - Node JS with different ORM like Typeorm, Knex, Prisma and Sequelize with Node JS API Development Node JS with without any ORM (MYSQL raw queries)
 # database
 - https://github.com/codefollower/H2-Research
   - H2数据库源代码学习研究

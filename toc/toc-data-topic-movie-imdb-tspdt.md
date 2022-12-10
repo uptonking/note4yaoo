@@ -102,8 +102,8 @@ modified: 2022-11-29T14:52:00.701Z
   - User Authentication With Email Verification.
   - Role Based Authentication (Admin & Normal User).
 
-- https://github.com/csandoval18/movie-app
-  - Movie information app using MongoDB for session handling with JWT. 
+- https://github.com/csandoval18/movie-app /202212/ts/client+server
+  - Movie information app using MongoDB/Mongoose for session handling with JWT. 
   - The front end uses React, Redux Toolkit, & React Router. PostCSS with Tailwind, Styled Components, and DaisyUI is used to style the UI. 
   - The movie data is fetched from OMDB API
 

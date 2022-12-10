@@ -142,10 +142,9 @@ modified: 2022-06-03T22:06:16.249Z
 # idb-query-sql
 - [Support full text indexes](https://github.com/w3c/IndexedDB/issues/44)
 
-- https://gist.github.com/inexorabletash/a279f03ab5610817c0540c83857e4295
-  - IndexedDB Full Text Search (Proof of Concept)
-- https://gist.github.com/deissh/b4ec45197365fd607fe0367ca275c9ac
-  - indexedDB search by regex
+- [IndexedDB Full Text Search (Proof of Concept)](https://gist.github.com/inexorabletash/a279f03ab5610817c0540c83857e4295)
+- [IndexedDB+Dexie+Lunr MTG full-text search demo](https://gist.github.com/oppianmatt/e950d647875ed0ad7049287c3e0afc03)
+- [indexedDB search by regex](https://gist.github.com/deissh/b4ec45197365fd607fe0367ca275c9ac)
 
 - https://github.com/Treora/indexeddb-full-text-search-comparison
   - 依赖levi
@@ -155,6 +154,15 @@ modified: 2022-06-03T22:06:16.249Z
     - Levi is built on LevelUP
   - https://github.com/raine/taim 
     - measure execution time of functions and promises
+
+- https://github.com/superhuman/fts /201708/js
+  - This is a very very minimal search engine (it only allows searching for single terms) designed to test the feasibility of using IndexedDB as a full text search engine.
+
+- https://github.com/ndx-search/ndx /201901/ts
+  - https://localvoid.github.io/ndx-demo/
+  - ndx is a collection of javascript (TypeScript) libraries for lightweight full-text indexing and searching.
+  - Trie based dynamic Inverted Index.
+  - Demo application requires modern browser features: WebWorkers and IndexedDB. Comments are stored in the IndexedDB, and search engine is working in a WebWorker.
 
 - JsStore /663Star/MIT/202211/ts
   - https://github.com/ujjwalguptaofficial/JsStore

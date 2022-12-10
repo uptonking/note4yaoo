@@ -61,10 +61,6 @@ modified: 2022-11-26T17:35:24.870Z
  - Joining (left join) model data
  - Tree data (with open/closed nodes)
 
-- [Nedb Encryption & Decryption](https://gist.github.com/bllohar/28ee29b3304d8bf6dbc11d1b16b00130)
-  - Note that I don't process any JSON because there's really no need to since `afterSerialization` takes a string and `beforeDeserialization` returns a string.
-  - [Database encryption with NeDB](https://gist.github.com/jordanbtucker/e9dde26b372048cf2cbe85a6aa9618de)
-
 - nedb-forks
   - https://github.com/HalleyAssist/nedb /202211/js
     - Embedded datastore for node.js
@@ -78,6 +74,16 @@ modified: 2022-11-26T17:35:24.870Z
       - Index field with an array value are explicitly not supported.
       - Inserting a duplicate key will overwrite the existing key.
       - Keys must all be the same data type.
+
+- linvodb3 /746Star/MIT/202008/js
+  - https://github.com/Ivshti/linvodb3
+  - LinvoDB is a Node.js/NW.js/Electron persistent DB with MongoDB/Mongoose-like features and interface.
+  - MongoDB-like query language
+  - Persistence built on LevelUP - you can pick back-end
+  - NW.js/Electron friendly - JS-only backend is level-js or Medea
+  - 👉🏻 LinvoDB is based on NeDB, the most significant core change is that it uses LevelUP as a back-end, meaning it doesn't have to keep the whole dataset in memory. LinvoDB also can do a query entirely by indexes, meaning it doesn't have to scan the full database on a query.
+    - LinvoDB does the entire query through the indexes, NeDB scans the DB
+    - LinvoDB is better for large datasets (many objects, or large objects) because it doesn't keep the whole DB in memory and doesn't need to always scan it
 
 - https://github.com/abhishiv/qbase /202012/ts
   - lightweight and fast in-memory data store with support for lazy queries, watchable queries, transactions, H1/HM/MTM/BT relationships, and MongoDB styled selectors.
@@ -100,6 +106,10 @@ modified: 2022-11-26T17:35:24.870Z
   - A class-based ES6 ODM for Mongo-like databases.
   - Camo was created for two reasons: to bring traditional-style classes to MongoDB JavaScript, and to support NeDB as a backend
   - Camo was designed and built with multiple Mongo-like backends in mind, like NeDB, LokiJS*, and TaffyDB*.
+- https://github.com/jaykukadiya99/neDB-with-nodeJs
+  - 依赖camo
+  - Nodejs simple application with NeDB (camo package like mongoose for mongodb and NeDB)
+
 - https://github.com/seald/follicle
   - a fork of camo made for the needs of Seald
   - A class-based ES6 ODM for Mongo-like databases
@@ -108,6 +118,10 @@ modified: 2022-11-26T17:35:24.870Z
   - NekoDB comes with NeDB built in
 - https://github.com/bengl/mongosmash
   - simple ODM for MongoDB and NeDB on Node.js (using JS Harmony).
+
+- [Nedb Encryption & Decryption](https://gist.github.com/bllohar/28ee29b3304d8bf6dbc11d1b16b00130)
+  - Note that I don't process any JSON because there's really no need to since `afterSerialization` takes a string and `beforeDeserialization` returns a string.
+  - [Database encryption with NeDB](https://gist.github.com/jordanbtucker/e9dde26b372048cf2cbe85a6aa9618de)
 
 - lowdb /18.7Star/MIT/202211/ts
   - https://github.com/typicode/lowdb
@@ -206,6 +220,9 @@ modified: 2022-11-26T17:35:24.870Z
 
 - https://github.com/jasonbrandoo/react-express-nedb
   - Simple react auth with express
+
+- https://github.com/sibite/social-app
+  - Post, share, comment, upload photos and chat
 # nedb-starter-crud
 - ts-api-server-express-multi-db /1Star/NALic/201804/ts/nedb/多种db/inactive
   - https://github.com/bluesky50/ts-api-server-express-multi-db
@@ -244,13 +261,36 @@ modified: 2022-11-26T17:35:24.870Z
 
 - https://github.com/rwl-dev-archive/learn-nedb-json-api /202009/ts
   - Express + NeDB = JSON API
+
+- https://github.com/felixle236/backend-seed /201807/ts
+  - backend-seed - Backend environment
+  - Integrating user permission & good transmission in large numbers of users.
+  - Cache data in memory & share them between processes (if using the cluster module) 
+  - Multi-layer Architecture Pattern
+  - Singleton Pattern，依赖 typedi
+  - Generic Repository Pattern
+  - https://github.com/felixle236/frontend-seed
+
+- https://github.com/uppalasaikumar/node-express-mvc-ejs-start /201711/js
+  - Node Express MVC EJS Bootstrap Starter app
+  - Mongoose MongoDB object modeling
+  - nedb In-memory database
+  - jQuery library for DOM manipulation
 # nedb-utils
 - https://github.com/czwbig/nedb-mongoose-driver /202206/js
   - A Mongoose driver for NeDB, most APIs are compatible.
   - fork from https://github.com/ArcBlock/nedb
 - https://github.com/aerys/mongoose-nedb /201612/js
   - A Mongoose driver for NeDB.
+  - 依赖nedb、mongoose、bson
   - [extend nedb to support mongoose like schema](https://gist.github.com/dhigginbotham/5922171)
+- mongoose
+  - https://github.com/aerys/mongoose-nedb
+  - https://github.com/ishantiw/crud-api
+    - This API works on data stored in In-Memory for which we are using NeDB database
+    - We are using modli as an API to define the schema and the crud operation. 
+  - https://github.com/danibram/ffra
+    - Tiny layer over Koa/fastify to make easier create Rest APIs
 
 - https://github.com/Mido22/sqlite-to-nedb /201611
   - Util for converting a sqlite database into a nedb database
@@ -275,7 +315,7 @@ modified: 2022-11-26T17:35:24.870Z
 - https://github.com/xiyuan-fengyu/ppspider
   - 基于puppeteer的web爬虫框架，提供灵活的任务队列管理调度方案，提供便捷的数据保存方案（nedb/mongodb），提供数据可视化和用户交互的实现方案
 
-- https://github.com/sius/fakerdb /202209/js
+- https://github.com/sius/fakerdb /202005/js
   - Generate an unlimited stream of JSON schema instances using json-schema-faker, faker, chance and insert the data into a supported database, e.g.: nedb, mongodb, postgres, mssql.
 
 - https://github.com/Jianxff/NEDB /cpp/B+Tree
