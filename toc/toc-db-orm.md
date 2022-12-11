@@ -120,6 +120,8 @@ modified: 2021-08-30T18:56:09.644Z
 
 - https://github.com/tkssharma/nodejs-db-orm-world /202003/ts
   - Node JS with different ORM like Typeorm, Knex, Prisma and Sequelize with Node JS API Development Node JS with without any ORM (MYSQL raw queries)
+- https://github.com/1602/jugglingdb /201905/js
+  - Multi-database ORM for nodejs: redis, mongodb, mysql, sqlite3, postgresql, arango, in-memory
 # database
 - https://github.com/codefollower/H2-Research
   - H2数据库源代码学习研究

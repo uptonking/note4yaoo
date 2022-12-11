@@ -11,7 +11,14 @@ modified: 2021-08-25T14:05:18.280Z
 
 - ## 
 
-- ## 
+- ## How does WordPress Sandbox work?
+- https://twitter.com/adamzielin/status/1601561926307282945
+- It polyfills WordPress software dependencies in the browser:
+  • PHP is a WebAssembly binary
+  • MySQL is replaced for SQLite via a plugin
+  • Web server is implemented using the Service Worker API
+- [WordPress Sandbox](https://wordpresswasm.readthedocs.io/en/latest/)
+  - WordPress Sandbox is a client-side WordPress that runs without a PHP server thanks to the magic of WebAssembly.
 
 - ## Bun.js v0.0.83 gets a fast builtin SQLite client
 - https://twitter.com/jarredsumner/status/1525105862997442560

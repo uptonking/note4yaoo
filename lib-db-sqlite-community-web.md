@@ -23,13 +23,8 @@ modified: 2022-11-25T09:47:43.079Z
 - Are you using it for Reader?
   - Both, sadly. Would love to only use wasm sqlite but it doesnt support persistence to disk yet!
   - That’s what I was wondering about. Does it use IndexedDB under the hood to save data?
-  - We only use the wasm sqlite for full-text-search right now, and we just dump the whole db to disk periodically. Everything else (storing document data, syncing, etc) is on indexeddb still yes 😢 it's too critical to trust with wasm sqlite
-- 
-- 
-- 
-
-
-
+  - We only use the wasm sqlite for full-text-search right now, and we just dump the whole db to disk periodically. 
+  - Everything else (storing document data, syncing, etc) is on indexeddb still yes 😢 it's too critical to trust with wasm sqlite
 
 - ## I’ve been playing with SQLite in the browser via WASM the past few days. 
 - https://twitter.com/devongovett/status/1600679294833156097
@@ -42,9 +37,6 @@ modified: 2022-11-25T09:47:43.079Z
 - @meteorjs has had this for 10+ years with #minimongo.
 - I've worked on a kiosk app developed as a PWA that used IndexedDB to permanently store a SQLite database on the client and load it when the app started. There was a service worker that periodically checked if the database had a new version and would download it in background.
 - I've seen this done well in AWS amplify stack with the data store library. Client has the db synced. Mutations happen locally and sync when back online. Tradeoff of course is initial sync being large depending on use case, but UI is fast after the sync since the data is local.
-
-
-
 
 - ## Now that SQLite can be run in a browser as a 296KB (compressed) WASM file, 
 - https://twitter.com/quolpr/status/1563502562531086337

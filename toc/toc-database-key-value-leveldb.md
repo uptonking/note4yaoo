@@ -68,3 +68,8 @@ modified: 2022-11-03T04:14:00.563Z
   - The successor to level-js
   - browser-level has first-class support of binary keys and values, using either Uint8Array or Buffer.
 # more-key-value
+- https://github.com/pgte/alfred /201109/js
+  - Alfred is a fast in-process key-value store for node.js.
+  - atomic operations on one record
+  - multiple key-value maps in one database
+  - append-only files

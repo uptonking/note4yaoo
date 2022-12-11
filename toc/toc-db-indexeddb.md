@@ -83,6 +83,15 @@ modified: 2022-06-03T22:06:16.249Z
   - The following aggregation pipeline stages are supported: $match, $project, $group, $unwind, $sort, $skip, and $limit.
   - an implementation of IndexedDB is required. 
     - For environments without a native implementation of IndexedDB, Fake IndexedDB can be used
+
+- ydn-db /502Star/apache2/201902/js/功能丰富/inactive
+  - https://github.com/yathit/ydn-db
+  - Unified data access layer on IndexedDB, WebDatabase and WebStorage storage mechanisms.
+  - Basic support for high level query using SQL.
+  - Client-server Synchronization (via ydn-db-sync module).
+  - https://github.com/yathit/ydn-db-fulltext
+    - Full text search module for YDN-DB 
+    - build on top of two excellent full text search libraries, [natural](https://github.com/NaturalNode/natural) for stemming, normalization, analyzer and fullproof for tokenization.
 # db-powered-by-indexeddb
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb
@@ -95,6 +104,10 @@ modified: 2022-06-03T22:06:16.249Z
     - At the moment you can either use `PouchDB` or `Dexie.js` or `LokiJS` as underlaying storage. 
     - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
     - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
+
+- https://github.com/SourceCodeBot/crudodb /202112/ts/archived
+  - CrudoDb allows you to write offline-first webapps without any backend implementation.
+  - Offline-first IndexedDb wrapper written in TypeScript, which is able to sync with backend services by passing optional service implementation.
 
 - kvs /125Star/MIT/202209/ts
   - https://github.com/azu/kvs
@@ -121,10 +134,6 @@ modified: 2022-06-03T22:06:16.249Z
   - Lovefield is a relational database written in pure JavaScript.
   - It provides SQL-like syntax and works cross-browser
   - [Lovefield wraps IndexedDB objects in different classes](https://github.com/google/lovefield/blob/master/docs/dd/02_data_store.md)
-
-- https://github.com/SourceCodeBot/crudodb /202112/ts/archived
-  - CrudoDb allows you to write offline-first webapps without any backend implementation.
-  - Offline-first IndexedDb wrapper written in TypeScript, which is able to sync with backend services by passing optional service implementation.
 
 - https://github.com/microsoft/ObjectStoreProvider /202207/ts
   - A cross-browser/platform indexeddb-like client library
@@ -231,11 +240,3 @@ modified: 2022-06-03T22:06:16.249Z
 
 - https://gist.github.com/robnyman/1894032
   - IndexedDB storing and retrieving files
-
-- ydn-db /502Star/apache2/201902/js/inactive
-  - https://github.com/yathit/ydn-db
-  - Unified data access layer on IndexedDB, WebDatabase and WebStorage storage mechanisms.
-  - Basic support for high level query using SQL.
-  - https://github.com/yathit/ydn-db-fulltext
-    - Full text search module for YDN-DB 
-    - build on top of two excellent full text search libraries, [natural](https://github.com/NaturalNode/natural) for stemming, normalization, analyzer and fullproof for tokenization.

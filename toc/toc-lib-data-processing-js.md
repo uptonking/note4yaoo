@@ -20,6 +20,17 @@ modified: 2021-05-13T16:14:28.745Z
   - provides fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive
   - heavily inspired by Pandas library, and provides a similar API
 
+- arquero /438Star/BSD/202105/js
+  - https://github.com/uwdata/arquero
+  - https://uwdata.github.io/arquero
+  - a JavaScript library for query processing and transformation of array-backed data tables. 
+  - Following the relational algebra and inspired by the design of dplyr, Arquero provides a fluent API for manipulating column-oriented data frames.
+  - Arquero supports a range of data transformation tasks, including filter, sample, aggregation, window, join, and reshaping operations.
+  - query over arrays, typed arrays, array-like objects, or Apache Arrow columns.
+- https://github.com/uwdata/arquero-sql
+  - Arquero-SQL is a SQL backend support for Arquero. 
+  - With Arquero-SQL, your data is stored in a disk and can be transformed with a powerful remote machine, suited for big data analysis tasks.
+
 - data-forge-ts /1.2kStar/MIT/202208/ts
   - https://github.com/data-forge/data-forge-ts
   - http://www.data-forge-js.com/
@@ -35,17 +46,6 @@ modified: 2021-05-13T16:14:28.745Z
   - tools for basic image processing
   - NumJs can also be used as an efficient multi-dimensional container of generic data.
   - It works both in node.js and in the browser
-
-- arquero /438Star/BSD/202105/js
-  - https://github.com/uwdata/arquero
-  - https://uwdata.github.io/arquero
-  - a JavaScript library for query processing and transformation of array-backed data tables. 
-  - Following the relational algebra and inspired by the design of dplyr, Arquero provides a fluent API for manipulating column-oriented data frames.
-  - Arquero supports a range of data transformation tasks, including filter, sample, aggregation, window, join, and reshaping operations.
-  - query over arrays, typed arrays, array-like objects, or Apache Arrow columns.
-- https://github.com/uwdata/arquero-sql
-  - Arquero-SQL is a SQL backend support for Arquero. 
-  - With Arquero-SQL, your data is stored in a disk and can be transformed with a powerful remote machine, suited for big data analysis tasks.
 
 - https://github.com/vega/datalib
   - http://vega.github.io/datalib/

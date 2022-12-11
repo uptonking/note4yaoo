@@ -22,6 +22,9 @@ modified: 2022-11-04T14:20:37.172Z
 - https://github.com/asg017/sqlite-lines  /clang/python
   - A SQLite extension for reading large files line-by-line (NDJSON, logs, txt, etc.)
 
+- https://github.com/McMartin/sqlite-undoredo /cpp/py
+  - This repository contains code examples written in various programming languages that show how to implement undo/redo logic using SQLite.
+
 - https://github.com/wangfenjin/simple
   - 支持中文和拼音的 SQLite fts5 全文搜索扩展
   - A SQLite3 fts5 tokenizer which supports Chinese and PinYin

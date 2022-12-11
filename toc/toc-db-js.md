@@ -196,6 +196,15 @@ modified: 2022-11-25T15:50:48.226Z
 - https://github.com/sius/fakerdb /202005/js
   - Generate an unlimited stream of JSON schema instances using json-schema-faker, faker, chance and insert the data into a supported database, e.g.: nedb, mongodb, postgres, mssql.
 
+- https://github.com/crisdosyago/sirdb /202203/js
+  - A simple database on the file system.
+  - JSON files organised into subdirectories for each table.
+  - text-based. Everything is a JSON file, including the database meta information.
+  - git-diffable, and therefore versionable
+  - Index on any property (for nested objects, only index top-level properties)
+  - https://github.com/crisdosyago/servedata
+    - A simple server based on SirDB with a schema-driven API, for serving all types of data, while attempting to meet ROCA guidelines.
+
 - https://github.com/fwd/database /202210/js
   - SQL-like JSON Database
 
@@ -223,7 +232,7 @@ modified: 2022-11-25T15:50:48.226Z
   - https://github.com/only-cliches/snap-db
     - Simple & Robust LSM Powered Javascript key-value store
 
-- ydn-db /502Star/apache2/201902/js/inactive
+- ydn-db /502Star/apache2/201902/js/功能丰富/inactive
   - https://github.com/yathit/ydn-db
   - Unified data access layer on IndexedDB, WebDatabase and WebStorage storage mechanisms.
   - Basic support for high level query using SQL.
@@ -243,6 +252,7 @@ modified: 2022-11-25T15:50:48.226Z
   - https://pubkey.github.io/event-reduce/
   - An algorithm to optimize database queries that run multiple times
   - 提供了使用示例，包括minimongo、nedb、pouchdb
+  - EventReduce only works with queries that have a predictable sort-order for any given documents. (you can make any query predicable by adding the primary key as last sort parameter)
 # more-db-js
 - https://github.com/ciochetta/learndb /24Star/202101/js/mongodb
   - my first attempt at creating my own database from scratch.

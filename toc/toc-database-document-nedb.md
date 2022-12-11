@@ -19,7 +19,7 @@ modified: 2022-11-26T17:35:24.870Z
   - You can use NeDB as an in-memory only datastore or as a persistent datastore. 
     - If you specify a filename, the database will be persistent, and automatically select the best storage method available (IndexedDB, WebSQL or localStorage) depending on the browser.
     - For a Node.js/Node Webkit database it's the file system
-    - For a browser-side database it's `localforage`, which uses the best backend available (IndexedDB then WebSQL then localStorage)
+    - For a browser-side database it's `localforage`, which uses the best backend available (IndexedDB then localStorage)
     - Under the hood, NeDB's persistence uses an append-only format, meaning that all updates and deletes actually result in lines added at the end of the datafile, for performance reasons.
   - I consider NeDB to be feature-complete, i.e. it does everything I think it should and nothing more. As a general rule I will not accept pull requests anymore
   - [Is this still maintained?](https://github.com/louischatriot/nedb/issues/492)
@@ -75,15 +75,52 @@ modified: 2022-11-26T17:35:24.870Z
       - Inserting a duplicate key will overwrite the existing key.
       - Keys must all be the same data type.
 
-- linvodb3 /746Star/MIT/202008/js
+- tingodb /1.1kStar/MIT/201901/js/不直接支持浏览器环境
+  - https://github.com/sergeyksv/tingodb
+  - http://www.tingodb.com/
+  - an embedded JavaScript in-process filesystem or in-memory database upwards compatible with MongoDB at the v1.4 API level.
+  - all tests are designed to work on both MongoDB using its native driver and TingoDB
+  - Full set of MongoDB search operators is supported.
+  - 内存中默认不存放全量数据，放的是索引
+    - TingoDB uses memory only for indexes and optional cache. 
+    - It loads collection documents using file access operations. 
+    - We estimated memory consumption vs data-set size ratio as 1:100. 
+    - This of course depends on amount of indexes that database uses.
+    - all indexes are all in memory, by default only `_id:1` index is maintained.
+  - TingoDB supports B-tree indexes that stored in memory. 
+    - Indexes are used for search query optimizations and mimics MongoDB indexes (spare, unique and so on). 
+    - Compound indexes are not supported yet.
+  - Database stored as a folder where each file represent single collection. 
+    - Collection files used in append only mode which ensures safe access to data but can cause space overuse as you update your data. 
+    - As workaround for this database will make automatic compactization
+  - Documents itself serialized using JSON
+    - We did some benchmarks using BSON, MessagePack ans some others. The winner was JSON.
+    - Every document represented by 3 objects in data file. First is constant size header, second is variable size header and the last is document itself. This approach allows to increase initial file load speed and give us some freedom for future changes.
+  - [does tingodb can use on borwser](https://github.com/sergeyksv/tingodb/issues/112)
+    - no. code itself has no any dependencies that will not work in browser except persistence layer. There was no plans to make it work in browser as I see no much purpose for this.
+  - https://github.com/sergeyksv/tungus
+    - Mongoose driver for TingoDB
+
+- LinvoDB3 /746Star/MIT/202008/js/leveldb
   - https://github.com/Ivshti/linvodb3
   - LinvoDB is a Node.js/NW.js/Electron persistent DB with MongoDB/Mongoose-like features and interface.
   - MongoDB-like query language
-  - Persistence built on LevelUP - you can pick back-end
-  - NW.js/Electron friendly - JS-only backend is level-js or Medea
-  - 👉🏻 LinvoDB is based on NeDB, the most significant core change is that it uses LevelUP as a back-end, meaning it doesn't have to keep the whole dataset in memory. LinvoDB also can do a query entirely by indexes, meaning it doesn't have to scan the full database on a query.
+  - Persistence built on LevelUP
+  - NW.js/Electron friendly - JS-only backend is level-js or Medea(kv)
+  - 👉🏻 LinvoDB is based on NeDB, the most significant core change is that it uses LevelUP as a back-end, meaning it doesn't have to keep the whole dataset in memory. 
+  - LinvoDB also can do a query entirely by indexes, meaning it doesn't have to scan the full database on a query.
     - LinvoDB does the entire query through the indexes, NeDB scans the DB
-    - LinvoDB is better for large datasets (many objects, or large objects) because it doesn't keep the whole DB in memory and doesn't need to always scan it
+  - https://github.com/Ivshti/linvodb-fts
+    - full text search using natural
+  - [What can stop end user to directly edit database files?](https://github.com/Ivshti/linvodb3/issues/46)
+    - LinvoDB has to use a leveldb-compatible back-end store
+  - [It looks like we build similar database engine(tingodb)](https://github.com/louischatriot/nedb/issues/34)
+    - I wrote a DB engine over NeDB/LevelUP which auto-indexes so that each query can run indexed and avoid scanning.
+    - It doesn't load the full datastore in memory, and with large datasets it's faster than NeDB because of full indexing.
+  - [Persistent Indexes?](https://github.com/Ivshti/linvodb3/issues/35)
+    - I didn't realize linvodb3 created an index for each queried property.
+    - If I understand correctly I'd use {autoindex: false} to turn that off and use Doc.ensureIndex() to explicitly create just the indexes I want.
+    - they've added support for secondary indexes to PouchDB. 
 
 - https://github.com/abhishiv/qbase /202012/ts
   - lightweight and fast in-memory data store with support for lazy queries, watchable queries, transactions, H1/HM/MTM/BT relationships, and MongoDB styled selectors.

@@ -81,11 +81,13 @@ modified: 2022-11-07T17:37:27.579Z
 - https://github.com/elicesw2-project2/synergy
   - All-in-one Workspace Collaboration Tools
 # sync
-- clientdb /506Star/apache2/202207/ts
+- clientdb /506Star/apache2/202207/ts/同步未完成
   - https://github.com/clientdb/clientdb
   - ClientDB is an in-memory database for enabling real-time web apps.
   - The architecture of clientdb is inspired by the Linear app
-
+  - 依赖flexsearch、knex、express、socket.io、lodash
+  - [sync-engine work in progress](https://github.com/clientdb/clientdb/pull/10)
+  - [differences and advantages compared to RxDB](https://github.com/clientdb/clientdb/issues/12)
 - https://github.com/Bhavik-ag/B-Docs
   - an online document editor to create, edit and collaborate on online documents.
   - Version Control and Hosting : Git for Source Code Management and Github for Hosting

@@ -24,7 +24,10 @@ modified: 2022-11-03T04:14:11.987Z
   - https://erikolson186.github.io/zangodb/
   - ZangoDB is a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
   - an implementation of IndexedDB is required. 
-    - For environments without a native implementation of IndexedDB, Fake IndexedDB can be used
+    - For environments without a native implementation of IndexedDB, https://github.com/dumbmatter/fakeIndexedDB can be used
+  - forks
+    - https://github.com/allwi290/zangodb
+      - cjs to es
 
 - yunodb /246Star/CC0/201704/js/leveldb
   - https://github.com/blahah/yunodb
@@ -34,6 +37,22 @@ modified: 2022-11-03T04:14:11.987Z
   - yuno is being built to serve my use-case of embedding pre-made databases in electron apps
   - forks
     - https://github.com/pdepip/yunodb
+
+- ForerunnerDB /707Star/NIT/202006/js/v2
+  - https://github.com/Irrelon/ForerunnerDB
+  - ForerunnerDB is a NoSQL JavaScript JSON database with a query language based on MongoDB (with some differences) and runs on browsers and Node.js.
+  - ForerunnerDB supports data persistence on both the client (via LocalForage) and in Node.js (by saving and loading JSON data files).
+  - ForerunnerDB is an in-memory store but you choose how often (if at all) data is loaded and saved with underlying storage engines.
+  - https://github.com/Irrelon/forerunnerdb-core /v3
+    - This project contains the core query/match/update functionality of ForerunnerDB 3.x
+    - forerunnerdb-core provides the core of ForerunnerDB 3.0 which is a complete rewrite of ForerunnerDB in ES6
+    - queries in ForerunnerDB 3.x use MongoDB query language by default.
+  - [How does load work?](https://github.com/Irrelon/ForerunnerDB/issues/247)
+    - The load() method does indeed load everything into memory 
+    - ForerunnerDB's initial use case was the manipulation and complex querying of JSON data in memory. 
+  - [Stream subset of data from disk while querying](https://github.com/Irrelon/ForerunnerDB/issues/56)
+    - ForerunnerDB was originally intended as a browser-based DB with in-memory access and then grew to include Node.js support and persistent storage.
+    - It would be relatively slow and difficult to query the data in a persisted state as the current storage system allows LocalStorage which doesn't provide for row-by-row access (although we could engineer one with a slower read/write to storage as a side effect).
 
 - picodb /31Star/MIT/202201/js
   - https://github.com/jclo/picodb
@@ -53,8 +72,13 @@ modified: 2022-11-03T04:14:11.987Z
   - A simple "database" that use JSON file for NodeJS
   - Every method are now asynchronous
 
-- https://github.com/sergeyksv/tingodb /201901/js
+- tingodb /1.1kStar/MIT/201901/js
+  - https://github.com/sergeyksv/tingodb
+  - http://www.tingodb.com/
   - an embedded JavaScript in-process filesystem or in-memory database upwards compatible with MongoDB at the v1.4 API level.
+  - Upwards compatible means that if you build an app that uses functionality implemented by TingoDB you can switch to MongoDB almost without code changes. 
+  - https://github.com/sergeyksv/tungus
+    - Mongoose driver for TingoDB
 
 - https://github.com/elmarti/camadb /202110/ts/inactive
   - a NoSQL embedded database written in pure TypeScript for Node, Electron and browser
@@ -209,9 +233,12 @@ modified: 2022-11-03T04:14:11.987Z
 
 - https://github.com/kira0x1/mikaela
   - a discord music bot that gives users the ability to store their favorite songs, and create playlists on discord.
+
+# non-js-json-db
+
+- https://github.com/Softmotions/ejdb
+  - Embeddable JSON Database engine C library. 
+  - Simple XPath like query language (JQL). 
 # more-document-json
-- https://github.com/Irrelon/ForerunnerDB /202006/js
-  - ForerunnerDB is a NoSQL JavaScript JSON database with a query language based on MongoDB (with some differences) and runs on browsers and Node.js.
-  - ForerunnerDB is the most advanced, battle-tested and production ready browser-based JSON database system available today.
-  - https://github.com/Irrelon/forerunnerdb-core
-    - This project contains the core query/match/update functionality of ForerunnerDB 3.x 
+- https://github.com/ashleydavis/sql-to-mongodb
+  - A Node.js script to convert an SQL database to a MongoDB database.

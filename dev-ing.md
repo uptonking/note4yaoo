@@ -113,6 +113,19 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - crdt tutorials
   - nedb-src
 
+- [$group (aggregation) — MongoDB Manual](https://www.mongodb.com/docs/manual/reference/operator/aggregation/group/)
+- [MongoDB 强大查询操作之aggregate - jasonminghao - 博客园](https://www.cnblogs.com/jasonminghao/p/13179629.html)
+
+```JSON
+{
+  "$group":
+    {
+      "_id": "<expression>", // Group key
+      "<field1>": { "<accumulator1> ": "<expression1>" },
+    }
+ }
+```
+
 ## 1210
 
 - mongodb导入 .bson.gz

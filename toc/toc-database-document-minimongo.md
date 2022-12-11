@@ -101,6 +101,7 @@ modified: 2022-11-30T18:57:26.459Z
   - https://pubkey.github.io/event-reduce/
   - An algorithm to optimize database queries that run multiple times
   - 提供了使用示例，包括minimongo、nedb、pouchdb
+  - EventReduce only works with queries that have a predictable sort-order for any given documents. (you can make any query predicable by adding the primary key as last sort parameter)
 # utils
 - https://github.com/serby/save /202209/js
   - A simple CRUD based persistence abstraction for storing objects to any backend data store. eg. Memory, MongoDB, Redis, CouchDB, Postgres, Punch Card etc.

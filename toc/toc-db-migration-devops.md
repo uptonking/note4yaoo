@@ -21,6 +21,10 @@ modified: 2022-11-25T16:17:17.100Z
 - https://github.com/db-migrate/node-db-migrate
   - Database migration framework for node
 
+- https://github.com/seppevs/migrate-mongo
+  - A database migration tool for MongoDB in Node
+
+
 - https://github.com/okv/east
   - node.js database migration tool for different databases (extensible via adapters) with transpiled languages support (e.g. TypeScript).
 # more
