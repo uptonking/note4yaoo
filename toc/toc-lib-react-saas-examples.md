@@ -22,11 +22,11 @@ modified: 2022-08-13T06:59:54.741Z
   - React-admin uses an adapter approach, with a concept called Data Providers.
   - designed as loosely coupled React components and hooks exposing reusable controller logic. It is very easy to replace any part of react-admin with your own
 
-- saas /3.2kStar/MIT/202209/ts
+- async-labs/saas /3.2kStar/MIT/202209/ts
   - https://github.com/async-labs/saas
   - https://saas-app.async-await.com/
   - Open source web app that saves you many days of work when building your own SaaS product.
-  - 前端依赖mui.v5, Next, MobX, 
+  - 前端依赖mui5, Next, MobX, 
   - 后端依赖Express, socket.io, Mongoose, MongoDB
   - https://github.com/async-labs/async
     - sync was built from our popular open source saas
@@ -37,8 +37,9 @@ modified: 2022-08-13T06:59:54.741Z
   - https://saas-ui.dev/docs/pro/overview
   - The React component library for startups, built with Chakra UI.
 
-- https://github.com/async-labs/async
-  - 
+- https://github.com/paralect/ship /202212/ts/c#
+  - Ship is a toolkit for makers to ship better products faster
+  - Full-stack boilerplate tested on production projects 
 
 - https://github.com/adarshaacharya/MentorLabs
   - 前端依赖 redux/toolkit

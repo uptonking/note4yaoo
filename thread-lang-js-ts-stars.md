@@ -15,7 +15,11 @@ modified: 2021-06-22T11:54:44.506Z
 
 - ## 
 
-- ## 
+- ## is it a good practice to use Proxy objects in your app, or I should let that shit to library authors?
+- https://twitter.com/hhg2288/status/1602323703198523394
+- I don’t like them, they feel a bit convoluted and aren’t that performant either.
+  - Greg who made Shelf tried to add them to the Shelf library but found they were slowing things down significantly.
+- if the problem can be solved more simply I wouldn’t touch them. I have yet to run into a problem in app code that proxies are the obvious answer for 
 
 - ## I'm not a fan of premature optimisation but if you know a structure is going to be created *a lot* you're probably better off with a class over a factory function.
 - https://twitter.com/mattgperry/status/1588479452908060673

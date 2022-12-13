@@ -40,7 +40,7 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/linyows/notionate
   - React components that uses the Notion API to display the Notion's database and page.
 
-- rowy /3.8kStar/apache2/202208/ts
+- rowy /4kStar/apache2/202212/ts
   - https://github.com/rowyio/rowy
   - http://rowy.io/
   - https://demo.rowy.io/
@@ -49,11 +49,19 @@ modified: 2022-08-21T10:02:05.129Z
   - Manage Firestore data in a spreadsheet-like UI, write Cloud Functions effortlessly in the browser
   - Powerful spreadsheet interface for Firestore
   - 30+ fields supported
+  - [Firetable is now Rowy_202110](https://news.ycombinator.com/item?id=28768261)
   - [Abstracting the UI to be compatible with any database · Issue #228 · rowyio/rowy](https://github.com/rowyio/rowy/issues/228)
+    - long term
   - https://demo.rowy.io/table/allFieldTypes
     - 给出了常用字段类型的示例
+- firetable /36Star/apache2/202108/ts
+  - https://github.com/Antler-VC/firetable
+  - Excel/Google Sheets like UI for Firebase/Firestore. No more admin portals!
+  - https://github.com/FiretableProject/firetable
 
-- https://github.com/nocodb/nocodb
+- nocodb /33kStar/AGPLv3/202212/ts/vue
+  - https://github.com/nocodb/nocodb
+  - https://nocodb.com/
   - The Open Source Airtable Alternative
   - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
   - Search, sort, filter, hide columns with uber ease
@@ -130,8 +138,6 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/souvikinator/notion-to-md
   - Convert notion pages, block and list of blocks to markdown (supports nesting) using notion-sdk-js
 # airtable-like
-
-
 - https://github.com/bram2w/baserow
   - Baserow is an open source no-code database tool and Airtable alternative. 
   - Open-core with all non-premium features under the MIT License allowing commercial and private use.

@@ -15,31 +15,31 @@ modified: 2022-08-21T10:37:01.349Z
     - outline wiki使用了react-table和react-window
   - ✨ list和grid切换功能 需要自己实现
 
-- top-dependents-of-react-table.v7
-  - 各类组件库中的table或list组件
-    - guidu
-    - @component-controls/components
-    - @edx/paragon
-    - ref
-      - https://www.npmjs.com/browse/depended/react-table
-      - https://github.com/search?o=desc&q=react-table+filename%3Apackage.json&s=indexed&type=Code
-- top-dependents-of-react-table.v6
-  - nteract/data-explorer: 依赖d3、numeral
+- usecases
+  - rowy
 # popular-v8
-- material-react-table /106Star/MIT/202208/ts
+- material-react-table /301Star/MIT/202212/ts
   - https://github.com/KevinVandy/material-react-table
   - https://www.material-react-table.com/
-  - 依赖 material-ui.v5、emotion/styled、react-table.v8、match-sorter
+  - 依赖 mui5、emotion/styled、react-table.v8、react-virtual、match-sorter
   - A fully featured Material UI V5 implementation of Tanstack React Table V8
+  - examples
+    - [Aggregation and Grouping Example](https://www.material-react-table.com/docs/examples/aggregation-and-grouping)
+    - [Remote Data Example](https://www.material-react-table.com/docs/examples/remote)
+    - [React Query Example](https://www.material-react-table.com/docs/examples/react-query)
   - Inspired by material-table and the MUI X DataGrid
   - All internal Material UI components are easily customizable
+
+- react-table /1Star/ISC/202212/ts
+  - https://github.com/rsrv1/react-table
+  - react data-table implementation for server returned dynamic data source
 
 - material-grid /2Star/MIT/202208/ts
   - https://github.com/zmrl010/material-grid
   - Feature-rich datagrid component
   - 依赖 mui5、emotion
 
-- mantine-data-grid /58Star/MIT/202208/ts
+- mantine-data-grid /117Star/MIT/202212/ts
   - https://github.com/Kuechlin/mantine-data-grid
   - https://kuechlin.github.io/mantine-data-grid/
   - https://mantine.dev/
@@ -66,7 +66,7 @@ modified: 2022-08-21T10:37:01.349Z
   - ref
     - https://github.com/toofaniCoder/react-table-8.5-crud
 
-- @uidu/table /13Star/MIT/202105/ts/react
+- @uidu/table /19Star/MIT/202212/ts/react
   - https://github.com/uidu-org/guidu
   - https://uidu.design/
   - https://uidu.design/packages/data/dashlets
@@ -87,9 +87,31 @@ modified: 2022-08-21T10:37:01.349Z
   - ref
     - https://github.com/zendricom/tableus-ui-bootstrap5
     - https://github.com/zendricom/tableus-fetcher-laravel-rest
+
+- https://github.com/klassenl/react-grid /202210/ts
+  - https://subtle-muffin-372579.netlify.app/
+  - Prototype for react table v8 editable table
+  - Keyboard cell navigation Click or enter to edit data Error tooltips
+
+- merico-dev/table /15Star/apache2/202212/ts
+  - https://github.com/merico-dev/table
+  - Dev Table offers a most flexible and powerful low-code data workflow loved by developers.
+  - Build your own data presentation using SQL and multiple data sources including big data. 
+
+- https://github.com/HeartLee/table-tanstack /202212/ts/starter
+  - 使用tanstack table 开发一个满足设计体系定制、性能优秀的Table组件
+
+- https://github.com/sajermann/CustomReactTable
+  - Tailwind
 # design-system-ui-v8
 - https://github.com/blockchain/constellation/blob/development/packages/constellation
   - 依赖tanstack-table、radix-ui、headlessui、tailwindcss
+
+- https://github.com/saas-js/saas-ui/tree/main/packages/saas-ui-data-table
+  - https://saas-ui.dev/docs/components/data-display/data-table
+  - A DataTable component for Chakra UI, build with react-table.
+  - 功能过于简单
+  - 文档样式非常好
 
 - https://github.com/netdata/netdata-ui/tree/master/src/components/table  /js
   - https://netdata.github.io/netdata-ui/
@@ -98,17 +120,53 @@ modified: 2022-08-21T10:37:01.349Z
   - Virtualized settings are mostly replicating react-window
   - Requires numeric width and height of the container.
 
-- https://github.com/Achaak/pikas-ui
+- https://github.com/Achaak/pikas-ui 
   - https://pikas-ui.vercel.app/
   - Pikas-UI is a React UI library for building web applications with StitchesJS.
+  - The library uses Stitches for styling and Radix for the accessibility.
 
 - https://github.com/provectus/kafka-ui
   - Open-Source Web UI for Apache Kafka Management
+
+- https://github.com/Localitos/pluto/blob/main/packages/components/src/components/Table/Table.tsx
+  - https://pluto-storybook.localyze.com/?path=/docs/components-table--default
+- https://github.com/ltht-epr/ltht-react
+  - https://ltht-epr.github.io/ltht-react
+- https://github.com/coveo/plasma
+  - https://plasma.coveo.com/layout/Table
+- https://github.com/GetJobber/atlantis
+  - Atlantis is a design system for Jobber. The primary objective for Atlantis is to provide a system of reusable components t
 # examples-v8
+- https://github.com/rizqitsani/learn-tanstack-table
+  - http://learn-tanstack-table.vercel.app/
+  - sort/filter/pagination
+  - https://github.com/f-starace/Tailwind-Tanstack-Table
+
+- https://github.com/BlackHatMan/Table
+  - Table on React with Mui
+
+- https://github.com/huskice/imdb
+  - https://imdb-six.vercel.app/
+  - MovieDB, nextjs
+
 - https://github.com/freewind-demos/typescript-react-data-grid-table-demo
   - Define a wrapper component for @tanstack/react-table
 - https://github.com/polyms/vite-boilerplate
   - A starter for React with Typescript with the fast Vite and all static code testing with Eslint and formatting with Prettier.
+
+- https://github.com/FreeWall/dbfy /202212/ts
+  - http://dbfy.vercel.app/
+  - database editor
+
+- https://github.com/Avila-Tek/full-stack-template /202212/ts
+  - A Template for a Full Stack Application for Avila Tek Engineers
+  - Turborepo starter
+
+- https://github.com/DefiLlama/defillama-app
+  - http://defillama-ui-git-main-defillama-team.vercel.app/
+
+- https://github.com/Gitseong96/query-Movie-List
+  - api https://www.kobis.or.kr/kobisopenapi/webservice/rest
 
 - https://github.com/dogukanakkaya/next-boilerplate
   - Next Auth Prisma tRPC Tailwind React Table React Select
@@ -140,6 +198,7 @@ modified: 2022-08-21T10:37:01.349Z
 
 - https://github.com/Danzo7/doctorIO
   - medical management software to improve the connectivity between doctors and patients
+  - Clinicord-Client is a desktop/web compatible software. It is an offline software that can connect to a Clinicord-server instance on a LAN to enable it features.
   - 依赖 redux-toolkit、electron、localforage、react-beautiful-dnd、redux-persist
 
 - https://github.com/Saszr/vite-react-chill
@@ -200,212 +259,62 @@ modified: 2022-08-21T10:37:01.349Z
 - https://github.com/freewind-demos/typescript-tanstack-react-table-global-filter-demo
   - ts+react
 
-- more-table-repos
-  - https://github.com/Elduwani/cashbar-admin-demo
-  - https://github.com/AbdQaadir/movie-app
-# popular-v7
-- ui-table /25Star/MIT/202112/ts
-  - https://github.com/habx/ui-table
-  - https://habx.github.io/ui-table/
-  - UI components for react-table based on [ui-core](https://github.com/habx/ui-core)
-  - 依赖@habx/ui-core、react-table.v7、react-window、styled-components、lodash、exceljs、papaparse(csv)、react-dropzone
-  - display布局: table-grid, tr-grid, td-flex
-  - 例子非常多，包括 virtualized、infiniteScroll、filter、header、footer、CompareTable
-  - 单元格类似包括 array、boolean、icon、image；没有dropdown
-  - filter支持搜索框、滑动条、下拉菜单
-  - 支持导入导出csv, xlsx
-  - 缺点是不支持编辑、不支持改变列宽度
+- https://github.com/hmaiermack/daydash /202212/ts/t3-stack
+  - Create T3 App
 
-- editable-react-table /410Star/MIT/202108/js
-  - https://github.com/archit-p/editable-react-table
-  - https://codesandbox.io/s/editable-react-table-gchwp
-  - React table built to resemble a database.
-  - 依赖react-table.v7, react-window, popperjs.v2, react-contenteditable, clsx
-  - display布局： table.div-block, tr.div-flex, td.div-flex
-  - 支持3种单元格类型 number, text, select，弹出框很好用
-  - 没有全局工具条，但表头每列的下拉菜单很完整；不支持分组
-  - https://github.com/hermanbanken/editable-react-table
-    - /ts
-  - https://github.com/koyal-tech/editable-react-table
+- https://github.com/esponges/t3-ecommerce
+  - lets try to build an ecommerce site with t3
 
-- react-table-ui /7Star/MIT/202107/ts
-  - https://github.com/GuptaSiddhant/react-table-ui
-  - https://react-table-ui.js.org/
-  - https://codesandbox.io/s/react-table-ui-basic-8ukxd
-  - Out-of-the-box UI for React-Table 7
-  - 依赖只有react-table
-  - 样式完全自己实现，样式添加基于完全自己实现的styled，useStylesheet会添加css到dom中，`document.head.insertAdjacentElement`手动插到dom头部
-  - 示例类似kitchen sink，支持排序、过滤，不支持分组，每行hover时会出现悬浮操作菜单，点击有弹框
-  - 有全局工具条，但没有每列工具条
+- https://github.com/mikeKorakakis/t3Boilerplate
+  - Create T3 App
+  - https://github.com/tanushm31/react-table-test
 
-- lumen-table
-  - https://github.com/EQWorks/lumen-table
-  - https://eqworks.github.io/lumen-table/
-  - React data table component.
-  - 依赖 @material-ui/core.v4、@eqworks/lumen-ui
-  - display布局: table, table-row, table-cell
-  - 示例比较多
-  - 单元格支持可展开元素，当该元素展开时，整行会变高，示例在 render json
-  - 工具条支持下拉菜单选择要显示的字段列
-  - filter支持 range滑动条、按现有值、日期范围
-  - ref
-    - https://github.com/EQWorks/react-labs
-    - https://github.com/EQWorks/lumen-ui
+- https://github.com/thirdweb-dev/dashboard
+  - https://thirdweb.com/
+  - full source for all of thirdweb.com and the thirdweb dashboard.
+  - The complete web3 development framework
+- https://github.com/encacap/baolocre_dashboard
+  - https://baolocre-dashboard-dev.vercel.app/auth/login
 
-- @heathmont/moon-table
-  - https://github.com/coingaming/moon-design
-  - https://moon.io/components/table/table
-  - display布局: table.div-block, tr.div-flex, td.div-block
-  - 拖动表格滚动条时，可以显示minimap
-  - 提供了日期字段作为一列的Calendar示例
+- https://github.com/sammykisina/charity /202212/ts/t3-stack
+  - http://charity-zeta.vercel.app/
+  - A Charity Application To Be Used By A Charity Organization To Receive And Management Donations From Members Of The Public
+  - 依赖trpc、next、tailwind
 
-- table-x
-  - https://github.com/gmfe/gm-pc/tree/master/packages/table-x
-  - https://gmfe.github.io/gm-pc-docs/?path=/story/tablex-tablex--com-table-x
-  - 依赖 react-window、sortablejs、@gm-pc/react
-  - 注意不要随意升级版本，目前使用 react-table.v7.0.0-rc.11
-  - 7.0.0-rc.11 天然不支持 column.show, 所以自行实现了 column.show 的支持
-  - 斑马线，不能用 css 的 :even 和 :odd 实现。因为在使用虚拟列表的时候有坑。
+- https://github.com/umccr/elsa-data /202212/ts
+  - Genomic data sharing support software ("let the data go").
 
-- @superset-ui/plugin-chart-table
-  - https://github.com/apache/superset/tree/master/superset-frontend/plugins/plugin-chart-table
-    - https://apache-superset.github.io/superset-ui/?path=/story/chart-plugins-plugin-chart-table--big-table
-    - This plugin provides Table chart for Superset.
-  - https://github.com/apache-superset/superset-ui
-    - https://apache-superset.github.io/superset-ui/
-    - packages that power the Apache Superset UI, and can be used to craft custom data applications
-  - https://github.com/Arthanadftz/plugin-chart-table
-    - 依赖@emotion/core、@superset-ui/core、d3、react-table
-  - https://github.com/w11k/superset-chart-plugins
-    - Table Chart; Scatter Chart
+- https://github.com/reactioncommerce/kinetic
+  - Kinetic introduces a suite of opinionated admin tools that internal teams can use to manage and run their stores on Open Commerce.
 
-- lineup-lite /7Star/MPLv2/202104/ts
-  - https://github.com/sgratzl/lineup-lite
-  - https://lineup-lite.js.org/docs/
-  - 依赖 react-table.v7、react-virtual.v2、lineup-lite
-  - LineUp-lite is an extension of the excellent react-table library for rendering beautiful interactive table visualizations based on the LineUp ranking visualization technique.
-  - @lineup-lite/hooks provide extensions to react-table such as additional React hooks and custom renderers. 
-  - @lineup-lite/table provides a wrapper around react-table providing a single LineUp-like React table component.
+- https://github.com/mbrinkl/santorini
+  - https://santorini.onrender.com/
+  - Santorini Board Game Online with boardgame.io and three.js
+# more-table-repos
+- https://github.com/zakodium-oss/react-science
+  - https://react-science.pages.dev/
+  - React components and tools to build scientific applications.
+  - https://github.com/zakodium-oss/react-plot
+    - Library of React components to render SVG 2D plots.
 
-- https://github.com/patternfly/patternfly-react/tree/main/packages/react-table
-  - https://patternfly-react.surge.sh/components/table
-  - 给了很多示例，Compound expandable，Tree table
-- @equinor/fusion-react-table
-  - https://github.com/equinor/fusion-react-components/tree/main/packages/table
-  - https://equinor.github.io/fusion-react-components/?path=/docs/table-examples-toolbar-table--toolbar-table
-  - 功能简单，但sort、filter实现的结构清晰
-# design-system-ui-v7
-- https://github.com/onaio/js-tools/tree/master/packages/DrillDownTable
-  - a bootstrap-based higher order component that works with React Table.
+- https://github.com/InformaticsMatters/squonk2-data-manager-ui
+  - http://data-manager-ui.vercel.app/
+  - Web UI for the Squonk Data Manager
+  - https://github.com/InformaticsMatters/squonk
+    - Squonk, both the Squonk Platform and the Squonk Computational Notebook.
 
-- https://github.com/saas-js/saas-ui/tree/main/packages/saas-ui-data-table
-  - https://www.saas-ui.dev/docs/data-display/data-table
-  - A DataTable component for Chakra UI, build with react-table.
-  - 功能过于简单
-  - 文档样式非常好
+- https://github.com/tovyblox/tovy
+  - Tovy is an open source staff management platform inspired by Hyra. 
 
-- https://github.com/entando/frontend-libraries/tree/master/packages/entando-datatable
-  - customizable data table powered by react-table used in Entando projects specifically in Appbuilder & CMS.
-  - columns resizable and reorderable (except actions column)
+- https://github.com/afk-mario/federike /202212/js
+  - Web app to manage your mastodon account
 
-- more ui/design system using react-table
-  - https://github.com/scality/zenko-ui
-  - @zenbu-ui/table
-    - https://github.com/KodepandaID/zenbu-ui
-  - https://github.com/SAP/ui5-webcomponents-react/tree/main/packages/main/src/components/AnalyticalTable
-    - https://sap.github.io/ui5-webcomponents-react/?path=/docs/data-display-analyticaltable--default-story
+- https://github.com/Elduwani/cashbar-admin-demo
+- https://github.com/AbdQaadir/movie-app
 
-- 过于简单
-  - https://github.com/edx/paragon/tree/master/src/Table
-    - https://edx.github.io/paragon/
-  - https://github.com/ccontrols/component-controls/tree/master/ui/components/src/Table
-    - https://component-controls.com/api/components-table--overview
-  - https://github.com/coingaming/moon-design/tree/develop/packages/table
-    - Lightweight, fast and extendable table. Based on react-table
-
-- https://github.com/grafana/grafana/tree/main/packages/grafana-ui/src/components/Table
-- https://github.com/iTwin/iTwinUI-react/tree/main/src/core/Table
-
-- https://www.npmjs.com/package/@preamp/tables
-- https://www.npmjs.com/package/@gmfe/table-x
-# examples-v7
-- https://github.com/ggascoigne/react-table-example
-  - https://codesandbox.io/s/github/ggascoigne/react-table-example
-  - Demo of React Table V7 using TypeScript as well as Material UI v4
-  - 全局filter，各种类型的filter
-- https://github.com/legendarydev007/react-material-dashboard
-  - built with material-ui framework coded by Lahm
-- https://github.com/toni783/MUI-react-virtual-table
-  - https://codesandbox.io/s/github/toni783/MUI-react-virtual-table
-  - react-table.v7, react-virtual, material-ui.v4
-
-- https://github.com/paalamugan/exce  l-sheet-react-table
-  - https://paalamugan.github.io/excel-sheet-react-table/
-  - You can import you excel sheet and edit your excel sheet in the UI and download that updated excel sheet.
-  - 依赖 react-table、react-window、react-toastify、xlsx-parse-json
-
-- https://github.com/bezkoder/react-table-crud-example
-  - React Table example: CRUD App with react-table v7, axios, Bootstrap
-  - [React Table example: CRUD App | react-table 7](https://www.bezkoder.com/react-table-example-hooks-crud/)
-- https://github.com/jcape-gt/RemoteDataTable
-  - A CRUD data table library for React 
-  - 依赖react-table.v7、material-ui.v4、date-fns、react-hook-form
-  - Rows automatically support read/edit mode
-- https://github.com/MelisaMert/crud-react-contextapi
-  - Basic Crud Operation with contextapi
-
-- https://github.com/jimmybutton/react-tailwind-table
-  - 只依赖 react-table7、@tailwindcss/forms
-  - [React Table Tutorial Part 2: Style the table with Tailwind CSS](https://www.samuelliedtke.com/blog/react-table-tutorial-part-2/)
-  - [React Table Tutorial Part 1: Build a fully featured table component](https://www.samuelliedtke.com/blog/react-table-tutorial-part-1/)
-    - https://github.com/jimmybutton/react-tailwind-table/tree/part1
-
-- https://github.com/TheWidlarzGroup/RT7-example 
-  - https://rt7-example.netlify.app/
-  - /202008
-  - hooks-table-demo-with-pagination
-  - 依赖bootstrap4、react-table7、reactstrap8
-  - [React Table 7 - Hooks based library](https://thewidlarzgroup.com/react-table-7/)
-
-- https://github.com/Eversoft-Group/react-table
-  - React table component build with Bootstrap and react-table
-  - https://eversoft-group.github.io/react-table/
-
-- https://github.com/datopian/datapub
-  - https://tech.datopian.com/publish/
-  - 依赖ckan-client、frictionless.js、react-table、stream-to-array、axios
-  - DataPub is a React-based framework for rapidly building modern data publishing flows (esp for CKAN). 
-  - It provides a variety of core components as well as example apps and flows.
-  - https://github.com/datopian/datapub-nhs
-    - NHS data publishing app in React using DataPub.js framework.
-- https://github.com/CDCgov/cdc-open-viz
-  - [Example Numeric Maps](https://www.cdc.gov/wcms/4.0/cdc-wp/data-presentation/examples/example-numeric-maps.html)
-  - [Example Filterable Data Map](https://www.cdc.gov/wcms/4.0/cdc-wp/data-presentation/examples/example-numeric-maps-filterable.html)
-  - 依赖d3、react-table、react-dropzone、html-react-parser、bootstrap4
-  - 示例简单实用，表格很简单
-
-- https://github.com/vishal-nath-chauhan/React-table-v7-blog-series
-  - https://github.com/vishal-nath-chauhan/React-table-v7-blog-series-Part-2
-
-- https://github.com/nteract/data-explorer
-  - https://data-explorer.nteract.io/
-  - Data Explorer is nteract's automatic visualization tool.
-  - 依赖react-table6
-  - 样式比比较简陋
-- data-catalog-components /5Star/GPLv3/202104/js
-  - https://github.com/getdkan/data-catalog-components
-  - https://getdkan.github.io/data-catalog-components
-  - 依赖bootstrap.v4、reactstrap、react-dnd, react-table.v7
-  - 样式普通
-  - A set of React components to facilitate the creation of Open Data Catalogs with React.
-  - built for dkan(基于php，而ckan基于python)
-
-- react-table chart column 图表作为一列
-  - https://codesandbox.io/s/react-table-highcharts-jm125
-
-- https://github.com/codefromrvk/sql-editor
-  - https://sql-editor-demo.netlify.app/
-
-- https://github.com/earthshakira/csv-modifier /python
-  - https://csv-update-pipeline.herokuapp.com/
-  - CSV Uploads, Validation, Editing and Storage
+- https://github.com/baptisteArno/typebot.io
+  - https://typebot.io/
+  - Typebot is an open-source alternative to Landbot. 
+  - a conversational form builder that you can self-host.
+  - builder依赖slate-react、tanstack-table
+  - It allows you to create conversational apps/forms (Lead qualification, Product launch, User onboarding, Customer support), embed them anywhere on your web/mobile apps, and collect results in real-time.

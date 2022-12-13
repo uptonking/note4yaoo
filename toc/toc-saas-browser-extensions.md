@@ -123,19 +123,22 @@ modified: 2022-11-04T15:11:24.012Z
   - 支持自定义新标签页的 Chrome/Firefox/Edge 扩展，几枝将在新标签页上展示中国传统色的层叠波浪动画效果搭配经典诗词。
   - 好看，但不实用
 
-- https://github.com/maxmilton/new-tab /202206/ts
-  - A list of your open tabs, recently closed tabs, and top sites.
-  - built with [stage1](https://github.com/maxmilton/stage1) JavaScript framework
-
-- https://github.com/jackyzha0/tabspace
+- https://github.com/jackyzha0/tabspace /202212/ts/tiptap
   - new tab replacement that gives you your very own scratch space to help you stay organized and focused.
   - auto-saving notes, rich text formatting and natural language due dates.
   - Auto-saves to local storage
   - Uses natural language to recognize and highlight due dates
   - 类似普通markdown编辑器
+  - 依赖tiptap、zustand、d3、wouter、framer-motion
+
+- https://github.com/maxmilton/new-tab /202206/ts
+  - A list of your open tabs, recently closed tabs, and top sites.
+  - built with [stage1](https://github.com/maxmilton/stage1) JavaScript framework
+
 - mdtab /8Star/MIT/202209/ts
   - https://github.com/shaoruu/mdtab
   - Write quick notes in Markdown on any new tabs!
+  - 依赖react-ace、remark
   - Save to local storage/browser sync
   - Vim mode
 

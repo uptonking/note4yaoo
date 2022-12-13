@@ -179,7 +179,7 @@ modified: 2022-08-18T16:57:29.058Z
   - A simple implementation of invisible characters in ProseMirror.
   - A plugin that uses decorations to show invisible characters in ProseMirror
 
-- https://github.com/xylk/prosemirror-compress
+- https://github.com/xylk/prosemirror-compress /201805/js
   - ProseMirror data compression
 
 - https://github.com/prowriting/beyondgrammar-prosemirror

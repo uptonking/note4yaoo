@@ -11,4 +11,8 @@ modified: 2021-01-04T16:21:06.635Z
 
 - [Three Kingdoms - OverSimplified](https://www.youtube.com/watch?v=26EivpCPHnQ)
 
+- https://github.com/tmshv/sphere
+  - General purpose GIS Desktop Application
+  - Tauri + rust-analyzer
+
 # more-apps

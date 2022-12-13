@@ -57,5 +57,8 @@ modified: 2022-08-21T10:13:31.691Z
   - rich-text component based on @udecode/plate
 
 - https://github.com/baptisteArno/typebot.io
+  - https://typebot.io/
   - Typebot is an open-source alternative to Landbot. 
+  - a conversational form builder that you can self-host.
+  - builder依赖slate-react、tanstack-table
   - It allows you to create conversational apps/forms (Lead qualification, Product launch, User onboarding, Customer support), embed them anywhere on your web/mobile apps, and collect results in real-time.

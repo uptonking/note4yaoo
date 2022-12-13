@@ -10,6 +10,19 @@ modified: 2022-11-07T17:37:27.579Z
 # guide
 
 # collab-platform
+- CoCreateJS /19Star/MIT/202212/js
+  - https://github.com/CoCreate-app/CoCreateJS
+  - https://cocreate.app/
+  - A collaborative low code headless CMS and Javascript framework for building collaborative no code platforms, apps and UI
+  - https://github.com/CoCreate-app/CoCreate-crud-client /202212/js
+  - An useful CRUD api operate Create, read, update, delete with built in database. 
+  - Can be used as a firebase alternative
+ - https://github.com/CoCreate-app/CoCreateWS
+    - Server Side for CoCreateJS. Containing websocket, crud, auth, server side rendering, and permission components.
+  - https://github.com/CoCreate-app/CoCreate-admin
+    - A No Code Admin, CRM, CMS, Website Builder platform. 
+    - Powered by CoCreateJS to provide Realtime and Collaborative CRUD functionality.
+
 - https://github.com/xwiki-labs/cryptpad
   - CryptPad is a collaboration suite that is end-to-end-encrypted and open-source. 
   - It is built to enable collaboration, synchronizing changes to documents in real time. 
@@ -159,7 +172,6 @@ modified: 2022-11-07T17:37:27.579Z
 - https://github.com/earthstar-project/earthstar
   - Earthstar is a specification and Javascript library for building online tools you can truly call your own.
 # more
-
 - https://github.com/digitallyinduced/thin-backend /202211/js/ts/inactive
   - a Blazing Fast, Universal Web App Backend for Making Realtime Single Page Apps
   - Thin Backend has a built-in GUI-based schema designer, helps to quickly build the DDL statements for your database schema

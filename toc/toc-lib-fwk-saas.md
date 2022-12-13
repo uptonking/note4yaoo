@@ -20,11 +20,9 @@ modified: 2021-05-25T09:41:29.066Z
   - https://coollabs.io/coolify
   - 前端依赖svelte
   - An open-source, hassle-free, self-hostable Heroku & Netlify alternative
-
 # micro-frontend
 - https://github.com/microsoft/redux-micro-frontend
   - This library can be used for using Redux in a Micro Frontend based architecture. 
-
 # sass-examples
 
 # more

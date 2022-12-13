@@ -90,6 +90,11 @@ modified: 2022-06-03T21:34:54.893Z
   - Notabase uses Supabase as the backend (for authentication, database, and storage), so you'll have to make a Supabase account. 
     - https://github.com/churichard/notabase/blob/main/scripts/schema.sql
 
+- rockeseat-ignite-rotion /1Star/ISC/202212/ts
+  - https://github.com/wfl-junior/rockeseat-ignite-rotion
+  - An alternative to Notion built with Electron
+  - 依赖tiptap、electron、radix-ui、tanstack-query
+
 - minddrop /3Star/NALic/202208/ts/提交多/仅桌面版
   - https://github.com/coniel/minddrop
   - https://minddrop.app/

@@ -370,7 +370,7 @@ modified: 2022-05-15T18:45:27.570Z
 - https://github.com/vip-git/universal-json-schema
   - https://react-jsonschema-form-material-ui.github56.now.sh/
   - Universal JSON Schema Form - Currently Support for React - Material UI components for building Web forms from JSON Schema.
-  - A Material UI port of jsonschema-form. (mui.v5)
+  - A Material UI port of jsonschema-form. (mui5)
 
 - https://github.com/commercetools/ui-kit
   - Component library based on our design system

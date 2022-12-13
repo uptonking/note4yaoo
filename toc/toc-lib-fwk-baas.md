@@ -51,6 +51,20 @@ modified: 2021-05-25T09:40:55.797Z
 
 - https://github.com/TheHadiAhmadi/minibase /202211/js
   - minimal (and slow) firebase alternative
+ 
+
+- CoCreateJS /19Star/MIT/202212/js
+  - https://github.com/CoCreate-app/CoCreateJS
+  - https://cocreate.app/
+  - A collaborative low code headless CMS and Javascript framework for building collaborative no code platforms, apps and UI
+  - https://github.com/CoCreate-app/CoCreate-crud-client /202212/js
+  - An useful CRUD api operate Create, read, update, delete with built in database. 
+  - Can be used as a firebase alternative
+ - https://github.com/CoCreate-app/CoCreateWS
+    - Server Side for CoCreateJS. Containing websocket, crud, auth, server side rendering, and permission components.
+  - https://github.com/CoCreate-app/CoCreate-admin
+    - A No Code Admin, CRM, CMS, Website Builder platform. 
+    - Powered by CoCreateJS to provide Realtime and Collaborative CRUD functionality.
 
 - kinto /4.2kStar/apache2/202210/python
   - https://github.com/Kinto/kinto

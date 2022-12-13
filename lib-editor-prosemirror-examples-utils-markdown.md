@@ -66,7 +66,7 @@ modified: 2022-11-08T21:14:54.399Z
   - https://rino-editor.vercel.app/
   - https://rino.app/
   - 提供了类似typora的行内实时编辑预览
-  - editor依赖 remirror、unstated-next、codemirror.v6、mui.v5、floating-ui、markdown-it、mdast-util-from-markdown
+  - editor依赖 remirror、unstated-next、codemirror.v6、mui5、floating-ui、markdown-it、mdast-util-from-markdown
   - A better way to write Markdown
 
 - blank /23Star/MIT/202208/ts

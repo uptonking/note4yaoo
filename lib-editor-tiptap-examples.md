@@ -50,8 +50,8 @@ modified: 2022-08-19T23:00:22.162Z
   - 实现了RTL国际化方向
   - 数据保存使用了 idb-keyval
 
-- neeto-editor-tiptap /10Star/MIT/202208/js/tiptap/提交多
-  - https://github.com/bigbinary/neeto-editor-tiptap
+- neeto-editor /10Star/MIT/202208/js/tiptap/提交多
+  - https://github.com/bigbinary/neeto-editor
   - https://neeto-editor.onrender.com/
   - [editor demo with addons](https://neeto-editor.onrender.com/?path=/docs/examples-customize-options-addons--addons)
   - 支持定义变量
@@ -94,11 +94,6 @@ modified: 2022-08-19T23:00:22.162Z
     - Solution 2: Relying on the Markdown preview endpoint
   - ref
     - https://github.com/gitlabhq/gitlabhq/tree/master/app/assets/javascripts/content_editor
-
-- neeto-editor /3Star/MIT/202211/js
-  - https://github.com/bigbinary/neeto-editor
-  - https://neeto-editor.onrender.com/
-  - The neetoEditor library drives the rich text experience in the neeto products built at BigBinary.
 
 - rhino-editor /26Star/MIT/202212/ts/ruby
   - https://github.com/KonnorRogers/rhino-editor
@@ -225,12 +220,18 @@ modified: 2022-08-19T23:00:22.162Z
   - That proofreader can work locallyin the browser, or it can call an online service, 
   - This extension is inspired by the tiptap-languagetool extension.
 # examples
-- https://github.com/SkyGuardian42/piko.space
+- https://github.com/SkyGuardian42/piko.space /202212/ts
+  - https://piko.space/
   - Collaborate at the speed of light and seamlessly sync offline work
   - tiptap的协作示例
   - redis、yjs、tiptap
   - 前端依赖tiptap、radix-ui、tan-query、yjs、zustand
   - 后端依赖trpc、express、yjs、zod
+
+- rockeseat-ignite-rotion /1Star/ISC/202212/ts
+  - https://github.com/wfl-junior/rockeseat-ignite-rotion
+  - An alternative to Notion built with Electron
+  - 依赖tiptap、electron、radix-ui、tanstack-query
 
 - https://github.com/justinmoon/tiptap-markdown-demo
   - TipTap rich text editor doesn't support markdown, but this repo shows how to hack it in yourself.

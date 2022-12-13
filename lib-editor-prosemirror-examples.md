@@ -239,7 +239,7 @@ modified: 2022-08-18T16:57:46.405Z
   - https://gem.tanishqkancharla.dev/
   - 只依赖prosemirror，不依赖react
   - Gem (previously called Editor) is a performant and simple plain text editor 
-  - The design is very inpsired by Paco Coursey's [Writer]().
+  - The design is very inspired by Paco Coursey's [Writer]().
   - [Gem, a plain-text editor based on prosemirror_202111](https://discuss.prosemirror.net/t/gem-a-plain-text-editor-based-on-prosemirror/4231)
     - I worked on moving to codemirror 6 
   - https://github.com/pacocoursey/writer /291Star/NALic/202110/js/inactive
@@ -291,6 +291,11 @@ modified: 2022-08-18T16:57:46.405Z
     - Collaboration in Manuscripts.io 64 works at the project level — each project can contain several manuscripts — and collaborators can either be responsible for editing parts of the document or can simply comment by adding annotations to blocks or ranges of the manuscript.
     - Manuscripts.io 64 includes some innovations: figures that can be (re)generated dynamically by evaluating code in a hosted Jupyter kernel; built-in searching of online reference databases; configurable paragraph, section and inline styles, and output to multiple formats (DOCX, PDF, JATS XML, HTML, and others).
 
+- prosemirror-adapter /12Star/MIT/202212/ts
+  - https://github.com/Saul-Mirone/prosemirror-adapter
+  - Universal adapter for ProseMirror to use it with modern UI frameworks. (React, Vue and more coming soon)
+  - something out of this scope will not be considered: no ui, no hotkeys, no schema
+
 - use-prosemirror /321Star/MIT/202201/ts
   - https://github.com/ponymessenger/use-prosemirror
   - ProseMirror + React made easy
@@ -303,6 +308,8 @@ modified: 2022-08-18T16:57:46.405Z
   - https://ow1qi.csb.app/
   - A React component for ProseMirror.
   - provides a solution for efficiently integrating ProseMirror with React, without creating a new API.
+- https://github.com/rebecca-thompson/prosemirror-react
+  - A React app implementation of the Prosemirror rich text editor
 
 - reprose /2Star/MIT/202109/ts
   - https://github.com/riboseinc/reprose
@@ -352,6 +359,13 @@ modified: 2022-08-18T16:57:46.405Z
     - https://github.com/luke-john-atlassian/prosemirror-devtools /单独app或extension/inactive
     - [Is there a good way to understand the “pos” that is used all over?](https://discuss.prosemirror.net/t/is-there-a-good-way-to-understand-the-pos-that-is-used-all-over/3458)
 # tiptap/milkdown/remirror/atlassian/wax
+- typist /8Star/MIT/202211/ts
+  - https://github.com/Doist/typist
+  - https://typist.doist.dev/
+  - Typist is the mighty Tiptap-based rich-text editor React component that powers Doist products
+  - 提供了纯文本和富文本2种输入模式
+  - Typist also supports a plain-text mode, and comes with HTML/Markdown serializers.
+
 - better-virgool /9Star/MIT/NALic/202208/ts/tiptap
   - https://github.com/ahhshm/better-virgool
   - https://ahhshm.github.io/better-virgool/
@@ -432,7 +446,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 高级功能未开源如comment/collab
   - Nib not only has good rich text editing capabilities but also addresses complex editing requirements like tracking changes made to a document, adding comments in document, collaborative editing and more...
 
-- humhub-prosemirror /15Star/Apache2/202108/js
+- humhub-prosemirror /15Star/Apache2/202212/js
   - https://github.com/humhub/humhub-prosemirror
   - Prosemirror based richtext implementation for the humhub social network
   - 依赖 prosemirror-example-setup、markdown-it
@@ -490,9 +504,6 @@ modified: 2022-08-18T16:57:46.405Z
 
 - react-tinacms-editor /ts
   - https://github.com/tinacms/tinacms/blob/main/packages/react-tinacms-editor
-
-- https://github.com/humhub/humhub-prosemirror /202205/js
-  - 打包使用grunt
 
 - https://github.com/Musery/report_system
   - rjx-wysiwyg 基于 prosemirror和mdast及其相关扩展插件实现的可视化 markdown 语法报表在线编辑和支持docx, pdf格式报表导出

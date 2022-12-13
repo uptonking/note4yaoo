@@ -53,10 +53,11 @@ modified: 2022-10-04T23:32:30.824Z
   - https://github.com/naept/tiptap-extension-collaboration
   - A socket.io server for tiptap collaboration module. Handles multi-documents, users's cursors, and hooks for programmers.
   - [Build a multi-document collaborative text editor with Tiptap and Socket.io_202009](https://www.naept.com/en/blog/build-a-multi-document-collaborative-text-editor-with-tiptap-and-socket-io/)
-  - 
 # crdt/yjs
 - https://github.com/yjs/y-prosemirror
   - ProseMirror editor binding for Yjs
+- https://github.com/reactivepad/use-yjs-prosemirror
+  - use-yjs-prosemirror
 
 - https://github.com/idealjs/chao-feng
   - 依赖 yjs
@@ -98,8 +99,6 @@ modified: 2022-10-04T23:32:30.824Z
     - Server-side rebasing drastically reduces network round-trips
     - Steps are queued and sent as commits, reducing overhead
     - When possible, steps are merged prior to network transport
-
-
 
 - eg
    - https://github.com/mms-gianni/prosemirror-collaborationserver

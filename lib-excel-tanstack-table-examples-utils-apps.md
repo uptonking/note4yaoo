@@ -11,6 +11,8 @@ modified: 2022-08-21T10:36:31.021Z
 
 # utils-v8
 - https://github.com/utsavdotpro/ReactTable-Utils
+  - TableHeaderBuilder Class
+  - Headless, just like ReactTable
   - Util functions & classes for working with TanStack Table v8 (ReactTable) easily & quickly.
 # utils-v7
 - https://github.com/GuillaumeJasmin/react-table-sticky
