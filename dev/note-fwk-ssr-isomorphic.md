@@ -25,8 +25,15 @@ modified: 2020-12-19T13:05:23.294Z
   - 博客页面(Blog posts)
   - 帮助文档(help and documentation)
   - 营销页面、产品介绍页面(Marketing pages)
-
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [React Streaming SSR/Server Components · TanStack/query](https://github.com/TanStack/query/discussions/4623)
+- This post tries to outline a rough early draft API for integrating React Query with all the new React APIs while preserving a familiar API and trying to minimize the amount of new things RQ users needs to learn to leverage them, as well as outlining some todos to get there.
 
 - ## [用了react 或者 vue，如何做SEO优化呢？](https://www.zhihu.com/question/51949678/answers/updated)
 - 用 Vue 不代表你一定要做成 SPA
@@ -36,17 +43,25 @@ modified: 2020-12-19T13:05:23.294Z
 - SEO的必要性
   - 事实就是这些前端框架最适应的场景就是管理平台，不需要做SEO。
   - 看自己的网站类型及团队架构情况，如果是需要登录才可以使用的，那么SEO意义不大
+
     - 最多首页放点静态文字和图片让搜索引擎收录即可。
     - 如果是非SPA的，且需要考虑搜索引擎的，要看自己的后端架构，如果是Node，react和vue都有方案。
     - 如果是其它的，可能不太好办，要么给搜索引擎的单独推一套（用户依然体验的是react、vue），要么就用传统的后端直接拍页面方式（放弃react、vue）。
+
   - seo或许是比较好的网站推广方式，但绝不是唯一的推广方式，还有其他的很多有效的办法的，
+
     - 以前老说seo是免费的，现在再看，成本已经很高了
     - SEO永远玩不过人民币玩家
+
   - 如果因为seo的一些限制而造成其他更有价值的东西没办法进展，那就舍弃seo呗
+
     - 一开始就打算用seo的话就尽量别用这些框架了 不然自己就坑死自己了
+
   - 比起日益昂贵的SEO，广告联盟反而因为越来越精准而划算
   - 静态信息网站的显示层，通常是直接渲染的，或者干脆就是静态页面。这样方便别人爬取数据。
+
     - 至于vue，只要用在后台和用户的操作就可以了。比如发布消息，点赞，回复等
+
 - 不说需要维护两份工程，目前百度抓取程序在特定时候会伪装成正常用户，来浏览页面资源，受制于计算和存储资源，百度抓取程序并不能很好的解析JS，会造成站点被百度降低评级；
   - 另外维护一份爬虫白名单，这是个非常细碎的工作，需要UA+IP一起维护，而不是只是维护UA，这样就会非常麻烦。
   - 百度先用公开UA的爬虫来获取页面，然后可能会再模拟用户UA获取页面，如果不一致则判断作弊
@@ -70,6 +85,7 @@ modified: 2020-12-19T13:05:23.294Z
 - ref
   - https://www.zhihu.com/question/433673833/answer/1622039165
   - 我认为，ssg适合中小型应用，不适合超大型应用，
+
     - 问题在于若内容超级多，则增量构建也会花费大量时间，同时动态交互的计算量也很大
 
 - ## [有必要使用服务器端渲染(SSR)吗？](https://www.zhihu.com/question/308792091/answers/updated)
@@ -99,16 +115,23 @@ modified: 2020-12-19T13:05:23.294Z
 - SPA发往浏览器的是一个很轻量的html，以及大体量的javascript，
   - 搜索引擎只能读取这有限的html，没法读取其他动态生成的URL，就很难爬到其他页面
   - 既然爬不到，那能不能直接告诉搜索引擎我有哪些URL呢？
+
     - 当然可以，如果你是网站的开发者，可以在搜索引擎的console上传sitemap（站点地图），直接通过一定的格式告诉搜索引擎，我这个Single-page application上面有哪些URL，
     - 不过无法读取动态生成的问题仍然存在。
+
   - 那能不能通过改革搜索引擎来解决呢？
+
     - 其实一些搜索引擎已经做了，比如googlebot，是支持读取动态生成html的，但是资源有限，不会让你无限地运行下去，对于异步fetch内容的部分，容易超时。
     - 所以服务器渲染才是解决SEO的根本。
+
   - 搜索引擎是怎么解析一大堆生成的html的呢？
+
     - 首先找有没有meta标签来描述网站
     - 没有的话就盲猜，比如你h1里面裹的大概是标题吧
     - 可以把meta部分服务器端渲染，然后其他部分依然动态生成，这也是很多大型网站在做的事情。
+
   - 如果这只是小网站，只有很少的开发者，不愿意搞服务器渲染怎么办？
+
     - 还有一个小技巧，就是Dynamic rendering
     - 加入中间件，识别这个request是浏览器发送的还是爬虫发送的，
     - 如果是浏览器发过来的，则正常返回，
@@ -189,19 +212,25 @@ modified: 2020-12-19T13:05:23.294Z
 - ## [“Single-page” JS websites and SEO](https://stackoverflow.com/questions/7549306/single-page-js-websites-and-seo)
 - In my opinion, SPA is done right by letting the server act as an API (and nothing more) and letting the client handle all of the HTML generation stuff. 
   - The problem with this "pattern" is the lack of search engine support. I can think of two solutions:
+
     - When the user enters the website, let the server render the page exactly as the client would upon navigation. 
     - Let the server provide a special website only for the search engine bots. 
+
 - There are two ways to make sure a single page application is SEO friendly
   - Dynamic rendering is the easiest way. 
+
     - requests coming from bots are forwarded via a service that can execute JS and render your SPA into a plain HTML page readable by any search engine bot. 
     - This can be done using a headless browser. 
     - An example of such a service is Rendertron that uses headless Chrome. 
     - These days it's probably the best option, and you can easily install it on your server along with your web server (Apache, Nginx, or whatever you use).
+
   - Server-side rendering (SSR) may appear to be a bit more complicated. 
+
     - the pre-rendered SPA is also a plain HTML for search engines, 
     - but on the other hand, it's a fully functional application that can continue running once it's loaded into a browser. 
     - SSR probably brings no advantages for SEO compared to dynamic rendering. 
     - Still, a pre-rendered SPA may load faster for users, especially on a slow mobile device, because the device will not have to execute all JavaScript before the user sees the first page.
+
 - ref
   - [SEO with single page application](https://stackoverflow.com/questions/30789799/seo-with-single-page-application)
 
@@ -209,18 +238,25 @@ modified: 2020-12-19T13:05:23.294Z
   - Currently, it's difficult to process JS and not all search engine crawlers are able to process it successfully or immediately. 
   - we recommend dynamic rendering as a workaround solution to this problem.
   - **Dynamic rendering means switching between client-side rendered and pre-rendered content for specific user agents**.
+
     - Dynamic rendering is good for indexable, public JS-generated content that changes rapidly, or content that uses JS features that aren't supported by the crawlers you care about. 
     - Not all sites need to use dynamic rendering, and it's worth noting that dynamic rendering is a workaround for crawlers.
+
   - Dynamic rendering requires your web server to detect crawlers (for example, by checking the user agent).
+
     - Requests from crawlers are routed to a renderer, requests from users are served normally
     - Where needed, the dynamic renderer serves a version of the content that's suitable to the crawler, for example, it may serve a static HTML version. 
     - You can choose to enable the dynamic renderer for all pages or on a per-page basis.
+
   - Googlebot generally doesn't consider dynamic rendering as cloaking
+
     - As long as your dynamic rendering produces similar content, Googlebot won't view dynamic rendering as cloaking.
     - When you're setting up dynamic rendering, your site may produce error pages. 
     - Googlebot doesn't consider these error pages as cloaking and treats the error as any other error page.
+
   - Using dynamic rendering to serve completely different content to users and crawlers can be considered cloaking
   - To setup dynamic rendering for your content, follow our general guidelines. 
+
     - You will need to refer to your specific configuration details, as they vary greatly between implementations.
     - For a hands on approach, try our new Implement dynamic rendering with Rendertron codelab.
     - Install and configure a dynamic renderer to transform your content into static HTML that's easier for crawlers to consume. 
@@ -228,8 +264,10 @@ modified: 2020-12-19T13:05:23.294Z
       - Rendertron  is an open source solution based on headless Chromium.
     - Choose the user agents that you think should receive your static HTML and refer to your specific configuration details on how to update or add user agents.
     - If pre-rendering slows down your server or you see a high number of pre-rendering requests, consider implementing a cache for pre-rendered content, or verifying that requests are from legitimate crawlers.
+
   - Configure your server to deliver the static HTML to the crawlers that you selected. 
   - There are several ways you can do this depending on your technology; 
+
     - Proxy requests coming from crawlers to the dynamic renderer.
     - Pre-render as part of your deployment process and make your server serve the static HTML to crawlers.
     - Serve static content from a pre-rendering service to crawlers.
@@ -259,32 +297,43 @@ modified: 2020-12-19T13:05:23.294Z
   - Is SEO always a must? Not every app needs to be search engine optimized. 
 - **Initial load time**
   - With both SSG and SSR we are able to show initial meaningful HTML on the screen.
+
     - Even though users cannot immediately interact with it (we need Javascript for that), the perception is that the app loads quickly
     - with the use of a CDN, statically generated sites would probably perform better than SSR since the content is already generated and cached. 
     - However, we also run the risk of it being stale at request time.
+
   - using CSR means that all the users see is the empty HTML file (or, at best, a loading screen) until the necessary Javascript is downloaded, executed and able to render the content of the app. 
+
     - This might give users the initial impression that the app is too slow.
+
 - **Dynamic content**
   - how dynamic is the content of the website we are building
   - One of the main drawbacks of the SSG approach is that in order to update the content of the app, we need to rebuild it.
+
     - This might be perfectly fine if the app consists of mostly static content and is not frequently updated. 
     - A good use case for SSG would be a personal blog or a marketing website
+
   - With CSR, we are able to fetch the necessary data for the specific user on the client, display it and seamlessly keep it up to date.
   - What if we are building a news site, where the content is both public and constantly updated. 
+
     - What if, in addition, there is some user generated content involved like comments under the articles, for example? 
     - It would be much preferable to take advantage of SSR instead, with its ability to serve dynamic, non-stale, search engine optimized HTML files and easily reflect updates upon each request.
+
 - **Infrastructure**
   - Probably the simplest approach to deployment is if our app build consists of static files. 
+
     - This means we could directly deploy it on a CDN service and our website would be live. 
     - With both CSR and SSG this is exactly the case.
+
   - Using SSR paradigm means we need a server to pre-render the page into HTML on every request. 
+
     - it is important to keep in mind that as the number of users for our app increases, the infrastructure cost might increase with it.
+
 - As usual, there is no one size fits all solution. 
   - The choice should always be determined by our particular use case.
   - There is also the possibility to mix and match these approaches for different parts of our app
 
 # ref
-
 - [google: Deprecating our AJAX crawling scheme_201510](https://developers.google.com/search/blog/2015/10/deprecating-our-ajax-crawling-scheme)
   - We are no longer recommending the AJAX crawling proposal we made back in 2009.
   - In 2009, we made a proposal to make AJAX pages crawlable. 

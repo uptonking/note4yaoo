@@ -45,23 +45,73 @@ modified: 2022-11-25T15:50:48.226Z
     - it is a CouchDB-style abstraction layer over other databases. By default, 
     - PouchDB ships with the IndexedDB adapter for the browser, and a LevelDB adapter in Node.js.
 
-- acebase /158Star/MIT/202206/js
+- acebase /279Star/MIT/202212/ts
   - https://github.com/appy-one/acebase
   - A fast, low memory, transactional, index & query enabled NoSQL database engine and server for node.js and browser with realtime data change notifications.
   - 👉🏻 Inspired by (and largely compatible with) the Firebase realtime database, with additional functionality and less data sharding/duplication.
   - By default, AceBase uses its own binary database format in Node.js environments, and IndexedDB (or LocalStorage) in the browser to store its data. 
     - However, it is also possible to use AceBase's realtime capabilities, and have the actual data stored in other databases. 
     - Currently, AceBase has built-in adapters for MSSQL, SQLite in Node.js environments; and IndexedDB, LocalStorage, SessionStorage for the browser. 
+    - It also possible to create your own custom storage adapters, so wherever you'd want to store your data
   - When you're using AceBase with an IndexedDB or LocalStorage backend, you might notice that if you change data in one open tab, those changes do not raise change events in other open tabs monitoring that same data.
-  - AceBase is designed to run in a Node.js environment, as it (by default) requires the 'fs' filesystem to store its data and indexes. 
+  - AceBase is designed to run in a Node.js environment, as it (by default) requires the `fs` filesystem to store its data and indexes. 
     - However, since v0.9.0 it is now also possible to use AceBase databases in the browser! 
-  - [Protocol for other languages · Discussion #79 · appy-one/acebase](https://github.com/appy-one/acebase/discussions/79)
+  - When you're using AceBase with an IndexedDB or LocalStorage backend, you might notice that if you change data in one open tab, those changes do not raise change events in other open tabs
+    - This is because IndexedDB or LocalStorage databases do not raise change events themselves
+    - AceBase is now able to communicate with other tabs using the `BroadcastChannel` ,but disabled by default
+  - [Protocol for other languages · appy-one/acebase](https://github.com/appy-one/acebase/discussions/79)
   - https://github.com/appy-one/acebase-core
     - rxjs dependency is optional and only needed when using methods that require them
   - https://github.com/appy-one/acebase-server
     - 依赖socket.io、express
   - https://github.com/appy-one/acebase-client
     - 依赖socket.io
+
+- Nano-SQL /773Star/MIT/201911/ts/inactive/未实现同步
+  - https://github.com/only-cliches/Nano-SQL
+  - https://nanosql.io/
+  - Universal database layer for the client, server & mobile devices. It's like Lego for databases.
+  - 依赖snap-db(kv)
+  - Graph, Join, Filter, Select and Order your data in dozens of ways.
+  - NanoSQL supports a wide range of ways to save your data in the browser, on the phone, and on the server.
+    - Memory (Browser/NodeJS/Electron) 
+    - Snap DB (NodeJS/Electron; LSM Powered Javascript key-value store) 
+    - Indexed DB (Browser) 
+    - Local Storage (Browser)
+  - [Offline use with Sync to Server](https://github.com/only-cliches/Nano-SQL/issues/18)
+  - [Is this project still maintained?](https://github.com/only-cliches/Nano-SQL/issues/217)
+    - https://github.com/only-cliches/snap-db  /inactive
+  - https://github.com/only-cliches/snap-db
+    - Simple & Robust LSM Powered Javascript key-value store
+
+- ydn-db /502Star/apache2/201902/js/功能丰富/仅支持浏览器
+  - https://github.com/yathit/ydn-db
+  - Unified data access layer on IndexedDB, WebDatabase and WebStorage storage mechanisms.
+  - Library API should be similar to IndexedDB API and use exact terminology and concept in the IndexedDB specification.
+  - Basic support for high level query using SQL-like `db.from('people').where('age', '>=', 25)`; 
+  - Client-server Synchronization (via ydn-db-sync module 未开源).
+  - https://github.com/yathit/ydn-db-fulltext
+    - Full text search module for YDN-DB 
+    - build on top of two excellent full text search libraries, [natural](https://github.com/NaturalNode/natural) for stemming, normalization, analyzer and fullproof for tokenization.
+
+- yunodb /246Star/CC0/201704/js/leveldb/不支持浏览器环境
+  - https://github.com/blahah/yunodb
+  - A portable, persistent, electron-embeddable fulltext search + document store database for node.js
+  - yuno is a JSON document store with fulltext search. 
+  - The document store, which is just the raw JSON objects stored in leveldb/browser-level
+  - The inverted search index, powered by search-index
+  - yuno is being built to serve my use-case of embedding pre-made databases in electron apps
+  - forks
+    - https://github.com/pdepip/yunodb
+
+- realm-js /5kStar/apache2/202211/ts/cpp
+  - https://github.com/realm/realm-js
+  - Realm is a mobile database that runs directly inside phones, tablets or wearables. 
+  - This project hosts the JavaScript versions of Realm.
+  - Currently we support React Native (JSC & Hermes on iOS & Android), Node.js and Electron (on Windows, MacOS and Linux).
+  - This is still using Realm Core(cpp), but exposed via JavaScript API
+  - https://github.com/realm/realm-core /202212/cpp
+    - Core database component for the Realm Mobile Database SDKs
 
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb
@@ -74,15 +124,6 @@ modified: 2022-11-25T15:50:48.226Z
     - At the moment you can either use `PouchDB` or `Dexie.js` or `LokiJS` as underlaying storage. 
     - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
     - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
-
-- realm-js /5kStar/apache2/202211/ts/cpp
-  - https://github.com/realm/realm-js
-  - Realm is a mobile database that runs directly inside phones, tablets or wearables. 
-  - This project hosts the JavaScript versions of Realm.
-  - Currently we support React Native (JSC & Hermes on iOS & Android), Node.js and Electron (on Windows, MacOS and Linux).
-  - This is still using Realm Core(cpp), but exposed via JavaScript API
-  - https://github.com/realm/realm-core /202212/cpp
-    - Core database component for the Realm Mobile Database SDKs
 
 - nedb /13.1kStar/MIT/201602/js
   - https://github.com/louischatriot/nedb
@@ -109,7 +150,7 @@ modified: 2022-11-25T15:50:48.226Z
   - WIP: Satya is a distributed database using Apache Arrow as a Storage format and aims to support both OTLP(transaction processing) and OLAP(analytical processing) workloads. 
   - 依赖 duckdb-wasm、apache-arrow
 
-- WatermelonDB /8.7kStar/MIT/202211/js/lokijs
+- WatermelonDB /8.7kStar/MIT/202211/js
   - https://github.com/Nozbe/WatermelonDB
   - https://nozbe.github.io/WatermelonDB/
   - Reactive & asynchronous database for powerful React and React Native apps
@@ -144,6 +185,13 @@ modified: 2022-11-25T15:50:48.226Z
     - sync is performed for the entire database at once, not per-collection
     - non-blocking: local database writes (but not reads) are only momentarily locked when writing data but user can safely make new changes throughout the process
 
+- LokiJS /6.3kStar/MIT/202203/js/inactive
+  - https://github.com/techfort/LokiJS
+  - javascript embeddable/in-memory database
+  - The super fast in-memory javascript document oriented database.
+  - Its purpose is to store javascript objects as documents in a nosql fashion and retrieve them with a similar mechanism. 
+  - Runs in node (including cordova/phonegap and node-webkit), nativescript and the browser.
+
 - lovefield /6.8kStar/Apache2/202005/js/inactive
   - https://github.com/google/lovefield
   - Lovefield is a relational database for web apps. 
@@ -152,13 +200,6 @@ modified: 2022-11-25T15:50:48.226Z
   - https://github.com/teambition/ReactiveDB /201707/ts
     - Reactive ORM for Lovefield
     - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS
-
-- LokiJS /6.3kStar/MIT/202203/js/inactive
-  - https://github.com/techfort/LokiJS
-  - javascript embeddable/in-memory database
-  - The super fast in-memory javascript document oriented database.
-  - Its purpose is to store javascript objects as documents in a nosql fashion and retrieve them with a similar mechanism. 
-  - Runs in node (including cordova/phonegap and node-webkit), nativescript and the browser.
 
 - https://github.com/typicaljoe/taffydb /201509/js/单文件
   - TaffyDB is an open source JavaScript library that provides powerful in-memory database capabilities to both browser and server applications.
@@ -214,39 +255,6 @@ modified: 2022-11-25T15:50:48.226Z
 
 - https://github.com/syamdanda/jsonbase
   - A database software completely built as JSON files in backend
-# db-with-fallback-storage
-- Nano-SQL /201911/ts/inactive/未实现同步
-  - https://github.com/only-cliches/Nano-SQL
-  - https://nanosql.io/
-  - 依赖snap-db(kv)
-  - Universal database layer for the client, server & mobile devices. It's like Lego for databases.
-  - Graph, Join, Filter, Select and Order your data in dozens of ways.
-  - NanoSQL supports a wide range of ways to save your data in the browser, on the phone, and on the server.
-    - Memory (Browser/NodeJS/Electron) 
-    - Snap DB (NodeJS/Electron; LSM Powered Javascript key-value store) 
-    - Indexed DB (Browser) 
-    - Local Storage (Browser)
-  - [Offline use with Sync to Server](https://github.com/only-cliches/Nano-SQL/issues/18)
-  - [Is this project still maintained?](https://github.com/only-cliches/Nano-SQL/issues/217)
-    - https://github.com/only-cliches/snap-db  /inactive
-  - https://github.com/only-cliches/snap-db
-    - Simple & Robust LSM Powered Javascript key-value store
-
-- ydn-db /502Star/apache2/201902/js/功能丰富/inactive
-  - https://github.com/yathit/ydn-db
-  - Unified data access layer on IndexedDB, WebDatabase and WebStorage storage mechanisms.
-  - Basic support for high level query using SQL.
-  - Client-server Synchronization (via ydn-db-sync module).
-  - https://github.com/yathit/ydn-db-fulltext
-    - Full text search module for YDN-DB 
-    - build on top of two excellent full text search libraries, [natural](https://github.com/NaturalNode/natural) for stemming, normalization, analyzer and fullproof for tokenization.
-
-- localForage /20.5kStar/Apache2/202110/js/inactive
-  - https://github.com/localForage/localForage
-  - https://localforage.github.io/localForage
-  - localForage is a fast and simple storage library for JavaScript. 
-  - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple, localStorage-like API.
-  - localForage uses localStorage in browsers with no IndexedDB or WebSQL support.
 # db-js-utils
 - https://github.com/pubkey/event-reduce /202212/ts
   - https://pubkey.github.io/event-reduce/

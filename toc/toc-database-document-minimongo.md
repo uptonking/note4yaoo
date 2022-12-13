@@ -62,7 +62,7 @@ modified: 2022-11-30T18:57:26.459Z
     - Use Mongodb queries in JavaScript
   - https://github.com/oortcloud/ddp-ejson /201405/js
     - Extended JSON library; used in Meteor's Distributed Data Protocol.
-    - 支持 $date/$binary
+    - 支持 `$date/$binary`
 
 - ddp /1Star/MIT/202207/ts
   - https://github.com/Jantje19/

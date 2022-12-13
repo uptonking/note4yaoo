@@ -96,10 +96,28 @@ modified: 2022-11-26T17:35:24.870Z
   - Documents itself serialized using JSON
     - We did some benchmarks using BSON, MessagePack ans some others. The winner was JSON.
     - Every document represented by 3 objects in data file. First is constant size header, second is variable size header and the last is document itself. This approach allows to increase initial file load speed and give us some freedom for future changes.
-  - [does tingodb can use on borwser](https://github.com/sergeyksv/tingodb/issues/112)
+  - [does tingodb can use on browser](https://github.com/sergeyksv/tingodb/issues/112)
     - no. code itself has no any dependencies that will not work in browser except persistence layer. There was no plans to make it work in browser as I see no much purpose for this.
+  - [[FR] write indexes in a separated file](https://github.com/sergeyksv/tingodb/issues/151)
+    - One great way to improve it, i think, would be to write indexes and actual data in separated files.
   - https://github.com/sergeyksv/tungus
     - Mongoose driver for TingoDB
+  - forks
+    - https://github.com/alancnet/tingodb
+      - Return promises if callback is not specified
+- https://github.com/turinglabsorg/nodejs-express-starter
+  - Personal NodeJS starter with TingoDB, TypeScript, BodyParser and CORS
+  - https://github.com/lean-stack/node.tingo-rest
+- https://github.com/akil-io/storage-tingodb
+  - The simplest ever MongoDB object relation mapper and data access library
+- https://github.com/zahiruldu/change-track
+  - Web content change tracker
+- https://github.com/alanning/mongodb-in-memory
+  - MongoDB compatible in-memory database for unit testing using TingoDB.
+  - It converts TingoDb's API to Promise API
+  - https://github.com/TheBrainFamily/tingodb-promise
+- https://github.com/RobertoMalatesta/tingo-db-gui-manager
+  - GUI manager for TingoDB/MongoDB built using React & Tungus itself.
 
 - LinvoDB3 /746Star/MIT/202008/js/leveldb
   - https://github.com/Ivshti/linvodb3
@@ -121,8 +139,11 @@ modified: 2022-11-26T17:35:24.870Z
     - I didn't realize linvodb3 created an index for each queried property.
     - If I understand correctly I'd use {autoindex: false} to turn that off and use Doc.ensureIndex() to explicitly create just the indexes I want.
     - they've added support for secondary indexes to PouchDB. 
+  - forks
+    - https://github.com/aerys/linvodb3
+    - https://github.com/aerys/mongoose-linvodb3
 
-- https://github.com/abhishiv/qbase /202012/ts
+- https://github.com/abhishiv/qbase /202012/ts/sift
   - lightweight and fast in-memory data store with support for lazy queries, watchable queries, transactions, H1/HM/MTM/BT relationships, and MongoDB styled selectors.
   - 依赖sift
   - Written to be an lightweight functional alternative to @apollo/client
@@ -146,7 +167,6 @@ modified: 2022-11-26T17:35:24.870Z
 - https://github.com/jaykukadiya99/neDB-with-nodeJs
   - 依赖camo
   - Nodejs simple application with NeDB (camo package like mongoose for mongodb and NeDB)
-
 - https://github.com/seald/follicle
   - a fork of camo made for the needs of Seald
   - A class-based ES6 ODM for Mongo-like databases

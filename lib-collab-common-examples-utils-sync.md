@@ -159,5 +159,11 @@ modified: 2022-11-07T17:37:27.579Z
 - https://github.com/earthstar-project/earthstar
   - Earthstar is a specification and Javascript library for building online tools you can truly call your own.
 # more
+
+- https://github.com/digitallyinduced/thin-backend /202211/js/ts/inactive
+  - a Blazing Fast, Universal Web App Backend for Making Realtime Single Page Apps
+  - Thin Backend has a built-in GUI-based schema designer, helps to quickly build the DDL statements for your database schema
+  - Thin Backend is built on top of the production-proven [IHP](https://github.com/digitallyinduced/ihp) architecture & libraries.
+
 - https://github.com/shadyy41/codeshack
   - a WebRTC based collaborative coding app which also supports peer-to-peer video calling.

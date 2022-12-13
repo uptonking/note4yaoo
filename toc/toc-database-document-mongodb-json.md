@@ -19,7 +19,15 @@ modified: 2022-11-03T04:14:11.987Z
   - Use Mongodb queries in JavaScript
   - Supports node.js, and web
 
-- zangodb /1kStar/MIT/201710/js
+- tingodb /1.1kStar/MIT/201901/js
+  - https://github.com/sergeyksv/tingodb
+  - http://www.tingodb.com/
+  - an embedded JavaScript in-process filesystem or in-memory database upwards compatible with MongoDB at the v1.4 API level.
+  - Upwards compatible means that if you build an app that uses functionality implemented by TingoDB you can switch to MongoDB almost without code changes. 
+  - https://github.com/sergeyksv/tungus
+    - Mongoose driver for TingoDB
+
+- ZangoDB /1kStar/MIT/201710/js
   - https://github.com/erikolson186/zangodb
   - https://erikolson186.github.io/zangodb/
   - ZangoDB is a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
@@ -29,16 +37,7 @@ modified: 2022-11-03T04:14:11.987Z
     - https://github.com/allwi290/zangodb
       - cjs to es
 
-- yunodb /246Star/CC0/201704/js/leveldb
-  - https://github.com/blahah/yunodb
-  - A portable, persistent, electron-embeddable fulltext search + document store database for node.js
-  - yuno is a JSON document store with fulltext search. 
-  - The document store, which is just the raw JSON objects stored in leveldb/browser-level
-  - yuno is being built to serve my use-case of embedding pre-made databases in electron apps
-  - forks
-    - https://github.com/pdepip/yunodb
-
-- ForerunnerDB /707Star/NIT/202006/js/v2
+- ForerunnerDB /707Star/MIT/202006/js/v2+v3
   - https://github.com/Irrelon/ForerunnerDB
   - ForerunnerDB is a NoSQL JavaScript JSON database with a query language based on MongoDB (with some differences) and runs on browsers and Node.js.
   - ForerunnerDB supports data persistence on both the client (via LocalForage) and in Node.js (by saving and loading JSON data files).
@@ -54,11 +53,21 @@ modified: 2022-11-03T04:14:11.987Z
     - ForerunnerDB was originally intended as a browser-based DB with in-memory access and then grew to include Node.js support and persistent storage.
     - It would be relatively slow and difficult to query the data in a persisted state as the current storage system allows LocalStorage which doesn't provide for row-by-row access (although we could engineer one with a slower read/write to storage as a side effect).
 
-- picodb /31Star/MIT/202201/js
+- PicoDB /31Star/MIT/202201/js
   - https://github.com/jclo/picodb
   - A tiny in-memory database (MongoDB like) that stores JSON documents
   - It runs both on Node.js and in the ES6 compliant browsers.
   - A document is a Javascript literal object. It is similar to a JSON object. 
+
+- yunodb /246Star/CC0/201704/js/leveldb/不支持浏览器环境
+  - https://github.com/blahah/yunodb
+  - A portable, persistent, electron-embeddable fulltext search + document store database for node.js
+  - yuno is a JSON document store with fulltext search. 
+  - The document store, which is just the raw JSON objects stored in leveldb/browser-level
+  - The inverted search index, powered by search-index
+  - yuno is being built to serve my use-case of embedding pre-made databases in electron apps
+  - forks
+    - https://github.com/pdepip/yunodb
 
 - https://github.com/usmakestwo/githubDB /201811/js
   - A Lightweight Cloud based JSON Database with a MongoDB like API for Node.
@@ -71,14 +80,6 @@ modified: 2022-11-03T04:14:11.987Z
 - https://github.com/Belphemur/node-json-db
   - A simple "database" that use JSON file for NodeJS
   - Every method are now asynchronous
-
-- tingodb /1.1kStar/MIT/201901/js
-  - https://github.com/sergeyksv/tingodb
-  - http://www.tingodb.com/
-  - an embedded JavaScript in-process filesystem or in-memory database upwards compatible with MongoDB at the v1.4 API level.
-  - Upwards compatible means that if you build an app that uses functionality implemented by TingoDB you can switch to MongoDB almost without code changes. 
-  - https://github.com/sergeyksv/tungus
-    - Mongoose driver for TingoDB
 
 - https://github.com/elmarti/camadb /202110/ts/inactive
   - a NoSQL embedded database written in pure TypeScript for Node, Electron and browser
@@ -111,7 +112,11 @@ modified: 2022-11-03T04:14:11.987Z
 - cloudserver /1.4kStar/apache2/202211/js
   - https://github.com/scality/cloudserver
   - Zenko CloudServer, an open-source Node.js implementation of the Amazon S3 protocol on the front-end and backend storage capabilities to multiple clouds, including Azure and Google.
+  - [Getting Started](https://s3-server.readthedocs.io/en/latest/GETTING_STARTED.html)
   - CloudServer (formerly S3 Server) is an open-source Amazon S3-compatible object storage server 
+  - [Add S3 SELECT functionality · Issue](https://github.com/scality/cloudserver/issues/3247)
+    - Current behavior: Entire file must be pulled back to process one column
+    - [Amazon S3 Select supports only the SELECT SQL command.](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html)
   - CloudServer is useful for Developers, either to run as part of a continuos integration test environment to emulate the AWS S3 service locally or as an abstraction layer
 
 - https://github.com/sanity-io/groq-store
@@ -233,9 +238,7 @@ modified: 2022-11-03T04:14:11.987Z
 
 - https://github.com/kira0x1/mikaela
   - a discord music bot that gives users the ability to store their favorite songs, and create playlists on discord.
-
 # non-js-json-db
-
 - https://github.com/Softmotions/ejdb
   - Embeddable JSON Database engine C library. 
   - Simple XPath like query language (JQL). 

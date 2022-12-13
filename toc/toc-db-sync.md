@@ -76,7 +76,7 @@ modified: 2022-11-25T15:41:47.534Z
   - Enables offline-first applications built with turtleDB to be fully collaborative with automated document versioning, history merging, and synchronization management.
     - Built using Express and Mongo DB Native NodeJS Driver.
 
-- Nano-SQL /201911/ts/inactive/未实现同步
+- Nano-SQL /773Star/MIT/201911/ts/inactive/未实现同步
   - https://github.com/only-cliches/Nano-SQL
   - https://nanosql.io/
   - 依赖snap-db(kv)
@@ -231,5 +231,7 @@ modified: 2022-11-25T15:41:47.534Z
   - The entity store contains all of your model data. 
     - It’s just a big json blob that is the source of truth for any database entity that you have defined via Normalizr’s notion of schemas 
 
-- https://github.com/digitallyinduced/thin-backend
-  - Thin Backend is a Blazing Fast, Universal Web App Backend for Making Realtime Single Page Apps
+- https://github.com/digitallyinduced/thin-backend /202211/js/ts/inactive
+  - a Blazing Fast, Universal Web App Backend for Making Realtime Single Page Apps
+  - Thin Backend has a built-in GUI-based schema designer, helps to quickly build the DDL statements for your database schema
+  - Thin Backend is built on top of the production-proven [IHP](https://github.com/digitallyinduced/ihp) architecture & libraries.

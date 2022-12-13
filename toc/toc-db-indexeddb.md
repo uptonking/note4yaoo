@@ -37,7 +37,7 @@ modified: 2022-06-03T22:06:16.249Z
 - minimongo /1kStar/LGPLv3/202207/ts/多种web存储
   - https://github.com/mWater/minimongo
   - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
-  - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
+  - It is either IndexedDb backed (IndexedDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
   - sqlite plugin is also supported when available
   - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries. It was forked in January 2014.
 
@@ -46,12 +46,28 @@ modified: 2022-06-03T22:06:16.249Z
   - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency. 
   - API is a subset of MongoDB's and it's plenty fast.
     - One datastore is the equivalent of a MongoDB collection
-  - A copy of the whole database is kept in memory. This is not much on the expected kind of datasets (20MB for 10, 000 2KB documents).
+  - A copy of the whole database is kept in memory.
   - You can use NeDB as an in-memory only datastore or as a persistent datastore. 
-- https://github.com/tedb-org/teDB /ts
-  - A structure sane embedded database with pluggable storage and clean concise documentation.
-  - TeDB uses an AVL balanced binary tree binary-type-tree to save indexed fields of documents.
-  - a storage driver that can either work to persists data to disk or save data to memory. 
+  - For a Node.js/Node Webkit database it's the file system
+  - For a browser-side database it's `localforage`, which uses the best backend available (IndexedDB then localStorage)
+
+- ZangoDB /1kStar/MIT/201710/js/inactive
+  - https://github.com/erikolson186/zangodb
+  - https://erikolson186.github.io/zangodb/
+  - a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
+  - The following aggregation pipeline stages are supported: $match, $project, $group, $unwind, $sort, $skip, and $limit.
+  - an implementation of IndexedDB is required. 
+    - For environments without a native implementation of IndexedDB, Fake IndexedDB can be used
+
+- ydn-db /502Star/apache2/201902/js/功能丰富/仅支持浏览器
+  - https://github.com/yathit/ydn-db
+  - Unified data access layer on IndexedDB, WebDatabase and WebStorage storage mechanisms.
+  - Library API should be similar to IndexedDB API and use exact terminology and concept in the IndexedDB specification.
+  - Basic support for high level query using SQL-like `db.from('people').where('age', '>=', 25)`; 
+  - Client-server Synchronization (via ydn-db-sync module).
+  - https://github.com/yathit/ydn-db-fulltext
+    - Full text search module for YDN-DB 
+    - build on top of two excellent full text search libraries, [natural](https://github.com/NaturalNode/natural) for stemming, normalization, analyzer and fullproof for tokenization.
 
 - localForage /20.5kStar/Apache2/202110/js/inactive
   - https://github.com/localForage/localForage
@@ -75,23 +91,6 @@ modified: 2022-06-03T22:06:16.249Z
 - https://github.com/UltimatePro-Grammer/websystem /202205/js
   - a fully functioning operating system built in pure Javascript, HTML and CSS.
   - Files are Saved Locally Through IndexedDB/WebSQL (localForage)
-
-- ZangoDB /1kStar/MIT/201710/js/inactive
-  - https://github.com/erikolson186/zangodb
-  - https://erikolson186.github.io/zangodb/
-  - a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
-  - The following aggregation pipeline stages are supported: $match, $project, $group, $unwind, $sort, $skip, and $limit.
-  - an implementation of IndexedDB is required. 
-    - For environments without a native implementation of IndexedDB, Fake IndexedDB can be used
-
-- ydn-db /502Star/apache2/201902/js/功能丰富/inactive
-  - https://github.com/yathit/ydn-db
-  - Unified data access layer on IndexedDB, WebDatabase and WebStorage storage mechanisms.
-  - Basic support for high level query using SQL.
-  - Client-server Synchronization (via ydn-db-sync module).
-  - https://github.com/yathit/ydn-db-fulltext
-    - Full text search module for YDN-DB 
-    - build on top of two excellent full text search libraries, [natural](https://github.com/NaturalNode/natural) for stemming, normalization, analyzer and fullproof for tokenization.
 # db-powered-by-indexeddb
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb

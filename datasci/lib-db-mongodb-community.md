@@ -14,7 +14,8 @@ modified: 2022-06-13T02:59:04.350Z
 
 - ## 
 
-- ## 
+- ## [Difference between createIndex() and ensureIndex() in java using mongodb](https://stackoverflow.com/questions/25968592/difference-between-createindex-and-ensureindex-in-java-using-mongodb)
+- since version > 3.0.0: `db.collection.ensureIndex()` is now an alias for `db.collection.createIndex()` .
 
 - ## [To denormalize the TPC-H benchmark dataset_202202](https://www.mongodb.com/community/forums/t/to-denormalize-the-tpc-h-benchmark-dataset/147309)
   - I want to denormalize the TPC-H dataset having 8 relational tables and 22 relational queries. I want to migrate the relational database into MongoDB

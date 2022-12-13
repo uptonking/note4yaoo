@@ -50,11 +50,11 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
   - git config --global alias.br branch
   - git config --global alias.ci commit
   - git config --global alias.st status
-  - git config --global core.autocrlf true 
   - git config --global --add --bool push.autoSetupRemote true
     - 本地新分支，自动创建关联，直接push
 
-- "autocrlf" should be "input" on Unix (Mac/Linux) while "true" on Windows. 
+- git config --global core.autocrlf true 
+  - `autocrlf` should be "input" on Unix (Mac/Linux) while "true" on Windows. 
   - This is very well-explained on Git's official document under the[ "Formatting and Whitespacing"](https://stackoverflow.com/questions/44720236) section
 
 - git命令别名
@@ -80,7 +80,7 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 - commit相关
   - 修改最新commit描述信息
     - git commit --amend -m 'new msg'
-  - 修改第N条commit描述信息
+  - 修改倒数第N条commit描述信息
     - you can use `reword` to be prompted to only change the commit message
     - https://stackoverflow.com/questions/1884474
     - git rebase -i HEAD~n    倒数条第N条，N>=1
@@ -102,7 +102,9 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
   - `git clone -b <branch-name> <repo-url> <destination-folder-name>`
 
 - 删除远程仓库中的文件，如意外提交了node_modules文件夹
-  - 另一种方法：直接将远程要删除的文件加入 `.gitignore`
+- 一种方法：直接将远程要删除的文件加入 `.gitignore`；
+  - 此时vscode显示的文件夹可能没变灰，[gitignore does not ignore folder](https://stackoverflow.com/questions/24410208/)
+  - 需要执行 `git rm -r --cached <del-folder>`, 此时本地文件不会删除，但会删除远程文件
 
 ```
 git rm --cached 文件/夹名，只删除了缓存，实际文件不会删除

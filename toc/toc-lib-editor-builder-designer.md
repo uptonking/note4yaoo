@@ -35,6 +35,13 @@ modified: 2020-11-17T13:38:19.107Z
     - For example, it does not come with a ready-made user interface.
     - However, you could still consider using the examples as a starting point.
 
+- webstudio-designer /172Star/MIT/202212/ts
+  - https://github.com/webstudio-is/webstudio-designer
+  - https://webstudio.is/
+  - Webstudio Designer is a NoCode Visual Tool inspired by Webflow
+  - block块级元素不支持拖拽
+  - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
+
 - brick-design/react-visual-editor /MIT/2.3kStar/202008
   - https://github.com/brick-design/brick-design
   - https://brick-design.github.io/brick-design/
