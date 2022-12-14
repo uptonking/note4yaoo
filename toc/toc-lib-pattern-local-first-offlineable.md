@@ -14,33 +14,19 @@ modified: 2021-09-04T14:03:39.046Z
 - local-first + realtime协作的示例
   - https://github.com/gongojs/project
   - https://github.com/a-type/lo-fi
-
 # popular
-- tuple-database /200Star/NALic/202208/ts
+- tuple-database /219Star/NALic/202209/ts
   - https://github.com/ccorcos/tuple-database
+  - 依赖fs-extra, lodash, fractional-indexing
   - The architecture of this database draws inspiration from a bunch of different places (although, primarily from FoundationDb).
   - 👉🏻 The local-first, "end-user database" database.
-    - When users own all of their data on their devices, it's a natural way of sharding a database and scaling up a platform.
-    - As a constraint, this means that I'm interested in building an embedded database, like SQLite or LevelDb, that runs in process and is intended to be single tenant. 
   - 👉🏻 All queries are reactive.
-    - Polished applications these days require realtime reactivity.
-    - And it's not just for collaboration — reactivity necessary when a user has multiple windows or tabs showing the same data.
-    - Many systems have record-level or table-level reactivity, but I want all queries to be reactive. I'm tired of having to engineer custom solutions on top of databases with brittle logic where a developer might forget to emit an update event.
   - 👉🏻 ✨ Schemaless — schemas are enforced by the application, not the database.
-    - It took me some time to realize the the value of maintaining schemas in the application rather than the database. 
-    - a schemaless database should be flexible enough to accept incoming data and allow the application to resolve conflicts or schema issues.
-    - I want to build apps like Notion and Airtable where end-users define their own schemas. 
   - 👉🏻 Asynchronous or Synchronous, Persisted or In-Memory Storage
-    - I want to be able to persist data. And most persistence layers are asynchronous: LevelDb or even a cloud database. But even when persistence is synchronous, like SQLite, you might have to asynchronously cross a process boundary, such as an Electron window interacting with a database on the main process.
-    - I want to use a synchronous in-memory database for frontend state management 
-    - Works with synchronous and asynchronous storage including SQLite or LevelDb.
   - Transactional read/writes written in TypeScript.
-  - Directly read/write indexes with the ability to index graph/relational queries.
+  - 👉🏻 Directly read/write indexes with the ability to index graph/relational queries.
+    - The logic we've written here for the tuple-database code is exactly what any SQL database is doing under the hood.
   - Suitable for frontend state management.
-  - https://github.com/ccorcos/game-counter
-    - A simple application for keeping score in games. For example, golf or Settlers of Catan.
-    - External effects interface through services defined on the Environment.
-    - TupleDatabase as a UI state management system.
 
 - tinybase /1.4kStar/MIT/202212/ts/NoDeps
   - https://github.com/tinyplex/tinybase

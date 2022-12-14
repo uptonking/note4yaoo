@@ -12,13 +12,30 @@ modified: 2022-11-27T19:20:24.273Z
 - [node database comparisons](https://github.com/only-cliches/Nano-SQL/issues/48)
   - 比较db: nanoSQL, nedb, lokijs, LoveField, pouchdb, alaSQL
   - 比较项目: node/browser, dbms, undo/redo, events, indexeddb, orm, typescript
-# nedb-roadmap
-- 要支持浏览器和nodejs环境
-  - indexeddb-fs
+# faq
+- [How to make a field value is required(not empty)?](https://github.com/louischatriot/nedb/issues/670)
 
-- persistence-adapter
+- [The first find function takes time](https://github.com/louischatriot/nedb/issues/621)
+
+- 在已有数据的基础上createIndex然后insert，那么index的数据会保存在数据中间还是最后
+  - 提问不明确，执行持久化会先序列化数据，再序列化索引，分析清楚数据结构更重要
+  - 索引会放在后面
+# nedb-roadmap
+- compound-index
+  - [Compound indexes](https://github.com/louischatriot/nedb/issues/93)
+  - [Compound by rmanibus](https://github.com/louischatriot/nedb/pull/660)
+  - [Added compound index](https://github.com/louischatriot/nedb/pull/208)
+
+- query-operators
+  - [added $first, $last, $before and $after query parameters](https://github.com/louischatriot/nedb/pull/148)
+
+- persistence-adapter 要支持浏览器和nodejs环境
   - bson
   - [Added pluggable storage](https://github.com/louischatriot/nedb/pull/427)
+  - [Persistence in Browser (localStorage)](https://github.com/louischatriot/nedb/pull/168)
+  - [indexeddb backend](https://github.com/louischatriot/nedb/pull/223)
+  - [indexedDB backend with localStorage fallback](https://github.com/louischatriot/nedb/pull/322)
+  - [added support for Buffers (BLOB)](https://github.com/louischatriot/nedb/pull/167)
 
 - 将所有数据放在内存改为可选
   - tingodb
@@ -39,6 +56,8 @@ modified: 2022-11-27T19:20:24.273Z
 
 - 读取数据超过256mb时会抛出异常
   - [Stream files line by line when parsing to avoid memory limits](https://github.com/louischatriot/nedb/pull/463)
+
+- 不支持以 read-only 的方式打开数据库
 
 - 不支持事务 transaction
   - [atomic update + insert?](https://github.com/louischatriot/nedb/issues/398)

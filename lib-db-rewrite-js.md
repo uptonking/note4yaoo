@@ -46,3 +46,10 @@ modified: 2022-11-27T19:20:02.987Z
   - Writing a sqlite clone from scratch in C
   - B-Tree Leaf Node Format
   - prepare_statement (our “SQL Compiler”) does not understand SQL right now. In fact, it only understands two words select and insert
+
+# more
+
+- https://github.com/plexidev/quick.db
+  - https://quickdb.js.org/
+  - provide an easy way for beginners and people of all levels to access & store data in a low to medium volume environment. 
+  - All data is stored persistently via either better-sqlite3 or promise-mysql 

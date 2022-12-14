@@ -73,6 +73,11 @@ modified: 2020-12-09T09:30:24.694Z
   - 依赖 python-flask、antd、d3.v3.5.17
   - SQL users leverage Redash to explore, query, visualize, and share data from any data sources.
 
+- evidence /876Star/MIT/202212/js/svelte
+  - https://github.com/evidence-dev/evidence
+  - https://evidence.dev/
+  - Build a polished business intelligence system using only SQL and markdown.
+
 - https://github.com/ricklamers/gridstudio
   -  a web-based spreadsheet application with full integration of the Python programming language.
   - 依赖Flask、golang、plotly、jquery

@@ -80,7 +80,7 @@ modified: 2022-11-25T15:50:48.226Z
     - Local Storage (Browser)
   - [Offline use with Sync to Server](https://github.com/only-cliches/Nano-SQL/issues/18)
   - [Is this project still maintained?](https://github.com/only-cliches/Nano-SQL/issues/217)
-    - https://github.com/only-cliches/snap-db  /inactive
+    - I was about halfway through rewriting NanoSQL from the ground up. The plan was to add a query compilation step similar to SQLite
   - https://github.com/only-cliches/snap-db
     - Simple & Robust LSM Powered Javascript key-value store
 
@@ -112,6 +112,14 @@ modified: 2022-11-25T15:50:48.226Z
   - This is still using Realm Core(cpp), but exposed via JavaScript API
   - https://github.com/realm/realm-core /202212/cpp
     - Core database component for the Realm Mobile Database SDKs
+
+- blinkdb /59Star/MIT/202211/ts
+  - https://github.com/blinkdb-js/blinkdb
+  - 依赖sorted-btree
+  - An in-memory JS database optimized for large scale storage on the frontend.
+    - with full support for indexes, queries, and both unstructured & relational data.
+  - Filter, sort, and implement pagination directly within BlinkDB.
+  - It uses the same techniques & data structures as existing databases in order to speed up the retrieval of items, resulting in incredible performance
 
 - rxdb /17.6kStar/Apache2/202206/ts
   - https://github.com/pubkey/rxdb
@@ -191,6 +199,9 @@ modified: 2022-11-25T15:50:48.226Z
   - The super fast in-memory javascript document oriented database.
   - Its purpose is to store javascript objects as documents in a nosql fashion and retrieve them with a similar mechanism. 
   - Runs in node (including cordova/phonegap and node-webkit), nativescript and the browser.
+  - https://github.com/LokiJS-Forge/LokiDB /202008/ts/inactive
+    - a document oriented database written in TypeScript.
+    - LokiDB is the official successor of LokiJS.
 
 - lovefield /6.8kStar/Apache2/202005/js/inactive
   - https://github.com/google/lovefield
@@ -236,6 +247,11 @@ modified: 2022-11-25T15:50:48.226Z
 
 - https://github.com/sius/fakerdb /202005/js
   - Generate an unlimited stream of JSON schema instances using json-schema-faker, faker, chance and insert the data into a supported database, e.g.: nedb, mongodb, postgres, mssql.
+
+- https://github.com/hexojs/warehouse /188Star/MIT/202211/ts
+  - https://hexojs.github.io/warehouse/
+  - A JSON database with Models, Schemas, and a flexible querying interface. 
+  - It powers the wildly successful static site generator Hexo.
 
 - https://github.com/crisdosyago/sirdb /202203/js
   - A simple database on the file system.

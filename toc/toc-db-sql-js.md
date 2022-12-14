@@ -23,6 +23,19 @@ modified: 2021-08-30T18:56:14.863Z
   - A web app for writing and running SQL queries and visualizing the results. 
   - Supports Postgres, MySQL, SQL Server, ClickHouse, Crate, Vertica, Trino, Presto, SAP HANA, Cassandra, Snowflake, Google BigQuery, SQLite
 
+- https://github.com/sqlectron/sqlectron-gui
+  - https://sqlectron.github.io/
+  - lightweight SQL client desktop with cross database and platform support.
+
+- https://github.com/dblens/app /202202/ts
+  - database client that helps you to explore database with automatic ER diagrams, visualise and analyse internal DB metrics such as index utilisation sequential scans, slow running queries, storage and many more.
+
+- https://github.com/EdurtIO/dbm /309Star/apache2/202209/ts
+  - https://dbm.edurt.io/
+  - Full platform database management tool, supports ClickHouse, Presto, Trino, MySQL, PostgreSQL, Apache Druid, ElasticSearch...
+  - 依赖angular、jsstore
+  - DBM can query data from any SQL-speaking datastore or data engine (ClickHouse and more).
+
 - https://github.com/slashbaseide/slashbase /ts/go
   - Slashbase is an open-source minimal collaborative IDE for your databases in browser.
   - It's written in Golang and Nextjs React Framework and runs as a single binary.
@@ -36,9 +49,9 @@ modified: 2021-08-30T18:56:14.863Z
   - https://prostgles.com/ui
   - Web dashboard and SQL Editor for Postgres
   - Sorting, Filtering and Cross-Filtering joined tables
-
 # more
-- https://github.com/webqit/objective-sql
+- https://github.com/webqit/objective-sql /202201/js
+  - Objective SQL is a query client that wraps powerful concepts in a simple, succint API.
   - The object-oriented, adaptive SQL for modern apps - query anything from the plain JSON object, to the client-side IndexedDB, to the server-side DB.
 
 - https://github.com/ForbesLindesay/atdatabases

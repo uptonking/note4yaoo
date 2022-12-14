@@ -46,6 +46,9 @@ modified: 2022-08-21T10:02:36.042Z
   - Griddly is an extremely configurable MVC/AJAX grid that separates render and data logic. 
   - Data is returned from an action method, settings are done in the view.
   - install NuGet, Install-Package Griddly
+
+- https://github.com/Neovici/cosmoz-omnitable /202211/js
+  - Filtering, grouping, sorting table with support for remote data
 # commercial-list-grid
 - FancyGrid /OneOffLic
   - https://www.fancygrid.com/

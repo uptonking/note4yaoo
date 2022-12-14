@@ -13,16 +13,6 @@ modified: 2021-05-24T16:55:40.481Z
 - 国内有很多快速开发框架如jeesite/jeecg，国外对应的是headless/cms框架
   - https://github.com/n370/awesome-headless-cms
 # popular
-- https://github.com/refinedev/refine
-  - https://refine.dev/
-  - headless web application framework developed with flexibility in mind.
-  - It eliminates repetitive tasks demanded by CRUD operations and provides industry standard solutions for critical parts like authentication, access control, routing, networking, state management, and i18n.
-  - Connectors for 15+ backend services including REST API
-  - refine seamlessly works with any custom design or UI framework that you favor. For convenience, it ships with ready-made integrations for Ant Design System, Material UI, Mantine, and Chakra UI.
-  - Auto-generated CRUD UIs from your API data structure
-  - state management & mutations with React Query
-  - Out-of-the-box support for live/real-time applications
-
 - netlify-cms /14kStar/MIT/202105/js
   - https://github.com/netlify/netlify-cms
   - 核心功能是提供了通过ui操作执行读写github的能力、文件编辑器、自动构建和发布
@@ -50,6 +40,17 @@ modified: 2021-05-24T16:55:40.481Z
   - refine makes extensive use of hooks as a default way for interacting with your components. 
   - refine relies heavily to React Query for data handling, caching and state management. 
   - Backend Agnostic : Connects to any custom backend. Built-in support for REST API, GraphQL
+
+- https://github.com/kontenbase/kontenbase /202209/ts/inactive
+  - https://kontenbase.com/
+  - no code backend API platform/Backend as a Service (BaaS)
+  - 依赖 centrifuge
+  - https://github.com/centrifugal/centrifugo /202212/go
+    - Scalable real-time messaging server in a language-agnostic way
+    - [Centrifugo vs RabitMQ · Issue #126 · centrifugal/centrifugo](https://github.com/centrifugal/centrifugo/issues/126)
+    - Centrifugo's goal is delivering real-time messages to end users of your application with at most once delivery model (fire and forget in general). 
+    - Centrifugo is just a PUB/SUB server designed for client applications, it's not suitable for usage on backend side - for example to coordinate microservices. 
+    - Rabbit can be used as queue, PUB/SUB broker etc.
 # headless-platfrom
 - https://github.com/TencentCloudBase/cloudbase-extension-cms
   - https://docs.cloudbase.net/cms/intro.html

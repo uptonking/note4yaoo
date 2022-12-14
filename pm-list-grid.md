@@ -86,6 +86,9 @@ modified: 2021-05-23T16:34:27.206Z
   - readonly，适合分析
   - edit，适合编辑
 # draft
+- fields
+  - column type: rich text editor
+
 - 功能相关
   - 搜索结果
     - 快速跳转到第1个、最后一个、第N个

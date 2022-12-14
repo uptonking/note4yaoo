@@ -9,6 +9,8 @@ modified: 2022-11-26T17:35:24.870Z
 
 # guide
 - 不支持同步
+
+- 参考替代方案如何解决全量数据载入内存的问题
 # nedb-like
 - nedb /13.1kStar/MIT/201602/js
   - https://github.com/louischatriot/nedb
@@ -130,6 +132,8 @@ modified: 2022-11-26T17:35:24.870Z
     - LinvoDB does the entire query through the indexes, NeDB scans the DB
   - https://github.com/Ivshti/linvodb-fts
     - full text search using natural
+  - [I want to know if linvodb3 supports browser](https://github.com/Ivshti/linvodb3/issues/98)
+    - yes, this module works via `localforage` which can work via localstorage
   - [What can stop end user to directly edit database files?](https://github.com/Ivshti/linvodb3/issues/46)
     - LinvoDB has to use a leveldb-compatible back-end store
   - [It looks like we build similar database engine(tingodb)](https://github.com/louischatriot/nedb/issues/34)
@@ -142,19 +146,19 @@ modified: 2022-11-26T17:35:24.870Z
   - forks
     - https://github.com/aerys/linvodb3
     - https://github.com/aerys/mongoose-linvodb3
+    - https://github.com/wittyPuneet/linvodb3
 
-- https://github.com/abhishiv/qbase /202012/ts/sift
-  - lightweight and fast in-memory data store with support for lazy queries, watchable queries, transactions, H1/HM/MTM/BT relationships, and MongoDB styled selectors.
-  - 依赖sift
-  - Written to be an lightweight functional alternative to @apollo/client
-
-- teDB /83Star/MIT/201908/ts/inactive
+- teDB /83Star/MIT/201802/ts/inactive
   - https://github.com/tedb-org/teDB
-  - A structure sane embedded database with pluggable storage and clean concise documentation.
+  - A structure sane embedded database with pluggable storage
   - TeDB uses an AVL balanced binary tree `binary-type-tree` to save indexed fields of documents.
   - a storage driver that can either work to persists data to disk or save data to memory. 
   - It is not exactly like nedb. It should be able to handle very large collections.
-  - Tedb was made with pure intention to work on electron. The only storage driver I have written is the tedb electron storage driver. There is also a utils package.
+  - TeDB was made with pure intention to work on electron. The only storage driver I have written is the TeDB electron storage driver.
+  - The binary tree only saves the value and `_id` to memory allowing for larger data sets to be indexed.
+  - Almost all operations use a method of the storage driver to save, delete, or search, for documents. 
+    - When creating a storage driver that persists to a filesystem for FAT32, NTFS, ext2, ext3, and ext4, most directories use a binary tree store the location of the file. 
+    - So utilizing this it is faster to query the file instead of having to create another binary tree to hold the location of a document in a file. 
   - https://github.com/marcusjwhelan/binary-type-tree
     - AVL Tree for Node and the browser with TypeScript
     - I forked the binary tree written in nedb and rewrote most of it and added some extra restrictions and capabilities
@@ -179,6 +183,12 @@ modified: 2022-11-26T17:35:24.870Z
 - [Nedb Encryption & Decryption](https://gist.github.com/bllohar/28ee29b3304d8bf6dbc11d1b16b00130)
   - Note that I don't process any JSON because there's really no need to since `afterSerialization` takes a string and `beforeDeserialization` returns a string.
   - [Database encryption with NeDB](https://gist.github.com/jordanbtucker/e9dde26b372048cf2cbe85a6aa9618de)
+
+- qbase /1Star/Unlicensed/202012/ts/sift
+  - https://github.com/abhishiv/qbase
+  - lightweight and fast in-memory data store with support for lazy queries, watchable queries, transactions, H1/HM/MTM/BT relationships, and MongoDB styled selectors.
+  - 依赖sift
+  - Written to be an lightweight functional alternative to @apollo/client
 
 - lowdb /18.7Star/MIT/202211/ts
   - https://github.com/typicode/lowdb

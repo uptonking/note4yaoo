@@ -395,7 +395,7 @@ modified: 2022-08-21T10:02:27.788Z
 - gridjs /MIT/3.3kStar/202202/ts
   - https://github.com/grid-js/gridjs
   - https://gridjs.io/
-  - 基于table标签实现
+  - 基于display-table实现
   - HTML table plugin written in TypeScript using vanilla js
 - jexcel /MIT/4.8kStar/202007/js
   - https://github.com/paulhodel/jexcel
@@ -452,7 +452,7 @@ modified: 2022-08-21T10:02:27.788Z
   - 依赖jquery、mousetrap
   - Spreadsheet Component for ReactJS
   - It's made with ❤️️ by Microsoft DX
-- react-data-components /MIT/382Star/201905/js
+- react-data-components /MIT/382Star/201707/js/inactive
   - https://github.com/carlosrocha/react-data-components
   - https://rocha.dev/react-data-components/
   - React components for sorting, filtering and pagination of data.

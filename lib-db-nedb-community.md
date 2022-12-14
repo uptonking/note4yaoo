@@ -12,6 +12,38 @@ modified: 2022-12-11T22:38:34.694Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [how well would this work with 10M documents?](https://github.com/louischatriot/nedb/issues/476)
+- This is not the right project. When you `ensureIndex` a field on a datastore you are going to store the entire dataset in memory. 
+  - This means you'll likely end up using more RAM than you would diskspace for your datastore. 
+  - Unless you just don't index your data or manage your own indices and hold a reference to the _id. 
+  - But really this project does some funny things with the way it indexes document.
+
+- ## [High memory usage, because indices hold entire document](https://github.com/louischatriot/nedb/issues/506)
+  - I noticed that you are storing the entire document in the index rather than referencing to the data on the disk(or other storage APIs). 
+  - This seems incredibly memory expensive, because one would assume the index would just hold the value being indexed(as the key) and a reference to the document(as the value), rather than the value being the entire document.
+  - This limits your database size by the amount of memory you have(or are willing to dedicate to your database).
+- Why not just have the storage driver be a KV store, and use the key as a reference to the document which would be stored as the value(as JSON)? 
+  - I don't see this being a huge performance impact, as the OS should be caching the file.
+
+- We've replaced NeDB with our own fork of LinvoDB3
+  - LinvoDB3: We're using Google's LevelDB as a backend.
+  - The DB is not fully in memory, and we've acceptable performances. We've also added support for mongoose via a driver
+
+- ## [Loading time is too long](https://github.com/louischatriot/nedb/issues/600)
+- Are you using any indexes? If so that is why. NeDB has to re-index every collection on load.
+
+- ## [added support for Buffers (BLOB)](https://github.com/louischatriot/nedb/pull/167)
+- Thanks for the PR, unfortunately I'll not merge it as I think buffers don't have their place in nedb. 
+  - There is already a quite simple way to store a BLOB, and that is to serialize it (as your code does in hex format). 
+  - Also, buffers are Node only and don't work in node webkit or the browser, so code would need hard to maintain internal forks for something ze already have a good workaround for.
+
+- ## [fixing races in 2 test cases](https://github.com/louischatriot/nedb/pull/610)
+- I noticed that the function ensureIndex is not sync (as stated in the comment) and some operations may races with the assertions. 
+
 - ## [Nedb data export to excel/csv formats ?](https://github.com/louischatriot/nedb/issues/518)
 - You could simply write a method yourself to load in each obj to memory and pipe it out to JSON.
 - By default, a persistent NeDB datafile's format is ndjson (newline-delimited JSON). However, the moment you add a custom afterSerialization and beforeDeserialization hook functions, that default format completely goes out the window at the whim of your hook functions.
@@ -46,6 +78,84 @@ modified: 2022-12-11T22:38:34.694Z
   - So after pending tasks are finished, invoke the close callback and client side can be noticed that the datastore is closed? It's useful when you want to drop or rename the data file without shutting down the server entirely.
 - i learned from experience (and confirmed from nedb's author) that multiple nedb instances (running in separate processes) on a single file will corrupt that file.
   - in your password example, if u have a unique constraint for "username" or "email", it will get violated by race-conditions from the multiple nedb instances, @ which point nedb will refuse to load the file and crash
+
+- ## [foundryvtt: Database architecture upgrades · Issue #5065 · foundryvtt/foundryvtt](https://github.com/foundryvtt/foundryvtt/issues/5065)
+
+### NeDB
+
+> The nedb package provides a pure JS file-system storage with a variety of convenience operations for performing certain queries and updates.
+
+#### Pros
+
+- Writes human readable data that can be parsed by JSON (almost)
+- Pure JavaScript with minimal dependencies
+- Fast read operations because `_id` field is designed to use a BST
+- Supports a query syntax for operating on records conditional on their current values
+
+#### Cons
+
+- No longer maintained, some security issues.
+- 👉🏻 Current design of embedded documents is inefficient for large parent documents (like Scenes).
+- API is outdated and callback-based without support for Promises.
+- Write operations are not as fast as they could be with other options
+- Human readable `.db` files may encourage dangerous behavior by users who attempt to edit them directly
+
+### LevelDB
+
+> LevelDB is a Google-developed key-value storage database written in C++. Node.js and Electron bindings are available via `classic-level` which builds upon `abstract-level` to implement the LevelDB bindings. [Level/classic-level](https://github.com/Level/classic-level)
+>  
+
+#### Pros
+
+- Fast write operations using low-level C++ bindings
+- Simple and easy API which natively supports async Promises
+- Well maintained by a group of multiple active contributors ([opencollective.com/level](https://opencollective.com/level))
+- Potential to be very well suited for our parent/child document format using the built-in concept of sublevels
+
+>  
+
+#### Cons
+
+- Data written in binary format that is not human readable
+- Can only look up records in the database by ID. To find records containing a certain value iteration will be required.
+
+>  
+
+### TeDB
+
+> A package designed as something of a `nedb` successor, this DB engine written in TypeScript has many of the same methods and interfaces that NEDB did. It does not, however, provide file-system storage as a built-in feature and would require development of a custom storage driver to optimally write and read data to and from disk.
+>  
+
+#### Pros
+
+- Potentially most directly compatible with existing NEDB approach
+
+>  
+
+#### Cons
+
+- Does not provide a file-system storage driver which means this option cannot be readily tested.
+
+>  
+
+### LowDB
+
+> A simple local JSON database. Use native JavaScript API to query. Written in TypeScript. ([typicode/lowdb](https://github.com/typicode/lowdb))
+>  
+
+#### Pros
+
+- Very lightweight in terms of dependencies
+- Simple API which natively supports async Promises.
+
+>  
+
+#### Cons
+
+- Too simple, lacks an indexed approach for fast data retrieval
+- Very poor performance compared to other options
+- Frequent issues with permission failures
+- No guarantee of atomic transactions or other form of concurrency control
 
 - ## [It looks like we build similar database engine (nedb vs tingodb)_201306](https://github.com/louischatriot/nedb/issues/34)
 - tingodb focus on closer compatibility with MongoDB api and its features. One time we already choose wrong solution (it was Alfred DB) and spent significant time to replace it with MongoDB.

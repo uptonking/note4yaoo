@@ -14,9 +14,9 @@ modified: 2022-11-11T10:46:29.097Z
 # examples
 
 # parser-generator
-
+- https://github.com/Neovici/nullxlsx
+  - Minimal JavaScript library to create XLSX spreadsheet and ZIP archive files.
 # extension-superset
-
 - https://github.com/harunou/SheetsDB
   - SheetsDB is a simple tool to read and write data from/to Google spreadsheet as JavaScript objects
 # utils

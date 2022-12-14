@@ -19,6 +19,9 @@ modified: 2020-10-22T13:17:19.943Z
 - [nuro ─ developer](https://nuro.dev/)
   - 浅白动态背景
 
+- [dbt - Transform data in your warehouse](https://www.getdbt.com/)
+- [Evidence - Business Intelligence for Modern Data Teams](https://evidence.dev/)
+
 - https://tpdns.vercel.app/
   - https://github.com/xprc/tpdns
 # bootstrap

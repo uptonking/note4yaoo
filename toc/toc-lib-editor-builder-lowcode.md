@@ -69,6 +69,17 @@ modified: 2020-12-28T12:24:09.275Z
     - 通过交互组件修改 Store 数据，重新渲染页面
   - 依赖antd4、codemirror5、mobx5、showdown
 
+- https://github.com/kontenbase/kontenbase /202209/ts/inactive
+  - https://kontenbase.com/
+  - no code backend API platform/Backend as a Service (BaaS)
+  - 依赖 centrifuge
+  - https://github.com/centrifugal/centrifugo /202212/go
+    - Scalable real-time messaging server in a language-agnostic way
+    - [Centrifugo vs RabitMQ · Issue #126 · centrifugal/centrifugo](https://github.com/centrifugal/centrifugo/issues/126)
+    - Centrifugo's goal is delivering real-time messages to end users of your application with at most once delivery model (fire and forget in general). 
+    - Centrifugo is just a PUB/SUB server designed for client applications, it's not suitable for usage on backend side - for example to coordinate microservices. 
+    - Rabbit can be used as queue, PUB/SUB broker etc.
+
 - https://github.com/ngx-lazy-admin/lazy-admin /angular
   - http://lazy-admin-pro.com/
   - Low code production-ready solution for admin business components packages

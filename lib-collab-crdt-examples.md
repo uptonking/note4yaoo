@@ -156,6 +156,8 @@ modified: 2022-04-05T10:08:25.947Z
   - 尝试了多种数据类型，代码不复杂，无服务端
   - https://github.com/peer-base/js-delta-crdts
     - Delta state-based CRDTs in Javascript.
+  - https://github.com/JMLX42/rust-delta-crdts
+    - Delta state-based CRDTs in Rust.
 
 - https://github.com/aizatto/crdt-prototype
   - Prototype to test implementing CRDT

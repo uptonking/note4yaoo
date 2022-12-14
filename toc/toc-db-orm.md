@@ -13,6 +13,8 @@ modified: 2021-08-30T18:56:09.644Z
   - A benchmark intended to compare various Python and JavaScript ORMs with realistic queries required for a hypothetical IMDB-style movie database application.
   - js: prisma、typeorm、sequelize、edgedb
   - python: django、sqlalchemy、edgedb
+- https://github.com/emanuelcasco/typescript-orm-benchmark /202009/ts/inactive
+  - ORM benchmarking for Node.js applications written in TypeScript
 
 - https://github.com/typeorm/typeorm
   - /22kStar/MIT/202011/ts

@@ -20,10 +20,20 @@ modified: 2021-01-28T21:31:18.697Z
   - https://github.com/chriskitson/react-drag-drop-layout-builder
   - 依赖material-ui.v3、immutablejs4、react-dnd7
   - [Build a Drag and Drop (DnD) layout builder with React and ImmutableJS](https://javascript.plainenglish.io/build-a-drag-and-drop-dnd-layout-builder-with-react-and-immutablejs-78a0797259a6)
-- https://github.com/haltu/muuri
+
+- muuri /10.1kStar/MIT/202107/js
+  - https://github.com/haltu/muuri
   - https://muuri.dev/
   - a JavaScript layout engine that allows you to build all kinds of layouts 
-  - and make them responsive, sortable, filterable, draggable and/or animated. 
+  - and make them responsive, sortable, filterable, draggable and/or animated.
+
+- react-absolute-grid /MIT/906Star/202002/layout
+  - https://github.com/jrowny/react-absolute-grid
+  - http://jrowny.github.io/react-absolute-grid/demo
+  - 多用于布局，不用于数据操作，按字段过滤未实现
+  - An absolutely positioned, animated, filterable, sortable, drag and droppable, ES6 grid for React.
+  - The idea behind AbsoluteGrid is high performance, using `translate3d`
+
 - grd /MIT/2.2kStar/202007
   - https://github.com/1000ch/grd
   - https://1000ch.github.io/grd/

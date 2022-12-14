@@ -51,7 +51,7 @@ modified: 2022-11-06T03:19:28.284Z
   - The local-first, "end-user database" database.
   - All queries are reactive.
 
-- https://github.com/tr1ckydev/great.db
+- https://github.com/tr1ckydev/great.db /202210/ts
   - human-friendly database library for JavaScript using SQLite. 
   - great.db automatically detects which runtime you are using and uses the respective fastest between better-sqlite3/bun-sqlite  
 # sqlite-web-examples

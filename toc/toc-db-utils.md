@@ -10,9 +10,20 @@ modified: 2022-11-06T11:21:27.612Z
 # guide
 
 # rest
+- https://github.com/formio/resquel /202101/ts/inactive
+  - Express.js middleware library that is able to convert SQL databases into a REST API.
+  - works seamlessly with the Form.io platform where you can build Angular.js and React.js applications on top of your SQL database.
+  - This library has been validated with Microsoft SQL Server, MySQL, and PostgreSQL.
+
+- https://github.com/TRUEPIC/queryql /202206/js
+  - QueryQL takes a parsed query string (like Express' req.query) and translates it into the appropriate function calls that your query builder/ORM understands to filter, sort, and paginate the records.
+  - QueryQL works with any Node.js web framework (be it Express, Koa, etc.), supports any query builder / ORM through adapters, and allows for custom validators so you can define validation in a familiar way.
+
 - https://github.com/PostgREST/postgrest /haskell
   - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
   - It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
+
+
 # apps
 - https://github.com/multiprocessio/datastation /ts/go
   - DataStation is an open-source data IDE for developers. 

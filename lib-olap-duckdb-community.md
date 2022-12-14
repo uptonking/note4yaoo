@@ -12,7 +12,20 @@ modified: 2022-12-05T16:01:25.243Z
 # discuss
 - ## 
 
-- ## 
+- ## Seems like people use duckdb to manipulate pandas dataframes using SQL queries...? 
+- https://twitter.com/__AlexMonahan__/status/1602449507870191616
+  - I like SQL a lot but the biggest reason for me to switch to pandas/python is for stuff that's difficult in SQL!
+- SQL on Pandas/Arrow are key use cases and DuckDB is much faster than Pandas (multicore+query optimizer). 
+  - You can also read parquet files locally or over the internet from S3, and even in browser with WASM! It's also a good engine for SQL anywhere
+- Plus, since it is in process, data transfer is super fast... You can read Pandas/Arrow usually without even copying it since you share the same memory space. 
+  - The SQL dialect is also nice: the standard of Postgres syntax, but with more forgiveness and extra features too!
+- You can also directly read SQLite or Postgres for super simple and open source HTAP! Another interesting use case is the Modern Data Stack in a Box... No cloud data warehouse needed, just 1 Docker image with @duckdb, @meltanodata, @getdbt, parquet, and @evidence_dev!
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## [[Question] Wondering about serial HTTP range requests · duckdb/duckdb-wasm](https://github.com/duckdb/duckdb-wasm/issues/381)
 - I wanted to play around a bit in the shell, and I uploaded a parquet file (a common one, a subset of the NYC taxi ride dataset, about 500MB in total) to a public S3 bucket and set the CORS so that it could be read by shell.duckdb.org. Then, I went to try out a few queries on the remote data file

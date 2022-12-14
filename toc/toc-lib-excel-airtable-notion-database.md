@@ -13,6 +13,10 @@ modified: 2022-08-21T10:02:05.129Z
   - strapi 通过拖拽ui字段生成rest crud api
     - no code 平台，但此类产品应该偏向automation
   - airtable 通用的前端表格组件，提供各种后端的集成
+
+- [A More Human Approach To Databases](https://ccorcos.github.io/filing-cabinets/)
+  - Notion 工程师 Chet 以警察信息管理系统为例，用普通人能理解的大白话，从文件、文件夹、文件柜逐步介绍关系型数据库的构成和实现原理
+  - [Maybe some misunderstanding of how SQL DB indexes work? 🤔 · Issue #11 · ccorcos/tuple-database](https://github.com/ccorcos/tuple-database/issues/11)
 # popular
 - react-datasheet-grid /133Star/MIT/202205/ts
   - https://github.com/Equify/react-datasheet-grid
@@ -44,7 +48,8 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/rowyio/rowy
   - http://rowy.io/
   - https://demo.rowy.io/
-  - Rowy is an open-source low-code platform for Firebase and Firestore. 
+  - Rowy is an open-source low-code platform for Firebase and Firestore.
+  - 依赖firebase、mui5、tanstack-table、tinymce5、monaco-editor、jotai、swr、react-dnd
   - Airtable-like UI with cloud functions workflows in JS/TS, all in your browser.
   - Manage Firestore data in a spreadsheet-like UI, write Cloud Functions effortlessly in the browser
   - Powerful spreadsheet interface for Firestore
