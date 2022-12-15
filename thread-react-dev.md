@@ -14,7 +14,26 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
-- ## 
+- ## for years i needed a setState that affects the view without causing render.
+- https://twitter.com/0xca0a/status/1602037455577817091
+- Seems like useSignal react doesn’t have (yet?)
+  - prob the same, a transient binding into a view. i wish they'd see how important it is, but fear they'll go off the mark. every time it came up, the discussion steered into upcoming animation primitives, but has little to do with animation. i hope they're not overthinking it.
+- why not just `ref.current` ? because refs don't have reconciling knowledge. for instance 0 => "0px" is something the reconciler knows how to do. tools and eco systems can only exist around features like this if they're platform neutral.
+
+```typescript
+const [bind, set] = useTransientState(0)
+
+useEffect(() => {
+  let r = () => (
+    requestAnimationFrame(r), 
+    set(v => v + 0.1)
+  )
+  r()
+}
+
+<div style={{ left: bind }} />
+
+```
 
 - ## Has anyone ever investigate the cost of React context "at scale" - e.g. if most components are wrapped in Context is that a performance pitfall?
 - https://twitter.com/al_hinds/status/1535399948812173312
@@ -61,7 +80,7 @@ modified: 2021-01-06T14:40:11.360Z
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,       `ValueFront`,       `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,         `ValueFront`,         `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

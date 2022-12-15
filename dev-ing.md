@@ -107,11 +107,30 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 10-prosemirror-collab - ot - crdt
   - 11-idb-sync
 
-## 1211
+## 121
 
 - dev-to
   - crdt tutorials
   - nedb-src
+
+## 1215
+
+- [javascript - async/await implicitly returns promise? - Stack Overflow](https://stackoverflow.com/questions/35302431/async-await-implicitly-returns-promise)
+  - According to the tc39 spec, an `async` function desugar to a generator which yields Promises.
+  - The return value for async function will always be a promise. 
+  - If you don't explicitly return a promise, the value you return will automatically be wrapped in a promise.
+
+```JS
+// Promise { undefined } is returned
+async function increment(num) {}
+```
+
+- ES6 has functions which don't return exactly the same value as the return. These functions are called generators.
+
+- [reactjs - @internal JavaScript documentation tag inside react code, is this jsdoc, closure, or something else? - Stack Overflow](https://stackoverflow.com/questions/28588591/internal-javascript-documentation-tag-inside-react-code-is-this-jsdoc-closure)
+  - The typescript compiler can use this `@internal` tag to exclude stuff from the `.d.ts` definition.
+
+## 1211
 
 - [$group (aggregation) — MongoDB Manual](https://www.mongodb.com/docs/manual/reference/operator/aggregation/group/)
 - [MongoDB 强大查询操作之aggregate - jasonminghao - 博客园](https://www.cnblogs.com/jasonminghao/p/13179629.html)

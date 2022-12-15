@@ -137,7 +137,7 @@ modified: 2020-10-22T06:50:36.740Z
 - https://github.com/codenautas/sql-tools /js
   - Transfor a SQL sentence in a SQL with totals.
 # more-olap
-- https://github.com/rilldata/rill-developer
+- https://github.com/rilldata/rill-developer /202212/ts/svelte/go
   - https://docs.rilldata.com/
   - transform your datasets with SQL and create powerful, opinionated dashboards.
   - powered by Sveltekit & DuckDB

@@ -16,6 +16,21 @@ modified: 2022-12-11T22:38:34.694Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Case insensitive sorting?](https://github.com/louischatriot/nedb/issues/580)
+- i just ran into this need as well--i think a sort callback would be a great way to solve this 
+  - but since i don't think that's going to happen i'm going to solve for my project by denormalizing a document property just for sorting, e.g. saving the `toLowerCase()` version in a separate property
+- there is also the `compareStrings` option to Datastore, but it's global to the Datastore (that may be fine for your use case, though!)
+  - compareStrings: (a, b) => { return a.toLowerCase().localeCompare(b.toLowerCase()); }, 
+  - NeDB seems to not use `compareStrings` when comparison operators such as `$lt` and `$gt` are used.
+
+- ## [Unicode support for .sort and .find · Issue #150](https://github.com/louischatriot/nedb/issues/150)
+- It's not really an issue of internationalization, rather than the way strings are compared in JS. 
+- Thinking about it I think the best and simplest way is to do as MongoDB did, i.e. not code any special locale-aware sorting and let the user create his own sorting key. 
+
 - ## [how well would this work with 10M documents?](https://github.com/louischatriot/nedb/issues/476)
 - This is not the right project. When you `ensureIndex` a field on a datastore you are going to store the entire dataset in memory. 
   - This means you'll likely end up using more RAM than you would diskspace for your datastore. 

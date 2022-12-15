@@ -173,6 +173,13 @@ modified: 2021-09-04T14:03:39.046Z
 
 - https://github.com/rocicorp/replicache
   - Realtime Sync for Any Backend Stack
+# exploring
+
+- https://github.com/drifting-in-space/plane /202212/rust
+  - Plane is a container orchestrator for ambitious browser-based applications. 
+  - Plane implements an architecture we call session backends.
+  - Plane assigns a unique subdomain to each instance, through which it proxies HTTPS/WebSocket connections. When all inbound connections to a container are dropped, Plane shuts it down.
+  - [Session Backends](https://driftingin.space/posts/session-lived-application-backends)
 # more
 - https://github.com/cwise89/react-detect-offline
   - Components that track offline and online state. Render certain content only when online (or only when offline).

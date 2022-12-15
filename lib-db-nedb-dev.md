@@ -13,13 +13,16 @@ modified: 2022-11-27T19:20:24.273Z
   - 比较db: nanoSQL, nedb, lokijs, LoveField, pouchdb, alaSQL
   - 比较项目: node/browser, dbms, undo/redo, events, indexeddb, orm, typescript
 # faq
+- 每个索引都包含全量数据？
+  - 错误。只会对非空值创建索引
+
 - [How to make a field value is required(not empty)?](https://github.com/louischatriot/nedb/issues/670)
 
 - [The first find function takes time](https://github.com/louischatriot/nedb/issues/621)
 
 - 在已有数据的基础上createIndex然后insert，那么index的数据会保存在数据中间还是最后
   - 提问不明确，执行持久化会先序列化数据，再序列化索引，分析清楚数据结构更重要
-  - 索引会放在后面
+  - 索引序列化输出时会放在所有数据后面
 # nedb-roadmap
 - compound-index
   - [Compound indexes](https://github.com/louischatriot/nedb/issues/93)
@@ -65,36 +68,52 @@ modified: 2022-11-27T19:20:24.273Z
 - 批量插入超大量数据会受浏览器限制
   - [Batch insert help](https://github.com/louischatriot/nedb/issues/62)
 # codebase
-- not-yet
-  - bst, l398 if (!this.compareKeys(key, this.key) === 0) return; 这个写法很奇怪
 
-- create database
-  - new Datastore()，保存在内存中，内存数据模型就是Datastore
-- add/update/remove
-  - db.insertAsync([{ a: 5 }, { a: 42 }])
-    - _addToIndexes
-  - db.updateAsync(query, update, options)
-    - modifiedDoc = model.modify(candidate, update);
-    - 修改内存中数据 this._updateIndexes(modifications);
-    - 修改持久化数据 this.persistence.persistNewStateAsync(newDocs);
-  - db.removeAsync(query, options)
-    - 更新内存 this._removeFromIndexes
-    - 更新本地 this.persistence.persistNewStateAsync(removedDocs);
-  - update和remove都依赖 _getCandidatesAsync
-- index
-  - new Index()
-  - this.indexes[fieldName].insert(this.getAllData()); 
-- find
-  - findAsync(query, projection = {})
-- count/operators
-- persist
+## not-yet
+
+- Executor 支持buffer和main两个执行队列，为什么buffer队列也是立即执行？
+
+- bst, l398 if (!this.compareKeys(key, this.key) === 0) return; 这个写法很奇怪
+  - 测试表明，可删掉
 
 ## Datastore/crud-api
 
+- create database
+  - new Datastore()，保存在内存中，内存数据模型就是Datastore
+
+- add/update/remove
+
+- db.insertAsync([{ a: 5 }, { a: 42 }])
+  - _addToIndexes
+
+- db.updateAsync(query, update, options)
+  - modifiedDoc = model.modify(candidate, update); 
+  - 修改内存中数据 this._updateIndexes(modifications); 
+  - 修改持久化数据 this.persistence.persistNewStateAsync(newDocs); 
+
+- db.removeAsync(query, options)
+  - 更新内存 this._removeFromIndexes
+  - 更新本地 this.persistence.persistNewStateAsync(removedDocs); 
+
+- update和remove都依赖 _getCandidatesAsync
+  - 1. _getRawCandidates: basic/$in/compare
+  - 2. remove all expired documents
+
 ## Index/Cursor
+
+- index
+  - new Index()
+  - this.indexes[fieldName].insert(this.getAllData()); 
+
+## query
+
+- find
+  - findAsync(query, projection = {})
+
+- count/operators
 
 ## Persistence/Storage
 
-## more-nedb-src
+- persist
 
-- Executor 支持buffer和main两个执行队列
+## more-nedb-src

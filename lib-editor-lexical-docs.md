@@ -11,6 +11,12 @@ modified: 2022-05-15T18:36:36.524Z
 
 # blogs
 
+## [富文本编辑器 Lexical 解析](https://zhuanlan.zhihu.com/p/591864284)
+
+- 每个命令有 5 个可选的优先级: 0-4
+- LexicalNode，它被其他的几个基本节点继承
+- EditorState 是能够描述显示在富文本编辑器中 DOM 信息的底层数据模型。它主要由两部分组成：节点树和选区对象
+
 ## [Meta出的富文本编辑器Lexical_202205](https://marvinsblog.net/post/2022-05-17-lexical-rich-text-editor/)
 
 - Lexical与ProseMirror的差异

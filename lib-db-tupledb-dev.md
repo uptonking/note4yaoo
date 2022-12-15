@@ -74,7 +74,7 @@ modified: 2022-12-14T18:26:38.588Z
   - And so the disk usage problem is the same as any other database. 
   - Only difference is that I haven't implemented any compression or anything like that yet.
 - So my point there is that I can build a SQL layer on top of tuple-database, but why would I do that? I could make my own query language DSL, but why do that either? I find it much more powerful and flexible to use the underlying abstractions directly...
-- That said, I am keen on using this database to model triplestores. Similar to RDF / Datomic / Datalog, triple stores are a powerful abstraction for modeling very flexible data.
+- That said, I am keen on using this database to model triplestores. Similar to RDF/Datomic/Datalog, triple stores are a powerful abstraction for modeling very flexible data.
 
 - don't you think to write the core in Rust? 
   - Totally. I'd love to hire someone to do that. But it's not my main skillset and at the end of the day, this is premature optimization

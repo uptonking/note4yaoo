@@ -32,6 +32,12 @@ modified: 2021-03-01T10:54:24.828Z
   - https://projectmirador.org/
   - https://mirador-dev.netlify.app/__tests__/integration/mirador/
   - web based, multi-window image viewing platform with the ability to zoom, display, compare and annotate
+# ast-cst
+- https://github.com/js-cst-tokens/cst-tokens /202212/js
+  - A CST, or Concrete Syntax Tree, is a way of representing a computer program that captures its source text and semantic structure simultaneously.
+  - cst-tokens; Its CSTs are ASTs where each node has a `node.cstTokens` array of `{type, value}` tokens. 
+  - To make the AST we threw away all the textual symbols that humans use to read programs: the blank space, the braces, the comments. 
+  - code editing tools need a useful, standard way of incorporating spaces, braces, and comments into an Abstract Syntax Tree, thus turning it into a Conrete Syntax Tree or CST. 
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

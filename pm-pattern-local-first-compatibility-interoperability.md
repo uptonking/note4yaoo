@@ -27,17 +27,20 @@ modified: 2022-11-14T20:12:25.671Z
   - [m-ld](https://m-ld.org/)
   - [nostr(Notes and Other Stuff Transmitted by Relays): a truly censorship-resistant alternative to Twitter](https://github.com/nostr-protocol/nostr)
 # protocol
-- ActivityPub
-  - https://github.com/BasixKOR/awesome-activitypub
+
+## ActivityPub
+
+- https://github.com/BasixKOR/awesome-activitypub
   - ActivityPub is W3C standard, decentralized social networking protocol.
 
-- Block Protocol
-  - https://github.com/blockprotocol/blockprotocol
+## Block Protocol
+
+- https://github.com/blockprotocol/blockprotocol
   - https://blockprotocol.org/
   - The Block Protocol is an open standard for building and using data-driven blocks.
   - HASH is an example embedding application that uses the Block Protocol to enable users to insert arbitrary blocks from the Hub at runtime. 
 - [Leonardo Losoviz: Would WordPress be better off by Joining the Block Protocol?_202205](https://masterwp.com/would-wordpress-be-better-off-by-joining-the-block-protocol/)
-  - I can provide my answer:No, it will not be better off. Adopting the Block Protocol is not worth it
+  - I can provide my answer: No, it will not be better off. Adopting the Block Protocol is not worth it
   - Treating the Block Protocol as an “idea”, not an “implementation”
   - I don't think we lack ways of passing structured data to components. We lack standardized interpretation that works for everyone's use cases.
     - If your use case is "building a rich-text editor", you might even be able to build something meaningful around this.
@@ -56,6 +59,8 @@ modified: 2022-11-14T20:12:25.671Z
   - You can build your own blocks, embed them in a website, or allow your users to embed blocks directly within your application.
   - HASH is our forthcoming open-source, all-in-one workspace platform built around structured data and interactive blocks.
 
+## solid-specification 
+
 - solid-specification /371Star/MIT/202211/md
   - https://github.com/solid/specification
   - https://solidproject.org/about
@@ -66,14 +71,16 @@ modified: 2022-11-14T20:12:25.671Z
   - [Solid Protocol Spec Draft](https://solidproject.org/TR/protocol)
   - Solid adds to existing Web standards to realise a space where individuals can maintain their autonomy, control their data and privacy, and choose applications and services to fulfil their needs.
 
-- fission
-  - https://fission.codes/
+## fission
+
+- https://fission.codes/
   - Building protocols for the future of the Internet
   - Protocol Labs pioneered decentralized storage with the introduction of IPFS. 
   - Protocol Labs is an open-source R&D lab. We build protocols, tools, and services to radically improve the internet
 
-- m-ld
-  - https://m-ld.org/
+## m-ld
+
+- https://m-ld.org/
   - With m-ld, information is available where it's used—on mobiles, in browsers, in microservices, anywhere—and it stays up-to-date, automatically. It's live and sharable.
   - At the heart of m-ld is a decentralised protocol for distributing live information among clones. 
   - Using m-ld, every instance of an app has read-write access to the shared information via its local clone, with zero network latency. 
@@ -83,7 +90,21 @@ modified: 2022-11-14T20:12:25.671Z
   - https://github.com/m-ld/m-ld-js
     - the code of the Javascript engine for m-ld, for node.js, modern browsers and other Javascript platforms
 
-- nostr(Notes and Other Stuff Transmitted by Relays)
-  - https://github.com/nostr-protocol/nostr
+## nostr(Notes and Other Stuff Transmitted by Relays)
+
+- https://github.com/nostr-protocol/nostr
   - The simplest open protocol that is able to create a censorship-resistant global "social" network once and for all.
   - https://github.com/aljazceru/awesome-nostr
+
+- The problem with Twitter
+  - bans
+  - ads
+  - spams
+- The problem with Mastodon and similar programs
+  - User identities are attached to domain names controlled by third-parties
+  - Server owners can ban you
+  - For the specific example of video sharing, ActivityPub enthusiasts realized it would be completely impossible to transmit video from server to server the way text notes are, so they decided to keep the video hosted only from the single instance where it was posted to, which is similar to the Nostr approach.
+
+- [nostr – a censorship-resistant alternative to Twitter_202201](https://news.ycombinator.com/item?id=29749061)
+- In this case the content and accounts are independent of the node. 
+  - In Mastodon as far as I can see both the account and the content are instance dependent and will disappear if the instance disappears.

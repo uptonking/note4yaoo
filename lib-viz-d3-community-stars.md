@@ -23,4 +23,11 @@ modified: 2021-05-29T21:07:03.556Z
 
 - ## 
 
-- ## 
+- ## [flat Naming of exports · Issue #67 · codemirror/dev](https://github.com/codemirror/dev/issues/67)
+- I've been leaning towards using as flat as possible a namespace within each package—everything goes into the top exports, except for the occasional static method that reads better when tacked onto a class.
+
+- This reminds me of "the great namespace flattening" that happened in D3.js at v4.
+  - The context comes after the names, so alphabetical ordering results in logical tree ordering.
+
+- I think I've just accepted that some inconsistencies (EditorView but ViewPlugin, not EditorViewPlugin) are unavoidable if we don't want the interface to feel like it was written by computers, for computers. 
+  - Also, nesting just doesn't work well with TypeScript, so that's out.

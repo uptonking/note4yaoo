@@ -51,3 +51,11 @@ modified: 2022-11-18T17:06:54.371Z
 - Microsoft Access Cloud Edition, basically?
   - Sort of. Access had a "Forms" feature that let you create basic GUIs on top of your database. 
 # blog
+
+## [SQLite Forensics with Belkasoft X](https://belkasoft.com/sqlite)
+
+- In this article, we will review the most forensically(争论，辩论) interesting SQLite features, dangers of using a non-forensic tool for SQLite analysis and offer a set of requirements for a proper tool to use.
+- Freelists: a special area inside a SQLite database, which contains recently deleted data
+- Journal and Write-Ahead Log (WAL) files: transactional files, which can store recently added or recently deleted data
+- Unallocated space: not to be confused with hard drive unallocated space, this SQLite feature allows finding deleted data even outside of freelists
+# more
