@@ -44,6 +44,11 @@ modified: 2021-08-30T18:56:14.863Z
 
 - https://github.com/tobymao/sqlglot
   - Python SQL Parser and Transpiler
+
+- https://github.com/mWater/jsonql
+  - SQL represented in an unambiguous way in JSON.
+  - Safely convertible to SQL on server with no injection attacks
+  - Everything is a json object: `{ type: type of object, ... }`.
 # examples
 - https://github.com/prostgles/ui
   - https://prostgles.com/ui

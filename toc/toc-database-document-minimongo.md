@@ -10,6 +10,7 @@ modified: 2022-11-30T18:57:26.459Z
 # guide
 
 - faq
+  - minimongo的示例对应idb中的单张表+多行数据
   - 是否同步的是全量数据，如何只同步用户相关的
 
 - minimongo/meteor 的replication协议参考 [Distributed Data Protocol (DDP)](https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md)
@@ -28,6 +29,12 @@ modified: 2022-11-30T18:57:26.459Z
   - ReplicatingDb: Keeps two local databases in sync. Finds go only to master.
   - Minimongo is designed to work with a server that performs three-way merging of documents that are being upserted by multiple users.
   - Compared to RxDB, Minimongo has no concept of revisions or conflict handling, which might lead to undefined behavior when used with replication or in multiple browser tabs. Minimongo has no observable queries or changestream.
+- https://github.com/petehunt/minimongo-cache /201703/coffeescript
+  - A forked version of Minimongo designed for a synchronous local cache for React apps. 
+  - This is designed to replace Flux.
+  - since we treat the local database like a cache, we can use the same read-through caching techniques for data fetching that we use on the server
+- https://github.com/meteorrn/minimongo-cache /202211/js
+  - A fork of the minimongo-cache package maintained for the purpose of supporting the @meteorrn/core package
 
 - gongojs-project: v1-js-websocket，v2-ts-轮询
   - https://github.com/gongojs/project
@@ -65,7 +72,7 @@ modified: 2022-11-30T18:57:26.459Z
     - 支持 `$date/$binary`
 
 - ddp /1Star/MIT/202207/ts
-  - https://github.com/Jantje19/
+  - https://github.com/Jantje19/ddp
   - a library version of the DDP features that Meteor offers. 
   - This library allows you to use the Meteor features without having to install the framework and without being tied into the NodeJS
   - https://github.com/Jantje19/ddp-react
@@ -110,6 +117,9 @@ modified: 2022-11-30T18:57:26.459Z
 
 - https://github.com/radekmie/MiniMongoExplorer
   - Chrome extension for reviewing MiniMongo.
+
+- https://github.com/NickStefan/minimongoose /201602/js
+  - mongoose in the browser
 # examples
 - https://github.com/ezzatisawesome/ChromeStorageSync /202112/js
   - completed MVP of syncing db using minimongo
@@ -125,6 +135,10 @@ modified: 2022-11-30T18:57:26.459Z
   - This project uses Minimongo IndexDB to store items data and member data upon member signing up in "Join" from the navbar of the website. Items are already imported to items database
 - https://github.com/yianan261/taskmaster-app
   - functional programming with react hooks
+- https://github.com/kasivisu4/pdp_homework_3_fp
+  - https://kasivisu4.github.io/pdp_homework_3_fp/
+  - Shopping Cart Functionality using React Function Programming Paradigm
+  - minimongo中的数据持久化在idb的多张表的多个行
 
 - https://github.com/john-guerra/reactHooksMiniMongo /202204/js
   - a simple example created in my class to demonstrate functional programming with React and Minimongo
@@ -211,13 +225,6 @@ modified: 2022-11-30T18:57:26.459Z
   - https://github.com/jeffmitchel/meteor-local-persist /201510/js
     - Persistent client (browser) collections for Meteor, using localStorage. Collections are reactive across browser tabs.
 # more
-- https://github.com/petehunt/minimongo-cache /201703/coffeescript
-  - A forked version of Minimongo designed for a synchronous local cache for React apps. 
-  - This is designed to replace Flux.
-  - since we treat the local database like a cache, we can use the same read-through caching techniques for data fetching that we use on the server
-- https://github.com/meteorrn/minimongo-cache /202211/js
-  - A fork of the minimongo-cache package maintained for the purpose of supporting the @meteorrn/core package
-
 - https://github.com/leonardoventurini/meteor-devtools-evolved
   - The Meteor framework development tool belt, evolved.
   - Distributed Data Protocol (DDP): filter and search for any DDP message, being able to handle thousands and thousands of messages without a hiccup.

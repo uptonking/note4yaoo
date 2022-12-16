@@ -23,6 +23,8 @@ modified: 2020-12-12T19:32:36.255Z
 - https://github.com/xiyuan-fengyu/ppspider
   - 基于puppeteer的web爬虫框架，提供灵活的任务队列管理调度方案，提供便捷的数据保存方案（nedb/mongodb），提供数据可视化和用户交互的实现方案
 
+- https://github.com/yetzt/node-scrapyard /201701/js
+  - Scrapyard makes scraping websites easy. I'ts a wrapper for most the things you need, comes with optional caching and retries, and opens as many connections as you like.
 # gis
 - https://github.com/lionsoul2014/ip2region
   - 准确率99.9%的离线IP地址定位库，0.0x毫秒级查询

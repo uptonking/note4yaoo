@@ -115,6 +115,9 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 ## 1216
 
+- [webpack项目配置合适的多环境Api层 - 掘金](https://juejin.cn/post/7106858027675811871)
+  - 主要是使用 webpack 插件 NormalModuleReplacementPlugin
+
 - [VS Code 中定义可折叠的代码段 - 知乎](https://zhuanlan.zhihu.com/p/374181348)
   - 在 Visual Studio 中，比如书写 C# 时，是支持通过 `# region [region name]` 的方式来定义任意的可折叠代码块
   - 这么好用的功能，其实是 VS Code version 0.10.11 中已经引入

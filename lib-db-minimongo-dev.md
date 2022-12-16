@@ -8,6 +8,7 @@ modified: 2022-12-02T11:12:29.905Z
 # lib-db-minimongo-dev
 
 # guide
+- minimongo的示例对应idb中的单张表+多行数据
 
 - minimongo/meteor 的replication协议参考 [Distributed Data Protocol (DDP)](https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md)
 # discuss

@@ -17,6 +17,11 @@ modified: 2022-12-16T15:40:42.527Z
 
 - bst, l398 if (!this.compareKeys(key, this.key) === 0) return; 这个写法很奇怪
   - 测试表明，可删掉
+# 浏览器版
+- 基于localforage实现nedb的web版
+  - indexeddb中只有一个objectStore，key是文件名，value是对应的node版文件内容(数据+索引)
+  - 相当于单张表，仅一行
+  - minimongo的示例对应idb中的单张表+多行数据
 
 ## Datastore/crud-api
 
