@@ -43,10 +43,18 @@ modified: 2021-01-01T20:17:05.116Z
 - Block elements display one after the other, as paragraphs do in the Writing Mode of that document. 
 - In English therefore, inline elements display one after the other, starting on the left, and block elements start at the top and move down the page.
 # discuss
+- ## 
 
- 
+- ## 
 
-- I've gone through probably 100 iterations of layout APIs to come full circle back to a Stack component for layout 
+- ## 
+
+- ## [Is it considered bad practice to use absolute positioning? - Stack Overflow](https://stackoverflow.com/questions/186044/is-it-considered-bad-practice-to-use-absolute-positioning)
+- if you were developing a more standard website, such as a site providing some public service, absolute positioning overrides the default flow layout of browsers and so will reduce accessibility for many users. In this case I would avoid it.
+- Having said that, a lesser known benefit of absolute positioning is that it allows localized absolute positioning within the nearest "positioned" parent element.
+- it depends on what you are needing to build. 
+
+- ## I've gone through probably 100 iterations of layout APIs to come full circle back to a Stack component for layout 
 - https://twitter.com/souporserious/status/1515083960581120011
 
 - ## I was wrong. Auto-layout is the real deal 
@@ -92,9 +100,12 @@ modified: 2021-01-01T20:17:05.116Z
   - Whereas grid I’d use it for larger page layout, ie web/desktop layout, eg blogs, or gallery with photos in different sizes
 - Good thing is, you can use them both. 
   - I like grid to establish the overall page structure. 
+
     - You can do some cool responsive layouts without media queries. 
     - CSS grid: to create layout and grids
+
   - I use flex on the content elements.
+
     - Flexbox: to position the elements in the cells
 # ref
 - [CSS Flex vs Grid Tutorial](https://t.co/NPuEsH0BwT?amp=1)

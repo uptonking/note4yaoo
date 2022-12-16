@@ -25,6 +25,11 @@ modified: 2022-11-11T10:46:29.097Z
 
 - https://github.com/hyperjumptech/xcs-translator
   - a web app to convert EXCEL file to JSON and SQL so that you can quickly and easily import data from your sheets to your database.
+
+- https://github.com/JasonThon/fastexcel /202112/java/inactive
+  - A high-performance streaming processing excel lib
+  - A Java lib to read excel providing stream-processing program model
+  - 依赖poi-ooxml
 # excel-db
 - https://github.com/vkareh/spreaddb /201406/js
   - SpreadDB is a spreadsheet-oriented database server. 

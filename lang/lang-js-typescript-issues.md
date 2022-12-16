@@ -15,6 +15,9 @@ modified: 2021-03-22T14:46:20.632Z
   - class C1 implements P1
   - implements会继承P1的jsdoc注释，但不会继承类型
   - C1的字段需要再次用P1['field1']声明类型，否则没有类型
+
+- tsc build时尽管会提示异常，但源码已经转换过了
+  - [Skip typechecking; only emit (support \`--transpileOnly\` in \`tsc\`](https://github.com/microsoft/TypeScript/issues/29651)
 # ts-limitations
 - ## [How to build a TypeScript class constructor with object defining class fields? - Stack Overflow](https://stackoverflow.com/questions/49061774/how-to-build-a-typescript-class-constructor-with-object-defining-class-fields)
 - 可以使用 Pick或Partial

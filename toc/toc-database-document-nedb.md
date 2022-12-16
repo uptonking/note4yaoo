@@ -32,6 +32,8 @@ modified: 2022-11-26T17:35:24.870Z
   - https://github.com/bajankristof/nedb-promises /202209/js
     - A dead-simple promise wrapper for nedb.
     - As of nedb-promises 5.0.0 nedb package has been replaced with a fork seald/nedb
+  - https://github.com/levg34/typescript-nedb-orm
+    - ORM for @seald-io/nedb written in TypeScript
 - https://github.com/rmanibus/nedb
   - [Implement Compound Indexes ](https://github.com/seald/nedb/pull/27)
 - https://github.com/ArcBlock/nedb  /202210/MIT/js/no-browser/多线程
@@ -70,12 +72,40 @@ modified: 2022-11-26T17:35:24.870Z
     - a simply promise base wrapper methods for Nedb
   - https://github.com/JamesMGreene/nestdb /201903/js
     - originally forked from NeDB
+    - support inserted, updated and removed events
   - https://github.com/Techpire/db /1Star/MIT/202203/ts/half-baked
     - nedb typescript conversion
     - differences
       - Index field with an array value are explicitly not supported.
       - Inserting a duplicate key will overwrite the existing key.
       - Keys must all be the same data type.
+
+- LinvoDB3 /746Star/MIT/202008/js/leveldb
+  - https://github.com/Ivshti/linvodb3
+  - LinvoDB is a Node.js/NW.js/Electron persistent DB with MongoDB/Mongoose-like features and interface.
+  - MongoDB-like query language
+  - Persistence built on LevelUP
+  - NW.js/Electron friendly - JS-only backend is level-js or Medea(kv)
+  - 👉🏻 LinvoDB is based on NeDB, the most significant core change is that it uses LevelUP as a back-end, meaning it doesn't have to keep the whole dataset in memory. 
+  - LinvoDB also can do a query entirely by indexes, meaning it doesn't have to scan the full database on a query.
+    - LinvoDB does the entire query through the indexes, NeDB scans the DB
+  - https://github.com/Ivshti/linvodb-fts
+    - full text search using natural
+  - [I want to know if linvodb3 supports browser](https://github.com/Ivshti/linvodb3/issues/98)
+    - yes, this module works via `localforage` which can work via localstorage
+  - [What can stop end user to directly edit database files?](https://github.com/Ivshti/linvodb3/issues/46)
+    - LinvoDB has to use a leveldb-compatible back-end store
+  - [It looks like we build similar database engine(tingodb)](https://github.com/louischatriot/nedb/issues/34)
+    - I wrote a DB engine over NeDB/LevelUP which auto-indexes so that each query can run indexed and avoid scanning.
+    - It doesn't load the full datastore in memory, and with large datasets it's faster than NeDB because of full indexing.
+  - [Persistent Indexes?](https://github.com/Ivshti/linvodb3/issues/35)
+    - I didn't realize linvodb3 created an index for each queried property.
+    - If I understand correctly I'd use {autoindex: false} to turn that off and use Doc.ensureIndex() to explicitly create just the indexes I want.
+    - they've added support for secondary indexes to PouchDB. 
+  - forks
+    - https://github.com/aerys/linvodb3
+    - https://github.com/aerys/mongoose-linvodb3
+    - https://github.com/wittyPuneet/linvodb3
 
 - tingodb /1.1kStar/MIT/201901/js/不直接支持浏览器环境
   - https://github.com/sergeyksv/tingodb
@@ -121,33 +151,6 @@ modified: 2022-11-26T17:35:24.870Z
 - https://github.com/RobertoMalatesta/tingo-db-gui-manager
   - GUI manager for TingoDB/MongoDB built using React & Tungus itself.
 
-- LinvoDB3 /746Star/MIT/202008/js/leveldb
-  - https://github.com/Ivshti/linvodb3
-  - LinvoDB is a Node.js/NW.js/Electron persistent DB with MongoDB/Mongoose-like features and interface.
-  - MongoDB-like query language
-  - Persistence built on LevelUP
-  - NW.js/Electron friendly - JS-only backend is level-js or Medea(kv)
-  - 👉🏻 LinvoDB is based on NeDB, the most significant core change is that it uses LevelUP as a back-end, meaning it doesn't have to keep the whole dataset in memory. 
-  - LinvoDB also can do a query entirely by indexes, meaning it doesn't have to scan the full database on a query.
-    - LinvoDB does the entire query through the indexes, NeDB scans the DB
-  - https://github.com/Ivshti/linvodb-fts
-    - full text search using natural
-  - [I want to know if linvodb3 supports browser](https://github.com/Ivshti/linvodb3/issues/98)
-    - yes, this module works via `localforage` which can work via localstorage
-  - [What can stop end user to directly edit database files?](https://github.com/Ivshti/linvodb3/issues/46)
-    - LinvoDB has to use a leveldb-compatible back-end store
-  - [It looks like we build similar database engine(tingodb)](https://github.com/louischatriot/nedb/issues/34)
-    - I wrote a DB engine over NeDB/LevelUP which auto-indexes so that each query can run indexed and avoid scanning.
-    - It doesn't load the full datastore in memory, and with large datasets it's faster than NeDB because of full indexing.
-  - [Persistent Indexes?](https://github.com/Ivshti/linvodb3/issues/35)
-    - I didn't realize linvodb3 created an index for each queried property.
-    - If I understand correctly I'd use {autoindex: false} to turn that off and use Doc.ensureIndex() to explicitly create just the indexes I want.
-    - they've added support for secondary indexes to PouchDB. 
-  - forks
-    - https://github.com/aerys/linvodb3
-    - https://github.com/aerys/mongoose-linvodb3
-    - https://github.com/wittyPuneet/linvodb3
-
 - teDB /83Star/MIT/201802/ts/inactive
   - https://github.com/tedb-org/teDB
   - A structure sane embedded database with pluggable storage
@@ -162,6 +165,18 @@ modified: 2022-11-26T17:35:24.870Z
   - https://github.com/marcusjwhelan/binary-type-tree
     - AVL Tree for Node and the browser with TypeScript
     - I forked the binary tree written in nedb and rewrote most of it and added some extra restrictions and capabilities
+
+- blinkdb /59Star/MIT/202211/ts
+  - https://github.com/blinkdb-js/blinkdb
+  - https://blinkdb.io/
+  - 依赖sorted-btree
+  - An in-memory JS database optimized for large scale storage on the frontend.
+    - with full support for indexes, queries, and both unstructured & relational data.
+  - Filter, sort, and implement pagination directly within BlinkDB.
+  - It uses the same techniques & data structures as existing databases in order to speed up the retrieval of items, resulting in incredible performance
+  - [BlinkDB has a powerful query system and can filter, sort & limit your data](https://blinkdb.io/docs/filters/)
+    - in order to prevent loading all items at once
+    - in the backend, this is most often solved by offset-based pagination or cursor-based pagination - both of which BlinkDB supports.
 
 - camo /202108/js/inactive/odm(object document mapper)
   - https://github.com/scottwrobinson/camo
@@ -188,7 +203,7 @@ modified: 2022-11-26T17:35:24.870Z
   - https://github.com/abhishiv/qbase
   - lightweight and fast in-memory data store with support for lazy queries, watchable queries, transactions, H1/HM/MTM/BT relationships, and MongoDB styled selectors.
   - 依赖sift
-  - Written to be an lightweight functional alternative to @apollo/client
+  - Written to be an lightweight functional alternative to `@apollo/client`
 
 - lowdb /18.7Star/MIT/202211/ts
   - https://github.com/typicode/lowdb

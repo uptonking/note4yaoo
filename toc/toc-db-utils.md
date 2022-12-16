@@ -22,8 +22,6 @@ modified: 2022-11-06T11:21:27.612Z
 - https://github.com/PostgREST/postgrest /haskell
   - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
   - It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
-
-
 # apps
 - https://github.com/multiprocessio/datastation /ts/go
   - DataStation is an open-source data IDE for developers. 
@@ -41,6 +39,22 @@ modified: 2022-11-06T11:21:27.612Z
   - reltab
     - The core abstraction used in Tad for programmatically constructing and executing relational SQL queries.
     - This also defines the driver interface implemented by specific database back-ends, and a small, transport-agnostic remoting layer to allow queries and results to be transmitted between a web browser (or electron renderer process) and a reltab backend server.
+# etl
+- https://github.com/Claviz/bellboy /202212/ts
+  - Highly performant JavaScript data stream ETL engine.
+  - Bellboy streams input data row by row. Every row, in turn, goes through user-defined function where it can be transformed. 
+
+- https://github.com/ZJONSSON/node-etl /202201/js
+  - ETL is a collection of stream based components that can be piped together to form a complete ETL pipeline with buffering, bulk-inserts and concurrent database streams. 
+
+- https://github.com/MrSmallLiu/node-datax /202012/ts
+  - 使用TypeScript开发的Node的数据提取工具
+  - 仅支持postgres
+
+- https://github.com/NangoHQ/nango /202212/ts
+  - https://www.nango.dev/
+  - Nango continuously syncs data from any API endpoint (that returns JSON) to your database.
+  - Nango has built-in support for OAuth through our sister project Pizzly
 # utils
 - https://github.com/w3tecch/typeorm-seeding
   - A delightful way to seed test data into your database.

@@ -58,3 +58,21 @@ Contains detailed weather reports.
   - https://twitter.com/gabriel_zucman/status/1488151132161523714
   - Fulfilling an old dream: being able to know in real time who benefits from economic growth
   - When new GDP numbers come out each quarter in the US, we show how income is growing for each group of the population
+# mock/fake-data
+- https://github.com/faker-js/faker /202212/ts
+  - https://fakerjs.dev/
+  - Generate massive amounts of fake data in the browser and node.js
+
+- https://github.com/ngneat/falso /202212/ts
+  - https://ngneat.github.io/falso/
+  - Create massive amounts of fake data in the browser and NodeJS. 
+  - Tree Shakeable & Fully Typed.
+  - Factory Functions
+  - Credit: Some data was taken from the old implementation of Faker.js
+  - https://fako.microkit.co/
+    - Data is generated with falso
+
+- https://github.com/nuysoft/Mock /201910/js
+  - http://mockjs.com/
+  - a simulation data generator to help the front-end to develop and prototype separate from the back-end
+  - Provide request/response mocking for ajax requests

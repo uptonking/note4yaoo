@@ -165,8 +165,10 @@ modified: 2022-11-25T15:41:47.534Z
   - https://github.com/siliconjungle/tick-network-client
     - A demo of a client that sends messages at a regular interval.
 
-- https://github.com/NangoHQ/nango
+- https://github.com/NangoHQ/nango /202212/ts
+  - https://www.nango.dev/
   - Nango continuously syncs data from any API endpoint (that returns JSON) to your database.
+  - Nango has built-in support for OAuth through our sister project Pizzly
 
 - https://github.com/leapfrogtechnology/sync-db
   - Command line utility to synchronize and version control relational database objects across databases.

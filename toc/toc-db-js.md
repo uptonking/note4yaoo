@@ -115,6 +115,7 @@ modified: 2022-11-25T15:50:48.226Z
 
 - blinkdb /59Star/MIT/202211/ts
   - https://github.com/blinkdb-js/blinkdb
+  - https://blinkdb.io/
   - 依赖sorted-btree
   - An in-memory JS database optimized for large scale storage on the frontend.
     - with full support for indexes, queries, and both unstructured & relational data.

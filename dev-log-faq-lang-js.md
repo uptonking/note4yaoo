@@ -7,6 +7,8 @@ modified: 2021-03-29T19:18:55.989Z
 
 # dev-log-faq-lang-js
 
+# guide
+
 # not-yet
 - 对于index.js中的`export * from './A.js`； `export * from './B.js`，如果A.js和B.js中都有`export default`，那最后index.js中有导出default吗
 
@@ -23,7 +25,89 @@ modified: 2021-03-29T19:18:55.989Z
   - 装饰器的定位是通过对应的装饰函数，修改内容本身的定义，从而实现不同的行为。
   - 而注解并不产生任何行为，仅仅添加附加内容，需要相应的Scanner读取并识别其中的内容，从而使得Scanner自身产生不同的行为。
   - Angular是通过装饰器来模拟了注解的功能
+
 # 
+
+# 
+
+# 
+
+# 
+
+# class的实例方法 vs class中值为箭头函数的实例属性
+- You should avoid using arrow functions in class as they won't be the part of prototype and thus not shared by every instance. 
+  - It is same as giving the same copy of function to every instance.
+
+- [Arrow Functions in Class Properties Might Not Be As Great As We Think_201711](https://medium.com/@charpeni/arrow-functions-in-class-properties-might-not-be-as-great-as-we-think-3b3551c440b1)
+
+- conclusion
+  - 👉🏻 The initialization of arrow functions in class properties are transpiled into the constructor. 构造函数中的逻辑每个实例对象初始化时都会执行一遍
+  - Arrow functions in class properties won’t be in the prototype and we can’t call them with `super`.
+  - Arrow functions in class properties are much slower than bound functions, and both are much slower than usual function.
+  - You should only bind with `.bind()` or arrow function a method if you’re going to pass it around.
+
+- class A中值为箭头函数的实例属性
+  - 没有定义在A.prototype上
+  - 子类会继承该属性，child.handleClick()会正常执行，但super.handleClick会抛出异常
+  - If class `C` inherit of class `A` , but implement `handleClick` as a function instead of an arrow function,  `handleClick` will only executes `super.handleClick()` and nothing else. Strange isn’t?
+
+```JS
+class A {
+  static color = "red";
+  counter = 0;
+
+  handleClick = () => {
+    this.counter++;
+    console.log(';; click-A ', this.counter);
+  }
+
+  handleLongClick() {
+    this.counter++;
+  }
+}
+
+//#region babel-class
+class A {
+  constructor() {
+    _defineProperty(this, "counter", 0);
+    _defineProperty(this, "handleClick", () => {
+      this.counter++;
+    });
+  }
+  handleLongClick() {
+    this.counter++;
+  }
+}
+_defineProperty(A, "color", "red");
+//#endregion babel
+
+typeof A // function
+A.prototype // 👉🏻 没有handleClick方法
+
+class C extends A {
+  handleClick() {
+    super.handleClick();
+
+    console.log(";; click-C");
+  }
+}
+
+C.prototype.__proto__ === A.prototype // true
+new C().handleClick() // ;; click-A 没有click-C
+```
+
+- We know that usual functions are defined in the prototype and will be shared across all instances. 
+  - As we’re calling the same method multiple times across the prototype, the JavaScript engine can optimize it.
+- for the arrow functions in class properties, if we’re creating N components, these N components will also create N functions. 
+  - Remember what we’ve seen in the transpiled version, class properties are initialized in the constructor. 
+  - Which means if we click on N components, N different functions will be called.
+- 👉🏻 In short, to improve performance, you should declare your shared method in the prototype and only bound it to the context if you need to (if you pass it as prop or callback). 
+  - It makes sense to bound our shared methods to the prototype and initialized our properties in the constructor of each instance, but methods not much.
+  - arrow functions in class properties are not as performant as we thought.
+
+- Our savior will be the autobind-decorator, unfortunately it’s only available with babel as it’s still a proposal at stage 2.  /inactive
+  - https://github.com/andreypopp/autobind-decorator
+- 
 
 # .js vs .jsx
 - The distinction between .js and .jsx files was useful before Babel, but it’s not that useful anymore.

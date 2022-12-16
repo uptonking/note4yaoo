@@ -9,7 +9,7 @@ modified: 2021-01-04T17:26:25.032Z
 
 # guide
 
-# markdown-examples
+# md-examples
 - https://github.com/Harry-Hopkinson/markdown-editor
   - A markdown editor written in Typescript.
   - Vite+Electron
@@ -28,7 +28,7 @@ modified: 2021-01-04T17:26:25.032Z
 - https://github.com/markdoc/markdoc  /NoDeps
   - Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites and experiences.
   - We designed Markdoc to power Stripe's public docs
-# markdown-parser-generator
+# md-parser-generator
 - markdown-it /10.4kStar/MIT/202009
   - https://github.com/markdown-it/markdown-it
   - https://markdown-it.github.io/
@@ -52,7 +52,7 @@ modified: 2021-01-04T17:26:25.032Z
 
 - https://github.com/eczn/down-parse /ts/2019
   - markdown parser with a wonderful plugin system
-# markdown-slide
+# md-slide
 - https://github.com/hiroppy/fusuma /js
   - https://hiroppy.github.io/fusuma
   - Fusuma makes slides with Markdown easily.
@@ -63,6 +63,15 @@ modified: 2021-01-04T17:26:25.032Z
   - https://github.com/nolimits4web/swiper
     - https://swiperjs.com/
     - Most modern mobile touch slider with hardware accelerated transitions
-# more-repos
+# md-database
+- https://github.com/lukesrw/md-database /202109/ts
+  - Middleware for producing SQL queries from Markdown
+  - Currently only SQLite is fully supported, with support for MySQL being worked on.
+
+- https://github.com/fictorial/gg /201903/js
+  - Markdown-backed database with queries, user-defined actions, validators, variable expansion, and reporters in JavaScript
+  - gg is a CLI to import, query, act on, and report on local Markdown files with support for user-defined JavaScript extensions.
+  - gg supports a subset of Markdown for parsing: headers, paragraphs (the "type-inferred values"), and un-nested bullet lists 
+# more-md
 - https://github.com/rstudio/rmarkdown
   - rmarkdown package helps you create dynamic analysis documents

@@ -113,6 +113,17 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - crdt tutorials
   - nedb-src
 
+## 1216
+
+- [VS Code 中定义可折叠的代码段 - 知乎](https://zhuanlan.zhihu.com/p/374181348)
+  - 在 Visual Studio 中，比如书写 C# 时，是支持通过 `# region [region name]` 的方式来定义任意的可折叠代码块
+  - 这么好用的功能，其实是 VS Code version 0.10.11 中已经引入
+  - TypeScript/JavaScript: `//#region 和 //#endregion` 或 `//region 和 //endregion`
+  - Python: `#region 和 #endregion`
+  - XAML: `<!--#region --> 和 <!--#endregion-->`
+  - 折叠所有 region: ⌘ K ⌘ 8
+  - 展开所有 region: ⌘ K ⌘ 9
+
 ## 1215
 
 - [javascript - async/await implicitly returns promise? - Stack Overflow](https://stackoverflow.com/questions/35302431/async-await-implicitly-returns-promise)

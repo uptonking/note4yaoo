@@ -7,8 +7,19 @@ modified: 2021-08-28T11:49:05.730Z
 
 # thread-web-testing-debug
 
-# discuss
+# guide
 
+## 测试文件的位置
+
+- 单独的顶层文件夹
+  - prosemirror
+  - tiptap
+- 单独的src下文件夹
+  - lexical
+  - vscode
+
+- 和源码放在一起
+# discuss
 - ## 
 
 - ## Chrome can dynamically insert console.logs without touching your code.

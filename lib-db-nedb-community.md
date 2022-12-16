@@ -8,7 +8,9 @@ modified: 2022-12-11T22:38:34.694Z
 # lib-db-nedb-community
 
 # guide
-
+- [node database comparisons](https://github.com/only-cliches/Nano-SQL/issues/48)
+  - 比较db: nanoSQL, nedb, lokijs, LoveField, pouchdb, alaSQL
+  - 比较项目: node/browser, dbms, undo/redo, events, indexeddb, orm, typescript
 # discuss
 - ## 
 
@@ -18,7 +20,18 @@ modified: 2022-12-11T22:38:34.694Z
 
 - ## 
 
-- ## 
+- ## [Listen to database changes](https://github.com/louischatriot/nedb/issues/175)
+- You could manually couple your database operations with custom events, e.g.:
+
+```JS
+db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
+  eventEmitter.emit('insert', newDocs);
+});
+```
+
+- here is my idea for such an API, loosely based on Meteor's `Mongo.Cursor#observe` callbacks... because I really hate the PouchDB API for it. 
+
+- [Inserted, updated and removed events](https://github.com/louischatriot/nedb/pull/156)
 
 - ## [Case insensitive sorting?](https://github.com/louischatriot/nedb/issues/580)
 - i just ran into this need as well--i think a sort callback would be a great way to solve this 
@@ -173,11 +186,28 @@ modified: 2022-12-11T22:38:34.694Z
 - No guarantee of atomic transactions or other form of concurrency control
 
 - ## [It looks like we build similar database engine (nedb vs tingodb)_201306](https://github.com/louischatriot/nedb/issues/34)
-- tingodb focus on closer compatibility with MongoDB api and its features. One time we already choose wrong solution (it was Alfred DB) and spent significant time to replace it with MongoDB.
+- tingodb: we focus on closer compatibility with MongoDB api and its features. One time we already choose wrong solution (it was Alfred DB) and spent significant time to replace it with MongoDB.
+
 - nedb didn't reimplement ObjectID
+
+- tingodb: We do not keep all data in memory because we want to process relatively big datasets. The cost for this is that full table scan (non indexed query) known to be slow. But with real database you should already learn that full scan is always slow and you should avoid it.
+  - MongoDB uses memory mapping and fully rely to OS chaching. We can't, our work around it is partial cache. It is useful to at least to avoid double data load when doing query and getting actual data. The problem with partial cache is keeping it within allowed size. Best known solution is LRU and we tried corresponding module, but found it SLOW due to complex expiration logic. We choose the simple but fastest option which is direct mapped cache though it is not 100% effective (if you allow it max size to 1000 it doesn't mean that it will fit real 1000 elements.
+- You can quickly mimics nedb behaviour in tingodb by making simple unlimited cache by replacing `tcache.js` content
+  - Probably we can provide option to choose not only size but cache strategy as well. Different apps might have different demands.
+- What we know on practice that we can replace mongodb to tingodb on middle level apps almost without performance penalty. We don't shut for more. I'd rather more concerned on better functionality level compatibility.
+- tingodb: Our goal is to mimic MongoDB in its behaviour, this is challenging. 
+  - This not only more complex queries that should work the same way, but another very interesting behaviours.
+  - For example cursor provided by mongo db is "final", i.e. it contains data available on time when you did query. 
+  - 👉🏻 Nothing special except that we not want to bind full data copy to cursor and there is some architectural that forces us to use different indexes approach and some other stuff.
+- In short NedDB is in memory db first but with optional filesystem persistance. 
+  - TingoDB is file system first but with memory cache
+- As a quick proof just run benchmark test on nedb with "-m" key (memory only) and without. Results will be the same
+- NeDB is fast because it keeps ALL data in memory, which means that DB can't be larger than physical memory 
+  - Also, benchmark is TOO simplistic, it uses document with single field with sequential access, this is mostly JOKE
 
 - I wrote a DB engine(LinvoDB) over NeDB/LevelUP which auto-indexes so that each query can run indexed and avoid scanning.
   - It doesn't load the full datastore in memory, and with large datasets it's faster than NeDB because of full indexing.
+  - Finally, we also did some benchmarking during implementation, and found that it has a tendency to degrade fast. For example, lets assume objects scan and search for attribute in nested object.
 
 - Here is a performance bench comparing NoSQL databases written in pure javascript (finaldb, lowdb, memory, nedb, nosql, pouchdb, tingodb).
   - https://github.com/ezpaarse-project/dbbench /201412/archived
@@ -193,6 +223,11 @@ modified: 2022-12-11T22:38:34.694Z
 - 由于NeDB没有创建ObjectID的方法，因此引入了bson来实例化ObjectID，且传入数据库中的 _id需转为字符串类型
 - nedb 没有全文检索，环境匹配的时候并不能解析原来代码的 $text 操作, 因此在改写成nedb的时候使用普通的查询进行替换
 - nedb没有aggregate函数，无法分组，因此需自行编写代码分组，然后通过count进行聚合
+
+- ## [error on loading data in NeDB](https://github.com/louischatriot/nedb/issues/540)
+- Although NeDB does do its updates in append mode, it also does a full datafile rewrite at the end of the initial loading process and during every compaction operation. If your total record size, when represented as a string, exceeds 256MB, then it will fail as Node.js/V8/JS does not support that large of a string.
+
+- [Stream files line by line when parsing to avoid memory limits](https://github.com/louischatriot/nedb/pull/463)
 
 - ## [Persist data in BSON on disk · Issue #112 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/112)
 - Right now all data persisted on disk is stored in utf8, maybe it can be optional to store it in BSON as this will result in smaller file sizes (but also more computational power to read/write data).
@@ -305,17 +340,20 @@ modified: 2022-12-11T22:38:34.694Z
 - As of v1.4.1, NeDB will always force OS to physically write data to disk whenever a compaction or database load happens, so that you can never lose the whole database in case of a machine crash. 
   - It doesn't flush on every append for performance reasons, but potential data loss in that case is very limited, a few docs at most. That's what major databases do.
   - Note that fsync doesn't work on Windows. Not sure whether that's an issue with my machine or you simply can't fsync on Windows. 
-- All major databases sync after each transaction - which, with autocommit, is after each document. 
+- 👉🏻 All major databases sync after each transaction - which, with autocommit, is after each document. 
   - This is the part in SQLite explaining this
   - A similar option is in MySQL/PostgreSQL/CouchDB
 - I finished rewriting the crash safe write function, mimicing how Redis AOF basically works
-- There is no real consistency in the RDBMS sense as NeDB doesn't implement transactions, foreign keys, constraints and so on ... 
+- upon reload, always use the contents of the datafile except in the (pathological) case where datafile doesn't exist but temp datafile does, which cannot be done by nedb (the user needs to do it manually, at which point we can assume he's trying to crash nedb on purpose !).
+- 👉🏻 There is no real consistency in the RDBMS sense as NeDB doesn't implement transactions, foreign keys, constraints and so on ... 
   - Integrity is guaranteed by the append-only, one-line-per-operation format of the datafile. 
   - Any corrupt line is discarded, which can be the case if there is a power loss during an append, but that can only affect the end of the file so that's the same as losing latest data.
   - 👉🏻 Also there cannot indeed be any rollback, since the datafile is replaced only after a successful write.
 - Durability is not enforced on every write, only during compaction since a power loss at that moment can result in 100% data loss.
-  - For all appends to the datafile durability is the responsibility of the OS, which usually syncs to the disk every 30 seconds so you cannot lose more than 30 seconds of data. That's what most databases do (they do provide an option to force sync on every wrtie though, nedb doesn't).
+  - For all appends to the datafile durability is the responsibility of the OS, which usually syncs to the disk every 30 seconds so you cannot lose more than 30 seconds of data. 
+  - That's what most databases do (they do provide an option to force sync on every write though, nedb doesn't).
 
+- this code doesn't work on Windows, as it seems that Windows's counterpart to `fsync`, `FlushFileBuffers` cannot be called on directories. 
 - ## [It is possibile do operations (find, update, etc..) in synchronous mode?](https://github.com/louischatriot/nedb/issues/445)
 - When using memory-only mode, synchronous operations will be very useful, for example, if using NeDB as storage provider for redux. Also, when working in memory-only mode, there is no requirement to perform async operations, due there is not any read I/O
 - I would say it is more a result of his design goal to have a consistent API regardless of what backing store is being used (in-memory, localStorage, IndexedDB, Node.js file system, etc.).
@@ -337,6 +375,7 @@ modified: 2022-12-11T22:38:34.694Z
   - They're probably expecting the community to build the missing drivers, which means you have to pay your share of code before using this project. 
   - This is my preferred choice for new projects if you don't require a 1:1 replacement.
   - Tedb which is mentioned above was made with pure intention to work on electron. Currently using it on Electron 6.0.0 in production. The only storage driver I have written is the tedb electron storage driver. There is also a utils package.
+
 - NestDB - They're missing some of the fixes of NeDB-core but their roadmap shows that they're planning to incorporate them. 
   - This is my preferred choice for new projects if you require a 1:1 replacement.
 
