@@ -9,6 +9,12 @@ modified: 2021-09-23T08:26:55.811Z
 
 # guide
 
+# tree
+- [bst: Are duplicate keys allowed in the definition of binary search trees?](https://stackoverflow.com/questions/300935/are-duplicate-keys-allowed-in-the-definition-of-binary-search-trees)
+  - Many algorithms will specify that duplicates are excluded
+  - It is fairly trivial to implement duplicates (either as a list at the node, or in one particular direction.)
+  - a BST which allows either of the right or left children to be equal to the root node, will require extra computational steps to finish a search where duplicate nodes are allowed.
+  - It is best to utilize a list at the node to store duplicates, as inserting an '=' value to one side of a node requires rewriting the tree 
 # array
 
 # list

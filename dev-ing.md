@@ -91,15 +91,20 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - eg-BlockNote
 - eg-focalboard
   - olap-cube-js
-- eg-tanstack-table-v8
+- 👉🏻 eg-tanstack-table-v8
+  - tuple-database
+  - 数据全内存: nedb
+  - 数据全持久: linvodb
 
-- sync-service
+- sync-collab
+  - 👉🏻 ddp/ejson/minimongo
   - collab-data-structure: hlc/lww
   - undo/redo
-  - remoteStorage: google-drive、网盘、七牛
+  - remoteStorage: google-drive、网盘、七牛对象存储
 - sqlite-web
   - evolu
   - kikko
+  - absurd-sql
 
 - log2022 数据同步、冲突处理、本地存储
   - 08-block-editor-tiny-write
@@ -112,6 +117,34 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to
   - crdt tutorials
   - nedb-src
+
+## 1217
+
+- [javascript - Why have many util.is\* functions been deprecated in node.js v4.0.0? - Stack Overflow](https://stackoverflow.com/questions/32515413/why-have-many-util-is-functions-been-deprecated-in-node-js-v4-0-0)
+
+```JS
+[] instanceof Array; // true
+/* or */
+Array.isArray([]); // true
+
+(/(?:)/g) instanceof RegExp; // true
+
+new Date() instanceof Date; // true
+
+new Boolean(true) instanceof Boolean; // true
+/* or */
+typeof false == 'boolean';
+/* or even */
+var bool1 = true,
+  bool2 = false;
+!!bool1 === bool1; // true
+!!bool2 === bool2; // true
+```
+
+- [Change Measurement Unit to Pixels (px)? - Ask LibreOffice](https://ask.libreoffice.org/t/change-measurement-unit-to-pixels-px/11803)
+  - No, LibreOffice does not have an option to use pixels as measurement units.
+  - I cannot see a way of using pixels as a measurement unit for any text in LibreOffice. Text font size can be defined, as you say in “centimetre”, “millimetre”, “inch”, “pica”, and “point”. Pica and point are based on the inch. These are all absolute measurements. You can incorporate images which can be defined in pixels. However when you display the image, the actual number of pixels used will depend on the display manager and your view settings. 
+  - As petermau indicates, using pixels will give display dependent results. However, if you are consistent, then it should not cause trouble with internal changes. You could use a conversion factor from an absolute dimension. Common values are 72 and 96 pixels per inch, so you might be able to use inches but divide by the ppi before selecting the value. I have not tried this and can foresee issues with very small values.
 
 ## 1216
 

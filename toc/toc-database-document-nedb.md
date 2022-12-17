@@ -106,6 +106,22 @@ modified: 2022-11-26T17:35:24.870Z
     - https://github.com/aerys/linvodb3
     - https://github.com/aerys/mongoose-linvodb3
     - https://github.com/wittyPuneet/linvodb3
+- https://github.com/Absio/linvodb3-with-serialization-options
+  - LinvoDB fork for adding extension option into Model.
+- https://github.com/mohammedahmed18/electron-app /202210/ts
+  - 依赖linvodb3、realm10、reduxjs-toolkit
+- https://github.com/dmfarcas/clipboard-manager
+  - A simple cross platform clipboard manager.
+- https://github.com/ZorrillosDev/watchit-app /202209/js
+  - Watchit is a movie playback system, in its most basic form it allows you to filter, search, play movies
+  - 依赖orbit-db、linvodb3
+- https://github.com/martpie/museeks /202209/ts
+  - cross-platform music player
+- https://github.com/jullinator/electron
+  - npm install npm start
+- https://github.com/kidando/json_data_manager
+  - An Electron desktop app that allows you to perform CRUD operations on tables/collections that are stored as json files. 
+
 
 - tingodb /1.1kStar/MIT/201901/js/不直接支持浏览器环境
   - https://github.com/sergeyksv/tingodb

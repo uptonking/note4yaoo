@@ -17,7 +17,15 @@ modified: 2021-08-30T15:51:28.094Z
 # discuss
 - ## 
 
-- ## 
+- ## [sql server - Will index be fully loaded into memory_201011](https://stackoverflow.com/questions/4296027/will-index-be-fully-loaded-into-memory)
+- No, it's treated like any other data stored on disk. It's loaded into memory disk page by disk page. And a page stays in memory as long as it's regularly accessed.
+
+- The answer to this is in several parts:
+  - The size of the index.
+  - What parts are accessed.
+  - Memory pressure.
+- SQL Server cached the index in memory as it was being read.
+  - However, if I had put other memory pressure on SQL Server, it would have dropped out those cached index pages by order of lowest reads.
 
 - ## [到现在为止，NoSQL 运动给数据库系统留下什么宝贵的思想？ - 知乎](https://www.zhihu.com/question/264416654/answers/updated)
 - https://www.zhihu.com/question/264416654/answer/2713792035

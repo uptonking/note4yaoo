@@ -54,7 +54,7 @@ modified: 2022-11-03T04:14:00.563Z
   - Universal abstract-level database for Node.js and browsers.
   - Bundle for leveldown/classic-level and level-js/browser-level
   - It offers a persistent database that works in both Node.js and browsers, backed by LevelDB and IndexedDB respectively. 
-  - Many alternatives are available. For example, memory-level is an in-memory database backed by a red-black tree
+  - Many alternatives are available. 
 - https://github.com/Level/abstract-level
   - Abstract class for a lexicographically sorted key-value database. 
   - The successor to abstract-leveldown
@@ -67,6 +67,12 @@ modified: 2022-11-03T04:14:00.563Z
   - An abstract-level database for browsers, backed by IndexedDB. 
   - The successor to level-js
   - browser-level has first-class support of binary keys and values, using either Uint8Array or Buffer.
+- https://github.com/Level/memory-level
+  - In-memory abstract-level database for Node.js and browsers, backed by a fully persistent red-black tree.
+  - The successor to memdown and level-mem.
+- https://github.com/Level/levelup
+  - A wrapper for abstract-leveldown compliant stores, for Node.js and browsers.
+  - deprecated, because it is superseded by abstract-level.
 # more-key-value
 - https://github.com/pgte/alfred /201109/js
   - Alfred is a fast in-process key-value store for node.js.

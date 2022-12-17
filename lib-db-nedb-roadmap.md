@@ -9,6 +9,7 @@ modified: 2022-12-16T15:40:56.278Z
 
 # guide
 
+- 基于idb的数据存取不使用字符串，使用arraybuffer
 # nedb-roadmap
 - compound-index
   - [Compound indexes](https://github.com/louischatriot/nedb/issues/93)

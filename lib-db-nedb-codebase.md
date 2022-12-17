@@ -19,8 +19,8 @@ modified: 2022-12-16T15:40:42.527Z
   - 测试表明，可删掉
 # 浏览器版
 - 基于localforage实现nedb的web版
-  - indexeddb中只有一个objectStore，key是文件名，value是对应的node版文件内容(数据+索引)
-  - 相当于单张表，仅一行
+  - 一个Datastore/collection对应indexeddb中的一个objectStore，key是文件名，value是对应的node版文件内容(数据+索引)
+  - 但nedb浏览器版的一个Datastore的内容只有一个value，而不是一个文档对象对应一行
   - minimongo的示例对应idb中的单张表+多行数据
 
 ## Datastore/crud-api
@@ -76,6 +76,7 @@ modified: 2022-12-16T15:40:42.527Z
 
 - persistCachedDatabaseAsync
   - 数据+索引序列化 > afterSerialize > crashSafeWriteFileLinesAsync
+  - 全量覆盖
 
 - ensureIndex时，会appendFile
 
