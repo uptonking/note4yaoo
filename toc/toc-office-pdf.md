@@ -11,14 +11,33 @@ modified: 2021-01-04T17:26:43.784Z
 - https://printcss.live/
   - 渲染pdf的多种js示例
 # popular
-- pdf.js /32kStar/Apache2/202009
+- pdf.js /40.9kStar/Apache2/202212/js
   - https://github.com/mozilla/pdf.js
   - https://mozilla.github.io/pdf.js/
+  - PDF.js is a Portable Document Format (PDF) viewer that is built with HTML5.
   - Our goal is to create a general-purpose, web standards-based platform for parsing and rendering PDFs.
+
+- jsPDF /25.7kStar/MIT/202202/js
+  - https://github.com/parallax/jsPDF
+  - https://parall.ax/products/jspdf
+  - A library to generate PDFs in JavaScript.
+  - 支持web和node
+
+- pdfkit /8.5kStar/MIT/202110/js
+  - https://github.com/foliojs/pdfkit
+  - http://pdfkit.org/
+  - A JavaScript PDF generation library for Node and the browser.
 
 - https://gitlab.coko.foundation/pagedjs/pagedjs
   - Paged.js is a free and open-source library that paginates any HTML content to produce beautiful print-ready PDF. 
   - The library fragments the content, reads your CSS print declarations and presents a paginated preview in your browser that you can save as PDF.
+
+- https://github.com/Hopding/pdf-lib
+  - Create and modify PDF documents in any JavaScript environment
+
+- https://github.com/bpampuch/pdfmake
+  - http://pdfmake.org/
+  - PDF document generation library for server-side and client-side in pure JavaScript.
 # office
 - databyss /39Star/AGPL.v3/202208/js
   - https://github.com/databyss-org/databyss

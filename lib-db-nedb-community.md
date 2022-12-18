@@ -11,6 +11,8 @@ modified: 2022-12-11T22:38:34.694Z
 - [node database comparisons](https://github.com/only-cliches/Nano-SQL/issues/48)
   - 比较db: nanoSQL, nedb, lokijs, LoveField, pouchdb, alaSQL
   - 比较项目: node/browser, dbms, undo/redo, events, indexeddb, orm, typescript
+
+- 参考sqlite是如何解决并发读写的问题的
 # discuss
 - ## 
 
@@ -244,9 +246,15 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
 - NeDB is an in-memory database. It only persist data to disk so that you don't lose it if the process crashes or restarts. That's why it loads the entire `file.db` into memory at startup, and operates purely on the in-memory data structures from then on. 
   - SQLite however only keeps indexes in memory, while the rest of the columns for that row is kept on disk. So if you query for a field that isn't indexed, it will hit the disk.
 
+- ## [Unable to load, when the database file is too large](https://github.com/louischatriot/nedb/issues/457)
+- Auto-compaction every once in a while or, if the data set is actually above 256Mb, use another DB. 
+  - NeDB use `Buffer` to load file from disk to memory and its limit for most systems is 256Mb.
+
 - ## [Read file as Buffer to mitigate V8's 256MB max string size · Issue #6 · JamesMGreene/nestdb](https://github.com/JamesMGreene/nestdb/issues/6)
 
-- [Over 256Mb datafile throw err upon opening · Issue #389 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/389)
+- ## [Over 256Mb datafile throw err upon opening · Issue #389 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/389)
+- As I can see (but I am pretty much newbie in Node) there is a problem in Buffer.js during DB loading and trying to convert all file from Buffer to String in one go. Since one String can't be longer than kMaxLength in V8.
+- As I understood from googling, there is no way to open over256Mb JSON file in node in one go: only streaming by line and parsing into JSON.
 
 - [how to handle if a db size larger then 256mb? · Issue #363 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/363)
 - From what you say switch to MongoDB now. And don't forget to use the 64 bit version of MongoDB, the 32 bit version also comes with memory limitations.
@@ -255,6 +263,13 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
   - I was running two node servers, each on different ports, but both reading and writing to the same persistent datastore file. It looks like each node process is reading its own copy of the doc from the file.
   - For example, node process one creates the first record below, and second node process creates the second record. 
   - The dump of the data file contains both record, but each process can only read one that has been created by itself.
+
+- I began working on this louischatriot/nedb-server which basically an Express server around a single NeDB instance, allowing concurrent access by different processes. Didn't have the time to finish and not sure when I will find it but this is pretty simple, just a REST wrapper. If anyone wants to take the project and finish it I'll be happy to review a PR !
+- I'm new to Express (and, indeed, Node as a server thing - I use it in bundled WebAPPs mostly) but isn't that approach still 'single threaded' for all requests made the the Express 'server'?
+  - You could multi-thread it using something like Cluster Node but then you'd run the risk of conflicting CRUD requests (one thread deletes a record whilst another is updating it - leaving it undeleted and updated or updated and then deleted at-random).
+  - When I think about it - the best solution would be to have 2 separate DB files - a read-only one which is accessed by a multi-threaded query 'server' and the writable one which is access by a single-threaded CRUD server - but I've no idea how practical that is - how we'd tell NEDB to write the file/copy the file and re-read the file on-demand!?
+- Did you think about combining http://elasticsearch.org and MongoDB? Using that together would give you extremely fast queries on a large amount of data via ElasticSearch while MongoDB keeps responsible for concurrent CRUD ops.
+
 - 👉🏻 One thing you should keep in mind though is that NeDB keeps a copy of the database in RAM, 
   - so is not suited for large applications where you have more than 1M records, If that's your case you should go with mongodb
 
@@ -272,6 +287,9 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
 - Recently I struggled with this problem and came up with a solution that is similar to nedb-party but a bit more robust: vangelov/nedb-multi, hope it helps someone.
   - https://github.com/vangelov/nedb-multi
 
+- I don't think you'd ever consider multiple CRUD processes but the concept of having a process to perform updates and a separate process returning queries would be quite useful I think?
+  - I have a Node game backend where I really need separate CRUD and Query processes because a single-threaded CRUD process is fine (and indeed has considerable integrity benefits) but a single-threaded query process couldn't cope with the likely demand...
+
 - ## [How is writing and reading at the same time handled?](https://github.com/louischatriot/nedb/issues/99)
 - It is not possible. Only workaround is to create dedicated process responsible for database, and talk to it from other processes.
   - NEDB is loading at startup whole dataset from file into memory, and works on this in-memory representation of data. 
@@ -285,6 +303,8 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
   - As I see it, no one reads MySQL or mongo databases without MySQL or mongo, so why would I to try to read/manipulate and NeDB datafile without an NeDB instance? 
   - I'd say that if you'd like to compare the contents of two NeDB data stores, then load them both into memory using NeDB. Compare them programatically using the NeDB API.
 - I assume from your question that you are trying to access the same db from two distinct processes. In that case the only clean way I see of doing so is to set up an http server as a third process and query it from any number of processes you want, read only or not. Pretty much what mongodb does. 
+
+- So, the solution is to build up a network layer on nedb.. just like leveldb.
 
 - ## [Two processes sharing datastorefile · Issue #222 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/222)
 - If you need to share state between processes I would suggest looking into using something like Redis. 
@@ -300,7 +320,7 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
   - My application crashes at what seems like a threshold.
 - If I'm correct, you tried that in a browser environment ? (Node Webkit counts as one). If that's the case, this is a browser limitation, where you can't fire too many functions at once (which is exactly what `async.each` does). You should try to `use async.eachSeries` which does the same thing but sequentially, not in parallel.
 
-- ## [atomic update + insert? · Issue #398 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/398)
+- ## [atomic update + insert?](https://github.com/louischatriot/nedb/issues/398)
 - I've been trying to figure out how to orchestrate an atomic update + insert. My situation is that I'm adding a bunch of documents, while also updating a reference in an existing document to include the new documents.
 
 - unfortunately there is no way to guarantee atomicity or use transactions with NeDB, and I am not planning on adding that. 
@@ -322,7 +342,34 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
   - NedB is meant to be simple, not only in functionality, but behavior, and it's simplicity is the sole reason I'm using it for as much as I do. 
   - Making NedB memory-based will instantly require and consume more of the server, you make NedB faster, but at the cost of needing more resources (RAM).
 
-- ## [Data persistentance question? · Issue #503 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/503)
+- ## [Alternative backends/persistence layers](https://github.com/louischatriot/nedb/issues/179)
+- Do you think it is possible to fully separate persistence and "query engine"? If yes how?
+  - I was thinking about this issue as well, but couldn't find any sensible solution. The only thing I could think of is to have query engine + cache, and in case of cache-miss enumerate through all stored documents and test the query on them. Then indeed you can have storage engine abstracted into separate layer. It only has to feed you with the stream of documents to test your queries against.
+
+- 👉🏻 It is possible assuming each query is indexed. Basically what I propose is that indexes are built for every query on demand by iterating through all docs in storage and adding them to the indexes.
+  - Then, on each query, we only have to get the Ids of the matched documents only via the indexes and then retrieve the docs with those Ids from the storage engine.
+
+- I'm still not fully comfortable with the idea of indexes, but aren't both of us talking about something like this?
+  - Yes, essentially we are talking about the same thing. However, if the query is not entirely indexed, you'll have to iterate through all documents in the persistence layer on every query, which would introduce a great overhead compared to doing the same operation on documents in memory.
+
+- Right now persistence and query are indeed separated in NeDB, and in theory you could switch persistence layers (almost) easily. That's what is used to create the browser version which doesn't have persistence (I never had the time to create the persistence engine for it).
+  - Now if you want to persist to disk and not load the entire DB in memory, I think you'll need to tie query and persistence together, or as @lvshti says use entirely indexed queries.
+- IMO, if you want to use levelDB as a backend, you'll be better off using MongoDB since the use case was to have a pure JS DB. If you want to code persistence and on disk DB using JS I'd very happy about it, I've been meaning to do it for a long time :) But that seems like a lot of work.
+
+- May I present my understanding of how the whole design should look like and please tell me why this is naive or sub-optimal?
+- Database engine with replaceable persistence layer should consist of 3 separate parts:
+  - query engine - you just give to it pattern and the document, and it returns true/false
+  - indexes - binary trees which are storing only key for the document, not a whole document
+  - persistence - key-value store of any kind you like (in-memory, on-disk + in-memory cache, or fully on-disk)
+- In action it would look something like this:
+Startup:
+- Iterate through all documents in persistence and create indexes which have been specified
+Find:
+- check if any index apply, and if so get narrowed list of keys from it
+- get from persistence documents corresponding to all those keys (or go through all keys if no index apply)
+- run query engine on each document from step 2 to get the final list of documents
+
+- ## [Data persistence question?](https://github.com/louischatriot/nedb/issues/503)
 - isn't nedb not stored as JSON?  an object per each line
   - AFAIK* it's stored as JSONL
   - http://jsonlines.org/
@@ -330,10 +377,22 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
   - NeDB loads the whole opened DB to RAM, so if your DB is 30 MB, it occupies 30 MB of RAM.
   - BUT, If your app opens 30 MB of data (for serialising), then copies the 30 MB of data into NeDB, then just for a moment there you might need 30 (open) + 30 (copy) + 30 (NeDB) = at least 90 MB of RAM for this operation.
 
-- ## [Location of datafile? · Issue #531 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/531)
+- ## [Location of datafile?](https://github.com/louischatriot/nedb/issues/531)
 - I just figured out that when using some bundling tools like webpack, its default target is browser, which means the nedb will use IndexedDB instead (see browser-specific/lib/storage.js below for details).
   - The browser field tells webpack to use browser-specific version of storage.js instead, which will not create any files.
   - The solution is to change the target to, in my case, electron-main in webpack.config.js.
+
+- Nedb let's you create a new auto-loading Datastore using this call: `db = new Datastore({ filename: 'path/to/datafile', autoload: true });`
+  - It appears, however, that this command is only accurate when performed from the main process (for new Electron developers, this is usually your main.ts or main.js file).
+  - If you perform the Datastore creation command from a class which is executed in the renderer process (any class which is executed in the BrowserWindow), nedb ignores the datafile you provided and creates your database in IndexedDB instead. 
+  - You'll find your database in your application's "userData" directory in a subdirectory \IndexedDB\http....leveldb. 
+  - In my case it was (on Linux):`\home\myUser\.config\myAppName\IndexedDB\http_localhost_4200.indexeddb.leveldb`
+  - ~/.config/google-chrome/Default/IndexedDB/
+- If you really want nedb to create and use the database file that you provide during Datastore creation, you must create AND access the data file (add, remove, ... documents) from the main process
+  - Creating the data file from the main process (in main.ts)
+  - Putting the db variable in a global variable in the main process (in main.ts)
+  - Accessing the global db variable from the renderer process by calling the global db variable
+  - `db = remote.getGlobal('collectionDb');`
 
 - ## [README misleading when comparing to SQLite · Issue #265 · louischatriot/nedb](https://github.com/louischatriot/nedb/issues/265)
 - NeDB doesn't support concurrent connections out of the box indeed, but it is crash safe (at least designed to be, still investigating the recent bug report).
@@ -353,7 +412,7 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
   - For all appends to the datafile durability is the responsibility of the OS, which usually syncs to the disk every 30 seconds so you cannot lose more than 30 seconds of data. 
   - That's what most databases do (they do provide an option to force sync on every write though, nedb doesn't).
 
-- this code doesn't work on Windows, as it seems that Windows's counterpart to `fsync`, `FlushFileBuffers` cannot be called on directories. 
+- this code doesn't work on Windows, as it seems that Windows's counterpart to `fsync` , `FlushFileBuffers` cannot be called on directories. 
 - ## [It is possibile do operations (find, update, etc..) in synchronous mode?](https://github.com/louischatriot/nedb/issues/445)
 - When using memory-only mode, synchronous operations will be very useful, for example, if using NeDB as storage provider for redux. Also, when working in memory-only mode, there is no requirement to perform async operations, due there is not any read I/O
 - I would say it is more a result of his design goal to have a consistent API regardless of what backing store is being used (in-memory, localStorage, IndexedDB, Node.js file system, etc.).

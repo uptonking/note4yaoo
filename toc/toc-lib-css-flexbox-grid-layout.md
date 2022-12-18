@@ -26,6 +26,9 @@ modified: 2021-01-28T21:31:18.697Z
   - https://muuri.dev/
   - a JavaScript layout engine that allows you to build all kinds of layouts 
   - and make them responsive, sortable, filterable, draggable and/or animated.
+  - https://github.com/paol-imi/muuri-react
+    - React implementation of the amazing Muuri layout engine.
+    - All Muuri features are implemented in a React-friendly way, with custom components and hooks
 
 - react-absolute-grid /MIT/906Star/202002/layout
   - https://github.com/jrowny/react-absolute-grid

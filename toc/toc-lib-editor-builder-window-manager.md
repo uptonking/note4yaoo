@@ -22,19 +22,31 @@ modified: 2021-01-08T11:48:16.590Z
 - ref
   - [search: window manager](https://github.com/search?o=desc&p=1&q=window+manager+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories)
 
-- https://github.com/react-grid-layout/react-grid-layout
+- react-grid-layout /16.9kStar/MIT/202202/js
+  - https://github.com/react-grid-layout/react-grid-layout
   - https://strml.github.io/react-grid-layout/examples/0-showcase.html
-  - /13.4kStar/MIT/202104/js
   - A draggable and resizable grid layout with responsive breakpoints, for React.
   - 卡片能随意拖动和缩放
   - 静止状态时，卡片不可重叠遮挡
-- https://github.com/golden-layout/golden-layout 
-  - https://github.com/pbklink/golden-layout /v2
+  - forks
+  - https://github.com/DEXAGA/react-grid-layout-hooks /202105/ts
+    - Migration to Hooks
+    - Migration to Typescript
+
+- golden-layout /5.8kStar/MIT/202209/ts
+  - https://github.com/golden-layout/golden-layout 
   - https://golden-layout.com/
-  - /4.9kStar/MIT/202004/ts
   - A multi window layout manager for webapps
   - 主要用于传统分栏布局，窗口不可重叠遮挡
   - 适合实现类似vscode、notable这类编辑器或文件管理器
+
+- rc-dock /411Star/Apache2/202212/ts+js
+  - https://github.com/ticlo/rc-dock
+  - https://ticlo.github.io/rc-dock/examples
+  - Dock Layout for React Component
+  - 卡片能随意拖动和缩放
+  - 静止状态时，卡片能遮挡
+  - 支持 Popup panel as new browser window
 
 - https://github.com/caplin/FlexLayout  /ts
   - https://rawgit.com/caplin/FlexLayout/demos/demos/v0.7/demo/index.html
@@ -42,13 +54,6 @@ modified: 2021-01-08T11:48:16.590Z
   - 功能非常丰富，提供了类似vscode的左右侧边栏tabs，主内容区tabs，底部tabs
   - 样式陈旧
 
-- https://github.com/ticlo/rc-dock
-  - https://ticlo.github.io/rc-dock/examples
-  - /170Star/Apache2/202106/ts
-  - Dock Layout for React Component
-  - 卡片能随意拖动和缩放
-  - 静止状态时，卡片能遮挡
-  - 支持 Popup panel as new browser window
 - https://github.com/hlhielkema/elara 
   - https://hlhielkema.github.io/elara/
   - /5Star/MIT/202009/js/NoDeps
@@ -202,6 +207,29 @@ modified: 2021-01-08T11:48:16.590Z
   - 操作的ui不一定是panel，可能是toolbar、floating-action-button
   - https://github.com/onitecsoft/smarti.dock.js
     - JQuery floating dock panel. Native configuration, custom layout and css style
+# resize-grid-layout
+- muuri /10.1kStar/MIT/202107/js
+  - https://github.com/haltu/muuri
+  - https://muuri.dev/
+  - a JavaScript layout engine that allows you to build all kinds of layouts 
+  - and make them responsive, sortable, filterable, draggable and/or animated.
+  - https://github.com/paol-imi/muuri-react
+    - React implementation of the amazing Muuri layout engine.
+    - All Muuri features are implemented in a React-friendly way, with custom components and hooks
+
+- https://github.com/naver/egjs-grid /185Star/MIT/202209/ts
+  - https://naver.github.io/egjs-grid/
+  - A component that can arrange items according to the type of grids
+- https://github.com/naver/egjs-infinitegrid /1.5kStar/MIT/202211/ts
+  - https://naver.github.io/egjs-infinitegrid/storybook
+  - https://naver.github.io/egjs-infinitegrid/
+  - A module used to arrange card elements including content infinitely on a grid layout.
+  - 支持4种，masonry、justified、frame、packing
+  - 不支持拖拽
+
+- https://github.com/RyoSogawa/react-resizable-layout /202210/ts
+  - https://ryosogawa.github.io/react-resizable-layout/
+  - accessible headless React component and hook for drag-and-drop resizable layouts.
 # examples
 - https://github.com/EikosPartners/windowmanagerjs /20Star/201802
   - https://github.com/aesalazar/windowmanagerjsdemo

@@ -73,6 +73,9 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/Level/levelup
   - A wrapper for abstract-leveldown compliant stores, for Node.js and browsers.
   - deprecated, because it is superseded by abstract-level.
+# level-utils
+- https://github.com/juliangruber/multilevel /201802/js
+  - Expose a LevelDB over the network
 # more-key-value
 - https://github.com/pgte/alfred /201109/js
   - Alfred is a fast in-process key-value store for node.js.

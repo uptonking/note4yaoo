@@ -7,7 +7,7 @@ modified: 2020-07-19T16:24:10.919Z
 
 # toc-lib-css-table
 
-# table
+# display-table
 
 - jexcel /MIT/4.9kStar/202007
   - https://github.com/paulhodel/jexcel
@@ -28,9 +28,13 @@ modified: 2020-07-19T16:24:10.919Z
   - https://github.com/mdo/table-grid
   - http://mdo.github.io/table-grid/
   - Simple CSS grid system using display: table
+# display-flex
 
-# pieces
-
+# css-grid
+- https://github.com/NadavShaar/react-grid-table /202211/js
+  - https://nadavshaar.github.io/react-grid-table/
+  - A modular table, based on a CSS grid layout, optimized for customization
+# more
 - https://freefrontend.com/css-tables/
 - [A Complete Guide to the Table Element](https://css-tricks.com/complete-guide-table-element/)
 - [Replace HTML tables with divs](https://html-cleaner.com/features/replace-html-table-tags-with-divs/)

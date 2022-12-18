@@ -93,30 +93,42 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - olap-cube-js
 - 👉🏻 eg-tanstack-table-v8
   - tuple-database
-  - 数据全内存: nedb
-  - 数据全持久: linvodb
+  - [x] 数据全内存: nedb, blinkdb
+  - 数据全持久: linvodb, tingodb
 
 - sync-collab
-  - 👉🏻 ddp/ejson/minimongo
+  - [ ] ddp/ejson/minimongo
   - collab-data-structure: hlc/lww
   - undo/redo
   - remoteStorage: google-drive、网盘、七牛对象存储
 - sqlite-web
   - evolu
   - kikko
-  - absurd-sql
+  - [ ] absurd-sql-ts: read ArrayBuffer
+
+- 内容的存储与更新如何与数据库集成
+  - 编辑器内容自动保存一般通过在onChange方法中执行saveToDB
+    - ❌ 也可以在onChange方法中创建内存db、更新索引，通过索引提高计算效率； 应该避免维护2份数据
+  - 将编辑器的计算密集部分的数据模型不使用普通json对象，而用类似数据库模型的设计
 
 - log2022 数据同步、冲突处理、本地存储
+  - 07-focalboard-views
   - 08-block-editor-tiny-write
   - 09-prosemirror-examples
   - 10-prosemirror-collab - ot - crdt
   - 11-idb-sync
+  - 12-nedb-linvodb
 
 ## 121
 
 - dev-to
   - crdt tutorials
-  - nedb-src
+
+## 1218
+
+- chrome-linux-indexeddb-location
+  - [Where does Google Chrome for Linux store user specific data?](https://superuser.com/questions/52428/where-does-google-chrome-for-linux-store-user-specific-data)
+  - ~/.config/google-chrome/Default/IndexedDB/
 
 ## 1217
 

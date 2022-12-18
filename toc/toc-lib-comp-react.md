@@ -279,8 +279,6 @@ modified: 2020-11-13T07:31:20.012Z
   - https://github.com/STRML/react-grid-layout#demos
   - https://strml.github.io/react-grid-layout/examples/10-dynamic-min-max-wh.html
   - https://strml.github.io/react-grid-layout/examples/2-no-dragging.html
-- https://haltu.github.io/muuri
-  - https://github.com/haltu/muuri
 - https://github.com/DanFessler/react-panelgroup
 
 ## modal 弹出框
