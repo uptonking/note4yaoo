@@ -103,6 +103,9 @@ unzip -v b.zip
 # ubuntu
 - apt remove: 会删除软件包而保留软件的配置文件
 - apt purge: 会同时清除软件包和软件的配置文件
+
+- base64解码
+  - echo aHR0cHM6Ly9tYXMudG8vQG9jYXZ1ZQo= | base64 -d
 # account
 - [Change all files and folders permissions of a directory to 644/755](https://stackoverflow.com/questions/18817744)
 - 修改所有子目录和子目录下的文件的权限为755/644

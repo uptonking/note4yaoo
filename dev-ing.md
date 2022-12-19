@@ -124,11 +124,47 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to
   - crdt tutorials
 
+## 1219
+
+- function的arguments并不是数组，不能直接下标取值，arguments[1]
+
+- [How to refer to instance type of an old-style constructor function in TypeScript? - Stack Overflow](https://stackoverflow.com/questions/52291559/how-to-refer-to-instance-type-of-an-old-style-constructor-function-in-typescript)
+  - 没有很好的方案
+  - Sure, we can create additionally the IFoo interface with all the copy-pasted properties as was suggested in answers
+
+- [javascript - Throwing strings instead of Errors - Stack Overflow](https://stackoverflow.com/questions/11502052/throwing-strings-instead-of-errors)
+  - While it is okay possible to throw any value, it is generally considered poor form to throw anything other than an instance of Error or one of its subclasses.
+  - A string is not an error object, and does not convey any useful debugging information. 
+  - Devtools rely on that, such as the file and line where the error was created, the stacktrace at the throw location etc, which are available as properties on Error objects.
+
+- The `length` data property of a `Function` instance indicates the number of parameters expected by the function.
+  - 不含默认参数的函数参数个数
+
+```JS
+function fn(a, b) {}
+fn.length // 2
+
+function fn(a, b = 1) {}
+fn.length // 1
+```
+
+```JS
+typeof null // object
+
+oo = { pp: 11, ff: 22 }
+for (v of oo) console.log(v) // Uncaught TypeError: oo is not iterable
+```
+
+- Use the `// @ts-nocheck` comment to disable type checking for an entire file in TypeScript. 
+
 ## 1218
 
 - chrome-linux-indexeddb-location
   - [Where does Google Chrome for Linux store user specific data?](https://superuser.com/questions/52428/where-does-google-chrome-for-linux-store-user-specific-data)
   - ~/.config/google-chrome/Default/IndexedDB/
+
+- [Is there a way to use experimental-loader · Issue #156 · hbenl/vscode-mocha-test-adapter](https://github.com/hbenl/vscode-mocha-test-adapter/issues/156)
+  - Try setting mochaExplorer.nodeArgv to ["--loader", "ts-node/esm"].
 
 ## 1217
 
@@ -320,7 +356,7 @@ onSizeChangeSetInterval = setInterval(() => {...}, 30);
 - mongo-like api 示例
 
 ```JS
-// ✨ minimongo db.cName.crud()
+// ✨ minimongo-demo: db.cName.crud()
 
 var minimongo = require("minimongo");
 
@@ -348,7 +384,7 @@ await db.collection["animals"].upsert(doc)
 ```
 
 ```JS
-// ✨ nedb cName.crud()
+// ✨ nedb-demo: cName.crud()
 
 const Datastore = require('@seald-io/nedb');
 
@@ -367,7 +403,7 @@ const docs = await db.findAsync({})
 ```
 
 ```JS
-// ✨ mongodb + nodejs db.c(cName).crud()
+// ✨ mongodb-nodejs-demo: db.c(cName).crud()
 // you can choose between an insert and update by using the `upsert` option available in: updateOne() replaceOne() updateMany()
 
 const { MongoClient } = require("mongodb");

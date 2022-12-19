@@ -291,6 +291,10 @@ modified: 2022-08-21T10:37:01.349Z
   - https://santorini.onrender.com/
   - Santorini Board Game Online with boardgame.io and three.js
 # more-table-repos
+- https://github.com/cjroth/vertex-solid
+  - built a Virtualized table with @solid_js and @tan_stack virtual (also playing with @zag_js and Hope UI!):
+  - It's showing the max number of rows that Chrome will support due to max element height.
+
 - https://github.com/zakodium-oss/react-science
   - https://react-science.pages.dev/
   - React components and tools to build scientific applications.
