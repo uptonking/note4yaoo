@@ -1,11 +1,11 @@
 ---
-title: toc-lib-fwk-node-nestjs
+title: toc-lib-fwk-nodejs-nestjs
 tags: [lib, nestjs, toc]
 created: 2020-12-13T13:14:12.113Z
-modified: 2022-11-03T09:22:08.670Z
+modified: 2022-12-19T01:49:56.367Z
 ---
 
-# toc-lib-fwk-node-nestjs
+# toc-lib-fwk-nodejs-nestjs
 
 # guide
 - 不必执着于查找模版，但选择主流框架可以参考很多已有问题的解决方案

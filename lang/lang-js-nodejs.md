@@ -1,11 +1,11 @@
 ---
-title: lang-js-node
-tags: [js, lang, node]
+title: lang-js-nodejs
+tags: [js, lang, nodejs]
 created: 2019-09-12T02:32:06.774Z
-modified: 2020-07-14T09:26:55.226Z
+modified: 2022-12-19T01:48:17.115Z
 ---
 
-# lang-js-node
+# lang-js-nodejs
 
 # guide
 

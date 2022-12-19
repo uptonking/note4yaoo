@@ -1,11 +1,11 @@
 ---
-title: note-fwk-node
-tags: [framework, node]
+title: note-fwk-nodejs
+tags: [framework, nodejs]
 created: 2020-12-08T18:43:22.473Z
-modified: 2021-04-23T18:14:19.386Z
+modified: 2022-12-19T01:48:32.833Z
 ---
 
-# note-fwk-node
+# note-fwk-nodejs
 
 # guide
 

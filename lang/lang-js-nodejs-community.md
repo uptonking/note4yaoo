@@ -1,11 +1,11 @@
 ---
-title: lang-js-node-community
-tags: [community, js, lang, node]
+title: lang-js-nodejs-community
+tags: [community, js, lang, nodejs]
 created: 2021-08-30T06:47:48.554Z
-modified: 2021-08-30T06:48:03.272Z
+modified: 2022-12-19T01:49:06.760Z
 ---
 
-# lang-js-node-community
+# lang-js-nodejs-community
 
 # discuss
 

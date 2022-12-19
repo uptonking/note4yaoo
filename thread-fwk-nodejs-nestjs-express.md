@@ -1,11 +1,11 @@
 ---
-title: thread-fwk-node-nestjs-express
+title: thread-fwk-nodejs-nestjs-express
 tags: [express, framework, nestjs, thread]
 created: 2021-04-23T18:10:04.807Z
-modified: 2021-04-23T18:19:10.316Z
+modified: 2022-12-19T01:51:23.851Z
 ---
 
-# thread-fwk-node-nestjs-express
+# thread-fwk-nodejs-nestjs-express
 
 # pieces
 

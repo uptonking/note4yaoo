@@ -1,11 +1,11 @@
 ---
-title: lib-fwk-node-trpc-dev
+title: lib-fwk-nodejs-trpc-dev
 tags: [backend, nodejs, trpc]
 created: 2022-11-03T09:43:13.833Z
-modified: 2022-11-03T09:43:37.252Z
+modified: 2022-12-19T01:49:43.776Z
 ---
 
-# lib-fwk-node-trpc-dev
+# lib-fwk-nodejs-trpc-dev
 
 # guide
 

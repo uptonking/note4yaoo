@@ -1,11 +1,11 @@
 ---
-title: toc-lib-fwk-node-restful-http
+title: toc-lib-fwk-nodejs-restful-http
 tags: [ajax, framework, http, restful, toc]
 created: 2020-12-13T09:14:01.137Z
-modified: 2021-06-02T16:35:46.166Z
+modified: 2022-12-19T01:51:01.389Z
 ---
 
-# toc-lib-fwk-node-restful-http
+# toc-lib-fwk-nodejs-restful-http
 
 # guide
 

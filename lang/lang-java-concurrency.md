@@ -1,8 +1,8 @@
 ---
 title: lang-java-concurrency
-tags: [concurrent, java, lang]
+tags: [concurrency, java, lang]
 created: 2020-07-07T08:06:49.253Z
-modified: 2021-08-30T06:32:34.723Z
+modified: 2022-12-19T01:59:01.628Z
 ---
 
 # lang-java-concurrency

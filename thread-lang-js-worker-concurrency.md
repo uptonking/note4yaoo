@@ -1,11 +1,11 @@
 ---
-title: thread-lang-js-worker-concurrent
-tags: [concurrent, js, thread, web-worker]
+title: thread-lang-js-worker-concurrency
+tags: [concurrency, js, thread, web-worker]
 created: 2021-09-28T04:43:49.453Z
-modified: 2021-09-28T06:00:34.338Z
+modified: 2022-12-19T01:59:37.634Z
 ---
 
-# thread-lang-js-worker-concurrent
+# thread-lang-js-worker-concurrency
 
 # discuss
 

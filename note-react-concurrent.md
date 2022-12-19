@@ -1,8 +1,8 @@
 ---
 title: note-react-concurrent
-tags: [concurrent, react]
+tags: [concurrency, react]
 created: 1970-01-01T00:00:00.000Z
-modified: 2020-07-14T10:50:30.695Z
+modified: 2022-12-19T01:59:01.628Z
 ---
 
 # note-react-concurrent

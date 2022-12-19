@@ -1,11 +1,11 @@
 ---
-title: lib-fwk-node-nestjs-docs
+title: lib-fwk-nodejs-nestjs-docs
 tags: [docs, nestjs]
 created: 2020-12-17T09:10:52.151Z
-modified: 2021-04-23T18:12:18.115Z
+modified: 2022-12-19T01:49:33.916Z
 ---
 
-# lib-fwk-node-nestjs-docs
+# lib-fwk-nodejs-nestjs-docs
 
 - Node.js framework for building scalable server-side applications.
 

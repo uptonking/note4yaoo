@@ -1,11 +1,11 @@
 ---
-title: lib-fwk-node-trpc-docs
+title: lib-fwk-nodejs-trpc-docs
 tags: [documentation, trpc]
 created: 2022-11-03T09:46:36.127Z
-modified: 2022-11-03T09:46:51.327Z
+modified: 2022-12-19T01:49:50.959Z
 ---
 
-# lib-fwk-node-trpc-docs
+# lib-fwk-nodejs-trpc-docs
 
 # guide
 - trpc /14.8kStar/MIT/202211/ts

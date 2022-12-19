@@ -1,11 +1,11 @@
 ---
-title: lib-fwk-node-trpc-examples
+title: lib-fwk-nodejs-trpc-examples
 tags: [examples, nodejs, toc, trpc]
 created: 2022-11-03T09:24:39.155Z
-modified: 2022-11-03T09:46:06.255Z
+modified: 2022-12-19T01:50:50.105Z
 ---
 
-# lib-fwk-node-trpc-examples
+# lib-fwk-nodejs-trpc-examples
 
 # guide
 

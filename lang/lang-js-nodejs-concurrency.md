@@ -1,17 +1,30 @@
 ---
-title: lang-js-node-concurrency
-tags: [concurrent, js, lang, node]
+title: lang-js-nodejs-concurrency
+tags: [concurrency, js, lang, nodejs]
 created: 2021-08-30T06:41:24.479Z
-modified: 2021-08-30T06:41:48.713Z
+modified: 2022-12-19T01:59:01.625Z
 ---
 
-# lang-js-node-concurrency
+# lang-js-nodejs-concurrency
 
 # discuss
 
 - ## 
 
-- ## 
+- ## [Node.js 真的有协程吗？ - 知乎](https://www.zhihu.com/question/305443189/answers/updated)
+- “协程是一种用户态的轻量级线程”这是有栈协程或者纤程 (Fiber) 的定义。
+  - Node.js中的协程是无栈协程。无栈协程可以看作是回调函数和状态机的语法糖，它不一定要进行调度。
+
+- 有栈协程：用(e)rsp栈寄存器来索引局部变量，上下文是协程私有的栈。 访问上下文数据也就是局部变量的时候，我们无需显式的使用栈寄存器+偏移量来访问，而是直接访问变量名。
+- 无栈协程：用this来索引对象的成员变量，上下文就是对象自己。访问上下文数据也就是成员变量的时候，我们无需显式的使用this+成员偏移量（或者变量名）来访问，而是直接访问变量名。
+- 两种协程访问的上下文中的数据，生命周期都大于函数的返回：栈的生命周期晚于函数的返回，this对象的生命周期晚于函数的返回。后者更晚而且往往需要手工销毁。
+
+- node的协程是libuv实现的，node上层不可见，协程为node自己去管理和调控，上层只作为启发式的，对work不可见
+
+- https://www.zhihu.com/question/502314022/answer/2247965561
+- kotlin nodejs python 的协程都是前面十多年比较流行的无栈协程。
+- 协程的核心，所谓协作式，就是碰到等待 io 或者事件的时候，主让出cpu 交给其他任务，（而不是常规代码碰到阻塞的调用，就占着 thread 不放，非要等 os kernel 来协调，把 cpu 让给其他 thread ， aka 抢占式调度。）
+- 写过异步或者说事件驱动代码的都懂，凡是需要阻塞的方法调用，都得改成callback风格的api，尽快让出cpu给其他异步任务 ；这不就是协作式。所以协程就是要用提供一种框架化机制，替代这种繁琐又不易读的异步风格的碎片化的代码，比如大家都知道的 callback hell 回调地狱
 
 - ## [既然 Node.js 是单线程，又是怎么做到支持异步函数调用的？ - 知乎](https://www.zhihu.com/question/19914053)
 - nodejs js执行代码是单线程
@@ -41,7 +54,8 @@ modified: 2021-08-30T06:41:48.713Z
   - 但是这种创建进程的方式会牺牲共享内存，并且数据通信必须通过json进行传输。（有一定的局限性和性能问题）
 - 基于此 Node.js V10.5.0 提供了 worker_threads，它比 child_process 或 cluster更轻量级。 
   - 与child_process 或 cluster 不同，worker_threads 可以共享内存，通过传输 ArrayBuffer 实例或共享 SharedArrayBuffer 实例来实现。
-- Node.js 并没有其它支持多线的程语言（如：java），诸如"synchronized"之类的关键字来实现线程同步的概念。Node.js的 worker_threads 区别于它们的多线程。如果添加线程，语言本身的性质将发生变化，所以不能将线程作为一组新的可用类或函数添加。
+- Node.js 并没有其它支持多线的程语言（如：java），诸如"synchronized"之类的关键字来实现线程同步的概念。
+  - Node.js的 worker_threads 区别于它们的多线程。如果添加线程，语言本身的性质将发生变化，所以不能将线程作为一组新的可用类或函数添加。
 
 - ## child_process 是用于创建子进程和父子进程通信的，有4个 api： spawn、exec、execFile、fork
 - https://www.zhihu.com/pin/1413231233476685824

@@ -31,6 +31,8 @@ modified: 2020-12-22T12:42:14.745Z
   - snap list / snap list --all 包含旧版本
   - flatpak list / flatpak list --app 只包含app，不包含runtime
 
+- apt install --reinstall pkg 重新安装
+
 ## os-starter
 
 - [装了5次Ubuntu，告诉你win10+Ubuntu双系统的正确打开方式](https://zhuanlan.zhihu.com/p/101307629)
@@ -251,6 +253,5 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - https://www.nite07.com/adobe/
   - 密码 nite07
 # mac
-
 - [macos 如何实现 windows 的双击触摸板进行拖动 - V2EX](https://v2ex.com/t/846111)
   - 触控板拖动有三种方式可以设置。

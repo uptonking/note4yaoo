@@ -1,11 +1,11 @@
 ---
-title: note-fwk-node-express-vs-koa
+title: lib-fwk-nodejs-express-vs-koa
 tags: [comparison, express, framework, koa]
 created: 2020-12-08T09:38:21.479Z
-modified: 2021-04-23T18:11:48.029Z
+modified: 2022-12-19T01:55:03.539Z
 ---
 
-# note-fwk-node-express-vs-koa
+# lib-fwk-nodejs-express-vs-koa
 
 # faq
 

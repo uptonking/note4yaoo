@@ -1,11 +1,11 @@
 ---
-title: note-fwk-node-express-vs-spring
+title: lib-fwk-nodejs-express-vs-spring
 tags: [comparison, express, framework, spring]
 created: 2020-12-09T13:50:52.677Z
-modified: 2021-04-23T18:11:53.294Z
+modified: 2022-12-19T01:55:34.353Z
 ---
 
-# note-fwk-node-express-vs-spring
+# lib-fwk-nodejs-express-vs-spring
 
 # guide
 

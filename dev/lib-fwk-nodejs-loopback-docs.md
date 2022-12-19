@@ -1,11 +1,11 @@
 ---
-title: lib-fwk-node-loopback-docs
-tags: [docs, loopback, node]
+title: lib-fwk-nodejs-loopback-docs
+tags: [docs, loopback, nodejs]
 created: 2021-07-28T19:01:34.196Z
-modified: 2021-07-28T19:02:15.922Z
+modified: 2022-12-19T01:50:25.116Z
 ---
 
-# lib-fwk-node-loopback-docs
+# lib-fwk-nodejs-loopback-docs
 
 > LoopBack makes it easy to build modern API applications that require complex integrations.
 

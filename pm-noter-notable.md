@@ -1,8 +1,9 @@
 ---
 title: pm-noter-notable
 tags: [note-taking, notion, office, pm]
+favorited: true
 created: 2020-11-24T07:44:16.296Z
-modified: 2022-03-17T17:50:28.967Z
+modified: 2022-12-19T02:01:20.161Z
 ---
 
 # pm-noter-notable

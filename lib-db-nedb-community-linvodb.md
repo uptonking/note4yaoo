@@ -10,8 +10,11 @@ modified: 2022-12-17T14:00:22.252Z
 # guide
 
 - 依赖level-js-v2
+  - chrome-linux的idb本地位置: ~/.config/google-chrome/Default/IndexedDB/
 
 - Yes, you have to set both index/unique in the model or ensureIndex
+# roadmap
+- full-text-search
 # not-yet
 - ## 4个测试用例未通过
 - TypeError: db is not a function

@@ -1,8 +1,8 @@
 ---
 title: thread-lang-js-node
-tags: [js, lang, node, thread]
+tags: [js, lang, nodejs, thread]
 created: 2021-07-29T15:44:58.716Z
-modified: 2021-07-29T15:45:36.816Z
+modified: 2022-12-19T01:48:01.974Z
 ---
 
 # thread-lang-js-node

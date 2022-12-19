@@ -1,11 +1,11 @@
 ---
-title: lib-fwk-node-trpc-community-stars
+title: lib-fwk-nodejs-trpc-community-stars
 tags: [community, nodejs, trpc]
 created: 2022-11-03T09:47:18.670Z
-modified: 2022-11-03T09:47:24.223Z
+modified: 2022-12-19T01:51:13.255Z
 ---
 
-# lib-fwk-node-trpc-community-stars
+# lib-fwk-nodejs-trpc-community-stars
 
 # guide
 

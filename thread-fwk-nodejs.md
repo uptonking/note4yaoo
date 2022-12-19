@@ -1,11 +1,11 @@
 ---
-title: thread-fwk-node
-tags: [framework, node, thread]
+title: thread-fwk-nodejs
+tags: [framework, nodejs, thread]
 created: 2021-04-23T18:10:44.275Z
-modified: 2021-04-23T18:11:04.115Z
+modified: 2022-12-19T01:48:53.761Z
 ---
 
-# thread-fwk-node
+# thread-fwk-nodejs
 
 # guide
 

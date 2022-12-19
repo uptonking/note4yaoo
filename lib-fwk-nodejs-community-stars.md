@@ -1,11 +1,11 @@
 ---
-title: lib-fwk-node-community-stars
-tags: [community, framework, node]
+title: lib-fwk-nodejs-community-stars
+tags: [community, framework, nodejs]
 created: 2021-07-28T18:06:18.031Z
-modified: 2021-07-28T18:06:35.102Z
+modified: 2022-12-19T01:50:08.791Z
 ---
 
-# lib-fwk-node-community-stars
+# lib-fwk-nodejs-community-stars
 
 # guide
 
