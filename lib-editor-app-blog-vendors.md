@@ -262,3 +262,5 @@ modified: 2022-10-19T20:09:13.427Z
 - 在业务层，通过核心层暴露的扩展机制，我们可以开发各种不同编辑器特性，通过注册机制将它们注册回编辑器丰富编辑器的功能。
 - 在开发有道云笔记的新版编辑器的过程中，我们遇到很多实际问题，愈发感觉到这是一个非常有深度的前端技术领域，所以我们将新版编辑器的技术选型、架构和部分实现细节拿出来分享给大家，希望对大家开发富文本编辑器、做复杂系统的架构设计有一定参考意义。
 # editor-ww
+
+- [TinyMCE: Dangerous examples of technical debt in rich text editors](https://www.tiny.cloud/blog/technical-debt-examples/)

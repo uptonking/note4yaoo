@@ -7,7 +7,9 @@ modified: 2021-07-24T08:18:08.017Z
 
 # spec-format-apache-arrow-blog
 
-# [All in on Apache Arrow_202107](https://blog.streamlit.io/all-in-on-apache-arrow/)
+# guide
+
+# [streamlit: All in on Apache Arrow_202107](https://blog.streamlit.io/all-in-on-apache-arrow/)
 
 > How we(streamlit) improved performance by deleting over 1k lines of code
 
@@ -62,3 +64,11 @@ modified: 2021-07-24T08:18:08.017Z
 
 - Arrow is the new hotness, and it's where we believe the ecosystem is moving. 
   - So we're super excited to finally jump on that rocketship and help propel it forward with all of you.
+# blogs
+
+- [Apache Arrow：一种适合异构大数据系统的内存列存数据格式标准 | 伴鱼技术团队](https://tech.ipalfish.com/blog/2020/12/08/apache_arrow_summary/)
+  - 因为 Parquet 和 ORC 是为磁盘而设计，支持高压缩率的压缩算法，如 snappy、gzip、zlib 等压缩技术就十分必要。
+  - 而 Arrow 为内存而设计，对压缩算法几乎没有要求，更倾向于直接存储原生的二进制数据。面向磁盘与面向内存的另一个不同点在于：尽管磁盘和内存的顺序访问效率都要高于随机访问，但在磁盘中，这个差异在 2-3 个数量级，而在内存中通常在 1 个数量级内。
+  - 因此要均摊一次随机访问的成本，需要在磁盘中连续读取上千条数据，而在内存中仅需要连续读取十条左右的数据。
+  - 这种差异意味着 内存场景下的 batch 大小 (如 Arrow 的 64KB) 要小于磁盘场景下的 batch 大小。
+# more

@@ -124,6 +124,11 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to
   - crdt tutorials
 
+## 1220
+
+- dev-to
+  - linvodb insert/find
+
 ## 1219
 
 - function的arguments并不是数组，不能直接下标取值，arguments[1]

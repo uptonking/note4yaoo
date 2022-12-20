@@ -36,3 +36,7 @@ modified: 2020-12-12T19:32:36.255Z
 - https://github.com/soffchen/GeoIP2-CN
   - 更小巧、更实时的中国大陆 GeoIP2 数据库及 IP 地址段，基于 chnroutes2
   - 提供下载txt、mmdb
+
+# screen-sharing
+- https://github.com/screego/server /ts/go
+  - screen sharing

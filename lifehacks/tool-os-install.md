@@ -165,6 +165,14 @@ sudo snap refresh
 sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
 ```
 
+- ubuntu手动删除python2，通过修改dpkg配置
+  - [How to uninstall python in ubuntu completely and reinstalling it?](https://stackoverflow.com/questions/48899604)
+  - sudo rm -rf /usr/bin/python2.x 
+  - sudo rm -rf /usr/lib/python2.x 
+  - sudo rm -rf /usr/local/lib/python2.x
+  - sudo vi /var/lib/dpkg/status 
+    - delete all the lines from above file for the package which was expecting re-install
+
 - [Pin your favorite apps to the dash](https://help.ubuntu.com/stable/ubuntu-help/shell-apps-favorites.html.en)
   - Right-click the application icon and select Add to Favorites.
   - Alternatively, you can click-and-drag the icon into the dash.
