@@ -7,6 +7,12 @@ modified: 2020-12-29T17:46:00.207Z
 
 # tool-app-vscode-xp
 
+# guide
+- [Open VSX Registry faq](https://www.eclipse.org/legal/open-vsx-registry-faq/)
+  - https://open-vsx.org/
+  - The Open VSX Registry offers a community driven, fully open platform for publishing and consuming VS Code extensions. 
+  - The Registry is built on Eclipse Open VSX
+
 # nice-to-have
 
 - ctrl+p: 搜索文件名时，没有像在左边搜索文字那样方便，左边搜文字时可以一次性展示所有文件及匹配点

@@ -124,10 +124,40 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to
   - crdt tutorials
 
-## 1220
+## 1222
 
 - dev-to
-  - linvodb insert/find
+  - linvodb find/index
+
+## 1221
+
+- dev-to
+  - linvodb insert
+
+- [Does level db support duplicate key?](https://groups.google.com/g/leveldb/c/4rcqyk3OqNE)
+  - A new put with the same key overwrites the original value.
+  - To have "duplicate" keys you need to append a sequence number or something else to make them unique, then use an iterator to step through keys rather than a direct Get.
+
+- [ES6 Iterate over class methods](https://stackoverflow.com/questions/30881632)
+  - Object.getOwnPropertyNames( Animal.prototype )
+  - Object.getOwnPropertyNames(Object.getPrototypeOf(foo))
+
+```JS
+function getInstanceMethodNames(obj) {
+  return Object
+    .getOwnPropertyNames(Object.getPrototypeOf(obj))
+    .filter(name => (name !== 'constructor' && typeof obj[name] === 'function'));
+}
+```
+
+- [Looping through array and removing items, without breaking for loop](https://stackoverflow.com/questions/9882284)
+  - The array is being re-indexed when you do a .`splice()`, which means you'll skip over an index when one is removed, and your cached .length is obsolete.
+  - This is a pretty common issue. The solution is to loop backwards + splice
+  - Since ES2015 we can use `Array.prototype.filter` to fit it all in one line
+
+- [How to get first character of string?](https://stackoverflow.com/questions/3427132/how-to-get-first-character-of-string)
+  - charAt can give wrong results for Unicode. Use Array.from
+  - Array.from('some string')[0]; 
 
 ## 1219
 

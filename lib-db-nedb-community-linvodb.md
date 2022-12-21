@@ -8,11 +8,12 @@ modified: 2022-12-17T14:00:22.252Z
 # lib-db-nedb-community-linvodb
 
 # guide
+- doc是单个Model对象
+
+- Yes, you have to set both index/unique in the model or ensureIndex
 
 - 依赖level-js-v2
   - chrome-linux的idb本地位置: ~/.config/google-chrome/Default/IndexedDB/
-
-- Yes, you have to set both index/unique in the model or ensureIndex
 # roadmap
 - full-text-search
 # not-yet
