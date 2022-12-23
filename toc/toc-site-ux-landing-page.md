@@ -11,9 +11,7 @@ modified: 2020-12-29T11:27:41.474Z
 
 - https://designcode.io/
   - 蓝紫红色系，交互感很强
-
 # theming-white
-
 - ref
   - https://dribbble.com/tags/white_theme
   - https://dribbble.com/tags/white_clean_ui
@@ -33,8 +31,10 @@ modified: 2020-12-29T11:27:41.474Z
 
 - https://testimonial.to/
   - 背景纯白，简洁干净
+# theming-dark
+- https://mermaid.js.org/
+  - 白色黑色都有设计感，glassmorphism风格，contributors卡片很简洁
 # theming-green
-
 - ref
   - https://dribbble.com/tags/green_theme
   - https://dribbble.com/tags/green
@@ -49,18 +49,14 @@ modified: 2020-12-29T11:27:41.474Z
   - /theming-绿色+紫色
 - https://opendata.swiss/en/
   - /theming-绿色+黑白
-
 # 设计创意
-
 - https://tailwindcss.com/
   - 首页的动画设计感极强
 
 - https://fariasmateuss.github.io/product/
   - https://github.com/fariasmateuss/product
   - Responsive and animated product card using HTML, CSS and JavaScript
-
 # 产品研发
-
 - https://blazorise.com/
   - 简洁首页，典型的技术产品首页
 
@@ -70,9 +66,7 @@ modified: 2020-12-29T11:27:41.474Z
 - https://pspdfkit.com/
   - /商务风格/theming-蓝白色
   - 专业办公
-
 # more-landing-page
-
 - https://modus.trimble.com/
   - /商务风格/theming-蓝白色
 

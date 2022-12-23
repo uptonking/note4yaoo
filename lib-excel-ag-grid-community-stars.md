@@ -17,7 +17,11 @@ modified: 2022-08-21T09:54:22.078Z
 
 - ## 
 
-- ## 
+- ## any table that implements row virtualisation correctly won't have a limit with rendering. The bottleneck is browser heap space.
+- https://twitter.com/niallcrosby/status/1605858392462999555
+  - Sorting is done with JS core sort functions, so hard to do that wrong! Also hard to do a filtering algorithm badly! However a grid with 1, 000+ rows is pretty useless to humans
+  - That's where row grouping is magic! AG Grid has massive performance tweaks with its grouping, eg if grouping and sort is changed, only expanded groups are actually sorted.
+  - In summary, take AG Grid as the gold standard for Enterprise Component (with a UI), and TanStack Table as gold standard for headless alternative.
 
 - ## Today we enhanced AG Grid's React performance by NOT using React... ... 
 - https://twitter.com/niallcrosby/status/1496161941684985864

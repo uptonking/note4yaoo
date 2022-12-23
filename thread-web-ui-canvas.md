@@ -29,7 +29,10 @@ modified: 2021-08-06T07:36:05.864Z
 
 - ## 
 
-- ## 
+- ## Does anyone know if there is a deterministic alternative to rough js? When rendering the shapes in a loop, it adds variation every frame.
+- https://twitter.com/JungleSilicon/status/1605790763438292993
+- set the same seed for roughjs?
+  - seed is an optional numeric value that sets the seed for creating random values used in shape generation. This is useful for creating the exact shape when re-generating with the same parameters. The value of seed is between 1 and 2^31. If seed is not defined, or set to 0, no seed is used when computing random values.
 
 - ## Chrome on Android (second browser) seems to handle pointer drag events differently - firing only at the start. 
 - https://twitter.com/steveruizok/status/1600074444172664832

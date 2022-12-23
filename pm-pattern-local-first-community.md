@@ -14,6 +14,21 @@ modified: 2022-03-03T18:20:12.075Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## How many records can you sort/filter/paginate in a web browser?
+- https://twitter.com/jamespearce/status/1605273072851886090
+- tinybase: Without breaking a sweat: 10, 000 word corpus for client-side autocomplete
+  - https://tinybase.org/demos/word-frequencies/
+  - tmdb: 1,000 paged relational records
+  - https://tinybase.org/demos/movie-database/
+
+- A browser doesn't struggle wrangling many mb of data it memory.
+  - It struggles keeping track of and updating thousands of elements in the Dom. I've only ever done 20k records but would feel comfortable easily doing hundreds of thousands using react-virtualized.
+- Yep, agree with all that. The good news is there's no need to display it all, just want to hold it in memory and sort/filter.
+
 - ## My goal is to build a database that makes it easier to build local-first software.
 - https://twitter.com/ccorcos/status/1532185301438738433
   - Embedded, reactive, schemaless, and transactional read/write directly to indexes (inspired by FoundationDb)

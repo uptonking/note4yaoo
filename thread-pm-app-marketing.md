@@ -30,6 +30,15 @@ modified: 2021-10-29T15:06:33.422Z
 
 - ## 
 
+- ## [The lo-fi manifesto on sustainable software | lo-fi](https://lo-fi.gfor.rest/docs/manifesto)
+- Here's an overview of the "business model" of lo-fi:
+  - Users can use the product for free on their own device, and free users don't cost anything (or next to nothing) to "host."
+  - Only paying subscribers utilize paid server infrastructure. Meaning, every server request and megabyte of database storage has associated revenue.
+- In other words, I'm using local-first not just as a technical principle, but as a tool to enable a product model which satisfies user expectations of a free experience on the web, but also provides a clear value proposition for purchase.
+- 
+- 
+- 
+
 - ## How can I test if an open source model might work for my prototype product? Open source it. 
 - https://twitter.com/iantien/status/1564987665312649216
   - If it takes off, you can go back to closed source--giving away a prototype isn't losing much. 

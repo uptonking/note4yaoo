@@ -39,4 +39,11 @@ modified: 2020-12-12T19:32:36.255Z
 
 # screen-sharing
 - https://github.com/screego/server /ts/go
-  - screen sharing
+  - https://screego.net/
+  - share your screen with good quality and low latency.
+
+- https://github.com/alyssaxuu/screenity /202205/js
+  - The most powerful screen recorder & annotation tool for Chrome/Edge
+  - 此产品很适合录制演示视频或讲课培训的场景，支持标签页、桌面、应用和摄像头，支持标注划线，也可很方便的导出视频
+  - Make unlimited recordings of your tab, desktop, any application, and camera
+  - Annotate by drawing anywhere on the screen, adding text, and creating arrows

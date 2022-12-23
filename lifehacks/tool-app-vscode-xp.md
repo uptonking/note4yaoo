@@ -12,10 +12,10 @@ modified: 2020-12-29T17:46:00.207Z
   - https://open-vsx.org/
   - The Open VSX Registry offers a community driven, fully open platform for publishing and consuming VS Code extensions. 
   - The Registry is built on Eclipse Open VSX
-
 # nice-to-have
-
 - ctrl+p: 搜索文件名时，没有像在左边搜索文字那样方便，左边搜文字时可以一次性展示所有文件及匹配点
+
+- 侧边栏最小宽度
 # extensions-stars
 - ## import sorter
 
@@ -46,3 +46,7 @@ modified: 2020-12-29T17:46:00.207Z
 - [The Visual Studio Code Roadmap 2020](https://github.com/microsoft/vscode/wiki/Roadmap)
 # ref
 - [一个vscode的模拟界面，仅界面和编辑，不能跳转文件和点击菜单](https://remoteok.io/vscode)
+# discuss-features-request
+- ## 侧边面板宽度
+- [Sidebar defaultWidth, View-Specific Sidebar widths, & View-Specific Sidebar defaultWidths](https://github.com/microsoft/vscode/issues/158603)
+- [Find a way to fit panel headers into the smaller minimum width](https://github.com/microsoft/vscode/issues/87347)

@@ -1,44 +1,20 @@
 ---
-title: lib-db-nedb-community-linvodb
+title: lib-db-linvodb-community
 tags: [community, linvodb, nedb]
 created: 2022-12-17T13:59:53.477Z
-modified: 2022-12-17T14:00:22.252Z
+modified: 2022-12-22T15:21:38.253Z
 ---
 
-# lib-db-nedb-community-linvodb
+# lib-db-linvodb-community
 
 # guide
-- doc是单个Model对象
 
-- Yes, you have to set both index/unique in the model or ensureIndex
-
-- 依赖level-js-v2
-  - chrome-linux的idb本地位置: ~/.config/google-chrome/Default/IndexedDB/
-# roadmap
-- full-text-search
-# not-yet
-- ## 4个测试用例未通过
-- TypeError: db is not a function
-  - Cursor: "before each" hook for "Without query, an empty query or a simple query and no skip or limit":
-  - Database: "before each" hook for "Able to insert a document in the database, setting an _id if none provided, and retrieve it even after a reload"
-  - Schema: "before each" hook for "Create indexes specified in schema, auto-indexing does not override them"
-- AssertionError: expected [Function] to throw an error
-  - Document - Modifying documents: Throw an error if a modifier is used with a non-object argument
-# issues
-- ## [`_id` index should just re-use LevelUp index on id, instead of building a separate binary-search-tree](https://github.com/Ivshti/linvodb3/issues/19)
-
-- ## [A doc can be written to index w/o being saved](https://github.com/Ivshti/linvodb3/issues/16)
-  - The way to fix this is actually simple
-  - Upon the _persist function, write to a cache saving[]. When the doc is committed to levelup, delete it from that cache.
-  - Modify cursor.getMatchesStream to use this cache if the doc is there
-
-- ## [use sift to drop code from lib/document](https://github.com/Ivshti/linvodb3/issues/30)
 # discuss
 - ## 
 
 - ## 
 
-- ## [[Feature Request] Importing and Exporting · Issue #15 · Ivshti/linvodb3](https://github.com/Ivshti/linvodb3/issues/15)
+- ## [[Feature Request] Importing and Exporting](https://github.com/Ivshti/linvodb3/issues/15)
 - For importing you can use the .save method, which allows bulk save, and would account for re-saving (updating) objects, unlike insert which only does new inserts.
 
 - As for exporting, the best approach would be a streaming cursor - which I'll implement, push and document in a little while.

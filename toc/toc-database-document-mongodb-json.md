@@ -146,6 +146,12 @@ modified: 2022-11-03T04:14:11.987Z
 - https://github.com/kofrasa/mingo /202211/ts
   - MongoDB query language for in-memory objects
 
+- https://github.com/Ligengxin96/sql-in-mongodb /3Star/GPLv3/202108/ts
+  - This tools can convert common sql query to mongodb query
+- https://github.com/orgoldfus/sql2mongo /202012/js
+  - Use SQL syntax to query MongoDB
+  - Parses an SQL WHERE clause to a mongo query object.
+
 - https://github.com/nodkz/mongodb-memory-server /202211/ts
   - This package spins up an actual/real MongoDB server programmatically from within nodejs, for testing or mocking during development. 
   - By default it holds the data in memory. 
@@ -241,7 +247,15 @@ modified: 2022-11-03T04:14:11.987Z
 # non-js-json-db
 - https://github.com/Softmotions/ejdb
   - Embeddable JSON Database engine C library. 
-  - Simple XPath like query language (JQL). 
+  - Simple XPath like query language (JQL).
+
+- https://github.com/FerretDB/FerretDB /5kStar/apache2/202212/go
+  - FerretDB (previously MangoDB) was founded to become the de-facto open-source substitute to MongoDB
+  - 直接在PostgreSQL上对外提供 MongoDB 的 API
+  - FerretDB is an open-source proxy, converting the MongoDB 6.0+ wire protocol queries to SQL - using PostgreSQL as a database engine.
 # more-document-json
 - https://github.com/ashleydavis/sql-to-mongodb
   - A Node.js script to convert an SQL database to a MongoDB database.
+
+- https://github.com/RonnyChen/MongoSql /201601/java
+  - 直接将部分SQL转换成mongodb的语句访问mongodb

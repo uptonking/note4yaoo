@@ -9,8 +9,6 @@ modified: 2022-12-16T15:40:42.527Z
 
 # guide
 
-# codebase
-
 ## not-yet
 
 - Executor 支持buffer和main两个执行队列，为什么buffer队列也是立即执行？
@@ -22,6 +20,7 @@ modified: 2022-12-16T15:40:42.527Z
   - 一个Datastore/collection对应indexeddb中的一个objectStore，key是文件名，value是对应的node版文件内容(数据+索引)
   - 但nedb浏览器版的一个Datastore的内容只有一个value，而不是一个文档对象对应一行
   - minimongo的示例对应idb中的单张表+多行数据
+# api
 
 ## Datastore/crud-api
 

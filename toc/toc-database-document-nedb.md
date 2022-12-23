@@ -118,7 +118,6 @@ modified: 2022-11-26T17:35:24.870Z
 - https://github.com/kidando/json_data_manager
   - An Electron desktop app that allows you to perform CRUD operations on tables/collections that are stored as json files. 
 
-
 - tingodb /1.1kStar/MIT/201901/js/不直接支持浏览器环境
   - https://github.com/sergeyksv/tingodb
   - http://www.tingodb.com/
@@ -244,6 +243,9 @@ modified: 2022-11-26T17:35:24.870Z
   - This module can be used to write data to IndexedDB using `Dexie` and to synchronize the data in IndexedDB with a server.
   - `Dexie.Syncable` is used for the synchronization. This module contains an implementation of the `ISyncProtocol`. 
   - It was primarily written to work with `sync-server` but should work with other servers which offer the same API.
+
+- https://github.com/Ligengxin96/sql-in-mongodb /3Star/GPLv3/202108/ts
+  - This tools can convert common sql query to mongodb query
 # examples
 - rhaego(blog starter) /29Star/ISC/202204/js
   - https://github.com/youknowznm/rhaego
