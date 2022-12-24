@@ -20,7 +20,9 @@ modified: 2022-12-11T22:38:34.694Z
 
 - ## 
 
-- ## 
+- ## [Confusing about option upsert when update](https://github.com/louischatriot/nedb/issues/495)
+- db.insert will generate unique _id for each item, but when use db.update with upsert option, all _id is the same, So, next time when you open database file, only one record will left. 
+  - 👉🏻 each update request is added a new line with an identical id, when the database is reloaded, it will purge itself by removing all old arrays (Keeping the last one). This is done for performance reasons.
 
 - ## [Listen to database changes](https://github.com/louischatriot/nedb/issues/175)
 - You could manually couple your database operations with custom events, e.g.:

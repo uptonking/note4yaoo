@@ -100,7 +100,8 @@ modified: 2021-01-08T11:48:16.590Z
   - AppSeed: Production-ready seed projects crafted on top of modern UI Kits. 
   - https://github.com/app-generator/react-datta-able-dashboard
 
-- https://github.com/refinedev/refine
+- refine /6.5kStar/MIT/202212/ts
+  - https://github.com/refinedev/refine
   - https://refine.dev/
   - headless web application framework developed with flexibility in mind.
   - It eliminates repetitive tasks demanded by CRUD operations and provides industry standard solutions for critical parts like authentication, access control, routing, networking, state management, and i18n.

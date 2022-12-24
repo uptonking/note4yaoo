@@ -19,7 +19,9 @@ modified: 2022-08-21T10:02:05.129Z
   - [Maybe some misunderstanding of how SQL DB indexes work? 🤔 · Issue #11 · ccorcos/tuple-database](https://github.com/ccorcos/tuple-database/issues/11)
 # popular
 - react-datasheet-grid /133Star/MIT/202205/ts
+  - https://github.com/nick-keller/react-datasheet-grid
   - https://github.com/Equify/react-datasheet-grid
+  - https://github.com/nick-keller/react-datasheet-grid
   - https://react-datasheet-grid.netlify.app/docs/features
   - 依赖react、react-window、react-resize-detector
   - more like Airtable or Notion and less like Excel in the sense that instead of dealing with individual cells it deals with entire rows, and each column is responsible for a single property of each row
@@ -55,7 +57,7 @@ modified: 2022-08-21T10:02:05.129Z
   - Powerful spreadsheet interface for Firestore
   - 30+ fields supported
   - [Firetable is now Rowy_202110](https://news.ycombinator.com/item?id=28768261)
-  - [Abstracting the UI to be compatible with any database · Issue #228 · rowyio/rowy](https://github.com/rowyio/rowy/issues/228)
+  - [Abstracting the UI to be compatible with any database](https://github.com/rowyio/rowy/issues/228)
     - long term
   - https://demo.rowy.io/table/allFieldTypes
     - 给出了常用字段类型的示例
@@ -69,6 +71,7 @@ modified: 2022-08-21T10:02:05.129Z
   - https://nocodb.com/
   - The Open Source Airtable Alternative
   - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
+  - 依赖monaco-editor、vueuse、antd-vue、monaco-editor、sortablejs、vuedraggable
   - Search, sort, filter, hide columns with uber ease
   - Create Views : Grid, Gallery, Kanban, Form
   - Frontend: Vue.js
@@ -86,6 +89,13 @@ modified: 2022-08-21T10:02:05.129Z
   - Columns can be filled by formula
   - A portable, self-contained format. Based on SQLite
   - Full Python syntax is supported, and the standard library.
+
+- refine /6.5kStar/MIT/202212/ts
+  - https://github.com/refinedev/refine
+  - https://refine.dev/
+  - headless web application framework developed with flexibility in mind.
+  - It eliminates repetitive tasks demanded by CRUD operations and provides industry standard solutions for critical parts like authentication, access control, routing, networking, state management, and i18n.
+  - Connectors for 15+ backend services including REST API
 
 - https://github.com/mukulchugh/kanboard-notion-kanban-react
   - https://notion-kanboard-mukul.netlify.app/
@@ -143,15 +153,23 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/souvikinator/notion-to-md
   - Convert notion pages, block and list of blocks to markdown (supports nesting) using notion-sdk-js
 # airtable-like
-- https://github.com/bram2w/baserow
+- baserow /1.3kStar/MIT/202212/python/js/vue
+  - https://github.com/bram2w/baserow
+  - https://baserow.io/
   - Baserow is an open source no-code database tool and Airtable alternative. 
   - Open-core with all non-premium features under the MIT License allowing commercial and private use.
   - Headless and API first.
   - Uses popular frameworks and tools like Django, Vue.js and PostgreSQL.
 
-- https://github.com/nocobase/nocobase
+- nocobase /3.7kStar/apache2/202212/ts/国内
+  - https://github.com/nocobase/nocobase
   - https://www.nocobase.com/
-  - NocoBase is a scalability-first, open-source no-code/low-code development platform.
+  - NocoBase is a scalability-first, open-source no-code/low-code development platform. 开源无代码开发平台
+  - server依赖koa
+  - client依赖antd、g2plot、ahooks、dnd-kit、formily、marked、react-iframe、react-quill、react-router5
+  - 采用数据结构与使用界面分离的设计思路，可以为数据表创建任意数量、任意形态的区块（数据视图），每个区块里可以定义不同的样式、文案、操作
+  - you can configure the user interface directly with WYSIWYG operations.
+  - Everything is a plugin, all new features can be implemented by developing and installing plugins
 
 - https://github.com/seatable/seatable
   - SeaTable is a spreadsheet/database like Airtable.

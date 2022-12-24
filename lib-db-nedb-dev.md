@@ -9,13 +9,13 @@ modified: 2022-11-27T19:20:24.273Z
 
 # guide
 
-- 基于idb的数据存取不使用字符串，使用arraybuffer
-
+# lab
 - nedb启动后执行insert/ensureIndex会造成持久化文件中间出现索引行
   - 但每次compact或reload都会压缩持久化文件，都会将索引放在最后，去掉旧的行
-
-- 常用数据库都将
 # faq
+- insert方法插入`_id`相同的对象时，如从序列化字符串中拷贝出对象，能正常插入吗
+  - nedb不能正常插入 Can't insert key xxx, it violates the unique constraint
+
 - 每个索引都包含全量数据？
   - 不一定。只会对非空值创建索引
   - [sql server - Will index be fully loaded into memory_201011](https://stackoverflow.com/questions/4296027)

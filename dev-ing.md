@@ -119,15 +119,33 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 11-idb-sync
   - 12-nedb-linvodb
 
-## 121
+## 122
 
 - dev-to
   - crdt tutorials
 
-## 1222
+## 1223
 
 - dev-to
   - linvodb find/index
+
+- symbol作为key时，难以获取值，for-in
+
+```JS
+ss = Symbol('ALL_EVENTS');
+oo = {
+  [ss]: 11
+}
+for (let k in oo) { console.log(';; ', oo[k]) } // 无法遍历
+for (let k of oo) { console.log(';; ', oo[k]) } // 抛出异常，Uncaught TypeError: oo is not iterable
+```
+
+- [Babel 的 preset 及 plugin 的执行顺序总结 - 知乎](https://zhuanlan.zhihu.com/p/561179796)
+  plugins 会在 presets 之前执行；
+  presets 会按照配置的顺序倒序执行；
+  plugins 会按照配置顺序正序执行；
+  每个 plugins 可能配置了好几种 nodeType, 只有遍历到了对应的 nodeType 才会执行；
+  每种 nodeType 还有 enter 和 exit 两个时机可选；
 
 ## 1221
 
