@@ -8,11 +8,18 @@ modified: 2022-11-27T19:20:24.273Z
 # lib-db-nedb-dev
 
 # guide
-
+- cons
+  - 持久化得到的文本，如何持久化图片
 # lab
 - nedb启动后执行insert/ensureIndex会造成持久化文件中间出现索引行
   - 但每次compact或reload都会压缩持久化文件，都会将索引放在最后，去掉旧的行
 # faq
+- 如何存储图片，或buffer
+  - [pr: added support for Buffers (BLOB) to nedb_201408](https://github.com/louischatriot/nedb/pull/167)
+    - I think buffers don't have their place in nedb. 
+    - There is already a quite simple way to store a BLOB, and that is to serialize it (as your code does in hex format). 
+    - Also, buffers are Node only and don't work in node webkit or the browser
+
 - insert方法插入`_id`相同的对象时，如从序列化字符串中拷贝出对象，能正常插入吗
   - nedb不能正常插入 Can't insert key xxx, it violates the unique constraint
 

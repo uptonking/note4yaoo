@@ -48,6 +48,8 @@ Contains MongoDB training services dataset.
 Sample Weather Dataset
 Contains detailed weather reports.
 
+- https://github.com/ipinfo/sample-database
+  - IPinfo database and API sample repository
 # data application
 - https://github.com/pkosiec/mongo-seeding
   - Mongo Seeding is a flexible set of tools for importing data into MongoDB database.

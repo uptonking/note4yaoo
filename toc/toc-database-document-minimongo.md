@@ -91,12 +91,13 @@ modified: 2022-11-30T18:57:26.459Z
 - https://github.com/stubailo/meteor-rest /201605/js
   - makes it easy to make your Meteor app's data accessible over HTTP.
 
-- https://github.com/c58/marsdb /201609/js
+- https://github.com/c58/marsdb /201609/js/未实现索引
   - MarsDB is a lightweight client-side database. 
   - It's based on a Meteor's minimongo matching/modifying implementation. 
   - written on ES6, have a Promise based interface and may be backed with any storage implementation
   - 支持内存、localStorage、localForage、levelup
   - It's also supports observable cursors.
+  - [linvodb: Any plans to rewrite on ES6? Check my work in c58/marsdb_201509](https://github.com/Ivshti/linvodb3/issues/24)
   - https://github.com/c58/marsdb-sync-client
     - It's a Meteor compatible DDP client, based on MarsDB. 
     - It supports methods, pub/sub and collection operations. 

@@ -111,7 +111,7 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
 - i learned from experience (and confirmed from nedb's author) that multiple nedb instances (running in separate processes) on a single file will corrupt that file.
   - in your password example, if u have a unique constraint for "username" or "email", it will get violated by race-conditions from the multiple nedb instances, @ which point nedb will refuse to load the file and crash
 
-- ## [foundryvtt: Database architecture upgrades · Issue #5065 · foundryvtt/foundryvtt](https://github.com/foundryvtt/foundryvtt/issues/5065)
+- ## [foundryvtt: Database architecture upgrades](https://github.com/foundryvtt/foundryvtt/issues/5065)
 
 ### NeDB
 

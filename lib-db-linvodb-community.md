@@ -9,18 +9,93 @@ modified: 2022-12-22T15:21:38.253Z
 
 # guide
 
+- roadmap
+  - [Remove should lock queries while happening](https://github.com/Ivshti/linvodb3/issues/34)
+  - [use sift to drop code from lib/document](https://github.com/Ivshti/linvodb3/issues/30)
+  - [Ability to disable in-memory indexes and only use levelup-based compound indexes](https://github.com/Ivshti/linvodb3/issues/18)
+  - [`_id` index should just re-use LevelUp index on id, instead of building a separate binary-search-tree](https://github.com/Ivshti/linvodb3/issues/19)
+  - [Imposible to save null to date prop like mongoose](https://github.com/Ivshti/linvodb3/issues/102)
 # discuss
 - ## 
 
 - ## 
 
+- ## 
+
+- ## [Why cursor is not an EventEmitter?](https://github.com/Ivshti/linvodb3/issues/26)
+  - I think it may be useful, especially with live queries. For now, update of one live query invokes handlers of the same collection for other live queries. 
+  - It's not good, because any handler can emit a re-render of different parts of the screen or make some hard computations.
+- Probably good point. You can PR it. I think if you replace the constructor initialization with an EventEmitter (or extend object with event emitter on init) it would not break anything.
+  - BTW, you should keep in mind linvodb emits events for live queries itself
+
+- ## [Is it possible to preload db before quering? Like `nedb.loadDatabase` ?](https://github.com/Ivshti/linvodb3/issues/39)
+- It doesn't need .loadDatabase, because the architecture is different
+  - storage decides whether to pre-load key/value pairs
+  - storage almost certainly preloads keys
+  - as for in-memory indexes, they are built on demand
+  - if you want to build all your indexes on demand, just specify `index: true` in your model for every queried property
+
+- ## [Store HTML in LimvoDB](https://github.com/Ivshti/linvodb3/issues/44)
+  - I want to make something like Sublime Text
+  - when editing, all content inside is store in localStorage/IndexedDB/...
+- an advantage with linvodb here is that it's abstract to the storage engine, and you can use anything compatible with leveldown
+  - This means that localStorage/indexedDB/even raw files are all usable, depending on how the storage performs.
+- In the case you're mentioning, I'd recommend being open-minded about storage
+  - With LinvoDB, you can create a model called "TempFile" or directly "File" and use that.
+  - You can have a `dirtyData` field on your object, which contains the last state of the data; this would be saved very often, like 1s after last keystroke.
+  - Then, you can have a function, `flushToDisk()` , which flushes the file to disk when the user actually saves it, and removes dirtyData.
+  - The benefit of this design is that you can call `.save()` as often as you want, and keep what the user is typing secure and saved (in localStorage, indexedDB or whatever you want), and call `.flushToDisk()` when the user actually saves to disk
+
+- ## [group by equivalent? · Issue #54 · Ivshti/linvodb3](https://github.com/Ivshti/linvodb3/issues/54)
+- You can use .reduce() to do it
+
+```JS
+db.reduce(function(cur, obj) {
+  cur[obj.category] = cur[obj.category] || [];
+  cur[obj.category].push(obj);
+}, {})
+```
+
+- ## [memory usage of find({}).sort()](https://github.com/Ivshti/linvodb3/issues/65)
+- depending on the indexing, it can consume high amounts of memory
+- By default, linvodb makes an index for every key.
+
+- ## [Is it normal that Doc.find({}) is that slow ?](https://github.com/Ivshti/linvodb3/issues/52)
+- Yes, it would be. Which browser are you testing in? Safari is extremely slow with indexeddb, chrome are faster.
+
+- ## [Specify Field Selection](https://github.com/Ivshti/linvodb3/issues/74)
+- the way linvodb3 works is that it takes the objects out of any underlying storage and then JSON.parse-es them
+  - this means that even if you want a subset of fields the whole object would still have to be retrieved and then parsed, which defeats the performance benefits
+  - I suggest you utilize live queries and aggregation, that way the objects will be really retrieved only once at the loading of the app and afterwards the results will only be hot-updated when necessary
+- 
+Also if you are running into performance issues you should try changing your back-end store. 
+
+- ## [feat-req: Capped collections](https://github.com/Ivshti/linvodb3/issues/3)
+- [Capped Collections — MongoDB Manual](https://www.mongodb.com/docs/manual/core/capped-collections/)
+  - Capped collections are fixed-size collections that support high-throughput operations that insert and retrieve documents based on insertion order. 
+  - 👉🏻 Capped collections work in a way similar to circular buffers: once a collection fills its allocated space, it makes room for new documents by overwriting the oldest documents in the collection.
+
+- ## [Several live queries whitin one Scheme and live query change?](https://github.com/Ivshti/linvodb3/issues/107)
+  - Lets say i have Planets scheme and i have two live quersies one with .limit() and one just returning it all. is it possible?
+- even though the API of this module is pretty convenient, the module itself is unfortunately unsupported
+
 - ## [[Feature Request] Importing and Exporting](https://github.com/Ivshti/linvodb3/issues/15)
-- For importing you can use the .save method, which allows bulk save, and would account for re-saving (updating) objects, unlike insert which only does new inserts.
+- LinvoDB itself does not support an API like this, and it doesn't sound like a feature that should be embedded in the DB to me. 
+  - One benefit from having it integrated with the DB is to get the mapping in the schema itself - and then use `Model.schema` to translate the import format into JS properties - but that won't require patching LinvoDB itself.
+
+
+- For importing you can use the `.save` method, which allows bulk save, and would account for re-saving (updating) objects, unlike insert which only does new inserts.
 
 - As for exporting, the best approach would be a streaming cursor - which I'll implement, push and document in a little while.
+  - Streaming cursors out in 3.10.0(201507)
+  - cursor.stream(function(d) { /* document */ }, function(err, res) { /* query is finished, you can still use res */ });
 
-- ## [Any plans to rewrite on ES6?](https://github.com/Ivshti/linvodb3/issues/24)
-- I've decided to reimplement almost all things of the project with better decomposition, promises, ES6 and code linting. Check my work in c58/marsdb
+- I agree that import/export should not be embedded into the DB, as tools like `mysqlimport`, `mongoimport` are also external utility tools. Looks like having a separate utility tool is more appropriate.
+
+
+
+- ## [linvodb: Any plans to rewrite on ES6? Check my work in c58/marsdb_201509](https://github.com/Ivshti/linvodb3/issues/24)
+- I've decided to reimplement almost all things of the project with better decomposition, promises, ES6 and code linting. 
   - Indexes is removed, but should be implemented soon, after some storage implementations (just in-memory now)
 
 - Currently linvodb creates indexes for every key individually, on demand, and on queries makes an intersection of results from separate indexes.
@@ -70,6 +145,9 @@ Also I found some mongo-like databases, like TingoDB, whose supports indexes, bu
 
 - Do the entries actually stay in the database? Or only on the filesystem?
   - If it's only on the FS, it's pretty normal, as medea won't delete the entries unless you call compact ( can't remember how it was called ).
+
+- Think I was wrong. It seems that a Key Value pair with an ID and a key get returned on each refresh only if I create an intended new entry before the refresh and it's inconsistent, it does not always happen. I hope I'm explaining well enough. Could create a small video with an example if you want to.
+  - The results themselves are not returned by the find({}), but they're in Resources > IDBWrapper.
 
 - ## [is there any way to encryption and decryption](https://github.com/Ivshti/linvodb3/issues/64)
 - since linvodb3 is only a middleware, so you can use an encrypted back-end store (key-value store) and you would achieve the goal

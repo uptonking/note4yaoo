@@ -1,128 +1,85 @@
 ---
-title: web-wasm-dev
-tags: [dev, wasm]
-created: 2020-12-31T19:17:26.544Z
-modified: 2021-01-01T20:10:51.125Z
+title: web-wasm-community
+tags: [community, wasm]
+created: 2022-12-24T07:31:27.256Z
+modified: 2022-12-24T07:31:48.493Z
 ---
 
-# web-wasm-dev
+# web-wasm-community
 
 # guide
 
-- tips
-  - 前端开发后端化(Nodejs)，后端开发前端化(WebAssembly)都是比较明确的趋势，未来前后端开发将进一步融合。
-# faq
-
-## [Why WASM is not the future of Babylon.js__202108](https://babylonjs.medium.com/why-wasm-is-not-the-future-of-babylon-js-5832b09c9b10)
-
-- [recently a question about WebAssembly (WASM) being the future](https://twitter.com/jpmolla/status/1420704185478156288)
-  - @threejs: NO
-  - @babylonjs: NO
-
-- I wanted to use this blog to get more into details about why we do not think WASM is the future of JavaScript frameworks.
-
-### WASM is a target not a user facing language
-
-- WASM is meant to be a way for native developers (mostly C/C++) to compile their project into something that a browser can understand and execute.
-- You can still read and maybe manually write WASM code as it is text based (the same way you can write byte code instead of writing C# or Java code).
-- It is just **terribly inefficient** to use it that way. 
-- Furthermore to reduce the size most of the time the WASM module are stored in a binary format.
-- Memory management is on you, math functions are on you, string management is on you, etc.
-  - Thanks to that, the performance of WebAssembly is supposed to execute faster than the JavaScript equivalent.
-  - But unfortunately this is not something we can build a web framework on.
-  - The main reason is that it is not easy (to say the least) to write WASM as it is not really meant to be written by humans.
-- We had a long discussion about it on our repo where we were evaluating the option to use AssemblyScript
-  - **The conclusion is that for now we see no good reason to port the entire engine to C++** (immense amount of work, killing all contributions we could get from the community, harder to maintain, etc.) to get the potential performance boost of WASM.
-
-### WASM should not be called for small chunk of work
-
-- We could argue that some parts of the engine should be written with WASM. Maybe the more compute intensive (like the math library).
-- But there is a catch: Communication between JavaScript environment and WASM environment takes time. There is a bit of marshalling involved and that marshalling is expensive.
-
-### WASM is hard to debug
-
-- Because WASM is not easy to read, it it not easy to debug. 
-- Chrome recently released some tools to help
-- But in a nutshell you have to compile your native code with debug symbols to get some debugging support. 
-
-### WASM could be fat
-
-- Because WASM modules needs to provide everything (from memory management to math support) they can quickly become big assets that need to be loaded every time you start your page.
-- As an example, we are currently working on supporting WebGPU. To do so we need to compile our shaders (written in GLSL) to WGSL and this requires us to load a 3MB WASM module (just remember that the entire babylonjs library is 3MB).
-
-### But we still love WASM
-
-- That being said we are not haters of WASM. 
-- On the contrary we are using it in several areas of Babylon.js (mostly when we want to use existing native code that will do some atomic functions)
-  - Draco decompression
-  - KTX2 decoders
-  - GLSL to WGSL compilation
-  - Ammo physics engine
-  - Navmesh and crowd agents
-- Maybe in the future we will revisit our position if the situation changes but we will always make sure that the experience for web developers is top notch!
-
-### discussion
-
-- [Why WASM is not (for now) the future of Babylon.js](https://twitter.com/deltakosh/status/1423657621010087947)
-- [Why WASM is not the future of Babylon.js](https://babylonjs.medium.com/why-wasm-is-not-the-future-of-babylon-js-5832b09c9b10)
-- What about WebGPU?
-  - Webgpu can be seen like webgl3 so no difference
-- Nice writeup, yeah it’ll be hard to integrate WASM in unless we figure out a way to let WASM do its own thing for longer without too much communication with the JS side.
-- Great read. Could not agree more!
-People should not try to turn WASM into a cult. Tech is meant to be used and leveraged as required by the use cases. Do not try to turn something as great as WASM into an alleged silver bullet that will fit all problems. Be pragmatic engineers!
-
-# pieces
-- 典型应用场景
-  - 扩展浏览器端视音频处理能力
-  - 游戏计算
-- 90%的应用场景都不需要WebAssembly
-  - https://www.infoq.cn/article/ytxfUWloi2wi00cQY-8a
-  - js问题
-    - 语法太灵活导致开发大型项目困难
-    - 性能不能满足一些场景的需要
-  - TypeScript是JavaScript的一个严格超集，并添加了可选的静态类型和使用看起来像基于类的面向对象编程语法操作Prototype，TypeScript最终仍然是被编译成JavaScript在浏览器中执行
-  - 在2008年，Google推出了JavaScript引擎V8，首次通过JIT技术提升JavaScript的执行速度，并且它真的做到了
-    - Web应用中，性能瓶颈大部分的原因已经不在JavaScript，而在于DOM。浏览器中通常会把DOM 和JavaScript独立实现，这两个模块相互访问的时候，都是通过接口访问。由于JavaScript单线程的特性，这种访问只能是单工的
-    - 为了减少js访问dom的次数，可以使用Virtual Dom，Web Worker 
-    - JIT执行时，可以根据代码编译进行优化，代码运行时，不需要每次都翻译成二进制汇编代码，V8就是这样优化JavaScript性能的
-  - 为了进一步提升JIT优化效率，Mozilla 推出了asm.js。asm.js也是强类型的JavaScript，但是他的语法则是JavaScript的子集，是为了JIT性能优化而专门打造的，其他大厂都觉得asm.js的思路不错，于是联合起来共建WebAssembly生态
-  - WebAssembly是一份字节码标准，以字节码的形式依赖虚拟机在浏览器中运行，可以依赖Emscripten等编译器将C++/Golang/Rust/Kotlin等强类型语言编译成为WebAssembly字节码.wasm 文件。
-    - WebAssembly并不是Assembly（汇编），它只是看起来像汇编
-  - 鉴于V8的强大性能，90%的应用场景下你不需要WebAssembly
-  - 如何提高JS代码性能
-    - 声明变量时提供默认类型，加快JIT介入
-    - 不要轻易改变变量的类型
-    - Node.js像Java一样也存在JIT预热？
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Webassembly: possible to have shared objects?
+- Yes, this is possible.
+- WebAssembly stores objects within linear memory, a contiguous array of bytes that the module can read and write to. The host environment (typically JavaScript within the web browser) can also read and write to linear memory, allowing it to access the objects that the WebAssembly modules stores there.
+- There are two challenges here:
+  - How do you find where your WebAssembly module has stored an object?
+  - How is the object encoded?
+- You need to ensure that you can read and write these objects from both the WebAssembly module and the JavaScript host.
+- I'd pick a known memory location, and a known serialisation format and use that to read/write from both sides.
+
+- If you use Embind in Emscripten, or `wasm-bindgen` in Rust, they allow doing this for you automatically - that is, they'll wrap any C++/Rust objects you annotate and expose them to JS as regular objects, allowing you to modify them from either side. 
+
+- ## Is it possible to share complicated JavaScript data structure directly with WebAssembly?
+- https://github.com/WebAssembly/interface-types/issues/18
+  - I want to know is it possible to share complicated JavaScript data structure like "Object" or "Array" directly with WebAssembly context?
+  - As I know, there will be a lot of overhead if we want to share a JavaScript array with WebAssembly, first we need to encode this array data and then pass it to WebAssembly context through WebAssembly. Memory. Second, the WebAssembly module(C/C++ side) also need to fetch those data again in the WebAssembly linear memory through the pointer of this array.
+
+- Yes, with the reference-types and host-bindings proposals, it is possible to pass a JS object reference directly to wasm (and also pass a JS object from wasm back to JS).
+  - However, those proposals aren't fully standardized and implemented yet.
+
 - ## [如何看待 WebAssembly 这门技术？](https://www.zhihu.com/question/362649730/answers/updated)
 - 我不太认为 WASM 是值得前端 all in 的技术，概括地说几点问题：
   - WASM运行时性能在原理上就是受限的，跑不到真正的汇编级别。
+
     - Rust 编译到 WASM 后有不小的性能损失，极致优化后的 JS 不会输它多少
     - 所以真实世界 benchmark 里，WASM 往往并没有压倒性的优势。
     - 不要以为这是因为它不够成熟，而是原理上就决定了。
+
   - WASM不是计算密集型应用的唯一救星。
+
     - 对于真正高度并行且精度要求不高的算法，**用WebGL做GPU加速往往更快**，然后才是WASM这种CPU上运行的字节码。
+
   - 嵌入 WASM 函数到 JS，未必就能提高性能。
+
     - JS 自身的 JIT 已经内置了机器码级的优化，你手动把算法重写成 C，未必比 Happy Path 上的 JIT 更快。
+
   - JS 与 WASM 的双向调用并不像 Python 嵌入 C 那么简单，
+
     - 你不能随便把 JS 里的对象直接交给 WASM，至于喊着打通一切运行时类型的 WASM Interface Types 才刚有了个影子。
+
   - 主流前端UI框架未必值得用 WASM 重写，
+
     - 它们的场景是 IO 密集的，换语言彻底重写的投入产出比很难说。
     - 按相同逻辑，既然 JVM 比 V8 快，你愿意用 Java 重写 Node 服务吗？
+
   - WASM生态跟前端工具链基本无关，
+
     - 它的 Emscripten 工具链搞的完全就是 C++ 系语言交叉编译，从编译器到依赖库都完全跟 JS 这一套无关。
+
   - [一个白学家眼里的WebAssembly](https://zhuanlan.zhihu.com/p/102692865)
   - 我不是说WASM不好，它非常适合把原生应用搬到Web上 
+
     - 编译出一个C++应用的Web版就像把它编译到安卓一样，换一套工具链就行。
     - 但是，不要把 WASM 当作一切前端性能问题的灵丹妙药，更不要觉得把你的 JS 随便用 Rust 重写一下就能快几倍。
     - 还是那句老话，没有银弹
+
 - 我们认为WebAssembly的潜力在服务端。
   - 与Java 和 JavaScript 引擎相比，WASM 通过LLVM 工具链支持20多种编程语言，从而让开发人员有选择语言工具的自由
   - 同时，WASM 可以轻松支持CPU、GPU、 AI 优化芯片和FPGA 等硬件功能。
   - 与Docker之类的容器相比，它为开发人员提供了更抽象的代码执行环境，从而提高了开发效率。
+
     - 它可以直接部署代码和应用程序，而不必启动操作系统。
     - Wasm 程序不需修改，就可以在不同的操作系统上运行。
     - 这与当今的云原生微服务架构配合得很好。
+
   - WASM 消耗的内存和资源比操作系统级别的容器少得多。
 - 我认为wasm的价值非常大
   1. 首先wasm得到了很多大厂的支持，无论是typescript还是c/c++还是go语言都能编译到wasm；
@@ -141,7 +98,9 @@ People should not try to turn WASM into a cult. Tech is meant to be used and lev
   - 原本只有JavaScript是跨所有平台的，C++/C#差一个浏览器，现在这个问题没有了。老旧代码可以继续拿来用。
 - 在我的Wasm的实践来说，Wasm对于前端开发来说是解放了一些特殊能力，使得一些边缘计算成为了可能。
   - Web前端的算法能力和数据处理能力在对于C++是比较薄弱的，wasm使得很多C++实现的算法很方便的移植到了浏览器中，
+
     - 使得JS只需要调用调用方法就可能实现以前JS很难实现的功能，比如我前段时间做的扣脸功能。
+
 - 而对后端来说，Wasm主要是解决了后端开发C++库的一些心智负担。
   - 对于后端来说，如果要使用一个C++库则需要安装这个C++库的依赖到线上环境，
   - 其次再使用node-gyp来构建的库，这样就很可能C++库版本依赖发生变化导致的各种各样的问题，无疑是加大了后端开发者的心智负担，
@@ -173,9 +132,11 @@ People should not try to turn WASM into a cult. Tech is meant to be used and lev
   - 不需要在不同环境编译，开发过C++扩展的就知道，经常性导致不同环境（尤其是不同Linux发行版）缺少依赖以至于编译失败。
   - 兼容性好不会因为win和Linux的方法不同而和CPU指令集（ARM和x86之争）不同无法运行。
   - 所以目前短期来看都是在丰富JS语言能力。
+
     - 而且使用其它语言包括rust，golang，java，c++你会发现编译WASM给JS写方法很方便，而全部用非js语言来开法非常麻烦。
     - 而这些都是在丰富JS库，以及方便移植的其它语言代码。
     - 所以后续难保不会出现clickhouse.js,docker.js，k8s.js。
+
   - 长期来说开发估计还是少不了JS，只不过上线可能会全部转换为WASM了。
 - 后面JavaScript会被编译为webAssembly提速。这叫取代了吗？
 
@@ -205,11 +166,14 @@ People should not try to turn WASM into a cult. Tech is meant to be used and lev
   - 虽然 Figma 的外围控件 UI 是 HTML + CSS 的，但核心的交互界面则在一个 Canvas 内承载，不难发现这个 Canvas 是使用 WebGL 的
   - 中间这整个 Canvas 的交互明显是 WASM 控制的。外围控件平台独立 UI + 核心编辑区域 WASM，这种架构设计是值得借鉴的。
   - 推荐一个在浏览器里运行的全功能 Photoshop，亦即稿定PS
+
     - Photopea 所有的代码都是 JavaScript，没有任何 WASM 成分
     - 我就此专门问过 Ivan 的想法，按他的说法，用 JS 重写那些 C++ 的底层代码，对他来说往往比费力把这些库接进来更方便
     - Photopea 从字体二进制解析、算法处理、渲染到图像编码导出，几乎都是他自己 JavaScript 徒手撸的。
     - 另外，一些 AI 抠图等需要训练模型的地方，未来也可能引入 WASM。
+
   - 所以基本上，效果拔群的 Web 应用，关键倒不是选 JavaScript 还是 WASM，而是**掌握对渲染的极致控制**。
+
     - 当你有了这个水平之后，是否使用 WASM 也只是一种选择而已
 
 - ## [c++项目转成wasm全过程_202007](https://zhuanlan.zhihu.com/p/158586853)
@@ -224,12 +188,16 @@ People should not try to turn WASM into a cult. Tech is meant to be used and lev
   - 多平台的发布问题，如果我们想自己发布的node cli能够在多个平台正常运行基本上有两种方式
   - 通过node-gyp交给用户侧完成so的编译过程，但是由于c++代码里对标准库和语言版本都有一些要求，在用户侧编译对用户的环境有一定的要求
   - 发布cli的时候，完成各个平台的动态库编译，
+
     - 这就要求每次发布cli的时候都要现在三个平台完成动态库的编译，这实际上要求我们在三个系统上搭建好自己的gitlab-runner，
     - 然而公司的内部的gitlab-runner默认只支持linux，这就要求我们自己搭建好一套成熟的gitlab多平台的CICD流程，这并不简单，而且这也难以解决开发者自己在本地发版的需求
+
   - 动态库虽然能完美的支持node、android和ios，但是在web端却无法去加载执行动态库，这阻止了我们将编译流程迁移到web的尝试。
   - 虽然我们发布了动态库，使得用户无需自己本地编译动态库，
+
     - 动态库的调用仍然依赖于ref-napi这个库去完成c++到js的binding，该库需要在用户本地进行编译(依赖了node-gyp进而依赖了xcode),
     - 而wasm不依赖xcode等c++环境，避免了用户对c++编译环境的依赖。
+
 - 出于上述的一些限制，我们尝试将c++代码编译为wasm，wasm除了其出色的执行性能，其还具有出色的跨平台特性
   - wasm是与操作系统和node版本无关的，因此我们一次编译，即可运行在linux|mac|window等多个操作系统上，再也不需要为各个系统分别编译动态库产物， 
   - 在node 8以上即支持了wasm，也无需担心node版本的兼容问题。
@@ -239,7 +207,7 @@ People should not try to turn WASM into a cult. Tech is meant to be used and lev
   - 实际上述编译结果难以跨平台的一大原因就在于不同操作系统的系统调用实现是不同的，我们必须要为不同的操作系统生成不同的代码来适配不同的系统调用实现。 
   - 这时候一个自然的处理方式就是将上述的系统调用结果编译到一个已经支持跨平台的runtime的系统调用上。
   - 幸运的是已经存在了多种上述的runtime: browser, node, wasi
-- 以浏览器为例，浏览器里js的`console.log`是一个天然的跨平台的系统调用，其可以平稳的运行在不同的操作系统上。 
+- 以浏览器为例，浏览器里js的 `console.log` 是一个天然的跨平台的系统调用，其可以平稳的运行在不同的操作系统上。 
   - 因此我们只需要将上述c++代码编译为wasm+ js glue代码即可，js glue代码负责将系统调用适配到浏览器提供的js api上
 - wasm制定了标准的api接口(WASI)，
   - 这时候wasm并不需要依赖js glue代码才能正常运行，任何实现了WASI的接口的runtime都能够正常加载该wasm。 
@@ -253,30 +221,3 @@ People should not try to turn WASM into a cult. Tech is meant to be used and lev
 - 飞书这边，我用 wasm 编译zlib 提供给js接口做压缩和解压，没有用emcc 工具链，自己手动编译其实也不复杂。
   - 出于包体积敏感的原因，没有生成is glue，互相调用过程，数据传输等手动封装一下问题也不大的。
   - 不过对于复杂的cpp还是更推荐emcc
-# ref
-- [Node.js大家是用什么方式链接C++代码的](https://www.v2ex.com/t/568399)
-- 打算用 electron 做 UI，CPP 做内核。但是在选择使用什么方式在 C++和 electron 之间搭桥的时候遇到了困难。
-- 目前看到的只有两个选择，一个是 node-ffi 直接链接 C++编译的 dll，
-  - 第一个选择 node-ffi 看上去不错但是一方面调用的时候开销大，另一方面似乎不太稳定而且缺乏维护（在 Github 上面最近一次 commit 还是在 1 月份） 
-- 另一个是使用 node-addon 的方法，用 node-gyp 编译 C++然后再链接。
-  - 第二个选择用 node-gyp 编译 C++似乎是个官方方案，但是运行例子 node-gyp 一直报错，看了 issue list 才知道问题已经存在很久没人修了，继续深入还得花一点时间。
-- 仅供参考
-  1. C++起个服务器，nodejs 与服务器交互。
-  2. C++编译成 web asm，nodejs 直接调用
-  3. FFI(这个坑目测更多，没具体研究过)
-  4. 类似于 1，socket
-  - 首推 web asm，稳，快，简单，更新快，和 js 天然
-- WASM确实是好东西，可惜我的C++部分涉及到了标准库之外的东西，port 到 wasm 上面还是有点麻烦。
-  - 看来用 socket 做 Electron 和 C++程序之间的 ipc 可能是最方便的方案。
-- 现在楼主想用一个 Electron，即压根不考虑运行在浏览器，而是运行到桌面客户端上，
-  - 因此没必要搞这一层，用 N-API 是最好的选择，用 IPC 只限于传输的数据比较有限，或者输入参数固定的场景
-  - 如果对于需要传递 C 结构体指针，频繁互相调用，N-API 能直接对应到 JS object 对象，调用起来是最原生的
-- 如果产品规模较大的话， 最好还是Native框架 + cef 来做，
-  - 系统 API 和库的使用就会方便的多，Node 对 Native 的支持很有限，
-  - 功能实现会有限制，比如窗口控制、并行下载等。
-
-
-- [Is WebAssembly magic performance pixie dust?](https://surma.dev/things/js-to-asc/)
-  - The incredibly unsatisfying answer is: It depends. It depends on oh-so-many factors, and I’ll be touching on some of them here.
-  - V8 is really good at executing JavaScript.
-  - While WebAssembly can run faster than JavaScript, it is likely that you will have to hand-optimize your code to achieve that. 

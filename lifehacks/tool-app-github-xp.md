@@ -50,7 +50,10 @@ modified: 2022-11-07T10:24:02.543Z
       - /inactive
   - repo项目名支持中文名，url中部分path支持中文名
 
-- search
+- search-issues/pr
+  - is:unmerged
+
+- search-repos
   - 搜索时变通的方法
     - 在github直接搜索导入库的代码 import from react，再限制语言如js
     - 或者搜索独特关键词 data-mdc-auto-init 的代码，而不是repositories
