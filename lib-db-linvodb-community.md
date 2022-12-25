@@ -83,27 +83,33 @@ Also if you are running into performance issues you should try changing your bac
 - LinvoDB itself does not support an API like this, and it doesn't sound like a feature that should be embedded in the DB to me. 
   - One benefit from having it integrated with the DB is to get the mapping in the schema itself - and then use `Model.schema` to translate the import format into JS properties - but that won't require patching LinvoDB itself.
 
-
 - For importing you can use the `.save` method, which allows bulk save, and would account for re-saving (updating) objects, unlike insert which only does new inserts.
 
 - As for exporting, the best approach would be a streaming cursor - which I'll implement, push and document in a little while.
   - Streaming cursors out in 3.10.0(201507)
-  - cursor.stream(function(d) { /* document */ }, function(err, res) { /* query is finished, you can still use res */ });
+  - cursor.stream(function(d) { /* document */ }, function(err, res) { /* query is finished, you can still use res */ }); 
 
-- I agree that import/export should not be embedded into the DB, as tools like `mysqlimport`, `mongoimport` are also external utility tools. Looks like having a separate utility tool is more appropriate.
-
-
+- I agree that import/export should not be embedded into the DB, as tools like `mysqlimport`,  `mongoimport` are also external utility tools. Looks like having a separate utility tool is more appropriate.
 
 - ## [linvodb: Any plans to rewrite on ES6? Check my work in c58/marsdb_201509](https://github.com/Ivshti/linvodb3/issues/24)
 - I've decided to reimplement almost all things of the project with better decomposition, promises, ES6 and code linting. 
   - Indexes is removed, but should be implemented soon, after some storage implementations (just in-memory now)
 
-- Currently linvodb creates indexes for every key individually, on demand, and on queries makes an intersection of results from separate indexes.
-- I like that approach very much, but intersections can become expensive. The other option is to put results in a bitmap and XOR / XAND according to the required logic, but that will get ugly quickly when exceeding a million records. 
+- I was thinking of ways to do indexes better. 
+  - Currently linvodb creates indexes for every key individually, on demand, and on queries makes an intersection of results from separate indexes.
+- I like that approach very much, but intersections can become expensive. 
+  - The other option is to put results in a bitmap and XOR/XAND according to the required logic, but that will get ugly quickly when exceeding a million records. 
+- The other option is using compound indexes, but that can also get ugly quickly with many queries and etc. 
+  - Maybe the DB can make compound indexes only in certain conditions and re-use them for several different queries, but I'm reluctant of trying to make a DB engine "smart". It's not a sustainable approach.
+- Thinking to other DB engines, embedded or not, relational or not, I cannot think of a solution to this problem. Maybe Postgres / some MySQL storage engines have the answer within them, but unfortunately I do not have enough knowledge on the matter.
 
 - I think we need to get some ideas from the original, likely it's open sourced (I mean MongoDB, ofc) :)
-Also I found some mongo-like databases, like TingoDB, whose supports indexes, but I don't think it uses some better solution, then intersecting/XORing. (need to be checked)
+  - Also I found some mongo-like databases, like TingoDB, whose supports indexes, but I don't think it uses some better solution, then intersecting/XORing. (need to be checked)
 
+- That's exactly the issue, the original doesn't solve the problem at all. 
+  - 👉🏻 It relies on you to make your own indexes, which is totally ok, but then it picks which indexes to use in a totally mindless way - if you have a lot of indexes. 
+  - Which leads to having to use `.hint()`, which kind of removes the whole advantage of it's promised ease of use. 
+  - You can optimize queries greatly with .hint(), but if you have a more dynamic query (e.g. not always on the same properties), then you have to be smart about hints.
 - MongoDB is also built to do one index lookup for a query. I'm not entirely sure if today it still follows that, but I'm sure it does a lot of scanning if you haven't optimized the queries.
   - 👉🏻 That's why linvodb is entirely scan-less, except of course the first time when indexes are built.
 - Maybe some manual intervention should be allowed, but instead of building indexes prematurely, just give them as .hint()'s and then the DB first lookups this index, no matter if compound or not, and then applies XOR/XAND with the other matches for other properties if there are any.

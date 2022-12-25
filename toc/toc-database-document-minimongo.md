@@ -97,6 +97,7 @@ modified: 2022-11-30T18:57:26.459Z
   - written on ES6, have a Promise based interface and may be backed with any storage implementation
   - 支持内存、localStorage、localForage、levelup
   - It's also supports observable cursors.
+  - [Added simple indexes with String, Number and Date types support](https://github.com/c58/marsdb/pull/8)
   - [linvodb: Any plans to rewrite on ES6? Check my work in c58/marsdb_201509](https://github.com/Ivshti/linvodb3/issues/24)
   - https://github.com/c58/marsdb-sync-client
     - It's a Meteor compatible DDP client, based on MarsDB. 

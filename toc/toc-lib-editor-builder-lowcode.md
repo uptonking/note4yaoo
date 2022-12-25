@@ -60,14 +60,15 @@ modified: 2020-12-28T12:24:09.275Z
   - 依赖react、redux、styled-components、razzle、d3-require、@mdx-js/runtime、@editorjs、antd.v4、ahooks
   - Djitsu is an editor, application, and an execution platform all rolled into one
 
-- https://github.com/fantasticit/cube
+- cube /89Star/NALic/202009/ts/inactive
+  - https://github.com/fantasticit/cube
   - https://blog.wipi.tech/odin/editor
   - 中后台页面搭建低代码平台
     - 通过 JSON 配置描述页面信息
     - 通过配置初始化 Store
     - 通过配置渲染页面
     - 通过交互组件修改 Store 数据，重新渲染页面
-  - 依赖antd4、codemirror5、mobx5、showdown
+  - 依赖antd4、codemirror5、mobx5、showdown、nextjs
 
 - https://github.com/kontenbase/kontenbase /202209/ts/inactive
   - https://kontenbase.com/

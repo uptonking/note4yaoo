@@ -93,6 +93,7 @@ tb2 = new Model('movie2', {
 });
 
 
+var live = Planet.find({ system: "solar" }).sort({ inhabited: -1 }).limit(2).live(); // don't forget you can still use map, reduce, filter, aggregate
 
 ```
 
