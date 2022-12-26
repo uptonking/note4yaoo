@@ -28,12 +28,30 @@ modified: 2022-12-22T15:22:15.191Z
 
 - images
 # codebase
-- ❓ 代码中update操作然后remove，实际上update操作的cb比remove操作的cb后执行
+- 较大的源码改动
+  - 去掉了 construct 事件，因为每个doc对象都是普通js对象，而不是Model对象，与nedb一致
+
+- 从db查找对象时，会先在Model的dml方法中注册ids/data/ready事件，然后在Cursor.getMatchesStream中触发相应的事件
+  - 在Cursor.getMatchesStream中触发ids，在Cursor.retriever取完数据触发data
+  - data/ready都在ids事件内部
+  - 在Model的dml方法中注册ids/data/ready事件
+    - cursor.exec中注册了ids/data/ready
+  - 在Cursor中触发相应的事件
+    - 触发ids
+      - 在Cursor.getMatchesStream中Cursor.getIdsForQuery找到ids
+      - 在Cursor.getMatchesStream中buildIndexes完成后的回调找到ids
+      - 在Cursor.getMatchesStream的最后注册ids事件
+    - Cursor.retriever触发data
+    - 触发ready
+      - 在Cursor.getMatchesStream的参数收到ids
+      - 在Cursor.retriever的cb
+
+- ❓ 怪异的执行顺序
+  - 代码中update操作然后remove，实际上update操作的cb比remove操作的cb后执行
   - 代码中先 insert>update, 但cb顺序update>insert
+  - save方法的callback是在insert-cb和find-cb之后执行的
 
 - 在insert和find的过程中，都有  Cursor.getMatchesStream
-
-- save方法的callback是在insert-cb和find-cb之后执行的
 
 - ？ insert只插入了一个对象(是否1次)，但get能返回2个对象
   - 分析错了，上次保存的数据未及时清理

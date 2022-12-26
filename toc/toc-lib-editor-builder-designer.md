@@ -54,7 +54,7 @@ modified: 2020-11-17T13:38:19.107Z
   - https://www.plasmic.app/
   - Visual page builder and web design tool for any website or web app tech stack
 
-- blocks /MIT/3.6kStar/202006
+- blocks /MIT/4.6kStar/202006/js/inactive
   - https://github.com/blocks/blocks
   - https://blocks-ui.com/
   - A JSX-based page builder for creating websites without writing code

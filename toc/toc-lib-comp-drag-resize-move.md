@@ -47,6 +47,7 @@ modified: 2022-02-05T18:45:34.558Z
   - https://stackblitz.com/edit/typescript-wvnloa
   - A vanilla JS draggable library
   - Lightweight multi-framework libraries for draggability on the web.
+  - 支持vanillajs/react/vue/svelte/solid
 - dflex /1.4kSStar/MIT/202209/ts
   - https://github.com/dflex-js/dflex
   - https://www.dflex.dev/demo/lists/nested/

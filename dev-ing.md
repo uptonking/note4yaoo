@@ -124,12 +124,19 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to
   - crdt tutorials
 
-## 1225
+## 1226
 
 - dev-to
   - linvodb find/index
 
+- mocha测试文件调试方法
+  - 手动在可疑点添加  `debugger;`
+
+- Error: Callback was already called.
+  - node_modules/async/dist/async.js:969:32
+
 ## 1223
+
 - symbol作为key时，难以获取值，for-in
 
 ```JS

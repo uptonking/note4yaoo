@@ -208,6 +208,11 @@ modified: 2021-01-08T11:48:16.590Z
   - https://github.com/onitecsoft/smarti.dock.js
     - JQuery floating dock panel. Native configuration, custom layout and css style
 # resize-grid-layout
+- react-resizable-panels /452Star/MIT/202212/ts
+  - https://github.com/bvaughn/react-resizable-panels
+  - https://react-resizable-panels.vercel.app/
+  - React components for resizable panel groups/layouts.
+
 - muuri /10.1kStar/MIT/202107/js
   - https://github.com/haltu/muuri
   - https://muuri.dev/
