@@ -124,16 +124,44 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to
   - crdt tutorials
 
-## 1226
+## 1227
 
 - dev-to
   - linvodb find/index
+
+- [What are the advantages of async.js over native Promises](https://github.com/caolan/async/issues/1714)
+  - Promises add a caching layer for results and errors and state machine around your function calls which makes things more stateful and somewhat slower than necessary and they also allow passing the next point of execution around which breaks encapsulation. Async/await helps somewhat with the latter but you can get the best of both world with casync along with this library.
+  - I could do Promise.all(ratings.map(processRating)) but this would overload my API. With mapLimit I can set a max of 25 calls at a time. Rather than 1000's. 
+
+- [oop - How do I create an abstract base class in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/597769/how-do-i-create-an-abstract-base-class-in-javascript)
+
+```JS
+class Animal {
+
+  constructor() {
+    if (this.constructor == Animal) {
+      throw new Error("Abstract classes can't be instantiated.");
+    }
+  }
+
+  say() {
+    throw new Error("Method 'say()' must be implemented.");
+  }
+
+  eat() {
+    console.log("eating");
+  }
+}
+```
+
+## 1226
 
 - mocha测试文件调试方法
   - 手动在可疑点添加  `debugger;`
 
 - Error: Callback was already called.
   - node_modules/async/dist/async.js:969:32
+  - 未解决
 
 ## 1223
 

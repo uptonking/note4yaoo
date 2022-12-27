@@ -31,6 +31,9 @@ modified: 2022-12-22T15:22:15.191Z
 - 较大的源码改动
   - 去掉了 construct 事件，因为每个doc对象都是普通js对象，而不是Model对象，与nedb一致
 
+- schema的作用
+  - 在初始化Model时，生成构建索引的options
+
 - 从db查找对象时，会先在Model的dml方法中注册ids/data/ready事件，然后在Cursor.getMatchesStream中触发相应的事件
   - 在Cursor.getMatchesStream中触发ids，在Cursor.retriever取完数据触发data
   - data/ready都在ids事件内部
