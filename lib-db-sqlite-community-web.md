@@ -16,6 +16,28 @@ modified: 2022-11-25T09:47:43.079Z
 
 - ## 
 
+- ## Two reasons to use the Notion desktop app(202212):
+- https://twitter.com/NotionHQ/status/1606002597579538432 
+  - 50% faster performance than web
+  - a more focused writing experience
+- We use IndexedDB, but not for caching content (and we fight it all the time as it is 😱). Unsure if we've ever tried throwing blocks in there.
+  - We’ve had good experience caching all your calendar and contacts data with @Cron in IDB, to a less voluminous degree, but essentially also just JSON blobs. That said, SQLite has been rock-solid for other projects I’ve worked on.
+
+- If IDB was less finicky(难以令人满意的，挑剔的) for Notion’s use case and we used it for blocks, could we get the same 50% for the web app?!
+- IndexedDB struggles with block-level granularity. We'd need to build a batched cache strategy instead of caching each block individually. We've also seen a lot of IDB flake(怪人); at a certain scale, problems that affect 0.1% of users start to result in a lot of bug reports.
+- 👉🏻 You have to do your own paging to get good performance with idb. It’s best thought of as a block store not a kv store.
+  - Replicache aggregates data into blocks of roughly 4kb and we found that to be the best tradeoff.
+- Yep, that was my conclusion too. Instead of doing all the paging work, we're gonna wait for SQLite + OPFS for web to mature.
+- My only concern is how it’s going to work across tabs. We had to do a lot of pretty clever work in Replicache to make it fast and support schema changes across tabs. Hard to make it fast when access blocks on cross-process locks.
+- I was thinking we’d funnel all access through a ServiceWorker or SharedWorker. No locks needed. We already negotiate schema updates for SQLite/IndexedDB in a simple way - tabs that are out of date switch to memory and/or refresh.
+- That will work but you’ll still have the latency to service worker, which will cause you to want to run mutations against the per tab cache locally, not against the service worker. This means there can be conflicts when two tabs mutate their local cache in conflicting ways.
+  - Basically you end up having to sync the store with tabs in the same way you sync with server today. Because no matter what you’ll want in memory perf in the tabs. It ends up being kind of a two level sync: tabs to storage, storage to server.
+  - This can all totally work (we have it working). It’s just not as simple as “just  read/write direct to sqlite” which is what I think a lot of people are hoping.
+- We already have a SQLite in a separate process we talk to via JSON (& the tab in memory cache, write operation queue, etc etc etc), hopefully a SQLite in a Worker we talk to with structured clone will perform even better
+- Firebase coordinates the primary tab by acquiring a lease via IndexDB. A good explanation on how that pivots to using broadcast channel is in the comments
+  - That kind of strategy also works. My point is only that “just use sqlite” I don’t think magically addresses performance, because there is cross process synchronization that is fundamental to running in a web browser.
+
+
 - ## What’s the advantage of using WASM SQLite over IndexedDB for a web application?
 - https://twitter.com/frankdilo/status/1600579551771377674
 - IndexedDB can never be as fast, plus SQLite is just way more advanced to use...
