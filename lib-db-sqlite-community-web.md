@@ -1,6 +1,6 @@
 ---
 title: lib-db-sqlite-community-web
-tags: [community, indexeddb, sqlite, storage]
+tags: [community, indexeddb, sqlite, storage, wasm]
 created: 2022-11-25T09:47:03.550Z
 modified: 2022-11-25T09:47:43.079Z
 ---
@@ -14,7 +14,21 @@ modified: 2022-11-25T09:47:43.079Z
 
 - ## 
 
-- ## 
+- ## Funny how I tend to overcomplicate things. Working on a project that processes lots of data in the browser (~12M records).
+- https://twitter.com/mgechev/status/1608266730765422594
+- First I tried to find an efficient multidimensional index implemented in C++/Rust to compile to WASM and query in a Web Worker.
+  - Didn't work great because of missing SIMD instructions in WASM that the C++ data structure depends on.
+- Decided to switch to a simpler data structure that doesn't use SIMD...and is slower.
+  - The pointers for this PHTree created too big of a memory overhead so the browser wouldn't execute the script before running out of memory.
+- I was thinking...let me use SQLite compiled to WASM and create an index over the columns I run queries.
+  - The database grew to 800MB, but the gzipped version it was still manageable.
+- Funny thing, it was performing *almost* just as well as the database without an index, that was almost half the size...
+  - Still querying the database in a Web Worker to offload from the main thread.
+- Decided to compare the performance of SQLite to simple for loops over an array...
+  - Guess what...the for loop was close to twice faster.
+- Ended up using just a simple for loop over ~200MB data file in a Web Worker and the performance is decent. The complexity is also way lower.
+- Turned out SQLite is >25% faster. Glad I went that route :)
+  - I ran in the same browser and did a proper benchmark the second time.
 
 - ## Two reasons to use the Notion desktop app(202212):
 - https://twitter.com/NotionHQ/status/1606002597579538432 
@@ -24,10 +38,14 @@ modified: 2022-11-25T09:47:43.079Z
   - We’ve had good experience caching all your calendar and contacts data with @Cron in IDB, to a less voluminous degree, but essentially also just JSON blobs. That said, SQLite has been rock-solid for other projects I’ve worked on.
 
 - If IDB was less finicky(难以令人满意的，挑剔的) for Notion’s use case and we used it for blocks, could we get the same 50% for the web app?!
-- IndexedDB struggles with block-level granularity. We'd need to build a batched cache strategy instead of caching each block individually. We've also seen a lot of IDB flake(怪人); at a certain scale, problems that affect 0.1% of users start to result in a lot of bug reports.
+- 👉🏻 IndexedDB struggles with block-level granularity. We'd need to build a batched cache strategy instead of caching each block individually. We've also seen a lot of IDB flake(怪人); at a certain scale, problems that affect 0.1% of users start to result in a lot of bug reports.
 - 👉🏻 You have to do your own paging to get good performance with idb. It’s best thought of as a block store not a kv store.
   - Replicache aggregates data into blocks of roughly 4kb and we found that to be the best tradeoff.
 - Yep, that was my conclusion too. Instead of doing all the paging work, we're gonna wait for SQLite + OPFS for web to mature.
+- 👉🏻 As someone casually building with IDB, could you explain what you mean by doing your own paging?
+  - Make the records you store in IndexedDB big & chunky. @aboodman suggested 4kb per record. So, treat records more like “pages” in a DB, not rows like in a SQL-style DB.
+  - That makes sense. It's a little disappointing. I think maybe I could chunk operation data by document, since it's already generally accessed by range. But I'd prefer not to re-implement stuff like querying hybridized in-memory and in-store. Maybe I'll keep an eye on sqlite too...
+  - Once you read rows out of SQLite or IndexedDB where do they go? Straight into the DOM never to be looked at again??? You’ll want a cache either way. OTOH whenever you get advice from Randoms Online, ignore the advice and do the Simplest Thing That Could Possibly Work first
 - My only concern is how it’s going to work across tabs. We had to do a lot of pretty clever work in Replicache to make it fast and support schema changes across tabs. Hard to make it fast when access blocks on cross-process locks.
 - I was thinking we’d funnel all access through a ServiceWorker or SharedWorker. No locks needed. We already negotiate schema updates for SQLite/IndexedDB in a simple way - tabs that are out of date switch to memory and/or refresh.
 - That will work but you’ll still have the latency to service worker, which will cause you to want to run mutations against the per tab cache locally, not against the service worker. This means there can be conflicts when two tabs mutate their local cache in conflicting ways.
@@ -36,7 +54,6 @@ modified: 2022-11-25T09:47:43.079Z
 - We already have a SQLite in a separate process we talk to via JSON (& the tab in memory cache, write operation queue, etc etc etc), hopefully a SQLite in a Worker we talk to with structured clone will perform even better
 - Firebase coordinates the primary tab by acquiring a lease via IndexDB. A good explanation on how that pivots to using broadcast channel is in the comments
   - That kind of strategy also works. My point is only that “just use sqlite” I don’t think magically addresses performance, because there is cross process synchronization that is fundamental to running in a web browser.
-
 
 - ## What’s the advantage of using WASM SQLite over IndexedDB for a web application?
 - https://twitter.com/frankdilo/status/1600579551771377674

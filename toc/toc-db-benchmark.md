@@ -44,6 +44,10 @@ modified: 2022-11-25T16:16:52.713Z
   - RxDB LokiJS with LokiJS Storage & GraphQL replication
   - RxDB Dexie.js with Dexie.js Storage & GraphQL replication
   - WatermelonDB with LokiJS adapter (no backend sync atm)
+
+- https://github.com/Level/bench
+  - Benchmark `abstract-level` databases. 
+  - Currently only suitable for use in Node.js.
 # tpc
 - https://github.com/abz53378/tpch-json /201905/json
   - 导入json输入到mongodb

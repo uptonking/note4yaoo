@@ -8,6 +8,8 @@ modified: 2022-11-27T19:20:24.273Z
 # lib-db-nedb-dev
 
 # guide
+- 深入一个项目: src-code, issues, pr, forks, extensions/alternative
+
 - cons
   - 持久化得到的文本，如何持久化图片
 # lab

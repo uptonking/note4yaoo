@@ -30,6 +30,9 @@ modified: 2022-11-11T10:46:29.097Z
   - A high-performance streaming processing excel lib
   - A Java lib to read excel providing stream-processing program model
   - 依赖poi-ooxml
+
+- https://github.com/hyberbin/J-Excel /202111/java
+  - J-Excel 万能的Excel导入导出工具
 # excel-db
 - https://github.com/vkareh/spreaddb /201406/js
   - SpreadDB is a spreadsheet-oriented database server. 

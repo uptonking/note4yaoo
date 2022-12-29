@@ -20,13 +20,6 @@ modified: 2022-12-22T15:21:38.253Z
 
 - ## 
 
-- ## [Performance issues](https://github.com/Ivshti/linvodb3/issues/78)
-  - What I've observed so far is that queries seem to take a very long time when the number of documents returned is large, however the queries speed up if the number of returned documents is small.
-  - Based on these numbers, it seems that the slowness isn't on the search via index but rather the operation(s) involved with loading the documents. The more documents that need to be loaded, the slower the query gets.
-
-- This is a known issue, although unfortunately I have not investigated. Maybe you can look into the cursor.js code and check how long the index takes, and then how long the retrieval takes.
-  - My experience is that the index is OK in terms of speed, but then taking the data out of the store can take a while for various reasons - my suspicion is that it's time lost in levelup/leveldown abstractions
-  - Maybe you can try with another store (try with memdown) to see what will happen
 
 - ## [Why cursor is not an EventEmitter?](https://github.com/Ivshti/linvodb3/issues/26)
   - I think it may be useful, especially with live queries. For now, update of one live query invokes handlers of the same collection for other live queries. 

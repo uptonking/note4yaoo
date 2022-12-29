@@ -27,6 +27,10 @@ modified: 2022-11-03T04:14:00.563Z
   - Simple key-value storage with support for multiple backends
   - Storage Adapters: etcd, mongodb, redis, sqlite
 # leveldb-like
+- https://github.com/Level/bench
+  - Benchmark `abstract-level` databases. 
+  - Currently only suitable for use in Node.js.
+
 - https://github.com/google/leveldb /BSD/c++
   - LevelDB is a fast key-value storage library written at Google that provides an ordered mapping from string keys to string values.
   - Data is stored sorted by key.

@@ -87,8 +87,12 @@ modified: 2020-10-22T06:51:07.421Z
   - Yet another javascript fuzzy string matching library!
   - We use this in email client in autocompletion contexts where the set of results is relatively bounded
 
-- https://github.com/fergiemcdowall/search-index
+- https://github.com/fergiemcdowall/search-index /202212/js
   - A persistent, network resilient, full text search library for the browser and Node.js
+
+- https://github.com/fergiemcdowall/fergies-inverted-index /202212/js
+  - Throw JavaScript objects at the index and they will become retrievable by their properties using promises and map-reduce
+  - This lib will work in node and also in the browser
 # search-non-js
 - https://github.com/opensearch-project/OpenSearch
   - a community-driven, open source fork of Elasticsearch 
