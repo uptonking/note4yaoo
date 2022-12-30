@@ -50,10 +50,6 @@ modified: 2021-01-12T18:49:02.623Z
 
 - more
 # starred
-- https://github.com/algolia/autocomplete
-  - Fast and full-featured autocomplete library
-  - core无依赖，不依赖react
-  - Any Virtual DOM solution (JavaScript, Preact, React, Vue, etc.)
 
 - https://github.com/CJY0208/react-activation
   - Vue 中 `<keep-alive />` 功能在 React 中的黑客实现

@@ -141,7 +141,8 @@ modified: 2021-04-11T06:17:51.318Z
   - 依赖date-fns、history、qs
   - The "Headless Search UI" that serves as a foundation for the react-search-ui library.
 
-- https://github.com/algolia/autocomplete
+- autocomplete /2.3kStar/MIT/202212/ts
+  - https://github.com/algolia/autocomplete
   - https://www.algolia.com/doc/ui-libraries/autocomplete/introduction/what-is-autocomplete/
   - JavaScript library for building autocomplete experiences.
   - The data that populates the autocomplete results are called sources. 

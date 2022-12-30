@@ -28,7 +28,8 @@ modified: 2021-10-29T15:06:33.422Z
 # discuss
 - ## 
 
-- ## 
+- ## https://www.cj.com/
+- Thrive in the world's largest and most established affiliate marketing ecosystem designed to help you achieve intelligent, scalable, and sustainable growth powered by our best-in-class platform.
 
 - ## [The lo-fi manifesto on sustainable software | lo-fi](https://lo-fi.gfor.rest/docs/manifesto)
 - Here's an overview of the "business model" of lo-fi:

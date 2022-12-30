@@ -59,7 +59,11 @@ modified: 2020-12-19T13:04:40.865Z
 - https://github.com/FormidableLabs/react-ssr-prepass
   - A custom partial React SSR renderer for prefetching and suspense
   - react-dom/server does not have support for suspense yet.
-  - react-ssr-prepass is a partial server-side React renderer that does a prepass on a React element tree and suspends when it finds thrown promises. 
+  - react-ssr-prepass is a partial server-side React renderer that does a prepass on a React element tree and suspends when it finds thrown promises.
+
+- https://github.com/theninthsky/client-side-rendering
+  - https://client-side-rendering.pages.dev/
+  - a case study of CSR, it aims to explore the potential of client-side rendered apps compared to server-side rendering.
 # ssr-solutions
 - https://github.com/pmb0/express-tsx-views
   - Server-side JSX/TSX rendering for your express or NestJS application

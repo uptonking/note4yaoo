@@ -100,13 +100,25 @@ modified: 2020-11-13T07:28:27.824Z
     - 也可在react组件的didMount方法中，创建js组件对象，在render方法中给dom标签添加ref进行操作，而不是`return null`
   - Phonon uses a DOM MutationObserver which enables to react to DOM changes
     - This explains the ease of use of Phonon with Angular, React and Vue, etc
-- https://github.com/Tradeshift/tradeshift-ui
-  - /33Star/Free4PlatformOnly/202009/js
+
+- tradeshift-ui /33Star/lic/202009/js/deprecated
+  - https://github.com/Tradeshift/tradeshift-ui
   - a framework-agnostic JavaScript library to provide reusable UI components.
+  - Check out Tradeshift new Web Component-powered UI library Elements.
   - https://github.com/Tradeshift/react-tradeshift-ui
+    - https://github.com/jinglongchenTS/react-tradeshift-ui
     - React wrappers for the Tradeshift ui components.
-    - class组件的render方法都是`return null`，完全通过js操作dom
+    - 大部分class组件的render方法都是`return null`，完全通过js操作dom
     - tradeshift对象会被添加到window，然后在didUpdate方法中创建并操作dom
+  - https://github.com/Tradeshift/elements /lit2
+    - Reusable Tradeshift UI Components as Web Components
+
+- https://github.com/adbayb/poc-cross-framework-component
+  - experiment several approaches to implement cross-framework components.
+  - Three approaches have been tested
+    - Wrapper (top-down runtime approach): packages existing framework dependent components with a thin interoperability layer 
+    - Primitive (bottom-up runtime approach): framework agnostic low-level building blocks.Each primitive acts as an adapter to plug framework dependent logic.
+    - Compiler (build time approach): Use a build tool to generate, from a single source code, either web component (eg. via Stencil) or per framework implementations (eg. via Mitosis).
 # more
 - https://github.com/vicentedealencar/react-agnostic
   - you can write your components without any direct dependencies from platform specific components. 

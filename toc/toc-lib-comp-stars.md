@@ -104,14 +104,6 @@ modified: 2021-01-12T18:49:07.422Z
 
 - https://github.com/timekit-io/booking-js
   - version 2 of booking.js that supports the new projects model and uses App Widget Key for authentication
-# form
-- https://github.com/algolia/autocomplete
-  - https://www.algolia.com/doc/ui-libraries/autocomplete/introduction/what-is-autocomplete/
-  - JavaScript library for building autocomplete experiences.
-  - The data that populates the autocomplete results are called sources. 
-  - You can use whatever you want in your sources: a static set of searches terms, search results from an external source like an Algolia index, recent searches, and more.
-  - The library creates an input and provides the interactivity and accessibility attributes, but you’re in full control of the DOM elements to output.
-  - Unlike InstantSearch, Autocomplete doesn’t provide a library of ready-made UI widgets
 # editor
 - https://github.com/matteobruni/object-gui
   - https://codepen.io/matteobruni/pen/oNxNvja

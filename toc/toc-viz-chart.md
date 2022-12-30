@@ -272,6 +272,11 @@ modified: 2020-10-22T10:22:33.292Z
 - https://github.com/frappe/gantt
   - https://frappe.io/gantt
 # more
+- https://github.com/visa/visa-chart-components /202207/ts/inactive
+  - https://visa.github.io/visa-chart-components/
+  - Visa Chart Components (VCC) is an accessibility focused, framework agnostic set of data experience design systems components for the web
+  - VCC components are compiled to standard web components, leveraging Stencil.js
+
 - https://github.com/vizzuhq/vizzu-lib
   - https://lib.vizzuhq.com/
   - Library for animated data visualizations and data stories.
