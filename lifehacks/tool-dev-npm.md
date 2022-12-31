@@ -21,28 +21,23 @@ modified: 2020-12-08T14:05:52.048Z
   - styled-components, 
   - ramda, deepmerge, date-fns
   - marked
-
+# changelog
+- v8.3.0 (2021-12-09)
+  - introduces overrides
 # common-pkg
-
 - typesync
   - Install missing TypeScript typings for dependencies in your package.json
-
 # roadmap
-
 - [Today(20201119)'s npm OpenRFC recap](https://twitter.com/ruyadorno/status/1329164549140996100)
   - Workspaces noHoist option
   - Configurable cli default-command
   - Registry dependency specifier
 - private-npm-registry
   - https://github.com/verdaccio/verdaccio
-
 # bugs
-
 - [npx doesn't work when in child workspace](https://github.com/npm/cli/issues/2826)
   - npm exec -w website -- docusaurus
-
 # faq
-
 - 如何执行某个workspace子包的package.json中预定义的命令
   - (~~暂不支持~~)现已支持
   - [[BUG] npm 7 workspace package script execution](https://github.com/npm/cli/issues/1904)
@@ -63,7 +58,7 @@ modified: 2020-12-08T14:05:52.048Z
 - [如何在本地调试npm包](https://github.com/allenGKC/Blog/issues/13)
   - 示例： 在 my-project 项目中测试本地的 allen-npm-util 包
 
-``` 
+```
 
 |-- project
     |-- my-project
@@ -90,7 +85,6 @@ npm unlink
 ```
 
 # package.json
-
 - 关于main-module
   - 测试使用的是main
   - ide跳转使用的时main
@@ -114,9 +108,7 @@ npm unlink
   - The `module` field is not an official npm feature but a common convention among bundlers to designate how to import an ESM version of our library.
   - The `module` property should point to a script that utilizes ES2015 module syntax but no other syntax features that aren't yet supported by browsers or node. 
   - This enables webpack to parse the module syntax itself, allowing for lighter bundles via tree shaking if users are only consuming certain parts of the library.
-
 # npm-cli
-
 - `npm run-script <command> [--silent] [-- <args>...]`
   - This runs an arbitrary command from a package's "scripts" object.
   - The `env` script is a special built-in command that can be used to list environment variables that will be available to the script at runtime.
@@ -129,9 +121,7 @@ npm unlink
     - If I change directory to /dir1/dir2 and execute `npm test`
     - and the script I wrote on test property is executed properly without the use of ./ 
   - We can reference the root directory of the project through the environment variable `INIT_CWD` that npm set for us!
-
 # workspace
-
 - ref
   - [docs: workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces)
   - [rfc: npm workspaces](https://github.com/npm/rfcs/blob/latest/implemented/0026-workspaces.md)
@@ -191,9 +181,7 @@ npm unlink
   - I almost never have to delete node_modules any more.
 
 - I'm using Lerna  currently, but the way its change detection works results in lots of unnecessary publishes.
-
 # npm-blog
-
 - ## [Presenting v7.0.0 of the npm CLI](https://github.blog/2020-10-13-presenting-v7-0-0-of-the-npm-cli/)
 - npm 7 comes with some long-awaited and requested features including:
   - Workspaces
@@ -214,9 +202,7 @@ npm unlink
     - npm CLI itself is becoming strictly the user-interface layer, 
     - and we’ve moved out all complex tree management and registry interactions to @npmcli/arborist, pacote, and the various libnpm* modules.
   - Be as fast as possible while behaving correctly.
-
 # ref
-
 - [npm v7 Series - Beta Release!](https://blog.npmjs.org/post/626173315965468672/npm-v7-series-beta-release-and-semver-major)
 - [Simplify your monorepo with npm 7 workspaces](https://dev.to/limal/simplify-your-monorepo-with-npm-7-workspaces-5gmj)
   - The most common reason to set up a monorepo is to streamline work within a dev team that maintains multiple apps that are using a shared piece of code, for example a common User Interface library.

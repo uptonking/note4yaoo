@@ -38,7 +38,7 @@ modified: 2021-04-28T20:54:58.126Z
 ## npm idealTree 很慢 
 
 ```shell
-DEBUG=* npm install --legacy-peer-deps  --loglevel silly
+DEBUG=* npm install --legacy-peer-deps --loglevel silly
 ```
 
 ```shell
