@@ -46,6 +46,9 @@ modified: 2022-11-06T03:19:28.284Z
   - It allows hosting an SQLite database on a static file hoster and querying that database from the browser without fully downloading it.
   - sql.js-httpvfs also provides a proof-of-concept level implementation of a DOM virtual table that allows interacting (read/write) with the browser DOM directly from within SQLite queries.
   - [Hosting SQLite databases on Github Pages (or any static file hoster) - phiresky's blog_202104](https://phiresky.github.io/blog/2021/hosting-sqlite-databases-on-github-pages/)
+- https://github.com/uktrade/sqlite-s3vfs
+  - Python virtual filesystem for SQLite to read from and write to S3.
+  - No locking is performed, so client code must ensure that writes do not overlap with other writes or reads.
 
 - https://github.com/ccorcos/tuple-database
   - The local-first, "end-user database" database.

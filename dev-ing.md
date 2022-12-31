@@ -124,6 +124,12 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to
   - crdt tutorials
 
+## 1231
+- levelLikeDb.createReadStream([options])的迁移
+  - on data 对应迭代过程，获取entry.key/value
+  - on close 对应
+  - on end 
+
 ## 1227
 
 - dev-to

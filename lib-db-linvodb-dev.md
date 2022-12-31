@@ -22,11 +22,12 @@ modified: 2022-12-22T15:22:15.191Z
   - chrome-linux的idb本地位置: ~/.config/google-chrome/Default/IndexedDB/
   - 在idb里面key是_id字符串，value是一个document对象序列化后的字符串，符合leveldb的设计
 # roadmap
+- 迁移 full-text-search
+- 迁移 原仓库功能，如sync/benchmark
+
 - 支持延迟构建索引，而不是在构造函数中
 
-- full-text-search
-
-- images
+- how to store images
 # codebase
 - 较大的源码改动
   - 去掉了 construct 事件，因为每个doc对象都是普通js对象，而不是Model对象，与nedb一致

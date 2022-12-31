@@ -14,6 +14,8 @@ modified: 2022-12-24T10:02:30.813Z
 ## testing-errors
 
 - npm test
+- Uncaught Error: Database is not open
+  - 但vscode的ui触发的测试能全部通过
 - Uncaught Error: cannot call iterator() before open()
   - x2
 - done() called multiple times in hook

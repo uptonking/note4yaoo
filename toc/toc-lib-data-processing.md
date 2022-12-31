@@ -43,6 +43,16 @@ modified: 2021-05-13T16:14:15.415Z
   - https://pyodide.org/en/stable/
   - /5.4kStar/MPLv2/202105/python
   - Python with the scientific stack, compiled to WebAssembly.
+  - Pyodide is a Python distribution for the browser and Node.js based on WebAssembly
+  - [Related Projects](https://github.com/pyodide/pyodide/blob/main/docs/project/related-projects.md)
+    - https://github.com/jupyterlite/jupyterlite
+    - https://github.com/gzuidhof/starboard-notebook
+    - https://github.com/iodide-project/iodide
+
+
+- https://github.com/pyscript/pyscript
+  - https://pyscript.net/
+  - PyScript is a framework that allows users to create rich Python applications in the browser using HTML's interface and the power of Pyodide, WASM, and modern web technologies.
 
 - https://github.com/finos/perspective
   - Streaming pivot visualization via WebAssembly
