@@ -1,19 +1,15 @@
 ---
-title: lib-db-mongodb-dev
-tags: [mongodb]
-created: 2022-06-13T02:57:35.366Z
-modified: 2022-06-13T02:58:29.596Z
+title: lib-db-mongodb-blog
+tags: [blog, mongodb]
+created: 2023-01-02T08:26:10.469Z
+modified: 2023-01-02T08:26:21.177Z
 ---
 
-# lib-db-mongodb-dev
+# lib-db-mongodb-blog
 
 # guide
 
-- doc size limit?
-# blogs
-
-## [6 Rules of Thumb for MongoDB Schema Design_201406](https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design)
-
+# [6 Rules of Thumb for MongoDB Schema Design_201406](https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design)
 - 设计表时考虑
   - 属性值的基数有多大，是否embed/referencing
   - 是否要直接获取或查询属性值或子文档
@@ -131,4 +127,58 @@ modified: 2022-06-13T02:58:29.596Z
   - When embedding would result in duplication of data but would not provide sufficient read performance advantages to outweigh the implications of data duplication.
   - To represent more complex many-to-many relationships.
   - To model large hierarchical data sets.
-# more
+# [Full-Text Search: What Is It And How It Works | MongoDB](https://www.mongodb.com/basics/full-text-search)
+- Full-text search refers to searching some text inside extensive text data stored electronically and returning results that contain some or all of the words from the query. 
+- In contrast, traditional search would return exact matches.
+- traditional string searches can be performed on smaller text fields. These methods are not as efficient as modern indexed searches but require fewer resources. 
+- Full-text searches provide more rich options for advanced querying but can be more complex to set up.
+- String searches are algorithms that search for consecutive characters in a larger text field.
+  - Another technique often used for string searches is the use of regular expressions. Those expressions represent a search pattern and are supported by most modern programming languages.
+  - Some algorithms exist to increase the speed of those searches if the text to be searched is more significant. The Rabin-Karp algorithm, which looks for matching substrings, is fast and easy to implement. The Knuth-Morris-Pratt algorithm looks for all instances of a matching character, increasing the speed for multiple matches in a string. Other advanced techniques can be used to perform fuzzy searches.
+- In a SQL database, a search on a text field in a record is usually done using a `LIKE` operator.
+  - In MongoDB, a similar search can be done using the $regex operator.
+
+```JS
+// SELECT * FROM menus WHERE item LIKE "%pasta%";
+
+db.menus.find({ "item": { "$regex": /pasta/i } });
+```
+
+- Full-text search is meant to search large amounts of text. 
+  - The key to this technique is indexing.
+  - Indexing can be done in different ways, such as batch indexing or incremental indexing.
+  - The index then acts as an extensive glossary for any matching documents. Various techniques can then be used to extract the data. 
+  - Apache Lucene, the open sourced search library, uses an inversed index to find the matching items.
+  - This technique is much faster than string searches for large amounts of data. However, these indexes require some disk space and can consume a lot of resources when created.
+
+- The key to an efficient full-text search is index creation. 
+  - Essentially, the index creation process goes through each text field of a dataset. 
+  - For each word, it will start by removing any diacritics (marks placed above or below letters, such as é, à, and ç in French). 
+  - Then, based on the used language, the algorithms will remove filler words and only keep the stem of the terms. 
+  - This way, “to eat, ” “eating, ” and “ate” are all classified as the same “eat” keyword. 
+  - It then changes the casing to use only either uppercase or lowercase. 
+  - The exact indexing process is determined by the analyzer that is used.
+
+- To implement a full-text search in a SQL database, you must create a full-text index on each column you want to be indexed. 
+  - In MySQL, this would be done with the `FULLTEXT` keyword.
+  - Then you will be able to query the database using `MATCH` and `AGAINST`.
+- While this index will increase the search speed for your queries, it does not provide you with all the additional capabilities that you might expect. 
+  - To use features such as fuzzy search, typo tolerance, or synonyms, you will need to add a core search engine such as Apache Lucene on top of your database.
+
+```SQL
+
+ALTER TABLE menus ADD FULLTEXT(item);
+
+SELECT * FROM menus WHERE MATCH(item) AGAINST("pasta");
+```
+
+- No matter which database you are using, before implementing a full-text search solution, you will have to take these considerations into mind.
+  - Necessary features. Adding a full-text index to your database will help you optimize text search. Still, you might need additional features such as auto-complete suggestions, synonym search, or custom scoring for relevant results.
+  - Architectural complexity. Adding additional software to your architecture means separate systems to maintain and additional software complexity to query two different sources.
+  - Costs. Whether a solution is built in-house or uses a third-party tool, additional charges are to be expected.
+
+- To provide full-text search capabilities to your application, you will need an extra layer to take care of the indexing and provide you with the results.
+
+- Conclusion
+  - Full-text search is a complex topic. It requires a good amount of expertise to set up correctly. Adding additional features such as fuzzy search, highlights, or synonyms might also require a lot of extra work.
+# more-blogs

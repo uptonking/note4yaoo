@@ -153,6 +153,13 @@ modified: 2022-11-04T14:22:17.373Z
 - https://github.com/YeloPartyHat/LocalDatabase
   - simple queryable embedded database designed for front-end that wraps IndexedDB.
 
+- https://github.com/robtweed/DPP
+  - Deep Persistent Proxy (DPP) is a JavaScript module that allows you to create and maintain JavaScript objects/JSON that will persist automatically between browser sessions.
+  - DPP uses the browser's built-in indexedDB database to maintain a persistent image of your JavaScript object(s).
+  - DPP also makes use of JavaScript Proxy Objects, allowing changes to your object(s) to be trapped and recorded to indexedDB.
+  - a key challenge was how to keep the database copy of the object in synchronisation with the local proxy object
+    - The solution is provided by the unique characteristics of our queue-based QOper8 WebWorker management module.
+
 - https://github.com/kennygomdori/AsyncIndexedDB
   - asynchronous wrapper around Javascript IndexedDB. 
 - https://github.com/westhide/async-idb

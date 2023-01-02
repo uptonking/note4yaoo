@@ -22,6 +22,15 @@ modified: 2022-12-24T10:02:30.813Z
   - x2
 - Uncaught Error: Callback was already called.
   - x1
+
+- #### 4个测试用例未通过
+- TypeError: db is not a function
+  - Cursor: "before each" hook for "Without query, an empty query or a simple query and no skip or limit":
+  - Database: "before each" hook for "Able to insert a document in the database, setting an _id if none provided, and retrieve it even after a reload"
+  - Schema: "before each" hook for "Create indexes specified in schema, auto-indexing does not override them"
+- AssertionError: expected [Function] to throw an error
+  - Document - Modifying documents: Throw an error if a modifier is used with a non-object argument
+
 # issues
 - ## [A doc can be written to index w/o being saved](https://github.com/Ivshti/linvodb3/issues/16)
   - Somehow, a document can end up being written to an index without being saved yet. It's either the save or update methods

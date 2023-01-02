@@ -80,6 +80,9 @@ modified: 2022-11-03T04:14:00.563Z
 # level-utils
 - https://github.com/juliangruber/multilevel /201802/js
   - Expose a LevelDB over the network
+
+- https://github.com/mafintosh/multi-master-merge /201511/js
+  - A database with multi master replication and merge support based on leveldb, fwdb and scuttleup
 # more-key-value
 - https://github.com/pgte/alfred /201109/js
   - Alfred is a fast in-process key-value store for node.js.

@@ -12,6 +12,8 @@ modified: 2022-12-11T22:38:34.694Z
   - 比较db: nanoSQL, nedb, lokijs, LoveField, pouchdb, alaSQL
   - 比较项目: node/browser, dbms, undo/redo, events, indexeddb, orm, typescript
 
+- [Comparison of embedded NoSQL databases that can be emedded in a Node.js - Electron app](https://gist.github.com/blahah/2fbc6b3b2e2cb44281247c88ddd84f03)
+
 - 参考sqlite是如何解决并发读写的问题的
 # discuss
 - ## 
@@ -217,10 +219,21 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
   - https://github.com/ezpaarse-project/dbbench /201412/archived
     - A basic benching tool to compare node.js embedded databases
 
-- ## [rxdb: Full Text Search](https://github.com/pubkey/rxdb/issues/259)
+- ## [rxdb: Full Text Search_201708](https://github.com/pubkey/rxdb/issues/259)
+  - Is there any way to implement an full text search, like pouchdb-quick-search?
+  - https://github.com/pouchdb-community/pouchdb-quick-search
+
+- https://github.com/doriandrn/rxdb-search
+  - Search plugin for RxDB based on search-index
+
 - The question is, if it should be baked into rxdb or not. Apart from search-index, there are other really good fuzzy search libraries like fuse.js and lunr.js.
-  - https://github.com/doriandrn/rxdb-search
-  - They work differently and different use cases. It would be cool, if we have a pluggable interface to write mango queries with the $text operator. This is how mongodb supports fulltext search.
+  - They work differently and different use cases. It would be cool, if we have a pluggable interface to write mango queries with the `$text` operator. This is how mongodb supports fulltext search.
+- ## [Full text search example · Issue · Nozbe/WatermelonDB](https://github.com/Nozbe/WatermelonDB/issues/1269)
+- If your question is how to do full text search, then it doesn't have anything to do with this project. 
+  - Maybe you're looking at how to do a `LIKE` search
+  - [SQLite query, 'LIKE' - Stack Overflow](https://stackoverflow.com/questions/12613926)
+
+
 
 - ## [MongoDB到Nedb的迁移_202106](https://blog.csdn.net/qq_43171049/article/details/117661855)
 - 为了实现项目的轻量化，对项目中原本使用的MongoDB进行替换，替换成相似的嵌入式数据库Nedb。

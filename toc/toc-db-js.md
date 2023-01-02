@@ -200,9 +200,10 @@ modified: 2022-11-25T15:50:48.226Z
   - The super fast in-memory javascript document oriented database.
   - Its purpose is to store javascript objects as documents in a nosql fashion and retrieve them with a similar mechanism. 
   - Runs in node (including cordova/phonegap and node-webkit), nativescript and the browser.
-  - https://github.com/LokiJS-Forge/LokiDB /202008/ts/inactive
-    - a document oriented database written in TypeScript.
-    - LokiDB is the official successor of LokiJS.
+- https://github.com/LokiJS-Forge/LokiDB /202008/ts/inactive
+  - a document oriented feature-rich in-memory database written in TypeScript
+  - LokiDB is the official successor of LokiJS.
+  - 完全自己实现了 full-text-search
 
 - lovefield /6.8kStar/Apache2/202005/js/inactive
   - https://github.com/google/lovefield

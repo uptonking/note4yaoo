@@ -24,6 +24,9 @@ modified: 2020-11-13T07:28:27.824Z
   - https://material.io/develop/web/components/buttons
   - 此架构在升级material-ui.v3的过程中被抛弃，v3强推lit组件库
   - Modular and customizable Material Design UI components for the web
+  - [MDC Foundation Proposal](https://gist.github.com/jamesmfriedman/33c750912698f20aa9d4dda9df834e5d)
+  - [Material 3 support](https://github.com/material-components/material-components-web/issues/7560)
+    - this one (material-components-web) is written in plain TypeScript and the material-web is using the Lit Framework 
   - https://github.com/jamesmfriedman/rmwc
     - /1.4kStar/MIT/202009/ts/hooks
     - a React UI Kit built on Google's official Material Components Web library v5
@@ -41,6 +44,13 @@ modified: 2020-11-13T07:28:27.824Z
     - https://github.com/material-components/material-components-android
       - /11.2kStar/Apache2/2020209/java
       - Modular and customizable Material Design UI components for Android
+
+- https://github.com/DouyinFE/semi-design
+  - https://semi.design/zh-CN/start/overview
+  - 得益于 Foundation/Adapter 架构设计以及样式文件分层原则，Semi 非常易于迁移到其他前端框架
+  - [Semi Design - UI组件库如何分层设计，使其具备适配多种mvvm框架能力](https://bytedance.feishu.cn/wiki/wikcnOVYexosCS1Rmvb5qCsWT1f)
+  - [希望官方支持 Vue 版本](https://github.com/DouyinFE/semi-design/issues/311)
+    - 我们的工作重点依然是React体系。没有计划去重新实现一个Vue版本
 
 - https://github.com/carbon-design-system/carbon
   - /3.5kStar/Apache2/202009/js

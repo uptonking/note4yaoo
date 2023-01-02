@@ -162,7 +162,6 @@ modified: 2022-06-03T21:34:54.893Z
   - The application uses an embedded database (nedb) by default but can also use a MongoDB server by changing the config
   - openKB is a search based Knowledge base (FAQ) backed by Lunr.js indexing 
   - openKB uses the pure Javascript nedb embedded database by default or a MongoDB server.
-  - openKB uses Markdown-it
 
 - monotome /151Star/AGPL.v3/202208/js
   - https://github.com/cblgh/monotome

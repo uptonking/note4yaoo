@@ -11,6 +11,14 @@ modified: 2022-06-13T02:58:46.880Z
 
 # overview
 
+# [Embedded Documents](https://www.geeksforgeeks.org/mongodb-embedded-documents/)
+- MongoDB provides you a cool feature which is known as Embedded or Nested Document
+  - Embedded document or nested documents are those types of documents which contain a document inside another document. 
+  - Or in other words, when a collection has a document, this document contains another document, another document contains another sub-document, and so on, then such types of documents are known as embedded/nested documents. 
+- In MongoDB, you can only nest document up to 100 levels.
+  - The overall document size must not exceed 16 MB.
+
+- To specify a query condition on fields in an embedded/nested document, use dot notation ("field.nestedField").
 # [MongoDB 极简实践入门](https://github.com/StevenSLXie/Tutorials-for-Web-Developers/blob/master/MongoDB%20%E6%9E%81%E7%AE%80%E5%AE%9E%E8%B7%B5%E5%85%A5%E9%97%A8.md)
 - 传统的计算机应用大多使用关系型数据库来存储数据，比如大家可能熟悉的MySql, Sqlite等等，它的特点是数据以表格(table)的形式储存起来的。
   - 涉及到复杂的跨表查询，需要大量使用join语句。这种跨表查询不仅降低了查询速度，而且这些语句写起来也不简单。
@@ -28,11 +36,4 @@ modified: 2022-06-13T02:58:46.880Z
 
 - MongoDB支持单个文档内的原子化操作(atomic operation)
   - 提供了findAndModify的方法来确保atomic operation
-# [Embedded Documents](https://www.geeksforgeeks.org/mongodb-embedded-documents/)
-- MongoDB provides you a cool feature which is known as Embedded or Nested Document
-  - Embedded document or nested documents are those types of documents which contain a document inside another document. 
-  - Or in other words, when a collection has a document, this document contains another document, another document contains another sub-document, and so on, then such types of documents are known as embedded/nested documents. 
-- In MongoDB, you can only nest document up to 100 levels.
-  - The overall document size must not exceed 16 MB.
-
-- To specify a query condition on fields in an embedded/nested document, use dot notation ("field.nestedField").
+# more-docs

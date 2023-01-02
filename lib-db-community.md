@@ -19,6 +19,7 @@ modified: 2021-08-30T15:50:54.515Z
   - tikv maintainer
   - RisingLight: an educational OLAP database system.
   - BusTub: Relational Database Management System (Educational)
+  - https://twitter.com/iskyzh
 # discuss
 - ## 
 

@@ -65,6 +65,25 @@ modified: 2022-11-26T17:35:24.870Z
  - Joining (left join) model data
  - Tree data (with open/closed nodes)
 
+- feathers-nedb-fuzzy-search /11Str/MIT/202012/js
+  - https://github.com/FossPrime/feathers-nedb-fuzzy-search
+  - NeDB adapter for fuzzy search, api compatible with the MongoDB version
+  - Add fuzzy `$search` to NeDB `service.find` queries.
+  - 依赖 @seald-io/nedb
+  - https://github.com/trinly01/feathers-nedb-puzzy-search
+
+- mani /12Star/MIT/201606/js
+  - https://github.com/glennjones/mani
+  - Pure javascript search - browser and node.js
+  - Mani provides a document based search tool in javascript. 
+  - 依赖nedb、lunrjs、geolib、localForage
+  - It merges together f  ree text search, mongodb type queries, geo search and facets from other projects into one library.
+  - Serialize data and indexes to and from a JSON file
+
+- https://github.com/ivanvaladares/Node-Suggestive-Search
+  - built to help type-ahead and dropdown search boxes and also correct misspelled searches (did you mean?).
+  - This module is compatible with: nedb v1.8, mongodb v2.2, redis 2.8
+
 - nedb-forks
   - https://github.com/HalleyAssist/nedb /202211/js
     - Embedded datastore for node.js
@@ -90,7 +109,7 @@ modified: 2022-11-26T17:35:24.870Z
   - LinvoDB also can do a query entirely by indexes, meaning it doesn't have to scan the full database on a query.
     - LinvoDB does the entire query through the indexes, NeDB scans the DB
   - https://github.com/Ivshti/linvodb-fts
-    - full text search using natural
+    - full text search in memory - linvodb-fts - trie/metaphone; using natural
   - [I want to know if linvodb3 supports browser](https://github.com/Ivshti/linvodb3/issues/98)
     - yes, this module works via `localforage` which can work via localstorage
   - [What can stop end user to directly edit database files?](https://github.com/Ivshti/linvodb3/issues/46)
@@ -102,8 +121,11 @@ modified: 2022-11-26T17:35:24.870Z
     - https://github.com/aerys/linvodb3
     - https://github.com/aerys/mongoose-linvodb3
     - https://github.com/wittyPuneet/linvodb3
+- https://github.com/Ivshti/linvodb-slides
+  - Slides for talk at bulgariawebsummit
 - https://github.com/Absio/linvodb3-with-serialization-options
   - LinvoDB fork for adding extension option into Model.
+  - beforeDeserialization, afterSerialization
 - https://github.com/mohammedahmed18/electron-app /202210/ts
   - 依赖linvodb3、realm10、reduxjs-toolkit
 - https://github.com/dmfarcas/clipboard-manager

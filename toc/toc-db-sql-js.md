@@ -7,6 +7,10 @@ modified: 2021-08-30T18:56:14.863Z
 
 # toc-db-sql-js
 
+
+# guide
+
+- http://sqlfiddle.com/
 # query-builder
 
 - https://github.com/koskimas/kysely
@@ -54,6 +58,11 @@ modified: 2021-08-30T18:56:14.863Z
   - https://prostgles.com/ui
   - Web dashboard and SQL Editor for Postgres
   - Sorting, Filtering and Cross-Filtering joined tables
+# sql-alternatives
+- https://github.com/PRQL/prql /rust
+  - PRQL is a modern language for transforming data — a simple, powerful, pipelined SQL replacement
+  - Unlike SQL, it forms a logical pipeline of transformations, and supports abstractions such as variables and functions.
+  - It can be used with any database that uses SQL, since it compiles to SQL.
 # more
 - https://github.com/webqit/objective-sql /202201/js
   - Objective SQL is a query client that wraps powerful concepts in a simple, succint API.

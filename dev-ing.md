@@ -73,6 +73,7 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - dashboard/webapp-template--0901
 
 - dev-to/log/xp
+  - deep into lib: src-code, issues, pr, forks, extensions/alternative
 
 - later
   - crdt-hlc 

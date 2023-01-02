@@ -10,7 +10,7 @@ modified: 2022-08-24T10:48:29.318Z
 # guide
 
 - resources
-  - [speadjs技术博客](https://www.grapecity.com.cn/blogs/categories/spread)
+  - [spreadjs技术博客](https://www.grapecity.com.cn/blogs/categories/spread)
   - [SegmentFault D-Day 技术分享：葡萄城电子表格技术__202108](https://www.grapecity.com.cn/blogs/spreadjs-segmentfault-d-day)
 # spreadjs-blog
 

@@ -31,7 +31,7 @@ modified: 2020-11-13T07:29:55.201Z
   - https://github.com/material-components/material-components-web
     - https://material.io/develop/web/components/buttons
     - Modular and customizable Material Design UI components for the web
-    - 组件基于foundation/adapter架构实现
+    - 组件基于foundation-adapter架构实现
     - theming基于全局级sass vars，组件级基于css vars
       - 组件的sass源码导入很多，核心样式core-styles的@mixin很复杂
   - https://github.com/jamesmfriedman/rmwc
@@ -138,7 +138,7 @@ modified: 2020-11-13T07:29:55.201Z
     - theming基于less vars
   - https://github.com/taejs/ant-design-vanilla
     - /2Star/MIT/202003/ts
-    - 基于foundation/adapter架构实现
+    - 基于foundation-adapter架构实现
   - https://github.com/ant-design/ant-design-mobile
     - A configurable Mobile UI specification and React-based implementation.
   - https://github.com/ant-design/ant-design-pro

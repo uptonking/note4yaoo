@@ -14,9 +14,6 @@ modified: 2022-06-13T02:59:04.350Z
 
 - ## 
 
-- ## [Difference between createIndex() and ensureIndex() in java using mongodb](https://stackoverflow.com/questions/25968592/difference-between-createindex-and-ensureindex-in-java-using-mongodb)
-- since version > 3.0.0: `db.collection.ensureIndex()` is now an alias for `db.collection.createIndex()` .
-
 - ## [To denormalize the TPC-H benchmark dataset_202202](https://www.mongodb.com/community/forums/t/to-denormalize-the-tpc-h-benchmark-dataset/147309)
   - I want to denormalize the TPC-H dataset having 8 relational tables and 22 relational queries. I want to migrate the relational database into MongoDB
 - I don’t think there is enough clarity to provide a recommendation. 
@@ -25,10 +22,6 @@ modified: 2022-06-13T02:59:04.350Z
   - 👉🏻 One rule of thumb is: that data that is accessed together should be stored together. 
   - Bases on this you will first need to evaluate your access pattern, define the most important queries, find relationships, define patterns to use. 
   - We need to take into account data durability and staleness at this point as well as cost of maintaining duplicated data / indices vs. fast access.
-
-- ## [mongoDB 4.0(201806)支持事务了，还有多少人想用MySQL呢？ - 知乎](https://www.zhihu.com/question/279843849)
-- mongDb不支持子查询，类似于mysql语句。Select * from orders where orders.sellerid in (select eid from employee where employee.state= 'California'), mongodb做不到。
-- 另外联表查询也不友好
 
 - ## [MongoDB 的表上怎么做 JOIN？ - 知乎](https://www.zhihu.com/question/486997525/answers/updated)
 - mongodb的aggregate功能很强大。连表可用$lookup。
