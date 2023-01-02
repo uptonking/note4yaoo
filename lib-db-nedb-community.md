@@ -221,7 +221,7 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
 
 - ## [rxdb: Full Text Search_201708](https://github.com/pubkey/rxdb/issues/259)
   - Is there any way to implement an full text search, like pouchdb-quick-search?
-  - https://github.com/pouchdb-community/pouchdb-quick-search
+  - https://github.com/pouchdb-community/pouchdb-quick-search /lunr
 
 - https://github.com/doriandrn/rxdb-search
   - Search plugin for RxDB based on search-index

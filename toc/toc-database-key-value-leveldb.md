@@ -77,6 +77,42 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/Level/levelup
   - A wrapper for abstract-leveldown compliant stores, for Node.js and browsers.
   - deprecated, because it is superseded by abstract-level.
+# level-search
+- search-index /1.3kStar/MIT/202207/js
+  - https://github.com/fergiemcdowall/search-index
+  - A persistent, network resilient, full text search library for the browser and Node.js
+  - built on top of levelup, its possible to use another backend by passing the appropriate `abstract-leveldown`
+
+- levi /374Star/MIT/201901/js
+  - https://github.com/cshum/levi
+  - Stream based full-text search for Node.js and browsers. Using LevelDB as storage backend.
+  - 依赖levelup、cosine-similarity、stemmer
+  - Full-text search using TF-IDF and cosine similarity plus query-time field boost options. 
+  - Levi is built on LevelUP. By default, it uses LevelDB on Node.js and IndexedDB on browser. 
+  - Using stream based query mechanism with Highland.js, Levi is designed to be memory efficient
+
+- https://github.com/eugeneware/levels /45Star/MIT/201309/js
+  - a light-weight LevelDB full text search for node.js. 
+  - This is a port of the redis search reds by TJ Holowaychuk to use LevelDb.
+
+- https://github.com/juliangruber/level-trie /31Star/MIT/201608/js
+  - The TRIE data structure and search algorithm, on top of leveldb.
+
+- https://github.com/dominictarr/level-inverted-index /201602/js
+  - Inverted Index for levelup.
+
+- https://github.com/eugeneware/level-queryengine /63Star/BSD/201405/js
+  - A generic pluggable query-engine system (that supports indexes) for levelup/leveldb databases.
+  - Using this architecture you can query your levelup database using your own query langauge with full index support.
+- https://github.com/eugeneware/fulltext-engine /32Star/BSD/201405/js
+  - Query your levelup/leveldb engine using full text search phrases with INDEXES.
+  - This is a plugin for level-queryengine.
+- https://github.com/eugeneware/subindex /201506/js
+  - Generic pluggable indexing system for leveldb/levelup.
+  - Designed to be used with level-queryengine to create efficient searches on levelup with pluggable query languages/systems
+- https://github.com/eugeneware/jsonquery-engine /201504/js
+  - A full MongoDB query language implementation with INDEXES for querying your levelup/leveldb database.
+  - This is a plugin for level-queryengine.
 # level-utils
 - https://github.com/juliangruber/multilevel /201802/js
   - Expose a LevelDB over the network

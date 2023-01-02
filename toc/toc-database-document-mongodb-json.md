@@ -59,11 +59,11 @@ modified: 2022-11-03T04:14:11.987Z
   - It runs both on Node.js and in the ES6 compliant browsers.
   - A document is a Javascript literal object. It is similar to a JSON object. 
 
-- yunodb /246Star/CC0/201704/js/leveldb/不支持浏览器环境
+- yunodb /246Star/CC0/201704/js/levelup
   - https://github.com/blahah/yunodb
   - A portable, persistent, electron-embeddable fulltext search + document store database for node.js
   - yuno is a JSON document store with fulltext search. 
-  - The document store, which is just the raw JSON objects stored in leveldb/browser-level
+  - The document store, which is just the raw JSON objects stored in leveldb/levelup/browser-level
   - The inverted search index, powered by search-index
   - yuno is being built to serve my use-case of embedding pre-made databases in electron apps
   - forks
@@ -259,3 +259,7 @@ modified: 2022-11-03T04:14:11.987Z
 
 - https://github.com/RonnyChen/MongoSql /201601/java
   - 直接将部分SQL转换成mongodb的语句访问mongodb
+
+- https://github.com/huggingface/Mongoku
+  - MongoDB client for the web. Query your data directly from your browser
+  - Built on TypeScript/Node.js/Angular.

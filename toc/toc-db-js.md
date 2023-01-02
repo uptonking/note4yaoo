@@ -127,12 +127,14 @@ modified: 2022-11-25T15:50:48.226Z
   - https://rxdb.info/
   - 依赖rxjs7
   - A fast, offline-first, reactive database for JavaScript Applications
+  - 未实现Full Text Search，但第三方支持
   - a NoSQL-database for JavaScript Applications like Websites, hybrid Apps, Electron-Apps and NodeJs. 
   - 👉🏻 RxDB is not a self contained database. 
     - It is a wrapper around another database that implements the `RxStorage` interface. 
     - At the moment you can either use `PouchDB` or `Dexie.js` or `LokiJS` as underlaying storage. 
     - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
     - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
+  - [backlog should be implemented in the future](https://github.com/pubkey/rxdb/blob/master/orga/BACKLOG.md)
 
 - nedb /13.1kStar/MIT/201602/js
   - https://github.com/louischatriot/nedb

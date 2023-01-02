@@ -156,10 +156,6 @@ modified: 2022-06-03T22:06:16.249Z
 
 - https://github.com/Treora/indexeddb-full-text-search-comparison
   - 依赖levi
-  - https://github.com/cshum/levi /201901/js
-    - Stream based full-text search for Node.js and browsers. Using LevelDB as storage backend.
-    - Full-text search using TF-IDF and cosine similarity plus query-time field boost options. 
-    - Levi is built on LevelUP
   - https://github.com/raine/taim 
     - measure execution time of functions and promises
 

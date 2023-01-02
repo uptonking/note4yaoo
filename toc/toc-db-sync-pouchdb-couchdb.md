@@ -159,10 +159,11 @@ modified: 2022-11-30T18:56:07.072Z
   - Seamless switching between online (CouchDB) and offline (PouchDB) authentication.
   - This plug-in stores password hashes in a local PouchDB, not a smart thing
 
-- https://github.com/pouchdb-community/pouchdb-quick-search /201702/js
+- https://github.com/pouchdb-community/pouchdb-quick-search /201702/js/lunr
   - efficient and accurate full-text search engine built on top of PouchDB
   - The underlying tokenization/stemming/stopword engine is Lunr, which is optimized for English text, using a variant of the Porter stemmer. 
-  - This is a local plugin, so it is not designed to work against CouchDB/Cloudant/etc. If you'd like to search against the server, use the CouchDB Lucene plugin, Cloudant's search indexes, or something similar.
+  - This is a local plugin, so it is not designed to work against CouchDB/Cloudant/etc. 
+  - If you'd like to search against the server, use the CouchDB Lucene plugin, Cloudant's search indexes, or something similar.
 
 - https://github.com/onyxcodes/dbmanager-ui /202208/ts
   - UI for managing PouchDB databases through DBManager interface layer

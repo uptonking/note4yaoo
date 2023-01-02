@@ -26,7 +26,7 @@ modified: 2022-11-26T17:35:24.870Z
   - I consider NeDB to be feature-complete, i.e. it does everything I think it should and nothing more. As a general rule I will not accept pull requests anymore
   - [Is this still maintained?](https://github.com/louischatriot/nedb/issues/492)
 
-- https://github.com/seald/nedb  /202209/js/active
+- https://github.com/seald/nedb /202209/js/active
   - forked it and maintain it for the needs of Seald.
   - Since version 3.0.0, NeDB provides a Promise-based equivalent for each function which is suffixed with `Async`.
   - https://github.com/bajankristof/nedb-promises /202209/js
@@ -65,20 +65,19 @@ modified: 2022-11-26T17:35:24.870Z
  - Joining (left join) model data
  - Tree data (with open/closed nodes)
 
+- mani /12Star/MIT/201606/js/lunr
+  - https://github.com/glennjones/mani
+  - Mani provides a document based search tool in javascript, for browser and node.js 
+  - 依赖nedb、localForage、lunr.js、geolib
+  - It merges together free text search, mongodb type queries, geo search and facets from other projects into one library.
+  - Serialize data and indexes to and from a JSON file
+
 - feathers-nedb-fuzzy-search /11Str/MIT/202012/js
   - https://github.com/FossPrime/feathers-nedb-fuzzy-search
   - NeDB adapter for fuzzy search, api compatible with the MongoDB version
   - Add fuzzy `$search` to NeDB `service.find` queries.
   - 依赖 @seald-io/nedb
   - https://github.com/trinly01/feathers-nedb-puzzy-search
-
-- mani /12Star/MIT/201606/js
-  - https://github.com/glennjones/mani
-  - Pure javascript search - browser and node.js
-  - Mani provides a document based search tool in javascript. 
-  - 依赖nedb、lunrjs、geolib、localForage
-  - It merges together f  ree text search, mongodb type queries, geo search and facets from other projects into one library.
-  - Serialize data and indexes to and from a JSON file
 
 - https://github.com/ivanvaladares/Node-Suggestive-Search
   - built to help type-ahead and dropdown search boxes and also correct misspelled searches (did you mean?).
@@ -139,6 +138,9 @@ modified: 2022-11-26T17:35:24.870Z
   - npm install npm start
 - https://github.com/kidando/json_data_manager
   - An Electron desktop app that allows you to perform CRUD operations on tables/collections that are stored as json files. 
+- https://github.com/fullstackio/realtime-news
+  - real-time news server with current events, twitter, websocket support
+  - Combining the speed of NeDB with the live query capabilities of leveldb, LinvoDB is a good choice for speed and single-node database requirements.
 
 - tingodb /1.1kStar/MIT/201901/js/不直接支持浏览器环境
   - https://github.com/sergeyksv/tingodb
@@ -341,6 +343,11 @@ modified: 2022-11-26T17:35:24.870Z
 
 - https://github.com/sibite/social-app
   - Post, share, comment, upload photos and chat
+
+- https://github.com/massCodeIO/massCode
+  - code snippets manager for developers
+  - Built with Electron, Vue 3 & Codemirror.
+  - The new version will have a database based on plain JSON. In v1 it was used for this purpose library NeDB, which is no longer supported by the author
 # nedb-starter-crud
 - ts-api-server-express-multi-db /1Star/NALic/201804/ts/nedb/多种db/inactive
   - https://github.com/bluesky50/ts-api-server-express-multi-db

@@ -172,6 +172,13 @@ modified: 2022-06-03T21:34:54.893Z
   - Monotome has support for the common `[[wiki]]` syntax, 
   - Subjects are ordered into a simple directory structure which is mirrored by index.json.
 
+- pervane /200Star/MIT/202205/js/python
+  - https://github.com/hakanu/pervane
+  - https://hakanu.github.io/pervane/
+  - Plain text file based note taking and knowledge base building tool, markdown editor, simple browser IDE.
+  - It doubles as simple file server to render given directories files in web browser while it can be used as a cloud IDE too with awesome code highlighting. 
+  - It's like python's built-in SimpleHTTPServer but a little bit feature richer like WYSIWYG note taking experience
+
 - https://github.com/jaredly/local-first /191Star/202104/js/inactive
   - This aims to eventually be a fully-featured solution for managing, syncing, and storing application data, in a way that works offline, and collaboratively.
 

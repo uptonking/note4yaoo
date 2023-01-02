@@ -16,13 +16,25 @@ modified: 2022-03-03T18:20:12.075Z
 
 - ## 
 
-- ## 
+- ## [rxdb: Offline First_202109](https://news.ycombinator.com/item?id=28690427)
+- I still haven't found the "holy grail architecture" for offline-first with backend sync where the backend isn't just a simple data store but also has business logic and interacts with external systems.
+  - The problems start when the backend is smarter and also applies business logic that generates new events (for example enriching new entities with data from external systems, or adding new tasks to a timeline etc). 
+  - When trying to make the offline experience as feature-rich as possible I always end up duplicating almost all of the backend logic into the clients as well. And in that case, what is even the point of having a smart backend.
+
+- Offline first is a dream to me, I build a big note-taking app (midinote.me) which is 100% offline, 
+  - 👉🏻 but now the biggest pain point is the full text search, yes, we can use DB like this and PouchDB to store data, 
+  - but currently, there isn't a good solution for full text search in javascript, 
+  - I tried lunr.js the performance is poor, and researched FTS by sqlite, it don't support Chinese, 
+  - I ever considered pack the lucene (on JVM) with Electron.js( the desktop wrap on JS) on desktop, I'm not sure it is a good idea, 
+  - now I am going to re-think all these things, and considering give up offline and switch to server side full text search, it will save huge effort comparing to client-side search!
+- pouchdb-quick-search didn't work for you?
+  - Yes, I used it, generally, on JS platform, the performance is not so good to do FTS, especially when document is long and the data getting huge.
 
 - ## How many records can you sort/filter/paginate in a web browser?
 - https://twitter.com/jamespearce/status/1605273072851886090
 - tinybase: Without breaking a sweat: 10, 000 word corpus for client-side autocomplete
   - https://tinybase.org/demos/word-frequencies/
-  - tmdb: 1,000 paged relational records
+  - tmdb: 1, 000 paged relational records
   - https://tinybase.org/demos/movie-database/
 
 - A browser doesn't struggle wrangling many mb of data it memory.
