@@ -9,6 +9,10 @@ modified: 2021-08-30T15:50:54.515Z
 
 # guide
 
+# experts-fts-search
+- eklem
+  - search-index
+  - https://github.com/eklem
 # experts
 - 郭忠明
   - https://www.zhihu.com/people/guo-zhong-ming-26

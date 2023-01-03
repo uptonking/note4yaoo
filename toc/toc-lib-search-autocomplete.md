@@ -251,6 +251,10 @@ modified: 2023-01-01T13:24:35.994Z
 
 - https://github.com/mohamedbenattia99/Github-repositories-clone
   - a Github repositories clone with search functionality. The project uses THE GITHUB API.
+
+- https://github.com/varianter/handbook
+  - https://handbook.variant.no/
+  - 依赖mdx2, instantsearch.js, algoliasearch, swr
 # full-text-search-solutions
 - pouchdb-quick-search /370Star/apache2/201702/js/lunr/inactive
   - https://github.com/pouchdb-community/pouchdb-quick-search
@@ -260,6 +264,13 @@ modified: 2023-01-01T13:24:35.994Z
 
 - https://github.com/doriandrn/rxdb-search /202101/ts
   - Search plugin for RxDB based on search-index
+
+- https://github.com/scambier/obsidian-omnisearch
+  - A search engine that "just works" for Obsidian. 
+  - Includes OCR and PDF indexing. Images OCR and PDF indexing are only available on desktop
+  - it uses the excellent MiniSearch library.
+  - Automatic document scoring using the BM25 algorithm
+  - Note: support of Chinese, Japanese, Korean, etc. depends on https://github.com/aidenlx/cm-chs-patch
 
 - mani /12Star/MIT/201606/js/lunr
   - https://github.com/glennjones/mani
@@ -280,6 +291,7 @@ modified: 2023-01-01T13:24:35.994Z
 
 - https://github.com/LokiJS-Forge/LokiDB/tree/master/packages/full-text-search
   - A full-text search engine.
+  - lokiDb is blazing fast, feature-rich in-memory database written in TypeScript
 
 - https://github.com/frankred/node-full-text-search-light
   - Full Text Search Light is a pure JS full text search engine with an ultrafast search 

@@ -18,7 +18,16 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss
 - ## 
 
-- ## 
+- ## I really don't like that TS is introducing inconsistencies, the other day I learned that `Array<A>` and `A[]` are not the same thing
+
+```typescript
+type A = [string, ...Array<number>, ...Array<boolean>];
+type B = [string, ...number[], ...boolean[]]; // 🚨 error
+
+type Aliased = boolean[];
+type C = [string, ...number[], ...Aliased]
+
+```
 
 - ## [typescript package visibility (create library) - Stack Overflow](https://stackoverflow.com/questions/44821327/typescript-package-visibility-create-library)
 - typescript skipped all fields annotated with `/** @internal */` even with public modificator

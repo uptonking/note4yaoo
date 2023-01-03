@@ -350,6 +350,12 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/gritzko/citrea-model
   - A CRDT-based collaborative editor engine of letters.yandex.ru (2012, historical)
   - https://news.ycombinator.com/item?id=28018129
+    - About a decade ago, I implemented the Causal Tree CRDT (aka RGA, Timestamped Insertion Tree) in regular expressions using a Unicode string as a storage. Later we made a collaborative editor for Yandex based on that code.
+    - Recently I greatly improved CTs by introducing the Chronofold data structure
+- https://github.com/gritzko/swarm
+  - Swarm is like "git for data" except it's real-time and never has a merge conflict. 
+  - Swarm is based on Replicated Object Notation (RON), a distributed live data format.
+  - RON is based on CRDT
 
 - https://github.com/AntidoteDB/crdt-visualizer
   - https://www.antidotedb.eu/crdt-visualizer/

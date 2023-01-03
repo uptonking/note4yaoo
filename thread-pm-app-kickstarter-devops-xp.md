@@ -11,7 +11,16 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
-- ## 
+- ## Underrated growth tool: playgrounds.
+- https://twitter.com/rauchg/status/1609633615511711747
+  - ◆ Tailwind (https://play.tailwindcss.com)
+  - ◆ GraphiQL (e.g.: https://graphql.github.com)
+  - ◆ TypeScript (https://typescriptlang.org/play)
+  - ◆ Rust https://play.rust-lang.org
+  - Bonus for URL sharability. Inspired by @ClickHouseDB
+
+- Big list of playgrounds in the replies here
+  - https://twitter.com/pomber/status/1445808115610423296
 
 - ## 仅供参考; 很多人问要投资什么编程栈。我觉得目前主流的就俩，①Java，有饭吃；②前端，有饭吃但容易触及天花板，后期容易为了突破老搞些风骚走位公众号啥的。
 - https://twitter.com/im2gua/status/1605375846143119360

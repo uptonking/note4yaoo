@@ -13,7 +13,8 @@ modified: 2021-08-16T06:45:51.370Z
 
 - ## 
 
-- ## 
+- ## [Maps on the Web](https://mapsontheweb.zoom-maps.com/)
+- The sources of the maps are mainly readers submissions, news sites, Flickr map pools and groups, MapPorn subreddit, map creators on twitter and instagram, and reblogs from other tumblrs.
 
 - ## 谷歌地图宣布，将要推出“沉浸模式”，将 2D 地图转为 3D 模式，甚至还有室内建模，简直就是现实版的“模拟城市”
 - https://twitter.com/ruanyf/status/1525364031267422208

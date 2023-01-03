@@ -13,6 +13,9 @@ modified: 2022-11-25T15:50:48.226Z
   - sync/collab/local-first
   - 最好支持切换存储层
 
+- js-db-popular
+  - lowdb, rxdb, pouchdb, nedb, loki, Watermelon, lovefield
+
 - ref
   - [Offline-First Database Options for Web Applications in 2020](https://joshuatz.com/posts/2020/offline-first-database-options-for-web-applications-in-2020/)
 # db-js
@@ -288,3 +291,7 @@ modified: 2022-11-25T15:50:48.226Z
 
 - https://github.com/codemix/ts-sql
   - a SQL database implemented purely in TypeScript type annotations.
+
+
+- https://github.com/mafintosh/hyperdb /201808/js
+  - Distributed scalable database

@@ -16,6 +16,9 @@ modified: 2022-09-21T15:47:41.340Z
 - https://github.com/ToolJet/yjs-crdt-game
   - [Building a realtime multiplayer game using React & Yjs + y-webrtc](https://blog.tooljet.com/multiplayer-tic-tac-toe-using-react-crdt-yjs/)
 
+- https://github.com/pengx17/yjs-textarea-demo
+  - A nearly full featured YJS demo on textarea
+
 - https://github.com/dairyisscary/syn
   - Syn is a demo box drawing application that utilizes CRDTs, in this case Yjs.
 

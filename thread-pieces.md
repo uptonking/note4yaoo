@@ -17,7 +17,8 @@ modified: 2021-01-11T12:10:50.900Z
 
 - ## 
 
-- ## 
+- ## Module resolution sometimes takes longer than parsing
+- https://twitter.com/jarredsumner/status/1609796197702860800
 
 - ## ChatGPT 其实跟 OpenAI 之前的 GPT-3 模型没有太多本质的区别，都是 completion 模型。
 - https://twitter.com/unixzii/status/1599594083931942913

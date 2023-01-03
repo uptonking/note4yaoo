@@ -33,6 +33,12 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Compress An Image Before Upload With JavaScript - PQINA](https://pqina.nl/blog/compress-image-before-upload/)
+
 - ## URLPattern is just a string matcher, like RegExp. React Router's route matching algorithm takes into account route nesting. It's a little more complex than a simple string pattern match.
 - https://twitter.com/mjackson/status/1532972006471180288
 - Unrelated: URLPattern shouldn’t have become a standard, imo. It’s slow by design because it encourages matching every route individually instead of all at once, and matching each route typically needs a regex

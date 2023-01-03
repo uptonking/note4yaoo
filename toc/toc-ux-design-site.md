@@ -12,6 +12,10 @@ modified: 2020-10-22T13:17:19.943Z
 - 常见设计可参考主流设计销售网站，如Creative-Tim/WrapPixel，很容易找到卡片
 # dark-mode
 - [🌘 Dark Mode Design – Handpicked website inspiration](https://www.darkmodedesign.com/)
+
+- 卡片设计为主
+  - https://gridfolio.framer.website/
+  - https://gridfolio-dark.framer.website/
 # 白色主题
 - [josh comeau： Latest Articles and Tutorials](https://www.joshwcomeau.com/latest/)
   - 灰背景，白卡片
