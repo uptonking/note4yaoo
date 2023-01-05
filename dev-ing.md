@@ -123,11 +123,21 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - 10-prosemirror-collab - otjs - crdt
   - 11-idb-sync
   - 12-nedb-linvodb
+
+- dev-to
+  - crdt tutorials
 # dev-01
 
 ## 010
 
-## 0101
+## 0104
 
-- dev-to
-  - crdt tutorials
+- Each time you're introducing a Boolean field in a Database schema, use a timestamp instead. Future You will thank you. 
+
+```JS
+isPublished = true;
+if (isPublished) console.log(';; true');
+
+isPublished = new Date();
+if (isPublished) console.log(';; true');
+```

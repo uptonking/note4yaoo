@@ -22,11 +22,17 @@ modified: 2021-11-19T06:53:19.649Z
 - 🙃 🥲
   - ime 呵呵 倒脸
   - upside-down face
-- 🤔 
+- 🤔
   - ime 思考 为啥
   - thinking face
 - 😏
   - ime 嘿嘿 偷笑
+- 😱
+  - ime 尖叫 吓人
+  - :scream:
+  - face screaming in fear
+- 😩 😦 😫
+  - ime 惨 难过
 - 😂
   - ime 笑哭
   - :joy: 
@@ -34,12 +40,6 @@ modified: 2021-11-19T06:53:19.649Z
 - 🤗
   - ime 抱抱 欢迎
   - smiling face with open hands
-- 😱
-  - ime 尖叫 吓人
-  - :scream:
-  - face screaming in fear
-- 😩 😦 😫
-  - ime 惨 难过
 - 😑 😑
   - ime 噢 o
 - 🥱
@@ -51,6 +51,8 @@ modified: 2021-11-19T06:53:19.649Z
   - face with rolling eyes
 - 🤧 😮‍💨
   - ime 喷嚏 叹气
+- ✨
+  - 闪亮，闪烁
 - 🚨
   - 危险
 - ⛔️

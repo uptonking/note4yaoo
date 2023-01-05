@@ -142,6 +142,24 @@ modified: 2022-11-03T04:14:11.987Z
 - https://github.com/epochtalk/treedb
   - Database for tree structured data
   - LevelDB backend for hierarchical data.
+# sql on mongodb
+- https://github.com/synatic/sql-to-mongo /18Star/MIT/202212/js
+  - Converts M-SQL Queries to Mongo find statements or aggregation pipelines.
+  - M-SQL is a specific way to use MySQL style queries tailored to MongoDB functions 
+  - Parses the given SQL statement to an aggregate or query depending on if a straight query is possible.
+
+- https://github.com/Ligengxin96/sql-in-mongodb /202108/ts/inactive
+  - convert common sql query to mongodb query
+
+- https://github.com/orgoldfus/sql2mongo /202012/js/inactive
+  - Parses an SQL WHERE clause to a mongo query object.
+
+- https://github.com/gordonBusyman/mongo-to-sql-converter
+  - convert MongoDB query (find()) to SQL
+  - takes string as input and gives string as output. It supports only db.find method
+
+- https://github.com/fabianTMC/mongoToSQL /202204/js
+  - Convert MongoDB aggregation pipelines to their SQL equivalent
 # mongodb-utils
 - https://github.com/kofrasa/mingo /202211/ts
   - MongoDB query language for in-memory objects

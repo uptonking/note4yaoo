@@ -261,6 +261,7 @@ modified: 2023-01-01T13:24:35.994Z
   - Full-text search engine on top of PouchDB
   - This is a local plugin, so it is not designed to work against CouchDB/Cloudant/etc. 
   - If you'd like to search against the server, use the CouchDB Lucene plugin, Cloudant's search indexes, or something similar.
+  - This plugin uses the classic search technique of TF-IDF
 
 - https://github.com/doriandrn/rxdb-search /202101/ts
   - Search plugin for RxDB based on search-index

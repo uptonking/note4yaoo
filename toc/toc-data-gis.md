@@ -9,6 +9,9 @@ modified: 2021-01-04T16:20:47.941Z
 
 # popular
 
+- https://github.com/giswqs/geospatial-data-catalogs
+  - open geospatial datasets available on AWS, Earth Engine, Planetary Computer, NASA CMR, and STAC Index
+
 - [google spreadsheets list of GIS data sources](https://docs.google.com/spreadsheets/d/1utQRlrX3lJniBjWE3rNjLZeTRsbjH-zdjxNmXhhvO9Q/edit#gid=47)
 # tiles
 - https://github.com/michael-laoyu/MapTileGenerator /inactive

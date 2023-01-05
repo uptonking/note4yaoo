@@ -12,6 +12,11 @@ modified: 2021-05-13T03:12:23.257Z
 - 基于webview是验证想法最快速的方案
   - react-native-webview、capacitor
 
+- who is using react-native
+  - shopify
+  - abandoned
+    - airbnb 
+
 - [搞不定移动端性能，全球爆火的 Notion 从 Hybrid 转向了 Native__202207](https://www.infoq.cn/article/kiiff9kot0jttljpl93u)
 
 - web版和移动版要不要基于react-native复用大量代码

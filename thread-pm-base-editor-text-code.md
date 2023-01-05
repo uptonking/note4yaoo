@@ -11,6 +11,16 @@ modified: 2021-08-16T06:56:58.774Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Alright, you pay for a Pro version of a WYSIWYG, what would you expect to be supported?
+- https://twitter.com/RogersKonnor/status/1610404340837105666
+- Image galleries. Edit as html/markdown. Works on mobile. Extend-your-own-element things. Liquid templating/variables.
+- I would pay for a trix-compatible editor supporting all header levels, images, and inserting pre-defined liquid-based values like {{ http://recipient.name }}. Basically let me define a list and allow auto completion from it after typing “{“ That would be a killer feature.
+- the basic formatting things plus tables, image upload, emoji picker, autocomplete hooks (e.g. @-mentions), theming system, versioning/undo, event hooks
+
 - ## Markdown has built in support for showing differences. Very useful for showing required code changes.
 - https://twitter.com/SCooperDev/status/1534872488269824000
   - markdown 的code block语法高亮显示diff

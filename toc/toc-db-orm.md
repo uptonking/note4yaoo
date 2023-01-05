@@ -7,8 +7,11 @@ modified: 2021-08-30T18:56:09.644Z
 
 # toc-db-orm
 
-# orm
+# guide
 
+- 支持mongodb的orm
+  - typeorm, prisma, mikro-orm, typetta, dittorm
+# orm
 - https://github.com/edgedb/imdbench
   - A benchmark intended to compare various Python and JavaScript ORMs with realistic queries required for a hypothetical IMDB-style movie database application.
   - js: prisma、typeorm、sequelize、edgedb
@@ -16,15 +19,31 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/emanuelcasco/typescript-orm-benchmark /202009/ts/inactive
   - ORM benchmarking for Node.js applications written in TypeScript
 
-- https://github.com/typeorm/typeorm
-  - /22kStar/MIT/202011/ts
+- https://github.com/tkssharma/nodejs-db-orm-world /202003/ts
+  - Node JS with different ORM like Typeorm, Knex, Prisma and Sequelize with Node JS API Development Node JS with without any ORM (MYSQL raw queries)
+
+- typeorm /30.1kStar/MIT/202301/ts
+  - https://github.com/typeorm/typeorm
+  - http://typeorm.io/
   - TypeORM is an ORM that can run in NodeJS, Browser, Cordova, PhoneGap, Ionic, React Native, NativeScript, Expo, and Electron platforms
   - Supports MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, SAP Hana, WebSQL databases.
-  - TypeORM supports both Active Record and Data Mapper patterns
+  - ✨ TypeORM supports both Active Record and Data Mapper patterns
   - TypeORM is highly influenced by other ORMs, such as Hibernate, Doctrine and Entity Framework.
 
-- https://github.com/prisma/prisma
-  - /6.7kStar/Apache2/202012/ts
+- mikro-orm /5.5kStar/MIT/202301/ts/开发者主程只有1个
+  - https://github.com/mikro-orm/mikro-orm
+  - https://mikro-orm.io/
+  - TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns.
+  - 依赖acorn-loose, fs-extra, reflect-metadata
+  - Supports MongoDB, MySQL, MariaDB, PostgreSQL and SQLite databases.
+  - Heavily inspired by Doctrine and Nextras Orm. (两者都为PHP设计)
+  - 使用基于装饰器
+  - Unit of Work maintains a list of objects (entities) affected by a business transaction and coordinates the writing out of changes. 
+  - Identity Map ensures that each object (entity) gets loaded only once by keeping every loaded object in a map. Looks up objects using the map when referring to them. 
+
+- prisma /28.1kStar/apache2/202301/ts
+  - https://github.com/prisma/prisma
+  - https://www.prisma.io/
   - Modern database access (ORM alternative) for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB & SQLite
   - Prisma Client: Auto-generated and type-safe query builder for Node.js & TypeScript
     - used in any Node.js or TypeScript backend application (including serverless applications and microservices). 
@@ -56,24 +75,32 @@ modified: 2021-08-30T18:56:09.644Z
 
 - https://github.com/sequelize/sequelize
   - An easy-to-use multi SQL dialect ORM for Node.js
+  - 不支持mongo
   - https://github.com/nielsgl/sequelize-paper-trail
     - Sequelize plugin for tracking revision history of model instances.
   - https://github.com/sequelize/sequelize-typescript
     - Decorators and some other features for sequelize (v6).
 
+- typetta /63Star/apache2/202301/ts
+  - https://github.com/twinlogix/typetta
+  - ORM written in TypeScript that aims to allow seamless access to data in a typed fashion to all main SQL databases 
+  - 依赖knex、graphql
+  - (MySQL, PostgreSQL, Microsoft SQL Server, SQLLite3, CockroachDB, MariaDB, Oracle e Amazon Redshift) and also to the NoSQL database MongoDB.
+
+- https://github.com/walinejs/dittorm
+  - A Node.js ORM for MySQL, SQLite, PostgreSQL, MongoDB, GitHub and serverless service like Deta, InspireCloud, CloudBase, LeanCloud.
+  - 依赖think-model, think-mongo(think.js)
+
+- https://github.com/balderdashy/waterline /202208/js/inactive
+  - An adapter-based ORM for Node.js with support for mysql, mongo, postgres, mssql (SQL Server), and more
+  - Waterline is a next-generation storage and retrieval engine, and the default ORM used in the Sails framework.
+
 - https://github.com/drizzle-team/drizzle-orm
-  - TypeScript ORM for SQL
+  - a TypeScript ORM for SQL databases
+  - 支持mysql、postgresql、sqlite，不支持mongo
   - 代码量少
 
-- https://github.com/mikro-orm/mikro-orm
-  - https://mikro-orm.io/
-  - TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns. 
-  - Supports MongoDB, MySQL, MariaDB, PostgreSQL and SQLite databases.
-  - Heavily inspired by Doctrine and Nextras Orm. (两者都为PHP设计)
 
-- https://github.com/knex/knex
-  - http://knexjs.org/
-  - A query builder for MSSQL, MySQL, PostgreSQL, SQLite3, Oracle
 - https://github.com/bookshelf/bookshelf
   - Bookshelf is a JavaScript ORM for Node.js, built on the Knex SQL query builder. 
   - It features both Promise-based and traditional callback interfaces, 
@@ -88,7 +115,7 @@ modified: 2021-08-30T18:56:09.644Z
   - Although Orbit is primarily used as a flexible client-side ORM, it can also be used server-side in Node.js.
   - Interact with data from a variety of sources: a REST server, a WebSocket stream, an IndexedDB backup, an in-memory store, etc.
   - Work offline, work online, and seamlessly transition between both modes.
-  - Support undo / redo.gg
+  - Support undo、redo
 
 - https://github.com/Fibonacci-Solucoes-Ageis/MyBatisNodeJs /js
   - MyBatisNodeJs is a port from the The MyBatis data mapper framework for Node. Js.
@@ -116,17 +143,12 @@ modified: 2021-08-30T18:56:09.644Z
   - You can choose different adapters and use the same CRUD interface: MemoryAdapter, RESTAdapter or SQLAdapter.
   - The http mock server(@memoria/server) can be run in-browser and node environments, thus allows for running your in-memory test suite in SSR(server-side rendering) environment if it is needed.
 
-- https://github.com/balderdashy/waterline /202208/js/inactive
-  - An adapter-based ORM for Node.js with support for mysql, mongo, postgres, mssql (SQL Server), and more
-  - Waterline is a next-generation storage and retrieval engine, and the default ORM used in the Sails framework.
-
-- https://github.com/tkssharma/nodejs-db-orm-world /202003/ts
-  - Node JS with different ORM like Typeorm, Knex, Prisma and Sequelize with Node JS API Development Node JS with without any ORM (MYSQL raw queries)
-- https://github.com/1602/jugglingdb /201905/js
+- https://github.com/1602/jugglingdb /201607/js/inactive
   - Multi-database ORM for nodejs: redis, mongodb, mysql, sqlite3, postgresql, arango, in-memory
 
-- https://github.com/upper/db /202208/go
-  - Data access layer for PostgreSQL, CockroachDB, MySQL, SQLite and MongoDB with ORM-like features
+- https://github.com/egomobile/node-orm
+  - https://github.com/egomobile/node-orm-pg
+  - A simple and generic ORM mapper.
 # database
 - https://github.com/codefollower/H2-Research
   - H2数据库源代码学习研究
@@ -147,23 +169,23 @@ modified: 2021-08-30T18:56:09.644Z
 
 - https://github.com/rqlite/rqlite /202212/go
   - distributed relational database, which uses SQLite as its storage engine. 
-
+# rdbms
 - https://github.com/erikgrinaker/toydb /202205/rust
   - Distributed SQL database in Rust, written as a learning project
   - 内部自己实现了SQL Parser、Query Planner、Storage（包括一个B+Tree）和Raft，都是直接编写的（简化版本）的源码而不是用外部库，确实很适合用来学习
 
 - https://github.com/nukep/llamadb /201712/rust
   - a simple SQL database, written entirely in Rust 
-# rdbms
+
 - https://github.com/PostgREST/postgrest
   - https://postgrest.org/
   - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
   - It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
   - 可直接将 PostgreSQL 数据库发布成 REST API，甚至有基于此库的 SaaS 服务如 supabase 可提供类 Google Firebase 的功能。
-# nosql
-
+# orm-non-js
+- https://github.com/upper/db /202208/go
+  - Data access layer for PostgreSQL, CockroachDB, MySQL, SQLite and MongoDB with ORM-like features
 # json based database
-
 - SirDB /493Star/AGPLv3/202012/js
   - https://github.com/c9fe/sirdb
   - A simple database on the file system.
@@ -186,5 +208,3 @@ modified: 2021-08-30T18:56:09.644Z
   - Advanced Database Access Service for Moleculer microservices framework. 
   - Use it to persist your data in a database.
   - Moleculer is a fast, modern and powerful microservices framework for Node.js.
-
-

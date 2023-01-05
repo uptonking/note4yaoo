@@ -39,9 +39,7 @@ modified: 2020-12-31T15:19:37.542Z
   - Experimental Telegram web client with tdlib, webassembly and react js under the hood
 - https://github.com/jtenner/as-pect
   - fast testing with AssemblyScript
-
 # cpp
-
 - https://github.com/mbasso/asm-dom
   - A minimal WebAssembly virtual DOM to build C++ SPA (Single page applications)
   - You can write an entire SPA in C++ 
@@ -67,9 +65,7 @@ modified: 2020-12-31T15:19:37.542Z
   - High-performance stateful serverless runtime based on WebAssembly
 - https://github.com/wwwg/wasmdec
   - WebAssembly to C decompiler
-
 # rust
-
 - https://github.com/yewstack/yew
   - https://yew.rs/
   - /14.4kStar/MIT|Apache2/202012/rust
@@ -83,9 +79,7 @@ modified: 2020-12-31T15:19:37.542Z
   - The goal of this crate is to provide Rust bindings to the Web APIs and to allow a high degree of interoperability between Rust and JavaScript.
 - https://github.com/38/plotters
   - A rust drawing library for high quality data plotting for both WASM and native, statically and realtimely
-
 # wasm-toolchain
-
 - https://github.com/WebAssembly/wabt
   - The WebAssembly Binary Toolkit
 - https://github.com/iodide-project/pyodide
@@ -99,7 +93,6 @@ modified: 2020-12-31T15:19:37.542Z
 - https://github.com/ballercat/walt
   - JavaScript-like syntax for WebAssembly text format
 # wasm-java
-
 - https://github.com/i-net-software/JWebAssembly
   - Java bytecode to WebAssembly compiler
 - https://github.com/wasmerio/wasmer-java
@@ -107,7 +100,7 @@ modified: 2020-12-31T15:19:37.542Z
 - https://github.com/leaningtech/cheerpj-meta
   - CheerpJ - convert Java bytecode to WebAssembly and JavaScript
 # wasm-examples
-
- 
-
+- https://github.com/WordPress/wordpress-playground
+  - https://developer.wordpress.org/playground/
+  - WordPress Playground is an experimental in-browser WordPress that runs without a PHP server thanks to the magic of WebAssembly.
 # more

@@ -11,6 +11,8 @@ modified: 2022-11-11T06:57:09.670Z
 
 - resource
   - [Rust语言圣经(Rust Course)](https://course.rs/about-book.html)
+  - https://github.com/google/comprehensive-rust
+    - Rust course used by the Android team at Google
 # tips
 
 # dev

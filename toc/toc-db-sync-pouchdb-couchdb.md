@@ -159,7 +159,7 @@ modified: 2022-11-30T18:56:07.072Z
   - Seamless switching between online (CouchDB) and offline (PouchDB) authentication.
   - This plug-in stores password hashes in a local PouchDB, not a smart thing
 
-- https://github.com/pouchdb-community/pouchdb-quick-search /201702/js/lunr
+- https://github.com/pouchdb-community/pouchdb-quick-search /370Star/apache2/201702/js/lunr/inactive
   - efficient and accurate full-text search engine built on top of PouchDB
   - The underlying tokenization/stemming/stopword engine is Lunr, which is optimized for English text, using a variant of the Porter stemmer. 
   - This is a local plugin, so it is not designed to work against CouchDB/Cloudant/etc. 

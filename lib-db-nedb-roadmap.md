@@ -37,6 +37,8 @@ modified: 2022-12-16T15:40:56.278Z
   - nedb-logger
 
 - [Listen to database changes](https://github.com/louischatriot/nedb/issues/175)
+  - [Forcibly adding NeDB events by deriving from the Datastore prototype: inserted/removed/updated/load](https://gist.github.com/JamesMGreene/0e0b2506c7bd2a2557f7/d8b4b1e97bb0d118c509672e3c7276b6dc4ba13a)
+  - [Inserted, updated and removed events](https://github.com/louischatriot/nedb/pull/156)
 
 - 不支持同步
 

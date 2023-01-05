@@ -16,16 +16,20 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
+- ## 
 
 - ## 
 
+- ## #TypeScript's `infer` keyword is just JavaScript's destructuring assignment
+- https://twitter.com/GabrielVergnaud/status/1610637512870871040
 
-- ## 
+```typescript
 
+type GetName<User> = User extends {name:infer Name}? Name:never;
 
-- ## 
+type T = GetName<{name:'Mike'}>; // Mike
 
-
+```
 
 - ## TIL be careful with `Array.every` and empty arrays.
 - https://twitter.com/steveruizok/status/1597207156436393984
