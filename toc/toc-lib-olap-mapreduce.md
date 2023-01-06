@@ -15,10 +15,12 @@ modified: 2020-10-05T09:12:01.565Z
   - a high performance real-time analytics database. 
   - Druid's main value add is to reduce time to insight and action.
 
-- querybook /836Star/Apache2/202105
+- querybook /1.3kStar/apache2/202301/ts/python
   - https://github.com/pinterest/querybook
   - https://www.querybook.org/
   - Querybook is a Big Data Querying UI, combining collocated table metadata and a simple notebook interface.
+  - 依赖flask
+  - 依赖chart.js, codemirror5, draftjs, redux, react-dnd
   - 支持 mysql、postgresql、sqlite、hive、druid、presto
 
 - quix /202Star/MIT/202105

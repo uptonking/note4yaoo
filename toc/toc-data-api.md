@@ -9,10 +9,6 @@ modified: 2020-11-11T13:16:24.994Z
 
 # metadata
 
-- https://github.com/open-metadata/OpenMetadata
-  - https://open-metadata.org/
-  - Open Standard for Metadata. A Single place to Discover, Collaborate and Get your data right.
-  - OpenMetadata is an all-in-one platform for data discovery, data lineage, data quality, observability, governance, and team collaboration. 
 - https://github.com/GuinsooLab/darkseal
   - A Single place to Discover, Collaborate, and Get your data right
   - Darkseal depends on following components to build a metadata platform:

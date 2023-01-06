@@ -39,21 +39,27 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 - To get your commit through without running that pre-commit hook, use the `--no-verify` option.
   - git ci和push时都可以用
 
-- git配置
-  - cat .git/config
-    - 查看本仓库git的配置文件，注意本地和全局配置可能不同；
+- git配置相关
+  - cat .git/config 查看本仓库git的配置文件，注意本地和全局配置可能不同；
     - 不论配置命令的大小写，`.gitconfig`中都是小写
-  - git config --global init.defaultBranch main 
-  - git config --global core.fileMode false 
-  - git config --global core.ignoreCase false 
-  - git config --global alias.co checkout
-  - git config --global alias.br branch
-  - git config --global alias.ci commit
-  - git config --global alias.st status
-  - git config --global --add --bool push.autoSetupRemote true
-    - 本地新分支，自动创建关联，直接push
 
-- git config --global core.autocrlf true 
+```shell
+git config --global init.defaultBranch main 
+git config --global core.fileMode false 
+git config --global core.ignoreCase false 
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+
+# 本地新分支，自动创建关联，直接push
+git config --global --add --bool push.autoSetupRemote true
+
+# merge时自动检测文件夹重命名
+git config --global merge.directoryRenames true
+```
+
+- git config --global core.autocrlf true/input
   - `autocrlf` should be "input" on Unix (Mac/Linux) while "true" on Windows. 
   - This is very well-explained on Git's official document under the[ "Formatting and Whitespacing"](https://stackoverflow.com/questions/44720236) section
 
@@ -65,48 +71,66 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
     - %d 表示 分支、tag、HEAD 等信息；
     - %s 表示提交的信息。
 
-- debug相关
-  - 将远程git仓库里的指定分支拉取到本地（本地不存在的分支）
-    - git checkout -b 本地分支名 origin/远程分支名
-    - 若提示origin/远程分支名不存在，需要先git fetch --all
-  - switch my git repository to a particular commit
-    - git checkout -b new_branch 6e559cb
-      - With the commit hash (or part of it)
-    - git checkout -b new_branch HEAD~4
-      - go back 4 commits from HEAD
-  - 将某个文件回退到某个commit，常用来处理package.json/lock-file的依赖冲突
-    - git checkout c5f567 -- file1/to/restore file2/to/restore
+- 分支debug相关
+
+```shell
+# clone非master分支、修改克隆下来的文件夹名称
+git clone -b <branch-name> <repo-url> <destination-folder-name>
+
+# 将远程git仓库里的指定分支拉取到本地（本地不存在的分支）
+# 若提示origin/远程分支名不存在，需要先 git fetch --all
+git checkout -b 本地分支名 origin/远程分支名
+
+# switch my git repository to a particular commit
+# With the commit hash (or part of it)
+git checkout -b new_branch 6e559cb
+# go back 4 commits from HEAD
+git checkout -b new_branch HEAD~4
+# 将某个文件回退到某个commit，常用来处理package.json/lock-file的依赖冲突
+git checkout c5f567 -- file1/to/restore file2/to/restore
+```
 
 - commit相关
-  - 修改最新commit描述信息
-    - git commit --amend -m 'new msg'
-  - 修改倒数第N条commit描述信息
-    - you can use `reword` to be prompted to only change the commit message
-    - https://stackoverflow.com/questions/1884474
-    - git rebase -i HEAD~n    倒数条第N条，N>=1
-  - commit后又修改了，但不想添加记录
-    - git add .
-    - git commit --amend --no-edit
-  - 撤销上次commit的记录，不回滚修改
-    - **只撤销本次提交记录，实际修改后的文件仍然存在本地**
-    - git reset HEAD~
-    - git reset commit_id
-  - 撤销 commit, 同时本地删除该 commit 修改：
-    - git reset --hard commit_id
-    - git reset --hard HEAD~
-    - git push origin -f
-    - [git放弃修改，放弃增加文件操作](https://blog.csdn.net/ustccw/article/details/79068547)
 
-- clone非master分支、修改克隆下来的文件夹名称
-  - `git checkout origin/branchName` 切换分支
-  - `git clone -b <branch-name> <repo-url> <destination-folder-name>`
+```shell
+# commit后又修改了，但不想添加记录
+git add .
+git commit --amend --no-edit
+# 修改最新commit描述信息
+git commit --amend -m 'new msg'
+# 修改倒数第N条commit描述信息
+# you can use `reword` to be prompted to only change the commit message
+# https://stackoverflow.com/questions/1884474
+git rebase -i HEAD~n    倒数条第N条，N>=1
 
-- 删除远程仓库中的文件，如意外提交了node_modules文件夹
+# 撤销上次commit的记录，不回滚修改
+# **只撤销本次提交记录，实际修改后的文件仍然存在本地**
+git reset HEAD~
+git reset commit_id
+
+# 撤销 commit, 同时本地删除该 commit 修改：
+# [git放弃修改，放弃增加文件操作，场景较多](https://blog.csdn.net/ustccw/article/details/79068547)
+git reset --hard commit_id
+git reset --hard HEAD~
+git push origin -f
+
+```
+
+- merge相关
+
+```shell
+# merge时出现冲突且未处理冲突，如何取消merge
+git merge --abort         >= 1.7.4
+git reset --merge         >= 1.6.1
+git reset --hard
+```
+
+- 删除远程仓库中的文件，如意外提交了`node_modules`文件夹
 - 一种方法：直接将远程要删除的文件加入 `.gitignore`；
   - 此时vscode显示的文件夹可能没变灰，[gitignore does not ignore folder](https://stackoverflow.com/questions/24410208/)
   - 需要执行 `git rm -r --cached <del-folder>`, 此时本地文件不会删除，但会删除远程文件
 
-```
+```shell
 git rm --cached 文件/夹名，只删除了缓存，实际文件不会删除
 git commit -m '备注'
 git push origin 分支
@@ -114,9 +138,9 @@ git push origin 分支
 
 - 删除本地和远程两份文件
 
-```
-git rm 文件名       // 删除文件
-git rm -r 文件夹名   // 删除文件夹 
+```shell
+git rm 文件名         // 删除文件
+git rm -r 文件夹名    // 删除文件夹 
 git add .
 git commit -m '备注'
 git push origin 分支
@@ -124,7 +148,7 @@ git push origin 分支
 
 - 放弃本地修改，用远程覆盖本地
 
-```
+```shell
 git fetch --all
 git reset --hard origin/master
 git pull
@@ -133,7 +157,7 @@ git pull
 - 用本地覆盖远程
   - -f is short for --force
 
-```
+```shell
 git push origin main --force 
 ```
 
@@ -196,7 +220,8 @@ git push
 ## git-not-yet
 
 - 每次合并远程分支后，会出现干扰性commit
-  - merge branch main of github.com:toeverything/toe-editor
+  - merge branch main of github.com:user/repo
+  - 使用git rebase解决
 # java相关
 - maven编译
   - 编译异常后解决了继续上次编译： `mvn <args> -rf :pdi-ce`
@@ -204,36 +229,33 @@ git push
       - 注意验证，saiku下载的jar全是7.8k无效jar
   - 安装本地jar
 
-```
-
-   mvn install:install-file -Dfile=/path/to/local.jar -DgroupId=a.b -DartifactId=name -Dversion=1.0.0 -Dpackaging=jar
+```shell
+mvn install:install-file -Dfile=/path/to/local.jar -DgroupId=a.b -DartifactId=name -Dversion=1.0.0 -Dpackaging=jar
   ```
 
 - 切换java版本-基于jenv
 
-```
-
-  jenv add /usr/lib/jvm/adoptopenjdk-8-hotspot-amd64
-  使用alias添加同一版本的不同jvm：jenv add dcevm11 /path/to/jdk
-  jenv global 11
-  注意JAVA_HOME可能未改变，需要手动更新
-  export JAVA_HOME=
+```shell
+jenv add /usr/lib/jvm/adoptopenjdk-8-hotspot-amd64
+使用alias添加同一版本的不同jvm：jenv add dcevm11 /path/to/jdk
+jenv global 11
+注意JAVA_HOME可能未改变，需要手动更新
+export JAVA_HOME=
 ```
 
 - 切换java版本-基于upadte-alternatives-deprecated
 
-```
-  sudo update-alternatives --config java
-  sudo update-alternatives --config javac
+```shell
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
 
-  /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java  
-  /usr/lib/jvm/java-11-openjdk-amd64/bin/java  
-  /usr/lib/jvm/java-8-openjdk-amd64/bin/javac   
-  /usr/lib/jvm/java-11-openjdk-amd64/bin/javac   
+/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java  
+/usr/lib/jvm/java-11-openjdk-amd64/bin/java  
+/usr/lib/jvm/java-8-openjdk-amd64/bin/javac   
+/usr/lib/jvm/java-11-openjdk-amd64/bin/javac   
 ```  
 # 视频格式转换
 
 ```shell
-
 ffmpeg -i input.flv -codec copy output.mp4
 ```

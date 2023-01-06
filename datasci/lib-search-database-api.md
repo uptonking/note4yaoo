@@ -8,6 +8,11 @@ modified: 2023-01-03T14:53:44.738Z
 # lib-search-database-api
 
 # guide
+- index update的api 是否存在？
+
+- 插件式的搜索架构如何设计？
+  - 初始化逻辑
+  - 添加addIndex和searchText的api
 
 - 自动索引 vs 单独索引
   - 自动索引使用更方便
@@ -47,8 +52,8 @@ await collection.index(ids);
 
 // under the hood, 第2个参数是series/parallel
 // https://rxdb.info/middleware.html
-myRxCollection.postInsert(function addIndex(plainData, rxDocument){
-si.PUT()
+myRxCollection.postInsert(function addIndex(plainData, rxDocument) {
+  si.PUT()
 }, true);
 ```
 

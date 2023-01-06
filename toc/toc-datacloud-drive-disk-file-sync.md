@@ -200,6 +200,11 @@ modified: 2022-09-10T02:26:52.062Z
 - https://github.com/stravo1/obsidian-grive-sync
   - sync notes across devices in Obsidian via Google Drive
 # known-drive-dropbox
+- https://github.com/feup-infolab/dendro /202006/js/inactive
+  - "Open-source Dropbox" with added description features. 
+  - It is a data storage and description platform designed to help researchers and other users to describe their data files, built on Linked Open Data and ontologies. 
+  - Users can use Dendro to publish data to CKAN, Zenodo, DSpace or EUDAT's B2Share and others.
+
 - https://github.com/eltonlazzarin/dropbox-fake-app
   - RocketBox - A Full Stack Project App
   - react native
