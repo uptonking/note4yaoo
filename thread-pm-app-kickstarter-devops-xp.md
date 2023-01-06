@@ -11,6 +11,15 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 千万级dau 代表业务复杂度，人员规模，架构复杂度，到这个级别也得二线或三线中厂了
+- https://twitter.com/yanggege007/status/1610667422846951425
+
 - ## Underrated growth tool: playgrounds.
 - https://twitter.com/rauchg/status/1609633615511711747
   - ◆ Tailwind (https://play.tailwindcss.com)

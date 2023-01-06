@@ -12,7 +12,8 @@ modified: 2022-12-31T18:05:42.830Z
 # discuss
 - ## 
 
-- ## 
+- ## [fix: allow empty prefix option by achingbrain](https://github.com/Level/level-js/pull/184)
+- To get around that - and be compatible with how leveldown behaves - level-js@5 converts string keys to binary keys before passing them to IndexedDB, so that string and binary keys are treated as the same. I.e. it effectively no longer sorts by type.
 
 - ## [level.v8: Streams have moved](https://github.com/Level/level/blob/master/UPGRADING.md#streams-have-moved)
 - Node.js readable streams must now be created with a new standalone module called `level-read-stream` rather than database methods like `db.createReadStream()` . 

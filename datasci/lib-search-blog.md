@@ -11,7 +11,7 @@ modified: 2023-01-03T14:52:51.355Z
 
 # blogs
 
-## [Elasticsearch 中为什么选择倒排索引而不选择 B 树索引](https://www.cnblogs.com/lonely-wolf/p/15464556.html)
+## [Elasticsearch中为什么选择倒排索引而不选择B树索引](https://www.cnblogs.com/lonely-wolf/p/15464556.html)
 
 - 关系型数据库，如 MySQL，其选择的是 B+ 树索引
   - 最底层叶子节点除了存储索引值还会存储整条数据（InnoDB 引擎），而根节点和枝节点不会存储数据，

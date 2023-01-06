@@ -32,6 +32,9 @@ modified: 2021-05-25T09:40:55.797Z
 - https://github.com/parse-community/parse-server
   - Parse Server works with the Express web application framework.
 
+- https://github.com/eugeneware/firedup /201306/js/inactive
+  - A node.js implementation of firebase based on leveldb/levelup.
+
 - kuzzle /1.3kStar/apache2/202211/js
   - https://github.com/kuzzleio/kuzzle
   - https://kuzzle.io/

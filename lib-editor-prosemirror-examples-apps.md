@@ -178,7 +178,7 @@ modified: 2022-08-18T16:57:15.296Z
   - Create nodes by mouse, keyboard shortcuts or using markup (like @ and soon #)
 
 - https://github.com/HarshvardhanMor/online-code-editor
-  - - 依赖tiptap.v2、vue2
+  - 依赖tiptap.v2、vue2
 # more-prosemirror-examples
 - https://github.com/devmnj/react-editor-framework-examples
   - This is a set of Editor Example (React) with TinyMCE, RMirror, Draftjs, MuiEditor and Slatejs .

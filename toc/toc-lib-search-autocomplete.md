@@ -125,6 +125,10 @@ modified: 2023-01-01T13:24:35.994Z
   - This is an inverted index library.
   - creates a DB called "myDB" using levelDB (node.js), or indexedDB (browser)
 
+- https://github.com/dominictarr/level-inverted-index /201602/js
+  - Inverted Index for levelup.
+
+
 - libsearch /114Star/MIT/202207/js/单文件
   - https://github.com/thesephist/libsearch
   - https://thesephist.github.io/libsearch/
@@ -303,6 +307,8 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/eugeneware/level-queryengine /63Star/BSD/201405/js
   - A generic pluggable query-engine system (that supports indexes) for levelup/leveldb databases.
   - Using this architecture you can query your levelup database using your own query langauge with full index support.
+  - forks
+    - https://github.com/mvayngrib/level-queryengine
 # more-search
 - https://github.com/algolia/docsearch
   - The easiest way to add search to your documentation

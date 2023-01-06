@@ -43,7 +43,7 @@ modified: 2022-11-29T20:41:25.566Z
 
 - ## [Nano-SQL: Offline use with Sync to Server_201801](https://github.com/only-cliches/Nano-SQL/issues/18)
 - Hey gents, I'm getting close to implementing this as a core feature.
-- [Here's what I'm thinking:](https://github.com/only-cliches/Nano-SQL/issues/18#issuecomment-392220931)
+- [Here's what I'm thinking:](github.com/only-cliches/Nano-SQL/issues/18#issuecomment-392220931)
   - 1. Implement a conflict resolution feature nearly identical to CouchDB that works on the client and the server. 
   - 2. Use websockets with ajax polling fallback to allow syncing between client side databases and servers alike. 
   - 3. Include a simple JSON Web Tokens feature in the client/server model with security baked in. 

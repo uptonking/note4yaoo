@@ -130,6 +130,37 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 
 ## 010
 
+## 0105
+
+- [javascript - Import '.json' extension in ES6 Node.js throws an error - Stack Overflow](https://stackoverflow.com/questions/60205891/import-json-extension-in-es6-node-js-throws-an-error)
+- `node --experimental-json-modules ./your-file.js`
+
+```JS
+import packageFile from "../../package.json"
+assert { type: "json" };
+
+const {
+  name,
+  version
+} = packageFile;
+
+// The dynamic import version looks like this:
+
+const {
+  default: {
+    name,
+    version
+  }
+} = await import("../../package.json", {
+  assert: {
+    type: "json"
+  }
+});
+```
+
+- [ShopifyQL Notebooks · Shopify Help Center](https://help.shopify.com/en/manual/reports-and-analytics/shopifyql-notebooks)
+  - ShopifyQL Notebooks is an app that enables you to query, explore, and visualize your business’ data.
+
 ## 0104
 
 - Each time you're introducing a Boolean field in a Database schema, use a timestamp instead. Future You will thank you. 

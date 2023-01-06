@@ -9,6 +9,11 @@ modified: 2022-11-03T04:14:00.563Z
 
 # guide
 
+- not-yet
+  - browser-level的持久化为何是二进制？
+
+- resources
+  - https://github.com/Level/awesome
 # db-key-value
 - snap-db /58Star/MIT/202001/ts/Nano-SQL
   - https://github.com/only-cliches/snap-db
@@ -77,6 +82,9 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/Level/levelup
   - A wrapper for abstract-leveldown compliant stores, for Node.js and browsers.
   - deprecated, because it is superseded by abstract-level.
+
+- https://github.com/jed/sheet-down
+  - This library uses abstract-leveldown to turn a worksheet within a Google Spreadsheet into a leveldown-compatible store for use with levelup.
 # level-search
 - search-index /1.3kStar/MIT/202207/js
   - https://github.com/fergiemcdowall/search-index

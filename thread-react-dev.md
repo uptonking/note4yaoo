@@ -12,7 +12,14 @@ modified: 2021-01-06T14:40:11.360Z
 # discuss
 - ## 
 
-- ## 
+- ## snapshot lifecycle is still missing after all these years, keeping classes on unnecessary life support
+- https://twitter.com/mattgperry/status/1610957981956427781
+- Could u give a example that only snapshot can do while hooks can't? 
+  - Any layout animations are impossible without this lifecycle method
+- I was wondering if the new useInsertionEffect hook could be used for this? As it runs before any DOM mutation.
+  - No this would be very unsafe. The problem is this hook is intended for inserting CSS. So mutations are actively taking place and then interleaving a bunch of reads in there so you’d be triggering layout thrashing for a bunch of potentially incorrect measurements
+- 
+- 
 
 - ## for years i needed a setState that affects the view without causing render.
 - https://twitter.com/0xca0a/status/1602037455577817091
@@ -80,7 +87,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,         `ValueFront`,         `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                   `ValueFront`,                   `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

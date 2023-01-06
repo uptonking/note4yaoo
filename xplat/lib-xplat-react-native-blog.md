@@ -7,8 +7,27 @@ modified: 2021-09-11T16:39:49.984Z
 
 # lib-xplat-react-native-blog
 
-# blogs
+# guide
 
+# [shopify: Migrating our Largest Mobile App to React Native_202212](https://shopify.engineering/migrating-our-largest-mobile-app-to-react-native)
+
+- Build and Migrate, All at Once
+  - we decided to gradually start adopting React Native in the app instead of doing a full rewrite.
+  - Any change to the design system had to be done three times—once in native Android, once in native iOS, and once in React Native
+  - we first needed to make sure that all the engineers on our team knew how to write React Native code.
+  - Identifying and Prioritizing What to Migrate 
+  - we decided that we should go all-in and prioritize high-impact screens first, like the root screens of the app.
+- Benefits of the Move
+  - Reducing Implementation Differences Between iOS and Android
+  - More Hands Make Lighter Work
+  - Simpler Code
+- A Few Bumps in the Road
+  - FlashList - A performant variant of FlatList
+  - React Native Skia - High Performance 2D Graphics in React Native
+  - React Native Performance - A Performance monitoring framework
+- Native Routes
+- Deeplink Support
+- Safe Area
 # [Twitter's div Soup and Uglyfied CSS, Explained](https://giuseppegurgone.com/twitter-html/)
 - Twitter web is a complex application built with React Native for Web 
 - React Native provides a small number of cross platform primitives that are the building blocks for your application. 

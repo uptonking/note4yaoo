@@ -23,6 +23,11 @@ modified: 2022-12-31T20:13:33.307Z
   - experimental JSON Import Assertions
   - server.headersTimeout/requestTimeout
 
+- v17.5.0
+  - importing a JSON file is possible using Import Assertions
+    - node --experimental-json-modules ./your-file.js
+    - [Import Assertions - Chrome Platform Status, from v91](https://chromestatus.com/feature/5765269513306112)
+
 - v16.5.0_2021-07-14
   - Web Streams API: An implementation of the WHATWG Streams Standard.
     - ReadableStream
