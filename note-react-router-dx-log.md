@@ -7,7 +7,17 @@ modified: 2021-09-19T15:14:45.954Z
 
 # note-react-router-dx-log
 
-# stars
+# guide
+- features
+  - support react-native
+  - support ssr
+
+- react-router
+  - 支持react-native
+
+- tanstack-router
+  - 暂不支持react-native
+  - 支持ssr
 
 - [Trailing Slashes on URLs: Contentious or Settled?](https://twitter.com/sebastienlorber/status/1488568747447181315)
   - Trailing slashes are complicated and non-std:

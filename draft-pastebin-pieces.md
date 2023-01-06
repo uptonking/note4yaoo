@@ -22,13 +22,7 @@ https://us05web.zoom.us/j/7754416829?pwd=TUlMR3dMWEpaajdVR1VNdDR5N29NZz09
 
 ---
 
-- debt
-  - 金敏小姐(2017) - 30000
-  - 大丫(2016) - 17000 + 2000
-  - 小姨(2016) - 20000 + 1500
-  - mom
-    - 6212 2518 0900 0758 487
-    - 6212251809000758487
+
 
 ```JS
 const unsubscribe2 = editor.selection.onSelectionChange(info => {
@@ -286,3 +280,11 @@ $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$nu
 
   return renderButton();
 ```
+
+- debt
+  - 金敏小姐(2017) - 30000
+  - 大丫(2016) - 17000 + 2000
+  - 小姨(2016) - 20000 + 1500
+  - mom
+    - 6212 2518 0900 0758 487
+    - 6212251809000758487

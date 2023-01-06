@@ -44,6 +44,12 @@ const { RESULT, RESULT_LENGTH } = await collection.search(query: string, siQUERY
 // Indexes add themselves up afterwards when new documents are added.
 const ids = ['id1', 'id2'];
 await collection.index(ids);
+
+// under the hood, 第2个参数是series/parallel
+// https://rxdb.info/middleware.html
+myRxCollection.postInsert(function addIndex(plainData, rxDocument){
+si.PUT()
+}, true);
 ```
 
 ## pouchdb-quick-search using lunr.js

@@ -21,14 +21,6 @@ modified: 2021-05-14T15:04:15.333Z
   - Telegram 很多方面都比微信优胜，单是支持导出数据（包括 chat 和自己创建的 channel）这一点就有足够的优势了
   - 而且导出的格式可以选择 HTML 或 JSON，HTML 格式方便普通用户直接用浏览器打开查看，而支持导出为 JSON 格式，则考虑到二次开发的便利性，足够良心
   - 但是之前的无故封号事件还是太伤害我对电报的信任了
-# im-messaging
-- https://github.com/mastodon/mastodon
-  - Your self-hosted, globally interconnected microblogging community
-  - 依赖ruby
-
-- https://github.com/Linen-dev/linen.dev
-  - Linen is a Google-searchable community chat tool. 
-  - Linen was built as an alternative to closed tools like Slack and Discord.
 # forum-for-dev
 - slack
 - gitter
@@ -36,6 +28,10 @@ modified: 2021-05-14T15:04:15.333Z
 - discord
 - discourse
   - http://www.discourse.org/
+
+- https://github.com/42wim/matterbridge /202212/go
+  - bridge between mattermost, IRC, gitter, xmpp, slack, discord, telegram, rocketchat, twitch, ssh-chat, zulip, whatsapp, keybase, matrix, microsoft teams, nextcloud, mumble, vk and more with REST API
+  - Mattermost isn't required to run matterbridge
 
 - https://github.com/withspectrum/spectrum /archived
   - 依赖express、graphql、apollo、draft-js、redux、rethinkdb
@@ -82,7 +78,6 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/ChenJiaH/react-cnode
   - 基于react&react-router-dom，利用CNode API重写CNode社区。
   - 依赖只有react-router.v5, react, axios
-
 
 - https://github.com/matevsh/web-forum /ts/代码少
   - SPA full-stack app mainly focused on forum functionality
@@ -202,23 +197,16 @@ modified: 2021-05-14T15:04:15.333Z
   - Databases: PostgreSQL, Redis, ElasticSearch.
 
 - https://github.com/carbon-bond/carbonbond
-  - 前端：使用 typescript + React 
-  - 后端：使用 Rust 
-# more-forum
-- https://github.com/geekeren/GuangGuForum
-  - 过早客论坛微信小程序
-  - 技术设计初衷：尽量在无任何后端代理完成所有功能，降低后期维护复杂度和运营成本，直接在小程序端拉取并解析网站的HTML，转成json数据，渲染小程序界面
-  - 本项目基于 Taro 框架开发，技术上支持 Android/IOS 多端，但考虑到过早客是一个相对轻量级的网站，小程序已经足够满足需求而且用户无需安装应用。
+  - 前端：使用 typescript + React
+  - 后端：使用 Rust
+# im-instant-messaging
+- https://github.com/mastodon/mastodon
+  - Your self-hosted, globally interconnected microblogging community
+  - 依赖ruby
 
-- https://github.com/m1guelpf/refract
-  - https://refract.withlens.app/newest
-  - A Hacker News style forum, built on the Lens Protocol.
-  - composed of Next.js and Tailwind CSS, with RainbowKit, ethers, & wagmi for all your web3 needs
-  - 依赖ethers、graphql、next12
-
-- https://github.com/weissthorn/weiss
-  - Modern, Minimalistic Discussion Software
-  - 依赖rethinkdb
+- https://github.com/Linen-dev/linen.dev
+  - Linen is a Google-searchable community chat tool. 
+  - Linen was built as an alternative to closed tools like Slack and Discord.
 # mastodon
 - mastodon /34.8kStar/AGPLv3/202211/js/ruby
   - https://github.com/mastodon/mastodon
@@ -254,3 +242,18 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/tuskyapp/Tusky
   - An Android client for the microblogging server Mastodon
   - Completely open-source - no non-free dependencies like Google services
+# more-forum
+- https://github.com/geekeren/GuangGuForum
+  - 过早客论坛微信小程序
+  - 技术设计初衷：尽量在无任何后端代理完成所有功能，降低后期维护复杂度和运营成本，直接在小程序端拉取并解析网站的HTML，转成json数据，渲染小程序界面
+  - 本项目基于 Taro 框架开发，技术上支持 Android/IOS 多端，但考虑到过早客是一个相对轻量级的网站，小程序已经足够满足需求而且用户无需安装应用。
+
+- https://github.com/m1guelpf/refract
+  - https://refract.withlens.app/newest
+  - A Hacker News style forum, built on the Lens Protocol.
+  - composed of Next.js and Tailwind CSS, with RainbowKit, ethers, & wagmi for all your web3 needs
+  - 依赖ethers、graphql、next12
+
+- https://github.com/weissthorn/weiss
+  - Modern, Minimalistic Discussion Software
+  - 依赖rethinkdb
