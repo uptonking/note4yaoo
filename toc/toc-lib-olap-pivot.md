@@ -136,6 +136,16 @@ modified: 2020-10-22T06:50:36.740Z
 
 - https://github.com/codenautas/sql-tools /js
   - Transfor a SQL sentence in a SQL with totals.
+
+- deepscatter /186Star/MIT/202301/ts
+  - https://github.com/nomic-ai/deepscatter
+  - This is an evolving library for displaying more points than are ordinarily possible over the web.
+  - 依赖apache-arrow, d3-zoom, regl, rbush-3d
+  - All data is sent in the Apache Arrow `feather` format, in a custom quadtree(四叉树) format that makes it possible to only load data as needed on zoom
+    - This is a 2d library. No fake 3d.
+    - The central zoom state is handled by d3-zoom.
+  - Most rendering is done in custom layers using WebGL, with a buffer management strategy handled by `regl`. 
+  - Almost all grammar-of-graphics transforms such are handled on the GPU, which allows for interpolated transitions with calculations done in parallel.
 # more-olap
 - https://github.com/rilldata/rill-developer /202212/ts/svelte/go
   - https://docs.rilldata.com/

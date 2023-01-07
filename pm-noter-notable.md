@@ -64,7 +64,9 @@ modified: 2022-12-19T02:01:20.161Z
 
 - 文本优先版编辑器会丢失部分数据
 - 标准版会导出所有编辑数据，以sqlite格式
-# vip
+# premium
+- 针对table优化的notebook
+
 - 作品默认使用系统预览图，允许vip上传自定义截图
 - 剪藏扩展 web cliper
   - local-first pocket, any links
@@ -127,6 +129,8 @@ modified: 2022-12-19T02:01:20.161Z
 - 管理链接的多维表格
   - 链接添加tag
   - 链接导出markdown，tag放在下一行
+# ux
+- 当视口宽度变窄时，tab页或宽卡片可以像tweetdeck一样折叠以缩小空间，折叠的过程可显示动画
 # faq
 - 如何不使用图床而将图片直接嵌入到笔记中
   - [MarkDown图片存储格式-Textbundle格式](https://zhuanlan.zhihu.com/p/368463926)
@@ -135,7 +139,7 @@ modified: 2022-12-19T02:01:20.161Z
   - jupytext: jupyter notebooks as readable, editable documents
   - executable document
 # discuss
-- ## [Notion 编辑器原理分析](https://zhuanlan.zhihu.com/p/359122473)
+- ## [Notion编辑器原理分析](https://zhuanlan.zhihu.com/p/359122473)
 - 先了解怎么设计一款编辑器，做下铺垫，参考 facebook draft-js 的介绍视频
   - 文章讲了做一款编辑器为什么不直接使用 contenteditable，但又不能完全抛弃 contenteditable 的原因。
 - 文章所指的主要原因是 contenteditable 中 DOM = State ，这里的 State 指存储用户输入的内容，为 html 格式；
@@ -182,4 +186,4 @@ modified: 2022-12-19T02:01:20.161Z
 
 - ref
   - [探索 Notion 的实现](https://zhuanlan.zhihu.com/p/152964640)
-# pieces
+# more

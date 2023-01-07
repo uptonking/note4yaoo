@@ -1,11 +1,11 @@
 ---
-title: cli-linux-shell
-tags: [cli, linux, shell]
+title: cli-scripts-linux-shell
+tags: [cli, linux, scripts, shell]
 created: 2020-11-13T13:07:50.603Z
-modified: 2020-11-13T13:08:39.052Z
+modified: 2023-01-07T15:58:14.300Z
 ---
 
-# cli-linux-shell
+# cli-scripts-linux-shell
 
 # common
 

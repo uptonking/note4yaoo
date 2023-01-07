@@ -62,7 +62,11 @@ modified: 2020-12-22T12:42:14.745Z
     - /var/lib/flatpak/app/*application_name*/current/active/files/share/applications 拷贝到 /usr/share/applications
     - /var/lib/flatpak/app/org.mozilla.firefox/current/active/export/share/applications/
 
-- pip安装的包在用户目录
+- nvm 国内安装
+  - https://gitee.com/RubyKids/nvm-cn
+  - bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)"
+
+- pip 安装的包在用户目录
   - /home/yaoo/.local/lib/python3.10/site-packages/meson-0.63.2.dist-info/
   - sudo pip install meson 安装在root目录 
     - /usr/local/lib/python3.10/dist-packages/
@@ -74,9 +78,19 @@ modified: 2020-12-22T12:42:14.745Z
     - [Device] [Mount Point] [File System Type] [Options] [Dump/backup] [Pass]
     - [pass]: Controls the order in which fsck checks the device/partition for errors at boot time. The root device should be 1. Other partitions should be 2, or 0 to disable checking.
 
-- 代理 shadowsocks
+- ubuntu calendar的每周第一天
+  - sudo gedit /usr/share/i18n/locales/en_US/CA
+  - in the `LC_TIME` section 
+  - first_weekday   2
+  - first_workday   2
+  - sudo locale-gen
+  - logout/restart
+  - [Lunar Calendar 农历 - GNOME Shell Extensions](https://extensions.gnome.org/extension/675/lunar-calendar/)
+
+- proxy shadowsocks
   - 如何在 Ubuntu 中使用网络代理
-- [Qv2ray 使用详解](https://www.rultr.com/tutorials/4200.html)
+  - 可在flathub应用中心搜索
+  - [Qv2ray 使用详解](https://www.rultr.com/tutorials/4200.html)
   - 和win平台的v2ray客户端一样简单，导入账号信息即可科学上网
   - [Qv2ray使用教程](https://xtrojan.org/client/qv2ray%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html)
 
@@ -93,10 +107,6 @@ modified: 2020-12-22T12:42:14.745Z
 
 - [How to Install Fonts on Ubuntu 20.04 Focal Fossa Linux](https://linuxconfig.org/how-to-install-fonts-on-ubuntu-20-04-focal-fossa-linux)
   - sudo cp ~/Downloads/Bitwise.ttf /usr/local/share/fonts/sampleName/
-
-- 国内 nvm
-  - https://gitee.com/RubyKids/nvm-cn
-  - bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)"
 
 - Pending Update of Snap Store 的解决方法
 

@@ -20,6 +20,8 @@ modified: 2022-12-22T15:22:15.191Z
   - chrome-linux的idb本地位置: `~/.config/google-chrome/Default/IndexedDB/`, 每个domain对应一个本地文件夹，典型的leveldb格式
   - 在idb里面key是_id字符串，value是一个document对象序列化后的字符串，符合leveldb的设计
 # roadmap
+- 从callback迁移到async-await
+
 - 合并search-index和linvodb的存储层
 
 - 迁移 full-text-search

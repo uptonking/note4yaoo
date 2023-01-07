@@ -130,9 +130,41 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 
 ## 010
 
+## 0107
+
+- mocha的异步测试异常
+  - Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
+  - 对于async的callback方法cb1，若cb1内部有await，可尝试在await后expect断言前使用`setTimeout(done, 50)`，让done方法异步被执行
+
+- [Correct way to use done() while testing asyc/await with mocha - Stack Overflow](https://stackoverflow.com/questions/52449202/correct-way-to-use-done-while-testing-asyc-await-with-mocha)
+  - The correct way is to not use `done` with `async..await`. 
+  - Mocha supports promises and is able to chain a promise that is returned from `it`, etc. functions.
+  - `done` is needed only for testing asynchronous APIs than don't involve promises. Even then, converting to promises often results in cleaner control flow.
+
+```JS
+it('Testing insertDocumentWithIndex', async () => {
+  var data = await db.insertDocumentWithIndex('inspections', {
+    "inspectorId": 1,
+    "curStatus": 1,
+    "lastUpdatedTS": 1535222623216,
+    "entryTS": 1535222623216,
+    "venueTypeId": 1,
+    "location": [
+      45.5891279,
+      -45.0446183
+    ]
+  })
+  expect(data.result.n).to.equal(1);
+  expect(data.result.ok).to.equal(1);
+})
+```
+
+- [Describe block with async function behaving weirdly · mochajs/mocha](https://github.com/mochajs/mocha/issues/2975)
+  - Mocha's describe blocks do not support (as in waiting for resolution of) returned promises. 
+
 ## 0105
 
-- [javascript - Import '.json' extension in ES6 Node.js throws an error - Stack Overflow](https://stackoverflow.com/questions/60205891/import-json-extension-in-es6-node-js-throws-an-error)
+- [Import '.json' extension in ES6 Node.js throws an error](https://stackoverflow.com/questions/60205891/import-json-extension-in-es6-node-js-throws-an-error)
 - `node --experimental-json-modules ./your-file.js`
 
 ```JS

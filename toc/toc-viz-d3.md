@@ -33,6 +33,16 @@ modified: 2020-10-22T10:23:02.892Z
 - narrative-chart /42Star/BSD/202208/js
   - https://github.com/narchart/narrative-chart
   - visualization library specialized for authoring charts that facilitate data storytelling with a high-level action-oriented declarative grammar.
+# d3-fwk
+- deepscatter /186Star/MIT/202301/ts
+  - https://github.com/nomic-ai/deepscatter
+  - This is an evolving library for displaying more points than are ordinarily possible over the web.
+  - 依赖apache-arrow, d3-zoom, regl, rbush-3d
+  - All data is sent in the Apache Arrow `feather` format, in a custom quadtree(四叉树) format that makes it possible to only load data as needed on zoom
+    - This is a 2d library. No fake 3d.
+    - The central zoom state is handled by d3-zoom.
+  - Most rendering is done in custom layers using WebGL, with a buffer management strategy handled by `regl`. 
+  - Almost all grammar-of-graphics transforms such are handled on the GPU, which allows for interpolated transitions with calculations done in parallel.
 # d3-app
 - https://github.com/paulhoughton/mortgage
   - /202Star/MIT/201902

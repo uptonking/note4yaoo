@@ -39,38 +39,6 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 - To get your commit through without running that pre-commit hook, use the `--no-verify` option.
   - git ci和push时都可以用
 
-- git配置相关
-  - cat .git/config 查看本仓库git的配置文件，注意本地和全局配置可能不同；
-    - 不论配置命令的大小写，`.gitconfig`中都是小写
-
-```shell
-git config --global init.defaultBranch main 
-git config --global core.fileMode false 
-git config --global core.ignoreCase false 
-git config --global alias.co checkout
-git config --global alias.br branch
-git config --global alias.ci commit
-git config --global alias.st status
-
-# 本地新分支，自动创建关联，直接push
-git config --global --add --bool push.autoSetupRemote true
-
-# merge时自动检测文件夹重命名
-git config --global merge.directoryRenames true
-```
-
-- git config --global core.autocrlf true/input
-  - `autocrlf` should be "input" on Unix (Mac/Linux) while "true" on Windows. 
-  - This is very well-explained on Git's official document under the[ "Formatting and Whitespacing"](https://stackoverflow.com/questions/44720236) section
-
-- git命令别名
-  - git config --global alias.lg "log --color --graph --pretty=format:'%C(bold red)%h%C(reset) - %C(bold green)(%cr)%C(bold blue)<%an>%C(reset) -%C(bold yellow)%d%C(reset) %s' --abbrev-commit"
-    - %h 表示提交id；
-    - %cr 表示提交时间；
-    - %an 表示提交人；
-    - %d 表示 分支、tag、HEAD 等信息；
-    - %s 表示提交的信息。
-
 - 分支debug相关
 
 ```shell
@@ -183,6 +151,38 @@ git push
 
 - git status命令 
   - Unmerged paths: 下面列出的就是全部冲突文件，挨个解决即可
+
+- git配置相关
+  - cat .git/config 查看本仓库git的配置文件，注意本地和全局配置可能不同；
+    - 不论配置命令的大小写，`.gitconfig`中都是小写
+
+```shell
+git config --global init.defaultBranch main 
+git config --global core.fileMode false 
+git config --global core.ignoreCase false 
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+
+# 本地新分支，自动创建关联，直接push
+git config --global --add --bool push.autoSetupRemote true
+
+# merge时自动检测文件夹重命名
+git config --global merge.directoryRenames true
+```
+
+- git config --global core.autocrlf true/input
+  - `autocrlf` should be "input" on Unix (Mac/Linux) while "true" on Windows. 
+  - This is very well-explained on Git's official document under the[ "Formatting and Whitespacing"](https://stackoverflow.com/questions/44720236) section
+
+- git命令别名
+  - git config --global alias.lg "log --color --graph --pretty=format:'%C(bold red)%h%C(reset) - %C(bold green)(%cr)%C(bold blue)<%an>%C(reset) -%C(bold yellow)%d%C(reset) %s' --abbrev-commit"
+    - %h 表示提交id；
+    - %cr 表示提交时间；
+    - %an 表示提交人；
+    - %d 表示 分支、tag、HEAD 等信息；
+    - %s 表示提交的信息。
 
 - git 常用命令
   - `git branch branchName` : 创建新分支

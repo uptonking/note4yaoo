@@ -29,19 +29,15 @@ modified: 2021-05-14T14:34:59.116Z
 
 - **integration**
 - charts
-
-# usecase-todo
+# usecase-examples
+- 针对table优化的notebook
 
 - 最新疫情中高风险等级
 - twitter个人设置界面，从左到右多级列表
-
 # usecase-extensions
-
 - storybook-list
 - mdx-list
-
 # usecase-examples
-
 - [Rico's cheatsheets: a modest collection of cheatsheets I've written](https://devhints.io/)
 
 - [js web frameworks benchmark](https://krausest.github.io/js-framework-benchmark/2020/table_chrome_86.0.4240.75.html)
@@ -53,5 +49,4 @@ modified: 2021-05-14T14:34:59.116Z
   - make it easy to work with data in git and GitHub
   - https://github.com/githubocto/flat-viewer
   - https://flatgithub.com/githubocto/flat-demo-bitcoin-price
-
 # usecase-blog
