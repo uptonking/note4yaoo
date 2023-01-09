@@ -14,7 +14,16 @@ modified: 2022-12-05T19:10:15.451Z
 
 - ## 
 
-- ## 
+- ## Seems like @ClickHouseDB adding Clickhouse local is a direct reaction to @duckdb. #data
+- https://twitter.com/AstasiaMyers/status/1611432837202448384
+  - Tech goes through waves of being server-oriented and client-oriented. Seems like we are moving into a phase when people are more interested in the #edge and client.
+- clickhouse-local was available in 2016, DuckDB first preview release is in 2019. Strange causality.
+  - MonetDBLite (by the same folks who built DuckDB!) was also from 2016.
+- If so, I’d say their approach is interesting. They basically turned themselves into a clickhouse railway
+  - https://railway.app/
+  - clickhouse’s approach is not edge/client at all! 
+  - They basically just opened up a request/response API to a server, where the heavy lifting is happening.
+
 
 - ## [ClickBench: A benchmark for analytical databases (Snowflake, Druid, Redshift) | Hacker News_202207](https://news.ycombinator.com/item?id=32084571)
 - As a database author myself (I work on Apache Druid) I have really mixed feelings about publishing benchmarks. 

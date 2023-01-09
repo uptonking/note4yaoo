@@ -130,6 +130,25 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 
 ## 010
 
+## 0108
+
+- 测试mocha时，不能稳定复现 Database is not open/closed
+  - db.clear: Delete all entries or a range. Not guaranteed to be atomic. 
+  - 解决方法不是写多遍，而是使用 `try-catch`
+
+```JS
+// ❌
+await d.store.close();
+await d.store.close();
+
+// ✅
+try {
+  await d.store.close();
+} catch (e) {
+  await d.store.close();
+}
+```
+
 ## 0107
 
 - mocha的异步测试异常

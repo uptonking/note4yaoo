@@ -9,7 +9,7 @@ modified: 2022-12-05T19:09:59.634Z
 
 # guide
 
-# mdx
+# mdx-query-language
 
 ## [Comparing tabular model DAX with multi-dimensional MDX](https://www.wiseowl.co.uk/blog/s1450/dax-versus-mdx.htm)
 

@@ -160,7 +160,7 @@ modified: 2022-11-25T15:50:48.226Z
   - it's working towards a full database engine complying with most of the SQL-99 language, spiced up with additional syntax for NoSQL (schema-less) data and graph networks.
   - https://github.com/agershun/alamdx
     - MDX OLAP JavaScript library for Alasql database
-- https://github.com/gratico/satya /starter
+- https://github.com/gratico/satya /starter/inactive
   - WIP: Satya is a distributed database using Apache Arrow as a Storage format and aims to support both OTLP(transaction processing) and OLAP(analytical processing) workloads. 
   - 依赖 duckdb-wasm、apache-arrow
 

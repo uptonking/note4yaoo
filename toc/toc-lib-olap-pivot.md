@@ -130,7 +130,7 @@ modified: 2020-10-22T06:50:36.740Z
 - https://github.com/vinnik-dmitry07/db-comp
   - A comparison of DuckDB columnar database and relational PostgreSQL.
 
-- https://github.com/gratico/satya
+- https://github.com/gratico/satya /inactive
   - WIP: Satya is a distributed database using Apache Arrow as a Storage format and aims to support both OTLP(transaction processing) and OLAP(analytical processing) workloads. 
   - 依赖 duckdb-wasm、apache-arrow
 

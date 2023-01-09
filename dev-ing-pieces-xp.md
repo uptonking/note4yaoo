@@ -13,6 +13,30 @@ modified: 2021-04-28T20:54:58.126Z
 
 ## 
 
+## 
+
+## 
+
+## 测试mocha时，不能稳定复现 Database is not open/
+
+- 测试时要以terminal信息为准，测试面板可能会隐藏部分冲突提示
+  - 表面通过测试，但terminal会提示id冲突
+
+- 解决方法不是写多遍，而是使用 `try-catch`
+
+```JS
+// ❌
+await d.store.close();
+await d.store.close();
+
+// ✅
+try {
+  await d.store.close();
+} catch (e) {
+  await d.store.close();
+}
+```
+
 ## yjs的源码，各子文件夹都使用import顶层./internals文件中的导出，极易导致循环依赖
 
 - 很难解决循环依赖问题，耗费时间过多，对A文件import B, B文件又import A，解决需要资源过多

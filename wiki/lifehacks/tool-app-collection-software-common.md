@@ -7,9 +7,9 @@ modified: 2022-11-07T10:26:22.510Z
 
 # tool-app-collection-software-common
 
-# 软件选择参考  
+# 软件选择参考
 
-- 优先选择：长期更新，活跃维护，免费自用
+- 优先选择: 长期更新，维护活跃，自用免费
 - 大公司支持
   - vscode和atom中选择vscode，因为github被microsoft收购了
   - 账户信息、ide配置、插件扩展的同步，一般只有大公司愿意免费提供

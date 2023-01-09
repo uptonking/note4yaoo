@@ -235,6 +235,10 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - GDK_BACKEND=x11 screenkey
   - [Missing support for wayland](https://gitlab.com/screenkey/screenkey/-/issues/61)
 
+- 微信 优麒麟版
+  - [微信（Wine）-优麒麟 v3.0.0](https://www.ubuntukylin.com/applications/119-cn.html)
+  - [微信 v2.1.1](https://www.ubuntukylin.com/applications/106-cn.html)
+
 ## dev
 
 - ubuntu-mysql
