@@ -42,7 +42,7 @@ modified: 2022-11-03T04:14:11.987Z
   - ForerunnerDB is a NoSQL JavaScript JSON database with a query language based on MongoDB (with some differences) and runs on browsers and Node.js.
   - ForerunnerDB supports data persistence on both the client (via LocalForage) and in Node.js (by saving and loading JSON data files).
   - ForerunnerDB is an in-memory store but you choose how often (if at all) data is loaded and saved with underlying storage engines.
-  - https://github.com/Irrelon/forerunnerdb-core /v3
+  - https://github.com/Irrelon/forerunnerdb-core /202110/js/v3/inactive
     - This project contains the core query/match/update functionality of ForerunnerDB 3.x
     - forerunnerdb-core provides the core of ForerunnerDB 3.0 which is a complete rewrite of ForerunnerDB in ES6
     - queries in ForerunnerDB 3.x use MongoDB query language by default.
@@ -85,6 +85,11 @@ modified: 2022-11-03T04:14:11.987Z
   - a NoSQL embedded database written in pure TypeScript for Node, Electron and browser
   - SQLite doesn't (by default) return native JS data types (Dates in particular)
   - We use Mingo for aggregation - currently lookup commands aren't supported.
+
+- https://github.com/protobi/query /202205/js/singleFile
+  - lightweight API to query Javascript arrays using MongoDB syntax in the browser and Node.js.
+  - This module originated as a proprietary module for Protobi core, implementing MongoDB syntax for Javascript data arrays.
+  - This API matches much of underscore-query's documentation, and the code passes most of unit tests in the underscore-query module.
 # db-document-json
 - redux-database /18Star/MIT/202005/ts/NoDeps
   - https://github.com/nerdgeschoss/redux-database

@@ -1,11 +1,11 @@
 ---
-title: toc-lib-format-office-xlsx-utils
-tags: [excel, format, ooxml, toc, utils, xlsx]
+title: toc-lib-format-office-excel-xlsx-utils
+tags: [excel, format, ooxml, xlsx]
 created: 2022-11-06T15:46:14.325Z
-modified: 2022-11-11T10:46:29.097Z
+modified: 2023-01-09T11:04:13.958Z
 ---
 
-# toc-lib-format-office-xlsx-utils
+# toc-lib-format-office-excel-xlsx-utils
 
 # guide
 
@@ -33,6 +33,25 @@ modified: 2022-11-11T10:46:29.097Z
 
 - https://github.com/hyberbin/J-Excel /202111/java
   - J-Excel 万能的Excel导入导出工具
+# excel-utils
+- https://github.com/protobi/msexcel-builder /202301/js
+  - A simple and fast library to create MS Office Excel(>2007) xlsx files(Compatible with the OpenOffice document format).
+
+- SheetJS js-xlsx Community Edition /Apache2/21.9kStar/202006
+  - https://github.com/SheetJS/sheetjs
+  - https://oss.sheetjs.com/
+  - 依赖cfb(Compound File Binary File Format extractor), ssf  
+  - 常作为excel读写的工具库，而不用来渲染，官网示例上传excel可渲染成canvas或td
+- https://github.com/protobi/js-xlsx /202008/js/inactive
+  - a fork of the original SheetJS/sheetjs
+  - extended to enable cell formats to be read from and written to .xlsx workbooks. 
+  - The intent is to provide a temporary means of using these features in practice, and ultimately to merge this into the primary project.
+  - https://github.com/protobi/workbook /201602/js
+    - Wrapper for js-xlsx providing convenient way to accumulate sheets, rows, styles
+
+- https://github.com/exceljs/exceljs
+  - /6.4kStar/MIT/202010
+  - Read, manipulate and write spreadsheet data and styles to XLSX and JSON.
 # excel-db
 - https://github.com/vkareh/spreaddb /201406/js
   - SpreadDB is a spreadsheet-oriented database server. 

@@ -41,6 +41,25 @@ modified: 2023-01-02T21:21:24.871Z
   - https://github.com/ReAlign/pinyin-so /202005/ts
     - 拼音搜索方案，支持 全拼/简拼/同音字 等。
 # tokenizer
+- https://github.com/fxsjy/jieba
+  - “结巴”中文分词：做最好的 Python 中文分词组件
+
+- https://github.com/cxumol/jieba-wasm-html
+  - 结巴分词网页版, 基于 WebAssembly 的纯前端实现; 亦可用于 Deno
+  - Fast Jieba Chinese text segmentation on browser. 
+- https://github.com/fengkx/jieba-wasm
+  - WASM binding to jieba-rs
+- https://github.com/HerrCai0907/jieba.js
+  - compile cpp version to wasm and can run in javascript
+
+- chinese-tokenizer /72Star/MIT/201906/js
+  - https://github.com/yishn/chinese-tokenizer
+  - Simple algorithm to tokenize Chinese texts into words using CC-CEDICT.
+  - This tokenizer uses a simple greedy algorithm: It always looks for the longest word in the CC-CEDICT dictionary that matches the input, one at a time.
+  - forks
+  - https://github.com/tadashi-aikawa/chinese-tokenizer
+    - does not depend on Node.js.
+
 - segmentit /189Star/MIT/201902/js
   - https://github.com/linonetwo/segmentit
   - 任何 JS 环境可用的中文分词包，fork from leizongmin/node-segment

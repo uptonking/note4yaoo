@@ -130,6 +130,41 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 
 ## 010
 
+## 0109
+
+- [--es-module-specifier-resolution=node not working from v13.0.1 · Issue #30520 · nodejs/node](https://github.com/nodejs/node/issues/30520)
+  - we have renamed the flag, but we continue to support `--es-module-specifier-resolution=node` which silently aliases to `--experimental-specifier-resolution`
+
+## 0109
+
+- [Feature: Documenting Promises · Issue · jsdoc/jsdoc](https://github.com/jsdoc/jsdoc/issues/509)
+  - jsdoc对promise，暂不支持
+
+- [Summary of `process.env.NODE_ENV` and its use with Webpack by markerikson(redux)](https://gist.github.com/markerikson/6776848172c33aaa4db882627c689e18)
+
+- [Can I mark code blocks as production or development only with webpack? - Stack Overflow](https://stackoverflow.com/questions/50997670/can-i-mark-code-blocks-as-production-or-development-only-with-webpack)
+  - emphasize again: The code really disappears if the condition is not met. Only an empty if statement appears on the output. 
+
+```JS
+var environment = process.env.NODE_ENV || 'development';
+
+if (process.env.NODE_ENV === 'production') {
+  // Code will only appear in production build.
+}
+
+if (process.env.NODE_ENV !== 'production') {
+  // Code will be removed from production build.
+  console.log("Looks like you're a developer.");
+}
+
+// process.env is a reference to your environment, so you have to set the variable.
+// on windows:
+SET NODE_ENV = development
+// on macOS / OS X or Linux:
+export NODE_ENV = development
+// cross-env NODE_ENV=development node server.js
+```
+
 ## 0108
 
 - 测试mocha时，不能稳定复现 Database is not open/closed

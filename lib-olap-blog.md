@@ -25,6 +25,6 @@ create member currentcube.measures.[Amount] as [Measures].[Price] * [Measures].[
 
 ```
 
-- 
-- 
-- 
+# more-blog
+
+- [Vectorization in OLAP Databases — tech ramblings](https://aneesh.mataroa.blog/blog/vectorization-in-olap-databases/)

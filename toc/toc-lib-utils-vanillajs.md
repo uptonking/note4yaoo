@@ -7,8 +7,11 @@ modified: 2021-03-01T10:54:24.828Z
 
 # toc-lib-utils-vanillajs
 
+# guide
+
 # popular
 
+# dev-testing
 - https://github.com/paularmstrong/normalizr
   - https://github.com/paularmstrong/normalizr/blob/master/docs/README.md
   - Many APIs, public or not, return JSON data that has deeply nested objects. Using data in this kind of structure is often very difficult for JavaScript applications, especially those using Flux or Redux.

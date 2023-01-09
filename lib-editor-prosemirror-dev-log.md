@@ -1,11 +1,11 @@
 ---
-title: lib-editor-prosemirror-dx-log
-tags: [dx, issues, prosemirror]
+title: lib-editor-prosemirror-dev-log
+tags: [dev-log, issues, prosemirror]
 created: 2021-09-17T19:14:10.041Z
-modified: 2021-09-19T15:14:41.307Z
+modified: 2023-01-09T15:42:18.886Z
 ---
 
-# lib-editor-prosemirror-dx-log
+# lib-editor-prosemirror-dev-log
 
 # guide
 

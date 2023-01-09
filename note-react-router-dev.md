@@ -1,11 +1,11 @@
 ---
-title: note-react-router-dx-log
-tags: [dx, issues, react-router]
+title: note-react-router-dev
+tags: [dev, react-router]
 created: 2021-09-17T19:30:13.866Z
-modified: 2021-09-19T15:14:45.954Z
+modified: 2023-01-09T15:41:17.179Z
 ---
 
-# note-react-router-dx-log
+# note-react-router-dev
 
 # guide
 - features

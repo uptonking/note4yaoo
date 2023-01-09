@@ -1,11 +1,11 @@
 ---
-title: ux-design-system-codebase
-tags: [codebase, design-system, ux]
+title: ux-design-system-api-design
+tags: [api-design, design-system, ux]
 created: 2021-01-02T22:26:48.350Z
-modified: 2021-01-03T17:11:03.150Z
+modified: 2023-01-09T15:44:42.139Z
 ---
 
-# ux-design-system-codebase
+# ux-design-system-api-design
 
 # adobe spectrum
 

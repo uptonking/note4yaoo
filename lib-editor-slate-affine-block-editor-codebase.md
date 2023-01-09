@@ -1,11 +1,13 @@
 ---
-title: lib-editor-slate-block-editor-codebase
-tags: [block-editor, codebase, slate]
+title: lib-editor-slate-affine-block-editor-codebase
+tags: [affine, block-editor, codebase, slate]
 created: 2022-05-27T09:43:58.962Z
-modified: 2022-05-27T09:44:18.922Z
+modified: 2023-01-09T15:47:51.570Z
 ---
 
-# lib-editor-slate-block-editor-codebase
+# lib-editor-slate-affine-block-editor-codebase
+
+> outdated. very early version of affine-editor before pre-alpha.
 
 # guide
 
