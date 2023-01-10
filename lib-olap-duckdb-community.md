@@ -9,6 +9,24 @@ modified: 2022-12-05T16:01:25.243Z
 
 # guide
 
+- [Epilogue: Our lessons learned building analytics startup Whywhywhy： use _202301](https://www.whywhywhy.com/what-we-learned/)
+  - This is what we learned from building Whywhywhy over the past two years. 
+  - We hope it will be useful to founders who are considering tackling problems in the analytics/BI space.
+    - we built around two amazing core technologies: DuckDB (a very fast embedded analytics database) and Apache Arrow (a universal format for tabular data). 
+    - The combination makes it easy to crunch millions of rows of data in memory at near instant speeds. 
+    - WebAssembly has made the browser much more powerful.
+    - document formats like Notion, Coda, and Google Workspace getting richer, we think analytics results will be consumed in context with narrative and visuals, rather than being trapped in BI siloes.
+  - Whywhywhy let you quickly create interactive charts and share them with your team in communication tools like Slack, Notion, or Google Slides. 
+  - Our vision was to enable anyone to answer questions using data.
+  - Assumption 1: Target business users, not the data team
+  - Assumption 2: Create an accessible data analysis and storytelling format
+    - Dashboards work well for monitoring, but are bad for storytelling. 
+    - Spreadsheets are great but don’t work well with big, live, data. 
+    - The format that most inspired us was the computational notebook.
+    - We got excited about taking the form of notebooks but making it accessible for people who don’t code.
+    - Eventually, we moved focus from the no-code notebook to narrow sharing use cases for analysts, but still, it wasn’t sticking. What was the problem?
+    - BI is a mature and broad category. It might feel like it should be ripe for unbundling given how many jobs that single piece of software does (and dbt has shown that it’s possible for the modeling part). But visualization and reporting is BI’s bread and butter and it’s not obvious to us how you wedge yourself in from that angle.
+  - Assumption 3: Go to market through bottom-up adoption
 # discuss
 - ## 
 
@@ -44,14 +62,12 @@ We're tracking 10 read heads per file and increase the read(ahead) size whenever
   - We could totally increase that to 2 or more to reduce the number of roundtrips.
 - Closing this for now with the readahead acceleration and the caching bug fix for Benjamin. We can track the user-configurable readahead acceleration in a dedicated issue.
 
-
-
 - ## upon my current experiments with DuckDB WASM, it looks like querying partitioned Parquet files in S3 is done in sequential steps. Couldn't this be parallelized? 
 - https://twitter.com/TobiM/status/1601981788758609920
 - Here are some details about what is going on behind the scenes!
   - 👉🏻 Essentially we are in C++/WASM land and using synchronous IO. 
   - In the long run, DuckDB core plans to move to async IO, but that is not a small change!
-- Sorry for this beginner question, is this only the case for DuckDB WASM, or DuckDB itself as well?I‘m just trying to explore possibilities for the fastest possible query results for users, I could also execute the queries in Lambda function instead.
+- Sorry for this beginner question, is this only the case for DuckDB WASM, or DuckDB itself as well? I‘m just trying to explore possibilities for the fastest possible query results for users, I could also execute the queries in Lambda function instead.
   - DuckDB core is multi threaded (but synchronous per thread) I believe, so you should see parallelism in the other clients! (Node, Python, etc)
 
 - ## DuckDB can query parquet data that's hosted on GitHub without needing to fully download the files! Presumably using HTTP range headers?

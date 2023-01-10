@@ -25,6 +25,8 @@ modified: 2021-01-04T16:21:40.119Z
     - The H3 geospatial indexing system is a multi-precision hexagonal tiling of the sphere indexed with hierarchical linear indexes. 
   - https://github.com/uber/h3
     - /2.5kStar/Apache2/202011/c
+  - https://github.com/HydroniumLabs/h3o
+    - Rust implementation of the H3 geospatial indexing system.
   - ref
     - [Comparisons: geohash, h3, s2 & Use cases](https://h3geo.org/docs/usecases)
 

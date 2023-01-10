@@ -107,24 +107,22 @@ modified: 2022-11-26T17:35:24.870Z
   - 👉🏻 LinvoDB is based on NeDB, the most significant core change is that it uses LevelUP as a back-end, meaning it doesn't have to keep the whole dataset in memory. 
   - LinvoDB also can do a query entirely by indexes, meaning it doesn't have to scan the full database on a query.
     - LinvoDB does the entire query through the indexes, NeDB scans the DB
-  - https://github.com/Ivshti/linvodb-fts
-    - full text search in memory - linvodb-fts - trie/metaphone; using natural
-  - [I want to know if linvodb3 supports browser](https://github.com/Ivshti/linvodb3/issues/98)
-    - yes, this module works via `localforage` which can work via localstorage
-  - [What can stop end user to directly edit database files?](https://github.com/Ivshti/linvodb3/issues/46)
-    - LinvoDB has to use a leveldb-compatible back-end store
   - [It looks like we build similar database engine(tingodb)](https://github.com/louischatriot/nedb/issues/34)
     - I wrote a DB engine over NeDB/LevelUP which auto-indexes so that each query can run indexed and avoid scanning.
     - It doesn't load the full datastore in memory, and with large datasets it's faster than NeDB because of full indexing.
   - forks
-    - https://github.com/aerys/linvodb3
-    - https://github.com/aerys/mongoose-linvodb3
-    - https://github.com/wittyPuneet/linvodb3
+  - https://github.com/aerys/linvodb3
+  - https://github.com/aerys/mongoose-linvodb3 /升级leveldown
+  - https://github.com/wittyPuneet/linvodb3
+  - https://github.com/Absio/linvodb3-with-serialization-options
+    - LinvoDB fork for adding extension option into Model.
+    - beforeDeserialization, afterSerialization
+- https://github.com/Ivshti/linvodb-fts
+  - full text search in memory - linvodb-fts - trie/metaphone; using natural
+- https://github.com/Ivshti/linvo-p2p-sync
+  - Syncing between a key-value store and the Linvo API
 - https://github.com/Ivshti/linvodb-slides
   - Slides for talk at bulgariawebsummit
-- https://github.com/Absio/linvodb3-with-serialization-options
-  - LinvoDB fork for adding extension option into Model.
-  - beforeDeserialization, afterSerialization
 - https://github.com/mohammedahmed18/electron-app /202210/ts
   - 依赖linvodb3、realm10、reduxjs-toolkit
 - https://github.com/dmfarcas/clipboard-manager

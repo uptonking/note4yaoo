@@ -48,6 +48,9 @@ modified: 2022-02-05T18:45:34.558Z
   - A vanilla JS draggable library
   - Lightweight multi-framework libraries for draggability on the web.
   - 支持vanillajs/react/vue/svelte/solid
+  - Is the library also good for dragging items between lists?
+    - Not directly, I'm afraid. This is for arbitrary dragging, not the sortable kind. You can use svelte-dnd-action or SortableJS for that for easy usage
+
 - dflex /1.4kSStar/MIT/202209/ts
   - https://github.com/dflex-js/dflex
   - https://www.dflex.dev/demo/lists/nested/

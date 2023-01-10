@@ -25,9 +25,17 @@ modified: 2021-01-04T17:26:25.032Z
 - https://github.com/atom-community/markdown-preview-plus
   - a fork of Markdown Preview that provides a real-time preview of markdown documents.
 
-- https://github.com/markdoc/markdoc  /NoDeps
+- markdoc /5.8kStar/MIT/202211/ts/inactive
+  - https://github.com/markdoc/markdoc
+  - https://markdoc.dev/
   - Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites and experiences.
+  - 依赖markdown-it
   - We designed Markdoc to power Stripe's public docs
+  - Markdoc extends Markdown with a custom syntax for tags and annotations
+  - Markdoc uses markdown-it as a tokenizer, building an Abstract Syntax Tree (AST) from the array of tokens emitted by markdown-it.
+    - The logic that parses the tag syntax is generated from a peg.js grammar.
+  - Markdoc has its own dedicated rendering architecture rather than relying on markdown-it to generate its output. 
+    - Developing an independent rendering system was necessary in order to handle Markdoc's custom tags and support multiple output formats.
 # md-parser-generator
 - markdown-it /10.4kStar/MIT/202009
   - https://github.com/markdown-it/markdown-it

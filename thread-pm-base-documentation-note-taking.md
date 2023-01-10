@@ -13,7 +13,15 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 
 
-- ## 
+- ## Notion 发布了三个偏向团队协作的大功能，开始在团队协作上发力。
+- https://twitter.com/Linmiv/status/1499186981590671361
+  1. Teams：自由创建团队对导航栏内容进行分类组织，春季内推出；
+  2. Better Databases：支持跨数据库选择数据，平铺视图展示，升级视图筛选和协作功能，几周内推出；
+  3. Synced Databases：与谷歌日历、Github 联动同步，年内推出。
+
+- 
+- 
+- 
 
 - ## @logseq users in my timeline. How do define when to go block-based vs going page-based in your graphs?
 - https://twitter.com/PabloBernardoTW/status/1534193024934326273

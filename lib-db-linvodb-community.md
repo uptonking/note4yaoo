@@ -34,7 +34,7 @@ modified: 2022-12-22T15:21:38.253Z
   - as for in-memory indexes, they are built on demand
   - if you want to build all your indexes on demand, just specify `index: true` in your model for every queried property
 
-- ## [Store HTML in LimvoDB](https://github.com/Ivshti/linvodb3/issues/44)
+- ## [Store HTML in LinvoDB](https://github.com/Ivshti/linvodb3/issues/44)
   - I want to make something like Sublime Text
   - when editing, all content inside is store in localStorage/IndexedDB/...
 - an advantage with linvodb here is that it's abstract to the storage engine, and you can use anything compatible with leveldown
@@ -127,7 +127,11 @@ Also if you are running into performance issues you should try changing your bac
 - ## [DB cannot be accessed by multiple processes](https://github.com/Ivshti/linvodb3/issues/23)
 - linvodb runs over a key/value store as a backend, so it's an issue in the store rather than linvodb itself.
   - Most stores like level and Medea do not allow access from multiple processes, but there may be some store that can - but that brings all kinds of other issues, like keeping the indexes in sync.
-- look into medea-clusterify and also multilevel, etc. It seems that a lot of folks are running multiprocess level databases, just takes a little extra configuration. 'level compatible' leaves open a lot of options!
+
+
+- look into `medea-clusterify` and also `multilevel`, etc. 
+  - It seems that a lot of folks are running multiprocess level databases, just takes a little extra configuration. 
+  - 'level compatible' leaves open a lot of options!
 - https://github.com/juliangruber/multilevel
   - Expose a LevelDB over the network
 

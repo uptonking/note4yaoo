@@ -31,3 +31,7 @@ modified: 2022-12-24T10:02:30.813Z
 - This is a known issue, although unfortunately I have not investigated. Maybe you can look into the cursor.js code and check how long the index takes, and then how long the retrieval takes.
   - My experience is that the index is OK in terms of speed, but then taking the data out of the store can take a while for various reasons - my suspicion is that it's time lost in levelup/leveldown abstractions
   - Maybe you can try with another store (try with memdown) to see what will happen
+
+- ## [Remove `async` dependency · Pull Request · seald/nedb](https://github.com/seald/nedb/pull/11)
+  - The goal of this PR is to remove the async dependency, and maybe expose a fully retrocompatible promise-based API.
+  - [Race condition & database corruption may happen when calling `ensureIndex` · Issue #9 · seald/nedb](https://github.com/seald/nedb/issues/9)
