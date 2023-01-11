@@ -33,8 +33,13 @@ modified: 2022-11-30T18:57:26.459Z
   - A forked version of Minimongo designed for a synchronous local cache for React apps. 
   - This is designed to replace Flux.
   - since we treat the local database like a cache, we can use the same read-through caching techniques for data fetching that we use on the server
+  - forks
+  - https://github.com/xvonabur/minimongo-cache
+    - `for (collectionName in changeRecords) { }` 描述变更
 - https://github.com/meteorrn/minimongo-cache /202211/js
   - A fork of the minimongo-cache package maintained for the purpose of supporting the @meteorrn/core package
+  - https://github.com/AstonBraham/minimongo-cache
+    - refactor-to-es6
 
 - gongojs-project: v1-js-websocket，v2-ts-轮询
   - https://github.com/gongojs/project

@@ -15,22 +15,39 @@ modified: 2022-11-06T16:47:43.444Z
   - native-json-db offers a JSONDB class with methods for structuring, adding, removing, and updating data in the json file
   - Native-JSON-DB or JSONDb is a NoSQL database system on your local server.
 
-- https://github.com/Starcounter-Jack/JSON-Patch
-  - Update JSON documents using delta patches.
-  - JSON-Patch (RFC6902) is a standard format that allows you to update a JSON document by sending the changes rather than the whole document. 
-  - JSON Patch plays well with the HTTP PATCH verb (method) and REST style programming.
-  - Lean and mean Javascript implementation of the JSON-Patch standard (RFC 6902).
-
 - https://github.com/Palindrom/Palindrom
   - Library for two-way data binding between local and remote JSON models. 
   - It uses JSON-Patch for data updates and Operational Transformation for versioning and data consistency. 
   - It operates via HTTP or WebSocket or both.
 
+- https://github.com/typewriter-editor/typewriter
+  - A rich text editor based off of Quill.js and Ultradom, and using Svelte for UI.
+
+- https://github.com/mongodb-js/jsonpatch-to-mongodb
+  - Convert JSON patches into a MongoDB update
+# json-patch-diff
+- https://github.com/Starcounter-Jack/JSON-Patch
+  - Lean and mean Javascript implementation of the JSON-Patch standard (RFC 6902).
+  - Update JSON documents using delta patches.
+  - JSON-Patch (RFC6902) is a standard format that allows you to update a JSON document by sending the changes rather than the whole document. 
+  - JSON Patch plays well with the HTTP PATCH verb (method) and REST style programming.
+
 - https://github.com/typewriter-editor/json-patch
   - Immutable JSON Patch implementation based on RFC 6902 which adds operational transformation (OT) and last-writer-wins (LWW) support for syncing between client and server. 
   - Does not support the full OT algorithm because copy and move operations cannot be transformed correctly in all cases, so operations must always be applied in correct order. This means a central server is required to determine order.
-- https://github.com/typewriter-editor/typewriter
-  - A rich text editor based off of Quill.js and Ultradom, and using Svelte for UI.
+
+- https://github.com/josdejong/immutable-json-patch /202211/ts
+  - Immutable JSON patch with support for reverting operations.
+  - Apply JSON patch operations on a JSON document in an immutable way.
+  - Create inverse of the JSON patch operations to fully revert applied operations.
+
+- https://github.com/ThreadsStyling/json-patch-ot /201907/ts
+  - Library to reconcile JSON patch changes using Operational Transformation
+  - https://github.com/ThreadsStyling/json-patch-ot-example
+    - An example app doing concurrent editing using JSON Patch OT.
+
+- https://github.com/dharmafly/jsonpatch.js /202202/js
+  - An implementation of the JSONPatch (and JSONPointer) IETF RFCs for Javascript (Node. JS and the Browser)
 
 - https://github.com/cujojs/jiff
   - JSON Patch and diff based on rfc6902
@@ -47,9 +64,9 @@ modified: 2022-11-06T16:47:43.444Z
 - https://github.com/ken107/push-model
   - A JSON-RPC server with object synchronization based on JSON-Patch
 
-- https://github.com/mongodb-js/jsonpatch-to-mongodb
-  - Convert JSON patches into a MongoDB update
-# json-diff
+- https://github.com/ken107/jsonpatch-observe
+  - Observe an object tree for changes and generate JSON Patches (RFC 6902).
+
 - https://github.com/benjamine/jsondiffpatch
   - Diff & patch JavaScript objects
   - simplistic, pure JSON, low footprint delta format
@@ -60,6 +77,12 @@ modified: 2022-11-06T16:47:43.444Z
   - An implementation of the JSON Merge Patch (RFC 7396)
 - https://github.com/riagominota/ts-merge-patch
   - Typescript ready attempt of RFC 7396 JSON Merge Patch method
+
+- https://github.com/Palindrom/JSONPatcherProxy
+  - ES6 proxy powered JSON Object observer that emits JSON patches when changes occur to your object tree.
+
+- https://github.com/corps/json-delta
+  - Json object diff / patching with configurable short-circuit tolerance
 # export/import
 - https://github.com/zheeeng/export-from-json
   - Export to plain text, css, html, json, csv, xls, xml files from JSON.

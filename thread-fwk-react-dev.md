@@ -8,6 +8,27 @@ modified: 2021-01-06T14:40:03.364Z
 # thread-fwk-react-dev
 - 关于react的特殊用法、架构设计、与其他框架的联系区别
 # discuss-stars
+- ## 
+
+- ## I rant from an interesting agnostic library context
+- https://twitter.com/tannerlinsley/status/1612895322715615232
+  - While immutability in JS (and it's collective buy-in) was one of the biggest reasons behind React's success as a platform...
+  - I firmly believe it will be one of the biggest contributors to its demise(结束；让位，转让).
+- Lots of reasons, but their edge effects can be seen in things like:
+  - useCallback/useMemo overuse/leaking
+  - a necessary reliance on utilities to do performant and DX friendly updates to large or deep slices of data
+  - coarse/expensive data pipelines for sake of change detection
+- could you expand on the last point? immutability seems to make in-process, in-memory change detection easier (simple reference equality)
+  - That depends on what changed. If a single row changes in a 100k list, the whole list is “changed” and further inspection is required to know which one. Reactivity is the other side of this coin. With proper reactivity tracking, changes are granular.
+
+- that's a little bit understandable. When react was created proxies where not working in all browsers. Today it's easer to relay on mutability. React still pushes ecosystem forward by introducing new concepts (hooks, suspense etc)
+  - Scalable mutability doesn't require proxies, but I they do make it easier.
+  - agreed! I remember when @vuejs was shipping proxies + non proxies impl and AFAIR non proxies were like 5times slower, ie didn't have proper proxies  implementation and so on. But it still worked so there were not needed.
+- I was sold on it too, for a time. Until I witnessed the overuse of libraries designed to avoid the ridiculous (but necessary) amount of plumbing needed to make shallow change detection functional, and the unbelievably awful FE architecture that came out of that tradeoff
+
+- Massive readability and imo easier to track state changes. Race conditions caused many many problems back in the double bound property days (ng) of my career.
+  - I’ll take a minor performance hit for fewer bugs and better readability imo.
+
 - ## do you know why we need @reactjs ? why not build an app using only DOM API directly?
 - https://twitter.com/sseraphini/status/1379547345130565632
 - For me it’s the declarative way to define how your UI and data behaves and not having to care about the necessary dom changes to do that.
@@ -37,7 +58,7 @@ modified: 2021-01-06T14:40:03.364Z
 - In that table example, the compound components is about to get SUPER ugly as soon as the data is dynamic and needs some transformation from the server to what your display interface expects
   - IMO you can generate the shape config expects using elegant javscript functional programming. Using jsx, you are going to have a lot of extra syntax and mixing of js and jsx to accomplish the same thing
   - I will concede that the autocomplete experience is better with a config object in TypeScript. 
-- Tables are already implemented in HTML as "compound" elements, ie: `<thead>`/`<tbody>` are children of a `<table>`, 
+- Tables are already implemented in HTML as "compound" elements, ie: `<thead>` / `<tbody>` are children of a `<table>` , 
   - also HTML is extremely well documented so I don't have to go read the implementation to use them. 
   - If these were more than just wrapper components I'd take #1.
 - Config object make thinks harder when you want a custom table in one place. You’ll end up having keys that are function that render component
@@ -59,6 +80,7 @@ modified: 2021-01-06T14:40:03.364Z
 - I feel like Typescript encourages you to avoid this pattern for good reason, because CCs rely on children, which can't be typed strongly enough to avoid having to read the implementation. I like letting TS suggest props and catch my mistakes. Config props all the way for me! 
 - We’ve started following this approach for new components in our internal library, and it’s definitely a fine balance when trying to ensure people don’t deviate from the branding guidelines. But I can confidently say it helps us solve more problems than it introduces
 - This is a huge topic of mine. I've been promoting this along with React Context to get super clean APIs.
+
 # discuss
 - ## 
 

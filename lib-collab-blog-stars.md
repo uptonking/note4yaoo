@@ -13,6 +13,18 @@ modified: 2022-04-05T10:10:22.091Z
   - 具体的业务对于协作的粒度要求不同，特别是是否要支持字符级别的协作
   - 子元素是否要支持协作编辑，如编辑器内的表格、白板内的表格
 
+- 协作示例小结
+  - jlongster/crdt-example-app-hlc
+    - 实时通信基于前端setInterval轮询
+    - 冲突处理基于crdt-hlc的数据结构
+    - 每次客户端执行sync都会发送自己的merkle-tree数据到服务端，让服务端快速计算需要返回的op记录
+  - idb-side-sync，架构不适合实时协作
+    - 同步通信通过手动触发请求执行sync
+    - 每次客户端会请求本地最新时间戳之后的服务端op，这个设计不适合协作
+  - otjs
+    - 以服务端接受op的version/时间戳为基准，逐个op按顺序处理
+    - 客户端首次连接服务端时，会获取doc最新内容和version
+
 - local-first + realtime协作的示例
   - https://github.com/gongojs/project
   - https://github.com/a-type/lo-fi

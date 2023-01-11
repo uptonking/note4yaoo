@@ -10,6 +10,7 @@ modified: 2022-12-04T16:33:23.817Z
 # guide
 
 - minimongo/meteor 的replication协议参考 [Distributed Data Protocol (DDP)](https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md)
+  - v1-201408规范发布后，几乎无变动
 
 - ddp/ejson的参考实现: 官方包提取、gongo、第三方ddp
 # meteor-ddp-ejson
@@ -35,6 +36,11 @@ modified: 2022-12-04T16:33:23.817Z
 ## ddp-more
 
 - [Meteor-DDP翻译](https://cnodejs.org/topic/51b030d9555d34c678e5fb2e)
+
+- [以 Flux 角度从头考虑后端架构](https://segmentfault.com/a/1190000001638575)
+  - 对于实时应用呢, 我们知道 Meteor 和 Derby 已经探索很久了
+  - 比如 Meteor 能在客户端直接操作 MongoDB 触发其他的客户端更新
+  - 比如 Derby 的同步引擎 racer 能同步本地的数据操作到服务器
 # meteor
 - meteor
   - a whole framework with its own package manager, database management and replication protocol.
@@ -45,12 +51,25 @@ modified: 2022-12-04T16:33:23.817Z
 - [Meteor的工作原理及优势与不足](https://cloud.tencent.com/developer/article/1643568)
   - 优势：易学、偏向客户端、实时响应、生态
   - 不足：nodejs单线程不适合计算密集型、约束少、NoSQL、非静态、首次加载时间长
+
+- [Meteor介绍 · Ka's Blog](https://blog.kazge.com/nodejs/2018/07/24/zh-meteor-introduction/)
 # discuss
 - ## 
 
-- ## 
+- ## [WYSIWYG Editors and Collaborative Edit Safety - Meteor.js forums](https://forums.meteor.com/t/wysiwyg-editors-and-collaborative-edit-safety/13263)
 
-- ## 
+- https://github.com/prosemeteor/prosemirror
+  - ProseMeteor is a package integrating ProseMirror and Meteor.js
+
+- ## [Use JSONPatch instead of custom verbs in DDP](https://github.com/meteor/meteor/issues/4483)
+  - DDP could be just an extension over JSONPatch. 
+  - Allowing deep changes and not just top-level changes.
+- My feature list is:
+  - JSON patch for verbs
+  - backpressure (DDP is lacking backpressure control, getting msg at a speed)
+  - allowing to add JSON schema to the document, or custom metadata
+
+- You're right DDP currently does not have efficient support for updating complex field values. For this reason, it is advisable to avoid data models with large arrays or embedded objects.
 
 - ## As the author of EtherPad I'm familiar with CRDT, which is a cousin of OT.__201405
 - https://news.ycombinator.com/item?id=7736541
