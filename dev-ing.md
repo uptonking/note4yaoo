@@ -84,7 +84,7 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - url-as-state-management
   - 灵活的tag/bookmark系统
   - docker打包前端
-# dev-2023
+# dev-2023-方向+方法+时间
 - eg-prosemirror-examples+collab
   - 重写collab示例的交互，参考blocky-editor在一个页面展示多个编辑器且支持实时协作
   - [x] 用websocket替换轮询，可基于socket.io
@@ -164,6 +164,11 @@ SET NODE_ENV = development
 export NODE_ENV = development
 // cross-env NODE_ENV=development node server.js
 ```
+
+## 0112
+
+- [exports is not defined in ES module scope - Stack Overflow](https://stackoverflow.com/questions/71478604/exports-is-not-defined-in-es-module-scope)
+  - 使用ts-node执行ts却忘了拷贝 tsconfig.json
 
 ## 0108
 

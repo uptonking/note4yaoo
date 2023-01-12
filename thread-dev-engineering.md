@@ -11,6 +11,15 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I don’t really know the official difference between a library and a framework
+- https://twitter.com/jamespearce/status/1608996890976325632
+- You control how you code with a library. A framework controls how you code.
+- I like "you call a library, but a framework calls you".
+
 - ## Tips on get a deeper understanding of the library you are using:
 - https://twitter.com/lihautan/status/1362791830648016899
   - Try implement the library based on the public API and test cases, figure out how it might be implemented.
@@ -22,11 +31,11 @@ modified: 2021-01-21T17:52:13.333Z
 - https://twitter.com/plantegg/status/1598861467440513024
 - [TCP性能和发送接收窗口、Buffer的关系 | plantegg](https://plantegg.github.io/2019/09/28/%E5%B0%B1%E6%98%AF%E8%A6%81%E4%BD%A0%E6%87%82TCP--%E6%80%A7%E8%83%BD%E5%92%8C%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6Buffer%E7%9A%84%E5%85%B3%E7%B3%BB/)
 
-
 - ## For a new project, I’m experimenting with putting test code next to library modules: utl.test.ts
 - https://twitter.com/rauschma/status/1584271399606054913
   - Definitely a downside. During development, it mostly doesn’t matter. But it’s important when publishing packages. I’m leaning towards simply publishing the tests, too.
   - `rm dist/**/*.test.js`
+
 - I found this pattern more useful and ergonomic than a test folder. I reserved a dedicated test folder for local integration ones that requires fixtures or more complex scenarios. For smaller projects don’t see bigger differences between each other benefits
 - This puts an emphasis on unit tests (because where do you put the integration tests that combine multiple modules?).
   - Which is (the main reason) why I prefer the regular "test" folder: because I want to emphasize integration tests.
@@ -35,9 +44,9 @@ modified: 2021-01-21T17:52:13.333Z
 - I've generalized this into what I've dubbed "the co-location principle", which means that the tighter coupling between two files, the closer they should be in the directory hierarchy. Shared files are moved to the lowest possible level that are in all paths of the consumers.
 
 - I’ve been doing this since forever. I prefer it because:
-  1.  It’s very easy to see which files have no tests
-  2.  I can easily jump from test to implementation 
-  3.  I never have to decide how to name test files
+  01.  It’s very easy to see which files have no tests
+  02.  I can easily jump from test to implementation 
+  03.  I never have to decide how to name test files
   - IMHO the (anti) pattern of putting test files in a separate folder stems from compiled languages like Java where otherwise tests would end up in the compiled code. JavaScript doesn’t have this issue.
   - Rust is even sillier. It puts the test (optionally) in the same sourcefiles 
 
@@ -100,9 +109,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 提高编程水平的一个高效的方式: 
 - https://twitter.com/ivyliner/status/1519472859239923712
-  1.         自己先写一个中等复杂度的项目(在写的时候自己会知道哪些地方写得不够好, 当然也会有不知道的地方) 
-  2.         开始学习相关的知识, 看别人的代码
-  3.         这时候你会意识到哦原来还能这样用,  嗯用这个 API 看起来更优雅, 我去还能这样写. ..
+  01.         自己先写一个中等复杂度的项目(在写的时候自己会知道哪些地方写得不够好, 当然也会有不知道的地方) 
+  02.         开始学习相关的知识, 看别人的代码
+  03.         这时候你会意识到哦原来还能这样用,  嗯用这个 API 看起来更优雅, 我去还能这样写. ..
   整个过程自我会感觉到不断精进.
 
 - 我个人最难的是代码边界控制。如何做到适当的业务上可扩展性和尽量缩小业务变更所带来的代码变更问题。

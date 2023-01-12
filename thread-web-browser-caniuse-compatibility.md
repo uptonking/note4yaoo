@@ -21,7 +21,10 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
-- ## 
+- ## [Does Safari and Google Chrome for macOS use the same rendering engine?](https://apple.stackexchange.com/questions/350671/does-safari-and-google-chrome-for-macos-use-the-same-rendering-engine)
+- While Google Chrome used WebKit for macOS client at one point, that's no longer the case for current stable build.
+  - WebKit was the original rendering engine, but Google eventually forked it to create the Blink engine; all Chrome variants except iOS now use Blink
+- The restriction to use WebKit as the rendering engine for 3rd party Web browser apps exists solely on iOS. 
 
 - ## Just confirmed: iOS 15 now supports the HTML5 drag and drop API on iPhone!
 - https://twitter.com/devongovett/status/1441087776489807875

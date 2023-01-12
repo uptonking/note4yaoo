@@ -16,7 +16,7 @@ modified: 2022-08-21T10:02:05.129Z
 
 - [A More Human Approach To Databases](https://ccorcos.github.io/filing-cabinets/)
   - Notion 工程师 Chet 以警察信息管理系统为例，用普通人能理解的大白话，从文件、文件夹、文件柜逐步介绍关系型数据库的构成和实现原理
-  - [Maybe some misunderstanding of how SQL DB indexes work? 🤔 · Issue #11 · ccorcos/tuple-database](https://github.com/ccorcos/tuple-database/issues/11)
+  - [Maybe some misunderstanding of how SQL DB indexes work?](https://github.com/ccorcos/tuple-database/issues/11)
 # popular
 - react-datasheet-grid /133Star/MIT/202205/ts
   - https://github.com/nick-keller/react-datasheet-grid

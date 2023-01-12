@@ -9,6 +9,7 @@ modified: 2022-10-11T09:03:07.297Z
 
 # guide
 
+- feathers框架为实时类应用而设计，代码量很少
 # discuss-stars
 - ## websocket一般会用在什么实际的场合？
 - https://www.zhihu.com/question/269060103/answer/2399818045

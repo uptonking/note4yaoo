@@ -15,6 +15,7 @@ modified: 2022-12-14T18:26:38.588Z
   - The architecture of this database draws inspiration from a bunch of different places (although, primarily from FoundationDb).
     - pretty much every database has similar abstractions under the hood — an ordered list (or tree) of tuples and binary search. 
     - This is why DynamoDb and FoundationDb can have frontend abstractions that are compatible with Postgres or MongoDb.
+  - https://github.com/maccman/tuple-playground
 # docs
 - 👉🏻 The local-first, "end-user database" database.
   - When users own all of their data on their devices, it's a natural way of sharding a database and scaling up a platform.

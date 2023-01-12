@@ -18,6 +18,7 @@ modified: 2022-11-07T10:24:02.543Z
 
 - git-only
   - https://github.zhlh6.cn/
+    - git clone git@git.zhlh6.cn:tinyplex/tinybase.git
   - https://gitclone.com/
 
 - git-download

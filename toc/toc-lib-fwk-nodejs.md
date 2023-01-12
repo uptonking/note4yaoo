@@ -26,6 +26,12 @@ modified: 2022-12-19T01:49:01.371Z
   - tRPC allows you to easily build & consume fully typesafe APIs, without schemas or code generation.
   - The client above is not importing any code from the server, only its type declarations.
 
+- feathers /14.3kStar/MIT/202301/ts
+  - https://github.com/feathersjs/feathers
+  - A framework for real-time applications and REST APIs with JavaScript and TypeScript
+  - Feathers can interact with any backend technology, supports over a dozen databases and works with any frontend technology like React, VueJS, Angular, React Native, Android or iOS.
+  - v5_202211使用typescript重写，不使用orm而用基于knex(js)的schema+resolver
+
 - nestjs /32.4kStar/MIT/202012/ts
   - https://github.com/nestjs/nest
   - core依赖reflect-metadata、rxjs6、websockets、express、axios
@@ -85,11 +91,6 @@ modified: 2022-12-19T01:49:01.371Z
 - https://github.com/ts-rest/ts-rest
   - https://ts-rest.com/
   - RPC-like client, contract, and server implementation for a pure REST API
-
-- feathers
-  - https://github.com/feathersjs/feathers
-  - A framework for real-time applications and REST APIs with JavaScript and TypeScript
-  - Feathers can interact with any backend technology, supports over a dozen databases and works with any frontend technology like React, VueJS, Angular, React Native, Android or iOS.
 
 - egg /16.5kStar/MIT/202011/js
   - https://github.com/eggjs/egg
@@ -241,7 +242,6 @@ modified: 2022-12-19T01:49:01.371Z
   - 功能点：邮箱验证、注册、登录、jwt验证、用户管理、权限列表、角色列表、商品的增删改查、国际化管理（增删改查、批量添加、excel导入导出、导出js文件）、图片上传等
   - 依赖mongoose
   - https://github.com/heerey525/express_mongodb_web /202012/js/vue
-
 
 - https://github.com/AndhikaBukh/Storify /202208/ts/starter
   - http://storify-six.vercel.app/

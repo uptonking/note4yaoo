@@ -14,18 +14,6 @@ modified: 2022-11-29T20:41:25.566Z
 
 - ## 
 
-- ## [TinyBase v2.0: reactive data store for local-first apps | Hacker News_202209](https://news.ycombinator.com/item?id=32871392)
-- RxDB with PouchDB has support for typescript, json schema, and binary attachments. Moving the attachments to the file system will be up to you.
-
-- I’m my limited experience, a reliable CRDT implementation necessitates a CDRT-first design baked into the core of any data / transaction model. Like I’ve heard some game developers say- multiplayer needs to come first because tacking it onto a single player game is a nightmare.
-
-- ### [CRDTs for tinybase_202209](https://github.com/tinyplex/tinybase/discussions/31)
-- I've had to do a bunch of background reading. Still not sure of quite the right strategy yet... 
-  - but in our favor we have the fact that TinyBase can listen and update on a cellular granularity, reducing the likely conflicts per row or table.
-- The current checkpoints module is an example of keeping a sequence of cell-level changes like that (and it handles deletes a charm). But I need to think about what a flexible API to get or replay such a log in a CRDT context would look like.
-- I've started a dedicated disposable repo for these half-baked ideas. 
-  - https://github.com/tinyplex/tinysync
-
 - ## [Couchdb有在实际生产环境中使用的例子吗？ - 知乎](https://www.zhihu.com/question/20112928/answers/updated)
 - CouchDB是HTTP Restful API来操作数据库的，其它数据库系统使用TCP，在传输大量数据的情况下，HTTP协议在TCP协议之上，可能HTTP协议会比数据库自身实现的数据交互协议payload要大，造成网络性能略差
 

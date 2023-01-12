@@ -22,7 +22,7 @@ modified: 2022-04-05T10:10:22.091Z
     - 同步通信通过手动触发请求执行sync
     - 每次客户端会请求本地最新时间戳之后的服务端op，这个设计不适合协作
   - otjs
-    - 以服务端接受op的version/时间戳为基准，逐个op按顺序处理
+    - 以服务端接受op的version/时间戳为中心authority，逐个op按顺序处理
     - 客户端首次连接服务端时，会获取doc最新内容和version
 
 - local-first + realtime协作的示例

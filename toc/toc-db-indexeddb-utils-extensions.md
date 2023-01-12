@@ -82,8 +82,9 @@ modified: 2022-11-04T14:22:17.373Z
   - https://lecepin.github.io/file-proxy-indexedDB/
   - 使用ServiceWorker实现本地图片上传到IndexedDB，并进行 proxy 进行读取操作
 
-- https://github.com/jvilk/BrowserFS
+- https://github.com/jvilk/BrowserFS /202001/ts/inactive
   - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
+  - 支持 memory/localStorage/indexeddb/dropbox/Emscripten file systems
 # idb-state-cache
 - choxy /3Star/ISC/202106/js
   - https://github.com/phanhuyanh/choxy

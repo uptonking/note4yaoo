@@ -232,13 +232,23 @@ modified: 2021-08-23T05:27:08.068Z
   - Offline-first note taking and knowledge management application 
 - https://github.com/Merlin04/multipad
   - Notepad for the future - a swiss army knife file editor/viewer.
-# filesystem
+# filesystem-utils
+- https://github.com/jvilk/BrowserFS /202001/ts/inactive
+  - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
+  - 支持 memory/localStorage/indexeddb/dropbox/Emscripten file systems
+
+- https://github.com/use-strict/file-system-access
+  - File System Access API implementation (ponyfill) with pluggable storage adapters via IndexedDB, Cache API, in-memory etc.
+
 - https://github.com/libfuse/libfuse
   - The reference implementation of the Linux FUSE (Filesystem in Userspace) interface
 - https://github.com/presslabs/gitfs
   - gitfs is a FUSE file system that fully integrates with git. 
   - You can mount a remote repository's branch locally, and any subsequent changes made to the files will be automatically committed to the remote.
   - 但vscode不是直接集成git了吗
+# opfs/Origin Private File System
+- https://github.com/tomayac/opfs-explorer
+  - OPFS Explorer is a Chrome DevTools extension that allows you to explore the Origin Private File System (OPFS) of a web application.
 # more-files-manager
 - https://github.com/imshubhamsingh/file-system-react
   - 依赖redux、styled-components、formik

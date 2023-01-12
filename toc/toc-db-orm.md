@@ -26,8 +26,10 @@ modified: 2021-08-30T18:56:09.644Z
   - https://github.com/typeorm/typeorm
   - http://typeorm.io/
   - TypeORM is an ORM that can run in NodeJS, Browser, Cordova, PhoneGap, Ionic, React Native, NativeScript, Expo, and Electron platforms
-  - Supports MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, SAP Hana, WebSQL databases.
+  - Supports MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, SAP Hana, sql.js.
+  - Supports MongoDB NoSQL database.
   - ✨ TypeORM supports both Active Record and Data Mapper patterns
+  - 依赖date-fns, reflect-metadata, buffer
   - TypeORM is highly influenced by other ORMs, such as Hibernate, Doctrine and Entity Framework.
 
 - mikro-orm /5.5kStar/MIT/202301/ts/开发者主程只有1个
@@ -100,14 +102,20 @@ modified: 2021-08-30T18:56:09.644Z
   - 支持mysql、postgresql、sqlite，不支持mongo
   - 代码量少
 
-
-- https://github.com/bookshelf/bookshelf
+- bookshelf /6.3kStar/MIT/202007/js/inactive
+  - https://github.com/bookshelf/bookshelf
   - Bookshelf is a JavaScript ORM for Node.js, built on the Knex SQL query builder. 
   - It features both Promise-based and traditional callback interfaces, 
   - It is designed to work with PostgreSQL, MySQL, and SQLite3.
   - Bookshelf aims to provide a simple library for common tasks when querying databases in JavaScript, and forming relations between these objects, taking a lot of ideas from the Data Mapper Pattern.
-- https://github.com/seegno/bookshelf-json-columns
-  - Parse JSON columns with Bookshelf.js
+  - https://github.com/seegno/bookshelf-json-columns
+    - Parse JSON columns with Bookshelf.js
+
+- https://github.com/vincit/objection.js
+  - Objection.js is an ORM for Node.js
+  - built on an SQL query builder called knex
+  - https://github.com/feathersjs-ecosystem/feathers-objection
+    - Feathers database adapter for Objection.js
 
 - orbit /2.3kStar/MIT/202209/ts
   - https://github.com/orbitjs/orbit

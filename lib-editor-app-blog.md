@@ -217,6 +217,13 @@ modified: 2022-08-21T10:11:37.453Z
   - 服务器就在你本地。。。懂了没？？只是和编辑器分开了，通过通信来交流
   - 网络传输会让你的ide跑的慢死 目前的都是本地服务器也就是个跨进程通讯而已
 # more
+- [编辑器背后的数据结构 | Tuesday.](https://dontpanic.blog/data-structures-under-editors/)
+  - 部分Emacs使用了Gap Buffer，包括古老的 Emacs on TECO、现代的GNU/Emacs及其前辈Gosling Emacs。
+  - Scintilla (即包括Code:: Blocks在内的很多IDE/编辑器使用的代码编辑控件) 也使用了Gap Buffer
+  - Emacs进入由Lisp实现的时代后，一些Emacs版本使用了LinkedLine。
+  - Vim使用的是一种基于行的数据结构，但行与行之间不是简单地使用链表连接，而是用一种树结构进行管理。
+  - KDE的Okteta 16进制编辑器使用了Piece Table Buffer
+
 - [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)
 - [TEXT EDITING HATES YOU TOO](https://lord.io/text-editing-hates-you-too/)
 

@@ -7,7 +7,6 @@ modified: 2021-08-30T18:56:14.863Z
 
 # toc-db-sql-js
 
-
 # guide
 
 - http://sqlfiddle.com/
@@ -15,7 +14,7 @@ modified: 2021-08-30T18:56:14.863Z
 - https://github.com/knex/knex
   - http://knexjs.org/
   - A query builder for MSSQL, MySQL, PostgreSQL, SQLite3, Oracle
-
+  - knex-based Object Relational Mapper: mikro-orm, bookshelf, objection.js
 
 - https://github.com/koskimas/kysely
   - a type-safe and autocompletion-friendly typescript SQL query builder. Inspired by knex. 
@@ -31,8 +30,6 @@ modified: 2021-08-30T18:56:14.863Z
   - https://ukrbublik.github.io/react-awesome-query-builder/
   - User-friendly React component to build queries (filters).
   - 工具条设计很经典，and/or/not在上层
-
-
 # db-sql-tools
 - https://github.com/sqlpad/sqlpad
   - A web app for writing and running SQL queries and visualizing the results. 

@@ -11,7 +11,16 @@ modified: 2022-04-05T13:25:40.892Z
 
 - ## 
 
-- ## 
+- ## Most CRDTs are optimized for text editing which isn't really our primary usecase.
+- https://twitter.com/zack_overflow/status/1603402929586769925
+  - Also most let you express dynamic JSON structures, but when you have a fixed type/structure there's a missed optimization opportunity
+  - This journey was inspired by these awesome responses from josephg and @nathansobo when I asked about CRDTs on HN. They basically said CRDTs were simple/elegant, but the hard part was optimizing them.
+- The crdts are written in Rust & compiled to Wasm, which is ok but im still evaluating the approach
+
+- Ah yeah, I’ve been building out fixed-type json crdts. :) There’s some nice optimisations in the space!
+  - https://github.com/siliconjungle/simple-fixed-json-crdt
+  - Using fixed-type json-crdts on the server is incredibly performant if you flatten the hierarchy.
+  - You don't actually need a JSON representation of the data, you just need to know which value is at each index.
 
 - ## Or simply “conflict resolution algorithm”? Maybe a data structure API is just one (kinda object-oriented) way of thinking about conflict resolution, and we could also envisage other APIs that allow replicas to converge?
 - https://twitter.com/martinkl/status/1504888983851053058

@@ -216,6 +216,10 @@ modified: 2022-09-10T02:26:52.062Z
   - A free, open-source notes app for the web
   - The notes are persisted temporarily in local storage, but you can download all notes in markdown format as a zip.
   - Hidden within the code is an alternate version that contain a Node/Express server and integration with GitHub.
+# filesystem-utils
+- https://github.com/jvilk/BrowserFS /202001/ts/inactive
+  - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
+  - 支持 memory/localStorage/indexeddb/dropbox/Emscripten file systems
 # more-drive
 - https://github.com/FazioNico/dDrive
   - An alternative storage solution to Google Drive

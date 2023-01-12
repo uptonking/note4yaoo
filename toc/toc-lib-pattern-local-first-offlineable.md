@@ -27,18 +27,21 @@ modified: 2021-09-04T14:03:39.046Z
   - 👉🏻 Directly read/write indexes with the ability to index graph/relational queries.
     - The logic we've written here for the tuple-database code is exactly what any SQL database is doing under the hood.
   - Suitable for frontend state management.
+  - https://github.com/maccman/tuple-playground
 
 - tinybase /1.4kStar/MIT/202212/ts/NoDeps
   - https://github.com/tinyplex/tinybase
   - https://tinybase.org/
   - TinyBase is a smart new way to structure your local app data
-  - 查询基于自定义TinyQL，类似SQL
+  - 基于自定义TinyQL(类似SQL)实现查询
+  - 基于checkpoint实现undo
+  - 基于hlc crdt实现冲突处理
   - Familiar concepts of tables, rows, and cells, and schematization to model your data domain.
   - Flexibly reactive to reconciled updates, so you only spend cycles on the data that changes.
   - Indexing, metrics, relationships - and even an undo stack for your app state!
   - Easily sync your data to local or remote storage, and use idiomatic bindings to your React UI.
   - Powerful query engine to select, join, filter, group, sort and paginate data - reactively.
-  - The Queries object lets you query data across tables, with filtering and aggregation - using a SQL-adjacent syntax called `TinyQL`.
+    - The Queries object lets you query data across tables, with filtering and aggregation - using a SQL-adjacent syntax called `TinyQL`.
   - A Persister object lets you save and load Store data to and from different locations, or underlying storage types.
 
 - evolu /101Star/GPLv3/202210/ts
@@ -174,7 +177,6 @@ modified: 2021-09-04T14:03:39.046Z
 - https://github.com/rocicorp/replicache
   - Realtime Sync for Any Backend Stack
 # exploring
-
 - https://github.com/drifting-in-space/plane /202212/rust
   - Plane is a container orchestrator for ambitious browser-based applications. 
   - Plane implements an architecture we call session backends.

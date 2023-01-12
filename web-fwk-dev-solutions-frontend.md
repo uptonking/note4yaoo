@@ -1,11 +1,11 @@
 ---
-title: web-dev-fwk-solutions-frontend
+title: web-fwk-dev-solutions-frontend
 tags: [framework, frontend, solutions, web]
 created: 2020-11-01T09:48:26.955Z
-modified: 2021-04-17T15:30:28.464Z
+modified: 2023-01-12T10:24:40.550Z
 ---
 
-# web-dev-fwk-solutions-frontend
+# web-fwk-dev-solutions-frontend
 
 - 技术选型时，参考知名项目或大公司项目的选择
 

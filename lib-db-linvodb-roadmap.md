@@ -26,6 +26,8 @@ modified: 2023-01-09T18:00:20.350Z
 
 - 从callback迁移到async-await
 
+- 参考tinybase基于checkpoints实现undo-redo
+
 - 合并search-index和linvodb的存储层，修改search-index的获取全部对象逻辑
   - 非首次启动项目时，如何恢复search-idx的索引
 
