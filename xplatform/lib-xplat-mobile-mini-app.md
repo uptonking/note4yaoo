@@ -1,15 +1,28 @@
 ---
-title: lib-xplat-mobile-mini-program
-tags: [dev, mini-program, mobile]
+title: lib-xplat-mobile-mini-app
+tags: [cross-platform, mini-app, mobile]
 created: 2021-04-21T17:01:43.679Z
-modified: 2021-05-13T03:11:31.620Z
+modified: 2023-01-13T10:28:06.306Z
 ---
 
-# lib-xplat-mobile-mini-program
+# lib-xplat-mobile-mini-app
 
 # guide
 
+- [w3c/miniapp: MiniApps Standardization](https://github.com/w3c/miniapp)
+  - [MiniApp Standardization White Paper version 2](https://w3c.github.io/miniapp-white-paper/)
 # architecture
+
+## [Skyline 渲染引擎](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/skyline/introduction.html)
+
+- 当小程序基于 WebView 环境下时，WebView 的 JS 逻辑、DOM 树创建、CSS 解析、样式计算、Layout、Paint (Composite) 都发生在同一线程，在 WebView 上执行过多的 JS 逻辑可能阻塞渲染，导致界面卡顿。以此为前提，小程序同时考虑了性能与安全，采用了目前称为「双线程模型」的架构。
+
+- 在 Skyline 环境下，我们尝试改变这一情况：Skyline 创建了一条渲染线程来负责 Layout, Composite 和 Paint 等渲染任务，并在 AppService 中划出一个独立的上下文，来运行之前 WebView 承担的 JS 逻辑、DOM 树创建等逻辑。
+- 这种新的架构相比原有的 WebView 架构，有以下特点：
+  - 界面更不容易被逻辑阻塞，进一步减少卡顿
+  - 无需为每个页面新建一个 JS 引擎实例（WebView），减少了内存、时间开销
+  - 框架可以在页面之间共享更多的资源，进一步减少运行时内存、时间开销
+  - 框架的代码之间无需再通过 JSBridge 进行数据交换，减少了大量通信时间开销
 
 ## [微信小程序的双线程模型](https://developers.weixin.qq.com/ebook?action=get_post_info&token=935589521&volumn=1&lang=zh_CN&book=miniprogram&docid=0006a2289c8bb0bb0086ee8c056c0a)
 

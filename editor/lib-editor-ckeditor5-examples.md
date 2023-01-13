@@ -11,8 +11,9 @@ modified: 2021-11-05T13:31:12.802Z
 
 - ckeditor experts
   - https://github.com/afeiship
-    - 提供了非常多的编辑器类模版项目
+    - 提供了非常多的编辑器类模版项目，项目经验丰富
   - https://github.com/letsbug/ckeditor5-build-multies
+    - 适用于国内富文本编辑排版的自定义插件，例如首行缩进等。
 # popular
 - https://github.com/ckeditor/github-writer
   - a WYSIWYG rich-text editor for GitHub. 

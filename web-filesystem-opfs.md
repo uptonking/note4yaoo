@@ -18,6 +18,14 @@ modified: 2023-01-12T10:26:41.060Z
 - https://github.com/tomayac/opfs-explorer
   - https://tomayac.github.io/opfs-explorer/
 
+- ### [SQLite Wasm in the browser backed by the Origin Private File System | Hacker News](https://news.ycombinator.com/item?id=34352935)
+- what is exactly the use case for this?
+  - It's an alternative to using IndexedDB which is a browser provided API.
+  - On use cases, you can give your web app offline support by locally caching data in an SQL database and have it be fully queryable.
+  - A design pattern that is beginning to emerge is "offline/local first". You design your app to fundamentally work offline, using things such as this, and the server component only works to synchronise clients. It's a bit like the design move to "mobile first" that happed 10 years ago, but going to another level.
+
+- The blog post on absurd-sql notes that it's a hacky solution that would be improved with file system access; it references the old Storage Foundation proposal, which has since evolved into the current File System Access API proposal(s).
+
 ## [safari: The File System Access API with Origin Private File System | WebKit_202202](https://webkit.org/blog/12257/the-file-system-access-api-with-origin-private-file-system/)
 
 - the origin private file system — a private storage endpoint to some origin

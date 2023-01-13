@@ -20,7 +20,8 @@ modified: 2021-07-20T13:50:23.433Z
 - 技术可选1: 画板，图形编辑器, pdf
 - 技术可选2: olap，bi，数据工程，数据库
 
-- 产品落地: 表格类笔记创作，运营数据仪表板，for jupyter
+- 产品落地: 表格类笔记创作，运营数据仪表板，for jupyter/notebooks
+  - share table/data pieces/snippets
 - 团队版/企业版
   - 表单收集与统计，投票收集与统计，如features
 

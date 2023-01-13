@@ -11,6 +11,27 @@ modified: 2022-11-27T15:36:13.148Z
 
 - resources
   - [sqlite3 WebAssembly & JavaScript Documentation](https://sqlite.org/wasm/doc/trunk/index.md)
+# persistence
+- [Browser Persistence - vlcn.io](https://vlcn.io/docs/guide-persistence)
+
+- The official SQLite WASM port
+- pros:
+  - Maintained and supported by the SQLite team
+  - Aggressively focused on performance
+  - Permissive license (public domain)
+- cons
+  - The official SQLite build can only use OPFS or session/localStorage for persistence. Session & local storage aren't great options given they're capped at 5MB, really leaving us only with OPFS.
+  - OPFS has coarse grained locking and doesn't behave well when many tabs interact with the same persisted database. This could be solved by using WebLocks the VFS implementation. Something yet to be explored.
+
+- An unofficial WASM port called wa-sqlite
+- pros
+  - ability to use indexeddb for persistence rather than OPFS. indexeddb has been around a long time and is well supported by all major browsers.
+  - Can run SQLite + Persistence in the UI thread
+  - Can be used in a shared worker to share the same db instance across multiple tabs
+
+- cons
+  - GPLv3 license
+  - May not be as fast as the official port
 # docs
 
 ## [sqlite3 wasm docs: Persistent Storage Options](https://sqlite.org/wasm/doc/trunk/persistence.md)
@@ -82,7 +103,7 @@ modified: 2022-11-27T15:36:13.148Z
 ### Cross-thread Communication via OPFS
 
 - sqlite3 over OPFS opens up a possibility in JS which does not otherwise readily exist: communication between arbitrary threads.
-- There are no mechanisms in JS to share state between two threads except `postMessage()`,     `SharedArrayBuffer`, and (to a very limited extent) `Atomics`. 
+- There are no mechanisms in JS to share state between two threads except `postMessage()`,      `SharedArrayBuffer`, and (to a very limited extent) `Atomics`. 
   - localStorage, sessionStorage, and the long-defunc (but still extant) WebSQL, are main-thread only. 
   - Presumably WebSQL was not permitted in Workers for the very reason that it would open up a communication channel between arbitrary threads.
 - However, if a client loads the sqlite3 module from multiple threads, they can communicate freely via an OPFS-hosted database. 

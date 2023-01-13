@@ -20,7 +20,9 @@ modified: 2021-06-02T15:26:19.890Z
   - mdx
   - [R Markdown](https://rmarkdown.rstudio.com/)
   - [MyST(Markedly Structured Text)](https://github.com/executablebooks/markdown-it-myst)
-    - who is using: curvenote
+    - [MyST Overview](https://myst-parser.readthedocs.io/en/latest/index.html)
+    - who is using #MyST
+      - curvenote
     - MyST is a rich and extensible flavor of Markdown.
     - MyST is inspired by Sphinx, and comes with its own Sphinx parser.
     - MyST markdown provides a markdown equivalent of the reStructuredText syntax

@@ -34,7 +34,7 @@ modified: 2020-11-03T06:54:59.051Z
   - https://codepen.io/uptonking/pen/ZEpMQXX
 
 - [1998年至2018年女演员在内地热度变化](https://www.bilibili.com/video/BV17t411X7bK)
-  - 横向条形图动态变化
+  - 横向条形图，随时间动态变化图
 # amazing-animation
 - click to open... Pure #CSS, but a lot of it 
   - https://twitter.com/amit_sheen/status/1410178652193574915

@@ -10,15 +10,15 @@ modified: 2023-01-09T18:00:20.350Z
 # guide
 
 # dev-to
-- sync如何实现
+- linvodb-sync的实现原理
   - linvodb的思路是在DataModel的inserted/updated钩子函数中执行 `triggerSync()`，即每个dml操作都执行
   - 每次 triggerSync 的逻辑
-    - ensure_indexes，构建本地索引
-    - retrieve_remote，请求远程变更元数据，{ id: datetime }
-    - compile_changes，遍历本地id比较并对应远程变更元数据id比较，将所有ids分类 toPull/toPush
-    - push_remote，将本地toPush数据发送到远程
-    - pull_local，将远程toPull数据请求到本地，然后insert/save到本地数据库
-    - finalize，完成后emit syncEnd事件
+    1. ensure_indexes，构建本地索引
+    2. retrieve_remote，请求远程变更元数据，{ id: datetime }
+    3. compile_changes，遍历本地id比较并对应远程变更元数据id比较，将所有ids分类 toPull/toPush
+    4. push_remote，将本地toPush数据发送到远程
+    5. pull_local，将远程toPull数据请求到本地，然后insert/save到本地数据库
+    6. finalize，完成后emit syncEnd事件
   - 依赖3个服务端api，API.request 
     - datastoreMeta
     - datastorePut

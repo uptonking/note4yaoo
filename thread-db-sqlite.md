@@ -11,6 +11,15 @@ modified: 2021-08-25T14:05:18.280Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ##  Every. Single. Browser. already has sqlite3 baked into it, so the idea that we need a WASM version (no matter how cool) is just testament to the abject failure of browsers giving people what they need.
+- https://twitter.com/TheRealPomax/status/1613576564826079233
+- Could also be that we're seeing browsers correct for focusing on the wrong level of abstraction.  Low-level constructs over high level APIs.  Interesting to figure out the right mix, and having sqlite at both levels may shed more light on what happens in the future.
+- Doing it in Wasm land has the advantage that it’s easier to update when security issues are detected, unlike with baked-in sqlite engines in browsers. The Web SQL spec literally required a certain sqlite version. Wasm allows for full flexibility.
+
 - ## How does WordPress Sandbox work?
 - https://twitter.com/adamzielin/status/1601561926307282945
 - It polyfills WordPress software dependencies in the browser:
@@ -123,3 +132,5 @@ modified: 2021-08-25T14:05:18.280Z
 - Sure, for your specific usecase it makes sense, I'm just saying that in general I wouldn't call it a fault of Asyncify that it propagates async imports to async exports. It's just a nature of the coloured functions.
 
 - Would this count as a second implementation of WebSQL for the purposes of getting it implemented in browsers?
+
+- The blog post on absurd-sql notes that it's a hacky solution that would be improved with file system access; it references the old Storage Foundation proposal, which has since evolved into the current File System Access API proposal(s).

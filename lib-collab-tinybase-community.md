@@ -30,9 +30,9 @@ modified: 2023-01-12T15:52:42.418Z
   - Each HLC is split into four parts (3 + 4 + 4 + 5 chars) to address the nodes, and the leaf is the [table, row, cell, value] change.
   - `undefined` is a cell deletion.
 - For shipping over the wire, the tree is encoded in three parts:
-  1) an array of JSON-encoded table Ids, row Ids, cell Ids, and cell values.
-  2) an array of radix-64 safe strings (which don't need quoting!) for the trie vertices.
-  3) a tightly packed serialization of the tree.
+  1. an array of JSON-encoded table Ids, row Ids, cell Ids, and cell values.
+  2. an array of radix-64 safe strings (which don't need quoting!) for the trie vertices.
+  3. a tightly packed serialization of the tree.
 - Because the tree's shape is well-known, this encodes and decodes pretty quickly.
   - It's quite easy to merge and diff these trees. So when a client makes a request to a peer for changes, it sends its own changes in the request. The peer's response is just then the new changes.
 - Adding Merkel hashing to the tree would be slower but would allow the negotiation to bail out (or identify tree diffs) much sooner.
@@ -40,6 +40,8 @@ modified: 2023-01-12T15:52:42.418Z
   - (The trickiest thing might be version-controlling an evolving protocol!)
 - Warning! This is all still in 'hacker space'. There's no concrete implementation in the TinyBase repo yet. But it might be worth rolling out an experimental branch soon. We'll see.
 - You can use “pako” to compress and decompress your payload to make it smaller over the wire
+  - https://github.com/excalidraw/excalidraw/blob/master/src/data/encode.ts
+  - It would be interesting to compare pako running over flabby JSON vs running it over a pre-packed and pre-deduped encoding
 
 - ## RFC! TinyBase HLC format. Needs to be small and fast for packing into binary tries & CRDTs
 - https://twitter.com/jamespearce/status/1599796118014918658

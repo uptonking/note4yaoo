@@ -128,9 +128,47 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - crdt tutorials
 # dev-01
 
-## 010
+## 011
 
-## 0109
+## 0113
+
+### [深入理解Vite核心原理 - 知乎](https://zhuanlan.zhihu.com/p/467325485)
+
+- Vite主要利用浏览器ESM特性导入组织代码，在服务器端按需编译返回，完全跳过了打包这个概念，服务器随起随用。
+  - 快速的冷启动: No Bundle + esbuild 预构建
+  - 真正的按需加载: 利用浏览器ESM支持，实现真正的按需加载
+- Vite相比于Webpack而言，没有打包的过程，而是直接启动了一个开发服务器devServer。
+  - Vite劫持浏览器的HTTP请求，在后端进行相应的处理将项目中使用的文件通过简单的分解与整合，然后再返回给浏览器(整个过程没有对文件进行打包编译)。所以编译速度很快。
+- Snowpack 首次提出利用浏览器原生ESM能力的打包工具，其理念就是减少或避免整个bundle的打包。默认在 dev 和 production 环境都使用 unbundle 的方式来部署应用。但是它的构建时却是交给用户自己选择，整体的打包体验显得有点支离破碎。
+
+- ESM提供了更原生以及更动态的模块加载方案，最重要的就是它是浏览器原生支持的
+  - 👉🏻 我们可以直接在浏览器中去执行import，动态引入我们需要的模块，而不是把所有模块打包在一起。
+- ESM的执行可以分为三个步骤：
+  - 构建: 确定从哪里下载该模块文件、下载并将所有的文件解析为模块记录
+  - 实例化: 将模块记录转换为一个模块实例，为所有的模块分配内存空间，依照导出、导入语句把模块指向对应的内存地址。
+  - 运行：运行代码，将内存空间填充
+- 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
+
+- vite核心原理
+  - 当声明一个 script标签类型为 module 时,  `<script type="module" src="/src/main.js"></script>`; 
+  - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
+  - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
+- Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，
+  - Vite启动一个 koa 服务器拦截这些请求，并在后端进行相应的处理将项目中使用的文件通过简单的分解与整合，然后再以ESM格式返回返回给浏览器。
+  - Vite整个过程中没有对文件进行打包编译，做到了真正的按需加载，所以其运行速度比原始的webpack开发编译速度快出许多！
+
+- 在Vite出来之前，传统的打包工具如Webpack是先解析依赖、打包构建再启动开发服务器，Dev Server 必须等待所有模块构建完成，当我们修改了 bundle模块中的一个子模块， 整个 bundle 文件都会重新打包然后输出。项目应用越大，启动时间越长。
+
+- 而Vite利用浏览器对ESM的支持，当 import 模块时，浏览器就会下载被导入的模块。先启动开发服务器，当代码执行到模块加载时再请求对应模块的文件, 本质上实现了动态加载。灰色部分是暂时没有用到的路由，所有这部分不会参与构建过程。随着项目里的应用越来越多，增加route，也不会影响其构建速度。
+
+- 目前所有的打包工具实现热更新的思路都大同小异：主要是通过WebSocket创建浏览器和服务器的通信监听文件的改变，当文件被修改时，服务端发送消息通知客户端修改相应的代码，客户端对应不同的文件进行不同的操作的更新。
+
+- 基于esbuild的依赖预编译优化，为什么需要预构建？
+  - 支持commonJS依赖，将commonJs的文件提前处理，转化成 ESM 模块并缓存入
+  - 减少模块和请求数量
+  - Vite预编译之后，将文件缓存在node_modules/.vite/文件夹下。
+
+## 0111
 
 - [--es-module-specifier-resolution=node not working from v13.0.1 · Issue #30520 · nodejs/node](https://github.com/nodejs/node/issues/30520)
   - we have renamed the flag, but we continue to support `--es-module-specifier-resolution=node` which silently aliases to `--experimental-specifier-resolution`

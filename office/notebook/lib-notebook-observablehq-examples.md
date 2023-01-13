@@ -21,6 +21,7 @@ modified: 2021-05-27T19:08:18.170Z
 # examples-time-series
 - [新型冠状病毒患者行为数据分析与可视化](https://observablehq.com/@zhangwenjia-pku/untitled)
   - 展示了随时间动态变化的条形图
+  - [中国历年人口自然增长率随时间动态变化图](https://twitter.com/locean0410/status/1613432214305505280)
 
 - [Vaccination Race: A #dataviz showing #EU countries ranked by vaccination rates over time.](https://observablehq.com/@bagami/eu-race-to-vaccination)
   - Share of people (at least) partly vaccinated against COVID-19

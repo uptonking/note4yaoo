@@ -247,7 +247,13 @@ export default FrontPage
 
 - ## MyST markdown provides a markdown equivalent of the reStructuredText syntax, meaning that you can do anything in MyST that you can do with reStructuredText
 - https://twitter.com/simonw/status/1272744281531285504
-  - 
+
+- We've been working on a Sphinx extension that lets you write Sphinx docs in 💯 markdown (incl. roles and directives). We call it "MyST Markdown" (for "Markedly Structured Text").
+- https://twitter.com/choldgraf/status/1272633413132943360
+  - It's the same markdown syntax that jupyter book uses!
+- Can you explain on how is it different from m2r extension?
+  - it/myst directly parses the markdown into the docutils document structure (what Sphinx uses under the hood). 
+  - m2r converts markdown to reStructuredText (rst) and then that gets parsed into docutils structure
 
 - ## HOW TO ESCAPE A BACKTICK WITHIN A CODE BLOCK IN MARKDOWN
 - https://www.danvega.dev/blog/2019/05/31/escape-backtick-markdown/

@@ -18,6 +18,28 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## IterableType
+- //localhost
+
+```typescript
+
+const FRUIT_TYPES = ['apple', 'orange', 'banana'] as const
+
+type IterableType<T> = T extends Iterable<infer U> ? U : never
+
+type FruitType = IterableType<typeof FRUIT_TYPES>
+    // ^? 'apple' | 'orange' | 'banana'
+
+const FRUIT_TYPES_SET = new Set(['apple', 'orange', 'banana'] as const)
+
+type FruitTypeSet = IterableType<typeof FRUIT_TYPES_SET>
+    // ^? 'apple' | 'orange' | 'banana'
+```
+
 - ## I really don't like that TS is introducing inconsistencies, the other day I learned that `Array<A>` and `A[]` are not the same thing
 
 ```typescript
