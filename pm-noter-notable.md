@@ -8,7 +8,7 @@ modified: 2022-12-19T02:01:20.161Z
 
 # pm-noter-notable
 
-> easy to read， easy to write， content-centric notebook
+> easy to read， easy to write, content-centric notebook
 
 # guide(for notable/noter/paper)
 - 难点
@@ -59,6 +59,10 @@ modified: 2022-12-19T02:01:20.161Z
   - s1: 使用二级列表，然后将第一级列表的黑点改为折叠图标
   - s2: 使用标题+列表，借助标题进行折叠
   - s3: 列表块的判断基于前置符号+块级换行，这样可以将列表项前的段落作为折叠触发点
+
+## image
+
+- text on image, 类似支持编辑器卡片背景图片和文字
 
 ## export
 
@@ -112,7 +116,11 @@ modified: 2022-12-19T02:01:20.161Z
   - https://github.com/shikijs/twoslash
   - 两种方案需要选择取舍
 
-## sync-cloud-drive
+## cloud-saas
+
+- 类似ruby的ActionText
+
+## sync
 
 - 云同步提供商
   - 网盘：百度OAuth2.0, 腾讯文档/微云，onedrive

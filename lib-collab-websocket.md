@@ -9,7 +9,7 @@ modified: 2022-10-11T09:02:26.869Z
 
 # guide
 
-- feathers框架为实时类应用而设计，代码量很少
+- feathers框架为实时类应用而设计
 # blogs
 
 ## [都2022年了，实时更新数据你还只会用短轮询? - 掘金](https://juejin.cn/post/7139684620777291807#comment)

@@ -196,6 +196,8 @@ update("transactions", {
     - Like merging state-based CRDTs, applying operations is associative and commutative, i.e. operations can be applied in any order, however, unlike it isn't necessarily idempotent. It is the responsibility of the transport layer to make sure operations are properly delivered, and not applied more than once.
 
 - [An introduction to Conflict-Free Replicated Data Types](https://lars.hupel.info/topics/crdt/08-outlook/)
+  - 一系列的教程
+  - [CRDT简介 - 知乎](https://zhuanlan.zhihu.com/p/500375820)
   - state-based CRDTs, or CvRDTs
     - They are simple and elegant because you can merge any two values (of the same data type, of course) and obtain a well-defined result. 
     - Their requirements to the communication channel are simple: to achieve convergence, you need messages to be delivered every once in a while. Because of their properties, it also doesn’t matter if messages get duplicated.

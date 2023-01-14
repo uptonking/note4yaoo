@@ -9,9 +9,9 @@ modified: 2021-08-22T08:05:39.413Z
 
 # guide
 
-- 存储层逻辑
-  - 业务代码appCode > sqlite-opfs > os-fs
+- 浏览器存储层原理
   - 业务代码appCode > indexeddb > leveldb/sqlite > os-fs
+  - 业务代码appCode > sqlite-opfs > os-fs
 
 - 对indexeddb/外部存储的取舍
   - 对于基础库，应该以内存数据模型为主，因为idb读写要慢得多

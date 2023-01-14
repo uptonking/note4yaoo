@@ -1,11 +1,11 @@
 ---
-title: note-react-docs-p5-codebase-deisgn-test
+title: note-react-docs-p5-codebase-design-test
 tags: [docs, react]
 created: 2020-06-25T17:53:19.549Z
-modified: 2021-05-13T03:46:13.213Z
+modified: 2023-01-14T19:26:48.398Z
 ---
 
-# note-react-docs-p5-codebase-deisgn-test
+# note-react-docs-p5-codebase-design-test
 
 # How to Contribute
 

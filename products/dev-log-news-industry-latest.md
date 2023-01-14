@@ -7,14 +7,14 @@ modified: 2021-08-07T15:30:42.655Z
 
 # dev-log-news-industry-latest
 
+# 2023
+- 20230
 # 2022
-- 20220
-
+- 202209-saas-Adobe以200亿美元收购 Figma
 - 202208-saas-全球SaaS软件巨头Salesforce正在关闭包括香港地区在内的中国业务，业务将由阿里云代销。
 - 202205-[ONES 收购 SegmentFault 思否，如何从商业角度解读此举？](https://www.zhihu.com/question/531417114/answers/updated)
 - 202201-[ONES 全资收购为知笔记，从产品和用户角度来看，将会带来哪些改变和影响？](https://www.zhihu.com/question/510937894)
 - 202012-ONES 收购知名协作工具 Tower 
-
 # 2021
 - 202111-bi-tableau退出中国市场，阿里接手相关业务，阿里看中了Tableau的客户，但会推自己的QuickBI
 - 202109-tech-Footnotes now supported in Markdown fields

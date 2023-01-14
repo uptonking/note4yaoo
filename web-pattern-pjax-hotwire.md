@@ -1,11 +1,11 @@
 ---
-title: web-latest-pjax-hotwire
-tags: [frontend, hotwire, latest, pjax, web]
+title: web-pattern-pjax-hotwire
+tags: [ajax, hotwire, pattern, pjax, web]
 created: 2020-12-23T15:36:47.371Z
-modified: 2021-01-04T16:06:29.569Z
+modified: 2023-01-14T19:36:09.056Z
 ---
 
-# web-latest-pjax-hotwire
+# web-pattern-pjax-hotwire
 
 # pjax
 

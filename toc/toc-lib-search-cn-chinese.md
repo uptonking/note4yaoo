@@ -1,11 +1,11 @@
 ---
-title: toc-lib-search-chinese
-tags: [Chinese, search, toc, 中文搜索]
+title: toc-lib-search-cn-chinese
+tags: [Chinese, cn, search, toc, 中文搜索]
 created: 2023-01-02T21:20:41.586Z
-modified: 2023-01-02T21:21:24.871Z
+modified: 2023-01-14T15:46:16.644Z
 ---
 
-# toc-lib-search-chinese
+# toc-lib-search-cn-chinese
 
 # guide
 - 主流搜索引擎自身或社区大多已提供中文搜索方案

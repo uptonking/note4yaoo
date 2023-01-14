@@ -11,7 +11,7 @@ modified: 2022-08-21T10:16:52.004Z
 
 - resources
   - https://www.rich-text-js-jobs.com/
-# popular
+# editor-experts-popular
 - 张驰
   - [张驰技术博客](https://juejin.cn/user/3456520286121437/posts)
 
@@ -23,7 +23,6 @@ modified: 2022-08-21T10:16:52.004Z
   - https://juejin.cn/user/2066737588867223/posts
   - [我的2021-从在线教育到新能源汽车](https://juejin.cn/post/7043089265575591949)
   - [基于CRDT的一种文档冲突算法 YATA/yjs](https://juejin.cn/post/7064236095440961550)
-
 # editor-oriented-teams
 - [emergence engine0e100r1in0g](https:/0/
 - emergence-engineering.com/blog)
@@ -39,21 +38,17 @@ modified: 2022-08-21T10:16:52.004Z
   - https://twitter.com/Horusiath
   - https://bartoszsypytkowski.com/
   - https://github.com/Horusiath
-
+  - 使用 `F#语言` 实现了很多crdt算法
 
 - Victor Grishchenko
   - crdt, swarm
   - https://github.com/lambdafu/swarm-doc
 
-# slate
-- 杨振兴
-  - https://github.com/pubuzhixing8
-  - https://github.com/worktile/slate-angular
-  - https://www.zhihu.com/people/pubuzhixing/posts
-
-- 王福朋 wangEditor
-  - https://juejin.cn/user/1714893868765373
-  - https://www.zhihu.com/people/wangfupeng1988
+- Matt
+  - crdt, sqlite
+  - https://github.com/tantaman
+  - https://twitter.com/tantaman
+  - https://github.com/vlcn-io/cr-sqlite
 # prosemirror
 - https://github.com/marduke182
   - https://www.npmjs.com/package/@marduke182/prosemirror-react-view
@@ -93,6 +88,8 @@ modified: 2022-08-21T10:16:52.004Z
 
 ## prosemirror-lovers
 
+- https://www.zhihu.com/people/vivaxy
+
 - https://github.com/namiwang
   - https://discuss.prosemirror.net/u/namiwang
   - https://github.com/namiwang/fiber-note /inactive
@@ -106,7 +103,15 @@ modified: 2022-08-21T10:16:52.004Z
 
 - https://github.com/herrdu
   - https://github.com/herrdu/DEditor
-# more
+# slate
+- 杨振兴
+  - https://github.com/pubuzhixing8
+  - https://github.com/worktile/slate-angular
+  - https://www.zhihu.com/people/pubuzhixing/posts
 
+- 王福朋 wangEditor
+  - https://juejin.cn/user/1714893868765373
+  - https://www.zhihu.com/people/wangfupeng1988
+# more
 - [介绍在线文档、在线Excel等在线协作场景](https://www.zhihu.com/column/c_1412741892215459840)
  

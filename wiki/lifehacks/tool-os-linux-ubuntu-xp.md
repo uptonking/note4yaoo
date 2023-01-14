@@ -26,6 +26,13 @@ modified: 2021-01-01T22:26:57.773Z
 - [ctrl+shift+e 会导致键盘停留在e，按键会暂时失效](https://askubuntu.com/questions/1125726)
   - Open Ibus preferences(ibus-setup) in your terminal, visit the Emoji tab, then click the Emoji Annotation to either Delete or change the shortcut
 # ubuntu-usage
+- 查看gnome桌面环境是wayland还是x11
+  - s1: echo $XDG_SESSION_TYPE
+  - s2: loginctl show-session 2
+
+- 刷新dns缓存
+  - sudo resolvectl flush-caches
+
 - 常用配置
   - alt+tab: 切换到下一个窗口，一个多开的应用是多个窗口，逐个切换
   - win+tab: 切换到下一个应用，可跳过当前应用的多个窗口

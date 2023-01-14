@@ -1,11 +1,11 @@
 ---
-title: pm-ux-dashboard-admin-devlog
-tags: [dashboard, devlog, pm]
+title: pm-ux-dashboard-admin-dev-log
+tags: [dashboard, dev-log, pm]
 created: 2021-08-08T08:38:41.856Z
-modified: 2021-08-08T08:39:17.347Z
+modified: 2023-01-14T19:32:45.456Z
 ---
 
-# pm-ux-dashboard-admin-devlog
+# pm-ux-dashboard-admin-dev-log
 
 # todo
 - 支持配置路由对应的左侧边栏菜单

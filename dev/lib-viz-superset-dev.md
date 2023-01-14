@@ -43,7 +43,11 @@ modified: 2020-12-08T13:35:12.509Z
 - Installation on Oracle, Microsoft SQL Server, or other OLTP databases may work but isn’t tested.
 - Please note that pretty much any databases that have a SqlAlchemy integration should work perfectly fine as a datasource for Superset, just not as the OLTP backend.
 # ref
+
+
 - [SuperSet安装配置及导入示例数据](https://iminto.github.io/post/superset%E5%AE%89%E8%A3%85/)
+
+- [2022 Recap of the Apache Superset Project | Preset](https://preset.io/blog/2022-visual-recap-of-the-apache-superset-project/)
 
 - [Understanding the Superset Semantic Layer](https://preset.io/blog/understanding-superset-semantic-layer/)
   - A semantic layer is an abstraction over your base data, which usually inhabits some type of SQL-speaking data base or data engine, that maps the underlying data to human-friendly metaphors.
@@ -71,3 +75,4 @@ modified: 2020-12-08T13:35:12.509Z
     - Explore provides a no-code, drag & drop UI for quickly generating queries that power visualizations.
     - Because the final artifact of the workflows in Superset is SQL, you can use SQL Lab to debug any of the queries that are written. 
     - When in Explore, select the hamburger menu in the top right corner and then select View Query to observe the query SQL Superset generated.
+

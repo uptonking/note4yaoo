@@ -40,5 +40,5 @@ modified: 2023-01-09T18:00:20.350Z
 - Mongoose driver for LinvoDB
   - https://github.com/aerys/mongoose-linvodb3
 # later
-
+- how to make filter/sort/group support extra data source?
 # draft

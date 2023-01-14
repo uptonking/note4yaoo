@@ -59,19 +59,28 @@ modified: 2023-01-12T15:52:42.418Z
   - Otherwise, whenever you generate a bigint key, you would use the index as reference going forward. But it may not be practical in many cases.
   - One thing I could do is use an array of two 53-bit or three 32-bit Numbers, and then have a map of maps (or map of map of maps)
 
-- ## [TinyBase v2.0: reactive data store for local-first apps | Hacker News_202209](https://news.ycombinator.com/item?id=32871392)
-- RxDB with PouchDB has support for typescript, json schema, and binary attachments. Moving the attachments to the file system will be up to you.
-
-- I’m my limited experience, a reliable CRDT implementation necessitates a CDRT-first design baked into the core of any data / transaction model. Like I’ve heard some game developers say- multiplayer needs to come first because tacking it onto a single player game is a nightmare.
-
-- ### [CRDTs for tinybase_202209](https://github.com/tinyplex/tinybase/discussions/31)
+- ## [CRDTs for tinybase_202209](https://github.com/tinyplex/tinybase/discussions/31)
 - I've had to do a bunch of background reading. Still not sure of quite the right strategy yet... 
   - but in our favor we have the fact that TinyBase can listen and update on a cellular granularity, reducing the likely conflicts per row or table.
+
+- We're close to releasing crdt support in SQLite itself
+  - https://github.com/vlcn-io/cr-sqlite
+  - If you just want some background, the original design is described in the readme. we've landed on something that doesn't require vector clocks recently, however
+- [Do LWW Registers Need Vector Clocks or Causal Graphs?](https://tantaman.com/2022-10-18-lamport-sufficient-for-lww.html)
+  - Short answer: No. When it comes to a LWW register, Lamport clocks offer all the guarantees we need. Guarantees provided by other clock types are discarded during the merge phase of LWW.
+  - A last write wins register is a register where the "last" write always wins. Determining when a write happens is usually done via a logical clock. Lamport clocks, vector clocks and causal graphs are a few options here. 
+  - 👉🏻 Lamport clocks being the simplest option.
+
 - The current checkpoints module is an example of keeping a sequence of cell-level changes like that (and it handles deletes a charm). But I need to think about what a flexible API to get or replay such a log in a CRDT context would look like.
 - I've started a dedicated disposable repo for these half-baked ideas. 
   - https://github.com/tinyplex/tinysync
 
-- ## Here's an interesting browser state solution: A database, written in JS, called TinyBase.
+- ## [TinyBase v2.0: reactive data store for local-first apps | Hacker News_202209](https://news.ycombinator.com/item?id=32871392)
+- RxDB with PouchDB has support for typescript, json schema, and binary attachments. Moving the attachments to the file system will be up to you.
+
+- I’m my limited experience, a reliable CRDT implementation necessitates a CRDT-first design baked into the core of any data / transaction model. Like I’ve heard some game developers say- multiplayer needs to come first because tacking it onto a single player game is a nightmare.
+
+- ## Here's an interesting browser state solution: A database, written in JS, called TinyBase._202202
 - https://twitter.com/housecor/status/1492859757941637126
   - Tables, rows, cells, indexes, relationships, undo, and more. 
   - Persist the data to the browser, files, or a server.

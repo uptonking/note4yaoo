@@ -9,6 +9,18 @@ modified: 2022-10-13T08:00:21.260Z
 
 # guide
 
+# [探秘前端 CRDT 实时协作库 Yjs 工程实现 - 知乎](https://zhuanlan.zhihu.com/p/452980520)
+- 本文会从 Yjs 的工程实现出发，介绍一个典型的工业级 CRDT 库是如何实现以下能力的：
+  - 建模数据结构
+  - 解决并发冲突
+  - 回溯历史记录
+  - 同步网络状态
+
+- Yjs 的算法先进，但在实际应用中确存在下面的问题：
+  1. fast search marker 不支持在 YXmlText 中使用
+  2. 不支持移动操作，移动后的合并位置不符合预取
+  3. ContentFormat 不支持同类型样式的嵌套或交错（不能还原 ProseMirror Mark 的特性）
+  4. ProseMirror 的 Step 和 Yjs 的 insert/delete API 不匹配，y-prosemirror 采用了一套 diff 算法，导致用户意图丢失。也许与 Quilljs 结合没有这样的问题。
 # [supabase: `pg_crdt` - an experimental CRDT extension for Postgres_202212](https://supabase.com/blog/postgres-crdt)
 - https://github.com/supabase/pg_crdt
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.
@@ -207,7 +219,7 @@ This is how we might do it with with "Realtime as an authority" approach (and is
   - By now we have lots of examples where trying to design features around the structure imposed by CRDT turned out to be a lot more complicated than it would be in a more synchronous world - we saw the auto-indent stuff above, difficulty getting the selection right in transpose
   - CRDT is a tradeoff
 
-## Are CRDTs suitable for shared editing? _202008
+## Are CRDTs suitable for shared editing?_202008
 
 - https://news.ycombinator.com/item?id=24176455
 - I’m part of the team that makes Zoho Writer (Google Docs alternative)

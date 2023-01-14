@@ -16,7 +16,18 @@ modified: 2021-08-30T17:33:46.086Z
 
 - ## 
 
-- ## 
+- ## Introducing sqlite-xsv - a SQLite extension for quickly querying CSVs!
+- https://twitter.com/agarcia_me/status/1613688022079508480
+  - Custom delimiters, quotes, column names and types
+  - written in Rust, with sqlite-loadable!
+- For *non-analytical* queries, I have found sqlite-xsv to be:
+  - 1.5-2x faster than other CSV SQLite extensions
+  - 1.2-3x faster than @DuckDB, DataFusion, clickhouse-local (!!)
+  - 6x faster than pandas
+  - 14x faster than sqlite3's .import
+  - ~300x faster than dsq, sqlite-utils
+- For *analytical* queries 
+  - directly on CSVs (ex GROUP BYs and ORDER BYs), both sqlite-xsv and sqlite in general fall short compared to new-age tools like @DuckDB , DataFusion, and clickhouse.
 
 - ## [ What is the SQLite of nosql databases? | Hacker News](https://news.ycombinator.com/item?id=27490361)
 - As others have mentioned you have lots of options: LMDB, LevelDB/RocksDB, BerkeleyDB. 

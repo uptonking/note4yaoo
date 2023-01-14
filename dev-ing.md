@@ -66,14 +66,14 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - local-first-database
   - annotation/comment/whiteboard/pdf
   - 事项--截止日期(0730+休整)--重要性(hml/s1-s3)
-  - *mirror-based-editor-vanillajs--0825--hl
-  - pivot-table/grid--0828--hl
+  - *mirror-based-editor-vanillajs--0825--h
+  - pivot-table/grid--0828--h
     - dropdown-menu vs tabs
   - app-wiki-knowledge-base--0904
   - dashboard/webapp-template--0901
 
 - dev-to/log/xp
-  - deep into lib: src-code, issues, pr, forks, extensions/alternative
+  - deep into lib: src-code, issues, pr, forks, extensions/alternatives
 
 - later
   - crdt-hlc 
@@ -99,17 +99,19 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 - 👉🏻 eg-tanstack-table-v8
   - tuple-database
   - [x] 数据全内存: nedb, blinkdb
-  - 数据全持久: linvodb, tingodb
+  - [x] 数据全持久: linvodb, tingodb
+  - [ ] 支持外部数据源
 
 - sync-collab
-  - [ ] ddp/ejson/minimongo
+  - ddp/ejson/minimongo
   - collab-data-structure: hlc/lww
   - undo/redo
   - remoteStorage: google-drive、网盘、七牛对象存储
+
 - sqlite-web
   - evolu
   - kikko
-  - [ ] absurd-sql-ts: read ArrayBuffer
+  - absurd-sql-ts: read ArrayBuffer
 
 - 内容的存储与更新如何与数据库集成
   - 编辑器内容自动保存一般通过在onChange方法中执行saveToDB
@@ -150,7 +152,7 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,  `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,     `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

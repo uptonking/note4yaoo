@@ -47,3 +47,12 @@ modified: 2021-10-25T09:33:39.528Z
   - https://github.com/ckeditor/ckeditor5
   - https://ckeditor.com/ckeditor-5/
   - https://ckeditor.com/docs/ckeditor5/latest/framework/index.html
+# ckeditor-experts
+- https://github.com/letsbug
+
+- https://github.com/afeiship
+
+- https://www.zhihu.com/people/136170746
+  - https://editor.yanmao.cc/zh-CN
+  - https://github.com/yanmao-cc/am-editor/blob/master/README.zh-CN.md
+  - 一个富文本协同编辑器框架，可以使用React和Vue自定义插件

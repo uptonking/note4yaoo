@@ -9,26 +9,27 @@ modified: 2022-08-21T10:02:27.788Z
 
 # focus
 
-- src-react-list-grid-ts
+- 开源表格
+  - 国内: luckysheet
+  - 国外: ag-grid, tanstack-table, glide, handsontable
+
+- src-list-grid
+  - **ag-grid**
+  - **tanstack-table**
+  - tabulator
+  - frappe-datatable
+
+- src-react-list-grid
+  - **react-virtuoso**
   - **react-data-grid**
   - react-tiny-virtual-list
-
-- src-list-grid-ts
-  - **ag-grid**
-
-- src-react-list-grid-es6
-  - **react-table**
   - **react-window**
   - react-virtualized
 
-- src-list-grid-es6
-  - **tabulator**
-  - frappe-datatable
-
 - src-list-grid-canvas
   - **luckysheet**: 未使用class类，函数式风格
-  - x-spreadsheet: class类和函数式都有
   - glide: react组件
+  - x-spreadsheet: class类和函数式都有
   - cheetah-grid(ts): 基于class类继承
 # list-grid-with-div
 - ag-grid /MIT/6.4kStar/202202/ts/NoDeps

@@ -9,6 +9,10 @@ modified: 2022-11-08T19:04:00.289Z
 
 # guide
 
+- 开源编辑器
+  - 国内: wangEditor, vditor, textbus, am-editor/editablejs, ueditor
+  - 国外: prosemirror, slate, quill, lexical, tinymce, etherpad, ckeditor
+
 - ref
   - https://github.com/JefMari/awesome-wysiwyg
   - https://github.com/xjh22222228/awesome-web-editor
@@ -92,18 +96,18 @@ modified: 2022-11-08T19:04:00.289Z
   - https://github.com/tinymce/tinymce
   - https://www.tiny.cloud/
   - web-based WYSIWYG editor. Available for React, Vue and Angular
-# open-editors
-- canvas-editor /72Star/MIT/202211/ts/几乎无依赖
-  - https://github.com/Hufe921/canvas-editor
-  - https://hufe.club/canvas-editor/
-  - rich text editor by canvas/svg
-  - The render layer by svg is under development, see feature/svg
-  - The export pdf feature is available now, see feature/pdf
 
 - quill /34kStar/BSD/202211/ts
   - https://github.com/quilljs/quill
   - https://quilljs.com/
   - Quill is a modern rich text editor built for compatibility and extensibility.
+# open-editors
+- canvas-editor /112Star/MIT/202301/ts/几乎无依赖
+  - https://github.com/Hufe921/canvas-editor
+  - https://hufe.club/canvas-editor/
+  - rich text editor by canvas/svg
+  - The render layer by svg is under development, see feature/svg
+  - The export pdf feature is available now, see feature/pdf
 
 - roosterjs /655Star/MIT/202211/ts/测试覆盖率高
   - https://github.com/microsoft/roosterjs

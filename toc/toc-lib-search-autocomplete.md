@@ -128,7 +128,6 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/dominictarr/level-inverted-index /201602/js
   - Inverted Index for levelup.
 
-
 - libsearch /114Star/MIT/202207/js/单文件
   - https://github.com/thesephist/libsearch
   - https://thesephist.github.io/libsearch/
@@ -259,6 +258,14 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/varianter/handbook
   - https://handbook.variant.no/
   - 依赖mdx2, instantsearch.js, algoliasearch, swr
+# search-solutions
+- pagefind /677Star/MIT/202301/rust
+  - https://github.com/CloudCannon/pagefind
+  - https://pagefind.app/
+  - Pagefind is a fully static search library that aims to perform well on large sites
+  - Pagefind runs after Hugo, Eleventy, Jekyll, Next, Astro, SvelteKit, or any other SSG. 
+  - The installation process is always the same: Pagefind only requires a folder containing the built static files of your website
+  - After indexing, Pagefind adds a static search bundle to your built files, which exposes a JavaScript search API that can be used anywhere on your site. 
 # full-text-search-solutions
 - pouchdb-quick-search /370Star/apache2/201702/js/lunr/inactive
   - https://github.com/pouchdb-community/pouchdb-quick-search
