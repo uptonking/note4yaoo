@@ -1,6 +1,6 @@
 ---
 title: lib-excel-react-virtualized-dev
-tags: [lib, list, react-virtualized]
+tags: [lib, list, virtualized]
 created: 2020-08-05T09:34:25.307Z
 modified: 2022-08-21T09:59:27.391Z
 ---

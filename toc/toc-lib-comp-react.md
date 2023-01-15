@@ -49,12 +49,12 @@ modified: 2020-11-13T07:31:20.012Z
 - ring-ui  /Apache2/2kStar/201908
   - https://github.com/JetBrains/ring-ui
   - https://jetbrains.github.io/ring-ui/
-  - A collection of JetBrains Web UI components 
+  - A collection of JetBrains Web UI components
   - 主要有jetbrains支持
 - Elastic UI  /Apache2/1400Star/201912
   - https://github.com/elastic/eui
   - https://elastic.github.io/eui/#/
-  - Alongside the React components is a SASS/CSS layer 
+  - Alongside the React components is a SASS/CSS layer
 - Fish Design /LICENSE/95Star/201909
   - https://github.com/NSFI/ppfish-components
   - https://nsfi.github.io/ppfish-components/#/home
@@ -100,7 +100,7 @@ modified: 2020-11-13T07:31:20.012Z
 - reactstrap /MIT/8kStar/201908
   - https://github.com/reactstrap/reactstrap
   - https://reactstrap.github.io/
-  - Simple React Bootstrap 4 components 
+  - Simple React Bootstrap 4 components
 - react-content-loader  /MIT/7kStar/201908/ts
   - https://github.com/danilowoz/react-content-loader
   - http://danilowoz.com/create-content-loader/
@@ -142,7 +142,7 @@ modified: 2020-11-13T07:31:20.012Z
   -  一套基于react.js和iuap design设计语言实现的前端组件库
 - rsuite /MIT/4.4kStar/202007
   - https://github.com/rsuite/rsuite
-  - https://rsuitejs.com/components/overview 
+  - https://rsuitejs.com/components/overview
   - a set of react component libraries for enterprise system products
   - React Suite Design Prototype and specification is released
 - uiw /MIT/465Star/202007
@@ -158,7 +158,7 @@ modified: 2020-11-13T07:31:20.012Z
   - https://bitbucket.org/atlassian/aux
   - https://developer.atlassian.com/platform/forge/ui-components/
 - reactivebase /201802/Apache2/18Star/deprecated
-  - https://github.com/appbaseio/reactivebase 
+  - https://github.com/appbaseio/reactivebase
 - hazel-ui /4Star/MIT/202101/ts
   - https://github.com/hazel-ui/hazel-ui
   - https://hazel-ui.github.io/hazel-ui/
@@ -191,7 +191,7 @@ modified: 2020-11-13T07:31:20.012Z
   - https://github.com/denniscual/simple-mock-github
   - 缺点：正在fetch新数据时可以和变灰状态的ui组件交互
   - This client-side app demonstrates the features of the experimental React in the context of the real app with the help of Experimental React Router v6 and React Query with Suspense enabled.
-  - Implementing the render-as-you-fetch pattern. During route transitions the app is configured to load the code and data for new routes in parallel. 
+  - Implementing the render-as-you-fetch pattern. During route transitions the app is configured to load the code and data for new routes in parallel.
   - Using Concurrent Mode and Suspense to improve the loading sequence, including useTransition() for route transitions in order to continue showing the previous route for a brief period while the next route is prepared/rendered.
 # popular-tools
 - React /MIT/135kStar/201908
@@ -237,7 +237,7 @@ modified: 2020-11-13T07:31:20.012Z
 - react-simple-animate /MIT/1100Star/201908/ts
   - https://github.com/bluebill1049/react-simple-animate
   - https://react-simple-animate.now.sh/
-  - React UI animation made easy 
+  - React UI animation made easy
 - styled-components /MIT/25kStar/201908
   - https://github.com/styled-components/styled-components
   - https://styled-components.com/
@@ -252,9 +252,9 @@ modified: 2020-11-13T07:31:20.012Z
   - an insanely fast React-like library
 # awesome-components
 
-## resources 
+## resources
 
-- https://bulma.io/documentation/components/    
+- https://bulma.io/documentation/components/
   - form controls
   - simple elements:button, box, progressbar, table, tag
   - components:breadcrumb, card, dropdown, menu, message, modal, navbar, pagination, panel, tab
@@ -286,7 +286,7 @@ modified: 2020-11-13T07:31:20.012Z
 - http://reactcommunity.org/react-modal/examples/minimal.html
   - https://github.com/reactjs/react-modal
 
-## card 卡片类  
+## card 卡片类
 
 - https://nukeop.github.io/react-ui-cards/
   - https://github.com/nukeop/react-ui-cards
@@ -312,7 +312,7 @@ modified: 2020-11-13T07:31:20.012Z
   - The only good reason to use Redux Form in your application is if you need really tight coupling of your form data with Redux
 - https://github.com/final-form/react-final-form
   - [Philosophy](https://final-form.org/docs/react-final-form/philosophy)
-  - React Final Form is a minimal wrapper around the **zero-dependency Final Form core**. 
+  - React Final Form is a minimal wrapper around the **zero-dependency Final Form core**.
   - All React Final Form does is know how to get form values out of SyntheticEvent and manage field subscriptions to the form.
 - https://github.com/mozilla-services/react-jsonschema-form
 - https://joepuzzo.github.io/informed
@@ -324,16 +324,9 @@ modified: 2020-11-13T07:31:20.012Z
   - https://github.com/fraserxu/react-dropdown
 - bulma
 
-## list 列表
-
-- http://clauderic.github.io/react-sortable-hoc/#/basic-configuration/basic-usage   
-  - https://github.com/clauderic/react-sortable-hoc
-- https://github.com/bvaughn/react-virtualized
-- handsontable
-
 ## sidebar/drawer 侧边栏
 
-- http://balloob.github.io/react-sidebar/example/   
+- http://balloob.github.io/react-sidebar/example/
   - https://github.com/balloob/react-sidebar
   - 不支持同时打开多个sidebar
   - 侧边栏宽度会随着内容宽度变化
@@ -378,12 +371,12 @@ modified: 2020-11-13T07:31:20.012Z
 # animation
 - http://reactcommunity.org/react-transition-group/css-transition/
   - https://github.com/reactjs/react-transition-group
-- react-motion  /MIT/17kStar/201810 
+- react-motion  /MIT/17kStar/201810
   - https://github.com/chenglou/react-motion
   - http://chenglou.github.io/react-motion/demos/demo8-draggable-list/
   - A spring that solves your animation problems
 - https://rawgit.com/chenglou/react-spinner/master/example/index.html
-  - https://github.com/chenglou/react-spinner 
+  - https://github.com/chenglou/react-spinner
 - react-spring  /MIT/14kStar/201906/ts/js
   - https://github.com/react-spring/react-spring
   - https://www.react-spring.io/

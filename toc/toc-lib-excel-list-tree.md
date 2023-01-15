@@ -41,7 +41,7 @@ modified: 2022-08-21T10:02:41.845Z
   - https://github.com/iannbing/react-simple-tree-menu
   - https://iannbing.github.io/react-simple-tree-menu/
   - 依赖可忽略；示例stories使用了reactstrap.v8
-  - Inspired by Downshift, a simple, data-driven, light-weight React Tree Menu component 
+  - Inspired by Downshift, a simple, data-driven, light-weight React Tree Menu component
   - fully customizable with render props and control props
 - react-checkbox-tree /505Star/MIT/202105/js
   - https://github.com/jakezatecky/react-checkbox-tree
@@ -58,7 +58,7 @@ modified: 2022-08-21T10:02:41.845Z
   - https://marchaos.github.io/react-virtualized-sticky-tree/
   - 依赖react-measure
   - 使用场景类似滚动城市列表时能固定省名
-  - A React component for efficiently rendering tree like structures with support for `position: sticky`. 
+  - A React component for efficiently rendering tree like structures with support for `position: sticky`.
   - uses a similar API to react-virtualized.
 - react-arborist /1.6kStar/MIT/202207/ts
   - https://github.com/brimdata/react-arborist
@@ -152,7 +152,7 @@ modified: 2022-08-21T10:02:41.845Z
   - Reverse treeize library - takes hierarchical data produced by treeize and flattens it
 
 - https://github.com/philipstanislaus/performant-array-to-tree
-  - Converts an array of items with ids and parent ids to a nested tree in a performant O(n) way. 
+  - Converts an array of items with ids and parent ids to a nested tree in a performant O(n) way.
   - Runs in browsers and Node.js.
 - https://github.com/DenQ/list-to-tree
   - Convert list to tree
@@ -171,7 +171,7 @@ modified: 2022-08-21T10:02:41.845Z
   - Immutable trees to make fast comparison among nodes.
   - Eventful nodes to notify updates to other parts of the app.
   - Freezer is inspired by other tree cursor libraries, specifically Cortex, that try to solve an inconvenience of the Flux architecture
-    - It creates a new tree every time a modification is required, referencing the non modified nodes from the previous tree. 
+    - It creates a new tree every time a modification is required, referencing the non modified nodes from the previous tree.
     - Sharing node references among frozen objects saves memory and boosts the performance of creating new frozens.
   - https://github.com/arqex/react-json-table
     - A simple but flexible table react component to display JSON data.
@@ -180,7 +180,7 @@ modified: 2022-08-21T10:02:41.845Z
   - uses immutable data, which allows fast comparison in shouldComponentUpdate
 
 - https://github.com/couralex/treem
-  - treem converts flat data (like SQL rows) into an object tree. 
+  - treem converts flat data (like SQL rows) into an object tree.
   - The tree structure is determined by the columns' names.
 
 - https://github.com/filiplipinski/tree-view-rest-api
@@ -197,9 +197,9 @@ modified: 2022-08-21T10:02:41.845Z
   - In treemate, a tree is composed of node (optional group node and optional ignored).
 
 - https://github.com/jlxw/static-json-db
-  - A NoSQL key-value database stored as a directory tree of small JSON files which can be deployed as part of a static website and queried from client browsers in an efficient manner. 
-  - Data is stored in JSON files which are branched into smaller JSON files as size tresholds are met. 
-  - static-json-db can be a lower-cost alternative to traditional databases that do not need to be updated frequently. 
+  - A NoSQL key-value database stored as a directory tree of small JSON files which can be deployed as part of a static website and queried from client browsers in an efficient manner.
+  - Data is stored in JSON files which are branched into smaller JSON files as size tresholds are met.
+  - static-json-db can be a lower-cost alternative to traditional databases that do not need to be updated frequently.
 
 - https://github.com/mihneadb/node-directory-tree
   - Creates a JavaScript object representing a directory tree.
@@ -214,7 +214,7 @@ modified: 2022-08-21T10:02:41.845Z
   - Generate L3, a lightweight, flat representation of XML or JSON trees (or mixed) for fast storage and retrieval.
 
 - https://github.com/qwertie/btree-typescript
-  - fast in-memory B+ tree with a powerful API based on the standard Map. 
+  - fast in-memory B+ tree with a powerful API based on the standard Map.
   - B+ trees are ordered collections of key-value pairs, sorted by key.
   - data structures in JavaScript tend to be slower than the built-in Array and Map data structures in typical cases, because the built-in data structures are mostly implemented in a faster language such as C++
 - https://github.com/w8r/splay-tree
@@ -228,36 +228,36 @@ modified: 2022-08-21T10:02:41.845Z
   - Watch for changes on `filename`, where `filename` is either a file or a directory.
   - The `listener` callback gets two arguments (eventType, filename). `eventType` is either 'rename' or 'change', and `filename` is the name of the file which triggered the event.
   - The `fs.watch` API is not 100% consistent across platforms, and is unavailable in some situations.
-  - If the underlying functionality is not available for some reason, then fs.watch() will not be able to function and may thrown an exception. 
+  - If the underlying functionality is not available for some reason, then fs.watch() will not be able to function and may thrown an exception.
   - It is still possible to use `fs.watchFile()`, which uses stat polling, but this method is slower and less reliable.
 
 - `fs.watchFile(filename[, options], listener)`.
-  - Watch for changes on `filename`. 
+  - Watch for changes on `filename`.
   - The callback listener will be called each time the file is accessed.
   - The `listener` gets two arguments the current stat object and the previous stat object(instances of fs. Stat)
   - To be notified when the file was modified, not just accessed, it is necessary to compare `curr.mtime` and `prev.mtime`.
   - `fs.watch()` is more efficient than `fs.watchFile` and fs.unwatchFile
 
-- nodemon 
+- nodemon
   - is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
   - [Don’t use nodemon, there are better ways!](https://codeburst.io/dont-use-nodemon-there-are-better-ways-fc016b50b45e)
     - Solution: don’t restart the server
     - use `chokidar` to watch the files
-  - I am generally not a fan of nodemon as a workflow for basically this reason. 
-    - If I'm in a sandbox usually fine to 'hot load' and run whatever code on save. 
+  - I am generally not a fan of nodemon as a workflow for basically this reason.
+    - If I'm in a sandbox usually fine to 'hot load' and run whatever code on save.
     - If I'm in node, I always want manual control over *what* changes run and *when*.
-  - In fact I don't even use nodemon on my machine. 
-    - It always leaves zombie processes running on my machine. 
-    - I have to kill them manually by looking them up by opened port. 
+  - In fact I don't even use nodemon on my machine.
+    - It always leaves zombie processes running on my machine.
+    - I have to kill them manually by looking them up by opened port.
 
 - https://github.com/paulmillr/chokidar
   - file watcher used in MS VSCode.
   - Minimal and efficient cross-platform file watching library
   - On MacOS, chokidar by default uses a native extension exposing the Darwin `FSEvents` API.
-  - On most other platforms, the fs.watch-based implementation is the default, which avoids polling and keeps CPU usage down. 
+  - On most other platforms, the fs.watch-based implementation is the default, which avoids polling and keeps CPU usage down.
 - https://github.com/webpack/watchpack
   - 不依赖chokidar，依赖graceful-fs，由webpack开发
-  - watchpack high level API doesn't map directly to watchers. 
+  - watchpack high level API doesn't map directly to watchers.
   - Instead a three level architecture ensures that for each directory only a single watcher exists.
 - https://github.com/Qard/onchange
   - 依赖chokidar
@@ -282,10 +282,10 @@ modified: 2022-08-21T10:02:41.845Z
   - 无依赖
   - 示例依赖watchify，watchify依赖chokidar
   - To use LiveReload, you need a client (this script) in your browser and a server running on your development machine
-  - This repository (livereload.js) implements the client side of the protocol. 
-  - The client connects to a LiveReload server via web sockets and listens for incoming change notifications. 
+  - This repository (livereload.js) implements the client side of the protocol.
+  - The client connects to a LiveReload server via web sockets and listens for incoming change notifications.
   - It gets change notifications from a LiveReload server and applies them to the browser.
-  - If you are developing a LiveReload server, see dist/livereload.js for the latest version built using the sources in this repository. 
+  - If you are developing a LiveReload server, see dist/livereload.js for the latest version built using the sources in this repository.
   - We require LiveReload server vendors to distribute livereload.js as part of their apps or tools.
 - https://github.com/napcs/node-livereload
   - Current maintained fork of LiveReload server in Node.js
@@ -295,14 +295,14 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/mihneadb/node-directory-tree
   - http://livereload.com/
   - Creates a JS object representing a directory tree.
-  - const dirTree = require("directory-tree"); 
-  - const tree = dirTree("/some/path"); 
+  - const dirTree = require("directory-tree");
+  - const tree = dirTree("/some/path");
 - https://github.com/euberdeveloper/dree
   - 只依赖yargs
-  - A nodejs module which helps you handle a directory tree. 
-  -  It provides you an object of a directory tree with custom configuration and optional callback method when a file or dir is scanned. 
-  - const dree = require('dree'); 
-  - const tree = dree.scan('./folder', options); 
+  - A nodejs module which helps you handle a directory tree.
+  -  It provides you an object of a directory tree with custom configuration and optional callback method when a file or dir is scanned.
+  - const dree = require('dree');
+  - const tree = dree.scan('./folder', options);
 
 - https://github.com/jkomyno/pate
   - 依赖glob, yargs, chalk, progress
@@ -338,7 +338,7 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/proshoumma/organigram
   - http://organigram.surge.sh/
   - 依赖redux.v3、react-dnd.v5、react-dropzone
-  - A JSON based tree structure with drag and drop functionally to re-arrange the tree. 
+  - A JSON based tree structure with drag and drop functionally to re-arrange the tree.
 # accordion
 - https://github.com/springload/react-accessible-accordion
   - https://springload.github.io/react-accessible-accordion
@@ -372,8 +372,6 @@ modified: 2022-08-21T10:02:41.845Z
   - https://boweihan.github.io/rlpt-example/
   - 依赖material-ui.v1
 
-- https://github.com/diogofcunha/react-virtualized-tree
-  - a tree view react library built on top of react-virtualized
 # misc
 - https://github.com/daniel-hauser/react-organizational-chart
   - Simple react hierarchy tree - any React children accepted for nodes
@@ -389,7 +387,7 @@ modified: 2022-08-21T10:02:41.845Z
   - Manage React state with Behavior Trees
   - JavaScript/TypeScript implementation of Behavior Trees.
   - @btree/core - Framework agnostic behavior trees implementation
-  - With Behavior Tree notation all your code will be wrapped with nodes - that allows to visualize how it works. 
+  - With Behavior Tree notation all your code will be wrapped with nodes - that allows to visualize how it works.
 
 - https://github.com/imsnif/nmtree
   - Get a (flat) tree representation of the modules in your node_modules folder

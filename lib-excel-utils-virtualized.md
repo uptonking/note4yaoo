@@ -1,6 +1,6 @@
 ---
 title: lib-excel-utils-virtualized
-tags: [excel, lib, utils]
+tags: [excel, lib, utils, virtualized]
 created: 2022-08-24T10:48:42.566Z
 modified: 2022-08-24T10:49:48.139Z
 ---

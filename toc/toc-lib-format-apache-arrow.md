@@ -10,9 +10,14 @@ modified: 2023-01-08T16:27:44.918Z
 # guide
 
 # popular
-
+- polars /12.3kStar/MIT/202301/rust/NoDeps
+  - https://github.com/pola-rs/polars
+  - https://pola.rs/
+  - Polars is a blazingly fast DataFrames library implemented in Rust using Apache Arrow Columnar Format as the memory model.
+  - multi-threaded, hybrid-streaming DataFrame library in Rust | Python | Node.js
+  - If you have data that does not fit into memory, polars lazy is able to process your query (or parts of your query) in a streaming fashion
+  - In the TPCH benchmarks polars is orders of magnitudes faster than pandas, dask, modin and vaex on full queries (including IO).
 # examples
-
 - https://github.com/vega/vega-loader-arrow
   - This package extends Vega's set of data format parsers to support the type "arrow" in Vega version 5.0 and higher.
   - You can try the Arrow loader in our Observable notebook examples for both Vega and Vega-Lite.

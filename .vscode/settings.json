@@ -1,6 +1,5 @@
 {
   "search.useIgnoreFiles": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -29,10 +28,9 @@
     "editor.snippetSuggestions": "top",
     "editor.tabCompletion": "on",
     "editor.acceptSuggestionOnEnter": "on",
-    "editor.defaultFormatter": "mervin.markdown-formatter"
+    "files.trimTrailingWhitespace": false
   },
   "bookmarks.saveBookmarksInProject": true,
-  "cmake.configureOnOpen": true,
   "better-comments.tags": [
     {
       "tag": "!",
@@ -79,5 +77,7 @@
       "bold": false,
       "italic": false
     }
-  ]
+  ],
+  "editor.trimAutoWhitespace": false,
+  "files.trimTrailingWhitespace": false
 }
