@@ -35,11 +35,11 @@ modified: 2021-10-25T09:33:39.528Z
     - Automated, manual, unit and integration tests 
   - Free for Open Source
 
-- who is using ckeditor 5
+- who is using #ckeditor5
   - drupal
     - CKEditor 5 is a new experimental module
 
-- who is using ckeditor 4
+- who is using #ckeditor4
   - Liferay alloy-editor
   - Salesforce Lightning Knowledge
 

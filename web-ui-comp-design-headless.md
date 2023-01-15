@@ -25,7 +25,7 @@ modified: 2021-04-11T17:37:29.528Z
     - dialog,popover,disclosure,transition
     - 示例组件的动画体验非常好
   - reakit/ariakit
-    - who is using: bumbag-ui
+    - #used-by: bumbag-ui
   - adaptui/renderlesskit-react
     - 依赖reakit,react-aria,chakra-ui
   - zendesk-garden-react-containers: 2种使用方式 hook, render-prop

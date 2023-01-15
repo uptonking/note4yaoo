@@ -14,7 +14,7 @@ modified: 2021-01-01T16:02:50.598Z
   - https://ckan.org/
   - CKAN is an open-source DMS (data management system) for powering data hubs and data portals. 
   - CKAN makes it easy to publish, share and use data. 
-  - who is using
+  - who is using #ckan
     - [英国政府数据网站](https://data.gov.uk/)
     - [巴西政府数据网站](https://dados.gov.br/)
     - [Research Data Repository of the University of Porto](https://ckan-rdm.up.pt/)
@@ -44,7 +44,7 @@ modified: 2021-01-01T16:02:50.598Z
   - https://github.com/IQSS/dataverse
   - http://dataverse.org/
   - sharing, finding, citing, and preserving research data
-  - who is using
+  - who is using #dataverse
     - [北京大学开放研究数据平台](https://opendata.pku.edu.cn/dataverse.xhtml)
     - [复旦大学社会科学 Dataverse](https://dvn.fudan.edu.cn/dataverse.xhtml)
     - [Harvard Dataverse](https://dataverse.harvard.edu/)

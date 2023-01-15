@@ -12,7 +12,7 @@ modified: 2021-05-13T03:12:23.257Z
 - 基于webview是验证想法最快速的方案
   - react-native-webview、capacitor
 
-- who is using react-native
+- who is using #react-native
   - shopify
   - abandoned
     - airbnb 

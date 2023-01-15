@@ -249,7 +249,7 @@ modified: 2022-11-25T15:50:48.226Z
   - If you have large JavaScript objects (~10-100MB) you may hit some performance issues. 
     - This is because whenever you call `db.write`, the whole `db.data` is serialized using `JSON.stringify` and written to storage.
     - If you plan to scale, it's highly recommended to use databases like PostgreSQL or MongoDB instead.
-  - who is using
+  - used-by
     - json-server
 
 - https://github.com/sius/fakerdb /202005/js

@@ -15,7 +15,7 @@ modified: 2022-04-05T10:09:36.436Z
     - codemirror内容的变更changes事件转换为TextOperation的流程
     - 中文输入法优化
 
-- who is using ot
+- who is using #ot
   - ckeditor/tinymce
   - mongodb realm Atlas Device Sync Protocol
 

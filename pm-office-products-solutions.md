@@ -63,14 +63,14 @@ modified: 2021-07-11T08:31:00.660Z
   - 国外主流：GSuite, MSOffice
   - 周边产品：Canva、Gravit、Framer
 
-- who is using ProseMirror
+- who is using #ProseMirror
   - new york times
   - guardian
 
-- who is using Slate
+- who is using #Slate
   - taskade
 
-- who is using Quill
+- who is using #Quill
   - vaadin rich-text-editor is built with Quill
     - https://vaadin.com/docs/latest/components/rich-text-editor
 

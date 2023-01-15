@@ -65,7 +65,7 @@ modified: 2021-01-08T11:48:16.590Z
   - Backend Agnostic: Connects to any API (REST or GraphQL)
   - React-admin uses an adapter approach, with a concept called Data Providers.
   - designed as loosely coupled React components and hooks exposing reusable controller logic. It is very easy to replace any part of react-admin with your own
-  - [Who is using react-admin? · Issue](https://github.com/marmelab/react-admin/issues/4027)
+  - [Who is using #react-admin? · Issue](https://github.com/marmelab/react-admin/issues/4027)
   - [React-admin - Supported Data Provider Backends](https://marmelab.com/react-admin/DataProviderList.html)
 - https://github.com/NathanAdhitya/express-mongoose-ra-json-server /7Star/MIT/202209/ts
   - creates express.js routes from a mongoose model for ra-data-json-server

@@ -25,7 +25,7 @@ modified: 2022-05-15T18:41:17.192Z
 - cons
   - 未提供comment示例
 
-- who is using slate
+- who is using #slate
   - worktile slate-angular
   - wangEditor
 

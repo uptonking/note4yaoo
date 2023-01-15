@@ -28,7 +28,7 @@ modified: 2021-05-13T04:02:49.797Z
     - rxjs适合管理组件的局部状态，要注意引入rxjs的花费
     - 参考redux-observable
 
-- who is using
+- who is using #rxjs
   - google/angular
 
 - examples

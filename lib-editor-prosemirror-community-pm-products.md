@@ -10,7 +10,7 @@ modified: 2022-10-03T10:41:14.480Z
 # guide
 
 - ressources
-  - [Who is using ProseMirror?](https://discuss.prosemirror.net/t/who-is-using-prosemirror/1230)
+  - [Who is using #ProseMirror?](https://discuss.prosemirror.net/t/who-is-using-prosemirror/1230)
 # products using prosemirror
 
 ## knowledge-base/workspace

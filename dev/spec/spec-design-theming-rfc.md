@@ -25,7 +25,8 @@ modified: 2021-01-04T17:07:56.548Z
   - System UI is an open source organization that houses a Theme Specification for creating interoperable UI components.
   - https://mitchgavan.com/styleguide-driven-development/
 
-- who is using
+- who is using #theme-specification
+  - #deprecated. use design token spec
   - theme-ui
     - styled-system, onno, xstyled
     - https://github.com/system-ui/theme-ui/blob/develop/packages/preset-bootstrap/src/index.ts

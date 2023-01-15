@@ -30,7 +30,7 @@ modified: 2021-05-06T09:39:53.522Z
   - Functional
     - largely functional and immutable architecture to implement complex behavior
 
-- who is using
+- who is using #prosemirror
   - atlassian, nytimes, guardian...
 
 - roadmap-toys

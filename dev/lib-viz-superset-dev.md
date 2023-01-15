@@ -17,7 +17,7 @@ modified: 2020-12-08T13:35:12.509Z
 - xp
   - 首页的卡片和可视化预览图可切换显示模式
 
-- who is using
+- who is using #superset
   - preset.io作为主力研发公司
   - 第三方厂商直接开卖云服务了 [Apache Superset as a Service](https://pushmetrics.io/apache-superset)
     - superset cloud/online demo

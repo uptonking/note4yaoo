@@ -71,7 +71,8 @@ modified: 2023-01-12T15:52:42.418Z
   - A last write wins register is a register where the "last" write always wins. Determining when a write happens is usually done via a logical clock. Lamport clocks, vector clocks and causal graphs are a few options here. 
   - 👉🏻 Lamport clocks being the simplest option.
 
-- The current checkpoints module is an example of keeping a sequence of cell-level changes like that (and it handles deletes a charm). But I need to think about what a flexible API to get or replay such a log in a CRDT context would look like.
+- The current checkpoints module is an example of keeping a sequence of cell-level changes like that (and it handles deletes a charm). 
+  - But I need to think about what a flexible API to get or replay such a log in a CRDT context would look like.
 - I've started a dedicated disposable repo for these half-baked ideas. 
   - https://github.com/tinyplex/tinysync
 

@@ -43,6 +43,21 @@ modified: 2022-04-05T10:10:08.537Z
     - yata/yjs
     - chronofold
 
+- who is using #hybrid-logical-clock
+  - tinybase
+  - crsqlite
+  - CockroachDB
+  - YugaByte DB
+
+- notes
+  - TiDB: Centralized clock
+
+- hybrid-logical-clock roadmap 待改进的地方
+  - 需要保存所有op，新客户端需要获取所有op从头开始计算
+  - 每个单元格都有一个clock，其实可以每行保存一个clock+每列保存到该clock的偏移量
+  - ref
+    - [crsqlite](https://github.com/vlcn-io/cr-sqlite#3-crdts-for-mortals)
+
 - [An introduction to state-based CRDTs_201712](https://bartoszsypytkowski.com/the-state-of-a-state-based-crdts/)
 - [Operation based CRDTs: protocol_202008](https://bartoszsypytkowski.com/operation-based-crdts-protocol/)
 - [Operation-based CRDTs: JSON document_202103](https://bartoszsypytkowski.com/operation-based-crdts-json-document/)

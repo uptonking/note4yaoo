@@ -342,7 +342,7 @@ modified: 2021-09-14T18:58:58.275Z
 - ref
   - [wiki: linkware](https://en.wiktionary.org/wiki/linkware)
 
-- who is using
+- who is using #linkware-license
   - https://github.com/amcharts/amcharts4
     - https://www.amcharts.com/online-store/
     - https://www.amcharts.com/online-store/licenses-explained/

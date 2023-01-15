@@ -246,7 +246,7 @@ modified: 2021-07-27T11:27:37.050Z
   - Setting up an intranet
   - Confluence for software teams
 
-- who is using /demos
+- who is using #confluence
   - [Atlassian Documentation](https://confluence.atlassian.com/alldoc/atlassian-documentation-32243719.html)
   - [IGEL Knowledge Base](https://kb.igel.com/)
   - [Comala Workflows](https://wiki.comalatech.com/display/CWL)

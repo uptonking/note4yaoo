@@ -27,7 +27,7 @@ modified: 2021-07-21T18:07:43.056Z
   - Docsify is way way easier, probably because all the “build” stuff is happening via the javascript in realtime. 
   - https://github.com/jhildenbiddle/docsify-themeable
     - simple theme system for docsify.js
-  - who is using
+  - used-by
     - https://shoelace.style/
     - https://imdone.io/docs/
 

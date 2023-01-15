@@ -21,7 +21,7 @@ modified: 2022-12-19T01:49:27.545Z
   - architecture and platform
     - microservice
 
-- who is using
+- who is using #nestjs
   - adidas: as our backend to retrieve GitHub metadata and contents from our CMS.
   - more
     - [Who is using Nest in production?](https://github.com/nestjs/nest/issues/1006)
