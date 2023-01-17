@@ -61,7 +61,7 @@ modified: 2021-07-20T13:50:23.433Z
     - themeable/configurable/widgets-blocks
 
 - integrations/connections
-  - wechat-miniprogram、公众号、实时通知
+  - wechat-miniapp、公众号、实时通知
   - github/gitee
   - 腾讯文档
   - 类似outline集成slack

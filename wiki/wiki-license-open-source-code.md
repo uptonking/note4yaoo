@@ -349,3 +349,33 @@ modified: 2021-09-14T18:58:58.275Z
   - https://github.com/DataGridXL/DataGridXL
   - https://github.com/ailon/markerjs2
   - https://icons8.com/license
+# Server Side Public License (SSPL)
+- [Server Side Public License FAQ](https://www.mongodb.com/licensing/server-side-public-license/faq)
+- [Server Side Public License (SSPL) | MongoDB](https://www.mongodb.com/licensing/server-side-public-license)
+
+- Why did you base the SSPL on GPL v3 instead of AGPL?
+  - The AGPL is a modified version of GPL v3. 
+  - The only additional requirement of AGPL is in section 13: if you run a modified program on a server and let other users communicate with it there, you must open source the source code corresponding to your modified version, known as the “Remote Network Interaction” provision of AGPL.
+  - There is some confusion in the marketplace about the trigger and scope of the Remote Network Interaction provision of AGPL.
+  - As a result, we decided to base the SSPL on GPL v3 and to add a new section 13 which clearly and explicitly sets forth the conditions to offering the licensed program as a third-party service.
+
+- What specifically is the difference between the GPL and the SSPL?
+  - The only substantive modification is section 13, which makes clear the condition to offering MongoDB as a service. A company that offers a publicly available MongoDB as a service must release the software it uses to offer such service under the terms of the SSPL, including the management software, user interfaces, application program interfaces, automation software, monitoring software, backup software, storage software and hosting software, all such that a user could run an instance of the service using the source code made available.
+# Elastic License
+- [FAQ on Elastic License 2.0 (ELv2) | Elastic](https://www.elastic.co/licensing/elastic-license/faq)
+- [Elastic License 2.0 | Elastic](https://www.elastic.co/licensing/elastic-license)
+
+- We are moving our Apache 2.0-licensed source code in Elasticsearch and Kibana to be dual licensed under the Elastic License and Server Side Public License (SSPL), giving users the choice of which license to apply.
+
+- The license allows the free right to use, modify, create derivative works, and redistribute, with three simple limitations:
+  - You may not provide the products to others as a managed service 
+  - You may not circumvent the license key functionality or remove/obscure features protected by license keys
+  - You may not remove or obscure any licensing, copyright, or other notices
+
+# Confluent Community License
+- [Confluent community license faq](https://www.confluent.io/confluent-community-license-faq/)
+
+- Under the Confluent Community License, you can access the source code and modify or redistribute it; 
+  - there is only one thing you cannot do, and that is use it to make a competing SaaS offering. 
+  - For example, it does not allow hosting of Confluent ksqlDB, Confluent Schema Registry, Confluent REST Proxy, or other software licensed under the Confluent Community License as online service offerings that compete with Confluent SaaS products or services that provide the same software.  
+  - If you are not doing what is excluded, this license change will not affect you.

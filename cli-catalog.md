@@ -10,7 +10,7 @@ modified: 2021-01-01T22:13:44.013Z
 # browser-devtools
 
 ```JS
-// 浏览器控制台只输出log不输出行号位置VM信息，方便copy； 将代码中的console.log替换为log
+// 浏览器控制台只输出log不输出行号位置VM信息，方便copy； 将console.log替换为log
 const log = (...args) => queueMicrotask(console.log.bind(console, ...args));
 ```
 
@@ -185,20 +185,35 @@ git config --global merge.directoryRenames true
     - %s 表示提交的信息。
 
 - git 常用命令
-  - `git branch branchName` : 创建新分支
-  - `git branch -m master main`: 修改分支名
-  - `git checkout branchName startPoint` ：切换到新分支
-  - `git checkout -b bName` = `g branch bName` + `g checkout bName`
-  - `git merge b` ：将b分支合并到当前分支
-    - 执行merge之后，会产生一个新的commit
-    - `git merge master feature` ：将master分支合并到feature分支
-  - `git rebase` ：功能和 `git merge` 类似，
-    - `git checkout feature` + `git rebase master`
-    - 将整个feature分支移动到master分支的后面，将master分支上新的提交并过来
-    - 不会产生新commit
 
-- 其他命令
-  - git stage 作为 git add 的一个同义词
+```shell
+# 创建新分支
+git branch branchName
+
+# 修改分支名
+git branch -m master main
+
+# 切换到新分支
+git checkout branchName startPoint
+# git checkout -b bName = git branch bName  +  git checkout bName
+
+# 将b分支合并到当前分支，执行merge之后，会产生一个新的commit
+git merge b
+# 将master分支合并到feature分支
+git merge master feature
+
+# count commits in a branch
+git rev-list --count main/master
+
+```
+
+- `git rebase` ：功能和 `git merge` 类似，
+  - `git checkout feature` + `git rebase master`
+  - 将整个feature分支移动到master分支的后面，将master分支上新的提交并过来
+  - 不会产生新commit
+
+- git 其他命令
+  - `git stage` 作为 git add 的一个同义词
   - git diff --staged 作为 git diff --cached 的相同命令
     - 为了容易理解，推荐大家使用 git stage 和 git diff --staged 这两个命令，
     - 而git add 和 git diff --cached 这两个命令，仅仅为了保持和以前的兼容做保留。
@@ -207,8 +222,8 @@ git config --global merge.directoryRenames true
   - git diff HEAD 显示工作区和上次递交文件的差异
   - 当文件加入了 stage 区以后，如果要从stage删除，则使用 reset, 此时工作区的文件不做任何修改
   - 当文件加入了 stage 区以后，后来又做了一些修改，这时发现后面的修改有问题，想回退到stage的状态，使用 checkout 
-  -  git commit -a 并不会作用于第一次新建的文件。 否则容易因此忽略新文件的提交。
-  -  git push origin -d release-1.8.27 删除远程分支
+  - git commit -a 并不会作用于第一次新建的文件，否则容易因此忽略新文件的提交。
+  - git push origin -d release-1.8 删除远程分支
 
 - 对于多分支的代码库，将代码从一个分支转移到另一个分支是常见需求。
   - 一种情况是，你需要另一个分支的所有代码变动，那么就采用合并（git merge）

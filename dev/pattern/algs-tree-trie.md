@@ -14,11 +14,21 @@ modified: 2023-01-15T11:41:37.722Z
   - level-trie
   - ndx-search
   - router for fastify/feathers
+
+- who is using #merkle-tree
+  - cassandra
+  - dynamodb-amazon
 # Tree
 - 小结
   - trie前缀树，每个节点采用基数长度的空间存储
   - Patricia trie，对每个节点，若该节点只有一个孩子节点，则将其合并到父节点中
   - 哈希树无序，单向增加，但查找快速
+
+- [Js实现Trie 字典树 - 掘金](https://juejin.cn/post/7067388014766325774)
+  - 未实现delete
+- [Trie树的JS或TS实现 - 简书](https://www.jianshu.com/p/ba70ca95c33b)
+- [Implementing Merkle Tree and Patricia trie](https://medium.com/coinmonks/implementing-merkle-tree-and-patricia-trie-b8badd6d9591)
+  - https://github.com/kashishkhullar/merkel-and-patricia
 
 - [What is the difference between radix trees and Patricia tries?](https://cs.stackexchange.com/questions/63048)
   - PATRICIA tries are radix tries with radix equals 2, which means that each bit of the key is compared individually and each node is a two-way (i.e., left versus right) branch.
@@ -27,9 +37,6 @@ modified: 2023-01-15T11:41:37.722Z
   - Donald R. Morrison found (in 1968) an innovative way to use binary trie to depict N keys using only N nodes and he named this data structure PATRICIA.
 
 - ref
-  - [java - 一文搞懂字典树](https://segmentfault.com/a/1190000040801084)
-  - [Trie树 - 掘金](https://juejin.cn/post/6844903641799720974)
-  - [字典树的几种实现方式以及应用 | 酱猪蹄的博客](http://jiangzhuti.me/posts/%E5%AD%97%E5%85%B8%E6%A0%91%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%BA%94%E7%94%A8)
   - [015-数据结构-树形结构-其他树 LSM - bjlhx15 - 博客园](https://www.cnblogs.com/bjlhx/p/10929036.html)
   - [013-数据结构-树形结构-决策树 - bjlhx15 - 博客园](https://www.cnblogs.com/bjlhx/p/10912153.html)
   - [bjlhx15 - 博客园](https://www.cnblogs.com/bjlhx/?page=11)
@@ -67,21 +74,28 @@ modified: 2023-01-15T11:41:37.722Z
 - 上述是使用一种分析的方式来构建一个后缀树，但是如果字符串长度较大，上述方式可能不太可能
 - Ukkonen算法（简称ukk算法）是一个online算法，它与mcc算法的一个显著区别是每次只对S的一个前缀生成隐式后缀树(implicit suffix tree)，然后考虑S的下一个字符S[i+1]并将S[0...i+1]的所有后缀加入到上一个阶段中生成的隐式后缀树中，形成一个新的隐式后缀树。最后用一个特殊字符将隐式后缀树自动转换成真实的后缀树。这样ukk的一个最大优点就是不需要事先知道输入字串的全部内容，只需使用增量方式生成后缀树。和mcc算法类似，也是采用压缩存储Trie，以达到节省空间的目的。通过使用implicit extensions和suffix link两大技巧，时间复杂度可以达到线性。
 
-### Hash Tree
+### Hash Tree 哈希树
 
-- 质数分辨定理
+- [HASH树](https://www.cnblogs.com/hjw201983290498/p/12770943.html)
+
+- 定理1: 质数分辨定理
+  - 质数分解定律，任何一个数都可以分解为几个不同素数额乘积P1，P2，P3... 到Pn; 
+  - 每一个比1大的自然数N只能有一种方式分解成质数的乘积。
+  - 我一直理解irreducible＝质数，prime＝素数。UFD的很重要的一条性质就是，每个irreducible的元素都是prime的。翻译过来就是在UFD中，所有质元素都是素元素。但是到一般的环上，不是所有的质元素（irreducible）都是素元素（prime）。反例《近世代数》或《代数数论》应该会讲。
   - 质数： 即只能被 1 和 本身 整除的数。
   - 为什么用质数：因为N个不同的质数可以 ”辨别“ 的连续整数的数量，与这些质数的乘积相同。
   - 从2起的连续质数，连续10个质数就可以分辨大约M(10) =2*3*5*7*11*13*17*19*23*29= 6464693230 个数，已经超过计算机中常用整数（32bit）的表达范围。
   - 连续100个质数就可以分辨大约M(100) = 4.711930 乘以10的219次方。
 
-- 余数分辨定理
+- 定理2: 余数分辨定理
   - 可以简单的表述为：n个不同的数可以“分辨”的连续整数的个数不超过他们的最小公倍数。超过这个范围就意味着冲突的概率会增加。定理1是定理2的一个特例。
+
+- 使用不同的分辨算法可以组织不同的哈希树，一般来说，每一个哈希树的节点下的子节点数是和分辨数列一致的。哈希树的最大深度就是特征空间的维度。
 
 - 可以选择质数分辨算法来建立一棵哈希树。
   - 选择从2开始的连续质数来建立一个十层的哈希树。
   - 第一层结点为根结点，根结点下有2个结点；第二层的每个结点下有3个结点；
-  - 依此类推，即每层结点的子节点数目为连续的质数【1，2，3，5，7，11……】。
+  - 依此类推，即每层结点的子节点数目为连续的质数【1，2，3，5，7，11……】。每层节点的子节点的数目为连续的素数
   - 到第十层，每个结点下有29个结点。 
 - 原则：求余看对应位置的结点，如果为空则在空处插入一个新节点，如果被逻辑删除了替换值再逻辑恢复，如果有值就继续往下找，继续求余判断。
 
@@ -252,3 +266,6 @@ modified: 2023-01-15T11:41:37.722Z
   - 区块头只需包含根哈希值而不必封装所有底层数据，这使得哈希运算可以高效地运行在智能手机甚至物联网设备上
   - Merkle树可支持“简化支付验证协议”（SPV），即在不运行完整区块链网络节点的情况下，也能够对交易数据进行检验。所以，在区块链中使用Merkle树这种数据结构是非常具有意义的。
 # more
+- [java - 一文搞懂字典树](https://segmentfault.com/a/1190000040801084)
+- [Trie树 - 掘金](https://juejin.cn/post/6844903641799720974)
+- [字典树的几种实现方式以及应用 | 酱猪蹄的博客](http://jiangzhuti.me/posts/%E5%AD%97%E5%85%B8%E6%A0%91%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%BA%94%E7%94%A8)

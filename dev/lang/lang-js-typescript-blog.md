@@ -11,6 +11,28 @@ modified: 2021-03-22T14:43:44.781Z
 
 # blogs
 
+## [tRPC: TypeScript performance lessons while refactoring for v10_202301](https://trpc.io/blog/typescript-performance-lessons)
+
+- Automating library performance
+  - it's important to keep an eye on performance as your library grows and changes. 
+  - Automated testing can remove an immense burden from your library authoring (and application building!) by programatically testing your library code on each commit.
+  - For tRPC, we do our best to ensure this by generating and testing a router with 3, 500 procedures and 1, 000 routers. 
+- tRPC is not a runtime-heavy library so our performance metrics are centered around type-checking. 
+- Therefore, we stay mindful of:
+  - Being slow to type-check using tsc
+  - Having a large initial load time
+  - If the TypeScript language server takes a long time to respond to changes
+- How I found performance opportunities in tRPC
+  - There is always a tradeoff between TypeScript accuracy and compiler performance. 
+  - TypeScript has a built-in tracing tool that can help you find the bottleneck in your types. It's not perfect, but it's the best tool available.
+  - tsc --generateTrace ./trace --incremental false
+  - You'll be given a `trace/trace.json` file on your machine. You can open that file in a trace analysis app (I use Perfetto) or `chrome://tracing`.
+- Lazy evaluation
+  - The problem here is that TypeScript is evaluating all of this code in the type system, even though it's not used immediately. 
+  - TypeScript defers type evaluation of properties on objects until they are directly used, so theoretically our type above should get lazy evaluation...right?
+  - Well, it's not exactly an object. There's actually a type wrapping the entire thing: OmitNeverKeys.
+  - We need to find a way for the v10 API to adapt to the legacy v9 routers more gracefully. 
+
 ## [11 Tips That Make You a Better Typescript Programmer_202212](https://dev.to/zenstack/11-tips-that-help-you-become-a-better-typescript-programmer-4ca1)
 
 #1 Think in {Set}

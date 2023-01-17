@@ -13,6 +13,8 @@ modified: 2022-11-30T18:56:07.072Z
 
 - alternatives
   - pouchdb server    /inactive
+  - couchdb(erlang)
+  - [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
 
 - [CouchDB Best Practices](https://jo.github.io/couchdb-best-practices/)
   - https://github.com/jo/couchdb-best-practices

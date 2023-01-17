@@ -9,25 +9,24 @@ modified: 2021-09-20T18:01:39.932Z
 
 # regular-topics
 
-- react-native flutter
-  - wechat miniprogram
-  - webview
-
-- electron tauri
-  - pwa (无需打包到apk)
-  - qt
-
 - prosemirror lexical
   - slate
-
-- trpc nestjs
-  - express koa
 
 - luckysheet/univer ag-grid
   - tanstack-table
 
-- tailwindcss css-in-js
-  - vanilla-extract
+- react-native flutter
+  - wechat-miniapp
+  - webview
+
+- electron tauri
+  - pwa (无需打包到apk)
+  - webview
+  - qt
+
+- trpc nestjs
+  - express koa
+  - typeorm prisma
 
 - notion logseq
   - obsidian
@@ -36,6 +35,12 @@ modified: 2021-09-20T18:01:39.932Z
 
 - local-first/offline
   - indexeddb
+
+- tailwindcss css-in-js
+  - vanilla-extract
+
+- whiteboard
+  - excalidraw/tldraw
 # subscription
 - [remirror(MIT) blog](https://remirror.io/blog)
 - [curvenote(MIT) blog](https://curvenote.com/blog)

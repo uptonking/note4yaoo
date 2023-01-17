@@ -20,7 +20,7 @@ modified: 2022-11-07T17:36:22.236Z
     - we do remove any element with `isDeleted` set to `true` when saving to persistent storage, so long-lived drawings where this may become a problem are cleaned up.
   - Concurrent edits will still be lost, as our merge algorithm only looks at new elements being added or removed, and not changes to existing elements themselves.
     - when we merge multiple peers state together, we throw out old versions of each element and just keep the latest ones.
-    - This algorithm is simple but effective, and solved most of our collaboration problems.
+    - 👉🏻 This algorithm is simple but effective, and solved most of our collaboration problems.
   - The version number only solves race conditions when players are editing different elements concurrently. What if they’re editing the same element concurrently?
     - For Excalidraw, we don’t really care! We think this will be a pretty rare situation, and that users will tolerate some jankiness if it happens.
     - With that said, it is important that all peers converge on the same state. 
