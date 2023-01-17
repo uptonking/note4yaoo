@@ -51,10 +51,6 @@ modified: 2022-11-06T11:21:27.612Z
   - 使用TypeScript开发的Node的数据提取工具
   - 仅支持postgres
 
-- https://github.com/NangoHQ/nango /202212/ts
-  - https://www.nango.dev/
-  - Nango continuously syncs data from any API endpoint (that returns JSON) to your database.
-  - Nango has built-in support for OAuth through our sister project Pizzly
 # utils
 - https://github.com/w3tecch/typeorm-seeding
   - A delightful way to seed test data into your database.

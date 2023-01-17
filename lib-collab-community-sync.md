@@ -9,6 +9,10 @@ modified: 2022-11-29T20:41:25.566Z
 
 # guide
 
+- 成熟的解决方案一般都会设计和公开自己的同步协议
+  - database: couchdb, rxdb, 
+  - framework: meteor-ddp, feathers-sync, gnu, realm/Atlas-Device-Sync
+  - editing: yjs-protocols, automerge-sync
 # discuss
 - ## 
 

@@ -1077,10 +1077,6 @@ myStore.get(['a', 'b']) // look for id1=a + id2=b
 
 - [Electron应用数据库选型暨indexedDB扫盲](https://shenlvmeng.github.io/blog/2019/03/12/indexeddb-introduction/)
 
-- crdt-local-first
-  - https://github.com/evoluhq/evolu
-  - https://github.com/clintharris/IDBSideSync
-
 ## 1101
 
 - 分析浏览器环境下多个async方法的执行顺序
@@ -1182,7 +1178,6 @@ initTodoTypes();
 3.4 确定将整数 A 转换为整数 B 所需翻转的位数
 3.5 判断一个二进制数中 1 的数量是奇数还是偶数
 3.6 序列加密，只要选择一个合适的B，仅仅使用XOR就可以实现一个高强度的密码
-
 
 ## 1029
 

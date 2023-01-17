@@ -20,7 +20,60 @@ modified: 2021-08-05T04:31:02.298Z
 
 - ## 
 
-- ## 
+- ## Picking #TypeScript Generic Slot order is tricky...
+- https://twitter.com/SCooperDev/status/1615000886513750017
+- a) go for consistent order across a project
+- Pros: 
+  - Provides an easy mental model
+  - Consistent dev experience
+- Cons:
+  - Need to know all possible generics upfront 
+  - Add placeholder for generic before it is actually used to avoid future breaking change
+b) go for most likely to be used per interface?
+- Pros:
+  - Avoid devs having to provide generic placeholders to be able to set a later generic
+  - Update interfaces independently as generics supported
+- Cons:
+  - Inconsistent order cross entire project potentially confusing for devs
+
+- 👉🏻 Right got you! I have seen this before referred to as a Generic Bag. It's a great solution to the problem and is closest to a name params implementation. Only downside is that you have to educate users how to use it as it's not a standard practice.
+  - tannerlinsley: This education is what ultimately made me not ship with it. I was 🤏 this close!!! Generic Bag, Generic Maps, Generic Groups, Object Generics. There’s a lot of terms to describe what I hope someday will be unnecessary.
+  - Yeah it's that hard balance between shipping something that works great (if you know what is going on) versus the number of questions and support cost it would lead to explaining how to use it.
+
+```typescript
+type NamedGenericParams<TData, TValue, TContext> = {
+    data: TData, 
+    value: TValue, 
+    context: TContext
+}
+
+// The main trick lies in the "recursion" here.
+// TData is generic parameter, whose default value is type of "data" property on the passed T type.
+interface GenericInterface<T extends NamedGenericParams<TData, TValue, TContext>, TData=T["data"], TValue=T["value"], TContext=T["context"]> {
+    data: TData;
+    context: TContext;
+    value: TValue
+}
+
+// define type of each field
+type UserParams = {data: "userData", context: "userContext", value: "userValue"}
+
+// pass this definition to GenericInterface
+interface UserInterface extends GenericInterface<UserParams> {
+}
+
+// only way how to asign the values now
+const a: UserInterface = {
+    context: "userContext",
+    data: "userData",
+    value: "userValue",
+}
+
+```
+
+- b. But I always leave JS Doc comments so the user can hover over the type and see the order and anything else relevant to its usage.
+
+- I wish TypeScript had named generics sometimes, e.g. `Foo<data: TData, context: TContext, value: TValue>`
 
 - ## IterableType
 - //localhost

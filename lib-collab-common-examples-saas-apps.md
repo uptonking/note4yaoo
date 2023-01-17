@@ -1,11 +1,11 @@
 ---
-title: lib-collab-common-examples-utils-sync
-tags: [collaboration, examples, synchronization, toc, utils]
+title: lib-collab-common-examples-saas-apps
+tags: [collaboration, examples, saas, toc]
 created: 2022-11-05T10:35:19.525Z
-modified: 2022-11-07T17:37:27.579Z
+modified: 2023-01-17T19:14:47.611Z
 ---
 
-# lib-collab-common-examples-utils-sync
+# lib-collab-common-examples-saas-apps
 
 # guide
 
@@ -90,34 +90,9 @@ modified: 2022-11-07T17:37:27.579Z
   - supports real-time sharing of audio, video, slides (with whiteboard controls), chat, and the screen. 
   - https://github.com/fmeringdal/nettu-meet
     - Open source video conferencing system for tutors.
-# all-in-one-collab
+
 - https://github.com/elicesw2-project2/synergy
   - All-in-one Workspace Collaboration Tools
-# sync
-- clientdb /506Star/apache2/202207/ts/同步未完成
-  - https://github.com/clientdb/clientdb
-  - ClientDB is an in-memory database for enabling real-time web apps.
-  - The architecture of clientdb is inspired by the Linear app
-  - 依赖flexsearch、knex、express、socket.io、lodash
-  - [sync-engine work in progress](https://github.com/clientdb/clientdb/pull/10)
-  - [differences and advantages compared to RxDB](https://github.com/clientdb/clientdb/issues/12)
-- https://github.com/Bhavik-ag/B-Docs
-  - an online document editor to create, edit and collaborate on online documents.
-  - Version Control and Hosting : Git for Source Code Management and Github for Hosting
-
-- sync_server-nedb /33Star/MIT/201807/js
-  - https://github.com/nponiros/sync_server
-  - A simple server which can be used to synchronize data from multiple devices
-  - A small node server which uses NeDB to write data to the disk. 
-    - The database used to store the data. Currently only NeDB is supported
-  - The server can be used with a client for example `SyncClient` to save change sets which can later be synchronized with other devices. 
-    - The server was made to work with the `ISyncProtocol` and `Dexie.Syncable`. 
-    - 👉🏻 It supports the poll pattern using AJAX and the react pattern using nodejs-websocket.
-- sync_client-dexie /29Star/MIT/201804/js
-  - https://github.com/nponiros/sync_client
-  - This module can be used to write data to IndexedDB using `Dexie` and to synchronize the data in IndexedDB with a server.
-  - `Dexie.Syncable` is used for the synchronization. This module contains an implementation of the `ISyncProtocol`. 
-  - It was primarily written to work with `sync-server` but should work with other servers which offer the same API.
 # collab-apps
 - https://github.com/configu/configu
   - A generic standard for managing and collaborating software configurations 
@@ -153,6 +128,31 @@ modified: 2022-11-07T17:37:27.579Z
   - A social media React web app for musicians to connect and collaborate. 
   - Built with NextJS, ReactJS, Supabase
 # utils
+- clientdb /506Star/apache2/202207/ts/同步未完成
+  - https://github.com/clientdb/clientdb
+  - ClientDB is an in-memory database for enabling real-time web apps.
+  - The architecture of clientdb is inspired by the Linear app
+  - 依赖flexsearch、knex、express、socket.io、lodash
+  - [sync-engine work in progress](https://github.com/clientdb/clientdb/pull/10)
+  - [differences and advantages compared to RxDB](https://github.com/clientdb/clientdb/issues/12)
+- https://github.com/Bhavik-ag/B-Docs
+  - an online document editor to create, edit and collaborate on online documents.
+  - Version Control and Hosting : Git for Source Code Management and Github for Hosting
+
+- sync_server-nedb /33Star/MIT/201807/js
+  - https://github.com/nponiros/sync_server
+  - A simple server which can be used to synchronize data from multiple devices
+  - A small node server which uses NeDB to write data to the disk. 
+    - The database used to store the data. Currently only NeDB is supported
+  - The server can be used with a client for example `SyncClient` to save change sets which can later be synchronized with other devices. 
+    - The server was made to work with the `ISyncProtocol` and `Dexie.Syncable`. 
+    - 👉🏻 It supports the poll pattern using AJAX and the react pattern using nodejs-websocket.
+- sync_client-dexie /29Star/MIT/201804/js
+  - https://github.com/nponiros/sync_client
+  - This module can be used to write data to IndexedDB using `Dexie` and to synchronize the data in IndexedDB with a server.
+  - `Dexie.Syncable` is used for the synchronization. This module contains an implementation of the `ISyncProtocol`. 
+  - It was primarily written to work with `sync-server` but should work with other servers which offer the same API.
+
 - https://github.com/amark/gun /202212/js
   - GUN is an ecosystem of tools that let you build community run and encrypted applications - like an Open Source Firebase or a Decentralized Dropbox.
   - Multiplayer by default with realtime p2p state synchronization!

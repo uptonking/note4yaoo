@@ -26,6 +26,11 @@ modified: 2021-01-01T22:26:57.773Z
 - [ctrl+shift+e 会导致键盘停留在e，按键会暂时失效](https://askubuntu.com/questions/1125726)
   - Open Ibus preferences(ibus-setup) in your terminal, visit the Emoji tab, then click the Emoji Annotation to either Delete or change the shortcut
 # ubuntu-usage
+
+- [Why does Linux have no user subfolder such as /AppData? - Quora](https://www.quora.com/Why-does-Linux-have-no-user-subfolder-such-as-AppData)
+  - Linux’ user subfolder is /home
+  - /home/yourusername contains, besides all personal files and data, a number of hidden “dot” directories like .config and .local in which software stores their user-specific configuration.
+
 - 查看gnome桌面环境是wayland还是x11
   - s1: echo $XDG_SESSION_TYPE
   - s2: loginctl show-session 2
