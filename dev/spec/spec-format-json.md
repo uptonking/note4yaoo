@@ -91,4 +91,26 @@ modified: 2020-10-15T13:41:01.275Z
 # geojson
 - https://github.com/mapbox/geojson.io
 - https://github.com/topojson/topojson  
-# dev
+# json-rpc
+- [simple is better - JSON-RPC](http://www.simple-is-better.org/rpc/)
+- Differences between 1.0 and 2.0
+- here is a list of the main differences of JSON-RPC 2.0, compared with 1.0:
+  - client-server instead of peer-to-peer:
+    - JSON-RPC 2.0 uses a client-server-architecture.
+    - V1.0 used a peer-to-peer-architecture where every peer was both server and client.
+  - Transport independence:
+    - JSON-RPC 2.0 doesn't define any transport-specific issues, since transport and RPC are independent.
+    - V1.0 defined that exceptions must be raised if the connection is closed, and that invalid requests/responses must close the connection (and raise exceptions).
+  - Named parameters added
+  - Reduced fields: req/res
+  - Optional parameters
+  - Extensions: added optional extensions, e.g. for service description or multicall; moved "class hinting" from the base specification to an (optional) extension.
+
+- https://github.com/elpheria/rpc-websockets /ts
+  - JSON-RPC 2.0 implementation over WebSockets for Node.js and JavaScript/TypeScript
+- https://github.com/teambition/jsonrpc-lite
+  - Parse and Serialize JSON-RPC2 messages in node.js or browser.
+
+- https://github.com/tedeh/jayson /js
+  - a simple but featureful JSON-RPC 2.0/1.0 client and server for node.js
+# more

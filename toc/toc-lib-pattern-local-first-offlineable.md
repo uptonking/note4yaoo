@@ -95,6 +95,15 @@ modified: 2021-09-04T14:03:39.046Z
     - a rich-text CRDT (code, example integration with quill, visualization of the data structure)
   - [Local-first database: RxDB + PouchDB](https://jaredforsyth.com/posts/local-first-database-rxdb-pouchdb/)
 
+- IDBSideSync /8Star/MIT/202104/ts
+  - https://github.com/clintharris/IDBSideSync
+  - https://idbsidesync-todo-demo.vercel.app/
+  - IDBSideSync is an experimental JavaScript library that makes it possible to sync browser-based IndexedDB databases using CRDT concepts
+  - 基于浏览器的同步方案可参考更成熟的remoteStorage
+  - As your app makes CRUD calls to its IndexedDB database, IDBSideSync proxies/intercepts those calls and records the operations to a log (the "oplog").
+  - IDBSideSync will upload the client's oplog entries (CRDT state mutation messages) to the remote data store using the registered plugins, and also download other client's oplog entries
+  - A hybrid logical clock (i.e., time + counter) is maintained among the clients to help figure out which operations "win" if more than one exists for the same database store/record/property.
+
 - https://github.com/pubkey/broadcast-channel
   - BroadcastChannel allows you to send data between different browser-tabs or nodejs-processes.
   - It works completely client-side and offline, 
@@ -147,6 +156,7 @@ modified: 2021-09-04T14:03:39.046Z
   - Full Text Search
   - Open source SDK
   - 推荐使用 SingleFile 保存 html 页面
+  - 支持点对点同步，测试时可用本地同步官网，api填写 https://hamsterbase.onrender.com，结尾无/
 
 - https://github.com/unigraph-dev/unigraph-dev
   - A local-first and universal knowledge graph, personal search engine, and workspace for your life.

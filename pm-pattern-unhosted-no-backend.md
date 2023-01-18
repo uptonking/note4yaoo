@@ -17,6 +17,10 @@ modified: 2022-11-25T18:11:56.985Z
 
 - [logseq: Remote Storage and Sync - Feature Requests - Logseq](https://discuss.logseq.com/t/remote-storage-and-sync/932)
 # remoteStorage-docs
+- https://github.com/remotestorage/spec
+  - [remoteStorage Protocol Specification](https://datatracker.ietf.org/doc/html/draft-dejong-remotestorage)
+  - Each six months (max 185 days), the output is checked using idnits, submitted to the IETF as an Internet Draft
+
 - In order to get informed about users connecting their storage, data being transferred, the library going into offline mode, errors being thrown, and other such things, you can listen to the events emitted by the `RemoteStorage` instance, as well as `BaseClient` instances.
   - connected
   - network-offline/online
@@ -76,8 +80,19 @@ modified: 2022-11-25T18:11:56.985Z
 - the only special feature aside from plain HTTP – there are directory listings, formatted as JSON-LD. 
   - They contain both the content type and size, as well as ETags, which can be used to implement sync mechanisms. 
   - The files and listings themselves also carry ETag headers for sync/caching and conditional requests.
+# remoteStorage-discuss-community
+- ## [RemoteStorage – An open protocol for per-user storage on the Web | Hacker News_201806](https://news.ycombinator.com/item?id=17297673)
+- Actually, this has been pretty much a non-issue for us in production over the last 5 years. 
+  - As the reference JS client library works offline first, it'll just sync data whenever the remote becomes available again. 
+  - In fact, that's a nice bonus for offline-first web apps in general, not just with remoteStorage.
+- You'd need shared protocols for data, of some sort. Probably similar to the original dream for XML schemata.
+- The disconnect I have with this is it’s a key value store. Sure you can build on top of that, but any non trivial application would require more flexibility. Has there been any work on a remote sql spec, for example?
+  - OData comes close to one, although it does not use SQL as its query language
 
-- https://github.com/remotestorage/spec
-  - [remoteStorage Protocol Specification](https://datatracker.ietf.org/doc/html/draft-dejong-remotestorage)
-  - Each six months (max 185 days), the output is checked using idnits, submitted to the IETF as an Internet Draft
+- How is this fundamentally different than storing files in S3 or Azure BLOB storage or SFTP or.... is WebDAV still a thing?
+  - The main difference is that the app developer/provider doesn't have to see, secure, or pay for storing user data. Users themselves are in full control of their data
+
+- Is data encrypted?
+  - [Encryption option in library? - remoteStorage.js - remoteStorage Forums](https://community.remotestorage.io/t/encryption-option-in-library/108)
+  - not yet
 # more

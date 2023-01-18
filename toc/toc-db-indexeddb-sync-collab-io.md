@@ -23,8 +23,11 @@ modified: 2022-10-22T18:47:16.228Z
   - a JavaScript library for storing user data locally in the browser, as well as connecting to remoteStorage servers and syncing data across devices and applications.
   - It is also capable of connecting and syncing data with a person's Dropbox or Google Drive account (optional).
   - The first prototype of rs.js was written in November 2010. The library is well-tested and actively maintained.
+  - Although remoteStorage.js was initially written for being used in browsers, we do support using it in Node.js 
+  - IndexedDB is not fast enough to access from a button click. Make sure to put an in-memory caching layer in the module, and return control to the app immediately
   - for `remoteStorage.local`, a choice is made between `RemoteStorage.IndexedDB`,  `RemoteStorage.LocalStorage` and `RemoteStorage.InMemoryCaching`, depending on what the environment (browser, node.js, Electron, WebView, or other) supports.
   - Data modules make your app and its data interoperable with other apps.
+  - Conflicts are resolved by calling storeObject() or storeFile() on the device where the conflict surfaced. 
 
 - lo-fi /7Star/MIT/202211/ts/依赖少
   - https://github.com/a-type/lo-fi
@@ -107,6 +110,7 @@ modified: 2022-10-22T18:47:16.228Z
   - https://github.com/clintharris/IDBSideSync
   - https://idbsidesync-todo-demo.vercel.app/
   - IDBSideSync is an experimental JavaScript library that makes it possible to sync browser-based IndexedDB databases using CRDT concepts
+  - 基于浏览器的同步方案可参考更成熟的remoteStorage
   - As your app makes CRUD calls to its IndexedDB database, IDBSideSync proxies/intercepts those calls and records the operations to a log (the "oplog").
   - IDBSideSync will upload the client's oplog entries (CRDT state mutation messages) to the remote data store using the registered plugins, and also download other client's oplog entries
   - A hybrid logical clock (i.e., time + counter) is maintained among the clients to help figure out which operations "win" if more than one exists for the same database store/record/property.

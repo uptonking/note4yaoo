@@ -22,13 +22,37 @@ modified: 2022-03-17T17:49:45.743Z
   - [How to center text alignment like this?__202201](https://www.reddit.com/r/Notion/comments/rry43b)
 
 ## block操作类
+
 # notion教程-沙牛清单
 - notion三大特性
   - 模块化操作：拖拽、转换、分栏
   - 内容结构化：子页面
   - 数据化
-
 # guide
 - [Notion保姆级公开课](https://www.bilibili.com/video/BV1EP4y1s7Bp/)
 
 - [Obsidian的保姆级公开课](https://www.bilibili.com/video/BV1H44y1n71k/)
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Front-end Practical Q: Has a particular algorithm in a function body ever been the reason your app is slow?
+- https://twitter.com/jitl/status/1615423205380091904
+  - e.g. I used `Array.indexOf` instead of keeping track of nodes I've seen in an object.
+- indexOf very well could be faster in most cases than using a set
+
+- Yes in @NotionHQ:
+  - O(n^3) checks against a block's ancestors; always lock up the UI or cause backend latency spikes
+  - O(n^2) checks for "closest neighbor UI element" in list of UI elements; caused jank on large pages
+  - Array.indexOf -> Set.contains is a win in inner loops with big N
+- Another case is searching our tree-like data model, eg for "what is the next block with a comment after this block, in DFS order?". 
+  - For that use-case, I built a memoized, reactive subtree traversal. Substantially reduced jank on larger pages for a bunch of systems.
+
+- My exp: large app had a lot of perf problems stemming for inefficient uses of simple loops, for instance: instead of using Array.filter folks would Array.forEach into another array and return the new array. Do this nonsense enough times and you will see perf issues. Sometimes for virtualized lists. They did this when chunking (lazy display) of data for instance. Some loops were simply unbound. Others were nested. It was just poorly architected across the board
+
+- In Flutter Apps working with long lists or graphics based on lots of data, the types of loops I use and how I keep track of things I've seen and can disregard on future iterations makes a huge difference in rendering performance.

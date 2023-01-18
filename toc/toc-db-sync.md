@@ -8,9 +8,12 @@ modified: 2022-11-25T15:41:47.534Z
 # toc-db-sync
 
 # guide
+- 协作需要考虑 同步 + 冲突处理
+
 - sync-protocols
   - sync/collab/local-first
-  - 最好支持切换存储层
+  - 是否支持切换存储层
+  - 是否支持冲突处理
   - database realtime
   - minimongo/meteor 的replication协议参考 [meteor: Distributed Data Protocol (DDP)](https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md)
   - [MongoDB Realm: Device Sync Protocol](https://www.mongodb.com/docs/atlas/app-services/sync/details/protocol/)
@@ -121,8 +124,11 @@ modified: 2022-11-25T15:41:47.534Z
   - a JavaScript library for storing user data locally in the browser, as well as connecting to remoteStorage servers and syncing data across devices and applications.
   - It is also capable of connecting and syncing data with a person's Dropbox or Google Drive account (optional).
   - The first prototype of rs.js was written in November 2010. The library is well-tested and actively maintained.
+  - Although remoteStorage.js was initially written for being used in browsers, we do support using it in Node.js 
+  - IndexedDB is not fast enough to access from a button click. Make sure to put an in-memory caching layer in the module, and return control to the app immediately
   - for `remoteStorage.local`, a choice is made between `RemoteStorage.IndexedDB`,  `RemoteStorage.LocalStorage` and `RemoteStorage.InMemoryCaching`, depending on what the environment (browser, node.js, Electron, WebView, or other) supports.
   - Data modules make your app and its data interoperable with other apps.
+  - Conflicts are resolved by calling storeObject() or storeFile() on the device where the conflict surfaced. 
 
 - orbit /2.3kStar/MIT/202209/ts/概念特别多
   - https://github.com/orbitjs/orbit
@@ -183,8 +189,9 @@ modified: 2022-11-25T15:41:47.534Z
   - Knowing which data is on the server.
   - Keeping a list of data which still needs to be sent to the server.
   - Supplying the App with all data required to handle version conflicts when they occur.
-# db-collab
-- https://github.com/orbitdb/orbit-db /202208/js
+# db-distributed-collab
+- orbit-db /7.4kStar/MIT/202301/js
+- https://github.com/orbitdb/orbit-db
   - OrbitDB is a serverless, distributed, peer-to-peer database. 
   - OrbitDB uses IPFS as its data storage and IPFS Pubsub to automatically sync databases with peers. 
   - It's an eventually consistent database that uses CRDTs for conflict-free database merges making OrbitDB an excellent choice for decentralized apps (dApps), blockchain applications and local-first web applications.

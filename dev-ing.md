@@ -100,13 +100,14 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - tuple-database
   - [x] 数据全内存: nedb, blinkdb
   - [x] 数据全持久: linvodb, tingodb
-  - [ ] 支持外部数据源
+  - [ ] 方便接入已有的外部数据源
 
-- sync-collab
+- collab-sync
   - ddp/ejson/minimongo
-  - collab-data-structure: hlc/lww
+  - collab-data-structure: lww-with-hlc
   - undo/redo
   - remoteStorage: google-drive、网盘、七牛对象存储
+  - lo-fi-sync-server
 
 - sqlite-web
   - evolu
@@ -132,9 +133,26 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 
 ## 011
 
+## 0118
+### [既然有 HTTP 请求，为什么还要用 RPC 调用？ - 知乎](https://www.zhihu.com/question/41609070)
+- rpc是远端过程调用，其调用协议通常包含传输协议和序列化协议。
+  - 传输协议包含: 如著名的 [gRPC](grpc / grpc.io) 使用的 http2 协议，也有如dubbo一类的自定义报文的tcp协议。
+  - 序列化协议包含: 如基于文本编码的 xml json，也有二进制编码的 protobuf hessian等
+- 为什么要使用自定义 tcp 协议的 rpc 做后端进程通信？
+  - 要解决这个问题就应该搞清楚 http 使用的 tcp 协议，和我们自定义的 tcp 协议在报文上的区别。
+  - 首先要否认一点 http 协议相较于自定义tcp报文协议，增加的开销在于连接的建立与断开。http协议是支持连接池复用的，也就是建立一定数量的连接不断开，并不会频繁的创建和销毁连接。
+  - 二要说的是http也可以使用protobuf这种二进制编码协议对内容进行编码，因此二者最大的区别还是在传输协议上。
+- 通用定义的http1.1协议的tcp报文包含太多废信息，
+  - 即使编码协议也就是body是使用二进制编码协议，报文元数据也就是header头的键值对却用了文本编码，非常占字节数。
+
+- 所谓的效率优势是针对http1.1协议来讲的，http2.0协议已经优化编码效率问题，像grpc这种rpc库使用的就是http2.0协议。这么来说吧http容器的性能测试单位通常是kqps，自定义tpc协议则通常是以10kqps到100kqps为基准
+- 简单来说成熟的rpc库相对http容器，更多的是封装了“服务发现”，"负载均衡"，“熔断降级”一类面向服务的高级特性。可以这么理解，rpc框架是面向服务的更高级的封装。如果把一个http servlet容器上封装一层服务发现和函数代理调用，那它就已经可以做一个rpc框架了。
+
+- 用rpc和http跟业务需求有关系，其实rpc可以用http协议实现
+
 ## 0116
 
-- 加减乘除表示运算：plus  minus multiply divide
+- 加减乘除表示运算：plus minus multiply divide
 - 和差积商表示运算结果：sum difference product quotient
 
 ```JS

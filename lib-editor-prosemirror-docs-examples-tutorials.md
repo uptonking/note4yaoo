@@ -124,6 +124,8 @@ modified: 2022-09-05T03:48:18.133Z
 
 ## [Tracking changes](https://prosemirror.net/examples/track/)
 
+- 更类似ckeditor的revision-history(偏向单人多版本)，而不像track-changes(偏向多人建议)
+
 - The first thing we need is a way to track the commit history. 
   - An editor plugin works well for this, since it can observe changes as they come in. 
 

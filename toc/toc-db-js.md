@@ -278,6 +278,30 @@ modified: 2022-11-25T15:50:48.226Z
 
 - https://github.com/syamdanda/jsonbase
   - A database software completely built as JSON files in backend
+# db-distributed-collab
+- orbit-db /7.4kStar/MIT/202301/js
+  - https://github.com/orbitdb/orbit-db
+  - OrbitDB is a serverless, distributed, peer-to-peer database. 
+  - OrbitDB uses IPFS as its data storage and IPFS Pubsub to automatically sync databases with peers. 
+  - It's an eventually consistent database that uses CRDTs for conflict-free database merges making OrbitDB an excellent choice for decentralized apps (dApps), blockchain applications and local-first web applications.
+- https://github.com/dao-xyz/peerbit
+  - P2P database framework with encryption, sharding and search
+  - originally as a fork of OrbitDB
+  - Permissioned content based sharding
+- https://github.com/dappkit/aviondb
+  - A Distributed, MongoDB-like Database
+  - AvionDB uses OrbitDB stores to model MongoDB-like Databases.
+
+- https://github.com/mafintosh/hyperdb /201808/js
+  - Distributed scalable database.
+
+
+- https://github.com/Telios-org/nebula
+  - Real-time distributed storage for files and key value databases built on top of Hypercore Protocol
+
+- https://github.com/holepunchto/hypercore
+  - Hypercore is a secure, distributed append-only log.
+  - Built for sharing large datasets and streams of real time data
 # db-js-utils
 - https://github.com/pubkey/event-reduce /202212/ts
   - https://pubkey.github.io/event-reduce/
@@ -291,7 +315,6 @@ modified: 2022-11-25T15:50:48.226Z
 
 - https://github.com/codemix/ts-sql
   - a SQL database implemented purely in TypeScript type annotations.
-
 
 - https://github.com/mafintosh/hyperdb /201808/js
   - Distributed scalable database

@@ -1,15 +1,17 @@
 ---
-title: toc-db-indexeddb-lib-remotestorage
-tags: [data-sync, indexeddb, remotestorage, synchronization, toc]
+title: lib-collab-common-examples-sync-remotestorage
+tags: [data-sync, examples, indexeddb, remotestorage, synchronization, toc]
 created: 2022-11-25T17:19:25.386Z
-modified: 2022-11-25T17:19:52.013Z
+modified: 2023-01-18T17:04:25.234Z
 ---
 
-# toc-db-indexeddb-lib-remotestorage
+# lib-collab-common-examples-sync-remotestorage
 
 # guide
 
-- 提供的同步方式偏向于类似文件系统，如google-drive/dropbox
+- rs protocol defines a simple key/value store for apps to save and retrieve data
+  - 提供的同步方式偏向于类似文件系统，如google-drive/dropbox
+  - 不偏向关系数据库
 
 - [remoteStorage Protocol: defines a simple key/value store for apps to save and retrieve data](https://remotestorage.io/protocol/)
 - [remoteStorage Apps](https://remotestorage.io/apps/)

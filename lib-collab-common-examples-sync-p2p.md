@@ -29,7 +29,9 @@ modified: 2023-01-17T19:13:01.845Z
 
 - https://github.com/ar-nelson/osmosis-js /202103/ts
   - An in-process JSON database with automatic peer-to-peer background synchronization between devices on a local network. Keep your apps in sync without a cloud!
-  - JS reference implementation of Osmosis, a JSON data store with peer-to-peer background sync
+  - 传输层使用jsonrpc
+  - Osmosis synchronization is automatic, encrypted, and relatively safe from conflicts. Updates are modeled with a JSON CRDT.
+  - Osmosis uses two kinds of sockets: broadcast UDP sockets that send heartbeat packets, and unicast TCP sockets that send Monocypher-encrypted, zstandard-compressed JSON-RPC messages.
 
 - https://github.com/JacobJaffe/event-system-prototype
   - Prototype of a syncing game state between a p2p, host switching network through an action system & event history.
@@ -49,6 +51,20 @@ modified: 2023-01-17T19:13:01.845Z
   - https://www.nango.dev/
   - Nango continuously syncs data from any API endpoint (that returns JSON) to your database.
   - Nango has built-in support for OAuth through our sister project Pizzly
+
+- synceddb-multi-backends /388Star/MIT/201803/js/indexeddb/支持多种后端存储
+  - https://github.com/paldepind/synceddb
+  - makes it easy to write offline-first applications with real-time syncing and server-side persistence.
+  - SyncedDB is a lightweight layer on top of IndexedDB. 
+    - It strips away all the boilerplate that the IndexedDB API requires
+    - Uses promises for all async operations — even inside IndexedDB transactions
+    - 未暴露cursor api
+  - Server side SyncedDB stores a list of changes that clients can request/subscribe and post/publish to. 
+    - Synchronizes data through WebSockets and sends only compact diffs down the wire
+  - The SyncedDB client communicates with the backend through WebSockets to achieve synchronization in real time. 
+    - the client provides elegant conflict handling and events for reacting to changes from the server.
+  - Persistence options are provided based on the following currently supported databases:
+    - In memory, MySQL, PostgreSQL, CouchDB
 # sync-json
 - https://github.com/zettant/realtime-object-sync
   - server and client libraries for realtime JSON object synchronization.

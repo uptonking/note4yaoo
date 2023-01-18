@@ -342,6 +342,11 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/hughfenghen/rtc-live-show
   - 基于WEB RTC + rrweb实现的页面“直播”demo
 
+- https://github.com/decentraland/crdt-scene
+  - test scene for CRDT protocol
+  - https://github.com/decentraland/sdk-ws
+    - CRDT Websocket Server
+
 - https://github.com/KlonD90/crdt-server
   - 实现简单
 - https://github.com/decentraland/crdt
