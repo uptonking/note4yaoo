@@ -16,7 +16,9 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
-- ## 
+- ## Turn any content into an infinite grid! @framer-motion @chakra_ui
+- https://twitter.com/austin_malerba/status/1609915292095860740
+  - https://codesandbox.io/s/infinitegrid-rtuh7b
 
 - ## I have a thing for day/night demos
 - https://twitter.com/WalterStephanie/status/1533690417736306690

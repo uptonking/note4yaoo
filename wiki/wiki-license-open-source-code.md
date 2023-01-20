@@ -26,6 +26,16 @@ modified: 2021-09-14T18:58:58.275Z
 - Copyright”指软件的版权和其它一切权利归软件作者所私有，用户只有使用权，没有其它如复制、重新修改发布等权利。
 - 而“Copyleft”的特点是仅有版权归原作者所有，其他一切权利可以与任何人共享。
   - “Copyleft”通常被译作“著佐权”，即通过许可证的形式，补足、辅佐著作权（Copyright）不足的版权授权，相当于一种权利与义务的契约
+# non-commercial
+- [Open-source license to prevent commercial use](https://opensource.stackexchange.com/questions/4875)
+  - There is now a license specifically designed to create source-available software for non-commercial use, namely the Commons Clause License.
+  - Redis Labs 正在放弃其 Commons Clause 许可，转而使用新的“available-source”许可证
+
+- [Can I license my project with an open-source license but disallow commercial use?](https://opensource.stackexchange.com/questions/9805)
+  - There are several licences that disallow commercial use of the software (or other intellectual property). 
+  - Most notably CC BY-NC 3.0 
+  - If you want to reduce commercial use one of the more effective ways is to choose very strict licence like AGPL 3.0 and dual licence it with a commercial licence.
+  - you can prevent your Open Source project from getting included in a closed-source project (for example, by using a GPL license), and then offer a dual-license option for companies who don't want to release their own proprietary code as open source.
 # Apache Licence 2.0(ASLv2)
 - ref
   - https://choosealicense.com/licenses/apache-2.0/
@@ -362,8 +372,8 @@ modified: 2021-09-14T18:58:58.275Z
 - What specifically is the difference between the GPL and the SSPL?
   - The only substantive modification is section 13, which makes clear the condition to offering MongoDB as a service. A company that offers a publicly available MongoDB as a service must release the software it uses to offer such service under the terms of the SSPL, including the management software, user interfaces, application program interfaces, automation software, monitoring software, backup software, storage software and hosting software, all such that a user could run an instance of the service using the source code made available.
 # Elastic License
-- [FAQ on Elastic License 2.0 (ELv2) | Elastic](https://www.elastic.co/licensing/elastic-license/faq)
-- [Elastic License 2.0 | Elastic](https://www.elastic.co/licensing/elastic-license)
+- [FAQ on Elastic License 2.0 (ELv2)](https://www.elastic.co/licensing/elastic-license/faq)
+- [Elastic License 2.0](https://www.elastic.co/licensing/elastic-license)
 
 - We are moving our Apache 2.0-licensed source code in Elasticsearch and Kibana to be dual licensed under the Elastic License and Server Side Public License (SSPL), giving users the choice of which license to apply.
 
@@ -371,7 +381,6 @@ modified: 2021-09-14T18:58:58.275Z
   - You may not provide the products to others as a managed service 
   - You may not circumvent the license key functionality or remove/obscure features protected by license keys
   - You may not remove or obscure any licensing, copyright, or other notices
-
 # Confluent Community License
 - [Confluent community license faq](https://www.confluent.io/confluent-community-license-faq/)
 

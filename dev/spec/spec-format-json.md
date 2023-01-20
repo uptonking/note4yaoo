@@ -92,6 +92,8 @@ modified: 2020-10-15T13:41:01.275Z
 - https://github.com/mapbox/geojson.io
 - https://github.com/topojson/topojson  
 # json-rpc
+- trpc内部
+
 - [simple is better - JSON-RPC](http://www.simple-is-better.org/rpc/)
 - Differences between 1.0 and 2.0
 - here is a list of the main differences of JSON-RPC 2.0, compared with 1.0:
@@ -113,4 +115,9 @@ modified: 2020-10-15T13:41:01.275Z
 
 - https://github.com/tedeh/jayson /js
   - a simple but featureful JSON-RPC 2.0/1.0 client and server for node.js
+
+- https://github.com/k8w/tsrpc
+  - 专为 TypeScript 设计的 RPC 框架
+  - 支持在 JSON 中传输更多数据类型，例如 ArrayBuffer、Date、ObjectId
+  - 同时支持 HTTP/WebSocket
 # more

@@ -12,7 +12,10 @@ modified: 2022-08-30T22:07:26.164Z
 # discuss
 - ## 
 
-- ## 
+- ## not a big fan of the prose mirror schema myself
+- https://twitter.com/_mql/status/1615796336070168584
+- Re ProseMirror, I actually like the explicit programmatic definition of the nodes. Rather than some plugin mechanism, that leads to late failing of code.
+  - Navigating the model programmatically is tricky though, because it has only flat positions.
 
 - ## Remove contenteditable completely?_201901
 - https://discuss.prosemirror.net/t/remove-contenteditable-completely/1766

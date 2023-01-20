@@ -1,6 +1,6 @@
 ---
 title: lib-fwk-nodejs-feathers-dev
-tags: [feathers, lib, nodejs]
+tags: [backend, feathers, lib, nodejs]
 created: 2023-01-12T16:33:14.483Z
 modified: 2023-01-12T16:33:34.413Z
 ---
@@ -13,7 +13,7 @@ modified: 2023-01-12T16:33:34.413Z
 
 # changelog
 
-## v5.0.0-_202211
+## v5.0.0-pre_202211
 
 - [What's New in v5 | feathers](https://feathersjs.com/guides/whats-new.html)
   - We've completely rewritten all of Feathers in TypeScript

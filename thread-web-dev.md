@@ -35,7 +35,9 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
-- ## 
+- ## TIL that Google Maps implements a scheduler in the browser main thread, similar to React!
+- https://twitter.com/geoffreylitt/status/1615761940055212032
+- I think any sufficiently large graphics app has a scheduler of some form, whether ad-hoc or not. You implement a scheduler the moment you abstract around `requestAnimationFrame`
 
 - ## [Compress An Image Before Upload With JavaScript - PQINA](https://pqina.nl/blog/compress-image-before-upload/)
 - Compress An Image Before Upload With JavaScript - without any external dependency. Neat trick! Did you know that browsers have built-in image compression features? 

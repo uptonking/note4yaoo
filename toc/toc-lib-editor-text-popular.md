@@ -198,7 +198,14 @@ modified: 2022-11-08T19:04:00.289Z
   - Aura is a modern Multi-platform text editor with Full-customization.
   - we used Tauri as a solution. Also, we use Rust for the server, so the server can be more fast and safe.
 
-- https://github.com/xdan/jodit
+- jodit /1.3kStar/MIT/202301/ts/NoDeps
+  - https://github.com/xdan/jodit
   - https://xdsoft.net/jodit/
+  - https://xdsoft.net/jodit/pro/
   - An excellent WYSIWYG editor written in pure TypeScript without the use of additional libraries. 
   - Its file editor and image editor.
+  - free版插件很少
+
+- substance /2.7kStar/MIT/202011/js/inactive
+  - https://github.com/substance/substance
+  - JavaScript library for web-based content editing

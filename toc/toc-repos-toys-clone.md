@@ -14,6 +14,10 @@ modified: 2022-08-13T05:10:32.238Z
   - 包含前后端2个文件夹
   - 后端依赖 express, mongoose, jwt, socket.io
 
+- https://github.com/ericellb/React-Discord-Clone
+  - Discord Clone written in Typescript using React, Socket IO, NodeJS, Express and MySQL
+  - This project is not currently maintained. 
+
 - https://github.com/brojor/dev.to-clone
   - An DEV.to clone created with Adonis.js, SQLite and Vue.js 3
 # toys

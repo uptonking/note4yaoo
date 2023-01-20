@@ -7,9 +7,42 @@ modified: 2022-12-19T01:59:01.625Z
 
 # lang-js-nodejs-concurrency
 
+# guide
+
+- [说说Nodejs高并发的原理 event-loop](https://zhuanlan.zhihu.com/p/591164293)
 # discuss
+- ## 
 
 - ## 
+
+- ## 
+
+- ## [Node.js 并发能力总结 - 知乎](https://zhuanlan.zhihu.com/p/353685224)
+- 从逻辑上讲，异步并不是为了并发，而是为了不阻塞主线程。
+  - 但是我们却可以同时发起多个异步操作，来起到并发的效果，虽然计算的过程是同步的。
+- 当性能的瓶颈是 I/O 操作，比如查询数据库、读取文件或者是访问网络，我们就可以使用异步的方式，来完成并发。
+  - 而由于计算量比较小，所以不会过多的限制性能。每当这个时候，你只需要默默担心下游的 QPS 就好了。
+  - 以 I/O 操作为主的应用，更适合用 Node.js 来做，比如 Web 服务中同时执行 M 个 SQL，亦或是离线脚本中同时访问发起 N 个 RPC 服务。
+  - 所以在代码中使用 async/await 的确很舒服，但是适当的合并请求，使用 Promise.all 才能提高性能。
+- 一旦你习惯了 Promise.all，同时了解了 EventLoop 的机制，你会发现 I/O 请求的限制往往在下游。因为对于 Node.js 来说，同时发送 10 个 RPC 请求和同时发送 100 个 RPC 请求的成本差别并不大，都是“发送-等待”的节奏，但是下游的“供应商”是会受不了的，这时你需要限制并发数。
+- 常用限制并发数的 Npm 包是 p-limit
+  - 通过函数 enqueue、run 和 next，plimit 就产生了一个限制大小但不断消耗的异步函数队列，从而起到限流的作用。
+
+- 在 NodeJS 中，一个异步资源表示为一个关联回调函数的对象。
+  - async_hooks module provides an API to track asynchronous resources.
+
+- 异步在 I/O 资源的利用上可以实现并发， 但是异步无法并发的使用 CPU 资源。多进程才能更好地利用多核操作系统的优点。
+- Node.js 使用 Cluster 模块来完成多进程，我们可以通过 pm2 的代码来了解多进程
+- 进程间的通信使用的是事件监听来通信。
+- Cluster 的通信是消息通信，但是没办法共享内存。
+
+- 如果想要共享内存，就需要多线程，Node.js 引入了 worker_threads 模块来完成多线程。
+- Worker Threads 更擅长通信，这是线程的优势，不仅是可以消息通信，还可以共享内存。
+
+- 总结
+  - 作为 Web 服务，挺高并发数，选择 Cluster 更好；
+  - 作为脚本，希望提高并发，选择 Worker Threads 更好；
+  - 当计算不是瓶颈，在某个进程或线程中，灵活异步的使用更好。
 
 - ## [Node.js 真的有协程吗？ - 知乎](https://www.zhihu.com/question/305443189/answers/updated)
 - “协程是一种用户态的轻量级线程”这是有栈协程或者纤程 (Fiber) 的定义。

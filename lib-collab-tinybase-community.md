@@ -9,6 +9,10 @@ modified: 2023-01-12T15:52:42.418Z
 
 # guide
 
+- 变更树的计算方法比较
+  - tinybase直接diff两颗hlc-tree，能准确计算出最小变更树
+    - Adding Merkel hashing to the tree would be slower but would allow the negotiation to bail out (or identify tree diffs) much sooner.
+  - actual-merkle-tree虽然能快速计算上次变更节点，❓(待确认)但之后从上次变更节点计算需要发送给本地的变更树时，可能包含已经执行过的op，传输不必要的数据
 # discuss
 - ## 
 
@@ -21,7 +25,8 @@ modified: 2023-01-12T15:52:42.418Z
   - One will be P2P (over WebRTC), and one will be multi-party (via a central server). 
   - But even P2P requires a server to set up the signaling.
 
-- I like using Replit for when I need a low usage multiplayer backend. Interested to hear about a good stateful simple deployment solution. Cloudflare workers for sure is a good option as evidenced by an increasing use of it for multiplayer backends.
+- I like using Replit for when I need a low usage multiplayer backend. Interested to hear about a good stateful simple deployment solution. 
+  - Cloudflare workers for sure is a good option as evidenced by an increasing use of it for multiplayer backends.
 
 - ## HLCs & CRDTs are easy! The harder part is shrinking them into tiny negotiable P2P payloads...
 - https://twitter.com/jamespearce/status/1604304923247939584

@@ -52,6 +52,49 @@ modified: 2022-08-21T10:11:37.453Z
 - [哔哩哔哩 从零开始的富文本编辑器（上）_slate_202209](https://www.bilibili.com/read/cv18606877)
   - [哔哩哔哩 从零开始的富文本编辑器（下） - 列表-图片_slate_202210](https://www.bilibili.com/read/cv19147722)
 
+## [How to implement a web-based rich text editor in 2023?](https://letsken.com/michael/how-to-implement-a-web-based-rich-text-editor-in-2023)
+
+- Since 2011 I’ve been spending a great junk of my time taming web browsers to behave correctly and predictably when editing rich text
+- If you wanted to take control over how contentEditable behaves, you have to write your own code. 
+- The challenges
+  - Define a custom model
+  - Selection Mapping: You need to have some sort of internal coordinate system to address content (e.g. second paragraph at character 5) and map that to a corresponding position in the DOM and vice versa.
+  - Keyboard input: Instead of letting contenteditable do its thing, you want to intercept each keystroke, update your internal model first, and then calculate the minimum update to be made to the DOM to reflect that change.
+  - Copy and paste: People will paste all imaginable HTML content from MS Word, Google Docs or other websites. 
+  - Undo/redo: Every change made to the document must be reversible.
+- ProseMirror
+  - Before ProseMirror he released CodeMirror, a web-based editor for source code editing.
+- Lexical
+  - While Lexical is framework agnostic, I suspect they have a “slight” bias towards React, so some decisions might have been made in favor of what will translate best to React. 
+- Substance.js
+  - It was designed to solve extremely demanding use-cases, as we were building a structured editor for scientific content 
+  - Unlike ProseMirror (which uses a hierarchical data model similar to HTML), Substance uses directly addressable properties. So for instance you can refer to an image caption by its unique node id and property name (e.g. [‘image_32’, ‘caption’]). That model allows data bindings, such as updating and sorting a reference list, based on the order the citations were placed in the document.
+  - Substance also allows documents with multiple editor surfaces. Because in many cases you may want to maintain a title and some metadata, such as author names, that are outside of the document’s body. Still you want a shared undo/redo history and store all data as one self-contained document.
+  - While you can create a Substance document iteratively through a sequence of operations, you can also load and store snapshots of it as XML. Most other frameworks use JSON or HTML as a serialization format. The problem with JSON is, that it can get quite large, as it’s not optimized for hierarchical content. The problem with HTML is, that it is designed to display a document, not to represent its content.
+  - Substance is not under active development anymore
+
+- Stay close to the metal
+  - I learned to resist the urge to fit the Rich Text Editor into my higher-level Javascript framework’s paradigm. 
+  - I strongly believe that in the case of rich text editors it is a good idea to stick to native Web API’s and write plain Javascript. 
+  - Why? Because you have full control over rendering and nothing is getting in between. You want to manipulate the DOM at the granularity of text nodes. 
+  - Unopinionated editor libraries help you with that.
+- Better be conservative
+  - You’ll find that you can build basic features rather quickly. But you will also find that once you leave the common path, like what the editor libraries’ examples are providing, you’ll end up breaking things without noticing it. 
+  - Hence, I’d always start with the smallest possible featureset, and get that stable and tested. 
+  - Then carefully add more functionality, one little step at a time. 
+  - It’s easy to make a move forward (e.g. add support for image captions) but it’s almost impossible to make a step back, because once you introduced a new content type, you’ll have user data to maintain and migrate.
+- Develop in isolation
+  - I’ve been involved in many projects where the editor component was developed within a complex application setup. 
+  - What usually happens is that developers call custom APIs from within editor-specific code. This is a recipe for disaster.
+  - The solution is to develop the editor within in a lightweight sandbox, and do integration as a separate step. 
+  - If you deal with any data that’s not part of the editor’s internal content model, you need to come up with a synchronous proxy that shields the async operations from messing with the editor operations. Better yet, you manage to keep all your editor content self-contained.
+
+- How would I build my next editor?
+  - My current editor implementation at Ken is based on ProseMirror.
+  - However Ken is built with React, and I wanted to use React components for everything
+  - So I’m tempted now to build an easy to understand reference implementation of a complete text editor. It’d be based off my existing code for the Ken editor, but entirely framework agnostic, fast and future-proof. Instead of a higher level wrapper around ProseMirror (such as TipTap)
+  - Another approach that’s tempting for me is to revive Substance.js, but remove the rendering part of the library and use Svelte instead. 
+
 ## [CKEditor 5 - comparing Revision History with Track Changes](https://ckeditor.com/blog/ckeditor-5-comparing-revision-history-with-track-changes/)
 
 - These two features of CKEditor 5 include Revision History and Track Changes, also known as Suggestion Mode.
