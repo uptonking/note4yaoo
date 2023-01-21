@@ -7,7 +7,13 @@ modified: 2021-06-02T15:26:39.741Z
 
 # lib-office-markdown-community
 
+# guide
+
 # discuss-stars
+- ## [Thoughts On Markdown](https://www.smashingmagazine.com/2022/02/thoughts-on-markdown/)
+- At Sanity.io, we decided early that the block content format should never assume HTML as neither input nor output, and that we could use algorithms to synchronize text strings. 
+  - More importantly, was it that block content and rich text should be deeply typed and queryable. 
+  - The result was the open specification Portable Text. 
 
 - ## You shouldn't use Markdown for content anymore.
 - https://twitter.com/kmelve/status/1494688125980798978
@@ -17,8 +23,6 @@ modified: 2021-06-02T15:26:39.741Z
   - I'm coming at this as a pro Markdown user. I was _bought in_
   - But I have also felt the huge pain and friction in trying to port and salvage websites with all their content locked-in in markdown files and custom tags. 
   - It's costly and nearly and not a great use of time to get that content into a sensible and workable format.
-
-- [Thoughts On Markdown](https://www.smashingmagazine.com/2022/02/thoughts-on-markdown/)
 
 - ## Shortcodes vs MDX
 - https://www.swyx.io/shortcodes-vs-mdx-3d4e/

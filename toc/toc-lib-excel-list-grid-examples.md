@@ -40,19 +40,19 @@ modified: 2022-08-21T10:03:52.222Z
   - Baserow is an open source online database tool and Airtable alternative.
   - 依赖Django、Nuxt.js、PostgreSQL
 
-- irelia /18Star/apache2/202211/ts/py
-  - https://github.com/IreliaTable/irelia
-  - https://ireliatable.github.io/irelia-web/
-  - 依赖 gristlabs/grist-core、backbone、knockout、jquery
-  - Irelia is a modern relational spreadsheet. 
-  - Python formulas. Full Python syntax is supported, and the standard library.
-  - A portable, self-contained format based on SQLite
+- nocodb /33kStar/AGPLv3/202212/ts/vue
+  - https://github.com/nocodb/nocodb
+  - https://nocodb.com/
+  - The Open Source Airtable Alternative
+  - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
+  - 依赖monaco-editor、vueuse、antd-vue、monaco-editor、sortablejs、vuedraggable
+  - Search, sort, filter, hide columns with uber ease
+  - Create Views : Grid, Gallery, Kanban, Form
+  - Frontend: Vue.js
+  - Backend: express.js, knex, 
+  - Database: Any SQL (postgres, mysql, sqlite, maria DB, SQL server)
+  - API: REST and graphql
 
-- https://github.com/nocodb/nocodb
-  - https://www.nocodb.com/
-  - The Open Source Airtable alternative
-  - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet.
-  - 依赖 express vuejs nuxt_js vuetifyjs
 - https://github.com/andmarti1424/sc-im
   - /2.4kStar/MIT/202009/c
   - An ncurses spreadsheet program for terminal

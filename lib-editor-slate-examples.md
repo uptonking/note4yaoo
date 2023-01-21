@@ -22,14 +22,13 @@ modified: 2022-05-15T18:45:27.570Z
   - https://www.wangeditor.com/
   - core依赖slate、snabbdom、dom7、is-hotkey、lodash、uppy(file uploader)、event-emitter、i18next
   - 开箱即用，配置简单。支持 JS Vue React
-  - features
-    - L1级编辑器
-      - 弃用了 document.execCommand API ，使用 slate.js（但不依赖 React）为内核，升级为 L1 能力。
-    - 使用vdom
-      - 使用 vdom 技术（基于 snabbdom.js）做视图更新，model 和 view 分离，增加稳定性
-    - 扩展性
-      - 使用扩展插件和模块的机制，保证扩展性
-      - 现在 wangEditor 内置的各个功能，也都是通过扩展插件和模块的形式搭建起来的
+  - L1级编辑器
+    - 弃用了 document.execCommand API ，使用 slate.js（但不依赖 React）为内核，升级为 L1 能力。
+  - 使用vdom
+    - 使用 vdom 技术（基于 snabbdom.js）做视图更新，model 和 view 分离，增加稳定性
+  - 扩展性
+    - 使用扩展插件和模块的机制，保证扩展性
+    - 现在 wangEditor 内置的各个功能，也都是通过扩展插件和模块的形式搭建起来的
 
 - quadrats /4Star/MIT/202203/ts
   - https://github.com/Quadrats/quadrats
@@ -196,12 +195,19 @@ modified: 2022-05-15T18:45:27.570Z
     - [Query JSON documents in the Terminal with GROQ](https://css-tricks.com/query-json-documents-in-the-terminal-with-groq/)
       - Graph-Relational Object Queries (GROQ) is a query language (like SQL, but different) which is designed to work directly on JSON documents.
 
-- https://github.com/payloadcms/payload
+- payload /9.1kStar/MIT/202301/ts/slate
+  - https://github.com/payloadcms/payload
+  - https://payloadcms.com/
   - https://demo.payloadcms.com/admin
-  - 不是典型的block-editor
   - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
+  - 不是典型的block-editor
   - Block-based Layout Builder
   - Extensible SlateJS rich text editor
+  - A Mongo database to store your data
+  - retrieve, and manipulate data of any shape via full REST and GraphQL APIs
+  - File storage and access control
+  - Payload dynamically generates a React admin panel to manage your data. 
+    - Admin panel is built with Webpack, code-split, highly performant (even with 100+ fields), and written fully in TypeScript.
 
 - https://github.com/contentful/field-editors/tree/master/packages/rich-text
   - https://contentful-field-editors.netlify.app/rich-text

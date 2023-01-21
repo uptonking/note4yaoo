@@ -100,10 +100,14 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/scarfacedotcom/NANCY-APP
   - Nancy App has been built with React and Firebase, something similar to asana.com 
 
-- https://github.com/sanity-io/sanity  /MIT/slate
+- sanity /4kStar/MIT/202301/ts/slate
+  - https://github.com/sanity-io/sanity
   - Sanity Studio – Collaborate in real-time on structured content
   - It comes with an open-source editing environment called Sanity Studio that you can customize with JavaScript and a real-time hosted data store. 
-  - Sanity Studio is an open source headless real-time CMS, that you can customize with JavaScript and React.
+  - Sanity is a platform for creating and working with structured content. Your content is stored in the cloud
+  - [Provide a (real) self hosted version](https://github.com/sanity-io/sanity/issues/3258)
+    - how to run Sanity frontend without depending on privative Sanity backend? 
+    - Sanity Studio is only the editor interface, though. Sanity's hosted content backend, the Sanity Content Lake, on the other hand, is not open-source.
 
 - https://github.com/hanse/groceries
   - Real-time Collaborative Grocery Lists

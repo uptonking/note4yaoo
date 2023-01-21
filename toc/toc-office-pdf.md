@@ -39,7 +39,7 @@ modified: 2021-01-04T17:26:43.784Z
   - http://pdfmake.org/
   - PDF document generation library for server-side and client-side in pure JavaScript.
 # office
-- databyss /39Star/AGPL.v3/202208/js
+- databyss /39Star/AGPLv3/202208/js
   - https://github.com/databyss-org/databyss
   - https://databyss.org/
   - Write and cite, research and re-search, and never get lost in Databyss. Welcome to your new word processor.

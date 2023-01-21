@@ -14,7 +14,7 @@ modified: 2022-06-03T21:34:54.893Z
 - resources
   - search: knowledge-base/workspace/wiki
 # notion-like-workspace
-- siyuan /6.6kStar/AGPL.v3/202208/ts/go/支持协作
+- siyuan /6.6kStar/AGPLv3/202208/ts/go/支持协作
   - https://github.com/siyuan-note/siyuan
   - https://b3log.org/siyuan/
   - a local-first personal knowledge management system
@@ -46,7 +46,7 @@ modified: 2022-06-03T21:34:54.893Z
   - ref
     - https://github.com/ProseWorker/ProseWriter
 
-- logseq /15.9kStar/AGPL.v3/202208/clojure/ts
+- logseq /15.9kStar/AGPLv3/202208/clojure/ts
   - https://github.com/logseq/logseq
   - https://logseq.com/
   - 依赖 clojure
@@ -81,7 +81,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 前端依赖: LayUI、JQuery、vditor、luckysheet.v2
   - 功能特性: 文档资源管理、书写编辑、阅读分享、站点管理
 
-- notabase /434Star/AGPL.v3/202208/ts/仅网页版
+- notabase /434Star/AGPLv3/202208/ts/仅网页版
   - https://github.com/churichard/notabase
   - https://notabase.io/
   - A personal knowledge base for networked thinking.
@@ -104,7 +104,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 编辑器仅支持简单文本
   - Where applicable, components are uncontrolled by default but can also be controlled, without needing to create any local states.
 
-- trilium /17.1kStar/AGPL.v3/202208/js/ckeditor5/支持多端
+- trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持多端
   - https://github.com/zadam/trilium
   - https://github.com/zadam/trilium/wiki/
   - 依赖 electron、express、jsdom、turndown、ckeditor.v5、codemirror、fancytree、bootstrap
@@ -163,7 +163,7 @@ modified: 2022-06-03T21:34:54.893Z
   - openKB is a search based Knowledge base (FAQ) backed by Lunr.js indexing 
   - openKB uses the pure Javascript nedb embedded database by default or a MongoDB server.
 
-- monotome /151Star/AGPL.v3/202208/js
+- monotome /151Star/AGPLv3/202208/js
   - https://github.com/cblgh/monotome
   - a personal knowledge base system. markdown markup, runs in the browser
   - 依赖 marked
@@ -206,7 +206,7 @@ modified: 2022-06-03T21:34:54.893Z
   - https://metagraph.design/
   - Metagraph是一款知识创作分享工具，Metagraph提供了强大的内容关联能力。
 
-- https://github.com/c2d7fa/thinktool /75Star/AGPL.v3/202208/ts
+- https://github.com/c2d7fa/thinktool /75Star/AGPLv3/202208/ts
   - https://thinktool.io/
   - https://thinktool.io/demo
   - Novel fusion of hierarchical and graph-based approaches to taking notes, based on ideas from Roam Research, TheBrain and others.
@@ -263,7 +263,7 @@ modified: 2022-06-03T21:34:54.893Z
   - Markdown knowledge base with bidirectional [[link]]s built on top of VSCode
   - Inspired by Obsidian.md and RoamResearch.
 
-- dendron /4.3kStar/AGPL.v3/202208/ts/vscode
+- dendron /4.3kStar/AGPLv3/202208/ts/vscode
   - https://github.com/dendronhq/dendron
   - https://wiki.dendron.so/
   - local-first, markdown-based, note-taking tool built on top of VSCode. 

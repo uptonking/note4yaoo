@@ -7,7 +7,15 @@ modified: 2022-08-21T10:15:01.987Z
 
 # lib-excel-app-list-grid-community
 
-# pieces
+# discuss
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 
 - ## The new GitHub Issues project tables is built on @tannerlinsley ’s React Table library. 
 - https://twitter.com/_clem/status/1407754748799995908

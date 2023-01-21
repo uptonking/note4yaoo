@@ -125,6 +125,10 @@ modified: 2023-01-01T13:24:35.994Z
   - This is an inverted index library.
   - creates a DB called "myDB" using levelDB (node.js), or indexedDB (browser)
 
+- https://github.com/gajus/liqe /BSD/202210/ts
+  - Lightweight and performant Lucene-like parser, serializer and search engine.
+  - 依赖nearley
+
 - https://github.com/dominictarr/level-inverted-index /201602/js
   - Inverted Index for levelup.
 

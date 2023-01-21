@@ -240,9 +240,10 @@ modified: 2022-11-03T04:14:11.987Z
 - https://github.com/ooboqoo/koa-mongo /202102/ts
   - Koa2 + MongoDB + TypeScript Playground
 
-- https://github.com/ljlm0402/typescript-express-starter /202210/ts
-  - Express RESTful API Boilerplate Using TypeScript
-  - 通用后端，支持切换db
+- https://github.com/ljlm0402/typescript-express-starter /202301/ts
+  - Express RESTful API Boilerplate Using TypeScript，模版项目
+  - 支持切换不同orm
+  - 支持mongoose、orm、graphql
 - https://github.com/janishar/nodejs-backend-architecture-typescript /202010/ts
   - Node.js Backend Architecture Typescript
   - Open-Source Project By AfterAcademy

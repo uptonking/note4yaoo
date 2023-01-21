@@ -29,6 +29,11 @@ modified: 2020-10-15T13:41:01.275Z
   - JSON-LD is a lightweight Linked Data format. 
   - provides a way to help JSON data interoperate at Web-scale.
   - JSON-LD is an ideal data format for programming environments, REST Web services, and unstructured databases such as Apache CouchDB and MongoDB.
+
+- JSONC
+  - JSONC is JSON with JavaScript style comments. 
+  - This node module provides a scanner and fault tolerant parser that can process JSONC but is also useful for standard JSON.
+  - https://github.com/microsoft/node-jsonc-parser
 # guide
 - 类json格式的操作
   - 从devDependencies移动到dependencies后，需要手动添加逗号和删除逗号

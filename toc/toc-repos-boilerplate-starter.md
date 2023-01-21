@@ -30,6 +30,9 @@ modified: 2022-11-28T17:41:37.209Z
 
 ## more-node-api
 
+- tips
+  - 切换数据库可参考orm实现
+
 - ts-api-server-express-multi-db /1Star/NALic/201804/ts/nedb/多种db/inactive
   - https://github.com/bluesky50/ts-api-server-express-multi-db
   - a rest API server built with Express. 
@@ -37,8 +40,6 @@ modified: 2022-11-28T17:41:37.209Z
   - It aims to demonstrate the ability to provide rest services. 
   - Also, it aims to highlight the ability for the server to have modular controllers that can connect and query data from a variety of databases. 
     - The Server can connect with a variety of database types: mongo, nedb, and sqlite.
-# ui-react
-
 # utils
 
 # more-starter

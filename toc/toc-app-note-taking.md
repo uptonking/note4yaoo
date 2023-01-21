@@ -16,7 +16,7 @@ modified: 2020-10-22T10:03:50.526Z
   - A self-contained JavaScript wiki for the browser, Node.js, AWS Lambda etc.
   - view层基于tid文件
 
-- Standard Notes /3.6kStar/AGPL.v3/202208/ts
+- Standard Notes /3.6kStar/AGPLv3/202208/ts
   - https://github.com/standardnotes/app
   - https://standardnotes.com/
   - an end-to-end encrypted note-taking app
@@ -47,7 +47,7 @@ modified: 2020-10-22T10:03:50.526Z
     - The source code for newer versions of the app is unavailable
   - [product comparison: notable, bear, boostnote, evernote, joplin, keep, notion](https://notable.app/static/images/comparison.png)
 
-- noteworthy /166Star/AGPL.v3/202207/ts/桌面版
+- noteworthy /166Star/AGPLv3/202207/ts/桌面版
   - https://github.com/benrbray/noteworthy
   - https://noteworthy.ink/
   - Markdown editor with bidirectional links and excellent math support
@@ -55,7 +55,7 @@ modified: 2020-10-22T10:03:50.526Z
   - 参考了prosemirror、zettlr、vscode、notable
     - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
 
-- siyuan /6.6kStar/AGPL.v3/202208/ts/go/支持协作
+- siyuan /6.6kStar/AGPLv3/202208/ts/go/支持协作
   - https://github.com/siyuan-note/siyuan
   - https://b3log.org/siyuan/
   - a local-first personal knowledge management system
@@ -65,7 +65,7 @@ modified: 2020-10-22T10:03:50.526Z
   - SiYuan is made possible by the Vditor and Lute(golang)
   - 用户自己创建的笔记本文件夹下，.sy 后缀的文件用于保存文档数据，数据格式为JSON
 
-- yn /3.6kStar/AGPL.v3/202208/ts/vue/网页版+桌面版
+- yn /3.6kStar/AGPLv3/202208/ts/vue/网页版+桌面版
   - https://github.com/purocean/yn
   - https://yank-note.vercel.app/
   - 一款面向程序员的Markdown笔记应用
@@ -99,7 +99,7 @@ modified: 2020-10-22T10:03:50.526Z
   - Hidden within the code is an alternate version that contain a Node/Express server and integration with GitHub.
   - 👉🏻 What you see is what you paste. No WYSIWIG, no formatting pasted from the web, and no features you don't need or want. 
 
-- trilium /17.1kStar/AGPL.v3/202208/js/ckeditor5/支持多端
+- trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持多端
   - https://github.com/zadam/trilium
   - https://github.com/zadam/trilium/wiki/
   - 依赖 electron、express、jsdom、turndown、ckeditor.v5、codemirror、fancytree、bootstrap

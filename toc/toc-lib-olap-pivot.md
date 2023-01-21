@@ -169,9 +169,10 @@ modified: 2020-10-22T06:50:36.740Z
   - The core of Tad is a React UI component that implements a hierarchical pivot table that allows you to specify a combination of pivot, filter, aggregate, sort, column selection
   - Tad uses SlickGrid for rendering the data grid. 
 
-- https://github.com/cube-js/cube.js
-  - /MIT/9kStar/202010
+- cube.js /14.4kStar/MIT+apache2/202301/ts+rust
+  - https://github.com/cube-js/cube.js
   - https://cube.dev/docs/
+  - Headless Business Intelligence for Building Data Applications
   - modular framework to build analytical web applications
   - Cube.js was designed to work with Serverless Query Engines like AWS Athena and Google BigQuery. 
   - Most modern RDBMS work with Cube.js as well and can be tuned for adequate performance.

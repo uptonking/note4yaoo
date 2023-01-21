@@ -13,13 +13,6 @@ modified: 2021-05-24T16:55:40.481Z
 - 国内有很多快速开发框架如jeesite/jeecg，国外对应的是headless/cms框架
   - https://github.com/n370/awesome-headless-cms
 # popular
-- netlify-cms /14kStar/MIT/202105/js
-  - https://github.com/netlify/netlify-cms
-  - 核心功能是提供了通过ui操作执行读写github的能力、文件编辑器、自动构建和发布
-    - 文件内容可保存在本地或github
-    - 文件内容的样式主题由dev控制
-  - A Git-based CMS for Static Site Generators
-
 - strapi /36.7kStar/MIT+EE/202105/js
   - https://github.com/strapi/strapi
   - 核心功能是提供了通过ui操作实现rest api的功能

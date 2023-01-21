@@ -40,6 +40,7 @@ modified: 2021-01-13T19:30:59.508Z
   - https://whiteboard-umber.vercel.app/
   - a simple whiteboard application.
   - 只依赖react
+  - 画板元素都是svg元素
 
 - roughViz /MIT/5.4kStar/202006
   - https://github.com/jwilber/roughViz

@@ -120,7 +120,7 @@ modified: 2022-08-19T23:00:22.162Z
   - 还支持在基于tiptap v2的编辑器中编辑内容，提供了draftToTiptap()转换方法，将ricos-draft的json格式转换成tiptap支持的json格式
   - 内部插件大多严重依赖自研ui库和基础库，如wix-rich-content-ui-components、ricos-content
 
-- nextcloud-text /366Star/AGPL.v3/202208/js/tiptap/php
+- nextcloud-text /366Star/AGPLv3/202208/js/tiptap/php
   - https://github.com/nextcloud/text
   - Collaborative document editing using Markdown
   - 依赖tiptap.v2, @_ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
@@ -169,11 +169,6 @@ modified: 2022-08-19T23:00:22.162Z
 - https://github.com/Young6118/dudu-editor
   - 基于 tiptap v2 的富文本编辑器
 
-- https://github.com/primo-af/primo
-  - https://primo.af/
-  - /76Star/AGPLv3/202106/svelte
-  - an all-in-one ide, cms, component library, and static site generator
-  - a next-gen, dev-friendly alternative to WordPress.
 - https://github.com/shikimori/shiki-editor /vue/提交多/active
   - a wysiwyg editor based on prosemirror
   - highly inspired by tiptap source code. Many parts of the code are taken from there.
@@ -242,10 +237,6 @@ modified: 2022-08-19T23:00:22.162Z
   - 依赖tiptap2、dnd-kit、mui、tanstack-query、nextjs、@azure/cosmos--db
   - A free web application for creating and editing notes.
 
-- https://github.com/verbb/vizy
-  - A flexible visual editor for Craft CMS
-  - 依赖tiptap2、vue3、tippy.js、codemirror-editor-vue
-
 - https://github.com/lostdesign/linked
   - https://uselinked.com/
   - Daily journaling without distraction.
@@ -271,6 +262,26 @@ modified: 2022-08-19T23:00:22.162Z
   - for analytics, we self-hosted a plausible instance to avoid sharing your customer's data with third-party companies
   - https://github.com/plausible/analytics
     - 基于elixir
+# cms-like
+- alinea /654Star/MIT/202301/ts
+  - https://github.com/alineacms/alinea
+  - https://alinea.sh/
+  - an open source headless CMS written in Typescript.
+  - 非wysiwyg，左侧编辑块数据，右侧预览
+  - 依赖dnd-kit、yjs、react-query
+  - Content is stored in flat files and committed to your repository
+  - 👀 Content is easily queryable through an in-memory SQLite database
+  - Content is fully typed
+  - Alinea supports custom backends that can be hosted as a simple Node.js process or on serverless runtimes.
+
+- https://github.com/primodotso/primo
+  - https://primo.so/
+  - ui基于svelte
+  - Primo is a component-based CMS that makes it easy to build visually-editable static sites
+
+- https://github.com/verbb/vizy /php
+  - A flexible visual editor for Craft CMS
+  - 依赖tiptap2、vue3、tippy.js、codemirror-editor-vue
 # more
 - https://github.com/ujw0712/editor-and-pdf
   - 依赖 vue3、jspdf, html2canvas、@tiptap/extension-collaboration, yjs, @hocuspocus/provider
@@ -282,15 +293,6 @@ modified: 2022-08-19T23:00:22.162Z
 - https://github.com/ueberdosis/tiptap-php
   - A PHP package to work with Tiptap content. 
   - You can transform Tiptap-compatible JSON to HTML, and the other way around, sanitize your content, or just modify it.
-
-- alinea /7Star/MIT/202208/ts
-  - https://github.com/alineacms/alinea
-  - https://alinea.sh/
-  - Alinea is a modern content management system.
-  - Content is stored in flat files and committed to your repository
-  - 👀 Content is easily queryable through an in-memory SQLite database
-  - Content is fully typed
-  - Alinea supports custom backends that can be hosted as a simple Node.js process or on serverless runtimes.
 
 - https://github.com/iqb-berlin/studio-lite
   - Authoring system for online assessments.

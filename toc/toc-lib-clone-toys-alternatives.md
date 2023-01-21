@@ -44,10 +44,10 @@ modified: 2021-07-21T10:03:38.002Z
   - 整体代码采用nodejs + vue + element-ui实现
   - like gitbook use nodejs
 
-- https://github.com/oldboyxx/jira_clone
+- https://github.com/oldboyxx/jira_clone /202001/前端js+后端ts
   - https://jira.ivorreic.com/project/board
   - A simplified Jira clone built with React/Babel (Client), and Node/TypeScript (API). 
-  - 前端依赖 react-router、formik、history、jwt、moment、express、quill(Editor)、react-beautiful-dnd、styled-components、sweet-pubsub
+  - 前端依赖 react-router、formik、history、jwt、moment、quill(Editor)、react-beautiful-dnd、styled-components、sweet-pubsub
   - 后端依赖 express、jsonwebtoken、faker、pg、typeorm
 
 # notion-clone

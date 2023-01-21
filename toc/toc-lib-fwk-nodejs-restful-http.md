@@ -23,18 +23,6 @@ modified: 2022-12-19T01:51:01.389Z
   - [olingo - Why is ODATA not widely adopted by the developers for RESTful development? - Stack Overflow](https://stackoverflow.com/questions/55266573/why-is-odata-not-widely-adopted-by-the-developers-for-restful-development)
   - https://github.com/zackyang000/node-odata
 # rest-api
-- api-server-nodejs /178Star/MIT/202212/ts
-  - https://github.com/app-generator/api-server-nodejs
-  - Express Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
-  - 依赖Express, SQLite, TypeORM, passport-jwt
-  - Authentication Flow uses json web tokens via Passport library - passport-jwt strategy.
-  - TypeScript, Joy for validation
-- api-server-nodejs-mongo /11Star/MIT/202212/ts/代码简单
-  - https://github.com/app-generator/api-server-nodejs-mongo
-  - 典型的dashboard的后端示例
-  - 依赖express、mongoose、passport-jwt
-  - Can be used with other React Starters for a complete Full-Stack experience
-
 - https://github.com/heerey525/express_mongoDB /202203/js
   - https://heerey525.github.io/express_mongoDB/apidoc/
   - express+mongoDB的一套后台管理系统
@@ -69,6 +57,65 @@ modified: 2022-12-19T01:51:01.389Z
 - https://github.com/aichbauer/express-rest-api-boilerplate
   - Express REST API with JWT Authentication and support for sqlite, mysql, and postgresql
   - routes mapping via express-routes-mapper
+# crud/admin
+- api-server-nodejs /178Star/MIT/202212/ts
+  - https://github.com/app-generator/api-server-nodejs
+  - Express Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
+  - 依赖Express, SQLite, TypeORM, passport-jwt
+  - Authentication Flow uses json web tokens via Passport library - passport-jwt strategy.
+  - TypeScript, Joy for validation
+  - https://github.com/app-generator/api-server-nodejs-demo
+- api-server-nodejs-mongo /11Star/MIT/202212/ts/代码简单
+  - https://github.com/app-generator/api-server-nodejs-mongo
+  - 典型的dashboard的后端示例
+  - 依赖express、mongoose、passport-jwt
+  - Can be used with other React Starters for a complete Full-Stack experience
+- https://github.com/app-generator/sample-docker-nodejs-react
+  - docker compose up --build 
+
+- adminjs /6.2kStar/MIT/202211/ts/仅参考db设计
+  - https://github.com/SoftwareBrothers/adminjs
+  - https://adminjs-demo.herokuapp.com/
+  - AdminJS is an automatic admin interface that can be plugged into your application. 
+  - 亮点是可切换数据库(mongo/pg/mysql)、后端框架(express/hapi/nest)
+  - 自动生成简单的crud界面，前后端打包被自动化了，不利于自定义打包
+  - You, as a developer, provide database models (like posts, comments, stores, products or whatever else your application uses), and AdminJS generates UI which allows you (or other trusted users) to manage content.
+  - It uses (for example) Hapi.js+mongoose for rendering a couple of REST routes and mongoose as the connector to the database.
+  - Inspired by: django admin, rails admin and active admin.
+  - By default, AdminJS is equipped with a powerful `quill` editor, which makes it a perfect tool as a Content Management System
+  - https://github.com/SoftwareBrothers/adminjs-example-app
+    - Example application using adminjs
+  - https://github.com/SoftwareBrothers/adminjs-dev
+  - https://github.com/SoftwareBrothers/adminjs-design-system
+
+- https://github.com/creativetimofficial/argon-dashboard-react-nodejs /202101/js
+  - 开源了dashboard的react前端和后端
+  - https://github.com/creativetimofficial/argon-dashboard-nodejs
+  - https://github.com/creativetimofficial/material-dashboard-react-nodejs
+
+- https://github.com/thomas4019/expressa /202210/js/vue
+  - makes it easy to create basic APIs by using JSON schema
+  - django-like admin interface for creating collection-REST endpoints and managing permissions
+
+- https://github.com/heerey525/express_mongoDB /202203/js
+  - https://heerey525.github.io/express_mongoDB/apidoc/
+  - express+mongoDB的一套后台管理系统
+  - 功能点：邮箱验证、注册、登录、jwt验证、用户管理、权限列表、角色列表、商品的增删改查、国际化管理（增删改查、批量添加、excel导入导出、导出js文件）、图片上传等
+  - 依赖mongoose
+  - https://github.com/heerey525/express_mongodb_web /202012/js/vue
+
+- https://github.com/AndhikaBukh/Storify /202208/ts/starter
+  - http://storify-six.vercel.app/
+  - Storify is a social media app built with React. 
+  - We are building a platform for users to share their stories and connect with others.
+  - 前端依赖react-router、react  /ts
+  - 后端依赖express、mongoose    /js
+
+- https://github.com/simov/express-admin /201409/js
+  - https://simov.github.io/express-admin/
+  - a NodeJS tool for easy creation of user friendly administrative interface for MySQL, MariaDB, SQLite and PostgreSQL databases.
+  - It's built with: Hogan.js (mustache.js), Express, mysql and Bootstrap.
+  - https://github.com/simov/express-admin-examples /201407/js
 # rest-starter
 - https://github.com/criscunas/todo-server
   - Backend API for Todo App built with Node & Express.
@@ -100,14 +147,13 @@ modified: 2022-12-19T01:51:01.389Z
 # more-rest-examples
 - https://github.com/taniarascia/node-api-postgres
   - https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
-  - Create, read, update, delete in a Node.js app with an Express server and Postgres database.
+- Create, read, update, delete in a Node.js app with an Express server and Postgres database.
 
-- https://github.com/andregardi/jwt-express-typeorm
-  - use TypeScript, Express.js and TypeORM to create an enterprise level Rest API with JWT authentication and role based authorization. 
-
-- https://github.com/javieraviles/node-typescript-koa-rest
+- https://github.com/javieraviles/node-typescript-koa-rest /202105/ts/inactive
   - REST API boilerplate using NodeJS and KOA2, typescript. 
   - Logging and JWT as middlewares.
+  - TypeORM with class-validator, SQL CRUD. 
+  - Docker included. Swagger docs, actions CI and valuable README
 
 - https://github.com/w3tecch/express-typescript-boilerplate
   - RESTful API with NodeJs & TypeScript 

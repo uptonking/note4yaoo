@@ -10,7 +10,7 @@ modified: 2022-08-18T16:57:15.296Z
 # guide
 
 # office/notebook
-- noteworthy /166Star/AGPL.v3/202207/ts/electron
+- noteworthy /166Star/AGPLv3/202207/ts/electron
   - https://github.com/benrbray/noteworthy
   - https://noteworthy.ink/
   - Markdown editor with bidirectional links and excellent math support
@@ -55,12 +55,6 @@ modified: 2022-08-18T16:57:15.296Z
   - A web-based writing application with real-time collaboration and Markdown syntax support for crafting and sharing notes. 
   - Group and find note easily with hashtag and full text search. Inspired by Bear note and HackMD.
 
-- codex /195Star/CC-BY-NC-4.0/202202/js/electron
-  - https://github.com/jcv8000/Codex
-  - https://codexnotes.com/
-  - 依赖 prosemirror、katex、bootstrap4、jquery、highlight.js
-  - A free note-taking software for programmers and Computer Science students
-
 - yana /175Star/MIT/202201/ts/electron/atlaskit
   - https://github.com/lukasbach/yana
   - https://yana.js.org/
@@ -73,19 +67,25 @@ modified: 2022-08-18T16:57:15.296Z
   - Rich notes editor powered by the Atlassian editor core
   - Multiple local workspaces
 
-- mdSilo-web /208Star/AGPL.v3/202208/ts
+- codex /195Star/CC-BY-NC-4.0/202202/js/electron
+  - https://github.com/jcv8000/Codex
+  - https://codexnotes.com/
+  - 依赖 prosemirror、katex、bootstrap4、jquery、highlight.js
+  - A free note-taking software for programmers and Computer Science students
+
+- mdSilo-web /208Star/AGPLv3/202208/ts
   - https://github.com/danloh/mdSilo-web
   - https://mdsilo.com/
+  - A mind silo for storing ideas, thought, knowledge with a powerful writing tool.
   - 核心编辑器mdsmirror未开源，基于rich-markdown-editor
   - 依赖 react、tauri/rust、dnd-kit、headlessui、popperjs、react-spring、tailwindcss、d3-drag/selection、fuse.js、immer、codemirror.v6、styled-comp、react-virtualized、zustand
-  - A mind silo for storing ideas, thought, knowledge with a powerful writing tool.
   - Available for Web, Linux, Windows and macOS. 
-- mdSilo-app /93Star/AGPL.v3/202208/ts/tauri
+- mdSilo-app /93Star/AGPLv3/202208/ts/tauri
   - https://github.com/danloh/mdSilo-app
   - https://mdsilo.com/
   - A mind silo for storing ideas, thought, knowledge with a powerful writing tool. 
 
-- notebook /11Star/MIT/202208/ts/提交多
+- UreekaBiz-notebook /11Star/MIT/202208/ts/提交多
   - https://github.com/UreekaBiz/notebook
   - ProseMirror, Firebase Collaborative Editor.
   - https://github.com/UreekaBiz/pm-devtool
@@ -116,7 +116,7 @@ modified: 2022-08-18T16:57:15.296Z
   - https://github.com/fiduswriter/fiduswriter
   - https://github.com/fiduswriter/fiduswriter/blob/main/fiduswriter/document/static/js/modules/editor/index.js
   - 依赖@vivliostyle/print、prosemirror、sortablejs、mathlive
-  - Fidus Writer is an online collaborative editor especially made for academics who need to use citations and/or formulas.
+  - an online collaborative editor especially made for academics who need to use citations and/or formulas.
   - The editor focuses on the content rather than the layout, so that with the same text, you can later on publish it in multiple ways: On a website, as a printed book, or as an ebook. 
 
 - binder /24Star/NALic/202210/ts
@@ -153,7 +153,7 @@ modified: 2022-08-18T16:57:15.296Z
   - MashCard is an all-in-one workspace and low-code platform with Compound Document at its core. 
   - It's not only an open source alternative to Coda and Notion
 
-- tropy /637Star/AGPL.v3/202208/js
+- tropy /637Star/AGPLv3/202208/js
   - https://github.com/tropy/tropy
   - https://tropy.org/
   - help to organize and describe your research photos so you can quickly find your sources 
@@ -179,6 +179,65 @@ modified: 2022-08-18T16:57:15.296Z
 
 - https://github.com/HarshvardhanMor/online-code-editor
   - 依赖tiptap.v2、vue2
+# pm-cms
+- like
+  - outline
+
+- https://github.com/dasmikko/strapi-tiptap-editor
+  - A drop-in replacement for the strapi editor.
+
+- alinea /654Star/MIT/202301/ts
+  - https://github.com/alineacms/alinea
+  - https://alinea.sh/
+  - an open source headless CMS written in Typescript.
+  - 非wysiwyg，左侧编辑块数据，右侧预览
+  - 依赖dnd-kit、yjs、react-query
+  - Content is stored in flat files and committed to your repository
+  - 👀 Content is easily queryable through an in-memory SQLite database
+  - Content is fully typed
+  - Alinea supports custom backends that can be hosted as a simple Node.js process or on serverless runtimes.
+
+- https://github.com/PelagicCreatures/marlin /202204/js/inactive
+  - An ExpressJS CMS for sites with Sequelize db backends
+  - This package implements a relational typed admin backend built from sequelize model definitions with granular access control for editing tables using ACLs for users and roles.
+  - https://github.com/PelagicCreatures/marlin-app
+    - a boilerplate app that includes many common functions of a web site/app featuring registered users. 
+    - we use HIJAX to load pages after the initial load. 
+    - 【DOM编程艺术】 Hijax---渐进增强地使用Ajax 
+    - 按照老传统，让表单把整个页面都提交到服务器，然后服务器再发回来一个包含反馈的新页面，所有处理操作都在服务器上完成
+    - 为了给这个登录表单添加AJAX功能，就需要拦截提交表单的请求,让XMLHttpRequest请求来代为发送
+
+- becomesco-cms /ts/MIT
+  - BCMS is a Headless CMS (Content Management System). 
+  - It provides a powerful API, best-in-class model builder, and intuitive content editor.
+  - https://github.com/becomesco/cms-ui /ts
+    - a dashboard for the BCMS and provides UI features.
+    - 依赖tiptap.v2、vue3、vuex、markdown-it、uppy/file-uploader、codemirror5、yjs
+    - BCMS is a Headless CMS.
+  - https://github.com/becomesco/cms-backend /ts
+    - 后端基于express自研
+    - handles common and custom backend tasks. 
+    - Those tasks include communication with the database, database caching, scoping, restrictions and security, object aggregation and relational updates, real-time connection with sockets, and many more.
+  - https://github.com/becomesco/cms-sdk
+    - a layer of abstraction between the UI and the backend. It handles caching, communication with the backend API, and data synchronization
+    - Idea behind this module is to abstract API communication for BCMS UI developers. 
+    - Without this module, UI developers would have to implement REST API calls for the Backend module and take care of caching and storing data. 
+
+- https://github.com/primodotso/primo
+  - https://primo.so/
+  - ui基于svelte
+  - Primo is a component-based CMS that makes it easy to build visually-editable static sites
+
+- https://github.com/statamic/cms /php
+  - flat-first, Laravel + Git powered CMS 
+
+- https://github.com/erellsworth/overlord
+  - CMS built with Nuxt, Express, and Tiptap.
+
+- https://github.com/factly/dega /go
+  - lightweight, scalable & high performant CMS written in Go & React. 
+  - https://github.com/factly/scooter /js
+    - editor built on top of TipTap & Prosemirror.
 # more-prosemirror-examples
 - https://github.com/devmnj/react-editor-framework-examples
   - This is a set of Editor Example (React) with TinyMCE, RMirror, Draftjs, MuiEditor and Slatejs .
@@ -192,16 +251,6 @@ modified: 2022-08-18T16:57:15.296Z
 
 - https://github.com/NoteHub-official/RetroFlux
   - fully-customizable collaborative knowledge management app featuring note-taking, note-sharing, community, knowledge graph functionalities.
-
-- https://github.com/PelagicCreatures/marlin /202204/js/inactive
-  - An ExpressJS CMS for sites with Sequelize db backends
-  - This package implements a relational typed admin backend built from sequelize model definitions with granular access control for editing tables using ACLs for users and roles.
-  - https://github.com/PelagicCreatures/marlin-app
-    - a boilerplate app that includes many common functions of a web site/app featuring registered users. 
-    - we use HIJAX to load pages after the initial load. 
-    - 【DOM编程艺术】 Hijax---渐进增强地使用Ajax 
-    - 按照老传统，让表单把整个页面都提交到服务器，然后服务器再发回来一个包含反馈的新页面，所有处理操作都在服务器上完成
-    - 为了给这个登录表单添加AJAX功能，就需要拦截提交表单的请求,让XMLHttpRequest请求来代为发送
 
 - https://github.com/ShenQingchuan/HeteroDoc
   - Heterocube Cloud Collaborative Docs. 
@@ -275,11 +324,6 @@ modified: 2022-08-18T16:57:15.296Z
   - Training Data (Data Labeling, Annotation, Catalog, Workflow) for all Data Types (Image, Video, 3D, Text, Geo, Audio, more) at scale.
 
 - https://github.com/lyn-2k1/fullstackReactjs
-
-- https://github.com/primodotso/primo
-  - https://primo.so/
-  - ui基于svelte
-  - Primo is a component-based CMS that makes it easy to build visually-editable static sites
 
 - https://github.com/gracious-tech/stello
   - A new way to send newsletters 

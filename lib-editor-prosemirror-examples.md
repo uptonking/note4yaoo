@@ -93,7 +93,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 支持拖拽标题section，但不支持拖拽section内的段落
   - 使用了浏览器文件系统api来支持打开本地文件
   - Collection of higher level rich text editing tools. It powers the local only note taking app https://bangle.io
-  - bangle.io /711Star/AGPL.v3/202208/ts
+  - bangle.io /711Star/AGPLv3/202208/ts
     - https://github.com/bangle-io/bangle-io
     - https://bangle.io/
     - 提供了 indexed-db-storage-provider, fs
@@ -183,7 +183,7 @@ modified: 2022-08-18T16:57:46.405Z
   - https://github.com/lastnigtic/syllepsis-collab
     - Example of `Syllepsis` collaborative editing using `prosemirror-collab`
 
-- zotero-note-editor /16Star/AGPL.v3/202208/js
+- zotero-note-editor /16Star/AGPLv3/202208/js
   - https://github.com/zotero/note-editor
   - 依赖 prosemirror、katex、react、react-intl
   - Note editor for Zotero 6
@@ -379,12 +379,12 @@ modified: 2022-08-18T16:57:46.405Z
   - WYSIWYG rich-text editor using tiptap and Element UI for Vue2 (tiptap2 and Vue3 is in alpha)
   - new version2 support Vue3, use tiptap2 and Element Plus
 
-- nextcloud-text /366Star/AGPL.v3/202208/js/vue/tiptap/php
+- nextcloud-text /366Star/AGPLv3/202208/js/vue/tiptap/php
   - https://github.com/nextcloud/text
   - Collaborative document editing using Markdown
   - 依赖tiptap.v2, @_ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
 
-- standardnotes.markdown-visual-editor /4Star/AGPL.v3/202208/ts/milkdown
+- standardnotes.markdown-visual-editor /4Star/AGPLv3/202208/ts/milkdown
   - https://github.com/standardnotes/app/tree/main/packages/components/src/Packages/Editors/org.standardnotes.markdown-visual-editor
   - https://github.com/standardnotes/markdown-visual
   - A lightweight WYSIWYG markdown editor, derivated from Milkdown editor
@@ -408,14 +408,6 @@ modified: 2022-08-18T16:57:46.405Z
 - https://github.com/equinor/fusion-components/tree/master/src/customElements/components/markdown-editor
   - https://equinor.github.io/fusion-components/?path=/story/general-markdown-editor--default
   - 依赖prosemirror、prosemirror-markdown、lit
-
-- https://github.com/becomesco/cms-ui
-  - 依赖tiptap.v2、vue3、markdown-it
-  - Core module of the BCMS. It is a dashboard for the BCMS and provides UI features.
-  - BCMS is a Headless CMS.
-  - It provides a powerful API, best-in-class model builder, and intuitive content editor.
-  - https://github.com/becomesco/cms-backend
-    - 后端基于express自研
 # prosemirror-editors-collection
 - licit /33Star/MIT/202208/js
   - https://github.com/MO-Movia/licit
@@ -533,7 +525,7 @@ modified: 2022-08-18T16:57:46.405Z
 - https://github.com/binary-is/prosearea /202005/js/inactive
   - ProseArea is a drop-in replacement for HTML textareas, providing WYSIWYG editing of markdown, based on the ProseMirror web library.
 
-- https://github.com/adrianheine/ProsePad /25Star/AGPL.v3/201909/js/inactive
+- https://github.com/adrianheine/ProsePad /25Star/AGPLv3/201909/js/inactive
   - ProsePad is a real-time collaborative text editor like Etherpad, but based on ProseMirror
 
 - https://gitlab.com/smoores/ode /202101/ts/inactive

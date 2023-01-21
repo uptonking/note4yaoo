@@ -86,3 +86,20 @@ modified: 2022-10-11T09:02:26.869Z
 - https://github.com/paulgreg/semi-persistent-chat
   - A simple node semi-persistent chat without database (messages are in server’s memory and purged after few hours)
   - a simple semi-persistent PWA chat using web socket. Messages are kept in memory and purged after X hours on the server (configurable).
+# websocket-examples
+- https://github.com/tinyhttp/tinyws /ts/单文件
+  - a WebSocket middleware for Node.js based on ws, inspired by koa-easy-ws.
+  - Easy to use (only req.ws and nothing else)
+  - Framework-agnostic (works with tinyhttp, express etc)
+
+- https://github.com/wll8/express-ws /ts
+  - Quickly implement websocket API in express.
+  - http and ws of the same route can exist at the same time
+  - Use directly from app.ws
+
+- https://github.com/phedkvist/crdt-server /ts/单文件
+  - A text based CRDT server storing, sending and receiving updates using Express and Websockets
+  - 基于ws创建连接，用数组存放changes
+  - 初次连接发送所有changes
+  - 后续只发送单次change的msg
+# more

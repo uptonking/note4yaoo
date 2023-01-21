@@ -253,7 +253,7 @@ modified: 2022-06-03T22:07:23.308Z
 - https://github.com/Lalit2005/pagely /inactive
   - Launch beautiful websites straight from your Notion workspace or from your GitHub repo
 
-- https://github.com/Dashibase/lotion
+- https://github.com/Dashibase/lotion /GPLv3
   - An open-source Notion UI built with Vue 3
 # more-notion-like
 - https://github.com/tzhangchi/Travel

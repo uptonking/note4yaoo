@@ -145,6 +145,3 @@ modified: 2020-12-09T09:30:24.694Z
 - raw /Apache2/6.8kStar
   - https://github.com/rawgraphs/raw
   - The missing link between spreadsheets and data visualization
-- https://github.com/appsmithorg/appsmith
-  - Appsmith is a JavaScript-based visual development platform to build and launch internal tools quickly. 
-  - Drag-and-drop pre-built widgets, and connect them using JavaScript to create interactive pages. 

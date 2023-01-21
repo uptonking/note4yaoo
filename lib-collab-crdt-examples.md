@@ -217,8 +217,11 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/kana-sama/edita
   - 无编辑器
 
-- https://github.com/phedkvist/crdt-server
+- https://github.com/phedkvist/crdt-server /ts/单文件
   - A text based CRDT server storing, sending and receiving updates using Express and Websockets
+  - 基于ws创建连接，用数组存放changes
+  - 初次连接发送所有changes
+  - 后续只发送单次change的msg
 
 - https://github.com/tobiasbrodd/crdt
   - 编辑note，每次发送全量数据

@@ -100,16 +100,6 @@ modified: 2021-01-08T11:48:16.590Z
   - AppSeed: Production-ready seed projects crafted on top of modern UI Kits. 
   - https://github.com/app-generator/react-datta-able-dashboard
 
-- refine /6.5kStar/MIT/202212/ts
-  - https://github.com/refinedev/refine
-  - https://refine.dev/
-  - headless web application framework developed with flexibility in mind.
-  - It eliminates repetitive tasks demanded by CRUD operations and provides industry standard solutions for critical parts like authentication, access control, routing, networking, state management, and i18n.
-  - Connectors for 15+ backend services including REST API
-  - For convenience, it ships with ready-made integrations for Ant Design System, Material UI, Mantine, and Chakra UI.
-  - Auto-generated CRUD UIs from your API data structure
-  - state management & mutations with React Query
-  - Out-of-the-box support for live/real-time applications
 # bootstrap-dashboard
 - https://github.com/SoftwareBrothers/adminjs-design-system
   - https://adminjs-demo.herokuapp.com/admin/login

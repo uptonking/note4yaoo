@@ -14,6 +14,10 @@ modified: 2022-08-21T10:02:05.129Z
     - no code 平台，但此类产品应该偏向automation
   - airtable 通用的前端表格组件，提供各种后端的集成
 
+- [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809)
+  - platform, baas, cms, workflow, airtable-like
+  - 流程自动化
+
 - [A More Human Approach To Databases](https://ccorcos.github.io/filing-cabinets/)
   - Notion 工程师 Chet 以警察信息管理系统为例，用普通人能理解的大白话，从文件、文件夹、文件柜逐步介绍关系型数据库的构成和实现原理
   - [Maybe some misunderstanding of how SQL DB indexes work?](https://github.com/ccorcos/tuple-database/issues/11)
@@ -21,21 +25,19 @@ modified: 2022-08-21T10:02:05.129Z
 - react-datasheet-grid /133Star/MIT/202205/ts
   - https://github.com/nick-keller/react-datasheet-grid
   - https://github.com/Equify/react-datasheet-grid
-  - https://github.com/nick-keller/react-datasheet-grid
   - https://react-datasheet-grid.netlify.app/docs/features
   - 依赖react、react-window、react-resize-detector
   - more like Airtable or Notion and less like Excel in the sense that instead of dealing with individual cells it deals with entire rows, and each column is responsible for a single property of each row
   - [V2 status update_202106](https://github.com/Equify/react-datasheet-grid/issues/37)
   - [Feature Roadmap_202106](https://github.com/Equify/react-datasheet-grid/issues/38)
-  - features
-    - Fast
-      - can easily handle hundreds of thousands of rows thanks to its virtualized architecture.
-      - Renders have been optimized to the strict minimum, follow the performance guides 
-    - Customizable
-      - Control every behavior of the spreadsheet, implement you own widgets, and customize the style of DSG to match your app.
-    - Feature rich
-      - Supports copy/pasting to and from Excel, Google-sheet, Notion
-      - Keyboard navigation and shortcuts fully-supported
+  - Fast
+    - can easily handle hundreds of thousands of rows thanks to its virtualized architecture.
+    - Renders have been optimized to the strict minimum, follow the performance guides 
+  - Customizable
+    - Control every behavior of the spreadsheet, implement you own widgets, and customize the style of DSG to match your app.
+  - Feature rich
+    - Supports copy/pasting to and from Excel, Google-sheet, Notion
+    - Keyboard navigation and shortcuts fully-supported
 
 - https://github.com/archit-p/editable-react-table
   - React table built to resemble a database.
@@ -45,6 +47,38 @@ modified: 2022-08-21T10:02:05.129Z
 
 - https://github.com/linyows/notionate
   - React components that uses the Notion API to display the Notion's database and page.
+
+- nocodb /33kStar/AGPLv3/202212/ts/vue
+  - https://github.com/nocodb/nocodb
+  - https://nocodb.com/
+  - The Open Source Airtable Alternative
+  - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
+  - 依赖monaco-editor、vueuse、antd-vue、monaco-editor、sortablejs、vuedraggable
+  - Search, sort, filter, hide columns with uber ease
+  - Create Views : Grid, Gallery, Kanban, Form
+  - Frontend: Vue.js
+  - Backend: express.js, knex, 
+  - Database: Any SQL (postgres, mysql, sqlite, maria DB, SQL server)
+  - API: REST and graphql
+
+- apitable /2.3kStar/AGPLv3/202301/ts/java
+  - https://github.com/apitable/apitable
+  - https://apitable.com/
+  - API-oriented low-code platform for building collaborative apps and better than all other Airtable open-source alternatives
+  - 维格表团队开源
+  - 后端依赖spring-boot、mybatis、easyexcel、grpc、protobuf
+  - 前端依赖antd、ahooks、redux、exceljs、konva、markdown-it、react-quill、react-dnd、slate
+  - Realtime collaboration allows multiple users to edit together in real time, or simultaneously with the Operational Transformation (OT) Algorithm.
+  - 7 View Types: Grid View (Datasheet) / Gallery View / Mindmap View / Kanban View / Full-Feature Gantt View / Calendar View
+  - [APITable: open-source Airtable alternative | Hacker News_202212](https://news.ycombinator.com/item?id=34127804&ref=upstract.com)
+  - super-fast database-spreadsheet interface in `<canvas>` Rendering Engine.
+  - Database native architecture: Changeset / Operation / Action / Snapshot and so on.
+  - Full-stack API access, from Data to Metadata.
+  - One-direction / Bi-direction Table Link and Infinite Cross Links
+  - Embed-friendly: Share your datasheet table or folder. Embed them by copying and pasting HTML scripts.
+  - Community-friendly programming languages and framework, TypeScript (NextJS + NestJS) and Java (Spring Boot)
+  - APITable will provides a Datasheet Query Language (DQL) to query your database-spreadsheet contents.
+  - 落地页glassmorphism风格
 
 - rowy /4kStar/apache2/202212/ts
   - https://github.com/rowyio/rowy
@@ -61,23 +95,11 @@ modified: 2022-08-21T10:02:05.129Z
     - long term
   - https://demo.rowy.io/table/allFieldTypes
     - 给出了常用字段类型的示例
-- firetable /36Star/apache2/202108/ts
-  - https://github.com/Antler-VC/firetable
-  - Excel/Google Sheets like UI for Firebase/Firestore. No more admin portals!
-  - https://github.com/FiretableProject/firetable
-
-- nocodb /33kStar/AGPLv3/202212/ts/vue
-  - https://github.com/nocodb/nocodb
-  - https://nocodb.com/
-  - The Open Source Airtable Alternative
-  - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
-  - 依赖monaco-editor、vueuse、antd-vue、monaco-editor、sortablejs、vuedraggable
-  - Search, sort, filter, hide columns with uber ease
-  - Create Views : Grid, Gallery, Kanban, Form
-  - Frontend: Vue.js
-  - Backend: express.js, knex, 
-  - Database: Any SQL (postgres, mysql, sqlite, maria DB, SQL server)
-  - API: REST and graphql
+  - firetable /36Star/apache2/202108/ts
+    - https://github.com/Antler-VC/firetable
+    - Excel/Google Sheets like UI for Firebase/Firestore. No more admin portals!
+    - Firetable is now Rowy
+    - https://github.com/FiretableProject/firetable
 
 - grist-core /3.4kStar/apache2/202211/ts/python
   - https://github.com/gristlabs/grist-core
@@ -90,12 +112,25 @@ modified: 2022-08-21T10:02:05.129Z
   - A portable, self-contained format. Based on SQLite
   - Full Python syntax is supported, and the standard library.
 
+- irelia /18Star/apache2/202211/ts/py
+  - https://github.com/IreliaTable/irelia
+  - https://ireliatable.github.io/irelia-web/
+  - 依赖 gristlabs/grist-core、backbone、knockout、jquery
+  - Irelia is a modern relational spreadsheet. 
+  - Python formulas. Full Python syntax is supported, and the standard library.
+  - A portable, self-contained format based on SQLite
+
 - refine /6.5kStar/MIT/202212/ts
   - https://github.com/refinedev/refine
   - https://refine.dev/
   - headless web application framework developed with flexibility in mind.
   - It eliminates repetitive tasks demanded by CRUD operations and provides industry standard solutions for critical parts like authentication, access control, routing, networking, state management, and i18n.
   - Connectors for 15+ backend services including REST API
+
+- https://github.com/locokit/locokit /inactive
+  - LocoKit is an AirTable alternative, providing database management as a spreadsheet and an app builder.
+  - 前端依赖vue2、feathers4、turf、mapbox-gl.v1、monaco-editor、vue2、xlsx、marked
+  - 后端依赖feathers4、knex
 
 - https://github.com/mukulchugh/kanboard-notion-kanban-react
   - https://notion-kanboard-mukul.netlify.app/
@@ -127,7 +162,7 @@ modified: 2022-08-21T10:02:05.129Z
     - Obsidian is not open source software and this repo DOES NOT contain the source code of Obsidian. 
     - However, if you wish to contribute to Obsidian, you can easily do so with our extensive plugin system.
 
-- trilium /17.1kStar/AGPL.v3/202208/js
+- trilium /17.1kStar/AGPLv3/202208/js
   - https://github.com/zadam/trilium
   - https://github.com/zadam/trilium/wiki/
   - a hierarchical note taking application with focus on building large personal knowledge bases. 
@@ -137,7 +172,7 @@ modified: 2022-08-21T10:02:05.129Z
       - An extension for Trilium Notes that implements different ways of viewing collections of notes.
       - 样式过于简单
 
-- AppFlowy /25.8kStar/AGPL.v3/202208/rust/dart
+- AppFlowy /25.8kStar/AGPLv3/202208/rust/dart
   - https://github.com/AppFlowy-IO/AppFlowy
   - https://www.appflowy.io/
   - [[FR] Databases](https://github.com/AppFlowy-IO/AppFlowy/issues/98)
@@ -167,7 +202,9 @@ modified: 2022-08-21T10:02:05.129Z
   - NocoBase is a scalability-first, open-source no-code/low-code development platform. 开源无代码开发平台
   - server依赖koa
   - client依赖antd、g2plot、ahooks、dnd-kit、formily、marked、react-iframe、react-quill、react-router5
-  - 采用数据结构与使用界面分离的设计思路，可以为数据表创建任意数量、任意形态的区块（数据视图），每个区块里可以定义不同的样式、文案、操作
+  - 采用数据结构与使用界面分离的设计思路
+    - 可以为数据表创建任意数量、任意形态的区块（数据视图），
+    - 每个区块里可以定义不同的样式、文案、操作
   - you can configure the user interface directly with WYSIWYG operations.
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
 
@@ -176,14 +213,41 @@ modified: 2022-08-21T10:02:05.129Z
   - SeaTable is originally built by the Seafile team (haiwen/seafile). 
   - The source code will be uploaded to GitHub later. 
   - https://github.com/seatable/dtable-ui-component
-# examples
+# more-table-like
 - https://github.com/qwtel/sqlite-viewer-vscode
   - A quick and easy SQLite viewer for VSCode, inspired by DBBrowser for SQLite and Airtable.
 
 - https://github.com/vikadata/vika.js
   - Vika JavaScript SDK 是对维格表 Fusion API 的官方封装，可以很方便的对你的维格表中的数据进行增删改查操作。
   - 你可以轻松的将维格表中的数据集成到你自己的应用中
+
+- https://github.com/coderinblack08/graspable
+  - A realtime, powerful, lightweight alternative to Airtable/Excel
+  - 依赖firebase/supabase
 # discuss
+- ## [APITable: open-source Airtable alternative | Hacker News_202212](https://news.ycombinator.com/item?id=34127804&ref=upstract.com)
+- online demo: https://gitpod.io/#https://github.com/apitable/apitable
+  - admin@apitable.com / Apitable2022
+
+- I see some serious red flags on their homepage:
+  - "Partners" just seem to be logo-hijacking potential hosting platforms (not actual partnerships)
+  - The testimonials use fake names + stock art
+- for baserow
+  - it’s only open-core: loads of important features locked behind subscription pricing, 
+  - You will not lose any features by self-hosting. Quite the opposite, some enterprise features like SSO are only possible for self-hosted instances. Source: I work for Baserow.
+
+- Is there an ongoing trend of sketchy "OSS" product offerings using this same website layout and similar fake quotes from users? I feel like I'm seeing this a lot recently.
+
+- Initial commit was in August and there are only 5 contributors, yet it's calling itself the "the best Airtable alternative" and filled their side with all kind of fancy screenshots? 
+  - Unless they ported the whole project from a previous project, there would be no way to barf out a high quality competition in such a short time with such a small team.
+  - Without the screenshots and partner-claims I would think they are just overly enthusiastic. But the whole highly professional sales vibes for such a fresh project makes it just untrustable.
+
+- It’s also AGPL licensed but has incompatibly-licensed dependencies.
+
+- Is'nt there some joke that every month a new startup tries to reinvent pivot tables?
+
+- Airtable was so cool when I tried it years ago but it was insufferably slow. Just unusable as are many web apps these days unfortunately
+
 - ## Alternative for Notion
 - https://www.reddit.com/r/selfhosted/comments/qhm1v2/alternative_for_notion/
 - The best alternative to notion is actually trilium. 
@@ -291,5 +355,5 @@ modified: 2022-08-21T10:02:05.129Z
   - Is speedy and fast, not an electron bloatware.
   - No data hostage - allows you to edit your locally saved markdown notes write from the web app.
   - Has powerful vs-code like command palettes and keyboard shortcuts.
-# ref
+# more
 - [How to Connect a React App to a Notion Database](https://dev.to/alexeagleson/how-to-connect-a-react-app-to-a-notion-database-51mc)

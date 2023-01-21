@@ -50,9 +50,14 @@ modified: 2020-11-17T13:38:19.107Z
   - old-repo
     - https://github.com/brick-design/react-visual-editor
 
-- https://github.com/plasmicapp/plasmic
+- https://github.com/plasmicapp/plasmic /部分开源
   - https://www.plasmic.app/
   - Visual page builder and web design tool for any website or web app tech stack
+  - Plasmic is a platform
+    - Visual builder / web design tool--this is the heart of Plasmic
+    - Headless CMS for structured content (or bring your own CMS)
+    - Growth optimization tools (A/B testing, personalization, analytics)
+  - [Does this repository include the designer UI?](https://github.com/plasmicapp/plasmic/issues/23)
 
 - blocks /MIT/4.6kStar/202006/js/inactive
   - https://github.com/blocks/blocks
@@ -68,11 +73,15 @@ modified: 2020-11-17T13:38:19.107Z
   - http://www.vvveb.com/vvvebjs/editor.html
   - Drag and drop website builder javascript library.
   - 依赖jquery和bootstrap4
-- grapesjs /BSD/11.4kStar/202008
+
+
+- grapesjs /BSD/17.2kStar/202301/ts
   - https://github.com/artf/grapesjs
   - https://grapesjs.com/
   - a free and open source Web Builder Framework 
-  - 依赖underscore，backbone，codemirror
+  - 依赖underscore，backbone，codemirror5
+
+
 - react-page /MIT/8.2kStar/202008/ts
   - https://github.com/react-page/react-page
   - https://react-page.github.io/
@@ -160,6 +169,8 @@ modified: 2020-11-17T13:38:19.107Z
   - http://fex-team.github.io/amis-editor
   - 可视化编辑器在线工具 
   - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
+ 
+
 # h5-editor
 - h5-dooring /7kStar/GPLv3/202211/ts
   - https://github.com/MrXujiang/h5-Dooring
@@ -206,7 +217,6 @@ modified: 2020-11-17T13:38:19.107Z
 
 - https://github.com/h5ds/h5ds
   - 只开源了部分前端组件和功能
-- https://www.plasmic.app/
 - https://visly.app/
 
 - https://github.com/swagger-api/swagger-editor

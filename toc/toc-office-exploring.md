@@ -10,7 +10,7 @@ modified: 2021-01-04T17:31:49.998Z
 # guide
 
 # office-suite
-- dadadash /136Star/AGPL.v3/202201/js/vue
+- dadadash /136Star/AGPLv3/202201/js/vue
   - https://github.com/daptin/dadadash
   - 依赖 vue?、ckeditor5、vue-quill-editor、tabulator-tables、fullcalendar、codemirror5、jspdf、mermaid、markdown-it、moment、jquery
   - Office suite with file browser, document editor, spreadsheet editor, calendar and data tables with CRUD API's ready to deploy
