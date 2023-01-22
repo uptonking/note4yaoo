@@ -68,6 +68,10 @@ modified: 2022-11-06T03:19:28.284Z
 
 - https://github.com/marmelab/ra-sqlite-dataprovider
   - here is a POC to generate a react-admin administration not relying on an API but directly on a SQLite database hosted on a static server (in this case the Github pages server).
+
+- https://github.com/kaminskypavel/sqlite-wasm-browser
+  - using SQL.js to run sqlite in browser.
+  - chinook SQLite sample database: music tracks/playlists/invoices
 # sqlite-indexeddb
 - https://github.com/yanli0303/sql-js-worker-test
   - sql.js tests with IndexedDB as storage and Worker.

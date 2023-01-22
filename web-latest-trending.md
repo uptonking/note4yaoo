@@ -14,6 +14,7 @@ modified: 2021-01-01T20:52:42.088Z
 - 2022
   - collaboration
   - datalog
+  - [Web3.0创作者经济报告：CreatorFi的发展现状和想象空间](https://www.theblockbeats.info/report)
 
 - 2021
   - ssr

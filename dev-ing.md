@@ -137,6 +137,18 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 
 - 💡 a global event emitter (could be replaced by redis, etc)
 
+## 0121
+
+- Downloading ripgrep failed: TypeError [ERR_INVALID_PROTOCOL]: Protocol "https:" not supported. Expected "http:"
+  - https://github.com/microsoft/vscode-ripgrep/issues/26#issuecomment-1187663914
+
+```
+1. Clone ripgrep locally: git clone git@github.com:microsoft/vscode-ripgrep ~/vscode-ripgrep
+2. run yarn in that folder (this seems to work even behind proxy)
+3. cp bin/rg ~/vscode-repo-path/node_modules/@vscode/ripgrep
+4. run yarn in your vscode repo path again
+```
+
 ## 0118
 
 ### [既然有 HTTP 请求，为什么还要用 RPC 调用？ - 知乎](https://www.zhihu.com/question/41609070)
@@ -205,7 +217,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,               `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

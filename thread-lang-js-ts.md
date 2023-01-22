@@ -18,7 +18,19 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## [Deep Cloning Objects in JavaScript, the Modern Way](https://www.builder.io/blog/structured-clone)
+- there's now a native way in JavaScript to do deep copies of objects
+- `structuredClone` function is built into the JavaScript runtime
+  - Clone infinitely nested objects and arrays
+  - Clone circular references
+  - Clone any transferrable objects, such as Date, Set, Map, Error, RegExp, ArrayBuffer, Blob, File, ImageData, and several more
+- Why not just Object.assign or object spread?
+  - shallow copy
+- Why not JSON.parse(JSON.stringify(x)) ?
+  - JSON.stringify can only handle basic objects, arrays, and primitives. 
+- Why not _.cloneDeep?
+  - Import Cost 
+- 
 
 - ## #TypeScript's `infer` keyword is just JavaScript's destructuring assignment
 - https://twitter.com/GabrielVergnaud/status/1610637512870871040
