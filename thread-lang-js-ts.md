@@ -18,6 +18,19 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [A Better Way to Work With Number and Date Inputs in JavaScript](https://www.builder.io/blog/numbers-and-dates)
+
+```JS
+const myInput = document.querySelector('input.my-input')
+const number = myInput.valueAsNumber
+
+const date = myDateInput.valueAsDate
+```
+
 - ## [Deep Cloning Objects in JavaScript, the Modern Way](https://www.builder.io/blog/structured-clone)
 - there's now a native way in JavaScript to do deep copies of objects
 - `structuredClone` function is built into the JavaScript runtime
@@ -30,7 +43,6 @@ Symbol('a') === Symbol('a') //false
   - JSON.stringify can only handle basic objects, arrays, and primitives. 
 - Why not _.cloneDeep?
   - Import Cost 
-- 
 
 - ## #TypeScript's `infer` keyword is just JavaScript's destructuring assignment
 - https://twitter.com/GabrielVergnaud/status/1610637512870871040

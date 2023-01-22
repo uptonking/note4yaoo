@@ -19,18 +19,19 @@ modified: 2020-12-28T12:24:09.275Z
 - ref
   - https://github.com/taowen/awesome-lowcode
 
-- https://github.com/baidu/amis
-  - /4.3kStar//Apache2/202009
+- baidu-amis /12.9kStar//apache2/202301/ts/编辑器未开源
+  - https://github.com/baidu/amis
   - 依赖mobx、react、jquery、sortablejs、tinymce
   - 前端低代码框架，通过JSON配置就能生成各种后台页面，不适合大量交互、定制ui
   - https://github.com/aisuda/amis-editor-demo
     - http://aisuda.github.io/amis-editor-demo
     - amis 可视化编辑器示例
     - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
-   - [请问@fex/amis-editor 有开源计划吗？](https://github.com/aisuda/amis-editor-demo/issues/12)
-      - 目前amis-editor已将内置的plugin源码开放出来了
+ - [请问@fex/amis-editor 有开源计划吗？](https://github.com/aisuda/amis-editor-demo/issues/12)
+    - 目前amis-editor已将内置的plugin源码开放出来了
 
-- https://github.com/alibaba/lowcode-engine
+- alibaba-lowcode-engine /8.9kStar/MIT/202212/ts
+  - https://github.com/alibaba/lowcode-engine
   - 一套面向扩展设计的企业级低代码技术体系
   - 依赖react、mobx、power-di
   - 引擎完整实现了 低代码引擎 搭建协议、物料协议、资产包协议
@@ -39,18 +40,18 @@ modified: 2020-12-28T12:24:09.275Z
     - 这种东西，不会编程的人对他来说太复杂了，会编程的人来说太繁琐了。
   - [阿里低代码引擎简介](https://lowcode-engine.cn/site/docs/guide/quickStart/intro)
 
-- https://github.com/JDFED/drip-table
+- js-drip-table /677Star/MIT/202301/ts
+  - https://github.com/JDFED/drip-table
   - https://drip-table.jd.com/
   - 依赖viewerjs-image-viewer, rc-*组件，react-window、moment
   - 京东零售推出的一款用于企业级中后台的动态列表解决方案
   - 抛弃繁重难以维护的 JSX 堆砌表格列，采用无需开发的低代码拖拽搭建模式。
   - 专注于可视化搭建、组件渲染分发，底层渲染逻辑由组件库处理，因此不依赖指定界面框架，可支持多种主流界面组件库。
 
-- apitable /2.3kStar/AGPLv3/202301/ts/java
+- apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队开源
   - https://github.com/apitable/apitable
   - https://apitable.com/
   - API-oriented low-code platform for building collaborative apps and better than all other Airtable open-source alternatives
-  - 维格表团队开源
   - 后端依赖spring-boot、mybatis、easyexcel、grpc、protobuf
   - 前端依赖antd、ahooks、redux、exceljs、konva、markdown-it、react-quill、react-dnd、slate
   - Realtime collaboration allows multiple users to edit together in real time, or simultaneously with the Operational Transformation (OT) Algorithm.
@@ -177,7 +178,7 @@ modified: 2020-12-28T12:24:09.275Z
   - 依赖 centrifuge
   - https://github.com/centrifugal/centrifugo /202212/go
     - Scalable real-time messaging server in a language-agnostic way
-    - [Centrifugo vs RabitMQ · Issue #126 · centrifugal/centrifugo](https://github.com/centrifugal/centrifugo/issues/126)
+    - [Centrifugo vs RabbitMQ](https://github.com/centrifugal/centrifugo/issues/126)
     - Centrifugo's goal is delivering real-time messages to end users of your application with at most once delivery model (fire and forget in general). 
     - Centrifugo is just a PUB/SUB server designed for client applications, it's not suitable for usage on backend side - for example to coordinate microservices. 
     - Rabbit can be used as queue, PUB/SUB broker etc.
@@ -187,12 +188,6 @@ modified: 2020-12-28T12:24:09.275Z
   - Low code production-ready solution for admin business components packages
   - Built on the design principles developed by Ant Design And Formly
 
-- https://github.com/whitebrick/whitebrick
-  - Open Source Airtable Alternative (No Code DB)
-  - Whitebrick is a lightweight No Code Database with 3 points of difference:
-    - The front end uses a Gatsby static Jamstack client for dead easy customization and deployment.
-    - The back end is a set of Serverless functions for making DDL calls to PostgreSQL and configuring Hasura GraphQL server.
-    - The PostgreSQL database schemas can be accessed directly with psql for data import/export and integrations with other tools.
 
 - https://github.com/steedos/steedos-platform
   - 华炎魔方是Salesforce低代码平台的开源替代方案

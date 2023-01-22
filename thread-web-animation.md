@@ -11,7 +11,8 @@ modified: 2021-01-08T17:14:34.841Z
 
 - ## 
 
-- ## 
+- ## A very useful CSS property for animations is transition timing function 
+- https://twitter.com/davidm_ml/status/1617098718343475201
 
 - ## Just released an interesting bug fix for mixing rotation and layout animations in Framer Motion.
 - https://twitter.com/mattgperry/status/1534465693336363008

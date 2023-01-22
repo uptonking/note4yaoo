@@ -28,16 +28,33 @@ modified: 2021-01-04T17:26:43.784Z
   - http://pdfkit.org/
   - A JavaScript PDF generation library for Node and the browser.
 
+- https://github.com/diegomura/react-pdf
+  - React renderer for creating PDF files on the browser and server
+  - This package is used to create PDFs using React. 
+    - If you wish to display existing PDFs, you may be looking for https://github.com/wojtekmaj/react-pdf
+
+- https://github.com/wojtekmaj/react-pdf
+  - Display PDFs in your React app as easily as if they were images.
+  - For React-PDF to work, PDF.js worker needs to be provided.
+
+- https://github.com/jeetiss/react-pdf-repl
+  - https://react-pdf-repl.vercel.app/
+  - REPL for `@react-pdf/renderer` with interactive debugger
+
+- https://github.com/bpampuch/pdfmake
+  - http://pdfmake.org/
+  - PDF document generation library for server-side and client-side in pure JavaScript.
+
 - https://gitlab.coko.foundation/pagedjs/pagedjs
   - Paged.js is a free and open-source library that paginates any HTML content to produce beautiful print-ready PDF. 
   - The library fragments the content, reads your CSS print declarations and presents a paginated preview in your browser that you can save as PDF.
 
 - https://github.com/Hopding/pdf-lib
   - Create and modify PDF documents in any JavaScript environment
-
-- https://github.com/bpampuch/pdfmake
-  - http://pdfmake.org/
-  - PDF document generation library for server-side and client-side in pure JavaScript.
+# utils
+- https://github.com/RelaxedJS/ReLaXed
+  - creates PDF documents interactively using HTML or Pug (a shorthand for HTML). 
+  - It allows complex layouts to be defined with CSS and JavaScript, while writing the content in a friendly, minimal syntax close to Markdown or LaTeX.
 # office
 - databyss /39Star/AGPLv3/202208/js
   - https://github.com/databyss-org/databyss

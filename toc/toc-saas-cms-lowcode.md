@@ -20,6 +20,8 @@ modified: 2023-01-20T21:59:47.792Z
   - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
   - 不是典型的block-editor
   - cms未提供前端，只生成和更新api
+  - 依赖express、passport
+  - 前端依赖dnd-kit、monaco-editor、slate、react-beautiful-dnd、react-router5、webpack5、swc
   - Block-based Layout Builder
   - Extensible SlateJS rich text editor
   - A Mongo database to store your data
@@ -48,7 +50,7 @@ modified: 2023-01-20T21:59:47.792Z
   - [Unify .md & .mdx implementations](https://github.com/tinacms/tinacms/discussions/2869)
     - react-tinacms-editor editor also uses prosemirror, while the default rich-text editor uses slate.
 
-- webiny-js /6.3kStar/MIT/202301/ts
+- webiny-js /6.3kStar/MIT/202301/ts/graphql
   - https://github.com/webiny/webiny-js
   - a headless CMS, page builder, form builder, and file manager, admin-area
   - Multi-tenant SaaS applications

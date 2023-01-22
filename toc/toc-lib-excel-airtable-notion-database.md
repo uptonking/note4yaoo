@@ -53,19 +53,17 @@ modified: 2022-08-21T10:02:05.129Z
   - https://nocodb.com/
   - The Open Source Airtable Alternative
   - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
-  - 依赖monaco-editor、vueuse、antd-vue、monaco-editor、sortablejs、vuedraggable
+  - 前端依赖 ant-design-vue.v3、vueuse、vue-flow(chart)、monaco-editor、d3-scale、dayjs、vuedraggable、xlsx
+  - 后端依赖 express、ioredis、knex、passport、request
   - Search, sort, filter, hide columns with uber ease
   - Create Views : Grid, Gallery, Kanban, Form
-  - Frontend: Vue.js
-  - Backend: express.js, knex, 
   - Database: Any SQL (postgres, mysql, sqlite, maria DB, SQL server)
   - API: REST and graphql
 
-- apitable /2.3kStar/AGPLv3/202301/ts/java
+- apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队
   - https://github.com/apitable/apitable
   - https://apitable.com/
   - API-oriented low-code platform for building collaborative apps and better than all other Airtable open-source alternatives
-  - 维格表团队开源
   - 后端依赖spring-boot、mybatis、easyexcel、grpc、protobuf
   - 前端依赖antd、ahooks、redux、exceljs、konva、markdown-it、react-quill、react-dnd、slate
   - Realtime collaboration allows multiple users to edit together in real time, or simultaneously with the Operational Transformation (OT) Algorithm.
@@ -79,6 +77,15 @@ modified: 2022-08-21T10:02:05.129Z
   - Community-friendly programming languages and framework, TypeScript (NextJS + NestJS) and Java (Spring Boot)
   - APITable will provides a Datasheet Query Language (DQL) to query your database-spreadsheet contents.
   - 落地页glassmorphism风格
+
+- focalboard /10.3kStar/MIT-like/202203/ts+go
+  - https://github.com/mattermost/focalboard
+  - https://www.focalboard.com/
+  - 前端webapp依赖 @reduxjs/toolkit、react-redux.v7、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
+  - an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
+  - Focalboard comes in two main editions:
+    - Personal Desktop: A stand-alone single-user Mac, Windows, or Linux desktop app for your todos and personal projects.
+    - Mattermost Boards: A self-hosted or cloud server for your team to plan and collaborate.
 
 - rowy /4kStar/apache2/202212/ts
   - https://github.com/rowyio/rowy
@@ -120,6 +127,15 @@ modified: 2022-08-21T10:02:05.129Z
   - Python formulas. Full Python syntax is supported, and the standard library.
   - A portable, self-contained format based on SQLite
 
+- baserow /1.3kStar/MIT/202212/python/js/vue
+  - https://github.com/bram2w/baserow
+  - https://baserow.io/
+  - Baserow is an open source no-code database tool and Airtable alternative. 
+  - Open-core with all non-premium features under the MIT License allowing commercial and private use.
+  - Headless and API first.
+  - Uses popular frameworks and tools like Django, Vue.js and PostgreSQL.
+  - Baserow is not completely open source, there are features they reserve for premium users (like kanban view).
+
 - refine /6.5kStar/MIT/202212/ts
   - https://github.com/refinedev/refine
   - https://refine.dev/
@@ -136,15 +152,6 @@ modified: 2022-08-21T10:02:05.129Z
   - https://notion-kanboard-mukul.netlify.app/
   - 暂不支持视图切换
 # notion database like
-- focalboard /10.3kStar/MIT-like/202203/ts+go
-  - https://github.com/mattermost/focalboard
-  - https://www.focalboard.com/
-  - 前端webapp依赖 @reduxjs/toolkit、react-redux.v7、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
-  - an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
-  - Focalboard comes in two main editions:
-    - Personal Desktop: A stand-alone single-user Mac, Windows, or Linux desktop app for your todos and personal projects.
-    - Mattermost Boards: A self-hosted or cloud server for your team to plan and collaborate.
-
 - https://github.com/NotionX/react-notion-x
   - https://react-notion-x-demo.transitivebullsh.it/
   - Fast and accurate React renderer for Notion. TS batteries included.
@@ -169,8 +176,8 @@ modified: 2022-08-21T10:02:05.129Z
   - 依赖 electron、express、jsdom、turndown、ckeditor、codemirror、fancytree、bootstrap
   - [Notion like database request](https://github.com/zadam/trilium/issues/822)
     - https://github.com/mabeyj/trilium-collection-views
-      - An extension for Trilium Notes that implements different ways of viewing collections of notes.
-      - 样式过于简单
+    - An extension for Trilium Notes that implements different ways of viewing collections of notes.
+    - 样式过于简单
 
 - AppFlowy /25.8kStar/AGPLv3/202208/rust/dart
   - https://github.com/AppFlowy-IO/AppFlowy
@@ -188,14 +195,6 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/souvikinator/notion-to-md
   - Convert notion pages, block and list of blocks to markdown (supports nesting) using notion-sdk-js
 # airtable-like
-- baserow /1.3kStar/MIT/202212/python/js/vue
-  - https://github.com/bram2w/baserow
-  - https://baserow.io/
-  - Baserow is an open source no-code database tool and Airtable alternative. 
-  - Open-core with all non-premium features under the MIT License allowing commercial and private use.
-  - Headless and API first.
-  - Uses popular frameworks and tools like Django, Vue.js and PostgreSQL.
-
 - nocobase /3.7kStar/apache2/202212/ts/国内
   - https://github.com/nocobase/nocobase
   - https://www.nocobase.com/
@@ -208,7 +207,14 @@ modified: 2022-08-21T10:02:05.129Z
   - you can configure the user interface directly with WYSIWYG operations.
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
 
-- https://github.com/seatable/seatable
+- https://github.com/whitebrick/whitebrick /202202/ts/inactive/未完成
+  - Open Source Airtable Alternative (No Code DB)
+  - Whitebrick is a lightweight No Code Database with 3 points of difference:
+  - The front end uses a Gatsby static Jamstack client for dead easy customization and deployment.
+  - The back end is a set of Serverless functions for making DDL calls to PostgreSQL and configuring Hasura GraphQL server.
+  - The PostgreSQL database schemas can be accessed directly with psql for data import/export and integrations with other tools.
+
+- https://github.com/seatable/seatable /未开源
   - SeaTable is a spreadsheet/database like Airtable.
   - SeaTable is originally built by the Seafile team (haiwen/seafile). 
   - The source code will be uploaded to GitHub later. 
