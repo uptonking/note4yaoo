@@ -7,6 +7,18 @@ modified: 2022-11-07T11:00:28.824Z
 
 # thread-pm-app-kickstarter-devops-xp
 
+# discuss-stars
+
+- ## You can jump on every new trend like crypto, web3, AI. 
+- https://twitter.com/yongfook/status/1616635377586180096
+  - Or you can slowly build something “boring” like a CRM for veterinarians. 
+  - You can make money doing both, but as an older entrepreneur I prefer the slow approach 🐢
+- Boring + useful > shiny + overhyped
+- Both are fine. If you do it well.
+- Trends come and go, just focus on solving a real user need
+- Both agree and disagree w/ this.
+  - Building a "boring" business on top of the latest wave is a great way to guarantee at least some attention – which imho will become the scarcest resource as time ⇒ ∞
+- I don’t think the second one can survive, because the CRM moment long happened and all the alpha is eaten. Soon horizontal software like Notion will eat CRMs, these products are so mature. Vertical software “practice management” software is generally fully mature.
 # discuss
 
 - ## 

@@ -1,8 +1,8 @@
 ---
 title: toc-lib-olap-pivot
-tags: [lib, olap, pivot, toc]
+tags: [lib, olap, pivot-table, toc]
 created: 2020-07-13T02:39:21.789Z
-modified: 2020-10-22T06:50:36.740Z
+modified: 2023-01-23T11:24:41.943Z
 ---
 
 # toc-lib-olap-pivot

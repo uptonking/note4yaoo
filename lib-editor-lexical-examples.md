@@ -29,5 +29,6 @@ modified: 2022-05-15T18:37:27.994Z
 # lexical-extensions
 
 # lexical-examples
-
+- https://github.com/konstantinmuenster/lexical-rich-text-react-demo  
+  - [How To Build A Text Editor With Lexical and React](https://konstantin.digital/blog/how-to-build-a-text-editor-with-lexical-and-react)
 # more-lexical

@@ -39,7 +39,11 @@ modified: 2022-05-15T18:35:39.272Z
 
 - ## 
 
-- ## 
+- ## we look at Meta's new @lexicaljs framework and how we can use it to build a simple WYSIWYG editor
+- https://twitter.com/kmuenster/status/1615363796671041544
+  - [How To Build A Text Editor With Lexical and React](https://konstantin.digital/blog/how-to-build-a-text-editor-with-lexical-and-react)
+- Although Lexical is framework-agnostic, it integrates so smoothly with React! 
+- Even though we use Lexical in a React application, Lexical comes with its own renderer that flushes updates to the DOM. In that, it utilizes a virtual DOM approach to re-render only DOM nodes that have changed. This is neat performance-wise!
 
 - ## Out of curiosity why’d you choose lexical?
 - https://twitter.com/trueadm/status/1596600189913296898

@@ -12,6 +12,9 @@ modified: 2023-01-20T21:59:47.792Z
   - platform, baas, cms, workflow, airtable-like
   - 流程自动化
   - notion-like
+
+- ref
+  - https://github.com/postlight/awesome-cms
 # popular
 - payload /9.1kStar/MIT/202301/ts/slate
   - https://github.com/payloadcms/payload
@@ -20,7 +23,7 @@ modified: 2023-01-20T21:59:47.792Z
   - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
   - 不是典型的block-editor
   - cms未提供前端，只生成和更新api
-  - 依赖express、passport
+  - 后端依赖express、mongoose、passport
   - 前端依赖dnd-kit、monaco-editor、slate、react-beautiful-dnd、react-router5、webpack5、swc
   - Block-based Layout Builder
   - Extensible SlateJS rich text editor
@@ -29,6 +32,7 @@ modified: 2023-01-20T21:59:47.792Z
   - File storage and access control
   - Payload dynamically generates a React admin panel to manage your data. 
     - Admin panel is built with Webpack, code-split, highly performant (even with 100+ fields), and written fully in TypeScript.
+  - [Payload (YC S22) – Headless CMS for Developers | Hacker News](https://news.ycombinator.com/item?id=32665325)
 
 - tinacms /8.3kStar/apache2/202301/ts
   - https://github.com/tinacms/tinacms

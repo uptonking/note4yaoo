@@ -27,11 +27,6 @@ modified: 2022-11-25T10:09:16.492Z
   - SwiftUI/Jetpack Compose renders home tab
   - Everything else is still a webview
 - Web is the slowest option but the most cross platform. Native is the fastest option but the least cross platform. RN + react-native-web somewhere in the middle. Chose the right tradeoffs for your team, your users, your project, your market. 
-- 
-- 
-- 
-- 
-- 
 
 
 - ## Someone DM'd me to ask what tech we use in the Notion iOS/Android apps._202205
