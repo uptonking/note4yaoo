@@ -18,5 +18,9 @@ modified: 2023-01-21T18:57:47.811Z
 - 
 
 # apps
+# collab
+- https://github.com/convergencelabs/monaco-collab-ext
+  - Adds collaborative editing capabilities to the Monaco Editor
+  - uses Convergence to handle the synchronization of data and user actions
 
 # more

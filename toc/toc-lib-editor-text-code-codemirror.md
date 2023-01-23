@@ -65,8 +65,19 @@ modified: 2022-08-18T11:29:26.644Z
   - https://octo.app/tags/examples
   - A plain-text javascript markdown editor library that renders formatting live and in-place without the need for a preview pane. 
   - Built on CodeMirror 6. Powers https://octo.app/
-# collab
 
+## apps
+
+- https://github.com/vizhub-core/vizhub
+  - https://vizhub.community/
+  - Self Hosted CMS for Web-based Dataviz
+  - VizHub 2 has been used in Data Visualization Course 2018, Datavis 2020
+    - iFrame-based code execution environment.
+  - VizHub 3
+    - possible to self-host your own instance
+    - possible to extend the core with plugins
+  - https://github.com/vizhub-core/vzcode
+# collab
 - https://github.com/tanwarAalok/Code-Sync
   - A Realtime collaboration Code editor using codemirror5
 # more-code-editor

@@ -7,6 +7,9 @@ modified: 2021-07-27T15:12:39.959Z
 
 # toc-lib-editor-text
 
+# guide
+
+- 编辑器的复杂度很大一部分来自跨平台的兼容性，而这不是靠rust能够解决的
 # editor-starter
 - pell /11.8kStar/MIT/201812/js/单文件
   - https://github.com/jaredreich/pell
@@ -73,6 +76,10 @@ modified: 2021-07-27T15:12:39.959Z
 - https://github.com/cnuebred/octapus
   - modular WYSIWYG rich text editor
   - 代码量很少
+# desktop-editor
+- https://github.com/lapce/lapce
+  - written in pure Rust with a UI in Druid (which is also written in Rust). 
+  - It is designed with Rope Science from the Xi-Editor which makes for lightning-fast computation, and leverages OpenGL for rendering. 
 # more-editor
 - hypertext-editor /28Star/MIT/202211/js/tinymce
   - https://github.com/russellbeattie/hypertext-editor

@@ -121,15 +121,19 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/eugeneware/jsonquery-engine /201504/js
   - A full MongoDB query language implementation with INDEXES for querying your levelup/leveldb database.
   - This is a plugin for level-queryengine.
-# level-utils
-- https://github.com/fergiemcdowall/pumbledb /201308/js
-  - a Node.js key-value server that uses LevelDB
-
+# level-multi
 - https://github.com/juliangruber/multilevel /201802/js
   - Expose a LevelDB over the network
 
 - https://github.com/mafintosh/multi-master-merge /201511/js
   - A database with multi master replication and merge support based on leveldb, fwdb and scuttleup
+
+- https://github.com/tradle/multi-hyperbee
+  - A LevelUP compatible leaderless multi-master database with eventual consistency, using hyperbee + CRDT + HLC. 
+  - Similarly CockroachDB achieves replication on top of RocksDB, but here it is a pure P2P streaming database, with zero central management. 
+# level-utils
+- https://github.com/fergiemcdowall/pumbledb /201308/js
+  - a Node.js key-value server that uses LevelDB
 # more-key-value
 - https://github.com/pgte/alfred /201109/js
   - Alfred is a fast in-process key-value store for node.js.

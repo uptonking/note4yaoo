@@ -365,8 +365,8 @@ modified: 2022-05-15T18:45:27.570Z
   - A collaborating editor based on Slate and Yjs
 
 - https://github.com/cudr/slate-collaborative
-  - https://github.com/humandx/slate-automerge
   - A example of a collaborative editor using Slate and Automerge
+  - Based on idea of https://github.com/humandx/slate-automerge
   - https://github.com/mms-gianni/slate-collaborationserver
 # more-slate
 - https://github.com/tiddly-gittly/slate-write

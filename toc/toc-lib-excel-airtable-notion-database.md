@@ -13,10 +13,10 @@ modified: 2022-08-21T10:02:05.129Z
   - 制作成本固然低了，造出来的代码维护成本太高了
   - 这种东西，不会编程的人对他来说太复杂了，会编程的人来说太繁琐了。
 
-- airtable-like的产品有2种方向
-  - strapi 通过拖拽ui字段生成rest crud api
-    - no code 平台，但此类产品应该偏向automation
-  - airtable 通用的前端表格组件，提供各种后端的集成
+- airtable-like的产品的方向
+  - 类似strapi通过拖拽ui字段生成rest crud api
+  - 偏向automation
+  - 类似airtable的通用表格组件，提供各种数据源的集成
 
 - [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809)
   - platform, baas, cms, workflow, airtable-like
@@ -46,8 +46,8 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/archit-p/editable-react-table
   - React table built to resemble a database.
   - 未完成
-  - https://github.com/RafaelGB/obsidian-db-folder
-    - Obsidian Plugin to Allow Notion like database based on folders
+- https://github.com/RafaelGB/obsidian-db-folder
+  - Obsidian Plugin to Allow Notion like database based on folders
 
 - https://github.com/linyows/notionate
   - React components that uses the Notion API to display the Notion's database and page.
@@ -91,6 +91,8 @@ modified: 2022-08-21T10:02:05.129Z
   - https://docs-cn.nocobase.com/
   - 易扩展的开源无代码开发平台。
   - NocoBase is a scalability-first, open-source no-code/low-code development platform.
+  - 可配置表格工具条菜单项、添加行，也可配置页面菜单
+    - 从这个角度看，headless cms更灵活
   - 后端依赖 koa、sequelize.v6
   - 前端依赖 antd、g2plot、ahooks、dnd-kit、formily、marked、react-iframe、react-quill、react-router5
   - 采用数据结构与使用界面分离的设计思路

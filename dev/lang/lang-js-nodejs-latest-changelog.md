@@ -15,11 +15,15 @@ modified: 2022-12-31T20:13:33.307Z
 # changelog
 - v20.0.0_2023-04-18
 
+- v19.0.0_2022-10-18
+  - Highlights include the update of the V8 JavaScript engine to 10.7, HTTP(s)/1.1 KeepAlive enabled by default, and ESM Resolution adjusts.
+  - The `node:test` module supports mocking during testing via a top-level `mock` object.
+
 - v18.0.0_2022-04-18
   - ✨ Global `fetch` enable by default, inspired by node-fetch
   - experimental Web Streams API
   - global Blob, BroadcastChannel
-  - Core test runner module to write the unit tests and report results in Test Anything Protocol (TAP) format. 
+  - Core `test` runner module to write the unit tests and report results in Test Anything Protocol (TAP) format. 
   - experimental JSON Import Assertions
   - server.headersTimeout/requestTimeout
 
@@ -52,6 +56,7 @@ modified: 2022-12-31T20:13:33.307Z
   - Faster async/await implementation
   - Async stack traces came
   - Default HTTP parser switched to llhttp
+  - Node 11.0.0 adds `queueMicrotask` as experimental
 
 - v10.0.0_2018-04-24
   - es module .mjs experimental support

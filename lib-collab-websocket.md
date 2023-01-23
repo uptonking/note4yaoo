@@ -12,7 +12,7 @@ modified: 2022-10-11T09:02:26.869Z
 - feathers框架为实时类应用而设计
 # blogs
 
-## [都2022年了，实时更新数据你还只会用短轮询? - 掘金](https://juejin.cn/post/7139684620777291807#comment)
+## [都2022年了，实时更新数据你还只会用短轮询? - 掘金](https://juejin.cn/post/7139684620777291807)
 
 - 分析思路
   - 连接创建和销毁次数
@@ -82,23 +82,4 @@ modified: 2022-10-11T09:02:26.869Z
 - 代理层限制: 和WebSocket一样会遇到代理层配置的问题，配置错误的话，客户端需要不断和服务端进行重连。
 
 - SSE技术适合一些只需要服务端单向推送事件给客户端的场景，例如股票行情推送软件。
-# apps-networking
-- https://github.com/paulgreg/semi-persistent-chat
-  - a simple semi-persistent PWA chat using web socket. 
-  - Messages are kept in memory and purged after X hours on the server (configurable).
-# websocket-examples
-- https://github.com/tinyhttp/tinyws /ts/单文件
-  - a WebSocket middleware for Node.js based on ws, inspired by koa-easy-ws.
-  - Easy to use (only req.ws and nothing else)
-  - Framework-agnostic (works with tinyhttp, express etc)
-
-- https://github.com/wll8/express-ws /ts
-  - Quickly implement websocket API in express.
-  - http and ws of the same route can exist at the same time
-  - Use directly from app.ws
-
-- https://github.com/phedkvist/crdt-server /ts/单文件
-  - A text based CRDT server storing, sending and receiving updates using Express and Websockets
-  - 基于ws创建连接，用数组存放changes
-  - 初次连接发送所有changes，后续只发送单次change的msg，为中心服务器架构设计
 # more

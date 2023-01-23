@@ -44,13 +44,15 @@ modified: 2020-12-28T12:24:09.275Z
     - 这种东西，不会编程的人对他来说太复杂了，会编程的人来说太繁琐了。
   - [阿里低代码引擎简介](https://lowcode-engine.cn/site/docs/guide/quickStart/intro)
 
-- jd-drip-table /677Star/MIT/202301/ts
+- jd-drip-table /677Star/MIT/202301/ts/仅表格
   - https://github.com/JDFED/drip-table
   - https://drip-table.jd.com/
   - 依赖viewerjs-image-viewer, rc-*组件，react-window、moment
   - 京东零售推出的一款用于企业级中后台的动态列表解决方案
-  - 抛弃繁重难以维护的 JSX 堆砌表格列，采用无需开发的低代码拖拽搭建模式。
+  - 抛弃繁重难以维护的JSX堆砌表格列，采用无需开发的低代码拖拽搭建模式。
   - 专注于可视化搭建、组件渲染分发，底层渲染逻辑由组件库处理，因此不依赖指定界面框架，可支持多种主流界面组件库。
+  - 全家桶
+    - https://jdfed.github.io/drip-form/
 
 - apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队开源
   - https://github.com/apitable/apitable
@@ -91,19 +93,12 @@ modified: 2020-12-28T12:24:09.275Z
   - you can configure the user interface directly with WYSIWYG operations.
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
 
-- https://github.com/icodebetter/icodebetter
-  - An opinionated low code platform that helps you code business applications
-
 - webstudio-designer /172Star/MIT/202212/ts
   - https://github.com/webstudio-is/webstudio-designer
   - https://webstudio.is/
   - Webstudio Designer is a NoCode Visual Tool inspired by Webflow
   - block块级元素不支持拖拽
   - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
-
-- https://github.com/crossjs/cofe
-  - No-Code System
-  - core依赖unist-builder
 # solutions
 - https://github.com/merico-dev/table /apache2/202301/ts
   - Build your own data presentation using SQL and multiple data sources including big data. 
@@ -179,6 +174,13 @@ modified: 2020-12-28T12:24:09.275Z
 
 - https://github.com/sparrow-js/sparrow /vue/inactive
   - 场景化低代码（LowCode）搭建工作台
+
+- https://github.com/icodebetter/icodebetter /js/inactive
+  - An opinionated low code platform that helps you code business applications
+
+- https://github.com/crossjs/cofe /ts/inactive
+  - No-Code System
+  - core依赖unist-builder
 
 - https://github.com/kontenbase/kontenbase /202209/ts/inactive
   - https://kontenbase.com/

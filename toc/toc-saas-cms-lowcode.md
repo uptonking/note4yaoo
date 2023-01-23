@@ -8,6 +8,10 @@ modified: 2023-01-20T21:59:47.792Z
 # toc-saas-cms-lowcode
 
 # guide
+
+- cms-dev
+  - 交互的核心通常是编辑器
+
 - [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809)
   - platform, baas, cms, workflow, airtable-like
   - 流程自动化
@@ -21,10 +25,11 @@ modified: 2023-01-20T21:59:47.792Z
   - https://payloadcms.com/
   - https://demo.payloadcms.com/admin
   - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
-  - 不是典型的block-editor
-  - cms未提供前端，只生成和更新api
+  - cms只提供管理界面来拖拽生成数据对应的api，不提供预览内容的前端
+  - 不是典型的block-editor，富文本作为字段block
   - 后端依赖express、mongoose、passport
   - 前端依赖dnd-kit、monaco-editor、slate、react-beautiful-dnd、react-router5、webpack5、swc
+  - [2023 Payload Roadmap](https://github.com/payloadcms/payload/discussions/1539)
   - Block-based Layout Builder
   - Extensible SlateJS rich text editor
   - A Mongo database to store your data
@@ -32,7 +37,11 @@ modified: 2023-01-20T21:59:47.792Z
   - File storage and access control
   - Payload dynamically generates a React admin panel to manage your data. 
     - Admin panel is built with Webpack, code-split, highly performant (even with 100+ fields), and written fully in TypeScript.
-  - [Payload (YC S22) – Headless CMS for Developers | Hacker News](https://news.ycombinator.com/item?id=32665325)
+  - [Payload (YC S22) – Headless CMS for Developers | Hacker News_202208](https://news.ycombinator.com/item?id=32665325)
+    - v2 is coming and that will 100% be open-source!
+  - Our business model is based on two things:
+    - Enterprise features like SSO, audit logs, publication workflows, and translation workflows. 
+    - Cloud hosting. 
 
 - tinacms /8.3kStar/apache2/202301/ts
   - https://github.com/tinacms/tinacms
@@ -53,6 +62,14 @@ modified: 2023-01-20T21:59:47.792Z
     - need to manually import the react-tinacms-editor(依赖prosemirror) plugin
   - [Unify .md & .mdx implementations](https://github.com/tinacms/tinacms/discussions/2869)
     - react-tinacms-editor editor also uses prosemirror, while the default rich-text editor uses slate.
+
+- directus /19.5kStar/GPLv3/202301/ts/vue
+  - https://github.com/directus/directus
+  - https://directus.io/
+  - Directus is a real-time API and App dashboard for managing SQL database content.
+  - REST & GraphQL API. Instantly layers a blazingly fast Node.js API on top of any SQL database.
+  - 后端依赖express、knex、async
+  - 前端依赖vue3、tinymce5、p-queue、apexcharts
 
 - webiny-js /6.3kStar/MIT/202301/ts/graphql
   - https://github.com/webiny/webiny-js
@@ -93,4 +110,13 @@ modified: 2023-01-20T21:59:47.792Z
   - What is closed source:
     - Our drag and drop editor. You can use it for free at buidler.io/fiddle
     - Our APIs - aka the ability to add multiple users to an account
+
+- https://github.com/apostrophecms/apostrophe /js
+  - full-featured, open source CMS built with Node.js that seeks to empower organizations by combining in-context editing and headless architecture in a full-stack JS environment.
+
+- https://github.com/contember/engine /ts/graphql
+  - Contember is an open-source, headless CMS without limits. It gives you full control over the administration interface and data structure. 
+  - Contember Engine is a standalone server providing GraphQL API for your PostgreSQL database.
 # more
+- https://github.com/FactorJS/factor
+  - Factor is an expressive & modular framework for JavaScript applications.

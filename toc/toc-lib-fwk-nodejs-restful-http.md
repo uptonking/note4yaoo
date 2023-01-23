@@ -144,7 +144,7 @@ modified: 2022-12-19T01:51:01.389Z
   - Connect-Query is an expansion pack for TanStack Query (react-query), written in TypeScript and thoroughly tested. 
   - It enables effortless communication with servers that speak the Connect Protocol.
   - One of the best features of this library is that once you write your schema in Protobuf form, the TypeScript types are generated and then inferred.
-# more-rest-examples
+# rest-examples
 - https://github.com/taniarascia/node-api-postgres
   - https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
 - Create, read, update, delete in a Node.js app with an Express server and Postgres database.
@@ -171,3 +171,16 @@ modified: 2022-12-19T01:51:01.389Z
   - an open source backend that can be deployed to any infrastructure that can run Node.js.
 - https://github.com/r-spacex/SpaceX-API
   - Open Source REST API for rocket, core, capsule, pad, and launch data
+# express-like
+
+- https://github.com/tinyhttp/tinyhttp /ts
+  - a modern Express-like web framework 
+  - Async middleware support
+
+- https://github.com/hattipjs/hattip /ts
+  - Like Express, but for the future
+  - HatTip is a set of JavaScript packages for building HTTP server applications.
+  - Modern: Based on current and future web standards (Fetch API & WinterCG).
+  - Modular: Use as much or as little as you need.
+  - compose function from the @hattip/compose package can be used to compose multiple handlers into a single one, creating a simple but powerful middleware system.
+# more
