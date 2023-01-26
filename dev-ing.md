@@ -136,6 +136,21 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 
 ## 011
 
+## 0126
+
+- SyntaxError: Named export 'WebSocketServer' not found. The requested module 'ws' is a CommonJS module, which may not support all module.exports as named exports.
+  - 原因是 ws 不在dependencies列表里
+
+- ### [Why is there no same-origin policy for WebSockets? Why can I connect to ws://localhost? - Stack Overflow](https://stackoverflow.com/questions/23674199)
+- WebSockets can cross domain communication, and they are not limited by the SOP (Same Origin Policy).
+- The same security issue you described can happen without WebSockets.
+- The evil JS can:
+  - Create a script/image tag with a URL to evil.tld and put data in the query string.
+  - Create a form tag, put the data in the fields, and invoke the "submit" action of the form, doing an HTTP POST, that can be cross domain. AJAX is limited by the SOP, but normal HTTP POST is not. Check the XSRF web security issue.
+- If something injects javascript in your page, or you get malicious javascript, your security is already broken.
+
+- SOP/CORS does not apply to WebSocket, but browsers will send an `origin` header that contains the hostname of the server that served the HTML with the JS that opened the WebSocket connection. A WebSocket server can then restrict access by checking `origin`.
+
 ## 0123
 
 - [node.js - Difference between process.nextTick and queueMicrotask - Stack Overflow](https://stackoverflow.com/questions/55467033/difference-between-process-nexttick-and-queuemicrotask)
@@ -228,7 +243,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                   `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                    `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，
