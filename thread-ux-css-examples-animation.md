@@ -14,7 +14,8 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
-- ## 
+- ## A grid rotation concept
+- https://codesandbox.io/s/grid-rotation-concept-lnuld6?file=/src/index.tsx
 
 - ## Turn any content into an infinite grid! @framer-motion @chakra_ui
 - https://twitter.com/austin_malerba/status/1609915292095860740

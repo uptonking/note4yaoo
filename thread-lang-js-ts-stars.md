@@ -15,6 +15,38 @@ modified: 2021-06-22T11:54:44.506Z
 
 - ## 
 
+- ## Promise resolvers are one of my absolute favorite little programming tools
+- https://twitter.com/aboodman/status/1619426079399350272
+
+- I've been looking for a name for this pattern for years. IIRC I've used it mainly in tests
+
+- I think some people call this "deferred"
+  - https://github.com/ljharb/promise-deferred
+
+```JS
+// https://github.com/rocicorp/resolver
+
+import { resolver } from '@rocicorp/resolver';
+
+const { promise, resolve } = resolver();
+resolve(42);
+await promise; // 42
+
+class LongRunning {
+  async stop() {
+    this._stopper = resolve();
+    await this._stopper.promise;
+  }
+
+  async run() {
+    while (!this._stopper) {
+      // ...complex asynchronous process...
+    }
+    this._stopper.resolve();
+  }
+}
+```
+
 - ## is it a good practice to use Proxy objects in your app, or I should let that shit to library authors?
 - https://twitter.com/hhg2288/status/1602323703198523394
 - I don’t like them, they feel a bit convoluted and aren’t that performant either.

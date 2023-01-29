@@ -29,6 +29,32 @@ modified: 2021-08-06T07:36:05.864Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## More comparisons between "lots of SVGs" vs "lots of canvases". Seems so baffling / random what's fast vs. what's not fast in SVGs.
+- https://twitter.com/steveruizok/status/1618735905526919169
+  - Here each shape has its own canvas element. So the browser is essentially compositing together an uncompressed png on each frame.
+
+- Now try using WebGL for that and it's gonna be even faster!
+  - 👉🏻 Here each shape is a separate canvas. (One of the big design constraints in tldraw is being able to interleave(间隔，夹进) html components and graphics.) I think having multiple webgl contexts would be slower.
+- The @pmndrs team have done some pretty amazing things with combining WebGL and HTML
+  - https://drei.pmnd.rs/?path=/story/misc-html--html-occluder-st
+  - Big fan of the work by @CantBeFaraz and @pmndrs . My sense is that "lots of HTML elements" perform worse than they would in a regular HTML context (see example here https://ylkveo.csb.app). It's an amazing trick but maybe not the one for tldraw
+- Browsers limit the number of WebGL contexts to ~<15 which is why tricks like gl_scissor are needed to render multiple “viewports”
+- 
+- 
+- 
+- 
+- 
+
+
+
 - ## Does anyone know if there is a deterministic alternative to rough js? When rendering the shapes in a loop, it adds variation every frame.
 - https://twitter.com/JungleSilicon/status/1605790763438292993
 - set the same seed for roughjs?

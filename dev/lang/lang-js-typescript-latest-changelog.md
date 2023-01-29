@@ -54,6 +54,17 @@ File-Watching Now Uses File System Events
 - TypeScript 2.4 and 2.6 tightened up the story for strict checking on function types
 - TypeScript 2.8 introduced conditional types, a powerful tool for statically expressing decisions based on types, and 2.9 generalized keyof and provided easier imports for types.
 # changelog
+- v3.8 introduced type-only imports
+
+## [v5.0 Beta - TypeScript](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0-beta/)
+
+- the new decorators standard
+- const Type Parameters
+- All enums Are Union enums
+  - TypeScript 5.0 manages to make all enums into union enums by creating a unique type for each computed member. 
+  - That means that all enums can now be narrowed and have their members referenced as types as well.
+- Support for export type *
+- @satisfies Support in JSDoc
 
 ## [v4](https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-beta/)
 

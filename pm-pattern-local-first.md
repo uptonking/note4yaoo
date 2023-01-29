@@ -17,7 +17,7 @@ modified: 2021-08-22T08:05:39.413Z
   - 对于基础库，应该以内存数据模型为主，因为idb读写要慢得多
   - 对于应用层，可对indexeddb的数据模型进行可扩展的设计，方便迁移到其他数据库如sqlite
 
-- 自己选择数据存储位置的缺点
+- 用户自己选择数据存储位置的缺点
   - 第一次拉取数据耗时较长
   - 不能使用服务端集群搜索，只能在本地搜索
 
@@ -43,6 +43,7 @@ modified: 2021-08-22T08:05:39.413Z
 
 - ref
   - [local-first tech](https://jaredforsyth.com/posts/)
+  - [Local-first data migrations](https://blog.gfor.rest/blog/lofi-migrations)
 
 # [Local-first software__201910](https://www.inkandswitch.com/local-first.html)
 - Cloud apps like Google Docs and Trello are popular because they enable real-time collaboration with colleagues, and they make it easy for us to access our work ~~from all of our devices~~ anytime anywhere. 

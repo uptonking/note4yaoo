@@ -1,6 +1,6 @@
 ---
 title: lib-collab-websocket-examples
-tags: [collaboration, examples, websocket]
+tags: [collaboration, examples, realtime, websocket]
 created: 2023-01-23T19:27:29.544Z
 modified: 2023-01-23T19:27:46.948Z
 ---
@@ -9,6 +9,8 @@ modified: 2023-01-23T19:27:46.948Z
 
 # guide
 
+- comparison
+  - [socket.io vs sockjs vs websocket vs ws | npm trends](https://npmtrends.com/socket.io-vs-sockjs-vs-websocket-vs-ws)
 # popular
 - https://github.com/phedkvist/crdt-server /ts/单文件
   - A text based CRDT server storing, sending and receiving updates using Express and Websockets
@@ -30,6 +32,27 @@ modified: 2023-01-23T19:27:46.948Z
   - Quickly implement websocket API in express.
   - http and ws of the same route can exist at the same time
   - Use directly from app.ws
+# realtime
+- https://github.com/nodefluent/kafka-streams
+  - equivalent to kafka-streams for nodejs
+  - this is not a 1:1 port of the official JAVA kafka-streams
+  - build on super fast observables using most.js
+  - Kafka broker should be version >= 0.11.x
+
+- https://github.com/soketi/soketi
+  - fast, and resilient open-source WebSockets server
+  - built on top of uWebSockets.js - a C application ported to Node.js
+  - soketi implements the Pusher Protocol v7. Therefore, any Pusher-maintained or compatible client can connect to it
+
+- https://github.com/centrifugal/centrifugo /202212/go
+  - Scalable real-time messaging server in a language-agnostic way
+  - [Centrifugo vs RabbitMQ](https://github.com/centrifugal/centrifugo/issues/126)
+  - Centrifugo's goal is delivering real-time messages to end users of your application with at most once delivery model (fire and forget in general). 
+  - Centrifugo is just a PUB/SUB server designed for client applications, it's not suitable for usage on backend side - for example to coordinate microservices. 
+  - Rabbit can be used as queue, PUB/SUB broker etc.
+
+- https://github.com/gotify/server /go
+  - A simple server for sending and receiving messages in real-time per WebSocket. (Includes a sleek web-ui)
 # more
 - https://github.com/well-known-components/template-server
   - Template Node.js server using well-known-components library.

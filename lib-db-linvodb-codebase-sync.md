@@ -9,6 +9,8 @@ modified: 2023-01-16T21:14:55.049Z
 
 # guide
 
+- 考虑到客户端升级的问题
+  - 同步前一定要检查一个version，参考indexeddb upgrade
 # linvodb数据库同步的技术方案-v1
 - 同步示例采用中心服务器的方式实现，但同时支持p2p
 

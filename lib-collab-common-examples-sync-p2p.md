@@ -8,7 +8,8 @@ modified: 2023-01-17T19:13:01.845Z
 # lib-collab-common-examples-sync-p2p
 
 # guide
-
+- 考虑到客户端升级的问题
+  - 同步前一定要检查一个version，参考indexeddb upgrade
 # sync-examples
 - lo-fi /7Star/MIT/202211/ts
   - https://github.com/a-type/lo-fi

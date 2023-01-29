@@ -14,7 +14,14 @@ modified: 2022-03-03T18:20:12.075Z
 
 - ## 
 
-- ## 
+- ## glad to see more talented devs embracing local first tools. But I'll warn you: data migrations! If you want your app to live long term, best to have a plan for change.
+- https://twitter.com/gaforres/status/1619354329798029312
+  - [Local-first data migrations](https://blog.gfor.rest/blog/lofi-migrations)
+- The freedom you get from having data live on-device is the best feeling. 
+- But the data is stuck on their phone, and the tab is closed. You want to convert all foos into bars for v2. How do you do it?
+  - 👉🏻 A common approach is to drop a version number on the data and try to rewrite the data on load if it's out of date. But your client may not have loaded the latest JS (service worker cache, offline) before it starts writing changes.
+- It's possible to receive changes to data that target the old shape from peers after you've already upgraded your local copy, even ones that are timestamped after your migration. This can corrupt your local data, and there's no canonical server copy to fall back on.
+- This problem can quickly expand to require checks and guards all over the codebase, ruining the free feeling of local first development. And at least for me, it would keep me up at night to wonder if a user will lose their data because I didn't think it through.
 
 - ## [rxdb: Offline First_202109](https://news.ycombinator.com/item?id=28690427)
 - I still haven't found the "holy grail architecture" for offline-first with backend sync where the backend isn't just a simple data store but also has business logic and interacts with external systems.

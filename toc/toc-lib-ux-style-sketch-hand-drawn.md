@@ -66,6 +66,12 @@ modified: 2021-01-13T19:30:59.508Z
 - https://github.com/fxaeberhard/handdrawn.css /201606
   - http://fxaeberhard.github.io/handdrawn.css/
   - Handdrawn.css lets you prototype your web site with a hand drawn look and feel.
+
+- https://github.com/rocicorp/replidraw
+  - https://replidraw.herokuapp.com/
+  - A tiny Figma-like multiplayer graphics editor.
+  - Built with Replicache, Next.js, Pusher, and Postgres.
+    - pusher: create and maintain complex messaging infrastructure
 # infinite-canvas-drawing-tools
 - https://infinitecanvas.tools/gallery/
   - 画板类产品列表

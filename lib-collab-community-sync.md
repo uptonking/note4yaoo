@@ -13,6 +13,9 @@ modified: 2022-11-29T20:41:25.566Z
   - database: couchdb, rxdb, 
   - framework: meteor-ddp, feathers-sync, gnu, realm/Atlas-Device-Sync
   - editing: yjs-protocols, automerge-sync
+
+- 考虑到客户端升级的问题
+  - 同步前一定要检查一个version，参考indexeddb upgrade
 # discuss
 - ## 
 

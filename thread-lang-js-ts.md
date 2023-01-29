@@ -10,12 +10,10 @@ modified: 2021-01-28T14:34:20.579Z
 # guide
 
 ```JS
-Symbol('a') === Symbol('a') //false
+Symbol('a') === Symbol('a'); //false
 ```
 
 # discuss
-- ## 
-
 - ## 
 
 - ## 

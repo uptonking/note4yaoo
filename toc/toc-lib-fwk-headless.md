@@ -37,13 +37,7 @@ modified: 2021-05-24T16:55:40.481Z
 - https://github.com/kontenbase/kontenbase /202209/ts/inactive
   - https://kontenbase.com/
   - no code backend API platform/Backend as a Service (BaaS)
-  - 依赖 centrifuge
-  - https://github.com/centrifugal/centrifugo /202212/go
-    - Scalable real-time messaging server in a language-agnostic way
-    - [Centrifugo vs RabitMQ · Issue #126 · centrifugal/centrifugo](https://github.com/centrifugal/centrifugo/issues/126)
-    - Centrifugo's goal is delivering real-time messages to end users of your application with at most once delivery model (fire and forget in general). 
-    - Centrifugo is just a PUB/SUB server designed for client applications, it's not suitable for usage on backend side - for example to coordinate microservices. 
-    - Rabbit can be used as queue, PUB/SUB broker etc.
+  - 依赖 centrifuge(类似 rabbitMQ)
 # headless-platfrom
 - https://github.com/TencentCloudBase/cloudbase-extension-cms
   - https://docs.cloudbase.net/cms/intro.html

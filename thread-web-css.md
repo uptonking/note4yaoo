@@ -24,6 +24,18 @@ modified: 2021-01-08T17:15:13.906Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Tailwind CSS，从入坑到退坑
+- https://twitter.com/chloerei/status/1617798501240557571
+- 你用的太浅了。你说的问题有解决方案
+  - 我提到了，解决方案不如我直接写 CSS。
+- https://twitter.com/laixintao/status/1618169728379531264
+  - 感觉 tailwind css 的定位有一些尴尬，我都写这么多 class 了，还不如写一个 class 然后自己写 style。
+  - 一般要么用全套 UI 框架，要么需要定制的话我就自己写 css style 了。tailwind css 需要我去理解它在中间加了啥，我加上这个 class 会生成哪一些 css
+
 - ## modern css can help us build better scrolling experiences. 
 - https://blog.mayank.co/better-scrolling-through-modern-css
   - [Better scrolling through modern CSS](https://blog.mayank.co/better-scrolling-through-modern-css)

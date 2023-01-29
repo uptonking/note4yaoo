@@ -27,7 +27,10 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
-- ## 
+- ## since i started doing an 'indie startup', reading things like @jlongster 's piece on actual and @panphora honesty around building things has been really cathartic 
+- https://twitter.com/tmcw/status/1619422310343266304
+  - and i hope that this helps others see one more way that things can turn out, or that everything can feel.
+  - [2 years On Placemark](https://macwright.com/2023/01/28/placemark.html)
 
 - ## 千万级dau 代表业务复杂度，人员规模，架构复杂度，到这个级别也得二线或三线中厂了
 - https://twitter.com/yanggege007/status/1610667422846951425

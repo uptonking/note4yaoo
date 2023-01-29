@@ -96,3 +96,10 @@ interface InterfaceWithFn {
 # expression
 - https://github.com/Dkendal/pattern-match.js
   - Provides pattern matching features typically found in functional languages like Elixir/Erlang, ML, F#, etc.
+# class
+- ## Drastically simplifying all of the construction and inference of route configs in @tan_stack Router using... Classes.
+- https://twitter.com/tannerlinsley/status/1617936251147161600
+  - In JS, this would be a very trivial amount, but most of that was strictly TS meta typings, so it's like... a big win.
+- Strangely, i'm not surprised. 
+  - I almost also used classes for "crazy" advanced inference in my project.
+  - I'm not sure if you used the same pattern, but i find using classes as a "workaround" for advanced inference (especially for nested objects) a bit strange.

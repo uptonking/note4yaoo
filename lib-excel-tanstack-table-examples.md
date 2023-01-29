@@ -20,6 +20,7 @@ modified: 2022-08-21T10:37:01.349Z
 # popular-v8
 - material-react-table /301Star/MIT/202212/ts
   - https://github.com/KevinVandy/material-react-table
+  - https://github.com/KevinVandy/mantine-react-table
   - https://www.material-react-table.com/
   - 依赖 mui5、emotion/styled、react-table.v8、react-virtual、match-sorter
   - A fully featured Material UI V5 implementation of Tanstack React Table V8

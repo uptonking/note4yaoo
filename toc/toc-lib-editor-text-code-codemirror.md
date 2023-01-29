@@ -66,6 +66,13 @@ modified: 2022-08-18T11:29:26.644Z
   - A plain-text javascript markdown editor library that renders formatting live and in-place without the need for a preview pane. 
   - Built on CodeMirror 6. Powers https://octo.app/
 
+## code-editor
+
+- https://github.com/acode/copenhagen /202110/js/inactive
+  - https://copenhagen.autocode.com/
+  - lightweight and hackable open source code editor for the web
+  - powering the code-editing experience on Autocode, and it's written entirely in vanilla JavaScript with only `highlight.js` and feather icons bundled as dependencies.
+
 ## apps
 
 - https://github.com/vizhub-core/vizhub

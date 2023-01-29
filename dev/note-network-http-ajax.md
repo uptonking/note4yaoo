@@ -36,6 +36,8 @@ modified: 2020-12-21T06:03:02.191Z
   - 操作符丰富
 - observable缺点
   - 需要引入第三方实现库，增加项目复杂度和体积
+
+- [Inside React Query_202212](https://tkdodo.eu/blog/inside-react-query)
 # xhr/ajax
 - 基于原生的XHR开发，XHR本身的架构不清晰，已经有了fetch的替代方案。
 - 本身是针对MVC的编程, 不符合现在前端MVVM的浪潮。

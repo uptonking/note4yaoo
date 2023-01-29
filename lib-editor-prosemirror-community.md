@@ -19,6 +19,30 @@ modified: 2021-06-12T02:41:33.389Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 时隔多日再次跑 #ProseMirror 的 Hello World，这次有了不一样的感受。简单总结下。
+- https://twitter.com/zQwQs/status/1619400529049960449
+- 首先编辑器就是个 View，它的功能
+  - 一是把 State（包括文档内容、光标和选区位置）以及 props里的Decoration（比如搜索结果高亮标记）给渲染出来。
+  - 二是接收其他地方（例如dom事件、插件、调用等）传来的对state的修改
+- State 包含了文档内容doc、选区光标selection。每次移动光标或者输入，都等于更新state然后导致view渲染。
+  - 遵循『不可变』理念，我们不直接改 state，而是通过 Transaction（就是总看到的 tr 对象）来改。它暴露了诸如插入文字，替换选区等变换函数，每一次变换都产生新tr，且里面包含最新的doc和选区
+  - 因此修改文档的过程，可以总结为创建新 tr（有多个步骤就一步步产生，但是只保留最后那个tr），再一次性提交最终修改结果到 view 里。
+- 回到 view 也就是整个编辑器本体，它渲染的样子不仅仅依赖于它的 state，还依赖于 props。
+  - 使用 props 可以实现很多能力。比如，要处理键盘事件，可传入 handleKeyDown。或者，做了个全文搜索功能，要高亮一些区域，则可通过 decorations 传入要高亮的区域和样式。
+- 在 #ProseMirror 中还有插件（Plugin）机制。插件可以为 view 设置 props，并且插件之间不会出现 prop 互相覆盖的问题，有完善的处理机制：
+  - 例如：多个插件对不同区域做高亮，都会生效；多个插件响应同一快捷键，则根据插件注册顺序执行，且先注册的可以阻止后面的执行。
+- 类似我们开发 React 组件，插件也可以有状态state、需要渲染view。这些都可在插件里定义
+  - 【初始化】插件的state.init、view的初始化函数
+  - 【更新】编辑器state即将因tr而更新
+  - →触发插件state.apply更新状态
+  - →更新传给编辑器view的props
+  - →触发插件view.update回调更新渲染
+  - 【销毁】view.destroy 回调
+
 - ## ProseMirror is now a TypeScript project_v20220520
 - https://discuss.prosemirror.net/t/prosemirror-is-now-a-typescript-project/4624
 - the code is now typed using strict TypeScript
