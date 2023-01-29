@@ -58,9 +58,17 @@ modified: 2021-10-29T15:02:28.882Z
 # ideas
 - ## 
 
-- ## is there a company building a meta-spreadsheet-api that abstracts around google sheets / notion / coda / airtable / etc? or a module that does that?
-- https://twitter.com/tmcw/status/1599893497850757121
-- Curious, what’s the end product/interface where you want to consume this?
+- ## 今天又发现一个神奇的网站，可以输入一个单词，自动找到包含这个词的YouTube视频，并自动定位到单词所在的进度条位置，同时展示字幕。
+- https://twitter.com/oran_ge/status/1618469008256413697?s=20&t=4XYmgW_2XQaTgAR4xAeyyA
+  - 还支持美音，英音，各种奇怪的其他口音…
+  - 单词例句神器，这玩意儿还有 obsidian 插件，可以把平时收集的单词都放到 ob 然后快速地查例句
+
+- ## Read Pilot analyzes online articles and generate Q&A cards for you.
+- https://twitter.com/Tisoga/status/1619202633700630528
+  - https://github.com/forrestchang/readpilot
+  - https://readpilot.vercel.app/
+- 行动力超强
+- 输入一篇nature文章的链接，输出内容完全不相关。。。
 
 - ## 抖音上很多只有几十观看的小直播间都在用虚拟主播，脸部表情和口型捕捉都非常精准，不知道是哪家公司提供的技术？
 - https://twitter.com/waylybaye/status/1590578620866899968

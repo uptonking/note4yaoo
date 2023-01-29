@@ -20,8 +20,8 @@ modified: 2022-11-27T15:36:13.148Z
   - Aggressively focused on performance
   - Permissive license (public domain)
 - cons
-  - The official SQLite build can only use OPFS or session/localStorage for persistence. Session & local storage aren't great options given they're capped at 5MB, really leaving us only with OPFS.
   - OPFS has coarse grained locking and doesn't behave well when many tabs interact with the same persisted database. This could be solved by using WebLocks the VFS implementation. Something yet to be explored.
+  - The official SQLite build can only use OPFS or session/localStorage for persistence. Session & local storage aren't great options given they're capped at 5MB, really leaving us only with OPFS.
 
 - An unofficial WASM port called wa-sqlite
 - pros

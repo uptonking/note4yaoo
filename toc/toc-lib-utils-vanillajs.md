@@ -10,7 +10,10 @@ modified: 2021-03-01T10:54:24.828Z
 # guide
 
 # popular
-
+- scheduler
+  - https://github.com/facebook/react/tree/main/packages/scheduler
+  - a package for cooperative scheduling in a browser environment. 
+  - It is currently used internally by React, but we plan to make it more generic.
 # dev-testing
 - https://github.com/paularmstrong/normalizr
   - https://github.com/paularmstrong/normalizr/blob/master/docs/README.md

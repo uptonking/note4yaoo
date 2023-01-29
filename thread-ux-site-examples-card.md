@@ -19,6 +19,7 @@ modified: 2022-11-19T18:58:27.409Z
   - 黑色圆角线框风格的这种
 - https://github.com/calcom/cal.com
   - https://github.com/calcom/ui
+  - open-source Calendly alternative.
 
 - ## 为开发人员分享快速参考备忘清单(速查表)
 - https://jaywcjlove.github.io/reference

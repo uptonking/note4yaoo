@@ -7,8 +7,9 @@ modified: 2022-08-21T10:15:06.225Z
 
 # lib-excel-app-list-grid-community-stars
 
-# discuss-stars
+# guide
 
+# discuss-stars
 - ## what is the best way to implement in a @reactjs app a todo list with a huge number of items more than 10k
 - https://twitter.com/sseraphini/status/1409841471491031042
   - so that when 1 todo is marked as done does not rerender the whole list of todos?
@@ -19,3 +20,7 @@ modified: 2022-08-21T10:15:06.225Z
 - React-window is a successor of react-virtualized.
 - I truly advise against Recoil. I've used it in a project for testing, it is really, really immature and it has a pretty high number of bugs
 - I'd say virtualize the list and `React.memo` the list items should be enough.
+
+- ## is there a company building a meta-spreadsheet-api that abstracts around google sheets / notion / coda / airtable / etc? or a module that does that?
+- https://twitter.com/tmcw/status/1599893497850757121
+- Curious, what’s the end product/interface where you want to consume this?

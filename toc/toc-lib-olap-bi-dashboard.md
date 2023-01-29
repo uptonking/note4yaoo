@@ -79,8 +79,21 @@ modified: 2020-12-09T09:30:24.694Z
   - Build a polished business intelligence system using only SQL and markdown.
 
 - https://github.com/ricklamers/gridstudio
-  -  a web-based spreadsheet application with full integration of the Python programming language.
+  - a web-based spreadsheet application with full integration of the Python programming language.
   - 依赖Flask、golang、plotly、jquery
+
+- panel /2.5kStar/BSD/202301/python
+  - https://github.com/holoviz/panel
+  - https://panel.holoviz.org/
+  - the most flexible data app framework for Python
+  - A high-level app and dashboarding solution for Python
+  - Panel is a member of the ambitious HoloViz dataviz ecosystem and has first class support for the other members like hvPlot (simple .hvplot plotting api), HoloViews (powerful plotting api), and Datashader (big data viz).
+  - Panel is built on top of Param. Param enables you to annotate your code with parameter ranges
+  - You can share your data and models as
+    - a web application running on the Tornado (default), Flask, Django or Fast API web server.
+    - a stand alone client side application powered by Pyodide or PyScript via panel convert.
+    - an interactive Jupyter notebook component.
+    - a static .html web page, a .gif video, a .png image and more.
 
 - tabix /1.1kStar/apache2/202205/ts
   - https://github.com/tabixio/tabix
@@ -94,7 +107,7 @@ modified: 2020-12-09T09:30:24.694Z
   - https://github.com/Countly/countly-server
   - built with mongodb, express
   - Countly is a product analytics solution that helps teams track product performance and customer journey and behavior across mobile, web, and desktop applications. 
-  - Countly relies on a wide diversity of SDKs for deployment 
+  - Countly relies on a wide diversity of SDKs for deployment
 - grafana /Apache2/36.5kStar/202008/go
   - https://github.com/grafana/grafana
   - https://grafana.com/

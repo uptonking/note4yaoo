@@ -26,7 +26,12 @@ modified: 2021-01-08T17:15:13.906Z
 
 - ## 
 
-- ## 
+- ##  `min-width: 0` with flexbox fixes my issues all the time and I still have no idea what's going on.
+- https://twitter.com/TarikBoschi/status/1619446020336939009
+- I think it's because you're using flex-grow: 1 and forgetting to set flex-basis which is why in general it's recommended to use the flex shorthand
+- When an element is a flex item, the value of min-width doesn’t compute to zero. The minimum size of a flex item is equal to the size of its contents.
+- I’ve had to do this with grid when using glide
+- The good old `zoom: 1` everywhere times
 
 - ## Tailwind CSS，从入坑到退坑
 - https://twitter.com/chloerei/status/1617798501240557571

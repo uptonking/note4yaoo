@@ -36,6 +36,19 @@ modified: 2020-07-14T11:03:53.196Z
   - MobX is a battle tested library that makes state management simple and scalable by transparently applying functional reactive programming (TFRP).
   - Mobx implements TFRP in a glitch-free, synchronous, predictable and efficient manner.
   - mobx isn't pubsub. It doesn't do change detection
+
+- nanostores /2.5kStar/MIT/202301/js
+  - https://github.com/nanostores/nanostores
+  - state manager for React/RN/Vue/Svelte with many atomic tree-shakable stores
+  - With small atomic and derived stores, you do not need to call the selector function
+  - 提供了扩展，persist to localStorage, router, i18n, logux-client-crdt，使用最佳实践
+  - 支持ssr
+  - [Astro: Sharing state using nanostores](https://docs.astro.build/en/core-concepts/sharing-state/#why-nano-stores)
+  - We released Nano Stores 0.5, a new version of tiny (200-900 bytes) state manager for React/Vue/Svelte, designed to:
+    - Move logic from components to stores and separate application logic and UI
+    - Support tree-shaking
+    - https://twitter.com/sitnikcode/status/1452629669933731849
+
 - xstate /MIT/12.2kStar/202007/状态机
   - https://github.com/davidkpiano/xstate
   - https://xstate.js.org/docs/
@@ -56,12 +69,6 @@ modified: 2020-07-14T11:03:53.196Z
 - storeon /1.5kStar/MIT/202009/js
   - https://github.com/storeon/storeon
   - A tiny event-based Redux-like state manager for React, Vue, Angular, and Svelte.
-- nanostores /1.2kStar/MIT/202201/js
-  - https://github.com/nanostores/nanostores
-  - A tiny state manager for React, React Native, Preact, Vue, Svelte, and vanilla JS.
-  - We released Nano Stores 0.5, a new version of tiny (200-900 bytes) state manager for React/Vue/Svelte, designed to:
-    - Move logic from components to stores and separate application logic and UI
-    - Support tree-shaking
 - reatom /504Star/MIT/202006/ts
   - https://github.com/artalar/reatom
   - Reatom is a blend of the one-way data flow (by flux and global store) and decentralized atoms for deterministic and flexible description of state and its changes

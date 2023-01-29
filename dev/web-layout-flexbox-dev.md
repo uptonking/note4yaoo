@@ -31,7 +31,7 @@ modified: 2020-12-21T07:46:20.408Z
 
 - In the first example `auto` margin applies only to the flex item and centers that one flex item within the container.
 - In the second example, you are centering items from the container level. This code will center all items.
-- Also, keep in mind, if you use both methods at the same time `margin: auto` should prevail.
+- Also, keep in mind, if you use both methods at the same time `margin: auto` should prevail(战胜).
   - From CSS Flexbox spec 8.1:
   - Prior to alignment via `justify-content` and `align-self` , any positive free space is distributed to auto margins in that dimension
   - If free space is distributed to auto margins, the alignment properties will have no effect in that dimension because the margins will have stolen all the free space left over after flexing.

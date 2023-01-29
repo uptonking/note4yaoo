@@ -10,6 +10,15 @@ modified: 2021-05-13T03:13:52.403Z
 # guide
 
 # discuss-stars
+- ## state machines should be responsible for handling events and orchestrating states + effects, and should not try to hold *all* app state/data.
+- https://twitter.com/DavidKPiano/status/1618660749076992001
+  - Frameworks make it too easy to bake everything in, but your code will be more maintainable & testable if you keep view logic & app logic separate.
+- Components should really only do three things:
+  - 1. Read state from some source
+  - 2. Render a view based on state
+  - 3. Send commands/events/etc.
+  - If it's not directly related to the view, keep that logic outside of the component.
+
 - ## I was spending a lot of cycles trying to use statecharts for my @convey_it selection tool states/event-handling, but today decided to parachute out and back to a messier imperative approach. 
 - https://twitter.com/seflless/status/1530576508124811264
   - Was using XState and the @statelyai editor for it, which is great. May revisit
@@ -24,8 +33,6 @@ modified: 2021-05-13T03:13:52.403Z
 - why didn't state charts work for your scenario?
   - There are a lot of states in a selection tool, modifiers, internal state, events to handle, & interrupt support. Selection tools have scale, creation, translating, rotating, modifier keys, etc. Coming up with names is annoying/fragile as you find edge cases and have to refactor
 # discuss
-- ## 
-
 - ## 
 
 - ## 

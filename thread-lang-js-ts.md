@@ -18,7 +18,11 @@ Symbol('a') === Symbol('a'); //false
 
 - ## 
 
-- ## 
+- ##  `Object.setPrototypeOf` and `util.inherits` are terrible for performance
+- https://twitter.com/jarredsumner/status/1619342661701496833
+- for me it’s Object.create
+- is class inheritance more performant?
+  - Class inheritance is just setting the prototype, i assume the perf issue here is changing the prototype halfway through an object's lifecycle (like setting __proto__!), because it means the JIT has to throw away its work and reoptimise for a completely new set of methods
 
 - ## [A Better Way to Work With Number and Date Inputs in JavaScript](https://www.builder.io/blog/numbers-and-dates)
 
