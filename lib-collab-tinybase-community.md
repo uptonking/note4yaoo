@@ -13,6 +13,9 @@ modified: 2023-01-12T15:52:42.418Z
   - tinybase直接diff两颗hlc-tree，能准确计算出最小变更树
     - Adding Merkel hashing to the tree would be slower but would allow the negotiation to bail out (or identify tree diffs) much sooner.
   - actual-merkle-tree虽然能快速计算上次变更节点，❓(待确认)但之后从上次变更节点计算需要发送给本地的变更树时，可能包含已经执行过的op，传输不必要的数据
+
+- tinysync的示例存在一定问题
+  - 在同步的同时产生的新op因为listening为0而被忽略
 # discuss
 - ## 
 

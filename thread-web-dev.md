@@ -35,6 +35,18 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## TIL FormData and query string both have only string value types.
+- https://twitter.com/oleg008/status/1619808119349202945
+  - Having typed data using these is fundamentally impossible without using additional encoding on top.
+  - E.g. to send a boolean or a number over query you basically would use a JSON string.
+- TRPC suggests to JSON.stringify that stuff and put it into query or body, which is ugly, but its not TRPC's fault.
+- This is the motivation behind a fair amount of @tan_stack Router
+- But it makes sense. FormData and query are meant to pass data from client to server, and in HTTP only text can be transferred. Everything else, including JSON, is an abstraction on top of plain text.
+
 - ## TIL that Google Maps implements a scheduler in the browser main thread, similar to React!
 - https://twitter.com/geoffreylitt/status/1615761940055212032
 - I think any sufficiently large graphics app has a scheduler of some form, whether ad-hoc or not. You implement a scheduler the moment you abstract around `requestAnimationFrame`

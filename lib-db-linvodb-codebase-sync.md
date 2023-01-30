@@ -11,19 +11,17 @@ modified: 2023-01-16T21:14:55.049Z
 
 - 同步功能需求
   - 支持每个用户拥有多个设备
-
-- 考虑到客户端升级的问题
-  - 同步前一定要检查一个version，参考indexeddb upgrade
+  - 考虑到客户端升级的问题，同步前一定要检查一个version，参考indexeddb upgrade
 
 - hlc的使用
   - tinybase的hlc无依赖，方便测试
   - tinysync去掉对tinybase的依赖，参考crdt-for-mortals
 # linvodb数据库同步的技术方案-v1
-- 同步示例采用中心服务器的方式实现，但同时支持p2p，参考crdt-for-mortals
+- 同步示例采用中心服务器的方式实现，参考crdt-for-mortals，便于以后支持p2p同步
 
 - 同步有2种方式
-  - 每次客户端对db的crud都触发同步，类似crdt-for-mortals/linvo-sync
-  - 定期同步，类似setInterval，便于实现伪实时效果
+  - 每次客户端对db的crud都触发同步，类似crdt-for-mortals/linvo-sync，缺点是未实现服务端推送
+  - 定期同步，类似setInterval轮询，便于实现伪实时效果
 
 - 同步逻辑分两阶段
   - 先请求远程元数据，类似文件列表、merkle-trie
@@ -34,10 +32,10 @@ modified: 2023-01-16T21:14:55.049Z
   - 通过isDirty/isListening在同步完成前不会再次触发同步
 
 - 同步使用插件架构，在数据库的crud中注入
-  - 参考idbsidesync/linvo
+  - 参考idbsidesync/linvo-sync
 
 - 同步功能以接口约束，方便扩展
-  - op数据同步的服务端实现不一定要是linvodb，支持sqlite
+  - op数据同步的服务端实现不一定使用linvodb，支持sqlite
   - 两个linvodb相互同步时，提供便捷工具
 
 - @deprecated

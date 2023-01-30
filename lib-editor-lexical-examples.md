@@ -31,4 +31,8 @@ modified: 2022-05-15T18:37:27.994Z
 # lexical-examples
 - https://github.com/konstantinmuenster/lexical-rich-text-react-demo  
   - [How To Build A Text Editor With Lexical and React](https://konstantin.digital/blog/how-to-build-a-text-editor-with-lexical-and-react)
+
+- https://github.com/calcom/cal.com
+  - https://github.com/calcom/ui
+  - open-source Calendly alternative.
 # more-lexical
