@@ -41,10 +41,10 @@ modified: 2022-08-13T06:59:54.741Z
   - Ship is a toolkit for makers to ship better products faster
   - Full-stack boilerplate tested on production projects 
 
-- https://github.com/adarshaacharya/MentorLabs
+- https://github.com/adarshaacharya/MentorLabs /ts
+  - MentorLabs is a a WebRTC based video conferencing app.
   - 前端依赖 redux/toolkit
   - 后端依赖 express、typeorm
-  - 前后端都是ts类型
 # react-starter
 - https://github.com/habx/lib-ts-template
   - Template for client library in typescript

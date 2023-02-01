@@ -111,6 +111,9 @@ This is how we might do it with with "Realtime as an authority" approach (and is
 - 以 Op-based CRDT 的思路设计 Last-write-wins Set(LWWSet)
 # [数据库系统小报：CRDT初探](https://zhuanlan.zhihu.com/p/510797688)
 
+# [CRDTs go brrr](https://josephg.com/blog/crdts-go-brrr/)
+- Automerge (and Yjs and other CRDTs) think of a shared document as a list of characters. 
+  - Each character in the document gets a unique ID, and whenever you insert into the document, you name what you're inserting after.
 # [I was wrong. CRDTs are the future_202009](https://josephg.com/blog/crdts-are-the-future/)
 - I saw Martin Kleppmann’s talk a few weeks ago about his approach to realtime editing with CRDTs, and I felt a deep sense of despair(绝望). 
   - Maybe all the work I’ve been doing for the past decade won’t be part of the future after all, because Martin’s work will supersede it. Its really good.

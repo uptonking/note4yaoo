@@ -10,10 +10,35 @@ modified: 2023-01-17T19:14:47.611Z
 # guide
 
 # collab-platform
+- growi /1.1kStar/MIT/202301/ts/remark
+  - https://github.com/weseek/growi
+  - https://docs.growi.org/en/guide/
+  - https://demo.growi.org/
+  - Team collaboration software using markdown
+  - Simultaneously edit with multiple people by HackMD(CodiMD) integration
+  - Create hierarchical pages with markdown
+  - Slack/Mattermost, IFTTT Integration
+  - 各种集成
+
+- https://github.com/SerenityNotes/serenity-notes-clients
+  - Serenity Notes iOS/Android/macOS
+  - 不支持web
+  - 依赖prosemirror
+  - [Serenity Notes](https://www.serenity.re/en/notes/technical-documentation)
+    - end-to-end encryption must using the Olm & Megolm cryptographic ratchets
+- https://github.com/SerenityNotes/Serenity
+  - End-to-end encrypted collaborative notes
+- https://github.com/SerenityNotes/serenity-notes-backend
+  - End-to-end encrypted collaborative notes app
+- https://github.com/SerenityNotes/naisho
+  - architecture to relay end-to-end encrypted CRDTs over a central service.
+  - It was created out of the need to have an end-to-end encrypted protocol to allow data synchronization/fetching incl.
+
 - CoCreateJS /19Star/MIT/202212/js
   - https://github.com/CoCreate-app/CoCreateJS
   - https://cocreate.app/
   - A collaborative low code headless CMS and Javascript framework for building collaborative no code platforms, apps and UI
+  - A dependency free, vanilla javascript Realtime CRUD and Collaboration Framework. 
   - https://github.com/CoCreate-app/CoCreate-crud-client /202212/js
   - An useful CRUD api operate Create, read, update, delete with built in database. 
   - Can be used as a firebase alternative
@@ -23,18 +48,23 @@ modified: 2023-01-17T19:14:47.611Z
     - A No Code Admin, CRM, CMS, Website Builder platform. 
     - Powered by CoCreateJS to provide Realtime and Collaborative CRUD functionality.
 
-- https://github.com/xwiki-labs/cryptpad
+- https://github.com/xwiki-labs/cryptpad /202301/js
   - CryptPad is a collaboration suite that is end-to-end-encrypted and open-source. 
   - It is built to enable collaboration, synchronizing changes to documents in real time. 
   - Because all data is encrypted, the service and its administrators have no way of seeing the content being edited and stored.
   - https://github.com/xwiki-labs/chainpad-listmap
     - collaborative lists and maps in the browser
 
-- https://github.com/Zeekg-zk/Collaborative-Platform
+- https://github.com/Zeekg-zk/Collaborative-Platform /202210/ts/inactive
   - 团队协作与管理平台，具有在线多人聊天、消息实时推送、协同编辑等功能
   - 前端使用 NextJS 12.2.0，后端使用 NestJS 8.0
   - 后台管理界面使用 Ant Design Pro
   - 支持多人协作文档（使用 Quill 富文本编辑器）
+
+- https://github.com/adarshaacharya/MentorLabs /ts
+  - MentorLabs is a a WebRTC based video conferencing app.
+  - 前端依赖 redux/toolkit
+  - 后端依赖 express、typeorm
 
 - https://github.com/IdrisIsra/phantom-notepad-T3 /202210/ts
   - A collaborative notepad using T3 stack with websockets and Redis
@@ -45,38 +75,13 @@ modified: 2023-01-17T19:14:47.611Z
   - Unleash is the open source feature toggle service.
   - Unleash increases efficiency and gives teams full control of how and when they enable new functionality for end users.
 
-- boardsite /24Star/AGPLv3/202210/ts
-  - https://github.com/boardsite-io/boardsite
-  - https://boardsite.io/
-  - a productivity app for taking notes, annotating documents and collaborating with friends on any device with a browser.
-
 - https://github.com/hedgedoc/hedgedoc
   - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.
-
-- https://github.com/weseek/growi
-  - https://demo.growi.org/
-  - Open-source alternative to Microsoft Teams
-  - Team collaboration software using markdown
-  - Simultaneously edit with multiple people by HackMD(CodiMD) integration
-  - Create hierarchical pages with markdown
-  - Slack/Mattermost, IFTTT Integration
-
-- https://github.com/linagora/Twake
-  - 后端php
-  - Twake is a secure open source collaboration platform to improve organizational productivity.
-  - Team chat
-  - File Storage
-  - Team Calendar
-  - Task Management
-  - 前端依赖minimongo
 
 - https://github.com/plankanban/planka
   - The realtime kanban board for workgroups built with React and Redux.
   - React, Redux, Redux-Saga, Redux-ORM, Semantic UI React, react-beautiful-dnd
   - Sails.js, Knex.js, PostgreSQL
-
-- https://github.com/SerenityNotes/serenity-notes-backend
-  - End-to-end encrypted collaborative notes app
 
 - https://github.com/MicroHealthLLC/mSuite
   - Real Time Collaboration Made Simple for concept maps, kanban, documents and spreadsheets.
@@ -176,6 +181,15 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/earthstar-project/earthstar
   - Earthstar is a specification and Javascript library for building online tools you can truly call your own.
 # more
+- https://github.com/linagora/Twake
+  - 后端php
+  - Twake is a secure open source collaboration platform to improve organizational productivity.
+  - Team chat
+  - File Storage
+  - Team Calendar
+  - Task Management
+  - 前端依赖minimongo
+
 - https://github.com/digitallyinduced/thin-backend /202211/js/ts/inactive
   - a Blazing Fast, Universal Web App Backend for Making Realtime Single Page Apps
   - Thin Backend has a built-in GUI-based schema designer, helps to quickly build the DDL statements for your database schema

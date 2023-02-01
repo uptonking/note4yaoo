@@ -27,26 +27,26 @@ modified: 2020-12-09T09:30:24.694Z
   - Business intelligence, data exploration and viz web application for Druid
   - https://github.com/implydata/pivot
 
-- https://github.com/drinkjs/mojito
-  - http://mojito.drinkjs.com/
-  - Mojito是一个可视化数据分析、数据展示和轻业务开发的平台
-  - 支持使用React/Vue开发上传自定义组件
-  - 100%开源，支持私有化部署
-  - 前端依赖 antd4、animejs、mobx、re-resizable、react-dnd、react-moveable
-  - 后端依赖 fastify、mysql、mongodb、typeorm、next10
-
-- https://github.com/abilian/olapy
-  - an experimental OLAP engine based on Pandas
-  - https://github.com/abilian/olapy-web
-    -  web-based tool for exploring and analyzing OLAP databases served by the OlaPy.
-
-- lightdash /1.3kStar/MIT/202208/ts
+- lightdash /2kStar/MIT/202301/ts
   - https://github.com/lightdash/lightdash
   - https://lightdash.com/
   - BI for teams that move fast.
   - An open source alternative to Looker built using dbt. Made for analysts
   - 后端依赖 express、pg、knex、passport
   - 前端依赖 blueprintjs、echarts、jspdf、react-ace、react-beautiful-dnd
+
+- https://github.com/drinkjs/mojito /202205/ts/inactive
+  - http://mojito.drinkjs.com/
+  - Mojito是一个可视化数据分析、数据展示和轻业务开发的平台
+  - 支持使用React/Vue开发上传自定义组件
+  - 100%开源，支持私有化部署
+  - 前端依赖 antd4、animejs、mobx、re-resizable、react-dnd、react-moveable、next10
+  - 后端依赖 fastify、mysql、mongodb、typeorm
+
+- https://github.com/abilian/olapy
+  - an experimental OLAP engine based on Pandas
+  - https://github.com/abilian/olapy-web
+    -  web-based tool for exploring and analyzing OLAP databases served by the OlaPy.
 
 - spotrix /11Star/apache2/202211/ts/flask
   - https://github.com/Spotrix/spotrix

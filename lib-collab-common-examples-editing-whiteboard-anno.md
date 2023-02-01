@@ -8,7 +8,7 @@ modified: 2022-11-07T17:36:22.236Z
 # lib-collab-common-examples-editing-whiteboard-anno
 
 # guide
-
+- 实现协作要考虑到切换冲突处理算法，如slate-yjs/automerge/sharedb
 # whiteboard-blogs
 - [Excalidraw: Building Excalidraw's P2P Collaboration Feature_202003](https://blog.excalidraw.com/building-excalidraw-p2p-collaboration-feature/)
   - 协作编辑同一个shape时，协作算法并未特殊处理，可能会有数据丢失，但versionNonce保证了最终一致
@@ -52,7 +52,11 @@ modified: 2022-11-07T17:36:22.236Z
 - https://github.com/toger5/TheBoard
   - collaborative Whiteboard powered by the [matrix] protocol and infrastructure.
 
-- https://github.com/muaz-khan/Canvas-Designer
+- https://github.com/kriziu/collabio
+  - Real-time whiteboard made with Next. JS and Socket. IO
+  - 依赖recoil、nextjs、express、socket.io
+
+- https://github.com/muaz-khan/Canvas-Designer /202010/inactive
   - Collaborative, extendable, JavaScript Canvas2D drawing tool, supports dozens of builtin tools, as well as generates JavaScript code for 2D animations.
 
 - https://github.com/nyxtom/drawing-webrtc
@@ -98,6 +102,12 @@ modified: 2022-11-07T17:36:22.236Z
 
 - https://github.com/ncbi-nlp/TeamTat
   - Text annotation tool for team collaboration
+
+- boardsite /24Star/AGPLv3/202210/ts/画板
+  - https://github.com/boardsite-io/boardsite
+  - https://boardsite.io/
+  - a productivity app for taking notes, annotating documents and collaborating with friends on any device with a browser.
+
 # collab-editing
 - https://github.com/convergencelabs/html-text-collab-ext
   - A set of utilities that enhances a normal HTML `<textarea>` element with collaborative editing capabilities. 
@@ -137,7 +147,7 @@ modified: 2022-11-07T17:36:22.236Z
   - 依赖codemirror5
   - WebSocket client for react and Node
 
-- https://github.com/we-miks/collaborative-editor
+- https://github.com/we-miks/collaborative-editor /202108/js/inactive
   - A collaborative editor that supports authorship display, image uploading placeholder and CJK characters composition based on Quill and ShareDB.
 
 - https://github.com/MrFoxPro/bloki

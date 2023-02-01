@@ -7,8 +7,9 @@ modified: 2021-04-23T17:10:52.920Z
 
 # web-events
 
-# faq
+# guide
 
+# faq
 - click vs touch
 
 - ## [onKeyPress Vs. onKeyUp and onKeyDown](https://stackoverflow.com/questions/3396754)
@@ -125,20 +126,20 @@ modified: 2021-04-23T17:10:52.920Z
   - dispatchEvent() is the last step of the create-init-dispatch process, which is used for dispatching events into the implementation's event model. The event can be created using Event constructor.
 # Web-API-GlobalEventHandlers
 - `onchange`
-    - ref
-      - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
-    - change events fire when user commits a value change to a form control
-    - change event is fired for `<input>` , `<select>` , and `<textarea>` element when an alteration to the element's value is committed by user 
-    - Unlike the input event, the change event is not necessarily fired for each alteration to an element's value
-    - change event fires at a different moment Depending on the kind of element
-    - For some elements, including `<input type="text">` , the change event doesn't fire until the control loses focus. 
-      - onChange事件只有在文本框失去焦点的时候才能触发
-    - onBlur event is fired when you have moved away from an object without necessarily having changed its value.
-    - onChange event is only called when you have changed the value of the field and it loses focus.
-    - React组件主要使用onChange合成事件，作为文本输入框(input)或文字输入区(textarea)触发文字输入时的事件，这个事件用起来很直觉，理应当是如此
-    - onChange在浏览器上，只要在这个文本输入框上，有任何的键盘动作它都会触发，也就是如果你是使用了中文、日文、韩文输入法(IME)，不论是哪一种，拼音的、笔划的还是其他的，只要有按下一个键盘的动作，就会触发一次浏览器上这个元素的change事件   
-    - React attaches listeners for Component.onChange to the DOM element.oninput event. 
-      - https://github.com/facebook/react/issues/3964
+  - ref
+    - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
+  - change events fire when user commits a value change to a form control
+  - change event is fired for `<input>` ,  `<select>` , and `<textarea>` element when an alteration to the element's value is committed by user 
+  - Unlike the input event, the change event is not necessarily fired for each alteration to an element's value
+  - change event fires at a different moment Depending on the kind of element
+  - For some elements, including `<input type="text">` , the change event doesn't fire until the control loses focus. 
+    - onChange事件只有在文本框失去焦点的时候才能触发
+  - onBlur event is fired when you have moved away from an object without necessarily having changed its value.
+  - onChange event is only called when you have changed the value of the field and it loses focus.
+  - React组件主要使用onChange合成事件，作为文本输入框(input)或文字输入区(textarea)触发文字输入时的事件，这个事件用起来很直觉，理应当是如此
+  - onChange在浏览器上，只要在这个文本输入框上，有任何的键盘动作它都会触发，也就是如果你是使用了中文、日文、韩文输入法(IME)，不论是哪一种，拼音的、笔划的还是其他的，只要有按下一个键盘的动作，就会触发一次浏览器上这个元素的change事件   
+  - React attaches listeners for Component.onChange to the DOM element.oninput event. 
+    - https://github.com/facebook/react/issues/3964
 - `oninput` 事件
   - input event fires when the value of an `<input>` ,  `<select>` , or `<textarea>` element has been changed
   - oninput event occurs when the text content of an element is changed through the user interface.
@@ -443,6 +444,16 @@ function getOffsetX(event) {
   - e.pageX：鼠标相对于文档X方向的距离( ie678 不支持)
   - e.pageY：鼠标相对于文档X方向的距离( ie678 不支持)
   - e.screenX：鼠标距离屏幕X方向的距离
-  - e.screenY：鼠标距离屏幕Y方向的距离 
+  - e.screenY：鼠标距离屏幕Y方向的距离
+# hitTesting 点击测试
+- [Flutter事件机制](https://book.flutterchina.club/chapter8/hittest.html)
+  - Flutter 事件处理流程主要分两步，为了聚焦核心流程，我们以用户触摸事件为例来说明
+  - 命中测试：当手指按下时，触发 PointerDownEvent 事件，按照深度优先遍历当前渲染（render object）树，对每一个渲染对象进行“命中测试”（hit test），如果命中测试通过，则该渲染对象会被添加到一个 HitTestResult 列表当中。
+  - 事件分发：命中测试完毕后，会遍历 HitTestResult 列表，调用每一个渲染对象的事件处理方法（handleEvent）来处理 PointerDownEvent 事件，该过程称为“事件分发”（event dispatch）。随后当手指移动时，便会分发 PointerMoveEvent 事件。
+  - 事件清理：当手指抬（ PointerUpEvent ）起或事件取消时（PointerCancelEvent），会先对相应的事件进行分发，分发完毕后会清空 HitTestResult 列表。
+  - 命中测试是在 PointerDownEvent 事件触发时进行的，一个完成的事件流是 down > move > up (cancle)。
+  - 如果父子组件都监听了同一个事件，则子组件会比父组件先响应事件。这是因为命中测试过程是按照深度优先规则遍历的，所以子渲染对象会比父渲染对象先加入 HitTestResult 列表，又因为在事件分发时是从前到后遍历 HitTestResult 列表的，所以子组件比父组件会更先被调用 handleEvent 。
+
+- [命中测试 | 功能例子 | SpreadJS JavaScript 学习指南](https://demo.grapecity.com.cn/spreadjs/SpreadJSTutorial/features/workbook/hit-testing/purejs)
 # more-layout-position
 - https://caniuse.com/mdn-api_window_visualviewport

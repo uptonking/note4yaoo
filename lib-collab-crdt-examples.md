@@ -73,6 +73,19 @@ modified: 2022-04-05T10:08:25.947Z
     - 三路归并
   - https://github.com/marcello3d/collabodux
     - library for realtime collaboration on JSON structures. It is a client-oriented, declarative-functional approach to shared application state.
+
+- https://github.com/supabase/pg_crdt /rust
+  - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.
+  - It supports Yjs/Yrs and Automerge.
+  - Our goal was to evaluate if we could leverage a Postgres-backed CRDT and Supabase's existing Realtime API for change-data-capture to enable development of collaborative apps on the Supabase platform.
+  - pg_crdt extension is a proof-of-concept that wraps rust's yrs and automerge libraries using the pgx framework to add a Postgres native CRDT, crdt.ydoc.
+
+- https://github.com/composablesys/collabs /ts
+  - Collabs is a collections library for collaborative data structures. 
+  - These are data structures that look like Set, Map, Array, etc., except they are synchronized between multiple users
+  - https://twitter.com/matthewweidner3/status/1444475869121110017
+    - Collabs is directly inspired by Automerge and Yjs, and uses similar techniques (network-agnostic CRDTs).  
+    - The main difference is its API: we try to mimic a non-replicated collections library, with flexibility, composition tools, and strong typing.
 # crdt-rewrite
 - https://github.com/josephg/crdt-examples
   - CRDT examples from a DWEB talk

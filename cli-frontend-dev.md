@@ -21,6 +21,8 @@ modified: 2021-01-01T22:14:19.469Z
 ```JS
 // 随机整数，在区间[0, N]之间，包含两端
 Math.round(Math.random() * 20)
+// [1,N]
+Math.round(Math.random() * (20-1))+1
 
 // 创建指定范围长度的数组
 

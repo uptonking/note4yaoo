@@ -27,10 +27,13 @@ modified: 2022-04-05T10:11:40.379Z
   - Peritext does not yet have support for block types.
 - So, although the most common use of Yjs is for collaborative rich text editing, it can be used for many other things such as 2D/3D drawing or even gaming.
 
-- ## Main takeaways from toying with both Yjs and Automerge
+- ## Main takeaways from toying with both Yjs and Automerge_202112
 - https://news.ycombinator.com/item?id=29507948
 
 1. Extremely difficult to build backend in other programming languages than Nodejs
+  - You will cry looking at source code C-binding, FFI, etc, https://github.com/yjs/y-crdt/blob/main/yffi/src/lib.rs
+  - you weren't kidding - the rust port is total trash.
+  - The internals are still very hot and in a state of flux, as we 1st decided to go with porting the Yjs, then leave cleaning and optimizations for 2nd step after we have something, that's compatible with existing Yjs behavior.
 2. Both communities are great.
 3. Watch out implementations of underline libraries. Trace lib0 libraries usage and internals in Yjs for example;JavaScript engines use UTF-16 encoding. Golang (my main backend language) is using UTF-8 ... reimplementing Yjs code in Golang with algorithms and optimization and futher scaling might become impossible for small startups.
 4. Rich editing similar to Google Doc is very very complicated subject with lot of landmines

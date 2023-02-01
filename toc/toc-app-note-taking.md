@@ -85,12 +85,26 @@ modified: 2020-10-22T10:03:50.526Z
   - https://boostnote.io/
   - a document driven project management tool that maximizes remote DevOps team velocity.
 
+- https://github.com/SerenityNotes/serenity-notes-clients
+  - Serenity Notes iOS/Android/macOS
+  - 不支持web
+  - 依赖prosemirror
+  - [Serenity Notes](https://www.serenity.re/en/notes/technical-documentation)
+    - end-to-end encryption must using the Olm & Megolm cryptographic ratchets
+- https://github.com/SerenityNotes/Serenity
+  - End-to-end encrypted collaborative notes
+- https://github.com/SerenityNotes/serenity-notes-backend
+  - End-to-end encrypted collaborative notes app
+- https://github.com/SerenityNotes/naisho
+  - architecture to relay end-to-end encrypted CRDTs over a central service.
+  - It was created out of the need to have an end-to-end encrypted protocol to allow data synchronization/fetching incl.
+
 - vnote /7.5kStar/MIT/202009/cpp
   - https://github.com/vnotex/vnote
   - 依赖Qt5, turndown, markdown-it
   - a note-taking application that knows programmers and Markdown better.
 
-- takenote /2.8kStar/MIT/202108/ts/数据可选local或github
+- takenote /2.8kStar/MIT/202108/ts/inactive/数据可选local或github
   - https://github.com/taniarascia/takenote
   - https://takenote.dev/app
   - 依赖react-beautiful-dnd、react-router、@reduxjs/toolkit、redux-saga、react-markdown、axios、codemirror、express、jszip
@@ -259,8 +273,8 @@ modified: 2020-10-22T10:03:50.526Z
   - markdown notes reader & editor Progressive Web Application that works offline and supports syncing with arbitrary git repository right inside your browser
   - https://github.com/0xGG/vscode-crossnote
 
-- https://github.com/hackmdio/codimd
-  - /8kStar/AGPLv3/202208/js/inactive
+- codimd /8kStar/AGPLv3/202208/js/inactive
+  - https://github.com/hackmdio/codimd
   - Realtime collaborative markdown notes on all platforms.
   - HackMD helps developers write better documents and build active communities with open collaboration
   - CodiMD is the free software version of HackMD, developed by the HackMD team with reduced features (without book mode)

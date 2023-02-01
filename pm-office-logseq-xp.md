@@ -34,3 +34,5 @@ modified: 2022-06-02T06:11:16.758Z
     - 缺点是左边的小点和竖线使得页面看起来有点乱
   - 配置文件格式是 config.edn
     - 类似json，支持注释
+# who is using #logseq
+- https://note.xuanwo.io/#/all-pages

@@ -53,6 +53,16 @@ modified: 2022-06-03T21:34:54.893Z
   - A local-first, non-linear, outliner notebook for organizing and sharing your personal knowledge base.
   - A privacy-first, open-source platform for knowledge management and collaboration
 
+- growi /1.1kStar/MIT/202301/ts/remark
+  - https://github.com/weseek/growi
+  - https://docs.growi.org/en/guide/
+  - https://demo.growi.org/
+  - Team collaboration software using markdown
+  - Simultaneously edit with multiple people by HackMD(CodiMD) integration
+  - Create hierarchical pages with markdown
+  - Slack/Mattermost, IFTTT Integration
+  - 各种集成
+
 - affine /7.1kStar/MIT/202208/ts
   - https://github.com/toeverything/AFFiNE
   - https://affine.pro/

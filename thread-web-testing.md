@@ -14,6 +14,7 @@ modified: 2021-08-28T11:49:05.730Z
 - 单独的顶层文件夹
   - prosemirror
   - tiptap
+
 - 单独的src下文件夹
   - lexical
   - vscode
@@ -21,6 +22,16 @@ modified: 2021-08-28T11:49:05.730Z
 - 和源码放在一起
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Nested `describe` blocks are bad!
+- https://twitter.com/TkDodo/status/1619998044317192192
+  - I've read this on Twitter some time ago already, but I only now get that it's true. 
+  - Most devs want to append a test at the end, they don't look for existing describe blocks, so it becomes a mess for no reason. 
+- The tests are already grouped by file. If you need extra context, just add it to the test name
 
 - ## Chrome can dynamically insert console.logs without touching your code.
 - https://twitter.com/marvinhagemeist/status/1527356830757933058

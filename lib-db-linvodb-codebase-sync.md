@@ -10,20 +10,30 @@ modified: 2023-01-16T21:14:55.049Z
 # guide
 
 - 同步功能需求
-  - 支持每个用户拥有多个设备
+  - 👉🏻 同步所需的数据是所有changes-ops messages
+  - 支持每个用户拥有多个设备，不用userId，考虑到org的同步而使用groupId/teamId
   - 考虑到客户端升级的问题，同步前一定要检查一个version，参考indexeddb upgrade
+
+- 在changes-ops表上需要执行的操作
+  - getRowObjectById: 根据id获取 row object
+  - getLatestHlcForColumn: 获取某个column最新的hlc
 
 - hlc的使用
   - tinybase的hlc无依赖，方便测试
-  - tinysync去掉对tinybase的依赖，参考crdt-for-mortals
+  - [x] tinysync去掉对tinybase的依赖，参考crdt-for-mortals
+  - ~~crdt的冲突处理由table-row-col改为kv结构~~，本身最适合字段级别的修改
+  - 将crdt-for-mortals中apply对对象的修改改为对数据库的crud
 # linvodb数据库同步的技术方案-v1
 - 同步示例采用中心服务器的方式实现，参考crdt-for-mortals，便于以后支持p2p同步
 
 - 同步有2种方式
   - 每次客户端对db的crud都触发同步，类似crdt-for-mortals/linvo-sync，缺点是未实现服务端推送
+    - client发送 op + trie
+    - server响应 changes-new
   - 定期同步，类似setInterval轮询，便于实现伪实时效果
+    - 两阶段同步
 
-- 同步逻辑分两阶段
+- 两阶段同步
   - 先请求远程元数据，类似文件列表、merkle-trie
   - 再diff计算出本地多的toPush、本地少的toPull
 
