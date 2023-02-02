@@ -13,7 +13,12 @@ modified: 2021-06-22T11:54:44.506Z
 
 - ## 
 
-- ## 
+- ## The number of times I see this makes me want to cry: `element.addEventListener("click", (e) => handleClick(e))`
+- https://twitter.com/RogersKonnor/status/1620437284498870272
+  - Youre creating an anonymous function callback which means if this script runs more than once you'll have multiple event handlers.
+  - Whereas, if you just reference the function, you'll get automatic deduping.
+  - element.addEventListener("click", handleClick)
+- Yes, I think it's because a lot of people assume you need an anonymous function in order to get access to the event object
 
 - ## 被javascript 这个setInterval 坑到了，才知道这玩意不是精确按时间执行的，要想精确计时，还挺不容易，递归的方案在手表上又太耗资源。
 - https://twitter.com/haozes/status/1620006802451755010

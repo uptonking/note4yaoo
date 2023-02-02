@@ -15,7 +15,13 @@ modified: 2021-08-16T06:46:26.175Z
 
 - ## 
 
-- ## 
+- ## 纽约时报的数据视觉化和信息图表专题，用图形化故事、信息图、图表等方式，回顾刚刚过去的这个 2022 年
+- https://twitter.com/nishuang/status/1609704288409817088
+  - 数据可视化、信息图以及传统的图表，本质上只是 storytelling 的工具，作用是让信息的表达、传播、理解更容易
+  - [2022: The Year in Visual Stories and Graphics - The New York Times](https://www.nytimes.com/interactive/2022/12/28/us/2022-year-in-graphics.html)
+
+- Bloomberg 也推出了类似的专题报道
+  - [2022 in Data and Graphics](https://www.bloomberg.com/graphics/2022-in-graphics/)
 
 - ## Build delightful charts with React Native Skia
 - https://twitter.com/wcandillon/status/1521470237597749253

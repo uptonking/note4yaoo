@@ -21,7 +21,8 @@ modified: 2023-01-16T21:14:55.049Z
 - hlc的使用
   - tinybase的hlc无依赖，方便测试
   - [x] tinysync去掉对tinybase的依赖，参考crdt-for-mortals
-  - ~~crdt的冲突处理由table-row-col改为kv结构~~，本身最适合字段级别的修改
+  - [x] tinysync改为c/s架构
+  - ~~crdt的冲突处理由table-row-col改为kv结构~~，本身也适合字段级别的修改
   - 将crdt-for-mortals中apply对对象的修改改为对数据库的crud
 # linvodb数据库同步的技术方案-v1
 - 同步示例采用中心服务器的方式实现，参考crdt-for-mortals，便于以后支持p2p同步
