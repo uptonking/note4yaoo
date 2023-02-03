@@ -9,6 +9,12 @@ modified: 2021-08-07T15:30:42.655Z
 
 # 2023
 - 20230
+- 202301-fwk-Netlify just acquired Gatsby.
+  - Remix    → Shopify
+  - Next.js  → Vercel
+  - Svelte   → Vercel
+  - Eleventy → Netlify
+  - Solid    → Netlify
 # 2022
 - 202209-saas-Adobe以200亿美元收购 Figma
 - 202208-saas-全球SaaS软件巨头Salesforce正在关闭包括香港地区在内的中国业务，业务将由阿里云代销。

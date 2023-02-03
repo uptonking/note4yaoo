@@ -13,7 +13,10 @@ modified: 2021-08-16T06:46:26.175Z
 
 - ## 
 
-- ## 
+- ## 用 R + rayshader 做了几张中国部分区域的人口密度可视化
+- https://twitter.com/mybeky/status/1620683856830697473
+  - Rayshader 刚出来的时候有人并不喜欢，毕竟多出来的高度维度和原来的颜色映射的是同一个数据，并没有带来更多信息。不过随着用户越来越多，大家也发现相比单一的颜色，3D 化后的图形确实大大加深了数据之间的差异，加上阴影后美学上也更舒服
+  - rayshader is an open source package for producing 2D and 3D data visualizations in R. 
 
 - ## 纽约时报的数据视觉化和信息图表专题，用图形化故事、信息图、图表等方式，回顾刚刚过去的这个 2022 年
 - https://twitter.com/nishuang/status/1609704288409817088

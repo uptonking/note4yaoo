@@ -37,7 +37,9 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
-- ## 
+- ## 前端调试 outline: 1px solid red; 
+- https://twitter.com/_justineo/status/1620930072759902210
+  - ProTip：建议改成半透明的，可以方便看出叠加；增加 outline-offset: -1px 避免被 clip。
 
 - ## TIL FormData and query string both have only string value types.
 - https://twitter.com/oleg008/status/1619808119349202945

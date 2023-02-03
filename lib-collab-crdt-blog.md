@@ -18,7 +18,7 @@ modified: 2022-10-13T08:00:21.260Z
 
 - Yjs 的算法先进，但在实际应用中确存在下面的问题：
   1. fast search marker 不支持在 YXmlText 中使用
-  2. 不支持移动操作，移动后的合并位置不符合预取
+  2. 不支持移动操作，移动后的合并位置不符合预期
   3. ContentFormat 不支持同类型样式的嵌套或交错（不能还原 ProseMirror Mark 的特性）
   4. ProseMirror 的 Step 和 Yjs 的 insert/delete API 不匹配，y-prosemirror 采用了一套 diff 算法，导致用户意图丢失。也许与 Quilljs 结合没有这样的问题。
 # [supabase: `pg_crdt` - an experimental CRDT extension for Postgres_202212](https://supabase.com/blog/postgres-crdt)

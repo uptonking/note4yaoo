@@ -136,6 +136,21 @@ update("transactions", {
   - 通常Operation-based的方式需要prepare方法生成operations，这里可能存在延时，
   - Pure operation-based是指prepare的实现不是通过对比state生成operations，而是仅仅返回现成的operations，这就需要记录每一步对object state操作的operations
 
+- [Conflict-free replicated data type - Wikipedia](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
+  - Operation-based CRDTs are also called commutative replicated data types, or CmRDTs. 
+    - CmRDT replicas propagate state by transmitting only the update operation. 
+    - For example, a CmRDT of a single integer might broadcast the operations (+10) or (−20). 
+    - Replicas receive the updates and apply them locally. 
+    - The operations are commutative. 
+    - 👉🏻 However, they are not necessarily idempotent. 
+    - 👉🏻 The communications infrastructure must therefore ensure that all operations on a replica are delivered to the other replicas, without duplication, but in any order.
+  - Pure operation-based CRDTs are a variant of operation-based CRDTs that reduces the metadata size.
+  - State-based CRDTs are called convergent replicated data types, or CvRDTs. 
+    - In contrast to CmRDTs, CvRDTs send their full local state to other replicas, where the states are merged by a function which must be commutative, associative, and idempotent. 
+    - The merge function provides a join for any pair of replica states, so the set of all states forms a semilattice. 
+    - The update function must monotonically increase the internal state, according to the same partial order rules as the semilattice.
+  - Delta state CRDTs (or simply Delta CRDTs) are optimized state-based CRDTs where only recently applied changes to a state are disseminated(散布，传播) instead of the entire state.
+
 - Convergent Operations
   - 对于CRDT来说，为了实现Conflict-free Replicated对数据结构的一些操作需要满足如下条件：
   - Associative
@@ -176,12 +191,13 @@ update("transactions", {
   - Deletions in Yjs are treated very differently from insertions. 
   - 👉🏻 Insertions are implemented as a sequential operation based CRDT, but deletions are treated as a simpler state based CRDT.
 # [A comprehensive study of Convergent and Commutative Replicated Data Types_201101](https://www.researchgate.net/publication/50949847)
-- CvRDT
+- CvRDT/state-based
   - State-based mechanisms (CvRDTs) are simple to reason about, since all necessary information is captured by the state. 
   - They require weak channel assumptions, allowing for unknown numbers of replicas. 
   - However, sending state may be inefficient for large objects; this can be tackled by shipping deltas, but this requires mechanisms similar to the op-based approach. 
-  - Historically, the state-based approach is used in ﬁle systems such as NFS, AFS, Coda, and in key-value stores such as Dynamo and Riak. 
-- CmRDT
+  - Historically, the state-based approach is used in ﬁle systems such as NFS, AFS, Coda, and in key-value stores such as Dynamo and Riak.
+
+- CmRDT/op-based
   - Specifying operation-based objects (CmRDTs) can be more complex since it requires reasoning about history, but conversely they have greater expressive power. 
   - The payload can be simpler since some state is effectively offloaded to the channel. 
   - Op-based replication is more demanding of the channel, since it requires reliable broadcast, which in general requires tracking group membership. 
@@ -194,7 +210,7 @@ update("transactions", {
   - operation-based CRDT is a data-structure whose updates are encoded by operations, and operations are sent over the network. 
     - A new state can be produced given the current state and an operation. 
     - When the structure is modified, the replica responsible for the update generates one or many operations, applies them locally, and then propagates them across the network. 
-    - Operation-based CRDTs guarantee that, when operations are successfully propagated, all replicas converge to the same state.
+  - Operation-based CRDTs guarantee that, when operations are successfully propagated, all replicas converge to the same state.
     - Like merging state-based CRDTs, applying operations is associative and commutative, i.e. operations can be applied in any order, however, unlike it isn't necessarily idempotent. It is the responsibility of the transport layer to make sure operations are properly delivered, and not applied more than once.
 
 - [An introduction to Conflict-Free Replicated Data Types](https://lars.hupel.info/topics/crdt/08-outlook/)
@@ -231,7 +247,7 @@ update("transactions", {
 - Both types of CRDT are equivalent and can be converted to either form.
 
 - https://github.com/mpareja/node-uncorded
-  - A state-based CRDT was chosen over an operation-based CRDT so we could forego the requirement of a reliable network ensuring idempotent message delivery. 
+  - A state-based CRDT was chosen over an operation-based CRDT so we could forgo(放弃) the requirement of a reliable network ensuring idempotent message delivery. 
   - The downside of a state-based CRDT is that we always replicate a node's entire state. 
   - Uncorded's small and short-lived state is a great fit here so long as we don't hold remove-set values indefinitely.
   - Nodes publish changes to listeners via newline delimited JSON representations of their state. Listeners apply the state changes according to the 2P-set merge algorithm.

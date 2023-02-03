@@ -70,7 +70,7 @@ modified: 2022-11-08T19:04:00.289Z
 
 - editablejs-editable /17Star/MIT/202208/ts/只依赖slate不依赖slate-react/自绘光标
   - https://github.com/editablejs/editable
-  - https://editor.aomao.com/
+  - https://docs.editablejs.com/playground
   - 一个实验性的富文本编辑器框架，希望通过自绘光标来替代原生 contenteditable 属性，提供更丰富、稳定的编辑能力。
   - 使用slatejs数据模型，借助 react 使用自绘光标的模式渲染，不再依赖 contenteditable 属性
   - 主要对一些 unicode 字符进行索引的计算。因为有些字符占位所占的字节数不确定，造成某些字符拆分后的索引不准确，所以需要这个工具包来解决这个问题。

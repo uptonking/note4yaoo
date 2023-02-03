@@ -108,3 +108,18 @@ modified: 2022-11-14T20:12:25.671Z
 - [nostr – a censorship-resistant alternative to Twitter_202201](https://news.ycombinator.com/item?id=29749061)
 - In this case the content and accounts are independent of the node. 
   - In Mastodon as far as I can see both the account and the content are instance dependent and will disappear if the instance disappears.
+
+- Nostr解析
+- https://twitter.com/jianshubiji/status/1620729604167340032
+- 1⃣Nostr是什么？
+Nostr 不是区块链，也不是App， 是一个用于服务器和客户端通信的协议，应用程序可以基于 Nostr 构建。Nostr不依赖中央服务器，因此具有弹性；基于加密密钥，因此防篡改。
+- 2⃣Nostr工作原理？
+1. Nostr主要有两个组件：客户端，App等和 中继，类似简易服务器。任何人都可以运行中继器
+2. 用户由公钥标识身份，发布内容时由私钥签名，客户端会验证签名并发送到多个中继器
+3. 中继器只存储与转发内容，且中继器仅直接与用户通信
+4. 查看内容时，向中继器发送请求以获得信息
+- 3⃣Nostr解决什么问题？
+1. 防止用户被禁止及服务器被关闭。虽然某个中继器可以阻止某个用户的发布内容和查询内容的请求，但该用户可以通过其它中继器完成操作，因此用户体验没影响。
+2. 抗审查
+3. 减少垃圾邮件
+4. 降低数据存储成本

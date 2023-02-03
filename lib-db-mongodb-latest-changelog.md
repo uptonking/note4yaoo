@@ -20,5 +20,5 @@ modified: 2023-01-02T08:23:36.399Z
 - mongDb不支持子查询，类似于mysql语句。Select * from orders where orders.sellerid in (select eid from employee where employee.state= 'California'), mongodb做不到。
 - 另外联表查询也不友好
 
-- ## [Difference between createIndex() and ensureIndex() in java using mongodb](https://stackoverflow.com/questions/25968592/difference-between-createindex-and-ensureindex-in-java-using-mongodb)
+- ## [Difference between createIndex() and ensureIndex() in java using mongodb](https://stackoverflow.com/questions/25968592)
 - since version > 3.0.0: `db.collection.ensureIndex()` is now an alias for `db.collection.createIndex()` .

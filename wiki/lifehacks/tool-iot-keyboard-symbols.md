@@ -7,6 +7,11 @@ modified: 2020-07-14T11:19:00.521Z
 
 # tool-iot-keyboard-symbols
 
+# guide
+
+- 常用快捷键
+  - zoom in/out/reset: ctrl + +/-/0
+  - duplicate in place: ctrl + d
 # keyboard shortcuts
 - ref
   - https://defkey.com/ 可搜索按键组合、描述

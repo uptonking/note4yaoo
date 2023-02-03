@@ -21,6 +21,11 @@ modified: 2020-10-15T13:42:23.746Z
   - But, MDX is still a very convenient way of writing stories in those cases where CSF seems a bit of a barrier for non technical users or our component needs precise and well structured documentation.
 - [What are your thoughts on the MDX format for @storybookjs](https://twitter.com/lcarb14/status/1379913918445801473)
   - I'm currently preferring MDX as it provides both Stories and Docs with a single file.
+# tabular
+- https://github.com/brimdata/zed
+  - [Zed Formats](https://zed.brimdata.io/docs/formats)
+  - The Zed data model defines a new and easy way to manage, store, and process data utilizing an emerging concept called super-structured data. 
+  - The data model specification defines the high-level model that is realized in a family of interoperable serialization formats, providing a unified approach to row, columnar, and human-readable formats.
 # JSON-stat
 - docs
   - https://json-stat.org/

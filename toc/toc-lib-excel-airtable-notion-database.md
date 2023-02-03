@@ -14,9 +14,9 @@ modified: 2022-08-21T10:02:05.129Z
   - 这种东西，不会编程的人对他来说太复杂了，会编程的人来说太繁琐了。
 
 - airtable-like的产品的方向
-  - 类似strapi通过拖拽ui字段生成rest crud api
+  - 偏后端，偏api，类似strapi通过拖拽ui字段生成rest crud api，即headless cms
+  - 偏前端，类似airtable的通用表格组件，提供各种数据源的集成
   - 偏向automation
-  - 类似airtable的通用表格组件，提供各种数据源的集成
 
 - [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809)
   - platform, baas, cms, workflow, airtable-like
@@ -101,7 +101,7 @@ modified: 2022-08-21T10:02:05.129Z
   - you can configure the user interface directly with WYSIWYG operations.
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
 
-- focalboard /10.3kStar/MIT-like/202203/ts+go
+- focalboard /10.3kStar/src-AGPL & bin-MIT/202203/ts+go
   - https://github.com/mattermost/focalboard
   - https://www.focalboard.com/
   - 前端webapp依赖 @reduxjs/toolkit、react-redux.v7、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
@@ -218,6 +218,14 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/souvikinator/notion-to-md
   - Convert notion pages, block and list of blocks to markdown (supports nesting) using notion-sdk-js
 # more-table-like
+- https://github.com/vikadata/vika.js
+  - Vika JavaScript SDK 是对维格表 Fusion API 的官方封装，可以很方便的对你的维格表中的数据进行增删改查操作。
+  - 你可以轻松的将维格表中的数据集成到你自己的应用中
+
+- https://github.com/coderinblack08/graspable
+  - A realtime, powerful, lightweight alternative to Airtable/Excel
+  - 依赖firebase/supabase
+
 - https://github.com/whitebrick/whitebrick /202202/ts/inactive/未完成
   - Open Source Airtable Alternative (No Code DB)
   - Whitebrick is a lightweight No Code Database with 3 points of difference:
@@ -232,12 +240,4 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/seatable/dtable-ui-component
 - https://github.com/qwtel/sqlite-viewer-vscode
   - A quick and easy SQLite viewer for VSCode, inspired by DBBrowser for SQLite and Airtable.
-
-- https://github.com/vikadata/vika.js
-  - Vika JavaScript SDK 是对维格表 Fusion API 的官方封装，可以很方便的对你的维格表中的数据进行增删改查操作。
-  - 你可以轻松的将维格表中的数据集成到你自己的应用中
-
-- https://github.com/coderinblack08/graspable
-  - A realtime, powerful, lightweight alternative to Airtable/Excel
-  - 依赖firebase/supabase
 # more

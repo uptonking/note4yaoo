@@ -29,7 +29,6 @@ modified: 2023-01-20T21:59:47.792Z
   - 不是典型的block-editor，富文本作为字段block
   - 后端依赖express、mongoose、passport
   - 前端依赖dnd-kit、monaco-editor、slate、react-beautiful-dnd、react-router5、webpack5、swc
-  - [2023 Payload Roadmap](https://github.com/payloadcms/payload/discussions/1539)
   - Block-based Layout Builder
   - Extensible SlateJS rich text editor
   - A Mongo database to store your data
@@ -37,6 +36,8 @@ modified: 2023-01-20T21:59:47.792Z
   - File storage and access control
   - Payload dynamically generates a React admin panel to manage your data. 
     - Admin panel is built with Webpack, code-split, highly performant (even with 100+ fields), and written fully in TypeScript.
+  - [Roadmap Discussions](https://github.com/payloadcms/payload/discussions/categories/roadmap)
+  - [2023 Payload Roadmap](https://github.com/payloadcms/payload/discussions/1539)
   - [Payload (YC S22) – Headless CMS for Developers | Hacker News_202208](https://news.ycombinator.com/item?id=32665325)
     - v2 is coming and that will 100% be open-source!
   - Our business model is based on two things:

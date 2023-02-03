@@ -32,3 +32,13 @@ modified: 2022-11-24T11:36:36.445Z
   - a wrapper around other cryptography libraries, intended to be simple to use, provide a consistent interface for multiple encryption backends (for now, forge, nodeJS crypto, and WebCrypto.subtle), and well-chosen parameters.
   - https://github.com/digitalbazaar/forge
     - A native implementation of TLS in Javascript and tools to write crypto-based and network-heavy webapps
+
+
+# more
+
+- https://twitter.com/xiazhaoyang/status/1620653699344523266
+  - 尝试理解一下，目前iCloud数据和升级高级数据加密后的区别，所谓的“端到端”加密是否指的是在“客户端”做加密和解密这两件事？
+- 我理解之前的数据也是加密存储在server的，只是密钥被apple托管。而升级后，密钥归属用户，apple拿不到。
+  - 『密钥拥有者』跟『服务器所有者』可以是两个角色。服务器可以用谷歌的或者微软的。
+- 目前也是加密存储的，密钥apple管理。高级端侧加密，密钥有基于锁屏密码等派生的，密钥在用户手中
+

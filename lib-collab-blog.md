@@ -258,7 +258,7 @@ modified: 2022-04-05T10:10:27.212Z
 
 - 每个客户端都有一个唯一UUID，再加上 Lamport timeStamp 就可以为每个操作添加唯一可排序的 ID。
 - 每个操作都有唯一的ID，接下来就是定义操作的数据结构，并且符合 CRDT 的特性，ID的唯一性可以保证操作的幂等性，操作可以排序保证了交换性，接下来只要保证每个操作都可以被合并就可以了。
-# [Under the Hood of the Grammarly Editor, Part One: Real-Time Collaborative Text Editing_202204](https://www.grammarly.com/blog/engineering/real-time-collaborative-text-editing/)
+# [Under the Hood of the Grammarly Editor, Part One: Real-Time Collaborative Text Editing using OT_202204](https://www.grammarly.com/blog/engineering/real-time-collaborative-text-editing/)
 - We use QuillJS as a basis for the Grammarly Editor. 
   - It utilizes the Delta format for text changes, which is expressive, readable, and extensible enough to fit most of our needs. 
 

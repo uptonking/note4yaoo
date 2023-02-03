@@ -32,6 +32,12 @@ modified: 2020-12-29T11:27:41.474Z
 - https://testimonial.to/
   - 背景纯白，简洁干净
 # theming-dark
+- [DarkModes | The best dark mode implementations on the Internet](https://darkmodes.com/)
+
+- https://discordstyles.github.io/slate-theme/
+- https://github.com/DiscordStyles/Slate
+  - optimized, consistent, and functional theme for Discord based on GitHub's design language.
+
 - https://mermaid.js.org/
   - 白色黑色都有设计感，glassmorphism风格，contributors卡片很简洁
 

@@ -9,6 +9,9 @@ modified: 2022-12-05T16:01:25.243Z
 
 # guide
 
+- Icecap would be an alternative implementation of Iceberg tables using the native DuckDB file format and Redis.
+  - https://github.com/sutoiku/puffin/blob/main/docs/Icecap.md
+
 - [Epilogue: Our lessons learned building analytics startup Whywhywhy： use _202301](https://www.whywhywhy.com/what-we-learned/)
   - This is what we learned from building Whywhywhy over the past two years. 
   - We hope it will be useful to founders who are considering tackling problems in the analytics/BI space.
@@ -29,6 +32,27 @@ modified: 2022-12-05T16:01:25.243Z
   - Assumption 3: Go to market through bottom-up adoption
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Hot take: once @DuckDB 's native file format becomes stable, it will be on its path to becoming the new CSV.
+- https://twitter.com/ghalimi/status/1620641265955270657
+  - Why? Because DuckDB will be so ubiquitous that any data practitioner will have at least one DuckDB client at their disposal. Therefore, they'll be able to read and write DuckDB files as easily as CSV. But because these files will be 10 times smaller, they'll prefer them to CSV.
+- Why DuckDB's file format over Parquet? Parquet already serves as the new CSV in a lot of places
+- I think it might replace parquet but not csv. People store things in csv so it is human readable.
+  - For small data, I agree with you. But data is getting bigger and bigger...
+- Fwiw I suspect a lot of data vendors actually use CSV to pretend the data they are selling is "big". You might know the ones I'm talking about
+
+
+- Wouldn't it be better if there was a format where row, vector, and human-readable were all interchangeable without loss of information?
+  - I'm not sure that I understand what you mean. If you want human-readable, you can't compress. In that case, CSV is probably the way to go. But if you want compression, you really want a columnar format. Can you elaborate your thinking? I might be missing something here.
+- Check out zed! [Zed Formats | Zed](https://zed.brimdata.io/docs/formats)
+  - I did. It's interesting work, but with different objectives. We're very focused on high performance and do not want to create any new query language. Nothing beats SQL and the relational algebra. And there are plenty of languages like Malloy or @prql_lang that you can add on top
+  - Also, the whole point of @PuffinDB 's Icecap is to take advantage of @DuckDB 's rapid adoption. 2M this past month. Before you know it, it will cross the 100M users mark (like GitHub just did). There are tectonic forces at play here...
 
 - ## Seems like people use duckdb to manipulate pandas dataframes using SQL queries...? 
 - https://twitter.com/__AlexMonahan__/status/1602449507870191616
