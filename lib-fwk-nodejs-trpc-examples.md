@@ -18,6 +18,9 @@ modified: 2022-12-19T01:50:50.105Z
 # trpc-utils-extensions
 - https://github.com/jlalmes/trpc-openapi
   - Easy REST endpoints for your tRPC procedures.
+
+- https://github.com/iway1/trpc-panel
+  - Probably the easiest and cheapest way to build a testing UI and documentation for your tRPC endpoints
 # trpc-apps
 - https://github.com/lawrencecchen/planetsheet /202207/ts/inactive
   - https://planetsheet.vercel.app/

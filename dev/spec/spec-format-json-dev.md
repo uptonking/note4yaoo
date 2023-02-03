@@ -32,6 +32,11 @@ modified: 2021-02-27T15:31:23.130Z
   - Lossless JSON-to-AST Parser and AST-to-JSON Generator
   - The AST is based on ASTy-ASTq
 # discuss
+
+- ## The advantage of JSON Schema is that it's JSON. I can use the same schema in the frontend or backend, across languages, etc. I can generate a form from it.
+- https://twitter.com/DavidKPiano/status/1621243040034611204
+  - Zod is JS/TS-only (but can be converted to JSON Schema, like you said)
+
 - ## [JSON 可以替代 XML，为什么网页不用 JSON 格式来写呢？](https://www.zhihu.com/question/373946861)
 - XML 和 JSON 的复杂度完全不在一个数量级上。JSON 的 ECMA-404 规范，其 PDF 内容部分仅 4 页。而 XML 1.0 规范 则有整整 50 多页。
   - 因此，哪怕是工业级的 JSON Parser，靠递归下降这样基础的算法照标准硬写就足够了。

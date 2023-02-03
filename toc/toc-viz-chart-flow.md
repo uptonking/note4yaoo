@@ -31,7 +31,7 @@ modified: 2020-10-22T10:22:55.878Z
   - https://mrblenny.github.io/react-flow-chart/index.html
   - A flexible, stateless, declarative flow chart library for react
   - 依赖react-draggable、react-zoom-pan-pinch
-- jsplumb /MIT/5.8kStar/202007
+- jsplumb /7.3kStar/MIT/202302/ts
   - https://github.com/jsplumb/jsplumb
   - https://jsplumbtoolkit.com/
   - Visual connectivity for webapps

@@ -9,6 +9,12 @@ modified: 2021-01-28T21:14:14.667Z
 
 # popular
 
+- https://github.com/argyleink/open-props
+  - https://open-props.style/
+  - CSS custom properties to help accelerate adaptive and consistent design.
+  - 毛玻璃风格
+  - These props come in many flavors: CSS, PostCSS, JSON, or Javascript.
+
 - bootstrap /143kStar/MIT/202007
   - https://github.com/twbs/bootstrap
   - https://getbootstrap.com/
@@ -69,7 +75,6 @@ modified: 2021-01-28T21:14:14.667Z
   - A fully responsive CSS framework with beautiful controls and simplistic structure. 
   - Cirrus is designed to be adaptable to existing themes or when starting fresh.
   - The only component that requires the use of jQuery is the Header component for toggling the dropdown menu on mobile.
-
 # css-framework-ui
 - milligram /8.8kStar/MIT/202006
   - https://github.com/milligram/milligram

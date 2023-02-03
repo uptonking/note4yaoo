@@ -52,13 +52,15 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/linyows/notionate
   - React components that uses the Notion API to display the Notion's database and page.
 
-- nocodb /33kStar/AGPLv3/202212/ts/vue
+- nocodb /33kStar/AGPLv3/202212/ts/vue/重后端
   - https://github.com/nocodb/nocodb
   - https://nocodb.com/
+  - [Development Setup](https://docs.nocodb.com/engineering/development-setup/)
   - The Open Source Airtable Alternative
   - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
   - 后端依赖 express、ioredis、knex、passport、request
-  - 前端依赖 ant-design-vue.v3、vueuse、vue-flow(chart)、monaco-editor、d3-scale、dayjs、vuedraggable、xlsx
+  - 前端依赖 nuxt3、ant-design-vue.v3、vueuse、vue-flow(chart)、monaco-editor、d3-scale、dayjs、vuedraggable、xlsx
+  - 支持提供返回表中数据的api
   - Search, sort, filter, hide columns with uber ease
   - Create Views : Grid, Gallery, Kanban, Form
   - Database: Any SQL (postgres, mysql, sqlite, maria DB, SQL server)
@@ -67,9 +69,13 @@ modified: 2022-08-21T10:02:05.129Z
 - apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队
   - https://github.com/apitable/apitable
   - https://apitable.com/
+  - [开发者指南](https://github.com/apitable/apitable/blob/develop/docs/readme/zh-CN/docs/contribute/developer-guide.md)
   - API-oriented low-code platform for building collaborative apps and better than all other Airtable open-source alternatives
   - 后端依赖 spring-boot、mybatis、easyexcel、grpc、protobuf
   - 前端依赖 antd、ahooks、redux、exceljs、konva、markdown-it、react-quill、react-dnd、slate
+  - 数据库本地架构：变更集/操作/动作/快照等等。
+  - 一键式API面板
+  - APITable 将提供一个数据表查询语言(DQL)来查询您的数据库电子表格内容。
   - Realtime collaboration allows multiple users to edit together in real time, or simultaneously with the Operational Transformation (OT) Algorithm.
   - 7 View Types: Grid View (Datasheet) / Gallery View / Mindmap View / Kanban View / Full-Feature Gantt View / Calendar View
   - [APITable: open-source Airtable alternative | Hacker News_202212](https://news.ycombinator.com/item?id=34127804&ref=upstract.com)
@@ -88,13 +94,15 @@ modified: 2022-08-21T10:02:05.129Z
 - nocobase /3.7kStar/apache2/202212/ts/国内
   - https://github.com/nocobase/nocobase
   - https://www.nocobase.com/
-  - https://docs-cn.nocobase.com/
+  - [源码安装](https://docs-cn.nocobase.com/welcome/getting-started/installation/git-clone)
   - 易扩展的开源无代码开发平台。
   - NocoBase is a scalability-first, open-source no-code/low-code development platform.
-  - 可配置表格工具条菜单项、添加行，也可配置页面菜单
-    - 从这个角度看，headless cms更灵活
   - 后端依赖 koa、sequelize.v6
   - 前端依赖 antd、g2plot、ahooks、dnd-kit、formily、marked、react-iframe、react-quill、react-router5
+  - 支持应用层的插件系统，安装后需要刷新页面
+  - 不直接支持输出表格的crud api，但提供了sdk文档，自己实现比较方便
+  - 可配置表格工具条菜单项、添加行，也可配置页面菜单
+    - 从这个角度看，headless cms更灵活
   - 采用数据结构与使用界面分离的设计思路
     - 可以为数据表创建任意数量、任意形态的区块（数据视图），
     - 每个区块里可以定义不同的样式、文案、操作

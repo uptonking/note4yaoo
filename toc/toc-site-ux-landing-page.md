@@ -46,6 +46,8 @@ modified: 2020-12-29T11:27:41.474Z
 
 - [APITable | Open source no-code database and Airtable alternative](https://apitable.com/)
   - glassmorphism风格
+
+- [Open Props: sub-atomic styles](https://open-props.style/)
 # theming-green
 - ref
   - https://dribbble.com/tags/green_theme

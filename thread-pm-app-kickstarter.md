@@ -58,6 +58,16 @@ modified: 2021-10-29T15:02:28.882Z
 # ideas
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Instagram 的创始人的新项目 Artifact 简单说就是美国版的今日头条？
+- https://twitter.com/oran_ge/status/1621303421189124096
+- 恩，“文字版tiktok”居然用这种让美国人能理解的表达方式
+  - 对 仔细想想美国这个市场确实空白
+  - 也不是吧，还有沈向洋的Newsbreak呢
+
 - ## 今天又发现一个神奇的网站，可以输入一个单词，自动找到包含这个词的YouTube视频，并自动定位到单词所在的进度条位置，同时展示字幕。
 - https://twitter.com/oran_ge/status/1618469008256413697?s=20&t=4XYmgW_2XQaTgAR4xAeyyA
   - 还支持美音，英音，各种奇怪的其他口音…
@@ -273,18 +283,6 @@ your suggestion here
   - allow for being consumed on any device (even via terminal!)
 - Android 11 can copy any text, but it's not really pretty.
   - Note: you must be in app switcher mode (app not maximized) to enable text selection.
-
-- ## Every repo, issue, commit, etc will get a generated card like it.
-- https://twitter.com/JasonEtco/status/1380194813140725761
-  - And an even more special card for issues, PRs or commits!
-- This is sweet. Visual + text is a great way to help people engage and not miss important information.
-- I believe we'll be doing a larger blog post about it soon, but we use Puppeteer to generate a screenshot from some HTML.
-  - Just out of curiosity: wouldn't something like a Canvas with html2canvas for Example be faster or more efficient Memory wise? Nice Idea btw! Love it!
-- I did an open-source server for doing that exact thing some time ago
-  - https://github.com/micheleriva/gauguin
-  - High performances Golang server for generating open graph images dynamically. 
-- I just had a look at how the @vercel team did it in their OG img generator and it’s also Puppeteer and headless chromium
-  - https://github.com/vercel/og-image
 
 - ## If you use Next.js, what is your favourite part about it?
 - https://twitter.com/heybereket/status/1378889849235775489

@@ -8,32 +8,38 @@ modified: 2020-12-09T09:30:24.694Z
 # toc-lib-olap-bi-dashboard
 
 # guide
+
+- resources
+  - https://github.com/thenaturalist/awesome-business-intelligence
+
 - [乐居中后台管理系统教程](http://doc.bufanui.com/docs/leju-admin/leju-admin-1cmave6kurtts)
   - [day7主页大屏数据展示, vue+echarts](http://doc.bufanui.com/docs/leju-admin/leju-admin-1cmgcm5kelp3c)
   - [不凡学院 文档](http://doc.bufanui.com/)
-# analytics-dashboard
-- Superset /Apache2/29.3kStar/202007
-  - https://github.com/apache/incubator-superset
+# bi-analytics
+- lightdash /2kStar/MIT/202301/ts
+  - https://github.com/lightdash/lightdash
+  - https://lightdash.com/
+  - https://demo.lightdash.com/
+  - [Setup Development Environment](https://github.com/lightdash/lightdash/blob/main/.github/CONTRIBUTING.md#setup-development-environment-without-docker)
+  - open-source BI (Looker alternative) for teams that move fast.
+  - 后端依赖 express、pg、knex、passport
+  - 前端依赖 blueprintjs、echarts、jspdf、react-ace、react-beautiful-dnd
+
+- Superset /50.4kStar/Apache2/202301/ts/python
+  - https://github.com/apache/superset
   - http://superset.apache.org/
   - a modern, enterprise-ready business intelligence web application
   - originally made for Druid
+  - [Why Apache ECharts is the Future of Apache Superset™_202104](https://preset.io/blog/2021-4-1-why-echarts/)
   - https://github.com/apache-superset/superset-ui
   - https://github.com/apache-superset/examples-data
   - https://github.com/dropbox/incubator-superset-internal
 
-- turnilo /Apache2/335Star/202007
-  - https://github.com/allegro/turnilo
-  - https://allegro.tech/2018/10/turnilo-lets-change-the-way-people-explore-big-data.html
-  - Business intelligence, data exploration and viz web application for Druid
-  - https://github.com/implydata/pivot
-
-- lightdash /2kStar/MIT/202301/ts
-  - https://github.com/lightdash/lightdash
-  - https://lightdash.com/
-  - BI for teams that move fast.
-  - An open source alternative to Looker built using dbt. Made for analysts
-  - 后端依赖 express、pg、knex、passport
-  - 前端依赖 blueprintjs、echarts、jspdf、react-ace、react-beautiful-dnd
+- mprove /270Star/apache2/202301/ts
+  - https://github.com/mprove-io/mprove
+  - https://mprove.io/
+  - Open Source Self-service Business Intelligence with Version Control
+  - Inspired by Looker.
 
 - https://github.com/drinkjs/mojito /202205/ts/inactive
   - http://mojito.drinkjs.com/
@@ -70,8 +76,21 @@ modified: 2020-12-09T09:30:24.694Z
 
 - https://github.com/getredash/redash
   - http://redash.io/
-  - 依赖 python-flask、antd、d3.v3.5.17
+  - 依赖flask、antd、d3.v3.5.17
   - SQL users leverage Redash to explore, query, visualize, and share data from any data sources.
+
+- tellery /323Star/apache2/202210/ts/inactive
+  - https://github.com/tellery/tellery
+  - https://tellery.io/
+  - https://demo.tellery.io/
+  - Tellery lets you build metrics using SQL
+  - A modern SQL editor with multi-tabs and auto-complete
+
+- turnilo /643Star/Apache2/202301/ts
+  - https://github.com/allegro/turnilo
+  - https://allegro.tech/2018/10/turnilo-lets-change-the-way-people-explore-big-data.html
+  - Business intelligence, data exploration and viz web application for Druid
+  - https://github.com/implydata/pivot
 
 - evidence /876Star/MIT/202212/js/svelte
   - https://github.com/evidence-dev/evidence
@@ -95,7 +114,7 @@ modified: 2020-12-09T09:30:24.694Z
     - an interactive Jupyter notebook component.
     - a static .html web page, a .gif video, a .png image and more.
 
-- tabix /1.1kStar/apache2/202205/ts
+- tabix /1.1kStar/apache2/202205/ts/inactive
   - https://github.com/tabixio/tabix
   - http://dash.tabix.io/
   - simple business intelligence application and sql editor tool for Clickhouse.
@@ -134,6 +153,14 @@ modified: 2020-12-09T09:30:24.694Z
   - http://mozaik.rocks/
   - http://mozaik.herokuapp.com/
   - a tool based on react/redux/d3 to easily craft dashboards.
+
+- https://github.com/Smashing/smashing
+  - handsome dashboard framework in Ruby and Coffeescript.
+  - a Sinatra based framework
+
+- https://github.com/mlcraft-io/mlcraft
+  - a low-code metrics layer and a modern open-source alternative to Looker.
+  - Cube.js is used as a primary query layer and makes it suitable for handling trillions of data points.
 # examples
 - https://github.com/amcharts/covid-charts
   - A collection of JS-based data visualization tools and data for depicting spread of the COVID-19

@@ -22,11 +22,29 @@ modified: 2021-09-14T18:58:58.275Z
   - https://tldrlegal.com/
   - https://choosealicense.com/licenses/
   - linkware, watermark
-# pieces
+
 - Copyright”指软件的版权和其它一切权利归软件作者所私有，用户只有使用权，没有其它如复制、重新修改发布等权利。
 - 而“Copyleft”的特点是仅有版权归原作者所有，其他一切权利可以与任何人共享。
   - “Copyleft”通常被译作“著佐权”，即通过许可证的形式，补足、辅佐著作权（Copyright）不足的版权授权，相当于一种权利与义务的契约
 # non-commercial
+
+## [Fair-code](https://faircode.io/)
+
+- Fair-code is not a software license. 
+- It describes a software model where software:
+  - is generally free to use and can be distributed by anybody
+  - has its source code openly available
+  - can be extended by anybody in public and private communities
+  - is commercially restricted by its authors
+
+- The following existing licenses meet all the fair-code requirements and projects using any of them can use the "fair-code" term.
+  - Commons Clause with any OSI approved open-source license
+  - Elastic License 2.0 (ELv2)
+  - Confluent Community License
+  - Sustainable Use License
+
+## non-commercial-faq
+
 - [Open-source license to prevent commercial use](https://opensource.stackexchange.com/questions/4875)
   - There is now a license specifically designed to create source-available software for non-commercial use, namely the Commons Clause License.
   - Redis Labs 正在放弃其 Commons Clause 许可，转而使用新的“available-source”许可证

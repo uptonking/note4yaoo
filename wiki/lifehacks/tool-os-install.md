@@ -71,7 +71,7 @@ modified: 2020-12-22T12:42:14.745Z
   - /home/yaoo/.local/lib/python3.10/site-packages/meson-0.63.2.dist-info/
   - sudo pip install meson 安装在root目录 
     - /usr/local/lib/python3.10/dist-packages/
-  - 还可以安装本地 pip install local-ss-master.zip -U
+  - 还可以安装本地包 pip install local-ss-master.zip -U
 
 - ubuntu开机自动挂载win-ntfs硬盘
   - [ubuntu 配置/etc/fstab参数实现开机自动挂载硬盘](https://blog.csdn.net/u010632165/article/details/89597522)

@@ -23,6 +23,7 @@ modified: 2023-01-16T21:14:55.049Z
   - tinybase的hlc无依赖，方便测试
   - [x] tinysync去掉对tinybase的依赖，参考crdt-for-mortals
   - [x] tinysync改为c/s架构
+  - [ ] 两阶段同步减少传输体积
   - tinysync的changes/ops数据迁移到表
   - 将crdt-for-mortals中apply对对象的修改改为对数据库的crud
   - ~~crdt的冲突处理由table-row-col改为kv结构~~，本身也适合字段级别的修改

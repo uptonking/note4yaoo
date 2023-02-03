@@ -10,5 +10,11 @@ modified: 2022-12-20T05:39:08.948Z
 # guide
 
 # blogs
-- [处理海量数据：列式存储综述（存储篇） - 知乎](https://zhuanlan.zhihu.com/p/35622907)
+
 # more
+
+- [处理海量数据：列式存储综述（存储篇） - 知乎](https://zhuanlan.zhihu.com/p/35622907)
+
+- [Using TTL to Manage Data Lifecycles in ClickHouse](https://clickhouse.com/blog/using-ttl-to-manage-data-lifecycles-in-clickhouse?utm_source=twitter&utm_medium=social&utm_campaign=blog)
+  - Databases should make it easy to delete stale data, whether to save on storage costs or for compliance reasons.
+  - Read about how you can use TTL (time-to-live) clauses in ClickHouse to delete, reset, or compress old data that’s no longer necessary.

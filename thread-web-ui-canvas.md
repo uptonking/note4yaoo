@@ -35,7 +35,20 @@ modified: 2021-08-06T07:36:05.864Z
 
 - ## 
 
-- ## 
+- ## 国内有一个小众开发圈把 SVG `<foreignObject>` 玩上了天，还靠 touchstart、click 的时间差实现了一些看似需要 JS 的交互。
+- https://twitter.com/tankxu/status/1619545479922196481
+  - 说的就是微信公众号 SVG 推文开发，例如 Apple、DJI 的推文大多都是 SVG 实现的。
+- ✨ You can make any HTML/CSS layout automatically scale to container if you put it into an SVG `<foreignObject>` element.
+  - The actual technique is pretty simple.
+  - Build your layout as if it was fixed size, then wrap it in SVG `<foreignObject>` with the size you used.
+  - Any CSS layout technique works within—flex, grid, you name it. All pixel values scale proportionally.
+  - The browser support is great too.
+  - Ideally, you need to add xmlns="http //www.w3.org/1999/xhtml" attribute value to the first HTML element in the foreign object, but TypeScript doesn’t allow that unfortunately.
+  - And yes, all together that ends up being an HTML document that embeds an SVG document that embeds an HTML document that embeds other SVGs within it.
+  - All right, I found a caveat in Safari—position relative and absolute don’t work as expected there. It’s always Safari 🙃
+  - Another difference is that in Safari the fonts don’t scale linearly with ems. Here it scales smoothly like with transform.
+- I gave it a quick test and interactive elements seem to work exactly the same as if they were in the body content.
+  - It’s nice to know, but I still wouldn’t do anything funky within an SVG just to be sure.
 
 - ## More comparisons between "lots of SVGs" vs "lots of canvases". Seems so baffling / random what's fast vs. what's not fast in SVGs.
 - https://twitter.com/steveruizok/status/1618735905526919169
@@ -52,8 +65,6 @@ modified: 2021-08-06T07:36:05.864Z
 - 
 - 
 - 
-
-
 
 - ## Does anyone know if there is a deterministic alternative to rough js? When rendering the shapes in a loop, it adds variation every frame.
 - https://twitter.com/JungleSilicon/status/1605790763438292993

@@ -17,6 +17,9 @@ modified: 2020-12-28T12:24:09.275Z
   - platform, baas, cms, workflow, airtable-like
   - 流程自动化
 
+- workflow类低代码
+  - 简单场景类似表单，支持根据不同评分显示不同内容，如投诉/不足
+
 - lowcode vs builder
   - 建站侧重于自动生成并发布页面，而不是编辑器
 # popular
@@ -99,7 +102,18 @@ modified: 2020-12-28T12:24:09.275Z
   - Webstudio Designer is a NoCode Visual Tool inspired by Webflow
   - block块级元素不支持拖拽
   - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
-# solutions
+
+- https://github.com/page-pipepline/pipeline-editor /201910/js
+  - 页面可视化搭建框架的 web 编辑器
+  - 实现了编辑器和页面前端框架的分离, 可以支持不同的前端框架.
+  - 目前已经支持 Vue, React, 和 Omi, 理论上可以支持任意前端框架.
+# lowcode
+- lowdefy /2.1kStar/apache2/202301/js
+  - https://github.com/lowdefy/lowdefy
+  - low-code framework that lets you build web apps with YAML or JSON configuration files
+  - It is great for building admin panels, BI dashboards, workflows, and CRUD apps.
+  - Advantages of writing internal tools in YAML or JSON
+
 - https://github.com/merico-dev/table /apache2/202301/ts
   - Build your own data presentation using SQL and multiple data sources including big data. 
   - It is a natural integration with Dev Lake and Dev Analysis.
@@ -122,9 +136,6 @@ modified: 2020-12-28T12:24:09.275Z
   - /340Star/Apache2/202009/ts/java
   - open source alternative to Power Apps, Salesforce Lightning
   - A low code way to build dashboards, workflows, forms, and any internal tool.
-
-- https://github.com/lowdefy/lowdefy /js
-  - low-code framework that lets you build web apps with YAML or JSON configuration files
 
 - https://github.com/Dashibase/dashibase /202207/ts/vue/inactive
   - https://dashibase.com/
@@ -195,12 +206,53 @@ modified: 2020-12-28T12:24:09.275Z
 - https://github.com/steedos/steedos-platform
   - 华炎魔方是Salesforce低代码平台的开源替代方案
   - 华炎魔方前端使用 React 开发表单、列表视图控件，并基于 Meteor 实现完整界面。
-# more-lowcode
-- https://github.com/Budibase/budibase /GPLv3
+# workflow-automation-tasks-pipeline
+- tips
+  - 考虑跨平台/系统的task兼容性、分享，主流的airflow/ifttt
+
+- n8n /28kStar/FairCode/202301/ts/vue/依赖少
+  - https://github.com/n8n-io/
+  - https://n8n.io/
+  - an extendable workflow automation tool
+  - Easily automate tasks across different services.
+  - 前端依赖vue2、jsplumb、codemirror6、jquery、monaco-editor、prismjs
+  - 提供了自动化任务模版中心 Workflow templates，类似可复用的工具函数
+    - Convert JSON to an Excel file
+    - Creating an API endpoint
+
+- https://github.com/automatisch/automatisch /ts/graphql
+  - open source Zapier alternative. 
+  - Build workflow automation without spending time and money.
+
+- https://github.com/elyra-ai/pipeline-editor
+  - A react component for editing pipeline files. 
+  - Used across all Elyra applications and browser extensions.
+  - Elyra is a set of AI-centric extensions to JupyterLab Notebooks.
+  - Currently, pipelines can be executed locally in JupyterLab, on Kubeflow Pipelines, or with Apache Airflow.
+
+- https://github.com/alibaba/dawn
+  - Lightweight task management and build tool.
+  - 通过 pipeline 和 middleware 将开发过程抽象为相对固定的阶段和有限的操作，简化并统一了开发人员的日常构建与开发相关的工作。
+
+- https://github.com/Budibase/budibase /GPLv3/svelte
   - Low code platform for creating internal tools, workflows, and admin panels in minutes. 
   - 前端依赖svelte
   - unlike other platforms, with Budibase you can start from scratch and create business apps with no datasources
+  - Budibase integrates with a number of popular tools allowing you to build apps
+  - the Budibase API enables Budibase as a backend
 
+- https://github.com/krn0x2/microflow
+  - Microservice orchestration inspired by AWS Step functions and Apache Airflow
+
+- https://github.com/dataplane-app/dataplane /go
+  - an Airflow inspired data platform with additional data mesh capability to automate, schedule and design data pipelines and workflows.
+  - Written in Golang and compiled to machine code to achieve extreme performance with a low memory and CPU footprint.
+
+- https://github.com/jitsucom/jitsu /go
+  - open source high-performance data collection service.
+  - Capture events your application generates and stream to Data Warehouse; 
+  - Pull data from APIs and save it to Data Warehouse
+# more-lowcode
 - corteza /vue+go
   - https://github.com/cortezaproject/corteza
   - https://github.com/cortezaproject/corteza-webapp-one

@@ -31,6 +31,12 @@ modified: 2022-11-16T16:09:02.278Z
   - https://mrarpanm.github.io/Glassmorphism-Design/
   - Layout for future use purposes
 
+- https://github.com/argyleink/open-props
+  - https://open-props.style/
+  - CSS custom properties to help accelerate adaptive and consistent design.
+  - 毛玻璃风格
+  - These props come in many flavors: CSS, PostCSS, JSON, or Javascript.
+
 - https://github.com/themesberg/glass-ui /NonOpen/白背景示例
   - https://ui.glass/
   - https://ui.glass/generator/

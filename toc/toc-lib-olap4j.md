@@ -17,6 +17,9 @@ modified: 2020-10-22T06:50:47.668Z
   - https://github.com/edp963/davinci
   - https://edp963.github.io/davinci
   - Davinci is a DVsaaS (Data Visualization as a Service) Platform
+  - https://github.com/running-elephant/datart /inactive
+    - datart 是新一代数据可视化开放平台，支持各类企业数据可视化场景需求，如创建和使用报表、仪表板和大屏，进行可视化数据分析，构建可视化数据应用等。
+    - 由原 davinci 主创团队出品，datart 更加开放
 - poli /1.7kStar/MIT/202005/java/inactive
   - https://github.com/shzlw/poli
   - https://shzlw.github.io/poli
@@ -31,6 +34,17 @@ modified: 2020-10-22T06:50:47.668Z
   - /19Star/Apache2/202009
   - AutoPivot is a standalone application for online analysis (OLAP) of CSV files.
 
+- https://github.com/dataease/dataease
+  - 开源的数据可视化分析工具
+  - DataEase 支持丰富的数据源连接，能够通过拖拉拽方式快速制作图表，并可以方便的与他人分享。
+- https://github.com/helicalinsight/helicalinsight
+  - https://helicalinsight.github.io/helicalinsight/#/
+  - Open Source Business Intelligence framework which can help you derive insights out of multiple datasources. 
+  - it comes with a unique Workflow rule engine
+  - XML driven Workflow
+- https://github.com/apache/zeppelin
+  - Web-based notebook that enables data-driven, interactive data analytics and collaborative documents with SQL, Scala and more.
+
 - https://github.com/xianfengyi/MixQuery
   - 在实际的业务场景中，不同特点的数据会存储到不同的存储引擎里。 然而异构的存储和数据源，却给分析查询带来了挑战，比如跨源查询，以及跨集群查询将变得困难
   - 因此，需要一款支持混合查询的引擎。
@@ -44,6 +58,11 @@ modified: 2020-10-22T06:50:47.668Z
   - 开源的、并行的、低延时的分布式行为数据分析引擎。
   - bitlap所创建的表是没有表结构约束的，这就意味着你可以随意的添加指标和维度，而不需要关心表太宽的问题。
   - 支持SQL查询接口，所查即所得。支持任意指标维度的查询，无需构建cube
+
+- https://github.com/openblocks-dev/openblocks /ts+java
+  - The Open Source Retool Alternative
+  - An all-in-one IDE to create internal or customer-facing apps.
+  - A place to create, build and share building blocks of web applications.
 # stack
 - elasticsearch /Apache2/49.9kStar/202007
   - https://github.com/elastic/elasticsearch

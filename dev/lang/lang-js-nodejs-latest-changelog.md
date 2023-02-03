@@ -15,6 +15,9 @@ modified: 2022-12-31T20:13:33.307Z
 # changelog
 - v20.0.0_2023-04-18
 
+- v19.6.0_2023-02-03
+  - ✨ Includes npm@9.4.0 adding a new option for installations similar to pnpm
+
 - v19.0.0_2022-10-18
   - Highlights include the update of the V8 JavaScript engine to 10.7, HTTP(s)/1.1 KeepAlive enabled by default, and ESM Resolution adjusts.
   - The `node:test` module supports mocking during testing via a top-level `mock` object.
@@ -42,7 +45,7 @@ modified: 2022-12-31T20:13:33.307Z
   - Stable `AbortController` implementation based on the AbortController Web API
   - Stable Timers Promises API, , removing the need to use util.promisify()
   - Experimental Web Crypto API
-  - npm v7 support workspaces
+  - ✨ npm v7 support workspaces
   - Node.js will run natively on the Apple M1
 
 - v14.0.0_2020-04-21

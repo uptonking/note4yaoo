@@ -11,12 +11,22 @@ modified: 2021-09-22T05:47:54.470Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Wireshark and Fiddler are both exceptional tools that serve vastly different purposes focusing on different OSI layers. 
+- https://news.ycombinator.com/item?id=15792677
+  - Fiddler is an HTTP(S) proxy and Wireshark is a packet sniffer. 
+  - While you can probably achieve in Wireshark what Fiddler offers, it's going to be an utter pain in the ass.
+- If you want an open-source alternative to Fiddler, consider mitmproxy
+  - https://github.com/mitmproxy/mitmproxy
+
+
 - ## [Is Webpack going anywhere? Turbopack and the future of Webpack_202210](https://github.com/webpack/webpack/discussions/16418)
 - from @sokra (creator of webpack), turbopack is young, need more time to be stable and mature, and many next.js configurations use custom webpack configuration, so webpack will get fixes and improvements
 
-
 - Currently we have webpack-6 label, but I think it can be convert them to cards and provide the better roadmap
-
 
 - https://twitter.com/wsokra/status/1585033634427596800?s=46&t=LzBAaPY8H2yoHh_p0cdflA
 - Webpack is definitely not deprecated. But the larger vision of Turbopack is to provide 95% of webpack features, ideas (include extensibility) and also a great migration story. We want to make it easy to transition, but you don't have to

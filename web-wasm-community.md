@@ -14,7 +14,10 @@ modified: 2022-12-24T07:31:48.493Z
 
 - ## 
 
-- ## 
+- ## 发现在浏览器的Wasm环境里，Go 是支持发起 HTTP 请求（底层转换成JS的fetch），也支持 goroutine（需要和 Promise 一起使用）。
+- https://twitter.com/spacewanderlzx/status/1621157716994711552
+  - 这个要比 tinygo 在 WASI 里面先进多了。
+- go发起HTTP请求是通过一个Wasm特供的roundtrip实现的 
 
 - ## Webassembly: possible to have shared objects?
 - Yes, this is possible.
