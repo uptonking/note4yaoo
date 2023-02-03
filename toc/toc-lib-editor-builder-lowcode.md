@@ -14,7 +14,7 @@ modified: 2020-12-28T12:24:09.275Z
   - 这种东西，不会编程的人对他来说太复杂了，会编程的人来说太繁琐了。
 
 - [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809)
-  - platform, baas, cms, workflow, airtable-like
+  - platform, baas, cms建站, airtable-like, workflow
   - 流程自动化
 
 - workflow类低代码
@@ -25,6 +25,25 @@ modified: 2020-12-28T12:24:09.275Z
 # popular
 - ref
   - https://github.com/taowen/awesome-lowcode
+
+- payload /9.1kStar/MIT/202301/ts/slate
+  - https://github.com/payloadcms/payload
+  - https://payloadcms.com/
+  - https://demo.payloadcms.com/admin
+  - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
+  - cms只提供管理界面来拖拽生成数据对应的api，不提供预览内容的前端
+  - 不是典型的block-editor，富文本作为字段block
+  - 后端依赖express、mongoose、passport
+  - 前端依赖dnd-kit、monaco-editor、slate、react-beautiful-dnd、react-router5、webpack5、swc
+  - 支持多个versions，Automatically maintain a history of changes to any given collection document
+  - Block-based Layout Builder
+  - Extensible SlateJS rich text editor
+  - A Mongo database to store your data
+  - retrieve, and manipulate data of any shape via full REST and GraphQL APIs
+  - File storage and access control
+  - Payload dynamically generates a React admin panel to manage your data. 
+    - Admin panel is built with Webpack, code-split, highly performant (even with 100+ fields), and written fully in TypeScript.
+  - [Roadmap Discussions](https://github.com/payloadcms/payload/discussions/categories/roadmap)
 
 - baidu-amis /12.9kStar//apache2/202301/ts/编辑器未开源
   - https://github.com/baidu/amis
@@ -77,12 +96,6 @@ modified: 2020-12-28T12:24:09.275Z
     - APITable is the open-source and community version of Vika.
     - Vika is a SaaS distribution for China mainland built on APITable open-source core
 
-- ToolJet /17.1kStar/AGPLv3/202301/前端js+后端ts
-  - https://github.com/ToolJet/ToolJet
-  - https://tooljet.com/
-  - low-code framework to build and deploy internal tools
-  - ToolJet's drag and drop frontend builder allows you to build complicated responsive frontends within minutes
-
 - nocobase /3.7kStar/apache2/202212/ts/国内
   - https://github.com/nocobase/nocobase
   - https://www.nocobase.com/
@@ -100,6 +113,10 @@ modified: 2020-12-28T12:24:09.275Z
   - https://github.com/webstudio-is/webstudio-designer
   - https://webstudio.is/
   - Webstudio Designer is a NoCode Visual Tool inspired by Webflow
+  - an open source visual development tool
+  - simplify collaboration between designers and developers on any type of site or web app.
+  - With Webstudio you can use any headless CMS or e-commerce back-end. 
+  - Webstudio features a UI to create API bindings. You can add a GraphQL binding to any component and choose which endpoint and data properties to bind to each component property. 
   - block块级元素不支持拖拽
   - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
 
@@ -107,18 +124,21 @@ modified: 2020-12-28T12:24:09.275Z
   - 页面可视化搭建框架的 web 编辑器
   - 实现了编辑器和页面前端框架的分离, 可以支持不同的前端框架.
   - 目前已经支持 Vue, React, 和 Omi, 理论上可以支持任意前端框架.
+
+- ToolJet /17.1kStar/AGPLv3/202301/前端js+后端ts
+  - https://github.com/ToolJet/ToolJet
+  - https://tooljet.com/
+  - low-code framework to build and deploy internal tools
+  - ToolJet's drag and drop frontend builder allows you to build complicated responsive frontends within minutes
 # lowcode
-- lowdefy /2.1kStar/apache2/202301/js
+- lowdefy /2.1kStar/apache2/202301/js/json/yaml
   - https://github.com/lowdefy/lowdefy
   - low-code framework that lets you build web apps with YAML or JSON configuration files
   - It is great for building admin panels, BI dashboards, workflows, and CRUD apps.
   - Advantages of writing internal tools in YAML or JSON
 
-- https://github.com/merico-dev/table /apache2/202301/ts
-  - Build your own data presentation using SQL and multiple data sources including big data. 
-  - It is a natural integration with Dev Lake and Dev Analysis.
-
-- https://github.com/smartxworks/sunmao-ui /apache2/202301/ts
+- sunmao-ui /apache2/202301/ts
+  - https://github.com/smartxworks/sunmao-ui
   - Sunmao(榫卯)是一个前端低代码框架。
   - Sunmao 内置了低代码工具的 GUI 编辑器
 
@@ -130,12 +150,16 @@ modified: 2020-12-28T12:24:09.275Z
     - 通过配置初始化 Store
     - 通过配置渲染页面
     - 通过交互组件修改 Store 数据，重新渲染页面
-  - 依赖antd4、codemirror5、mobx5、showdown、nextjs
+  - 依赖antd4、mobx5、codemirror5、showdown、nextjs
 
-- https://github.com/appsmithorg/appsmith
-  - /340Star/Apache2/202009/ts/java
+- appsmith /340Star/Apache2/202009/ts/java
+  - https://github.com/appsmithorg/appsmith
   - open source alternative to Power Apps, Salesforce Lightning
   - A low code way to build dashboards, workflows, forms, and any internal tool.
+
+- https://github.com/merico-dev/table /apache2/202301/ts
+  - Build your own data presentation using SQL and multiple data sources including big data. 
+  - It is a natural integration with Dev Lake and Dev Analysis.
 
 - https://github.com/Dashibase/dashibase /202207/ts/vue/inactive
   - https://dashibase.com/
@@ -161,7 +185,7 @@ modified: 2020-12-28T12:24:09.275Z
   - Jet Admin is a SaaS service that automatically generates extendable back office for your application
   - Jet Bridge is a standalone app which generates REST API thought which your SQL database is connected to Jet Admin.
 
-- https://github.com/openblocks-dev/openblocks /ts+java
+- https://github.com/openblocks-dev/openblocks /ts/java
   - The Open Source Retool Alternative
   - An all-in-one IDE to create internal or customer-facing apps.
   - A place to create, build and share building blocks of web applications.
@@ -219,6 +243,7 @@ modified: 2020-12-28T12:24:09.275Z
   - 提供了自动化任务模版中心 Workflow templates，类似可复用的工具函数
     - Convert JSON to an Excel file
     - Creating an API endpoint
+    - 内置了600+个任务
 
 - https://github.com/automatisch/automatisch /ts/graphql
   - open source Zapier alternative. 
@@ -253,7 +278,7 @@ modified: 2020-12-28T12:24:09.275Z
   - Capture events your application generates and stream to Data Warehouse; 
   - Pull data from APIs and save it to Data Warehouse
 # more-lowcode
-- corteza /vue+go
+- corteza /go/vue
   - https://github.com/cortezaproject/corteza
   - https://github.com/cortezaproject/corteza-webapp-one
   - https://cortezaproject.org/

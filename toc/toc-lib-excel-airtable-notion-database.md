@@ -58,7 +58,7 @@ modified: 2022-08-21T10:02:05.129Z
   - [Development Setup](https://docs.nocodb.com/engineering/development-setup/)
   - The Open Source Airtable Alternative
   - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
-  - 后端依赖 express、ioredis、knex、passport、request
+  - 后端依赖 express、knex、ioredis、passport、request
   - 前端依赖 nuxt3、ant-design-vue.v3、vueuse、vue-flow(chart)、monaco-editor、d3-scale、dayjs、vuedraggable、xlsx
   - 支持提供返回表中数据的api
   - Search, sort, filter, hide columns with uber ease
@@ -71,7 +71,7 @@ modified: 2022-08-21T10:02:05.129Z
   - https://apitable.com/
   - [开发者指南](https://github.com/apitable/apitable/blob/develop/docs/readme/zh-CN/docs/contribute/developer-guide.md)
   - API-oriented low-code platform for building collaborative apps and better than all other Airtable open-source alternatives
-  - 后端依赖 spring-boot、mybatis、easyexcel、grpc、protobuf
+  - 后端依赖 spring-boot、mybatis、easyexcel、grpc、protobuf、nestjs
   - 前端依赖 antd、ahooks、redux、exceljs、konva、markdown-it、react-quill、react-dnd、slate
   - 数据库本地架构：变更集/操作/动作/快照等等。
   - 一键式API面板
@@ -109,7 +109,7 @@ modified: 2022-08-21T10:02:05.129Z
   - you can configure the user interface directly with WYSIWYG operations.
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
 
-- focalboard /10.3kStar/src-AGPL & bin-MIT/202203/ts+go
+- focalboard /10.3kStar/src-AGPL & bin-MIT/202203/ts/go
   - https://github.com/mattermost/focalboard
   - https://www.focalboard.com/
   - 前端webapp依赖 @reduxjs/toolkit、react-redux.v7、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
@@ -118,7 +118,7 @@ modified: 2022-08-21T10:02:05.129Z
     - Personal Desktop: A stand-alone single-user Mac, Windows, or Linux desktop app for your todos and personal projects.
     - Mattermost Boards: A self-hosted or cloud server for your team to plan and collaborate.
 
-- rowy /4kStar/apache2/202212/ts
+- rowy /4kStar/apache2/202212/ts/firebase
   - https://github.com/rowyio/rowy
   - http://rowy.io/
   - https://demo.rowy.io/
@@ -149,8 +149,7 @@ modified: 2022-08-21T10:02:05.129Z
   - Columns can be filled by formula
   - A portable, self-contained format. Based on SQLite
   - Full Python syntax is supported, and the standard library.
-
-- irelia /18Star/apache2/202211/ts/py
+- irelia /18Star/apache2/202211/ts/python
   - https://github.com/IreliaTable/irelia
   - https://ireliatable.github.io/irelia-web/
   - 依赖 gristlabs/grist-core、backbone、knockout、jquery
@@ -167,17 +166,19 @@ modified: 2022-08-21T10:02:05.129Z
   - Uses popular frameworks and tools like Django, Vue.js and PostgreSQL.
   - Baserow is not completely open source, there are features they reserve for premium users (like kanban view).
 
+- locokit /47Star/MIT/202301/ts
+  - https://github.com/locokit/locokit
+  - https://locokit.io/
+  - LocoKit is an AirTable alternative, providing database management as a spreadsheet and an app builder.
+  - 后端依赖feathers4、knex
+  - 前端依赖vue2、feathers4、turf、mapbox-gl.v1、monaco-editor、vue2、xlsx、marked
+
 - refine /6.5kStar/MIT/202212/ts
   - https://github.com/refinedev/refine
   - https://refine.dev/
   - headless web application framework developed with flexibility in mind.
   - It eliminates repetitive tasks demanded by CRUD operations and provides industry standard solutions for critical parts like authentication, access control, routing, networking, state management, and i18n.
   - Connectors for 15+ backend services including REST API
-
-- https://github.com/locokit/locokit /inactive
-  - LocoKit is an AirTable alternative, providing database management as a spreadsheet and an app builder.
-  - 前端依赖vue2、feathers4、turf、mapbox-gl.v1、monaco-editor、vue2、xlsx、marked
-  - 后端依赖feathers4、knex
 
 - https://github.com/mukulchugh/kanboard-notion-kanban-react
   - https://notion-kanboard-mukul.netlify.app/

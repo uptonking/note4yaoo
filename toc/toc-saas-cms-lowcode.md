@@ -29,6 +29,7 @@ modified: 2023-01-20T21:59:47.792Z
   - 不是典型的block-editor，富文本作为字段block
   - 后端依赖express、mongoose、passport
   - 前端依赖dnd-kit、monaco-editor、slate、react-beautiful-dnd、react-router5、webpack5、swc
+  - 支持多个versions，Automatically maintain a history of changes to any given collection document
   - Block-based Layout Builder
   - Extensible SlateJS rich text editor
   - A Mongo database to store your data
