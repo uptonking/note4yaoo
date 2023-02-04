@@ -204,9 +204,19 @@ modified: 2021-05-14T15:04:15.333Z
   - Your self-hosted, globally interconnected microblogging community
   - 依赖ruby
 
-- https://github.com/Linen-dev/linen.dev
+- Linen /1.2kStar/AGPLv3/202302/ts/discord-like
+  - https://github.com/Linen-dev/linen.dev
+  - https://www.linen.dev/
   - Linen is a Google-searchable community chat tool. 
+  - 依赖headlessui、tanstack-query、nextjs、swr、prisma、express、zod
   - Linen was built as an alternative to closed tools like Slack and Discord.
+
+- https://github.com/Privoce/vocechat-web
+  - Private Hosted IM and Social Channels, Easy Integration to Your Site or App
+  - VoceChat is a superlight Rust powered chat App, API and SDK that prioritizes private hosting
+  - 依赖react、redux-toolkit、plate、tui-editor、localforage
+  - [Will the server be open source?](https://github.com/Privoce/vocechat-web/issues/19)
+    - rust写的 会开源 但是还没准备好
 
 - https://github.com/fonoster/fonoster
   - open-source alternative to Twilio

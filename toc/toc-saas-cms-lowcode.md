@@ -24,17 +24,18 @@ modified: 2023-01-20T21:59:47.792Z
   - https://github.com/payloadcms/payload
   - https://payloadcms.com/
   - https://demo.payloadcms.com/admin
-  - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
+  - Code-first Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
   - cms只提供管理界面来拖拽生成数据对应的api，不提供预览内容的前端
   - 不是典型的block-editor，富文本作为字段block
   - 后端依赖express、mongoose、passport
   - 前端依赖dnd-kit、monaco-editor、slate、react-beautiful-dnd、react-router5、webpack5、swc
-  - 支持多个versions，Automatically maintain a history of changes to any given collection document
+  - 支持Version History and Drafts, Automatically maintain a history of changes to any given collection document
   - Block-based Layout Builder
   - Extensible SlateJS rich text editor
+  - Extremely granular Access Control
   - A Mongo database to store your data
   - retrieve, and manipulate data of any shape via full REST and GraphQL APIs
-  - File storage and access control
+  - Local file storage & upload
   - Payload dynamically generates a React admin panel to manage your data. 
     - Admin panel is built with Webpack, code-split, highly performant (even with 100+ fields), and written fully in TypeScript.
   - [Roadmap Discussions](https://github.com/payloadcms/payload/discussions/categories/roadmap)
@@ -73,13 +74,40 @@ modified: 2023-01-20T21:59:47.792Z
   - 后端依赖express、knex、async
   - 前端依赖vue3、tinymce5、p-queue、apexcharts
 
-- webiny-js /6.3kStar/MIT/202301/ts/graphql
+- webiny-js /6.3kStar/MIT/202301/ts/graphql/代码量大(很多包)
   - https://github.com/webiny/webiny-js
   - a headless CMS, page builder, form builder, and file manager, admin-area
   - Multi-tenant SaaS applications
   - build a GraphQL API using the Headless CMS
   - ui包依赖editorjs、rmwc、downshift
   - 产品定位明确，业务思路明确，文档简明
+  - Webiny comes in 2 database options, DynamoDB + Elasticsearch and DynamoDB only. 
+  - [How to use other databases with Webiny?](https://github.com/webiny/webiny-js/discussions/2156)
+    - In theory, it’s possible, but you would have to implement the storage operations packages yourself.
+    - since Webiny is a Serverless product, using MySQL or MongoDB is far from recommended, as they don’t have serverless implementations.
+
+- https://github.com/burdy-io/burdy /202202/ts/inactive
+  - Headless CMS built in NodeJS and React. Written in Typescript!
+  - Content types - 16 fields types out of the box, and you can easily extend it with your custom
+  - Node.js, TypeORM, Express
+  - React, Fluent UI
+# discuss
+- ## 
+
+- ## 
+
+- ## [Self-hosted headless cms - WEBINY OR PAYLOAD? : opensource](https://www.reddit.com/r/opensource/comments/zbq7z9/selfhosted_headless_cms_webiny_or_payload/)
+- I'm part of the core team at Payload and I want to get your thoughts on how to show the security standards for Payload.
+  - We do a bunch of best practices that anyone building their own Node/Express app should. 
+  - The auth that we have is built to a higher standard than some of other competitors as it uses http only secure cookies.
+  - If you dig a little you'll find that other headless CMS are not doing this meaning that any javascript code in your project could have access to the user state where it really shouldn't. 
+  - We have other cool things in place that make it easy to turn on user verification, locking accounts, API rate limiting, CSRF and CORS.
+- Regarding security, BCMS provides, out of the box, even in its (generous) free plan, fine-grained control over the API keys and user roles. It offers enterprise-grade permissions features, making it super secure at no cost. Other than the server.
+
+- https://www.reddit.com/r/selfhosted/comments/zbp1z7/exploring_webiny_and_payload_for_a_web_project/
+- Webiny co-founder here. 
+  - If you're looking for a system that's not developer dependant, we are just wrapping up several new features on the Page Builder side of our product, making it much more powerful and easier to use and in Q1/2023 
+  - we'll be launching also the ability to build fully dynamic pages by combining our Page Builder with our Headless CMS. Happy to share more details if you're interested.
 # cms-framework
 - refine /6.5kStar/MIT/202212/ts
   - https://github.com/refinedev/refine

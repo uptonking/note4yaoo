@@ -52,7 +52,7 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/linyows/notionate
   - React components that uses the Notion API to display the Notion's database and page.
 
-- nocodb /33kStar/AGPLv3/202212/ts/vue/重后端
+- nocodb /33kStar/AGPLv3/202212/ts/vue/重后端/多视图
   - https://github.com/nocodb/nocodb
   - https://nocodb.com/
   - [Development Setup](https://docs.nocodb.com/engineering/development-setup/)
@@ -61,10 +61,33 @@ modified: 2022-08-21T10:02:05.129Z
   - 后端依赖 express、knex、ioredis、passport、request
   - 前端依赖 nuxt3、ant-design-vue.v3、vueuse、vue-flow(chart)、monaco-editor、d3-scale、dayjs、vuedraggable、xlsx
   - 支持提供返回表中数据的api
+  - 主要功能模块
+    - 多种视图ui
+    - 管理后台、仪表板
+    - 团队管理
+    - 支持外部数据源
+    - 表格数据自动生成api
+    - 支持公式、rollup
   - Search, sort, filter, hide columns with uber ease
   - Create Views : Grid, Gallery, Kanban, Form
   - Database: Any SQL (postgres, mysql, sqlite, maria DB, SQL server)
   - API: REST and graphql
+
+- locokit /47Star/MIT/202301/ts
+  - https://github.com/locokit/locokit
+  - https://locokit.io/
+  - LocoKit is an AirTable alternative, providing database management as a spreadsheet and an app builder.
+  - 后端依赖feathers4、knex.v旧版
+  - 前端依赖vue2、turf、mapbox-gl.v1、monaco-editor、xlsx、marked
+  - 不支持除表格外的其他视图
+  - 主要功能模块
+    - 数据库设计与数据录入
+    - 前端视图
+    - workspace管理
+    - 成员与权限
+    - Processes/Workflows with a webhook mechanism
+  - [[roadmap] API over SQL / Nuxt 3 / Feathers 5 / Pinia](https://github.com/locokit/locokit/issues/151)
+    - 正在迁移到nuxt3+pinia(vue store)+feathers5
 
 - apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队
   - https://github.com/apitable/apitable
@@ -73,8 +96,15 @@ modified: 2022-08-21T10:02:05.129Z
   - API-oriented low-code platform for building collaborative apps and better than all other Airtable open-source alternatives
   - 后端依赖 spring-boot、mybatis、easyexcel、grpc、protobuf、nestjs
   - 前端依赖 antd、ahooks、redux、exceljs、konva、markdown-it、react-quill、react-dnd、slate
-  - 数据库本地架构：变更集/操作/动作/快照等等。
-  - 一键式API面板
+  - 主要功能模块
+    - 基于canvas渲染的表格ui
+    - 实时协作
+    - 数据库本地架构：变更集/操作/动作/快照等
+    - 跨表关联
+    - 自动生成api，一键式API面板
+    - 表单
+    - 强大的行/列权限
+    - Shareable and embeddable page
   - APITable 将提供一个数据表查询语言(DQL)来查询您的数据库电子表格内容。
   - Realtime collaboration allows multiple users to edit together in real time, or simultaneously with the Operational Transformation (OT) Algorithm.
   - 7 View Types: Grid View (Datasheet) / Gallery View / Mindmap View / Kanban View / Full-Feature Gantt View / Calendar View
@@ -108,6 +138,7 @@ modified: 2022-08-21T10:02:05.129Z
     - 每个区块里可以定义不同的样式、文案、操作
   - you can configure the user interface directly with WYSIWYG operations.
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
+  - [change license to plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
 
 - focalboard /10.3kStar/src-AGPL & bin-MIT/202203/ts/go
   - https://github.com/mattermost/focalboard
@@ -118,17 +149,22 @@ modified: 2022-08-21T10:02:05.129Z
     - Personal Desktop: A stand-alone single-user Mac, Windows, or Linux desktop app for your todos and personal projects.
     - Mattermost Boards: A self-hosted or cloud server for your team to plan and collaborate.
 
-- rowy /4kStar/apache2/202212/ts/firebase
+- rowy /4kStar/apache2/202212/ts/firebase/示例丰富
   - https://github.com/rowyio/rowy
   - http://rowy.io/
   - https://demo.rowy.io/
   - Rowy is an open-source low-code platform for Firebase and Firestore.
-  - 依赖firebase、mui5、tanstack-table、tinymce5、monaco-editor、jotai、swr、react-dnd
+  - 前端依赖mui5、tanstack-table、tinymce5、monaco-editor、jotai、swr、react-dnd
+  - 后端依赖firebase
+  - 不支持firebase外的其他数据库、数据源，但在开发中
+  - 不支持除表格外的其他视图
   - Airtable-like UI with cloud functions workflows in JS/TS, all in your browser.
   - Manage Firestore data in a spreadsheet-like UI, write Cloud Functions effortlessly in the browser
   - Powerful spreadsheet interface for Firestore
   - 30+ fields supported
   - [Firetable is now Rowy_202110](https://news.ycombinator.com/item?id=28768261)
+  - [When will MySQL be supported](https://github.com/rowyio/rowy/discussions/1051)
+    - we're currently working on the support for PostgreSQL with Rowy
   - [Abstracting the UI to be compatible with any database](https://github.com/rowyio/rowy/issues/228)
     - long term
   - https://demo.rowy.io/table/allFieldTypes
@@ -139,10 +175,24 @@ modified: 2022-08-21T10:02:05.129Z
     - Firetable is now Rowy
     - https://github.com/FiretableProject/firetable
 
+- baserow /1.3kStar/MIT/202212/python/js/vue/多视图
+  - https://github.com/bram2w/baserow
+  - https://baserow.io/
+  - Baserow is an open source no-code database tool and Airtable alternative. 
+  - Open-core with all non-premium features under the MIT License allowing commercial and private use.
+  - 前端依赖nuxt2、chartjs2、markdown-it、moment、antlr4
+  - 后端依赖django3
+  - 免费版支持视图grid、form、gallery
+    - kanban view is restricted to the premium version only
+    - 但企业版源码也是公开的
+  - Headless and API first.
+  - Uses popular frameworks and tools like Django, Vue.js and PostgreSQL.
+  - Baserow is not completely open source, there are features they reserve for premium users (like kanban view).
+
 - grist-core /3.4kStar/apache2/202211/ts/python
   - https://github.com/gristlabs/grist-core
   - https://support.getgrist.com/
-  - 不直接支持视图切换，但支持各种widgets
+  - 表格不支持视图切换，支持各种widgets，类似dashboard
   - 前端基于backbone、jquery
   - Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database to organize your data and make you more productive.
   - Columns work like they do in databases.
@@ -157,22 +207,6 @@ modified: 2022-08-21T10:02:05.129Z
   - Python formulas. Full Python syntax is supported, and the standard library.
   - A portable, self-contained format based on SQLite
 
-- baserow /1.3kStar/MIT/202212/python/js/vue
-  - https://github.com/bram2w/baserow
-  - https://baserow.io/
-  - Baserow is an open source no-code database tool and Airtable alternative. 
-  - Open-core with all non-premium features under the MIT License allowing commercial and private use.
-  - Headless and API first.
-  - Uses popular frameworks and tools like Django, Vue.js and PostgreSQL.
-  - Baserow is not completely open source, there are features they reserve for premium users (like kanban view).
-
-- locokit /47Star/MIT/202301/ts
-  - https://github.com/locokit/locokit
-  - https://locokit.io/
-  - LocoKit is an AirTable alternative, providing database management as a spreadsheet and an app builder.
-  - 后端依赖feathers4、knex
-  - 前端依赖vue2、feathers4、turf、mapbox-gl.v1、monaco-editor、vue2、xlsx、marked
-
 - refine /6.5kStar/MIT/202212/ts
   - https://github.com/refinedev/refine
   - https://refine.dev/
@@ -183,7 +217,7 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/mukulchugh/kanboard-notion-kanban-react
   - https://notion-kanboard-mukul.netlify.app/
   - 暂不支持视图切换
-# notion database like
+# notion-database-like
 - https://github.com/NotionX/react-notion-x
   - https://react-notion-x-demo.transitivebullsh.it/
   - Fast and accurate React renderer for Notion. TS batteries included.
@@ -226,7 +260,7 @@ modified: 2022-08-21T10:02:05.129Z
 
 - https://github.com/souvikinator/notion-to-md
   - Convert notion pages, block and list of blocks to markdown (supports nesting) using notion-sdk-js
-# more-table-like
+# table-like
 - https://github.com/vikadata/vika.js
   - Vika JavaScript SDK 是对维格表 Fusion API 的官方封装，可以很方便的对你的维格表中的数据进行增删改查操作。
   - 你可以轻松的将维格表中的数据集成到你自己的应用中
@@ -235,7 +269,7 @@ modified: 2022-08-21T10:02:05.129Z
   - A realtime, powerful, lightweight alternative to Airtable/Excel
   - 依赖firebase/supabase
 
-- https://github.com/whitebrick/whitebrick /202202/ts/inactive/未完成
+- https://github.com/whitebrick/whitebrick /202202/ts/deprecated/未完成
   - Open Source Airtable Alternative (No Code DB)
   - Whitebrick is a lightweight No Code Database with 3 points of difference:
   - The front end uses a Gatsby static Jamstack client for dead easy customization and deployment.

@@ -32,23 +32,62 @@ modified: 2020-12-28T12:24:09.275Z
   - https://demo.payloadcms.com/admin
   - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
   - cms只提供管理界面来拖拽生成数据对应的api，不提供预览内容的前端
-  - 不是典型的block-editor，富文本作为字段block
   - 后端依赖express、mongoose、passport
-  - 前端依赖dnd-kit、monaco-editor、slate、react-beautiful-dnd、react-router5、webpack5、swc
-  - 支持多个versions，Automatically maintain a history of changes to any given collection document
+  - 前端依赖dnd-kit、monaco-editor、slate、react-beautiful-dnd、faceless-ui、react-router5、webpack5、swc
+  - 主要功能模块
+    - 总体设计
+      - 丰富的字段类型 fields
+      - 管理后台、控制台界面
+      - 权限控制、api
+      - 版本管理
+    - 内容管理
+      - 类别标签 Categories
+      - 文章内容
+      - 媒体资源
+      - 表单收集
+    - 用户与设置
+      - 用户列表
+      - 通知与警告
+      - 表单事件
+      - 主页菜单配置
+  - 支持Version History and Drafts, Automatically maintain a history of changes to any given collection document
+  - 支持seo, auto-generate SEO meta data based on the content of your documents.
   - Block-based Layout Builder
+    - 不是典型的block-editor，富文本作为字段block
   - Extensible SlateJS rich text editor
+  - Extremely granular Access Control to your data, based on document or field-level functions
   - A Mongo database to store your data
-  - retrieve, and manipulate data of any shape via full REST and GraphQL APIs
-  - File storage and access control
+  - store, retrieve, and manipulate data of any shape via full REST and GraphQL APIs
+  - Local file storage & upload
   - Payload dynamically generates a React admin panel to manage your data. 
     - Admin panel is built with Webpack, code-split, highly performant (even with 100+ fields), and written fully in TypeScript.
+  - A headless CMS is a system that sticks to what it's good at—managing content. 
+    - It concentrates solely on granting administrators an effective way to author and maintain content, but doesn't control how and where that content is used.
   - [Roadmap Discussions](https://github.com/payloadcms/payload/discussions/categories/roadmap)
+
+- n8n /28kStar/FairCode/202301/ts/vue/依赖少
+  - https://github.com/n8n-io/n8n
+  - https://n8n.io/
+  - Easily automate tasks across different services.
+  - helps to connect any app with an API with any other, and manipulate its data with little or no code.
+  - 后端依赖express、typeorm、pg、convict(config)、handlebars
+  - 前端依赖vue2、jsplumb、codemirror6、jquery、monaco-editor、prismjs
+  - 提供了自动化任务模版中心 Workflow templates，类似可复用的工具函数
+    - Convert JSON to an Excel file
+    - Creating an API endpoint
+    - 内置了600+个任务
+  - 主要功能模块
+    - task-node, workflow, execution
+    - tags
+    - templates
+    - sharing
 
 - baidu-amis /12.9kStar//apache2/202301/ts/编辑器未开源
   - https://github.com/baidu/amis
-  - 依赖mobx、react、jquery、sortablejs、tinymce
-  - 前端低代码框架，通过JSON配置就能生成各种后台页面，不适合大量交互、定制ui
+  - 依赖downshift、rc-menu、mobx、sortablejs、tinymce、codemirror5、echarts5、uncontrollable
+  - 前端低代码框架，通过JSON配置就能生成各种后台页面
+  - 在以下场合并不适合amis：大量定制UI、复杂或特殊的交互
+  - 目前富文本编辑器基于两个库：[froala](https://froala.com/) 和 [tinymce](https://github.com/tinymce/tinymce)，默认使用 tinymce
   - https://github.com/aisuda/amis-editor-demo
     - http://aisuda.github.io/amis-editor-demo
     - amis 可视化编辑器示例
@@ -59,18 +98,27 @@ modified: 2020-12-28T12:24:09.275Z
 - alibaba-lowcode-engine /8.9kStar/MIT/202212/ts
   - https://github.com/alibaba/lowcode-engine
   - 一套面向扩展设计的企业级低代码技术体系
-  - 依赖react、mobx、power-di
-  - 引擎完整实现了 低代码引擎 搭建协议、物料协议、资产包协议
+  - 引擎完整实现了低代码引擎 搭建协议、物料协议、资产包协议
+  - 依赖fusion-design、mobx、power-di
+  - 主要功能模块
+    - 页面与大纲
+    - 组件与资源
+    - 数据源
+    - 源码面板
+    - 搭建编辑器、属性面板
   - LowCodeEngine目前仅支持生成React的前端代码
     - 制作成本固然低了，造出来的代码维护成本太高了
     - 这种东西，不会编程的人对他来说太复杂了，会编程的人来说太繁琐了。
+  - 不支持在editor拖拽修改block顺序，只能在大纲拖拽
   - [阿里低代码引擎简介](https://lowcode-engine.cn/site/docs/guide/quickStart/intro)
 
 - jd-drip-table /677Star/MIT/202301/ts/仅表格
   - https://github.com/JDFED/drip-table
   - https://drip-table.jd.com/
+  - https://drip-table.jd.com/demo
   - 依赖viewerjs-image-viewer, rc-*组件，react-window、moment
   - 京东零售推出的一款用于企业级中后台的动态列表解决方案
+    - 类似表格渲染编辑器
   - 抛弃繁重难以维护的JSX堆砌表格列，采用无需开发的低代码拖拽搭建模式。
   - 专注于可视化搭建、组件渲染分发，底层渲染逻辑由组件库处理，因此不依赖指定界面框架，可支持多种主流界面组件库。
   - 全家桶
@@ -82,6 +130,15 @@ modified: 2020-12-28T12:24:09.275Z
   - API-oriented low-code platform for building collaborative apps and better than all other Airtable open-source alternatives
   - 后端依赖spring-boot、mybatis、easyexcel、grpc、protobuf
   - 前端依赖antd、ahooks、redux、exceljs、konva、markdown-it、react-quill、react-dnd、slate
+  - 主要功能模块
+    - 基于canvas渲染的表格ui
+    - 实时协作
+    - 数据库本地架构：变更集/操作/动作/快照等
+    - 跨表关联
+    - 自动生成api
+    - 表单
+    - 强大的行/列权限
+    - Shareable and embeddable page
   - Realtime collaboration allows multiple users to edit together in real time, or simultaneously with the Operational Transformation (OT) Algorithm.
   - super-fast database-spreadsheet interface in `<canvas>` Rendering Engine.
   - Database native architecture: Changeset / Operation / Action / Snapshot and so on.
@@ -99,28 +156,45 @@ modified: 2020-12-28T12:24:09.275Z
 - nocobase /3.7kStar/apache2/202212/ts/国内
   - https://github.com/nocobase/nocobase
   - https://www.nocobase.com/
-  - 易扩展的开源无代码开发平台。
+  - [features](https://docs-cn.nocobase.com/welcome/introduction/features)
+  - 易扩展的开源无代码开发平台
   - NocoBase is a scalability-first, open-source no-code/low-code development platform.
   - server依赖koa、sequelize.v6
   - client依赖antd、g2plot、ahooks、dnd-kit、formily、marked、react-iframe、react-quill、react-router5
+  - 主要功能模块
+    - 微内核，灵活易扩展，具备健全的插件体系、内置插件市场
+    - fields: 使用文本、数字、附件等数十种字段类型
+    - blocks: 使用表格、表单、看板、日历、详情等区块
+    - 操作: 支持筛选、导出、添加、删除、修改、查看等操作对数据进行处理，可以扩展更多类型
+    - 权限: 基于角色控制用户的系统配置权限、数据操作权限和菜单访问权限
+    - Workflow: 重复性的任务由自动化代替
   - 采用数据结构与使用界面分离的设计思路
     - 可以为数据表创建任意数量、任意形态的区块（数据视图），
     - 每个区块里可以定义不同的样式、文案、操作
   - you can configure the user interface directly with WYSIWYG operations.
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
+  - [change license to plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
+
+- directus /19.5kStar/GPLv3/202301/ts/vue
+  - https://github.com/directus/directus
+  - https://directus.io/
+  - Directus is a real-time API and App dashboard for managing SQL database content.
+  - REST & GraphQL API. Instantly layers a blazingly fast Node.js API on top of any SQL database.
+  - 后端依赖express、knex、async
+  - 前端依赖vue3、tinymce5、p-queue、apexcharts
 
 - webstudio-designer /172Star/MIT/202212/ts
   - https://github.com/webstudio-is/webstudio-designer
   - https://webstudio.is/
   - Webstudio Designer is a NoCode Visual Tool inspired by Webflow
   - an open source visual development tool
+  - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
   - simplify collaboration between designers and developers on any type of site or web app.
-  - With Webstudio you can use any headless CMS or e-commerce back-end. 
+  - With Webstudio you can use any headless CMS or e-commerce back-end.
   - Webstudio features a UI to create API bindings. You can add a GraphQL binding to any component and choose which endpoint and data properties to bind to each component property. 
   - block块级元素不支持拖拽
-  - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
 
-- https://github.com/page-pipepline/pipeline-editor /201910/js
+- https://github.com/page-pipepline/pipeline-editor /201910/js/inactive
   - 页面可视化搭建框架的 web 编辑器
   - 实现了编辑器和页面前端框架的分离, 可以支持不同的前端框架.
   - 目前已经支持 Vue, React, 和 Omi, 理论上可以支持任意前端框架.
@@ -129,6 +203,12 @@ modified: 2020-12-28T12:24:09.275Z
   - https://github.com/ToolJet/ToolJet
   - https://tooljet.com/
   - low-code framework to build and deploy internal tools
+  - 后端依赖nestjs、typeorm、ws、handlebars
+  - 前端依赖react-plotly.js、rxjs、yjs
+  - 功能模块设计
+    - 数据表设计与录入
+    - 仪表板
+    - 成员与权限
   - ToolJet's drag and drop frontend builder allows you to build complicated responsive frontends within minutes
 # lowcode
 - lowdefy /2.1kStar/apache2/202301/js/json/yaml
@@ -156,6 +236,7 @@ modified: 2020-12-28T12:24:09.275Z
   - https://github.com/appsmithorg/appsmith
   - open source alternative to Power Apps, Salesforce Lightning
   - A low code way to build dashboards, workflows, forms, and any internal tool.
+  - 服务端依赖spring-boot、mongodb
 
 - https://github.com/merico-dev/table /apache2/202301/ts
   - Build your own data presentation using SQL and multiple data sources including big data. 
@@ -234,20 +315,11 @@ modified: 2020-12-28T12:24:09.275Z
 - tips
   - 考虑跨平台/系统的task兼容性、分享，主流的airflow/ifttt
 
-- n8n /28kStar/FairCode/202301/ts/vue/依赖少
-  - https://github.com/n8n-io/
-  - https://n8n.io/
-  - an extendable workflow automation tool
-  - Easily automate tasks across different services.
-  - 前端依赖vue2、jsplumb、codemirror6、jquery、monaco-editor、prismjs
-  - 提供了自动化任务模版中心 Workflow templates，类似可复用的工具函数
-    - Convert JSON to an Excel file
-    - Creating an API endpoint
-    - 内置了600+个任务
-
-- https://github.com/automatisch/automatisch /ts/graphql
+- https://github.com/automatisch/automatisch /AGPLv3/ts/graphql
   - open source Zapier alternative. 
   - Build workflow automation without spending time and money.
+  - 前端依赖mui5、apollo、graphql、slate
+  - 后端依赖express、knex、pg、graphql
 
 - https://github.com/elyra-ai/pipeline-editor
   - A react component for editing pipeline files. 
@@ -259,8 +331,10 @@ modified: 2020-12-28T12:24:09.275Z
   - Lightweight task management and build tool.
   - 通过 pipeline 和 middleware 将开发过程抽象为相对固定的阶段和有限的操作，简化并统一了开发人员的日常构建与开发相关的工作。
 
-- https://github.com/Budibase/budibase /GPLv3/svelte
-  - Low code platform for creating internal tools, workflows, and admin panels in minutes. 
+- budibase /17.3kStar/GPLv3/svelte
+  - https://github.com/Budibase/budibase
+  - Low code platform for creating internal tools, workflows, and admin panels in minutes.
+  - 后端依赖koa、knex、pouchdb
   - 前端依赖svelte
   - unlike other platforms, with Budibase you can start from scratch and create business apps with no datasources
   - Budibase integrates with a number of popular tools allowing you to build apps

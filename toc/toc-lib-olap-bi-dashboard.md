@@ -16,14 +16,19 @@ modified: 2020-12-09T09:30:24.694Z
   - [day7主页大屏数据展示, vue+echarts](http://doc.bufanui.com/docs/leju-admin/leju-admin-1cmgcm5kelp3c)
   - [不凡学院 文档](http://doc.bufanui.com/)
 # bi-analytics
-- lightdash /2kStar/MIT/202301/ts
+- lightdash /2kStar/MIT/202301/ts/dbt
   - https://github.com/lightdash/lightdash
   - https://lightdash.com/
   - https://demo.lightdash.com/
   - [Setup Development Environment](https://github.com/lightdash/lightdash/blob/main/.github/CONTRIBUTING.md#setup-development-environment-without-docker)
   - open-source BI (Looker alternative) for teams that move fast.
-  - 后端依赖 express、pg、knex、passport
+  - 后端依赖 express、knex、pg、passport
   - 前端依赖 blueprintjs、echarts、jspdf、react-ace、react-beautiful-dnd
+  - 主要功能模块
+    - workspace
+    - dashboard
+    - charts/query
+    - 用户与权限
 
 - Superset /50.4kStar/Apache2/202301/ts/python
   - https://github.com/apache/superset

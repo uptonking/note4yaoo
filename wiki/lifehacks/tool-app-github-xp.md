@@ -166,6 +166,9 @@ modified: 2022-11-07T10:24:02.543Z
     - Autocomplete is predictable, Autopilot much less so.
     - Spotting issues is IMO harder when reading code than when writing it.
     - You want perfect code, not code that the average dev would write.
+# github-extensions
+- https://github.com/octokit/octokit.js
+  - The all-batteries-included GitHub SDK for Browsers, Node.js, and Deno.
 # github-redo-theming
 - https://github.com/imfunniee/gitfolio
   - https://imfunniee.github.io/gitfolio/

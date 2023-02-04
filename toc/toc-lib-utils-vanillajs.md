@@ -44,6 +44,15 @@ modified: 2021-03-01T10:54:24.828Z
   - cst-tokens; Its CSTs are ASTs where each node has a `node.cstTokens` array of `{type, value}` tokens. 
   - To make the AST we threw away all the textual symbols that humans use to read programs: the blank space, the braces, the comments. 
   - code editing tools need a useful, standard way of incorporating spaces, braces, and comments into an Abstract Syntax Tree, thus turning it into a Conrete Syntax Tree or CST. 
+# date-time
+
+- https://github.com/dmtrKovalenko/date-io
+  - Abstraction over common JavaScript date management libraries.
+  - exposes an abstraction interface over luxon, date-fns v2, dayjs and moment.
+# command-line
+- https://github.com/fabiospampinato/tiny-parse-argv
+  - A tiny function for parsing `process.argv`.
+  - a modern rewrite of a sensible subset of minimist.
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

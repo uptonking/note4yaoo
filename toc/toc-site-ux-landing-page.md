@@ -48,6 +48,9 @@ modified: 2020-12-29T11:27:41.474Z
   - glassmorphism风格
 
 - [Open Props: sub-atomic styles](https://open-props.style/)
+
+- 黑色卡片
+  - https://twitter.com/AdhamDannaway/status/1621525499787763713
 # theming-green
 - ref
   - https://dribbble.com/tags/green_theme

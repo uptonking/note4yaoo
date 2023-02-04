@@ -16,7 +16,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 深入一个项目: src-code, issues, pr, forks, extensions/alternative
 
 - 技术方向js: 富文本编辑器，多维表格，协作
-- 技术扩展js/py: 页面拖拽编辑器LowCode，Excel，图表
+- 技术扩展js/py: 支持拖拽的页面编辑器/LowCode，Excel，图表
 - 技术可选1: 画板，图形编辑器, pdf
 - 技术可选2: olap，bi，数据工程，数据库
 
@@ -38,19 +38,38 @@ modified: 2021-07-20T13:50:23.433Z
 
 ## techstacks: rich-editor/builder
 
-- design system
+- design-system
   - themeable; unstyled/headless; a11y/keyboard-ux
-- text editor
+- editor/WYSIWYG
   - modular/extensible; collaborative; easy-pivotable
   - block-editor with slash-menu/backlinks
   - pdf
-- data table/grid
+- excel/data-grid
   - pivotable; collaborative; formulas
   - stream-updates/server-side-infinite-row-model
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~
 
 ## solutions: inter(re)active knowledge-base/wiki
+
+- ✨ cms(content-mgmt)
+  - payloadcms(MIT/mongoose+slate)
+  - nocobase(apache2/sequelize+ahooks)
+  - directus(AGPL/knex+vue3+tinymce5)
+- ✨ airtable-like(data-mgmt)
+  - nocodb   (AGPL/knex+nuxt3)
+  - apitable (AGPL/spring-boot+konva)
+  - focalboard(AGPL/go+react-dnd)
+  - locokit    (MIT/knex+vue2)
+  - rowy(apache2/mui5)
+  - baserow (MIT/django+nuxt2)
+- ✨ workflow
+  - n8n        (AGPL/typeorm+vue2)
+  - budibase   (AGPL/knex+svelte)
+  - automatisch(AGPL/knex+graphql+slate)
+- ✨ bi
+  - superset(apache2/flask+echarts)
+  - lightdash   (MIT/knex+echarts)
 
 - features
   - local-first/offlineable/localizable
@@ -95,7 +114,7 @@ modified: 2021-07-20T13:50:23.433Z
   - monaco-editor
     - code editor that powers desktop vscode
     - not supported in mobile browsers. not for IE.
-# list-grid-table
+# excel
 - tips
 
 - leading
@@ -117,10 +136,10 @@ modified: 2021-07-20T13:50:23.433Z
 - charting-viz
   - leading
     - d3
-    - antvis
     - echarts
-  - more-charting
     - vega
+  - more-charting
+    - antvis
 
 - faves
   - design: adobe-spectrum, tailwind
