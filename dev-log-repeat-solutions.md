@@ -23,7 +23,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 🚀 产品落地
   - 表格类笔记创作
   - 运营数据仪表板
-  - share table/data pieces/snippets
+  - sharing table/data pieces/snippets
   - 个人数据管理，开放api，允许其他app获取
 
 - 生态与集成
@@ -44,8 +44,10 @@ modified: 2021-07-20T13:50:23.433Z
   - modular/extensible; collaborative; easy-pivotable
   - block-editor with slash-menu/backlinks
   - pdf
+  - 👉🏻 prosemirror, tiptap, slate, lexical
 - excel/data-grid
   - pivotable; collaborative; formulas
+  - 👉🏻 tanstack-table, luckysheet/univer, ag-grid
   - stream-updates/server-side-infinite-row-model
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~
@@ -53,23 +55,24 @@ modified: 2021-07-20T13:50:23.433Z
 ## solutions: inter(re)active knowledge-base/wiki
 
 - ✨ cms(content-mgmt)
-  - payloadcms(MIT/mongoose+slate)
-  - nocobase(apache2/sequelize+ahooks)
-  - directus(AGPL/knex+vue3+tinymce5)
+  - 👉🏻 payloadcms(MIT/mongoose+slate)
+  - nocobase (apache2/sequelize+ahooks)
+  - directus    (AGPL/knex+vue3+tinymce5)
+  - outline  (apache2/sequelize+prosemirror)
 - ✨ airtable-like(data-mgmt)
-  - nocodb   (AGPL/knex+nuxt3)
-  - apitable (AGPL/spring-boot+konva)
-  - focalboard(AGPL/go+react-dnd)
-  - locokit    (MIT/knex+vue2)
-  - rowy(apache2/mui5)
-  - baserow (MIT/django+nuxt2)
+  - 👉🏻 nocodb  (AGPL/knex+nuxt3)
+  - apitable   (AGPL/spring-boot+konva)
+  - focalboard (AGPL/go+react-dnd)
+  - locokit     (MIT/knex+vue2)
+  - rowy    (apache2/mui5)
+  - baserow     (MIT/django+nuxt2)
 - ✨ workflow
   - n8n        (AGPL/typeorm+vue2)
   - budibase   (AGPL/knex+svelte)
   - automatisch(AGPL/knex+graphql+slate)
 - ✨ bi
   - superset(apache2/flask+echarts)
-  - lightdash   (MIT/knex+echarts)
+  - 👉🏻 lightdash(MIT/knex+echarts)
 
 - features
   - local-first/offlineable/localizable

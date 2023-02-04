@@ -37,7 +37,7 @@ modified: 2021-07-27T16:35:20.057Z
 
 - 效率工具推荐
   - 大纲编辑器：幕布、Workflowy
-  - 在线 Office：金山文档、腾讯文档 @腾讯文档
+  - 在线 Office：金山文档、腾讯文档
   - 灵感收集工具：Flomo @flomo浮墨笔记
   - 轻量级便签：SideNote
   - 知识管理工具、在线协作中心：FlowUs 息流笔记@FlowUs

@@ -31,7 +31,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序
   - 前端依赖 @douyinfe/semi-ui、excalidraw、tiptap2、docx、katex、markdown-it、nextjs、react-pdf、react-query3、tippy.js、yjs
-  - 后端依赖 nestjs、passport、typeorm、mysql、yjs
+  - 后端依赖 nestjs、typeorm、passport、mysql、yjs
   - Think 是一款开源知识管理工具。通过独立的知识库空间，结构化地组织在线协作文档，实现知识的积累与沉淀，促进知识的复用与流通。同时支持多人协作文档。
 
 - outline /12.5kStar/BSD > BSL/202109/ts
@@ -43,6 +43,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 与slack集成很好
   - 样式与airframe-react dashboard风格类似
   - [Adopt BSL 1.1 license__202003.v0.41.0](https://github.com/outline/outline/pull/1197)
+  - [Convert from slate to Prosemirror_202005](https://github.com/outline/rich-markdown-editor/pull/150)
   - ref
     - https://github.com/ProseWorker/ProseWriter
 
@@ -58,6 +59,7 @@ modified: 2022-06-03T21:34:54.893Z
   - https://docs.growi.org/en/guide/
   - https://demo.growi.org/
   - Team collaboration software using markdown
+  - 依赖 express、mongoose、es、redis、swr
   - Simultaneously edit with multiple people by HackMD(CodiMD) integration
   - Create hierarchical pages with markdown
   - Slack/Mattermost, IFTTT Integration
@@ -91,7 +93,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 前端依赖: LayUI、JQuery、vditor、luckysheet.v2
   - 功能特性: 文档资源管理、书写编辑、阅读分享、站点管理
 
-- notabase /434Star/AGPLv3/202208/ts/仅网页版
+- notabase /434Star/AGPLv3/202208/ts/仅网页版/supabase
   - https://github.com/churichard/notabase
   - https://notabase.io/
   - A personal knowledge base for networked thinking.
@@ -244,12 +246,13 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/andymatuschak/orbit
   - Orbit is an experimental platform for publishing and engaging with small tasks repeatedly over time.
 
-- https://github.com/crowi/crowi
+- https://github.com/crowi/crowi /MIT/202211/ts
   - http://demo.crowi.wiki/
   - Crowi - The Markdown Wiki - Empower the team with sharing your knowledge
   - URL Based Page Tree
   - pages that end with slashes (/) are automatically generated as list views. 
   - 功能和样式都很普通
+  - 依赖mongodb
 
 - Ink-wash-docs /472Star/Apache2/202010/js
   - https://github.com/huangwei9527/Ink-wash-docs

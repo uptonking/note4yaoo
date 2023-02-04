@@ -276,6 +276,10 @@ modified: 2022-04-05T10:08:25.947Z
   - A simple list-based CmRDT to implement collaborate editor
   - 依赖mongodb
 
+- https://github.com/coast-team/mute
+  - a scalable collaborative document editor with CRDT, P2P and E2EE
+  - MUTE implements a CRDT-based consistency algorithm for large scale peer-to-peer collaboration: `LogootSplit`. 
+
 - https://github.com/geetesh-gupta/py-crdt-collab-editor
   - CRDT based collaborative code/text editor.
   - 依赖flask，requests

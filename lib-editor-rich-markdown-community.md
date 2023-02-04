@@ -8,7 +8,7 @@ modified: 2021-06-02T10:29:43.088Z
 # lib-editor-rich-markdown-community
 
 # guide
-- [chore: Move editor into codebase outline/outline](https://github.com/outline/outline/pull/2930)
+- [chore: Move editor into codebase outline/outline_202201](https://github.com/outline/outline/pull/2930)
   - [Move to sending JSON rather than Markdown to client](https://github.com/outline/outline/issues/3000)
 # pieces
 - ## 

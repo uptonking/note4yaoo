@@ -15,10 +15,26 @@ modified: 2023-01-17T19:14:47.611Z
   - https://docs.growi.org/en/guide/
   - https://demo.growi.org/
   - Team collaboration software using markdown
+  - 依赖 express、mongoose、es、redis、swr
   - Simultaneously edit with multiple people by HackMD(CodiMD) integration
   - Create hierarchical pages with markdown
   - Slack/Mattermost, IFTTT Integration
   - 各种集成
+
+- https://github.com/excalidraw/excalidraw-room
+  - Collaboration server for Excalidraw
+
+- cryptpad /AGPLv3/202301/js
+  - https://github.com/xwiki-labs/cryptpad
+  - https://cryptpad.org/
+  - CryptPad is a collaboration suite that is end-to-end-encrypted and open-source. 
+  - It is built to enable collaboration, synchronizing changes to documents in real time. 
+  - Because all data is encrypted, the service and its administrators have no way of seeing the content being edited and stored.
+  - https://github.com/xwiki-labs/chainpad-server
+    - Implements a websocket server compatible with netflux-websocket client as per the Netflux 2.0 specification.
+    - https://github.com/xwiki-labs/netflux-spec2
+  - https://github.com/xwiki-labs/chainpad-listmap
+    - collaborative lists and maps in the browser
 
 - https://github.com/SerenityNotes/serenity-notes-clients
   - Serenity Notes iOS/Android/macOS
@@ -47,13 +63,6 @@ modified: 2023-01-17T19:14:47.611Z
   - https://github.com/CoCreate-app/CoCreate-admin
     - A No Code Admin, CRM, CMS, Website Builder platform. 
     - Powered by CoCreateJS to provide Realtime and Collaborative CRUD functionality.
-
-- https://github.com/xwiki-labs/cryptpad /202301/js
-  - CryptPad is a collaboration suite that is end-to-end-encrypted and open-source. 
-  - It is built to enable collaboration, synchronizing changes to documents in real time. 
-  - Because all data is encrypted, the service and its administrators have no way of seeing the content being edited and stored.
-  - https://github.com/xwiki-labs/chainpad-listmap
-    - collaborative lists and maps in the browser
 
 - https://github.com/Zeekg-zk/Collaborative-Platform /202210/ts/inactive
   - 团队协作与管理平台，具有在线多人聊天、消息实时推送、协同编辑等功能
@@ -98,6 +107,9 @@ modified: 2023-01-17T19:14:47.611Z
 
 - https://github.com/elicesw2-project2/synergy
   - All-in-one Workspace Collaboration Tools
+
+- https://github.com/atharmohammad/Code-N-Collab /202110/js/inactive
+  - a Collaborative Website for developers and competitive coders who likes to code and discuss about topics , problems or issues
 # collab-apps
 - https://github.com/configu/configu
   - A generic standard for managing and collaborating software configurations 
@@ -136,6 +148,25 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/Thomas-Basham/collab-done
   - A social media React web app for musicians to connect and collaborate. 
   - Built with NextJS, ReactJS, Supabase
+
+- https://github.com/docs-plus/docs.plus
+  - real-time collaborative tool that enables communities to share and organize knowledge in a hierarchical manner
+# realtime-room
+- https://github.com/Poujhit/Chatzilla
+  - Chat Room Application made using React/Typescript and NodeJs-Web sockets.
+  - All your chats are not stored anywhere. Even the chat rooms are not stored anywhere.
+
+- https://github.com/nshosain/real-time-chat-app-with-rooms
+  - real-time chat app with rooms : TypeScript, NodeJs, Express, React, Socket IO and MongoDB
+
+- https://github.com/geckosio/geckos.io
+  - Geckos.io offers real-time client/server communication over UDP using WebRTC and Node.js
+  - People who have never build a multiplayer game, should probably use a library like socket.io instead, since there are way more examples/tutorial available.
+  - Socket.io and geckos.io use a similar API. The switch from socket.io to geckos.io should be easy.
+
+- https://github.com/deepstreamIO/deepstream.io
+  - open source server inspired by concepts behind financial trading technology. 
+  - It allows clients and backend services to sync data, send messages and make rpcs at very high speed and scale.
 # utils
 - clientdb /506Star/apache2/202207/ts/同步未完成
   - https://github.com/clientdb/clientdb

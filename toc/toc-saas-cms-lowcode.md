@@ -38,10 +38,9 @@ modified: 2023-01-20T21:59:47.792Z
   - Local file storage & upload
   - Payload dynamically generates a React admin panel to manage your data. 
     - Admin panel is built with Webpack, code-split, highly performant (even with 100+ fields), and written fully in TypeScript.
+  - [Compare Payload against other headless CMS: strapi, directus](https://payloadcms.com/compare)
   - [Roadmap Discussions](https://github.com/payloadcms/payload/discussions/categories/roadmap)
-  - [2023 Payload Roadmap](https://github.com/payloadcms/payload/discussions/1539)
   - [Payload (YC S22) – Headless CMS for Developers | Hacker News_202208](https://news.ycombinator.com/item?id=32665325)
-    - v2 is coming and that will 100% be open-source!
   - Our business model is based on two things:
     - Enterprise features like SSO, audit logs, publication workflows, and translation workflows. 
     - Cloud hosting. 
@@ -73,6 +72,10 @@ modified: 2023-01-20T21:59:47.792Z
   - REST & GraphQL API. Instantly layers a blazingly fast Node.js API on top of any SQL database.
   - 后端依赖express、knex、async
   - 前端依赖vue3、tinymce5、p-queue、apexcharts
+  - Directus uses TinyMCE, which stores content as a string of HTML. 
+  - Directus is SQL-based which requires overhead like migrations and more.
+  - Payload allows bringing your own Express server.
+  - Directus only supports role-based access control (RBAC). However, Payload supports function-based access control which can be used on either a document or field-by-field basis 
 
 - webiny-js /6.3kStar/MIT/202301/ts/graphql/代码量大(很多包)
   - https://github.com/webiny/webiny-js

@@ -107,8 +107,11 @@ modified: 2022-11-07T17:36:22.236Z
   - https://github.com/boardsite-io/boardsite
   - https://boardsite.io/
   - a productivity app for taking notes, annotating documents and collaborating with friends on any device with a browser.
-
 # collab-editing
+- https://github.com/coast-team/mute
+  - a scalable collaborative document editor with CRDT, P2P and E2EE
+  - MUTE implements a CRDT-based consistency algorithm for large scale peer-to-peer collaboration: `LogootSplit`. 
+
 - https://github.com/convergencelabs/html-text-collab-ext
   - A set of utilities that enhances a normal HTML `<textarea>` element with collaborative editing capabilities. 
   - The enhanced `<textarea>` is able to render the cursor and selection of other collaborators.

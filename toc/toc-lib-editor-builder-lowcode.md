@@ -63,6 +63,7 @@ modified: 2020-12-28T12:24:09.275Z
     - Admin panel is built with Webpack, code-split, highly performant (even with 100+ fields), and written fully in TypeScript.
   - A headless CMS is a system that sticks to what it's good at—managing content. 
     - It concentrates solely on granting administrators an effective way to author and maintain content, but doesn't control how and where that content is used.
+  - [Compare Payload against other headless CMS: strapi, directus](https://payloadcms.com/compare)
   - [Roadmap Discussions](https://github.com/payloadcms/payload/discussions/categories/roadmap)
 
 - n8n /28kStar/FairCode/202301/ts/vue/依赖少
