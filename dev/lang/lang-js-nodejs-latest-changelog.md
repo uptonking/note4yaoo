@@ -43,7 +43,7 @@ modified: 2022-12-31T20:13:33.307Z
 
 - v16.0.0_2021-04-20
   - Stable `AbortController` implementation based on the AbortController Web API
-  - Stable Timers Promises API, , removing the need to use util.promisify()
+  - Stable Timers Promises API, removing the need to use util.promisify()
   - Experimental Web Crypto API
   - ✨ npm v7 support workspaces
   - Node.js will run natively on the Apple M1

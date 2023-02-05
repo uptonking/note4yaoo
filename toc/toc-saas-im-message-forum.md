@@ -211,6 +211,18 @@ modified: 2021-05-14T15:04:15.333Z
   - 依赖headlessui、tanstack-query、nextjs、swr、prisma、express、zod
   - Linen was built as an alternative to closed tools like Slack and Discord.
 
+- tailchat /401Star/apache2/202302/ts
+  - https://github.com/msgbyte/tailchat
+  - Alternative application of discord and slack. 
+  - 后端依赖@socket.io/admin-ui、ejs、mongoose、moleculer-minio、redlock(redis)
+  - 前端依赖zustand、antd、ahooks、use-gesture(vanillajs)、immer、react-dnd、react-virtuosuo、
+  - 前端微内核架构+后端微服务架构，Tailchat 已经为集群化部署做好了准备。
+  - 主要功能模块
+    - 用户管理
+    - 聊天系统
+    - 插件系统
+    - 开放平台
+
 - https://github.com/Privoce/vocechat-web
   - Private Hosted IM and Social Channels, Easy Integration to Your Site or App
   - VoceChat is a superlight Rust powered chat App, API and SDK that prioritizes private hosting

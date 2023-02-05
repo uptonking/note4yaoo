@@ -20,7 +20,7 @@ modified: 2023-01-20T21:59:47.792Z
 - ref
   - https://github.com/postlight/awesome-cms
 # popular
-- payload /9.1kStar/MIT/202301/ts/slate
+- payloadcms /9.1kStar/MIT/202301/ts/slate
   - https://github.com/payloadcms/payload
   - https://payloadcms.com/
   - https://demo.payloadcms.com/admin

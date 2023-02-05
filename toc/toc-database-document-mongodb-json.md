@@ -109,20 +109,22 @@ modified: 2022-11-03T04:14:11.987Z
   - MinIO is a High Performance Object Storage
   - It is API compatible with Amazon S3 cloud storage service.
 
-- s3rver /471Star/MIT/202110/js
-  - https://github.com/jamhall/s3rver
-  - A fake S3 server written in NodeJs
-  - It is extremely useful for testing S3 in a sandbox environment without actually making calls to Amazon.
-
-- cloudserver /1.4kStar/apache2/202211/js
+- Zenko CloudServer /1.5kStar/apache2/202302/js
   - https://github.com/scality/cloudserver
-  - Zenko CloudServer, an open-source Node.js implementation of the Amazon S3 protocol on the front-end and backend storage capabilities to multiple clouds, including Azure and Google.
-  - [Getting Started](https://s3-server.readthedocs.io/en/latest/GETTING_STARTED.html)
+  - https://www.zenko.io/cloudserver
   - CloudServer (formerly S3 Server) is an open-source Amazon S3-compatible object storage server 
+  - CloudServer provides a single AWS S3 API interface to access multiple backend data storage both on-premise or public in the cloud.
+  - 支持的存储backend: file, in-memory, multiple
+  - [Getting Started](https://s3-server.readthedocs.io/en/latest/GETTING_STARTED.html)
   - [Add S3 SELECT functionality · Issue](https://github.com/scality/cloudserver/issues/3247)
     - Current behavior: Entire file must be pulled back to process one column
     - [Amazon S3 Select supports only the SELECT SQL command.](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html)
   - CloudServer is useful for Developers, either to run as part of a continuos integration test environment to emulate the AWS S3 service locally or as an abstraction layer
+
+- s3rver /471Star/MIT/202110/js/inactive
+  - https://github.com/jamhall/s3rver
+  - A fake S3 server written in NodeJs
+  - It is extremely useful for testing S3 in a sandbox environment without actually making calls to Amazon.
 
 - https://github.com/sanity-io/groq-store
   - In-memory GROQ store. Streams all available documents from Sanity into an in-memory database and allows you to query them there.

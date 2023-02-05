@@ -15,6 +15,16 @@ modified: 2021-08-07T16:44:32.377Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Experimenting with #threejs is a fun.
+- https://twitter.com/dotAadarsh/status/1621906462770626560
+  - https://dotaadarsh.github.io/Null-Polaroid/
+  - 多种视图切换，table/grid/sphere/helix
+  - https://github.com/dotaadarsh/Null-Polaroid
+
 - ## beating heart
 - https://codepen.io/Mamboleoo/pen/YzQzQgo
   - 类似心型软糖

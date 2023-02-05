@@ -11,17 +11,17 @@ modified: 2021-07-20T13:50:23.433Z
 # guide
 
 - tips
-  - rendering(~~web~~) is the future, but not the present.
-  - 参考各种解决方案的优点，积累方案、算法、库、框架、应用
+  - rendering(~~web~~) may be the future.
+  - 涉猎saas解决方案，积累方案、算法、库、框架、业务模版
   - 深入一个项目: src-code, issues, pr, forks, extensions/alternative
 
 - 技术方向js: 富文本编辑器，多维表格，协作
 - 技术扩展js/py: 支持拖拽的页面编辑器/LowCode，Excel，图表
 - 技术可选1: 画板，图形编辑器, pdf
-- 技术可选2: olap，bi，数据工程，数据库
+- 技术可选2: olap，bi，数据库，大数据工程
 
 - 🚀 产品落地
-  - 表格类笔记创作
+  - 表格类内容创作与管理
   - 运营数据仪表板
   - sharing table/data pieces/snippets
   - 个人数据管理，开放api，允许其他app获取
@@ -42,9 +42,9 @@ modified: 2021-07-20T13:50:23.433Z
   - themeable; unstyled/headless; a11y/keyboard-ux
 - editor/WYSIWYG
   - modular/extensible; collaborative; easy-pivotable
+  - 👉🏻 prosemirror, tiptap, slate, lexical
   - block-editor with slash-menu/backlinks
   - pdf
-  - 👉🏻 prosemirror, tiptap, slate, lexical
 - excel/data-grid
   - pivotable; collaborative; formulas
   - 👉🏻 tanstack-table, luckysheet/univer, ag-grid
@@ -55,24 +55,24 @@ modified: 2021-07-20T13:50:23.433Z
 ## solutions: inter(re)active knowledge-base/wiki
 
 - ✨ cms(content-mgmt)
-  - 👉🏻 payloadcms(MIT/mongoose+slate)
-  - nocobase (apache2/sequelize+ahooks)
-  - directus    (AGPL/knex+vue3+tinymce5)
-  - outline  (apache2/sequelize+prosemirror)
+  - 👉🏻 payloadcms  (MIT/mongoose+slate)
+  - 👉🏻 outline (apache2/sequelize+prosemirror)
+  - nocobase   (apache2/sequelize+umi)
+  - directus      (AGPL/knex+vue3+tinymce5)
 - ✨ airtable-like(data-mgmt)
-  - 👉🏻 nocodb  (AGPL/knex+nuxt3)
-  - apitable   (AGPL/spring-boot+konva)
-  - focalboard (AGPL/go+react-dnd)
-  - locokit     (MIT/knex+vue2)
-  - rowy    (apache2/mui5)
-  - baserow     (MIT/django+nuxt2)
+  - 👉🏻 nocodb     (AGPL/knex+nuxt3)
+  - apitable      (AGPL/spring-mybatis+canvas)
+  - focalboard    (AGPL/go+react-dnd)
+  - locokit        (MIT/knex+vue2)
+  - rowy       (apache2/firebase+tinymce5)
+  - baserow        (MIT/django+nuxt2)
 - ✨ workflow
-  - n8n        (AGPL/typeorm+vue2)
-  - budibase   (AGPL/knex+svelte)
-  - automatisch(AGPL/knex+graphql+slate)
+  - n8n           (AGPL/typeorm+vue2+jsplumb)
+  - budibase      (AGPL/knex+svelte)
+  - automatisch   (AGPL/knex+graphql+slate)
 - ✨ bi
-  - superset(apache2/flask+echarts)
-  - 👉🏻 lightdash(MIT/knex+echarts)
+  - 👉🏻 lightdash   (MIT/knex+echarts)
+  - superset   (apache2/flask+echarts)
 
 - features
   - local-first/offlineable/localizable

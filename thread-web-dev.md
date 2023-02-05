@@ -35,7 +35,11 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
-- ## 
+- ## [You’ve Got Options for Removing Event Listeners](https://www.macarthur.me/posts/options-for-removing-event-listeners)
+1. removeEventListener()
+2. addEventListener(..., { once })
+3. clone + replace the node
+4. AbortController
 
 - ## 前端调试 outline: 1px solid red; 
 - https://twitter.com/_justineo/status/1620930072759902210

@@ -12,6 +12,12 @@ modified: 2020-12-20T15:46:29.566Z
 - 很多成熟优秀的系统都是插件式架构
   - react hooks
 # plugin-system-repos
+- https://github.com/moonrailgun/mini-star
+  - [介绍 | MiniStar](https://ministar.moonrailgun.com/zh-Hans/docs/tutorial/intro)
+  - A micro-kernel framework which can pluginize your project. Progressive Migration!
+  - mini-star 是一个为实现项目微内核(插件化)前端库，旨在帮助大家能更简单、无痛的构建(或改造成)一个生产可用微内核(插件化)架构系统。
+  - [MiniStar 一个用于实现微内核(插件化)架构的前端框架 - V2EX](https://www.v2ex.com/t/781263)
+
 - https://github.com/Webpack/tapable /js/202012
   - The tapable package expose many Hook classes, which can be used to create hooks for plugins.
   - Hook types: basic, waterfall, bail, loop, sync, async

@@ -10,6 +10,19 @@ modified: 2022-08-18T16:57:15.296Z
 # guide
 
 # office/notebook
+- outline /18.3kStar/BSD > BSL/202302/ts
+  - https://github.com/outline/outline
+  - https://www.getoutline.com/
+  - The fastest wiki and knowledge base for growing teams.
+  - 依赖rich-markdown-editor、mobx-react、dnd-kit、framer-motion、i18next、markdown-it、reakit
+  - 后端依赖postgres、redis、koa、sequelize、yjs、y-prosemirror、y-indexeddb
+  - 与slack集成很好
+  - 样式与airframe-react dashboard风格类似
+  - [Adopt BSL 1.1 license__202003.v0.41.0](https://github.com/outline/outline/pull/1197)
+  - [Convert from slate to Prosemirror_202005.v10.0.0](https://github.com/outline/rich-markdown-editor/pull/150)
+  - ref
+    - https://github.com/ProseWorker/ProseWriter
+
 - noteworthy /166Star/AGPLv3/202207/ts/electron
   - https://github.com/benrbray/noteworthy
   - https://noteworthy.ink/

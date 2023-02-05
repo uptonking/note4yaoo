@@ -225,6 +225,18 @@ modified: 2022-09-10T02:26:52.062Z
 - https://github.com/jvilk/BrowserFS /202001/ts/inactive
   - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
   - 支持 memory/localStorage/indexeddb/dropbox/Emscripten file systems
+# aws-s3
+- Zenko CloudServer /1.5kStar/apache2/202302/js
+  - https://github.com/scality/cloudserver
+  - https://www.zenko.io/cloudserver
+  - CloudServer (formerly S3 Server) is an open-source Amazon S3-compatible object storage server 
+  - CloudServer provides a single AWS S3 API interface to access multiple backend data storage both on-premise or public in the cloud.
+  - 支持的存储backend: file, in-memory, multiple
+  - [Getting Started](https://s3-server.readthedocs.io/en/latest/GETTING_STARTED.html)
+  - [Add S3 SELECT functionality · Issue](https://github.com/scality/cloudserver/issues/3247)
+    - Current behavior: Entire file must be pulled back to process one column
+    - [Amazon S3 Select supports only the SELECT SQL command.](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html)
+  - CloudServer is useful for Developers, either to run as part of a continuos integration test environment to emulate the AWS S3 service locally or as an abstraction layer
 # more-drive
 - https://github.com/FazioNico/dDrive
   - An alternative storage solution to Google Drive

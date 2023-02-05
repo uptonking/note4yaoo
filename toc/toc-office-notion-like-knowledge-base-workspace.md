@@ -24,6 +24,19 @@ modified: 2022-06-03T21:34:54.893Z
   - SiYuan is made possible by the Vditor and Lute(golang)
   - 用户自己创建的笔记本文件夹下，.sy 后缀的文件用于保存文档数据，数据格式为JSON
 
+- outline /18.3kStar/BSD > BSL/202302/ts
+  - https://github.com/outline/outline
+  - https://www.getoutline.com/
+  - The fastest wiki and knowledge base for growing teams.
+  - 依赖rich-markdown-editor、mobx-react、dnd-kit、framer-motion、i18next、markdown-it、reakit
+  - 后端依赖postgres、redis、koa、sequelize、yjs、y-prosemirror、y-indexeddb
+  - 与slack集成很好
+  - 样式与airframe-react dashboard风格类似
+  - [Adopt BSL 1.1 license__202003.v0.41.0](https://github.com/outline/outline/pull/1197)
+  - [Convert from slate to Prosemirror_202005.v10.0.0](https://github.com/outline/rich-markdown-editor/pull/150)
+  - ref
+    - https://github.com/ProseWorker/ProseWriter
+
 - think /1kStar/MIT/202208/ts/nestjs/tiptap
   - https://github.com/fantasticit/think
   - https://think.codingit.cn/
@@ -33,19 +46,6 @@ modified: 2022-06-03T21:34:54.893Z
   - 前端依赖 @douyinfe/semi-ui、excalidraw、tiptap2、docx、katex、markdown-it、nextjs、react-pdf、react-query3、tippy.js、yjs
   - 后端依赖 nestjs、typeorm、passport、mysql、yjs
   - Think 是一款开源知识管理工具。通过独立的知识库空间，结构化地组织在线协作文档，实现知识的积累与沉淀，促进知识的复用与流通。同时支持多人协作文档。
-
-- outline /12.5kStar/BSD > BSL/202109/ts
-  - https://github.com/outline/outline
-  - https://www.getoutline.com/
-  - The fastest wiki and knowledge base for growing teams.
-  - 依赖rich-markdown-editor、mobx-react、dnd-kit、framer-motion、i18next、markdown-it、reakit
-  - 后端依赖postgres、redis、koa、sequelize、yjs、y-prosemirror、y-indexeddb
-  - 与slack集成很好
-  - 样式与airframe-react dashboard风格类似
-  - [Adopt BSL 1.1 license__202003.v0.41.0](https://github.com/outline/outline/pull/1197)
-  - [Convert from slate to Prosemirror_202005](https://github.com/outline/rich-markdown-editor/pull/150)
-  - ref
-    - https://github.com/ProseWorker/ProseWriter
 
 - logseq /15.9kStar/AGPLv3/202208/clojure/ts
   - https://github.com/logseq/logseq

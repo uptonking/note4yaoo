@@ -14,6 +14,8 @@ modified: 2021-07-29T20:37:05.228Z
 
 - usecase
   - 甚至可以用来实现多级评论 comments > tree > accordion
+  - 简介较短时，可将折叠控制图标放在左侧
+  - 简介较长时，可将折叠展开图标放在简介下方或悬浮
 # html-details-summary
 - accordion vs tab
 # collapse-impl 

@@ -8,19 +8,23 @@ modified: 2021-08-07T15:30:42.655Z
 # dev-log-news-industry-latest
 
 # 2023
-- 20230
-- 202301-fwk-Netlify just acquired Gatsby.
+
+- 202301-capital-Netlify just acquired Gatsby
   - Remix    → Shopify
   - Next.js  → Vercel
   - Svelte   → Vercel
+  - Gatsby   → Netlify
   - Eleventy → Netlify
   - Solid    → Netlify
+
+- 20230
 # 2022
-- 202209-saas-Adobe以200亿美元收购 Figma
+- 202209-capital-Adobe以200亿美元收购 Figma
+- 202205-capital-[ONES收购SegmentFault思否](https://www.zhihu.com/question/531417114/answers/updated)
+- 202201-capital-[ONES全资收购为知笔记，从产品和用户角度来看，将会带来哪些改变和影响？](https://www.zhihu.com/question/510937894)
+  - 202012-ONES收购知名协作工具Tower
+
 - 202208-saas-全球SaaS软件巨头Salesforce正在关闭包括香港地区在内的中国业务，业务将由阿里云代销。
-- 202205-[ONES 收购 SegmentFault 思否，如何从商业角度解读此举？](https://www.zhihu.com/question/531417114/answers/updated)
-- 202201-[ONES 全资收购为知笔记，从产品和用户角度来看，将会带来哪些改变和影响？](https://www.zhihu.com/question/510937894)
-- 202012-ONES 收购知名协作工具 Tower 
 # 2021
 - 202111-bi-tableau退出中国市场，阿里接手相关业务，阿里看中了Tableau的客户，但会推自己的QuickBI
 - 202109-tech-Footnotes now supported in Markdown fields
@@ -43,6 +47,8 @@ modified: 2021-08-07T15:30:42.655Z
 # 2020
 - 2020
   - Chromebooks outsold Macs worldwide in 2020, cutting into Windows market share.
+
+- 202012-capital-Salesforce以277亿美元收购Slack
 
 - 202012-market-市场监管总局根据举报，依法对阿里巴巴集团控股有限公司实施“二选一”等涉嫌垄断行为立案调查。
 - 202012-market-甲骨文宣布将总部从加州迁往得克萨斯，为何硅谷科技公司纷纷逃离
@@ -71,6 +77,9 @@ modified: 2021-08-07T15:30:42.655Z
 - 202002-market-腾讯成为B站最大股东
 - 202001-disaster-源自武汉的新兴冠状病毒肺炎随着春运迅速扩散，腊月29日武汉封城
 - 202001-world-首批90后30岁，80后40岁，70后50岁，60后60岁
+# 2019
+- 201906-capital-Salesforce以157亿美元收购数据分析公司Tableau
+  - 6月6日google以26亿美元收购数据分析公司Looker
 
 - 201912-world-日本老年女性缺少照顾，通过犯轻罪行为入狱，在监狱养老的人越来越多
   - 在日本有超过四百万的老年女性独自生活，是老年独居男性的两倍
@@ -113,8 +122,6 @@ modified: 2021-08-07T15:30:42.655Z
 - 201907-world-Github开始限制受美国贸易制裁国家的开发者，美国也没那么自由
 - 201907-world-韩国不结婚运动，政府安排相亲遭厌恶，女生认为结婚后母亲奶奶地位低
 - 201907-market-Google称已终止审查版中国搜索引擎项目蜻蜓计划Project Dragonfly
-- 201906-market-Salesforce以157亿美元收购数据分析公司Tableau
-  - 6月6日google以26亿美元收购数据分析公司Looker
 - 201906-iot-Raspberry Pi 4 Model B发布，四个CPU核心，内存可选包括4GB DDR4
 - 201906-market-又拍云图床停服, 201904新浪微博图床开始防盗链
 - 201905-coding-谷歌宣布Kotlin现在是Android开发的首选语言

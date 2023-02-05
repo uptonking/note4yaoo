@@ -26,7 +26,7 @@ modified: 2020-12-28T12:24:09.275Z
 - ref
   - https://github.com/taowen/awesome-lowcode
 
-- payload /9.1kStar/MIT/202301/ts/slate
+- payloadcms /9.1kStar/MIT/202301/ts/slate
   - https://github.com/payloadcms/payload
   - https://payloadcms.com/
   - https://demo.payloadcms.com/admin

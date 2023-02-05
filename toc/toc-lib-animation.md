@@ -59,12 +59,21 @@ modified: 2020-10-05T06:22:02.107Z
   - https://github.com/robertoentringer/animations.js
   - Web Animations API based in Animate.css
 # animation-editor
+- https://github.com/motion-canvas/motion-canvas
+  - https://motion-canvas.github.io/
+  - Web-based tool for creating animations programmatically
+  - consists of two main components:
+    - A TypeScript library used to program animations.
+    - An editor providing a real-time preview of said animations.
+  - It's a specialized tool designed to create informative vector animations and synchronize them with voice-overs. 
+  - It's not meant to be a replacement for traditional video editing software.
+
 - https://github.com/theatre-js/theatre
   - https://www.theatrejs.com/
   - Motion design editor for the web
   - Theatre.js is an animation library for high-fidelity motion graphics.
   - Theatre.js can be used both programmatically and visually.
-# react-native
+# react-native-animation
 - https://github.com/LegendApp/legend-motion
   - Supports react-native and react-native-web
   - Legend Motion is a declarative animations library for React Native, to make it easy to transition between styles without needing to manage animations.
@@ -220,7 +229,7 @@ modified: 2020-10-05T06:22:02.107Z
 - https://github.com/hakimel/kontext
   - http://lab.hakim.se/kontext/
   - 页面切换时的三维效果
-# animation tools
+# animation-utils
 - svg.js /MIT/8.2kStar/202006
   - https://github.com/svgdotjs/svg.js
   - http://svgjs.com/

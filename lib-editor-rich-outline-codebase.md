@@ -9,6 +9,13 @@ modified: 2021-09-09T20:54:36.354Z
 
 # guide
 
+- 对源码的处理
+  - 重新写，参考最新代码
+  - 大量改，参考旧版有许可的代码
+
+- later
+  - 文章内容存储到数据库的格式是文本字符串，参考payloadcms保存json
+
 - run-starter
   - yarn install --frozen-lockfile
   - yarn build
