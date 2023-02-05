@@ -1,8 +1,8 @@
 ---
 title: lib-editor-tiptap-dev
-tags: [lib, prosemirror, text-editor, tiptap]
+tags: [lib, prosemirror, text-editor, tiptap-editor]
 created: 2021-05-06T09:45:58.536Z
-modified: 2021-05-06T09:46:30.944Z
+modified: 2023-02-05T19:03:27.730Z
 ---
 
 # lib-editor-tiptap-dev

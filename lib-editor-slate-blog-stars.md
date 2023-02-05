@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-blog-stars
-tags: [blog, slate]
+tags: [blog, slate-editor]
 created: 2022-05-15T21:14:16.497Z
-modified: 2022-05-15T21:14:27.747Z
+modified: 2023-02-05T19:03:12.722Z
 ---
 
 # lib-editor-slate-blog-stars

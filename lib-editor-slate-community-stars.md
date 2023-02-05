@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-community-stars
-tags: [community, slate]
+tags: [community, slate-editor]
 created: 2022-05-15T18:41:58.641Z
-modified: 2022-05-15T18:42:42.839Z
+modified: 2023-02-05T19:03:12.722Z
 ---
 
 # lib-editor-slate-community-stars

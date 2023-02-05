@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-codebase
-tags: [codebase, slate]
+tags: [codebase, slate-editor]
 created: 2022-05-15T18:46:02.235Z
-modified: 2022-05-15T18:46:17.007Z
+modified: 2023-02-05T19:03:12.722Z
 ---
 
 # lib-editor-slate-codebase

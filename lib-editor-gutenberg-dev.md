@@ -1,11 +1,11 @@
 ---
-title: lib-builder-gutenberg-dev
-tags: [builder, gutunberg, lib]
+title: lib-editor-gutenberg-dev
+tags: [dnd-builder, editor, gutunberg, lib]
 created: 2021-07-11T09:05:27.066Z
-modified: 2021-07-11T09:59:06.221Z
+modified: 2023-02-05T19:12:13.098Z
 ---
 
-# lib-builder-gutenberg-dev
+# lib-editor-gutenberg-dev
 
 # guide
 

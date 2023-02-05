@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-dev-react
-tags: [dev, lib, react, slate]
+tags: [dev, lib, react, slate-editor]
 created: 2022-05-16T17:32:06.841Z
-modified: 2022-05-16T17:32:21.344Z
+modified: 2023-02-05T19:03:12.722Z
 ---
 
 # lib-editor-slate-dev-react

@@ -1,11 +1,11 @@
 ---
-title: lib-viz-superset-dev
-tags: [apache-superset, lib]
+title: lib-lowcode-superset-dev
+tags: [apache-superset, bi, viz]
 created: 2020-09-25T08:01:55.941Z
-modified: 2020-12-08T13:35:12.509Z
+modified: 2023-02-05T18:39:02.978Z
 ---
 
-# lib-viz-superset-dev
+# lib-lowcode-superset-dev
 
 # xp
 

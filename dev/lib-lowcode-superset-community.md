@@ -1,11 +1,11 @@
 ---
-title: lib-viz-superset-community
+title: lib-lowcode-superset-community
 tags: [apache-superset, community]
 created: 2022-02-27T18:20:22.785Z
-modified: 2022-02-27T18:21:06.175Z
+modified: 2023-02-05T18:39:13.544Z
 ---
 
-# lib-viz-superset-community
+# lib-lowcode-superset-community
 
 # guide
 

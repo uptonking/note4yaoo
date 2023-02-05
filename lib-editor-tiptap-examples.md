@@ -1,8 +1,8 @@
 ---
 title: lib-editor-tiptap-examples
-tags: [examples, prosemirror, tiptap, toc]
+tags: [examples, prosemirror, tiptap-editor, toc]
 created: 2022-08-19T23:00:04.811Z
-modified: 2022-08-19T23:00:22.162Z
+modified: 2023-02-05T19:03:27.730Z
 ---
 
 # lib-editor-tiptap-examples

@@ -1,8 +1,8 @@
 ---
 title: lib-editor-block-affine-codebase
-tags: [affine, block-editor, codebase, slate]
+tags: [affine, block-editor, codebase, slate-editor]
 created: 2022-05-27T09:43:58.962Z
-modified: 2023-02-03T16:13:15.063Z
+modified: 2023-02-05T19:03:12.721Z
 ---
 
 # lib-editor-block-affine-codebase

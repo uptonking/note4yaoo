@@ -1,8 +1,8 @@
 ---
 title: lib-editor-plate-examples
-tags: [examples, plate, slate]
+tags: [examples, plate, slate-editor]
 created: 2022-08-18T10:28:20.750Z
-modified: 2022-08-21T10:13:31.691Z
+modified: 2023-02-05T19:03:12.721Z
 ---
 
 # lib-editor-plate-examples

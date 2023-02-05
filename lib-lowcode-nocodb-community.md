@@ -1,11 +1,11 @@
 ---
-title: lib-excel-nocodb-community
+title: lib-lowcode-nocodb-community
 tags: [community, nocodb]
 created: 2023-01-22T18:46:57.384Z
-modified: 2023-01-22T18:47:08.011Z
+modified: 2023-02-05T18:28:35.131Z
 ---
 
-# lib-excel-nocodb-community
+# lib-lowcode-nocodb-community
 
 # guide
 

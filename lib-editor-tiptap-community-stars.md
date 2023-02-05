@@ -1,8 +1,8 @@
 ---
 title: lib-editor-tiptap-community-stars
-tags: [community, editor, prosemirror, tiptap]
+tags: [community, editor, prosemirror, tiptap-editor]
 created: 2022-09-10T02:54:58.721Z
-modified: 2022-09-10T02:55:23.579Z
+modified: 2023-02-05T19:03:27.729Z
 ---
 
 # lib-editor-tiptap-community-stars

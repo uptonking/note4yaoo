@@ -1,8 +1,8 @@
 ---
 title: lib-editor-tiptap-codebase
-tags: [codebase, editor, headless, tiptap]
+tags: [codebase, editor, headless, tiptap-editor]
 created: 2021-06-02T17:10:08.793Z
-modified: 2021-06-02T17:10:50.151Z
+modified: 2023-02-05T19:03:27.729Z
 ---
 
 # lib-editor-tiptap-codebase

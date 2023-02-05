@@ -37,6 +37,7 @@ modified: 2022-06-04T00:44:30.749Z
 
 - alternatives
   - react-dnd
+  - use-gesture(vanillajs)
 # not-yet-dnd-kit
 - [ ] onDragEnd delta.y property inaccurate when inside position fixed container
   - https://github.com/clauderic/dnd-kit/issues/298

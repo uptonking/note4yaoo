@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-latest-changelog
-tags: [changelog, slate]
+tags: [changelog, slate-editor]
 created: 2022-05-15T18:43:48.811Z
-modified: 2022-05-15T18:43:59.130Z
+modified: 2023-02-05T19:03:12.723Z
 ---
 
 # lib-editor-slate-latest-changelog

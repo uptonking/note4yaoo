@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-dev
-tags: [lib, slate, text-editor]
+tags: [lib, slate-editor, text-editor]
 created: 2022-05-15T18:41:00.527Z
-modified: 2022-05-15T18:41:17.192Z
+modified: 2023-02-05T19:03:12.722Z
 ---
 
 # lib-editor-slate-dev

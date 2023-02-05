@@ -1,8 +1,8 @@
 ---
 title: lib-editor-tiptap-docs
-tags: [docs, editor, headless, tiptap]
+tags: [docs, editor, headless, tiptap-editor]
 created: 2021-06-02T17:11:49.645Z
-modified: 2021-06-02T17:12:12.347Z
+modified: 2023-02-05T19:03:27.730Z
 ---
 
 # lib-editor-tiptap-docs

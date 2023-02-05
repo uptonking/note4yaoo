@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-issues
-tags: [issues, slate]
+tags: [issues, slate-editor]
 created: 2022-05-15T18:43:05.066Z
-modified: 2022-05-15T18:43:23.251Z
+modified: 2023-02-05T19:03:12.723Z
 ---
 
 # lib-editor-slate-issues

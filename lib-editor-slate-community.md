@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-community
-tags: [community, slate]
+tags: [community, slate-editor]
 created: 2022-05-15T18:42:49.773Z
-modified: 2022-05-15T18:42:59.469Z
+modified: 2023-02-05T19:03:12.722Z
 ---
 
 # lib-editor-slate-community

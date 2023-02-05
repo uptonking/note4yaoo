@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-docs-api
-tags: [api, docs, slate]
+tags: [api, docs, slate-editor]
 created: 2022-05-15T18:41:42.286Z
-modified: 2022-05-15T18:41:56.092Z
+modified: 2023-02-05T19:03:12.722Z
 ---
 
 # lib-editor-slate-docs-api

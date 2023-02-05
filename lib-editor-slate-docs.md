@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-docs
-tags: [docs, slate]
+tags: [docs, slate-editor]
 created: 2022-05-15T18:41:24.616Z
-modified: 2022-05-15T18:41:39.560Z
+modified: 2023-02-05T19:03:12.723Z
 ---
 
 # lib-editor-slate-docs
