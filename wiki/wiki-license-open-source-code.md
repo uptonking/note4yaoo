@@ -406,3 +406,7 @@ modified: 2021-09-14T18:58:58.275Z
   - there is only one thing you cannot do, and that is use it to make a competing SaaS offering. 
   - For example, it does not allow hosting of Confluent ksqlDB, Confluent Schema Registry, Confluent REST Proxy, or other software licensed under the Confluent Community License as online service offerings that compete with Confluent SaaS products or services that provide the same software.  
   - If you are not doing what is excluded, this license change will not affect you.
+# relicense-known
+- [Grafana, Loki, and Tempo will be relicensed to AGPLv3_202104](https://grafana.com/blog/2021/04/20/grafana-loki-tempo-relicensing-to-agplv3/)
+  - Over the last few years, we’ve watched closely as almost every at-scale open source company that we admire (such as Elastic, Redis Labs, MongoDB, Timescale, Cockroach Labs, and many others) has evolved their license regime. 
+  - In almost all of these cases, the result has been a move to a non-OSI-approved source-available license.

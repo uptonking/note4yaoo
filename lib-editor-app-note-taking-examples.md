@@ -1,20 +1,34 @@
 ---
-title: toc-app-note-taking
-tags: [app, note-taking]
+title: lib-editor-app-note-taking-examples
+tags: [app, cross-platform, examples, note-taking, toc]
 created: 2020-10-22T09:55:31.796Z
-modified: 2020-10-22T10:03:50.526Z
+modified: 2023-02-05T18:05:44.122Z
 ---
 
-# toc-app-note-taking
+# lib-editor-app-note-taking-examples
 
 # guide
-- notes-solutions
+- note-taking solutions
+  - web first
+  - offline first
 # popular
-- TiddlyWiki5 /6.9kStar/BSD/202209/ts
+- TiddlyWiki5 /6.9kStar/BSD/202209/js
   - https://github.com/Jermolene/TiddlyWiki5
   - https://tiddlywiki.com/dev/
   - A self-contained JavaScript wiki for the browser, Node.js, AWS Lambda etc.
   - view层基于tid文件
+  - https://github.com/TiddlyWiki/TiddlyWiki
+    - the Classic version (2.x.x) of TiddlyWiki
+
+- notesnook /2.8kStar/GPLv3/202209/js+ts/tiptap
+  - https://github.com/streetwriters/notesnook
+  - https://notesnook.com/
+  - open source & end-to-end encrypted note taking alternative to Evernote.
+  - web编辑器和移动端编辑器都依赖tiptap2、zustand、unfurl.js(oembed)、re-resizable、katex
+  - @notesnook/streamable-fs: Streaming interface around an IndexedDB based file system
+  - Notesnook encrypts everything on your device using XChaCha20-Poly1305 & Argon2.
+  - 不支持协作，需要投票
+  - 服务端数据同步代码使用c#
 
 - Standard Notes /3.6kStar/AGPLv3/202208/ts
   - https://github.com/standardnotes/app
@@ -22,17 +36,10 @@ modified: 2020-10-22T10:03:50.526Z
   - an end-to-end encrypted note-taking app
   - An all-in-one personal knowledge base
   - 提供了多种编辑器，包括代码、markdown
+  - markdown-visual-editor基于milkdown，社区还有很多编辑器
+    - Standard Notes publishes the source code for its web, desktop, and mobile apps as well as its syncing server and extensions under AGPLv3
   - https://github.com/standardnotes/server
     - 后端依赖express
-
-- notesnook /2.8kStar/GPL.v3/202209/js+ts/tiptap
-  - https://github.com/streetwriters/notesnook
-  - https://notesnook.com/
-  - open source & end-to-end encrypted note taking alternative to Evernote.
-  - web编辑器和移动端编辑器都依赖tiptap2、zustand、unfurl.js(oembed)、re-resizable、katex
-  - @notesnook/streamable-fs: Streaming interface around an IndexedDB based file system
-  - Notesnook encrypts everything on your device using XChaCha20-Poly1305 & Argon2.
-  - 服务端数据同步代码未找到
 
 - notable /16.4kStar/MIT > AGPLv3/202007/ts/桌面版
   - https://github.com/notable/notable
@@ -75,29 +82,36 @@ modified: 2020-10-22T10:03:50.526Z
   - 支持用户编写自己的插件来拓展编辑器的功能。
   - 加密文件的加密解密操作均在前端完成，请务必牢记自己的密码。一旦密码丢失，只能暴力破解了。
 
-- joplin /31.9kStar/MIT/202209/ts/web需付费+pc+mobile
+- joplin /31.9kStar/MIT > AGPLv3/202209/ts/web需付费+pc+mobile
   - https://github.com/laurent22/joplin
   - https://joplinapp.org/
   - note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS
+  - [Switch license to AGPL-3.0_202212](https://joplinapp.org/news/20221221-agpl/)
+  - [Why is there no web UI for Joplin?](https://www.reddit.com/r/joplinapp/comments/xjp9zh/why_is_there_no_web_ui_for_joplin/)
+    - 不支持web
+    - Joplin server has no ability to view/edit notes from the server with a web client.
+    - https://github.com/joplin-vieweb/joplin-vieweb
 
-- BoostNote /3.1kStar/GPLv3/202209/ts
+- BoostNote /3.1kStar/GPLv3/202209/ts/inactive
   - https://github.com/BoostIO/BoostNote-App
   - https://boostnote.io/
   - a document driven project management tool that maximizes remote DevOps team velocity.
 
-- https://github.com/SerenityNotes/serenity-notes-clients
-  - Serenity Notes iOS/Android/macOS
-  - 不支持web
-  - 依赖prosemirror
-  - [Serenity Notes](https://www.serenity.re/en/notes/technical-documentation)
-    - end-to-end encryption must using the Olm & Megolm cryptographic ratchets
-- https://github.com/SerenityNotes/Serenity
-  - End-to-end encrypted collaborative notes
-- https://github.com/SerenityNotes/serenity-notes-backend
-  - End-to-end encrypted collaborative notes app
-- https://github.com/SerenityNotes/naisho
-  - architecture to relay end-to-end encrypted CRDTs over a central service.
-  - It was created out of the need to have an end-to-end encrypted protocol to allow data synchronization/fetching incl.
+- Serenity Notes /不支持web
+  - https://github.com/SerenityNotes/Serenity
+    - End-to-end encrypted collaborative notes
+    - [Why is there no web client on the roadmap?](https://www.serenity.re/en/notes/support)
+      - We might build one in the future, but first we want to focus on mobile and desktop client.
+  - https://github.com/SerenityNotes/serenity-notes-clients
+    - Serenity Notes iOS/Android/macOS
+    - 依赖prosemirror
+    - [Serenity Notes](https://www.serenity.re/en/notes/technical-documentation)
+      - end-to-end encryption must using the Olm & Megolm cryptographic ratchets
+  - https://github.com/SerenityNotes/serenity-notes-backend
+    - End-to-end encrypted collaborative notes app
+  - https://github.com/SerenityNotes/naisho
+    - architecture to relay end-to-end encrypted CRDTs over a central service.
+    - It was created out of the need to have an end-to-end encrypted protocol to allow data synchronization/fetching incl.
 
 - vnote /7.5kStar/MIT/202009/cpp
   - https://github.com/vnotex/vnote
@@ -116,7 +130,7 @@ modified: 2020-10-22T10:03:50.526Z
 - trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持多端
   - https://github.com/zadam/trilium
   - https://github.com/zadam/trilium/wiki/
-  - 依赖 electron、express、jsdom、turndown、ckeditor.v5、codemirror、fancytree、bootstrap
+  - 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror、fancytree、bootstrap
   - a hierarchical note taking application with focus on building large personal knowledge bases. 
   - Synchronization with self-hosted sync server
   - Trilium is provided as either desktop application (Linux and Windows) or web application hosted on your server (Linux). 
