@@ -211,3 +211,6 @@ modified: 2022-11-07T17:36:22.236Z
 - https://github.com/mathematicalthinking/vmt
   - Collaborative workspaces for exploring the world of math
   - uses React.js and Redux.js, express and sockets.io. 
+
+- https://github.com/ruyd/fullstack-monorepo
+  - Fullstack Canvas Drawing App and TypeScript Starter Template

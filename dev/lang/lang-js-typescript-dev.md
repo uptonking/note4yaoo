@@ -18,3 +18,9 @@ modified: 2021-03-22T14:46:25.568Z
 
 - https://github.com/total-typescript/typescript-generics-workshop
   - Interactive tutorial on using generics in TypeScript  
+
+
+# utils
+
+- https://github.com/beenotung/live-tsc
+  - A lightweight esbuild-based implementation of tsc that trim off the types (without type checking)

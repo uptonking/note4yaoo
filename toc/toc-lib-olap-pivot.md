@@ -174,7 +174,11 @@ modified: 2023-01-23T11:24:41.943Z
   - https://cube.dev/docs/
   - Headless Business Intelligence for Building Data Applications
   - modular framework to build analytical web applications
-  - Cube.js was designed to work with Serverless Query Engines like AWS Athena and Google BigQuery. 
+  - Cube.js was designed to work with Serverless Query Engines like AWS Athena and Google BigQuery.
+  - [Cube.js is now Cube_202208](https://cube.dev/blog/cube-js-is-now-cube)
+    - We started Cube as an open-source analytics framework in 2019. written in js
+    - Since then, we have written more lines of code in Rust than in JavaScript and moved from npm to Docker for distribution. 
+    - we’re going to migrate the rest of Cube’s codebase to it over time.
   - Most modern RDBMS work with Cube.js as well and can be tuned for adequate performance.
   - Cube.js Backend
     - Schema. It acts as an ORM for analytics and allows to model everything from simple counts to

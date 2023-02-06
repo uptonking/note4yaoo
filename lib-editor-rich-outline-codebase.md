@@ -21,6 +21,10 @@ modified: 2021-09-09T20:54:36.354Z
   - yarn build
   - yarn sequelize db:create --env=production-ssl-disabled
   - yarn dev/start
+# issues
+- 数据库保存的是markdown内容文本，服务端发给客户端的是字符串而不是json
+  - [Move to sending JSON rather than Markdown to client](https://github.com/outline/outline/issues/3000)
+  - NA
 # backend
 
 # frontend

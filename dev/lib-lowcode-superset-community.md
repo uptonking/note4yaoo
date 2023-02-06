@@ -10,7 +10,9 @@ modified: 2023-02-05T18:39:13.544Z
 # guide
 
 - [Apache Superset vs Metabase](https://preset.io/blog/superset-vs-metabase/)
+
 - [Why Apache ECharts is the Future of Apache Superset™_202104](https://preset.io/blog/2021-4-1-why-echarts/)
+
 - [Building Custom Viz Plugins in Superset v2 (Updated for Monorepo)_202201](https://preset.io/blog/building-custom-viz-plugins-in-superset-v2/)
 # discuss
 

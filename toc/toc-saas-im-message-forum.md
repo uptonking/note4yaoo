@@ -223,6 +223,11 @@ modified: 2021-05-14T15:04:15.333Z
     - 插件系统
     - 开放平台
 
+- https://github.com/juravlevdima/PERN-chat
+  - Chat made with PERN Stack & Socket. IO
+  - React | React Router | Redux Toolkit
+  - Real-time chat using web-sockets
+
 - https://github.com/Privoce/vocechat-web
   - Private Hosted IM and Social Channels, Easy Integration to Your Site or App
   - VoceChat is a superlight Rust powered chat App, API and SDK that prioritizes private hosting

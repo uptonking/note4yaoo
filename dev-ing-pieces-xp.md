@@ -15,7 +15,14 @@ modified: 2021-04-28T20:54:58.126Z
 
 ## 
 
-## 
+## sequelize-rest-api调试很久，fetch api在浏览器控制台的返回异常
+
+```
+violates the following Content Security Policy directive: "connect-src 'self' 
+```
+
+- 跨域问题调试的基础就错了，应该在新标签页打开http://localhost:3000/api/courses然后在此标签页的控制台发送请求
+  - 不要在其他域名标签页的控制台调试
 
 ## 测试mocha时，不能稳定复现 Database is not open/
 

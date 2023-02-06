@@ -9,6 +9,12 @@ modified: 2023-01-20T18:45:02.826Z
 
 # guide
 
+- orm技术选型
+  - issues数量
+    - typeorm 1800+
+    - knex 700+
+    - sequelize 700+
+
 - 后端常用场景
   - headless CMS, page builder, form builder, file manager, admin-area
   - admin/dashboard
@@ -19,6 +25,10 @@ modified: 2023-01-20T18:45:02.826Z
 
 - ref
 # popular
+- https://github.com/masb0ymas/expresso-typeorm
+  - expresso with TypeORM
+  - Documentation with Swagger OpenApi 3.x
+
 - https://github.com/w3tecch/typeorm-seeding
   - A delightful way to seed test data into your database.
   - Inspired by the awesome framework laravel in PHP and of the repositories from pleerock
@@ -44,9 +54,6 @@ modified: 2023-01-20T18:45:02.826Z
   - JWT authentication process with passport.js
   - HTTP request cache with memory-cache.
 
-- https://github.com/masb0ymas/expresso-typeorm
-  - Convensional Commit with Husky & Commitlint
-
 - https://github.com/nvictorme/any-backend-now
   - REST API scaffold; built with TypeScript, Express, Passport, JWT, Redis, TypeORM 
   - Support for JSON and Form-URL-Encoded bodies
@@ -57,7 +64,7 @@ modified: 2023-01-20T18:45:02.826Z
   - A Rate Limiter for all routes
 
 - https://github.com/jerrychong25/node-express-sqlite-jwt-typescript-typeorm
-  - back end web application with REST API, user JWT authentication and SQLite TypeORM data storage using TypeScript
+  - backend web application with REST API, user JWT authentication and SQLite TypeORM data storage using TypeScript
   - https://github.com/jerrychong25/node-express-mongo-passport-jwt-typescript
 
 - https://github.com/mattwelke/typeorm-postgres-example

@@ -47,6 +47,9 @@ modified: 2021-05-25T09:41:29.066Z
   - Multi-tenant application architecture with Node.js - Express, and PostgreSQL
   - In the Table-based multi-tenancy model, every row in every table is associated with a partitioning key (usually the tenant identifier) and restricts data access using Row Level Security (RLS for short), consequently, we don't need to worry about which schema or database it is connecting to.
 
+- https://github.com/PIYoung/node-express-boilerplate-multitenant
+  - node express postgres boilerplate for multitenant(saas)
+
 - nextacular /454Star/MIT/202209/js
   - https://github.com/nextacular/nextacular
   - https://nextacular.co/

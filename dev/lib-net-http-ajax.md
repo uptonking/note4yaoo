@@ -1,11 +1,11 @@
 ---
-title: note-network-http-ajax
+title: lib-net-http-ajax
 tags: [ajax, http, network]
 created: 2020-08-07T04:37:22.307Z
-modified: 2020-12-21T06:03:02.191Z
+modified: 2023-02-06T09:14:40.114Z
 ---
 
-# note-network-http-ajax
+# lib-net-http-ajax
 
 # guide
 

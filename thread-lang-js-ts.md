@@ -20,7 +20,19 @@ Symbol('a') === Symbol('a'); //false
 
 - ## 
 
-- ## 
+- ## Understanding monomorphism(单态，单一形式) can improve your JavaScript performance 60x.
+- https://twitter.com/mhevery/status/1622499229813047296
+- First things to understand is that CPUs only understand arrays, so your object/classes need to get translated into arrays which CPUs can work with.
+  - Similarly a property access needs to get translated into an array access.
+- Doing indexOf all of the time would be expensive, (and it is) so VMs employ a special strategy called inline-caching which speed up the access 60x like so:
+  - If it is a class we have already seen, then we know the property is at location 1 otherwise we revert to indexOf.
+  - Most VMs are willing to inline-cache up to 4 different shapes, before they give up.
+- `indexOf` implementation is a bit more complicated. The actual function has something called megamorphic cache which in chrome is 1024 entries.
+  - This explains why access gets slightly slower for 1-4, and than stays relatively stable until 1, 000 entries.
+  - Past that no cache.
+- This is important to keep in mind when you are creating micro-benchmarks. Most micro-benchmarks don't have enough variety of class shapes to overwhelm the inline or megamorphic cache and so the performance in benchmarks looks better than real world performance.
+- These perf tricks are only applicable once the JIT kicks in. Which means the first N executions run in slow mode with no caching.
+- The thing to think about is for any given property read how many possible ClassShapes do you expect that the objects will have. Your goal should be to have exactly one for best performance.
 
 - ##  `Object.setPrototypeOf` and `util.inherits` are terrible for performance
 - https://twitter.com/jarredsumner/status/1619342661701496833

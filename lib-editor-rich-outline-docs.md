@@ -8,7 +8,6 @@ modified: 2021-09-09T18:30:24.610Z
 # lib-editor-rich-outline-docs
 
 > The fastest wiki and knowledge base for growing teams. 
-> Beautiful, feature rich, and markdown compatible.
 
 # guide
 

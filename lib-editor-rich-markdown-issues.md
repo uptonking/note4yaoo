@@ -9,9 +9,6 @@ modified: 2021-06-02T10:30:09.481Z
 
 # issues-not-yet
 
-- ## [Move to sending JSON rather than Markdown to client](https://github.com/outline/outline/issues/3000)
-  - NA
-
 - ## allow `/` to be used anywhere, not just a new line
   - https://github.com/outline/rich-markdown-editor/issues/218
 

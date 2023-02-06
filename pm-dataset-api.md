@@ -1,11 +1,11 @@
 ---
-title: pm-data-api
-tags: [api, data, pm]
+title: pm-dataset-api
+tags: [api, dataset]
 created: 2022-08-28T10:28:13.057Z
-modified: 2022-08-28T10:28:34.791Z
+modified: 2023-02-06T09:13:43.635Z
 ---
 
-# pm-data-api
+# pm-dataset-api
 
 # guide
 

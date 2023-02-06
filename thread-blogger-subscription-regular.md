@@ -24,9 +24,9 @@ modified: 2021-09-20T18:01:39.932Z
   - webview
   - qt
 
-- trpc nestjs
+- feathers nestjs trpc
   - express koa
-  - typeorm prisma
+  - typeorm sequelize knex
 
 - notion logseq
   - obsidian

@@ -14,7 +14,11 @@ modified: 2022-12-19T01:51:01.389Z
 # api-spec
 - https://github.com/json-api/json-api
   - https://jsonapi.org/
-  - a specification for APIs that use JSON. 
+  - A SPECIFICATION FOR BUILDING APIS IN JSON
+  - [OpenAPI 3.0 spec that conforms to JSON: API - JSON API](https://discuss.jsonapi.org/t/openapi-3-0-spec-that-conforms-to-json-api/1803)
+
+- https://github.com/osu-mist/jsonapi-openapi-generator
+  - A script for generating an OpenAPI document adhering to the JSON: API specification.
 
 - https://github.com/OData/odata.net
   - OData . NET Libraries project includes the implementation of core functionalities of OData protocol on the . NET platform, including URI parsing, request and response reading and writing, Entity Data Model (EDM) building
@@ -172,7 +176,6 @@ modified: 2022-12-19T01:51:01.389Z
 - https://github.com/r-spacex/SpaceX-API
   - Open Source REST API for rocket, core, capsule, pad, and launch data
 # express-like
-
 - https://github.com/tinyhttp/tinyhttp /ts
   - a modern Express-like web framework 
   - Async middleware support

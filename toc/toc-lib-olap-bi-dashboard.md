@@ -29,6 +29,7 @@ modified: 2020-12-09T09:30:24.694Z
     - dashboard
     - charts/query
     - 用户与权限
+  - 后端graphql只用来获取dbt元数据
 
 - Superset /50.4kStar/Apache2/202301/ts/python
   - https://github.com/apache/superset
