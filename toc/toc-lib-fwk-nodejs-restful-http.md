@@ -143,11 +143,7 @@ modified: 2022-12-19T01:51:01.389Z
   - https://falsandtru.github.io/pjax-api/
   - The pjax-api provides almost complete original web experience. 
   - Most SPA frameworks and pjax libraries lack many essential functions to keep the original web experience such as follows.
-# more-query-cache
-- https://github.com/bufbuild/connect-query
-  - Connect-Query is an expansion pack for TanStack Query (react-query), written in TypeScript and thoroughly tested. 
-  - It enables effortless communication with servers that speak the Connect Protocol.
-  - One of the best features of this library is that once you write your schema in Protobuf form, the TypeScript types are generated and then inferred.
+
 # rest-examples
 - https://github.com/taniarascia/node-api-postgres
   - https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/

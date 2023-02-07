@@ -169,6 +169,9 @@ modified: 2022-11-07T10:24:02.543Z
 # github-extensions
 - https://github.com/octokit/octokit.js
   - The all-batteries-included GitHub SDK for Browsers, Node.js, and Deno.
+
+- https://github.com/Mottie/GitHub-userscripts
+  - Userscripts to add functionality to GitHub
 # github-redo-theming
 - https://github.com/imfunniee/gitfolio
   - https://imfunniee.github.io/gitfolio/

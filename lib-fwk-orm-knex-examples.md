@@ -24,6 +24,10 @@ modified: 2023-01-22T19:52:59.120Z
 
 - ref
 # popular
+- https://github.com/shalior/express-ts-template /结构合理
+  - Express.js template using TypeScript, Knex and Docker to head-start development.
+  - fork of https://github.com/cdellacqua/express-knex-typescript-template
+
 - https://github.com/kurierjs/kurier
   - A TypeScript framework to create APIs following the 1.1 Spec of JSONAPI + the Operations proposal spec.
   - Baked into Kurier, there is an operation processor which takes care of basic CRUD actions by using Knex.
@@ -38,10 +42,6 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/victor-vieira21/knex-mongoose-sequelize-lucid
   - 4个orm示例
 # starter-boilerplate
-- https://github.com/shalior/express-ts-template /结构合理
-  - Express.js template using TypeScript, Knex and Docker to head-start development.
-  - fork of https://github.com/cdellacqua/express-knex-typescript-template
-
 - https://github.com/gabsrethink/nodejs-knex-authentication
   - Authentication API using NodeJS with TypeScript and Knex
   - 提供了jest测试

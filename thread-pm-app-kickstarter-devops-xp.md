@@ -20,12 +20,19 @@ modified: 2022-11-07T11:00:28.824Z
   - Building a "boring" business on top of the latest wave is a great way to guarantee at least some attention – which imho will become the scarcest resource as time ⇒ ∞
 - I don’t think the second one can survive, because the CRM moment long happened and all the alpha is eaten. Soon horizontal software like Notion will eat CRMs, these products are so mature. Vertical software “practice management” software is generally fully mature.
 # discuss
-
 - ## 
 
-- ## 
+- ## 欧洲IT只是因为市场分散各国语言战国状态，打不过几个巨头而已。
+- https://twitter.com/gdln15/status/1622540559121276929
+  - apple music也没干过spotify，linkedin在德国也干不过xing，不代表各国本地app很少。
+  - 并且大陆法系对于融资不如英美法系容易，对初创没那么友好。
+  - 靠普程序员乐了：全世界一半的编程语言，操作系统开源软件都是欧洲人贡献的，你觉得呢
 
-- ## 
+- ## 当年K司第二个产品就是做了一个CV算法API平台，该平台贩卖算法API call被认为是完全不可能成功的商业模式，那个平台也只用来收集用户case了。
+- https://twitter.com/zty0826/status/1622741883536683013
+  - 之后整个公司全面下海搞to B最后to G，在相比传统厂商毫无优势的领域被拖入泥潭。
+  - 现在来看只是K司的算法做不到跟世界有代差而已。
+- 还要看产品的市场的，特别是离线移动端算力有限的情况。CV+porn我个人觉得就是不错的市场，cv+相册服务也是，市场选择还是很重要的。
 
 - ## since i started doing an 'indie startup', reading things like @jlongster 's piece on actual and @panphora honesty around building things has been really cathartic 
 - https://twitter.com/tmcw/status/1619422310343266304

@@ -86,34 +86,26 @@ modified: 2022-08-13T06:59:54.741Z
   - Full-featured typescript starter for React application
   - recoil, recoil-persist
 
-- https://github.com/prisma/blogr-nextjs-prisma
-  - starter project for the fullstack tutorial with Next.js and Prisma. 
-- https://github.com/nemanjam/nextjs-prisma-boilerplate
-  - https://nextjs-prisma-boilerplate.localhost3000.live/
-  - Full stack boilerplate with Next.js, Prisma, Tailwind
-  - React Query 4-beta, Axios, React Hook Form 8-alpha, React Dropzone, Zod, msw, TailwindCSS 3, Jest 28
 - https://github.com/SeanCassiere/nextshop-mern
   - following Brad Traversy's MERN stack online course. udemy
 
 - https://github.com/wmartzh/r-rubi-react
   - https://github.com/wmartzh/r-rubi-nest
   - 前端js、后端ts
-# react-dashboard
-- https://github.com/themesberg/volt-react-dashboard
-  - dashboard + components + pages
-  - 依赖 react-router、bootstrap5、react-chartist、react-live、simplebar(scrollbar)
-- https://github.com/nafiur63/techforing-landing-page
-  - https://techforing-by-nafiur-reza.netlify.app/
-  - 依赖react、bootstrap5、react-bootstrap.v1.6
-  - 样式普通，但依赖少
 
-- https://github.com/MelisaMert/crud-react-contextapi
-  - Basic Crud Operation with context api
+- https://github.com/DimiMikadze/fest
+  - SaaS boilerplate built with Node.js & React.
+  - 依赖nestjs、prisma、nextjs、mui
+  - User authentication and authorization with email verification and password reset.
+  - Organizations management system.
+  - Secure API endpoints and Front-end routes with role-based authorization.
 
-- https://github.com/Lucifier129/react-imvc
-  - An Isomorphic MVC Framework supports both SSR and CSR
-  - MVC 三者都是 Isomorphic，既是服务端 MVC，也是浏览器端 MVC。
-  - https://github.com/Lucifier129/isomorphic-cnode
+- https://github.com/cheeterLee/messenger
+  - https://messenger-beta-drab.vercel.app/
+  - Fullstack real time chatting app.
+
+- https://github.com/oedotme/full-stack-typescript-with-turborepo-demo
+  - Full stack TypeScript with Turborepo demo
 # crud
 - https://github.com/taniarascia/react-hooks
   - https://taniarascia.github.io/react-hooks/
@@ -126,13 +118,21 @@ modified: 2022-08-13T06:59:54.741Z
   - [build a server api: Express, Sequelize & PostgreSQL](https://www.bezkoder.com/node-express-sequelize-postgresql/)
 # fullstack-api/mern
 - https://github.com/gilamran/fullstack-typescript
-  - FAST FullStack React with TypeScript starter kit.
+  - FullStack React with TypeScript starter kit.
+  - 依赖react-router.v6、mui5
+  - 未使用状态管理，未使用数据库，实现简单
   - Client and server can share code (And types)
-  - The client is bundled using Webpack because it goes to the browser
+  - The client is bundled using Webpack
   - The server is emitted by TypeScript because node now supports es6.
+
+- https://github.com/biantris/asktris
+  - Fullstack Playground
+
 - https://github.com/shanhuiyang/TypeScript-MERN-Starter
   - Build a real fullstack app (backend+website+mobile) in 100% Typescript
-- https://github.com/afteracademy/nodejs-backend-architecture-typescript /202010/ts
+  - mongodb+oauth2+redux
+  - Android/iOS client is created from Expo
+- https://github.com/afteracademy/nodejs-backend-architecture-typescript
   - build a backend server for Blogging platform like Medium, FreeCodeCamp
   - 依赖express、mongoose
   - Open-Source Project By AfterAcademy
@@ -146,7 +146,7 @@ modified: 2022-08-13T06:59:54.741Z
   - 后端依赖 express, mongoose
 
 - https://github.com/nagytommy76/ComputerStoreMERN
-  - learn the foundamentals of Node.js (Express.js), React.js, and a NoSQL database like MongoDB.
+  - learn the fundamentals of Node.js (Express.js), React.js, and a NoSQL database like MongoDB.
 
 - https://github.com/ivanlori/Fullstacco
   - Express.js/Node.js MongoDB React.js Typescript Redux.js React testing library
@@ -174,7 +174,33 @@ modified: 2022-08-13T06:59:54.741Z
   - ReactJS - Framework JS React-Helmet - SEO Immer - Immutability library React-i18next - Internationalization ExpressJS - Server side Sequelize - Database
 - https://github.com/vidarshan/mern-gadget-shop
   - An ecommerce web app created with React and Node.
-# react-examples-stars
+# saas-apps
+
+## blog
+
+- https://github.com/planetscale/beam
+  - Beam is a simple tool that allows members to write posts to share across your organization. Think of it like a lightweight internal blog.
+  - 依赖trpc、prisma、next、textarea-markdown-editor
+
+- https://github.com/KevinSilvester/mern-movie
+  - A fullstack movie website
+
+## ecommerce
+
+- https://github.com/saddamarbaa/Ecommerce-website-next.js-typeScript
+  - Next Js + TypeScript + Node Js + Express + MongoDB + Material-UI + Redux + Tailwind-CSS
+  - https://github.com/saddamarbaa/node-express-typescript-ecommerce-rest-api
+  - REST API built with | Nodejs + Express + Mongodb 
+
+- https://github.com/brandnewjinah/ecommerce
+  - my attempt to create a full stack e-commerce platform.
+
+- https://github.com/ElieB77/audiophile
+  - my solution to the Audiophile e-commerce website challenge created by Frontend Mentor. 
+  - using ReactJS, Typescript and NextJS on the client-side, and Node, Typescript and Express on the server-side with MySQL
+- https://github.com/jrussbautista/dress-shop
+  - full stack e-commerce website for clothing store.
+# react-examples
 - https://github.com/algolia/algolia-react-boilerplate
   - customizable boilerplate, made with ReactInstantSearchHooks and with many Algolia's features.
 

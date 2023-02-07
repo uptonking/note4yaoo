@@ -246,14 +246,6 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/andymatuschak/orbit
   - Orbit is an experimental platform for publishing and engaging with small tasks repeatedly over time.
 
-- https://github.com/crowi/crowi /MIT/202211/ts
-  - http://demo.crowi.wiki/
-  - Crowi - The Markdown Wiki - Empower the team with sharing your knowledge
-  - URL Based Page Tree
-  - pages that end with slashes (/) are automatically generated as list views. 
-  - 功能和样式都很普通
-  - 依赖mongodb
-
 - Ink-wash-docs /472Star/Apache2/202010/js
   - https://github.com/huangwei9527/Ink-wash-docs
   - 水墨文档，一款基于egg+vue开发的在线文档管理平台，支持markdown文档， excel文档，原型托管等功能.

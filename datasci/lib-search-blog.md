@@ -47,4 +47,14 @@ modified: 2023-01-03T14:52:51.355Z
   - FST，其实就是通过 FSM 演化而来。
 
 - 本文主要讲解了在 Elasticsearch 中是如何利用倒排索引来进行数据检索的，并讲述了倒排索引中的 FOR 和 RBM 两种压缩算法的原理以及使用场景，最后对比了字典树（前缀树）和 FST 两种数据结构存储的区别，并最终得出了为什么 es 中选择 FST 而不是选择字典树来进行存储索引数据的原因。
+
+## [The technology behind GitHub’s new code search | The GitHub Blog_202302](https://github.blog/2023-02-06-the-technology-behind-githubs-new-code-search/)
+
+- To solve code search at GitHub's scale, we built a search engine from scratch in Rust that can run regex searches across 45 million repositories in seconds. Learn how.
+
+- Our ingest pipeline can publish around 120, 000 documents per second, so working through those 15.5 billion documents should take about 36 hours. 
+  - But delta indexing reduces the number of documents we have to crawl by over 50%, which allows us to re-index the entire corpus in about 18 hours.
+  - There are some big wins on the size of the index as well.
+
+- To determine the optimal ingest order, we need a way to tell how similar one repository is to another (similar in terms of their content), so we invented a new probabilistic data structure to do this in the same class of data structures as MinHash and HyperLogLog. This data structure, which we call a geometric filter, allows computing set similarity and the symmetric difference between sets with logarithmic space. 
 # more-blog

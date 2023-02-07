@@ -46,6 +46,10 @@ modified: 2022-09-21T15:47:41.340Z
 - https://github.com/YPAKK/crdt-backend
   - Example of horizontally scalable websocket backend for y-js to be used with y-websocket provider with persitence to postgresql using knex.
 
+- https://github.com/YousefED/nostr-crdt
+  - an experiment to run decentralized, collaborative (multiplayer) apps over nostr. 
+  - CRDT application updates are sent as Nostr events.
+
 - https://github.com/sanalabs/collaboration-kit
   - packages that facilitate working with arbitrary JSON structures in Yjs
   - @sanalabs/y-redux Two-way sync of Redux and Yjs

@@ -88,9 +88,9 @@ modified: 2021-01-08T11:48:16.590Z
 - https://github.com/itmeo/webgradients
   - https://webgradients.com/
   - A curated collection of splendid gradients made in CSS3, .sketch and . PSD formats.
-
-## more-css
-
+# css-resources
+- [Open-Source UI elements - made with CSS and HTML](https://uiverse.io/)
+# more-css
 - https://github.com/lynnandtonic/a-single-div
   - a fun, little project to see how much can be accomplished with CSS. 
   - Every drawing consists of a single HTML element (in this case, the beloved div).

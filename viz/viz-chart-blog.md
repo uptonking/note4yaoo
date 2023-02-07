@@ -54,6 +54,8 @@ modified: 2021-01-19T12:47:29.048Z
     - enough flexibility for us to create our own custom charts
   - Performance
   - Growing ecosystem
+# [NotaScope: my data visualization research-in-progress](https://nicolas.kruchten.com/content/2022/10/notascope-in-progress/)
+
 # ref
 - [How to compare data using charts](https://www.highcharts.com/blog/post/how-to-compare-data-using-charts/)
 - [how to feed live data to a chart with Highcharts API](https://www.highcharts.com/docs/working-with-data/live-data)

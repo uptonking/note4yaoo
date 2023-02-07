@@ -141,7 +141,7 @@ modified: 2020-11-17T13:38:19.107Z
 - ReacType
 - silex /201907/GPLv3/680star
   - https://github.com/silexlabs/Silex
-  - 丑
+  - http://www.silex.me/
 - 基于vue
   - https://github.com/fireyy/vue-page-designer
   - https://github.com/baianat/vuse

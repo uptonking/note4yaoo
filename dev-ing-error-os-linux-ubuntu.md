@@ -16,7 +16,10 @@ modified: 2022-09-17T09:20:30.236Z
 
 - ## 
 
-- ## 
+- ## [AppImage: Settings schema 'org.gnome.settings-daemon.plugins.xsettings' does not contain a key named 'antialiasing' · Issue #12776 · Ultimaker/Cura](https://github.com/Ultimaker/Cura/issues/12776)
+- 
+FYI: In fedora 36 (wayland, gnome) i also had to set GDK_BACKEND to be able to launch it (i did not edit /etc/gdm/custom.conf)
+  - GDK_BACKEND=x11 LD_PRELOAD=/usr/lib64/libstdc++.so.6 ./Ultimaker-Cura-5.1.0-linux. AppImage
 
 - ## Your native host connector do not support following APIs: v6
 - https://askubuntu.com/questions/1418937

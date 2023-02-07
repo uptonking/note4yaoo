@@ -127,12 +127,22 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/fouita/tailwind-editor
   - notion like tailwindcss editor built with svelte
-# notion-block-api-structure
+# notion-block-structure-api/self-hosted
 - https://github.com/dragonman225/nast
   - A block-based intermediate representation for document-like content.
   - `nast-types`: A TypeScript type definition module to specify data models for intermediate representation of data.
   - `nast-util-from-notionapi`: Import data from a Notion page.
   - `nast-util-to-react`: Render data to JSX. Element or HTML. (Preferred)
+
+- https://github.com/makenotion/notion-sdk-js
+  - Official Notion JavaScript Client
+  - api-endpoints提供了model定义
+
+- https://github.com/justjake/monorepo/tree/main/packages/notion-api
+  - The missing companion library for the official Notion public API.
+
+- https://github.com/onedebos/notion-api-server-demo
+  - This NodeJS application demonstrates how to read and write data to your Notion Workspace using the new Notion APIs.
 
 - https://github.com/anconprotocol/parkydb
   - block based, linkable and verifiable document database
@@ -156,7 +166,7 @@ modified: 2022-06-03T22:07:23.308Z
   - https://github.com/kjk/notionapi
   - https://developers.notion.com/reference/block
   - [Using Notion API Go client ](https://blog.kowalczyk.info/article/c9df78cbeaae4e0cb2848c9964bcfc94/using-notion-api-go-client.html)
-# notion-clone-with-workspace
+# notion-clone-api
 - https://github.com/minwook-shin/notion-database
   - https://notion-database.readthedocs.io/
   - Notion API Database Python Implementation
@@ -173,7 +183,7 @@ modified: 2022-06-03T22:07:23.308Z
 - https://github.com/zhaowb/notion-params
   - a helper to build Notion API params, parse markdown text into Notion API blocks, include a simple client support all APIs version
   - 基于python
-
+# notion-clone-frontend
 - https://github.com/deve-sh/NoteItDown
   - https://noteitdown.vercel.app/
   - 不支持跨block选择部分文字
@@ -202,7 +212,7 @@ modified: 2022-06-03T22:07:23.308Z
   - 整体还原度非常高，包括page-tree
   - This website allows users to create pages, add notes to those pages, add to-do's, link to other pages and more!
 
-- https://github.com/amjadbouhouch/notion-clone
+- https://github.com/amjadbouhouch/notion-clone /仅前端
   - https://notion-clone-react.netlify.app/
   - a front-end build with React and Tailwind CSS
   - 不支持跨block选择部分文字
@@ -230,16 +240,23 @@ modified: 2022-06-03T22:07:23.308Z
   - Simple and naive Notion react renderer, not as advanced as react-notion-x
 - https://github.com/piotrzaborow/notion-blocks-react-renderer
   - React Renderer for @notionhq/client blocks
+- https://github.com/takux/notion-block-renderer
+  - This package is suitable for use with Reactjs or Nextjs. Notion blocks are rendered into React components. That component has a CSS class name corresponding to the block type.
 
 - https://github.com/tugboatcoding/react-potion  /js/inactive
   - A Notion-like design system
+
+- https://github.com/tryfabric/martian
+  - Convert Markdown and GitHub Flavoured Markdown to Notion API Blocks and RichText 
+
+- https://github.com/nartc/notion-stuff
+  - Notion Blocks to Markdown parser
+  - Notion Blocks to HTML parser
 
 - https://github.com/nategadzhi/notoma
   - https://nategadzhi.github.io/notoma/
   - Use Notion as your blogging editor, with any static gen blog engine. Notoma converts Notion pages to Markdown files.
 
-- https://github.com/takux/notion-block-renderer
-  - This package is suitable for use with Reactjs or Nextjs. Notion blocks are rendered into React components. That component has a CSS class name corresponding to the block type.
 - https://github.com/ridafkih/notion-react
   - Easily map Notion blocks to React components, completely customizable and type-safe
 

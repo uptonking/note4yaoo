@@ -64,6 +64,10 @@ modified: 2021-08-30T18:56:14.863Z
   - SQL represented in an unambiguous way in JSON.
   - Safely convertible to SQL on server with no injection attacks
   - Everything is a json object: `{ type: type of object, ... }`.
+
+- https://github.com/withtyped/withtyped
+  - Type-safe RESTful framework for fullstack with all native implementation
+  - Write native SQL-in-TS and get 4 tailored dev engines with no time
 # examples
 - https://github.com/prostgles/ui
   - https://prostgles.com/ui

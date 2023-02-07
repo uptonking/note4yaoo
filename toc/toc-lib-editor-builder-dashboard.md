@@ -57,6 +57,18 @@ modified: 2021-01-08T11:48:16.590Z
     - css only dashboard
     - dashboard ui
 # popular
+- tremor /6.2kStar/apache/202202/ts
+  - https://github.com/tremorlabs/tremor
+  - https://www.tremor.so/
+  - https://demo.tremor.so/
+  - a low-level, opinionated UI component library to build dashboards.
+  - made by data scientists and software engineers with a sweet spot for design.
+  - 依赖recharts2、tippyjs、date-fns，未使用任何组件库
+  - 图表默认动画
+- https://github.com/tinybirdco/log-analytics-starter-kit
+  - This Stater Kit provides an example for you can build your own logging & telemetry solution powered by Tinybird.
+  - Analytics Dashboard built with Next.js & Tremor
+
 - react-admin /21.1kStar/MIT/202212/ts
   - https://github.com/marmelab/react-admin
   - https://marmelab.com/react-admin-demo/
@@ -74,7 +86,7 @@ modified: 2021-01-08T11:48:16.590Z
   - PostgREST Data Provider for react-admin
   - react admin client for postgREST
 - https://github.com/lalalilo/express-crud-router /113Star/MIT/202201/ts/无db
-  - Expose resource CRUD routes in your Express app. 
+  - Expose resource CRUD routes for Express & Sequelize. 
   - Compatible with React Admin Simple Rest Data Provider. 
   - The lib is ORM agnostic
   - https://github.com/lalalilo/express-crud-router-sequelize-v6-connector
@@ -99,7 +111,6 @@ modified: 2021-01-08T11:48:16.590Z
   - https://github.com/app-generator
   - AppSeed: Production-ready seed projects crafted on top of modern UI Kits. 
   - https://github.com/app-generator/react-datta-able-dashboard
-
 # bootstrap-dashboard
 - https://github.com/SoftwareBrothers/adminjs-design-system
   - https://adminjs-demo.herokuapp.com/admin/login
@@ -229,6 +240,11 @@ modified: 2021-01-08T11:48:16.590Z
 
 - https://github.com/ahmadbinshafiq/CL-FE
   - admin dashboard template built with React and Bootstrap 4. Developed with ❤️ by Flatlogic
+
+- https://github.com/nafiur63/techforing-landing-page
+  - https://techforing-by-nafiur-reza.netlify.app/
+  - 依赖react、bootstrap5、react-bootstrap.v1.6
+  - 样式普通，但依赖少
 # react-dashboard
 - https://github.com/llorentegerman/react-admin-dashboard
   - https://llorentegerman.github.io/react-admin-dashboard/
@@ -515,45 +531,6 @@ modified: 2021-01-08T11:48:16.590Z
 - https://github.com/androidneha/mern-admin-panel
   - Admin-panel using ReactJs, ExpressJs, NodeJs, MongoDB and Bootstrap
   - 样式陈旧
-# kanban
-- https://github.com/atlassian/react-beautiful-dnd
-  - https://react-beautiful-dnd.netlify.app/iframe.html?id=board--simple
-  - 官方示例就是看板
-- https://github.com/riktar/jkanban /630Star/202012
-  - https://www.riccardotartaglia.it/jkanban/
-  - Vanilla Javascript plugin for manage kanban boards
-- https://github.com/asseinfo/react-kanban
-  - https://nvjp3.csb.app/
-  - 样式较简单
-  - 只依赖 react-beautiful-dnd
-  - Yet another Kanban/Trello board lib for React.
-- https://github.com/rcdexta/react-trello /1.5kStar/202012
-  - https://rcdexta.com/react-trello/
-  - Pluggable components to add a kanban board to your application
-- https://github.com/wekan/wekan
-  - https://wekan.github.io/
-  - The open-source kanban (built with Meteor).
-- https://github.com/markusenglund/react-kanban /1.6kStar/201901
-  - https://www.reactkanban.com/b/SyfPfO8CP/tutorial-board
-  - React, Redux, React-beautiful-dnd, Express, MongoDB, Passport
-- https://github.com/plankanban/planka
-  - https://plankanban.github.io/planka/#/
-  - The realtime kanban board for workgroups built with React and Redux.
-  - React, Redux, Redux-Saga, Redux-ORM, Semantic UI React, react-beautiful-dnd
-    - 前端单独分离出来了
-  - Sails.js, Knex.js
-  - PostgreSQL
-- https://github.com/lxerxa/actionview-fe
-  - ActionView front-end source code, based on Reactjs＋Redux.
-  - https://github.com/lxerxa/actionview /50Star/202101
-  - An issue tracking tool based on php laravel-framework in back-end and reactjs+redux in front-end, it's similar to Jira
-
-- https://github.com/nishantpainter/personal-kanban
-  - https://personalkanban.js.org/
-  - 依赖 material-ui.v4, formik, i18next, moment, react-beautiful-dnd
-  - columns and cards
-  - an offline capable application or tool that implements kanban to manage work at personal level
-  - The application is registered with service workers and behaves as a progressive web application (PWA)
 # draggable layout
 - gridstack.js /3.6kStar/MIT/202101/ts
   - https://github.com/gridstack/gridstack.js

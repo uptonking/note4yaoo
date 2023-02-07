@@ -24,6 +24,11 @@ modified: 2023-02-05T18:50:53.563Z
 
 - https://github.com/masb0ymas/expresso-mongoose
   - expresso with Mongoose
+
+- https://github.com/shrihari-prakash/liquid
+  - Seamless authentication and user management APIs for your projects based on TypeScript, MongoDB and Redis.
+  - open source TypeScript implementation of oauthjs/node-oauth2-server based Mongo DB and Redis with user sign up and login
+  - you typically find that you are writing the login, account creation and authentication logic over and over again. This repository provides a plug and play boilerplate
 # mongodb-examples
 - https://github.com/sunnysidelabs/mongoose-express-ts /202210/ts
   - show a good end-to-end project setup and workflow for writing a strongly-typed Mongoose Node.js Express code in TypeScript complete with middleware, models, routes, and types

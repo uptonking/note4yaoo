@@ -9,6 +9,9 @@ modified: 2022-12-24T06:46:19.423Z
 
 # guide
 
+- ref
+  - [DuckDB WASM Playground](https://sekuel.com/playground/)
+    - Run SQL queries directly in your desktop or mobile browser.
 # popular
 - tad /2.5kStar/MIT/202212/ts/duckdb/SlickGrid
   - https://github.com/antonycourtney/tad

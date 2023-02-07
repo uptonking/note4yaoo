@@ -29,6 +29,12 @@ modified: 2023-02-05T18:50:32.900Z
   - Auto SwaggerUI Admin
   - JWT Security RS256
   - https://github.com/ruyd/fullstack-monorepo
+
+- https://github.com/lalalilo/express-crud-router /113Star/MIT/202201/ts/无db
+  - Expose resource CRUD routes for Express & Sequelize. 
+  - Compatible with React Admin Simple Rest Data Provider. 
+  - The lib is ORM agnostic
+  - https://github.com/lalalilo/express-crud-router-sequelize-v6-connector
 # v7
 - https://github.com/tapiwakundi/movies-api /js
   - simple example

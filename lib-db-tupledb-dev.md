@@ -49,7 +49,15 @@ modified: 2022-12-14T18:26:38.588Z
 
 - ## 
 
-- ## 
+- ## Where is perspective discussed in software design?
+- https://twitter.com/ccorcos/status/1622664703536435201
+  - If a chair is always a thing for sitting in, strict schemas and bundling behavior with data makes sense.
+  - If perspective matters and a chair changes from a door stop to ram to a thing to sit in, you need something else.
+- Lol, I was just about to reply “triplestore!” but looks like you’re already there!
+- A similar idea exist in game development called “entity-component system”. 
+  - The idea is that the developer often cares about attributes of object as opposed to knowing what kind of object it is. 
+  - “This this thing openable? If so, open it”. Doesn’t matter if it’s a door or a chest
+  - 偏向于抽象通用性为的接口，而不是定义schema
 
 - ## [Couple of questions](https://github.com/ccorcos/tuple-database/issues/15)
 - If I were to query something that returned a bunch of userIds, whats the best way to query users from those userIds? I could scan 1 by 1 but I feel like there would be a better way. 

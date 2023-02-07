@@ -18,7 +18,16 @@ Symbol('a') === Symbol('a'); //false
 
 - ## 
 
-- ## 
+- ## Here's a quick thread on a super useful type helper you've probably never heard of (nope, not even advanced folks).
+- https://twitter.com/mattpocockuk/status/1622730173446557697
+
+```typescript
+
+type DisplayUnionnedProps<T> = {
+  [K in keyof T]: T[K]
+}&{};
+
+```
 
 - ## Understanding monomorphism(单态，单一形式) can improve your JavaScript performance 60x.
 - https://twitter.com/mhevery/status/1622499229813047296

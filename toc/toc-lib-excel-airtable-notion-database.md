@@ -214,7 +214,7 @@ modified: 2022-08-21T10:02:05.129Z
   - It eliminates repetitive tasks demanded by CRUD operations and provides industry standard solutions for critical parts like authentication, access control, routing, networking, state management, and i18n.
   - Connectors for 15+ backend services including REST API
 
-- https://github.com/mukulchugh/kanboard-notion-kanban-react
+- https://github.com/mukulchugh/kanboard-notion-kanban-react /js
   - https://notion-kanboard-mukul.netlify.app/
   - 暂不支持视图切换
 # notion-database-like

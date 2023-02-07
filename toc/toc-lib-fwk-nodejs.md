@@ -125,6 +125,7 @@ modified: 2022-12-19T01:49:01.371Z
     - fullstack framework based on midway-faas that implemented serverless-side render specification for faas.
     - ssr is serverless-side render specification implementation.
     - Serverless让端开发者更好地开发各种端上应用，不需要投入太多精力关注于后端服务的实现
+    - 此框架脱胎于 egg-react-ssr 项目和 ssr v4版本（midway-faas + react ssr）
 
 - https://github.com/redwoodjs/redwood
   - 依赖react、prisma、apollo-graphql、jest、babel、webpack、storybook

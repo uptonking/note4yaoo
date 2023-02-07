@@ -14,6 +14,49 @@ modified: 2022-03-03T18:20:12.075Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I think many people agree that building a modern web app forces app devs to think too much about distributed systems and grapple with a stack that has tons of layers.
+- https://twitter.com/geoffreylitt/status/1622632087932248065
+
+- When we started work on @linear , we felt real-time sync was a core functionality we had to invest in from the get-go. It turns out sync was important, but not for the reasons we thought.
+- https://twitter.com/artman/status/1558081796914483201
+  - angentially related thread, more about the importance of actually investing in a good architecture
+- Our gut feeling was that real-time updates were required from a modern tool like Linear. Who wants to refresh to see the latest data? But how often do you find yourself in a situation where multiple people update data simultaneously in a project management tool?
+  - Not that often, it turned out. Aside from special cases where your team gets together to operate on data - like planning your next cycle - edits are made across the entire dataset, with the same data being touched at the same time relatively infrequently.
+- 👉🏻 Don’t get me wrong, we still believe that real-time sync is essential, 
+  - but there are two more valuable things we got out of real-time sync that we did not appropriately anticipate: **App speed** and **Ship speed**.
+- The most straightforward way to implement real-time sync is to load the entire app state and then keep it up-to-date with real-time changes. While we’ve had to add complexity to this simple initial implementation to support larger workspaces, the core tenant still holds.
+- Clients have the vast majority of their workspace data stored locally. Hence page loads are all but eliminated. As a result, startup times are fast, filters work instantly, and there are no page loads.
+- But arguably even more essential and surprising was that real-time sync helped us ship new functionality much faster than regular architectures. How? By eliminating a vast swathe of complex and error-prone code.
+- 👉🏻 Sync automatically takes care of generating API calls, creating transactions, applying them on the backend, handling conflicts and errors, reverting erroneous changes, rebasing in-fight changes, and offline capabilities.
+- To create a new feature as an engineer, you essentially render and modify local in-memory data structures to build new functionality. All the complexity that comes with requests, conflicts, network errors and retries are handled by sync for free.
+- All UI code automatically re-renders when the data that they accessed updates. Whether the data changes come from the user or the network doesn't matter. So you get multi-player for free, too.
+- As you can imagine, reducing the number of layers engineers have to work on dramatically improves the speed at which we can ship new functionality. After experiencing this architecture at scale, I'm spoiled for life.
+
+- Linear is great! What did you use specifically for sync and did you roll out all the reconciliation code yourself or did you leverage other tools?
+  - ws for sockets, and idb to make working with IndexDB a bit more pleasant, but other than that it’s a custom solution.
+
+- How do you see this scaling down the road? You mentioned some modifications for larger workspaces. I suppose there are a lot of assumptions built on top of the current sync engine. If you need to radically update it in the future, wouldn't that force a huge client re-write?
+  - Data access in most places is already async and the sync client has three tiers of data: in memory, local database and network. Client code is agnostic to where the data is coming from. Was a a lot of work, but that’s really the scaling story.
+- Do you think it could work for an app with much more content, for example something like Notion or Confluence? Could be difficult to maintain a full copy of everything on every device, especially on smartphones. Same problem as hit monorepos  too big to be cloned.
+
+- ## What are some interesting research groups in tech along the lines of these:
+- https://twitter.com/JungleSilicon/status/1622755131921154048
+  - Dynamicland
+  - Braid
+  - Ink & Switch
+- [The Overedge Catalog: The Future of Research Organizations](https://arbesman.net/overedge/)
+- Along socio-technical research lines:
+  - @funDAOmental
+  - @humsys
+  - @metagov_project
+  - @block_science
+
 - ## glad to see more talented devs embracing local first tools. But I'll warn you: data migrations! If you want your app to live long term, best to have a plan for change.
 - https://twitter.com/gaforres/status/1619354329798029312
   - [Local-first data migrations](https://blog.gfor.rest/blog/lofi-migrations)

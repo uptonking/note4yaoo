@@ -68,6 +68,11 @@ modified: 2020-12-19T13:04:40.865Z
 - https://github.com/theninthsky/client-side-rendering
   - https://client-side-rendering.pages.dev/
   - a case study of CSR, it aims to explore the potential of client-side rendered apps compared to server-side rendering.
+
+- https://github.com/Lucifier129/react-imvc
+  - An Isomorphic MVC Framework supports both SSR and CSR
+  - MVC 三者都是 Isomorphic，既是服务端 MVC，也是浏览器端 MVC。
+  - https://github.com/Lucifier129/isomorphic-cnode
 # ssr-solutions
 - https://github.com/pmb0/express-tsx-views
   - Server-side JSX/TSX rendering for your express or NestJS application

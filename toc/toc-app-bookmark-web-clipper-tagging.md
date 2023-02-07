@@ -81,6 +81,7 @@ modified: 2022-11-11T11:04:29.007Z
   - https://github.com/itizaworld/webev-server
   - bookmark manager that improves the organization of information.
   - organized in a hierarchical structure.
+  - 依赖express、mongoose
 
 - https://github.com/osmoscraft/osmosmemo
   - Turn GitHub into a bookmark manager
