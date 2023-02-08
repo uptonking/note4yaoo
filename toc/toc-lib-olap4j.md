@@ -17,7 +17,7 @@ modified: 2020-10-22T06:50:47.668Z
   - https://github.com/edp963/davinci
   - https://edp963.github.io/davinci
   - Davinci is a DVsaaS (Data Visualization as a Service) Platform
-  - https://github.com/running-elephant/datart /inactive
+  - https://github.com/running-elephant/datart /java/echarts/inactive
     - datart 是新一代数据可视化开放平台，支持各类企业数据可视化场景需求，如创建和使用报表、仪表板和大屏，进行可视化数据分析，构建可视化数据应用等。
     - 由原 davinci 主创团队出品，datart 更加开放
 - poli /1.7kStar/MIT/202005/java/inactive

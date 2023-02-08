@@ -1,11 +1,11 @@
 ---
-title: tool-app-vscode-xp
+title: toc-app-vscode-xp
 tags: [app, ide, tool, vscode, xp]
 created: 2020-08-30T13:08:19.102Z
-modified: 2020-12-29T17:46:00.207Z
+modified: 2023-02-08T10:47:19.056Z
 ---
 
-# tool-app-vscode-xp
+# toc-app-vscode-xp
 
 # guide
 - [Open VSX Registry faq](https://www.eclipse.org/legal/open-vsx-registry-faq/)

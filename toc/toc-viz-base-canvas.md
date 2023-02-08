@@ -107,12 +107,12 @@ modified: 2020-10-05T06:17:42.467Z
   - 未开源源码，目前 janvas.min.js 仅使用 uglifyjs --compress 简单压缩无混淆
   - 基于 HTML5 Canvas 2d 绘图上下文的 JavaScript 绘图库，不仅便于 拓展，拥有极佳的 灵活度 和超越原生 canvas API 开发的 性能
 # canvas-designer-builder
-- react-design-editor /556Star/MIT/202009
+- react-design-editor /556Star/MIT/202009/inactive
   - https://github.com/salgum1114/react-design-editor
   - https://salgum1114.github.io/react-design-editor/
   - 画布区是canvas，其余地方是dom
   - developed direct manipulation of editable design tools like Powerpoint
-  - We've developed it with reactjs, ant.design, fabricjs
+  - We've developed it with reactjs, antd3, fabricjs4, echarts4
 # canvas-extensions
 - https://github.com/udevbe/react-canvaskit
   - Experiment in creating a custom react renderer using an offscreen webgl canvas on top of Skia CanvasKit

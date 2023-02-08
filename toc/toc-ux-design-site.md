@@ -17,7 +17,6 @@ modified: 2020-10-22T13:17:19.943Z
   - https://gridfolio.framer.website/
   - https://gridfolio-dark.framer.website/
 
-- https://railway.app/
 # 白色主题
 - [josh comeau： Latest Articles and Tutorials](https://www.joshwcomeau.com/latest/)
   - 灰背景，白卡片

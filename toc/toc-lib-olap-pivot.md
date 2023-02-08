@@ -34,6 +34,13 @@ modified: 2023-01-23T11:24:41.943Z
   - 依赖dataframe，wildemitter，基于react15，较旧
   - 基于table标签实现
   - 典型的透视表视图
+
+- S2 /1.1kStar/MIT/202302/ts
+  - https://github.com/antvis/S2
+  - https://s2.antv.antgroup.com/examples
+  - S2是多维交叉分析领域的表格解决方案，数据驱动视图，提供底层核心库、基础组件库、业务场景库
+  - 依赖 @antv/g-canvas、g-gesture、d3-interpolate
+
 - quick-pivot /49Star/MIT/201812/js
   - https://github.com/pat310/quick-pivot
   - Quickly format data to create a pivot table

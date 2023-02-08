@@ -19,6 +19,7 @@ modified: 2023-01-20T21:59:47.792Z
 
 - ref
   - https://github.com/postlight/awesome-cms
+  - crm, erp
 # popular
 - payloadcms /9.1kStar/MIT/202301/ts/slate
   - https://github.com/payloadcms/payload

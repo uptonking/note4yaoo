@@ -14,6 +14,7 @@ modified: 2021-07-20T13:50:23.433Z
   - rendering(~~web~~) may be the future.
   - 涉猎saas解决方案，积累方案、算法、库、框架、业务模版
   - 深入一个项目: src-code, issues, pr, forks, extensions/alternative
+  - 抽空在线体验，工作专注代码
 
 - 技术方向js: 富文本编辑器，多维表格，协作
 - 技术扩展js/py: 支持拖拽的页面编辑器/LowCode，Excel，图表
@@ -74,6 +75,13 @@ modified: 2021-07-20T13:50:23.433Z
   - 👉🏻 lightdash   (MIT/knex+echarts)
   - superset   (apache2/flask+echarts)
 
+- ✨ admin-dashboard
+  - react-admin
+- ✨ editor-wiki(web+pc)
+  - outline
+  - notesnook
+  - mdSilo
+
 - features
   - local-first/offlineable/localizable
   - collaborative
@@ -99,6 +107,8 @@ modified: 2021-07-20T13:50:23.433Z
   - 腾讯文档
   - 类似outline集成slack
   - 类似superset支持各种数据源
+# ideas
+- editor/ide-settings sync/store/sharing
 # editor
 - tips
   - live edit

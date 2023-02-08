@@ -11,6 +11,13 @@ modified: 2021-09-22T04:13:22.341Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Motion One doesn’t have layout animations so no changes need
+- https://twitter.com/mattgperry/status/1623204503003471872
+
 - ## Motion One's new custom animations let you hook it up to an external library like Flubber to perform these morphing SVG animations
 - https://twitter.com/mattgperry/status/1487701600529534979
   - https://codesandbox.io/s/motion-one-morph-svg-paths-qldsz?file=/src/index.js

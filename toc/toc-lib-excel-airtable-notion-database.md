@@ -175,6 +175,12 @@ modified: 2022-08-21T10:02:05.129Z
     - Firetable is now Rowy
     - https://github.com/FiretableProject/firetable
 
+- S2 /1.1kStar/MIT/202302/ts
+  - https://github.com/antvis/S2
+  - https://s2.antv.antgroup.com/examples
+  - S2是多维交叉分析领域的表格解决方案，数据驱动视图，提供底层核心库、基础组件库、业务场景库
+  - 依赖 @antv/g-canvas、g-gesture、d3-interpolate
+
 - baserow /1.3kStar/MIT/202212/python/js/vue/多视图
   - https://github.com/bram2w/baserow
   - https://baserow.io/

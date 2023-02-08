@@ -32,6 +32,24 @@ modified: 2023-01-20T18:45:02.826Z
 - https://github.com/w3tecch/typeorm-seeding
   - A delightful way to seed test data into your database.
   - Inspired by the awesome framework laravel in PHP and of the repositories from pleerock
+
+# admin
+
+- api-server-nodejs /178Star/MIT/202212/ts
+  - https://github.com/app-generator/api-server-nodejs
+  - Express Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
+  - 依赖Express, SQLite, TypeORM, passport-jwt
+  - Authentication Flow uses json web tokens via Passport library - passport-jwt strategy.
+  - TypeScript, Joy for validation
+  - https://github.com/app-generator/api-server-nodejs-demo
+- api-server-nodejs-mongo /11Star/MIT/202212/ts/代码简单
+  - https://github.com/app-generator/api-server-nodejs-mongo
+  - 典型的dashboard的后端示例
+  - 依赖express、mongoose、passport-jwt
+  - Can be used with other React Starters for a complete Full-Stack experience
+- https://github.com/app-generator/sample-docker-nodejs-react
+  - docker compose up --build 
+
 # crud-boilerplate
 - https://github.com/ljlm0402/typescript-express-starter /202301/ts
   - Express RESTful API Boilerplate Using TypeScript，模版项目
@@ -76,22 +94,6 @@ modified: 2023-01-20T18:45:02.826Z
 - https://github.com/camesine/Typescript-restful-starter
   - ExpressJS + Joi + Typeorm + Typescript + JWT + ES2015 + Clustering + Tslint + Mocha + Chai
 
-## admin
-
-- api-server-nodejs /178Star/MIT/202212/ts
-  - https://github.com/app-generator/api-server-nodejs
-  - Express Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
-  - 依赖Express, SQLite, TypeORM, passport-jwt
-  - Authentication Flow uses json web tokens via Passport library - passport-jwt strategy.
-  - TypeScript, Joy for validation
-  - https://github.com/app-generator/api-server-nodejs-demo
-- api-server-nodejs-mongo /11Star/MIT/202212/ts/代码简单
-  - https://github.com/app-generator/api-server-nodejs-mongo
-  - 典型的dashboard的后端示例
-  - 依赖express、mongoose、passport-jwt
-  - Can be used with other React Starters for a complete Full-Stack experience
-- https://github.com/app-generator/sample-docker-nodejs-react
-  - docker compose up --build 
 
 ## cms
 

@@ -167,6 +167,19 @@ modified: 2023-02-06T09:14:40.114Z
     - Quickly you realize that you're building another protocol on top of HTTP.
     - At that point, it's better to reuse an existing protocol like Bayeux, and proven solutions like CometD
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Which library should I use for fetching data in React?
+- https://twitter.com/shashwatnauti/status/1622901075648061440
+  - Tha lack of "automatic garbage collection" in SWR is an important issue for me.
+- Depending on if you're planning to do some advanced cache management, mutations.
+  - My rule of thumb: simply fetching - SWR. It's gotten better at mutations but not quite.
+  - If your use-case is beyond "get the data, show it's status, display the data", you might want to look into RQ
+
 - ## Fetch data from an api in useEffect or in event handler directly in react
 - https://stackoverflow.com/questions/62277013/
 - It depend on your usecase
@@ -187,7 +200,7 @@ modified: 2023-02-06T09:14:40.114Z
   - well, depends on how you treat it. if you use reactive/declarative way, it can be sideEffect. if you use imperative way, it can be a callback. both work. 
   - I wouldn't recommend using useEffect. To do that, it would become an effect triggered by a state-change, which would also cause an unnecessary re-render. Callbacks are inherently side-effects when they are triggered by a user-action
 - You don't need an effect to send a request on button click, instead what you need is just a handler method which you can optimise using `useCallback` method
-  - Tracking request using variable with `useEffect` is not a correct pattern because you may set state to call api using `useEffect`, but an additional render due to some other change will **cause the request to go in a loop**
+  - Tracking request using variable with `useEffect` is not a correct pattern because you may set state to call api using `useEffect` , but an additional render due to some other change will **cause the request to go in a loop**
 - In functional programming, any async function should be considered as a side effect.
   - When dealing with side effects you need to separate the logic of starting the side effect and the logic of the result of that side effect (similar to redux saga).
   - Basically, the button responsibility is only triggering the side effect, and the side effect responsibility is to update the dom.
@@ -219,7 +232,9 @@ modified: 2023-02-06T09:14:40.114Z
   - meaning you can start making a request before you have the whole body available.
 - usecase
   - Warm up the server. 
+
     - In other words, you could start the request once the user focuses a text input field, and get all of the headers out of the way, then wait until the user presses 'send' before sending the data they entered.
+
   - Gradually send data generated on the client, such as audio, video, or input data.
   - Recreate web sockets over HTTP.
 
@@ -228,7 +243,9 @@ modified: 2023-02-06T09:14:40.114Z
 - https://github.com/nodejs/undici
   - An HTTP/1.1 client, written from scratch for Node.js
   - https://github.com/Ethan-Arrowood/undici-fetch
+
     - A WHATWG Fetch implementation based on @nodejs/undici
+
 - Next.js automatically polyfills fetch API on the server-side, but in my book I do explore alternatives... and Undici is by far my favorite one
 - Yep. Undici is more reliable, it's well designed and tested, and it has better defaults for serverless environments. 
   - We're already using it inside some places of the @vercel core production infrastructure which gives us the confidence to adopt it more broadly.

@@ -1,11 +1,11 @@
 ---
-title: toc-saas-browser-extensions
+title: toc-app-browser-extensions
 tags: [browser, extensions, toc]
 created: 2020-10-05T07:49:04.680Z
-modified: 2022-11-04T15:11:24.012Z
+modified: 2023-02-08T10:24:11.422Z
 ---
 
-# toc-saas-browser-extensions
+# toc-app-browser-extensions
 
 # guide
 

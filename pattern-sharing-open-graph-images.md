@@ -14,7 +14,10 @@ modified: 2023-02-03T05:55:22.102Z
 - minimap可作为一种参考
   - [Content minimap - CKEditor 5 Documentation](https://ckeditor.com/docs/ckeditor5/latest/features/minimap.html)
 # examples
-
+- https://github.com/jacktuck/unfurl
+  - Metadata scraper with support for oEmbed, Twitter Cards and Open Graph Protocol for Node.js
+  - take a url and some options, fetch the url, extract the metadata we care about and format the result in a sane way.
+  - It supports all major metadata providers and expanding it to work for any others should be trivial.
 # blogs
 
 ## [A framework for building Open Graph images | The GitHub Blog_202106](https://github.blog/2021-06-22-framework-building-open-graph-images/)

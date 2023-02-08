@@ -18,9 +18,20 @@ modified: 2022-08-13T06:59:54.741Z
   - https://marmelab.com/react-admin-demo/
   - A frontend Framework for building data-driven applications on top of REST/GraphQL APIs, React and Material Design.
   - core依赖react-query.v3、react-hook-form
+  - 提供了权限管理
   - Backend Agnostic: Connects to any API (REST or GraphQL)
   - React-admin uses an adapter approach, with a concept called Data Providers.
   - designed as loosely coupled React components and hooks exposing reusable controller logic. It is very easy to replace any part of react-admin with your own
+
+- https://github.com/pure-admin/pure-admin-backend /ts/echarts
+  - pure-admin官方后端
+  - 依赖express、mysql，未使用orm
+  - https://github.com/pure-admin/pure-admin-thin
+    - 基于 vue-pure-admin 官方精简版
+    - 提供了权限管理
+  - https://github.com/pure-admin/vue-pure-admin
+    - Vue3+Vite4+Element-Plus+TypeScript编写的一款后台管理系统，兼容移动端
+
 
 - async-labs/saas /3.2kStar/MIT/202209/ts
   - https://github.com/async-labs/saas
@@ -127,6 +138,7 @@ modified: 2022-08-13T06:59:54.741Z
 
 - https://github.com/biantris/asktris
   - Fullstack Playground
+  - 依赖koa、mongoose、jwt、react
 
 - https://github.com/shanhuiyang/TypeScript-MERN-Starter
   - Build a real fullstack app (backend+website+mobile) in 100% Typescript

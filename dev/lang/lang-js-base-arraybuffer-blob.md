@@ -10,9 +10,11 @@ modified: 2022-11-23T17:51:08.635Z
 # guide
 
 # examples
-
+- https://github.com/zandaqo/structurae
+  - A collection of data structures for high-performance JavaScript applications 
+  - simple binary protocol based on DataView and defined with JSONSchema
+  - making web apps using an objects backed by TypedArrays for much less memory allocation.
 # discuss
-
 - ## 
 
 - ## 

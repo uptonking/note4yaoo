@@ -7,6 +7,11 @@ modified: 2020-10-22T10:22:55.878Z
 
 # toc-viz-chart-flow
 
+# guide
+
+- usecase
+  - 自动化任务
+
 # flowchart
 
 - mermaid /32.1kStar/MIT/202009/js

@@ -1,11 +1,11 @@
 ---
-title: tool-app-github-xp
+title: toc-app-github-xp
 tags: [devtools, github, pm, xp]
 created: 2020-07-31T11:59:56.787Z
-modified: 2022-11-07T10:24:02.543Z
+modified: 2023-02-08T10:46:26.912Z
 ---
 
-# tool-app-github-xp
+# toc-app-github-xp
 
 # guide
 
@@ -66,7 +66,7 @@ modified: 2022-11-07T10:24:02.543Z
       - 新版搜索要将filename改为path
     - 甚至可以搜索同时包含多个依赖的仓库
       - https://github.com/search?q=%22next-mdx-enhanced%22+%22%40tailwindcss%2Ftypography%22+filename%3Apackage.json&type=Code
-  - 搜索条件使用日期 pushed:2021-11-11
+  - 搜索条件使用日期 pushed:>=2021-11-11
     - react created:<2011-01-01 
     - editor pushed:>=2013-03-06 fork:only 
   - 搜索指定日期范围内仓库
@@ -172,7 +172,10 @@ modified: 2022-11-07T10:24:02.543Z
 
 - https://github.com/Mottie/GitHub-userscripts
   - Userscripts to add functionality to GitHub
-# github-redo-theming
+
+- https://github.com/dwyl/hits-nodejs
+  - to see how many people have viewed your GitHub Repository
+# github-theming
 - https://github.com/imfunniee/gitfolio
   - https://imfunniee.github.io/gitfolio/
   - personal website + blog for every github user

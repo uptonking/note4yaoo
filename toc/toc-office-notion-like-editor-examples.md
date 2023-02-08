@@ -192,9 +192,9 @@ modified: 2022-06-03T22:07:23.308Z
   - Thanks to Chakra UI for making styling so simple.
   - A Simple Note Taking App For an Entire Team, pre-packaged with support for Google and GitHub logins with Firebase Auth, database as Firestore.
 
-- https://github.com/konstantinmuenster/notion-clone
+- notion-clone /2.3kStar/MIT/202106/js/inactive
+  - https://github.com/konstantinmuenster/notion-clone
   - https://notion-clone.kmuenster.com/
-  - /2.3kStar/MIT/202106/js
   - 不支持跨block选择部分文字
   - 支持拖拽block修改顺序
   - 前端依赖 next9、react-beautiful-dnd、react-contenteditable，未使用复杂编辑器
@@ -305,3 +305,5 @@ modified: 2022-06-03T22:07:23.308Z
   - readme里面的短横文本构成的表格特别多
   - Pages inside non-page blocks are also fetched.
   - Max request-depth can be set in your preference.
+
+- [Building a Notion-like system with Socket.io And React](https://novu.co/blog/building-a-notion-like-system-with-socket-io-and-react/)

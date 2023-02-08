@@ -1,11 +1,11 @@
 ---
-title: page-engineering-test
+title: page-engineering-testing
 tags: [engineering, testing]
 created: 2020-12-31T12:06:19.343Z
-modified: 2020-12-31T12:07:18.316Z
+modified: 2023-02-08T10:24:55.231Z
 ---
 
-# page-engineering-test
+# page-engineering-testing
 
 # [How to mock data in React with a fake API](https://www.robinwieruch.de/react-mock-data)
 

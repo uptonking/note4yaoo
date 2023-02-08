@@ -8,14 +8,15 @@ modified: 2023-02-07T17:38:05.336Z
 # toc-saas-team-workspace
 
 > workplace, project management
+> team, admin-members
 
 # guide
 - alternatives
   - jira, trello, linear
 # popular
-
+- https://github.com/xiweicheng/tms /js/java
+  - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
 # microsoft-teams/org
-
 - growi /1.1kStar/MIT/202301/ts/remark
   - https://github.com/weseek/growi
   - https://docs.growi.org/en/guide/
@@ -40,13 +41,13 @@ modified: 2023-02-07T17:38:05.336Z
   - A project management platform built with the MERN-Stack.
   - Jira clone with MongoDB, Express, React and Node.js
   - 后端js，mongoose
-  - 前端ts，redux、semantic-ui
+  - 前端ts，redux、semantic-ui、react-beautiful-dnd
 
 - https://github.com/vishwajeetraj11/projectboard
   - https://github.com/vishwajeetraj11/projectboard-backend
   - A project management application that allows you to track tasks process
   - 后端js，mongoose
-  - 前端ts，redux， react-markdown-editor
+  - 前端ts，redux， react-markdown-editor, react-beautiful-dnd
 
 - https://github.com/linagora/Twake
   - Open-source alternative to Microsoft Teams
@@ -73,7 +74,7 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/rcamach7/project-management-app
   - Project management application, similar to that of Trello or Jira.
   - Utilized NextAuth to authenticate users and store their data in a MongoDB database
-  - nextauth, SSR, mongoose, MUI components, cloudinary, axios
+  - 依赖next-auth、mongoose、mui5，不支持拖拽
 
 - https://github.com/pooridev/Todoooze
   - https://todooooze.vercel.app/
@@ -81,12 +82,21 @@ modified: 2023-02-07T17:38:05.336Z
   - 依赖trpc、next、reduxjs-toolkit、recoil、react-query
   - 样式友好
 # user/permissions/scrum/Inventory
-- https://github.com/bissbr01/Command-project-management
+- https://github.com/bissbr01/Command-project-management /ts
   - A Scrum Management App for teams
   - 依赖reduxjs-toolkit、mantine、dnd-kit、formik
   - https://github.com/bissbr01/Command-backend /js
     - 依赖sequelize6
     - A containerized REST API for the Command project managment app.
+
+- https://github.com/pure-admin/pure-admin-backend /ts/echarts
+  - pure-admin官方后端
+  - 依赖express、mysql，未使用orm
+  - https://github.com/pure-admin/pure-admin-thin
+    - 基于 vue-pure-admin 官方精简版
+    - 提供了权限管理
+  - https://github.com/pure-admin/vue-pure-admin
+    - Vue3+Vite4+Element-Plus+TypeScript编写的一款后台管理系统，兼容移动端
 
 - https://github.com/shrihari-prakash/liquid
   - Seamless authentication and user management APIs for your projects based on TypeScript, MongoDB and Redis.
@@ -96,6 +106,12 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/tuan3w/linearapp_clone
   - 依赖material-ui、redux4、styled-components、tailwindcss、rich-markdown-editor
   - 基本可用，且实现了列表组件和看板组件，但编辑器基本未修改
+
+- https://github.com/code-pilots/magner /vue
+  - Universal admin panel magnetic to any backend. 
+  - Supports authentication, role management, entities view, creation, edition and deletion. I18n, infinitely nested layout and custom components
+  - Magner provides a set of tools to bootstrap an admin panel website built with Vue 3 and Element Plus. 
+  - All you need to do is writing JSON configurations and backend connectors.
 # kanban/board
 - https://github.com/Fredkiss3/thullo
   - A Trello Clone
@@ -178,9 +194,10 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/ocipap/API__Trello-clone-project
   - Using node.js, express, sequelize, JWT
 
-- https://github.com/GiangThanhDat/trello-clone-backend
-  - https://github.com/GiangThanhDat/trello-clone-frontend
+- https://github.com/GiangThanhDat/trello-clone-backend /js
+  - https://github.com/GiangThanhDat/trello-clone-frontend /js
   - Build a trello-app basic api using nodejs, mongodb
+
 - https://github.com/oldboyxx/boxd_api
   - Node/Mongo API for a Trello clone; old version written in es5 - es6 
   - 依赖mongoose

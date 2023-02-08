@@ -30,6 +30,7 @@ modified: 2020-12-22T12:42:14.745Z
   - apt list --installed
   - snap list / snap list --all 包含旧版本
   - flatpak list / flatpak list --app 只包含app，不包含runtime
+  - flatpak history --reverse 查看更新记录
 
 - apt install --reinstall pkg 重新安装
 

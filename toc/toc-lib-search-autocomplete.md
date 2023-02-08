@@ -244,6 +244,9 @@ modified: 2023-01-01T13:24:35.994Z
   - https://www.elastic.co/enterprise-search/search-ui
   - A React library that allows you to quickly implement search experiences without re-inventing the wheel
 
+- https://github.com/riccox/meilisearch-ui
+  - fast meilisearch admin dashboard UI for managing your meilisearch instances
+
 - https://github.com/searchkit/searchkit
   - /3.9kStar/Apache2/202008
   - a suite of UI components built in react to rapidly create beautiful elasticsearch applications
@@ -252,6 +255,10 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/appbaseio/dejavu
   - /7kStar/MIT/202008
   - The Missing Web UI for Elasticsearch: Import, browse and edit data with rich filters
+
+- https://github.com/appbaseio/reactivesearch
+  - https://opensource.appbase.io/reactivesearch
+  - Search UI components for React and Vue: powered by appbase.io / Elasticsearch
 
 - https://github.com/hemantwasthere/GitHub-Clone
   - search any github authorized user in this app and checkout there profile

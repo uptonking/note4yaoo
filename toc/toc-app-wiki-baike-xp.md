@@ -1,11 +1,11 @@
 ---
-title: tool-app-wiki-baike-xp
+title: toc-app-wiki-baike-xp
 tags: [app, saas, wiki, xp]
 created: 2020-10-05T07:51:09.046Z
-modified: 2020-12-29T17:51:22.482Z
+modified: 2023-02-08T10:47:32.359Z
 ---
 
-# tool-app-wiki-baike-xp
+# toc-app-wiki-baike-xp
 
 # guide
 # spell-checker

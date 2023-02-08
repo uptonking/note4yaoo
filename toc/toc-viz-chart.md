@@ -87,17 +87,19 @@ modified: 2020-10-22T10:22:33.292Z
   - https://esri.github.io/cedar
   - JavaScript Charts for ArcGIS
 # popular
-- Chart.js /MIT/49.6kStar/202007
+- Chart.js /59.7kStar/MIT/202302/ts+js
   - https://github.com/chartjs/Chart.js
   - https://www.chartjs.org/
   - Simple HTML5 Charts using the canvas tag
   - https://github.com/SeanSobey/ChartjsNodeCanvas
   - [图表库源码剖析 - Chart.js 最流行的 Canvas 图表库](https://zhuanlan.zhihu.com/p/32740553)
-- echarts /Apache2/42kStar/202007
-  - https://github.com/apache/incubator-echarts
+
+- echarts /54.1kStar/apache2/202302/ts
+  - https://github.com/apache/echarts
   - http://echarts.apache.org/
   - A powerful, interactive charting and visualization library for browser
   - written in pure JavaScript and based on zrender, which is a whole new lightweight canvas library.
+
 - recharts /MIT/14.4kStar/202007
   - https://github.com/recharts/recharts
   - http://recharts.org/

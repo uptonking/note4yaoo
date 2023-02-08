@@ -23,6 +23,13 @@ modified: 2023-02-05T18:50:32.900Z
   - Documentation with Swagger
   - 还提供了typeorm、mongoose版本
 
+- https://github.com/bissbr01/Command-project-management /ts
+  - A Scrum Management App for teams
+  - 依赖reduxjs-toolkit、mantine、dnd-kit、formik
+  - https://github.com/bissbr01/Command-backend /js
+    - 依赖sequelize6
+    - A containerized REST API for the Command project managment app.
+
 - https://github.com/ruyd/automated-express-backend
   - NodeJS Express Starter for backends and microservices
   - Auto CRUD API Routes for Models

@@ -43,3 +43,7 @@ modified: 2022-11-28T17:41:37.209Z
 # utils
 
 # more-starter
+
+- https://github.com/mwolfhoffman/node-jwt-sqlite-typescript-starter /js/inactive
+  - Boilerplate for Node + TypeScript MVPs with JWT and SQLite.
+  - 未使用orm

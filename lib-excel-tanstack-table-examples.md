@@ -15,7 +15,7 @@ modified: 2022-08-21T10:37:01.349Z
     - outline wiki使用了react-table和react-window
   - ✨ list和grid切换功能 需要自己实现
 
-- usecases
+- usecase
   - rowy
 # popular-v8
 - material-react-table /301Star/MIT/202212/ts

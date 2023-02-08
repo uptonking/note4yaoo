@@ -86,7 +86,7 @@ modified: 2022-08-18T16:57:15.296Z
   - 依赖 prosemirror、katex、bootstrap4、jquery、highlight.js
   - A free note-taking software for programmers and Computer Science students
 
-- mdSilo-web /208Star/AGPLv3/202208/ts
+- mdSilo-web /208Star/AGPLv3/202208/ts/web+桌面
   - https://github.com/danloh/mdSilo-web
   - https://mdsilo.com/
   - A mind silo for storing ideas, thought, knowledge with a powerful writing tool.
@@ -328,7 +328,6 @@ modified: 2022-08-18T16:57:15.296Z
 - https://github.com/webxdc/yjs_editor
   - This tool uses yjs (A CRDT tool), Deltachat and Vuejs to provide a WYSIWYG editor which can be used right out of deltachat.
 
-- https://github.com/pierre-lgb/slashwriter
 - https://github.com/martinemmert/fleeting-notes-editor
 
 - https://github.com/diffgram/diffgram

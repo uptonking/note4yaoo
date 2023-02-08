@@ -233,6 +233,13 @@ modified: 2020-12-28T12:24:09.275Z
     - 通过交互组件修改 Store 数据，重新渲染页面
   - 依赖antd4、mobx5、codemirror5、showdown、nextjs
 
+- https://github.com/alibaba/formily 
+  - /MIT/2.9kStar/202009
+  - 表单状态核心管理包(不依赖任何第三方UI框架，但依赖immer、cool-path)
+    - 管理 Form 状态、Field 状态、Validator 状态、Form/Field/Validator 之间的依赖关系
+    - 借助首创Observable Graph，可记录任意时刻的全量状态，也可将状态回滚至任意时刻
+  - https://github.com/alibaba/formily-editor
+
 - appsmith /340Star/Apache2/202009/ts/java
   - https://github.com/appsmithorg/appsmith
   - open source alternative to Power Apps, Salesforce Lightning

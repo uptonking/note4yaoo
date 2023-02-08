@@ -12,7 +12,20 @@ modified: 2022-11-25T09:47:43.079Z
 # discuss
 - ## 
 
-- ## 
+- ## What are the limitations of sql.js? As far as I read on their site, it is also SQLite compiled to wasm.
+- https://twitter.com/visheratin/status/1623068001112059921
+- For us @fleetctl the key limitation is lack of support for virtual tables (a really interesting feature of SQLite if you haven't checked it out!)
+- I haven't worked with SQLite in a browser yet, but do I understand right that wa-sqlite, as well as sql.js, reads the whole DB in memory to start working with it?
+  - My understanding is that is the case with sql.js and it's not with wa-sqlite. I'm much less familiar with the storage side of SQLite, but their VFS concept looks quite interesting
+- It seems like wa-sqlite really performs partial reads/writes over the pages. But my concern is that this logic might be slower than keeping everything in memory.
+- in the in-memory case, what happens if the user leaves the page, it crashes, browser exits, etc? Do you have to persist after every operation?
+  - Yes. sql.js maintainer in this issue said that exporting is a rather fast operation even for large databases.
+
+- ## [Anyway to save SQL DB to IndexedDB without calling export() for persistence? · Issue #302 · sql-js/sql.js](https://github.com/sql-js/sql.js/issues/302)
+- I am currently having to call export every time I need to save to indexedDB for persistence. The problem is export greatly increases the save time taken and I cannot save just the SQLJS object due to the new SQL.database constructor not being able to handle that? Is there any way around this or could this be a possible enhancement.
+- Also @jlongster has forked SQL.js to add the supported hooks to allow for custom filesystems. Would be great to see these incorporated into SQL.js mainline.
+- Unfortunately the suitability of the File System Access API for SQLite seems to be going nowhere, despite its recent support in Safari. First of all, Firefox seems pretty strongly opposed to it.
+  - In addition, it looks like Chrome's implementation for writes copies the file, writes to the copy, scans the copy for malware, and renames the copy over the original. So changing 1 block of a 1GB SQLite database might cost over 2GB of I/O (1 for the copy, 1 for the scan) unless your filesystem has some kind of block-level deduplication. That's probably worse than export(). Not sure what Safari does.
 
 - ## Funny how I tend to overcomplicate things. Working on a project that processes lots of data in the browser (~12M records).
 - https://twitter.com/mgechev/status/1608266730765422594
