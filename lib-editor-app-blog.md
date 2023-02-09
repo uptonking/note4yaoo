@@ -12,41 +12,7 @@ modified: 2022-08-21T10:11:37.453Z
 
 - contenteditable gives you one very important feature that you can't fake yourself: access to the browser's spell check and corrections
 - Yep, we do use contentEditable as an input source and also as the view to which we render (you wouldn't be able to reliably handle the keyboard otherwise).
-# repeat
-
-## [ContentEditable  —  The Good, the Bad and the Ugly_201508](https://ckeditor.com/blog/ContentEditable-The-Good-the-Bad-and-the-Ugly/)
-
-- ### ContentEditable is evil and the Selection API is its evil twin. Avoid them as much as possible. 
-- You need a custom selection system. 
-  - It must be doable nowadays to get position (represented by a range, but we’ll simplify this in a moment) in the DOM on mousedown/mousemove. 
-  - You’ll display your custom caret (whoa… you can control its style now) and text selection (it’s a simple ).
-- You need to handle typing. 
-  - Let’s listen to the keyboard events and insert given character into the editor.
-- You need to handle navigation using the Arrow keys. 
-  - Left and right seem easy, up and down a bit trickier but if you have point 1, you’ll do this too. 
-  - Wait, there’s the Alt modifier which makes the Left and Right Arrow keys jump entire words. 
-  - But of course you’ll look for spaces in the text and that’s it — told you, it’s trivial!
-- Then you need to do something with pasting. 
-  - You see that with the Clipboard API you can listen to the paste event on the document and retrieve the data from the data transfer. 
-  - You can also use the old paste bin mechanism.
-
-- ### ContentEditable — the Good Parts
-- It’s amazing that adding one attribute to an HTML element enables typing, selection, keyboard navigation, spell checking, drag and drop, pasting, undo manager. 
-  - That all of this is integrated with the OS, 
-  - that such editor can be used with a screen reader or on a touchscreen device 
-  - and that it’s well internationalised. 
-
-- ### CKEditor
-- Over the past years, while working on CKEditor I noticed that we were gradually replacing native features with our own implementations. 
-- Since version 4.0, CKEditor has its custom “insert HTML into selection” mechanism and a feature allowing reaching non-editable places.
-- CKEditor 4.1 introduced highly customisable content filtering (no more mess on paste). 
-- CKEditor 4.3 brought support for non-editable islands with editable islands inside which required overriding many native systems (selection, keyboard, focus, clipboard).
-- Finally, just a few weeks ago we made a final takeover of the clipboard, which means that in some browsers copy, cut and paste operations are fully handled by CKEditor.
-- It means that today CKEditor does not let the browser do anything to the content except handling typing, some deleting and that’s basically it. 
-  - At the same time, it still uses the native selection system, keyboard navigation and other APIs such as those related to clipboard or focus management.
-
-- With CKEditor 5 we are planning to conclude this process by letting the browser insert text only, but with CKEditor’s control.
-# blogging
+# blogs
 - [[方案]造一个富文本 简介](http://luo0412.gitee.io/core/nav.4-2.ui/ch5-toolbox/02-5047253998648002.html)
 
 - [哔哩哔哩 从零开始的富文本编辑器（上）_slate_202209](https://www.bilibili.com/read/cv18606877)
@@ -114,6 +80,8 @@ modified: 2022-08-21T10:11:37.453Z
 
 - In summary, Track Changes is more of a functionality improving the aspect of collaboration between users, 
   - while Revision History extends the application’s capabilities with content audit-trail and versioning functionality.
+
+## [Why ContentEditable is Terrible. Or: How the Medium Editor Works | by Nick Santos | Medium Engineering_201405](https://medium.engineering/why-contenteditable-is-terrible-122d8a40e480)
 
 ## [从流行的编辑器架构聊聊富文本编辑器的困境_202003](http://yoyoyohamapi.me/2020/03/01/%E4%BB%8E%E6%B5%81%E8%A1%8C%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E6%9E%B6%E6%9E%84%E8%81%8A%E8%81%8A%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%9B%B0%E5%A2%83/)
 
@@ -236,6 +204,32 @@ modified: 2022-08-21T10:11:37.453Z
   - Google Docs Spread - 设计比较像Excel，但是使用的protobuf
   - Notion - 很明显是结构化的属性数据，并且使用CRDT的冲突解决数据结构
 - 在Startup阶段，找到对应领域的合适技术选型，选择做出你协作软件的MVP，当自研能够成为你的壁垒或者优势，再选择自研
+
+## [Concept of Block Style Editor](https://domino-editor.psyhyde.vercel.app/docs/)
+
+- https://github.com/psyhyde/domino-editor
+  - A Playbook for Block Style Editor (BSE): Text Styling, Block Components, Misc Functions & Theme Switcher
+
+- Background of Block-Style Editor：
+  - Markdown, for its high readability and simple syntax, has been adopted widely; 
+    - Pure Markdown editing is WYSIWYM
+  - Most Web-based RTF editors follow WYSIWYG interaction pattern
+  - Block Style Editors provide a Markdown-like but WYSIWYG editing experience
+  - On UX and interaction level, BSE provides a similar experience to Typora, MarkText, but with integrated Mini-App Blocks
+
+- Features of Block-Style Editor：
+  - Follow a structure of Markdown (Template) + CSS + Fonts
+  - Inherent the text styling rules of Markdown, 
+    - keep its simplicity and content-focusing approach; 
+    - Remove features like: line spacing, font size, font color
+  - Expand text editing into Text Editing & Styling and Mini-App Customization
+  - Mini-App Blocks: table, image container, advanced code block, prefabricated UI view, embeds.
+  - A web-based Content Editor that, take Interactive Document and Modular UI as guideline, 
+    - use Block or Paragraph as content unit, 
+    - use Markdown as its Template Structure.
+
+- Block-Style Editor has its roots in CMS(content management system), SSG (static site generator), GitHub& Markdown, MDX, JSX, and Low-code Site Building.
+- In a sense, a Block Style Editor is a Modular CMS for web document use case.
 # editor-ide
 
 ## [LSP-language-server-protocol规范学习](https://zhuanlan.zhihu.com/p/343218679)
@@ -260,12 +254,6 @@ modified: 2022-08-21T10:11:37.453Z
   - 服务器就在你本地。。。懂了没？？只是和编辑器分开了，通过通信来交流
   - 网络传输会让你的ide跑的慢死 目前的都是本地服务器也就是个跨进程通讯而已
 # more
-- [编辑器背后的数据结构 | Tuesday.](https://dontpanic.blog/data-structures-under-editors/)
-  - 部分Emacs使用了Gap Buffer，包括古老的 Emacs on TECO、现代的GNU/Emacs及其前辈Gosling Emacs。
-  - Scintilla (即包括Code:: Blocks在内的很多IDE/编辑器使用的代码编辑控件) 也使用了Gap Buffer
-  - Emacs进入由Lisp实现的时代后，一些Emacs版本使用了LinkedLine。
-  - Vim使用的是一种基于行的数据结构，但行与行之间不是简单地使用链表连接，而是用一种树结构进行管理。
-  - KDE的Okteta 16进制编辑器使用了Piece Table Buffer
 
 - [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)
 - [TEXT EDITING HATES YOU TOO](https://lord.io/text-editing-hates-you-too/)

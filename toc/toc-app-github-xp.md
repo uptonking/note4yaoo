@@ -42,6 +42,12 @@ modified: 2023-02-08T10:46:26.912Z
   - sort repos of an organization by stars
   - toggle github repo and github page
   - go to npm package page
+# git-usage
+- 统计仓库人员贡献比例
+  - git shortlog -sn
+    - 统计每人commit次数
+  - 
+
 # github-usage
 - nice-to-have
   - 空仓库标记，如搜索时标记出空仓库可省去点开查看
@@ -50,8 +56,8 @@ modified: 2023-02-08T10:46:26.912Z
     - https://github.com/hacker-DOM/github-by-stars
       - /inactive
   - repo项目名支持中文名，url中部分path支持中文名
-
-- search-issues/pr
+# github-search
+- search-pr
   - is:unmerged
 
 - search-repos
@@ -133,7 +139,7 @@ modified: 2023-02-08T10:46:26.912Z
 - ref
   - [Automated Data Scraping with Github Actions](https://www.swyx.io/github-scraping/)
     - https://github.com/sw-yx/gh-action-data-scraping
-# github-pkg-npm
+# github-utils-repos-pkg-npm
 - 查看依赖某个package的所有包
   - https://www.npmjs.com/browse/depended/redux
   - [Allow dependents to be sorted by stars](https://github.com/isaacs/github/issues/1537)
@@ -147,6 +153,18 @@ modified: 2023-02-08T10:46:26.912Z
 
 - 读取某个package的所有dependencies，查询下载量后排序
   - https://github.com/pkgjs/dependents
+
+- https://github.com/tj/git-extras
+  - GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
+  - git summary --line
+    - 统计每人代码比例
+
+- https://github.com/oleander/git-fame-rb
+  - git fame 
+    - summarize and pretty-print collaborators, based on the number of contributions.
+
+- https://github.com/IonicaBizau/git-stats
+  - Local git statistics including GitHub-like contributions calendars.
 # github-proxy
 - https://github.com/521xueweihan/GitHub520
   - https://raw.hellogithub.com/hosts 服务器续费了3年到2024.12
@@ -154,7 +172,7 @@ modified: 2023-02-08T10:46:26.912Z
 - download release and repo
   - https://pd.zwc365.com/
   - https://shrill-pond-3e81.hunsh.workers.dev/
-# github-data-apps
+# github-apps
 - https://githubwrapped.tech/
   - take a look at all the contributions you as an individual made to the open-source community
 
@@ -166,7 +184,7 @@ modified: 2023-02-08T10:46:26.912Z
     - Autocomplete is predictable, Autopilot much less so.
     - Spotting issues is IMO harder when reading code than when writing it.
     - You want perfect code, not code that the average dev would write.
-# github-extensions
+# github-browser-extensions
 - https://github.com/octokit/octokit.js
   - The all-batteries-included GitHub SDK for Browsers, Node.js, and Deno.
 

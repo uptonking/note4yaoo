@@ -101,6 +101,20 @@ modified: 2022-11-08T19:04:00.289Z
   - https://github.com/quilljs/quill
   - https://quilljs.com/
   - Quill is a modern rich text editor built for compatibility and extensibility.
+
+- typewriter /308Star/MIT/202301/ts
+  - https://github.com/typewriter-editor/typewriter
+  - A rich text editor based off of Quill.js and Ultradom, and using Svelte for UI.
+  - 依赖 svelte、popperjs2、typewriter/delta
+  - Built on the same data model as Quill.js, the Delta format, and using a tiny virtual DOM, Superfine, Typewriter aims to make custom rich text editors faster, easier, and more powerful
+- https://github.com/typewriter-editor/json-patch
+  - Immutable JSON Patch implementation based on RFC 6902 which adds operational transformation (OT) and last-writer-wins (LWW) support for syncing between client and server. 
+  - Does not support the full OT algorithm because `copy` and `move` operations cannot be transformed correctly in all cases, so operations must always be applied in correct order. 
+    - This means a central server is required to determine order.
+  - json-patch provides a utility that will help sync an object field-by-field using the Last-Writer-Wins (LWW) algorithm. 
+    - This sync method is not as robust as operational transformation, but it only stores a little data in addition to the object and is much simpler
+    - It does not handle adding/removing array items, though entire arrays can be set. 
+    - It should work great for documents that don't need merging text like Figma
 # open-editors
 - canvas-editor /112Star/MIT/202301/ts/几乎无依赖
   - https://github.com/Hufe921/canvas-editor

@@ -105,22 +105,28 @@ modified: 2022-04-05T10:10:22.091Z
 # [Collaboration needs a clean Slate_202002](https://www.tiny.cloud/blog/real-time-collaborative-editing-slate-js/)
 - 👉🏻️ Note: this model will only be used for RTC, not the default editing experience
 
+- Although we may eventually decide to write our own model, we quickly settled on Slate as the library to use to build a high-quality product.
+
 - Our real-time collaboration project has been split into a collection of sub-projects:
   - A custom VDOM rendering engine for the Slate model, and reverse-map logic for selection and content input, targeting a pure ContentEditable div so it is not TinyMCE specific
   - An implementation of low-level editor features built on Slate core APIs
   - A layer that loads TinyMCE configuration and content to set up and compose the low-level features into a working editor
   - Collaboration control (transforms, cursors, server interaction)
   - Hooks in the TinyMCE core to relinquish control of ContentEditable and redirect all model APIs to the external RTC code
-# [ckeditor5: Lessons learned from creating a rich-text editor with real-time collaboration_201810](https://ckeditor.com/blog/Lessons-learned-from-creating-a-rich-text-editor-with-real-time-collaboration/)
+# [ckeditor5: Lessons learned from creating a rich-text editor with real-time collaboration_201802](https://ckeditor.com/blog/Lessons-learned-from-creating-a-rich-text-editor-with-real-time-collaboration/)
 - Our take on Operational Transformation
   - CKEditor 5 uses OT to make sure it is able to resolve conflicts. 
   - OT is based on a set of operations (objects describing changes) and algorithms that transform these operations accordingly, so that all users end up with the same editor content regardless of the order in which these operations were received. 
+- Therefore, in 2015 we started working on our take on OT implementation.
 - OT in its basic form defines three operations: insert, delete, and set attribute. 
-  - These operations are meant to be executed on a linear data model.
+  - These operations are meant to be executed on a **linear data model**.
+  - They are responsible for inserting text characters, removing text characters and changing their attributes 
+- The linear data model is a simple data model that is sufficient to represent plain text. 
+  - On the contrary, an HTML document is represented in the browser as the Document Object Model (or DOM), which is tree-structured.
   - It is possible to represent simple, flat structured data in a linear model, but this model falls short when it comes to complex data structures, like tables, captioned images or lists containing block elements. 
-  - Elements simply cannot contain other elements.
+  - Elements simply cannot contain other elements. For example, a block quote cannot contain a list item or a heading.
 - Hence, we needed to make a step further and provide Operational Transformation algorithms that work for a tree data structure. 
--  We quickly realized that the basic set of operations (insert, delete, set attribute) is insufficient to handle real-life scenarios in a graceful way. 
+- We quickly realized that the basic set of operations (insert, delete, set attribute) is insufficient to handle real-life scenarios in a graceful way. 
 - The most important enhancement that we made was adding a set of new operations to the basic three (insert, remove, set attribute). 
   - The rename operation, to handle element’s renaming (used, for example, to change a paragraph into a heading or a list item).
   - The split, merge, wrap, unwrap operations to better describe the user intention.

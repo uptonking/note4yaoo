@@ -352,7 +352,7 @@ modified: 2023-02-05T19:03:12.723Z
   - Slate JS Editor Operational Transform Example using ShareDB (used in production at Narration Box)
   - Invoking JSON0-ot-diff on every edit is not very efficient.
 
-- https://github.com/itoumlilt/crdt-md-editor /ts/slate
+- https://github.com/itoumlilt/crdt-md-editor /ts/slate/CouchDB
   - React Typescript CRDT based Collaborative Markdown Editor
 
 - https://github.com/BitPhinix/slate-yjs-example
@@ -361,6 +361,7 @@ modified: 2023-02-05T19:03:12.723Z
   - [How to boostrap slate with a persisted doc?](https://github.com/BitPhinix/slate-yjs-example/issues/80)
   - https://github.com/BitPhinix/slate-yjs
     - Yjs binding for Slate
+    - [Linearising document content](https://github.com/BitPhinix/slate-yjs/issues/296)
 
 - https://github.com/6thfdwp/crdt-editor
   - A collaborating editor based on Slate and Yjs

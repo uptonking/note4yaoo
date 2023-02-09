@@ -251,6 +251,13 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - [如何在 Ubuntu 20.04 上安装 PostgreSQL](https://zhuanlan.zhihu.com/p/143156636)
   - [postgresql安装配置](https://www.xzhongwei.com/post/480)
   - [Ubuntu18.04安装Postgresql与配置](https://www.blog8090.com/ubuntu18-04an-zhuang-postgresqlyu-pei-zhi/)
+
+### ruby
+
+- https://github.com/rbenv/rbenv
+  - https://github.com/rbenv/ruby-build
+  - 要先更新build中的元数据，再安装最新ruby
+  - [rbenv can't change global ruby version - Stack Overflow](https://stackoverflow.com/questions/24736204)
 # win11
 
 ## guide

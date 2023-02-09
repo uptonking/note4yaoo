@@ -10,6 +10,9 @@ modified: 2021-09-22T16:41:02.529Z
 # guide
 
 # 编辑器类
+- 开发流程类
+  - monorepo、cicd
+
 - 输入法
   - keypress事件、keydown事件哪个用得多一点
 

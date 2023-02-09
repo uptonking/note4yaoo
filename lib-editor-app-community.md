@@ -14,9 +14,9 @@ modified: 2022-08-21T10:11:19.219Z
 
 - ## 
 
-- ## 
-
-- ## 
+- ## [The slowest part of TinyMCE: SaxParser · Issue #7341 · tinymce/tinymce](https://github.com/tinymce/tinymce/issues/7341)
+- What we're currently aiming for is a swap to the built-in browser DomParser then adding DomPurify to sanitise.
+  - The problems you are describing seem to be more about how often the parser is run rather than an intrinsic performance issue with the parser itself. Micro-optimising things like how often a regex is compiled won't make any noticeable difference.
 
 - ## ACE2 is EtherPad's editor, a content-editable-based rich text editor. 
 - https://news.ycombinator.com/item?id=18371309
@@ -139,11 +139,6 @@ modified: 2022-08-21T10:11:19.219Z
   - In CKEditor 5 we took perhaps the longest possible road so a tree structure with Operational Transformation support and couple of other goodies. It costed us a 3 years of work, but it was worth it. 
   - We proved the concept and validated the results by implementing the Letters app which supports real-time collaborative editing for real (with selective undo, commenting, displaying selections of other users, etc.). 
   - We'll now be working on adding more features like e.g. tables support which rise the bar for the data model and the whole architecture even higher, but we're very optimistic seeing the results to far.
-
-# discuss
-- ## 
-
-- ## 
 
 - ## Notes as data
 - https://twitter.com/gordonbrander/status/1429105115886018560

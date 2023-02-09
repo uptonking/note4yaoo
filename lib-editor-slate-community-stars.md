@@ -11,7 +11,7 @@ modified: 2023-02-05T19:03:12.722Z
 
 - 渲染长文档的思路
   - virtualized render
-    - 参考 ajaxorg/ace、codemirror
+    - 参考 ajaxorg/ace、codemirror、typewriter
   - defer render
 # discuss
 - ## 
@@ -22,7 +22,15 @@ modified: 2023-02-05T19:03:12.722Z
 
 - ## 
 
-- ## 
+- ## [Modeling RichText with Automerge](https://github.com/automerge/automerge/issues/193)
+- I have spent a while thinking about this too, and I also think that a single document sequence with marker characters is the way to go. 
+  - If you represent a document as a tree, there are a lot of operations that require deleting and re-inserting nodes (e.g. hitting enter in the middle of a paragraph, causing it to split into two paragraphs), which don't merge well in a concurrent setting. 
+  - If a document is just a flat sequence, hitting enter in the middle of a paragraph just means inserting a '\n' element into that sequence.
+- My intention was that Automerge. Text should be usable for this purpose. That is, I want Automerge. Text to be able to contain marker objects as well as characters from the text
+- Maybe I am overlooking something, but "If a document is just a flat sequence, hitting enter in the middle of a paragraph just means inserting a '\n' element into that sequence." means we can not express tree structures. I can not imagine WYSIWYG without at least an anchor which has to be split as well.
+
+- there is new development going on: next month, @geoffreylitt and @sliminality will be kicking off a research project to figure out the best way of handling rich text in CRDTs such as Automerge, with the support of the @inkandswitch research lab. 
+  - https://www.inkandswitch.com/peritext/
 
 - ## Dynamic Rendering Feature (performance improvement); only render visible blocks and not render blocks hidden within the y-overflow.__201705
 - https://github.com/ianstormtaylor/slate/issues/790

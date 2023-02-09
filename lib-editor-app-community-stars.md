@@ -8,6 +8,7 @@ modified: 2022-08-21T10:12:02.964Z
 # lib-editor-app-community-stars
 
 # guide
+
 - 编辑器研发方向
   - 实时协作
   - 版本控制
@@ -15,6 +16,11 @@ modified: 2022-08-21T10:12:02.964Z
   - features
     - 开放api
     - 双向链接
+
+- 渲染长文档的思路
+  - virtualized render
+    - 参考 ajaxorg/ace、codemirror、typewriter
+  - defer render
 
 - not-yet
   - 搜索编辑器内容时，如何搜索带格式的文本，如关键词为 解构`props` 时如何搜索

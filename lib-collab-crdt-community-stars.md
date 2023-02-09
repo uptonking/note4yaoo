@@ -19,6 +19,43 @@ modified: 2022-04-05T10:09:51.343Z
 - ## 
 
 - ## 
+ `<u>`
+
+[OT and CRDT trade-offs for Real-Time collaboration_202001](https://news.ycombinator.com/item?id=22039950)
+- [Creating a Collaborative Editor](https://pierrehedkvist.com/posts/1-creating-a-collaborative-editor)
+  - In my CRDT implementation, I would add meta-data to each character, with the boolean property which is either bold or not. It's certainly cumbersome to keep the cursor at the right place when inserts are being made, but it's doable.
+  - I personally never understood how OT actually works, clearly, Google Docs and others find it useful. But to me, CRDT has more solid proof and reasoning behind it, and it is easier to comprehend.
+- The best CRDTs do treat each character separately (as I think I mentioned at one point?). But not all of them - the video and my example is an example of one that doesn't.
+  - It's also very difficult to support arbitrary nested trees with a per-character data type, which leads to the compromises I talked about.
+
+- After 8 years of working on this, I have changed my thoughts:
+  - The correct algorithm is not always the correct user experience.
+  - End-to-end encryption is too important to not have.
+  - Offline support is great, but it behaving consistently is more important than it behaving "intently".
+  - Biggest pain points can most easily be solved at the editing layer, not data layer.
+  - As a result, OT gets thrown out the door immediately.
+- I built the most popular CRDT powered database on the market https://github.com/amark/gun, but have some harsh words for CRDT obsessed people
+  - CRDTs are great, but if you create an infinitely complex one to handle "every word editing operation" it'll actually result in an inferior(较差的；次的) user experience.
+  - As such, for example, GUN supports lock-free concurrent operations on any depth of data in a graph, but keeping text/strings behavior atomic is way more important than having built-in automatic string merges.
+- 👀 Another example is, in our blog editing tools, despite having spent years researching & implementing (+ others in our community) precise character-by-character CRDT resolution schemes, I found I personally had a much better offline & local first user experience with a predictable per-paragraph sync scheme.
+  - This is a stupid simple approach, but what it means is that I as a user, can easily predict whats going to happen, so if I'm offline I know I should just copy a new paragraph and fiddle with things there, cause it isn't gonna get "auto delete regrammar merged".
+  - Generally speaking, me and colleagues don't "fight" over the same paragraph, we're usually concurrently writing different "sections" at the same time, it is pretty rare to grammar fix their edit same paragraph as they're typing it - that is also just kinda, rude looking.
+- 👉🏻 Anyways, finally, is that the majority of text styling and DOM edge cases can be handled by having a deterministic canonical DOM hierarchy that always gets applied at the editing layer, BEFORE any CRDT operations even occur.
+  - So for instance, re-arrange the DOM tree such that `<i>` is always inside `<u>` inside `<b>`, or something like that.
+  - We built this into a library called normalize, and it instantly eliminated so much complexity, especially at the CRDT level. Ping me if you want a demo of this library.
+- Finally, for everyone else, we also built an INTERACTIVE CARTOON EXPLAINER of an extremely basic text CRDT to help others understand the more detailed concepts
+  - [Dependent Causality](https://gun.eco/explainers/school/class)
+- Do you have any document that explain what resolution algorithm uses in what cases? For example, one peer change a property value and the other peer deletes it.
+  - https://gun.eco/distributed/matters
+  - It is a vector + timestamp + lexical sort/rank/order(字母顺序排序).
+  - A delete is changing a value to `null`, it would lose (I assume you are asking if/when these 2 changes happen at the exact same microsecond time, conflicting?) as is it has a lower lexical rank.
+
+- 🤔 Is the article suggesting to apply a string CRDT to an entire JSON structure? Are people doing that?
+  - 👉🏻 No, the state of the art CRDT solution for json is something like Automerge that treats the document like a collection/combination of CRDTs of different types.
+
+- In OT, every user action is broken down into one or more operations. These operations are transmitted between clients along with their baseline reference; if two users perform actions at the same time, incoming operations must be transformed to include the local operations that have happened since that baseline. They are then applied locally and form the new baseline.
+  - This constant transformation of operations turned out to have too many edge cases where clients were found to not produce the same baseline (the "wrong" papers above). When that happens, the clients will never converge on the same result and break the fundamental assumption of collaboration.
+  - exactly right. It’s fairly easy to have an OT system that is very vulnerable, because clients can cheaply generate change sets that are extremely computationally expensive on the server side. I’ve seen a system where a single mobile phone could, in a few seconds, lock up the synchronisation server for days.
 
 - ## 分享我设计的基于CRDT的软件架构 hamsterbase
 - https://twitter.com/hamsterbase/status/1590005075581497344
@@ -213,8 +250,6 @@ interface CRDTSyncDir{
   - **The parser only cares about what token ranges changed, which does not require CRDT**.
 
 - ## more-discuss
-- OT and CRDT trade-offs for Real-Time collaboration_202001
-  - https://news.ycombinator.com/item?id=22039950
 - Open source collaborative text editors _201905
   - https://news.ycombinator.com/item?id=19845776
 - An Introduction to Conflict-Free Replicated Data Types _202006

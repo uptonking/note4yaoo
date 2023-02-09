@@ -243,6 +243,8 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/phedkvist/crdt-sequence
   - CRDT Sequence is a very basic collaborative text editing implementation
   - 依赖 react-quill
+  - [Creating a Collaborative Editor](https://pierrehedkvist.com/posts/1-creating-a-collaborative-editor)
+  - https://github.com/PHedkvist/crdt-server
 
 - https://github.com/twfarland/count-them-beans
   - Displays use of a GCounter conflict-free replicated data type (CRDT), web workers, signals, and virtual dom.

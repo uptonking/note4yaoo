@@ -142,7 +142,7 @@ modified: 2022-11-07T17:36:22.236Z
 - https://github.com/concordant/c-markdown-editor
   - A CRDT based collaborative markdown editor.
 
-- https://github.com/itoumlilt/crdt-md-editor /ts/slate
+- https://github.com/itoumlilt/crdt-md-editor /ts/slate/CouchDB
   - React Typescript CRDT based Collaborative Markdown Editor
 
 - https://github.com/AshAman999/codeBuddy

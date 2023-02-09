@@ -7,8 +7,11 @@ modified: 2022-05-15T18:37:27.994Z
 
 # lib-editor-lexical-examples
 
-# lexical-popular
+# guide
 
+- lexical-starter
+  - [VanillaJS Codesandbox · Issue #1845 · facebook/lexical](https://github.com/facebook/lexical/issues/1845)
+# popular
 - verbum /529Star/MIT/202211/ts
   - https://github.com/ozanyurtsever/verbum
   - Verbum is a fully flexible rich text editor based on react, lexical-playground and lexical framework.
@@ -26,13 +29,17 @@ modified: 2022-05-15T18:37:27.994Z
   - Webstudio Designer is a NoCode Visual Tool inspired by Webflow
   - block块级元素不支持拖拽
   - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
-# lexical-extensions
-
-# lexical-examples
+# examples
 - https://github.com/konstantinmuenster/lexical-rich-text-react-demo  
   - [How To Build A Text Editor With Lexical and React](https://konstantin.digital/blog/how-to-build-a-text-editor-with-lexical-and-react)
 
 - https://github.com/calcom/cal.com
   - https://github.com/calcom/ui
   - open-source Calendly alternative.
+# extensions
+
+# utils
+- https://github.com/fedemartinm/lexical-minifier
+  - Exporting the state of the lexical editor can result in a large and unoptimized JSON structure. 
+  - This package offers a solution by minifying and unminifying the code produced by the lexical editor, reducing the time it takes to obtain or send the serialized state in a request and freeing up valuable storage space.
 # more-lexical

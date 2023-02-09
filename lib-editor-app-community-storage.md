@@ -19,6 +19,10 @@ modified: 2022-08-30T01:18:19.063Z
 
 ## 
 
+- ## [What is the recommended way to store data in a database/create a controlled editor component? · Issue #66 · typewriter-editor/typewriter](https://github.com/typewriter-editor/typewriter/issues/66)
+- `editor.getHTML() and editor.setHTML(value)` would work better for rich text. 
+  - 👉🏻 If you can save JSON to your store, saving `editor.doc` and restoring it with `editor.set(doc)` is even better.
+
 ## [Storing JSON in database vs. having a new column for each key](https://stackoverflow.com/questions/15367696)
 
 - the drawback of the approach is exactly what you mentioned :

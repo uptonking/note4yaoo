@@ -37,8 +37,6 @@ modified: 2022-05-15T18:35:39.272Z
 
 - ## 
 
-- ## 
-
 - ## we look at Meta's new @lexicaljs framework and how we can use it to build a simple WYSIWYG editor
 - https://twitter.com/kmuenster/status/1615363796671041544
   - [How To Build A Text Editor With Lexical and React](https://konstantin.digital/blog/how-to-build-a-text-editor-with-lexical-and-react)
@@ -106,10 +104,10 @@ modified: 2022-05-15T18:35:39.272Z
   - We do allow external mutations from things like spellcheckers update Lexical – otherwise people wouldn't be able to use Grammarly and other tools with Lexical. However, that's really constrained so that they don't overreach.
 - Lexical also has the notion of double-buffering. 
   - When you update Lexical, or use a node transform, you're actually mutating the "work in progress" EditorState. Once Lexical feels that the EditorState is ready, it will commit it to the DOM, and that EditorState will become immutable and will reflect what you see on the page.
-- 
-- 
-- 
-- 
+
+- Any particular reason Meta decided to implement it's own editor library instead of building on top of ProseMirror?
+  - ProseMirror wasn't a good fit for us because it's integration (especially with React 18+) isn't quite there. Furthermore, we're also looking into building native ports of Lexical, and given's Lexical's API isn't DOM centric, it allows us to do that.
+  - Lastly, we found ProseMirror was too heavy in terms of bytes for very minimal almost plain-text interfaces where we only wanted mentions + hashtags + custom emojis. Lexical comes in at around 22kb min+gzip, so it works really well for us.
 
 - ## Lexical is now open-source
 - https://twitter.com/trueadm/status/1514298427840024581
