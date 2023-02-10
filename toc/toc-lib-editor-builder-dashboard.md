@@ -74,6 +74,7 @@ modified: 2021-01-08T11:48:16.590Z
   - https://marmelab.com/react-admin-demo/
   - A frontend Framework for building data-driven applications on top of REST/GraphQL APIs, React and Material Design.
   - core依赖react-query.v3、react-hook-form
+  - 默认帐号是 login/password
   - Backend Agnostic: Connects to any API (REST or GraphQL)
   - React-admin uses an adapter approach, with a concept called Data Providers.
   - designed as loosely coupled React components and hooks exposing reusable controller logic. It is very easy to replace any part of react-admin with your own
@@ -90,12 +91,12 @@ modified: 2021-01-08T11:48:16.590Z
   - Compatible with React Admin Simple Rest Data Provider. 
   - The lib is ORM agnostic
   - https://github.com/lalalilo/express-crud-router-sequelize-v6-connector
+- https://github.com/marmelab/ra-sqlite-dataprovider
+  - here is a POC to generate a react-admin administration not relying on an API but directly on a SQLite database hosted on a static server (in this case the Github pages server).
 - https://github.com/henvo/ra-jsonapi-client
   - A JSONAPI compatible data provider for react-admin.
 - https://github.com/tykoth/ra-data-dexie
   - Experimental React-Admin data provider using Dexie (IndexedDB)
-- https://github.com/marmelab/ra-sqlite-dataprovider
-  - here is a POC to generate a react-admin administration not relying on an API but directly on a SQLite database hosted on a static server (in this case the Github pages server).
 - https://github.com/Groopit/ra-data-odata-server
   - OData Data Provider for react-admin
 - https://github.com/codeledge/ra-data-simple-prisma

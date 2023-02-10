@@ -86,6 +86,9 @@ modified: 2022-12-19T02:01:20.161Z
 - marketplace
   - template/page
   - data/block
+
+- observable-notebook默认不支持私有文档
+  - 考虑2年后可私有或会员私有
 # draft
 - 功能或菜单太多容易使人迷茫，考虑设计多个版本的前端：lite、pro、customized
 

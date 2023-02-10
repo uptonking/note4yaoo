@@ -9,6 +9,11 @@ modified: 2021-04-11T06:17:51.318Z
 
 # guide
 
+- pick-ui-components
+  - headless/unstyled
+  - framework-agnostic
+  - accessible
+
 - 💡️ 不必执着于完整的现有组件库，可分析其他组件支持多个框架的方法，如tanstack-table
 - headless, renderless, no styling, unstyled, accessible
 - 有状态无渲染，有渲染无状态，且状态尽量与具体业务解耦，状态逻辑尽量通用，这也是hooks设计的思路
@@ -36,14 +41,6 @@ modified: 2021-04-11T06:17:51.318Z
 - ref
   - https://github.com/jxom/awesome-react-headless-components
 # headless-ui
-- NextUI /8.3kStar/MIT/202211/ts
-  - https://github.com/nextui-org/nextui
-  - https://nextui.org/
-  - React UI library: themeable, fast
-  - 依赖stitches-css-in-js、
-  - created with React.js and Stitches, based on React Aria and inspired by Vuesax(vue).
-  - modal的模糊背景特效很好
-
 - radix-ui /6.2kStar/MIT/202210/ts
   - https://github.com/radix-ui/primitives
   - https://www.radix-ui.com/docs/primitives/components/toolbar
@@ -59,6 +56,7 @@ modified: 2021-04-11T06:17:51.318Z
 
 - react-spectrum /7.3kStar/Apache2/202210
   - https://github.com/adobe/react-spectrum
+  - https://react-spectrum.adobe.com/react-spectrum/Dialog.html
   - A React implementation of Spectrum, Adobe’s design system
   - 组件基于hooks实现
   - React Aria: library of React Hooks that provides accessible UI primitives for your design system.
@@ -68,6 +66,7 @@ modified: 2021-04-11T06:17:51.318Z
 
 - headlessui /17kStar/MIT/202009/ts
   - https://github.com/tailwindlabs/headlessui
+  - https://headlessui.com/react/dialog
   - unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS
   - [Headless UI: Unstyled, Accessible UI Components](https://blog.tailwindcss.com/headless-ui-unstyled-accessible-ui-components)
   - [Any way of using headlessui without react or vue](https://github.com/tailwindlabs/headlessui/discussions/984)
@@ -117,6 +116,33 @@ modified: 2021-04-11T06:17:51.318Z
   - https://github.com/eBay/skin
     - https://ebay.github.io/skin/
     - Pure CSS framework designed & developed by eBay
+# ui-primitives
+- downshift /11.2kStar/MIT/202301/js
+  - https://github.com/downshift-js/downshift
+  - A set of primitives to build simple, flexible, WAI-ARIA compliant React autocomplete, combobox or select dropdown components.
+
+- webrix /399Star/Apache2/202210/js
+  - https://github.com/open-amdocs/webrix
+  - https://webrix.amdocs.com/
+  - building blocks for React-based web applications
+  - Movable, Scalable, Collapsible, Stackable, Scrollable, Pannable, Resizable, Poppable
+
+- https://github.com/primer/primitives
+  - https://primer.style/primitives
+  - Color, typography, and spacing primitives in json.
+
+- dripsy /648Star/MIT/202105/ts
+  - https://github.com/nandorojo/dripsy
+  - https://dripsy.xyz/
+  - Responsive, unstyled UI primitives for React Native + Web.
+  - A responsive, theme-based design system for Expo + React Native Web.
+  - Heavily inspired by React's theme-ui.
+  - Universal (Android, iOS, Web, & more)
+  - After trying many, many different ways, I'm convinced this approach is the answer. 
+
+- https://github.com/Bedrock-Layouts/Bedrock
+  - https://bedrock-layout.dev/
+  - Foundational Layout Primitives for your React App
 # headless-component
 - tiptap /16.1kStar/MIT/202208/ts/prosemirror
   - https://github.com/ueberdosis/tiptap
@@ -154,9 +180,6 @@ modified: 2021-04-11T06:17:51.318Z
   - Provides the logic for a datepicker. Apply your own UI on top.
   - Relies on moment.js
 
-- https://github.com/downshift-js/downshift
-  - /8.7kStar/MIT/202009
-  - A set of primitives to build simple, flexible, WAI-ARIA compliant React autocomplete, combobox or select dropdown components.
 - https://github.com/formium/formium
   - https://formium.io/
   - Formium is an API-first, headless online form builder and automation tool
@@ -203,12 +226,6 @@ modified: 2021-04-11T06:17:51.318Z
   - Renders millions of items with highly performant way, using DOM recycling.
   - react-virtual is flexible and headless but using and styling it can be verbose (because it's a low-level hook).
   - React Cool Virtual is a tiny React hook that gives you a better DX and modern way for virtualizing a large amount of data
-
-- webrix /399Star/Apache2/202210/js
-  - https://github.com/open-amdocs/webrix
-  - https://webrix.amdocs.com/
-  - building blocks for React-based web applications
-  - Movable, Scalable, Collapsible, Stackable, Scrollable, Pannable, Resizable, Poppable
 
 - vechaiui /1kStar/MIT/202206/ts
   - https://github.com/vechai/vechaiui

@@ -8,6 +8,13 @@ modified: 2022-11-29T20:41:25.566Z
 # lib-collab-community-sync
 
 # guide
+- sync-xp
+  - 基于缓存实现sync有点类似于react-query
+  - 参考vlcn
+
+- 协作方案参考
+  - Liveblocks, synced-store, FluidFramework, gun
+  - automerge (2017), yjs (2015), sharedb (2013)
 
 - 成熟的解决方案一般都会设计和公开自己的同步协议
   - database: couchdb, rxdb, 

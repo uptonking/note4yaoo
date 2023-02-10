@@ -256,3 +256,7 @@ This is how we might do it with with "Realtime as an authority" approach (and is
 
 - [Introduction to CRDTs for Realtime Collaboration](https://dev.to/nyxtom/introduction-to-crdts-for-realtime-collaboration-2eb1)
   - 对各种数据类型进行了简介
+
+- [Collaborative Web Apps_202108](https://zjy.cloud/posts/collaborative-web-apps)
+  - At the time of the writing, one shortcoming of Replicache is that its local transactions are not fast enough to enable heavy interactions such as drag and drop. 
+  - To prevent lagging, we turned on the useMemstore: true option to disable offline support. 

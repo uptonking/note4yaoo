@@ -7,11 +7,20 @@ modified: 2023-01-08T15:31:39.189Z
 
 # lib-olap-clickhouse-dev
 
-
-
-
 # guide
 
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 近期准备写一个clickhouse性能优化三板斧的文章。
+- https://twitter.com/li_taiyang/status/1615559241296928769
+  1. 反编译
+  2. 性能比对工具
+  3. 分析热点
 
 # blogs
 

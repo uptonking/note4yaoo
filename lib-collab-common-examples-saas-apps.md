@@ -8,7 +8,13 @@ modified: 2023-01-17T19:14:47.611Z
 # lib-collab-common-examples-saas-apps
 
 # guide
+- sync-xp
+  - 基于缓存实现sync有点类似于react-query
+  - 参考vlcn
 
+- 协作方案参考
+  - Liveblocks, synced-store, FluidFramework, gun
+  - automerge (2017), yjs (2015), sharedb (2013)
 # collab-platform
 - growi /1.1kStar/MIT/202301/ts/remark
   - https://github.com/weseek/growi
@@ -193,9 +199,12 @@ modified: 2023-01-17T19:14:47.611Z
   - `Dexie.Syncable` is used for the synchronization. This module contains an implementation of the `ISyncProtocol`. 
   - It was primarily written to work with `sync-server` but should work with other servers which offer the same API.
 
-- https://github.com/amark/gun /202212/js
+- gun /16.9kStar/MIT/202302/js
+  - https://github.com/amark/gun
   - GUN is an ecosystem of tools that let you build community run and encrypted applications - like an Open Source Firebase or a Decentralized Dropbox.
   - Multiplayer by default with realtime p2p state synchronization!
+  - [Is GUN suitable for building collaborative text editor using causal-tree merging strategy?](https://github.com/amark/gun/issues/459)
+  - Gun is a graph database. I don't think Orbit uses a graph system, but instead uses feeds or KV stores. So that's a another difference. But Gun can use IPFS as a storage adapter if you wanted.
 
 - https://github.com/holochain/holochain /202212/rust
   - Holochain is an open-source framework to develop peer-to-peer applications with high levels of security, reliability, and performance.

@@ -278,6 +278,10 @@ modified: 2021-05-14T15:04:15.333Z
   - 技术设计初衷：尽量在无任何后端代理完成所有功能，降低后期维护复杂度和运营成本，直接在小程序端拉取并解析网站的HTML，转成json数据，渲染小程序界面
   - 本项目基于 Taro 框架开发，技术上支持 Android/IOS 多端，但考虑到过早客是一个相对轻量级的网站，小程序已经足够满足需求而且用户无需安装应用。
 
+- https://github.com/neodb-social/neodb
+  - Boofilsic/NeoDB is an open source project and free service to help users manage, share and discover collections, reviews and ratings for culture products (e.g. books, movies, music, podcasts, games and performances) in Fediverse.
+  - NeoDB.social and NiceDB are free services hosted by volunteers.
+
 - https://github.com/m1guelpf/refract
   - https://refract.withlens.app/newest
   - A Hacker News style forum, built on the Lens Protocol.

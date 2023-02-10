@@ -7,8 +7,23 @@ modified: 2021-05-14T14:55:00.191Z
 
 # lib-notebook-observablehq-community
 
-# discuss
+# discuss-stars
 
+- ## 
+
+- ## 
+
+- ## We're excited to launch real-time collaboration on Observable!__202103
+- https://twitter.com/nebrius/status/1370067809955315714
+- Tell us how did you do that, what are those tech parts and libs which helped?
+  - 👉🏻 We upgraded to **CodeMirror 6** and we're using their new collab module to handle local reconciliation
+  - We then sync changes to/from the client through our servers using web sockets.
+  - Observable already uses web sockets for syncing notebooks (you can see this when you open a notebook in two browser windows and edit one of them), so we only needed to add a few new messages to sync uncommitted changes and user presence.
+- Does CodeMirror's OT model allow you to hold changes until they're syntactically correct on both sides?
+  - That should be possible (the timing and implementation of sending changes is left to your integration code, so it can hold off until some condition is satisfied).
+  - (Of course, the result of merging two concurrent syntactically-valid changes may still be syntactically invalid.)
+
+# discuss
 - ## 
 
 - ## 

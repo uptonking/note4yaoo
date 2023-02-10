@@ -12,7 +12,11 @@ modified: 2021-08-06T08:32:26.142Z
 
 - ## 
 
-- ## 
+- ## RateLimit是吧，做了API限流是吧，是在网关层做的吧？
+- https://twitter.com/Beijing_Hot/status/1623508364109180928
+- rpc 层也能做。。。 限流和熔断一般都是成对出现。。。 比如底层rpc 接口，有些耗性能的接口，在出现高频访问的时候，上游服务发现有报错， 就会熔断（降级）， 等会再去访问
+- rpc 做的话，侵入式的吧？
+  - 要是想省事， 都不用网关，直接nginx 上跑
 
 - ## After 3 years, I still love that data fetching hooks maximize the concurrency automatically. Which has been something tricky with awaits/Promises.
 - https://twitter.com/shuding_/status/1529264553900531712

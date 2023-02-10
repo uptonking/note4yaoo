@@ -7,7 +7,31 @@ modified: 2023-01-07T15:58:14.300Z
 
 # cli-scripts-linux-shell
 
-# common
+# guide
+
+# ubuntu
+- shell工具
+
+```shell
+# base64解码
+echo aHR0cHM6Ly9tYXMudG8vQG9jYXZ1ZQo= | base64 -d
+
+```
+
+- 系统配置相关
+
+```shell
+
+# 会删除软件包而保留软件的配置文件
+apt remove
+# 会同时清除软件包和软件的配置文件
+apt purge
+
+# 刷新dns缓存
+sudo resolvectl flush-caches
+# check the dns cache size 
+resolvectl statistics
+```
 
 # file
 
@@ -100,12 +124,6 @@ zip -F a.zip --out b.zip # b.zip无法通过unzip命令解压，但可通过文�
 unzip -v b.zip
 ```
 
-# ubuntu
-- apt remove: 会删除软件包而保留软件的配置文件
-- apt purge: 会同时清除软件包和软件的配置文件
-
-- base64解码
-  - echo aHR0cHM6Ly9tYXMudG8vQG9jYXZ1ZQo= | base64 -d
 # account
 - [Change all files and folders permissions of a directory to 644/755](https://stackoverflow.com/questions/18817744)
 - 修改所有子目录和子目录下的文件的权限为755/644

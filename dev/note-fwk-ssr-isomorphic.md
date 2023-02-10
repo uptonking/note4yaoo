@@ -30,7 +30,11 @@ modified: 2020-12-19T13:05:23.294Z
 
 - ## 
 
-- ## 
+- ## 一直不理解 SSR 的 Hydration 水合，看到 Next.js 的这个插图一下了就理解了。文档友好太重要了。
+- https://twitter.com/hclj37/status/1623575951773687815
+- hydration 的意思是将 SSR 生成出来的html 结构与原本的元数据一一对应起来并且激活其事件。
+  - 嗯嗯，感谢分享。我再翻译成我的理解，就是把真实 DOM 和虚拟 DOM 对应起来，并绑定事件。
+  - 是的，在《Vue.js设计与实现》一书有详细讲解，React 也是差不多的概念
 
 - ## [React Streaming SSR/Server Components · TanStack/query](https://github.com/TanStack/query/discussions/4623)
 - This post tries to outline a rough early draft API for integrating React Query with all the new React APIs while preserving a familiar API and trying to minimize the amount of new things RQ users needs to learn to leverage them, as well as outlining some todos to get there.
@@ -332,7 +336,6 @@ modified: 2020-12-19T13:05:23.294Z
 - As usual, there is no one size fits all solution. 
   - The choice should always be determined by our particular use case.
   - There is also the possibility to mix and match these approaches for different parts of our app
-
 # ref
 - [google: Deprecating our AJAX crawling scheme_201510](https://developers.google.com/search/blog/2015/10/deprecating-our-ajax-crawling-scheme)
   - We are no longer recommending the AJAX crawling proposal we made back in 2009.

@@ -7,8 +7,9 @@ modified: 2020-12-29T11:27:41.474Z
 
 # toc-site-ux-landing-page
 
+# guide
+- 内容级的dark mode可参考主流产品如github开源主题，方便用户迁移
 # repeat
-
 - https://designcode.io/
   - 蓝紫红色系，交互感很强
 # theming-white

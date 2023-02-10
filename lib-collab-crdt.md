@@ -9,6 +9,10 @@ modified: 2022-04-05T10:10:08.537Z
 
 # guide
 
+- 协作方案参考
+  - Liveblocks, synced-store, FluidFramework, gun
+  - automerge (2017), yjs (2015), sharedb (2013)
+
 - state-based和operation-based没必要二选一，两者可转换
   - 两者的主要区别
     - 基于op的数据更新操作逻辑和数据结构设计起来可能较复杂

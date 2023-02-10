@@ -22,6 +22,9 @@ modified: 2020-10-05T06:18:21.639Z
   - /12.9kStar/Apache2/201710
   - http://snapsvg.io/
   - JS library for modern SVG graphics
+# svg-utils
+- https://github.com/yisibl/resvg-js
+  - high-performance SVG renderer and toolkit, powered by Rust based resvg and napi-rs.
 # svg-animation
 - https://github.com/veltman/flubber
   - /5.5kStar/MIT/201910/js

@@ -23,6 +23,10 @@ modified: 2022-09-10T02:26:52.062Z
 - 其他云存储
   - 国外：dropbox clone
 
+- free-cloud-database
+  - PlanetScale: mysql
+  - supabase: postgresql
+
 - https://github.com/syncthing/syncthing
   - Syncthing is a continuous file synchronization program. 
   - It synchronizes files between two or more computers. 

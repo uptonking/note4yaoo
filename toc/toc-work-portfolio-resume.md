@@ -120,3 +120,12 @@ modified: 2021-01-09T16:56:35.339Z
 - https://github.com/timoschwarzer
 - https://github.com/mrdoob
 - https://github.com/Renovamen
+# glassmorphism-linear-like
+- https://github.com/srikarsams/linear-clone
+  - https://linear-clone.vercel.app/
+- https://github.com/Ola4606/Linear-App-Clone
+  - https://peaceful-gumption-f414c9.netlify.app/
+
+- dark
+  - https://github.com/MalikSabirov/linear-app-clone
+  - https://github.com/linearesdiego/DarkLanding

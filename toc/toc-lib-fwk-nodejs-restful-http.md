@@ -77,6 +77,14 @@ modified: 2022-12-19T01:51:01.389Z
 - https://github.com/app-generator/sample-docker-nodejs-react
   - docker compose up --build 
 
+- https://github.com/sunburst89757/react-admin
+  - https://github.com/sunburst89757/react-admin-backend
+  - http://47.98.204.143:3000/login
+  - 后端项目，使用的模板是koa-ts-template
+  - redux-toolkit: 全局状态管理工具
+  - 使用 access_token refresh_token 进行无感刷新
+  - Antd 组件库
+
 - adminjs /6.2kStar/MIT/202211/ts/仅参考db设计
   - https://github.com/SoftwareBrothers/adminjs
   - https://adminjs-demo.herokuapp.com/
@@ -143,7 +151,6 @@ modified: 2022-12-19T01:51:01.389Z
   - https://falsandtru.github.io/pjax-api/
   - The pjax-api provides almost complete original web experience. 
   - Most SPA frameworks and pjax libraries lack many essential functions to keep the original web experience such as follows.
-
 # rest-examples
 - https://github.com/taniarascia/node-api-postgres
   - https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/

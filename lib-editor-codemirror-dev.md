@@ -13,6 +13,22 @@ modified: 2021-05-06T09:38:31.520Z
   - 在github页面，每行代码的行号是确定的，不会显示软换行
     - 方便实现高亮搜索结果、查找引用
 
+- 区分页面组件是cm5和6的方法
+  - cm5的默认css
+    - .CodeMirror-lines
+    - .CodeMirror-cursors
+    - .CodeMirror-code
+      - .CodeMirror-gutter-wrapper
+      - .CodeMirror-line 
+    - .CodeMirror-gutters
+  - cm6的默认css
+    - .cm-editor
+    - .cm-gutters
+    - .cm-content
+      - .cm-line
+      - .cm-activeLine
+    - .cm-layer.cm-selectionLayer
+
 - resources
   - [Ace, CodeMirror, and Monaco: A Comparison of the Code Editors You Use in the Browser__202112](https://blog.replit.com/code-editors)
 # examples

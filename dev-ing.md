@@ -16,30 +16,31 @@ https://meeting.tencent.com/p/9606972663
 #腾讯会议：960-697-2663
 
 # dev-xp
-- my-next
-  - dev-starter
-    - react patterns
-    - typescript patterns
-    - mvc dev pattern(for app/data-grid)
-  - readonly-list-grid
-    - plain
-      - no sort/filter/group
-      - no reorder
-      - no column width resize
-      - custom cell renderer
-    - searchable
-    - virtualizable
-  - crud-list-grid
-    - checkbox
-    - draggable/reorder list
-    - fields menu - filter/groupable
-    - inline editing
-    - orm integration
+- ui-starter
+  - css-only: open-props, glass-ui, nextui, 渐变字体
+  - react: spectrum, zigzag, ariakit
+- dev-starter
+  - patterns: react, typescript
+- list-grid-starter
+  - plain
+    - no sort/filter/group
+    - no reorder
+    - no column width resize
+    - custom cell renderer
+  - searchable
+  - virtualizable
+- list-grid-solutions
+  - checkbox
+  - draggable/reorder list
+  - fields menu - filter/groupable
+  - inline editing
+  - orm integration
   - sortable-filterable-groupable-table
 - 产品日历组件
   - headless-date-picker
 - module/fwk/server
   - 灵活的tag/bookmark系统
+  - cms, tables, bi
 - 编辑器参考
   - atlassian-editor
     - https://atlaskit.atlassian.com/packages/editor/editor-core
@@ -66,7 +67,7 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - local-first-database
   - annotation/comment/whiteboard/pdf
   - 事项--截止日期(0730+休整)--重要性(hml/s1-s3)
-  - *mirror-based-editor-vanillajs--0825--h
+  - *mirror-based-editor-vanillajs
   - pivot-table/grid--0828--h
     - dropdown-menu vs tabs
   - app-wiki-knowledge-base--0904
@@ -82,7 +83,6 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
     - storage adapter: indexeddb/memory/sqlite-opfs
     - 系统预置数据如待办类型合并时可能出现名称相同的情况，用户添加数据时也可能出现
   - url-as-state-management
-  - 灵活的tag/bookmark系统
   - docker打包前端
 # dev-2023-方向+方法+时间
 - eg-prosemirror-examples+collab
@@ -93,6 +93,7 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 - eg-tiptap-examples
   - 重写atlaskit或ckeditor的丰富示例
   - tiptap-yjs-server-src
+- eg-migrate-atlaskit-examples
 - eg-BlockNote
 - eg-focalboard
   - olap-cube-js
@@ -130,7 +131,7 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - 11-idb-sync
   - 12-nedb-linvodb
 - log2023
-  - 01-linvo-sync-hlc-wip
+  - 01-linvo-search+sync-hlc-wip
 
 - dev-to
   - crdt tutorials
@@ -145,6 +146,11 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - Journal学报最典型的叫法， 刊登关于某特殊主题的文章的期刊。要求有很大的创新点，比较详细的公式推导。因 Journal 面向的读者较广泛，因此发表在其上的文章需要对背景知识有更加全面的介绍。
   - Transactions 本意为商业交易和谈判，引申为公开发表的大会记录。后来有汇刊的意思。 其具体到一个相对较细的专业方向上，发表在 transactions 上的文章需要有很大的创新和详细的公式推导。
   - Proceedings 表示某行动，或行动过程或方式，引申意之一是学术团体或其他正规团体会议所讨论问题的记录，进一步有会议论文集的意思。有会刊、记录、会议录的意思。但是 IEEE 的 Proceedings 也变成了期刊 (出版周期相对长)，并没有会议支撑。
+
+## 0210
+
+- [rg process taking up all my CPU 100% · Issue #98594 · microsoft/vscode](https://github.com/microsoft/vscode/issues/98594)
+  - `"search.followSymlinks": false` solved my issue too
 
 ## 0205
 
@@ -261,7 +267,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                           `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                             `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

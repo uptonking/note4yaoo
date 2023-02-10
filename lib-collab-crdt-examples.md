@@ -26,6 +26,24 @@ modified: 2022-04-05T10:08:25.947Z
   - Evolu is not pure P2P software. For syncing and backup, there needs to be a server. 
   - Evolu CRDT has no support for transactions because CRDT transactions are still an unsolved issue. 
 
+- FluidFramework /4.2kStar/MIT/202302/ts
+  - https://github.com/microsoft/FluidFramework
+  - https://fluidframework.com/
+  - Library for building distributed, real-time collaborative web applications
+  - 示例未渲染协作鼠标
+  - [Does Fluid use CRDT?](https://fluidframework.com/docs/faq/#does-fluid-use-crdt)
+    - Fluid does not use Conflict-Free Replicated Data Types (CRDTs), but our model is more similar to CRDT than OT. 
+    - The Fluid Framework relies on update-based operations that are ordered using our Total Order Broadcast to prevent conflicts. 
+    - This allows us to have non-commutative operations because there is an explicit ordering.
+    - [Doc: Is Fluid OT or CRDT?_202201](https://github.com/microsoft/FluidFramework/issues/8920)
+    - The service part of Fluid is OT/CRDT agnostic and possibly of interest to CRDT developers looking for a managed backend solution.
+    - Some of the built-in Fluid DDS implementations may be of general interest to CRDT researchers.
+  - What kind of support is there for real-time editing of text?
+    - This is the scenario that Fluid was first designed to support. 
+    - Consequently, the Fluid Framework is an ideal foundation for rich text editors that support simultaneous editing by multiple clients. 
+    - The `SharedString` DDS is tailor-made for this scenario.
+  - [Microsoft introduces Loop: A new collaboration tool built on Fluid Framework_202111](https://www.zdnet.com/article/microsoft-introduces-loop-a-new-collaboration-tool-built-on-fluid-framework/)
+
 - harika-note /111Star/AGPLv3/202208/ts
   - https://github.com/quolpr/harika
   - Harika is an offline-first, performance-focused note taking app for organizing your knowledge database.
@@ -52,13 +70,10 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/streamich/json-joy
   - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
 
-- liveblocks /1.1kStar/Apache2/202211/ts
-  - https://github.com/liveblocks/liveblocks
-  - https://liveblocks.io/
-  - The all-in-one toolkit to build collaborative products like Figma, Notion, and more.
-  - 三大类数据：storage、presense、analytics
-  - To provide better conflict resolution, we can use the CRDT-like LiveObject to store each rectangle’s data. 
-  - Liveblocks storage can contain nested data structures, and in our example, shapes is a LiveMap containing multiple LiveObject items.
+- https://github.com/hyperhyperspace/hyperhyperspace-core
+  - HHS uses an immutable typed-objects local storage model. Objects are both retreived and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
+  - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
+  - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
 
 - https://github.com/marcello3d/trimerge-sync
   - implement synchronization using the trimerge algorithm.
@@ -79,6 +94,19 @@ modified: 2022-04-05T10:08:25.947Z
   - It supports Yjs/Yrs and Automerge.
   - Our goal was to evaluate if we could leverage a Postgres-backed CRDT and Supabase's existing Realtime API for change-data-capture to enable development of collaborative apps on the Supabase platform.
   - pg_crdt extension is a proof-of-concept that wraps rust's yrs and automerge libraries using the pgx framework to add a Postgres native CRDT, crdt.ydoc.
+
+- liveblocks /1.5kStar/apache2/202302/ts/服务端未开源
+  - https://github.com/liveblocks/liveblocks
+  - https://liveblocks.io/
+  - The all-in-one toolkit to build collaborative products like Figma, Notion, and more.
+  - 三大类数据：storage、presense、analytics
+  - our Storage block is CRDTs based, but we're making different trade-offs.
+    - our CRDTs are not "pure" so we solve some conflicts on the server. 
+    - Also, we don't support Text CRDTs yet.
+  - [Is the backend open source?_202211](https://github.com/liveblocks/liveblocks/discussions/570)
+    - The backend is not open source. It might at some point, but not in the short term.
+  - [Liveblocks: Add real‑time collaboration to your product in minutes_202107](https://news.ycombinator.com/item?id=27994480)
+  - User permissions and privileges in a collaborative app are much easier to handle with a centralised server
 
 - https://github.com/composablesys/collabs /ts
   - Collabs is a collections library for collaborative data structures. 

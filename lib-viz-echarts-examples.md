@@ -85,6 +85,7 @@ modified: 2023-02-05T19:08:03.320Z
 
 - https://github.com/sunburst89757/react-admin
   - https://github.com/sunburst89757/react-admin-backend
+  - http://47.98.204.143:3000/login
   - 后端项目，使用的模板是koa-ts-template
   - redux-toolkit: 全局状态管理工具
   - 使用 access_token refresh_token 进行无感刷新

@@ -116,6 +116,9 @@ modified: 2021-09-20T20:12:38.499Z
   - 本仓库在 react-source-code-debug的基础上保留了V17和Lanes模型，且删除掉了大量无关文件、代码（如其中的__DEV__相关判断)，只保留了核心的react、react-dom、react-reconciler、和scheduler
   - https://github.com/neroneroffy/react-source-code-debug
     - React 源码调试环境，源代码详细注释，跟随官方仓库进行更新
+
+- https://github.com/Bogdan-Lyashenko/Under-the-hood-ReactJS
+  - This repository contains an explanation of inner work of React. 
 # react-like-repos
 - https://github.com/NervJS/nerv
   - /5.3kStar/MIT/202006/ts/inactive

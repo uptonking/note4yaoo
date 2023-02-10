@@ -112,6 +112,12 @@ modified: 2023-02-07T17:38:05.336Z
   - Supports authentication, role management, entities view, creation, edition and deletion. I18n, infinitely nested layout and custom components
   - Magner provides a set of tools to bootstrap an admin panel website built with Vue 3 and Element Plus. 
   - All you need to do is writing JSON configurations and backend connectors.
+
+- https://github.com/curefit/react-crux
+  - https://curefit.github.io/react-crux-examples
+  - a simple to use client side library to create UI for CRUD operations on server side entities.
+  - CRUX reads json config and creates a React Component that you can add to your app.
+  - Since its a client side library, it is completely agnostic to server side tech stack.
 # kanban/board
 - https://github.com/Fredkiss3/thullo
   - A Trello Clone

@@ -16,7 +16,9 @@ Symbol('a') === Symbol('a'); //false
 # discuss
 - ## 
 
-- ## 
+- ## One cool use case for Maps - creating a simple O(1) LRU cache
+- https://twitter.com/Steve8708/status/1623906230841536515
+  - Given how Maps preserve the order of their keys, implementation is trivial
 
 - ## Here's a quick thread on a super useful type helper you've probably never heard of (nope, not even advanced folks).
 - https://twitter.com/mattpocockuk/status/1622730173446557697

@@ -8,6 +8,9 @@ modified: 2023-01-16T21:14:55.049Z
 # lib-db-linvodb-codebase-sync
 
 # guide
+- sync-xp
+  - 基于缓存实现sync有点类似于react-query
+  - 参考vlcn
 
 - 同步功能需求
   - 👉🏻 同步所需的数据是所有changes-ops messages

@@ -12,16 +12,16 @@ modified: 2021-05-14T14:46:37.026Z
 - notebooks
   - [jupyter](https://jupyter.org/) helps to develop open-source software, open-standards, and services for interactive computing across dozens of programming languages.
   - [Dash](https://plotly.com/dash/) is the new standard for AI & data science apps.
-# observable notebook alternatives
+# obnb alternatives
+- TypeCell /4Star/AGPLv3/202302/ts/monaco
+  - https://github.com/YousefED/TypeCell
+  - https://www.typecell.org/
+  - Open Source, cell-based notebook environment
+  - Reactive Runtime, cells automatically re-evaluate when their dependencies update
+  - Support for real-time collaboration (using Yjs)
+  - Runs on top of Matrix using Matrix-CRDT.
 
-## GRID
-
-- https://grid.is/
-  - GRID is a web-based tool that empowers you to create stunning charts, reports, and interactive visualizations using your own #spreadsheet data 
-  - GRID enables you to leverage your existing spreadsheet skills to build smart, interactive calculators, reports and scenario analyses.
-
-## Data-Forge Notebook
-
+- Data-Forge Notebook
 - https://www.data-forge-notebook.com/#/
   - https://data-forge-notebook.github.io/visualization-examples/
   - 作者 Ashley Davis，专注于数据处理与可视化
@@ -101,6 +101,12 @@ modified: 2021-05-14T14:46:37.026Z
 - https://github.com/stencila/stencila
   - https://stenci.la/
   - a platform for authoring, collaborating on, and publishing executable documents.
+
+## GRID
+
+- https://grid.is/
+  - GRID is a web-based tool that empowers you to create stunning charts, reports, and interactive visualizations using your own #spreadsheet data 
+  - GRID enables you to leverage your existing spreadsheet skills to build smart, interactive calculators, reports and scenario analyses.
 
 ## more-notebook
 

@@ -18,6 +18,9 @@ modified: 2021-02-09T13:40:11.536Z
     - 特别适合表达地理位置，常用在[logo](https://github.com/maplibre/maplibre-gl-js/issues/65)和icon
   - 基于折纸/origami展开折叠的设计
 
+- https://github.com/liangjingkanji/DrakeTyporaTheme
+  - 十二种主题风格 - Material Google JetBrains Vue Juejin Purple Ayu Dark
+
 - 实现组件theming的方法(用css vars)
   - patternfly和spectrum都用了全局级变量和组件级变量，并且组件级变量值都由全局级变量值初始化
     - 考虑到设计规则会使组件级变量名唯一，所以组件级变量也是全局级变量，实现新主题就很方便

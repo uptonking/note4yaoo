@@ -13,6 +13,8 @@ modified: 2022-11-16T16:09:02.278Z
   - backdrop
   - glassmorphism
   - https://caniuse.com/css-backdrop-filter
+  - https://github.com/Gradients/awesome-gradient
+  - https://headlessui.com/react/dialog
 
 - blogs
   - [Glassmorphism designs, themes, templates and downloadable graphic elements on Dribbble](https://dribbble.com/tags/glassmorphism)
@@ -250,6 +252,15 @@ modified: 2022-11-16T16:09:02.278Z
 - https://github.com/StikiStock/NeuGlass
   - https://neuglass.pages.dev/
   - A responsive Tailwind portfolio theme
+
+# gradient
+- https://github.com/JonKelley88/react-gradient
+  - https://jonkelley88.github.io/react-gradient/
+  - 渐变色字体
+
+- https://github.com/javierbyte/react-textgradient
+  - It seems that there are modern ways to do this
+  - [Gradient Text | CSS-Tricks - CSS-Tricks](https://css-tricks.com/snippets/css/gradient-text/)
 # macos-style
 - https://github.com/MacPaw/macpaw-ui /202211/ts
   - https://ui.macpaw.com/

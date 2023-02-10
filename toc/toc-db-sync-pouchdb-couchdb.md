@@ -290,6 +290,14 @@ modified: 2022-11-30T18:56:07.072Z
 
 - https://github.com/mehtaarn000/reactdrive /202211/js
   - File storage system built with Reactjs, Expressjs, Nodejs, and CouchDB.
+# examples-collab
+- https://github.com/Mo0812/MKNote
+  - a note web app, which uses Markdown to render your notes.
+  - verything works totally offline, all the data is stored on your browser and on your machine - no fancy backend
+  - Even if its offline you can sync your notes over multi instances by running your own CouchDB backend
+
+- https://github.com/patgoddard/codeMate /2014/js
+  - A code editor for online or offline use using the chromium or chrome browser. It uses AceEditor, Pouchdb and an optional remote couchdb.
 # examples
 - https://github.com/acailly/easy-pouchdb-server /202105/js
   - Deploy a PouchDB server easily

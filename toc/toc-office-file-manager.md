@@ -121,6 +121,10 @@ modified: 2021-08-23T05:27:08.068Z
 - https://github.com/mickael-kerjean/filestash
   - A Dropbox-like file manager that let you manage your data anywhere it is located: FTP • FTPS • SFTP • WebDAV • Git • S3 • LDAP • Mysql CardDAV • CalDAV • Backblaze B2 • Minio Dropbox • Google Drive
 # file-uploader
+- https://github.com/johndatserakis/file-upload-with-preview /ts/框架无关
+  - Simple file-upload utility that shows a preview of the uploaded image. 
+  - Written in TypeScript. No dependencies.
+
 - https://github.com/pqina/filepond
   - https://github.com/pqina/filepond
   - /NoDeps/active
@@ -144,6 +148,11 @@ modified: 2021-08-23T05:27:08.068Z
     - Server-side examples for the Fine Uploader library
     - Traditional upload examples (upload to your own server): java, nodejs, php, python
     - Fine Uploader S3/Azure examples
+
+## file-upload-utils
+
+- https://github.com/shadowings-zy/easy-file-uploader
+  - 开箱即用的大文件分片上传库
 # git-file-tree
 - https://github.com/ovity/octotree
   - 旧版v3依赖jquery、jstree

@@ -284,6 +284,9 @@ modified: 2022-11-25T15:50:48.226Z
   - OrbitDB is a serverless, distributed, peer-to-peer database. 
   - OrbitDB uses IPFS as its data storage and IPFS Pubsub to automatically sync databases with peers. 
   - It's an eventually consistent database that uses CRDTs for conflict-free database merges making OrbitDB an excellent choice for decentralized apps (dApps), blockchain applications and local-first web applications.
+  - https://news.ycombinator.com/item?id=22918714
+    - OrbitDB's core is an append-only, immutable log CRDT.The log in OrbitDB is a Merkle-DAG, so, a graph.
+    - Key-Value databases, feeds, and other data model types that OrbitDB supports by default, are all built on that log. You can also create your custom database types, ie. custom data models.
 - https://github.com/dao-xyz/peerbit
   - P2P database framework with encryption, sharding and search
   - originally as a fork of OrbitDB

@@ -7,8 +7,56 @@ modified: 2021-01-12T18:48:52.713Z
 
 # toc-lib-comp-design-stars
 
-# data-centric-components
+# guide
 
+- pick-ui-components
+  - headless/unstyled
+  - framework-agnostic
+  - accessible
+# components-stars
+- https://github.com/argyleink/open-props
+  - https://open-props.style/
+  - CSS custom properties to help accelerate adaptive and consistent design.
+  - 毛玻璃风格
+  - These props come in many flavors: CSS, PostCSS, JSON, or Javascript.
+
+- https://github.com/mantinedev/mantine
+  - https://mantine.dev/
+  - https://ui.mantine.dev/
+  - React components library with native dark theme support
+  - 134 responsive components built with Mantine
+  - 样式依赖emotion，支持sx
+
+- radix-ui /6.2kStar/MIT/202210/ts
+  - https://github.com/radix-ui/primitives
+  - https://www.radix-ui.com/docs/primitives/components/toolbar
+  - Unstyled, accessible components for building high‑quality design systems and web apps in React.
+  - https://github.com/radix-ui/design-system
+    - https://design-system.modulz-deploys.com/
+    - 使用纯.css样式文件，未使用自研的stitches
+    - Design system maintained and used by WorkOS.
+    - Built with Stitches and Radix UI Primitives.
+  - https://github.com/radix-ui/icons
+    - https://icons.radix-ui.com/
+    - A crisp set of 15×15 icons designed by the WorkOS team.
+
+- https://github.com/shadcn/ui
+  - https://ui.shadcn.com/docs/primitives/dropdown-menu
+  - Beautifully designed components built with Radix UI and Tailwind CSS
+  - 默认白色主题很有设计感
+
+- NextUI /8.3kStar/MIT/202211/ts
+  - https://github.com/nextui-org/nextui
+  - https://nextui.org/
+  - React UI library: themeable, fast
+  - 依赖stitches-css-in-js、
+  - created with React.js and Stitches, based on React Aria and inspired by Vuesax(vue).
+  - modal的模糊背景特效很好
+
+- https://github.com/dracula/dracula-ui
+  - https://ui.draculatheme.com/
+  - A dark-first collection of UI patterns and components.
+# data-centric-components
 - guidu /13Star/MIT/202105/ts/react
   - https://github.com/uidu-org/guidu
   - https://uidu.design/
