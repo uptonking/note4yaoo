@@ -49,6 +49,9 @@ modified: 2021-09-30T07:43:25.286Z
 - Supported Systems
   - es-dev-server
   - storybook-addon-markdown-docs uses mdjs under the hood.
+# office-2003
+- [office复合文档数据结构解析“初探” OLE](https://blog.csdn.net/Cody_Ren/article/details/103886098)
+- [复合文档的二进制存储格式研究[ole存储结构](word, xls, ppt...)[转] - 极简 - 博客园](https://www.cnblogs.com/AspDotNetMVC/p/3810839.html)
 # spec-related
 - rst
 - asciidoc

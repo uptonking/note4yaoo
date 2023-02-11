@@ -14,16 +14,6 @@ modified: 2022-04-05T10:09:51.343Z
 # discuss
 - ## 
 
-- ## [Building a BFT JSON CRDT | Hacker News](https://news.ycombinator.com/item?id=33694568)
-- It's the Byzantine Fault Tolerant part of this that is particularly innovative and based on Kleppmanns most recent work. I believe it solves the issue of either malicious actors in the networks modifying others transactions, spoofing them, or the messages being modified by third parties ("outside" the network) who have MITM the connection. These are really great problems to solve.
-
-- Interesting, yeah access-control is kinda open problem with Yjs. Regarding ProseMirror and rich-text documents, you can mess up documents in other ways as well. Eg deploy a faulty command with a transaction that inserts nodes with invalid children (can be prevented though by using createChecked). Or just changing your schema in an incompatible way with the previous version. So you kinda have to deal with possible malformed documents either way.
-  - And about the schema layer on top of Yjs, you possibly could inspect every update and apply some validation rules. Arent all operations just inserts, updates or deletes of nodes? You can at least rollback to previous version as you flush the updates to the doc in the db. Not ideal though.
-
-- When I was working on this problem with Fluid Framework, we did a few interesting experiments with "owned objects" and centralized ACL objects. I believe the team primarily implemented centralized ACL because that implementation works for many enterprise use cases.
-  - With a centralized schema provider, you run a connected node on a trusted server and reject changes that are out of schema or should not be accessed by a user.
-  - An owned object is an object where a user (or user group that votes via quorum) that owns the object can veto changes to the object. The changes are temporarily applied until accepted by the owners. I haven't dug deep enough into this BFT implementation to know how our model would map to this model.
-
 - ## I remember having read about Gun a few years ago and there was a lot of (apparently) valid criticism. Do you know how much of that is still valid today?_201803
 - https://news.ycombinator.com/item?id=16523087
   - [Show HN: Gun v0.1.0 – The Easiest Database Ever_201502](https://news.ycombinator.com/item?id=9076558)

@@ -70,6 +70,8 @@ modified: 2022-11-30T18:56:07.072Z
   - Conflict-free collaborative editing for PouchDB
   - A PouchDB plugin for partial updates that uses the every-doc-is-a-delta storage pattern. 
   - You can use delta pouch to enable conflict-free collaborative editing of the same docs.
+  - forks
+    - https://github.com/Brainsway-Cloud/delta-pouch
 
 - pouchdb-sync-to-anything /43Star/MIT/201807/js
   - https://github.com/karlwestin/pouchdb-sync-to-anything

@@ -43,15 +43,17 @@ modified: 2021-07-20T13:50:23.433Z
   - themeable; unstyled/headless; a11y/keyboard-ux
 - editor/WYSIWYG
   - modular/extensible; collaborative; easy-pivotable
-  - 👉🏻 prosemirror, tiptap, slate, lexical
+  - 👉🏻 typewriter, prosemirror, tiptap, slate, lexical; cms
   - block-editor with slash-menu/backlinks
   - pdf
 - excel/data-grid
   - pivotable; collaborative; formulas
-  - 👉🏻 tanstack-table, luckysheet/univer, ag-grid
+  - 👉🏻 tanstack-table, luckysheet/univer, ag-grid; nocodb
   - stream-updates/server-side-infinite-row-model
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~
+- collab
+  - 👉🏻 fluid-framework, hlc
 
 ## solutions: inter(re)active knowledge-base/wiki
 

@@ -117,7 +117,7 @@ modified: 2022-06-08T11:14:10.668Z
 - ## [The Block Protocol | Hacker News_202201](https://news.ycombinator.com/item?id=30103401)
 
 - I helped start Fluid Framework, which is the underlying tech for Microsoft Loop. These are just my opinions and I no longer work for Microsoft.
-  - Historically, OpenDoc is pretty relevant. So is OLE. More recently Notion, Coda, Microsoft Loop [1], Anytype.io, etc lean on the same concepts to allow you to break documents into independent & reassemble-able components. 
+  - Historically, OpenDoc is pretty relevant. So is OLE. More recently Notion, Coda, Microsoft Loop, Anytype.io, etc lean on the same concepts to allow you to break documents into independent & reassemble-able components. 
 
 - Exactly what I was thinking. The Semantic Web done the heavy lifting of defining general schemas (https://schema.org) and extending JSON (https://json-ld.org) and yet people don't subscribe to it. On the other hand, it has a lot of historical baggage (RDF, old schemas) that maybe a new standard can actually be better
 - 🤔 Why is RDF a bad thing?

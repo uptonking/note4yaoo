@@ -31,6 +31,8 @@ modified: 2022-04-05T10:08:25.947Z
   - https://fluidframework.com/
   - Library for building distributed, real-time collaborative web applications
   - 示例未渲染协作鼠标
+  - 依赖中心服务器转发op及定顺序
+  - 不支持长时间的offline
   - [Does Fluid use CRDT?](https://fluidframework.com/docs/faq/#does-fluid-use-crdt)
     - Fluid does not use Conflict-Free Replicated Data Types (CRDTs), but our model is more similar to CRDT than OT. 
     - The Fluid Framework relies on update-based operations that are ordered using our Total Order Broadcast to prevent conflicts. 
@@ -87,7 +89,8 @@ modified: 2022-04-05T10:08:25.947Z
     - Three-way merge JSON structures
     - 三路归并
   - https://github.com/marcello3d/collabodux
-    - library for realtime collaboration on JSON structures. It is a client-oriented, declarative-functional approach to shared application state.
+    - library for realtime collaboration on JSON structures. 
+    - It is a client-oriented, declarative-functional approach to shared application state.
 
 - https://github.com/supabase/pg_crdt /rust
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.
@@ -226,17 +229,28 @@ modified: 2022-04-05T10:08:25.947Z
   - Replicate text or sequences over networks. (WithOut Operational Transformation)
   - Allows an unlimited number of authors to collborate in real-time on text over arbitrary networks.
 
+- https://github.com/coast-team/dotted-logootsplit
+  - Most of the CRDT embeds metadata in order to avoid conflicting edits. The challenge is to keep these metadata as small as possible.
+  - LogootSplit is a sequence CRDT which reduces the metadata of preceding sequence CRDT; to do so it aggregates elements
+    - LogootSplit is an operation-based CRDT. 
+    - Hence, it is necessary to use a network layer to deliver exactly-once the operations. 
+    - It requires also to deliver removals after insertions. In practice, this is difficult to implement.
+  - Delta-based CRDT have less assumptions. 
+    - Most of delta-based CRDT simply assume a FIFO delivery (deltas from a same replica, are merged in-order). 
+    - They also enable to merge two states.
+  - Dotted LogootSplit offers a delta-based version of LogootSplit with smaller metadata. We provide both op-based and delta-based synchronizations.
+
 - https://github.com/SDharan93/replicated-document
   - A replicated document that allows collaborative editing. 
   - This document is built on the CRDT algorithm "Logoot". 
-
-- https://github.com/dglittle/shelf
-  - Here is a shelf: [VALUE, VERSION_NUMBER]
 
 - https://github.com/nkohari/kseq
   - KSeq is an implementation of a simple CRDT that represents an ordered sequence of items. 
   - KSeq is an operations-based, continuous sequence CRDT based on the Logoot and LSEQ systems.
   - Designed for use in collaborative editors, it allows various contributors to concurrently alter the sequence, while preserving both data and intent.
+
+- https://github.com/dglittle/shelf
+  - Here is a shelf: [VALUE, VERSION_NUMBER]
 
 - https://github.com/Timothy-Harianja/CRDT-Collaboration-App
   - This project is aimed to experiment on the capabilities of CRDT and OT. 
@@ -309,6 +323,8 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/coast-team/mute
   - a scalable collaborative document editor with CRDT, P2P and E2EE
   - MUTE implements a CRDT-based consistency algorithm for large scale peer-to-peer collaboration: `LogootSplit`. 
+  - https://github.com/coast-team/dotted-logootsplit
+    - a delta-based version of LogootSplit with smaller metadata. We provide both op-based and delta-based synchronizations.
 
 - https://github.com/geetesh-gupta/py-crdt-collab-editor
   - CRDT based collaborative code/text editor.
@@ -331,6 +347,12 @@ modified: 2022-04-05T10:08:25.947Z
   - an architecture to relay end-to-end encrypted CRDTs over a central service.
   - End-to-end encrypted document using Yjs incl. Cursor Awareness
   - End-to-end encrypted todo list using Automerge
+
+- https://github.com/yorkie-team/yorkie /go
+  - Yorkie is an open source document store for building collaborative editing applications. 
+  - Yorkie uses JSON-like documents(CRDT) with optional types.
+  - Clients can have a replica of the document representing an application model locally on several devices.
+  - Each client can independently update the document on their local device, even while offline
 
 - https://github.com/cudr/scto
   - Strings Comparing To Operations (OT model)
@@ -370,6 +392,17 @@ modified: 2022-04-05T10:08:25.947Z
     - A prototype integration with the [Prosemirror](http://prosemirror.net/) editor library
     - An interactive demo UI where you can try out the editor
     - A test suite
+# state-management-crdt
+- https://github.com/HerbCaudill/crdx
+  - CRDX is a state container for JavaScript apps.
+  - It is also a CRDT (conflict-free replicated datatype), allowing you to create a local-first application that syncs state directly with peers, with no need for a authoritative central server. 
+  - If you’ve used a state container like Redux before, there’s a lot about CRDX that will be very familiar. 
+  - We already have excellent JavaScript CRDT libaries such as Automerge and Yjs. So what does this project bring to the table?
+    - Automerge and Yjs define a conflict as two peers assigning different values to the same property, and they resolve conflicts by choosing one of the two values as the "winner", in an arbitrary but predictable way.
+    - But what a conflict involves more than one property? Or what if you have your own rules for resolving conflicts? 
+    - Detecting conflicts may be more subtle than just noticing when two users concurrently modify a property. 
+    - And resolving conflicts may involve requirements that won't let us just resolve conflicts in an arbitrary way.
+    - To support peer-to-peer replication, we need to deal with concurrent changes, which means a simple append-only list of actions won’t be sufficient. Instead, we arrange actions in a directed acyclic graph (DAG).
 # more-crdt
 - https://github.com/netopyr/wurmloch-crdt
   - Experimental implementations of conflict-free replicated data types (CRDTs) for the JVM

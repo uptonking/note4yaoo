@@ -10,7 +10,7 @@ modified: 2022-04-05T10:10:08.537Z
 # guide
 
 - 协作方案参考
-  - Liveblocks, synced-store, FluidFramework, gun
+  - Liveblocks, synced-store, FluidFramework, gundb,pouchdb
   - automerge (2017), yjs (2015), sharedb (2013)
 
 - state-based和operation-based没必要二选一，两者可转换

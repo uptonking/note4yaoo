@@ -78,6 +78,8 @@ modified: 2021-09-04T14:03:39.046Z
   - a Web Extension (and a CLI tool) compatible with Chrome, Firefox to save a complete web page into a single HTML file.
   - 比较了各种格式：singleFile、mhtml、webarchive、html-folder
   - For security reasons, SingleFile is sometimes unable to save the image representation of canvas and snapshots of video elements.
+  - [File name doesn't match the page title when saving a page](https://github.com/gildas-lormeau/SingleFile/issues/1106)
+    - Please, uncheck "save pages in background" in options (Misc) than you will get the correct title name!
   - https://github.com/gildas-lormeau/SingleFileZ
     - a fork of SingleFile that allows you to save a webpage as a self-extracting HTML file
 

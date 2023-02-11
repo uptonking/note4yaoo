@@ -130,6 +130,9 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/teo-garcia/fastify-template-sequelize
   - using Fastify with Sequelize.
+# utils
+- https://github.com/rfink/sequelize-redis-cache /js
+  - Small fluent interface for caching sequelize database query results in redis more easily
 # more
 - https://github.com/PIYoung/node-express-boilerplate-multitenant
   - node express postgres boilerplate for multitenant(saas)

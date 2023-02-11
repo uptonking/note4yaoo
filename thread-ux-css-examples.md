@@ -14,7 +14,9 @@ modified: 2021-02-05T14:00:02.922Z
 
 - ## 
 
-- ## 
+- ## You could use CSS trig functions to calculate animation-delay 
+- https://twitter.com/jh3yy/status/1624172121558581248
+  - https://codepen.io/jh3y/pen/GRBVNJE
 
 - ## Holograms, light-leaks and how to build CSS-only shaders.
 - https://robbowen.digital/wrote-about/css-blend-mode-shaders/

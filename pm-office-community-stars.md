@@ -105,7 +105,18 @@ modified: 2021-07-11T08:30:03.165Z
   - Figma 和 Flutter Web 的出现给未来的 Web 应用指出了一个新的道路，既然 DOM 不适合画出来那就全部自己来画。
   - 至于说是不是弯路，我觉得不是，只是一个更合适的解决方案而已。乐观点，历史总是螺旋上升的，如果未来哪年标准完善+性能过剩到 Web 技术栈能随便写出一个所见即所得的编辑器，我也不会觉得现在的 canvas 是一个弯路的。
 # discuss
-- ## 
+- ## [Why did OpenDoc fail, and then fail 3 more times? | Hacker News](https://news.ycombinator.com/item?id=27106195)
+- I think the big reason OpenDoc failed is because it was completely steamrolled(以权势和影响力〕强迫，迫使; 强行) by Microsoft OLE 2.
+- These are complicated enough APIs that a developer is typically going to only implement one.
+- This was the early 90's, and Microsoft Windows was the dominant OS. 
+  - In addition, Microsoft Office was also becoming the dominant office software.
+  - Microsoft put a lot of it's energy behind OLE 2. 
+  - Office supported it. 
+  - If you wanted your application to be certified for Windows 95, you needed to support OLE 2. 
+  - OLE 2 was pushed at all the Microsoft Developer conferences. 
+  - Microsoft's Visual C++ MFC framework supported OLE 2
+  - Thus if you supported OLE 2, you had a ton of documentation, tooling, libraries, dev environments that supported it.
+- On the other hand you had OpenDoc, which did not have nearly as big of a market. It was not the priority for any of the companies pushing it. Unlike with Microsoft Office and OLE 2, there wasn't a halo product that showed off the user benefits of OpenDoc. There wasn't nearly the documentation and tooling and libraries for OpenDoc.
 
 - ## carota: Rich text editor implemented in JavaScript that uses HTML5 Canvas
 - https://www.reddit.com/r/javascript/comments/1zjfcg/rich_text_editor_implemented_in_javascript_that/
@@ -163,7 +174,6 @@ modified: 2021-07-11T08:30:03.165Z
   - canvas: no cost of removing/adding Dom nodes.
   - render low level pixel graphics at the speed of the user, like an endless scroller game.
   - dom wasn't designed for these things, canvas makes perf trivial. 
-
 # pdf
 - [Announcing react-pdf v2.0](https://react-pdf.org/blog/announcing-react-pdf-v2)
 - Motivation

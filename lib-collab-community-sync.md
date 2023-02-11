@@ -13,13 +13,17 @@ modified: 2022-11-29T20:41:25.566Z
   - 参考vlcn
 
 - 协作方案参考
-  - Liveblocks, synced-store, FluidFramework, gun
+  - Liveblocks, synced-store, FluidFramework, gun, pouchdb
   - automerge (2017), yjs (2015), sharedb (2013)
 
 - 成熟的解决方案一般都会设计和公开自己的同步协议
   - database: couchdb, rxdb, 
   - framework: meteor-ddp, feathers-sync, gnu, realm/Atlas-Device-Sync
   - editing: yjs-protocols, automerge-sync
+
+- [Building an offline realtime sync engine](https://gist.github.com/pesterhazy/3e039677f2e314cb77ffe3497ebca07b)
+  - figma, linear
+  - pouchdb, fluid, watermelonDB, Liveblocks
 
 - 考虑到客户端升级的问题
   - 同步前一定要检查一个version，参考indexeddb upgrade
