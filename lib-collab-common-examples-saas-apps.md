@@ -93,14 +93,14 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/hedgedoc/hedgedoc
   - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.
 
-- https://github.com/plankanban/planka
+- https://github.com/plankanban/planka /AGPLv3/js
+  - https://plankanban.github.io/planka/
   - The realtime kanban board for workgroups built with React and Redux.
   - React, Redux, Redux-Saga, Redux-ORM, Semantic UI React, react-beautiful-dnd
   - Sails.js, Knex.js, PostgreSQL
 
-- https://github.com/MicroHealthLLC/mSuite
+- https://github.com/MicroHealthLLC/mSuite /ruby/vue
   - Real Time Collaboration Made Simple for concept maps, kanban, documents and spreadsheets.
-  - 后端ruby
 
 - https://github.com/RocketChat/Rocket.Chat
   - fully customizable communications platform developed in JavaScript for organizations with high standards of data protection.

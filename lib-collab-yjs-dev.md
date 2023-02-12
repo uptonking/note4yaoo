@@ -10,3 +10,6 @@ modified: 2022-04-05T10:10:59.826Z
 # guide
 
 - 实现协作要考虑到切换冲突处理算法，如slate-yjs/automerge/sharedb
+
+
+- [Automerge CRDT Sync Protocol](https://automerge.org/docs/how-it-works/sync/)

@@ -6,9 +6,10 @@ modified: 2022-04-05T10:11:21.023Z
 ---
 
 # lib-collab-yjs-docs
+
+# guide
+
 # [Yjs Internals](https://github.com/yjs/yjs/blob/main/INTERNALS.md)
-
-
 - The Yjs CRDT algorithm is described in the YATA paper from 2016.
 - At its heart, Yjs is a list CRDT. 
   - Everything is squeezed into a list in order to reuse the CRDT resolution algorithm
@@ -17,11 +18,37 @@ modified: 2022-04-05T10:11:21.023Z
   - Maps are lists of entries. The last inserted entry for each key is used
 - Each client is assigned a unique clientID property on first insert. js-safe random 53-bit integer
 
-
 - Deletions in Yjs are treated very differently from insertions. 
   - 👉🏻 Insertions are implemented as a sequential operation based CRDT, but deletions are treated as a simpler state based CRDT.
-# yjs-docs
+# faq
 
+## I get a new ClientID for every session, is there a way to make it static for a peer accessing the document?
+
+- The ClientID is used for conflict resolution.
+  - So it is important that you understand all side-effects of retaining a ClientID across sessions.
+- The simple answer is: Yjs is designed to create a new ClientID for every session to avoid sync conflicts.
+  - 👉🏻 The recommended method to identify users is using the Awareness feature. 
+- If you still want to retain a ClientID, you can do so by simply 🚨 overwriting the `ydoc.clientID` property. 
+  - But you must ensure that no other `Y.Doc` instance is currently holding that ClientID. 
+  - This is not always possible: A user might open several browser windows with the same user account. 
+  - When two Y. Doc instances with the same ClientID exist, the document might get permanently corrupted without a way to recover.
+  - So do this with caution.
+
+## Structuring data in smaller YDocs
+
+- One basically needs to decide on the following:
+1. To use one or multiple YDocs for an entity or set of entities in your application.
+2. How to structure the data within a YDoc.
+
+- When reasoning around how to structure data in Yjs I recommend to consider these aspects:
+1. **The flow of data for common use cases:** It can be good to group data that is often used together. In contrast, it may not be practical to load hundreds of YDocs at once or load new YDocs very frequently.
+2. **Read/write permissions:** Permissions cannot be practically enforced within a YDoc so you need to split data into multiple YDocs if you need different permissions for different parts of the data.
+3. **Size is very rarely a practical problem** as long as you deal with human-entered text input. (See [benchmarks](https://github.com/dmonad/crdt-benchmarks).)
+4. **Separate structure and data:** In some cases, it can be practical to have one YDoc that holds only the id references across entities (eg. pages) and one YDoc per entity data. This is particularly relevant if you need different permission levels for different entities. If you have no need for granular control, a split like this may be unnecessarily complex.
+5. **History and undo:** At what level is it natural to track edit history and perform undo? It is much easier to perform history tracking within a single YDoc rather than spread across multiple YDocs.
+6. **Consider using a single top-level YMap:** Top-level shared types cannot be deleted, so you may want to structure all your data in a single top-level YMap, eg. `yDoc.getMap('data').get('page-1')`.
+7. **Subdocuments:** You may also consider using [subdocuments 2](https://docs.yjs.dev/api/subdocuments). However, it gets a bit more complex and your provider may not support it.
+# yjs-docs
 - Yjs documents are collections of shared objects that sync automatically.
 
 - Yjs doesn't make any assumptions about the network technology you are using. 

@@ -22,6 +22,7 @@ modified: 2022-11-25T15:41:47.534Z
   - [Watermelon sync protocol](https://nozbe.github.io/WatermelonDB/Advanced/Sync.html)
   - firebase-like: supabase
   - [rxdb alternatives](https://rxdb.info/alternatives.html)
+  - [Automerge CRDT Sync Protocol](https://automerge.org/docs/how-it-works/sync/)
 
 - [RxDB replication protocol](https://rxdb.info/replication.html)
   - 支持websocket、graphql、couchdb、p2p

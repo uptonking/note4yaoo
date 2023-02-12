@@ -204,6 +204,8 @@ modified: 2021-07-11T08:31:00.660Z
   - Notion将两个功能融合在一起了
 
 - TextBundle是一种文件格式，将图片和markdown一起导出，不再是难题
+
+- craft: We’ve raised $8m Series A funding led by @creandum_202104
 # new-office-products
 - [黑客说，类twitter/知乎的社交与内容平台](https://hackertalk.net/)
 # office-online-products

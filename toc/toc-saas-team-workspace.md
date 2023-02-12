@@ -120,16 +120,18 @@ modified: 2023-02-07T17:38:05.336Z
   - Since its a client side library, it is completely agnostic to server side tech stack.
 # kanban/board
 - https://github.com/Fredkiss3/thullo
+  - https://thullo.fredkiss.dev/dashboard
   - A Trello Clone
   - 后端依赖express、tsyringe(IoC)、mongoose
   - 前端依赖dnd-kit、react-beautiful-dnd、react-query、headlessui
   - 样式友好
 
-- https://github.com/knowankit/trello-clone
+- https://github.com/knowankit/trello-clone /ts
   - Built with Nextjs framework with Typescript and Chakra UI library with support from MongoDB
   - Login/Register with JWT token authentication
 
-- https://github.com/oldboyxx/jira_clone
+- https://github.com/oldboyxx/jira_clone /js/未使用组件库
+  - https://jira.ivorreic.com/project/board
   - simplified Jira clone built with React/Babel (Client), and Node/TypeScript (API)
   - 未实现用户组织管理
   - 后端ts依赖express、typeorm、pg、jwt
@@ -140,9 +142,26 @@ modified: 2023-02-07T17:38:05.336Z
   - Project management web app for agile teams built with REST architecture
   - 依赖 RTK Query, Tailwindcss, Express, MySQL, Prisma
 
+- https://github.com/automerge/trellis /js/inactive
+  - Trello clone/sample app for Automerge persistence library
+  - Trellis is a Trello clone built as an Electron desktop application. 
+
+- https://github.com/apankrat/nullboard
+  - https://nullboard.io/preview
+  - Nullboard is a minimalist take on a kanban board / a task list manager, designed to be compact, readable and quick in use.
+  - All data is stored locally, for now using localStorage.
+
 - https://github.com/atlassian/react-beautiful-dnd
   - https://react-beautiful-dnd.netlify.app/iframe.html?id=board--simple
   - 官方示例就是看板
+
+- https://github.com/nishantpainter/personal-kanban
+  - https://personalkanban.js.org/
+  - 依赖 material-ui.v4, formik, i18next, moment, react-beautiful-dnd
+  - columns and cards
+  - an offline capable application or tool that implements kanban to manage work at personal level
+  - The application is registered with service workers and behaves as a progressive web application (PWA)
+
 - https://github.com/riktar/jkanban /630Star/202012
   - https://www.riccardotartaglia.it/jkanban/
   - Vanilla Javascript plugin for manage kanban boards
@@ -171,13 +190,6 @@ modified: 2023-02-07T17:38:05.336Z
   - ActionView front-end source code, based on Reactjs＋Redux.
   - https://github.com/lxerxa/actionview /50Star/202101
   - An issue tracking tool based on php laravel-framework in back-end and reactjs+redux in front-end, it's similar to Jira
-
-- https://github.com/nishantpainter/personal-kanban
-  - https://personalkanban.js.org/
-  - 依赖 material-ui.v4, formik, i18next, moment, react-beautiful-dnd
-  - columns and cards
-  - an offline capable application or tool that implements kanban to manage work at personal level
-  - The application is registered with service workers and behaves as a progressive web application (PWA)
 
 - https://github.com/TiagoDiass/easyboards
   - front-end app similar to Trello

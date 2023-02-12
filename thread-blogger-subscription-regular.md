@@ -9,11 +9,24 @@ modified: 2021-09-20T18:01:39.932Z
 
 # regular-topics
 
-- prosemirror lexical
-  - slate
+- prosemirror slate
+  - typewriter
+  - lexical
 
 - luckysheet/univer ag-grid
   - tanstack-table
+  - handsontable
+
+- yjs fluid-framework
+  - automerge
+
+- forums
+  - https://cnodejs.org
+  - https://discuss.prosemirror.net
+  - https://forum.handsontable.com/
+  - https://github.com/Microsoft/fluidframework/discussions
+  - https://discuss.yjs.dev/
+  - https://talk.observablehq.com/
 
 - react-native flutter
   - wechat-miniapp

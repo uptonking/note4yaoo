@@ -129,7 +129,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/davidalekna/react-components/tree/master/packages/react-data-browser
   - https://codesandbox.io/s/github/davidalekna/data-browser-examples
   - 基于div和flexbox实现
-  - The original use case of this component is to build flexbox tables,
+  - The original use case of this component is to build flexbox tables, 
   - however the API is powerful and flexible enough to build things like grids as well.
   - DataBrowser component will not provide any styles, only the functionality.
   - use-table-tools /MIT/18Star/202009/ts/NoDeps/inactive
@@ -141,6 +141,13 @@ modified: 2022-08-21T10:02:27.788Z
   - https://githubbox.com/Buuntu/react-final-table/tree/master/examples/basic
   - A headless UI component libray for managing complex table state in React.
   - Inspired by react-table but with Typescript support built in and a simpler API.
+
+- react-spreadsheet /MIT/245Star/202003/matrix
+  - https://github.com/iddan/react-spreadsheet
+  - https://iddan.github.io/react-spreadsheet
+  - 依赖 developit/unistore(state container with component actions for Preact & React，支持redux devtools)
+  - Simple, customizable yet performant spreadsheet for React
+  - Performant (yet not virtualized)
 # div-react
 - react-data-table-component /1.2kStar/Apache2/202112/ts
   - https://github.com/jbetancur/react-data-table-component
@@ -425,6 +432,7 @@ modified: 2022-08-21T10:02:27.788Z
   - http://ka-table.com/
   - 基于table标签实现
   - Controllable React Table component with Sorting, Filtering, Grouping, Virtualization, Editing and many more
+
 - rc-table /MIT/693star/202010/ts
   - https://github.com/react-component/table
   - http://react-component.github.io/table/
@@ -446,11 +454,6 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/carlosrocha/react-data-components
   - https://rocha.dev/react-data-components/
   - React components for sorting, filtering and pagination of data.
-- react-spreadsheet /MIT/245Star/202003
-  - https://github.com/iddan/react-spreadsheet
-  - https://iddan.github.io/react-spreadsheet
-  - 依赖 developit/unistore(state container with component actions for Preact & React，支持redux devtools)
-  - Simple, customizable yet performant spreadsheet for React
 - react-smart-data-table /MIT/46Star/202006
   - https://github.com/joaocarmo/react-smart-data-table
   - https://joaocarmo.com/react-smart-data-table/examples/bootstrap/

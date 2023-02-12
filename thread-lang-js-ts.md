@@ -16,6 +16,17 @@ Symbol('a') === Symbol('a'); //false
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 函数式编程很讨厌的一点是，压缩后的代码完全不可读，函数名会被完全混淆。如果是之前的对象编程，可以通过查找对象上的方法名进行生产环境的 debugger，对象的名称会被混淆，但是其上的方法和属性不会😅
+- https://twitter.com/_Xheldon/status/1548967766211698688
+- 转念一想，函数式压缩混淆更有效
+
+
+
+
 - ## One cool use case for Maps - creating a simple O(1) LRU cache
 - https://twitter.com/Steve8708/status/1623906230841536515
   - Given how Maps preserve the order of their keys, implementation is trivial

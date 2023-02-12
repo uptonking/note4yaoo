@@ -272,6 +272,10 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/tuskyapp/Tusky
   - An Android client for the microblogging server Mastodon
   - Completely open-source - no non-free dependencies like Google services
+# notification
+- https://github.com/novuhq/novu
+  - The open-source notification infrastructure for products. 
+  - Add a notification center for your React, Vue and Angular apps rocket
 # more-forum
 - https://github.com/geekeren/GuangGuForum
   - 过早客论坛微信小程序

@@ -83,12 +83,4 @@ modified: 2022-08-21T10:12:02.964Z
   - MPS还可以定义新语言的类型系统、约束和专门的编辑器。MPS用一棵抽象句法树（AST）来维护代码。
   - MPS还采用了代码生成的办法：用新语言在更高的层次上表达，然后MPS生成Java、XML、HTML、JavaScript等语言的可编译代码。 用MPS建立新语言的时候，必须从BaseLanguage扩展。MPS已经提供了一些常用的BaseLanguage扩展，协助开发者处理字符串、容器、日期、正则表达式等语言成分。
 
-- ## what's the best hybrid-structure code editor you've seen? an editor that combines tokens (eg values or references) and text
-
-do you back the semantic tokens with text? feels like you want some richer repr but hard for me to see how to make hybrid work
-
 - ## [对可多人协同编辑的在线编辑器，如何设计其 undo/redo 的逻辑？](https://www.zhihu.com/question/367915946/answer/985845505)
-
-- ## 
-
-- ## 

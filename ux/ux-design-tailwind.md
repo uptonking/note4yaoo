@@ -12,9 +12,7 @@ modified: 2021-01-03T17:11:47.916Z
 - ref
   - [Theme Configuration](https://tailwindcss.com/docs/theme)
   - [tailwind default theme](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js)
-
 # pieces
-
 - ## [What is the difference between Tailwind UI and Headless UI?](https://twitter.com/samselikoff/status/1380593139484872712)
   - Tailwind UI = Library of Prototyping components or full Layouts
   - Headless UI = UI Components that are fully accessible, with no styling
@@ -30,8 +28,10 @@ modified: 2021-01-03T17:11:47.916Z
 - Tailwind (like Tachyons before it) takes advantage of atomic styles.
 - The idea, generally, is that instead of using class names like btn-primary which might add a multitude of style rules to a given element, we'd use more granular class names like, for example p-10 bg-blue border-1 font-bold which are often more self explanatory and usually map to a single CSS rule.
 - Tailwind will swap these directives out at build time with all of its generated CSS. 
-
 # discuss
+- ## Has anyone used DaisyUI? It looks decent.
+- https://twitter.com/clem_mas/status/1624592566607044610
+- It's the best Tailwind UI library I found. CSS only unlike Flowbite that uses JS. Great for easy components like dropdowns but forces the drawers or carousel's HTML to be very different. I ditched it in the end to customize it more and tree-shake it
 
 - ## [Why Tailwind Isn't for Me_202101](https://dev.to/jaredcwhite/why-tailwind-isn-t-for-me-5c90)
 - The problem I keep running into however is this increasing popular sentiment that Tailwind is the future (man). It's the way things should be done.
@@ -111,9 +111,7 @@ modified: 2021-01-03T17:11:47.916Z
   - 简单的说，Tailwind 提高了手写 CSS 的效率，并且我个人感觉是大幅度提高。
     - 它没有自以为是的帮你封装一层样式，降低你的定制性。
   - 很多集成的大框架都有这种缩写性质的css，然而一次性样式不如直接写style来的直接，也不好维护
-
 # tailwind-examples
-
 - https://github.com/tailwindlabs/tailwindcss
   - /28kStar/MIT/202009
   - https://tailwindcss.com/
@@ -130,7 +128,5 @@ modified: 2021-01-03T17:11:47.916Z
 - ref
   - https://tailwindui.com/
     - Fully responsive HTML components
-
 # ref
-
 - [TailwindCSS: Adds complexity, does nothing.](https://dev.to/brianboyko/tailwindcss-adds-complexity-does-nothing-3hpn)

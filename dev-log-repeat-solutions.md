@@ -28,6 +28,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 个人数据管理，开放api，允许其他app获取
 
 - 生态与集成
+  - office365
   - jupyter-notebook
   - observable-notebook
 
@@ -111,6 +112,10 @@ modified: 2021-07-20T13:50:23.433Z
   - 类似superset支持各种数据源
 # ideas
 - editor/ide-settings sync/store/sharing
+- comments
+  - 编辑态评论
+  - 阅读态评论
+  - 分享态评论
 # editor
 - tips
   - live edit

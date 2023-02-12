@@ -12,7 +12,16 @@ modified: 2022-10-22T18:46:45.456Z
 # discuss
 - ## 
 
-- ## 
+- ## [Extending Yjs Types without breaking everything - Yjs Community](https://discuss.yjs.dev/t/extending-yjs-types-without-breaking-everything/769)
+  - I came with the idea to create custom Yjs types to extends defaults shared types methods and to get a better type experience DX, code clarity etc.
+  - `export class YColumn extends Map<any> {` 继承
+  - But when we encode state as update or play with the history, custom types are loss with their functionalities and the app crashes as expected.
+- I tackled this via composition rather than inheritance, as I ran into similar roadblocks.
+- The way I have “solved” it temporarily is instead of using inheritance, Extend the prototype
+- 
+- 
+- 
+- 
 
 - ## [History of collaborative editing solutions. What usually people used before automerge, yjs etc.. ?](https://github.com/automerge/automerge/discussions/496)
   - I found automerge (2017), yjs (2015), sharedb (2013). All of them are relatively new.

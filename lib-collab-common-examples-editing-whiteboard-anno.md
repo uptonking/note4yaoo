@@ -118,6 +118,11 @@ modified: 2022-11-07T17:36:22.236Z
   - This library has no dependency on Convergence.
   - 只依赖textarea-caret，不依赖其他
 
+- https://github.com/Rishabh-malhotraa/caucus
+  - Realtime Collaborate Editor with Embedded Compiler
+  - 类似协作codepen
+  - Built With React Material UI yjs Written in TypeScript
+
 - https://github.com/cchaonie/collaborative-editor /ts/slate+sharedb
   - Learn collaborative softwares by creating a collaborative editor
   - The slate handles the UI part, and the sharedb handles the collaborative part.
@@ -214,3 +219,7 @@ modified: 2022-11-07T17:36:22.236Z
 
 - https://github.com/ruyd/fullstack-monorepo
   - Fullstack Canvas Drawing App and TypeScript Starter Template
+
+- https://github.com/markandre13/workflow
+  - A collaborative real-time white- and kanban board
+  - 依赖knex

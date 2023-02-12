@@ -63,7 +63,7 @@ modified: 2022-09-21T15:47:41.340Z
   - https://github.com/tandem-pt/zustand-yjs
 # yjs-more
 
-# collaborative
+# yjs-crdt
 - https://github.com/yjs/yjs
   - https://docs.yjs.dev/
   - Yjs is a CRDT implementation that exposes its internal data structure as shared types. 

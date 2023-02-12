@@ -14,7 +14,8 @@ modified: 2023-02-11T11:07:43.781Z
 
 - ## 
 
-- ## 
+- ## [How can you ensure the database is the source of truth in the Fluid world?](https://github.com/microsoft/FluidFramework/discussions/9536)
+- not yet
 
 - ## [Building a BFT JSON CRDT | Hacker News](https://news.ycombinator.com/item?id=33694568)
 - It's the Byzantine Fault Tolerant part of this that is particularly innovative and based on Kleppmanns most recent work. I believe it solves the issue of either malicious actors in the networks modifying others transactions, spoofing them, or the messages being modified by third parties ("outside" the network) who have MITM the connection. These are really great problems to solve.

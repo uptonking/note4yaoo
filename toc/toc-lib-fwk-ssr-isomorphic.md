@@ -7,7 +7,18 @@ modified: 2020-12-19T13:04:40.865Z
 
 # toc-lib-fwk-ssr-isomorphic
 
-# react-ssr-solutions
+# guide
+
+# react-ssr
+
+## examples
+
+- https://github.com/htdangkhoa/react-ssr-starter /js/inactive
+  - A React boilerplate for a universal web app with a highly scalable, offline-first foundation 
+  - our focus on performance and best practices.
+  - Using SWC will give build times 1.5x faster for the server and 2.2x for the client instead of using Babel.
+
+## solutions
 
 - https://github.com/janishar/react-app-architecture /ts/inactive
   - Learn to build a complete website for a blogging platform like Medium; OpenSource project by AfterAcademy

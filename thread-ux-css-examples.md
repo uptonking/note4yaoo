@@ -12,7 +12,8 @@ modified: 2021-02-05T14:00:02.922Z
 # ux-examples
 - ## 
 
-- ## 
+- ## A gradient circular chart effect 
+- https://twitter.com/argyleink/status/1624575440382996480
 
 - ## You could use CSS trig functions to calculate animation-delay 
 - https://twitter.com/jh3yy/status/1624172121558581248

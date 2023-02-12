@@ -351,17 +351,17 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/Immortalin/slate-operational-transform
   - Slate JS Editor Operational Transform Example using ShareDB (used in production at Narration Box)
   - Invoking JSON0-ot-diff on every edit is not very efficient.
+- https://github.com/onechunlin/collaborative-docs
+  - 基于 Slate 和 ShareDb 实现的基于 OT 算法的协同文档
 
 - https://github.com/itoumlilt/crdt-md-editor /ts/slate/CouchDB
   - React Typescript CRDT based Collaborative Markdown Editor
 
-- https://github.com/BitPhinix/slate-yjs-example
-  - https://bitphinix.github.io/slate-yjs-example
-  - Minimal example project for slate-yjs
-  - [How to boostrap slate with a persisted doc?](https://github.com/BitPhinix/slate-yjs-example/issues/80)
-  - https://github.com/BitPhinix/slate-yjs
-    - Yjs binding for Slate
-    - [Linearising document content](https://github.com/BitPhinix/slate-yjs/issues/296)
+- https://github.com/BitPhinix/slate-yjs
+  - https://docs.slate-yjs.dev/
+  - Slate-yjs aims to be the goto collaboration solution for slate. 
+  - Slate-yjs will overwrite the current editor value with the state contained in the shared type.
+  - [Linearising document content](https://github.com/BitPhinix/slate-yjs/issues/296)
 
 - https://github.com/6thfdwp/crdt-editor
   - A collaborating editor based on Slate and Yjs
