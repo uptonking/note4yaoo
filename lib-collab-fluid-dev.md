@@ -10,5 +10,10 @@ modified: 2023-02-11T11:06:50.571Z
 # guide
 
 # dev
+
+- https://github.com/yjs/y-protocols
+  - Binary encoding protocols for syncing, awareness, and history information
+  - We use efficient variable-length encoding where possible.
+
 - [Automerge CRDT Sync Protocol](https://automerge.org/docs/how-it-works/sync/)
 # more

@@ -9,6 +9,11 @@ modified: 2022-08-18T16:57:46.405Z
 
 # guide
 
+- 编辑器可复用的模块
+  - 复制粘贴
+  - 工具条
+  - 评论
+
 - prosemirror-futuristic
   - 方向：collab、markdown、pivot-table、math/formula、media/embed
   - 大部分的方案是以vanillajs为core，react为wrapper

@@ -122,6 +122,7 @@ modified: 2022-11-07T17:36:22.236Z
   - Realtime Collaborate Editor with Embedded Compiler
   - 类似协作codepen
   - Built With React Material UI yjs Written in TypeScript
+  - 依赖knex、pg、yjs、codemirror5
 
 - https://github.com/cchaonie/collaborative-editor /ts/slate+sharedb
   - Learn collaborative softwares by creating a collaborative editor

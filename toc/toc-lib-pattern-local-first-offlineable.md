@@ -129,7 +129,7 @@ modified: 2021-09-04T14:03:39.046Z
   - Hoodie lets you build apps without thinking about the backend and makes sure that they work great independent of connectivity.
   - https://github.com/hoodiehq/hoodie-app-tracker
 
-- https://github.com/local-first-web/state
+- https://github.com/local-first-web/state /automerge
   - A Redux-based state container for local-first software, offering seamless synchronization using Automerge CRDTs. (Formerly known as fish Cevitxe).
   - @localfirst/state is an automatically replicated Redux store that gives your app offline capabilities and secure peer-to-peer synchronization superpowers.
   - https://github.com/local-first-web/auth

@@ -12,6 +12,15 @@ modified: 2022-04-05T10:11:40.379Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Show HN: SyncedStore CRDT – build multiplayer collaborative apps for React / Vue | Hacker News_202112](https://news.ycombinator.com/item?id=29483913)
+  - It's designed specifically for React, Vue, Svelte but also works with plain JS. 
+  - By using Javascript Proxies, the data store looks like plain javascript objects, except that they'll now sync automatically across devices / users!
+  - The API is inspired mostly by Reactive Programming libraries such as MobX (from the same author as Immer).
+
 - ## [Modeling slate split node behavior in YJS - Yjs Community](https://discuss.yjs.dev/t/modeling-slate-split-node-behavior-in-yjs/283)
 - Is there a way to perform a slate like split node operation in YJs?
   - Currently I’m modeling a split node operation by removing the 2nd part of the split text from the “origin” node and creating a new text with the removed part, but this leads to issues

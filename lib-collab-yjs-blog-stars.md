@@ -10,16 +10,6 @@ modified: 2022-10-22T18:45:23.619Z
 # guide
 
 # [Syncing text files between browser and disk using Yjs and the File System Access API_202205](https://motif.land/blog/syncing-text-files-using-yjs-and-the-file-system-access-api)
-- https://github.com/motifland/yfs
-  - https://yfs.vercel.app/
-  - Synchronize text files between the browser and the file system using the File System Access API and Yjs.
-  - 依赖yjs.v13、idb-keyval、diff、react
-  - 前端示例依赖 @monaco-editor/react、next
-
-- https://github.com/benfoxall/ycode
-  - Edit your local files with remote people.
-  - yjs + monaco-editor + file-system-access api
-
 - Wrote this blog post on how to sync files between browser and disk using Yjs and the File System Access API. It works really well! 
 - https://twitter.com/michaelfester/status/1523698983117684736
 

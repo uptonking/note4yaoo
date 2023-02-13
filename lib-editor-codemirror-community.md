@@ -12,7 +12,7 @@ modified: 2023-01-29T10:52:44.183Z
 # discuss
 - ## 
 
-- ## 
+- ## [v6 Comparison with approach of react-simple-code-editor_201907](https://github.com/codemirror/dev/issues/109)
 
 - ## Does anybody need a new code editor for the web that's 2x faster than Monaco, 10x smaller than CodeMirror, and works well on mobile?
 - https://twitter.com/fabiospampinato/status/1618807374973911046
@@ -109,3 +109,5 @@ modified: 2023-01-29T10:52:44.183Z
 - CodeMirror aims to be slimmer, and less of a cut-off piece of vs code. I also think our API is more well designed and expressive. And, as Adrian mentioned below, though he got downvoted, CodeMirror works on phones
   - The fact that it works on mobile is the biggest advantage imho. We use it for that reason.
 - monaco doesn't even try to work on mobile browsers.
+
+# discuss-v5
