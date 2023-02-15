@@ -133,10 +133,48 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 - log2023
   - 01-linvo-search+sync-hlc-wip
 
+- why use es6 class
+  - 既包含类型定义，又包含逻辑工具
+  - 方便调试，可直接log到对象及方法，函数里面的闭包变量更新难以定位
+
 - dev-to
   - crdt tutorials
   - 腰包掉到床头版与墙的夹缝中了
 # dev-02
+
+## 0214
+
+- [How can I use an object literal to make an instance of a class without useing the constructor in JavaScript ES6? - Stack Overflow](https://stackoverflow.com/questions/47881111)
+  - I'll guess that this exercise is looking for a solution that uses `__proto__` as an object literal key
+  - 👉🏻 The proper solution is to use `Object.create`
+
+```JS
+var fakePoint = {
+  __proto__: Point.prototype,
+  x: Math.random(),
+  y: Math.random()
+};
+console.log(fakePoint instanceof Point) //true
+```
+
+- [What is the difference between typeof and instanceof and when should one be used vs. the other? - Stack Overflow](https://stackoverflow.com/questions/899574)
+  - Use instanceof for custom types
+  - Use typeof for simple built in types
+
+- [Why does instanceof return false for some literals? - Stack Overflow](https://stackoverflow.com/questions/203739/why-does-instanceof-return-false-for-some-literals)
+  - Primitives are a different kind of type than objects created from within Javascript.
+
+```JS
+var color1 = new String("green");
+color1 instanceof String; // returns true
+var color2 = "coral";
+color2 instanceof String; // returns false (color2 is not a String object)
+```
+
+## 0213
+
+- [Impossible to define static 'length' function on class · Issue #442 · microsoft/TypeScript](https://github.com/microsoft/typescript/issues/442)
+  - I don't think the properties name, caller and length are doable. They are read-only properties and can't be overridden. All assignments to them will be ignored.
 
 ## 0208
 
@@ -267,7 +305,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                             `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                               `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

@@ -9,6 +9,8 @@ modified: 2023-02-09T18:32:06.240Z
 
 # guide
 
+- ref
+  - https://github.com/quilljs/awesome-quill
 # popular
 - https://github.com/nozer/quill-delta-to-html
   - Converts Quill's delta ops to HTML

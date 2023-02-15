@@ -52,6 +52,51 @@ modified: 2022-11-18T17:06:54.371Z
   - Sort of. Access had a "Forms" feature that let you create basic GUIs on top of your database. 
 # blog
 
+## [What If OpenDocument Used SQLite?](https://www.sqlite.org/affcase1.html)
+
+- The Open Document Format for Office Applications (ODF), also known as OpenDocument, is an open file format for word processing documents, spreadsheets, presentations and graphics and using ZIP-compressed XML files. 
+  - It is also the default format for documents in typical Linux distributions
+  - It was based on the Sun Microsystems specification for OpenOffice.org XML, the default format for OpenOffice.org and LibreOffice. 
+- The most common filename extensions used for OpenDocument documents are:
+  - .odt and .fodt for word processing (text) documents
+  - .ods and .fods for spreadsheets
+  - .odp and .fodp for presentations
+  - .odg and .fodg for graphics
+  - .odf for formula, mathematical equations
+
+- Benefits would include:
+  - Smaller documents
+  - Faster File/Save times
+  - Faster startup times
+  - Less memory used
+  - Document versioning
+
+- Limitations Of The OpenDocument Presentation Format
+  - Incremental update is hard.
+  - Startup is slow.
+  - More memory is required.
+  - Crash recovery is difficult.
+  - Content is inaccessible.
+
+- First Improvement: Replace ZIP with SQLite
+- Second Improvement: Split content into smaller pieces
+- Third Improvement: Versioning
+
+- Review Of The Benefits Of Using SQLite
+  - An SQLite database file is approximately the same size, and in some cases smaller, than a ZIP archive holding the same information.
+  - The atomic update capabilities of SQLite allow small incremental changes to be safely written into the document. This reduces total disk I/O and improves File/Save performance, enhancing the user experience.
+  - Startup time is reduced by allowing the application to read in only the content shown for the initial screen. 
+  - The memory footprint of the application can be dramatically reduced by only loading content that is relevant to the current display and keeping the bulk of the content on disk.
+  - The schema of an SQL database is able to represent information more directly and succinctly than a key/value database such as a ZIP archive. 
+
+## [Consider SQLite](https://blog.wesleyac.com/posts/consider-sqlite)
+- There are a few legitimate downsides to using SQLite. 
+  - First off, the data type system. It's bad. Luckily, as of a month ago, you can use strict typing instead, which somewhat improves the situation. 
+  - Support for migrations is worse — SQLite has essentially no support for live migrations, so you need to instead make a new table, copy the data from the old table into the new one, and switch over. 
+- It's significantly harder to geo-shard your app, although you can get very far with CDNs and caches, and once Litestream supports read replicas, there'll be another excellent tool for improving this.
+- Using SQLite has some failure modes that most programmers are not used to — most notably, if you begin a transaction, then go off and do some blocking operation, you will be blocking all writes for the time that you're doing that, unlike in a connection-based database with a connection pool. If you want to write fast and scalable apps with SQLite, you need to think carefully about your architecture and schema.
+- On the whole, I think using SQLite is a good tradeoff for a lot of projects
+
 ## [SQLite Forensics with Belkasoft X](https://belkasoft.com/sqlite)
 
 - In this article, we will review the most forensically(争论，辩论) interesting SQLite features, dangers of using a non-forensic tool for SQLite analysis and offer a set of requirements for a proper tool to use.

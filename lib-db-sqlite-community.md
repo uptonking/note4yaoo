@@ -14,7 +14,11 @@ modified: 2021-08-30T17:33:46.086Z
 
 - ## 
 
-- ## 
+- ## [Xlite: Query Excel and Open Document spreadsheets as SQLite virtual tables | Hacker News](https://news.ycombinator.com/item?id=31874767)
+- Sqlite does not allow table valued functions to return results with varying schemas. The schema must be defined once up front and then cannot change.
+  - That forum post is a request I made to them to allow dynamic columns but they don't seem interested so far.
+
+
 
 - ## Introducing sqlite-xsv - a SQLite extension for quickly querying CSVs!
 - https://twitter.com/agarcia_me/status/1613688022079508480

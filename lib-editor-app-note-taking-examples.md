@@ -137,6 +137,13 @@ modified: 2023-02-05T18:05:44.122Z
     - Mac OS desktop build is available, but it is unsupported.
     - If you want to install Trilium on server,currently only recent Chrome and Firefox are supported (tested) browsers.
   - [Notion like database](https://github.com/zadam/trilium/issues/822)
+
+- https://github.com/giuspen/cherrytree /cpp/python
+  - A hierarchical note taking application, featuring rich text and syntax highlighting, storing data in a single XML or SQLite file.
+
+- https://github.com/aardappel/treesheets /cpp
+  - https://strlen.com/treesheets/
+  - A "hierarchical spreadsheet" that is a great replacement for spreadsheets, mind mappers, outliners, PIMs, text editors and small databases.
 # note-browser-extensions
 - note-it /16Star/Apache2/202208/ts/tiptap
   - https://github.com/MuhametSmaili/note-it

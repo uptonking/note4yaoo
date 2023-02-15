@@ -8,7 +8,7 @@ modified: 2023-02-09T18:23:23.287Z
 # lib-editor-typewriter-quilljs
 
 # guide
-
+- typewriter的delta结构就是一系列op集合和操作，非常类似经典OT算法
 # quill-delta
 - Typewriter is influenced by Quill.js, being built on the same data model, but with differences
   - Typewriter uses tuples of indexes to describe ranges and selection

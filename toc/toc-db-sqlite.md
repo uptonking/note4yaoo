@@ -57,6 +57,11 @@ modified: 2021-08-30T18:56:18.632Z
   - features
     - randomized ROWID
     - WebAssembly User Defined Functions
+
+- https://github.com/x2bool/xlite /rust
+  - Query Excel spredsheets (.xlsx, .xls, .ods) using SQLite
+  - allow working with spreadsheets from SQLite exposing them as virtual tables.
+  - XLite is a SQLite extension written in Rust. 
 # sqlite-viewer
 - https://github.com/qwtel/sqlite-viewer-vscode  /ts
   - https://sqliteviewer.app/
@@ -82,6 +87,20 @@ modified: 2021-08-30T18:56:18.632Z
   - distributed relational database built on SQLite
   - https://github.com/rqlite/rqlite-js
     - promise based client library for rqlite
+# sqlite-rewrite
+- https://github.com/joaoh82/rust_sqlite
+  - a simple embedded database modeled off SQLite, but developed with Rust. 
+  - The goal is get a better understanding of database internals by building one.
+
+- https://gitlab.com/cznic/sqlite /go
+  - a CGo-free port of SQLite/SQLite3 in go
+
+- https://github.com/LMDB/sqlightning
+  - SQLite3 ported to use LMDB instead of its original Btree code.
+- https://github.com/LumoSQL/LumoSQL
+  - a modification (not a fork) of the SQLite
+  - LumoSQL adds security, privacy, performance and measurement features to SQLite.
+  - LumoSQL can swap back end key-value store engines in and out of SQLite. 
 # more
 - https://github.com/haltcase/trilogy
   - trilogy is a simple Promise-based wrapper for SQLite databases. 

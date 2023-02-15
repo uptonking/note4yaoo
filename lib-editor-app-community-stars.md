@@ -69,6 +69,30 @@ modified: 2022-08-21T10:12:02.964Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Writing Software to Last 50 Years | Hacker News](https://news.ycombinator.com/item?id=22042186)
+- Text files are king! I store every single byte I can in text files. Examples:
+  - Tabular data     : TSV   (almost all Un*x/GNU tools handle this out of the box)
+  - Simple "records" : GNU Recutils format (https://www.gnu.org/software/recutils/)
+  - Formatted texts  : Markdown, LaTeX, ...
+- If I need some hierarchical kind of information, I use a folder structure to handle this.
+- I know that not everything can be stored as text. But I try to use open, well documented and future proof formats.
+- If I really need to preserve original format/design of a web page: PDF
+
+
+- [GNU Recutils - GNU Project - Free Software Foundation](https://www.gnu.org/software/recutils/)
+  - GNU Recutils is a set of tools and libraries to access human-editable, plain text databases called recfiles. 
+  - The data is stored as a sequence of records, each record containing an arbitrary number of named fields. 
+
+
+
 - ## what's the best hybrid-structure code editor you've seen? an editor that combines tokens (eg values or references) and text
 - https://twitter.com/_paulshen/status/1575187234449334273
   - do you back the semantic tokens with text? feels like you want some richer repr but hard for me to see how to make hybrid work

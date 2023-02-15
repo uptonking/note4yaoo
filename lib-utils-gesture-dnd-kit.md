@@ -16,6 +16,7 @@ modified: 2022-06-04T00:44:30.749Z
   - good docs and examples
     - tree
     - kanban
+  - 官方提供了virtualized示例，基于同作者的react-tiny-virtual-list
   - Built for React
     - exposes hooks such as useDraggable and useDroppable, 
     - and  won't require you to re-architect your app or create additional wrapper DOM nodes.
@@ -46,6 +47,18 @@ modified: 2022-06-04T00:44:30.749Z
   - https://github.com/clauderic/dnd-kit/issues/623
   - The same problem is happening to me, 'useSortable' is causing retenders due to 'useContext'. 
   - The easiest way to fix this is to use `useContextSelector` .
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Is there a built-in sorting strategy for virtualized grids in \ `@dnd-kit/sortable\` ?](https://github.com/clauderic/dnd-kit/discussions/411)
+- Actually, I have a virtualized grid implementation which works pretty well with @dnd-kit/sortable
+  - I'm using rectSortingStrategy, and there doesn't seem to be any issues even without all the items being rendered. 
+  - The only thing I had to do was to ensure that the item currently being dragged was rendered even when it's outside of the visible range. 
+
 # docs
 
 ## overview
@@ -218,6 +231,14 @@ const Item = forwardRef(({ children, ...props }, ref) => {
 - https://github.com/jado66/reactive-site-creator
   - A website creator for React.
   - 依赖react-quill、react-reveal、bootstrap5
+
+- react-tiny-virtual-list /MIT/1.8kStar/201910/ts
+  - https://github.com/clauderic/react-tiny-virtual-list
+  - https://clauderic.github.io/react-tiny-virtual-list/
+  - A tiny but mighty 3kb list virtualization library, with zero dependencies
+  - Supports variable heights/widths, sticky items, scrolling to index, and more
+  - forks
+    - https://github.com/matyas-igor/react-small-virtual-list
 
 ## repos-more
 

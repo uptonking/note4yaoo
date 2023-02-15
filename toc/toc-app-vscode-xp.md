@@ -15,6 +15,9 @@ modified: 2023-02-08T10:47:19.056Z
 # nice-to-have
 - ctrl+p: 搜索文件名时，没有像在左边搜索文字那样方便，左边搜文字时可以一次性展示所有文件及匹配点
 
+- 编辑器
+  - js注释 // 与 /** */ 一键转换
+
 - 侧边栏最小宽度
 # extensions-stars
 - ## import sorter

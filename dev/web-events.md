@@ -207,8 +207,12 @@ modified: 2021-04-23T17:10:52.920Z
     - returns the size of an element and its position relative to the viewport.
     - The returned value is a DOMRect object,  with read-only left, top, right, bottom, x, y, width, and height properties
     - Properties other than width and height are relative to the top-left of the viewport.
+
+- ref
+  - [搞清clientHeight、offsetHeight、scrollHeight、offsetTop、scrollTop](https://www.cnblogs.com/itjeff/p/15715949.html)
+
 - scrollLeft 、scrollTop
-  - 设置或获取位于对象最顶/左端和窗口中可见内容的最顶/左端之间的距离，即当前上滚或左滚的距离（针对父容器）
+  - 设置或获取位于对象最左/顶端和窗口中可见内容的最顶/左端之间的距离，即当前上滚或左滚的距离（针对父容器）
 - scrollHeight、scrollWidth
   - 获取对象可滚动的总高度/宽度（针对父容器）
 - offsetLeft、offsetTop

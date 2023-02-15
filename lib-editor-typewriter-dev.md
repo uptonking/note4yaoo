@@ -18,9 +18,8 @@ modified: 2023-02-09T12:24:23.549Z
     - 参考 ajaxorg/ace、codemirror、typewriter
   - defer render
 
-- virtualized-render示例
-  - 仍将所有内容字符串放在内存
-  - 但只显示指定区域的
+- typewriter的delta结构就是一系列op集合和操作，非常类似经典OT算法
+
 # dev
 - typewriter /308Star/MIT/202301/ts
   - https://github.com/typewriter-editor/typewriter

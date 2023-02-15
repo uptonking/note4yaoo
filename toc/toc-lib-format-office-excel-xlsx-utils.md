@@ -10,7 +10,13 @@ modified: 2023-01-09T11:04:13.958Z
 # guide
 
 # popular
+- https://github.com/x2bool/xlite /rust
+  - Query Excel spredsheets (.xlsx, .xls, .ods) using SQLite
+  - allow working with spreadsheets from SQLite exposing them as virtual tables.
+  - XLite is a SQLite extension written in Rust. 
 
+- https://github.com/dinedal/textql /go
+  - Execute SQL against structured text like CSV or TSV
 # examples
 
 # parser-generator
