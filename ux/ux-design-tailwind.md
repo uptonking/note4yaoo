@@ -12,7 +12,16 @@ modified: 2021-01-03T17:11:47.916Z
 - ref
   - [Theme Configuration](https://tailwindcss.com/docs/theme)
   - [tailwind default theme](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js)
-# pieces
+
+- [Tailwind CSS，从入坑到退坑 - GeekNote](https://geeknote.net/Rei/posts/1995)
+  - 依然需要组件样式
+    - 有很多样式是使用率很高，又不足以抽取公共模版的，这时候最好是抽取组件样式，例如 button，card 等等。而这些组件样式越写越多，逐渐写了两百多行，这时候就遇到下一个问题。
+    - 组件样式增多的时候，我想能把组件样式拆分文件。但是 Tailwind 本身不支持多文件合并，官方文档对此的建议是使用 postcss，把 Tailwind 作为插件使用。
+  - 需要记忆具体值
+    - 虽然在初次编写的时候使用预置的 token 很方便，但是第二次就麻烦了。上次用的颜色是什么
+    - 怀念以前的做法，用 button--primary form__field 等样式可以确保整站的样式一致
+  - Tailwind 的一大串样式很难阅读
+# discuss
 - ## [What is the difference between Tailwind UI and Headless UI?](https://twitter.com/samselikoff/status/1380593139484872712)
   - Tailwind UI = Library of Prototyping components or full Layouts
   - Headless UI = UI Components that are fully accessible, with no styling
@@ -28,7 +37,6 @@ modified: 2021-01-03T17:11:47.916Z
 - Tailwind (like Tachyons before it) takes advantage of atomic styles.
 - The idea, generally, is that instead of using class names like btn-primary which might add a multitude of style rules to a given element, we'd use more granular class names like, for example p-10 bg-blue border-1 font-bold which are often more self explanatory and usually map to a single CSS rule.
 - Tailwind will swap these directives out at build time with all of its generated CSS. 
-# discuss
 - ## Has anyone used DaisyUI? It looks decent.
 - https://twitter.com/clem_mas/status/1624592566607044610
 - It's the best Tailwind UI library I found. CSS only unlike Flowbite that uses JS. Great for easy components like dropdowns but forces the drawers or carousel's HTML to be very different. I ditched it in the end to customize it more and tree-shake it

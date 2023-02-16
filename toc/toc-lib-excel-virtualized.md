@@ -39,3 +39,6 @@ modified: 2023-01-15T15:56:43.100Z
 # virtualized-examples
 
 # more-virtualized
+
+- https://github.com/PolymerLabs/uni-virtualizer
+  - provides viewport-based virtualization (including virtual scrolling) for Lit.

@@ -15,7 +15,13 @@ modified: 2022-08-21T10:15:01.987Z
 
 - ## 
 
-- ## 
+- ## got @stackblitz WebContainer running inside natto after a day of fighting with CORS. 
+- https://twitter.com/_paulshen/status/1625756158278668289
+  - not sure what this enables yet but having node and npm running in the browser is wild!
+- without stackblitz, what Natto uses to execute js code locally?
+  - good ol' eval - more specifically the `Function` constructor
+- how do you protect sensible stuff from malicious code, such as cookie, etc?
+  - iframe sandboxing on a different domain
 
 - ## The new GitHub Issues project tables is built on @tannerlinsley ’s React Table library. 
 - https://twitter.com/_clem/status/1407754748799995908

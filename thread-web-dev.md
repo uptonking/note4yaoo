@@ -33,7 +33,25 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
-- ## 
+- ## 8 modern browser APIs you might not know, but really should:
+- https://twitter.com/Steve8708/status/1625516871633211393
+- `structuredClone()` gives you browser native deep cloning that  supports a variety of types like Date, Set, Map, etc
+- `Promise.allSettled` helps you await multiple promises concurrently to increase perceived performance, while still handling errors effectively
+- CSS `:is(), :where(), :has()` gives you a handy way to clean up redundant selectors
+- new `URL()` gives you a native interface for parsing and manipulating URLs
+- `Intl` gives you browser native date, time, number (and more!) formatting
+- `all: unset` can make styling a lot easier
+- Are you using modern attributes to ensure your images load optimally?
+  - Do you know how and when to use `decoding=async`, `loading=lazy`, fetchpriority, `<picture>`, `aspect-ratio`, or `srcset`?
+- JS `Map`s are wildly underutilized - refresh yourself on the performance, functionality, and ergonomic benefits
+
+
+- The barcode detection API (experimental) 🧪 is one I learned this year. 
+- Which ones does node implement?
+  - structuredClone(), URL(), Map() and Promise.allSettled() if I am not mistaken.
+- Any discussion of interesting browser APIs cannot be complete without mentioning HTMLMediaElement.canPlayType(), which can return the values: "probably", "maybe", and ""
+
+
 
 - ## [You’ve Got Options for Removing Event Listeners](https://www.macarthur.me/posts/options-for-removing-event-listeners)
 1. removeEventListener()

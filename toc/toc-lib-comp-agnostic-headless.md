@@ -38,6 +38,11 @@ modified: 2021-04-11T06:17:51.318Z
   - downshift
   - react-bootstrap依赖的restart/hooks
 
+- 没必要执着于render agnostic
+  - 具体场景需求不同，如ui组件、图表、动画
+  - 跨平台的差异
+  - react-canvas/webgl，在一定程度也是将vdom渲染到不同平台
+
 - ref
   - https://github.com/jxom/awesome-react-headless-components
 # headless-ui

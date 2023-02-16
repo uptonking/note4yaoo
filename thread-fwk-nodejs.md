@@ -26,8 +26,8 @@ modified: 2022-12-19T01:48:53.761Z
 - ## WebContainers: Run Node.js natively in the browser
 - https://news.ycombinator.com/item?id=27223012
 - Everyone thought WASM would enable developers to write code in any language they wanted (with type checking and higher performance) and deploy it on the web.
-  - the demo is very impressive (except for the "only works in Chromium-based browser" message on the next.js demo, where the preview should be - despite Mozzila being one of the main WASM backers and Firefox having arguably the best WASM engine).
-- WASM is a math coprocessor for JS. WASM can't even talk to the DOM API directly (which is the API you use to build web pages in JS); you have to write JavaScript glue code for any/all I/O in WASM.
+  - the demo is very impressive (except for the "only works in Chromium-based browser" message on the next.js demo, where the preview should be - despite Mozilla being one of the main WASM backers and Firefox having arguably the best WASM engine).
+- WASM is a math coprocessor for JS. 💡 **WASM can't even talk to the DOM API directly** (which is the API you use to build web pages in JS); you have to write JavaScript glue code for any/all I/O in WASM.
   - WASM can't even talk to the DOM API directly. For now. It's planned.
   - For existing code bases that don’t already do DOM manipulation (so, all of them) other parts of the Web API might be more useful, like the canvas, the video API, the RTC API etc.
 - It's the "File System Access API, " the one that allows the browser to read/write files on your actual computer. It's an I/O feature, impossible to polyfill.

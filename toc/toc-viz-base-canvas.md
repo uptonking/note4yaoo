@@ -9,6 +9,10 @@ modified: 2020-10-05T06:17:42.467Z
 
 # guide
 
+- 没必要执着于render agnostic
+  - 具体场景需求不同，如ui组件、图表、动画
+  - 跨平台的差异
+  - react-canvas/webgl，在一定程度也是将vdom渲染到不同平台
 # popular
 - canvas-engines-comparison
   - https://github.com/slaylines/canvas-engines-comparison
@@ -38,9 +42,9 @@ modified: 2020-10-05T06:17:42.467Z
 - two.js /7.1kStar/MIT/202105/js
   - https://github.com/jonobr1/two.js
   - https://two.js.org/
-  - 依赖 Underscore.js(以前也依赖raf、@codemirror/next)
   - A renderer agnostic two-dimensional drawing api for the web.
   - It is renderer agnostic enabling the same api to render in multiple contexts: webgl, canvas2d, and svg.
+  - 依赖 Underscore.js(以前也依赖raf、@codemirror/next)
   - Focus on Vector Shapes: aims to make the creation and animation of flat shapes easier and more concise.
   - At its core two.js relies on a scenegraph.
     - This means that when you draw or create an object (a Two.Path or Two.Group), two actually stores and remembers that. 
@@ -85,6 +89,10 @@ modified: 2020-10-05T06:17:42.467Z
   - https://github.com/Gitjinfeiyang/vue-easy-canvas
     - 将 easy-canvas 封装成vue组件进行使用 注意：内部实现是将vue节点转换成目标节点，转换过程中会有性能损失，渲染与转换时间大概4:1
 
+- https://github.com/karasjs/karas
+  - A declarative JavaScript framework on Canvas/Svg/Webgl.
+  - karas实现了一个微型浏览器引擎，同时扩充CSS/WAA在样式/动画上的标准，增强类似SVG的矢量标签描述语法，结合JSX/React的开发方式，形成一个对前端友好的RIA框架。
+
 - https://github.com/fabricjs/fabric.js
   - Javascript Canvas Library, SVG-to-Canvas (& canvas-to-SVG) Parser
 
@@ -102,10 +110,6 @@ modified: 2020-10-05T06:17:42.467Z
 - https://github.com/eKoopmans/html2pdf.js
   - Client-side HTML-to-PDF rendering using pure JS.
   - html2pdf.js converts any webpage or element into a printable PDF entirely client-side using html2canvas and jsPDF.
-
-- https://github.com/jarenchow/janvas
-  - 未开源源码，目前 janvas.min.js 仅使用 uglifyjs --compress 简单压缩无混淆
-  - 基于 HTML5 Canvas 2d 绘图上下文的 JavaScript 绘图库，不仅便于 拓展，拥有极佳的 灵活度 和超越原生 canvas API 开发的 性能
 # canvas-designer-builder
 - react-design-editor /556Star/MIT/202009/inactive
   - https://github.com/salgum1114/react-design-editor
@@ -130,6 +134,13 @@ modified: 2020-10-05T06:17:42.467Z
 - https://github.com/miguelpeixe/react-flexcanvas
   - Canvas grid system built with flexboxes for React
 # canvas-animation
+- https://github.com/jeremyckahn/rekapi
+  - Rekapi is a keyframe animation library for JavaScript. 
+  - It gives you an API for: Defining keyframe-based animations, and Controlling animation playback.
+  - Rekapi is renderer-agnostic. 
+  - At its core, Rekapi does not perform any rendering. 
+  - However, it does expose an API for defining renderers, and comes bundled with renderers for the HTML DOM and HTML5 2D `<canvas>` .
+
 - https://github.com/CreateJS/EaselJS
   - /7.7kStar/MIT/202010/js
   - a library for building high-performance interactive 2D content in HTML5
@@ -138,13 +149,6 @@ modified: 2020-10-05T06:17:42.467Z
 - https://github.com/CreateJS/EaselJSRenderers
   - Runtime pluggable renderers for EaselJS (Canvas 2D, WebGL, HTML DOM, SVG).
   - an experiment that aims to provide runtime pluggable renderers for a subset EaselJS content
-
-- https://github.com/jeremyckahn/rekapi
-  - Rekapi is a keyframe animation library for JavaScript. 
-  - It gives you an API for: Defining keyframe-based animations, and Controlling animation playback.
-  - Rekapi is renderer-agnostic. 
-    - At its core, Rekapi does not perform any rendering. 
-    - However, it does expose an API for defining renderers, and comes bundled with renderers for the HTML DOM and HTML5 2D `<canvas>`.
 # examples
 - https://github.com/snelsi/smart-canvas
   - https://smart-canvas.vercel.app/
@@ -165,6 +169,13 @@ modified: 2020-10-05T06:17:42.467Z
 - https://github.com/limboy/canvasdraw
   - `CanvasRenderingContext2D` is powerful on drawing, but it's API is not user friendly, especially if you want to draw a bunch of stuff. 
   - this library make it easier to draw.
+
+- https://github.com/ahdinosaur/virtual-canvas
+  - canvas element for virtual-dom
+
+- https://github.com/jarenchow/janvas
+  - 未开源源码，目前 janvas.min.js 仅使用 uglifyjs --compress 简单压缩无混淆
+  - 基于 HTML5 Canvas 2d 绘图上下文的 JavaScript 绘图库，不仅便于 拓展，拥有极佳的 灵活度 和超越原生 canvas API 开发的 性能
 # ref
 - [Best low level canvas library for making interactive animations?](https://stackoverflow.com/questions/24468958/best-low-level-canvas-library-for-making-interactive-animations)
   - KineticJS, Greensock

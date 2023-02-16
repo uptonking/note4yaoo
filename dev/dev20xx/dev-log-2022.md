@@ -991,7 +991,8 @@ myStore.get(['a', 'b']) // look for id1=a + id2=b
 ## 1112
 
 - [bbcode这种格式是否还有存在的必要性？ - 知乎](https://www.zhihu.com/question/20296125)
-  - 在国内目前很多的网站是由phpwind和discuz论坛程序建成，而他们采用的还是很多年前开始流行的bbcode编辑器。bbcode转换出来的html过于简单和不标准，但是在处理xss攻击上确有它的好处。
+  - 在国内目前很多的网站是由phpwind和discuz论坛程序建成，而他们采用的还是很多年前开始流行的bbcode编辑器。
+  - bbcode转换出来的html过于简单和不标准，但是在处理xss攻击上确有它的好处。
 
 - [How to install Microsoft Edge extension (addon) in Chrome](https://superuser.com/questions/1630300)
   - With browser extensions today being built using the WebExtensions API, extensions should for the most part be cross-browser compatible between Chrome, Edge, Opera and even Firefox

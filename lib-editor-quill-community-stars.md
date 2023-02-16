@@ -11,6 +11,13 @@ modified: 2023-02-09T18:27:26.010Z
 
 # guide
 
+# not-yet
+- ## 
+
+- ## [Add support for tables](https://github.com/quilljs/quill/issues/117)
+- https://github.com/volser/quill-table-ui
+  - https://codepen.io/volser/pen/QWWpOpr
+
 # discuss
 - ## 
 

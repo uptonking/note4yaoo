@@ -45,14 +45,29 @@ modified: 2023-02-05T18:05:44.122Z
   - https://github.com/notable/notable
   - https://notable.md/
   - The Markdown-based note-taking app that doesn't suck.
+  - 优点: 作者活跃，跨平台读取文件逻辑可复用
+  - 不足: 基于文本而不是wysiwyg
   - license
-    - `<= v1.3.0` : MIT 
-    - `<= v1.5.1` : AGPLv3
+    - `<= v1.3.0` : MIT, 20190131
+    - `<= v1.5.1` : AGPLv3, 20190514
     - `>= v1.6.0` : Not open-source
-    - v1.0.0..v1.3.0: These initial releases have been published under MIT
-    - v1.4.0..v1.5.1: These later releases have been published under AGPL-v3
-    - The source code for newer versions of the app is unavailable
   - [product comparison: notable, bear, boostnote, evernote, joplin, keep, notion](https://notable.app/static/images/comparison.png)
+- https://github.com/lmihalkovic/notable /MIT
+  - https://github.com/Eastonboy99/notable /v1.3
+- https://github.com/dps/notable /MIT
+  - fork of notable adding built in Google Drive sync, an omnibox and immersive first UI
+- https://github.com/DevTomek-pl/Search-Text-Plugin-for-Notable
+  - a simple JS script for the Notable application that allows you to find a search phrase in the current document.
+- https://github.com/fabiospampinato/noty
+  - Autosaving sticky note with support for multiple notes without needing multiple windows.
+  - Deprecated in favor of Notable
+- https://github.com/fabiospampinato/electron-about
+  - Simple standalone about window for Electron.
+
+- notable-agpl
+  - https://github.com/Maxwin-z/notable
+  - https://github.com/nicholasbailey/freenotable
+  - https://github.com/benrbray/noteworthy
 
 - noteworthy /166Star/AGPLv3/202207/ts/桌面版
   - https://github.com/benrbray/noteworthy
@@ -61,6 +76,11 @@ modified: 2023-02-05T18:05:44.122Z
   - 依赖solid-js、remark13、prosemirror、electron-window-state、remark
   - 参考了prosemirror、zettlr、vscode、notable
     - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
+
+- https://github.com/vicjohnson1213/Medley /GPL/202007/inactive
+  - 依赖angular7、hightlight.js、marked、monaco-editor、rxjs、subsink、zone.js
+  - A tag-based note taking app using Markdown for formatting.
+  - I drew some design inspiration (specifically the tag-based organization) from Notable
 
 - siyuan /6.6kStar/AGPLv3/202208/ts/go/支持协作
   - https://github.com/siyuan-note/siyuan
@@ -113,10 +133,11 @@ modified: 2023-02-05T18:05:44.122Z
     - architecture to relay end-to-end encrypted CRDTs over a central service.
     - It was created out of the need to have an end-to-end encrypted protocol to allow data synchronization/fetching incl.
 
-- vnote /7.5kStar/MIT/202009/cpp
-  - https://github.com/vnotex/vnote
-  - 依赖Qt5, turndown, markdown-it
-  - a note-taking application that knows programmers and Markdown better.
+- https://github.com/bytemakers/Noteslify /GPL/202211/js
+  - A Notes Taking Web App Built With Simplicity.
+  - Your Privacy Friendly, Open Source. Alternative to EverNote.
+  - 编辑器是简单textarea
+  - ui界面和后台功能基本实现
 
 - takenote /2.8kStar/MIT/202108/ts/inactive/数据可选local或github
   - https://github.com/taniarascia/takenote
@@ -137,6 +158,11 @@ modified: 2023-02-05T18:05:44.122Z
     - Mac OS desktop build is available, but it is unsupported.
     - If you want to install Trilium on server,currently only recent Chrome and Firefox are supported (tested) browsers.
   - [Notion like database](https://github.com/zadam/trilium/issues/822)
+
+- vnote /7.5kStar/MIT/202009/cpp
+  - https://github.com/vnotex/vnote
+  - 依赖Qt5, turndown, markdown-it
+  - a note-taking application that knows programmers and Markdown better.
 
 - https://github.com/giuspen/cherrytree /cpp/python
   - A hierarchical note taking application, featuring rich text and syntax highlighting, storing data in a single XML or SQLite file.
@@ -268,12 +294,6 @@ modified: 2023-02-05T18:05:44.122Z
   - Performant graph visualization on the web with WebGL + Webworkers + IndexedDB
   - You can visualize Notion pages on force layout graph using this library
 # more-note-app
-- https://github.com/dvstechlabs/Noteslify /202211/js
-  - A Notes Taking Web App Built With Simplicity.
-  - Your Privacy Friendly, Open Source. Alternative to EverNote.
-  - 编辑器是简单textarea
-  - ui界面和后台功能基本实现
-
 - simplenote-electron /4.1kStar/GPLv2/202201/ts/inactive
   - https://github.com/Automattic/simplenote-electron
   - https://simplenote.com/
@@ -301,11 +321,6 @@ modified: 2023-02-05T18:05:44.122Z
   - CodiMD is the free software version of HackMD, developed by the HackMD team with reduced features (without book mode)
 - https://github.com/hedgedoc/hedgedoc
   - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.
-
-- https://github.com/vicjohnson1213/Medley /202007/inactive
-  - 依赖angular7、hightlight.js、marked、monaco-editor、rxjs、subsink、zone.js
-  - A tag-based note taking app using Markdown for formatting.
-  - I drew some design inspiration (specifically the tag-based organization) from Notable
 
 - https://github.com/FoxUSA/OpenNote /201802/js
   - OpenNote was built to be an open web-based alternative to Microsoft OneNote (T) and EverNote.

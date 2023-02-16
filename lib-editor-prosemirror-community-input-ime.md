@@ -9,6 +9,15 @@ modified: 2022-09-17T09:31:16.310Z
 
 # guide
 
+- [规范定义的`inputType`类型 Input Events Level 2](https://www.w3.org/TR/input-events-2/)
+  - insertText
+  - insertReplacementText
+  - insertFromPaste
+  - 只在v2中: historyUndo, historyRedo
+  - [Input Events Level 1](https://rawgit.com/w3c/input-events/v1/index.html#interface-InputEvent-Attributes)
+
+
+
 - 虚拟键盘测试难点
   - 移动端输入法种类多
   - 桌面端虚键盘分为系统层面, 浏览器软件层面

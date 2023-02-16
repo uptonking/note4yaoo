@@ -10,10 +10,35 @@ modified: 2023-02-09T12:24:51.366Z
 # guide
 
 
+# not-yet
+
+- ## [Collaboration · Issue](https://github.com/typewriter-editor/typewriter/issues/21)
+- We have a cursor embed to show where the cursor of a friend is as a good start. 
+- We should provide documentation or guides on creating backends for this, but I feel Typewriter shouldn't do any of that itself. It could be different packages. Typewriter's scope should be limited to exposing methods for receiving changes from elsewhere, but not connection etc.
+
+- ## [Table support · Issue ](https://github.com/typewriter-editor/typewriter/issues/6)
+- Table support requires 3 main areas of discussion and development.
+  - The data model for storing tables
+  - The UI for making it easy to manage tables
+  - The commands needed to manage the data
+
+- First, for the data model, my first thought was to make each row a block and separate cell content with a tab (\t) character. This maps well to CSV with tabs and newlines.
+- Another idea is to make each cell a block. This gives us the ability to do a lot more such as joining cells (which I don't like much since you don't see a lot of spanning needs in most rich text editors and it makes the UI more complex).
+
+
+
 # discuss
 - ## 
 
-- ## 
+- ## [Potential Change: More extensible base modules ](https://github.com/typewriter-editor/typewriter/issues/72)
+  - I am working on a project that intends to create an editing experience similar to Typora. In order to achieve this, I will need to change some fundamental assumptions that the default modules take.
+  - However, their current structure as raw functions makes the process of making small tweaks essentially require duplicating all logic into a new module. This means any bugfixes to the base module would need to be manually pulled over (and I'd need to be aware of them).
+  - It would be awesome if these could be classes that could then be extended and their functions overridden.
+
+
+- I like the closure style a lot, and really don't want to change it. But I can see how this would be beneficial for extension.
+
+
 
 - ## [Using both MutationObserver and input event](https://github.com/typewriter-editor/typewriter/discussions/63)
 - I wanted to jot down the reasons behind the decision to use `MutationObserver` as the main input recognition channel with input event as the fallback. Also note, this is implemented as a module (input) and can be replaced in the future or on a case-by-case basis if we find better solutions and as browsers progress.

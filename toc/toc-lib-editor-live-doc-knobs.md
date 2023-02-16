@@ -68,8 +68,10 @@ modified: 2021-03-03T21:48:48.379Z
 - jxnblk
   - https://github.com/jxnblk/live-doc
     - Convert markdown to live React demos
+    - 依赖react-markdown、react-live
   - https://github.com/jxnblk/ok-mdx
     - Browser-based MDX editor
+    - 左边预览，右边代码编辑
   - https://github.com/jxnblk/mdx-go
     - fast MDX-based dev server for progressive documentation
     - 依赖@mdx-js/mdx、mdx-live/style

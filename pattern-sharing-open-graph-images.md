@@ -41,7 +41,9 @@ modified: 2023-02-03T05:55:22.102Z
 
 - ## 
 
-- ## 
+- ## Paste tweet link, hit return
+- https://twitter.com/graeme_fulton/status/1625814615295680512
+  - it needs a few tweaks since some websites like medium block the node-fetch from reading the open graph data. Can be done with puppeteer instead
 
 - ## You can now generate dynamic open graph images for your website with Google Sheets
 - https://twitter.com/labnol/status/1488151835781505026?lang=en

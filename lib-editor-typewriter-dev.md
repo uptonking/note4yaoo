@@ -13,13 +13,18 @@ modified: 2023-02-09T12:24:23.549Z
   - collab
   - virtual render
 
+- 技术要点
+  - 模型层TextDocument将Delta中的op数组按换行符拆分为blocks/lines数组
+  - virtual-render只渲染指定区域内的元素
+  - 选区同步基于浏览器的事件
+  - 协作基于 json-patch + 简化版ot
+
 - 渲染长文档的思路
   - virtualized render
     - 参考 ajaxorg/ace、codemirror、typewriter
   - defer render
 
 - typewriter的delta结构就是一系列op集合和操作，非常类似经典OT算法
-
 # dev
 - typewriter /308Star/MIT/202301/ts
   - https://github.com/typewriter-editor/typewriter

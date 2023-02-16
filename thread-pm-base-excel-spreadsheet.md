@@ -11,7 +11,12 @@ modified: 2022-04-23T18:48:32.550Z
 
 - ## 
 
-- ## 
+- ## [GRID 2.0: Next-gen spreadsheet with presentation layer & AI assistant](https://www.producthunt.com/posts/grid-2-0)
+- Now with a GPT-3 powered formula copilot.
+* GRID Sheets, our fully featured spreadsheet editor
+* GRID AI Formula Assistant powered by GPT-3: write formulas with plain language prompts
+* Integrations: Notion, Airtable, Slack & more to come!
+* Automatic refresh for Notion and Airtable databases
 
 - ## [Google Sheets Advent Calendar](https://www.benlcollins.com/spreadsheets/google-sheets-advent-calendar/)
 

@@ -52,6 +52,9 @@ modified: 2020-12-29T11:27:41.474Z
 
 - [Open Props: sub-atomic styles](https://open-props.style/)
 
+- [Setapp | The best apps for Mac in one suite](https://setapp.com/)
+  - 黑色背景，大量圆角卡片
+
 - [Build UI](https://buildui.com/)
 
 - 黑色卡片

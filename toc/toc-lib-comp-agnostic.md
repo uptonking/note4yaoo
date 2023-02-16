@@ -7,8 +7,13 @@ modified: 2020-11-13T07:28:27.824Z
 
 # toc-lib-comp-agnostic
 
-# framework-agnostic components
+# guide
 
+- 没必要执着于render agnostic
+  - 具体场景需求不同，如ui组件、图表、动画
+  - 跨平台的差异
+  - react-canvas/webgl，在一定程度也是将vdom渲染到不同平台
+# framework-agnostic components
 - papanasi /298Star/MIT/202211/ts
   - https://github.com/CKGrafico/papanasi
   - http://papanasi.js.org/

@@ -33,7 +33,7 @@ modified: 2022-11-06T16:47:43.444Z
   - Immutable JSON Patch implementation based on RFC 6902 which adds operational transformation (OT) and last-writer-wins (LWW) support for syncing between client and server. 
   - Does not support the full OT algorithm because `copy` and `move` operations cannot be transformed correctly in all cases, so operations must always be applied in correct order. 
     - This means a central server is required to determine order.
-  - json-patch provides a utility that will help sync an object field-by-field using the Last-Writer-Wins (LWW) algorithm. 
+  - 👉🏻 json-patch provides a utility that will help sync an object field-by-field using the Last-Writer-Wins (LWW) algorithm. 
     - This sync method is not as robust as operational transformation, but it only stores a little data in addition to the object and is much simpler
     - It does not handle adding/removing array items, though entire arrays can be set. 
     - It should work great for documents that don't need merging text like Figma
