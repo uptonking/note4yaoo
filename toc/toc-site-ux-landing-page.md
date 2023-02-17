@@ -12,11 +12,18 @@ modified: 2020-12-29T11:27:41.474Z
 # repeat
 - https://designcode.io/
   - 蓝紫红色系，交互感很强
-
 # glassmorphism
 - [Float UI - Modern UI Components & Templates](https://www.floatui.com/)
   - https://www.floatui.com/get-access
   - 非开源
+
+## 渐变颜色字体
+
+- [Typebot - Open-source conversational apps builder](https://typebot.io/)
+
+- [Make.md](https://www.make.md/)
+
+- [Vuestic UI — Vue 3 UI framework](https://vuestic.dev/)
 # theming-white
 - ref
   - https://dribbble.com/tags/white_theme

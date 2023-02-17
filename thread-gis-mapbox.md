@@ -13,7 +13,8 @@ modified: 2022-06-11T20:55:55.499Z
 
 - ## 
 
-- ## 
+- ## [How The Post is replacing Mapbox with open source solutions - Kevin Schaul](https://www.kschaul.com/post/2023/02/16/how-the-post-is-replacing-mapbox-with-open-source-solutions/)
+  - instead of Mapbox, The Post used OpenMapTiles, Maputnik, PMTiles, and MapLibre to produce interactive web maps.
 
 - ## Experimenting with @Mapbox GL JS's upcoming globe view...
 - https://twitter.com/_TravelMap/status/1494010084908802054

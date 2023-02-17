@@ -10,23 +10,27 @@ modified: 2022-08-21T10:02:36.042Z
 # guide
 
 - keyword: data list/grid/table/excel/spreadsheet
-- list-grid-awesome-catalog
-  - 很多design system都实现了自己的list和grid组件
-  - https://jspreadsheets.com/
-    - https://github.com/Handsoncode/JSpreadsheets.com
-    - 点击卡片可切换查看每个项目的详情及预览图
-  - https://jsgrids.io/
-    - https://github.com/statico/jsgrids
-    - 卡片上列出了该项目所支持的表格特性及不支持的特性
-  - https://amitmy.github.io/grids/
-    - https://github.com/AmitMY/grids
-    - A grid comparison. 只比较特性，统计不完整。
-  - https://github.com/FancyGrid/awesome-grid
 
 - sheet-test
   - [SheetJS Test Files](https://github.com/SheetJS/test_files)
     - XLS/XLSX/XLSB and other spreadsheet formats
   - [vaadin spreadsheet test sheets](https://github.com/vaadin/spreadsheet/tree/master/vaadin-spreadsheet/src/test/resources/test_sheets)
+# awesome-list-grid
+- https://amitmy.github.io/grids/
+  - https://github.com/AmitMY/grids
+  - A grid comparison. 只比较特性，统计不完整。
+
+- https://jsgrids.io/
+  - https://github.com/statico/jsgrids
+  - 卡片上列出了该项目所支持的表格特性及不支持的特性
+
+- 很多design system都实现了自己的list和grid组件
+- https://jspreadsheets.com/
+  - https://github.com/Handsoncode/JSpreadsheets.com
+  - 点击卡片可切换查看每个项目的详情及预览图
+
+- https://github.com/FancyGrid/awesome-grid
+  - A curated list of grid(table) libraries and resources that developers may find useful.
 # excel
 - https://github.com/dataspread/dataspread-web
   - http://dataspread.github.io/

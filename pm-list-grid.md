@@ -82,6 +82,13 @@ modified: 2021-05-23T16:34:27.206Z
   - table from table: 大表中copy部分小表进行分析
   - data(~~viz~~)-replay: 两种方案，puppeteer、rrweb
 
+- awesome-list
+  - 支持在单元格给出数据来源
+
+- markdown-table工具
+  - 在本页面分析表格，filter/sort/group
+  - 在新页面的平台分析表格
+
 - 表格版本区分
   - readonly，适合分析
   - edit，适合编辑

@@ -32,7 +32,6 @@ modified: 2022-08-13T06:59:54.741Z
   - https://github.com/pure-admin/vue-pure-admin
     - Vue3+Vite4+Element-Plus+TypeScript编写的一款后台管理系统，兼容移动端
 
-
 - async-labs/saas /3.2kStar/MIT/202209/ts
   - https://github.com/async-labs/saas
   - https://saas-app.async-await.com/
@@ -156,6 +155,12 @@ modified: 2022-08-13T06:59:54.741Z
 - https://github.com/rooneyrulz/simple-auth-app
   - Simple role-based authentication app with MERN stack for Ecologital.
   - 后端依赖 express, mongoose
+
+- https://github.com/sjohnatas7/Articles-Management
+  - a full-stack web application for articles management
+  - Frontend: React, Redux, HTML, CSS, JavaScript
+  - Backend: Node.js, Express.js, MongoDB, PostgreSQL
+  - Authentication and authorization: Passport.js
 
 - https://github.com/nagytommy76/ComputerStoreMERN
   - learn the fundamentals of Node.js (Express.js), React.js, and a NoSQL database like MongoDB.

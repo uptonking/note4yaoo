@@ -95,6 +95,10 @@ modified: 2023-01-20T21:59:47.792Z
   - Content types - 16 fields types out of the box, and you can easily extend it with your custom
   - Node.js, TypeORM, Express
   - React, Fluent UI
+
+- https://github.com/microfeed/microfeed
+  - a lightweight content management system (CMS) self-hosted on Cloudflare. 
+  - microfeed is built by Listen Notes and is hosted on Cloudflare's Pages, R2, D1, and Zero Trust.
 # discuss
 - ## 
 

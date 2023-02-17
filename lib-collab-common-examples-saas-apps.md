@@ -89,6 +89,9 @@ modified: 2023-01-17T19:14:47.611Z
   - https://demo.unleash-hosted.com/
   - Unleash is the open source feature toggle service.
   - Unleash increases efficiency and gives teams full control of how and when they enable new functionality for end users.
+- https://github.com/flipt-io/flipt /go
+  - https://flipt.io/
+  - open source, self-hosted feature flag solution
 
 - https://github.com/hedgedoc/hedgedoc
   - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.

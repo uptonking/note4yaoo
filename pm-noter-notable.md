@@ -87,6 +87,10 @@ modified: 2022-12-19T02:01:20.161Z
   - template/page
   - data/block
 
+- markdown-table工具
+  - 在本页面分析表格，filter/sort/group
+  - 在新页面的平台分析表格
+
 - observable-notebook默认不支持私有文档
   - 考虑2年后可私有或会员私有
 # draft

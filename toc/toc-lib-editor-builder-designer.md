@@ -9,7 +9,7 @@ modified: 2020-11-17T13:38:19.107Z
 
 # guide
 - designer侧重编辑器和图形
-  - 将可拖拽编辑器用于界面设计、图表设计、产品原型设计
+  - 将可拖拽编辑器用于界面设计、交互设计、产品原型设计
 # popular
 - grida /104Star/Apache2/202206/ts/design2code
   - https://github.com/gridaco/grida

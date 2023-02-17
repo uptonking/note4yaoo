@@ -28,7 +28,7 @@ modified: 2022-08-21T10:02:27.788Z
 
 - src-list-grid-canvas
   - **luckysheet**: 未使用class类，函数式风格
-  - glide: react组件
+  - glide-data-grid: react组件
   - x-spreadsheet: class类和函数式都有
   - cheetah-grid(ts): 基于class类继承
 # list-grid-with-div
@@ -298,23 +298,27 @@ modified: 2022-08-21T10:02:27.788Z
   - an online spreadsheet like excel
   - 基于canvas实现
   - 依赖jspdf
+
 - x-spreadsheet /10.1kStar/MIT/202112/js
   - https://github.com/myliang/x-spreadsheet
   - https://myliang.github.io/x-spreadsheet
   - A web-based JavaScript（canvas） spreadsheet
+
 - glide-data-grid /836Star/MIT/202202/ts
   - https://github.com/glideapps/glide-data-grid
   - https://grid.glideapps.com/
+  - high-performance React grid component, with rich rendering
   - features
     - 未实现group
     - scales to millions of rows. Cells are rendered lazily on demand for memory efficiency.
     - Supports multiple types of cells. Numbers, text, markdown, bubble, image, drilldown, uri
     - Editing is built in.
     - Resizable and movable columns.
-  - high-performance React grid component, with rich rendering
+  - [I wrote an HTML canvas data grid (for Glide) so you don’t have to_202209](https://itnext.io/i-wrote-an-html-canvas-data-grid-so-you-dont-have-to-d945aa4780b4)
   - Canvas based data editor supporting millions of rows, rapid updating, and fully native scrolling.
   - the open-source data grid powering @glideapps
     - We built Data Grid as the basis for the Glide Data Editor.
+
 - cheetah-grid /MIT/337Star/202202/ts
   - https://github.com/future-architect/cheetah-grid
   - https://future-architect.github.io/cheetah-grid/documents/introduction/

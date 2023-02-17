@@ -90,6 +90,16 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
+- ## JSX could have been 2x faster if it was designed more optimally for JS VMs!
+- https://twitter.com/trueadm/status/1626527779620618240
+- There are two issues with current JSX transpilation:
+  1.  The use of object-literal for properties causes megamorphic access on read.
+  2.  Using variable args requires conversion to an array in `h()` function.
+- The array-based representation benchmarks 2x faster on DOM creation than the object-literal one.
+
+- Actually when I built Inferno and also looked into this when on the React team - 👉🏻 arrays were significantly slower. Not for creation that’s fast. It’s when you access and reference the bits you need that things slow down. Props might not be monomorphic but the vnode is
+  - This is particularly important when dealing with keyed lists, where you often need to reference `vNode.key` to apply a diff from one list to another – it needs to be very fast and monomorphic vnodes allow that. If you had arrays, you'd have to lookup the key pair each time.
+
 - ## A kinda pretty use case for reactivity: 
 - https://twitter.com/fabiospampinato/status/1620067141704892417
   - I'm drawing a vscode-like minimap.

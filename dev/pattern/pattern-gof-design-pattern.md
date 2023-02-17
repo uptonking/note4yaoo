@@ -9,6 +9,11 @@ modified: 2020-12-20T15:43:51.808Z
 
 # guide
 
+- [patterns](https://www.patterns.dev)
+  - Design Patterns
+  - Rendering Patterns
+  - Performance Patterns
+
 - Observer 观察者模式
   - MutationObserver
 # design-patterns

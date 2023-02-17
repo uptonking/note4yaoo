@@ -196,7 +196,7 @@ modified: 2021-06-02T18:24:28.052Z
 - You could just ignore notes that don't already have notable metadata, and have a way to explicitly import them?
 # notable-docs-xp
 
-## notable-xp-todo
+## notable-xp-dev-to
 
 - [ ] fix: lgt symbol not rendered properly, e.g. `Pick<Props, "name">`
 - [ ] fix: note file name shouldn't change when cut the most front text
@@ -216,7 +216,7 @@ modified: 2021-06-02T18:24:28.052Z
 - [ ] keyboard: alt+arrow, move current line up/down
 - [ ] file: 第一次直接使用第一行文字作为标题，之后需要在中间栏修改标题，不能直接在文件中修改标题
 
-## notable-docs
+## docs
 
 - The data directory is where all your notes and attachments will be stored
   - You can edit your notes/attachments without even using Notable

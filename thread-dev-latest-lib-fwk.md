@@ -19,7 +19,11 @@ modified: 2021-09-24T06:50:06.230Z
 
 - ## 
 
-- ## 
+- ## Introducing Sandpack 2.0 and Nodebox, a Node.js runtime for any browser.
+- https://twitter.com/codesandbox/status/1626304039251062785
+  - Run Node.js in any browser, any device
+  - Nodebox is the first runtime that allows you to run Node.js in any browser, any context, and any application 
+  - One of the biggest challenges of enabling this was performance. So, we took the time to redesign the Sandpack transpiler using Rust, refined our caching and made many other optimizations.
 
 - ## Introducing Partytown: Run Third-Party Scripts From a Web Worker
 - https://twitter.com/adamdbradley/status/1441069845559140355

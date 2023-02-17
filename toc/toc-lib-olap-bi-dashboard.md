@@ -149,6 +149,7 @@ modified: 2020-12-09T09:30:24.694Z
   - [Streamlit已经强大到如此地步，可以完全代替flask吗？](https://zhuanlan.zhihu.com/p/270590933)
     - streamlit是基于tornado的，应该拿flask和tornado比较。flask活的比tornado滋润
   - https://github.com/PablocFonseca/streamlit-aggrid
+    - Implementation of Ag-Grid component for Streamlit
   - https://github.com/cceyda/common-voice-explorer
     - https://28a3b43b-3997-4649-adda-93f52445562a.job.gra.training.ai.cloud.ovh.net/
 # viz-dashboard

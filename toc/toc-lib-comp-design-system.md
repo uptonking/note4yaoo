@@ -31,8 +31,10 @@ modified: 2020-11-13T07:30:03.110Z
     - https://twitter.com/adaptui
       - https://www.figma.com/community/file/1108051488381095193
       - Open-Source, Composable, and Customisable Design System for Figma,  React and React Native
-
 # design-system-catalog
+- https://github.com/baloise/design-system
+  - https://baloise-design-v10.vercel.app/
+  - 样式友好
 
 - Clarity Design System /VMware
   - /MIT/6.1kStar/202010/ts/angular/web-comp

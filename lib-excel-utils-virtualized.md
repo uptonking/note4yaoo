@@ -9,8 +9,12 @@ modified: 2022-08-24T10:49:48.139Z
 
 # guide
 
+- ref
+  - [How does windowing work?](https://bvaughn.github.io/forward-js-2017/#/12/5)
+  - [List Virtualization](https://www.patterns.dev/posts/virtual-lists/)
 # virtualized-blog
 - [React Virtual Window - virtualise anything for a performance boost!](https://dev.to/miketalbot/react-virtual-window-virtualise-anything-for-a-performance-boost-full-tutorial-3moe)
+  - A virtualised array of items with variable height, each item can change height.
   - https://github.com/miketalbot/virtual-window /js
   - https://codesandbox.io/s/virtual-nlm7m-nlm7m
 

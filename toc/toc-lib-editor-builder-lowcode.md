@@ -246,9 +246,10 @@ modified: 2020-12-28T12:24:09.275Z
   - A low code way to build dashboards, workflows, forms, and any internal tool.
   - 服务端依赖spring-boot、mongodb
 
-- https://github.com/merico-dev/table /apache2/202301/ts
-  - Build your own data presentation using SQL and multiple data sources including big data. 
-  - It is a natural integration with Dev Lake and Dev Analysis.
+- merico-dev-table /15Star/apache2/202212/ts
+  - https://github.com/merico-dev/table
+  - Dev Table offers a most flexible and powerful low-code data workflow loved by developers.
+  - Build your own data presentation using SQL and multiple data sources including big data.
 
 - https://github.com/Dashibase/dashibase /202207/ts/vue/inactive
   - https://dashibase.com/

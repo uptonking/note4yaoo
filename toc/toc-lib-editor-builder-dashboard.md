@@ -17,8 +17,6 @@ modified: 2021-01-08T11:48:16.590Z
   - 仪表板上的内容一般基于网格或拖拽实现，如react-grid-layout
   - 深入一个基于css实现的和一个基于框架实现的dashboard
 
-- [design patterns for dashboard design](https://dashboarddesignpatterns.github.io/patterns.html)
-
 - usecase示例
   - 针对admin的框架包括adminjs/react-admin
   - 开源项目的集合包括app-generator
@@ -56,6 +54,8 @@ modified: 2021-01-08T11:48:16.590Z
   - [search: dashboard](https://github.com/search?o=desc&p=1&q=dashboard+language%3Ajavascript+language%3Atypescript&s=stars&type=Repositories)
     - css only dashboard
     - dashboard ui
+
+- [design patterns for dashboard design](https://dashboarddesignpatterns.github.io/patterns.html)
 # popular
 - tremor /6.2kStar/apache/202202/ts
   - https://github.com/tremorlabs/tremor
@@ -68,45 +68,6 @@ modified: 2021-01-08T11:48:16.590Z
 - https://github.com/tinybirdco/log-analytics-starter-kit
   - This Stater Kit provides an example for you can build your own logging & telemetry solution powered by Tinybird.
   - Analytics Dashboard built with Next.js & Tremor
-
-- react-admin /21.1kStar/MIT/202212/ts
-  - https://github.com/marmelab/react-admin
-  - https://marmelab.com/react-admin-demo/
-  - A frontend Framework for building data-driven applications on top of REST/GraphQL APIs, React and Material Design.
-  - core依赖react-query.v3、react-hook-form
-  - 默认帐号是 login/password
-  - Backend Agnostic: Connects to any API (REST or GraphQL)
-  - React-admin uses an adapter approach, with a concept called Data Providers.
-  - designed as loosely coupled React components and hooks exposing reusable controller logic. It is very easy to replace any part of react-admin with your own
-  - [Who is using #react-admin? · Issue](https://github.com/marmelab/react-admin/issues/4027)
-  - [React-admin - Supported Data Provider Backends](https://marmelab.com/react-admin/DataProviderList.html)
-- https://github.com/NathanAdhitya/express-mongoose-ra-json-server /7Star/MIT/202209/ts
-  - creates express.js routes from a mongoose model for ra-data-json-server
-  - https://github.com/NathanAdhitya/express-mongoose-ra-json-server-demo
-- https://github.com/raphiniert-com/ra-data-postgrest /75Star/MIT/202211/ts
-  - PostgREST Data Provider for react-admin
-  - react admin client for postgREST
-- https://github.com/lalalilo/express-crud-router /113Star/MIT/202201/ts/无db
-  - Expose resource CRUD routes for Express & Sequelize. 
-  - Compatible with React Admin Simple Rest Data Provider. 
-  - The lib is ORM agnostic
-  - https://github.com/lalalilo/express-crud-router-sequelize-v6-connector
-- https://github.com/marmelab/ra-sqlite-dataprovider
-  - here is a POC to generate a react-admin administration not relying on an API but directly on a SQLite database hosted on a static server (in this case the Github pages server).
-- https://github.com/henvo/ra-jsonapi-client
-  - A JSONAPI compatible data provider for react-admin.
-- https://github.com/tykoth/ra-data-dexie
-  - Experimental React-Admin data provider using Dexie (IndexedDB)
-- https://github.com/Groopit/ra-data-odata-server
-  - OData Data Provider for react-admin
-- https://github.com/codeledge/ra-data-simple-prisma
-  - Prisma tools and Data Adapter for React Admin
-- https://github.com/LoicMahieu/react-admin-git-provider
-  - Gitlab data provider for React Admin
-- api-more
-  - https://github.com/FusionWorks/react-admin-nestjsx-crud-dataprovider /nestjs
-  - https://github.com/panter/ra-data-prisma /GraphQL
-  - https://github.com/marmelab/ra-data-google-sheets
 
 - https://appseed.us/app-generator /开源项目的集合
   - https://github.com/app-generator

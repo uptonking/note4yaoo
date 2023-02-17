@@ -21,11 +21,25 @@ modified: 2022-08-21T10:39:10.445Z
   - Custom Avro Renderer
     - IntCellRenderer: Renderer for the avro type int
     - StringCellRenderer: Renderer for avro the type string
+    - Extracts records from any given Avro format files for other components to process the records.
   - issues encountered with ag-grid that DataGrid resolved.
     - ag-grid doesn't manage a style when the column is active.
     - Ag-grid set the current cell selected by a click. 
       - If we navigate with the keyboard, ag-grid sent a new event onCellFocused but the cell isn't selected. 
     - Although that Ag-Grid recommands to avoid to use custom cell renderer to renderer the cell, we used because a cell can't have only text but many elements on this: quality indicator, comments, invisible chars, ...
+  - [Drop datagrid package · Talend/ui_20221201](https://github.com/Talend/ui/pull/4477)
+    - Datagrid has been moved to a private repository.
+    - previous commit id: 904dd6c27973e161c2f41a07a4ca1cfa8067598b
+    - https://github.com/Talend/ui/tree/904dd6c27973e161c2f41a07a4ca1cfa8067598b
+
+- https://github.com/linz/step-ag-grid
+  - https://linz.github.io/step-ag-grid/
+  - Reusable ag-grid component for LINZ
+  - ag-grid-community based grid with custom popover components implemented using a modified react-menu.
+
+- https://github.com/Alek-S/SwiftSheet /js/graphql/mongoose
+  - https://swiftsheet.app/
+  - Upload a CSV to share an online spreadsheet or mock API endpoint that auto-deletes after expiration. No user account needed.
 
 - gant-design /48Star/MIT/202208/ts/多种数据与表单组件
   - https://github.com/gantFDT/gant-design
@@ -52,24 +66,55 @@ modified: 2022-08-21T10:39:10.445Z
   - https://www.gooddata.com/
     - Modern BI for the modern data stack
 
+- https://github.com/ganeshmani/react-ag-data-grid
+  - https://react-ag-data-grid.vercel.app/
+  - Using ag-grid-react in React: Guide and Alternatives
+
+- https://github.com/ag-grid/ag-grid-react-package-example
+  - shows a very large grid (767 columns and 1, 000 rows) using React cell renderers
+
 - https://github.com/mui/mui-x/blob/master/benchmark/browser
-  - mui-x将 mui-data-grid-pro与ag-grid做了比较
+  - mui-x将 mui-data-grid-pro与ag-grid/react-virtualized做了比较
 
 - https://github.com/urbandataanalytics/bento-components/tree/master/src/components/Table
   - https://urbandataanalytics.github.io/bento-components/
   - Bento Components Library
   - 表格的样式被大改
 
-- https://github.com/lee-chun-91/dashboard
+- https://github.com/findable-no/findable-components
+  - React components created for Findable AS applications based on @Mantine
+
+- https://github.com/lee-chun-91/dashboard /js
   - https://lee-chun-91.github.io/
   - 可拖拽的仪表板示例，卡片不能重叠，表格和图表不能联动
   - 依赖ag-grid、chartjs3、react-grid-layout
+- https://github.com/SumitKumar-2000/AgGrid-Dashboard
+  - https://filterdashboard.netlify.app/
+  - 支持table view、chart view
+  - 依赖zustand
+
+- https://github.com/mongodb-js/compass
+  - This repository contains the source code and build tooling used in MongoDB Compass.
 
 - https://github.com/onur-yildiz/epias-reports
   - http://epias-reports.vercel.app/
   - 依赖mui5、ag-grid、chartjs3、redux-toolkit、react-window
 - https://github.com/cybowind/data-grid
   - This exercise addresses the challenge of how to view, sort and filter big amount of the data in grid efficiently.
+
+- https://github.com/JTG91389/ag-grid-transaction-demo
+  - simple demo site to add ag-grid transaction to our previous ag-grid websocket demo
+
+- https://github.com/spbhat672/ReactProjects
+  - react示例
+
+- https://github.com/na-ji/leaderboard
+  - https://pogo-leaderboard.vercel.app/
+  - A fully automated leaderboard for Pokémon Go trainers
+  - 设计得很好
+
+- https://github.com/lowdefy/lowdefy /js
+  - low-code framework that lets you build web apps with YAML or JSON configuration files.
 # ag-grid-react
 - ag-grid-react-example /150Star/MIT/202208/js/官方
   - https://github.com/ag-grid/ag-grid-react-example
@@ -82,6 +127,9 @@ modified: 2022-08-21T10:39:10.445Z
 
 - https://github.com/samjulien/ag-grid-react-thinkster
   - Sample code and resources for my tutorials on ag-Grid and React on Thinkster.io.
+
+- https://github.com/339598u5uut/sales-report
+  - react
 # design-system-using-ag-grid
 - https://github.com/Client-Relationship-Consultancy/open-source-design-system
   - react-modal, react-select
@@ -96,6 +144,9 @@ modified: 2022-08-21T10:39:10.445Z
 
 - https://github.com/blackbaud/skyux-ag-grid
   - angular示例
+
+- https://github.com/odpi/egeria-ui-components
+  - Encapsulated reactjs components with business logic inside.
 # examples
 - https://github.com/carlyrichmond/data-grid-alternatives
   - 依赖ag-grid-react.v27、react-redux、recharts、highcharts
@@ -110,9 +161,11 @@ modified: 2022-08-21T10:39:10.445Z
   - 依赖mui5、redux-toolkit、ag-grid、highcharts
   - I created a mock server for the stock trading app. 
     - To start the mock server: Run node `./src/server`
-- https://github.com/kychoiyohoho/ag-gridCRUD
-  - 模拟后台基于 json-server
-  - 简单示例
+
+- https://github.com/devdreamsolution/react-query-mui-context
+  - Highcharts, Ag Grid, MUI, React Query, Typescript, Context demo
+- https://github.com/anna-maria-j/visualization-samples
+  - Sample visualizations with AG Grid and Highcharts
 
 - https://github.com/Akashamba/Coronavirus-Tracker
   - https://coronavirus-tracker-live.netlify.app/
@@ -128,6 +181,7 @@ modified: 2022-08-21T10:39:10.445Z
 
 - https://github.com/shuheb/ag-grid-pomodoro
   - https://shuheb.github.io/ag-grid-pomodoro/
+  - [React Data Grid: Use React Hooks to build a Pomodoro App](https://blog.ag-grid.com/react-data-grid-use-hooks-to-build-a-pomodoro-app/)
   - A productivity app built with React and AG Grid. 
 
 - https://github.com/lab49/quickbits-react-ag-grid-speed-demo
@@ -144,10 +198,21 @@ modified: 2022-08-21T10:39:10.445Z
     - The back end is a set of Serverless functions for making DDL calls to PostgreSQL and configuring Hasura GraphQL server.
     - The PostgreSQL database schemas can be accessed directly with psql for data import/export and integrations with other tools.
 
+- https://github.com/kychoiyohoho/ag-gridCRUD
+  - 模拟后台基于 json-server
+  - 简单示例
+
 - https://github.com/balafreelancer87/react-ag-grid
   - client + server + mysql
 - https://github.com/seanlandsman/ag-grid-crud/tree/part-4
   - crud: java + ag-grid
+- https://github.com/berdyshevol/ag-grid-with-crud
+  - react
+- https://github.com/bchariot/ReactCRUD
+  - AG Grid allowing CRUD operations written in React.js
+- https://github.com/RSC01/Crud-Demo
+  - purpose to check skills useFormik, Ag-Grid and react-bootstrap
+
 - https://github.com/annamatveev/luly
   - Tasks board written in React using ag-grid
   - 依赖 express、material-ui、mongodb、redux、styled-components
@@ -167,12 +232,34 @@ modified: 2022-08-21T10:39:10.445Z
 - https://github.com/ramepras/node-app-consuming-fake-rest-service
   - Node-Express app consumes JSON fake rest api and displays data on ag-grid.
 
+- https://github.com/tchassijordan/js_dashboard
+  - A dashboard built with Ag-grid, chart.js, HTML, CSS, and native JS
+
 - https://github.com/MapColonies/discrete-layer-client
   - React app written in typescript to define manage and browse discrete layers image catalog.
 
 - https://github.com/abbasKareem/dashboard-using-electron-react
-  - Admin Dashbord
-# examples-more
+  - Admin Dashboard
+
+- https://github.com/sourav9599/Spreadsheet-data-visualizer
+  - Spreadsheet-data-visualizer
+  - 依赖flask、dtale-pandas
+
+- https://github.com/ackerleytng/logaze
+  - Better interface for filtering laptops on Lenovo outlet
+  - Scraper, written in clojure!
+- https://github.com/demiurge16/tpm-ui /kotlin-api
+  - Translation project management system
+
+- https://github.com/meetbryce/pipelinr
+  - Personal data pipeline GUI
+- https://github.com/sanaz-git/ag-grid-table
+  - A Table working with React and AG Grid Community.
+# server-side
+- https://github.com/ag-grid/ag-grid-server-side-nodejs-example
+  - A reference implementation showing how to perform server-side operations using ag-Grid with node.js and MySQL.
+  - https://github.com/eogra7/ag-grid-server-side-nodejs-example
+# more
 - https://github.com/terrestris/react-geo
   - https://terrestris.github.io/react-geo/
   - A set of geo related components to use in combination with react, antd and ol.
@@ -206,3 +293,6 @@ modified: 2022-08-21T10:39:10.445Z
 
 - https://github.com/mongodb-js/compass
   - The GUI for MongoDB.
+
+- https://github.com/InsistZch/ag-grid
+  - 菜品比对功能迭代

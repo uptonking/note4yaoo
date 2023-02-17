@@ -42,6 +42,11 @@ modified: 2023-01-17T19:13:01.845Z
   - You decide where and how to store the files. 
   - files-sync-stream accepts a generic file read function and emits data events when receiving data.
 
+- https://github.com/kettle11/tangle /rust/wasm
+  - Tangle is a library that aims to make multiplayer apps and games far easier to build.
+  - Tangle 'magically' wraps WebAssembly so you can write programs without worrying about message passing, serialization, or consensus.
+  - Under the hood Tangle uses peer to peer WebRTC connections. This may change!
+
 - https://github.com/RamonGal/Distributed-Systems /lamport+redis-redlock
   - This view is to be managed by a django rest backend that serves the views json response, which will be a serialized disposition of data from a postgres database.
   - For a perfectly in sync view for different users, we use an implementation of a `Lamport` timestamp.

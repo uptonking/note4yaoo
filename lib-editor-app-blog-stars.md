@@ -14,6 +14,10 @@ modified: 2022-08-21T10:11:43.095Z
     - 参考 ajaxorg/ace、codemirror、typewriter
   - defer render
 
+- virtualized render cons
+  - 影响浏览器自带的功能，如页面内查找
+  - 锚点自动滚动，如生成标题目录toc，评论
+
 - 编辑器入门经典示例
   - slate
     - minimal-render > event-keydown > custom-element > custom-format > commands > save-to-local > api/transform
@@ -79,11 +83,10 @@ modified: 2022-08-21T10:11:43.095Z
   - quill/draftjs/prosemirror/trix 
   - Each of them might be relying on some form of Tree to store the content which actuates the views to react. I'm only guessing. A deeper, closer look might be interesting and useful.
 
+- 
+- 
+- 
 
-
-- 
-- 
-- 
 # blogs-dev
 - [编辑器背后的数据结构](https://dontpanic.blog/data-structures-under-editors/)
   - 部分Emacs使用了Gap Buffer，包括古老的 Emacs on TECO、现代的GNU/Emacs及其前辈Gosling Emacs。

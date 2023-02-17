@@ -48,6 +48,9 @@ modified: 2020-10-15T13:42:23.746Z
   - SVG is a markup language for describing two-dimensional graphics applications and images, and a set of related graphics script interfaces. 
   - [SVG Working Group Charter](https://www.w3.org/Graphics/SVG/2014/new-charter)
   - [SVG Roadmap](https://www.w3.org/Graphics/SVG/WG/wiki/Roadmap)
+# domains/apps
+- [FHIR v4.3.0](https://www.hl7.org/fhir/)
+  - FHIR is a standard for health care data exchange, published by HL7
 # ref
 - [Understand how structured data works](https://developers.google.com/search/docs/guides/intro-structured-data)
   - Structured data is a standardized format for providing information about a page and classifying the page content

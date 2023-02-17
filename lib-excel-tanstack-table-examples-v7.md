@@ -26,9 +26,10 @@ modified: 2022-08-21T10:37:01.349Z
   - 依赖@habx/ui-core、react-table.v7、react-window、styled-components、lodash、exceljs、papaparse(csv)、react-dropzone
   - display布局: table-grid, tr-grid, td-flex
   - 例子非常多，包括 virtualized、infiniteScroll、filter、header、footer、CompareTable
-  - 单元格类似包括 array、boolean、icon、image；没有dropdown
+  - 单元格类型包括 array、boolean、icon、image；没有dropdown
   - filter支持搜索框、滑动条、下拉菜单
   - 支持导入导出csv, xlsx
+  - 导入import示例支持compare table，在一个单元格中显示两行，上一行显示删除数据，下一行显示新数据
   - 缺点是不支持编辑、不支持改变列宽度
 
 - editable-react-table /410Star/MIT/202108/js
@@ -148,7 +149,7 @@ modified: 2022-08-21T10:37:01.349Z
   - https://codesandbox.io/s/github/toni783/MUI-react-virtual-table
   - react-table.v7, react-virtual, material-ui.v4
 
-- https://github.com/paalamugan/exce  l-sheet-react-table
+- https://github.com/paalamugan/excel-sheet-react-table
   - https://paalamugan.github.io/excel-sheet-react-table/
   - You can import you excel sheet and edit your excel sheet in the UI and download that updated excel sheet.
   - 依赖 react-table、react-window、react-toastify、xlsx-parse-json

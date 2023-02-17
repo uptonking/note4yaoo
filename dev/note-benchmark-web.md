@@ -35,6 +35,10 @@ modified: 2020-07-14T09:28:43.976Z
   - Measures the initial rendering time and scroll performance for the following data grids
   - ag-grid, bryntum, devextreme, dhtmlx, extjs
 
+- https://github.com/bgrins/data-ui-tests
+  - https://bgrins.github.io/data-ui-tests/
+  - benchmarks with vanilla-table/handsontable, revo-grid
+
 - https://github.com/zsimo/render-table-benchmark
   - https://zsimo.github.io/render-table-benchmark/public/
   - different ways to render the same table with the same data. 

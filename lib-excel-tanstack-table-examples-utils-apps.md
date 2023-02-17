@@ -28,7 +28,7 @@ modified: 2022-08-21T10:36:31.021Z
 - https://github.com/Podoprigora/material-ui-custom-theme
   - https://podoprigora.github.io/material-ui-custom-theme/
   - Custom theme for material-ui by making use of sass.
-  - 依赖material-ui.v5
+  - 依赖material-ui.v5-beta，样式仍然是material风格
 # more-v7-repos
 - https://github.com/uqix/reactkit-table
   - Table component using react-table and material-ui
