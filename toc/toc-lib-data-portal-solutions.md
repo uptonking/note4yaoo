@@ -29,7 +29,7 @@ modified: 2021-01-01T16:02:50.598Z
   - https://github.com/datopian/portal.js
   - https://portaljs.org/
   - a framework for rapidly building rich data portal frontends using a modern frontend approach.
-  - 依赖material-ui.v4, mui-x-data-grid, react-plotly.js,nextjs
+  - 依赖material-ui.v4, mui-x-data-grid, react-plotly.js, nextjs
   - built in Javascript and React on top of the popular Next.js framework. 
   - portal assumes a "decoupled" approach where the frontend is a separate service from the backend and interacts with backend(s) via an API. 
   - It can be used with any backend and has out of the box support for CKAN.
@@ -55,8 +55,23 @@ modified: 2021-01-01T16:02:50.598Z
   - As an open data search engine
   - Powerful and scalable search based on ElasticSearch
   - Federated authentication via passport.js
+# metadata
+- https://github.com/GuinsooLab/darkseal
+  - A Single place to Discover, Collaborate, and Get your data right
+  - Darkseal depends on following components to build a metadata platform:
+    - JsonSchemas for defining Metadata Schemas
+    - Dropwizard/Jetty for REST APIs
+    - MySQL 8.x to store Metadata (Guinsoo is coming)
+    - ElasticSearch/OpenElasticsearch 7.x to index Metadata and power
 
+- https://github.com/GeoNode/geonode
+  - GeoNode is an open source platform that facilitates the creation, sharing, and collaborative use of geospatial data.
 
+- https://github.com/simonw/datasette  /python
+  - https://global-power-plants.datasettes.com/global-power-plants/global-power-plants
+  - 不依赖flask和django，依赖jinjia
+  - a tool for exploring and publishing data. 
+  - It helps people take data of any shape or size and publish that as an interactive, explorable website and accompanying API.
 # more
 - https://github.com/feup-infolab/dendro /202006/js/inactive
   - "Open-source Dropbox" with added description features. 

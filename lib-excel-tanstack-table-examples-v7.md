@@ -11,7 +11,6 @@ modified: 2022-08-21T10:37:01.349Z
 
 - top-dependents-of-react-table.v7
   - 各类组件库中的table或list组件
-    - guidu
     - @component-controls/components
     - @edx/paragon
     - ref

@@ -17,11 +17,19 @@ modified: 2022-08-21T10:37:01.349Z
 
 - usecase
   - rowy
+  - 参考berry-admin
+
+- dev-to
+  - 基于css组件
+  - 支持编辑
+  - 支持import excel/csv
+  - 支持export
 # popular-v8
-- material-react-table /301Star/MIT/202212/ts
+- mantine/material-react-table /301Star/MIT/202212/ts
   - https://github.com/KevinVandy/material-react-table
+    - https://www.material-react-table.com/
   - https://github.com/KevinVandy/mantine-react-table
-  - https://www.material-react-table.com/
+    - https://www.mantine-react-table.com/
   - 依赖 mui5、emotion/styled、react-table.v8、react-virtual、match-sorter
   - A fully featured Material UI V5 implementation of Tanstack React Table V8
   - examples
@@ -30,15 +38,6 @@ modified: 2022-08-21T10:37:01.349Z
     - [React Query Example](https://www.material-react-table.com/docs/examples/react-query)
   - Inspired by material-table and the MUI X DataGrid
   - All internal Material UI components are easily customizable
-
-- react-table /1Star/ISC/202212/ts
-  - https://github.com/rsrv1/react-table
-  - react data-table implementation for server returned dynamic data source
-
-- material-grid /2Star/MIT/202208/ts
-  - https://github.com/zmrl010/material-grid
-  - Feature-rich datagrid component
-  - 依赖 mui5、emotion
 
 - mantine-data-grid /117Star/MIT/202212/ts
   - https://github.com/Kuechlin/mantine-data-grid
@@ -58,6 +57,23 @@ modified: 2022-08-21T10:37:01.349Z
   - A wrapper around React Table (TanStack Table v8) using Mantine.
   - I do not plan to really maintain or update this library
 
+- https://github.com/klassenl/react-grid /202210/ts
+  - https://subtle-muffin-372579.netlify.app/
+  - Prototype for react table v8 editable table
+  - Keyboard cell navigation Click or enter to edit data Error tooltips
+
+- https://github.com/DavidCodina/tanstack-table-v8-demo-2023
+  - https://davidcodina.github.io/tanstack-table-v8-demo-2023/
+  - A configurable abstraction of TanStack Table v8.
+
+- material-grid /2Star/MIT/202208/ts/inactive
+  - https://github.com/zmrl010/material-grid
+  - Feature-rich datagrid component
+  - 依赖 mui5、emotion
+
+- https://github.com/bilalzafarr0001/server-side-data-pagination-filtering-sorting-using-react-table-tanstack
+  - implement Pagination(Offset based and Cursor based) with Mongoose and Nodejs(Handling 1M records)
+
 - react-crud /2Star/MIT/202208/ts
   - https://github.com/sefirosweb/react-crud
   - https://sefirosweb.github.io/react-crud
@@ -66,6 +82,9 @@ modified: 2022-08-21T10:37:01.349Z
   - It is made by bootstrap (react-bootstrap) you can modify colors and styles for these components
   - ref
     - https://github.com/toofaniCoder/react-table-8.5-crud
+
+- https://github.com/Serkan-Ucakcioglu/React-Query-React-Table-Pagination
+  - Tanstack react query and react table and pagination.
 
 - @uidu/table /19Star/MIT/202212/ts/react
   - https://github.com/uidu-org/guidu
@@ -89,25 +108,21 @@ modified: 2022-08-21T10:37:01.349Z
     - https://github.com/zendricom/tableus-ui-bootstrap5
     - https://github.com/zendricom/tableus-fetcher-laravel-rest
 
-- https://github.com/klassenl/react-grid /202210/ts
-  - https://subtle-muffin-372579.netlify.app/
-  - Prototype for react table v8 editable table
-  - Keyboard cell navigation Click or enter to edit data Error tooltips
+- https://github.com/HeartLee/table-tanstack /202212/ts/starter/wip
+  - 使用tanstack table 开发一个满足设计体系定制、性能优秀的Table组件
+  - 基于 Ant Design V5 and TanStack Table V8
+
+- https://github.com/sajermann/CustomReactTable
+  - Tailwind
 
 - merico-dev/table /15Star/apache2/202212/ts
   - https://github.com/merico-dev/table
   - Dev Table offers a most flexible and powerful low-code data workflow loved by developers.
   - Build your own data presentation using SQL and multiple data sources including big data. 
 
-- https://github.com/HeartLee/table-tanstack /202212/ts/starter
-  - 使用tanstack table 开发一个满足设计体系定制、性能优秀的Table组件
-
-- https://github.com/sajermann/CustomReactTable
-  - Tailwind
+- https://github.com/manuel-mauky/tanstack-table-core-example
+  - Trying out TanStack Table without frameworks but only standard HTML and web components
 # design-system-ui-v8
-- https://github.com/blockchain/constellation/blob/development/packages/constellation
-  - 依赖tanstack-table、radix-ui、headlessui、tailwindcss
-
 - https://github.com/saas-js/saas-ui/tree/main/packages/saas-ui-data-table
   - https://saas-ui.dev/docs/components/data-display/data-table
   - A DataTable component for Chakra UI, build with react-table.
@@ -122,9 +137,12 @@ modified: 2022-08-21T10:37:01.349Z
   - Requires numeric width and height of the container.
 
 - https://github.com/Achaak/pikas-ui 
-  - https://pikas-ui.vercel.app/
+  - https://pikas-ui.vercel.app/components/table
   - Pikas-UI is a React UI library for building web applications with StitchesJS.
   - The library uses Stitches for styling and Radix for the accessibility.
+
+- https://github.com/blockchain/constellation/blob/development/packages/constellation
+  - 依赖tanstack-table、radix-ui、headlessui、tailwindcss
 
 - https://github.com/provectus/kafka-ui
   - Open-Source Web UI for Apache Kafka Management
@@ -137,11 +155,18 @@ modified: 2022-08-21T10:37:01.349Z
   - https://plasma.coveo.com/layout/Table
 - https://github.com/GetJobber/atlantis
   - Atlantis is a design system for Jobber. The primary objective for Atlantis is to provide a system of reusable components t
+
+- https://github.com/theodorusclarence/aether-design-system
+  - https://aether.thcl.dev/sandbox/table
+
+- https://github.com/owenchang1992/Headless-Table-Example
+  - Integrate TanStack Table with Chakra UI
 # examples-v8
 - https://github.com/rizqitsani/learn-tanstack-table
   - http://learn-tanstack-table.vercel.app/
   - sort/filter/pagination
-  - https://github.com/f-starace/Tailwind-Tanstack-Table
+- https://github.com/f-starace/Tailwind-Tanstack-Table
+  -  Added striped, resizable, condensed, filterGlobal, filterColumns, pagination, striped, footer, verticalLines, bordered and sticky property to table props
 
 - https://github.com/BlackHatMan/Table
   - Table on React with Mui
@@ -154,6 +179,20 @@ modified: 2022-08-21T10:37:01.349Z
   - Define a wrapper component for @tanstack/react-table
 - https://github.com/polyms/vite-boilerplate
   - A starter for React with Typescript with the fast Vite and all static code testing with Eslint and formatting with Prettier.
+
+- https://github.com/lawrencecchen/planetsheet /202207/ts/inactive
+  - https://planetsheet.vercel.app/
+  - 依赖 glide-data-grid、radix-ui、trpc、knex、react-query.v3
+  - A SQL editor designed for developers and content editors.
+  - Today, Planetsheet is an (early) alternative to npx prisma studio, Postico, and TablePlus. 
+  - In the future, Planetsheet will give you (and your content editors) an interface as intuitive as Airtable and Google Sheets, while letting you (as a developer) use powerful databases underneath.
+
+- https://github.com/Rayologist/next-template
+  - NextJS template: Typescript, Mantine, Zod, React Hook Form, @tanstack/react-table, and @tanstack/react-virtual
+
+- https://github.com/devsayog/nextjs-ecommerce
+  - https://fashion-lac.vercel.app/
+  - Nextjs ecommerce is fullstack ecommerce web app with admin panel.
 
 - https://github.com/FreeWall/dbfy /202212/ts
   - http://dbfy.vercel.app/
@@ -178,13 +217,6 @@ modified: 2022-08-21T10:37:01.349Z
   - Team management app with authentication(MERN project)
   - 依赖 redux、reactstrap、socket.io
 
-- https://github.com/lawrencecchen/planetsheet /202207/ts/inactive
-  - https://planetsheet.vercel.app/
-  - 依赖 glide-data-grid、radix-ui、trpc、knex、react-query.v3
-  - A SQL editor designed for developers and content editors.
-  - Today, Planetsheet is an (early) alternative to npx prisma studio, Postico, and TablePlus. 
-  - In the future, Planetsheet will give you (and your content editors) an interface as intuitive as Airtable and Google Sheets, while letting you (as a developer) use powerful databases underneath.
-
 - https://github.com/pankaspe/Azansca-project
   - http://azansca-project.vercel.app/
   - Azansca.it project bootstrapped with Next js & Chakra UI.
@@ -193,9 +225,15 @@ modified: 2022-08-21T10:37:01.349Z
 - https://github.com/lqd1434/MatexPro
   - 基于electron的万能工具软件
 
+- https://github.com/ebonstar/dreamlight-recipes
+  - Recipe book for Dreamlight Valley
+
 - https://github.com/joangavelan/corteza
   - https://corteza-book-tracker.vercel.app/
   - An app that works with your local storage to keep track of the book(s) you read, save notes, ideas and more.
+
+- https://github.com/wan6sta/cards-quiz
+  - https://cards-quiz.vercel.app/
 
 - https://github.com/Danzo7/doctorIO
   - medical management software to improve the connectivity between doctors and patients
@@ -255,8 +293,6 @@ modified: 2022-08-21T10:37:01.349Z
   - 提供了典型的仪表板示例
   - 依赖 headlessui、trpc、recharts、prisma、next-auth
 
-- https://github.com/manuel-mauky/tanstack-table-core-example
-  - Trying out TanStack Table without frameworks but only standard HTML and web components
 - https://github.com/freewind-demos/typescript-tanstack-react-table-global-filter-demo
   - ts+react
 
@@ -295,6 +331,10 @@ modified: 2022-08-21T10:37:01.349Z
 - https://github.com/cjroth/vertex-solid
   - built a Virtualized table with @solid_js and @tan_stack virtual (also playing with @zag_js and Hope UI!):
   - It's showing the max number of rows that Chrome will support due to max element height.
+
+- react-table /1Star/ISC/202212/ts
+  - https://github.com/rsrv1/react-table
+  - react data-table implementation for server returned dynamic data source
 
 - https://github.com/zakodium-oss/react-science
   - https://react-science.pages.dev/

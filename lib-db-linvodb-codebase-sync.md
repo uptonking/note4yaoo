@@ -17,6 +17,7 @@ modified: 2023-01-16T21:14:55.049Z
   - 支持每个用户拥有多个设备，不用userId，考虑到org的同步而使用groupId/teamId
   - 考虑到客户端升级的问题，同步前一定要检查一个version/checkpointTime，参考indexeddb upgrade
   - 支持手动打开和关闭同步/协作，参考crdt-for-mortals的手动离线
+  - 离线很久的情况下，大量数据会积累在本地，此时同步给其他客户端再计算很可能会阻塞；所以多考虑同步数据，实时协作的场景很少会传输大量数据，微软fluid-relay就是轻服务端
 
 - 在changes-ops表上需要执行的操作
   - getRowObjectById: 根据id获取 row object

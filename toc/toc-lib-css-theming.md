@@ -14,12 +14,14 @@ modified: 2021-01-28T21:34:18.645Z
   - 对于css modules的实现
   - 普通组件要切换class
   - 参考主流组件库的实现
-
 # popular
-
 - https://github.com/denali-design/denali-css
+  - https://denali.design/
+  - https://denali-design.github.io/denali-css
   - Themeable CSS framework of Denali Ui components
   - theming基于scss变量
+  - 官方文档示例做得好，但实际使用一般
+
 - https://github.com/Marcisbee/chipolette
   - http://marcisbee.com/chipolette/
   - It is designed to replace Bootstrap and to be used with CSS variables.
@@ -27,6 +29,15 @@ modified: 2021-01-28T21:34:18.645Z
   - It's a fork from Shoelace and Bootstrap, that fully embraces CSS variables/custom properties.
   - It's written in LESS, because of nesting and other neat features
   - It is designed to replace Bootstrap and to be used with CSS variables.
+
+- https://github.com/CodyHouse/codyhouse-framework
+  - https://codyhouse.co/
+  - A lightweight front-end framework for building accessible, bespoke interfaces.
+  - 提供了ui组件的在线编辑器示例
+  - 文档和示例做得很好
+    - https://codyhouse.co/ds/globals/colors
+    - https://codyhouse.co/ds/globals/colors
+  - 使用了css vars
 
 ## switch-themes
 
@@ -57,14 +68,6 @@ modified: 2021-01-28T21:34:18.645Z
   - https://dohliam.github.io/dropin-minimal-css
   - This is a quick drop-in CSS switcher to allow for previewing some of the many minimal CSS-only frameworks that are available.
 
-- https://github.com/CodyHouse/codyhouse-framework
-  - https://codyhouse.co/
-  - A lightweight front-end framework for building accessible, bespoke interfaces.
-  - 提供了ui组件的在线编辑器示例
-    - https://codyhouse.co/ds/globals/colors
-    - https://codyhouse.co/ds/globals/colors
-  - 使用了css vars
-
 - https://github.com/Artik-Man/material-theme-creator
   - https://artik-man.github.io/material-theme-creator-demo-page/
   - Converting Angular Material themes to CSS Custom Properties (Variables)
@@ -79,9 +82,7 @@ modified: 2021-01-28T21:34:18.645Z
   - https://classless.alhur.es/
   - The same HTML, multiple CSS themes.
   - 示例页面的主题名称非常小众，各个样式很不美观
-
 # dark-mode
-
 - https://github.com/ash-rocks/ash-css
   - http://ashcss.rocks/
   - 基于less变量实现
@@ -118,9 +119,7 @@ modified: 2021-01-28T21:34:18.645Z
   - Dark theme for Slack
 - https://github.com/LucaScorpion/prismjs-darcula-theme
   - PrismJS Darcula syntax highlighting theme based on the JetBrains IDEs
-
 # react-theming
-
 - https://github.com/seek-oss/braid-design-system
   - Themeable design system for the SEEK Group
 - https://github.com/CAAPIM/themer
@@ -135,9 +134,7 @@ modified: 2021-01-28T21:34:18.645Z
   - A themeable UI component library built with Emotion and Styled System
 - https://github.com/flipace/react-themeit
   - theme your components using css modules and js style objects thanks to aphrodite.
-
 # theming-with-css-vars
-
 - https://github.com/shoelace-style/shoelace
   - A forward-thinking library of web components.
   - The default theme is included as part of shoelace.css and should always be loaded first, even if you want to use another theme exclusively. 
@@ -168,9 +165,7 @@ modified: 2021-01-28T21:34:18.645Z
 - https://github.com/psbhagat/dark-mode-toggle
   - https://codepen.io/priyanka-bhagat/pen/ExgQgJZ
   - A simple dark mode toggle implemented using CSS variables.
-
 # theming-tools
-
 - https://github.com/intuit/postcss-themed
   - A PostCSS plugin for generating themes.
 - https://github.com/salesforce/themify /201908
@@ -187,9 +182,7 @@ modified: 2021-01-28T21:34:18.645Z
   - Experimental: convert system-ui themes to css variables
     - 将theme object的各属性，转换成css vars，内层属性名使用-连接
   - [theme-ui已经自己实现了@theme-ui/custom-properties](https://github.com/system-ui/theme-ui/blob/develop/packages/custom-properties/test/__snapshots__/test.js.snap)
-
 # more-themeable-examples
-
 - react
   - https://github.com/markdalgleish/react-themeable
   - https://github.com/javivelasco/react-css-themr

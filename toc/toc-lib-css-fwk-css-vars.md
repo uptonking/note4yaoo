@@ -26,9 +26,7 @@ modified: 2021-02-09T13:39:41.705Z
 
 - css框架
   - 一般结构: layout, elements, forms, components
-
 # popular
-
 - pico.css /65Star/MIT/202010/scss/文档优秀
   - https://github.com/picocss/pico
   - https://picocss.com/
@@ -50,6 +48,7 @@ modified: 2021-02-09T13:39:41.705Z
   - https://www.gethalfmoon.com/
   - https://codepen.io/tahmid-hm-dev/pens/public
   - [Complete page demo](https://www.gethalfmoon.com/page-sections-demo/)
+  - 类似bootstrap的设计感太重了
   - theming基于css vars，dark-mode变量名前缀为`--dm`
   - 组件级css vars易分离出来
   - 未模块化，一个css文件一万多行
@@ -70,6 +69,7 @@ modified: 2021-02-09T13:39:41.705Z
   - https://github.com/facebookincubator/infima
   - https://facebookincubator.github.io/infima/
   - A modern styling framework for content-driven websites, being developed alongside Docusaurus 2.
+  - 组件太少
   - It's just CSS
   - Built using modern CSS approaches - CSS variables and Postcss, BEM naming.
   - built-in support for theming and dark mode!
@@ -95,9 +95,7 @@ modified: 2021-02-09T13:39:41.705Z
   - It is designed to replace Bootstrap and to be used with CSS variables.
   - It's a fork from Shoelace and Bootstrap, that fully embraces CSS variables/custom properties.
   - It's written in LESS, because of nesting and other neat features
-
 # css-vars-fwk
-
 - https://github.com/alphardex/aqua.css /250Star/scss
   - https://aquacss.netlify.com/
   - 纯CSS框架，没有任何JS。许多CSS变量，易换肤
@@ -153,9 +151,10 @@ modified: 2021-02-09T13:39:41.705Z
   - It's based on CSS Variables for easy customization and extension. 
   - It features cool tech like CSS Grid. 
   - The source is a collection of SCSS modules
-
+# css-vars-utils
+- https://github.com/AztlanEngineering/swatch
+  - lightweight (S)CSS coloring and theming library based on CSS vars and the Setter/Getter pattern.
 # more-css-vars
-
 - https://github.com/yairEO/ui-range
   - Beautiful UI-Range input component, highly customisable, based on CSS variables.
   - A CSS-only component which is designed to work along-side the corresponding markup 

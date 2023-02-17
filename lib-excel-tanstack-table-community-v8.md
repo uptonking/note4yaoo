@@ -15,7 +15,8 @@ modified: 2022-08-21T10:19:58.756Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Plugin Guide](https://github.com/TanStack/table/discussions/2471)
+- plugins are being deprecated. I would suggest moving to v8 and rearchitecting away from plugins to a more composable pattern.
 
 - ## React Table will here-forth be known as... TanStack Table!
 - https://twitter.com/tannerlinsley/status/1530298053046857728

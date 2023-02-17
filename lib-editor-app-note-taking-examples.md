@@ -11,6 +11,8 @@ modified: 2023-02-05T18:05:44.122Z
 - note-taking solutions
   - web first
   - offline first
+
+- 开发桌面版和vscode扩展的区别
 # popular
 - TiddlyWiki5 /6.9kStar/BSD/202209/js
   - https://github.com/Jermolene/TiddlyWiki5

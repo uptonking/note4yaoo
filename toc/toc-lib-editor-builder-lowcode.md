@@ -279,9 +279,6 @@ modified: 2020-12-28T12:24:09.275Z
   - An all-in-one IDE to create internal or customer-facing apps.
   - A place to create, build and share building blocks of web applications.
 
-- https://github.com/node-red/node-red /js
-  - Low-code programming for event-driven applications
-
 - https://github.com/polterguy/magic
   - a Low-Code CRUD generator with machine learning and artificial intelligence allowing you to generate most of your code 100% automatically.
   - In addition it is a complete open source cloud platform and IDE
@@ -322,6 +319,9 @@ modified: 2020-12-28T12:24:09.275Z
 # workflow-automation-tasks-pipeline
 - tips
   - 考虑跨平台/系统的task兼容性、分享，主流的airflow/ifttt
+
+- https://github.com/node-red/node-red /apache2/js
+  - Low-code programming for event-driven applications
 
 - https://github.com/automatisch/automatisch /AGPLv3/ts/graphql
   - open source Zapier alternative. 

@@ -6,12 +6,11 @@ modified: 2022-08-21T10:19:58.757Z
 ---
 
 # lib-excel-tanstack-table-docs
-
 - Hooks for building lightweight, fast and extendable datagrids for React
 - A Table Utility, not a Table Component
-
+# guide
+- Try rewriting your plugin (v8 doesn't have a plugin system any more) as a functional wrapper that uses TanStack Table internally.
 # overview
-
 - Features
   - Lightweight (small size and tree-shaking)
   - Headless (100% customizable, Bring-your-own-UI)
@@ -41,9 +40,7 @@ modified: 2022-08-21T10:19:58.757Z
 - This API is performant, extensible, and unopinionated about markup, styles or rendering.
 - By acting as an ultra-smart table utility, React Table opens up the possibility for your tables to integrate into any existing theme, UI library or existing table markup. 
   - This also means that if you don't have an existing table component or table styles, React Table will help you learn to build the table markup and styles required to display great tables.
-
 # Concepts
-
 - React Table v7 is a headless utility, 
   - which means out of the box, it doesn't render or supply any actual UI elements.
   - You are in charge of utilizing the state and callbacks of the hooks provided by this library to render your own table markup.
@@ -68,9 +65,7 @@ modified: 2022-08-21T10:19:58.757Z
   - Pagination
   - Expanded State
   - Any functionality provided by custom plugin hooks, too!
-
 # API 
-
 - The primary React Table hook
   - [ `useTable` ](https://react-table.tanstack.com/docs/api/useTable)
 - Plugin Hooks
@@ -96,7 +91,7 @@ modified: 2022-08-21T10:19:58.757Z
   - It serves as the starting point for every option and every plugin hook that React Table supports. 
   - The options passed into `useTable` are supplied to every plugin hook after it in the order they are supplied, eventually resulting in a final `instance` object that you can use to build your table UI and interact with the table's state.
 
-``` JS
+```JS
 const instance = useTable({
     data: [...],
     columns: [...],
@@ -120,9 +115,7 @@ const instance = useTable({
 - In the event that you want to programmatically enable or disable plugin hooks, most of them provide options to disable their functionality, eg. `options.disableSortBy`
 - React Table relies on memoization to determine when state and side effects should update or be calculated. 
   - This means that every option you pass to useTable should be memoized either via `React.useMemo` (for objects) or `React.useCallback` (for functions).
-
 # changelog
-
 - ref
   - https://github.com/tannerlinsley/react-table/blob/master/CHANGELOG.md
   - https://github.com/tannerlinsley/react-table/releases/tag/v7.0.0

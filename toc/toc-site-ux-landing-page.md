@@ -12,6 +12,11 @@ modified: 2020-12-29T11:27:41.474Z
 # repeat
 - https://designcode.io/
   - 蓝紫红色系，交互感很强
+
+# glassmorphism
+- [Float UI - Modern UI Components & Templates](https://www.floatui.com/)
+  - https://www.floatui.com/get-access
+  - 非开源
 # theming-white
 - ref
   - https://dribbble.com/tags/white_theme
@@ -59,6 +64,8 @@ modified: 2020-12-29T11:27:41.474Z
 
 - 黑色卡片
   - https://twitter.com/AdhamDannaway/status/1621525499787763713
+
+- [Open Props - Get Started by argyleink - StackBlitz](https://stackblitz.com/@argyleink/collections/open-props)
 # theming-green
 - ref
   - https://dribbble.com/tags/green_theme

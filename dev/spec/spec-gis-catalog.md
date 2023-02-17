@@ -12,6 +12,11 @@ modified: 2021-09-30T07:45:22.343Z
 # guide
 - features
   - mdx based map-doc, 简单读写无需借助专业软件
+
+- [Folder vs. MBTiles vs. GeoPackage](https://documentation.maptiler.com/hc/en-us/articles/360020886878-Folder-vs-MBTiles-vs-GeoPackage)
+  - The folder contains a structure of different tiles sorted into directories according to the zoom levels. To load a folder on the hosting server takes longer, but the response on the website is then faster.
+  - MBTiles is a single file, that can be easily loaded to any hosting and the upload time is shorter. However, the response for the users of your website is a bit slower than for the Folder structures.
+  - GeoPackage is an exchange format standardized by Open Geospatial Consortium. It is also a single file, that can be easily loaded to any hosting and the upload time is short. GeoPackage file (.gpkg) can be compliant to MBTiles format which makes it compatible with many viewers and software tools.
 # popular-formats-about-mapping
 - Mapbox Vector Tile specification
   - https://github.com/mapbox/vector-tile-spec

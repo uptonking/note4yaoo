@@ -52,6 +52,7 @@ modified: 2021-01-12T18:48:52.713Z
   - 依赖stitches-css-in-js、
   - created with React.js and Stitches, based on React Aria and inspired by Vuesax(vue).
   - modal的模糊背景特效很好
+  - 大量使用阴影
 
 - https://github.com/dracula/dracula-ui
   - https://ui.draculatheme.com/
@@ -79,6 +80,7 @@ modified: 2021-01-12T18:48:52.713Z
   - https://github.com/denali-design/denali-css
   - https://denali.design/
   - Themeable CSS framework of Denali Ui components
+  - 官方文档示例做得好，但实际使用一般
   - theming基于scss vars，代码十分清晰，未使用css vars
     - [v1版本的global variables](https://denali.design/docs/1.0.3/guides/global-variables)用的是css vars
     - v2版本统一使用scss vars

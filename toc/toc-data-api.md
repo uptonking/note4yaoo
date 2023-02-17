@@ -7,24 +7,105 @@ modified: 2020-11-11T13:16:24.994Z
 
 # toc-data-api
 
-# metadata
+# guide
 
-- https://github.com/GuinsooLab/darkseal
-  - A Single place to Discover, Collaborate, and Get your data right
-  - Darkseal depends on following components to build a metadata platform:
-    - JsonSchemas for defining Metadata Schemas
-    - Dropwizard/Jetty for REST APIs
-    - MySQL 8.x to store Metadata (Guinsoo is coming)
-    - ElasticSearch/OpenElasticsearch 7.x to index Metadata and power
+- tips
+  - 相比较免费，api的稳定更重要
 
-- https://github.com/GeoNode/geonode
-  - GeoNode is an open source platform that facilitates the creation, sharing, and collaborative use of geospatial data.
+- free-api-faq
+  - [有哪些好玩的免费的API接口? - 知乎](https://www.zhihu.com/question/32225726/answers/updated)
+  - [国内有哪些类似如百度apistore 的平台？ - 知乎](https://www.zhihu.com/question/47541137/answers/updated)
+  - [前端常用免费API接口汇总 - 掘金](https://juejin.cn/post/6844903982276542478)
 
-- https://github.com/simonw/datasette  /python
-  - https://global-power-plants.datasettes.com/global-power-plants/global-power-plants
-  - 不依赖flask和django，依赖jinjia
-  - a tool for exploring and publishing data. 
-  - It helps people take data of any shape or size and publish that as an interactive, explorable website and accompanying API.
+- https://github.com/fangzesheng/free-api
+  - 统计了网上诸多的免费API，为您收集免费的接口服务，做一个API的搬运工
+
+- 聚合api平台
+  - https://www.apifox.cn/web/main
+  - [免费API调用-免费数据块下载-聚合数据](https://www.juhe.cn/vip)
+  - [天行数据TianAPI](https://www.tianapi.com/vip.html)
+  - [百度API商城，只能购买一次](https://apis.baidu.com/)
+  - [阿里云API市场](https://market.aliyun.com/data)
+  - [果创云 YesApi.cn](http://www.yesapi.cn/)
+  - [接口大全-免费API, 收集所有免费的API](https://www.free-api.com/)
+  - [免费API - 免费接口调用平台](https://api.iwyu.com/)
+  - [星辰API - 提供免费接口调用平台](https://collect.xmwxxc.com/)
+# api-toy
+- hacker news api
+  - https://github.com/HackerNews/API
+  - https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty
+
+- imdb-movie
+
+- [JSONPlaceholder - Free Fake REST API](http://jsonplaceholder.typicode.com/)
+  - 返回100条数据，每条内容都有帖子 ID、发贴人 ID、标题、以及简介。
+    - http://jsonplaceholder.typicode.com/posts
+  - 每次请求都会随机返回一张猫的图片。
+    - https://api.thecatapi.com/v1/images/search?limit=1
+  - [前端需要的免费在线api接口](https://juejin.cn/post/7041461420818432030)
+# cn-no-auth
+- [kieng api 视频、音乐、IP、其他类型的API接口](https://api.kieng.cn/)
+- 随机一句话
+  - https://api.kieng.cn/inaword
+
+- [V2EX API 接口](https://www.v2ex.com/p/7v9TEc53)
+  - 默认情况下，每个IP每小时可以发起的 API 请求数被限制在 120 次
+- 最热主题，相当于首页右侧的10条热点内容。
+  - https://www.v2ex.com/api/topics/hot.json
+- 最新主题，相当于首页的“全部”下的最新内容。
+  - https://www.v2ex.com/api/topics/latest.json
+
+- [干货集中营API v2文档，invalid](https://gank.io/api)
+- 获取文章所有子分类
+  - https://gank.io/api/v2/categories/Article
+- 获取干货分类下Android子分类的10个随机文章列表
+  - https://gank.io/api/v2/random/category/GanHuo/type/Android/count/10
+
+## 天气类
+
+- [天气JSON API，不限次数获取十五天的天气预报](https://www.sojson.com/blog/305.html)
+- http://t.weather.itboy.net/api/weather/city/101030100
+  - 不能使用ajax，必须后端语言，比如 Java、PHP、C#，PY等。 注：Android，iOS 之类直接调用，我发现后会封掉，建议后端调用。
+
+- [免费天气API接口|天气预报接口|全球天气API接口|气象预警|空气质量](https://www.tianqiapi.com/)
+
+### [中国天气网-气象大数据平台-test-key](http://www.weatherdt.com/help.html)
+
+- [【手把手教你】如何获取中国天气网，获取想要城市的天气-图文并茂-分析代码 - 掘金](https://juejin.cn/post/7140859507730546695)
+
+- 预报接口调试
+  - http://api.weatherdt.com/common/?area=101160901|101160801&type=forecast&key=fd034bf8fe70289698ec4ea79876feaa
+  - 响应结果全是编码，难以理解
+
+- [气象大数据平台](http://www.weatherdt.com/)
+  - 平台为注册用户提供免费数据产品集试用，为期一个月，小于1万次调用，每个注册账号可购买一次。
+
+## 快递物流类
+
+- [快递鸟api】](https://www.kdniao.com/membership)
+
+- ## more
+- https://github.com/yuyang2016/Chinese-Free-API
+  - 已停更
+
+- [味分享数据](https://www.liangmlk.cn/)
+
+- [自己实现的免费开放接口API](https://blog.csdn.net/c__chao/article/details/78573737)
+- 新实时段子
+  - https://api.apiopen.top/getJoke?page=1&count=2&type=video
+
+- [WHOIS信息查询](https://swho.cn/api/document)
+
+- 非官方 api
+  - https://github.com/search?o=desc&q=%E9%9D%9E%E5%AE%98%E6%96%B9+api&s=updated&type=Repositories
+
+- ## deprecated-api
+- 豆瓣非官方api
+  - https://github.com/zce/douban-api-docs
+  - https://douban-api-docs.zce.me/
+  - 全部需要apikey，已经无法使用
+# cn-auth
+- [美团餐饮开放平台openAPI文档](https://open.waimai.meituan.com/openapi_docs/)
 # covid-19
 - https://github.com/BlankerL/DXY-COVID-19-Crawler
   - https://lab.isaaclin.cn/nCoV/
@@ -75,69 +156,6 @@ modified: 2020-11-11T13:16:24.994Z
   - Data on COVID-19 (coronavirus) cases, deaths, hospitalizations, tests • All countries
   - Updated daily by Our World in Data
   - 数据大多数是csv，少部分是json
-# api-toy
-- hacker news api
-  - https://github.com/HackerNews/API
-  - https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty
-
-- imdb-movie
-
-- [前端需要的免费在线api接口](https://juejin.cn/post/7041461420818432030)
-  - 返回100条数据，每条内容都有帖子 ID、发贴人 ID、标题、以及简介。
-    - http://jsonplaceholder.typicode.com/posts
-  - 每次请求都会随机返回一张猫的图片。
-    - https://api.thecatapi.com/v1/images/search?limit=1
-# cn-no-auth
-- [天气JSON API，不限次数获取十五天的天气预报](https://www.sojson.com/blog/305.html)
-- http://t.weather.itboy.net/api/weather/city/101030100
-  - 不能使用ajax，必须后端语言，比如 Java、PHP、C#，PY等。 注：Android，iOS 之类直接调用，我发现后会封掉，建议后端调用。
-
-- ## [中国天气网-气象大数据平台-test-key](http://www.weatherdt.com/help.html)
-- 预报接口调试
-  - http://api.weatherdt.com/common/?area=101160901|101160801&type=forecast&key=fd034bf8fe70289698ec4ea79876feaa
-  - 响应结果全是编码，难以理解
-
-- ## [V2EX API 接口](https://www.v2ex.com/p/7v9TEc53)
-  - 默认情况下，每个IP每小时可以发起的 API 请求数被限制在 120 次
-- 最热主题，相当于首页右侧的10条热点内容。
-  - https://www.v2ex.com/api/topics/hot.json
-- 最新主题，相当于首页的“全部”下的最新内容。
-  - https://www.v2ex.com/api/topics/latest.json
-
-- ## [干货集中营API v2文档](https://gank.io/api)
-- 获取文章所有子分类
-  - https://gank.io/api/v2/categories/Article
-- 获取干货分类下Android子分类的10个随机文章列表
-  - https://gank.io/api/v2/random/category/GanHuo/type/Android/count/10
-
-- ## more
-- https://github.com/yuyang2016/Chinese-Free-API
-  - 已停更
-- https://github.com/fangzesheng/free-api
-  - 统计了网上诸多的免费API，有些接口来自第三方，在第三方注册就可以成为他们的会员，免费使用他们的部分接口。
-
-- ## toy-api
-
-- [kieng api 视频、音乐、IP、其他类型的API接口](https://api.kieng.cn/)
-- 随机一句话
-  - https://api.kieng.cn/inaword
-
-- [自己实现的免费开放接口API](https://blog.csdn.net/c__chao/article/details/78573737)
-- 新实时段子
-  - https://api.apiopen.top/getJoke?page=1&count=2&type=video
-
-- [WHOIS信息查询](https://swho.cn/api/document)
-
-- 非官方 api
-  - https://github.com/search?o=desc&q=%E9%9D%9E%E5%AE%98%E6%96%B9+api&s=updated&type=Repositories
-
-- ## deprecated-api
-- 豆瓣非官方api
-  - https://github.com/zce/douban-api-docs
-  - https://douban-api-docs.zce.me/
-  - 全部需要apikey，已经无法使用
-# cn-auth
-- [美团餐饮开放平台openAPI文档](https://open.waimai.meituan.com/openapi_docs/)
 # ww
 - https://github.com/public-apis/public-apis
 

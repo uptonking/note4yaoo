@@ -10,6 +10,7 @@ modified: 2020-07-14T11:51:59.253Z
 # guide
 
 - blogs
+  - [React JS Best Practices From The New Docs](https://sebastiancarlos.com/react-js-best-practices-from-the-new-docs-1c65570e785d)
   - [use-context-selector demystified](https://dev.to/romaintrotard/use-context-selector-demystified-4f8e)
     - https://codesandbox.io/s/own-implem-27kv6
 

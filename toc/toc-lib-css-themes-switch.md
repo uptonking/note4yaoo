@@ -89,7 +89,12 @@ modified: 2021-02-09T13:40:11.536Z
   - https://ciucacristi.github.io/elementric/
   - 样式设计基于白底的圆角方形，设计感很强
   - 圆角弧度特殊，整体偏宽
-  - Elementric is a free front-end package of UI element
+  - 特点
+    - 大量白色或浅色纯色背景
+    - 大量空白
+    - 大量圆角
+    - 大量阴影
+  - a free front-end package of UI element
 
 - https://github.com/saadeghi/daisyui
   - https://daisyui.com/
@@ -113,6 +118,10 @@ modified: 2021-02-09T13:40:11.536Z
 # themes-popular
 
 ## material
+
+- https://github.com/beercss/beercss
+  - https://www.beercss.com/
+  - Build material design interfaces in record time
 
 - https://github.com/material-components/material-components-web
   - 现在的theming功能主要通过sass实现，只有极少数变量可以通过css vars配置
@@ -256,6 +265,8 @@ modified: 2021-02-09T13:40:11.536Z
 - https://github.com/cihankoseoglu/shades
   - A Sass/CSS framework for minimalist websites that use black, white and shades of gray as a design choice
 
+- https://github.com/amir2mi/flatifycss
+  - Modern flat design framework for the web — inspired by Duolingo design system
 ## glass ui/mac/blur
 
 - https://github.com/heypoom/glassmorphic-ui

@@ -20,6 +20,11 @@ modified: 2021-01-08T11:48:16.590Z
     - 比较适合做表格，做文档要考虑跳转到锚点
 # panel-window-manager
 - ref
+  - 可拖动
+  - 可缩放
+  - 是否支持dock
+  - 卡片是否可重叠或遮挡
+  - 是否支持split view
   - [search: window manager](https://github.com/search?o=desc&p=1&q=window+manager+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories)
 
 - react-grid-layout /16.9kStar/MIT/202202/js
@@ -47,6 +52,20 @@ modified: 2021-01-08T11:48:16.590Z
   - 卡片能随意拖动和缩放
   - 静止状态时，卡片能遮挡
   - 支持 Popup panel as new browser window
+
+- https://github.com/jupyterlab/lumino /ts/PhosphorJS/jupyter
+  - https://lumino.readthedocs.io/en/latest/examples.html
+  - a set of JavaScript packages, written in TypeScript, that provide a rich toolkit of widgets, layouts, events, and data structures. 
+  - 提供了3个经典示例: accordion、data-grid with merged-cell、dock-panel
+  - These enable developers to construct extensible high-performance desktop-like web applications, such as JupyterLab. 
+  - Lumino was formerly known as PhosphorJS.
+
+- https://github.com/node-projects/dock-spawn-ts
+  - https://node-projects.github.io/dock-spawn-ts/
+  - a Typescript Docking Framework to create a Visual Studio like IDE in HTML
+  - a Typescript fork of Dock Spawn, a Docking Framework for HTML.
+  - 提供了ide的示例，复刻visual studio
+  - 支持多实例
 
 - https://github.com/caplin/FlexLayout  /ts
   - https://rawgit.com/caplin/FlexLayout/demos/demos/v0.7/demo/index.html
@@ -267,11 +286,6 @@ modified: 2021-01-08T11:48:16.590Z
 - https://github.com/alexkuz/react-dock
   - http://alexkuz.github.io/react-dock/demo/
   - Resizable dockable react component
-
-- https://github.com/charto/phosphor-float-area
-  - https://charto.github.io/phosphor-float-area/
-  - Draggable, dockable, resizable, floating, tabbed Dialog and FloatArea widgets
-  - 100% Virtual DOM, TypeScript, PhosphorJS based modern JavaScript goodness
 
 - https://github.com/antimatter15/breadloaf
   - draggable, dockable, notebook-style layout engine for React

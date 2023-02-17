@@ -75,6 +75,8 @@ modified: 2022-11-16T16:09:02.278Z
   - https://akaspanion.github.io/ui-glassmorphism/
   - React component library on "glassmorphism" UI/UX trend.
   - 白色主题，无透明效果
+  - 页面背景和卡片背景融合很好
+
 - https://github.com/tsamantanis/react-glassmorphism
   - https://tsamantanis.github.io/react-glassmorphism/
   - A react UI component library for glassmorphic components
@@ -252,7 +254,6 @@ modified: 2022-11-16T16:09:02.278Z
 - https://github.com/StikiStock/NeuGlass
   - https://neuglass.pages.dev/
   - A responsive Tailwind portfolio theme
-
 # gradient
 - https://github.com/JonKelley88/react-gradient
   - https://jonkelley88.github.io/react-gradient/

@@ -204,6 +204,10 @@ modified: 2023-02-07T17:38:05.336Z
   - https://notion-kanboard-mukul.netlify.app/
   - 暂不支持视图切换
 
+
+- https://github.com/kanboard/kanboard /php
+  - Kanban project management software
+  - https://github.com/aljawaid/KanboardCSS
 ## kanban/trello-api
 
 - https://github.com/MrRefactoring/trello.js

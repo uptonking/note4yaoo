@@ -15,6 +15,40 @@ modified: 2021-01-28T21:14:14.667Z
   - 毛玻璃风格
   - These props come in many flavors: CSS, PostCSS, JSON, or Javascript.
 
+- https://github.com/saadeghi/daisyui
+  - https://daisyui.com/
+  - free and open-source Tailwind CSS component library
+
+- spectre /10.3kStar/MIT/202007
+  - https://github.com/picturepan2/spectre
+  - https://picturepan2.github.io/spectre/
+  - 文档多页，文档基于pug实现
+  - a responsive CSS framework based on flexbox
+  - Designed and built by Yan Zhu(Microsoft MVP)
+  - 特点是方形，多用边框
+  - 未使用css vars
+- https://github.com/angular-package/spectre.css
+  - https://spectre.angular-package.dev/
+  - 提供了filter、timeline等扩展
+
+- cirrus /694Star/MIT/202101/scss
+  - https://github.com/Spiderpig86/Cirrus
+  - https://www.cirrus-ui.com/
+  - 文档单页，文档样式非常友好
+  - css vars和scss vars混用
+  - 特点是简洁干净，多圆角阴影
+  - A fully responsive CSS framework with beautiful controls and simplistic structure. 
+  - Cirrus is designed to be adaptable to existing themes or when starting fresh.
+  - The only component that requires the use of jQuery is the Header component for toggling the dropdown menu on mobile.
+
+- https://github.com/conedevelopment/sprucecss
+  - https://sprucecss.com/
+  - modern CSS framework, design system built on Sass
+  - It comes with dark-mode support. It uses CSS custom properties
+  - 大多是业务组件，样式干净
+  - Spruce UI 未开源 doesn’t have its public repository
+  - We made a controversial decision with Spruce to leave a classical grid system out.
+
 - bootstrap /143kStar/MIT/202007
   - https://github.com/twbs/bootstrap
   - https://getbootstrap.com/
@@ -31,13 +65,6 @@ modified: 2021-01-28T21:14:14.667Z
     - The main issue is that it requires close to 100 CSS Variables to be applied to `:root`. 
       - While this is done automatically, it might be considered noisy and verbose. 
       - It is however the most flexible approach for theming a CSS framework.
-
-- spectre /10.3kStar/MIT/202007
-  - https://github.com/picturepan2/spectre
-  - https://picturepan2.github.io/spectre/
-  - 文档多页，文档基于pug实现
-  - a responsive CSS framework based on flexbox
-  - Designed and built by Yan Zhu(Microsoft MVP)
 
 - skeleton /18kStar/MIT/201412/css
   - https://github.com/dhg/Skeleton
@@ -67,14 +94,6 @@ modified: 2021-01-28T21:14:14.667Z
   - 文档单页，样式友好，白底绿字
   - minimalistic CSS framework for your webpages.
   - Made in pure SCSS and compiled with Gulp.
-- cirrus /694Star/MIT/202101/scss
-  - https://github.com/Spiderpig86/Cirrus
-  - https://cirrus-ui.netlify.app/
-  - 文档单页，文档样式非常友好
-  - css vars和scss vars混用
-  - A fully responsive CSS framework with beautiful controls and simplistic structure. 
-  - Cirrus is designed to be adaptable to existing themes or when starting fresh.
-  - The only component that requires the use of jQuery is the Header component for toggling the dropdown menu on mobile.
 # css-framework-ui
 - milligram /8.8kStar/MIT/202006
   - https://github.com/milligram/milligram
@@ -112,13 +131,26 @@ modified: 2021-01-28T21:14:14.667Z
 - https://github.com/Borderliner/Meshki
   - https://borderliner.github.io/Meshki/
   - Meshki: A Black-Colored, Responsive Boilerplate for UI Development
+
+- https://github.com/OrbitCSS/orbitcss
+  - https://orbitcss.com/examples/
+  - a modern CSS framework based on Flexbox.
+  - 方形设计，多边框
+  - 模版很多
+# tailwind
+- https://github.com/Siumauricio/rippleui
+  - https://ripple-ui.com/
+  - modern and beautiful Tailwind CSS components.
+
+- https://github.com/sailboatui/sailboatui
+  - https://sailboatui.com/
+  - modern UI component library for Tailwind CSS
 # classless
 - MVP.css /4.2kStar/MIT/202209/css/单文件
   - https://github.com/andybrewer/mvp
   - https://andybrewer.github.io/mvp/
   - https://andybrewer.github.io/mvp/mvp.html
   - Minimalist classless CSS stylesheet for HTML elements
-  - 
 
 - water.css /5.7kStar/MIT/202010/css/classless
   - https://github.com/kognise/water.css
@@ -127,6 +159,9 @@ modified: 2021-01-28T21:14:14.667Z
   - I commonly make quick demo pages or websites with simple content. 
     - For these, I don't want to spend time styling them but don't like the ugliness of the default styles.
   - Water.css is a CSS framework that doesn't require any classes.
+
+- https://github.com/turretcss/turretcss
+  - A Responsive Front-end Framework for Accessible and Semantic Websites with default HTML elements
 
 - new.css /3.2kStar/MIT/202009/css
   - https://github.com/xz/new.css
@@ -149,6 +184,10 @@ modified: 2021-01-28T21:14:14.667Z
 - https://github.com/kevquirk/simple.css
   - a classless CSS template that allows you to make a good looking website really quickly.
 # more-css-framework
+- https://github.com/asmcss/assembler
+  - https://asmcss.com/
+  - 自己实现了类似tailwind
+
 - https://github.com/sitetent/tentcss
   - Includes only the essentials to make camp.
   - not currently receiving updates.

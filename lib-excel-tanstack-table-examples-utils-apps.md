@@ -14,6 +14,7 @@ modified: 2022-08-21T10:36:31.021Z
   - TableHeaderBuilder Class
   - Headless, just like ReactTable
   - Util functions & classes for working with TanStack Table v8 (ReactTable) easily & quickly.
+  - More readable & maintainable code than config object
 # utils-v7
 - https://github.com/GuillaumeJasmin/react-table-sticky
   - Sticky hook for React Table v7
