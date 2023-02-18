@@ -119,6 +119,9 @@ modified: 2023-01-17T19:14:47.611Z
 
 - https://github.com/atharmohammad/Code-N-Collab /202110/js/inactive
   - a Collaborative Website for developers and competitive coders who likes to code and discuss about topics , problems or issues
+
+- https://github.com/sagemathinc/cocalc
+  - CoCalc is web-based software that enables collaboration in research, teaching, and scientific publishing.
 # collab-apps
 - https://github.com/configu/configu
   - A generic standard for managing and collaborating software configurations 

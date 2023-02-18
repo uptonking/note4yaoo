@@ -40,6 +40,10 @@ modified: 2022-08-21T10:16:52.004Z
   - https://github.com/Horusiath
   - 使用 `F#语言` 实现了很多crdt算法
 
+- Jake
+  - notion
+  - https://twitter.com/jitl
+
 - phedkvist
   - crdt, woot
   - https://github.com/phedkvist/crdt-sequence

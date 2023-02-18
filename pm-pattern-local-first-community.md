@@ -12,7 +12,27 @@ modified: 2022-03-03T18:20:12.075Z
 # discuss
 - ## 
 
-- ## 
+- ## So much CRDT literature seems to focus on collaborative text, but it feels like a pretty niche(针对特定小群体的) problem to me._202210
+- https://twitter.com/gaforres/status/1584909330859671553
+  - Block editors like Notion are good enough for most cases. 
+  - Editing the same sentence or even paragraph as someone else doesn't really seem like a common user need.
+  - But I guess if you're aiming to build perfectly general abstractions you're forced to target the hardest niche case. In my experience making systems, trying to universalize to that extent can become the enemy of progress and usability.
+- Collab text feels like a product black hole. If you did it perfectly, the UX would still be bad. It has no tactility(有触觉的；能触知的). People don't co-work that closely in real life. It would be rude. IMO the value of collaboration is a sense of togetherness, but with personal space.
+- After having worked on manuscripts with 4+ participants for 6 years or so, I have come to think exactly this. I don't know how we've managed to come to this point; it's like a dance where we all have to step on each others' toes to participate.
+  - On the other hand, it does relieve the team of the burden of appointing a merge gatekeeper of changes. In which case, simultaneous editing helps.
+- I would assume that when writing async, the merging and keeping the history is more important to not cause any unexpected overwrites when you have been writing offline for some time and sync your changes back
+  - I suspected there might be a blind spot in my reasoning while writing those tweets, and this very well may be it! Offline-first text could totally be difficult at block level.
+  - Still feels like it would be very difficult to solve with a generalized system, though. Like the final paragraph would diverge inline as changes come in with no respect for meaning. Manual mege at the block level might still be a better UX.
+- Is there a tool/library that can handle ordered trees out of the box that you know of? Thx
+  - Depends on how you want to query it... The framework I'm building uses schema based data which doesn't handle recursive nesting, but could represent a graph by ID references and query each level iteratively. Not ideal. Classics like YJS probably better. Check GUN too.
+- collaborative text is good because its a list type that people are already familiar with! turns out we can build arbitrary JSON out of lists (like what Automerge and Yjs have done) which allow you to synchronize state of entire applications
+
+- ## Lots of upsides to local-first apps, but one downside is if you break prod, you can't just revert. 
+- https://twitter.com/gaforres/status/1626642640518148096
+  - Users will probably have written bad data to their local device already.
+- Just wondering, in theory, if everything is event based, then writing bad data should be fine, once you know how to rewind them right?
+  - Y'know I hadn't even really thought that far. lo-fi encodes the schema version in each event, so a revert could ignore all future schema version events. However, it also uses IndexedDB, and there's no way to downgrade the database version too...
+- A failure recovery could maybe be a new version with a directive to drop any events from the bad version and continue on from there. I could see that working as a last resort.
 
 - ## I think many people agree that building a modern web app forces app devs to think too much about distributed systems and grapple with a stack that has tons of layers.
 - https://twitter.com/geoffreylitt/status/1622632087932248065

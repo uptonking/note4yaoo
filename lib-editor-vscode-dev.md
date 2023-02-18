@@ -9,4 +9,7 @@ modified: 2023-01-21T18:53:50.553Z
 
 # guide
 
+- ref
+  - 参考设计 capabilities
+
 # dev

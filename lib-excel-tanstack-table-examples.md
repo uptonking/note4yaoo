@@ -133,7 +133,8 @@ modified: 2022-08-21T10:37:01.349Z
   - Tailwind
 
 - https://github.com/angelfishapp/virtual-tables
-  - Test for virtualized tables using @TanStack libraries
+  - 仅依赖tanstack-virtual，示例简洁 Test for virtualized tables 
+  - 
 
 - https://github.com/odpf/apsara
   - https://odpf.github.io/apsara/

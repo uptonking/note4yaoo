@@ -18,9 +18,13 @@ modified: 2022-04-05T13:25:40.892Z
 
 - ## 
 
-- ## 
+- ## [CRDT: Fractional Indexing | Hacker News](https://news.ycombinator.com/item?id=33764449)
+- I’m not the GP, but OT is pretty annoying to implement. There are so many cases that it’s quite difficult to formally prove an OT correct. On the other hand, a large subset of CRDTs can be implemented in Datalog and if you do that you can’t possibly end up with an invalid CRDT.
+- This is basically the idea behind Logoot [Weis_2009] that was improved by LSeq [Nédelec_2013] and later extended to the first block-wise sequence CRDT: LogootSplit [André_2013]. LogootSplit was recently improved as Dotted LogootSplit [1] [Elvinger_2021].
 
-- ## 
+- ## If you store a CRDT as a BLOB in a SQLite column, you can do efficient partial reads or incremental writes instead of reading/writing the whole thing via UPDATE 
+- https://twitter.com/jitl/status/1530308079237070848
+  - I'm not sure how transactional this interface is.
 
 - ## Most CRDTs use immutable append-only logs but Is a waste of performance/efficiency.
 - https://twitter.com/marknadal/status/1543666528746295297
@@ -31,7 +35,6 @@ modified: 2022-04-05T13:25:40.892Z
 - https://twitter.com/marknadal/status/1575739378684477440
   - Which causes scaling problems.
   - Compared to in-place mutable updates. (GUN can also do append-only/immutable, but that's not as fast)
-
 
 - ## [Lessons learned from creating a real-time collaborative rich-text editor | Hacker News](https://news.ycombinator.com/item?id=18220020)
 

@@ -38,6 +38,23 @@ modified: 2023-01-09T15:41:17.179Z
 # issues
 
 # discuss
+- ## 
+
+- ## 
+
+- ## Am I the only one that doesn't like file system routers? 
+- https://twitter.com/devongovett/status/1626635855199600660
+  - Seems like a step backwards from components to be thinking in terms of "pages". 
+  - You end up rebuilding each route from the inside out rather than composing naturally. 
+  - If there were no URLs, we wouldn't do it this way, right?
+  - Some frameworks try to add nested routes on top of file system routers, but then it just gets even more confusing. Things do get composed, but you can't see where or how. There are lots of special reserved file names and symbols. Too much magic.
+- I think React Router got it mostly right – routes are just components that you compose together naturally. The problem is this leads to loading waterfalls. Perhaps this is a good reason for fs routers, but I think there is a missing bundler primitive that could also solve this.
+- A big benefit of file system routers is the ability to browse the codebase easier. When a developer has to fix a bug happening in page with a given URL, they can quickly find the related file.
+- There are no URLs in React Native, and we indeed don’t do it that way.
+  - However, that comes with its own (rather major) drawbacks. For example, not being able to deeplink easily to specific screens. Ever noticed how native apps don’t seem to link inside them very well? That’s because of this.
+- The Expo Router project is moving to file/folder based routing. Fairly popular idea right now.
+- I like @emberjs approach, where the urls and routes themselves are defined in one file, but those definitions match up to files either in a topic based layout or more grouped approach (called pods). The files don't in themselves have the url (Symbols and stuff).
+  - Similar to Rails.
 
 - ## I find it interesting that React Router is synchronous and essentially knows nothing about the route tree until it attempts to render it. 
 - https://twitter.com/tannerlinsley/status/1492155286240456710

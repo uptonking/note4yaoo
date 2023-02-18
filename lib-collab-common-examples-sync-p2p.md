@@ -71,6 +71,12 @@ modified: 2023-01-17T19:13:01.845Z
     - the client provides elegant conflict handling and events for reacting to changes from the server.
   - Persistence options are provided based on the following currently supported databases:
     - In memory, MySQL, PostgreSQL, CouchDB
+
+- https://github.com/hyperhyperspace/hyperhyperspace-core
+  - HHS uses an immutable typed-objects local storage model. Objects are both retreived and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
+  - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
+  - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
+
 # sync-json
 - https://github.com/zettant/realtime-object-sync
   - server and client libraries for realtime JSON object synchronization.

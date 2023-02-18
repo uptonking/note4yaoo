@@ -52,22 +52,6 @@ modified: 2022-06-08T11:14:10.668Z
   - Shortcodes, in the classic editor, didn’t have such a discovery method.
 - Re-usable blocks allow you to easily create content you can re-use across posts or pages, see this nice tutorial on WP Beginner.
 # discuss-stars
-- ## [Anyone now what database architecture is Notion using?](https://www.reddit.com/r/Notion/comments/lxhxwi/anyone_now_what_database_architecture_is_notion/)
-- We use Postgres. 
-- [I'm the first engineering hire at Notion. AMA!](https://www.reddit.com/r/Notion/comments/fi45dc/im_the_first_engineering_hire_at_notion_ama/)
-
-- ## [Choosing DB model for an app similar to Notion, Block-based ("paragraphs") or document-based?](https://stackoverflow.com/questions/71024175)
-- 比较项目
-  - Fetch the contents of a page
-  - Render the content of a page**
-  - Update the content of a paragraph in the DB
-  - Alternatives for rendering very large documents *
-  - Import or paste content
-  - Copy content**
-  - Real-Time Collaboration
-- Our conclusions
-  - The problem with those tests is that it is difficult to draw an accurate conclusion about the goodness of both models. Obsidian uses documents locally, so you don't have to sync notes. Roam Research is a very new and poorly optimized app. Standard Notes encrypts notes locally. In other words, it's not always apples to apples.
-  - So, we tried to push our doubt as far as we could, but we are still not sure of the answer Which of the two models do you think would offer better performance for our app and why?
 
 - ## We've been working a new protocol at @hashintel. It's called the block protocol
 - https://twitter.com/Mappletons/status/1488131234089873408

@@ -7,6 +7,9 @@ modified: 2021-05-23T16:34:42.918Z
 
 # pm-list-grid-ux
 
+# guide
+
+- [Data Table Design UX Patterns & Best Practices](https://pencilandpaper.io/articles/ux-pattern-analysis-enterprise-data-tables/)
 
 # discuss
 

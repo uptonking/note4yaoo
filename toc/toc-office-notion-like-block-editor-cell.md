@@ -54,6 +54,10 @@ modified: 2022-08-14T16:26:48.558Z
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，但不支持拖入拖出list item
 
+- https://github.com/djyde/plastic-editor
+  - A block-based editor
+  - https://github.com/relm-us/svelt-yjs
+
 - tiny-write /4Star/NALic/202208/ts/prosemirror/markdown-it/web版+桌面版
   - https://github.com/dennis84/tiny-write
   - https://tiny-write.pages.dev/
