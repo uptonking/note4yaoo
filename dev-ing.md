@@ -142,6 +142,17 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - 腰包掉到床头版与墙的夹缝中了
 # dev-02
 
+## 0219
+
+- [Height limitations for browser vertical scroll bar - Stack Overflow](https://stackoverflow.com/questions/34931732/height-limitations-for-browser-vertical-scroll-bar)
+  - The maximum limit for height obtained to render browser scroll bar have various values in all browsers. If increasing 1px from the limited height then the browser scroll won't render in the page.
+  - FF: 17895697px
+  - IE: 10737418px
+  - In Chrome there is no problem to render the scroll bar, but it have always 33554400px height in the layout.
+
+- [javascript - Will ref callbacks always be invoked in the order they are declared in render()? - Stack Overflow](https://stackoverflow.com/questions/60549295/will-ref-callbacks-always-be-invoked-in-the-order-they-are-declared-in-render)
+  - React will call the ref callback with the DOM element when the component mounts, and call it with null when it unmounts. Refs are guaranteed to be up-to-date before componentDidMount or componentDidUpdate fires.
+
 ## 0215
 
 - You can call `Document.getSelection()`, which works identically to `Window.getSelection()`.
@@ -311,7 +322,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                  `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

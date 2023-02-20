@@ -37,6 +37,25 @@ modified: 2022-11-08T19:04:00.289Z
     - Plugins are now plain functions that augment the Editor object they receive and return it again.
     - The codebase now uses TypeScript.
 
+- editablejs-editable /17Star/MIT/202208/ts/只依赖slate不依赖slate-react/自绘光标
+  - https://github.com/editablejs/editable
+  - https://github.com/editablejs/editable/blob/main/README.zh-CN.md
+  - https://docs.editablejs.com/playground
+  - 依赖slate、zustand
+  - 一个可扩展的富文本编辑器框架，专注于稳定性、可控性和性能
+    - 为此，我们没有使用原生的可编辑属性contenteditable，而是使用了一个自定义的渲染器
+    - canvas的开发体验不佳，需要编写更多代码
+  - 使用slatejs数据模型，借助 react 使用自绘光标的模式渲染，不再依赖 contenteditable 属性
+  - [修改license为GPL_20220204](https://github.com/editablejs/editable/commits/main?after=d61da6caa411139cddb0ae0e8eeeeaee05893610+69&branch=main&qualified_name=refs%2Fheads%2Fmain)
+  - unicode-trie主要对一些 unicode 字符进行索引的计算。因为有些字符占位所占的字节数不确定，造成某些字符拆分后的索引不准确
+- am-editor /541Star/MIT/202209/ts/maintenance
+  - https://github.com/red-axe/am-editor
+  - https://editor.aomao.com/zh-CN
+  - 富文本实时协同编辑器框架，可以使用React和Vue自定义插件。
+  - 协同编辑基于ShareDB实现。
+  - 过去两年中，am-editor 编辑器基于 contenteditable 属性上做了很多功能和扩展，也遇到了很多问题。
+    - 所以，现在大胆一些，尝试抛弃contenteditable属性，使用自绘光标的模式开发的下一个版本的富文本编辑器。
+
 - etherpad-lite /13.5kStar/Apache2/202211/js
   - https://github.com/ether/etherpad-lite
   - https://etherpad.org/
@@ -67,20 +86,6 @@ modified: 2022-11-08T19:04:00.289Z
     - 重写了渲染层，现在 Textbus 2.0 大多数情况下更新视图仅需要 0.2ms 时间，比 1.0 性能更好
     - 核心架构脱离了具体平台，让 Textbus 的能力不仅限于在 PC 端，通过编写特定的中间层，可以方便的在移动端，甚至小程序上实现丰富的富文本能力
     - 重新设计了组件系统，去掉了大家难以理解的装饰器，改为用类似 vue 的 setup 形式开发组件
-
-- editablejs-editable /17Star/MIT/202208/ts/只依赖slate不依赖slate-react/自绘光标
-  - https://github.com/editablejs/editable
-  - https://docs.editablejs.com/playground
-  - 一个实验性的富文本编辑器框架，希望通过自绘光标来替代原生 contenteditable 属性，提供更丰富、稳定的编辑能力。
-  - 使用slatejs数据模型，借助 react 使用自绘光标的模式渲染，不再依赖 contenteditable 属性
-  - 主要对一些 unicode 字符进行索引的计算。因为有些字符占位所占的字节数不确定，造成某些字符拆分后的索引不准确，所以需要这个工具包来解决这个问题。
-- am-editor /541Star/MIT/202209/ts/maintenance
-  - https://github.com/red-axe/am-editor
-  - https://editor.aomao.com/zh-CN
-  - 富文本实时协同编辑器框架，可以使用React和Vue自定义插件。
-  - 协同编辑基于ShareDB实现。
-  - 过去两年中，am-editor 编辑器基于 contenteditable 属性上做了很多功能和扩展，也遇到了很多问题。
-    - 所以，现在大胆一些，尝试抛弃contenteditable属性，使用自绘光标的模式开发的下一个版本的富文本编辑器。
 
 - taleweaver(织书) /71Star/MIT/202007/ts
   - https://github.com/yuzhenmi/taleweaver

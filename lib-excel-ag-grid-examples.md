@@ -37,10 +37,6 @@ modified: 2022-08-21T10:39:10.445Z
   - Reusable ag-grid component for LINZ
   - ag-grid-community based grid with custom popover components implemented using a modified react-menu.
 
-- https://github.com/Alek-S/SwiftSheet /js/graphql/mongoose
-  - https://swiftsheet.app/
-  - Upload a CSV to share an online spreadsheet or mock API endpoint that auto-deletes after expiration. No user account needed.
-
 - gant-design /48Star/MIT/202208/ts/多种数据与表单组件
   - https://github.com/gantFDT/gant-design
   - http://docs.gant.design/

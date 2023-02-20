@@ -9,6 +9,8 @@ modified: 2020-12-21T07:46:23.299Z
 
 # guide
 
+- [w3c html5 Table height algorithms](https://www.w3.org/TR/CSS22/tables.html#height-layout)
+
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
   - https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Legacy_Layout_Methods
@@ -21,10 +23,21 @@ modified: 2020-12-21T07:46:23.299Z
 
 # faq
 
-- Is there an alternative way to achieve `border-collapse:collapse` in CSS (in order to have a collapsed, rounded corner table)?
-  - table元素使用 `border-collapse: collapse;` 去除间隙后， `border-radius` 会失效
-  - use a `box-shadow` with a spread of 1px instead of a "real" border.
-    - 这种方法不完美，box-shadow会增大盒子
+## [What is the default height of a cell if unspecified?](https://bytes.com/topic/html-css/answers/97250-what-default-height-cell-if-unspecified)
+- the height of a table cell, unless specified, is usu. the height of content inside it (..;) 
+  - i.e., if table contains one line of text, height is size (height) of font (for ex., if you specify a font-height of 10px, height of cell will be 10px..) 
+  - if you put two lines of text in a font size of 10px height will be 20px, and so on..
+  - also, if you put in an img inside the cell and nothing else height of cell will be height of img.. (all this assuming you have not specified
+  - height of table in table tag.. which I believe has been deprecated
+- if you don't specify font-size then height will be whatever the font height is (according to how it falls in user's browser, which can vary wildly from browser to browser if you don't specify font size, which is why I always specify font-sizes for everything, even though a lot of people say you shouldn't do this.. but like this I get a better idea of how exactly my stuff will look at the other end
+
+## [What is the default width of an HTML table cell `<td>`?](https://stackoverflow.com/questions/31926939/what-is-the-default-width-of-an-html-table-cell-td)
+- Here's the W3C standards on calculating the width of table columns. Basically it is left up to the implementing browser/agent.
+
+## Is there an alternative way to achieve `border-collapse:collapse` in CSS (in order to have a collapsed, rounded corner table)?
+- table元素使用 `border-collapse: collapse;` 去除间隙后， `border-radius` 会失效
+- use a `box-shadow` with a spread of 1px instead of a "real" border.
+  - 这种方法不完美，box-shadow会增大盒子
 
 ``` CSS
 table {
@@ -41,7 +54,7 @@ td {
 }
 ```
 
-- table使用 `white-space: nowrap` 会增加列的宽度，如何隐藏超出列宽部分
+## table使用 `white-space: nowrap` 会增加列的宽度，如何隐藏超出列宽部分
 
 ``` CSS
 td {
@@ -53,39 +66,39 @@ td {
 }
 ```
 
-- When should you NOT use HTML tables?
-  - HTML tables should be used for tabular data — this is what they are designed for. 
-    - Unfortunately, a lot of people used to use HTML tables to lay out web pages, 
-    - e.g. one row to contain the header, one row to contain the content columns, one row to contain the footer, etc.
-  - Layout tables **reduce accessibility** for visually impaired users 
-    - Screenreaders, used by blind people, interpret the tags that exist in an HTML page and read out the contents to the user. 
-    - Because tables are not the right tool for layout, and the markup is more complex than with CSS layout techniques, the screenreaders' output will be confusing to their users.
-  - Tables produce tag soup
-    - table layouts generally involve more complex markup structures than proper layout techniques. 
-    - This can result in the code being harder to write, maintain, and debug.
-  - Tables are **not automatically responsive**
-    - When you use proper layout containers (such as `<header>, <section>, <article>, or <div>` ), their width defaults to 100% of their parent element. 
-    - Tables on the other hand are sized according to their content by default, so extra measures are needed to get table layout styling to effectively work across a variety of devices.
+## When should you NOT use HTML tables?
+- HTML tables should be used for tabular data — this is what they are designed for. 
+  - Unfortunately, a lot of people used to use HTML tables to lay out web pages, 
+  - e.g. one row to contain the header, one row to contain the content columns, one row to contain the footer, etc.
+- Layout tables **reduce accessibility** for visually impaired users 
+  - Screenreaders, used by blind people, interpret the tags that exist in an HTML page and read out the contents to the user. 
+  - Because tables are not the right tool for layout, and the markup is more complex than with CSS layout techniques, the screenreaders' output will be confusing to their users.
+- Tables produce tag soup
+  - table layouts generally involve more complex markup structures than proper layout techniques. 
+  - This can result in the code being harder to write, maintain, and debug.
+- Tables are **not automatically responsive**
+  - When you use proper layout containers (such as `<header>, <section>, <article>, or <div>` ), their width defaults to 100% of their parent element. 
+  - Tables on the other hand are sized according to their content by default, so extra measures are needed to get table layout styling to effectively work across a variety of devices.
 
-- Why should I use `display:table` instead of `<table>` ?
-  - Pros of Table Element: 
-    - Most designers use table for a consistent look. 
-    - Tables are also easy to maintain. 
-    - Another advantage of table is that it is compatible with the most browsers.
-  - Cons of Table Element: 
-    - All this comes with a cost: Too many nested tables increase complexity, page size and download time. 
-    - More table elements push important content down so search spiders are less likely to add content to search engines.
-  - Pros of DIV Element: 
-    - div with CSS we can achieve the same table based page structure and reduce the number of elements on the page, which allows the page to load faster. 
-    - It also makes page more compatible with search engine spiders.
-  - Cons of DIV Element: 
-    - The major drawback of this is not all CSS elements are not browser compatible. 
-    - Because of this we have to write some custom CSS to resolve issues. 
-  - html5 have better alternatives for layout
-  - ref
-    - [Why should I use display:table instead of table](https://stackoverflow.com/questions/2867476/why-should-i-use-displaytable-instead-of-table)
-    - [Actual table Vs. Div display-table](https://stackoverflow.com/questions/2617895/actual-table-vs-div-table)
-    - [Why are people making tables with divs?](https://softwareengineering.stackexchange.com/questions/277778/why-are-people-making-tables-with-divs)
+## Why should I use `display:table` instead of `<table>` ?
+- Pros of Table Element: 
+  - Most designers use table for a consistent look. 
+  - Tables are also easy to maintain. 
+  - Another advantage of table is that it is compatible with the most browsers.
+- Cons of Table Element: 
+  - All this comes with a cost: Too many nested tables increase complexity, page size and download time. 
+  - More table elements push important content down so search spiders are less likely to add content to search engines.
+- Pros of DIV Element: 
+  - div with CSS we can achieve the same table based page structure and reduce the number of elements on the page, which allows the page to load faster. 
+  - It also makes page more compatible with search engine spiders.
+- Cons of DIV Element: 
+  - The major drawback of this is not all CSS elements are not browser compatible. 
+  - Because of this we have to write some custom CSS to resolve issues. 
+- html5 have better alternatives for layout
+- ref
+  - [Why should I use display:table instead of table](https://stackoverflow.com/questions/2867476/why-should-i-use-displaytable-instead-of-table)
+  - [Actual table Vs. Div display-table](https://stackoverflow.com/questions/2617895/actual-table-vs-div-table)
+  - [Why are people making tables with divs?](https://softwareengineering.stackexchange.com/questions/277778/why-are-people-making-tables-with-divs)
 
 # summary 
 

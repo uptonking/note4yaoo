@@ -59,7 +59,7 @@ modified: 2020-06-29T13:14:27.166Z
   - useImperativeHandle needs to have the component use forwardRef
   - It appears that `useImperativeHandle` is simply an effect that takes care of the necessary checks, cleanups and accounting for both function and object refs, but instead of using the high level useEffect, it works directly with the low level effect lifecycle functions. I think the biggest reason that it is its own hook could be to ensure backwards compatibility with function refs
 
-``` JS
+```JS
 function FancyInput(props, ref) {
   const inputRef = useRef();
   useImperativeHandle(ref, () => ({
@@ -72,7 +72,7 @@ function FancyInput(props, ref) {
 FancyInput = forwardRef(FancyInput);
 ```
 
-``` JS
+```JS
 function FancyInput(props, ref) {
   const inputRef = useRef();
   useEffect(() => {
@@ -100,9 +100,17 @@ FancyInput = forwardRef(FancyInput);
 - 正常情况用默认的useEffect钩子就够了，这可以保证状态变更不阻塞渲染过程
   - 但如果effect更新（清理）中涉及DOM更新操作，用useEffect就会有意想不到的效果。
   - 比如逐帧动画 requestAnimationFrame ，要做一个 useRaf hook 就得用上后者，需要保证同步变更。
-  - useLayoutEffect > requestAnimationFrame > useEffect
+  - 👉🏻 useLayoutEffect > requestAnimationFrame > useEffect
 - useEffect的时期非常晚，可以保证页面是稳定下来再做事情
   - useEffect的函数会在最后才执行，可能晚于包含它的父组件的did update
+
+- [requestAnimationFrame and useEffect vs useLayoutEffect | Jakub Arnold Blog](https://blog.jakuba.net/request-animation-frame-and-use-effect-vs-use-layout-effect/)
+  - The example I’ve seen people mention with it over and over again is resizing windows or DOM mutations, where useEffect would cause a flicker in the UI and useLayoutEffect wouldn’t. 
+  - Interestingly, this is the same problem as we’re facing with requestAnimationFrame, as in both cases we want to do something before the browser has a chance to repaint. Only in the case of requestAnimationFrame the repaint does more than a UI flicker, it breaks our code.
+
+- [React的useEffect与useLayoutEffect执行机制剖析 - 福禄网络研发团队 - 博客园](https://www.cnblogs.com/fulu/p/13470126.html)
+  - 页面开始渲染：Recalculate Style->Layout->Update Layer Tree->Paint->Composite Layers->GPU绘制；
+
 - `useEffect` runs asynchronously and after a render is painted to the screen.
   - You cause a render somehow (change state, or the parent re-renders)
   - React renders your component (calls it)
@@ -146,7 +154,7 @@ FancyInput = forwardRef(FancyInput);
     - onClick prop has new value on each render and triggers a re-render of child component - even if it's pure. 
   - If a value is static, a callback can be defined as constant function outside a component
 
-``` js
+```js
     // outside function component
     const myValue = "Hello World";
     const myHandleClick = () => handleClick(myValue);
@@ -157,7 +165,7 @@ FancyInput = forwardRef(FancyInput);
 
   - If a value is dynamic and is available only inside a component, a function can be defined inside a component and memoized with useMemo or useCallback hook 
 
-``` js
+```js
     // inside function component
     const myHandleClick = useCallback(() => handleClick(myValue), [myValue]);
     ...
@@ -167,9 +175,7 @@ FancyInput = forwardRef(FancyInput);
 - ## react生命周期方法的执行时，是处于浏览器渲染过程中的什么位置(js-style-layout-paint-composite)
 - render方法的执行时机
   - One drawback of using `componentDidUpdate` , or `componentDidMount` is that they are actually executed before the dom elements are done being drawn, but after they've been passed from React to the browser's DOM.
-
 # pieces
-
 - ref
   - https://medium.com/@unbug/ive-completely-rewritten-two-projects-with-react-hooks-here-is-the-good-and-the-ugly-48c28a103f52
 - 考虑因素

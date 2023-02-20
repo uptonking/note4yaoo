@@ -208,6 +208,9 @@ modified: 2022-09-10T02:26:52.062Z
 
 - https://github.com/TeemuKoivisto/google-oauth-drive-example
   - Shows how to use Google OAuth with Google Drive
+
+- https://github.com/theoephraim/node-google-spreadsheet
+  - Google Sheets API (v4) wrapper for Node.js
 # known-drive-dropbox
 - https://github.com/feup-infolab/dendro /202006/js/inactive
   - "Open-source Dropbox" with added description features. 

@@ -10,7 +10,36 @@ modified: 2022-08-21T10:19:58.757Z
 - A Table Utility, not a Table Component
 # guide
 - Try rewriting your plugin (v8 doesn't have a plugin system any more) as a functional wrapper that uses TanStack Table internally.
-# overview
+# v8
+
+# tanstack-virtual.v3
+- a headless UI utility for virtualizing long lists of elements in JS/TS, React, Vue, Svelte and Solid. 
+  - It is not a component therefore does not ship with or render any markup or styles 
+- 支持 水平、竖直、grid
+
+- dom结构
+- div.scrollable
+  - div.inner
+    - div.visible
+
+- fixed sizes
+  - This means that every element's dimensions are hard-coded to the same value and never change.
+- variable sizes
+  - This means that each element has a unique, but knowable dimension at render time.
+- dynamic sizes
+  - This means that each element's exact dimensions are unknown when rendered. 
+  - An estimated dimension is used to get an a initial measurement, then this measurement is readjusted on the fly as each element is rendered.
+
+- cons
+  - [Large set of data not fully rendered](https://github.com/TanStack/virtual/issues/460)
+    - The react-virtualized library works around this issue by scaling the the scroll position it sets for a row based on the ratio of "max CSS height allowed by browser" to "computed height of all rows" if the latter is greater than the former
+  - We have implemented a jump scroll approach which allows us to drag the scroll to any position and render the corresponding records. Essentially when we drag it to the end it just renders the rows based on the `max-scroll-position` max-limit of the browser instead of the max lines available in the report.
+  - 一种思路是使用estimatedHeight非精确高度，将最大高度控制在浏览器范围内，小问题是滚动到指定元素难实现
+  - [What's the maximum pixel value of CSS width and height properties? - Stack Overflow](https://stackoverflow.com/questions/16637530)
+# v7
+
+## overview
+
 - Features
   - Lightweight (small size and tree-shaking)
   - Headless (100% customizable, Bring-your-own-UI)
@@ -40,7 +69,9 @@ modified: 2022-08-21T10:19:58.757Z
 - This API is performant, extensible, and unopinionated about markup, styles or rendering.
 - By acting as an ultra-smart table utility, React Table opens up the possibility for your tables to integrate into any existing theme, UI library or existing table markup. 
   - This also means that if you don't have an existing table component or table styles, React Table will help you learn to build the table markup and styles required to display great tables.
-# Concepts
+
+## Concepts
+
 - React Table v7 is a headless utility, 
   - which means out of the box, it doesn't render or supply any actual UI elements.
   - You are in charge of utilizing the state and callbacks of the hooks provided by this library to render your own table markup.
@@ -65,7 +96,9 @@ modified: 2022-08-21T10:19:58.757Z
   - Pagination
   - Expanded State
   - Any functionality provided by custom plugin hooks, too!
-# API 
+
+## API 
+
 - The primary React Table hook
   - [ `useTable` ](https://react-table.tanstack.com/docs/api/useTable)
 - Plugin Hooks
@@ -115,14 +148,3 @@ const instance = useTable({
 - In the event that you want to programmatically enable or disable plugin hooks, most of them provide options to disable their functionality, eg. `options.disableSortBy`
 - React Table relies on memoization to determine when state and side effects should update or be calculated. 
   - This means that every option you pass to useTable should be memoized either via `React.useMemo` (for objects) or `React.useCallback` (for functions).
-# changelog
-- ref
-  - https://github.com/tannerlinsley/react-table/blob/master/CHANGELOG.md
-  - https://github.com/tannerlinsley/react-table/releases/tag/v7.0.0
-
-- 7.2.0-20200609
-  - add initialRows property on instance 
-- 7.1.0-20200515
-  - useFilters: add filterTypes: includesSome & includesValue
-- 7.0.0-20200311
-  - Massive changes to the entire project and library

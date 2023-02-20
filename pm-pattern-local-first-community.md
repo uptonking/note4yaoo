@@ -34,6 +34,13 @@ modified: 2022-03-03T18:20:12.075Z
   - Y'know I hadn't even really thought that far. lo-fi encodes the schema version in each event, so a revert could ignore all future schema version events. However, it also uses IndexedDB, and there's no way to downgrade the database version too...
 - A failure recovery could maybe be a new version with a directive to drop any events from the bad version and continue on from there. I could see that working as a last resort.
 
+- yeah this has bitten us, we had some flaky early persistence code writing bad data onto user's machines, and one deploy i wish we could have simply reverted. @SomeHats made a herculean effort to clean  up the bad data and add checks to prevent further bugs slipping into prod.
+  - Still, we're thinking of maybe switching to event sourcing as a source of truth to alleviate the rollback problem. That would be much tricker for local-first apps though.
+- I’m doing event-sourcing in my local-first app. It works really well so far. No migrations are the best migrations.
+- Mostly what removes the need for something like a migration. My lib lo-fi models data as event series but still needs some special logic for schema changes. Would be interested in simplifying!
+- For my app there are two kinds of schemas: 1) App db schema 2) event type schema
+  - When ever (1) changes, I just rehydrate a fresh db from scratch with the new app schema - no migrations needed. For (2) I so far only do additive changes (e.g. via event versioning)
+
 - ## I think many people agree that building a modern web app forces app devs to think too much about distributed systems and grapple with a stack that has tons of layers.
 - https://twitter.com/geoffreylitt/status/1622632087932248065
   - Tangentially(不直接相干的，略为触及〔主题〕的) related thread, more about the importance of actually investing in a good architecture. see linear

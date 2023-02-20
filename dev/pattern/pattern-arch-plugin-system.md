@@ -44,6 +44,16 @@ modified: 2020-12-20T15:46:29.566Z
 # discuss
 - ## 
 
+- ## 
+
+- ## [How to design a pluggable system in functional style? - Stack Overflow](https://stackoverflow.com/questions/29069095/how-to-design-a-pluggable-system-in-functional-style)
+- Functional programming is all about the explicit composition of functions. No magic. If you need plugins, compose functions by some configuration. That's all.
+  - OK, that's not all. You were asking about handling the state.
+  - In FP programming, you have only two options.
+  - 1) Manual partial application as Mark described.
+  - 2) Automatic partial application by Reader, State, or some another monad.
+  - Via monad, core functions can be pure, while dangerous state is handled by monad itself.
+
 - ## [前端开发，如何优雅的实现这样一个插件机制？](https://www.zhihu.com/question/294560351)
 
 # ref

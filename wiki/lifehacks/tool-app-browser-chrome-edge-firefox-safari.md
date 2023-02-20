@@ -15,6 +15,18 @@ modified: 2021-08-19T13:02:28.478Z
 
 - search-helper
   - 过滤google搜索结果到中文，mozilla-mdn文档语言切换
+
+- 信息收集类
+  - pocket
+  - 收趣云书签，开始做资讯与头条了
+  - 简悦SimpleRead
+
+- 科学上网解决方案
+  - 自用vps
+    - 太容易被wall
+  - 可更换ip的shadowsocks服务
+    - 网速不稳定
+    - ios商店无法下载proxy
 # edge-linux体验
 - 优点
   - 同步无需vpn

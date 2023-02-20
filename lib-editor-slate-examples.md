@@ -17,6 +17,18 @@ modified: 2023-02-05T19:03:12.723Z
   - code-block自研实现，不依赖第三方代码编辑器
   - A plugin framework for building rich text editors with slate.
 
+- editablejs-editable /17Star/MIT/202208/ts/只依赖slate不依赖slate-react/自绘光标
+  - https://github.com/editablejs/editable
+  - https://github.com/editablejs/editable/blob/main/README.zh-CN.md
+  - https://docs.editablejs.com/playground
+  - 依赖slate、zustand
+  - 一个可扩展的富文本编辑器框架，专注于稳定性、可控性和性能
+    - 为此，我们没有使用原生的可编辑属性contenteditable，而是使用了一个自定义的渲染器
+    - canvas的开发体验不佳，需要编写更多代码
+  - 使用slatejs数据模型，借助 react 使用自绘光标的模式渲染，不再依赖 contenteditable 属性
+  - [修改license为GPL_20220204](https://github.com/editablejs/editable/commits/main?after=d61da6caa411139cddb0ae0e8eeeeaee05893610+69&branch=main&qualified_name=refs%2Fheads%2Fmain)
+  - unicode-trie主要对一些 unicode 字符进行索引的计算。因为有些字符占位所占的字节数不确定，造成某些字符拆分后的索引不准确
+
 - wangEditor.v5 /14.3kkStar/MIT/202208/ts
   - https://github.com/wangeditor-team/wangEditor
   - https://www.wangeditor.com/
@@ -73,14 +85,6 @@ modified: 2023-02-05T19:03:12.723Z
   - 不支持拖拽block修改顺序
   - 支持只读模式
   - 代码量不大，思路清晰
-
-- editablejs-editable /17Star/MIT/202208/ts/只依赖slate不依赖slate-react/自绘光标
-  - https://github.com/editablejs/editable
-  - https://docs.editablejs.com/playground
-  - 依赖slate、zustand
-  - 一个实验性的富文本编辑器框架，希望通过自绘光标来替代原生 contenteditable 属性，提供更丰富、稳定的编辑能力。
-  - 使用slatejs数据模型，借助 react 使用自绘光标的模式渲染，不再依赖 contenteditable 属性
-  - 主要对一些 unicode 字符进行索引的计算。因为有些字符占位所占的字节数不确定，造成某些字符拆分后的索引不准确，所以需要这个工具包来解决这个问题。
 
 - hero-editor /10Star/MIT/202205/js/代码少/mobile
   - https://github.com/Thinkei/hero-editor

@@ -23,7 +23,11 @@ modified: 2022-08-21T10:37:01.349Z
 - dev-to
   - 基于css组件
   - 支持编辑
-  - 支持import/export excel/csv，可参考habx-ui-table
+  - 支持import/export excel/csv，可参考habx-ui-table或mantain-table
+  - more/rewrite
+    - 重写ui-table
+    - personal-kanban
+    - pivot-table in v7
 # popular-v8
 - mantine/material-react-table /301Star/MIT/202212/ts
   - https://github.com/KevinVandy/material-react-table
@@ -134,7 +138,6 @@ modified: 2022-08-21T10:37:01.349Z
 
 - https://github.com/angelfishapp/virtual-tables
   - 仅依赖tanstack-virtual，示例简洁 Test for virtualized tables 
-  - 
 
 - https://github.com/odpf/apsara
   - https://odpf.github.io/apsara/

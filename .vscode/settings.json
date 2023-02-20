@@ -1,4 +1,5 @@
 {
+  "outline.collapseItems": "alwaysExpand",
   "search.useIgnoreFiles": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

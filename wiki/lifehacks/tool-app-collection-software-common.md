@@ -135,19 +135,10 @@ modified: 2022-11-07T10:26:22.510Z
   - netdisk
   - emarket
 
-# chrome扩展
+# calendar
 
-- 信息收集类
-  - pocket
-  - 收趣云书签，开始做资讯与头条了
-  - 简悦SimpleRead
-
-- 科学上网解决方案
-  - 自用vps
-    - 太容易被wall
-  - 可更换ip的shadowsocks服务
-    - 网速不稳定
-    - ios商店无法下载proxy
+- https://github.com/lwlsw/Chinese-Lunar-Calendar-ics
+  - 现成的中国农历ics文件 2015-2100
 
 # toolkit
 

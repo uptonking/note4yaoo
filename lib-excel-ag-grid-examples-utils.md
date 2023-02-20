@@ -10,24 +10,28 @@ modified: 2022-08-21T18:32:08.391Z
 # guide
 
 # utils
-- https://github.com/iambriansreed/ag-grid-react-importer
+- https://github.com/iambriansreed/ag-grid-react-importer /ts
   - https://iambrian.com/ag-grid-react-importer/
   - A client side import tool for AG Grid React.
 
-- https://github.com/Asem259/csv-viewer
+- https://github.com/Asem259/csv-viewer /ts
   - https://csv-viewer-umber.vercel.app/
-  - A simple,tool for managing and visualizing CSV data
+  - A simple, tool for managing and visualizing CSV data
   - View and edit CSV files
   - Import and export CSV files
   - Visualize data with charts
 
-- https://github.com/EliasTM1/react-csv-to-agGrid
+- https://github.com/EliasTM1/react-csv-to-agGrid /js
   - Drag and drop CSV files and turn them into cool dynamic ng-grid tables
 
 - https://github.com/StudentOfJS/csv-upload
+  - https://stackblitz.com/edit/vitejs-vite-u62yzq
   - Upload CSV for ag-grid with custom hook
-  - 无依赖
+  - 无依赖，界面简单
 
+- https://github.com/Alek-S/SwiftSheet /js/graphql/mongoose
+  - https://swiftsheet.app/
+  - Upload a CSV to share an online spreadsheet or mock API endpoint that auto-deletes after expiration. No user account needed.
 
 - https://github.com/WebExp0528/CSV-Sortable-Dashboard
   - uploaded csv file, and show it as a sortable dashboard on a webpage.

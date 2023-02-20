@@ -21,6 +21,19 @@ modified: 2022-08-21T10:19:58.757Z
 - https://github.com/TanStack/table/releases/tag/v8.0.0
 - https://github.com/TanStack/table/releases/tag/v8.0.0-alpha.0
   - 20220126
+
+## v7
+
+- ref
+  - https://github.com/tannerlinsley/react-table/blob/master/CHANGELOG.md
+  - https://github.com/tannerlinsley/react-table/releases/tag/v7.0.0
+
+- 7.2.0-20200609
+  - add initialRows property on instance 
+- 7.1.0-20200515
+  - useFilters: add filterTypes: includesSome & includesValue
+- 7.0.0-20200311
+  - Massive changes to the entire project and library
 # work-in-progress
 - 20200923
   - I'm currently planning React Table v8 and an entire dedicated course for it.
