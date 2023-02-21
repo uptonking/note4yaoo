@@ -35,6 +35,9 @@ modified: 2022-11-07T10:25:12.034Z
 - search
   - 搜索关键词时，可加上'min_replies:1'的条件，筛选出被讨论过的质量更高的内容
   - https://github.com/igorbrigadir/twitter-advanced-search
+  - 搜索转发的内容
+    - [Use Twitter Advanced search to find retweets made by a single account? ](https://webapps.stackexchange.com/questions/92616)
+    - from:@username include:nativeretweets filter:nativeretweets chrome
 
 - export
   - 支持导出tweets、replies、likes

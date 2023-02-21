@@ -134,6 +134,14 @@ modified: 2021-05-23T16:34:27.206Z
 - excalidraw
 - remotion
   - 快速制作数据动态变化图/视频
+
+# table-solutions
+
+- 如何以文本格式保存和展示tabular数据
+  - markdown table
+  - gnu recutils
+    - [recutils tutorial example](https://gist.github.com/gmolveau/6be062d9b9005cf985cda98dabdf0baa)
+
 # grid-implementation
 - ## react-table
   - required-props: data, columns

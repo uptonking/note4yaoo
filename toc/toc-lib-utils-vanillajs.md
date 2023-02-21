@@ -45,7 +45,6 @@ modified: 2021-03-01T10:54:24.828Z
   - To make the AST we threw away all the textual symbols that humans use to read programs: the blank space, the braces, the comments. 
   - code editing tools need a useful, standard way of incorporating spaces, braces, and comments into an Abstract Syntax Tree, thus turning it into a Conrete Syntax Tree or CST. 
 # date-time
-
 - https://github.com/dmtrKovalenko/date-io
   - Abstraction over common JavaScript date management libraries.
   - exposes an abstraction interface over luxon, date-fns v2, dayjs and moment.
@@ -53,6 +52,11 @@ modified: 2021-03-01T10:54:24.828Z
 - https://github.com/fabiospampinato/tiny-parse-argv
   - A tiny function for parsing `process.argv`.
   - a modern rewrite of a sensible subset of minimist.
+# serialization
+- https://github.com/bufbuild/connect-es
+  - Type-safe APIs with Protobuf and TypeScript.
+  - Connect is a family of libraries for building and consuming APIs on different languages and platforms.
+  - Unlike REST, the RPCs you use with Connect are typesafe end to end, but they are regular HTTP under the hood
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

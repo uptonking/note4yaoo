@@ -77,7 +77,7 @@ modified: 2022-08-21T10:12:02.964Z
 
 - ## 
 
-- ## [Writing Software to Last 50 Years | Hacker News](https://news.ycombinator.com/item?id=22042186)
+- ## [Writing Software to Last 50 Years | Hacker News_202001](https://news.ycombinator.com/item?id=22042186)
 - Text files are king! I store every single byte I can in text files. Examples:
   - Tabular data     : TSV   (almost all Un*x/GNU tools handle this out of the box)
   - Simple "records" : GNU Recutils format (https://www.gnu.org/software/recutils/)

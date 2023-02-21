@@ -56,16 +56,14 @@ modified: 2022-11-08T19:04:00.289Z
   - 过去两年中，am-editor 编辑器基于 contenteditable 属性上做了很多功能和扩展，也遇到了很多问题。
     - 所以，现在大胆一些，尝试抛弃contenteditable属性，使用自绘光标的模式开发的下一个版本的富文本编辑器。
 
-- etherpad-lite /13.5kStar/Apache2/202211/js
-  - https://github.com/ether/etherpad-lite
-  - https://etherpad.org/
-  - Etherpad is a real-time collaborative editor scalable to thousands of simultaneous real time users. 
-  - It provides full data export capabilities, and runs on your server, under your control.
-
-- textbus /648Star/GPL.v3/202208/ts
-  - https://github.com/tbhuabi/textbus
+- textbus /763Star/GPLv3/202208/ts
+  - https://github.com/textbus/textbus
   - https://textbus.io/collab
   - 依赖prismjs、~~rxjs~~、reflect-metadata、@tanbo/di、@tanbo/stream、@tanbo/color、katex
+  - 从 contenteditable 到完全自定义光标
+  - 抽象选区
+  - 自实现虚拟DOM
+  - 高性能渲染器
   - 依赖自研 @tanbo/stream，最基础的数据流类，每一次订阅产生一个新的数据流。
   - 基于数据驱动的富文本编辑器
   - 为什么我还要另起炉灶呢？
@@ -86,6 +84,12 @@ modified: 2022-11-08T19:04:00.289Z
     - 重写了渲染层，现在 Textbus 2.0 大多数情况下更新视图仅需要 0.2ms 时间，比 1.0 性能更好
     - 核心架构脱离了具体平台，让 Textbus 的能力不仅限于在 PC 端，通过编写特定的中间层，可以方便的在移动端，甚至小程序上实现丰富的富文本能力
     - 重新设计了组件系统，去掉了大家难以理解的装饰器，改为用类似 vue 的 setup 形式开发组件
+
+- etherpad-lite /13.5kStar/Apache2/202211/js
+  - https://github.com/ether/etherpad-lite
+  - https://etherpad.org/
+  - Etherpad is a real-time collaborative editor scalable to thousands of simultaneous real time users. 
+  - It provides full data export capabilities, and runs on your server, under your control.
 
 - taleweaver(织书) /71Star/MIT/202007/ts
   - https://github.com/yuzhenmi/taleweaver

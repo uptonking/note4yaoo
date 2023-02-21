@@ -1,17 +1,22 @@
 ---
-title: web-fwk-layer-blog
-tags: [blog, layer, web]
-created: 2021-08-15T16:48:48.812Z
-modified: 2021-08-15T16:49:10.737Z
+title: thread-devtools-browser-chrome
+tags: [browser, chrome, devtools]
+created: 2023-02-20T19:40:49.993Z
+modified: 2023-02-20T19:41:08.506Z
 ---
 
-# web-fwk-layer-blog
+# thread-devtools-browser-chrome
 
 # guide
 
-# blogs
+# discuss
+- ## 
 
-## [How To Inspect Interactions In The Browser](https://www.builder.io/blog/inspect-interactions-in-the-browser)
+- ## 
+
+- ## 
+
+- ## [How To Inspect Interactions In The Browser](https://www.builder.io/blog/inspect-interactions-in-the-browser)
 
 - I can't believe I just learnt that Chrome lets you:
   - Emulate focus so you can click freely in devtools

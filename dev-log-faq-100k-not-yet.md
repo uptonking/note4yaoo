@@ -6,11 +6,20 @@ modified: 2021-03-29T19:30:08.250Z
 ---
 
 # dev-log-faq-100k-not-yet
+
+# dev
+
 - useLayoutEffect用vanillajs如何实现
 
+## maybe
+
+- 如何开发时import index.ts，发布时import dist/index.js
+  - 不要纠结太久，sourcemap就是解决这个问题的
+# more
 - 不同tab页面同步数据的方案
 
 - 闭包和class的实例变量
+  - class调试方便，闭包调试时查看不便
 
 - http和rest的区别是什么
 

@@ -1,17 +1,20 @@
 ---
-title: lib-editor-block-affine-codebase
+title: lib-editor-block-affine-dev
 tags: [affine, block-editor, codebase, slate-editor]
 created: 2022-05-27T09:43:58.962Z
-modified: 2023-02-05T19:03:12.721Z
+modified: 2023-02-20T15:17:23.958Z
 ---
 
-# lib-editor-block-affine-codebase
-
-> outdated. very early version of affine-editor before pre-alpha.
+# lib-editor-block-affine-dev
 
 # guide
 
+# affine-editor-v202301
+- 每个段落都是一个代表quill editor的div, contenteditable="true"
 # block-editor-codebase
+
+> outdated. very early version of affine-editor before pre-alpha.
+
 - block-editor的plugin设计
   - 在Plugin构造函数中注册各类事件监听器，在editor render-root中执行所有RENDER事件
   - 在editor-block中，也可以注册事件到全局hooks

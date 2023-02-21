@@ -32,6 +32,13 @@ modified: 2022-08-13T06:59:54.741Z
   - https://github.com/pure-admin/vue-pure-admin
     - Vue3+Vite4+Element-Plus+TypeScript编写的一款后台管理系统，兼容移动端
 
+- https://github.com/winwiz1/crisp-react
+  - Crisp React can optionally split a monolithic React app into multiple Single Page Applications (SPAs) and selectively prerender the landing/index page of any SPA at the build time.
+  - Helps to split a monolithic React app into multiple SPAs and avoid vendor lock-in.
+  - in each SPA the routing is managed by a separate instance of React Router 
+  - By default SSR is enabled for the first SPA and disabled for the second SPA.
+  - On the contrary to popular belief that SEO requires SSR, this solution innovatively demonstrates how to get all SPA pages indexed by Google and specific
+
 - async-labs/saas /3.2kStar/MIT/202209/ts
   - https://github.com/async-labs/saas
   - https://saas-app.async-await.com/

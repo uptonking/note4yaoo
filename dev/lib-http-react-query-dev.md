@@ -17,6 +17,27 @@ modified: 2021-05-13T02:52:41.975Z
 - [Use react-query but no react](https://github.com/tannerlinsley/react-query/discussions/790)
   - https://codesandbox.io/s/magical-bush-gbsk7
 # discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## React Context  is a lot closer to props than it is to state. To me, it's just prop drilling without having to write that code explicitly.
+- https://twitter.com/TkDodo/status/1627586506402537473
+- That's why it's okay to put data from React Query into context. It's not state syncing. It happens synchronously. The single source of truth remains the Query Cache.
+  - It's the same as doing: `<Comp data={data} />` a bunch of times (data coming from useQuery)
+- It has the same trade-offs as explicit prop passing compared to calling useQuery again in a deep child:
+  - no fine grained subscriptions (select). probably irrelevant for most apps.
+  - no refetches on mount events (there is none)
+  - component becomes "coupled" to parents
+- It also has the same advantages:
+  - data cannot be undefined if you've checked for loading / error up top (yay, no ?. needed)
+  - no additional observer created (has a non-zero cost). probably irrelevant for most apps.
+  - "easier" to test
+- Truth to be told.. Loved this thought...context api ia just solving the dependency management problem, but not the state management problem...
+  - Absolutely. I wanted to phrase it without "dependency" and "injection"
+
 - ## While I could probably refactor #ReactQuery to use middleware too and get the meat-and-potatoes bundle down to around where SWR is, it would ultimately require users to add a bunch of middleware to get it back to today's 100% functionality, bringing it right back up where it is 
 - https://twitter.com/tannerlinsley/status/1433154450600853505
   - Would it be worth it? Meh.
@@ -46,9 +67,10 @@ modified: 2021-05-13T02:52:41.975Z
   - **To avoid re-fetching the same data for every component, libraries like React Query and ApolloGraphQL use an internal global cache**. The shared cache leads to ridiculously snappy UI.
   - Third you have to handle loading states everywhere.
 - · turns async states into first-class citizens of React. You don't have to think about it. 
-  - You'll need React 18.x and a suspense-enabled library like `react-fetch`. The library would rely on suspense `<Cache>` internally.
+  - You'll need React 18.x and a suspense-enabled library like `react-fetch` . The library would rely on suspense `<Cache>` internally.
   - Any component inside `<Suspense>` can say "Halt! Don't render me yet". React waits until every "halt" is resolved to render the children.
   - While components resolve, React shows the fallback.
+
 # discuss
 - React Query is for managing server state, not client-only application state. 
   - For that, feel free to keep using redux or react context.

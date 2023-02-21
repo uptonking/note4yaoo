@@ -15,6 +15,10 @@ modified: 2022-12-04T16:34:29.342Z
 - 案例
   - https://linktr.ee/meltano
 
+- https://github.com/singlelink-co/Singlelink
+  - The open-source Linktree alternative.
+  - a NodeJS project built on Next.js, GraphQL (served via Apollo Server), and MySQL.
+
 - 2016年，一个名为Linktree的工具诞生，而它的代码，是在6个小时内完成的。
 - 在Linktree上，创作者可以将Instagram、TikTok、Twitch、Facebook、YouTube、Twitter等社交平台上的内容聚合在一个链接中。
 - 成立不到7年，Linktree已经累积拿到了接近6000万美元的融资，估值达到13亿美元。它的火爆也逐渐催生出了一个新赛道。

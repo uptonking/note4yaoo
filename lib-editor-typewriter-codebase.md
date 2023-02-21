@@ -28,6 +28,14 @@ modified: 2023-02-09T12:26:14.281Z
   - scroll
   - resize
 
+## model/TextDocument/Delta
+
+- typewriter的delta结构就是一系列op集合和操作，非常类似经典OT算法
+
+- 模型中的数据editor.doc并不会包含所有op记录，只包含insert，不包含delete/retain
+  - 和quill的parchment结构非常类似，都只包含insert
+  - 带格式的富文本会
+
 ## view/render
 
 ### virtual-render
@@ -55,12 +63,6 @@ modified: 2023-02-09T12:26:14.281Z
   - 在可见区域上方和下方显示一个height为 已滚动元素和未滚动元素个数*averageHeight 的空白div
 
 - editor会监听第一个可滚动父元素的scroll事件，然后计算当前需要渲染的元素范围
-
-## model/TextDocument/Delta
-
-- typewriter的delta结构就是一系列op集合和操作，非常类似经典OT算法
-
-- 模型中的数据editor.doc并不会包含所有op记录，只包含insert，不包含delete/retain
 
 ## commands/op/editor-change
 

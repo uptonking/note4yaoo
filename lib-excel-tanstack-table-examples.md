@@ -24,6 +24,7 @@ modified: 2022-08-21T10:37:01.349Z
   - 基于css组件
   - 支持编辑
   - 支持import/export excel/csv，可参考habx-ui-table或mantain-table
+  - collab，支持显示光标
   - more/rewrite
     - 重写ui-table
     - personal-kanban

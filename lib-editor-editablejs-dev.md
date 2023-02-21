@@ -1,0 +1,76 @@
+---
+title: lib-editor-editablejs-dev
+tags: [editablejs, editor]
+created: 2023-02-20T15:15:34.728Z
+modified: 2023-02-20T15:15:50.211Z
+---
+
+# lib-editor-editablejs-dev
+
+# guide
+
+- features
+  - not using `contenteditable` to avoid its compatibility issues
+  - data model relies on Slate
+  - collab using yjs
+  - 示例是 block-editor，体验友好
+
+- cons
+  - 渲染层使用react
+
+- 不使用contenteditable而自绘光标，类似的有codemirror、textbus
+  - 优势是避免浏览器自身特性的不兼容问题
+  - 劣势是需要自己实现光标闪烁和选区变更
+  - 浏览器devtools自身提供了的模拟focus的工具，是否可用？
+
+- demo
+  - [Editable Playground](https://docs.editablejs.com/playground)
+# dev
+
+# codebase
+
+- 编辑器内容div的下个兄弟元素是shadow dom
+  - CaretComponent
+  - DragCaretComponent
+  - SelectionComponent
+  - InputComponent/textarea-container
+# docs
+- Editable 是一个可扩展的富文本编辑器框架，专注于稳定性、可控性和性能。
+  - 为此，我们没有使用原生的可编辑属性contenteditable，而是使用了一个自定义的渲染器，这使得我们可以更好地控制编辑器的行为。
+  - 从此，您不必再担心跨平台和浏览器兼容性问题（例如Selection、Input），只需专注于您的业务逻辑。
+
+- 为什么没有使用 canvas 渲染？
+  - 虽然canvas渲染的性能可能比dom渲染更快，但是canvas的开发体验不佳，需要编写更多代码。
+- 在富文本中我理想中的前端框架应该是这样的：
+  - 没有虚拟DOM
+  - 没有diff算法
+  - 没有proxy对象
+# more
+
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I'm hesitating between a canvas-based code, and a DOM-based approach
+- https://stackoverflow.com/questions/33611482
+- Canvas approach  
+- pros:
+  - dealing with everything myself
+  - no limitations on event, contenteditable, 
+  - ability to mix graphics & text
+
+- cons:
+  - have to draw and layout everything, painful (but doable)
+  - browser clipboard is very painful (copy & paste):
+
+- DOM based approach (à la MCE? CodeMirror?) 
+- pros:
+  - the browser is doing the layout
+  - the clipboard & cut&paste might be easier
+
+- cons:
+  - contenteditable does not really work (why contenteditable is terrible)
+  - event handling is messy. Can't figure out what are every possible user actions.

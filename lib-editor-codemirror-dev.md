@@ -13,15 +13,15 @@ modified: 2021-05-06T09:38:31.520Z
   - 在github页面，每行代码的行号是确定的，不会显示软换行
     - 方便实现高亮搜索结果、查找引用
 
-- 区分页面组件是cm5和6的方法
-  - cm5的默认css
+- 区分codemirror是v5和v6的方法
+  - 👉🏻 cm5的默认css
     - .CodeMirror-lines
     - .CodeMirror-cursors
     - .CodeMirror-code
       - .CodeMirror-gutter-wrapper
       - .CodeMirror-line 
     - .CodeMirror-gutters
-  - cm6的默认css
+  - 👉🏻 cm6的默认css
     - .cm-editor
     - .cm-gutters
     - .cm-content
@@ -37,12 +37,12 @@ modified: 2021-05-06T09:38:31.520Z
   - A collaborative Web IDE with Code Mirror's CRDT Server and Socket.io
 # docs
 
-# [styling](https://codemirror.net/6/examples/styling/)
+# blogs
 
-- CodeMirror uses a CSS-in-JS system to be able to include its styles directly in the script files. 
-  - This means you don't have to include a library CSS file in your page for the editor to work—both the editor view's own styling and any styling defined for dependencies are automatically pulled in through the JavaScript module system.
-- Themes are simply extensions that tell the editor to mount an additional style module and add the (generated) class name that enables those styles to its outer DOM element.
-# [(Re-) Implementing A Syntax-Highlighting Editor in JavaScript_201111](https://codemirror.net/5/doc/internals.html)
+- [CodeMirror Accessible](https://bgrins.github.io/codemirror-accessible/)
+
+## [(Re-) Implementing A Syntax-Highlighting Editor in JavaScript_201111](https://codemirror.net/5/doc/internals.html)
+
 - CodeMirror 1 was heavily reliant on designMode or contentEditable (depending on the browser)
   - Neither of these are well specified (HTML5 tries to specify their basics), and, more importantly, they tend to be one of the more obscure and buggy areas of browser functionality
 - What CodeMirror 2 does is try to sidestep most of the hairy hacks 
@@ -68,6 +68,12 @@ modified: 2021-05-06T09:38:31.520Z
   - The reason that cheap polling is important is that many browsers do not fire useful events on IME (input method engine) input, which is the thing where people inputting a language like Japanese or Chinese use multiple keystrokes to create a character or sequence of characters. 
   - Most modern browsers fire input when the composing is finished, but many don't fire anything when the character is updated during composition. 
   - So we poll, whenever the editor is focused, to provide immediate updates of the display.
+
+## [styling](https://codemirror.net/6/examples/styling/)
+
+- CodeMirror uses a CSS-in-JS system to be able to include its styles directly in the script files. 
+  - This means you don't have to include a library CSS file in your page for the editor to work—both the editor view's own styling and any styling defined for dependencies are automatically pulled in through the JavaScript module system.
+- Themes are simply extensions that tell the editor to mount an additional style module and add the (generated) class name that enables those styles to its outer DOM element.
 # roadmap
 
 ## [CodeMirror 6 Status Update_201908](https://marijnhaverbeke.nl/blog/codemirror-6-progress.html)

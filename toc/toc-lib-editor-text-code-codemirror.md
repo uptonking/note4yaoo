@@ -15,8 +15,8 @@ modified: 2022-08-18T11:29:26.644Z
 
 - monaco-editor-cons
   - 体积大、复杂度高
-  - 设计目标是ide，而不是纯粹的代码编辑器
   - 不支持mobile
+  - 设计目标是ide，而不是纯粹的代码编辑器
   - 引入项目比较麻烦，不能直接简单的import，webpack要使用专门的plugin，如cra无法直接使用
 
 - top-dependents-of-codemirror.v6
@@ -72,6 +72,12 @@ modified: 2022-08-18T11:29:26.644Z
   - https://copenhagen.autocode.com/
   - lightweight and hackable open source code editor for the web
   - powering the code-editing experience on Autocode, and it's written entirely in vanilla JavaScript with only `highlight.js` and feather icons bundled as dependencies.
+
+- https://github.com/ghost23/east
+  - Playing around with the idea of an AST-based code editor for JavaScript.
+
+- https://github.com/maxmcd/plum
+  - A mobile AST-based editor for Javascript
 
 ## apps
 

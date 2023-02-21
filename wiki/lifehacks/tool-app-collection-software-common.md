@@ -34,6 +34,9 @@ modified: 2022-11-07T10:26:22.510Z
 - 网易云音乐
   - /home/yaoo/.cache/netease-cloud-music/CachedSongs
 
+- qq-linux
+  - /home/yaoo/Documents/opt/portable/message/Feige_for_64_Linux_ipmsg/
+
 # software
 
 - video

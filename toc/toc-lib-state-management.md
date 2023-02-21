@@ -48,6 +48,7 @@ modified: 2020-07-14T11:03:53.196Z
     - Move logic from components to stores and separate application logic and UI
     - Support tree-shaking
     - https://twitter.com/sitnikcode/status/1452629669933731849
+    - [Nano Stores 0.5 · Issue_202109](https://github.com/nanostores/nanostores/issues/57)
 
 - xstate /MIT/12.2kStar/202007/状态机
   - https://github.com/davidkpiano/xstate

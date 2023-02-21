@@ -20,7 +20,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 技术扩展js/py: 支持拖拽的页面编辑器/LowCode，Excel，图表
 - 技术可选1: 画板，图形编辑器, pdf
 - 技术可选2: olap，bi，数据库，大数据工程
-- 技术可选3: vscode，参考设计 extensions、capabilities
+- 技术可选3: vscode，可参考设计 extensions、capabilities
 
 - 🚀 产品落地
   - 表格类内容创作与管理
@@ -45,17 +45,17 @@ modified: 2021-07-20T13:50:23.433Z
   - themeable; unstyled/headless; a11y/keyboard-ux
 - editor/WYSIWYG
   - modular/extensible; collaborative; easy-pivotable
-  - 👉🏻 typewriter, prosemirror, tiptap, slate, lexical; cms
+  - 👉🏻 prosemirror, tiptap, textbus, typewriter, slate, lexical; cms
   - block-editor with slash-menu/backlinks
   - pdf
 - excel/data-grid
   - pivotable; collaborative; formulas
-  - 👉🏻 tanstack-table, luckysheet/univer, ag-grid; nocodb
+  - 👉🏻 tanstack-table, ag-grid, luckysheet/univer; nocodb
   - stream-updates/server-side-infinite-row-model
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~
 - collab
-  - 👉🏻 fluid-framework, hlc
+  - 👉🏻 yjs, fluid-framework, hlc
 
 ## solutions: inter(re)active knowledge-base/wiki
 
@@ -122,9 +122,14 @@ modified: 2021-07-20T13:50:23.433Z
   - live edit
   - 随意搭建ui的需求过于灵活，而基于controls的在线配置编辑更实用; 有限定制组件+专题场景
 
+- leading
+  - 微软 office/word/excel
+  - 腾讯 文档
+  - 字节 飞书
+
 - prosemirror
   - atlassian editor
-  - rich-markdown-editor; outline
+  - rich-markdown-editor + outline
   - milkdown
 
 - react-markdown-editor-lite
@@ -138,16 +143,11 @@ modified: 2021-07-20T13:50:23.433Z
 # excel
 - tips
 
-- leading
-  - 微软 office/word/excel
-  - 腾讯 文档
-  - 字节 飞书
-
 - react-table /tannerlinsley
 
 - ag-grid /ag-grid
 
-- luckysheet /bytedance
+- luckysheet
 
 - more-list-grid
   - x-spreadsheet
@@ -156,8 +156,8 @@ modified: 2021-07-20T13:50:23.433Z
 # wishlist
 - charting-viz
   - leading
-    - d3
     - echarts
+    - d3
     - vega
   - more-charting
     - antvis

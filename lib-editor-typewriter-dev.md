@@ -16,6 +16,7 @@ modified: 2023-02-09T12:24:23.549Z
 - 技术要点
   - 模型层TextDocument将Delta中的op数组按换行符拆分为blocks/lines数组
   - virtual-render只渲染指定区域内的元素
+  - 默认render使用的是virtual dom
   - 选区同步基于浏览器的事件
   - 协作基于 json-patch + 简化版ot
 

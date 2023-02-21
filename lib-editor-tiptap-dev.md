@@ -12,7 +12,7 @@ modified: 2023-02-05T19:03:27.730Z
 - features
   - headless without any css
   - framework-agnostic
-  - realtime collaboration with the magic of yjs
+  - realtime collaboration with yjs
   - customizable with a ton of extensions
   - typescript
 

@@ -9,7 +9,33 @@ modified: 2020-12-19T13:04:40.865Z
 
 # guide
 
-# react-ssr
+# ssr
+- https://github.com/jaredpalmer/after.js /202111/ts/inactive/代码少
+  - Next.js-like framework for server-rendered React apps built with React Router
+
+- https://github.com/Aslemammad/vitext /202201/ts/inactive
+  - The Next.js like React framework for better User & Developer experience!
+  - Vitext (Vite + Next) is a lightning fast SSG/SSR tool that lets you develop better and quicker front-end apps.
+
+- https://github.com/winwiz1/crisp-react
+  - Crisp React can optionally split a monolithic React app into multiple Single Page Applications (SPAs) and selectively prerender the landing/index page of any SPA at the build time.
+  - Helps to split a monolithic React app into multiple SPAs and avoid vendor lock-in.
+  - in each SPA the routing is managed by a separate instance of React Router 
+  - By default SSR is enabled for the first SPA and disabled for the second SPA.
+  - On the contrary to popular belief that SEO requires SSR, this solution innovatively demonstrates how to get all SPA pages indexed by Google and specific
+
+- https://github.com/rakkasjs/rakkasjs
+  - a bleeding-edge full-stack React framework powered by Vite. 
+  - You can consider it an up-and-coming alternative to Next.js, Remix, or Gatsby.
+
+- https://github.com/fusionjs/fusionjs
+  - Uber’s open source universal web framework, represents the fusion of the client and the server. 
+
+- https://github.com/electrode-io/electrode
+  - Web applications with node.js and React
+  - universal webapp with server side rendering powered by node.js
+  - https://github.com/electrode-io/electrode-native
+    - A platform to ease integration&delivery of React Native apps in existing mobile applications
 
 ## examples
 
@@ -30,11 +56,6 @@ modified: 2020-12-19T13:04:40.865Z
   - Pre-render pages at build time (SSG) or request time (SSR) in a single project
   - Every component in the pages directory becomes a route.
   - Optionally create API endpoints to provide backend functionality.
-- https://github.com/jaredpalmer/after.js
-  - Next.js-like framework for server-rendered React apps built with React Router
-- https://github.com/Aslemammad/vitext
-  - The Next.js like React framework for better User & Developer experience!
-  - Vitext (Vite + Next) is a lightning fast SSG/SSR tool that lets you develop better and quicker front-end apps.
 
 - https://github.com/styfle/react-server-example-tsx
   - https://react-tsx.now.sh/
@@ -84,7 +105,7 @@ modified: 2020-12-19T13:04:40.865Z
   - An Isomorphic MVC Framework supports both SSR and CSR
   - MVC 三者都是 Isomorphic，既是服务端 MVC，也是浏览器端 MVC。
   - https://github.com/Lucifier129/isomorphic-cnode
-# ssr-solutions
+# more-ssr
 - https://github.com/pmb0/express-tsx-views
   - Server-side JSX/TSX rendering for your express or NestJS application
   - With this template engine, TSX files can be rendered server-side by your Express application. Unlike other JSX express renderers, this one does not rely on JSX files being transpiled by babel at runtime. Instead, TSX files are processed once by the tsc compiler.

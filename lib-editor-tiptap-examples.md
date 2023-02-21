@@ -11,6 +11,7 @@ modified: 2023-02-05T19:03:27.730Z
 
 - resources
   - https://github.com/ueberdosis/awesome-tiptap
+  - [提供了类似块编辑器的drag示例](https://tiptap.dev/guide/node-views/examples)
 # popular
 - BlockNote /14Star/MPL.v2/202208/ts
   - https://github.com/YousefED/BlockNote

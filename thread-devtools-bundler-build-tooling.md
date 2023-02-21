@@ -7,8 +7,9 @@ modified: 2021-09-22T05:47:54.470Z
 
 # thread-devtools-bundler-build-tooling
 
-# discuss
+# guide
 
+# discuss
 - ## 
 
 - ## 
@@ -21,7 +22,6 @@ modified: 2021-09-22T05:47:54.470Z
   - While you can probably achieve in Wireshark what Fiddler offers, it's going to be an utter pain in the ass.
 - If you want an open-source alternative to Fiddler, consider mitmproxy
   - https://github.com/mitmproxy/mitmproxy
-
 
 - ## [Is Webpack going anywhere? Turbopack and the future of Webpack_202210](https://github.com/webpack/webpack/discussions/16418)
 - from @sokra (creator of webpack), turbopack is young, need more time to be stable and mature, and many next.js configurations use custom webpack configuration, so webpack will get fixes and improvements
