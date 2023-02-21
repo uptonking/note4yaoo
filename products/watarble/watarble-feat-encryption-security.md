@@ -11,6 +11,10 @@ modified: 2022-11-24T11:36:36.445Z
 
 - encrypt
   - [end-to-end-encryption · GitHub Topics](https://github.com/topics/end-to-end-encryption?l=javascript&o=desc&s=)
+
+- https://github.com/robinmoisson/staticrypt
+  - StatiCrypt uses AES-256 to encrypt your HTML file with your passphrase and return a static page including a password prompt and the javascript decryption logic that you can safely upload anywhere
+  - 静态网页加密，基于 crypto.js ，可以不使用任何后端，运行命令就可以将原网页生成一个密码保护提示页。可以非常方便的部署到任何静态文件服务中- Netlify,Cloudflare,Github pages。
 # blogs
 
 ## [Excalidraw: End-to-End Encryption in the Browser_202003](https://blog.excalidraw.com/end-to-end-encryption/)

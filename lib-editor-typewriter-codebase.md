@@ -12,8 +12,8 @@ modified: 2023-02-09T12:26:14.281Z
 - dev-to
   - 支持表格
 # not-yet
-- 总共100行，每行`\n+字母`的场景
-  - doc的length为293
+- 示例文档有100行，每行`\n+字母`的场景
+  - doc的length为293？
 # codebase
 - lines是块级元素
   - 类似quill中的blocks, formats, embeds

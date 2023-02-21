@@ -1741,8 +1741,8 @@ class Augmentable {
 
 ## 0912
 
-- `caretRangeFromPoint(x,y)`只有firefox浏览器不支持，其他浏览器都支持，是非标准属性
-  - `caretPositionFromPoint(x,y)`只有firefox浏览器支持，是标准属性
+- `caretRangeFromPoint(x,y):Range`只有firefox浏览器不支持，其他浏览器都支持，是非标准属性
+  - `caretPositionFromPoint(x,y):CaretPosition`只有firefox浏览器支持，是标准属性
   - 返回光标所在节点及光标在该节点内的offset
   - 两个方法参数完全相同，都是 x/y position within the current viewport，即clientX/Y
 - `elementFromPoint(x,y)` 不包含offset
@@ -2223,7 +2223,7 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
   - 将自定义组合的零宽度字符插入文本中，用户复制后会携带不可见信息，达到传递作用。
 - 使用零宽度字符加密解密
   - 信息加密解密的思路是, 把字符串转成二进制0和1, 并用空格把字符隔开, 然后用三种零宽表示0、1、空格, 然后用第四种零宽字符拼起来; 解密反向操作即可.
-- excel表格 中经常出现零宽字符 \u202c \u202d, 上传后解析或复制到 input 就会有问题, 
+- excel表格中经常出现零宽字符 \u202c \u202d, 上传后解析或复制到 input 就会有问题, 
   - 在 excel表格 中获取到的数据一般需要先过滤.
 
 ## 0721

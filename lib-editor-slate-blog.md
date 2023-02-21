@@ -11,6 +11,13 @@ modified: 2023-02-05T19:03:12.722Z
 
 # slate-blogs
 
+## [slate 系列 - 不同空格的处理 | YasinChan 的博客](https://yasinchan.com/post/html-different-space-slate.html)
+
+- slate的数据在最终渲染到页面后会出现问题，表现为行首空格消失，文字之间的多个空格变成一个空格。而一般的 div contenteditable 中的空格可以连续渲染。
+  - 为避免这种情况，我们可以在 slate 中可以在最终保存的数据做二次处理
+- https://yasinchan.com/post/
+  - slate系列
+
 ## [Adding A Commenting System To A WYSIWYG Editor/Slate](https://www.smashingmagazine.com/2021/05/commenting-system-wysiwyg-editor/)
 
 - https://github.com/shalabhvyas/wysiwyg-editor
@@ -75,7 +82,7 @@ modified: 2023-02-05T19:03:12.722Z
 
 - [Building A Rich Text Editor (WYSIWYG)](https://www.smashingmagazine.com/2021/05/building-wysiwyg-editor-javascript-slatejs/)
 
-## [Slate 介绍分析与实践](https://coldstone.fun/post/2020/12/13/slate-intro/)
+## [Slate 介绍分析与实践_202012](https://coldstone.fun/post/2020/12/13/slate-intro/)
 
 - 特点
   - 插件作为一等公民，能够完全修改编辑器行为
@@ -83,7 +90,7 @@ modified: 2023-02-05T19:03:12.722Z
   - 文档数据类似于 DOM 树，可嵌套
   - 具有原子化操作 API，理论上支持协同编辑
   - 使用 React 作为渲染层
-  - 不可变数据结构 Immer
+  - 不可变数据结构
 
 - 渲染原理
   - Slate的文档数据是一颗类似DOM的节点树，slate-react 通过递归这颗树生成 children 数组，这个数组有两种类型的组件 Element 和 Text， 最终 react 将 children 数组中的组件渲染到页面上

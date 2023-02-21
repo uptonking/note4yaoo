@@ -12,28 +12,28 @@ modified: 2023-02-20T15:15:50.211Z
 - features
   - not using `contenteditable` to avoid its compatibility issues
   - data model relies on Slate
+    - 针对block editor，扩展了slate的model，增加了Grid、List相关数据结构和操作
   - collab using yjs
   - 示例是 block-editor，体验友好
 
 - cons
   - 渲染层使用react
 
-- 不使用contenteditable而自绘光标，类似的有codemirror、textbus
+- ✨ 不使用contenteditable而自绘光标，类似的有codemirror、textbus
+  - 实现思路是在pointer事件的位置通过绝对定位放置一个oapcity为0宽约为1px的textarea来接收输入
   - 优势是避免浏览器自身特性的不兼容问题
   - 劣势是需要自己实现光标闪烁和选区变更
+  - 影响accessibility
   - 浏览器devtools自身提供了的模拟focus的工具，是否可用？
+
+- tips
+  - 支持拖拽内嵌的二级列表
 
 - demo
   - [Editable Playground](https://docs.editablejs.com/playground)
 # dev
 
-# codebase
 
-- 编辑器内容div的下个兄弟元素是shadow dom
-  - CaretComponent
-  - DragCaretComponent
-  - SelectionComponent
-  - InputComponent/textarea-container
 # docs
 - Editable 是一个可扩展的富文本编辑器框架，专注于稳定性、可控性和性能。
   - 为此，我们没有使用原生的可编辑属性contenteditable，而是使用了一个自定义的渲染器，这使得我们可以更好地控制编辑器的行为。

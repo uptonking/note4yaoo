@@ -10,17 +10,18 @@ modified: 2021-10-07T14:50:51.512Z
 # guide
 
 - features
-  - 从contenteditable到完全自定义光标
+  - 从contenteditable到自绘光标，同时支持fallback到原生光标
   - 抽象选区
   - 自实现虚拟DOM
-  - 高性能渲染器
+  - 高性能渲染器，基于细粒度缓存
   - collab using yjs
   - 可扩展的架构，设计了Plugin、Module、
   - 创新的组件化系统
 
 - cons
-  - 示例不是 block-editor
+  - 示例太传统，不是 block-editor
   - 框架层使用自研依赖注入di
+  - 先更新editorState，再更新editorView的逻辑不清晰，部分原因是依赖注入
 # not-yet
 
 # faq
@@ -96,6 +97,3 @@ modified: 2021-10-07T14:50:51.512Z
   4. TBus 开箱即用，不限制框架和库。
   5. TBus 核心功能都是以插件形式存在的，且有着较高的抽象，只需要操作数据，不需要关心标签插在哪里，不需要关心 DOM 结构，不需要关心选区复位。
   6. TBus 配置没有魔术字符串，完全基于接口（interface) 加枚举量，因此对 treeshake 非常友好。
-
-- 输入框是用隐藏textarea实现的？
-  - 是的

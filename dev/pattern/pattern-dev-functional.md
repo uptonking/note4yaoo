@@ -7,8 +7,14 @@ modified: 2020-12-20T16:01:15.556Z
 
 # pattern-dev-functional
 
-# [A Simple, Functional Module Pattern for TypeScript](https://spin.atomicobject.com/2017/10/26/typescript-functional-module-pattern/)
+# guide
 
+- 函数式编程
+  - 对象字面量的属性为函数时，使用this需要注意
+
+- 闭包
+  - 私有变量可以放置外部拿到，但class对象的私有属性外部也可以拿到
+# [A Simple, Functional Module Pattern for TypeScript](https://spin.atomicobject.com/2017/10/26/typescript-functional-module-pattern/)
 - We’ve been using TypeScript with our React apps quite a bit recently. 
 - One common need that we have when programming in a functional style is a good pattern for creating small abstractions that can be used widely in an application.
 - These are the kind of things where you might traditionally use a class, but we wanted a pattern that would be:
@@ -29,7 +35,7 @@ modified: 2020-12-20T16:01:15.556Z
 
 - Define yor type
 
-``` typescript
+```typescript
 interface SearchParams {
   readonly query: string;
   readonly facets: FacetConstraints.Type;
@@ -42,7 +48,7 @@ export type Type = SearchParams;
 
 - Export your API for dealing with this abstraction
 
-``` typescript
+```typescript
 export const EMPTY: SearchParams = {
   query: "",
   page: 1,
@@ -70,7 +76,7 @@ export function fromQueryString(queryString: string): SearchParams | null {
 
 - Example use and editor support
 
-``` typescript
+```typescript
 import * as SearchParams from 'domain/search-params';
 
 function updateFacets(
@@ -104,7 +110,7 @@ SP.fromQueryString(query);
   - "Update" in this case is in the functional sense – not by mutation, but by creating a new data structure with a new value in the location of interest. 
   - A little like a pointer offset in C, but memory-, type-, and mutation-safe.
 
-``` typescript
+```typescript
 // define a type
 type Something = { foo: number; bar: string };
 

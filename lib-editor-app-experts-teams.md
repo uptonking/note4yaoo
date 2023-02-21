@@ -12,10 +12,34 @@ modified: 2022-08-21T10:16:52.004Z
 - resources
   - https://www.rich-text-js-jobs.com/
 # editor-experts-popular
+- 王福朋 wangEditor  /slate
+  - https://juejin.cn/user/1714893868765373
+  - https://www.zhihu.com/people/wangfupeng1988
+
+- 杨振兴 worktile   /slate
+  - https://github.com/pubuzhixing8
+  - https://github.com/worktile/slate-angular
+  - https://www.zhihu.com/people/pubuzhixing/posts
+
+- ccorcos notion
+  - https://github.com/ccorcos
+  - https://github.com/ccorcos/prosemirror-examples
+
+- lastnigtic /syllepsis
+  - https://github.com/lastnigtic
+  - https://lastnigtic.cn/
+  - https://github.com/bytedance/syllepsis
+  - https://github.com/lastnigtic/syllepsis-collab
+  - https://discuss.prosemirror.net/u/lastnigtic
+
+- vivaxy
+  - https://www.zhihu.com/people/vivaxy
+
 - 张驰
   - [张驰技术博客](https://juejin.cn/user/3456520286121437/posts)
 
-- https://github.com/fantasticit
+- fantasticit /think知识库
+  - https://github.com/fantasticit
   - https://github.com/fantasticit/think
   - 低代码、文档
 
@@ -24,8 +48,7 @@ modified: 2022-08-21T10:16:52.004Z
   - [我的2021-从在线教育到新能源汽车](https://juejin.cn/post/7043089265575591949)
   - [基于CRDT的一种文档冲突算法 YATA/yjs](https://juejin.cn/post/7064236095440961550)
 # editor-oriented-teams
-- [emergence engine0e100r1in0g](https:/0/
-- emergence-engineering.com/blog)
+- [emergence engine blog](https://emergence-engineering.com/blog)
   - [Collaborative text editor with ProseMirror and a syncing database](https://emergence-engineering.com/blog/prosemirror-sync-1_202007)
 
 - [有道技术博客](https://techblog.youdao.com/)
@@ -62,9 +85,6 @@ modified: 2022-08-21T10:16:52.004Z
   - https://www.npmjs.com/package/@marduke182/prosemirror-react-view
   - https://jquintanab.com/resume/
 
-- https://github.com/ccorcos
-  - https://github.com/ccorcos/prosemirror-examples
-
 - https://github.com/tanishqkancharla
   - https://github.com/tanishqkancharla/gem
   - https://discuss.prosemirror.net/u/moonrise-tk
@@ -73,13 +93,7 @@ modified: 2022-08-21T10:16:52.004Z
   - https://github.com/benrbray/noteworthy
   - https://github.com/benrbray/prosemirror-math
 
-- https://github.com/lastnigtic
-  - https://lastnigtic.cn/
-  - https://github.com/bytedance/syllepsis
-  - https://github.com/lastnigtic/syllepsis-collab
-  - https://discuss.prosemirror.net/u/lastnigtic
-
-- https://github.com/edeity
+- https://github.com/edeink
   - https://ede.ink/
   - 李健乐 金山 字节 syllepsis
   - [2021，挑战和机遇: 开源syllepsis](https://ede.ink/half_year_in_toutiao.html)
@@ -95,8 +109,6 @@ modified: 2022-08-21T10:16:52.004Z
   - https://github.com/YousefED/SyncedStore
 
 ## prosemirror-lovers
-
-- https://www.zhihu.com/people/vivaxy
 
 - https://github.com/namiwang
   - https://discuss.prosemirror.net/u/namiwang
@@ -114,15 +126,6 @@ modified: 2022-08-21T10:16:52.004Z
 
 - https://github.com/wenerme/wode
   - https://wode.vercel.app/
-# slate
-- 杨振兴
-  - https://github.com/pubuzhixing8
-  - https://github.com/worktile/slate-angular
-  - https://www.zhihu.com/people/pubuzhixing/posts
-
-- 王福朋 wangEditor
-  - https://juejin.cn/user/1714893868765373
-  - https://www.zhihu.com/people/wangfupeng1988
 # more
 - [介绍在线文档、在线Excel等在线协作场景](https://www.zhihu.com/column/c_1412741892215459840)
  

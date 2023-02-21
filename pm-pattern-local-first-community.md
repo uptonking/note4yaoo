@@ -48,6 +48,7 @@ modified: 2022-03-03T18:20:12.075Z
 
 - ## When we started work on @linear , we felt real-time sync was a core functionality we had to invest in from the get-go. 
 - https://twitter.com/artman/status/1558081796914483201
+  - [linear sync 分享_202002](https://www.youtube.com/watch?v=WxK11RsLqp4&t=2169s)
   - It turns out sync was important, but not for the reasons we thought.
 - Our gut feeling was that real-time updates were required from a modern tool like Linear. Who wants to refresh to see the latest data? But how often do you find yourself in a situation where multiple people update data simultaneously in a project management tool?
   - Not that often, it turned out. Aside from special cases where your team gets together to operate on data - like planning your next cycle - edits are made across the entire dataset, with the same data being touched at the same time relatively infrequently.

@@ -9,7 +9,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 # popular-slate
 
-- plate /1.6kStar/MIT/202208/ts
+- plate /1.6kStar/MIT/202208/ts/block-style
   - https://github.com/udecode/plate
   - https://plate.udecode.io/
   - 支持跨block选择部分文字
@@ -17,11 +17,12 @@ modified: 2023-02-05T19:03:12.723Z
   - code-block自研实现，不依赖第三方代码编辑器
   - A plugin framework for building rich text editors with slate.
 
-- editablejs-editable /17Star/MIT/202208/ts/只依赖slate不依赖slate-react/自绘光标
+- editablejs-editable /17Star/GPL/202208/ts/自绘光标/模型层block
   - https://github.com/editablejs/editable
   - https://github.com/editablejs/editable/blob/main/README.zh-CN.md
   - https://docs.editablejs.com/playground
   - 依赖slate、zustand
+  - 只依赖slate不依赖slate-react，但实现是类似的，react组件逻辑并不多
   - 一个可扩展的富文本编辑器框架，专注于稳定性、可控性和性能
     - 为此，我们没有使用原生的可编辑属性contenteditable，而是使用了一个自定义的渲染器
     - canvas的开发体验不佳，需要编写更多代码
@@ -29,18 +30,33 @@ modified: 2023-02-05T19:03:12.723Z
   - [修改license为GPL_20220204](https://github.com/editablejs/editable/commits/main?after=d61da6caa411139cddb0ae0e8eeeeaee05893610+69&branch=main&qualified_name=refs%2Fheads%2Fmain)
   - unicode-trie主要对一些 unicode 字符进行索引的计算。因为有些字符占位所占的字节数不确定，造成某些字符拆分后的索引不准确
 
-- wangEditor.v5 /14.3kkStar/MIT/202208/ts
+- wangEditor.v5 /14.3kkStar/MIT/202208/ts/vanillajs
   - https://github.com/wangeditor-team/wangEditor
   - https://www.wangeditor.com/
   - core依赖slate、snabbdom、dom7、is-hotkey、lodash、uppy(file uploader)、event-emitter、i18next
-  - 开箱即用，配置简单。支持 JS Vue React
-  - L1级编辑器
-    - 弃用了 document.execCommand API ，使用 slate.js（但不依赖 React）为内核，升级为 L1 能力。
-  - 使用vdom
-    - 使用 vdom 技术（基于 snabbdom.js）做视图更新，model 和 view 分离，增加稳定性
+  - 源码是函数式风格
+  - 开箱即用，配置简单。
+  - 支持 JS Vue React
+  - L1级编辑器，弃用了 document.execCommand，使用 slate.js（但不依赖 React）为内核
+  - 使用vdom（基于 snabbdom.js）做视图更新，model 和 view 分离，增加稳定性
   - 扩展性
     - 使用扩展插件和模块的机制，保证扩展性
-    - 现在 wangEditor 内置的各个功能，也都是通过扩展插件和模块的形式搭建起来的
+    - 现在wangEditor内置的各个功能，也都是通过扩展插件和模块的形式搭建起来的
+- https://github.com/wangfupeng1988/slate-dom-view
+  - slate.js for DOM, without React.
+
+- prezly-slate /31Star/MIT/202208/ts/提交多
+  - https://github.com/prezly/slate 
+  - 依赖 plate、popperjs2、@prezly/sdk、react-bootstrap
+  - Prezly software built upon Slate
+  - 悬浮工具条使用卡片的形式
+  - https://www.prezly.com/
+    - Successful businesses need a fanbase. Use Prezly to build yours.
+    - With Prezly, you can publish and share your content with your audience, directly. No algorithms, no middlemen, no BS.
+
+- https://github.com/TheGuardianWolf/treepack
+  - Pack tree nodes into a flat object and unpack them again!
+  - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
 
 - quadrats /4Star/MIT/202203/ts
   - https://github.com/Quadrats/quadrats
@@ -62,15 +78,6 @@ modified: 2023-02-05T19:03:12.723Z
   - Whim is currently undergoing a complete re-write for version 2.0, with an initial release planned for the end of August 2022. 
     - Version 2.0 will include a much improved API, detailed docs, and solid test coverage.
 
-- prezly-slate /31Star/MIT/202208/ts/提交多
-  - https://github.com/prezly/slate 
-  - 依赖 @udecode/plate-core、popperjs2、@prezly/sdk、react-bootstrap
-  - Prezly software built upon Slate
-  - 悬浮工具条使用卡片的形式
-  - https://www.prezly.com/
-    - Successful businesses need a fanbase. Use Prezly to build yours.
-    - With Prezly, you can publish and share your content with your audience, directly. No algorithms, no middlemen, no BS.
-
 - slate-angular /93Star/MIT/202205/ts
   - https://github.com/worktile/slate-angular
   - http://slate-angular.ngnice.com/
@@ -79,7 +86,7 @@ modified: 2023-02-05T19:03:12.723Z
 - edu-editor /2Star/MIT/202207/ts/slate
   - https://github.com/kiaksarg/edu-editor
   - https://edu-editor.netlify.app/
-  - a basic medium/notion like rich text editor based on Slate.js framework
+  - a basic medium/notion like rich text editor based on Slate.js
   - 依赖 chakra-ui、nextjs、react-table.v7、slate.v0.72
   - 支持跨block选择部分文字
   - 不支持拖拽block修改顺序
@@ -93,13 +100,13 @@ modified: 2023-02-05T19:03:12.723Z
   - It's designed for mobile-first, hence all of the communications from plugins to the editor must go through message channel. 
   - This package also includes serializers and renderers for the Slate content.
 
-- taze-editor /6Star/MIT/202211/ts
+- taze-editor /6Star/MIT/202210/ts/inactive
   - https://github.com/taze-editor/taze-editor
   - http://taze-editor.vercel.app/
   - Create your own plugin-based rich text editor easily
-  - Taze Editor is built on top of Slate and heavily inspired by Plate.
+  - built on top of Slate and heavily inspired by Plate.
 
-- circu /1Star/MIT/202211/ts
+- circu /1Star/MIT/202211/ts/blocksuite
   - https://github.com/Flrande/circu
   - 一个支持多人协同的在线文档应用
   - 修改了slate-react
@@ -128,12 +135,8 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/seafileltd/seafile-editor /RepoNA
   - 项目是基于 react-slate 组件库的二次封装, 用于满足公司富文本编辑器的使用需求
-
-- https://github.com/TheGuardianWolf/treepack
-  - Pack tree nodes into a flat object and unpack them again!
-  - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
 # slate-based-editors
-- boatproject-editor /1Star/MIT/202208/ts/plate/提交多
+- boatproject-editor /1Star/MIT/202208/ts/plate/提交多/inactive
   - https://github.com/boatproject/editor
   - 依赖 plate、slate、styled-components
   - Rich text editor component for React. Built with Plate and MUI
@@ -141,10 +144,6 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/webkom/lego-editor /ts
   - A React rich text editor written in TS with Slate.js for lego-webapp
   - 代码量少，适合入门，支持上传图片
-
-- @tinacms/toolkit
-  - https://github.com/tinacms/tinacms/blob/main/packages/%40tinacms/toolkit
-  - 依赖 @udecode/plate、headlessui、floating-ui
 
 - https://github.com/accordproject/web-components/tree/master/packages/ui-markdown-editor
   - https://ap-web-components.netlify.app/

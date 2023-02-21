@@ -129,7 +129,7 @@ modified: 2021-07-11T08:30:03.165Z
   - Without using the `contenteditable` , how do you put a cursor into a DOM element?
   - [Fabric.js tests · IText tests](http://fabricjs.com/test/misc/itext.html)
 
-- ## Google Docs will now use canvas based rendering
+- ## Google Docs will now use canvas based rendering__20210512
 - https://news.ycombinator.com/item?id=27129858
 - canvas comes with very real trade offs though:
   - Cost of implementation and maintenance is much higher with canvas. This is particularly the case with WebGL, there have been very few contributions to xterm.js (the terminal frontend component) in the WebGL renderer because of the knowledge required. 
