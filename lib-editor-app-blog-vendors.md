@@ -262,5 +262,9 @@ modified: 2022-10-19T20:09:13.427Z
 - 在业务层，通过核心层暴露的扩展机制，我们可以开发各种不同编辑器特性，通过注册机制将它们注册回编辑器丰富编辑器的功能。
 - 在开发有道云笔记的新版编辑器的过程中，我们遇到很多实际问题，愈发感觉到这是一个非常有深度的前端技术领域，所以我们将新版编辑器的技术选型、架构和部分实现细节拿出来分享给大家，希望对大家开发富文本编辑器、做复杂系统的架构设计有一定参考意义。
 # editor-ww
-
 - [TinyMCE: Dangerous examples of technical debt in rich text editors](https://www.tiny.cloud/blog/technical-debt-examples/)
+# more
+- [语雀电子表格自研之路 - 知乎](https://zhuanlan.zhihu.com/p/344556228)
+- [菜鸟业务从 Excel 到 WebExcel 的探索之路 - 知乎](https://zhuanlan.zhihu.com/p/345780841)
+- [钉钉文档同构表技术应用 - 知乎](https://zhuanlan.zhihu.com/p/346260168)
+- [钉钉文档编辑器的前世今生 - 知乎](https://zhuanlan.zhihu.com/p/346863282)

@@ -28,7 +28,7 @@ apt remove
 apt purge
 
 # 刷新dns缓存
-sudo resolvectl flush-caches
+resolvectl flush-caches
 # check the dns cache size 
 resolvectl statistics
 ```

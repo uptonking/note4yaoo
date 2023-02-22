@@ -7,8 +7,9 @@ modified: 2023-02-05T19:03:12.722Z
 
 # lib-editor-slate-blog-stars
 
-# [Slate 和 ProseMirror 简单对比 - Xheldon Blog](https://www.xheldon.com/tech/prosemirror-comparison-with-slatejs.html)
+# guide
 
+# [Slate 和 ProseMirror 简单对比 - Xheldon Blog](https://www.xheldon.com/tech/prosemirror-comparison-with-slatejs.html)
 - Slate 优点：
   - 上手快，开箱即用，概念易懂，代码容易理解，尤其是对熟悉 React 的同学来说，其视图层完全基于 React，基本上一周就能上手理解。
   - 定制性强，可以根据自身的业务场景，魔改底层核心模块如 slate、slate-react 来扩展各种插件和架构，底层修改起来相对 PM 来说较为简单。

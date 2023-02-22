@@ -151,34 +151,6 @@ modified: 2022-08-21T10:11:37.453Z
   - 是否能通过交互绕开缺陷？
   - 是否能脱离 contenteditable 的架构？
 
-## [最近迷上了富文本编辑器！_202111](https://juejin.cn/post/7027040695827300360)
-
-- 于是想起了咱们的国产之光，wangeditor ，因为他们的功能类似，原理指定也类似，区别的地方其实就是设计思路的一些差别
-- 在开始wangeditor 的心路历程之前，我们先要明确一定，富文本编辑器之所以可以编辑，其实是得益于 HTML contenteditable 属性 正是由于有了它我们才能实现在标签里面编辑内容。这是实现一个富文本的根本
-- wangeditor 从第三个版本开始我基本也都看过，见证了他一步步的从一js到ts 的重构、从重视拓展性到到面向对象再到现在社区流行的函数式、从必须兼容ie到抛弃兼容ie 、从传统的webpack 的工程化构建到 rollup +monorepo的工程化构建
-- 刚开始读v4的时候最最高兴的就是他每个方法都有注释, 至少咱知道从哪里入手，然后就是经典的面向对象设计。
-  - 整体的设计架构就是利用面向对象的思想，将一个个的功能对象，组合成富文本的功能，主要实现以下功能对象
-- 最近在拜读v5的源码，还还整理规划了v5的执行流程的思维导图，当然还没整理完毕
-  - v5在slate他提供内核的基础上去自己实现view 的渲染
-  - 从v4到v5 能明显的感觉到函数成了一等公民，这也与像vue3这类优秀的开源项目不谋而合。通过不同函数的组合，减少项目中由于引用类型带来的副作用
-- 我主要想说的是为什么v5为什么要使用vdom？
-  - 在v4 中主要就是利用MutationObserver 去监听dom树的改变，从而触发编辑器的功能
-  - 整个v4是有自己的一套渲染规则，并且没有模型整个概念，他的所有的操作都是深深的绑定在当前这个富文本中，无法抽离
-  - 而由于v5是基于slate， 所有完美的继承了slate 优点，将模型和视图分离，就可以随意的选用选用现有的效率比较高的view 渲染器去做视图的渲染，在v5中就是用了和vue2同款的snbbdom
-- 我觉得（有可能不对）v5中之所以使用snbbdom 的原因有两点
-  - 基于slate， 能拿到Slate 的数据模型 ，用最小的成本利用现有渲染器去渲染dom, 并且能通过操作menu等功能修改vdome从而渲染视图
-  - 模型视图分离是一个趋势，也是一个更高的抽象思想，能让代码的架构更加清晰，便于理解
-- **beforeinput**表示可编辑的dom在被修改前触发
-- 为什么要弃用MutationObserver而选用beforeinput ？
-  - 早期页面并没有提供对监听的支持，所以那时要观察 DOM 是否变化，唯一能做的就是轮询检测，比如使用 setTimeout 或者 setInterval 来定时检测 DOM 是否有改变。
-  - 直到 2000 年的时候引入了 Mutation Event，Mutation Event 采用了观察者的设计模式，当 DOM 有变动时就会立刻触发相应的事件，这种方式属于同步回调。
-  - 这种实时性造成了严重的性能问题，因为每次 DOM 变动，渲染引擎都会去调用 JavaScript，这样会产生较大的性能开销。
-  - 从 DOM4 开始，推荐使用 MutationObserver 来代替 Mutation Event。MutationObserver API 可以用来监视 DOM 的变化，包括属性的变化、节点的增减、内容的变化等。
-- 我觉得（可能有错）有两点原因：
-  - MutationObserver虽然很优秀，但是他的监听如果数据发生变化还需要比较，拿不到最新的变化值，并且还会产生很多无用的节点，不适合slate 的体系
-  - 主动操作menu修改样式等无需监听，直接更改slate 的数据模型即可
-  - beforeinput 他除了能拿到当前改变的值，还能通过inputType知道当前输入的类型
-  - 监听到输入之前的事件之后，就能根据不听的类型调用不同的slate 的api 改变slate 的内部数据模型，在触发回调函数，触发path 渲染dom
 
 ## [在线协作软件的三个核心引擎](https://juejin.cn/post/7002595221103968293)
 
@@ -254,7 +226,6 @@ modified: 2022-08-21T10:11:37.453Z
   - 服务器就在你本地。。。懂了没？？只是和编辑器分开了，通过通信来交流
   - 网络传输会让你的ide跑的慢死 目前的都是本地服务器也就是个跨进程通讯而已
 # more
-
 - [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)
 - [TEXT EDITING HATES YOU TOO](https://lord.io/text-editing-hates-you-too/)
 
@@ -280,3 +251,5 @@ modified: 2022-08-21T10:11:37.453Z
 - [WebAssembly 在在线文档分词场景中的解决方案](https://github.com/YingshanDeng/wasm-cppjieba/issues/1)
 
 - [VS Code、ATOM这些开源文本编辑器的代码实现中有哪些奇技淫巧？ - 知乎](https://www.zhihu.com/question/272156541/answers/updated)
+
+- [富文本编辑器框架ProseMirror、Slate和Lexical横向比较 - 掘金](https://juejin.cn/post/7140921781380415501)

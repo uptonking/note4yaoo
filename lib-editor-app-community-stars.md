@@ -20,6 +20,7 @@ modified: 2022-08-21T10:12:02.964Z
 - 渲染长文档的思路
   - virtualized render
     - 参考 ajaxorg/ace、codemirror、typewriter
+    - 虚拟渲染能提高安全性?
   - defer render
 
 - not-yet

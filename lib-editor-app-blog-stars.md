@@ -12,6 +12,7 @@ modified: 2022-08-21T10:11:43.095Z
 - 渲染长文档的思路
   - virtualized render
     - 参考 ajaxorg/ace、codemirror、typewriter
+    - 虚拟渲染能提高安全性?
   - defer render
 
 - virtualized render cons
@@ -109,8 +110,6 @@ modified: 2022-08-21T10:11:43.095Z
 - [前端——富文本编辑器专栏](https://www.yuque.com/xiaoxiaojianbojun/wt03g5)
 
 - [张驰技术博客](https://juejin.cn/user/3456520286121437/posts)
-
-- [wangEditor - 开发web富文本编辑器的坑有哪些](https://juejin.cn/post/6951364054224994312)
 
 - [自研一个word应用，需要哪些基本功能](https://juejin.cn/post/6922682336412696584)
 

@@ -17,7 +17,8 @@ modified: 2023-02-20T15:15:50.211Z
   - 示例是 block-editor，体验友好
 
 - cons
-  - 渲染层使用react
+  - 渲染层使用react，没有contenteditable事件，性能更高
+  - ？选区变化完全由用户input事件触发，在移动端等设备上难以明确用户意图
 
 - ✨ 不使用contenteditable而自绘光标，类似的有codemirror、textbus
   - 实现思路是在pointer事件的位置通过绝对定位放置一个oapcity为0宽约为1px的textarea来接收输入
@@ -32,7 +33,6 @@ modified: 2023-02-20T15:15:50.211Z
 - demo
   - [Editable Playground](https://docs.editablejs.com/playground)
 # dev
-
 
 # docs
 - Editable 是一个可扩展的富文本编辑器框架，专注于稳定性、可控性和性能。

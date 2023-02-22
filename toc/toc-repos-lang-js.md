@@ -200,16 +200,6 @@ modified: 2021-05-14T15:04:42.225Z
 - https://github.com/pandao/editor.md 
   - /10.2kStar/MIT/201905
   - embeddable online markdown editor(component), based on CodeMirror & jQuery & Marked.
-- https://github.com/quilljs/quill
-  - a modern WYSIWYG editor built for compatibility and extensibility
-  - vaadin rich-text-editor is built with Quill
-    - https://vaadin.com/docs/latest/components/rich-text-editor
-- https://github.com/facebook/draft-js
-  - A React framework for building text editors.
-- https://github.com/wangeditor-team/wangEditor
-  - wangEditor 新版已启动研发
-- https://github.com/ether/etherpad-lite
-  - Etherpad: real-time collaborative document editor 
 
 ## most-stars js-ts
 

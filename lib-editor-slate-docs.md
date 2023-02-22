@@ -11,9 +11,8 @@ modified: 2023-02-05T19:03:12.723Z
 
 # guide
 - resources
-  - [Deep in Slate.js —— 深入 Slate.js gitbook](https://github.com/yoyoyohamapi/book-slate-editor-design/blob/master/SUMMARY.md)
-    - 这本小册基于的 Slate.js 0.44.x 版本，虽然 Slate.js 现在已经渐进到了 0.50.x 版本，但其架构编辑器的方式仍然是统一的，
-    - 小册的初衷也在于借 Slate.js 分析和讨论 Web 富文本编辑器的架构方式，而不是教导怎么使用 Slate.js
+  - [Slate 中文文档](https://rain120.github.io/athena/)
+
 # guide
 - slate /18.6kStar/MIT/202009/ts
   - https://github.com/ianstormtaylor/slate

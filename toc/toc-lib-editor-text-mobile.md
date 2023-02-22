@@ -15,12 +15,24 @@ modified: 2022-11-09T10:00:04.044Z
   - https://capricorncd.github.io/zx-editor/
   - 移动端HTML文档（富文本）编辑器，支持图文混排、引用、大标题、无序列表，字体颜色、加粗、斜体
 
-- medit /160Star/MIT/201708/js
+- https://github.com/amjadbouhouch/markup
+  - https://mark-up.netlify.app/
+  - mobile first markdow editor for web & desktop with tiptap plugins and more
+
+- https://github.com/dlvdls18/DLEditor /js
+  - Lightweight, minimal, responsive and mobile-friendly editor for Vanilla JavaScript. (Inspired from Ace Editor)
+
+- https://github.com/putoutjs/mobile-putout-editor
+  - https://putout.vercel.app/
+  - Mobile Editor for crocodilePutout.
+
+- medit /160Star/MIT/201708/js/inactive
   - https://github.com/echosoar/medit
   - https://medit.js.org/demo.html
   - 专注做一个更具价值和体验的移动端富文本编辑器，所以Medit目前不支持Pc端使用，仅支持移动端
 
-- https://github.com/deadlyjack/Acode
+- https://github.com/deadlyjack/Acode /MIT/202302/js/安卓app
+  - https://acode.foxdebug.com/
   - powerful text/code editor for android
   - You can use this editor for editing HTML, CSS, JavaScript, text files etc.
 
@@ -55,7 +67,18 @@ modified: 2022-11-09T10:00:04.044Z
   - 支持编辑器、组件商城、后台管理
   - https://github.com/ymm-tech/gods-pen-server
     - 码良系统由3个项目构成，分别是 gods-pen-server 码良服务端、gods-pen-admin码良管理后台以及于7月份就已经开源的 gods-pen 码良编辑器。
+# mobile-editor-apps
+
+- https://github.com/Theobasallaje/betterletter
+  - A text editor that is mobile optimized for temporary drafts of written things, such as social media posts.
 # more-mobile
 - https://github.com/Offroaders123/Smart-Text-Editor
+  - https://stedit.app/
   - The text editor that requires only a browser and a keyboard!
   - I have started to implement features similar to that of a Progressive Web App
+
+- https://github.com/chenmoonmo/react-mobile-image-editor
+  - a react component to edit images at mobile phone by Konvajs.
+
+- https://github.com/Inux71/Web-Mobile-Editor
+  - A web mobile editor

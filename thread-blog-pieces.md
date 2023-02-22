@@ -12,7 +12,10 @@ modified: 2021-02-09T19:25:11.641Z
 - [Guideline from the 70's on how to split your React components](https://joaoforja.com/blog/guideline-on-how-to-decompose-a-react-component/)
 - [React Design Patterns: Generating User-configured UI Using The Visitor Pattern](https://www.arahansen.com/react-design-patterns-generating-user-configured-ui-using-the-visitor-pattern/)
   - While this article covered building a configurable "form generator" component, this pattern could be applicable for many situations where you need configuration (aka, schema) driven UI.
-# sharing
+# blogs
+
+- [一次加载1w条数据的最优解是什么？ - 掘金](https://juejin.cn/post/7091157820074262541)
+  - [「前端进阶」高性能渲染十万条数据(虚拟列表) - 掘金](https://juejin.cn/post/6844903982742110216)
 
 # design-system-components
 - [How we use Web Components at GitHub](https://github.blog/2021-05-04-how-we-use-web-components-at-github/)

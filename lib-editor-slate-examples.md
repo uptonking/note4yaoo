@@ -42,8 +42,8 @@ modified: 2023-02-05T19:03:12.723Z
   - 扩展性
     - 使用扩展插件和模块的机制，保证扩展性
     - 现在wangEditor内置的各个功能，也都是通过扩展插件和模块的形式搭建起来的
-- https://github.com/wangfupeng1988/slate-dom-view
-  - slate.js for DOM, without React.
+  - https://github.com/wangfupeng1988/slate-dom-view
+    - slate.js for DOM, without React.
 
 - prezly-slate /31Star/MIT/202208/ts/提交多
   - https://github.com/prezly/slate 

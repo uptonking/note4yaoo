@@ -27,7 +27,7 @@ modified: 2022-11-29T20:41:25.566Z
 
 - 考虑到客户端升级的问题
   - 同步前一定要检查一个version，参考indexeddb upgrade
-# discuss
+# discuss-stars
 - ## When we started work on @linear , we felt real-time sync was a core functionality we had to invest in from the get-go. 
 - https://twitter.com/artman/status/1558081796914483201
   - [linear sync 分享_202002](https://www.youtube.com/watch?v=WxK11RsLqp4&t=2169s)
@@ -74,6 +74,14 @@ modified: 2022-11-29T20:41:25.566Z
   - Haha there are also a lot of other options: replicache, http://convex.dev, http://clientdb.dev, a new one called aphrodite
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## I find that in distributed systems, metadata size is often inversely proportional to message size.
+- https://twitter.com/aboodman/status/1628166157667831808
+  - Decreasing message size means increasing message rate. Each message caries less data, but increased rate means more metadata is needed to correctly run and maintain the system.
 
 - ## [请教一下，类似 LOL，王者荣耀， Diablo3 这样的网络游戏，如何同步多机实时的数据？ - V2EX](https://www.v2ex.com/t/763822)
 - microsoft Fluid 类似于 CRDT 分布式框架，CRDT 主要无中心服务器，p2p 情况下可以最终一致结果。CRDT p2p 具体应用 聊天 文字协同编辑

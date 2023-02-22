@@ -29,7 +29,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 个人数据管理，开放api，允许其他app获取
 
 - 生态与集成
-  - office365
+  - office365，从 word/excel 复制粘贴的表格，如果其中有合并的单元格，也能支持正常展示
   - jupyter-notebook
   - observable-notebook
 

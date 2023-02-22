@@ -12,6 +12,16 @@ modified: 2023-02-05T19:03:12.723Z
   - [changelog list](https://docs.slatejs.org/general/changelog)
 # changelog
 
+## v0.90.0_20230201
+
+- Revert to using inline styles for default editor styles
+
+## v0.80.0_20220526
+
+- update insertText logic when selection is not collapsed
+- Revert to previous position behavior around inline voids
+- Revert #4876 & #4910 to restore original decorations behavior
+
 ## [v0.76.0__20220325](https://github.com/ianstormtaylor/slate/releases/tag/slate%400.76.0)
 
 - adds a separate `insertSoftBreak` method on the editor instance that gets called when a soft break is inserted. 
@@ -20,9 +30,16 @@ modified: 2023-02-05T19:03:12.723Z
 ## [v0.67.0__20211019](https://github.com/ianstormtaylor/slate/releases/tag/slate-react%400.67.0)
 
 - The Slate Provider's `"value"` prop is now only used as initial state for `editor.children` as was intended before. 
-  - If your code relies on replacing editor.children you should do so by replacing it directly instead of relying on the "value" prop to do this for you.
+  - If your code relies on replacing `editor.children` you should do so by replacing it directly instead of relying on the "value" prop to do this for you.
 
-## v0.54.0__20191212
+- 0.6x版本早期大多关于修复typescript
+
+## 0.57.0__20191218
+
+- Overridable commands now live directly on the editor object.
+  - now the core actions that can be overridden are implemented as individual functions on the editor (eg. editor.insertText) and they can be overridden just like any other function (eg. isVoid).
+
+## [v0.54.0__20191212](https://docs.slatejs.org/general/changelog#0.54-december-12-2019)
 
 - The `<Slate>` `onChange` handler no longer receives the `selection` argument. 
   - Previously it received `(value, selection)`, now it receives simply `(value)`. 
@@ -38,7 +55,7 @@ modified: 2023-02-05T19:03:12.723Z
   - This is a common richtext editor behavior, where pressing a Bold button with a collapsed selection turns on "bold" formatting mode, and then typing a character becomes bold. 
   - This state isn't stored in the document, and is instead stored as an extra property on the editor itself.
 
-## [v0.50.0__20191128](https://github.com/ianstormtaylor/slate/tags?after=slate-history%400.50.0)
+## 🚀 [v0.50.0__20191128](https://github.com/ianstormtaylor/slate/tags?after=slate-history%400.50.0)
 
 - [Migrating](https://docs.slatejs.org/concepts/xx-migrating)
 - Migrating from earlier versions of Slate to the 0.50.x versions is not a simple task. 
@@ -83,4 +100,12 @@ modified: 2023-02-05T19:03:12.723Z
   - They can be fully implemented now in userland by defining custom operations and rendering annotated ranges using decorations.
   - But most cases should be using custom text node properties or decorations anyways. 
 
-## v0.47.9__20191110
+## [0.47.0__20190508](https://docs.slatejs.org/general/changelog#0.47-may-8-2019)
+
+- Introducing `Annotation`.
+  - The value.decorations property is now value.annotations.
+  - similar to what used to be stored in `value.decorations`, except they also contain a unique "key" to be identified by. 
+  - They can be used for things like comments, suggestions, collaborative cursors
+- Introducing "iterable" model methods.
+
+- v0.47.9__20191110

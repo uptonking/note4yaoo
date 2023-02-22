@@ -7,8 +7,12 @@ modified: 2021-06-09T00:46:34.611Z
 
 # note-react-issues
 
-# pieces
+# guide
 
+# issues-not-yet
+- ## [`onSelectionChange` event ](https://github.com/facebook/react/issues/5785)
+  - The onSelect event does not fire while the user is dragging the mouse, only after they release. 
+# issues
 - ## 
 
 - ## 

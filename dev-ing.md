@@ -142,6 +142,31 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - 腰包掉到床头版与墙的夹缝中了
 # dev-02
 
+## 02
+
+## 0222
+
+- [The dataset cannot set dashed names · Issue #1031 · snabbdom/snabbdom](https://github.com/snabbdom/snabbdom/issues/1031)
+  - the easiest correction might be using setAttribute/removeAttribute only.
+- [dataset module · Issue #90 · snabbdom/snabbdom](https://github.com/snabbdom/snabbdom/issues/90)
+  - Both `{attrs: {'data-foo': foo}}` and `{dataset: {foo: 'foo'}}` modify the underlying HTML so I am not sure if it is not be better to simply use some random custom property instead: {props: {datasetfoo: 'foo'}}.
+
+- [Is there a way selecting MULTIPLE areas of text with JS in Chrome and/or IE? - Stack Overflow](https://stackoverflow.com/questions/4985284/is-there-a-way-selecting-multiple-areas-of-text-with-js-in-chrome-and-or-ie)
+  - No. Of the major browsers, only Firefox supports multiple ranges within the user selection. 
+  - Other browsers (WebKit, Opera, IE9) do have the Selection API to support multiple ranges but do not currently support it. 
+  - WebKit is apparently not planning to add support any time soon. As to Opera and IE, I have no idea.
+
+- [How to add more than 1 range to a windows.selection object in chrome browser? - Stack Overflow](https://stackoverflow.com/questions/54437485/how-to-add-more-than-1-range-to-a-windows-selection-object-in-chrome-browser)
+  - Not really, actually it's even been removed from specs. This is an old relic from Netscape that FF did keep and which made the Selection API have things like rangeCount or removeAllRanges(), but this behavior is non-standard. 
+  - 💡 To do what you wish, you'd have to keep yourself track of what the selected cells were, and to merge their content in a single hidden Node that you'll use as the source for execCommand('copy'). That's a bit of work though...
+
+- [Can you set and/or change the user’s text selection in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/4183401/can-you-set-and-or-change-the-user-s-text-selection-in-javascript)
+  - is it possible to select different ranges simultaneously. I want to be able to select multiple parts of text that are discontinuous
+  - Yes, but only in Firefox. Call addRange() for each range you want to select
+
+- [Unable to add 2nd selection range (Google Chrome) - Stack Overflow](https://stackoverflow.com/questions/61962880/unable-to-add-2nd-selection-range-google-chrome)
+  - in default chrome, multiple selection ranges isn't supported. But this extension can enable it.
+
 ## 0219
 
 - [Height limitations for browser vertical scroll bar - Stack Overflow](https://stackoverflow.com/questions/34931732/height-limitations-for-browser-vertical-scroll-bar)
@@ -322,7 +347,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                  `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                     `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，
