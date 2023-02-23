@@ -199,7 +199,7 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/carbon-bond/carbonbond
   - 前端：使用 typescript + React
   - 后端：使用 Rust
-# im-instant-messaging
+# im-instant-messaging-chat
 - https://github.com/mastodon/mastodon
   - Your self-hosted, globally interconnected microblogging community
   - 依赖ruby
@@ -222,6 +222,13 @@ modified: 2021-05-14T15:04:15.333Z
     - 聊天系统
     - 插件系统
     - 开放平台
+
+- https://github.com/baptisteArno/typebot.io
+  - https://typebot.io/
+  - Typebot is an open-source alternative to Landbot. 
+  - a conversational form builder that you can self-host.
+  - builder依赖slate-react、tanstack-table
+  - It allows you to create conversational apps/forms (Lead qualification, Product launch, User onboarding, Customer support), embed them anywhere on your web/mobile apps, and collect results in real-time.
 
 - https://github.com/juravlevdima/PERN-chat
   - Chat made with PERN Stack & Socket. IO

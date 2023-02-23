@@ -113,7 +113,43 @@ modified: 2021-01-01T20:12:36.651Z
 
 - ref
   - [Using CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
-# animation-library-comparison
+# animation-tips
+- ## 💡 Setting up multiple `requestAnimationFrame` loops carries a significant performance penalty(不利，害处) over using a single loop and managing tasks yourself.
+- https://twitter.com/mattgperry/status/1628418793490857987
+- This is why in react-spring we have the `rafz` package 
+- I never understood why rafs weren’t batched already or there wasn’t another browser API for it.
+
+```JS
+// multiple raf - 142ms
+
+console.time();
+
+const process = () => {
+  Math.abs(5.555);
+  requestAnimationFrame(process);
+};
+
+for (let i = 0; i < 10000; i++) {
+  requestAnimationFrame(process);
+}
+
+console.timeEnd();
+```
+
+```JS
+// Unified loop - 31ms
+
+import sync from "framesync";
+
+console.time();
+
+for (let i = 0; i < 10000; i++) {
+  sync.update(() => Math.abs(5.555), true);
+}
+
+console.timeEnd();
+```
+
 - ## [Comparing JavaScript animation libraries_202004](https://blog.logrocket.com/comparing-javascript-animation-libraries/)
 - Anime.js
 - Pros

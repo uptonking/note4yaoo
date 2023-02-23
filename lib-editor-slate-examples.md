@@ -7,8 +7,9 @@ modified: 2023-02-05T19:03:12.723Z
 
 # lib-editor-slate-examples
 
-# popular-slate
+# guide
 
+# popular-slate
 - plate /1.6kStar/MIT/202208/ts/block-style
   - https://github.com/udecode/plate
   - https://plate.udecode.io/
@@ -30,7 +31,7 @@ modified: 2023-02-05T19:03:12.723Z
   - [修改license为GPL_20220204](https://github.com/editablejs/editable/commits/main?after=d61da6caa411139cddb0ae0e8eeeeaee05893610+69&branch=main&qualified_name=refs%2Fheads%2Fmain)
   - unicode-trie主要对一些 unicode 字符进行索引的计算。因为有些字符占位所占的字节数不确定，造成某些字符拆分后的索引不准确
 
-- wangEditor.v5 /14.3kkStar/MIT/202208/ts/vanillajs
+- wangEditor.v5 /14.3kStar/MIT/202208/ts/vanillajs
   - https://github.com/wangeditor-team/wangEditor
   - https://www.wangeditor.com/
   - core依赖slate、snabbdom、dom7、is-hotkey、lodash、uppy(file uploader)、event-emitter、i18next
@@ -258,34 +259,25 @@ modified: 2023-02-05T19:03:12.723Z
   - A transformation and parsing framework for converting markdown content to HTML, Slate (for rich-text editing) and other structured document object models (DOMs).
   - 提供了很多子包，本身类似于remark
 
-- https://github.com/cihad/slate-table  /202107/ts
+- https://github.com/cihad/slate-table /202107/ts
   - https://cihad.github.io/slate-table/
   - Table Plugin for Slate (based on @udecode/slate-plugins above v1.0). 
   - Inspired by the Atlassian editor's table plugin.
   - 依赖 slate.v0.61, @udecode/slate-plugins-table(2021)
 - https://github.com/lqs469/slate-table  /202003/ts
   - https://slate-table.vercel.app/
+  - 支持合并、拆分单元格
   - A pretty Slate.js table plugin (Slate.js version > 0.5)
-- https://github.com/daibin0809/slate-table-demo
+- https://github.com/daibin0809/slate-table-demo /ts
   - 依赖event-emitter
-  - slate 编辑器完成的一个表格功能，能够进行表格的选区、单元格操作和行列操作等操作。
+  - slate编辑器完成的一个表格功能，能够进行表格的选区、单元格操作和行列操作等操作。
   - 表格中无法再添加表格；
   - 表格中右键唤起工具菜单
 - https://github.com/nod-engineering/slate-table
-  - /202106/js
+  - /202106/js/v0.59
 
-- https://github.com/1build/leyden
-  - https://1build-org.gitbook.io/leyden/
-  - a data table framework powered by Slate.
-  - Leyden's coordinate system is simple and fully interoperable with Slate's Path system.
-  - Cells can access data from other cells using absolute coordinates and relative positions.
-  - Leyden exposes several pre-built validators (such as numeric and integer) for your cell data
-  - Slate requires users to define complicated render functions to detect different types of elements. Leyden handles this automatically
-  - Leyden builds upon Slate's schema definition system, providing an interface for users to define table-shaped schemas with powerfully customization cells.
-
-- https://github.com/whatever-company/slate-tables
+- https://github.com/whatever-company/slate-tables /js/依赖v0.47
   - https://whatever-company.github.io/slate-tables/
-  - 依赖slate.v0.47
   - A Slate plugin to handle table edition.
   - The plugin supports nested tables natively.
   - Colspan and Rowspan are supported. All operations create a matrix containing all cells' positions.
@@ -295,6 +287,15 @@ modified: 2023-02-05T19:03:12.723Z
   - Forked from the slate-edit-table implementation, allowing for creation of tables with nested content
   - https://github.com/George-A-Payne/slate-tables
     - Forked from slate-deep-tables
+
+- https://github.com/1build/leyden
+  - https://1build-org.gitbook.io/leyden/
+  - a data table framework powered by Slate.
+  - Leyden's coordinate system is simple and fully interoperable with Slate's Path system.
+  - Cells can access data from other cells using absolute coordinates and relative positions.
+  - Leyden exposes several pre-built validators (such as numeric and integer) for your cell data
+  - Slate requires users to define complicated render functions to detect different types of elements. Leyden handles this automatically
+  - Leyden builds upon Slate's schema definition system, providing an interface for users to define table-shaped schemas with powerfully customization cells.
 
 - https://github.com/shrutikachawla/slateTables /js
   - 依赖material-ui.v4、antd

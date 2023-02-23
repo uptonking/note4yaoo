@@ -45,6 +45,8 @@ modified: 2023-01-20T21:59:47.792Z
   - Our business model is based on two things:
     - Enterprise features like SSO, audit logs, publication workflows, and translation workflows. 
     - Cloud hosting. 
+- https://github.com/AlessioGr/payload-plugin-lexical
+  - Extends payload CMS with Meta's lexical RichText editor - a much more advanced and customizable richtext editor
 
 - tinacms /8.3kStar/apache2/202301/ts
   - https://github.com/tinacms/tinacms
@@ -99,6 +101,11 @@ modified: 2023-01-20T21:59:47.792Z
 - https://github.com/microfeed/microfeed
   - a lightweight content management system (CMS) self-hosted on Cloudflare. 
   - microfeed is built by Listen Notes and is hosted on Cloudflare's Pages, R2, D1, and Zero Trust.
+
+- https://github.com/Thinkmill/keystatic
+  - First-class CMS experience, TypeScript API, Markdown & YAML/JSON based, no DB.
+  - Built with DNA from Keystone, connects directly to GitHub and doesn’t mess with your source code. 
+  - Conceived(构想；设想) for modern front-end frameworks like Next.js, Remix and Astro, designed to fit into your workflow.
 # discuss
 - ## 
 

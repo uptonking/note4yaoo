@@ -16,7 +16,6 @@ modified: 2021-07-11T15:08:26.481Z
   - 没有实现较复杂的组件，如直接缩放的图片，全部基于html标签toDOM/parseDOM实现
   - 过于强调remark的配置会破坏编辑器插件的设计，remark不应该作为和编辑器插件平级的一级配置，一级配置应该是编辑器的主要features如slash菜单、markdown；remark应该作为markdown的二级配置
 
-
 - features
   - WYSIWYG
   - themeable
@@ -30,15 +29,12 @@ modified: 2021-07-11T15:08:26.481Z
 - tips
   - 不要将关注点放在markdown，渲染和编辑的实现几乎全部依赖于prosemirror，只有少数场景如初始化和导出才会用到parser和serializer
   - 自定义syntax的要点
-
 # faq
-
 - 通过atom来控制执行流程的设计更清晰，还是更繁琐？
   - 优点：
   - 很多其他项目也会使用这种类似ioc依赖注入的风格，传入实例属性不使用constructor，而是通过在init/inject方法中赋值
   - 本项目只注入了全局单例的this.context对象，没有注入其他对象，实现很简单；
   - 其他很多其他对象都保存到了this.context的二级属性或三级属性
-
 # codebase
 - dataflow
   - md str > mdast > prosemirror node > dom
@@ -79,3 +75,13 @@ modified: 2021-07-11T15:08:26.481Z
 
 - 组件与markdown转换的parser、serializer
   - 将递归要执行的部分暴露出去了，非常灵活，但实现复杂，方法的第一个参数用来传递this
+# changelog
+
+## [v7.0.0_20230222](https://saul-mirone.github.io/a-brief-introduction-to-milkdown-v7/)
+
+- The editor becomes a first-class headless component.
+- Factory plugins are fully replaced by composable plugins.
+- Runtime plugin toggling is supported.
+- Universal widget plugins.
+- Better Vue and React support.
+- API documentation is provided.

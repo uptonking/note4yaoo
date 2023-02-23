@@ -7,9 +7,22 @@ modified: 2021-01-08T17:14:34.841Z
 
 # thread-web-animation
 
-# pieces
+# guide
+
+# discuss
+- ## 
 
 - ## 
+
+- ## 
+
+- ## @framer Motion 9.1 adds more hardware accelerated animations!
+- https://twitter.com/mattgperry/status/1628738974096261121
+  - Its unique hybrid engine now supports `opacity` , `clipPath` , `filter` , and `transform` . 
+  - Smoother animations, longer-lasting batteries.
+- https://codesandbox.io/s/framer-motion-hardware-accelerated-values-b01wfc
+  - This animation runs with zero CPU overhead. To prove this, you can click the "block main thread" button to block JS for two seconds while the animation carries on.
+- clipPath and backgroundColor have been promised for years in Chrome but aren't in yet. (We don't yet support backgroundColor as Motion's interpolation is nicer than browsers)
 
 - ## A very useful CSS property for animations is transition timing function 
 - https://twitter.com/davidm_ml/status/1617098718343475201

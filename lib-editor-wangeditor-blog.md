@@ -48,7 +48,7 @@ modified: 2023-02-22T19:49:55.242Z
 - 整体设计
 - 底层依赖
   - slate.js - 编辑器内核
-  - snbbdom - view model 分离，使用 vdom 渲染 view
+  - snabbdom - view model 分离，使用 vdom 渲染 view
 - view core
   - core 本身没有任何实际功能。需要通过 module 来扩展 formats、menus、plugins 等，来定义具体的功能。
   - editor - 定义 slate 用于 DOM UI 的一些 API
@@ -92,6 +92,41 @@ modified: 2023-02-22T19:49:55.242Z
   - i18n
 
 ## [富文本编辑器 L1 能力调研记录_王福朋_202104](https://juejin.cn/post/6954896971370856485)
+
+- 写demo基于两个前提
+  - 拆分 model 和 view ，使用 vdom 渲染页面
+  - 抽象 selection 和 range
+
+- 一开始想要自己绘制光标，不用 contenteditable
+  - 通过 range.getClientRects()可以获得选区的位置
+  - 在该位置绘制一个 absolute div ，内部 append 一个闪烁的 div 和 input
+  - 监听 input keydown ，然后执行文本输入、删除，回车，光标的上下变化
+
+- 后来放弃，因为拖拽选择时，无法同时 focus input ，也就无法监听到 keydown 。
+  - 后来经过调研，自己绘制光标的编辑器，都需要使用 iframe （作为第三方 lib 我不想用 iframe），有些甚至需要自己绘制选区（有道云笔记？？）
+  - 主要是移动端问题、粘贴问题
+
+- 经过调研，经典的编辑器 Quill slate proseMirror tinyMCE 等都使用 contenteditable 。所以选择它，方向应该不会错。
+- 依据我当初想弃用 contenteditable 的想法，就得自己处理文本。我设想的方式是：
+  - 监听 input keydown （会考虑防抖）
+  - 修改 model ，更新视图，更新 selection
+- 使用 contenteditable 之后，编辑区域的修改就变的开放了，在想去劫持 keydown ，范围就会很大，很容易漏掉什么。
+- 于是我就把编辑器的修改内容的操作分为两类：
+  - 外部调用 API ，例如 js 执行加粗、标题 command
+  - 编辑区域内部的改动，因为是 contenteditable ，修改的是开放的，键盘可随便输入、删除、换行等
+  - 第二类，我可以用 mutation observer 来监听，不用再去劫持各种 keydown
+- 我花费了两天的业余时间，尝试去解读 mutation observer 对于回车换行的处理，但是没搞定。 两天之后我就放弃了，不是知难而退，而是这种情况，即便真的废力气解决了，那也是一个很复杂的设计。
+  - Quill 只用 mutation observer 监听文本改动。其他的 enter delete 等，都还是劫持 keydown ，修改 model 。
+
+- 调研其他产品，应该同时多看几个，可以相互弥补。因为只看一个你不可能看懂 100% 。
+  - 我花了几天业余时间看了看 Quill slate proseMirror ，从主流程上大概了解了，但还需要进一步探索细节。
+- 不是修改 model ，而是重新生成（不可变数据，如用 immer）。副作用会变得不可控，越大越乱。
+- command 不会直接修改 model ，而是 command -> operation -> model -> vdom & patchView
+- model 并不是 DOM 结构的样子，而是扁平化甚至线性化，这样才能更好的进行 range 操作
+
+- 调研其他作品的关键是什么？精力有限，请务必抓住核心、抓住主要矛盾。
+  - 它的重要概念和数据结构，如 Quill 的 Delta
+  - 它从 command 到最终 view 渲染的完整流程，以及各个中间阶段
 
 ## [Web 富文本编辑器 embed 卡片机制的设计与实践_王福朋_202103](https://juejin.cn/post/6939724738818211870)
 

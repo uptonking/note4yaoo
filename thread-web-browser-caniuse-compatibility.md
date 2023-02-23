@@ -21,6 +21,13 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
+- ## 
+
+- ## It is now 2023 and `display: contents` still breaks accessibility in Safari.
+- https://twitter.com/devongovett/status/1628501529207402497
+- Display contents was a complete mess. It doesn’t work right in any browser. Try using it in a contenteditable for comical effect.
+  - I try to avoid anything related to content editable
+
 - ## [Does Safari and Google Chrome for macOS use the same rendering engine?](https://apple.stackexchange.com/questions/350671/does-safari-and-google-chrome-for-macos-use-the-same-rendering-engine)
 - While Google Chrome used WebKit for macOS client at one point, that's no longer the case for current stable build.
   - WebKit was the original rendering engine, but Google eventually forked it to create the Blink engine; all Chrome variants except iOS now use Blink

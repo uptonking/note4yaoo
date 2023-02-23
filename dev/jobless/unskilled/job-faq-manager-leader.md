@@ -9,6 +9,22 @@ modified: 2021-09-22T16:41:02.529Z
 
 # guide
 
+# 编辑器类，适合我的能力
+- 模型层
+  - model更新都由拦截keydown/input事件触发，还是MutationObserver触发
+  - 有没有针对block做设计
+
+- 视图层
+  - view和plugin是分开的，还是把view也放在plugin里面
+
+- 用户输入层
+  - beforeinput
+  - MutationObserver
+  - keypress事件、keydown事件哪个用得多一点
+
+- 指令与协作
+
+
 # 研发类，适合我的能力
 - 团队开发流程
   - sprint站会，日报、周报
@@ -31,19 +47,10 @@ modified: 2021-09-22T16:41:02.529Z
   - 页面优先、还是多维表格优先？
   - 从excel中来，到excel中去，对excel格式支持怎么样
   - [x] 要不要设计slash弹出式命令菜单
-# 编辑器类，适合我的能力
-- 模型层
-  - 有没有针对block做设计
 
-- 视图层
-  - view和plugin是分开的，还是把view也放在plugin里面
+- 产品规划
+  - 是否做涉及ugc内容发布的论坛，涉及到审查
 
-- 用户输入层
-  - beforeinput
-  - MutationObserver
-  - keypress事件、keydown事件哪个用得多一点
-
-- 指令与协作
 # 你有什么问题要问我的吗，适合我的能力
 - 原则
   - 不要问与工作无关的问题

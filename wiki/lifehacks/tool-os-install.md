@@ -34,6 +34,8 @@ modified: 2020-12-22T12:42:14.745Z
 
 - apt install --reinstall pkg 重新安装
 
+- terminal
+  - 回到顶部/底部: shift + Home/End
 ## os-starter
 
 - [装了5次Ubuntu，告诉你win10+Ubuntu双系统的正确打开方式](https://zhuanlan.zhihu.com/p/101307629)

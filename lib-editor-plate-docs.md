@@ -45,4 +45,5 @@ modified: 2023-02-05T19:03:12.721Z
   - Editor Protocol is an open standard for building a rich text editor. 
   - The protocol aims to cover all use-cases as there is no clear definition of what the standard should be.
   - Plate is an example framework that will follow the Editor Protocol.
+  - [Editor Protocol · Link/Table/Inbox/Paging](https://github.com/udecode/editor-protocol/issues/1)
 # docs

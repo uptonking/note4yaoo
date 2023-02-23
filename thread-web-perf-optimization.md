@@ -11,6 +11,10 @@ modified: 2021-02-26T16:42:06.878Z
 
 - ## 
 
+- ## 
+
+- ## 
+
 - ## Putting the finishing touches on my new Tree component. There are half a million fairly complex items in this demo
 - https://twitter.com/fabiospampinato/status/1564010912822034434
 - I like this tiny virtualized list implementation
@@ -25,7 +29,7 @@ modified: 2021-02-26T16:42:06.878Z
   - Yeah exactly, here's a version with the "top" property animated, you can see items changing position. It's that plus rendering the same number of items all the time, plus reusing nodes if possible, plus keeping the order of nodes fixed, plus using Solid-like signals.
 - I was always sad about having to remove recycling from Preact. It was clever and a huge performance win.
   - Why did this have to be removed?
-  - It does unexpected things with any stateful DOM elements, like form inputs,      `<video>, <img>`, etc. Everything doing recycling runs into it eventually, just takes a while. Not a showstopper for some use-cases, but often makes for a confusing default.
+  - It does unexpected things with any stateful DOM elements, like form inputs,       `<video>, <img>`, etc. Everything doing recycling runs into it eventually, just takes a while. Not a showstopper for some use-cases, but often makes for a confusing default.
 - This is non-keyed isn't it. That's always the tradeoff with going hyper-optimized. Data swap on fixed nodes using reactive bindings. What's the hacky part?
   - Yeah it's 99% just a non-keyed `<For>` that keeps the same nodes around and updates the signals. The user code, at least for this very simple use case, looks identical to what one may write for a regular `<For>` though, so the performance is kinda hassle-free.
   - The hacky (mainly just ugly really) parts are: 

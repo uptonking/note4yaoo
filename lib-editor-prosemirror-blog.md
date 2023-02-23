@@ -9,6 +9,15 @@ modified: 2021-06-15T00:07:49.228Z
 
 # guide
 
+# [Marijn Haverbeke: Salvaging contentEditable: Building a Robust WYSIWYG Editor | JSConf EU 2015 - YouTube](https://www.youtube.com/watch?v=EEF2DlOUkag)
+- some new editors like google docs drop contenteditable and create their own selection and caret
+  - good xp
+- problems: 
+  - 1. mobile touch interfaces, native selection is subtle
+  - 2. if u matain your own selection and caret entirely, you get all the complexity of bi-directional text on your plate. you have to implement what the cursor is supposed to be doing if it moves left-to-right/r-to-l.
+  - 3. if you are mixing Arabic or Hebrew, you get islands inside of your paragraphs that are running in different directions.
+  - 4. for context menu like cut/paste, you have decide the position/range.
+
 # [Why we picked Remirror/Prosemirror as WYSIWYG editor in our React application__202108](https://medium.com/collaborne-engineering/rich-text-editor-for-react-f7d71746867f)
 - We could address some of these points with Quill’s many config options and modules. 
   - Yet, in the end, we realized that we got it all wrong: A monolithic editor with tons of config options would never bring us there. 
