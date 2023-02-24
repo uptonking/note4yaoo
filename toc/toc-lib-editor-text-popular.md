@@ -85,6 +85,10 @@ modified: 2022-11-08T19:04:00.289Z
     - 核心架构脱离了具体平台，让 Textbus 的能力不仅限于在 PC 端，通过编写特定的中间层，可以方便的在移动端，甚至小程序上实现丰富的富文本能力
     - 重新设计了组件系统，去掉了大家难以理解的装饰器，改为用类似 vue 的 setup 形式开发组件
 
+- https://github.com/lqs469/editor-playground
+  - https://editor-playground.now.sh/
+  - DraftJS, EditorJS, Prosemirror, CZI-Prosemirror, Pubpub, Quill, Slate, Slate-editable-table
+
 - etherpad-lite /13.5kStar/Apache2/202211/js
   - https://github.com/ether/etherpad-lite
   - https://etherpad.org/

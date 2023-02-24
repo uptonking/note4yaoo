@@ -60,6 +60,11 @@ modified: 2023-01-23T19:27:46.948Z
   - With this architecture, code is organized into several layers: logic, controllers, adapters, and components (ports).
   - adapters: The layer that converts external data representations into internal ones, and vice-versa. Acts as buffer to protect the service from changes in the outside world
   - https://github.com/well-known-components/socket-pool
+
 - https://github.com/well-known-components/http-server
   - implements the interface IHttpServerComponent
   - This implementation is based in Koa sources, it provides a small code footprint to create HTTP servers with a powerful async/await programming model.
+
+- https://github.com/openmetaweb/whatwg-http-server
+  - An universal way to implement HTTP server listeners, using WHATWG-similar standards. 
+  - Translates your endpoint to many HTTP server implementations, like Node.js, Express.js, Azure Functions and more.

@@ -104,3 +104,5 @@ modified: 2022-11-18T17:06:54.371Z
 - Journal and Write-Ahead Log (WAL) files: transactional files, which can store recently added or recently deleted data
 - Unallocated space: not to be confused with hard drive unallocated space, this SQLite feature allows finding deleted data even outside of freelists
 # more
+
+- [SQLite的文艺复兴 - 知乎](https://zhuanlan.zhihu.com/p/601510076)

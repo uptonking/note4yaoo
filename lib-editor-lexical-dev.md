@@ -27,3 +27,9 @@ modified: 2022-05-15T18:37:07.368Z
 
 - lexical-resources
   - https://lexical.dev/docs/intro
+# dev
+- ## [Add an experimental Table component in React_202209](https://github.com/facebook/lexical/pull/2929)
+  - This PR adds an experimental React-based table implementation to the playground. 
+  - It aims to emulate all the existing behavior of the current table implementation – without needing to features in core, and without suffering some of the drawbacks that come from having a pure Lexical implementation ( 💡 lack of sorting, filtering etc). 
+  - The only downside is that collaboration's behavior is now slightly less than optimal, as cursors no longer show within the tables.
+# more

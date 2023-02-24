@@ -23,6 +23,9 @@ modified: 2020-10-05T06:18:21.639Z
   - http://snapsvg.io/
   - JS library for modern SVG graphics
 # svg-utils
+- https://github.com/vercel/satori /ts
+  - Enlightened library to convert HTML and CSS to SVG
+
 - https://github.com/yisibl/resvg-js
   - high-performance SVG renderer and toolkit, powered by Rust based resvg and napi-rs.
 # svg-animation

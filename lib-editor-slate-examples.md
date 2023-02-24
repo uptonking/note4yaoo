@@ -48,7 +48,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 - prezly-slate /31Star/MIT/202208/ts/提交多
   - https://github.com/prezly/slate 
-  - 依赖 plate、popperjs2、@prezly/sdk、react-bootstrap
+  - 依赖 `plate`的工具方法而不依赖编辑器、popperjs2、@prezly/sdk、react-bootstrap
   - Prezly software built upon Slate
   - 悬浮工具条使用卡片的形式
   - https://www.prezly.com/
@@ -58,6 +58,11 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!
   - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
+
+- https://github.com/nivekithan/slate-devtools
+  - devtool for slatejs which will assist you in debugging the code
+  - 依赖slate.v0.59,jotai
+  - [I created a devtool to assist in debugging](https://github.com/ianstormtaylor/slate/issues/4112)
 
 - quadrats /4Star/MIT/202203/ts
   - https://github.com/Quadrats/quadrats
@@ -84,7 +89,7 @@ modified: 2023-02-05T19:03:12.723Z
   - http://slate-angular.ngnice.com/
   - Angular view layer for Slate
 
-- edu-editor /2Star/MIT/202207/ts/slate
+- edu-editor /2Star/MIT/202207/ts/slate/inactive
   - https://github.com/kiaksarg/edu-editor
   - https://edu-editor.netlify.app/
   - a basic medium/notion like rich text editor based on Slate.js
@@ -259,34 +264,42 @@ modified: 2023-02-05T19:03:12.723Z
   - A transformation and parsing framework for converting markdown content to HTML, Slate (for rich-text editing) and other structured document object models (DOMs).
   - 提供了很多子包，本身类似于remark
 
+- https://github.com/lqs469/slate-table /202003/ts
+  - https://slate-table.vercel.app/
+  - A pretty Slate.js table plugin (Slate.js version > 0.5)
+  - 支持合并、拆分单元格
+  - 支持调整列宽
+- https://github.com/daibin0809/slate-table-demo /ts
+  - 依赖event-emitter
+  - slate编辑器完成的一个表格功能，能够进行表格的选区、单元格操作和行列操作等操作。
+  - 表格中右键唤起工具菜单
+  - 表格中无法再添加表格
 - https://github.com/cihad/slate-table /202107/ts
   - https://cihad.github.io/slate-table/
   - Table Plugin for Slate (based on @udecode/slate-plugins above v1.0). 
   - Inspired by the Atlassian editor's table plugin.
   - 依赖 slate.v0.61, @udecode/slate-plugins-table(2021)
-- https://github.com/lqs469/slate-table  /202003/ts
-  - https://slate-table.vercel.app/
-  - 支持合并、拆分单元格
-  - A pretty Slate.js table plugin (Slate.js version > 0.5)
-- https://github.com/daibin0809/slate-table-demo /ts
-  - 依赖event-emitter
-  - slate编辑器完成的一个表格功能，能够进行表格的选区、单元格操作和行列操作等操作。
-  - 表格中无法再添加表格；
-  - 表格中右键唤起工具菜单
+  - 支持调整列宽
+  - 不支持合并单元格
 - https://github.com/nod-engineering/slate-table
   - /202106/js/v0.59
+- https://github.com/Kikky/slate-table-example
+  - table过于简单，
 
+- https://github.com/jasonphillips/slate-deep-table
+  - https://jasonphillips.github.io/slate-deep-table/
+  - /201910/js/v0.44
+  - 支持table in table
+  - Forked from the slate-edit-table implementation, allowing for creation of tables with nested content
+  - https://github.com/George-A-Payne/slate-tables
+    - Forked from slate-deep-tables
+  - https://github.com/GitbookIO/slate-edit-table
+    - archived and has moved to GitBook's private fork
 - https://github.com/whatever-company/slate-tables /js/依赖v0.47
   - https://whatever-company.github.io/slate-tables/
   - A Slate plugin to handle table edition.
   - The plugin supports nested tables natively.
   - Colspan and Rowspan are supported. All operations create a matrix containing all cells' positions.
-- https://github.com/jasonphillips/slate-deep-table
-  - https://jasonphillips.github.io/slate-deep-table/
-  - /201910/js/v0.44
-  - Forked from the slate-edit-table implementation, allowing for creation of tables with nested content
-  - https://github.com/George-A-Payne/slate-tables
-    - Forked from slate-deep-tables
 
 - https://github.com/1build/leyden
   - https://1build-org.gitbook.io/leyden/

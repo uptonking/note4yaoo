@@ -15,6 +15,11 @@ modified: 2022-12-31T20:13:33.307Z
 # changelog
 - v20.0.0_2023-04-18
 
+- v19.7.0_2023-02-21
+  - Node.js supports the creation of single executable applications by allowing the injection of a JavaScript file into the node binary. 
+    - doesn't require node to be installed locally.
+    - The single executable application feature only supports running a single embedded CommonJS file.
+
 - v19.6.0_2023-02-03
   - ✨ Includes npm@9.4.0 adding a new option for installations similar to pnpm
 

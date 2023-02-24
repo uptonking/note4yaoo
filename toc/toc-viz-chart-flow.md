@@ -83,6 +83,10 @@ modified: 2020-10-22T10:22:55.878Z
   - https://github.com/projectstorm/react-diagrams
   - http://projectstorm.cloud/react-diagrams
   - diagramming library written in react
+
+- https://github.com/emilwidlund/nodl
+  - framework for visual node graphs. 
+  - It has a core library & a React-library as of now, runs on MobX and leverages the power of RxJS & Zod for computational magic. 
 # uml
 - https://github.com/jgraph/mxgraph
   - /6.1kStar/Apache2/202011/archived

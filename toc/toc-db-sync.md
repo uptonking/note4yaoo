@@ -66,6 +66,11 @@ modified: 2022-11-25T15:41:47.534Z
   - `Dexie.Syncable` is used for the synchronization. This module contains an implementation of the `ISyncProtocol`. 
   - It was primarily written to work with `sync-server` but should work with other servers which offer the same API.
 
+- https://github.com/drifting-in-space/driftdb /ts/rust
+  - https://driftdb.com/
+  - A real-time data backend for browser-based applications.
+  - core Rust driftdb implementation.
+
 - turtleDB-indexeddb /443Star/MIT/201809/js/代码量少
   - https://github.com/turtle-DB/turtleDB
   - https://turtle-db.github.io/

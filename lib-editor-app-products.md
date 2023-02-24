@@ -12,6 +12,8 @@ modified: 2022-08-21T10:16:45.637Z
 - 类似ruby的ActionText
 # popular
 
+- [RichTextEditor](https://richtexteditor.com/)
+  - 可以参考主题设计，纯白简洁设计
 # more
 
 - https://imperavi.com/redactor/

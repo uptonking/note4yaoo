@@ -16,7 +16,10 @@ Symbol('a') === Symbol('a'); //false
 # discuss
 - ## 
 
-- ## 
+- ## [Why do you actually need higher order functions? : learnjavascript](https://www.reddit.com/r/learnjavascript/comments/rgddk9/why_do_you_actually_need_higher_order_functions/)
+- Your code sample is an example of currying, where a function that accepts multiple arguments can be rewritten as a series of functions that each accept one argument. This is just one of the many uses of higher order functions.
+- One much more common use for higher order functions is to abstract some patterns like looping over an array and performing some action for each value in the array
+  - This is so common it is built in to the language as a standard method on arrays. 
 
 - ## 函数式编程很讨厌的一点是，压缩后的代码完全不可读，函数名会被完全混淆。如果是之前的对象编程，可以通过查找对象上的方法名进行生产环境的 debugger，对象的名称会被混淆，但是其上的方法和属性不会😅
 - https://twitter.com/_Xheldon/status/1548967766211698688

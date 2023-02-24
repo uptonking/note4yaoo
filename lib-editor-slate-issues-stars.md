@@ -91,6 +91,8 @@ modified: 2023-02-05T19:03:12.723Z
 
 ## [Only use Slate Provider's value prop as initial state__202109.v0.70.0](https://github.com/ianstormtaylor/slate/pull/4540)
 
+- [`value` should be renamed to `initialValue`](https://github.com/ianstormtaylor/slate/issues/4992)
+
 > `slate-react` 中Slate组件经历了 非受控  > 受控  >  非受控 的过程
 
 - the `value` prop that must be passed to the `Slate` provider is kind of a hoax because in reality this prop has to be exactly what has been passed to `onChange`. This changes the `Slate` provider to relax this requirement. 
@@ -101,7 +103,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 - slate used to offer an API similar to any generic input, whereby it exposed props such as value and onChange. This enabled users to interact and maintain the value of the input with a `useState` hook
 
-- 👉🏻️ I definitely see how, since slate uses operations to mutate its state, using a controlled value pattern would be inconsistent. Specially considering that onChange is triggered for all operations including set_position
+- 👉🏻️ I definitely see how, since slate uses operations to mutate its state, using a controlled value pattern would be inconsistent. Specially considering that onChange is triggered for all operations including `set_position`
 
 ### [Delayed setState(value) results in Cannot resolve a DOM point from Slate point ](https://github.com/ianstormtaylor/slate/issues/3575)
 
@@ -162,7 +164,7 @@ modified: 2023-02-05T19:03:12.723Z
   - it can be changed directly by `editor.children = value`
 
 - [Delayed setState(value) results in Cannot resolve a DOM point from Slate point](https://github.com/ianstormtaylor/slate/issues/3575)
-- 
+  
 
 ## [Triple-click selection and Selection API issue](https://github.com/ianstormtaylor/slate/issues/4329)
 

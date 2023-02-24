@@ -25,6 +25,11 @@ modified: 2023-01-17T19:13:01.845Z
     - NO. Peer to peer networking
     - NO. WASM-compiled databases in your browser
 
+- https://github.com/drifting-in-space/driftdb /ts/rust
+  - https://driftdb.com/
+  - A real-time data backend for browser-based applications.
+  - core Rust driftdb implementation.
+
 - https://github.com/Rolands-Laucis/Socio
   - A WebSocket based realtime duplex Front-End and Back-End syncing API paradigm framework
 
@@ -42,7 +47,8 @@ modified: 2023-01-17T19:13:01.845Z
   - You decide where and how to store the files. 
   - files-sync-stream accepts a generic file read function and emits data events when receiving data.
 
-- https://github.com/kettle11/tangle /rust/wasm
+- https://github.com/kettle11/tangle /ts/rust/wasm
+  - https://tanglesync.com/
   - Tangle is a library that aims to make multiplayer apps and games far easier to build.
   - Tangle 'magically' wraps WebAssembly so you can write programs without worrying about message passing, serialization, or consensus.
   - Under the hood Tangle uses peer to peer WebRTC connections. This may change!
@@ -76,7 +82,6 @@ modified: 2023-01-17T19:13:01.845Z
   - HHS uses an immutable typed-objects local storage model. Objects are both retreived and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
   - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
   - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
-
 # sync-json
 - https://github.com/zettant/realtime-object-sync
   - server and client libraries for realtime JSON object synchronization.
