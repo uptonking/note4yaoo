@@ -55,7 +55,9 @@ modified: 2021-03-11T11:26:12.335Z
 
 - ## 
 
-- ## 
+- ## Chromium has queryLocalFonts API to list all available local fonts. 
+- https://twitter.com/pissang1/status/1629819868286709760
+  - It's strange I didn't notice it when I started this project and looking for something similar... #webgl
 
 - ## there was always something unfriendly about node editors, @splinetool saw that and used a more design oriented approach: layers. 
 - https://twitter.com/0xca0a/status/1504140883167703044

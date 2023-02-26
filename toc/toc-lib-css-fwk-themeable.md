@@ -1,11 +1,11 @@
 ---
-title: toc-lib-css-theming
+title: toc-lib-css-fwk-themeable
 tags: [css-vars, theming, toc]
 created: 2020-10-23T17:21:21.861Z
-modified: 2021-01-28T21:34:18.645Z
+modified: 2023-02-26T18:25:45.484Z
 ---
 
-# toc-lib-css-theming
+# toc-lib-css-fwk-themeable
 
 # guide
 

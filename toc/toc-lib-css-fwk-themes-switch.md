@@ -1,11 +1,11 @@
 ---
-title: toc-lib-css-themes-switch
+title: toc-lib-css-fwk-themes-switch
 tags: [css, css-vars, themes, theming, toc]
 created: 2021-01-28T21:12:30.674Z
-modified: 2021-02-09T13:40:11.536Z
+modified: 2023-02-26T18:26:07.198Z
 ---
 
-# toc-lib-css-themes-switch
+# toc-lib-css-fwk-themes-switch
 
 # guide
 

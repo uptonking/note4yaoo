@@ -9,12 +9,15 @@ modified: 2023-02-05T19:03:12.723Z
 
 # guide
 
+- collab
+  - json patch
 # popular-slate
 - plate /1.6kStar/MIT/202208/ts/block-style
   - https://github.com/udecode/plate
   - https://plate.udecode.io/
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，但list内所有item不支持拖拽
+  - core依赖zustand、zustood、jotai、react-hotkeys-hook
   - code-block自研实现，不依赖第三方代码编辑器
   - A plugin framework for building rich text editors with slate.
 
@@ -424,6 +427,15 @@ modified: 2023-02-05T19:03:12.723Z
   - [Platforms Starter Kit: a template for site builders, multi-tenant platforms, and low-code tools.](https://demo.vercel.pub/platforms-starter-kit)
   - [How to Build a Multi-Tenant App with Custom Domains Using Next.js](https://vercel.com/guides/nextjs-multi-tenant-application)
 # slate-collab
+- https://github.com/typewriter-editor/json-patch
+  - Immutable JSON Patch implementation based on RFC 6902 which adds operational transformation (OT) and last-writer-wins (LWW) support for syncing between client and server. 
+  - Does not support the full OT algorithm because `copy` and `move` operations cannot be transformed correctly in all cases, so operations must always be applied in correct order. 
+    - This means a central server is required to determine order.
+  - 👉🏻 json-patch provides a utility that will help sync an object field-by-field using the Last-Writer-Wins (LWW) algorithm. 
+    - This sync method is not as robust as operational transformation, but it only stores a little data in addition to the object and is much simpler
+    - It does not handle adding/removing array items, though entire arrays can be set. 
+    - It should work great for documents that don't need merging text like Figma
+
 - https://github.com/solidoc/slate-ot /ts/202006
   - Operation Transformations for slate 0.5x.
   - 依赖sharedb
@@ -432,6 +444,13 @@ modified: 2023-02-05T19:03:12.723Z
   - Invoking JSON0-ot-diff on every edit is not very efficient.
 - https://github.com/onechunlin/collaborative-docs
   - 基于 Slate 和 ShareDb 实现的基于 OT 算法的协同文档
+
+- https://github.com/timbuckley/slate-collaborative
+  - A collaborative implementation for the slatejs editor using operational transform
+  - 依赖很少
+- https://github.com/4molybdenum2/Metanoia
+  - Metanoia is a Real-time Collaborative Text Editor made with the help of Slate JS and Socket. IO
+  - onChange直接发送op，未使用冲突处理算法
 
 - https://github.com/itoumlilt/crdt-md-editor /ts/slate/CouchDB
   - React Typescript CRDT based Collaborative Markdown Editor
@@ -449,6 +468,10 @@ modified: 2023-02-05T19:03:12.723Z
   - A example of a collaborative editor using Slate and Automerge
   - Based on idea of https://github.com/humandx/slate-automerge
   - https://github.com/mms-gianni/slate-collaborationserver
+
+- https://github.com/Regloom/slatesyncedit
+  - 每次同步全量数据
+  - 注意测试时要用相同url代表在一个房间里面
 # more-slate
 - https://github.com/tiddly-gittly/slate-write
   - A WYSIWYG editor for TiddlyWiki. (WIP)

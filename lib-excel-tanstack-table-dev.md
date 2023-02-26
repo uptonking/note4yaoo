@@ -8,7 +8,7 @@ modified: 2022-08-21T10:19:58.756Z
 # lib-excel-tanstack-table-dev
 
 # guide
-- pros
+- features
   - unstyled
   - framework-agnostic core
   - typescript
@@ -25,6 +25,8 @@ modified: 2022-08-21T10:19:58.756Z
   - 示例参考
     - https://codesandbox.io/s/cubs-react-virtualized-resizable-sortable-filterable-table-x77iw
       - 支持 virtualized、global filter、row selection
+
+- tanstack-table和ag-grid支持的输入数据都是对象数组，array-of-objects
 # react-table表格实现的ui结构层次
 - ## useBlockLayout
   - 必须设置cell的width，使用行内样式设置

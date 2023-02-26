@@ -176,14 +176,6 @@ $zindex-tooltip:                    1070;
   - These provide easy access to commonly used values like our theme colors, breakpoints, and primary font stacks when working in your browser’s Inspector, a code sandbox, or general prototyping.
   - CSS variables offer similar flexibility to Sass’s variables, but without the need for compilation before being served to the browser
 
-# bootstrap-ecosystem
-
-- https://github.com/easysoft/zui
-  - /2.4kStar/MIT/202010/js/less
-  - 一个基于Bootstrap深度定制开源前端实践方案，帮助你快速构建现代跨屏应用
-- https://github.com/wenzhixin/bootstrap-table
-  - An extended table to integration with some of the most widely used CSS frameworks.
-
 # blog
 
 ## [Bootstrap源码分析系列之整体架构 基于v3](https://www.cnblogs.com/jesse131/p/5966145.html)

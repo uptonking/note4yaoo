@@ -29,6 +29,8 @@ modified: 2021-01-01T20:06:36.094Z
     - css `color: ${colors.text};`.
     - We recommend to move helpers and shared configuration to files without any side-effects.
 
+- compiled-css-in-js会编译出atomic css
+
 - **linaria生成样式的原理解析**
 - `styled`纯静态样式
 

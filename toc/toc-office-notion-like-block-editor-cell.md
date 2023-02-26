@@ -20,6 +20,7 @@ modified: 2022-08-14T16:26:48.558Z
 - plate /1.6kStar/MIT/202208/ts
   - https://github.com/udecode/plate
   - https://plate.udecode.io/
+  - core依赖zustand、zustood、jotai、react-hotkeys-hook
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，但不支持拖入拖出list item
   - code-block自研实现，不依赖第三方代码编辑器

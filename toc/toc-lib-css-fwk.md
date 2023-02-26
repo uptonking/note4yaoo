@@ -19,6 +19,16 @@ modified: 2021-01-28T21:14:14.667Z
   - https://daisyui.com/
   - free and open-source Tailwind CSS component library
 
+- cirrus /1.1kStar/MIT/202302/scss
+  - https://github.com/Spiderpig86/Cirrus
+  - https://www.cirrus-ui.com/
+  - 文档单页，文档样式非常友好
+  - css vars和scss vars混用
+  - 特点是简洁干净，多圆角阴影
+  - A fully responsive CSS framework with beautiful controls and simplistic structure. 
+  - Cirrus is designed to be adaptable to existing themes or when starting fresh.
+  - The only component that requires the use of jQuery is the Header component for toggling the dropdown menu on mobile.
+
 - spectre /10.3kStar/MIT/202007
   - https://github.com/picturepan2/spectre
   - https://picturepan2.github.io/spectre/
@@ -31,15 +41,9 @@ modified: 2021-01-28T21:14:14.667Z
   - https://spectre.angular-package.dev/
   - 提供了filter、timeline等扩展
 
-- cirrus /694Star/MIT/202101/scss
-  - https://github.com/Spiderpig86/Cirrus
-  - https://www.cirrus-ui.com/
-  - 文档单页，文档样式非常友好
-  - css vars和scss vars混用
-  - 特点是简洁干净，多圆角阴影
-  - A fully responsive CSS framework with beautiful controls and simplistic structure. 
-  - Cirrus is designed to be adaptable to existing themes or when starting fresh.
-  - The only component that requires the use of jQuery is the Header component for toggling the dropdown menu on mobile.
+- https://github.com/zvizvi/freewindcss /scss
+  - https://codesandbox.io/s/freewindcss-pfq17e
+  - Use Tailwind's set values and units in pure CSS variables
 
 - https://github.com/conedevelopment/sprucecss
   - https://sprucecss.com/
@@ -137,14 +141,7 @@ modified: 2021-01-28T21:14:14.667Z
   - a modern CSS framework based on Flexbox.
   - 方形设计，多边框
   - 模版很多
-# tailwind
-- https://github.com/Siumauricio/rippleui
-  - https://ripple-ui.com/
-  - modern and beautiful Tailwind CSS components.
 
-- https://github.com/sailboatui/sailboatui
-  - https://sailboatui.com/
-  - modern UI component library for Tailwind CSS
 # classless
 - MVP.css /4.2kStar/MIT/202209/css/单文件
   - https://github.com/andybrewer/mvp

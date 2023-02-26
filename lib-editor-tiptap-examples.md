@@ -263,6 +263,9 @@ modified: 2023-02-05T19:03:27.730Z
   - for analytics, we self-hosted a plausible instance to avoid sharing your customer's data with third-party companies
   - https://github.com/plausible/analytics
     - 基于elixir
+
+- https://t.co/cSLL2bvRp6
+  - using @tailwindcss @tiptap_editor @vuejs & @nuxt_js
 # cms-like
 - alinea /654Star/MIT/202301/ts
   - https://github.com/alineacms/alinea

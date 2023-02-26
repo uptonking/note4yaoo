@@ -33,10 +33,11 @@ modified: 2021-07-20T13:50:23.433Z
   - jupyter-notebook
   - observable-notebook
 
-- 团队版/企业版
+- 团队版/企业版-features
   - 表单/投票收集与统计，如features
   - 编辑器内的时间变化动态表格
   - 类似多个图表facet的多个表格
+  - table in table
   - 移动端优化的表格
 
 ## techstacks: rich-editor/builder

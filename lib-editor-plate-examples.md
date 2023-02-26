@@ -11,8 +11,8 @@ modified: 2023-02-05T19:03:12.721Z
 
 # popular
 - prezly-slate /31Star/MIT/202208/ts/提交多
-  - https://github.com/prezly/slate 
-  - 依赖 @udecode/plate-core、popperjs2、@prezly/sdk、react-bootstrap
+  - https://github.com/prezly/slate
+  - 依赖 `plate`的工具方法而不依赖编辑器、popperjs2、@prezly/sdk、react-bootstrap
   - Prezly software built upon Slate
   - 悬浮工具条使用卡片的形式
   - https://www.prezly.com/

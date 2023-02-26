@@ -12,9 +12,11 @@ modified: 2022-12-16T01:52:33.729Z
 - 多维表格的使用场景
   - 充分考虑github实现的业务，如何将任务管理project、issues、discussions关联
 # features
+- facets/multi-tables
 
+- table-in-table
+  - [Bootstrap Table Examples - Sub Table](https://examples.bootstrap-table.com/#welcomes/sub-table.html)
 # table-in-editor
-
 - [CKEditor 5 table](https://ckeditor.com/docs/ckeditor5/latest/features/table.html)
   - 行列操作在悬浮工具条的二级菜单
 

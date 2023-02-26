@@ -191,6 +191,14 @@ modified: 2023-01-17T19:14:47.611Z
   - an online document editor to create, edit and collaborate on online documents.
   - Version Control and Hosting : Git for Source Code Management and Github for Hosting
 
+- https://github.com/orda-io/orda /go
+  - A client and server written in Go. 
+  - CRDT-based data synchronization supporting document database.
+  - Orda project is a multi-device data synchronization platform based on MongoDB 
+  - Orda is based on CRDT(conflict-free data types), which enables operation-based synchronization.
+  - https://github.com/orda-io/orda-js
+    - Javascript(or Typescript) SDK for Orda project. 
+
 - sync_server-nedb /33Star/MIT/201807/js
   - https://github.com/nponiros/sync_server
   - A simple server which can be used to synchronize data from multiple devices

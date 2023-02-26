@@ -185,9 +185,6 @@ modified: 2021-05-14T15:04:42.225Z
   - /9.8kStar/MIT/201912/inactive
   - adding search, sort, filters and flexibility to tables, lists and various HTML elements. 
   - Built to be invisible and work on existing HTML.
-- https://github.com/wenzhixin/bootstrap-table
-  - An extended table to integration with some widely used CSS frameworks. 
-  - (Supports Bootstrap, Semantic UI, Bulma, Material Design, Foundation, Vue.js)
 
 - https://github.com/artf/grapesjs
   - /11.8kStar/BSD/202009

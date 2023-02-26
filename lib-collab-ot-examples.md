@@ -14,11 +14,14 @@ modified: 2022-10-02T20:51:30.444Z
   - 客户端（编辑器）通过 WebSocket 与服务端建立长连接通信，编辑器每次的 dom 结构变更都将转换为json0格式操作命令（ops）发送到服务端并修改服务端数据后再分发给各个客户端
   - sharedb 会把每次客户端与服务端的操作数据保存为日志，并且在每次操作后都会把最新生成的文档数据保留下来。这些操作都在 ot-server 中进行
 # popular
-- https://github.com/Starcounter-Jack/JSON-Patch
-  - Update JSON documents using delta patches.
-  - JSON-Patch (RFC6902) is a standard format that allows you to update a JSON document by sending the changes rather than the whole document. 
-  - JSON Patch plays well with the HTTP PATCH verb (method) and REST style programming.
-  - Lean and mean Javascript implementation of the JSON-Patch standard (RFC 6902).
+- https://github.com/typewriter-editor/json-patch
+  - Immutable JSON Patch implementation based on RFC 6902 which adds operational transformation (OT) and last-writer-wins (LWW) support for syncing between client and server. 
+  - Does not support the full OT algorithm because `copy` and `move` operations cannot be transformed correctly in all cases, so operations must always be applied in correct order. 
+    - This means a central server is required to determine order.
+  - 👉🏻 json-patch provides a utility that will help sync an object field-by-field using the Last-Writer-Wins (LWW) algorithm. 
+    - This sync method is not as robust as operational transformation, but it only stores a little data in addition to the object and is much simpler
+    - It does not handle adding/removing array items, though entire arrays can be set. 
+    - It should work great for documents that don't need merging text like Figma
 
 - https://github.com/Palindrom/Palindrom
   - Library for two-way data binding between local and remote JSON models. 
@@ -31,6 +34,10 @@ modified: 2022-10-02T20:51:30.444Z
   - It is the realtime backend for the DerbyJS web application framework.
   - https://github.com/derbyjs/derby
     - MVC framework making it easy to write realtime, collaborative applications that run in both Node.js and browsers
+- https://github.com/derbyjs/racer /js
+  - Realtime model synchronization engine for Node.js
+  - By leveraging ShareDB, multiple users can interact with the same data in realtime via Operational Transformation
+  - ShareDB also supports PubSub across multiple servers for horizontal scaling. 
 
 - https://github.com/Progyan1997/Operational-Transformation
   - http://operational-transformation.github.io/

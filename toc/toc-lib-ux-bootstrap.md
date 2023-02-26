@@ -22,6 +22,7 @@ modified: 2021-01-10T22:18:36.696Z
 - https://github.com/uxsolutions/bootstrap-datepicker
   - A datepicker for twitter bootstrap
 - https://github.com/wenzhixin/bootstrap-table
+  - https://examples.bootstrap-table.com/
   - An extended table to integration with some of the most widely used CSS frameworks. 
   - Supports Bootstrap, Semantic UI, Bulma, Material Design, Foundation, Vue.js
   - An extended Bootstrap table with radio, checkbox, sort, pagination, extensions and other added features.
@@ -32,6 +33,9 @@ modified: 2021-01-10T22:18:36.696Z
   - https://azouaoui-med.github.io/pro-sidebar-template/src
   - Responsive sidebar template with dropdown menu based on bootstrap
   - toggable, pinnable
+- https://github.com/easysoft/zui
+  - /2.4kStar/MIT/202010/js/less
+  - 一个基于Bootstrap深度定制开源前端实践方案，帮助你快速构建现代跨屏应用
 
  
 

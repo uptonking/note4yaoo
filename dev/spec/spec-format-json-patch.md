@@ -1,0 +1,48 @@
+---
+title: spec-format-json-patch
+tags: [json-patch]
+created: 2023-02-26T21:03:46.978Z
+modified: 2023-02-26T21:03:56.167Z
+---
+
+# spec-format-json-patch
+
+# guide
+
+- [JSON Patch | jsonpatch.com](https://jsonpatch.com/)
+- [RFC 6902: JavaScript Object Notation (JSON) Patch](https://www.rfc-editor.org/rfc/rfc6902)
+# blogs
+
+## [Kubernetes中的JSON patch - 掘金](https://juejin.cn/post/6993618347904466957)
+
+- JSON格式文件改动的方案有很多，但是被IEFT官方收录的就两种
+  - RFC 6902（JSON Patch）
+  - RFC 7396（JSON Merge Patch）
+
+### JSON Patch
+
+- 它适用于 HTTP PATCH 方法，相当于这个方案扩展了http协议，比如 “application/JSON-patch+JSON”的meme.type就是用于标识此类Patch文档，它所定义的参数结构中包含对资源执行部分修改的方法。
+- “op”表示操作，有“test”，“remove”，“add”，“replace”，“move”，“copy”这六种操作。
+- “path”表示该操作指向JSON文档的目标
+- “value”表示操作的具体的值
+- 其中比较特殊的是“test"，简单来说他就是"equal"，比较值或JSON Object。
+- 根据http patch原子性的定义，原子性的含义就是以下操作不会对源文档产生修改，因为“test”会失败，而整个操作附带“replace”操作也会回滚。
+- 规范定义了如果一次JSON Patch操作违反了规范要求，或者操作不成功，则会终止对JSON文档的操作，且视为操作不成功。这里可以参考http patch操作的状态码。
+
+### JSON Merge Patch
+
+- JSON Merge Patch和JSON Patch很像，但是他描述了JSON文档更改的版本。
+  - 与上文提到的方式相比，这种方式更像git中的差异文件，而JSON PATH更像操作数据库。
+  - 这种方式不包含操作，只包含文档的节点。
+- 这种方式一看就很易于理解，但是有一些潜在的限制，比如
+  - 没办法将value置为null，因为null的操作在merge patch的场景下是删除的意思。当然如果在处理JSON文档的程序中null就代表资源不存在，那确实也可以避免这个问题。
+  - 无法追加数组，因为必须提供完整的数组才能表达元素的修改
+  - 一旦Patch是错误的，比如路径错误，他也会被合并到正确的数据中去，因为merge patch看起来是一种非常灵活的数据修改方式，但在JSON Patch中如果路径错误的话，会导致操作失败。
+
+- 综上所述，如果面对的是结构比较简单，校验不要求很强烈的场景，可以选择JSON Merge Patch，
+  - 但是更为复杂的场景，建议选择JSON Patch，因为这种方式确保原子执行和错误报告。
+
+- Kubernetes中的webhook采用的就是上文提到的第一种方案（JSON Patch）
+# examples
+
+# more

@@ -13,6 +13,7 @@ modified: 2023-02-05T19:03:12.721Z
   - https://github.com/udecode/plate
   - https://plate.udecode.io/
   - A plugin framework for building rich text editors with slate.
+  - core依赖zustand、zustood、jotai、react-hotkeys-hook
   - ✨ Features
     - 编辑器开箱即用、功能丰富、架构比较稳定
       - 光标、选区、快捷键、拖拽

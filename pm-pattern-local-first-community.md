@@ -49,6 +49,7 @@ modified: 2022-03-03T18:20:12.075Z
 - ## When we started work on @linear , we felt real-time sync was a core functionality we had to invest in from the get-go. 
 - https://twitter.com/artman/status/1558081796914483201
   - [linear sync 分享_202002](https://www.youtube.com/watch?v=WxK11RsLqp4&t=2169s)
+  - 默认last-write-win, 出现冲突时，提示用户选择版本
   - It turns out sync was important, but not for the reasons we thought.
 - Our gut feeling was that real-time updates were required from a modern tool like Linear. Who wants to refresh to see the latest data? But how often do you find yourself in a situation where multiple people update data simultaneously in a project management tool?
   - Not that often, it turned out. Aside from special cases where your team gets together to operate on data - like planning your next cycle - edits are made across the entire dataset, with the same data being touched at the same time relatively infrequently.
@@ -77,7 +78,6 @@ modified: 2022-03-03T18:20:12.075Z
 - All UI code automatically re-renders when the data that they accessed updates. Whether the data changes come from the user or the network doesn't matter. So you get multi-player for free, too.
 - As you can imagine, reducing the number of layers engineers have to work on dramatically improves the speed at which we can ship new functionality. After experiencing this architecture at scale, I'm spoiled for life.
 - For a pretty old - but still relevant - talk on our sync engine, check out
-  - [React Helsinki February 2020 - YouTube](https://www.youtube.com/watch?v=WxK11RsLqp4&t=2169s)
 
 - Linear is great! What did you use specifically for sync and did you roll out all the reconciliation code yourself or did you leverage other tools?
   - ws for sockets, and idb to make working with IndexDB a bit more pleasant, but other than that it’s a custom solution.

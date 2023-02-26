@@ -82,9 +82,28 @@ modified: 2023-01-17T19:13:01.845Z
   - HHS uses an immutable typed-objects local storage model. Objects are both retreived and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
   - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
   - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
+
+- https://github.com/feathersjs-ecosystem/feathers-sync
+  - Synchronize service events between Feathers application instances
+  - When running multiple instances of your Feathers application (e.g. on several Heroku Dynos), service events (created, updated, patched, removed and any custom defined events) do not get propagated to other instances.
+  - feathers-sync uses a messaging mechanism to propagate all events to all application instances. 
+  - It currently supports redis, amqp/RabbitMQ
 # sync-json
 - https://github.com/zettant/realtime-object-sync
   - server and client libraries for realtime JSON object synchronization.
+
+- https://github.com/jsebrech/minisync /基于deltaState
+  - A library for P2P synchronization of JSON data objects, enabling a set of peers to synchronize changes to a JSON object without relying on a central server.
+  - Clients can merge in any and all directions, they just need to have a shared ancestry by initially creating an object from the result of getChanges of any other client.
+  - Minisync encodes the changes to send between parties as a JSON structure.
+  - Lock-free algorithm, many clients can edit the same object in parallel
+  - Eventually consistent state between all clients
+  - limitations: This is experimental code and therefore likely to break between versions, causing data loss across all clients when a new minisync version is deployed!
+
+- https://github.com/frameable/pigeon /js
+  - Diff, patch, merge, and synchronize JSON documents with an Automerge-compatible interface
+  - While Automerge optimizes for working offline and merging changes periodically, Pigeon is optimized for online real-time collaboration.
+  - Change sets use JSON-Patch-esque paths, and so are more easily introspectable using existing tools
 
 - https://github.com/privatenumber/reactive-json-file
   - Reactively sync JSON mutations to disk
@@ -94,6 +113,15 @@ modified: 2023-01-17T19:13:01.845Z
   - Read & write to JSON files on a storage device without the need to interact with the filesystem.
   - Persistent data between process restarts.
   - Automatically updates internal value when JSON file is modified.
+
+- https://github.com/MagicCube/hybrid-storage
+  - 一种可以在本地离线与云端同步 JSON 对象的存储方案。
+  - 用本地的 LocalStorage 和云端的 OSS 文件同时存储 JSON 键值对数据
+  - 读操作默认走本地的 LocalStorage，写操作则是先写本地，然后再以异步操作队列（AsyncQueue 类）同步至服务端
+
+- https://github.com/ken107/push-model
+  - This Node module implements a WebSocket JSON-RPC server with object synchronization capabilities based on the JSON-Pointer and JSON-Patch standards.
+  - Harmony Proxy is used to detect subsequent changes to the data, which are published incrementally as JSON Patches.
 
 - https://github.com/codePlaceOfficial/virtualFileServer
   - keep local files and JSON objects in sync

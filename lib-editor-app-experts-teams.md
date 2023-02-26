@@ -48,7 +48,12 @@ modified: 2022-08-21T10:16:52.004Z
   - [我的2021-从在线教育到新能源汽车](https://juejin.cn/post/7043089265575591949)
   - [基于CRDT的一种文档冲突算法 YATA/yjs](https://juejin.cn/post/7064236095440961550)
 
+- jacwright
+  - typewriter, json-patch
+  - https://github.com/jacwright
+
 - Tuffy
+  - 字节，excel
   - https://github.com/hullis
 # editor-oriented-teams
 - [emergence engine blog](https://emergence-engineering.com/blog)

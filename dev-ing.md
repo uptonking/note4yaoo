@@ -17,7 +17,7 @@ https://meeting.tencent.com/p/9606972663
 
 # dev-xp
 - ui-starter
-  - css-only: open-props, glass-ui, nextui, 渐变字体
+  - css-only: open-props, glass-ui, 渐变字体
   - react: spectrum, zigzag, ariakit
 - dev-starter
   - patterns: react, typescript
@@ -51,10 +51,6 @@ https://meeting.tencent.com/p/9606972663
   - more-editor
     - https://demo.grammarly.com/
 
-```JS
-console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
-```
-
 ```shell
 DEBUG=* npm install --legacy-peer-deps --loglevel silly
 ```
@@ -67,71 +63,56 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - local-first-database
   - annotation/comment/whiteboard/pdf
   - 事项--截止日期(0730+休整)--重要性(hml/s1-s3)
-  - *mirror-based-editor-vanillajs
-  - pivot-table/grid--0828--h
+  - rich-editor-vanillajs
+  - pivot-table-grid--0828--h
     - dropdown-menu vs tabs
   - app-wiki-knowledge-base--0904
   - dashboard/webapp-template--0901
 
-- dev-to/log/xp
-  - deep into lib: src-code, issues, pr, forks, extensions/alternatives
-
-- later
-  - crdt-hlc 
-    - merkle 如何在op-log中找到上次相等的timestamp
-  - idb-side-sync
-    - storage adapter: indexeddb/memory/sqlite-opfs
-    - 系统预置数据如待办类型合并时可能出现名称相同的情况，用户添加数据时也可能出现
-  - url-as-state-management
-  - docker打包前端
+- deep into lib
+  - src-code, issues, pr, forks, extensions/alternatives
 # dev-2023-方向+方法+时间
-- eg-prosemirror-examples+collab
-  - 重写collab示例的交互，参考blocky-editor在一个页面展示多个编辑器且支持实时协作
-  - [x] 用websocket替换轮询，可基于socket.io
-  - 参考atlaskit-editor实现collab，服务端未开源，但yjs提供了示例，支持切换docs
-  - 分析协作时官方的undo-redo和yjs的undo-redo
-- eg-tiptap-examples
-  - 重写atlaskit或ckeditor的丰富示例
-  - tiptap-yjs-server-src
-- eg-migrate-atlaskit-examples
-- eg-BlockNote
+- slate-wangeditor
+  - model, view, sync, collab
 - eg-focalboard
-  - olap-cube-js
+  - olap
 - 👉🏻 eg-tanstack-table-v8
-  - tuple-database
   - [x] 数据全内存: nedb, blinkdb
   - [x] 数据全持久: linvodb, tingodb
   - [ ] 方便接入已有的外部数据源
+  - tuple-database
+  - tinybase
 
 - collab-sync
-  - ddp/ejson/minimongo
   - collab-data-structure: lww-with-hlc
-  - undo/redo
   - remoteStorage: google-drive、网盘、七牛对象存储
   - lo-fi-sync-server
 
 - sqlite-web
-  - evolu
+  - evolu(hlc)
   - kikko
   - absurd-sql-ts: read ArrayBuffer
 
 - products
-  - airtable, cms, lowcode
+  - cms, airtable, lowcode
 
 - 内容的存储与更新如何与数据库集成
   - 编辑器内容自动保存一般通过在onChange方法中执行saveToDB
-    - ❌ 也可以在onChange方法中创建内存db、更新索引，通过索引提高计算效率； 应该避免维护2份数据
-  - 将编辑器的计算密集部分的数据模型不使用普通json对象，而用类似数据库模型的设计
+    - 也可以在onChange方法中创建内存db、更新索引，通过索引提高计算效率
+    - 应该避免维护2份数据
+  - 将编辑器的计算密集部分的数据模型不使用普通json对象，而直接用类似数据库模型的设计
+  - 为了性能，尽量不要直接读写持久化数据源，要使用缓存object pool
 
 - log2022 数据同步、冲突处理、本地存储
   - 07-focalboard-views
   - 08-block-editor-tiny-write
   - 09-prosemirror-examples
-  - 10-prosemirror-collab - otjs - crdt
-  - 11-idb-sync
+  - 10-prosemirror-collab - otjs - crdt-hlc
+  - 11-idb-sync-crdt
   - 12-nedb-linvodb
 - log2023
-  - 01-linvo-search+sync-hlc-wip
+  - 01-linvo-search+tinybase-sync-hlc-wip
+  - 02-typewriter-quill+tanstack-table
 
 - why use es6 class
   - 既包含类型定义，又包含逻辑工具方法
@@ -140,18 +121,15 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 - dev-later
   - crdt tutorials
   - 腰包掉到床头版与墙的夹缝中了
-
-- dev-to
-  - merge cells 逻辑优化
-  - cell-floating-menu 右上角
-  - 选区问题修复
+  - 默认last-write-win, 出现冲突时，提示用户选择版本
 # dev-02
 
 ## 02
 
-- mergeable-table
-  - insertAbove能执行，inertBelow不能执行
-  - Cannot resolve a Slate point from DOM point
+- dev-to
+  - merge-cells 逻辑优化
+  - cell-floating-menu 右上角
+  - 选区问题修复, domSelToSlateRange
 
 ## 0225
 
@@ -412,7 +390,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                  `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                             `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

@@ -38,6 +38,11 @@ modified: 2022-11-06T16:47:43.444Z
     - It does not handle adding/removing array items, though entire arrays can be set. 
     - It should work great for documents that don't need merging text like Figma
 
+- https://github.com/frameable/pigeon /js
+  - Diff, patch, merge, and synchronize JSON documents with an Automerge-compatible interface
+  - While Automerge optimizes for working offline and merging changes periodically, Pigeon is optimized for online real-time collaboration.
+  - Change sets use JSON-Patch-esque paths, and so are more easily introspectable using existing tools
+
 - https://github.com/josdejong/immutable-json-patch /202211/ts
   - Immutable JSON patch with support for reverting operations.
   - Apply JSON patch operations on a JSON document in an immutable way.
@@ -55,6 +60,10 @@ modified: 2022-11-06T16:47:43.444Z
   - JSON Patch and diff based on rfc6902
 - https://github.com/wizedix/json-patch-apply
   - an implementation of JSON patch RFC 6902
+
+- https://github.com/eugeneware/changeset /js
+  - Library to diff JSON objects into atomic put and delete operations, and apply change sets to objects. 
+  - Useful with Levelup/LevelDB object synchronization.
 
 - https://github.com/jpbnetley/test-json-patch
   - 👉🏻 Test different implementations for json patch RFC6902
