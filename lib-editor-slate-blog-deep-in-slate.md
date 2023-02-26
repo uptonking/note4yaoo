@@ -10,15 +10,104 @@ modified: 2023-02-22T19:54:25.348Z
 # guide
 
 - resources
+  - [slate学习总结 insertText源码解读](https://juejin.cn/post/6967301474737094669)
   - [slate 架构设计分析 - 知乎](https://zhuanlan.zhihu.com/p/262209236)
   - [深入 Slate.js 编辑器 - 钉钉文档 - 知乎](https://www.zhihu.com/column/c_1312084184400162816)
 
-- [Slate源码解析（一） - 掘金](https://juejin.cn/post/6978137641401188365)
-  - [Slate 源码解析（二） - 掘金](https://juejin.cn/post/6978141447140671501)
+- [Slate源码解析（一） slate core - 掘金](https://juejin.cn/post/6978137641401188365)
+  - [Slate 源码解析（二） slate-react + tests - 掘金](https://juejin.cn/post/6978141447140671501)
   - [关于 wangEditor-v5 单元测试的总结 - 掘金](https://juejin.cn/post/7079951448812814349)
   - [从 MVC 架构的角度看 Slate - 掘金](https://juejin.cn/post/6952076442649755662)
 
+- [slate.js源码分析（一） —— slate渲染机制 - 知乎](https://zhuanlan.zhihu.com/p/266438572)
+  - [slate.js源码分析（四）- 历史记录机制 - 知乎](https://zhuanlan.zhihu.com/p/293061216)
+
 - [从 Slate 的内置特性到洋葱模型 - 掘金](https://juejin.cn/post/7086816312789794846)
+# [slate 架构与设计分析 · hullis/blog](https://github.com/hullis/blog/issues/36)
+- slate 数据模型（model）的设计
+- slate 以树形结构来表示和存储文档内容
+- type Node = Editor | Element | Text
+- 采用树形结构描述 model 有这样一些好处：
+  - 富文本文档本身就包含层次信息，比如 page, section, paragraph, text 等等，用树进行描述符合开发者的直觉
+  - 文本和属性信息存在一处，方便同时获取文字和属性信息
+  - model tree Node 和 DOM tree Element 存在映射关系，这样在处理用户操作的时候，能够很快地从 element 映射到 Node
+  - 方便用组件以递归的方式渲染 model
+- 用树形结构当然也有一些问题：
+  - 对于协同编辑的冲突处理，树的解决方案比线性 model 复杂
+  - 持久化model / 创建编辑器的时候需要进行序列化 / 反序列化
+
+- 选区和光标处理
+- 有了 model，还需要在 model 中定位的方法，即选区（selection），slate 的选区采用的是 Path 加 offset 的设计。
+
+- model 变更机制
+- 有了 model 和对 model 中位置的描述，接下来的问题就是如何对 model 进行变更（mutation）了
+- 通常来说，对 model 进行的变更应当是原子化（atomic）的，
+  - 这就是说，应当存在一个独立的数据结构去描述对 model 发生的变更，这些描述通常包括变更的类型（type）、路径（path）和内容（payload），例如新增的文字、修改的属性等等。
+  - 原子化的变更方便做 undo/redo，也方便做协同编辑
+- 对 model 进行变更的过程主要分为以下两步
+- 通过 Transforms 提供的一系列方法生成 Operation
+- Operation 进入 apply 流程
+  - 记录变更脏区
+  - 对 Operation 进行 transform
+  - 对 model 正确性进行校验
+  - 触发变更回调
+- GeneralTransforms，它并不生成 Operation 而是对 Operation 进行处理，只有它能直接修改 model，其他 transforms 最终都会转换成 GeneralTransforms 中的一种
+
+- model 校验
+- 对 model 进行变更之后还需要对 model 的合法性进行校验，避免内容出错。
+- 校验的机制有两个重点，一是对脏区域的管理，一个是 withoutNormalizing 机制。
+
+- 插件系统
+- 看起来 slate 的插件机制非常强大，但它有一个非常简单的实现：覆写编辑器实例 editor 上的方法。
+- 用 withReact 修饰编辑器实例，直接覆盖实例上原本的 apply 和 change 方法。~~换句话说，slate 的插件机制就是没有插件机制
+
+- undo/redo 机制
+- 实现 undo/redo 的机制一般来说有两种。
+- 第一种是存储各个时刻（例如发生变更前后）model 的快照（snapshot），在撤销操作的时候恢复到之前的快照，
+  - 这种机制看起来简单，但是较为消耗内存（有 n 步操作我们就需要存储 n+1 份数据！），
+  - 而且会使得协同编辑实现起来非常困难（比较两个树之间的差别的时间复杂度是 O(n^3)，
+  - 更不要提还有网络传输的开销）。
+- 第二种是记录变更的应用记录，
+  - 在撤销操作的时候取要撤销操作的反操作，这种机制复杂一些——主要是要进行各种选区计算——但是方便做协同，且不会占用较多的内存空间。
+- 在 withHistory 方法中，slate-history 在 editor 上创建了两个数组用来存储历史操作
+  - 它们的类型都是 Operation[][]，即 Operation 的二维数组，其中的每一项代表了一批操作（在代码上称作 batch）， batch 可含有多个 Operation。
+  - slate-history 通过覆写 apply 方法来在 Operation 的 apply 流程之前插入 undo/redo 的相关逻辑
+- undo的主要部分就是对最后一个 batch 中所有的 Operation 取反操作然后一一 apply，再将这个 batch push 到 redos 数组中。
+
+- 渲染机制slate-react
+- slate 的 model 本身就是树形结构，因此只需要递归地去遍历这棵树，同时渲染就可以了。
+  - 基于 React，这样的递归渲染用几个组件就能够很容易地做到，这几个组件分别是 Editable Children Element Leaf String 和 Text
+- Children 组件用来渲染 model 中类行为 Editor 和 Element Node 的 children，比如最顶层的 Editable 组件就会渲染 Editor 的 children
+- 用树形结构来组织 model 能够很方便地渲染，且在 Node 和 HTML element 之间建立映射关系（具体可查看 toSlateNode 和 toSlateRange 等方法和 ELEMENT_TO_NODE NODE_TO_ELEMENT 等数据结构），这在处理光标和选择事件时将会特别方便。
+
+- 光标和选区的处理
+- slate没有自行实现光标和选区，而使用了浏览器 contenteditable 的能力（同时也埋下了隐患，我们会在总结部分介绍）。
+- contenteditable 就负责了光标和选区的渲染和事件。
+  - slate-react 会在每次渲染的时候将 model 中的选区同步到 DOM 上
+  - `domSelection.setBaseAndExtent()` 使用浏览器api
+- 也会在 DOM 发生选区事件的时候同步到 model 当中
+  - `ReactEditor.toSlateRange(editor, domSelection)` 工具方法
+  - 这里即发生了一次 DOM element 到 model Node 的转换
+
+- 键盘事件处理
+- beforeInput 事件和 input 事件的区别就是触发的时机不同。前者在值改变之前触发，还能通过调用 preventDefault 来阻止浏览器的默认行为。
+- slate 对快捷键的处理也很简单，通过在 div 上绑定 keydown 事件的 handler，然后根据不同的组合键调用不同的方法。
+  - Editable 默认的 handler 会检测用户提供的 handler 有没有将该 keydown 事件标记为 defaultPrevented，没有才执行默认的事件处理逻辑
+
+- 渲染触发
+- SlateProvider 在渲染的时候会向全局 `EDITOR_TO_ON_CHANGE` 中添加一个回调函数，这个函数会让 key 的值加 1，触发 React 重新渲染。
+  - 然后在withReact加强的onChange中触发
+
+- 总结
+- slate 存在着这样几个主要的问题：
+- 没有自行实现排版。
+  - slate 借助了 DOM 的排版能力，这样就使得 slate 只能呈现流式布局的文档，不能实现页眉页脚、图文混排等高级排版功能。
+- 使用了 contenteditable 导致无法处理部分选区和输入事件。
+  - 使用 contenteditable 后虽然不需要开发者去处理光标的渲染和选择事件，但是造成了另外一个问题：破坏了从 model 到 view 的单向数据流，这在使用输入法（IME）的时候会导致崩溃这样严重的错误。
+  - 我们在 React 更新渲染之前打断点，然后全选文本，输入任意内容。可以看到，在没有输入法的状态下，更新之前 DOM element 并没有被移除。
+- 对于协同编辑的支持仅停留在理论可行性上。slate 使用了 Operation，这使得协同编辑存在理论上的可能，但是对于协同编辑至关重要的 operation transform 方案（即如何处理两个有冲突的编辑操作），则没有提供实现。
+
+- 总的来说，slate 是一个拥有良好扩展性的轻量富文本编辑器（框架？），很适合 CMS、社交媒体这种不需要复杂排版和实时协作的简单富文本编辑场景。
 # [Deep in Slate.js —— 深入 Slate.js gitbook](https://github.com/yoyoyohamapi/book-slate-editor-design/blob/master/SUMMARY.md)
 - 这本小册基于的 Slate.js 0.44.x 版本，虽然 Slate.js 现在已经渐进到了 0.50.x 版本，但其架构编辑器的方式仍然是统一的，
 - 小册的初衷也在于借 Slate.js 分析和讨论 Web 富文本编辑器的架构方式，而不是教导怎么使用 Slate.js

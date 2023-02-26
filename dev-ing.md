@@ -134,16 +134,60 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - 01-linvo-search+sync-hlc-wip
 
 - why use es6 class
-  - 既包含类型定义，又包含逻辑工具
+  - 既包含类型定义，又包含逻辑工具方法
   - 方便调试，可直接log到对象及方法，函数里面的闭包变量更新难以定位
 
-- dev-to
+- dev-later
   - crdt tutorials
   - 腰包掉到床头版与墙的夹缝中了
-  - merge cells
+
+- dev-to
+  - merge cells 逻辑优化
+  - cell-floating-menu 右上角
+  - 选区问题修复
 # dev-02
 
 ## 02
+
+- mergeable-table
+  - insertAbove能执行，inertBelow不能执行
+  - Cannot resolve a Slate point from DOM point
+
+## 0225
+
+- [JavaScript中对光标和选区的操作 - 前端简单说 - SegmentFault 思否](https://segmentfault.com/a/1190000040211043)
+  - 使用 ::selection 选择器可以匹配被选中的部分。
+  - 目前只有一小部分 CSS 属性可以用于 ::selection 选择器：
+  - color, background-color, text-shadow
+
+- [重新认识Selection和Range | 漫漫前端路](https://blog.renwangyu.com/2020/10/06/selection-and-range/)
+
+- `getRootNode()` method of the Node interface returns the context object's root, which optionally includes the shadow root if it is available.
+  - 一般返回`document`对象，而不是document.documentElement
+
+```JS
+document.body.ownerDocument === document // true
+
+document.body.ownerDocument === document.body.getRootNode() // true
+```
+
+- [css - How can I inspect and tweak :before and :after pseudo-elements in-browser? - Stack Overflow](https://stackoverflow.com/questions/10174719/how-can-i-inspect-and-tweak-before-and-after-pseudo-elements-in-browser)
+  - getComputedStyle(document.querySelector('html > body'), ':before'); 
+  - getComputedStyle(element, pseudoElt)
+
+- HTMLElement.contextMenu 
+  - Deprecated
+  - refers to the context menu assigned to an element using the contextmenu attribute
+  - The menu itself is created using the `<menu>` element
+  - Deprecated: The `contextmenu` global attribute is the `id` of a `<menu>` to use as the contextual menu for this element.
+
+- contextmenu event fires when the user attempts to open a context menu
+  - not deprecated
+
+- [javascript - Difference between microtask and macrotask within an event loop context - Stack Overflow](https://stackoverflow.com/questions/25915634/difference-between-microtask-and-macrotask-within-an-event-loop-context)
+  - Macro tasks include keyboard events, mouse events, timer events (setTimeout) , network events, Html parsing, changing Urletc. A macro task represents some discrete and independent work. micro task queue has higher priority so macro task will wait for all the micro tasks are executed first.
+  - Microtasks, are smaller tasks that update the application state and should be executed before the browser continues with other assignments such as re-rendering the UI. Microtasks include promise callbacks and DOM mutation changes. Microtasks enable us to execute certain actions before the UI is re-rendered, thereby avoiding unnecessary UI rendering that might show an inconsistent application state.
+  - Separation of macro and microtask enables the event loop to prioritize types of tasks; for example, giving priority to performance-sensitive tasks.
 
 ## 0224
 
@@ -368,7 +412,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                       `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                  `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

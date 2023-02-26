@@ -289,7 +289,7 @@ modified: 2021-01-04T16:18:46.383Z
         - When users *tab* into a focusable element
         - When users *click* on a focusable element
       - Focusable elements are: 
-        - `<a>` , `<button>` , `<input>` , `<textarea>`
+        - `<a>, <button>, <input>, <textarea>`.
         - Elements with `tabindex` attribute
         - Users cannot tab into an element with tabindex="-1", but they can click on it. The click triggers focus.
         - On Safari and Firefox (Mac), clicks do not focus the `<button>` element

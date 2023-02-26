@@ -9,8 +9,18 @@ modified: 2021-04-23T17:10:52.920Z
 
 # guide
 
+# editor-events
+- beforeinput 这个事件会在 `<input>, <select> 或 <textarea> 或者 contenteditable` 的值即将被修改前触发，这样我们可以获取到输入框更新之前的值
+  - [javascript - Should the HTML <select> element dispatch \`beforeinput\` events? - Stack Overflow](https://stackoverflow.com/questions/72688184/should-the-html-select-element-dispatch-beforeinput-events)
+    - The beforeinput event isn't supposed to fire on `<select>`, just like it doesn't fire on non textual inputs
 # faq
 - click vs touch
+
+- ## [Are browser events in JavaScript asynchronous? - Stack Overflow](https://stackoverflow.com/questions/15317924/are-browser-events-in-javascript-asynchronous)
+- 
+- [Asynchronous or Synchronous calling of event handlers in javascript - Stack Overflow](https://stackoverflow.com/questions/15924014/asynchronous-or-synchronous-calling-of-event-handlers-in-javascript)
+- All event handlers are fired synchronously and in order of binding.
+- Some event handlers are executed synchonously and others asynchronously. See DOM-Level-3-Events
 
 - ## [onKeyPress Vs. onKeyUp and onKeyDown](https://stackoverflow.com/questions/3396754)
 - Note: `keypress` event has been deprecated, you should look to use `beforeinput` or `keydown` instead.

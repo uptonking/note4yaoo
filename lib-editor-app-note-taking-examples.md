@@ -172,6 +172,13 @@ modified: 2023-02-05T18:05:44.122Z
 - https://github.com/aardappel/treesheets /cpp
   - https://strlen.com/treesheets/
   - A "hierarchical spreadsheet" that is a great replacement for spreadsheets, mind mappers, outliners, PIMs, text editors and small databases.
+
+- https://github.com/treehousedev/treehouse
+  - open source note-taking frontend to extend and customize. 
+  - Bring your own backend or configure a built-in backend to get started.
+  - Outline editor and repurposable workspace shell.
+  - Minimal dependencies, mainly Mithril.js.
+  - Built with Deno toolchain. Zero Node.js utilization.
 # note-browser-extensions
 - note-it /16Star/Apache2/202208/ts/tiptap
   - https://github.com/MuhametSmaili/note-it

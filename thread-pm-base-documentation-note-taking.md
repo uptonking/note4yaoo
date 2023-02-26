@@ -15,7 +15,11 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 
 
-- ## 
+- ## Notion 优化了走直线选不中子级菜的问题，想起之前 @height_app 的一篇关于 context menus 细节的文章。
+- https://twitter.com/leadream4/status/1629307997175549952
+  - 一般的解决方案是加一个延迟，但是更好的方式是增加三角安全区域，亚马逊和苹果都是这样处理的。
+  - [Breaking down Amazon's mega dropdown](https://bjk5.com/post/44698559168/breaking-down-amazons-mega-dropdown)
+  - [Building like it's 1984: A comprehensive guide to creating intuitive context menus - Height](https://height.app/blog/guide-to-build-context-menus)
 
 - ## 大家平常都是怎么分别用文件夹或标签来组织内容的？
 - https://twitter.com/tualatrix/status/1626158103283765248

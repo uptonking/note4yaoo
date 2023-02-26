@@ -25,6 +25,7 @@ modified: 2020-12-08T14:15:41.392Z
 - The `HTMLElement.click()` method simulates a mouse click on an element.
   - When click() is used with supported elements (such as an `<input>`), it fires the element's click event.
   - This event then bubbles up to elements higher in the document tree (or event chain) and fires their click events.
+  - 💡️ 通过elem.click()方式触发的事件是同步执行的，只有浏览器自己触发的事件才是放在一个 macrotask 里执行的
 # MouseEvent
 - `MouseEvent.offsetX`
   - The offsetX read-only property of the MouseEvent interface provides the offset in the X coordinate of the mouse pointer between that event and the padding edge of the target node. 

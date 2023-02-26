@@ -16,6 +16,11 @@ modified: 2023-02-08T10:24:11.422Z
 - https://github.com/FallenMax/smart-toc
   - A Chrome extension for auto-generating a table of contents
 
+- https://github.com/zxlie/FeHelper /js
+  - Web前端助手
+  - Chrome & Firefox & MS-Edge Extension, All in one Toolbox!
+  - 支持插件化安装
+
 - https://github.com/arthurhammer/github-toc
   - Browser extension that adds a table of contents to GitHub repos, wikis and gists.
 
@@ -167,3 +172,6 @@ modified: 2023-02-08T10:24:11.422Z
 # more-extensions
 - https://github.com/SanderRonde/CustomRightClickMenu
   - A browser extension to add links and run scripts/stylesheets all from your right-click menu
+
+- [Let's build a Chrome extension that steals everything](https://mattfrisbie.substack.com/p/spy-chrome-extension)
+  - let’s build a Chrome extension that steals as much data as possible. 

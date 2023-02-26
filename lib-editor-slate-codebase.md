@@ -9,7 +9,22 @@ modified: 2023-02-05T19:03:12.722Z
 
 # guide
 
-# Editable
+- [slate学习总结 insertText源码解读](https://juejin.cn/post/6967301474737094669)
+  - command--editor.command---Transforms.command---editor.apply(command)---Transforms.transform---applyToDraft---finishDraft
+  - 所有的插件都是在editor对象上做手脚，Slate会提供一个createEditor函数来创建一个基础的editor对象，上面说到可以将一组操作逻辑封装成一个函数作为命令挂载到editor上，所以Slate的插件机制，其实就是对editor对象的一种扩展
+# slate-react
+- 监听 beforeinput
+  - beforeinput 这个事件会在 `<input>, <select> 或 <textarea> 或者 contenteditable` 的值即将被修改前触发，这样我们可以获取到输入框更新之前的值，实际上对于编辑器内部的一些编辑内容的操作是通过这个劫持这个事件，然后再把用户的一系列操作转化成调用 slate api 去更新编辑器内容。
+
+- 监听 selectionchange
+  - 对于在编辑区域内的一些选区操作，就是通过这个方法去劫持选区的变动，首先获取到原生的 Selection，然后调用 toSlateRange方法将原生的选区转化成 slate 自定义的 Range 格式，然后调用相应方法更新 slate 自己定义的选区。
+​
+- slate-react 大量 WeakMap 数据结构的使用，如果看过 Vue3.0 源码的 reactivity 的源码，应该对这种数据结构不陌生。
+  - 使用 WeakMap 的好处是它的键值对象是一种弱引用，所以它的 key 是不能枚举的，能一定程度上节约内存，防止内存泄漏。
+​
+
+## Editable
+
 - 默认是div
 - 解构props剩下的参数放在 attributes 中
 
@@ -32,10 +47,15 @@ modified: 2023-02-05T19:03:12.722Z
     - onKeyDown
   - 始终会执行的内置事件包括
     - onInput
-
-- 
-- 
-- 
-- 
-- 
-- 
+# slate-src-more
+- 其测试的编写是一种数据驱动的思路，通过给每个测试文件定义输入和输出以及要执行的测试逻辑，最后通过统一的 runner 运行，极大提供了编写测试的效率，让人耳目一新。
+- Slate测试挺别具一格，反正我第一次看的时候，反应就是原来测试还可以这样写。​
+  - 这些文件里没有任何跟测试相关的断言之类的调用。
+  - 其实，所有 test 目录下的只是 fixtures 。
+  - 那么什么是 fixtures？在测试领域里面，测试fixture的目的是确保有一个众所周知的、固定的环境来运行测试，以便结果是可重复的，也有的人称 fixtures 为测试上下文。
+- 以下是 fixtures 的一些例子：
+  - 用特定的已知数据集加载数据库；
+  - 复制特定已知的一组文件；
+  - 编写输入数据和假设或模拟对象的设置/创建。
+- Slate这里的场景就属于复制特定已知的一组文件
+- 短短五十几行代码就搞定了 slate 这个 package 下的所有测试，我称之为”数据驱动测试“。​

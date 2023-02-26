@@ -4173,7 +4173,7 @@ new Promise((resolve, reject) => {
   console.log('本轮微任务');
 });
 
-// 💡️ 通过click方式触发的事件是同步执行的，只有浏览器自己触发的事件才是放在一个 macrotask 里执行的。
+// 💡️ 通过elem.click()方式触发的事件是同步执行的，只有浏览器自己触发的事件才是放在一个 macrotask 里执行的。
 document.body.addEventListener('click', () => { console.log('click-synchronously'); })
 document.body.click()
 

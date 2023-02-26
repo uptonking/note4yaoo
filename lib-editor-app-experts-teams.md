@@ -47,6 +47,9 @@ modified: 2022-08-21T10:16:52.004Z
   - https://juejin.cn/user/2066737588867223/posts
   - [我的2021-从在线教育到新能源汽车](https://juejin.cn/post/7043089265575591949)
   - [基于CRDT的一种文档冲突算法 YATA/yjs](https://juejin.cn/post/7064236095440961550)
+
+- Tuffy
+  - https://github.com/hullis
 # editor-oriented-teams
 - [emergence engine blog](https://emergence-engineering.com/blog)
   - [Collaborative text editor with ProseMirror and a syncing database](https://emergence-engineering.com/blog/prosemirror-sync-1_202007)

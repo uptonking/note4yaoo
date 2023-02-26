@@ -49,6 +49,10 @@ modified: 2023-02-08T10:47:19.056Z
 - [The Visual Studio Code Roadmap 2020](https://github.com/microsoft/vscode/wiki/Roadmap)
 # ref
 - [一个vscode的模拟界面，仅界面和编辑，不能跳转文件和点击菜单](https://remoteok.io/vscode)
+
+- vscode类似chrome的任务管理器
+  - [Process explorer as a separate renderer window · Issue #41045 · microsoft/vscode](https://github.com/microsoft/vscode/issues/41045)
+  - process explorer
 # discuss-features-request
 - ## 侧边面板宽度
 - [Sidebar defaultWidth, View-Specific Sidebar widths, & View-Specific Sidebar defaultWidths](https://github.com/microsoft/vscode/issues/158603)

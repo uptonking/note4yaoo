@@ -52,3 +52,4 @@ modified: 2023-02-05T19:03:12.722Z
     - 输入英文字母时 keydown > keypress > beforeinput > input > keyup
     - 输入中文时 keyup > keydown > beforeinput > input > keyup
       - 输入中文拼音字母时，触发的是keyup，选完词后时keydown
+      - 👉🏻 keydown > compositionstart > beforeinput > compositionupdate > input > keyup

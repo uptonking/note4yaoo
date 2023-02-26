@@ -22,6 +22,9 @@ modified: 2022-12-06T16:16:00.262Z
 # data
 
 # utils
+# clickhouse
+- https://github.com/clickvisual/clickvisual
+  - lightweight log analytic and data visualize platform built on clickhouse.
 
 # more
 - https://github.com/Kyligence/ssb-kylin

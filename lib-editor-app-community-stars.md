@@ -32,6 +32,7 @@ modified: 2022-08-21T10:12:02.964Z
     - 输入英文字母时 keydown > keypress > beforeinput > input > keyup
     - 输入中文时 keyup > keydown > beforeinput > input > keyup
       - 输入中文拼音字母时，触发的是keyup，选完词后时keydown
+      - 👉🏻 keydown > compositionstart > beforeinput > compositionupdate > input > keyup
     - keypress强调输入文本字符，按键ctrl/shift/alt都不会触发此事件
     - 👉🏻 按功能键如ctrl/shift/alt/cap时，只触发keydown/up，不触发beforeinput
     - 按tab只触发keydown，无up
@@ -87,12 +88,9 @@ modified: 2022-08-21T10:12:02.964Z
 - I know that not everything can be stored as text. But I try to use open, well documented and future proof formats.
 - If I really need to preserve original format/design of a web page: PDF
 
-
 - [GNU Recutils - GNU Project - Free Software Foundation](https://www.gnu.org/software/recutils/)
   - GNU Recutils is a set of tools and libraries to access human-editable, plain text databases called recfiles. 
   - The data is stored as a sequence of records, each record containing an arbitrary number of named fields. 
-
-
 
 - ## what's the best hybrid-structure code editor you've seen? an editor that combines tokens (eg values or references) and text
 - https://twitter.com/_paulshen/status/1575187234449334273

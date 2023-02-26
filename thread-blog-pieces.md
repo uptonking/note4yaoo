@@ -13,10 +13,8 @@ modified: 2021-02-09T19:25:11.641Z
 - [React Design Patterns: Generating User-configured UI Using The Visitor Pattern](https://www.arahansen.com/react-design-patterns-generating-user-configured-ui-using-the-visitor-pattern/)
   - While this article covered building a configurable "form generator" component, this pattern could be applicable for many situations where you need configuration (aka, schema) driven UI.
 # blogs
-
 - [一次加载1w条数据的最优解是什么？ - 掘金](https://juejin.cn/post/7091157820074262541)
   - [「前端进阶」高性能渲染十万条数据(虚拟列表) - 掘金](https://juejin.cn/post/6844903982742110216)
-
 # design-system-components
 - [How we use Web Components at GitHub](https://github.blog/2021-05-04-how-we-use-web-components-at-github/)
 - [8 Examples of Icon-Based Navigation, Enhanced with CSS and JavaScript](https://speckyboy.com/icon-based-navigation-css-javascript/)
@@ -49,3 +47,6 @@ modified: 2021-02-09T19:25:11.641Z
   - 可以自己解析m3u8拿到ts视频片段，用mux.js转码一下再播放。或者直接使用hls.js来播放
 
 - [Building an awesome image loading experience__202110](https://kentcdodds.com/blog/building-an-awesome-image-loading-experience)
+
+- [3650 天自学编程 · hullis/blog](https://github.com/hullis/blog/issues/13)
+  - 常见 PC 上各种操作大致所需的时间

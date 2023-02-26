@@ -55,18 +55,6 @@ modified: 2021-07-27T15:12:39.959Z
   - https://fvilers.github.io/tiny-editor
   - A tiny HTML rich text editor written in vanilla JavaScript
 
-- https://github.com/inokawa/rich-textarea
-  - https://inokawa.github.io/rich-textarea/
-  - A small customizable textarea for React to colorize, highlight, decorate texts, offer autocomplete and much more.
-  - designed to behave as native textarea as much as possible. Supports formik and react-hook-form. 
-  - IME composition handling: IME related events have some cross browser problems. This library handles them for easy to use.
-
-- text-editor /394Star/apache2/202011/js/NoDeps
-  - https://github.com/GoogleChromeLabs/text-editor
-  - https://googlechromelabs.github.io/text-editor/
-  - simple text editor designed to experiment with and demonstrate the new `File System Access API`s.
-  - 编辑器基于textarea，撤销重做基于浏览器而不是自己实现
-
 - https://github.com/TheNocoder/ncSimpleHtmlEditor  /js
   - 偏向页面编辑器
   - smallest WYSIWYG web content editor, entire document, body and head, no dependencies.
@@ -80,6 +68,8 @@ modified: 2021-07-27T15:12:39.959Z
 - https://github.com/lapce/lapce
   - written in pure Rust with a UI in Druid (which is also written in Rust). 
   - It is designed with Rope Science from the Xi-Editor which makes for lightning-fast computation, and leverages OpenGL for rendering. 
+# editor-utils
+- [Cross-Browser Selection Utilities](https://gist.github.com/tcr/1022198/2dd0aefdc17c77b0997a09efa10247e511a4f92a)
 # more-editor
 - hypertext-editor /28Star/MIT/202211/js/tinymce
   - https://github.com/russellbeattie/hypertext-editor
