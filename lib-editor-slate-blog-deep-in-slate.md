@@ -9,21 +9,24 @@ modified: 2023-02-22T19:54:25.348Z
 
 # guide
 
-- resources
-  - [slate学习总结 insertText源码解读](https://juejin.cn/post/6967301474737094669)
-  - [slate 架构设计分析 - 知乎](https://zhuanlan.zhihu.com/p/262209236)
-  - [深入 Slate.js 编辑器 - 钉钉文档 - 知乎](https://www.zhihu.com/column/c_1312084184400162816)
-
-- [Slate源码解析（一） slate core - 掘金](https://juejin.cn/post/6978137641401188365)
-  - [Slate 源码解析（二） slate-react + tests - 掘金](https://juejin.cn/post/6978141447140671501)
+- [从MVC架构的角度看 Slate - 掘金](https://juejin.cn/post/6952076442649755662)
+  - [Slate源码解析（一） slate core - 掘金](https://juejin.cn/post/6978137641401188365)
+  - [Slate源码解析（二） slate-react + tests - 掘金](https://juejin.cn/post/6978141447140671501)
   - [关于 wangEditor-v5 单元测试的总结 - 掘金](https://juejin.cn/post/7079951448812814349)
-  - [从 MVC 架构的角度看 Slate - 掘金](https://juejin.cn/post/6952076442649755662)
 
 - [slate.js源码分析（一） —— slate渲染机制 - 知乎](https://zhuanlan.zhihu.com/p/266438572)
   - [slate.js源码分析（四）- 历史记录机制 - 知乎](https://zhuanlan.zhihu.com/p/293061216)
 
-- [从 Slate 的内置特性到洋葱模型 - 掘金](https://juejin.cn/post/7086816312789794846)
+- [深入slate.js ｘ 一起打造专属的富文字编辑器吧_202109](https://ithelp.ithome.com.tw/users/20139359/ironman/4447)
+  - [Pre-Start × 微前言](https://ithelp.ithome.com.tw/articles/10264970)
+  - [slate × Normalizing × Dirty-Path](https://ithelp.ithome.com.tw/articles/10280025)
+
+- blogs
+  - [slate学习总结 insertText源码解读](https://juejin.cn/post/6967301474737094669)
+  - [从Slate的内置特性到洋葱模型 - 掘金](https://juejin.cn/post/7086816312789794846)
 # [slate 架构与设计分析 · hullis/blog](https://github.com/hullis/blog/issues/36)
+- [slate架构设计分析 - 知乎](https://zhuanlan.zhihu.com/p/262209236)
+
 - slate 数据模型（model）的设计
 - slate 以树形结构来表示和存储文档内容
 - type Node = Editor | Element | Text
@@ -109,6 +112,8 @@ modified: 2023-02-22T19:54:25.348Z
 
 - 总的来说，slate 是一个拥有良好扩展性的轻量富文本编辑器（框架？），很适合 CMS、社交媒体这种不需要复杂排版和实时协作的简单富文本编辑场景。
 # [Deep in Slate.js —— 深入 Slate.js gitbook](https://github.com/yoyoyohamapi/book-slate-editor-design/blob/master/SUMMARY.md)
+- [深入 Slate.js 编辑器 - 钉钉文档 - 知乎](https://www.zhihu.com/column/c_1312084184400162816)
+
 - 这本小册基于的 Slate.js 0.44.x 版本，虽然 Slate.js 现在已经渐进到了 0.50.x 版本，但其架构编辑器的方式仍然是统一的，
 - 小册的初衷也在于借 Slate.js 分析和讨论 Web 富文本编辑器的架构方式，而不是教导怎么使用 Slate.js
 

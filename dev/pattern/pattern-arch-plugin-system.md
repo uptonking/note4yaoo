@@ -61,3 +61,5 @@ modified: 2020-12-20T15:46:29.566Z
   - 500 Lines or Less
 
 - [如何设计一个JavaScript插件系统，编程思维比死磕API更重要](https://zhuanlan.zhihu.com/p/211072788)
+
+- [How to roll your own plugin system - slate | jkrsp](https://jkrsp.com/slate-js-plugin-system/)

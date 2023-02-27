@@ -9,9 +9,13 @@ modified: 2023-02-05T19:03:12.722Z
 
 # guide
 
-- [slate学习总结 insertText源码解读](https://juejin.cn/post/6967301474737094669)
-  - command--editor.command---Transforms.command---editor.apply(command)---Transforms.transform---applyToDraft---finishDraft
-  - 所有的插件都是在editor对象上做手脚，Slate会提供一个createEditor函数来创建一个基础的editor对象，上面说到可以将一组操作逻辑封装成一个函数作为命令挂载到editor上，所以Slate的插件机制，其实就是对editor对象的一种扩展
+- dev-to
+  - createDraft + applyToDraft + finishDraft
+# faq
+- 🤔 输入字母时，为什么beforeinput的selection为5，onChange方法里的selection为6，哪里更新的
+  - 首先确认更新范围，onChange执行后useEffect才执行将 slateSel-TO-domSel，所以更新sel发生在渲染前
+  - 排查定位到，执行op `insert_text`时，顺便就把selection更新了
+  - 不要在op-text执行后单独执行op-selection来更新sel
 # slate-react
 - 监听 beforeinput
   - beforeinput 这个事件会在 `<input>, <select> 或 <textarea> 或者 contenteditable` 的值即将被修改前触发，这样我们可以获取到输入框更新之前的值，实际上对于编辑器内部的一些编辑内容的操作是通过这个劫持这个事件，然后再把用户的一系列操作转化成调用 slate api 去更新编辑器内容。

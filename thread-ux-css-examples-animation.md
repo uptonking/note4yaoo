@@ -12,7 +12,10 @@ modified: 2022-11-21T15:27:20.974Z
 # ux-examples
 - ## 
 
-- ## 
+- ## Here’s a quick tutorial on how to create the popular shimmer effect on the @linear website using @framer .
+- https://twitter.com/jurrehoutkamp/status/1630213441901264903
+  - https://www.youtube.com/watch?v=HDYoDRg-nGA
+  - https://shimmer.framer.wiki/
 
 - ## A grid rotation concept
 - https://codesandbox.io/s/grid-rotation-concept-lnuld6?file=/src/index.tsx

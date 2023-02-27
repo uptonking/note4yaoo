@@ -18,7 +18,9 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss
 - ## 
 
-- ## 
+- ## Set #TypeScript option `"importsNotUsedAsValues": "error"` to force you to use the `import type` when only a type is imported.
+- https://twitter.com/kossnocorp/status/1630120975927836672
+  - [Proposal: deprecate `importsNotUsedAsValues` and `preserveValueImports` in favor of single flag · microsoft/TypeScript](https://github.com/microsoft/TypeScript/issues/51479)
 
 - ## Picking #TypeScript Generic Slot order is tricky...
 - https://twitter.com/SCooperDev/status/1615000886513750017

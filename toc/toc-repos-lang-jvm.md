@@ -26,7 +26,13 @@ modified: 2021-05-14T15:05:02.456Z
 - https://github.com/apache/shardingsphere-elasticjob
   - Distributed scheduled job framework
 
-- https://github.com/apache/poi 
+- https://github.com/apache/poi
+
+# nodejs-jvm
+- https://github.com/MarkusJx/node-java-bridge
+  - A bridge between Node.js programs and Java APIs written in Rust using napi-rs to provide a fast and memory-safe interface between the two languages.
+  - the only thing you need to do on your machine is install a Java Runtime Environment (JRE) for this package to use
+  - the binary is not hard linked to the JDK it has been compiled with but rather loads the jvm native library dynamically when the program first starts up.
 # big-data
 - https://github.com/shunfei/indexr /201907/inactive
   - IndexR：实时、基于Hadoop的数据仓库

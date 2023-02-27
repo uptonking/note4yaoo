@@ -9,6 +9,9 @@ modified: 2023-01-12T11:33:28.084Z
 
 # guide
 
+- https://github.com/JokerLHF/piece-table
+  - ts 版实现 mini piece-table
+
 - [Rope理论与实践 for Java String](https://web.archive.org/web/20160306020543/https://www.ibm.com/developerworks/cn/java/j-ropes/)
 # blog
 - [Rope --高效字符串处理数据结构](https://blog.csdn.net/ai_xiangjuan/article/details/79246289)

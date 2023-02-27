@@ -17,11 +17,49 @@ modified: 2023-02-05T19:03:12.722Z
 # discuss
 - ## 
 
-- ## 
+- ## [consider using paths instead of keys_201711](https://github.com/ianstormtaylor/slate/issues/1408)
+- Right now we use the concept of unique "keys" to keep track of the anchor and focus of a node in a range. And we use them to look up a node by key in the document, for updating, etc.
+  - But keys are local-only, and once we convert the change information into operations, we convert "keys" into "paths", which are just an array of indices that locate a node in the document—like [2, 1, 2]. Because these don't rely on local information.
 
-- ## 
+- One alternative would be to actually keep the keys, but move to using paths for most of the internal things and for operations. This might be the best of both worlds, keeping lookups fast for things like change.insertText() and so on. But allow the more precise ByKey(key, ...) behavior to persist across changes. Although those ByKey methods would be much slower by comparison. 
 
-- ## 
+- I don't really depends on keys in my use case, but paths do have similar problem domain with operation transform: all paths that are stored in memory have to be transformed if an operation is performed on the editor, in order to maintain its integrity. 
+  - I think translation between keys and paths might be simpler and saner implementation while improving internally using paths. If it ever reach a point where key become obsolete, it could be remove then?
+- I was thinking of not storing any of the path information in the node itself. So the only things that keep paths are referencing the node from outside itself, like a range. I'm not totally sure I understand the second part you mentioned, but I agree that if there are ways to transition without removing the keys that make it much easier, we should definitely consider them
+
+- the place I'd be most worried about would be anywhere where you grab a node, run some changes, and then get updated nodes by key from the new change.value for the rest of your function. Right now, keys make that easy. It'll take more thought without them, to make sure your paths or nodes are still valid.
+  - very good point. Normalizing currently uses this technique.
+
+- PROS
+  - For many things, like "find node by key", the "find node by path" equivalent would actually be much quicker, since you wouldn't have to search the entire tree, you'd just know exactly where to descend by just following the path.
+  - It would also make operations expressed in the same terms as the local changes are applied.
+  - When inserting fragments or nodes, we wouldn't have to do the current behavior where we iterate all the new nodes, insuring that their keys aren't already in the document—which would save performance.
+  - I think a lot of the logic in the "at current range" transforms that determines what the selection will be after the change has applied could be simplified, because path changes are deterministic, compared to key changes which cannot be guessed ahead of time since they are unique.
+
+- CONS
+  - Finding a node in the DOM currently searches for its "key", which doesn't change across renders. But if paths were used instead then whenever a node was inserted, each node after it would have to re-render to update DOM attributes. This could potentially be mitigated by moving the key generation into the view layer, as a view-level concern instead of the data layer. Keeping it around only for locating nodes in the DOM.
+  - To update a specific node, you no longer have the key reference. 
+    - This could be solved by either searching for the node instance itself (with the same performance). 
+    - Or it could be by passing the path to places that need the node. The path approach is awkward though, since it means the information needed can change without the node itself changing. But that's okay, because comparing by instance would work still I think, so not really an issue.
+
+- https://github.com/TheGuardianWolf/treepack
+  - v1 of changing the index of an object causes a lot of adding and deleting. This is a limitation of the path based scheme.
+
+- ## [Unique identifier for Nodes_202002](https://github.com/ianstormtaylor/slate/issues/3489)
+- the API was rewritten to effectively not rely on keys to locate nodes anymore, instead this is done with paths. 
+  - This alleviates the need for the API to recursively search the node hierarchy to locate a node by its key and is a performance improvement. 
+  - If you would like to bind keys to your nodes, the API allows this because you can freely add arbitrary properties to your nodes as you see fit (as long as you don't run into name collision with properties on the core interface). You can use this to write your own locate by key utilities and then that should yield you a path. 
+- A good example on how to do this can be found in the embedded example.
+
+- ## [How to have unique node ids?](https://github.com/ianstormtaylor/slate/discussions/4462)
+  - to have a unique, stable identifier for each node.
+
+- I have a similar problem in my project where each node has a unique id, but it would not work correctly when copying and pasting.
+  - My solution was to override editor.insertFragment which could be called when pasting node and mark these nodes, then I am able to know which nodes are pasted and modify their ids on `onChange`.
+- a general idea on how to archive something like this in a performant way by intercepting `editor.apply`. 
+
+- plate提供了参考方案
+  - https://www.npmjs.com/package/@udecode/plate-node-id
 
 - ## [Modeling RichText with Automerge](https://github.com/automerge/automerge/issues/193)
 - I have spent a while thinking about this too, and I also think that a single document sequence with marker characters is the way to go. 

@@ -127,6 +127,10 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/fouita/tailwind-editor
   - notion like tailwindcss editor built with svelte
+
+- https://github.com/youking-lib/marktion
+  - https://editor.marktion.io/
+  - an inspiring markdown editor
 # notion-block-structure-api/self-hosted
 - https://github.com/dragonman225/nast
   - A block-based intermediate representation for document-like content.

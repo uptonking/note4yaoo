@@ -1,11 +1,11 @@
 ---
-title: web-css-latest-rfc-feature-draft
+title: web-css-latest-rfc-features-draft
 tags: [css, latest, rfc, web]
 created: 2021-04-09T13:13:48.992Z
-modified: 2021-04-09T13:15:02.013Z
+modified: 2023-02-27T19:05:31.046Z
 ---
 
-# web-css-latest-rfc-feature-draft
+# web-css-latest-rfc-features-draft
 
 # guide
 

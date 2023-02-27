@@ -163,6 +163,10 @@ modified: 2023-01-17T19:14:47.611Z
 
 - https://github.com/docs-plus/docs.plus
   - real-time collaborative tool that enables communities to share and organize knowledge in a hierarchical manner
+
+- https://github.com/Slatebox/slatebox
+  - https://slatebox.com/
+  - Real-time visual team collaboration for remote teams
 # realtime-room
 - https://github.com/Poujhit/Chatzilla
   - Chat Room Application made using React/Typescript and NodeJs-Web sockets.
