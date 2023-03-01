@@ -13,8 +13,11 @@ modified: 2023-02-27T19:07:31.111Z
 - basics
   - 方向键能准确移动光标
   - 方向下键，光标退出表格
-  - 复制粘贴单元格内容
-  - undo/redo
+
+- copy-paste
+  - 单元格内容
+
+- undo/redo
 
 - 按键、光标、选区
   - tab/shift+tab键移动选区到下/上一个单元格

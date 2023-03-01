@@ -96,6 +96,8 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 
 - products
   - cms, airtable, lowcode
+- techstacks
+  - buffer, stream, async, scheduler
 
 - 内容的存储与更新如何与数据库集成
   - 编辑器内容自动保存一般通过在onChange方法中执行saveToDB
@@ -137,12 +139,42 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 
 ## 0301
 
+- [XML解析之SAX方式解析xml文件 - Chen洋 - 博客园](https://www.cnblogs.com/cy0628/p/14990908.html)
+  - DOM , SAX属于基础方法，是官方提供的平台无关的解析方式；
+  - JDOM，DOM4J属于扩展方法，他们是在基础的方法上扩展出来，只适用于Java平台；
+  - SAX解析方式会逐行地去扫描XML文档，当遇到标签时会触发解析处理器，采用事件处理的方式解析XML (Simple API for XML) ，不是官方标准，但它是 XML 社区事实上的标准
+  - 优点是：在读取文档的同时即可对XML进行处理，不必等到文档加载结束，相对快捷。不需要加载进内存，因此不存在占用内存的问题，可以解析超大XML。
+  - 缺点是：只能用来读取XML中数据，无法进行增删改。
+
+- [[翻译] Makefile - 失落的艺术 - 知乎](https://zhuanlan.zhihu.com/p/34284231)
+  - 挺好，不过在使用 nodejs 的情况下，没有道理不使用 npm scripts (作为 Makefile 的替代品) 
+  - nodejs脚本也是跨平台的，但依赖js语言，makefile有自己的语法规则
+
+- [快速的理解MakeFile+读懂一个MakeFile - 知乎](https://zhuanlan.zhihu.com/p/350297509)
+  - Make 是一种通用的构建工具，它自40年前推出以来一直在不断完善和改进。 
+  - Make 非常擅长简洁的表现构建步骤，此外它并不特定用于 JavaScript 项目。 
+  - 它非常适合增量构建，在更改大型项目中的一个或两个文件后重新构建时，Make 可以节省大量时间。
+
+- [plugin-react: is it using esbuild or babel? · vitejs/vite · Discussion #8142](https://github.com/vitejs/vite/discussions/8142)
+  - plugin-react uses babel (you can see the code here), there are several pieces of the React ecosystem that still requires it (babel isn't used in Vue or Svelte). 
+  - esbuild is still used by Vite when you are using this plugin though.
+  - A production build in general is using rollup, so you can't expect it to be as fast as bundling with esbuild. 
+
+- Vite’s default React HMR is still babel-based, _202210
+- https://twitter.com/youyuxi/status/1585040270957379585?lang=en
+  - while Next/turbopack use swc/rust-based transform, so the HMR performance difference is a bit of apples to oranges.
+  - Vite can switch to the swc/rust transform if necessary, we currently chose not to do that because adding swc to the deps list is extra weight, and even without it HMR is fast enough.
+  - In the long run we may also consider using turbopack under the hood to replace esbuild/Rollup (where suitable), due to its strong caching capabilities.
+  - [feat!: transform jsx with esbuild instead of babel by rtsao · Pull Request #9590 · vitejs/vite_202211](https://github.com/vitejs/vite/pull/9590)
+# dev-02
+
+## 0228
+
 - [XMPP协议实现原理介绍 - Healtheon - 博客园](https://www.cnblogs.com/hanyonglu/archive/2012/03/04/2378956.html)
   - XMPP（Extensible Messageing and Presence Protocol：可扩展消息与存在协议）是目前主流的四种IM（IM：instant messaging, 即时消息）协议之一，其他三种分别为：即时信息和空间协议(IMPP)、空间和即时信息协议(PRIM)、针对即时通讯和空间平衡扩充的进程开始协议SIP(SIMPLE)。
   - 在这四种协议中，XMPP是最灵活的。XMPP是一种基于XML的协议，它继承了在XML环境中灵活的发展性。
   - 其实XMPP 是一种很类似于http协议的一种数据传输协议，它的过程就如同“解包装--〉包装”的过程，用户只需要明白它接受的类型，并理解它返回的类型，就可以很好的利用xmpp来进行数据通讯。
-  - 1)客户机/服务器通信模式；(2)分布式网络；(3)简单的客户端；(4)XML的数据格式。 
-# dev-02
+  - 1)客户机/服务器通信模式；(2)分布式网络；(3)简单的客户端；(4)XML的数据格式。
 
 ## 0227
 
@@ -415,7 +447,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                  `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                        `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

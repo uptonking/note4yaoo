@@ -89,6 +89,9 @@ modified: 2020-12-29T11:27:41.474Z
 - https://opendata.swiss/en/
   - /theming-绿色+黑白
 # 设计创意
+- https://www.cycle.app/
+  - 卡片上的元素用了很多动画效果
+
 - https://tailwindcss.com/
   - 首页的动画设计感极强
 

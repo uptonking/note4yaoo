@@ -7,7 +7,12 @@ modified: 2021-06-22T11:54:44.506Z
 
 # thread-lang-js-ts-stars
 
-# pieces
+# guide
+
+# discuss
+- ## 
+
+- ## 
 
 - ## 
 

@@ -13,6 +13,8 @@ modified: 2023-02-08T10:24:11.422Z
   - 可考虑用浏览器提供的api如chrome-sync，检测浏览器账户而自动拉取数据
   - 可考虑自定义实现，需要用户先提供一次身份和云存储位置(自建或第三方)，然后拉取数据
 # popular
+
+# self-usage
 - https://github.com/FallenMax/smart-toc
   - A Chrome extension for auto-generating a table of contents
 

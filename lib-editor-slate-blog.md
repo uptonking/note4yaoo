@@ -11,6 +11,13 @@ modified: 2023-02-05T19:03:12.722Z
 
 # slate-blogs
 
+## [新版编辑器 Slate.js 的设计 - 知乎](https://zhuanlan.zhihu.com/p/179253951)
+
+- 目前这套插件机制真是优雅（简陋），用的函数链式调用的方法，对调用次序敏感是个大问题。
+  - slate-react层问题很多而且没写测试，用了model immer的情况下，为了性能和保持对象，多级嵌套用了dirtyPath层层刷新对象这个机制很蛋疼，还不如直接可变数据算了
+- 插件机制确实是简陋，但这只是最简单的一种思路。针对复杂的业务场景扩展可以像 webpack plugin或者vscode plugin去实现。
+- 至于嵌套更新问题，如果全用可变的数据结构，在每个组件项的渲染上，光用shallowEqual可能就不管用了，需要采用类似 lodash 的deep equal，这会增加diff 对比的成本，而更新嵌套对象只是新开辟空间再赋值而已。（您也提到了性能问题，像百度脑图的更新机制就如同您所说，就是一个可变数据结构，当节点多的时候，卡顿的问题就会比较明显了）
+
 ## [slate系列 - 不同空格的处理](https://yasinchan.com/post/html-different-space-slate.html)
 
 - slate的数据在最终渲染到页面后会出现问题，表现为行首空格消失，文字之间的多个空格变成一个空格。而一般的 div contenteditable 中的空格可以连续渲染。

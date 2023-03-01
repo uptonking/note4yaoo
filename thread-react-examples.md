@@ -20,11 +20,6 @@ modified: 2021-04-05T09:45:51.791Z
 - we talking text?
   - Just shapes and stuff
 
-- ## React-admin V4: Build Your Own Framework
-- https://twitter.com/sebastienlorber/status/1513922793834000385
-  - https://github.com/marmelab/react-admin
-  - A frontend Framework for building data-driven applications running in the browser on top of REST/GraphQL APIs, using ES6, React and Material Design. 
-
 - ## I'm working on a react library to make scroll experiences easy.
 - https://codesandbox.io/s/parallax-lib-image-scroll-67id3o
   - 图片滚动效果

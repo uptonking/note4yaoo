@@ -57,6 +57,10 @@ modified: 2021-08-30T18:56:18.632Z
   - features
     - randomized ROWID
     - WebAssembly User Defined Functions
+- https://github.com/chiselstrike/chiselstrike
+  - ChiselStrike abstracts common backends components like databases and message queues, and let you drive them from a convenient TypeScript business logic layer
+  - ChiselStrike keeps things as close as possible to pure TypeScript, and a translation layer takes care of index creation, database query generation, and even communicating with external systems like Kafka.
+  - Internally, ChiselStrike uses a SQLite database 
 
 - https://github.com/x2bool/xlite /rust
   - Query Excel spredsheets (.xlsx, .xls, .ods) using SQLite
@@ -102,6 +106,10 @@ modified: 2021-08-30T18:56:18.632Z
   - LumoSQL adds security, privacy, performance and measurement features to SQLite.
   - LumoSQL can swap back end key-value store engines in and out of SQLite. 
 # more
+- https://github.com/loladb/nodejs-examples
+  - https://loladb.com/
+  - LolaDB is an HTTP client that pulls all your db clients on a centralized server infra & wraps the calls into a unified interface 
+
 - https://github.com/haltcase/trilogy
   - trilogy is a simple Promise-based wrapper for SQLite databases. 
   - It supports both the native C++ sqlite3 driver and the pure JavaScript sql.js backend

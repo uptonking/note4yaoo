@@ -19,6 +19,8 @@ modified: 2020-07-14T09:26:50.808Z
 - js style guide
   - https://github.com/airbnb/javascript
 # faq-not-yet
+- js的generator可中断函数，如果在call site执行一半就不需要了，那原函数执行上下文是否存在内存泄露
+
 - ## js复制数组方法的性能比较
   - `b = [...a]`
   - `b = a.slice()`

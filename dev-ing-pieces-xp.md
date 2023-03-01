@@ -22,7 +22,7 @@ modified: 2021-04-28T20:54:58.126Z
 - 其实数据已经保存了，但使用的是自动创建的表名
 - 刷新compass，reload data
 
-- 检查兼容性
+- 检查mongoose和mongodb的兼容性
 
 ## ts重构场景，Namespace N1名和type名相同
 
@@ -34,7 +34,7 @@ modified: 2021-04-28T20:54:58.126Z
 - 方法2: 若将Namespace去掉namepace，重命名为N1Utils，则api会变化
 
 - ✅ 方法3: 若将Namespace改为 static class
-  - 仍存在问题 
+  - 仍存在问题，静态方法名无法使用js内置名称
   - I don't think the properties name, caller and length are doable. They are read-only properties and can't be overridden. All assignments to them will be ignored.
 
 ## sequelize-rest-api调试很久，fetch api在浏览器控制台的返回异常

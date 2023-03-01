@@ -124,29 +124,6 @@ class TodoListView {
 - Making everything flow through Redux seems appropriate as it avoids managing various event listeners. It seems you’ve separated the UI & API state into Redux stores and PM specific state into plugins?
   - To connect back up to application logic, we are just using the same redux store in both places (including relevant prosemirror-plugin state). That redux store is also responsible for the editor state (just holds a reference to prosemirror-state). This also means that the state is available for other application components through selectors/actions/etc.
 
-- ## A4 pages conceptual guide
-- https://discuss.prosemirror.net/t/a4-pages-conceptual-guide/2901
-- have a schema that looks like
-  - https://github.com/todorstoev/prosemirror-pagination
-
-    - Plugin for ProseMirror emulating A4 pages
-
-- What is done till now
-  - correct split for single line paragraphs
-- What should be done
-  - correct split in tables
-  - correct split for multiline paragraphs
-
-```
-doc(
-   page(
-       header(block+)
-       body(block+)
-       footer(block+)
-       pageCounter(paragraph{1})
-   )
-)
-```
 
 - ## ProseMirror – A toolkit for building rich-text editors on the web
 - https://news.ycombinator.com/item?id=18998042

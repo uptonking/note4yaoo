@@ -26,6 +26,10 @@ modified: 2023-02-17T21:48:01.840Z
   - Packages for improving your development workflow with react admin
   - 已提供: rbac, layout
   - wip: search
+- https://github.com/BigBasket/ra-components /js
+  - Opensource components for react-admin.
+- https://github.com/ValentinnDimitroff/ra-compact-ui /js
+  - Enhanced components for popular framework react-admin.
 
 - https://github.com/NathanAdhitya/express-mongoose-ra-json-server /7Star/MIT/202209/ts
   - creates express.js routes from a mongoose model for ra-data-json-server
@@ -44,14 +48,30 @@ modified: 2023-02-17T21:48:01.840Z
 - https://github.com/marmelab/ra-sqlite-dataprovider
   - here is a POC to generate a react-admin administration not relying on an API but directly on a SQLite database hosted on a static server (in this case the Github pages server).
 
+- https://github.com/josx/ra-data-feathers /js
+  - Feathers data provider for react-admin. A feathers rest client for react-admin
+  - https://github.com/kfern/feathers-aor-test-integration
+
 - https://github.com/slax57/admin-e-commerce-demo
   - Redo the React Admin E-Commerce Demo App as training
 
 - https://github.com/prowebdev119/react-admin
   - Open sourced and maintained by marmelab.
+
+- https://github.com/marmelab/ra-in-memory-jwt
+  - Manage React-admin authentication with jwt in memory, not in local storage
+  - [The Ultimate Guide to handling JWTs on frontend clients (GraphQL)](https://hasura.io/blog/best-practices-of-using-jwt-with-graphql/)
+
+- https://github.com/marmelab/ra-example-oauth
+  - An example of OpenID Connect implementation on React Admin
+- https://github.com/marmelab/ra-auth-auth0
+  - An auth provider for react-admin which handles authentication via a Auth0 instance.
 # api/server
-- https://github.com/henvo/ra-jsonapi-client
+- https://github.com/henvo/ra-jsonapi-client /js
   - A JSONAPI compatible data provider for react-admin.
+
+- https://github.com/JavanShen/ra-admin-api
+  - api for ra-admin
 
 - https://github.com/tykoth/ra-data-dexie
   - Experimental React-Admin data provider using Dexie (IndexedDB)
@@ -69,6 +89,12 @@ modified: 2023-02-17T21:48:01.840Z
 # utils
 - https://github.com/Nooul/ra-component-factory
   - provides a centralized way to easily configure visibility and permissions related business logic, including access to forms/views, visibility/immutability of resource fields/inputs
+
+- https://github.com/Weakky/ra-data-opencrud
+  - A react-admin data provider for Prisma and GraphCMS
 # more
 - https://github.com/Groopit/ra-data-odata-server
   - OData Data Provider for react-admin
+
+- https://github.com/guillemfondin/ra-datagrid-sortable
+  - Drag'n'drop sortable datagrid for react-admin base on react-sortablejs

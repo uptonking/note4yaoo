@@ -74,6 +74,15 @@ modified: 2023-02-05T19:03:12.722Z
 - plate提供了参考方案
   - https://www.npmjs.com/package/@udecode/plate-node-id
 
+- ## [switch from immutablejs to plain JSON models_201812](https://github.com/ianstormtaylor/slate/issues/2495)
+- [consider migrating from Immutable.js "Records" to plain objects](https://github.com/ianstormtaylor/slate/issues/2345)
+- immutablejs-cons
+  - makes debugging harder.
+  - Reading values is more expensive
+  - requires a fromJS step to build the collections/records
+- 
+- 
+
 - ## [Modeling RichText with Automerge](https://github.com/automerge/automerge/issues/193)
 - I have spent a while thinking about this too, and I also think that a single document sequence with marker characters is the way to go. 
   - If you represent a document as a tree, there are a lot of operations that require deleting and re-inserting nodes (e.g. hitting enter in the middle of a paragraph, causing it to split into two paragraphs), which don't merge well in a concurrent setting. 

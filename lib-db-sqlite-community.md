@@ -18,8 +18,6 @@ modified: 2021-08-30T17:33:46.086Z
 - Sqlite does not allow table valued functions to return results with varying schemas. The schema must be defined once up front and then cannot change.
   - That forum post is a request I made to them to allow dynamic columns but they don't seem interested so far.
 
-
-
 - ## Introducing sqlite-xsv - a SQLite extension for quickly querying CSVs!
 - https://twitter.com/agarcia_me/status/1613688022079508480
   - Custom delimiters, quotes, column names and types
@@ -52,6 +50,13 @@ modified: 2021-08-30T17:33:46.086Z
   - Here is a NoSql database based on the SQLite backend
   - https://github.com/symisc/unqlite /202205/clang
     - UnQLite is an embedded NoSQL (Key/Value store and Document-store) database engine.
+
+- ## Is there a good way to use SQLite with serverless?
+- https://twitter.com/makon_dev/status/1630635156716306443
+- Depends on what you mean by "serverless." 😅 @flydotio could be called serverless in the sense that you don't have to manage servers. In any case, to use SQLite you need a persistent volume, or you could use a service like @ChiselStrike :)
+- Chiselstrike is SQLite over WASM with HTTP client (so you don’t need a TCP pipe or access to process aka Node; works in edge /serverless/workers)
+  - LolaDB is an HTTP client that pulls all your db clients on a centralized server infra & wraps the calls into a unified interface 
+  - Prisma Data Proxy gives you a prisma:// protocol connection. Should work on serverless HTTP as well … haven’t tested it
 
 - ## [sqlite rowid after deleting rows](https://stackoverflow.com/questions/35876171)
   - I delete rows with id 3 and 4 and run above query again.

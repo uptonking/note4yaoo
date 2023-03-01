@@ -14,7 +14,16 @@ modified: 2023-02-03T16:12:13.346Z
 
 - ## 
 
-- ## 
+- ## why you switch from Slate to Quill
+- https://community.affine.pro/c/questions-answers/i-found-out-you-switched-from-slate-to-quill-in
+- The original AFFiNE pre-alpha (open-sourced 2022/08) was using Slate as its editor framework. 
+  - At that moment, we have already designed our architecture in a block-based way - this means that for a page with 100 blocks, we will hold 100 Slate instances, instead of a single monolith one, to render them. This allows us to use regular React components to compose our block tree, which greatly simplifies the block implementation of AFFiNE.
+- However, there are several major cons with this approach:
+  1. The selection and cursor states were managed by Slate autonomously, making it hard to reconcile the cursor after you edited multiple blocks and performed undo.
+  2. The state synchronization between Slate and Yjs was too coarse grained. Every single edit within a text block will reset the block-level content, which bloats the history size and can't support character-wise collaboration.
+  3. The code pattern was abusing hooks and didn't align to the best practice in React.
+
+- So when I created BlockSuite, our own framework, I chose to leverage the block-based pattern with a more predictable tech stack. A major design decision here was to replace the rich text model with multiple Y.Text instances, so that we can support character-level time traveling.
 
 - ## I would say that BlockSuite works very differently from traditional rich text editors_202301
 - https://discord.com/channels/959027316334407691/1006208074316521573/1062287261724577822

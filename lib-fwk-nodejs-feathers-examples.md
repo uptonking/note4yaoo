@@ -19,6 +19,10 @@ modified: 2023-01-20T00:18:44.282Z
 - ref
   - https://github.com/feathersjs/awesome-feathersjs
 # popular
+- https://github.com/josx/ra-data-feathers /js
+  - Feathers data provider for react-admin. A feathers rest client for react-admin
+  - https://github.com/kfern/feathers-aor-test-integration
+
 - https://github.com/feathersjs-ecosystem/feathers-permissions
   - Simple role and service method permissions for Feathers
   - [Access control strategies with FeathersJS](https://blog.feathersjs.com/access-control-strategies-with-feathersjs-72452268739d)

@@ -224,6 +224,10 @@ modified: 2021-01-08T11:48:16.590Z
   - 依赖react-bootstrap，chartist
   - 左边不可折叠，右边有
 
+- https://github.com/horizon-ui/horizon-ui-chakra /js/白色主题
+  - https://horizon-ui.com/horizon-ui-chakra/
+  - Admin Template for Chakra UI & React
+
 - https://github.com/0wczar/airframe-react
   - http://dashboards.webkom.co/react/airframe/
   - /3.6kStar/MIT/202002/js/archived

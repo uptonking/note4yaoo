@@ -14,7 +14,7 @@ modified: 2022-08-21T10:11:19.219Z
 
 - ## 
 
-- ## [The slowest part of TinyMCE: SaxParser · Issue #7341 · tinymce/tinymce](https://github.com/tinymce/tinymce/issues/7341)
+- ## [The slowest part of TinyMCE: SaxParser](https://github.com/tinymce/tinymce/issues/7341)
 - What we're currently aiming for is a swap to the built-in browser DomParser then adding DomPurify to sanitise.
   - The problems you are describing seem to be more about how often the parser is run rather than an intrinsic performance issue with the parser itself. Micro-optimising things like how often a regex is compiled won't make any noticeable difference.
 

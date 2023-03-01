@@ -20,6 +20,8 @@ modified: 2023-02-05T19:03:12.723Z
   - core依赖zustand、zustood、jotai、react-hotkeys-hook
   - code-block自研实现，不依赖第三方代码编辑器
   - A plugin framework for building rich text editors with slate.
+  - dev-xp
+    - 表格方向键存在跳跃感
 
 - editablejs-editable /17Star/GPL/202208/ts/自绘光标/模型层block
   - https://github.com/editablejs/editable
@@ -31,12 +33,15 @@ modified: 2023-02-05T19:03:12.723Z
     - 为此，我们没有使用原生的可编辑属性contenteditable，而是使用了一个自定义的渲染器
     - canvas的开发体验不佳，需要编写更多代码
   - 使用slatejs数据模型，借助 react 使用自绘光标的模式渲染，不再依赖 contenteditable 属性
+  - dev-xp
+    - 表格方向键未实现
   - [修改license为GPL_20220204](https://github.com/editablejs/editable/commits/main?after=d61da6caa411139cddb0ae0e8eeeeaee05893610+69&branch=main&qualified_name=refs%2Fheads%2Fmain)
   - unicode-trie主要对一些 unicode 字符进行索引的计算。因为有些字符占位所占的字节数不确定，造成某些字符拆分后的索引不准确
 
 - wangEditor.v5 /14.3kStar/MIT/202208/ts/vanillajs
   - https://github.com/wangeditor-team/wangEditor
   - https://www.wangeditor.com/
+  - https://www.wangeditor.com/demo/index.html
   - core依赖slate、snabbdom、dom7、is-hotkey、lodash、uppy(file uploader)、event-emitter、i18next
   - 源码是函数式风格
   - 开箱即用，配置简单。
@@ -46,20 +51,25 @@ modified: 2023-02-05T19:03:12.723Z
   - 扩展性
     - 使用扩展插件和模块的机制，保证扩展性
     - 现在wangEditor内置的各个功能，也都是通过扩展插件和模块的形式搭建起来的
+  - dev-xp
+    - 表格方向键未实现
   - https://github.com/wangfupeng1988/slate-dom-view
     - slate.js for DOM, without React.
-
-- https://github.com/JokerLHF/mini-slate
-  - 使用 ts 实现 slate 富文本
 
 - prezly-slate /31Star/MIT/202208/ts/提交多
   - https://github.com/prezly/slate 
   - 依赖 `plate`的工具方法而不依赖编辑器、popperjs2、@prezly/sdk、react-bootstrap
   - Prezly software built upon Slate
   - 悬浮工具条使用卡片的形式
+  - dev-xp
+    - 表格支持方向键
+    - 表格不支持单元格选区
   - https://www.prezly.com/
     - Successful businesses need a fanbase. Use Prezly to build yours.
     - With Prezly, you can publish and share your content with your audience, directly. No algorithms, no middlemen, no BS.
+
+- https://github.com/JokerLHF/mini-slate
+  - 使用 ts 实现 slate 富文本
 
 - https://github.com/Darginec05/Yopta-Editor
   - https://yopta-editor.vercel.app/basic
@@ -79,6 +89,11 @@ modified: 2023-02-05T19:03:12.723Z
   - Pack tree nodes into a flat object and unpack them again!
   - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
   - v1 of changing the index of an object causes a lot of adding and deleting. This is a limitation of the path based scheme.
+- https://github.com/paularmstrong/normalizr
+  - Normalizr is a small, but powerful utility for taking JSON with a schema definition and returning nested entities with their IDs, gathered in dictionaries.
+  - https://github.com/anseal/normalizr
+    - The main point of difference from the original - performance
+    - API is the same as in the original
 
 - https://github.com/nivekithan/slate-devtools
   - devtool for slatejs which will assist you in debugging the code
@@ -327,6 +342,10 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/naufaldi/slate-js-editor
   - Framer Motion, NextJS and Chakra UI
+
+- https://github.com/kanweiwei/slatets
+  - slate.v0.37源码解读
+  - https://github.com/kanweiwei/easy-editor
 # slate-plugins
 - https://github.com/imdbsd/slate-plugin
   - Rich text editor plugin for slate.js

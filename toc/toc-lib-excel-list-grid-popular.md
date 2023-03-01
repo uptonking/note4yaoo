@@ -385,6 +385,9 @@ modified: 2022-08-21T10:02:27.788Z
   - free for all non-commercial purposes since 7.0
   - https://github.com/handsontable/handsontable/releases/tag/7.0.0
   - [Handsontable drops open source for a non-commercial license](https://github.com/handsontable/handsontable/issues/5831)
+  - forks
+  - https://github.com/swsvindland/opentable /inactive
+  - https://github.com/pingyuanChen/handsontable /inactive
 - tui.grid /MIT/1.9kStar/202202/ts
   - https://github.com/nhn/tui.grid
   - http://ui.toast.com/tui-grid/

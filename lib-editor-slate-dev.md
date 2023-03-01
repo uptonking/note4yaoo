@@ -28,6 +28,8 @@ modified: 2023-02-05T19:03:12.722Z
 - who is using #slate
   - worktile slate-angular
   - wangEditor
+  - payloadcms
+  - react-page
 
 - slate-resources
   - https://docs.slatejs.org/
