@@ -17,18 +17,17 @@ modified: 2023-02-05T19:03:12.722Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Store paths instead of keys on selection data for `set_selection` operations](https://github.com/ianstormtaylor/slate/issues/1567)
+- In a collaborative environment, keys can appear and disappear, but paths can be transformed and stay valid. In order to support both collaboration and undo / redo, set_selection needs to store both the old selection and the new selection as paths, instead of keys.
+- Yep, for OT I'm already completely ignoring keys
+
 - ## [consider using paths instead of keys_201711](https://github.com/ianstormtaylor/slate/issues/1408)
-- Right now we use the concept of unique "keys" to keep track of the anchor and focus of a node in a range. And we use them to look up a node by key in the document, for updating, etc.
-  - But keys are local-only, and once we convert the change information into operations, we convert "keys" into "paths", which are just an array of indices that locate a node in the document—like [2, 1, 2]. Because these don't rely on local information.
-
-- One alternative would be to actually keep the keys, but move to using paths for most of the internal things and for operations. This might be the best of both worlds, keeping lookups fast for things like change.insertText() and so on. But allow the more precise ByKey(key, ...) behavior to persist across changes. Although those ByKey methods would be much slower by comparison. 
-
-- I don't really depends on keys in my use case, but paths do have similar problem domain with operation transform: all paths that are stored in memory have to be transformed if an operation is performed on the editor, in order to maintain its integrity. 
-  - I think translation between keys and paths might be simpler and saner implementation while improving internally using paths. If it ever reach a point where key become obsolete, it could be remove then?
-- I was thinking of not storing any of the path information in the node itself. So the only things that keep paths are referencing the node from outside itself, like a range. I'm not totally sure I understand the second part you mentioned, but I agree that if there are ways to transition without removing the keys that make it much easier, we should definitely consider them
-
-- the place I'd be most worried about would be anywhere where you grab a node, run some changes, and then get updated nodes by key from the new change.value for the rest of your function. Right now, keys make that easy. It'll take more thought without them, to make sure your paths or nodes are still valid.
-  - very good point. Normalizing currently uses this technique.
 
 - PROS
   - For many things, like "find node by key", the "find node by path" equivalent would actually be much quicker, since you wouldn't have to search the entire tree, you'd just know exactly where to descend by just following the path.
@@ -41,6 +40,20 @@ modified: 2023-02-05T19:03:12.722Z
   - To update a specific node, you no longer have the key reference. 
     - This could be solved by either searching for the node instance itself (with the same performance). 
     - Or it could be by passing the path to places that need the node. The path approach is awkward though, since it means the information needed can change without the node itself changing. But that's okay, because comparing by instance would work still I think, so not really an issue.
+
+- Right now we use the concept of unique "keys" to keep track of the anchor and focus of a node in a range. And we use them to look up a node by key in the document, for updating, etc.
+  - But keys are local-only, and once we convert the change information into operations, we convert "keys" into "paths", which are just an array of indices that locate a node in the document—like [2, 1, 2]. Because these don't rely on local information.
+
+- One alternative would be to actually keep the keys, but move to using paths for most of the internal things and for operations. This might be the best of both worlds, keeping lookups fast for things like change.insertText() and so on. But allow the more precise ByKey(key, ...) behavior to persist across changes. Although those ByKey methods would be much slower by comparison. 
+
+- I don't really depends on keys in my use case, but paths do have similar problem domain with operation transform: all paths that are stored in memory have to be transformed if an operation is performed on the editor, in order to maintain its integrity. 
+  - I think translation between keys and paths might be simpler and saner implementation while improving internally using paths. If it ever reach a point where key become obsolete, it could be remove then?
+- I was thinking of not storing any of the path information in the node itself. So the only things that keep paths are referencing the node from outside itself, like a range. I'm not totally sure I understand the second part you mentioned, but I agree that if there are ways to transition without removing the keys that make it much easier, we should definitely consider them
+
+- the place I'd be most worried about would be anywhere where you grab a node, run some changes, and then get updated nodes by key from the new change.value for the rest of your function. Right now, keys make that easy. It'll take more thought without them, to make sure your paths or nodes are still valid.
+  - very good point. Normalizing currently uses this technique.
+
+- I am in favour of keeping keys, because it makes it possible to have a completely different data structure for the data storage - that doesn't necessarily map 1:1 to the Slate structure. With keys you will always know exactly what to target. I would actually prefer if the the operations too dealt with keys in stead of paths. We store and patch our documents a completely different format and using the operation's paths can be a challenge sometimes to know what do target in our document structure.
 
 - https://github.com/TheGuardianWolf/treepack
   - v1 of changing the index of an object causes a lot of adding and deleting. This is a limitation of the path based scheme.

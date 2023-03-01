@@ -43,7 +43,9 @@ modified: 2022-12-16T01:52:33.729Z
 - [tinymce table](https://www.tiny.cloud/docs/tinymce/6/full-featured-premium-demo/)
   - 光标在表格内时会显示表格悬浮工具条，如行列操作
   - 支持拖拽修改列宽度
-# products
+
+## table-products
+
 - 表格单元格的选区
   - 飞书通过浅蓝背景色
   - notion通过蓝色边框
@@ -61,6 +63,10 @@ modified: 2022-12-16T01:52:33.729Z
     - 鼠标从左上到右下可触发选中合并后的单元格，然后可以在单元格悬浮工具条拆分单元格
     - 拆分后的单元格内容不能还原，内容都在第一个单元格
   - notion不支持合并单元格
+
+- 单元格enter键
+  - notion焦点移到下一行
+  - 飞书、ckeditor、tiptap都是单元格内新加一行
 # draft
 
 # examples-

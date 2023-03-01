@@ -11,9 +11,13 @@ modified: 2021-06-22T11:54:44.506Z
 
 - ## 
 
-- ## 
+- ## [Suggestion: avoid `delete` keyword](https://github.com/ianstormtaylor/slate/issues/4425)
+  - we could look at swapping set_node to do node[key] = undefined and improve performance instead of using delete node[key].
+- While this was once true (delete being slow), I think there's sufficient evidence that it's no longer a primary issue
+- I'm not 100% convinced but you're right performance characteristics can change.
 
 - ## The number of times I see this makes me want to cry: `element.addEventListener("click", (e) => handleClick(e))`
+
 - https://twitter.com/RogersKonnor/status/1620437284498870272
   - Youre creating an anonymous function callback which means if this script runs more than once you'll have multiple event handlers.
   - Whereas, if you just reference the function, you'll get automatic deduping.

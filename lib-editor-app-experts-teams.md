@@ -21,6 +21,10 @@ modified: 2022-08-21T10:16:52.004Z
   - https://github.com/worktile/slate-angular
   - https://www.zhihu.com/people/pubuzhixing/posts
 
+- 阿扎东
+  - editablejs, 自绘光标
+  - https://github.com/big-camel
+
 - ccorcos notion
   - https://github.com/ccorcos
   - https://github.com/ccorcos/prosemirror-examples

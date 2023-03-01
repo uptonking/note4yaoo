@@ -379,7 +379,8 @@ modified: 2023-02-05T19:03:12.723Z
   - /201910/js/v0.44
   - 支持table in table
   - Forked from the slate-edit-table implementation, allowing for creation of tables with nested content
-  - https://github.com/George-A-Payne/slate-tables
+  - https://github.com/George-A-Payne/slate-tables /ts/202003
+    - https://george-a-payne.github.io/slate-tables/
     - Forked from slate-deep-tables
   - https://github.com/GitbookIO/slate-edit-table
     - archived and has moved to GitBook's private fork
@@ -392,11 +393,11 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/1build/leyden
   - https://1build-org.gitbook.io/leyden/
   - a data table framework powered by Slate.
+  - Leyden builds upon Slate's schema definition system, providing an interface for users to define table-shaped schemas with powerfully customization cells.
   - Leyden's coordinate system is simple and fully interoperable with Slate's Path system.
   - Cells can access data from other cells using absolute coordinates and relative positions.
   - Leyden exposes several pre-built validators (such as numeric and integer) for your cell data
   - Slate requires users to define complicated render functions to detect different types of elements. Leyden handles this automatically
-  - Leyden builds upon Slate's schema definition system, providing an interface for users to define table-shaped schemas with powerfully customization cells.
 
 - https://github.com/shrutikachawla/slateTables /js
   - 依赖material-ui.v4、antd
@@ -425,15 +426,25 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/palerdot/react-slite /代码过于简单
   - This react component provides a slack like rich text editing experience powered by slate.js
-
-- https://github.com/rockettomatooo/slate-react-presentation
+# utils
+- https://github.com/rockettomatooo/slate-react-presentation /js
   - a small package that lets you render a slate.js document without the overhead of the actual editor.
-# mobile
-- https://github.com/juliankrispel/slate-in-react-native
-  - Proof of concept - Slate in react-native Webview
+
+- https://github.com/dxiaoqi/slate-render-tool /ts
+  - slate render tool
+
+- https://github.com/logmannn/slate-editor-renderer
+  - js
+- https://github.com/GitbookIO/slate-lite-renderer
+  - Fast renderer for read-only Slate documents
 
 - https://github.com/arrizalamin/slate-fast-renderer /201911/js
   - small renderer for read-only slate.js document for web and react-native
+
+## mobile
+
+- https://github.com/juliankrispel/slate-in-react-native
+  - Proof of concept - Slate in react-native Webview
 # slate-examples
 - https://github.com/inthelamp/book-reviewer
   - a learning project to obtain knowledge and skills about the MERN stack
@@ -504,6 +515,9 @@ modified: 2023-02-05T19:03:12.723Z
   - A example of a collaborative editor using Slate and Automerge
   - Based on idea of https://github.com/humandx/slate-automerge
   - https://github.com/mms-gianni/slate-collaborationserver
+
+- https://github.com/grimmer0125/slatejs-exp /201807/js
+  - use socket.io to sync & show other people's cursors (carets) when collaborating to edit the same content by slatejs editor
 # more-slate
 - https://github.com/tiddly-gittly/slate-write
   - A WYSIWYG editor for TiddlyWiki. (WIP)

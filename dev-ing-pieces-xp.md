@@ -7,11 +7,22 @@ modified: 2021-04-28T20:54:58.126Z
 
 # dev-ing-pieces-xp
 
-# dev-2022
+# dev-2023
 
-# pieces
+# issues
 
 ## 
+
+## 
+
+## 
+
+## mongoose modelInstance.save无法保存数据
+
+- 其实数据已经保存了，但使用的是自动创建的表名
+- 刷新compass，reload data
+
+- 检查兼容性
 
 ## ts重构场景，Namespace N1名和type名相同
 

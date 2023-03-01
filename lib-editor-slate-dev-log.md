@@ -7,4 +7,19 @@ modified: 2023-02-05T19:03:12.722Z
 
 # lib-editor-slate-dev-log
 
+# guide
 
+- 块级元素前后的光标处理
+
+- table-model
+# dev-to
+- src
+  - createDraft + applyToDraft + finishDraft
+# dev-later
+
+# dev-maybe
+
+# done
+- src
+  - toSlateRange
+  - toDOMRange
