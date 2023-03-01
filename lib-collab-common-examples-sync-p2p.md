@@ -88,6 +88,15 @@ modified: 2023-01-17T19:13:01.845Z
   - When running multiple instances of your Feathers application (e.g. on several Heroku Dynos), service events (created, updated, patched, removed and any custom defined events) do not get propagated to other instances.
   - feathers-sync uses a messaging mechanism to propagate all events to all application instances. 
   - It currently supports redis, amqp/RabbitMQ
+
+- https://github.com/yomorun/presencejs
+  - a JavaScript library that allows you to build real-time web applications . 
+  - The server is built on top of YoMo(go)
+  - Fallback to WebSocket if WebTransport connection cannot be established
+
+- https://github.com/CoCreate-app/CoCreate-cursors
+  - https://cocreate.app/docs/cursors
+  - Collaborative user cursor position for inputs, textarea's and contenteditable elements.
 # sync-json
 - https://github.com/zettant/realtime-object-sync
   - server and client libraries for realtime JSON object synchronization.

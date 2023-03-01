@@ -25,6 +25,9 @@ modified: 2022-11-06T03:19:28.284Z
 - https://github.com/monlovesmango/nostr-absurd-sql
   - nostr utility for sqlite3 saved to indexeddb
 
+- https://github.com/randyl/sqlite3-wasm-demo-extension
+  - [SQLite Wasm in the browser backed by the Origin Private File System - Chrome Developers](https://developer.chrome.com/blog/sqlite-wasm-in-the-browser-backed-by-the-origin-private-file-system/)
+
 - sql.js /10.8kStar/MIT/202209/js
   - https://github.com/sql-js/sql.js
   - http://sql.js.org/

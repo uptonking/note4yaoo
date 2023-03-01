@@ -11,6 +11,13 @@ modified: 2022-04-23T18:48:32.550Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Preparing a tutorial on how you can easily share data with your customers without exposing your database via @GRID_hq
+- https://twitter.com/thomas_yang1/status/1630370358309306368
+
 - ## [GRID 2.0: Next-gen spreadsheet with presentation layer & AI assistant](https://www.producthunt.com/posts/grid-2-0)
 - Now with a GPT-3 powered formula copilot.
 * GRID Sheets, our fully featured spreadsheet editor

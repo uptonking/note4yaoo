@@ -12,6 +12,21 @@ modified: 2022-03-03T18:20:12.075Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+
+- ## This was the original problem that got me interested in local-first software. I wanted messaging apps to work like phone providers.
+- https://twitter.com/JungleSilicon/status/1630331881207246848
+  - My initial thoughts were to separate the data layer from the application itself, that way each application could read from that data layer. 
+  - The data layer could be similar to an Apple cloud account or Dropbox. 
+  - The problem is - this introduces friction(分歧；不和) for the user.
+  - If you instead store the data in your local device and have that sync with a cloud backup / relay, it makes it a more seamless process as you only need to set up the account once and then all your data will sync to it.
+- Makes me wonder why we don’t have a messaging protocol like email for instant messaging…
+  - There is RCS, which is an international  3GPP standard, but Apple refuse to implement it, and other providers pretend it's a Google thing (it's not)
+  - And XMPP, solving instant messaging and presence as a w3c spec
+- 
 - ## So much CRDT literature seems to focus on collaborative text, but it feels like a pretty niche(针对特定小群体的) problem to me._202210
 - https://twitter.com/gaforres/status/1584909330859671553
   - Block editors like Notion are good enough for most cases. 

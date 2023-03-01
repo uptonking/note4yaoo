@@ -12,7 +12,22 @@ modified: 2022-12-24T07:31:48.493Z
 # discuss
 - ## 
 
-- ## 
+- ## "Browsers will not serve Wasm files from file:// URLs" and that a web server is required, along with setting 2 response headers. 
+- https://groups.google.com/a/chromium.org/g/chromium-extensions/c/WsxV-5CqAko
+  - What about inside a Chrome extension? Can extensions create a SQLite database using SQLite wasm and OPFS?
+- Files in Chrome extensions like https://localhost (not file://), it is a secure context.
+  - Why does it need the "Cross-Origin-Opener-Policy" and "Cross-Origin-Embedder-Policy" HTTP headers? Because it is the security requirements of SharedArrayBuffer.
+  - Furthermore, Chrome extension does support these two HTTP headers. 
+  - 👉🏻 In summary, SQLite Wasm with SharedArrayBuffer works in Chrome extension.
+- Service worker and web worker are different. You can read their introductory article. Here, createSyncAccessHandle is a sync IO method, so it only works in web worker by design. 
+  - You can create a web worker in extension pages, e.g. the popup page or any web pages in your extension.
+  - Content scripts are out of extension origin. You should only use sqlite in your extension origin.
+  - You can't create web worker in service worker at present. Some extension developers propose that web workers can be created in service worker.
+
+- https://github.com/randyl/sqlite3-wasm-demo-extension
+  - [SQLite Wasm in the browser backed by the Origin Private File System - Chrome Developers](https://developer.chrome.com/blog/sqlite-wasm-in-the-browser-backed-by-the-origin-private-file-system/)
+
+- As mentioned earlier, there's a missing API in service workers which means the OPFS SQLite implementation doesn't work at the moment.
 
 - ## 发现在浏览器的Wasm环境里，Go 是支持发起 HTTP 请求（底层转换成JS的fetch），也支持 goroutine（需要和 Promise 一起使用）。
 - https://twitter.com/spacewanderlzx/status/1621157716994711552

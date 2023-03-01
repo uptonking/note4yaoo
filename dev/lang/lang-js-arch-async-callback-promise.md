@@ -7,8 +7,9 @@ modified: 2021-08-30T07:01:09.493Z
 
 # lang-js-arch-async-callback-promise
 
-# discuss
+# guide
 
+# discuss
 - ## 
 
 - ## [Why the Microtask queued after chained promises are executed after the first promise resolution ignoring the chained ones? - Stack Overflow](https://stackoverflow.com/questions/75373806/why-the-microtask-queued-after-chained-promises-are-executed-after-the-first-pro)
@@ -106,3 +107,20 @@ tasksAndMicroTasks()
 - 异步底层实现不一定是多线程吧，某些异步任务，如果 IO 任务直接交给硬件，然后等待系统事件通知
   - 是这样，比如 dma 就是，libuv 是通过多线程封装了一些同步系统 api，异步系统 api 的部分不一定是多线程
   - 限定在软件级别的异步就是靠线程了，软件的执行是靠cpu，也就是需要线程。硬件级别的异步是靠电路，就不用线程了。
+# async-utils
+- https://github.com/abbr/deasync
+  - DeAsync turns async function into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. 
+  - The core of deasync is written in C++.
+
+- https://github.com/dmaevsky/conclure
+  - Brings cancellation and testability to your async flows.
+  - It is a tiny (core is < 200 lines of code), zero dependencies generator runner.
+  - Using generators instead of promises allows for a LOT more flexibility, including cancellation, sync resolution, and better testing. The API is strictly the same as async/await
+  - You should avoid Promises for two major reasons:
+    - Promises are greedy: once created, cannot be cancelled
+    - `await promise` always inserts a tick into your async flow, even if the promise is already resolved or can be resolved synchronously.
+  - You can see a Promise as a particular type of an iterator for which the JS VM provides a built-in runner, a quite poorly designed one nonetheless.
+  - Conclure JS is a custom generator runner that
+    - allows you to cancel your async flows
+    - ensures that sync flows always resolve synchronously
+    - delivers better testability through the use of effects as popularized by redux-saga.

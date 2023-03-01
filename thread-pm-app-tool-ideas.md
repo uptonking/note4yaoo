@@ -22,6 +22,11 @@ modified: 2022-11-07T10:58:24.512Z
 - 分享设备的dock栏
 
 - 分享有设计感的网站、主页
+# extensions
+- doscord message saver
+  - [Discord Notebook](https://chrome.google.com/webstore/detail/discord-notebook/jeeilfacglnffgflhgmciaegglekjlod?hl=en)
+  - the extension will save your messages locally in your browser storage.
+  - 因为discord前端升级而不可用了
 # saas
 
 # tools/productivity

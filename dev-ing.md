@@ -87,6 +87,7 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - collab-data-structure: lww-with-hlc
   - remoteStorage: google-drive、网盘、七牛对象存储
   - lo-fi-sync-server
+  - pouchdb
 
 - sqlite-web
   - evolu(hlc)
@@ -125,14 +126,23 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - crdt tutorials
   - 腰包掉到床头版与墙的夹缝中了
   - 默认last-write-win, 出现冲突时，提示用户选择版本
-# dev-02
+# dev-03
 
-## 02
+## 030
 
 - dev-to
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
   - 选区问题修复, domSelToSlateRange
+
+## 0301
+
+- [XMPP协议实现原理介绍 - Healtheon - 博客园](https://www.cnblogs.com/hanyonglu/archive/2012/03/04/2378956.html)
+  - XMPP（Extensible Messageing and Presence Protocol：可扩展消息与存在协议）是目前主流的四种IM（IM：instant messaging, 即时消息）协议之一，其他三种分别为：即时信息和空间协议(IMPP)、空间和即时信息协议(PRIM)、针对即时通讯和空间平衡扩充的进程开始协议SIP(SIMPLE)。
+  - 在这四种协议中，XMPP是最灵活的。XMPP是一种基于XML的协议，它继承了在XML环境中灵活的发展性。
+  - 其实XMPP 是一种很类似于http协议的一种数据传输协议，它的过程就如同“解包装--〉包装”的过程，用户只需要明白它接受的类型，并理解它返回的类型，就可以很好的利用xmpp来进行数据通讯。
+  - 1)客户机/服务器通信模式；(2)分布式网络；(3)简单的客户端；(4)XML的数据格式。 
+# dev-02
 
 ## 0227
 
@@ -405,7 +415,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                  `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

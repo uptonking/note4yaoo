@@ -40,6 +40,7 @@ modified: 2021-01-04T16:21:18.990Z
   - This project is a complete web map renderer - including quality label layout, pattern fills, and icons - in as simple as possible of an implementation. 
   - It's an alternative to renderers like Mapbox GL JS in a fraction of the size.
   - Render static maps to Canvas elements or interactive maps with Leaflet integration
+  - Can read normal Z/X/Y tile URLs or offline, S3-hosted tile archives in PMTiles format
   - [what protomaps.js is, what protomaps.js is not](https://protomaps.com/docs/protomaps-js/)
     - It is not a continuous-zoom system. It displays map tiles at discrete integer zoom levels.
     - It is not a 3D renderer. Protomaps.js is focused on rendering 2D maps from OpenStreetMap data.

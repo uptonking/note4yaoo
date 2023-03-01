@@ -67,11 +67,7 @@ modified: 2021-05-14T15:04:42.225Z
   - CodeMirror 6 is a rewrite of the CodeMirror code editor. 
   - The new system provides solid accessibility, touchscreen support, better content analysis
   - It is not API-compatible with the old code.
-- https://github.com/SortableJS/sortablejs
-  - /21.1kStar/MIT/202010/ts/NoDeps
-  - https://sortablejs.github.io/sortablejs/
-  - a JS library for reorderable drag-and-drop lists.
-  - You can use any element for the list and its elements, not just ul/li
+
 # popular
 
 ## viz

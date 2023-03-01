@@ -75,9 +75,31 @@ modified: 2022-11-29T20:41:25.566Z
 # discuss
 - ## 
 
-- ## 
+- ## Toying around with OS level multiplayer...
+- https://twitter.com/ronithhh/status/1630733879220011008
+- tbh i believe "multiplayer" should be platform level
 
-- ## 
+
+- ## Today's coding adventure: choose a syncing storage layer for a tech demo I'm working on.
+- https://twitter.com/jessmartin/status/1630658249371295758
+- When you search for something like this, a bunch of things pop up, some of which I've heard of:
+  - LiteFS from http://Fly.io
+  - Litestream
+  - dsqlite
+  - sql.js
+  - AbsurdSQL
+  - http://vlcn.io
+- there's LiteFS which is like Litestream but better. Rather than async writing your sqlite db to some replica, LiteFS actually reads each *transaction* (each change) and stores them and replays them. This allows for cool things like rollbacks since LiteFS has all of history.
+  - Now what's wild is how LiteFS pulls this off: they run a separate process that reads directly from the filesystem (using FUSE) to watch the sqlite db (sqlite dbs are just one giant file, remember!) for changes, then nabs them as they happen.
+- Q: If a sqlite database is normally stored in a file on the file system and browsers don't have file systems, how does sqlite-wasm store the db?
+  - A: 😱 local-storage and session-storage, ofc! pretty gnarly limitations: <5mb, strings only, etc
+  - 💡 OPFS runs in a worker thread, so it doesn't block the main thread, which allows the UI to be more responsive.
+
+    - opfs只支持worker的api: createSyncAccessHandle(),FileSystemSyncAccessHandle
+
+- One important note about sqlite-in-the-browser: the excellent sql.js has been around for years, *but* it only supports *in-memory* changes to sqlite. No persistence. Refresh 
+  - While sql.js does support exporting the database as JavaScript-typed array, that's not what I want. I want streaming replication
+- Dqlite is distributed sqlite that is distributing a single sqlite db across a cluster or peers. Also, importantly it runs as a library inside your app, not as a sidecar process watching the filesystem. This would be more amenable(顺从的；顺服的) to the web. Unfortunately, it only runs on C/Linux. There aren't any other client libraries for other languages / platforms. Not sure why this hasn't gotten much adoption...
 
 - ## I find that in distributed systems, metadata size is often inversely proportional to message size.
 - https://twitter.com/aboodman/status/1628166157667831808

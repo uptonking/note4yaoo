@@ -24,6 +24,9 @@ modified: 2022-08-21T10:02:41.845Z
   - https://twitter.com/clauderic_d/status/1375623307060510731
     - I recently built a sortable tree example with @dndkit.
     - Collapsible subtrees, removable items, unlimited nesting, dynamic placeholder, keyboard support and zero external dependencies.
+  - forks
+    - https://github.com/wix-playground/dnd-kit
+    - https://github.com/replayio/dnd-kit
 
 - react-treeview /MIT/1kStar/201706/js/NoDeps
   - https://github.com/chenglou/react-treeview

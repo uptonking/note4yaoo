@@ -219,6 +219,19 @@ modified: 2022-11-25T15:50:48.226Z
     - Reactive ORM for Lovefield
     - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS
 
+- https://github.com/anywhichway/reasondb /201702/js/不支持同步
+  - https://anywhichway.github.io/reasondb
+  - JavaScript object database: SQL like syntax, full-text search, auto object sync, swapable persistence engines, asynchronous cursors, 30+ built-in plus in-line fat arrow predicates, predicate extensibility, joins, nested matching.
+  - [Client to Server Synchronization](https://github.com/anywhichway/reasondb/issues/4)
+    - resolved in v1.0.1b
+  - [Is ReasonDB dead?](https://github.com/anywhichway/reasondb/issues/30)
+    - ReasonDb is being merged into Thunderclap. but Thunderclap will not get any public updates until several months from now.
+- https://github.com/anywhichway/thunderclap /201907/js
+  - A key-value, indexed JSON, and graph database plus function oriented server designed for Cloudflare
+  - It runs on top of the Cloudflare KV store.
+  - [Is Thunderclap dead?](https://github.com/anywhichway/thunderclap/issues/3)
+    - In a kind of Forest Gump moment, I simply stopped coding Dec 23rd of last year(2020).
+
 - https://github.com/typicaljoe/taffydb /201509/js/单文件
   - TaffyDB is an open source JavaScript library that provides powerful in-memory database capabilities to both browser and server applications.
   - We created TaffyDB easily and efficiently manipulate these 'tables' with a uniform and familiar SQL-like interface.
@@ -233,10 +246,6 @@ modified: 2022-11-25T15:50:48.226Z
   - It provides basic insert/update/delete/query capabilities. 
   - localStorageDB has no dependencies, and is not based on WebSQL. 
   - Underneath it all, the structured data is stored as serialized JSON in localStorage or sessionStorage.
-
-- https://github.com/anywhichway/reasondb /201906/js/不支持同步
-  - A multi model 100% JavaScript database supporting: key/values, graphs, documents
-  - Industry standard Storage API (except ReasonDB is asynchronous), or a graph API similar to GunDB, or SQL like syntax.
 # db-json
 - lowdb /18.7Star/MIT/202211/ts
   - https://github.com/typicode/lowdb

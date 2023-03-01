@@ -26,5 +26,6 @@ modified: 2023-01-08T16:27:44.918Z
 # extension-superset
 
 # utils
-
+- https://github.com/kylebarron/arrow-js-ffi /rust
+  - Zero-copy reading of Arrow data from WebAssembly
 # more

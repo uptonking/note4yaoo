@@ -15,12 +15,6 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 
 
-- ## Notion 优化了走直线选不中子级菜的问题，想起之前 @height_app 的一篇关于 context menus 细节的文章。
-- https://twitter.com/leadream4/status/1629307997175549952
-  - 一般的解决方案是加一个延迟，但是更好的方式是增加三角安全区域，亚马逊和苹果都是这样处理的。
-  - [Breaking down Amazon's mega dropdown](https://bjk5.com/post/44698559168/breaking-down-amazons-mega-dropdown)
-  - [Building like it's 1984: A comprehensive guide to creating intuitive context menus - Height](https://height.app/blog/guide-to-build-context-menus)
-
 - ## 大家平常都是怎么分别用文件夹或标签来组织内容的？
 - https://twitter.com/tualatrix/status/1626158103283765248
   - 如果「文件夹 Folder」表示：可以嵌套，但内容对象只能塞进一个文件夹里；
@@ -44,10 +38,6 @@ modified: 2021-08-16T06:56:53.061Z
   1. Teams：自由创建团队对导航栏内容进行分类组织，春季内推出；
   2. Better Databases：支持跨数据库选择数据，平铺视图展示，升级视图筛选和协作功能，几周内推出；
   3. Synced Databases：与谷歌日历、Github 联动同步，年内推出。
-
-- 
-- 
-- 
 
 - ## @logseq users in my timeline. How do define when to go block-based vs going page-based in your graphs?
 - https://twitter.com/PabloBernardoTW/status/1534193024934326273

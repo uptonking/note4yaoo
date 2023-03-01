@@ -44,6 +44,12 @@ modified: 2021-05-19T08:32:28.120Z
   - Currently this editor uses an array of Gap Buffers to represent and manipulate the file data. 
   - Internal benchmarks show it is more performant than a javascript simple array or another implementation of Gap Buffer using javascript Typed Arrays.
 
+- https://github.com/makepad/makepad /rust
+  - https://makepad.dev/
+  - Makepad is a creative software development platform for Rust that compiles to wasm/webGL, osx/metal, windows/dx11 linux/opengl
+  - This is the repository for Makepad, a new way to build UIs in Rust for both native and the web.
+  - DOM-less GPU-based text editor
+
 - https://github.com/R-Neville/canvas-line-editor
   - https://r-neville.github.io/canvas-line-editor/
   - HTML canvas based text editor written in TypeScript

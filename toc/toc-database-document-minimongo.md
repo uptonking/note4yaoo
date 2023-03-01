@@ -41,6 +41,15 @@ modified: 2022-11-30T18:57:26.459Z
   - https://github.com/AstonBraham/minimongo-cache
     - refactor-to-es6
 
+- https://github.com/oortcloud/ddp-ejson /201405/js
+  - Extended JSON library; used in Meteor's Distributed Data Protocol.
+  - 支持 `$date/$binary`
+- https://github.com/lgandecki/modifyjs /201803/js
+  - Modify your objects with a mongo like syntax. 
+  - This is based on a modify function of Meteor's brilliant minimongo package, cleaned up, rewritten to es6, changed to work without Meteor context
+- https://github.com/crcn/sift.js
+  - Use Mongodb queries in JavaScript
+
 - gongojs-project: v1-js-websocket，v2-ts-轮询
   - https://github.com/gongojs/project
   - Reactive, realtime, offline queries with a ok_hand developer experience.
@@ -67,14 +76,6 @@ modified: 2022-11-30T18:57:26.459Z
     - 依赖 jsonpatch-to-mongodb
   - https://github.com/gongojs/old-v1
     - Backup of original v1 code
-  - https://github.com/lgandecki/modifyjs /201803/js
-    - Modify your objects with a mongo like syntax. 
-    - This is based on a modify function of Meteor's brilliant minimongo package, cleaned up, rewritten to es6, changed to work without Meteor context
-  - https://github.com/crcn/sift.js
-    - Use Mongodb queries in JavaScript
-  - https://github.com/oortcloud/ddp-ejson /201405/js
-    - Extended JSON library; used in Meteor's Distributed Data Protocol.
-    - 支持 `$date/$binary`
 
 - ddp /1Star/MIT/202207/ts
   - https://github.com/Jantje19/ddp

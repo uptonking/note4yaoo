@@ -169,6 +169,7 @@ modified: 2020-10-05T06:17:42.467Z
 - https://github.com/limboy/canvasdraw
   - `CanvasRenderingContext2D` is powerful on drawing, but it's API is not user friendly, especially if you want to draw a bunch of stuff. 
   - this library make it easier to draw.
+  - 依赖node-canvas
 
 - https://github.com/ahdinosaur/virtual-canvas
   - canvas element for virtual-dom

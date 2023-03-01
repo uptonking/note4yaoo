@@ -11,6 +11,7 @@ modified: 2021-01-01T20:10:51.125Z
 
 - tips
   - 前端开发后端化(Nodejs)，后端开发前端化(WebAssembly)都是比较明确的趋势，未来前后端开发将进一步融合。
+  - cpp性能好但开发复杂，rust取代web还要看发展
 # faq
 
 ## [Why WASM is not the future of Babylon.js__202108](https://babylonjs.medium.com/why-wasm-is-not-the-future-of-babylon-js-5832b09c9b10)

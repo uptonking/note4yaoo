@@ -11,7 +11,15 @@ modified: 2022-12-19T01:59:37.634Z
 
 - ## 
 
-- ## 
+- ## [What can service workers do that web workers cannot? - Stack Overflow](https://stackoverflow.com/questions/38632723/what-can-service-workers-do-that-web-workers-cannot)
+
+|              | Web Workers  | Service Workers  |
+|--------------|--------------|------------------|
+| Instances    | Many per tab | One for all tabs |
+| Lifespan     | Same as tab  | Independent      |
+| Intended use | Parallelism  | Offline support  |
+
+- So lifecyle is one fundamental difference between the two (a consequence of their intended use).
 
 - ## iframes are a better model than workers for concurrent JS in servers
 - https://twitter.com/jarredsumner/status/1532162212613066752

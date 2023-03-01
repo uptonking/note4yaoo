@@ -57,6 +57,14 @@ modified: 2021-03-01T10:54:24.828Z
   - Type-safe APIs with Protobuf and TypeScript.
   - Connect is a family of libraries for building and consuming APIs on different languages and platforms.
   - Unlike REST, the RPCs you use with Connect are typesafe end to end, but they are regular HTTP under the hood
+# binary
+- https://github.com/hazae41/binary /ts/NoDeps
+  - Zero-copy binary data types
+# concurrency
+- https://github.com/andywer/threads.js
+  - Make web workers & worker threads as simple as a function call.
+  - Offload CPU-intensive tasks to worker threads in node.js, web browsers and electron using one uniform API.
+  - Uses web workers in the browser, worker_threads in node 12+ and tiny-worker in node 8 to 11.
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

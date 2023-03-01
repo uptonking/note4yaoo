@@ -471,6 +471,10 @@ modified: 2023-02-05T19:03:12.723Z
   - [Platforms Starter Kit: a template for site builders, multi-tenant platforms, and low-code tools.](https://demo.vercel.pub/platforms-starter-kit)
   - [How to Build a Multi-Tenant App with Custom Domains Using Next.js](https://vercel.com/guides/nextjs-multi-tenant-application)
 # slate-collab
+- https://github.com/yomorun/react-cursor-chat /slate无关/仅参考
+  - React Component helps bring Figma's Cursor Chat to your web applications
+  - making real-time collaboration anywhere based on Presencejs.
+
 - https://github.com/typewriter-editor/json-patch
   - Immutable JSON Patch implementation based on RFC 6902 which adds operational transformation (OT) and last-writer-wins (LWW) support for syncing between client and server. 
   - Does not support the full OT algorithm because `copy` and `move` operations cannot be transformed correctly in all cases, so operations must always be applied in correct order. 

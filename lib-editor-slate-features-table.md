@@ -20,6 +20,9 @@ modified: 2023-02-27T19:07:31.111Z
   - tab/shift+tab键移动选区到下/上一个单元格
   - ？ enter键在单元格内换行(~~还是新建一行~~)
 
+- header-menu
+  - readonly
+
 - header
   - 可选表头
   - caption
@@ -45,6 +48,7 @@ modified: 2023-02-27T19:07:31.111Z
 
 - maybe
   - 完全自绘表格选区
+  - 整个编辑器支持先渲染文本，此时表格渲染loading占位符，然后才渲染表格ui
 
 ## faq
 

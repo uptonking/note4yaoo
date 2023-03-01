@@ -9,6 +9,18 @@ modified: 2022-12-02T11:16:05.028Z
 
 # guide
 
+# faq
+- [Questions & Answers · RxDB - JavaScript Database](https://rxdb.info/questions-answers.html)
+
+- Why is the PouchDB RxStorage deprecated?
+  - in 2016, there was no client-side database out there that fitted, I created RxDB as a wrapper around PouchDB. 
+  - This worked great and all the PouchDB features like the query engine, the adapter system, CouchDB-replication and so on, came for free.
+  - 👉🏻 But over the years, it became clear that PouchDB is not suitable for many applications, mostly because of its performance: 
+    - To be compliant to CouchDB, PouchDB has to store all revision trees of documents which slows down queries. 
+    - Also purging these document revisions is not possible so the database storage size will only increase over time. 
+  - Another problem was that many issues in PouchDB have never been fixed, but only closed by the issue-bot
+  - The whole PouchDB RxStorage code was full of workarounds and monkey patches to resolve these issues for RxDB users.
+  - In version 10.0.0 RxDB introduced the RxStorage layer which allows users to swap out the underlying storage engine where RxDB stores and queries documents from. 
 # discuss
 - ## 
 
@@ -52,3 +64,5 @@ modified: 2022-12-02T11:16:05.028Z
 - Meteor uses `minimongo` on the client which sync's with the server; effectively doing the same thing. It's actually amazing how much better the UX is when you have spotty coverage.
 - I think Oracle APEX works on the same premise? Store locally in indexedDB and sync up when the connection is back on-line. No need for difficult programming, APEX does this out of the box .
   - Anyhow, a way to force this behaviour in APEX is to make every user interaction a write action on the DB. This way you either save locally or to the backend (but you don't have to worry about the sync between the two).
+# more
+- https://news.ycombinator.com/from?site=rxdb.info

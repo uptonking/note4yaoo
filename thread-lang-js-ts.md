@@ -16,6 +16,20 @@ Symbol('a') === Symbol('a'); //false
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I really wish there were Promises in JS that could be evaluated sync. It’s a complex problem.
+- https://twitter.com/trueadm/status/1630739165045194752
+- For UI frameworks you want to allow the user to pass a promise, but ensure that if it is ready that you can render synchronously. But `T | Promise<T>` doesn’t compose the way promises do, so either you accept a perf/UX hit, create your own alternate async ecosystem, etc.
+  - I use a WeakMap for this. Only pass promise. Lookup resolution value sync via weakmap where you want to do this. Still agree though: custom thenables are great and Promise.resolve using them is great, async/await not using them sucks
+- This was discussed ad nauseum a decade ago. If you want sync promises try jQuery. Deferred.
+- https://github.com/abbr/deasync
+  - DeAsync turns async function into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. 
+  - The core of deasync is written in C++.
+- conclure js Using generators instead of promises allows for a LOT more flexibility, including cancellation, sync resolution, and better testing. The API is strictly the same as async/await
+
 - ## [Why do you actually need higher order functions? : learnjavascript](https://www.reddit.com/r/learnjavascript/comments/rgddk9/why_do_you_actually_need_higher_order_functions/)
 - Your code sample is an example of currying, where a function that accepts multiple arguments can be rewritten as a series of functions that each accept one argument. This is just one of the many uses of higher order functions.
 - One much more common use for higher order functions is to abstract some patterns like looping over an array and performing some action for each value in the array

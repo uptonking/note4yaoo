@@ -39,14 +39,18 @@ modified: 2023-01-20T00:18:44.282Z
   - feathers-sync uses a messaging mechanism to propagate all events to all application instances. 
   - It currently supports redis, amqp/RabbitMQ
 # examples
-- https://github.com/kalisio/krawler
+- https://github.com/kalisio/krawler /js
+  - https://kalisio.github.io/krawler/
   - A minimalist (geospatial) ETL
   - 依赖node-gdal, abstract-blob-store
   - 示例
     - csv2db
     - dem2csv
     - rest -> geojson -> local-file
-  - krawler is powered by Feathers (opens new window)and rely on two of its main abstractions: services (opens new window)and hooks
+  - krawler is powered by Feathers and rely on two of its main abstractions: services (opens new window)and hooks
+
+- https://github.com/fratzinger/feathers-openweathermap
+  - This is thin layer around the OpenWeatherMap API wrapped in a feathers.js service.
 # feathers-v4
 - https://github.com/feathersjs-ecosystem/feathers-authentication-management
   - Adds sign up verification, forgotten password reset, and other capabilities to local feathers-authentication

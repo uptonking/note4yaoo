@@ -8,18 +8,32 @@ modified: 2022-02-05T18:45:34.558Z
 # toc-lib-comp-drag-resize-move
 
 # popular
-- re-resizable /1.1kStar/MIT/202110/ts
-  - https://github.com/bokuweb/re-resizable
-  - https://bokuweb.github.io/re-resizable/
-  - A resizable component for React
-  - 只依赖fast-memoize
-  - 源码仅2文件
-- react-rnd /1.8kStar/MIT/202106/ts
-  - https://github.com/bokuweb/react-rnd
-  - https://bokuweb.github.io/react-rnd/stories
-  - A resizable and draggable component for React.
-  - 依赖react-draggable、re-resizable
-  - 源码仅1文件，与re-resizable同一作者
+
+- dnd-kit /7kStar/MIT/202302/ts/NoDeps
+  - https://github.com/clauderic/dnd-kit
+  - http://dndkit.com/
+  - http://examples.dndkit.com
+  - Zero dependencies and modular: built around built-in React state management and context
+  - extensible drag & drop toolkit for React.
+    - Built for React: exposes hooks such as useDraggable and useDroppable
+  - Supports a wide range of use cases: lists, grids, multiple containers, nested contexts, variable sized items, virtualized lists, 2D Games, and more.
+  - 作者旧轮子 [react-sortable-hoc](https://github.com/clauderic/react-sortable-hoc)
+  - 树形组件示例
+    - https://github.com/clauderic/dnd-kit/tree/master/stories/3%20-%20Examples/Tree
+    - https://5fc05e08a4a65d0021ae0bf2-vrdufzklrj.chromatic.com/?path=/story/examples-tree-sortable--basic-setup
+  - https://twitter.com/clauderic_d/status/1375623307060510731
+    - I recently built a sortable tree example with @dndkit.
+    - Collapsible subtrees, removable items, unlimited nesting, dynamic placeholder, keyboard support and zero external dependencies.
+  - forks
+    - https://github.com/wix-playground/dnd-kit
+    - https://github.com/replayio/dnd-kit
+
+- use-gesture /7.5kStar/MIT/202302/ts/vanillajs
+  - https://github.com/pmndrs/use-gesture
+  - https://use-gesture.netlify.app/docs/examples/
+  - a library that lets you bind richer mouse and touch events to any component or view
+  - move it, zoom it, drag it, scroll it, pinch it
+  - originally built for React, v10 is now platform agnostic, and can work in vanilla javascript.
 
 - react-draggable /6kStar/MIT/202201/js
   - https://github.com/react-grid-layout/react-draggable
@@ -31,16 +45,23 @@ modified: 2022-02-05T18:45:34.558Z
   - A simple React component that is resizable with a handle.
   - 依赖react-draggable
 
-- react-dnd /14.5kStar/MIT/202009/ts
+- react-dnd /14.5kStar/MIT/202009/ts/redux
   - https://github.com/react-dnd/react-dnd
   - https://react-dnd.github.io/react-dnd/examples/sortable/simple
   - core依赖于redux
   - Drag and Drop for React
   - 拖拽列表项的示例，没有显示底层被拖拽项的阴影
-- react-beautiful-dnd /26.2kStar/Apache2/202110/js/inactive
+- react-beautiful-dnd /26.2kStar/Apache2/202103/js/redux/inactive
   - https://github.com/atlassian/react-beautiful-dnd
   - https://react-beautiful-dnd.netlify.app/
   - Beautiful and accessible drag and drop for lists with React
+
+- dflex /1.5kSStar/MIT/202302/ts
+  - https://github.com/dflex-js/dflex
+  - https://www.dflex.dev/demo/lists/nested/
+  - built with vanilla Javascript and implemented an enhanced transformation mechanism to manipulate DOM elements. 
+  - It is by far the only Drag and Drop library on the internet that manipulates the DOM instead of reconstructing it and has its own scheduler and reconciler.
+  - Support strict transformation between containers.
 
 - neodrag /509Star/MIT/202210/ts
   - https://github.com/PuruVJ/neodrag
@@ -51,18 +72,33 @@ modified: 2022-02-05T18:45:34.558Z
   - Is the library also good for dragging items between lists?
     - Not directly, I'm afraid. This is for arbitrary dragging, not the sortable kind. You can use svelte-dnd-action or SortableJS for that for easy usage
 
-- dflex /1.4kSStar/MIT/202209/ts
-  - https://github.com/dflex-js/dflex
-  - https://www.dflex.dev/demo/lists/nested/
-  - built with vanilla Javascript and implemented an enhanced transformation mechanism to manipulate DOM elements. 
-  - It is by far the only Drag and Drop library on the internet that manipulates the DOM instead of reconstructing it and has its own scheduler and reconciler.
-  - Support strict transformation between containers.
+- re-resizable /1.1kStar/MIT/202110/ts/代码少
+  - https://github.com/bokuweb/re-resizable
+  - https://bokuweb.github.io/re-resizable/
+  - A resizable component for React
+  - 只依赖fast-memoize
+- react-rnd /1.8kStar/MIT/202106/ts/代码少
+  - https://github.com/bokuweb/react-rnd
+  - https://bokuweb.github.io/react-rnd/stories
+  - A resizable and draggable component for React.
+  - 依赖react-draggable、re-resizable
 
 - moveable /4.8kStar/MIT/202009/ts
   - https://github.com/daybrush/moveable
   - https://daybrush.com/moveable/
   - https://daybrush.com/moveable/
   - Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable! Pinchable! Groupable! Snappable!
+
+- react-grid-layout /16.9kStar/MIT/202202/js
+  - https://github.com/react-grid-layout/react-grid-layout
+  - https://strml.github.io/react-grid-layout/examples/0-showcase.html
+  - A draggable and resizable grid layout with responsive breakpoints, for React.
+  - 卡片能随意拖动和缩放
+  - 静止状态时，卡片不可重叠遮挡
+  - forks
+  - https://github.com/DEXAGA/react-grid-layout-hooks /202105/ts
+    - Migration to Hooks
+    - Migration to Typescript
 
 - https://github.com/wouterraateland/use-pan-and-zoom
   - https://codesandbox.io/s/n3rpmj60w0
@@ -71,6 +107,12 @@ modified: 2022-02-05T18:45:34.558Z
 - https://github.com/tanishqkancharla/draggable-list
   - https://github.com/ccorcos/draggable-list
   - A well-contained abstraction with simple performant animations.
+
+- https://github.com/taye/interact.js /ts
+  - http://interactjs.io/
+  - JavaScript drag and drop, resizing and multi-touch gestures with inertia and snapping for modern browsers
+  - not modifying the DOM except to change the cursor (but you can disable that)
+  - Support for HTML and SVG
 #  zoomable ui
 - https://github.com/aarondail/react-zoomable-ui
   - https://aarondail.github.io/react-zoomable-ui/example/
@@ -87,4 +129,15 @@ modified: 2022-02-05T18:45:34.558Z
 
 - https://github.com/allain/zuite /202205/js
   - A toolkit for building modern zoomable user interfaces
-# repos
+# more
+- sortablejs /21.1kStar/MIT/202203/js/NoDeps/代码少/inactive
+  - https://github.com/SortableJS/sortablejs
+  - https://sortablejs.github.io/sortablejs/
+  - a JS library for reorderable drag-and-drop lists.
+  - You can use any element for the list and its elements, not just ul/li
+
+- https://github.com/bevacqua/dragula /js
+  - Drag and drop so simple it hurts
+
+- https://github.com/Shopify/draggable /js
+  - Draggable is no longer maintained by its original authors

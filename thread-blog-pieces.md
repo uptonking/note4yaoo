@@ -15,6 +15,11 @@ modified: 2021-02-09T19:25:11.641Z
 # blogs
 - [一次加载1w条数据的最优解是什么？ - 掘金](https://juejin.cn/post/7091157820074262541)
   - [「前端进阶」高性能渲染十万条数据(虚拟列表) - 掘金](https://juejin.cn/post/6844903982742110216)
+
+# cs
+
+- 《计算机程序的构造和解释》，简称 SICP。本书被广泛地认为是计算机科学的经典教材。原书使用Scheme语言，去年出了JavaScript版本。
+  - https://github.com/henryhu712/technote/tree/master/98.books/SICP
 # design-system-components
 - [How we use Web Components at GitHub](https://github.blog/2021-05-04-how-we-use-web-components-at-github/)
 - [8 Examples of Icon-Based Navigation, Enhanced with CSS and JavaScript](https://speckyboy.com/icon-based-navigation-css-javascript/)

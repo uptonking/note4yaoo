@@ -13,4 +13,8 @@ modified: 2022-11-16T16:07:48.527Z
 
 # ui-effects-examples
 
+## shimmer
+
+- https://github.com/gokcan/react-shimmer
+  - Async loading, performant Image component for React.js
 # more-effects

@@ -9,8 +9,18 @@ modified: 2021-07-24T08:14:45.182Z
 
 # guide
 
-# pieces
+# blogs
 
+# pandas
+
+- [pandas 2.0 and the Arrow revolution (part I)](https://datapythonista.me/blog/pandas-20-and-the-arrow-revolution-part-i)
+  - Python data structures (lists, dictionaries, tuples, etc) are very slow and can't be used.
+  - For many years, the main extension to represent arrays and perform operations on them in a fast way has been NumPy. And this is what pandas was initially built on.
+  - While NumPy has been good enough to make pandas the popular library it is, it was never built as a backend for dataframe libraries, and it has some important limitations. 
+    - A couple of examples are the poor support for strings and the lack of missing values.
+    - For some years now, while still relying heavely on NumPy, pandas has been slowly decoupling from it.
+    - A couple of important milestones were the addition of an API to implement Extension Arrays for pandas in 2018.
+    - Another important milestone was the implementation of a string data type based on Arrow that started in 2020.
 # changelog
 
 ## [Introducing ADBC: Database Access for Apache Arrow_202301](https://arrow.apache.org/blog/2023/01/05/introducing-arrow-adbc/)

@@ -10,6 +10,27 @@ modified: 2021-08-22T07:29:34.045Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 使用飞书的时候查看图片不是用mac自带的“预览”，而是在飞书自己的窗口中打开，
+- https://twitter.com/TooooooBug/status/1630761293924945920
+  - 导致一些常用的图片操作都不能很顺利地进行，甚至OCR识别也不行（尽管飞书也加了这个能力，但不是很灵光）。一开始非常非常不理解，但这两天突然想明白为什么要这么做了
+- 主要是为了实现撤回对方哪怕打开查看了也不可见的目的吧，如果用本机的程序预览，就很难做到这个技术实现了。
+- 可以审计图片的查看、传播链
+- 协同涂鸦
+- to B的软件不可以随意加审核删除的，这是企业的权利。另外像企业微信，用预览看图，如果撤回了图片，正在预览的图片也会消失的。
+
+- ## Notion 优化了走直线选不中子级菜的问题，想起之前 @height_app 的一篇关于 context menus 细节的文章。
+- https://twitter.com/leadream4/status/1629307997175549952
+  - 一般的解决方案是加一个延迟，但是更好的方式是增加三角安全区域，亚马逊和苹果都是这样处理的。
+  - [Breaking down Amazon's mega dropdown](https://bjk5.com/post/44698559168/breaking-down-amazons-mega-dropdown)
+  - [Building like it's 1984: A comprehensive guide to creating intuitive context menus - Height](https://height.app/blog/guide-to-build-context-menus)
+  - [Invisible details - Building contextual menus - Linear Blog](https://linear.app/blog/invisible-details).
+  - `clip-path` is a cool css property that lets you define a region of the component that should be drawn to the screen. In this case we use a polygon to draw a triangle.
+  - [MouseSafeArea.ts](https://gist.github.com/eldh/51e3825b7aa55694f2a5ffa5f7de8a6a)
+
 - ## GitHub is experimenting with interactive README components, called "blocks."
 - https://twitter.com/FredKSchott/status/1590438076677238784
   - https://blocks.githubnext.com/
@@ -19,14 +40,12 @@ modified: 2021-08-22T07:29:34.045Z
 - That's cool but i did it first, built with Astro
   - https://github.com/nikolaxhristov/nikolaxhristov
 
-
 - ## 想从零实现一个富文本编辑器是不是天坑……
 - https://twitter.com/waylybaye/status/1531463471371800576
 - https://github.com/Icemic/huozi.js
   - A simple typography engine for CJK languages, especially designed for game rich-text. 用于游戏富文本的中日韩文字排印引擎。
 - 活字 JS 应该能满足基础的 Web 排版自绘需求，或者 Skia 提供的 CanvasKit WASM 也能实现。自己从头做的话可利用 HarfBuzz 的 shaping 结果查找字形 glyph，自行将它们分多 run 在平面上放置并折行。
 - 我之前为了兼容性尝试做过一个canvas渲染纯文本显示的，坑太多了弃了，老老实实嵌入webview
-
 
 - ## Heptabase 面向未来的知识操作系统
 - https://sspai.com/post/71842

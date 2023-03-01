@@ -12,12 +12,50 @@ modified: 2022-11-03T04:14:11.987Z
   - minimongo
   - nedb
 
+- 偏向crud而不是查询的场景，考虑json patch
+
 - 更适合block-editor的数据结构是否是 mongodb？
-# mongodb-like
+# json-like
 - sift.js /1.6kStar/MIT/202211/ts
   - https://github.com/crcn/sift.js
   - Use Mongodb queries in JavaScript
   - Supports node.js, and web
+
+- https://github.com/protobi/query /202205/js/singleFile
+  - lightweight API to query Javascript arrays using MongoDB syntax in the browser and Node.js.
+  - This module originated as a proprietary module for Protobi core, implementing MongoDB syntax for Javascript data arrays.
+  - This API matches much of underscore-query's documentation, and the code passes most of unit tests in the underscore-query module.
+
+- https://github.com/jsonata-js/jsonata /202302/js
+  - https://jsonata.org/
+  - Reference implementation of the JSONata query and transformation language.
+  - Lightweight query and transformation language for JSON data
+  - Inspired by the location path semantics of XPath 3.1
+  - Format query results into any JSON output structure
+  - forks
+    - https://github.com/Stedi/jsonata
+
+- https://github.com/jmespath/jmespath.js /202201/js/inactive
+  - Javascript implementation of JMESPath, a query language for JSON
+- https://github.com/dchester/jsonpath /202104/js/inactive
+  - Query and manipulate JavaScript objects with JSONPath expressions. 
+  - Robust JSONPath engine for Node.js.
+
+- https://github.com/sanity-io/GROQ /js
+  - This is the specification for GROQ (Graph-Relational Object Queries), 
+  - a query language and execution engine made at Sanity.io, for filtering and projecting JSON documents. 
+
+- https://github.com/lgandecki/modifyjs /201803/js
+  - Modify your objects with a mongo like syntax. 
+  - This is based on a modify function of Meteor's brilliant minimongo package, cleaned up, rewritten to es6, changed to work without Meteor context
+
+- https://github.com/evinism/mistql
+  - A query / expression language for performing computations on JSON-like structures. 
+  - Tuned for clientside ML feature extraction.
+# mongodb-like
+- popular
+  - nedb
+  - minimongo
 
 - tingodb /1.1kStar/MIT/201901/js
   - https://github.com/sergeyksv/tingodb
@@ -86,10 +124,11 @@ modified: 2022-11-03T04:14:11.987Z
   - SQLite doesn't (by default) return native JS data types (Dates in particular)
   - We use Mingo for aggregation - currently lookup commands aren't supported.
 
-- https://github.com/protobi/query /202205/js/singleFile
-  - lightweight API to query Javascript arrays using MongoDB syntax in the browser and Node.js.
-  - This module originated as a proprietary module for Protobi core, implementing MongoDB syntax for Javascript data arrays.
-  - This API matches much of underscore-query's documentation, and the code passes most of unit tests in the underscore-query module.
+- https://github.com/anywhichway/joqular /201902/js
+  - JavaScript Object Query Language Representation - Funny it's mostly JSON.
+  - JOQULAR is a query language specification. 
+  - Like SQL, JOQULAR allows you to mutate the returned records to meet you needs.
+  - 不如json patch
 # db-document-json
 - redux-database /18Star/MIT/202005/ts/NoDeps
   - https://github.com/nerdgeschoss/redux-database

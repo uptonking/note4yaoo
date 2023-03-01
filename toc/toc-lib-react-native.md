@@ -16,8 +16,13 @@ modified: 2022-08-13T04:55:58.999Z
 # mobile-only
 
 # react-native-web
+- https://github.com/tamagui/tamagui
+  - The worlds fastest React UI kit also happens to work on Native + Web
+  - It does this with an optimizing compiler that outputs platform-specific optimizations
+
 - https://github.com/marklawlor/nativewind
   - React Native utility-first universal design system - powered by Tailwind CSS
+  - Styled components can be shared between all React Native platforms
 # react-electron
 - https://github.com/electron-react-boilerplate/electron-react-boilerplate
   - https://electron-react-boilerplate.js.org/

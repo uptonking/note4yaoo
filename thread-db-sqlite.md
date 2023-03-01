@@ -13,7 +13,11 @@ modified: 2021-08-25T14:05:18.280Z
 
 - ## 
 
-- ## 
+- ## [Excel formulas in SQLITE](https://sqlite.org/forum/info/b864443f494ba68b7598aed158260a621d5764bf659fb8d87994979cb2aafd5a)
+- SQLite isn't a spreadsheet program, it's functionality hardly overlaps with SS programs at all - but it can very well be the engine for one.
+- Most of the SS functions already exist in SQLite, with a bunch that are not in there by default but that are easy to add (such as Time-Value of Money), and then a specific section of functions/functionalities that are not in there and hard to add (like Graphing, Pivot Tables, etc.)
+- The focus of a SS program is very much user-interface-oriented, while the focus of SQLite is more Engine-oriented, and more in line with other Relational DB engines.
+- The code for Excel/Open Office/Libre Office Calc/etc. all dwarf( 使显得矮小/不重要；使相形见绌) that of SQLite by several magnitudes(重大；重要性) for good reason - they absolutely need all that GUI fat, which is Ok but also mean they can never match SQLite's testing regime. (In fact while they are all quite buggy, it's a miracle they are as relatively bug-free as they are, it's not a fault of their creators so much as a fault of their nature).
 
 - ##  Every. Single. Browser. already has sqlite3 baked into it, so the idea that we need a WASM version (no matter how cool) is just testament to the abject failure of browsers giving people what they need.
 - https://twitter.com/TheRealPomax/status/1613576564826079233

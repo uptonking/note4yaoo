@@ -15,6 +15,9 @@ modified: 2023-01-09T11:03:32.533Z
 
 # parser-generator
 
+## wasm
+- https://github.com/bokuweb/docx-rs
+  - A .docx file writer with Rust/WebAssembly.
 # extension-superset
 
 # utils
