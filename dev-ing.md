@@ -219,7 +219,7 @@ document.body.ownerDocument === document.body.getRootNode() // true
 - contextmenu event fires when the user attempts to open a context menu
   - not deprecated
 
-- [javascript - Difference between microtask and macrotask within an event loop context - Stack Overflow](https://stackoverflow.com/questions/25915634/difference-between-microtask-and-macrotask-within-an-event-loop-context)
+- [Difference between microtask and macrotask within an event loop context - Stack Overflow](https://stackoverflow.com/questions/25915634/difference-between-microtask-and-macrotask-within-an-event-loop-context)
   - Macro tasks include keyboard events, mouse events, timer events (setTimeout) , network events, Html parsing, changing Urletc. A macro task represents some discrete and independent work. micro task queue has higher priority so macro task will wait for all the micro tasks are executed first.
   - Microtasks, are smaller tasks that update the application state and should be executed before the browser continues with other assignments such as re-rendering the UI. Microtasks include promise callbacks and DOM mutation changes. Microtasks enable us to execute certain actions before the UI is re-rendered, thereby avoiding unnecessary UI rendering that might show an inconsistent application state.
   - Separation of macro and microtask enables the event loop to prioritize types of tasks; for example, giving priority to performance-sensitive tasks.

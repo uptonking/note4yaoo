@@ -12,7 +12,7 @@ modified: 2023-02-07T09:22:03.120Z
 - [人工智能的方向——NLP CV SR(语音识别) KG(知识图谱)](https://blog.csdn.net/qq_43165081/article/details/113790560)
 # sr-products
 
-## buzz
+## Whisper
 
 - https://github.com/openai/whisper /MIT/py/jupyter
   - Whisper is a general-purpose speech recognition model.

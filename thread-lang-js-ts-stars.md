@@ -16,6 +16,55 @@ modified: 2021-06-22T11:54:44.506Z
 
 - ## 
 
+- ## I really wish there were Promises in JS that could be evaluated sync. It’s a complex problem.
+- https://twitter.com/trueadm/status/1630739165045194752
+- For UI frameworks you want to allow the user to pass a promise, but ensure that if it is ready that you can render synchronously. But `T | Promise<T>` doesn’t compose the way promises do, so either you accept a perf/UX hit, create your own alternate async ecosystem, etc.
+  - I use a WeakMap for this. Only pass promise. Lookup resolution value sync via weakmap where you want to do this. Still agree though: custom thenables are great and Promise.resolve using them is great, async/await not using them sucks
+- This was discussed ad nauseum a decade ago. If you want sync promises try jQuery. Deferred.
+- https://github.com/abbr/deasync
+  - DeAsync turns async function into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. 
+  - The core of deasync is written in C++.
+- conclure js Using generators instead of promises allows for a LOT more flexibility, including cancellation, sync resolution, and better testing. The API is strictly the same as async/await
+
+- I definitely want eager await that resolves sync if the promise resolves sync. That’s more in the style of callbacks, and allows you to write a single api for both sync and async interfaces.
+  - I struggle with this issue in tuple-database. I want to write the same code that works for an async backend or a sync backend. I don’t want to create an intermediate query language…
+- My problem is actually pretty specific:
+  - For tuple-database, there's an async storage interface and a sync storage interface. 
+  - The sync interface is important if you want to use it for application state management and stuff. Or maybe you just want to use local storage...
+- Since the lowest level abstraction is either sync or async, it pollutes all the code above it which needs to be written to handle both cases.
+  - I looked into coroutines, higher-kinded types, monkey-patching promise... 
+  - My solution? Regex lol
+- Replicache is designed to be used for application state and it is async. We are religious about 60fps. Promises that resolve immediately *are* slower than sync code but we’re taking microseconds. It works great for 60fps in our experience.
+  - We have tons of customers in production using Replicache exactly this way (among them @vercel ) and it’s ~instant.
+- Yeah, you can definitely get away with async state management most of the time...
+  - I'm curious if that can get in the way of typing into an `<input>` if the input's value is updating async as you type...
+- Yes you can. We do this while animating at 60fps.
+  - We have many users who back input boxes by @replicache directly. It's a design goal of ours to enable this exactly. Try it out, I think it's an overlooked design pattern.
+- 👉🏻 关于架构层sync或async api的设计 
+  - The other nice thing about making the api to Replicache asynchronous is that it permits falling back to io as necessary. Many sync systems have this problem where these choose sync apis for perf but eventually data gets large and causes excessive gc.
+  - If the core API is async it can be up to the sync system to dynamically manage cache size. Replicache does this, lazily caching data from IDB and paging it out after awhile.
+- Getting into the weeds though: on iOS Safari, if you want to call focus() on an element to bring up the keyboard, it must be called synchronously in response to a user action event callback... Now, what if they press a button and you want to open a popup and focus the input?
+  - https://twitter.com/ccorcos/status/1631159120043835392
+  - In React, at least, you're going to want to update the state, synchronously re-render, and then call focus... This *could* work with a sync state update. Unfortunately, React's move towards async rendering throws a wrench in it. But the problem remains the same.
+- I am pretty sure it only needs to be called in the same task (queueing a microtask is fine). So if your data is in memory it will still work.
+
+```js
+const foo = await Promise.resolve("foo");
+
+// vs:
+
+const foo = await new Promise((res, rej) => setTimeout(res, 0));
+```
+
+- The first runs in *same turn* of event loop as calling code, guaranteed. Second gets queued in event loop.
+- Microtasks are crazy fast. All they are doing is delaying a function to run later in the turn of the event loop. No actual IO (to disk, network, whatever) can possibly get between the queuing of a microtask and its execution.
+- `setImmediate` is not part of the spec or implemented by browsers, but was meant to queue a task. So shorthand for `setTimeout(fn, 0)`.
+
+- Yeah, but my goal was to just have one system that can work either sync or async... Perhaps, that's not a great goal, but that's where I landed on these problems... If generators could have a typed yield (similar to  await), then my problem would be solved...
+- It's worked really surprisingly well for us. I think UI developers have a phobia of `async` because it often means 'network activity' in classic web apps. But that isn't actually what `async` means to the browser. It just means >= microtask.
+
+- This is good news. I’ve done cr-sqlite / vlcn as completely async (and had to part ways with collaborators over that decision) so this gives me some reassurance(肯定，保证).
+
 - ## [Suggestion: avoid `delete` keyword](https://github.com/ianstormtaylor/slate/issues/4425)
   - we could look at swapping set_node to do node[key] = undefined and improve performance instead of using delete node[key].
 - While this was once true (delete being slow), I think there's sufficient evidence that it's no longer a primary issue

@@ -14,6 +14,39 @@ modified: 2022-08-21T10:11:19.219Z
 
 - ## 
 
+- ## [keydown on a table inside a contentEditable div - Stack Overflow](https://stackoverflow.com/questions/26339719/keydown-on-a-table-inside-a-contenteditable-div)
+- Only elements that can receive focus (such as inputs and `contenteditable` elements) fire key events. This does not include elements within contenteditable elements.
+  - You can use the selection object to check where the caret is and therefore whether the key event originated from somewhere inside the table.
+
+- ## [Get element on which keydown happened in contenteditable - Stack Overflow](https://stackoverflow.com/questions/48346540/get-element-on-which-keydown-happened-in-contenteditable)
+  - I have a div that is contenteditable and that div has some contents p > em
+  - I want to intercept keydown events and find the element into which the users have tried to write.
+  - The event in the callback does not tell me which element has been written into, it only tells my I have written in #editable-div
+
+- Another way I found was to use a `MutationObserver` on the editable element
+
+```JS
+const observer = new MutationObserver(mutations => {
+  mutations.forEach(function(mutation) {
+    console.log(mutation.target);
+  });
+});
+
+const config = { characterData: true, subtree: true };
+const div = document.getElementById('editable-div');
+
+observer.observe(div, config);
+```
+
+- You could attach the keydown event to the body of your document. Then on keydown event, use document.activeElement to return the element which currently has focus and will receive the keyboard input.
+
+- [Capture keypress/down/up events on a descendant of contenteditable element - Stack Overflow](https://stackoverflow.com/questions/61068091/capture-keypress-down-up-events-on-a-descendant-of-contenteditable-element)
+
+- ## [contenteditable change event not fired - Stack Overflow](https://stackoverflow.com/questions/38444183/angular-contenteditable-change-event-not-fired)
+- The `change` event does not fire on all changes to the value of the DOM element. 
+  - The solution is to use the `input` event.
+  - Unlike the input event, the change event is not necessarily fired for each change to an element's value.
+
 - ## [The slowest part of TinyMCE: SaxParser](https://github.com/tinymce/tinymce/issues/7341)
 - What we're currently aiming for is a swap to the built-in browser DomParser then adding DomPurify to sanitise.
   - The problems you are describing seem to be more about how often the parser is run rather than an intrinsic performance issue with the parser itself. Micro-optimising things like how often a regex is compiled won't make any noticeable difference.

@@ -21,13 +21,28 @@ modified: 2022-08-21T10:16:52.004Z
   - https://github.com/worktile/slate-angular
   - https://www.zhihu.com/people/pubuzhixing/posts
 
-- 阿扎东
+- 阿扎东 /slate
   - editablejs, 自绘光标
   - https://github.com/big-camel
 
-- ccorcos notion
+- ccorcos /notion
   - https://github.com/ccorcos
   - https://github.com/ccorcos/prosemirror-examples
+
+- Saul-Mirone /milkdown
+  - https://github.com/Saul-Mirone/milkdown
+
+- ocavue /remirror
+  - https://github.com/ocavue
+  - Core team member at remirror
+  - https://github.com/ocavue/rino
+    - A better way to write Markdown
+
+- YousefED /BlockNote
+  - https://github.com/YousefED
+  - https://github.com/YousefED/BlockNote
+  - https://github.com/YousefED/Matrix-CRDT
+  - https://github.com/YousefED/SyncedStore
 
 - lastnigtic /syllepsis
   - https://github.com/lastnigtic
@@ -110,17 +125,10 @@ modified: 2022-08-21T10:16:52.004Z
   - 李健乐 金山 字节 syllepsis
   - [2021，挑战和机遇: 开源syllepsis](https://ede.ink/half_year_in_toutiao.html)
 
-- https://github.com/ocavue
-  - Core team member at remirror
-  - https://github.com/ocavue/rino
-    - A better way to write Markdown
-
-- https://github.com/YousefED
-  - https://github.com/YousefED/BlockNote
-  - https://github.com/YousefED/Matrix-CRDT
-  - https://github.com/YousefED/SyncedStore
-
 ## prosemirror-lovers
+
+- https://github.com/wenerme/wode
+  - https://wode.vercel.app/
 
 - https://github.com/namiwang
   - https://discuss.prosemirror.net/u/namiwang
@@ -129,15 +137,12 @@ modified: 2022-08-21T10:16:52.004Z
 - https://discuss.prosemirror.net/u/Julian123
   - 块编辑器
 
-- https://github.com/zlv-thisF?tab=stars
+- https://github.com/zlv-thisF
   - https://discuss.prosemirror.net/u/zlv-thisF
   - 块编辑器
 
 - https://github.com/herrdu
   - https://github.com/herrdu/DEditor
-
-- https://github.com/wenerme/wode
-  - https://wode.vercel.app/
 # more
 - [介绍在线文档、在线Excel等在线协作场景](https://www.zhihu.com/column/c_1412741892215459840)
  

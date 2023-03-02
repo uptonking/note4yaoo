@@ -9,6 +9,10 @@ modified: 2021-10-29T15:02:28.882Z
 
 > new marketable apps
 
+# guide
+
+- [The launchpad for YC startups](https://www.ycombinator.com/launches)
+
 # ideas-stars
 - ## storybook Component Encyclopedia is in beta
 - https://twitter.com/storybookjs/status/1491806826739941377

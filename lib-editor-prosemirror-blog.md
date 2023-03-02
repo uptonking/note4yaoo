@@ -99,100 +99,6 @@ modified: 2021-06-15T00:07:49.228Z
 - 我专门去看过有道云笔记的html，里面全部都是span+style，每个span都把所有的style写到里面去了。不知道这种做法算哪一类？可能存在什么问题
   - 对于一篇文章来说，html是提供了更加清晰，更语义化的标签的
   - 一般做富文本的话，文章内容是需要后台分析处理的，语义化的标签写正则会方便一些，span+style简直不敢想
-# [富文本编辑器Prosemirror - 入门_lastnigtic](https://zhuanlan.zhihu.com/p/263454334)
-- prosemirror-model：
-  - 负责prosemirror的内容结构。
-  - 定义了编辑器的文档模型，用于描述编辑器内容的数据结构，并实现了对编辑器内容的一原子的操作。
-  - 实现了一套索引系统，用于处理位置信息。
-  - 同时提供了从DOM -> ProsemirrorNode的Parser以及反向的Serializer。
-- prosemirror-transfrom：
-  - 负责对编辑内容的修改操作。文档的改动由step实现。
-  - transform基于step封装了一系列对内容进行操作的API。
-  - step执行了对文档内容的操作，通过StepMap记录了改动的信息，可用于追溯位置的变化。
-- prosemirror-state：
-  - 负责描述整个编辑器的状态。
-  - 包括文档内容，选区信息，所有的节点类型以及并基于Transform实现了Transaction，Transaction主要增加了对选区的管理以及状态记录。
-  - 同时提供了强大的插件系统，实现用户对状态更新流程干预的可能性。
-- prosemirror-view：
-  - 负责视图的渲染，实现了从state到视图的渲染。
-  - 监听或者劫持用户的操作并修正，并创建相应的对state的改动，最终比对dom与state的决定最终渲染结果。
-
-- prosemirror中渲染出的节点必须在Schema中有相应的定义，而Scheme中的可以定义的节点分为两种，node和mark，
-- node即为常规意义上的节点，分为块级或者是行内
-- 定义一个'paragraph'节点：
-  - group表示其为block组；
-  - content表示其可以包含任意文字；
-  - parseDOM表示其解析`<p>xxx</p>`；
-  - toDOM表示其渲染为`<p>xxx</p>`，子节点从0的位置开始插入，更多的配置可以查看NodeSpec，
-  - content是一个类正则字符串，可以使用node的名称或者是group名。
-
-```js
-paragraph: {
-  group: "block",
-  content: "text*",
-  parseDOM: [{ tag: 'p' }],
-  toDOM(node) { return ['p', 0] },
-  attrs: {
-    align: {
-      default: 'left'
-    }
-  }
-}
-```
-
-- Mark主要作用于行内节点，用于给行内元素增加样式或者附加其他信息，
-  - 他不像Node会占据文档索引位置，更像是一种对文档描述的补充。
-
-```
-
-bold: {
-    parseDOM: [{tag: 'strong'}],
-    toDOM(node) { return ['strong', 0]},
-     attrs: {
-        align: {
-            default: 'left'
-        }
-    }
-}
-```
-
-- attributes对Node以及Mark都可以附加一些信息，但需要在初始化时定义好支持的属性
-- prosemirror的内容被描述成一棵树，他的特征属性（isBlock、isInline等）由我们所定义的节点特征来确定
-- Node的content由一个Fragment表示，Fragment的content则是由Node组成的数组，prosemirror通过这样嵌套形成的树形结构来描述一个文档。
-
-- prosemirror实现了一套索引系统用于表示文档中某个位置，主要分为两种：
-  - 第一种是比较像是访问DOM，利用content的数组的特性去访问节点，把文档当成一棵树去遍历。
-  - 第二种是强大的索引系统，把文档打平后的索引，prosemirror文档中的任何位置，都可以用一个唯一的整数表示。
-- 在prosemirror的索引系统中，把这棵树打平了，规定：
-  - 整个文档的第一个节点前的位置为 0。
-  - 进入或离开不是叶节点（即可以包含其他内容）的节点视为一个token。因此，如果文档以一个段落开头，则该段落的内容开头算作位置1。
-  - 文本节点中的每个内容都使做是一个token。
-  - 叶子节点（不能包含其他节点内容）也视作是一个token。
-- 按照这个规则，想象我们有一个指针，从开头0开始进入一个节点时索引加1，每越过一个文本内容加1，退出一个节点时也加1，通过这样的形式，就可以描述文档中的每个位置。
-
-- 我们来尝试修改文档的数据。我们来把官网的内容替换成Hello Prosemirror！。
-- 我们要做的可以是修改doc的content属性或者是直接修改文字内容亦或是删除内容后再插入，我们选择第一种方式来实现。
-- prosemirror中的数据更新实际上都是对state的修改，通过state提供的updateState的API接受一个新的state来更新state，
-  - 编辑器实例view中帮我封装好了这一步操作，对外暴露出来的API是dispatch。
-- 上面我们说到修改文档的操作是由prosemirror-transform来实现的，而prosemirror-state中的tr属性继承了transform，state又是作为prosemirror-view实例的一个属性。
-  - 所以更新操作都可以通过view来实现，翻阅API文档，看到`replaceRangeWith`这个API符合我们的需求，
-  - 根据上面的分析，实现节点替换的操作
-
-```JS
-const { dispatch, state } = view;
-const { schema, tr, doc } = state;
-const { paragraph } = schema.nodes;
-// 创建一个新的文本节点
-const textNode = schema.text('Hello Prosemirror!');
-const newParagraph = paragraph.create(undefined, textNode);
-// 触发更新
-dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
-```
-
-- transform对文档的操作都是通过step去实现，所以这一步实际上创建了一个`ReplaceStep`去修改文档。
-- step对文档的修改不一定是成功的，结果由`StepResult`表示，如果失败了会抛出一个TransformError，如果成功了，则会返回新的文档的内容，
-  - transform会把旧文档内容保存在`docs`属性中，新的应用到`doc`属性中，并把step保存在`steps`属性中，可以实现撤销的操作。最后通过dispatch更新到state。
-  - 因此，我们可以把`state.tr`可以看成是一个事务，每一个step可以看作是一次原子操作，通过dispatch提交事务并应用到state上生效，实现了对文档的修改。
 # [基于JavaScript的富文本编辑器](https://marvinsblog.net/post/2018-10-02-js-rich-text-editors/)
 
 > 本文是一篇关于编辑器原理和现有开发方案的综述，比较精简和全面
@@ -226,7 +132,7 @@ dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
   - Froala
 
 - 基于block的编辑器存在如何跨区选取的问题，一般需要编辑器来模拟
-# [探究富文本编辑器ProseMirror（一）绪论](https://marvinsblog.net/post/2018-10-06-prosemirror-1/)
+# [探究ProseMirror（一）绪论](https://marvinsblog.net/post/2018-10-06-prosemirror-1/)
 - 基于ContentEditable的传统编辑器
 - 传统的编辑器大都是基于HTML的ContentEditable特性做成的
   - ContentEditable其实是HTML元素的属性，若ContentEditable为true，那么浏览器会在相应的HTML元素所述内容区域内显示光标（Caret），允许用户使用鼠标和键盘对这些内容进行修改。
@@ -245,7 +151,7 @@ dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
   - 基于这种新方式的编辑器除了ProseMirror之外，还包括Medium.com的编辑器、Slate、CKEditor5等等。
 - 采用VirtualDOM有一个大前提，那就是所有需要更改DOM的操作，都需要经过VirtualDOM来协调。
   - 换句话说，所有DOM的状态变化都要经由VirtualDOM统筹协调。这为一些更高级的特性打开了大门，协同编辑是其中一个例子。
-# [探究富文本编辑器ProseMirror（二）文档结构](https://marvinsblog.net/post/2018-10-06-prosemirror-2/)
+# [探究ProseMirror（二）文档结构](https://marvinsblog.net/post/2018-10-06-prosemirror-2/)
 - ProseMirror采用类似VirtualDOM的方式来管理和协调用户交互以及DOM修改。
   - 可以给这个类似VirtualDOM的抽象层娶一个名字，叫做编辑浮层（Editing Surface），简称浮层。
   - 这个浮层要映射到DOM，所以必须也是树形结构，然后这个浮层在概念上又要贴合文本编辑
@@ -269,7 +175,7 @@ dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
 
 - HTML源代码可以看出是HTML树序列化成字符串的一种形式，使其可以易于编辑、保存和发送。
   - 如果给事物编号是一门学问，在于其一，你得知道如何表示事物；其二才轮到如何编号
-# [探究富文本编辑器ProseMirror（三）节点类型](https://marvinsblog.net/post/2018-10-26-prosemirror-3/)
+# [探究ProseMirror（三）节点类型](https://marvinsblog.net/post/2018-10-26-prosemirror-3/)
 - ProseMirror的文档（document）要遵从范式（schema）的要求，就像编程语言里面的一个值都有一个相对应的类型一样。
   - 范式规定了文档的结构，同时也规定的文档的节点类型。
   - 在每个ProseMirror的范式中，最基本的节点类型是文本节点（TextNode），也就是只包含文字。
@@ -308,7 +214,7 @@ dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
 - ResovledPos.index()返回当前节点在父节点中的索引。
 - ResovledPos.marks()返回当前文本节点上应用的标记集合。
 - 通过state.doc.selection.content()可以返回一个slice
-# [探究富文本编辑器ProseMirror（四）切割文档slice](https://marvinsblog.net/post/2018-10-28-prosemirror-4/)
+# [探究ProseMirror（四）文档slice](https://marvinsblog.net/post/2018-10-28-prosemirror-4/)
 - 只要给出起始位置的索引，以及结尾位置的索引，就可以获得文档的一部分切片（slice）。
   - 有的元素被切开了！这在HTML里面可是不允许的，于是要对其进行补全
 - 但是补全的标签不属于这个文档切片，所以不能算在其的长度里面。事实上，ProseMirror的文档切片，也就是Slice类型，有两个属性用来表示这些个补全的标签
@@ -317,7 +223,7 @@ dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
 - ProseMirror大量使用JavaScript的Array（数组）来存储文档内容。
   - 如果要获取一部分文档内容，其实就是从Array从切割一部分出来，使用的是`Array.prototype.slice()`方法，而这个方法执行的是浅拷贝(shallow copy)
 - 如果想要执行深拷贝（deep copy），一个简单的方法是使用ES6新增的`Object.assign()`方法
-# [探究富文本编辑器ProseMirror（五）管理改动](https://marvinsblog.net/post/2018-10-28-prosemirror-5/)
+# [探究ProseMirror（五）管理改动](https://marvinsblog.net/post/2018-10-28-prosemirror-5/)
 - ProseMirror是通过Step来管理文档的改动。
   - Step用来表示一个原子级的改动，既可以应用（apply）到现有文档之上，形成一个新的文档。
   - 又可以撤销（invert），把文档恢复到改动之前的状态。
@@ -335,8 +241,8 @@ dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
   - 跟这个相搭配的，Transaction （Transform的扩展类）用来管理针对EditorState的改动。
   - Transaction除了处理文档改动之外，还管理选取范围、当前使用标记集合、还有时间戳等等。
   - Transaction可以直接从EditorState的tr属性来生成。
-# [探究富文本编辑器ProseMirror（六）文档视图](https://marvinsblog.net/post/2018-11-10-prosemirror-6/)
-- ProseMirror文档在Web页面上的呈现是通过视图 来管理的。其中一个核心的类是EditorView
+# [探究ProseMirror（六）文档视图](https://marvinsblog.net/post/2018-11-10-prosemirror-6/)
+- ProseMirror文档在Web页面上的呈现是通过视图来管理的。其中一个核心的类是EditorView
   - 创建EditorView的时候必须指定文档状态
 - EditorView自身的DirectEditorProps 中的属性，以及Plugin集合提供的EditorProps 中的属性有重合的地方，到底依据哪个来决定视图的行为呢？
   - EditorView提供了一个someProp方法，可以按次序（先EditorView然后依次注册的Plugin集合）以一定的逻辑（不同属性逻辑不同）遍历Props集合，来决定视图的行为。
@@ -349,7 +255,7 @@ dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
   - ViewDesc决定了如何响应DOM事件，并形成相应的Transaction；
   - 另外当EditorState更新之后，ViewDesc又通过更新的EditorState来更新DOM结构。
   - 所以ViewDesc具有双向同步能力，从DOM中同步出ProseMirorr文档，反之亦然。
-# [探究富文本编辑器ProseMirror（七）编辑器状态](https://marvinsblog.net/post/2019-06-14-prosemirror-7/)
+# [探究ProseMirror（七）编辑器状态](https://marvinsblog.net/post/2019-06-14-prosemirror-7/)
 - pm-state通过EditorState.create来创建实例，而不是直接使用new EditorState。
   - 这是因为创建实例后，pm-state要对实例进行配置，所以需要一个包装函数。
   - 所谓配置，主要是把插件加载到状态集合中。
@@ -379,7 +285,7 @@ dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
 - Tansaction管理的状态的例子包括选段（Selection）、当前激活的标记集（storedMarks）等等。
 - EditorState的tr()方法可以创建一个针对当前状态的事务。EditorState的apply()方法可以提交一个事务。
   - 因为EditorState其实是插件的状态的集合，所以apply()其实是让每个插件返回一个更新状态，然后构成一个新的EditorState。
-# [探究富文本编辑器ProseMirror（八）视图的状态](https://marvinsblog.net/post/2019-06-15-prosemirror-8/)
+# [探究ProseMirror（八）视图的状态](https://marvinsblog.net/post/2019-06-15-prosemirror-8/)
 - 状态可以嵌套：
   - pm-model定义了文档模型，用来管理文档的状态
   - pm-state定义了编辑器状态类型（state），用来管理编辑器的状态，也就是文档状态加上插件状态。
@@ -439,7 +345,7 @@ dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
   - contentDOM就是在创建文档节点规格定义中toDOM属性中的0（空洞）所在位置。
 
 - 如何在视图描述和文档节点树之间同步呢？这用到了一个辅助类ViewTreeUpdater。
-  - ViewTreeUpdater基本上是采用深度遍历的方式来将视图描述同步到文档节点树的。
+  - ViewTreeUpdater 基本上是采用深度优先遍历的方式来将视图描述同步到文档节点树的。
 - 以文档标记（Marks）为例。ViewTreeUpdater有一个专门的syncToMarks()来将视图标记描述对应到文档节点的标记。
   - syncToMarks()要将文本节点的内容描述，放置到标记描述之下。
   - syncToMarks()是通过一个栈结构来实现这种效果的

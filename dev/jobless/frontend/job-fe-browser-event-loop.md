@@ -133,14 +133,18 @@ modified: 2021-10-10T09:18:01.462Z
   - 当await后的promise落定，此时给await提供值并恢复async函数执行的回调作为一个微任务被添加到队列
   - promise链式调用时，前一个回调落定后，后一个回调进入微任务队列
 # microtask vs macrotask
+- [Event loop: microtasks and macrotasks](https://javascript.info/event-loop)
+
 - macrotasks
   - setTimeout, setInterval, setImmediate, 
-  - requestAnimationFrame, 
-  - I/O, UI rendering
+  - I/O
+  - ~~UI rendering~~
+  - ~~requestAnimationFrame~~
+
 - microtasks
   - promise, queueMicrotask()
   - MutationObserver
-  - process.nextTick, 
+  - process.nextTick
 
 - event loop algorithm
   1. Dequeue and run the oldest task from the macrotask queue (e.g. “script”).
@@ -148,6 +152,7 @@ modified: 2021-10-10T09:18:01.462Z
   3. Render changes if any.
   4. If the macrotask queue is empty, wait till a macrotask appears.
   5. Go to step 1.
+
 - To schedule a new macrotask:
   - Use zero delayed `setTimeout(f)`: split a big calculation-heavy task into pieces
 - To schedule a new microtask
@@ -159,6 +164,12 @@ modified: 2021-10-10T09:18:01.462Z
 
 - All microtasks are completed before any other event handling or rendering or any other macrotask takes place.
   - it guarantees that the application environment is basically the same (no mouse coordinate changes, no new network data, etc) between microtasks.
+
+- `requestAnimationFrame` (rAF)'s callbacks are ... callbacks
+
+- Only one of macrotasks will get executed per event-loop iteration, selected at the first step
+
+- Also microtask are tasks, and their processing itself will also block the event loop like any other task
 
 ## [Difference between microtask and macrotask within an event loop context](https://stackoverflow.com/questions/25915634)
 

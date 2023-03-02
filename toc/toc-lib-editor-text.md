@@ -117,3 +117,6 @@ modified: 2021-07-27T15:12:39.959Z
 - https://github.com/Cotter45/proof_of_concept
   - little proof of concept for a type of wysiwyg editor #messycode
   - 前后端2个文件夹
+
+- https://github.com/oidoid/linear-text
+  - Linear Text is a graphical line-oriented text editor

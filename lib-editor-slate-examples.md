@@ -64,6 +64,7 @@ modified: 2023-02-05T19:03:12.723Z
   - dev-xp
     - 表格支持方向键
     - 表格不支持单元格选区
+    - 代码层支持合并单元格，没有示例
   - https://www.prezly.com/
     - Successful businesses need a fanbase. Use Prezly to build yours.
     - With Prezly, you can publish and share your content with your audience, directly. No algorithms, no middlemen, no BS.

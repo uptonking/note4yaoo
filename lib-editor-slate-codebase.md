@@ -12,14 +12,22 @@ modified: 2023-02-05T19:03:12.722Z
 - dev-to
   - createDraft + applyToDraft + finishDraft
   - toSlateRange, toDOMRange
+  - dirtyPath
+
+- prezly在最外层`Editable`组件上注册的事件有，onCut，onKeyDown
 
 # faq
 
 ## not-yet
 
-- 使用tree存储数据，还是使用map存储数据+关系，如何设计更好
+
+- contenteditable内的元素，mousedown可以触发，keydown不能触发
+  - 因为只有能够获取focus的元素才能触发key事件
 
 - 光标在斜体粗体文字边上时，选区对应的具体位置在里面还是外面
+
+- 使用tree存储数据，还是使用map存储数据+关系，如何设计更好
+
 
 ## answers
 - 🤔 输入字母时，为什么beforeinput的selection为5，onChange方法里的selection为6，何时更新的

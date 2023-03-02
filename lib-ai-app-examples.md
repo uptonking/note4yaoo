@@ -13,6 +13,8 @@ modified: 2023-02-08T07:20:48.475Z
 # popular
 
 # chatgpt
+- [free ChatGPT](https://freechatgpt.lol/)
+
 - https://github.com/lencx/ChatGPT /rust
   - ChatGPT Desktop Application (Mac, Windows and Linux)
   - 国内ip无法访问

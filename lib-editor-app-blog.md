@@ -253,3 +253,6 @@ modified: 2022-08-21T10:11:37.453Z
 - [VS Code、ATOM这些开源文本编辑器的代码实现中有哪些奇技淫巧？ - 知乎](https://www.zhihu.com/question/272156541/answers/updated)
 
 - [富文本编辑器框架ProseMirror、Slate和Lexical横向比较 - 掘金](https://juejin.cn/post/7140921781380415501)
+
+- [Web富文本编辑器演进 - 掘金](https://juejin.cn/post/7116899761340284936#heading-11)
+  - vscode 的编辑器（monaco）是基于L2实现的

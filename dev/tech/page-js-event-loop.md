@@ -10,10 +10,136 @@ modified: 2020-09-04T06:47:12.681Z
 # guide
 
 - ref
-  - [mdn: Concurrency model and the event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+# [w3c-spec: event loop processing model](https://html.spec.whatwg.org/multipage/webappapis.html#event-loop-processing-model)
+- Let oldestTask and taskStartTime be null.
+- If the event loop has a task queue with at least one runnable task, then:
+  - Set taskStartTime to the unsafe shared current time.
+  - Set oldestTask to the first runnable task in taskQueue, and remove it from taskQueue.
+  - Set the event loop's currently running task to oldestTask.
+  - Perform oldestTask's steps.
+  - Set the event loop's currently running task back to null.
+- Perform a microtask checkpoint.
+- Update the rendering: if this is a window event loop 
+- this event loop's microtask queue is empty
 
-# Concurrency model and the event loop
+- If this is a worker event loop, then:
+  - Run the animation frame callbacks for that DedicatedWorkerGlobalScope, passing in now as the timestamp.
+  - Update the rendering of that dedicated worker to reflect the current state.
+# [Why dont long running javascript promises block?](https://stackoverflow.com/questions/63356992/why-dont-long-running-javascript-promises-block)
+- It does block, for instance you may get blocked in a microtask checkpoint.
 
+```JS
+const block_loop = () => Promise.resolve().then(block_loop);
+
+document.getElementById('btn').onclick = evt => {
+  if (confirm("this will block this page")) {
+    block_loop();
+  }
+};
+```
+
+- This example won't block the task from where it came from, but since microtasks queued from the microtask endpoint will get queued inside the same microtask queue that is being emptied, you'll actually end up in an endless loop and the event loop won't be able to process any future task.
+- Also microtask are tasks, and their processing itself will also block the event loop like any other task
+
+# [Event loop: microtasks and macrotasks](https://javascript.info/event-loop)
+- Browser JavaScript execution flow, as well as in Node.js, is based on an event loop.
+- The event loop concept is very simple. There’s an endless loop, where the JavaScript engine waits for tasks, executes them and then sleeps, waiting for more tasks.
+- The general algorithm of the engine:
+  - While there are tasks:
+    - execute them, starting with the oldest task.
+  - Sleep until a task appears, then go to 1.
+- Examples of tasks:
+  - When an external script `<script src="...">` loads, the task is to execute it.
+  - When a user moves their mouse, the task is to dispatch `mousemove` event and execute handlers.
+  - When the time is due for a scheduled `setTimeout`, the task is to run its callback.
+- The tasks form a queue, so-called “macrotask queue” (v8 term)
+  - Tasks from the queue are processed on “first come – first served” basis
+- Rendering never happens while the engine executes a task. 
+  - It doesn’t matter if the task takes a long time. 
+  - Changes to the DOM are painted only after the task is complete.
+- If a task takes too long, the browser can’t do other tasks, such as processing user events. 
+  - So after a time, it raises an alert like “Page Unresponsive”, suggesting killing the task with the whole page. That happens when there are a lot of complex calculations or a programming error leading to an infinite loop.
+
+## Use-case 1: splitting CPU-hungry tasks
+
+- For example, syntax-highlighting (used to colorize code examples on this page) is quite CPU-heavy.
+  - To highlight the code, it performs the analysis, creates many colored elements, adds them to the document – for a large amount of text that takes a lot of time.
+- We can avoid problems by splitting the big task into pieces. Highlight first 100 lines, then schedule setTimeout (with zero-delay) for the next 100 lines, and so on.
+
+```JS
+let i = 0;
+let start = Date.now();
+
+// A single run of count does a part of the job (*), and then re-schedules itself (**) if needed:
+function count() {
+
+  // do a piece of the heavy job (*)
+  do {
+    i++;
+  } while (i % 1e6 != 0);
+
+  if (i == 1e9) {
+    alert("Done in " + (Date.now() - start) + 'ms');
+  } else {
+    setTimeout(count); // schedule the new call (**)
+  }
+
+}
+
+count();
+```
+
+```JS
+let i = 0;
+let start = Date.now();
+
+// it takes significantly less time.
+function count() {
+
+  // move the scheduling to the beginning
+  if (i < 1e9 - 1e6) {
+    setTimeout(count); // schedule the new call
+  }
+
+  do {
+    i++;
+  } while (i % 1e6 != 0);
+
+  if (i == 1e9) {
+    alert("Done in " + (Date.now() - start) + 'ms');
+  }
+
+}
+
+count();
+```
+
+- there’s the in-browser minimal delay of 4ms for many nested setTimeout calls. Even if we set 0, it’s 4ms (or a bit more). So the earlier we schedule it – the faster it runs.
+
+## Use case 2: progress indication
+
+- changes to DOM are painted only after the currently running task is completed, irrespective of how long it takes.
+- If we split the heavy task into pieces using setTimeout, then changes are painted out in-between them.
+
+## Use case 3: doing something after the event
+
+- In an event handler we may decide to postpone some actions until the event bubbled up and was handled on all levels. We can do that by wrapping the code in zero delay setTimeout.
+- 💡 Immediately after every macrotask, the engine executes all tasks from microtask queue, prior to running any other macrotasks or rendering or anything else.
+  - order: macrotask > microtasks (~~> macrotask~~) > render > macrotask
+  - Only one of macrotasks will get executed per event-loop iteration, selected at the first step
+- All microtasks are completed before any other event handling or rendering or any other macrotask takes place.
+  - That’s important, as it guarantees that the application environment is basically the same **(no mouse coordinate changes, no new network data, etc) between microtasks**.
+- There’s no UI or network event handling between microtasks: they run immediately one after another.
+
+- event loop algorithm
+  1. Dequeue and run the oldest task from the macrotask queue (e.g. “script”).
+  2. Execute all microtasks: While the microtask queue is not empty: Dequeue and run the oldest microtask.
+  3. Render changes if any.
+  4. If the macrotask queue is empty, wait till a macrotask appears.
+  5. Go to step 1.
+
+- For long heavy calculations that shouldn’t block the event loop, we can use Web Workers.
+# [mdn: Concurrency model and the event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
 - JavaScript has a concurrency model based on an event loop, which is responsible for executing the code, collecting and processing events, and executing queued sub-tasks. 
   - This model is quite different from models in other languages like C and Java.
 - Function calls form a stack of frames.

@@ -128,6 +128,23 @@ modified: 2022-11-08T19:04:00.289Z
     - This sync method is not as robust as operational transformation, but it only stores a little data in addition to the object and is much simpler
     - It does not handle adding/removing array items, though entire arrays can be set. 
     - It should work great for documents that don't need merging text like Figma
+
+- https://gitee.com/modstart-lib/ueditor-plus
+  - https://open-demo.modstart.com/ueditor-plus/_examples/
+  - 功能丰富，中文友好
+# flat/linear-editors
+- https://github.com/NickStefan/tome-editor /201512/js
+  - A hidden Input is the user input
+  - we use a 'range based' data model, and then serialize it into a tree only for rendering purposes.
+  - 
+
+- https://github.com/simplygreatwork/textbase /202105/js
+  - https://simplygreatwork.github.io/textbase/
+  - Textbase is a clean, simple, composable, event-driven, rich text editor framework for the web which can be extended with custom block and inline elements in a non-opinionated manner.
+  - Aim to follow the concept that flat is better than nested.
+  - This project does not use document.executeCommand. All editing is achieved by manipulating the DOM directly.
+  - This project does not yet use a JSON data model. It's quite simple and uses HTML DOM nodes as the model.
+  - This project does not yet support collaboration
 # open-editors
 - canvas-editor /112Star/MIT/202301/ts/几乎无依赖
   - https://github.com/Hufe921/canvas-editor
@@ -182,6 +199,10 @@ modified: 2022-11-08T19:04:00.289Z
   - Mobiledoc Kit is a framework-agnostic library for building WYSIWYG editors supporting rich content via cards.
   - Posts are serialized to a JSON format called Mobiledoc instead of to HTML.
   - Mobiledoc is a deliberately simple and terse format, and you are encouraged to write your own renderer if you have other target output formats (e.g., a PDF renderer, an iOS Native Views Renderer, etc.).
+  - [Collaboration](https://github.com/bustle/mobiledoc-kit/issues/429)
+    - 暂无计划支持协作
+    - Currently, the Mobiledoc format explicitly does not contain any data that is editing-specific. Only presentation-specific data is stored. Adding cursor position, and even possible document history, to the persistence format itself would be a significant change. This isn't a blocker, however it does highlight that we may be best served by a two-channel system, an edits format and a document format. Or perhaps not.
+    - We should talk about the design of an API for altering Mobiledoc, and how we could build that library as a stand-alone lib for the Mobiledoc-Kit editor to consume. I hope this would let us decouple the issue of how to decouple Mobiledoc-Kit's UI and AST code from the issue of how to create a CRDT Mobiledoc.
 
 - edtr-io /696Star/MIT/202206/ts
   - https://github.com/edtr-io/edtr-io

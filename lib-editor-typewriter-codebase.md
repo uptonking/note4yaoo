@@ -30,11 +30,15 @@ modified: 2023-02-09T12:26:14.281Z
 
 ## model/TextDocument/Delta
 
-- typewriter的delta结构就是一系列op集合和操作，非常类似经典OT算法
+- typewriter的delta就是一系列op操作集合构成的flat/linear线性结构
+  - op的内容非常类似经典OT算法
 
 - 模型中的数据editor.doc并不会包含所有op记录，只包含insert，不包含delete/retain
   - 和quill的parchment结构非常类似，都只包含insert
   - 带格式的富文本会
+
+- delta无法直观的看出一行block的起点在哪里
+  - TextDocument将\n作为分隔符，拆分出了一个段落的op作为分隔符
 
 ## view/render
 
