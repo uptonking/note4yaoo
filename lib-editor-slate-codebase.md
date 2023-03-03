@@ -13,13 +13,14 @@ modified: 2023-02-05T19:03:12.722Z
   - createDraft + applyToDraft + finishDraft
   - toSlateRange, toDOMRange
   - dirtyPath
+  - decoarate
 
 - prezly在最外层`Editable`组件上注册的事件有，onCut，onKeyDown
 
+- 很多编辑器框架都有先从options/plugins中收集依赖，然后再将分类过的props传入Editable组件的逻辑，如atlaskit、taze
 # faq
 
 ## not-yet
-
 
 - contenteditable内的元素，mousedown可以触发，keydown不能触发
   - 因为只有能够获取focus的元素才能触发key事件
@@ -28,8 +29,8 @@ modified: 2023-02-05T19:03:12.722Z
 
 - 使用tree存储数据，还是使用map存储数据+关系，如何设计更好
 
-
 ## answers
+
 - 🤔 输入字母时，为什么beforeinput的selection为5，onChange方法里的selection为6，何时更新的
   - 首先确认更新范围，onChange执行后useEffect才执行将 slateSel-TO-domSel，所以更新sel发生在渲染前
   - 排查定位到，执行op `insert_text`时，顺便就把selection更新了

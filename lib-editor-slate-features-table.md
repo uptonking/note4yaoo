@@ -23,6 +23,7 @@ modified: 2023-02-27T19:07:31.111Z
 - 按键、光标、选区
   - tab/shift+tab键移动选区到下/上一个单元格
   - ？ enter键在单元格内换行(~~还是新建一行~~)
+  - 选择单元格内容
 
 - header-menu
   - readonly

@@ -9,6 +9,132 @@ modified: 2020-12-08T13:27:35.701Z
 
 # blog-solidjs
 
+## [SolidJS · Reactive Javascript Library](https://www.solidjs.com/guides/reactivity#how-it-works)
+
+- Solid is made up of 3 primary primitives: Signal, Memo, and Effect. 
+  - At their core is the Observer pattern where Signals (and Memos) are tracked by wrapping Memos and Effects.
+
+- Signals are event emitters that hold a list of subscriptions. They notify their subscribers whenever their value changes.
+
+- The trick is a global stack at runtime. 
+  - Before an Effect or Memo executes (or re-executes) its developer-provided function, it pushes itself on to that stack. 
+  - Then any Signal that is read checks if there is a current listener on the stack and if so adds the listener to its subscriptions.
+
+## [Building a Reactive Library from Scratch - DEV Community](https://dev.to/ryansolid/building-a-reactive-library-from-scratch-1i0p)
+
+- [A Hands-on Introduction to Fine-Grained Reactivity - DEV Community](https://dev.to/ryansolid/a-hands-on-introduction-to-fine-grained-reactivity-3ndf)
+
+- Fine-grained reactive systems execute their changes synchronously and immediately. 
+  - They aim to be glitch-free in that it is never possible to observe an inconsistent state. 
+  - This leads to predictability since in any given change code only runs once.
+- Fined-grained reactive libraries use a hybrid push/pull approach to maintain consistency. 
+  - They are not purely "push" like events/streams, nor purely "pull" like generators.
+
+```JS
+// singals core contains a getter and setter 
+export function createSignal(value) {
+  const read = () => value;
+  const write = (nextValue) => value = nextValue;
+  return [read, write];
+}
+```
+
+```JS
+// Signals are event emitters.
+
+// a global context stack that will be used to keep track of any running Reactions or Derivations
+const context = [];
+
+function subscribe(running, subscriptions) {
+  subscriptions.add(running);
+  running.dependencies.add(subscriptions);
+}
+
+export function createSignal(value) {
+  // each Signal has its own subscriptions list.
+  const subscriptions = new Set();
+
+  const read = () => {
+    const running = context[context.length - 1];
+    if (running) subscribe(running, subscriptions);
+    return value;
+  };
+
+  const write = (nextValue) => {
+    value = nextValue;
+
+    // clone the subscriptions list so that new subscriptions added in the course of this execution do not affect this run
+    for (const sub of [...subscriptions]) {
+      sub.execute();
+    }
+  };
+  return [read, write];
+}
+
+// Every cycle we unsubscribe the Reaction from all its Signals and clear the dependency list to start new
+function cleanup(running) {
+  for (const dep of running.dependencies) {
+    dep.delete(running);
+  }
+  running.dependencies.clear();
+}
+
+export function createEffect(fn) {
+
+  const running = {
+    execute,
+    dependencies: new Set()
+  };
+
+  const execute = () => {
+    // This allows us to dynamically create dependencies as we run each time. 
+    cleanup(running);
+    context.push(running);
+    try {
+      fn();
+    } finally {
+      context.pop();
+    }
+  };
+
+  execute();
+}
+
+// usage
+const [count, setCount] = createSignal(0);
+createEffect(() => console.log("The count is", count()));
+setCount(5);
+```
+
+```JS
+export function createMemo(fn) {
+  const [s, set] = createSignal();
+  createEffect(() => set(fn()));
+  return s;
+}
+```
+
+- There are two main things we are managing. 
+  - there is a global context stack that will be used to keep track of any running Reactions or Derivations. 
+  - In addition, each Signal has its own subscriptions list.
+- These 2 things serve as the whole basis of automatic dependency tracking. 
+  - A Reaction or Derivation on execution pushes itself onto the context stack. 
+  - It will be added to the subscriptions list of any Signal read during that execution. 
+  - We also add the Signal to the running context to help with cleanup
+- Finally, on Signal write in addition to updating the value we execute all the subscriptions. 
+
+- This is how libraries like KnockoutJS from the early 2010s worked.
+
+## [Why I'm not a fan of Single File Components - DEV Community](https://dev.to/ryansolid/why-i-m-not-a-fan-of-single-file-components-3bfl)
+
+- The crux of the problem with restricting files to a single component is we only get a single level of state/lifecycle to work with. 
+  - It can't grow or easily change. 
+  - It leads to extra code when the boundaries are mismatched and cognitive overhead when breaking apart multiple files unnecessarily.
+- Most libraries even non-SFC ones, don't support nested syntax though. 
+  - React for instance doesn't allow nesting of Hooks or putting them under conditionals. 
+  - And most SFCs don't really allow arbitrary nested JavaScript in their templates. 
+  - MarkoJS might be the only SFC one that I'm aware of supporting Macros(nested components) and inline JS, but that is far from the norm.
+
 ## [Introducing the SolidJS UI Library_202003](https://dev.to/ryansolid/introducing-the-solidjs-ui-library-4mck)
 
 - SolidJS is a declarative UI library for building web applications, much like React, Angular, or Vue. 
@@ -117,9 +243,7 @@ modified: 2020-12-08T13:27:35.701Z
 - React had all the strong principals, and vision but the implementation incompatibility would likely never be bridged.
 - Vue is a large library that has to cater to people of all backgrounds.
 - If you are interested in a library that has the discipline of React, transparent implementation that doesn't cut corners for easiness, and all the performance to back it up, maybe SolidJS is the library for you.
-
 # ref
-
 - [Designing SolidJS: Components](https://t.co/JBBZSaanu1?amp=1)
 - [Designing SolidJS: JSX](https://t.co/Y3MQ34um1R?amp=1)
 - [Designing SolidJS: Reactivity](https://t.co/P9aD3WHBZe?amp=1)

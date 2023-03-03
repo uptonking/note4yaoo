@@ -63,6 +63,7 @@ modified: 2023-02-05T19:03:12.723Z
   - 悬浮工具条使用卡片的形式
   - dev-xp
     - 表格支持方向键
+    - 单元格内容有时不会自动换行，只显示一行
     - 表格不支持单元格选区
     - 代码层支持合并单元格，没有示例
   - https://www.prezly.com/
@@ -151,6 +152,7 @@ modified: 2023-02-05T19:03:12.723Z
   - http://taze-editor.vercel.app/
   - Create your own plugin-based rich text editor easily
   - built on top of Slate and heavily inspired by Plate.
+  - 依赖zustand
 
 - circu /1Star/MIT/202211/ts/blocksuite
   - https://github.com/Flrande/circu

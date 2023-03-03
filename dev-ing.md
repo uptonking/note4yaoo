@@ -128,6 +128,8 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - crdt tutorials
   - 腰包掉到床头版与墙的夹缝中了
   - 默认last-write-win, 出现冲突时，提示用户选择版本
+  - 离屏渲染，keep-alive
+  - 分层渲染
 # dev-03
 
 ## 030
@@ -135,7 +137,7 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 - dev-to
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
-  - 选区问题修复, domSelToSlateRange
+  - 测试光标进出表格
 
 ## 0301
 

@@ -340,6 +340,22 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/conclave-team/conclave
   - CRDT and WebRTC based real-time, peer-to-peer, collaborative text editor
+# last-write-win/llw
+- https://github.com/ymlsam/lww-element-dict
+  - a LWW key-value store, a conflict-free replicated data type (CRDT) implemented in Typescript/Javascript
+  - State-based or operation-base replication
+  - Abstraction of clock (e.g. unix timestamp clock or vector clock)
+  - Abstraction of data store (e.g. in memory via Map or object literal, cookie, local storage, database, etc.)
+
+- https://github.com/siliconjungle/last-writer-wins-registers
+  - An example with a few different last-writer-wins registers.
+
+- https://github.com/mazsam/Last-Write-Wins-Element-Set
+  - LWW Element Set 
+  - https://github.com/petukhov/GN-LWWSet
+  - https://github.com/ywchan2005/conflict-free-replicated-data
+- https://github.com/3rnii/crdt-lww
+  - create a CRDT (conflict free replicated data type) LWW (last write wins) set.
 # crdt-utils
 - https://github.com/danielstaleiny/CRDT-sqlite
   - 依赖 idb

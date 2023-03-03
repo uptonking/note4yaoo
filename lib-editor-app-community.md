@@ -47,9 +47,15 @@ observer.observe(div, config);
   - The solution is to use the `input` event.
   - Unlike the input event, the change event is not necessarily fired for each change to an element's value.
 
-- ## [The slowest part of TinyMCE: SaxParser](https://github.com/tinymce/tinymce/issues/7341)
+- ## [The slowest part of TinyMCE: SaxParser_202110](https://github.com/tinymce/tinymce/issues/7341)
 - What we're currently aiming for is a swap to the built-in browser DomParser then adding DomPurify to sanitise.
-  - The problems you are describing seem to be more about how often the parser is run rather than an intrinsic performance issue with the parser itself. Micro-optimising things like how often a regex is compiled won't make any noticeable difference.
+  - The problems you are describing seem to be more about how often the parser is run rather than an intrinsic performance issue with the parser itself. 
+  - Micro-optimising things like how often a regex is compiled won't make any noticeable difference.
+- We chose slate for mostly other reasons than performance we needed a model that would support all the complexity that a full featured editor like tinymce needs and we did look at other engines in the evaluation process during the planning phase. 
+  - Some of these other models have a very flat design probably making them faster but also less flexible.
+  - Performance is a balance it's all what you are willing to trade. Compatibility, flexibility, future proofing all comes into play.
+
+
 
 - ## ACE2 is EtherPad's editor, a content-editable-based rich text editor. 
 - https://news.ycombinator.com/item?id=18371309

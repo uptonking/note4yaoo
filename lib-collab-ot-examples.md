@@ -128,6 +128,9 @@ modified: 2022-10-02T20:51:30.444Z
     - doesn't support moving child values from one object to another
     - Set if null (object insert with first writer wins semantics)
     - Efficient list insert-of-many-items
+  - uses the list-of-op-components model, where each operation makes a series of individual changes to a document.
+    - Joseph now thinks this is a terrible idea because it doesn't scale well to large operations - it has N2 instead of 2N complexity.
+    - rewriting this library to instead make each operation be a sparse traversal of the document. 
 
 - https://github.com/vitotafuni/JSOTTEST
   - http://vitotafuni.github.io/jsottest/

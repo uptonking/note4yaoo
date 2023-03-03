@@ -17,7 +17,7 @@ modified: 2020-12-19T13:04:40.865Z
   - The Next.js like React framework for better User & Developer experience!
   - Vitext (Vite + Next) is a lightning fast SSG/SSR tool that lets you develop better and quicker front-end apps.
 
-- https://github.com/winwiz1/crisp-react
+- https://github.com/winwiz1/crisp-react /202201/ts
   - Crisp React can optionally split a monolithic React app into multiple Single Page Applications (SPAs) and selectively prerender the landing/index page of any SPA at the build time.
   - Helps to split a monolithic React app into multiple SPAs and avoid vendor lock-in.
   - in each SPA the routing is managed by a separate instance of React Router 

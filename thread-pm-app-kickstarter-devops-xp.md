@@ -19,12 +19,6 @@ modified: 2022-11-07T11:00:28.824Z
 - Both agree and disagree w/ this.
   - Building a "boring" business on top of the latest wave is a great way to guarantee at least some attention – which imho will become the scarcest resource as time ⇒ ∞
 - I don’t think the second one can survive, because the CRM moment long happened and all the alpha is eaten. Soon horizontal software like Notion will eat CRMs, these products are so mature. Vertical software “practice management” software is generally fully mature.
-# discuss
-- ## 
-
-- ## 
-
-- ## 
 
 - ## 独立开发者怎么找机会
 - https://twitter.com/JourneymanChina/status/1630885515464708097
@@ -35,6 +29,31 @@ modified: 2022-11-07T11:00:28.824Z
 - 然后，再从自身能力/市场规模/竞争程度等维度分析
 - 最后，不用多想，干就完了!
 
+# discuss
+- ## 
+
+- ## 
+
+- ## 今天被 ChatGPT API 刷屏了, 研究后发现几点有意思的:
+- https://twitter.com/CongZhangDev/status/1631535330569621505
+  1. ChatGPT 官方声称不会存储用户数据, 那么聊天上下文怎么实现呢? 答案是: 要问新问题时需要把之前的聊天记录都带上一起发送. 没想到实现的这么粗暴, 但有效.
+  2. 这样服务端也顺理成章得变成了无状态, 做过后端都知道无状态比有状态要省心多少
+  3. API 使用 token (简单理解成与字数成正比)数量收费 $0.002 / 1K tokens, 如果每次请求都需要发送之前的聊天记录, 费用可想而知, 还需要考虑后续请求包大小等问题, 但 API 有个限制: 每次请求上限为 4096 tokens, 所以单请求最多花费 $0.008
+  4. 又引入新问题, 当聊天记录上下文多于 4096 时应该舍弃哪些信息? 完全交给了使用者
+  5. 技术永远是做权衡, 确定的系统复杂度不会消失, 只会从一个模块转移到另一个模块
+
+- JS sdk 已经火速跟进并处理了上下文截取问题
+- 
+- 
+- 
+
+
+- ## Whisper 也有 API 了，每分钟4分钱人民币，也很便宜，语音转文本，方便后续做翻译/总结等处理。
+- https://twitter.com/oran_ge/status/1631065155629903872
+- 开源免费的Buzz就可以，Buzz用了openAI的开源whisper模型，本地化转录
+
+
+
 - ## 今天研究了下 OpenAI api 的收费模式，按照 token 使用收费，不同的 PROMPT 消耗的 token 不同，很有意思
 - https://twitter.com/yihong0618/status/1630753514380226562
 - 这不是很常见的 saas 收费模式吗，usage based
@@ -42,6 +61,11 @@ modified: 2022-11-07T11:00:28.824Z
   - 不同模型的收费标准不同，目前已开放的模型中，效果最好的是 Davinci ，当然他也是最贵的。除了直接调用，还可以基于已有的基础模型训练自己的模型，不过这种就更贵了
 - 目前有两个账号赠送的18美金已经用完。实测Davanci赠送的18美金额度可以支撑一千次左右对话。text-davanci-003的回复相对都比较简单，没有ChatGPT详细。可能也是在帮客户省钱。
 - 我司开发的小程序“WorkAI问答助手”，把token转换了一下卖AI币，提成20%的样子，感觉不赚钱
+
+- https://twitter.com/novoreorx/status/1631483298701770752
+  - 研究了一下午ChatGPT API, 发现坑点有两个, 一个是token计算是双向收费的, 也就是你发给他的和他发给你的加起来一起收费; 另一个就是它不能自动维护对话, 每次要把所有的对话内容+新增内容一起发给他...... 也就是说几个来回对话很快就能消耗大量的费用.
+- 但它最多接受四千多个token作为输入吧，所以越早的消息都被丢弃了，不过每次一来一回也不少了
+- 是故意的，其实它没有实现服务端会话，我理解是因为这样会引入服务的复杂度，他们不大想搞，就把这个成本转嫁到了用户侧，还好费用降低了 10 倍，这么算如果消息长度比较平均的话，10条内的会话还是比之前划算的，超出这个阈值就比之前贵
 
 - ## 美国区App Store榜前三全是中国公司，前六有四家中国公司
 - https://twitter.com/janlay/status/1627996382979309568

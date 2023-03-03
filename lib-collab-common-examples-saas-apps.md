@@ -238,6 +238,10 @@ modified: 2023-01-17T19:14:47.611Z
   - A library for using React with Earthstar, a library for building syncing, decentralised online tools.
 - https://github.com/earthstar-project/earthstar
   - Earthstar is a specification and Javascript library for building online tools you can truly call your own.
+
+- https://github.com/google/ot-crdt-papers
+  - This repository will hold papers Raph Levien is writing on technologies for collaborative text editing, in particular at the intersection of Operational Transformation and Conflict-free Replicated Data Types (CRDT's).
+  - It also holds a prototype implementation in JavaScript, using socket.io.
 # more
 - https://github.com/linagora/Twake
   - 后端php

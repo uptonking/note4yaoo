@@ -21,7 +21,12 @@ modified: 2023-02-05T19:03:12.722Z
 
 - ## 
 
-- ## 
+- ## [tinymce: execCommand() is deprecated. What will TinyMCE do?_202203](https://github.com/tinymce/tinymce/discussions/7718)
+- This API has been deprecated for a long time. Many many websites depend on it, it's not going away anytime soon. 
+  - Having said that the majority of the calls to execCommand within the TinyMCE codebase are handled internally not by the browser. 
+  - We might look at renaming the method in a future release to clear up this confusion.
+  - Our long-term plan to address this deprecation is the new editor model developed for real-time collaboration: https://www.tiny.cloud/blog/real-time-collaborative-editing-slate-js/
+  - Once the model is ready for general use it will be added to our open source offering and the plan is it will eventually become the default for TinyMCE.
 
 - ## [Store paths instead of keys on selection data for `set_selection` operations](https://github.com/ianstormtaylor/slate/issues/1567)
 - In a collaborative environment, keys can appear and disappear, but paths can be transformed and stay valid. In order to support both collaboration and undo / redo, set_selection needs to store both the old selection and the new selection as paths, instead of keys.
@@ -74,14 +79,19 @@ modified: 2023-02-05T19:03:12.722Z
 - plate提供了参考方案
   - https://www.npmjs.com/package/@udecode/plate-node-id
 
+- ## [Collaborative editing](https://github.com/ianstormtaylor/slate/issues/259)
+- I've started some preliminary exploration of a slate-ottype library
+- The rich-text ottype isn't quite expressive enough to encode a Transform object, because it's limited to just insert, delete, and retain (format). It's fundamentally a string with attributed ranges rather than a tree structure.
+- The json0 ottype isn't sufficient to granularly express the operations indicated by a Transform object. As a list of operations, however, it seems like a relevant starting point.
+- Comparing the approaches taken by rich-text and json0, I quite like the "sparse traversal" format of a rich-text delta over the "list of operations" format of json0 as a way to encode a changeset. The time complexity of a "sparse traversal" should be lower than that of a "list of operations" implementation. 
+- If taking the "list of operations" approach, is seems like there needs to be a transform function for each pair of fundamental operation types. With 13 different operations (addMark, insertNode, insertText, joinNode, moveNode, removeMark, removeNode, removeText, setMark, setNode, setSelection, splitNodeAtOffset, splitNode), that's 78 different functions (13 choose 2)! Is that right? Maybe there are some shortcuts or symmetry to take advantage of.
+
 - ## [switch from immutablejs to plain JSON models_201812](https://github.com/ianstormtaylor/slate/issues/2495)
 - [consider migrating from Immutable.js "Records" to plain objects](https://github.com/ianstormtaylor/slate/issues/2345)
 - immutablejs-cons
   - makes debugging harder.
   - Reading values is more expensive
   - requires a fromJS step to build the collections/records
-- 
-- 
 
 - ## [Modeling RichText with Automerge](https://github.com/automerge/automerge/issues/193)
 - I have spent a while thinking about this too, and I also think that a single document sequence with marker characters is the way to go. 

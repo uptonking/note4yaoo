@@ -26,8 +26,11 @@ modified: 2023-02-05T19:03:12.722Z
   - 未提供comment示例
 
 - who is using #slate
-  - worktile slate-angular
+  - pingcode slate-angular
+  - taskade
+  - 旧版语雀、旧版钉钉
   - wangEditor
+  - tinymce
   - payloadcms
   - react-page
 

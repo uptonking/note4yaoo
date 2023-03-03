@@ -9,7 +9,7 @@ modified: 2020-07-14T11:03:53.196Z
 
 # guide
 - 实现状态管理的思路
-  - flux、atoms、proxy、state-machine、server-state-cache
+  - flux、atoms、proxy、state-machine、server-state-cache、signals
 - 状态管理选型参考
   - react
     - constate
@@ -174,6 +174,33 @@ modified: 2020-07-14T11:03:53.196Z
     - It could be months before RxJS it eventually supports Deno.
     - No official guideline on how to integrate RxJS with React.
   - EVT is an attempt to address all these points while trying to remain as accessible as EventEmitter.
+# signals
+- https://github.com/preactjs/signals
+  - Signals is a performant state management library with two primary goals
+    - Make it as easy as possible to write business logic for small up to complex app
+    - Integrate into frameworks as if they were native built-in primitives
+  - Signals can be accessed directly and your component will automatically re-render when the signal's value changes.
+
+- https://github.com/WebReflection/usignal
+  - A blend(混合，融合) of @preact/signals-core and solid-js basic reactivity API, with API and DX mostly identical to @preact/signals-core but extra goodness inspired by solid-js
+  - this library has lazy, non side-effecting, computed values, something @preact/signals-core recently introduced and Solid 2.0 is planning to improve.
+
+- https://github.com/jotaijs/jotai-signal
+  - 支持jotai v1和v2
+
+- https://github.com/tldraw/signia
+  - Reactive signals that scale. Made for tldraw 
+
+- https://github.com/maverick-js/signals
+  - a tiny (~1kB minzipped) library for creating reactive observables via functions called signals. 
+  - You can use signals to store state, create computed properties (y = mx + b), and subscribe to updates as its value changes
+
+- https://github.com/oslabs-beta/solid-dev-tool
+  - A SolidJS signal tracking dependency & structural visualizer developer tool
+
+- more-signal
+  - https://github.com/dai-shi/valtio-signal
+  - https://github.com/react-gx/gx
 # react
 - react-redux-useMutableSource(api已升级为useSyncExternalStore)
   - https://codesandbox.io/s/react-redux-usemutablesource-eyxoe
