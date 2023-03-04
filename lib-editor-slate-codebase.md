@@ -15,6 +15,9 @@ modified: 2023-02-05T19:03:12.722Z
   - dirtyPath
   - decoarate
 
+- architecture
+  - 优化方向可参考tree的crud及协作
+
 - prezly在最外层`Editable`组件上注册的事件有，onCut，onKeyDown
 
 - 很多编辑器框架都有先从options/plugins中收集依赖，然后再将分类过的props传入Editable组件的逻辑，如atlaskit、taze

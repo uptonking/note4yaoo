@@ -272,6 +272,10 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/kana-sama/edita
   - 无编辑器
 
+- https://github.com/disordinary/crdt_tree
+  - A CRDT String represented as a binary tree
+  - Rather than the WOOT approach to CRDT (With Out Operational Transformations) in which every character has it's own ID this approach only splits the string as required for the CRDT operation.
+
 - https://github.com/phedkvist/crdt-server /ts/单文件
   - A text based CRDT server storing, sending and receiving updates using Express and Websockets
   - 基于ws创建连接，用数组存放changes

@@ -23,7 +23,7 @@ modified: 2023-02-05T19:03:12.723Z
   - dev-xp
     - 表格方向键存在跳跃感
 
-- editablejs-editable /17Star/GPL/202208/ts/自绘光标/模型层block
+- editablejs /17Star/GPL/202208/ts/自绘光标/模型层block
   - https://github.com/editablejs/editable
   - https://github.com/editablejs/editable/blob/main/README.zh-CN.md
   - https://docs.editablejs.com/playground
@@ -76,6 +76,7 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/Darginec05/Yopta-Editor
   - https://yopta-editor.vercel.app/basic
   - Notion-like editor with similar behaviour
+  - 几乎无依赖
   - 支持跨block选择部分文字
   - list不支持多级
   - list item暂不支持拖出去
@@ -85,7 +86,11 @@ modified: 2023-02-05T19:03:12.723Z
   - https://dsvgit.github.io/slatesbox/
   - Slate editor plugins system. 
   - Drag and drop, folding implementation.
+  - 依赖dnd-kit、zustand，依赖plate的工具方法并不依赖编辑器
   - [Slate.js + dnd-kit = 🔥. Improving Rich Text Editor UX by adding Drag and Drop.](https://dev.to/devterminal/slatejs-dnd-kit-improving-rich-text-editor-ux-by-adding-drag-and-drop-23d3)
+  - https://github.com/dsvgit/mide
+    - https://dsvgit.github.io/mide/
+    - Slate.js code editor extension
 
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!
@@ -223,10 +228,6 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/mbehr1/json-editor
   - slate.js based json editor to embed into webpages
-
-- https://github.com/dsvgit/mide
-  - https://dsvgit.github.io/mide/
-  - Slate.js code editor extension
 
 - slatejsx /48Star/Apache2/202203/js/antd
   - https://github.com/slatejsx/slatejsx
@@ -404,6 +405,7 @@ modified: 2023-02-05T19:03:12.723Z
   - https://github.com/George-A-Payne/slate-tables /ts/202003
     - https://george-a-payne.github.io/slate-tables/
     - Forked from slate-deep-tables
+    - 不支持单元格级别的自绘选区
   - https://github.com/GitbookIO/slate-edit-table
     - archived and has moved to GitBook's private fork
 - https://github.com/whatever-company/slate-tables /js/依赖v0.47
@@ -425,6 +427,9 @@ modified: 2023-02-05T19:03:12.723Z
   - 依赖material-ui.v4、antd
 
 ## plugins
+
+- https://github.com/productboard/slate-edit-list
+  - A Slate plugin to handle keyboard events in lists.
 
 - https://github.com/mwood23/slate-test-utils
   - A toolkit to test Slate rich text editors with Jest, React Testing Library, and hyperscript! 
@@ -467,7 +472,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/juliankrispel/slate-in-react-native
   - Proof of concept - Slate in react-native Webview
-# slate-examples
+# slate-apps
 - https://github.com/inthelamp/book-reviewer
   - a learning project to obtain knowledge and skills about the MERN stack
   - Redux, Redux Thunk, axios, Slate, Lodash

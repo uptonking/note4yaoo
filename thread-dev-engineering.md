@@ -11,7 +11,11 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## 为什么代码水平越来越高，注释写的越来越少就结局都话越来越少？
+- https://www.zhihu.com/question/39813913/answer/83671724
+- 水平高代码写得好，简洁明了不用看注释就能看懂，所以可以少写一些注释，但是复杂逻辑的注释还是跑不掉的。
+  - 注释太多也不好，有时候代码更新了，注释没有更新，这就埋下一颗地雷了
+- 会搜索，基本不用问人，只需要偶尔有个人能问下思路是否太偏及时纠正下(小黄鸭[惊喜])，其实心里也有谱，没人能比自己还能帮到自己了
 
 - ## I don’t really know the official difference between a library and a framework
 - https://twitter.com/jamespearce/status/1608996890976325632
@@ -42,9 +46,9 @@ modified: 2021-01-21T17:52:13.333Z
 - I've generalized this into what I've dubbed "the co-location principle", which means that the tighter coupling between two files, the closer they should be in the directory hierarchy. Shared files are moved to the lowest possible level that are in all paths of the consumers.
 
 - I’ve been doing this since forever. I prefer it because:
-  01.   It’s very easy to see which files have no tests
-  02.   I can easily jump from test to implementation 
-  03.   I never have to decide how to name test files
+  01.    It’s very easy to see which files have no tests
+  02.    I can easily jump from test to implementation 
+  03.    I never have to decide how to name test files
   - IMHO the (anti) pattern of putting test files in a separate folder stems from compiled languages like Java where otherwise tests would end up in the compiled code. JavaScript doesn’t have this issue.
   - Rust is even sillier. It puts the test (optionally) in the same sourcefiles 
 

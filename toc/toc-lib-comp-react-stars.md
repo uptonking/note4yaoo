@@ -49,21 +49,32 @@ modified: 2021-01-12T18:49:02.623Z
   - A mobile support, draggable, editable and api based Tab for ReactJS.
 
 - more
-# starred
+# optimization
+- https://github.com/piotr-oles/use-transition-effect
+  - Run long effects without blocking the main thread
+  - hook provides a way to split long-running effects into smaller chunks to unblock the main thread. 
+  - It uses scheduler package (from React) to schedule smaller units of work and coordinate it with React rendering.
+
+- https://github.com/n1ru4l/use-async-effect
+  - type-safe async effects for React powered by generator functions.
+  - Doing async stuff with useEffect clutters your code:
+    - You cannot pass an async function to useEffect
+    - You cannot cancel an async function
+    - You have to manually keep track whether you can set state or not
 
 - https://github.com/CJY0208/react-activation
   - Vue 中 `<keep-alive />` 功能在 React 中的黑客实现
   - 建议关注 React 18.x 中的官方实现 Offscreen  api
   - 由于 `<Keeper />` 不会被卸载，故能实现缓存功能
 
+- https://github.com/CharlesStover/use-offline
+  - React hook for listening to online/offline events.
+  - Want to change your #ReactJS app when your users disconnect from the internet? Now you can.
+# starred
 - https://github.com/nikxda/react-xray
   - https://react-xray.vercel.app/
   - A component to reveal images on user interaction, written with TypeScript + React.
   - 模糊图片，然后鼠标所在的部分可以看清图片
-
-- https://github.com/CharlesStover/use-offline
-  - React hook for listening to online/offline events.
-  - Want to change your #ReactJS app when your users disconnect from the internet? Now you can.
 
 - https://github.com/sergiodxa/flagged
   - Feature Flags for React made easy with hooks, HOC and Render Props
@@ -161,7 +172,7 @@ modified: 2021-01-12T18:49:02.623Z
   - Ultimate calendar for your React app.
 - https://github.com/gpbl/react-day-picker
   - Lightweight date picker component for React
-# pieces
+# more
 - https://github.com/johvin/react-performance-optimization
   - React性能优化的误区
 - https://github.com/jxnblk/repng

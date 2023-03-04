@@ -14,3 +14,5 @@ modified: 2023-02-05T19:03:12.723Z
 
 - [Preact implementation](https://github.com/ianstormtaylor/slate/issues/2599)
 # more
+- [Produce slate-compatible ast tree from markdown in nodejs (aka: md deserialization)](https://github.com/ianstormtaylor/slate/discussions/4117)
+  - You can check out hanford/remark-slate

@@ -70,6 +70,8 @@ const foo = await new Promise((res, rej) => setTimeout(res, 0));
 
 - This is good news. I’ve done cr-sqlite / vlcn as completely async (and had to part ways with collaborators over that decision) so this gives me some reassurance(肯定，保证).
 
+- Gotta convince everyone to switch to generator-based effects.
+
 - ## [Suggestion: avoid `delete` keyword](https://github.com/ianstormtaylor/slate/issues/4425)
   - we could look at swapping set_node to do node[key] = undefined and improve performance instead of using delete node[key].
 - While this was once true (delete being slow), I think there's sufficient evidence that it's no longer a primary issue

@@ -86,6 +86,13 @@ modified: 2023-02-05T19:03:12.722Z
 - Comparing the approaches taken by rich-text and json0, I quite like the "sparse traversal" format of a rich-text delta over the "list of operations" format of json0 as a way to encode a changeset. The time complexity of a "sparse traversal" should be lower than that of a "list of operations" implementation. 
 - If taking the "list of operations" approach, is seems like there needs to be a transform function for each pair of fundamental operation types. With 13 different operations (addMark, insertNode, insertText, joinNode, moveNode, removeMark, removeNode, removeText, setMark, setNode, setSelection, splitNodeAtOffset, splitNode), that's 78 different functions (13 choose 2)! Is that right? Maybe there are some shortcuts or symmetry to take advantage of.
 
+- ## [next v0.50 plan_201911](https://github.com/ianstormtaylor/slate/pull/3093)
+- Plugins are now plain functions that augment the Editor object they receive and return it again.
+
+- ## [remove all `key` usage from Slate's core](https://github.com/ianstormtaylor/slate/issues/2864)
+- Right now we use keys all over the place, because we didn't use to have "paths" as a concept. 
+  - Often the key usage is a crutch( 依) for logic that can be made even simpler and more performant by using paths—although this isn't always true. Either way we need to eliminate keys to for #2495 to be able to remove the instantiation step.
+
 - ## [switch from immutablejs to plain JSON models_201812](https://github.com/ianstormtaylor/slate/issues/2495)
 - [consider migrating from Immutable.js "Records" to plain objects](https://github.com/ianstormtaylor/slate/issues/2345)
 - immutablejs-cons

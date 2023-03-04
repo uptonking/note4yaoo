@@ -7,8 +7,76 @@ modified: 2022-08-21T10:02:41.845Z
 
 # toc-lib-excel-list-tree
 
-# tree-ui
+# guide
 
+# flat-tree
+- 更推荐用parentId的方式
+  - path的优势在于查找更快，且符合直觉易理解
+- 考虑同级节点交换顺序这个场景
+  - 若用parentId作为key，则只要更新同级节点数组
+  - 若用path作为key，则要更新所有受影响的子孙节点的key
+## 基于id+parentId
+
+- https://github.com/naisutech/react-tree /202302/ts
+  - a hierarchical tree component for React in Typescript
+  - data should be a flat list of node objects with 
+    - required properties: label, id, parentId 
+    - optional properties: items
+  - files/leaf items should be a flat list of node objects on items property inside a node.
+    - 类似，文件夹有items属性，文件没有
+  - 👉🏻 Use as an **uncontrolled** component with defaultSelectedNodes and defaultOpenNodes or a completely **controlled** component 
+  - Multi-select API! hold your OS's meta key or ctrl key to be able to select/deselect multiple-nodes
+  - new context-based state management for better maintainability and handling of business logic
+
+- https://github.com/mpkelly/react-tree /202011/ts/inactive
+  - https://codesandbox.io/s/fervent-wave-u7psb
+  - accessible React Tree component with a sensible API that supports sorting, drag & drop, keyboard navigation and cut/copy/paste while leaving the visual content entirely to the library user.
+  - This tree is intended for file systems and the like. 
+  - It will be comfortable with thousands of nodes but is **not virtualized** and not intended for use with massive data sets.
+  - Support for toggling expand/collapse
+
+## 基于path
+
+- https://github.com/cheton/react-infinite-tree /201910/js/inactive
+  - http://cheton.github.io/react-infinite-tree/
+  - The infinite-tree library for React
+  - High performance infinite scroll with large data set
+  - 💡 Load nodes on demand
+  - Native HTML5 drag and drop API
+  - Customizable renderer to render the tree in any form
+  - 支持 [Flat Tree Structure](https://github.com/cheton/flattree/blob/master/examples/tree1.js)
+  - https://github.com/cheton/infinite-tree
+    - 经典tree结构，使用children
+
+- https://github.com/baurine/react-tree-view
+  - https://baurine.github.io/react-tree-view/
+  - simple React TreeView component with flat data structure
+  - Instead of using nested data structure, for example, each tree view item data has a children property, we use the flat data structure, keep them same as in the database, each child item has a parentKey property points to its parent item data.
+  - { key: '0-0-1-0', title: 'title 1-2-0', disableCheckbox: true }, 
+
+- https://github.com/adyz/react-tree-grid
+  - https://codesandbox.io/s/virtual-tree-from-npm-g0h7v
+  - 依赖react-virtualized
+  - This is a component that controls user interactions and state for you so you can create tree/grid components.
+
+- https://github.com/5achinJani/table-dnd-tree
+  - https://5achinjani-table-dnd-tree.netlify.app/
+  - Table with dnd, indent and outdent rows with flat data-structure and preserving parent-child relationship.
+  - 数据源直接使用indent数值，其实类似path
+
+## more-flat
+
+- react-sortable-tree /MIT/3.3kStar/202005/js/inactive
+  - https://github.com/frontend-collective/react-sortable-tree
+  - 依赖 react-virtualized, react-dnd, react-dnd-html5-backend
+  - Drag-and-drop sortable component for nested data and hierarchies
+  - 提供了将flat data转换成tree的工具getTreeFromFlatData/getFlatDataFromTree
+
+- https://github.com/adyz/react-tree-grid
+  - https://codesandbox.io/s/virtual-tree-from-npm-g0h7v
+  - 依赖react-virtualized
+  - This is a component that controls user interactions and state for you so you can create tree/grid components.
+# tree-ui
 - dnd-kit /3.9kStar/MIT/202201/ts
   - https://github.com/clauderic/dnd-kit
   - http://dndkit.com/
@@ -75,6 +143,7 @@ modified: 2022-08-21T10:02:41.845Z
   - https://github.com/frontend-collective/react-sortable-tree-theme-file-explorer
   - 依赖 react-virtualized, react-dnd, react-dnd-html5-backend
   - Drag-and-drop sortable component for nested data and hierarchies
+  - 提供了将flat data转换成tree的工具getTreeFromFlatData/getFlatDataFromTree
 - react-ui-tree /MIT/693Star/201811
   - https://github.com/swiftcarrot/react-ui-tree
   - https://swiftcarrot.github.io/react-ui-tree/
@@ -117,10 +186,6 @@ modified: 2022-08-21T10:02:41.845Z
   - https://heuristic-clarke-aa0809.netlify.app/
   - A simple CRUD operation tree implementation using React library
 
-- https://github.com/5achinJani/table-dnd-tree
-  - https://5achinjani-table-dnd-tree.netlify.app/
-  - Table with dnd, indent and oudent rows with flat data-structure and preserving parent-child relationship.
-
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!
   - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
@@ -136,10 +201,9 @@ modified: 2022-08-21T10:02:41.845Z
   - Pack tree nodes into a flat object and unpack them again!
   - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
   - Limitations
-
-    - It is assumed that you have children of each node in a single array object
-    - Self referencing objects at any point in the tree are not supported
-    - An id field is required to perform better change detection (using idKey option).
+  - It is assumed that you have children of each node in a single array object
+  - Self referencing objects at any point in the tree are not supported
+  - An id field is required to perform better change detection (using idKey option).
 
 - https://github.com/PerimeterX/flast
   - Provides a flat Abstract Syntax Tree and an Arborist to trim and modify the tree
@@ -159,6 +223,9 @@ modified: 2022-08-21T10:02:41.845Z
   - Runs in browsers and Node.js.
 - https://github.com/DenQ/list-to-tree
   - Convert list to tree
+- https://github.com/thunderrun/flat-to-tree
+  - Convert flat array into tree structure. 
+  - O(n) time complexity.
 
 - https://github.com/mafintosh/flat-tree
   - A series of functions to map a binary tree to a list
@@ -191,6 +258,17 @@ modified: 2022-08-21T10:02:41.845Z
 
 - https://github.com/Pierre-LouisDeu/NoSQL-Folders
   - A CRUD API to manage your documents in a NoSQL folder tree.
+
+# crdt-tree
+
+- https://github.com/ymlsam/lww-element-dict
+  - a LWW key-value store, a conflict-free replicated data type (CRDT) implemented in Typescript/Javascript
+  - State-based or operation-base replication
+  - Abstraction of clock (e.g. unix timestamp clock or vector clock)
+  - Abstraction of data store (e.g. in memory via Map or object literal, cookie, local storage, database, etc.)
+
+- https://github.com/crdteam/causal-tree-ts
+  - causal tree replicated data type (RDT) in Typescript.
 # tree-data-structure
 - treemate /54Star/MIT/202208/ts
   - https://github.com/07akioni/treemate
@@ -298,14 +376,14 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/mihneadb/node-directory-tree
   - http://livereload.com/
   - Creates a JS object representing a directory tree.
-  - const dirTree = require("directory-tree");
-  - const tree = dirTree("/some/path");
+  - const dirTree = require("directory-tree"); 
+  - const tree = dirTree("/some/path"); 
 - https://github.com/euberdeveloper/dree
   - 只依赖yargs
   - A nodejs module which helps you handle a directory tree.
   -  It provides you an object of a directory tree with custom configuration and optional callback method when a file or dir is scanned.
-  - const dree = require('dree');
-  - const tree = dree.scan('./folder', options);
+  - const dree = require('dree'); 
+  - const tree = dree.scan('./folder', options); 
 
 - https://github.com/jkomyno/pate
   - 依赖glob, yargs, chalk, progress
@@ -374,7 +452,6 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/legharir/react-lazy-paginated-tree /201808/js
   - https://boweihan.github.io/rlpt-example/
   - 依赖material-ui.v1
-
 # misc
 - https://github.com/daniel-hauser/react-organizational-chart
   - Simple react hierarchy tree - any React children accepted for nodes
