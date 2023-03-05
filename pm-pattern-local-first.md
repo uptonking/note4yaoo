@@ -9,6 +9,9 @@ modified: 2021-08-22T08:05:39.413Z
 
 # guide
 
+- 支持offline的架构
+  - 还可以考虑使用多级缓存，不一定全量数据库，类似react-query + indexeddb
+
 - 浏览器存储层原理
   - 业务代码appCode > indexeddb > leveldb/sqlite > os-fs
   - 业务代码appCode > sqlite-opfs > os-fs
@@ -44,7 +47,6 @@ modified: 2021-08-22T08:05:39.413Z
 - ref
   - [local-first tech](https://jaredforsyth.com/posts/)
   - [Local-first data migrations](https://blog.gfor.rest/blog/lofi-migrations)
-
 # [Local-first software__201910](https://www.inkandswitch.com/local-first.html)
 - Cloud apps like Google Docs and Trello are popular because they enable real-time collaboration with colleagues, and they make it easy for us to access our work ~~from all of our devices~~ anytime anywhere. 
   - However, by centralizing data storage on servers, cloud apps also take away ownership and agency from users. 

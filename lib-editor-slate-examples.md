@@ -70,6 +70,15 @@ modified: 2023-02-05T19:03:12.723Z
     - Successful businesses need a fanbase. Use Prezly to build yours.
     - With Prezly, you can publish and share your content with your audience, directly. No algorithms, no middlemen, no BS.
 
+- https://github.com/mpkelly/react-editor-kit /22Star/MIT/202012/ts/inactive
+  - https://mpkelly.github.io/react-editor-kit/
+  - Compose a React-based text editor using a suite of standard plugins
+  - 依赖slate
+  - https://github.com/mpkelly/journal
+    - https://mpkelly.github.io/journal
+    - Embeddable Wiki available as Chrome extension, PWA or React component.
+    - 依赖slate二开、dexie3
+
 - https://github.com/JokerLHF/mini-slate
   - 使用 ts 实现 slate 富文本
 
@@ -428,8 +437,11 @@ modified: 2023-02-05T19:03:12.723Z
 
 ## plugins
 
-- https://github.com/productboard/slate-edit-list
+- https://github.com/productboard/slate-edit-list /js/v0.57
+  - https://gitbookio.github.io/slate-edit-list/
   - A Slate plugin to handle keyboard events in lists.
+  - 支持增加或取消缩进
+  - 支持list与paragraph转换
 
 - https://github.com/mwood23/slate-test-utils
   - A toolkit to test Slate rich text editors with Jest, React Testing Library, and hyperscript! 
@@ -468,11 +480,25 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/arrizalamin/slate-fast-renderer /201911/js
   - small renderer for read-only slate.js document for web and react-native
 
+- https://github.com/streamich/json-joy/blob/master/src/json-cli/docs/json-patch-test.md
+  - 支持slate split、merge、extend
+## slate-forks
+
+- https://github.com/372623460jh/sand-slate
+  - fork slate 0.47.9 修复中文输入法问题
+  - https://github.com/372623460jh/sand-editor
+
 ## mobile
 
 - https://github.com/juliankrispel/slate-in-react-native
   - Proof of concept - Slate in react-native Webview
 # slate-apps
+- https://github.com/wwsalmon/postulate
+  - http://postulate.us/
+  - Postulate is an all-in-one tool for collecting and publishing your knowledge.
+  - Built on Next.js and MongoDB.
+
+
 - https://github.com/inthelamp/book-reviewer
   - a learning project to obtain knowledge and skills about the MERN stack
   - Redux, Redux Thunk, axios, Slate, Lodash
@@ -484,10 +510,6 @@ modified: 2023-02-05T19:03:12.723Z
   - WYSIWYG Block Editor built upon Slate.js, with drag & drop, custom block rendering, etc.
   - Cross platform powered by Electron.
 
-- https://github.com/wwsalmon/postulate
-  - http://postulate.us/
-  - Postulate is an all-in-one tool for collecting and publishing your knowledge.
-  - Built on Next.js and MongoDB.
 
 - https://github.com/thesunny/slate-experiments
   - 依赖slate.v0.63
@@ -586,7 +608,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/ccjr1120/story-editor_slate
   - 基于slate的文本编辑器
-- https://github.com/lingjieee/fantasy-editor 、202006
+- https://github.com/lingjieee/fantasy-editor /202006/ts
   - https://fantasy-editor.jieee.dev/
   - A React Rich Text Editor Based On Slate
 

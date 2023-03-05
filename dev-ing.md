@@ -74,8 +74,9 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 # dev-2023-方向+方法+时间
 - slate-wangeditor
   - model, view, sync, collab
-- eg-focalboard
-  - olap
+- 👉🏻 eg-focalboard
+  - table view
+  - kanban view
 - 👉🏻 eg-tanstack-table-v8
   - [x] 数据全内存: nedb, blinkdb
   - [x] 数据全持久: linvodb, tingodb
@@ -83,7 +84,15 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - tuple-database
   - tinybase
 
+- 若slate-model层采用扁平化Node
+  - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath
+  - 优化方向可参考tree的crud及协作
+  - 协作时还应该考虑 json patch + last-write-win
+  - Node定义采用unist
+  - lww的字符串改为针对crdt优化的类型如woot
+
 - collab-sync
+  - 👉🏻 string-crdt: woot
   - collab-data-structure: lww-with-hlc
   - remoteStorage: google-drive、网盘、七牛对象存储
   - lo-fi-sync-server
@@ -94,7 +103,7 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - kikko
   - absurd-sql-ts: read ArrayBuffer
 
-- products
+- long-term
   - cms, airtable, lowcode
 - techstacks
   - buffer, stream, async, scheduler
@@ -115,11 +124,12 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - 12-nedb-linvodb
 - log2023
   - 01-linvo-search+tinybase-sync-hlc-wip
-  - 02-typewriter-quill+tanstack-table
+  - 02-typewriter-quill+tanstack-table+slate
 
 - why use es6 class
   - 既包含类型定义，又包含逻辑工具方法
     - 注意class有时也需要先定义interface再实现，此时ts type也合理了
+    - 但应用层业务代码一般不需要定义单独interface
   - 方便调试，可直接log到对象及方法，函数里面的闭包变量更新难以定位
     - 也可以提前将需要调试的属性或方法添加到闭包暴露的对象上
 
@@ -140,6 +150,14 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
   - 测试光标进出表格
+
+## 0305
+
+- [认识 Range 和 Selection 对象](https://coldstone.fun/post/2020/12/05/selection-and-range/)
+  - 使文档中某些内容不可选
+  - 使用 CSS 属性 `user-select: none` 不允许选择从 elem 开始，但是用户可以在其他地方开始选择，并将 elem 包含在内。
+  - 阻止 `onselectstart` 或 `mousedown` 事件中的默认行为，这样可以防止在 elem 上开始选择，但是访问者可以在另一个元素上开始选择，然后扩展到 elem。
+  - 使用 `document.getSelection().empty()` 方法在选择发生后清除选择范围。
 
 ## 0304
 
@@ -456,7 +474,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                         `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

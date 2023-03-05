@@ -109,3 +109,13 @@ modified: 2023-02-05T19:03:12.723Z
 - Introducing "iterable" model methods.
 
 - v0.47.9__20191110
+
+## [0.35.0__20180727](https://docs.slatejs.org/general/changelog#0.35-july-27-2018)
+
+- `Range` now keep track of paths, in addition to keys. 
+  - Previously ranges only stored their points as keys. 
+  - Now both paths and keys are used, which allows you to choose which one is the most convenient or most performant for your use case. 
+  - They are kept in sync by Slate under the covers.
+- A new set of `*ByPath` change methods have been added. 
+  - All of the changes you could previously do with a `*ByKey` change are now also supported with a *ByPath change of the same name. 
+  - The path-based changes are often more performant than the key-based ones.

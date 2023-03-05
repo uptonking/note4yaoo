@@ -15,9 +15,7 @@ modified: 2022-11-07T10:26:22.510Z
   - 账户信息、ide配置、插件扩展的同步，一般只有大公司愿意免费提供
 - 免费
   - 若不免费，可寻找民间替代品
-
 # 软件使用体验xp
-
 - Ubuntu开启显示隐藏文件后，文件夹的大小会变大，如git项目下的.git目录有时非常大
 - 浏览视频网站时，有时会很慢，甚至打不开，如u2b，可以开启手机屏幕移动端浏览
 - 常用端口(默认可不写)
@@ -28,17 +26,13 @@ modified: 2022-11-07T10:26:22.510Z
   - FTP：21
   - MYSQL：3306
 - 可用ping检测ip，用telnet检测端口
-
 # pc-dir
-
 - 网易云音乐
   - /home/yaoo/.cache/netease-cloud-music/CachedSongs
 
 - qq-linux
   - /home/yaoo/Documents/opt/portable/message/Feige_for_64_Linux_ipmsg/
-
 # software
-
 - video
   - vlc
     - 3.0.7 - 201907
@@ -137,14 +131,10 @@ modified: 2022-11-07T10:26:22.510Z
   - wps note/google keep
   - netdisk
   - emarket
-
 # calendar
-
 - https://github.com/lwlsw/Chinese-Lunar-Calendar-ics
   - 现成的中国农历ics文件 2015-2100
-
 # toolkit
-
 - browser
   - chrome
   - firefox/opera/yandex/vivaldi/brave/edge
@@ -199,7 +189,6 @@ modified: 2022-11-07T10:26:22.510Z
   - jbake
   - hexo
   - gatsby
-
 # device
 
 ## Chromebook
@@ -207,9 +196,10 @@ modified: 2022-11-07T10:26:22.510Z
 ## FydeOS
 
 - 原名Flint OS，基于驱动Chrome OS及谷歌浏览器的开源项目二次开发，继承Chrome OS所有特性，适配更多硬件品类，为中国用户定制的本土化修改
-
+# company
+- https://github.com/xuthus5/fedora-packager
+  - 目前维护了 fedora 下的 wechat, wxwork, deepin-wine6-stable, deepin-wine-helper 等.
 # more
-
 - https://github.com/coolshou/dukto
   - /cpp
   - Dukto LAN file transfer tool

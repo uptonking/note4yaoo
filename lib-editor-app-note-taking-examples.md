@@ -202,6 +202,11 @@ modified: 2023-02-05T18:05:44.122Z
   - Drag and drop image with automatic image upload to Google Drive
   - Works offline
 
+- https://github.com/mpkelly/journal
+  - https://mpkelly.github.io/journal
+  - Embeddable Wiki available as Chrome extension, PWA or React component.
+  - 依赖slate二开、dexie3
+
 - mdtab /8Star/MIT/202209/ts
   - https://github.com/shaoruu/mdtab
   - Write quick notes in Markdown on any new tabs!

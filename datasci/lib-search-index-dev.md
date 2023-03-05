@@ -16,7 +16,7 @@ modified: 2023-01-05T10:20:29.496Z
   - 支持import/export index
 # discuss
 - ## [Geohash: Sort on other things than tf-idf?](https://github.com/fergiemcdowall/search-index/issues/476)
-- Yes sorting is much better in v1.0.x., and a geohash example would be really cool.
+- Yes sorting is much better in v1.0.x, and a geohash example would be really cool.
 # faq
 - Can I use another backend like MySQL or Redis?
   - Yes you can! Because search-index is built on top of levelup its possible to use another backend by passing the appropriate abstract-leveldown when initialising.

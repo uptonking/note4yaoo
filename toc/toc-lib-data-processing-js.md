@@ -11,7 +11,7 @@ modified: 2021-05-13T16:14:28.745Z
 
 - ref
   - https://www.npmtrends.com/data-forge-vs-dataframe-js-vs-pandas-js-vs-dataframe-vs-jsdata-vs-jsdataframe
-  - https://www.npmtrends.com/arquero-vs-apache-arrow-vs-data-forge-vs-dataframe
+  - [apache-arrow vs data-forge vs dataframe-js vs pandas-js vs parquetjs | npm trends](https://npmtrends.com/apache-arrow-vs-data-forge-vs-dataframe-js-vs-pandas-js-vs-parquetjs)
   - [@stdlib/stdlib vs mathjs vs ndarray vs numjs vs simple-statistics](https://www.npmtrends.com/@stdlib/stdlib-vs-mathjs-vs-ndarray-vs-numjs-vs-simple-statistics)
 # popular
 - danfojs /3.8kStar/MIT/202208/ts/inactive

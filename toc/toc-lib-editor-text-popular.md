@@ -23,11 +23,6 @@ modified: 2022-11-08T19:04:00.289Z
   - rich semantic content editor based on contentEditable, with support for collaborative editing and custom document schemas.
   - ProseMirror library consists of a number of separate modules.
 
-- lexical /12.1kStar/MIT/202211/ts
-  - https://github.com/facebook/lexical
-  - https://lexical.dev/
-  - editor framework with an emphasis on reliability, accessibility, and performance.
-
 - slate /25.8kStar/MIT/202211/ts
   - https://github.com/ianstormtaylor/slate
   - https://docs.slatejs.org/general/changelog
@@ -36,6 +31,11 @@ modified: 2022-11-08T19:04:00.289Z
     - The data model is now comprised of simple JSON objects.(old: Immutable.js data structures)
     - Plugins are now plain functions that augment the Editor object they receive and return it again.
     - The codebase now uses TypeScript.
+
+- lexical /12.1kStar/MIT/202211/ts
+  - https://github.com/facebook/lexical
+  - https://lexical.dev/
+  - editor framework with an emphasis on reliability, accessibility, and performance.
 
 - editablejs-editable /17Star/MIT/202208/ts/只依赖slate不依赖slate-react/自绘光标
   - https://github.com/editablejs/editable
@@ -210,6 +210,7 @@ modified: 2022-11-08T19:04:00.289Z
   - a WYSIWYG in-line web editor written in React.
   - 支持拖拽block修改顺序
   - 不支持跨block选择部分文字
+  - text-plugin依赖slate.v0.47
   - 示例样式友好
   - 依赖redux、react-dnd
 

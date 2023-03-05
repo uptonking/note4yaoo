@@ -11,6 +11,39 @@ modified: 2023-02-05T19:03:12.722Z
 
 # slate-blogs
 
+## [slate-angular 正式开源_202106](https://zhuanlan.zhihu.com/p/382685492)
+
+- features
+  - 集成块级元素前后光标方案
+  - 自定义组件/模版渲染块级元素
+  - 自定义渲染 Text/Leaf
+  - Decoration 装饰器
+  - 支持扩展Void元素，不可编辑，方便嵌入第三方
+
+- 模型层定义描述富文本内容的基本数据结构（一个支持嵌套的节点树）和对该数据的基础操作，
+  - 视图层对接前端框架，处理基础输入行为、选区代理，内容渲染、插件扩展等等。
+- 当前技术框架下想实现对输入内容的控制大概有两种实现思路，一种是 事件代理 ，另外一种是 监控内容变化 ，
+  - Slate主要采用的是事件代理，就是通过监控一系列内容输入的DOM事件，然后通过事件类型及其它上下文判断该输入对应的数据操作，最后把它转化为针对数据模型的一系列操作。
+  - 监控内容变化的方式在Slate中也有用到，是为了支持Android浏览器，大概是因为Android浏览器下某些场景的输入事件无法被正确捕获，进而无法响应用户的操作，所以使用MutationObserver监控内容变化以正确响应用户的输入行为。
+
+- 因为视图层中事件代理的实现主要是与输入事件打交道，各个浏览器对于输入事件的实现不完全统一，加上又要区分普通英文输入和中文组合输入，所以需要针对不同浏览器做很多兼容性处理
+1. 理想情况下：使用`beforeinput`事件完成基础输入代理，因为 beforeinput 语义化清晰，可以作为输入行为判断标准。
+2. 非理想情况：浏览器不支持 beforeinput 事件，使用React的合成事件 `onBeforeInput` 处理英文输入(Angular中需要自己实现)，对于其它输入交互如回车、删除使用 keydown 事件处理。
+3. IME输入处理使用事件`compositionstart`和compositionend处理，这三个事件非常可靠，没有任何浏览器兼容性问题。
+4. 除此之外撤销/重做、焦点移动等是在`keydown`事件中处理，复制、剪切等逻辑使用原生 copy、cut事件即可，而粘贴、拖拽等逻辑和基础输入一样依赖beforeinput事件，如果浏览器不支持 beforeinput事件则在`paste、drop`等事件中处理。
+
+- 选区同步机制
+- Slate的数据模型也需要选区，当数据变更发生时标识数据修改的位置，并且这个位置需要跟浏览器原生的选区保持一致，无论是浏览器的选区变化了，还是Slate的选区变化了都需要实现互相同步。 
+
+- slate-angular 视图层中选区的双向同步机制
+- 一、DOM Selection -> Slate Selection
+  - 监控原生Document对象的 `selectionchange` 事件，当DOM Selection改变时查询对应的Slate Selection，修改Slate Selection与DOM Selection一致。 
+  - 交互行为 -> DOM Selection 改变 -> selectionchange -> Slate Selection 
+  - 交互行为包括鼠标Click、按方向键等
+- 二、Slate Selection -> DOM Selection
+  - Slate数据Change导致Slate Selection发生变化，需要在Change事件中做处理，根据最新的Slate Selection查询对应的DOM Selection，修改DOM Selection与Slate Selection一致。
+  - 交互行为 -> 触发数据更新 -> 新的Slate Selection -> 视图刷新 -> DOM Selection
+
 ## [新版编辑器 Slate.js 的设计 - 知乎](https://zhuanlan.zhihu.com/p/179253951)
 
 - 目前这套插件机制真是优雅（简陋），用的函数链式调用的方法，对调用次序敏感是个大问题。
@@ -111,6 +144,4 @@ modified: 2023-02-05T19:03:12.722Z
 
 - [Building A Rich Text Editor (WYSIWYG)](https://www.smashingmagazine.com/2021/05/building-wysiwyg-editor-javascript-slatejs/)
 # more-slate
-- [slate-angular 正式开源 202106](https://zhuanlan.zhihu.com/p/382685492)
-
 - [slatejs 编辑器表格---合并单元格 - 掘金](https://juejin.cn/post/7080046216259567646)

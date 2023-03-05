@@ -262,10 +262,15 @@ modified: 2022-04-05T10:08:25.947Z
   - 👉🏻 提供了server，编辑器使用draftjs
   - WOOT propagates identifier-based operations defined on the internal object
 
-- https://github.com/phedkvist/crdt-woot
+- https://github.com/phedkvist/crdt-woot /202204/ts
   - Implementation of collaborative editing algorithm CRDT WOOT.
-  - 未提供服务端实现
+  - 示例使用react-quill
+  - https://github.com/phedkvist/crdt-server
   - [Introduction to Conflict Free Replicated Data-type](https://medium.com/swlh/introduction-to-conflict-free-replicated-data-type-959a944098c4)
+
+- https://github.com/ryankaplan/woot-collaborative-editor
+  - A real time collaboration toy project based on WOOT. Implemented with node.js and ws.
+  - 编辑器使用textarea
 
 - https://github.com/t-mullen/woot-crdt /Sequence-CRDTs
   - Replicate text or sequences over networks.

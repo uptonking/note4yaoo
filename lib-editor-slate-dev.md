@@ -23,6 +23,7 @@ modified: 2023-02-05T19:03:12.722Z
   - easy to start
 
 - cons
+  - core精简，但编辑器周边功能参考较少
   - 未提供comment示例
 
 - who is using #slate
@@ -30,11 +31,11 @@ modified: 2023-02-05T19:03:12.722Z
   - taskade
   - 旧版语雀、旧版钉钉
   - wangEditor
-  - tinymce
+  - tinymce collab
   - payloadcms
   - react-page
 
-- slate-resources
+- resources
   - https://docs.slatejs.org/
   - https://www.slatejs.org/examples/richtext
 # dev-slate-not-yet

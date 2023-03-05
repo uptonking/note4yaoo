@@ -15,12 +15,24 @@ modified: 2023-02-05T19:03:12.722Z
   - dirtyPath
   - decoarate
 
-- architecture
+- 若slate-model层采用扁平化Node
+  - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath
   - 优化方向可参考tree的crud及协作
+  - 协作时还应该考虑 json patch + last-write-win
+  - Node定义采用unist
+  - lww的字符串改为针对crdt优化的类型如woot
+
+- 实现扁平化Node的方式
+  - 理想方式是每个op会在apply结束后顺便计算dirtyPath相关的数据变化
+  - 临时方案，diff当前op的最高节点作为根节点的树，先flat再diff计算出added/removed
 
 - prezly在最外层`Editable`组件上注册的事件有，onCut，onKeyDown
 
 - 很多编辑器框架都有先从options/plugins中收集依赖，然后再将分类过的props传入Editable组件的逻辑，如atlaskit、taze
+
+- 编辑器较通用的功能
+  - 复制、粘贴
+  - 导出
 # faq
 
 ## not-yet
@@ -73,6 +85,14 @@ modified: 2023-02-05T19:03:12.722Z
     - onKeyDown
   - 始终会执行的内置事件包括
     - onInput
+# selection
+- slateSel to domSel
+  - 场景: 
+  - 方向键，在keydown事件中处理
+  - click-void，dragStar, drop, 在对应事件中处理
+
+- domSel to slateSel
+  - 场景: click事件的domSel在useEffect里面会同步到slateSel
 # slate-src-more
 - 其测试的编写是一种数据驱动的思路，通过给每个测试文件定义输入和输出以及要执行的测试逻辑，最后通过统一的 runner 运行，极大提供了编写测试的效率，让人耳目一新。
 - Slate测试挺别具一格，反正我第一次看的时候，反应就是原来测试还可以这样写。​

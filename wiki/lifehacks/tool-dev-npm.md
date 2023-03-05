@@ -9,6 +9,9 @@ modified: 2020-12-08T14:05:52.048Z
 
 # guide
 
+- cons
+  - 不支持 pnpm workspaces
+
 - tips
   - [npmjs.com displays per-version download counts](https://github.blog/changelog/2021-01-27-npmjs-com-displays-per-version-download-counts/)
 
@@ -22,7 +25,13 @@ modified: 2020-12-08T14:05:52.048Z
   - ramda, deepmerge, date-fns
   - marked
 # changelog
-- v8.3.0 (2021-12-09)
+- ref
+  - [v9 Changelog | npm Docs](https://docs.npmjs.com/cli/v9/using-npm/changelog)
+
+- v9.0.0-pre.0_2022-09-08
+  - changes the default value of `install-links` to true
+
+- v8.3.0_2021-12-09
   - introduces overrides
 # common-pkg
 - typesync

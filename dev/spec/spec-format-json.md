@@ -118,6 +118,9 @@ modified: 2020-10-15T13:41:01.275Z
 - https://github.com/teambition/jsonrpc-lite
   - Parse and Serialize JSON-RPC2 messages in node.js or browser.
 
+- https://github.com/dabblewriter/websocket-rpc-protocol
+  - Client and server libraries for handling RPC calls between the browser and a Cloudflare websocket interface. 
+
 - https://github.com/tedeh/jayson /js
   - a simple but featureful JSON-RPC 2.0/1.0 client and server for node.js
 

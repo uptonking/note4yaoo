@@ -12,12 +12,15 @@ modified: 2022-08-21T10:02:41.845Z
 # flat-tree
 - 更推荐用parentId的方式
   - path的优势在于查找更快，且符合直觉易理解
-- 考虑同级节点交换顺序这个场景
+  - 也可以同时维护2套数据结构
+- 考虑交换2个同级节点的顺序这个场景
   - 若用parentId作为key，则只要更新同级节点数组
   - 若用path作为key，则要更新所有受影响的子孙节点的key
+
 ## 基于id+parentId
 
 - https://github.com/naisutech/react-tree /202302/ts
+  - https://naisutech.github.io/react-tree/
   - a hierarchical tree component for React in Typescript
   - data should be a flat list of node objects with 
     - required properties: label, id, parentId 
@@ -37,18 +40,21 @@ modified: 2022-08-21T10:02:41.845Z
 
 ## 基于path
 
-- https://github.com/cheton/react-infinite-tree /201910/js/inactive
-  - http://cheton.github.io/react-infinite-tree/
-  - The infinite-tree library for React
+- https://github.com/cheton/infinite-tree
+  - https://infinite-tree.js.org/
   - High performance infinite scroll with large data set
   - 💡 Load nodes on demand
-  - Native HTML5 drag and drop API
   - Customizable renderer to render the tree in any form
-  - 支持 [Flat Tree Structure](https://github.com/cheton/flattree/blob/master/examples/tree1.js)
-  - https://github.com/cheton/infinite-tree
-    - 经典tree结构，使用children
-
-- https://github.com/baurine/react-tree-view
+  - Native HTML5 drag and drop API
+  - 初始化时传入经典tree结构(使用children)，会先flatten，再渲染
+  - forks
+  - https://github.com/acierto/infinite-tree
+  - https://github.com/cheton/react-infinite-tree /201910/js/inactive
+    - http://cheton.github.io/react-infinite-tree/
+    - The infinite-tree library for React
+    - 支持 [Flat Tree Structure](https://github.com/cheton/flattree/blob/master/examples/tree1.js)
+   
+- https://github.com/baurine/react-tree-view /201809/ts/inactive
   - https://baurine.github.io/react-tree-view/
   - simple React TreeView component with flat data structure
   - Instead of using nested data structure, for example, each tree view item data has a children property, we use the flat data structure, keep them same as in the database, each child item has a parentKey property points to its parent item data.
@@ -258,9 +264,7 @@ modified: 2022-08-21T10:02:41.845Z
 
 - https://github.com/Pierre-LouisDeu/NoSQL-Folders
   - A CRUD API to manage your documents in a NoSQL folder tree.
-
 # crdt-tree
-
 - https://github.com/ymlsam/lww-element-dict
   - a LWW key-value store, a conflict-free replicated data type (CRDT) implemented in Typescript/Javascript
   - State-based or operation-base replication

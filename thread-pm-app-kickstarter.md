@@ -10,9 +10,7 @@ modified: 2021-10-29T15:02:28.882Z
 > new marketable apps
 
 # guide
-
 - [The launchpad for YC startups](https://www.ycombinator.com/launches)
-
 # ideas-stars
 - ## storybook Component Encyclopedia is in beta
 - https://twitter.com/storybookjs/status/1491806826739941377
@@ -64,7 +62,9 @@ modified: 2021-10-29T15:02:28.882Z
 
 - ## 
 
-- ## 
+- ## 记录了独立开发创始人成功的案例访谈，更新的也挺频繁，盈利全都是公开的。
+- https://twitter.com/vikingmute/status/1631834151493181443
+  - [FounderBeats - Gain Insights from Founders building profitable SaaS products](https://founderbeats.com/)
 
 - ## 一个api工具居然可以养活一个公司的程序员
 - https://twitter.com/tualatrix/status/1624603717751427074

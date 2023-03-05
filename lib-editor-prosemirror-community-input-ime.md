@@ -8,23 +8,6 @@ modified: 2022-09-17T09:31:16.310Z
 # lib-editor-prosemirror-community-input-ime
 
 # guide
-
-- [规范定义的`inputType`类型 Input Events Level 2](https://www.w3.org/TR/input-events-2/)
-  - insertText
-  - insertReplacementText
-  - insertFromPaste
-  - 只在v2中: historyUndo, historyRedo
-  - [Input Events Level 1](https://rawgit.com/w3c/input-events/v1/index.html#interface-InputEvent-Attributes)
-
-
-
-- 虚拟键盘测试难点
-  - 移动端输入法种类多
-  - 桌面端虚键盘分为系统层面, 浏览器软件层面
-    - 操作系统on-screen keyboard依赖系统环境，如wayland、浏览器不支持虚键盘但terminal支持
-    - 浏览器扩展里面的虚键盘行为无标准
-    - 浏览器的输入法扩展可以覆盖操作系统的输入法，如系统是英文输入法，但浏览器Google Input Tools扩展可以使用中文输入法
-
 - 目前prosemirror对beforeinput使用很少
 # discuss
 - ## 

@@ -27,29 +27,28 @@ modified: 2022-11-29T20:41:25.566Z
 
 - 考虑到客户端升级的问题
   - 同步前一定要检查一个version，参考indexeddb upgrade
+
+- 支持offline的架构
+  - 还可以考虑使用多级缓存，不一定全量数据库，类似react-query + indexeddb
 # linear-realtime-sync
 
-
 ## [linear sync 分享_202002](https://www.youtube.com/watch?v=WxK11RsLqp4&t=2169s)
-
 
 - object graph
   - 使用mobx进行state management, 自动更新view
   - object graph支持object reference itself
-
 
 - object pool
   - just normalize all your data structures into one pool
   - there's one big array of all the objects that represent your entire dataset in your application
 - from this object pool, we are able to create this object graph, then pass this object graph to the views
 - there are 3 objects in the object pool, but there are 5 objects in the object graph
-- in the beginning ,the object pool is empty
+- in the beginning , the object pool is empty
   - somewhere stream data into the pool
   - find team id in object pool, update user will update team, 在model层实现
   - object pool里面的对象大多是扁平的
   - object pool里面对象删除后，也会删除object graph对应的对象
   - object pool里面的crud都会自动更新object graph，然后自动更新view
-
 
 - transaction queue
   - view触发的changes先在前端执行，然后才发送到后端
@@ -59,12 +58,10 @@ modified: 2022-11-29T20:41:25.566Z
   - 前端先乐观更新
   - figma team实践出的结论也是这样的
 
-
 - backend to frontend
   - backend has a queue of all the changes made to the database
   - backend broadcast changes to clients
   - 客户端的change会发送到后端，后端会发送给其他客户端
-
 
 - optimization： object store
   - 在前端持久化数据
@@ -74,26 +71,19 @@ modified: 2022-11-29T20:41:25.566Z
   - transactions也是这样，本地也持久化了所有transaction，刷新客户端时，会更新objects和transations
 - 支持offline mode，恢复在线后，本地持久化的transactions会被发送到后端
 
-
 - entire workflow(01:07:45)
   - 启动时从local db创建object pool
   - 根据decorator从object pool创建object graph, render view
   - 更新issue时，通知object pool属性更新了, create transaction 发送到后端，后端发送给其他客户端进行同步更新object pool
 
-
 - 客户端更新数据很简单，类似setState(newData)，sync engine会处理同步、持久化、冲突等问题
 
-
 - discussions
-
 
 - 离线冲突的问题
   - 默认last-write-win
   - 更多是业务逻辑问题，而不是技术问题
   - 在linear llw可以work，但在groupon的交易冲突时会提示用户选区版本
-- 
-- 
-
 
 - ## When we started work on @linear , we felt real-time sync was a core functionality we had to invest in from the get-go. 
 - https://twitter.com/artman/status/1558081796914483201

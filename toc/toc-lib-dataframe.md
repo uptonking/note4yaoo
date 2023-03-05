@@ -35,7 +35,7 @@ modified: 2021-05-13T16:14:41.762Z
 - https://github.com/modin-project/modin
   - Speed up your Pandas workflows by changing a single line of code
 
-- https://github.com/wesm/feather
+- https://github.com/wesm/feather /202102/inactive
   - Feather: fast, interoperable binary data frame storage for Python, R, and more powered by Apache Arrow
 
 # java

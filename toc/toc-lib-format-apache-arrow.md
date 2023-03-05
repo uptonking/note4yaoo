@@ -8,7 +8,7 @@ modified: 2023-01-08T16:27:44.918Z
 # toc-lib-format-apache-arrow
 
 # guide
-
+- apache-arrow-js的使用示例可以在observablehq社区发现
 # popular
 - polars /12.3kStar/MIT/202301/rust/NoDeps
   - https://github.com/pola-rs/polars

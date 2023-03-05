@@ -33,6 +33,36 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
+- ## 
+
+- ## sunday webdev challenge: can you think of a way to test network connectivity that *does not* print an error to dev tools?
+- https://twitter.com/aboodman/status/1632071181749862401
+  - For Replicache we want to periodically test connectivity while offline. It's *not* an error for us to be offline, so don't want to spam console though.
+- And first prize goes to @msnegurski with the idea to use a web worker.
+  - Actually the error still goes to the network tab though
+- Maybe you could abuse OPTIONS preflight requsts for this
+  - Sadly no, Chrome is too clever. It only treats the actual preflight request this way, not any old OPTIONS request.
+- Navigator.onLine exists, but AFAIK only tests for "hard lack of connectivity" (no network iface), not "soft lack of connectivity" (LieFi, packet loss)
+
+- ## Is there a DOM node that has no impact on visual/layout that can be used as a form of marker? 
+- https://twitter.com/trueadm/status/1632136227892633603
+  - Sort of like a comment node, but one that you can lookup via a query selector?
+  - I also tried using an element with display: contents, but that doesn't seem to work well.
+- If you don't want it to have children, you can use script or template.
+- I did not try `<meta>` ! Let me look into it.
+- script or style tags won’t do?
+  - I tried that. It causes perf issues. I want to have a marker element that I can replace with some dynamic content.
+- label? or `<blink>` ? `<object> or <input type=hidden>`
+
+  - Causes issues with the accessibility tree.
+- Depending on context,  `<wbr>` might work for you
+  - We're using comments and a tree walker for what is probably a similar use case. Really wish there were such an element or that xpath selectors were faster.
+  - Yeah. I saw Solid does something similar by inserting tree path into an attribute?
+  - it does for both top-level elements (fr components) and use comments for Suspense boundaries (I guess there are other cases as well)
+- I don't think so 🤔 I think about the best that can be done is a comment node with some id as the value, then using a TreeWalker with a SHOW_COMMENT filter, and manually finding the one with the value you are looking for.
+
+- Should it have children? If so, try span/div with display:contents
+
 - ## 8 modern browser APIs you might not know, but really should:
 - https://twitter.com/Steve8708/status/1625516871633211393
 - `structuredClone()` gives you browser native deep cloning that  supports a variety of types like Date, Set, Map, etc
@@ -42,16 +72,13 @@ modified: 2021-01-08T17:13:43.392Z
 - `Intl` gives you browser native date, time, number (and more!) formatting
 - `all: unset` can make styling a lot easier
 - Are you using modern attributes to ensure your images load optimally?
-  - Do you know how and when to use `decoding=async`, `loading=lazy`, fetchpriority, `<picture>`, `aspect-ratio`, or `srcset`?
-- JS `Map`s are wildly underutilized - refresh yourself on the performance, functionality, and ergonomic benefits
-
+  - Do you know how and when to use `decoding=async` , `loading=lazy` , fetchpriority, `<picture>` , `aspect-ratio` , or `srcset` ?
+- JS `Map` s are wildly underutilized - refresh yourself on the performance, functionality, and ergonomic benefits
 
 - The barcode detection API (experimental) 🧪 is one I learned this year. 
 - Which ones does node implement?
   - structuredClone(), URL(), Map() and Promise.allSettled() if I am not mistaken.
 - Any discussion of interesting browser APIs cannot be complete without mentioning HTMLMediaElement.canPlayType(), which can return the values: "probably", "maybe", and ""
-
-
 
 - ## [You’ve Got Options for Removing Event Listeners](https://www.macarthur.me/posts/options-for-removing-event-listeners)
 1. removeEventListener()

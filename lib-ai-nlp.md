@@ -9,6 +9,9 @@ modified: 2023-03-03T08:06:36.592Z
 
 # guide
 
+- [NLP新宠——浅谈Prompt的前世今生 - 知乎](https://zhuanlan.zhihu.com/p/399295895)
+- [通俗易懂地理解Prompt - 知乎](https://zhuanlan.zhihu.com/p/436340881)
+  - Prompt是给input加的一段文字或一组向量，让模型根据input和外加的prompt做masked language modeling (MLM)。
 # nlp-products
 
 # translation

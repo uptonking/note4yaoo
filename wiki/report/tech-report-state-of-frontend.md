@@ -9,7 +9,19 @@ modified: 2021-01-04T16:00:05.478Z
 
 # guide
 
-- [2021 JavaScript Rising Stars](https://risingstars.js.org/2021/en)
+# [2022大前端总结和2023就业分析 - 知乎](https://zhuanlan.zhihu.com/p/603410758)
+- 当前(2022)前端趋于成熟
+  1、性能
+  2、运行时
+  3、体积
+  4、Rust正在变成前端新基建
+- 2023年就业情况分析
+  1、外包化严重
+  2、高级岗位变少
+  3、专业前端细分化
+  4、岗位融合新机会
+
+# [2021 JavaScript Rising Stars](https://risingstars.js.org/2021/en)
 
 # [State of Frontend 2020 Report_2020](https://tsh.io/state-of-frontend/)
 
@@ -44,8 +56,6 @@ modified: 2021-01-04T16:00:05.478Z
   - ngrx: 472
   - mobx: 364
   - event bus: 189
-
 # ref
-
 - [State of JavaScript 2020 overview](https://css-tricks.com/state-of-javascript-2020/)
   - https://2020.stateofjs.com/en-us/

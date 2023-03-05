@@ -10,6 +10,9 @@ modified: 2022-11-25T15:41:47.534Z
 # guide
 - 协作需要考虑 同步 + 冲突处理
 
+- 支持offline的架构
+  - 还可以考虑使用多级缓存，不一定全量数据库，类似react-query + indexeddb
+
 - sync-protocols
   - sync/collab/local-first
   - 是否支持切换存储层

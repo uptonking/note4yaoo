@@ -8,7 +8,7 @@ modified: 2022-11-03T04:43:06.880Z
 # toc-database-columnar-arrow
 
 # guide
-
+- apache-arrow-js的使用示例可以在observablehq社区发现
 # db-columnar
 - https://github.com/apache/arrow/tree/master/js  /ts
   - Apache Arrow is a columnar memory layout specification for encoding vectors and table-like containers of flat and nested data. 

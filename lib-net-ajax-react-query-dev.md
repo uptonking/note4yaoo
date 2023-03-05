@@ -1,11 +1,11 @@
 ---
-title: lib-http-react-query-dev
+title: lib-net-ajax-react-query-dev
 tags: [ajax, lib, react-query]
 created: 2020-08-06T10:23:53.305Z
-modified: 2021-05-13T02:52:41.975Z
+modified: 2023-03-05T08:55:03.696Z
 ---
 
-# lib-http-react-query-dev
+# lib-net-ajax-react-query-dev
 
 # guide
 
