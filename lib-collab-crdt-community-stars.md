@@ -221,7 +221,7 @@ interface CRDTSyncDir{
 - ## Great writeup by @josephgentle on making CRDTs orders of magnitude faster. 
 - https://twitter.com/martinkl/status/1423230479222939648
   - [5000x faster CRDTs: An Adventure in Optimization](https://josephg.com/blog/crdts-go-brrr/)
-  - We're working on a similar approach for Automerge, and it's encouraging to see how much performance improvement is possible!
+- We're working on a similar approach for Automerge, and it's encouraging to see how much performance improvement is possible!
 - Are either of you aware of any efforts to make CRDTs based on 3-way merging? Like a self pruning git history, with peer branches, retaining only the bare minimum of common ancestors to support future merges?
   - https://gowthamk.github.io/docs/mrdt.pdf
 

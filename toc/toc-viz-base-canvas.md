@@ -22,15 +22,17 @@ modified: 2020-10-05T06:17:42.467Z
     - The comparison was unfair it was only moving the positions of the rectangles each frame for paper.js, and two.js 
     - but for pixi.js it was redrawing them from scratch which means it had to retesselate everything every frame.
 
-- konva /5.3kStar/MIT/202007
+- konva /8.9kStar/MIT/202301/ts
   - https://github.com/konvajs/konva
   - http://konvajs.org/
   - JS framework that extends the 2d context by enabling canvas interactivity for desktop and mobile applications.
   - began as a fork of ericdrowell/KineticJS
   - https://github.com/ericdrowell/KineticJS
     - /MIT/3.9kStar/201404
+  - https://github.com/konvajs/react-konva
+    - provides declarative and reactive bindings to the Konva Framework.
 
-- react-canvas /12.5kStar/BSD/201703
+- react-canvas /12.5kStar/BSD/201703/inactive
   - https://github.com/Flipboard/react-canvas
   - High performance canvas rendering for React components
   - https://github.com/Flipboard/react-canvas/issues/138

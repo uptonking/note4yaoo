@@ -104,10 +104,41 @@ This is how we might do it with with "Realtime as an authority" approach (and is
 - 以 Op-based CRDT 的思路设计 Last-write-wins Set(LWWSet)
 # [数据库系统小报：CRDT初探](https://zhuanlan.zhihu.com/p/510797688)
 
-# [CRDTs go brrr](https://josephg.com/blog/crdts-go-brrr/)
+# [5000x faster CRDTs: An Adventure in Optimization_202107](https://josephg.com/blog/crdts-go-brrr/)
 - Automerge (and Yjs and other CRDTs) think of a shared document as a list of characters. 
   - Each character in the document gets a unique ID, and whenever you insert into the document, you name what you're inserting after.
-# [I was wrong. CRDTs are the future_202009](https://josephg.com/blog/crdts-are-the-future/)
+
+- Automerge is based on an algorithm called RGA
+  - Automerge (RGA) solves this with a neat hack. It adds an extra integer to each item called a sequence number. 
+  - Whenever you insert something, you set the new item's sequence number to be 1 bigger than the biggest sequence number you've ever seen
+  - The rule is that children are sorted first based on their sequence numbers (bigger sequence number first). 
+- Why is automerge slow though?
+  - Automerge's core tree based data structure gets big and slow as the document grows.
+  - Automerge makes heavy use of Immutablejs
+  - Automerge treats each inserted character as a separate item.
+
+- Yjs - which we'll see more of later - implements a CRDT called YATA. 
+- YATA is identical to RGA, except that it solves this problem with a slightly different hack. 
+- Instead of implementing the CRDT as a tree like automerge does
+  - Yjs just puts all the items in a single flat list
+
+- how do you insert a new item into a list? 
+- With automerge(tree) it's easy:
+  - Find the parent item
+  - Insert the new item into the right location in the parents' list of children
+- But with this list approach it's more complicated:
+  - Find the parent item
+  - Starting right after the parent item, iterate through the list until we find the location where the new item should be inserted (?)
+  - Insert it there, splicing into the array
+
+- I implemented both Yjs's CRDT (YATA) and Automerge using this approach in my experimental reference-crdts codebase
+  - It's hard to understand, but once you understand it, you can implement the whole insert function in about 20 lines of code
+
+- The important point is this approach is better:
+  - We can use a flat array to store everything, rather than an unbalanced tree. This makes everything smaller and faster for the computer to process.
+  - The code is really simple. Being faster and simpler moves the Pareto efficiency frontier. Ideas which do this are rare and truly golden.
+  - You can implement lots of CRDTs like this. Yjs, Automerge, Sync9 and others work. You can implement many list CRDTs in the same codebase. In my reference-crdts codebase I have an implementation of both RGA (automerge) and YATA (Yjs). They share most of their code (everything except this one function) and their performance in this test is identical.
+# [I was wrong. CRDTs are the future__202009](https://josephg.com/blog/crdts-are-the-future/)
 - I saw Martin Kleppmann’s talk a few weeks ago about his approach to realtime editing with CRDTs, and I felt a deep sense of despair(绝望). 
   - Maybe all the work I’ve been doing for the past decade won’t be part of the future after all, because Martin’s work will supersede it. Its really good.
 - Around 2010 I worked on Google Wave. 

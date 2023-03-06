@@ -351,7 +351,7 @@ modified: 2022-04-05T10:08:25.947Z
   - CRDT and WebRTC based real-time, peer-to-peer, collaborative text editor
 # last-write-win/llw
 - https://github.com/ymlsam/lww-element-dict
-  - a LWW key-value store, a conflict-free replicated data type (CRDT) implemented in Typescript/Javascript
+  - a LWW key-value store, a conflict-free replicated data type (CRDT)
   - State-based or operation-base replication
   - Abstraction of clock (e.g. unix timestamp clock or vector clock)
   - Abstraction of data store (e.g. in memory via Map or object literal, cookie, local storage, database, etc.)

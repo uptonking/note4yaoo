@@ -12,6 +12,12 @@ modified: 2020-11-19T12:44:05.442Z
 - https://github.com/pmndrs/react-three-fiber
   - a React renderer for threejs on the web and react-native.
   - Everything that works in threejs will work here.
+  - [Modern R3F from scratch in 300 LoC](https://codesandbox.io/s/uuujk7)
+
+
+- https://github.com/CodyJasonBennett/preact-reconciler
+  - Custom renderers for Preact in <1KB.
+  - This package implements react-reconciler which allows for custom renderers to be implemented and shared between Preact and React such as @react-three/fiber.
 
 - https://github.com/diegomura/react-pdf
   - React renderer for creating PDF files on the browser and server
