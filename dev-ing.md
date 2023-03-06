@@ -53,6 +53,8 @@ https://meeting.tencent.com/p/9606972663
 
 ```shell
 DEBUG=* npm install --legacy-peer-deps --loglevel silly
+
+$$('[contenteditable]')
 ```
 
 # dev-review
@@ -149,7 +151,18 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 - dev-to
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
-  - 测试光标进出表格
+
+## 0306
+
+- [Why does JSON.parse fail with the empty string? - Stack Overflow](https://stackoverflow.com/questions/30621802/why-does-json-parse-fail-with-the-empty-string)
+
+```JS
+JSON.parse('""'); // ✅ 解析为空字符串
+JSON.parse(''); // SyntaxError: Unexpected end of JSON input
+```
+
+- [reactjs - How to avoid \`loaded two copies of React\` error when developing an external component? - Stack Overflow](https://stackoverflow.com/questions/33157904/how-to-avoid-loaded-two-copies-of-react-error-when-developing-an-external-comp)
+  - I believe the answer is to specify react and react-dom as `peerDependencies` in your external component's package.json
 
 ## 0305
 
@@ -163,6 +176,9 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 
 - [Object destructuring with types in TypeScript](https://flaviocopes.com/typescript-object-destructuring/)
   - `const { name, age }: { name: string; age: number } = body.value;`
+
+- dev-to
+  - 测试光标进出表格
 
 ## 0301
 
@@ -474,7 +490,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                 `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

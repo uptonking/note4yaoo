@@ -16,6 +16,27 @@ modified: 2021-02-27T15:31:23.130Z
     - 从零开始的JSON库教程，教程对象适合学习过基本 C/C++
 
 - [基于状态机的JSON解析](https://juejin.cn/post/7032491400516075557)
+# faq
+
+## [Can an array be top-level JSON-text? - Stack Overflow](https://stackoverflow.com/questions/3833299/can-an-array-be-top-level-json-text)
+
+- Yes, an array is legal as top-level JSON-text.
+- There are four standard documents defining JSON: RFC 4627, RFC 7159 (which obsoletes RFC 4627), ECMA-404, and RFC 8259 (which obsoletes RFC 7159, and calls ECMA-404 normative). 
+  - They differ in which top-level elements they allow, but all allow an object or an array as the top-level element.
+
+- Yes, but you should consider making the root an object instead in some scenarios, due to JSON hijacking. 
+  - This is an information disclosure vulnerability based on overriding the array constructor in JavaScript.
+
+- [Can JSON start with "["? - Stack Overflow](https://stackoverflow.com/questions/5034444/can-json-start-with)
+
+- Short answer is YES
+  - In a .json file you can put Numbers (even just 10), Strings (even just "hello"), Booleans (true, false), Null (even just null), arrays and objects. https://www.json.org/json-en.html
+
+- JSON is built on two structures:
+  - A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.
+  - An ordered list of values. In most languages, this is realized as an array, vector, list, or sequence.
+
+- Apparently it's safer to have it start with { and not [ so that it isn't a valid Javascript array, and can't be used for CSRF attacks.
 # parser-ast
 - https://github.com/humanwhocodes/momoa
   - A JSON parser, tokenizer, traverser, and printer.
@@ -32,7 +53,6 @@ modified: 2021-02-27T15:31:23.130Z
   - Lossless JSON-to-AST Parser and AST-to-JSON Generator
   - The AST is based on ASTy-ASTq
 # discuss
-
 - ## The advantage of JSON Schema is that it's JSON. I can use the same schema in the frontend or backend, across languages, etc. I can generate a form from it.
 - https://twitter.com/DavidKPiano/status/1621243040034611204
   - Zod is JS/TS-only (but can be converted to JSON Schema, like you said)

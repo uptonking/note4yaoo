@@ -12,6 +12,10 @@ modified: 2022-11-29T20:41:25.566Z
   - 基于缓存实现sync有点类似于react-query
   - 参考vlcn
 
+- sync实现要点
+  - client发送内容op/patch/changes, 发送时机，接收内容
+  - server接收，发送内容
+
 - 协作方案参考
   - Liveblocks, synced-store, FluidFramework, gun, pouchdb
   - automerge (2017), yjs (2015), sharedb (2013)

@@ -110,6 +110,9 @@ modified: 2022-10-02T20:51:30.444Z
   - JSON1 implements a superset of JSON0's functionality.
   - an operational transformation type for arbitrary JSON trees. It supports concurrently editing arbitrarily complex nested structures.
   - Support for arbitrarily moving objects in the JSON tree. 
+  - [ot-json1 <-> JSON Patch (RFC 6902)](https://github.com/ottypes/json1/issues/29)
+    - a share of a utility I made to convert between json1 ops and JSON patch ops
+    - [ot-json1-patch-utils.js](https://gist.github.com/adorsk/67a27968aeb9cc534057c424ee39e63e)
   - Supports embedded subtypes, like embedding rich text documents using quilljs or something inside your JSON tree
   - can be configured to reject operations which would result in lost data.
   - JSON0 and JSON1 use different embedded string types. 
@@ -122,7 +125,9 @@ modified: 2022-10-02T20:51:30.444Z
   - The JSON OT type can be used to edit arbitrary JSON documents.
   - JSON0 is an invertable type - which is to say, all operations have an inverse operation which will undo the original op. 
     - As such, all operations which delete content have the content to be deleted inline in the operation.
-  - Embedded string editing, using the old text0 OT type as a subtype
+  - Embedded string editing, using the old `text0` OT type as a subtype
+  - [json0 supporting of rfc6902 specification for JSON type?_201410](https://github.com/ottypes/json0/issues/4)
+    - json0 type doesn't support moving objects between paths, so its not compatible with json patch.
   - limitations
     - doesn't support moves between object keys
     - doesn't support moving child values from one object to another

@@ -45,7 +45,7 @@ modified: 2023-02-05T19:03:12.723Z
   - core依赖slate、snabbdom、dom7、is-hotkey、lodash、uppy(file uploader)、event-emitter、i18next
   - 源码是函数式风格
   - 开箱即用，配置简单。
-  - 支持 JS Vue React
+  - 视图层框架无关，支持 JS Vue React，可参考taleweaver
   - L1级编辑器，弃用了 document.execCommand，使用 slate.js（但不依赖 React）为内核
   - 使用vdom（基于 snabbdom.js）做视图更新，model 和 view 分离，增加稳定性
   - 扩展性
@@ -482,6 +482,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/streamich/json-joy/blob/master/src/json-cli/docs/json-patch-test.md
   - 支持slate split、merge、extend
+
 ## slate-forks
 
 - https://github.com/372623460jh/sand-slate
@@ -498,7 +499,6 @@ modified: 2023-02-05T19:03:12.723Z
   - Postulate is an all-in-one tool for collecting and publishing your knowledge.
   - Built on Next.js and MongoDB.
 
-
 - https://github.com/inthelamp/book-reviewer
   - a learning project to obtain knowledge and skills about the MERN stack
   - Redux, Redux Thunk, axios, Slate, Lodash
@@ -509,7 +509,6 @@ modified: 2023-02-05T19:03:12.723Z
   - 依赖slate、yjs、rxjs
   - WYSIWYG Block Editor built upon Slate.js, with drag & drop, custom block rendering, etc.
   - Cross platform powered by Electron.
-
 
 - https://github.com/thesunny/slate-experiments
   - 依赖slate.v0.63

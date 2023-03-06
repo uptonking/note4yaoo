@@ -42,6 +42,9 @@ modified: 2023-02-09T12:26:14.281Z
 
 ## view/render
 
+- 视图层在apply op时会设置change的来源 Source
+  - user, input, history, paste, api
+
 ### virtual-render
 
 - virtualized-render示例要点

@@ -67,7 +67,12 @@ modified: 2021-07-27T15:12:39.959Z
 # desktop-editor
 - https://github.com/lapce/lapce
   - written in pure Rust with a UI in Druid (which is also written in Rust). 
-  - It is designed with Rope Science from the Xi-Editor which makes for lightning-fast computation, and leverages OpenGL for rendering. 
+  - It is designed with Rope Science from the Xi-Editor which makes for lightning-fast computation, and leverages OpenGL for rendering.
+
+- https://github.com/jkhaui/rxeditor-2
+  - an attempt at creating an open-source, web-based and lightweight alternative to word processors like Google Docs or Microsoft Word. 
+  - It is built on Draft.js, ReactiveX (RxJS) and MobX.
+  - Most features are currently not implemented; the main purpose of this demo currently is to show how pagination can be achieved in a web-based word processor. 
 # editor-utils
 - [Cross-Browser Selection Utilities](https://gist.github.com/tcr/1022198/2dd0aefdc17c77b0997a09efa10247e511a4f92a)
 # more-editor

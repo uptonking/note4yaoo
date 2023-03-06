@@ -24,7 +24,8 @@ modified: 2023-02-09T12:24:23.549Z
   - virtualized render
     - 参考 ajaxorg/ace、codemirror、typewriter
     - 虚拟渲染能提高安全性?
-  - defer render
+  - defer render, 懒加载，viewport内才加载，按需请求再加载
+    - 持久化分页后的数据，便可以按固定高度实现virtual render
 
 - virtualized render cons
   - 影响浏览器自带的功能，如页面内查找

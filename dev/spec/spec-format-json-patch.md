@@ -8,10 +8,60 @@ modified: 2023-02-26T21:03:56.167Z
 # spec-format-json-patch
 
 # guide
-
 - [JSON Patch | jsonpatch.com](https://jsonpatch.com/)
 - [RFC 6902: JavaScript Object Notation (JSON) Patch](https://www.rfc-editor.org/rfc/rfc6902)
+# typewriter-json-patch
+- sync实现要点
+  - client发送内容op/patch/changes, 发送时机，接收内容
+  - server接收，发送内容
+
+## syncable
+
+- It works by using metadata to track the current revision of the object, 
+  - any outstanding changes needing to be sent to the server from the client, 
+  - and the revisions of each added value on the server so that one may get all changes since the last revision was synced.
+  - The metadata must be stored with the rest of the object to work.
+
+- It does not handle adding/removing array items, though entire arrays can be set. 
+  - It should work great for documents that don't need merging text like Figma 
+
+- changesSince会保存各个字段的最新值
+
+- 元数据
+
+```JS
+// 客户端
+{ rev: '07' }
+
+// 服务端
+{ rev: '07', paths: { '/ticker': '4', '/content': '07' } }
+```
+
+- 客户端发送给服务端 json-patch
+
+```JS
+ [{ op: 'replace', path: '/content', value: 0.3967347015756624 }]
+```
+
+- 服务端发送给客户端
+
+```JSON
+{
+  "patch": [{
+    "op": "replace",
+    "path": "/content",
+    "value": 0.4283930603719077
+  }],
+  "rev": "07"
+}
+```
+
 # blogs
+
+## [JSON Patch](https://atbug.com/json-patch/)
+
+- JSON Path是一直描述JSON文档变化的格式. 使用它可以避免在只需要修改某一部分的时候发送整个文档内容. 
+  - 当与HTTP PATCH方法混合使用的时候, 它允许在标准规范的基础上使用HTTP APIs进行部分更新.
 
 ## [Kubernetes中的JSON patch - 掘金](https://juejin.cn/post/6993618347904466957)
 
@@ -38,10 +88,8 @@ modified: 2023-02-26T21:03:56.167Z
   - 没办法将value置为null，因为null的操作在merge patch的场景下是删除的意思。当然如果在处理JSON文档的程序中null就代表资源不存在，那确实也可以避免这个问题。
   - 无法追加数组，因为必须提供完整的数组才能表达元素的修改
   - 一旦Patch是错误的，比如路径错误，他也会被合并到正确的数据中去，因为merge patch看起来是一种非常灵活的数据修改方式，但在JSON Patch中如果路径错误的话，会导致操作失败。
-
 - 综上所述，如果面对的是结构比较简单，校验不要求很强烈的场景，可以选择JSON Merge Patch，
   - 但是更为复杂的场景，建议选择JSON Patch，因为这种方式确保原子执行和错误报告。
-
 - Kubernetes中的webhook采用的就是上文提到的第一种方案（JSON Patch）
 # examples
 

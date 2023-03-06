@@ -9,6 +9,16 @@ modified: 2022-11-07T11:00:28.824Z
 
 # discuss-stars
 
+- ## 
+
+- ## 
+
+- ## 代码写的再好，如果解决不了问题，最多感动一下自己。
+- https://twitter.com/greatghoul/status/1632241657671462913
+  - 相反，一个好的项目，只要能够帮助人解决问题，即使代码比较烂，依然能吸引人去持续改进，最终变成好项目。
+- 做技术的总是忽视用户需求、市场、营销的重要性。所谓得人心者得天下。
+- 从另一方面来看现在似乎处于技术爆发期间，各商业公司仅限于做finetuning，直接输出的商业模式除了gpt本身的月费，还没有更优解
+
 - ## You can jump on every new trend like crypto, web3, AI. 
 - https://twitter.com/yongfook/status/1616635377586180096
   - Or you can slowly build something “boring” like a CRM for veterinarians. 
@@ -47,12 +57,9 @@ modified: 2022-11-07T11:00:28.824Z
 - 
 - 
 
-
 - ## Whisper 也有 API 了，每分钟4分钱人民币，也很便宜，语音转文本，方便后续做翻译/总结等处理。
 - https://twitter.com/oran_ge/status/1631065155629903872
 - 开源免费的Buzz就可以，Buzz用了openAI的开源whisper模型，本地化转录
-
-
 
 - ## 今天研究了下 OpenAI api 的收费模式，按照 token 使用收费，不同的 PROMPT 消耗的 token 不同，很有意思
 - https://twitter.com/yihong0618/status/1630753514380226562
@@ -371,3 +378,10 @@ modified: 2022-11-07T11:00:28.824Z
 - Could you share the process and tools you used to write your first book please?
   - I wrote it all as one giant markdown file in Sublime Text, then compiled the markdown to HTML with a few custom scripts and turned the markdown into PDF with PrinceXML and a custom stylesheet.
 - In case it’s helpful Matthew, I’ve started using ASCIIDoc for my ebooks as it has converters to PDF in most languages. 
+
+- ## 开个thread分享一下程序员找国外远程工作的资源&网站，脱离国内卷的环境的手段之一
+- https://twitter.com/shengxj1/status/1632317733517004800
+- 电鸭社区，数字游民的聚集地，还有【程序员英语训练营】不定期有招聘机会
+  - https://eleduck.com/
+- vercel的谁在招人讨论区
+

@@ -207,7 +207,7 @@ modified: 2022-08-18T16:57:46.405Z
   - https://github.com/yuzhenmi/taleweaver
   - https://yuzhenmi.github.io/taleweaver/
   - Web word processor for 2Tale Writer's Portal.
-  - 👀 基于dom实现，且支持显示分页
+  - 👀 未使用contenteditable，基于dom实现排版，支持显示分页
   - core无依赖，react封装很少(只有2个文件)，不依赖prosemirror
   - 大量使用es6 class
   - 自己实现了依赖注入，设计了model/service/component
