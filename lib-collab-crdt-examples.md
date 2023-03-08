@@ -73,7 +73,7 @@ modified: 2022-04-05T10:08:25.947Z
   - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
 
 - https://github.com/hyperhyperspace/hyperhyperspace-core
-  - HHS uses an immutable typed-objects local storage model. Objects are both retreived and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
+  - HHS uses an immutable typed-objects local storage model. Objects are both retrieved and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
   - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
   - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
 
@@ -132,6 +132,78 @@ modified: 2022-04-05T10:08:25.947Z
   - It provides a server to store and retrieve messages, so that clients don't have to connect peer-to-peer.
   - Server: 132 lines of JS
   - Client: 639 lines of JS
+
+- https://github.com/phedkvist/crdt-sequence
+  - CRDT Sequence is a very basic collaborative text editing implementation
+  - 依赖 react-quill
+  - [Creating a Collaborative Editor_201906](https://pierrehedkvist.com/posts/1-creating-a-collaborative-editor)
+    - This solution doesn't support interleaving
+    - A better solution that is based of CRDT WOOT
+  - https://github.com/PHedkvist/crdt-server
+
+- https://github.com/phedkvist/crdt-woot /202204/ts
+  - Implementation of collaborative editing algorithm CRDT WOOT.
+  - 示例使用react-quill
+  - https://github.com/phedkvist/crdt-server
+  - [Collaborative Editing Using CRDTs](https://pierrehedkvist.com/posts/collaborative-editing-using-crdts)
+  - [Introduction to Conflict Free Replicated Data-type](https://medium.com/swlh/introduction-to-conflict-free-replicated-data-type-959a944098c4)
+
+- https://github.com/ryankaplan/woot-collaborative-editor
+  - A real time collaboration toy project based on WOOT. Implemented with node.js and ws.
+  - 编辑器使用textarea
+  - When a textarea-change is detected, diff the textarea content against the last known content. 
+  - With the help of WootTypes. WString, turn that diff into `WStringOperations` and broadcast those operations to the server.
+  - When we receive operations from the server, apply those operations to our WString instance and apply them to the text in #collab-doc.
+ 
+
+- https://github.com/t-mullen/woot-crdt /Sequence-CRDTs
+  - Replicate text or sequences over networks.
+- https://github.com/t-mullen/logoot-crdt
+  - Optimized Logoot CRDT implementation.
+- https://github.com/kana-sama/edita
+  - 无编辑器
+
+- https://github.com/bcherny/crdt-demo
+  - WOOT-style CRDT implementation
+  - 👉🏻 提供了server，编辑器使用draftjs
+  - WOOT propagates identifier-based operations defined on the internal object
+
+- https://github.com/disordinary/crdt_tree
+  - A CRDT String represented as a binary tree
+  - Rather than the WOOT approach to CRDT (With Out Operational Transformations) in which every character has it's own ID this approach only splits the string as required for the CRDT operation.
+- https://github.com/disordinary/crdtstring
+  - A CRDT string manipulation library for concurrent editing.
+  - Stores a CRDT as a double linked list.
+  - Offsets within a string is the ID of the object, insertions are given an index of a fraction of an offset. 
+
+- https://github.com/phedkvist/crdt-server /ts/单文件
+  - A text based CRDT server storing, sending and receiving updates using Express and Websockets
+  - 基于ws创建连接，用数组存放changes
+  - 初次连接发送所有changes
+  - 后续只发送单次change的msg
+
+- https://github.com/mkdynamic/logoot
+  - 👉🏻 包含服务端，编辑器使用textarea
+  - Collaborative text editor using Logoot CRDT algorithm. 
+  - Adds an informal versioning scheme based on state vectors to ensure casual ordering of operations is maintained.
+
+- https://github.com/josephg/reference-crdts
+  - This repository contains simple proof-of-concept reference implementations of yjs, automerge and sync9's list types - all implemented in the same codebase. 
+
+- https://github.com/gritzko/citrea-model /201712/js
+  - A CRDT-based collaborative editor engine of letters.yandex.ru (2012, historical)
+  - https://news.ycombinator.com/item?id=28018129
+    - About a decade ago, I implemented the Causal Tree CRDT (aka RGA, Timestamped Insertion Tree) in regular expressions using a Unicode string as a storage. Later we made a collaborative editor for Yandex based on that code.
+    - Recently(202107) I greatly improved CTs by introducing the Chronofold data structure
+    - I remember seeing that (regex CTs) and immediately thinking "wtf, why would anyone want to do that". Took me quite a while to understand that it's actually a pretty clever way to write fast state machines in browserland. So thank you for this work!
+- https://github.com/gritzko/swarm
+  - Swarm is like "git for data" except it's real-time and never has a merge conflict. 
+  - Swarm is based on Replicated Object Notation (RON), a distributed live data format.
+  - RON is based on CRDT
+- https://github.com/decentralized-hse/collab-edit /kotlin
+  - the state of text and cursor positions are stored as Chronofold on each client. 
+  - When the user updates the text or the cursor position on one client, it calculates diff via `diff-match-patch`, updates its Chronofold, and sends new operations to another client. 
+  - Another client adds these operations to its Chronofold and updates the text and cursor positions accordingly.
 
 - https://github.com/wangdashuaihenshuai/crdt-edit /201810/vue/js
   - [我自己从零实现的一个文本文档的协同编辑demo，上面是输入框，下面是数据结构的可视化](https://zhuanlan.zhihu.com/p/48229762)
@@ -219,13 +291,7 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/siliconjungle/delta-crdt
   - A simple delta CRDT implementation.
 
-- https://github.com/mkdynamic/logoot
-  - 👉🏻 包含服务端，编辑器使用textarea
-  - Collaborative text editor using Logoot CRDT algorithm. 
-  - Adds an informal versioning scheme based on state vectors to ensure casual ordering of operations is maintained.
-
 - https://github.com/t-mullen/logoot-crdt
-  - Replicate text or sequences over networks without conflicts.
   - Replicate text or sequences over networks. (WithOut Operational Transformation)
   - Allows an unlimited number of authors to collborate in real-time on text over arbitrary networks.
 
@@ -257,45 +323,9 @@ modified: 2022-04-05T10:08:25.947Z
   - One of the practical uses out these concepts is offline collaboration feature.
   - 依赖automerge
 
-- https://github.com/bcherny/crdt-demo
-  - WOOT-style CRDT implementation
-  - 👉🏻 提供了server，编辑器使用draftjs
-  - WOOT propagates identifier-based operations defined on the internal object
-
-- https://github.com/phedkvist/crdt-woot /202204/ts
-  - Implementation of collaborative editing algorithm CRDT WOOT.
-  - 示例使用react-quill
-  - https://github.com/phedkvist/crdt-server
-  - [Introduction to Conflict Free Replicated Data-type](https://medium.com/swlh/introduction-to-conflict-free-replicated-data-type-959a944098c4)
-
-- https://github.com/ryankaplan/woot-collaborative-editor
-  - A real time collaboration toy project based on WOOT. Implemented with node.js and ws.
-  - 编辑器使用textarea
-
-- https://github.com/t-mullen/woot-crdt /Sequence-CRDTs
-  - Replicate text or sequences over networks.
-- https://github.com/kana-sama/edita
-  - 无编辑器
-
-- https://github.com/disordinary/crdt_tree
-  - A CRDT String represented as a binary tree
-  - Rather than the WOOT approach to CRDT (With Out Operational Transformations) in which every character has it's own ID this approach only splits the string as required for the CRDT operation.
-
-- https://github.com/phedkvist/crdt-server /ts/单文件
-  - A text based CRDT server storing, sending and receiving updates using Express and Websockets
-  - 基于ws创建连接，用数组存放changes
-  - 初次连接发送所有changes
-  - 后续只发送单次change的msg
-
 - https://github.com/tobiasbrodd/crdt
   - 编辑note，每次发送全量数据
   - 只实现了socket.io的传输过程，本地未先执行
-
-- https://github.com/phedkvist/crdt-sequence
-  - CRDT Sequence is a very basic collaborative text editing implementation
-  - 依赖 react-quill
-  - [Creating a Collaborative Editor](https://pierrehedkvist.com/posts/1-creating-a-collaborative-editor)
-  - https://github.com/PHedkvist/crdt-server
 
 - https://github.com/twfarland/count-them-beans
   - Displays use of a GCounter conflict-free replicated data type (CRDT), web workers, signals, and virtual dom.
@@ -332,10 +362,15 @@ modified: 2022-04-05T10:08:25.947Z
   - A simple list-based CmRDT to implement collaborate editor
   - 依赖mongodb
 
-- https://github.com/coast-team/mute
+- mute /96Star/AGPLv3/202302/ts/rxjs
+  - https://github.com/coast-team/mute
+  - https://mutehost.loria.fr/
   - a scalable collaborative document editor with CRDT, P2P and E2EE
-  - MUTE implements a CRDT-based consistency algorithm for large scale peer-to-peer collaboration: `LogootSplit`. 
-  - https://github.com/coast-team/dotted-logootsplit
+  - MUTE implements a CRDT-based consistency algorithm (LogootSplit) for large scale peer-to-peer collaboration on top of a peer-to-peer message layer (netflux and soon libp2p).
+  - 示例基于tui-editor
+  - https://github.com/coast-team/mute-core
+    - 依赖rxjs、dotted-logootsplit
+  - https://github.com/coast-team/dotted-logootsplit /MPL
     - a delta-based version of LogootSplit with smaller metadata. We provide both op-based and delta-based synchronizations.
 
 - https://github.com/geetesh-gupta/py-crdt-collab-editor
@@ -347,8 +382,14 @@ modified: 2022-04-05T10:08:25.947Z
   - currently no STUN/TURN servers are configured, so it only works with local peers
   - Uses WebSockets for signaling and WebRTC Data Channels for p2p communication. 
 
-- https://github.com/conclave-team/conclave
+- https://github.com/conclave-team/conclave /202106/js/inactive
   - CRDT and WebRTC based real-time, peer-to-peer, collaborative text editor
+  - 示例使用simplemde、rxjs、peerjs
+  - Intrigued by collaboration tools like Google Docs, we set out to build one from scratch. 
+  - Conclave uses (CRDT) to make sure all users stay in-sync and WebRTC to allow users to send messages directly to one another. 
+
+- https://github.com/nybblr/LSEQTree
+  - provide an implementation of a CRDT-based array  with an underlying exponential tree and the allocation strategy LSeq
 # last-write-win/llw
 - https://github.com/ymlsam/lww-element-dict
   - a LWW key-value store, a conflict-free replicated data type (CRDT)
@@ -365,6 +406,16 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/ywchan2005/conflict-free-replicated-data
 - https://github.com/3rnii/crdt-lww
   - create a CRDT (conflict free replicated data type) LWW (last write wins) set.
+# crdt-string/text
+- https://github.com/mweidner037/uniquely-dense-total-order
+  - Uniquely Dense Total Orders for List/Text CRDTs
+  - This is a concept similar to fractional indexing, but resilient to concurrent insertions.
+  - [Plain Tree: A Basic List CRDT](https://mattweidner.com/2022/10/21/basic-list-crdt.html)
+    - The rest of this post introduces a basic UniquelyDenseTotalOrder that I especially like. 
+    - I have not seen it in the existing literature, although it is similar enough to Logoot, Treedoc, and others that I wouldn’t be surprised if it’s already known. For now, I call it Plain Tree.
+
+- https://github.com/atom/teletype-crdt /js/archived
+  - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom.
 # crdt-utils
 - https://github.com/danielstaleiny/CRDT-sqlite
   - 依赖 idb
@@ -439,16 +490,6 @@ modified: 2022-04-05T10:08:25.947Z
   - 实现简单
 - https://github.com/decentraland/crdt
   - 服务端api的定义很标准
-
-- https://github.com/gritzko/citrea-model
-  - A CRDT-based collaborative editor engine of letters.yandex.ru (2012, historical)
-  - https://news.ycombinator.com/item?id=28018129
-    - About a decade ago, I implemented the Causal Tree CRDT (aka RGA, Timestamped Insertion Tree) in regular expressions using a Unicode string as a storage. Later we made a collaborative editor for Yandex based on that code.
-    - Recently I greatly improved CTs by introducing the Chronofold data structure
-- https://github.com/gritzko/swarm
-  - Swarm is like "git for data" except it's real-time and never has a merge conflict. 
-  - Swarm is based on Replicated Object Notation (RON), a distributed live data format.
-  - RON is based on CRDT
 
 - https://github.com/AntidoteDB/crdt-visualizer
   - https://www.antidotedb.eu/crdt-visualizer/

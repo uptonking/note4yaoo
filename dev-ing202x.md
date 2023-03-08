@@ -25,6 +25,7 @@ modified: 2023-02-26T15:30:04.261Z
   - 系统预置数据如待办类型合并时可能出现名称相同的情况，用户添加数据时也可能出现
 
 - url-as-state-management
+  - [Storing state in the URL with React](https://pierrehedkvist.com/posts/react-state-url?boolean=false)
 
 - docker打包前端
 

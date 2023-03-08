@@ -108,10 +108,6 @@ modified: 2022-11-07T17:36:22.236Z
   - https://boardsite.io/
   - a productivity app for taking notes, annotating documents and collaborating with friends on any device with a browser.
 # collab-editing
-- https://github.com/coast-team/mute
-  - a scalable collaborative document editor with CRDT, P2P and E2EE
-  - MUTE implements a CRDT-based consistency algorithm for large scale peer-to-peer collaboration: `LogootSplit`. 
-
 - https://github.com/convergencelabs/html-text-collab-ext
   - A set of utilities that enhances a normal HTML `<textarea>` element with collaborative editing capabilities. 
   - The enhanced `<textarea>` is able to render the cursor and selection of other collaborators.
@@ -123,6 +119,17 @@ modified: 2022-11-07T17:36:22.236Z
   - 类似协作codepen
   - Built With React Material UI yjs Written in TypeScript
   - 依赖knex、pg、yjs、codemirror5
+
+- mute /96Star/AGPLv3/202302/ts/rxjs
+  - https://github.com/coast-team/mute
+  - https://mutehost.loria.fr/
+  - a scalable collaborative document editor with CRDT, P2P and E2EE
+  - MUTE implements a CRDT-based consistency algorithm (LogootSplit) for large scale peer-to-peer collaboration on top of a peer-to-peer message layer (netflux and soon libp2p).
+  - 示例基于tui-editor
+  - https://github.com/coast-team/mute-core
+    - 依赖rxjs、dotted-logootsplit
+  - https://github.com/coast-team/dotted-logootsplit /MPL
+    - a delta-based version of LogootSplit with smaller metadata. We provide both op-based and delta-based synchronizations.
 
 - https://github.com/cchaonie/collaborative-editor /ts/slate+sharedb
   - Learn collaborative softwares by creating a collaborative editor

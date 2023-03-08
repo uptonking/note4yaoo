@@ -12,6 +12,16 @@ modified: 2023-01-29T10:52:44.183Z
 # discuss
 - ## 
 
+- ## 
+
+- ## [Anyone Explored a Codemirror 6 Canvas/WebGL Renderer? - discuss. CodeMirror](https://discuss.codemirror.net/t/anyone-explored-a-codemirror-6-canvas-webgl-renderer/3779)
+- The Bespin 9 project in 2009 worked this way, but was given up due to, I believe, problems with the approach. Some things to keep in mind:
+  - In most situations, for text layout, the DOM will be faster than a canvas
+  - Accessibility will be terrible if your text is just pixels on a canvas
+  - Doing text positioning, styling, and wrapping is a whole lot more difficult with fillText
+
+- I haven’t worked with WebVR—seems like there’s a proposed 8 standard for making it capable of showing regular DOM elements, but nothing actually implemented at the time. I guess as a workaround for that limitation, mirroring a CM instance to a canvas is a more or less reasonable thing to do.
+
 - ## [v6 Comparison with approach of react-simple-code-editor_201907](https://github.com/codemirror/dev/issues/109)
 
 - ## Does anybody need a new code editor for the web that's 2x faster than Monaco, 10x smaller than CodeMirror, and works well on mobile?
@@ -23,7 +33,7 @@ modified: 2023-01-29T10:52:44.183Z
 - https://copenhagen.autocode.com 1/50 the size of Monaco, with most of the features.
   - It may be the best of its kind that I've seen so far. 
   - Mine uses TextMate grammars so syntax highlighting should be higher quality and smoother. And while scrolling it does ~5x less work (~10x less if we only look at the JS portion). It's  just PoC for now though.
-- On a closer inspection Copenhagen seems to weigh 1/9th the size of Monaco (~190kb), not 1/50th. Like the instance of Monaco that I use is ~1.7MB, not ~10MB.And editing doesn't seem to work on mobile for me.Still interesting though.
+- On a closer inspection Copenhagen seems to weigh 1/9th the size of Monaco (~190kb), not 1/50th. Like the instance of Monaco that I use is ~1.7MB, not ~10MB. And editing doesn't seem to work on mobile for me. Still interesting though.
 - What grammar do you end up? tree-sitter? Also, is it canvas2d?
   - I'm using TextMate grammars at the moment, but I want to eventually add support for something else to it, like Monarch grammars, as otherwise it won't be 10x smaller than CM. No canvas, pure DOM.
 - Can you use tree sitter for highlighting and ide like features?
@@ -111,3 +121,26 @@ modified: 2023-01-29T10:52:44.183Z
 - monaco doesn't even try to work on mobile browsers.
 
 # discuss-v5
+- ##
+
+- ## inputStyle: string
+- https://codemirror.net/5/doc/manual.html
+- Selects the way CodeMirror handles input and focus. 
+  - The core library defines the "textarea" and "contenteditable" input models. 
+  - On mobile browsers, the default is "contenteditable". 
+  - On desktop browsers, the default is "textarea". 
+  - Support for IME and screen readers is better in the "contenteditable" model. The intention is to make it the default on modern desktop browsers in the future
+
+- ## [CM5: inputStyle contenteditable, cursor display after goLineRight (wrapped line) - discuss. CodeMirror](https://discuss.codemirror.net/t/cm5-inputstyle-contenteditable-cursor-display-after-golineright-wrapped-line/3911)
+- CodeMirror 6 works around this by drawing its own cursor while still using contentEditable.
+
+- ## [is the `textarea` inputStyle going to be deprecated in the future? - discuss. CodeMirror](https://discuss.codemirror.net/t/is-the-textarea-inputstyle-going-to-be-deprecated-in-the-future/1278)
+- If there’s ever a major rewrite of CodeMirror (the codebase is showing its age), it’s likely that it will only do contentEditable-style input. But until then, I don’t expect to completely drop textarea support.
+
+- 👉🏻 Actually, we are now working on that rewrite and only implement contenteditable as input method for v6
+  - It’s definitely going to be much better than what CodeMirror currently does in terms of contenteditable support. You’re right that there might be things you cannot customize anymore, but that also means that we use more of what the user agent provides.
+
+- ## [What are the pitfalls of using inputStyle 'contenteditable' in 2020? - discuss. CodeMirror](https://discuss.codemirror.net/t/what-are-the-pitfalls-of-using-inputstyle-contenteditable-in-2020/2389)
+- The CodeMirror integration with contentEditable is more buggy and less well tested. You might run into issues. 
+  - On mobile, it’s a lot better than nothing, 
+  - but on desktop, to not create unnecessary regressions, we’re keeping textarea the default.

@@ -74,6 +74,13 @@ modified: 2021-07-27T15:12:39.959Z
   - It is built on Draft.js, ReactiveX (RxJS) and MobX.
   - Most features are currently not implemented; the main purpose of this demo currently is to show how pagination can be achieved in a web-based word processor. 
 # editor-utils
+- https://github.com/ktsn/selective-undo-text
+  - https://codepen.io/ktsn/pen/qZxdaY
+  - A Selective Undo library for text editing
+  - [Undo for selection/emacs · Issue · microsoft/vscode](https://github.com/microsoft/vscode/issues/108098)
+    - When there is an active region, any use of undo performs selective undo: 
+    - it undoes the most recent change within the region, instead of the entire buffer.
+
 - [Cross-Browser Selection Utilities](https://gist.github.com/tcr/1022198/2dd0aefdc17c77b0997a09efa10247e511a4f92a)
 # more-editor
 - hypertext-editor /28Star/MIT/202211/js/tinymce

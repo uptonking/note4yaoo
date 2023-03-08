@@ -20,7 +20,7 @@ modified: 2023-02-05T19:03:12.722Z
   - 优化方向可参考tree的crud及协作
   - 协作时还应该考虑 json patch + last-write-win
   - Node定义采用unist
-  - lww的字符串改为针对crdt优化的类型如woot
+  - lww的字符串改为针对crdt优化的类型如?
 
 - 实现扁平化Node的方式
   - 理想方式是每个op会在apply结束后顺便计算dirtyPath相关的数据变化

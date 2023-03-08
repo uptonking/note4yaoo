@@ -74,6 +74,7 @@ $$('[contenteditable]')
 - deep into lib
   - src-code, issues, pr, forks, extensions/alternatives
 # dev-2023-方向+方法+时间
+- 👉🏻 output: 代码、产品、生态积累
 - slate-wangeditor
   - model, view, sync, collab
 - 👉🏻 eg-focalboard
@@ -91,10 +92,10 @@ $$('[contenteditable]')
   - 优化方向可参考tree的crud及协作
   - 协作时还应该考虑 json patch + last-write-win
   - Node定义采用unist
-  - lww的字符串改为针对crdt优化的类型如woot
+  - lww的字符串改为针对crdt优化的类型
 
 - collab-sync
-  - 👉🏻 string-crdt: woot
+  - 👉🏻 string-crdt: ?
   - collab-data-structure: lww-with-hlc
   - remoteStorage: google-drive、网盘、七牛对象存储
   - lo-fi-sync-server
@@ -152,6 +153,13 @@ $$('[contenteditable]')
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
 
+## 0307
+
+- [Google diff-match-patch源代码解析：听说比GNU diff-patch更厉害？（一）\_APPTI的博客-CSDN博客](https://blog.csdn.net/APPTITE/article/details/107691493)
+  - 语义化优先的diff计算
+  - 效率优先的diff计算（可以设置diff单元的最小粒度）
+  - 设置ddl时间的diff计算（在n秒内完成diff计算操作）
+
 ## 0306
 
 - [How to change the Content of a <textarea> with JavaScript - Stack Overflow](https://stackoverflow.com/questions/1642447/how-to-change-the-content-of-a-textarea-with-javascript)
@@ -165,7 +173,6 @@ $$('[contenteditable]')
 elemText.contentEditable = "true";
 elemText.setAttribute("contenteditable", "true");
 ```
-
 
 - [Why does JSON.parse fail with the empty string? - Stack Overflow](https://stackoverflow.com/questions/30621802/why-does-json-parse-fail-with-the-empty-string)
 
@@ -503,7 +510,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                  `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                    `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

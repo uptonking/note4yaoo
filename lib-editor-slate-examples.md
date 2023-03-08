@@ -32,9 +32,10 @@ modified: 2023-02-05T19:03:12.723Z
   - 一个可扩展的富文本编辑器框架，专注于稳定性、可控性和性能
     - 为此，我们没有使用原生的可编辑属性contenteditable，而是使用了一个自定义的渲染器
     - canvas的开发体验不佳，需要编写更多代码
-  - 使用slatejs数据模型，借助 react 使用自绘光标的模式渲染，不再依赖 contenteditable 属性
+  - 完全自绘和自定义选区，浏览器的selection始终是caret
+  - 不再依赖 contenteditable 属性，使用slatejs数据模型，借助 react 使用自绘光标的模式渲染
   - dev-xp
-    - 表格方向键未实现
+    - 表格方向键异常
   - [修改license为GPL_20220204](https://github.com/editablejs/editable/commits/main?after=d61da6caa411139cddb0ae0e8eeeeaee05893610+69&branch=main&qualified_name=refs%2Fheads%2Fmain)
   - unicode-trie主要对一些 unicode 字符进行索引的计算。因为有些字符占位所占的字节数不确定，造成某些字符拆分后的索引不准确
 

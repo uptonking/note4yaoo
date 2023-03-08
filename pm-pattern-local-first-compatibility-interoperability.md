@@ -78,6 +78,16 @@ modified: 2022-11-14T20:12:25.671Z
   - Protocol Labs pioneered decentralized storage with the introduction of IPFS. 
   - Protocol Labs is an open-source R&D lab. We build protocols, tools, and services to radically improve the internet
 
+## Matrix protocol 
+
+- [Matrix.org](https://www.matrix.org/)
+
+- https://github.com/matrix-org/matrix-spec
+  - https://spec.matrix.org/latest/
+
+- Matrix defines a set of open APIs for decentralised communication, suitable for securely publishing, persisting and subscribing to data over a global open federation of servers with no single point of control
+- Uses include Instant Messaging (IM), Voice over IP (VoIP) signalling, Internet of Things (IoT) communication, and bridging together existing communication silos - providing the basis of a new open real-time communication ecosystem.
+
 ## m-ld
 
 - https://m-ld.org/
