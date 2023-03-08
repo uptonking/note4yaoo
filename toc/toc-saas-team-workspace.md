@@ -49,7 +49,7 @@ modified: 2023-02-07T17:38:05.336Z
   - 后端js，mongoose
   - 前端ts，redux， react-markdown-editor, react-beautiful-dnd
 
-- https://github.com/linagora/Twake
+- https://github.com/linagora/Twake /php
   - Open-source alternative to Microsoft Teams
   - Twake - The Open Digital Workplace
   - Team chat
@@ -179,13 +179,7 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/markusenglund/react-kanban /1.6kStar/201901
   - https://www.reactkanban.com/b/SyfPfO8CP/tutorial-board
   - React, Redux, React-beautiful-dnd, Express, MongoDB, Passport
-- https://github.com/plankanban/planka
-  - https://plankanban.github.io/planka/#/
-  - The realtime kanban board for workgroups built with React and Redux.
-  - React, Redux, Redux-Saga, Redux-ORM, Semantic UI React, react-beautiful-dnd
-    - 前端单独分离出来了
-  - Sails.js, Knex.js
-  - PostgreSQL
+
 - https://github.com/lxerxa/actionview-fe
   - ActionView front-end source code, based on Reactjs＋Redux.
   - https://github.com/lxerxa/actionview /50Star/202101
@@ -204,10 +198,20 @@ modified: 2023-02-07T17:38:05.336Z
   - https://notion-kanboard-mukul.netlify.app/
   - 暂不支持视图切换
 
-
 - https://github.com/kanboard/kanboard /php
   - Kanban project management software
   - https://github.com/aljawaid/KanboardCSS
+
+## kanban realtime
+
+- https://github.com/plankanban/planka /AGPLv3/js
+  - https://plankanban.github.io/planka/#/
+  - The realtime kanban board for workgroups built with React and Redux.
+  - React, Redux, Redux-Saga, Redux-ORM, Semantic UI React, react-beautiful-dnd
+    - 前端单独分离出来了
+  - Sails.js, Knex.js
+  - PostgreSQL
+
 ## kanban/trello-api
 
 - https://github.com/MrRefactoring/trello.js

@@ -34,6 +34,8 @@ modified: 2022-08-14T16:26:48.558Z
   - 支持协作
   - an editor which supports the concept of blocks. It can help you to build an editor like Notion. 
   - Extensible. Extend the editor with custom blocks and spans.
+  - Currently, the document tree of BlockyEditor supports collaborative editing using operation transforming(known as OT).
+  - You can also use a CRDT library such as YJS and bind the data model to it.
 
 - BlockNote /14Star/MPL.v2/202208/ts
   - https://github.com/YousefED/BlockNote

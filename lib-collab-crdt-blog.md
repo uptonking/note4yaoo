@@ -85,7 +85,7 @@ This is how we might do it with with "Realtime as an authority" approach (and is
 - 服务端：Actix + Diamond Types + CRDT
 - 客户端：编辑生成 patches
 - 客户端：编辑器应用 patches
-# [CRDT——解决最终一致问题的利器_201809](https://juejin.cn/post/6844903672032264199)
+# [CRDT 解决最终一致问题的利器_201809](https://juejin.cn/post/6844903672032264199)
 - 先简单统一一下概念
   - object: 可以理解为“副本”
   - operation: 操作接口，由客户端调用，分为两种，读操作query和写操作update
@@ -275,12 +275,75 @@ This is how we might do it with with "Realtime as an authority" approach (and is
 - It seems like CRDTs would be useful for contact tracing in that distributed contact tracers collect data on cases and potential cases. They operate independently for hours through the day with occasional network access or at least end of day.
   - Since there is no concurrency in contact tracing (only you will manipulate your own data), a CRDT might be an unnecessary overhead. 
   - There is concurrency in contact tracing. In developing nations it’s like a map reduce problem. You send out the contact tracers in the morning, they gather results and sync up at the end of the day.
+# [Introduction to CRDTs for Realtime Collaboration](https://dev.to/nyxtom/introduction-to-crdts-for-realtime-collaboration-2eb1)
+- 对各种数据类型进行了简介
+
+- Consider how Figma makes these tradeoffs by combining multiple CRDT-inspired techniques (associativity, commutativity, idempotent) with a last-write-wins (LWW) approach and a central server to coordinate some aspects of conflicts and updates.
+  - Other things like tree re-ordering in the document, undo/redo behaviors, are resolved with domain specific desired implementations. 
+  - Additionally, Figma side-steps the entire realtime text interleaving/merging issue due to the fact that the text content of a text element is just another property on an object.
+  - As such, changes in this system still follow the LWW model they have gone with.
+- Additionally, they go over the Fractional Indexing approach that looks very much like the approach seen in Logoot/LSEQ.
+
+- Given that you have no record of tombstones (like in the case of Logoot/LSEQ) then you run into the problem of interleaving edits on merge. 
+  - However, Figma can make this trade-off due to the fact that it is a design tool not necessarily centered around realtime text editing.
+
+- OR-Set (Observed-Remove Set) 
+  - Similar to LWW-Element-Set except uses tags instead of timestamps. 
+  - For each element in the set, a list of add-tags and a list of remove-tags are maintained. Insertions are done by generating a unique tag and added to the add-tag list for the element. Elements are removed by having all the tags in the element's add-tag list added to the element's remove tag set (tombstone list). > Merging is done by the union of the add-tag list for each element, and the union of remove-tag lists for each element. > An element is a member if the element's add tag list - remove tag list is nonempty.
+
+- Logoot/LSEQ/TreeDoc does not store tombstone deletions and instead takes an approach with fractional/unbounded divisible indexing. 
+  - This, as discussed earlier, can cause issues with interleaving edits so it becomes impractical to guarantee proper sane convergence with concurrent operations.
+
+- RGA
+  - Widely considered to be one of the fastest CRDT implementations. 
+  - Utilizes a timestamped insertion tree and references hash table lookups for character lookups. 
+  - Causal trees are a similar approach (named CT but in RGA it's called a timestamped insertion tree). 
+  - In any case, CT/RGA algorithms have been proven to use the same algorithm
+# [CRDTs The Hard Parts 笔记 _202010](https://zhuanlan.zhihu.com/p/265074361)
+- 包括 Google Docs、Figma、Trello 在内的协同编辑软件，需要依赖收敛算法（convergence algorithms）使得不同节点上发生的修改可以确定地（deterministically）合并到一致的状态。
+  - 最常见的收敛算法有两类：OT（Operational Transformation）和 CRDT（Conflict-free replicated data type）。
+
+- 首先以 Google Docs 为例介绍 OT。
+  - server 会接收不同节点的写，按照规则调整插入的 offset
+  - OT 的关键在于使用 server 统筹不同节点的写。
+  - OT 保证了只要两个节点接收到同一列操作，即便两列操作的顺序不同，节点上的状态也肯定收敛至相同状态。
+- 收敛是很好的性质，但收敛到的状态是否合意（desirable），还需要人为的判断，这一点对于 CRDTs 同样适用。
+  - 相比 OT，CRDT 的合并是去中心化的，无需通过 server，但同样需要保证合并是合意的。
+
+## CRDTs: Interleaving anomalies(异常事物)
+
+- 方案一：给新插入的字母分配一个位于[0, 1]的数字。
+  - 这种方法确实能保证收敛，但下面这种情况明显不是合意的收敛
+  - 这种 interleaving 发生在很多 CRDTs（包括 Logoot、LSEQ、Astrong）实现中，而且没办法修复，因为问题根植在算法本身。
+
+- 方案二：RGA。一种叫做 RGA 的 CRDT 算法存在不那么严重的 interleaving 问题。
+  - 用户 2 输入的 Alice 可能被插入到用户 1 输入的 dear 和 reader 之间，原因在于 RGA 使用了一种基于时间戳的列表数据结构。
+  - 根据 RGA 算法，用户的节点上会形成一个如下的树状链表，每个节点都指向输入时该位置所位于的节点
+
+## CRDTs: Moving list items
+
+- 许多 CRDTs 都实现了 List 数据结构，但不支持 move 操作。
+  - 用户可以把 move 拆解为 delete-then-insert。
+  - 但是会发生下面的 anomaly。
+  - 需要找到一个合适的数据结构来表达 pos，让 pos 具有 last writes win 的性质
+  - 每个 list item 都要有一个 LWWRegister，并把它们放在一个 Add-Wins Set (AWSet) 中
+
+## CRDTs: Moving subtrees of a tree
+
+- 在一棵树内移动子树也是个很 tricky 的问题，但是这样的场景比较常见，例如文件系统就是一棵树。
+- 一个可行的解决办法是引入操作的时间戳。
+
+## CRDTs: Reducing metadata overhead
+
+- 为了完成 undo 和 redo，CRDT 需要存储很大的 metadata
+- Martin 开始介绍 automerge 项目，他的 proposal 和 PR#253 使用 columnar encoding 的思路，使得 CRDT 的 overhead 变得很小。
 # more-crdt
 - [CRDTs and Realtime Collaboration](https://nyxtom.dev/2020/09/01/intro-to-crdts)
-
-- [Introduction to CRDTs for Realtime Collaboration](https://dev.to/nyxtom/introduction-to-crdts-for-realtime-collaboration-2eb1)
-  - 对各种数据类型进行了简介
 
 - [Collaborative Web Apps_202108](https://zjy.cloud/posts/collaborative-web-apps)
   - At the time of the writing, one shortcoming of Replicache is that its local transactions are not fast enough to enable heavy interactions such as drag and drop. 
   - To prevent lagging, we turned on the useMemstore: true option to disable offline support. 
+
+- [Lars Hupel · CRDTs: Part 7 Registers and Deletion](https://lars.hupel.info/topics/crdt/07-deletion/)
+
+- [CRDT Implementations](https://jzhao.xyz/thoughts/CRDT-Implementations/)

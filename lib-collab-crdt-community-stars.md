@@ -110,8 +110,6 @@ interface CRDTSyncDir{
 - https://twitter.com/_jzhao/status/1594732151400189953
   - A deep dive into what CRDTs are, how CRDTs are different from traditional consensus, what makes them tick, and how we can adapt them to tolerate malicious actors
   - [Building a BFT JSON CRDT](https://jzhao.xyz/posts/bft-json-crdt/)
-- https://github.com/jackyzha0/bft-json-crdt /202211/rust
-  - the first JSON-like Byzantine Fault Tolerant CRDT in Rust
 
 - ## If anyone has been curious about how to build a CRDT but thought the idea was too daunting. tiny-merge-legacy_202205
 - https://twitter.com/JungleSilicon/status/1526123548753858560

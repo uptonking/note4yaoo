@@ -21,6 +21,7 @@ modified: 2023-02-05T19:03:12.722Z
   - 协作时还应该考虑 json patch + last-write-win
   - Node定义采用unist
   - lww的字符串改为针对crdt优化的类型如?
+  - 分2步，先将数据全部放在内存但virtual-render，再按需请求数据懒加载
 
 - 实现扁平化Node的方式
   - 理想方式是每个op会在apply结束后顺便计算dirtyPath相关的数据变化
@@ -43,6 +44,9 @@ modified: 2023-02-05T19:03:12.722Z
 - 光标在斜体粗体文字边上时，选区对应的具体位置在里面还是外面
 
 - 使用tree存储数据，还是使用map存储数据+关系，如何设计更好
+
+- remirror的api设计 uncontrolled by default
+  - 支持设置state+onChange让ReEditor组件变成controlled
 
 ## answers
 

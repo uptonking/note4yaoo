@@ -9,6 +9,10 @@ modified: 2021-08-07T15:30:42.655Z
 
 # 2023
 
+- 20230
+
+- 202303-钉钉收购协同办公厂商「我来wolai」
+  - 我来wolai与此前对Teambition、拍乐云的收购，分别对应钉钉加大在文档、项目管理、音视频三类协同产品的投入
 - 202301-capital-Netlify just acquired Gatsby
   - Remix    → Shopify
   - Next.js  → Vercel
@@ -17,7 +21,6 @@ modified: 2021-08-07T15:30:42.655Z
   - Eleventy → Netlify
   - Solid    → Netlify
 
-- 20230
 # 2022
 - 202209-capital-Adobe以200亿美元收购 Figma
 - 202205-capital-[ONES收购SegmentFault思否](https://www.zhihu.com/question/531417114/answers/updated)

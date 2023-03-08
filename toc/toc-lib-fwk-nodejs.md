@@ -197,6 +197,9 @@ modified: 2022-12-19T01:49:01.371Z
 - https://github.com/nodosjs/nodos
   - https://nodosjs.github.io/
   - Node.js framework for humans (inspired by rails, phoenix, django)
+# rust
+- https://github.com/patr0nus/rust-nodejs
+  - Embedding Node.js in Rust.
 # loopback-examples
 - https://github.com/loopbackio/loopback4-example-shopping
   - LoopBack 4 Example: Online Shopping APIs

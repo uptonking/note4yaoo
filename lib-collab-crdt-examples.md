@@ -135,6 +135,8 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/phedkvist/crdt-sequence
   - CRDT Sequence is a very basic collaborative text editing implementation
+  - 自己实现了 history、activeUsers
+  - quill的功能使用得很少
   - 依赖 react-quill
   - [Creating a Collaborative Editor_201906](https://pierrehedkvist.com/posts/1-creating-a-collaborative-editor)
     - This solution doesn't support interleaving
@@ -160,6 +162,7 @@ modified: 2022-04-05T10:08:25.947Z
   - Replicate text or sequences over networks.
 - https://github.com/t-mullen/logoot-crdt
   - Optimized Logoot CRDT implementation.
+  - Implemented as a tree for fast character position lookups.
 - https://github.com/kana-sama/edita
   - 无编辑器
 
@@ -281,19 +284,13 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/siliconjungle/crdt-likes
   - A simple example of how to build offline-first likes using CRDT's.
-- https://github.com/josephg/simple-crdt-text
-  - This is a simple CRDT implementation for the CRDT I want to efficiently implement in rust. 
-  - This implementation is intentionally not optimized. 
-  - The goal is to have some simple code that I can use to clarify semantics and as a basis for fuzz testing correctness of a faster implementation.
+- https://github.com/josephg/simple-crdt-text /ts
   - This implements automerge's underlying algorithm (RGA)
+  - The goal is to have some simple code that I can use to clarify semantics and as a basis for fuzz testing correctness of a faster implementation.
 - https://github.com/siliconjungle/recycle-list-crdt
   - A crdt that recycles tombstones.
 - https://github.com/siliconjungle/delta-crdt
   - A simple delta CRDT implementation.
-
-- https://github.com/t-mullen/logoot-crdt
-  - Replicate text or sequences over networks. (WithOut Operational Transformation)
-  - Allows an unlimited number of authors to collborate in real-time on text over arbitrary networks.
 
 - https://github.com/coast-team/dotted-logootsplit
   - Most of the CRDT embeds metadata in order to avoid conflicting edits. The challenge is to keep these metadata as small as possible.
@@ -390,6 +387,11 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/nybblr/LSEQTree
   - provide an implementation of a CRDT-based array  with an underlying exponential tree and the allocation strategy LSeq
+
+- https://github.com/jackyzha0/bft-json-crdt /202211/rust
+  - the first JSON-like Byzantine Fault Tolerant CRDT in Rust
+  - [Building a BFT JSON CRDT](https://jzhao.xyz/posts/bft-json-crdt/)
+
 # last-write-win/llw
 - https://github.com/ymlsam/lww-element-dict
   - a LWW key-value store, a conflict-free replicated data type (CRDT)
@@ -448,6 +450,11 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/markandre13/workflow
   - A Collaborative Real-Time White- and Kanban Board
+  - 偏向画板
+
+- https://github.com/maca/ace-crdt /js/rga
+  - Collaborative text editor proof of concept using CRDT
+  - 提供了server
 # state-management-crdt
 - https://github.com/HerbCaudill/crdx
   - CRDX is a state container for JavaScript apps.

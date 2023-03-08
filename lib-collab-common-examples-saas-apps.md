@@ -33,7 +33,8 @@ modified: 2023-01-17T19:14:47.611Z
 - cryptpad /AGPLv3/202301/js
   - https://github.com/xwiki-labs/cryptpad
   - https://cryptpad.org/
-  - CryptPad is a collaboration suite that is end-to-end-encrypted and open-source. 
+  - CryptPad is a collaboration suite that is end-to-end-encrypted and open-source.
+  - 依赖 onlyoffice
   - It is built to enable collaboration, synchronizing changes to documents in real time. 
   - Because all data is encrypted, the service and its administrators have no way of seeing the content being edited and stored.
   - https://github.com/xwiki-labs/chainpad-server
@@ -242,6 +243,9 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/google/ot-crdt-papers
   - This repository will hold papers Raph Levien is writing on technologies for collaborative text editing, in particular at the intersection of Operational Transformation and Conflict-free Replicated Data Types (CRDT's).
   - It also holds a prototype implementation in JavaScript, using socket.io.
+
+- https://github.com/vector-im/element-web
+  - A glossy Matrix collaboration client for the web.
 # more
 - https://github.com/linagora/Twake
   - 后端php

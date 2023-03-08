@@ -94,6 +94,10 @@ modified: 2022-08-21T10:16:52.004Z
   - notion
   - https://twitter.com/jitl
 
+- Jacky Zhao
+  - https://github.com/jackyzha0/bft-json-crdt
+  - https://jzhao.xyz/
+
 - phedkvist
   - crdt, woot
   - https://github.com/phedkvist/crdt-sequence
