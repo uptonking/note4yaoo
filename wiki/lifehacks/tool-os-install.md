@@ -243,6 +243,8 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - [微信（Wine）-优麒麟 v3.0.0](https://www.ubuntukylin.com/applications/119-cn.html)
   - [微信 v2.1.1](https://www.ubuntukylin.com/applications/106-cn.html)
 
+- qq linux版
+  - [QQ Linux版](https://im.qq.com/linuxqq/index.shtml)
 ## dev
 
 - ubuntu-mysql

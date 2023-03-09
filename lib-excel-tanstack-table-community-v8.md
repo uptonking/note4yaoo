@@ -6,12 +6,9 @@ modified: 2022-08-21T10:19:58.756Z
 ---
 
 # lib-excel-tanstack-table-community-v8
-- v8分支参考
-  - https://github.com/HebleV/react-table/tree/beta
-    - beta-20201109
-    - https://github.com/XiaoyueCai/react-table/tree/beta
-  - https://github.com/schuchertmanagementberatung/react-table/tree/next
-    - next-20200525
+
+- [Making Tanstack Table 1000x faster with a 1 line change - JP Camara](https://jpcamara.com/2023/03/07/making-tanstack-table.html)
+  - [[v8] Improve grouping performance on large clusters of values_202210](https://github.com/TanStack/table/pull/4495)
 # discuss
 - ## 
 

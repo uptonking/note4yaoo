@@ -162,6 +162,13 @@ modified: 2023-01-20T21:59:47.792Z
 - https://github.com/contember/engine /ts/graphql
   - Contember is an open-source, headless CMS without limits. It gives you full control over the administration interface and data structure. 
   - Contember Engine is a standalone server providing GraphQL API for your PostgreSQL database.
+
+- https://github.com/hashicorp-forge/hermes
+  - An Open Source Document Management System
+  - [Introducing Hermes, An Open Source Document Management System](https://www.hashicorp.com/blog/introducing-hermes-an-open-source-document-management-system)
+  - Hermes uses Golang for the backend and Ember.js for the front end. 
+  - It uses a PostgreSQL database for storage and Algolia to power its search capabilities. 
+  - It also leverages several Google Workspace services for creating and modifying documents, sending email, etc.
 # more
 - https://github.com/FactorJS/factor
   - Factor is an expressive & modular framework for JavaScript applications.

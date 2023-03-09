@@ -11,14 +11,6 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
-- ## 
-
-- ## 代码写的再好，如果解决不了问题，最多感动一下自己。
-- https://twitter.com/greatghoul/status/1632241657671462913
-  - 相反，一个好的项目，只要能够帮助人解决问题，即使代码比较烂，依然能吸引人去持续改进，最终变成好项目。
-- 做技术的总是忽视用户需求、市场、营销的重要性。所谓得人心者得天下。
-- 从另一方面来看现在似乎处于技术爆发期间，各商业公司仅限于做finetuning，直接输出的商业模式除了gpt本身的月费，还没有更优解
-
 - ## You can jump on every new trend like crypto, web3, AI. 
 - https://twitter.com/yongfook/status/1616635377586180096
   - Or you can slowly build something “boring” like a CRM for veterinarians. 
@@ -39,10 +31,33 @@ modified: 2022-11-07T11:00:28.824Z
 - 然后，再从自身能力/市场规模/竞争程度等维度分析
 - 最后，不用多想，干就完了!
 
+- ## 代码写的再好，如果解决不了问题，最多感动一下自己。
+- https://twitter.com/greatghoul/status/1632241657671462913
+  - 相反，一个好的项目，只要能够帮助人解决问题，即使代码比较烂，依然能吸引人去持续改进，最终变成好项目。
+- 做技术的总是忽视用户需求、市场、营销的重要性。所谓得人心者得天下。
+- 从另一方面来看现在似乎处于技术爆发期间，各商业公司仅限于做finetuning，直接输出的商业模式除了gpt本身的月费，还没有更优解
+
 # discuss
 - ## 
 
 - ## 
+
+- ## 分析了Tinder、Doordash、Uber、Pinterest、Dropbox等数十个头部产品获得他们前1000个用户的方法，这里是七个最常见的策略
+- https://twitter.com/0xthefool/status/1633418543185428482
+  - [How the biggest consumer apps got their first 1, 000 users](https://www.lennysnewsletter.com/p/how-the-biggest-consumer-apps-got)
+- 策略一：线下地推
+- 策略二：邀请朋友
+- 策略三：线上社群
+- 策略四：病毒传播
+  - 通过早期邀请制注册+好的产品体验+市场FOMO就会让所有人期待使用产品，也会让有邀请名额的人愿意邀请朋友
+  - Clubhouse当年爆火大家都在高价买邀请码；Instagram早期挨个私信Twitter上的设计和时尚大V让普通用户很期待这个神秘产品；Spotify初期唯一的注册账号方式就是让当前用户邀请
+- 策略五：大V站台
+- 策略六：媒体报道
+- 策略七：社群驱动
+- 总结
+  - 互联网2C产品早期增长策略都可以被归到七类当中，只要做好一个就可以获得早期增长，很少有使用超过三个策略的
+  - 前期增长最关键的事情是定义好到底谁才是最合适的早期用户，然后用一切“野蛮”的办法找到他们
+  - 获得前一千个用户的方法大概率不会帮助你快速获得前一万个用户，后期要转变策略
 
 - ## 今天被 ChatGPT API 刷屏了, 研究后发现几点有意思的:
 - https://twitter.com/CongZhangDev/status/1631535330569621505

@@ -162,7 +162,7 @@ modified: 2023-02-07T17:38:05.336Z
   - an offline capable application or tool that implements kanban to manage work at personal level
   - The application is registered with service workers and behaves as a progressive web application (PWA)
 
-- https://github.com/riktar/jkanban /630Star/202012
+- https://github.com/riktar/jkanban /914Star/apache2/js/202112/inactive
   - https://www.riccardotartaglia.it/jkanban/
   - Vanilla Javascript plugin for manage kanban boards
 - https://github.com/asseinfo/react-kanban

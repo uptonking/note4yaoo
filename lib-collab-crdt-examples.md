@@ -9,6 +9,9 @@ modified: 2022-04-05T10:08:25.947Z
 
 # guide
 
+- ref
+  - https://github.com/alangibson/awesome-crdt
+  - [CRDTs for Non Academics - YouTube](https://www.youtube.com/watch?v=vBU70EjwGfw)
 # popular
 - https://github.com/pubuzhixing8/awesome-collaboration
   - Collaborative editing of technical resources, article translation
@@ -392,6 +395,12 @@ modified: 2022-04-05T10:08:25.947Z
   - the first JSON-like Byzantine Fault Tolerant CRDT in Rust
   - [Building a BFT JSON CRDT](https://jzhao.xyz/posts/bft-json-crdt/)
 
+- https://github.com/Xuzhiqian/WYJPad
+  - 依赖codemirror5
+
+- https://github.com/mountainflo/collaborative-text-editor /js/go
+  - Collaborative realtime texteditor with gRPC using RGAs (Replicated Growable Arrays).
+  - using a variant of RGAs (Replicated Growable Arrays). The RGA-protocol is implemented as Timestamped Insertion Tree (TI Tree) 
 # last-write-win/llw
 - https://github.com/ymlsam/lww-element-dict
   - a LWW key-value store, a conflict-free replicated data type (CRDT)

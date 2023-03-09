@@ -30,16 +30,14 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/excalidraw/excalidraw-room
   - Collaboration server for Excalidraw
 
-- cryptpad /AGPLv3/202301/js
+- cryptpad /4.3kStar/AGPLv3/202301/js
   - https://github.com/xwiki-labs/cryptpad
   - https://cryptpad.org/
   - CryptPad is a collaboration suite that is end-to-end-encrypted and open-source.
   - 依赖 onlyoffice
   - It is built to enable collaboration, synchronizing changes to documents in real time. 
   - Because all data is encrypted, the service and its administrators have no way of seeing the content being edited and stored.
-  - https://github.com/xwiki-labs/chainpad-server
-    - Implements a websocket server compatible with netflux-websocket client as per the Netflux 2.0 specification.
-    - https://github.com/xwiki-labs/netflux-spec2
+  - https://github.com/xwiki-labs/netflux-spec2
   - https://github.com/xwiki-labs/chainpad-listmap
     - collaborative lists and maps in the browser
 

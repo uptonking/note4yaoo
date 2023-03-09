@@ -9,7 +9,13 @@ modified: 2022-10-13T08:00:21.260Z
 
 # guide
 
-# [Operation-based CRDTs: registers and sets](https://www.bartoszsypytkowski.com/operation-based-crdts-registers-and-sets/)
+- ref
+  - [arXiv: collaborative editing](https://arxiv.org/search/?query=collaborative+editing&searchtype=all&source=header)
+
+# [Bartosz Sypytkowski crdt series](https://www.bartoszsypytkowski.com/the-state-of-a-state-based-crdts/)
+
+## [Operation-based CRDTs: registers and sets](https://www.bartoszsypytkowski.com/operation-based-crdts-registers-and-sets/)
+
 - Registers are one the most wide spread ways of working with CRDTs. 
   - The reason is simple: they allow us to wrap any sort of ordinary data types in order to give them CRDT-compliant semantics.
   - However, this comes at the price - we cannot simply change any non-CRDT value into CRDT without some compromises: if that would be possible, we wouldn't need CRDTs in the first place. 

@@ -9,6 +9,8 @@ modified: 2022-10-22T18:45:23.619Z
 
 # guide
 
+# [Near Real-Time Peer-to-Peer Shared Editing on Extensible Data Types](https://www.researchgate.net/publication/310212186_Near_Real-Time_Peer-to-Peer_Shared_Editing_on_Extensible_Data_Types)
+
 # [探秘前端 CRDT 实时协作库 Yjs 工程实现 - 知乎](https://zhuanlan.zhihu.com/p/452980520)
 - 本文会从 Yjs 的工程实现出发，介绍一个典型的工业级 CRDT 库是如何实现以下能力的：
   - 建模数据结构
@@ -32,7 +34,5 @@ modified: 2022-10-22T18:45:23.619Z
 - [YATA：一种针对文本编辑优化的 CRDT 算法](https://hyrious.me/p/yata.html)
 
 - [YATA线性数据插入算法](https://juejin.cn/post/7030327499829542942)
-
-- [Near Real-Time Peer-to-Peer Shared Editing on Extensible Data Types](https://www.researchgate.net/publication/310212186_Near_Real-Time_Peer-to-Peer_Shared_Editing_on_Extensible_Data_Types)
 # [Delta-state CRDTs: indexed sequences with YATA](https://bartoszsypytkowski.com/yata/)
 - This time we'll cover YATA (Yet Another Transformation Approach): a delta-state based variant, introduced and popularized by Yjs framework used to build collaborative documents.

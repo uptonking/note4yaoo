@@ -9,6 +9,8 @@ modified: 2022-11-23T17:51:08.635Z
 
 # guide
 
+
+- [Node Stream流核心机制理解 - 掘金](https://juejin.cn/post/7115043225944981535)
 # examples
 - https://github.com/zandaqo/structurae
   - A collection of data structures for high-performance JavaScript applications 

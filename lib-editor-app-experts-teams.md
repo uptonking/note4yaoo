@@ -106,11 +106,21 @@ modified: 2022-08-21T10:16:52.004Z
   - crdt, swarm
   - https://github.com/lambdafu/swarm-doc
 
+
+
 - Matt
   - crdt, sqlite
   - https://github.com/tantaman
   - https://twitter.com/tantaman
   - https://github.com/vlcn-io/cr-sqlite
+
+- Jared Forsyth
+  - https://github.com/jaredly/local-first
+  - [Visualization of different CRDT algorithms (including Yjs/YATA and Automerge/RGA)](https://text-crdt-compare.surge.sh/)
+  - [Hybrid Logical Clocks](https://jaredforsyth.com/posts/hybrid-logical-clocks/)
+
+- YU, WEIHAI
+  - https://en.uit.no/ansatte/weihai.yu
 # prosemirror
 - https://github.com/marduke182
   - https://www.npmjs.com/package/@marduke182/prosemirror-react-view

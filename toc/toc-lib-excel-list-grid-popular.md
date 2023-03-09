@@ -40,6 +40,20 @@ modified: 2022-08-21T10:02:27.788Z
     - has no 3rd party dependencies
     - integrates smoothly with all major JavaScript frameworks
   - ag-grid-enterprise is Commercial licensed but opensourced
+- tanstack-table /MIT/11.6kStar/202202/ts
+  - https://github.com/tannerlinsley/react-table
+  - https://react-table.tanstack.com/
+  - Hooks for building fast and extendable tables and datagrids for React
+  - React Table is a headless utility, which means it doesn't supply any actual UI elements.
+  - react-virtual /MIT/1.1kStar/202007
+    - https://github.com/tannerlinsley/react-virtual
+    - Hooks for virtualizing scrollable elements in React
+- onlyoffice-sdkjs /190Star/AGPLv3/202302/js
+  - https://github.com/ONLYOFFICE/sdkjs
+  - https://api.onlyoffice.com/docbuilder/spreadsheetapi
+  - Contains API for all the included components client-side interaction.
+  - 通过TypedArray，将表格数据以二进制格式存储，通过字段压缩+共享字符串表来优化内存空间
+  - [精读onlyoffice在线表格存储设计](https://juejin.cn/post/7202252704978386999)
 - react-data-grid /MIT/4kStar/202201/ts
   - https://github.com/adazzle/react-data-grid
   - https://adazzle.github.io/react-data-grid/canary/
@@ -58,14 +72,6 @@ modified: 2022-08-21T10:02:27.788Z
     - a JS table library with many advanced features based on tabulator
   - 基于div实现，每行对应的dom元素存在，未实现column span
   - Interactive Tables and Data Grids for JavaScript supporting react, angular, vue
-- react-table /MIT/11.6kStar/202202/ts
-  - https://github.com/tannerlinsley/react-table
-  - https://react-table.tanstack.com/
-  - Hooks for building fast and extendable tables and datagrids for React
-  - React Table is a headless utility, which means it doesn't supply any actual UI elements.
-  - react-virtual /MIT/1.1kStar/202007
-    - https://github.com/tannerlinsley/react-virtual
-    - Hooks for virtualizing scrollable elements in React
 - react-virtualized /MIT/19.5kStar/202105/js
   - https://github.com/bvaughn/react-virtualized
   - http://www.reactvirtualized.com/

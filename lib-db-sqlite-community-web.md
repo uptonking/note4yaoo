@@ -150,6 +150,10 @@ modified: 2022-11-25T09:47:43.079Z
 - You may have seen “Absurd SQL” which was a proof of concept for building a SQLite Virtual FS backend using IndexedDB. It provided full ACID compliment transactions. Incredible work but a hack at best.
   - The OPFS supersedes all that and makes it possible to have proper consistent and resilient transactions.
 
-- 
-- 
-- 
+- ## A long, tragic history of SQLite, the web, and my career.
+- https://twitter.com/aboodman/status/1633351945464475648
+  - 2020: Chrome implements cache partioning, killing the ability to share large wasm objects like SQLite across web pages.
+  - So what's the takeaway? I guess for me some concrete ones are:
+  - API design is very difficult. IDB had universal vendor support, but just turned out to not be what devs wanted.
+- The arc of software history bends toward the right solution, independent of roadblocks. Nowadays because of OSS the arc bends a lot faster. It's very difficult/impossible for vendors to *mandate* something that isn't good.
+- If we want to preserve the zero-install experience of the web *and* enable rich web pages, we need *some* way to share objects across sites. We can't and shouldn't rely on browsers to implement the majority of APIs. There has to be some way for developers to do this. 

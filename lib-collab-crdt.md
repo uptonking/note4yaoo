@@ -10,7 +10,7 @@ modified: 2022-04-05T10:10:08.537Z
 # guide
 
 - 协作方案参考
-  - Liveblocks, synced-store, FluidFramework, gundb,pouchdb
+  - Liveblocks, synced-store, FluidFramework, gundb, pouchdb
   - automerge (2017), yjs (2015), sharedb (2013)
 
 - state-based和operation-based没必要二选一，两者可转换
@@ -49,9 +49,7 @@ modified: 2022-04-05T10:10:08.537Z
 
 - 实现协作要考虑到切换冲突处理算法，如slate-yjs/automerge/sharedb
 
-- [An introduction to state-based CRDTs_201712](https://bartoszsypytkowski.com/the-state-of-a-state-based-crdts/)
-- [Operation based CRDTs: protocol_202008](https://bartoszsypytkowski.com/operation-based-crdts-protocol/)
-- [Operation-based CRDTs: JSON document_202103](https://bartoszsypytkowski.com/operation-based-crdts-json-document/)
+- [Bartosz Sypytkowski crdt series](https://www.bartoszsypytkowski.com/the-state-of-a-state-based-crdts/)
 # [CRDTs for Mortals_James Long_201912](https://www.youtube.com/watch?v=DEcwa68f-jY)
 - Why haven’t “offline-first” apps taken off?
   - syncing is hard

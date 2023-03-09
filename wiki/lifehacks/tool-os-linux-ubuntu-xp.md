@@ -9,6 +9,12 @@ modified: 2021-01-01T22:26:57.773Z
 
 # guide
 
+# gnome-extensions
+- [Tray Icons: Reloaded](https://extensions.gnome.org/extension/2890/tray-icons-reloaded/)
+  - https://github.com/MartinPL/Tray-Icons-Reloaded
+  - bring back Tray Icons to top panel, with additional features.
+  - only works with Xorg and XWayland.
+  - If you are on Wayland and app won't run through XWayland you can force it via command: `GDK_BACKEND=x11 app_name`
 # ubuntu-starter
 - ubuntu查看序列号（serial number）和产品型号（product number）
   - sudo dmidecode | less

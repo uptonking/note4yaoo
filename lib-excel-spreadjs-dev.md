@@ -12,7 +12,7 @@ modified: 2022-08-24T10:48:29.318Z
 - resources
   - [spreadjs技术博客](https://www.grapecity.com.cn/blogs/categories/spread)
   - [SegmentFault D-Day 技术分享：葡萄城电子表格技术__202108](https://www.grapecity.com.cn/blogs/spreadjs-segmentfault-d-day)
-# spreadjs-blog
+# blogs-spreadjs
 
 ## [葡萄城 SpreadJS 前端表格技术分享_202007](https://zhuanlan.zhihu.com/p/164731403)
 
@@ -22,7 +22,35 @@ modified: 2022-08-24T10:48:29.318Z
     - 类似油画的分层绘制
   - 基于行模式的稀松矩阵存储策略，SpreadJS可大幅节省内存消耗
   - 基于计算引擎技术，SpreadJS可实现稳定可靠的应用系统
-# blogs
+
+## [如何写成高性能的代码（三）：巧用稀疏矩阵节省内存占用 - 掘金](https://juejin.cn/post/7160964641063960612)
+
+- [电子表格实战锦囊: 巧用稀疏数组是关键! - 掘金](https://juejin.cn/post/7046958838100492318)
+
+- [用时间置换空间，聊聊稀疏数组的那些事儿 - 掘金](https://juejin.cn/post/7012806847048450078)
+
+## [前后端结合解决Excel海量公式计算的性能问题 - 掘金](https://juejin.cn/post/7169405648491249701)
+
+1．读取模型之前，先用GcExcel在后端打开。在后端进行完整的计算。 
+2．前端根据所展示的Sheet工作表，从后端读取对应的工作表并序列化进行传输。
+3．前端SpreadJS禁用公式计算，设置计算按钮改为触发式计算。
+4．前端通过脏数据获取修改记录。
+5．当主动点击计算或者切换工作表Sheet页签时触发请求，将修改记录发送后端，后端将修改内容修改并整体计算。再将结果根据前端所展示的Sheet做序列化处理并传输至前端。
+6．前端进行反序列化处理展示。
+
+## [葡萄城高性能表格技术优化实践](https://ke.segmentfault.com/course/1650000038945137)
+
+- 性能优化实践
+  - 减少垃圾回收
+  - 共享存储和数据压缩
+  - 其他优化实践
+
+- 表格技术落地：SpreadJS & GcExcel
+
+## [如何实现可多人协作的“在线excel”系统？ - 掘金](https://juejin.cn/post/6844904017152180238)
+
+- [如何实现可多人协同的“在线Excel”系统？](https://live.vhall.com/483759540)
+# more-blogs
 - [简介：开发在线文档时，这个技术难点你解决了吗？ 多人协作](https://www.grapecity.com.cn/blogs/spreadjs-technical-difficulties-of-online-documentation)
 - SpreadJS 采用了稀疏数组 (Sparse Array) 作为存储模型，相较于传统的链式存储或数组存储，稀疏数组只会对非空数据进行存储，而不需要对空数据开辟额外的内存空间。
   - 除了节省内存空间外，对于表格这类布局松散的数据类型，稀疏数组也更易于构建基于行索引的数据字典，以便随时替换或恢复整个存储结构中的任何一个级别的节点，
