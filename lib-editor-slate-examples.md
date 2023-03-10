@@ -541,16 +541,22 @@ modified: 2023-02-05T19:03:12.723Z
   - Invoking JSON0-ot-diff on every edit is not very efficient.
 - https://github.com/onechunlin/collaborative-docs
   - 基于 Slate 和 ShareDb 实现的基于 OT 算法的协同文档
-
 - https://github.com/timbuckley/slate-collaborative
   - A collaborative implementation for the slatejs editor using operational transform
   - 依赖很少
+
 - https://github.com/4molybdenum2/Metanoia
   - Metanoia is a Real-time Collaborative Text Editor made with the help of Slate JS and Socket. IO
   - onChange直接发送op，未使用冲突处理算法
 - https://github.com/Regloom/slatesyncedit
   - 每次同步全量数据
   - 注意测试时要用相同url代表在一个房间里面
+
+- https://github.com/cudr/slate-collaborative /ts/inactive
+  - A example of a collaborative editor using Slate and Automerge
+  - 依赖slate.v0.59
+  - Based on idea of https://github.com/humandx/slate-automerge
+  - https://github.com/mms-gianni/slate-collaborationserver
 
 - https://github.com/itoumlilt/crdt-md-editor /ts/slate/CouchDB
   - React Typescript CRDT based Collaborative Markdown Editor
@@ -563,11 +569,6 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/6thfdwp/crdt-editor
   - A collaborating editor based on Slate and Yjs
-
-- https://github.com/cudr/slate-collaborative
-  - A example of a collaborative editor using Slate and Automerge
-  - Based on idea of https://github.com/humandx/slate-automerge
-  - https://github.com/mms-gianni/slate-collaborationserver
 
 - https://github.com/grimmer0125/slatejs-exp /201807/js
   - use socket.io to sync & show other people's cursors (carets) when collaborating to edit the same content by slatejs editor

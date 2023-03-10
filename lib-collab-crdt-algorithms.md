@@ -14,9 +14,12 @@ modified: 2023-03-07T04:43:58.713Z
   - 算法需要生态，如undo/redo、offline、versions、presence、server、room、轻量级实现、社区轮子
   - 学术界的代码大多都是玩具，经过业务产品验证过的更可靠
   - crdt算法修改版不会直接成为亮点，在业务有影响力后的亮点更大
+  - [A comprehensive study of Convergent and Commutative Replicated Data Types_201101](https://www.researchgate.net/publication/50949847)
   - [Visualization of different CRDT algorithms (including Yjs/YATA and Automerge/RGA)](https://text-crdt-compare.surge.sh/)
+  - https://github.com/pfrazee/crdt_notes
 
 - 数据结构分析
+  - 基础数据结构: map, array, text, set
   - id的结构，创建方式
   - insert op
   - delete op
@@ -30,8 +33,109 @@ modified: 2023-03-07T04:43:58.713Z
   - https://github.com/gritzko
   - citrea-model, 2012
   - swarm, 2013
-  - chronofold, 2015
+  - chronofold, 2020
 # crdt-algorithms
+
+## json-crdt
+
+### tips
+
+- 考虑到数据源和持久化，通常会将json扁平化，normalize
+  - 扁平化后方便使用 lww + map
+  - 还要考虑编码解码
+
+### [Shelf: a remarkably small, 
+
+remarkably useful CRDT](https://braid.org/algorithms/shelf)
+- A shelf is efficient, and guarantees consistency, with multiple writers in a P2P network. 
+- A shelf supports most of JSON, however, it does not:
+  - Support CRDT insertions or deletions in sequences (arrays/strings)
+  - Distinguish null from undefined
+- But many use-cases don't need those features. 
+
+- Here is a shelf: `[VALUE, VERSION_NUMBER]`.
+  - A shelf is an array with two elements: (1) `X`, and (2) some version number.
+  - `X` can be a number or string or bool.. or.. a map (but not an array.. and if it's a string, we don't recurse into the string with our crdt, a string is atomic
+
+- Shelves can be merged by VERSION_NUMBER, the bigger version wins
+  - If the versions match, then it sorts the value, lower value wins
+
+### [When using fixed data types for JSON CRDTs you can really reduce the amount of metadata needed.](https://twitter.com/JungleSilicon/status/1587070718688514048)
+
+- Rather than storing path info, you can just store an index. You can also only store versions for the whole blob of the change.
+- this is essentially just encoding a JSON CRDT as a list CRDT isn't it?? haha very smart
+- I think of it as being similar to c structs and how they get flattened in memory.
+  - I maintain the parent / child relationship so that child fields can be over written when a parent is changed too.
+- It uses a flyweight pattern so that all of the documents can use the same type metadata as a lookup so you can avoid storing paths, parent data, etc.
+
+- Adding type metadata to fixed-type crdts so it's easy to validate the changes that peers are making.
+- https://twitter.com/JungleSilicon/status/1588313885458976768
+  - This will include different crdt types so that more complex crdts are composable. (e.g. counters, lists, etc).
+  - The idea is that all "documents" are JSON CRDTs and then each field can have more specialised CRDTs associated with them. When you override the field it will create a new CRDT in that slot.
+
+- Ok so I've had a bit of an insight with fixed-type JSON-CRDTs.
+- https://twitter.com/JungleSilicon/status/1594290808857202688
+  - Since the type doesn't change, you don't need to store version information for containers (arrays & objects).
+  - It's only the fields that need version information.
+  - This means that you no longer need to send a parent version along with a field as the hierarchy has been flattened.
+  - Since the fields have been turned into a set, you can run-length encode the fields.
+- If you set the fieldIndices in a breadth-first way, then siblings will group together (e.g. position.x, position.y and position.z) when run-length encoded.
+  - This also means that multiple changes to the same set of fields will be fast as you can set the version for a group.
+
+- Using fixed-type json-crdts on the server is incredibly performant if you flatten the hierarchy.
+- https://twitter.com/JungleSilicon/status/1594303337369079809
+  - You don't actually need a JSON representation of the data, you just need to know which value is at each index.
+- I was just thinking about this more and it feels super exciting. I imagined a semi-fixed type system where object type definitions get stored in CRDT and can change, changes happen on flattened objects but the type definitions can change over time
+
+### [I feel somewhat limited by JSON working on CRDTs.](https://twitter.com/JungleSilicon/status/1580699240833372162) 
+
+- I wish there was an easy way to associate metadata with an object or array without needing to wrap them in another object or array.
+  - So currently this is annoying cos the version is an array and you also need to wrap objects in arrays to associate a version.
+
+- We should chat, that’s exactly how we handle it in the @kosmik_app database
+- Assuming you're in JS, doesn't Proxy solve this? Immer uses this extensively. Then you can build whatever metadata you want either by wrapping or some sidecar data structure and hide that from the user.
+  - Eh, not really. They’re slow and don’t feel very good / consistent. Also it’s not about hiding the interface, it’s about the core data structure.
+
+- Here’s a super simple example of versioning in a ‘shelf’ like syntax.
+  - 经典json结构，value类型为数组 [val, clock]
+- why not use flat map with path as key?
+  - That's pretty gross. Not only do you get the slow down of needing to split / combine strings, you also need to store the full path of each field, you also lose hierarchical information so if you replace the object at "position", then finding the children to remove is harder.
+- YMMV, working with normalized data is easier because everything can be thrown into a KV store. This does mean you will need an ORM to normalize and denormalize data; however, it also offers a cleaner abstraction as sync is now separate from managing app-level data-dependencies.
+
+### [intro to json-crdt](https://twitter.com/JungleSilicon/status/1577523277207326720)
+
+- `[seq, agentId]`: lamport clock with agentId as a tie-breaker
+- each key stores a last-write-win register as value
+
+- [A breakdown of many different techniques for constructing state-based JSON CRDTs.](https://twitter.com/JungleSilicon/status/1577123150696833025)
+
+- a shared version per field
+- flattened crdt with parent
+- infer version by parent
+- fixed type using index instead of path
+- fixed type with versions
+
+### impl
+
+- https://github.com/siliconjungle/simple-fixed-json-crdt
+  - https://github.com/siliconjungle/fixed-json-crdt
+  - A json-crdt for fixed types of data. Very minimal data required.
+
+- https://github.com/dglittle/shelf
+  - a shelf: [VALUE, VERSION_NUMBER]
+
+- https://github.com/siliconjungle/cabinet
+  - A key value store & subscriptions wrapping a json blob crdt (shelf).
+
+- more-impl
+  - https://github.com/automerge/automerge-classic
+  - https://github.com/samuel-christian/json-crdts
+
+### more-json-crdt
+
+- [Shelf: easy way for recursive CRDT documents](https://www.bartoszsypytkowski.com/shelf-crdt/)
+
+- [JSON-CRDT](https://github.com/ipfs/notes/blob/master/CRDT/json-crdt.md)
 
 ## Logoot/LogootSplit
 
@@ -267,7 +371,8 @@ modified: 2023-03-07T04:43:58.713Z
   - An order is a binary relation, for example 1 is less than 2. 
   - You can also think of it in terms of son <= father. Combine this with the commutative and idempotent properties, you will get a semi-lattice.
 - Lattice（格）
-  - ​ 如果一个偏序集中任意两个元素都有最大下界和最小上界的话，我们就可以将这个偏序集称之为一个格，可见格的概念是包含在偏序集中，也可以说一部分特殊的偏序集也就是格。
+  - ​ 如果一个偏序集中任意两个元素都有最大下界和最小上界的话，我们就可以将这个偏序集称之为一个格，
+  - 可见格的概念是包含在偏序集中，也可以说一部分特殊的偏序集也就是格。
 - Semilattice（半格）
   - 给定一个偏序集，对于任意的a和b，如果只有最大下界存在，那么可以称为`meet-semilattice`，如果只有最小上界存在，那么可以称为`join-semilattice`，就是只满足格的一半性质的偏序集。
   - the join semi-lattice is following the commutative and idempotent properties.
@@ -412,6 +517,10 @@ modified: 2023-03-07T04:43:58.713Z
 
 - https://github.com/maca/ace-crdt /js/rga
   - Collaborative text editor proof of concept using CRDT
+- https://github.com/jorendorff/peeredit /201611/js/rga
+  - This is example code for a talk on CRDTs.
+  - They share a data structure defined in lib/rga.js.
+  - 示例使用ace.v1编辑器
 
 - https://github.com/josephg/simple-crdt-text /ts
   - This implements automerge's underlying algorithm (RGA)

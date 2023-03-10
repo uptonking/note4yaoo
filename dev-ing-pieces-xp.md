@@ -15,7 +15,9 @@ modified: 2021-04-28T20:54:58.126Z
 
 ## 
 
-## 
+## 在搜索crdt rga上花费了过多时间
+
+- 对于问题比较明确和具体的场景，可直接在github搜code，而不是搜repository
 
 ## mongoose modelInstance.save无法保存数据
 

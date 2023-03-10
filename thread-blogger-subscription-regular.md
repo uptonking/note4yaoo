@@ -59,6 +59,8 @@ modified: 2021-09-20T18:01:39.932Z
 - [curvenote(MIT) blog](https://curvenote.com/blog)
 
 - [ag-grid(MIT) blog](https://blog.ag-grid.com/)
+
+
 # product
 - [tiptap(MIT) blog](https://tiptap.dev/blog)
 - [tinymce(LGPL) blog](https://www.tiny.cloud/blog/category/engineering/)
@@ -74,7 +76,9 @@ modified: 2021-09-20T18:01:39.932Z
 - [Chris Ferdinandi: Go Make Things with vanillajs Daily Developer Tips](https://gomakethings.com/articles/)
 # inactive
 - [Marijn Haverbeke's blog (author of prosemirror & codemirror)](https://marijnhaverbeke.nl/blog/)
-# more-blogging
-- [swyx: Idea Showcase](https://www.swyx.io/ideas/)
 
+- https://crdt.tech/
+# indie
+- - [swyx blogs: Idea Showcase](https://www.swyx.io/ideas/)
+# more-blogging
 - [微信微文档团队，专注于在线文档](https://www.zhihu.com/column/c_1285334850644570112)

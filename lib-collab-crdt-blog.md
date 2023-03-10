@@ -11,15 +11,76 @@ modified: 2022-10-13T08:00:21.260Z
 
 - ref
   - [arXiv: collaborative editing](https://arxiv.org/search/?query=collaborative+editing&searchtype=all&source=header)
-
 # [Bartosz Sypytkowski crdt series](https://www.bartoszsypytkowski.com/the-state-of-a-state-based-crdts/)
 
 ## [Operation-based CRDTs: registers and sets](https://www.bartoszsypytkowski.com/operation-based-crdts-registers-and-sets/)
+
+- You can think of registers as value cells, that are able to provide CRDT semantic over any defined type. 
+  - Remember, that we're still constrained by commutativity/associativity/idempotency rules. 
+  - For this reason we must apply additional metadata, which will allow us to provide arbitrary conflict resolution in case of conflict detection.
 
 - Registers are one the most wide spread ways of working with CRDTs. 
   - The reason is simple: they allow us to wrap any sort of ordinary data types in order to give them CRDT-compliant semantics.
   - However, this comes at the price - we cannot simply change any non-CRDT value into CRDT without some compromises: if that would be possible, we wouldn't need CRDTs in the first place. 
   - For these, two popular approaches are known as last-write-wins and multi-value registers.
+
+- 👉🏻 Last write wins is a popular way of dealing with conflicts being the result of concurrent updates in many systems (Cassandra is good example of a database that's quite known from this approach).
+
+- The algorithm is simple: on each register value update, we timestamp it. 
+  - If our current timestamp is higher than the most recent one remembered by the register itself, we change the value, otherwise leave existing one (more recent) untouched.
+- One of the issues of last-write-wins approach is its inherent risk of data loss - we took an easy to use API at price of automatically throwing out potentially useful data.
+
+- 👉🏻 Another approach is to build a register that doesn't drop any data, instead it keeps track of all causal (happened-before) relationships between updates and in case of conflicts returns all conflicting cases. 
+  - It's known as Multi Value Register.
+- We track causality of register updates, and in case of conflicts - as when two independent updates are happening concurrently - we'll provide all conflicting values. 
+  - Programmer is then free to choose any value and override concurrent conflicts with more recent update.
+
+### [Registers and Deletion](https://lars.hupel.info/topics/crdt/07-deletion/)
+
+- A register may contain arbitrary data with some additional metadata on top. 
+  - Precisely what kind of metadata varies across different register implementations.
+- Assignments may be done concurrently by different threads and merging may:
+  - discard all concurrent assignments but one, 
+  - keep all concurrent assignments.
+
+- A Last-Writer-Wins Register (LWW-Register) creates a total order of assignments by associating a timestamp with each update.
+  - I understand that the explanation of LWW-Registers may be a little anticlimactic. They literally only store a single piece of metadata that is used to impose a total ordering. 
+- But again, their power lies within their composition
+  - values are now LWW-Registers that I express as a pair of (value, time). 
+  - map + lww
+
+- The Multi-Value Register (MV-Register) does not assume the presence of an ordered clock across all nodes. 
+  - Instead, it relies on a vector clock
+- The basic principle of a vector clock is the same as for a Lamport clock. 
+  - The clock does not measure real time; rather, it increments whenever an event occurs. 
+  - Each node keeps its own clock. 
+  - The difference now is that each node keeps each other node’s clock, too (i.e., a “vector” of clocks). 
+  - When a message is sent, the sending node increases only its own clock, but includes a copy of the entire vector in the message. 
+  - On the other side when a message is received, the receiving node again increments its own clock, and for everyone else’s clock, it takes the maximum of the own vector and the received vector.
+- Using a vector clock, this situation can be detected easily. 
+  - Whenever someone writes a value into the register, they also record the current state of their vector clock.
+- Now let’s say Alice and Bob want to merge their MV-Registers. 
+  - They first have to compare the timestamp, just like for a LWW-Register. 
+  - But whereas in a LWW-Register, they just compare two numbers, here they have to compare an entire vector.
+  - If the two vector clocks are incomparable, then we have a concurrent write. It occurs when there is a connection loss right after the start. It means that both writes happened concurrently and we don’t really know which one is “better” than the other.
+  - So what do we do? The name “Multi-Value Register” already gives it away. We keep both writes.
+  - Neither value’s vector clock is ≥ any other value’s vector clock. Consequently, the MV-Register now simultaneously contains {0, 2, 3, 4}. 
+- You might be wondering how such a mess could ever be cleaned up? Well, future writes might do that.
+
+### more-register
+- [CRDT: Conflict-free Replicated Data Types](https://medium.com/@amberovsky/crdt-conflict-free-replicated-data-types-b4bfc8459d26)
+
+- register: A memory cell with two operations — assign() and value(). 
+  - The issue is with the assign() operations — they do not commute.
+  - There are two approaches to solve this issue: lww / mv
+
+- lww
+  - Columns in cassandra
+  - NFS — a whole file or a part of it
+
+- mv
+  - Amazon shopping basket. It has a well-known bug when an item re-appears in the basket after deletion. The reason is that MV-Register doesn’t behave like a set even though it stores a set of values (see below). Amazon indeed doesn’t treat that as a bug — it actually increases sales.
+
 # [supabase: `pg_crdt` - an experimental CRDT extension for Postgres_202212](https://supabase.com/blog/postgres-crdt)
 - https://github.com/supabase/pg_crdt
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.

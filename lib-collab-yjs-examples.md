@@ -61,7 +61,7 @@ modified: 2022-09-21T15:47:41.340Z
 # yjs-utils
 - https://github.com/pluv-io/pluv
   - Multi-platform, E2E type-safe realtime packages
-  - Pluv. IO allows you to build real-time collaborate features with a fully end-to-end type-safe api.
+  - allows you to build real-time collaborate features with a fully end-to-end type-safe api.
   - Inspired by trpc, Built with yjs
 
 - https://github.com/JonnysCode/y-solid

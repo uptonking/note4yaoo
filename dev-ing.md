@@ -153,6 +153,25 @@ $$('[contenteditable]')
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
 
+## 0310
+
+- [Types when destructuring arrays - Stack Overflow](https://stackoverflow.com/questions/31923739/types-when-destructuring-arrays)
+
+```typescript
+const [nodes, counts] = getNodesAndCounts(); // problematic line needed type
+
+const [nodes, counts] = <Node[], number[]>getNodesAndCounts();
+
+// 💡 for-of 解构的折中方案，还可尝试明确backend[0]的类型
+for (const [k, v] of Object.entries<any>(backend[0])) 
+```
+
+- [Difference between index signature and Record for empty object?](https://stackoverflow.com/questions/54100025/difference-between-index-signature-and-record-for-empty-object)
+  - `Record<"A" | "B", boolean>` to get the type `{ A: boolean, B: boolean }` 简洁
+  - The main part of this question (in my reading) is whether the two types are the same. 
+  - They are obviously declared in different ways but are they the same type. 
+  - While they are obviously **compatible** (that is you can assign one to the other and vice-versa) the question is are there corner cases where this is not possible.
+
 ## 0308
 
 ### [图解Gossip: 可能是最有趣的一致性协议 - charlieroro - 博客园](https://www.cnblogs.com/charlieroro/articles/12655967.html)
@@ -527,7 +546,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                       `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                            `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，
