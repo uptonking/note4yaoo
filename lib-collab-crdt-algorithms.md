@@ -14,9 +14,10 @@ modified: 2023-03-07T04:43:58.713Z
   - 算法需要生态，如undo/redo、offline、versions、presence、server、room、轻量级实现、社区轮子
   - 学术界的代码大多都是玩具，经过业务产品验证过的更可靠
   - crdt算法修改版不会直接成为亮点，在业务有影响力后的亮点更大
-  - [A comprehensive study of Convergent and Commutative Replicated Data Types_201101](https://www.researchgate.net/publication/50949847)
-  - [Visualization of different CRDT algorithms (including Yjs/YATA and Automerge/RGA)](https://text-crdt-compare.surge.sh/)
   - https://github.com/pfrazee/crdt_notes
+  - [A comprehensive study of Convergent and Commutative Replicated Data Types_201101](https://www.researchgate.net/publication/50949847)
+  - [Building a BFT JSON CRDT](https://jzhao.xyz/posts/bft-json-crdt/)
+  - [Visualization of different CRDT algorithms (including Yjs/YATA and Automerge/RGA)](https://text-crdt-compare.surge.sh/)
 
 - 数据结构分析
   - 基础数据结构: map, array, text, set
@@ -35,6 +36,150 @@ modified: 2023-03-07T04:43:58.713Z
   - swarm, 2013
   - chronofold, 2020
 # crdt-algorithms
+
+## RGA(Replicated Growable Array) / Causal Tree
+
+- pros
+  - less interleaving
+
+- cons
+  - tombstone
+
+- who is using #crdt-rga
+  - automerge
+  - peritext
+  - [Under the Hood of Spark Email Real-Time Collaboration](https://readdle.com/blog/under-the-hood-of-spark-email-real-time-collaboration)
+
+- ?
+  - timestamp如何计算的，插入时如何确定位置
+
+- tips
+  - insert依赖preceding元素的id/counter/timestamp，这可以有效避免interleaving
+  - 
+
+- https://github.com/pfrazee/crdt_notes
+  - The Replicated Growing Array (RGA) implements a sequence as a linked list (a linear graph). 
+  - It supports operations `addRight(v,a)`, to add an element containing atom a immediately after element v. 
+  - 👉🏻 An element’s identifier is a timestamp, assumed unique and ordered consistently with causality, i.e., if two calls to now return t and t', then if the former happened-before the latter, then t < t'. 
+  - If a client inserts twice at the same position, as in addRight(v, a); addRight(v, b), the latter insert occurs to the left of the former, and has a higher timestamp. 
+  - Accordingly, two downstream inserts at the same position are ordered in opposite order of their timestamps. 
+  - As in Add-Remove Partial Order, removing a vertex leaves a tombstone, in order to accommodate a concurrent add operation.
+  - They illustrate an example in which timestamps are represented as a pair (local-clock.client-UID).
+
+- RGA
+  - Widely considered to be one of the fastest CRDT implementations. 
+  - Utilizes a timestamped insertion tree and references hash table lookups for character lookups. 
+  - Causal trees are a similar approach (named CT but in RGA it's called a timestamped insertion tree). 
+  - In any case, CT/RGA algorithms have been proven to use the same algorithm
+
+### [Thinking about efficient backing stores for CRDTs](https://slightknack.dev/blog/backing-crdt-store/)
+
+- Today, we’re going to focus on creating out an efficient backing store for a particular family of algorithms known as Replicated Growth Arrays (RGA).
+- Under RGA, we represent documents as trees of strings. 
+  - If this sounds familiar, that because it’s a bit like a Rope. 
+  - To ensure that these trees always merge, we provide an algorithm for merging two trees together in a deterministic manner.
+- The merging algorithm behind RGA is pretty elegant. 
+  - Each character in the tree points to the one before it. 
+  - If two characters have the same parent, we order them from back to front, the latest character going first (sorting by user in case of a tie).
+
+- 💡 Note that although conceptually RGA operates on trees, **implementation-wise, (tree)it’s not a requirement**. 
+  - Trees are an inefficient substrate(底层；基底) for RGA for a number of reasons, the largest being wasted space and the fact that they don’t play well with the L1 cache.
+  - If we flatten the tree out into a list (still inefficient for other reasons), the RGA insertion algorithm discussed above looks something like this
+- In the above example, we’re using a Rust Vec, which is a dynamically growable array. 
+  - Vectors are really efficient in cache, but as mentioned, horrifically slow for insertion (which requires reallocation) or indexing by key (an O(n) linear search).
+- 👉🏻 In light of this, a few people have come up with better backing data structures that exist to fill the gap. 
+  - Most of these are build around Ropes or Range Trees.
+  - These work great in practice, but still have some overhead when looking up entries by key or storing many small edits.
+
+- I’ve been thinking about this issue for the past few days, and I think I have an interesting possible solution. 
+  - I’m no expert, but I do have some experience with OT and optimization, so we’ll see how it goes. 
+  - I’m calling this solution a Backed Tree Log, and it functions as an append-only log + a backing key-value tree for efficient key lookup.
+
+### [Operation-based CRDTs: arrays (part 1)](https://www.bartoszsypytkowski.com/operation-based-crdts-arrays-1/)
+
+- A key observation of most (if not all) CRDT approaches to ordered sequences is simple: we need to be able to track the individual elements as other elements in collection come and go. 
+  - For this reason we mark them with **unique identifiers**, which - unlike traditional array index, which can refer to different elements over time - will always stick to the same element.
+  - While in literature they don't have a single name, here I'll call them **virtual pointers**.
+
+- where LSeq virtual pointers use byte sequences, in RGA it's just a combination of a single monotonically increasing number and replica identifier
+- In case of LSeq, virtual pointers where generated to reflect a global lexical order that matches the insertion order. 
+  - They were not related ot each other in any other way. 
+- 👉🏻 In case of RGA, pointers are smaller and of fixed size, but they're not enough to describe insertion order alone. 
+  - Instead insert event refers to a preceding virtual pointer. 
+  - For this reason we cannot simply remove them, since we don't known if another user is using them as reference point for their own inserts at the moment. 
+  - Instead of deleting permanently, RGA puts tombstones in place of removed elements.
+- because RGA insert relates to previous element - the sequences of our own inserts will be linked together, preventing from interleaving with someone else's inserts.
+  - When initiating an empty RGA, we can put an invisible header at its head as a starting point
+- PS: in this implementation, we're using an ordinary array of vertices, but in practice it's possible to split metadata and contents into two different structures and/or use specialized tree-based data structures (like ropes) to make insert/remove operations more efficient.
+
+- how the insertion itself should look like? 
+  - First we need to find an actual index, where a predecessor of inserted element can be found. 
+  - Then just insert our element under next index. 
+
+- 👉🏻 what if two actors will concurrently insert different elements after the same predecessor?
+  - Again we'll use our virtual pointers, and extend them with one important property - we'll make them ordered (first by sequence number, then replica ID), just like in the case of LSeq. 
+- Now the rule is: recursively, we shift our insertion index by one to the right every time when virtual pointer of the element living under that index already had a higher value than virtual pointer of inserted element.
+  - 插入位置的id要比现有节点id大
+- since our RGA is operation-based, we can count on the events being applied in partial order. 
+  - B pointer's sequence number is equal or greater than Cs - that means that B has been inserted concurrently on another replica. 
+  - In this case we also compare replica ID to ensure that virtual pointers can be either lesser or greater to each other (but never equal). 
+  - This way even when having partially ordered log of events we can still guarantee, that elements inside of RGA itself will maintain a total order - the same order of elements on every replica.
+- 
+- 
+- 
+
+### [Operation-based CRDTs: arrays (part 2) Block-wise Replicated Growable Array](https://www.bartoszsypytkowski.com/operation-based-crdts-arrays-2/)
+
+- fit better into scenarios, where we insert and delete entire ranges of elements
+
+### [Causal Trees and "ORDTs" · ipfs/notes](https://github.com/ipfs/notes/issues/405)
+
+- a CT ORDT(op-based) and an RGA CRDT work pretty much the same. 
+  - The mechanics map nearly 1 to 1.
+  - The main difference is that RGA doesn't explicitly treat operations as fundamental units of data, nor the data structure as an event log. Everything is muddled together. 
+  - RGA defines operations very similarly to a CT, as units of atomic data with timestamp+UUID metadata; 
+  - but as soon as operations are received, their causality metadata is stripped and they're inserted into their final spot in the array. 
+  - Similarly, delete operations immediately turn their targets into tombstones, which are later "purged" once all sites have received the deletion. 
+- RGA is a very effective algorithm, but it doesn't make the logical leap of treating its data structure as an event log, even though that's what it is in practice. Traditionally, one would say that an RGA insert is applied and turned into data; but another way to look at it is that the insert operation is placed in the position of its intended output, then stripped of its metadata. ORDTs make this explicit.
+
+### implementation
+
+- https://github.com/maca/ace-crdt /js/rga
+  - Collaborative text editor proof of concept using CRDT
+- https://github.com/jorendorff/peeredit /201611/js/rga
+  - This is example code for a talk on CRDTs.
+  - 示例使用ace.v1编辑器
+
+- https://github.com/josephg/simple-crdt-text /ts
+  - This implements automerge's underlying algorithm (RGA)
+  - The goal is to have some simple code that I can use to clarify semantics and as a basis for fuzz testing correctness of a faster implementation.
+
+- https://github.com/gritzko/citrea-model
+  - A CRDT-based collaborative editor engine of letters.yandex.ru (2012, historical)
+
+- https://github.com/crdteam/causal-tree-ts
+  - causal tree replicated data type (RDT) in Typescript.
+
+- https://github.com/munhitsu/CRAttributes
+  - Enables colaboration on text field (and other fields) across multiple iOS devices.
+  - A nearly vanilla implementation of CRDT RGA (operation per character).
+
+- more-rga
+  - https://github.com/ipfs-shipyard/peer-crdt/blob/master/src/types/rga.js
+  - https://github.com/peer-base/js-delta-crdts/blob/master/src/rga.js
+
+### more-rga
+
+- [Replicated Growable Array / Causal Tree](https://replicated.cc/rdts/rga/)
+  - Overall, RON 2.1 RGA/CT follows the classic RGA/CT data structure
+
+- [Which algorithm y-array is using? · y-js/y-array](https://github.com/y-js/y-array/issues/9)
+  - Yjs does not share any concepts with the RGA algorithm. 
+  - If you want to compare it conceptually, Yjs is actually more similar to WOOT. 
+
+- [CRDT: Tree-Based Indexing - Made by Evan](https://madebyevan.com/algos/crdt-tree-based-indexing/)
+  - Compared to fractional indexing, tree-based indexing is more complicated but prevents interleaving of concurrently-inserted runs, which makes it appropriate for textual data. 
+  - The algorithm presented here is similar to a well-known one called "RGA" but with reordering layered on top.
 
 ## json-crdt
 
@@ -121,8 +266,9 @@ remarkably useful CRDT](https://braid.org/algorithms/shelf)
   - https://github.com/siliconjungle/fixed-json-crdt
   - A json-crdt for fixed types of data. Very minimal data required.
 
-- https://github.com/dglittle/shelf
+- https://github.com/dglittle/shelf /发布在202110
   - a shelf: [VALUE, VERSION_NUMBER]
+  - https://braid.org/meeting-8 (the shelf part with Greg starts at about 43 minutes in to the recording.)
 
 - https://github.com/siliconjungle/cabinet
   - A key value store & subscriptions wrapping a json blob crdt (shelf).
@@ -446,109 +592,6 @@ remarkably useful CRDT](https://braid.org/algorithms/shelf)
 
 - [WOOT: an Algorithm for Concurrent and Collaborative Authoring (2013) [video] | Hacker News](https://news.ycombinator.com/item?id=10677667)
 
-## RGA(Replicated Growable Array) / Causal Tree
-
-- pros
-  - less interleaving
-
-- cons
-  - tombstone
-
-- ?
-  - timestamp如何计算的，插入时如何确定位置
-
-- https://github.com/pfrazee/crdt_notes
-  - The Replicated Growing Array (RGA) implements a sequence as a linked list (a linear graph). 
-  - It supports operations `addRight(v,a)`, to add an element containing atom a immediately after element v. 
-  - 👉🏻 An element’s identifier is a timestamp, assumed unique and ordered consistently with causality, i.e., if two calls to now return t and t', then if the former happened-before the latter, then t < t'. 
-  - If a client inserts twice at the same position, as in addRight(v, a); addRight(v, b), the latter insert occurs to the left of the former, and has a higher timestamp. 
-  - Accordingly, two downstream inserts at the same position are ordered in opposite order of their timestamps. 
-  - As in Add-Remove Partial Order, removing a vertex leaves a tombstone, in order to accommodate a concurrent add operation.
-  - They illustrate an example in which timestamps are represented as a pair (local-clock.client-UID).
-
-- RGA
-  - Widely considered to be one of the fastest CRDT implementations. 
-  - Utilizes a timestamped insertion tree and references hash table lookups for character lookups. 
-  - Causal trees are a similar approach (named CT but in RGA it's called a timestamped insertion tree). 
-  - In any case, CT/RGA algorithms have been proven to use the same algorithm
-
-### [Operation-based CRDTs: arrays (part 1)](https://www.bartoszsypytkowski.com/operation-based-crdts-arrays-1/)
-
-- A key observation of most (if not all) CRDT approaches to ordered sequences is simple: we need to be able to track the individual elements as other elements in collection come and go. 
-  - For this reason we mark them with **unique identifiers**, which - unlike traditional array index, which can refer to different elements over time - will always stick to the same element.
-  - While in literature they don't have a single name, here I'll call them **virtual pointers**.
-
-- where LSeq virtual pointers use byte sequences, in RGA it's just a combination of a single monotonically increasing number and replica identifier
-- In case of LSeq, virtual pointers where generated to reflect a global lexical order that matches the insertion order. 
-  - They were not related ot each other in any other way. 
-- In case of RGA, pointers are smaller and of fixed size, but they're not enough to describe insertion order alone. 
-  - Instead insert event refers to a preceding virtual pointer. 
-  - For this reason we cannot simply remove them, since we don't known if another user is using them as reference point for their own inserts at the moment. 
-  - Instead of deleting permanently, RGA puts tombstones in place of removed elements.
-- because RGA insert relates to previous element - the sequences of our own inserts will be linked together, preventing from interleaving with someone else's inserts.
-  - When initiating an empty RGA, we can put an invisible header at its head as a starting point
-- PS: in this implementation, we're using an ordinary array of vertices, but in practice it's possible to split metadata and contents into two different structures and/or use specialized tree-based data structures (like ropes) to make insert/remove operations more efficient.
-- what if two actors will concurrently insert different elements after the same predecessor?.
-  - Again we'll use our virtual pointers, and extend them with one important property - we'll make them ordered (first by sequence number, then replica ID), just like in the case of LSeq. 
-  - Now the rule is: recursively, we shift our insertion index by one to the right every time when virtual pointer of the element living under that index already had a higher value than virtual pointer of inserted element.
-- since our RGA is operation-based, we can count on the events being applied in partial order. 
-  - B pointer's sequence number is equal or greater than Cs - that means that B has been inserted concurrently on another replica. 
-  - In this case we also compare replica ID to ensure that virtual pointers can be either lesser or greater to each other (but never equal). 
-  - This way even when having partially ordered log of events we can still guarantee, that elements inside of RGA itself will maintain a total order - the same order of elements on every replica.
-- 
-- 
-- 
-
-### [Operation-based CRDTs: arrays (part 2) Block-wise Replicated Growable Array](https://www.bartoszsypytkowski.com/operation-based-crdts-arrays-2/)
-
-- fit better into scenarios, where we insert and delete entire ranges of elements
-
-### [Causal Trees and "ORDTs" · ipfs/notes](https://github.com/ipfs/notes/issues/405)
-
-- a CT ORDT(op-based) and an RGA CRDT work pretty much the same. 
-  - The mechanics map nearly 1 to 1.
-  - The main difference is that RGA doesn't explicitly treat operations as fundamental units of data, nor the data structure as an event log. Everything is muddled together. 
-  - RGA defines operations very similarly to a CT, as units of atomic data with timestamp+UUID metadata; 
-  - but as soon as operations are received, their causality metadata is stripped and they're inserted into their final spot in the array. 
-  - Similarly, delete operations immediately turn their targets into tombstones, which are later "purged" once all sites have received the deletion. 
-- RGA is a very effective algorithm, but it doesn't make the logical leap of treating its data structure as an event log, even though that's what it is in practice. Traditionally, one would say that an RGA insert is applied and turned into data; but another way to look at it is that the insert operation is placed in the position of its intended output, then stripped of its metadata. ORDTs make this explicit.
-
-### implementation
-
-- https://github.com/maca/ace-crdt /js/rga
-  - Collaborative text editor proof of concept using CRDT
-- https://github.com/jorendorff/peeredit /201611/js/rga
-  - This is example code for a talk on CRDTs.
-  - They share a data structure defined in lib/rga.js.
-  - 示例使用ace.v1编辑器
-
-- https://github.com/josephg/simple-crdt-text /ts
-  - This implements automerge's underlying algorithm (RGA)
-  - The goal is to have some simple code that I can use to clarify semantics and as a basis for fuzz testing correctness of a faster implementation.
-
-- https://github.com/gritzko/citrea-model
-  - A CRDT-based collaborative editor engine of letters.yandex.ru (2012, historical)
-
-- https://github.com/crdteam/causal-tree-ts
-  - causal tree replicated data type (RDT) in Typescript.
-
-- https://github.com/munhitsu/CRAttributes
-  - Enables colaboration on text field (and other fields) across multiple iOS devices.
-  - A nearly vanilla implementation of CRDT RGA (operation per character).
-
-### more-rga
-
-- [Replicated Growable Array / Causal Tree](https://replicated.cc/rdts/rga/)
-  - Overall, RON 2.1 RGA/CT follows the classic RGA/CT data structure
-
-- [Which algorithm y-array is using? · y-js/y-array](https://github.com/y-js/y-array/issues/9)
-  - Yjs does not share any concepts with the RGA algorithm. 
-  - If you want to compare it conceptually, Yjs is actually more similar to WOOT. 
-
-- [CRDT: Tree-Based Indexing - Made by Evan](https://madebyevan.com/algos/crdt-tree-based-indexing/)
-  - Compared to fractional indexing, tree-based indexing is more complicated but prevents interleaving of concurrently-inserted runs, which makes it appropriate for textual data. 
-  - The algorithm presented here is similar to a well-known one called "RGA" but with reordering layered on top.
-
 ## LSEQ
 
 - cons
@@ -575,6 +618,9 @@ ba => v5
 
 - pros
   - no interleaving
+
+- cons
+  - unbalanced tree is bad for query
 
 - uses a binary tree to represent the document
 

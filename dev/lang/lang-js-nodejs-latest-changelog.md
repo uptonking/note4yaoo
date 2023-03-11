@@ -53,6 +53,9 @@ modified: 2022-12-31T20:13:33.307Z
   - ✨ npm v7 support workspaces
   - Node.js will run natively on the Apple M1
 
+- v14.17.0
+  - crypto.randomUUID added
+
 - v14.0.0_2020-04-21
   - Experimental AsyncLocalStorage API: In other languages, it is the same as thread-local storage.
   - Experimental Web Assembly System Interface (WASI)

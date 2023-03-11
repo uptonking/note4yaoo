@@ -14,6 +14,7 @@ modified: 2023-02-05T19:03:12.722Z
   - toSlateRange, toDOMRange
   - dirtyPath
   - decoarate
+  - 支持tiptap/prosemirror的json
 
 - 若slate-model层采用扁平化Node
   - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath

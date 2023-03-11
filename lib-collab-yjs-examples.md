@@ -149,15 +149,6 @@ modified: 2022-09-21T15:47:41.340Z
 - https://github.com/YousefED/reactive-crdt
   - It's built on top of Yjs, a proven, high performance CRDT implementation.
 
-- https://github.com/inkandswitch/peritext
-  - https://www.inkandswitch.com/peritext/
-  - A CRDT for asynchronous rich-text collaboration, where authors can work independently and then merge their changes.
-  - This repo includes:
-    - A Typescript implementation of the core Peritext CRDT algorithm
-    - A prototype integration with the [Prosemirror](http://prosemirror.net/) editor library
-    - An interactive demo UI where you can try out the editor
-    - A test suite
-
 - https://github.com/yjs/y-codemirror.next
   - https://demos.yjs.dev/codemirror/codemirror.html
   - Collaborative extensions for CodeMirror6

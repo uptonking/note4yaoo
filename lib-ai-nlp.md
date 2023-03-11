@@ -47,3 +47,18 @@ modified: 2023-03-03T08:06:36.592Z
   - Open-source offline translation library written in Python
   - Argos Translate uses OpenNMT for translations
   - 支持中日韩
+
+
+# discuss
+
+- ## 
+
+- ## 
+
+- ## I just used OpenAI embeddings to embed half a million tweets and ended up paying ... $3!!!
+- https://twitter.com/fleuria__/status/1634125805717704704
+- 本义是说把过往做法中维度成千上万的特征（每个词项以及数十种人工特征构造一个巨大的one-hot）像镶钻一样嵌入(embed)一个低维流形（想象一个2维描述的三维球面），优化算法会想办法调整这些特征在球面上嵌入的位置。每个词项就需要对应它的低维表示，存下来的东西实质上就是个KV查询表(embedding)。
+  - 只不过发展到现在不一定这个embedding就真的是低维度了（
+  - 几十个词把embedding设成256等等之类的也很常见（
+  - 甚至有研究表示over-parameterize才是正道（
+

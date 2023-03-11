@@ -83,25 +83,20 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/streamich/json-joy
   - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
 
+- https://github.com/inkandswitch/peritext
+  - https://www.inkandswitch.com/peritext/
+  - A CRDT for asynchronous rich-text collaboration, where authors can work independently and then merge their changes.
+  - This repo includes:
+    - A Typescript implementation of the core Peritext CRDT algorithm
+    - A prototype integration with the [Prosemirror](http://prosemirror.net/) editor library
+    - An interactive demo UI where you can try out the editor
+    - A test suite
+  - https://github.com/philschatz/peritext
+
 - https://github.com/hyperhyperspace/hyperhyperspace-core
   - HHS uses an immutable typed-objects local storage model. Objects are both retrieved and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
   - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
   - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
-
-- https://github.com/marcello3d/trimerge-sync
-  - implement synchronization using the trimerge algorithm.
-  - Conflicts are resolved on the client side (as in @mweststrate's “Distributing state changes using snapshots, patches and actions”)
-  - Data structure design can limit conflicts (as in CRDT)
-  - Limitations:
-    - Assumes application is built on immutable data structures
-    - Does not scale to high number of concurrent edits (conflict thrashing)
-    - Requires the full document model to be in all clients' memory
-  - https://github.com/marcello3d/trimerge
-    - Three-way merge JSON structures
-    - 三路归并
-  - https://github.com/marcello3d/collabodux
-    - library for realtime collaboration on JSON structures. 
-    - It is a client-oriented, declarative-functional approach to shared application state.
 
 - https://github.com/supabase/pg_crdt /rust
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.
@@ -174,7 +169,8 @@ modified: 2022-04-05T10:08:25.947Z
   - Optimized Logoot CRDT implementation.
   - Implemented as a tree for fast character position lookups.
 - https://github.com/kana-sama/edita
-  - 无编辑器
+  - https://github.com/kana-sama/edita-server
+  - 示例监听span文字的crud，未使用编辑器框架
 
 - https://github.com/bcherny/crdt-demo
   - WOOT-style CRDT implementation
@@ -182,14 +178,6 @@ modified: 2022-04-05T10:08:25.947Z
   - WOOT propagates identifier-based operations defined on the internal object
 - https://github.com/cindywu/baby-crdt
   - 基于woot
-
-- https://github.com/disordinary/crdt_tree
-  - A CRDT String represented as a binary tree
-  - Rather than the WOOT approach to CRDT (With Out Operational Transformations) in which every character has it's own ID this approach only splits the string as required for the CRDT operation.
-- https://github.com/disordinary/crdtstring
-  - A CRDT string manipulation library for concurrent editing.
-  - Stores a CRDT as a double linked list.
-  - Offsets within a string is the ID of the object, insertions are given an index of a fraction of an offset. 
 
 - https://github.com/phedkvist/crdt-server /ts/单文件
   - A text based CRDT server storing, sending and receiving updates using Express and Websockets
@@ -208,6 +196,7 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/maca/ace-crdt /js/rga
   - Collaborative text editor proof of concept using CRDT
   - 提供了server
+  - [Question: how to create an RGA CRDT on server](https://github.com/maca/ace-crdt/issues/1)
 - https://github.com/jorendorff/peeredit /201611/js/rga
   - Peeredit is a simple Web app that lets you edit some text online with friends.
   - This is example code for a talk on CRDTs.
@@ -224,6 +213,9 @@ modified: 2022-04-05T10:08:25.947Z
   - The goal is to have some simple code that I can use to clarify semantics and as a basis for fuzz testing correctness of a faster implementation.
 - https://github.com/josephg/reference-crdts
   - This repository contains simple proof-of-concept reference implementations of yjs, automerge and sync9's list types - all implemented in the same codebase. 
+
+- https://github.com/dglittle/shelf
+  - Here is a shelf: [VALUE, VERSION_NUMBER]
 
 - https://github.com/gritzko/citrea-model /201712/js
   - A CRDT-based collaborative editor engine of letters.yandex.ru (2012, historical)
@@ -242,26 +234,21 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/wangdashuaihenshuai/crdt-edit /201810/vue/js
   - [我自己从零实现的一个文本文档的协同编辑demo，上面是输入框，下面是数据结构的可视化](https://zhuanlan.zhihu.com/p/48229762)
-  - operation-based crdt
+  - 每个操作都是依赖前一个操作的结果，这样的数据结构就是有操作依赖生成的一颗 因果树
   - 依赖konva的画图app
 
 - https://github.com/siliconjungle/tiny-merge
   - State-based CRDT with a Tiny footprint.
   - 包含server、client，服务端依赖supabase
 
-
 - https://github.com/eugene-eeo/crunch-crdt-benchmarks /js
   - some crdt benchmarks
   - 比较了woot/logoot/lseq/rga/treedoc
-- https://github.com/peer-base/js-delta-crdts /js
-  - Delta state-based CRDTs in Javascript.
 - https://github.com/fdionisi/deno-crdt
   - Collection of CRDT written in TypeScript
   - 测试了 woot + logoot + rga
-- https://github.com/xcesiv/crdt.js
-  - a set of Conflict-Free Replicated Data Types for your JavaScript programs. 
-  - All CRDTs in this library, except G-Counter, are currently operation-based.
-  - https://github.com/orbitdb/crdts
+  - rga使用doubly-linked-list
+- https://github.com/orbitdb/crdts
   - 提供的都是简单类型
 - https://github.com/dominictarr/crdt
   - Commutative Replicated Data Types for easy collaborative/distributed systems.
@@ -271,6 +258,26 @@ modified: 2022-04-05T10:08:25.947Z
     - up-to-date real-time collaborative editor sample based on dominictarr/crdt
 - https://github.com/liaujianjie/crdt
   - I will be using this repo to experiment with CvRDTs
+
+- https://github.com/ipfs-shipyard/peer-crdt /js
+  - collection of operation-based CRDTs that are meant to work over a p2p network.
+  - 提供了多种类型，代码不复杂，无服务端
+  - not maintained. Superseded by delta-crdts
+  - [implement a delta state-based RGA sequence type](https://github.com/peer-base/js-delta-crdts/issues/3)
+  - https://github.com/ipfs-shipyard/peer-crdt-example
+    - nodejs
+  - https://github.com/ipfs-shipyard/peer-crdt-textarea-binding
+    - Bind a PeerCRDT treedoc-text object to a textarea.
+  - https://github.com/ipfs-shipyard/peer-crdt-bind-codemirror
+
+- https://github.com/peer-base/js-delta-crdts /js
+  - Delta state-based CRDTs in Javascript.
+  - https://github.com/itoumlilt/CRDT-Spreasheet
+  - https://github.com/eugene-eeo/crunch-crdt-benchmarks
+  - https://github.com/jimpick/delta-crdt-ordering-demo
+  - https://github.com/jimpick/causual-playground
+  - https://github.com/JMLX42/rust-delta-crdts
+    - Delta state-based CRDTs in Rust.
 
 - https://github.com/patreu22/react-crdt
   - part of a bachelor thesis dealing with conflict-free data types in web development.
@@ -291,15 +298,6 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/mohe2015/crdt
   - yjs' implementation is probably quite good. maybe we can store less in memory? 
   - 基于cmrdt
-
-- https://github.com/ipfs-shipyard/peer-crdt
-  - An extensible collection of operation-based CRDTs that are meant to work over a p2p network.
-  - 尝试了多种数据类型，代码不复杂，无服务端
-  - not maintained. Superseded by delta-crdts
-  - https://github.com/peer-base/js-delta-crdts
-    - Delta state-based CRDTs in Javascript.
-  - https://github.com/JMLX42/rust-delta-crdts
-    - Delta state-based CRDTs in Rust.
 
 - https://github.com/aizatto/crdt-prototype
   - Prototype to test implementing CRDT
@@ -340,9 +338,6 @@ modified: 2022-04-05T10:08:25.947Z
   - KSeq is an operations-based, continuous sequence CRDT based on the Logoot and LSEQ systems.
   - Designed for use in collaborative editors, it allows various contributors to concurrently alter the sequence, while preserving both data and intent.
 
-- https://github.com/dglittle/shelf
-  - Here is a shelf: [VALUE, VERSION_NUMBER]
-
 - https://github.com/Timothy-Harianja/CRDT-Collaboration-App
   - This project is aimed to experiment on the capabilities of CRDT and OT. 
   - One of the practical uses out these concepts is offline collaboration feature.
@@ -351,6 +346,21 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/tobiasbrodd/crdt
   - 编辑note，每次发送全量数据
   - 只实现了socket.io的传输过程，本地未先执行
+
+- https://github.com/marcello3d/trimerge-sync
+  - implement synchronization using the trimerge algorithm.
+  - Conflicts are resolved on the client side (as in @mweststrate's “Distributing state changes using snapshots, patches and actions”)
+  - Data structure design can limit conflicts (as in CRDT)
+  - Limitations:
+    - Assumes application is built on immutable data structures
+    - Does not scale to high number of concurrent edits (conflict thrashing)
+    - Requires the full document model to be in all clients' memory
+  - https://github.com/marcello3d/trimerge
+    - Three-way merge JSON structures
+    - 三路归并
+  - https://github.com/marcello3d/collabodux
+    - library for realtime collaboration on JSON structures. 
+    - It is a client-oriented, declarative-functional approach to shared application state.
 
 - https://github.com/twfarland/count-them-beans
   - Displays use of a GCounter conflict-free replicated data type (CRDT), web workers, signals, and virtual dom.
@@ -404,16 +414,17 @@ modified: 2022-04-05T10:08:25.947Z
   - CRDT based collaborative code/text editor.
   - 依赖flask，requests
 
-- https://github.com/prSquirrel/crdt-demo /rga
-  - A collaborative text editor demo based on Causal Tree CRDT (variant of RGA).
-  - currently no STUN/TURN servers are configured, so it only works with local peers
-  - Uses WebSockets for signaling and WebRTC Data Channels for p2p communication. 
-
 - https://github.com/rehnarama/MALTE /rga+split
   - https://rehnarama.github.io/MALTE/index.html
   - Multi-access live text editor
   - An in-browser collaborative coding environment, in which one can edit and compile code a server using an built-in shell.
   - rga作为单独包，并带有测试
+  - includes optimisation to the RGA called "block-wise RGA" which allows for chunk insertions.
+
+- https://github.com/prSquirrel/crdt-demo /rga
+  - A collaborative text editor demo based on Causal Tree CRDT (variant of RGA).
+  - currently no STUN/TURN servers are configured, so it only works with local peers
+  - Uses WebSockets for signaling and WebRTC Data Channels for p2p communication. 
 
 - https://github.com/ROKAF-ResourceManagementSystemDeveloper/crdt /ts/go/rga
   - Simple demo of CRDT(Conflict-free Replicated Data Types)
@@ -422,6 +433,11 @@ modified: 2022-04-05T10:08:25.947Z
   - Collaborative realtime texteditor with gRPC using RGAs (Replicated Growable Arrays).
   - using a variant of RGAs (Replicated Growable Arrays). 
   - The RGA-protocol is implemented as Timestamped Insertion Tree (TI Tree) 
+
+- https://github.com/ritzyed/ritzy /201509/js/inactive
+  - Ritzy editor is a rich text, real-time character-by-character collaborative embeddable browser-based editor. 
+  - It shuns(避免) use of the `contentEditable` attribute in favor of a custom editor surface and layout engine, exactly like the approach implemented by Google Docs.
+  - Ritzy is built with real-time collaborative editing support from the ground up, underlying mechanism for this is a causal tree CRDT.
 
 - https://github.com/conclave-team/conclave /202106/js/inactive
   - CRDT and WebRTC based real-time, peer-to-peer, collaborative text editor
@@ -474,6 +490,11 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/kindone/text-versioncontrol
   - provides version and concurrency control for text editing 
   - utilizes Quill's Delta representation in JSON.
+
+- https://github.com/disordinary/crdtstring
+  - A CRDT string manipulation library for concurrent editing.
+  - Stores a CRDT as a double linked list.
+  - Offsets within a string is the ID of the object, insertions are given an index of a fraction of an offset. 
 # crdt-json
 - https://github.com/carlreinecken/legible-mergeable
   - basic JSON / Javascript Object CRDT
@@ -482,11 +503,15 @@ modified: 2022-04-05T10:08:25.947Z
   - Conflicts are resolved by Last-Write-Wins (LWW).
 
 - https://github.com/crdt-ibm-research/json-delta-crdt
+  - DSON - JSON CRDT Using Delta-Mutations
   - Prototype implementation of delta based CRDTs supporting JSON data using Javascript.
 
 - https://github.com/jackyzha0/bft-json-crdt /202211/rust
   - the first JSON-like Byzantine Fault Tolerant CRDT in Rust
   - [Building a BFT JSON CRDT](https://jzhao.xyz/posts/bft-json-crdt/)
+
+- https://github.com/streamich/json-joy/tree/master/src/json-crdt
+  - CRDT implementation of a JSON type.
 
 - more-json-crdt
   - https://github.com/JonasKruckenberg/json-patch-crdt
@@ -504,6 +529,10 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/codesandbox/crdt-tree
   - A highly-available move operation for replicated trees and distributed filesystems
+
+- https://github.com/disordinary/crdt_tree
+  - A CRDT String represented as a binary tree
+  - Rather than the WOOT approach to CRDT (With Out Operational Transformations) in which every character has it's own ID this approach only splits the string as required for the CRDT operation.
 # crdt-utils
 - https://github.com/danielstaleiny/CRDT-sqlite
   - 依赖 idb

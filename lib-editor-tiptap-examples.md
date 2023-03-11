@@ -180,6 +180,10 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/AventusKent/tiptap-react
   - Super light rich text editor based on TipTap and React
 # tiptap-utils
+- https://github.com/troop-dev/tiptap-react-render
+  - This library renders TipTap JSON payloads in React clients without embedding the editor.
+  - We were inspired by Contentful's rich-text-react-renderer tool, so we built a similar one for TipTap payloads!
+
 - https://github.com/sereneinserenade
   - https://github.com/sereneinserenade/tiptap-comment-extension-react
     - https://github.com/sereneinserenade/tiptap-comment-extension

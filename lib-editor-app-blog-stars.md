@@ -84,10 +84,50 @@ modified: 2022-08-21T10:11:43.095Z
   - quill/draftjs/prosemirror/trix 
   - Each of them might be relying on some form of Tree to store the content which actuates the views to react. I'm only guessing. A deeper, closer look might be interesting and useful.
 
-- 
-- 
-- 
+## [xi-editor retrospective_202006](https://raphlinus.github.io/xi/2020/06/27/xi-retrospective.html)
 
+- The original goal was to deliver a very high quality editing experience. 
+- To this end, the project spent a rather large number of “novelty points”:
+  - Rust as the implementation language for the core.
+  - A rope data structure for text storage.
+  - A multiprocess architecture, with front-end and plug-ins each with their own process.
+  - Fully embracing async design.
+  - CRDT as a mechanism for concurrent modification.
+
+- There are only a few data structures suitable for representation of text in a text editor. 
+  - 👉🏻 I would enumerate them as: contiguous string, gapped buffer, array of lines, piece table, and rope. 
+  - Array of lines has performance failure modes, most notably very long lines. 
+  - Similarly, many good editors have been written using piece tables, but I’m not a huge fan; performance is very good when first opening the file, but degrades over time.
+
+- My favorite aspect of the rope as a data structure is its excellent worst-case performance. 
+  - Basically, there aren’t any cases where it performs badly. 
+- The main argument against the rope is its complexity. 
+- One of the best things about the rope is that it can readily and safely be shared across threads. 
+  - Ironically we didn’t end up making much use of that in xi-editor, as it was more common to share across processes, using sophisticated diff/delta and caching protocols.
+
+- The reality was that adding async made everything more complicated, in some cases considerably so.
+- A particularly difficult example was dealing with word wrap. 
+  - In particular, when the width of the viewport is tied to the window, then live-resizing the window causes text to rewrap continuously. 
+  - With the process split between front-end and core, and an async protocol between them, all kinds of interesting things can go wrong, including races between editing actions and word wrap updates. 
+  - More fundamentally, it is difficult to avoid tearing-style artifacts.
+
+### [crdt retrospective of xi-editor](https://github.com/xi-editor/xi-editor/issues/1187#issuecomment-491473599)
+
+- My conclusion now is that these different use cases are actually different, and a "one size fits all" approach does a disservice(损害，破坏).
+- Successful software project management is mostly about taming complexity. 
+  - CRDT's do not have this property. By now we have lots of examples where trying to design features around the structure imposed by CRDT turned out to be a lot more complicated than it would be in a more synchronous world 
+
+- For a while, xi had difficulty making up its mind whether it was actually a collaborative editor or not.
+  - At the back of my mind, I hoped that a solid CRDT engine would evolve into something that would relatively easily support collaborative editing.
+
+- CRDT is a tradeoff
+  - Aside from the mathematical foundation, the main thing CRDT buys you is the ability to propagate edits through a mesh-like network, exploiting local connections, as opposed to requiring a central server.
+  - For large scale organizations (I'm familiar with those and have had great conversations more recently with @dsp), I think it does make sense to treat the set of analysis and review tools as a form of collaborative editing, but those are also cases where a centralized server is completely viable.
+- The flip side of the tradeoff is that you have to express your application logic in CRDT-compatible form
+
+- So I come to the conclusion that the CRDT is not pulling its (considerable) weight. 
+  - When I think about a future evolution of xi-editor, I see a much brighter future with a simpler, largely synchronous model, that still of course has enough revision tracking to get good results with asynchronous peers like the language server. 
+  - The basic editing commands, including indentation and paren matching, are more simply done as synchronous operations, and I think avoiding that complexity is key.
 # blogs-dev
 - [编辑器背后的数据结构](https://dontpanic.blog/data-structures-under-editors/)
   - 部分Emacs使用了Gap Buffer，包括古老的 Emacs on TECO、现代的GNU/Emacs及其前辈Gosling Emacs。
@@ -114,3 +154,5 @@ modified: 2022-08-21T10:11:43.095Z
 - [自研一个word应用，需要哪些基本功能](https://juejin.cn/post/6922682336412696584)
 
 - [基于Clipboard的复制粘贴实现](https://juejin.cn/post/7118899649687060487)
+
+- [Text Editor: Data Structures | Hacker News](https://news.ycombinator.com/item?id=15381886)

@@ -7,8 +7,18 @@ modified: 2021-05-14T15:04:42.225Z
 
 # toc-repos-lang-js
 
-# focus
+# js-enhanced
 
+- https://github.com/Conaclos/cow-list
+  - Cow List provides a Copy-On-Write iterable list that supports logarithmic searches. 
+  - It provides also a mutable iterable List with versioning capabilities.
+  - Cow List naively supports lengthy values (objects with a length property). 
+  - This makes Cow List a perfect fit to implement a `rope`.
+
+- https://github.com/pull-stream/pull-stream
+  - pull streams work great for "object" streams as well as streams of raw text or binary data.
+  - pull-streams are not directly compatible with node streams, but pull-streams can be converted into node streams
+# focus
 - https://github.com/tannerlinsley/react-table
 - https://github.com/bvaughn/react-window
   - /9kStar/MIT/202001
@@ -67,7 +77,6 @@ modified: 2021-05-14T15:04:42.225Z
   - CodeMirror 6 is a rewrite of the CodeMirror code editor. 
   - The new system provides solid accessibility, touchscreen support, better content analysis
   - It is not API-compatible with the old code.
-
 # popular
 
 ## viz

@@ -106,11 +106,6 @@ interface CRDTSyncDir{
 - ooh yeah, I think about modern multiplayer techniques there and I agree with that.
   - rollback-based multiplayer I think is what I'm thinking of there.
 
-- ## Building the first Byzantine Fault Tolerant JSON CRDT
-- https://twitter.com/_jzhao/status/1594732151400189953
-  - A deep dive into what CRDTs are, how CRDTs are different from traditional consensus, what makes them tick, and how we can adapt them to tolerate malicious actors
-  - [Building a BFT JSON CRDT](https://jzhao.xyz/posts/bft-json-crdt/)
-
 - ## If anyone has been curious about how to build a CRDT but thought the idea was too daunting. tiny-merge-legacy_202205
 - https://twitter.com/JungleSilicon/status/1526123548753858560
   - I've created one with as much of the complexity stripped out as I could whilst keeping it useful.

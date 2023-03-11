@@ -181,6 +181,7 @@ update("transactions", {
   - 使用union操作进行merge
 - Two-phase set(2P-Set)
   - 使用两个G-Set来实现，一个addSet用于添加，一个removeSet用于移除
+  - the latter is colloquially known as the tombstone set.
 - Last write wins set(LWW-element Set)
   - 类似2P-Set，有一个addSet，一个removeSet，不过对于元素增加了timestamp信息，且timestamp较高的add及remove优先
 - Observed-remove set(OR-Set)
