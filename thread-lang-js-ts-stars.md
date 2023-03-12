@@ -9,6 +9,18 @@ modified: 2021-06-22T11:54:44.506Z
 
 # guide
 
+# 个人风格
+
+```typescript
+
+// map.get的返回值可适当使用非空断言
+
+let val:string;
+val = map.get(key)!; // 简化val中处理undefined的定义
+if(val) // doSth
+
+```
+
 # discuss
 - ## 
 

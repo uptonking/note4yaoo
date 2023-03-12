@@ -12,6 +12,25 @@ modified: 2022-11-25T09:47:43.079Z
 # discuss
 - ## 
 
+- ## 
+
+- ## Spent a week optimizing `useQuery` to get hundreds of concurrent SQLite queries to return in a single frame in the browser.
+- https://twitter.com/tantaman/status/1634579771404288002
+  - And now realizing that implementing a fully reactive SQL layer actually isn't that far out of reach.
+
+- 🤔 What was the challenge?
+- On reactive sql (in progress), the main insight is its an inverted database. You index the queries via ranges then see if an insert/update/delete overlaps a query’s range.
+- React specific -- react is "call happy" when invoking `useSyncExternalStore` so.. intelligently caching there, and "folding" many invocations to `useSyncExternalStore` into a single call
+- A simple, and dumb one, is just making sure `useQuery` always uses prepared statements. Preparing a statement can take up ~75% of the time of a query.
+- Implicit read transaction actually have quite an overhead (esp when indexeddb is backing sqlite). Putting all calls to `useQuery` in a given render pass together in one read transaction was a huge win.
+- These are also interesting as a baseline of what SQLite can do in the browser:  
+  - [wa-sqlite benchmarks](https://rhashimoto.github.io/wa-sqlite/demo/benchmarks.html)
+- Curious to know how tuppledb helped you
+  - Just reading through their approaches to reactivity. So for the second half of the tweet, unrelated to the first.
+
+- [Many Small Queries Are Efficient In SQLite](https://www.sqlite.org/np1queryprob.html)
+  - with SQLite, 200 or more SQL statement per webpage is not a problem.
+
 - ## What are the limitations of sql.js? As far as I read on their site, it is also SQLite compiled to wasm.
 - https://twitter.com/visheratin/status/1623068001112059921
 - For us @fleetctl the key limitation is lack of support for virtual tables (a really interesting feature of SQLite if you haven't checked it out!)

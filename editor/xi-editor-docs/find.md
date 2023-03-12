@@ -1,3 +1,9 @@
+---
+title: find
+created: 1970-01-01T00:00:00.000Z
+modified: 2023-03-11T18:21:35.110Z
+---
+
 # Find and Replace
 
 Xi editor supports find using a single single query and multiple search queries.
@@ -63,4 +69,5 @@ The search queries can be added and removed dynamically based on the provided qu
 All the queries are considered to be linked by an OR function.
 This means they could also be written as one regular expression that combines the queries with OR.
 All the queries support options such as case-sensitivity or regular expressions.
+
 

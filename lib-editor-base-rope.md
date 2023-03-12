@@ -43,6 +43,10 @@ modified: 2023-01-12T11:33:28.084Z
     - Handling frequent edits to medium-to-large texts. 
     - Handling Unicode correctly
 
+- https://github.com/josephg/jumprope-rs /rust
+  - A rope is a data structure for efficiently editing large strings, or for processing editing traces.
+  - similar to ropey. Ropey supports a few more features (like converting line/column positions).
+
 - https://github.com/noib3/crop /rust
   - crop's Rope is backed by a B-tree, ensuring that the time complexity of inserting, deleting or replacing a piece of text is always logarithmic
 

@@ -24,7 +24,7 @@ modified: 2022-09-21T15:47:41.340Z
   - https://syncedstore.org/docs/
   - SyncedStore CRDT is an easy-to-use library for building live, collaborative applications that sync automatically.
   - SyncedStore builds directly on Yjs and Reactive. 
-  - It's also inspired by and builds upon the amazing work by MobX and NX Observe.
+  - It's also inspired by and builds upon the amazing work by `MobX` and NX Observe.
   - SyncedStore is built as part of TypeCell.
   - So far, we've focused mostly on how to change to state on a synced store, and how to listen (react to) changes and display them in your application.
     -  When you update data on the store, an incremental change, or update is captured and can be shared between users. These updates can be shared between users of your application with different Sync Providers. 

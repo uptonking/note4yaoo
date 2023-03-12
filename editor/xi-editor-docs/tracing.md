@@ -1,3 +1,9 @@
+---
+title: tracing
+created: 1970-01-01T00:00:00.000Z
+modified: 2023-03-11T18:21:35.126Z
+---
+
 # Tracing
 
 To debug or find performance bottlenecks in xi, the crate `xi_trace` can be used to write a trace log.
@@ -43,3 +49,4 @@ xi_trace::trace_closure("something_else_expensive", &["rpc", "response"], || {
     something_else_expensive(result);
 });
 ```
+

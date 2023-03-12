@@ -96,4 +96,11 @@ modified: 2020-10-05T06:18:29.671Z
 - https://github.com/pixijs/pixijs
   - PixiJS is a rendering library that will allow you to create rich, interactive graphics and cross-platform applications and games without having to dive into the WebGL API or deal with browser and device compatibility.
   - PixiJS has full WebGL support and seamlessly falls back to HTML5's canvas if needed.
+
+# WebGPU
+
+
+- https://gitlab.com/unconed/use.gpu
+  - https://usegpu.live/
+  - Use.GPU / Live - react-without-react for WebGPU
 # more-repos

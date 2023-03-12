@@ -33,7 +33,21 @@ modified: 2021-08-06T07:36:05.864Z
 
 - ## 
 
-- ## 
+- ## So the rendering game is:
+- https://twitter.com/steveruizok/status/1634577503724380160
+  - every shape gets a layer = memory issues on mobile, long composition 
+  - single layer for all shapes = expensive repaints / gpu uploads during pans, zooms
+  - single layer cached as a texture during pans / zooms = weird Safari rendering bugs
+  - perf rn isn’t bad, just frustrating that there are paths towards improvements that different solutions for each browser
+- Could you throw Safari under the bus a bit and switch to an in-house solution for pan/zoom, like switching to proxy shapes while panning/zooming or rolling your own rasterization bake on start of pan/zoom?
+- FWIW, single pass heterogeneous batching with correct resolution of overlap for drawing order can be very fast:
+  - https://gitlab.com/unconed/use.gpu
+  - https://usegpu.live/
+  - Use. GPU / Live - react-without-react for WebGPU
+- wonder if you’ll switch to webgl2 canvas at some point
+  - Lots of benefits of HTML+SVG that would be very very difficult to recreate in canvas
+- Ah we are dealing with this in Rapid too.  For now we’re just throttling rendering , and doing setTransform of a root container for pan/zoom - but I’m not too happy about it.  Part of our issue is we don’t have a lot of insight into what the GPU is doing.
+  - The throttling effect is really visible in the video I shared here - overall it’s pretty good but I’m still trying to improve it.
 
 - ## 国内有一个小众开发圈把 SVG `<foreignObject>` 玩上了天，还靠 touchstart、click 的时间差实现了一些看似需要 JS 的交互。
 - https://twitter.com/tankxu/status/1619545479922196481

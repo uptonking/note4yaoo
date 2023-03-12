@@ -1,6 +1,8 @@
 ---
-layout: page
 title: Rope science, part 3 - Grapheme cluster boundaries
+created: 1970-01-01T00:00:00.000Z
+modified: 2023-03-11T18:21:35.122Z
+layout: page
 site_nav_category_order: 210
 is_site_nav_category2: true
 site_nav_category: docs

@@ -86,17 +86,14 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/inkandswitch/peritext
   - https://www.inkandswitch.com/peritext/
   - A CRDT for asynchronous rich-text collaboration, where authors can work independently and then merge their changes.
+  - Peritext builds upon RGA, which is similar to Causal Trees, although our algorithm could use any of these plain text CRDTs with minor adaptations. 
   - This repo includes:
     - A Typescript implementation of the core Peritext CRDT algorithm
-    - A prototype integration with the [Prosemirror](http://prosemirror.net/) editor library
+    - A prototype integration with ProseMirror editor
     - An interactive demo UI where you can try out the editor
     - A test suite
+  - forks
   - https://github.com/philschatz/peritext
-
-- https://github.com/hyperhyperspace/hyperhyperspace-core
-  - HHS uses an immutable typed-objects local storage model. Objects are both retrieved and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
-  - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
-  - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
 
 - https://github.com/supabase/pg_crdt /rust
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.
@@ -120,6 +117,8 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/composablesys/collabs /ts
   - Collabs is a collections library for collaborative data structures. 
   - These are data structures that look like Set, Map, Array, etc., except they are synchronized between multiple users
+  - https://github.com/composablesys/collabs-e2e-benchmark
+  - [Collabs: Composable Collaborative Data Structures_2022](https://arxiv.org/abs/2212.02618)
   - https://twitter.com/matthewweidner3/status/1444475869121110017
     - Collabs is directly inspired by Automerge and Yjs, and uses similar techniques (network-agnostic CRDTs).  
     - The main difference is its API: we try to mimic a non-replicated collections library, with flexibility, composition tools, and strong typing.
@@ -138,6 +137,29 @@ modified: 2022-04-05T10:08:25.947Z
   - It provides a server to store and retrieve messages, so that clients don't have to connect peer-to-peer.
   - Server: 132 lines of JS
   - Client: 639 lines of JS
+
+- https://github.com/ipfs-shipyard/peer-crdt /js
+  - collection of operation-based CRDTs that are meant to work over a p2p network.
+  - 提供了多种类型，代码不复杂，无服务端
+  - not maintained. Superseded by delta-crdts
+  - [implement a delta state-based RGA sequence type](https://github.com/peer-base/js-delta-crdts/issues/3)
+  - https://github.com/ipfs-shipyard/peer-crdt-example
+    - nodejs
+  - https://github.com/ipfs-shipyard/peer-crdt-textarea-binding
+    - Bind a PeerCRDT treedoc-text object to a textarea.
+  - https://github.com/ipfs-shipyard/peer-crdt-bind-codemirror
+
+- https://github.com/peer-base/js-delta-crdts /js
+  - Delta state-based CRDTs in Javascript.
+  - https://github.com/itoumlilt/CRDT-Spreasheet
+  - https://github.com/eugene-eeo/crunch-crdt-benchmarks
+  - https://github.com/jimpick/delta-crdt-ordering-demo
+  - https://github.com/jimpick/causual-playground
+  - https://github.com/JMLX42/rust-delta-crdts
+    - Delta state-based CRDTs in Rust.
+
+- https://github.com/streamich/json-joy
+  - json-crdt中提供了rga、lww-object
 
 - https://github.com/phedkvist/crdt-sequence
   - CRDT Sequence is a very basic collaborative text editing implementation
@@ -163,7 +185,7 @@ modified: 2022-04-05T10:08:25.947Z
   - With the help of WootTypes. WString, turn that diff into `WStringOperations` and broadcast those operations to the server.
   - When we receive operations from the server, apply those operations to our WString instance and apply them to the text in #collab-doc.
 
-- https://github.com/t-mullen/woot-crdt /Sequence-CRDTs
+- https://github.com/t-mullen/woot-crdt
   - Replicate text or sequences over networks.
 - https://github.com/t-mullen/logoot-crdt
   - Optimized Logoot CRDT implementation.
@@ -247,37 +269,18 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/fdionisi/deno-crdt
   - Collection of CRDT written in TypeScript
   - 测试了 woot + logoot + rga
-  - rga使用doubly-linked-list
+  - rga使用tree+doubly-linked-list+vector-clock
 - https://github.com/orbitdb/crdts
   - 提供的都是简单类型
 - https://github.com/dominictarr/crdt
   - Commutative Replicated Data Types for easy collaborative/distributed systems.
-  - commute - give the same result independent of the order in which they are applied.
   - 提供了简单和复杂多个示例
   - https://github.com/adelriosantiago/easy-crdt
     - up-to-date real-time collaborative editor sample based on dominictarr/crdt
 - https://github.com/liaujianjie/crdt
   - I will be using this repo to experiment with CvRDTs
-
-- https://github.com/ipfs-shipyard/peer-crdt /js
-  - collection of operation-based CRDTs that are meant to work over a p2p network.
-  - 提供了多种类型，代码不复杂，无服务端
-  - not maintained. Superseded by delta-crdts
-  - [implement a delta state-based RGA sequence type](https://github.com/peer-base/js-delta-crdts/issues/3)
-  - https://github.com/ipfs-shipyard/peer-crdt-example
-    - nodejs
-  - https://github.com/ipfs-shipyard/peer-crdt-textarea-binding
-    - Bind a PeerCRDT treedoc-text object to a textarea.
-  - https://github.com/ipfs-shipyard/peer-crdt-bind-codemirror
-
-- https://github.com/peer-base/js-delta-crdts /js
-  - Delta state-based CRDTs in Javascript.
-  - https://github.com/itoumlilt/CRDT-Spreasheet
-  - https://github.com/eugene-eeo/crunch-crdt-benchmarks
-  - https://github.com/jimpick/delta-crdt-ordering-demo
-  - https://github.com/jimpick/causual-playground
-  - https://github.com/JMLX42/rust-delta-crdts
-    - Delta state-based CRDTs in Rust.
+- more-crdt-impl
+  - https://github.com/streaver/crdt-examples
 
 - https://github.com/patreu22/react-crdt
   - part of a bachelor thesis dealing with conflict-free data types in web development.
@@ -362,6 +365,12 @@ modified: 2022-04-05T10:08:25.947Z
     - library for realtime collaboration on JSON structures. 
     - It is a client-oriented, declarative-functional approach to shared application state.
 
+- https://github.com/hyperhyperspace/hyperhyperspace-core
+  - HHS uses an immutable typed-objects local storage model. 
+    - Objects are both retrieved and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
+  - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
+  - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
+
 - https://github.com/twfarland/count-them-beans
   - Displays use of a GCounter conflict-free replicated data type (CRDT), web workers, signals, and virtual dom.
 - https://github.com/pietro909/webworkers-crdt
@@ -423,6 +432,7 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/prSquirrel/crdt-demo /rga
   - A collaborative text editor demo based on Causal Tree CRDT (variant of RGA).
+  - 编辑器基于textarea
   - currently no STUN/TURN servers are configured, so it only works with local peers
   - Uses WebSockets for signaling and WebRTC Data Channels for p2p communication. 
 
@@ -433,6 +443,10 @@ modified: 2022-04-05T10:08:25.947Z
   - Collaborative realtime texteditor with gRPC using RGAs (Replicated Growable Arrays).
   - using a variant of RGAs (Replicated Growable Arrays). 
   - The RGA-protocol is implemented as Timestamped Insertion Tree (TI Tree) 
+
+- https://github.com/munhitsu/CRAttributes /swift
+  - Enables colaboration on text field (and other fields) across multiple iOS devices.
+  - A nearly vanilla implementation of CRDT RGA (operation per character).
 
 - https://github.com/ritzyed/ritzy /201509/js/inactive
   - Ritzy editor is a rich text, real-time character-by-character collaborative embeddable browser-based editor. 
@@ -463,6 +477,20 @@ modified: 2022-04-05T10:08:25.947Z
   - Abstraction of clock (e.g. unix timestamp clock or vector clock)
   - Abstraction of data store (e.g. in memory via Map or object literal, cookie, local storage, database, etc.)
 
+- https://github.com/hesselbom/crdtmap
+  - a simple key-value map that can sync between different clients by letting latest timestamp always win.
+  - Key is always a string but value could be anything as long as it's just primitive values.
+  - Inspired by yjs and the CRDT-variant LWW-Element-Set
+  - 依赖yjs工具方法，但可移除
+  - https://github.com/hesselbom/crdtmap-websocket
+  - https://github.com/hesselbom/crdtmap-indexeddb
+
+- https://github.com/dominwong4/LWW-Element-Dictionary
+  - state-based
+
+- lww+map
+  - https://github.com/organicdesign/crdt-map-synchronizer
+
 - https://github.com/siliconjungle/last-writer-wins-registers
   - An example with a few different last-writer-wins registers.
 
@@ -476,6 +504,9 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/broswen/ring
   - CRDT LWW Register cluster with gossip
   - a proof of concept for a LWW Register CRDT cluster running on Cloudflare Workers with Durable Objects.
+
+- https://github.com/benhhooxx/LWW-state-based
+  - LWWDictionaryStateBased which implements a state-based two-phase set. 
 # crdt-string/text
 - https://github.com/mweidner037/uniquely-dense-total-order
   - Uniquely Dense Total Orders for List/Text CRDTs
@@ -495,6 +526,10 @@ modified: 2022-04-05T10:08:25.947Z
   - A CRDT string manipulation library for concurrent editing.
   - Stores a CRDT as a double linked list.
   - Offsets within a string is the ID of the object, insertions are given an index of a fraction of an offset. 
+
+- https://github.com/disordinary/crdt_tree
+  - A CRDT String represented as a binary tree
+  - Rather than the WOOT approach to CRDT (With Out Operational Transformations) in which every character has it's own ID this approach only splits the string as required for the CRDT operation.
 # crdt-json
 - https://github.com/carlreinecken/legible-mergeable
   - basic JSON / Javascript Object CRDT
@@ -529,10 +564,6 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/codesandbox/crdt-tree
   - A highly-available move operation for replicated trees and distributed filesystems
-
-- https://github.com/disordinary/crdt_tree
-  - A CRDT String represented as a binary tree
-  - Rather than the WOOT approach to CRDT (With Out Operational Transformations) in which every character has it's own ID this approach only splits the string as required for the CRDT operation.
 # crdt-utils
 - https://github.com/danielstaleiny/CRDT-sqlite
   - 依赖 idb

@@ -223,6 +223,12 @@ modified: 2023-01-17T19:14:47.611Z
   - [Is GUN suitable for building collaborative text editor using causal-tree merging strategy?](https://github.com/amark/gun/issues/459)
   - Gun is a graph database. I don't think Orbit uses a graph system, but instead uses feeds or KV stores. So that's a another difference. But Gun can use IPFS as a storage adapter if you wanted.
 
+- https://github.com/Manwe-777/tool-db /ts
+  - a peer-to-peer model for a decentralized database, inspired by GundB
+  - Key-value/document storage.
+  - Capable of providing realtime updates.
+  - Works in the Browser and Nodejs seamlessly.
+
 - https://github.com/holochain/holochain /202212/rust
   - Holochain is an open-source framework to develop peer-to-peer applications with high levels of security, reliability, and performance.
   - simplified version of Holochain on Rust (sometimes called Holochain RSM for Refactored State Model)

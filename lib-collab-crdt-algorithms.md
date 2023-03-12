@@ -72,29 +72,6 @@ modified: 2023-03-07T04:43:58.713Z
   - Causal trees are a similar approach (named CT but in RGA it's called a timestamped insertion tree). 
   - In any case, CT/RGA algorithms have been proven to use the same algorithm
 
-### [Thinking about efficient backing stores for CRDTs](https://slightknack.dev/blog/backing-crdt-store/)
-
-- Today, we’re going to focus on creating out an efficient backing store for a particular family of algorithms known as Replicated Growth Arrays (RGA).
-- Under RGA, we represent documents as trees of strings. 
-  - If this sounds familiar, that because it’s a bit like a Rope. 
-  - To ensure that these trees always merge, we provide an algorithm for merging two trees together in a deterministic manner.
-- The merging algorithm behind RGA is pretty elegant. 
-  - Each character in the tree points to the one before it. 
-  - If two characters have the same parent, we order them from back to front, the latest character going first (sorting by user in case of a tie).
-
-- 💡 Note that although conceptually RGA operates on trees, **implementation-wise, (tree)it’s not a requirement**. 
-  - Trees are an inefficient substrate(底层；基底) for RGA for a number of reasons, the largest being wasted space and the fact that they don’t play well with the L1 cache.
-  - If we flatten the tree out into a list (still inefficient for other reasons), the RGA insertion algorithm discussed above looks something like this
-- In the above example, we’re using a Rust Vec, which is a dynamically growable array. 
-  - Vectors are really efficient in cache, but as mentioned, horrifically slow for insertion (which requires reallocation) or indexing by key (an O(n) linear search).
-- 👉🏻 In light of this, a few people have come up with better backing data structures that exist to fill the gap. 
-  - Most of these are build around Ropes or Range Trees.
-  - These work great in practice, but still have some overhead when looking up entries by key or storing many small edits.
-
-- I’ve been thinking about this issue for the past few days, and I think I have an interesting possible solution. 
-  - I’m no expert, but I do have some experience with OT and optimization, so we’ll see how it goes. 
-  - I’m calling this solution a Backed Tree Log, and it functions as an append-only log + a backing key-value tree for efficient key lookup.
-
 ### [Operation-based CRDTs: arrays (part 1)](https://www.bartoszsypytkowski.com/operation-based-crdts-arrays-1/)
 
 - A key observation of most (if not all) CRDT approaches to ordered sequences is simple: we need to be able to track the individual elements as other elements in collection come and go. 
@@ -124,13 +101,33 @@ modified: 2023-03-07T04:43:58.713Z
   - B pointer's sequence number is equal or greater than Cs - that means that B has been inserted concurrently on another replica. 
   - In this case we also compare replica ID to ensure that virtual pointers can be either lesser or greater to each other (but never equal). 
   - This way even when having partially ordered log of events we can still guarantee, that elements inside of RGA itself will maintain a total order - the same order of elements on every replica.
-- 
-- 
-- 
 
 ### [Operation-based CRDTs: arrays (part 2) Block-wise Replicated Growable Array](https://www.bartoszsypytkowski.com/operation-based-crdts-arrays-2/)
 
 - fit better into scenarios, where we insert and delete entire ranges of elements
+
+### [Thinking about efficient backing stores for CRDTs](https://slightknack.dev/blog/backing-crdt-store/)
+
+- Today, we’re going to focus on creating out an efficient backing store for a particular family of algorithms known as Replicated Growth Arrays (RGA).
+- Under RGA, we represent documents as trees of strings. 
+  - If this sounds familiar, that because it’s a bit like a Rope. 
+  - To ensure that these trees always merge, we provide an algorithm for merging two trees together in a deterministic manner.
+- The merging algorithm behind RGA is pretty elegant. 
+  - Each character in the tree points to the one before it. 
+  - If two characters have the same parent, we order them from back to front, the latest character going first (sorting by user in case of a tie).
+
+- 💡 Note that although conceptually RGA operates on trees, **implementation-wise, (tree)it’s not a requirement**. 
+  - Trees are an inefficient substrate(底层；基底) for RGA for a number of reasons, the largest being wasted space and the fact that they don’t play well with the L1 cache.
+  - If we flatten the tree out into a list (still inefficient for other reasons), the RGA insertion algorithm discussed above looks something like this
+- In the above example, we’re using a Rust Vec, which is a dynamically growable array. 
+  - Vectors are really efficient in cache, but as mentioned, horrifically slow for insertion (which requires reallocation) or indexing by key (an O(n) linear search).
+- 👉🏻 In light of this, a few people have come up with better backing data structures that exist to fill the gap. 
+  - Most of these are build around Ropes or Range Trees.
+  - These work great in practice, but still have some overhead when looking up entries by key or storing many small edits.
+
+- I’ve been thinking about this issue for the past few days, and I think I have an interesting possible solution. 
+  - I’m no expert, but I do have some experience with OT and optimization, so we’ll see how it goes. 
+  - I’m calling this solution a Backed Tree Log, and it functions as an append-only log + a backing key-value tree for efficient key lookup.
 
 ### [Causal Trees and "ORDTs" · ipfs/notes](https://github.com/ipfs/notes/issues/405)
 
@@ -160,10 +157,6 @@ modified: 2023-03-07T04:43:58.713Z
 - https://github.com/crdteam/causal-tree-ts
   - causal tree replicated data type (RDT) in Typescript.
 
-- https://github.com/munhitsu/CRAttributes
-  - Enables colaboration on text field (and other fields) across multiple iOS devices.
-  - A nearly vanilla implementation of CRDT RGA (operation per character).
-
 - more-rga
   - https://github.com/ipfs-shipyard/peer-crdt/blob/master/src/types/rga.js
   - https://github.com/peer-base/js-delta-crdts/blob/master/src/rga.js
@@ -186,12 +179,10 @@ modified: 2023-03-07T04:43:58.713Z
 ### tips
 
 - 考虑到数据源和持久化，通常会将json扁平化，normalize
-  - 扁平化后方便使用 lww + map
   - 还要考虑编码解码
+  - 扁平化后方便使用 lww + map
 
-### [Shelf: a remarkably small, 
-
-remarkably useful CRDT](https://braid.org/algorithms/shelf)
+### [Shelf: a remarkably small, remarkably useful CRDT](https://braid.org/algorithms/shelf)
 - A shelf is efficient, and guarantees consistency, with multiple writers in a P2P network. 
 - A shelf supports most of JSON, however, it does not:
   - Support CRDT insertions or deletions in sequences (arrays/strings)

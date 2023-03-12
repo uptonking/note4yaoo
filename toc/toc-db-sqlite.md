@@ -7,6 +7,10 @@ modified: 2021-08-30T18:56:18.632Z
 
 # toc-db-sqlite
 
+# guide
+
+- ref
+  - [wa-sqlite benchmarks](https://rhashimoto.github.io/wa-sqlite/demo/benchmarks.html)
 # popular
 
 - kikko /75Star/MIT/202211/ts

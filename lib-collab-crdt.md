@@ -35,7 +35,6 @@ modified: 2022-04-05T10:10:08.537Z
     - (replica-id, sequence-nr), aka. dot
     - Delta-aware Add-Wins Observed Remove Set
   - 基于operation
-    - cabinet
     - Lseq
     - RGA
     - Block-wise Replicated Growable Arrays

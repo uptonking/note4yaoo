@@ -119,6 +119,15 @@ modified: 2021-08-30T17:33:20.586Z
   - It deserves your consideration as the standard file format on your next application design.
 # sqlite3_vfs
 
+# [Many Small Queries Are Efficient In SQLite](https://www.sqlite.org/np1queryprob.html)
+- with SQLite, 200 or more SQL statement per webpage is not a problem.
+
+- N+1 Queries Are Not A Problem With SQLite
+  - SQLite is not client/server, however. 
+  - The SQLite database runs in the same process address space as the application. 
+  - Queries do not involve message round-trips, only a function call. 
+  - The latency of a single SQL query is far less in SQLite. 
+  - Hence, using a large number of queries with SQLite is not the problem.
 # [CREATE TABLE](https://www.sqlite.org/lang_createtable.html)
 - Each table in SQLite may have at most one PRIMARY KEY. 
   - If the keywords PRIMARY KEY are added to a column definition, then the primary key for the table consists of that single column. 

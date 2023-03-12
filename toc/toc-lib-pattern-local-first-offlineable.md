@@ -11,6 +11,9 @@ modified: 2021-09-04T14:03:39.046Z
 
 - search: local-first, local first, offline first
 
+- ref
+  - https://github.com/arn4v/offline-first
+
 - local-first + realtime协作的示例
   - https://github.com/gongojs/project
   - https://github.com/a-type/lo-fi

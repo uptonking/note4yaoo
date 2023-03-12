@@ -118,7 +118,6 @@ modified: 2022-10-22T18:47:16.228Z
 - https://github.com/hesselbom/crdtmap-indexeddb
   - https://github.com/hesselbom/crdtmap
   - Inspired by yjs and the CRDT-variant LWW-Element-Set, this is a simple key-value map that can sync between different clients by letting latest timestamp always win.
-  - Key is always a string but value could be anything as long as it's just primitive values.
 # more
 - https://github.com/SyncProxy/sync-client /202012/js/inactive/服务端未开源
   - SyncProxy-client is a javascript client for SyncProxy that enables one-single line of code implementation of synchronization for javascript offline applications using embedded database (IndexedDB, SQLite, SQLJS, WebSQL, LokiJS...).
