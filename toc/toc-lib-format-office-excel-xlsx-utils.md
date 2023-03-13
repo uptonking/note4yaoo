@@ -52,6 +52,7 @@ modified: 2023-01-09T11:04:13.958Z
   - https://oss.sheetjs.com/
   - 依赖cfb(Compound File Binary File Format extractor), ssf  
   - 常作为excel读写的工具库，而不用来渲染，官网示例上传excel可渲染成canvas或td
+  - 无依赖，自己实现了办公类文档的各种解析器 js-word、js-ppt、ssf、js-cfb
 - https://github.com/protobi/js-xlsx /202008/js/inactive
   - a fork of the original SheetJS/sheetjs
   - extended to enable cell formats to be read from and written to .xlsx workbooks. 

@@ -18,6 +18,12 @@ modified: 2022-08-21T10:11:37.453Z
 - [哔哩哔哩 从零开始的富文本编辑器（上）_slate_202209](https://www.bilibili.com/read/cv18606877)
   - [哔哩哔哩 从零开始的富文本编辑器（下） - 列表-图片_slate_202210](https://www.bilibili.com/read/cv19147722)
 
+##  [富文本编辑器框架ProseMirror、Slate和Lexical横向比较 - 掘金](https://juejin.cn/post/7140921781380415501)
+
+- 比较了 
+  - editorState, selection, normalize, operation
+  - prosemirror, slate, lexical
+
 ## [How to implement a web-based rich text editor in 2023?](https://letsken.com/michael/how-to-implement-a-web-based-rich-text-editor-in-2023)
 
 - Since 2011 I’ve been spending a great junk of my time taming web browsers to behave correctly and predictably when editing rich text
@@ -269,8 +275,6 @@ modified: 2022-08-21T10:11:37.453Z
 - [WebAssembly 在在线文档分词场景中的解决方案](https://github.com/YingshanDeng/wasm-cppjieba/issues/1)
 
 - [VS Code、ATOM这些开源文本编辑器的代码实现中有哪些奇技淫巧？ - 知乎](https://www.zhihu.com/question/272156541/answers/updated)
-
-- [富文本编辑器框架ProseMirror、Slate和Lexical横向比较 - 掘金](https://juejin.cn/post/7140921781380415501)
 
 - [Web富文本编辑器演进 - 掘金](https://juejin.cn/post/7116899761340284936#heading-11)
   - vscode 的编辑器（monaco）是基于L2实现的

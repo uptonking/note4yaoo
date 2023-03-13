@@ -11,6 +11,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 - collab
   - json patch
+  - [Add Collaboration Example and Documentation](https://github.com/ianstormtaylor/slate/issues/3715)
 # popular-slate
 - plate /1.6kStar/MIT/202208/ts/block-style
   - https://github.com/udecode/plate
@@ -552,11 +553,17 @@ modified: 2023-02-05T19:03:12.723Z
   - 每次同步全量数据
   - 注意测试时要用相同url代表在一个房间里面
 
-- https://github.com/cudr/slate-collaborative /ts/inactive
+- https://github.com/cudr/slate-collaborative /ts/inactive/automerge
   - A example of a collaborative editor using Slate and Automerge
   - 依赖slate.v0.59
   - Based on idea of https://github.com/humandx/slate-automerge
   - https://github.com/mms-gianni/slate-collaborationserver
+
+- https://github.com/geoffreylitt/automerge-slate-playground /v0.59
+  - Playing with Automerge + Slate
+
+- slate-automerge
+  - https://github.com/ahixon/slate-sync-bridge /201906
 
 - https://github.com/itoumlilt/crdt-md-editor /ts/slate/CouchDB
   - React Typescript CRDT based Collaborative Markdown Editor
@@ -566,6 +573,9 @@ modified: 2023-02-05T19:03:12.723Z
   - Slate-yjs aims to be the goto collaboration solution for slate. 
   - Slate-yjs will overwrite the current editor value with the state contained in the shared type.
   - [Linearising document content](https://github.com/BitPhinix/slate-yjs/issues/296)
+  - https://github.com/saadiqbal10/slate-yjs-react-compiled
+  - forks
+  - https://github.com/sennpang/slate-yjs
 
 - https://github.com/6thfdwp/crdt-editor
   - A collaborating editor based on Slate and Yjs

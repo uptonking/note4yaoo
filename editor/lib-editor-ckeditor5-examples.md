@@ -61,6 +61,9 @@ modified: 2021-11-05T13:31:12.802Z
     - 适用于自定义构建的插件包。要使用此插件包，则不建议直接使用官方的classic、decoupled、inline、balloon等构建，建议自定义构建
     - 已弃用，源码转移到了上面仓库
 
+- https://github.com/mycolorway/ckeditor-build
+  - ckeditor 编辑器 - 自定义构建
+
 - https://github.com/lvshaoli/lleditor
   - 自己扩充ckEditor5插件，视频上传，和pdf上传
 
@@ -127,6 +130,12 @@ modified: 2021-11-05T13:31:12.802Z
 - https://github.com/luozz1994/multirooteditor5
   - 基于ckeditor5的多根编辑器
   - 基于ckeditor5的编辑器扩展，丰富编辑器功能，除了本身的功能外，还提供动态增删编辑器的功能、设置单个编辑器的数据，可以前后追加或者完全覆盖
+
+- trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持多端
+  - https://github.com/zadam/trilium
+  - https://github.com/zadam/trilium/wiki/
+  - 依赖 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror5、jsplumb、fancytree、bootstrap
+  - a hierarchical note taking application with focus on building large personal knowledge bases. 
 # ckeditor4
 - https://github.com/liferay/alloy-editor
   - WYSIWYG editor based on CKEditor 4 with completely rewritten UI

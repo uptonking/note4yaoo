@@ -119,7 +119,7 @@ modified: 2022-06-03T21:34:54.893Z
 - trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持多端
   - https://github.com/zadam/trilium
   - https://github.com/zadam/trilium/wiki/
-  - 依赖 electron、express、jsdom、turndown、ckeditor.v5、codemirror、fancytree、bootstrap
+  - 依赖 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror5、jsplumb、fancytree、bootstrap
   - a hierarchical note taking application with focus on building large personal knowledge bases. 
   - Synchronization with self-hosted sync server
   - Trilium is provided as either desktop application (Linux and Windows) or web application hosted on your server (Linux). 

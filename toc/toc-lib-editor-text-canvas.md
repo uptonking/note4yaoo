@@ -18,6 +18,7 @@ modified: 2021-05-19T08:32:28.120Z
   - rich text editor by canvas/svg
   - The render layer by svg is under development, see feature/svg
   - The export pdf feature is available now, see feature/pdf
+  - [一个开源可分页的富文本编辑器_202212](https://zhuanlan.zhihu.com/p/592004147)
 
 - primrose /506Star/MIT/202011/js
   - https://github.com/capnmidnight/Primrose
@@ -70,6 +71,11 @@ modified: 2021-05-19T08:32:28.120Z
   - https://lutzroeder.github.com/textor
   - Experimental text editor control written in TypeScript using HTML5 canvas.
   - Supports syntax highlighting for JavaScript, HTML and CSS.
+# custom-layout
+- https://github.com/ritzyed/ritzy /201509/js/inactive
+  - Ritzy editor is a rich text, real-time character-by-character collaborative embeddable browser-based editor. 
+  - It shuns(避免) use of the `contentEditable` attribute in favor of a custom editor surface and layout engine, exactly like the approach implemented by Google Docs.
+  - Ritzy is built with real-time collaborative editing support from the ground up, underlying mechanism for this is a causal tree CRDT.
 # canvas-text-editor
 - https://github.com/grassator/canvas-text-editor-tutorial
   - Simple text editor using html5 canvas

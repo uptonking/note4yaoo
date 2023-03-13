@@ -19,7 +19,7 @@ modified: 2023-02-05T19:03:12.722Z
 - 若slate-model层采用扁平化Node
   - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath
   - 优化方向可参考tree的crud及协作
-  - 协作时还应该考虑 json patch + last-write-win
+  - 协作时还应该考虑 json patch, last-write-win, map, shelf
   - Node定义采用unist
   - lww的字符串改为针对crdt优化的类型如?
   - 分2步，先将数据全部放在内存但virtual-render，再按需请求数据懒加载
@@ -27,6 +27,13 @@ modified: 2023-02-05T19:03:12.722Z
 - 实现扁平化Node的方式
   - 理想方式是每个op会在apply结束后顺便计算dirtyPath相关的数据变化
   - 临时方案，diff当前op的最高节点作为根节点的树，先flat再diff计算出added/removed
+
+- virtual render在渲染层实现
+  - 此时选区和范围如何表示，因为dom可能不存在
+  - 复制粘贴的范围
+  - 考虑成本和收益
+  - 比如浏览器的翻译、朗读、页面内查找、页面内快捷键、锚点跳转功能、广告屏蔽插件
+  - 口口声声说为了性能，用户体验都没了
 
 - prezly在最外层`Editable`组件上注册的事件有，onCut，onKeyDown
 

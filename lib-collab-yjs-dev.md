@@ -16,4 +16,7 @@ modified: 2022-04-05T10:10:59.826Z
   - We use efficient variable-length encoding where possible.
 
 - [Automerge CRDT Sync Protocol](https://automerge.org/docs/how-it-works/sync/)
+
+- resources
+  - [How Yjs works from the inside out - YouTube](https://www.youtube.com/watch?v=0l5XgnQ6rB4)
 # dev

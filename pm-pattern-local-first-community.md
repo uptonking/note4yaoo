@@ -14,8 +14,16 @@ modified: 2022-03-03T18:20:12.075Z
 
 - ## 
 
-- ## 
-
+- ## I've learnt more about software engineering from building local-first software than any other space.
+- https://twitter.com/JungleSilicon/status/1635146316165828609
+- data substrate(底层；基层)
+  - storage, cache, queries, events, api, auth
+- crdt
+  - types, Snapshots, transactions, versions
+- network
+  - ser/deser, encoding, handshake
+- malleable-software(延展性的, 易适应的)
+  - rich-text, search, markdown, plugins
 
 - ## This was the original problem that got me interested in local-first software. I wanted messaging apps to work like phone providers.
 - https://twitter.com/JungleSilicon/status/1630331881207246848

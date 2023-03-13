@@ -154,6 +154,20 @@ $$('[contenteditable]')
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
 
+## 0313
+
+- [css - Chrome DevTools converts all HEX Colors to RGB - Stack Overflow](https://stackoverflow.com/questions/29869426/chrome-devtools-converts-all-hex-colors-to-rgb)
+  - open preferences, change Color format 
+
+- [Font-size <12px doesn't have effect in Google Chrome - Stack Overflow](https://stackoverflow.com/questions/2295095/font-size-12px-doesnt-have-effect-in-google-chrome)
+  - Chrome and Firefox now allow a minimum font size setting of zero. 
+  - **Chrome 73** had downstream problems with this, and since then Chrome changed their policy and user interface for this setting. 
+  - I don't know the history on Firefox, and I don't know the state of this setting on Safari or other browsers.
+
+- [Urban Dictionary: shit-faced](https://www.urbandictionary.com/define.php?term=shit-faced)
+  - The point at which you have consumed so much alcohol, that you are incoherent(无逻辑的；不连贯的), have difficulty remembering simple things
+  - Being 'shit-faced' is usually an experience you only want to try once, and never again.
+
 ## 0312
 
 - dev-to
@@ -587,7 +601,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                               `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                  `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

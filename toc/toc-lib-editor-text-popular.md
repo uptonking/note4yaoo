@@ -132,11 +132,17 @@ modified: 2022-11-08T19:04:00.289Z
 - https://gitee.com/modstart-lib/ueditor-plus
   - https://open-demo.modstart.com/ueditor-plus/_examples/
   - 功能丰富，中文友好
+
+- https://github.com/fastmail/Squire /ts/NoDeps
+  - an HTML5 rich text editor, which provides powerful cross-browser normalisation
+  - It was designed to handle email composition for the Fastmail web app.
+  - The most important consequence of this (and where Squire differs from most other modern rich text editors) is that it must handle arbitrary HTML
+  - This means that it can't use a more structured (but limited) internal data model (as most other modern HTML editors do) and the HTML remains the source-of-truth. 
+  - In addition to its use at Fastmail, it is also currently used in production at ProtonMail, SnappyMail, StartMail, Tutanota, Zoho Mail, Superhuman and Teamwork Desk, as well as other non-mail apps including Google Earth
 # flat/linear-editors
 - https://github.com/NickStefan/tome-editor /201512/js
   - A hidden Input is the user input
   - we use a 'range based' data model, and then serialize it into a tree only for rendering purposes.
-  - 
 
 - https://github.com/simplygreatwork/textbase /202105/js
   - https://simplygreatwork.github.io/textbase/
@@ -152,6 +158,7 @@ modified: 2022-11-08T19:04:00.289Z
   - rich text editor by canvas/svg
   - The render layer by svg is under development, see feature/svg
   - The export pdf feature is available now, see feature/pdf
+  - [一个开源可分页的富文本编辑器_202212](https://zhuanlan.zhihu.com/p/592004147)
 
 - roosterjs /655Star/MIT/202211/ts/测试覆盖率高
   - https://github.com/microsoft/roosterjs
@@ -221,6 +228,11 @@ modified: 2022-11-08T19:04:00.289Z
   - 依赖jquery
   - Summernote is a JavaScript library that helps you create WYSIWYG editors online.
   - Saves images directly in the content of the field using base64 encoding, so you don't need to implement image handling at all
+
+- https://github.com/mycolorway/simditor /201908/coffeescript/inactive
+  - https://simditor.tower.im/
+  - Simditor is a browser-based WYSIWYG text editor.
+  - It is used by Tower -- a popular project management web application.
 
 - wiz-editor /237Star/MIT/202207/ts/为知笔记/似乎未开源
   - https://github.com/WizTeam/wiz-editor

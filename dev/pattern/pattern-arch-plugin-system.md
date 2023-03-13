@@ -12,6 +12,9 @@ modified: 2020-12-20T15:46:29.566Z
 - 很多成熟优秀的系统都是插件式架构
   - react hooks
 # plugin-system-repos
+- https://github.com/unjs/unplugin
+  - Unified plugin system for Vite, Rollup, Webpack, esbuild, and more
+
 - https://github.com/moonrailgun/mini-star
   - [介绍 | MiniStar](https://ministar.moonrailgun.com/zh-Hans/docs/tutorial/intro)
   - A micro-kernel framework which can pluginize your project. Progressive Migration!

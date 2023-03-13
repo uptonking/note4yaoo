@@ -82,8 +82,16 @@ modified: 2022-10-23T14:57:23.473Z
   - deepskyblue: #00bfff
   - cyan/aqua: #00ffff
 
+
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
+
+- https://github.com/nordtheme/nord
+  - A total of sixteen, carefully selected, dimmed pastel colors
+  - #D8DEE9 #E5E9F0 #ECEFF4
+  - #8FBCBB #88C0D0 #81A1C1 #5E81AC
+  - #BF616A #D08770 #EBCB8B #A3BE8C #B48EAD
+
 # guide
 - tips
   - 各设计系统都会有自己的调色板

@@ -11,7 +11,7 @@ modified: 2023-03-09T13:47:07.317Z
 
 - office-online
   - [Zoho Writer](https://www.zoho.com/writer/)
-# office
+# office-popular
 - https://github.com/ONLYOFFICE/DocumentServer
   - Starting from version 6.0, Document Server is distributed under a new name - ONLYOFFICE Docs.
   - https://github.com/ONLYOFFICE/CommunityServer /c#/apache2
@@ -47,7 +47,7 @@ modified: 2023-03-09T13:47:07.317Z
     - CryptPad's encrypted collaboration, used for spreadsheets and other applications, is completely different from the encryption system used in parts of upstream OnlyOffice.
   - [CryptPad: Collaboration suite end-to-end encrypted and open-source | Hacker News](https://news.ycombinator.com/item?id=29921947)
 
-- https://github.com/LibreOffice/core /GPLv3/java
+- https://github.com/LibreOffice/core /GPLv3/cpp/java
   - [LibreOffice Online](https://www.libreoffice.org/download/libreoffice-online/)
     - LibreOffice Online is a server service built from the main LibreOffice project code, which provides display and collaborative visual editing of a range of document types in a web browser. 
   - [LibreOffice for Android and iOS](https://www.libreoffice.org/download/android-and-ios/)
