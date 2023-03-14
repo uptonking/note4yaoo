@@ -103,6 +103,12 @@ modified: 2023-02-05T19:03:12.723Z
     - https://dsvgit.github.io/mide/
     - Slate.js code editor extension
 
+- https://github.com/WindrunnerMax/DocEditor
+  - https://windrunnermax.github.io/DocEditor
+  - 基于slate构建文档编辑器
+  - 依赖 ahooks、arco-react
+  - 效果类似飞书，不支持拖拽
+
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!
   - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.

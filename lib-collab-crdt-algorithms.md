@@ -183,6 +183,7 @@ modified: 2023-03-07T04:43:58.713Z
   - 扁平化后方便使用 lww + map
 
 ### [Shelf: a remarkably small, remarkably useful CRDT](https://braid.org/algorithms/shelf)
+
 - A shelf is efficient, and guarantees consistency, with multiple writers in a P2P network. 
 - A shelf supports most of JSON, however, it does not:
   - Support CRDT insertions or deletions in sequences (arrays/strings)
@@ -260,6 +261,7 @@ modified: 2023-03-07T04:43:58.713Z
 - https://github.com/dglittle/shelf /发布在202110
   - a shelf: [VALUE, VERSION_NUMBER]
   - https://braid.org/meeting-8 (the shelf part with Greg starts at about 43 minutes in to the recording.)
+  - [Shelf: easy way for recursive CRDT documents](https://www.bartoszsypytkowski.com/shelf-crdt/)
 
 - https://github.com/siliconjungle/cabinet
   - A key value store & subscriptions wrapping a json blob crdt (shelf).
@@ -269,8 +271,6 @@ modified: 2023-03-07T04:43:58.713Z
   - https://github.com/samuel-christian/json-crdts
 
 ### more-json-crdt
-
-- [Shelf: easy way for recursive CRDT documents](https://www.bartoszsypytkowski.com/shelf-crdt/)
 
 - [JSON-CRDT](https://github.com/ipfs/notes/blob/master/CRDT/json-crdt.md)
 

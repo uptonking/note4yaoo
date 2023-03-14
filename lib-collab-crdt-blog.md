@@ -118,7 +118,6 @@ modified: 2022-10-13T08:00:21.260Z
 - If you take a closer look at the implementation details of block-wise RGA algorithms, you may notice that CRDT specifics usually depend on the metadata alone - we are usually only interested in the length of the content rather than content itself. 
   - In reality we could abstract it into a separate structure optimized for text manipulations (like `Rope` or string buffers of specific editors), while RGA-specific metadata only holds ranges that given block is responsible for.
 
-
 - 
 - 
 - 
@@ -567,3 +566,5 @@ This is how we might do it with with "Realtime as an authority" approach (and is
 - [CRDTs: Part 7 Registers and Deletion](https://lars.hupel.info/topics/crdt/07-deletion/)
 
 - [CRDT Implementations](https://jzhao.xyz/thoughts/CRDT-Implementations/)
+
+- [CRDT: 分数排序 Fractional Indexing](https://hyrious.me/p/crdt-fractional-indexing)

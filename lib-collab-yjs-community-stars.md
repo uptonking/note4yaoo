@@ -14,6 +14,19 @@ modified: 2022-10-22T18:46:45.456Z
 
 - ## 
 
+
+- ## [Which algorithm y-array is using? · y-js/y-array](https://github.com/y-js/y-array/issues/9)
+- Yjs does not share any concepts with the RGA algorithm. 
+  - If you want to compare it conceptually, Yjs is actually more similar to WOOT. 
+- While both algorithms have a time complexity of O(H^2), the syncing process is actually very performant in Yjs. In WOOT, you basically have to apply all operations from the beginning of time. In Yjs only missing operations need to be applied.
+
+
+- In JS and other higher-level languages, objects have quite a lot of
+overhead: headers, gc bookkeeping, etc. That may dwarf those 62+8
+bytes. That's why Causal Tree (my RGAish algo) keeps the data in
+strings or typed arrays.
+
+
 - ## It looks like Automerge 2 latest is faster than Yjs, but still uses 2x more memory._202301
 - https://news.ycombinator.com/item?id=34586433
   - Yjs (pure javascript?) is quoted on the paper benchmark at 1, 074ms and 10, 141, 696 bytes of memory, compared to Automerge 2.0.2-unstable at 661ms and 22, 953, 984 bytes of memory. 

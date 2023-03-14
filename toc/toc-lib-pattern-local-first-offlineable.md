@@ -162,6 +162,7 @@ modified: 2021-09-04T14:03:39.046Z
   - Open source SDK
   - 推荐使用 SingleFile 保存 html 页面
   - 支持点对点同步，测试时可用本地同步官网，api填写 https://hamsterbase.onrender.com，结尾无/
+  - https://github.com/carytrivett
 
 - https://github.com/unigraph-dev/unigraph-dev
   - A local-first and universal knowledge graph, personal search engine, and workspace for your life.

@@ -12,6 +12,13 @@ modified: 2023-01-16T21:14:55.049Z
   - 基于缓存实现sync有点类似于react-query
   - 参考vlcn
 
+- 参考yjs
+  - undo/redo
+  - 持久化数据结构
+  - 冲突处理
+  - encoding/decoding，针对存储、传输
+  - 离线同步
+
 - 同步功能需求
   - 👉🏻 同步所需的数据是所有changes-ops messages
   - 支持每个用户拥有多个设备，不用userId，考虑到org的同步而使用groupId/teamId

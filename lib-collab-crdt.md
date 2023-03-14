@@ -20,7 +20,13 @@ modified: 2022-04-05T10:10:08.537Z
     - 基于op依赖可靠的传输来保证操作的因果性 Reliable Causal Broadcast(RCB)，不可丢失或重复
   - 对于业界成熟的实现如yjs，是结合两种方式来优化性能的
 
-- crdt的实现思路
+- crdt的结构实现
+  - id设计: counter, timestamp, array
+  - op-insert: sort+insert
+  - gc: tombstone
+  - interleaving
+
+- crdt的常见数据结构
   - base-data-structures
     - Counter
     - Last Write Wins Register

@@ -25,6 +25,7 @@ modified: 2022-09-21T15:47:41.340Z
   - SyncedStore CRDT is an easy-to-use library for building live, collaborative applications that sync automatically.
   - SyncedStore builds directly on Yjs and Reactive. 
   - It's also inspired by and builds upon the amazing work by `MobX` and NX Observe.
+  - mobx是可选的
   - SyncedStore is built as part of TypeCell.
   - So far, we've focused mostly on how to change to state on a synced store, and how to listen (react to) changes and display them in your application.
     -  When you update data on the store, an incremental change, or update is captured and can be shared between users. These updates can be shared between users of your application with different Sync Providers. 
@@ -35,12 +36,16 @@ modified: 2022-09-21T15:47:41.340Z
     - A super simple, yet powerful and performant library for State Management / Reactive Programming.
 
 - https://github.com/ueberdosis/hocuspocus
-  - 
+  - server
 
 - https://github.com/BitPhinix/slate-yjs
   - https://docs.slate-yjs.dev/
   - Slate-yjs aims to be the goto collaboration solution for slate. 
   - Slate-yjs will overwrite the current editor value with the state contained in the shared type.
+
+- https://github.com/WindrunnerMax/Collab
+  - 初探富文本之OT协同实例 sharedb+quill
+  - 初探富文本之CRDT协同实例 yjs+quill
 
 - https://github.com/jaqarrick/yjs-lab
   - This repo serves as an in-depth explanation of Yjs.
@@ -152,6 +157,26 @@ modified: 2022-09-21T15:47:41.340Z
 - https://github.com/yjs/y-codemirror.next
   - https://demos.yjs.dev/codemirror/codemirror.html
   - Collaborative extensions for CodeMirror6
+# automerge
+- https://github.com/richardanaya/crdt-todo
+  - An example application using CRDT library Automerge to make a TODO app
+
+- https://github.com/andrewinci/free-retro
+  - https://retroapp.amaker.xyz/
+  - A retro board inspired by retrium
+  - 依赖automerge.v2、mantine、react-dnd、emotion
+
+- https://github.com/pvh/automerge-prosemirror-workbench
+  - testbed for automerge/prosemirror
+
+- https://github.com/block-based-editors/automerge-tree
+  - https://block-based-editors.github.io/automerge-tree/
+  - (real-time) collaboration on blocks with automerge saved in a tree
+
+## automerge-v1
+
+- https://github.com/nornagon/autowiki
+  - a tool for creating networked documents.
 # collab-non-yjs
 - https://github.com/hypercore-protocol/hypercore /202211/js
   - a secure, distributed append-only log.

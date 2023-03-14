@@ -109,7 +109,7 @@ $$('[contenteditable]')
 - long-term
   - cms, airtable, lowcode
 - techstacks
-  - buffer, stream, async, scheduler
+  - buffer, stream, async, scheduler,arrow
 
 - 内容的存储与更新如何与数据库集成
   - 编辑器内容自动保存一般通过在onChange方法中执行saveToDB

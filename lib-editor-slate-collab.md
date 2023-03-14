@@ -9,6 +9,9 @@ modified: 2023-02-05T19:03:12.722Z
 
 # guide
 
+# collab
+- 支持响应式移动端时，如何支持小屏元素的鼠标位置
+
 # [slate-yjs](https://docs.slate-yjs.dev/)
 - Why a CDRT over OT? 
   - While many current collaborative text editing applications rely on OT (e.g., google docs with ShareJS), it only provides a subset of the functionally CRDTs offer due to the dependence on a central server. 
