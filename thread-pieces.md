@@ -13,9 +13,6 @@ modified: 2021-01-11T12:10:50.900Z
 # discuss
 - ## 
 
-- ## 我觉得自己能力提高了，对于“折腾”这种事，感觉不值。所以不打算折腾了。把有限的时间投入到更高价值的事情上去。
-- https://twitter.com/tualatrix/status/1635095770436374529
-
 - ## Module resolution sometimes takes longer than parsing
 - https://twitter.com/jarredsumner/status/1609796197702860800
 

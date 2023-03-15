@@ -32,6 +32,15 @@ modified: 2021-05-23T10:17:05.993Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## AFAIK the technique used in SQL WHERE queries with index support relies on building a bitmap which represents keys that satisfy the query. 
+- https://twitter.com/Horusiath/status/1634447500525404163
+  - Can anyone point me to a source code where such bitmap is being build by the query executor?
+- [Bitmap Indexes - PostgreSQL wiki](https://wiki.postgresql.org/wiki/Bitmap_Indexes)
+
 - ## how & why #ScyllaDB engineers moved to B-tree & B+-tree data structures for linear search in their #NoSQL distributed database.
 - [The Taming of the B-Trees](https://www.scylladb.com/2021/11/23/the-taming-of-the-b-trees/)
 

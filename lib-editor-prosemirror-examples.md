@@ -106,7 +106,7 @@ modified: 2022-08-18T16:57:46.405Z
 
 - tui.editor.v3 /15.1kStar/MIT/202208/ts/popular
   - https://github.com/nhn/tui.editor
-  - http://ui.toast.com/tui-editor
+  - https://ui.toast.com/tui-editor
   - 👀 v3新版本迁移到了prosemirror
   - 只依赖prosemirror，mark解析自己实现了toastmark，公司还自研了很多ui组件
   - core只依赖 codemirror5，另外提供了react/vue-editor

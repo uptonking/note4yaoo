@@ -109,7 +109,12 @@ $$('[contenteditable]')
 - long-term
   - cms, airtable, lowcode
 - techstacks
-  - buffer, stream, async, scheduler,arrow
+  -  async, stream, buffer, binary, scheduler, arrow
+
+- 支持切换内存和持久化的示例
+  - abstract-level, localforage
+  - tanstack-table server-side row model
+  - tupledb
 
 - 内容的存储与更新如何与数据库集成
   - 编辑器内容自动保存一般通过在onChange方法中执行saveToDB
@@ -127,7 +132,8 @@ $$('[contenteditable]')
   - 12-nedb-linvodb
 - log2023
   - 01-linvo-search+tinybase-sync-hlc-wip
-  - 02-typewriter-quill+tanstack-table+slate
+  - 02-typewriter-quill+tanstack-table+slate-table
+  - 03-crdt-rga+slate-yjs
 
 - why use es6 class
   - 运行时类型检查，instanceof
@@ -153,6 +159,30 @@ $$('[contenteditable]')
 - dev-to
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
+
+## 0315
+
+- [合成事件 - 图解React](https://7kms.github.io/react-illustration-series/main/synthetic-event/)
+  - 从v17.0.0开始, React 不会再将事件处理添加到 document 上, 而是将事件处理添加到渲染 React 树的根 DOM 容器中.
+  - 无论是在document还是根 DOM 容器上监听事件, 都可以归为事件委托(代理)
+  - 注意: react的事件体系, 不是全部都通过事件委托来实现的. 有一些特殊情况, 是直接绑定到对应 DOM 元素上的(如:scroll, load), 它们都通过listenToNonDelegatedEvent函数进行绑定.
+
+- [javascript - what's different between Object.prototype.toString.call and typeof - Stack Overflow](https://stackoverflow.com/questions/31459821/whats-different-between-object-prototype-tostring-call-and-typeof)
+  - You can't override what gets returned from typeof
+
+```JS
+typeof(new Array()) === "object";
+typeof(new Date()) === "object";
+typeof(new RegExp()) === "object";
+
+Object.prototype.toString.call(new Array()).slice(8, -1) === "Array";
+Object.prototype.toString.call(new Date()).slice(8, -1) === "Date";
+Object.prototype.toString.call(new RegExp()).slice(8, -1) === "RegExp";
+```
+
+- [wasm调试 webAssembly介绍大全 - Bigben - 博客园](https://www.cnblogs.com/bigben0123/articles/15753240.html)
+  - C/C++ 到 WebAssembly 代码的编译器 Emscripten 则支持在编译时，为代码注入相关的调试信息，生成对应的 source map，
+  - 然后安装 Chrome 团队编写的 C/C++ Devtools Support 浏览器扩展，就可以使用 Chrome 开发者工具调试 C/C++ 代码了。
 
 ## 0313
 
@@ -601,7 +631,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                  `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                       `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

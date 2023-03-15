@@ -14,6 +14,7 @@ modified: 2023-02-05T19:03:12.722Z
   - toSlateRange, toDOMRange
   - dirtyPath
   - decoarate
+  - op move/split/merge
   - 支持tiptap/prosemirror的json
 
 - 若slate-model层采用扁平化Node
@@ -62,6 +63,19 @@ modified: 2023-02-05T19:03:12.722Z
   - 首先确认更新范围，onChange执行后useEffect才执行将 slateSel-TO-domSel，所以更新sel发生在渲染前
   - 排查定位到，执行op `insert_text`时，顺便就把selection更新了
   - 不需要在op-text执行后单独执行op-selection来更新sel
+# slate-yjs
+- editor.sharedRoot
+  - 与编辑器相关的ydoc/ytext直接挂在slate editor对象上
+
+- connect时会初始化editor数据
+  - editor.children = convertToSlate(editor.sharedRoot)
+
+- slate的move/split在ytext中是delete+insert
+  - 采用了stored positions的设计将pos的relative pos保存在sharedRoot下
+  - 一旦执行move/split, binding就会更新sharedRoot下的relative pos
+
+- ydoc/awareness的set方法会自动send
+
 # slate-react
 - 监听 beforeinput
   - beforeinput 这个事件会在 `<input>, <select> 或 <textarea> 或者 contenteditable` 的值即将被修改前触发，这样我们可以获取到输入框更新之前的值，实际上对于编辑器内部的一些编辑内容的操作是通过这个劫持这个事件，然后再把用户的一系列操作转化成调用 slate api 去更新编辑器内容。

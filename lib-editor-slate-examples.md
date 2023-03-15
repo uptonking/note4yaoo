@@ -92,6 +92,7 @@ modified: 2023-02-05T19:03:12.723Z
   - list不支持多级
   - list item暂不支持拖出去
   - Offline ready mode, 离线基于localStorage
+  - [plans for v2](https://yopage.co/blog/0zntIA46L4/5iK8VNiBI8)
 
 - https://github.com/dsvgit/slatesbox
   - https://dsvgit.github.io/slatesbox/

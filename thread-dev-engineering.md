@@ -11,6 +11,18 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## some of my white whales so far in my career:
+- https://twitter.com/tmcw/status/1635760871212216323
+  - doing untrusted code evaluation
+  - predictable geospatial clip/union/buffer operations
+  - getting keybindings to work across platforms
+  - building consensus around big decisions
+  - generating good documentation from source code
+
 - ## 为什么代码水平越来越高，注释写的越来越少就结局都话越来越少？
 - https://www.zhihu.com/question/39813913/answer/83671724
 - 水平高代码写得好，简洁明了不用看注释就能看懂，所以可以少写一些注释，但是复杂逻辑的注释还是跑不掉的。
@@ -46,9 +58,9 @@ modified: 2021-01-21T17:52:13.333Z
 - I've generalized this into what I've dubbed "the co-location principle", which means that the tighter coupling between two files, the closer they should be in the directory hierarchy. Shared files are moved to the lowest possible level that are in all paths of the consumers.
 
 - I’ve been doing this since forever. I prefer it because:
-  01.    It’s very easy to see which files have no tests
-  02.    I can easily jump from test to implementation 
-  03.    I never have to decide how to name test files
+  01.     It’s very easy to see which files have no tests
+  02.     I can easily jump from test to implementation 
+  03.     I never have to decide how to name test files
   - IMHO the (anti) pattern of putting test files in a separate folder stems from compiled languages like Java where otherwise tests would end up in the compiled code. JavaScript doesn’t have this issue.
   - Rust is even sillier. It puts the test (optionally) in the same sourcefiles 
 

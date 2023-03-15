@@ -56,7 +56,8 @@ modified: 2021-07-20T13:50:23.433Z
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~
 - collab
-  - 👉🏻 yjs, fluid-framework, hlc
+  - 👉🏻 yjs, rga, fluid-framework, hlc
+
 
 ## solutions: inter(re)active knowledge-base/wiki
 

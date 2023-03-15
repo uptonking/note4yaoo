@@ -31,7 +31,7 @@ modified: 2021-03-01T10:54:24.828Z
 - https://github.com/pgte/konphyg
   - Cascading configuration files made easy in Node.js.
 # images-utils
-- https://github.com/TonySpegel/image-comparison
+- https://github.com/TonySpegel/image-comparison /lit
   - Compare two images using a slider, an overlay, or a side by side split view.
   - This webcomponent follows the open-wc recommendation
 

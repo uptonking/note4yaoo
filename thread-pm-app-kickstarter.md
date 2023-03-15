@@ -12,6 +12,13 @@ modified: 2021-10-29T15:02:28.882Z
 # guide
 - [The launchpad for YC startups](https://www.ycombinator.com/launches)
 # ideas-stars
+- ## 常看常新：AI 代替的是不会用 AI 的人
+- https://twitter.com/novoreorx/status/1635910088123875329
+
+- ## 我觉得自己能力提高了，对于“折腾”这种事，感觉不值。
+- https://twitter.com/tualatrix/status/1635095770436374529
+  - 所以不打算折腾了。把有限的时间投入到更高价值的事情上去。
+
 - ## storybook Component Encyclopedia is in beta
 - https://twitter.com/storybookjs/status/1491806826739941377
 - We’re on a mission catalog the world’s UI components for you to learn from—3, 490 components & 44 projects so far.
@@ -60,7 +67,9 @@ modified: 2021-10-29T15:02:28.882Z
 # ideas
 - ## 
 
-- ## 
+- ## 广大新能源车机也不开放开发者平台，现在最需要接入 GPT 的就是车机系统的语音识别啊，太智障了。
+- https://twitter.com/dingyi/status/1635915285369880576
+- 汽车行业这块非常保守，加上有各种利益问题
 
 - ## 记录了独立开发创始人成功的案例访谈，更新的也挺频繁，盈利全都是公开的。
 - https://twitter.com/vikingmute/status/1631834151493181443

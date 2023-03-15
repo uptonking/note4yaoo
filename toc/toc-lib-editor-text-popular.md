@@ -149,7 +149,8 @@ modified: 2022-11-08T19:04:00.289Z
   - Textbase is a clean, simple, composable, event-driven, rich text editor framework for the web which can be extended with custom block and inline elements in a non-opinionated manner.
   - Aim to follow the concept that flat is better than nested.
   - This project does not use document.executeCommand. All editing is achieved by manipulating the DOM directly.
-  - This project does not yet use a JSON data model. It's quite simple and uses HTML DOM nodes as the model.
+  - This project does not yet use a JSON data model. 
+  - 👉🏻 It's quite simple and uses HTML DOM nodes as the model.
   - This project does not yet support collaboration
 # open-editors
 - canvas-editor /112Star/MIT/202301/ts/几乎无依赖

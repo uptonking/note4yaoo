@@ -71,8 +71,8 @@ modified: 2022-08-21T10:16:52.004Z
   - typewriter, json-patch
   - https://github.com/jacwright
 
-- Tuffy
-  - 字节，excel
+- Tuffy/hullis
+  - 字节, excel, slate
   - https://github.com/hullis
 # editor-oriented-teams
 - [emergence engine blog](https://emergence-engineering.com/blog)
@@ -105,8 +105,6 @@ modified: 2022-08-21T10:16:52.004Z
 - Victor Grishchenko
   - crdt, swarm
   - https://github.com/lambdafu/swarm-doc
-
-
 
 - Matt
   - crdt, sqlite

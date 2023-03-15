@@ -203,6 +203,12 @@ modified: 2021-08-30T18:56:09.644Z
   - text-based. 
     - Everything is a JSON file, including the database meta information.
   - is around 500 lines of code and 6.6Kb gzipped.
+# db-non-js
+- https://github.com/unum-cloud/ukv /cpp
+  - Modular Transactional NoSQL Database
+  - choose either: RocksDB • LevelDB • UDisk • UMem 
+  - to store: Blobs • Documents • Graphs • Vectors • Texts
+  - It is a "build your database" toolkit and an open standard for NoSQL potentially-transactional databases, defining zero-copy binary interfaces for CRUD 
 # more-database
 - https://github.com/lealone/Lealone
   - /1.6kStar/Apache2+H2MPL2/202012/java

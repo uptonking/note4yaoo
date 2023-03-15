@@ -8,3 +8,22 @@ modified: 2023-02-05T19:03:12.721Z
 # lib-editor-plate-community
 
 
+# guide
+
+# roadmap
+
+
+- ## [Roadmap · udecode plate · Discussion](https://github.com/udecode/plate/discussions/137)
+- 
+- 
+- 
+- 
+- 
+# discuss
+
+- ## 
+
+- ## 
+
+- ## 
+

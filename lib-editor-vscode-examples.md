@@ -17,6 +17,7 @@ modified: 2023-01-21T18:58:29.846Z
   - https://dtstack.github.io/molecule/
   - a lightweight Web IDE UI framework which is built with React.js and inspired by the VSCode. 
   - We have designed the Extension APIs similar to the VSCode
+  - [The Molecule Roadmap 2022](https://github.com/DTStack/molecule/discussions/680)
 # apps
 
 # more

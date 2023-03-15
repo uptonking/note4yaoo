@@ -13,7 +13,24 @@ modified: 2021-02-26T16:42:06.878Z
 
 - ## 
 
-- ## 
+- ## debugging a performance issue where running div​.style.transform = 'translateX(100px)'
+- https://twitter.com/iamakulov/status/1635288731124137988
+  - was triggering a style recalculation for 15K nodes
+- 1) Whenever you change DOM in the document, browsers have to recalculate styles for affected DOM nodes.
+  - In Chrome DevTools, it’s shown as these violet “Recalculate Style” rectangles ↑. 
+  - In the Chromium codebase, this is called “UpdateLayoutTree”.
+- 2) Browsers are smart about what they need to recalculate.
+- 3) if you do div.​style.transform = '...' only that div will be recalc’d. 
+  - That’s because you’re changing styles for one DOM node – and there’s 0 chance that will affect any other nodes.
+- 4) Even though the codepen has 27K nodes, only one is recalculated. 
+- 5) The document I was debugging included HTML generated in a third-party WYSIWYG text editor. 
+  - If you worked with those, you know they produce a DOM soup that’s hard to modify or extend.
+  - To work around an issue in the editor, a developer added the following CSS:
+  - [stye*='aspect-ratio'] > :first-child { width: 100%}
+  - Now, when you run div.​style.transform = '...' that not only changes styles, but also modifies the `style` attribute on the node!
+  - The browser is put in the position when – due to the `[style*="aspect-ratio"]` selector – changing a one node’s style could affect other nodes.
+- 6) And that’s how you get a 15K-node recalc from changing a single inline CSS `transform` rule.
+- my intuition is to frame the third party editor soup into its own iframe
 
 - ## Putting the finishing touches on my new Tree component. There are half a million fairly complex items in this demo
 - https://twitter.com/fabiospampinato/status/1564010912822034434
@@ -29,7 +46,7 @@ modified: 2021-02-26T16:42:06.878Z
   - Yeah exactly, here's a version with the "top" property animated, you can see items changing position. It's that plus rendering the same number of items all the time, plus reusing nodes if possible, plus keeping the order of nodes fixed, plus using Solid-like signals.
 - I was always sad about having to remove recycling from Preact. It was clever and a huge performance win.
   - Why did this have to be removed?
-  - It does unexpected things with any stateful DOM elements, like form inputs,       `<video>, <img>`, etc. Everything doing recycling runs into it eventually, just takes a while. Not a showstopper for some use-cases, but often makes for a confusing default.
+  - It does unexpected things with any stateful DOM elements, like form inputs,        `<video>, <img>`, etc. Everything doing recycling runs into it eventually, just takes a while. Not a showstopper for some use-cases, but often makes for a confusing default.
 - This is non-keyed isn't it. That's always the tradeoff with going hyper-optimized. Data swap on fixed nodes using reactive bindings. What's the hacky part?
   - Yeah it's 99% just a non-keyed `<For>` that keeps the same nodes around and updates the signals. The user code, at least for this very simple use case, looks identical to what one may write for a regular `<For>` though, so the performance is kinda hassle-free.
   - The hacky (mainly just ugly really) parts are: 

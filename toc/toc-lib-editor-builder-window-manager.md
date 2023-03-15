@@ -231,6 +231,7 @@ modified: 2021-01-08T11:48:16.590Z
   - https://github.com/bvaughn/react-resizable-panels
   - https://react-resizable-panels.vercel.app/
   - React components for resizable panel groups/layouts.
+  - panel 不重叠，不可悬浮
 
 - muuri /10.1kStar/MIT/202107/js
   - https://github.com/haltu/muuri
