@@ -31,7 +31,10 @@ modified: 2021-08-06T07:36:05.864Z
 
 - ## 
 
-- ## 
+- ## Design-to-code is the wrong paradigm: design-as-code is where we should be heading.
+- https://twitter.com/justinfagnani/status/1636107375202701313
+  - And vector graphics editors are the wrong tool for it.
+- Design Tokens may be a good answer. 
 
 - ## So the rendering game is:
 - https://twitter.com/steveruizok/status/1634577503724380160

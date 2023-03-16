@@ -159,6 +159,30 @@ $$('[contenteditable]')
 - dev-to
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
+  - 🚨 修复中文输入法
+  - list操作可选带着子元素
+
+## 0316
+
+- [Changing the stroke color for an inline SVG - Stack Overflow](https://stackoverflow.com/questions/37940282/changing-the-stroke-color-for-an-inline-svg)
+  - The CSS in the SVG is inline CSS and so is being applied after your stylesheet and thus is overriding it.
+  - The simplest solution is to extract the CSS from the SVG and put it **all in your stylesheet**
+
+```svg
+<svg class="highlight" width="86" height="68" viewBox="0 0 85.7 68.5">
+  <polygon points="11 60.7 74.7 60.7 42.8 4.4 " style="fill:none;stroke-width:3;stroke:#491EC4"/>
+</svg>
+```
+
+```css
+.highlight:hover {
+  background-color: pink;
+}
+
+.highlight:hover polygon {
+  stroke: red !important;
+}
+```
 
 ## 0315
 
@@ -631,7 +655,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                       `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                          `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

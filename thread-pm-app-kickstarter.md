@@ -67,6 +67,15 @@ modified: 2021-10-29T15:02:28.882Z
 # ideas
 - ## 
 
+- ## 
+
+- ## 
+
+- ## ai teacher
+- https://twitter.com/ThaddeusJiang/status/1636255620348411907
+  - 用户找ai老师
+  - 老师将经验交给ai
+
 - ## 广大新能源车机也不开放开发者平台，现在最需要接入 GPT 的就是车机系统的语音识别啊，太智障了。
 - https://twitter.com/dingyi/status/1635915285369880576
 - 汽车行业这块非常保守，加上有各种利益问题

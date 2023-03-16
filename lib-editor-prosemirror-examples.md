@@ -65,6 +65,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 提供了针对image/file的图文混排工具
   - 还提供了多列布局工具，包括两栏、三栏、按比例、居中
   - 提供了语法树ADF显示
+  - 样式写法在2022年抛弃styled转向css工具方法
   - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example
     - copy the approach by Atlassian editor_v20201205
   - ref

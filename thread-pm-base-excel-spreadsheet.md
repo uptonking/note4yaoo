@@ -13,7 +13,10 @@ modified: 2022-04-23T18:48:32.550Z
 
 - ## 
 
-- ## 
+- ## 智能聊天表格应用「ChatExcel」，思路挺有趣的，直接在网页上输入文字告诉它希望怎么处理表格，就会在线自动处理，这样就不用记函数了
+- https://twitter.com/HiTw93/status/1636155567872901120
+  - [酷表ChatExcel](https://chatexcel.com/)
+- 稍微复杂一点儿的表格就识别不了。花拳绣腿的东西，和OPENAI完全不是一个量级的东西
 
 - ## Preparing a tutorial on how you can easily share data with your customers without exposing your database via @GRID_hq
 - https://twitter.com/thomas_yang1/status/1630370358309306368

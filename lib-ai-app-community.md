@@ -12,6 +12,14 @@ modified: 2023-02-08T06:56:54.945Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## One of the biggest weaknesses of ChatGPT/LLMs is that it just tells you stuff but doesn't actually *do* anything.
+- https://twitter.com/DavidKPiano/status/1636020080826896389
+  - So the only jobs it will be able to replace are the majority of management jobs.
+
 - ## 文本模型爆发比图像晚了大约半年，所以那边发生的事情这边貌似在重新发生一次…从那边可以知道的经验至少是：prompt不会成为壁垒
 - https://twitter.com/virushuo/status/1632405930015899648
 - 开源模型会大力度搅局。 一部分人疯狂 hack 只是为了好玩，另一部分疯狂想着快速收割韭菜。 

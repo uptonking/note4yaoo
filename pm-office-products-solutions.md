@@ -206,6 +206,10 @@ modified: 2021-07-11T08:31:00.660Z
 - TextBundle是一种文件格式，将图片和markdown一起导出，不再是难题
 
 - craft: We’ve raised $8m Series A funding led by @creandum_202104
+
+## 飞书文档
+
+- 从 etherpad 迁移到 block-editor
 # new-office-products
 - [黑客说，类twitter/知乎的社交与内容平台](https://hackertalk.net/)
 # office-online-products
@@ -220,7 +224,7 @@ modified: 2021-07-11T08:31:00.660Z
   - wps online kdocs
 
 - 基于dom
-  - office word online
+  - microsoft office word online
   - 轻雀文档
 
 - [飞书 云文档功能更新](https://www.feishu.cn/hc/zh-CN/articles/360049067483)
@@ -275,15 +279,15 @@ modified: 2021-07-11T08:31:00.660Z
   - a server and client that work together, components that can modify or extend the functionality of the server and/or client
 # more-products
 - [9 products you can build with TinyMCE](https://www.tiny.cloud/blog/tinymce-examples-products-you-can-build-wysiwyg-editor/)
-1. Blogging platforms
-2. Real-time chat apps
-3. Design tools
-4. Document processors
-5. Note-taking apps
-6. Email service providers
-7. Collaborative workspaces
-8. Comments apps
-9. Form builders
+  1. Blogging platforms
+  2. Real-time chat apps
+  3. Design tools
+  4. Document processors
+  5. Note-taking apps
+  6. Email service providers
+  7. Collaborative workspaces
+  8. Comments apps
+  9. Form builders
 
 ## teamind
 

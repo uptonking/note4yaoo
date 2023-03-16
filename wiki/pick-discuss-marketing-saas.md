@@ -9,6 +9,8 @@ modified: 2022-08-19T16:28:33.056Z
 
 # guide
 
+- [《有赞SaaS工作手册》暨 SaaS创业十年的一些教训和经验总结 - 飞书云文档](https://qima.feishu.cn/docs/doccnX2YXEjp4P9pvFtBgiWBOpd)
+
 - 很多企业 saas 软件基本就是 excel online 版本，能不能反向思考一下，做一个 excel 插件实现流程、共享、自动化的功能呢？
 # discuss
 

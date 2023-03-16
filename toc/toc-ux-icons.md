@@ -9,7 +9,7 @@ modified: 2021-05-06T09:58:23.803Z
 - ✨ icons-pack
   - https://icon-sets.iconify.design/
     - https://github.com/iconify/iconify
-    - 100+ open source icon sets.
+    - 100+ open source icon sets
     - collection of SVG icons created by various authors, released under various free licenses.
     - Icon sets are stored in `IconifyJSON` format
   - https://icones.js.org/
@@ -80,7 +80,7 @@ modified: 2021-05-06T09:58:23.803Z
   - A set of 2925 free MIT-licensed high-quality SVG icons
   - Each icon is designed on a 24x24 grid and a 2px stroke.
 
-- feather  /MIT/16kStar/201908
+- feather /MIT/16kStar/201908
   - https://github.com/feathericons/feather
   - https://feathericons.com/
   - At its core, Feather is a collection of SVG files. Each icon is designed on a 24x24 grid with an emphasis on simplicity
@@ -103,9 +103,11 @@ modified: 2021-05-06T09:58:23.803Z
     - 500+ icons
 
 - phosphor-icons /212Star/MIT/202112
-  - https://github.com/phosphor-icons/phosphor-icons
+  - https://github.com/phosphor-icons/web
   - https://phosphoricons.com/
   - 总共6套图标6282=6x1047个，包括thin/light/regular/fill/bold/duotone，可下载svg
+  - [Release v2.0.0](https://github.com/phosphor-icons/homepage/releases/tag/v2.0.0)
+    - All icons use currentColor for instead of #000000 for fills and strokes to ease styling of icons
   - providing icons as a webfont that uses Unicode's Private Use Area character codes to map normally non-rendering characters to icons. 
   - Since the icons are just text under the hood, they can be colored and styled with CSS
 
@@ -113,11 +115,11 @@ modified: 2021-05-06T09:58:23.803Z
   - https://github.com/FortAwesome/Font-Awesome/tree/v4.7.0
   - https://fontawesome.com/v4.7.0/
   - 675 pictographic icons
-- fork-awesome  /MIT/619Star/201907
+- fork-awesome  /MIT/619Star/201907/inactive
   - https://github.com/ForkAwesome/Fork-Awesome
   - https://forkaweso.me/Fork-Awesome/icons/
   - 744 icons 
-  - svg icons lie in `src/icons/svg/`
+  - `src/icons/svg/` 提供了svg图标
 - material-design-icons  /Apache2/6kStar/201908
   - https://github.com/Templarian/MaterialDesign
   - https://materialdesignicons.com/
@@ -127,6 +129,7 @@ modified: 2021-05-06T09:58:23.803Z
   - https://github.com/react-icons/react-icons
   - https://react-icons.github.io/react-icons/
   - svg react icons of popular icon packs, including fa, md 
+
 - ionicons   /MIT/13kStar/201908
   - https://github.com/ionic-team/ionicons
   - https://ionicons.com/

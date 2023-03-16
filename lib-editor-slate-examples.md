@@ -99,7 +99,7 @@ modified: 2023-02-05T19:03:12.723Z
   - Slate editor plugins system. 
   - Drag and drop, folding implementation.
   - 依赖dnd-kit、zustand，依赖plate的工具方法并不依赖编辑器
-  - [Slate.js + dnd-kit = 🔥. Improving Rich Text Editor UX by adding Drag and Drop.](https://dev.to/devterminal/slatejs-dnd-kit-improving-rich-text-editor-ux-by-adding-drag-and-drop-23d3)
+  - [Slate.js + dnd-kit = 🔥. Improving Rich Text Editor UX by adding Drag and Drop. - DEV Community](https://dev.to/devterminal/slatejs-dnd-kit-improving-rich-text-editor-ux-by-adding-drag-and-drop-23d3)
   - https://github.com/dsvgit/mide
     - https://dsvgit.github.io/mide/
     - Slate.js code editor extension
