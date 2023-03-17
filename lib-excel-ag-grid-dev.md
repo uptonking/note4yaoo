@@ -24,7 +24,36 @@ modified: 2022-08-21T09:54:26.037Z
 - usecase
   - [AdapTable Overview](https://docs.adaptabletools.com/docs/)
     - AdapTable is a sophisticated HTML5 DataGrid add-on.
-    - AdapTable does not provide a DataGrid control of its own; AdapTable is most commonly used together with ag-Grid 
+    - AdapTable does not provide a DataGrid control of its own; AdapTable is most commonly used together with ag-Grid
+# [cs-repeat: Building a Complex High Performance JavaScript Project__201812](https://www.youtube.com/watch?v=rT0vQejPcrs)
+- ioc service
+
+- row virtualization
+
+- 定位或动画使用transform: translateY，基于gpu
+  - 使用top，基于cpu
+
+- append(cell) cell by cell 添加 is slow
+  - 先计算好整行row的string，再设置innferHTML更快
+
+- requestAnimationFrame
+  - 实现时并不是 row by row 添加，而是在一个raf内添加N行
+
+- change detection
+  - 在 cell level
+  - refreshCell会更新, this.cellDiv.innerHTML = newDOM
+
+- aggregation
+  - data 先在 leaf 更新
+  - 修改cell的data后，只遍历更新节点的父级，重新计算group聚合值
+
+- batch updates
+  - 减少 dom render
+  - 减少 group 计算
+
+- examples runner using ast
+
+- monorepo is useful
 # ag-grid表格组件ui结构层次
 - ag-root-wrapper: 最顶层容器，ref是eRootWrapper
   - ag-root-wrapper-body

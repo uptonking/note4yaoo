@@ -9,7 +9,7 @@ modified: 2022-04-05T10:10:59.826Z
 
 # guide
 
-- 实现协作要考虑到切换冲突处理算法，如slate-yjs/automerge/sharedb
+- 实现协作要考虑到切换冲突处理算法, 如slate-yjs/automerge/sharedb
 
 - https://github.com/yjs/y-protocols
   - Binary encoding protocols for syncing, awareness, and history information
@@ -18,11 +18,7 @@ modified: 2022-04-05T10:10:59.826Z
 - [Automerge CRDT Sync Protocol](https://automerge.org/docs/how-it-works/sync/)
 
 - resources
-  - [How Yjs works from the inside out - YouTube](https://www.youtube.com/watch?v=0l5XgnQ6rB4)
-# dev
-
-## [How Yjs works from the inside out with Joseph Gentle & Kevin Jahns](https://www.youtube.com/watch?v=0l5XgnQ6rB4)
-
+# [cs-repeat: How Yjs works from the inside out with Joseph Gentle & Kevin Jahns__202009](https://www.youtube.com/watch?v=0l5XgnQ6rB4)
 - 17:30
 - an item is the representation of a linked list
   - list crdt is built on this
@@ -161,7 +157,7 @@ modified: 2022-04-05T10:10:59.826Z
 - hard to get diff if to support move op
 
 - idea is to set priority property to data
-  - move items by redefinin priority
+  - move items by redefining priority
   - all these interleaving crdt does this
   - figma does this
 
@@ -181,3 +177,6 @@ modified: 2022-04-05T10:10:59.826Z
 - single op perf doesnot matter
   - consider batch operations
   - benchmark tests should contain this
+# dev
+
+# more

@@ -36,7 +36,7 @@ modified: 2022-11-29T20:41:25.566Z
   - 还可以考虑使用多级缓存，不一定全量数据库，类似react-query + indexeddb
 # linear-realtime-sync
 
-## [linear sync 分享_202002](https://www.youtube.com/watch?v=WxK11RsLqp4&t=2169s)
+## [cs-repeat: linear sync 分享__202002](https://www.youtube.com/watch?v=WxK11RsLqp4&t=2169s)
 
 - object graph
   - 使用mobx进行state management, 自动更新view

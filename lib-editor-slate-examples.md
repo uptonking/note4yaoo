@@ -368,6 +368,12 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/kanweiwei/slatets
   - slate.v0.37源码解读
   - https://github.com/kanweiwei/easy-editor
+
+## slate-chinese
+
+- https://github.com/ls19930101/slate_editor
+  - slate框架开发的富文本工具,核心为contenteditable
+  - 支持超大文档 word、excel 列表复制粘贴, 进行了一些性能优化处理;
 # slate-plugins
 - https://github.com/imdbsd/slate-plugin
   - Rich text editor plugin for slate.js

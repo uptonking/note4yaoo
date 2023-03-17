@@ -69,7 +69,12 @@ modified: 2021-10-29T15:02:28.882Z
 
 - ## 
 
-- ## 
+- ## 微软 Office 全家桶，简直了，帮助微软赢得了桌面电脑的战争，又帮助微软转型移动互联网，又帮助微软成功转型云计算服务，成为SaaS第一巨头，现在又帮助微软转型AI。
+- https://twitter.com/uptonking2/status/1636608874173317120
+  - Office之于微软，相当于金箍棒之于悟空。
+- 这就是一个紧紧抓住用户刚需，建起深广的护城河，然后不断革新产品，跑赢时代和技术变迁的最成功商业案例。
+- 最牛的其实是 Outlook，我还没见过不用 Outlook 的职场人。
+- Excel 最牛是对马仔来说的，Outlook 对老板最重要，当然如今 Teams 有赶超之势……
 
 - ## ai teacher
 - https://twitter.com/ThaddeusJiang/status/1636255620348411907

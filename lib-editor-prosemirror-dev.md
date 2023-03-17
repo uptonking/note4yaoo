@@ -60,7 +60,7 @@ modified: 2021-05-06T09:39:53.522Z
   - tiptap的drawing示例，可以在空svg元素上画路径
   - atlaskit-editor开源了自定义renderer可以参考
   - atlaskit-editor实现了layout多列插件和图片排版插件
-# [Marijn Haverbeke: Salvaging contentEditable: Building a Robust WYSIWYG Editor | JSConf EU 2015 - YouTube_201510](https://www.youtube.com/watch?v=EEF2DlOUkag)
+# [cs-repeat: Marijn Haverbeke: Salvaging contentEditable: Building a Robust WYSIWYG Editor | JSConf EU__201510](https://www.youtube.com/watch?v=EEF2DlOUkag)
 - some new editors like google docs drop contenteditable and create their own selection and caret
   - good xp
 - problems: 

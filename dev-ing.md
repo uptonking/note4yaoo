@@ -160,7 +160,23 @@ $$('[contenteditable]')
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
   - 🚨 修复中文输入法
-  - list操作可选带着子元素
+  - 可选, list操作要与所有子元素一起
+  - 可选，toggle标题/list
+
+## 0317
+
+- [How to iterate over a WeakMap? - Stack Overflow](https://stackoverflow.com/questions/32402837/how-to-iterate-over-a-weakmap)
+  - A JavaScript WeakMap does not allow you to get the key, or the length or size, by design.
+  - Is it possible to nevertheless loop over entries in some way ?
+  - If not .. how does the Chrome console do this ?
+- No, as you say, the contents of a WeakMap are not accessible by design, and there is no iterablity.
+- The console uses the debugging API of the JS engine, which allows access to the internals of objects (also to promise states, wrapped primitives, etc.) and many more.
+
+- Things are moving and it will soon be possible to create iterable week maps thanks to weak refs. See the iterable WeakMap example in the tc39 weakrefs proposal.
+  - (note that it is already possible with nodejs v12.?.? using --harmony-weak-refs flag)
+  - WeakRef and FinalizationRegistry are now Stage 4, since the July 2020 TC39 meeting
+
+- [pipeline执行引擎和一些工程优化 - 知乎](https://zhuanlan.zhihu.com/p/614907875)
 
 ## 0316
 

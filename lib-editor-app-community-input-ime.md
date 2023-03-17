@@ -9,17 +9,15 @@ modified: 2023-03-05T02:27:52.126Z
 
 # guide
 
+- [Keyboard Event Viewer for contenteditable](https://w3c.github.io/uievents/tools/key-event-viewer-ce.html)
+
 - 浏览器的键盘输入事件顺序
   - [Keyboard Event Viewer](https://w3c.github.io/uievents/tools/key-event-viewer.html)
     - 输入英文字母时 keydown > keypress > beforeinput > input > keyup
-    - 输入中文时 keyup > keydown > beforeinput > input > keyup
-      - 输入中文拼音字母时，触发的是keyup，选完词后时keydown
+    - 输入中文时
       - 👉🏻 keydown > compositionstart > beforeinput > compositionupdate > input > keyup
     - keypress强调输入文本字符，按键ctrl/shift/alt都不会触发此事件
     - 👉🏻 按功能键如ctrl/shift/alt/cap时，只触发keydown/up，不触发beforeinput
-    - 按tab只触发keydown，无up
-  - [Keyboard Event Viewer for contenteditable](https://w3c.github.io/uievents/tools/key-event-viewer-ce.html)
-    - 事件顺序与上面一致
 
 - 中文输入法输入单个普通字符事件顺序
   - keydown

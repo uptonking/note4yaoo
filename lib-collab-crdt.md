@@ -55,7 +55,7 @@ modified: 2022-04-05T10:10:08.537Z
 - 实现协作要考虑到切换冲突处理算法，如slate-yjs/automerge/sharedb
 
 - [Bartosz Sypytkowski crdt series](https://www.bartoszsypytkowski.com/the-state-of-a-state-based-crdts/)
-# [CRDTs for Mortals_James Long_201912](https://www.youtube.com/watch?v=DEcwa68f-jY)
+# [cs-repeat: CRDTs for Mortals_James Long__201912](https://www.youtube.com/watch?v=DEcwa68f-jY)
 - Why haven’t “offline-first” apps taken off?
   - syncing is hard
   - local apps are a distributed system

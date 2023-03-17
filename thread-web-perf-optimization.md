@@ -13,6 +13,25 @@ modified: 2021-02-26T16:42:06.878Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## We all know what `defer` attribute on `<script>` tag means. 
+- https://twitter.com/jebbacca/status/1636057114484305923
+  - "the script is downloaded in parallel to parsing the page, and executed after the page has finished parsing". 
+  - So we naively place this attribute on non-critical scripts. 
+  - And this might be a problem 
+- When the page has been parsed, ALL fully downloaded **deferred scripts are executed in a batch**, i.e. as a single task.  
+  - While each one of these scripts alone may execute very fast, when executed in a batch, they can take up significant amount of time when executed as a single batch task. And this task blocks the main thread, thus delaying interactivity and hurting user experience.
+  - One way to solve this is by using dynamic imports for loading non-critical scripts. This way they won't block the parsing and also won't be batched.  
+  - However, this is not always possible, for example if the scripts are a UMD bundles or just separate deployables. 
+  - 💡 In this case what you can do is put this script with `async` attribute at the end of `<body>` tag. **Since it's not deferred it won't be batched**. Since it's `async` and is placed at the end of body it won't block the parsing while downloaded or executed.  
+  - The only downside of this approach is that it will be downloaded pretty late, but hey, we're talking about non-critical scripts, so who cares, right?
+
+- Does `type=module` have the same problem?
+  - type=module is deferred by default, so yes, it has the same problem.
+
 - ## debugging a performance issue where running div​.style.transform = 'translateX(100px)'
 - https://twitter.com/iamakulov/status/1635288731124137988
   - was triggering a style recalculation for 15K nodes
@@ -46,7 +65,7 @@ modified: 2021-02-26T16:42:06.878Z
   - Yeah exactly, here's a version with the "top" property animated, you can see items changing position. It's that plus rendering the same number of items all the time, plus reusing nodes if possible, plus keeping the order of nodes fixed, plus using Solid-like signals.
 - I was always sad about having to remove recycling from Preact. It was clever and a huge performance win.
   - Why did this have to be removed?
-  - It does unexpected things with any stateful DOM elements, like form inputs,        `<video>, <img>`, etc. Everything doing recycling runs into it eventually, just takes a while. Not a showstopper for some use-cases, but often makes for a confusing default.
+  - It does unexpected things with any stateful DOM elements, like form inputs or `<video>, <img>`, etc. Everything doing recycling runs into it eventually, just takes a while. Not a showstopper for some use-cases, but often makes for a confusing default.
 - This is non-keyed isn't it. That's always the tradeoff with going hyper-optimized. Data swap on fixed nodes using reactive bindings. What's the hacky part?
   - Yeah it's 99% just a non-keyed `<For>` that keeps the same nodes around and updates the signals. The user code, at least for this very simple use case, looks identical to what one may write for a regular `<For>` though, so the performance is kinda hassle-free.
   - The hacky (mainly just ugly really) parts are: 

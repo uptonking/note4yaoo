@@ -16,6 +16,9 @@ modified: 2023-01-12T15:52:42.418Z
 
 - tinysync的示例存在一定问题
   - 在同步的同时产生的新op因为listening为0而被忽略
+# changelog
+- [v3.0.0_20230130](https://github.com/tinyplex/tinybase/releases/tag/v3.0.0)
+  - adds key/value store functionality to TinyBase
 # discuss
 - ## 
 

@@ -14,6 +14,20 @@ modified: 2022-04-05T10:09:51.343Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ##  if anyone has novel solutions to this problem: sequence number can reach the max interger
+- https://twitter.com/JungleSilicon/status/1636364948187250703
+  - Another approach is to just restrict the amount a sequence number can grow by, but that feels imperfect.
+
+- I faced a similar but not identical problem recently. Sharing my solution as an inspiration, I know it is not directly applicable. I needed a way to determine which items in a cache have not been used the longest.
+  - It is an embedded and constrained system, so I needed something simple. I decided to label each item with MAX_INT initially, decrementing all labels by one on each cache access, the exception being the label of the actual element being accessed, which is reset to MAX_INT
+  - When I hit 0, I just don't decrement anymore, so I lose the time ordering for the very very old items, but for those items the time ordering matters the least anyway. So, the trick was to accept a lossy scheme that loses the least valuable part of the information.
+- is your idea like lru cache? just throw the very very old items away
+  - Yes, but with the twist that I can let the age saturate and it's OK and that the code is simpler if I keep track of (MAX_INT - age) instead of age.
+
 - ## I remember having read about Gun a few years ago and there was a lot of (apparently) valid criticism. Do you know how much of that is still valid today?_201803
 - https://news.ycombinator.com/item?id=16523087
   - [Show HN: Gun v0.1.0 – The Easiest Database Ever_201502](https://news.ycombinator.com/item?id=9076558)

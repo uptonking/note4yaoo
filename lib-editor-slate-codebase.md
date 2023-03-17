@@ -111,6 +111,18 @@ modified: 2023-02-05T19:03:12.722Z
     - onKeyDown
   - 始终会执行的内置事件包括
     - onInput
+
+## 中文输入法
+
+- [slate.js源码分析（一） —— slate渲染机制 - 知乎](https://zhuanlan.zhihu.com/p/266438572)
+- 在输入法输入的过程中，如果我们去实时修改文档内容，会和输入法产生冲突。
+  - 所以在 compositionUpdate 期间，Slate Value不做任何更新，任由 dom 自己改变。
+  - 在 compositionEnd 时再去更新 Slate Value。
+- 会发生报错的原因则是，在 CompositionStart 时，文档内容被删除。在 CompositionEnd 时，slate 找不到对应的 dom 节点，然后报错
+  - 解决也不难，只需要在 CompositionStart 删除文档内容时，更新一下文档 value 更新即可
+  - 修复这个问题，我们团队目前的选择是fork改源码。
+- 
+- 
 # selection
 - slateSel to domSel
   - 场景: 

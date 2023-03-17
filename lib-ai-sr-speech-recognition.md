@@ -12,6 +12,8 @@ modified: 2023-02-07T09:22:03.120Z
 - [人工智能的方向——NLP CV SR(语音识别) KG(知识图谱)](https://blog.csdn.net/qq_43165081/article/details/113790560)
 # sr-products
 
+# speech-to-text
+
 ## Whisper
 
 - https://github.com/openai/whisper /MIT/py/jupyter
@@ -34,3 +36,24 @@ modified: 2023-02-07T09:22:03.120Z
 - https://codeberg.org/pluja/web-whisper
   - https://whisper.r3d.red/
   - OpenAI's whisper on your web browser，后端go实现
+
+## more-asr
+
+- https://github.com/wenet-e2e/wenet
+  - Production Ready End-to-End Speech Recognition Toolkit
+# text-to-speech
+- https://github.com/PaddlePaddle/PaddleSpeech
+  - PaddleSpeech 是基于飞桨 PaddlePaddle 的语音方向的开源模型库
+  - 目前服务集成的语音任务有： asr (语音识别)、tts (语音合成)、cls (音频分类)、vector (声纹识别)以及 text (文本处理)
+  - 基于规则的中文前端: 我们的前端包含文本正则化和字音转换（G2P）
+  - [【超简单】之基于PaddleSpeech搭建个人语音听写服务 - 掘金](https://juejin.cn/post/7124872238825734175)
+  - [💡TTS 端上部署信息汇总](https://github.com/PaddlePaddle/PaddleSpeech/issues/3037)
+  - [💡离线使用 paddlespeech](https://github.com/PaddlePaddle/PaddleSpeech/issues/2909)
+  - [离线语音识别的解决方案](https://github.com/PaddlePaddle/PaddleSpeech/issues/2622)
+  - [这个 demo 是一个启动离线语音服务和访问服务的实现](https://github.com/PaddlePaddle/PaddleSpeech/blob/develop/demos/speech_server/README_cn.md)
+
+- https://github.com/coqui-ai/TTS
+  - a deep learning toolkit for Text-to-Speech
+
+- https://github.com/nateshmbhat/pyttsx3
+  - Fully OFFLINE text to speech conversion

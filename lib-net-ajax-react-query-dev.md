@@ -21,7 +21,13 @@ modified: 2023-03-05T08:55:03.696Z
 
 - ## 
 
-- ## 
+- ## I'm building a react-query-like library but for specifically tuple-database backends. 
+- https://twitter.com/moonriseTK/status/1636536122711867393
+  - Its super early, but I really like how I setup these tests. 
+  - By using a deferred server, I can render the hook, make any assertions, respond to the request, then make any assertions afterward.
+  - Building this for an app I'm working on. The real benefit is that you basically never have to refetch...by subscribing to the key, the server just tells you when to update. So the implementation becomes a lot simpler than something like react-query which is very generic.
+- it seems similar to evolu.  crud to local firstly, then sync
+  - Yeah very similar. I will have to dig into their implementation, i wonder if they do subscription or just refetch.
 
 - ## React Context  is a lot closer to props than it is to state. To me, it's just prop drilling without having to write that code explicitly.
 - https://twitter.com/TkDodo/status/1627586506402537473

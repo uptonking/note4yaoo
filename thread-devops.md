@@ -23,7 +23,10 @@ modified: 2021-03-31T06:50:19.936Z
 
 - ## 
 
-- ## 
+- ## I want to make the application private but the library public.
+- https://twitter.com/steveruizok/status/1636741287641579520
+- Two repos and "npm link" is one of the easiest ways to do it 
+- [How to Utilize Submodules within Git Repos | by Paige Niedringhaus | Bits and Pieces](https://blog.bitsrc.io/how-to-utilize-submodules-within-git-repos-5dfdd1c62d09)
 
 - ## 收集了去年几个较为知名故障的公开复盘文档，发出来供大家重温下
 - https://twitter.com/mr_easonyang/status/1623754899510145025

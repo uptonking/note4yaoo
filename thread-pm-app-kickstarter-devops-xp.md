@@ -42,7 +42,11 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
-- ## 
+- ## Per-seat pricing is really annoying.  Render switched to this recently too and it killed all interest I had in putting any of my stuff there.
+- https://twitter.com/sean_j_roberts/status/1636455905054040069
+  - For infra tools is it not enough to just charge a healthy margin on the storage/compute that I'm actually using?
+- It's worse when you want to do own projects, but the minimum is five seats. Looking at you, @Bitbucket I'd have to pay for four people who ont even exist.
+- Vercel uses Lambdas and AWS infrastructure. Wouldn't vanilla AWS be better (cheaper, more scalable) for teams? I "hand-rolled" some cool, Vercel-like things with @microtica . I could have done it myself but wanted to see how it was done correctly.
 
 - ## 这哥们厉害，2人小团队从2020年起，花了18个月做了Twitterhunter和Taplio，最终被千万美金收购
 - https://twitter.com/JourneymanChina/status/1636003001138819073
