@@ -44,6 +44,12 @@ modified: 2020-12-20T15:46:29.566Z
   - 插件基于IPlugin接口，给出的例子基于class实现
   - With React Pluggable, we can think of our app as a set of features instead of a set of components
   - A plugin can be added or removed by a single line (which is perfect for A/B testing)
+# plugin-react
+- react-table.v7的plugin存在的问题是rerender过多
+
+- https://github.com/GeekyAnts/react-pluggable
+  - With the help of React Pluggable, we can think of our app as a set of features instead of a set of components.
+  - A plugin can be added or removed by a single line (which is perfect for A/B testing)
 # discuss
 - ## 
 

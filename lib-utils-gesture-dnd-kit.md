@@ -36,6 +36,9 @@ modified: 2022-06-04T00:44:30.749Z
     - Check out @dnd-kit/sortable, which is a thin layer built on top of @dnd-kit/core. 
     - More presets coming in the future.
 
+- examples
+  - [virtualized with react-tiny-virtual-list](https://master--5fc05e08a4a65d0021ae0bf2.chromatic.com/?path=/story/presets-sortable-virtualized--basic-setup)
+
 - alternatives
   - react-dnd
   - use-gesture(vanillajs)
@@ -54,7 +57,7 @@ modified: 2022-06-04T00:44:30.749Z
 
 - ## 
 
-- ## [Is there a built-in sorting strategy for virtualized grids in \ `@dnd-kit/sortable\` ?](https://github.com/clauderic/dnd-kit/discussions/411)
+- ## [Is there a built-in sorting strategy for virtualized grids in `@dnd-kit/sortable` ?](https://github.com/clauderic/dnd-kit/discussions/411)
 - Actually, I have a virtualized grid implementation which works pretty well with @dnd-kit/sortable
   - I'm using rectSortingStrategy, and there doesn't seem to be any issues even without all the items being rendered. 
   - The only thing I had to do was to ensure that the item currently being dragged was rendered even when it's outside of the visible range. 
@@ -150,7 +153,7 @@ interface UseDraggableArguments {
 
 ## DragOverlay
 
-```JS
+```typescript
 function App() {
   const [isDragging, setIsDragging] = useState(false);
 

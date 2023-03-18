@@ -33,6 +33,10 @@ modified: 2021-07-20T13:50:23.433Z
   - jupyter-notebook
   - observable-notebook
 
+- enterprise-marketplace
+  - browser-extensions
+  - figma
+
 - 团队版/企业版-features
   - 表单/投票收集与统计，如features
   - 编辑器内的时间变化动态表格

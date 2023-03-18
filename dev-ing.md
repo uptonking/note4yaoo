@@ -159,11 +159,27 @@ $$('[contenteditable]')
 - dev-to
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
-  - 🚨 修复中文输入法
-  - 可选, list操作要与所有子元素一起
-  - 可选，toggle标题/list
+  - 变可选, list操作要与所有子元素一起
+  - 变可选，toggle标题/list
+  - 拖拽时原布局不变，只显示预期位置的指示线
+  - 若当前列表项为空，按回车应该转换为普通p标签
+  - remove ramda
+  - 替换掉slate的 DefaultElement
+
+## 0318
+
+- Array.prototype.reverse()
+  - Return the reference to the original array, now reversed. 
+  - Note that the array is reversed in place, and no copy is made.
+
+- [css button set to unclickable - Stack Overflow](https://stackoverflow.com/questions/46566019/css-button-set-to-unclickable)
+  - pointer-events: none; 
+  - 默认值 pointer-events: auto; 
 
 ## 0317
+
+- dev-to
+  - 🚨 修复中文输入法
 
 - [How to iterate over a WeakMap? - Stack Overflow](https://stackoverflow.com/questions/32402837/how-to-iterate-over-a-weakmap)
   - A JavaScript WeakMap does not allow you to get the key, or the length or size, by design.
@@ -671,7 +687,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                          `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                           `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

@@ -31,6 +31,10 @@ modified: 2020-11-19T12:43:25.788Z
   - https://github.com/kalcifer/react-powerhooks
     - Hooks api for react-powerplug components
 # experimental-react
+- https://github.com/lxsmnsyc/forgetti
+  - Solve your hook spaghetti (with more spaghetti). Inspired by React Forget.
+  - Forgetti is an auto-memoization Babel plugin I made for a hook-based flow like React hooks. 
+
 - https://github.com/sokra/rawact
   - /2.6kStar/MIT/201812/js
   - [如何评价webpack作者开发的rawact babel插件？](https://www.zhihu.com/question/301791037/answers/updated)
@@ -57,6 +61,7 @@ modified: 2020-11-19T12:43:25.788Z
     - 而 template 在静态处理时如文中所说则加入了 hint 来降低 vdom 的 runtime 开销。
     - 所以如果下一步在做 jsx 转换的时候也加入更多的处理，比如 eliminate，hint 等等，那和 template 差距也不大了。
     - 两种表现形式包含的静态信息是一致的才应该是「优化性能殊途同归」的本质，而现有的两种处理形式只不过是对这些信息的利用率有高低区分而已。
+
 - https://github.com/mohebifar/vidact
   - /672Star/MIT/202004/ts
   - https://mohebifar.github.io/vidact/

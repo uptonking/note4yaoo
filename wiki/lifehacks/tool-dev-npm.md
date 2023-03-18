@@ -28,6 +28,10 @@ modified: 2020-12-08T14:05:52.048Z
 - ref
   - [v9 Changelog | npm Docs](https://docs.npmjs.com/cli/v9/using-npm/changelog)
 
+- v9.4.0_20230126
+  - Isolated mode RFC 终于得到了实现。
+  - 在设置 install-strategy=linked 后，npm 也会像 pnpm 一样，只对显式声明的依赖通过链接的形式挂到 node_modules 下，而不再对所有依赖做无脑 flat
+
 - v9.0.0-pre.0_2022-09-08
   - changes the default value of `install-links` to true
 

@@ -40,7 +40,9 @@ modified: 2022-11-07T11:00:28.824Z
 # discuss
 - ## 
 
-- ## 
+- ## 用GPT、github copilot写代码快半年了，还经常看到有人讨论AI能否写代码。代码确实不完美，但最开始火车还跑不过马车呢。
+- https://twitter.com/ahshengchen/status/1636959691166081027
+  - 真应了这段话：任何在我出生时已经有的科技都是稀松平常的；任何在我15到35岁之间诞生的科技都是改变世界的革命性产物；任何在我35岁之后诞生的科技都是违反自然规律要遭天谴的。
 
 - ## Per-seat pricing is really annoying.  Render switched to this recently too and it killed all interest I had in putting any of my stuff there.
 - https://twitter.com/sean_j_roberts/status/1636455905054040069

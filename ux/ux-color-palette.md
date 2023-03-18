@@ -7,6 +7,13 @@ modified: 2022-10-23T14:57:23.473Z
 
 # ux-color-palette
 
+- https://github.com/nordtheme/nord
+  - A total of sixteen, carefully selected, dimmed pastel colors
+  - #D8DEE9 #E5E9F0 #ECEFF4
+  - #8FBCBB #88C0D0 #81A1C1 #5E81AC
+  - #BF616A #D08770 #EBCB8B #A3BE8C #B48EAD
+
+
 # nice css named colors: variant/alike/light
 - Grey: #808080
   - slategrey/lightslategrey: #708090 / #778899
@@ -86,11 +93,6 @@ modified: 2022-10-23T14:57:23.473Z
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
 
-- https://github.com/nordtheme/nord
-  - A total of sixteen, carefully selected, dimmed pastel colors
-  - #D8DEE9 #E5E9F0 #ECEFF4
-  - #8FBCBB #88C0D0 #81A1C1 #5E81AC
-  - #BF616A #D08770 #EBCB8B #A3BE8C #B48EAD
 
 # guide
 - tips

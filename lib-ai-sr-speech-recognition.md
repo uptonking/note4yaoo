@@ -37,6 +37,11 @@ modified: 2023-02-07T09:22:03.120Z
   - https://whisper.r3d.red/
   - OpenAI's whisper on your web browser，后端go实现
 
+- https://github.com/Ayanaminn/N46Whisper
+  - N46Whisper 是基于 Google Colab 的应用。开发初衷旨在提高乃木坂46（以及坂道系）字幕组的工作效率。但本应用亦适于所有日语视频的字幕制作。
+  - 此应用基于AI语音识别模型 Whisper
+  - 先把视频放到Google Drive，然后从Google Colab上运行代码，调用OpenAI的Whisper API生成字幕，再借助ChatGPT的API对字幕逐行翻译，最后人工再校对就好了
+
 ## more-asr
 
 - https://github.com/wenet-e2e/wenet

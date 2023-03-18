@@ -17,6 +17,7 @@ modified: 2022-08-13T04:55:58.999Z
 
 # react-native-web
 - https://github.com/tamagui/tamagui
+  - https://tamagui.dev/
   - The worlds fastest React UI kit also happens to work on Native + Web
   - It does this with an optimizing compiler that outputs platform-specific optimizations
 
