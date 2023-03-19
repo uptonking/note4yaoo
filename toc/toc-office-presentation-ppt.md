@@ -11,6 +11,12 @@ modified: 2021-04-30T20:14:17.669Z
 - ppt
   - 专业的演示更偏向类似tableau的图形编辑器，而不是文字
 
+# slide-view
+- https://github.com/argyleink/slyd /js/darkTheme/代码少
+  - https://slyd.netlify.com/
+  - Snappy, responsive, touch optimized, bi-directional presentation framework
+  - 支持向右、向下
+
 # page-viewer 偏向页面展示
 
 - slidev /4.8kStar/MIT/202105/ts

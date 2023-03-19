@@ -23,7 +23,13 @@ modified: 2021-01-19T04:46:23.100Z
 # discuss
 - ## 
 
-- ## 
+- ## Framework agnostic ui components, are they a thing already? I hear webcomponents aren't the holy grail?
+- https://twitter.com/meijer_s/status/1614913937098657794
+- Stencil is an answer. Alternative would be something like what @tannerlinsley built for TanStack. Vanilla core and then wrap it in framework-specific stuff. I would go that way instead of using something meta. You’re at the mercy of Stencil’s compilers versus your own wrappers.
+- 
+- 
+- 
+
 
 - ## highlighted-code is a textarea builtin extend that's embarrassing how simple, a11y compliant, versatile and lightweight is, compared to most competitors
 - https://twitter.com/WebReflection/status/1507814171211087875

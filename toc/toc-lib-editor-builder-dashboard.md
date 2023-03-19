@@ -62,12 +62,14 @@ modified: 2021-01-08T11:48:16.590Z
   - https://www.tremor.so/
   - https://demo.tremor.so/
   - a low-level, opinionated UI component library to build dashboards.
-  - made by data scientists and software engineers with a sweet spot for design.
+  - [tremor • changelog](https://www.tremor.so/changelog)
+    - v2_202303 exposure of className, and full switch to Tailwind CSS
   - 依赖recharts2、tippyjs、date-fns，未使用任何组件库
   - 图表默认动画
 - https://github.com/tinybirdco/log-analytics-starter-kit
   - This Stater Kit provides an example for you can build your own logging & telemetry solution powered by Tinybird.
   - Analytics Dashboard built with Next.js & Tremor
+  - 依赖tremor、headlessui
 
 - https://appseed.us/app-generator /开源项目的集合
   - https://github.com/app-generator

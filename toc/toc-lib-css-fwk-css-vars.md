@@ -75,7 +75,7 @@ modified: 2021-02-09T13:39:41.705Z
   - built-in support for theming and dark mode!
   - The main difference between Infima and existing CSS frameworks (e.g. Bootstrap, Bulma) is that it's built with a modern theming approach (CSS variables), modern tooling and has dark mode support out of the box, which makes it perfect for building content-driven websites such as documentation websites.
 
-- cutestrap /1.6kStar/GPLv3/201910/css
+- cutestrap /1.6kStar/GPLv3/202010/css/inactive
   - https://github.com/tylerchilds/cutestrap
   - http://www.cutestrap.com/features/themes
   - 样式源码基于css，文档是多个html，但默认首页的html可单独使用

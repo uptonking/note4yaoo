@@ -109,7 +109,7 @@ $$('[contenteditable]')
 - long-term
   - cms, airtable, lowcode
 - techstacks
-  -  async, stream, buffer, binary, scheduler, arrow
+  - async, stream, buffer, binary, scheduler, arrow
 
 - 支持切换内存和持久化的示例
   - abstract-level, localforage
@@ -159,12 +159,21 @@ $$('[contenteditable]')
 - dev-to
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
-  - 变可选, list操作要与所有子元素一起
-  - 变可选，toggle标题/list
   - 拖拽时原布局不变，只显示预期位置的指示线
-  - 若当前列表项为空，按回车应该转换为普通p标签
+
+- dev-later
+  - 将无序列表项拖进数字列表项时，数字列表项会增加？
+  - initialDataLong示例，无法删除首行列表项
   - remove ramda
-  - 替换掉slate的 DefaultElement
+
+## 0319
+
+- bullet list-item前的黑点，自身是cntEdit为false的button
+  - 若使用::before伪元素实现黑点，则光标可点击到黑点左边
+  - 若使用button普通内容实现，则光标点击不到光标左边，交互正常
+
+- [TypeScript 2.8.3 Type must have a Symbol.iterator method that returns an iterator - Stack Overflow](https://stackoverflow.com/questions/50234481/typescript-2-8-3-type-must-have-a-symbol-iterator-method-that-returns-an-iterato)
+  - "lib": [ "es5", "es6", "dom", "dom.iterable" ]
 
 ## 0318
 

@@ -19,6 +19,8 @@ modified: 2021-01-12T18:48:52.713Z
   - CSS custom properties to help accelerate adaptive and consistent design.
   - 毛玻璃风格
   - These props come in many flavors: CSS, PostCSS, JSON, or Javascript.
+  - [A json source for style dictionary](https://github.com/argyleink/open-props/issues/288)
+    - one of the reasons I dont ship Style Dictionary format is because there's so many props that wouldnt convert to other platforms. 
 
 - https://github.com/mantinedev/mantine
   - https://mantine.dev/

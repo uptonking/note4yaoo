@@ -93,6 +93,14 @@ git reset --merge         >= 1.6.1
 git reset --hard
 ```
 
+- pr相关
+
+```shell
+# GitHub cli 最常用的两个命令，当 PR 多了特别救命
+gh pr checkout ${num}
+gh pr create
+```
+
 - 删除远程仓库中的文件，如意外提交了`node_modules`文件夹
 - 一种方法：直接将远程要删除的文件加入 `.gitignore`；
   - 此时vscode显示的文件夹可能没变灰，[gitignore does not ignore folder](https://stackoverflow.com/questions/24410208/)

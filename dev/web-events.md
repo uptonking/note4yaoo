@@ -11,7 +11,7 @@ modified: 2021-04-23T17:10:52.920Z
 
 # editor-events
 - beforeinput 这个事件会在 `<input>, <select> 或 <textarea> 或者 contenteditable` 的值即将被修改前触发，这样我们可以获取到输入框更新之前的值
-  - [javascript - Should the HTML <select> element dispatch \`beforeinput\` events? - Stack Overflow](https://stackoverflow.com/questions/72688184/should-the-html-select-element-dispatch-beforeinput-events)
+  - [Should the HTML `<select>` element dispatch `beforeinput` events? - Stack Overflow](https://stackoverflow.com/questions/72688184/should-the-html-select-element-dispatch-beforeinput-events)
     - The beforeinput event isn't supposed to fire on `<select>`, just like it doesn't fire on non textual inputs
 # faq
 - click vs touch

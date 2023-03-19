@@ -22,22 +22,13 @@ modified: 2023-02-26T18:25:45.484Z
   - theming基于scss变量
   - 官方文档示例做得好，但实际使用一般
 
-- https://github.com/Marcisbee/chipolette
+- https://github.com/Marcisbee/chipolette /202107/less/inactive
   - http://marcisbee.com/chipolette/
   - It is designed to replace Bootstrap and to be used with CSS variables.
   - Chipolette is a tiny CSS framework/Starter kit.
   - It's a fork from Shoelace and Bootstrap, that fully embraces CSS variables/custom properties.
   - It's written in LESS, because of nesting and other neat features
   - It is designed to replace Bootstrap and to be used with CSS variables.
-
-- https://github.com/CodyHouse/codyhouse-framework
-  - https://codyhouse.co/
-  - A lightweight front-end framework for building accessible, bespoke interfaces.
-  - 提供了ui组件的在线编辑器示例
-  - 文档和示例做得很好
-    - https://codyhouse.co/ds/globals/colors
-    - https://codyhouse.co/ds/globals/colors
-  - 使用了css vars
 
 ## switch-themes
 

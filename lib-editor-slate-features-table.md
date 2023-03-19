@@ -65,7 +65,7 @@ modified: 2023-02-27T19:07:31.111Z
 ## slate-table-impl
 
 - style-header-背景色
-  - 设置在cell: prezly
+  - 设置在cell: prezly，方便实现表头行和表头列
   - 设置在tr/thead: gitbook
 
 - model-header-options
@@ -73,6 +73,8 @@ modified: 2023-02-27T19:07:31.111Z
   - 设置在tr上，容易实现多行表头
   - 设置在单元格上，容易实现表头行、表头列
 
+- table font-size
+  - notion和飞书表格字体都是14px，正文是16px
 ## faq
 
 - 光标如何退出表格

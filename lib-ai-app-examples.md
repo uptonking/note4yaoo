@@ -13,6 +13,9 @@ modified: 2023-02-08T07:20:48.475Z
 
 # chatgpt
 
+- [https://www.steamship.com](https://www.steamship.com/)
+  - SteamShip 开放了 GPT-4 的模型接口，只需要注册SteamShip 账号，无需付费，几行代码直接就能调用 GPT-4
+
 - [ChatGPT API Demo](https://ai.ls/)
   - https://ai.ls/
   - https://desk.im/

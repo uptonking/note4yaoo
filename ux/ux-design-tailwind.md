@@ -13,6 +13,10 @@ modified: 2021-01-03T17:11:47.916Z
   - [Theme Configuration](https://tailwindcss.com/docs/theme)
   - [tailwind default theme](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js)
 
+## opinions for tailwind
+
+- [Don't use Tailwind for your Design System_202103](https://sancho.dev/blog/tailwind-and-design-systems)
+
 - [Tailwind CSS，从入坑到退坑 - GeekNote](https://geeknote.net/Rei/posts/1995)
   - 依然需要组件样式
     - 有很多样式是使用率很高，又不足以抽取公共模版的，这时候最好是抽取组件样式，例如 button，card 等等。而这些组件样式越写越多，逐渐写了两百多行，这时候就遇到下一个问题。

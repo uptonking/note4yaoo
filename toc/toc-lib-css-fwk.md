@@ -28,6 +28,33 @@ modified: 2021-01-28T21:14:14.667Z
   - A fully responsive CSS framework with beautiful controls and simplistic structure. 
   - Cirrus is designed to be adaptable to existing themes or when starting fresh.
   - The only component that requires the use of jQuery is the Header component for toggling the dropdown menu on mobile.
+  - https://github.com/Cirrus-UI/Cirrus-Start
+- https://github.com/jango707/CMS-protfolio
+  - https://jangsportfolio.netlify.app/
+- cirrus-examples
+  - https://github.com/carah-tychewicz/weather-app
+
+- https://github.com/conedevelopment/sprucecss
+  - https://sprucecss.com/
+  - modern CSS framework, design system built on Sass
+  - It comes with dark-mode support. It uses CSS custom properties
+  - 大多是业务组件，样式干净，很有设计感，有一点点bootstrap的味道
+  - Spruce UI 未开源，但示例组件提供了scss，doesn’t have its public repository
+  - We made a controversial decision with Spruce to leave a classical grid system out.
+
+- https://github.com/codyhouse/codyframe /v4
+  - https://github.com/CodyHouse/codyhouse-framework /v3
+  - https://codyhouse.co/
+  - CodyHouse UI is a library of HTML, CSS, and JavaScript components that make it easy to create accessible websites quickly 
+  - The components are available in 3 versions: 
+    - Using the CodyFrame components
+    - Using the Tailwind components
+    - Using the 'framework-free' components
+  - 大多数组件都是pro-only，Templates全付费
+  - 提供了ui组件的在线编辑器示例
+  - 文档和示例做得很好
+    - https://codyhouse.co/ds/globals/colors
+  - 使用了css vars
 
 - spectre /10.3kStar/MIT/202007
   - https://github.com/picturepan2/spectre
@@ -41,17 +68,19 @@ modified: 2021-01-28T21:14:14.667Z
   - https://spectre.angular-package.dev/
   - 提供了filter、timeline等扩展
 
-- https://github.com/zvizvi/freewindcss /scss
+- https://github.com/zvizvi/freewindcss /202205/scss/inactive
   - https://codesandbox.io/s/freewindcss-pfq17e
   - Use Tailwind's set values and units in pure CSS variables
 
-- https://github.com/conedevelopment/sprucecss
-  - https://sprucecss.com/
-  - modern CSS framework, design system built on Sass
-  - It comes with dark-mode support. It uses CSS custom properties
-  - 大多是业务组件，样式干净
-  - Spruce UI 未开源 doesn’t have its public repository
-  - We made a controversial decision with Spruce to leave a classical grid system out.
+- tremor /6.2kStar/apache/202202/ts
+  - https://github.com/tremorlabs/tremor
+  - https://www.tremor.so/
+  - https://demo.tremor.so/
+  - a low-level, opinionated UI component library to build dashboards.
+  - [tremor • changelog](https://www.tremor.so/changelog)
+    - v2_202303 exposure of className, and full switch to Tailwind CSS
+  - 依赖recharts2、tippyjs、date-fns，未使用任何组件库
+  - 图表默认动画
 
 - bootstrap /143kStar/MIT/202007
   - https://github.com/twbs/bootstrap
@@ -141,7 +170,6 @@ modified: 2021-01-28T21:14:14.667Z
   - a modern CSS framework based on Flexbox.
   - 方形设计，多边框
   - 模版很多
-
 # classless
 - MVP.css /4.2kStar/MIT/202209/css/单文件
   - https://github.com/andybrewer/mvp

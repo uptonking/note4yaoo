@@ -52,9 +52,14 @@ modified: 2023-03-16T16:29:47.610Z
   - tinymce，左右16
 # 悬浮工具条 toolbar
 
-# general-elements
+# editor-elements
 
 ## list
+
+- dev-to
+  - 变可选, list操作要与所有子元素一起
+  - 变可选，toggle标题/list
+  - 父级checkbox支持显示部分选中的intermediate中间态
 
 - 若当前列表项为空，按回车应该转换为普通p标签
 

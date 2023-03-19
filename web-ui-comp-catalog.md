@@ -15,6 +15,16 @@ modified: 2021-04-11T17:38:29.829Z
   - button, card
   - checkbox, dropdown-list
   - accordion, modal/dialog
+
+# ux-experts-designers
+
+- Angel Uriostegui
+  - https://github.com/anguriostegui
+  - https://twitter.com/anguriostegui
+  - https://angel-seven.vercel.app/
+  - https://woonders.vercel.app/
+  - https://powerkit.app/
+  - https://heros-rouge.vercel.app/
 # component-api-design
 - awesome-list
   - https://open-ui.org/analysis/component-matrix

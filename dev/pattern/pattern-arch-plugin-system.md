@@ -14,6 +14,8 @@ modified: 2020-12-20T15:46:29.566Z
 # plugin-system-repos
 - https://github.com/unjs/unplugin
   - Unified plugin system for Vite, Rollup, Webpack, esbuild, and more
+  - unplugin is very high level to adapt plugins to bundlers
+  - parsing/transforming is still babel
 
 - https://github.com/moonrailgun/mini-star
   - [介绍 | MiniStar](https://ministar.moonrailgun.com/zh-Hans/docs/tutorial/intro)

@@ -49,6 +49,7 @@ modified: 2023-01-09T15:45:27.018Z
   - reset: normalize.css8，进行了定制，移除无关浏览器，添加新样式
   - breakpoints: 576, 768, 992, 1200, 1400
     - max-width: 540, 720, 960, 1140, 1320
+    - [Breakpoints · Bootstrap v5.0](https://getbootstrap.com/docs/5.0/layout/breakpoints/)
   - font: 16
   - 行高: 24
   - 字体始终是16px，没有随着屏幕宽度变大变小

@@ -14,15 +14,29 @@ modified: 2020-11-13T07:28:27.824Z
   - 跨平台的差异
   - react-canvas/webgl，在一定程度也是将vdom渲染到不同平台
 # framework-agnostic components
-- papanasi /298Star/MIT/202211/ts
-  - https://github.com/CKGrafico/papanasi
-  - http://papanasi.js.org/
-  - a UI library to use cross Frameworks. 
-  - A set of components to use in Angular, Preact, Qwik, React, Solid, Svelte, Vue and Web Components. 
-  - Is based on the Mitosis library 
-  - https://github.com/BuilderIO/mitosis
-    - Write components once, compile to every framework
-    - While Zag.js focuses on writing framework-agnostic interactions, Mitosis focuses on writing framework-specific components.
+- zag /1.5kStar/MIT/202210/ts
+  - https://github.com/chakra-ui/zag
+  - https://zagjs.com/overview/introduction
+  - Finite state machines for accessible JavaScript components
+  - The component interactions are modelled in a framework agnostic way. 
+  - We provide adapters for JS frameworks like React, Solid, or Vue.
+  - The machine APIs are completely unstyled and gives you the control to use any styling solution you prefer.
+  - Zag is built on top of the latest ideas in Statecharts. We don't follow the SCXML specifications
+  - https://github.com/chakra-ui/chakra-ui
+    - [Roadmap - v3.0_2022-12-30](https://github.com/chakra-ui/chakra-ui/issues/7180)
+    - excited to push all interactive components from Zag.js into Chakra UI in v4.
+    - [The Future of Chakra UI in 4 parts_202102: styling build time, state-machine, a11y, motion](https://www.youtube.com/watch?v=I5xEc9t-HZg)
+
+- https://github.com/phonon-framework/phonon
+  - /421Star/MIT/202004/ts/inactive
+  - responsive front-end framework with a focus on flexibility in Sass and TS
+  - theming基于sass vars
+  - 提供了在react/vue(无angular)项目中使用phonon组件的示例
+    - 可以使用css和dom标签，重新实现react组件，与js组件无关
+    - 也可在react组件的didMount方法中，创建js组件对象，在render方法中给dom标签添加ref进行操作，而不是`return null`
+  - Phonon uses a DOM MutationObserver which enables to react to DOM changes
+    - This explains the ease of use of Phonon with Angular, React and Vue, etc
+    - 默认根据样式名绑定js逻辑，如className='modal'
 
 - https://github.com/material-components/material-components-web/
   - /14.9kStar/MIT/202009/ts/agnostic/MDC-Web
@@ -76,15 +90,6 @@ modified: 2020-11-13T07:28:27.824Z
   - https://github.com/Gitjinfeiyang/vue-easy-canvas
     - 将 easy-canvas 封装成vue组件进行使用 注意：内部实现是将vue节点转换成目标节点，转换过程中会有性能损失，渲染与转换时间大概4:1
 
-- zag /1.5kStar/MIT/202210/ts
-  - https://github.com/chakra-ui/zag
-  - https://zagjs.com/overview/introduction
-  - Finite state machines for accessible JavaScript components
-  - The component interactions are modelled in a framework agnostic way. 
-  - We provide adapters for JS frameworks like React, Solid, or Vue.
-  - The machine APIs are completely unstyled and gives you the control to use any styling solution you prefer.
-  - Zag is built on top of the latest ideas in Statecharts. We don't follow the SCXML specifications
-
 - https://github.com/AgnosticUI/agnosticui
   - https://agnosticui.github.io/agnosticui
   - /3Star/Apache2/202101/js
@@ -92,6 +97,17 @@ modified: 2020-11-13T07:28:27.824Z
   - an agnostic UI component library prioritizing clean HTML and CSS, but built to agnostically work with many popular JavaScript frameworks
   - the philosophy of AgnosticUI is to curate the top-level component.html and component.css, and then to synchronize the css down into the framework-based variants. 
     - This is done via a simple Node script which literally copies the CSS over.
+    - The above approach forces our framework-specific implementations to use the same single stylesheet. 
+
+- papanasi /298Star/MIT/202211/ts
+  - https://github.com/CKGrafico/papanasi
+  - http://papanasi.js.org/
+  - a UI library to use cross Frameworks. 
+  - A set of components to use in Angular, Preact, Qwik, React, Solid, Svelte, Vue and Web Components. 
+  - Is based on the Mitosis library 
+  - https://github.com/BuilderIO/mitosis
+    - Write components once, compile to every framework
+    - While Zag.js focuses on writing framework-agnostic interactions, Mitosis focuses on writing framework-specific components.
 
 - Reef /631Star/MIT/202010/js/NoDeps
   - https://github.com/cferdinandi/reef
@@ -105,16 +121,6 @@ modified: 2020-11-13T07:28:27.824Z
   - A super simple, render-agnostic component library for the modern web that emphasizes framework and renderer freedom
   - icomponent provides the web component model. 
   - So, you can easily do things like these by just writing your own render functions
-
-- https://github.com/phonon-framework/phonon
-  - /421Star/MIT/202004/ts
-  - responsive front-end framework with a focus on flexibility in Sass and TS
-  - theming基于sass vars
-  - 提供了在react/vue(无angular)项目中使用phonon组件的示例
-    - 可以使用css和dom标签，重新实现react组件，与js组件无关
-    - 也可在react组件的didMount方法中，创建js组件对象，在render方法中给dom标签添加ref进行操作，而不是`return null`
-  - Phonon uses a DOM MutationObserver which enables to react to DOM changes
-    - This explains the ease of use of Phonon with Angular, React and Vue, etc
 
 - tradeshift-ui /33Star/lic/202009/js/deprecated
   - https://github.com/Tradeshift/tradeshift-ui
@@ -134,6 +140,10 @@ modified: 2020-11-13T07:28:27.824Z
     - Wrapper (top-down runtime approach): packages existing framework dependent components with a thin interoperability layer 
     - Primitive (bottom-up runtime approach): framework agnostic low-level building blocks.Each primitive acts as an adapter to plug framework dependent logic.
     - Compiler (build time approach): Use a build tool to generate, from a single source code, either web component (eg. via Stencil) or per framework implementations (eg. via Mitosis).
+# xplat-ios/android
+- https://github.com/framework7io/framework7
+  - open source mobile HTML framework to develop hybrid mobile apps or web apps with iOS & Android native look and feel.
+  - Current documentation currently doesn't cover process of compilation of Framework7 app to Cordova app.
 # more
 - https://github.com/vicentedealencar/react-agnostic
   - you can write your components without any direct dependencies from platform specific components. 

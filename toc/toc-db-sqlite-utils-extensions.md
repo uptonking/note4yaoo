@@ -90,6 +90,12 @@ modified: 2022-11-04T14:20:37.172Z
 - https://github.com/mandel59/mojidata
   - CJKV character database and search utilities
   - Mojidata Character Database： provides a SQLite database with CJKV character data.
+
+- https://github.com/froghub-io/ic-sqlite
+  - ICSQLite is a cloud SQLite database on Internet Computer and provides SDK for developers to use.
+  - Our goal is to help developers quickly migrate web2 applications to Internet Computer.
+  - [Internet Computer blockchain](https://internetcomputer.org/)
+  - https://github.com/codebase-labs/ic-sqlite
 # mobile
 
 # gis
