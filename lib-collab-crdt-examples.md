@@ -158,6 +158,9 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/JMLX42/rust-delta-crdts
     - Delta state-based CRDTs in Rust.
 
+- https://github.com/siliconjungle/delta-crdt /单文件
+  - A simple delta CRDT implementation.
+
 - https://github.com/streamich/json-joy
   - json-crdt中提供了rga、lww-object
 
@@ -310,8 +313,6 @@ modified: 2022-04-05T10:08:25.947Z
   - A simple example of how to build offline-first likes using CRDT's.
 - https://github.com/siliconjungle/recycle-list-crdt
   - A crdt that recycles tombstones.
-- https://github.com/siliconjungle/delta-crdt
-  - A simple delta CRDT implementation.
 - https://github.com/siliconjungle/cabinet 
   - https://github.com/siliconjungle/cabinet-client
   - operation-based crdt，也提供了state-based的版本

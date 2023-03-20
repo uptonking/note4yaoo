@@ -9,12 +9,26 @@ modified: 2022-08-21T09:59:36.457Z
 
 # roadmap
 
-- ref
-  - [v4.9 Released - Performance Improvements(and some info on v5.0)](https://github.com/olifolkerd/tabulator/issues/3085)
-    - This is going to involve a wholesale refactor of the codebase to take advantage of the tree shaking functionality of ESM to improve package size and to make way for the implementation of unit testing across the library.
-    - This is no small update, there will be wide ranging efficiency improvements across the system as well as a range of new features and functionality
-    - I am currently aiming to have version 5.0 release in either Feb or March 2021
+# changelog
 
+## [v5.0 Released_202110](https://github.com/olifolkerd/tabulator/issues/3403)
+
+- [5.0 Alpha Release Now Available_202104](https://github.com/olifolkerd/tabulator/issues/3286)
+
+- Tabulator has undergone a complete rebuild of the codebase.
+
+- you now use ESM importing to import the Tabulator core library, and then only the modules you want to use
+- Modules are where Tabulator stores functionality that is outside of the core library, such as sorting, filtering, grouping etc.
+
+- The table rendering functionality has now been broken out into a series of different renders, that handle functions like Virtual DOM and classic render modes.
+
+- Tabulator now has internal and external event buses instead of callbacks to allow for more flexibility in how and when you get notified about actions in the table
+
+## [v4.9 Released - Performance Improvements(and some info on v5.0)](https://github.com/olifolkerd/tabulator/issues/3085)
+
+- This is going to involve a wholesale refactor of the codebase to take advantage of the tree shaking functionality of ESM to improve package size and to make way for the implementation of unit testing across the library.
+- This is no small update, there will be wide ranging efficiency improvements across the system as well as a range of new features and functionality
+- I am currently aiming to have version 5.0 release in either Feb or March 2021
 # blogging
 
 ## [Release 5.0-alpha (Technology Preview)](http://tabulator.info/docs/5.0/release)

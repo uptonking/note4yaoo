@@ -10,6 +10,8 @@ modified: 2022-03-17T17:49:45.743Z
 # inspiring
 
 - 使用多维表格组件进行文档管理，而不是用文档树、文件夹
+# usage
+
 # pros
 
 # cons
@@ -39,7 +41,11 @@ modified: 2022-03-17T17:49:45.743Z
 
 - ## 
 
-- ## 
+- ## Craft 对开发者太不友好，社区也没运营起来，因此我又从 Craft 转移到 Notion 了。
+- https://twitter.com/_Xheldon/status/1637481908136468480
+  - 本来想找个现成的迁移工具，研究了一下 Notion API，发现它不支持图片上传，然后正当要放弃的时候，尝试了 Notion 导入 Word，发现它可以把 Word 中内嵌的图片上传到自己的 AWS 服务上，因此我想了个曲线救国的办法，
+  - 就是先将 Craft 全部文件导出到 Markdown 格式，同时它会在导出的时候，将文件中引用的图片放到 .md 文件的同级目录，之后我再使用 pandoc 工具，将 Markdown 文件转成 docx 文件即可。当然，Notion 导入 Word 不支持嵌套文件夹，所以我只能将所有文件到处到同一个目录后，手动调整层级。
+  - 需要注意的是，Notion 不支持超过 50M 的文件导入，因此你可能需要分割一下大文件，导入后再合并。
 
 - ## Front-end Practical Q: Has a particular algorithm in a function body ever been the reason your app is slow?
 - https://twitter.com/jitl/status/1615423205380091904

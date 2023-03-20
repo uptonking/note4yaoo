@@ -55,6 +55,10 @@ modified: 2022-04-05T10:10:08.537Z
 - 实现协作要考虑到切换冲突处理算法，如slate-yjs/automerge/sharedb
 
 - [Bartosz Sypytkowski crdt series](https://www.bartoszsypytkowski.com/the-state-of-a-state-based-crdts/)
+
+- resources
+  - ["CRDTs Illustrated" by Arnout Engelen_201509](https://www.youtube.com/watch?v=9xFfOhasiOE)
+    - 讲解了op-based的3条件、state-based的4条件
 # [cs-repeat: CRDTs for Mortals_James Long__201912](https://www.youtube.com/watch?v=DEcwa68f-jY)
 - Why haven’t “offline-first” apps taken off?
   - syncing is hard

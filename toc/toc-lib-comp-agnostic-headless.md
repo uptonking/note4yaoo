@@ -122,7 +122,7 @@ modified: 2021-04-11T06:17:51.318Z
     - https://ebay.github.io/skin/
     - Pure CSS framework designed & developed by eBay
 # ui-primitives
-- downshift /11.2kStar/MIT/202301/js
+- downshift /11.2kStar/MIT/202301/js/paypal
   - https://github.com/downshift-js/downshift
   - A set of primitives to build simple, flexible, WAI-ARIA compliant React autocomplete, combobox or select dropdown components.
 

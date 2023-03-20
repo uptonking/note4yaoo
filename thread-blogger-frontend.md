@@ -33,7 +33,6 @@ modified: 2021-02-09T19:27:01.319Z
   - https://epicreact.dev/articles/
   - projects
     - https://github.com/kentcdodds/mdx-bundler
-    - https://github.com/downshift-js/downshift
     - https://github.com/testing-library/react-testing-library
     - https://github.com/kentcdodds/bookshelf
 

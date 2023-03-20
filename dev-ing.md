@@ -157,14 +157,52 @@ $$('[contenteditable]')
 ## 030
 
 - dev-to
-  - merge-cells 逻辑优化
-  - cell-floating-menu 右上角
+  - 拖拽图标的位置在block左上角，而不是垂直居中
   - 拖拽时原布局不变，只显示预期位置的指示线
 
+- dev-to-collab
+  - yOffset out of bounds
+  - cursor光标位置经常对不上
+  - 每次刷新页面，空白行会多一行
+
 - dev-later
+  - merge-cells 逻辑优化
+  - cell-floating-menu 右上角
   - 将无序列表项拖进数字列表项时，数字列表项会增加？
   - initialDataLong示例，无法删除首行列表项
   - remove ramda
+
+## 0320
+
+- slate Subsequent property declarations must have the same type. Property
+  - 问题暂时解决方法是 将library中declare module slate注释掉，然后在应用层添加此声明
+
+- [fix: replace typeof window checks with typeof document by redabacha · Pull Request · TanStack/virtual](https://github.com/TanStack/virtual/pull/516)
+  - useLayoutEffect does nothing on the server warnings during ssr when using a deno runtime. this is because deno has a global window object available for browser compatibility (though is being considered for removal
+  - this pr replaces all typeof window checks across all packages with typeof document instead which works in all environments.
+
+- [PBFT Practical Byzantine Fault Tolerance 实用拜占庭容错 - 哪吒young - 博客园](https://www.cnblogs.com/NezhaYoung/p/16170948.html)
+  - 实用拜占庭容错，是传统BFT的一种可用性实现，其在联盟链中有广泛应用，但由于pbft 不能动态添加删除节点且节点加入需要认证机制(女巫攻击), 时间复杂度等, 其在公链中其算法的效率, 功能仍然不足满足实际需求。
+  - PBFT 适合有准入门槛(防止女巫攻击), 节点数量不多的联盟链
+  - PBFT 最大容忍网络中 1/3的拜占庭节点
+  - PBFT 的时间复杂度 O(n2), 节点数很多时性能急剧下降
+
+- [了解区块链的基本（第一部分）：拜占庭容错(Byzantine Fault Tolerance)](https://medium.com/loom-network-chinese/%E4%BA%86%E8%A7%A3%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%9F%BA%E6%9C%AC-%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%AE%B9%E9%94%99-byzantine-fault-tolerance-8a1912c311ba)
+  - 每当一个新的交易被广播到网络中时，节点就可以选择将该交易包含在它们的帐簿副本中，或者忽略它。当组成网络的大多数成员统一意见时，达到了共识。
+  - 简单讨论一下不可解的两个将军问题（Two Generals Problem）
+    - 这个问题（1975首次发行，1978年被命名）描述了两个将军在攻击同一个敌人的场景。将军1号被认为是领导，而另一个被认为是跟随者。每个将军的军队都无法仅靠自己的力量成功打败敌军，所以他们需要合作并同一时间发起攻击。
+    - 延伸到无限的ACK，两位将军将无法达成一致。
+    - 两个将军问题已被证实无解。
+  - 拜占庭将军问题
+    - 它描绘了同一个场景，但两个以上的将军需要对攻打他们共同敌人的时间作出同意。增加的一层复杂性就是，其中一个或几个将军有可能是叛徒，意味着他们可以对他们的选择撒谎
+    - 两个将军问题中领导者－跟随者的关系变成了指挥官－中尉的组合。为了在这里达成共识，指挥官和每个中尉必须就同一个决定达成一致（为了简单，只有攻击或撤退）。
+    - 如果指挥官是叛徒，还是必须达成共识。结果，所有的中尉成为了多数票。
+  - 定理：对于任意m，如果有多于3m的将军和至多m个叛徒，算法OM(m)达到共识。
+    - 这说明只要2/3的成员是诚实的，算法就能达到共识。
+    - 如果叛徒多于1/3，无法达到共识，这些军队无法协调他们的攻击，敌军胜利
+    - 重要的是大多数中尉要选同一个决策，哪一个并不重要。
+  - 拜占庭容错
+    - 前面提到的算法，只要叛徒的数量不超过将军的三分之一，就是拜占庭容错。其他变形的存在使得解决问题更容易，包括使用数字签名或通过在网络中的对等体之间施加通信限制。
 
 ## 0319
 
@@ -696,7 +734,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                           `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                    `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

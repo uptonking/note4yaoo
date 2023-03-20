@@ -9,8 +9,13 @@ modified: 2022-12-19T01:48:17.115Z
 
 # guide
 
-# 深入浅出Node.js
+- resources
 
+- https://practica.dev/
+  - https://github.com/practicajs/practica
+  - https://github.com/goldbergyoni/nodebestpractices
+  - The Node.js best practices list 
+# 深入浅出Node.js
 - Ryan Dahl最初的目标是写一个基于事件驱动、非阻塞I/O的web服务器，以达到更高的性能，提供Apache服务器之外的选择
   - js在后端一直没有市场，引入非阻塞I/O库没有额外阻力
   - js在浏览器中有广泛的事件驱动方面的应用
@@ -128,11 +133,7 @@ modified: 2022-12-19T01:48:17.115Z
 - web worker允许创建工作线程在后台运行，不影响主线程上的ui渲染
 - node中实现进程间通信IPC的技术是管道pipe
   - 具体细节实现由libuv提供，在win下由命名管道实现，*nix系统采用unix domain socket实现
-
-
-
 # pieces
-
 -  ## node-path
 - `path.join(path1，path2，path3.......)`
   - 用平台特定的分隔符把全部给定的path片段连接到一起，并规范化生成的路径
@@ -171,7 +172,7 @@ modified: 2022-12-19T01:48:17.115Z
   - This ensures the proper sequencing of events and helps avoid race conditions and logic errors. 
   - When appropriate, listener functions can switch to an asynchronous mode of operation using the `setImmediate()` or `process.nextTick()` methods
 
-``` JS
+```JS
 const myEmitter = new MyEmitter();
 myEmitter.on('event', (a, b) => {
   setImmediate(() => {
@@ -210,7 +211,7 @@ myEmitter.emit('event', 'a', 'b');
     - This implies that any removeListener() or removeAllListeners() calls after emitting and before the last listener finishes execution will not remove them from emit() in progress. 
     - Subsequent events behave as expected.
 
-``` JS
+```JS
 const myEmitter = new MyEmitter();
 
 const callbackA = () => {
@@ -246,9 +247,7 @@ myEmitter.emit('event');
 - A NodeEventTarget is not an instance of EventEmitter and cannot be used in place of an EventEmitter in most cases.
   - Unlike EventEmitter, any given listener can be registered at most once per event type. Attempts to register a listener multiple times are ignored.
   - The NodeEventTarget does not implement any special default behavior for events with type 'error'.
-
 # 多线程
-
 - Node.js保持了JavaScript在浏览器中单线程的特点
   - 它的优势是没有线程间数据同步的性能消耗也不会出现死锁的情况
   - 所以它是线程安全并且性能高效的
@@ -274,9 +273,7 @@ myEmitter.emit('event');
 - 基于此，Node.js提供了worker_threads，它比child_process或cluster更轻量
   - 与child_process或cluster不同，worker_threads可以有效地共享内存，通过传输ArrayBuffer实例或共享SharedArrayBuffer实例来实现
   - JavaScript和Node.js没有线程，只有基于Node.js架构的多工作线程
-
 # discuss
-
 - ## [Node.js架构剖析](http://www.ayqy.net/blog/node-js-architecture-overview/)
 - nodejs架构图
   - 最重要的部分是v8和libuv
@@ -407,9 +404,7 @@ myEmitter.emit('event');
   - Node.js的子线程是底层控制的，对于开发者而言是不可见的（Node.js 10 以后的版本添加了实验性功能，支持多线程处理CPU密集型问题。），好处就是开发者不再需要关注线程的管理，只需要写好异步代码就行，
   - 而Java提供了多线程的API，需要开发者手动管理。就像C++对内存操作开放给了开发者，但是Java的内存由jvm管理。
 - JS是一门单线程的语言，在Node里只控制主线程。当异步的时候，是有Node里其他线程参与的。
-
 # ref
-
 - [Relationship between event loop, libuv and v8 engine](https://stackoverflow.com/questions/49811043/relationship-between-event-loop-libuv-and-v8-engine)
   - Go through these points:
     - V8 engine is the engine for coaches of train. It has certain responsibilites including providing event loop to run asynchronous task.

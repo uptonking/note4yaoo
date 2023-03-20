@@ -51,6 +51,8 @@ modified: 2020-12-29T11:27:41.474Z
 - https://github.com/DiscordStyles/Slate
   - optimized, consistent, and functional theme for Discord based on GitHub's design language.
 
+- [Cursor | Build Fast](https://www.cursor.so/)
+
 - https://mermaid.js.org/
   - 白色黑色都有设计感，glassmorphism风格，contributors卡片很简洁
 

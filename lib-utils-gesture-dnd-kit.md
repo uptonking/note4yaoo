@@ -34,7 +34,6 @@ modified: 2022-06-04T00:44:30.749Z
     - It was built with performance in mind in order to support silky smooth animations.
   - Presets
     - Check out @dnd-kit/sortable, which is a thin layer built on top of @dnd-kit/core. 
-    - More presets coming in the future.
 
 - examples
   - [virtualized with react-tiny-virtual-list](https://master--5fc05e08a4a65d0021ae0bf2.chromatic.com/?path=/story/presets-sortable-virtualized--basic-setup)

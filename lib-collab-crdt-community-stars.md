@@ -16,11 +16,29 @@ modified: 2022-04-05T10:09:51.343Z
 
 - ## 
 
-- ## 
+- ## I think it's possible to build a state-based BFT resistant CRDT.
+- https://twitter.com/JungleSilicon/status/1637482087136788480
+  - The general idea is for versions to be a combination of a sequence number and the value.
+  - 👉🏻 Then if sequences hit the max possible value, you wrap them back around to zero and set a new parent uid.
+  - When wrapping it around you must specify what you are overriding.
+  - https://github.com/siliconjungle/Tiny-Merge-BFT
 
-- ##  if anyone has novel solutions to this problem: sequence number can reach the max interger
+- Byzantine Fault Tolerant.
+  - This solution is kind of *interesting*, its *mostly* eventually consistent, except for when agents have different "parents" (that should only change by bad actors).
+  - Different parents is treated as a merge event before exchanging information.
+
+- https://twitter.com/JungleSilicon/status/1637425083806539776
+  - An interesting conclusion to trying to limit how many sequence numbers an agent can increase in a distributed system.
+  - TLDR: You can only verify changes that you've seen.
+  - Alternatively centralised systems & blockchains (which are kind of like centralised / decentralised systems) can also stop this.
+  - If you have a full history you can undo changes that weren't supposed to occur. If you don't each agent needs to sign other agents changes before passing them along and then you can have a maximum of MAX_CHANGES * NUM_AGENTS.
+
+- ## if anyone has novel solutions to this problem: sequence number can reach the max interger
 - https://twitter.com/JungleSilicon/status/1636364948187250703
   - Another approach is to just restrict the amount a sequence number can grow by, but that feels imperfect.
+
+- Do you mean in the context of an HLC? There’s only so much collaborative work you can do in a microsecond!
+  - It's true, but it's more of an intellectual problem than anything for me.
 
 - I faced a similar but not identical problem recently. Sharing my solution as an inspiration, I know it is not directly applicable. I needed a way to determine which items in a cache have not been used the longest.
   - It is an embedded and constrained system, so I needed something simple. I decided to label each item with MAX_INT initially, decrementing all labels by one on each cache access, the exception being the label of the actual element being accessed, which is reset to MAX_INT
