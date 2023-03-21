@@ -291,6 +291,12 @@ modified: 2022-06-03T21:34:54.893Z
   - 无需服务端开发，只需支持http静态访问网页空间
   - 自动更新文库导航目录，支持多级目录
   - 无需服务端的全文库内容搜索与计分排序
+# kb-search
+- https://github.com/coderabbit214/document-ai
+  - go基于向量数据库与GPT3.5的通用本地知识库方案
+- https://github.com/GanymedeNil/document.ai
+  - 基于向量数据库与GPT3.5的通用本地知识库方案
+
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

@@ -14,6 +14,13 @@ modified: 2021-05-06T09:38:31.520Z
     - 方便实现高亮搜索结果、查找引用
 
 - 区分codemirror是v5和v6的方法
+  - 👉🏻 cm6的默认css，样式名小写
+    - .cm-editor
+    - .cm-gutters
+    - .cm-content
+      - .cm-line
+      - .cm-activeLine
+    - .cm-layer.cm-selectionLayer
   - 👉🏻 cm5的默认css
     - .CodeMirror-lines
     - .CodeMirror-cursors
@@ -21,13 +28,6 @@ modified: 2021-05-06T09:38:31.520Z
       - .CodeMirror-gutter-wrapper
       - .CodeMirror-line 
     - .CodeMirror-gutters
-  - 👉🏻 cm6的默认css
-    - .cm-editor
-    - .cm-gutters
-    - .cm-content
-      - .cm-line
-      - .cm-activeLine
-    - .cm-layer.cm-selectionLayer
 
 - resources
   - [Ace, CodeMirror, and Monaco: A Comparison of the Code Editors You Use in the Browser__202112](https://blog.replit.com/code-editors)

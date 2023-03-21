@@ -67,6 +67,11 @@ modified: 2022-08-21T10:11:43.095Z
 
 - With CKEditor 5 we are planning to conclude this process by letting the browser insert text only, but with CKEditor’s control.
 
+
+## [Text Editor: Data Structures | Hacker News_201710](https://news.ycombinator.com/item?id=15381886)
+- in my editor (CodeMirror) I'm also using a rope/tree style representation, because it's pleasantly general and easy to reason about
+  - [CodeMirror's document representation_201209](https://marijnhaverbeke.nl/blog/codemirror-line-tree.html)
+
 ## [A Brief Glance at How Various Text Editors Manage Their Textual Data_201505](https://ecc-comp.blogspot.com/2015/05/a-brief-glance-at-how-5-text-editors.html)
 
 - A review of how GNU Moe, Plan 9 Sam, Bill Joy's Ex/Vi, GNOME GtkTextView/GtkTextBuffer, GNU Emacs, and due to popular demand, Scintilla, manage their textual data. This article is subject to updates.
@@ -155,4 +160,3 @@ modified: 2022-08-21T10:11:43.095Z
 
 - [基于Clipboard的复制粘贴实现](https://juejin.cn/post/7118899649687060487)
 
-- [Text Editor: Data Structures | Hacker News](https://news.ycombinator.com/item?id=15381886)

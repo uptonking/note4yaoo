@@ -12,6 +12,21 @@ modified: 2022-12-24T07:31:48.493Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [In my experience the place wasm really shines is in implementing custom data structures.](https://news.ycombinator.com/item?id=32100578)
+- A wasm b-tree, skip list, rope, etc seems to outperform the equivalent javascript code by many times.
+  - Edit: I just whipped up a real benchmark to test this, replaying some text editing traces[1].
+  - Replaying the automerge-perf editing trace in javascript naively takes 610ms. Using a javascript based skip list it takes 77ms[2]. 
+  - In native rust, with a rust port of the same skip list code I can process the same editing trace in 6ms[3]. Or 20ms when that rust code is compiled to wasm.
+
+- This makes sense to me; 
+  - graphs made of JavaScript objects are not going to be as fast as C, although I think knowledge of how the JIT works can still help you get a lot closer than 10x (e.g. ensuring everything is monomorphic). 
+  - Now if you implemented a b-tree completely inside of a typed array, instead of using JavaScript objects as the nodes, that would be how you would approach C speeds. 
+  - But if you need a lot of custom data structures, WASM is probably a better choice at that point.
+
 - ## "Browsers will not serve Wasm files from file:// URLs" and that a web server is required, along with setting 2 response headers. 
 - https://groups.google.com/a/chromium.org/g/chromium-extensions/c/WsxV-5CqAko
   - What about inside a Chrome extension? Can extensions create a SQLite database using SQLite wasm and OPFS?

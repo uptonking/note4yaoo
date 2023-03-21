@@ -125,7 +125,7 @@ modified: 2022-11-07T17:36:22.236Z
   - https://mutehost.loria.fr/
   - a scalable collaborative document editor with CRDT, P2P and E2EE
   - MUTE implements a CRDT-based consistency algorithm (LogootSplit) for large scale peer-to-peer collaboration on top of a peer-to-peer message layer (netflux and soon libp2p).
-  - 示例基于tui-editor
+  - 示例依赖tui-editor、codemirror5
   - https://github.com/coast-team/mute-core
     - 依赖rxjs、dotted-logootsplit
   - https://github.com/coast-team/dotted-logootsplit /MPL

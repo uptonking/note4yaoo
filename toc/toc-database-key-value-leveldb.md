@@ -13,6 +13,7 @@ modified: 2022-11-03T04:14:00.563Z
   - browser-level的持久化为何是二进制？
 
 - resources
+  - leveldb vs redis
   - https://github.com/Level/awesome
 # db-key-value
 - snap-db /58Star/MIT/202001/ts/Nano-SQL

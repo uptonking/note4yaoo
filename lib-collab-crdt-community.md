@@ -16,7 +16,17 @@ modified: 2022-04-05T13:25:40.892Z
 
 - ## 
 
-- ## 
+- ## [Real Differences Between OT and CRDT for Co-Editors | Hacker News](https://news.ycombinator.com/item?id=18191867)
+- On page 30 par 2 you conclude that OT has time complexity O(1) while CRDT is O(C) or so... I guess, you compare a rope-based OT implementation and a naive CRDT implementation (like, one doing a full rewrite on each key press). At least, that is my best guess.
+  - Why don't you compare them the other way around? Rope-based CRDT and a naive OT? String splicing is O(N), you may put it on either side of the scales. Hashtable-hosted Causal Tree is O(1); hashtable-hosted RGA is basically the same.
+  - I find the general discourse of the article not so useful. I may guess, you overreacted to certain marketing messages coming from the CRDT community.
+
+
+
+
+- 
+- 
+- 
 
 - ## If you store a CRDT as a BLOB in a SQLite column, you can do efficient partial reads or incremental writes instead of reading/writing the whole thing via UPDATE 
 - https://twitter.com/jitl/status/1530308079237070848

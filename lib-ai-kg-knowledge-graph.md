@@ -9,7 +9,7 @@ modified: 2023-02-07T09:23:32.856Z
 
 # guide
 - resources
-  - [通向AGI之路：大型语言模型（LLM）技术精要 - 知乎](https://zhuanlan.zhihu.com/p/597586623)
+
 # blogs
 
 ## [知识图谱基础之RDF，RDFS与OWL - 知乎](https://zhuanlan.zhihu.com/p/32122644)

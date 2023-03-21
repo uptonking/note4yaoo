@@ -161,9 +161,9 @@ $$('[contenteditable]')
   - 拖拽时原布局不变，只显示预期位置的指示线
 
 - dev-to-collab
+  - 每次刷新页面，空白行会多一行
   - yOffset out of bounds
   - cursor光标位置经常对不上
-  - 每次刷新页面，空白行会多一行
 
 - dev-later
   - merge-cells 逻辑优化
@@ -171,6 +171,8 @@ $$('[contenteditable]')
   - 将无序列表项拖进数字列表项时，数字列表项会增加？
   - initialDataLong示例，无法删除首行列表项
   - remove ramda
+
+## 0321
 
 ## 0320
 
@@ -734,7 +736,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                    `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                     `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

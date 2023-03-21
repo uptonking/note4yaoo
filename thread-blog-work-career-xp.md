@@ -10,6 +10,12 @@ modified: 2022-11-08T10:34:34.820Z
 # guide
 
 # work-xp
+- [开源四年的一些记录](https://github.com/yihong0618/gitblog/issues/259)
+  - [我转行程序员的经历](https://github.com/yihong0618/gitblog/issues/186)
+  - 掌控感，这个月第一次经历了两个同时增长的项目，几乎所有业余时间都在这上，在这个阶段懂了，如何在自己能力范围内更新项目，判断需求，处理 issue 和如何决定是否合 PR, 当然在累的什么都不想干的时候，忽然想明白了休息才是最重要的
+  - Make it work then make it better. 在最开始的时候我总是想把项目尽可能做的好，加足够多帮到大家的功能再发布，后来明白了，这个是开源项目，我需要做的是，尽可能的让项目 work 起来，pull the trigger, 如果这个项目 work 的足够好，会吸引更多厉害的人来一起 make it better
+  - 别炫技，如果这个不是需要炫技的项目，那么，尽可能用最简单的实现，项目就会帮到更多的人，让更多的人参与进来。
+
 - [马桶里的大厂病 - hayami's blog](https://hayami.typlog.io/bullshitjobs)
   - 大家知道，在大公司做亿级 dau 的产品，一个功能上线，会有测试-验收-发版-灰度-回测-ab测试-全量的步骤。
   - 回测如果发现bug, 需要 debug, 规定时间搞不定或是客户端bug，就需要回滚。

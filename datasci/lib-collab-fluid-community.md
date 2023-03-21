@@ -75,6 +75,19 @@ modified: 2023-02-11T11:07:43.781Z
   - I found out about it after they decided to use my fast-cloning-copy-on-write B+Tree for TypeScript... 
   - they sent me a pull request for diffing versions of B+ trees, but I haven't yet looked into the architecture of their concurrent data type.
 
+- Have you seen my Xi CRDT writeup from 2017 before? 
+  - It's a CRDT in Rust and it uses a lot of similar ideas. 
+  - Raph and I had a plan for how to make it fast and memory efficient in very similar ways to your implementation. 
+  - I think the piece I got working during my internship hits most of the memory efficiency goals like using a Rope and segment list representation. 
+  - 👉🏻 However we put off some of the speed optimizations you've done, like using a range tree instead of a Vec of ranges. I think it also uses a different style of algorithm without any parents.
+
+- The problem with trees is usually that people don't pack enough data into each node in the tree. I implemented a skip list in C a few years ago[1]. 
+  - For a lark I benchmarked its performance against the C++ SGI rope class which was shipped in the C++ header directory somewhere. My skip list was 20x faster - which was suspicious. 
+  - I looked into what the SGI rope does and it turns out it was only putting one character into each leaf node in the tree it constructed. 
+  - Benchmarking showed the optimal number was ~120 or so characters per leaf. 
+  - Memcpy is much much faster in practice than main memory lookups.
+- In diamond-types (benchmarked here), the internal nodes in my B-tree store 16 pointers and leaf nodes store 32 entries. With run-length encoding, all 180, 000 inserted characters in this data set end up in a tree with just 88 internal nodes and a depth of 3. It goes fast like this. But if you think an array based solution would work better, I'd love to see it! It would certainly need a lot less code.
+
 - ## [The interface looks much more similar to Notion than Google Wave; I don't see th... | Hacker News](https://news.ycombinator.com/item?id=29085200)
 - Do you know if the Fluid Framework is built on top of CRDTs?
 

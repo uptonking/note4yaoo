@@ -69,16 +69,18 @@ modified: 2022-04-05T10:08:25.947Z
   - An example implementations of various CRDTs，实现语言为F#
   - It serves mainly academic purposes (the implementations are meant to be simple and easy to understand, not optimized)
 
+- https://github.com/josephg/crdt-benchmarks
+  - The goal of this repository is to provide some standard benchmarks that we can use to compare the performance of various OT/CRDT implementations.
+  - This repository contains some editing histories from real world character-by-character editing traces. 
+    - [bench npm jumprope](https://gist.github.com/josephg/bcb2e74e52dc9c4651249fdffc48d1cf)
+    - [bench-automerge.js code from blog post](https://gist.github.com/josephg/13efc1444660c07870fcbd0b3e917638)
+
 - https://github.com/dmonad/crdt-benchmarks
   - A collection of reproducible CRDT benchmarks.
   - B1: No conflicts
   - B2: Two users producing conflicts
   - B3: Many conflicts
   - B4: Real-world editing dataset
-
-- https://github.com/josephg/crdt-benchmarks
-  - The goal of this repository is to provide some standard benchmarks that we can use to compare the performance of various OT/CRDT implementations.
-  - This repository contains some editing histories from real world character-by-character editing traces. 
 
 - https://github.com/streamich/json-joy
   - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
@@ -164,6 +166,8 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/streamich/json-joy
   - json-crdt中提供了rga、lww-object
 
+## woot
+
 - https://github.com/phedkvist/crdt-sequence
   - CRDT Sequence is a very basic collaborative text editing implementation
   - 自己实现了 history、activeUsers
@@ -210,13 +214,22 @@ modified: 2022-04-05T10:08:25.947Z
   - 初次连接发送所有changes
   - 后续只发送单次change的msg
 
+## logoot
+
 - https://github.com/mkdynamic/logoot
   - 👉🏻 包含服务端，编辑器使用textarea
   - Collaborative text editor using Logoot CRDT algorithm. 
   - Adds an informal versioning scheme based on state vectors to ensure casual ordering of operations is maintained.
+
 - https://github.com/Martinn1996/Fonto-CRDT
   - Bachelor Project: CRDT for Fonto
   - Our CRDT is based on a logoot
+
+## rga/causal-tree
+
+- usecase
+  - automerge
+  - peritext
 
 - https://github.com/maca/ace-crdt /js/rga
   - Collaborative text editor proof of concept using CRDT
@@ -230,17 +243,25 @@ modified: 2022-04-05T10:08:25.947Z
     - Operation-based CRDTs: arrays
     - where LSeq virtual pointers use byte sequences, in RGA it's just a combination of a single monotonically increasing number and replica identifier
 
-- https://github.com/jaredly/local-first/tree/master/packages/text-crdt
-  - This algorithm is largely based on RGA, with support for rich-text formatting added, along with a number of optimizations.
-  - integrate with Quill.
 - https://github.com/josephg/simple-crdt-text /ts
   - This implements automerge's underlying algorithm (RGA)
   - The goal is to have some simple code that I can use to clarify semantics and as a basis for fuzz testing correctness of a faster implementation.
+  - [automerge-and-yjs-minimal.ts](https://gist.github.com/josephg/26ade72d5ced0470485c734fb1ebb6ca)
+  - [yjs-minimal.ts](https://gist.github.com/josephg/dcb1bce2ceb0f0b50ffcac0245a55907)
+  - [yjs_testcase.ts](https://gist.github.com/josephg/88c006724435a61afaec5ff3f1bacd87)
+
 - https://github.com/josephg/reference-crdts
   - This repository contains simple proof-of-concept reference implementations of yjs, automerge and sync9's list types - all implemented in the same codebase. 
 
+- https://github.com/jaredly/local-first/tree/master/packages/text-crdt
+  - This algorithm is largely based on RGA, with support for rich-text formatting added, along with a number of optimizations.
+  - integrate with Quill.
+
+## crdt-more
+
 - https://github.com/dglittle/shelf
   - Here is a shelf: [VALUE, VERSION_NUMBER]
+  - [josephg/shelf.ts](https://gist.github.com/josephg/c433d3bcc078d911e7696c6d64381bf1)
 
 - https://github.com/gritzko/citrea-model /201712/js
   - A CRDT-based collaborative editor engine of letters.yandex.ru (2012, historical)
@@ -332,6 +353,7 @@ modified: 2022-04-05T10:08:25.947Z
     - Most of delta-based CRDT simply assume a FIFO delivery (deltas from a same replica, are merged in-order). 
     - They also enable to merge two states.
   - Dotted LogootSplit offers a delta-based version of LogootSplit with smaller metadata. We provide both op-based and delta-based synchronizations.
+  - Dotted LogootSplit is a replicated data structure designed for collaborative editing. The data structure combines a search tree and a rope.
 
 - https://github.com/SDharan93/replicated-document
   - A replicated document that allows collaborative editing. 
@@ -414,7 +436,7 @@ modified: 2022-04-05T10:08:25.947Z
   - https://mutehost.loria.fr/
   - a scalable collaborative document editor with CRDT, P2P and E2EE
   - MUTE implements a CRDT-based consistency algorithm (LogootSplit) for large scale peer-to-peer collaboration on top of a peer-to-peer message layer (netflux and soon libp2p).
-  - 示例基于tui-editor
+  - 示例基于tui-editor、angular
   - https://github.com/coast-team/mute-core
     - 依赖rxjs、dotted-logootsplit
   - https://github.com/coast-team/dotted-logootsplit /MPL
@@ -471,6 +493,10 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/MatherLyn/co-editing-engine
   - A co-editing engine based on crdt written in JavaScript.
+
+- https://github.com/bazed-editor/bazed /rope
+  - the baz editor.
+  - The editor consists of a backend including the core data structure on which modifications are made consistent through CRDT and plugin engine (stew).
 # last-write-win/llw
 - https://github.com/ymlsam/lww-element-dict
   - a LWW key-value store, a conflict-free replicated data type (CRDT)

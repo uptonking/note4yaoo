@@ -50,6 +50,12 @@ modified: 2022-11-07T11:00:28.824Z
 - https://twitter.com/ahshengchen/status/1636959691166081027
   - 真应了这段话：任何在我出生时已经有的科技都是稀松平常的；任何在我15到35岁之间诞生的科技都是改变世界的革命性产物；任何在我35岁之后诞生的科技都是违反自然规律要遭天谴的。
 
+- ## 赚钱的要义在于发现机会后，拼死抓住，玩命榨干毕竟，你不知道有没有下次机会
+- https://twitter.com/oldleek_eth/status/1637796470513606656
+  - 而发现机会有3种方式：提升认知、升级圈子、跟随聪明人
+  - 发现并跟随聪明人是找到机会最快、门槛最低的方式
+  - 趁着空投大热，推荐几个聪明的空投猎人
+
 - ## Per-seat pricing is really annoying.  Render switched to this recently too and it killed all interest I had in putting any of my stuff there.
 - https://twitter.com/sean_j_roberts/status/1636455905054040069
   - For infra tools is it not enough to just charge a healthy margin on the storage/compute that I'm actually using?
