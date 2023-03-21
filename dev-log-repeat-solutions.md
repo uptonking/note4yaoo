@@ -87,6 +87,7 @@ modified: 2021-07-20T13:50:23.433Z
 
 - ✨ admin-dashboard
   - react-admin
+  - tremor
 - ✨ editor-wiki(web+pc)
   - outline
   - notesnook

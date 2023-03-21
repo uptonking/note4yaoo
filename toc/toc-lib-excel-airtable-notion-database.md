@@ -217,6 +217,7 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/refinedev/refine
   - https://refine.dev/
   - headless web application framework developed with flexibility in mind.
+  - 非典型cms
   - It eliminates repetitive tasks demanded by CRUD operations and provides industry standard solutions for critical parts like authentication, access control, routing, networking, state management, and i18n.
   - Connectors for 15+ backend services including REST API
 

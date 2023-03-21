@@ -43,6 +43,7 @@ modified: 2023-01-20T21:59:47.792Z
     - Admin panel is built with Webpack, code-split, highly performant (even with 100+ fields), and written fully in TypeScript.
   - [Compare Payload against other headless CMS: strapi, directus](https://payloadcms.com/compare)
   - [Roadmap Discussions](https://github.com/payloadcms/payload/discussions/categories/roadmap)
+  - [Roadmap: Multiple Database Support](https://github.com/payloadcms/payload/discussions/287)
   - [Payload (YC S22) – Headless CMS for Developers | Hacker News_202208](https://news.ycombinator.com/item?id=32665325)
   - Our business model is based on two things:
     - Enterprise features like SSO, audit logs, publication workflows, and translation workflows. 
@@ -77,12 +78,20 @@ modified: 2023-01-20T21:59:47.792Z
   - REST & GraphQL API. Instantly layers a blazingly fast Node.js API on top of any SQL database.
   - 后端依赖express、knex、async
   - 前端依赖vue3、tinymce5、p-queue、apexcharts
+  - [Running Locally | Directus Docs](https://docs.directus.io/contributing/running-locally.html)
+    - pnpm --dir api cli bootstrap 
+    - 注意在.env中配置初始用户名密码
   - Directus uses TinyMCE, which stores content as a string of HTML. 
   - Directus is SQL-based which requires overhead like migrations and more.
   - Payload allows bringing your own Express server.
   - Directus only supports role-based access control (RBAC). However, Payload supports function-based access control which can be used on either a document or field-by-field basis 
+  - dev-xp
+    - 登录界面一直白屏，排查了很久未定位到原因，但firefox可正常打开，chrome体系都是白屏
+      - [Unable to run Directus locally](https://github.com/directus/directus/issues/17786)
+      - You have to set SERVE_APP=true in your .env file in order to run the api in dev mode with the build app.
+      - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
 
-- webiny-js /6.3kStar/MIT/202301/ts/graphql/代码量大(很多包)
+- webiny-js /6.3kStar/MIT/202301/ts/graphql/文档清晰/代码量大(很多包)
   - https://github.com/webiny/webiny-js
   - a headless CMS, page builder, form builder, and file manager, admin-area
   - Multi-tenant SaaS applications
@@ -96,18 +105,22 @@ modified: 2023-01-20T21:59:47.792Z
 
 - https://github.com/burdy-io/burdy /202202/ts/inactive
   - Headless CMS built in NodeJS and React. Written in Typescript!
-  - Content types - 16 fields types out of the box, and you can easily extend it with your custom
   - Node.js, TypeORM, Express
   - React, Fluent UI
+  - Content types - 16 fields types out of the box, and you can easily extend it with your custom
 
 - https://github.com/microfeed/microfeed
   - a lightweight content management system (CMS) self-hosted on Cloudflare. 
   - microfeed is built by Listen Notes and is hosted on Cloudflare's Pages, R2, D1, and Zero Trust.
 
-- https://github.com/Thinkmill/keystatic
+- https://github.com/Thinkmill/keystatic /ts
   - First-class CMS experience, TypeScript API, Markdown & YAML/JSON based, no DB.
   - Built with DNA from Keystone, connects directly to GitHub and doesn’t mess with your source code. 
   - Conceived(构想；设想) for modern front-end frameworks like Next.js, Remix and Astro, designed to fit into your workflow.
+
+- https://github.com/tryghost/Ghost /js/MIT
+  - Turn your audience into a business. 
+  - Publishing, memberships, subscriptions and newsletters.
 # discuss
 - ## 
 
@@ -130,6 +143,7 @@ modified: 2023-01-20T21:59:47.792Z
   - https://github.com/refinedev/refine
   - https://refine.dev/
   - headless web application framework developed with flexibility in mind.
+  - 非典型cms
   - It eliminates repetitive tasks demanded by CRUD operations and provides industry standard solutions for critical parts like authentication, access control, routing, networking, state management, and i18n.
   - Connectors for 15+ backend services including REST API
   - For convenience, it ships with ready-made integrations for Ant Design System, Material UI, Mantine, and Chakra UI.

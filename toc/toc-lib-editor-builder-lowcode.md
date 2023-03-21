@@ -65,6 +65,7 @@ modified: 2020-12-28T12:24:09.275Z
     - It concentrates solely on granting administrators an effective way to author and maintain content, but doesn't control how and where that content is used.
   - [Compare Payload against other headless CMS: strapi, directus](https://payloadcms.com/compare)
   - [Roadmap Discussions](https://github.com/payloadcms/payload/discussions/categories/roadmap)
+  - [Roadmap: Multiple Database Support](https://github.com/payloadcms/payload/discussions/287)
 
 - n8n /28kStar/FairCode/202301/ts/vue/依赖少
   - https://github.com/n8n-io/n8n
@@ -200,7 +201,7 @@ modified: 2020-12-28T12:24:09.275Z
   - 实现了编辑器和页面前端框架的分离, 可以支持不同的前端框架.
   - 目前已经支持 Vue, React, 和 Omi, 理论上可以支持任意前端框架.
 
-- ToolJet /17.1kStar/AGPLv3/202301/前端js+后端ts
+- ToolJet /17.1kStar/AGPLv3/202301/前端js+后端nestjs
   - https://github.com/ToolJet/ToolJet
   - https://tooljet.com/
   - low-code framework to build and deploy internal tools

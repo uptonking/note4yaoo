@@ -42,7 +42,14 @@ modified: 2023-02-05T19:03:12.722Z
 
 - 编辑器较通用的功能
   - 复制、粘贴
-  - 导出
+  - 导入、导出
+
+- slate-plugin/feature
+  - 定义接口
+  - 工具方法、queries
+    - 可能在插件外部其他逻辑中通过如 YjsEditor.connect(editor) 的方式执行
+  - withPlugin(editor)
+    - 增强editor对象
 # faq
 
 ## not-yet
@@ -64,6 +71,12 @@ modified: 2023-02-05T19:03:12.722Z
   - 排查定位到，执行op `insert_text`时，顺便就把selection更新了
   - 不需要在op-text执行后单独执行op-selection来更新sel
 # slate-yjs
+- not-yet
+  - undo/redo的按键事件是在哪里处理的
+
+- tips
+  - 协作3大要点: 模型数据、光标选区、undo/redo
+
 - editor.sharedRoot
   - 与编辑器相关的ydoc/ytext直接挂在slate editor对象上
 
@@ -74,8 +87,9 @@ modified: 2023-02-05T19:03:12.722Z
   - 采用了stored positions的设计将pos的relative pos保存在sharedRoot下
   - 一旦执行move/split, binding就会更新sharedRoot下的relative pos
 
-- ydoc/awareness的set方法会自动send
+## hocuspocus-server
 
+- ydoc/awareness的set方法会自动send
 # slate-react
 - 监听 beforeinput
   - beforeinput 这个事件会在 `<input>, <select> 或 <textarea> 或者 contenteditable` 的值即将被修改前触发，这样我们可以获取到输入框更新之前的值，实际上对于编辑器内部的一些编辑内容的操作是通过这个劫持这个事件，然后再把用户的一系列操作转化成调用 slate api 去更新编辑器内容。
@@ -123,6 +137,7 @@ modified: 2023-02-05T19:03:12.722Z
   - 修复这个问题，我们团队目前的选择是fork改源码。
 - 
 - 
+
 # selection
 - slateSel to domSel
   - 场景: 
