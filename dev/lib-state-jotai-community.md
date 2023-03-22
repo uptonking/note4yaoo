@@ -23,6 +23,11 @@ modified: 2022-01-05T14:25:35.961Z
   - Yes, all child components under the tree re-render, unless they are memoized (or stable). 
   - The advantage is 1) simpler syntax, and 2) dynamic atom creation without re-mounting the entire tree (which is impossible with context).
 
+- Jotai implementation uses useReducer instead of useState. 
+  - It's slightly different in terms of timing when it reads atomState.value, which confuses people with extra re-renders without commits. 
+  - Here's updated simplified Jotai implementation.
+  - https://twitter.com/dai_shi/status/1552819673716375552
+
 - this simplified version of zustand is **not** pseudo code. It's usable.
   - https://codesandbox.io/s/purple-tree-noyy6?file=/src/App.js
   - https://twitter.com/dai_shi/status/1484851943696924677

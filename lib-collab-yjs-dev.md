@@ -9,6 +9,17 @@ modified: 2022-04-05T10:10:59.826Z
 
 # guide
 
+- features
+  - common data types
+  - undo/redo
+  - versions/revision-history
+  - track-changes(suggestion mode)
+  - offline-editing
+  - awareness
+  - network-agnostic
+  - bindings for editors/apps
+  - persistence
+
 - 实现协作要考虑到切换冲突处理算法, 如slate-yjs/automerge/sharedb
 
 - https://github.com/yjs/y-protocols
@@ -43,10 +54,10 @@ modified: 2022-04-05T10:10:59.826Z
   - yjs is specific
   - del in yjs is tombstone property
 - at the beginning of the session, you're just gonna send all the del ops 
-- yjs is a mix of delta  crdt, but deletions are state crdt 
+- yjs is a mix of delta crdt, but deletions are state crdt
 - for huge doc, yjs makes del not operations, del is not structure of doc
 - deletions are just collections of id numbers
-- for ot, op is retain+insert
+- for ot, op is retain+insert, no delete
 - for yjs, add insert, minus delete
 - if encode deletions as a separate set, it's more efficient
 
@@ -55,7 +66,7 @@ modified: 2022-04-05T10:10:59.826Z
   - rga insert to the left/prev item
 - rga downsides
   - if u prepend many chars, it slows
-  - inert string of length N, the parse and insert is slow
+  - insert string of length N, the parse and insert is slow
     - parse takes same time as apply insert 
     - before insert, sort takes time
 
@@ -74,7 +85,7 @@ modified: 2022-04-05T10:10:59.826Z
 
 - yjs uses 
   - binary encoding for doc
-  - variable-length encoding fot all integers
+  - variable-length encoding for all integers
 
 - for crdt, store all operations, but encoding is efficient
 
@@ -114,19 +125,19 @@ modified: 2022-04-05T10:10:59.826Z
 - when sync, slice part of items in store and encode
 
 - why use array to impl structStore
-  - automerge btree 
+  - automerge uses btree 
 - btree doesnot allow u to refer to index positions
 - index data and append items is easy when use array
 - in the future, I may use red black tree
 - joseph
-  - jumprope skip list
-  - xirope btree
+  - jumprope: skip list
+  - xi-rope: btree
 
 - all the crdt papers test random insertions
   - but in practice, insert is mostly continuous, use cache maybe better for text editing
 
 - yjs rust maybe use btree, instead of fast-marker
-- but for text editing, use cache maybe better because insert not random
+- but for text editing, use cache maybe better because insert mostly is not random, but continuous
 
 - create tx create an update message
 
@@ -168,7 +179,6 @@ modified: 2022-04-05T10:10:59.826Z
 
 - presence is using different
   - cursor sync is not using yjs, but like automerge
-
 - awareness
   - use state-based crdt
 - u propagate current state to all clients

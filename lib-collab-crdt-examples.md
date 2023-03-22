@@ -49,6 +49,21 @@ modified: 2022-04-05T10:08:25.947Z
     - The `SharedString` DDS is tailor-made for this scenario.
   - [Microsoft introduces Loop: A new collaboration tool built on Fluid Framework_202111](https://www.zdnet.com/article/microsoft-introduces-loop-a-new-collaboration-tool-built-on-fluid-framework/)
 
+- xi-editor /19.7kStar/apache2/202206/rust
+  - https://github.com/xi-editor/xi-editor
+  - https://xi-editor.io/
+  - A modern editor with a backend written in Rust.
+  - The xi-editor project is currently discontinued. 
+  - CRDT: This approach follows WOOT.
+
+- https://github.com/atom-archive/xray /rust
+  - Text is stored in a copy-on-write CRDT.
+    - We use a variant of RGA called RGASplit
+  - Our current understanding is that in Xi, the buffer is stored in a rope data structure, then a secondary layer is used to incorporate edits. 
+  - In Xray, the fundamental storage structure of all text is itself a CRDT.
+    - It's similar to Xi's rope in that it uses a copy-on-write B-tree to index all inserted fragments, but it does not require any secondary system for incorporating edits.
+  - [Xray – An experimental next-generation Electron-based text editor | Hacker News](https://news.ycombinator.com/item?id=16525735)
+
 - https://github.com/zkpranav/crdt-sync-client /未完成
   - https://github.com/zkpranav/crdt-sync-server
   - Implementation of a CRDT based networking layer for a collaboration tool.
@@ -436,7 +451,7 @@ modified: 2022-04-05T10:08:25.947Z
   - https://mutehost.loria.fr/
   - a scalable collaborative document editor with CRDT, P2P and E2EE
   - MUTE implements a CRDT-based consistency algorithm (LogootSplit) for large scale peer-to-peer collaboration on top of a peer-to-peer message layer (netflux and soon libp2p).
-  - 示例基于tui-editor、angular
+  - 示例基于tui-editor.v2、codemirror5、angular
   - https://github.com/coast-team/mute-core
     - 依赖rxjs、dotted-logootsplit
   - https://github.com/coast-team/dotted-logootsplit /MPL
@@ -542,8 +557,11 @@ modified: 2022-04-05T10:08:25.947Z
     - The rest of this post introduces a basic UniquelyDenseTotalOrder that I especially like. 
     - I have not seen it in the existing literature, although it is similar enough to Logoot, Treedoc, and others that I wouldn’t be surprised if it’s already known. For now, I call it Plain Tree.
 
-- https://github.com/atom/teletype-crdt /js/archived
-  - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom.
+- https://github.com/atom-editor/teletype-crdt
+  - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom
+  - https://github.com/atom/teletype-crdt /js/archived
+    - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom.
+  - https://github.com/atom/teletype
 
 - https://github.com/kindone/text-versioncontrol
   - provides version and concurrency control for text editing 

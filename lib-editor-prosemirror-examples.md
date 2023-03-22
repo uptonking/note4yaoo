@@ -56,6 +56,25 @@ modified: 2022-08-18T16:57:46.405Z
   - Out-of-the-box editors, or create own by composing extensions.
   - Collaborative editing with yjs or prosemirror-collab.
 
+- nytimes/react-prosemirror /43Star/apache2/202303/ts
+  - https://github.com/nytimes/react-prosemirror
+  - A fully featured library for safely integrating ProseMirror and React.
+  - React separates updates into render and commit phases so that it can process updates in batches
+  - ProseMirror View library renders ProseMirror documents in a single-phase update. 
+  - The first phase of a React update should be free of side effects, which requires that updates to the ProseMirror View happen in the second phase.
+    - during the first phase, React components actually have access to a different (newer) version of the EditorState than the one in the Editorview. 
+    - As a result code that dispatches transactions may dispatch transactions based on incorrect state. 
+  - There are two different directions to integrate ProseMirror and React: 
+    - you can render a ProseMirror EditorView inside of a React component, 
+    - and you can use React components to render ProseMirror NodeViews. 
+    - This library provides tools for accomplishing both of these goals.
+  - https://github.com/nytimes/oak-byo-react-prosemirror-redux
+    - https://nytimes.github.io/oak-byo-react-prosemirror-redux/
+    - This repository contains learning materials originally sourced and written for the Oak team at The New York Times.
+    - The courses within focus on developing an understanding of how the three tools that the Oak collaborative rich text editor relies on, React, ProseMirror, and Redux, actually work.
+    - [Build Your Own: ProseMirror View](https://nytimes.github.io/oak-byo-react-prosemirror-redux/post/build-your-own-pm-view/)
+      - demonstrate how to build the core components of a ProseMirror view library.
+
 - @atlaskit/editor-core /8Star/Apache2/202208/ts
   - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
   - https://atlaskit.atlassian.com/packages/editor/editor-core

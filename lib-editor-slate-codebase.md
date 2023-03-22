@@ -54,17 +54,18 @@ modified: 2023-02-05T19:03:12.722Z
 
 ## not-yet
 
-- contenteditable内的元素，mousedown可以触发，keydown不能触发
-  - 因为只有能够获取focus的元素才能触发key事件
-
-- 光标在斜体粗体文字边上时，选区对应的具体位置在里面还是外面
-
 - 使用tree存储数据，还是使用map存储数据+关系，如何设计更好
 
 - remirror的api设计 uncontrolled by default
   - 支持设置state+onChange让ReEditor组件变成controlled
 
 ## answers
+
+- 光标在斜体粗体文字边上时，选区对应的具体位置在里面还是外面
+  - 粗体、斜体只是文本节点的属性
+
+- contenteditable内的元素，mousedown可以触发，keydown不能触发
+  - 因为只有能够获取focus的元素才能触发key事件
 
 - 🤔 输入字母时，为什么beforeinput的selection为5，onChange方法里的selection为6，何时更新的
   - 首先确认更新范围，onChange执行后useEffect才执行将 slateSel-TO-domSel，所以更新sel发生在渲染前
@@ -87,12 +88,37 @@ modified: 2023-02-05T19:03:12.722Z
   - 采用了stored positions的设计将pos的relative pos保存在sharedRoot下
   - 一旦执行move/split, binding就会更新sharedRoot下的relative pos
 
-## hocuspocus-server
+```JS
+// yEvent to slateOp
+const op = {
+  "type": "insert_node",
+  "path": [
+    4,
+    1
+  ],
+  "node": {
+    "text": "e"
+  }
+};
+```
+
+## hocuspocus-provider
 
 - ydoc/awareness的set方法会自动send
+
+## hocuspocus-server
+
+# selection
+- slateSel to domSel
+  - 场景: 
+  - 方向键，在keydown事件中处理
+  - click-void，dragStart, drop, 在对应事件中处理
+
+- domSel to slateSel
+  - 场景: click事件的domSel在useEffect里面会同步到slateSel
 # slate-react
 - 监听 beforeinput
-  - beforeinput 这个事件会在 `<input>, <select> 或 <textarea> 或者 contenteditable` 的值即将被修改前触发，这样我们可以获取到输入框更新之前的值，实际上对于编辑器内部的一些编辑内容的操作是通过这个劫持这个事件，然后再把用户的一系列操作转化成调用 slate api 去更新编辑器内容。
+  - 这个事件会在 `<input>, <select> 或 <textarea> 或者 contenteditable` 的值即将被修改前触发，这样我们可以获取到输入框更新之前的值，实际上对于编辑器内部的一些编辑内容的操作是通过这个劫持这个事件，然后再把用户的一系列操作转化成调用 slate api 去更新编辑器内容。
 
 - 监听 selectionchange
   - 对于在编辑区域内的一些选区操作，就是通过这个方法去劫持选区的变动，首先获取到原生的 Selection，然后调用 toSlateRange方法将原生的选区转化成 slate 自定义的 Range 格式，然后调用相应方法更新 slate 自己定义的选区。
@@ -135,17 +161,6 @@ modified: 2023-02-05T19:03:12.722Z
 - 会发生报错的原因则是，在 CompositionStart 时，文档内容被删除。在 CompositionEnd 时，slate 找不到对应的 dom 节点，然后报错
   - 解决也不难，只需要在 CompositionStart 删除文档内容时，更新一下文档 value 更新即可
   - 修复这个问题，我们团队目前的选择是fork改源码。
-- 
-- 
-
-# selection
-- slateSel to domSel
-  - 场景: 
-  - 方向键，在keydown事件中处理
-  - click-void，dragStar, drop, 在对应事件中处理
-
-- domSel to slateSel
-  - 场景: click事件的domSel在useEffect里面会同步到slateSel
 # slate-src-more
 - 其测试的编写是一种数据驱动的思路，通过给每个测试文件定义输入和输出以及要执行的测试逻辑，最后通过统一的 runner 运行，极大提供了编写测试的效率，让人耳目一新。
 - Slate测试挺别具一格，反正我第一次看的时候，反应就是原来测试还可以这样写。​

@@ -24,13 +24,6 @@ modified: 2022-08-21T10:11:37.453Z
   - editorState, selection, normalize, operation
   - prosemirror, slate, lexical
 
-## [Xray – An experimental next-generation Electron-based text editor | Hacker News](https://news.ycombinator.com/item?id=16525735)
-
-- https://github.com/atom-archive/xray
-  - Our current understanding is that in Xi, the buffer is stored in a rope data structure, then a secondary layer is used to incorporate edits. 
-  - In Xray, the fundamental storage structure of all text is itself a CRDT. 
-    - It's similar to Xi's rope in that it uses a copy-on-write B-tree to index all inserted fragments, but it does not require any secondary system for incorporating edits.
-
 ## [How to implement a web-based rich text editor in 2023?](https://letsken.com/michael/how-to-implement-a-web-based-rich-text-editor-in-2023)
 
 - Since 2011 I’ve been spending a great junk of my time taming web browsers to behave correctly and predictably when editing rich text

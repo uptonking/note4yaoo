@@ -19,12 +19,6 @@ modified: 2022-09-05T03:41:15.727Z
     - /inactive
     - 非官方套件，包含了常见的扩展集合，以及斜杠菜单，浮动菜单，Markdown解析、序列化等功能。
 
-- https://github.com/nytimes/oak-byo-react-prosemirror-redux
-  - This repository contains learning materials originally sourced and written for the Oak team at The New York Times.
-  - The courses within focus on developing an understanding of how the three tools that the Oak collaborative rich text editor relies on, React, ProseMirror, and Redux, actually work.
-  - [Buld Your Own: ProseMirror View](https://nytimes.github.io/oak-byo-react-prosemirror-redux/post/build-your-own-pm-view/)
-    - demonstrate how to build the core components of a ProseMirror view library.
-
 - https://github.com/mfoitzik/prosemirror-breakout-starter-kit
   - This is a ProseMirror starter kit that uses Webpack.
   - 未使用prosemirror-example-setup包，提供了具体配置示例

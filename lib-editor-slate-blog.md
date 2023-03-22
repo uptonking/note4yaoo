@@ -46,6 +46,11 @@ modified: 2023-02-05T19:03:12.722Z
 
 ## [新版编辑器 Slate.js 的设计 - 知乎](https://zhuanlan.zhihu.com/p/179253951)
 
+- 当我们把一个 Command 转换成多个 Operation 时，由于每次 Operation 都会触发onChange，那么比如插入一个节点就会收到多次数据的onChange 回调，这在 React 层面会导致多次 re-render。
+  - 假设，我们希望一个 Command 执行一次，也只通知 onChange 一次，该怎么去实现呢？
+  - 有一种做法是为每个 Command 新建一个 Operation 调用栈，当所有原子命令操作执行完毕之后，清空栈，通过判断栈的长度，然后再决定是否触发 onChange。
+  - 而在 Slate 中，利用 microTask 优雅地解决该问题。
+
 - 目前这套插件机制真是优雅（简陋），用的函数链式调用的方法，对调用次序敏感是个大问题。
   - slate-react层问题很多而且没写测试，用了model immer的情况下，为了性能和保持对象，多级嵌套用了dirtyPath层层刷新对象这个机制很蛋疼，还不如直接可变数据算了
 - 插件机制确实是简陋，但这只是最简单的一种思路。针对复杂的业务场景扩展可以像 webpack plugin或者vscode plugin去实现。

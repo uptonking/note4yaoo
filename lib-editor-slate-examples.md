@@ -21,6 +21,9 @@ modified: 2023-02-05T19:03:12.723Z
   - core依赖zustand、zustood、jotai、react-hotkeys-hook
   - code-block自研实现，不依赖第三方代码编辑器
   - A plugin framework for building rich text editors with slate.
+  - [Plate 17: Replace zustand by jotai_202209](https://github.com/udecode/plate/pull/1871)
+    - 已从代码中移除zustand，zustood相关代码只有一处
+    - jotai.v1
   - dev-xp
     - 表格方向键存在跳跃感
 

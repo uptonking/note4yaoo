@@ -9,12 +9,20 @@ modified: 2023-01-12T11:33:28.084Z
 
 # guide
 
+- 没必要执着于rope针对crdt的实现
+  - rope操作文本的api基本类似于字符串ot操作
+  - 参考字符串ot如何与crdt实现binding可以很容易实现rope与crdt的binding
+
 - https://github.com/JokerLHF/piece-table
   - ts 版实现 mini piece-table
 
 - [Rope理论与实践 for Java String](https://web.archive.org/web/20160306020543/https://www.ibm.com/developerworks/cn/java/j-ropes/)
 # rope-impl
 - https://vivaxy.github.io/examples/algorithms/rope/implement-1/index.js
+
+- https://github.com/josephg/jumprope /js
+  - Fast string editing in Javascript using skip lists
+  - Ropes have insertion and deletion time of O(|s| * log(N)) where |s| is the length of the inserted / deleted region N is the length of the string
 
 - https://github.com/huntwj/rope-ts /ts
   - implementation of the Rope data type
@@ -30,6 +38,9 @@ modified: 2023-01-12T11:33:28.084Z
     - The data structure combines a search tree and a rope.
     - For now, Cow List uses a partially persistent AVL tree.
 
+- https://github.com/marijnh/rope-sequence /js
+  - This module implements a single data type, RopeSequence, which is a persistent sequence type implemented as a loosely-balanced rope. 
+
 - https://github.com/linkdotnet/ts-stringoperations /ts
   - Implementation of some known string algorithms and data structures like: Rope, Trie, Knuth Morris Pratt, Boyer Moore, Levenshtein
 
@@ -39,6 +50,7 @@ modified: 2023-01-12T11:33:28.084Z
 ## rope-rs
 
 - https://github.com/josephg/jumprope-rs /rust
+  - https://github.com/josephg/jumprope /js
   - Simple, fast rope (fancy string) library built on top of Skiplists
   - A rope is a data structure for efficiently editing large strings, or for processing editing traces.
   - similar to ropey. Ropey supports a few more features (like converting line/column positions).
@@ -55,6 +67,25 @@ modified: 2023-01-12T11:33:28.084Z
   - Ropey is good at:
     - Handling frequent edits to medium-to-large texts. 
     - Handling Unicode correctly
+
+- https://github.com/AhoyISki/AnyRope
+  - AnyRope is an arbitrary data type rope for Rust, designed for similar operations that a rope would do, but targeted at data types that are not text.
+  - [AnyRope, a rope for anything! : rust](https://www.reddit.com/r/rust/comments/11qkm4i/anyrope_a_rope_for_anything/)
+    - this rope is a heavily modified fork of Ropey
+
+
+- https://github.com/lapce/xi-editor/tree/master/rust/rope
+  - A generic rope data structure built on top of B-Trees
+  - https://github.com/xi-editor/xi-editor/tree/master/rust/rope
+
+- https://github.com/logicalshift/flo_rope
+  - An attributed and streaming implementation of the rope data structure
+
+- https://gitlab.com/nathanfaucett/rs-persistent_rope
+  - An immutable persistent Rope data structure
+
+- https://github.com/prataprc/ppar
+  - implement persistent array using a variant of rope data structure.
 
 - https://github.com/noib3/crop /rust
   - crop's Rope is backed by a B-tree, ensuring that the time complexity of inserting, deleting or replacing a piece of text is always logarithmic
