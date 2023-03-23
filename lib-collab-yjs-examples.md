@@ -147,6 +147,8 @@ modified: 2022-09-21T15:47:41.340Z
   - https://docs.yjs.dev/
   - Yjs is a CRDT implementation that exposes its internal data structure as shared types. 
   - Shared types are common data types like Map or Array with superpowers: changes are automatically distributed to other peers and merged without merge conflicts.
+  - forks
+    - https://github.com/sthagen/yjs-yjs
 
 - https://github.com/josephg/reference-crdts
   - This repository contains simple proof-of-concept reference implementations of yjs, automerge and sync9's list types - all implemented in the same codebase. 

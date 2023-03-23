@@ -157,8 +157,8 @@ $$('[contenteditable]')
 ## 030
 
 - dev-to
-  - 拖拽图标的位置在block左上角，而不是垂直居中
   - 拖拽时原布局不变，只显示预期位置的指示线
+  - writing tests
 
 - dev-to-collab
   - 🐷 每次刷新页面，空白行会多一行
@@ -170,14 +170,30 @@ $$('[contenteditable]')
 - dev-later
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
-  - 将无序列表项拖进数字列表项时，数字列表项会增加？
+  - ordered-list
+    - 将无序列表项拖进数字列表项时，数字列表项会增加？
+    - 数字列表跟在符号列表后时，数字不会从0开始，需要在前面插入一个空行
   - initialDataLong示例，无法删除首行列表项
   - remove ramda
   - collab
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
 
-## 0321
+## 0323
+
+- dev
+  - 拖拽图标的位置在block左上角，而不是垂直居中
+
+- [CSS: Flex and "min-width" - makandra dev](https://makandracards.com/makandra/66994-css-flex-and-min-width)
+  - While the default min-width value is 0 (zero), for flex items it is auto. 
+  - This can make block elements take up much more space than desired, even stretching their container beyond the screen edge on small screens.
+
+- [Detecting which node is selected within a slate-react text editor - Stack Overflow](https://stackoverflow.com/questions/60708570/detecting-which-node-is-selected-within-a-slate-react-text-editor)
+  - const selectedNode = editor.selection && Editor.node(editor, editor.selection.focus); 
+
+- [获取鼠标位置（区分event对象中的 clientX、offsetX、screenX、pageX - 酷儿q - 博客园](https://www.cnblogs.com/Qooo/p/14124652.html)(https://segmentfault.com/a/1190000020949241)
+  - page为页面的意思，页面的高度一般情况client游览器显示区域装不下，所以会出现垂直滚动条。
+  - 鼠标距离页面初始page原点的长度。
 
 ## 0320
 
@@ -741,7 +757,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                         `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                              `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

@@ -62,8 +62,9 @@ modified: 2023-02-27T19:07:31.111Z
   - 完全自绘表格选区
   - 整个编辑器支持先渲染文本，此时表格渲染loading占位符，然后才渲染表格ui
 
-## slate-table-impl
+## table-impl
 
+### header
 - style-header-背景色
   - 设置在cell: prezly，方便实现表头行和表头列
   - 设置在tr/thead: gitbook
@@ -75,6 +76,11 @@ modified: 2023-02-27T19:07:31.111Z
 
 - table font-size
   - notion和飞书表格字体都是14px，正文是16px
+### context-menu
+- 插入行或列后，右键菜单位置异常
+  - 原因是
+
+- 右键菜单不稳定出现位置跳跃问题
 ## faq
 
 - 光标如何退出表格
