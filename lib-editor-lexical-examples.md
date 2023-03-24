@@ -38,6 +38,9 @@ modified: 2022-05-15T18:37:27.994Z
   - open-source Calendly alternative.
 # extensions
 
+# mobile
+- https://github.com/facebook/lexical-ios
+  - An extensible text editor/renderer written in Swift, built on top of TextKit, and sharing a philosophy and API with Lexical JavaScript.
 # utils
 - https://github.com/fedemartinm/lexical-minifier
   - Exporting the state of the lexical editor can result in a large and unoptimized JSON structure. 

@@ -16,7 +16,7 @@ modified: 2020-12-22T12:42:14.745Z
     - [edge: Add proxy support?](https://github.com/flathub/com.microsoft.Edge/pull/181)
 
 - chrome应用商店 #镜像站点
-  - [极简插件\_Chrome扩展插件商店\_优质crx应用下载](https://chrome.zzzmh.cn/)
+  - [极简插件_Chrome扩展插件商店_优质crx应用下载](https://chrome.zzzmh.cn/)
   - [收藏猫插件](https://chrome.pictureknow.com/)
 # ubuntu22.04
 
@@ -28,8 +28,8 @@ modified: 2020-12-22T12:42:14.745Z
 
 - 查看已安装
   - apt list --installed
-  - snap list / snap list --all 包含旧版本
-  - flatpak list / flatpak list --app 只包含app，不包含runtime
+  - snap list / --all 包含旧版本
+  - flatpak list / --app 只包含app，不包含runtime
   - flatpak history --reverse 查看更新记录
 
 - apt install --reinstall pkg 重新安装
@@ -196,6 +196,9 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
   - 方法很简单，只要将.desktop文件复制到指定位置即可，直接支持设置default open
 
 - [How to Change Mouse Cursor on Ubuntu](https://www.omgubuntu.co.uk/2022/03/how-to-change-mouse-cursor-on-ubuntu)
+
+- [files - How to preview DDS and WEBP images on nautilus? - Ask Ubuntu](https://askubuntu.com/questions/617047/how-to-preview-dds-and-webp-images-on-nautilus)
+  - nano ~/.local/share/thumbnailers/webp.thumbnailer
 
 ## software
 

@@ -215,9 +215,17 @@ modified: 2022-11-25T15:50:48.226Z
   - Lovefield is a relational database for web apps. 
   - Written in JavaScript, works cross-browser. 
   - 👉🏻 Provides SQL-like APIs that are fast, safe, and easy to use.
+  - 不支持原版SQL，支持`todoDb.select().from(item).where(item.done.eq(false)).exec();` 类SQL方法
+  - [Lovefield wraps IndexedDB objects in different classes](https://github.com/google/lovefield/blob/master/docs/dd/02_data_store.md)
   - https://github.com/teambition/ReactiveDB /201707/ts
     - Reactive ORM for Lovefield
     - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS
+
+- https://github.com/arthurhsu/lovefield-ts
+  - [ブラウザで動くSQLite alternativesとしてのLovefield - console.lealog();](https://lealog.hateblo.jp/entry/2023/03/03/092649)
+  - Lovefield Typescript port and modernization.
+  - All namespaces are flattened
+  - no Static schema: it was designed for use with Closure compiler.
 
 - https://github.com/anywhichway/reasondb /201702/js/不支持同步
   - https://anywhichway.github.io/reasondb

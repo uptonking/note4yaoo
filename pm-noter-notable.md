@@ -146,7 +146,9 @@ modified: 2022-12-19T02:01:20.161Z
   - 链接导出markdown，tag放在下一行
 # connections
 - 支持mdx，内置开源组件
-
+# knowledge-base
+- 个人知识搜索引擎
+  - 保存个人文档、笔记，浏览器书签
 # ux
 - 当视口宽度变窄时，tab页或宽卡片可以像tweetdeck一样折叠以缩小空间，折叠的过程可显示动画
 # faq

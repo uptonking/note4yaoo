@@ -140,3 +140,5 @@ modified: 2022-10-13T07:59:45.878Z
 
 - [Operational Transformations as an algorithm for automatic conflict resolution](https://medium.com/coinmonks/operational-transformations-as-an-algorithm-for-automatic-conflict-resolution-3bf8920ea447)
   - 示例流程图较多
+
+- [easysync 协同算法详解 - 码农教程](http://www.manongjc.com/detail/24-rpprwaiprjeuxml.html)

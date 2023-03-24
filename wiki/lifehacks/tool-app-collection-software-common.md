@@ -7,6 +7,11 @@ modified: 2022-11-07T10:26:22.510Z
 
 # tool-app-collection-software-common
 
+# guide
+
+- search
+  - 搜索某一类资料时，加上.pdf或.docx之类的后缀，可能质量更高
+
 # 软件选择参考
 
 - 优先选择: 长期更新，维护活跃，自用免费

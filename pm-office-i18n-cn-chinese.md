@@ -11,6 +11,7 @@ modified: 2023-01-14T15:47:04.431Z
 
 - 针对中文优化的参考
   - vditor lute, 对中文语境优化的 Markdown 引擎，支持 Go 和 JavaScript
+  - 直接参考中文编辑器，如wangEditor
 
 # 中文文档特色
 - 特殊符号

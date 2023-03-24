@@ -11,7 +11,7 @@ modified: 2022-08-21T09:57:42.969Z
 
 - ## 
 
-- ## 
+- ## 现在再去看Luckysheet,感觉有点功能太多.拖累了速度，不能按需
 
 - ## [hacker news: Luckysheet, an open-source spreadsheet ](https://news.ycombinator.com/item?id=23994619)
 - One reason I prefer Apple Numbers to Excel is that in Numbers you arrange tables on a canvas. 

@@ -133,6 +133,9 @@ modified: 2020-12-09T09:30:24.694Z
   - built with mongodb, express
   - Countly is a product analytics solution that helps teams track product performance and customer journey and behavior across mobile, web, and desktop applications. 
   - Countly relies on a wide diversity of SDKs for deployment
+  - 依赖express、mongoose
+  - [Download & Install Countly](https://github.com/osoner/countly-documentation/blob/master/installation/countly-server-installation.md)
+
 - grafana /Apache2/36.5kStar/202008/go
   - https://github.com/grafana/grafana
   - https://grafana.com/

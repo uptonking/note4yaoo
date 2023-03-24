@@ -153,7 +153,9 @@ modified: 2023-02-08T10:24:11.422Z
   - browser extension to learn a word per new tab!
 # browser-extensions-utils
 - https://github.com/PlasmoHQ/plasmo
-  - The Plasmo Framework is a battery-packed browser extension SDK made by hackers for hackers
+  - https://www.plasmo.com/
+  - The Plasmo Framework is a battery-packed browser extension SDK
+  - Build your extension and let Plasmo handle browser-specific behaviors and bundling
   - https://github.com/yousefamar/bookmarkdown
     - A browser extension that turns a webpage into a useful markdown note
 # devtools

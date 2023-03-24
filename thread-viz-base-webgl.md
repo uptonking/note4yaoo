@@ -53,7 +53,19 @@ modified: 2021-03-11T11:26:12.335Z
 
 - ## 
 
-- ## 
+- ## a self-contained WebGL flexbox layout engine, called Red Otter (otters are cute, red cars are fast).
+- https://twitter.com/tchayen/status/1638651222742691842
+  - It's a combination of: canvas-like WebGL renderer, TTF file parser, text rendering engine based on the SDF method, flexbox layout engine very very similar to Yoga (the one that powers React Native), and JSX support achieved by cheating IDEs to think that I am writing React.
+
+- What's the performance like compared to web rendering?
+  - I haven’t done any comparisons yet but it might be quite interesting.
+- Why it could be faster:
+  - Way less overhead (no DOM), 
+  - Potentially faster rendering (full CSS implementation requires supporting a lot of legacy stuff that might involve CPU rendering…
+- on the other hand I made a very restricted system that does literally one GPU draw call for the whole UI and all styling is GPU-computed. I bet there’s a huge potential to optimize array operations around it.
+- Why it could be slower?
+  - It’s written in TS.
+- I will at some point try rewriting part of it as a WASM module (potentially a huge win for the layout construction part) but on the other hand all GPU calls have to bridge back from WASM to JS which increase overhead a bit. Code should be structured carefully.
 
 - ## Chromium has queryLocalFonts API to list all available local fonts. 
 - https://twitter.com/pissang1/status/1629819868286709760

@@ -120,25 +120,38 @@ modified: 2022-11-08T19:04:00.289Z
   - A rich text editor based off of Quill.js and Ultradom, and using Svelte for UI.
   - 依赖 svelte、popperjs2、typewriter/delta
   - Built on the same data model as Quill.js, the Delta format, and using a tiny virtual DOM, Superfine, Typewriter aims to make custom rich text editors faster, easier, and more powerful
-- https://github.com/typewriter-editor/json-patch
-  - Immutable JSON Patch implementation based on RFC 6902 which adds operational transformation (OT) and last-writer-wins (LWW) support for syncing between client and server. 
-  - Does not support the full OT algorithm because `copy` and `move` operations cannot be transformed correctly in all cases, so operations must always be applied in correct order. 
-    - This means a central server is required to determine order.
-  - 👉🏻 json-patch provides a utility that will help sync an object field-by-field using the Last-Writer-Wins (LWW) algorithm. 
-    - This sync method is not as robust as operational transformation, but it only stores a little data in addition to the object and is much simpler
-    - It does not handle adding/removing array items, though entire arrays can be set. 
-    - It should work great for documents that don't need merging text like Figma
+
+- https://github.com/caiwuu/Typex /js/GPL/vanillajs
+  - https://caiwuu.github.io/Typex/
+  - 不依赖contentEditable
+  - 一款全新架构的编辑器内核，该内核不依赖contenteditable;自主实现了光标、模拟输入、模拟选区;
+  - 数据驱动状、自建数据模型，组件化，插件化，支持多光标，跨平台的设计
+  - https://github.com/caiwuu/richEditor /inactive
+    - 列出了几篇经典博客
 
 - https://gitee.com/modstart-lib/ueditor-plus
   - https://open-demo.modstart.com/ueditor-plus/_examples/
   - 功能丰富，中文友好
 
-- https://github.com/fastmail/Squire /ts/NoDeps
+- https://github.com/fastmail/Squire /ts/NoDeps/email
   - an HTML5 rich text editor, which provides powerful cross-browser normalisation
   - It was designed to handle email composition for the Fastmail web app.
   - The most important consequence of this (and where Squire differs from most other modern rich text editors) is that it must handle arbitrary HTML
   - This means that it can't use a more structured (but limited) internal data model (as most other modern HTML editors do) and the HTML remains the source-of-truth. 
   - In addition to its use at Fastmail, it is also currently used in production at ProtonMail, SnappyMail, StartMail, Tutanota, Zoho Mail, Superhuman and Teamwork Desk, as well as other non-mail apps including Google Earth
+
+- roosterjs /655Star/MIT/202211/ts/email/测试覆盖率高
+  - https://github.com/microsoft/roosterjs
+  - https://microsoft.github.io/roosterjs/index.html
+  - Rooster is a framework-independent JavaScript rich-text editor neatly nested inside one HTML `<div>` element.
+  - Rooster provides DOM level APIs (in roosterjs-editor-dom), core APIs (in roosterjs-editor-core), and formatting APIs (in roosterjs-editor-api) to perform editing operations.
+  - It is used by outlook.com, and some other projects.
+  - https://github.com/JiuqingSong/contentModel
+
+- https://github.com/froala/wysiwyg-editor /paid/NonOpen
+  - powerful JavaScript rich text editor
+  - [Can I use Froala Editor in an Open Source project? – Froala](https://wysiwyg-editor.froala.help/hc/en-us/articles/115000385169-Can-I-use-Froala-Editor-in-an-Open-Source-project-)
+    - No, none of our licenses allow you to use the Froala WYSIWYG HTML Editor in an Open Source project.
 # flat/linear-editors
 - https://github.com/NickStefan/tome-editor /201512/js
   - A hidden Input is the user input
@@ -160,14 +173,6 @@ modified: 2022-11-08T19:04:00.289Z
   - The render layer by svg is under development, see feature/svg
   - The export pdf feature is available now, see feature/pdf
   - [一个开源可分页的富文本编辑器_202212](https://zhuanlan.zhihu.com/p/592004147)
-
-- roosterjs /655Star/MIT/202211/ts/测试覆盖率高
-  - https://github.com/microsoft/roosterjs
-  - https://microsoft.github.io/roosterjs/index.html
-  - Rooster is a framework-independent JavaScript rich-text editor neatly nested inside one HTML `<div>` element.
-  - Rooster provides DOM level APIs (in roosterjs-editor-dom), core APIs (in roosterjs-editor-core), and formatting APIs (in roosterjs-editor-api) to perform editing operations.
-  - It is used by outlook.com, and some other projects.
-  - https://github.com/JiuqingSong/contentModel
 
 - ace-editor /25kStar/BSD/202211/js
   - https://github.com/ajaxorg/ace

@@ -13,6 +13,8 @@ modified: 2023-03-16T16:29:47.610Z
 
 # dev-to
 
+- 整理每个plugin的export
+
 - 子级列表的拖拽按钮仅靠列表项开始的黑点
 
 - 第一个一级标题通常字体会更大，一般不需要在标题折叠整篇文章
@@ -24,6 +26,9 @@ modified: 2023-03-16T16:29:47.610Z
 - 拖拽时原布局不变，只显示预期位置的指示线
   - notion、飞书
 # later
+- emoji
+
+- 中文优化
 
 ### 块级菜单
 
@@ -49,7 +54,8 @@ modified: 2023-03-16T16:29:47.610Z
   - 工具条、悬浮菜单
   - 右键菜单
 # maybe
-
+- devtools
+  - 可参考 ckeditor、prosemirror、tanstack-query/table
 # 顶部工具条 toolbar
 - 工具条比编辑器宽，编辑器左边会有空白
   - lexical，左右28，上8
@@ -66,10 +72,15 @@ modified: 2023-03-16T16:29:47.610Z
   - 变可选, list操作要与所有子元素一起
   - 变可选，toggle标题/list
   - 父级checkbox支持显示部分选中的intermediate中间态
+  - checkbox前的拖拽图标位置要往上一点
 
 - 若当前列表项为空，按回车应该转换为普通p标签
 
 - 多级列表的缩进宽度
   - notion 24
   - 飞书 24
+# image
+
+# mention
+
 # more

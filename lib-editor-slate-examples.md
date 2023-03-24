@@ -75,15 +75,6 @@ modified: 2023-02-05T19:03:12.723Z
     - Successful businesses need a fanbase. Use Prezly to build yours.
     - With Prezly, you can publish and share your content with your audience, directly. No algorithms, no middlemen, no BS.
 
-- https://github.com/mpkelly/react-editor-kit /22Star/MIT/202012/ts/inactive
-  - https://mpkelly.github.io/react-editor-kit/
-  - Compose a React-based text editor using a suite of standard plugins
-  - 依赖slate
-  - https://github.com/mpkelly/journal
-    - https://mpkelly.github.io/journal
-    - Embeddable Wiki available as Chrome extension, PWA or React component.
-    - 依赖slate二开、dexie3
-
 - https://github.com/JokerLHF/mini-slate
   - 使用 ts 实现 slate 富文本
 
@@ -112,6 +103,16 @@ modified: 2023-02-05T19:03:12.723Z
   - 基于slate构建文档编辑器
   - 依赖 ahooks、arco-react
   - 效果类似飞书，不支持拖拽
+
+- https://github.com/mpkelly/react-editor-kit /22Star/MIT/202012/ts/inactive
+  - https://mpkelly.github.io/react-editor-kit/
+  - Compose a React-based text editor using a suite of standard plugins
+  - 依赖slate.v0.50+
+  - https://github.com/mpkelly/react-editor-kit-examples
+  - https://github.com/mpkelly/journal
+    - https://mpkelly.github.io/journal
+    - Embeddable Wiki available as Chrome extension, PWA or React component.
+    - 依赖slate二开、dexie3
 
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!
@@ -218,6 +219,16 @@ modified: 2023-02-05T19:03:12.723Z
   - 依赖slate-react
   - https://github.com/portive/slate-plugin
     - Add beautiful and intuitive images and attachments to Slate with support for paste, drag and drop and `<input type="file">` uploads.
+
+- onlyoffice-sdkjs /190Star/AGPLv3/202302/js/参考sdk设计
+  - https://github.com/ONLYOFFICE/sdkjs
+  - https://api.onlyoffice.com/docbuilder/spreadsheetapi
+  - Contains API for all the included components client-side interaction.
+  - 通过TypedArray，将表格数据以二进制格式存储，通过字段压缩+共享字符串表来优化内存空间
+  - [精读onlyoffice在线表格存储设计](https://juejin.cn/post/7202252704978386999)
+
+- https://github.com/froala/wysiwyg-editor-node-sdk
+  - Node. JS SDK to ease the integration of Froala WYSIWYG Editor on server side.
 # slate-based-editors
 - boatproject-editor /1Star/MIT/202208/ts/plate/提交多/inactive
   - https://github.com/boatproject/editor
@@ -227,6 +238,7 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/sodenn/react-fluent-edit
   - https://react-fluent-edit.vercel.app/
   - Brings easy-to-use mentions, markdown and DnD (WIP) features to Slate.
+  - 非典型编辑器，更偏向输入框
 
 - https://github.com/webkom/lego-editor /ts
   - A React rich text editor written in TS with Slate.js for lego-webapp
@@ -375,8 +387,8 @@ modified: 2023-02-05T19:03:12.723Z
 ## slate-chinese
 
 - https://github.com/ls19930101/slate_editor
-  - slate框架开发的富文本工具,核心为contenteditable
-  - 支持超大文档 word、excel 列表复制粘贴, 进行了一些性能优化处理;
+  - slate框架开发的富文本工具, 核心为contenteditable
+  - 支持超大文档 word、excel 列表复制粘贴, 进行了一些性能优化处理; 
 # slate-plugins
 - https://github.com/imdbsd/slate-plugin
   - Rich text editor plugin for slate.js
@@ -536,6 +548,9 @@ modified: 2023-02-05T19:03:12.723Z
   - Skip the PlanetScale installation and instead create a database on Supabase
   - [Platforms Starter Kit: a template for site builders, multi-tenant platforms, and low-code tools.](https://demo.vercel.pub/platforms-starter-kit)
   - [How to Build a Multi-Tenant App with Custom Domains Using Next.js](https://vercel.com/guides/nextjs-multi-tenant-application)
+
+- https://github.com/grammarly/grammarly-for-developers
+  - Grammarly Text Editor SDK
 # slate-collab
 - https://github.com/yomorun/react-cursor-chat /slate无关/仅参考
   - React Component helps bring Figma's Cursor Chat to your web applications

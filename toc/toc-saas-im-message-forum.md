@@ -215,13 +215,26 @@ modified: 2021-05-14T15:04:15.333Z
   - https://github.com/msgbyte/tailchat
   - Alternative application of discord and slack. 
   - 后端依赖@socket.io/admin-ui、ejs、mongoose、moleculer-minio、redlock(redis)
-  - 前端依赖zustand、antd、ahooks、use-gesture(vanillajs)、immer、react-dnd、react-virtuosuo、
+  - 前端依赖zustand、antd、ahooks、use-gesture(vanillajs)、immer、react-dnd、react-virtuoso
   - 前端微内核架构+后端微服务架构，Tailchat 已经为集群化部署做好了准备。
   - 主要功能模块
     - 用户管理
     - 聊天系统
     - 插件系统
     - 开放平台
+
+- koishi /2kStar/MIT/202303/ts
+  - https://github.com/koishijs/koishi
+  - https://koishi.chat/
+  - Koishi 是一个跨平台、可扩展、高性能的跨平台聊天机器人框架。
+  - Koishi 提供了高度便利的控制台，让你无需基础让你在几分钟之内搭建自己的聊天机器人。
+  - 支持 QQ，Telegram，Discord，飞书等主流聊天平台，支持多账户和跨平台数据互通
+  - 提供在线插件市场，即使没有任何编程基础，也能轻松在控制台中下载安装插件
+  - 依赖satorijs、minato(db-driver)、cordis(aop)
+
+- https://github.com/satorijs/satori
+  - The Universal Messenger Protocol
+  - QQ Guild、Feishu、telegram、discord
 
 - https://github.com/baptisteArno/typebot.io
   - https://typebot.io/

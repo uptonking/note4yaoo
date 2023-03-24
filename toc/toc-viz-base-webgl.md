@@ -9,6 +9,16 @@ modified: 2020-10-05T06:18:29.671Z
 
 # popular
 
+- red-otter /83Star/MIT/202303/ts/NoDeps
+  - https://github.com/tchayen/red-otter
+  - https://red-otter.dev/
+  - Self-contained WebGL flexbox layout engine
+  - Canvas-like WebGL renderer which supports text rendering and arbitrary polygons (by triangulating them).
+  - Text rendering is based on a font atlas texture that uses SDF (signed distance field).
+  - Layout engine which resembles Facebook Yoga
+  - JSX support with DOM-like elements
+  - In terms of software philosophy, think about products such as Warp or Zed. They are extremely fast programs which implement their own GPU rendering.
+
 - deck.gl /10.3kStar/MIT/202210/ts
   - https://github.com/visgl/deck.gl
   - https://deck.gl/
@@ -96,11 +106,8 @@ modified: 2020-10-05T06:18:29.671Z
 - https://github.com/pixijs/pixijs
   - PixiJS is a rendering library that will allow you to create rich, interactive graphics and cross-platform applications and games without having to dive into the WebGL API or deal with browser and device compatibility.
   - PixiJS has full WebGL support and seamlessly falls back to HTML5's canvas if needed.
-
-# WebGPU
-
-
+# webgpu
 - https://gitlab.com/unconed/use.gpu
   - https://usegpu.live/
-  - Use.GPU / Live - react-without-react for WebGPU
+  - Use. GPU / Live - react-without-react for WebGPU
 # more-repos
