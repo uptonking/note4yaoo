@@ -10,6 +10,8 @@ modified: 2022-11-06T15:45:36.913Z
 # guide
 
 # popular
+
+
 - https://github.com/paularmstrong/normalizr
   - Many APIs, public or not, return JSON data that has deeply nested objects. Using data in this kind of structure is often very difficult for JavaScript applications, especially those using Flux or Redux.
   - Normalizr is a small, but powerful utility for taking JSON with a schema definition and returning nested entities with their IDs, gathered in dictionaries.
@@ -25,10 +27,14 @@ modified: 2022-11-06T15:45:36.913Z
   - It's designed for React/Redux/Flux apps. Inspired by Normalizr.
   - We can transform the whole Redux store, that can incude complex nested json objects, into a simple flat structure using Simplifr.
   - https://github.com/krispo/redux-json-tree
-# examples
+# json-editor/viewer
 - https://github.com/TexteaInc/json-viewer
   - a React component for displaying and editing JavaScript/TypeScript arrays and JSON objects.
   - https://github.com/mac-s-g/react-json-view
+
+- https://github.com/josdejong/jsoneditor
+  - A web-based tool to view, edit, format, and validate JSON
+# examples
 # parser-generator
 - https://github.com/uhop/stream-json
   - It can parse JSON files far exceeding available memory streaming individual primitives using a SAX-inspired API.

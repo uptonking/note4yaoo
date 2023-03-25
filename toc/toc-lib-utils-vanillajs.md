@@ -73,6 +73,11 @@ modified: 2021-03-01T10:54:24.828Z
   - Make web workers & worker threads as simple as a function call.
   - Offload CPU-intensive tasks to worker threads in node.js, web browsers and electron using one uniform API.
   - Uses web workers in the browser, worker_threads in node 12+ and tiny-worker in node 8 to 11.
+# MV**-framework
+- https://github.com/smalllong/lightue /js
+  - https://lightue.netlify.app/
+  - A lightweight and simple model-view framework inspired by Vue.js
+  - https://github.com/smalllong/lightuepress
 # render
 - https://github.com/arthurhovhannisyan31/offscreen-canvas-worker
   - Application allows to fetch and process data in the background using workers api.

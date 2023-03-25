@@ -347,6 +347,13 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/eiji-th/x-sheet
   - https://gitee.com/eigi/x-sheet
   - 高性能 web javaScript 电子表格
+  - 依赖exceljs
+
+- json5-sheet-editor /10Star/MIT/202208/js/luckysheet开发者
+  - https://github.com/smalllong/json5-sheet-editor
+  - https://smalllong.github.io/json5-sheet-editor/
+  - A simple and high efficient JSON5 based spreadsheet editor
+
 - simple-sheet /89Star/MIT/202208/ts
   - https://github.com/lvming6816077/simple-sheet
   - https://www.nihaoshijie.com.cn/mypro/simple-sheet/index.html

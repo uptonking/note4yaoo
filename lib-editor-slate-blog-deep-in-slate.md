@@ -20,6 +20,7 @@ modified: 2023-02-22T19:54:25.348Z
 - [深入slate.js ｘ 一起打造专属的富文字编辑器吧_202109](https://ithelp.ithome.com.tw/users/20139359/ironman/4447)
   - [Pre-Start × 微前言](https://ithelp.ithome.com.tw/articles/10264970)
   - [slate × Normalizing × Dirty-Path](https://ithelp.ithome.com.tw/articles/10280025)
+  - [Day 28. slate × Transforms × Node](https://ithelp.ithome.com.tw/articles/10281154)
 
 - blogs
   - [slate学习总结 insertText源码解读](https://juejin.cn/post/6967301474737094669)

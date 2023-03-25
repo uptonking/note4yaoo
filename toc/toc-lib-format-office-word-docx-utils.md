@@ -10,7 +10,8 @@ modified: 2023-01-09T11:03:32.533Z
 # guide
 
 # popular
-
+- https://github.com/byoungd/editor-to-word /ts
+  - Export HTML to word (.docx) only by browser 
 # examples
 
 # parser-generator

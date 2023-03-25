@@ -16,6 +16,9 @@ modified: 2020-12-20T15:43:51.808Z
 
 - Observer 观察者模式
   - MutationObserver
+
+- https://github.com/EnochGao/typescript-design-patterns
+  - typescript 设计模式 demo
 # design-patterns
 
 ## [Observer vs Pub-Sub pattern](https://hackernoon.com/observer-vs-pub-sub-pattern-50d3b27f838c)

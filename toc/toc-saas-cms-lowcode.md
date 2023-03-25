@@ -51,25 +51,6 @@ modified: 2023-01-20T21:59:47.792Z
 - https://github.com/AlessioGr/payload-plugin-lexical
   - Extends payload CMS with Meta's lexical RichText editor - a much more advanced and customizable richtext editor
 
-- tinacms /8.3kStar/apache2/202301/ts
-  - https://github.com/tinacms/tinacms
-  - https://tina.io/
-  - headless CMS for Markdown, MDX, and JSON.
-  - 编辑器从prosemirror迁移到slate
-  - Tina is a Git-backed headless cms
-  - ui界面并不是wysiwyg
-    - 而是侧边栏修改内容块，预览区显示效果，点击save会提交到github
-    - 用户修改内容块后会触发代码更新进而执行cicd
-  - 基于git实现cms的缺点
-    - 每次提交+action构建时间很长，不如基于后端db的方案
-    - 内容必须以文本/md的方式保存到github
-  - Both developers and editors collaborate on a single source of truth git
-  - Collaborate on content in real-time with live multi-user editing and change tracking.
-  - Block-based editing
-    - build out full pages using your pre-defined blocks
-    - need to manually import the react-tinacms-editor(依赖prosemirror) plugin
-  - [Unify .md & .mdx implementations](https://github.com/tinacms/tinacms/discussions/2869)
-    - react-tinacms-editor editor also uses prosemirror, while the default rich-text editor uses slate.
 
 - directus /19.5kStar/GPLv3/202301/ts/vue
   - https://github.com/directus/directus
@@ -90,6 +71,29 @@ modified: 2023-01-20T21:59:47.792Z
       - [Unable to run Directus locally](https://github.com/directus/directus/issues/17786)
       - You have to set SERVE_APP=true in your .env file in order to run the api in dev mode with the build app.
       - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
+
+
+- tinacms /8.3kStar/apache2/202301/ts
+  - https://github.com/tinacms/tinacms
+  - https://tina.io/
+  - headless CMS for Markdown, MDX, and JSON.
+  - 编辑器从prosemirror迁移到slate
+  - Tina is a Git-backed headless cms
+  - ui界面并不是wysiwyg
+    - 而是侧边栏修改内容块，预览区显示效果，点击save会提交到github
+    - 用户修改内容块后会触发代码更新进而执行cicd
+  - 基于git实现cms的缺点
+    - 每次提交+action构建时间很长，不如基于后端db的方案
+    - 内容必须以文本/md的方式保存到github
+  - Both developers and editors collaborate on a single source of truth git
+  - Collaborate on content in real-time with live multi-user editing and change tracking.
+  - Block-based editing
+    - build out full pages using your pre-defined blocks
+    - need to manually import the react-tinacms-editor(依赖prosemirror) plugin
+  - [Unify .md & .mdx implementations](https://github.com/tinacms/tinacms/discussions/2869)
+    - react-tinacms-editor editor also uses prosemirror, while the default rich-text editor uses slate.
+
+
 
 - webiny-js /6.3kStar/MIT/202301/ts/graphql/文档清晰/代码量大(很多包)
   - https://github.com/webiny/webiny-js
@@ -158,6 +162,10 @@ modified: 2023-01-20T21:59:47.792Z
   - 核心功能是提供了通过ui操作执行读写github的能力、文件编辑器、自动构建和发布
     - 文件内容可保存在本地或github
     - 文件内容的样式主题由dev控制
+
+- https://github.com/StaticJsCMS/static-cms
+  - https://www.staticcms.org/
+  - A Git-based CMS for Static Site Generators
 
 - https://github.com/fiatjaf/coisas /201907/js/inactive
   - a headless CMS specifically designed to let you edit files hosted in a GitHub repository. 

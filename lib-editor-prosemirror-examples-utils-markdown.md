@@ -18,6 +18,11 @@ modified: 2022-11-08T21:14:54.399Z
   - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
   - 不同于其他prosemirror项目，可配置支持的markdown特性
   - ⚠️️breaking: @milkdown/core@4.4.0(date202107) migrate from markdown-it to remark
+  - https://github.com/alexwkleung/Iris
+    - Iris is a WYSIWYG Markdown note-taking app. 
+    - Created with TypeScript and Tauri.
+    - Mode switching. Switch between WYSIWYG, Markdown, and Reading mode views.
+    - Milkdown (ProseMirror) and CodeMirror as the editors.
 
 - rich-markdown-editor /2.7kStar/BSD/202112/ts/markdown-it/archived
   - https://github.com/outline/rich-markdown-editor

@@ -645,7 +645,7 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/itoumlilt/CRDT-Spreasheet
   - CRDT based collaborative Spreadsheet
-  - 依赖concordant-crdtlib
+  - 依赖concordant-crdtlib、delta-crdts
 
 - https://github.com/Roffelchen/spreadsheet-crdt
   - /yjs

@@ -83,6 +83,9 @@ modified: 2022-10-04T23:32:30.824Z
 - https://github.com/saranrapjs/prosemirror-automerge /201904/js/inactive
   - experiment with wiring automerge up to ProseMirror
   - The basic idea is to have a ProseMirror plugin that works similarly to the collab plugin: steps which originate from the editor are translated to an Automerge document, and changes to a "remote" Automerge document are translated back to the ProseMirror document as steps.
+
+- https://github.com/ShenQingchuan/HeteroDoc
+  - Heterocube Cloud Collaborative Docs. Built with Vue3 + TypeScript + ProseMirror + Y.js + DeepKit
 # ot-like/prosemirror-collab
 - bear-plus /5Star/ISC/202008/js/ejs/inactive
   - https://github.com/yk9331/bear-plus

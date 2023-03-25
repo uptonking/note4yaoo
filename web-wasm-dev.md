@@ -94,6 +94,8 @@ People should not try to turn WASM into a cult. Tech is meant to be used and lev
     - 声明变量时提供默认类型，加快JIT介入
     - 不要轻易改变变量的类型
     - Node.js像Java一样也存在JIT预热？
+# blogs
+- [From Web SQL to SQLite Wasm: the database migration guide - Chrome Developers](https://developer.chrome.com/blog/from-web-sql-to-sqlite-wasm/)
 # more
 - [Node.js大家是用什么方式链接C++代码的](https://www.v2ex.com/t/568399)
 - 打算用 electron 做 UI，CPP 做内核。但是在选择使用什么方式在 C++和 electron 之间搭桥的时候遇到了困难。
@@ -101,6 +103,7 @@ People should not try to turn WASM into a cult. Tech is meant to be used and lev
   - 第一个选择 node-ffi 看上去不错但是一方面调用的时候开销大，另一方面似乎不太稳定而且缺乏维护（在 Github 上面最近一次 commit 还是在 1 月份） 
 - 另一个是使用 node-addon 的方法，用 node-gyp 编译 C++然后再链接。
   - 第二个选择用 node-gyp 编译 C++似乎是个官方方案，但是运行例子 node-gyp 一直报错，看了 issue list 才知道问题已经存在很久没人修了，继续深入还得花一点时间。
+
 - 仅供参考
   1. C++起个服务器，nodejs 与服务器交互。
   2. C++编译成 web asm，nodejs 直接调用

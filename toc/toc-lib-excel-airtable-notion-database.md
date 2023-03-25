@@ -283,11 +283,12 @@ modified: 2022-08-21T10:02:05.129Z
   - The back end is a set of Serverless functions for making DDL calls to PostgreSQL and configuring Hasura GraphQL server.
   - The PostgreSQL database schemas can be accessed directly with psql for data import/export and integrations with other tools.
 
+- https://github.com/qwtel/sqlite-viewer-vscode
+  - A quick and easy SQLite viewer for VSCode, inspired by DBBrowser for SQLite and Airtable.
+
 - https://github.com/seatable/seatable /未开源
   - SeaTable is a spreadsheet/database like Airtable.
   - SeaTable is originally built by the Seafile team (haiwen/seafile). 
   - The source code will be uploaded to GitHub later. 
   - https://github.com/seatable/dtable-ui-component
-- https://github.com/qwtel/sqlite-viewer-vscode
-  - A quick and easy SQLite viewer for VSCode, inspired by DBBrowser for SQLite and Airtable.
 # more

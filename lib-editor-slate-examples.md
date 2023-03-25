@@ -18,14 +18,14 @@ modified: 2023-02-05T19:03:12.723Z
   - https://plate.udecode.io/
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，但list内所有item不支持拖拽
-  - core依赖zustand、zustood、jotai、react-hotkeys-hook
+  - core依赖jotai、react-hotkeys-hook
   - code-block自研实现，不依赖第三方代码编辑器
   - A plugin framework for building rich text editors with slate.
   - [Plate 17: Replace zustand by jotai_202209](https://github.com/udecode/plate/pull/1871)
     - 已从代码中移除zustand，zustood相关代码只有一处
     - jotai.v1
   - dev-xp
-    - 表格方向键存在跳跃感
+    - 表格方向键存在跳跃感，但总体正常
 
 - editablejs /17Star/GPL/202208/ts/自绘光标/模型层block
   - https://github.com/editablejs/editable
@@ -229,7 +229,18 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/froala/wysiwyg-editor-node-sdk
   - Node. JS SDK to ease the integration of Froala WYSIWYG Editor on server side.
+
+- https://github.com/mbehr1/json-editor
+  - slate.js based json editor to embed into webpages
+
+- https://github.com/dictyBase/dicty-components-page-editor /202107/ts/inactive
+  - https://dictybase.github.io/dicty-components-page-editor/
+  - Reusable page editor built using Slate
 # slate-based-editors
+- https://github.com/raralabs/rara-rte /ts
+  - https://rte.raralabs.live/
+  - A rich text editor built on top of slate.js
+
 - boatproject-editor /1Star/MIT/202208/ts/plate/提交多/inactive
   - https://github.com/boatproject/editor
   - 依赖 plate、slate、styled-components
@@ -259,8 +270,8 @@ modified: 2023-02-05T19:03:12.723Z
   - DSlate 是一个基于 Slate 构建的 Ant Design 风格的富文本编辑器
   - core依赖slate-react
 
-- https://github.com/mbehr1/json-editor
-  - slate.js based json editor to embed into webpages
+- https://github.com/xeajs/slate-react-editor
+  - 基于 slatejs 的高度可定制的富文本编辑器
 
 - slatejsx /48Star/Apache2/202203/js/antd
   - https://github.com/slatejsx/slatejsx
@@ -290,6 +301,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/tiddly-gittly/slate-write
   - WYSIWYG editor for TiddlyWiki. (WIP)
+  - 一个用于 太微TiddlyWiki 的所见即所得编辑器
 
 - https://github.com/usunil0/slate-paged /202010
   - https://slate-paged-demo.vercel.app/
@@ -366,11 +378,18 @@ modified: 2023-02-05T19:03:12.723Z
   - https://www.quillforms.com/
   - Open Source TypeForm Alternative Based on React JS and Typescript | Best Typeform Clone
 
+- https://github.com/kledk/react-chief-editor
+  - https://kledk.github.io/react-chief-editor/
+  - A rich-text editor for React, built ontop of Slate.js with an hooks-based addon architecture.
+
+- https://github.com/eniolajayi/easy-writer /js/inactive
+  - A document editor built with React and Slate.js. with multi-edit feature
+
 - more-slate-editor
   - https://github.com/marsprince/slate-vue
+  - https://github.com/uptoo/slate-editor
 
 - deprecated
-  - https://github.com/kanweiwei/easy-editor
   - https://github.com/roast-cms/french-press-editor
   - https://github.com/Canner/canner-slate-editor
   - https://github.com/chatterbugapp/chatterslate
@@ -380,25 +399,47 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/naufaldi/slate-js-editor
   - Framer Motion, NextJS and Chakra UI
 
-- https://github.com/kanweiwei/slatets
-  - slate.v0.37源码解读
-  - https://github.com/kanweiwei/easy-editor
+## slate-view-layer
+
+- https://github.com/minheq/stela
+  - Rich Text Editor Slate port in Flutter.
+
+## slate-v0.47
+
+- https://github.com/grafana/grafana
+  - ui依赖slate.v0.47.8
+
+- https://github.com/wowlusitong/re-editor /201908
+  - 一个开箱即用的React富文本编辑器
+
+- https://github.com/concord-consortium/slate-editor
+  - Rich text editor based on Slate 0.47
 
 ## slate-chinese
 
 - https://github.com/ls19930101/slate_editor
   - slate框架开发的富文本工具, 核心为contenteditable
   - 支持超大文档 word、excel 列表复制粘贴, 进行了一些性能优化处理; 
+
+- https://github.com/kanweiwei/slatets
+  - slate.v0.37源码解读
+  - https://github.com/kanweiwei/easy-editor
 # slate-plugins
 - https://github.com/imdbsd/slate-plugin
   - Rich text editor plugin for slate.js
 
 ## markdown
 
-- https://github.com/hanford/remark-slate
+- https://github.com/inokawa/remark-slate-transformer /76Star/MIT/202303/ts
+  - remark plugin to transform remark syntax tree (mdast) to Slate document tree, and vice versa. 
+  - 支持slate.v0.47和v0.50+
+  - Made for WYSIWYG markdown editor.
+  - All nodes in mdast syntax tree are supported, including nodes created with remark-gfm
+  - And also have experimental support for custom AST.
+
+- https://github.com/hanford/remark-slate /115Star/MIT/202211/ts
   - Transform the contents of a slate 0.50+ editor into markdown and back again.
-- https://github.com/inokawa/remark-slate-transformer
-  - remark plugin to transform remark syntax tree (mdast) to Slate document tree, and vice versa. Made for WYSIWYG markdown editor.
+
 - https://github.com/accordproject/markdown-transform
   - A transformation and parsing framework for converting markdown content to HTML, Slate (for rich-text editing) and other structured document object models (DOMs).
   - 提供了很多子包，本身类似于remark
@@ -407,6 +448,9 @@ modified: 2023-02-05T19:03:12.723Z
   - slatejs-based docx editor for demonstration of docxjs.
   - https://github.com/zhangyu836/docxjs
     - Javascript port of python-docx.
+
+- https://github.com/orbiting/mdast /201907/js/inactive
+  - utilities we've used to combine mdast and Slate in our CMS—Publikator.
 
 ## table
 
@@ -473,12 +517,6 @@ modified: 2023-02-05T19:03:12.723Z
   - 支持增加或取消缩进
   - 支持list与paragraph转换
 
-- https://github.com/mwood23/slate-test-utils
-  - A toolkit to test Slate rich text editors with Jest, React Testing Library, and hyperscript! 
-  - There's so many user input mechanisms, edge cases, selection, state, normalization, and more to keep in mind when developing.
-  - It's an abstraction that uses hyperscript to generate editor states that can be tested in a JSDOM environment with a bit of black magic.
-  - It's well documented that JSDOM does not support `contenteditable`
-
 - https://github.com/lukesmurray/use-slate-with-extensions
   - https://use-slate-with-extensions.netlify.app/
   - a simple, powerful, and tiny (< 2KB) hook which helps you build self contained and composable extensions for Slate. 
@@ -496,6 +534,13 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/palerdot/react-slite /代码过于简单
   - This react component provides a slack like rich text editing experience powered by slate.js
 # utils
+- https://github.com/mwood23/slate-test-utils
+  - A toolkit to test Slate rich text editors with Jest, React Testing Library, and hyperscript! 
+  - There's so many user input mechanisms, edge cases, selection, state, normalization, and more to keep in mind when developing.
+  - It's an abstraction that uses hyperscript to generate editor states that can be tested in a JSDOM environment with a bit of black magic.
+  - It's well documented that JSDOM does not support `contenteditable`.
+  - https://github.com/AsterMiha/slate-editor-tests
+
 - https://github.com/rockettomatooo/slate-react-presentation /js
   - a small package that lets you render a slate.js document without the overhead of the actual editor.
 
@@ -565,39 +610,13 @@ modified: 2023-02-05T19:03:12.723Z
     - It does not handle adding/removing array items, though entire arrays can be set. 
     - It should work great for documents that don't need merging text like Figma
 
-- https://github.com/solidoc/slate-ot /ts/202006
-  - Operation Transformations for slate 0.5x.
-  - 依赖sharedb
-- https://github.com/Immortalin/slate-operational-transform
-  - Slate JS Editor Operational Transform Example using ShareDB (used in production at Narration Box)
-  - Invoking JSON0-ot-diff on every edit is not very efficient.
-- https://github.com/onechunlin/collaborative-docs
-  - 基于 Slate 和 ShareDb 实现的基于 OT 算法的协同文档
-- https://github.com/timbuckley/slate-collaborative
-  - A collaborative implementation for the slatejs editor using operational transform
-  - 依赖很少
-
 - https://github.com/4molybdenum2/Metanoia
   - Metanoia is a Real-time Collaborative Text Editor made with the help of Slate JS and Socket. IO
   - onChange直接发送op，未使用冲突处理算法
+
 - https://github.com/Regloom/slatesyncedit
   - 每次同步全量数据
   - 注意测试时要用相同url代表在一个房间里面
-
-- https://github.com/cudr/slate-collaborative /ts/inactive/automerge
-  - A example of a collaborative editor using Slate and Automerge
-  - 依赖slate.v0.59
-  - Based on idea of https://github.com/humandx/slate-automerge
-  - https://github.com/mms-gianni/slate-collaborationserver
-
-- https://github.com/geoffreylitt/automerge-slate-playground /v0.59
-  - Playing with Automerge + Slate
-
-- slate-automerge
-  - https://github.com/ahixon/slate-sync-bridge /201906
-
-- https://github.com/itoumlilt/crdt-md-editor /ts/slate/CouchDB
-  - React Typescript CRDT based Collaborative Markdown Editor
 
 - https://github.com/BitPhinix/slate-yjs
   - https://docs.slate-yjs.dev/
@@ -610,14 +629,42 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/6thfdwp/crdt-editor
   - A collaborating editor based on Slate and Yjs
+  - 不依赖slate-yjs
+
+- https://github.com/itoumlilt/crdt-md-editor /202209/ts/slate/CouchDB
+  - React Typescript CRDT based Collaborative Markdown Editor
+  - The current demo is implemented on top of PouchDB which offers replication and offline support, but can be easily ported on other equivalent backends. 
+
+- https://github.com/geoffreylitt/automerge-slate-playground /v0.59
+  - Playing with Automerge + Slate
+
+- https://github.com/cudr/slate-collaborative /ts/inactive/automerge
+  - A example of a collaborative editor using Slate and Automerge
+  - 依赖slate.v0.59
+  - Based on idea of https://github.com/humandx/slate-automerge
+  - https://github.com/mms-gianni/slate-collaborationserver
+
+- https://github.com/ahixon/slate-sync-bridge /201906
+  - slate-automerge
+
+- https://github.com/onechunlin/collaborative-docs
+  - 基于 Slate 和 ShareDb 实现的基于 OT 算法的协同文档
+
+- https://github.com/solidoc/slate-ot /ts/202006
+  - Operation Transformations for slate 0.5x.
+  - 依赖sharedb
+
+- https://github.com/Immortalin/slate-operational-transform
+  - Slate JS Editor Operational Transform Example using ShareDB (used in production at Narration Box)
+  - Invoking JSON0-ot-diff on every edit is not very efficient.
+
+- https://github.com/timbuckley/slate-collaborative
+  - A collaborative implementation for the slatejs editor using operational transform
+  - 依赖很少
 
 - https://github.com/grimmer0125/slatejs-exp /201807/js
   - use socket.io to sync & show other people's cursors (carets) when collaborating to edit the same content by slatejs editor
 # more-slate
-- https://github.com/tiddly-gittly/slate-write
-  - A WYSIWYG editor for TiddlyWiki. (WIP)
-  - 一个用于 太微TiddlyWiki 的所见即所得编辑器。 
-
 - https://github.com/vip-git/universal-json-schema
   - https://react-jsonschema-form-material-ui.github56.now.sh/
   - Universal JSON Schema Form - Currently Support for React - Material UI components for building Web forms from JSON Schema.
@@ -632,15 +679,6 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/react-page/react-page
   - 使用redux作为状态管理
   - 提供了 @react-page/plugins-slate
-
-- https://github.com/grafana/grafana
-  - ui依赖slate.v0.47.8
-
-- https://github.com/wowlusitong/re-editor /201908
-  - 一个开箱即用的React富文本编辑器
-
-- https://github.com/concord-consortium/slate-editor
-  - Rich text editor based on Slate 0.47
 
 - https://github.com/Mirrorgo/slatejs
   - 基于slate.js实现一个富文本编辑器, 用以学习富文本编辑器相关知识
