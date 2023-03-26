@@ -257,6 +257,12 @@ modified: 2021-05-14T15:04:15.333Z
 
 - https://github.com/fonoster/fonoster
   - open-source alternative to Twilio
+
+## chatbot
+
+- https://github.com/mckaywrigley/chatbot-ui
+  - https://www.chatbotui.com/
+  - Chatbot UI is an advanced chatbot kit for OpenAI's chat models built on top of Chatbot UI Lite using Next.js, TypeScript, and Tailwind CSS.
 # mastodon
 - mastodon /34.8kStar/AGPLv3/202211/js/ruby
   - https://github.com/mastodon/mastodon

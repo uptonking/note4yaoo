@@ -34,7 +34,7 @@ modified: 2021-01-01T20:06:36.094Z
 - **linaria生成样式的原理解析**
 - `styled`纯静态样式
 
-``` JS
+```JS
 // 组件源码
 const MyLinariaTitle = styled.h1 `
     color: teal;
@@ -56,7 +56,7 @@ react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(MyLinariaTitle, null,
 
 - `css()`工具方法编写静态样式不存在runtime，比styled方式少了一层react组件
 
-``` JS
+```JS
 // 组件源码
 const myH2class = css `
     color: lightcoral;
@@ -71,8 +71,13 @@ react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", {
 }, "h2\u6807\u9898");
 ```
 
-# docs
+# issues
+- [webpack build silently fails after Linaria update](https://github.com/callstack/linaria/issues/1135)
+  - Short answer: Webpack + linaria plugin with custom babel options
 
+- [Build linaria is very slow using webpack5](https://github.com/callstack/linaria/issues/1199)
+  - Digging into another issue, I found that linaria will trigger @linaria/babel-preset/lib/transform-stages/helpers/loadLinariaOptions.js's loadLinariaOptions will multiple times on the same files.
+# docs
 - ## [Why use Linaria](https://github.com/callstack/linaria/blob/master/docs/BENEFITS.md)
 - Advantages over regular CSS
   1. Selectors are scoped
@@ -107,7 +112,7 @@ react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", {
   - The basic concept is that we add a className to represent the theme to our root element, 
   - and use different values for our CSS variables based on the theme
 
-``` typescript
+```typescript
 // Create class names for different themes
 const a = css`
   --color-primary: #6200ee;
@@ -133,7 +138,7 @@ const Button = styled.button`
   - take advantage of CSS child selectors to theme the elements based on this parent class name.
   - This approach works in all browsers, and is the best approach
 
-``` typescript
+```typescript
 <Container className="theme-dark" />
 
 const Header = styled.h1`
@@ -177,7 +182,7 @@ const Header = styled.h1`
   - You could use something like @callstack/react-theme-provider or write your own HOC.
   - Note that this approach also uses CSS custom properties under the hood since function interpolations compile down to CSS custom properties.
 
-``` typescript
+```typescript
 const Button = withTheme(styled.button`
   background-color: ${props => props.theme.accent};
 `);
@@ -191,7 +196,7 @@ const Button = withTheme(styled.button`
   - Inline styles are the most straightforward way to use dynamic styles. 
   - Pass a style object with the dynamic styles, and you're done
 
-``` typescript
+```typescript
 export function Pager({ index, children }) {
   return (
     <div style={{ transform: `translateX(${index * 100}%)` }}>
@@ -204,7 +209,7 @@ export function Pager({ index, children }) {
 - CSS custom properties
   - custom properties cascade, so if you don't override the value for the current element, and a custom property with the same name exists for a parent element, it'll be used instead.
 
-``` typescript
+```typescript
 import { css } from 'linaria';
 
 const box = css`
@@ -226,7 +231,7 @@ export function Box({ size }) {
   - `data-*` attributes allow us to store extra information on standard, semantic HTML elements 
   - without other hacks such as non-standard attributes, extra properties on DOM, or Node.setUserData().
 
-``` typescript
+```typescript
 import { css } from 'linaria';
 
 const box = css`
@@ -252,11 +257,10 @@ export function Box({ color, valid }) {
 ```
 
 # faq
-
 - 如何使用object style形式的样式
   - https://github.com/callstack/linaria/issues/464
 
-``` typescript
+```typescript
 // 暂不支持
 const Title = styled.h1({ color: 'red' })
 

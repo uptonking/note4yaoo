@@ -175,6 +175,7 @@ $$('[contenteditable]')
     - 拖拽时，不相关的列表项也会抖动
     - 将无序列表项拖进数字列表项时，数字列表项会增加？
     - 数字列表跟在符号列表后时，数字不会从0开始，需要在前面插入一个空行
+    - 列表项A的兄弟项B无法拖到A的位置，即无法替换A，B会自动变成A的子级
   - initialDataLong示例，无法删除首行列表项
   - remove ramda
   - collab
@@ -791,7 +792,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                                         `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                                          `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

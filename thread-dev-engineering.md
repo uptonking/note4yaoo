@@ -13,7 +13,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## [CSS-only Widgets Are Inaccessible — Adrian Roselli](https://adrianroselli.com/2023/03/css-only-widgets-are-inaccessible.html)
+- https://twitter.com/aardrian/status/1639696117490233344
+  - Loosely, those CSS-only controls (such as a hamburger trigger that uses the checkbox hack) you see (from every Dribble build or Codepen contest) are generally a problem for many users.
 
 - ## some of my white whales so far in my career:
 - https://twitter.com/tmcw/status/1635760871212216323
@@ -58,9 +60,9 @@ modified: 2021-01-21T17:52:13.333Z
 - I've generalized this into what I've dubbed "the co-location principle", which means that the tighter coupling between two files, the closer they should be in the directory hierarchy. Shared files are moved to the lowest possible level that are in all paths of the consumers.
 
 - I’ve been doing this since forever. I prefer it because:
-  01.     It’s very easy to see which files have no tests
-  02.     I can easily jump from test to implementation 
-  03.     I never have to decide how to name test files
+  1.      It’s very easy to see which files have no tests
+  2.      I can easily jump from test to implementation 
+  3.      I never have to decide how to name test files
   - IMHO the (anti) pattern of putting test files in a separate folder stems from compiled languages like Java where otherwise tests would end up in the compiled code. JavaScript doesn’t have this issue.
   - Rust is even sillier. It puts the test (optionally) in the same sourcefiles 
 

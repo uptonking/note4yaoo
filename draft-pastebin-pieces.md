@@ -22,8 +22,6 @@ https://us05web.zoom.us/j/7754416829?pwd=TUlMR3dMWEpaajdVR1VNdDR5N29NZz09
 
 ---
 
-
-
 ```JS
 const unsubscribe2 = editor.selection.onSelectionChange(info => {
   console.log(';; sel-chge ', info.type);
@@ -288,3 +286,4 @@ $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$nu
   - mom
     - 6212 2518 0900 0758 487
     - 6212251809000758487
+
