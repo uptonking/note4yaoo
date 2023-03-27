@@ -55,6 +55,9 @@ modified: 2022-11-06T11:21:27.612Z
 - https://github.com/w3tecch/typeorm-seeding
   - A delightful way to seed test data into your database.
   - Inspired by the awesome framework laravel in PHP and of the repositories from pleerock
+
+- https://github.com/datacosmos-br/cloudbeaver
+  - Cloud Database Manager - Community Edition.
 # db-cache
 - https://github.com/CyCraft/magnetar
   - Magnetar is a state management library.

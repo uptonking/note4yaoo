@@ -11,13 +11,6 @@ modified: 2023-02-06T09:14:21.143Z
 # openapi
 - OpenAPI 规范（OAS）是一种通用的、和编程语言无关的 API 描述规范，使人类和计算机都可以发现和理解服务的功能，而无需访问源代码、文档或针对接口进行嗅探。正确定义后，使用者可以使用最少的实现逻辑来理解远程服务并与之交互。
   - OpenAPI 始于 Swagger 规范，Swagger 规范已于 2015 年捐赠给 Linux 基金会后改名为 OpenAPI，并定义最新的规范为 OpenAPI 3.0。
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 # swagger
 
 ## [swagger跟openAPI不同](https://blog.csdn.net/fanzhongcang/article/details/102695534)

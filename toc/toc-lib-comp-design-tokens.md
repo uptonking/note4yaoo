@@ -6,12 +6,20 @@ modified: 2021-01-01T22:09:59.545Z
 ---
 
 # toc-lib-comp-design-tokens
-
 - 设计样式时theming可参考
   - material, bootstrap, flat/metro, neumorphism, monochrome
 
-# style-dictionary-examples
+## w3c-design-token
 
+- https://github.com/drwpow/cobalt-ui
+  - https://cobalt-ui.pages.dev/
+  - Cobalt turns your W3C design tokens into code
+  - The general approach is similar to Style Dictionary or Universal Design Tokens to solve the problem of creating a single source of truth for design tokens that is platform-agnostic and easy to build tooling for.
+  - https://github.com/LiamMartens/w3c-design-tokens-lib
+
+- https://github.com/lukasoppermann/style-dictionary-utils
+  - a collection of parsers, filters, transformers and formats for Style Dictionary that make working with w3c design tokens a lot easier.
+# style-dictionary-examples
 - https://github.com/infor-design/design-system
   - https://design.infor.com/code/ids-enterprise/latest
   - including design tokens, which are design metadata, and basic tools like Sketch files and icons.
@@ -81,9 +89,7 @@ modified: 2021-01-01T22:09:59.545Z
 - https://github.com/lukasoppermann/design-tokens
   - Figma plugin to export design tokens to json in an amazon style dictionary compatible format.
   - https://github.com/lukasoppermann/design-token-transformer
-
 # theo-examples
-
 - theo tokens文档展示的模版
   - 最新文档：polaris、schedio
   - 旧版文档：localiza、orbit、pagnet、siku、sparkpost-matchbox
@@ -118,9 +124,7 @@ modified: 2021-01-01T22:09:59.545Z
   - https://github.com/ubergrape/grape-ds
   - https://github.com/wuerthcs/aurora-design-token
   - https://github.com/alanfernandesti/localiza-designtokens
-
 # design-tokens-tools
-
 - https://github.com/salesforce-ux/theo
   - /1.5kStar/BSD/201810
   - 支持编译输出scss, less, styl, js, html, json, xml, Custom Format (function)
@@ -178,9 +182,7 @@ modified: 2021-01-01T22:09:59.545Z
 - https://github.com/amzn/sketch-constructor
   - Read/write/manipulate Sketch files in Node without Sketch plugins!
   - 提供了示例 you can generate a Sketch file from a Style Dictionary. 
-
 # ref
-
 - Has anyone catalogued popular theme token systems where I can read about them? They are so similar AND unique.
 - https://twitter.com/dbanksDesign/status/1341449787468439553
   - One has tokens like color & space; another has colors & spacing; another has colors & space.

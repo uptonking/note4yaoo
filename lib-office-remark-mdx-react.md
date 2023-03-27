@@ -14,7 +14,7 @@ modified: 2021-06-02T16:46:45.119Z
   - transform: 对mdxast使用remark插件提取code blocks
   - generate: 定制输出 mdxhast -> jsx
 
-# ref
+# remark
 
 - jsxtreme-markdown /81Star/MIT/202006/js
   - https://github.com/mapbox/jsxtreme-markdown
@@ -30,3 +30,7 @@ modified: 2021-06-02T16:46:45.119Z
   - 主要语法扩展包括gfm、code-tabs、callouts、embed
   - ReadMe's flavored Markdown parser and MDX rendering engine
   - this package exports a function which takes a string of ReadMe-flavored markdown and returns a tree of React components
+
+# mdx-examples
+- https://github.com/wereHamster/stories
+  - A simple photo story website built in top of Next.js, React, and MDX.

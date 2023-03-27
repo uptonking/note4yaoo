@@ -13,7 +13,18 @@ modified: 2021-01-04T17:07:34.171Z
   - amazon style-dictionary
 
 - ref
-  - [DTCG Glossary](https://www.designtokens.org/glossary/)
+  - [Native modes and theming support](https://github.com/design-tokens/community-group/issues/210)
+    - Currently(202303) the spec does not support theming
+
+## w3c-design-token
+
+- https://github.com/drwpow/cobalt-ui
+  - https://cobalt-ui.pages.dev/
+  - Cobalt turns your W3C design tokens into code
+  - The general approach is similar to Style Dictionary or Universal Design Tokens to solve the problem of creating a single source of truth for design tokens that is platform-agnostic and easy to build tooling for.
+
+- https://github.com/lukasoppermann/style-dictionary-utils
+  - a collection of parsers, filters, transformers and formats for Style Dictionary that make working with w3c design tokens a lot easier.
 
 ## Adobe DSP
 

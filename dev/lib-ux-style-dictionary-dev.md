@@ -24,21 +24,22 @@ modified: 2021-05-13T03:05:54.852Z
   - 没有提供拼接引用变量名的api，但已支持直接替换引用变量
   - 没有提供简单算术运算的方法，但可利用自定义transformer
 
+- tips
+  - 参考 w3c-design-tokens 规范，实现json解析与转换
+  - 基于theme specification定义输出design tokens的类别和名称
+    - 具体可参考theme-ui预置主题对应的(https://theme-ui.com/demo/)，可转换到w3c格式
+  - 可以将每个组件的design tokens输出到单独的文件(利用自定义filter)
+  - 可以输出扁平化无嵌套的样式变量，
+    - 也可以输出时设置最外层的选择器名，如`:root{}` 或 `.dark-theme{}`
+  - 输出的值也可以使用 css vars
+  - 使用js对象书写color的value时，hsl不会自动计算
+
 - style-dictionary不支持名为value的中间属性名，如`{ "color": { "font": { "value": "#111" , "secondary": { "value": "#333" }, } } }`
   - 若在中间设置了value属性，则同级和下级属性都不会输出了
   - 变通方案：对要输出的中间属性名，增加一个中间属性名 `.val`
 
 - extensions
   - 可自定义输出的format，自动生成简单的单页文档，类似theo输出html
-
-- tips
-  - 基于theme specification定义输出design tokens的类别和名称
-    - 具体可参考theme-ui预置主题对应的[raw json](https://theme-ui.com/demo/)
-  - 可以将每个组件的design tokens输出到单独的文件(利用自定义filter)
-  - 可以输出扁平化无嵌套的样式变量，
-    - 也可以输出时设置最外层的选择器名，如`:root{}` 或 `.dark-theme{}`
-  - 输出的值也可以使用 css vars
-  - 使用js对象书写color的value时，hsl不会自动计算
 
 - 如何实现依次依赖的3套主题，如bs, bs-flat, bs-flat-dark
   - **对于在`include`或`source`设置的路径数组，后面路径中的同名属性值会覆盖前面路径中的值**，而不会抛出异常
@@ -103,9 +104,18 @@ modified: 2021-05-13T03:05:54.852Z
 
 - roadmap
   - [Changelog](https://github.com/amzn/style-dictionary/blob/3.0/CHANGELOG.md)
+# examples
 
+## w3c-design-token
+
+- https://github.com/drwpow/cobalt-ui
+  - https://cobalt-ui.pages.dev/
+  - Cobalt turns your W3C design tokens into code
+  - The general approach is similar to Style Dictionary or Universal Design Tokens to solve the problem of creating a single source of truth for design tokens that is platform-agnostic and easy to build tooling for.
+
+- https://github.com/lukasoppermann/style-dictionary-utils
+  - a collection of parsers, filters, transformers and formats for Style Dictionary that make working with w3c design tokens a lot easier.
 # faq
-
 - ## style-dictionary vs theo
 - Theo uses json, json5 or yaml and takes a file-in file-out strategy.
 - Style Dictionary uses json or JS modules and merges all token files into 1 big object.
@@ -186,9 +196,7 @@ modified: 2021-05-13T03:05:54.852Z
 - ## [Adds prefix option for scss/map-deep format](https://github.com/amzn/style-dictionary/pull/372)
 - We already do allow prefixes, but they are in the name transforms
 - The only difference would be you need to add the "prefix" attribute to the platform object rather than the file object
-
 # pieces
-
 - ## component tokens
 - [json to scss](https://github.com/amzn/style-dictionary/issues/492)
   - 方法1
@@ -282,7 +290,6 @@ modified: 2021-05-13T03:05:54.852Z
 
 - custom-parser
   - 支持design tokens用任意文件格式书写
-
 # docs
 
 ## [Overview](https://amzn.github.io/style-dictionary/#/README)
@@ -571,9 +578,7 @@ modified: 2021-05-13T03:05:54.852Z
   - Removing filters inside Android formats: WIP
 - todo
   - Use ES6 where possible, Better log levels
-
 # ref
-
 - [[RFC] Plugin Architecture](https://github.com/amzn/style-dictionary/issues/311)
   - We don't want to try to build in so many transforms, formats, and actions into the core library that it becomes hard to maintain and bloated.
   - Technically, this ability exists today, but we don't document or promote this ability yet.

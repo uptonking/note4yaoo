@@ -212,7 +212,7 @@ modified: 2023-02-07T17:38:05.336Z
   - Sails.js, Knex.js
   - PostgreSQL
 
-## kanban/trello-api
+## trello/kanban-api
 
 - https://github.com/MrRefactoring/trello.js
   - JavaScript/TypeScript library for Node. JS and browsers to easily interact with Atlassian Trello API

@@ -11,6 +11,8 @@ modified: 2021-03-29T19:29:32.505Z
 
  
 
+
+
 - invalid hook call mismatching versions of React
   - 子项目较多时，容易产生react版本冲突，此时解决方法是统一react版本，一般是升级
 
@@ -794,3 +796,11 @@ function f2 (f: F) {
     -  sudo apt-get install libxt-dev -y
 - npm WARN Invalid version: "1.0"
     - change 1.0 to 1.0.0
+
+# not-yet
+- ERROR in ./example-client/components/common/error-boundary.tsx
+  - Module build failed (from ../../node_modules/@linaria/webpack5-loader/lib/index.js):
+  - Error: /home/yaoo/Documents/repos/yaoo-toys/lts/nostalgia-studio/node_modules/@udecode/plate-core/dist/index.es.js has no shaker metadata
+
+- linaria
+  - has no shaker metadata

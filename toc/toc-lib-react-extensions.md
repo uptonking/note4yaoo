@@ -7,6 +7,10 @@ modified: 2020-11-19T12:43:25.788Z
 
 # toc-lib-react-extensions
 
+# react-state-management
+- https://github.com/data-client/rest-hooks
+  - Normalized state management for async data. Safe. Fast. Reusable.
+  - Define your async methods. Use them synchronously in React. Instantly mutate the data and automatically update all usages.
 # react-extensions
 
 - https://github.com/GeekyAnts/react-pluggable

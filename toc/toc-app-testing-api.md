@@ -39,5 +39,7 @@ modified: 2023-02-08T10:25:14.173Z
   - Mock Servers: Life-like mock servers from any API Specification Document.
   - Comprehensive API Specification Support: OpenAPI v3.1, OpenAPI v3.0, OpenAPI v2.0 (formerly Swagger) and Postman Collections.
 # api-utils
-
+## openapi
+- https://github.com/drwpow/openapi-typescript
+  - Generate TypeScript types from OpenAPI 3 specs
 # more

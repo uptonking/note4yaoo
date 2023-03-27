@@ -14,7 +14,7 @@ modified: 2021-01-01T20:06:36.094Z
   - 支持styled和css两种方式
 
 - linaria cons
-  - 只支持react
+  - css支持所有，但框架集成只支持react
   - 不直接支持动态样式
   - styled自身就是一个wrapper，引入了额外的计算
     - styled本身是一个代表高阶组件的方法，会导致每个styled组件都会多一层额外计算
@@ -29,7 +29,23 @@ modified: 2021-01-01T20:06:36.094Z
     - css `color: ${colors.text};`.
     - We recommend to move helpers and shared configuration to files without any side-effects.
 
+- who is using #linaria-css-in-js
+  - [Airbnb's Trip to Linaria_202206](https://medium.com/airbnb-engineering/airbnbs-trip-to-linaria-dc169230bd12)
+
+- tips
+  - 尽量在`style`属性中使用属性名和变量值，而不是`style={{'--var-prop': value}}`，减少抽象层次更便于理解，减少修改入口便于定位
+  - 使用css vars实现theming，目前的主流方案，但不用来做状态管理
+
+- 切换样式的实践
+  - 样式定义在 w3c-design-tokens-theme1.json 文件，可通过figma生成
+  - 开发使用theme1-vars.js，切换theme使用 theme1/2.css
+  - 通过cobalt工具生成，因为要转换单位或别名
+    - theme1-vars.js  js对象映射到css变量名  {font:{family:{size:{f3}}}}: 'var(--font-family-size-f3)',
+    - theme1.js        扁平的js-kv  'font.family.size.f3': '16px',
+    - theme1.css       扁平化的css变量  --font-family-size-f3: 16px;
+
 - compiled-css-in-js会编译出atomic css
+  - linaria也支持
 
 - **linaria生成样式的原理解析**
 - `styled`纯静态样式
@@ -71,12 +87,48 @@ react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", {
 }, "h2\u6807\u9898");
 ```
 
+- resources
+  - [Use CSS Variables instead of React Context](https://epicreact.dev/css-variables/)
 # issues
 - [webpack build silently fails after Linaria update](https://github.com/callstack/linaria/issues/1135)
   - Short answer: Webpack + linaria plugin with custom babel options
 
 - [Build linaria is very slow using webpack5](https://github.com/callstack/linaria/issues/1199)
+
+- [Using the "css" tag in runtime is not supported. Make sure you have set up the Babel plugin correctly.](https://github.com/callstack/linaria/issues/617)
+  - If you use ts-jest for jest test, you should mock linaria in setupTest.ts
   - Digging into another issue, I found that linaria will trigger @linaria/babel-preset/lib/transform-stages/helpers/loadLinariaOptions.js's loadLinariaOptions will multiple times on the same files.
+# examples
+- https://github.com/remirror/remirror
+  - https://github.com/user-focus/remirror-extension-note
+
+- https://github.com/adazzle/react-data-grid
+  - https://adazzle.github.io/react-data-grid/
+  - Feature-rich and customizable data grid React component
+
+- https://github.com/inokawa/react-animatable
+  - composable animation library for React, built on Web Animations API and React hook.
+
+- https://github.com/essential-randomness/boba-editor-next
+  - There is no widely-available visual editor that supports the MDX file format.
+
+- https://github.com/Kiikurage/drawing
+  - Simple drawing app
+
+- more-linaria-comp
+  - https://github.com/paritytech/table-renderer
+  - https://github.com/id-ui/react-tree
+
+## ui-using-linaria
+
+- https://github.com/locol23/design-system-boilerplate
+  - design-system-boilerplate
+
+- 
+- more-linaria-ui
+  - https://github.com/cloudshadow/cloudshadow-core-ui
+  - https://github.com/webzard-io/dovetail
+  - https://github.com/tuanemuy/unflexible-ui-core
 # docs
 - ## [Why use Linaria](https://github.com/callstack/linaria/blob/master/docs/BENEFITS.md)
 - Advantages over regular CSS

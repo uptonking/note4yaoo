@@ -11,6 +11,9 @@ modified: 2020-10-15T13:41:01.275Z
 
 - json
   - https://www.json.org/json-en.html
+  - [RFC 6901 - JavaScript Object Notation (JSON) Pointer](https://datatracker.ietf.org/doc/html/rfc6901)
+    - JSON Pointer defines a string syntax for identifying a specific value
+   within a JavaScript Object Notation (JSON) document.
 
 - json5
   - https://json5.org

@@ -16,16 +16,19 @@ modified: 2021-01-29T18:55:16.043Z
   - 当前范围中声明的css变量的值，只是声明一个同名变量，具体计算发生在当前元素的子元素之中
   - 书写css变量值时，尽量不要存在循环引用，否则某个样式值表现为浏览器默认色或颜色值默认值，难以分析原因，如halfmoon的border hover色
 
+- resources
+  - [Use CSS Variables instead of React Context](https://epicreact.dev/css-variables/)
+
 - ### [CSS Variables not global?](https://stackoverflow.com/questions/61553471/css-variables-not-global)
 
 - why does the div not appear when the button is hovered over?
 
-``` HTML
+```HTML
 <button>Hover</button>
 <div></div>
 ```
 
-``` CSS
+```CSS
 :root {
   --op: hidden;
 }
@@ -52,9 +55,7 @@ div {
   - 注意可能会使用button自身的默认色
 
 - ### [Overriding :root CSS variables from inner scopes](https://stackoverflow.com/questions/58206867)
-
 # guide
-
 - faq-not-yet
   - 使用css vars和普通css书写class的性能对比
   - 更新样式时，可通过切换包含css vars新值的class类名，可通过js修改css vars的值，性能对比
@@ -91,7 +92,7 @@ div {
   - 若`var()`中的fallback值包含大量计算，会导致性能问题
   - css-variables除了存储样式常用变量，还可以用来存储状态变量，通过`style={{ '--box-size': size }}`的形式传入，用来实现动态样式很方便
 
-``` JS
+```JS
 // To use the values of custom properties in JavaScript, it is just like standard properties.
 
 // get variable from inline style
@@ -107,18 +108,16 @@ element.style.setProperty("--my-var", jsVar + 4);
 - css-vars-tools
   - [CSS variables (Custom Properties) polyfill for IE11](https://github.com/nuxodin/ie11CustomProperties)
   - https://github.com/notoriousb1t/awesome-css-variables
-
 # css-vars-examples
-
 - css vars的值，可以先使用，再声明定义，即存在类似js变量的变量提升
 
-``` HTML
+```HTML
 <div>
   <h1 class="theme-red-text">hello</h1>
 </div>
 ```
 
-``` CSS
+```CSS
 .theme-red-text {
   --pf-global--Color--100: var(--pf-global--Color--dark-100);
 
@@ -131,7 +130,6 @@ div {
 ```
 
 # theming-examples
-
 - Themes becomes easier with css custom properties (css variables). 
 - The basic idea is that you have your variables, and on theme change you change the color of the variables.
   - On root level set your variables for your default theme.
@@ -141,7 +139,7 @@ div {
     - I seen mentions about saving it in the database and user, that kinda don't hold up if you don't have user signing. 
     - One approach is to save it in the browsers local storage and read it when you load the page.
 
-``` CSS
+```CSS
 :root {
   --primary-color: deepskyblue;
 }
@@ -157,7 +155,7 @@ body.dark-theme {
 }
 ```
 
-``` JS
+```JS
 const themeSwitcherButton = document.querySelector('.js-theme-switcher')
 
 themeSwitcherButton.addEventListener('click', function() {
@@ -171,7 +169,7 @@ themeSwitcherButton.addEventListener('click', function() {
 })
 ```
 
-``` html
+```html
 <body>
   <p class="block">
     my background color is picked from the theme
@@ -185,7 +183,7 @@ themeSwitcherButton.addEventListener('click', function() {
   - If the `body` element has the `theme-dark` class, it will use the variables defined for that class. 
   - Otherwise, it will use the default `:root` variables.
 
-``` CSS
+```CSS
 :root {
   --background-color: white;
   --text-color: black;
@@ -206,7 +204,7 @@ body {
 - I define the color variables depending on the app container's class (.light or .dark). 
 - Simply toggling those classes will then change the site's theme.
 
-``` JS
+```JS
 document.addEventListener("DOMContentLoaded", function() {
   const app = document.querySelector(".app");
   const themeName = document.querySelector(".theme-name");
@@ -224,7 +222,6 @@ document.addEventListener("DOMContentLoaded", function() {
 ```
 
 # css-variables-blog
-
 - ## [Pragmatic, Practical, and Progressive Theming with Custom Properties](https://csswizardry.com/2016/10/pragmatic-practical-progressive-theming-with-custom-properties/)
 - My usual advice to companies and clients who want to implement theming in their UIs is simply don’t.
 - There are very few specific cases where theming will provide business value, but for the most part, it is a lot more hassle(困难，麻烦；争论，分歧) than it’s worth. Theming
@@ -271,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function() {
   - The technique has been seen to cause performance issues as it takes more time to parse through the variables.
   - The syntax of the fallback, like that of custom properties, allows commas. 
 
-``` CSS
+```CSS
 .two {
   /* Red if --my-var is not defined */
   color: var(--my-var, red);
@@ -318,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function() {
   - A Web Component author can create an initial design using fallback values, and expose theming “hooks” in the form of custom properties.
 - Working with custom properties in JavaScript
 
-``` 
+```
 
 /* CSS */
 :root {
@@ -381,9 +378,18 @@ document.documentElement.style.setProperty('--primary-color', 'green');
 - In this article, I tried to show how we can theme a website with CSS variables without JS, combine CSS and SASS variables, override several CSS props only by one variable.
 - Like I mentioned before we have nested libraries and components that we can’t change, so we can’t add hooks in certain components, only change their CSS. 
   - But still if you are doing everything from the scratch there are good articles about CSS variables + JS
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What are the advantages and disadvantages of CSS variables? - Stack Overflow](https://stackoverflow.com/questions/3130741/what-are-the-advantages-and-disadvantages-of-css-variables)
+- The only disadvantage that I can think of is the added complexity of having to use or write a pre-processor, and appropriately manage the caching of the output in order not to have each request pass through the pre-processor.
+- A concrete problem I could foresee is that developers might have editors/IDE's that knows how to deal with CSS, but don't know how to deal with your dialect of CSS. That could restrict said developers quite a bit.
 
 # ref
-
 - [Theming with CSS Custom Properties](https://ramenhog.com/blog/2017/06/07/theming-with-css-custom-properties)
   - https://codepen.io/uptonking/pen/yLavavm
   - Please feel free to play around with the Slack demo codepen

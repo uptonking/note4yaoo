@@ -159,7 +159,7 @@ $$('[contenteditable]')
 - dev-to
   - 拖拽时原布局不变，只显示预期位置的指示线
   - writing tests
-  - list
+  - link hover未实现
 
 - dev-to-collab
   - 🐷 每次刷新页面，空白行会多一行
@@ -181,6 +181,50 @@ $$('[contenteditable]')
   - collab
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
+
+## 0326
+
+- [How to define css variables in `style` attribute in React and typescript - Stack Overflow](https://stackoverflow.com/questions/52005083/how-to-define-css-variables-in-style-attribute-in-react-and-typescript)
+
+```typescript
+
+style={{ "--my-css-var": 10 } as React.CSSProperties
+
+declare module 'react' {
+    interface CSSProperties {
+        [key: `--${string}`]: string | number
+    }
+    // I ended up using this solution, thanks. One thing to note: it's possible to pass in values with more dashes than two (as a dash is a string).
+    // style={{ ---color: 'red' }}
+}
+```
+
+- [reactjs - how to dynamically change global stylesheets in next js - Stack Overflow](https://stackoverflow.com/questions/68326186/how-to-dynamically-change-global-stylesheets-in-next-js)
+
+```JSX
+
+function MyApp({ Component, pageProps }) {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    if (theme == "dark") {
+      import("primereact/resources/themes/light/theme.css");
+    }
+    if (theme == "light") {
+      import("primereact/resources/themes/dark/theme.css");
+    }
+  }, [theme]);
+
+  return (
+    <ThemeContext.Provider value={[theme, setTheme]}>
+        <Component {...pageProps} />
+    </ThemeContext.Provider>
+  );
+}
+```
+
+- [javascript - ES6 variable import by reference or copy - Stack Overflow](https://stackoverflow.com/questions/46937494/es6-variable-import-by-reference-or-copy)
+  - ES6 import/exports are actually bindings (references). 
 
 ## 0325
 
@@ -792,7 +836,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                                          `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                                            `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，
