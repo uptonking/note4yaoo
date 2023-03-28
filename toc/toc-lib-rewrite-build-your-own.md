@@ -27,7 +27,9 @@ modified: 2021-09-29T13:23:09.969Z
   - create-react-app, react-router, react-redux, redux-thunk, styled-components
 
 - https://github.com/JokerLHF/tiny-library
-  - 各种库的模拟实现, express,koa
+  - 各种库的模拟实现, express, koa
+# data-structure
+- [Mutable immutability: creating immutable objects with Immer clone | CKEditor](https://ckeditor.com/blog/immutability-with-immer-clone/)
 # web
 
 ## vdom

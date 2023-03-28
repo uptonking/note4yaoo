@@ -110,6 +110,7 @@ $$('[contenteditable]')
   - cms, airtable, lowcode
 - techstacks
   - async, stream, buffer, binary, scheduler, arrow
+  - 样式片段也可在 w3schools.com 尝试
 
 - 支持切换内存和持久化的示例
   - abstract-level, localforage
@@ -183,12 +184,50 @@ $$('[contenteditable]')
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
 
+## 0328
+
+- [各种高度clientHeight/scrollHeight/offsetHeight及应用 - 掘金](https://juejin.cn/post/6898575556796022797)
+  - offsetWidth/offse tHeight 返回值包含 content + padding + border，效果与element.getBoundingClientRect() 相同
+  - clientWidth/clientHeight 返回值包含 content + padding，如有滚动条，也不包含滚动条
+  - scrollWidth/scrollHeight 返回值包含 content + padding + 溢出内容的尺寸
+- getBoundingClientRect是DOM元素到浏览器可视范围的距离（不包含文档卷起的部分）。
+
+- [scrollX、scrollY和scrollTop、scrollLeft的区别 | 会飞的猪9527](https://www.blogwxb.cn/scrollX%E3%80%81scrollY%E5%92%8CscrollTop%E3%80%81scrollLeft%E7%9A%84%E5%8C%BA%E5%88%AB/)
+  - scrollX、scrollY只读不写; 
+  - scrollTop、scrollLeft：可读可写
+
+- [javascript - AddEventListener fires automatically upon assignment - Stack Overflow](https://stackoverflow.com/questions/27037272/addeventlistener-fires-automatically-upon-assignment)
+  - 💡 非react场景也会出现此问题，document.addEventListener先注册，然后onClick触发的事件才冒泡才这里
+  - What is happening is that when you click on your li element, the click is then transmitted to the container, and so on up to the window (the so-called event bubbling), and as you have added a event listener on the document (which is between your li and the window), it is being triggered.
+  - The solution proposed here,  `e.stopPropagation` stops the propagation so that the click on the document is not triggered.
+
+- [javascript - React document.addEventListener fire immediately - Stack Overflow](https://stackoverflow.com/questions/73604156/react-document-addeventlistener-fire-immediately)
+  - You're handling a `SyntheticEvent` with your onClick handler and adding a native event listener at the `document` level. Adding the listener will complete before the event bubbles up to the top therefore you also see it execute for the original event.
+
+- [css - Combining class selector with attribute selector - Stack Overflow](https://stackoverflow.com/questions/19498703/combining-class-selector-with-attribute-selector)
+
+```CSS
+a.button[class*=large] {
+  font-size: 0.9em;
+}
+```
+
+- [getBBox() vs getBoundingClientRect() vs getClientRects() - Stack Overflow](https://stackoverflow.com/questions/33688549/getbbox-vs-getboundingclientrect-vs-getclientrects)
+  - `getBBox` is defined in the SVG specification it returns coordinates in the local coordinate system after the application of transforms.
+  - getBoundingClientRect and getClientRects are defined in the CSSOM specification. Their main difference is that they return coordinates in the outer SVG coordinate system.
+  - `getBoundingClientRect` returns a single rect that is the union of all the rects that `getClientRects` would return.
+
+- some elements(like span tag) will have multiple `ClientRects` when they are wrapped into multiple lines
+  - a `BoundingRect` is the union of ClientRects of a element.
+
+- [html - Input size vs width - Stack Overflow](https://stackoverflow.com/questions/1480588/input-size-vs-width)
+  - `<input name="txtId" type="text" size="20" />` 也可使用 style.width
+  - You'll get more consistency if you use width
+
 ## 0327
 
 - [html - css only 1 line of text - Stack Overflow](https://stackoverflow.com/questions/7546389/css-overflow-only-1-line-of-text)
-  - Note that text-overflow only occurs when the container's overflow property has the value hidden, scroll or auto and white-space: nowrap;.
-
-
+  - Note that text-overflow only occurs when the container's overflow property has the value hidden, scroll or auto and white-space: nowrap; .
 
 ```CSS
 text-overflow: ellipsis;
@@ -855,7 +894,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                                              `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                                                   `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

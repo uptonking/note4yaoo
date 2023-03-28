@@ -13,7 +13,8 @@ modified: 2021-02-19T12:23:12.286Z
 
 - ## 
 
-- ## 
+- ## 每次写正则表达式都很麻烦，生怕欠考虑漏掉各种条件，让 ChatGPT 来写就很合适，感觉它拯救了我的好心情
+- https://twitter.com/Benbinbin_fun/status/1640717103501312001
 
 - ## Dependency Injection frameworks are built by very clever groups of very clever engineers in very clever ways to very cleverly avoid simply passing parameters to functions"
 - https://twitter.com/omervk/status/1521554504952463361

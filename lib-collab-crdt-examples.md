@@ -12,7 +12,9 @@ modified: 2022-04-05T10:08:25.947Z
 - ref
   - https://github.com/alangibson/awesome-crdt
   - [CRDTs for Non Academics - YouTube](https://www.youtube.com/watch?v=vBU70EjwGfw)
+  - https://github.com/doodlewind/crdt-and-local-first
 # popular
+
 - https://github.com/pubuzhixing8/awesome-collaboration
   - Collaborative editing of technical resources, article translation
   - [OT 与 CRDT 的Battle，堪称神仙打架](https://github.com/pubuzhixing8/awesome-collaboration/blob/master/fairy-fight/collaborative-editing.md)

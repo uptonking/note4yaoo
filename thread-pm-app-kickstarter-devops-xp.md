@@ -48,7 +48,12 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
-- ## 
+- ## 你们是 YC 这一期创业营中的一个项目团队，OpenAI 昨天发布 ChatGPT Plugin 功能后，直接覆盖了你们在做的事情，
+- https://twitter.com/Tisoga/status/1639238513047789569
+  - 并且 10x better，现在还有两周就要 demo day 了，你作为创始人，应该怎么办，请给一个详细的方案。
+- 对比 Claude 和 GPT-4, 似乎证实Claude+的这次的优化方向 "Better in languages other than English compared to the previous version. Availability is currently limited."
+- 做生意即便是差不多的技术，差不多的产品。不同渠道、商务、场景、营销带来的利润可能完全不一样。卖水果的，买水的那么多多活得好好的
+- 我一直认为Claude+的体验要比GPT-4更好，它能让你感觉到AI是在对“你”在回答问题，而不是像GPT-4那样对人在回答“问题”。
 
 - ## 最近为了搞各种注册和支付，没少使用接码平台，之前一直用的是 https://sms-activate.org，最近看到推友推荐了 https://5sim.net，确实更好用，操作界面简单，价格也稍微便宜点，就连支付方式都多了很多。
 - https://twitter.com/Barret_China/status/1638375901254815746

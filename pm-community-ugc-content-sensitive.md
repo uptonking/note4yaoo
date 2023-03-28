@@ -29,6 +29,15 @@ modified: 2022-09-27T00:15:28.972Z
 
 ## 
 
+## [国内大部分平台并没有明令禁止接入GPT，但对最终输出结果做内容监管。](https://twitter.com/easychen/status/1640537601785597958)
+
+- 我升级了之前开源的openai proxy，加上了文本安全审核，支持「按句子流式审核」，效果见视频。
+  - 应该是目前效率和体验最好的方案了，做国内业务的同学可以收藏一下
+- 一提到内容审核一些人就又高潮了，问题是OpenAI自己也做内容审核啊，也把接口拿出来卖呢，区别只是中国美国的敏感词不同而已。快去联合AI推翻人类啊 👋
+  - [Moderation API Reference - OpenAI API](https://platform.openai.com/docs/api-reference/moderations/create)
+- 敏感词过滤用的哪个仓库呢
+  - 直接对接的腾讯云的服务，自己搞词库维护更新很麻烦…
+
 ## [UGC网站的内容审核管理是怎么做的？](https://www.zhihu.com/question/20661252)
 
 - 内容的重点程度，决定了审核的侧重点如何分配。

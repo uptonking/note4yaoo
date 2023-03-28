@@ -95,7 +95,8 @@ react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", {
 - resources
   - [Use CSS Variables instead of React Context](https://epicreact.dev/css-variables/)
 # issues
-- 经常出现 linaria has no shaker metadata
+- 🚨 经常出现 linaria has no shaker metadata
+  - 解决方法，import包时从具体子目录如./src/comp/button，而不是./src
   - 所以要多检查业务代码
   - 检查三方包中是否有反引号模版字符串
 

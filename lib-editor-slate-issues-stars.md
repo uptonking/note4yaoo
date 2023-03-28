@@ -31,6 +31,8 @@ modified: 2023-02-05T19:03:12.723Z
   - 不能在onFocus中设置选区，因为光标变化时，一直处于focus状态，就不会执行onFocus事件
   - 然后在修改编辑器数据如setNodes先设置选区
   - 没必要在onFocus中自动恢复选区，除非业务需要，利用onBlur和onFocus可自动保存和恢复选区，甚至可以在选区变空时给原选区位置addMark来显示蓝色状态
+- 思路4
+  - 不使用editor的active selection，在link业务组件里面所有操作都与link-path直接绑定
 
 - 编辑器失焦时蓝色selection不可见的问题
   - 临时方案是在编辑器失焦时添加leaf属性，恢复焦点时移除leaf属性，可以在编辑器框架层实现这个逻辑
@@ -42,7 +44,7 @@ modified: 2023-02-05T19:03:12.723Z
 - `Transforms.setSelection(editor: Editor, props: Partial<Range>)`; 
   - Set new properties on an active selection. 
   - Since the value is a `Partial<Range>`, **this method can only handle updates to an existing selection**. 
-  - If there is no active selection the operation will be void. 
+  - If there is no active selection, the operation will be void. 
   - Use `select` if you'd like to create a selection when there is none.
 
 - Found a work around for this issue thanks to a kind developer on slack channel. Writing here in case anybody needs it. 

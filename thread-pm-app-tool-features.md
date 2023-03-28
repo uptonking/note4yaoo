@@ -15,6 +15,13 @@ modified: 2021-10-29T15:05:07.897Z
 
 - ## 
 
+- ## storybook Component Encyclopedia is in beta
+- https://twitter.com/storybookjs/status/1491806826739941377
+- We’re on a mission catalog the world’s UI components for you to learn from—3, 490 components & 44 projects so far.
+  - Reference components from top teams
+  - Play with live implementation 
+  - view source
+
 - ## 看已经有字幕组借助AI来自动生成和翻译字幕了，
 - https://twitter.com/dotey/status/1636880133146435584
   - 先把视频放到Google Drive，然后从Google Colab上运行代码，调用OpenAI的Whisper API生成字幕，再借助ChatGPT的API对字幕逐行翻译，最后人工再校对就好了

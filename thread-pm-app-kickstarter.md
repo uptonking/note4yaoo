@@ -19,13 +19,6 @@ modified: 2021-10-29T15:02:28.882Z
 - https://twitter.com/tualatrix/status/1635095770436374529
   - 所以不打算折腾了。把有限的时间投入到更高价值的事情上去。
 
-- ## storybook Component Encyclopedia is in beta
-- https://twitter.com/storybookjs/status/1491806826739941377
-- We’re on a mission catalog the world’s UI components for you to learn from—3, 490 components & 44 projects so far.
-  - Reference components from top teams
-  - Play with live implementation 
-  - view source
-
 - ## Harsh truth: Reading about other successful creators won't make you one. 
 - https://twitter.com/mkhundmiri/status/1383688592099135498
   - Start creating so that you have your own success story to tell.
@@ -41,6 +34,15 @@ modified: 2021-10-29T15:02:28.882Z
 - I wish I could say that too.. I have time for now but no enough knowledge yet
 - No project ideas. Only problem
   - make a project to solve your problem
+
+- ## 可以说这个阶段，idea 是最不值钱的东西了。
+- https://twitter.com/Tisoga/status/1639180877187145730
+  - ChatGPT Plugin 的 idea 相信大家应该都想到过，几周前我们也做了一个内部的 demo 版本，但是这件事如果是 OpenAI 官方直接下场做就不太一样了，它可以更好地建立整个生态的规范。
+  - 创业者应该避免和 OpenAI 正面竞争，侧面赛道还是有非常多可以做的事的。
+  - 另外一点就是实际去做真的很重要，只有真的 build 了才能获得最真实的体感，一群人讨论半天 idea 不如直接去 write some code 验证一下（实在不行可以让 GPT-4 帮你写代码验证）。 这批能够跑出来的 startup 一定是那些能够保持探索、持续迭代、快速 pivot 的团队。
+- Copilot Hub 现在还在快速迭代中，我们基本上会以天级别来 ship 新的功能 & 修复 bugs。
+  - 在上个 Sprint 中 close 了 52 个 issue
+- 其实不管现在门槛有多低了，我始终认为：产品力这个东西，还是很重要的。不管2B还是2C，拥有良好产品力的产品，还是有生命力的。而2B市场的玩法就更稳重一下，大家完全可以不用太受openai影响，安心思考怎么做好现在所有业务流程中的copilot，甚至考虑再造一下流程
 
 - ## 大概十年前，我就隐约发现了企业信息化建设的终局：
 - https://twitter.com/jamella_hoshino/status/1522537813014634496
@@ -68,6 +70,26 @@ modified: 2021-10-29T15:02:28.882Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 分析了ProductHunt上10000个产品，得到了以下结论
+- https://twitter.com/JourneymanChina/status/1640669175705387011
+  - [What I learned analyzing 10, 000 Product Hunt Listings to show what products are successful & unsuccessful](https://www.indiehackers.com/post/what-i-learned-analyzing-10-000-product-hunt-listings-to-show-what-products-are-successful-unsuccessful-4ceb5f6770)
+
+- 受欢迎的品类：
+  - Web based apps, automation products, email productivity, community focused products and screen recording / screenshotting 
+- 不受欢迎的品类：
+  - Pomodoro, QR Code, Habit Tracking, VPN, Paywall or Notification 
+- 竞争最激烈的领域：
+  - Automation (148 apps)，Chatbots(118 apps)，Design (118 apps)，Video (105 apps)
+
+- 总体来说，
+  - 能帮用户节省时间甚至赚钱的就容易受欢迎，而番茄钟之类的则比较简单，难有创新
+  - 不要畏惧红海，水大鱼才大。 在红海中找到一个垂直的细分市场，更容易拿到结果。 相比于冷门领域而言
+  - 当然，以上结论都是针对ProductHunter而言，这些人本来就是互联网世界最活跃的"生产者"。 
 
 - ## 微软 Office 全家桶，简直了，帮助微软赢得了桌面电脑的战争，又帮助微软转型移动互联网，又帮助微软成功转型云计算服务，成为SaaS第一巨头，现在又帮助微软转型AI。
 - https://twitter.com/uptonking2/status/1636608874173317120

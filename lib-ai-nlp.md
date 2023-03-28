@@ -49,6 +49,17 @@ modified: 2023-03-03T08:06:36.592Z
   - 支持中日韩
 # blogs
 
+## [Sage Gpt-4 Claude+ ChatGPT Dragonfly五个AI的各自特点 - 知乎](https://zhuanlan.zhihu.com/p/614720305)
+
+- 看来回答和之前聊天的内容相关性非常高，复制你的问题问了2遍，吐给我的内容每个格子都很不一样
+
+- [Claude生不逢时！谷歌想扶持自己的OpenAI实在太难了\_腾讯新闻](https://new.qq.com/rain/a/20230318A03HF300)
+  - 由前OpenAI员工创办的新公司Anthropic打造的Claude正式宣布开放申请，也是为数不多能跟ChatGPT打个平手的模型
+  - Claude模型并没有图像处理的能力，Anthropic也没有这方面的技术积累，而OpenAI发布的DALL-E 2在图像生成领域依然是领军者。
+  - Claude 和 ChatGPT 都依赖于强化学习(RL)来训练偏好（preference）模型，被选中的回复内容将在后续用于模型的微调，只不过具体的模型开发方法不同。
+  - Quora 通过人工智能聊天应用程序Poe 向用户提供Claude的对话能力。
+  - Claude 与 Notion 合作以提高工作和学习场景中的生产力。
+
 ## [通向AGI之路：大型语言模型（LLM）技术精要 - 知乎](https://zhuanlan.zhihu.com/p/597586623)
 
 - 通用人工智能 （AGI，Artificial General Intelligence）
