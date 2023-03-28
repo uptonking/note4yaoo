@@ -77,6 +77,10 @@ modified: 2022-11-16T16:09:02.278Z
   - 白色主题，无透明效果
   - 页面背景和卡片背景融合很好
 
+- https://github.com/Liam-hi/figma-glassmorphism
+  - https://www.figma.com/community/plugin/1197106608665398190/Glassmorphism
+  - refactored from vanilla JavaScript to Preact for easier maintenance
+
 - https://github.com/tsamantanis/react-glassmorphism
   - https://tsamantanis.github.io/react-glassmorphism/
   - A react UI component library for glassmorphic components
@@ -225,7 +229,6 @@ modified: 2022-11-16T16:09:02.278Z
   - This is a library for generating low quality image placeholders by server-side rendering a BlurHash. 
   - Unlike other BlurHash libraries, this generates CSS values so it works without client-side JavaScript in any web framework or none, and can be displayed before page hydration
   - You should pre-generate the BlurHash ahead of time. Some CDNs can do this for you. See Imgix for example
-
 
 - https://github.com/flozz/StackBlur
   - StackBlur.js is a fast, almost Gaussian blur

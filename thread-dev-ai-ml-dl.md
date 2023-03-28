@@ -14,6 +14,16 @@ modified: 2021-05-18T19:33:51.768Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Another bad consequence of "convert my natural language to SQL" apps
+- https://twitter.com/agarcia_me/status/1640406281218555906
+  - Chicago is the murder capital of the country
+
+
+
 - ## 一批 Vector Database 被 ChatGPT 带火了，官方推荐的有以下几个：Pinecone、Weaviate、Redis、Qdrant、Milvus 其实还有 Facebook 的 Faiss。
 - https://twitter.com/nash_su/status/1638042474689220609
   - 另外 PostgreSQL 的 pgvector 拓展也可以让 PG 具有向量数据库的能力。

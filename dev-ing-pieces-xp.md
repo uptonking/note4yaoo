@@ -11,7 +11,11 @@ modified: 2021-04-28T20:54:58.126Z
 
 # issues
 
-## 
+## slate的link元素使用floating-ui无法显示弹出框的原因_202203
+
+- 一直在floating-ui源码的useFloating/useHover排查，方向错误
+- 原因是slate元素渲染时`{...attributes}`的属性attributes.ref.current=null，而floating-ui需要的 `ref={refs.setReference}`
+  - 注意书写顺序
 
 ## 在slate中文输入法的问题定位花费过多时间
 

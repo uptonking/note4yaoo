@@ -13,7 +13,27 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 
 
-- ## 
+- ## 如何基于 ChatGPT 创建个人的知识库 AI，经过几周的内测，现在正式发布 Copilot Hub 
+- https://twitter.com/Tisoga/status/1640261647267938304
+  - Copilot Hub 是一个帮助你基于私有数据创建智能知识库 & 人格化 AI 的平台。你可以基于文档、网站、Notion database 或其他数据源在几分钟内创建一个自定义的 ChatGPT。
+
+- 平台上已经预训练了一些 AI，例如：
+  - 基于 Steve Jobs 传记、演讲、书信训练的 Steve Mind AI，可以以 Steve Jobs 的视角来回答你的问题
+  - 基于 How to Start a Startup 这门课的语料训练的 Startup Launch 创业导师，可以回答任何关于创业的问题
+
+- 如何创建一个自己的 Copilot
+  - 第一步：选择数据源
+  - 第二部：定义 Copilot 的配置
+  - 第三步：Chat，创建完 Copilot 之后就可以直接和 AI 进行聊天了，使用方式和 ChatGPT 类似。
+
+- Copilot Hub 同时也是一个社区，你可以在 Gallery 中浏览到其他人创建的公开 Copilot 并进行交互。
+
+- Copilot Hub 现在还在快速迭代中，我们基本上会以天级别来 ship 新的功能 & 修复 bugs。
+  - 在上个 Sprint 中 close 了 52 个 issue 👇
+
+- 非常感谢 @nishuang 老师体验 & 给出宝贵的建议。
+  1. 文本上传大小，为了避免滥用，暂时做了限制，目前支持 100,000 token； 相当于大约50000汉字？
+  2. Twitter 数据源的接入会在未来支持，可以做到 connect 到 twitter 账号后，自动创建一个对应的 AI；
 
 - ## 大家平常都是怎么分别用文件夹或标签来组织内容的？
 - https://twitter.com/tualatrix/status/1626158103283765248

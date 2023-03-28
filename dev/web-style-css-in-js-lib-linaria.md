@@ -9,11 +9,20 @@ modified: 2021-01-01T20:06:36.094Z
 
 # guide
 
+- tips
+  - 多用styled创建可复用组件，因为容易覆盖
+  - 多用css创建一次性组件，注意难以覆盖
+  - 尽量在`style`属性中使用属性名和局部变量值，而不是`style={{'--var-prop': value}}`，减少抽象层次更便于理解，减少修改入口便于排查
+  - 使用css vars实现theming，目前的主流方案，但不用css vars来做状态管理
+
 - linaria pros
   - 基于css vars实现，现代浏览器的选择
   - 支持styled和css两种方式
 
 - linaria cons
+  - 🚨 依赖自身实现的 @linaria/webpack5-loader
+    - 对业务代码中组件的导出顺序有要求，若先使用再导出会异常
+    - 对三方包的代码不友好，使用了反引号模版字符串会异常，解决方法是fork三方包源码自己打包
   - css支持所有，但框架集成只支持react
   - 不直接支持动态样式
   - styled自身就是一个wrapper，引入了额外的计算
@@ -31,10 +40,6 @@ modified: 2021-01-01T20:06:36.094Z
 
 - who is using #linaria-css-in-js
   - [Airbnb's Trip to Linaria_202206](https://medium.com/airbnb-engineering/airbnbs-trip-to-linaria-dc169230bd12)
-
-- tips
-  - 尽量在`style`属性中使用属性名和变量值，而不是`style={{'--var-prop': value}}`，减少抽象层次更便于理解，减少修改入口便于定位
-  - 使用css vars实现theming，目前的主流方案，但不用来做状态管理
 
 - 切换样式的实践
   - 样式定义在 w3c-design-tokens-theme1.json 文件，可通过figma生成
@@ -90,6 +95,13 @@ react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", {
 - resources
   - [Use CSS Variables instead of React Context](https://epicreact.dev/css-variables/)
 # issues
+- 经常出现 linaria has no shaker metadata
+  - 所以要多检查业务代码
+  - 检查三方包中是否有反引号模版字符串
+
+- Cannot read properties of undefined(reading IconButton)
+  - 要注意组件导出的顺序，若先导出Link组件，后导出IconButton组件，会出现此问题
+
 - [webpack build silently fails after Linaria update](https://github.com/callstack/linaria/issues/1135)
   - Short answer: Webpack + linaria plugin with custom babel options
 

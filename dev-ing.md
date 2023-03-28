@@ -160,6 +160,7 @@ $$('[contenteditable]')
   - 拖拽时原布局不变，只显示预期位置的指示线
   - writing tests
   - link hover未实现
+    - 添加link时选择取消，需要处理
 
 - dev-to-collab
   - 🐷 每次刷新页面，空白行会多一行
@@ -181,6 +182,24 @@ $$('[contenteditable]')
   - collab
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
+
+## 0327
+
+- [html - css only 1 line of text - Stack Overflow](https://stackoverflow.com/questions/7546389/css-overflow-only-1-line-of-text)
+  - Note that text-overflow only occurs when the container's overflow property has the value hidden, scroll or auto and white-space: nowrap;.
+
+
+
+```CSS
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+```
+
+- `z-index` CSS property sets the z-order of a positioned element and its descendants or flex items. 
+  - z-index设置在flex-item元素E上时，E的position可以是static
+  - 4.3. Flex Item Z-Ordering , ... and z-index values other than auto create a stacking context even if position is static.
+    - Flex items paint exactly the same as inline blocks, except that order-modified document order is used in place of raw document order, and z-index values other than auto create a stacking context even if position is static.
 
 ## 0326
 
@@ -836,7 +855,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                                            `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                                              `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

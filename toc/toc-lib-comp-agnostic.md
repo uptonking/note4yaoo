@@ -235,6 +235,10 @@ modified: 2020-11-13T07:28:27.824Z
   - https://github.com/stripe/react-stripe-elements
   - React components for Stripe.js and Stripe Elements
 
+- https://github.com/final-form/final-form /js
+  - https://github.com/final-form/react-final-form
+  - Framework agnostic, high performance, subscription-based form state management
+
 - more
   - https://github.com/amazeui/amazeui
     - https://github.com/amazeui/amazeui-react
@@ -242,8 +246,7 @@ modified: 2020-11-13T07:28:27.824Z
     - Audi UI components in CSS, Vanilla JavaScript, and HTML
   - https://github.com/DavidVujic/vanillajs-components
     - examples on how to create a web site with reusable building blocks (aka components)
-  - https://github.com/final-form/final-form
-    - Framework agnostic, high performance, subscription-based form state management
+
   - https://github.com/davatron5000/awesome-standalones
     - A curated list of awesome framework-agnostic standalone web components
   - https://github.com/Wildhoney/Standalone
