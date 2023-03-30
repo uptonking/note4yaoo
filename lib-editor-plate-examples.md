@@ -78,6 +78,13 @@ modified: 2023-02-05T19:03:12.721Z
 - https://github.com/StaticJsCMS/static-cms
   - https://www.staticcms.org/
   - A Git-based CMS for Static Site Generators
+
+- https://github.com/baptisteArno/typebot.io
+  - https://typebot.io/
+  - Typebot is an open-source alternative to Landbot. 
+  - a conversational form builder that you can self-host.
+  - builder依赖plate、codemirror6、@uiw/react-codemirror、tanstack-table/query、dnd-kit、chakra-ui、next、swr、trpc
+  - It allows you to create conversational apps/forms (Lead qualification, Product launch, User onboarding, Customer support), embed them anywhere on your web/mobile apps, and collect results in real-time.
 # plate-plugins
 - https://github.com/ZipBrandon/plate-serializer-md
   - This package implements the Markdown serializer for Plate.
@@ -89,10 +96,3 @@ modified: 2023-02-05T19:03:12.721Z
 - dreifuss-wysiwyg-editor /4Star/MIT/202112/ts/inactive
   - https://github.com/wepublish/dreifuss-wysiwyg-editor
   - rich-text component based on @udecode/plate
-
-- https://github.com/baptisteArno/typebot.io
-  - https://typebot.io/
-  - Typebot is an open-source alternative to Landbot. 
-  - a conversational form builder that you can self-host.
-  - builder依赖plate、codemirror6、@uiw/react-codemirror、tanstack-table/query、dnd-kit、chakra-ui、next、swr、trpc
-  - It allows you to create conversational apps/forms (Lead qualification, Product launch, User onboarding, Customer support), embed them anywhere on your web/mobile apps, and collect results in real-time.

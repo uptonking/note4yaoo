@@ -148,5 +148,6 @@ modified: 2023-02-05T19:03:12.722Z
   - is-active
 
 - [Building A Rich Text Editor (WYSIWYG)](https://www.smashingmagazine.com/2021/05/building-wysiwyg-editor-javascript-slatejs/)
+  - https://www.smashingmagazine.com/2021/05/building-wysiwyg-editor-javascript-slatejs/
 # more-slate
 - [slatejs 编辑器表格---合并单元格 - 掘金](https://juejin.cn/post/7080046216259567646)

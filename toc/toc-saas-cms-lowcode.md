@@ -19,6 +19,7 @@ modified: 2023-01-20T21:59:47.792Z
 
 - ref
   - https://github.com/postlight/awesome-cms
+  - [Headless CMS - Top Content Management Systems | Jamstack](https://jamstack.org/headless-cms/)
   - crm, erp
 # lowcode-products
 - [AppMaster - The no-code platform for building web & mobile apps](https://appmaster.io/)
@@ -51,7 +52,6 @@ modified: 2023-01-20T21:59:47.792Z
 - https://github.com/AlessioGr/payload-plugin-lexical
   - Extends payload CMS with Meta's lexical RichText editor - a much more advanced and customizable richtext editor
 
-
 - directus /19.5kStar/GPLv3/202301/ts/vue
   - https://github.com/directus/directus
   - https://directus.io/
@@ -72,8 +72,7 @@ modified: 2023-01-20T21:59:47.792Z
       - You have to set SERVE_APP=true in your .env file in order to run the api in dev mode with the build app.
       - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
 
-
-- tinacms /8.3kStar/apache2/202301/ts
+- tinacms /8.3kStar/apache2/202301/ts/git
   - https://github.com/tinacms/tinacms
   - https://tina.io/
   - headless CMS for Markdown, MDX, and JSON.
@@ -92,8 +91,6 @@ modified: 2023-01-20T21:59:47.792Z
     - need to manually import the react-tinacms-editor(依赖prosemirror) plugin
   - [Unify .md & .mdx implementations](https://github.com/tinacms/tinacms/discussions/2869)
     - react-tinacms-editor editor also uses prosemirror, while the default rich-text editor uses slate.
-
-
 
 - webiny-js /6.3kStar/MIT/202301/ts/graphql/文档清晰/代码量大(很多包)
   - https://github.com/webiny/webiny-js

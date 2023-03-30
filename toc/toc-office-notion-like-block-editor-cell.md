@@ -159,6 +159,10 @@ modified: 2022-08-14T16:26:48.558Z
   - 所有组件保存的数据，都以Json的形式存储在Vuex里供不同组件调用
   - ref
     - https://github.com/renmu123/v-block-editor
+
+- https://github.com/Eroxl/Note-Rack
+  - An inline WYSIWYG markdown editor built for students to manage school work
+  - 依赖react-dnd
 # editorjs-plugins
 - https://github.com/yijian166/all-in-one-editorjs
 

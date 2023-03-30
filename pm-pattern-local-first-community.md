@@ -34,7 +34,8 @@ modified: 2022-03-03T18:20:12.075Z
 - Makes me wonder why we don’t have a messaging protocol like email for instant messaging…
   - There is RCS, which is an international  3GPP standard, but Apple refuse to implement it, and other providers pretend it's a Google thing (it's not)
   - And XMPP, solving instant messaging and presence as a w3c spec
-- 
+
+
 - ## So much CRDT literature seems to focus on collaborative text, but it feels like a pretty niche(针对特定小群体的) problem to me._202210
 - https://twitter.com/gaforres/status/1584909330859671553
   - Block editors like Notion are good enough for most cases. 

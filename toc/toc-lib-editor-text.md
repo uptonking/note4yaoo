@@ -64,6 +64,12 @@ modified: 2021-07-27T15:12:39.959Z
 - https://github.com/cnuebred/octapus
   - modular WYSIWYG rich text editor
   - 代码量很少
+# markdown-editor
+
+- https://github.com/youking-lib/marktion
+  - https://editor.marktion.io/
+  - 可切换阅读和文本，阅读模式可编辑
+  - 依赖immer
 # desktop-editor
 - https://github.com/lapce/lapce
   - written in pure Rust with a UI in Druid (which is also written in Rust). 

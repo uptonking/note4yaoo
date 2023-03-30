@@ -11,6 +11,9 @@ modified: 2020-12-12T19:22:00.735Z
 
 # guide
 
+- meta-framework
+  - 接管 打包、路由、布局、请求api、ssr、mock
+
 - features
   - opinionated react framework with features for production out of the box
   - ssr support

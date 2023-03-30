@@ -1,18 +1,15 @@
 ---
-title: pm-office-notion-solutions
-tags: [note-taking, notion, office]
+title: pm-office-notion-community
+tags: [community, notion]
 created: 2022-11-25T10:08:57.343Z
-modified: 2022-11-25T10:09:16.492Z
+modified: 2023-03-29T17:23:37.126Z
 ---
 
-# pm-office-notion-solutions
+# pm-office-notion-community
 
 # guide
 
 # changelog
-- support SELECT TEXT ACROSS MULTIPLE BLOCKS!_202201
-  - https://twitter.com/NotionHQ/status/1483884489235255297
-
 - We recently made our Personal Plan free and removed the block limit!_202007
 # discuss
 - ## 
@@ -23,22 +20,11 @@ modified: 2022-11-25T10:09:16.492Z
 
 - ## 
 
-- ## [A Graph-Based Firebase | Hacker News_202208](https://news.ycombinator.com/item?id=32595895)
-- I have built my own similar reactive inmemory triple store with typescripts type safety, but then I realized I still need transactions which are a bit of a pain, because transactions are bundling the otherwise separete triplets, so the atomic, independent logic of triplets and related effects breaks a bit. (I am sure it's solvable.)
-  - The example code uses a `transact` function. But it really depends on what you mean by “transaction”. 
-  - 👉🏻 We don’t use a triple store at Notion, but we do use an abstraction that ensures a collection of operations either all succeed or all fail. 
-  - We don’t support “interactive” transaction, where you can read, modify, write as an atomic group. 
-  - This just isn’t desirable in a multiplayer or offline system - in cases we need that kind of consistency we use a normal HTTP API which is online-only.
-
-- ## The Block Protocol
-- https://news.ycombinator.com/item?id=30105510
-- I think the challenging part of this project will be building intuitive and collaborative interfaces on top of the bare-bones data model. 
-- The challenge comes with two parts: 
-  - (1) allowing blocks to compose, so I can nest a "task block" inside a "paragraph block", 
-  - and (2) figuring out the collaboration model so multiple users can manipulate blocks at the same time, eg by typing characters. 
-  - Both of these aspects are un(der)specified in the Block Protocol spec.
-- For an example of a challenge building composable blocks, consider the suggested architecture - the project imagines different block types implemented as sandboxed iframes, orchestrated by some editor that stitches them together into a document or dashboard. This would make certain interactions difficult/impossible to implement in the browser. For example, you can't start a text selection in one iframe, and end the text selection in the next iframe. This means that each layer will need to implement many of the standard blocks, just to provide tools that operate on the contents of more than one block at a time.
-- I'm left wondering if there will ever be "block protocol native" apps, or if this will be more of an interoperability/import/export format between otherwise monolithic platforms that have their own much richer internal data format.
+- ## support SELECT TEXT ACROSS MULTIPLE BLOCKS!_202201
+- https://twitter.com/NotionHQ/status/1483884489235255297
+  - https://twitter.com/jitl/status/1483918085384028163
+- This is what I've been building since June 2021. It took ~100+ pull requests with 26247 added lines, 11078 removed lines. 
+  - It might seem like a small thing - to let you select text in multiple blocks at once - but we had to upgrade nearly every one of Notion's features to understand the new selection model.
 
 - ## [The data model behind Notion's flexibility](https://news.ycombinator.com/item?id=27200177)
 - Really interessing. This seem to be a really good use case for a NoSQL database. Am I wrong ?
@@ -84,12 +70,19 @@ modified: 2022-11-25T10:09:16.492Z
 
 - ## #Notion will not have #offline mode.
 - https://twitter.com/ianberdin/status/1592848167632244736
-  - @NotionHQ has Postgres based backend with deep tree  structure. There are no available technologies to sync such structure with a relational database. And yes, Notion can not rewrite their logic using OT, CRDT. It won't work.
+  - @NotionHQ has Postgres based backend with deep tree structure. There are no available technologies to sync such structure with a relational database. And yes, Notion can not rewrite their logic using OT, CRDT. It won't work.
 
 - ## no user wants to fiddle with a merge UI or picking versions like with iCloud.
 - https://news.ycombinator.com/item?id=28717848
   - For prose text, what do you think about combining a document-scale CRDT, with fine-grained locking — e.g. splitting the document into a "list of lines/sentences", where lines have identity, and then only allowing one person to be modifying a given line at a time?
 - I almost thought Notion would be a good example of this, but apparently not — they actually do allow multiple users to be editing the same leaf-node content block at the same time, and so have taken on the full scope of the CRDT problem.
+
+- ## Notion’s selection and undo/redo with multiplayer are pretty potato._202209
+- https://news.ycombinator.com/item?id=32991105
+  - Notion stores selection as grapheme indexes in a text property, so while it won’t lose selection if someone adds/removed characters from a text, your selection won’t make as much sense as one in Google Docs. 
+  - Likewise with undo/redo or regular typing into the same field - it’s all last-write-wins updates.
+- On the other hand, Notion’s editor does a much better job with CJK input, Android, etc compared to Slate. Slate has a beautiful API design but its implementation suffers outside of ideal conditions.
+- ProseMirror did the best the last time I tested these libraries. TipTap (a competitor of yours?) provides an API layer on top, which I haven’t spent much time investigating. For my purpose I don’t want intermediary abstractions - but might be useful for your context depending on how much you want to specialize in rich text.
 
 - ## [Peritext: A CRDT for Rich-Text Collaboration_202111](https://www.inkandswitch.com/peritext/)
 - Notion allows users to edit their notes offline, but if two users concurrently edit the same paragraph (called “block” in Notion), then only one of those edits is preserved, and the other is discarded. The Peritext algorithm would allow them to merge those edits instead.
@@ -104,7 +97,7 @@ modified: 2022-11-25T10:09:16.492Z
   - On the other hand, it does relieve the team of the burden of appointing a merge gatekeeper of changes. In which case, simultaneous editing helps.
 - I would assume that when writing async, the merging and keeping the history is more important to not cause any unexpected overwrites when you have been writing offline for some time and sync your changes back
   - I suspected there might be a blind spot in my reasoning while writing those tweets, and this very well may be it! Offline-first text could totally be difficult at block level.
-  - Still feels like it would be very difficult to solve with a generalized system, though. Like the final paragraph would diverge inline as changes come in with no respect for meaning. Manual mege at the block level might still be a better UX.
+  - Still feels like it would be very difficult to solve with a generalized system, though. Like the final paragraph would diverge inline as changes come in with no respect for meaning. Manual merge at the block level might still be a better UX.
 - Is there a tool/library that can handle ordered trees out of the box that you know of? Thx
   - Depends on how you want to query it... The framework I'm building uses schema based data which doesn't handle recursive nesting, but could represent a graph by ID references and query each level iteratively. Not ideal. Classics like YJS probably better. Check GUN too.
 - collaborative text is good because its a list type that people are already familiar with! turns out we can build arbitrary JSON out of lists (like what Automerge and Yjs have done) which allow you to synchronize state of entire applications
@@ -159,3 +152,20 @@ modified: 2022-11-25T10:09:16.492Z
 - ## [Anyone now what database architecture is Notion using?](https://www.reddit.com/r/Notion/comments/lxhxwi/anyone_now_what_database_architecture_is_notion/)
 - We use Postgres. 
 - [I'm the first engineering hire at Notion. AMA!](https://www.reddit.com/r/Notion/comments/fi45dc/im_the_first_engineering_hire_at_notion_ama/)
+
+- ## The Block Protocol
+- https://news.ycombinator.com/item?id=30105510
+- I think the challenging part of this project will be building intuitive and collaborative interfaces on top of the bare-bones data model. 
+- The challenge comes with two parts: 
+  - (1) allowing blocks to compose, so I can nest a "task block" inside a "paragraph block", 
+  - and (2) figuring out the collaboration model so multiple users can manipulate blocks at the same time, eg by typing characters. 
+  - Both of these aspects are un(der)specified in the Block Protocol spec.
+- For an example of a challenge building composable blocks, consider the suggested architecture - the project imagines different block types implemented as sandboxed iframes, orchestrated by some editor that stitches them together into a document or dashboard. This would make certain interactions difficult/impossible to implement in the browser. For example, you can't start a text selection in one iframe, and end the text selection in the next iframe. This means that each layer will need to implement many of the standard blocks, just to provide tools that operate on the contents of more than one block at a time.
+- I'm left wondering if there will ever be "block protocol native" apps, or if this will be more of an interoperability/import/export format between otherwise monolithic platforms that have their own much richer internal data format.
+
+- ## [A Graph-Based Firebase | Hacker News_202208](https://news.ycombinator.com/item?id=32595895)
+- I have built my own similar reactive in-memory triple store with typescripts type safety, but then I realized I still need transactions which are a bit of a pain, because transactions are bundling the otherwise separete triplets, so the atomic, independent logic of triplets and related effects breaks a bit. (I am sure it's solvable.)
+  - The example code uses a `transact` function. But it really depends on what you mean by “transaction”. 
+  - 👉🏻 We don’t use a triple store at Notion, but we do use an abstraction that ensures a collection of operations either all succeed or all fail. 
+  - We don’t support “interactive” transaction, where you can read, modify, write as an atomic group. 
+  - This just isn’t desirable in a multiplayer or offline system - in cases we need that kind of consistency we use a normal HTTP API which is online-only.

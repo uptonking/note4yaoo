@@ -185,3 +185,5 @@ modified: 2022-05-15T18:35:39.272Z
   - For the web, we're using contenteditable, with support for modern browsers only.
   - Interesting! Last I recall even modern browsers had a variety of ways they differed in implementation (not including actual bugs) that caused a lot of edge case issues. The amount of workarounds in this changelog is disheartening to say the least! https://prosemirror.net/docs/changelog/
 - We are on our fourth editor in our product because these projects have a habit of being abandoned. Please or please let this be the one that isn’t 
+
+- ## [Lexical – a web text editor framework that powers Facebook | Hacker News_202206](https://news.ycombinator.com/item?id=31813550)

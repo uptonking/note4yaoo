@@ -12,6 +12,10 @@ modified: 2023-02-05T19:03:12.723Z
 - collab
   - json patch
   - [Add Collaboration Example and Documentation](https://github.com/ianstormtaylor/slate/issues/3715)
+
+- more-slate
+  - 建站编辑器应该参考gutenberg、wix
+  - [npmtrends for slate](https://npmtrends.com/@remirror/react-vs-@tiptap/core-vs-lexical-vs-prosemirror-view-vs-remirror-vs-slate)
 # popular-slate
 - plate /1.6kStar/MIT/202208/ts/block-style
   - https://github.com/udecode/plate
@@ -74,6 +78,22 @@ modified: 2023-02-05T19:03:12.723Z
   - https://www.prezly.com/
     - Successful businesses need a fanbase. Use Prezly to build yours.
     - With Prezly, you can publish and share your content with your audience, directly. No algorithms, no middlemen, no BS.
+
+- tripdocs /52Star/MIT/202303/ts/feature多/直接fork源码修改
+  - https://github.com/ctripcorp/tripdocs
+  - https://ctripcorp.github.io/tripdocs/
+  - https://ctripcorp.github.io/tripdocs/apiDocs.html
+  - TripDocsSDK是基于携程内部在线文档编辑器内核，提炼的一款通用的，现代的、稳定的、支持协同的、可用于生产环境的在线文档编辑器
+  - 支持内容评论和底部评论，comment图标锚定在内容右侧水平对齐
+  - 支持历史版本
+  - 支持Markdown编辑和word解析
+  - 支持toc、斜杠菜单
+  - TripDocsSDK依赖slatejs、yjs、reactjs。并在slatejs基础上，进行了二次的开发
+  - 通过在 `validation.worker.js` 中对 Slate 的 `value` 对象进行全量递归校验，对不满足的结构返回 `invalidNode` 的响应，并且全局使用 `Editor.normalize(editor, {force: true})` 对页面结构进行强制重刷。这样就能够保证即使使用了 `defaultValue` 直接渲染的数据，也能够被自动修复。
+  - 直接在slate源码的基础上修改的，[源码修改记录](https://github.com/ctripcorp/tripdocs/blob/main/src/components/slate-packages/README.md)
+  - faq
+    - 如何协作，改哪个页面的socketUrl
+    - webpack.native/prod.js 使用的是 indexDemo.html
 
 - https://github.com/JokerLHF/mini-slate
   - 使用 ts 实现 slate 富文本
@@ -161,7 +181,6 @@ modified: 2023-02-05T19:03:12.723Z
   - 依赖 chakra-ui、nextjs、react-table.v7
   - 支持跨block选择部分文字
   - 不支持拖拽block修改顺序
-  - 支持只读模式
   - 代码量不大，思路清晰
 - https://github.com/masnormen/noshon
   - https://noshon.vercel.app/
@@ -220,6 +239,23 @@ modified: 2023-02-05T19:03:12.723Z
   - https://github.com/portive/slate-plugin
     - Add beautiful and intuitive images and attachments to Slate with support for paste, drag and drop and `<input type="file">` uploads.
 
+- https://github.com/react-page/react-page
+  - 使用redux作为状态管理
+  - 提供了 @react-page/plugins-slate
+  - 提供了集成react-admin的例子
+  - react-page comes preconfigured with Slate as a ‘cellPlugin’ to be used as the rich text editor.
+
+- edtr-io /696Star/MIT/202206/ts
+  - https://github.com/edtr-io/edtr-io
+  - https://edtr.io/
+  - a WYSIWYG in-line web editor written in React.
+  - 支持拖拽block修改顺序
+  - 不支持跨block选择部分文字
+  - text-plugin依赖slate.v0.8
+  - 依赖 prezly/slate-lists
+  - 示例样式友好
+  - 依赖redux、react-dnd
+
 - onlyoffice-sdkjs /190Star/AGPLv3/202302/js/参考sdk设计
   - https://github.com/ONLYOFFICE/sdkjs
   - https://api.onlyoffice.com/docbuilder/spreadsheetapi
@@ -236,10 +272,26 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/dictyBase/dicty-components-page-editor /202107/ts/inactive
   - https://dictybase.github.io/dicty-components-page-editor/
   - Reusable page editor built using Slate
+
+- oak /4Star/MIT/202208/js/提交多/page-builder
+  - https://github.com/p3ol/oak
+  - 整体上是一个可切换文本编辑器的页面编辑器
+  - 页面从上到下由块构成，内容文字默认不可编辑，需要点击悬浮编辑按钮
+  - Modern, lightweight & modulable page builder
+  - @poool/oak-addon-richtext-field: WYSIWYG text field using Slate
+  - @poool/oak-addon-richtext-field-prosemirror: WYSIWYG text field using ProseMirror
+
+- https://github.com/uimix-editor/uimix
+  - UIMix is a WYSIWYG editor for React components that offers a Figma or Framer-like experience for creating and maintaining React components.
+  - 图形基于iframe里面的dom
 # slate-based-editors
 - https://github.com/raralabs/rara-rte /ts
   - https://rte.raralabs.live/
   - A rich text editor built on top of slate.js
+
+- https://github.com/webkom/lego-editor /ts
+  - A React rich text editor written in TS with Slate.js for lego-webapp
+  - 代码量少，适合入门，支持上传图片
 
 - boatproject-editor /1Star/MIT/202208/ts/plate/提交多/inactive
   - https://github.com/boatproject/editor
@@ -250,10 +302,6 @@ modified: 2023-02-05T19:03:12.723Z
   - https://react-fluent-edit.vercel.app/
   - Brings easy-to-use mentions, markdown and DnD (WIP) features to Slate.
   - 非典型编辑器，更偏向输入框
-
-- https://github.com/webkom/lego-editor /ts
-  - A React rich text editor written in TS with Slate.js for lego-webapp
-  - 代码量少，适合入门，支持上传图片
 
 - https://github.com/accordproject/web-components/tree/master/packages/ui-markdown-editor
   - https://ap-web-components.netlify.app/
@@ -315,14 +363,14 @@ modified: 2023-02-05T19:03:12.723Z
   - An alternative text editor for Volto, capable of completely replacing the default richtext editor
   - Some of the main reasons that drove us to create volto-slate instead of enhancing Volto's draftjs implementation
   - 样式陈旧，编辑器和业务代码有联系
-  - repos
-    - https://github.com/plone/volto
-      - React-based frontend for the Plone Content Management System
-    - https://github.com/plone/Products.CMFPlone
-      - Plone is a mature, secure and user-friendly Content Management System (CMS).
-      - 后端基于python实现
-    - https://github.com/eea/volto-slate-metadata-mentions
-    - https://github.com/eea/volto-slate-footnote
+  - https://github.com/plone/volto
+    - React-based frontend for the Plone Content Management System
+    - plone后端依赖python
+  - https://github.com/plone/Products.CMFPlone
+    - Plone is a mature, secure and user-friendly Content Management System (CMS).
+    - 后端基于python实现
+  - https://github.com/eea/volto-slate-metadata-mentions
+  - https://github.com/eea/volto-slate-footnote
 
 - https://github.com/sanity-io/sanity/tree/next/packages/%40sanity/portable-text-editor
   - Sanity.io is the platform for structured content. 
@@ -480,6 +528,9 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/nod-engineering/slate-table
   - /202106/js/v0.59
 
+- https://github.com/nlulic/slate-table
+  - merge-deep  
+
 - https://github.com/jasonphillips/slate-deep-table
   - https://jasonphillips.github.io/slate-deep-table/
   - /201910/js/v0.44
@@ -541,6 +592,9 @@ modified: 2023-02-05T19:03:12.723Z
   - It's well documented that JSDOM does not support `contenteditable`.
   - https://github.com/AsterMiha/slate-editor-tests
 
+- https://github.com/blockprotocol/blockprotocol
+  - The open Block Protocol
+
 - https://github.com/rockettomatooo/slate-react-presentation /js
   - a small package that lets you render a slate.js document without the overhead of the actual editor.
 
@@ -569,6 +623,29 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/juliankrispel/slate-in-react-native
   - Proof of concept - Slate in react-native Webview
 # slate-apps
+- https://github.com/Kffhi/flomo-react
+  - https://www.kffhi.com/flomo/
+  - 大约1:1复刻的Flomo 网页（旧）版的单纯练习玩具，主要复刻编辑器
+
+- https://github.com/sodenn/2do-txt
+  - https://2do-txt-sodenn.vercel.app/
+  - 2do.txt is a task management that uses the todo.txt format
+  - https://github.com/todotxt/todo.txt
+    - todo.txt format
+
+- https://github.com/fakob/plug-and-play
+  - https://plugandplayground.dev/
+  - A visual toolkit for creative prototyping to explore, transform or visualise data.
+  - 交互以画板为主，文本为辅
+
+- https://github.com/Thinkmill/keystatic /ts
+  - First-class CMS experience, TypeScript API, Markdown & YAML/JSON based, no DB.
+  - Built with DNA from Keystone, connects directly to GitHub and doesn’t mess with your source code. 
+  - Conceived(构想；设想) for modern front-end frameworks like Next.js, Remix and Astro, designed to fit into your workflow.
+
+- https://github.com/stefancosquer/camas
+  - Simple Git based CMS
+
 - https://github.com/wwsalmon/postulate
   - http://postulate.us/
   - Postulate is an all-in-one tool for collecting and publishing your knowledge.
@@ -578,6 +655,10 @@ modified: 2023-02-05T19:03:12.723Z
   - a learning project to obtain knowledge and skills about the MERN stack
   - Redux, Redux Thunk, axios, Slate, Lodash
   - Sign-in with JWT token
+
+- https://github.com/sagemathinc/cocalc
+  - CoCalc is web-based software that enables collaboration in research, teaching, and scientific publishing.
+  - It includes Jupyter Notebooks, Sage Worksheets, a LaTeX Editor and a Linux Terminal to help people work together in real time
 
 - https://github.com/RealRong/Rendevoz
   - open-source knowledge management application built with React and TypeScript
@@ -596,6 +677,31 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/grammarly/grammarly-for-developers
   - Grammarly Text Editor SDK
+
+- https://github.com/Delavalom/clone-notion-ai
+  - A Notion clone with AI integration
+
+- https://github.com/NDLANO/editorial-frontend
+  - CMS for NDLA
+
+- https://github.com/johnsonandjohnson/bodiless-js
+  - Framework for building editable websites on the JAMStack
+
+- https://github.com/makeswift/makeswift
+  - Setup a new Next.js app with Makeswift in less than 5 minutes.
+
+- https://github.com/quillforms/quillforms /PHP
+  - Open Source TypeForm Alternative Based on React JS and Typescript 
+
+- https://github.com/dittofeed/dittofeed
+  - https://dittofeed.com/
+  - Open-source customer engagement platform built for devs
+  - 依赖prisma、fastify、codemirror6、mui5、next、slate、d3-dag(流程图/dag)
+
+- https://github.com/neolace-dev/neolace
+  - https://www.neolace.com/
+  - The next-generation knowledge graph platform.
+  - Neolace uses the Neo4j Graph Database as its primary datastore.
 # slate-collab
 - https://github.com/yomorun/react-cursor-chat /slate无关/仅参考
   - React Component helps bring Figma's Cursor Chat to your web applications
@@ -631,7 +737,7 @@ modified: 2023-02-05T19:03:12.723Z
   - A collaborating editor based on Slate and Yjs
   - 不依赖slate-yjs
 
-- https://github.com/itoumlilt/crdt-md-editor /202209/ts/slate/CouchDB
+- https://github.com/itoumlilt/crdt-md-editor /202209/ts/slate/PouchDB
   - React Typescript CRDT based Collaborative Markdown Editor
   - The current demo is implemented on top of PouchDB which offers replication and offline support, but can be easily ported on other equivalent backends. 
 
@@ -672,13 +778,6 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/commercetools/ui-kit
   - Component library based on our design system
-
-- https://github.com/johnsonandjohnson/bodiless-js
-  - Framework for building editable websites on the JAMStack
-
-- https://github.com/react-page/react-page
-  - 使用redux作为状态管理
-  - 提供了 @react-page/plugins-slate
 
 - https://github.com/Mirrorgo/slatejs
   - 基于slate.js实现一个富文本编辑器, 用以学习富文本编辑器相关知识

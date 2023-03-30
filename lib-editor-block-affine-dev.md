@@ -9,8 +9,12 @@ modified: 2023-02-20T15:17:23.958Z
 
 # guide
 
-# affine-editor-v202301
-- 每个段落都是一个代表quill editor的div, contenteditable="true"
+# affine-editor
+- v202303
+  - selection仍使用浏览器选区
+
+- v202301
+  - 每个段落都是一个代表quill editor的div, contenteditable="true"
 # block-editor-codebase
 
 > outdated. very early version of affine-editor before pre-alpha.

@@ -128,7 +128,8 @@ modified: 2022-08-21T10:02:05.129Z
   - 易扩展的开源无代码开发平台。
   - NocoBase is a scalability-first, open-source no-code/low-code development platform.
   - 后端依赖 koa、sequelize.v6
-  - 前端依赖 antd、g2plot、ahooks、dnd-kit、formily、marked、react-iframe、react-quill、react-router5
+  - 前端依赖 umi、antd、g2plot、ahooks、dnd-kit、formily、marked、react-iframe、react-quill、react-router5
+  - 提供了tree结构的4种存储方式，邻接表、闭包表、路径枚举、嵌套集
   - 支持应用层的插件系统，安装后需要刷新页面
   - 不直接支持输出表格的crud api，但提供了sdk文档，自己实现比较方便
   - 可配置表格工具条菜单项、添加行，也可配置页面菜单

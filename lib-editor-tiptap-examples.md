@@ -179,6 +179,9 @@ modified: 2023-02-05T19:03:27.730Z
 
 - https://github.com/AventusKent/tiptap-react
   - Super light rich text editor based on TipTap and React
+
+- https://github.com/g-bastianelli/tiptap-react-notion
+  - Quick example of how we can make a 'Notion like' editor with Tiptap and react
 # tiptap-utils
 - https://github.com/troop-dev/tiptap-react-render
   - This library renders TipTap JSON payloads in React clients without embedding the editor.

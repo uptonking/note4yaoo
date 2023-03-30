@@ -163,6 +163,7 @@ modified: 2020-12-28T12:24:09.275Z
   - NocoBase is a scalability-first, open-source no-code/low-code development platform.
   - server依赖koa、sequelize.v6
   - client依赖antd、g2plot、ahooks、dnd-kit、formily、marked、react-iframe、react-quill、react-router5
+  - 提供了tree结构的4种存储方式，邻接表、闭包表、路径枚举、嵌套集
   - 主要功能模块
     - 微内核，灵活易扩展，具备健全的插件体系、内置插件市场
     - fields: 使用文本、数字、附件等数十种字段类型
@@ -184,6 +185,7 @@ modified: 2020-12-28T12:24:09.275Z
   - REST & GraphQL API. Instantly layers a blazingly fast Node.js API on top of any SQL database.
   - 后端依赖express、knex、async
   - 前端依赖vue3、tinymce5、p-queue、apexcharts
+  - [Block Editor](https://github.com/directus/directus/discussions/5776)
 
 - webstudio-designer /172Star/MIT/202212/ts
   - https://github.com/webstudio-is/webstudio-designer

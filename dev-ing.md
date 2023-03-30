@@ -77,6 +77,7 @@ $$('[contenteditable]')
 - 👉🏻 output: 代码、产品、生态积累
 - slate-wangeditor
   - model, view, sync, collab
+  - slate-docs-examples
 - 👉🏻 eg-focalboard
   - table view
   - kanban view
@@ -84,8 +85,8 @@ $$('[contenteditable]')
   - [x] 数据全内存: nedb, blinkdb
   - [x] 数据全持久: linvodb, tingodb
   - [ ] 方便接入已有的外部数据源
-  - tuple-database
-  - tinybase
+  - tuple-database 支持内存和持久化
+  - tinybase 支持内存和持久化
 
 - 若slate-model层采用扁平化Node
   - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath
@@ -149,8 +150,8 @@ $$('[contenteditable]')
 
 - dev-later
   - crdt tutorials
-  - 腰包掉到床头版与墙的夹缝中了
   - 默认last-write-win, 出现冲突时，提示用户选择版本
+  - 腰包掉到床头版与墙的夹缝中了
   - 离屏渲染，keep-alive
   - 分层渲染
 # dev-03
@@ -160,8 +161,12 @@ $$('[contenteditable]')
 - dev-to
   - 拖拽时原布局不变，只显示预期位置的指示线
   - writing tests
-  - link hover未实现
-    - 添加link时选择取消，需要处理
+    - test in firefox
+  - toolbar 高亮
+  - scss to linaria
+  - table to tanstack
+  - emoji
+  - 斜杠菜单
 
 - dev-to-collab
   - 🐷 每次刷新页面，空白行会多一行
@@ -171,20 +176,39 @@ $$('[contenteditable]')
     - 复现方法，在一个浏览器输入，在另一个浏览器全选+删除
 
 - dev-later
+  - 悬浮工具条
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
   - list
-    - 拖拽时，不相关的列表项也会抖动
-    - 将无序列表项拖进数字列表项时，数字列表项会增加？
-    - 数字列表跟在符号列表后时，数字不会从0开始，需要在前面插入一个空行
     - 列表项A的兄弟项B无法拖到A的位置，即无法替换A，B会自动变成A的子级
+    - 将无序列表项拖进数字列表项时，数字列表项会增加？数字编号或自动变动
+    - 数字列表跟在符号列表后时，数字不会从0开始，需要在前面插入一个空行
+    - 列表组件设置面板，设置折叠、可拖动
+    - 拖拽时，不相关的列表项也会抖动
   - initialDataLong示例，无法删除首行列表项
   - remove ramda
+  - drag
+    - paragraph的drag handle有时无法选中
   - collab
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
 
+## 0329
+
+- [css - Get button text on to one line - Stack Overflow](https://stackoverflow.com/questions/41248992/get-button-text-on-to-one-line)
+  - `.btn { white-space: nowrap;  }`
+
+- [grammar - "Are you sure to delete?" or "Are you sure you want to delete?" - English Language & Usage Stack Exchange](https://english.stackexchange.com/questions/222316/are-you-sure-to-delete-or-are-you-sure-you-want-to-delete)
+  - Are you sure to delete this item?
+    - this asks if they are definitely going to delete the item. This isn't something to ask the user
+  - Are you sure you want to delete this item?
+    - This asks not about what will happen (which is a question about the program) but what is desired (which is a question for the user). This is the one to go for.
+
 ## 0328
+
+- dev-to
+  - link hover未实现
+  - 添加link时选择取消，需要处理, useClickOutside
 
 - [各种高度clientHeight/scrollHeight/offsetHeight及应用 - 掘金](https://juejin.cn/post/6898575556796022797)
   - offsetWidth/offse tHeight 返回值包含 content + padding + border，效果与element.getBoundingClientRect() 相同
@@ -894,7 +918,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                                                   `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                                                           `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

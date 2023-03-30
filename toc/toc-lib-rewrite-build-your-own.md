@@ -71,3 +71,11 @@ modified: 2021-09-29T13:23:09.969Z
 # vue
 - https://github.com/HiWayne/Self-Vue
   - 自己实现的vue监听数据变化和双向绑定源码，单文件
+
+- https://github.com/leaon4/mini-vue
+  - 大概是最全的一个基于vue3的 mini-vue 实现了
+  - 项目结构尽量还原 vue3 源码，只做主线任务
+  - [从零开始写个mini-vue_bilibili](https://www.bilibili.com/video/BV1564y1s7s5/)
+
+- https://github.com/JokerLHF/mini-vue3
+  - 模拟vue3，实现了模板编译、创建组件实例、运行渲染函数、挂载虚拟 dom、接合响应式系统、patch 更新渲染、scheduler 任务调度， 基本上完成主线任务。

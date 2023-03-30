@@ -16,6 +16,7 @@ modified: 2022-11-08T19:04:00.289Z
 - ref
   - https://github.com/JefMari/awesome-wysiwyg
   - https://github.com/xjh22222228/awesome-web-editor
+  - [Rich Text Editors](https://gist.github.com/stormwild/044e184f8ef9bf3062a1ca950d6c0569)
 # known-text-editor
 - prosemirror /6kStar/MIT/202208/ts
   - https://github.com/ProseMirror/prosemirror
@@ -223,7 +224,7 @@ modified: 2022-11-08T19:04:00.289Z
   - a WYSIWYG in-line web editor written in React.
   - 支持拖拽block修改顺序
   - 不支持跨block选择部分文字
-  - text-plugin依赖slate.v0.47
+  - text-plugin依赖slate.v0.8
   - 示例样式友好
   - 依赖redux、react-dnd
 

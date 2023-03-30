@@ -27,6 +27,48 @@ modified: 2022-05-15T18:37:07.368Z
 
 - lexical-resources
   - https://lexical.dev/docs/intro
+# [Rethinking Rich Text: A Deep Dive Into the Design of Lexical - Acy Watson_202210](https://www.youtube.com/watch?v=EwoS0dIx_OI)
+- problems with draftjs
+  - code size
+  - modularity
+  - rendering performance
+  - input method/ime
+  - accessibility
+
+- design of lexical
+
+- lexical-concepts
+  - EditorState
+  - Node
+  - update
+  - transform
+  - commands
+  - event-listeners
+
+- nodes
+  - element has children
+  - leaf has no children
+  - both element and leaf can be extended
+  - decorate node
+
+- updates 
+  - pendingState > activeState
+
+- update workflow
+  - editorState
+  - update1  update2  update3
+  - pendingState batched
+  - reconciler
+  - dom
+
+- transform
+  - has access to new state before commit to dom
+
+- listeners
+  - connection to update
+
+- dom events usually dispatch commands, internal event system
+  - commands support priority
 # dev
 - ## [Add an experimental Table component in React_202209](https://github.com/facebook/lexical/pull/2929)
   - This PR adds an experimental React-based table implementation to the playground. 

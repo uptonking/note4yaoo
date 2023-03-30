@@ -49,6 +49,7 @@ modified: 2023-02-27T19:07:31.111Z
   - [x] 删除列
 
 - cell
+  - 单元格支持悬浮菜单，只读模式支持设置背景，编辑模式支持合并
   - 单元格可选支持nested content，表中表
   - [x] 合并、拆分单元格
 
@@ -65,6 +66,7 @@ modified: 2023-02-27T19:07:31.111Z
 ## table-impl
 
 ### header
+
 - style-header-背景色
   - 设置在cell: prezly，方便实现表头行和表头列
   - 设置在tr/thead: gitbook
@@ -76,11 +78,14 @@ modified: 2023-02-27T19:07:31.111Z
 
 - table font-size
   - notion和飞书表格字体都是14px，正文是16px
+
 ### context-menu
+
 - 插入行或列后，右键菜单位置异常
   - 原因是
 
 - 右键菜单不稳定出现位置跳跃问题
+
 ## faq
 
 - 光标如何退出表格

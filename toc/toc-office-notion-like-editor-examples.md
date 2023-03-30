@@ -58,6 +58,8 @@ modified: 2022-06-03T22:07:23.308Z
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，但list item不支持拖入拖出
 
+
+
 - https://github.com/kiaksarg/edu-editor  /slate
   - https://edu-editor.netlify.app/
   - a basic medium/notion like rich text editor based on Slate.js framework
@@ -133,6 +135,14 @@ modified: 2022-06-03T22:07:23.308Z
 - https://github.com/youking-lib/marktion
   - https://editor.marktion.io/
   - an inspiring markdown editor
+
+- https://github.com/gabrielcoder247/notion-like-editor
+  - https://notion-like-editor-kappa.vercel.app/
+  - a react based text editor that allows a user to add text anywhere and covert the text to H1
+
+- https://github.com/omarsalem7/notion
+  - https://notion-editor.netlify.app/
+  - a simple functionality for notion like h1, h2.
 # notion-block-structure-api/self-hosted
 - https://github.com/dragonman225/nast
   - A block-based intermediate representation for document-like content.
