@@ -11,8 +11,11 @@ modified: 2021-03-29T19:29:32.505Z
 
  
 
+- monorepo Module not found: Error: Can't resolve
+  - 排查到原因是main入口值应该是 src/index.`tsx`，而不是index.ts
+
 - npm ERR! could not determine executable to run
-  - 之前将devDependencies里面scripts相关的包误删了
+  - 之前将devDependencies里面scripts命令相关的包误删了
 
 - invalid hook call mismatching versions of React
   - 子项目较多时，容易产生react版本冲突，此时解决方法是统一react版本，一般是升级
@@ -802,4 +805,3 @@ function f2 (f: F) {
   - Module build failed (from ../../node_modules/@linaria/webpack5-loader/lib/index.js):
   - Error: /home/yaoo/Documents/repos/yaoo-toys/lts/nostalgia-studio/node_modules/@udecode/plate-core/dist/index.es.js has no shaker metadata
   - linaria对三方包的代码不友好，使用了反引号模版字符串会异常，解决方法是fork三方包源码自己打包
-

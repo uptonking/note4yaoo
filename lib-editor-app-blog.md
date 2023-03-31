@@ -281,3 +281,5 @@ modified: 2022-08-21T10:11:37.453Z
 
 - [从零写一个富文本编辑器（二）——文档模型 - 掘金](https://juejin.cn/post/6934368266382999565)
   - [从零开始写一个富文本编辑器（一） - 掘金](https://juejin.cn/post/6924346082797289480)
+
+- [富文本编辑器：TinyMCE、Editor.js、Lexical、CKEditor与CodeMirror对比 - ercwang](https://0x763ad28bc4436590fd61998561730b0f7790e955.xlog.app/TinyMCEEditorjsLexicalCKEditorCodeMirror)

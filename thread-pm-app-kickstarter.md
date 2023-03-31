@@ -73,24 +73,6 @@ modified: 2021-10-29T15:02:28.882Z
 
 - ## 
 
-- ## 
-
-- ## 分析了ProductHunt上10000个产品，得到了以下结论
-- https://twitter.com/JourneymanChina/status/1640669175705387011
-  - [What I learned analyzing 10, 000 Product Hunt Listings to show what products are successful & unsuccessful](https://www.indiehackers.com/post/what-i-learned-analyzing-10-000-product-hunt-listings-to-show-what-products-are-successful-unsuccessful-4ceb5f6770)
-
-- 受欢迎的品类：
-  - Web based apps, automation products, email productivity, community focused products and screen recording / screenshotting 
-- 不受欢迎的品类：
-  - Pomodoro, QR Code, Habit Tracking, VPN, Paywall or Notification 
-- 竞争最激烈的领域：
-  - Automation (148 apps)，Chatbots(118 apps)，Design (118 apps)，Video (105 apps)
-
-- 总体来说，
-  - 能帮用户节省时间甚至赚钱的就容易受欢迎，而番茄钟之类的则比较简单，难有创新
-  - 不要畏惧红海，水大鱼才大。 在红海中找到一个垂直的细分市场，更容易拿到结果。 相比于冷门领域而言
-  - 当然，以上结论都是针对ProductHunter而言，这些人本来就是互联网世界最活跃的"生产者"。 
-
 - ## 微软 Office 全家桶，简直了，帮助微软赢得了桌面电脑的战争，又帮助微软转型移动互联网，又帮助微软成功转型云计算服务，成为SaaS第一巨头，现在又帮助微软转型AI。
 - https://twitter.com/uptonking2/status/1636608874173317120
   - Office之于微软，相当于金箍棒之于悟空。

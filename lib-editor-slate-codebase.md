@@ -40,10 +40,6 @@ modified: 2023-02-05T19:03:12.722Z
 
 - 很多编辑器框架都有先从options/plugins中收集依赖，然后再将分类过的props传入Editable组件的逻辑，如atlaskit、taze
 
-- 编辑器较通用的功能
-  - 复制、粘贴
-  - 导入、导出
-
 - slate-plugin/feature
   - 定义接口
   - 工具方法、queries

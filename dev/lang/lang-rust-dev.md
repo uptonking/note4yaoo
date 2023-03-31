@@ -9,7 +9,6 @@ modified: 2022-11-11T06:57:09.670Z
 
 # guide
 
-
 - resource
   - [Rust语言圣经(Rust Course)](https://course.rs/about-book.html)
   - [24 days from node.js to Rust](https://candle.dev/blog/javascript-to-rust/javascript-to-rust-day-1-rustup/)
@@ -21,7 +20,6 @@ modified: 2022-11-11T06:57:09.670Z
 - rustup自带版本管理
   - [Rustup 镜像安装帮助 清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/help/rustup/)
   - [Rust crates.io 索引镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/crates.io-index.git/)
-
 # dev
 
 # examples
@@ -31,3 +29,9 @@ modified: 2022-11-11T06:57:09.670Z
 
 - https://github.com/risinglightdb/risinglight
   - An OLAP database system for educational purpose
+# blogs
+
+## why rust
+
+- [Why Turborepo is migrating from Go to Rust – Vercel](https://vercel.com/blog/turborepo-migration-go-rust)
+# more

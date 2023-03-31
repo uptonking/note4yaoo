@@ -28,7 +28,7 @@ modified: 2021-11-19T06:53:19.649Z
 - 😏
   - ime 嘿嘿 偷笑
 - 😱
-  - ime 尖叫 吓人
+  - ime 吓人
   - :scream:
   - face screaming in fear
 - 😩 😦 😫

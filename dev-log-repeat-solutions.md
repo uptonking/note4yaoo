@@ -67,8 +67,8 @@ modified: 2021-07-20T13:50:23.433Z
 
 - ✨ cms(content-mgmt)
   - 👉🏻 payloadcms  (MIT/mongoose+slate)
-  - outline    (apache2/sequelize+prosemirror)
   - nocobase   (apache2/sequelize+umi)
+  - outline    (apache2/sequelize+prosemirror)
   - directus      (AGPL/knex+vue3+tinymce5)
 - ✨ airtable-like(data-mgmt)
   - 👉🏻 nocodb     (AGPL/knex+nuxt3)

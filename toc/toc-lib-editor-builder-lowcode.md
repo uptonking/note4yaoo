@@ -176,7 +176,7 @@ modified: 2020-12-28T12:24:09.275Z
     - 每个区块里可以定义不同的样式、文案、操作
   - you can configure the user interface directly with WYSIWYG operations.
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
-  - [change license to plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
+  - [change license of plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
 
 - directus /19.5kStar/GPLv3/202301/ts/vue
   - https://github.com/directus/directus

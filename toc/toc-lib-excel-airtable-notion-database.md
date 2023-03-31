@@ -139,7 +139,7 @@ modified: 2022-08-21T10:02:05.129Z
     - 每个区块里可以定义不同的样式、文案、操作
   - you can configure the user interface directly with WYSIWYG operations.
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
-  - [change license to plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
+  - [change license of plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
 
 - focalboard /10.3kStar/src-AGPL & bin-MIT/202203/ts/go
   - https://github.com/mattermost/focalboard

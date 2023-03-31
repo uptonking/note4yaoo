@@ -9,6 +9,9 @@ modified: 2021-03-29T19:17:20.657Z
 
 # guide
 
+- 大量配置项的处理
+  - webpack
+  - vscode
 # [How to autosave small changes to big settings file without lag?](https://stackoverflow.com/questions/41232606)
 - Provided that you want to keep the model with a multi-MB settings file, the most reasonable solution would be to use **atomic writes** to avoid the problem of the app being quit in the middle of a save.
 - Assuming your file is called `settings.json`, atomic writes would work something like this:

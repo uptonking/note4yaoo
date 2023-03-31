@@ -105,6 +105,9 @@ modified: 2020-07-07T08:10:16.774Z
   - https://github.com/tc39/proposal-temporal
     - The JavaScript Temporal proposal has reached stage 3 in TC39. 
     - Proper Date & Time handling are coming!
+    - `@internationalized/date` is a date library built by the React Aria team
+      - https://twitter.com/devongovett/status/1641069934460510214
+      - The API is inspired by Temporal, and eventually we will back it by Temporal when implemented in browsers. 
 
 - ref
   - https://github.com/sudheerj/ECMAScript-features

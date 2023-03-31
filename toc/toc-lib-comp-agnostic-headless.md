@@ -83,6 +83,7 @@ modified: 2021-04-11T06:17:51.318Z
   - Finite state machines for accessible JavaScript components
   - The component interactions are modelled in a framework agnostic way. 
   - We provide adapters for JS frameworks like React, Solid, or Vue.
+  - Zag.js (low-level state machine) => Ark (headless components) => Chakra (Ark + CSS-in-JS)
   - The machine APIs are completely unstyled and gives you the control to use any styling solution you prefer.
   - Zag is built on top of the latest ideas in Statecharts. We don't follow the SCXML specifications
 

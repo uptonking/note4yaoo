@@ -193,6 +193,33 @@ $$('[contenteditable]')
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
 
+## 0330
+
+- umi打包不压缩
+  - COMPRESS=none npx umi build
+
+- 👀 new webpack. DefinePlugin
+  - 设置的值要用`JSON.stringify()`包裹
+  - Note that because the plugin does a direct text replacement, the value given to it must include actual quotes inside of the string itself. 
+  - Typically, this is done either with alternate quotes, such as '"production"', or by using JSON.stringify('production')
+
+```JS
+new webpack.DefinePlugin({
+  PRODUCTION: JSON.stringify(true),
+  VERSION: JSON.stringify('5fa3b9'),
+  BROWSER_SUPPORTS_HTML5: true,
+  TWO: '1+1',
+  'typeof window': JSON.stringify('object'),
+  'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+});
+```
+
+- Bleeding Edge指那些前沿的却又不太成熟的、具有一定风险的事物，与cutting edge意思相近，多了一层风险的含义
+  - 超前沿技术（Bleeding edge technology）也称为血刃科技，是具有风高险，还不一定可靠的技术，因此先行者要导入此技术时可能会有大量的支出
+
+- [Solved - Export 'x' (imported as 'y') was not found in the filename (possible exports: X)](https://www.sharooq.com/solved-attempted-import-error-something-is-not-imported-from-some-file)
+  - In the above code, we tried to import a default export with the named import "{ Sample }", which resulted in an error.
+
 ## 0329
 
 - [css - Get button text on to one line - Stack Overflow](https://stackoverflow.com/questions/41248992/get-button-text-on-to-one-line)
@@ -918,7 +945,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                                                           `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                                                                `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

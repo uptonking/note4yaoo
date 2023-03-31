@@ -8,7 +8,15 @@ modified: 2023-03-16T16:29:47.610Z
 # lib-editor-slate-features-dev
 
 # guide
+- 编辑器较通用的功能
+  - 复制、粘贴
+  - 导入、导出
+  - 兼容word、excel
 
+- 编辑器难点
+  - 分页
+  - 页眉、页脚
+  - 虚拟渲染
 # noseditor
 
 # dev-to
