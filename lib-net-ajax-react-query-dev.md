@@ -19,7 +19,22 @@ modified: 2023-03-05T08:55:03.696Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## I managed to build an "offline-first" React app using @tan_stack Query. 
+- https://twitter.com/crutchcorn/status/1641767947164319745
+  - It loads data once from server, lets you turn off data, do everything offline, & sync again when online. 
+  - It even has a manual diff for when server data updates when offline. 600 LOC
+- https://github.com/crutchcorn/offline-first-react-app
+  - this POC is _really_ for a React Native app.
+- What’s redux persist for though if you’re using react query persist?
+  - Diff probs to be solved - React Query is server data handling while Redux is for local-only data.
+  - Redux specifically persists all of the diffing that needs to occur with the user.
+  - Seemed like a good solution given:
+  - 1) This data cannot become stale
+  - 2) Updatable outside of comps
+- is there anything else you think could be improved in this code sample?
+  - Just one thing: In the diff-handler, you're reading:
+  - const isOnline = onlineManager.isOnline(); 
+  - This isn't reactive, so your component won't re-render because the online state changes. You'd need `onlineManager.subscribe()` in an effect (or via useSyncExternalStore) for that
 
 - ## I'm building a react-query-like library but for specifically tuple-database backends. 
 - https://twitter.com/moonriseTK/status/1636536122711867393

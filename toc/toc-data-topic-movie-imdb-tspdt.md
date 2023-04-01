@@ -138,6 +138,10 @@ modified: 2022-11-29T14:52:00.701Z
 - https://github.com/iliophanis/movie-app
   - https://iliophanis.github.io/movie-app
   - Movie Web App - Stack used : ReactJs, Typescript, TailwindCSS, Framer Motion
+
+- https://github.com/iam-rohid/flex-ui-react-native
+  - Movies App with React Native and React Query. 
+  - It uses TheMovieDB free API for fetching movies.
 # MovieLens
 - https://github.com/Movinder/movielens-imdb-exploration /jupyter
   - Data exploration of MovieLens and IMDb datasets to create Movinder. Movie recommendation system for a group of people.

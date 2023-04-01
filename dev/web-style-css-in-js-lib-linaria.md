@@ -95,13 +95,22 @@ react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", {
 - resources
   - [Use CSS Variables instead of React Context](https://epicreact.dev/css-variables/)
 # issues
+- [Conditional CSS with styled tag](https://github.com/callstack/linaria/issues/409)
+  - No support for conditional CSS using the styled tag is the biggest hurdle for us moving to linaria from styled-components in a typescript project
+
+## tooling
+
 - 🚨 经常出现 linaria has no shaker metadata
-  - 解决方法，import包时从具体子目录如./src/comp/button，而不是./src
+  - ~~解决方法，import包时从具体子目录如./src/comp/button，而不是./src~~
   - 所以要多检查业务代码
   - 检查三方包中是否有反引号模版字符串
+  - 主要是babel配置错误
 
 - Cannot read properties of undefined(reading IconButton)
   - 要注意组件导出的顺序，若先导出Link组件，后导出IconButton组件，会出现此问题
+
+- EvalError: TextEncoder is not defined in
+  - 修改import顺序后就可以执行
 
 - [webpack build silently fails after Linaria update](https://github.com/callstack/linaria/issues/1135)
   - Short answer: Webpack + linaria plugin with custom babel options
@@ -322,8 +331,10 @@ export function Box({ color, valid }) {
 ```
 
 # faq
-- 如何使用object style形式的样式
-  - https://github.com/callstack/linaria/issues/464
+
+## 如何使用object style形式的样式
+
+- https://github.com/callstack/linaria/issues/464
 
 ```typescript
 // 暂不支持
@@ -338,3 +349,12 @@ const sectionStyles = css`
 `
 <section className={sectionStyles} />
 ```
+
+## [Linaria vs Vanilla-Extract](https://github.com/silviogutierrez/reactivated/discussions/139)
+
+  - Colocation. You don't need to name things, you can just use the css tag inside className and style things.
+
+- vanilla-extract cons
+  - No colocation. Styles must be in a separate file and each require their own names.
+  - No styled.div or similar API for quickly creating components.
+  - No nested selectors. This ends up being far more annoying than the docs imply. But we can write a utility function to work around it.

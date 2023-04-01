@@ -25,7 +25,7 @@ modified: 2020-12-08T14:05:52.048Z
   - ramda, deepmerge, date-fns
   - marked
 # usage
-- [[BUG] ^7.20.3 no longer resolves local package first on install (workspaces) · Issue #3637 · npm/cli](https://github.com/npm/cli/issues/3637)
+- [[BUG] ^7.20.3 no longer resolves local package first on install (workspaces)](https://github.com/npm/cli/issues/3637)
   - you can update your package.json files directly. The format is `"<package_name>": "*"` where the version number is `"*"`. If you do this, npm will recognize it as a local dependency
 
 - [workspaces — require local package - Stack Overflow](https://stackoverflow.com/questions/68737632/node-workspaces-require-local-package)

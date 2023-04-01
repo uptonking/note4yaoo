@@ -13,6 +13,10 @@ modified: 2023-02-08T07:20:48.475Z
 
 # chatgpt
 
+- 写了个基于 ChatGPT 的 AI 维权律师，根据事实和诉求帮当事人生成起诉书。
+  - https://twitter.com/imyuanx/status/1641715695762436098
+  - https://github.com/imyuanx/ai-lawyer
+
 - [https://www.steamship.com](https://www.steamship.com/)
   - SteamShip 开放了 GPT-4 的模型接口，只需要注册SteamShip 账号，无需付费，几行代码直接就能调用 GPT-4
 
@@ -29,6 +33,10 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/lencx/ChatGPT /rust
   - ChatGPT Desktop Application (Mac, Windows and Linux)
   - 国内ip无法访问
+
+## prompts
+
+- [Open Prompt](https://openprompt.co/)
 # ml-neural-network
 - https://github.com/TrevorBlythe/MentisJS
   - A javascript neural network library. 

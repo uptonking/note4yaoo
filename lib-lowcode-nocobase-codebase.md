@@ -14,6 +14,13 @@ modified: 2023-03-31T02:08:36.730Z
   - spa在刷新页面时无法恢复，路由配置存在问题
   - 表格分页后，只会在第N页的数据过滤
     - 只有源表分页显示正常
+
+- questions
+  - yarn nocobase install 触发的逻辑在哪里
+
+- later
+  - 插件市场仍在开发中
+  - block protocol
 # overview
 - 界面上一张表对应数据库中一张表
 

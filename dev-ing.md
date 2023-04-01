@@ -135,7 +135,7 @@ $$('[contenteditable]')
 - log2023
   - 01-linvo-search+tinybase-sync-hlc-wip
   - 02-typewriter-quill+tanstack-table+slate-table
-  - 03-crdt-rga+slate-yjs
+  - 03-crdt-rga+slate-yjs+slate-editor
 
 - why use es6 class
   - 运行时类型检查，instanceof
@@ -162,11 +162,14 @@ $$('[contenteditable]')
   - 拖拽时原布局不变，只显示预期位置的指示线
   - writing tests
     - test in firefox
-  - toolbar 高亮
+  - toolbar
+    - 高亮
+    - 分组
   - scss to linaria
   - table to tanstack
   - emoji
   - 斜杠菜单
+  - 去掉依赖 plate-serializer
 
 - dev-to-collab
   - 🐷 每次刷新页面，空白行会多一行
@@ -192,6 +195,52 @@ $$('[contenteditable]')
   - collab
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
+
+## 0331
+
+- [typescript - How to check if a given value is in a union type array - Stack Overflow](https://stackoverflow.com/questions/50085494/how-to-check-if-a-given-value-is-in-a-union-type-array)
+  - 常见场景 isAvailable  = (item:string) => array.includes(item)
+  - array是union 类型数组
+  - 此时 indexOf/includes 都会被ts警告，可行的方法是用 find
+  - The accepted answer uses type assertions/casting but from the comments it appears the OP went with a solution using `find` that works differently
+
+```typescript
+const configKeys = ['foo', 'bar'] as const;
+type ConfigKey = typeof configKeys[number]; // "foo" | "bar"
+
+// Return a typed ConfigKey from a string read at runtime (or throw if invalid).
+function getTypedConfigKey(maybeConfigKey: string): ConfigKey {
+    const configKey = configKeys.find((validKey) => validKey === maybeConfigKey);
+    if (configKey) {
+        return configKey;
+    }
+    throw new Error(`String "${maybeConfigKey}" is not a valid config key.`);
+}
+```
+
+- [How to use e.preventDefault inside onChange for select tag - Stack Overflow](https://stackoverflow.com/questions/61507666/how-to-use-e-preventdefault-inside-onchange-for-select-tag)
+  - the `change` event in a select HTML element is not cancellable in order to call `preventDefault()`. If you log the event object you will see that it's `cancelable` property is set to `false`. Perhaps you can set the select element to disabled.
+
+- [Webpack style-loader vs css-loader - Stack Overflow](https://stackoverflow.com/questions/34039826/webpack-style-loader-vs-css-loader)
+  - The CSS loader takes a CSS file and returns the CSS with imports and url(...) resolved 
+    - It doesn't actually do anything with the returned CSS.
+  - the style-loader module automatically injects a `<script>` tag into the DOM, and that tag remains in the DOM until the browser window is closed or reloaded. 
+    - The style loader takes CSS and actually inserts it into the page so that the styles are active on the page.
+    - The style-loader module also offers a so-called "reference-counted API" that allows the developer to add styles and remove them later when they're no longer needed. 
+
+- ### [Why are webpack loaders read from right to left in webpack? - Stack Overflow](https://stackoverflow.com/questions/32029351/why-are-loaders-read-from-right-to-left-in-webpack)
+
+- I think it's important to note the difference between piping and composing. 
+- In *nix environments, you can pipe commands from left-to-right:
+  - cat file.txt | egrep cars > output.txt
+- But in functional programming you can compose functions together and the functions will execute from right-to-left
+  - var fn0 = compose(divide(2), add(3)); 
+- It seems to me that Webpack is following the convention of composing versus piping as it's ordered right-to-left. Check out Ramda's docs for a technical specification
+
+- [What is the loader order for webpack? - Stack Overflow](https://stackoverflow.com/questions/32234329/what-is-the-loader-order-for-webpack)
+- loaders: ['loaderOne', 'loaderTwo', 'loaderThree']
+  - means exactly the same as...
+  - `loaderOne(loaderTwo(loaderThree(somefile.css)))`
 
 ## 0330
 
@@ -945,7 +994,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                                                                `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                                                                   `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

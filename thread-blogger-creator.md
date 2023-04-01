@@ -55,3 +55,7 @@ modified: 2021-02-09T19:23:39.082Z
     - qri (“query”) is a global dataset version control system (GDVCS) built on the distributed web
     - https://qri.io/
     - https://github.com/qri-io (core not opensourced)
+# saas
+- 江宏
+  - lean cloud
+  - [1 Byte](https://1byte.io/)

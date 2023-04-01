@@ -12,10 +12,15 @@ modified: 2023-03-31T02:09:08.566Z
 - features
   - easy to solve problems with lowcode and blocks
   - a micro-core architecture, various functions are extended with plugins
+    - plugin marketplace
   - rich fields
   - rbac/Role-based access control
   - Workflow & automation
   - Rich and extensible actions
+
+- later
+  - 插件市场仍在开发中
+  - block protocol
 
 - resources
 # dev

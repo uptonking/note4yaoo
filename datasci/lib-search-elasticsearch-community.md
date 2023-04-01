@@ -16,7 +16,12 @@ modified: 2023-01-02T08:49:39.114Z
 
 - ## 
 
-- ## 
+- ## 前天的推有人问为什么不用 elasticsearch，这是回复，看内存占用，数据量两万。对小应用来说 elasticsearch 太重了。
+- https://twitter.com/chloerei/status/1641790933946740738
+- 感觉还是 postgres 十项全能
+  - 要装分词插件就要自己维护数据库，不能用托管的，这是我不想在 pg 做全文搜索的原因。
+- 前段时间看到 supabase 这个产品好像不错，内置了很多扩展在 pg 里
+  - 也调研过，还不支持中文分词插件。
 
 - ## [Elasticsearch, the server_201608](https://www.elastic.co/blog/elasticsearch-the-server#_embedded_elasticsearch_not_supported)
 - Some users run Elasticsearch as embedded. We are not going to stop them from doing so, but we cannot support it. 

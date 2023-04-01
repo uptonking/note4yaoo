@@ -150,6 +150,9 @@ modified: 2021-09-04T14:03:39.046Z
     - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
     - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
 # local-first-examples
+- https://github.com/crutchcorn/offline-first-react-app
+  - a proof-of-concept for an offline-first React app that interacts with a server.
+
 - hamsterbase /158Star/MIT/202211/ts/仅开源sdk
   - https://github.com/hamsterbase/hamsterbase
   - https://hamsterbase.com/zh/

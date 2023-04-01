@@ -11,6 +11,13 @@ modified: 2021-03-29T19:29:32.505Z
 
  
 
+- $refreshreg$ is not defined
+  - react-refresh导致异常
+  - 方法是配置@linaria/webpack-loader时传入自定义babel配置对象，而不用babel.config.js配置，通过configFile:false
+  - [react-refresh-webpack-plugin/TROUBLESHOOTING.md](https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/main/docs/TROUBLESHOOTING.md#usage-with-indirection-like-workers-and-js-templates)
+    - The reason is that when using child compilers (e.g. html-webpack-plugin, worker-plugin), plugins are usually not applied (but loaders are). 
+    - This means that code processed by `react-refresh/babel` is not further transformed by this plugin and will lead to broken builds.
+
 - monorepo Module not found: Error: Can't resolve
   - 排查到原因是main入口值应该是 src/index.`tsx`，而不是index.ts
 
@@ -19,6 +26,9 @@ modified: 2021-03-29T19:29:32.505Z
 
 - invalid hook call mismatching versions of React
   - 子项目较多时，容易产生react版本冲突，此时解决方法是统一react版本，一般是升级
+  - 或者 optionalDependencies
+    - If a dependency can be used, but you would like npm to proceed if it cannot be found or fails to install, then you may put it in the optionalDependencies
+    - The difference is that build failures do not cause installation to fail. 
 
 - ModuleNotFoundError: No module named 'mesonbuild'
   - 问题是pip安装的包在用户目录
