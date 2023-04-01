@@ -163,13 +163,20 @@ $$('[contenteditable]')
   - writing tests
     - test in firefox
   - toolbar
+    - 字体大小、颜色
     - 高亮
     - 分组
+    - 点击按钮时保存选区，逻辑+视觉
   - scss to linaria
   - table to tanstack
   - emoji
+  - image
+  - video
+  - 格式刷
   - 斜杠菜单
-  - 去掉依赖 plate-serializer
+  - 去掉依赖
+    - plate-serializer
+    - zustand
 
 - dev-to-collab
   - 🐷 每次刷新页面，空白行会多一行
@@ -195,6 +202,20 @@ $$('[contenteditable]')
   - collab
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
+# dev-04
+
+## 040
+
+## 0401
+
+- [make a vertical separator line in HTML/CSS - Stack Overflow](https://stackoverflow.com/questions/61337079/make-a-vertical-separator-line-in-html-css)
+  - 竖向分隔线很多案例使用div，可以使用hr
+
+```HTML
+<hr style="width:100px; transform:rotate(90deg);">
+```
+
+# dev-03
 
 ## 0331
 
@@ -865,6 +886,11 @@ color2 instanceof String; // returns false (color2 is not a String object)
 - [Impossible to define static 'length' function on class · Issue #442 · microsoft/TypeScript](https://github.com/microsoft/typescript/issues/442)
   - I don't think the properties name, caller and length are doable. They are read-only properties and can't be overridden. All assignments to them will be ignored.
 
+## 0210
+
+- [rg process taking up all my CPU 100% · Issue #98594 · microsoft/vscode](https://github.com/microsoft/vscode/issues/98594)
+  - `"search.followSymlinks": false` solved my issue too
+
 ## 0208
 
 - [Wechaty 实现微信机器人的原理 - 知乎](https://zhuanlan.zhihu.com/p/567250559)
@@ -873,11 +899,6 @@ color2 instanceof String; // returns false (color2 is not a String object)
   - Journal学报最典型的叫法， 刊登关于某特殊主题的文章的期刊。要求有很大的创新点，比较详细的公式推导。因 Journal 面向的读者较广泛，因此发表在其上的文章需要对背景知识有更加全面的介绍。
   - Transactions 本意为商业交易和谈判，引申为公开发表的大会记录。后来有汇刊的意思。 其具体到一个相对较细的专业方向上，发表在 transactions 上的文章需要有很大的创新和详细的公式推导。
   - Proceedings 表示某行动，或行动过程或方式，引申意之一是学术团体或其他正规团体会议所讨论问题的记录，进一步有会议论文集的意思。有会刊、记录、会议录的意思。但是 IEEE 的 Proceedings 也变成了期刊 (出版周期相对长)，并没有会议支撑。
-
-## 0210
-
-- [rg process taking up all my CPU 100% · Issue #98594 · microsoft/vscode](https://github.com/microsoft/vscode/issues/98594)
-  - `"search.followSymlinks": false` solved my issue too
 
 ## 0205
 
@@ -994,7 +1015,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                                                                   `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                                                                       `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

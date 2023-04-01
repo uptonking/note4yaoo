@@ -13,19 +13,23 @@ modified: 2023-02-08T07:20:48.475Z
 
 # chatgpt
 
-- 写了个基于 ChatGPT 的 AI 维权律师，根据事实和诉求帮当事人生成起诉书。
-  - https://twitter.com/imyuanx/status/1641715695762436098
-  - https://github.com/imyuanx/ai-lawyer
+- app-site
+  - https://github.com/LiLittleCat/awesome-free-chatgpt
+  - [免费 chatgpt](https://twitter.com/search?q=%E5%85%8D%E8%B4%B9%20chatgpt&src=typed_query&f=live)
 
-- [https://www.steamship.com](https://www.steamship.com/)
-  - SteamShip 开放了 GPT-4 的模型接口，只需要注册SteamShip 账号，无需付费，几行代码直接就能调用 GPT-4
+- api-free
+  - [一口气送了350个免费的key](http://freeopenai.xyz/)
+
+- https://freechatgpt.chat/
+  - 类似官网，需要key
+  - 可选内置不稳定key
 
 - [ChatGPT API Demo](https://ai.ls/)
   - https://ai.ls/
-  - https://desk.im/
+  - Powered by gpt-3.5-turbo
 
 - [free ChatGPT](https://freegpt.one/)
-  - [free ChatGPT](https://freechatgpt.lol/)
+  - using gpt-3.5-turbo
 
 - [OpenGPT](https://open-gpt.app/)
   - 立即使用海量的 ChatGPT 应用，或在几秒钟内创建属于自己的应用
@@ -33,6 +37,17 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/lencx/ChatGPT /rust
   - ChatGPT Desktop Application (Mac, Windows and Linux)
   - 国内ip无法访问
+
+## gpt-apps
+
+- 写了个基于 ChatGPT 的 AI 维权律师，根据事实和诉求帮当事人生成起诉书。
+  - https://twitter.com/imyuanx/status/1641715695762436098
+  - https://github.com/imyuanx/ai-lawyer
+
+## api
+
+- [https://www.steamship.com](https://www.steamship.com/)
+  - SteamShip 开放了 GPT-4 的模型接口，只需要注册SteamShip 账号，无需付费，几行代码直接就能调用 GPT-4
 
 ## prompts
 

@@ -70,6 +70,13 @@ modified: 2023-03-16T16:29:47.610Z
 
 - 工具条与编辑器同宽
   - tinymce，左右16
+
+- 工具条ui设计分组
+  - undo/redo, paint-format
+  - block-type
+  - font-size, formats, font-color
+  - lists, aligns
+  - image, table, link, blockquote, code...
 # 悬浮工具条 toolbar
 
 # editor-elements
@@ -92,3 +99,4 @@ modified: 2023-03-16T16:29:47.610Z
 # mention
 
 # more
+- 搜索时能够搜索emoji

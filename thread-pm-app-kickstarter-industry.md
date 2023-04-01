@@ -12,7 +12,10 @@ modified: 2023-03-26T07:02:48.021Z
 # discuss
 - ## 
 
-- ## 
+- ## 我发现一个基于ChatGPT开发的第三方App蹭热度规律 ，
+- https://twitter.com/GcZsmkv/status/1642061634922487808
+  - 刚上架App Store半个月左右处于无内购免费使用，等多方推荐有了热度就开始转变加入内购订阅，将先前免费的功能拆解出来当付费功能，当然也会加入新的付费功能，
+  - 有的App甚至改名后加入内购，总结有的开发者还是懂的热度策略的！
 
 - ## 昨天跑通了类似 ChatPDF 的全离线方案，不用 ChatGPT（当然效果肯定会差一些），Embedding 使用 CoSENT 方案，内容总结生成回复使用 ChatGLM，效果很不错
 - https://twitter.com/nash_su/status/1640541466761240576

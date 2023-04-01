@@ -11,7 +11,9 @@ modified: 2021-05-25T08:41:02.257Z
 
 - ## 
 
-- ## 
+- ## Protomaps is moving from being "open-core", or partly proprietary, to an open source project. 
+- https://twitter.com/protomaps/status/1642060504741867520
+  - The only closed part has been the basemap planet.pmtiles generation; an open source implementation is WIP here! 
 
 - ## I haven't checked in on the harp.gl WebGL vector tile renderer in a while, but it looks like it's either stopped development or gone closed source
 - https://twitter.com/bdon/status/1599698770262118403

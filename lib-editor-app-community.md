@@ -12,7 +12,9 @@ modified: 2022-08-21T10:11:19.219Z
 # discuss
 - ## 
 
-- ## 
+- ## The amount of time I wasted because MutationObserver just stops working in @googlechrome is insane.
+- https://twitter.com/fabiospampinato/status/1642232960135966720
+  - I think that a whole bunch of other issues happen if you reload the page while the debugger is on or something, definitely worth a look, that feature is not stable at all.
 
 - ## [keydown on a table inside a contentEditable div - Stack Overflow](https://stackoverflow.com/questions/26339719/keydown-on-a-table-inside-a-contenteditable-div)
 - Only elements that can receive focus (such as inputs and `contenteditable` elements) fire key events. This does not include elements within contenteditable elements.

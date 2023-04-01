@@ -12,6 +12,10 @@ modified: 2021-10-29T15:02:28.882Z
 # guide
 - [The launchpad for YC startups](https://www.ycombinator.com/launches)
 # ideas-stars
+- ## 找不到自己的在未来的位置了。
+- https://twitter.com/dotey/status/1641851405584433171
+  - 不用想那么多，就问自己一个问题：“我是不是能持续创造价值？”，至于使用代码还是AI还是其他方式，没有那么重要
+
 - ## 常看常新：AI 代替的是不会用 AI 的人
 - https://twitter.com/novoreorx/status/1635910088123875329
 

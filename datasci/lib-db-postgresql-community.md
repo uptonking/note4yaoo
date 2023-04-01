@@ -14,7 +14,7 @@ modified: 2022-06-13T03:01:05.956Z
 
 - ## 
 
-- ## 
+- ## [pg_jieba postgres14 分词和预期结果不一致](https://github.com/jaiminpan/pg_jieba/issues/54)
 
 - ## [PostgreSQL中三种自增列sequence，serial，identity区别](https://www.cnblogs.com/wy123/p/13367486.html)
 - 对于自增字段，无特殊需求的情况下，sequence不适合作为“自增列”，作为最最次选。
