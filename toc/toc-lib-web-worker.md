@@ -19,9 +19,12 @@ modified: 2020-12-19T18:22:27.577Z
     - Embedded content from a third party living side by side with first party code.
     - Mitigation of expensive rendering for content not requiring synchronous updates to user actions.
     - Retaining main thread availability for high priority updates by async updating elsewhere in a document.
-
 # worker-react
-
 - https://github.com/dai-shi/react-hooks-worker
   - React custom hooks for web workers.
+# worker-utils
+- https://github.com/Mng12345/webworker-test
+  - performance of every worker under different threads number
 # worker-node
+
+# more

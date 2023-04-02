@@ -12,6 +12,27 @@ modified: 2023-03-26T07:02:48.021Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 使用 Vercel、Supabase、Stripe 打造 OpenAI 计费系统
+- https://twitter.com/meathill1/status/1642376618839535617
+- 大部分app和网站都是不直接提供openai api的，而是封了一层。所以不用做实时的统计，只需要定期计算下token消耗就完了。
+  - 也就是不做计费，每个小时或者每天算下用户token消耗。
+
+- ## Copilot Hub 发布了新的功能：可以基于一系列网页链接的内容来创建自定义的 ChatGPT
+- https://twitter.com/Tisoga/status/1642485671058378752
+- 使用场景：
+  - 主题研究分析
+  - 网站聊天机器人
+  - 个人博客助手
+- 以此类推，你可以创建非常多不同主题的 AI 助手：
+  - Web3 行业动态 AI
+  - 学术分析师 AI
+  - 商业报告写作 AI
+- 并且你可以把这些 AI 助手以非常简单的方式集成到自己的 App 或者服务中（例如网站、SaaS 服务、Slack/Telegram/Discord 等），接入的功能会在未来一段时间 launch。
+
 - ## 我发现一个基于ChatGPT开发的第三方App蹭热度规律 ，
 - https://twitter.com/GcZsmkv/status/1642061634922487808
   - 刚上架App Store半个月左右处于无内购免费使用，等多方推荐有了热度就开始转变加入内购订阅，将先前免费的功能拆解出来当付费功能，当然也会加入新的付费功能，

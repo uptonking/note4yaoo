@@ -11,6 +11,9 @@ modified: 2022-11-06T16:47:43.444Z
 - https://github.com/streamich/json-joy
   - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
 
+- https://github.com/panva/jose
+  - "JSON Web Almost Everything" - JWA, JWS, JWE, JWT, JWK, JWKS for Node.js, Browser, Cloudflare Workers, Deno, Bun, and other Web-interoperable runtimes.
+
 - https://github.com/Elijah-trillionz/native-json-db
   - native-json-db offers a JSONDB class with methods for structuring, adding, removing, and updating data in the json file
   - Native-JSON-DB or JSONDb is a NoSQL database system on your local server.
