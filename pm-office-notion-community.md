@@ -18,7 +18,11 @@ modified: 2023-03-29T17:23:37.126Z
 
 - ## 
 
-- ## 
+- ## 倍速重听了 21 年这期访谈 Logseq 的播客。 
+- https://twitter.com/mr_easonyang/status/1642902992683950080
+  - 两年过后，当时聊到的「移动版本」、「付费方案」和「同步和加密」等计划都实现了，团队执行力还是很强的。 
+  - 虽然现在实时协作方向似乎暂停了，但我不觉得这是件坏事，CRDT 这东西想做得完美成本不低。 
+  - 友情提示，录音质量有些差。
 
 - ## support SELECT TEXT ACROSS MULTIPLE BLOCKS!_202201
 - https://twitter.com/NotionHQ/status/1483884489235255297
