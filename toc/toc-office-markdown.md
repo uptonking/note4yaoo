@@ -85,7 +85,7 @@ modified: 2021-01-04T17:26:25.032Z
   - https://github.com/cblgh/monotome
   - a personal knowledge base system. markdown markup, runs in the browser
   - 依赖 marked
-  - 原理是 根据url动态读取解析markdown文件，并渲染显示所有文件名
+  - 原理是 根据url动态读取解析markdown文件，并渲染显示所有文件名，切换文件时会触发fetch
   - 代码量不大，思路清晰
   - Monotome has support for the common `[[wiki]]` syntax
   - Monotome keeps track of backlinks, or incoming links from one article inside monotome to another. 

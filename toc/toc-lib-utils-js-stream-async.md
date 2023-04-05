@@ -175,7 +175,7 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/glebec/batching-toposort /201903/js/NoDeps
   - Efficiently sort interdependent tasks into a sequence of concurrently-executable batches.
   - Errors on cyclic graphs
-    - Batching-Toposort expects a directed acyclic graph (DAG) implemented via adjacency list. 
+    - Batching-Toposort expects a directed acyclic graph (DAG) implemented via **adjacency list**. 
     - In other words, construct an object whose keys are dependency IDs, and whose values are lists of dependent IDs.
   - Motivation
     - Often one needs to schedule interdependent tasks. 

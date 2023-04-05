@@ -97,6 +97,7 @@ modified: 2021-07-21T18:07:43.056Z
   - CMS.js is a fully Client-side, JavaScript Markdown Site generator in the spirit of Jekyll that uses plain ol' HTML, CSS and JavaScript to generate your website. 
   - CMS.js is like a file-based CMS. It takes your content, renders Markdown and delivers a complete website in Single-Page App
   - CMS.js supports two website modes, Github and Server. 
+  - [Server Mode](https://github.com/chrisdiana/cms.js/wiki/Server-Mode)
     - In Server mode, CMS.js takes advantage of the Server's Directory Indexing feature. 
     - By allowing indexes, CMS.js sends an AJAX call to your specified folders and looks for Markdown or HTML files
 
