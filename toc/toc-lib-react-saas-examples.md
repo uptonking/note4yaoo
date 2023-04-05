@@ -23,6 +23,14 @@ modified: 2022-08-13T06:59:54.741Z
   - React-admin uses an adapter approach, with a concept called Data Providers.
   - designed as loosely coupled React components and hooks exposing reusable controller logic. It is very easy to replace any part of react-admin with your own
 
+- https://github.com/plantain-00/protocol-first-design-demo
+  - API 协议优先，相关数据只需要相对集中地、相对方便地定义一次，其它信息由此派生或生成出来
+  - graphql 的一个特点是，用户可以控制需要返回哪些字段，而 RESTful API 一般默认不会实现这个。
+  - 这里的实现，不像 graphql 那样需要列出所有需要的字段，而是默认返回所有字段，根据参数中的 ignoredFields，把不需要的字段排除掉。
+- https://github.com/plantain-00/protocol-based-web-framework
+  - A protocol and code generation based web framework.
+  - db支持sqlite、postgres、mongodb
+
 - https://github.com/pure-admin/pure-admin-backend /ts/echarts
   - pure-admin官方后端
   - 依赖express、mysql，未使用orm
@@ -240,4 +248,9 @@ modified: 2022-08-13T06:59:54.741Z
   - For now, it only creates projects for React and Next.js.
   - Superplate lets you start rock-solid, production-ready React and Next. JS projects just in seconds. 
   - The command-line interface guides the user through setup and no additional build configurations are required.
+# onboarding-guide-tour
+- https://github.com/plantain-00/tour-component
+  - A vuejs and reactjs tour component.
+  - highlight target element
+  - scroll to target
 # more-react-examples

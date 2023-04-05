@@ -17,6 +17,10 @@ modified: 2023-01-09T11:04:13.958Z
 
 - https://github.com/dinedal/textql /go
   - Execute SQL against structured text like CSV or TSV
+
+- https://github.com/plantain-00/js-excel-template
+  - A js excel template used in browser or nodejs environment.
+  - Generate Excel based on Excel template
 # examples
 
 # parser-generator

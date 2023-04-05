@@ -72,6 +72,12 @@ modified: 2021-01-13T19:30:59.508Z
   - A tiny Figma-like multiplayer graphics editor.
   - Built with Replicache, Next.js, Pusher, and Postgres.
     - pusher: create and maintain complex messaging infrastructure
+
+- https://github.com/plantain-00/composable-editor-canvas
+  - https://plantain-00.github.io/composable-editor-canvas/
+  - A composable editor canvas library.
+  - 基于svg实现的图形编辑器
+  - 提供了多种编辑场景示例
 # infinite-canvas-drawing-tools
 - https://infinitecanvas.tools/gallery/
   - 画板类产品列表

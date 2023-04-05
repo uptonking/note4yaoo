@@ -11,13 +11,18 @@ modified: 2020-10-22T10:22:55.878Z
 
 - usecase
   - 自动化任务
-
 # flowchart
-
 - mermaid /32.1kStar/MIT/202009/js
   - https://github.com/mermaid-js/mermaid
   - Generation of diagram and flowchart from text in a similar manner as markdown
   - [Poll - next diagram type addition: PlantUML](https://github.com/mermaid-js/mermaid/issues/177)
+
+- jsplumb /7.3kStar/MIT/202302/ts
+  - https://github.com/jsplumb/jsplumb
+  - https://jsplumbtoolkit.com/
+  - Visual connectivity for webapps
+  - dev/4.x branch is a rewrite in Typescript
+  - 基于dom实现
 
 - kroki /1.1kStar/MIT/202109
   - https://github.com/yuzutech/kroki
@@ -36,11 +41,7 @@ modified: 2020-10-22T10:22:55.878Z
   - https://mrblenny.github.io/react-flow-chart/index.html
   - A flexible, stateless, declarative flow chart library for react
   - 依赖react-draggable、react-zoom-pan-pinch
-- jsplumb /7.3kStar/MIT/202302/ts
-  - https://github.com/jsplumb/jsplumb
-  - https://jsplumbtoolkit.com/
-  - Visual connectivity for webapps
-  - dev/4.x branch is a rewrite in Typescript
+
 - G6 /7kStar/MIT/202009
   - https://github.com/antvis/g6
   - https://g6.antv.vision/
@@ -103,6 +104,22 @@ modified: 2020-10-22T10:22:55.878Z
 - https://github.com/reaviz/reaflow
   - Node-based Visualizations for React
   - REAFLOW is a modular diagram engine for build static or interactive editors. 
+
+- https://github.com/dagrejs/dagre /js
+  - Directed graph layout for JavaScript
+  - This project does not have a maintainer or active project members
+# dataflow
+- jerosoler/Drawflow /3.2kStar/MIT/202206/js/inactive
+  - https://github.com/jerosoler/Drawflow
+  - https://jerosoler.github.io/Drawflow/
+  - Drawflow allows you to create data flows easily and quickly.
+  - Data sync on Nodes
+  - Vanilla javascript (No dependencies)
+  - [A simple example showing execution of the flow created using drawflow](https://github.com/jerosoler/Drawflow/issues/543)
+
+- https://github.com/fibo/flow-view
+  - a visual editor for Dataflow programming
+  - Nodes and edges can be created via API
 # more
 - https://github.com/aislelabs/react-flowchart-editor
   - http://data.aislelabs.com/demo/index.html

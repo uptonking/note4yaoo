@@ -128,6 +128,14 @@ modified: 2022-12-19T01:51:01.389Z
   - a NodeJS tool for easy creation of user friendly administrative interface for MySQL, MariaDB, SQLite and PostgreSQL databases.
   - It's built with: Hogan.js (mustache.js), Express, mysql and Bootstrap.
   - https://github.com/simov/express-admin-examples /201407/js
+# web-framework
+- https://github.com/plantain-00/protocol-first-design-demo
+  - API 协议优先，相关数据只需要相对集中地、相对方便地定义一次，其它信息由此派生或生成出来
+  - graphql 的一个特点是，用户可以控制需要返回哪些字段，而 RESTful API 一般默认不会实现这个。
+  - 这里的实现，不像 graphql 那样需要列出所有需要的字段，而是默认返回所有字段，根据参数中的 ignoredFields，把不需要的字段排除掉。
+- https://github.com/plantain-00/protocol-based-web-framework
+  - A protocol and code generation based web framework.
+  - db支持sqlite、postgres、mongodb
 # rest-starter
 - https://github.com/criscunas/todo-server
   - Backend API for Todo App built with Node & Express.

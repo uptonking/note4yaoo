@@ -9,6 +9,8 @@ modified: 2021-09-21T19:47:30.211Z
 
 # 项目中的难点
 
+- resume with noseditor
+
 ## 编辑器协作的设计与实现
 
 - 数据模型

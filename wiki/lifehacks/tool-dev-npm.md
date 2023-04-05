@@ -37,6 +37,7 @@ modified: 2020-12-08T14:05:52.048Z
   }
 }
 ```
+
 - [How to specify an npm workspace as a dependency - Stack Overflow](https://stackoverflow.com/questions/72851445/how-to-specify-an-npm-workspace-as-a-dependency)
   - "@project/another-package": "file:another-package"
   - Dependency from another workspace package is referenced using file: prefix.
@@ -153,7 +154,11 @@ npm unlink
     - If I change directory to /dir1/dir2 and execute `npm test`
     - and the script I wrote on test property is executed properly without the use of ./ 
   - We can reference the root directory of the project through the environment variable `INIT_CWD` that npm set for us!
-# workspace
+# npm-utils
+- https://github.com/plantain-00/clean-scripts
+  - A CLI tool to make scripts in package.json clean.
+  - 支持任务依赖
+# workspaces
 - ref
   - [docs: workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces)
   - [rfc: npm workspaces](https://github.com/npm/rfcs/blob/latest/implemented/0026-workspaces.md)

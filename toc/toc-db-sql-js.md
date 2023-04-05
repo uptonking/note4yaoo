@@ -78,6 +78,9 @@ modified: 2021-08-30T18:56:14.863Z
   - PRQL is a modern language for transforming data — a simple, powerful, pipelined SQL replacement
   - Unlike SQL, it forms a logical pipeline of transformations, and supports abstractions such as variables and functions.
   - It can be used with any database that uses SQL, since it compiles to SQL.
+# sql-utils
+- https://github.com/fibo/SQL92-JSON
+  - can stringify a JSON into an SQL and viceversa parse an SQL and serialize it into a JSON
 # more
 - https://github.com/webqit/objective-sql /202201/js
   - Objective SQL is a query client that wraps powerful concepts in a simple, succint API.

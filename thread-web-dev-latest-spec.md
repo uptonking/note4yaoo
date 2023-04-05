@@ -7,9 +7,24 @@ modified: 2021-04-27T09:19:37.711Z
 
 # thread-web-dev-latest-spec
 
-# pieces
+# discuss
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Ever read an article that says “setTimeout(..., 0) fires not in 0 ms but in 4”? 
+- https://twitter.com/iamakulov/status/1643629579129503744
+  - This is no longer true – at least not in Chrome and Safari, and not since a few months ago.
+- 1) The HTML spec tells that `setTimeout()` calls nested 5+ levels deep must be throttled to 4 ms. This prevents poorly written sites from over-consuming CPU.
+  - (Note the word “nested” – unnested `setTimeout()` s were never intended to be throttled! But we’ll get to that in a bit.)
+- 2) The HTML spec only talks about nested `setTimeout()` s. However, up until 2022, Chrome and Safari were also throttling regular `setTimeout(..., 0)` calls to 1 ms!
+- 3) So now, when you’re calling `setTimeout(0)` , what actually happens is:
+• if it’s a fresh `setTimeout(0)` call, it will run immediately (in all browsers)
+• if it’s a nested `setTimeout(0)` call, it will run in 4 ms after 5 (Firefox), 10 (Safari), or 15 (Chrome) nested calls
+- 
 
 - ## Shipped with Chromium 91 is TablesNG, a under-the-hood rewrite regarding tables.
 - https://twitter.com/bramusblog/status/1407078048730603521

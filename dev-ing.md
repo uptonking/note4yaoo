@@ -50,6 +50,7 @@ https://meeting.tencent.com/p/9606972663
     - https://ckeditor.com/docs/ckeditor5/latest/examples/builds-custom/full-featured-editor.html
   - more-editor
     - https://demo.grammarly.com/
+# dev-review
 
 ```shell
 DEBUG=* npm install --legacy-peer-deps --loglevel silly
@@ -57,7 +58,6 @@ DEBUG=* npm install --legacy-peer-deps --loglevel silly
 $$('[contenteditable]')
 ```
 
-# dev-review
 - dev-goals
   - rich-editor: text/code/block
   - pivot-table
@@ -110,8 +110,8 @@ $$('[contenteditable]')
 - long-term
   - cms, airtable, lowcode
 - techstacks
-  - async, stream, buffer, binary, scheduler, arrow
-  - 样式片段也可在 w3schools.com 尝试
+  - async/generator, stream, buffer, binary, scheduler, arrow
+  - 样式片段也可在 w3schools.com 在线尝试
 
 - 支持切换内存和持久化的示例
   - abstract-level, localforage
@@ -132,10 +132,12 @@ $$('[contenteditable]')
   - 10-prosemirror-collab - otjs - crdt-hlc
   - 11-idb-sync-crdt
   - 12-nedb-linvodb
-- log2023
-  - 01-linvo-search+tinybase-sync-hlc-wip
-  - 02-typewriter-quill+tanstack-table+slate-table
-  - 03-crdt-rga+slate-yjs+slate-editor
+
+- log2023 编辑器、表格、协作、cms
+  - 01-linvo-search + tinybase-sync-hlc-wip
+  - 02-typewriter-quill + tanstack-table + slate-table
+  - 03-crdt-rga + slate-yjs + slate-editor
+  - 04-slate-table/image-sequelize
 
 - why use es6 class
   - 运行时类型检查，instanceof
@@ -169,14 +171,17 @@ $$('[contenteditable]')
     - [x] 分组
   - scss to linaria
   - table to tanstack
-  - emoji
+    - 优化model
   - image
-  - video
-  - 格式刷
-  - 斜杠菜单
+    - upload
   - 去掉依赖
     - plate-serializer
     - zustand
+  - emoji
+  - video
+  - 格式刷
+  - 斜杠菜单
+  - resume with noseditor
 
 - dev-to-collab
   - 🐷 每次刷新页面，空白行会多一行
@@ -1057,7 +1062,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                                                                                 `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                                                                                      `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

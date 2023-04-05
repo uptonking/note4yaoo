@@ -183,6 +183,11 @@ modified: 2021-07-21T18:07:43.056Z
   - Livemark process your document using the Jinja templating language. 
   - Inside templates, you can use Frictionless Framework as a frictionless variable to work with tabular data. 
   - It's a high-level preprocessing so you can combine Logic with other syntax, such as Table or Chart
+
+# markdown
+- https://github.com/plantain-00/simple-doc
+  - A Server-less and Build-less markdown document application.
+  - 默认显示README.md
 # more-doc-solutions
 - VuePress
 

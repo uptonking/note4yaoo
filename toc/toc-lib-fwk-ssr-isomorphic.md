@@ -28,6 +28,9 @@ modified: 2020-12-19T13:04:40.865Z
   - React ssr setup, new ssr for react-18
   - 灵活的渲染方式 SSR CSR
 
+- https://github.com/plantain-00/router-demo
+  - Multiple-application SPA and SSR demo
+
 - https://github.com/rakkasjs/rakkasjs
   - a bleeding-edge full-stack React framework powered by Vite. 
   - You can consider it an up-and-coming alternative to Next.js, Remix, or Gatsby.

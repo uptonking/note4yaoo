@@ -12,7 +12,8 @@ modified: 2022-11-25T09:47:43.079Z
 # discuss
 - ## 
 
-- ## 
+- ## vlcn: One of the things I'm most excited for is partnering with the LibSQL folks to create a custom syntax for defining tables which are backed by CRDTs!
+- https://twitter.com/tantaman/status/1643588081067384834
 
 - ## Spent a week optimizing `useQuery` to get hundreds of concurrent SQLite queries to return in a single frame in the browser.
 - https://twitter.com/tantaman/status/1634579771404288002

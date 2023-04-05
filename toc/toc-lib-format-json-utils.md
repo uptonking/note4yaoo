@@ -26,12 +26,24 @@ modified: 2022-11-06T15:45:36.913Z
   - We can transform the whole Redux store, that can incude complex nested json objects, into a simple flat structure using Simplifr.
   - https://github.com/krispo/redux-json-tree
 # json-editor/viewer
+- https://github.com/plantain-00/schema-based-json-editor
+  - https://plantain-00.github.io/schema-based-json-editor/packages/react/demo/
+  - A reactjs and vuejs component of schema based json editor.
+
 - https://github.com/TexteaInc/json-viewer
   - a React component for displaying and editing JavaScript/TypeScript arrays and JSON objects.
   - https://github.com/mac-s-g/react-json-view
 
 - https://github.com/josdejong/jsoneditor
   - A web-based tool to view, edit, format, and validate JSON
+
+- https://github.com/json-editor/json-editor /js
+  - https://json-editor.github.io/json-editor/
+  - JSON Schema Based Editor
+
+- https://github.com/b-gran/object-editor-react /js
+  - https://b-gran.github.io/object-editor-react/githubExample.html
+  - Schema-aware editor for structured JSON objects (drop-in React component)
 # examples
 
 # parser-generator

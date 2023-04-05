@@ -80,6 +80,9 @@ modified: 2021-01-04T17:26:25.032Z
   - Markdown-backed database with queries, user-defined actions, validators, variable expansion, and reporters in JavaScript
   - gg is a CLI to import, query, act on, and report on local Markdown files with support for user-defined JavaScript extensions.
   - gg supports a subset of Markdown for parsing: headers, paragraphs (the "type-inferred values"), and un-nested bullet lists 
+# utils
+- https://github.com/plantain-00/markdown_to_pdf
+  - A CLI tool to convert a markdown to a pdf file.
 # more-md
 - https://github.com/rstudio/rmarkdown
   - rmarkdown package helps you create dynamic analysis documents

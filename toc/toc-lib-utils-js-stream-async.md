@@ -91,6 +91,9 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/jimhigson/oboe.js /js
   - Oboe.js is an open source Javascript library for loading JSON using streaming, combining the convenience of DOM with the speed and fluidity of SAX.
 
+- https://github.com/plantain-00/stringify2stream
+  - A js library to stringify json to stream to avoid out-of-memory of JSON.stringify.
+
 ## generator
 
 - https://github.com/TomerAberbach/lfi
@@ -120,6 +123,87 @@ modified: 2023-04-04T22:36:31.529Z
   - Make web workers & worker threads as simple as a function call.
   - Offload CPU-intensive tasks to worker threads in node.js, web browsers and electron using one uniform API.
   - Uses web workers in the browser, worker_threads in node 12+ and tiny-worker in node 8 to 11.
+
+## task-scheduler/dag
+
+- https://github.com/caolan/async
+  - Async utilities for node and the browser
+
+- https://github.com/observablehq/runtime
+  - The Observable dataflow runtime.
+
+- https://github.com/ThomWright/balamb
+  - Concurrently run a set of dependent, asynchronous tasks with type-safe dependencies
+
+- https://github.com/alephnan/viae.ts
+  - a library to define a directed-acyclic-graph of async functions. 
+  - The library efficiently visits the graph, performing dependency injection and unwrapping of promises along the way.
+
+- https://github.com/fibo/dflow
+  - a minimal Dataflow programming engine
+    - A node represents a block of code: it can have inputs and outputs.
+    - An edge connects an input to an output.
+    - A graph represents a program. It can contain nodes and edges. Nodes are executed, sorted by their connections.
+  - A graph can be saved as a JSON file. It can be then loaded and executed.
+  - it is supposed that you implement your own nodes
+- https://github.com/fibo/flow-view
+  - a visual editor for Dataflow programming
+  - Nodes and edges can be created via API
+
+- https://github.com/lukehutch/tiny-reactive-dataflow /202210/js
+  - A tiny reactive dataflow library for asynchronously scheduling a Directed Acyclic Graph (DAG) of functions in Javascript.
+  - works similarly to React's state change propagation algorithm; 
+  - All computation is fundamentally DAG-structured, consisting of **edges**, which are data dependencies between values, and **nodes**, representing both a function and the result of computing that function on specific inputs to produce the value at the node.
+  - Dependencies are specified using a "pull model" (a function depends upon, or pulls from, its parameters), but computation is driven using a "push model", with changes propagating from upstream nodes to downstream nodes.
+  - Create all dataflow nodes as (optionally async) functions, or as "named lambdas", and register them
+    - Function names are used as node names. 
+    - Function parameter names refer to the node names of upstream dependencies. 
+
+- https://github.com/wangqiangplus/dagrunner
+  - dag task runner based puppeteer
+  - api request
+  - element selector
+
+- jerosoler/Drawflow /3.2kStar/MIT/202206/js/inactive
+  - https://github.com/jerosoler/Drawflow
+  - https://jerosoler.github.io/Drawflow/
+  - Drawflow allows you to create data flows easily and quickly.
+  - Data sync on Nodes
+  - Vanilla javascript (No dependencies)
+  - [A simple example showing execution of the flow created using drawflow](https://github.com/jerosoler/Drawflow/issues/543)
+
+- https://github.com/glebec/batching-toposort /201903/js/NoDeps
+  - Efficiently sort interdependent tasks into a sequence of concurrently-executable batches.
+  - Errors on cyclic graphs
+    - Batching-Toposort expects a directed acyclic graph (DAG) implemented via adjacency list. 
+    - In other words, construct an object whose keys are dependency IDs, and whose values are lists of dependent IDs.
+  - Motivation
+    - Often one needs to schedule interdependent tasks. 
+    - In order to determine task order, the classic solution is to use topological sort. 
+    - However, toposort typically outputs a list of individual tasks, without grouping those that can be executed concurrently. 
+    - Batching-Toposort takes this additional consideration into account, producing a list of lists of tasks. 
+    - The outer list is ordered; each inner list is unordered.
+
+- https://github.com/datavis-tech/topologica /201811/js
+  - Minimal library for reactive dataflow programming. 
+  - Based on topological sort.
+  - Topologica is primarily intended for use in optimizing interactive data visualizations created using D3.js and a unidirectional data flow approach. 
+    - The problem with using unidirectional data flow with interactive data visualizations is that it leads to unnecessary execution of heavyweight computations over data on every render. 
+    - Topologica.js lets you improve performance by only executing heavy computation and rendering operations when they are actually required.
+    - It also allows you to simplify your code by splitting it into logical chunks based on reactive functions, and makes it so you don't need to think about order of execution at all.
+  - Why use topological sorting? To avoid inconsistent state.
+    - propagation using breadth-first search would cause e to be set twice, and the first time it would be set with an inconsistent state 
+
+- https://github.com/mtomran/dep-resolver
+  - A modified version of Kahn's algorithm for topological sorting to resolve dependencies of asynchronous tasks.
+
+- https://github.com/daanmichiels/promiseDAG /201710/js
+  - Generalization of JavaScript's Promise.all() to directed acyclic graphs
+  - https://github.com/vvvvalvalval/promise-dag
+  - https://github.com/SidBala/dagmise
+
+- https://github.com/qualiancy/breeze-dag /201211/js
+  - Async flow control for directed-acyclic-graph iteration.
 # stream-examples
 - https://github.com/nagix/chartjs-plugin-streaming
   - Chart.js plugin for live streaming data

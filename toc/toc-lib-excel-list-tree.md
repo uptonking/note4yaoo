@@ -143,6 +143,11 @@ modified: 2022-08-21T10:02:41.845Z
   - A sortable, virtual, customizable tree component for React.
   - 依赖 react-dnd, react-window
 
+- https://github.com/plantain-00/tree-component
+  - A reactjs and vuejs tree component.
+  - drag and drop between different tree
+  - composition model(reactjs children and vuejs slot)
+
 - react-sortable-tree /MIT/3.3kStar/202005/js/inactive
   - https://github.com/frontend-collective/react-sortable-tree
   - https://frontend-collective.github.io/react-sortable-tree/

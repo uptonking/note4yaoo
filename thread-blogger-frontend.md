@@ -8,6 +8,13 @@ modified: 2021-02-09T19:27:01.319Z
 # thread-blogger-frontend
 
 # active-coders
+
+- York Yao
+  - https://github.com/plantain-00
+  - https://github.com/plantain-00/schema-based-json-editor
+  - 总结了很多开发经历
+  - 开源了很多组件
+
 - MrWangJustToDo
   - https://github.com/MrWangJustToDo
   - https://github.com/MrWangJustToDo/file-manager
