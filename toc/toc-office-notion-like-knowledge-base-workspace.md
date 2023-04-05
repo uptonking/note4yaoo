@@ -254,6 +254,7 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/huangwei9527/Ink-wash-docs
   - 水墨文档，一款基于egg+vue开发的在线文档管理平台，支持markdown文档， excel文档，原型托管等功能.
   - 依赖vue、element-ui、vditor、egg、x-spreadsheet
+  - 依赖vditor、x-data-spreadsheet、vue2、vuex3、element-ui2、egg2
 
 - https://github.com/RealRong/Rendevoz
   - open-source knowledge management application built with React and TypeScript

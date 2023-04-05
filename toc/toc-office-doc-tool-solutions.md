@@ -15,9 +15,9 @@ modified: 2021-07-21T18:07:43.056Z
 
 - ref
   - [top documentation-tool](https://github.com/topics/documentation-tool?o=desc&s=stars)
-# doc-solution-catalog
+# markdown-based docs
 - https://github.com/docsifyjs/docsify
-  - /15.3kStar/MIT/202010
+  - /15.3kStar/MIT/202010/js
   - 依赖marked、prismjs
   - A magical documentation site generator.
   - No statically built html files, Support SSR, Support embedded files
@@ -31,9 +31,9 @@ modified: 2021-07-21T18:07:43.056Z
     - https://shoelace.style/
     - https://imdone.io/docs/
 
-- https://github.com/callstack/component-docs
-  - /120Star/MIT/202011/ts
+- https://github.com/callstack/component-docs /120Star/MIT/202011/ts
   - Simple documentation for your React components.
+  - `pages (required)`: An array of items or a function returning an array of items to show as pages
   - component-docs is used for [react-native-paper](https://callstack.github.io/react-native-paper/)
   - 左侧目录支持折叠和多级目录
   - 没有实现当前页的toc
@@ -44,6 +44,21 @@ modified: 2021-07-21T18:07:43.056Z
     - hot reload
     - supports tsx/jsx/md/mdx
     - Support including markdown from a file reference in markdown files
+
+- https://github.com/shuding/nextra
+  - 依赖next、nextra-core、react
+  - powerful and flexible site generation framework with everything you love from Next.js.
+  - Any change to example/docs will be re-rendered instantly.
+  - Nextra first collects all your Markdown files and configurations from the pages directory, and then generates the “page map information” of your entire site, to render things such as the navigation bar and sidebar 
+    - By default, the page map contains all .md and .mdx filenames and the directory structure, sorted alphabetically.
+    - You can have an `_meta.json` file in each directory, and it will be used to override the default configuration of each page
+
+- NextBook /168Star/MIT/202206/js/inactive
+  - https://github.com/amiroff/NextBook
+  - https://next-book.vercel.app/
+  - 依赖 next11、next-mdx-remote、react、remark、tailwindcss
+  - 若屏幕很窄，官方文档会显示水平滚动条，此时滚动会有严重的漂移感
+  - easy way to build technical books or documentation with markdown or MDX
 
 - https://github.com/facebook/docusaurus
   - /19.5kStar/MIT/202010
@@ -60,6 +75,55 @@ modified: 2021-07-21T18:07:43.056Z
   - ref
     - https://github.com/ThinkBucket/docsite
 
+- https://github.com/honkit/honkit
+  - /1.4kStar/Apache2/202009/gitbook
+  - HonKit is building beautiful books using Markdown - Fork of GitBook
+  - honkit is a command line tool (and Node.js lib) for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).
+  - 依赖immutable3.8、nunjucks、chokidar、commander、i18n-t、htmlparser2
+  - GitBook is only free for open-source and non-profit teams.
+
+- https://github.com/ryanlelek/Raneto /202208/js
+  - https://docs.raneto.com/
+  - Markdown powered Knowledgebase Wiki for Node.js
+  - 比较典型的知识库
+  - Add Raneto to your project via NPM's package.json file 
+
+- https://github.com/metalsmith/metalsmith /7.8kStar/MIT/202304/js/代码量少
+  - https://metalsmith.io/docs/getting-started
+  - simple, pluggable static site generator.
+  - all of the logic is handled by plugins. You simply chain them together.
+
+- https://github.com/chrisdiana/cms.js /3kStar/MIT/202103/js/NoDeps/inactive
+  - CMS.js is a fully Client-side, JavaScript Markdown Site generator in the spirit of Jekyll that uses plain ol' HTML, CSS and JavaScript to generate your website. 
+  - CMS.js is like a file-based CMS. It takes your content, renders Markdown and delivers a complete website in Single-Page App
+  - CMS.js supports two website modes, Github and Server. 
+    - In Server mode, CMS.js takes advantage of the Server's Directory Indexing feature. 
+    - By allowing indexes, CMS.js sends an AJAX call to your specified folders and looks for Markdown or HTML files
+
+- https://github.com/plantain-00/simple-doc
+  - A Server-less and Build-less markdown document application.
+  - 默认显示README.md
+
+- https://github.com/wechatsync/Wechatsync
+  - 一键同步文章到多个内容平台，支持今日头条、WordPress、知乎、简书、掘金
+# doc-solution-catalog
+- helpkb /8Star/MIT/202208/js
+  - https://github.com/mrvautin/helpkb
+  - https://docs.helpkb.org/
+  - https://openkb.markmoffat.com/
+  - 后端依赖 express、sequelize、gray-matter
+  - 前端依赖 nextjs、react-bootstrap、react-markdown、sharp处理图片
+  - helpkb is an open-source Next.js knowledge base or FAQ which is super fast, easy to use and quick to develop.
+  - You need a Database for your data. You can use either postgres (recommended), mysql2, mariadb, sqlite3 or mssql.
+
+- https://github.com/mrvautin/squido /js
+  - https://squido.markmoffat.com/
+  - A dead-simple no-code static HTML website generator
+  - With Jamstack, the entire website is prebuilt into highly optimized static pages and assets during the build process.
+  - Use Handlebars, EJS or Pug template engines.
+  - Posts or Pages are written in Markdown format which is easy to learn and faster to write.
+  - Standard website essentials: SEO, Sitemap, Social sharing friendly, Works on desktop and mobile (responsive)
+
 - https://github.com/ccontrols/component-controls
   - https://component-controls.com/
   - A next-generation tool to create blazing-fast documentation sites.
@@ -68,6 +132,8 @@ modified: 2021-07-21T18:07:43.056Z
   - 左侧目录，右侧可高亮书签toc
 - https://github.com/josemarluedke/docfy
   - https://docfy.dev/docs/getting-started/
+  - Docfy is a modular JavaScript tool to help build documentation sites. 
+  - Its core has all the essential features to help you create a full-featured docs app while writing all your content in Markdown.
   - core依赖remark-gfm
   - 给的示例基于ember
 - https://github.com/YvesCoding/rcpress
@@ -75,14 +141,6 @@ modified: 2021-07-21T18:07:43.056Z
   - 基于react、Ant Design的静态文档生成器
   - 配置，代码模仿自VuePress
   - 依赖@hot-loader/react-dom、@loadable/babel-plugin、prism-react-renderer
-
-- helpkb /8Star/MIT/202208/js
-  - https://github.com/mrvautin/helpkb
-  - https://docs.helpkb.org/
-  - 后端依赖 express、sequelize、gray-matter
-  - 前端依赖 nextjs、react-bootstrap、react-markdown、sharp处理图片
-  - helpkb is an open-source Next.js knowledge base or FAQ which is super fast, easy to use and quick to develop.
-  - You need a Database for your data. You can use either postgres (recommended), mysql2, mariadb, sqlite3 or mssql.
 
 - https://github.com/palantir/documentalist
   - /125Star/Apache2/202010
@@ -105,27 +163,17 @@ modified: 2021-07-21T18:07:43.056Z
   - /2.5kStar/MIT/202012/js/react
   - 依赖mark-twain、react-router、webpack、prismjs
   - transform Markdown(and other static files with transformers) into static websites and blogs using React.
-- https://github.com/honkit/honkit
-  - /1.4kStar/Apache2/202009/gitbook
-  - HonKit is building beautiful books using Markdown - Fork of GitBook
-  - honkit is a command line tool (and Node.js lib) for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).
-  - 依赖immutable3.8、nunjucks、chokidar、commander、i18n-t、htmlparser2
-  - GitBook is only free for open-source and non-profit teams.
+
 - https://github.com/zmister2016/MrDoc
   - http://mrdoc.zmister.com/project-20/
   - MrDoc是基于Python开发的在线文档系统，适合作为个人和小型团队的私有云文档、云笔记和知识管理工具
   - 后端：Python + Django
   - 前端：LayUI + JQuery
-- https://github.com/huangwei9527/Ink-wash-docs
-  - http://47.104.247.183:7001/
+
+- https://github.com/huangwei9527/Ink-wash-docs /511Star/apache2/202010/js/vue2
   - 基于egg+vue开发的在线文档管理平台，支持markdown文档， excel文档
   - 工作台|文档列表、文档编辑预览（支持：md， excel，html产品原型托管）、协作编辑、访问权限设置
-- https://github.com/amiroff/NextBook
-  - https://next-book.vercel.app/
-  - /53Star/MIT/202105/js
-  - 依赖 next11、next-mdx-remote、react、remark、tailwindcss
-  - 若屏幕很窄，官方文档会显示水平滚动条，此时滚动会有严重的漂移感
-  - easy way to build technical books or documentation with markdown or MDX
+  - 依赖vditor、x-data-spreadsheet、vue2、vuex3、element-ui2、egg2
 
 - https://github.com/jxnblk/mdx-deck
   - /9.6kStar/MIT/202004
@@ -183,11 +231,6 @@ modified: 2021-07-21T18:07:43.056Z
   - Livemark process your document using the Jinja templating language. 
   - Inside templates, you can use Frictionless Framework as a frictionless variable to work with tabular data. 
   - It's a high-level preprocessing so you can combine Logic with other syntax, such as Table or Chart
-
-# markdown
-- https://github.com/plantain-00/simple-doc
-  - A Server-less and Build-less markdown document application.
-  - 默认显示README.md
 # more-doc-solutions
 - VuePress
 

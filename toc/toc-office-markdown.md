@@ -81,8 +81,45 @@ modified: 2021-01-04T17:26:25.032Z
   - gg is a CLI to import, query, act on, and report on local Markdown files with support for user-defined JavaScript extensions.
   - gg supports a subset of Markdown for parsing: headers, paragraphs (the "type-inferred values"), and un-nested bullet lists 
 # utils
+- monotome /151Star/AGPLv3/202208/js
+  - https://github.com/cblgh/monotome
+  - a personal knowledge base system. markdown markup, runs in the browser
+  - 依赖 marked
+  - 原理是 根据url动态读取解析markdown文件，并渲染显示所有文件名
+  - 代码量不大，思路清晰
+  - Monotome has support for the common `[[wiki]]` syntax
+  - Monotome keeps track of backlinks, or incoming links from one article inside monotome to another. 
+  - Subjects are ordered into a simple directory structure which is mirrored by index.json.
+  - You can fill index.json's subjects by hand if you want to avoid running a script. You can also run node monotome/bin/generate.js, which will update index.json for you.
+
+- NextBook /168Star/MIT/202206/js/inactive
+  - https://github.com/amiroff/NextBook
+  - https://next-book.vercel.app/
+  - 依赖 next11、next-mdx-remote、react、remark、tailwindcss
+  - 若屏幕很窄，官方文档会显示水平滚动条，此时滚动会有严重的漂移感
+  - easy way to build technical books or documentation with markdown or MDX
+
+- https://github.com/shuding/nextra
+  - 依赖next、nextra-core、react
+  - powerful and flexible site generation framework with everything you love from Next.js.
+  - Any change to example/docs will be re-rendered instantly.
+  - Nextra first collects all your Markdown files and configurations from the pages directory, and then generates the “page map information” of your entire site, to render things such as the navigation bar and sidebar 
+    - By default, the page map contains all .md and .mdx filenames and the directory structure, sorted alphabetically.
+    - You can have an `_meta.json` file in each directory, and it will be used to override the default configuration of each page
+
+- https://github.com/plantain-00/simple-doc
+  - A Server-less and Build-less markdown document application.
+  - 默认显示README.md
+
 - https://github.com/plantain-00/markdown_to_pdf
   - A CLI tool to convert a markdown to a pdf file.
+# apps
+- https://github.com/motifland/markprompt
+  - Markprompt is a platform for building GPT-powered prompts. 
+  - It scans Markdown, Markdoc and MDX files in your GitHub repo and creates embeddings that you can use to create a prompt
 # more-md
+- https://github.com/mgmeyers/obsidian-kanban
+  - Create markdown-backed Kanban boards in Obsidian.
+
 - https://github.com/rstudio/rmarkdown
   - rmarkdown package helps you create dynamic analysis documents
