@@ -27,6 +27,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 运营数据仪表板
   - sharing table/data pieces/snippets
   - 个人数据管理，开放api，允许其他app获取
+  - tags
 
 - 生态与集成
   - office365，从 word/excel 复制粘贴的表格，如果其中有合并的单元格，也能支持正常展示
@@ -62,12 +63,11 @@ modified: 2021-07-20T13:50:23.433Z
 - collab
   - 👉🏻 yjs, rga, fluid-framework, hlc
 
-
 ## solutions: inter(re)active knowledge-base/wiki
 
 - ✨ cms(content-mgmt)
   - 👉🏻 payloadcms  (MIT/mongoose+slate)
-  - nocobase   (apache2/sequelize+umi)
+  - 👉🏻 nocobase(apache2/sequelize+umi)
   - outline    (apache2/sequelize+prosemirror)
   - directus      (AGPL/knex+vue3+tinymce5)
 - ✨ airtable-like(data-mgmt)

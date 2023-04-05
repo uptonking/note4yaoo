@@ -245,9 +245,6 @@ modified: 2023-02-05T19:03:27.730Z
   - 依赖tiptap2、dnd-kit、mui、tanstack-query、nextjs、@azure/cosmos--db
   - A free web application for creating and editing notes.
 
-- https://github.com/lostdesign/linked
-  - https://uselinked.com/
-  - Daily journaling without distraction.
 
 - note-it /16Star/Apache2/202208/ts/tiptap
   - https://github.com/MuhametSmaili/note-it

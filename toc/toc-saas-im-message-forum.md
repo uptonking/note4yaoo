@@ -204,6 +204,18 @@ modified: 2021-05-14T15:04:15.333Z
   - Your self-hosted, globally interconnected microblogging community
   - 依赖ruby
 
+- tailchat /401Star/apache2/202302/ts
+  - https://github.com/msgbyte/tailchat
+  - Alternative application of discord and slack. 
+  - 后端依赖@socket.io/admin-ui、ejs、mongoose、moleculer-minio、redlock(redis)、moleculer微服务
+  - 前端依赖zustand、antd、ahooks、use-gesture、immer、react-dnd、react-virtuoso
+  - 前端微内核架构+后端微服务架构，Tailchat 已经为集群化部署做好了准备。
+  - 主要功能模块
+    - 用户管理
+    - 聊天系统
+    - 插件系统
+    - 开放平台
+
 - Linen /1.2kStar/AGPLv3/202302/ts/discord-like
   - https://github.com/Linen-dev/linen.dev
   - https://www.linen.dev/
@@ -211,17 +223,9 @@ modified: 2021-05-14T15:04:15.333Z
   - 依赖headlessui、tanstack-query、nextjs、swr、prisma、express、zod
   - Linen was built as an alternative to closed tools like Slack and Discord.
 
-- tailchat /401Star/apache2/202302/ts
-  - https://github.com/msgbyte/tailchat
-  - Alternative application of discord and slack. 
-  - 后端依赖@socket.io/admin-ui、ejs、mongoose、moleculer-minio、redlock(redis)
-  - 前端依赖zustand、antd、ahooks、use-gesture(vanillajs)、immer、react-dnd、react-virtuoso
-  - 前端微内核架构+后端微服务架构，Tailchat 已经为集群化部署做好了准备。
-  - 主要功能模块
-    - 用户管理
-    - 聊天系统
-    - 插件系统
-    - 开放平台
+- https://github.com/laudspeaker/laudspeaker
+  - Open Source Cross Channel Customer Messaging Platform that you can self host. 
+  - alternative to Braze / Iterable / One Signal / Customer Io
 
 - koishi /2kStar/MIT/202303/ts
   - https://github.com/koishijs/koishi
@@ -257,6 +261,10 @@ modified: 2021-05-14T15:04:15.333Z
 
 - https://github.com/fonoster/fonoster
   - open-source alternative to Twilio
+
+- https://github.com/penghuwan/online-chat-app
+  - 一个在线聊天室，实现了登陆注册功能和聊天功能，
+  - 实时通信部分基于Socket.io实现，后端采用Koa框架组织业务逻辑，前端采用React编写，同时用Webpack作为打包工具
 
 ## chatbot
 
@@ -302,6 +310,9 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/novuhq/novu
   - The open-source notification infrastructure for products. 
   - Add a notification center for your React, Vue and Angular apps rocket
+# meetings
+- https://github.com/lukevella/rallly
+  - an open-source scheduling and collaboration tool designed to make organizing events and meetings easier
 # more-forum
 - https://github.com/geekeren/GuangGuForum
   - 过早客论坛微信小程序

@@ -9,12 +9,39 @@ modified: 2022-11-11T11:04:29.007Z
 
 # guide
 
-# web-clipper
+- tips
+  - 标签管理通常作为产品的一个功能，而不是独立的产品
+# popular
 - web-clipper /4.7kStar/GPLv2/202208/ts
   - https://github.com/webclipper/web-clipper
   - https://clipper.website/
   - use Web Clipper to save anything on the web to anywhere.
+  - 支持
+    - flowus、wolai、语雀、有道、flomo
+    - notion、github、onenote、joplin
 
+- https://github.com/pfcao/abookmark /js
+  - Advanced bookmark manager comes with labels, sticky notes, and trash mode.
+  - 基本复刻了chrome bookmark manager的功能
+  - 支持list/grid视图
+
+- https://github.com/alyssaxuu/omni
+  - The all-in-one tool to supercharge your productivity
+  - With Omni you can use your browser like a pro. Manage tabs, bookmarks, your browser history, perform all sorts of actions and more with a simple command interface.
+
+- https://github.com/pawelmalak/flame
+  - Flame is self-hosted startpage for your server. inspired (heavily) by SUI.
+  - Easily manage your apps and bookmarks with built-in editors.
+
+- https://github.com/kormyen/memex
+  - https://kormyen.github.io/memex/
+  - Simple bookmarks and notes
+  - 卡片形式
+
+- https://github.com/zotero/zotero
+  - a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
+
+# web-clipper
 - maoxian-web-clipper /596Star/MIT/202209/js
   - https://github.com/mika-cn/maoxian-web-clipper
   - A web extension to clip information from web page.
@@ -24,7 +51,7 @@ modified: 2022-11-11T11:04:29.007Z
   - an extension to clip websites and download them into a readable markdown file. 
   - Turndown is used to convert the simplified HTML (from Readability.js) into markdown.
 
-## known
+## known-clipper
 
 - https://github.com/coddingtonbear/obsidian-web /ts
   - You can use Obsidian Web for sending any web content from Chrome to your Obsidian Notes easily by just clicking on a button in your toolbar.
@@ -61,6 +88,51 @@ modified: 2022-11-11T11:04:29.007Z
 - https://github.com/butterops/refer /202105/js/inactive
   - Cross browser web clipper. Takes video notes, screenshots and extract texts or images from supported web br
 # xplat-bookmark
+- https://github.com/itizaworld/webev
+  - https://github.com/itizaworld/webev-server
+  - https://www.youtube.com/watch?v=EmxXCfOtgMU
+  - bookmark manager that improves the organization of information.
+  - 依赖express、mongoose、passport、next12、nextui、swr
+  - organized in a hierarchical structure.
+    - 只支持文件夹，？是否支持标签
+  - Visually display the information obtained by ogp.
+    - 输入url，自动显示预览图
+
+- https://github.com/Daniel31x13/linkwarden /MIT/js/代码简单
+  - a self-hosted, open-source bookmark + archive manager to collect, and save websites for offline use.
+  - 依赖mongodb、puppeteer、react-select
+  - LinkWarden also saves a copy of the link as screenshot and PDF
+  - Auto-capture a screenshot and PDF from each website.
+  - Set multiple tags to each link.
+
+- https://github.com/ndom91/briefkasten /MIT/js/prisma/样式友好
+  - Self-hosted bookmarking application. 
+  - Works with any Prisma compatible database 
+  - 依赖prisma、NextAuth.js
+  - api基于pages/api
+  - Organise by categories and tags
+  - Save by Browser Extension
+  - Import and export bookmarks from standard HTML format
+  - Bookmark image fetching background job
+  - Fulltext search，测试异常？
+  - REST API
+  - https://github.com/ndom91/briefkasten-scrape
+    - Job to periodically fetch missing bookmark screenshot cover photos. 
+    - This Github Action uses Playwright to periodically fetch missing screenshots of saved Bookmarks.
+
+- https://github.com/nthiebes/booky.io
+  - Online bookmark manager with a focus on simplicity, customizability, privacy, and speed.
+  - booky.io + Atomic Design + BEM + React + Redux
+
+- https://github.com/net-runner/lynx
+  - https://lynxweb.vercel.app/
+  - Open source platform for sharing, managing and discovering links and bookmarks
+  - Database: PostgresSQL & Prisma as a ORM
+  - Frontend: Next.js
+  - Backend: Node.js + Hyper-Express
+  - Mobile: React-Native
+  - Link sharing, discovery, managing, observing link groups or users
+
 - https://github.com/floccusaddon/floccus
   - Sync your bookmarks privately across browsers and devices
   - Syncs your real, native browser bookmarks directly
@@ -72,17 +144,6 @@ modified: 2022-11-11T11:04:29.007Z
   - https://book-manager.bdtechies.com/
   - cross-platform desktop app to manage personal library.
 
-- https://github.com/Daniel31x13/link-warden
-  - a self-hosted, open-source bookmark + archive manager to collect, and save websites for offline use.
-  - LinkWarden also saves a copy of the link as screenshot and PDF
-  - Auto-capture a screenshot and PDF from each website.
-
-- https://github.com/itizaworld/webev
-  - https://github.com/itizaworld/webev-server
-  - bookmark manager that improves the organization of information.
-  - organized in a hierarchical structure.
-  - 依赖express、mongoose
-
 - https://github.com/osmoscraft/osmosmemo
   - Turn GitHub into a bookmark manager
   - A browser bookmark manager optimized for capture and retrieval speed.
@@ -93,7 +154,7 @@ modified: 2022-11-11T11:04:29.007Z
   - frontend uses with Angular and Angular CLI.
   - backend uses ExpressJS with MongoDB and Keycloak. OpenAPI
 
-- https://github.com/go-shiori/shiori
+- https://github.com/go-shiori/shiori /go/js
   - bookmark manager built with Go
   - Intended as a simple clone of Pocket. 
   - You can use it as a command line application or as a web application. 
@@ -103,6 +164,62 @@ modified: 2022-11-11T11:04:29.007Z
 
 - https://github.com/helloxz/onenav
   - 使用PHP + SQLite 3开发的书签管理系统，将浏览器书签集中式管理，做到一处部署，随处访问。
+
+- https://github.com/poulainv/tottem
+  - Bookmark manager on steroid built with React / NextJs / Apollo Tools / Prisma 2
+
+- https://github.com/nextcloud/bookmarks
+  - This app provides you with a web interface for collecting and organizing bookmarks to the places on the web that are precious to you.
+  - Sort bookmarks into folders
+  - Add tags and personal notes
+
+- https://github.com/serogbp/startpage-react
+  - https://serogbp.github.io/startpage-react/
+  - a Kanban-like bookmark manager 
+- https://github.com/serogbp/Startpage
+  - a kanban like page where you can save and organize your favorite websites. 
+  - The websites are stored in the browser's Local Storage and they can be exported/imported in JSON format.
+  - Developed using vanilla Javascript with the MVC pattern and Custom Elements.
+
+- https://github.com/ivasilov/wikid
+  - Wikid is an app for keeping your personal information organized. 
+  - It organizes your bookmarks in a wiki format.
+  - NestJS, Apollo, TypeORM
+
+## offline
+
+- https://github.com/dosyago/DiskerNet /js
+  - An internet on yer disk. Full text search archive from your browsing and bookmarks.
+  - Two modes: archive everything or only bookmark-worthy content
+
+- https://github.com/kanishka-linux/reminiscence /python
+  - Self-hosted Bookmark and Archive manager
+  - Directory based categorization of bookmarks
+  - Automatic Tagging and Summarization, implemented using NLTK library
+
+- https://github.com/akawashiro/jendeley
+  - a JSON-based document organizing software.
+  - the database is stored as a plain text JSON file, making it easily editable using your preferred editor. 
+## bookmark-manager-as-browser-extension
+
+- https://github.com/danny0838/webscrapbook
+  - a browser extension that captures the web page faithfully with various archive formats and customizable configurations, for future retrieval, organization, annotation, and editing.
+
+- https://github.com/ips21blank/offlinebookmarkmanager
+  - Bookmark manager/editor extension for chrome browsers
+  - written in TypeScript and uses React with React-Redux and sass for styles.
+
+- https://github.com/prajjwalkapoor/kairy
+  - a browser extension to manage your bookmark shortcuts and reading lists.
+
+- https://github.com/camellia-app/camellia /好看
+  - a browser extension that helps you access hundreds of bookmarks on the page that appears when you open new tab in your browser.
+
+- https://github.com/JQuinzell/react-bookmarker
+  - bookmarking browser extension implemented in react.
+
+- https://github.com/deweyapp/dewey /inactive
+  - a Chrome app for tagging, searching and sorting your Chrome bookmarks.
 # tag
 - https://github.com/FelipeCortez/bmarks /django2
   - https://bmarks.net/felipecortez
@@ -132,23 +249,12 @@ modified: 2022-11-11T11:04:29.007Z
   - Autocomplete based on a suggestion list
 - https://github.com/olahol/react-tagsinput
   - customizable React component for inputing tags.
+
+## tag-apps
+
+- https://github.com/scale8/scale8-tag-manager-and-analytics
+  - A simple, yet powerful Google Tag Manager alternative that is fully open-sourced and privacy-friendly.
 # browser-bookmark-utils
-- https://github.com/ips21blank/offlinebookmarkmanager
-  - Bookmark manager/editor extension for chrome browsers
-  - written in TypeScript and uses React with React-Redux and sass for styles.
-
-- https://github.com/prajjwalkapoor/kairy
-  - a browser extension to manage your bookmark shortcuts and reading lists.
-
-- https://github.com/camellia-app/camellia /好看
-  - a browser extension that helps you access hundreds of bookmarks on the page that appears when you open new tab in your browser.
-
-- https://github.com/JQuinzell/react-bookmarker
-  - bookmarking browser extension implemented in react.
-
-- https://github.com/deweyapp/dewey /inactive
-  - a Chrome app for tagging, searching and sorting your Chrome bookmarks.
-
 - https://github.com/flybayer/twitter-bookmarks-search
   - adds the ability to search your bookmarked tweets inside Twitter.
 - https://github.com/twitterdev/bookmarks-search

@@ -9,6 +9,13 @@ modified: 2020-12-22T12:42:14.745Z
 
 # guide
 
+# config
+- linux
+  - .bashrc
+  - .npmrc
+  - .yarnrc
+  - .gitconfig
+
 # proxy-usecase
 - browser-proxy
   - edge浏览器右上角一直无法登录同步因为国内网络问题，折中方案是点击右侧边栏的outlook或office按钮，在侧边栏登录后，整个浏览器也会登录

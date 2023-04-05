@@ -154,12 +154,12 @@ $$('[contenteditable]')
   - 腰包掉到床头版与墙的夹缝中了
   - 离屏渲染，keep-alive
   - 分层渲染
-# dev-03
 
-## 030
+## 040
 
 - dev-to
   - 拖拽时原布局不变，只显示预期位置的指示线
+  - slate-docs-examples
   - writing tests
     - test in firefox
   - toolbar
@@ -207,6 +207,46 @@ $$('[contenteditable]')
 # dev-04
 
 ## 040
+
+## 0405
+
+- ### [JavaScript 里最大的安全的整数为什么是2的53次方减一？ - 知乎](https://www.zhihu.com/question/29010688)
+
+- IEEE754规定，双精度浮点数的有效数字是52位
+  - sign（S）：符号位，0是正数，1是负数
+  - exponent（E）：指数位
+  - fraction（F）：有效数字，IEEE754规定，在计算机内部保存有效数字时，默认第一位总是1，所以舍去，只保留后面的部分。
+    - 比如保存1.01，只存01，等读取的时候再把第一位1加上去。所以52位有效数字实际可以存储53位。
+
+- javascript 里数字类型只有一种， Number 类型，也就是64-bit 的浮点数
+- javascript 里对整数的表示等同于双精度浮点数（64-bit）对整数的表示
+- “安全”意思是说能够one-by-one表示的整数，也就是说在(-2^53, 2^53)范围内，双精度数表示和整数是一对一的，反过来说，在这个范围以内，所有的整数都有唯一的浮点数表示，这叫做安全整数
+- 2^53是这样存的：
+  - 符号位：0 指数：53 尾数：1.000000...000 （小数点后一共52个0）
+- 2^53-1是这样存的：
+  - 符号位：0 指数：52 尾数：1.111111....111 （小数点后一共52个1）
+- 2^53+1：
+  - 符号位：0 指数：53 尾数：1.000000...000 （小数点后一共52个0）
+  - 注意到，2^53+1的存储和2^53一样。这样就不再“一一对应”
+
+- ### [linux screen 命令详解](https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html)
+  - 系统管理员经常需要SSH 或者telent 远程登录到Linux 服务器，经常运行一些需要很长时间才能完成的任务，比如系统备份、ftp 传输等等。
+  - 通常情况下我们都是为每一个这样的任务开一个远程终端窗口，因为它们执行的时间太长了。必须等待它们执行完毕，在此期间不能关掉窗口或者断开连接，否则这个任务就会被杀掉，一切半途而废了。
+  - GNU Screen是一款由GNU计划开发的用于命令行终端切换的自由软件。用户可以通过该软件同时连接多个本地或远程的命令行会话，并在其间自由切换。
+  - GNU Screen可以看作是窗口管理器的命令行界面版本。它提供了统一的管理多个会话的界面和相应的功能。
+  - 只要Screen本身没有终止，在其内部运行的会话都可以恢复。
+    - 这一点对于远程登录的用户特别有用——即使网络连接中断，用户也不会失去对已经打开的命令行会话的控制。只要再次登录到主机上执行screen -r就可以恢复会话的运行。
+    - 同样在暂时离开的时候，也可以执行分离命令detach，在保证里面的程序正常运行的情况下让Screen挂起（切换到后台）。这一点和图形界面下的VNC很相似。
+
+- [linux Screen User’s Manual: Overview](https://www.gnu.org/software/screen/manual/html_node/Overview.html)
+  - Screen is a full-screen window manager that multiplexes a physical terminal between several processes, typically interactive shells. Each virtual terminal provides the functions of the DEC VT100 terminal
+
+## 0404
+
+- [node.js 向下取整 - CNode技术社区](https://cnodejs.org/topic/64214ce30072087f7c9e50a9)
+  - 发现了个奇怪的现象， 很多人都用的取整方式
+    - ~~(2418473332.1)， 0|(2418473332.1) 竟然是负数 -1876493964；
+  - js中位操作是当作Int32的，用 Math.floor() 就ok
 
 ## 0401
 
@@ -1017,7 +1057,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                                                                         `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                                                                                 `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

@@ -16,7 +16,14 @@ modified: 2023-01-09T11:03:32.533Z
 
 # parser-generator
 
+- https://github.com/Ziv-Barber/officegen
+  - Standalone Office Open XML files (Microsoft Office 2007 and later) generator for Word (docx), PowerPoint (pptx) and Excell (xlsx) in javascript. 
+  - The output is a stream.
+  - officegen should work on any environment that supports Node.js including Linux, OSX and Windows. 
+  - officegen also supporting PowerPoint native charts objects with embedded data.
+
 ## wasm
+
 - https://github.com/bokuweb/docx-rs
   - A .docx file writer with Rust/WebAssembly.
 # extension-superset

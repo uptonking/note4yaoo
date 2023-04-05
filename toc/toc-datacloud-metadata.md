@@ -32,6 +32,10 @@ modified: 2023-01-06T09:25:18.236Z
 - https://github.com/amundsen-io/amundsen /python/ts
   - Amundsen is a data discovery and metadata engine.
   - Think of it as Google search for data.
+
+- https://github.com/datahuborg/datahub /archived
+  - https://datahub.csail.mit.edu/
+  - experimental hosted platform (GitHub-like) for organizing, managing, sharing, collaborating, and making sense of data.
 # python
 - https://github.com/recap-cloud/recap /202301/python
   - Recap makes it easy for engineers to build infrastructure and tools that need metadata. 

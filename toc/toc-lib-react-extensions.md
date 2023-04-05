@@ -12,7 +12,6 @@ modified: 2020-11-19T12:43:25.788Z
   - Normalized state management for async data. Safe. Fast. Reusable.
   - Define your async methods. Use them synchronously in React. Instantly mutate the data and automatically update all usages.
 # react-extensions
-
 - https://github.com/GeekyAnts/react-pluggable
   - With the help of React Pluggable, we can think of our app as a set of features instead of a set of components.
   - A plugin can be added or removed by a single line (which is perfect for A/B testing)
@@ -90,6 +89,18 @@ modified: 2020-11-19T12:43:25.788Z
 - https://github.com/bitovi/react-to-webcomponent
   - converts React components to custom elements
   - The custom element acts as a wrapper for the underlying react component.
+# ssr
+- https://github.com/FormidableLabs/rapscallion
+  - Asynchronous React VirtualDOM renderer for SSR.
+  - Rendering is asynchronous and non-blocking.
+  - It provides a streaming interface so that you can start sending content to the client immediately.
+  - [Can I be of service with React 16?](https://github.com/FormidableLabs/rapscallion/issues/120)
+    - I just tried to install and test and realized it wasn't 16 compatible
+
+- https://github.com/FormidableLabs/react-ssr-prepass
+  - A custom partial React SSR renderer for prefetching and suspense
+  - react-dom/server does not have support for suspense yet.
+  - react-ssr-prepass is a partial server-side React renderer that does a prepass on a React element tree and suspends when it finds thrown promises.
 # more-react
 - https://github.com/lelandrichardson/react-primitives
   - This library attempts to propose an ideal set of primitives around building React applications, regardless of Platform. 

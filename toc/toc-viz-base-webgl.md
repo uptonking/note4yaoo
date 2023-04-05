@@ -82,6 +82,10 @@ modified: 2020-10-05T06:18:29.671Z
   - A GLSL editor for Threejs materials. 
   - Automatically detect the WebGL programs and provide live edit for the shaders. 
   - Easily edit the materials in your beautifully crafted threejs scene. Compatible vanilla and react.
+
+- https://github.com/threlte/threlte
+  - A three.js component library for svelte.
+  - Build three.js scenes declaratively with threlte components that are reactive to the core, readily interactive and can participate in Svelte's ecosystem.
 # webgl-animation
 - https://github.com/scottstensland/webgl-3d-animation
   - An interactive 3D animation using WebGL to depict a 2D predator prey ecology on a grid real-time mapped onto the surface of a 3D torus. 

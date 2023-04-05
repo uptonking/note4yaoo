@@ -10,6 +10,9 @@ modified: 2023-02-08T10:46:26.912Z
 # guide
 
 # github-mirror
+- tips
+  - 先尝试，修改dns，将 git://github.com 前缀替换成 https://github.com/
+
 - [Gitee 极速下载，每日同步一次。](https://gitee.com/mirrors)
   - https://gitee.com/organizations/mirrors/projects
 
@@ -32,6 +35,10 @@ modified: 2023-02-08T10:46:26.912Z
 - questions
   - search github 镜像 一月内
   - [Github国内镜像网站，解决Github访问的神器 - 知乎](https://zhuanlan.zhihu.com/p/360677731)
+
+- [Using a socks proxy with git for the http transport - Stack Overflow](https://stackoverflow.com/questions/15227130/using-a-socks-proxy-with-git-for-the-http-transport)
+  - ALL_PROXY=socks5://127.0.0.1:1080 git clone https://github.com/some/one.git
+  - If you also want the host name to be resolved using the proxy, use thuzhf's solution below, which uses socks5h instead of socks5
 # improvements
 - github-release
   - app store
@@ -42,12 +49,13 @@ modified: 2023-02-08T10:46:26.912Z
   - sort repos of an organization by stars
   - toggle github repo and github page
   - go to npm package page
+
+- file-manager
+  - 文件列表的日期，高亮最近日期
 # git-usage
 - 统计仓库人员贡献比例
   - git shortlog -sn
     - 统计每人commit次数
-  - 
-
 # github-usage
 - nice-to-have
   - 空仓库标记，如搜索时标记出空仓库可省去点开查看

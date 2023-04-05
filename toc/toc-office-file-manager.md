@@ -20,8 +20,7 @@ modified: 2021-08-23T05:27:08.068Z
     - 路径中的特殊字符使用了url编码，如%2F表示斜杠/
   - google-drive示例  内层文件夹url扁平化
     - /folders/uuid-folder?resourcekey=uuid-key
-    - 所有文件夹，不管嵌套层级，支持直接通过唯一id访问
-    - 缺点是url都是随机数字
+    - 所有文件夹，不管嵌套层级，支持直接通过唯一id访问，url都是随机数字
   - onedrive示例  内层文件夹url扁平化
     - /?id=uuid-folder&cid=AE0F511DC7381EDB
 # react-file
@@ -60,6 +59,9 @@ modified: 2021-08-23T05:27:08.068Z
   - 上传后文件保存为服务器本地文件，而不是数据库中，所以搜索不方便
   - https://github.com/MrWangJustToDo/requestModule
     - 可能是后端的简单测试
+
+- https://github.com/GamEditor/Node.js-FileManager
+  - This is a simple file manager for download and upload files on the server by categories.
 
 - https://github.com/rocketseat-content/youtube-clone-dropbox-menu
   - https://github.com/maykbrito/vanilla-ui-clone-dropbox-home

@@ -17,7 +17,9 @@ modified: 2021-08-07T16:44:32.377Z
 
 - ## 
 
-- ## 
+- ##  an interactive visualization of the major languages in the world using #threlte.
+- https://twitter.com/DataVizStefan/status/1642394779991547904
+  - 3d条形图
 
 - ## Experimenting with #threejs is a fun.
 - https://twitter.com/dotAadarsh/status/1621906462770626560

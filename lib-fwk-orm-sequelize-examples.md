@@ -42,6 +42,28 @@ modified: 2023-02-05T18:50:32.900Z
   - Compatible with React Admin Simple Rest Data Provider. 
   - The lib is ORM agnostic
   - https://github.com/lalalilo/express-crud-router-sequelize-v6-connector
+
+- https://github.com/sequelize/umzug
+  - Framework agnostic migration tool for Node.js
+  - It provides a clean API for running and rolling back tasks.
+  - Database agnostic
+
+- https://github.com/feathersjs-ecosystem/feathers-sequelize
+  - A Feathers service adapter for the Sequelize ORM. 
+  - Supporting MySQL, MariaDB, Postgres, SQLite, and SQL Server
+# server-sent event
+- https://github.com/dexterio200/chat-app-server
+  - Server side of a chat room app - built with Node.js, Express, Sequelize & Server-sent events.
+
+- https://github.com/nataliaev/game-server
+  - https://github.com/nataliaev/game-client
+  - using Node.js, Express, Sequelize and server-sent events.
+
+- https://github.com/mvillarrealb/sequelize-event-stream
+  - Event publishing capabilities for your sequelize's models using hooks
+- https://github.com/joeybaker/sequelize-stream
+  - Create a stream of Sequelize create, update, and destroy events. 
+  - This is useful if you want to build a real-time stream of events in your database.
 # v7
 - https://github.com/tapiwakundi/movies-api /js
   - simple example

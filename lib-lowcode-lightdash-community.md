@@ -9,6 +9,8 @@ modified: 2023-02-05T18:43:50.902Z
 
 # guide
 
+- ref
+  - [Removed link to Discord](https://github.com/lightdash/lightdash/pull/267)
 # discuss
 - ## 
 

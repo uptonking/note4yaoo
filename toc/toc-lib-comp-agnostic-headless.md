@@ -274,12 +274,17 @@ modified: 2021-04-11T06:17:51.318Z
   - https://github.com/appbaseio/searchbox
   - a lightweight and performance focused search UI component library to query and display results from your ElasticSearch index using declarative props. 
   - It's available for React, Vue, React Native and Flutter.
-- https://github.com/appbaseio/reactivesearch
-  - https://opensource.appbase.io/reactivesearch
-  - Search UI components for React and Vue: powered by appbase.io / Elasticsearch
-- https://github.com/appbaseio/reactivecore
-  - Core architecture of reactive UI libraries
-  - 依赖redux、redux-thunk、xdate
+  - https://github.com/appbaseio/reactivesearch
+    - https://opensource.appbase.io/reactivesearch
+    - Search UI components for React and Vue: powered by appbase.io / Elasticsearch
+  - https://github.com/appbaseio/reactivecore
+    - Core architecture of reactive UI libraries
+    - 依赖redux、redux-thunk、xdate
+
+- https://github.com/yairEO/tagify
+  - https://yaireo.github.io/tagify/
+  - Transforms an input field or a textarea into a Tags component
+  - Tags input component in VanillaJS/React/Angular/Vue
 # headless-based-on-browser-puppeteer
 - https://github.com/PDFTron/web-to-pdf
   - Convert any web technology to PDF (HTML to PDF, html2pdf)

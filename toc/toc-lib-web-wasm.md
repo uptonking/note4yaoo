@@ -45,6 +45,9 @@ modified: 2020-12-31T15:19:37.542Z
 - https://github.com/hazae41/echalote
   - Zero-copy Tor protocol for the web (JS + WebAssembly)
   - Partial and unsafe Tor protocol (with Ed25519, ntor, kdf-tor)
+
+- https://github.com/penghuwan/webassembly-demo
+  - use rust and C++
 # cpp
 - https://github.com/mbasso/asm-dom
   - A minimal WebAssembly virtual DOM to build C++ SPA (Single page applications)

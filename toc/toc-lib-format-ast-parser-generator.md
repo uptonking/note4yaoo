@@ -23,3 +23,9 @@ modified: 2023-03-25T16:43:59.362Z
 # ast-utils
 - https://github.com/byoungd/html-to-ast
   - Lightweight approach to enable quickly parsing HTML into an AST and stringify'ing it back to the original string.
+
+- https://github.com/js-cst-tokens/cst-tokens /202212/js
+  - A CST, or Concrete Syntax Tree, is a way of representing a computer program that captures its source text and semantic structure simultaneously.
+  - cst-tokens; Its CSTs are ASTs where each node has a `node.cstTokens` array of `{type, value}` tokens. 
+  - To make the AST we threw away all the textual symbols that humans use to read programs: the blank space, the braces, the comments. 
+  - code editing tools need a useful, standard way of incorporating spaces, braces, and comments into an Abstract Syntax Tree, thus turning it into a Conrete Syntax Tree or CST. 

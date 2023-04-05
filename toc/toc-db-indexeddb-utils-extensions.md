@@ -60,6 +60,13 @@ modified: 2022-11-04T14:22:17.373Z
 
 - https://github.com/falsandtru/clientchannel
   - Persist objects and sync them between tabs via IndexedDB or LocalStorage.
+
+- https://github.com/jimmywarting/StreamSaver.js
+  - the solution to saving streams in the web browser. 
+  - It is perfect for web apps where there's a need to save large amounts of data on devices with e.g. limited RAM.
+  - there is this new native way to save files to the HD:
+    - https://github.com/whatwg/fs
+  - I also built native-file-system-adapter so you can have it in all Browsers, Deno, and NodeJS with different storages
 # filesystem-on-indexeddb
 - https://github.com/filerjs/filer
   - Filer is a drop-in replacement for node's fs module, a POSIX-like file system for browsers.

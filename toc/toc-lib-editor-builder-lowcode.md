@@ -327,6 +327,12 @@ modified: 2020-12-28T12:24:09.275Z
 - https://github.com/node-red/node-red /apache2/js
   - Low-code programming for event-driven applications
 
+- https://github.com/triggerdotdev/trigger.dev
+  - The developer-first open source Zapier alternative.
+  - Trigger.dev is an open source platform that makes it easy for developers to create event-driven background tasks directly in their code. 
+  - 后端依赖remix、prisma
+  - 前端依赖headless/react、codemirror6、json-query、keyv、pulsar
+
 - https://github.com/automatisch/automatisch /AGPLv3/ts/graphql
   - open source Zapier alternative. 
   - Build workflow automation without spending time and money.

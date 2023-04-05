@@ -82,4 +82,22 @@ modified: 2022-10-11T09:02:26.869Z
 - 代理层限制: 和WebSocket一样会遇到代理层配置的问题，配置错误的话，客户端需要不断和服务端进行重连。
 
 - SSE技术适合一些只需要服务端单向推送事件给客户端的场景，例如股票行情推送软件。
+
+## [论一个低配版Web实时通信库是如何实现的（ EventSource篇) - 知乎](https://zhuanlan.zhihu.com/p/77635294)
+
+- simple-socket是我写的一个"低配版"的Web实时通信工具（相对于Socket.io），在参考了相关源码和资料的基础上，实现了前后端实时互通的基本功能，
+  - 选用了WebSocket ->server-sent-event -> AJAX轮询这三种方式做降级兼容，
+  - 分为simple-socket-client和simple-socket-server两套代码。
+  - https://github.com/penghuwan/simple-socket
+
+## [JS实时通信三把斧系列之三: eventsource - 知乎](https://zhuanlan.zhihu.com/p/90626342)
+
+- 前两篇文章分析了websocket和http://socket.io
+- eventsource其实是单向通信，而websocket是双向通信
+  - SSE的简单模型是：一个客户端去从服务器端订阅一条“流”，之后服务端可以发送消息给客户端直到服务端或者客户端关闭该“流”，所以eventsource也叫作"server-sent-event"
+
+- [EventSource - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/EventSource)
+  - EventSource interface is web content's interface to server-sent events.
+  - An EventSource instance opens a persistent connection to an HTTP server, which sends events in `text/event-stream` format. 
+  - The connection remains open until closed by calling `EventSource.close()`.
 # more

@@ -165,15 +165,17 @@ modified: 2022-08-21T10:02:05.129Z
   - 30+ fields supported
   - [Firetable is now Rowy_202110](https://news.ycombinator.com/item?id=28768261)
   - [When will MySQL be supported](https://github.com/rowyio/rowy/discussions/1051)
-    - we're currently working on the support for PostgreSQL with Rowy
+    - we're currently(202301) working on the support for PostgreSQL with Rowy
   - [Abstracting the UI to be compatible with any database](https://github.com/rowyio/rowy/issues/228)
     - long term
+  - [[Offtop] Supporting Supabase](https://github.com/rowyio/rowy/discussions/806)
+    - I am aware that Supabase provides a builtin CMS, Interested to know which parts of Rowy you miss the most?
+    - I think supporting postgres directly doesn't make sense, as we have nocodb for that, who've done a lot of stuff already. So supporting supabase will bring a bigger benefit, as they're no solutions on the market for this problem atm.
   - https://demo.rowy.io/table/allFieldTypes
     - 给出了常用字段类型的示例
   - firetable /36Star/apache2/202108/ts
     - https://github.com/Antler-VC/firetable
     - Excel/Google Sheets like UI for Firebase/Firestore. No more admin portals!
-    - Firetable is now Rowy
     - https://github.com/FiretableProject/firetable
 
 - S2 /1.1kStar/MIT/202302/ts

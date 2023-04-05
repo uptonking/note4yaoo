@@ -317,6 +317,7 @@ modified: 2022-08-21T10:02:27.788Z
   - Our goal is to solve the problem of creating a CRUD grid in under five minutes.
 # list-grid-with-canvas
 - Luckysheet /4.5kStar/MIT/202202/ts
+  - https://github.com/dream-num/univer
   - https://github.com/mengshukeji/Luckysheet
   - https://mengshukeji.github.io/LuckysheetDemo/
   - an online spreadsheet like excel
@@ -349,18 +350,19 @@ modified: 2022-08-21T10:02:27.788Z
   - 高性能 web javaScript 电子表格
   - 依赖exceljs
 
-- json5-sheet-editor /10Star/MIT/202208/js/luckysheet开发者
-  - https://github.com/smalllong/json5-sheet-editor
-  - https://smalllong.github.io/json5-sheet-editor/
-  - A simple and high efficient JSON5 based spreadsheet editor
-
 - simple-sheet /89Star/MIT/202208/ts
   - https://github.com/lvming6816077/simple-sheet
   - https://www.nihaoshijie.com.cn/mypro/simple-sheet/index.html
   - 高性能（使用canvas进行渲染）
   - React.js+Mobx+TypeScript、konva
   - 支持行、列宽度高度、自动筛选视图、单元格样式和格式设置等
-  - [【simple-sheet】前端在线Sheet文档技术解析](https://zhuanlan.zhihu.com/p/547293952)
+  - [【simple-sheet】前端在线Sheet文档技术解析，参考了luckysheet](https://zhuanlan.zhihu.com/p/547293952)
+
+- json5-sheet-editor /10Star/MIT/202208/js
+  - https://github.com/smalllong/json5-sheet-editor
+  - https://smalllong.github.io/json5-sheet-editor/
+  - A simple and high efficient JSON5 based spreadsheet editor
+  - 依赖自研lightue、json5
 
 - cheetah-grid /MIT/337Star/202202/ts
   - https://github.com/future-architect/cheetah-grid

@@ -22,11 +22,31 @@ modified: 2021-09-14T18:58:58.275Z
   - https://tldrlegal.com/
   - https://choosealicense.com/licenses/
   - linkware, watermark
+  - [SPDX License List | Software Package Data Exchange (SPDX)](https://spdx.org/licenses/)
 
 - Copyright”指软件的版权和其它一切权利归软件作者所私有，用户只有使用权，没有其它如复制、重新修改发布等权利。
 - 而“Copyleft”的特点是仅有版权归原作者所有，其他一切权利可以与任何人共享。
   - “Copyleft”通常被译作“著佐权”，即通过许可证的形式，补足、辅佐著作权（Copyright）不足的版权授权，相当于一种权利与义务的契约
 # non-commercial
+
+## [Polyform Licenses](https://polyformproject.org/licenses/)
+
+- SPDX支持
+  - PolyForm-Noncommercial-1.0.0
+  - PolyForm-Small-Business-1.0.0
+
+- PolyForm Project publishes a suite of standardized licenses:
+  - PolyForm Noncommercial is a general noncommercial license for software.
+  - PolyForm Perimeter permits uses other than those that compete with the software.
+  - PolyForm Shield permits uses other than those that compete with the provider of the software.
+  - PolyForm Strict removes permission to distribute copies and make changes, leaving only permission to use for noncommercial purposes.
+  - PolyForm Internal Use permits use for internal business purposes.
+  - PolyForm Small Business permits use by small businesses and other small organizations.
+  - PolyForm Free Trial permits a free, time-limited trial.
+
+- https://news.ycombinator.com/item?id=24583479
+  - If anyone is interested in using a source-available license for their own code, the Polyform Project has a set of standardized, source-available licenses. 
+  - PolyForm Shield would probably achieve the same result as the Timescale License
 
 ## [Fair-code](https://faircode.io/)
 

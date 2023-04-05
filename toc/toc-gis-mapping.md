@@ -77,6 +77,11 @@ modified: 2021-01-04T16:21:18.990Z
   - https://github.com/CesiumGS/cesium
   - https://cesium.com/cesiumjs/
   - JS library for world-class 3D globes and maps
+
+- https://github.com/dvgis/dc-sdk
+  - 基于 Cesium 构建二、三维一体 WebGis 开发平台
+  -  对 Turf、Heatmap、Mapv、Echarts 等常用可视化库和开源库的功能接入集成
+
 - ViziCities /2.7kStar/BSD/201610/js
   - https://github.com/UDST/vizicities
   - A framework for 3D geospatial visualization in the browser

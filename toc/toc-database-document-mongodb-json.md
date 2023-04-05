@@ -52,6 +52,9 @@ modified: 2022-11-03T04:14:11.987Z
 - https://github.com/evinism/mistql
   - A query / expression language for performing computations on JSON-like structures. 
   - Tuned for clientside ML feature extraction.
+
+- https://github.com/jiren/JsonQuery /201502/js
+  - Query your JSON data like database.
 # mongodb-like
 - popular
   - nedb

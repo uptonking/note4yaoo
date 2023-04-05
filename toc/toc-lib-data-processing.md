@@ -22,7 +22,7 @@ modified: 2021-05-13T16:14:15.415Z
   - Each query you write in Malloy is a building block for the next level of understanding. 
   - https://djouallah.github.io/composer/
 
-- https://github.com/dbt-labs/dbt-core
+- https://github.com/dbt-labs/dbt-core /python
   - https://getdbt.com/
   - dbt enables data analysts and engineers to transform their data using the same practices that software engineers use to build applications.
   - Analysts using dbt can transform their data by simply writing select statements, while dbt handles turning these statements into tables and views in a data warehouse.

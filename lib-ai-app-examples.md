@@ -73,4 +73,7 @@ modified: 2023-02-08T07:20:48.475Z
   - [[Question] Why use javascript ?](https://github.com/karpathy/convnetjs/issues/72)
     - Performance-wise there is no reason to believe that JavaScript would perform significantly slower than Python. The reason why Python is used over C++ is not performance, it is the ecosystem.
     - For fast execution Python or C++ might not even be the best for neural networks as GPGPU computing could be the ultimate solution for fast parallel computing of lots of artificial neurons. In that case JavaScript would yield roughly the same performances as Python of C++.
+
+- https://github.com/BrainJS/brain.js
+  - robot GPU accelerated Neural networks in JavaScript for Browsers and Node.js
 # more

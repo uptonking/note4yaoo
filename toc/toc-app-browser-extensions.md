@@ -15,6 +15,9 @@ modified: 2023-02-08T10:24:11.422Z
 # popular
 
 # self-usage
+- [History Trends Unlimited](https://sites.google.com/view/history-trends-unlimited/home?authuser=0)
+  - it is closed source. Copyright 2013-2022 Randy Lauen. All Rights Reserved.
+
 - https://github.com/FallenMax/smart-toc
   - A Chrome extension for auto-generating a table of contents
 
@@ -28,6 +31,11 @@ modified: 2023-02-08T10:24:11.422Z
 
 - https://github.com/jawil/GayHub
   - 优化GitHub的阅读体验
+
+- https://github.com/pfcao/abookmark /js
+  - Advanced bookmark manager comes with labels, sticky notes, and trash mode.
+  - 基本复刻了chrome bookmark manager的功能
+  - 支持list/grid视图
 # table
 - https://github.com/jamesandres/ColumnCopy
   - Google Chrome extension which enables selecting columns from table.
@@ -113,6 +121,7 @@ modified: 2023-02-08T10:24:11.422Z
   - 支持按下文字后自动focus到对应按钮
   - Originally forked from sui, sui2 adds new features like keyboard navigation and PWA to boost your productivity.
   - https://github.com/jeroenpardon/sui
+    - a startpage for your server and / or new tab page
 - https://github.com/ndom91/newtelco-tab
   - 类似服务器状态卡片控制台
 
@@ -151,6 +160,11 @@ modified: 2023-02-08T10:24:11.422Z
 
 - https://github.com/sajadhsm/new-word-tab
   - browser extension to learn a word per new tab!
+
+- https://github.com/serogbp/Startpage
+  - a kanban like page where you can save and organize your favorite websites. 
+  - The websites are stored in the browser's Local Storage and they can be exported/imported in JSON format.
+  - Developed using vanilla Javascript with the MVC pattern and Custom Elements.
 # browser-extensions-utils
 - https://github.com/PlasmoHQ/plasmo
   - https://www.plasmo.com/
@@ -165,6 +179,11 @@ modified: 2023-02-08T10:24:11.422Z
 # settings-sync
 - https://github.com/shanalikhan/code-settings-sync
   - Synchronize your Visual Studio Code Settings Across Multiple Machines using GitHub GIST
+# search
+- https://github.com/kawamataryo/chikamichi
+  - Command pallet for the browser. 
+  - Enables fuzzy search for histories, tabs and bookmarks.
+  - Inspired by the Sidekick search dialogue
 # twitter
 - https://github.com/tweetback/tweetback
   - Take ownership of your Twitter data. 

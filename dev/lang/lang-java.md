@@ -13,20 +13,14 @@ modified: 2020-07-14T09:26:35.281Z
 - 缓存
 - 消息
 - 日志
-
 # tips
-
 - all in java as backend 
 - 若要专注于提高渲染、存储、计算等方面的性能，请参考cpp
 - java的优势是既简单又高性能(相对于其他语言)
-
 # java-next
-
 - java panama
   - 项目的目的是让java更加方便滴集成native的类库，比如各种用c/c++提供的api，以前都是使用jni，有一定的局限性，比如需要用户同时了解java和c/c++，巴拿马项目可以根据c的头文件自动生成java的interface，并接入jit，这样用户就可以完全不碰c/c++代码而使用native类库了，应用的经典例子就是opengl
-
 # dev
-
 - 枚举类以后增加枚举值的方式
   - 枚举类只适合做数量确定的元素的事情, 不确定的还是另外设计方法来做吧
   - 既然要动态添加，就不适合用枚举。用xml配置文件，然后解析，是适合这种动态的做法
@@ -54,7 +48,6 @@ modified: 2020-07-14T09:26:35.281Z
     - However, this project does not install java for you.
   - [sdkman](https://github.com/sdkman/sdkman-cli) /3.8kStar
     - Formerly known as GVM the Groovy enVironment Manager, it was inspired by the very useful RVM and rbenv tools
-
 # java basics
 
 ## oop
@@ -107,7 +100,6 @@ modified: 2020-07-14T09:26:35.281Z
 ## java io
 
 # maven
-
 - jar包MANIFEST. MF文件内容与maven坐标GAV的队友关系
   - Implementation-Vendor-Id = groupId
   - Implementation-Title = artifactId，这个不一定对应，artifactId也可能就是jar包名
@@ -133,7 +125,6 @@ modified: 2020-07-14T09:26:35.281Z
   - 打包成jar包含所有依赖和资源，可定制和重新组装目录
   - 不仅会将 Dependency 中的 Class 文件打入最终的 Jar 包，还会将 Dependency 中的资源文件，诸如 properties 文件打入最终的 Jar 包，同名资源会冲突
 - maven-dependency-plugin 
-
 # Java Specification
 
 ## JVM
@@ -205,7 +196,6 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
 
 - JFC（全称为Java Foundation Classes，中文译为Java基础类）是一个图形框架
 - JFC主要是由Abstract Window Toolkit（AWT）、Swing以及Java 2D三者所构成，若将这些一同搭配运用，则用Java程式语言撰写开发成的使用者介面，无论转移到Windows、Mac OS X或Linux等各种不同的作业平台上，都能保有一致性的图像呈现。
-
 # JDK
 
 ## New Features Of JDK 
@@ -325,3 +315,15 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
   - Android 7.0 Nougat replaced Harmony with OpenJDK in 2016
 - jdk讨论参考
   - https://www.zhihu.com/question/275665265
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## #scala 和 #java 的互操作完全是 scala 单方面操 java..
+- https://twitter.com/tison1096/status/1642808400995319808
+- java 里面想要调用 scala 确实挺麻烦的…
+  - 有些东西是生成符号，带个 dollar 符啥的，看着难看但也能用。上面这个干脆是 scalac 编译时插入信息，这个只用 javac 写都写不出来..
+- Kotlin和Java基本可以流畅的互操作，但是如果引入第三者，整个编译又是一个灾难。通常这些 JVM 语言自己的 compiler 都兼容 Java 源代码，但是如果是三种语言的混合项目，交叉引用排不出拓扑序，就没办法编译了。

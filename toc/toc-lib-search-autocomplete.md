@@ -274,9 +274,14 @@ modified: 2023-01-01T13:24:35.994Z
   - https://github.com/CloudCannon/pagefind
   - https://pagefind.app/
   - Pagefind is a fully static search library that aims to perform well on large sites
-  - Pagefind runs after Hugo, Eleventy, Jekyll, Next, Astro, SvelteKit, or any other SSG. 
+  - Pagefind runs after any static site generator and automatically indexes the built static files. 
+    - Pagefind runs after Hugo, Eleventy, Jekyll, Next, Astro, SvelteKit, or any other SSG. 
+    - Pagefind then outputs a static search bundle to your website, and exposes a JavaScript search API that can be used anywhere on your site.
   - The installation process is always the same: Pagefind only requires a folder containing the built static files of your website
   - After indexing, Pagefind adds a static search bundle to your built files, which exposes a JavaScript search API that can be used anywhere on your site. 
+
+- https://github.com/dosyago/DiskerNet /js
+  - An internet on yer disk. Full text search archive from your browsing and bookmarks.
 # full-text-search-solutions
 - pouchdb-quick-search /370Star/apache2/201702/js/lunr/inactive
   - https://github.com/pouchdb-community/pouchdb-quick-search

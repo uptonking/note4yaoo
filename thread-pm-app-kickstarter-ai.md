@@ -1,11 +1,11 @@
 ---
-title: thread-pm-app-kickstarter-industry
-tags: [industry, kickstarter, thread]
+title: thread-pm-app-kickstarter-ai
+tags: [ai, kickstarter, thread]
 created: 2023-03-26T07:02:36.427Z
-modified: 2023-03-26T07:02:48.021Z
+modified: 2023-04-04T03:59:40.928Z
 ---
 
-# thread-pm-app-kickstarter-industry
+# thread-pm-app-kickstarter-ai
 
 # guide
 
@@ -14,7 +14,9 @@ modified: 2023-03-26T07:02:48.021Z
 
 - ## 
 
-- ## 
+- ## 开了一个 notion 文档用来跟进各种开源 LLMs 的进度。。。
+- https://twitter.com/MinakoOikawa/status/1642863014310445056
+  - [History of LLM](https://breezy-dragon-ee4.notion.site/History-of-LLM-6abfb803864746b8bbb7867082a070ce)
 
 - ## 使用 Vercel、Supabase、Stripe 打造 OpenAI 计费系统
 - https://twitter.com/meathill1/status/1642376618839535617

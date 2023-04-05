@@ -273,6 +273,11 @@ modified: 2020-10-22T10:22:33.292Z
   - Lightweight, interactive planning tool that visualizes a series of tasks using an HTML canvas
 - https://github.com/frappe/gantt
   - https://frappe.io/gantt
+# examples
+- https://github.com/joewalnes/smoothie
+  - http://smoothiecharts.org/
+  - a really small charting library designed for live streaming data. 
+  - I built it to reduce the headaches I was getting from watching charts jerkily updating every second.
 # more
 - https://github.com/visa/visa-chart-components /202207/ts/inactive
   - https://visa.github.io/visa-chart-components/
