@@ -12,6 +12,20 @@ modified: 2021-05-19T08:32:28.120Z
 - ref
   - https://www.npmtrends.com/primrose-vs-carota-vs-@creately/carota
 # popular
+- onlyoffice-sdkjs /190Star/AGPLv3/202302/js
+  - https://github.com/ONLYOFFICE/sdkjs
+  - https://personal.onlyoffice.com/
+  - https://api.onlyoffice.com/docbuilder/spreadsheetapi
+  - 💡 word/excel/ppt都基于canvas实现
+  - Contains API for all the included components client-side interaction.
+  - 通过TypedArray，将表格数据以二进制格式存储，通过字段压缩+共享字符串表来优化内存空间
+  - [精读onlyoffice在线表格存储设计](https://juejin.cn/post/7202252704978386999)
+  - repos
+    - https://github.com/ONLYOFFICE/document-editor-react-samples
+      - 示例依赖server api，本地无法运行
+    - https://github.com/ONLYOFFICE/document-editor-react
+      - 示例依赖server api，本地无法运行
+
 - canvas-editor /72Star/MIT/202211/ts/几乎无依赖
   - https://github.com/Hufe921/canvas-editor
   - https://hufe.club/canvas-editor/

@@ -17,18 +17,23 @@ modified: 2021-01-04T17:31:31.845Z
     - 4.1.0 - 201904
     - 4.0.0 - 201808
     - 3.17 - 201709 
+
 - https://github.com/kekingcn/kkFileView
   - https://kkfileview.keking.cn/
   - 使用spring boot打造文件文档在线预览项目解决方案，
   - 支持doc、docx、ppt、pptx、xls、xlsx、zip、rar、mp4，mp3
   - 以及众多类文本如txt、html、xml、java、properties、sql、js、md、json、conf、ini、vue、php、py、bat、gitignore等文件在线预览
+
 - https://github.com/Jarrettluo/document-sharing-site
   - “全文档”(All Docs)，Word, Excel, PPT, PDF, Pic等文档在线预览、存储、共享的工具，并且支持全文搜索的所有的文档信息。
   - 后端技术：SpringBoot + MongoDB + ES
   - 前端技术：Vue + axios
 
+- https://github.com/GrapeCity/GcExcel-Java
+  - High-speed Excel spreadsheet API for Java
 
-
+- http://cd.sysdsoft.cn:666/sysd/SYCloud
+  - 思源开发平台，一套企业级的开发平台，Antd 和 React 实现。
 # word-text-editor
 
 # excel-spreadsheet

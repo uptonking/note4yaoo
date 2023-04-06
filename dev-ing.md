@@ -179,6 +179,7 @@ $$('[contenteditable]')
     - zustand
   - emoji
   - video
+  - 高亮块
   - 格式刷
   - 斜杠菜单
   - resume with noseditor

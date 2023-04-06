@@ -165,6 +165,14 @@ modified: 2022-08-13T06:59:54.741Z
 - https://github.com/sidhantpanda/docker-express-typescript-boilerplate
   - A dockerized TypeScript-Express App boilerplate with MongoDB and Github Actions
 
+- https://github.com/GeekyAnts/express-typescript
+  - Express + TypeScript + Boilerplate for Web / API App
+  - For Database - Repo contains the use of Mongoose 
+  - For Cache - Repo contains the use of memory-cache 
+  - For Strategies Auth - Repo contains the use of the Passport.js
+  - For views - Repo contains the use of PUG template engine.
+  - For background queues - Repo contains the use of Kue. 
+
 - https://github.com/flaviuse/mern-authentication
   - authentication boilerplate: password reset, email verification, server sessions, redux, typescripts, hooks and docker for dev and prod.
 - https://github.com/rooneyrulz/simple-auth-app

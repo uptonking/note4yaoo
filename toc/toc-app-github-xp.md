@@ -180,6 +180,10 @@ modified: 2023-02-08T10:46:26.912Z
 - download release and repo
   - https://pd.zwc365.com/
   - https://shrill-pond-3e81.hunsh.workers.dev/
+# github-api
+- https://github.com/octokit/core.js
+  - Extendable client for GitHub's REST & GraphQL APIs
+  - If you don't need the Plugin API then using @octokit/request or @octokit/graphql directly is a good alternative.
 # github-apps
 - https://githubwrapped.tech/
   - take a look at all the contributions you as an individual made to the open-source community

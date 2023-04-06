@@ -256,12 +256,19 @@ modified: 2023-02-05T19:03:12.723Z
   - 示例样式友好
   - 依赖redux、react-dnd
 
-- onlyoffice-sdkjs /190Star/AGPLv3/202302/js/参考sdk设计
+- onlyoffice-sdkjs /190Star/AGPLv3/202302/js
   - https://github.com/ONLYOFFICE/sdkjs
+  - https://personal.onlyoffice.com/
   - https://api.onlyoffice.com/docbuilder/spreadsheetapi
+  - 💡 word/excel/ppt都基于canvas实现
   - Contains API for all the included components client-side interaction.
   - 通过TypedArray，将表格数据以二进制格式存储，通过字段压缩+共享字符串表来优化内存空间
   - [精读onlyoffice在线表格存储设计](https://juejin.cn/post/7202252704978386999)
+  - repos
+    - https://github.com/ONLYOFFICE/document-editor-react-samples
+      - 示例依赖server api，本地无法运行
+    - https://github.com/ONLYOFFICE/document-editor-react
+      - 示例依赖server api，本地无法运行
 
 - https://github.com/froala/wysiwyg-editor-node-sdk
   - Node. JS SDK to ease the integration of Froala WYSIWYG Editor on server side.

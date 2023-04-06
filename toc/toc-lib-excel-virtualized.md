@@ -28,6 +28,15 @@ modified: 2023-01-15T15:56:43.100Z
   - We chose `O(1)` algorithms and good caching management over Intersection Observers to guarantee lightning fast, consistent performance
   - designed to satisfy our needs at Starchive. For example, it still does not virtualize plain, vertical lists or masonry-like grids. Also, it is fully responsive without the option to opt-out.
   - I'd only suggest you to use Virtualform if you are specifically looking for a way to virtualize symmetrical, responsive grids. Otherwise, I'd suggest you to use react-window.
+
+
+- https://github.com/NeXTs/Clusterize.js /js
+  - https://clusterize.js.org/
+  - Tiny vanilla JS plugin to display large data sets easily
+  - [Added option for DOM-node-based virtualization](https://github.com/NeXTs/Clusterize.js/pull/150)
+  - [Issue in Implementation](https://github.com/NeXTs/Clusterize.js/issues/74)
+    - clusterize just doesn't play well with rowspan
+    - Take it as a disadvantage of using virtual scrolling
 # virtualized-tree
 - react-virtualized-sticky-tree
   - https://github.com/marchaos/react-virtualized-sticky-tree

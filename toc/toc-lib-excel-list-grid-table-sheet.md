@@ -16,6 +16,10 @@ modified: 2022-08-21T10:02:36.042Z
     - XLS/XLSX/XLSB and other spreadsheet formats
   - [vaadin spreadsheet test sheets](https://github.com/vaadin/spreadsheet/tree/master/vaadin-spreadsheet/src/test/resources/test_sheets)
 # awesome-list-grid
+- https://github.com/hughfenghen/spreadsheet-demo
+  - 电子表格从调研到demo的杂乱记录
+  - SpreadJS时间较长，基本上对标Excel，功能比Hot丰富。比如对公式（Hot 处于alpha版，不支持自定义）、分组（Hot不支持）、图表（Hot需要继承第三方图表）的支持。
+
 - https://amitmy.github.io/grids/
   - https://github.com/AmitMY/grids
   - A grid comparison. 只比较特性，统计不完整。

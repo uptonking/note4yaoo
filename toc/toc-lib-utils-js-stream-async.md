@@ -111,6 +111,39 @@ modified: 2023-04-04T22:36:31.529Z
 
 - https://github.com/mafintosh/tar-stream
   - a streaming tar parser and generator.
+
+## buffer
+
+- https://github.com/sindresorhus/into-stream
+  - Convert a string/promise/array/iterable/asynciterable/buffer/typedarray/arraybuffer/object into a stream
+
+- https://github.com/sindresorhus/to-readable-stream
+  - Convert a string/Buffer/Uint8Array to a readable stream
+
+- https://github.com/rvagg/bl
+  - bl is a storage object for collections of Node Buffers, exposing them with the main Buffer readable API. 
+  - Also works as a duplex stream so you can collect buffers from a stream that emits them and emit buffers to a stream that consumes them!
+
+- https://github.com/sindresorhus/get-stream
+  - Get a stream as a string, buffer, or array
+  - This module accepts a stream instead of being one and returns a promise instead of using a callback. 
+  - it doesn't depend on the huge readable-stream package.
+
+- https://github.com/jferrl/stream-to-buffer
+  - converts a Node.js Readable to buffer
+
+- https://github.com/mike-marcacci/fs-capacitor
+  - FS Capacitor is a filesystem buffer for finite node streams. 
+  - It supports simultaneous read/write
+
+- https://github.com/aldipermanaetikaputra/simple-line-reader
+  - Simple, buffered, line-by-line file reader with customizable buffer size.
+
+- https://github.com/aldipermanaetikaputra/linereader2
+  - Asynchronous, buffered, line-by-line file reader with customizable buffer size and separator.
+
+- https://github.com/aldipermanaetikaputra/simple-chunk-reader
+  - Simple, buffered, chunk-by-chunk file reader with customizable buffer size.
 # concurrency/async
 - https://github.com/sindresorhus/p-queue
   - Promise queue with concurrency control

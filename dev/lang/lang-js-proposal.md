@@ -95,19 +95,26 @@ modified: 2020-07-07T08:10:16.774Z
 - Promise.any & AggregateError
 - WeakRefs & FinalizationRegistry
 
+
+
 ## esX-deprecated
 
 - cancellable promise
 
 ## more-proposals
 
-- stage3/4
-  - https://github.com/tc39/proposal-temporal
-    - The JavaScript Temporal proposal has reached stage 3 in TC39. 
-    - Proper Date & Time handling are coming!
-    - `@internationalized/date` is a date library built by the React Aria team
-      - https://twitter.com/devongovett/status/1641069934460510214
-      - The API is inspired by Temporal, and eventually we will back it by Temporal when implemented in browsers. 
+### stage3/4
+- https://github.com/tc39/proposal-temporal
+  - The JavaScript Temporal proposal has reached stage 3 in TC39. 
+  - Proper Date & Time handling are coming!
+  - `@internationalized/date` is a date library built by the React Aria team
+    - https://twitter.com/devongovett/status/1641069934460510214
+    - The API is inspired by Temporal, and eventually we will back it by Temporal when implemented in browsers. 
+
+- https://github.com/tc39/proposal-shadowrealm
+  - [ES6 Realms API](https://gist.github.com/dherman/7568885)
+  - A realm object abstracts the notion of a distinct global environment, with its own global object, copy of the standard library, and "intrinsics" (standard objects that are not bound to global variables, like the initial value of Object.prototype).
+  - Extensible web: This is the dynamic equivalent of a same-origin `<iframe>` without DOM.
 
 - ref
   - https://github.com/sudheerj/ECMAScript-features

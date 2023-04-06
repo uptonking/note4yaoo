@@ -49,6 +49,12 @@ modified: 2023-03-03T08:06:36.592Z
   - 支持中日韩
 # blogs
 
+## [Large language model - Wikipedia](https://en.wikipedia.org/wiki/Large_language_model)
+
+- A large language model (LLM) is a language model consisting of a neural network with many parameters (typically billions of weights or more), trained on large quantities of unlabelled text using self-supervised learning. 
+  - LLMs emerged around 2018 and perform well at a wide variety of tasks. 
+  - This has shifted the focus of natural language processing research away from the previous paradigm of training specialized supervised models for specific tasks.
+
 ## [Sage Gpt-4 Claude+ ChatGPT Dragonfly五个AI的各自特点 - 知乎](https://zhuanlan.zhihu.com/p/614720305)
 
 - 看来回答和之前聊天的内容相关性非常高，复制你的问题问了2遍，吐给我的内容每个格子都很不一样

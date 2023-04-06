@@ -213,6 +213,8 @@ git merge master feature
 # count commits in a branch
 git rev-list --count main/master
 
+# view git history for folder
+git log -- path/to/folder
 ```
 
 - `git rebase` ：功能和 `git merge` 类似，

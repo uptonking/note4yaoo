@@ -11,6 +11,8 @@ modified: 2021-08-30T06:55:46.491Z
 
 # blog
 
+## [Roll your own JavaScript runtime](https://deno.com/blog/roll-your-own-javascript-runtime)
+
 ## [认识 V8 引擎](https://zhuanlan.zhihu.com/p/27628685)
 
 - JavaScript本质上是一种解释型语言，与编译型语言不同的是它需要一遍执行一边解析，而编译型语言在执行时已经完成编译，可直接执行，有更快的执行速度。

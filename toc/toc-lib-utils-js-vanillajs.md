@@ -51,6 +51,9 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/hazae41/binary /ts/NoDeps
   - Zero-copy binary data types
 
+- https://github.com/superman2211/xobj
+  - Decoding and encoding JavaScript/TypeScript objects to binary format.
+
 - https://github.com/rvagg/bl
   - bl is a storage object for collections of Node Buffers, exposing them with the main Buffer readable API. 
   - Also works as a duplex stream so you can collect buffers from a stream that emits them and emit buffers to a stream that consumes them!
@@ -63,6 +66,10 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/arthurhovhannisyan31/offscreen-canvas-worker
   - Application allows to fetch and process data in the background using workers api.
   - This applications does data fetching and processing in the background with submission of final result to main app.
+# iframe
+- https://github.com/krakenjs/zoid
+  - Cross domain components
+  - Render an iframe or popup on a different domain, and pass down props, including objects and functions
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

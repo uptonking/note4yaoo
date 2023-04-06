@@ -14,6 +14,9 @@ modified: 2023-01-05T10:20:29.496Z
 
 - features
   - 支持import/export index
+
+- tips
+  - 传统全文搜索的效果不如llm，因为llm可以用英文数据训练，然后用中文搜索
 # discuss
 - ## [Geohash: Sort on other things than tf-idf?](https://github.com/fergiemcdowall/search-index/issues/476)
 - Yes sorting is much better in v1.0.x, and a geohash example would be really cool.

@@ -82,6 +82,9 @@ modified: 2022-08-21T10:02:27.788Z
   - 通过TypedArray，将表格数据以二进制格式存储，通过字段压缩+共享字符串表来优化内存空间
   - [精读onlyoffice在线表格存储设计](https://juejin.cn/post/7202252704978386999)
 
+- https://github.com/jmptrader/SpreadJS /201608/js
+  - gcspread.sheets.all.9.40.20161.0.min.js
+
 - react-tiny-virtual-list /MIT/1.8kStar/201910/ts
   - https://github.com/clauderic/react-tiny-virtual-list
   - https://clauderic.github.io/react-tiny-virtual-list/

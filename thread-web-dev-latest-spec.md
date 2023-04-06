@@ -13,7 +13,23 @@ modified: 2021-04-27T09:19:37.711Z
 
 - ## 
 
-- ## 
+- ## What platforms support something like AsyncLocalStorage/Async Context?
+- https://twitter.com/RyanCarniato/status/1643669619318878208
+  - I assumed it was off the table numerous times over the past 3 years because it was Node only. But there are many places it'd be beneficial and now that Next is strong-arming it I have to ask the question.
+
+- Node does. Cloudflare added support last week. I imagine Bun does. Does AWS Lambda? Deno Deploy?
+
+- have also avoided it for a different reason - people mentioned performance issues
+- Performance is a concern and I've worried about this for things like page load. But one place this is amazing is keeping Request context in `server$`. We use the function arguments in Bling now. But Solid Start did a bunch of hacks to try to not mess with function signature.
+  - Another is things like resuming context in Async Components. Async components are sort of an awkward design mind you for a read-based mechanism (like reactivity or really Suspense for that matter). My gut is we compile to async generators for this if desired but it's interesting.
+  - This is mostly true for the Node.js implementation. Other runtimes have a different way of implementing it, but this will all be unified with AsyncContext
+
+- We shipped on Vercel! And our TC39 representative Justin Ridgewell was a champion for the AsyncContext spec
+
+- I think it's a mistake for any system to rely on Asnc Context for multiple reasons:
+  - It's not part of the standard
+  - It shouldn't be part of the standard because it hides context level state in ways that make programs harder to understand and subtle bugs harder to find.
+  - I have similar issues with any library that hides sync contexts. Using the global `let currentContext` pattern.
 
 - ## Ever read an article that says “setTimeout(..., 0) fires not in 0 ms but in 4”? 
 - https://twitter.com/iamakulov/status/1643629579129503744
@@ -22,9 +38,31 @@ modified: 2021-04-27T09:19:37.711Z
   - (Note the word “nested” – unnested `setTimeout()` s were never intended to be throttled! But we’ll get to that in a bit.)
 - 2) The HTML spec only talks about nested `setTimeout()` s. However, up until 2022, Chrome and Safari were also throttling regular `setTimeout(..., 0)` calls to 1 ms!
 - 3) So now, when you’re calling `setTimeout(0)` , what actually happens is:
-• if it’s a fresh `setTimeout(0)` call, it will run immediately (in all browsers)
-• if it’s a nested `setTimeout(0)` call, it will run in 4 ms after 5 (Firefox), 10 (Safari), or 15 (Chrome) nested calls
-- 
+- if it’s a fresh `setTimeout(0)` call, it will run immediately (in all browsers)
+  - https://twitter.com/jaffathecake/status/1643750216569585665
+  - Ehhh not quite "immediately", it still queues a task, which can allow other things to happen before it, including rendering
+- if it’s a nested `setTimeout(0)` call, it will run in 4 ms after 5 (Firefox), 10 (Safari), or 15 (Chrome) nested calls
+- When you call `setTimeout(fn, 0)` , `fn` is put to the end of the “task queue”.
+- Before `fn` , the browser must first execute:
+  - all microtasks (promises + some exotic things)
+  - all tasks already in the queue (events + other timers that fired earlier but weren’t processed)
+
+- What is meaning of nested? SetTimeout inside SetTimeout? Or setTimeout without callback func.
+- https://twitter.com/bhautiktweets/status/1643640049395970048
+  - nested = when you call `setTimeout()` inside another `setTimeout()` callback
+  - doesn’t have to be directly inside in the code, just has to happen synchronously within the same callback.
+- maybe “recursive” would’ve been a better term! but the HTML spec uses “nested”
+  - Except that’s not what recursive means. To have a recursive functions, the function itself or one of its nested calls must call again the original function, pretty much forming a circular call that needs a stop condition, otherwise creating an infinite loop
+
+```JS
+setTimeout(() => {
+  setAnotherTimeout()
+}, 0)
+
+const setAnotherTimeout = () => {
+  setTimeout(() => {}, 0)
+}
+```
 
 - ## Shipped with Chromium 91 is TablesNG, a under-the-hood rewrite regarding tables.
 - https://twitter.com/bramusblog/status/1407078048730603521

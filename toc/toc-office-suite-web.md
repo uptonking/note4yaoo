@@ -12,21 +12,28 @@ modified: 2023-03-09T13:47:07.317Z
 - office-online
   - [Zoho Writer](https://www.zoho.com/writer/)
 # office-popular
+
+- onlyoffice-sdkjs /190Star/AGPLv3/202302/js
+  - https://github.com/ONLYOFFICE/sdkjs
+  - https://personal.onlyoffice.com/
+  - https://api.onlyoffice.com/docbuilder/spreadsheetapi
+  - 💡 word/excel/ppt都基于canvas实现
+  - Contains API for all the included components client-side interaction.
+  - 通过TypedArray，将表格数据以二进制格式存储，通过字段压缩+共享字符串表来优化内存空间
+  - [精读onlyoffice在线表格存储设计](https://juejin.cn/post/7202252704978386999)
+  - repos
+    - https://github.com/ONLYOFFICE/document-editor-react-samples
+      - 示例依赖server api，本地无法运行
+    - https://github.com/ONLYOFFICE/document-editor-react
+      - 示例依赖server api，本地无法运行
 - https://github.com/ONLYOFFICE/DocumentServer
   - Starting from version 6.0, Document Server is distributed under a new name - ONLYOFFICE Docs.
   - https://github.com/ONLYOFFICE/CommunityServer /c#/apache2
     - open source office suite with business productivity tools: document and project management, CRM, mail aggregator.
-  - https://github.com/ONLYOFFICE/sdkjs /AGPLv3/js
-    - https://github.com/ONLYOFFICE/document-editor-react-samples
-    - https://github.com/ONLYOFFICE/document-editor-react
-    - JavaScript SDK which is a part of ONLYOFFICE Document Server and ONLYOFFICE Desktop Editors. 
-    - Contains API for all the included components client-side interaction.
   - https://github.com/ONLYOFFICE/server
     - backend server software layer which is the part of ONLYOFFICE Document Server and ONLYOFFICE Desktop Editors and is the base for all other components.
   - https://github.com/ONLYOFFICE/core /cpp
     - Server core components which are a part of ONLYOFFICE Document Server
-  - https://github.com/ONLYOFFICE/sdkjs
-    - Contains API for all the included components client-side interaction.
 
 - cryptpad /4.3kStar/AGPLv3/202301/js
   - https://github.com/xwiki-labs/cryptpad
@@ -46,6 +53,8 @@ modified: 2023-03-09T13:47:07.317Z
     - However, this only concerns the client-side code, CryptPad does not make use of the OnlyOffice Document Server.
     - CryptPad's encrypted collaboration, used for spreadsheets and other applications, is completely different from the encryption system used in parts of upstream OnlyOffice.
   - [CryptPad: Collaboration suite end-to-end encrypted and open-source | Hacker News](https://news.ycombinator.com/item?id=29921947)
+  - https://github.com/xwiki-labs/office-converters
+    - an example of a browser-based document converter using Web Assembly. 
 
 - https://github.com/LibreOffice/core /GPLv3/cpp/java
   - [LibreOffice Online](https://www.libreoffice.org/download/libreoffice-online/)
@@ -53,7 +62,7 @@ modified: 2023-03-09T13:47:07.317Z
   - [LibreOffice for Android and iOS](https://www.libreoffice.org/download/android-and-ios/)
     - doesn’t currently offer an Android or iOS version of LibreOffice, there is a LibreOffice-based product in app stores from Collabora
 
-- https://github.com/CollaboraOnline/online /MPLv2/LibreOffice
+- https://github.com/CollaboraOnline/online /1kStar/MPLv2/LibreOffice
   - https://www.collaboraoffice.com/
   - Collabora Online is a collaborative online office suite based on LibreOffice
   - This is also the source for the Collabora Office apps for iOS and Android.

@@ -11,6 +11,8 @@ modified: 2021-03-22T14:43:12.866Z
 
 - [JavaScript Patterns Workshop](https://javascriptpatterns.vercel.app/patterns)
   - rendering, performance, react
+
+- [Design Patterns in TypeScript](https://refactoring.guru/design-patterns/typescript)
 # [Declaration Merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
 - “declaration merging” means that the compiler merges two separate declarations declared with the same name into a single definition. 
   - This merged definition has the features of both of the original declarations. 

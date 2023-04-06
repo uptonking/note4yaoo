@@ -9,6 +9,8 @@ modified: 2023-01-03T18:53:16.716Z
 
 # guide
 
+- tips
+  - 传统全文搜索的效果不如llm，因为llm可以用英文数据训练，然后用中文搜索
 # search-index
 - https://github.com/eklem/search-index-cookbook /201703/js
   - interesting use cases with search-index

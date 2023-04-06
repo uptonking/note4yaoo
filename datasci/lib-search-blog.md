@@ -8,7 +8,8 @@ modified: 2023-01-03T14:52:51.355Z
 # lib-search-blog
 
 # guide
-
+- tips
+  - 传统全文搜索的效果不如llm，因为llm可以用英文数据训练，然后用中文搜索
 # blogs
 
 ## [全文检索的索引设计 - 知乎](https://zhuanlan.zhihu.com/p/520001238)

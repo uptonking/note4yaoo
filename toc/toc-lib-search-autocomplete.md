@@ -57,6 +57,7 @@ modified: 2023-01-01T13:24:35.994Z
 
 - lyra /5.1kStar/apache2/202212/ts
   - https://github.com/LyraSearch/lyra
+  - https://github.com/oramasearch/orama
   - https://docs.lyrasearch.io/
   - Fast, in-memory, typo-tolerant, full-text search engine written in TypeScript.
   - Lyra is an immutable, runtime-agnostic, edge, and in-memory full-text search engine that works both on client and server.

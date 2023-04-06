@@ -11,8 +11,14 @@ modified: 2023-02-08T07:20:48.475Z
 
 # popular
 
-# chatgpt
+# LLM
 
+- https://github.com/xenova/transformers.js
+  - Run Transformers in your browser! We currently support BERT, ALBERT, DistilBERT, MobileBERT, SqueezeBERT, T5, T5v1.1, FLAN-T5, mT5, BART
+  - [宝玉 on Twitter: "这有必要吗？" / Twitter](https://twitter.com/dotey/status/1643801825580122115)
+    - 毕竟浏览器有沙盒，相对在本地运行一个没审计过的程序放心一点，但现在浏览器对gpu硬件支持还是拉胯。
+    - 这是分布式算力啊，这不就是挖矿嘛
+# chatgpt
 - app-site
   - https://github.com/LiLittleCat/awesome-free-chatgpt
   - [免费 chatgpt](https://twitter.com/search?q=%E5%85%8D%E8%B4%B9%20chatgpt&src=typed_query&f=live)

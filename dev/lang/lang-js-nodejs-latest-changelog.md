@@ -57,7 +57,10 @@ modified: 2022-12-31T20:13:33.307Z
   - crypto.randomUUID added
 
 - v14.0.0_2020-04-21
-  - Experimental AsyncLocalStorage API: In other languages, it is the same as thread-local storage.
+  - Experimental `AsyncLocalStorage` API
+    - In other languages, it is the same as thread-local storage.
+    - used to share data between asynchronous calls.
+    - This can be considered as a global variable related to a particular asynchronous execution context.
   - Experimental Web Assembly System Interface (WASI)
   - Changes to Stream APIs for maintaining streamline behaviors and vagueness over the various pieces of Node.js core.
   - GitHub (owned by Microsoft) acquired npm

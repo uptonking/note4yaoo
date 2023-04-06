@@ -76,7 +76,8 @@ modified: 2022-11-08T19:03:33.865Z
   - blogging application with a WYSIWYG editor built using Flask + SummernoteJS + SQLite (or any other relational database supported by SQLAlchemy)
 
 - https://github.com/michael/editable-website
-  - A SvelteKit template that allows you to code a completely custom website, while allowing non-technical people to make edits to the content by simply logging in with a secure admin password.
+  - A SvelteKit template for coding completely custom website, while allowing non-technical people to make edits to the content by simply logging in with a secure admin password.password.
+  - 依赖prosemirror、postgres、minio-s3-like、svelte
 # utils
 - https://github.com/DenverCoder1/unicode-formatter
   - https://unicode-formatter.demolab.com/

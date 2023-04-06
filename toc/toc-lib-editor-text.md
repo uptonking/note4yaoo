@@ -64,6 +64,10 @@ modified: 2021-07-27T15:12:39.959Z
 - https://github.com/cnuebred/octapus
   - modular WYSIWYG rich text editor
   - 代码量很少
+
+- https://github.com/shredx/editor-vanillsjs
+  - Editor completely made in Vanillajs. 
+  - We are using plugin architecture.
 # markdown-editor
 
 - https://github.com/youking-lib/marktion
