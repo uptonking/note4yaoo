@@ -82,6 +82,12 @@ modified: 2023-03-16T16:29:47.610Z
 
 # editor-elements
 
+## formats
+
+- 👏🏻(wont-fix) 选中文本添加格式如下划线后，接着按空格按字母也会出现下划线
+  - 主流编辑器都存在这个问题，如notion、飞书、google-docs、ckeditor、tiptap
+  - 解决方案是再次选中带格式的文本，然后取消格式
+
 ## list
 
 - dev-to

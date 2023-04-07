@@ -116,6 +116,22 @@ modified: 2022-12-20T05:39:08.948Z
 - 如果把向量化计算改成批量化处理应该就好理解多了，但是low，向量化多玄乎啊
 - 为了支持这种批量处理数据的需求，CPU设计厂家又搞出了SIMD这种大杀器，SIMD (Single Instruction Multiple Data，单指令多数据)
 - SIMD指令的作用是向量化执行(Vectorized Execution)，中文通常翻译成向量化，但是这个词并不是很好，更好的翻译是数组化执行，表示一次指令操作数组中的多个数据，而不是一次处理一个数据；向量则代表有数值和方向，显然在这里的意义用数组更能准确的表达。
+
+## [Caching Partially Materialized Views Consistently](https://blog.the-pans.com/caching-partially-materialized-views-consistently/)
+
+- According to the PostgreSQL wiki
+  - A materialized view is a table that actually contains rows, but behaves like a view. 
+  - That is, the data in the table changes when the data in the underlying tables changes.
+
+- According to Wikipedia
+  - a materialized view is a database object that contains the results of a query. 
+  - For example, it may be a local copy of data located remotely, or may be a subset of the rows and/or columns of a table or join result, or may be a summary using an aggregate function.
+
+- A materialized view is a cache. 
+  - Since any data can be described with the relational model, we can also say every cache is a partially materialized view – I mean every cache. 
+  - No matter if it is a cpu cacheline, a DNS entry cached in your browser, or some value in memory your application memoized, it can be reasoned about as a partially materialized view. 
+  - Even a cached computation result is a partially materialized view; 
+- A cache and a partially materialized view are essentially the same thing. In a database (e.g. PostgreSQL, Oracle, etc.), the materialized view is explicitly defined.
 # more
 - [处理海量数据：列式存储综述（存储篇） - 知乎](https://zhuanlan.zhihu.com/p/35622907)
 

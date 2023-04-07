@@ -16,8 +16,20 @@ modified: 2023-03-05T08:55:03.696Z
   - 统一的缓存更新/失效策略
 - [Use react-query but no react](https://github.com/tannerlinsley/react-query/discussions/790)
   - https://codesandbox.io/s/magical-bush-gbsk7
-# discuss-stars
+# discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## An engineer on my team is using react-query’s pagination system in an interesting way I hadn’t seen before
+- https://twitter.com/chrisheninger/status/1644093991917588480
+  - [Polling for new content using react-query useInfiniteQuery | by Matt Miller | Apr, 2023 | Medium](https://mmiller42.medium.com/polling-for-new-content-using-react-query-useinfinitequery-18395bb98894)
+
+- This is nice. Minor tradeoffs:
+  - if there's a refetch, everything will go into the first page, because it reuses the timestamp. So you'll go from multiple, small pages to one big page.
+  - You can't use refetchInterval for polling but have to setup your own with fetchNextPage
 
 - ## I managed to build an "offline-first" React app using @tan_stack Query. 
 - https://twitter.com/crutchcorn/status/1641767947164319745
@@ -92,7 +104,7 @@ modified: 2023-03-05T08:55:03.696Z
   - Any component inside `<Suspense>` can say "Halt! Don't render me yet". React waits until every "halt" is resolved to render the children.
   - While components resolve, React shows the fallback.
 
-# discuss
+# discuss-react-query-incubating
 - React Query is for managing server state, not client-only application state. 
   - For that, feel free to keep using redux or react context.
 

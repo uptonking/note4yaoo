@@ -66,6 +66,9 @@ modified: 2022-11-25T16:16:52.713Z
 - https://github.com/trinodb/tpch
   - Port of TPC-H dbgen to Java
 
+- https://github.com/dhuny/tpch
+  - TPC-H Benchmark helper for MySQL and MariaDB
+
 - https://github.com/lucasgiutavares/MongoDB-TPC-H-Translation
   - Python script for MongoDB TPC-H translation.
 

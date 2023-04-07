@@ -32,12 +32,37 @@ modified: 2022-12-05T16:05:40.690Z
 - [Apache Doris: Star-Schema-Benchmark](https://doris.apache.org/zh-CN/docs/benchmark/ssb/)
   - SSB 基于 TPC-H 提供了一个简化版的星型模型数据集，主要用于测试在星型模型下，多表关联查询的性能表现。
   - 业界内通常也会将 SSB 打平为宽表模型（以下简称：SSB flat），来测试查询引擎的性能，参考Clickhouse。
-# TPC-H 侧重ad-hoc queres
+# tpc-benchmarks
+
+## TPC-C 侧重OLTP
+
+- [OLTP](https://www.tpc.org/tpc-bm-categories/oltp5.asp)
+
+- Typical transactional workloads include order-entry (sales), stock-trading (financial), package management (logistics) and manufacturing. 
+  - These workloads represent the core operations of many business models.
+
+- The TPC has developed four OLTP benchmarks; 
+  - TPC-A, TPC-B, TPC-C and TPC-E, which reflect the evolution of transaction processing requirements over the past three decades.
+  - The first two, now obsolete, focused on a system's ability to process simple database transactions concurrently from multiple user or batch sessions. 
+  - TPC-C and TPC-E are the current OLTP benchmarks offered by the TPC.
+- TPC-C implements an order-entry workload, with more complex real-time and batch transactions, and introduced the notion of a client/server model with response time constraints. 
+- TPC-E implements a stock-trading workload, with multi-stage trading transactions and a significant body of read-only transactions, representing a shift towards mixed environments. 
+- TPC-E requires RAID protection of the entire disk subsystem, TPC-C requires RAID protection of the database logs only. 
+  - In addition, TPC-E requires test sponsors to report how long recovery takes following catastrophic failures. 
+- TPC-E implements a richer database schema and transactions. 
+  - TPC-E has 33 tables and 10 transactions with tables populated with pseudo-real data instead of random numbers and string fragments. 
+  - TPC-C has nine database tables and five transactions. 
+  - **The primary metrics of TPC-E and TPC-C are similar**. 
+  - Both performance metrics report transactions per time unit and both price performance metrics report price per performance. 
+  - TPC-E’s performance metric is tpsE, and price performance metric is $/tpsE while the corresponding metrics in TPC-C are tpmC and $/tpmC.
+
+## TPC-H 侧重ad-hoc queries
+
 - TPC-H用于评测数据库的分析型查询能力。
   - TPC-H 查询包含 8 张数据表、22 条复杂的 SQL 查询，大多数查询包含若干表 Join、子查询和 Group-by 聚合等。
   - 简单来说，TPC-H就是通过22个复杂SQL查询来评估数据库OLAP的性能。
 
-## tpc-h intro
+### tpc-h intro
 
 - [TPC-H Homepage](https://www.tpc.org/tpch/default5.asp)
 - [TPC Current Specs/Source](https://www.tpc.org/tpc_documents_current_versions/current_specifications5.asp)
@@ -56,20 +81,19 @@ modified: 2022-12-05T16:05:40.690Z
 
 - The TPC is introducing V3.0 of the TPC-H Benchmark to accommodate these trends and maintain the relevance of the Price/Performance metric.
   - The primary change in this major revision is to adjust the Price/Performance metric by a multiplier of 1, 000.
-# tpc-examples
 
-# tpc-utils
+## TPC-DS 侧重查询+维护
 
-# TPC-DS 侧重查询+维护
-
-## tpc-ds intro
+### tpc-ds intro
 
 - [TPC-DS Homepage](https://www.tpc.org/tpcds/default5.asp)
 
 - TPC-DS is a decision support benchmark that models several generally applicable aspects of a decision support system, including queries and data maintenance. 
   - The benchmark provides a representative evaluation of performance as a general purpose decision support system. 
   - A benchmark result measures query response time in single user mode, query throughput in multi user mode and data maintenance performance for a given hardware, operating system, and data processing system configuration under a controlled, complex, multi-user decision support workload.
-# TPC-DI 侧重ETL
+
+## TPC-DI 侧重ETL
+
 - TPC-DI is a benchmark for Data Integration
   - Historically, the process of synchronizing a decision support system with data from operational systems has been referred to as Extract, Transform, Load (ETL) and the tools supporting such process have been referred to as ETL tools. 
   - Recently, ETL was replaced by the more comprehensive acronym, data integration (DI). 

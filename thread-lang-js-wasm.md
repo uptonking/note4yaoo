@@ -19,7 +19,8 @@ modified: 2021-07-07T06:27:10.266Z
 
 - ## 
 
-- ## 
+- ## #Google #Chrome 112 Released With WASM Garbage Collection Trial, CSS Nesting_202304
+- https://twitter.com/phoronix/status/1643363243031937025
 
 - ## Rust is faster than JS in some cases, but those cases are rarer than we expected, 
 - https://twitter.com/dalmaer/status/1520809822530142208

@@ -70,6 +70,13 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/krakenjs/zoid
   - Cross domain components
   - Render an iframe or popup on a different domain, and pass down props, including objects and functions
+# lang-js
+- https://github.com/bestiejs/benchmark.js
+  - A robust benchmarking library that supports high-resolution timers & returns statistically significant results. 
+  - As used on jsPerf.com.
+# lang-nodejs
+- https://github.com/RafaelGSS/nodejs-bench-operations
+  - This repository provides benchmarks for basic operations to aid in determining a high-performance solution.
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

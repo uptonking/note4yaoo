@@ -13,7 +13,10 @@ modified: 2023-03-18T17:53:25.909Z
 
 - ## 
 
-- ## 
+- ## 大家检测某网站在国内的连通性都使用什么工具呀？用站长之家这个不知道准不准。（感觉网站上广告太多了
+- https://twitter.com/EryouHao/status/1644164933855363072
+- [阿里云 网络拨测工具](https://boce.aliyun.com/detect/http)
+- 以前 https://17ce.com 最好用，现在改用 https://itdog.cn 了
 
 - ## 如果你有自己的 VPS，想获得长期稳定的科学上网服务，可以这样做（用了多年）：
 - https://twitter.com/Barret_China/status/1637136780574203906
@@ -27,5 +30,4 @@ modified: 2023-03-18T17:53:25.909Z
 - 延迟无法忍受
 
 # more-tools
-
 - [pictriev, 人脸搜索引擎](http://www.pictriev.com/)
