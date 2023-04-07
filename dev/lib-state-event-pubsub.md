@@ -65,7 +65,7 @@ modified: 2021-05-13T03:13:45.375Z
   - Domain support has been removed.
 
 - more-event-emitter-impl
-  - https://github.com/facebookarchive/emitter
+  - https://github.com/facebookarchive/emitter /js
 
 # pieces
 

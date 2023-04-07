@@ -79,17 +79,6 @@ modified: 2021-02-28T07:29:07.622Z
 
 - ## 
 
-- ## Why @preactjs , @solid_js and @QwikDev recommend using Context API to share Signals/Stores?
-- https://twitter.com/_aantipov/status/1634832927556276226
-  - Why not simply export/import them similar to Zustand and deprecate Context?
-  - for instance, Vue seems to work just fine with exported/imported reactive data.
-- SSR and testing. It's easier to pass a mocked thing via context than to make a side-effecting import.
-- Do you SSR? The concern mostly around leaking global state across requests (different users). That being said if one were not allowed to write to it during SSR it'd be fine. But then it couldn't hold the data you fetched during SSR.
-- What is exported (es module) can not be deleted whereas a context can be cleaned up.
-  - Hmm, the context object itself is usually created and exported as well. Also, if you use Context to hold global state and define on the top of the tree, then it will always be there. Same as with exported Signals. Zustand seems to work just fine with exported atomic stores.
-- I use both methods in Svelte depending on the use case.
-  - Context is decoupled since any parent can define its content.
-  - Importing is hard coupling which makes sense when you have complex logic in a separate file.
 
 - ## IMO some things cleanly map to state machines, but a lot don’t. 
 - https://twitter.com/devongovett/status/1528013087470649345

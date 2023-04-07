@@ -156,7 +156,7 @@ Object.freeze(Emitter);
 export default Emitter;
 ```
 
-``` typescript
+``` jsx
 import React from 'react'
 import Emitter from '../services/emitter';
 import '../styles/Main.css';

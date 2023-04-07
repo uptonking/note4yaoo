@@ -91,10 +91,25 @@ modified: 2020-12-19T08:52:02.671Z
 - Rearchitect architecture to introduce hooks into the development and build phase so that a plugin system is possible.
 - Use a module bundler like webpack
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [use Next.js instead of Docusaurus · pingcap/ossinsight](https://github.com/pingcap/ossinsight/issues/448)
+- Docusaurus is a great framework to generate static website, but it still has some limitations:
+- pages should be statically generated in build time, it's dirty to implement a dynamic page like analyze and collections
+- it's impossible to add SEO info and og meta tags in dynamic pages, which would impact sharing preview on other websites 
+  - extend：Cannot create embedded web pages in notion
+- it's difficult to use runtime environment to change some config like API base url. 
+- it's difficult to inject css-in-js generated css codes in built bundle, which will cause styling issue when js was not executed
+
 - ## Docusaurus v1 was just simple HTML output, while v2 is a React SPA.
 - https://twitter.com/sebastienlorber/status/1389128918028931074
   - v2 has lower lighthouse score, but I don't think this tool is fair for many reasons, and v2 users are happy with the v2 UX.
 - We'll benefit from React innovations sooner or later, and Docusaurus can almost work if you disable the JS (ie React as non-blocking progressive enhancement)
+
 # discuss-stars
 - ## MDX and similar `md -> rendering` options are in my opinion the foundation of the next no-code/low code great SaaS platforms.
 - https://twitter.com/BibeauGuillaume/status/1389728075370442760
@@ -104,6 +119,7 @@ modified: 2020-12-19T08:52:02.671Z
   - 202104
 - Docusaurus is not a SaaS.
   - It's a free open-source tool that you can self-host easily everywhere as it builds a static website
+
 # discuss
 - ## 
 

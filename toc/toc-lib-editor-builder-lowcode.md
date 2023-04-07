@@ -94,7 +94,7 @@ modified: 2020-12-28T12:24:09.275Z
     - http://aisuda.github.io/amis-editor-demo
     - amis 可视化编辑器示例
     - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
- - [请问@fex/amis-editor 有开源计划吗？](https://github.com/aisuda/amis-editor-demo/issues/12)
+  - [请问@fex/amis-editor 有开源计划吗？](https://github.com/aisuda/amis-editor-demo/issues/12)
     - 目前amis-editor已将内置的plugin源码开放出来了
 
 - alibaba-lowcode-engine /8.9kStar/MIT/202212/ts

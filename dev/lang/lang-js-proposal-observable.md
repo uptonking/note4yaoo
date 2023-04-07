@@ -13,7 +13,7 @@ modified: 2020-12-14T11:29:00.678Z
 
 ## [Signals vs. Observables, what's all the fuss about?](https://www.builder.io/blog/signals-vs-observables)
 
-- ### Signals vs. Observables?
+- ### Want to know what all the fuss is about Signals vs. Observables?
 - https://twitter.com/mhevery/status/1637911322745802752
 - Signals are values in the bucket that can be accessed synchronously.
   - Observables are values delivered over time asynchronously through a callback.

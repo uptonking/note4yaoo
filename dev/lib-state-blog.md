@@ -9,6 +9,40 @@ modified: 2021-05-13T03:12:40.723Z
 
 # state-blog
 
+## [现代前端框架响应模型对比: Vue, Mobx, React, Redux - 掘金](https://juejin.cn/post/6929727475304005639)
+
+- 一个核心流程是 state 映射到 view，这里是渲染和更新过程，虚拟 dom 在这个过程发挥作用，
+  - 而如何订阅和处理 state 的变更则是另一个核心流程，也就是响应过程。
+- 数据状态发生变化时通知方式的区别是目前 React 和 Vue 两大阵营之间的最大差异。
+- React的响应的方式最简单直接，代码中通过 setState 触发数据变化，然后会直接通知组件进行更新。
+  - 跟 React 配套的 Redux 也是一样，state 更改后会直接通知全部相关视图进行更新，而是否真的需要更新则留给视图自己做决定。
+  - 实际上 React/Redux 的模型就是全体数据统一通知，Redux 是应用的全体数据，而 React setState 是组件的全体数据，没有更细的粒度。
+
+- Vue 的响应过程则要精细的多，我们可能或多或少都有了解，它的发布订阅模型是精细到数据的每一个属性的
+
+- 发布订阅模型有两个角色，发布者和订阅者，对前端模型来说，发布者就是 state，订阅者则是渲染函数，或者其他一些响应函数，比如 computed 和 watch 函数。
+
+- Vue 需要在两个方面做处理来让他们形成精细的发布订阅关系。通过劫持待发布对象的 get 方法，同时对可能成为订阅者的函数包装 effect 方法，effect 方法会在函数执行的时候将全局 currentEffect 设为当前执行函数，从而在有方法使用了 get 的时候取 currentEffect 为订阅函数，进而存储数据对象、属性和订阅函数之间的关系。再通过劫持 set 方法，就可以在属性变化的时候通过关系找到订阅函数去执行。
+
+- 但从另一个角度看，正是由于 React 没有使用基于 mutable 的响应模型，使得它的数据状态历史更加容易追溯，简单的发布模型，也使得 Redux 中间件成为可能，他们在大型项目中可以定义出更加可维护的逻辑写法，比如 Redux saga。
+
+- Mobx 与 Vue 的响应模型接近，实际上它是最早把这种细粒度响应模型抽象并且推广开来的框架。
+
+- 人们把 Mobx 与 React 一起使用，Mobx 来处理发布订阅模型，React 做单纯的视图层。实际上，Mobx 的响应模型可以拿出来做很多事，比如 Formily 用 Mobx 的响应模型实现了复杂表单的高性能，滴滴的跨端框架 CML 的数据层 chameleon-store 用 Mobx 模拟了 Vuex 的 api。
+
+- Mobx 的 api 基本上能与 Vue 3.0 的 Reactive 模块的 api 对应上
+- observable => reactive
+- observer => effect
+- computed => computed
+- autorun => watch
+- Mobx 的核心实现思路与 Vue 也大致相同，同样是劫持对象属性的 get set，在订阅函数执行的时候全局记录当前执行函数。
+  - 不同的是记录发布订阅关系是记录在每个 observable 实例的 $mobx 对象中的，由抽象的 Atom 类型管理。
+  - 整体思路上有observable 和 derivation 两个类型作为基础的响应逻辑模型，observable 是发布者，derivation 是订阅者。
+  - derivation 是 Mobx提出的概念，autorun 和 reaction 继承自 derivation，computed 则是 observable 和 derivation 的综合体，对这些通用概念的系统抽象使得 Mobx 成为一个更通用的响应式框架。
+  - 注意，Mobx 是一个 functional reactive programming，即函数式响应式编程，并不能说是响应式编程，reactive programming，因为 reactive programming 是特指事件流式的编程形式，在 js 里面的相应实现是 Rxjs。
+
+- 除了基本的发布订阅之外，Vue 和 Mobx 还需要处理一些其他问题，比如对于他们都有的 computed 概念，触发顺序是一个重要问题。
+
 ## [My State Management Mistake](https://epicreact.dev/my-state-management-mistake/)
 
 - Frankly, what happened was we decided to avoid Redux, but then grabbed another library and made the same mistakes that made Redux such a problem: Almost all state was globally managed by the library.
@@ -93,7 +127,7 @@ modified: 2021-05-13T03:12:40.723Z
   - To change the state in an immutable way, we’ll provide the setState method. 
   - and we’ll make it possible to set the initial state by using the constructor method.
 
-``` JS
+```JS
 const clone = o => JSON.parse(JSON.stringify(o));
 
 const isObject = val => val != null && typeof val === 'object' && Array.isArray(val) === false;
@@ -129,7 +163,7 @@ class Store {
 - we must think about a way to let other parts of the application know the state have changed. 
   - For this we’ll be using one very know pattern in the development world: pubsub, or publisher-subscriber.
 
-``` JS
+```JS
 // 提供状态变化时执行回调函数的api
 class PubSub {
 
@@ -158,7 +192,7 @@ class PubSub {
 }
 ```
 
-``` JS
+```JS
 // 使用示例
 const store = new Store();
 
@@ -198,7 +232,7 @@ store.setState({ b: 1 });
   - When this is true, we’ll then call the callback function passing the result of the next state applied to the config function. 
   - It all seems too difficult when reading like this, but as soon as we make the code you’ll see it’s very simple.
 
-``` JS
+```JS
 const clone = o => JSON.parse(JSON.stringify(o));
 const isObject = val => val != null && typeof val === 'object' && Array.isArray(val) === false;
 const isEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b)
@@ -271,7 +305,7 @@ class Store {
 }
 ```
 
-``` JS
+```JS
 // 使用示例
 const store = new Store();
 
@@ -344,7 +378,7 @@ store.setState({ b: 2 });
 
 - [demo on jsfiddle](https://jsfiddle.net/jzft0o7r/)
 
-``` HTML
+```HTML
 <div class="App__container" id="app">
   <div>Count: <span id="display">0</span></div>
 
@@ -352,7 +386,7 @@ store.setState({ b: 2 });
 </div>
 ```
 
-``` CSS
+```CSS
 .App__container {
   padding: 15px;
 }
@@ -371,7 +405,7 @@ store.setState({ b: 2 });
 }
 ```
 
-``` JS
+```JS
 const display = document.getElementById("display");
 
 //  start with a simple object, which will represent the initial state of our data
@@ -409,7 +443,6 @@ renderCount();
 ```
 
 # ref
-
 - [Simple State Management With Vanilla JS](https://viktorfejes.com/article/simple-state-management-with-vanilla-js)
   - The most important part is that the state shouldn't be updated through its properties but rather using the state.setState() method. 
   - This way it's easy to know using the stateChange() function when the state updates.

@@ -15,7 +15,7 @@ modified: 2021-05-13T03:44:33.382Z
 - useContext+useReducer
   - The only limitation is that this `useStateValue` function must be called inside functional component. Because it calls a useContext hook inside.
 
-``` JS
+```JSX
 import React, { createContext, useContext, useReducer } from 'react';
 export const StateContext = createContext();
 export const StateProvider = ({ reducer, initialState, children }) => (
@@ -28,13 +28,12 @@ export const useStateValue = () => useContext(StateContext);
 ```
 
 # Use Hooks + Context, not React + Redux
-
 - ref
   - [Use Hooks + Context, not React + Redux](https://blog.logrocket.com/use-hooks-and-context-not-react-and-redux/)
 - To a good extent, Redux works for state management in React applications and has a few advantages, but its verbosity makes it really difficult to pick up, and the ton of extra code needed to get it working in our application introduces a lot of unnecessary complexity.
 - On the other hand, with the useContext API and React Hooks, there is no need to install external libraries or add a bunch of files and folders in order to get our app working. This makes it a much simpler, more straightforward way to handle global state management in React applications.
 
-``` JS
+```JS
 // store.js
 import React, { createContext, useReducer } from 'react';
 const initialState = {};

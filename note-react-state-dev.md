@@ -12,24 +12,105 @@ modified: 2020-12-08T13:40:02.577Z
 - [A community-maintained spec for global state libraries](https://github.com/reactwg/react-18/discussions/116)
   - https://github.com/dai-shi/will-this-react-global-state-work-in-concurrent-rendering
 
-- context selector的主要实现
+- context-selector的主要实现
   - 依赖scheduler: dashi/use-context-selector, @fluentui/react-context-selector
   - 其他实现: mohebifar/react-use-context-selector(无依赖)
 
 - 基于hooks模仿redux的api
   - [State Management with React Hooks and Context API](https://devsmitra.medium.com/state-management-with-react-hooks-and-context-api-2968a5cf5c83)
-  - [React doesn't need state management tool, I said](https://dev.to/tolgee_i18n/react-doesnt-need-state-management-tool-i-said-31l4)
-    - https://github.com/tolgee/tolgee-platform/blob/main/webapp/src/fixtures/createProvider.tsx
-    - this aproach will have problems when hot module enabled. I have also developed this kind of lib for Form and FormElements. When you build form there will be no problem but when you change the body (main sate) and hot module updates it the Provider context will lost its value and recreate it from scratch since Form and form element is attached to previous context the render will fail. (using CreateContext from React)
-# guide
+
+- state management using context
+  - [Simple example to create global providers easily in the application](https://gist.github.com/nicolasmelo1/82e00970c1dce080bda349e3f0697152)
+
+## [React doesn't need state management tool, I said; build a redux-like api using context](https://dev.to/tolgee_i18n/react-doesnt-need-state-management-tool-i-said-31l4)
+
+- https://github.com/tolgee/tolgee-platform/blob/main/webapp/src/fixtures/createProvider.tsx
+
+- I've used REDUX about 2 years ago and now I'm working on project where the redux is used, but basically have it's there as a legacy and are trying to get rid of it. 
+  - So I haven't used it yet. And store based testing? No, honestly I've never had a use case for it. 
+  - We either were writing unit tests for small components or using cypress for testing the app as a whole.
+
+- this approach will have problems when hot module enabled. 
+  - I have also developed this kind of lib for Form and FormElements. 
+  - When you build form there will be no problem, but when you change the body (main sate) and hot module updates it, the Provider context will lost its value and recreate it from scratch since Form and form element is attached to previous context the render will fail. (using CreateContext from React)
+
+- The problem with React Context is that (due to the nature of React itself) it behaves like a state management tool, while in reality it is a tool for dependency injection. This confusion often leads to the idea to use React Context as a state manager, which it was never intended for.
+- 💡 If you take a closer look at any decent state management solution, you will quickly notice that these tools never pass "naked" state (values that change frequently) directly via context, they instead wrap the state with "something" and then pass this "something" through the context. This "something" is generally called "an observable store".
+- Different tools use different names 
+  - ("store" - redux, effector, zustand, etc.; 
+  - "client (cache)" - apollo-client; 
+  - "query client (cache)" - react-query), 
+  - but the end result is the same - "naked" state is wrapped and the referential equality is preserved even when the state changes.
+- So, instead of using cryptic libraries like use-context-selector, it might be a better idea to take advantage of the "observable store" pattern. If you don't feel like using an existing solution, you can easily implement everything yourself, it's like ~30 LOC with all the infrastructure.
+
+- Use the container -> presentation pattern.. 
+  - make each route in the app a container, use react router V6 object routing to pass observable stores to your containers and prop drill to presentation components so things are easier to test.
+  - Keep presentation components dumb, containers complex.
+  - The parent route where page is uses an observer/observable, Content uses context to access the pages mobx observable so it can add content to the page.
+  - Mobx memoizes components automatically for you. I like it way better than redux.
+# dev
+- state management
+  1. Context + useState
+  2. Context + useReducer
+  3. DispatchContext + StateContext + useReducer
+  4. Multiple Providers of #3 for state "slices"
+  - They are stages of state management complexity from simple to complex. Performance potentially increases as you go to higher stages
+  - At any stage: Profile for slow renders, then useMemo
+  - With those 4 stages and useMemo, I believe you can solve 99% of perf challenges.
+
+- state-multi-context
+  - diegohaz/constate
+  - CharlesStover/react-multi-context
+  - dai-shi/react-context-global-state
+
+- list of atomic module state libs
+  - jotai
+  - recoil
+  - reatom
+  - klyva
+  - xoid
+  - pipestate
+
+- state-状态管理技术选型
+  - recoil (要等到API稳定、功能齐全)
+  - constate
+  - unstated-next
+  - react-hooks-global-state
+  - misc
+    - concent
+
+- [will-this-react-global-state-work-in-concurrent-mode](https://github.com/dai-shi/will-this-react-global-state-work-in-concurrent-mode)
+  - Check tearing in React concurrent mode
+
+- if you're working with an outside REST API, and not GraphQL, what are you using for state these days? Still Redux? Big state object at the top level that you access with context? Something else?
+  - TBH I don't really build apps in the last few years (unless you count DevTools)
+  - For DevTools, I just used React's built-in state (useState) and shared via context when needed.
+  - We're in the process of replacing Redux with React Context API
+  - Global state:
+    - I'd go with context, if redux wasn't already present or needed in the app.
+    - If I need to permanently cache a few pieces of global state (e.g. theme), I may do so manually. 
+    - If I need to cache many pieces (offline app), I'd go with redux + redux-persist.
+  - Local state:
+    - If I need in-memory caching + suspense support I'd go with SWR or React Query.
+  - Background work:
+    - If I have long running API calls/processing that would be complex to manage, I'd use redux-observable
+  - https://twitter.com/cwbuecheler/status/1253711795459588097
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## [Implement naive version of context selectors](https://github.com/facebook/react/pull/20646)
 - `const selection = useSelectedContext(Context, c => select(c));`
+
 - For internal experimentation only.
 - This implements `unstable_useSelectedContext` behind a feature flag.
 - The key feature is that if the selected value does not change between renders, the component will bail out of rendering its children, a la memo, PureComponent, or the useState bailout mechanism. 
   - (Unless some other state, props, or context was updated in the same render.)
-- I also added an optional third argument `isSelectionEqual`. 
-  - If defined, it will override the default comparison function used to check if the selected value has changed (`Object.is`).
+- I also added an optional third argument `isSelectionEqual` . 
+  - If defined, it will override the default comparison function used to check if the selected value has changed ( `Object.is` ).
 - However, I have not implemented the RFC's proposed optimizations to context propagation. 
   - We would like to land those eventually, but doing so will require a refactor that we don't currently have the bandwidth to complete. 
   - It will need to wait until after React 18.
@@ -107,7 +188,7 @@ function Button() {
   - To implement subscribe function, you can use something like Observables or EventEmitter, or just write a basic subscription logic yourself
   - we stopped passing the store state in context (the v6 implementation) and switched back to direct store subscriptions (the v7 implementation) due to a combination of performance problems and the inability to bail out of updates caused by context (which made it impossible to create a React-Redux hooks API based on the v6 approach).
 
-```JS
+```JSX
 const MyContext = createContext();
 export const Provider = ({ children }) => (
   <MyContext.provider value={{subscribe: listener => ..., getValue: () => ...}}>
@@ -154,54 +235,7 @@ function StateProvider({ children }) {
 
 - ### Option x1: use an unofficial workaround.
   - useContextSelector proposal and use-context-selector library in userland.
-# pieces
-- state management
-  1. Context + useState
-  2. Context + useReducer
-  3. DispatchContext + StateContext + useReducer
-  4. Multiple Providers of #3 for state "slices"
-  - They are stages of state management complexity from simple to complex. Performance potentially increases as you go to higher stages
-  - At any stage: Profile for slow renders, then useMemo
-  - With those 4 stages and useMemo, I believe you can solve 99% of perf challenges.
 
-- state-multi-context
-  - diegohaz/constate
-  - CharlesStover/react-multi-context
-  - dai-shi/react-context-global-state
-
-- list of atomic module state libs
-  - jotai
-  - recoil
-  - reatom
-  - klyva
-  - xoid
-  - pipestate
-
-- state-状态管理技术选型
-  - recoil (要等到API稳定、功能齐全)
-  - constate
-  - unstated-next
-  - react-hooks-global-state
-  - misc
-    - concent
-
-- [will-this-react-global-state-work-in-concurrent-mode](https://github.com/dai-shi/will-this-react-global-state-work-in-concurrent-mode)
-  - Check tearing in React concurrent mode
-
-- if you're working with an outside REST API, and not GraphQL, what are you using for state these days? Still Redux? Big state object at the top level that you access with context? Something else?
-  - TBH I don't really build apps in the last few years (unless you count DevTools)
-  - For DevTools, I just used React's built-in state (useState) and shared via context when needed.
-  - We're in the process of replacing Redux with React Context API
-  - Global state:
-    - I'd go with context, if redux wasn't already present or needed in the app.
-    - If I need to permanently cache a few pieces of global state (e.g. theme), I may do so manually. 
-    - If I need to cache many pieces (offline app), I'd go with redux + redux-persist.
-  - Local state:
-    - If I need in-memory caching + suspense support I'd go with SWR or React Query.
-  - Background work:
-    - If I have long running API calls/processing that would be complex to manage, I'd use redux-observable
-  - https://twitter.com/cwbuecheler/status/1253711795459588097
-# discuss
 - ## [5 Layers of State Management in React Applications](https://joelhooks.com/5-layers-react-state)
 - local
 - shared
@@ -282,6 +316,7 @@ function StateProvider({ children }) {
   - It's just that Redux isn't a *purpose-built* server cache - you end up writing your own logic to do so.
   - So, I'm not saying you _should_ or _shouldn't_ use Redux either way - just that you wouldn't use both at once.
   - ref
+
     - https://twitter.com/tannerlinsley/status/1283467225677000706
 
 - ## [Why I Stopped Using Redux](https://dev.to/g_abud/why-i-quit-redux-1knl)
@@ -302,43 +337,62 @@ function StateProvider({ children }) {
 
 - ## [Four different approaches to non-Redux global state libraries_201907](https://blog.axlight.com/posts/four-different-approaches-to-non-redux-global-state-libraries/)
   - There are several implementations how to store state and notify changes.
+
     - whether context based or external store
     - whether context propagation or subscriptions based 
+
   - S1: Multiple contexts
+
     - One could easily implement this approach with React context and useContext.
     - lib: constate, unstated-next
+
   - S2: Select by property names (or paths)
+
     - This approach is to put more values in a single store. 
     - A single store allows to dispatch one action to change multiple values. 
     - You specify a property name to get a corresponding value. 
     - It’s simple to specify by a name, but somewhat limited in a complex case.
     - lib: react-hooks-global-state, shareon
+
   - S3: Select by selector functions
+
     - Selector functions are more flexible than property names. So flexible that it may be misused like doing expensive computations. 
     - Most importantly, performance optimization often requires to keep object referential equality.
     - lib: zustand, react-sweet-state
+
   - S4: State usage tracking
+
     - This approach eliminates selector functions, and it’s hardly misused. One big concern is performance optimization.
     - lib: react-tracked
 
 - ## [Four patterns for global state with React hooks: Context or Redux_201905](https://blog.axlight.com/posts/four-patterns-for-global-state-with-react-hooks-context-or-redux/)
   - S1: the most basic pattern should still be **prop passing**
+
     - alternative to Prop passing: [Component passing](https://patrickroza.com/blog/component-vs-prop-drilling-in-react/)
+
   - S2: If an app needs to share state among components that are more deep than two level, it’s time to introduce **context**
+
     - Note that all components with `useContext(ContextA)` will re-render if stateA is changed, even if it’s only a tiny part of the state. 
     - Hence, it’s not recommended to use a context for multiple purpose.
+
   - S3: Using **multiple contexts** is fine and rather recommended to separate concerns. 
+
     - Contexts don’t have to be application-wide and they can be used for parts of component tree. 
     - Only if your contexts can be used anywhere in your app, defining them at the root is a good reason.
+
   - S4: The biggest limitation with multiple contexts is that dispatch functions are also separated. 
+
     - If your app gets big and several contexts need to be updated with a single action, it’s time to introduce **Redux**. 
     - (Or, actually you could dispatch multiple actions for a single event, I personally don’t like that pattern very much.)
 
 - ## 精读《React Hooks 数据流》
 - 单组件最简单的数据流一定是 `useState`
+
 - 组件间共享数据流最简单的方案就是 `useContext`
+
   - 问题是数据与UI不解耦，这个问题 `unstated-next` 可以作为解决方案
 - 数据流与组件解耦 `unstated-next`
+
   - 可以将定义在App中的数据单独出来，然后Counter和App不再绑定
   - 但是useState无法合并更新，可以使用useReducer
   - Counter.useContainer提供的数据流是一个引用整体，其子节点foo引用变化后会导致整个Hook重新执行，继而所有引用它的组件也会重新渲染，此时可以使用可以利用Redux的 `useSelector` 实现按需更新
@@ -391,9 +445,13 @@ function Child() {
 
 - ## 针对context的value频繁更新导致重复渲染性能降低的问题
   - [RFC: Context selectors](https://github.com/gnoff/rfcs/blob/context-selectors/text/0000-context-selectors.md)
+
     - https://github.com/reactjs/rfcs/pull/119
+
   - [RFC: useMutableSource](https://github.com/reactjs/rfcs/blob/master/text/0147-use-mutable-source.md)
+
     - enables React components to safely and efficiently read from a mutable external source in Concurrent Mode
+
   - With context selectors, we might still be facing the "unconditional render starting at the root" and "calculating selectors while rendering" aspects. It's possible that useMutableSource may allow us to work around that. But, at least we wouldn't be forcing every connected component to fully re-render.
   - `useMutableSource()` seems to aim at solving this problem officially
 
@@ -402,6 +460,7 @@ function Child() {
   - 只有触发 forceUpdate 才会更新组件
   - 总不能每次改变应用状态的时候，都要调用一次 forceupdate 吧，再对上面的示例做一次优化，请看这个优化版本 ，在这个版本中，我们实现一个简单的发布订阅库，在 useStore 方法中订阅子组件的 forceUpdate 到 subscribers 中 ，在 Provider 组件 render 的时候，调用 notify 方法依次调用 subscribers 中的所有 foreUpdate，以此来触发子组件rerender。
 # survey: state management
+
 - [How are you currently managing your state? Redux/hooks/MobX/something else?](https://twitter.com/kefimochi/status/1248006010972692481)
 - [How are you handling React state today?](https://twitter.com/housecor/status/1252306374375149568)
   - react
@@ -413,11 +472,16 @@ function Child() {
   2. Redux / Mobx / other "global state" manager
   3. useState/Reducer + context / roll it myself
   - Answered #3. 
+
     - Reason being is that our server state isn't at a complexity where it would heavily benefit from an Apollo or Redux and it's easier for other engineers to understand if we all just stuck with vanilla React.
+
   - Pick #3 for global stuff, like a user or a cart (in e commerce), 
+
     - because I havent figured out how #1 does with a context global state. 
     - Full ignorance on my side, but local component state, i have used swr when it needs to fetch data
+
   - I've tried them all. 
+
     - I think they all can have a place. Redux worked really well in the pre-hook era. 
     - If you want to tightly control your actions, use all sorts of middleware, observables, it's the thing to use.
     - There was an era where I was using context too as I saw it as "native redux." 
@@ -432,6 +496,7 @@ function Child() {
     - There can be as much boilerplate as you want too. 
     - Use the hook directly or hide it behind something else. Either works.
     - I went with react-query because of the quality of it's docs too. Redux and Apollo have had GREAT docs for a long time. As long as I have used react-query, it has too. TypeScript support was also a must for me. Even though swr has better ts support, React-query's was good enough.
+
   - With Firestore I’m using Redux + Redux-observable as middleware. Next time I’ll go with react query but I should pay attention to the number of reads/writes because u pay for those with Firebase
 # context vs redux
 - viewpoint

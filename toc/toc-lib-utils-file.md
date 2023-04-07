@@ -13,6 +13,17 @@ modified: 2023-04-05T19:35:14.347Z
 
 # file-upload
 
+- https://github.com/beforegolive/resumable-upload-demo
+  - 断点续传的demo
+  - [web端断点续传的思路和实现 | 上线前夕](https://www.twomeetings.com/2020-06-11-how-to-implement-resumable-upload/)
+
+- https://github.com/HiWayne/large-file-uploader
+  - 专为上传功能而优化，file uploader, supporting file segmentation, resume from break point, offline storage...
+  - 断点续传，不必重头再来
+  - 基于 indexedDB 的文件缓存，离线也能恢复进度
+  - 多线程计算，面对大文件处理更快
+  - 只提供下载队列的状态数据，你可以自由定制 UI
+  - 丰富的配置，你可以限制文件类型、每个切片大小、线程数、请求并发数、是否开启离线缓存等
 # file-parser/generator
 - https://github.com/plantain-00/js-split-file
   - A library to split big file to small binary data for nodejs and browsers.

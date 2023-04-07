@@ -452,8 +452,6 @@ modified: 2022-11-07T11:00:28.824Z
 
 - Have you considered selling the product? Replicache uses the bsl license, is developed in the open, like open source and becomes true open source after two years. We don’t have concrete data on how well this works but early signals are good and it directly reflects your goals.
   - I think this is compatible with raising money. The difference I’m getting at is compared to (2): instead of giving away the core and selling something else (a service), just sell the core directly.
-- 
-- 
 
 - ## Unpopular opinion: an SQLite SaaS would be my pick for anything slow/write fast/read scenario (blogs to name one). Not sure why nothing exists already out there
 - https://twitter.com/WebReflection/status/1476586199251058689

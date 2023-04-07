@@ -17,8 +17,7 @@ modified: 2022-01-05T14:25:35.961Z
   - Here's a simplified version of the core.
   - Notice that this simplified version of jotai core is **not** pseudo code. It actually works!
   - https://codesandbox.io/s/zealous-field-z2xk6?file=/src/App.js
-- Here's the simplified valtio
-  - valtio is my take with the same metal model as mobx.
+
 - in the `useAtom` hook, there is still a `useState`. how does this behave in nested components when this useAtom hook is accessed on the top level? does it still cause a rerender to all children? if yes, what is the advantage/difference of jotai from react's `context+useState`?
   - Yes, all child components under the tree re-render, unless they are memoized (or stable). 
   - The advantage is 1) simpler syntax, and 2) dynamic atom creation without re-mounting the entire tree (which is impossible with context).
@@ -34,6 +33,7 @@ modified: 2022-01-05T14:25:35.961Z
 
 - a simplified version of valtio 
   - https://twitter.com/dai_shi/status/1484496249776934917
+  - valtio is my take with the same mental model as mobx.
 - here's the full version of the simplified version of Valtio
   - https://codesandbox.io/s/modest-currying-mu0j7
   - https://twitter.com/dai_shi/status/1485036663290368002

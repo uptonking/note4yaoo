@@ -9,13 +9,32 @@ modified: 2020-07-14T11:03:53.196Z
 
 # guide
 - 实现状态管理的思路
-  - flux、atoms、proxy、state-machine、server-state-cache、signals
+  - flux
+    - redux
+    - zustand
+    - storeon
+    - unistore
+  - atoms
+    - jotai
+    - nanostores
+    - recoil
+  - proxy
+    - mobx
+    - valtio
+  - state-machine
+    - xstate
+    - zag.js
+  - server-state-cache
+    - swr
+    - tanstack-query
+  - signals
+    - preact/signal
+
 - 状态管理选型参考
   - react
     - constate
     - unstated-next
     - react-redux
-    - unistore
   - event
     - storeon
     - redux
@@ -30,6 +49,7 @@ modified: 2020-07-14T11:03:53.196Z
   - https://redux.js.org/
   - Predictable state container for JavaScript apps.
   - 源码简单，插件丰富，插件有时会导致状态管理变得复杂
+
 - mobx /MIT/22.1kStar/202007/ts/响应式数据流/NoDeps
   - https://github.com/mobxjs/mobx
   - https://mobx.js.org/README.html
@@ -70,6 +90,7 @@ modified: 2020-07-14T11:03:53.196Z
 - storeon /1.5kStar/MIT/202009/js
   - https://github.com/storeon/storeon
   - A tiny event-based Redux-like state manager for React, Vue, Angular, and Svelte.
+
 - reatom /504Star/MIT/202006/ts
   - https://github.com/artalar/reatom
   - Reatom is a blend of the one-way data flow (by flux and global store) and decentralized atoms for deterministic and flexible description of state and its changes
@@ -180,6 +201,13 @@ modified: 2020-07-14T11:03:53.196Z
     - Make it as easy as possible to write business logic for small up to complex app
     - Integrate into frameworks as if they were native built-in primitives
   - Signals can be accessed directly and your component will automatically re-render when the signal's value changes.
+  - https://github.com/EthanStandel/deepsignal
+    - wrap Preact's Signal model to make it a full state management solution
+
+- https://github.com/tldraw/signia
+  - Reactive signals that scale, by tldraw.
+  - It uses a new clock-based lazy reactivity system that allows signals to scale with complex data-intensive applications.
+  - Signia has a global logical clock. This is an integer that gets incremented every time any atom is updated.
 
 - https://github.com/WebReflection/usignal
   - A blend(混合，融合) of @preact/signals-core and solid-js basic reactivity API, with API and DX mostly identical to @preact/signals-core but extra goodness inspired by solid-js
@@ -188,8 +216,10 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/jotaijs/jotai-signal
   - 支持jotai v1和v2
 
-- https://github.com/tldraw/signia
-  - Reactive signals that scale. Made for tldraw 
+- https://github.com/starbeamjs/starbeam
+  - Starbeam is a new kind of reactive library. 
+  - It interoperates natively with React state management patterns, Svelte stores, the Vue composition API, and Ember's auto-tracking system.
+  - Use normal JavaScript APIs and access patterns. 
 
 - https://github.com/maverick-js/signals
   - a tiny (~1kB minzipped) library for creating reactive observables via functions called signals. 

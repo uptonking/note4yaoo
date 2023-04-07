@@ -26,7 +26,7 @@ modified: 2022-01-05T14:36:28.057Z
     - Renders components only on changes
     - Centralized, action-based state management
   - deal with common pitfalls, like the dreaded zombie child problem, react concurrency, and context loss between mixed renderers
-  - Zustands core(`zustand/vanilla`) can be imported and used without the React dependency. 
+  - Zustand's core(`zustand/vanilla`) can be imported and used without the React dependency. 
 
 - jotai  /6.7kStar/MIT/202201/ts/Atoms
   - https://github.com/pmndrs/jotai

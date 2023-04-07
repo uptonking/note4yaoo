@@ -62,6 +62,8 @@ modified: 2021-07-21T18:07:43.056Z
 
 - https://github.com/facebook/docusaurus
   - /19.5kStar/MIT/202010
+  - 不依赖nextjs
+  - 使用webpack+babel打包
   - Docusaurus 1 used to be a pure documentation site generator. 
   - In Docusaurus 2, we rebuilt it from the ground up, allowing for more customizability 
     - but preserved the best parts of Docusaurus 1 - easy to get started, versioned docs, and i18n

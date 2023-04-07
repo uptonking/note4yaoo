@@ -12,8 +12,10 @@ modified: 2021-05-13T03:12:58.306Z
 ## [Understanding Event Emitters](https://css-tricks.com/understanding-event-emitters/)
 
 - https://github.com/charliewilco/cyclops
+  - Simple event emitter w. debugging
+  - There are lots of different implementations of an event emitter. The reason this exists is to extend the ability to have custom events.
 
-``` typescript
+```typescript
 interface Events {
   [key: string]: Function[];
 }
@@ -76,7 +78,7 @@ function emitter(e?: Events) {
 - Node.js is asynchronous, but since no I/O is involved in emitting an event, event delivery is treated synchronously.
   - So, when emitting events, bear in mind that the listeners will be called before emitter.emit returns.
 
-``` JS
+```JS
 var EventEmitter = require('events').EventEmitter;
 var emitter = new EventEmitter();
 emitter.on('beep', function() {
@@ -108,7 +110,7 @@ console.log('after emit');
 - in Pub-Sub pattern we focus on publish/subscribe action 
   - while in Observer pattern we should focus on publisher and subscriber.
 
-``` JS
+```JS
 class PubSub {
   constructor() {
     this.handlers = [];
@@ -134,6 +136,7 @@ export default new PubSub();
 - There are two main strategies for observer pattern:
   - Push behaviour — when an event happens Observable object will notify all Observers by sending all the new data to them
   - Pull behaviour — when an event happens Observable object will notify all Observers and each Observer will pull the information it needs from the Observable
-- The most popular library for Observer pattern is RxJS with those concepts
+- The most popular library for Observer pattern is `RxJS` with those concepts
 
+- 提供了rxjs的使用示例
 # ref

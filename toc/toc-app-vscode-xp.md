@@ -40,6 +40,16 @@ modified: 2023-02-08T10:47:19.056Z
 - 优点是利用文件格式支持的注释来确定fold的范围，自身不会渲染显示出来
 - 无法fold的格式
   - css，但scss能fold
+
+- ## markdown
+
+- https://github.com/condorheroblog/auto-front-matter
+  - Automatically insert lastmod and duration when saving the md file.
+  - roadmap
+    - 支持自定义字段名称、ignore部分文件
+
+- Markdown yaml Preamble
+  - Renders yaml front matter as a table in the built-in markdown preview
 # extensions
 
 # guide

@@ -6,23 +6,24 @@ modified: 2020-12-10T10:04:50.952Z
 ---
 
 # lib-state-storeon-dev
-
 - event-based Redux-like state manager for React, Vue, Angular and Svelte.
-
 # guide
-
 - 优点
-  - The same Redux reducers.
+  - The same Redux reducers
   - 通过扩展可支持undo/redo
 
 - 缺点
   - 不支持hot reload
 
+- [Example with remote data fetching](https://github.com/storeon/storeon/issues/113)
+- [Storeon router module](https://github.com/storeon/storeon/issues/33)
+  - In SPA applications, you often need to interact with the url. One approach is to treat the url as part of the state. When changing state, changing the url and Vice versa.
+- [useStoreon hook types are misleading and can lead to runtime errors](https://github.com/storeon/storeon/issues/154)
+  - Sorry, this project is on the maintained stage (I am working on another state manager Nano Stores).
 # docs
-
 - ## [storeon-counter-app-demo](https://github.com/storeon/storeon)
 
-``` JS
+```JS
 import { createStoreon } from 'storeon';
 
 // Initial state, reducers and business logic are packed in independent modules
@@ -55,7 +56,7 @@ render(
 
 - ## [Example with remote data fetching](https://github.com/storeon/storeon/issues/113)
 
-``` JS
+```JS
 store.on('@users/load', async () => {
   let users = await fetch('/users/')
   store.dispatch('@users/set', { users })
@@ -86,9 +87,7 @@ store.on('@users/set', async (state, users) => {
   - state in Storeon must always be represented by a JavaScript object ({}) with no restrictions on data types for its keys. 
     - This assumption allows to track state changes directly and to avoid Redux-style selector functions altogether. 
     - In my experience, non-object state stores are rare anyway.
-
 # storeon-extension
-
 - https://github.com/storeon/router
 - https://github.com/storeon/undo
 - https://github.com/octav47/storeonize
@@ -98,9 +97,7 @@ store.on('@users/set', async (state, users) => {
 - https://github.com/mariosant/storeon-streams
   - Side effects management library for storeon
   - 依赖kefir
-
 # storeon-repos
-
 - https://github.com/andersonAncilon/storeon-to-do
 - https://github.com/Youngestdev/storeon-app
   - [Event-driven state management in React using Storeon - note app_202006](https://blog.logrocket.com/event-driven-state-management-in-react-using-storeon/)
