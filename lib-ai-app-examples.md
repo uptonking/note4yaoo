@@ -58,6 +58,14 @@ modified: 2023-02-08T07:20:48.475Z
 ## prompts
 
 - [Open Prompt](https://openprompt.co/)
+# coding-copilot
+- https://github.com/TabbyML/tabby
+  - https://tabbyml.github.io/tabby
+  - Self-hosted AI coding assistant. 
+  - An opensource / on-prem alternative to GitHub Copilot.
+  - Self-contained, with no need for a DBMS or cloud service
+  - OpenAPI interface, easy to integrate with existing infrastructure (e.g Cloud IDE).
+  - Tabby 是一个自我托管的 #GitHub #Copliot 开源替代品，自带可视化界面与 #OpenAPI 接口，还支持消费者级别的 #GPU，具有 FP-16 重量加载和各种优化功能，提供了 #Docker 镜像
 # ml-neural-network
 - https://github.com/TrevorBlythe/MentisJS
   - A javascript neural network library. 

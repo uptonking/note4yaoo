@@ -18,7 +18,11 @@ modified: 2022-11-11T06:57:09.670Z
 
 - ## 
 
-- ## 
+- ## If not for speed, Rust will be net negative for frontend tools 
+- https://twitter.com/youyuxi/status/1644677516312072194
+  - because it significantly increases contribution barrier and maintenance load.
+
+- Some Rust projects (like Zellij) ease the contribution barrier by using a WASM plugin system. You can write plugins in any language that can run on WASI. Of course that doesn't solve needing to know Rust to contribute to the main package.
 
 - ## 工作之余的想学新语言可以试试 Rust，虽然属于入门最容易放弃的语言，也不太适合用于找国内工作😂，
 - https://twitter.com/HiTw93/status/1590856832779591680

@@ -9,6 +9,10 @@ modified: 2023-03-05T08:55:03.696Z
 
 # guide
 
+- tips
+  - query的持久化使用前端数据库
+    - 实现类似于缓存: client-app > localDb > fetch > server
+
 - [用react-query解决你一半的状态管理问题](https://zhuanlan.zhihu.com/p/351280149)
   - 将服务端状态(缓存数据)从全局状态中独立出去
   - 使用通用的hook处理请求中间状态 isLoading, isError

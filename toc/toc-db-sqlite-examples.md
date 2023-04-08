@@ -7,6 +7,10 @@ modified: 2022-06-03T22:07:49.519Z
 
 # toc-db-sqlite-examples
 
+# guide
+
+- resources
+  - https://github.com/asg017/sqlite-ecosystem
 # popular
 - https://github.com/ShivamJoker/SQL-Play
   - Simple app to practice and learn SQL in React Native using SQLite

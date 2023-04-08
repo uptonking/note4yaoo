@@ -10,6 +10,7 @@ modified: 2023-01-16T21:14:55.049Z
 # guide
 - sync-xp
   - 基于缓存实现sync有点类似于react-query
+    - 实现类似于缓存: client-app > localDb > fetch > server
   - 参考vlcn
 
 - 参考yjs
