@@ -6,15 +6,37 @@ modified: 2022-10-23T14:57:23.473Z
 ---
 
 # ux-color-palette
-
-- https://github.com/nordtheme/nord
+- https://github.com/nordtheme/nord /MIT
+  - https://www.nordtheme.com/docs/colors-and-palettes
   - A total of sixteen, carefully selected, dimmed pastel colors
+  - #1d2129
   - #2E3440 #434C5E #434C5E #4C566A
-    - #D8DEE9 #E5E9F0 #ECEFF4 #f2f4f8
+  - #D8DEE9 #E5E9F0 #ECEFF4   #f1f3f5 #f2f4f8
   - #8FBCBB #88C0D0 #81A1C1 #5E81AC
   - #BF616A #D08770 #EBCB8B #A3BE8C #B48EAD
 
+- https://github.com/yeun/open-color /MIT
+  - https://yeun.github.io/open-color/
+  - an open-source color scheme optimized for UI like font, background, border, etc.
 
+- [Tailwind CSS Color Generator - UI Examples & WCAG Contrast Ratios](https://uicolors.app/browse/tailwind-colors)
+  - 提供了 wcag v2/v3 的对比度
+
+- 对比度是指显示屏上两种相邻颜色之间的亮度或发出光线的强度的差异计算值。
+  - AA   普通文本是4.5:1，大型文本3:1
+  - AAA  普通文本是7:1，  大型文本4.5:1
+
+- [不要依赖 WCAG 2 的对比度计算，试试 APCA - 知乎](https://zhuanlan.zhihu.com/p/555769196)
+  - 如果你的产品有暗色模式（Dark Mode），请不要依赖 WCAG 2，它几乎不起作用
+    - 问题在于 WCAG 2.x 使用了完全基于亮度的计算方式，会过分夸大暗色的对比度权重，会否决一些实际上比较容易识别的色彩组合
+  - 将 WCAG 2 移植到 APCA 时的推荐实践标准
+    - 75 对应 WCAG 7:1
+    - 60 对应 WCAG 4.5:1
+    - 45 对应 WCAG 3:1
+
+- pgd色板设计，10级色彩，根据对比度
+  - 0，11，22，33，44，55，63，72，81，90
+  - 中间未严格遵守标准，是考虑到深色用的少
 # nice css named colors: variant/alike/light
 - Grey: #808080
   - slategrey/lightslategrey: #708090 / #778899
@@ -73,6 +95,7 @@ modified: 2022-10-23T14:57:23.473Z
   - mediumslateblue：中暗蓝，深蓝偏紫
   - lightgoldenrodyellow：浅金黄，新绿活力
   - 松柏绿: #21a675
+  - teal5: #20c997
   - 松花绿: #057748
   - 竹青: #789262
   - 碧绿: #2add9c
@@ -90,11 +113,8 @@ modified: 2022-10-23T14:57:23.473Z
   - deepskyblue: #00bfff
   - cyan/aqua: #00ffff
 
-
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
-
-
 # guide
 - tips
   - 各设计系统都会有自己的调色板
@@ -149,9 +169,38 @@ modified: 2022-10-23T14:57:23.473Z
 - https://github.com/keeev/brandcolors /201507
   - Brandcolors (LESS & Sass Variables) for all known brands like Facebook, Twitter, Kickstarter and many more.
 # color-repos
-- https://github.com/yeun/open-color
-  - https://yeun.github.io/open-color/
-  - an open-source color scheme optimized for UI like font, background, border, etc.
+- https://github.com/adobe/leonardo
+  - https://leonardocolor.io/
+  - Generate colors based on a desired contrast ratio
+  - [WCAG 3 APCA Lc contrast calculations](https://github.com/adobe/leonardo/issues/197)
+    - APCA is already a supported method of contrast generation in Leonardo.
+
+- https://github.com/primer/prism
+  - https://primer.style/prism/
+  - A tool for creating and maintaining cohesive, consistent, and accessible color palettes
+
+- https://github.com/jxnblk/palx
+  - https://palx.jxnblk.com/
+  - Automatic UI Color Palette Generator
+  - Inspired by Open Color, Palx takes a single input color, then spreads the hue across the color spectrum in 12 steps, and spreads each hue across 10 luminance steps. 
+
+- https://github.com/ardov/huetone
+  - https://huetone.ardov.me/
+  - A tool to create accessible color systems
+
+- https://github.com/proteanstudio/contrast-tools
+  - https://contrast.tools/
+  - Color contrast value in WCAG 3.0 is calculated using the Advanced Perception of Color Algorithm (APCA). Unlike previous contrast calculations, the APCA considers the context in which colors are used to determine their readability
+
+- apca
+  - [Colour Contrast Tool](https://cliambrown.com/contrast/)
+  - [Accessible Palette: Create color systems with consistent lightness and contrast](https://accessiblepalette.com/)
+  - https://github.com/bruskowski/color-contrast-checker
+    - [Color Contrast Checker](https://contrast-checker.vercel.app/)
+
+- https://github.com/Myndex/apca-w3
+  - https://apcacontrast.com/
+  - APCA is the Accessible Perceptual Contrast Algorithm, a new way to predict contrast for text and non-text content on self illuminated displays.
 
 - https://github.com/radix-ui/colors
   - https://www.radix-ui.com/colors
@@ -159,9 +208,6 @@ modified: 2022-10-23T14:57:23.473Z
 - https://github.com/dmarman/dmarman.github.io
   - https://tailwind.ink/
   - an AI palette generator trained with the Tailwindcss colors.
-- https://github.com/jxnblk/palx
-  - https://palx.jxnblk.com/
-  - Automatic UI Color Palette Generator
 
 - https://github.com/ant-design/ant-design-colors
   - https://ant.design/docs/spec/colors-cn
@@ -264,3 +310,6 @@ modified: 2022-10-23T14:57:23.473Z
     - currant/深紫偏黑      #45415e
     - slate/极青深灰        #2b4251
     - creosote/深黑深灰     #2e323c
+# yaoo-color-palettes
+- open-color with contrast
+  - https://leonardocolor.io/theme.html?name=pgd-green&config=%7B%22baseScale%22%3A%22green-teal%22%2C%22colorScales%22%3A%5B%7B%22name%22%3A%22gray%22%2C%22colorKeys%22%3A%5B%22%23adb5bd%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Atrue%7D%2C%7B%22name%22%3A%22red%22%2C%22colorKeys%22%3A%5B%22%23ff6b6b%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22orange%22%2C%22colorKeys%22%3A%5B%22%23ff922b%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22yellow%22%2C%22colorKeys%22%3A%5B%22%23fcc419%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22green-sea%22%2C%22colorKeys%22%3A%5B%22%233cb371%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22green-pine%22%2C%22colorKeys%22%3A%5B%22%2321a675%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22green-teal%22%2C%22colorKeys%22%3A%5B%22%2320c997%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22blue%22%2C%22colorKeys%22%3A%5B%22%23339af0%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22blue-indigo%22%2C%22colorKeys%22%3A%5B%22%235c7cfa%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%5D%2C%22lightness%22%3A100%2C%22contrast%22%3A1%2C%22saturation%22%3A100%2C%22formula%22%3A%22wcag3%22%7D

@@ -59,10 +59,6 @@ modified: 2021-01-04T16:18:46.383Z
   - 缺点
     - 依赖多，修改与定制难度大
     - 与业务结合不紧密
-# open-color
-- https://github.com/yeun/open-color
-  - https://yeun.github.io/open-color/
-  - open-source color scheme optimized for UI like font, background, border, etc.
 # color-palette
 - https://yoksel.github.io/handy-colors/#full-palette
   - 基于浏览器提供的css名，按颜色分类
@@ -312,6 +308,11 @@ modified: 2021-01-04T16:18:46.383Z
   - https://material.io/design/interaction/states.html
   - https://polaris.shopify.com/design/interaction-states
 # typography
+- [色彩无障碍设计（Color Accessibility）之「对比度」的探索 - 知乎](https://zhuanlan.zhihu.com/p/29359260)
+  - 对比度（最小）: 文本的视觉呈现以及文本图像至少要有4.5:1的对比度（AA级），大文本: 大号文本以及大文本图像至少有3:1的对比度; 
+  - 对比度（加强）: 文本视觉呈现以及文本图像至少有7:1的对比度（AAA级），大文本: 大号文本以及大文本图像至少有 4.5:1的对比度。
+  - 大文本：至少 18pt（24px）或 14pt（19px）bold。
+
 - contrast 对比度
   - 文本色与背景色的“对比度”不足会导致美感不足，甚至视觉不适
   - 对比度是指显示屏上两种相邻颜色之间的亮度或发出光线的强度的差异计算值。这个比值的范围在1到21之间（通常写为 1:1 到 21:1）；该值越大，则对比度越高
