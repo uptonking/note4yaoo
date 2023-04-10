@@ -37,6 +37,8 @@ modified: 2021-07-20T13:50:23.433Z
 - enterprise-marketplace
   - browser-extensions
   - figma
+  - table-capture/shot
+  - ocr
 
 - 团队版/企业版-features
   - 表单/投票收集与统计，如features

@@ -29,9 +29,7 @@ modified: 2021-01-01T20:08:55.833Z
 - 多套主题的css(一套主题包含所有组件) vs 一个组件的多套主题(易拆分代码)
   - theme-ui给出的方案是前者，使用带约束的样式值
   - 使用css vars可以方便低成本实现theming，同时支持全局级和组件级的theming
-
 # guide
-
 - 切换不同主题名的实现
   - 添加到`<body>`上，因为第3方工具库经常添加到`<html>`
   - 用class，不用id，因为一个元素不能有多个id，而测试和发布时常需要不同id
@@ -88,9 +86,7 @@ modified: 2021-01-01T20:08:55.833Z
 - theming的约束值与灵活性
   - 要折中考虑
   - 不让用户选择任意颜色，因为难以保持良好的文字对比度、代码高亮自动切换
-
-# pieces
-
+# dev
 - 用js动态生成style节点`document.createElement('style')`
 - 一般不都是在最外层加上主题类名，里面的颜色都用颜色变量么
 
@@ -101,9 +97,32 @@ modified: 2021-01-01T20:08:55.833Z
   - different color palettes are stored in the `theme.colors` object.
   - By default the base colors are picked up by other components using Styled System.
   - The root layout component uses React state to cycle through the different color modes and creates a new theme object based on state. 
+# blogs
 
+## 
+
+## [A Complete Guide to Dark Mode on the Web](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)
+
+- YouTube uses the CSS variables technique. They’ve defined all their colors in variables under the html selector while dark mode colors are defined under `html:not(.style-scope)[dark]` css
+  - When dark mode is enabled, YouTube adds a dark="true" attribute to the `<html>` tag. 
+- CSS custom properties approach seems to be most popular. It’s being used by Dropbox Paper, Slack, and Facebook.
+- Simplenote uses the class-swapping method where all light style rules are descendants of a .theme-light parent class and all the dark styles fall under a .theme-dark class. 
+  - When the theme is toggled, the appropriate class is applied to the `<body>` tag.
+- Twitter goes the extra mile and offers several themes to choose from: “Default, ” “Dim, ” and “Lights out.”
+  - 切换样式时，会修改body元素的data-nightmode属性为true/false
+  - 还会直接修改body元素的style属性的background-color的值
+- Also worth mentioning that developer tools have an option to toggle dark and light mode without having to change the operating system if you want to check if your detection works.
+- In Chromium Based browsers you can do that in the rendering menu or with a keyboard shortcut
+  - preferred-color-scheme-simulation
+- There’s a major problem with this article: all of the options described require JavaScript to take effect.
+  - A much better technique for client-side resolution of dark mode is to use the actual media query`prefers-color-scheme: dark`, and then have your toggle modify the media query, rather than adding or removing classes.
+  - [My dark theme implementation](https://chrismorgan.info/blog/dark-theme-implementation/)
+- I think it’s missing a way to switch themes using CSS only, however.
+  - It’s a technique using checkboxes (or radio buttons if more than 2 themes) and some CSS selector magic to switch between the themes. 
+  - It’s accessible as well, which is a huge plus.
+  - To store the user’s theme preference, a little bit of JavaScript is still required, sadly.
+- For a “complete” guide the high contrast mode is missing. The forced-color query is our friend here.
 # discuss
-
 - ## [UI框架的主题色一般怎么实现的？](https://www.zhihu.com/question/66734943)
 - 要在客户端动态切换主题颜色，要做的无非是两点：
   - 定义所有组件元素的颜色样式和主题色的映射关系；
@@ -140,7 +159,7 @@ modified: 2021-01-01T20:08:55.833Z
   - 这一点和ant-design以及element不一样，他们都是使用后端实时生成css文件
   - 在首页的方法中添加css的调用方法。
 
-``` JS
+```JS
 dynamicLoadCss(type) {
   let old = document.getElementById('loadcss');
   var head = document.getElementsByTagName('head')[0];
@@ -188,30 +207,7 @@ dynamicLoadCss(type) {
     - Then, themes are just a collection of variable overrides. Super clean.
   - I noticed the same pattern in the lightweight Pico.css framework 
     - which I started using for a project a few weeks ago (toggles between dark/light/auto as well).
-
-- ## [A Complete Guide to Dark Mode on the Web](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)
-- YouTube uses the CSS variables technique. They’ve defined all their colors in variables under the html selector while dark mode colors are defined under html:not(.style-scope)[dark]
-  - When dark mode is enabled, YouTube adds a dark="true" attribute to the `<html>` tag. 
-- CSS custom properties approach seems to be most popular. It’s being used by Dropbox Paper, Slack, and Facebook.
-- Simplenote uses the class-swapping method where all light style rules are descendants of a .theme-light parent class and all the dark styles fall under a .theme-dark class. 
-  - When the theme is toggled, the appropriate class is applied to the `<body>` tag.
-- Twitter goes the extra mile and offers several themes to choose from: “Default, ” “Dim, ” and “Lights out.”
-  - 切换样式时，会修改body元素的data-nightmode属性为true/false
-  - 还会直接修改body元素的style属性的background-color的值
-- Also worth mentioning that developer tools have an option to toggle dark and light mode without having to change the operating system if you want to check if your detection works.
-- In Chromium Based browsers you can do that in the rendering menu or with a keyboard shortcut
-  - preferred-color-scheme-simulation
-- There’s a major problem with this article: all of the options described require JavaScript to take effect.
-  - A much better technique for client-side resolution of dark mode is to use the actual media query`prefers-color-scheme: dark`, and then have your toggle modify the media query, rather than adding or removing classes.
-  - [My dark theme implementation](https://chrismorgan.info/blog/dark-theme-implementation/)
-- I think it’s missing a way to switch themes using CSS only, however.
-  - It’s a technique using checkboxes (or radio buttons if more than 2 themes) and some CSS selector magic to switch between the themes. 
-  - It’s accessible as well, which is a huge plus.
-  - To store the user’s theme preference, a little bit of JavaScript is still required, sadly.
-- For a “complete” guide the high contrast mode is missing. The forced-color query is our friend here.
-
 # discuss-theming
-
 - ## Have we agree on a standard way of encoding the user's configured theme (light/dark) in our HTML yet?_202007
 - https://twitter.com/adamwathan/status/1280551530861670400
   - Class name like `.dark`? Data attribute like `data-theme`?
@@ -237,9 +233,7 @@ dynamicLoadCss(type) {
   - you can nest themes thanks to the cascade and custom properties. 
   - localStorage to save/load the user's preference asap.
   - that's as far as I got when I looked into it. my implementation worked way better than some of the theme plugins js frameworks have but I'm sure it still doesn't handle real complex theming scenarios. it works with iframes though lol
-
 # ref
-
 - [Creating a Simple Yet Complicated Dark Mode Animation](https://celikk.me/blog/darkModeAnimation/)
   - https://github.com/celikkoseoglu/celikk-personal-website
 

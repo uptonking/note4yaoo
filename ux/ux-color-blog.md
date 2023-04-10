@@ -9,6 +9,47 @@ modified: 2022-11-30T16:33:25.382Z
 
 # guide
 
+# [Radix UI - Understanding the scales of color palettes](https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale)
+- There are 12 steps in each scale. 
+  - Each step was designed for at least one specific use case.
+- This table is a simple overview of the most common use case for each step. 
+  - However, there are many exceptions and caveats to factor in, which are covered in further detail below.
+
+1
+App background
+2
+Subtle background
+3
+UI element background
+4
+Hovered UI element background
+5
+Active / Selected UI element background
+6
+Subtle borders and separators
+7
+UI element border and focus rings
+8
+Hovered UI element border
+9
+Solid backgrounds
+10
+Hovered solid backgrounds
+11
+Low-contrast text
+12
+High-contrast text
+
+- Steps 1 and 2 are designed for app backgrounds and subtle component backgrounds. 
+  - You can use them interchangeably, depending on the vibe you're going for.
+
+- Steps 3, 4, and 5 are designed for UI component backgrounds.
+
+- Steps 6, 7, and 8 are designed for borders.
+
+- Steps 9 and 10 are designed for solid backgrounds.
+
+- Steps 11 and 12 are designed for text.
 # [Color Formats in CSS - hex, rgb, hsl, lab](https://www.joshwcomeau.com/css/color-formats/)
 - CSS has a whole slew(+of 大量) of different color formats: hex codes, rgb(), hsl(), lch(), the list goes on!
 

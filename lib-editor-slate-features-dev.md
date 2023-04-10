@@ -84,11 +84,14 @@ modified: 2023-03-16T16:29:47.610Z
 
 ## formats
 
-- 👏🏻(wont-fix) 选中文本添加格式如下划线后，接着按空格按字母也会出现下划线
+- 🖐🏻 (wont-fix) 选中文本添加格式如下划线后，接着按空格按字母也会出现下划线
   - 主流编辑器都存在这个问题，如notion、飞书、google-docs、ckeditor、tiptap
   - 解决方案是再次选中带格式的文本，然后取消格式
 
 ## list
+
+- 🤔 重构
+  - 不使用单一type加listType2种判断列表类型的方式，而用3个type值，能简化isActive的逻辑
 
 - dev-to
   - 变可选, list操作要与所有子元素一起

@@ -20,12 +20,112 @@ modified: 2023-03-05T08:55:03.696Z
   - 统一的缓存更新/失效策略
 - [Use react-query but no react](https://github.com/tannerlinsley/react-query/discussions/790)
   - https://codesandbox.io/s/magical-bush-gbsk7
+# cookies
+
+## security
+
+### [Using HTTP cookies - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+
+- A cookie with the `Secure` attribute is only sent to the server with an encrypted request over the HTTPS protocol. 
+  - It's never sent with unsecured HTTP (except on localhost), which means man-in-the-middle attackers can't access it easily. 
+  - Insecure sites (with `http:` in the URL) can't set cookies with the Secure attribute. 
+  - 💡 But someone with access to the client's hard disk (or JavaScript if the HttpOnly attribute isn't set) can read and modify the information.
+
+- A cookie with the `HttpOnly` attribute is inaccessible to the JavaScript `Document.cookie` API; 
+  - ❓ 为什么EditThisCookie浏览器扩展能够读出httpOnly的cookie
+  - it's only sent to the server. 
+  - For example, cookies that persist in server-side sessions don't need to be available to JavaScript and should have the HttpOnly attribute. 
+  - This precaution helps mitigate cross-site scripting (XSS) attacks.
 # discuss
 - ## 
 
 - ## 
 
 - ## 
+
+- ## [Why mobile apps are usually authenticated via token, not cookies - Stack Overflow](https://stackoverflow.com/questions/34593045/why-mobile-apps-are-usually-authenticated-via-token-not-cookies)
+- 👉🏻 One concern is application scalability. When you use a cookie it normally goes like this:
+  - User logs in. Cookie is issued with the session ID in it. The session ID is persisted in a shared session store in the backend. Cookie is stored in browser.
+  - Cookie is presented at each request. The backend takes the session ID from the cookie and checks in some sort of database if the session ID is known.
+- So basically you have this overhead of looking up the session ID on every request. 
+  - The alternative is to come up with some clever request routing, so that each user hits a fixed server where she was authenticated on. So I can't easily introduce a new server.
+
+- a token like a JSON web token is just a crytographically secured claim, that one was authenticated (and maybe additional claims about the user). It goes like this:
+  - User logs in. Token is issued that proves that claims that the user was authenticated (+ optional user info). The token is cryptographically signed by the issuer.
+  - The token is presented at each request. As it is signed, we can detect if the token is valid and unaltered. Also we can say who has issued the token.
+- Now, as each server can cryptographically prove that the token was issued by a trusted party (in most cases on of our backend servers), the backend server is sure that the user was authenticated. 
+  - However, you don't need that shared session storage anymore. 
+  - So, e.g. it does not matter at all which server a request goes to. 
+  - This enhances scalability and makes ops a little bit easier.
+
+- 👉🏻 A cookie is limited in size to 4KB. 
+  - A token is not limited in size, so it can transport more information (of course a token should be small nevertheless).
+
+- 👉🏻 Theoretically, you can control in your web app when to send the token. 
+  - It's not necessary for antonymous resources. 
+  - A cookie is sent with each request.
+
+- 👉🏻 A cookie is issued for one domain. 
+  - If you access another domain, then you are in trouble. 
+  - A token on the other hand can be sent to any domain.
+
+- 👎🏻 A cookie can be protected by the HttpOnly flag, so that it can't be accessed in Javascript. That makes XSS hard(er). 
+  - On the other hand this is not possible with tokens.
+
+- discussion
+
+- Using JWT doesn't free you from keeping state. You still need something like a session store to check tokens against. You need to keep a blacklist of invalidated tokens if you want to support users logging out or invalidate tokens after a user changes their password. 
+  - you need to check if the token is still valid in the case it has been invalidated by the user, such as on change of password.
+- Yes for the refresh token you'd need storage as you say, but that should be a lot less often than verifying a signature on the short-lived access token. It depends on the application. 
+
+- ## Are you storing access tokens in localstorage, and if so, why aren't you using cookies instead?
+- https://twitter.com/TkDodo/status/1556617005620396032
+- 1) GDPR:
+  - no, using cookies is _not_ bad for GDPR, and you don't need user consent for mandatory, first party cookies. GDPR is about marketing cookies like facebook pixel, google tag manager etc ...
+- 2) XSS:
+  - no, cookies are not "better for XSS". What does that even mean? If an attacker can run arbitrary javascript on your page, you are screwed, not matter what.
+  - If you are the _targeted_ victim of an attack, you better have a good content security policy (CSP) set up.
+  - 👉🏻 However, localstorage can be read out by _all_ JavaScript running on your page, and cookies cannot! That gives them a clear advantage in case of a widespread vulnerability or one 3rd party lib that gets compromised.
+- 3) localstorage is "simpler" to setup:
+  - Lots of confusion here about having to read and parse the cookie on the frontend...
+  - NO, you don't touch the cookie on the frontend. It's a blackbox / pass-through. Backend sets it, backend reads it. Get the username from somewhere else.
+- 4) I want JWT, not sessions on the server:
+  - The idea is to put the JWT _into_ the cookie, you don't need a stateful session to use cookies.
+  - One is the auth mechanism (jwt, sessions), the other is the transport mechanism (cookies, authorization header). You can mix and match!
+- 5) cookies have a size limit
+  - okay, maybe. never reached that. would love some real life example of when that went south for someone.
+- 6) cookies lead to CSRF attacks
+  - The biggest downside for cookies is largely eliminated when you use `same-site` cookies. All major browsers support them. If you want to be absolutely safe, add CSRF tokens. Still better than localstorage.
+- The end. Don't store security relevant information like tokens in localstorage.
+
+- http only cookie is the way
+
+- 
+- 
+- 
+
+- ## I think "Auth in React Query" would be a good blog post title but the content would be lame. Like: "Don't do it, use cookies. The end" 😂
+- https://twitter.com/TkDodo/status/1644793984085008386
+
+- A single Cross Site Scripting can be used to steal all the data in these objects, so again it's recommended not to store sensitive information in local storage.
+
+- Counterpoint, don't use cookies
+  - Use an authorisation header with OAuth or similar mechanism for creating your JWT
+- Then suddenly your JavaScript has to handle that, where it can be stolen by browser extensions or third party scripts like ads. Cookies are the safe way. Also with OAuth and JWT.
+- Literally not a problem
+  - bold claim without proof
+- You can still store your tokens in a httpOnly cookie, and even better make sure to only apply them to the headers on a server-side call. Best of both worlds 🤷‍♂️
+- 
+
+- a strong CSP and a backend that provides the right CORS headers
+
+- Not so easy.
+  - If you have client agnostic APIs that use autorisation bearer tokens, you don't want to put a gateway in front of them just to do cookies for web use cases.
+  - But please in this case, put your token in memory and not in localStorage.
+
+- 
+- 
+- 
 
 - ## An engineer on my team is using react-query’s pagination system in an interesting way I hadn’t seen before
 - https://twitter.com/chrisheninger/status/1644093991917588480

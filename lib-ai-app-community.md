@@ -12,7 +12,11 @@ modified: 2023-02-08T06:56:54.945Z
 # discuss
 - ## 
 
-- ## 
+- ## Is it fair to think of LLMs as a database with a natural language query interface? Where does the database metaphor break?
+- https://twitter.com/dvassallo/status/1644914034905579526
+- The most interesting counter-argument is that LLMs seem to be practically **👀 read only**. There’s only short-term memory (so far), and no insert/update equivalent.
+  - The rest still seems to stand. There’s data, a query, and a result derived from the data and the query algorithm.
+- LLMs create data in response to queries, unlike traditional databases which simply retrieve data.
 
 - ## AskBend 所有训练数据都是英文的文档，但是它可以非常自然的使用中文来回答。有没有朋友科普一下为什么🥵，不同的语言输入对于 embedding 的计算没有影响吗？
 - https://twitter.com/redsun_diamond/status/1643904510883135490

@@ -51,7 +51,9 @@ modified: 2021-03-11T11:26:12.335Z
 
 - ## 
 
-- ## 
+- ## Trying to compile https://github.com/madmann91/bvh to WASM to speed up the BVH building and tracing. No suprises it fails to render...again
+- https://twitter.com/pissang1/status/1645338783615950853
+- I’m using the bvh implementation in https://github.com/hoverinc/ray-tracing-renderer . It’s already very fast. But I’m wondering if WASM with threading can bring it to another level. I think I will benchmark these approaches in the future.
 
 - ## a self-contained WebGL flexbox layout engine, called Red Otter (otters are cute, red cars are fast).
 - https://twitter.com/tchayen/status/1638651222742691842
