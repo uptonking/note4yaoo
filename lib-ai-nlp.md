@@ -14,6 +14,9 @@ modified: 2023-03-03T08:06:36.592Z
   - Prompt是给input加的一段文字或一组向量，让模型根据input和外加的prompt做masked language modeling (MLM)。
 # nlp-products
 
+# nlp-datasets
+- https://github.com/tech-podcasts/JinJinLeDao_QA_Dataset
+  - 做了一个基于中文播客的问答数据集，这个数据集来自《津津乐道》播客，包含了18, 663个中文问答对，这些问答对根据281个播客节目字幕，配合GPT-3.5和提示词自动生成。
 # translation
 - https://github.com/mozilla/firefox-translations
   - a webextension that enables client side translations for web browsers.

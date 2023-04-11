@@ -41,6 +41,9 @@ modified: 2022-11-03T04:14:11.987Z
   - Query and manipulate JavaScript objects with JSONPath expressions. 
   - Robust JSONPath engine for Node.js.
 
+- https://github.com/aykutkardas/Json-Function
+  - It allows you to use methods such as schema, innerJoin, where, limit, select, orderBy on JSON data.
+
 - https://github.com/sanity-io/GROQ /js
   - This is the specification for GROQ (Graph-Relational Object Queries), 
   - a query language and execution engine made at Sanity.io, for filtering and projecting JSON documents. 

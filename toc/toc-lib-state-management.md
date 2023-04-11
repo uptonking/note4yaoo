@@ -377,6 +377,12 @@ modified: 2020-07-14T11:03:53.196Z
   - JavaScript event-driven state machine.
 - https://github.com/alexmdodge/ts-state-machine
   - A package with a simple state machine for the purpose of learning
+# observable
+- https://github.com/xolvio/pojo-observer
+  - A minimalist object observer with React hooks support. 
+  - Allows you to separate concerns between presentation and interaction logic
+  - This library is a minimal observer pattern implementation that takes in a POJO as a subject, instruments it, and performs callbacks when the subject has changed. 
+  - It's not opinionated at all and allows you to use it however you see fit, like choosing the event library to add (or not).
 # more-state
 - https://github.com/regionjs/region-core
   - region-core is a progressive View Model Management Framework. 

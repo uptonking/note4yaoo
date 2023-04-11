@@ -134,7 +134,11 @@ function dataToUint8Array(data) {
 
 ## `URL.createObjectURL` vs `FileReader.readAsDataURL`
 
-### [URL.createObjectURL instead of FileReader.readAsDataURL](https://forweb.dev/en/blog/2020-05-05-object-url/)
+### [`URL.createObjectURL` instead of `FileReader.readAsDataURL`](https://forweb.dev/en/blog/2020-05-05-object-url/)
+
+- 注意两者产生的url是不同的
+  - createObjectURL 产生的url是临时的`blob://`，每次刷新需要更新
+  - readAsDataURL 编码的数据是稳定的
 
 - If you need to show an image from a file or a blob, don’t use `FileReader.readAsDataURL` for this job. 
   - This method requires significant work to read the blob and convert it into data URL. 
@@ -143,7 +147,8 @@ function dataToUint8Array(data) {
 - `URL.createObjectURL` is a better solution: 
   - it **synchronously** and in no time generates temporary URL and binds it to the blob. 
   - **Generating such URL doesn’t require reading the blob**, hence it is much faster and cheaper (see algorithm details in the specification).
-  - The blob can’t be garbage collected while it has temporary URLs bound to it. So don’t forget to use `URL.revokeObjectURL` to unbind URL after you’re done with it.
+  - The blob can’t be garbage collected while it has temporary URLs bound to it. 
+  - So don’t forget to use `URL.revokeObjectURL` to unbind URL after you’re done with it.
 
 ### [Using URL.createObjectURL()](https://www.linkedin.com/pulse/using-urlcreateobjecturl-chris-ng)
 

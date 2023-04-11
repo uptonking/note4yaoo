@@ -1,21 +1,20 @@
 ---
-title: tool-os-install
-tags: [iot, linux, operating-system]
+title: tool-os-install-win-ubuntu
+tags: [iot, linux, operating-system, ubuntu, windows]
 created: 2020-11-25T08:20:22.803Z
-modified: 2020-12-22T12:42:14.745Z
+modified: 2023-04-11T02:24:25.572Z
 ---
 
-# tool-os-install
+# tool-os-install-win-ubuntu
 
 # guide
 
-# config
+# config-backup
 - linux
   - .bashrc
   - .npmrc
   - .yarnrc
   - .gitconfig
-
 # proxy-usecase
 - browser-proxy
   - edge浏览器右上角一直无法登录同步因为国内网络问题，折中方案是点击右侧边栏的outlook或office按钮，在侧边栏登录后，整个浏览器也会登录
@@ -43,6 +42,7 @@ modified: 2020-12-22T12:42:14.745Z
 
 - terminal
   - 回到顶部/底部: shift + Home/End
+
 ## os-starter
 
 - [装了5次Ubuntu，告诉你win10+Ubuntu双系统的正确打开方式](https://zhuanlan.zhihu.com/p/101307629)
@@ -255,6 +255,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 - qq linux版
   - [QQ Linux版](https://im.qq.com/linuxqq/index.shtml)
+
 ## dev
 
 - ubuntu-mysql

@@ -296,6 +296,13 @@ modified: 2021-05-06T09:58:23.803Z
           - Large font files have a negative impact on a webpage or app’s Time to First Paint, which makes for a subpar user experience and has been known to lower PWA Lighthouse scores. 
           - On top of that, adding any custom icons to a font icon is far from easy.
       - All of the benefits of font icons (vector-based and styling with CSS) can be achieved just as easily with SVGs, but without all the baggage.
+# icons-utils
+- https://github.com/aykutkardas/react-icomoon
+  - It makes it very simple to use SVG icons in your React and React-Native projects.
+  - You can use svgps.app to access over 40, 000 free icons and convert your own icons into selection.json.
+  - https://github.com/aykutkardas/svgps
+    - https://svgps.app/
+    - SVGPS removes the burden of working with a cluster of SVG files by converting your icons into a single JSON file. You can easily use this file in your frontend or mobile projects.
 # ref
 - https://github.com/fontello/fontello
   - This tool lets you combine icon webfonts

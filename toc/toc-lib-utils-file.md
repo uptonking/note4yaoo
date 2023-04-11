@@ -13,6 +13,39 @@ modified: 2023-04-05T19:35:14.347Z
 
 # file-upload
 
+- https://github.com/johndatserakis/file-upload-with-preview /ts/框架无关
+  - Simple file-upload utility that shows a preview of the uploaded image. 
+  - Written in TypeScript. No dependencies.
+
+- https://github.com/pqina/filepond
+  - https://github.com/pqina/filepond
+  - /NoDeps/active
+  - A flexible JavaScript file upload library that can upload anything you throw at it, optimizes images for faster uploads, and offers a great, accessible, silky smooth user experience.
+  - Accepts directories, files, blobs, local URLs, remote URLs and Data URIs.
+  - Drop files, select on filesystem, copy and paste files, or add files using the API.
+  - Async uploading with AJAX, or encode files as base64 data and send along form post.
+  - Image optimization, automatic image resizing, cropping, and fixes EXIF orientation.
+  - https://github.com/pqina/react-filepond
+    - a handy wrapper component for FilePond
+  - https://github.com/wladiston/filepond-server-example
+    - FilePond Server example using Express and AWS
+  - https://github.com/shahnawaz-pabon/File-Upload-With-Multer
+    - Uploading files with Multer in Node
+
+- https://github.com/FineUploader/fine-uploader
+  - Multiple file upload plugin with image previews, drag and drop, progress bars. 
+  - Dependency-free
+  - [Fine Uploader is shutting down](https://github.com/FineUploader/fine-uploader/issues/2073)
+  - https://github.com/FineUploader/server-examples
+    - Server-side examples for the Fine Uploader library
+    - Traditional upload examples (upload to your own server): java, nodejs, php, python
+    - Fine Uploader S3/Azure examples
+
+## file-upload-utils
+
+- https://github.com/shadowings-zy/easy-file-uploader
+  - 开箱即用的大文件分片上传库
+
 - https://github.com/beforegolive/resumable-upload-demo
   - 断点续传的demo
   - [web端断点续传的思路和实现 | 上线前夕](https://www.twomeetings.com/2020-06-11-how-to-implement-resumable-upload/)

@@ -124,6 +124,10 @@ modified: 2023-02-05T19:03:12.723Z
   - 依赖 ahooks、arco-react
   - 效果类似飞书，不支持拖拽
 
+- https://github.com/objectlegal/slate-snippets
+  - Slate snippets
+  - Convert data from v0.47 to v.0.50+
+
 - https://github.com/mpkelly/react-editor-kit /22Star/MIT/202012/ts/inactive
   - https://mpkelly.github.io/react-editor-kit/
   - Compose a React-based text editor using a suite of standard plugins
@@ -233,10 +237,14 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/seafileltd/seafile-editor /RepoNA
   - 项目是基于 react-slate 组件库的二次封装, 用于满足公司富文本编辑器的使用需求
 
-- https://github.com/portive/wysimark
+- slate portive
+  - https://slate-portive.docs.portive.com/
+    - Plate Cloud is a partnership between Ziad Beyens and Portive to add cloud based Attachment and Image Uploading support with server-side image resizing to the Plate editor.
+  - https://github.com/portive/wysimark
   - Wysiwyg Editor for Markdown: 100% CommonMark + GFM with Uploads and Image Resizing
   - 依赖slate-react
   - https://github.com/portive/slate-plugin
+    - Upload Images and Attachments Plugin for Slate
     - Add beautiful and intuitive images and attachments to Slate with support for paste, drag and drop and `<input type="file">` uploads.
 
 - https://github.com/react-page/react-page
@@ -288,9 +296,15 @@ modified: 2023-02-05T19:03:12.723Z
   - @poool/oak-addon-richtext-field: WYSIWYG text field using Slate
   - @poool/oak-addon-richtext-field-prosemirror: WYSIWYG text field using ProseMirror
 
-- https://github.com/uimix-editor/uimix
+- https://github.com/uimix-editor/uimix /类似figma的设计工具
   - UIMix is a WYSIWYG editor for React components that offers a Figma or Framer-like experience for creating and maintaining React components.
   - 图形基于iframe里面的dom
+
+- https://github.com/juliankrispel/slate-patterns
+  - Patterns for slate.js
+  - 提供了示例 iframe、autocomplete
+  - 依赖zustand
+  - https://github.com/juliankrispel/slate-js-boilerplate
 # slate-based-editors
 - https://github.com/raralabs/rara-rte /ts
   - https://rte.raralabs.live/
@@ -440,6 +454,10 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/eniolajayi/easy-writer /js/inactive
   - A document editor built with React and Slate.js. with multi-edit feature
 
+- https://github.com/nareshbhatia/react-force/tree/master/packages/slate-editor /202104/ts/inactive
+  - https://nareshbhatia.github.io/react-force/
+  - 依赖slate.v0.58、formik、material-ui.v4
+
 - more-slate-editor
   - https://github.com/marsprince/slate-vue
   - https://github.com/uptoo/slate-editor
@@ -449,7 +467,6 @@ modified: 2023-02-05T19:03:12.723Z
   - https://github.com/Canner/canner-slate-editor
   - https://github.com/chatterbugapp/chatterslate
   - https://github.com/nossas/slate-editor
-  - https://github.com/nareshbhatia/react-force/tree/master/packages/slate-editor
 
 - https://github.com/naufaldi/slate-js-editor
   - Framer Motion, NextJS and Chakra UI
@@ -480,7 +497,7 @@ modified: 2023-02-05T19:03:12.723Z
   - slate.v0.37源码解读
   - https://github.com/kanweiwei/easy-editor
 # slate-plugins
-- https://github.com/imdbsd/slate-plugin
+- https://github.com/imdbsd/slate-plugin /202106/ts/inactive
   - Rich text editor plugin for slate.js
 
 ## markdown
@@ -566,6 +583,24 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/shrutikachawla/slateTables /js
   - 依赖material-ui.v4、antd
+
+## image/file-upload
+
+- test-image
+  - [baidu logo](https://www.baidu.com/img/bd_logo1.png)
+
+- [How to customise Slate js — Part 2 (adding Image upload functionality)](https://sushilkbansal.medium.com/how-to-customise-slate-js-part-2-adding-image-upload-functionality-3320a7260966)
+  - [SlateImage.tsx](https://gist.github.com/sushilbansal/10243ac4592a93a9289ae9430ad23544)
+  - 基于 FileReader readAsDataURL
+
+- https://github.com/petelc/SlateEditorWithImages
+  - 只支持添加url，不支持选择本地文件
+
+- https://github.com/jasjeev4/slate-images
+  - This is a version of the slate rich text editor with the ability to add images added in
+  - [SlateJS: Adding Images and Links - DEV Community](https://dev.to/koralarts/slatejs-adding-images-and-links-2g93)
+  - 依赖django
+  - https://github.com/reillymcbride/react_work
 
 ## plugins
 

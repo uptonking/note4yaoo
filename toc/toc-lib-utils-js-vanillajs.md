@@ -74,9 +74,60 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/bestiejs/benchmark.js
   - A robust benchmarking library that supports high-resolution timers & returns statistically significant results. 
   - As used on jsPerf.com.
+
+- https://github.com/zandaqo/structurae
+  - A collection of data structures for high-performance JavaScript applications 
+  - simple binary protocol based on DataView and defined with JSONSchema
+  - making web apps using an objects backed by TypedArrays for much less memory allocation.
+
+- https://github.com/aykutkardas/regexlearn.com
+  - https://regexlearn.com/zh-cn
+  - 学习正则比您想象的要容易得多，您可以使用本工具轻松学习、练习、测试和分享正则表达式。
 # lang-nodejs
 - https://github.com/RafaelGSS/nodejs-bench-operations
   - This repository provides benchmarks for basic operations to aid in determining a high-performance solution.
+
+- https://github.com/niksy/node-stdlib-browser
+  - Node standard library for browser.
+  - Based on `node-libs-browser` for Webpack
+  - Works with Webpack, Rollup, Vite, esbuild and Browserify, but should also work with other bundlers
+
+- https://github.com/guest271314/native-messaging-nodejs
+  - Node.js Native Messaging host
+- https://github.com/browserext/native-messaging
+  - Native Messaging for Browser Extensions Specification
+# browser-emulator
+- https://github.com/jvilk/BrowserFS
+  - an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
+
+- https://github.com/humphd/browser-shell
+  - A Linux command-line shell in the browser
+  - A Linux shell in the browser via forked v86, with bi-directional POSIX filesystem (via Filer) shared over Plan 9 resource sharing.
+  - The Filer filesystem in the browser is mounted in the Linux VM at /mnt.
+
+- browsix /3.1kStar/MIT/201904/ts/inactive
+  - https://github.com/plasma-umass/browsix
+  - Browsix is a Unix-like operating system for the browser.
+  - outdated. requires node 6 (latest is node 19)
+  - Browsix uses `BrowserFS` for its filesystem
+  - Browsix makes core Unix features available to web applications (including pipes, processes, signals, sockets, and a shared file system) and extends JavaScript runtimes for C, C++, Go, and Node.js programs so they can run in a Unix-like environment within the browser. 
+  - Browsix also provides a POSIX-like shell that makes it easy to compose applications together for parallel data processing via pipes.
+  - Browsix enables you to compose the in-browser part of your web applications out of processes. 
+    - This process model is implemented on top of existing browser APIs, like web workers, so it works in all modern browsers.
+  - forks
+    - https://github.com/milahu/browsix
+    - https://github.com/SamGinzburg/browsix
+
+- https://github.com/intigos/possimpible
+  - A (UNIX|Plan9) Kernel for the browser written in TypeScript
+
+- https://github.com/niksy/node-stdlib-browser
+  - Node standard library for browser.
+  - Based on `node-libs-browser` for Webpack
+  - Works with Webpack, Rollup, Vite, esbuild and Browserify, but should also work with other bundlers
+# localStorage
+- https://github.com/aykutkardas/lookie
+  - Store your data in localStorage with optional expiration time.
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

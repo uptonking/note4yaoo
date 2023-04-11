@@ -12,7 +12,11 @@ modified: 2023-04-04T22:39:45.442Z
 # popular
 
 # image-upload
-
+- https://github.com/charlzyx/rush
+  - 图片压缩 & 直传图床工具
+  - 拖拽批量压缩图片, 支持格式 jpg/png/gif
+  - 拖拽批量上传图片到对象存储, 并默认开启图片压缩
+  - 支持 阿里云 OSS、 腾讯云 COS、 七牛云 Qiniu、 Github
 # images-utils
 - https://github.com/TonySpegel/image-comparison /lit
   - Compare two images using a slider, an overlay, or a side by side split view.

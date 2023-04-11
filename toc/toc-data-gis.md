@@ -7,8 +7,11 @@ modified: 2021-01-04T16:20:47.941Z
 
 # toc-data-gis
 
-# popular
+# guide
 
+- Spatial Data sources Notion Pages
+  - https://vlckel.notion.site/vlckel/a360dea317234868a0f7cfb1ef249843
+# popular
 - https://github.com/giswqs/geospatial-data-catalogs
   - open geospatial datasets available on AWS, Earth Engine, Planetary Computer, NASA CMR, and STAC Index
 

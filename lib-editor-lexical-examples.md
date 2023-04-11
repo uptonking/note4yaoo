@@ -29,6 +29,12 @@ modified: 2022-05-15T18:37:27.994Z
   - Webstudio Designer is a NoCode Visual Tool inspired by Webflow
   - block块级元素不支持拖拽
   - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
+
+- https://github.com/juliankrispel/lexical-workshop-playground
+  - Getting started with lexical by jumping in the deep end
+
+- https://github.com/juliankrispel/lexical-react-boilerplate
+  - Boilerplate for lexical editor projects
 # examples
 - https://github.com/konstantinmuenster/lexical-rich-text-react-demo  
   - [How To Build A Text Editor With Lexical and React](https://konstantin.digital/blog/how-to-build-a-text-editor-with-lexical-and-react)

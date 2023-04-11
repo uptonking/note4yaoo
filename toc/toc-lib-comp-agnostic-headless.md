@@ -95,6 +95,10 @@ modified: 2021-04-11T06:17:51.318Z
   - https://reakit.io/
   - Toolkit for building accessible rich web apps with React.
 
+- downshift /11.2kStar/MIT/202301/js/paypal
+  - https://github.com/downshift-js/downshift
+  - A set of primitives to build simple, flexible, WAI-ARIA compliant React autocomplete, combobox or select dropdown components.
+
 - renderlesskit-react/AdaptUI /197Star/MIT/202207/ts
   - https://github.com/adaptui/react
   - https://github.com/timelessco/renderlesskit-react
@@ -123,10 +127,6 @@ modified: 2021-04-11T06:17:51.318Z
     - https://ebay.github.io/skin/
     - Pure CSS framework designed & developed by eBay
 # ui-primitives
-- downshift /11.2kStar/MIT/202301/js/paypal
-  - https://github.com/downshift-js/downshift
-  - A set of primitives to build simple, flexible, WAI-ARIA compliant React autocomplete, combobox or select dropdown components.
-
 - webrix /399Star/Apache2/202210/js
   - https://github.com/open-amdocs/webrix
   - https://webrix.amdocs.com/

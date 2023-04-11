@@ -68,8 +68,10 @@ modified: 2021-07-27T15:12:39.959Z
 - https://github.com/shredx/editor-vanillsjs
   - Editor completely made in Vanillajs. 
   - We are using plugin architecture.
-# markdown-editor
 
+- https://github.com/juliankrispel/zettel
+  - Javascript framework for writing rich text applications
+# markdown-editor
 - https://github.com/youking-lib/marktion
   - https://editor.marktion.io/
   - 可切换阅读和文本，阅读模式可编辑
@@ -84,6 +86,10 @@ modified: 2021-07-27T15:12:39.959Z
   - It is built on Draft.js, ReactiveX (RxJS) and MobX.
   - Most features are currently not implemented; the main purpose of this demo currently is to show how pagination can be achieved in a web-based word processor. 
 # editor-utils
+- https://github.com/juliankrispel/react-text-selection-popover
+  - https://juliankrispel.github.io/react-text-selection-popover
+  - A react component that lets you render a popover in relation to the current text selection.
+
 - https://github.com/ktsn/selective-undo-text
   - https://codepen.io/ktsn/pen/qZxdaY
   - A Selective Undo library for text editing

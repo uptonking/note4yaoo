@@ -13,8 +13,8 @@ modified: 2023-02-05T19:03:12.721Z
 # roadmap
 
 
-- ## [Roadmap · udecode plate · Discussion](https://github.com/udecode/plate/discussions/137)
-- 
+- ## [Roadmap_202005](https://github.com/udecode/plate/discussions/137)
+- slate-yjs
 - 
 - 
 - 

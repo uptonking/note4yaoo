@@ -9,6 +9,15 @@ modified: 2023-03-27T11:59:53.482Z
 
 # guide
 
+- 官方提供了很多示例
+  - popover
+  - tooltip
+  - dialog
+  - dropdown-menu
+  - context-menu
+  - select/macos-select/virtualized-select
+  - autocomplete/combobox
+  - emoji-picker
 # popular
 - popper.js/floating-ui /15.4kStar/MIT/202007
   - https://github.com/floating-ui/floating-ui

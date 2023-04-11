@@ -47,6 +47,9 @@ modified: 2022-08-13T06:59:54.741Z
   - By default SSR is enabled for the first SPA and disabled for the second SPA.
   - On the contrary to popular belief that SEO requires SSR, this solution innovatively demonstrates how to get all SPA pages indexed by Google and specific
 
+- https://github.com/horacioh/multi-tenancy-react-example
+  - Multi tenant architecture example
+
 - async-labs/saas /3.2kStar/MIT/202209/ts
   - https://github.com/async-labs/saas
   - https://saas-app.async-await.com/

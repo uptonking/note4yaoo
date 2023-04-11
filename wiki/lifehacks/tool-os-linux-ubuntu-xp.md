@@ -74,3 +74,10 @@ modified: 2021-01-01T22:26:57.773Z
       - Shutdown the device after a specific time.
     - Impatience
       - Speed up the gnome-shell animation speed
+# Wayland
+- [Boycott Wayland. It breaks everything!](https://gist.github.com/probonopd/9feb7c20257af5dd915e3a9f2d1f2277)
+  - Wayland does not work properly on NVidia hardware?
+  - Wayland breaks screen recording applications
+  - Wayland breaks screen sharing applications
+  - Wayland breaks AppImages that don't ship a special Wayland Qt plugin
+  - Wayland prevents GUI applications from running as root

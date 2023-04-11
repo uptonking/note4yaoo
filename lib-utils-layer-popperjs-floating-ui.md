@@ -14,6 +14,16 @@ modified: 2022-06-04T00:44:40.955Z
   - 浮层元素anchored to reference element
 
 - resources
+
+- 官方提供了很多示例
+  - popover
+  - tooltip
+  - dialog
+  - dropdown-menu
+  - context-menu
+  - select/macos-select/virtualized-select
+  - autocomplete/combobox
+  - emoji-picker
 # blogs
 
 ## [Everything I Know About Positioning Poppers (Tooltips, Popovers, Dropdowns) in UIs by popperjs-author_202004](https://dev.to/atomiks/everything-i-know-about-positioning-poppers-tooltips-popovers-dropdowns-in-uis-3nkl)

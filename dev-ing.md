@@ -165,20 +165,25 @@ $$('[contenteditable]')
   - unit-tests
     - test in firefox
   - toolbar
-    - 当前 block type 指示与转换
     - 工具条按钮处理跨选区的情况
+    - [x] 当前 block type 指示与转换
     - [x] 点击按钮时保存选区，逻辑+视觉
     - [x] 高亮当前光标对应的格式按钮
     - [x] 字体大小、颜色
     - [x] 按钮按功能分组
+  - image
+    - upload by filePicker
+    - upload by drag-drop
+    - paste
   - scss to linaria
   - table to tanstack
     - 优化model
-  - image
-    - upload
   - list
     - rename todoList to checkboxList
-  - keyboard shortcuts
+  - callout 高亮块
+  - keyboard-shortcuts
+  - copy-paste
+    - images
   - 去掉依赖
     - plate-serializer
     - zustand
@@ -188,10 +193,17 @@ $$('[contenteditable]')
     - iframe
     - notion
     - apitable
+  - formats
+    - 清除格式
+  - link
+    - 粘贴图片url时提示显示为图片
   - 高亮块
   - 格式刷
   - 斜杠菜单
   - resume with noseditor
+  - editor-features-playground
+    - rewrite lexical for slate
+    - with devtools
 
 - dev-to-collab
   - 🐷 每次刷新页面，空白行会多一行
@@ -220,6 +232,17 @@ $$('[contenteditable]')
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
 # dev-04
+
+## 041
+
+## 0411
+
+- [linux shell: The Set Builtin (Bash Reference Manual)](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html)
+  - The `set` command is a shell builtin command that is used to set and unset a value of the local variables in shell.
+  - set -e
+    - Exit immediately if a pipeline, which may consist of a single simple command, a list (see Lists of Commands), or a compound command returns a non-zero status.
+  - set -x
+    - Print a trace of simple commands, for commands, case commands, select commands, and arithmetic for commands and their arguments or associated word lists after they are expanded and before they are executed.
 
 ## 0410
 
@@ -502,7 +525,7 @@ interface TabbedViewProps {
 }
 ```
 
-- [Why don't <button> HTML elements have a CSS cursor pointer by default? - User Experience Stack Exchange](https://ux.stackexchange.com/questions/105024/why-dont-button-html-elements-have-a-css-cursor-pointer-by-default)
+- [Why don't `<button>` HTML elements have a CSS cursor pointer by default? - User Experience Stack Exchange](https://ux.stackexchange.com/questions/105024/why-dont-button-html-elements-have-a-css-cursor-pointer-by-default)
   - 👉🏻 W3C User Interface guidelines says the same thing again with “The cursor is a pointer that indicates a link”.
   - Apple’s Human Interface Guidelines states that the hand cursor should be used when “the content is a URL link”.
 
@@ -1093,7 +1116,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                                                                                               `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个 script标签类型为 module 时,                                                                                                                                                                                                       `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

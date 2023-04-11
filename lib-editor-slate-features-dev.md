@@ -9,6 +9,7 @@ modified: 2023-03-16T16:29:47.610Z
 
 # guide
 - 编辑器较通用的功能
+  - editor-features-playground: rewrite lexical for slate, with devtools
   - 复制、粘贴
   - 导入、导出
   - 兼容word、excel
@@ -114,5 +115,8 @@ modified: 2023-03-16T16:29:47.610Z
 
 # mention
 
+# variables
+- refs
+  - [TURO, a calculator notepad](https://www.turo.io/)
 # more
 - 搜索时能够搜索emoji

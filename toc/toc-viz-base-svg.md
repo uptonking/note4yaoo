@@ -28,6 +28,13 @@ modified: 2020-10-05T06:18:21.639Z
 
 - https://github.com/yisibl/resvg-js
   - high-performance SVG renderer and toolkit, powered by Rust based resvg and napi-rs.
+
+- https://github.com/aykutkardas/react-icomoon
+  - It makes it very simple to use SVG icons in your React and React-Native projects.
+  - You can use svgps.app to access over 40, 000 free icons and convert your own icons into selection.json.
+  - https://github.com/aykutkardas/svgps
+    - https://svgps.app/
+    - SVGPS removes the burden of working with a cluster of SVG files by converting your icons into a single JSON file. You can easily use this file in your frontend or mobile projects.
 # svg-animation
 - https://github.com/veltman/flubber
   - /5.5kStar/MIT/201910/js

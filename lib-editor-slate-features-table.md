@@ -15,6 +15,25 @@ modified: 2023-02-27T19:07:31.111Z
 
 - 将选区变化的逻辑移出react
   - 选区逻辑本身就在slate，只是视图层需要显示单元格选区，似乎无法将单元格选区加入editor.selection
+
+- server
+  - nodebox in browser
+# slate-image
+
+## image-upload
+
+- 图片src为 http url
+  - notion
+
+- 图片src为 data:image/png; base64, encodedData
+  - prosemirror
+  - lexical
+  - 飞书
+  - msoffice
+
+- 图片src其他
+  - blob url
+  - google-docs 图片直接渲染在canvas之上
 # slate-table
 - basics
   - [x] 方向键能准确移动光标

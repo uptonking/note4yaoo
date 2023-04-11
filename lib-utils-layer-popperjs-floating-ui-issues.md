@@ -17,6 +17,8 @@ modified: 2022-06-04T00:44:57.658Z
 
 # issues-stars
 
+## [Using safePolygon in useHover handleClose prevents clicks on outside elements from working](https://github.com/floating-ui/floating-ui/issues/1807)
+
 ## [Allow positioning against a Range](https://github.com/floating-ui/floating-ui/issues/1168)
 
 - Why can't you use a `VirtualElement` instead? I do that with Slate and it works wonderfully.
