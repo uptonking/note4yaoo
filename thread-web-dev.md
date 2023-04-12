@@ -33,7 +33,34 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
-- ## 
+- ## Two types of issues I've seen in every web app I ever needed to work on: timezones and scrollbars. I dread them both equally.
+- https://twitter.com/TkDodo/status/1645859388014448661
+
+- Timezones I often feel pretty comfy with storing UTC in the db and then date-fns-tz based on other needs. 
+  - It *does* suck if I need to store timezone separately, as for some reason storing timezones is just not done very often, but still.
+
+- Timezones are kinda simple, 
+  - On server: store everything and do all date calcs on UTC, return those dates as ISO strings to the front end.
+  - On frontend: use date-fns and initialize the timezone according to the users timezone, show format the dates given that timezone. Voiala! 
+- Agree. We did the same on the last project I’ve worked on
+- What’s your plan for avoiding the flash of unstyled content before the date renders client side?
+
+- Internationalization on top of per-user timezones. It's an abyss fractal of pain.
+
+- 4 facets to the timezone challenge.
+  - The domain itself.
+  - People who think libs solve the problems (they don't do much these days...)
+  - Engineers who don't understand them.
+  - PMs who don't understand them.
+- Fighting with people about it is harder than fighting the domain.
+
+- I just refuse to modify scrollbars; leave user's workspace alone!
+  - it's more about double scrollbars, or even triple scrollbars 
+
+- Getting the scroll bar of a virtualised table (just a bunch of divs) to work consistent between all browsers is the stuff nightmares are made of
+
+- I usually use the ScrollArea component from @radix_ui instead of the built-in scrollbars. 
+  - It offers cross-platform styling + other niceties.
 
 - ## sunday webdev challenge: can you think of a way to test network connectivity that *does not* print an error to dev tools?
 - https://twitter.com/aboodman/status/1632071181749862401

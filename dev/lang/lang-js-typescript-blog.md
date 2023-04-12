@@ -11,6 +11,14 @@ modified: 2021-03-22T14:43:44.781Z
 
 # blogs
 
+## [Speeding up the JavaScript ecosystem - npm scripts](https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-4/)
+
+- tl; dr: 'npm scripts' are executed by JavaScript developers and CI systems all around the world all the time. 
+  - Despite their high usage, they are not particularly well optimized and add about 400ms of overhead. 
+  - In this article we were able to bring that down to ~22ms.
+
+- https://twitter.com/marvinhagemeist/status/1637422065157386241
+
 ## [tRPC: TypeScript performance lessons while refactoring for v10_202301](https://trpc.io/blog/typescript-performance-lessons)
 
 - Automating library performance

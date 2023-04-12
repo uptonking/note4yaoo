@@ -14,7 +14,12 @@ modified: 2022-04-05T10:09:51.343Z
 # discuss
 - ## 
 
-- ## 
+- ## GPT-4 as a viable alternative to text CRDTs? 
+- https://twitter.com/geoffreylitt/status/1645961623289438208
+- Yes I think this is promising for async merges!
+  - Probably still want tools to review what it did, but in simple cases like this can just be a ✅
+  - Auto-merging code seems easier than prose since easier to verify...
+- For more synchronous workflows you probably still want something fast and deterministic, but CRDTs are already good at that part; it's these "semantic merges" that are harder
 
 - ## I think it's possible to build a state-based BFT resistant CRDT.
 - https://twitter.com/JungleSilicon/status/1637482087136788480

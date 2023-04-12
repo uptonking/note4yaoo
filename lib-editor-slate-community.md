@@ -13,7 +13,17 @@ modified: 2023-02-05T19:03:12.722Z
 
 - ## 
 
-- ## 
+- ## I love Discord, but I wish it had a better text editor for message input. 
+- https://twitter.com/trueadm/status/1645797085768458240
+  - The amount of times it messes up autocorrect and IME is so frustrating. 
+  - It also often breaks completely when using some complex IME functionality and I'll have to restart the entire shell.
+  - I did some digging into it and it looks like it's because they use Slate. That explains everything.
+  - Ironically, Lexical would fix all these issues and be smaller in code size, have better React 18+ compatibility and have much faster runtime performance. Just saying.
+- I spent a ton of time making Lexical so much better than what there already was. To be fair ProseMirror got a lot right and we learnt a lot from their tricks. I think there ultimately needs to be a new way of doing this on the web as a standard.
+  - Battling web extensions that mutate the DOM directly, to having document.execCommand, to having differences in how different browsers implement `keydown` , `compositionstart` , `input` and `beforeinput` just compels the probem.
+- I'm curious - what does lexical do differently that avoids these issues?
+  - For one, Lexical has its reconciler rather than using React’s. This means that Lexical’s internal editor state is the source of truth, and any external mutations to the DOM get detected and reverted, enforcing this.
+- Lexical is really good. We’re building a bunch of new stuff on top of it at Adobe. 
 
 - ## What was the reason that made you migrate from slate.js to prosemirror?
 - https://twitter.com/Priest748/status/1615524405031100419

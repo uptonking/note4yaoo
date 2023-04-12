@@ -16,7 +16,10 @@ Symbol('a') === Symbol('a'); //false
 # discuss
 - ## 
 
-- ## 
+- ## It might be nice if you could iterate over Sets in JS without going through slow-ass iterators. 
+- https://twitter.com/fabiospampinato/status/1645916795071606786
+  - It'd be even nicer if a Set-like class that worked like that was implementable efficiently within the language.
+- class MySet extends Array and implement add using WeakSet to check for existence.
 
 - ## What are some good / safe options for executing javascript in the browser that has been submitted by users?
 - https://twitter.com/JungleSilicon/status/1633632436948176896

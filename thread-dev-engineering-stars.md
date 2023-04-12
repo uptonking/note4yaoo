@@ -11,9 +11,38 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
+- ## Would be nice if I selectively could make sub dirs of my monorepo public while the overall repo stays private.
+- https://twitter.com/schickling/status/1645729275268538370
+  - Building apps within a monorepo is critical for my workflows however it's usually too much overhead for me to separately factor out (and maintain) library code.
+- The pain is real. I might have to setup git submodules
+- https://github.com/facebook/fbshipit
+  - This is what we used to use at Facebook for shipping parts if the monorepo to GitHub.
+- what you need is josh. i guess we are overdue for another coffee chat…. i use josh + cgit
+- I think this is why Google used SVN (which evolved into an in-house solution)
+- IIRC @marius built a tool for this use case exactly
+  - Grit is a tool to mirror monorepo subtrees to Github
 
-- ## 
+- ## Tech "influencers" posting about how writing tests and submitting PRs is a waste of time.
+- https://twitter.com/aboodman/status/1645859025165365249
+- I hate these kinds of online discussions because nobody can see that they are talking about different things.
+- If you are building a user-visible app (primarily what @t3dotgg does I think) then several things happen:
+  - you want to iterate fast
+  - the main thing that matters is "feel"
+  - it's much harder to test
+  - it's much easier to know (in real time) whether something broke -- yay metrics
+- If you are building libraries, like say React or Replicache or vlcn, then I think it's pretty clear none of these points apply:
+  - pure iteration speed is important but less so
+  - the main thing that matters is correctness and stability
+  - it's much easier to exhaustively unit test
+  - it's much harder to know without tests whether something broke
+- In summary, the real world is complicated, software is used for many different things, and when somebody is successful doing something you *don't* that's a *learning opportunity* not a bad thing.
+
+- Somewhere I saw a video years ago where someone on the uber team said that they don't test, they just launch stuff incrementally and let metrics tell them how it's working.
+  - And at the time that was such a novel idea to me, and so - for lack of a better word - elegant.
+
+- Your product can “make it” with very little testing. But you’ll spend a year being very slow once you hit 150 eng and now no one can move without breaking something
+- For complex frontend apps, especially involving rich text editors, if you dont write tests, you will end up playing whack-a-mole and waste so much more time than if you had just spent a few days on coming up with a good e2e testing abstraction
+  - I dont wanna sound too snarky, and everyone in this thread has more experience than me but damn i saw both ends of this spectrum, and switched camps so fast
 
 - ## 按照我的经验，接受这种烂代码，可以通过几个步骤来改进完善。
 - https://twitter.com/dotey/status/1631325201274220546

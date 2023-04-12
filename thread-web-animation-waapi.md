@@ -13,7 +13,27 @@ modified: 2021-09-22T04:13:22.341Z
 
 - ## 
 
-- ## 
+- ## Did you know @Framer Motion isn't just a React animation library? 
+- https://twitter.com/mattgperry/status/1645797584999682058
+  - I've quietly been building out a subset of APIs that can be used universally, on any page.
+- I love http://motion.dev and just out of curiosity, is there anything that using framer on a vanilla JS @vite project can achieve that can't be done with motion one? Also, is there any possibility that in the feature, both projects will be merged?
+  - It’s more likely Framer Motion will be a superset of Motion One with a filesize that reflects that. The latter will always be limited by WAAPI E.g spring animations, SVG etc
+
+- Would you recommend using Framer motion over http://motion.dev for new non-react projects?
+  - If you’ve not hit any WAAPI-based limitations then no!
+
+- what's the difference between this project and http://motion.dev ?
+  - Less and less as a lot from Motion One has now been absorbed into Framer Motion.
+  - However, Motion One relies fully on WAAPI. It can do less in most ways. As a result its animate() function is 3.8kb (soon 2.5kb).
+  - VS Framer Motion's animate() which is 15.5kb.
+
+- we still need a API to animate SVG attribute changes with Framer. Currently only CSS stuff can be animated (i think)🙂
+  - “Yeah it’s cool that it can be used cross-platform but can it animate the feDisplacementMap scale attribute”
+  - Having said that we do have attrX/Y for this same reason so it’s probably easy enough to extend this to scale too
+  - SVGs animate attributes by default. It’s the conflict with transform names
+
+- I love both framer-motion and motion one, thank you! question on scroll-linked animations — am I right to think using motion one’s API will allow more work to be done up front than passing a MotionValue in to the style prop? then the lib just “scrubs” at run-time?
+- 
 
 - ## Motion One doesn’t have layout animations so no changes need
 - https://twitter.com/mattgperry/status/1623204503003471872

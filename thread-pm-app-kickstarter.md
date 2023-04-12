@@ -73,7 +73,10 @@ modified: 2021-10-29T15:02:28.882Z
 # ideas
 - ## 
 
-- ## 
+- ## 发现一个很不错的标注插件「Glasp」，
+- https://twitter.com/HiTw93/status/1645939789907075079
+  - 可以在 Twitter、Youtube 、各种网页看到的内容标注和注释，并通过 AI 总结，还可同步 Kindle 上标注的内容。
+  - 对于不喜欢做笔记的同学，可以从官网看到大量他人公开标注的好内容，这反而是我觉得这个工具最牛逼的地方。
 
 - ## 聊天，感觉适合小团队的最好的生意是 dbt、vercel（以及未来可能类似 langchain 的托管服务）这种... 
 - https://twitter.com/fleuria__/status/1642823157601140738

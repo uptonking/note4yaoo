@@ -113,5 +113,6 @@ modified: 2020-10-05T06:18:29.671Z
 # webgpu
 - https://gitlab.com/unconed/use.gpu
   - https://usegpu.live/
-  - Use. GPU / Live - react-without-react for WebGPU
+  - Use. GPU is a set of declarative, reactive WebGPU legos. Compose live graphs, layouts, meshes and shaders, on the fly.
+  - It's a stand-alone Typescript+Rust/WASM library with its own React-like run-time.
 # more-repos

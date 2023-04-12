@@ -74,6 +74,17 @@ modified: 2021-01-16T20:24:48.984Z
   - One limitation of markdown to jsx is that it does not have a transform pipeline, limiting the flexibility of the content.
   - Arbitrary HTML is supported and parsed into the appropriate JSX representation without `dangerouslySetInnerHTML`.
   - remarkjs/remark-react and mdx-js/mdx both can have plugins to the parser and transform plugins.
+
+- https://github.com/wooorm/mdxjs-rs
+  - Did you know that mdxjs-rs (Rust™) is 7 times faster than mdx-js/mdx (JavaScript), even from Node.js?!
+  - https://twitter.com/wooorm/status/1645857458982645761
+    - it's basically the same algorithm in JS and in RS.
+    - a lot of the performance win with "rewrite it in rust" is using better algos.
+    - There's been examples where rust/go things were ported to JS and they were just as fast, if I remember correctly esbuild was one. And recently the Vite stuff. I don't have a conclusion yet but it's interesting that the result is so big in this case
+  - https://github.com/web-infra-dev/mdx-rs-binding
+    - This is a Node.js binding for MDX compilation of Modern.js Doc which is a modern documentation tool based on Rspack.
+    - We forked mdxjs-rs, the Rust version of mdx compiler and customize it for Modern.js Doc
+
 - mdx-scoped-runtime
   - https://github.com/karolis-sh/gatsby-mdx/tree/master/packages/mdx-scoped-runtime
   - This is a wrapper around mdx-runtime that strips down the import ... and export default Layout out of the MDX at runtime.

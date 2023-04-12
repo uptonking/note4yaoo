@@ -9,6 +9,11 @@ modified: 2021-01-01T22:26:57.773Z
 
 # guide
 
+# usage
+- 查看各程序网络带宽占用
+  - sudo apt-get install nethogs
+  - sudo nethogs  查看网速
+  - sudo nethogs -v 3   查看消耗总流量
 # gnome-extensions
 - [Tray Icons: Reloaded](https://extensions.gnome.org/extension/2890/tray-icons-reloaded/)
   - https://github.com/MartinPL/Tray-Icons-Reloaded

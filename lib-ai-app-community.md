@@ -12,6 +12,19 @@ modified: 2023-02-08T06:56:54.945Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 其实之前不仅仅关注LLaMA生态的一些开源大模型，国内的一些开源大模型也在关注，这里分享几个最近挺火的LLM。
+- https://twitter.com/xinqiu_bot/status/1645616019103428609
+- https://github.com/THUDM/ChatGLM-6B
+  - 开源的、支持中英双语的对话语言模型，基于 General Language Model (GLM) 架构，具有 62 亿参数。
+  - 结合模型量化技术，用户可以在消费级的显卡上进行本地部署（INT4 量化级别下最低只需 6GB 显存）
+- 除了基于GLM的ChatGLM，另一种基于RNN的ChatRWKV
+
 - ## Is it fair to think of LLMs as a database with a natural language query interface? Where does the database metaphor break?
 - https://twitter.com/dvassallo/status/1644914034905579526
 - The most interesting counter-argument is that LLMs seem to be practically **👀 read only**. There’s only short-term memory (so far), and no insert/update equivalent.

@@ -45,21 +45,6 @@ modified: 2021-07-21T18:07:43.056Z
     - supports tsx/jsx/md/mdx
     - Support including markdown from a file reference in markdown files
 
-- https://github.com/shuding/nextra
-  - 依赖next、nextra-core、react
-  - powerful and flexible site generation framework with everything you love from Next.js.
-  - Any change to example/docs will be re-rendered instantly.
-  - Nextra first collects all your Markdown files and configurations from the pages directory, and then generates the “page map information” of your entire site, to render things such as the navigation bar and sidebar 
-    - By default, the page map contains all .md and .mdx filenames and the directory structure, sorted alphabetically.
-    - You can have an `_meta.json` file in each directory, and it will be used to override the default configuration of each page
-
-- NextBook /168Star/MIT/202206/js/inactive
-  - https://github.com/amiroff/NextBook
-  - https://next-book.vercel.app/
-  - 依赖 next11、next-mdx-remote、react、remark、tailwindcss
-  - 若屏幕很窄，官方文档会显示水平滚动条，此时滚动会有严重的漂移感
-  - easy way to build technical books or documentation with markdown or MDX
-
 - https://github.com/facebook/docusaurus
   - /19.5kStar/MIT/202010
   - 不依赖nextjs
@@ -77,6 +62,21 @@ modified: 2021-07-21T18:07:43.056Z
   - ref
     - https://github.com/ThinkBucket/docsite
 
+- https://github.com/shuding/nextra
+  - 依赖next、nextra-core、react
+  - powerful and flexible site generation framework with everything you love from Next.js.
+  - Any change to example/docs will be re-rendered instantly.
+  - Nextra first collects all your Markdown files and configurations from the pages directory, and then generates the “page map information” of your entire site, to render things such as the navigation bar and sidebar 
+    - By default, the page map contains all .md and .mdx filenames and the directory structure, sorted alphabetically.
+    - You can have an `_meta.json` file in each directory, and it will be used to override the default configuration of each page
+
+- NextBook /168Star/MIT/202206/js/inactive
+  - https://github.com/amiroff/NextBook
+  - https://next-book.vercel.app/
+  - 依赖 next11、next-mdx-remote、react、remark、tailwindcss
+  - 若屏幕很窄，官方文档会显示水平滚动条，此时滚动会有严重的漂移感
+  - easy way to build technical books or documentation with markdown or MDX
+
 - https://github.com/honkit/honkit
   - /1.4kStar/Apache2/202009/gitbook
   - HonKit is building beautiful books using Markdown - Fork of GitBook
@@ -87,8 +87,9 @@ modified: 2021-07-21T18:07:43.056Z
 - https://github.com/ryanlelek/Raneto /202208/js
   - https://docs.raneto.com/
   - Markdown powered Knowledgebase Wiki for Node.js
-  - 比较典型的知识库
-  - Add Raneto to your project via NPM's package.json file 
+  - 比较典型的问答型知识库
+  - Raneto is a "flat file" CMS, meaning no database problems, no MySQL queries, nothing.
+  - Full-text search powered by Lunr
 
 - https://github.com/metalsmith/metalsmith /7.8kStar/MIT/202304/js/代码量少
   - https://metalsmith.io/docs/getting-started
