@@ -9,6 +9,8 @@ modified: 2020-12-01T14:24:22.252Z
 
  
 
+- company retreat
+  - 公司团建
 - low hanging fruit
   - 低处的果子; 低垂的果实; 可轻松实现的目标
 - churn rate

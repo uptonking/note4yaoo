@@ -204,6 +204,11 @@ modified: 2021-08-30T18:56:09.644Z
     - Everything is a JSON file, including the database meta information.
   - is around 500 lines of code and 6.6Kb gzipped.
 # db-non-js
+- https://github.com/pingcap/talent-plan /使用rust实现db
+  - https://tidb.net/talent-plan
+  - Talent Plan 301 课程 TinySQL, 实现一个 Mini 版本的分布式关系型数据库
+  - Talent Plan 302 课程 TinyKV, 实现一个 Mini 版本的分布式 Key-Value 数据库
+
 - https://github.com/unum-cloud/ukv /cpp
   - Modular Transactional NoSQL Database
   - choose either: RocksDB • LevelDB • UDisk • UMem 

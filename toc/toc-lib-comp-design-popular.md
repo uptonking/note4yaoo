@@ -60,6 +60,7 @@ modified: 2020-11-13T07:29:55.201Z
   - https://github.com/microsoft/fluentui
     - https://www.microsoft.com/design/fluent/
     - Fluent is a cross-platform design system to create engaging product experiences — accessibility, internationalization, and performance included. 
+    - The Office UI Fabric React project has evolved to Fluent UI.
     - 组件基于hooks实现
     - 样式全是style object，自定义实现styled高阶组件，动态生成并缓存className
     - This repo is home to 3 separate projects today.

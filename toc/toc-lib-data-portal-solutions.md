@@ -7,8 +7,11 @@ modified: 2021-01-01T16:02:50.598Z
 
 # toc-lib-data-portal-solutions
 
-# popular
+# guide
 
+- resources
+  - [Projects tagged with opendata | Read the Docs](https://readthedocs.org/projects/tags/opendata/)
+# popular
 - CKAN /3.6kStar/AGPLv3/202301/python/js
   - https://github.com/ckan/ckan
   - https://ckan.org/
@@ -24,6 +27,21 @@ modified: 2021-01-01T16:02:50.598Z
   - https://github.com/GetDKAN/dkan
   - An Open Data Catalog built on Drupal 8
   - [Comparing DKAN and CKAN](https://dkan.readthedocs.io/en/latest/introduction/dkan-ckan.html)
+
+- https://github.com/simonw/datasette  /python
+  - https://datasette.io/
+  - https://global-power-plants.datasettes.com/global-power-plants/global-power-plants
+  - 不依赖flask和django
+  - 依赖jinjia2、hupper、pint、pluggy、uvicorn、janus、asgiref、asyncinject
+  - a tool for exploring and publishing data. 
+  - It helps people take data of any shape or size and publish that as an interactive, explorable website and accompanying API.
+  - https://lite.datasette.io/
+    - Datasette Lite is Datasette packaged using WebAssembly so that it runs entirely in your browser, no Python web application server required
+  - [Architecture Notes: Datasette | Hacker News_202205](https://news.ycombinator.com/item?id=31530690)
+    - Building a modern Python app using ASGI
+    - "My breakthrough was the realization that read-only data packaged as a SQLite database could be deployed to inexpensive serverless hosting"
+    - My breakthrough was the realization that any text data packaged as a SQLite database could be deployed to inexpensive serverless hosting. And binary data too
+    - For sites that are running in CKAN using the datastore plugin on CSV/tabular resources, there is essentially a sql endpoint to make queries against that data. There are also automated conversions of that data to csv/json/xml. In my experience though, there's not a lot of activity around those apis -- people tend to just download the data.
 
 - datopian-portal.js /2kStar/MIT/202202/js/inactive
   - https://github.com/datopian/portal.js
@@ -66,12 +84,6 @@ modified: 2021-01-01T16:02:50.598Z
 
 - https://github.com/GeoNode/geonode
   - GeoNode is an open source platform that facilitates the creation, sharing, and collaborative use of geospatial data.
-
-- https://github.com/simonw/datasette  /python
-  - https://global-power-plants.datasettes.com/global-power-plants/global-power-plants
-  - 不依赖flask和django，依赖jinjia
-  - a tool for exploring and publishing data. 
-  - It helps people take data of any shape or size and publish that as an interactive, explorable website and accompanying API.
 # more
 - https://github.com/feup-infolab/dendro /202006/js/inactive
   - "Open-source Dropbox" with added description features. 

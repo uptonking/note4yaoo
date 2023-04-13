@@ -142,7 +142,7 @@ $$('[contenteditable]')
 - why use es6 class
   - 运行时类型检查，instanceof
   - 既包含类型定义，又包含逻辑工具方法
-    - 注意class有时也需要先定义interface再实现，此时ts type也合理了
+    - 注意class有时也采用先定义interface再实现，此时ts type也合理了
     - 但应用层业务代码一般不需要定义单独interface
   - 方便调试，可直接log到对象及方法，函数里面的闭包变量更新难以定位
     - 也可以提前将需要调试的属性或方法添加到闭包暴露的对象上
@@ -152,7 +152,7 @@ $$('[contenteditable]')
 
 - dev-later
   - crdt tutorials
-  - 默认last-write-win, 出现冲突时，提示用户选择版本
+  - 默认 last-write-win, 出现冲突时，提示用户选择版本
   - 腰包掉到床头版与墙的夹缝中了
   - 离屏渲染，keep-alive
   - 分层渲染
@@ -235,6 +235,29 @@ $$('[contenteditable]')
 
 ## 041
 
+## 0413
+
+- [How to allow <input type="file"> to accept only image files? - Stack Overflow](https://stackoverflow.com/questions/3828554/how-to-allow-input-type-file-to-accept-only-image-files)
+
+```HTML
+<input id="imageInput" accept="image/*" onChange="processFile(imageInput)" name="upload-photo" type="file" />
+```
+
+```JS
+processFile(imageInput) {
+  if (imageInput.files[0]) {
+    const file: File = imageInput.files[0];
+    var pattern = /image-*/;
+
+    if (!file.type.match(pattern)) {
+      alert('Invalid format');
+      return;
+    }
+
+    // here you can do whatever you want with your image. Now you are sure that it is an image
+  }
+}
+```
 ## 0412
 
 - [open the file upload dialogue box onclick the image - Stack Overflow](https://stackoverflow.com/questions/22292410/open-the-file-upload-dialogue-box-onclick-the-image)
@@ -245,6 +268,8 @@ $$('[contenteditable]')
 <!-- 
   On click of for= attribute will automatically focus on "file input" and upload dialog box will open
  -->
+
+<a href="javascript:document.querySelector('input#imgUpload').click()">OR HERE</a>
 ```
 
 ## 0411
@@ -433,7 +458,7 @@ new webpack.DefinePlugin({
 - [javascript - AddEventListener fires automatically upon assignment - Stack Overflow](https://stackoverflow.com/questions/27037272/addeventlistener-fires-automatically-upon-assignment)
   - 💡 非react场景也会出现此问题，document.addEventListener先注册，然后onClick触发的事件才冒泡才这里
   - What is happening is that when you click on your li element, the click is then transmitted to the container, and so on up to the window (the so-called event bubbling), and as you have added a event listener on the document (which is between your li and the window), it is being triggered.
-  - The solution proposed here,  `e.stopPropagation` stops the propagation so that the click on the document is not triggered.
+  - The solution proposed here `e.stopPropagation` stops the propagation so that the click on the document is not triggered.
 
 - [javascript - React document.addEventListener fire immediately - Stack Overflow](https://stackoverflow.com/questions/73604156/react-document-addeventlistener-fire-immediately)
   - You're handling a `SyntheticEvent` with your onClick handler and adding a native event listener at the `document` level. Adding the listener will complete before the event bubbles up to the top therefore you also see it execute for the original event.
@@ -1128,7 +1153,7 @@ new Date('1970-01-01').getTime() // 0
 - 从上面实例化的过程可以看出，ESM使用实时绑定的模式，导出和导入的模块都指向相同的内存地址，也就是值引用。而CJS采用的是值拷贝，即所有导出值都是拷贝值。
 
 - vite核心原理
-  - 当声明一个 script标签类型为 module 时,                                                                                                                                                                                                        `<script type="module" src="/src/main.js"></script>`; 
+  - 当声明一个script标签类型为 module 时 `<script type="module" src="/src/main.js"></script>`; 
   - 当浏览器解析资源时，会往当前域名发起一个GET请求main.js文件
   - 请求到了main.js文件，会检测到内部含有import引入的包，又会import 引用发起HTTP请求获取模块的内容文件，如App.vue、vue文件
 - Vite其核心原理是利用浏览器现在已经支持ES6的import, 碰见import就会发送一个HTTP请求去加载文件，

@@ -19,6 +19,8 @@ modified: 2023-02-27T19:07:31.111Z
 - server
   - nodebox in browser
 # slate-image
+- pending
+  - 是否要将`<img />`标签放在`contenteditable=false`的div内
 
 ## image-upload
 

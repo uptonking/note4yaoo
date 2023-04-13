@@ -49,7 +49,7 @@ modified: 2020-12-31T17:05:37.410Z
 
  
 
-``` JS
+```JS
 import { createState, onCleanup } from "solid-js";
 
 const CountingComponent = () => {
@@ -71,9 +71,14 @@ const CountingComponent = () => {
 - https://github.com/jorgebucaran/hyperapp
   - /18.2kStar/MIT/202012/js
   - The tiny framework for building hypertext applications
-
+# rust-web
+- https://github.com/DioxusLabs/dioxus
+  - https://dioxuslabs.com/
+  - Dioxus is a portable, performant, and ergonomic framework for building cross-platform user interfaces in Rust.
+  - React-like GUI library for desktop, web, mobile, TUI, and more.
+  - Desktop apps running natively (no Electron!) in less than 10 lines of code.
+  - First-class async support with coroutines and suspense
 # web-ui-framework
-
 - https://github.com/luwes/sinuous
   - /710Star/MIT/202010/js
   - no compile step needed, choose your view syntax.
@@ -97,8 +102,6 @@ const CountingComponent = () => {
   - Marko extends the HTML language to allow building modern applications in a declarative way.
   - Among these extensions are conditionals, lists, state, and components
 
-
-
 - https://github.com/flowxjs/typeclient
   - https://flowxjs.github.io/TypeClient/
   - 在后端开发的模型中，多个client应对单个server的模型给了我们很大灵感。
@@ -107,9 +110,7 @@ const CountingComponent = () => {
   - 为了将请求处理逻辑解偶，我们采用了AOP和iOC理念来作为这个架构的基础设计，在代码层面上可以实现几乎类似JAVA注解的模式。
     - 再加上将前端各大框架作为渲染引擎，一个完整的架构设计就出来了。
   - 采用了第三方开源的架构inversify实现ioc
-
 # more-web-framework
-
 - https://github.com/gimenete/ui-state-sync
   - DIY modern JavaScript framework based on Virtual DOM
 - https://github.com/corpusculejs/corpuscule

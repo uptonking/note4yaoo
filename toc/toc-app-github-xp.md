@@ -184,18 +184,6 @@ modified: 2023-02-08T10:46:26.912Z
 - https://github.com/octokit/core.js
   - Extendable client for GitHub's REST & GraphQL APIs
   - If you don't need the Plugin API then using @octokit/request or @octokit/graphql directly is a good alternative.
-# github-apps
-- https://githubwrapped.tech/
-  - take a look at all the contributions you as an individual made to the open-source community
-
-- https://copilot.github.com/
-  - With GitHub Copilot, get suggestions for whole lines or entire functions right inside your editor.
-  - https://twitter.com/fabiospampinato/status/1409956406745255936
-  - Autopilot seems cool but:
-    - Most of the time is spent thinking not typing.
-    - Autocomplete is predictable, Autopilot much less so.
-    - Spotting issues is IMO harder when reading code than when writing it.
-    - You want perfect code, not code that the average dev would write.
 # github-browser-extensions
 - https://github.com/octokit/octokit.js
   - The all-batteries-included GitHub SDK for Browsers, Node.js, and Deno.

@@ -22,6 +22,12 @@ modified: 2023-02-08T10:25:14.173Z
   - Backend built with Kotlin.
   - H2 file-based database
 
+- https://github.com/mockoon/mockoon /ts
+  - Mockoon is the easiest and quickest way to run mock APIs locally. 
+  - No remote deployment, no account required, open source.
+  - It's a desktop application and a CLI that help you work faster with APIs by mocking them. 
+  - Integrate third-party APIs quicker, improve your integration tests, speed up your development, etc.
+
 - https://github.com/Kong/insomnia /MIT/ts/桌面版
   - https://insomnia.rest/
   - cross-platform API client for GraphQL, REST, WebSockets and gRPC.
@@ -39,7 +45,9 @@ modified: 2023-02-08T10:25:14.173Z
   - Mock Servers: Life-like mock servers from any API Specification Document.
   - Comprehensive API Specification Support: OpenAPI v3.1, OpenAPI v3.0, OpenAPI v2.0 (formerly Swagger) and Postman Collections.
 # api-utils
+
 ## openapi
+
 - https://github.com/drwpow/openapi-typescript
   - Generate TypeScript types from OpenAPI 3 specs
 # more

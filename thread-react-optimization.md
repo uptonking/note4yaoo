@@ -50,3 +50,25 @@ modified: 2021-09-24T06:50:31.330Z
 - 👉🏻️ Change the code so that less code is running on state updates. 
   - There are a lot of strategies I won't dive into here - memoizing, React.memo, restructuring children, creating smaller global stores (eg redux), moving state outside react's purview, etc..
 - 👉🏻️ There are also optimizations around reducing number of React updates. Strategies include throttling and batching (upgrade to React 18 or `unstable_batchedUpdates` )
+
+# discuss-react-components-ui
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I think I will definitely be choosing Mantine over MUI and Chakra while I ponder whether or not to finally join the Tailwind bandwagon or not.
+- https://twitter.com/KevinVanCott/status/1609295587932790786
+- Mantine is pretty new, as it only started in 2021. 
+  - The best way to describe it is that it has the same if not better developer experience as MUI, but it just looks better and more modern. 
+  - Good compact design too. 
+  - Same sx prop with Emotion running under the hood.
+- I've used Material UI for about 4 years now. It is very reliable for sure, but is started to have a dated look for a lot of people.
+  - My problem isn't really with MUI, but more so that Mantine has just really impressed me with its quality. It's built in hooks are great too.
+- I have very positive experience using Mantine after Chakra UI. After building a large product, chakra became very heavy and I couldn't solve certain layout shifts.
+  - Yeah, I've heard that Chakra does not scale well. MUI can get heavy too, especially after installing a handful of third party MUI libraries for specific components.
+- On Joy UI vs. Material UI, our goal is to differentiate on the look & feel and share all the rest to minimize duplication of work. 
+  - We also see Joy UI as a safer ground to try new things, iterate faster than with Material UI.

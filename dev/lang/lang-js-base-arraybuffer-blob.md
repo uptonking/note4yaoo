@@ -11,6 +11,47 @@ modified: 2022-11-23T17:51:08.635Z
 
 # blogs
 
+## [一文带你学会 Blob（含 7 个使用场景）](https://xie.infoq.cn/article/9974df9a229e5c28679c77773)
+
+- Blob（Binary Large Object）表示二进制类型的大对象。在数据库管理系统中，将二进制数据存储为一个单一个体的集合。
+  - Blob 通常是影像、声音或多媒体文件。
+- 在 JavaScript 中 Blob 类型的对象表示不可变的类似文件对象的原始数据。 
+
+- Blob使用场景
+  1. 图片本地预览
+  2. 图片本地预览 + 分片上传
+  3. 图片本地预览 + 分片上传 + 暂停 + 续传
+  4. 从互联网下载数据
+  5. 下载文件
+  6. 图片压缩
+  7. 生成 PDF 文档
+
+- [Blob对象](https://github.com/pfan123/Articles/issues/10)
+  - 在使用 preloadJS处理加载问题时，我们可以绕过其他方式跨域
+  - 隐藏视频源路径
+  - Web Worker 串行加载优化
+  - 使用 createObjectURL(blob) 输出页面，移动端长按保存，转发
+
+- Blob 与 ArrayBuffer 的区别
+- ArrayBuffer 对象用于表示通用的，固定长度的原始二进制数据缓冲区。
+  - 你不能直接操纵 ArrayBuffer 的内容，而是需要创建一个类型化数组对象或 DataView 对象，该对象以特定格式表示缓冲区，并使用该对象读取和写入缓冲区的内容。
+- Blob类型的对象表示不可变的类似文件对象的原始数据。
+  - Blob 表示的不一定是 JavaScript 原生格式的数据。
+  - File 接口基于 Blob，继承了Blob 功能并将其扩展为支持用户系统上的文件。
+
+- Blob对象是不可变的，而 ArrayBuffer 是可以通过 TypedArrays 或 DataView 来操作。
+- 除非你需要使用 ArrayBuffer 提供的写入/编辑的能力，否则 Blob 格式可能是最好的。
+- ArrayBuffer 是存在内存中的，可以直接操作。
+  - 而 Blob 可以位于磁盘、高速缓存内存和其他不可用的位置。
+- 虽然 Blob 可以直接作为参数传递给其他函数，比如 window. URL.createObjectURL()。但是，你可能仍需要 FileReader 之类的 File API 才能与 Blob 一起使用。
+
+- Blob 与 ArrayBuffer 对象之间是可以相互转化的：
+  - 使用 FileReader 的 readAsArrayBuffer() 方法，可以把 Blob 对象转换为 ArrayBuffer 对象；
+  - 使用 Blob 构造函数，如 new Blob([new Uint8Array(data]); ，可以把 ArrayBuffer 对象转换为 Blob 对象。
+
+- Blob URL 和 Data URL 区别
+  - Blob URL 格式如 `blob:域名/uuid` ， Data URL 格式如： `data:[<mediatype>][;base64],<data>`  。
+
 ## [SharedArrayBuffer以及跨域隔离 - 掘金](https://juejin.cn/post/7184319485107503159)
 
 - SharedArrayBuffer 对象用来表示一个通用的、固定长度的原始二进制数据缓冲区，
@@ -47,6 +88,10 @@ modified: 2022-11-23T17:51:08.635Z
   - A collection of data structures for high-performance JavaScript applications 
   - simple binary protocol based on DataView and defined with JSONSchema
   - making web apps using an objects backed by TypedArrays for much less memory allocation.
+
+## more-blogs
+
+- [谈谈JS二进制：File、Blob、FileReader、ArrayBuffer、Base64 - 李昆博客](https://onelk.cn/article/9OQ30JW7QNPY6ER5)
 # discuss
 - ## 
 
