@@ -29,8 +29,16 @@ modified: 2023-01-15T15:56:43.100Z
   - designed to satisfy our needs at Starchive. For example, it still does not virtualize plain, vertical lists or masonry-like grids. Also, it is fully responsive without the option to opt-out.
   - I'd only suggest you to use Virtualform if you are specifically looking for a way to virtualize symmetrical, responsive grids. Otherwise, I'd suggest you to use react-window.
 
+- https://github.com/nomic-ai/deepscatter /ts
+  - Zoomable, animated scatterplots in the browser that scales over a billion points
+  - This is an evolving library for displaying more points than are ordinarily possible over the web.
+    - All data is sent in the Apache Arrow feather format, in a custom quadtree format that makes it possible to **only load data as needed on zoom**.
+    - Most rendering is done in custom layers using WebGL, with a buffer management strategy handled by REGL.
+    - Almost all grammar-of-graphics transforms such are handled on the GPU
+    - It also runs in completely static settings, so you can host a million-point scatterplot over something like Github Pages.
+  - https://twitter.com/benmschmidt/status/1646549908546113537
 
-- https://github.com/NeXTs/Clusterize.js /js
+- https://github.com/NeXTs/Clusterize.js /202301/js
   - https://clusterize.js.org/
   - Tiny vanilla JS plugin to display large data sets easily
   - [Added option for DOM-node-based virtualization](https://github.com/NeXTs/Clusterize.js/pull/150)

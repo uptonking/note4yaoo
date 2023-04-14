@@ -33,6 +33,9 @@ modified: 2023-01-17T19:13:01.845Z
 - https://github.com/Rolands-Laucis/Socio
   - A WebSocket based realtime duplex Front-End and Back-End syncing API paradigm framework
 
+- https://github.com/peers/peerjs /202303/ts
+  - PeerJS provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams.
+
 - https://github.com/ar-nelson/osmosis-js /202103/ts
   - An in-process JSON database with automatic peer-to-peer background synchronization between devices on a local network. Keep your apps in sync without a cloud!
   - 传输层使用jsonrpc

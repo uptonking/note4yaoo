@@ -28,6 +28,16 @@ modified: 2021-10-29T15:06:33.422Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Stripe Issuing 生成的信用卡可以直接过 Stripe 风控。
+- https://twitter.com/Blankwonder/status/1646777481406590978
+  - Cloudflare 的 WARP 可以绕过 Cloudflare 的访问限制。
+  - 又当运动员又当裁判不要太爽
+- 昨天绑了好几次，使用美国节点不行，换了日本节点一次通过，好怪
+
 - ## 昨天听了一个论文洗稿的背后故事。
 - https://twitter.com/lukfan/status/1644535233528856577
   - 很多论文洗稿工具，放进论文之后，自动生成一篇差不太多，但重合度很低的文章。

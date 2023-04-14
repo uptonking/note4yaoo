@@ -201,9 +201,15 @@ modified: 2023-02-06T09:14:40.114Z
 # discuss
 - ## 
 
-- ## 
+- ## [OData adoption rate? : dotnet](https://www.reddit.com/r/dotnet/comments/11eoa6d/odata_adoption_rate/)
 
-- ## 
+- ## 换个角度想想，#GraphQL 好像是双赢。
+- https://twitter.com/lovedebug/status/1646680811402584066
+- 我觉得还挺好维护的，习惯了就好了。
+  - 习惯了 REST ，觉得 GraphQL 约束太多，还要提前定义类型和数据结构。
+  - 习惯了GraphQL，觉得 REST 太随意，不看文档连参数和返回值是什么都不知道。
+  - 只要思维转变了，手上的活只是肌肉记忆而已。
+- 其实 REST 的几个提案也解决了查参数和返回值的问题，比如 odata, HAL 等，可惜开源的后端实现不好找
 
 - ## Which library should I use for fetching data in React?
 - https://twitter.com/shashwatnauti/status/1622901075648061440

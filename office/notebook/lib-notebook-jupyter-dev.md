@@ -33,6 +33,10 @@ modified: 2021-05-17T11:53:13.568Z
   - BeakerX is a collection of JVM kernels and interactive widgets for plotting, tables, autotranslation, and other extensions to Jupyter Notebook and JupyterLab version 1.2.x and 2.x.
   - Version 2.x of BeakerX improves on the original solution architecture by providing independent modules that end-users can install to better tune the platform.
   - The kernel is originally derived from lappsgrid, but has been rewritten in Java and refactored and expanded.
+
+- https://github.com/bloomberg/ipydatagrid
+  - Fast Datagrid widget for the Jupyter Notebook and JupyterLab
+  - [I see some cons using Web Workers like it is done in ipysheet](https://github.com/bloomberg/ipydatagrid/issues/3)
 # docs
 - [Project Jupyter](https://jupyter.org/)
   - Project Jupyter exists to develop open-source software, open-standards, and services for interactive computing across dozens of programming languages.

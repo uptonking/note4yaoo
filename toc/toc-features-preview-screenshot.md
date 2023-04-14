@@ -115,6 +115,15 @@ modified: 2021-01-30T16:05:48.466Z
 
 - https://ray.so/
   - code screenshot
+
+- https://github.com/Idered/chalk.ist
+  - https://chalk.ist/
+  - Create beautiful images of your source code
+
+## screenshot-in-vscode
+
+- https://github.com/kufii/CodeSnap
+  - Take beautiful screenshots of your code in VS Code
 # more
 - https://github.com/antfu/broz
   - A simple, frameless browser for screenshots

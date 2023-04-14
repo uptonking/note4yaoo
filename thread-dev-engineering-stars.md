@@ -11,6 +11,16 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 非核心业务，要尽量用别人的 API, 不要自己累死累活去重新研究和发明轮子。
+- https://twitter.com/Svwang1/status/1646669244158066689
+  - 反过来，自己的核心竞争力，要尽量变成一种类似 API 一样的东西，供更多外人使用，帮自己分摊成本。
+- 应试教育可能会诞生这样的顽固惯性，那就是我所做的一切是为了证明我很厉害，而不是为了轻松快捷高效的出成果捕捉价值，有时甚至还会故意给自己增加难度，这大概是所谓"累赘效应"？
+- 只有一个例外，自己的健康。假如你一直要依赖别人，那怕这个人是专家（甚至一批专家医生），大概率也要失败，尤其在中国. 一般人的想法就是生病找医生，我自己就别费什么心了
+
 - ## Would be nice if I selectively could make sub dirs of my monorepo public while the overall repo stays private.
 - https://twitter.com/schickling/status/1645729275268538370
   - Building apps within a monorepo is critical for my workflows however it's usually too much overhead for me to separately factor out (and maintain) library code.

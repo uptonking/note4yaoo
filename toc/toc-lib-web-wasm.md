@@ -10,7 +10,10 @@ modified: 2020-12-31T15:19:37.542Z
 # js
 
 - https://github.com/TheLartians/modern-wasm-starter
-  - A starter template to easily create WebAssembly packages for npm using type-safe C++ code with automatic declarations. 
+  - A starter template to easily create WebAssembly packages for npm using type-safe C++ code with automatic declarations.
+
+- https://github.com/rustwasm/wasm-bindgen /rust
+  - Facilitating high-level interactions between Wasm modules and JavaScript.
 
 - https://github.com/finos/perspective
   - /3.1kStar/Apache2/202012/js/cpp

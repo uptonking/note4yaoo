@@ -51,6 +51,9 @@ modified: 2021-09-20T09:00:43.564Z
   - 常用组件
   - 经典css
 # 多刷几遍
+
+- [面试底层逻辑整理](https://docs.google.com/document/d/1srnMc_hiOsyH7MuK196vExGGFjLJ0f-NDBih7jPJ2fE/edit)
+
 - [2020年中大厂前端面试总结 高频+超高频](https://github.com/funnycoderstar/blog/issues/156)
 - [两年前端双非二本，科班出身面经分享（已拿阿里，头条，pdd，快手offer）](https://juejin.cn/post/6894101837696204808)
 

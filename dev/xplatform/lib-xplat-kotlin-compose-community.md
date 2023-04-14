@@ -13,7 +13,10 @@ modified: 2021-05-13T07:52:46.653Z
 
 - ## 
 
-- ## 
+- ## Compose for iOS is officially in Alpha!_202304
+- https://twitter.com/JimSproch/status/1646488217519288321
+- Does it render natively on iOS also?
+  - Yes, it is entirely native on iOS.
 
 - ## 如何看待Kotlin 桌面 UI Jetpack Compose for Desktop？
 - https://www.zhihu.com/question/430328747/answers/updated

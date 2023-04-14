@@ -273,6 +273,15 @@ modified: 2020-10-22T10:22:33.292Z
   - Lightweight, interactive planning tool that visualizes a series of tasks using an HTML canvas
 - https://github.com/frappe/gantt
   - https://frappe.io/gantt
+# scatter
+- https://github.com/nomic-ai/deepscatter /ts
+  - Zoomable, animated scatterplots in the browser that scales over a billion points
+  - This is an evolving library for displaying more points than are ordinarily possible over the web.
+    - All data is sent in the Apache Arrow feather format, in a custom quadtree format that makes it possible to only load data as needed on zoom.
+    - Most rendering is done in custom layers using WebGL, with a buffer management strategy handled by REGL.
+    - Almost all grammar-of-graphics transforms such are handled on the GPU
+    - It also runs in completely static settings, so you can host a million-point scatterplot over something like Github Pages.
+  - https://twitter.com/benmschmidt/status/1646549908546113537
 # examples
 - https://github.com/joewalnes/smoothie
   - http://smoothiecharts.org/

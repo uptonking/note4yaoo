@@ -12,7 +12,6 @@ modified: 2021-08-30T18:56:18.632Z
 - ref
   - [wa-sqlite benchmarks](https://rhashimoto.github.io/wa-sqlite/demo/benchmarks.html)
 # popular
-
 - kikko /75Star/MIT/202211/ts
   - https://github.com/kikko-land/kikko
   - https://kikko-doc.netlify.app/
@@ -34,6 +33,17 @@ modified: 2021-08-30T18:56:18.632Z
     - Server also store all the changes and recalculate snapshots on new received changes and send those snapshots back to the client. 
     - Due to we store all the changes at server, it is also planned to add time travel, when CRDT is not what user expect at some cases.
   - [I managed to pause work on it because I don't have enough resources (money/time) to keep working on it_202208](https://twitter.com/quolpr/status/1558852687956951044)
+
+- https://github.com/qwtel/sqlite-viewer-vscode  /ts
+  - https://sqliteviewer.app/
+  - easy SQLite viewer for VSCode, inspired by DB Browser for SQLite and Airtable.
+  - [Next version of SQLite Viewer, handling 3 million rows, 1 GB sqlite file, in a browser.](https://twitter.com/qwtel/status/1639204056622321664)
+    - Memory usage low despite 1GB file, thanks to OPFS and SQLite WASM
+  - [Opening large SQLite files is solved in the (unreleased) web version though.](https://twitter.com/qwtel/status/1644319722178248708)
+    - The limit is now how much the browser permits to write into the Origin Private File System.
+  - I'm surprised the current version of SQLite Viewer keeps getting good reviews in the vsc marketplace. It flat out crashes if you open a large file. I suppose most sqlite files are small.
+    - Unfortunately fixing it would be hard. 
+    - vsc's own `fs` module doesn't let you read with random offsets, and even if it did, it would require writing a custom VFS and juggling buffers across 2-3 layers of iframes and workers.
 
 - sqlime /338Star/MIT/202204/js
   - https://github.com/nalgeon/sqlime
@@ -71,10 +81,6 @@ modified: 2021-08-30T18:56:18.632Z
   - allow working with spreadsheets from SQLite exposing them as virtual tables.
   - XLite is a SQLite extension written in Rust. 
 # sqlite-viewer
-- https://github.com/qwtel/sqlite-viewer-vscode  /ts
-  - https://sqliteviewer.app/
-  - easy SQLite viewer for VSCode, inspired by DB Browser for SQLite and Airtable.
-
 - https://github.com/inukshuk/sqleton
   - Visualizes your SQLite database schema.
 

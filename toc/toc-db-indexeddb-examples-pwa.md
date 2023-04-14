@@ -145,8 +145,10 @@ modified: 2022-11-14T15:12:02.783Z
 - https://github.com/ErKeLost/react-music-pwa
   - react18 + ts + vite4.0 + pwa Music
 # pwa-utils
-- https://github.com/GoogleChrome/workbox  /inactive
+- https://github.com/GoogleChrome/workbox /ts/inactive
   - JavaScript libraries for Progressive Web Apps
+  - Introducing Workbox, a set of modules that simplify common service worker routing and caching.
+  - [Workbox - Chrome Developers](https://developer.chrome.com/docs/workbox/)
 
 - https://github.com/ionic-team/capacitor
   - Build cross-platform Native Progressive Web Apps for iOS, Android, and the Web

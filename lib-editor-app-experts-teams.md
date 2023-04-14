@@ -94,6 +94,16 @@ modified: 2022-08-21T10:16:52.004Z
   - notion
   - https://twitter.com/jitl
 
+- Geoffrey Litt
+  - Peritext
+  - https://www.geoffreylitt.com/
+  - https://github.com/geoffreylitt
+
+- Matthew Weidner 
+  - collabs-crdt
+  - https://github.com/mweidner037
+  - https://mattweidner.com/
+
 - Jacky Zhao
   - https://github.com/jackyzha0/bft-json-crdt
   - https://jzhao.xyz/

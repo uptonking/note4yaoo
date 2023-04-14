@@ -12,11 +12,20 @@ modified: 2023-01-13T10:47:36.755Z
 # discuss
 - ## 
 
-- ## 
+- ## [logseq-webapp, no browser support_202301](https://github.com/logseq/logseq/discussions/8183)
+- I think they are using Linux. The file protocol used by Logseq currently has bad support for browsers or Linux.
+  - The team plans to transition to OPFS in the future. Hopefully that resolves the issue
 
-- ## 
+- ## [Moving local files with the File System Access API](https://github.com/w3ctag/design-reviews/issues/805)
+  - When launching SyncAccessHandles, we launched `FileSystemFileHandle.move()` for files within the Origin Private File System (OPFS). 
+  - Moving of files outside of the OPFS and moving directories at all are not yet supported.
+  - We're proposing to allow the FileSystemFileHandle.move() method to move files that do not live in the Origin Private File System, i.e. user-visible files on the device.
 
-- ## 
+- ## A new RxStorage has been released. rx-storage-opfs
+- https://twitter.com/rxdbjs/status/1646541842584854529
+  - It is based on the #OPFS API and much faster compared to #IndexedDB. 
+  - Atm this is the fastest persistend storage for browsers.
+  - [RxStorage OPFS · RxDB - JavaScript Database](https://rxdb.info/rx-storage-opfs.html)
 
 - ## Do you know what persistence is like in Chrome? 
 - https://twitter.com/tomayac/status/1613605318407094275

@@ -13,16 +13,38 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/EloquentStudio/StreamTable.js /201604/js
   - streams data for tables in the background, updates and renders them using templating frameworks like Mustache.js, HandleBars.js
   - The idea behind StreamTable.js is to initially populate minimum rows (maybe 10 or 20) and after that it streams data silently in the background and update the table.
-
 - https://github.com/EloquentStudio/filter.js /201802/js
   - Complete solution for client side filtering and rendering using JSON data
   - Add data using ajax streaming
 
+
+- https://github.com/jimmywarting/StreamSaver.js /js
+  - the solution to saving streams in the web browser. 
+  - It is perfect for web apps where there's a need to save large amounts of data on devices with e.g. limited RAM.
+  - there is this new native way to save files to the HD:
+    - https://github.com/whatwg/fs
+  - I also built native-file-system-adapter so you can have it in all Browsers, Deno, and NodeJS with different storages
+    - https://github.com/jimmywarting/native-file-system-adapter
+
 - https://github.com/jahewson/node-byline
   - Line-by-line Stream reader for node.js
+
+- https://github.com/finos/regular-table /js/NoDeps
+  - A Javascript library for the browser, regular-table exports a custom element named `<regular-table>`, which renders a regular HTML `<table>` to a sticky position within a scrollable viewport. 
+  - Only visible cells are rendered and queried from a natively async virtual data model, making regular-table ideal for enormous or remote data sets
+  - Use it to build Data Grids, Spreadsheets, Pivot Tables, File Trees
+  - Virtual Data Model
+    - a simple data model, a two dimensional Array
+    - even for very small data sets, regular-table won't read your entire dataset at once. 
+    - Instead, we'll need to write a simple virtual data model to access DATA and COLUMN_NAMES indirectly
+    - With an async data model, it's easy to serve getDataSlice() remotely from node.js or re-implement the JSON response protocol in any language. 
+  - Because of the structure of the HTML `<table>` element,  `<td>` elements must be aligned with their respective row/column, which causes default `<regular-table>` to only be able to scroll in increments of a cell, which can be irregular when column data is of different lengths. 
+  - regular-table is natively compatible with `perspective`, a WebAssembly streaming visualization engine. 
+    - https://github.com/finos/perspective
+
 # stream
 - https://github.com/zoubin/streamify-your-node-program
-  - 对Node.js中 stream模块的学习积累和理解
+  - 对Node.js中stream模块的学习积累和理解
   - https://github.com/jeresig/node-stream-playground
     - created to help Node.js developers better understand how streams work by showing a number of use cases that are easily plug-and-play-able. 
 
@@ -36,14 +58,6 @@ modified: 2023-04-04T22:36:31.529Z
 
 - https://github.com/caolan/highland
   - The high-level streams library for Node.js and the browser. 
-
-- https://github.com/jimmywarting/StreamSaver.js
-  - the solution to saving streams in the web browser. 
-  - It is perfect for web apps where there's a need to save large amounts of data on devices with e.g. limited RAM.
-  - there is this new native way to save files to the HD:
-    - https://github.com/whatwg/fs
-  - I also built native-file-system-adapter so you can have it in all Browsers, Deno, and NodeJS with different storages
-    - https://github.com/jimmywarting/native-file-system-adapter
 
 - https://github.com/maxogden/mississippi
   - the goal of the modules included in mississippi is to make working with streams easy without sacrificing speed, error handling or composability.

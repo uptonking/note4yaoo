@@ -48,6 +48,8 @@ modified: 2022-08-21T10:02:05.129Z
   - 未完成
 - https://github.com/RafaelGB/obsidian-db-folder
   - Obsidian Plugin to Allow Notion like database based on folders
+  - https://github.com/blacksmithgu/datacore
+    - Datacore is a work-in-progress re-imagining of Dataview with a focus on 2-10x better query and rendering performance, as well as fully interactible views.
 
 - https://github.com/linyows/notionate
   - React components that uses the Notion API to display the Notion's database and page.

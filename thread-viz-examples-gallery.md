@@ -11,7 +11,8 @@ modified: 2021-08-16T06:46:26.175Z
 
 - ## 
 
-- ## 
+- ## Read and explore this rich interactive of 20 *million* research articles from PubMed, a project we're releasing today with @ritagonmar and @hippopedoid .
+- https://twitter.com/benmschmidt/status/1646547879748591616
 
 - ## 用 R + rayshader 做了几张中国部分区域的人口密度可视化
 - https://twitter.com/mybeky/status/1620683856830697473

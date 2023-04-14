@@ -10,9 +10,20 @@ modified: 2023-04-05T19:35:14.347Z
 # guide
 
 # popular
+- https://github.com/eligrey/FileSaver.js /js
+  - An HTML5 saveAs() FileSaver implementation
+  - FileSaver.js is the solution to saving files on the client-side, and is perfect for web apps that generates files on the client, 
+  - However if the file is coming from the server we recommend you to first try to use `Content-Disposition` attachment response header as it has more cross-browser compatibility.
 
+- https://github.com/jimmywarting/StreamSaver.js /js
+  - the solution to saving streams in the web browser. 
+  - It is perfect for web apps where there's a need to save large amounts of data on devices with e.g. limited RAM.
+  - This is accomplish by emulating how a server would instruct the browser to save a file using some response header + service worker
+  - there is this new native way to save files to the HD:
+    - https://github.com/whatwg/fs
+  - I also built native-file-system-adapter so you can have it in all Browsers, Deno, and NodeJS with different storages
+    - https://github.com/jimmywarting/native-file-system-adapter
 # file-upload
-
 - https://github.com/johndatserakis/file-upload-with-preview /ts/框架无关
   - Simple file-upload utility that shows a preview of the uploaded image. 
   - Written in TypeScript. No dependencies.

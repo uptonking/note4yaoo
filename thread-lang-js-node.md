@@ -11,9 +11,12 @@ modified: 2022-12-19T01:48:01.974Z
 
 - ## 
 
-- ## 
+- ## Trying Node.js test runner: Gleb Bakhmutov examines capabilities of new built-in test runner that became stable from Node.js v20
+- https://twitter.com/forweb_en/status/1646587007399854081
 
-- ## 
+- ## Node v18 now has compilation of a Node.js script into a single-executable application using `npx postject` .
+- https://twitter.com/karlhorky/status/1646421904205463554
+- Any idea if they fixed Node's `fetch` leaking?g
 
 - ## An experimental API for command-line argument parsing landed in @nodejs v18.3.0 - the `util.parseArgs` method. Very cool 👌 
 - https://twitter.com/simonplend/status/1532304908585779201
@@ -21,8 +24,8 @@ modified: 2022-12-19T01:48:01.974Z
 
 - ## Node.js now has a built-in test runner
 - https://twitter.com/rauschma/status/1516456272215826432
-  -  import test from 'node:test';
-  -  import * as assert from 'assert/strict';
+  -  import test from 'node:test'; 
+  -  import * as assert from 'assert/strict'; 
 
 - ## Node.js: Best way for an app to run itself from the current(!) source on disk?
 - https://twitter.com/rauschma/status/1420839210387394564

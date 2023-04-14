@@ -152,8 +152,7 @@ modified: 2022-11-29T20:41:25.566Z
 - Q: If a sqlite database is normally stored in a file on the file system and browsers don't have file systems, how does sqlite-wasm store the db?
   - A: 😱 local-storage and session-storage, ofc! pretty gnarly limitations: <5mb, strings only, etc
   - 💡 OPFS runs in a worker thread, so it doesn't block the main thread, which allows the UI to be more responsive.
-
-    - opfs只支持worker的api: createSyncAccessHandle(),FileSystemSyncAccessHandle
+  - opfs只支持worker的api: createSyncAccessHandle(), FileSystemSyncAccessHandle
 
 - One important note about sqlite-in-the-browser: the excellent sql.js has been around for years, *but* it only supports *in-memory* changes to sqlite. No persistence. Refresh 
   - While sql.js does support exporting the database as JavaScript-typed array, that's not what I want. I want streaming replication

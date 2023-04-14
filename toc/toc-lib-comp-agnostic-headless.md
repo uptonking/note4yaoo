@@ -94,6 +94,7 @@ modified: 2021-04-11T06:17:51.318Z
   - https://ariakit.org/components/toolbar
   - https://reakit.io/
   - Toolkit for building accessible rich web apps with React.
+  - [Framework-agnostic architecture for examples](https://github.com/ariakit/ariakit/issues/1854)
 
 - downshift /11.2kStar/MIT/202301/js/paypal
   - https://github.com/downshift-js/downshift

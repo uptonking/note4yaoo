@@ -16,7 +16,12 @@ modified: 2022-12-19T01:59:37.634Z
 
 - ## 
 
-- ## 
+- ## [Webworker support · konvajs/react-konva](https://github.com/konvajs/react-konva/issues/474)
+- i dont think react-konva is slow. I am using it to create grids, around 1 million rows x 1 million columns. I find it really fast, comparable to native canvas, with marginal difference.
+- first you need to find where the slowness comes from. From React (it is slow in many cases), from Konva rendering?
+  - 💡 Using a Webworker is not a magic way to solve the performance. It can make the UI more responsive, but rendering itself may be still slow.
+  - For now, I have no idea how we can synchronize react in the main thread with nodes three in the web worker. As I know, there are some attempts to run full react in the Webwork, but it is too complex.
+- The best I could think of is to relocate my state manager in a web worker and all the huge computation in webassembly, and use an offscreen canvas to render from another thread. But this would be in an ideal and deadlineless dev project ...
 
 - ## [为什么web worker可以在前端开多线程，解决单线程卡死页面的问题，但是没有得到广泛使用？ - 知乎](https://www.zhihu.com/question/61125566)
 

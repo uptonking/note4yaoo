@@ -9,6 +9,65 @@ modified: 2023-01-12T10:26:41.060Z
 
 # guide
 
+# opfs-api
+- window.showDirectoryPicker()
+  - displays a directory picker which allows the user to select a directory
+  - This feature is available only in secure contexts (HTTPS), in some or all supporting browsers.
+# blogs
+- [Origin Private File System (OPFS)](https://github.com/web-platform-tests/interop/issues/172)
+  - The OPFS is what powers, among other things, Photoshop on the Web.
+  - [Photoshop's journey to the web_202110](https://web.dev/ps-on-the-web/)
+
+- [The origin private file system - Chrome Developers](https://developer.chrome.com/articles/origin-private-file-system/)
+  - https://glitch.com/edit/#!/sqlite-wasm-opfs
+
+- [Let installed web applications be file handlers - Chrome Developers](https://developer.chrome.com/en/articles/file-handling/)
+# docs
+
+## [File System Access API - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API)
+
+- This API allows interaction with files on a user's local device, or on a user-accessible network file system.
+- Core functionality of this API includes reading files, writing or saving files, and access to directory structure.
+
+- Most of the interaction with files and directories is accomplished through handles. 
+- The handles represent a file or directory on the user's system. 
+  - You can first gain access to them by showing the user a file or directory picker using methods such as `window.showOpenFilePicker()` and `window.showDirectoryPicker()`. 
+  - Once this happens successfully, a handle is returned.
+
+- Objects based on FileSystemHandle can also be serialized into an IndexedDB database instance, or transferred via postMessage().
+
+- The origin private file system (OPFS) is a storage endpoint private to the origin of the page, 
+  - providing optional access to a special kind of file that is highly optimized for performance, 
+  - for example, by offering in-place and exclusive write access to a file's content.
+
+- Storing data in the OPFS is similar to storing data in any other browser-provided storage mechanism that's private to the origin of the page (for example the IndexedDB API).
+
+- 💡 This means that files in the OPFS differ from files selected using a picker in the following ways:
+  - Permission prompts are not required to access files in the OPFS.
+  - Clearing data for the site deletes the OPFS.
+  - The OPFS is subject to browser quota restrictions.
+
+- Files can be manipulated inside the OPFS via a three-step process:
+  - navigator.storage.getDirectory() 
+  - FileSystemDirectoryHandle.getFileHandle()
+  - createSyncAccessHandle()
+
+- `FileSystemSyncAccessHandle` object that can be used to read and write to the file. 
+  - This is a high-performance handle for synchronous read/write operations (the other handle types are asynchronous). 
+  - The synchronous nature of this class brings performance advantages intended for use in contexts where asynchronous operations come with high overhead (for example, WebAssembly). 
+  - Note that it is only usable inside dedicated Web Workers.
+- Writes performed using `FileSystemSyncAccessHandle.write()` are in-place, meaning that changes are written to the actual underlying file at the same time as they are written to the writer. 
+  - This is not the case with other writing mechanisms available in this API (e.g. `FileSystemFileHandle.createWritable()`), where changes are not committed to disk until the writing stream is closed.
+
+- While browsers typically implement this by persisting the contents of the OPFS to disk somewhere, it is not intended that the contents be easily user-accessible.
+  - While the browser might make it seem that there are files, they might be stored in a database or any other data structure. 
+
+- 
+- 
+- 
+- 
+- 
+
 # compatibility
 
 ## [chrome: SQLite Wasm in the browser backed by the Origin Private File System_202301](https://developer.chrome.com/blog/sqlite-wasm-in-the-browser-backed-by-the-origin-private-file-system/)

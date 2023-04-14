@@ -55,7 +55,7 @@ modified: 2021-05-13T16:14:15.415Z
   - PyScript is a framework that allows users to create rich Python applications in the browser using HTML's interface and the power of Pyodide, WASM, and modern web technologies.
 
 - https://github.com/finos/perspective
-  - Streaming pivot visualization via WebAssembly
+  - A data visualization and analytics component, especially well-suited for large and/or streaming datasets.
 # ref
 - [Apache Arrow简介](https://zhuanlan.zhihu.com/p/339132159)
   - 由于历史原因，Snowflake一直使用了JSON作为结果集（ResultSet）的序列化方式，引起了许多问题。

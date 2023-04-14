@@ -54,6 +54,11 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/superman2211/xobj
   - Decoding and encoding JavaScript/TypeScript objects to binary format.
 
+- https://github.com/zandaqo/structurae
+  - A collection of data structures for high-performance JavaScript applications 
+  - simple binary protocol based on DataView and defined with JSONSchema
+  - making web apps using an objects backed by TypedArrays for much less memory allocation.
+
 - https://github.com/rvagg/bl
   - bl is a storage object for collections of Node Buffers, exposing them with the main Buffer readable API. 
   - Also works as a duplex stream so you can collect buffers from a stream that emits them and emit buffers to a stream that consumes them!
@@ -70,15 +75,16 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/krakenjs/zoid
   - Cross domain components
   - Render an iframe or popup on a different domain, and pass down props, including objects and functions
+# lang-typescript
+- https://github.com/remeda/remeda
+  - The first "data-first" and "data-last" utility library designed especially for TypeScript.
+  - Remeda is written and tested in TypeScript and that means there won't be any problems with custom typings.
+  - "data-first" approach is more natural and more programmer friendly for pick/omit
+  - "data-last" approach is helpful when writing data transformations aka pipes.
 # lang-js
 - https://github.com/bestiejs/benchmark.js
   - A robust benchmarking library that supports high-resolution timers & returns statistically significant results. 
   - As used on jsPerf.com.
-
-- https://github.com/zandaqo/structurae
-  - A collection of data structures for high-performance JavaScript applications 
-  - simple binary protocol based on DataView and defined with JSONSchema
-  - making web apps using an objects backed by TypedArrays for much less memory allocation.
 
 - https://github.com/aykutkardas/regexlearn.com
   - https://regexlearn.com/zh-cn
@@ -125,6 +131,10 @@ modified: 2023-04-04T22:35:59.255Z
   - Node standard library for browser.
   - Based on `node-libs-browser` for Webpack
   - Works with Webpack, Rollup, Vite, esbuild and Browserify, but should also work with other bundlers
+
+- https://github.com/DustinBrett/daedalOS
+  - https://dustinbrett.com/
+  - Desktop environment in the browser
 # localStorage
 - https://github.com/aykutkardas/lookie
   - Store your data in localStorage with optional expiration time.

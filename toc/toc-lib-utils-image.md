@@ -10,7 +10,9 @@ modified: 2023-04-04T22:39:45.442Z
 # guide
 
 # popular
-
+- AI 位图转矢量
+  - https://vectorizer.ai/
+    - 利用人工智能将 JPG、PNG 等位图转成矢量 SVG 格式。先用 MidJourney 生成插图，再用这个工具转成矢量略加修改，岂不美哉。
 # image-upload
 - https://github.com/charlzyx/rush
   - 图片压缩 & 直传图床工具

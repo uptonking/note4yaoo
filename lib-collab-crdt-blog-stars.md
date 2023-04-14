@@ -11,6 +11,11 @@ modified: 2023-03-11T15:37:59.134Z
 
 # blogs
 
+## [Designing Data Structures for Collaborative Apps - Matthew Weidner](https://mattweidner.com/2022/02/10/collaborative-data-design.html)
+
+- A good starting point is to design an ordinary (non-CRDT) data model, using ordinary objects, collections, etc., then convert it to a CRDT version. 
+  - So variables become Registers, objects become CRDT Objects, lists become List CRDTs, sets become Unique Sets or Add-Wins Sets, etc
+
 ## [A comprehensive study of Convergent and Commutative CRDT_201101](https://www.researchgate.net/publication/50949847_A_comprehensive_study_of_Convergent_and_Commutative_Replicated_Data_Types)
 
 - Sets constitute one of the most basic data structures. 

@@ -46,6 +46,17 @@ modified: 2022-11-07T11:00:28.824Z
 # discuss
 - ## 
 
+- ## 这几天，我读到三篇文章，全部是工程师后悔使用了新技术。
+- https://twitter.com/ruanyf/status/1646693011269758979
+  - 为什么我们放弃Elm 
+  - GraphQL：从兴奋到幻灭 
+  - 为什么我后悔使用ionic
+- 时刻记住没有银弹，一个新的技术诞生，往往是会侧重解决一部分问题，而不是全部问题。技术选型也要保持理性，认真分析技术能解决的业务问题，和技术带来的挑战。当然，一个好的新技术生态，也是会不停拓展自己的能力边界。
+- 最近怎么都是吐槽graphql的？我们刚刚花了好大力气升到了spring boot 2.7就是为了用它啊
+- 我最近有个flag以后要密切关注后果… discord因为厌恶jvm迁移到了一个Cassandra的cpp版本，并且用rust撸了一套data service…
+- ionic 之前和 angular2+ 绑定的时候很好用，组件也很丰富，后面要做大做强反而越来越难用了。
+- 吐槽graphql的文章里面，几乎都没讲到点子上。😅特别是讲 Graphql 没法在 chrome里面区分请求，我tm就绷不住了。明显是连Graphql Network extension都没用过。 他咋不说 redux state 在Chrome里面没法debug. 难绷
+
 - ## 就我经历而言，小公司比大厂有什么优势？
 - https://twitter.com/JourneymanChina/status/1642760461195284481
 1. 一专多能:  

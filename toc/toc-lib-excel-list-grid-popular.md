@@ -26,6 +26,31 @@ modified: 2022-08-21T10:02:27.788Z
   - glide-data-grid: react组件
   - x-spreadsheet: class类和函数式都有
   - cheetah-grid(ts): 基于class类继承
+
+## async/concurrency/worker
+
+- https://github.com/Magnithor/CanvasTable /202201/ts/inactive
+  - https://magni.strumpur.net/CanvasTable/
+  - Typescript library who draws a table on canvas
+  - If you like to use offscreenCanvas and/or keep the data in webworker then you use mthb-offscreen-canvas-table on main javascript and mthb-offscreen-canvas-table-worker in weworker they will work to geather
+
+- https://github.com/finos/regular-table /js/NoDeps
+  - A Javascript library for the browser, regular-table exports a custom element named `<regular-table>`, which renders a regular HTML `<table>` to a sticky position within a scrollable viewport. 
+  - Only visible cells are rendered and queried from a natively async virtual data model, making regular-table ideal for enormous or remote data sets
+  - Use it to build Data Grids, Spreadsheets, Pivot Tables, File Trees
+  - Virtual Data Model
+    - a simple data model, a two dimensional Array
+    - even for very small data sets, regular-table won't read your entire dataset at once. 
+    - Instead, we'll need to write a simple virtual data model to access DATA and COLUMN_NAMES indirectly
+    - With an async data model, it's easy to serve getDataSlice() remotely from node.js or re-implement the JSON response protocol in any language. 
+  - Because of the structure of the HTML `<table>` element,  `<td>` elements must be aligned with their respective row/column, which causes default `<regular-table>` to only be able to scroll in increments of a cell, which can be irregular when column data is of different lengths. 
+  - regular-table is natively compatible with `perspective`, a WebAssembly streaming visualization engine. 
+    - https://github.com/finos/perspective
+
+- https://github.com/blackfisk-tech/vstx-data-table /201904/vue/inactive
+  - A data table component for the Vue Stacks Ecosystem
+  - VSTX Data Table is a powerful data grid component plugin (Vue.js 2.4+) for displaying, sorting, searching, filtering, and interacting with large and deeply nested data set
+  - (Optional) Web Worker support for Filtering, Sorting, and Slicing data
 # list-grid-with-div
 - ag-grid /MIT/6.4kStar/202202/ts/NoDeps
   - https://github.com/ag-grid/ag-grid
@@ -35,6 +60,8 @@ modified: 2022-08-21T10:02:27.788Z
     - has no 3rd party dependencies
     - integrates smoothly with all major JavaScript frameworks
   - ag-grid-enterprise is Commercial licensed but opensourced
+  - [Why is the minified bundle so large?](https://github.com/ag-grid/ag-grid/issues/1459)
+    - Main reason IMO: the grids has no dependencies
 
 - tanstack-table /MIT/11.6kStar/202202/ts
   - https://github.com/tannerlinsley/react-table

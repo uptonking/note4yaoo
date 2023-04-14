@@ -14,7 +14,6 @@ modified: 2022-04-05T10:08:25.947Z
   - [CRDTs for Non Academics - YouTube](https://www.youtube.com/watch?v=vBU70EjwGfw)
   - https://github.com/doodlewind/crdt-and-local-first
 # popular
-
 - https://github.com/pubuzhixing8/awesome-collaboration
   - Collaborative editing of technical resources, article translation
   - [OT 与 CRDT 的Battle，堪称神仙打架](https://github.com/pubuzhixing8/awesome-collaboration/blob/master/fairy-fight/collaborative-editing.md)
@@ -51,6 +50,14 @@ modified: 2022-04-05T10:08:25.947Z
     - The `SharedString` DDS is tailor-made for this scenario.
   - [Microsoft introduces Loop: A new collaboration tool built on Fluid Framework_202111](https://www.zdnet.com/article/microsoft-introduces-loop-a-new-collaboration-tool-built-on-fluid-framework/)
 
+- harika-note /111Star/AGPLv3/202208/ts
+  - https://github.com/quolpr/harika
+  - Harika is an offline-first, performance-focused note taking app for organizing your knowledge database.
+  - Synchronization with server. It's done with LWW CRDT per field on top of SQLite. 
+    - It also stores all changes locally and sends them to server. 
+    - Server also store all the changes and recalculate snapshots on new received changes and send those snapshots back to the client. 
+    - Due to we store all the changes at server, it is also planned to add time travel, when CRDT is not what user expect at some cases.
+
 - xi-editor /19.7kStar/apache2/202206/rust
   - https://github.com/xi-editor/xi-editor
   - https://xi-editor.io/
@@ -73,14 +80,6 @@ modified: 2022-04-05T10:08:25.947Z
   - A Document consists of a set of objects structured in a hierarchical tree-like structure. 
     - Each Object has an associated ID which is globally unique, and a set of property-value pairs. 
     - Parent-Child relationships are maintained as a link from the child to its parent.
-
-- harika-note /111Star/AGPLv3/202208/ts
-  - https://github.com/quolpr/harika
-  - Harika is an offline-first, performance-focused note taking app for organizing your knowledge database.
-  - Synchronization with server. It's done with LWW CRDT per field on top of SQLite. 
-    - It also stores all changes locally and sends them to server. 
-    - Server also store all the changes and recalculate snapshots on new received changes and send those snapshots back to the client. 
-    - Due to we store all the changes at server, it is also planned to add time travel, when CRDT is not what user expect at some cases.
 
 - https://github.com/Horusiath/crdt-examples
   - An example implementations of various CRDTs，实现语言为F#
@@ -552,6 +551,21 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/benhhooxx/LWW-state-based
   - LWWDictionaryStateBased which implements a state-based two-phase set. 
 # crdt-string/text
+- https://github.com/mweidner037/position-strings
+  - implements a list/text CRDT with a "lightweight" API based on lexicographically-sorted strings.
+  - You can also think of position-strings like fractional indexing, but with a few extra features: global uniqueness, non-interleaving, and slower (logarithmic) length growth in sequences.
+  - ["Position Strings" for Collaborative Lists and Text](https://mattweidner.com/2023/04/13/position-strings.html)
+    - position-strings is supposed to make it easy to add list/text CRDT functionality to an existing data model, such as a database table. 
+    - The example app uses it to build a collaborative text editor on top of Firebase RTDB.
+- https://github.com/mweidner037/firebase-text-editor
+  - Collaborative plain text editor using CRDTs on top of Firebase (Realtime Database).
+  - 依赖position-strings，不依赖quill
+  - https://github.com/mweidner037/firebase-rich-text-editor
+    - 依赖quill.v1
+
+- https://github.com/mweidner037/vlcn-rich-text
+  - Collaborative rich text editor over vlcn.io
+
 - https://github.com/mweidner037/uniquely-dense-total-order
   - Uniquely Dense Total Orders for List/Text CRDTs
   - This is a concept similar to fractional indexing, but resilient to concurrent insertions.

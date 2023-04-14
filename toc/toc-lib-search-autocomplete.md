@@ -89,6 +89,8 @@ modified: 2023-01-01T13:24:35.994Z
   - Js Search began as a lightweight implementation of Lunr JS, offering runtime performance improvements and a smaller file size. 
   - It has since expanded to include a rich feature set- supporting stemming, stop-words, and TF-IDF ranking.
   - Js Search enables efficient client-side searches of JavaScript and JSON objects
+- https://github.com/bvaughn/js-worker-search
+  - Full text client-side search based on js-search but with added web-worker support for better performance.
 
 - minisearch /1.9kStar/MIT/202212/ts/NoDeps
   - https://github.com/lucaong/minisearch
@@ -141,7 +143,9 @@ modified: 2023-01-01T13:24:35.994Z
 - Fuse /15.2kStar/apache2/202208/js
   - https://github.com/krisk/Fuse
   - https://fusejs.io/
-  - a lightweight fuzzy-search, in JS, with zero dependencies.
+  - [a lightweight fuzzy-search, in JS, with zero dependencies.](https://gist.github.com/ericyd/fe4ce86a1143e86b821e0d12d5daf236)
+    - 实现很简单
+  - Fuse JS Web Worker implementation
 
 - https://github.com/superhuman/command-score
   - Yet another javascript fuzzy string matching library!

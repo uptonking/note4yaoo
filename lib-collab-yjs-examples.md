@@ -64,6 +64,10 @@ modified: 2022-09-21T15:47:41.340Z
 - https://github.com/jaqarrick/yjs-canvas
   - Collaborative canvas using Yjs CRDT
 # yjs-utils
+- https://github.com/samwillis/yjs-sqlite-test
+  - This is a test project to combine yjs and sqlite wasm, it lets you store yjs documents in a sqlite database, update them in place and query the content. 
+  - Perfect for building a local first web app.
+
 - https://github.com/pluv-io/pluv
   - Multi-platform, E2E type-safe realtime packages
   - allows you to build real-time collaborate features with a fully end-to-end type-safe api.

@@ -24,8 +24,13 @@ modified: 2022-12-19T01:51:01.389Z
   - OData . NET Libraries project includes the implementation of core functionalities of OData protocol on the . NET platform, including URI parsing, request and response reading and writing, Entity Data Model (EDM) building
   - [OData简介 - 知乎](https://zhuanlan.zhihu.com/p/56639241)
   - [Why not OData? | Documentation](https://docs.servicestack.net/why-not-odata)
-  - [olingo - Why is ODATA not widely adopted by the developers for RESTful development? - Stack Overflow](https://stackoverflow.com/questions/55266573/why-is-odata-not-widely-adopted-by-the-developers-for-restful-development)
+  - [Choosing OData or REST ? Detailed Analysis - Stack Overflow](https://stackoverflow.com/questions/59967080/choosing-odata-or-rest-detailed-analysis)
+    - OData is great when there is a single or highly coupled data source where there are very clear relationships between the resources.
   - https://github.com/zackyang000/node-odata
+
+- https://github.com/dxc-technology/halstack-client
+  - Our Javascript SDK for abstracting the consumption and creation of hypermedia API resources expressed in **HAL**
+  - Halstack Client for JavaScript enables developers to easily work with hypermedia-based APIs in a declarative manner. 
 # rest-api
 - https://github.com/heerey525/express_mongoDB /202203/js
   - https://heerey525.github.io/express_mongoDB/apidoc/
@@ -149,16 +154,21 @@ modified: 2022-12-19T01:51:01.389Z
   - You can choose different adapters and use the same CRUD interface: MemoryAdapter, RESTAdapter or SQLAdapter.
   - The http mock server(@memoria/server) can be run in-browser and node environments, thus allows for running your in-memory test suite in SSR(server-side rendering) environment if it is needed.
 # ajax/pjax
-- https://github.com/defunkt/jquery-pjax
-  - pjax = pushState + ajax
-  - pjax works by fetching HTML from your server via ajax and replacing the content of a container element on your page with the loaded HTML. 
-    - It then updates the current URL in the browser using pushState. 
-    - No page resources (JS, CSS) get re-executed or re-applied;
-
 - https://github.com/falsandtru/pjax-api
   - https://falsandtru.github.io/pjax-api/
   - The pjax-api provides almost complete original web experience. 
   - Most SPA frameworks and pjax libraries lack many essential functions to keep the original web experience such as follows.
+
+- https://github.com/hydecorp/push-state
+  - hy-push-state is a web component that lets you turn web pages into web apps. 
+  - The component dynamically loads new content (formerly known as "ajax") and inserts it into the current page, without causing Flash of White, Flash of Unstyled Content, etc.
+  - hy-push-state is similar to pjax and smoothState, but offers a more advanced pre-fetching logic and gives you more control over its internals to enable advanced page transition animations.
+
+- https://github.com/defunkt/jquery-pjax
+- pjax = pushState + ajax
+  - pjax works by fetching HTML from your server via ajax and replacing the content of a container element on your page with the loaded HTML. 
+    - It then updates the current URL in the browser using pushState. 
+    - No page resources (JS, CSS) get re-executed or re-applied;
 # rest-examples
 - https://github.com/taniarascia/node-api-postgres
   - https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/

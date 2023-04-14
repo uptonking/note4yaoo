@@ -51,9 +51,11 @@ modified: 2023-02-08T10:47:19.056Z
 - Markdown yaml Preamble
   - Renders yaml front matter as a table in the built-in markdown preview
 # extensions
-
+- https://github.com/RandomFractals/tabular-data-viewer
+  - provides fast DSV data loading and custom Table Views
+- https://github.com/RandomFractals/vscode-data-preview
+  - extension for importing outbox_tray viewing mag_right slicing hocho dicing game_die charting bar_chart & exporting inbox_tray large .json array .arrow .avro .parquet data files, .config .env .properties .ini .yml configurations files, .csv/.tsv & .xlsx/.xlsb Excel files and .md markdown tables with Perspective - streaming data analytics WebAssembly library.
 # guide
-
 - 下载vscode时，可将地址中的 az764295.vo.msecnd.net 更换为  vscode.cdn.azure.cn 使用国内的镜像服务器加速
 
 - [The Visual Studio Code Roadmap 2020](https://github.com/microsoft/vscode/wiki/Roadmap)

@@ -84,7 +84,10 @@ modified: 2020-11-11T13:16:24.994Z
 
 - [快递鸟api】](https://www.kdniao.com/membership)
 
-- ## more
+## more
+
+- 百度OCR的API是免费的
+
 - https://github.com/yuyang2016/Chinese-Free-API
   - 已停更
 

@@ -17,7 +17,10 @@ modified: 2022-12-19T01:59:01.628Z
 
 - ## 
 
-- ## 
+- ## JVM Virtual Thread，同一套 API 能同时在 Platform Thread 和 Virtual Thread 上工作看上去有点科幻，但好像也确实没啥不行
+- https://twitter.com/YangKeao/status/1646590131925839872
+- 毕竟 jvm 的并发就是 Job - Worker 模型, 并不管 worker 是啥
+- 虽然是同一套 API，不要重新学习了，但不同的是 virtual thread 不再需要使用线程池，可以 vthread-per-job/vthread-per-request 了，要把以前用 Platform Thread 中的经验习惯忘记掉
 
 - ## [为什么Java坚持多线程不选择协程？](https://www.zhihu.com/question/332042250)
 - 先说结论：协程是非常值得学习的概念，它是多任务编程的未来。但是Java全力推进这个事情的动力并不大。
@@ -58,7 +61,8 @@ modified: 2022-12-19T01:59:01.628Z
 - 基本上java的技术栈都是基于线程提供出来的，servlet，jdbc，jms底层都是封装了线程提供出来，做web开发的90%的时间不需要考虑线程的问题
   - 应该说都是j2ee的东西，j2ee自己都凉了，从长远看这些东西会慢慢变成legacy code&system
 
-- 异步的四种写法，callback，future，coroutine（await）和fiber，
+- **异步的四种写法**，
+  - callback，future，coroutine（await）和fiber，
   - fiber是完全模拟线程，所以thread local可以变成fiber local，@Trasactional并不需要改动一样能用，
   - 但是本质上说，如果短连接的一问一答式的流程没有变，异步开发和同步开发不会有太大差异也是真的，所以还是思维和需求要摆脱出http那种一问一答式的企业级开发应用的小天地才是王道
   - 最后go应该是走错路了，上面说的四种方式，其实go只用了一种，强行替用户做了选择，所以吸引了大量脚本程序员进入这个语言，
