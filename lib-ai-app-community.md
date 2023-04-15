@@ -16,7 +16,11 @@ modified: 2023-02-08T06:56:54.945Z
 
 - ## 
 
-- ## 
+- ## tensorflow.js 真是起了个大早，不知道能不能赶上晚集。
+- https://twitter.com/xicilion/status/1647143660910436356
+  - 它很早就支持 wasm 和 webgpu 后端，而且性能不错，灵活性也不错，但是这次 LLM 大火，却再也没看到它的身影。
+  - PyTorch 想要跨界很难，反倒是 wonnx 这样的 rust 引擎，借着 wasm 和 webgpu，杀进浏览器。
+- transformers.js 是另一个在浏览器内运行 transformers 的项目，它的推理引擎用的就是 onnx wasm 版。
 
 - ## 其实之前不仅仅关注LLaMA生态的一些开源大模型，国内的一些开源大模型也在关注，这里分享几个最近挺火的LLM。
 - https://twitter.com/xinqiu_bot/status/1645616019103428609

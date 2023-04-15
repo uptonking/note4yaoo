@@ -177,6 +177,7 @@ $$('[contenteditable]')
     - paste
   - scss to linaria
   - table to tanstack
+    - 隐藏浏览器selection
     - 优化model
   - list
     - rename todoList to checkboxList
@@ -235,9 +236,22 @@ $$('[contenteditable]')
 
 ## 041
 
+## 0415
+
+- [html - jsx not working - Stack Overflow](https://stackoverflow.com/questions/37909134/nbsp-jsx-not-working)
+  - `<Fragment>&nbsp;</Fragment>`; 
+  - `<div>&nbsp;</div>`; 
+  - `<div dangerouslySetInnerHTML={{__html: '&nbsp;'}} />`; 
+  - `{'\u00A0'}`; 
+
+- [三种空格unicode(\u00A0, \u0020, \u3000)表示的区别 - 简书](https://www.jianshu.com/p/4317e3749a13)
+  - 不间断空格\u00A0, 主要用在office中, 让一个单词在结尾处不会换行显示, 快捷键ctrl+shift+space ; 
+  - 半角空格(英文符号)\u0020, 代码中常用的; 
+  - 全角空格(中文符号)\u3000, 中文文章中使用; 
+
 ## 0413
 
-- [How to allow <input type="file"> to accept only image files? - Stack Overflow](https://stackoverflow.com/questions/3828554/how-to-allow-input-type-file-to-accept-only-image-files)
+- [How to allow `<input type="file">` to accept only image files? - Stack Overflow](https://stackoverflow.com/questions/3828554/how-to-allow-input-type-file-to-accept-only-image-files)
 
 ```HTML
 <input id="imageInput" accept="image/*" onChange="processFile(imageInput)" name="upload-photo" type="file" />
@@ -258,6 +272,7 @@ processFile(imageInput) {
   }
 }
 ```
+
 ## 0412
 
 - [open the file upload dialogue box onclick the image - Stack Overflow](https://stackoverflow.com/questions/22292410/open-the-file-upload-dialogue-box-onclick-the-image)

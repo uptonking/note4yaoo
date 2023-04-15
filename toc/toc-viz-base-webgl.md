@@ -115,4 +115,9 @@ modified: 2020-10-05T06:18:29.671Z
   - https://usegpu.live/
   - Use. GPU is a set of declarative, reactive WebGPU legos. Compose live graphs, layouts, meshes and shaders, on the fly.
   - It's a stand-alone Typescript+Rust/WASM library with its own React-like run-time.
+
+- https://github.com/webonnx/wonnx
+  - Wonnx is a GPU-accelerated ONNX inference run-time written 100% in Rust, ready for the web.
+  - In the browser, using WebGPU + WebAssembly
+  - ONNX Runtime 是微软开发的一个跨平台推理和训练机器学习加速器。
 # more-repos

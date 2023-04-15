@@ -32,7 +32,7 @@ modified: 2021-11-19T06:53:19.649Z
   - :scream:
   - face screaming in fear
 - 😩 😦 😫
-  - ime 惨 难过
+  - ime 难过
 - 😂
   - ime 笑哭
   - :joy: 
