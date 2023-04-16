@@ -201,6 +201,22 @@ modified: 2023-02-06T09:14:40.114Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 争议: We will very likely be removing the onSuccess / onError / onSettled callbacks from `useQuery` in v5. 
+- https://twitter.com/TkDodo/status/1647347026135330816
+  - I tried very hard to come up with a good use-case, but imo there is none.
+- I use them to span toast of a success or error event, find them super useful
+  - This would show the toast multiple times if you call the same hook in multiple components, so it's likely not what you want. The global callbacks on the QueryCache are better suited for toast notifications
+- I put logging and trigger snackbars alerts in onError. Guess it can be in a useEffect, but doesn't seem as clean.
+  - should probably both be in the global queryCache callback so that you a) only have to set it up once and b) it doesn't trigger multiple times.
+  - in mobile apps there are lot of cases where we need to handle every error differently. having it setup once will not be suitable for this case.
+  - depends on what handling it differently means. I've had a good experience with the global callbacks + the meta field
+
+
+
 - ## [OData adoption rate? : dotnet](https://www.reddit.com/r/dotnet/comments/11eoa6d/odata_adoption_rate/)
 
 - ## 换个角度想想，#GraphQL 好像是双赢。

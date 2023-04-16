@@ -56,23 +56,6 @@ modified: 2021-01-12T18:49:07.422Z
 - https://github.com/harshhhdev/kmenu
   - https://kmenu.hxrsh.in/
   - An animated and accessible command menu
-# img-editor/capture
-- https://github.com/ailon/markerjs2
-  - https://markerjs.com/
-  - Add image annotation to your web apps.
-  - 效果类似图片上的画板草稿
-  - Linkware license for v2; MIT for v1
-  - https://github.com/ailon/markerjs
-
-- https://github.com/nikersify/pico
-  - Pico's goal is to produce high precision screenshots of any viewport entirely client side.
-  - This is different from simply capturing a webpage using Puppeteer or a similar tool in that the screenshot taking happens entirely client side.
-  - how it works
-    - This program renders whatever is displayed in the given Window into an image, thanks to svg's `<foreignObject>`.
-    - No server side code is required to produce the screenshot.
-
-- https://github.com/jiechud/fast-image-editor
-  - 一款开源图片编辑器，采用React + Typescript + React-knova 框架开发.
 # media
 - https://github.com/cookpete/react-player
   - React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, DailyMotion and Kaltura.
@@ -104,12 +87,8 @@ modified: 2021-01-12T18:49:07.422Z
 
 - https://github.com/timekit-io/booking-js
   - version 2 of booking.js that supports the new projects model and uses App Widget Key for authentication
-# editor
-- https://github.com/matteobruni/object-gui
-  - https://codepen.io/matteobruni/pen/oNxNvja
-  - Object GUI is your fully customizable Javascript Object GUI Editor
-  - 内置多种主题theming
 # more-components
-- https://github.com/ashwinbabus/react_comments
+- https://github.com/ashwinbabus/react_comments /js
+  - https://hardcore-cray-d3cab1.netlify.app/
   - A simple react-app (no backend) that demonstrates nested comments feature.
   - 依赖只有redux；支持无限嵌套的评论组件

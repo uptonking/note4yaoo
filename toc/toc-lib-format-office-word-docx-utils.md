@@ -30,4 +30,6 @@ modified: 2023-01-09T11:03:32.533Z
 
 # utils
 
+- https://github.com/axa-group/Parsr
+  - a minimal-footprint document (image, pdf, docx, eml) cleaning, parsing and extraction toolchain which generates readily available, organized and usable data in JSON, Markdown (MD), CSV/Pandas DF or TXT formats.
 # more

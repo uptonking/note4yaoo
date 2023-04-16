@@ -45,11 +45,23 @@ modified: 2022-01-05T14:25:35.961Z
   - The mental model is the one, another is probably the lack of devtools support. there can be some others. 
   - All that said, I guess the approach is valid and effective.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 我觉得jotai的逻辑是每个atom不是真正的数据，而是数据的accessor，具体是什么值靠的是依赖注入的store（默认defaultStore）。
+- https://twitter.com/himself_65/status/1647292653187334146
+  - 我这里要封装一层模块级别的atoms（类似于atomsFamily），方便团队开发和测试
+- 赞这个描述。jotai 是一个依赖注入的方式，而不是单纯的替换 useState 乱扔的全局变量。
+
 - ## Jotai https://jotai.org atoms are primarily for bottom-up approach, but it can do top-down approach like zustand. 
 - https://twitter.com/dai_shi/status/1477593623156105217  /20220102
   - So, I created a ToDo app with a single store with jotai. 
   - As a bonus, it uses `atomWithHash` , so the state is persisted in the URL.
   - https://codesandbox.io/s/jotai-single-store-pmi40
+
     - store的定义基本类似redux的单store，更新方法也类似redux
       - 在顶层实现了useSelector、useDispatch
     - 取值 useSelector(useCallback((state) => state.filter, []));
@@ -58,7 +70,9 @@ modified: 2022-01-05T14:25:35.961Z
       - store的更新方法行数更多
       - App.tsx应用层思路更清晰，取值只需要确定正确的路径，更新方法是统一的
       - 需要考虑如何合并多个switch-case条件，特别是在更新方法很多时
+
   - Does zustand have something like atomWithHash?
+
     - no, not handy like atomWithaHash.
 
 - I made another variant of the demo. 

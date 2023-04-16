@@ -1,11 +1,11 @@
 ---
-title: toc-features-preview-screenshot
-tags: [features, preview, screenshot, toc]
+title: toc-lib-utils-image-screenshot-preview
+tags: [image, preview, screenshot, toc, utils]
 created: 2021-01-30T15:35:07.367Z
-modified: 2021-01-30T16:05:48.466Z
+modified: 2023-04-16T13:34:33.706Z
 ---
 
-# toc-features-preview-screenshot
+# toc-lib-utils-image-screenshot-preview
 - guide
   - preview实时预览更适合直接展示dom，支持动态交互
   - screenshot更适合静态内容
@@ -34,6 +34,13 @@ modified: 2021-01-30T16:05:48.466Z
 - https://github.com/bubkoo/html-to-image /540Star/MIT/202101/ts
   - Generates an image from a DOM node using HTML5 canvas and SVG.
   - Fork from dom-to-image with more maintainable code and some new features.
+
+- https://github.com/rsify/pico /ts
+  - Pico's goal is to produce high precision screenshots of any viewport entirely client side.
+  - This is different from simply capturing a webpage using Puppeteer or a similar tool in that the screenshot taking happens entirely client side.
+  - how it works
+    - This program renders whatever is displayed in the given Window into an image, thanks to svg's `<foreignObject>`.
+    - No server side code is required to produce the screenshot.
 
 - https://github.com/tsayen/dom-to-image /7kStar/201706
   - turn arbitrary DOM node into a vector (SVG) or raster (PNG or JPEG) image, written in JavaScript.
@@ -104,6 +111,9 @@ modified: 2021-01-30T16:05:48.466Z
 
 - https://github.com/jeffersonlicet/snipped
   - Save SVG or PNG screenshots of code selection or all lines of your file.
+
+- https://github.com/kufii/CodeSnap
+  - Take beautiful screenshots of your code in VS Code
 # source-code-screenshot
 - https://github.com/carbon-app/carbon
   - https://carbon.now.sh/
@@ -112,6 +122,7 @@ modified: 2021-01-30T16:05:48.466Z
 
 - https://unhtml.com/code
   - unhtml for code/markdown/picture
+  - https://unhtml.404.ms/code
 
 - https://ray.so/
   - code screenshot
@@ -119,11 +130,6 @@ modified: 2021-01-30T16:05:48.466Z
 - https://github.com/Idered/chalk.ist
   - https://chalk.ist/
   - Create beautiful images of your source code
-
-## screenshot-in-vscode
-
-- https://github.com/kufii/CodeSnap
-  - Take beautiful screenshots of your code in VS Code
 # more
 - https://github.com/antfu/broz
   - A simple, frameless browser for screenshots

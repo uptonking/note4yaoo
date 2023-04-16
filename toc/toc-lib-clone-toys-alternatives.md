@@ -49,7 +49,6 @@ modified: 2021-07-21T10:03:38.002Z
   - A simplified Jira clone built with React/Babel (Client), and Node/TypeScript (API). 
   - 前端依赖 react-router、formik、history、jwt、moment、quill(Editor)、react-beautiful-dnd、styled-components、sweet-pubsub
   - 后端依赖 express、jsonwebtoken、faker、pg、typeorm
-
 # notion-clone
 - https://github.com/konstantinmuenster/notion-clone  /202106/js
   - https://notion-clone.kmuenster.com/
@@ -67,8 +66,6 @@ modified: 2021-07-21T10:03:38.002Z
 - https://github.com/genuine-seok/motion-web /202209/ts
   - https://genuine-seok.github.io/motion-web/
   - [toy project] notion basic features cloning project
-
-
 
 - https://github.com/Lameck1/simple_notion /202212/js/NoDeps
   - https://simplenotion.netlify.app/
@@ -95,3 +92,6 @@ modified: 2021-07-21T10:03:38.002Z
 - https://github.com/tiffanyw-hu/ReadBooks
   - https://readbooksapp.herokuapp.com/
   - 依赖react16.3、redux3，依赖很少
+
+- https://github.com/mayeaux/nodetube /js
+  - Open-source YouTube alternative that offers video, audio and image uploads, livestreaming and built-in monetization

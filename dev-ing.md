@@ -17,8 +17,8 @@ https://meeting.tencent.com/p/9606972663
 
 # dev-xp
 - ui-starter
-  - css-only: open-props, glass-ui, 渐变字体
-  - react: spectrum, zigzag, ariakit
+  - css: open-props, glass-ui, 渐变字体
+  - react: zag/ark, ariakit, radix-ui, mantine
 - dev-starter
   - patterns: react, typescript
 - list-grid-starter
@@ -71,7 +71,7 @@ $$('[contenteditable]')
   - app-wiki-knowledge-base--0904
   - dashboard/webapp-template--0901
 
-- deep into lib
+- deep into lib/fwk
   - src-code, issues, pr, forks, extensions/alternatives
 # dev-2023-方向+方法+时间
 - 👉🏻 output: 代码、产品、生态积累
@@ -82,8 +82,8 @@ $$('[contenteditable]')
   - table view
   - kanban view
 - 👉🏻 eg-tanstack-table-v8
-  - [x] 数据全内存: nedb, blinkdb
-  - [x] 数据全持久: linvodb, tingodb
+  - [x] 内存数据: nedb, blinkdb
+  - [x] 流式数据: linvodb, tingodb
   - [ ] 方便接入已有的外部数据源
   - tuple-database 支持内存和持久化
   - tinybase 支持内存和持久化
@@ -165,22 +165,23 @@ $$('[contenteditable]')
   - unit-tests
     - test in firefox
   - toolbar
-    - 工具条按钮处理跨选区的情况
+    - [ ] dropdown 组件样式、active值
+    - [x] 工具条按钮处理跨选区的情况
     - [x] 当前 block type 指示与转换
     - [x] 点击按钮时保存选区，逻辑+视觉
     - [x] 高亮当前光标对应的格式按钮
     - [x] 字体大小、颜色
     - [x] 按钮按功能分组
   - image
-    - upload by filePicker
     - upload by drag-drop
     - paste
+    - [x] upload by filePicker
   - scss to linaria
   - table to tanstack
-    - 隐藏浏览器selection
+    - [ ] 隐藏浏览器selection
     - 优化model
   - list
-    - rename todoList to checkboxList
+    - rename todoList to checkList
   - callout 高亮块
   - keyboard-shortcuts
   - copy-paste

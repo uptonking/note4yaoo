@@ -66,13 +66,33 @@ modified: 2023-02-08T07:20:48.475Z
   - Self-contained, with no need for a DBMS or cloud service
   - OpenAPI interface, easy to integrate with existing infrastructure (e.g Cloud IDE).
   - Tabby 是一个自我托管的 #GitHub #Copliot 开源替代品，自带可视化界面与 #OpenAPI 接口，还支持消费者级别的 #GPU，具有 FP-16 重量加载和各种优化功能，提供了 #Docker 镜像
+# text2image
+- https://github.com/Stability-AI/stablediffusion
+  - https://github.com/CompVis/stable-diffusion
+  - A latent text-to-image diffusion model
+
+- https://github.com/camenduru/stable-diffusion-webui-portable
+  - This Project Aims for 100% Offline Stable Diffusion (People without internet or with slow internet can get it via USB or HD-DVD)
+
+- https://github.com/AUTOMATIC1111/stable-diffusion-webui
+  - A browser interface based on Gradio library for Stable Diffusion.
+
+- https://github.com/cmdr2/stable-diffusion-ui
+  - The easiest way to install and use Stable Diffusion on your computer.
 # ml-neural-network
+- https://github.com/AlloyTeam/netural
+  - JavaScript的前向神经网络和反向传播的实现。
+
 - https://github.com/TrevorBlythe/MentisJS
   - A javascript neural network library. 
   - It can train with backpropagation or neural evolution! 
   - [A better alternative to convnetjs](https://github.com/karpathy/convnetjs/issues/122)
     - This library has Deconv layers and other new features that not even convnetjs has.
     - It also doesn't require you to put your data in a custom data type.
+
+- https://github.com/mlc-ai/web-llm
+  - Introducing WebLLM, an open-source chatbot that brings language models (LLMs) directly onto web browsers. 
+  - We can now run instruction fine-tuned LLaMA (Vicuna) models natively on your browser tab via @WebGPU with no server support.
 
 - https://github.com/photopea/UNN.js
   - Deep Learning in Javascript. Alternative to ConvNetJS, that is 4x faster.

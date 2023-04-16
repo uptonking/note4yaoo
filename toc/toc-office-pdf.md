@@ -33,9 +33,9 @@ modified: 2021-01-04T17:26:43.784Z
   - This package is used to create PDFs using React. 
     - If you wish to display existing PDFs, you may be looking for https://github.com/wojtekmaj/react-pdf
 
-- https://github.com/wojtekmaj/react-pdf
+- https://github.com/wojtekmaj/react-pdf /js
   - Display PDFs in your React app as easily as if they were images.
-  - For React-PDF to work, PDF.js worker needs to be provided.
+  - For React-PDF to work, `PDF.js` worker needs to be provided.
 
 - https://github.com/jeetiss/react-pdf-repl
   - https://react-pdf-repl.vercel.app/
