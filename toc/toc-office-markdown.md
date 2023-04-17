@@ -99,6 +99,9 @@ modified: 2021-01-04T17:26:25.032Z
   - 若屏幕很窄，官方文档会显示水平滚动条，此时滚动会有严重的漂移感
   - easy way to build technical books or documentation with markdown or MDX
 
+- https://github.com/Kffhi/markdown-reader
+  - 一个简单的markdown文件解析服务，可以读取服务器指定目录下的md文件并返回相关数据用于前端展示
+
 - https://github.com/shuding/nextra
   - 依赖next、nextra-core、react
   - powerful and flexible site generation framework with everything you love from Next.js.

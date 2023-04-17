@@ -38,6 +38,11 @@ modified: 2023-03-03T08:06:36.592Z
 - 全文翻译比较期待类似firefox做的这种离线本地翻译
   - [Firefox Translations – Get this Extension for 🦊 Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/firefox-translations/)
 
+## translate-examples
+
+- https://github.com/kanweiwei/translate-server
+  - 对接的是百度翻译api，需要 appid 和对应的密钥
+
 ## translate-api
 
 - https://github.com/LibreTranslate/LibreTranslate

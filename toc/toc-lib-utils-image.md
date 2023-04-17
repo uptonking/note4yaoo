@@ -18,8 +18,8 @@ modified: 2023-04-04T22:39:45.442Z
   - https://github.com/nhn/tui.image-editor
   - http://ui.toast.com/tui-image-editor
   - Full-featured photo image editor using canvas. 
-  - Plain JavaScript component
   - 偏向图片滤镜
+  - Plain JavaScript component
 
 - glightbox /1.6kStar/MIT/202203/js/inactive
   - https://github.com/biati-digital/glightbox
@@ -38,10 +38,9 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/ailon/markerjs2 /ts
   - https://markerjs.com/
   - Add image annotation to your web apps.
-  - 效果类似图片上的画板批注
+  - 效果类似在图片上的画板批注层
   - Linkware license for v2; MIT for v1
   - https://github.com/ailon/markerjs
-
 # image-viewer
 - https://github.com/xiaolin/react-image-gallery /js
   - http://linxtion.com/demo/react-image-gallery
@@ -52,19 +51,14 @@ modified: 2023-04-04T22:39:45.442Z
   - JavaScript image gallery for mobile and desktop, modular, framework independent
 
 - https://github.com/rpearce/react-medium-image-zoom /ts
+  - https://rpearce.github.io/react-medium-image-zoom/
   - The original medium.com-inspired image zooming library for React.
   - 支持 img/picture/svg
 
 - https://github.com/francoischalifour/medium-zoom /js
+  - https://medium-zoom.francoischalifour.com/
   - JavaScript library for zooming images like Medium
   - Pluggable — add your own features to the zoom
-
-- glightbox /1.6kStar/MIT/202203/js/inactive
-  - https://github.com/biati-digital/glightbox
-  - https://biati-digital.github.io/glightbox/
-  - Pure Javascript lightbox with mobile support. 
-  - It can handle images, videos with autoplay, inline content and iframes
-  - All the animations are created with CSS and only the transform and opacity properties are animated. 
 
 ## crop
 
@@ -77,9 +71,6 @@ modified: 2023-04-04T22:39:45.442Z
 
 - https://github.com/fengyuanchen/cropperjs /js
   - JavaScript image cropper.
-# dom-image
-- https://github.com/bubkoo/html-to-image /ts
-  - Generates an image from a DOM node using HTML5 canvas and SVG.
 # image-upload
 - https://github.com/charlzyx/rush
   - 图片压缩 & 直传图床工具

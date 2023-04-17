@@ -16,7 +16,7 @@ modified: 2021-09-30T08:30:09.395Z
 ## pmtiles vs mbtiles
 
 - I believe this is protomaps approach: re-encode the mbtiles (sqlite-based ) format in to something that can be requested with a http range request and thus served from a single dumb webserver that doesn't need to understand sqlite or mbtiles parsing
-  - This is the approach I took with protomaps/pmtiles , though it's optimized for the very specific use case of going from Z/X/Y integer coordinates to binary blobs, and takes shortcuts to accomplish that (fixed-width keys and root index page)
+  - This is the approach I took with protomaps/pmtiles, though it's optimized for the very specific use case of going from Z/X/Y integer coordinates to binary blobs, and takes shortcuts to accomplish that (fixed-width keys and root index page)
 
 - SQLite-based nature of MBTiles is really a blocker for wider usage.
   - Great that PMTiles is trying to solve it using a principle similar to COG. 

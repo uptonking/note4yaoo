@@ -82,6 +82,10 @@ modified: 2022-06-03T21:34:54.893Z
     - 跨block的操作变得复杂
 - https://github.com/JhinBoard/jhin
   - Next-Gen Collaborative Knowledge Base, A free replacement for Notion & Miro
+
+- https://github.com/aliscie/autodox /rust
+  - This app is Notion.so clone, roam research clone and obsidian clone. 
+  - The main purpose of this app is not to just clone these note-taking apps but to make an all-in-one Open source note-taking app with automation features.
 # github-wiki-confluence-like
 - MrDoc /2.1kStar/GPL.v3/202208/js/python/仅网页版
   - https://github.com/zmister2016/MrDoc
@@ -297,7 +301,6 @@ modified: 2022-06-03T21:34:54.893Z
   - go基于向量数据库与GPT3.5的通用本地知识库方案
 - https://github.com/GanymedeNil/document.ai
   - 基于向量数据库与GPT3.5的通用本地知识库方案
-
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

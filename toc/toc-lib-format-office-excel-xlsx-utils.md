@@ -11,7 +11,7 @@ modified: 2023-01-09T11:04:13.958Z
 
 # popular
 - https://github.com/x2bool/xlite /rust
-  - Query Excel spredsheets (.xlsx, .xls, .ods) using SQLite
+  - Query Excel spreadsheets (.xlsx, .xls, .ods) using SQLite
   - allow working with spreadsheets from SQLite exposing them as virtual tables.
   - XLite is a SQLite extension written in Rust. 
 
@@ -21,6 +21,11 @@ modified: 2023-01-09T11:04:13.958Z
 - https://github.com/plantain-00/js-excel-template
   - A js excel template used in browser or nodejs environment.
   - Generate Excel based on Excel template
+
+- https://github.com/zhangyu836/node-xlsx-template
+  - A node module to generate .xlsx files from a .xlsx template.
+  - When xltpl reads a xlsx file, it creates a tree for each worksheet.
+  - And, each tree is translated to a nunjucks(jinja2) template with custom tags.
 # examples
 
 # parser-generator

@@ -20,6 +20,9 @@ modified: 2023-03-05T08:55:03.696Z
   - 统一的缓存更新/失效策略
 - [Use react-query but no react](https://github.com/tannerlinsley/react-query/discussions/790)
   - https://codesandbox.io/s/magical-bush-gbsk7
+# react-query-examples
+- https://github.com/alan2207/react-query-auth
+  - Authenticate your react applications easily with react-query.
 # cookies
 
 ## security

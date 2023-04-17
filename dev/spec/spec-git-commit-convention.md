@@ -15,7 +15,6 @@ modified: 2020-12-07T14:17:56.061Z
 - The commit message should be structured as follows:
 
 ``` 
-
 <type>[optional scope]: <description>
 
 [optional body]

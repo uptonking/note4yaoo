@@ -11,7 +11,8 @@ modified: 2023-02-05T19:03:12.723Z
 
 - collab
   - json patch
-  - [Add Collaboration Example and Documentation](https://github.com/ianstormtaylor/slate/issues/3715)
+  - [slate discussion: Add Collaboration Example and Documentation](https://github.com/ianstormtaylor/slate/issues/3715)
+    - [Collaborative editing](https://github.com/ianstormtaylor/slate/issues/259)
 
 - more-slate
   - 建站编辑器应该参考gutenberg、wix
@@ -67,7 +68,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 - prezly-slate /31Star/MIT/202208/ts/提交多
   - https://github.com/prezly/slate 
-  - 依赖 `plate`的工具方法而不依赖编辑器、popperjs2、@prezly/sdk、react-bootstrap
+  - 依赖`plate`的工具方法而不依赖编辑器、popperjs2、@prezly/sdk、react-bootstrap
   - Prezly software built upon Slate
   - 悬浮工具条使用卡片的形式
   - dev-xp
@@ -127,16 +128,24 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/objectlegal/slate-snippets
   - Slate snippets
   - Convert data from v0.47 to v.0.50+
+- https://github.com/juliankrispel/slate-patterns
+  - Patterns for slate.js
+  - 提供了示例 iframe、autocomplete
+  - 依赖zustand
+  - https://github.com/juliankrispel/slate-js-boilerplate
 
-- https://github.com/mpkelly/react-editor-kit /22Star/MIT/202012/ts/inactive
+- react-editor-kit /22Star/MIT/202012/ts/inactive
+  - https://github.com/mpkelly/react-editor-kit
   - https://mpkelly.github.io/react-editor-kit/
+  - https://github.com/mpkelly/react-editor-kit-examples
   - Compose a React-based text editor using a suite of standard plugins
   - 依赖slate.v0.50+
-  - https://github.com/mpkelly/react-editor-kit-examples
   - https://github.com/mpkelly/journal
     - https://mpkelly.github.io/journal
     - Embeddable Wiki available as Chrome extension, PWA or React component.
     - 依赖slate二开、dexie3
+    - 应用编辑器支持创建分栏，但底层react-editor-kit未直接提供
+    - 示例体验友好、功能丰富
 
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!
@@ -153,6 +162,15 @@ modified: 2023-02-05T19:03:12.723Z
   - 依赖slate.v0.59, jotai
   - [I created a devtool to assist in debugging](https://github.com/ianstormtaylor/slate/issues/4112)
 
+- https://github.com/usunil0/slate-paged /202010
+  - https://slate-paged-demo.vercel.app/
+  - 依赖slate.v0.59, nestjs，ts
+  - 支持导出docx
+  - A paged editor rather than a continuous block. built using slate js.
+  - done: basic editor setup basic functionalities figure out the nodes length and paging
+  - https://github.com/tobischw/slate-paged /201905/js/inactive
+    - A buggy attempt at paginating the Slate editor
+
 - quadrats /4Star/MIT/202203/ts
   - https://github.com/Quadrats/quadrats
   - https://quadrats.github.io/quadrats
@@ -166,7 +184,7 @@ modified: 2023-02-05T19:03:12.723Z
 - whim-notion-like /6Star/MIT/202108/ts
   - https://github.com/coniel/whim-editor
   - A highly customisable block based rich text editor inspired by Notion.
-  - core依赖 slate.v0.65.3，fuse.js(fuzzy-search)
+  - core依赖 slate.v0.65.3, fuse.js(fuzzy-search)
   - ui依赖@braindrop-editor/core
   - 不支持跨block选择部分文字
   - 支持拖拽block修改顺序，特别是支持将list item拖入拖出列表
@@ -219,8 +237,6 @@ modified: 2023-02-05T19:03:12.723Z
   - https://www.emisa.me/npm/slateless/
   - A minimal richtext editor based on Slate
   - 显示编辑器、模型，方便调试
-- https://github.com/ahmedosama7450/rich-slate
-  - Opinionated rich text editor on top of slate (Under development)
 
 - full-slate-editor-example /3Star/MIT/202208/ts
   - https://github.com/Dev-CasperTheGhost/full-slate-editor-example
@@ -234,26 +250,46 @@ modified: 2023-02-05T19:03:12.723Z
   - Rich text editor based on Slate for Material UI (React)
   - 实现了简单的评论列表、脚注序列
 
+- payloadcms /9.1kStar/MIT/202301/ts/slate
+  - https://github.com/payloadcms/payload
+  - https://payloadcms.com/
+  - https://demo.payloadcms.com/admin
+  - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
+  - 不是典型的block-editor
+  - Block-based Layout Builder
+  - Extensible SlateJS rich text editor
+  - A Mongo database to store your data
+  - retrieve, and manipulate data of any shape via full REST and GraphQL APIs
+  - File storage and access control
+  - Payload dynamically generates a React admin panel to manage your data. 
+    - Admin panel is built with Webpack, code-split, highly performant (even with 100+ fields), and written fully in TypeScript.
+
+- https://www.npmjs.com/package/@nocobase/client
+  - 依赖react-quill.v1
+
 - https://github.com/seafileltd/seafile-editor /RepoNA
   - 项目是基于 react-slate 组件库的二次封装, 用于满足公司富文本编辑器的使用需求
 
 - slate portive
+  - https://github.com/portive/wysimark
+    - Wysiwyg Editor for Markdown: 100% CommonMark + GFM with Uploads and Image Resizing
+    - 依赖slate-react
+  - https://github.com/thesunny/slate-experiments
+    - 依赖slate.v0.63
   - https://slate-portive.docs.portive.com/
     - Plate Cloud is a partnership between Ziad Beyens and Portive to add cloud based Attachment and Image Uploading support with server-side image resizing to the Plate editor.
-  - https://github.com/portive/wysimark
-  - Wysiwyg Editor for Markdown: 100% CommonMark + GFM with Uploads and Image Resizing
-  - 依赖slate-react
   - https://github.com/portive/slate-plugin
     - Upload Images and Attachments Plugin for Slate
     - Add beautiful and intuitive images and attachments to Slate with support for paste, drag and drop and `<input type="file">` uploads.
 
 - https://github.com/react-page/react-page
+  - https://react-page.github.io/
   - 使用redux作为状态管理
   - 提供了 @react-page/plugins-slate
   - 提供了集成react-admin的例子
   - react-page comes preconfigured with Slate as a ‘cellPlugin’ to be used as the rich text editor.
 
-- edtr-io /696Star/MIT/202206/ts
+- edtr-io /696Star/MIT/202206/ts/page-editor
   - https://github.com/edtr-io/edtr-io
   - https://edtr.io/
   - a WYSIWYG in-line web editor written in React.
@@ -270,6 +306,7 @@ modified: 2023-02-05T19:03:12.723Z
   - https://api.onlyoffice.com/docbuilder/spreadsheetapi
   - 💡 word/excel/ppt都基于canvas实现
   - Contains API for all the included components client-side interaction.
+  - sdk的设计可参考 notion-sdk-js
   - 通过TypedArray，将表格数据以二进制格式存储，通过字段压缩+共享字符串表来优化内存空间
   - [精读onlyoffice在线表格存储设计](https://juejin.cn/post/7202252704978386999)
   - repos
@@ -280,13 +317,6 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/froala/wysiwyg-editor-node-sdk
   - Node. JS SDK to ease the integration of Froala WYSIWYG Editor on server side.
-
-- https://github.com/mbehr1/json-editor
-  - slate.js based json editor to embed into webpages
-
-- https://github.com/dictyBase/dicty-components-page-editor /202107/ts/inactive
-  - https://dictybase.github.io/dicty-components-page-editor/
-  - Reusable page editor built using Slate
 
 - oak /4Star/MIT/202208/js/提交多/page-builder
   - https://github.com/p3ol/oak
@@ -299,12 +329,7 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/uimix-editor/uimix /类似figma的设计工具
   - UIMix is a WYSIWYG editor for React components that offers a Figma or Framer-like experience for creating and maintaining React components.
   - 图形基于iframe里面的dom
-
-- https://github.com/juliankrispel/slate-patterns
-  - Patterns for slate.js
-  - 提供了示例 iframe、autocomplete
-  - 依赖zustand
-  - https://github.com/juliankrispel/slate-js-boilerplate
+  - ？ 是否依赖slate，deps有但代码无
 # slate-based-editors
 - https://github.com/raralabs/rara-rte /ts
   - https://rte.raralabs.live/
@@ -332,6 +357,13 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/bipboy/rich-slate-editor
   - A small react implementation of a text editor based on Slate and Baseweb(css-in-js)
 
+- https://github.com/mbehr1/json-editor
+  - slate.js based json editor to embed into webpages
+
+- https://github.com/dictyBase/dicty-components-page-editor /202107/ts/inactive
+  - https://dictybase.github.io/dicty-components-page-editor/
+  - Reusable page editor built using Slate
+
 - dslate /6Star/MIT/202207/ts/antd
   - https://github.com/rojer95/dslate
   - https://rojer95.github.io/dslate/#/
@@ -339,16 +371,25 @@ modified: 2023-02-05T19:03:12.723Z
   - DSlate 是一个基于 Slate 构建的 Ant Design 风格的富文本编辑器
   - core依赖slate-react
 
+- https://github.com/ls19930101/slate_editor
+  - slate框架开发的富文本工具, 核心为contenteditable
+  - 支持超大文档 word、excel 列表复制粘贴, 进行了一些性能优化处理; 
+  - 依赖slate.v0.59, antd.v3
+
 - https://github.com/xeajs/slate-react-editor
   - 基于 slatejs 的高度可定制的富文本编辑器
 
 - slatejsx /48Star/Apache2/202203/js/antd
   - https://github.com/slatejsx/slatejsx
   - http://seditor.open.heyphp.com/
-  - 项目基于slate.js框架开发，项目内所有图标，风格组件均使用antd
+  - 项目基于slate.js框架开发，项目内所有图标，组件使用antd
 
 - https://github.com/slatable/slate /202006
   - 基于 slatejs 封装富文本编辑器
+
+- https://github.com/nareshbhatia/react-force/tree/master/packages/slate-editor /202104/ts/inactive
+  - https://nareshbhatia.github.io/react-force/
+  - 依赖slate.v0.58、formik、material-ui.v4
 
 - https://github.com/zanuarmirza/text-editor
   - markdown editor using slate.js
@@ -372,11 +413,11 @@ modified: 2023-02-05T19:03:12.723Z
   - WYSIWYG editor for TiddlyWiki. (WIP)
   - 一个用于 太微TiddlyWiki 的所见即所得编辑器
 
-- https://github.com/usunil0/slate-paged /202010
-  - https://slate-paged-demo.vercel.app/
-  - 依赖slate.v0.59, nestjs，ts
-  - A paged editor rather than a continuous block. built using slate js.
-  - done: basic editor setup basic functionalities figure out the nodes length and paging
+- https://github.com/ahmedosama7450/rich-slate
+  - Opinionated rich text editor on top of slate (Under development)
+
+- https://github.com/getweek/week-editor
+  - Allows to reorder blocks.
 
 - volto-slate /23Star/MIT/202203/js/依赖后端
   - https://github.com/eea/volto-slate
@@ -406,20 +447,6 @@ modified: 2023-02-05T19:03:12.723Z
     - Sanity.io has powerful APIs for querying, patching, and mutating data in the real-time content backend. In addition to our GROQ(Graph-Relational Object Queries) API, we also support deploying GraphQL APIs to query your content.
     - [Query JSON documents in the Terminal with GROQ](https://css-tricks.com/query-json-documents-in-the-terminal-with-groq/)
       - Graph-Relational Object Queries (GROQ) is a query language (like SQL, but different) which is designed to work directly on JSON documents.
-
-- payload /9.1kStar/MIT/202301/ts/slate
-  - https://github.com/payloadcms/payload
-  - https://payloadcms.com/
-  - https://demo.payloadcms.com/admin
-  - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
-  - 不是典型的block-editor
-  - Block-based Layout Builder
-  - Extensible SlateJS rich text editor
-  - A Mongo database to store your data
-  - retrieve, and manipulate data of any shape via full REST and GraphQL APIs
-  - File storage and access control
-  - Payload dynamically generates a React admin panel to manage your data. 
-    - Admin panel is built with Webpack, code-split, highly performant (even with 100+ fields), and written fully in TypeScript.
 
 - https://github.com/contentful/field-editors/tree/master/packages/rich-text
   - https://contentful-field-editors.netlify.app/rich-text
@@ -451,12 +478,8 @@ modified: 2023-02-05T19:03:12.723Z
   - https://kledk.github.io/react-chief-editor/
   - A rich-text editor for React, built ontop of Slate.js with an hooks-based addon architecture.
 
-- https://github.com/eniolajayi/easy-writer /js/inactive
+- https://github.com/eniolajayi/easy-writer /202108/js/inactive
   - A document editor built with React and Slate.js. with multi-edit feature
-
-- https://github.com/nareshbhatia/react-force/tree/master/packages/slate-editor /202104/ts/inactive
-  - https://nareshbhatia.github.io/react-force/
-  - 依赖slate.v0.58、formik、material-ui.v4
 
 - more-slate-editor
   - https://github.com/marsprince/slate-vue
@@ -471,12 +494,25 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/naufaldi/slate-js-editor
   - Framer Motion, NextJS and Chakra UI
 
+## mobile
+
+- https://github.com/juliankrispel/slate-in-react-native
+  - Proof of concept - Slate in react-native Webview
+
 ## slate-view-layer
 
 - https://github.com/minheq/stela
   - Rich Text Editor Slate port in Flutter.
 
 ## slate-v0.47
+
+- https://github.com/372623460jh/sand-slate /js
+  - fork slate 0.47.9 修复中文输入法问题
+  - https://github.com/372623460jh/sand-editor
+
+- https://github.com/kanweiwei/slatets /ts
+  - slate.v0.37源码解读
+  - https://github.com/kanweiwei/easy-editor
 
 - https://github.com/grafana/grafana
   - ui依赖slate.v0.47.8
@@ -486,19 +522,10 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/concord-consortium/slate-editor
   - Rich text editor based on Slate 0.47
-
-## slate-chinese
-
-- https://github.com/ls19930101/slate_editor
-  - slate框架开发的富文本工具, 核心为contenteditable
-  - 支持超大文档 word、excel 列表复制粘贴, 进行了一些性能优化处理; 
-
-- https://github.com/kanweiwei/slatets
-  - slate.v0.37源码解读
-  - https://github.com/kanweiwei/easy-editor
 # slate-plugins
 - https://github.com/imdbsd/slate-plugin /202106/ts/inactive
   - Rich text editor plugin for slate.js
+  - https://github.com/imdbsd/slate-devtools
 
 ## markdown
 
@@ -516,8 +543,10 @@ modified: 2023-02-05T19:03:12.723Z
   - A transformation and parsing framework for converting markdown content to HTML, Slate (for rich-text editing) and other structured document object models (DOMs).
   - 提供了很多子包，本身类似于remark
 
-- https://github.com/zhangyu836/docx-slate
+- https://github.com/zhangyu836/docx-slate /js
+  - https://zhangyu836.github.io/docx-slate/
   - slatejs-based docx editor for demonstration of docxjs.
+  - 打开docx后分页符显示为横杠
   - https://github.com/zhangyu836/docxjs
     - Javascript port of python-docx.
 
@@ -643,6 +672,12 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/dxiaoqi/slate-render-tool /ts
   - slate render tool
 
+- https://github.com/octet-stream/slate-to-react
+  - React component and utilities to transform Slate nodes to React
+  - render Slate nodes using SlateView component
+  - You can define and use custom transforms to control the output for each node
+  - by default slate-to-react will generate a unique id for each node using nanoid to use it as key property of each rendered React component
+
 - https://github.com/logmannn/slate-editor-renderer
   - js
 - https://github.com/GitbookIO/slate-lite-renderer
@@ -653,21 +688,16 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/streamich/json-joy/blob/master/src/json-cli/docs/json-patch-test.md
   - 支持slate split、merge、extend
-
-## slate-forks
-
-- https://github.com/372623460jh/sand-slate
-  - fork slate 0.47.9 修复中文输入法问题
-  - https://github.com/372623460jh/sand-editor
-
-## mobile
-
-- https://github.com/juliankrispel/slate-in-react-native
-  - Proof of concept - Slate in react-native Webview
 # slate-apps
-- https://github.com/Kffhi/flomo-react
+- https://github.com/Kffhi/flomo-react /ts
   - https://www.kffhi.com/flomo/
   - 大约1:1复刻的Flomo 网页（旧）版的单纯练习玩具，主要复刻编辑器
+  - 依赖reduxjs/toolkit、antd.v4
+  - 富文本写着逐渐无聊了起来，后面可能会去做一个类似VitePress的之类的玩意给自己建站用
+  - https://github.com/Kffhi/flomo-server /js
+    - 后端实现简单，仅依赖express，数据库使用本地json文件
+  - https://github.com/Kffhi/flomo-editor
+    - 用react+slate写一个青春版的flomo文本编辑器，基本上实现了Flomo编辑器的大部分功能
 
 - https://github.com/sodenn/2do-txt
   - https://2do-txt-sodenn.vercel.app/
@@ -707,9 +737,6 @@ modified: 2023-02-05T19:03:12.723Z
   - 依赖slate、yjs、rxjs
   - WYSIWYG Block Editor built upon Slate.js, with drag & drop, custom block rendering, etc.
   - Cross platform powered by Electron.
-
-- https://github.com/thesunny/slate-experiments
-  - 依赖slate.v0.63
 
 - https://github.com/madmaxmehdi44/platforms-slate-supabase
   - Build a blogging platform based on Slate.js, Supabase and Vercel.
@@ -832,5 +859,3 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/lingjieee/fantasy-editor /202006/ts
   - https://fantasy-editor.jieee.dev/
   - A React Rich Text Editor Based On Slate
-
-- https://www.npmjs.com/package/@nocobase/client

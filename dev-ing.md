@@ -18,7 +18,6 @@ https://meeting.tencent.com/p/9606972663
 # dev-xp
 - ui-starter
   - css: open-props, glass-ui, 渐变字体
-  - react: zag/ark, ariakit, radix-ui, mantine
 - dev-starter
   - patterns: react, typescript
 - list-grid-starter
@@ -70,6 +69,7 @@ $$('[contenteditable]')
     - dropdown-menu vs tabs
   - app-wiki-knowledge-base--0904
   - dashboard/webapp-template--0901
+  - ui: zag/ark, ariakit, radix-ui, mantine
 
 - deep into lib/fwk
   - src-code, issues, pr, forks, extensions/alternatives
@@ -96,7 +96,7 @@ $$('[contenteditable]')
   - lww的字符串改为针对crdt优化的类型
 
 - collab-sync
-  - 👉🏻 string-crdt: ?
+  - 👉🏻 string-crdt: ? list-crdt
   - collab-data-structure: lww-with-hlc
   - remoteStorage: google-drive、网盘、七牛对象存储
   - lo-fi-sync-server
@@ -160,6 +160,7 @@ $$('[contenteditable]')
 ## 040
 
 - dev-to
+  - streaming-infinite-list/tree
   - 拖拽时原布局不变，只显示预期位置的指示线
   - slate-docs-examples
   - unit-tests
@@ -176,12 +177,14 @@ $$('[contenteditable]')
     - upload by drag-drop
     - paste
     - [x] upload by filePicker
-  - scss to linaria
   - table to tanstack
+    - 删除表格
     - [ ] 隐藏浏览器selection
     - 优化model
   - list
-    - rename todoList to checkList
+    - rename todoList to checkboxList
+  - scss to linaria
+    - list-item
   - callout 高亮块
   - keyboard-shortcuts
   - copy-paste
@@ -235,7 +238,9 @@ $$('[contenteditable]')
     - cursor光标位置经常对不上
 # dev-04
 
-## 041
+## 0417
+
+
 
 ## 0415
 

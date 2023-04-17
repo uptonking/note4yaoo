@@ -74,6 +74,11 @@ modified: 2022-08-13T06:59:54.741Z
   - 前端依赖 redux/toolkit
   - 后端依赖 express、typeorm
 # react-starter
+- https://github.com/alan2207/bulletproof-react /star多
+  - A simple, scalable, and powerful architecture for building production ready React applications.
+  - It is an opinionated guide that shows how to do some things in a certain way. 
+  - You are not forced to do everything exactly as it is shown here
+
 - https://github.com/habx/lib-ts-template
   - Template for client library in typescript
 - https://github.com/KaiHotz/react-rollup-boilerplate

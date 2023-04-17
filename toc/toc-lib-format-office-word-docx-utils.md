@@ -12,6 +12,10 @@ modified: 2023-01-09T11:03:32.533Z
 # popular
 - https://github.com/byoungd/editor-to-word /ts
   - Export HTML to word (.docx) only by browser 
+
+- https://github.com/nod-engineering/docx
+  - Easily generate .docx files with JS/TS. 
+  - Works for Node and on the Browser.
 # examples
 
 # parser-generator
