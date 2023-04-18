@@ -15,7 +15,7 @@ modified: 2020-12-21T07:45:40.012Z
   - 如果你还在写页面，写css，reset是必须的，
   - 因为你还在写页面，你还在写css，所以你基本都搞不清楚那些是有用的，哪些是没用的，所以全部干掉是最好的方法，多谈点实用才是硬道理。
 - 传统的CSS reset指的是把所有的浏览器默认样式全部干掉。
-  - Normalize.css：非常温和的CSS reset替代方案，
+  - Normalize.css：非常温和的CSS reset替代方案
 
 # guide
 

@@ -94,17 +94,32 @@ react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", {
 
 - resources
   - [Use CSS Variables instead of React Context](https://epicreact.dev/css-variables/)
+# dev-xp
+- :global样式中sass的! 符号要去掉
 # issues
 - [Conditional CSS with styled tag](https://github.com/callstack/linaria/issues/409)
   - No support for conditional CSS using the styled tag is the biggest hurdle for us moving to linaria from styled-components in a typescript project
 
-## tooling
+- [`:global` css should be inserted before any other styles](https://github.com/callstack/linaria/issues/452)
+  - Linaria doesn't control insertion order. 
+  - It depends on what code is loaded first. 
+  - If your file containing the global CSS is the entry file or is imported in the entry file first, it'll be inserted first.
+
+## test
+
+- [fix(atomic, core, react): simplify Jest configuration by Anber](https://github.com/callstack/linaria/pull/1233)
+  - This pull request eliminates the need to include the @linaria/babel-preset when using Jest. 
+  - All calls to styled and css will now be replaced with runtime versions that generate sequential class names. 
+  - This simplification reduces the risk of configuration issues and streamlines the process of integrating Jest with Linaria.
+
+## bundling
 
 - 🚨 经常出现 linaria has no shaker metadata
   - ~~解决方法，import包时从具体子目录如./src/comp/button，而不是./src~~
   - 所以要多检查业务代码
   - 检查三方包中是否有反引号模版字符串
   - 主要是babel配置错误
+  - 🤔 import的路径具体化有时可以解决
 
 - Cannot read properties of undefined(reading IconButton)
   - 要注意组件导出的顺序，若先导出Link组件，后导出IconButton组件，会出现此问题
