@@ -179,7 +179,7 @@ $$('[contenteditable]')
     - [x] upload by filePicker
   - table to tanstack
     - 删除表格
-    - [ ] 隐藏浏览器selection
+    - [x] 隐藏浏览器selection
     - 优化model
   - list
     - rename todoList to checkboxList
@@ -222,7 +222,8 @@ $$('[contenteditable]')
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
   - list
-    - 列表项A的兄弟项B无法拖到A的位置，即无法替换A，B会自动变成A的子级
+    - 第一个列表项无法向左拖实现提升到父级
+      - 列表项A的兄弟项B无法拖到A的位置，即无法替换A，B会自动变成A的子级
     - 列表折叠图标在item内容多行时，会竖直居中
     - 将无序列表项拖进数字列表项时，数字列表项会增加？数字编号或自动变动
     - 数字列表跟在符号列表后时，数字不会从0开始，需要在前面插入一个空行

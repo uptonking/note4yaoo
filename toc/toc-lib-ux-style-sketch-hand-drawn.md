@@ -23,6 +23,8 @@ modified: 2021-01-13T19:30:59.508Z
     - It is used by @tldraw/tldraw as well as several other projects.
   - core-example is a simple example for @tldraw/core
     - 示例使用mobx-react-lite作为状态管理
+  - https://github.com/justjake/tlshot
+    - Take screenshots and edit them with tldraw.
 
 - excalidraw /15.3kStar/MIT/202101/ts
   - https://github.com/excalidraw/excalidraw

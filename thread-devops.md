@@ -21,7 +21,14 @@ modified: 2021-03-31T06:50:19.936Z
 
 - ## 
 
-- ## 
+- ## kill 一个特定 port 上面的进程都需要两个命令。发现一个 npm 库，一行优雅的搞定：
+- https://twitter.com/vikingmute/status/1648136292402876418
+  - npx kill-port 3000
+- 还是shell稳，node一换就没了，依赖太强，shell几乎不会换
+
+```shell
+lsof -i tcp:$port | awk '{if(NR>1) print $2}'| xargs -I{} kill -9 {}
+```
 
 - ## I want to make the application private but the library public.
 - https://twitter.com/steveruizok/status/1636741287641579520

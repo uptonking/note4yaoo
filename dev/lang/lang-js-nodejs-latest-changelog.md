@@ -14,6 +14,12 @@ modified: 2022-12-31T20:13:33.307Z
 - [Node.js Previous Releases with dates](https://nodejs.org/en/download/releases/)
 # changelog
 - v20.0.0_2023-04-18
+  - Experimental Permission Model
+  - A synchronous import.meta.resolve
+  - Stable Test Runner
+  - Single Executable Apps
+  - V8 JavaScript engine updated to 11.3
+  - Ada to 2.0
 
 - v19.7.0_2023-02-21
   - Node.js supports the creation of single executable applications by allowing the injection of a JavaScript file into the node binary. 

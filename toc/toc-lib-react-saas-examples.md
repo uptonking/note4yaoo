@@ -139,6 +139,15 @@ modified: 2022-08-13T06:59:54.741Z
 
 - https://github.com/oedotme/full-stack-typescript-with-turborepo-demo
   - Full stack TypeScript with Turborepo demo
+# nextjs
+- https://github.com/shadcn/ui
+  - https://ui.shadcn.com/
+  - Beautifully designed components built with Radix UI and Tailwind CSS.
+
+- https://github.com/steven-tey/precedent
+  - https://precedent.dev/
+  - An opinionated collection of components, hooks, and utilities for your Next.js project.
+  - Typescript-first ORM for Node.js
 # crud
 - https://github.com/taniarascia/react-hooks
   - https://taniarascia.github.io/react-hooks/

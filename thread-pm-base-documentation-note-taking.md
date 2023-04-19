@@ -7,7 +7,12 @@ modified: 2021-08-16T06:56:53.061Z
 
 # thread-pm-base-documentation-note-taking
 
-# pieces
+# guide
+
+# discuss
+- ## 
+
+- ## 
 
 - ## 
 

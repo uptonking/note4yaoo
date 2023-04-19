@@ -16,17 +16,15 @@ modified: 2021-01-31T08:40:11.675Z
 
 - ## 
 
-- ## 
+- ## Chinese Open Instruction Generalist: A Preliminary Release
+- https://twitter.com/mtrainier2020/status/1648154678423851009
+  - 搞了一个中文语料库。高考题目，公务员考试，leetcode，还是不少东西的。好几个学校一起搞的。
+  - [BAAI/COIG · Datasets at Hugging Face](https://huggingface.co/datasets/BAAI/COIG)
 
 - ## 获取书籍信息一直是个难题，起初豆瓣开放 API, 后来没有了，大家只能通过爬虫获取。
 - https://twitter.com/randyloop/status/1623957471168544769
   - 我在想能不能像 wikipedia 一样把书籍信息众包出去并开放 API 呢。
 - calibre有豆瓣插件可以获取信息
-- 
-- 
-
-
-
 
 - ## data of key catalogs and collections of mythology(神话) and folklore
 - https://github.com/j-hagedorn/trilogy

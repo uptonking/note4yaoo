@@ -65,7 +65,23 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss
 - ## 
 
-- ## 
+- ## I still find it crazy that after so many years, we’re still having to deal with the first request to a website returning HTML. 
+- https://twitter.com/DanShappir/status/1648197271488536581
+  - What if it could return a highly optimized version that represented the same package but was smaller in size and a tiny zero parse cost?
+  - Like a bundled format that includes the HTML, JS, fonts and CSS in a super optimized streamable bundle format that is designed to be performant and size sensitive.
+
+- HTML Parsing cost is actually low, and done while it streams. Parsing CSS is also fairly cheap. Its cost mostly derives from its global nature, and complex rules. There are ways to mitigate this cost. Parsing JS is more costly, but can be done off the main thread as it streams
+- 💡 There’s a misconception that this is true today. On low end KaiOS devices, it’s certainly not true. If we optimize for the low end then we’ll see a ton of wins for everyone else.
+- This is true, I did some experiments with **binary HTML format** back when I was at Cloudflare and I remember that parsing cost was completely negligible except for very large documents (~10MB+) compared to the costs of establishing connection in the first place.
+
+- Mostly the issue with JS is that we're downloading and executing way too much of it, much of which isn't actually needed. I'm liking what modern fw such as @QwikDev are doing in this context. OTOH I'm not seeing many jump ship to wasm, which wholly avoids runtime parsing.
+- For a while @yoavweiss was promoting Web Bundles
+  - but it seems to have stalled. Maybe because you can achieve much of its benefits using Compression dictionaries 
+  - coupled with HTTP/3, w/o significant changes to how the Web works. 
+  - HTTP push exists, but it mostly unused. Now we've got 103 early hints, resource hints, priority hints, and we can always just inline. With modern image formats and CDNs and Edge, resource delivery can be very efficient.
+- 
+- 
+- 
 
 - ## I rant from an interesting agnostic library context
 - https://twitter.com/tannerlinsley/status/1612895322715615232

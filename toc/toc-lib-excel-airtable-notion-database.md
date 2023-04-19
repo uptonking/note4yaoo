@@ -218,6 +218,12 @@ modified: 2022-08-21T10:02:05.129Z
   - Python formulas. Full Python syntax is supported, and the standard library.
   - A portable, self-contained format based on SQLite
 
+- quadratic /1.5kStar/MIT/202304/python
+  - https://github.com/quadratichq/quadratic
+  - https://quadratichq.com/
+  - Quadratic is a Web-based spreadsheet application that runs in the browser and as a native app (via Electron).
+  - Our goal is to build a spreadsheet that enables you to pull your data from its source (SaaS, Database, CSV, API, etc) and then work with that data using the most popular data science tools today (Python, Pandas, SQL, JS, Excel Formulas, etc).
+
 - refine /6.5kStar/MIT/202212/ts
   - https://github.com/refinedev/refine
   - https://refine.dev/

@@ -16,7 +16,19 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
-- ## 
+- ## React Suspense should have a minimum delay (~250ms) before showing its children if they're not resolved immediately to avoid fallback flashes.
+- https://twitter.com/diegohaz/status/1648585529716269056
+  - What's the current solution for this issue?
+- This is actually a bug in React currently. 
+  - React will throttle the content from appearing for 500ms after showing a fallback but because of the bug it doesn’t do this if there are no more fallbacks in the rest of the tree. Should be fixed soon.
+- Oh, nice! Although I think 500ms may be too much.
+  - Apparently backed by some user research at Facebook, but I feel like there are always gonna be scenarios where you wanna tweak it
+- css [Fix flicker on search by gaearon](https://github.com/bholmesdev/simple-rsc/pull/2)
+- 
+- 
+- 
+
+What's the current solution for this issue?
 
 - ## Next version of @preactjs DevTools will display which exact hook caused a component to update. 
 - https://twitter.com/marvinhagemeist/status/1632341790073270276
@@ -97,7 +109,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                      `ValueFront`,                      `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                       `ValueFront`,                       `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

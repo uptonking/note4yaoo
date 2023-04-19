@@ -33,6 +33,9 @@ modified: 2020-11-19T12:43:25.788Z
   - 提供了很多render props形式的高阶组件，如`<State>/<Toggle>`
   - https://github.com/kalcifer/react-powerhooks
     - Hooks api for react-powerplug components
+# react-server-components
+- https://github.com/bholmesdev/simple-rsc
+  - A simple React Server Components implementation that you can build yourself
 # experimental-react
 - https://github.com/lxsmnsyc/forgetti
   - Solve your hook spaghetti (with more spaghetti). Inspired by React Forget.
