@@ -315,6 +315,28 @@ modified: 2022-08-21T10:02:41.845Z
   - data structures in JavaScript tend to be slower than the built-in Array and Map data structures in typical cases, because the built-in data structures are mostly implemented in a faster language such as C++
 - https://github.com/w8r/splay-tree
   - This tree is based on top-down splaying algorithm by D. Sleator.
+# tree-like/nested
+- https://github.com/TheGuardianWolf/treepack
+  - Pack tree nodes into a flat object and unpack them again!
+  - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
+  - Limitations
+
+    - It is assumed that you have children of each node in a single array object
+    - Self referencing objects at any point in the tree are not supported
+    - An id field is required to perform better change detection (using idKey option).
+
+- https://github.com/Voronenko/Storing_TreeView_Structures_WithMongoDB
+  - Educational repository demonstrating approaches for storing tree structures with NoSQL database MongoDB
+  - using five typical approaches plus one combination of operating with hierarchy data on example of the MongoDB database.
+
+- https://github.com/jlxw/static-json-db
+  - A NoSQL key-value database stored as a directory tree of small JSON files which can be deployed as part of a static website and queried from client browsers in an efficient manner. 
+  - Data is stored in JSON files which are branched into smaller JSON files as size tresholds are met. 
+  - static-json-db can be a lower-cost alternative to traditional databases that do not need to be updated frequently. 
+
+- https://github.com/epochtalk/treedb
+  - Database for tree structured data
+  - LevelDB backend for hierarchical data.
 # json tree
 - https://github.com/measuredco/react-from-json
   - Declare your React component tree in JSON
@@ -357,7 +379,7 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/legharir/react-lazy-paginated-tree /201808/js
   - https://boweihan.github.io/rlpt-example/
   - 依赖material-ui.v1
-# misc
+# more
 - https://github.com/daniel-hauser/react-organizational-chart
   - Simple react hierarchy tree - any React children accepted for nodes
 - https://github.com/bkrem/react-d3-tree
@@ -376,3 +398,10 @@ modified: 2022-08-21T10:02:41.845Z
 
 - https://github.com/imsnif/nmtree
   - Get a (flat) tree representation of the modules in your node_modules folder
+
+- https://github.com/HannesOberreiter/btree_server
+  - API Server for b.tree Beekeeping Application. Node.js and Objections.js
+  - Written in typescript build with nodejs, express, knex.js and objections.js.
+  - https://github.com/HannesOberreiter/btree_database
+    - The maria folder will be our local volume for the database
+    - The redis folder will be our local volume for the redis database dumps

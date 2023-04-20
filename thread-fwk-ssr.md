@@ -47,6 +47,22 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## The reason client rendering is still popular is that it is so much simpler than SSR. 
+- https://twitter.com/devongovett/status/1648680262400704517
+  - SSR can be a huge pain — dealing with hydration, environment differences, effects not running on the server, etc. 
+  - For some apps, the DX of CSR outweighs the marginal UX benefits of SSR.
+- Frameworks have simplified SSR a lot and I hope they continue to do so. But a lot of what’s hard is dealing with differences between the browser environment and the server environment. Missing APIs, different behavior, etc. It needs to be completely transparent.
+  - My theory is that the simplest DX usually wins, even at the expense of UX (to a point). We see this play out over and over. If we want to make SSR the default choice for everyone, the best way to do that is to make it even easier than CSR. Eventually I think it’ll happen.
+
+- At the startup I used to work at (6y ago) we did pure CSR.
+  - We served everything static from S3 and it was super simple to understand and build for.
+  - It did mean slower startup for users - but we knew our users only launched the app once a day - so startup didn't matter to them.
+- It’s also just so much cheaper to host a client side app. Throw it on any blob storage provider and done
+
 - ## Everyone is talking about server-side rendering. Why? SEO and page load speed.
 - https://twitter.com/housecor/status/1532708512836505600
   - Yet many web apps are:

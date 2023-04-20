@@ -86,6 +86,9 @@ modified: 2022-11-03T04:14:00.563Z
 
 - https://github.com/jed/sheet-down
   - This library uses abstract-leveldown to turn a worksheet within a Google Spreadsheet into a leveldown-compatible store for use with levelup.
+
+- https://github.com/heineiuo/rippledb
+  - Embeddable key-value database engine in pure TypeScript, based on LSM-Tree
 # level-search
 - search-index /1.3kStar/MIT/202207/js
   - https://github.com/fergiemcdowall/search-index

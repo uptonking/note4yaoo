@@ -14,6 +14,9 @@ modified: 2023-04-13T01:34:12.143Z
   - Connect to your audience with a single link. 
   - Showcase the content you create and your projects in one place. 
   - Make it easier for people to find, follow and subscribe.
+  - alternatives
+  - https://github.com/techno-tim/littlelink-server /js
+    - A lightweight, open source, and self-hosted alternative to linktree in a Docker container!
 
 - https://github.com/formbricks/formbricks /ts
   - Formbricks productizes best practices for qualitative in-app user discovery. 

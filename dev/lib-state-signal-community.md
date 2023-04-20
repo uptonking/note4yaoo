@@ -12,6 +12,8 @@ modified: 2023-04-07T04:09:54.488Z
 # discuss-stars
 - ## 
 
+- ## 
+
 - ## React mobx is still observable but the way its set up feels a bit like signals. Is that right?
 - https://twitter.com/grunin_ya/status/1638614039659003905
 - No, Mobx's observables are signals.
@@ -39,6 +41,44 @@ modified: 2023-04-07T04:09:54.488Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Today's vibe: Mutable data structures are 💯. 
+- https://twitter.com/tannerlinsley/status/1648722093222273024
+  - I can sympathize with some decisions to go immutable (esp around React's change-detection evolution), 
+  - but the deeper I get into performant/predictable/simple code, the more I resent the abstraction, hence Signals 
+
+- Any time I'm in my framework-agnostic layer for @tan_stack , I just get so sick of all of the indirection around reactivity and state. 
+  - So often it ends up getting the way of writing performant code, as seen from the article he commented on in his stream the other day. 
+  - That specifically was a section of code that was historically written in/with React and when we made the move to framework agnostic it slipped through the cracks and didn't get migrated to our mutable state approach. 
+  - It sadly still "worked", but that small goof(愚蠢的错误) literally cost a TanStack Table user 1000x  perf on the row grouping logic
+- ag-grid: Running into similar things over here! The majority of our code is framework agnostic and we have to be careful not to leak immutability restrictions out of the framework specific sections that require it. I am definitely looking out for any spreads that I come across now!
+
+- An interesting exercise I like to do: remove the assumption of satisfying the framework's reactivity paradigm and think of how you would accomplish the same thing with as little memory/cpu overhead as possible. Mutation is a sharp ⚔️, but not forbidden.
+  - I mostly have beef when immutable contracts get in the way of writing performant code, which is all too easy to find these days.
+- It's funny how you and I have come to appreciate mutability, both with performance concerns but very different contexts.
+  - I'm over here trying to get 3d spaceships to fly around with realtime networking at 60fps.
+  - Updating mutable refs outside the React render cycle go brrrrrrrrr
+- https://twitter.com/mweststrate/status/1631200674313641984
+  - My expectation is that signal based solutions will eventually evolve into nested signals (signals containing signals) which will be either a bit clunky, or land on a Vue/MobX like object model.
+
+- The problem with immutability in modern fws is that JS doesn't have intrinsic support for it. Hence when using immutability with JS we get more overhead and less benefits. That said, the biggest problem with signals is that JS doesn't have intrinsic support for reactivity either.
+- How would you imagine such intrinsic support for either immutability/reactivity?
+  - In the case of immutability, I don't need to imagine it. For the Web we've already got it in Elm or Reason. For JS there's the Records & Tuples Proposal, but it's really just a patch.
+- It may be a pipe dream, but a reactivity primitive in JS would be so cool. I get whiffs of that feeling when I use tools like @observablehq and its `viewof/mutable` decorators.
+  - I don't think just adding a reactivity primitive in JS would be enough. I don't see how it would be better than Solid's implementation, except for making Ryan's life easier in the long run. To be truly reactive JS itself would need to change, kind of like what Svelte is doing.
+
+- The issue with immutability is when it leaks scopes. I recall spending a lot of time with this in jquery golden years (not jquery fault). No one was too worried about this back then.
+- Mutation is perfectly fine if you know when and how to use it.
+  - When: almost never, mostly when performance is absolutely critical 
+  - How: in a totally isolated manner. don't pass around an object that needs to be mutated in multiple places
+
+- I'm going to argue that the key benefit of immutability is the contract. 
+  - So as long as your mutation can be contained and that there are explicit controls, then you get most of the benefit, forgoing(弃绝；放弃) the base overhead cost of constant cloning.
+- Absolutely this. Mutability seems great until you're staring at a variable with bloodshot eyes at 3am screaming "WHO CHANGED YOU?"
+- Can/should `Object.freeze()` and `defineProperty()` be used more to protect against mutation? I know they're there, but I don't use them or see them used.
+  - Potentially. Funny enough Solid's Stores use proxies which are readonly so they actually guard against direct mutation. I've seen solutions do `Object.freeze` in dev and not in prod. Apollo for example.
 
 - ## I'm very interested to see where the Rx/Signal interop goes in Angular. 
 - https://twitter.com/RyanCarniato/status/1643107003655667713

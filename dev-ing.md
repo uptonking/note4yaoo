@@ -240,7 +240,45 @@ $$('[contenteditable]')
     - cursor光标位置经常对不上
 # dev-04
 
-## 0417
+## 042
+
+## 0420
+
+- [How do I merge two javascript objects together in ES6+? - Stack Overflow](https://stackoverflow.com/questions/13852852/how-do-i-merge-two-javascript-objects-together-in-es6)
+
+```JS
+export function isObject(item) {
+  return (item && typeof item === 'object' && !Array.isArray(item) && item !== null);
+}
+
+/**
+ * Deep merge two objects.
+ * @param target
+ * @param source
+ */
+export function mergeDeep(target, source) {
+  if (isObject(target) && isObject(source)) {
+    for (const key in source) {
+      if (isObject(source[key])) {
+        if (!target[key]) Object.assign(target, {
+          [key]: {}
+        });
+        mergeDeep(target[key], source[key]);
+      } else {
+        Object.assign(target, {
+          [key]: source[key]
+        });
+      }
+    }
+  }
+  return target;
+}
+```
+
+- [What does "go brrr" mean? : NoStupidQuestions](https://www.reddit.com/r/NoStupidQuestions/comments/kirugf/what_does_go_brrr_mean/)
+  - It's a meme referring to actions done for short term benefit without regard for long term consequence. 
+  - It started as a reaction to expansionary monetary policy enacted by the federal reserve during the market crash at the start of covid when they printed trillions of dollars in an attempt to correct the market.
+  - The implication is that printing so much money will correct the market in the short term but cause hyperinflation later.
 
 ## 0415
 

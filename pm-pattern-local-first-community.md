@@ -12,7 +12,23 @@ modified: 2022-03-03T18:20:12.075Z
 # discuss
 - ## 
 
-- ## 
+- ## Offline is not just online with extreme latency. This is one of those "mathematically true, but not true for humans" things.
+- https://twitter.com/aboodman/status/1648777443262488576
+  - You can't automatically merge conflicts when are disconnected for long periods, because their *intents* can diverge such that they become incompatible.
+- When *online* you can use any kind of merge strategy so long as it preserves useful invariants *to the developer*. If users see that collaboration did something they don't like, they can just undo it. Not too much work is lost.
+  - These tools don't work while offline because what users care about is amount of work lost. When offline the potential work lost scales from "milliseconds" to "days" and this isn't acceptable.
+  - Different strategies are required for applications where users can be disconnected for significant amounts of time.
+
+- Have you tried using llm for suggesting merge strategies yet? Seems like a fun use case to experiment with. Probably never a good idea to automatically merge, but draft one maybe.
+  - No but I think it’s a great idea particularly for text.
+
+- Is git the best example of a collaborative offline application?
+  - It's the one that jumps to mind, yeah. Ink & Switch did an amazing article about the general problem recently
+  - [Upwelling: Combining real-time collaboration with version control for writers.](https://www.inkandswitch.com/upwelling/)
+
+- orders of magnitude(巨大，量值) matter, and jitter(紧张不安的动作) matters. 
+  - A system that is designed to deal with 100ms latency will not deal well with minute-long latencies. 
+  - And as a corollary(必然的结果或结论), nothing can work well if your latency could be 1s, 100s, or 1000s.
 
 - ## I've learnt more about software engineering from building local-first software than any other space.
 - https://twitter.com/JungleSilicon/status/1635146316165828609
@@ -34,7 +50,6 @@ modified: 2022-03-03T18:20:12.075Z
 - Makes me wonder why we don’t have a messaging protocol like email for instant messaging…
   - There is RCS, which is an international  3GPP standard, but Apple refuse to implement it, and other providers pretend it's a Google thing (it's not)
   - And XMPP, solving instant messaging and presence as a w3c spec
-
 
 - ## So much CRDT literature seems to focus on collaborative text, but it feels like a pretty niche(针对特定小群体的) problem to me._202210
 - https://twitter.com/gaforres/status/1584909330859671553
