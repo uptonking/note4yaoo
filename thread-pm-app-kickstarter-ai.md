@@ -9,6 +9,12 @@ modified: 2023-04-04T03:59:40.928Z
 
 # guide
 
+# aigc-products
+
+- 中国法律AI助手
+  - [中国法律AI助手](https://law-cn-ai.vercel.app/)
+## resources
+- [AIGC交流群工具沉淀](https://bytedance.feishu.cn/base/AIMAbnJxQaNgSGsBAtwcdAkLnvf)
 # discuss
 - ## 
 

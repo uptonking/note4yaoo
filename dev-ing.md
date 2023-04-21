@@ -161,8 +161,10 @@ $$('[contenteditable]')
 
 - dev-to
   - streaming-infinite-list/tree
+  - focalboard-views
   - 拖拽时原布局不变，只显示预期位置的指示线
   - slate-docs-examples
+  - noseditor-docs
   - unit-tests
     - test in firefox
   - toolbar
@@ -174,13 +176,16 @@ $$('[contenteditable]')
     - [x] 字体大小、颜色
     - [x] 按钮按功能分组
   - image
+    - 上传图片时，默认图片原大小
     - upload by drag-drop
     - paste
     - [x] upload by filePicker
   - table to tanstack
     - 删除表格
+    - 删除行时，若只有一行，则应该删除表格
     - [x] 隐藏浏览器selection
     - 优化model
+    - copy from word
   - list
     - rename todoList to checkboxList
   - scss to linaria
@@ -241,6 +246,15 @@ $$('[contenteditable]')
 # dev-04
 
 ## 042
+
+## 0421
+
+- [windows - Clipboard size limit - Stack Overflow](https://stackoverflow.com/questions/1321866/clipboard-size-limit)
+  - Applications call GlobalAlloc(GMEM_MOVEABLE or GMEM_DDESHARE) to allocate the memory for data to be stored on the clipboard and make it available to other applications. 
+  - For 32-bit applications GlobalAlloc can allocate blocks up to 2 GB in size or up to the amount of virtual memory the PC has, whichever is less. 
+  - The Windows clipboard does not impose any other size limits.
+
+- [Is there a maximum size for Windows clipboard data? | Hacker News](https://news.ycombinator.com/item?id=31667701)
 
 ## 0420
 

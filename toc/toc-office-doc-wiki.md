@@ -11,7 +11,13 @@ modified: 2021-07-23T08:38:53.805Z
 
 - 文章集合的设计
   - 文章pages、知乎专栏、掘金小册、文集
-# wiki-like
+# yuque
+- https://github.com/yuque/yuque-exporter
+  - 用于批量导出语雀文档。
+
+- https://github.com/yuque-helper/yuque2book
+  - 将你的语雀文档导出为json的工具
+# wiki-like-ui
 - https://github.com/wikimedia/oojs-ui
   - https://www.mediawiki.org/wiki/OOUI
   - OOUI is a modern JavaScript UI library with strong cross-browser support. 

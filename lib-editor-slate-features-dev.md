@@ -30,8 +30,9 @@ modified: 2023-03-16T16:29:47.610Z
   - [GitHub Blocks](https://blocks.githubnext.com/)
 # noseditor
 
+# to-refactor
+- serialize/deserialize的定制逻辑暴露在各个plugin，而不是统一的useSerDes
 # dev-to
-
 - 整理每个plugin的export
 
 - 子级列表的拖拽按钮仅靠列表项开始的黑点

@@ -44,6 +44,10 @@ modified: 2021-08-30T18:56:18.632Z
   - I'm surprised the current version of SQLite Viewer keeps getting good reviews in the vsc marketplace. It flat out crashes if you open a large file. I suppose most sqlite files are small.
     - Unfortunately fixing it would be hard. 
     - vsc's own `fs` module doesn't let you read with random offsets, and even if it did, it would require writing a custom VFS and juggling buffers across 2-3 layers of iframes and workers.
+  - https://alpha.sqliteviewer.app/
+    - https://twitter.com/qwtel/status/1649018168839372803
+    - Can handle much larger SQLite files (tested up to 1.5GB), only limited by storage quota of your browser
+    - Fixed virutal scrolling and resizing for very large tables
 
 - sqlime /338Star/MIT/202204/js
   - https://github.com/nalgeon/sqlime

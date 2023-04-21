@@ -1,11 +1,11 @@
 ---
-title: lib-collab-tinybase-community
-tags: [collaboration, community, tinybase]
+title: lib-db-tinybase-community
+tags: [collaboration, community, database, tinybase]
 created: 2023-01-12T15:51:52.243Z
-modified: 2023-01-12T15:52:42.418Z
+modified: 2023-04-21T11:42:46.575Z
 ---
 
-# lib-collab-tinybase-community
+# lib-db-tinybase-community
 
 # guide
 
@@ -19,6 +19,12 @@ modified: 2023-01-12T15:52:42.418Z
 # changelog
 - [v3.0.0_20230130](https://github.com/tinyplex/tinybase/releases/tag/v3.0.0)
   - adds key/value store functionality to TinyBase
+# examples
+- https://github.com/brentvatne/example-tinybase
+  - I want to use it in React Native apps
+
+- https://github.com/circadian-risk/tinybased
+  - An experiment for an opinionated typesafe wrapper for TinyBase
 # discuss
 - ## 
 

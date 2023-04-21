@@ -65,6 +65,16 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss
 - ## 
 
+- ## 
+
+- ## why is there no `<ClientOnly />` component for nextjs?
+- https://twitter.com/aidenybai/status/1649173385501609984
+- Imaging you can put `<ClientOnly>` everywhere such as h1 title, then it might re-render on client after SSR hydration, then the mismatch between server and client creates layout shifts. Loading it asynchronously later on client can avoid these issues.
+
+- ## I'm probably going to end up jumping through SO many hoops  and challenges to support server components in TanStack Router, Bling and Start and at least for the time being, I resent(生气，憎恶，怨恨) the distraction
+- https://twitter.com/tannerlinsley/status/1649182381641965568
+  - Take a break from the chatter (yes, it's exciting) and remember to focus on what *your* users need.
+
 - ## I still find it crazy that after so many years, we’re still having to deal with the first request to a website returning HTML. 
 - https://twitter.com/DanShappir/status/1648197271488536581
   - What if it could return a highly optimized version that represented the same package but was smaller in size and a tiny zero parse cost?
