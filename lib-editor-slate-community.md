@@ -11,7 +11,27 @@ modified: 2023-02-05T19:03:12.722Z
 
 - ## 
 
-- ## 
+- ## render code in text
+- https://twitter.com/jitl/status/1649507571386949645
+- We've had this in our backlog since 2019 but haven't gotten around to it for a few reasons:
+  - Rendering the caret "inside" is tricky
+  - Keeping the caret "inside" as you type is a bit more tricky
+- We could draw our own caret and hide the browser one, but that breaks native stuff like long-press iOS keyboard trackpad (try in @googledocs @whimsical to see what I mean).
+- 💡 it's possible to write a big state machine and sometimes ignore the browser's idea of caret position... and we did... but the more we fight the browser, the more bugs we get.
+  - We could break free with totally custom text rendering & input (like Google Docs), but that's a huge investment – one we're not ready to make yet.
+
+- I’m no longer at Facebook but I don’t think there’s much appetite(强烈欲望) perusing a canvas based solution. 
+  - There’s far too many trade offs that you’ll make - not to mention that lack of using the DOM means hooking up existing content via React will not be possible or very difficult.
+- Canvas only is a non-starter, but what about separating the input element from the rendered UI and building enough layout smarts like Google Doc’s current architecture?
+- You’d be best doing what VSCode does in that case with the hidden input. Except that breaks web a11y tooling and that is just an unacceptable compromise imo, unless you want to ship MBs of JS and reimplement the world. There’s no ideal thing here, if there was, we’d be doing it.
+  - I think that we can possibly tackle this holistically with WASM and canvas someday when we have access to the IME and low level input interfaces directly.
+- I’ve been thinking about a system where the input and render elements are almost identical and layered on top of each other in the Z axis. Need to work hard to have low latency, but at least you can mutate the render DOM without disrupting IME
+- I think Coda does it this way too. For selection, focus would be on the back-layer “input” contentEditable=true, but you’d need to draw your own artificial selection range on the foreground contentEditable =false “render” element
+- Yeah that’s what I meant about selection issues. Drawing a fake selection range over adjacent block nodes is complex, slow and buggy. So those editors just forbid complex inline embeds. They also don’t support speech to text, so you have tons of complaints from Dragon users.
+
+- Any reasons why Notion wasn't built on top of an abstraction like Prosemirror?
+  - Notion predates ProseMirror. We’ve assessed rebuilding on it, but found limitations in CJK & Android. The risk&cost to adopt outweighs the reward.
+  - Our time would be better spent separating input handling from rendering. Using the same element for both is a dead end.
 
 - ## I love Discord, but I wish it had a better text editor for message input. 
 - https://twitter.com/trueadm/status/1645797085768458240

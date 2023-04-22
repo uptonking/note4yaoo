@@ -159,6 +159,9 @@ $$('[contenteditable]')
 
 ## 040
 
+- not-yet
+  - todo remove hash在编辑器中有什么作用
+
 - dev-to
   - streaming-infinite-list/tree
   - focalboard-views
@@ -167,6 +170,10 @@ $$('[contenteditable]')
   - noseditor-docs
   - unit-tests
     - test in firefox
+  - drag
+    - 拖拽到顶部或底部时，自动滚动
+    - 拖拽时底层元素固定，只显示指示线变动
+    - remove zustand
   - toolbar
     - [ ] dropdown 组件样式、active值
     - [x] 工具条按钮处理跨选区的情况
@@ -187,7 +194,7 @@ $$('[contenteditable]')
     - 优化model
     - copy from word
   - list
-    - rename todoList to checkboxList
+    - [x] rename todoList to checkboxList
   - scss to linaria
     - list-item
   - callout 高亮块
@@ -246,7 +253,10 @@ $$('[contenteditable]')
 # dev-04
 
 ## 042
-
+## 0422
+- [SourceMap don't link to an src file but to webpack-internal:///[LINE\_NUMBER] · Issue #5186 · webpack/webpack](https://github.com/webpack/webpack/issues/5186)
+  - In `eval-**-source-map` devtools you get a `webpack-internal://[module-id]:[line]:[column]`. 
+  - In other devtools you get a url pointing to the bundle file.
 ## 0421
 
 - [windows - Clipboard size limit - Stack Overflow](https://stackoverflow.com/questions/1321866/clipboard-size-limit)

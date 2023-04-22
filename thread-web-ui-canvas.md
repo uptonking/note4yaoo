@@ -105,7 +105,7 @@ modified: 2021-08-06T07:36:05.864Z
   - Has anyone been able to prevent it?
 - I recommend @figurativeapp if you want to use Figma on iPadOS, it resolves a lot of issues and allows you to use custom fonts installed via the Fontcase app
 
-- ## Specifically, each shape in tldraw is an absolutely positioned div. 
+- ## 💡 Specifically, each shape in tldraw is an absolutely positioned div. 
 - https://twitter.com/kriswuollett/status/1572572261890297856
   - Could contain an SVG image (like these) but it could also contain anything—arbitrary html, video, whatever. 
   - When moving lots of shapes at once, Chrome takes some time to "composite layers".

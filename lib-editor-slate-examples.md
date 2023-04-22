@@ -691,7 +691,7 @@ modified: 2023-02-05T19:03:12.723Z
 # slate-apps
 - https://github.com/Kffhi/flomo-react /ts
   - https://www.kffhi.com/flomo/
-  - 大约1:1复刻的Flomo 网页（旧）版的单纯练习玩具，主要复刻编辑器
+  - 大约1:1复刻的Flomo网页（旧）版的单纯练习玩具，主要复刻编辑器
   - 依赖reduxjs/toolkit、antd.v4
   - 富文本写着逐渐无聊了起来，后面可能会去做一个类似VitePress的之类的玩意给自己建站用
   - https://github.com/Kffhi/flomo-server /js

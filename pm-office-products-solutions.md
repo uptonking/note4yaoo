@@ -116,6 +116,11 @@ modified: 2021-07-11T08:31:00.660Z
 - xheldon公司产品插件使用了rxjs和webpack-tapable
 # trending-office-products
 
+## office-doc-whiteboard
+
+- [Whimsical - Work Better, Faster, Together](https://whimsical.com/)
+  - The hub for visual collaboration
+
 ## Notion竞品分析
 
 - [Top 12 Notion Alternatives 2022 (Free & Paid Competitors)](https://clickup.com/blog/notion-alternatives/)

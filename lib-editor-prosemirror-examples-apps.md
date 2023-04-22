@@ -115,7 +115,7 @@ modified: 2022-08-18T16:57:15.296Z
   - https://github.com/openneno/neno
   - https://neno.pages.dev/
   - 使用svelte+tailwindcss 仿照 浮墨 写的pwa应用
-  - 支持同步内容到Notion(使用gihub action)
+  - 支持同步内容到Notion(使用github action)
   - 编辑器迁移到了quill
 - https://github.com/juner0608/neno /inactive
   - 仿照浮墨的开源版本

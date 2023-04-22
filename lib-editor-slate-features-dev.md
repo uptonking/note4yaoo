@@ -39,12 +39,21 @@ modified: 2023-03-16T16:29:47.610Z
 
 - 第一个一级标题通常字体会更大，一般不需要在标题折叠整篇文章
 
+- isCollapsibleElement逻辑优点混乱
+  - 作为DraggableEditor的static方法
+  - 在editor.isCollapsibleElement被增强
+
 ## drag
 
 - 多级列表下的第一个p元素，无法拖拽到这个位置
 
 - 拖拽时原布局不变，只显示预期位置的指示线
   - notion、飞书
+
+### 拖拽指示线的实现思路
+
+- notion和飞书都不能拖拽到页面标题之上
+- 拖拽指示线使用绝对定位渲染在鼠标最近block的下面或上面，默认是下面 bootom: -4px
 # later
 - emoji
 
