@@ -35,7 +35,11 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/wojtekmaj/react-pdf /js
   - Display PDFs in your React app as easily as if they were images.
-  - For React-PDF to work, `PDF.js` worker needs to be provided.
+  - For React-PDF to work,  `PDF.js` worker needs to be provided.
+
+- https://github.com/pdfme/pdfme /MIT/ts
+  - https://pdfme.com/
+  - A TypeScript based PDF generator library, made with React.
 
 - https://github.com/jeetiss/react-pdf-repl
   - https://react-pdf-repl.vercel.app/

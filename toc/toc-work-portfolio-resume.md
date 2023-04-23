@@ -111,6 +111,10 @@ modified: 2021-01-09T16:56:35.339Z
 - https://github.com/LekoArts/portfolio
   - My personal portfolio & blog. Built with Gatsby.js.
 # resume-builder
+- https://github.com/sadanandpai/resume-builder
+  - https://e-resume.vercel.app/builder
+  - 整体页面不支持拖拽，右侧属性项目支持
+
 - https://github.com/sadanandpai/single-page-resume-builder
 - https://github.com/sramezani/resume-builder
 # github-readme

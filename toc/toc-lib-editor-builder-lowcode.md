@@ -16,6 +16,7 @@ modified: 2020-12-28T12:24:09.275Z
 - [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809)
   - platform, baas, cms建站, airtable-like, workflow
   - 流程自动化
+  - [对于低代码技术库的选型](https://blog.csdn.net/nihaio25/article/details/126517143)
 
 - workflow类低代码
   - 简单场景类似表单，支持根据不同评分显示不同内容，如投诉/不足

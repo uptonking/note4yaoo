@@ -43,6 +43,9 @@ modified: 2022-06-04T00:44:30.749Z
       - 页面内容块能再次拖拽
     - https://codesandbox.io/s/distracted-mendel-hibbgu
       - 页面内容块不能再次拖拽
+  - dnd-kit builder
+  - 效果参考
+    - [树形控件 Tree - Ant Design，拖拽时显示指示线](https://ant.design/components/tree-cn)
 
 - alternatives
   - use-gesture(vanillajs)
@@ -179,10 +182,6 @@ modified: 2022-06-04T00:44:30.749Z
   - https://fashion-lac.vercel.app/
   - Nextjs ecommerce is fullstack ecommerce web app with admin panel.
 
-- https://github.com/mehdi-zibout/kanban-t3
-  - A kanban task management app, with drag and drop, multiple boards and subtasks
-  - tRPC - Backend library
-
 - https://github.com/learnsomesome/drag-drop
   - https://learnsomesome.github.io/drag-drop/
   - A drag and drop demo by dnd-kit
@@ -200,6 +199,68 @@ modified: 2022-06-04T00:44:30.749Z
   - https://www.staticcms.org/
   - A Git-based CMS for Static Site Generators
 
+## kanban
+
+- https://github.com/mehdi-zibout/kanban-t3
+  - A kanban task management app, with drag and drop, multiple boards and subtasks
+  - tRPC - Backend library
+
+- https://github.com/rahulnpadalkar/react-dnd-kanban
+  - [Build a Kanban board with dnd kit and React - LogRocket Blog](https://blog.logrocket.com/build-kanban-board-dnd-kit-react/)
+
+- https://github.com/ZauJulio/AdaKanban
+  - https://ada-kanban.vercel.app/
+  - a Kanban board with DragandDrop, Chakra-ui and Next.js, making use of the API available by them in Nodejs.
+
+- https://github.com/azadov-azamat/kanban-board-todo
+  - https://kanban-board-todo-eight.vercel.app/
+  - Kanban board, xalq-bank task
+
+- https://github.com/LcsGomes94/react-kanban
+  - https://react-kanban-mauve.vercel.app/
+  - 不能拖拽列
+
+- https://github.com/matews-sousa/trello-clone
+  - A Trello Clone application called Thullo. Built with Next.js, Firebase, TailwindCSS and DnD Kit.
+
+## builder
+
+- https://github.com/mongodb-js/compass
+  - The GUI for MongoDB.
+
+- https://github.com/pdfme/pdfme
+  - https://pdfme.com/
+  - A TypeScript based PDF generator library, made with React.
+
+- https://github.com/i-VRESSE/workflow-builder
+  - https://wonderful-noether-53a9e8.netlify.app/
+  - Graphical interface to build a workflow file
+  - The builder allows you to create a complex TOML formatted config file based on a set of JSON schemas.
+
+- https://github.com/fayez-nazzal/Astonish
+  - The React library for creating presentations
+  - Wrap your presentation with the Astonish component
+  - Wrap each Slide with the Slide component
+
+- https://github.com/hlerenow/chameleon
+  - https://hlerenow.github.io/chameleon/documents/docs/tutorial/quickStart
+  - https://hlerenow.github.io/chameleon/
+  - Web visual programming engine. (lowcode)
+  - A streamlined low-code engine, all modules support custom extensions, which can be used for web page generation and rendering.
+
+- https://github.com/crossjs/cofe
+  - No-Code System
+  - 依赖chakra-ui.v1、recoil、nextjs、unist-builder(tree)
+
+- https://github.com/sadanandpai/resume-builder
+  - https://e-resume.vercel.app/builder
+  - 整体页面不支持拖拽，右侧属性项目支持
+
+- https://github.com/ljtechdotca/resume-builder
+  - http://resume-builder-beta.vercel.app/
+
+- https://github.com/zachhannum/calamus
+  - React Electron App for Writing and Publishing Novels
 ## utils
 
 - https://github.com/sindresorhus/array-move
@@ -211,6 +272,13 @@ modified: 2022-06-04T00:44:30.749Z
 - https://github.com/rashagu/dnd-kit-vue
   - a Vue adaptation based on @dnd-kit
 
+- https://github.com/kvandake/lexorank-ts
+  - A reference implementation of a list ordering system like JIRA's Lexorank algorithm
+
+- https://github.com/onmotion/react-tabtab-next
+  - https://onmotion.github.io/react-tabtab-next/
+  - A mobile support, draggable, editable and api based Tab for ReactJS
+
 ## more-repos
 
 - https://github.com/wyhinton/react_konva-dnd_kit
@@ -218,9 +286,6 @@ modified: 2022-06-04T00:44:30.749Z
   - Example of using dnd-kit to drag an element out a react konva canvas
   - 依赖konva、react-konva
 
-- https://github.com/onmotion/react-tabtab-next
-  - https://onmotion.github.io/react-tabtab-next/
-  - A mobile support, draggable, editable and api based Tab for ReactJS
 
 - https://github.com/ThaddeusJiang/react-sortable-list
   - Easy Drag & Drop sort items

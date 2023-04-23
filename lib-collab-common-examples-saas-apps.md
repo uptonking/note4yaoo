@@ -91,6 +91,9 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/flipt-io/flipt /go
   - https://flipt.io/
   - open source, self-hosted feature flag solution
+- https://github.com/growthbook/growthbook
+  - Open Source Feature Flagging and A/B Testing
+  - SDKs for React, Javascript, PHP, Ruby, Python, Go, and Kotlin (Android) with more coming soon
 
 - https://github.com/hedgedoc/hedgedoc
   - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.
