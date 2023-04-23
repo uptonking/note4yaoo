@@ -113,7 +113,7 @@ modified: 2022-02-05T18:45:34.558Z
   - JavaScript drag and drop, resizing and multi-touch gestures with inertia and snapping for modern browsers
   - not modifying the DOM except to change the cursor (but you can disable that)
   - Support for HTML and SVG
-#  zoomable ui
+# zoomable ui
 - https://github.com/aarondail/react-zoomable-ui
   - https://aarondail.github.io/react-zoomable-ui/example/
   - Make your HTML elements and React components zoomable, and build interesting zoomable UIs. 

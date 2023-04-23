@@ -16,6 +16,12 @@ modified: 2022-11-08T19:03:33.865Z
   - 基于textarea和React的markdown编辑器，实现简单且清晰
   - UI可配置, 如只显示编辑区或预览区，支持编辑区和预览区同步滚动
 
+- https://github.com/inokawa/rich-textarea
+  - https://inokawa.github.io/rich-textarea/
+  - A small customizable textarea for React to colorize, highlight, decorate texts, offer autocomplete and much more.
+  - designed to behave as native textarea as much as possible. Supports formik and react-hook-form. 
+  - IME composition handling: IME related events have some cross browser problems. This library handles them for easy to use.
+
 - https://github.com/uiwjs/react-textarea-code-editor
   - A simple code editor with syntax highlighting.
   - 只依赖rehype、react
@@ -30,12 +36,6 @@ modified: 2022-11-08T19:03:33.865Z
   - https://googlechromelabs.github.io/text-editor/
   - simple text editor designed to experiment with and demonstrate the new `File System Access API`s.
   - 编辑器基于textarea，撤销重做基于浏览器而不是自己实现
-
-- https://github.com/inokawa/rich-textarea
-  - https://inokawa.github.io/rich-textarea/
-  - A small customizable textarea for React to colorize, highlight, decorate texts, offer autocomplete and much more.
-  - designed to behave as native textarea as much as possible. Supports formik and react-hook-form. 
-  - IME composition handling: IME related events have some cross browser problems. This library handles them for easy to use.
 
 - https://github.com/fregante/indent-textarea
   - Add editor-like tab-to-indent functionality to `<textarea>`, in a few bytes

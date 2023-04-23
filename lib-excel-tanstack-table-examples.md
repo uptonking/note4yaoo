@@ -51,7 +51,7 @@ modified: 2022-08-21T10:37:01.349Z
   - https://kuechlin.github.io/mantine-data-grid/
   - 支持sort/filter/pagination，不支持group
   - 提供了一个类似storybook的属性开关工具，方便尝试示例各种交互
-  - 依赖mantine、dayjs
+  - 依赖mantine、dayjs、transtack-virtual
   - Data Grid component with Mantine UI and react-table v8.
   - 样式非常友好
 
@@ -60,6 +60,22 @@ modified: 2022-08-21T10:37:01.349Z
   - https://mantine-datagrid.netlify.app/
   - A wrapper around React Table (TanStack Table v8) using Mantine.
   - I do not plan to really maintain or update this library
+
+- https://github.com/Achaak/pikas-ui /MIT/ts
+  - https://github.com/Achaak/pikas/tree/main/packages/ui/table
+  - https://pikas-ui.vercel.app/components/table
+  - Pikas-UI is a React UI library for building web applications with StitchesJS.
+  - The library uses Stitches for styling and Radix for the accessibility.
+  - table依赖dnd-kit、pikas-ui
+
+- undb /20Star/AGPLv3/202304/ts
+  - https://github.com/undb-xyz/undb
+  - https://www.undb.xyz/
+  - https://docs.undb.xyz/
+  - Private first, unified, self-hosted no code database.
+  - 前端依赖 undb, dnd-kit、tanstack-table, react-redux, emotion, @loadable/component, jotai, react-hook-form, trpc
+    - 前端正迁移到svelte
+  - 后端依赖 nestjs、mikro-orm、trpc、undb
 
 - https://github.com/klassenl/react-grid /202210/ts/单击编辑单元格
   - https://subtle-muffin-372579.netlify.app/
@@ -170,11 +186,6 @@ modified: 2022-08-21T10:37:01.349Z
   - Table component Implementation based on react-table lib.
   - Virtualized settings are mostly replicating react-window
   - Requires numeric width and height of the container.
-
-- https://github.com/Achaak/pikas-ui 
-  - https://pikas-ui.vercel.app/components/table
-  - Pikas-UI is a React UI library for building web applications with StitchesJS.
-  - The library uses Stitches for styling and Radix for the accessibility.
 
 - https://github.com/blockchain/constellation/blob/development/packages/constellation
   - 依赖tanstack-table、radix-ui、headlessui、tailwindcss

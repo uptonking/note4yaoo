@@ -310,6 +310,12 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/novuhq/novu
   - The open-source notification infrastructure for products. 
   - Add a notification center for your React, Vue and Angular apps rocket
+
+- https://github.com/novuhq/novu
+  - Novu provides a unified API that makes it simple to send notifications through multiple channels, including In-App, Push, Email, SMS, and Chat. 
+  - With Novu, you can create custom workflows and define conditions for each channel, ensuring that your notifications are delivered in the most effective way possible.
+  - Single API for all messaging providers (In-App, Email, SMS, Push, Chat)
+  - Equipped with a CMS for advanced layouts and design management
 # meetings
 - https://github.com/lukevella/rallly
   - an open-source scheduling and collaboration tool designed to make organizing events and meetings easier

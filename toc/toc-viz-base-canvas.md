@@ -41,6 +41,9 @@ modified: 2020-10-05T06:17:42.467Z
     - Cairo has been wrapped many times by many different libraries, 
     - this one is just the same as all the others, except maybe that its used by Flipboard, but they don't say much about it other than their one Wiki article.
 
+- https://github.com/GuptaSiddhant/recanvas
+  - Build and render an image using canvas, yoga-layout and react in node environment.
+
 - two.js /7.1kStar/MIT/202105/js
   - https://github.com/jonobr1/two.js
   - https://two.js.org/

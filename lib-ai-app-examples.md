@@ -58,6 +58,9 @@ modified: 2023-02-08T07:20:48.475Z
 ## prompts
 
 - [Open Prompt](https://openprompt.co/)
+# chat
+- https://github.com/LAION-AI/Open-Assistant
+  - OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.
 # coding-copilot
 - https://github.com/TabbyML/tabby
   - https://tabbyml.github.io/tabby

@@ -54,6 +54,15 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/linyows/notionate
   - React components that uses the Notion API to display the Notion's database and page.
 
+- undb /20Star/AGPLv3/202304/ts
+  - https://github.com/undb-xyz/undb
+  - https://www.undb.xyz/
+  - https://docs.undb.xyz/
+  - Private first, unified, self-hosted no code database.
+  - 前端依赖 undb, dnd-kit、tanstack-table, react-redux, emotion, @loadable/component, jotai, react-hook-form, trpc
+    - 前端正迁移到svelte
+  - 后端依赖 nestjs、mikro-orm、trpc、undb
+
 - nocodb /33kStar/AGPLv3/202212/ts/vue/重后端/多视图
   - https://github.com/nocodb/nocodb
   - https://nocodb.com/

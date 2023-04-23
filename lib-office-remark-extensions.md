@@ -159,6 +159,12 @@ modified: 2021-06-02T16:49:11.370Z
 # extensions-react
 - https://github.com/remarkjs/react-remark
   - a React hook and React component based way of rendering markdown into React using remark
+# extensions-office
+- https://github.com/inokawa/remark-docx
+  - remark plugin to compile markdown to docx (Microsoft Word, Office Open XML)
+
+- https://github.com/inokawa/remark-pdf
+  - remark plugin to compile markdown to pdf.
 # extensions
 - https://github.com/arobase-che/remark-attr
   - adds support for custom attributes to Markdown syntax.
@@ -169,7 +175,6 @@ modified: 2021-06-02T16:49:11.370Z
 
 - https://github.com/mrzmmr/remark-variables
   - Variables support for remark
-
 
 - https://github.com/zWingz/remark-container
   - markdown container like markdown-it-container

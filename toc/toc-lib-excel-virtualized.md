@@ -10,6 +10,16 @@ modified: 2023-01-15T15:56:43.100Z
 # guide
 
 # virtualized-react
+- virtua /9Star/MIT/202304/ts
+  - https://github.com/inokawa/virtua
+  - https://inokawa.github.io/virtua/
+  - A zero-config, fast and small (3kB) virtual list component for React.
+  - 示例比较了react-virtual/react-window
+  - 依赖只有use-sync-external-store
+  - Aiming to support many usecases - fixed size, dynamic size, horizontal scrolling, reverse scrolling, rtl direction, sticky, infinite scrolling, placeholder, scrollTo, dnd, table, and more
+  - Framework agnostic (WIP): Currently only for React but we could support Vue, Svelte, Solid and more in the future.
+  - Fast: Scrolling without frame drop needs optimization in many aspects (reduce CPU usage, reduce GC, reduce layout recalculation, optimize for frameworks, etc). We are trying to combine the best of them.
+
 - react-virtual-grid /30Star/NALic/202005/js
   - https://github.com/fulcrumapp/react-virtual-grid
   - https://fulcrumapp.github.io/react-virtual-grid/

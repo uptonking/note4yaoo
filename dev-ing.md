@@ -253,10 +253,30 @@ $$('[contenteditable]')
 # dev-04
 
 ## 042
+
+## 0423
+
+- [DOM变化，如何避免页面的闪烁 | 杨飞的博客](https://www.yangfei.org.cn/post/fab4823.html#more)
+  - 简单来说，就有一个列表，你新增了一个元素，然后重新获取列表，界面会重新渲染，这时候有可能会导致页面闪烁。
+  - 将数据修改设置为本地修改(redux或者setState)，而不是等服务端返回过来新的数据。
+
+- [判断两个矩形相交以及求出相交的区域 - 莫水千流 - 博客园](https://www.cnblogs.com/zhoug2020/p/7451340.html)
+  - 一般的思路就是判断一个矩形的四个顶点是否在另一个矩形的区域内。这个思路最简单，但是效率不高，并且存在错误
+  - 另一种思路，那就是判断两个矩形的中心坐标的水平和垂直距离，只要这两个值满足某种条件就可以相交。
+  - 矩形A的宽 Wa = Xa2-Xa1 高 Ha = Ya2-Ya1
+  - 矩形B的宽 Wb = Xb2-Xb1 高 Hb = Yb2-Yb1
+  - 矩形A的中心坐标 (Xa3, Ya3) = （ (Xa2+Xa1)/2 ，(Ya2+Ya1)/2 ）
+  - 矩形B的中心坐标 (Xb3, Yb3) = （ (Xb2+Xb1)/2 ，(Yb2+Yb1)/2 ）
+  - 所以只要同时满足下面两个式子，就可以说明两个矩形相交。
+  - 1） | Xb3-Xa3 | <= Wa/2 + Wb/2
+  - 2） | Yb3-Ya3 | <= Ha/2 + Hb/2
+
 ## 0422
+
 - [SourceMap don't link to an src file but to webpack-internal:///[LINE\_NUMBER] · Issue #5186 · webpack/webpack](https://github.com/webpack/webpack/issues/5186)
   - In `eval-**-source-map` devtools you get a `webpack-internal://[module-id]:[line]:[column]`. 
   - In other devtools you get a url pointing to the bundle file.
+
 ## 0421
 
 - [windows - Clipboard size limit - Stack Overflow](https://stackoverflow.com/questions/1321866/clipboard-size-limit)

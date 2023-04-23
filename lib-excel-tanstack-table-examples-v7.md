@@ -82,6 +82,7 @@ modified: 2022-08-21T10:37:01.349Z
   - 注意不要随意升级版本，目前使用 react-table.v7.0.0-rc.11
   - 7.0.0-rc.11 天然不支持 column.show, 所以自行实现了 column.show 的支持
   - 斑马线，不能用 css 的 :even 和 :odd 实现。因为在使用虚拟列表的时候有坑。
+  - keyboard 测试 向上下左右是否有问题，特别是不在显示区域的是否可以滚动到显示区域
 
 - @superset-ui/plugin-chart-table
   - https://github.com/apache/superset/tree/master/superset-frontend/plugins/plugin-chart-table

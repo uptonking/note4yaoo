@@ -115,4 +115,7 @@ modified: 2020-12-31T15:19:37.542Z
 - https://github.com/WordPress/wordpress-playground
   - https://developer.wordpress.org/playground/
   - WordPress Playground is an experimental in-browser WordPress that runs without a PHP server thanks to the magic of WebAssembly.
+# wasm-utils
+- https://github.com/inokawa/wasm-ts-runtime
+  - [WIP]A toy WebAssembly runtime implementation with TypeScript.
 # more

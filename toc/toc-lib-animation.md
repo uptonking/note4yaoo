@@ -34,7 +34,10 @@ modified: 2020-10-05T06:22:02.107Z
   - Effortless animation between DOM changes (eg. list reordering) using the FLIP technique.
   - Flip Move uses the FLIP technique to work out what such a transition would look like, and fakes it using 60+ FPS hardware-accelerated CSS transforms.
   - Flip Move was inspired by Ryan Florence's awesome [Magic Move/2016](https://github.com/ryanflorence/react-magic-move)
-# web animations api
+# waapi/web animations api
+- https://github.com/inokawa/react-animatable
+  - composable animation library for React, built on Web Animations API and React hook.
+
 - @okikio/animate
   - https://github.com/okikio/native/tree/master/packages/animate
   - https://okikio.github.io/native/demo/animate.html

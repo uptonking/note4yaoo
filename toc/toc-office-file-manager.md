@@ -275,7 +275,6 @@ modified: 2021-08-23T05:27:08.068Z
   - 网盘前端基于vue2、vuex、element-ui
 - more-基于node实现的网盘
   - https://github.com/nijiayu0914/file_exchange_frontend
-  
 
 - https://github.com/huangshaomo/nodejs-express-mysql-bootstrap
   - 一个基于NodeJS Express Bootstrap Mysql 个人博客系统，
@@ -301,3 +300,6 @@ modified: 2021-08-23T05:27:08.068Z
   - 七牛云文件仿百度网盘文件夹管理，上传下载，删除。七牛云存储，七牛云图床。桌面应用程序 windows mac
 - https://github.com/chenhb23/lanzouyun-disk
   - 蓝奏云网盘、客户端，界面美观。支持登录、大文件批量断点上传 / 下载、URL 解析，使用 electron 构建
+
+- https://github.com/spacedriveapp/spacedrive
+  - Spacedrive is an open source cross-platform file manager, powered by a virtual distributed filesystem (VDFS) written in Rust.
