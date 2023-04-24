@@ -16,6 +16,14 @@ modified: 2020-07-07T08:10:16.774Z
 - [top tc39 proposals](https://github.com/search?o=desc&q=user%3Atc39&s=stars&type=Repositories)
   - pipeline-operator(|>), optional-chaining(?.), pattern-matching(case-when), observable, dynamic-import, bind-operator(::), object-rest-spread, decorators
   - [tc39 proposals stages](https://github.com/tc39/proposals)
+
+# proposals-trending
+
+- https://github.com/tc39/proposal-explicit-resource-management
+  - https://github.com/tc39/proposal-async-explicit-resource-management
+  - This proposal intends to address a common pattern in software development regarding the lifetime and management of various resources (memory, I/O, etc.). 
+  - This pattern generally includes the allocation of a resource and the ability to explicitly release critical resources.
+  - `DisposableStack`
 # proposals-dead
 - html import
 - [proposal-bind-operator `::`](https://github.com/tc39/proposal-bind-operator)

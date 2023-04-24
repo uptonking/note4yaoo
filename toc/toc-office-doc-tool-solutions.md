@@ -245,6 +245,8 @@ modified: 2021-07-21T18:07:43.056Z
   - No build process, website is generated on the fly.
 - https://github.com/mkdocs/mkdocs
   - Project documentation with Markdown built with python
+  - https://github.com/squidfunk/mkdocs-material
+    - Write your documentation in Markdown and create a professional static site for your Open Source or commercial project in minutes – searchable, customizable, more than 50 languages, for all devices.
 - https://github.com/star7th/showdoc
   - https://www.showdoc.com.cn/
   - https://www.showdoc.com.cn/demo/10

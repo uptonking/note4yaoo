@@ -17,7 +17,9 @@ modified: 2023-02-05T19:03:12.722Z
 # discuss
 - ## 
 
-- ## 
+- ## 【 Heterodoc 编辑器 】支持自定义 Emoji 显示
+- https://twitter.com/Shenqingchuan/status/1649622854705758208
+- 这个功能的定制需要 ProseMirror 的更进阶的知识，我也踩了很多坑。比如 mark 的 左边默认且不可改 inclusive 需要加零宽字符、用 Mark 实现时需要保证一个 Emoji 一个 Mark 等等 ...
 
 - ## [主流的开源「富文本编辑器」都有什么缺陷？](https://www.zhihu.com/question/404836496/answers/updated)
 
@@ -172,7 +174,6 @@ modified: 2023-02-05T19:03:12.722Z
   - 但仍然是挺适合他们业务场景和受众的设计，不过对长文章性能也有点问题。
 - Notion 通过教育用户别去用 Inline 图片，降低了实现难度，甚至现在大家都开始搞模块化笔记了，未来再无 Inline Image
 - Inline图片可以的，用entity
-
 
 - ## I work at Notion and recently rebuilt much of the editor core, _202206
 - https://news.ycombinator.com/item?id=31814983

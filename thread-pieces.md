@@ -15,7 +15,9 @@ modified: 2021-01-11T12:10:50.900Z
 
 - ## 
 
-- ## 
+- ## At this point I should be giving ChatGPT equity as an advisor.
+- https://twitter.com/steveruizok/status/1650057460940406789
+  - I don’t think we’ve even begun appreciating how useful this thing is for learning a new topic. Immediate answers to thousands of little questions that are semi contextual and occasionally embarrassing
 
 - ## 大家都是草台班子， 大公司也不例外
 - https://twitter.com/fuergaosi/status/1642517129579892736

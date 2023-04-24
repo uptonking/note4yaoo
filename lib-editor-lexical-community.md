@@ -35,7 +35,10 @@ modified: 2022-05-15T18:35:39.272Z
 # discuss
 - ## 
 
-- ## 
+- ## What about the usage of the 'beforeinput' event on contenteditable? 
+- https://twitter.com/Pryscy/status/1650081070413496320
+  - I think Lexical uses it, but Prosemirror does not and warns about issues with it in their source code
+- We worked hard helping browser vendors to fully get beforeinput shipped, so it has great support today.
 
 - ## we look at Meta's new @lexicaljs framework and how we can use it to build a simple WYSIWYG editor
 - https://twitter.com/kmuenster/status/1615363796671041544

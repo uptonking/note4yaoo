@@ -14,7 +14,13 @@ modified: 2022-12-24T07:31:48.493Z
 
 - ## 
 
-- ## 
+- ## Weekend project... video conversions without a server. 
+- https://twitter.com/okikio_dev/status/1649949687468773379
+  - m3u8 to mp4, avi to mp4, mp4 to webm, mp4 to gif, etc... 
+  - FFmpeg WASM for the win
+- Does it have a file size limit?
+  - WASM currently has a 2 GB memory limit, so 2 GB is the limit. 
+  - With OPFS (Origin Private File System) being supported on all browsers it may be possible to support larger files in the near future
 
 - ## [In my experience the place wasm really shines is in implementing custom data structures.](https://news.ycombinator.com/item?id=32100578)
 - A wasm b-tree, skip list, rope, etc seems to outperform the equivalent javascript code by many times.
@@ -253,10 +259,8 @@ modified: 2022-12-24T07:31:48.493Z
     - 我就此专门问过 Ivan 的想法，按他的说法，用 JS 重写那些 C++ 的底层代码，对他来说往往比费力把这些库接进来更方便
     - Photopea 从字体二进制解析、算法处理、渲染到图像编码导出，几乎都是他自己 JavaScript 徒手撸的。
     - 另外，一些 AI 抠图等需要训练模型的地方，未来也可能引入 WASM。
-
-  - 所以基本上，效果拔群的 Web 应用，关键倒不是选 JavaScript 还是 WASM，而是**掌握对渲染的极致控制**。
-
-    - 当你有了这个水平之后，是否使用 WASM 也只是一种选择而已
+- 所以基本上，效果拔群的 Web 应用，关键倒不是选 JavaScript 还是 WASM，而是**掌握对渲染的极致控制**。
+  - 当你有了这个水平之后，是否使用 WASM 也只是一种选择而已
 
 - ## [c++项目转成wasm全过程_202007](https://zhuanlan.zhihu.com/p/158586853)
 - 本项目是一个类似RN|Weex的一个跨端项目，

@@ -254,6 +254,11 @@ $$('[contenteditable]')
 
 ## 042
 
+## 0424
+
+- [Use Css modules add conditional transition styling to my side navigation - Stack Overflow](https://stackoverflow.com/questions/61342201/use-css-modules-add-conditional-transition-styling-to-my-side-navigation)
+  - scss module 内层class类名也可以直接使用，如 `styles.hideDropIndicator`
+
 ## 0423
 
 - [DOM变化，如何避免页面的闪烁 | 杨飞的博客](https://www.yangfei.org.cn/post/fab4823.html#more)

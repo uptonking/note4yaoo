@@ -11,7 +11,18 @@ modified: 2022-03-18T20:56:35.254Z
 
 - ## 
 
-- ## 
+- ## Have a lag radar that tells you if something takes longer than some interval, in real-time, no profile recordings.
+- https://twitter.com/fabiospampinato/status/1650188305248518148
+- I like your visualizing and framing as a "performance radar". I've built this FPS meter for the same purpose
+  - https://twitter.com/schickling/status/1617637913935884290
+- I had implemented an FPS meter too at some point, but it was harder to spot drops in frame rate (green vs red on the bar is more evident), and things can still be slow while fitting within one frame, the FPS meter won't spot that.
+
+- I've seen stuff like this, but I'm always curious, how is it actionable? With log statements, you'd be able to look back through the history, and see which things took the most out of your time budget
+- I'm using it like this:
+  1. I play with my components.
+  2. I take a note of which interactions cause the lag radar to show me some red.
+  3. Lastly I turn on the profiler and see exactly what's going on.
+  - The radar is good for knowing when to profile, it's not a replacement for it.
 
 - ## If importing an SVG is the best thing for you ergonomically, choose a solution that returns a URL for use with `<img>`, or extracts them into `<defs>` for use with `<use href="#">`.  
 - https://twitter.com/_developit/status/1382838803866521601

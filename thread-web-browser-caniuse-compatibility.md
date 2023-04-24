@@ -7,6 +7,16 @@ modified: 2021-07-29T11:15:44.100Z
 
 # thread-web-browser-caniuse-compatibility
 
+# guide
+
+# chrome
+- [Web Capabilities (Project Fugu 🐡)](https://www.chromium.org/teams/web-capabilities-fugu/)
+  - https://github.com/GoogleChromeLabs/fugu-showcase
+    - [Project Fugu API Showcase - Chrome Developers](https://developer.chrome.com/fugu-showcase/)
+    - a collection of apps that make use of APIs that were conceived in the context of Project Fugu.
+  - Project Fugu 🐡 is an effort to close gaps in the web's capabilities enabling new classes of applications to run on the web.
+  - [Fugu API Tracker](https://fugu-tracker.web.app/)
+  - [What Is Project Fugu — Google’s Initiative To Unlock All Native Device Features For The Web](https://medium.com/swlh/what-is-project-fugu-googles-initiative-to-unlock-all-native-device-features-for-the-web-892fafa726f9)
 # caniuse-css
 - [`:focus-visible` CSS pseudo-class](https://caniuse.com/css-focus-visible)
   - ❌️ safari 15仍然不支持

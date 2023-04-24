@@ -44,7 +44,10 @@ modified: 2023-03-05T08:55:03.696Z
 
 - ## 
 
-- ## 
+- ## Should we return a typed `setData` function from `useQuery` ?
+- https://twitter.com/TkDodo/status/1650104471555383299
+- I want a type safe way to manipulate the cache, which this could be.
+  - The current version of queryClient.setData is more or less just explicit typecasting and is error prone, it’s not really type safe (the type passed to setData doesn’t have to match the queryFn return)
 
 - ## [Why mobile apps are usually authenticated via token, not cookies - Stack Overflow](https://stackoverflow.com/questions/34593045/why-mobile-apps-are-usually-authenticated-via-token-not-cookies)
 - 👉🏻 One concern is application scalability. When you use a cookie it normally goes like this:

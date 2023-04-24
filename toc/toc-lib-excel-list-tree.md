@@ -91,6 +91,7 @@ modified: 2022-08-21T10:02:41.845Z
   - extensible drag & drop toolkit for React.
     - Built for React: exposes hooks such as useDraggable and useDroppable
   - Supports a wide range of use cases: lists, grids, multiple containers, nested contexts, variable sized items, virtualized lists, 2D Games, and more.
+  - tree组件每一项是li，外层没有ul/ol
   - 作者旧轮子 [react-sortable-hoc](https://github.com/clauderic/react-sortable-hoc)
   - 树形组件示例
     - https://github.com/clauderic/dnd-kit/tree/master/stories/3%20-%20Examples/Tree
