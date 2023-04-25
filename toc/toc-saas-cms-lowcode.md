@@ -51,6 +51,8 @@ modified: 2023-01-20T21:59:47.792Z
     - Cloud hosting. 
 - https://github.com/AlessioGr/payload-plugin-lexical
   - Extends payload CMS with Meta's lexical RichText editor - a much more advanced and customizable richtext editor
+- https://github.com/NouanceLabs/payload-dashboard-analytics
+  - A plugin for Payload CMS to connect analytics data to your Payload dashboard.
 
 - directus /19.5kStar/GPLv3/202301/ts/vue
   - https://github.com/directus/directus

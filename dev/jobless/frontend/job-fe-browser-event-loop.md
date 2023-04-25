@@ -158,7 +158,9 @@ modified: 2021-10-10T09:18:01.462Z
 - To schedule a new microtask
   - Use `queueMicrotask(f)`.
   - Also promise handlers go through the microtask queue.
-- There’s no UI or network event handling between microtasks: they run immediately one after another.
+- **There’s no UI or network event handling between microtasks**: they run immediately one after another.
+  - 事件冒泡也不会在2个microTask之间
+  - Just a note: this is true for synthetic events like the ones in React. Native event bubbling runs after microtasks
 - For long heavy calculations that shouldn’t block the event loop, we can use Web Workers.
   - Web Workers can exchange messages with the main process, but they have their own variables, and their own event loop.
 

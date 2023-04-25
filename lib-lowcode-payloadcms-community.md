@@ -28,8 +28,8 @@ modified: 2023-02-05T18:40:43.969Z
   - You can establish one table per field (all of them), but the resulting queries are not nice to look at and you cannot query anything without a query builder (cf. Drupal entity/field schema design today).
   - I'm with @ssyberg, JSON fields for complex fields wouldn't be that much of a problem, especially considering the cost/complexity of the extra tables.
 
+- I think it should be avoided to use operations which are not provided by cloud database providers like Planetscale or Neon.tech. Especially starting from scratch It is easy to avoid these kind of things.
 
-- 
 - 
 - 
 - 

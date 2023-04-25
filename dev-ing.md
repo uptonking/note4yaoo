@@ -137,7 +137,7 @@ $$('[contenteditable]')
   - 01-linvo-search + tinybase-sync-hlc-wip
   - 02-typewriter-quill + tanstack-table + slate-table
   - 03-crdt-rga + slate-yjs + slate-editor
-  - 04-slate-table/image-sequelize
+  - 04-slate-dnd/table/image-sequelize
 
 - why use es6 class
   - 运行时类型检查，instanceof
@@ -165,14 +165,14 @@ $$('[contenteditable]')
 - dev-to
   - streaming-infinite-list/tree
   - focalboard-views
-  - 拖拽时原布局不变，只显示预期位置的指示线
   - slate-docs-examples
   - noseditor-docs
   - unit-tests
     - test in firefox
   - drag
-    - 拖拽到顶部或底部时，自动滚动
-    - 拖拽时底层元素固定，只显示指示线变动
+    - dnd-kit tree performance
+    - 拖拽到页面顶部或底部时，自动滚动
+    - 拖拽时原布局不变，只显示预期位置的指示线
     - remove zustand
   - toolbar
     - [ ] dropdown 组件样式、active值
@@ -624,7 +624,7 @@ declare module 'react' {
 }
 ```
 
-- [reactjs - how to dynamically change global stylesheets in next js - Stack Overflow](https://stackoverflow.com/questions/68326186/how-to-dynamically-change-global-stylesheets-in-next-js)
+- [how to dynamically change global stylesheets in next js - Stack Overflow](https://stackoverflow.com/questions/68326186/how-to-dynamically-change-global-stylesheets-in-next-js)
 
 ```JSX
 
@@ -1171,9 +1171,9 @@ color2 instanceof String; // returns false (color2 is not a String object)
 
 ## 0123
 
-- [node.js - Difference between process.nextTick and queueMicrotask - Stack Overflow](https://stackoverflow.com/questions/55467033/difference-between-process-nexttick-and-queuemicrotask)
+- [Difference between `process.nextTick` and `queueMicrotask` - Stack Overflow](https://stackoverflow.com/questions/55467033/difference-between-process-nexttick-and-queuemicrotask)
   - It is the same, in the way of both of them are to execute a task just after the execution of the current function or script.
-  - They have different queues. The nextTick's queue is managed by node and the microtask one is managed by v8.
+  - 👉🏻 They have **different queues**. The nextTick's queue is managed by node and the microtask one is managed by v8.
   - The nextTick queue is checked first after the current function/script execution, and then the microTask one.
   - There is no performance gain, the difference is that the nextTick queue will be checked first after the function/script execution 
 

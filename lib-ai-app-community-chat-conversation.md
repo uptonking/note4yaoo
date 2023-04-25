@@ -40,7 +40,13 @@ modified: 2023-04-16T10:02:58.738Z
 
 - ## 
 
-- ## 
+- ## 帮助我最多的 5 个技术相关 ChatGPT Prompts：
+- https://twitter.com/Tim_Qian/status/1650733864510459905
+  1. 生成正则表达式
+  2. 生成 Cron 表达式
+  3. Tailwindcss 专家
+  4. 英语老师
+  5. 帮我写 SQL
 
 - ## 其实之前不仅仅关注LLaMA生态的一些开源大模型，国内的一些开源大模型也在关注，这里分享几个最近挺火的LLM。
 - https://twitter.com/xinqiu_bot/status/1645616019103428609

@@ -12,7 +12,7 @@ modified: 2021-08-30T07:01:09.493Z
 # discuss
 - ## 
 
-- ## [Why the Microtask queued after chained promises are executed after the first promise resolution ignoring the chained ones? - Stack Overflow](https://stackoverflow.com/questions/75373806/why-the-microtask-queued-after-chained-promises-are-executed-after-the-first-pro)
+- ## [💡 Why the Microtask queued after chained promises are executed after the first promise resolution ignoring the chained ones? - Stack Overflow](https://stackoverflow.com/questions/75373806/why-the-microtask-queued-after-chained-promises-are-executed-after-the-first-pro)
 
 ```JS
 function tasksAndMicroTasks() {
@@ -43,12 +43,6 @@ tasksAndMicroTasks()
 - For the purposes of your experiment,  `Promise.resolve().then(fn)` is doing the same thing as `queueMicrotask(fn)`. 
   - The Promise is already resolved, so the callback function is queued.
 - When you chain .then() callbacks, you're adding callbacks to the returned Promises from the calls to .then(). Those Promise objects will not resolve until each .then() resolves in sequence.
-- 
-- 
-- 
-- 
-- 
-- 
 
 - ## [What are the advantages of async.js over native Promises](https://github.com/caolan/async/issues/1714)
 - Promises add a caching layer for results and errors and state machine around your function calls which makes things more stateful and somewhat slower than necessary 

@@ -69,6 +69,7 @@ modified: 2020-07-14T11:03:53.196Z
     - Support tree-shaking
     - https://twitter.com/sitnikcode/status/1452629669933731849
     - [Nano Stores 0.5 · Issue_202109](https://github.com/nanostores/nanostores/issues/57)
+  - [Nano Stores in Angular: how to make the state management simpler - DEV Community](https://dev.to/evilmartians/nano-stores-in-angular-how-to-make-the-state-management-simpler-38a1)
 
 - xstate /MIT/12.2kStar/202007/状态机
   - https://github.com/davidkpiano/xstate
@@ -196,13 +197,18 @@ modified: 2020-07-14T11:03:53.196Z
     - No official guideline on how to integrate RxJS with React.
   - EVT is an attempt to address all these points while trying to remain as accessible as EventEmitter.
 # signals
-- https://github.com/preactjs/signals
+- https://github.com/preactjs/signals /ts
   - Signals is a performant state management library with two primary goals
     - Make it as easy as possible to write business logic for small up to complex app
     - Integrate into frameworks as if they were native built-in primitives
   - Signals can be accessed directly and your component will automatically re-render when the signal's value changes.
-  - https://github.com/EthanStandel/deepsignal
-    - wrap Preact's Signal model to make it a full state management solution
+- https://github.com/luisherranz/deepsignal
+  - Preact signals, but using regular JavaScript objects
+  - DeepSignal works by wrapping the object with a Proxy that intercepts all property accesses and returns the signal value by default.
+  - This allows you to easily create a deep object that can be observed for changes, while still being able to mutate the object normally.
+  - Nested objects and arrays are also converted to deep signal objects/arrays, allowing you to create fully reactive data structures.
+- https://github.com/EthanStandel/deepsignal
+  - wrap Preact's Signal model to make it a full state management solution
 
 - https://github.com/tldraw/signia
   - Reactive signals that scale, by tldraw.

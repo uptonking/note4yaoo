@@ -12,7 +12,26 @@ modified: 2023-04-07T04:09:54.488Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Here is a little demo I whipped up using Preact Signals - can be used without a framework!
+- https://twitter.com/wesbos/status/1650589973215584260
+
+```JS
+const createState = (s) => {
+  const ls = new Set();
+  const n = (k, v) => { ls.forEach(l => l(k, v, s)) };
+  const subscribe = (l) => { ls.add(l); return () => { ls.delete(l) } };
+  const p = new Proxy(s, { set: (t, k, v) => { t[k] = v;
+      n(k, v); return true; } });
+      
+  return { state: p, subscribe, listeners: ls }
+}
+
+// no need for setState()
+const state1 = createState({ilhan:42, deniz:10});
+state1.subscribe((k,v)=>{if(k === 'ilhan'){console.log("ilhan set to", v)}})
+state1.state.ilhan = 44; // ilhan set to 44
+state1.state.deniz = 11; // nothing
+```
 
 - ## React mobx is still observable but the way its set up feels a bit like signals. Is that right?
 - https://twitter.com/grunin_ya/status/1638614039659003905

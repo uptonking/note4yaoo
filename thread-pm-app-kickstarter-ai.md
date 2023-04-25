@@ -10,10 +10,11 @@ modified: 2023-04-04T03:59:40.928Z
 # guide
 
 # aigc-products
-
 - 中国法律AI助手
   - [中国法律AI助手](https://law-cn-ai.vercel.app/)
+
 ## resources
+
 - [AIGC交流群工具沉淀](https://bytedance.feishu.cn/base/AIMAbnJxQaNgSGsBAtwcdAkLnvf)
 # discuss
 - ## 
@@ -21,6 +22,16 @@ modified: 2023-04-04T03:59:40.928Z
 - ## 
 
 - ## 
+
+- ## 大佬果然辞职all in ai了
+- https://twitter.com/wang_xiaolou/status/1650790043861266433
+- 操盘十个亿 然后去开知识星球？
+  - 操盘再大，他可能也只是打工的，不掌握生产资料。开知识星球，他就是老板了，而且收入也不一定少。一年几百万不难。而且，看他的玩法，还是很高明的。一鱼多吃，Saas平台和知识付费，互相导流，互壮声势
+
+- ## Midjourney V5 之后，写实的、类摄影的作品创作能力更加强大，有人重新整理了 Midjourney 支持的 370 多位著名摄影师，示例作品以及对应的 prompt 提示语
+- https://twitter.com/nishuang/status/1650622275488718848
+  - [I've created a v5 reference sheet showcasing styles of various photographers : midjourney](https://www.reddit.com/r/midjourney/comments/124nnyl/ive_created_a_v5_reference_sheet_showcasing/)
+  - https://docs.google.com/spreadsheets/d/16KKh1FQmd-r98K9aWPBux5m9lc9PCV_T1AWgU54qXm8/edit#gid=0
 
 - ## OpenAI 是有审核的。
 - https://twitter.com/chloerei/status/1645825682663170050
@@ -40,15 +51,15 @@ modified: 2023-04-04T03:59:40.928Z
 - ## 做了点项目，也看了不少厉害的人的分享，聊聊我的感觉，如果感觉不对可以批评我我好好学习下～
 - https://twitter.com/yihong0618/status/1633687559204380673
 
-01.   不是取代
-02.   但很多我们熟悉的规则都变了，速度非常快，需要探索学习新的规则
-03.   有点像移动互联网的过渡期，但速度要比那时候快的多
-04.   现在的最大弊端是不是 100% 准确，而且会胡诌
-05.   目前一半以上文档总结的项目都是伪需求，不会看文章的人更不会问出好问题
-06.   但更主要的原因是它未来可能只是 openai 的一个函数
-07.    数字骨灰盒是真正的需求，但要求使用者以前是个话痨
-08.   未来可能会结合用户画像，就不需要太多话了
-09.   关于程序，它目前能帮忙做的，其实 google 都能搜到
+01.    不是取代
+02.    但很多我们熟悉的规则都变了，速度非常快，需要探索学习新的规则
+03.    有点像移动互联网的过渡期，但速度要比那时候快的多
+04.    现在的最大弊端是不是 100% 准确，而且会胡诌
+05.    目前一半以上文档总结的项目都是伪需求，不会看文章的人更不会问出好问题
+06.    但更主要的原因是它未来可能只是 openai 的一个函数
+07.     数字骨灰盒是真正的需求，但要求使用者以前是个话痨
+08.    未来可能会结合用户画像，就不需要太多话了
+09.    关于程序，它目前能帮忙做的，其实 google 都能搜到
 10. google 搜不到的它也做不了，它的效率太高了会问问题的人都有了不错的搜索能力
 11. 编程的门槛进一步降低，但好事坏事取决于我的位置
 12. 可以期待苹果的发布会，是乔布斯回归时刻，还是诺基亚时刻，今年就知道了

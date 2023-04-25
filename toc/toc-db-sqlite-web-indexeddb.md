@@ -59,7 +59,9 @@ modified: 2022-11-06T03:19:28.284Z
 
 - https://github.com/tr1ckydev/great.db /202210/ts
   - human-friendly database library for JavaScript using SQLite. 
-  - great.db automatically detects which runtime you are using and uses the respective fastest between better-sqlite3/bun-sqlite  
+  - great.db automatically detects which runtime you are using and uses the respective fastest between better-sqlite3/bun-sqlite
+
+
 # sqlite-web-examples
 - https://github.com/mstrahov/hnsql /实现简单
   - https://mstrahov.github.io/hnsql/
@@ -86,6 +88,10 @@ modified: 2022-11-06T03:19:28.284Z
 - https://github.com/overtone-app/sqlite-wasm-esm
   - The new SQLite WASM build is rather hard to use in modern JS apps, so this wrapper package tries to make this easier.
   - Currently only tested with Vite. 
+
+- https://github.com/mizchi/sqlite-wasm-playground
+  - sqlite-wasm playground
+  - typescript, web worker, vite
 
 - https://github.com/rhashimoto/wa-sqlite
   - This is a WebAssembly build of SQLite with experimental support for writing SQLite virtual filesystems and virtual table modules completely in Javascript. 

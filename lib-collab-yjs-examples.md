@@ -65,6 +65,7 @@ modified: 2022-09-21T15:47:41.340Z
   - Collaborative canvas using Yjs CRDT
 # yjs-utils
 - https://github.com/samwillis/yjs-sqlite-test
+  - http://samwillis.co.uk/yjs-sqlite-test/
   - This is a test project to combine yjs and sqlite wasm, it lets you store yjs documents in a sqlite database, update them in place and query the content. 
   - Perfect for building a local first web app.
 

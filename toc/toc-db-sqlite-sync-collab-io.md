@@ -16,7 +16,6 @@ modified: 2022-11-04T14:21:31.365Z
 - https://github.com/isaiahnields/csv-to-sqlite
   - A desktop app to convert CSV files to SQLite databases!
 # sync
-
 - https://github.com/aNinjaMonk/sync-server /201911/js
   - Syncing between local SQLite & remote PostgreSQL
 
@@ -26,6 +25,11 @@ modified: 2022-11-04T14:21:31.365Z
 - https://github.com/rkusa/do-sqlite
   - Persist SQLite in a Cloudflare Durable Object
 # collab
+- https://github.com/samwillis/yjs-sqlite-test
+  - http://samwillis.co.uk/yjs-sqlite-test/
+  - This is a test project to combine yjs and sqlite wasm, it lets you store yjs documents in a sqlite database, update them in place and query the content. 
+  - Perfect for building a local first web app.
+
 - https://github.com/tomatkungen/indexeddb-sqlite-json
   - sqlite3 Json1 Extension Wrapper for Indexeddb
 

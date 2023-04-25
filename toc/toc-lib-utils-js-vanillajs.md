@@ -82,6 +82,11 @@ modified: 2023-04-04T22:35:59.255Z
   - "data-first" approach is more natural and more programmer friendly for pick/omit
   - "data-last" approach is helpful when writing data transformations aka pipes.
 # lang-js
+- https://github.com/kriskowal/asap /js
+  - High-priority task queue for Node.js and browsers
+  - The library asap uses these tricks to provide a cross-browser way of queueing a microtask.
+  - Promise and asynchronous observer libraries, as well as hand-rolled callback programs and libraries, often need a mechanism to postpone the execution of a callback until the next available event. 
+
 - https://github.com/bestiejs/benchmark.js
   - A robust benchmarking library that supports high-resolution timers & returns statistically significant results. 
   - As used on jsPerf.com.

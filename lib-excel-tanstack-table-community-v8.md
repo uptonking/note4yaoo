@@ -6,7 +6,6 @@ modified: 2022-08-21T10:19:58.756Z
 ---
 
 # lib-excel-tanstack-table-community-v8
-
 - [Making Tanstack Table 1000x faster with a 1 line change - JP Camara](https://jpcamara.com/2023/03/07/making-tanstack-table.html)
   - [[v8] Improve grouping performance on large clusters of values_202210](https://github.com/TanStack/table/pull/4495)
 # discuss
@@ -14,7 +13,10 @@ modified: 2022-08-21T10:19:58.756Z
 
 - ## 
 
-- ## 
+- ## what's your experience of react-table between firefox and safari
+- https://twitter.com/KevinVanCott/status/1650890320555524097
+- Firefox always has border issues with table elements, which have to worked around.
+  - But a bigger issue this week, I'm going to have to deal with a bug that only happens in Firefox when Firefox is not at 100% scaling.
 
 - ## [How to properly use memo to optimize rerender in v8](https://github.com/TanStack/table/issues/4227)
 - When columns change, their data models could have also potentially changed. 

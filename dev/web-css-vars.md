@@ -12,9 +12,9 @@ modified: 2021-01-29T18:55:16.043Z
 ## css vars的范围问题
 
 - tips
-  - 当前范围中使用的css变量的值，由父级中同名变量的值决定；
-  - 当前范围中声明的css变量的值，只是声明一个同名变量，具体计算发生在当前元素的子元素之中
-  - 书写css变量值时，尽量不要存在循环引用，否则某个样式值表现为浏览器默认色或颜色值默认值，难以分析原因，如halfmoon的border hover色
+  - 书写css变量值时，**尽量不要存在循环引用**，否则某个样式值表现为浏览器默认色或颜色值默认值，难以分析原因，如halfmoon的border hover色
+  - ~~当前范围中使用的css变量的值，由父级中同名变量的值决定~~
+  - ~~当前范围中声明的css变量的值，只是声明一个同名变量，具体计算发生在当前元素的子元素之中~~
 
 - resources
   - [Use CSS Variables instead of React Context](https://epicreact.dev/css-variables/)
@@ -47,14 +47,44 @@ div {
 ```
 
 - That's not working because you are setting the variable only for the button, so you are not overriding the global variable.
+  - `document.documentElement.style.setProperty('--op', visible ? 'visible' : 'hidden');`
 
 - 测试
   - chrome浏览器中，button默认的bg-color是rgb(239, 239, 239)
   - 若强行设置background-color: var(--my-bg); 且--my-bg未定义，则bg-color时rgb(0, 0, 0, 0)
-  - 未定义的color类css变量默认是时透明色
+  - 未定义的color类css变量默认是透明色
   - 注意可能会使用button自身的默认色
 
-- ### [Overriding :root CSS variables from inner scopes](https://stackoverflow.com/questions/58206867)
+- ### [Overriding :root CSS variables from inner scopes - Stack Overflow](https://stackoverflow.com/questions/58206867/overriding-root-css-variables-from-inner-scopes)
+- [Explain this CSS custom properties behavior - Stack Overflow](https://stackoverflow.com/questions/62540386/explain-this-css-custom-properties-behavior)
+  - Custom properties are left almost entirely unevaluated, except that they allow and evaluate the var() function in their value. 
+  - This can create cyclic dependencies where a custom property uses a var() referring to itself, or two or more custom properties each attempt to refer to each other.
+  - But this raises an interesting issue with Chrome's DevTool
+
+```CSS
+:root {
+  --color: red;
+  --hover-color: var(--color);
+}
+
+div {
+  --color: green;
+
+  background: var(--color);
+}
+
+div:hover {
+  /* 🤔 what is hover color? it's red, not green. */
+  background: var(--hover-color); 
+}
+```
+
+- [CSS scoped custom property ignored when used to calculate variable in outer scope - Stack Overflow](https://stackoverflow.com/questions/52015737/css-scoped-custom-property-ignored-when-used-to-calculate-variable-in-outer-scop)
+- In such a situation we have 3 possibilities:
+  - Change the variables inside the `:root` using JS or another CSS rule. This won't allow us to have different colors
+  - Evaluate the variable again inside the needed element. In this case, we will lose any kind of flexibility and the definition inside :root will become useless (or at least will become the default value)
+  - Change the `:root` selector with the universal selector `*`. This will make sure our function is defined and evaluated at all the levels. In some complex case, this may have some unwanted results
+
 # guide
 - faq-not-yet
   - 使用css vars和普通css书写class的性能对比
@@ -84,7 +114,7 @@ div {
   - css变量值遵循css样式值的层叠规则
   - css变量值的赋值可以使用另一个css变量
   - css变量值会提升，所以可先使用再声明
-  - 使用css变量值时，不能用加号构建字符串，可用`width: calc(var(--offset) * 1px);`
+  - 使用css变量值时，不能用加号构建字符串，可用`width: calc(var(--offset) * 1px);`.
     - 不能用`font-size: var(--scale) + 'px';`
   - css变量值不能用在普通样式属性名，不能用在media query名称中
 
@@ -106,7 +136,6 @@ element.style.setProperty("--my-var", jsVar + 4);
 ```
 
 - css-vars-tools
-  - [CSS variables (Custom Properties) polyfill for IE11](https://github.com/nuxodin/ie11CustomProperties)
   - https://github.com/notoriousb1t/awesome-css-variables
 # css-vars-examples
 - css vars的值，可以先使用，再声明定义，即存在类似js变量的变量提升

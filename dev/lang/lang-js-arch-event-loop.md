@@ -7,9 +7,99 @@ modified: 2021-08-30T06:52:33.680Z
 
 # lang-js-arch-event-loop
 
+# guide
+
+- micoroTask
+  - [Tasks, microtasks, queues and schedules - JakeArchibald.com](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
+# blogs
+
+## [Explainer: queueMicrotask | docs](https://fergald.github.io/docs/explainers/queueMicrotask.html)
+
+- There are several existing ways to queue a microtask (introduction to microtasks):
+  - Promise.resolve().then(callback)
+  - Register a mutation observer and trigger it with a mutation
+- The library asap uses these tricks to provide a cross-browser way of queueing a microtask.
+  - Developers and frameworks are already using these methods to queue microtasks. 
+- The platform should support queueing microtasks directly as a primitive operation.
+
+- This proposal would add an API to directly queue a microtask without the need for any tricks.
+  - `queueMicrotask(callback);`
+
+- A microtask posted with queueMicrotask may itself post another microtask so of course buggy websites can create infinite loops using this API. 
 # discuss
+- ## 
 
 - ## 
+
+- ## queueMicrotask: executes synchronously after all layout effects have been executed
+- https://twitter.com/sebastienlorber/status/1650829494209466373
+  - I find this pattern useful in some very specific situations.
+
+```JS
+useLayoutEffect(
+  () => {
+    queueMicrotask(
+      () => doSomething()
+    )
+  }
+)
+```
+
+- 👀 Shh. You shouldn't have told people because now when someone else uses it to setState, they'll be after you in the queue. Only works well if you're the only one doing it.
+  - is there a good use-case for queueMicrotask(setState) that someone uses?
+- I use it to focus inputs after animating them in
+- I feel like most developers don't know about queueMicrotask.
+  - That's exactly how react batches all state updates. I just learned about this recently.
+  - Probably i would make a thread or a blog post explaining about queueMicrotask (there are not so much of them out there)
+
+- ## Did you know about queueMicrotask() in JavaScript? It's pretty handy.
+- https://twitter.com/diegohaz/status/1530662445240426496
+  - element.focus() may fire in the wrong order before finishing bubbling
+  - queueMicrotask( ()=> element.focus())
+- A microtask is essentially sync code that's pushed to the end of the current work (as if you've written it at the end of the script).
+  - It's different from `setTimeout` (runs async after paint) and `requestAnimationFrame` (runs async right before paint).
+- 👉🏻 Just a note: this is true for synthetic events like the ones in React. Native event bubbling runs after microtasks, so you would instead use something like this
+- A promise that resolves immediately is the same as queueMicrotask:
+  - Promise.resolve().then(callback)
+  - setTimeout is totally different. It will happen after the browser paint.
+
+- The update for forceUpdate is scheduled in a microtask between 1 and 3 in the microtask queue. When that update is processed, we see that it's from a discrete user event (click), and in that case we synchronously fire the effects.
+  - If you're interested, the code that you linked to is where we schedule the update for the setState in a microtask. 
+  - The place where we flush the effects synchronously if it's in a discrete update is here
+- We use queueMicrotask in React to schedule sync updates at the end of the current event, such as updates inside clicks which you want to batch within the same event but process synchronously at the end before anything observes it
+
+- queueMicrotask is not part of JavaScript but the HTML DOM API.
+
+- Worth mentioning that it's essentially the same as Promise.resolve().then(...)
+  - And you should not have infinite loops of microtasks or your app will hang, which is not the case with macrotasks because event loop
+
+- Does async IIFE with early await has the same effect as queueMicrotask?
+
+```JS
+// State updates inside event handlers are now sync in React 18. So this will log 1, 2, 3
+// I mean, as "sync" as microtasks are. Not the same as ReactDOM.flushSync().
+// I'm not sure if this is guaranteed, though.
+
+// - https://twitter.com/daniguardio_la/status/1531309444721692674
+// effects (more like updates as a whole) do execute in microtasks, so it makes sense that they're executed between 1 and 3.
+
+useEffect(() => log(2))
+
+function onClick() {
+  queueMicrotask(() => log(1))
+  forceUpdate()
+  queueMicrotask(() => log(3))
+}
+```
+
+- [New in 18: useEffect fires synchronously when it's the result of a discrete(离散的) input · reactwg/react-18](https://github.com/reactwg/react-18/discussions/128)
+  - A discrete input is a type of event where the result of one event can affect the behavior of the next, like clicks or presses. Multiple discrete events cannot be batched or throttled without affecting program behavior.
+    - A practical example where this matters is a counter. If the user increments a counter multiple times in quick succession, we must process each one individually so that the final count is correct.
+    - In React 17 and below, the function passed to `useEffect` typically fires asynchronously after the browser has painted. The idea is to defer as much work as possible until paint so that the user experience is not delayed. This includes things like setting up subscriptions.
+  - For example, if useEffect attaches an event listener, the listener is guaranteed to be added before the next input.
+  - The same behavior applies to flushSync: the results of the effect are applied immediately, before the flushSync call exits.
+  - The behavior for non-discrete events is unchanged: in most cases, React will defer the effect until after paint (though not always, if there's remaining time in the frame).
+  - Note that this only affects the timing of when useEffect functions are called. It does not affect the priority of updates that are triggered inside a useEffect. They still get the default priority. (This is in contrast to useLayoutEffect, which not only calls the effect callback synchronously but also gives synchronous priority to its updates.)
 
 - ## [is requestAnimationFrame belong to microtask or macrotask in main thread task management?](https://stackoverflow.com/questions/70995372/is-requestanimationframe-belong-to-microtask-or-macrotask-in-main-thread-task-ma)
 - Technically... neither. 
