@@ -170,7 +170,7 @@ $$('[contenteditable]')
   - unit-tests
     - test in firefox
   - drag
-    - dnd-kit tree performance
+    - [ ] dnd-kit tree performance, 支持向左拖动更新层级，自定义冲突解决
     - 拖拽到页面顶部或底部时，自动滚动
     - 拖拽时原布局不变，只显示预期位置的指示线
     - remove zustand
@@ -253,6 +253,17 @@ $$('[contenteditable]')
 # dev-04
 
 ## 042
+
+## 0426
+- [Chrome: Inspect elements that appear only when dragging - Stack Overflow](https://stackoverflow.com/questions/22597815/chrome-inspect-elements-that-appear-only-when-dragging)
+  - Put a breakpoint in the code - inside of the `mousedown/up` event callback.
+  - open chrome devtools, Expand "Event Listener Breakpoints" on the right
+    - I always set the listener on `mouseup` so it will automatically break when you stop dragging
+
+## 0425
+
+- [css-loader localIdentName: is a hash necessary for uniqueness? - Stack Overflow](https://stackoverflow.com/questions/48889736/css-loader-localidentname-is-a-hash-necessary-for-uniqueness)
+  - `localIdentName: '[name]__[local]__[hash:base64:5]'`
 
 ## 0424
 

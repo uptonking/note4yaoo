@@ -44,6 +44,7 @@ modified: 2022-10-23T14:57:23.473Z
   - snow: #fffafa
   - ghostwhite: #f8f8ff
   - dimgrey/grey/silver/lightgrey/lavender/gainsboro/whitesmoke：灰色，由深到浅
+
 - Red: #ff0000
   - coral: #ff7f50 珊瑚红，有点黄
   - tomato: #ff6347
@@ -67,6 +68,7 @@ modified: 2022-10-23T14:57:23.473Z
   - fuchsia/magenta: #ff00ff
   - lightcoral: #f08080 珊瑚红，艳丽
   - lightpink: #ffb6c1 粉红
+
 - Yellow: #ffff00
   - darkorange: #ff8c00
   - gold: #ffd700 金黄色
@@ -79,6 +81,7 @@ modified: 2022-10-23T14:57:23.473Z
   - darkorange：深橙色
   - lavenderblush：淡紫红，有点浅
   - cornsilk：玉米穗黄，极浅黄偏白，适合背景色
+
 - Green: #008000 ~~#00ff00~~
   - teal: #008080 深青色
   - mediumseagreen: #3cb371 海绿色，适合文字
@@ -103,6 +106,7 @@ modified: 2022-10-23T14:57:23.473Z
   - 黛绿: #426666
   - 苍翠: #519a73
   - 铜绿: #549688
+
 - Blue: #0000ff
   - royalblue: #4169e1 墨蓝，又亮又深
   - dodgerblue: #1e90ff

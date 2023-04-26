@@ -37,6 +37,14 @@ modified: 2022-06-04T00:44:30.749Z
     - Check out @dnd-kit/sortable
 
 - examples
+  - 官方示例要点 server
+    - droppable - collision detection algorithm 切换内置的冲突检测算法
+    - restrict to window edges 限制被拖拽元素在容器内
+    - snap to grid 可让被拖拽元素沿着网格格子移动
+    - snap center to cursor 让元素中心先移动到鼠标，再拖拽
+    - render before sorting
+    - transformed container
+    - pages layout 提供了指示线示例
   - [virtualized with react-tiny-virtual-list](https://master--5fc05e08a4a65d0021ae0bf2.chromatic.com/?path=/story/presets-sortable-virtualized--basic-setup)
   - [Drag and Drop Form Builder](https://github.com/clauderic/dnd-kit/discussions/639)
     - https://codesandbox.io/s/dnd-kit-form-builder-fii0zh
@@ -45,7 +53,8 @@ modified: 2022-06-04T00:44:30.749Z
       - 页面内容块不能再次拖拽
   - dnd-kit builder
   - 效果参考
-    - [树形控件 Tree - Ant Design，拖拽时显示指示线](https://ant.design/components/tree-cn)
+  - [树形控件 Tree - Ant Design，拖拽时显示指示线](https://ant.design/components/tree-cn)
+    - 拖拽父级菜单时，所有子级会先隐藏为一条指示线
 
 - alternatives
   - use-gesture(vanillajs)
@@ -55,6 +64,7 @@ modified: 2022-06-04T00:44:30.749Z
 ## not-yet
 
 - not-yet
+  - 🤔 树的递归渲染是如何实现的
   - 如何接收外部(非DndContext内)的dnd事件
 
 - [Is there any way to force a droppable to accept draggables that come from outside its parent DndContext? ](https://github.com/clauderic/dnd-kit/discussions/181)
@@ -76,6 +86,9 @@ modified: 2022-06-04T00:44:30.749Z
   - The same problem is happening to me, 'useSortable' is causing retenders due to 'useContext'. 
   - The easiest way to fix this is to use `useContextSelector` .
 
+- [feature request: collision detection for sibling `useDraggable`](https://github.com/clauderic/dnd-kit/issues/810)
+  - You can detect collisions between sibling draggables by also connecting them to useDroppable, similar to how the useSortable hook works
+
 - [How to drag by copying?](https://github.com/clauderic/dnd-kit/issues/456)
   - when you drop that item you keep that same unique id and generate a new one for the sidebar to replace the item that was just moved from the sidebar to your other droppable region
   - [Consider adding Clone from List example](https://github.com/clauderic/dnd-kit/issues/45)
@@ -84,6 +97,9 @@ modified: 2022-06-04T00:44:30.749Z
 - [How do I implement multiple items drag in a container](https://github.com/clauderic/dnd-kit/issues/1048)
   - [Multiple draggable at the same time?](https://github.com/clauderic/dnd-kit/issues/644)
   - [Add multi-select story by clauderic](https://github.com/clauderic/dnd-kit/pull/588)
+# codebase
+- DragOverlay
+  - 默认布局 `position:fixed`
 # changelog
 
 ## [v6.0.0_202205](https://github.com/clauderic/dnd-kit/releases/tag/%40dnd-kit%2Fcore%406.0.0)
@@ -261,6 +277,7 @@ modified: 2022-06-04T00:44:30.749Z
 
 - https://github.com/zachhannum/calamus
   - React Electron App for Writing and Publishing Novels
+
 ## utils
 
 - https://github.com/sindresorhus/array-move
@@ -285,7 +302,6 @@ modified: 2022-06-04T00:44:30.749Z
   - https://codesandbox.io/s/react-konva-dnd-kit-e6rck
   - Example of using dnd-kit to drag an element out a react konva canvas
   - 依赖konva、react-konva
-
 
 - https://github.com/ThaddeusJiang/react-sortable-list
   - Easy Drag & Drop sort items
