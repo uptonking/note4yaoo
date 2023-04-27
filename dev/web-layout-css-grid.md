@@ -22,9 +22,7 @@ modified: 2020-12-21T07:46:14.237Z
     - 直接在子项上设置z-index的值即可
 
 - grid布局缺点
-
 # [CSS Grid网格布局教程_阮一峰_2019](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
-
 - Grid布局是微软在2010年提出来的一种新的布局方式，到2016年的时候提交了该布局的草案，经过发展，grid布局慢慢变的成熟，兼容性也越来越好
 - Grid Container
   - 网格容器，一个元素应用了 `display: grid;` 后就是一个网格容器了，它是所有网格项的父元素
@@ -51,8 +49,9 @@ modified: 2020-12-21T07:46:14.237Z
 - `display: grid` 设置一个容器采用grid布局
   - 默认情况下，容器元素都是块级元素，但也可以用 `display: inline-grid;` 设成行内元素
   - 设为网格布局以后，容器子元素（项目）的float、display: inline-block、display: table-cell、vertical-align和column-*等设置都将失效。
+
 - grid-template-columns/rows
-  - 分别定义每一列的宽度，每一行的高度，可以使用绝对值或百分比
+  - 分别定义**每一列的宽度**，每一行的高度，可以使用绝对值或百分比
   - 可以定义grid布局列的分割线的名称和轨道的尺寸
   - 可以使用方括号指定每一根网格线的名称，且允许一根网格线有多个名称 `[row-5 row5]`
   - `repeat(count, val)` : 重复val值count次
@@ -65,27 +64,32 @@ modified: 2020-12-21T07:46:14.237Z
   - 定义网格区域area，一个区域由单个或多个单元格组成
   - 如果某些区域不需要利用，则使用"点" `.` 表示空的cell
   - 区域的命名会影响到网格线，每个区域的起始网格线，会自动命名为 区域名-start，终止网格线自动命名为 区域名-end
+
 - grid-template: grid-template-columns grid-template-rows grid-template-areas
 - grid-gap: row-gap col-gap 
 - grid-row/column-gap
   - 指定行间距，列间距
   - 最新标准，三个属性名的grid-前缀已经删除，grid-column/row-gap简写成column/row-gap，grid-gap写成gap
+
 - place-content: align-content justify-content 
 - justify/align-content
   - justify-content: 设置整个内容区域在容器里水平空间的位置，类似flex
   - align-content: 竖直空间的位置
   - 可选值：start | end | center | stretch(项目没有指定大小时会占满) | space-around(项目间间隔比项目与容器边框间隔大一倍) | space-between(项目与容器边框无间隔) | space-evenly(项目与容器边框间隔与项目间间隔相等)
+
 - place-items: align-items justify-items 
 - justify/align-items
   - justify-items：设置单元格内容的水平位置（左中右）
   - align-items：设置单元格内容的垂直位置（上中下）
   - 可选值：start | end | center | stretch; 
   - 默认值：stretch，占满单元格的整个宽度
+
 - grid-auto-columns/rows  
   - 设置自动创建的多余网格的列宽和行高
     - 比如网格只有3列，但是某一个项目指定在第5列。这时，浏览器会自动生成多余的网格，以便放置项目
   - 如果不设置值，浏览器会根据单元格内容的大小，决定新增网格的列宽和行高
   - 网格项目多余设置的单元格，会创建隐式轨道
+
 - grid-auto-flow
   - 设置没有明确指定位置的grid子项的放置方式
     - 划分网格以后，容器的子元素会按照顺序，自动放置在每一个网格。
@@ -94,6 +98,7 @@ modified: 2020-12-21T07:46:14.237Z
   - 默认值: row 先行后列
   - row dense: 先行后列，并尽可能填满，中间的小项目可能会提前
     - 此时使用column dense可能就刚好填满了
+
 - grid 简写
   - gird: grid-template-rows grid-template-columns grid-template-areas grid-auto-rows grid-auto-columns grid-auto-flow
   - `grid: none` ：所有子属性都是初始化的值
@@ -112,15 +117,18 @@ modified: 2020-12-21T07:46:14.237Z
   - 使用这四个属性，如果产生了项目的重叠，则使用z-index属性指定项目的重叠顺序
   - 简写 grid-column: grid-column-start grid-column-end
   - 简写 grid-row: grid-row-start grid-row-end
+
 - grid-area
   - 指定项目放置的area区域名，也可以直接指定项目四边位置
   - 在定义子元素的位置时， 可以使用已经定义好的网格区域名称快速定义子项目的分布位置。
-  - 简写 grid-area: grid-row-start grid-column-start grid-row-end grid-column-end 
+  - 简写 grid-area: grid-row-start grid-column-start grid-row-end grid-column-end
+
 - justify/align-self
   - justify-self: 设置单元格内容的水平位置（左中右），跟justify-items属性的用法完全一致，但只作用于单个项目
   - align-self: 属性设置单元格内容的垂直位置（上中下），见align-items
   - 可选值：start | end | center | stretch
   - 简写 place-self: align-self justify-self
+
 - css函数
   - repeat(): 允许大量重复显示模式的行或列以更紧凑的方式编写
   - fit-content()：参数是长度值或百分比
@@ -129,11 +137,9 @@ modified: 2020-12-21T07:46:14.237Z
     - 如果内容多，内容长度大于参数长度时，它取参数长度，
     - 可以理解为它可以控制最大值是多少
   - minmax(min, max) ：定义了长度范围区间
-
-# pieces
-
+# dev
 - 在使用Grid布局的时候始终把容器当作是一个多行多列的网格有助于更准确的实现UI效果
-- Grid属性布局分为容器属性和项目属性， 这与Flex布局的属性分类是相似的
+- Grid属性布局分为容器属性和项目属性，这与Flex布局的属性分类是相似的
 - 使用 `display:grid` 声明一个容器， 容器以块级元素存在
   - 如果需要是容器变为行级元素可以使用 `display: inline-grid;`
 - 当容器的宽度不确定的时候，如果需要容器中尽可能的充满项目，使用 `auto-fill` 属性自动填充容器。
@@ -155,9 +161,7 @@ modified: 2020-12-21T07:46:14.237Z
     - In grid layouts, it aligns the items inside their grid areas on the inline axis
   - align-items在FlexBox布局中它表示items在纵轴上的对齐方式；
     - 在grid布局中，表示items在grid area竖直方向上对齐方式
-
 # Relationship of grid layout to other layout methods
-
 - The basic difference between CSS Grid Layout and CSS Flexbox Layout is that flexbox was designed for layout in one dimension - either a row or a column. 
 - Grid was designed for two-dimensional layout - rows, and columns at the same time. 
 
@@ -168,13 +172,9 @@ modified: 2020-12-21T07:46:14.237Z
   - This means that children of a grid item can become grid items.
 - This can be a way to get items nested into the grid to act as if they are part of the grid, and is a way around some of the issues that would be solved by subgrids once they are implemented. 
 - You can also use `display: contents` in a similar way with flexbox to enable nested items to become flex items.
-
 # A Complete Guide to Grid
-
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
-
 # 精读《用 css grid 重新思考布局》
-
 - [精读《用 css grid 重新思考布局》](https://zhuanlan.zhihu.com/p/86519309)
 
 - Flex是一维布局方式，我们需要不断嵌套div才能形成复杂结构，而一旦布局产生了变化，原有嵌套结构如果不能 “兼容变化” 到新结构，代码就需要重构。
@@ -201,9 +201,7 @@ modified: 2020-12-21T07:46:14.237Z
 - 布局的发展方向：让布局与DOM分离
   - 开发UI部分时，只需关心页面由哪些模块组成，去实现这些模块就行了，而不需要关心模块之间应该如何组合(与headless ui的区别？)
   - 在描述组合时，可以通过可视化或比较抽象的字符串描述布局的结构，并对应到写好的模块上，这样的代码维护性远高于用div描述结构的方案
-
 # Things I’ve Learned About CSS Grid Layout
-
 - [Things I’ve Learned About CSS Grid Layout_2016](https://css-tricks.com/things-ive-learned-css-grid-layout/)
 
 - Don’t use flexbox for overall page layout.
@@ -214,7 +212,7 @@ modified: 2020-12-21T07:46:14.237Z
   - By using -1, you can be sure your content will always reach the end column.
 - Grid areas create implicit line names
 - When you absolutely position a grid item, rather than its positioning context being its container (i.e. the entire grid), we can position it in relation to its specified grid-column and grid-row start and end lines. 
-  - As usual,                      `position: absolute` removes an element from the flow of the document (i.e. it is ignored by other elements). 
+  - As usual,  `position: absolute` removes an element from the flow of the document (i.e. it is ignored by other elements). 
   - This makes absolute positioning useful if you want to overlap grid items without disrupting the grids auto-placement algorithm. 
   - Auto-placement goes out of its way not to overlap items unless you explicitly declare both a grid-column-start and grid-row-start value for every item.
 - All grid items have a default order value of 0. 
@@ -226,9 +224,7 @@ modified: 2020-12-21T07:46:14.237Z
   - There is a good reason for this: twelve is divisible by both three and four, giving more flexibility in how we can lay out content across the page. 
   - We can divide our content evenly into 12 parts, 6 parts, 4 parts, 3 parts, or in half.
 - While some people like the familiarity that comes with consistently using the same grid for every project, there is no need to have more columns than you actually need and you should build the grid that’s right for your content and desired layout rather than a one-size-fits all set-up.
-
 # discuss
-
 - ## If you are using CSS grid, avoid horizontal scrolling by setting a grid item column to `minmax(0, 1fr)` instead of `1fr`.
 - https://twitter.com/shadeed9/status/1434441947003998209
   - I just helped a friend with a bug. On mobile, he was trying to make a responsive `<table>`, but there was a horizontal scroll. What causes it?
@@ -238,7 +234,6 @@ modified: 2020-12-21T07:46:14.237Z
   - [The Minimum Content Size In CSS Grid](https://ishadeed.com/article/min-content-size-css-grid/)
 - When I ended up with horizontal scrolling on my page I try to work around the width of the grid container or I just use, overflow-x: hidden
 # ref
-
 - [CSS Grid布局那么好，为什么至今没有人开发出基于Grid布局的前端框架呢？](https://www.zhihu.com/question/397861009)
   - flexbox布局非常成熟
   - css的卖点是炫酷的design，而不是炫酷的技术

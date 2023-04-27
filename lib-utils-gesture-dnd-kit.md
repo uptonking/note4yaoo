@@ -9,9 +9,6 @@ modified: 2022-06-04T00:44:30.749Z
 
 # guide
 
-- not-yet
-  - resize
-
 - features
   - good docs and examples
     - tree
@@ -59,13 +56,21 @@ modified: 2022-06-04T00:44:30.749Z
 - alternatives
   - use-gesture(vanillajs)
   - react-dnd
+
+- 拖拽功能的调试方法
+  - 👉🏻 使用浏览器devtools，对类似mouseup/keyDown的事件打断点，或在代码中debugger
+  - 👉🏻 使用键盘实现拖拽，很容易调试拖拽中的状态
 # issues
 
 ## not-yet
 
 - not-yet
   - 🤔 树的递归渲染是如何实现的
+  - DragOverlay内为什么不要使用useDraggable/useSortable
   - 如何接收外部(非DndContext内)的dnd事件
+  - resize
+  - performance: rerender
+  - collision
 
 - [Is there any way to force a droppable to accept draggables that come from outside its parent DndContext? ](https://github.com/clauderic/dnd-kit/discussions/181)
   - [Difficult to manage drags across sections of the app](https://github.com/clauderic/dnd-kit/issues/58)
@@ -78,6 +83,12 @@ modified: 2022-06-04T00:44:30.749Z
   - there is a way around it. the idea is to expose functions instead of values on the context value so it won't re-render all components that use it when something that is irrelevant to them changes.
   - a workaround for this issue could be creating a Draggable component that will receive the content (the actual component) as children. but then you cannot pass isDraggable and such to it
   - Or you can separate the draggable item into 2 components: DraggableItem and Item + memo the Item.
+
+## collision
+
+- [Add verticalSortableList collision detection strategy](https://github.com/clauderic/dnd-kit/pull/805)
+  - We created a vertical list recently, with useSortable, and couldn't get the dragging / collision detection to work with our variable height items, without also using an overlay. The overlay was difficult to achieve for us, for reasons I won't go in to.
+  - Anyway, we created a new collision detection strategy that allows it to work as you would expect, 
 
 ## done
 
@@ -100,6 +111,11 @@ modified: 2022-06-04T00:44:30.749Z
 # codebase
 - DragOverlay
   - 默认布局 `position:fixed`
+
+- keyboard
+  - The keyboard activator is the `onKeyDown` event handler. 
+    - The Keyboard sensor is initialized if the `event.code` property matches one of the `start` keys passed to `keyboardCodes` option of the Keyboard sensor.
+    - By default, the keys that activate the Keyboard sensor are `Space` and `Enter`.
 # changelog
 
 ## [v6.0.0_202205](https://github.com/clauderic/dnd-kit/releases/tag/%40dnd-kit%2Fcore%406.0.0)

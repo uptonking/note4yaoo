@@ -139,5 +139,8 @@ modified: 2023-03-16T16:29:47.610Z
 # variables
 - refs
   - [TURO, a calculator notepad](https://www.turo.io/)
-# more
+# copy-paste
+- 复制粘贴时，处理伪元素::before/::after
+# search
 - 搜索时能够搜索emoji
+# more

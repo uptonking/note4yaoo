@@ -254,7 +254,25 @@ $$('[contenteditable]')
 
 ## 042
 
+## 0427
+
+### [告别JS keyCode](https://www.zhangxinxu.com/wordpress/2021/01/js-keycode-deprecated/)
+
+- MDN上的解释是对打印字符不友好。
+- 不同字符共用keyCode
+  - 键盘上有很多按键是同时对应两个字符的，例如“<, ”和“>.”
+  - keyCode值是跟着键盘走的，而不是字符内容，也就是，当我们输入“<, ”和“>.”等字符的时候，返回的keyCode值是一样的
+  - 我们需要通过判断用户是否按下了Shift键才知道究竟输入的是哪个字符。比较繁琐
+- 相同按键不同keyCode
+  - 数字键按住Shift键可以输出其他内容
+
+- `event.code`指明按下的是具体哪个物理键，键盘上每一个按键都对应一个唯一的event.code值，均使用大写英文单词表示。
+- `event.key`指明具体输入的字符内容，如果是非打印字符（例如Enter键、Esc键、Shift键、Alt键等），则返回具体的非打印字符的英文名称，如果输入内容与输入法有关则返回固定的Process名称。
+  - 对于英文场景，只需要使用event.key就可以知道键盘输入的内容了。
+  - 在中文输入框开启的场景下，如果按键的内容和非中文输入法下的内容不一样，则event.key的返回值是固定的Process，表示输入的字符内容和键盘对应的原始内容进行了处理。
+
 ## 0426
+
 - [Chrome: Inspect elements that appear only when dragging - Stack Overflow](https://stackoverflow.com/questions/22597815/chrome-inspect-elements-that-appear-only-when-dragging)
   - Put a breakpoint in the code - inside of the `mousedown/up` event callback.
   - open chrome devtools, Expand "Event Listener Breakpoints" on the right
