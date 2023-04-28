@@ -86,6 +86,10 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/aliscie/autodox /rust
   - This app is Notion.so clone, roam research clone and obsidian clone. 
   - The main purpose of this app is not to just clone these note-taking apps but to make an all-in-one Open source note-taking app with automation features.
+
+- https://github.com/Requarks/wiki /AGPLv3/js/vue
+  - https://js.wiki/
+  - A modern and powerful wiki app built on Node.js
 # github-wiki-confluence-like
 - MrDoc /2.1kStar/GPL.v3/202208/js/python/仅网页版
   - https://github.com/zmister2016/MrDoc

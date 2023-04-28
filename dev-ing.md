@@ -166,6 +166,7 @@ $$('[contenteditable]')
   - streaming-infinite-list/tree
   - focalboard-views
   - slate-docs-examples
+  - dnd-kit preset-tree
   - noseditor-docs
   - unit-tests
     - test in firefox

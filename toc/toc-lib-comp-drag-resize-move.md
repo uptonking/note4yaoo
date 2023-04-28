@@ -51,10 +51,19 @@ modified: 2022-02-05T18:45:34.558Z
   - core依赖于redux
   - Drag and Drop for React
   - 拖拽列表项的示例，没有显示底层被拖拽项的阴影
+
 - react-beautiful-dnd /26.2kStar/Apache2/202103/js/redux/inactive
   - https://github.com/atlassian/react-beautiful-dnd
   - https://react-beautiful-dnd.netlify.app/
   - Beautiful and accessible drag and drop for lists with React
+  - 可参考并重写示例
+  - rbd is a higher level abstraction specifically built for lists (vertical, horizontal, movement between lists, nested lists and so on). 
+  - [DnD with line drop indicators](https://github.com/atlassian/react-beautiful-dnd/issues/2461)
+    - https://codesandbox.io/s/react-beautiful-dnd-react-virtualized-forked-c7sm5b
+  - [Maintenance will continue with @hello-pangea/dnd 🎉 (react 18 support)](https://github.com/atlassian/react-beautiful-dnd/issues/2437)
+- https://github.com/hello-pangea/dnd /ts
+  - https://dnd.hellopangea.com/
+  - 依赖react-redux.v8、memoize-one、raf-schd
 
 - dflex /1.5kSStar/MIT/202302/ts
   - https://github.com/dflex-js/dflex

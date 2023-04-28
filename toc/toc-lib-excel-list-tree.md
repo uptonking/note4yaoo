@@ -14,12 +14,12 @@ modified: 2022-08-21T10:02:41.845Z
   - path的优势在于查找更快，且符合直觉易理解
   - 也可以同时维护2套数据结构
 - 考虑交换2个同级节点的顺序这个场景
-  - 若用parentId作为key，则只要更新同级节点数组
+  - 若用parentId作为key，则只要更新同级节点数组顺序
   - 若用path作为key，则要更新所有受影响的子孙节点的key
 
 ## 基于id+parentId
 
-- https://github.com/naisutech/react-tree /202302/ts
+- https://github.com/naisutech/react-tree /202302/ts/不支持drag
   - https://naisutech.github.io/react-tree/
   - a hierarchical tree component for React in Typescript
   - data should be a flat list of node objects with 
@@ -30,6 +30,7 @@ modified: 2022-08-21T10:02:41.845Z
   - 👉🏻 Use as an **uncontrolled** component with defaultSelectedNodes and defaultOpenNodes or a completely **controlled** component 
   - Multi-select API! hold your OS's meta key or ctrl key to be able to select/deselect multiple-nodes
   - new context-based state management for better maintainability and handling of business logic
+  - [wip: Add drag and drop event API](https://github.com/naisutech/react-tree/issues/6)
 
 - https://github.com/mpkelly/react-tree /202011/ts/inactive
   - https://codesandbox.io/s/fervent-wave-u7psb
@@ -40,7 +41,8 @@ modified: 2022-08-21T10:02:41.845Z
 
 ## 基于path
 
-- https://github.com/cheton/infinite-tree
+- infinite-tree /153Star/MIT/202207/js
+  - https://github.com/cheton/infinite-tree
   - https://infinite-tree.js.org/
   - High performance infinite scroll with large data set
   - 💡 Load nodes on demand
@@ -48,17 +50,17 @@ modified: 2022-08-21T10:02:41.845Z
   - Native HTML5 drag and drop API
   - 初始化时传入经典tree结构(使用children)，会先flatten，再渲染
   - forks
-  - https://github.com/acierto/infinite-tree
+    - https://github.com/acierto/infinite-tree
   - https://github.com/cheton/react-infinite-tree /201910/js/inactive
     - http://cheton.github.io/react-infinite-tree/
     - The infinite-tree library for React
     - 支持 [Flat Tree Structure](https://github.com/cheton/flattree/blob/master/examples/tree1.js)
-   
+
 - https://github.com/baurine/react-tree-view /201809/ts/inactive
   - https://baurine.github.io/react-tree-view/
   - simple React TreeView component with flat data structure
   - Instead of using nested data structure, for example, each tree view item data has a children property, we use the flat data structure, keep them same as in the database, each child item has a parentKey property points to its parent item data.
-  - { key: '0-0-1-0', title: 'title 1-2-0', disableCheckbox: true }, 
+  - { key: '0-0-1-0', title: 'title 1-2-0', disableCheckbox: true }
 
 - https://github.com/adyz/react-tree-grid
   - https://codesandbox.io/s/virtual-tree-from-npm-g0h7v
@@ -74,14 +76,15 @@ modified: 2022-08-21T10:02:41.845Z
 
 - react-sortable-tree /MIT/3.3kStar/202005/js/inactive
   - https://github.com/frontend-collective/react-sortable-tree
+  - https://frontend-collective.github.io/react-sortable-tree
+  - https://github.com/frontend-collective/react-sortable-tree-theme-file-explorer
   - 依赖 react-virtualized, react-dnd, react-dnd-html5-backend
   - Drag-and-drop sortable component for nested data and hierarchies
   - 提供了将flat data转换成tree的工具getTreeFromFlatData/getFlatDataFromTree
+  - 不支持显示拖拽指示线
+  - 每一行容器都是`position: absolute`，默认 `display: block` 布局
+    - 从左到右依次是，折叠按钮+横线 > 父级连接线(竖线+横线，通过::before/::after实现) > nodeContent
 
-- https://github.com/adyz/react-tree-grid
-  - https://codesandbox.io/s/virtual-tree-from-npm-g0h7v
-  - 依赖react-virtualized
-  - This is a component that controls user interactions and state for you so you can create tree/grid components.
 # tree-ui
 - dnd-kit /3.9kStar/MIT/202201/ts
   - https://github.com/clauderic/dnd-kit
@@ -155,13 +158,6 @@ modified: 2022-08-21T10:02:41.845Z
   - drag and drop between different tree
   - composition model(reactjs children and vuejs slot)
 
-- react-sortable-tree /MIT/3.3kStar/202005/js/inactive
-  - https://github.com/frontend-collective/react-sortable-tree
-  - https://frontend-collective.github.io/react-sortable-tree/
-  - https://github.com/frontend-collective/react-sortable-tree-theme-file-explorer
-  - 依赖 react-virtualized, react-dnd, react-dnd-html5-backend
-  - Drag-and-drop sortable component for nested data and hierarchies
-  - 提供了将flat data转换成tree的工具getTreeFromFlatData/getFlatDataFromTree
 - react-ui-tree /MIT/693Star/201811
   - https://github.com/swiftcarrot/react-ui-tree
   - https://swiftcarrot.github.io/react-ui-tree/
@@ -177,6 +173,8 @@ modified: 2022-08-21T10:02:41.845Z
   - https://github.com/react-component/tree
   - http://react-component.github.io/tree/
   - Tree component based on rc-virtual-list, rc-animate
+  - 基于class component
+  - 
 - https://github.com/drcmda/react-animated-tree
   - configurable tree view with full support for drop-in animations
   - 依赖react-spring.v5

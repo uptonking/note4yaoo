@@ -31,7 +31,7 @@ modified: 2023-04-23T13:30:39.223Z
 
 - 👉🏻 Things I wish dnd-kit had and limitations you should be aware of (possibly, not entirely sure if we just simply don't know enough about dnd-kit):
 - Some way to detect edges of a droppable. 
-  - The creation of the Edge component was only done in response to not being able to tell which side of the droppable a draggable was dropped on, and, then, not sure if onDragOver allows you to see an edge-like position/information thingie.
+  - The creation of the Edge component was only done in response to not being able to tell which side of the droppable a draggable was dropped on, and, then, not sure if `onDragOver` allows you to see an edge-like position/information thingie.
 - From day one, I was a big sponsor of re-writing the library's core to basically let both drag/drop events bubble as deep as they need to, until one handler decides to handle them, kinda like...how we wrote our page builder? 
   - As it stands, it takes some maneuvering to achieve anything complex and there's no down-side (that I can think of, from the outside, but that's easy to say, it's always easy to "just fix it") to doing things that way.
 - Perhaps I'm wrong, but you can't swap DndContext's sensors or any of the collision detection algorithms on the fly, based on the item being dragged and so on. 

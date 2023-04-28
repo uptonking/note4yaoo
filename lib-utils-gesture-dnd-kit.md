@@ -49,9 +49,16 @@ modified: 2022-06-04T00:44:30.749Z
     - https://codesandbox.io/s/distracted-mendel-hibbgu
       - 页面内容块不能再次拖拽
   - dnd-kit builder
-  - 效果参考
+  - 💡 效果参考、rewrite改进
   - [树形控件 Tree - Ant Design，拖拽时显示指示线](https://ant.design/components/tree-cn)
-    - 拖拽父级菜单时，所有子级会先隐藏为一条指示线
+    - 拖拽父级节点时，所有子级会先折叠
+    - 任一节点可水平拖动改变父子层级，指示线位置在预期位置而不是左右
+  - [draggable - rc-tree](https://tree-react-component.vercel.app/demo/draggable)
+    - 拖拽父级菜单时，所有元素会先维持布局不变，拖拽结束时才更新布局
+  - https://frontend-collective.github.io/react-sortable-tree
+    - 不支持显示拖拽指示线
+    - 每一行容器都是`position: absolute`，默认 `display: block` 布局
+    - 从左到右依次是，折叠按钮+横线 > 父级连接线(竖线+横线，通过::before/::after实现) > nodeContent
 
 - alternatives
   - use-gesture(vanillajs)
@@ -60,6 +67,9 @@ modified: 2022-06-04T00:44:30.749Z
 - 拖拽功能的调试方法
   - 👉🏻 使用浏览器devtools，对类似mouseup/keyDown的事件打断点，或在代码中debugger
   - 👉🏻 使用键盘实现拖拽，很容易调试拖拽中的状态
+
+- tips
+  - 左右拖拽时，要区分水平移动和创建分栏，一般只在顶层创建分栏
 # issues
 
 ## not-yet
@@ -76,29 +86,20 @@ modified: 2022-06-04T00:44:30.749Z
   - [Difficult to manage drags across sections of the app](https://github.com/clauderic/dnd-kit/issues/58)
   - This should be a lot easier to manage with the introduction of the `useDndMonitor` hook along with the fact that data defined in `useDraggable` and `useDroppable` is now exposed on the `active` and `over` properties.
 
-- 💡 [re-rendering ALL draggable items on drag start and such](https://github.com/clauderic/dnd-kit/issues/1071)
-  - [React Context Performance Pitfalls](https://blog.devgenius.io/react-context-pitfalls-9fb67723183b)
-  - https://codesandbox.io/p/sandbox/throbbing-moon-uvbor3
-  - it seems that all draggable components will re-render when one of them is dragged, it happens because of the use of context in useDraggable and the way that the context exposes the values, for example, active (which definitely changes when you start dragging).
-  - there is a way around it. the idea is to expose functions instead of values on the context value so it won't re-render all components that use it when something that is irrelevant to them changes.
-  - a workaround for this issue could be creating a Draggable component that will receive the content (the actual component) as children. but then you cannot pass isDraggable and such to it
-  - Or you can separate the draggable item into 2 components: DraggableItem and Item + memo the Item.
+- [Proposal: add a SensorOptions property to facilitate disabling drag on interactive elements](https://github.com/clauderic/dnd-kit/issues/863)
+  - Here is the list of interactive elements that we block dragging from by default
+  - input, textarea, select, option, button, contenteditable
 
-## collision
+- [Framer Motion for layout animation](https://github.com/clauderic/dnd-kit/issues/605)
+  - [Handling differently sized grid draggable items](https://github.com/clauderic/dnd-kit/issues/720)
+  - dnd-kit doesn't currently have built-in sorting strategies that handle unpredictable layouts. You could try building one yourself, but that's a lot of work.
+  - The general recommended strategy in these scenarios is to update the order of the items `onDragOver` and pass in a sorting strategy that returns null (`<SortableContext strategy={() => null}>`)
 
-- [Add verticalSortableList collision detection strategy](https://github.com/clauderic/dnd-kit/pull/805)
-  - We created a vertical list recently, with useSortable, and couldn't get the dragging / collision detection to work with our variable height items, without also using an overlay. The overlay was difficult to achieve for us, for reasons I won't go in to.
-  - Anyway, we created a new collision detection strategy that allows it to work as you would expect, 
+- [Sortable CSS transform bug on items with various width](https://github.com/clauderic/dnd-kit/issues/737)
+  - None of the built-in sorting strategies of @dnd-kit/sortable support unpredictable layouts.
+  - The recommended approach in that situation is to move the items onDragOver instead of onDragEnd and passing a sorting strategy that returns nothing to SortableContext
 
 ## done
-
-- perf regression: all Sortables in 5.0 rerender constantly on even smallest mouse movement
-  - https://github.com/clauderic/dnd-kit/issues/623
-  - The same problem is happening to me, 'useSortable' is causing retenders due to 'useContext'. 
-  - The easiest way to fix this is to use `useContextSelector` .
-
-- [feature request: collision detection for sibling `useDraggable`](https://github.com/clauderic/dnd-kit/issues/810)
-  - You can detect collisions between sibling draggables by also connecting them to useDroppable, similar to how the useSortable hook works
 
 - [How to drag by copying?](https://github.com/clauderic/dnd-kit/issues/456)
   - when you drop that item you keep that same unique id and generate a new one for the sidebar to replace the item that was just moved from the sidebar to your other droppable region
@@ -108,14 +109,53 @@ modified: 2022-06-04T00:44:30.749Z
 - [How do I implement multiple items drag in a container](https://github.com/clauderic/dnd-kit/issues/1048)
   - [Multiple draggable at the same time?](https://github.com/clauderic/dnd-kit/issues/644)
   - [Add multi-select story by clauderic](https://github.com/clauderic/dnd-kit/pull/588)
-# codebase
-- DragOverlay
-  - 默认布局 `position:fixed`
 
-- keyboard
-  - The keyboard activator is the `onKeyDown` event handler. 
-    - The Keyboard sensor is initialized if the `event.code` property matches one of the `start` keys passed to `keyboardCodes` option of the Keyboard sensor.
-    - By default, the keys that activate the Keyboard sensor are `Space` and `Enter`.
+- [Move from a vertical sortable to an horizontal](https://github.com/clauderic/dnd-kit/issues/851)
+  - https://codesandbox.io/s/dnd-kit-multi-containers-forked-t6hsmc
+  - 提供了将item从竖向列表拖拽到横向列表的示例
+
+- https://github.com/jdthorpe/dnd-kit-sortable-poc
+  - POC with Dragging Items into and out of a Sortable List
+  - you should handle intermediate transformations (like re-arranging lists) in `onDragOver`.
+  - [Drag into a Sortable list item](https://github.com/clauderic/dnd-kit/issues/714)
+
+- https://codesandbox.io/s/playground-0mine
+  - drag from sortable to sortable
+# codebase
+
+## useDraggable
+
+```JS
+// isDragging只做简单比较
+const isDragging = active?.id === id;
+```
+
+## useSortable
+
+```JS
+// isSorting简单检查useDraggable的返回值
+const isSorting = Boolean(active);
+```
+
+## DragOverlay
+
+- 默认布局 `position:fixed`
+
+## useDndContext
+
+```JS
+// Fires anytime as the draggable item is moved.
+export interface DragMoveEvent extends DragEvent {}
+
+// Fires when a draggable item is moved over a droppable container
+export interface DragOverEvent extends DragMoveEvent {}
+```
+
+## keyboard
+
+- The keyboard activator is the `onKeyDown` event handler. 
+  - The Keyboard sensor is initialized if the `event.code` property matches one of the `start` keys passed to `keyboardCodes` option of the Keyboard sensor.
+  - By default, the keys that activate the Keyboard sensor are `Space` and `Enter`.
 # changelog
 
 ## [v6.0.0_202205](https://github.com/clauderic/dnd-kit/releases/tag/%40dnd-kit%2Fcore%406.0.0)
