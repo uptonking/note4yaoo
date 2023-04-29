@@ -8,7 +8,6 @@ modified: 2022-08-24T10:48:29.318Z
 # lib-excel-spreadjs-dev
 
 # guide
-
 - demos
   - [Rows and Columns](https://www.grapecity.com/spreadjs/demos/features/worksheet/rows-and-columns/purejs)
   - [custom toolbar](https://www.grapecity.com/spreadjs/spreadsheet/)
@@ -27,6 +26,12 @@ modified: 2022-08-24T10:48:29.318Z
 
 - Currently, the Designer is built as a standalone application using VanillaJS, JQuery, and Knockout. So if you need to use it inside a react application, you would have to create a react wrapper around the designer to use it in the react.
 # docs
+- grapecity
+  - ActiveReportsJS, SpreadJS, and Wijmo are pure JavaScript components, and have **no dependencies**. 
+  - SpreadJS: The definitive JavaScript spreadsheet library for creating Excel-like experiences
+  - Wijmo: An extensible JavaScript UI component suite with grids, charts, and much more
+  - ActiveReportsJS: A new advanced javascript reporting suite for complete data visualization
+
 - [SpreadJS Designer Component](https://www.grapecity.com/spreadjs/docs/spreadjs_designer_component)
   - The designer components include ribbon, formula bar, status bar, side panel, and context menu. 
 

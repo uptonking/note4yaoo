@@ -15,6 +15,13 @@ modified: 2021-01-11T12:10:50.900Z
 
 - ## 
 
+- ## 
+
+- ## 一个人变得成熟的一个标志是，逐渐专注做一件事情，做长久做深入，做到比 99% 的人好，且不去跟别人计较这件事情的得失
+- https://twitter.com/im2gua/status/1651839878622236672
+- 个人愚见：成熟没有标志，不被标记的人生观，可以脱离定义成熟的讨论里。因为很多人一辈子，都在不断成熟的过程中，没有终点。
+- 优先取悦自己，不再取悦他人。
+
 - ## At this point I should be giving ChatGPT equity as an advisor.
 - https://twitter.com/steveruizok/status/1650057460940406789
   - I don’t think we’ve even begun appreciating how useful this thing is for learning a new topic. Immediate answers to thousands of little questions that are semi contextual and occasionally embarrassing

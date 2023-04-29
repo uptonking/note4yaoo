@@ -278,6 +278,18 @@ modified: 2023-02-05T19:03:12.722Z
 
 - there is new development going on: next month, @geoffreylitt and @sliminality will be kicking off a research project to figure out the best way of handling rich text in CRDTs such as Automerge, with the support of the @inkandswitch research lab. 
 
+- ## [Lazy loading Slate components that are offscreen?](https://github.com/ianstormtaylor/slate/issues/3234)
+- Closest thing we can do now appears to be:
+
+```JSX
+return (
+  <LazyLoad
+    placeholder={<MyPlaceholder {...attributes}>{children}</MyPlaceholder>
+    <MyActualComponent {...attributes} />
+  </LazyLoad>
+)
+```
+
 - ## Dynamic Rendering Feature (performance improvement); only render visible blocks and not render blocks hidden within the y-overflow.__201705
 - https://github.com/ianstormtaylor/slate/issues/790
 - The Ace Editor: ajaxorg/ace does this by rendering two divs: 

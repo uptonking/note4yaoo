@@ -123,6 +123,10 @@ modified: 2022-06-04T00:44:30.749Z
   - drag from sortable to sortable
 # codebase
 
+## tree
+
+- 通过KeyboardSensor来计算drop位置
+
 ## useDraggable
 
 ```JS
@@ -141,9 +145,11 @@ const isSorting = Boolean(active);
 
 - 默认布局 `position:fixed`
 
-## useDndContext
+## DndContext
 
 ```JS
+const overId = getFirstCollision(collisions, 'id');
+
 // Fires anytime as the draggable item is moved.
 export interface DragMoveEvent extends DragEvent {}
 
@@ -154,8 +160,30 @@ export interface DragOverEvent extends DragMoveEvent {}
 ## keyboard
 
 - The keyboard activator is the `onKeyDown` event handler. 
-  - The Keyboard sensor is initialized if the `event.code` property matches one of the `start` keys passed to `keyboardCodes` option of the Keyboard sensor.
   - By default, the keys that activate the Keyboard sensor are `Space` and `Enter`.
+
+## collision
+
+```typescript
+/** id + data, candidate node for drop */
+export interface Collision {
+  id: UniqueIdentifier;
+  data?: Record<string, any>;
+}
+
+const collisionRect = draggingNodeRect; // modified
+
+const collisions = collisionDetection({
+  active,
+  collisionRect,
+  droppableRects,
+  droppableContainers: enabledDroppableContainers,
+  pointerCoordinates,
+});
+
+const overId = getFirstCollision(collisions, 'id');
+```
+
 # changelog
 
 ## [v6.0.0_202205](https://github.com/clauderic/dnd-kit/releases/tag/%40dnd-kit%2Fcore%406.0.0)
@@ -186,8 +214,8 @@ export interface DragOverEvent extends DragMoveEvent {}
   - 基于react-window和dnd-kit编写的一个超灵活的表格。
   - 支持折叠部分行、虚拟滚动、拖拽行、数据filter/sort
   - 基于 FixedSizeList
-- https://github.com/yangfei4913438/react-demos
-  - 基于 react-window 库编写的一个超灵活的表格。使用了 dnd-kit 来实现列的顺序拖拽调换，列的宽度拖拽调整。
+  - 使用了 dnd-kit 来实现列的顺序拖拽调换，列的宽度拖拽调整。
+  - https://github.com/yangfei4913438/react-demos
 
 - https://github.com/el-tumakov/react-virtual-gantt-repo
   - https://react-virtual-gantt.vercel.app/
@@ -333,6 +361,12 @@ export interface DragOverEvent extends DragMoveEvent {}
 
 - https://github.com/zachhannum/calamus
   - React Electron App for Writing and Publishing Novels
+
+- https://github.com/ThemeFuse/Brizy /js/php
+  - A page builder that is fast & easy, Brizy is a next-gen website builder
+  - Requires PHP: 5.6.20
+- https://github.com/dht/gdi
+  - CMS written in ReactJS, hosted on Firebase
 
 ## utils
 

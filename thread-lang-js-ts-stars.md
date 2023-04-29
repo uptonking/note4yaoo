@@ -28,6 +28,29 @@ if(val) // doSth
 
 - ## 
 
+- ## 💡 JS private class fields considered harmful
+- https://twitter.com/LeaVerou/status/1652053835094065153
+  - [JS private class fields considered harmful](https://lea.verou.me/2023/04/private-fields-considered-harmful/)
+  - a very sad realization: instances of classes that use private fields cannot be proxied.
+- Vue 1 and 2 used accessors for reactivity. The problem is this approach was more fragile, many operations were not detected, one could not add new reactive properties without using special syntax etc.
+  - When implementing @mavoweb ’s reactivity system I briefly considered accessors but ruled them out for that reason and went for proxies even though they were brand new at the time and nobody was using them for that yet. They just seemed like the obvious tool for the job.
+
+- I'm not sure reactive frameworks should be really using proxies. They're enticing(诱人的；有吸引力的), but have these problems, as well as known issues of you access objects outside the proxies.
+- What should they be using?
+  - FAST uses decorators to generate getter/setter pairs on classes. It also has APIs to convert plain objects into reactive objects. The whole system is signals-based and has low-level APIs for creating your own types that integrate into the reactive system.
+  - When I was first designing FAST's reactivity system, I considered various options for the implementation, including proxies. In the end, I decided it wasn't the right way to go, based on some of the issues above, and a few other practical challenges I encountered along the way.
+  - One thing I would like to investigate is using proxies to create better reactive collections. Today, we patch Array to track splice operations, and use that for observation. But we could use a proxy that looks like an Array to do that.
+  - A proxy-based collection would enable tracking changes through the index, which isn't possible today on a standard array. It might also enable other possibilities more easily, such as invalidating the results of map/filter/reduce operations when the original array changes.
+
+- The problem is libraries / frameworks using proxies in a way that changes the `this` object seen by the proxied object. It's impossible to trap identity comparison. So these proxy usages are not transparent and incompatible with code relying on `this` identity.
+  - TLDR is that frameworks like Vue use proxies to interfere with a target object's internal implementation, i.e. it's trying to break encapsulation. The target object should instead opt into the reactivity / observability mechanism, or accept to only support external observability.
+
+- `WeakMap` + property object might help a bit as a suitable alt
+- `Symbol`s work well too as private field identifiers. They are impossible to duplicate without access to the original, making such fields fairly well protected, but not truly private.
+
+- For a while, there were the Object.observe and Array.observe proposals. Those were abandoned, I think mostly due to the champion's loss of interest.
+  - My understanding is that it wasn't lack of interest but pushback from implementors because Object.observe() and friends could not be implemented performantly.
+
 - ## I really wish there were Promises in JS that could be evaluated sync. It’s a complex problem.
 - https://twitter.com/trueadm/status/1630739165045194752
 - For UI frameworks you want to allow the user to pass a promise, but ensure that if it is ready that you can render synchronously. But `T | Promise<T>` doesn’t compose the way promises do, so either you accept a perf/UX hit, create your own alternate async ecosystem, etc.

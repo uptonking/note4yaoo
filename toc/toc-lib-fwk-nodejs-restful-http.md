@@ -159,7 +159,7 @@ modified: 2022-12-19T01:51:01.389Z
   - The pjax-api provides almost complete original web experience. 
   - Most SPA frameworks and pjax libraries lack many essential functions to keep the original web experience such as follows.
 
-- https://github.com/hydecorp/push-state
+- https://github.com/hydecorp/push-state /ts
   - hy-push-state is a web component that lets you turn web pages into web apps. 
   - The component dynamically loads new content (formerly known as "ajax") and inserts it into the current page, without causing Flash of White, Flash of Unstyled Content, etc.
   - hy-push-state is similar to pjax and smoothState, but offers a more advanced pre-fetching logic and gives you more control over its internals to enable advanced page transition animations.

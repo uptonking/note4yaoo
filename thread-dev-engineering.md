@@ -14,6 +14,24 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
+- ## 
+
+- ## Filesystem watching libraries that assume if the file size didn't change then the file didn't change
+- https://twitter.com/tantaman/status/1651584027025915905
+  - Wasn't a filesize issue and actually turned out to be a bug in `fswatch` o_O -
+- IIRC, `rsync` (fast) does size + modified as a heuristic. To to better than that, you  probably have to hash I think?
+
+
+
+
+- ## If you're a senior JS dev, you should be able to jump in and add a feature or fix a bug in a codebase the first day on the job. 
+- https://twitter.com/zachcodes/status/1651057366647939072
+  - his is the moment you know you're a senior dev. 
+  - It's all just JS / TS in the end, with an api reference for whatever framework is being used.
+- When you know how a browser works, http requests, json, html, css, js like the back of your hand….. most projects require zero time for a senior dev to jump in and get going. Especially if it uses a common library like react or nextjs. 
+
+- If the code well written, then even junior devs will able just right in. I find this a really good measurement for how clean your code is.
+
 - ## 之前为了统一接口把所有消息包括外部请求和内部回调都扔到一个channel里, 会增加消息之间等待, 导致该做的事没赶紧做. 
 - https://twitter.com/drmingdrmer/status/1650781883943510016
   - 现在把它拆开成内部外部2个channel, 性能提升了1成
@@ -34,9 +52,9 @@ modified: 2021-01-21T17:52:13.333Z
 - https://twitter.com/yeshu_in_future/status/1642032791444656129
   - 它们和传统页面的差异在于，应用往往会常驻在标签页中，生命周期更长，用户的使用时间也更长。
 - 有一些常见的优化思路：
-  01.   关注事件绑定，无论是抽象的event bus 或是 dom 事件，都要在必要的时候解绑
-  02.   关注DOM数量，理想情况是不会预期外的增长
-  03.   关注一切可复用的变量，比如组件不要反复销毁重建，复用渲染；对象的key如果要用字符串拼接，可能不如拆开几个map 或者用二维数组，比如表示表格单元格的位置和值；避免重复渲染大量svg icon ，基于id 复用，等
+  1.      关注事件绑定，无论是抽象的event bus 或是 dom 事件，都要在必要的时候解绑
+  2.      关注DOM数量，理想情况是不会预期外的增长
+  3.      关注一切可复用的变量，比如组件不要反复销毁重建，复用渲染；对象的key如果要用字符串拼接，可能不如拆开几个map 或者用二维数组，比如表示表格单元格的位置和值；避免重复渲染大量svg icon ，基于id 复用，等
 
 - ## When polishing creative work, I can often get into decision paralysis about the priority of things to fix.
 - https://twitter.com/aboodman/status/1648835192285704193

@@ -68,6 +68,9 @@ modified: 2023-02-08T10:46:26.912Z
 - search-pr
   - is:unmerged
 
+- search-code
+  - NOT is:fork 排除fork
+
 - search-repos
   - 搜索时变通的方法
     - 在github直接搜索导入库的代码 import from react，再限制语言如js

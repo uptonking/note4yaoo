@@ -13,6 +13,8 @@ modified: 2023-04-15T08:19:14.117Z
 
 # jupyter-js
 
+- https://github.com/ElixirNote/elixirnote
+  - a next-generation web-based user interface for Project Jupyter.
 # jupyter-extensions
 - https://github.com/yunabe/tslab
   - tslab is an interactive programming environment and REPL with Jupyter for JavaScript and TypeScript users. 

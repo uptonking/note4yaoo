@@ -14,7 +14,11 @@ modified: 2022-10-03T10:47:44.104Z
 
 - ## 
 
-- ## 
+- ## [Non-linear performance when pasting content_201612](https://github.com/ProseMirror/prosemirror/issues/364)
+  - I'm assessing the limits of ProseMirror from a performance perspective, and have found that overall things seem really good, however pasting large amounts of content degrades poorly.
+- Quadratic(平方的；二次方的) complexity is expected at this point (my data structure requires copying updated nodes, and if you make X changes each of which grows the size of the top node, that's quadratic).
+  - I was initially planning to switch to a more complicated data structure for large nodes, which would sidestep this quadratic behavior, but my own benchmarks show the size-related node copying part of the cost of updates to be really small (JS array slicing seems to be done with a simple memcpy-ish operation) compared to the constant factors, so for now I'm leaning towards that complexity not being worth it.
+- I'm going to blame the browser for simply being slow to display such a large chunk of newly added text. (👉🏻 Lazy/viewport-only drawing is explicitly out of scope for ProseMirror, it gets good results in CodeMirror for situations like this -- I can do a paste like this in ~100ms there -- but it's complicated to do in a non-intrusive way, even for flat, text-shaped content.)
 
 - ## my question is whether PM uses timeouts internally to wait for things, especially during initialisation but also during transactions and state updates. 
 - https://discuss.prosemirror.net/t/timeouts-and-synchronising-external-dom-state/3928

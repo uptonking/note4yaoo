@@ -15,7 +15,21 @@ modified: 2021-02-26T16:42:06.878Z
 
 - ## 
 
-- ## 
+- ## How to optimize style recalculations
+- https://twitter.com/fabiospampinato/status/1652326018613379074
+01. Open chrome://tracing
+02. Record
+03. Manual settings -> turn on "blink.debug"
+04. Record
+05. Interact with the page
+06. Select everything
+07. Click "Slices"
+08. Click "SelectorStats"
+09. Spot overly-broad selectors
+10. Make them more specific
+
+- A bit easier in MS Edge, just turn on ‘advanced rendering instrumentation’ in the performance tab, and then the ‘selector stats’ tab will appear when you inspect a style recalc
+  - Yeah way easier. For Electron apps raw tracing is the only option unfortunately.
 
 - ## We all know what `defer` attribute on `<script>` tag means. 
 - https://twitter.com/jebbacca/status/1636057114484305923

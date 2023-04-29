@@ -29,12 +29,8 @@ modified: 2022-11-08T10:34:34.820Z
   - 但传统企业有传统企业有趣的一面（虽然技术这面就有点寒碜了），职业生涯也终究还在前进过程中，总算不上吃了啥大亏。相对来说，推特中文圈因为中国的特殊性，有含量和含金量都极大的技术人才在，让我有机会神交了不少牛人，也算是弥补了心里一直存在的一点点缺憾。
   - 人一辈子总不能只做一个职业，希望自己也可以探索一下自己其他的职业可能性，让自己从一个技术人，变成一个有技术背景的人。
 
-
-
 - 传统企业大部分都是这样，「坚持技术」背后应该有对应的企业价值，否则脱离了价值的技术坚持在任何企业都是纯粹的成本，必然很难得到支持。
   - Google，OpenAI这样的技术服务型企业，技术驱动出的是产品力，最终是成本和利润。BAT这样的头部互联网企业，虽然不是技术驱动型（很多业务不是），但体量足够大以后，技术的精益带来的是成本和效率的提高，最终还是企业的成本和利润。
-
-
 
 - ## 面试了数百个同学，我认为一个好的面试官：
   - https://twitter.com/HiTw93/status/1640357285934542850
@@ -75,13 +71,20 @@ modified: 2022-11-08T10:34:34.820Z
 
   - 技术发展快，这条路不进则退，只有持续学习才能在技术这条路上越走越远
   - 能够把自己的技能展现出来也是一种本事，在面试的时候尤为重要，头疼
-
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## Damn, I’m almost 29
+- https://twitter.com/austin_malerba/status/1652124568683704320
+  - In my head I’m still like early 20s so I feel comfortable with my career progress 
+  - But sometimes I forget to factor in the reality that I’m aging…
+  - I need to step it the fuck up
+- Turning 31 soon, and the things that worked for me so far are:
+  1. focus on craft and try to be even better at what I am
+  2. go to the gym
+  3. getting coffee and walking around because that's the most fulfilling thing to do for me (along with 1.)
 
 - ## 毕业的时候我没有搞建筑，选择了当程序猿。就是感觉，这个行业个人会自由一点。
 - https://twitter.com/haozes/status/1635557991285149701

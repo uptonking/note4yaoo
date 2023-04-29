@@ -38,7 +38,16 @@ modified: 2023-04-16T10:02:58.738Z
 # discuss
 - ## 
 
-- ## 
+- ## 这几个月一直都没找到 Infra 里面有什么可以真正利用 LLM/ChatGPT 的场景
+- https://twitter.com/xxm459259/status/1650713723235885056
+- 给彩笔工程师每人发个账号…目前看起来这个比任何其他的都好使。
+- 写邮件给老板们吹自己 impacts
+- LLM-based FAQ
+- 在 postmortem 中甩锅，在 newsletter 中邀功
+
+- ## 并不那么Open的AI生态挑战者可能已经来了：@huggingface开源了自己30B参数的chatbot（不仅仅是模型），
+- https://twitter.com/cryptonerdcn/status/1650952444745240577
+  - @NVIDIAAI的研究者盛赞如果chatgpt是苹果，那么HuggingChat之后的生态环境可能就是安卓。（注意这不是之前公布的HuggingGPT，那是用来协调各种模型的）
 
 - ## 帮助我最多的 5 个技术相关 ChatGPT Prompts：
 - https://twitter.com/Tim_Qian/status/1650733864510459905

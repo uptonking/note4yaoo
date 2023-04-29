@@ -12,8 +12,6 @@ modified: 2021-05-13T03:15:22.261Z
 - druid vs pinot vs clickhouse
 # blog
 
-## [Comparison of the Open Source OLAP Systems for Big Data: ClickHouse, Druid, and Pinot | by Roman Leventov__201802](https://leventov.medium.com/comparison-of-the-open-source-olap-systems-for-big-data-clickhouse-druid-and-pinot-8e042a5ed1c7)
-
 # discuss
 - ## clickhouse到底有哪些吊炸天的优化？
 - https://www.zhihu.com/question/446288242/answers/updated

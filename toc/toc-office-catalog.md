@@ -34,6 +34,12 @@ modified: 2021-01-04T17:31:31.845Z
 
 - http://cd.sysdsoft.cn:666/sysd/SYCloud
   - 思源开发平台，一套企业级的开发平台，Antd 和 React 实现。
+  - 后端基于.Net Core、Restful API与SQLSugar轻量级ORM框架
+  - 整体采用微服务架构，将复杂整体项目拆分成多个微服务，分布式部署。
+  - Autofac IoC 容器 . 它可以管理类之间的依赖关系
+  - 提供了spreadjs-designer v11源码，无表格源码
+  - https://github.com/anxinHub/chdHRP
+    - 提供了spreadjs-designer v10源码，无表格源码
 # word-text-editor
 
 # excel-spreadsheet

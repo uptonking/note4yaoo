@@ -14,7 +14,11 @@ modified: 2023-02-05T18:40:43.969Z
 
 - ## 
 
-- ## 
+- ## Have thoughts on additional database support? @PostgreSQL
+- https://twitter.com/payloadcms/status/1652021212996829184
+  - We're not dropping mongodb! We're adding support for additional databases to make Payload even more extensible 
+- Drizzle doesn’t support MongoDB. Keystone implement prisma support somehow 🤷‍♂️ many other frameworks and cmses using knex under the hood (only sql) @MikroOrm supports both mongo and postgres and looks promising
+- Prisma doesn't work at the edge. Not even with the new JSON protocol.
 
 - ## [Roadmap: Multiple Database Support](https://github.com/payloadcms/payload/discussions/287)
 - coming from over 10 years of TYPO3: do use JSON fields for special content like blocks, array and group, creating tables and fields for every possible combination is a pain and usually even less performant (mostly because developers other than core team do not understand the structure anyway)

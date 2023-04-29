@@ -74,6 +74,10 @@ modified: 2022-11-06T03:19:28.284Z
 - https://github.com/marmelab/ra-sqlite-dataprovider
   - here is a POC to generate a react-admin administration not relying on an API but directly on a SQLite database hosted on a static server (in this case the Github pages server).
 
+- https://github.com/phartenfeller/sveltekit-sqlite-offline-app
+  - Offline usable SvelteKit data app using Northwind. 
+  - Uses SQLite3 WASM with the Origin-Private-File-System (OPFS).
+
 - https://github.com/kaminskypavel/sqlite-wasm-browser
   - using SQL.js to run sqlite in browser.
   - chinook SQLite sample database: music tracks/playlists/invoices
@@ -93,6 +97,9 @@ modified: 2022-11-06T03:19:28.284Z
   - sqlite-wasm playground
   - typescript, web worker, vite
 
+- https://github.com/bgrins/opfs-sqlite-demo
+  - /js
+
 - https://github.com/rhashimoto/wa-sqlite
   - This is a WebAssembly build of SQLite with experimental support for writing SQLite virtual filesystems and virtual table modules completely in Javascript. 
   - This allows alternative browser storage options such as IndexedDB and File System Access.
@@ -100,4 +107,7 @@ modified: 2022-11-06T03:19:28.284Z
 
 - https://github.com/mandel59/sqlite-wasm
   - SQLite compiled to WebAssembly
+
+- https://github.com/tomayac/sqlite-wasm
+  - SQLite Wasm conveniently wrapped as an ES Module.
 # more-sqlite-web

@@ -17,7 +17,12 @@ modified: 2021-03-31T06:50:19.936Z
 # discuss
 - ## 
 
-- ## 
+- ## 多租户的应用以 uuid 做主键解决了我的精神内耗……
+- https://twitter.com/chloerei/status/1651868638650187776
+  - 不能排序也不太方便嘞
+
+- ## One of the ideas from yesterday Yjs meetings: package managers using BitTorrent protocol.
+- https://twitter.com/Horusiath/status/1651102613012611073
 
 - ## 以前是 Nginx、PHP、MySQL 啥的一个个装，现在是一个 Docker 搞定了。
 - https://twitter.com/im2gua/status/1650428284583411712

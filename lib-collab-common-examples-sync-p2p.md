@@ -45,6 +45,17 @@ modified: 2023-01-17T19:13:01.845Z
 - https://github.com/JacobJaffe/event-system-prototype
   - Prototype of a syncing game state between a p2p, host switching network through an action system & event history.
 
+- https://github.com/spreadjs/spread /js
+  - Spread.js is a local JavaScript datastructure, that is instantly synced across devices/nodes/instances
+  - It can be used, when building distributed applications, that need local in-memory data for fast access.
+  - Use Plain JavaScript Objects
+  - Technically the process is pretty simple. 
+    - The Storage object is being monitored using a JS Proxy. 
+    - Every change will instantly be emitted to the server, where is gets broadcasted to all connected instances. 
+    - On each instance, the incoming operation is applied, keeping the storage object in sync.
+  - Wen a new instance joins the group, it automatically requests the current state of the storage object. 
+    - Any other instance will then send a copy of the data object to the new instance.
+
 - https://github.com/derhuerst/files-sync-stream
   - Sync files (or any blobs of data) between two peers, in both directions, over any transport. 
   - You decide where and how to store the files. 

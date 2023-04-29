@@ -255,6 +255,18 @@ $$('[contenteditable]')
 
 ## 042
 
+## 0429
+
+- [React批量(异步)更新以及同步更新原理](https://github.com/lizuncong/mini-react/issues/5)
+  - 在 React 源码中，通过全局变量 executionContext 控制 React 执行上下文，指示 React 开启同步或者异步更新。
+  - executionContext 一开始被初始化为 NoContext，因此 React 默认是同步更新的。
+  - 当我们在合成事件中调用 setState 时，batchedEventUpdates在执行时会更改 executionContext 指示 React 异步更新，函数执行完成，executionContext 又会恢复成原来的值
+  - React 使用 syncQueue 维护一个更新队列。syncQueue 数组存的是 performSyncWorkOnRoot，这个方法从根节点开始更新
+  - 如果 executionContext === NoContext 则直接刷新 syncQueue
+  - 在合成事件等 React 能够接管的场景中，setState 是批量更新的。
+  - 在 setTimeout、Promise回调 等 异步任务 场景中，setState 是同步更新的
+  - 在 React17 版本中提供了一个 `unstable_batchedUpdates` API，如果我们希望在 setTimeout 等异步任务中开启批量更新，则可以使用这个方法包裹一下我们的业务代码。
+
 ## 0427
 
 ### [告别JS keyCode](https://www.zhangxinxu.com/wordpress/2021/01/js-keycode-deprecated/)
@@ -266,8 +278,10 @@ $$('[contenteditable]')
   - 我们需要通过判断用户是否按下了Shift键才知道究竟输入的是哪个字符。比较繁琐
 - 相同按键不同keyCode
   - 数字键按住Shift键可以输出其他内容
+- 中文输入法下标点符号keyCode都是一样的
+  - 中文输入法时，`“，。；‘【】-=”`这些字符的keyCode全部都返回229
 
-- `event.code`指明按下的是具体哪个物理键，键盘上每一个按键都对应一个唯一的event.code值，均使用大写英文单词表示。
+- `event.code`指明按下的是具体哪个物理键，键盘上每一个按键都对应一个唯一的event.code值
 - `event.key`指明具体输入的字符内容，如果是非打印字符（例如Enter键、Esc键、Shift键、Alt键等），则返回具体的非打印字符的英文名称，如果输入内容与输入法有关则返回固定的Process名称。
   - 对于英文场景，只需要使用event.key就可以知道键盘输入的内容了。
   - 在中文输入框开启的场景下，如果按键的内容和非中文输入法下的内容不一样，则event.key的返回值是固定的Process，表示输入的字符内容和键盘对应的原始内容进行了处理。

@@ -73,6 +73,9 @@ modified: 2021-01-01T16:02:50.598Z
   - As an open data search engine
   - Powerful and scalable search based on ElasticSearch
   - Federated authentication via passport.js
+
+- https://github.com/Inist-CNRS/lodex /js
+  - Lodex is a tool to enable publishing a set of data csv, tsv, xml, json, ... in semantic web formats JSON-LD, N-Quads, ... and propose to manipulate them in a backoffice.
 # metadata
 - https://github.com/GuinsooLab/darkseal
   - A Single place to Discover, Collaborate, and Get your data right
