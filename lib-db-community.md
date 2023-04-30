@@ -29,8 +29,6 @@ modified: 2021-08-30T15:50:54.515Z
 
 - ## 
 
-- ## 
-
 - ## [Mongo (Atlas) vs. Planetscale for my simple SaaS? : Database](https://www.reddit.com/r/Database/comments/wh9rd1/mongo_atlas_vs_planetscale_for_my_simple_saas/)
 - Mongo:
 - Pros: I have the most experience with it, super easy to get up and running, built for simple document structure like my use case, very cheap pay-as-you-go pricing on Atlas.

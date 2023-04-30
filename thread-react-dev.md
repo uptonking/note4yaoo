@@ -14,7 +14,12 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
-- ## 
+- ## Problem: You want to reset React state when a component’s props change.
+- https://twitter.com/housecor/status/1652641989773410306
+  - Solution: Change the component’s `key` when the props change. 
+- Why not use useEffect?
+  - Because resetting state via useEffect is error prone. As new state is added, someone may forget to update the useEffect call.
+  - Warning: If the component tree is expensive to render, consider resetting state via useEffect instead.
 
 - ## React Suspense should have a minimum delay (~250ms) before showing its children if they're not resolved immediately to avoid fallback flashes.
 - https://twitter.com/diegohaz/status/1648585529716269056
@@ -109,7 +114,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                       `ValueFront`,                       `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                        `ValueFront`,                        `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

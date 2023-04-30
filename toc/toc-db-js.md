@@ -222,10 +222,17 @@ modified: 2022-11-25T15:50:48.226Z
     - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS
 
 - https://github.com/arthurhsu/lovefield-ts
-  - [ブラウザで動くSQLite alternativesとしてのLovefield - console.lealog();](https://lealog.hateblo.jp/entry/2023/03/03/092649)
+  - [ブラウザで動くSQLite alternativesとしてのLovefield - console.lealog(); ](https://lealog.hateblo.jp/entry/2023/03/03/092649)
   - Lovefield Typescript port and modernization.
   - All namespaces are flattened
   - no Static schema: it was designed for use with Closure compiler.
+
+- https://github.com/robtweed/glsdb /202209/js
+  - Global Storage Database Abstraction for Node.js
+  - glsdb is a Node.js/JavaScript abstraction of Global Storage Databases. 
+  - With glsdb, a Global Storage Database is abstracted as JavaScript Objects that represent database nodes and provide properties and methods for accessing and navigating between database nodes.
+  - glsdb relies on the mg-dbx interfaces which provide access to the following Global Storage databases
+  - glsdb can also be used with the mg-dbx-bdb interface
 
 - https://github.com/anywhichway/reasondb /201702/js/不支持同步
   - https://anywhichway.github.io/reasondb
