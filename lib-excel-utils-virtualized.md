@@ -24,7 +24,14 @@ modified: 2022-08-24T10:49:48.139Z
 # discuss
 - ## 
 
-- ## 
+- ## An interesting virtualization strategy: just render some placeholder content and replace it with the actual content once it becomes visible.
+- https://twitter.com/fabiospampinato/status/1653083336510783489
+  - See how much less lag my EmojiPicker virtualized like this causes. 
+  - You get most of the performance _and_ most of the simplicity also.
+- Currently working on building very large (50-100k rows x 10+ columns) data tables at work. 
+  - We are using tanstack virtual core as a base. 
+  - Currently for render layer using the absolute positioning + transformY approach recommended by the docs.
+- Yeah that's like the normal row-based approach. It can be pushed a bit further than that potentially, depending on what one is optimizing for.
 
 - ## Would it be possible to render only the text of the components that are off-screen, 
 - https://twitter.com/tomlienard/status/1554016255430066176

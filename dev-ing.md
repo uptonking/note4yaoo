@@ -137,7 +137,8 @@ $$('[contenteditable]')
   - 01-linvo-search + tinybase-sync-hlc-wip
   - 02-typewriter-quill + tanstack-table + slate-table
   - 03-crdt-rga + slate-yjs + slate-editor
-  - 04-slate-dnd/table/image-sequelize
+  - 04-slate-editor + dnd-kit
+  - 05-table/image-sequelize
 
 - why use es6 class
   - 运行时类型检查，instanceof
@@ -157,7 +158,7 @@ $$('[contenteditable]')
   - 离屏渲染，keep-alive
   - 分层渲染
 
-## 040
+## 050
 
 - not-yet
   - todo remove hash在编辑器中有什么作用
@@ -171,10 +172,14 @@ $$('[contenteditable]')
   - unit-tests
     - test in firefox
   - drag
-    - [ ] dnd-kit tree performance, 支持向左拖动更新层级，自定义冲突解决
+    - [ ] dnd-kit tree performance
+      - 自定义冲突解决
+      - 拖拽指示线
     - 拖拽到页面顶部或底部时，自动滚动
     - 拖拽时原布局不变，只显示预期位置的指示线
     - remove zustand
+    - [x] 支持向左拖动更新层级
+    - [x] 支持方向键向左更新层级
   - toolbar
     - [ ] dropdown 组件样式、active值
     - [x] 工具条按钮处理跨选区的情况
