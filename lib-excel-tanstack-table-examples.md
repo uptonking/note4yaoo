@@ -74,8 +74,9 @@ modified: 2022-08-21T10:37:01.349Z
   - https://docs.undb.xyz/
   - Private first, unified, self-hosted no code database.
   - 前端依赖 undb, dnd-kit、tanstack-table, react-redux, emotion, @loadable/component, jotai, react-hook-form, trpc
-    - 前端正迁移到svelte
   - 后端依赖 nestjs、mikro-orm、trpc、undb
+  - [feature/frontend next_20230503, 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
+    - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
 
 - https://github.com/klassenl/react-grid /202210/ts/单击编辑单元格
   - https://subtle-muffin-372579.netlify.app/

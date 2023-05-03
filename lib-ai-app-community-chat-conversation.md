@@ -10,24 +10,6 @@ modified: 2023-04-16T10:02:58.738Z
 # guide
 
 # discuss-stars
-- ## is anyone else getting sick of chatbots?
-- https://twitter.com/Wattenberger/status/1653045107266924545
-  - I wrote down a few thoughts on why chatbots are not the future of interfaces and how we can be more thoughtful
-  - [Why Chatbots Are Not the Future](https://wattenberger.com/thoughts/boo-chatbots)
-- Great post. I think the point about “hard to read edits without a diff” can be generalized too: plaintext is a suboptimal data viz for so many LLM outputs.
-  - We need diff views, weather widgets, mini maps, 2x2 charts
-- Two cons of using chat bot in async user feedback/bug report:
-  - (1) users expect real time response. If you don’t have enough CS resource, it will damage the expectation of users
-  - (2) scripted + automatic responses make things worse. Users just want to hit that “talk to human” btn
-
-- Agree! I think chat corresponds to stage we are in. Many folks feel alone/remote in their daily work & chat feels connective.
-  - I like the concept of a toolbar of Code Brushes - but it lives very unnaturally in the UI right now
-  - totally agree ❤️ Brushes was a really rough initial exploration, but someday I'll fix up the ui and it should work its way into other GH experiments!
-
-- I _hate_ when chatbots are used as customer support, and there is no option available to just talk to a human
-
-- Code Hike `<Chat/>` prototype (it's the UI, not the AI)  
-
 - ## AutoGPT现在超火，它是一个由开发者 Significant Gravitas 推出的项目，​可以根据用户设置的目标，​使用 GPT-4 自动帮助完成任务。
 - https://twitter.com/duanzi/status/1647284362541662213
   - ​用户只需提供 OpenAI 的 API Key，​AutoGPT 就可以根据用户设定的目标，​采用Google搜索、​浏览网站、​执行脚本等方式帮助用户完成目标
@@ -58,7 +40,32 @@ modified: 2023-04-16T10:02:58.738Z
 
 - ## 
 
-- ## 
+- ## 今天跟一位朋友讨论为什么国产的AI产品已经沦落到到免费都没人去用了，原因总结下来是两点：
+- https://twitter.com/oran_ge/status/1653753194206601216
+  - 我的覆盖群体基本人手 ChatGPT/Claude
+  - 玩 AI 太多有种疲惫感，阈值拉高了，很难兴奋起来
+- 我拿我的专业最基本的知识问文心，十次里有五次是胡言乱语，都不能算是幻觉了，就是那种你哪怕去百度搜索引擎查都能一秒找到答案的概念，他会瞎说
+- 国产的 AI 对提升生产力帮助并不大
+
+- ## is anyone else getting sick of chatbots?
+- https://twitter.com/Wattenberger/status/1653045107266924545
+  - I wrote down a few thoughts on why chatbots are not the future of interfaces and how we can be more thoughtful
+  - [Why Chatbots Are Not the Future](https://wattenberger.com/thoughts/boo-chatbots)
+- Great post. I think the point about “hard to read edits without a diff” can be generalized too: plaintext is a suboptimal data viz for so many LLM outputs.
+  - We need diff views, weather widgets, mini maps, 2x2 charts
+- Two cons of using chat bot in async user feedback/bug report:
+  - (1) users expect real time response. If you don’t have enough CS resource, it will damage the expectation of users
+  - (2) scripted + automatic responses make things worse. Users just want to hit that “talk to human” btn
+
+- Agree! I think chat corresponds to stage we are in. Many folks feel alone/remote in their daily work & chat feels connective.
+  - I like the concept of a toolbar of Code Brushes - but it lives very unnaturally in the UI right now
+  - totally agree ❤️ Brushes was a really rough initial exploration, but someday I'll fix up the ui and it should work its way into other GH experiments!
+
+- I _hate_ when chatbots are used as customer support, and there is no option available to just talk to a human
+
+- Code Hike `<Chat/>` prototype (it's the UI, not the AI)  
+
+- Yep. Chat is not the right interface for AI. It has the same discoverability problem as voice assistants and the terminal — it’s hard to learn the capabilities of the system without trial and error or reading a manual. Eventually the tech just will be integrated into real UIs.
 
 - ## 这几个月一直都没找到 Infra 里面有什么可以真正利用 LLM/ChatGPT 的场景
 - https://twitter.com/xxm459259/status/1650713723235885056

@@ -9,18 +9,14 @@ modified: 2022-08-21T09:56:38.596Z
 
 # guide
 
-- 最新代码使用的是 go 1.18，server端无法编译通过
-  - 从commit历史可以找到升级升级go之前的commit id
-    - 8cefcd8e8cea70bd470ad0505d266ada4db91e2a
-    - [v20220603](https://github.com/mattermost/focalboard/commits/main?after=e31821501c2d5f53329916b0ebd5165c09e480d8+69&branch=main)
-  - 前端webapp开发历史记录
-    - https://github.com/mattermost/focalboard/commits/main/webapp/src
+- 前端webapp开发历史记录
+  - https://github.com/mattermost/focalboard/commits/main/webapp/src
 # roadmap
 - theme
   - 支持 notion/airtable
 # faq
 - 删除或编辑卡片的操作，状态是如何变化、更新的？
-  - y数据操作通过调用全局的mutator方法
+  - 数据操作通过调用全局的mutator方法
 # not-yet
 - 看板核心内容视图实现的结构
   - 可以总体为一行，每列包含顶部列标题、当前列内容卡片

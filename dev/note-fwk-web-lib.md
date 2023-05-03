@@ -9,7 +9,7 @@ modified: 2021-01-13T07:57:54.308Z
 
 # guide
 
-# react系
+# react-like
 
 ## [如何看待由react router原班人马打造并获得三百万美元融资的ts全栈开发框架remix框架?](https://www.zhihu.com/question/502743886)
 
@@ -18,6 +18,10 @@ modified: 2021-01-13T07:57:54.308Z
 
 - 看过router源码的都知道其实现没什么难度。。。用的还是react提供的api.
   - 这就像写了一个github很多人用的组件，比如通用switch按钮，tab之类的，说拿到融资然后要实现一个js框架。。。。你只会觉得unbelievable，至于期待什么的，我倒是挺好奇他们的技术水平能实现到什么程度
+# vue-like
+
+# fwk-more
+- [Qwik, a new framework from the authors of angular.js and Ionic](https://vived.io/qwik-a-new-framework-from-the-authors-of-angular-js-and-ionic-frontend-weekly-vol-106/)
 # stimulus
 - stimulus /10kStar/MIT/202101/ts
   - https://github.com/hotwired/stimulus

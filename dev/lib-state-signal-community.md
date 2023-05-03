@@ -176,9 +176,6 @@ state1.state.deniz = 11; // nothing
 - But that happens only during rendering, so sounds the same?
   - The difference is that it allows us to bypass virtual dom updates entirely and bind to the underlying dom node directly.
   - If you pass a signal as text in an html element for example then the component it's in is unaware of the subscription. Instead the text node sets it up.
-- 
-- 
-- 
 
 - Does that mean that Preact uses a compiler now? So it's like Svelte 
   - Nope! This would be a fantastic primitive for compiled output, but our goal is always to deliver as much value as possible without compilation. 
@@ -200,3 +197,8 @@ state1.state.deniz = 11; // nothing
 
 - Great Work! Anyway, I may miss the point of how it is different for any external store that re-renders only subs components. Using just forceRerender without useSyncExternalStore, do we may have well-known issues like zombie child or tearing? 
   - Everything is synchronous, so there is no tearing. This also doesn't use forceUpdate, in React it generates components that update using hooks.
+
+- https://twitter.com/marvinhagemeist/status/1569246610105765892
+- Should the computed example in the Guide then not access todo.completed.value to work as intended? Would we need to mark each property of a todo as a signal, or can we just do signal(todo) to make all its properties observable a la MobX?
+  - We don't do deep observability by default like MobX.
+  - There is an addon called preact-signal-store that turns all object properties into a signal

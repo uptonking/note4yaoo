@@ -12,7 +12,29 @@ modified: 2021-01-06T14:40:11.360Z
 # discuss
 - ## 
 
-- ## 
+- ## 💡 React tip: I think most implementations of `usePrevious` will write to a ref in an effect and return it, but the rules of react advise us to not read refs during render.
+- https://twitter.com/TkDodo/status/1653418107103264774
+  - I know it looks weird, but calling `setState` during render (guarded by an `if` to avoid infinite loops) is actually the recommended way.
+- React will instantly stop the render cycle when it sees a `setState` and will re-run it. This only works for updating state from within the same component. It's better than `useEffect` because the render hasn't been committed to the DOM yet.
+- Why you shouldn't read from refs during rendering is also documented
+  - Do not write or read `ref.current` during rendering, except for initialization. This makes your component’s behavior unpredictable.
+- It is so counter intuitive to use setState in render ... Like, it totally breaks the pure functional concept of "UI as State". It is really hard to reason about that
+  - Agree, but it's probably better than the alternatives. We might need to unlearn a bunch of things though, and we shouldn't need this regularly. @dan_abramov also suggests to not hide these in custom hooks
+
+- second implementation adds extra re-render, while the first one is not or am i missing something? this could be serious difference for heavy/repeated components.
+  - Yes, they instantly stop and restart rendering shallowly, so they are not for free, but better than calling setState in useEffect b/c that re-renders everything way too late.
+  - The ref solution is "wrong" because it reads from refs during render, which is "forbidden" in terms of react component purity. Things might get unpredictable with concurrent features if you do that.
+
+- I didn't think about this closely, but you might want to consider:
+  - const [[curr, prev], setState] = useState<[T, T | null])([value, null])
+  - Yeah you can put it into one state object or array, but since updates are batched together it doesn't really matter much imo
+- Also, an overengineered version replacing two `useState`s with a single `useReducer`
+
+- i’ve come to see this Hook as a bad idea. what does “previous” mean exactly? it depends on what the code is trying to do. is it the previous value seen by the component? previous value seen by the user? i suggest removing usePrevious altogether and writing it plainly.
+
+- 
+- 
+- 
 
 - ## Problem: You want to reset React state when a component’s props change.
 - https://twitter.com/housecor/status/1652641989773410306
@@ -114,7 +136,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                        `ValueFront`,                        `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                         `ValueFront`,                         `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

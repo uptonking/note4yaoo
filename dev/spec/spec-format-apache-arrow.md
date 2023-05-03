@@ -23,6 +23,14 @@ modified: 2021-07-24T08:14:45.182Z
     - A couple of important milestones were the addition of an API to implement Extension Arrays for pandas in 2018.
     - Another important milestone was the implementation of a string data type based on Arrow that started in 2020.
 # changelog
+- refs
+  - [Releases | Apache Arrow](https://arrow.apache.org/release/)
+
+## [v12.0.0_202305](https://arrow.apache.org/release/12.0.0.html)
+
+- [C++] Remove internal GroupBy implementation
+- [C++] Support Table lookups in FieldRef and FieldPath
+- [Python][CI] Compatibility with pandas 2.0
 
 ## [Introducing ADBC: Database Access for Apache Arrow_202301](https://arrow.apache.org/blog/2023/01/05/introducing-arrow-adbc/)
 

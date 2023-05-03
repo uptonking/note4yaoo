@@ -76,6 +76,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 👉🏻 nocodb     (AGPL/knex+nuxt3)
   - apitable      (AGPL/spring-mybatis+canvas)
   - focalboard    (AGPL/go+react-dnd)
+  - undb          (AGPL/nestjs+mikro-orm+dnd-kit/table)
   - locokit        (MIT/knex+vue2)
   - rowy       (apache2/firebase+tinymce5)
   - baserow        (MIT/django+nuxt2)

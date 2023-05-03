@@ -13,7 +13,7 @@ modified: 2020-11-19T12:43:25.788Z
   - React Context and `useContext()` is often used to avoid prop drilling, however it's known that there's a performance issue. 
   - When a context value is changed, all components that are subscribed with useContext() will re-render.
   - `useContextSelector` is recently proposed. While waiting for the process, this library provides the API in userland.
-  - To avoid this, this library uses undocumented feature of `calculateChangedBits`. It then uses a subscription model to force update when a component needs to re-render.
+  - To avoid this, this library uses undocumented feature of `calculateChangedBits`. It then uses a subscription model to force update when a component needs to re-render. 但源码似乎未使用
 
 - https://github.com/data-client/rest-hooks
   - Normalized state management for async data. Safe. Fast. Reusable.

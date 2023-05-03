@@ -31,7 +31,14 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
-- ## 
+- ## You can reduce the number of DOM elements and DOM operations _by a lot_ and speed things up as a result by highlighting things with the CSS Custom Highlight API
+- https://twitter.com/fabiospampinato/status/1653421306128334848
+  - Sadly isn't supported in Firefox and Safari
+- So are all of your debugging tools highlights?
+  - No the thing that draws rectangles around elements does that on a transparent canvas, you can't implement something like that with highlights. There's only a limited set of CSS properties that they support (to stay super fast).
+- Did anybody mention a text editor that uses this API?
+  - There may be some problems in practice, like for example I think you can't make text bold just with highlights, and you may need some wrapping anyway to make like links clickable.
+- TIL about the Custom Highlight API. Looks pretty useful to mark search results and that sort of thing. Great find!
 
 - ## It is now 2023 and `display: contents` still breaks accessibility in Safari.
 - https://twitter.com/devongovett/status/1628501529207402497

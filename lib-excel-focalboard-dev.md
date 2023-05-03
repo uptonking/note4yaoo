@@ -9,19 +9,32 @@ modified: 2022-08-21T09:56:53.708Z
 
 # guide
 
-- focalboard-pros
+- pros
   - notion-like database
+  - 支持多种类型的字段
+  - 数据模型专注于任务管理，以看板、卡片作为基础数据模型
+  - 支持权限控制
+  - 每一行可作为页面打开
 
-- focalboard-cons
-  - 每个page只能显示一个database
-  - 表格视图不能添加新字段，看板视图可以
+- cons
+  - 每个url只能显示一个database
 
 - features
   - notion-like database
   - open source self-hosted project management tool
   - offline support with win/mac/linux client
+  - Group, filter, and sort tasks
+  - File sharing
+  - Customizable templates
+  - Archiving & back-up snapshots
+  - User permissions
+  - Multi-team views
   - more
     - some database features have mobile support
+# undb-nocode
+- focalboard底层数据库设计包括 boards/blocks
+
+- undb底层数据库设计包括 table/field/view/attachment
 # focalboard-rewrite
 - goals
   - relicense => better-coding/pattern

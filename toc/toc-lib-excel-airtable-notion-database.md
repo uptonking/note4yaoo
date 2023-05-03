@@ -59,9 +59,11 @@ modified: 2022-08-21T10:02:05.129Z
   - https://www.undb.xyz/
   - https://docs.undb.xyz/
   - Private first, unified, self-hosted no code database.
-  - 前端依赖 undb, dnd-kit、tanstack-table, react-redux, emotion, @loadable/component, jotai, react-hook-form, trpc
-    - 前端正迁移到svelte
+  - 前端依赖 undb, dnd-kit、tanstack-table, redux-toolkit, emotion, @loadable/component, jotai, react-hook-form, trpc
+    - 可在redux-devtools中查看数据结构
   - 后端依赖 nestjs、mikro-orm、trpc、undb
+  - [feature/frontend next_20230503, 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
+    - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
 
 - nocodb /33kStar/AGPLv3/202212/ts/vue/重后端/多视图
   - https://github.com/nocodb/nocodb
@@ -160,6 +162,8 @@ modified: 2022-08-21T10:02:05.129Z
   - Focalboard comes in two main editions:
     - Personal Desktop: A stand-alone single-user Mac, Windows, or Linux desktop app for your todos and personal projects.
     - Mattermost Boards: A self-hosted or cloud server for your team to plan and collaborate.
+  - [Focalboard Personal and Plugin Editions Announcement_20230430](https://github.com/mattermost/focalboard/discussions/4645)
+    - we won’t be adding any new enhancements
 
 - rowy /4kStar/apache2/202212/ts/firebase/示例丰富
   - https://github.com/rowyio/rowy
