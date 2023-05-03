@@ -104,8 +104,8 @@ react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", {
   - Linaria doesn't control insertion order. 
   - It depends on what code is loaded first. 
   - If your file containing the global CSS is the entry file or is imported in the entry file first, it'll be inserted first.
-- [css - What does :global (colon global) do? - Stack Overflow](https://stackoverflow.com/questions/43613619/what-does-global-colon-global-do)
-  - The :global selector keyword is used in css modules to specify that a class should not be scoped to the component in which it is defined. 
+- [What does `:global` (colon global) do? - Stack Overflow](https://stackoverflow.com/questions/43613619/what-does-global-colon-global-do)
+  - The `:global` selector keyword is used in css modules to specify that a class should not be scoped to the component in which it is defined. 
   - This selector allows the class to be used globally in the application
 
 ## test

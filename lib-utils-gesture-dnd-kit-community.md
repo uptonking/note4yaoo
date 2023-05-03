@@ -84,6 +84,26 @@ modified: 2023-04-23T13:30:54.152Z
 - Sounds good. I am pretty sure our issue can be addressed with proper memoization.
   - Up to you if you want to keep this issue open for when React officially supports useContextSelector or if you want to close it.
 
+- Memoization solved the problem for me. My code looks something like this:
+
+```jsx
+function Draggable(props) {
+    const { setNodeRef, attributes, listeners } = useDraggable(args)
+
+    return <div ref={setNodeRef} {...attributes} {...listeners}>
+        <DraggablePresentation />
+    </div>
+}
+
+const DraggablePresentation = React.memo(props => {
+    // render the visible UI elements here
+})
+```
+
+- [Sortable not working with Array of Objects](https://github.com/clauderic/dnd-kit/issues/845)
+  - This can happen if your component is expensive to re-render. 
+  - Try creating a separate presentational component that you are connecting to `useSortable` and memoize it using `React.memo` to avoid un-necessary re-renders.
+
 - ## [re-rendering ALL draggable items on drag start and such](https://github.com/clauderic/dnd-kit/issues/1071)
   - [React Context Performance Pitfalls](https://blog.devgenius.io/react-context-pitfalls-9fb67723183b)
   - https://codesandbox.io/p/sandbox/throbbing-moon-uvbor3
@@ -92,7 +112,6 @@ modified: 2023-04-23T13:30:54.152Z
   - a workaround for this issue could be creating a Draggable component that will receive the content (the actual component) as children. but then you cannot pass isDraggable and such to it
   - Or you can separate the draggable item into 2 components: DraggableItem and Item + memo the Item.
 
-
 - ## [Jank when dragging fast](https://github.com/clauderic/dnd-kit/issues/799)
 - This is indeed a critical issue that may affect all the multi-container apps.
   - I've tested the multi-container scenario from the storybook related to the #788 and I can confirm that it fixes the issue which is great 
@@ -100,6 +119,15 @@ modified: 2023-04-23T13:30:54.152Z
 - ## [perf regression: all Sortables in 5.0 rerender constantly on even smallest mouse movement](https://github.com/clauderic/dnd-kit/issues/623)
 - The same problem is happening to me, 'useSortable' is causing retenders due to 'useContext'. 
   - The easiest way to fix this is to use `useContextSelector` .
+
+- [@fluentui/react-context-selector](https://github.com/microsoft/fluentui/tree/master/packages/react-components/react-context-selector)
+  - 💡 给出了使用useContextSelector传递sortablePropsMemo的示例
+  - When a context value is changed, all components that are subscribed with `useContext()` will re-render.
+  - `useContextSelector` is recently proposed. While waiting for the process, this library provides the API in userland.
+  - To avoid this, this library uses undocumented feature of `calculateChangedBits`. It then uses a subscription model to force update when a component needs to re-render.
+
+- ## [Extremely poor non-virtualized sortable performance](https://github.com/clauderic/dnd-kit/issues/943)
+- The biggest bottleneck appears to be related with component measuring, as also indicated by obsidian-kanban#155. `getBoundingClientRect` , for instance, keeps the main thread busy, and the draggable `MeasuringFunction` specifically appears to be called four times simultaneously on draggable click.
 
 # discuss-collision
 - ## [Provide mouse position to collision detection algorithm](https://github.com/clauderic/dnd-kit/issues/127)

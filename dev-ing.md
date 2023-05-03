@@ -250,15 +250,66 @@ $$('[contenteditable]')
     - checkboxList完成后可选变灰
     - bulletList支持emoji
   - initialDataLong示例，无法删除首行列表项
-  - remove ramda
   - drag
     - paragraph的drag handle有时无法选中
   - collab
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
-# dev-04
+# dev-05
 
-## 042
+## 050
+
+## 0502
+
+- [webpack css-loader: Separating Interoperable CSS-only and CSS Module features](https://webpack.js.org/loaders/css-loader/#separating-interoperable-css-only-and-css-module-features)
+  - 将css分为modules和non-modules2部分，可支持css-in-js
+  - 使用css-in-js时尽量不用styled的形式，只用css``来减少使用api，减少打包问题
+
+```JS
+// /SCSS ALL EXCEPT MODULES
+{
+  test: /\.scss$/i,
+  exclude: /\.module\.scss$/i,
+  use: [{
+      loader: "style-loader",
+    },
+    {
+      loader: "css-loader",
+      options: {
+        importLoaders: 1,
+        modules: {
+          mode: "icss",
+        },
+      },
+    },
+    {
+      loader: "sass-loader",
+    },
+  ],
+},
+// SCSS MODULES
+{
+  test: /\.module\.scss$/i,
+  use: [{
+      loader: "style-loader",
+    },
+    {
+      loader: "css-loader",
+      options: {
+        importLoaders: 1,
+        modules: {
+          mode: "local",
+        },
+      },
+    },
+    {
+      loader: "sass-loader",
+    },
+  ],
+},
+```
+
+# dev-04
 
 ## 0429
 

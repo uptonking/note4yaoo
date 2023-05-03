@@ -76,7 +76,6 @@ modified: 2022-06-04T00:44:30.749Z
 ## not-yet
 
 - not-yet
-  - 🤔 树的递归渲染是如何实现的
   - DragOverlay内为什么不要使用useDraggable/useSortable
   - 如何接收外部(非DndContext内)的dnd事件
   - resize
@@ -101,6 +100,9 @@ modified: 2022-06-04T00:44:30.749Z
   - The recommended approach in that situation is to move the items onDragOver instead of onDragEnd and passing a sorting strategy that returns nothing to SortableContext
 
 ## done
+
+- 🤔 树的递归渲染是如何实现的
+  - dnd-kit tree示例，渲染时先将数据扁平化，再作为列表渲染，未使用递归渲染
 
 - [How to drag by copying?](https://github.com/clauderic/dnd-kit/issues/456)
   - when you drop that item you keep that same unique id and generate a new one for the sidebar to replace the item that was just moved from the sidebar to your other droppable region

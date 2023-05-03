@@ -8,6 +8,13 @@ modified: 2020-11-19T12:43:25.788Z
 # toc-lib-react-extensions
 
 # react-state-management
+
+- [@fluentui/react-context-selector](https://github.com/microsoft/fluentui/tree/master/packages/react-components/react-context-selector)
+  - React Context and `useContext()` is often used to avoid prop drilling, however it's known that there's a performance issue. 
+  - When a context value is changed, all components that are subscribed with useContext() will re-render.
+  - `useContextSelector` is recently proposed. While waiting for the process, this library provides the API in userland.
+  - To avoid this, this library uses undocumented feature of `calculateChangedBits`. It then uses a subscription model to force update when a component needs to re-render.
+
 - https://github.com/data-client/rest-hooks
   - Normalized state management for async data. Safe. Fast. Reusable.
   - Define your async methods. Use them synchronously in React. Instantly mutate the data and automatically update all usages.
