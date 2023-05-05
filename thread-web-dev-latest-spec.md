@@ -11,7 +11,12 @@ modified: 2021-04-27T09:19:37.711Z
 
 - ## 
 
-- ## 
+- ## Pro Tip: You can increase the speed of a video with DevTools. Inspect the element and run:
+- https://twitter.com/umaar/status/1654079892240171010
+- https://twitter.com/umaar/status/1654079892240171010
+  - `$0.playbackRate = 2`, or `$('video').playbackRate=2` in console
+  - Useful for when websites make it tricky to do that in their UI
+- and `$0.requestPictureInPicture()` !
 
 - ## What platforms support something like AsyncLocalStorage/Async Context?
 - https://twitter.com/RyanCarniato/status/1643669619318878208

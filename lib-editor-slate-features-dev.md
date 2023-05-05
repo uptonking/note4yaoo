@@ -57,7 +57,7 @@ modified: 2023-03-16T16:29:47.610Z
 - notion的拖拽指示线与block结构绑定，绝对定位渲染在鼠标最近block的下面或上面，默认是下面 bootom: -4px
   - antd-tree采用的也是这种思路
 - 飞书的拖拽指示线不与block结构绑定，全局绝对定位
-# later
+# dev-later
 - emoji
 
 - 中文优化
@@ -85,9 +85,11 @@ modified: 2023-03-16T16:29:47.610Z
 - 每个editor带有自己的
   - 工具条、悬浮菜单
   - 右键菜单
-# maybe
+# dev-maybe
 - devtools
   - 可参考 ckeditor、prosemirror、tanstack-query/table
+
+- editor using canvas
 # 顶部工具条 toolbar
 - 工具条比编辑器宽，编辑器左边会有空白
   - lexical，左右28，上8

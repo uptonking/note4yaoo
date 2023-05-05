@@ -11,11 +11,22 @@ modified: 2021-04-28T20:54:58.126Z
 
 # issues
 
+## virtual-list在devtools中width或height为0，导致元素不显示_202305
+
+- flex-item 的 flex-basis 默认auto，宽度由item自身width/height决定
+  - 而flex-item内的div宽度为width:100%时，相对于item自身width
+  - 两处计算有点依赖和冲突，所以item自身with在devtools中显示为0
+
+- 虚拟列表容器为position-relative，列表项为position-absolute
+  - position-absolute会脱离文档流，不会填充父容器宽高
+  - 需要手动设置父容器宽高
+  - 一旦设置容器宽高，flex-item的宽高可以确定
+
 ## slate的link元素使用floating-ui无法显示弹出框的原因_202203
 
 - 一直在floating-ui源码的useFloating/useHover排查，方向错误
 - 原因是slate元素渲染时`{...attributes}`的属性attributes.ref.current=null，而floating-ui需要的 `ref={refs.setReference}`
-  - 注意书写顺序
+  - 注意传递props的书写顺序
 
 ## 在slate中文输入法的问题定位花费过多时间
 

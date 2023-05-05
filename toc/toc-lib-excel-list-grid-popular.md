@@ -72,7 +72,7 @@ modified: 2022-08-21T10:02:27.788Z
     - https://github.com/tannerlinsley/react-virtual
     - Hooks for virtualizing scrollable elements in React
 
-- react-window /8.5kStar/MIT/202106/js
+- react-window /14kStar/MIT/202304/js
   - https://github.com/bvaughn/react-window
   - https://react-window.now.sh/
   - 基于div实现，每行对应的dom元素不存在
@@ -88,15 +88,15 @@ modified: 2022-08-21T10:02:27.788Z
     - https://codesandbox.io/s/5wqo7z2np4
     - InfiniteLoader component inspired by react-virtualized but for use with react-window
     - This demo app mimics loading remote data.Once data has been "loaded" the row number will be displayed.
-  - https://github.com/pupudu/window-table
+  - https://github.com/pupudu/window-table /202207/ts/inactive
     - https://window-table.netlify.com/
     - Windowing Table for React based on React Window
     - [Roadmap for bvaughn/react-window-table](https://github.com/bvaughn/react-window-table/issues/1)
-  - https://github.com/mckervinc/react-fluid-table
+  - https://github.com/mckervinc/react-fluid-table /202009/ts/inactive
     - https://mckervinc.github.io/react-fluid-table/
     - A windowed React table built on top of react-window
 
-- react-virtuoso /876Star/MIT/202011/ts/list
+- react-virtuoso /3.7kStar/MIT/202305/ts/list/table
   - https://github.com/petyosi/react-virtuoso
   - https://virtuoso.dev/
   - powerful React virtual list/table component
@@ -155,17 +155,17 @@ modified: 2022-08-21T10:02:27.788Z
   - https://fancygrid.com/
   - JS grid library with charts integration and server communication.
   - 基于div实现，实现很特别，表格ui是一列一列相邻放置构成的，每列对应的dom元素存在
-- react-base-table /MIT/761Star/202112/js
+- react-base-table /1.4kStar/MIT/202303/js
   - https://github.com/Autodesk/react-base-table
   - https://autodesk.github.io/react-base-table/
   - 基于div实现，每行对应的dom元素存在
-  - 依赖react-window，依赖很少
+  - 依赖react-window、memoize-one
   - A react table component to display large datasets with high performance and flexibility
   - 未实现row select(作者为组件unopinionated的目标而未合并pr)，但提供示例
-- react-datasheet-grid /71Star/MIT/202202/ts
-  - https://github.com/Equify/react-datasheet-grid
+- react-datasheet-grid /242Star/MIT/202302/ts
+  - https://github.com/nick-keller/react-datasheet-grid
   - https://react-datasheet-grid.netlify.app/docs/features
-  - 依赖react、react-window、react-resize-detector
+  - 依赖react、tanstack-virtual~~react-window~~、react-resize-detector
   - more like Airtable or Notion and less like Excel in the sense that instead of dealing with individual cells it deals with entire rows, and each column is responsible for a single property of each row
 
 - rsuite-table /327Star/MIT/202010/ts

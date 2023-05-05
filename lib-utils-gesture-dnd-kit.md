@@ -256,8 +256,14 @@ const overId = getFirstCollision(collisions, 'id');
   - https://clauderic.github.io/react-tiny-virtual-list/
   - A tiny but mighty 3kb list virtualization library, with zero dependencies
   - Supports variable heights/widths, sticky items, scrolling to index, and more
+  - This library draws inspiration from react-virtualized, and is meant as a bare-minimum replacement for the `List` component.
+  - https://github.com/clauderic/virtualized-list
+    - A tiny vanilla virtualization library, with DOM diffing
   - forks
     - https://github.com/matyas-igor/react-small-virtual-list
+      - storybook
+    - https://github.com/manvydasu/react-tiny-virtual-list-oss
+      - support react v18
 
 - https://github.com/RohanShrestha01/task-planner /ts
   - https://tasksplanner.vercel.app/
@@ -372,6 +378,11 @@ const overId = getFirstCollision(collisions, 'id');
   - CMS written in ReactJS, hosted on Firebase
 
 ## utils
+
+- https://github.com/alexreardon/drag-and-drop-performance-comparison
+  - https://drag-and-drop-performance-comparison.vercel.app/
+  - This application contains the same board example, powered by different drag and drop libraries
+  - 对比了 react-beautiful-dnd、dnd-kit、react-dnd、@atlaskit/drag-and-drop
 
 - https://github.com/sindresorhus/array-move
   - Move an array item to a different position

@@ -20,6 +20,65 @@ modified: 2023-01-15T15:56:43.100Z
   - Framework agnostic (WIP): Currently only for React but we could support Vue, Svelte, Solid and more in the future.
   - Fast: Scrolling without frame drop needs optimization in many aspects (reduce CPU usage, reduce GC, reduce layout recalculation, optimize for frameworks, etc). We are trying to combine the best of them.
 
+- react-tiny-virtual-list /MIT/1.8kStar/201910/ts
+  - https://github.com/clauderic/react-tiny-virtual-list
+  - https://clauderic.github.io/react-tiny-virtual-list/
+  - A tiny but mighty 3kb list virtualization library, with zero dependencies
+  - Supports variable heights/widths, sticky items, scrolling to index, and more
+  - This library draws inspiration from react-virtualized, and is meant as a bare-minimum replacement for the `List` component.
+  - https://github.com/clauderic/virtualized-list
+    - A tiny vanilla virtualization library, with DOM diffing
+  - forks
+    - https://github.com/matyas-igor/react-small-virtual-list
+      - storybook
+    - https://github.com/manvydasu/react-tiny-virtual-list-oss
+      - support react v18
+
+- react-window /14kStar/MIT/202304/js
+  - https://github.com/bvaughn/react-window
+  - https://react-window.now.sh/
+  - 基于div实现，每行对应的dom元素不存在
+  - React components for efficiently rendering large lists and tabular data
+  - React window works by only rendering part of a large data set(just enough to fill viewport).
+  - [Support just-in-time measured content](https://github.com/bvaughn/react-window/issues/6)
+  - table using react-window
+    - https://github.com/pupudu/window-table
+    - https://github.com/mckervinc/react-fluid-table
+    - https://github.com/Autodesk/react-base-table
+    - https://github.com/nick-keller/react-datasheet-grid
+    - https://github.com/bvaughn/react-window-table /unfinished
+  - forks
+    - https://github.com/webcore-it/react-window
+  - https://github.com/vikadata/vikatable /ts
+    - 基于 react-window Grid 构建的表格组件
+    - @apitable/react-flow 基于其中的 Grid 构建，通过扩展 Grid 的 props 参数，非侵入式支持更多的表格特性, 使其更方便构建表格。
+- https://github.com/Lodin/react-vtree /202109/ts
+  - https://lodin.github.io/react-vtree/
+  - React component for efficiently rendering large tree structures
+  - provides a lightweight and flexible solution for rendering large tree structures. 
+  - It is built on top of the `react-window` library.
+  - This library is entirely rewritten to work with the react-window.
+- https://github.com/ranneyd/sticky-table /js
+  - This is a remake of the incredible `react-window` lib. 
+  - It has optionally "locked" headers on all sides implemented with `position: sticky`.
+- https://github.com/numero33/react-visual-window
+  - React components for fast and efficiently rendering large lists
+  - Heavily inspired by react-window
+- https://github.com/Console2016/react-window-pro
+  - 基础react-window的功能封装，冻结列, 冻结行, 分组等功能
+- https://github.com/victor-magarlamov/react-virtualized-tree /201908/js
+  - A virtualized tree view react component based on react-window
+
+- react-virtuoso /3.7kStar/MIT/202305/ts/list/table
+  - https://github.com/petyosi/react-virtuoso
+  - https://virtuoso.dev/
+  - powerful React virtual list/table component
+  - V1 brings improvements to reverse infinite scrolling behavior - suitable for chat and feed user interfaces.
+  - [Dynamic item height](https://github.com/petyosi/react-virtuoso/issues/169)
+    - The way react-window handles that is by caching the offsets.
+  - [Is it possible to use react-virtuoso with tree components?](https://github.com/petyosi/react-virtuoso/issues/202)
+    - That could easily be achieved if the treeview has a "flat" rendering rather than a nested one. I don't know if such mode is possible, though.
+
 - react-virtual-grid /30Star/NALic/202005/js
   - https://github.com/fulcrumapp/react-virtual-grid
   - https://fulcrumapp.github.io/react-virtual-grid/

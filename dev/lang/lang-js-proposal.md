@@ -110,8 +110,9 @@ modified: 2020-07-07T08:10:16.774Z
 - cancellable promise
 
 ## more-proposals
-
-### stage3/4
+- https://github.com/rbuckton/proposal-enum
+  - https://github.com/Jack-Works/proposal-enum
+## stage3/4
 - https://github.com/tc39/proposal-temporal
   - The JavaScript Temporal proposal has reached stage 3 in TC39. 
   - Proper Date & Time handling are coming!

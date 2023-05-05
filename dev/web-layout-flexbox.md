@@ -102,7 +102,7 @@ modified: 2020-12-21T07:46:17.578Z
 - **The spec clearly states "When omitted from the flex shorthand, its specified value is '0'". Why are browsers violating the spec and setting 0% instead?**
   - because following the Spec is never an obligation. Some browser decide to do things differently either intentionally or by mistake (which we call a bug)
 
-- When you have flex-basis: 0, Chrome and Firefox compute to flex-basis: 0px.
+- When you have `flex-basis: 0`, Chrome and Firefox compute to flex-basis: 0px.
   - Instead, for cross-browser compatibility, use this: flex: 1 0 0%
 
 - [Understanding unit-less flex-basis](https://stackoverflow.com/questions/44847264)
@@ -124,6 +124,16 @@ modified: 2020-12-21T07:46:17.578Z
 - 总结上面四点，可以看出不管在什么情况下，**在同一时间flex-shrink和flex-grow只有一个能起作用** 
   - 空间足够时，flex-grow 就有发挥的余地，而空间不足时，flex-shrink 就能起作用。
   - 当然，flex-wrap 的值为 wrap | wrap-reverse 时，表明可以换行，既然可以换行，一般情况下空间就总是足够的，flex-shrink 当然就不会起作用
+
+- ## [Absolute positioning, percentage heights and flexbox - Stack Overflow](https://stackoverflow.com/questions/58805170/absolute-positioning-percentage-heights-and-flexbox)
+  - When your container is not absolutely positioned (i.e., it remains in-flow), the fact that there is no height defined on the parent means that `height: 50%` resolves to `height: auto` (height of the content).
+    - If you set, let's say, body `{ height: 100vh }`, your container will take 50% height.
+  - When your container is absolutely positioned, the `height: auto` rule doesn't apply and `height: 50%` works as intended.
+  - Also, in-flow block level elements take the width of their container. Once you apply absolute positioning -- removing the element from the document flow -- the "take the width of the parent" rule no longer applies, and you need to specify the width of the container, or define the offset properties (i.e., left, right, etc.).
+
+- ## [Flexbox sets height of inside element to 0 - Stack Overflow](https://stackoverflow.com/questions/33268373/flexbox-sets-height-of-inside-element-to-0)
+  - the Flexbox module changed the initial value of min-height
+  - min(specified size, content size)
 # [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 # The One Thing Flexbox Can’t Do - Row Span

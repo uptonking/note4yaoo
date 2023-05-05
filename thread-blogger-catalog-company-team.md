@@ -10,6 +10,9 @@ modified: 2020-10-22T13:06:52.353Z
 # guide
 - 看再多技术文章和资讯，不如动手写一写
 - 确定某一个技术方向后，应该集中精力到某一方面的技术和深入
+# 个人博客
+- 阮一峰
+  - [科技爱好者周刊 阮一峰](https://www.ruanyifeng.com/blog/weekly/)
 # 团队专栏
 - [政采云前端团队](https://juejin.cn/user/3456520257288974/posts)
   - [我在工作中是如何使用 git 的, rebase清晰解释](https://juejin.cn/post/6974184935804534815)

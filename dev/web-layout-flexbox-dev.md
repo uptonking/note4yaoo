@@ -41,6 +41,17 @@ modified: 2020-12-21T07:46:20.408Z
   - To overcome this problem, use `margin: auto` for centering to work properly.
 - ref
   - [What's the difference between margin:auto and justify-content/align-items center?](https://stackoverflow.com/questions/44244549/whats-the-difference-between-marginauto-and-justify-content-align-items-cent)
+
+- ## What's the diff on a position:absolute el btw `{top:0;right:0;bottom:0;left:0;}` and `{top:0;left:0;height:100%;width:100%;}` ?
+
+- [Width and Absolute Positioning](https://keithjgrant.com/posts/2016/01/width-and-absolute-positioning/)
+
+- “That’s easy”, I thought. “They often seem the same in practice, but width and height are based on the parent (or nearest block-level ancestor). Top, right, bottom, and left are based on the nearest positioned ancestor. Those aren’t necessarily the same element.”
+
+- But my codepen showed me an absolutely positioned element whose width and height are derived from the positioned ancestor, not the immediate container.
+
+- With right: 0; bottom: 0, the margin is contained inside the positioned descendant; they will shrink the size of the element.
+  - So what does this mean? It seems to me that `top: 0; right: 0; bottom: 0; left: 0` is probably the one to favor, as it's a little more predictable, unless you have a particular reason to use height or width instead.
 # discuss
 - ## Do you ever not want `min-width/height: 0` to prevent Grid/Flex children from spilling out? 
 - https://twitter.com/souporserious/status/1427404212531458054

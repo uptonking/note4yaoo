@@ -259,6 +259,15 @@ $$('[contenteditable]')
 
 ## 050
 
+## 0504
+
+- `max-width` overrides `width`, but `min-width` overrides `max-width`.
+  - 优先级
+  - The element's width is set to the value of `min-width` whenever `min-width` is larger than `max-width` or `width`.
+
+- [enum vs "as const" vs Object.freeze() what is the difference between those 3? : typescript](https://www.reddit.com/r/typescript/comments/ztpl9k/enum_vs_as_const_vs_objectfreeze_what_is_the/)
+  - `Object.freeze` is a runtime thing whereas `as const` is purely in compile time
+
 ## 0502
 
 - [webpack css-loader: Separating Interoperable CSS-only and CSS Module features](https://webpack.js.org/loaders/css-loader/#separating-interoperable-css-only-and-css-module-features)
