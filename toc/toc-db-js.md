@@ -209,6 +209,9 @@ modified: 2022-11-25T15:50:48.226Z
   - a document oriented feature-rich in-memory database written in TypeScript
   - LokiDB is the official successor of LokiJS.
   - 完全自己实现了 full-text-search
+  - [How is LokiDB the official successor of LokiJS?](https://github.com/LokiJS-Forge/LokiDB/issues/190)
+    - I tried my best converting it to TypeScript and improving it.
+    - But I don't really use LokiDB (web technology in general) very much. 
 
 - lovefield /6.8kStar/Apache2/202005/js/inactive
   - https://github.com/google/lovefield

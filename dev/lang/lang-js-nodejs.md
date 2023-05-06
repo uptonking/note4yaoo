@@ -134,7 +134,7 @@ modified: 2022-12-19T01:48:17.115Z
 - node中实现进程间通信IPC的技术是管道pipe
   - 具体细节实现由libuv提供，在win下由命名管道实现，*nix系统采用unix domain socket实现
 # dev
--  ## node-path
+## node-path
 - `path.join(path1，path2，path3.......)`
   - 用平台特定的分隔符把全部给定的path片段连接到一起，并规范化生成的路径
   - 先解析相对路径..，再拼接返回，path片段/docs, ./docs, docs三种方式处理无差别
@@ -249,7 +249,6 @@ myEmitter.emit('event');
   - The NodeEventTarget does not implement any special default behavior for events with type 'error'.
 # blogs
 - [Reducing the cost of string serialization in Node.js core](https://www.yagiz.co/reducing-the-cost-of-string-serialization-in-nodejs-core)
-- 
 # discuss
 - ## [Node.js架构剖析](http://www.ayqy.net/blog/node-js-architecture-overview/)
 - nodejs架构图

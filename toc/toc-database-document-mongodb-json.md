@@ -15,7 +15,7 @@ modified: 2022-11-03T04:14:11.987Z
 - 偏向crud而不是查询的场景，考虑json patch
 
 - 更适合block-editor的数据结构是否是 mongodb？
-# json-like
+# json-query
 - sift.js /1.6kStar/MIT/202211/ts
   - https://github.com/crcn/sift.js
   - Use Mongodb queries in JavaScript
@@ -97,6 +97,13 @@ modified: 2022-11-03T04:14:11.987Z
     - ForerunnerDB was originally intended as a browser-based DB with in-memory access and then grew to include Node.js support and persistent storage.
     - It would be relatively slow and difficult to query the data in a persisted state as the current storage system allows LocalStorage which doesn't provide for row-by-row access (although we could engineer one with a slower read/write to storage as a side effect).
 
+- https://github.com/elmarti/camadb /202110/ts
+  - a NoSQL embedded database written in pure TypeScript for Node, Electron and browser
+  - SQLite doesn't (by default) return native JS data types (Dates in particular)
+  - CamaDB uses a MongoDB style **query** language, powered by SiftJS.
+  - we use a MongoDB style language for data **updates**, for this we use obop
+  - We use Mingo for **aggregation** - currently lookup commands aren't supported.
+
 - PicoDB /31Star/MIT/202201/js
   - https://github.com/jclo/picodb
   - A tiny in-memory database (MongoDB like) that stores JSON documents
@@ -124,11 +131,6 @@ modified: 2022-11-03T04:14:11.987Z
 - https://github.com/Belphemur/node-json-db
   - A simple "database" that use JSON file for NodeJS
   - Every method are now asynchronous
-
-- https://github.com/elmarti/camadb /202110/ts/inactive
-  - a NoSQL embedded database written in pure TypeScript for Node, Electron and browser
-  - SQLite doesn't (by default) return native JS data types (Dates in particular)
-  - We use Mingo for aggregation - currently lookup commands aren't supported.
 
 - https://github.com/anywhichway/joqular /201902/js
   - JavaScript Object Query Language Representation - Funny it's mostly JSON.

@@ -23,6 +23,8 @@ modified: 2020-12-08T13:27:35.701Z
 ## [Building a Reactive Library from Scratch - DEV Community](https://dev.to/ryansolid/building-a-reactive-library-from-scratch-1i0p)
 
 - [A Hands-on Introduction to Fine-Grained Reactivity - DEV Community](https://dev.to/ryansolid/a-hands-on-introduction-to-fine-grained-reactivity-3ndf)
+- [Finding Fine-Grained Reactive Programming - JavaScript inDepth](https://indepth.dev/posts/1269/finding-fine-grained-reactive-programming)
+- [Exploring the state of reactivity patterns in 2020 - JavaScript inDepth](https://indepth.dev/posts/1280/exploring-the-state-of-reactivity-patterns-in-2020)
 
 - Fine-grained reactive systems execute their changes synchronously and immediately. 
   - They aim to be glitch-free in that it is never possible to observe an inconsistent state. 
@@ -32,7 +34,7 @@ modified: 2020-12-08T13:27:35.701Z
 
 ```JS
 // singals core contains a getter and setter 
-export function createSignal(value) {
+export function createSignalCore(value) {
   const read = () => value;
   const write = (nextValue) => value = nextValue;
   return [read, write];
@@ -45,15 +47,19 @@ export function createSignal(value) {
 // a global context stack that will be used to keep track of any running Reactions or Derivations
 const context = [];
 
+// bi-reference between runningContext and signalSub
 function subscribe(running, subscriptions) {
   subscriptions.add(running);
   running.dependencies.add(subscriptions);
 }
 
+// Signals consist of a getter, setter, and a value. like a Subject object
+// Reactions, also called Effects, Autoruns, Watches, or Computeds, observe our Signals and re-run them every time their value updates.
 export function createSignal(value) {
   // each Signal has its own subscriptions list.
   const subscriptions = new Set();
 
+  // auto subscribe when read
   const read = () => {
     const running = context[context.length - 1];
     if (running) subscribe(running, subscriptions);
@@ -71,24 +77,17 @@ export function createSignal(value) {
   return [read, write];
 }
 
-// Every cycle we unsubscribe the Reaction from all its Signals and clear the dependency list to start new
-function cleanup(running) {
-  for (const dep of running.dependencies) {
-    dep.delete(running);
-  }
-  running.dependencies.clear();
-}
-
 export function createEffect(fn) {
-
+  // running context that will be stored to global; like a observer object
   const running = {
     execute,
     dependencies: new Set()
   };
 
   const execute = () => {
-    // This allows us to dynamically create dependencies as we run each time. 
+    // clean up the previously registered context
     cleanup(running);
+    // This allows us to dynamically create dependencies as we run each time. 
     context.push(running);
     try {
       fn();
@@ -98,6 +97,14 @@ export function createEffect(fn) {
   };
 
   execute();
+}
+
+// Every cycle we unsubscribe the Reaction from all its Signals and clear the dependency list to start new
+function cleanup(running) {
+  for (const dep of running.dependencies) {
+    dep.delete(running);
+  }
+  running.dependencies.clear();
 }
 
 // usage
@@ -114,6 +121,20 @@ export function createMemo(fn) {
 }
 ```
 
+```JS
+const useReducer = (reducer, state) => {
+  const [getState, setState] = createSignal(state);
+  const [getAction, dispatch] = createSignal();
+  createEffect(() => {
+    const action = getAction();
+    if (!action) return;
+    state = reducer(state, action);
+    setState(state);
+  });
+  return [getState, dispatch];
+};
+```
+
 - There are two main things we are managing. 
   - there is a global context stack that will be used to keep track of any running Reactions or Derivations. 
   - In addition, each Signal has its own subscriptions list.
@@ -124,6 +145,42 @@ export function createMemo(fn) {
 - Finally, on Signal write in addition to updating the value we execute all the subscriptions. 
 
 - This is how libraries like KnockoutJS from the early 2010s worked.
+
+- 🎤️ discussions
+
+- I understand the idea of reactive value, but how the updates on DOM are performed, does the framework subscribe to the changes via effects or some unexplained magic is happening?
+  - That's it. DOM rendering are effects. More precisely nested effects as to only retrigger the closest change.
+
+- I've been wondering why people like representing a reactive state in `[get,set]=data` instead of `S.data` 🤔 Is it because React introduces it that way?
+  - There is the single getter/setter function: state()表示get，state(value)表示set
+  - KnockoutJS popularized this approach but it becomes pretty ambiguous once you leave local scope. 
+  - 语义不够明确
+  - `get+set` This is how it works in MobX, and Svelte 2
+  - The thing with tuples are you can name them exactly as you want. 
+
+- Using Observer Pattern terminology the "signal" comes from the "subject".
+  - By using "getState" the "observer" not only "gets the state" of the subject but also implicitly subscribes to updates to the subject's state. Similarly "setState" triggers the machinery necessary to update anybody who's interested in the updated state.
+- 
+
+- In this scenario(with `createMemo`) where there is only a single observer that has no other dependencies this will effectively execute the same number of times (as without `createMemo`).
+  - The main benefit of `createMemo` is to prevent re-calculations, especially expensive ones. 
+  - This is only relevant if it is used in multiple places or the thing that listens to it could be triggered a different way which could also cause re-evaluation.
+  - This is actually one of the reasons I personally like explicit reactivity. A lot of libraries/APIs sort of push this memoization on you by default or hide it in their templating. It's excellent for update performance but you end up with higher creation costs.
+
+- running code from the article i found that nested effects will create new subscription everytime outer effect runs, without cleaning up previous subscriptions, causing zombie inner subscriptions to appear.
+  - Yes, an actual reactive system is more complicated. I'm missing cleanup on nested effects, but to be fair most reactive libraries do. Mobx and the like. They expect the user to handle final cleanup. Solid is special in that we build a hierarchical ownership graph to do this ourselves and this works really well with our rendering system, but it is far from the norm.
+
+- Why use context stack?
+  - Nested reactivity. Generally you can nest effects or derivations inside themselves. This is important to how Solid renders but I suppose wasn't needed for this simple example.
+  - If you try to subscribe after the inner effect it doesn't track. 
+  - Keep in mind this is just a simple approximation. I don't actually use an array in my libraries and instead just store the out context and then restore it.
+
+- I'm basically backlinking the signal because on effect re-run we have to unsubscribe from all the signals that it appears in their subscription lists.
+
+- In the code above effect's dependencies are being added but not really used anywhere except for cleaning itself
+
+- why do we need to cleanup in general?
+  - The observer pattern is inherently leaky. Signals don't need cleanup but any subscription does. If the signal outlives the subscriber it will have no longer relevant subscriptions. At minimum we need to mark the subscriber as dead. The fact that we dynamically create and tear down subscriptions on each run has us doing this work anyway.
 
 ## [Why I'm not a fan of Single File Components - DEV Community](https://dev.to/ryansolid/why-i-m-not-a-fan-of-single-file-components-3bfl)
 

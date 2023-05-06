@@ -13,7 +13,17 @@ modified: 2021-05-13T03:20:00.313Z
   - [State Management with React Hooks and Context API](https://devsmitra.medium.com/state-management-with-react-hooks-and-context-api-2968a5cf5c83)
   - [React doesn't need state management tool, I said](https://dev.to/tolgee_i18n/react-doesnt-need-state-management-tool-i-said-31l4)
     - https://github.com/tolgee/tolgee-platform/blob/main/webapp/src/fixtures/createProvider.tsx
-# [You Might Not Need Redux_2016](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
+# blogs
+
+## [手写一个Redux，深入理解其原理 - 掘金](https://juejin.cn/post/6845166891682512909)
+
+- https://github.com/dennis-jiang/Front-End-Knowledges/tree/master/Examples/React/redux
+
+- [webpack核心模块tapable用法解析 - 掘金](https://juejin.cn/post/6939794845053485093)
+  - tapable并没有具体的业务逻辑，是一个专门用来实现事件订阅或者他自己称为hook(钩子)的工具库，其根本原理还是发布订阅模式，但是他实现了多种形式的发布订阅模式，还包含了多种形式的流程控制。
+
+## [You Might Not Need Redux_2016](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
+
 - Redux offers a tradeoff. It asks you to:
   - Describe application state as plain objects and arrays.[state]
   - Describe changes in the system as plain objects.[action]

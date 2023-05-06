@@ -20,15 +20,20 @@ const createState = (s) => {
   const ls = new Set();
   const n = (k, v) => { ls.forEach(l => l(k, v, s)) };
   const subscribe = (l) => { ls.add(l); return () => { ls.delete(l) } };
-  const p = new Proxy(s, { set: (t, k, v) => { t[k] = v;
-      n(k, v); return true; } });
-      
+  const p = new Proxy(s, {
+    set: (t, k, v) => {
+      t[k] = v;
+      n(k, v);
+      return true;
+    }
+  });
+
   return { state: p, subscribe, listeners: ls }
 }
 
 // no need for setState()
-const state1 = createState({ilhan:42, deniz:10});
-state1.subscribe((k,v)=>{if(k === 'ilhan'){console.log("ilhan set to", v)}})
+const state1 = createState({ ilhan: 42, deniz: 10 });
+state1.subscribe((k, v) => { if (k === 'ilhan') { console.log("ilhan set to", v) } })
 state1.state.ilhan = 44; // ilhan set to 44
 state1.state.deniz = 11; // nothing
 ```
@@ -61,7 +66,17 @@ state1.state.deniz = 11; // nothing
 
 - ## 
 
-- ## 
+- ## Signals are cool but don't be fooled, 
+- https://twitter.com/PeerReynders/status/1568754562739195906
+  - they are observables and have been used by client-side frameworks on the web for *at least* 12 years if not longer. If you look at their implementations they are more or less the same.
+- Knockout.js (2010) is the most frequently referenced.
+  - Knockout (2010) adopted the overloaded function style (from overloaded C++ accessor/mutator methods) to represent a reactively updated value (because IE didn't support getter and setter object properties) which was created by the `ko.observable` factory function.
+- "java.util. Observable" was part of Java 1.0 (1996)
+- Observables are more like streams because they emit events/values at specific points in time. 
+  - Signals can be always be queried for their latest updated value. 
+  - (in ReactiveX only a BehaviorSubject caches that last emitted item) 
+- 💡 In the Observer Pattern the `Subject` is only capable of invoking `update` on the `Observer` which mirrors how a ReactiveX (2011) `Observable` invokes `next` on `Observer` ; neither is query-able (while signals are).
+  - An Rx `Observable` supports at most one `Observer` though.
 
 - ## Today's vibe: Mutable data structures are 💯. 
 - https://twitter.com/tannerlinsley/status/1648722093222273024
@@ -81,6 +96,8 @@ state1.state.deniz = 11; // nothing
   - Updating mutable refs outside the React render cycle go brrrrrrrrr
 - https://twitter.com/mweststrate/status/1631200674313641984
   - My expectation is that signal based solutions will eventually evolve into nested signals (signals containing signals) which will be either a bit clunky, or land on a Vue/MobX like object model.
+  - MobX abstracts away the signal model by largely pushing it into the object model, so that optimisations come for free or with very little overhead, without requiring a lot of syntactical sugar or surprising semantics (imho). (And without needing a compiler step)
+- It's probably circular. We were really heavy on proxies(we call the Stores) early days and Signals were advanced API. But after Hooks and there was this shift in our community hard to them
 
 - The problem with immutability in modern fws is that JS doesn't have intrinsic support for it. Hence when using immutability with JS we get more overhead and less benefits. That said, the biggest problem with signals is that JS doesn't have intrinsic support for reactivity either.
 - How would you imagine such intrinsic support for either immutability/reactivity?

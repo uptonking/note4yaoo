@@ -98,6 +98,34 @@ console.log('after emit');
 // after emit
 ```
 
+# observer
+
+## 实现参考
+
+- [发布-订阅模式 - 知食记](https://mind.ricky.moe/other/she-ji-mo-shi-1/guan-cha-zhe-mo-shi)
+- [观察者模式 - 知食记](https://mind.ricky.moe/other/she-ji-mo-shi-1/guan-cha-zhe-mo-shi-1)
+- [观察者模式与发布-订阅模式的区别是什么？ - 知食记](https://mind.ricky.moe/other/she-ji-mo-shi-1/guan-cha-zhe-mo-shi-yu-fa-bu-ding-yue-mo-shi-de-qu-bie-shi-shen-me)
+  - 区别在于是否存在第三方、发布者能否直接感知订阅者
+  - 发布-订阅模式下，实现了完全地解耦。
+
+## [JavaScript 发布-订阅模式 - 掘金](https://juejin.cn/post/6844903850105634824)
+
+- pubsub:    publisher => event-channel <=> subscriber
+- observer:  subject <=> observer
+
+- 发布订阅模式：订阅者（Subscriber）把自己想订阅的事件注册（Subscribe）到调度中心（Event Channel），当发布者（Publisher）发布该事件（Publish Event）到调度中心，也就是该事件触发时，由调度中心统一调度（Fire Event）订阅者注册到调度中心的处理代码。
+
+- 观察者模式：观察者（Observer）直接订阅（Subscribe）主题（Subject），而当主题被激活的时候，会触发（Fire Event）观察者里的事件。
+
+- 在观察者模式中，观察者是知道 Subject 的，Subject 一直保持对观察者进行记录。
+  - 然而，在发布订阅模式中，发布者和订阅者不知道对方的存在。它们只有通过消息代理进行通信。
+- 在发布订阅模式中，组件是松散耦合的，正好和观察者模式相反。
+- 观察者模式大多数时候是同步的，比如当事件触发，Subject 就会去调用观察者的方法。
+  - 而发布-订阅模式大多数时候是异步的（使用消息队列）。
+- 观察者模式需要在单个应用程序地址空间中实现，而发布-订阅更像交叉应用模式。
+
+## [观察者模式和发布订阅模式有什么不同？ - 知乎](https://www.zhihu.com/question/23486749)
+
 ## [From Pub-Sub pattern to Observer pattern](https://medium.com/@huytrongnguyen1985/from-pub-sub-pattern-to-observer-pattern-f4ae1e425cc9)
 
 - There are two major differences between Observer pattern and Pub-Sub pattern:

@@ -14,6 +14,11 @@ modified: 2021-05-13T03:13:45.375Z
 
 # guide
 
+- who is using #pubsub
+  - redux
+  - Vue2.x依赖收集与通知
+  - nodejs eventemitter
+
 # EventEmitter
 
 - 优点

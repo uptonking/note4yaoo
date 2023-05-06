@@ -9,9 +9,15 @@ modified: 2021-10-05T15:35:15.751Z
 
 # redux-like
 
-## [手写一个Redux，深入理解其原理](https://segmentfault.com/a/1190000023084074)
+## [手写一个Redux，深入理解其原理 - 掘金](https://juejin.cn/post/6845166891682512909)
 
 - [Inside a Redux Store](https://redux.js.org/tutorials/fundamentals/part-4-store)
+
+- [发布-订阅模式 - 知食记](https://mind.ricky.moe/other/she-ji-mo-shi-1/guan-cha-zhe-mo-shi)
+- [观察者模式 - 知食记](https://mind.ricky.moe/other/she-ji-mo-shi-1/guan-cha-zhe-mo-shi-1)
+- [观察者模式与发布-订阅模式的区别是什么？ - 知食记](https://mind.ricky.moe/other/she-ji-mo-shi-1/guan-cha-zhe-mo-shi-yu-fa-bu-ding-yue-mo-shi-de-qu-bie-shi-shen-me)
+  - 区别在于是否存在第三方、发布者能否直接感知订阅者
+  - 发布-订阅模式下，实现了完全地解耦。
 
 ```JS
 /**
@@ -44,37 +50,6 @@ function createStore(reducer, preloadedState) {
 
   return { dispatch, subscribe, getState };
 }
-
-function createStore2() {
-  let state; // state记录所有状态
-  let listeners = []; // 保存所有注册的回调
-
-  function subscribe(callback) {
-    listeners.push(callback); // subscribe就是将回调保存下来
-  }
-
-  // dispatch就是将所有的回调拿出来依次执行就行
-  function dispatch() {
-    for (let i = 0; i < listeners.length; i++) {
-      const listener = listeners[i];
-      listener();
-    }
-  }
-
-  // getState直接返回state
-  function getState() {
-    return state;
-  }
-
-  // store包装一下前面的方法直接返回
-  const store = {
-    subscribe,
-    dispatch,
-    getState
-  };
-
-  return store;
-}
 ```
 
 ```js
@@ -100,6 +75,68 @@ function combineReducers(reducerMap) {
 
   return reducer;
 }
+```
+
+```JS
+// observer
+
+class PublisherSubject {
+
+  constructor() {
+    this.observers = [];
+    this.state = {};
+  }
+
+  add(observer) {
+    this.observers.push(observer)
+  }
+
+  remove(observer) {
+    this.observers = this.observers.filter(ob => ob !== observer)
+  }
+
+  getState() {
+    return this.state;
+  }
+
+  setState(state) {
+    this.state = state;
+    this.notify();
+  }
+
+  notify() {
+    this.observers.forEach(ob => {
+      // 👀 interface required
+      observer.update(this);
+    })
+  }
+}
+
+class Observer {
+
+  constructor() {
+    this.state = {};
+  }
+
+  update(publisherSubject) {
+    console.log('observer id updating');
+    this.state = publishSubject.getState();
+    this.doTask();
+  }
+
+  doTask() {
+    console.log('task 1, latest state', this.state)
+  }
+
+}
+
+const ob1 = new Observer();
+const ob2 = new Observer();
+
+const subject = new PublisherSubject();
+subject.add(ob1);
+subject.add(ob2);
+subject.setState(newState);
 ```
 
 - Redux还支持enhancer，enhancer其实就是一个装饰者模式，传入当前的createStore，返回一个增强的createStore。

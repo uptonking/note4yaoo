@@ -11,6 +11,8 @@ modified: 2021-03-22T14:46:25.568Z
 
 # tutorials
 
+- [Type-Challenges解析 | 汪图南](https://wangtunan.github.io/blog/typescript/challenge.html)
+
 ## [Beginner's TypeScript by Matt Pocock](https://www.totaltypescript.com/tutorials/beginners-typescript)
 
 - https://github.com/total-typescript/beginners-typescript-tutorial

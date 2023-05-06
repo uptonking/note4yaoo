@@ -9,6 +9,8 @@ modified: 2021-06-01T16:55:46.743Z
 
 # guide
 
+- refs
+  - [精通Git | 汪图南](https://wangtunan.github.io/blog/books/git/)
 # discuss
 - ## 用 git 来当网盘用如何？
 - https://v2ex.com/t/525782
