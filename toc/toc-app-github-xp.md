@@ -11,7 +11,7 @@ modified: 2023-02-08T10:46:26.912Z
 
 # github-mirror
 - tips
-  - 先尝试，修改dns，将 git://github.com 前缀替换成 https://github.com/
+  - 先尝试修改dns，或将 git://github.com 前缀替换成 https://github.com/
 
 - [Gitee 极速下载，每日同步一次。](https://gitee.com/mirrors)
   - https://gitee.com/organizations/mirrors/projects

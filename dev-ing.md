@@ -104,8 +104,8 @@ $$('[contenteditable]')
 
 - sqlite-web
   - evolu(hlc)
-  - kikko
   - absurd-sql-ts: read ArrayBuffer
+  - kikko
 
 - long-term
   - cms, airtable, lowcode
@@ -258,6 +258,18 @@ $$('[contenteditable]')
 # dev-05
 
 ## 050
+
+## 0505
+
+- [difference between width auto and width 100 percent - Stack Overflow](https://stackoverflow.com/questions/17468733/difference-between-width-auto-and-width-100-percent)
+  - `width auto` :
+    - It will fit the element in available space including margin, border and padding. 
+    - space remaining after adjusting margin + padding + border will be available width/ height.
+  - `width 100%` : 
+    - It will make content width 100%. 
+    - margin, border, padding will be added to this width and element will overflow if any of these added.
+  - `width 100% + box-sizing: border box` : 
+    - It will also fits the element in available space including border, padding (margin will make it overflow the container).
 
 ## 0504
 

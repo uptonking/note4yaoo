@@ -9,6 +9,17 @@ modified: 2023-04-13T03:32:04.013Z
 
 # guide
 
+# github-labs-next
+- [GitHub Next](https://githubnext.com/)
+
+- [GitHub Next | Flat Data](https://githubnext.com/projects/flat-data)
+  - Flat explores how to make it easy to work with data in git and GitHub. 
+  - It builds on the “git scraping” approach
+
+- https://github.com/microsoft/vscode-webview-ui-toolkit
+  - [GitHub Next | React Webview UI Toolkit for VS Code](https://githubnext.com/projects/react-webview-ui-toolkit/)
+  - A component library for building webview-based extensions in Visual Studio Code.
+  - [Webview API | Visual Studio Code Extension API](https://code.visualstudio.com/api/extension-guides/webview)
 # popular
 - https://github.com/pingcap/ossinsight /ts
   - https://ossinsight.io/

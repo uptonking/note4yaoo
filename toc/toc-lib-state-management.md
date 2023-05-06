@@ -207,10 +207,18 @@ modified: 2020-07-14T11:03:53.196Z
   - DeepSignal works by wrapping the object with a Proxy that intercepts all property accesses and returns the signal value by default.
   - This allows you to easily create a deep object that can be observed for changes, while still being able to mutate the object normally.
   - Nested objects and arrays are also converted to deep signal objects/arrays, allowing you to create fully reactive data structures.
-- https://github.com/EthanStandel/deepsignal
-  - wrap Preact's Signal model to make it a full state management solution
+  - https://github.com/EthanStandel/deepsignal
+    - wrap Preact's Signal model to make it a full state management solution
+  - https://github.com/melnikov-s/preact-observables
+    - enables the use of deep observable objects for `@preact/signals` supporting objects, arrays, Map, Set, WeakMap and WeakSet
+- https://github.com/KusStar/signals-persist
+  - A library for persisting state of a signal.
+- https://github.com/Suv4o/signals-in-vanilla-js
+  - [Signals in Vanilla JS](https://www.trpkovski.com/2023/04/25/signals-in-vanilla-js/)
+- https://github.com/ic3Dragon/such-a-fancy-shopping-list
+  - A shopping list app using typescript and preact signals
 
-- https://github.com/tldraw/signia
+- https://github.com/tldraw/signia /ts
   - Reactive signals that scale, by tldraw.
   - It uses a new clock-based lazy reactivity system that allows signals to scale with complex data-intensive applications.
   - Signia has a global logical clock. This is an integer that gets incremented every time any atom is updated.

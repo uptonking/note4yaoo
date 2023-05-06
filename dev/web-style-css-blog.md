@@ -11,6 +11,17 @@ modified: 2021-01-07T16:44:56.296Z
 
 # blog
 
+## [Everything About Auto in CSS - Ahmad Shadeed](https://ishadeed.com/article/auto-css/)
+
+- `width: auto`; 
+  - The initial `width` of block-level elements like `<div>` or `<p>` is `auto`, which makes them take the full horizontal space of their containing block.
+- According to the CSS spec:
+  - ‘margin-left’ + ‘border-left-width’ + ‘padding-left’ + ‘width’ + ‘padding-right’ + ‘border-right-width’ + ‘margin-right’ = width of containing block
+- what will happen if we change the item’s width to 100% instead of auto? 
+  - The item will take 100% of its parent, plus the margins on the left and the right sides.
+
+- 
+
 ## [Less Absolute Positioning With Modern CSS](https://ishadeed.com/article/less-absolute-positioning-modern-css/)
 
 - In this article, I will explore a few use-cases that using absolute positioning with them isn’t really needed.

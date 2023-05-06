@@ -16,11 +16,11 @@ modified: 2021-07-20T13:50:23.433Z
   - 深入一个项目: src-code, issues, pr, forks, extensions/alternative, most-commented-issues
   - 抽空在线体验，工作专注代码
 
-- 技术方向js: 富文本编辑器，多维表格，协作
+- 技术方向js: 富文本编辑器，多维表格，协作; dnd，floating，state
 - 技术扩展js/py: 支持拖拽的页面编辑器/LowCode，Excel，图表
 - 技术可选1: 画板，图形编辑器, pdf
 - 技术可选2: olap，bi，数据库，大数据工程
-- 技术可选3: vscode，可参考设计 extensions、capabilities
+- 技术可选3: vscode，可参考架构 extensions、capabilities
 
 - 🚀 产品落地
   - 表格类内容创作与管理
@@ -63,7 +63,7 @@ modified: 2021-07-20T13:50:23.433Z
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~
 - collab
-  - 👉🏻 yjs, rga, fluid-framework, hlc
+  - 👉🏻 crdt, yjs, rga, fluid-framework, hlc
 
 ## solutions: inter(re)active knowledge-base/wiki
 

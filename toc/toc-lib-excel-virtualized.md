@@ -79,6 +79,12 @@ modified: 2023-01-15T15:56:43.100Z
   - [Is it possible to use react-virtuoso with tree components?](https://github.com/petyosi/react-virtuoso/issues/202)
     - That could easily be achieved if the treeview has a "flat" rendering rather than a nested one. I don't know if such mode is possible, though.
 
+- tanStack-virtual /4.1kStar/MIT/202303/ts
+  - https://github.com/TanStack/virtual
+  - https://tanstack.com/virtual
+  - Headless UI for Virtualizing Large Element Lists in JS/TS, React, Solid, Vue and Svelte
+  - [an inverted chat like list with tanstack's virtual](https://codesandbox.io/p/sandbox/immutable-silence-76pwko)
+
 - react-virtual-grid /30Star/NALic/202005/js
   - https://github.com/fulcrumapp/react-virtual-grid
   - https://fulcrumapp.github.io/react-virtual-grid/

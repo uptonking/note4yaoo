@@ -18,6 +18,10 @@ modified: 2022-11-04T14:20:37.172Z
   - Litestream is a standalone disaster recovery tool for SQLite. 
   - It runs as a background process and safely replicates changes incrementally to another file or S3. 
   - Litestream only communicates with SQLite through the SQLite API so it will not corrupt your database.
+
+- https://github.com/asg017/sqlite-hello /c
+  - The smallest possible "hello world" SQLite extension. 
+  - Meant for testing and debugging loadable SQLite extensions.
 # extensions
 - https://github.com/asg017/sqlite-lines  /clang/python
   - A SQLite extension for reading large files line-by-line (NDJSON, logs, txt, etc.)

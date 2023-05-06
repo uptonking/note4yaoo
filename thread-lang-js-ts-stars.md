@@ -51,6 +51,11 @@ if(val) // doSth
 - For a while, there were the Object.observe and Array.observe proposals. Those were abandoned, I think mostly due to the champion's loss of interest.
   - My understanding is that it wasn't lack of interest but pushback from implementors because Object.observe() and friends could not be implemented performantly.
 
+- https://github.com/deebloo/observable-stage3-decorators
+  - Demonstrates a technique for monitoring property changes on a class instance using stage 3 decorators. 
+  - This should work with both plain classes and with custom elements. 
+  - It is important that this does not require subclassing.
+
 - ## I really wish there were Promises in JS that could be evaluated sync. It’s a complex problem.
 - https://twitter.com/trueadm/status/1630739165045194752
 - For UI frameworks you want to allow the user to pass a promise, but ensure that if it is ready that you can render synchronously. But `T | Promise<T>` doesn’t compose the way promises do, so either you accept a perf/UX hit, create your own alternate async ecosystem, etc.

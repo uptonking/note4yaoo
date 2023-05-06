@@ -70,7 +70,7 @@ violates the following Content Security Policy directive: "connect-src 'self'
 - 跨域问题调试的基础就错了，应该在新标签页打开http://localhost:3000/api/courses然后在此标签页的控制台发送请求
   - 不要在其他域名标签页的控制台调试
 
-## 测试mocha时，不能稳定复现 Database is not open/
+## 测试mocha时，不能稳定复现 Database is not open
 
 - 测试时要以terminal信息为准，测试面板可能会隐藏部分冲突提示
   - 表面通过测试，但terminal会提示id冲突

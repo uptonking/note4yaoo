@@ -29,3 +29,11 @@ modified: 2023-03-25T16:43:59.362Z
   - cst-tokens; Its CSTs are ASTs where each node has a `node.cstTokens` array of `{type, value}` tokens. 
   - To make the AST we threw away all the textual symbols that humans use to read programs: the blank space, the braces, the comments. 
   - code editing tools need a useful, standard way of incorporating spaces, braces, and comments into an Abstract Syntax Tree, thus turning it into a Conrete Syntax Tree or CST. 
+
+# more
+
+- [Flattening ASTs (and Other Compiler Data Structures)](https://www.cs.cornell.edu/~asampson/blog/flattening.html)
+  - On storing ASTs in flat arrays for performance, and the relationship with bytecode interpreters
+  - Flattening uses an arena that only holds one type, so it’s actually just a plain array
+  - We’ll focus here on flattening abstract syntax trees (ASTs), but the idea applies to any pointer-laden data structure.
+  - we’ll build a basic interpreter twice: first the normal way and then the flat way
