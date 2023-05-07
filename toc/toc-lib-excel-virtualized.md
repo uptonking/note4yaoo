@@ -20,12 +20,26 @@ modified: 2023-01-15T15:56:43.100Z
   - Framework agnostic (WIP): Currently only for React but we could support Vue, Svelte, Solid and more in the future.
   - Fast: Scrolling without frame drop needs optimization in many aspects (reduce CPU usage, reduce GC, reduce layout recalculation, optimize for frameworks, etc). We are trying to combine the best of them.
 
+- tanstack-virtual /4.1kStar/MIT/202303/ts
+  - https://github.com/TanStack/virtual
+  - https://tanstack.com/virtual
+  - Headless UI for Virtualizing Large Element Lists in JS/TS, React, Solid, Vue and Svelte
+  - Row, Column, and Grid virtualization
+  - Fixed, variable and dynamic measurement modes
+  - Custom scrolling function support (eg. smooth scroll)
+  - [Add reverse support](https://github.com/TanStack/virtual/pull/400)
+    - [an inverted chat like list with tanstack's virtual](https://codesandbox.io/p/sandbox/immutable-silence-76pwko)
+
 - react-tiny-virtual-list /MIT/1.8kStar/201910/ts
   - https://github.com/clauderic/react-tiny-virtual-list
   - https://clauderic.github.io/react-tiny-virtual-list/
   - A tiny but mighty 3kb list virtualization library, with zero dependencies
   - Supports variable heights/widths, sticky items, scrolling to index, and more
   - This library draws inspiration from react-virtualized, and is meant as a bare-minimum replacement for the `List` component.
+  - [Height of item](https://github.com/clauderic/react-tiny-virtual-list/issues/9)
+    - You can pass in a function to itemSize which returns the height of an item given its index. 
+  - [I have to force render the list again, if the list item heights are dynamic](https://github.com/clauderic/react-tiny-virtual-list/issues/52)
+    - react-tiny-virtual-list uses PureComponent, and as such, it has no way to know when the sizes of your items changes when you use a function to get the item sizes.
   - https://github.com/clauderic/virtualized-list
     - A tiny vanilla virtualization library, with DOM diffing
   - forks
@@ -40,18 +54,23 @@ modified: 2023-01-15T15:56:43.100Z
   - 基于div实现，每行对应的dom元素不存在
   - React components for efficiently rendering large lists and tabular data
   - React window works by only rendering part of a large data set(just enough to fill viewport).
-  - [Support just-in-time measured content](https://github.com/bvaughn/react-window/issues/6)
-  - table using react-window
-    - https://github.com/pupudu/window-table
-    - https://github.com/mckervinc/react-fluid-table
-    - https://github.com/Autodesk/react-base-table
-    - https://github.com/nick-keller/react-datasheet-grid
-    - https://github.com/bvaughn/react-window-table /unfinished
+  - [暂不支持 Support just-in-time measured content](https://github.com/bvaughn/react-window/issues/6)
+    - https://codesandbox.io/s/dynamic-size-list-zcntp
+    - It took me quite some time to figure out that dynamic content is not actually supported by the library and it's only useful for items with fixed/known size
+    - if you are looking for a table/grid/tree, this would be a good start autodesk/react-base-table, built on VariableSizeGrid
+    - 支持的替代: tanstack-virtual, react-virtuoso
+    - [Question: What happened to DynamicSizeList](https://github.com/bvaughn/react-window/issues/516)
   - forks
     - https://github.com/webcore-it/react-window
   - https://github.com/vikadata/vikatable /ts
     - 基于 react-window Grid 构建的表格组件
     - @apitable/react-flow 基于其中的 Grid 构建，通过扩展 Grid 的 props 参数，非侵入式支持更多的表格特性, 使其更方便构建表格。
+ - table using react-window
+    - https://github.com/pupudu/window-table
+    - https://github.com/mckervinc/react-fluid-table
+    - https://github.com/Autodesk/react-base-table
+    - https://github.com/nick-keller/react-datasheet-grid
+    - https://github.com/bvaughn/react-window-table /unfinished
 - https://github.com/Lodin/react-vtree /202109/ts
   - https://lodin.github.io/react-vtree/
   - React component for efficiently rendering large tree structures
@@ -78,12 +97,6 @@ modified: 2023-01-15T15:56:43.100Z
     - The way react-window handles that is by caching the offsets.
   - [Is it possible to use react-virtuoso with tree components?](https://github.com/petyosi/react-virtuoso/issues/202)
     - That could easily be achieved if the treeview has a "flat" rendering rather than a nested one. I don't know if such mode is possible, though.
-
-- tanStack-virtual /4.1kStar/MIT/202303/ts
-  - https://github.com/TanStack/virtual
-  - https://tanstack.com/virtual
-  - Headless UI for Virtualizing Large Element Lists in JS/TS, React, Solid, Vue and Svelte
-  - [an inverted chat like list with tanstack's virtual](https://codesandbox.io/p/sandbox/immutable-silence-76pwko)
 
 - react-virtual-grid /30Star/NALic/202005/js
   - https://github.com/fulcrumapp/react-virtual-grid
@@ -120,6 +133,13 @@ modified: 2023-01-15T15:56:43.100Z
   - [Issue in Implementation](https://github.com/NeXTs/Clusterize.js/issues/74)
     - clusterize just doesn't play well with rowspan
     - Take it as a disadvantage of using virtual scrolling
+
+- https://github.com/WICG/display-locking
+  - https://github.com/WICG/virtual-scroller
+  - The idea of a virtual scroller is to provide a scrolling "viewport" onto some content, allow extremely large numbers of elements to exist, but maintain high performance by only paying the cost for those that are currently visible. 
+  - things like accessible landmark navigation, find in page, or intra-page anchor navigation are based solely on DOM structure, and virtualized content is by definition not in the DOM. 
+  - today's virtualized content does not work with search engine
+  - https://caniuse.com/css-content-visibility
 # virtualized-tree
 - react-virtualized-sticky-tree
   - https://github.com/marchaos/react-virtualized-sticky-tree

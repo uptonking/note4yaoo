@@ -675,13 +675,13 @@ new webpack.DefinePlugin({
   - 添加link时选择取消，需要处理, useClickOutside
 
 - [各种高度clientHeight/scrollHeight/offsetHeight及应用 - 掘金](https://juejin.cn/post/6898575556796022797)
-  - offsetWidth/offse tHeight 返回值包含 content + padding + border，效果与element.getBoundingClientRect() 相同
+  - offsetWidth/offsetHeight 返回值包含 content + padding + border，效果与element.getBoundingClientRect() 相同
   - clientWidth/clientHeight 返回值包含 content + padding，如有滚动条，也不包含滚动条
   - scrollWidth/scrollHeight 返回值包含 content + padding + 溢出内容的尺寸
 - getBoundingClientRect是DOM元素到浏览器可视范围的距离（不包含文档卷起的部分）。
 
 - [scrollX、scrollY和scrollTop、scrollLeft的区别 | 会飞的猪9527](https://www.blogwxb.cn/scrollX%E3%80%81scrollY%E5%92%8CscrollTop%E3%80%81scrollLeft%E7%9A%84%E5%8C%BA%E5%88%AB/)
-  - scrollX、scrollY只读不写; 
+  - window.scrollX、window.scrollY只读不写; 
   - scrollTop、scrollLeft：可读可写
 
 - [javascript - AddEventListener fires automatically upon assignment - Stack Overflow](https://stackoverflow.com/questions/27037272/addeventlistener-fires-automatically-upon-assignment)
