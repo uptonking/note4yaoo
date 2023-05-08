@@ -62,4 +62,9 @@ modified: 2022-11-06T15:45:36.913Z
 
 - https://github.com/WebReflection/flatted /js
   - A super light (0.5K) and fast circular JSON parser, directly from the creator of CircularJSON.
+# utils
+
+- https://github.com/datavis-tech/json-templates
+  - Simple templating within JSON structures
+  - `parse("{{foo.value:baz}}")`
 # more

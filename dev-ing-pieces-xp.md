@@ -14,7 +14,7 @@ modified: 2021-04-28T20:54:58.126Z
 ## tanstack-virtual+query的无限滚动只能滚动一页
 
 - 对照原示例跑了很多次，没发现代码上的问题，反而在css-in-js上花费过多时间
-- 原因是使用vscode的自动补全依赖，将useEffect依赖中的`rowVirtualizer.getVirtualItems()`自动改成了`rowVirtualizer`;
+- 原因是使用vscode的自动补全依赖，将useEffect依赖中的`rowVirtualizer.getVirtualItems()`自动改成了`rowVirtualizer`; 
   - 修改自己或别人的依赖时一定要注意
   - ide或lint的auto fix慎用，出问题也要往这方面排查
 

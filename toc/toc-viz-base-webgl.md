@@ -120,4 +120,7 @@ modified: 2020-10-05T06:18:29.671Z
   - Wonnx is a GPU-accelerated ONNX inference run-time written 100% in Rust, ready for the web.
   - In the browser, using WebGPU + WebAssembly
   - ONNX Runtime 是微软开发的一个跨平台推理和训练机器学习加速器。
+
+- https://github.com/siliconjungle/webgpu-crdt
+  - A simple CRDT implementation for merging of fixed-arrays with WebGPU.
 # more-repos

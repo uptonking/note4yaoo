@@ -259,6 +259,30 @@ $$('[contenteditable]')
 
 ## 050
 
+## 0507
+
+- [React `ExoticComponent` cannot be called - Stack Overflow](https://stackoverflow.com/questions/55954624/react-exoticcomponent-cannot-be-called)
+  - The `React.Fragment` type is declared using the `ExoticComponent` interface 
+  - we have no way of telling the JSX parser that it's a JSX element type or its props other than by pretending to be a normal component.
+  - The ExoticComponent a workaround for typing special components (hence the name "exotic"奇异的；异国情调的), which do not behave as regular `React.Component` or `React.FunctionComponent`, but we still want TypeScript to interpret them as a kind of component.
+  - a big difference between the two definitions seems to be, that `ForwardRefExoticComponent` (like all exotic components) are no function components, but actually just objects, which are treated specially when rendering them.
+- [在React中书写TypeScript必须眼熟的类型定义 - 掘金](https://juejin.cn/post/6968739546997456926)
+  - defaultProps, propTypes 不存在于 renderfunction 上, 相反均存在于 exoticComponent 上
+  - exoticComponent 拥有另外的属性 $$typeof
+  - 对于 call signature 来说, renderfunction 接收一个 props 属性, 概述行必须拥有 children 属性, 而 exoticcomponent 则只需要接收 props 属性就行
+
+- [React元素的$$typeof属性 | 「Handler」](https://hanqizheng.github.io/2020/07/26/$$typeof.html)
+  - 为了防止向元素中插入一些恶意的代码或有恶意代码行为的元素。对每个React Element添加了$$typeof属性。
+  - React是有默认转意的设定，所以按正常写法想要往元素中插入任意html元素只能使用dangerouslySetInnerHTML
+  - 如果把拿到的JSON数据当作更新某个react element的属性值，这种情况就很容易受到XSS攻击，因为可能从服务端传回来的数据(因为某种漏洞)已经被携带了恶意代码。
+  - 这时候$$typeof: Symbol.for('react.element')就派上用场了。
+  - 我们知道Symbol本身的作用就是独一无二的标识。
+  - 服务端没有办法存储Symbol类型的值，也无法添加。所以当原本的数据被替换成恶意的对象时，这个对象是不包含$$typeof属性的。
+  - React会检测合法的$$typeof属性，不符合条件React就不会处理这个元素。
+
+- [rust - "use of unstable library feature 'collections'" using nightly - Stack Overflow](https://stackoverflow.com/questions/30506120/use-of-unstable-library-feature-collections-using-nightly)
+  - 升级rust版本 rustup update
+
 ## 0505
 
 - [difference between width auto and width 100 percent - Stack Overflow](https://stackoverflow.com/questions/17468733/difference-between-width-auto-and-width-100-percent)
