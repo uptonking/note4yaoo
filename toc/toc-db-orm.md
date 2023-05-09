@@ -213,7 +213,11 @@ modified: 2021-08-30T18:56:09.644Z
   - Modular Transactional NoSQL Database
   - choose either: RocksDB • LevelDB • UDisk • UMem 
   - to store: Blobs • Documents • Graphs • Vectors • Texts
-  - It is a "build your database" toolkit and an open standard for NoSQL potentially-transactional databases, defining zero-copy binary interfaces for CRUD 
+  - It is a "build your database" toolkit and an open standard for NoSQL potentially-transactional databases, defining zero-copy binary interfaces for CRUD
+
+- https://github.com/isar/isar /Flutter
+  - Extremely fast, easy to use, and fully async NoSQL database for Flutter
+  - The new Isar Core (written in Rust) can be compiled to wasm and will be insanely fast with all features. Unlike the current IndexedDB implementation.
 # more-database
 - https://github.com/lealone/Lealone
   - /1.6kStar/Apache2+H2MPL2/202012/java

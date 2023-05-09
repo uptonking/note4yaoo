@@ -20,6 +20,11 @@ modified: 2023-03-05T08:55:03.696Z
   - 统一的缓存更新/失效策略
 - [Use react-query but no react](https://github.com/tannerlinsley/react-query/discussions/790)
   - https://codesandbox.io/s/magical-bush-gbsk7
+# dev-xp-log
+- [Network Mode | TanStack Query Docs](https://tanstack.com/query/v5/docs/react/guides/network-mode)
+  - Since TanStack Query is most often used for data fetching in combination with data fetching libraries, the default network mode is `online`.
+  - In `online` mode, Queries and Mutations will not fire unless you have network connection
+  - 在测试时可改为 `always`
 # react-query-examples
 - https://github.com/alan2207/react-query-auth
   - Authenticate your react applications easily with react-query.

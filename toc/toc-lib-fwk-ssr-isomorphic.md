@@ -23,6 +23,8 @@ modified: 2020-12-19T13:04:40.865Z
   - in each SPA the routing is managed by a separate instance of React Router 
   - By default SSR is enabled for the first SPA and disabled for the second SPA.
   - On the contrary to popular belief that SEO requires SSR, this solution innovatively demonstrates how to get all SPA pages indexed by Google and specific
+  - [How to achieve SEO for React SPA without SSR or prerendering](https://stackoverflow.com/questions/70390808/how-to-achieve-seo-for-react-spa-without-ssr-or-prerendering-and-preferably-kee)
+  - [Single Page Application: Dispelling SEO Myths | HackerNoon](https://hackernoon.com/single-page-application-dispelling-seo-myths)
 
 - https://github.com/MrWangJustToDo/react-ssr-setup
   - React ssr setup, new ssr for react-18
@@ -120,11 +122,14 @@ modified: 2020-12-19T13:04:40.865Z
 - https://github.com/MrWangJustToDo/fullstack-nest-react-ssr-template
   - fullstack ssr template, BE with nestjs, FE with react
 
-- https://github.com/GoogleChrome/rendertron
+- https://github.com/GoogleChrome/rendertron /ts/deprecated
   - Rendertron is a headless Chrome rendering solution designed to render & serialise web pages on the fly.
   - Built with Puppeteer
   - Rendertron runs as a standalone HTTP server. 
   - Rendertron renders requested pages using Headless Chrome
+  - Dynamic rendering is not a recommended approach and there are better approaches(ssr) to rendering on the web.
+  - [单页面(如react，vue)网站的服务器渲染 SSR 之 SEO 大杀器 Rendertron - 知乎](https://zhuanlan.zhihu.com/p/66672794)
+    - 首先，服务器上装有个google-chrome，rendertron把他打开，然后在服务器（官方推荐express）中增加中间件，先判断UA（user-agent）里面有没有带有类似Baiduspider（百度爬虫）等字样，如果没有，就像正常的单页面服务器那样，把原始html推送出去，由客户端浏览器完成js、css渲染的工作；如果带有指定UA头字样，就先把网页推送给本地服务器那个google-chrome，等他渲染好对应页面后，把渲染好的html结果推送出去。不就是为了SEO么，你爬虫来了我再渲染给你总行了吧
 
 - https://github.com/prerender/prerender
   - Prerender is a node server that uses Headless Chrome to render HTML, screenshots, PDFs, and HAR files out of any web page. 

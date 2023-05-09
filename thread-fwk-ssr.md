@@ -7,6 +7,8 @@ modified: 2021-04-24T08:29:02.272Z
 
 # thread-fwk-ssr
 
+# guide
+
 # repeat
 
 <!-- #region /folded renderToStaticMarkup -->
@@ -42,14 +44,50 @@ modified: 2021-04-24T08:29:02.272Z
 
 <!-- #endregion /folded renderToStaticMarkup -->
 
-# pieces
+# discuss
 - ## 
 
-- ## 
+- ## [reactjs - How single-page application works in SSR (React) - Stack Overflow](https://stackoverflow.com/questions/57243697/how-single-page-application-works-in-ssr-react)
+- When implementing Server Side Rendering (SSR), the server knows how to generate a full page with markup so the user gets a fully rendered page and from that moment, when the js resources get downloaded, the application will be live (event listeners will be enabled, the react lifecycle will be active and so on).
+01. Get a request for a specific path
+02. Initiate a new store instance for the request
+03. In case of using react router (or other router solution), fill the state with the requested route
+04. Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
+05. Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
+06. Return the markup as a response. The markup can look similar to the following: 
 
-- ## 
+```HTML
+<html>
 
-- ## 
+<body>
+  <App markup />
+  <!-- <div appMarkup /> -->
+  <script>
+    window.state = { state snapshot }
+  </script>
+</body>
+
+</html>
+```
+
+07. The browser gets the html and renders it (before react), so the user already have something on the screen
+08. The browser downloads the app bundle
+09. The app bundle includes the App that initiate the state with the provided state snapshot (Rehydrate)
+10. The App rendered into the DOM, if done correctly, no actual DOM rendering should happen since the result will be the same (app rendered according the same state as it was rendered in the server)
+11. From this point the app behaves regular. Any route change doesn't trigger the SSR engine
+
+- There are several frameworks (next.js for example) that comes out of the box with SSR solution along with code splitting according to routes. So when the user change route, a new backend request triggers the SSR flow again for the new route.
+- SSR can be implemented in many different variations, but the basic stays the same
+
+- ## [reactjs - How is server-side rendering compatible with single-page applications? - Stack Overflow](https://stackoverflow.com/questions/66893389/how-is-server-side-rendering-compatible-with-single-page-applications)
+- Do SSR SPAs always respond with full prerendered HTML, or only for first page loads?
+  - Usually SSR is used for initial rendering of the page, so for the first question - for the first page load
+
+- ## [vuejs3 - Why quassar with ssr mode behave like a SPA - Stack Overflow](https://stackoverflow.com/questions/74889396/why-quassar-with-ssr-mode-behave-like-a-spa)
+- This is by design. Quasar is VueJS based, which (unlike e.g. PHP) focuses on delivering pages basically as SPAs, i.e. giving you data + JS to render it.
+  - SSR only means that the first page is rendered on the server (e.g. for SEO purposes) and javascript takes over for fetching and rendering all subsequently loaded pages (or better the data + a recipe to render them) on the client. Thus, SSR will only get you server-side rendered pages upon initial load or page reload, all other renders are client-side.
+
+- It is the same with NuxtJS, since it builds on VueJS and is in a sense just a higher order abstraction layer/framework that facilitates some common things that one frequently encounters when dealing with Vue. So take NuxtJS and Quasar like wrappers with a lot helper structures around VueJS. NuxtJS provides options to deploy the page via SSG as well
 
 - ## The reason client rendering is still popular is that it is so much simpler than SSR. 
 - https://twitter.com/devongovett/status/1648680262400704517

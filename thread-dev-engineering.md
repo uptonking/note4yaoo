@@ -14,15 +14,20 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## 这两天技术圈头条的【Amazon的流媒体平台 Prime Video 从微服架构到单体架构”】
+- https://twitter.com/haoel/status/1655514399753531392
+  - 我以为 Prime Video 遇到不是技术问题，而是AWS  Step Function处理能力不足，而且收费很贵的问题。
+  - 如果 可以无限扩展且白菜价，那么他们还会有动力改成单体吗？会不会反过来吹爆 Serverless？
+- Microservice 每次 I/O 实在是加了太多 overhead, Monolith 的确更适合这种用例
+  - 可能表达不准，想表达文件 I/O。 每次 step function 启动要去 s3 里要文件然后才开始工作，就好比在一个办公楼，一个人去负一楼一百次拿资料走楼梯回到二十楼坐下来工作，和一个人在隔壁拿资料开始工作一个感觉。 他们这种用例就不太适合水平的架构，垂直的更节约成本。
+- AWS Step function本来就不是这么用的。任何一个考过AWS developer助理的人都知道step function的应用场景是github action/bitbucket pipeline那种逻辑分步处理。通常单步处理时间至少是秒记。
+- Serverless就是为了满足一个极端审美，大多数场景都是反而浪费低效的东西。类似你自己内存的hashmap效率把redis吊打，因为一个就在内存，一个网络通信。
+- 上来就serverless太容易出错了. 比较保险的做法是Modular monolith first. Serverless later.
 
 - ## Filesystem watching libraries that assume if the file size didn't change then the file didn't change
 - https://twitter.com/tantaman/status/1651584027025915905
   - Wasn't a filesize issue and actually turned out to be a bug in `fswatch` o_O -
 - IIRC, `rsync` (fast) does size + modified as a heuristic. To to better than that, you  probably have to hash I think?
-
-
-
 
 - ## If you're a senior JS dev, you should be able to jump in and add a feature or fix a bug in a codebase the first day on the job. 
 - https://twitter.com/zachcodes/status/1651057366647939072
@@ -52,9 +57,9 @@ modified: 2021-01-21T17:52:13.333Z
 - https://twitter.com/yeshu_in_future/status/1642032791444656129
   - 它们和传统页面的差异在于，应用往往会常驻在标签页中，生命周期更长，用户的使用时间也更长。
 - 有一些常见的优化思路：
-  1.      关注事件绑定，无论是抽象的event bus 或是 dom 事件，都要在必要的时候解绑
-  2.      关注DOM数量，理想情况是不会预期外的增长
-  3.      关注一切可复用的变量，比如组件不要反复销毁重建，复用渲染；对象的key如果要用字符串拼接，可能不如拆开几个map 或者用二维数组，比如表示表格单元格的位置和值；避免重复渲染大量svg icon ，基于id 复用，等
+  01.      关注事件绑定，无论是抽象的event bus 或是 dom 事件，都要在必要的时候解绑
+  02.      关注DOM数量，理想情况是不会预期外的增长
+  03.      关注一切可复用的变量，比如组件不要反复销毁重建，复用渲染；对象的key如果要用字符串拼接，可能不如拆开几个map 或者用二维数组，比如表示表格单元格的位置和值；避免重复渲染大量svg icon ，基于id 复用，等
 
 - ## When polishing creative work, I can often get into decision paralysis about the priority of things to fix.
 - https://twitter.com/aboodman/status/1648835192285704193

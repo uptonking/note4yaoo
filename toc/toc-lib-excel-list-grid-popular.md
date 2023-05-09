@@ -362,6 +362,7 @@ modified: 2022-08-21T10:02:27.788Z
 - glide-data-grid /836Star/MIT/202202/ts
   - https://github.com/glideapps/glide-data-grid
   - https://grid.glideapps.com/
+  - https://glideapps.github.io/glide-data-grid
   - high-performance React grid component, with rich rendering
   - features
     - 未实现group

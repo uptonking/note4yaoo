@@ -46,6 +46,8 @@ modified: 2022-08-13T06:59:54.741Z
   - in each SPA the routing is managed by a separate instance of React Router 
   - By default SSR is enabled for the first SPA and disabled for the second SPA.
   - On the contrary to popular belief that SEO requires SSR, this solution innovatively demonstrates how to get all SPA pages indexed by Google and specific
+  - [How to achieve SEO for React SPA without SSR or prerendering](https://stackoverflow.com/questions/70390808/how-to-achieve-seo-for-react-spa-without-ssr-or-prerendering-and-preferably-kee)
+  - [Single Page Application: Dispelling SEO Myths | HackerNoon](https://hackernoon.com/single-page-application-dispelling-seo-myths)
 
 - https://github.com/horacioh/multi-tenancy-react-example
   - Multi tenant architecture example

@@ -18,14 +18,18 @@ modified: 2022-08-21T10:19:58.756Z
 - table和virtual都用到了react forceRender模式
 
 - createTable 的初始化流程
-  - 计算插件options，~~合并feature options~~
+  - 计算插件options，合并feature options
   - 添加插件initialState到全局initialState
-  - 合并coreInstance到table
-  - 逐个执行插件的createTable方法，并更新table
+  - add core props and methods to table instance
+  - 逐个执行插件的createTable方法，将table实例作为参数传入来增强
 
 - 一个feature的设计
   - 添加到table options
   - 在table、column、header暴露api
+# architecture/dataflow
+- data => model
+
+- serverModel
 # virtual
 - 固定高度的原理
   - 在目标区域上下方显示invisible元素高度和

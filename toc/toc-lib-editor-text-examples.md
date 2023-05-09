@@ -78,6 +78,11 @@ modified: 2022-11-08T19:03:33.865Z
 - https://github.com/michael/editable-website
   - A SvelteKit template for coding completely custom website, while allowing non-technical people to make edits to the content by simply logging in with a secure admin password.password.
   - 依赖prosemirror、postgres、minio-s3-like、svelte
+  - https://twitter.com/_mql/status/1655553156799922180
+    - The editable infrastructure is loaded async, so that you are not shipping additional JavaScript for regular website visitors.
+    - To save changes, all you have to do is sending a request to your API for persistence. In my case, I store the content in a Postgres database.
+    - I kept things really simple for the first few websites I built with this approach. No caching, no permission management, no post scheduling. The admin can do anything and by hitting save, changes are live.
+    - 注意git version可能丢失
 # utils
 - https://github.com/DenverCoder1/unicode-formatter
   - https://unicode-formatter.demolab.com/
