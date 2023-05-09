@@ -17,6 +17,8 @@ modified: 2022-08-21T10:19:58.756Z
 
 - cons
   - react组件会过多rerender
+  - focus-management
+  - 如何支持多个table，且每个table数据模型不同，还要支持typescript
 
 - virtualized之后要检查功能
   - scroll to index

@@ -371,6 +371,9 @@ modified: 2023-02-05T19:03:12.723Z
   - DSlate 是一个基于 Slate 构建的 Ant Design 风格的富文本编辑器
   - core依赖slate-react
 
+- https://github.com/qirong77/SlatePad
+  - 所见即所得的文本编辑器
+
 - https://github.com/ls19930101/slate_editor
   - slate框架开发的富文本工具, 核心为contenteditable
   - 支持超大文档 word、excel 列表复制粘贴, 进行了一些性能优化处理; 

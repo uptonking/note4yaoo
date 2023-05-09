@@ -372,6 +372,14 @@ modified: 2020-12-28T12:24:09.275Z
   - open source high-performance data collection service.
   - Capture events your application generates and stream to Data Warehouse; 
   - Pull data from APIs and save it to Data Warehouse
+
+- https://github.com/cptn-io/el-cptn /java
+  - an open source platform that helps develop and deploy integrations and data pipelines quickly and easily.
+  - 发现个比 n8n 更适合开发者使用的 workflow 平台 https://cptn.io。核心概念非常简单清晰：
+    - Source: 接收数据的 HTTP entrypoint
+    - Destination: 存放/写入数据的目的地，对接各种数据库和线上存储
+    - Transformation: 转化数据的 code block
+    - Pipeline: 将以上组合起来的工作流
 # more-lowcode
 - corteza /go/vue
   - https://github.com/cortezaproject/corteza

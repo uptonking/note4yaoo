@@ -37,7 +37,9 @@ modified: 2022-08-21T10:37:01.349Z
     - https://www.mantine-react-table.com/
     - https://www.mantine-react-table.dev/
   - 依赖 mui5、emotion/styled、react-table.v8、react-virtual、match-sorter
-  - 提供了group示例
+  - 示例
+    - 提供了group
+    - 拖拽改变列顺序基于原生 onDragStart/onDragEnd
   - A fully featured Material UI V5 implementation of Tanstack React Table V8
   - examples
     - [Aggregation and Grouping Example](https://www.material-react-table.com/docs/examples/aggregation-and-grouping)
@@ -82,6 +84,11 @@ modified: 2022-08-21T10:37:01.349Z
   - https://subtle-muffin-372579.netlify.app/
   - Prototype for react table v8 editable table
   - Keyboard cell navigation Click or enter to edit data Error tooltips
+- https://github.com/bightg30098/tanstack-react-table-editable
+  - Meta Table Example using @tanstack/react-table meta to dispatch actions to the table.
+  - Context Table Example using React context to dispatch actions to the table.
+- https://github.com/muhimasri/react-editable-table
+  - Editable and dynamic React Table with TanStack
 
 - https://github.com/DavidCodina/tanstack-table-v8-demo-2023
   - https://davidcodina.github.io/tanstack-table-v8-demo-2023/
@@ -211,6 +218,12 @@ modified: 2022-08-21T10:37:01.349Z
 
 - https://github.com/zakodium-oss/react-science
   - React components and tools to build scientific applications.
+# utils
+- https://github.com/thisisrishabh22/react-table-autocomplete
+  - Magical solution for editable react-table with autocomplete feature
+
+- https://github.com/bightg30098/tanstack-react-table-virtual-overlayscrollbar
+  - @tanstack/react-table v8, @tanstack/virtual v3, overlayscrollbars
 # examples-v8
 - https://github.com/rizqitsani/learn-tanstack-table
   - http://learn-tanstack-table.vercel.app/
@@ -336,6 +349,9 @@ modified: 2022-08-21T10:37:01.349Z
 - https://github.com/evriyanaindrasaputra/react-dashboard
   - https://react-dashboard-pi-ten.vercel.app/
   - Tailwind Css Headless UI Tanstack Query Tanstack Table React Hook Form
+- https://github.com/reboottime/mantine-dashboard
+  - https://mantine-dashboard.netlify.app/
+  - Dashboard template built with Mantine UI, @TanStack react-query and react table
 
 - https://github.com/iambinodstha/react-salesforce-admin-ui
   - This application cover admin UI with highchart, tailwindcss, salesforce ui

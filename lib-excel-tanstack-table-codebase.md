@@ -11,7 +11,13 @@ modified: 2022-08-21T10:19:58.756Z
 
 - tanstack-query
 - tanstack-virtual
+
+- tips
+  - 注意row id的类型在应用层决定，可能为number
+    - dnd-kit的id默认string，注意类型转换
 # not-yet
+- row.getAllCells的args为什么只有leafColumns
+
 - e.persist()
   - getToggleSortingHandler
 # codebase
@@ -28,6 +34,19 @@ modified: 2022-08-21T10:19:58.756Z
   - 在table、column、header暴露api
 # architecture/dataflow
 - data => model
+  - 计算rowModel的入口 `const rowModel = table.getRowModel(); `，手动触发
+- 计算rowModel的顺序
+  - table.getPaginationRowModel(); 
+  - table.getPrePaginationRowModel(); 
+  - table.getExpandedRowModel(), 
+  - table.getPreExpandedRowModel(); 
+  - table.getSortedRowModel(), 
+  - table.getPreSortedRowModel(); 
+  - table.getGroupedRowModel(), 
+  - table.getPreGroupedRowModel(); 
+  - table.getFilteredRowModel(), 
+  - table.getPreFilteredRowModel(); 
+  - table.getCoreRowModel(), 
 
 - serverModel
 # virtual

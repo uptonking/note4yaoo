@@ -8,6 +8,8 @@ modified: 2022-08-21T10:19:58.756Z
 # lib-excel-tanstack-table-community-v8
 - [Making Tanstack Table 1000x faster with a 1 line change - JP Camara](https://jpcamara.com/2023/03/07/making-tanstack-table.html)
   - [[v8] Improve grouping performance on large clusters of values_202210](https://github.com/TanStack/table/pull/4495)
+# guide
+
 # discuss
 - ## 
 
@@ -116,8 +118,19 @@ modified: 2022-08-21T10:19:58.756Z
   - An image processing library written entirely in JavaScript for Node, with zero external or native dependencies.
 # discuss-architecture
 - ## [Easy way to modify/extend features like Visibility.ts in v8](https://github.com/TanStack/table/discussions/4067)
-- Not sure if its an anti-pattern or not... but you can add your own state and setState functions to the table instance with some typescript trickery (and some ts-ignores)
+- Not sure if its an anti-pattern or not... but you can add your own `state` and `setState` functions to the `table` instance with some typescript trickery (and some ts-ignores)
   - I store a bunch of that state and the setStates right on the root of the instance here
+
+- ## [Possibility to create custom features](https://github.com/TanStack/table/discussions/4403)
+- not yet
+
+- ## [Declaration merging makes typing per-table meta difficult](https://github.com/TanStack/table/discussions/4220)
+- This would require a return to the insane generics. I doubt the benefits would outweigh the increased friction on types.
+
+- currently, I just add more props to meta, but I have no way to understand which types are related... 
+  - I do think adding a generic for meta is the solution here
+
+- [Possibility to type `meta` prop in `ColumnDef`](https://github.com/TanStack/table/discussions/4104)
 
 # discuss-performance
 - ## 

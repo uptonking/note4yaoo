@@ -259,6 +259,18 @@ $$('[contenteditable]')
 
 ## 050
 
+## 0509
+
+- [How do I retrieve an HTML element's actual width and height? - Stack Overflow](https://stackoverflow.com/questions/294250/how-do-i-retrieve-an-html-elements-actual-width-and-height)
+  - You should use the .offsetWidth and .offsetHeight properties. Note they belong to the element, not .style.
+  - `HTMLElement.offsetWidth` read-only property returns the layout width of an element as an integer.
+  - The `.getBoundingClientRect()` function returns the dimensions and location of the element as floating-point numbers after performing CSS transforms.
+
+- [Assigning objects to const variables vs let variables - Stack Overflow](https://stackoverflow.com/questions/46569598/javascript-assigning-objects-to-const-variables-vs-let-variables)
+  - ES6 `const` makes the binding immutable, not the value.
+  - Your example isn't bad practice, and is perfectly acceptable because person still refers to the same object, even though you've changed a property. 
+  If you wish to make your object value immutable, you can do that with `Object.freeze()`
+
 ## 0507
 
 - [React `ExoticComponent` cannot be called - Stack Overflow](https://stackoverflow.com/questions/55954624/react-exoticcomponent-cannot-be-called)
