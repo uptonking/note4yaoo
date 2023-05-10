@@ -10,15 +10,17 @@ modified: 2021-04-30T20:14:17.669Z
 # guide
 - ppt
   - 专业的演示更偏向类似tableau的图形编辑器，而不是文字
-
 # slide-view
 - https://github.com/argyleink/slyd /js/darkTheme/代码少
   - https://slyd.netlify.com/
   - Snappy, responsive, touch optimized, bi-directional presentation framework
   - 支持向右、向下
 
+- https://github.com/davidguttman/power-slides /js
+  - Create powerful slideshows for talks and presentations. 
+  - Each "slide" is a JS function that can do *anything*.
+  - Let you jump to any slide by number in the url hash
 # page-viewer 偏向页面展示
-
 - slidev /4.8kStar/MIT/202105/ts
   - https://github.com/slidevjs/slidev
   - https://sli.dev/
@@ -69,7 +71,6 @@ modified: 2021-04-30T20:14:17.669Z
   - Minimalistic javascript presentation-library. 
   - Zero dependencies. 
   - Can be used in combination with frameworks like Bootstrap, Materialize, Vue etc.
-
 # examples
 
 # more

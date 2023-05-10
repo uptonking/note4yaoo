@@ -13,7 +13,14 @@ modified: 2023-01-23T11:24:41.943Z
   - https://github.com/nicolaskruchten/pivottable
   - https://pivottable.js.org/examples/
   - a JS Pivot Table library with drag'n'drop functionality built on top of jQuery/jQueryUI
-- react-pivottable /852Star/MIT/202011/js
+  - 基于table标签实现
+  - https://github.com/jjagielka/pivottable-grouping
+    - fork of PivotTable.js adds the data grouping capability, similar to Subtotal.js but made directly in the PivotTable
+  - https://github.com/nagarajanchinnasamy/subtotal /201810/CoffeeScript
+    - https://nagarajanchinnasamy.github.io/subtotal
+    - A JavaScript plugin for PivotTable.js. 
+    - It renders subtotals of rows and columns with the ability to expand and collapse rows and columns
+- react-pivottable /852Star/MIT/202011/js/inactive
   - https://github.com/plotly/react-pivottable
   - https://react-pivottable.js.org/
   - a React-based pivot table library with drag'n'drop functionality. 
@@ -21,12 +28,32 @@ modified: 2023-01-23T11:24:41.943Z
   - 基于table标签实现
   - 创建透视表后，可快速展示图表
   - 依赖react-draggable, sortablejs
-  - 基于table标签实现
-  - 依赖jquery
+  - https://github.com/jjagielka/react-pivottable-grouping
+    - https://jjagielka.github.io/react-pivottable-demo/
+    - a fork of react-pivottable with added capacity of grouping and displaying subtotals.
+    - 作者实现了很多pivot table
+  - https://github.com/JerryYuanJ/react-sort-pivottable
+    - An enhanced react-pivottable component with sort and fixed header functions
+    - Now it has the ability to sort columns and rows. 
+  - https://github.com/devisionteam/react-pivottable
+    - a fork of react-pivottable with grouping and sorting. 合并了前两个仓库
+  - https://github.com/apache-superset/react-pivottable
+    - Refactored the table renderer code to make it easier to understand
+    - Added the ability to compute and show subtotals.
+    - Implement barchart table
+    - Implement sorting key_z_to_a
+  - https://github.com/webdacjs/react-pivottable
+    - Adding multivalue support.
+    - Removing plotly renderers.
+    - Replacing gauge charts with d3 ones.
+  - https://github.com/YuyaoZhong/react-pivottable-custom
+    - some customized functions based on react-pivottable, mainly for testing and demo.
+    - Customized the default orders of unused attributes
+  - https://github.com/davinciWangYang/react-pivottable-custom
+    - Update package.json
+  - https://github.com/TheDanielPBerry/react-pivottable
+    - 手写类型定义
   - https://github.com/plotly/dash-pivottable
-- pivot.js /753Star/BSD/201706/js
-  - https://github.com/rwjblue/pivot.js
-  - Build Pivot Tables from CSV/JSON Data
 - react-pivot /MIT/955Star/202006 
   - https://github.com/davidguttman/react-pivot
   - http://davidguttman.github.io/react-pivot/
@@ -34,6 +61,9 @@ modified: 2023-01-23T11:24:41.943Z
   - 依赖dataframe，wildemitter，基于react15，较旧
   - 基于table标签实现
   - 典型的透视表视图
+- pivot.js /753Star/BSD/201706/js
+  - https://github.com/rwjblue/pivot.js
+  - Build Pivot Tables from CSV/JSON Data
 
 - S2 /1.1kStar/MIT/202302/ts
   - https://github.com/antvis/S2

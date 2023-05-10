@@ -13,7 +13,11 @@ modified: 2022-08-21T10:19:58.756Z
 # discuss
 - ## 
 
-- ## 
+- ## Inspired by @shadcn 's data table, I made a version using React Aria Components
+- https://twitter.com/devongovett/status/1656100596406157312
+- Important to note: if you just wanna display some data and it doesn't need to be interactive (e.g. selection, sorting), then an HTML `<table>` is perfect! 
+  - Data tables with interactivity should implement the ARIA grid pattern for a11y (e.g. via React Aria).
+- It's fine to use a normal table even with sorting right? `aria-sort` is usable afaik
 
 - ## what's your experience of react-table between firefox and safari
 - https://twitter.com/KevinVanCott/status/1650890320555524097
@@ -116,6 +120,9 @@ modified: 2022-08-21T10:19:58.756Z
   - https://github.com/oliver-moran/jimp
   - 源码是js，类型声明在单独的.d.ts文件
   - An image processing library written entirely in JavaScript for Node, with zero external or native dependencies.
+# discuss-issues
+- ## [Auto-size column width v8](https://github.com/TanStack/table/discussions/4179)
+
 # discuss-architecture
 - ## [Easy way to modify/extend features like Visibility.ts in v8](https://github.com/TanStack/table/discussions/4067)
 - Not sure if its an anti-pattern or not... but you can add your own `state` and `setState` functions to the `table` instance with some typescript trickery (and some ts-ignores)
@@ -131,7 +138,6 @@ modified: 2022-08-21T10:19:58.756Z
   - I do think adding a generic for meta is the solution here
 
 - [Possibility to type `meta` prop in `ColumnDef`](https://github.com/TanStack/table/discussions/4104)
-
 # discuss-performance
 - ## 
 

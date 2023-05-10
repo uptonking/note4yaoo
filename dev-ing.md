@@ -161,18 +161,21 @@ $$('[contenteditable]')
 ## 050
 
 - not-yet
-  - todo remove hash在编辑器中有什么作用
+  - todo remove hashId在编辑器model中有什么作用
 
 - dev-to
   - streaming-infinite-list/tree
-  - focalboard-views
+  - 表格视图
+    - 透视表、database多视图、编辑器内的database
+    - editable-react-table、undb/focalboard、noseditor
   - slate-docs-examples
   - dnd-kit preset-tree
+    - 参考react-sortable-tree
   - noseditor-docs
   - unit-tests
     - test in firefox
   - drag
-    - [ ] dnd-kit tree performance
+    - dnd-kit tree performance
       - 自定义冲突解决
       - 拖拽指示线
     - 拖拽到页面顶部或底部时，自动滚动

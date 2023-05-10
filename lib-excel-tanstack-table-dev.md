@@ -19,6 +19,7 @@ modified: 2022-08-21T10:19:58.756Z
   - react组件会过多rerender
   - focus-management
   - 如何支持多个table，且每个table数据模型不同，还要支持typescript
+  - 在某一种表格布局下的功能实现与优化，如flex/absolute
 
 - virtualized之后要检查功能
   - scroll to index
@@ -29,52 +30,16 @@ modified: 2022-08-21T10:19:58.756Z
       - 支持 virtualized、global filter、row selection
 
 - tanstack-table和ag-grid支持的输入数据都是对象数组，array-of-objects
+# dev-later
+- 参考
+  - react-aria-grid: aria grid pattern
+  - react-pivottable
+
+- 定制filter/sort的顺序
 # react-table表格实现的ui结构层次
-- ## useBlockLayout
-  - 必须设置cell的width，使用行内样式设置
-- div-table
-  - div-thead
-    - row/tr
-    - row/tr
-      - columnheader/th
-    - row/tr
-  - div-tbody/rowgroup
-    - row/tr
-    - row/tr
-      - cell/td
-    - row/tr
 
-```CSS
-.table {
-  display: inline-block;
-  border-spacing: 0;
-  border: 1px solid black;
-}
+## useAbsoluteLayout
 
-/* 设置表头行或数据行 */
-.row {
-  display: flex;
-  width: 710px;
-}
-
-.cell,
-.columnheader {
-  display: inline-block;
-  box-sizing: border-box;
-  width: 150px;
-  margin: 0;
-  padding: 0.5rem;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-  /* font-weight: bold; */
-}
-
-.rowgroup {}
-
-.cell {}
-```
-
-- ## useAbsoluteLayout
 - div-table
   - div-thead
     - row-header-group
@@ -130,83 +95,22 @@ modified: 2022-08-21T10:19:58.756Z
 .cell {}
 ```
 
-- ## useFlexLayout
-- div-table
-  - div-thead
-    - row-tr
-    - row-tr
-      - columnheader
-    - row-tr
-  - div-tbody
-    - row-tr
-    - row-tr
-      - cell
-    - row-tr
+## [table vs div](https://twitter.com/tannerlinsley/status/1254534413741780992)
 
-```CSS
-.table {
-  min-width: 735px;
-  border-spacing: 0;
-  border: 1px solid black;
-}
-
-/* todo flex without container 表头行和数据行的样式 */
-.row-tr {
-  flex: 1 0 auto;
-  display: flex;
-  min-width: 215px;
-  border-bottom: 1px solid black;
-}
-
-.cell,
-.columnheader {
-  position: relative;
-  flex: 150 0 auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  box-sizing: border-box;
-  width: 150px;
-  min-width: 30px;
-  padding: 0.5rem;
-  margin: 0;
-  border-right: 1px solid black;
-}
-
-.tbody {
-  display: block;
-  height: 250px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.cell {}
-```
-
-# discuss
-- ## [What big things do you think will happen in the JavaScript ecosystem in the next 5 years?](https://twitter.com/kentcdodds/status/1237417106594861056)
-  - I would say that in 5 years, we'll see:
-    - a few more nice syntax improvements
-    - improvements around package management
-    - bundling
-    - delivery
-    - Frameworks will continue to compete and thrive
-    - ++ Patterns
-  - I think there's a good chance that some of the more CPU-intensive parts of our current build tools (like Terser/Uglify) will be replaced by WASM equivalents (maybe written in Rust?).  SWC is already trying to do this for Babel.
-
-- ## [table vs div](https://twitter.com/tannerlinsley/status/1254534413741780992)
 - `<table>` Table
   - Auto col width
   - Native aria/structure
   - Native col/row span
   - No infinite scroll
   - No sticky/pinned cols
+
 - `<div>` Table
   - Manual col width
   - Resizable cols
   - Simulated col/row span
   - Infinite Scroll
   - Sticky cols
+
 - ref
   - [aria grid pattern](https://www.w3.org/TR/wai-aria-practices/#grid)
   - today has left me with a pretty solid plan that anything that is missing from `<table>` grids can *almost* be replicated fully in a `<div>` grid, plus all the other great possibilities you gain by not locking yourself into the `<table>` spec.
@@ -223,22 +127,8 @@ modified: 2022-08-21T10:19:58.756Z
   - You can get auto column width with div tables :). We do this at my work. We do a two-pass render to measure and it's fast enough most of the time. Working on an implementation with CSS Grid that I'll write about soon.
   - Sticker headers lets the user quickly be able to refer to what a cell represents in large tables. Resizing also helps expand/collapse columns that are more/less important or have dynamic contents. Default column widths can optimize for less text overflow.
     - [not ssr friendly yet](https://ministrycentered.github.io/ui-kit/datatable)
-# pieces
-- `useGetLatest(instanceRef.current)` how it's helping avoiding memory leaks 
-  - `const getInstance = useGetLatest(instanceRef.current); `
-  - Instead of using `instanceRef.current` all over the place, you just use `getInstance()` which just looks better imo less clutter(n, 杂乱，混乱)
-    - as for memory leaks, it’s not the getLatest implementation that does this. It’s just the fact that it’s used at all as opposed to creating closures around `instanceRef.current`
-  - Converted almost all usages of `instanceRef.current` to use `useGetLatest(instanceRef.current)` to help with avoiding memory leaks and to be more terse.
-    - It avoids closing over stale instance properties and holding on to them in memory. 
-    - Only when they are needed, they are accessed on demand though the getter.
-    - Could you please expand on why calling a function avoids closing over state instance properties?
-    - I'm definitely not an expert, but I know that previously when we would simply close over the instance we were "snapshotting" the entire instances in a closure, and as long as that closure stuck around, that memory for the instance snapshot would be there.
-    - Some of that doesn't matter if you are actually reusing or mutating a single instance, but if you are handling computed or immutable data that is changing, then you can potentially be hanging on to a lot of unused data for no reason.
-    - By just storing a reference to a getter function, you aren't closing over the data, just the getter. 
-    - Thus, the memory of the result of that getter doesn't come into play until you use it, which in the case of all of the callbacks and API used in something like React Table is alot
-  - ref
-    - https://twitter.com/tannerlinsley/status/1257068142242656256
-    - https://spectrum.chat/react-table/general/v7-can-some-one-explain-usegetlatest-instanceref-current~54763a00-66ae-4211-bb35-52ca25686546
+
+## dev
 
 - FWIW your React Table library is actually impossible to fully type properly. 
   - Its architecture and typescript are not friends because the API of the hook changes based on runtime arguments. 
@@ -288,7 +178,7 @@ modified: 2022-08-21T10:19:58.756Z
   2. Wait for slow renders to show up. They might not at all!
   3. Profile the slow render
   4. useMemo computations making it slow
-  - I always try to avoid memoizing component ouput, too
+  - I always try to avoid memoizing component output, too
 
 - do you have mental model for when memoization should happen "inside" or "outside" of a component?
   - I always found it a bit strange that react-table documented props that need to memoized rather than just doing their own data diffing.

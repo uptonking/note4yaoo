@@ -32,13 +32,33 @@ modified: 2022-08-21T10:20:55.385Z
   - React Table doesn't use PureComponent or rerender bailouts. If you want to use these in your own markup, feel free to do so, but at your own risk. In most, if not all, scenarios you would do this, it could probably be solved by using a useMemo or useCallback
   - React Table uses extensive memoization, caching and change-detection to ensure that rerenders are extremely performant.
 - Moral of the story: Only worry about rerenders if they are expensive or degrading performance.
-# pieces
-- ## 
 
-- ## 
-
-- ## 
-
+- ## `useGetLatest(instanceRef.current)` how it's helping avoiding memory leaks 
+- `const getInstance = useGetLatest(instanceRef.current); `
+- Instead of using `instanceRef.current` all over the place, you just use `getInstance()` which just looks better imo less clutter(n, 杂乱，混乱)
+  - as for memory leaks, it’s not the getLatest implementation that does this. It’s just the fact that it’s used at all as opposed to creating closures around `instanceRef.current`
+- Converted almost all usages of `instanceRef.current` to use `useGetLatest(instanceRef.current)` to help with avoiding memory leaks and to be more terse.
+  - It avoids closing over stale instance properties and holding on to them in memory. 
+  - Only when they are needed, they are accessed on demand though the getter.
+  - Could you please expand on why calling a function avoids closing over state instance properties?
+  - I'm definitely not an expert, but I know that previously when we would simply close over the instance we were "snapshotting" the entire instances in a closure, and as long as that closure stuck around, that memory for the instance snapshot would be there.
+  - Some of that doesn't matter if you are actually reusing or mutating a single instance, but if you are handling computed or immutable data that is changing, then you can potentially be hanging on to a lot of unused data for no reason.
+  - By just storing a reference to a getter function, you aren't closing over the data, just the getter. 
+  - Thus, the memory of the result of that getter doesn't come into play until you use it, which in the case of all of the callbacks and API used in something like React Table is alot
+- ref
+  - https://twitter.com/tannerlinsley/status/1257068142242656256
+  - https://spectrum.chat/react-table/general/v7-can-some-one-explain-usegetlatest-instanceref-current~54763a00-66ae-4211-bb35-52ca25686546
+# discuss
 - ## So, turns out react-tracked is not a good choice as a way to build a context for react-table. 
 - https://twitter.com/code_tank_dev/status/1511215041856614406
   - The table instance doesn't get notified of changes (eg. isSorted). Any idea why that could be?
+
+- ## [What big things do you think will happen in the JavaScript ecosystem in the next 5 years?](https://twitter.com/kentcdodds/status/1237417106594861056)
+  - I would say that in 5 years, we'll see:
+    - a few more nice syntax improvements
+    - improvements around package management
+    - bundling
+    - delivery
+    - Frameworks will continue to compete and thrive
+    - ++ Patterns
+  - I think there's a good chance that some of the more CPU-intensive parts of our current build tools (like Terser/Uglify) will be replaced by WASM equivalents (maybe written in Rust?).  SWC is already trying to do this for Babel.

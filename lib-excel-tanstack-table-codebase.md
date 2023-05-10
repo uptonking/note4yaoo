@@ -35,7 +35,7 @@ modified: 2022-08-21T10:19:58.756Z
 # architecture/dataflow
 - data => model
   - 计算rowModel的入口 `const rowModel = table.getRowModel(); `，手动触发
-- 计算rowModel的顺序
+- 计算rowModel的顺序 💡 从下向上
   - table.getPaginationRowModel(); 
   - table.getPrePaginationRowModel(); 
   - table.getExpandedRowModel(), 

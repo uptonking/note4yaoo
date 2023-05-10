@@ -39,9 +39,10 @@ modified: 2022-08-21T10:37:01.349Z
   - 依赖react-table.v7, react-window, popperjs.v2, react-contenteditable, clsx
   - display布局： table.div-block, tr.div-flex, td.div-flex
   - 支持3种单元格类型 number, text, select，弹出框很好用
+  - 支持单元格类型转换
   - 没有全局工具条，但表头每列的下拉菜单很完整；不支持分组
-  - https://github.com/hermanbanken/editable-react-table
-    - /ts
+  - https://github.com/hermanbanken/editable-react-table /ts
+    - [Module for consumption in Netlify CMS](https://github.com/archit-p/editable-react-table/pull/12)
   - https://github.com/koyal-tech/editable-react-table
 
 - react-table-ui /7Star/MIT/202107/ts

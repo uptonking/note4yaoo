@@ -35,6 +35,12 @@ modified: 2020-10-05T06:22:02.107Z
   - Flip Move uses the FLIP technique to work out what such a transition would look like, and fakes it using 60+ FPS hardware-accelerated CSS transforms.
   - Flip Move was inspired by Ryan Florence's awesome [Magic Move/2016](https://github.com/ryanflorence/react-magic-move)
 # waapi/web animations api
+- https://github.com/motiondivision/motionone /ts
+  - https://motion.dev/
+  - Motion One is the smallest fully-featured animation library for the web.
+  - It can animate HTML or SVG elements using the Web Animations API, which means some animations can run off the main thread.
+  - Additionally, it can animate anything by passing it a custom function, like innerText or Three.js.
+
 - https://github.com/inokawa/react-animatable
   - composable animation library for React, built on Web Animations API and React hook.
 
