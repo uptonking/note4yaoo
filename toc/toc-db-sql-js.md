@@ -78,6 +78,24 @@ modified: 2021-08-30T18:56:14.863Z
   - PRQL is a modern language for transforming data — a simple, powerful, pipelined SQL replacement
   - Unlike SQL, it forms a logical pipeline of transformations, and supports abstractions such as variables and functions.
   - It can be used with any database that uses SQL, since it compiles to SQL.
+# sql-extensions-mdx
+
+# compiles-to-sql
+
+- https://github.com/malloydata/malloy /ts/lookerBI
+  - https://www.malloydata.dev/
+  - Malloy is an experimental language for describing data relationships and transformations.
+  - It is both a semantic modeling language and a querying language that runs queries against a relational database. 
+  - Malloy currently supports BigQuery and Postgres, as well as querying Parquet and CSV files via DuckDB.
+  - every Malloy query turns into a single SQL query
+  - [A sequel to SQL? An intro to Malloy | Hacker News](https://news.ycombinator.com/item?id=32738874)
+
+- https://github.com/PRQL/prql /rust
+  - https://prql-lang.org/
+  - PRQL is a modern language for transforming data — a simple, powerful, pipelined SQL replacement
+  - Like SQL, it's readable, explicit and declarative. 
+  - Unlike SQL, it forms a logical pipeline of transformations, and supports abstractions such as variables and functions. 
+  - It can be used with any database that uses SQL, since it compiles to SQL.
 # sql-utils
 - https://github.com/fibo/SQL92-JSON
   - can stringify a JSON into an SQL and viceversa parse an SQL and serialize it into a JSON

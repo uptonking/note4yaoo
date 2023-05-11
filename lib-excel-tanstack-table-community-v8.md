@@ -138,6 +138,9 @@ modified: 2022-08-21T10:19:58.756Z
   - I do think adding a generic for meta is the solution here
 
 - [Possibility to type `meta` prop in `ColumnDef`](https://github.com/TanStack/table/discussions/4104)
+
+- [I define a custom meta type for columns, but VsCode is not inferring type](https://github.com/TanStack/table/discussions/4072)
+  - Due to generic limitations, This meta object must be typecast to the correct type before usage.
 # discuss-performance
 - ## 
 

@@ -262,6 +262,11 @@ $$('[contenteditable]')
 
 ## 050
 
+## 0511
+
+- [forms - CSS Input with width: 100% goes outside parent's bound - Stack Overflow](https://stackoverflow.com/questions/16907518/css-input-with-width-100-goes-outside-parents-bound)
+  - According to the CSS basic box model, an element's width and height are applied to its content box. Padding falls outside of that content box and increases the element's overall size
+
 ## 0509
 
 - [How do I retrieve an HTML element's actual width and height? - Stack Overflow](https://stackoverflow.com/questions/294250/how-do-i-retrieve-an-html-elements-actual-width-and-height)

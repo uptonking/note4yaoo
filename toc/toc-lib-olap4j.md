@@ -82,7 +82,7 @@ modified: 2020-10-22T06:50:47.668Z
 - mondrian /EPLv1/907Star/202007
   - https://github.com/pentaho/mondrian
   - http://mondrian.pentaho.com/
-  - Mondrian是一个OLAP分析的引擎，主要工作是根据事先配置好的schema，将输入的多维分析语句MDX(Multidimensional Expressions )翻译成目标数据库／数据引擎的执行语言（比如SQL）。
+  - Mondrian是一个OLAP分析的引擎，主要工作是根据事先配置好的schema，将输入的多维分析语句MDX(Multidimensional Expressions)翻译成目标数据库／数据引擎的执行语言（比如SQL）。
   - an Online Analytical Processing (OLAP) server that enables business users to analyze large quantities of data in real-time
   - https://github.com/Datawheel/olap-client
     - Javascript client to interact with mondrian-rest and tesseract-olap servers.

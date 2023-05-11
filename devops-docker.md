@@ -9,6 +9,8 @@ modified: 2023-02-09T19:19:11.265Z
 
 # guide
 
+- resources
+  - [Portainer architecture](https://docs.portainer.io/start/architecture)
 # cli
 
 ```shell
@@ -23,7 +25,9 @@ docker update --restart=no container-name
 # discuss
 - ## 
 
-- ## 
+- ## Lazydocker: 在终端可以使用图形化的方式来管理 docker 的一系列服务。
+- https://twitter.com/vikingmute/status/1656477474518347779
+- 用的 portainer 管理，还能管理远程的
 
 - ## [既然有了Docker， 为什么还要Kubernetes ? - 知乎](https://zhuanlan.zhihu.com/p/77308665)
 - Docker容器技术是Kubernetes平台的基础。容器技术主要作用是隔离，通过对系统的关键资源的隔离，实现了主机抽象。Kubernetes平台则是在抽象主机的基础上，实现了集群抽象。

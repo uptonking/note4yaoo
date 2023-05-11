@@ -12,7 +12,53 @@ modified: 2022-12-05T19:10:15.451Z
 # discuss
 - ## 
 
-- ## 
+- ## 💡 Why Analytical Tools don't speak native SQL ? that's the Mother of all questions.
+- https://twitter.com/mim_djo/status/1656450400051171329
+  - [Cubing and Metrics in SQL, Oh My! - YouTube](https://www.youtube.com/watch?v=oo1uwJ3qHwE)
+
+- BI tools implement their own language on top of SQL. Why not SQL?
+
+- SQL vs BI
+  - semantic model
+  - define reusable calculations
+  - pre-join tables
+  - control presentation / viz
+  - governance
+  - ask complex question in a concise way
+
+- semantic models vs databases
+- a semantic model
+  - is the place to share data and calculations
+  - needs a good query language
+  - doesnot become a database just because it speaks sql
+  - should do more things like permissions/transform
+
+- use semantic model to avoid being tied to one vendor db
+
+- I have the conservative view that it is a solution searching for a problem, we will always have another layer that generate SQL, but SQL will not take over BI
+
+- and to share @cwebb_bi cynical view, if SQL was such a good thing for measures, we would have a good solution by now
+- so we have three camps 
+  - 1- SQL with extension @julianhyde (MDX)
+  - 2- DSL that generate SQL (Malloy, dbt, Tableau etc) @lloydtabb
+  - 3- Microsoft, nope, you don't need SQL, we build our own Calculation Engine :) @jwang_pbi
+- Obviously you have another camp,  the SQL fanatics like @felipehoffa @teej_m @pdrmnvd , you don't need a model at all, you write everything by hand 🤡
+
+- ## We've been working on, Malloy, a new experimental data language.  If you work in SQL, we'd love your feedback._202110
+- https://twitter.com/lloydtabb/status/1450538694130110464
+- it seems to me it trying to solve the same problems as something like MDX, is this a fair statement ?
+  - No, not MDX.  We're focused on the things you would do with a SQL. 
+- this is the logical sequel to LookML. 
+  - No, the focus is different :)  Malloy entirely language based and our goal is to use Malloy all the places you would write a SQL SELECT.
+
+- I have some questions. 
+  - Is intermediate data stored in memory?
+  - Is it lazy eval like Spark?
+  - Does it supports static typechecking?
+- No intermediates, every Malloy query turns into a single SQL query.
+- It leverages the database for evaluation, so yes, lazy eval.
+- It is type checked.
+
 
 - ## Seems like @ClickHouseDB adding Clickhouse local is a direct reaction to @duckdb. #data
 - https://twitter.com/AstasiaMyers/status/1611432837202448384
@@ -24,7 +70,6 @@ modified: 2022-12-05T19:10:15.451Z
   - clickhouse’s approach is not edge/client at all! 
   - They basically just opened up a request/response API to a server, where the heavy lifting is happening.
 
-
 - ## [ClickBench: A benchmark for analytical databases (Snowflake, Druid, Redshift) | Hacker News_202207](https://news.ycombinator.com/item?id=32084571)
 - As a database author myself (I work on Apache Druid) I have really mixed feelings about publishing benchmarks. 
   - They're fun, especially when you win. 
@@ -33,9 +78,7 @@ modified: 2022-12-05T19:10:15.451Z
   - [Druid Nails Cost Efficiency Challenge Against ClickHouse & Rockset - Imply](https://imply.io/blog/druid-nails-cost-efficiency-challenge-against-clickhouse-and-rockset/)
   - It just seems wrong to take them too seriously.
 
-
 - There are several existing benchmarks that test query optimisers with a lot of joins. It does not show performance of query engine, but more likely how good is your optimiser was tailored for this queries.
-
 
 - It's possible the Druid configuration is suboptimal in some way. 
   - It appears that the ClickHouse tests were done using a local table, which there isn't an equivalent of in Druid. 

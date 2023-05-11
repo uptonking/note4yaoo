@@ -132,6 +132,12 @@ modified: 2022-12-20T05:39:08.948Z
   - No matter if it is a cpu cacheline, a DNS entry cached in your browser, or some value in memory your application memoized, it can be reasoned about as a partially materialized view. 
   - Even a cached computation result is a partially materialized view; 
 - A cache and a partially materialized view are essentially the same thing. In a database (e.g. PostgreSQL, Oracle, etc.), the materialized view is explicitly defined.
+# data-layer
+- [BeyondStorage: why we failed](https://xuanwo.io/2023/01-beyond-storage-why-we-failed/)
+  - 介绍了 BeyondStorage 开源社区的失败并分享了 #OpenDAL 在此基础上的经验教训
+  - BeyondStorage 构建 go-storage 是为了满足迁移服务的需求，而迁移服务的需求来自于 go-storage 能力的自然延伸。不难发现这套逻辑中出现了一个可怕的循环，链条中完全没有真实用户的参与，项目从发展伊始就在朝着错误的方向狂奔。
+  - BeyondStorage 失败的最直接原因是失去了最大金主：青云科技。
+  - OpenDAL 最幸运的地方在于它孵化自 Databend 的真实场景。Databend 持续不断地提出新需求，这些需求帮助我判断需求的必要性、调整任务优先级并修正错误假设。
 # more
 - [处理海量数据：列式存储综述（存储篇） - 知乎](https://zhuanlan.zhihu.com/p/35622907)
 
