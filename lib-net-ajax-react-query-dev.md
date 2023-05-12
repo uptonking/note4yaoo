@@ -47,7 +47,18 @@ modified: 2023-03-05T08:55:03.696Z
 # discuss
 - ## 
 
-- ## 
+- ## Non-RxJS Observables in the wild... tanstack edition
+- https://twitter.com/BenLesh/status/1656746366553452573
+- Yes, yes, it's more of a "Subject"... which is an observable.
+- Incidentally, @tannerlinsley , I don't know all of the usage here, but as a pro-tip, *if* you can move away from an array of listeners to a Set it will help perf a lot. (But comes with idempotent listener adds, obviously)
+  - (I've been wanting to do that to RxJS Subjects, but it would be too broad of a breaking change for us)
+  - Prior art is EventTarget, though: addEventListener is idempotent.
+- 💡 heh, I actually did the `array->Map` switch for the Redux core in v5 alpha
+- Ooh do XState next (we love our bespoke artisanal handcrafted observables)
+  - All ActorRefs (what is returned from interpret(...)) are observable
+
+
+
 
 - ## Should we return a typed `setData` function from `useQuery` ?
 - https://twitter.com/TkDodo/status/1650104471555383299

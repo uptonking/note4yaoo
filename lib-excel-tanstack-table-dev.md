@@ -30,6 +30,13 @@ modified: 2022-08-21T10:19:58.756Z
       - 支持 virtualized、global filter、row selection
 
 - tanstack-table和ag-grid支持的输入数据都是对象数组，array-of-objects
+
+- alternatives & ideas
+  - luckysheet/univer
+  - ag-grid
+  - handsontable
+  - tinybase
+  - mobile
 # dev-later
 - 参考
   - react-aria-grid: aria grid pattern

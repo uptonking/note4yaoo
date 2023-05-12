@@ -18,7 +18,9 @@ Symbol('a') === Symbol('a'); //false
 
 - ## 
 
-- ## 
+- ## JS trivial! which `value` breaks if you: `${value}` but work if you do? `String(value)`
+- https://twitter.com/manucorporat/status/1656669731892645891
+  - i was not aware of this behaviour before, specially since `Symbol().toString()` works!
 
 - ## It might be nice if you could iterate over Sets in JS without going through slow-ass iterators. 
 - https://twitter.com/fabiospampinato/status/1645916795071606786
