@@ -17,20 +17,48 @@ modified: 2023-01-20T00:18:44.282Z
   - 流程自动化
 
 - ref
+  - https://feathersjs.com/ecosystem/?sort=lastPublish
   - https://github.com/feathersjs/awesome-feathersjs
+  - https://stackblitz.com/@daffl/collections/feathers-quick-start
 # popular
+- https://github.com/feathersjs/playground
+  - A demo feathers-chat project for learning and demonstration purposes.
+  - A real-time chat app and server
+
+- https://github.com/feathersjs/feathers-chat
+  - A Feathers real-time chat application
+  - initialize an SQLite database in the feathers-chat.sqlite file.
+
 - https://github.com/josx/ra-data-feathers /js
-  - Feathers data provider for react-admin. A feathers rest client for react-admin
+  - Feathers data provider for react-admin. 
+  - A feathers rest client for react-admin
   - https://github.com/kfern/feathers-aor-test-integration
 
-- https://github.com/feathersjs-ecosystem/feathers-permissions
-  - Simple role and service method permissions for Feathers
-  - [Access control strategies with FeathersJS](https://blog.feathersjs.com/access-control-strategies-with-feathersjs-72452268739d)
-
-- https://github.com/humaans/figbird
+- https://github.com/humaans/figbird /js
+  - https://humaans.github.io/figbird/
   - realtime data management for React + Feathers applications.
   - In principle, you could use Figbird with any REST API as long as several conventions are followed or are mapped to.
   - In fact, Figbird does not have any code dependencies on Feathers. It's only the Feathers patterns and conventions that the library is designed for. 
+- https://github.com/unesic/trello-clone /js
+  - Popular kanban-style project management tool's clone.
+  - 依赖figbird、styled-compo、mongoose
+
+- https://github.com/jscomponent/casket /js
+  - Casket Content Management System - Built on FeathersJS using MongoDB with Mongoose and Socket. IO
+
+- https://github.com/lwhiteley/feathers-lowdb
+  - a database service adapter for Lowdb, a small JSON database for Node, Electron and the browser powered by Lodash. 
+
+- https://github.com/silvestreh/feathers-react
+  - a handful of React Components to help you display data coming from your Feathers API in real-time
+- https://github.com/indatawetrust/use-feathers
+  - This package is based on feathers js client packages.
+  - https://github.com/indatawetrust/use-feathers/tree/master/demo
+
+- https://github.com/feathersjs-offline/localforage
+  - A FeathersJS standard CRUD adapter wrapping localForage to simplify storage in IndexedDB, and LocalStorage.
+  - https://github.com/feathersjs-offline/simple-example
+    - An example client and server showcasing FeathersJS offline-first realtime support for own-data and own-net protocols as described in the docs here.
 
 - https://github.com/kalisio/feathers-distributed
   - Distribute your Feathers services as microservices
@@ -42,7 +70,60 @@ modified: 2023-01-20T00:18:44.282Z
   - When running multiple instances of your Feathers application (e.g. on several Heroku Dynos), service events (created, updated, patched, removed and any custom defined events) do not get propagated to other instances.
   - feathers-sync uses a messaging mechanism to propagate all events to all application instances. 
   - It currently supports redis, amqp/RabbitMQ
+
+- https://github.com/feathersjs-ecosystem/feathers-permissions
+  - Simple role and service method permissions for Feathers
+  - [Access control strategies with FeathersJS](https://blog.feathersjs.com/access-control-strategies-with-feathersjs-72452268739d)
+
+- https://github.com/marshallswain/feathers-pinia
+  - Connect your Feathers API to the elegant data store for Vue
+
+- https://github.com/3CordGuy/listen-up /js
+  - Listen Up is a very rudimentary webhook listening platform that will display your POST requests to generated endpoints in realtime.
+  - This is meant to be useful for prototyping and developing webhooks.
+  - feathers used on the back-end and front-end
+  - Vue for some front-end (is currently rudimentary)
+  - Atlas for hosting a simple hobby instance of MongoDB
+
+- https://github.com/swina/feathersjs-webpush-notifications
+  - [WebPush Notifications with Feathersjs_201902](https://swina.github.io/2019/02/webpush-notifications-with-feathersjs/)
+# api
+- https://github.com/adaptable/feathers-template
+  - Adaptable.io template for deploying an autoscaling, Serverless Feathers API. 
+  - Can also be used to deploy other Node.js HTTP apps.
+
+- https://github.com/KleitonBarone/feathersjs-crud-api
+  - Simple Crud Api using FeatherJs Framework
+
+- https://github.com/bervProject/FeathersJS-Boilerplate
+  - FeathersJS Boilerplate for my own project
+  - Upload into Google Cloud Storage
+
+- https://github.com/feathersjs-ecosystem/feathers-nedb /js
+  - a database service adapter for NeDB
+
+- https://github.com/ivanob/rf-coding-challenge
+  - A backend coding challenge using feathersjs, react, axios, mongoDB
+
+- https://github.com/DuilioQuavanti/lends-backend /js
+  - REST API that allows the connection of our application, in addition to saving data in mongodb using feathersjs
+  - https://github.com/DuilioQuavanti/lends-app /js
+    - Mobile application developed in react native, which allows the rental of different products
 # examples
+- https://github.com/jamesvillarrubia/feathers-openai /js
+  - An open.ai adapter for FeathersJS
+  - This library enables a series of FeathersJS services that map to the entities and routes of the OpenAI API.
+
+- https://github.com/timothyhoover/supporty /ts
+  - Simple ticket management system built with React, Feathers.js, and Tailwind
+
+- https://github.com/anthonymunene/reservation-apps /ts
+  - A reservation airbnb clone API built with feathersjs knex ORM and PostgreSQL
+
+- https://github.com/r1pk/surveo /js
+  - https://surveo.vercel.app/
+  - Responsive web application built with React, React-Router, Redux, Material-UI and Feathers that allows users to create online surveys with basic security features and analyse the results using different types of presentation
+
 - https://github.com/kalisio/krawler /js
   - https://kalisio.github.io/krawler/
   - A minimalist (geospatial) ETL
@@ -53,8 +134,19 @@ modified: 2023-01-20T00:18:44.282Z
     - rest -> geojson -> local-file
   - krawler is powered by Feathers and rely on two of its main abstractions: services (opens new window)and hooks
 
+- https://github.com/shopping-busket/backend
+  - FeathersJS backend for all the Busket clients. 
+  - Made with FeathersJS and Sequelize SQL
+  - https://github.com/shopping-busket/web
+    - Busket web client made with Vue3.
+  - https://github.com/shopping-busket/busket-android
+
 - https://github.com/fratzinger/feathers-openweathermap
   - This is thin layer around the OpenWeatherMap API wrapped in a feathers.js service.
+
+- https://github.com/lehao190/Dev-Blog-App-Backend-FeathersJS
+  - https://github.com/lehao190/Dev-Blog-App-Frontend-Quasar
+  - https://agitated-mclean-5f9de9.netlify.app/
 # feathers-v4
 - https://github.com/feathersjs-ecosystem/feathers-authentication-management
   - Adds sign up verification, forgotten password reset, and other capabilities to local feathers-authentication
@@ -66,11 +158,53 @@ modified: 2023-01-20T00:18:44.282Z
 - https://github.com/lwhiteley/feathers-lowdb
   - a database service adapter for Lowdb, a small JSON database for Node, Electron and the browser powered by Lodash.
 # utils
+- https://github.com/feathersjs-ecosystem/feathers-hooks-common
+  - Useful hooks for use with FeathersJS services.
+- https://github.com/bervProject/feathers-advance-hook
+  - Feathers Advance Hook Extensible
+- https://github.com/fratzinger/feathers-utils
+  - utils for feathers.js
+
+- https://github.com/feathersjs-ecosystem/dataloader
+  - Reduce requests to backend services by batching calls and caching records.
+
+- https://github.com/mkalus/self-cleaning-blob-storage-example
+  - [Create a Self-Cleaning Blob Storage using Express, FeathersJS, MongoDB, and Abstract Blob Storage | by Max Kalus | The Startup | Medium](https://medium.com/swlh/create-a-self-cleaning-blob-storage-using-express-feathersjs-mongodb-and-abstract-blob-storage-7840e4f78682)
+
+- https://github.com/remedyred/feathers-plugins
+  - Monorepo for FeathersJS tools and plugins
+
+- https://github.com/lwhiteley/feathers-alive-ready
+  - a plugin to add health check endpoints to a feathersjs application
+
+
+
+- https://github.com/feathersjs-ecosystem/feathers-reactive
+  - Reactive API extensions for Feathers services
+  - adds a watch() method to services. The returned object implements all service methods as RxJS v6 observables that automatically update on real-time events.
+  - 依赖rxjs、sift
+
+- https://github.com/feathersjs-ecosystem/feathers-sequelize
+  - A Feathers service adapter for the Sequelize ORM. 
+  - Supporting MySQL, MariaDB, Postgres, SQLite, and SQL Server
+
 - https://github.com/gobengo/activitypub-server
   - 依赖 activitystreams2
 # auth
 - https://www.npmjs.com/package/@admitad-x3/feathers-rbac
   - 几乎无依赖
+# ssr
+- [Server Side Rendering | feathers](https://feathersjs.com/cookbook/express/view-engine.html)
+
+- https://github.com/leob/feathers-next
+  - This project shows how to integrate a Next.js application with a Feathers backend, including authentication (with user name/password) and Redux.
+  - Contrary to feathers-next-example, I decided to keep the Feathers backend (the API) separated from the "server" (SSR) part of the Next.js frontend. This means that we're running two separate server (node.js) processes.
+  - This might add a (tiny) bit of overhead, but ultimately it makes the app easier to develop and maintain (and configure) because we don't mingle Feathers API backend code with Next.js server rendering code.
+
+- https://github.com/deniapps/nextfeathers
+  - nextJS + feathersJS = Perfect Javascript Full-Stack!
+
+
 # more
 - https://github.com/AshotN/adminjs-feathers
   - Adapter for AdminJS to use FeathersJS services

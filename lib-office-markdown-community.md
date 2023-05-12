@@ -14,6 +14,13 @@ modified: 2021-06-02T15:26:39.741Z
 - At Sanity.io, we decided early that the block content format should never assume HTML as neither input nor output, and that we could use algorithms to synchronize text strings. 
   - More importantly, was it that block content and rich text should be deeply typed and queryable. 
   - The result was the open specification Portable Text. 
+  - Its structure not only makes it flexible enough to accommodate custom data structures as blocks and inline spans; it’s also fully queryable with open-source query languages like GROQ.
+- Portable Text isn’t design to be written or be easily readable in its raw form; it’s designed to be produced by an user interface, manipulated by code, and to be serialized and rendered where ever it needs to go.
+
+- Embracing The Legacy Of Markdown
+  - Markdown is not great for the developer experience in modern stacks
+  - Markdown is not great for editorial experience
+  - Markdown is not great in block content age, and shouldn’t be forced into it. Block content needs to: Be untangled from HTMLisms and presentation agnostic.
 
 - ## You shouldn't use Markdown for content anymore.
 - https://twitter.com/kmelve/status/1494688125980798978

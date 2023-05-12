@@ -9,6 +9,9 @@ modified: 2022-11-06T11:21:27.612Z
 
 # guide
 
+- [DB Fiddle - SQL Database Playground](https://www.db-fiddle.com/)
+  - An online SQL database playground for testing, debugging and sharing SQL snippets.
+
 # rest
 - https://github.com/formio/resquel /202101/ts/inactive
   - Express.js middleware library that is able to convert SQL databases into a REST API.

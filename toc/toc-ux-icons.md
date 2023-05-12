@@ -82,12 +82,16 @@ modified: 2021-05-06T09:58:23.803Z
 
 - feather /MIT/16kStar/201908
   - https://github.com/feathericons/feather
+  - https://github.com/feathericons/react-feather
   - https://feathericons.com/
   - At its core, Feather is a collection of SVG files. Each icon is designed on a 24x24 grid with an emphasis on simplicity
+  - https://github.com/zaydek/feathericons.dev
+    - https://feathericons.dev/
+    - Remake of the classic Feather by @colebemis. 
+    - Brand and payment icons by @thewolfkit (Twitter)
   - https://github.com/lucide-icons/lucide
     - https://lucide.dev/
     - fork of Feather Icons, hundreds of icons more than Feather 
-  - https://github.com/feathericons/react-feather
 
 - iconpark
   - https://github.com/bytedance/iconpark

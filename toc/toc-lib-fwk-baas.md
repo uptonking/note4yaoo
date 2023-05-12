@@ -29,6 +29,15 @@ modified: 2021-05-25T09:40:55.797Z
   - https://appwrite.io/
   - Appwrite is an end-to-end backend server for Web, Mobile, Native, or Backend apps packaged as a set of Docker microservices. 
 
+- https://github.com/javascriptdb/jsdb-server /js
+  - https://javascriptdb.com/
+  - The open source firebase alternative that uses SQLite.
+  - Arrays and Objects operations read and write into your database. Magic.
+  - JSDB is very much a work in progress, expect things to fail here and there, up and down.
+    - When you use .filter to search over an array, we are not using indexes. 
+  - https://github.com/javascriptdb/jsdb-sdk
+  - https://github.com/javascriptdb/jsdb-react
+
 - https://github.com/parse-community/parse-server
   - Parse Server works with the Express web application framework.
 

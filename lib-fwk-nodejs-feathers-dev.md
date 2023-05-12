@@ -18,6 +18,9 @@ modified: 2023-01-12T16:33:34.413Z
   - lowcode integration
   - 流程自动化
 
+- 技术选型
+  - 后端框架很多(loopback/adonis)都实现了orm和mongoose的集成，此时可参考成熟模版的选择
+
 - features
   - Fast: Leveraging a unique architecture, Feathers lets you focus on building your APIs and real-time applications quickly. 
   - Universal: Feathers can be used with NodeJS, in the browser, with React Native or with any other API client. 

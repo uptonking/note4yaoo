@@ -329,7 +329,7 @@ class Plugins {
 
 - https://github.com/gr2m/javascript-plugin-architecture-with-typescript-definitions /js/202107/inactive
   - The goal of this repository is to provide a template for a simple plugin Architecture which allows plugin authors to extend the base API as well as extend its constructor options.
-  - This plugin architecture was extracted from @octokit/core
+  - This plugin architecture was extracted from `@octokit/core`
 
 - https://github.com/TimoBechtel/krog /ts
   - Add a hooks-based plugin system to your library.

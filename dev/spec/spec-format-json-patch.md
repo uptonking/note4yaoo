@@ -9,6 +9,9 @@ modified: 2023-02-26T21:03:56.167Z
 
 # guide
 - [JSON Patch | jsonpatch.com](https://jsonpatch.com/)
+  - JSON Pointer (IETF RFC 6901) defines a string format for identifying a specific value within a JSON document. 
+  - It is used by all operations in JSON Patch to specify the part of the document to operate on.
+
 - [RFC 6902: JavaScript Object Notation (JSON) Patch](https://www.rfc-editor.org/rfc/rfc6902)
 # typewriter-json-patch
 - sync实现要点

@@ -50,4 +50,31 @@ modified: 2023-02-08T10:25:14.173Z
 
 - https://github.com/drwpow/openapi-typescript
   - Generate TypeScript types from OpenAPI 3 specs
+# proxy
+- https://github.com/bubenshchykov/ngrok
+  - Expose your localhost to the web. Node wrapper for ngrok.
+# events-webhook
+- https://github.com/TwilioDevEd/webhooks-course
+  - notes and code for the Understanding Webhooks course
+
+- https://github.com/Commit451/skyhook
+  - Parses webhooks and forwards them in the proper format to Discord.
+- https://github.com/discohook/site
+  - The easiest way to build and send Discord messages using webhooks
+
+
+- https://github.com/octokit/webhooks.js
+  - GitHub webhook events toolset for Node.js
+  - https://github.com/octokit/webhooks
+    - machine-readable, always up-to-date GitHub Webhooks specifications
+
+
+
+- https://github.com/probot/smee.io /js
+  - https://smee.io/
+  - Smee is a webhook payload delivery service - it receives webhook payloads, and sends them to listening clients. 
+  - Smee works with two components: the public website smee.io and the smee-client. They talk to each other via Server-Sent Events
+  - Webhook payloads are never stored on the server, or in any database; 
+    - the Smee.io server is simply a pass-through. 
+    - However, we do store payloads in localStorage in your browser
 # more

@@ -10,6 +10,15 @@ modified: 2022-11-06T15:45:36.913Z
 # guide
 
 # popular
+- https://github.com/streamich/json-joy
+  - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
+
+- https://github.com/panva/jose
+  - "JSON Web Almost Everything" - JWA, JWS, JWE, JWT, JWK, JWKS for Node.js, Browser, Cloudflare Workers, Deno, Bun, and other Web-interoperable runtimes.
+
+- https://github.com/gregsdennis/json-everything /c#
+  - System. Text. Json-based support for all of your JSON needs.
+
 - https://github.com/paularmstrong/normalizr
   - Many APIs, public or not, return JSON data that has deeply nested objects. Using data in this kind of structure is often very difficult for JavaScript applications, especially those using Flux or Redux.
   - Normalizr is a small, but powerful utility for taking JSON with a schema definition and returning nested entities with their IDs, gathered in dictionaries.
@@ -63,7 +72,6 @@ modified: 2022-11-06T15:45:36.913Z
 - https://github.com/WebReflection/flatted /js
   - A super light (0.5K) and fast circular JSON parser, directly from the creator of CircularJSON.
 # utils
-
 - https://github.com/datavis-tech/json-templates
   - Simple templating within JSON structures
   - `parse("{{foo.value:baz}}")`
