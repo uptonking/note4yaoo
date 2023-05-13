@@ -111,6 +111,11 @@ modified: 2020-11-19T12:43:25.788Z
   - A custom partial React SSR renderer for prefetching and suspense
   - react-dom/server does not have support for suspense yet.
   - react-ssr-prepass is a partial server-side React renderer that does a prepass on a React element tree and suspends when it finds thrown promises.
+
+# react-patterns
+- https://github.com/jquense/uncontrollable
+  - Wrap a controlled react component, to allow specific prop/handler pairs to be omitted by Component consumers. 
+  - Uncontrollable allows you to write React components, with minimal state, and then wrap them in a component that will manage state for prop/handlers if they are excluded.
 # more-react
 - https://github.com/lelandrichardson/react-primitives
   - This library attempts to propose an ideal set of primitives around building React applications, regardless of Platform. 

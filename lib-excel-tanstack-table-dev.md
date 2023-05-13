@@ -135,6 +135,14 @@ modified: 2022-08-21T10:19:58.756Z
   - Sticker headers lets the user quickly be able to refer to what a cell represents in large tables. Resizing also helps expand/collapse columns that are more/less important or have dynamic contents. Default column widths can optimize for less text overflow.
     - [not ssr friendly yet](https://ministrycentered.github.io/ui-kit/datatable)
 
+## [5 Years of Building React Table – Tanner Linsley_202206](https://www.youtube.com/watch?v=O4IWJcafX8c)
+
+- v6: react component with 136 props
+
+- v7: headless + hooks
+
+- v8: typescript + framework-agnostic
+
 ## dev
 
 - FWIW your React Table library is actually impossible to fully type properly. 

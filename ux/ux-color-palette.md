@@ -43,7 +43,7 @@ modified: 2022-10-23T14:57:23.473Z
   - silver: #c0c0c0 银灰色，比grey浅
   - snow: #fffafa
   - ghostwhite: #f8f8ff
-  - dimgrey/grey/silver/lightgrey/lavender/gainsboro/whitesmoke：灰色，由深到浅
+  - dimgrey/grey/silver/lightgrey/lavender/gainsboro/whitesmoke: 灰色，由深到浅
 
 - Red: #ff0000
   - coral: #ff7f50 珊瑚红，有点黄

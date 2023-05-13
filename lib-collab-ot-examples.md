@@ -28,6 +28,25 @@ modified: 2022-10-02T20:51:30.444Z
   - It uses JSON-Patch for data updates and Operational Transformation for versioning and data consistency. 
   - It operates via HTTP or WebSocket or both.
 
+- https://github.com/ygs-code/ot-system
+  - https://github.com/ygs-code/ot-system-server
+    - 服务端用了 node koa，webpack， graphql ， mysql，redis.
+    - graphql有他的一定优势，就是减少了前后联调对接沟通，对于过滤一些非法请求，也可以说是提高了一些安全性问题，因为http请求他需要先经过graphql验证通过之后才会做业务查询。
+  - https://github.com/ygs-code/ot-system-client
+    - c 端客户端 我是用我自己写的一个 React Ssr框架写的
+    - 系统需要支持SSR和CSR我其他微服务不好实现，所以选择了webpack 构建微服务。当然比较麻烦的是路由同构，我并没有使用react官方推选的路由库，而是我自己实现了一个react 路由
+    - 基于了@rematch/core 和redux和react-redux，封装了一下
+  - https://github.com/ygs-code/ot-system-admin
+    - B端后台管理系统大体的构架目录和使用的技术基本和客户端一样
+    - 只不过 admin 使用的是antd ui，而c端使用的是谷歌的ui。
+  - 开源ot协同系统是由 姚观寿 业余时间打造的一个开源项目
+  - 企业级别文档服务，socket实时通信，增量局部文档改动等功能，支持大数据，高并发，集群等部署
+  - 该项目可拓展性高，具留有redis 和 mysql相关拓展接口。
+  - https://github.com/ygs-code/operational-transformation
+    - 算法源码分析
+  - https://github.com/ygs-code/sharedb-textarea-example
+    - ShareDB with textarea 源码分析
+
 - sharedb /5.4kStar/MIT/202210/js
   - https://github.com/share/sharedb
   - ShareDB is a realtime database backend based on Operational Transformation (OT) of JSON documents. 

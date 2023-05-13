@@ -42,7 +42,9 @@ modified: 2022-12-05T19:10:15.451Z
   - 1- SQL with extension @julianhyde (MDX)
   - 2- DSL that generate SQL (Malloy, dbt, Tableau etc) @lloydtabb
   - 3- Microsoft, nope, you don't need SQL, we build our own Calculation Engine :) @jwang_pbi
-- Obviously you have another camp,  the SQL fanatics like @felipehoffa @teej_m @pdrmnvd , you don't need a model at all, you write everything by hand 🤡
+- Obviously you have another camp, the SQL fanatics like @felipehoffa @teej_m @pdrmnvd , you don't need a model at all, you write everything by hand 🤡
+
+- Back in the day, camps 2 and 3 used to be called ROLAP and MOLAP
 
 - ## We've been working on, Malloy, a new experimental data language.  If you work in SQL, we'd love your feedback._202110
 - https://twitter.com/lloydtabb/status/1450538694130110464
@@ -58,7 +60,6 @@ modified: 2022-12-05T19:10:15.451Z
 - No intermediates, every Malloy query turns into a single SQL query.
 - It leverages the database for evaluation, so yes, lazy eval.
 - It is type checked.
-
 
 - ## Seems like @ClickHouseDB adding Clickhouse local is a direct reaction to @duckdb. #data
 - https://twitter.com/AstasiaMyers/status/1611432837202448384

@@ -112,6 +112,9 @@ modified: 2021-05-14T15:04:55.849Z
 - https://github.com/reactivex/rxjs
   - /23.3kStar/Apache2/202011/ts
   - A reactive programming library for JavaScript
+# js-ts-labs
+- https://github.com/WebReflection/raytrace
+  - A comparison between original raytrace.ts performance VS a hand-written JS port.
 # popular
 
 ## viz

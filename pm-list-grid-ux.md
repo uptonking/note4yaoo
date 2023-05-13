@@ -10,6 +10,7 @@ modified: 2021-05-23T16:34:42.918Z
 # guide
 
 - [Data Table Design UX Patterns & Best Practices](https://pencilandpaper.io/articles/ux-pattern-analysis-enterprise-data-tables/)
+- [表格设计深入研究——行高设定 - 知乎](https://zhuanlan.zhihu.com/p/31516863)
 
 # discuss
 

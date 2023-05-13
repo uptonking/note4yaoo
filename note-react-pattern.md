@@ -25,6 +25,157 @@ modified: 2021-05-11T14:36:13.256Z
   - another proposal will be fully possible in Reakit v3: a single parameter that can receive both uncontrolled and controlled state.
   - `const state = useDialogState({ initialVisible: false })`; 
   - `const state = useDialogState({ visible, setVisible })`; 
+# conditional rendering: switch-case vs map
+- [Which is the react way of complex conditional rendering?](https://stackoverflow.com/questions/50901604)
+  - 👍 `{ this.state.err ? <Err /> : <Main /> }` 数据驱动视图
+  - 👎 `<div className="App"> {this.state.comp} </div>` state中不要存comp
+    - `<div className="App"> {comp} </div>` 将comp提取成变量更好
+- 不要直接写组件，可以先定义一个组件变量
+
+- [React conditional rendering: 9 methods with examples - LogRocket Blog](https://blog.logrocket.com/react-conditional-rendering-9-methods/)
+
+## [Conditionally render react components in cleaner way](https://dev.to/hey_yogini/conditionally-render-react-components-in-cleaner-way-1ik5)
+
+- 提出了 enum 和 switch-case 2种方法并讨论，可以是Component或ReactElement(自带实参props)
+
+- enum-pros
+  - 简单直观，直接从预定义对象中取组件
+  - {roleSettings(username)[userRole]} 所有子组件都有username参数
+  - {createElement(RoleSettings[userRole], { username })}
+
+- enum-cons
+  - ~~对每个组件不方便传入定制参数~~
+  - A downside of enum solution is all the component will be compiled even it doesn't need to rendered，但可解决
+
+- switch-case-pros
+  - 选择组件自身也是一个组件，all in react
+  - memo后方便优化性能
+  - 扩展case方便
+
+- switch-case-cons
+  - The long term cost of the switch/case in this scenario is higher. 
+  - When you're wrapping different components inside a single component, is better to share props across them because they will be used in the same places, so ideally they should receive the same props
+
+## [Use Dynamic Property Maps over Switch Case Statements | Sean C Davis](https://www.seancdavis.com/posts/use-dynamic-property-maps-over-switch-case-statements/)
+
+- 还可以考虑typescript的支持
+- 考虑定制逻辑的粒度，函数可以方便设置默认值参数、方法，map需要额外封装
+
+- Don’t Use If Statements
+  - It doesn’t scale. Once you add support for a third theme, it starts to become unwieldy(笨拙的；不灵巧的).
+  - Often these scenarios will require more logic than a simple string to return. It can become easy to get lost in which part of the if statement you’re in when the logic gets longer (though there are ways of avoiding that).
+
+- Don’t Use Switch Case Statements
+  - I do not like switch-case statements. I’ve rarely found a good use for them. 
+  - You can already see that it’s messier than the if statement. It doesn’t really scale much better than the if statement either.
+
+- Try Dynamic Property Maps
+  - My favorite pattern to use in these scenarios is a dynamic property map. 
+  - It works by defining a property and using square brackets to get/set
+  - It scales perfectly. Need to support a new mapping? Just add a new key-value pair.
+  - No need for a function. Everything is defined statically and accessed directly
+
+- I just go to the map every time. My code is consistent 
+
+- Accounting for Default Values
+  - Because this isn’t a function and just an object, we have to define default values differently.
+  - `buttonClassMap[theme || "dark"];`
+
+- Accounting For Bad Values
+  - `buttonClassMap[Object.keys(buttonClassMap).includes(theme) ? theme : "dark"];`
+
+- Using with Functions/Logic
+  - You’re not limited to return simple values here, either. You could even return a function.
+
+```JS
+const funcMap = {
+  a: (arg) => console.log(arg),
+  b: (arg) => console.log(arg),
+};
+
+funcMap["a"]("HELLO!"); // Logs "Hello!" to the console
+```
+## [Use an object instead of a switch - DEV Community](https://dev.to/ubmit/use-an-object-instead-of-a-switch-1e55)
+
+- tl;dr: whenever we notice that the switch is doing nothing more than mapping keys to values, we should use an object instead
+  - the usage of an object makes this code less complex and also more readable, since it's less verbose than the switch statement
+
+
+- use `keyof typeof` keywords to pull the object keys directly from the object, so you don't need to explicitly define the keys
+
+- Even if it isn’t just mapping, you can also use methods in object to perform more logic per case.
+  - This method has way more uses than mapping keys to values tho. 
+  - We could make the object keys functions for infinite possibilities (if it is needed)
+
+
+- I think I tend to see your use-cases here, but apperately this might have been a bad choice for replacing it with a map methodology.
+  - Switch-Case are generally understood even by all kind of software engineers (while loose object referencing is not that common in many languages)
+  - the switch could be refactored to make it less complex
+
+- A switch statement is more performant. Are you sure about that?
+  - SpiderMonkey (FireFox) seems to be consistently favouring object property lookup (not surprising as that is a core mechanism in JavaScript that needs to be performant).
+  - However somewhere around size > 1000 things get less predictable with V8 (Chromium). Perhaps putting getObjectSwitch on the hot code path may give it the full Turbofan treatment at some point in time.
+
+## [Replace Conditional With Map Refactoring](https://blog.rstankov.com/replace-conditional-with-map-refactoring/)
+- This is one of my favorite refactorings. It helps to group logic, making code easier to read and extend.
+
+
+- replace if-else/switch-case with map
+- for redux, I always prefer to use a utility like redux-create-reducer, to remove the noise from here and handle things like default case.
+
+
+## [Simplifying Code with Maps In JavaScript and React | ClarityDev blog](https://claritydev.net/blog/simplifying-code-with-maps-in-javascript)
+
+- Using a `Map` in this scenario is more advantageous than using an `Object`, as it simplifies the code, maintains the **order** of the tabs, and allows us to leverage the direct iteration and other benefits that Map provides.
+
+
+- 
+- 
+- 
+- 
+
+## [React Conditional Rendering With Type Safety and Exhaustive Checking - Lloyd Atkinson](https://www.lloydatkinson.net/posts/2022/react-conditional-rendering-with-type-safety-and-exhaustive-checking/)
+
+- While switch in the context of React is an improvement, unfortunately, a switch statement is not exhaustive like pattern matching in a functional language. 
+  - This means it’s easy to forget to update a switch.
+  - This pattern isn’t specific to just React. I considered demonstrating the pattern for multiple frameworks including Vue but decided against it.
+
+- There is an alternative approach that leads to more readable code while also adding extra type safety.
+
+- To begin with, I created a union type that contains all possible states
+  - The union isn’t an absolute necessity for this general pattern, but it’s how I can enforce type-safety and exhaustive pattern matching.
+  - The best approach for a type-safe object is the `Record` utility type.
+- The next step is to apply the same pattern to the conditional rendering of elements or components. 
+- TypeScript will ensure all states are included, and the correct type is returned. The pattern significantly improves code readability and maintainability.
+- A traditional `switch` will not tell you if you’ve forgotten to include a state, but this pattern will.
+
+```typescript
+
+type MovieType = 'love'|'action';
+
+const LoveComp = ()=><h1>love</h1>;
+const ActionComp = ()=><h1>action</h1>;
+
+const ConditionalMovie = ({type})=>{
+  
+  const icon:Record<MovieType, ReactNode>={
+    love: <LoveComp />,
+    action: <ActionComp />,
+  }
+  
+  return (
+    <div>
+    {icon[type]}
+    </div>
+  )
+  
+}
+```
+
+- 
+- 
+- 
+
 # [React wrapper hell was a mistake](https://twitter.com/aralroca/status/1644068034716356628)
 - but why is this bad ?i mean it is so easy to compose this way
 
@@ -113,13 +264,6 @@ const AppWithProviders = () => (
 - Well, have you tried flutter yet? 😈 There is actually an autogenerated comment there, otherwise you would be totally completely and hopelessly lost between 20-100 „), “, „); “, „}, “ & „}; “…
   - flutter采用函数，闭合括号无法区分指向范围，
   - react采用xml，闭合标签方便区分范围
-
-- 
-- 
-- 
-- 
-- 
-
 # [4 Common Patterns You Can Easily Focus On In Your React Code Reviews](https://www.chakshunyu.com/blog/4-common-patterns-you-can-easily-focus-on-in-your-react-code-reviews/)
 - Prop Drilling
 - A common (anti-)pattern to solve this issue is to pass the value from the parent component all the way to the child component that needs it. 
@@ -500,7 +644,7 @@ export default Button;
   - return React.createElement(props.component, props)
 - This pattern is very powerful and allows for great flexibility, as well as a way to interoperate with other libraries, such as your favorite routing or forms library. 
   - But it also comes with a small caveat!
-  - Using an inline function as an argument for the component prop may result in unexpected unmounting, since a new component is passed every time React renders. F
+  - Using an inline function as an argument for the component prop may result in unexpected unmounting, since a new component is passed every time React renders.
 
 ```JS
 import { Link } from 'react-router-dom';
@@ -747,15 +891,9 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 - https://twitter.com/kentcdodds/status/1256265379648700416
   - Great talk by @kentcdodds on why having too many props in a component can hurt performance and add unnecessary complexity, followed by a practical approach on how to avoid apropcalypse by using the state-reducer pattern with hooks!
-
-## uncontrollable components
-
-- https://github.com/jquense/uncontrollable
-  - Wrap a controlled react component, to allow specific prop/handler pairs to be omitted by Component consumers. 
-  - Uncontrollable allows you to write React components, with minimal state, and then wrap them in a component that will manage state for prop/handlers if they are excluded.
-# ref
+# more
 - [How to write performant React code: rules, patterns, do's and don'ts](https://www.developerway.com/posts/how-to-write-performant-react-code)
-  - Rule #1: If the only reason why you want to extract your inline functions in props into useCallback is to avoid re-renders of children components: don’t. It doesn’t work.
+  - Rule #1: If the only reason why you want to extract your inline functions in props into `useCallback` is to avoid re-renders of children components: don’t. It doesn’t work.
   - Rule #2: If your component manages state, find parts of the render tree that don’t depend on the changed state and memoise them to minimize their re-renders.
   - Rule #3. Never create new components inside the render function of another component.
-  - Rule #4. When using context, make sure that value property is always memoised if it’s not a number, string or boolean.
+  - Rule #4. When using context, make sure that `value` property is always memoised if it’s not a number, string or boolean.

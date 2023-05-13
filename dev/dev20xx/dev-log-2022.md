@@ -5156,23 +5156,6 @@ function createHook(initialValue: string) {
 }
 ```
 
-- [Conditionally render react components in cleaner way](https://dev.to/ms_yogii/conditionally-render-react-components-in-cleaner-way-1ik5)
-  - 提出了enum 和 switch-case 2种方法并讨论，可以是Component或ReactElement(自带实参props)
-  - enum-pros
-    - 简单直观，直接从预定义对象中取组件
-    - {roleSettings(username)[userRole]} 所有子组件都有username参数
-    - {createElement(RoleSettings[userRole], { username })}
-  - enum-cons
-    - ~~对每个组件不方便传入定制参数~~
-    - A downside of enum solution is all the component will be compiled even it doesn't need to rendered，但可解决
-  - switch-case-pros
-    - 选择组件自身也是一个组件，all in react
-    - memo后方便优化性能
-    - 扩展case方便
-  - switch-case-cons
-    - The long term cost of the switch/case in this scenario is higher. 
-      - When you're wrapping different components inside a single component (which is the case for this component), is better to share props across them because they will be used in the same places, so ideally they should receive the same props
-  - 不要直接写组件，可以先定义一个组件变量
 
 ## 0208
 

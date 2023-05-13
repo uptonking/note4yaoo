@@ -262,6 +262,17 @@ $$('[contenteditable]')
 
 ## 050
 
+## 0513
+
+- [Whats the best way to update an object in an array in ReactJS? - Stack Overflow](https://stackoverflow.com/questions/28121272/whats-the-best-way-to-update-an-object-in-an-array-in-reactjs)
+
+```JS
+const index = this.state.employees.findIndex(emp => emp.id === employee.id);
+employees = [...this.state.employees]; // important to create a copy, otherwise you'll modify state outside of setState call
+employees[index] = employee;
+this.setState({ employees });
+```
+
 ## 0511
 
 - [forms - CSS Input with width: 100% goes outside parent's bound - Stack Overflow](https://stackoverflow.com/questions/16907518/css-input-with-width-100-goes-outside-parents-bound)

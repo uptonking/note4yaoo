@@ -53,6 +53,7 @@ modified: 2020-11-03T06:54:59.051Z
   - 录制回放web操作的架构：rrweb、rrweb-player、extensions
   - 回放时，页面动态显示的是dom元素，不是图片视频
   - 类似矢量图片的矢量视频，放大无马赛克，体积小，缺点是计算量大
+  - [rrweb 实现原理介绍 - 知乎](https://zhuanlan.zhihu.com/p/622591441)
   - https://storyteller.webzard.io/
     - a no-code interactive tutorial builder built with rrweb
   - rrweb：打开 web 页面录制与回放的黑盒子

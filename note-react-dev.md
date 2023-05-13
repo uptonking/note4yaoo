@@ -10,8 +10,8 @@ modified: 2020-07-14T10:38:48.217Z
 
 # dev-xp
 
-- 多用useEffect，少在event handler里面执行side effects
-  - 特别是data fetching
+## [Can Swyx recreate React Hooks and useState in under 30 min?_201907](https://www.youtube.com/watch?v=KJP1E-Y-xyo)
+
 # guide
 - react-rfc
   - [react context selectors](https://github.com/reactjs/rfcs/pull/119)
