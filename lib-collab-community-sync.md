@@ -134,6 +134,18 @@ modified: 2022-11-29T20:41:25.566Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## what solutions/libraries exist for real-time server-owned state synchronization?
+- https://twitter.com/heyImMapleLeaf/status/1582180994752589824
+  - ❌not firebase or liveblocks. state is controlled and updated directly by client
+  - ❌not socket io or pusher. it's just generic messaging, no handling of state
+- My @logux_io was created to sync state via web sockets. 
+  - It is self-hosted and very flexible system. You can limit a state control by the server only.
+  - It has types for all API. I am specially proud that you can define a one interface for Map and then re-use it between client and server as an API contract.
+
 - ## Toying around with OS level multiplayer...
 - https://twitter.com/ronithhh/status/1630733879220011008
 - tbh i believe "multiplayer" should be platform level

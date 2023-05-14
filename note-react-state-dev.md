@@ -9,7 +9,7 @@ modified: 2020-12-08T13:40:02.577Z
 
 # guide
 
-- [A community-maintained spec for global state libraries](https://github.com/reactwg/react-18/discussions/116)
+- [A community-maintained spec for global state libraries: 3 levels](https://github.com/reactwg/react-18/discussions/116)
   - https://github.com/dai-shi/will-this-react-global-state-work-in-concurrent-rendering
 
 - context-selector的主要实现
@@ -41,7 +41,7 @@ modified: 2020-12-08T13:40:02.577Z
   - "client (cache)" - apollo-client; 
   - "query client (cache)" - react-query), 
   - but the end result is the same - "naked" state is wrapped and the referential equality is preserved even when the state changes.
-- So, instead of using cryptic libraries like use-context-selector, it might be a better idea to take advantage of the "observable store" pattern. If you don't feel like using an existing solution, you can easily implement everything yourself, it's like ~30 LOC with all the infrastructure.
+- So, instead of using cryptic(使用代码的，使用密码的) libraries like use-context-selector, it might be a better idea to take advantage of the "observable store" pattern. If you don't feel like using an existing solution, you can easily implement everything yourself, it's like ~30 LOC with all the infrastructure.
 
 - Use the container -> presentation pattern.. 
   - make each route in the app a container, use react router V6 object routing to pass observable stores to your containers and prop drill to presentation components so things are easier to test.
@@ -366,24 +366,20 @@ function StateProvider({ children }) {
     - lib: react-tracked
 
 - ## [Four patterns for global state with React hooks: Context or Redux_201905](https://blog.axlight.com/posts/four-patterns-for-global-state-with-react-hooks-context-or-redux/)
-  - S1: the most basic pattern should still be **prop passing**
+- S1: the most basic pattern should still be **prop passing**
+  - alternative to Prop passing: [Component passing](https://patrickroza.com/blog/component-vs-prop-drilling-in-react/)
 
-    - alternative to Prop passing: [Component passing](https://patrickroza.com/blog/component-vs-prop-drilling-in-react/)
+- S2: If an app needs to share state among components that are more deep than two level, it’s time to introduce **context**
+  - Note that all components with `useContext(ContextA)` will re-render if stateA is changed, even if it’s only a tiny part of the state. 
+  - Hence, it’s not recommended to use a context for multiple purpose.
 
-  - S2: If an app needs to share state among components that are more deep than two level, it’s time to introduce **context**
+- S3: Using **multiple contexts** is fine and rather recommended to separate concerns. 
+  - Contexts don’t have to be application-wide and they can be used for parts of component tree. 
+  - Only if your contexts can be used anywhere in your app, defining them at the root is a good reason.
 
-    - Note that all components with `useContext(ContextA)` will re-render if stateA is changed, even if it’s only a tiny part of the state. 
-    - Hence, it’s not recommended to use a context for multiple purpose.
-
-  - S3: Using **multiple contexts** is fine and rather recommended to separate concerns. 
-
-    - Contexts don’t have to be application-wide and they can be used for parts of component tree. 
-    - Only if your contexts can be used anywhere in your app, defining them at the root is a good reason.
-
-  - S4: The biggest limitation with multiple contexts is that dispatch functions are also separated. 
-
-    - If your app gets big and several contexts need to be updated with a single action, it’s time to introduce **Redux**. 
-    - (Or, actually you could dispatch multiple actions for a single event, I personally don’t like that pattern very much.)
+- S4: The biggest limitation with multiple contexts is that dispatch functions are also separated. 
+  - If your app gets big and several contexts need to be updated with a single action, it’s time to introduce **Redux**. 
+  - (Or, actually you could dispatch multiple actions for a single event, I personally don’t like that pattern very much.)
 
 - ## 精读《React Hooks 数据流》
 - 单组件最简单的数据流一定是 `useState`
@@ -444,15 +440,13 @@ function Child() {
 ```
 
 - ## 针对context的value频繁更新导致重复渲染性能降低的问题
-  - [RFC: Context selectors](https://github.com/gnoff/rfcs/blob/context-selectors/text/0000-context-selectors.md)
+- [RFC: Context selectors](https://github.com/gnoff/rfcs/blob/context-selectors/text/0000-context-selectors.md)
+  - https://github.com/reactjs/rfcs/pull/119
 
-    - https://github.com/reactjs/rfcs/pull/119
+- [RFC: useMutableSource](https://github.com/reactjs/rfcs/blob/master/text/0147-use-mutable-source.md)
+  - enables React components to safely and efficiently read from a mutable external source in Concurrent Mode
 
-  - [RFC: useMutableSource](https://github.com/reactjs/rfcs/blob/master/text/0147-use-mutable-source.md)
-
-    - enables React components to safely and efficiently read from a mutable external source in Concurrent Mode
-
-  - With context selectors, we might still be facing the "unconditional render starting at the root" and "calculating selectors while rendering" aspects. It's possible that useMutableSource may allow us to work around that. But, at least we wouldn't be forcing every connected component to fully re-render.
+- With context selectors, we might still be facing the "unconditional render starting at the root" and "calculating selectors while rendering" aspects. It's possible that useMutableSource may allow us to work around that. But, at least we wouldn't be forcing every connected component to fully re-render.
   - `useMutableSource()` seems to aim at solving this problem officially
 
 - 有没有什么办法可以优化一下：使得不该更新的组件不rerender呢？

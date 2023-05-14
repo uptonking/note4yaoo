@@ -67,7 +67,6 @@ modified: 2020-07-14T11:03:53.196Z
   - We released Nano Stores 0.5, a new version of tiny (200-900 bytes) state manager for React/Vue/Svelte, designed to:
     - Move logic from components to stores and separate application logic and UI
     - Support tree-shaking
-    - https://twitter.com/sitnikcode/status/1452629669933731849
     - [Nano Stores 0.5 · Issue_202109](https://github.com/nanostores/nanostores/issues/57)
   - [Nano Stores in Angular: how to make the state management simpler - DEV Community](https://dev.to/evilmartians/nano-stores-in-angular-how-to-make-the-state-management-simpler-38a1)
 
@@ -91,6 +90,8 @@ modified: 2020-07-14T11:03:53.196Z
 - storeon /1.5kStar/MIT/202009/js
   - https://github.com/storeon/storeon
   - A tiny event-based Redux-like state manager for React, Vue, Angular, and Svelte.
+  - [Using async data fetching does not return the latest state after calling state.get()](https://github.com/storeon/storeon/issues/152)
+    - We recommend moving to nanostores
 
 - reatom /504Star/MIT/202006/ts
   - https://github.com/artalar/reatom
@@ -363,6 +364,10 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/redux-zero/redux-zero
   - /1.9kStar/MIT/202008/ts
   - lightweight state container based on Redux
+# atom-multi-stores
+- https://github.com/Omnistac/zedux
+  - A Molecular State Engine for React.
+  - Zedux is a multi-paradigm state management tool that features a powerful composable store model wrapped in a DI-driven atomic architecture.
 # state-machine
 - https://github.com/jakesgordon/javascript-state-machine
   - /7.4kStar/MIT/201807/js

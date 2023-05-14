@@ -96,14 +96,16 @@ $$('[contenteditable]')
   - lww的字符串改为针对crdt优化的类型
 
 - collab-sync
-  - 👉🏻 string-crdt: ? list-crdt
+  - evolu(hlc+worker)
+  - logux
+  - string-crdt: ? list-crdt
   - collab-data-structure: lww-with-hlc
   - remoteStorage: google-drive、网盘、七牛对象存储
   - lo-fi-sync-server
   - pouchdb
 
 - sqlite-web
-  - evolu(hlc)
+  - evolu(hlc+worker)
   - absurd-sql-ts: read ArrayBuffer
   - kikko
 
@@ -261,6 +263,35 @@ $$('[contenteditable]')
 # dev-05
 
 ## 050
+
+## 0514
+
+- [Why useReducer Is the Cheat Mode of Hooks](https://overreacted.io/a-complete-guide-to-useeffect/#why-usereducer-is-the-cheat-mode-of-hooks)
+
+```JSX
+function Counter({ step }) {
+  const [count, dispatch] = useReducer(reducer, 0);
+
+  function reducer(state, action) {
+    if (action.type === 'tick') {
+      return state + step;
+    } else {
+      throw new Error();
+    }
+  }
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      dispatch({ type: 'tick' });
+    }, 1000);
+    return () => clearInterval(id);
+    // 💡 dispatch is still stable even when props.step changes
+  }, [dispatch]);
+
+  return <h1>{count}</h1>;
+}
+
+```
 
 ## 0513
 

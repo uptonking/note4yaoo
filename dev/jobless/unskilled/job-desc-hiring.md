@@ -26,11 +26,11 @@ modified: 2021-09-26T16:44:04.493Z
 
 - plan/职业规划
   - 减少焦虑、减少自己的兴趣，专注
-  - 技术代表作: 打磨编辑器、表格
+  - 技术代表作: 打磨编辑器、表格, 去掉react依赖、协作sync-layer
   - 产品代表作: 低代码
   - 商业化的探索: 平台工具，如飞书、小程序； 项目外包
   - 积累技术和代码，提高性能和用户体验，深入编辑器、表格 prosemirror、tiptap
-  - 开发和优化个人玩具，重写outline知识库
+  - ~~开发和优化个人玩具，重写outline知识库~~
 
 - self-pros_v202110
   - motivation for web developer: opening and sharing

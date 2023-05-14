@@ -100,6 +100,8 @@ modified: 2020-10-05T06:17:42.467Z
 
 - https://github.com/fabricjs/fabric.js
   - Javascript Canvas Library, SVG-to-Canvas (& canvas-to-SVG) Parser
+- https://github.com/nihaojob/vue-fabric-editor
+  - 基于fabric.js和Vue的图片编辑器，可自定义字体、素材、设计模板。
 
 - https://github.com/cburgmer/rasterizeHTML.js
   - http://cburgmer.github.io/rasterizeHTML.js

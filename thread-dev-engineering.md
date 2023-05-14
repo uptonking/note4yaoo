@@ -12,6 +12,21 @@ modified: 2021-01-21T17:52:13.333Z
 # discuss
 - ## 
 
+- ## 
+
+- ## Tip: Write a design doc (what, why, how, whatever) for any feature you are going to implement. 
+- https://twitter.com/evoluhq/status/1261766649679667208
+
+- ## unpopular opinion: I don't like OSS monorepos. They bias toward maintainers over users & contributors.
+- https://twitter.com/swyx/status/1292471675712188416
+  - git history a mess
+  - documentation a mess
+  - github issues a mess
+  - hard to stay disciplined on dependencies
+  - cryptic tooling is a barrier to contributing
+
+- Maintainers are the lifeblood of software, let alone open source. Those downsides are real but optimizing for authors has trade-offs like anything else and often nets out positive all things considered.
+
 - ## I recently got the chance to mentor a few junior developers.
 - https://twitter.com/kmuenster/status/1655790446621384704
   - (1) “Return Early” Instead Of Nested Conditions
@@ -61,9 +76,9 @@ modified: 2021-01-21T17:52:13.333Z
 - https://twitter.com/yeshu_in_future/status/1642032791444656129
   - 它们和传统页面的差异在于，应用往往会常驻在标签页中，生命周期更长，用户的使用时间也更长。
 - 有一些常见的优化思路：
-  01.       关注事件绑定，无论是抽象的event bus 或是 dom 事件，都要在必要的时候解绑
-  02.       关注DOM数量，理想情况是不会预期外的增长
-  03.       关注一切可复用的变量，比如组件不要反复销毁重建，复用渲染；对象的key如果要用字符串拼接，可能不如拆开几个map 或者用二维数组，比如表示表格单元格的位置和值；避免重复渲染大量svg icon ，基于id 复用，等
+  01.         关注事件绑定，无论是抽象的event bus 或是 dom 事件，都要在必要的时候解绑
+  02.         关注DOM数量，理想情况是不会预期外的增长
+  03.         关注一切可复用的变量，比如组件不要反复销毁重建，复用渲染；对象的key如果要用字符串拼接，可能不如拆开几个map 或者用二维数组，比如表示表格单元格的位置和值；避免重复渲染大量svg icon ，基于id 复用，等
 
 - ## When polishing creative work, I can often get into decision paralysis about the priority of things to fix.
 - https://twitter.com/aboodman/status/1648835192285704193

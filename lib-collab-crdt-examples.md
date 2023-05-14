@@ -11,6 +11,7 @@ modified: 2022-04-05T10:08:25.947Z
 
 - ref
   - https://github.com/alangibson/awesome-crdt
+  - [Alternatives · ElectricSQL](https://electric-sql.com/docs/reference/alternatives)
   - [CRDTs for Non Academics - YouTube](https://www.youtube.com/watch?v=vBU70EjwGfw)
   - https://github.com/doodlewind/crdt-and-local-first
 # popular
@@ -22,6 +23,9 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/evoluhq/evolu
   - https://www.evolu.dev/
   - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
+  - 依赖fp-ts、protobuf、kysely、murmurhash、~~zod~~
+  - 提供了dbworker.worker
+  - All table columns except for ID are nullable by default. It's not a bug; it's a feature. Local-first data are meant to last forever, but schemas evolve. 
   - writing local-first software has been challenging because of the lack of libraries and design patterns. I personally failed several times, and that's why I created Evolu.
   - Evolu architecture is almost a clone of James Long CRDT for mortals. Rewritten and improved
   - Evolu uses end-to-end encryption and generates strong and safe passwords for you. 
@@ -29,6 +33,21 @@ modified: 2022-04-05T10:08:25.947Z
     - We plan to do at least two security audits.
   - Evolu is not pure P2P software. For syncing and backup, there needs to be a server. 
   - Evolu CRDT has no support for transactions because CRDT transactions are still an unsolved issue. 
+  - All table columns except for ID are nullable by default. It's not a bug; it's a feature. Local-first data are meant to last forever, but schemas evolve. 
+
+- https://github.com/logux/core /202209/js/提供了ts声明
+  - https://logux.io/
+  - https://github.com/logux/server
+  - https://github.com/logux/client
+  - https://github.com/logux/examples
+  - Logux is an WebSocket client/server framework to make: collaborative apps; realtime apps; offline-first
+  - Logux is a new way to connect client and server. Instead of sending HTTP requests (e.g., AJAX and GraphQL), it synchronizes log of operations between client, server, and other clients.
+  - when multiple users work with the same document. Logux has features inspired by CRDT to resolve edit conflicts between users. 
+  - Time travel to keep actions order the same on every client. A distributed timer to detect the latest changes.
+  - offline first: Logux saves Redux actions to IndexedDB and has a lot of features to merge changes from different users.
+  - Logux combines WebSocket with modern reactive client architecture. It synchronizes Redux actions between clients and servers, and keeps the same order of actions.
+  - Optimistic UI to improve UI performance by updating UI without waiting for an answer from the server. Time travel will revert changes later if the server refuses them.
+  - Compatible with modern stack: Redux, Vuex and pure JS API, works with any back-end language and any database.
 
 - FluidFramework /4.2kStar/MIT/202302/ts
   - https://github.com/microsoft/FluidFramework
@@ -118,6 +137,12 @@ modified: 2022-04-05T10:08:25.947Z
   - It supports Yjs/Yrs and Automerge.
   - Our goal was to evaluate if we could leverage a Postgres-backed CRDT and Supabase's existing Realtime API for change-data-capture to enable development of collaborative apps on the Supabase platform.
   - pg_crdt extension is a proof-of-concept that wraps rust's yrs and automerge libraries using the pgx framework to add a Postgres native CRDT, crdt.ydoc.
+
+- https://github.com/electric-sql/electric /ts+elixir
+  - Local-first software platform for developing web and mobile apps with instant reactivity, realtime multi-user collaboration and conflict-free offline.
+  - With active-active replication between Postgres and SQLite.
+  - ElectricSQL gives you instant local-first for your Postgres. 
+  - Elixir sync service that manages active-active replication between Postgres and SQLite
 
 - liveblocks /1.5kStar/apache2/202302/ts/服务端未开源
   - https://github.com/liveblocks/liveblocks

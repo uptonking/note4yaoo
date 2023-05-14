@@ -139,6 +139,10 @@ modified: 2023-04-05T19:35:14.347Z
 
 - https://github.com/dbohdan/caddy-markdown-site
   - Serve Markdown files as HTML pages with CSS using just Caddy
+
+- https://github.com/YousefED/filebridge /ts
+  - FileBridge is a simple server to interact with a directory on your local file system.
+  - FileBridge exposes filesystem events (provided by Chokidar) over WebSockets.
 # file-folder-dir-scan-watch
 - 文件编辑浏览的实现思路
   - edit > ~~save(内存或本地)~~ > render

@@ -47,7 +47,57 @@ modified: 2022-12-14T18:26:38.588Z
 # discuss
 - ## 
 
-- ## 
+- ## My goal is to build a database that makes it easier to build local-first software._202206
+- https://twitter.com/ccorcos/status/1532185301438738433
+  - Embedded, reactive, schemaless, and transactional read/write directly to indexes (inspired by FoundationDb)
+- SQLite is great, but it leaves much to be desired. It's mostly just a problem with SQL. 
+  - Queries aren't reactive, no multi-valued columns, no indexes across tables for relational queries... All of these currently require bespoke solutions.
+- I'm heavily invested in Offline First and have extensively used nanoSQL https://nanosql.io then and have now moved on to http://yjs.dev along with hocuspocus
+  - For my client side store I've just switched to https://valtio.pmnd.rs + a modified version of https://github.com/Noitidart/valtio-persist to persist to IndexedDb
+  - On the server I'm using MongoDb in an earlier app and RocksDb for the new app.
+  - Before yjs I spent considerably time and effort with Logux https://logux.io but hit too many roadblocks.
+  - 
+- Super interesting! May I ask you what you think about the datascript/datomic approach? It does not offer persistence; I'm more particularly asking about the datoms, EAVT/AVET/etc systematic indexes, and it's datalog query engines.
+  - The triplestore indexes are great. This database is a lower level abstraction, and I do in fact use datalog queries and EAV indexes most of the time I use this database(tupledb)
+- As for general thoughts on Datomic…
+  - You cannot construct your own indexes and paginate queries. For example, a contacts app might want to sort by last name, first name, creation time… Only way to do this in Datomic is to manually denormalize into a specific value.
+  - It also isn’t exactly schemaless. Attributes are defined with :symbols which are statically defined and held memory. That means “new column” in an Airtable-like application can’t just generate a new UUID for an attribute…
+  - The whole time travel thing with the T in EAVT is neat. And it’s useful from a UX perspective to inquire about “when did I change this phone number” etc. But I don’t imagine wanting to query the state of the database in the past…
+  - At the end of the day Datomic is awesome. But it is designed for big enterprise consulting workloads (Rich Hickeys day job) and not end-user databases (like Notion, Airtable, Coda, etc) or Local-first software (embedded, smaller amounts of data)…
+
+- Very cool. I've been attacking the same problem from the opposite direction -- a local first & language agnostic ORM(vlcn-orm)
+  - Maybe there's some opportunities here. E.g., adding tuple-databases as a backend to Aphrodite for a simpler dx.
+  - schemas in the application rather than the database
+
+- I had started down this direction until I realized that I’m basically creating another programming language all over again… For example, a complex query like “get me all scores that are more than twice the lowest score” is hard to represent without a proper programming language.
+  - I'm going about it by (1) putting the schema definition language into a DSL but (2) generating the query builders in the target languages (swift/kotlin/typescript/..). Seems to sidestep this problem.
+- this is fine to express in SQL with subqueries; if the DSL supports subqueries it's okay.
+  - Then you want to hoist subqueries as functions so you can reuse and compose them... Building a DSL is not a "wrong" approach. I just remember in my early programming days getting really frustrated with HTML templating engines because I just wanted a proper programming language.
+- I noticed the same thing w.r.t. "reuse and compose subqueries" — that's essentially what the macros in my query language are
+- I wonder if we're talking past one another. The query builder is a native api and inspired by https://entgo.io/docs/traversals. During ~8 years of using (and supporting users of) the internal version @Meta , I hit very few walls in terms of unsupported query patterns.
+- https://github.com/obi1kenobi/trustfall /rust
+  - A query engine for any combination of data sources.
+  - databases, APIs, file systems, anything else you can think of + any combination of them.
+
+- Interesting. Are you familiar with Datalog-style queries? 
+  - Seems pretty similar, except the edges are traversed recursively without having to define methods to traverse school edge. 
+  - SPARQL and Datomic are good examples. And I made a demo too
+- This article specifically helped me get started understanding things...
+  - Just remember that Datomic also allows you to query into the past so that's why `tx` lands in their indexes.
+  - [Indexes | Datomic](https://docs.datomic.com/pro/query/indexes.html)
+- 
+- 
+- 
+- 
+
+
+
+
+- 
+- 
+- 
+- 
+
 
 - ## Where is perspective discussed in software design?
 - https://twitter.com/ccorcos/status/1622664703536435201

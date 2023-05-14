@@ -15,7 +15,15 @@ modified: 2021-08-05T04:31:02.298Z
 - https://twitter.com/mpocock1/status/1509964736275927042
 - more-cheatsheet
   - https://nerdcave.com/tailwind-cheat-sheet
+
+- ## SvelteKit is written in JS and distributed as source code — no build step — and it's been miraculous for productivity. 
+- https://twitter.com/sitnikcode/status/1639686112590323715
+  - build steps make sense for apps, they make much less sense for libraries
+- Agree. In open source build step (for TS or meaningless bundler) only reduces library maintainability.
+  - All my open source ( @PostCSS , @logux_io ) is written in JS and have TS types in separated files (tests also is using TS to check that types and JS code are synced).
 # discuss
+- ## 
+
 - ## 
 
 - ## 泛型傻瓜式*指南了，从三个角度描述了泛型的作用

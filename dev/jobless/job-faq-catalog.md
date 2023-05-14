@@ -52,13 +52,15 @@ modified: 2021-09-20T09:00:43.564Z
   - 常用组件
   - 经典css
 # 多刷几遍
-
 - [面试底层逻辑整理](https://docs.google.com/document/d/1srnMc_hiOsyH7MuK196vExGGFjLJ0f-NDBih7jPJ2fE/edit)
 
 - [2020年中大厂前端面试总结 高频+超高频](https://github.com/funnycoderstar/blog/issues/156)
 - [两年前端双非二本，科班出身面经分享（已拿阿里，头条，pdd，快手offer）](https://juejin.cn/post/6894101837696204808)
 
 - [前端面试指北 面向面经学习+手撕代码](https://www.yuque.com/nepjnq/fgeemd)
+
+- 简历包装
+  - [1-1评审了20份前端简历，其实每个人都有亮点 - 掘金](https://juejin.cn/post/7230348908382601275)
 
 - [前端高频面试精粹「精炼+引导」](https://827652549.github.io/my-book/#/README)
 

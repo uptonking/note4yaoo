@@ -14,7 +14,13 @@ modified: 2022-12-19T01:59:37.634Z
 # discuss
 - ## 
 
-- ## 
+- ## What if you could use web workers directly from JSX?
+- https://twitter.com/manucorporat/status/1657419808336486400
+
+- Last year, did research for how to do filtering, sorting, grouping, etc. in a web worker for TanStack Table, but had no idea how it could be bundled. Maybe it's actually possible?
+  - https://twitter.com/KevinVanCott/status/1657603580386242561
+- This has massive implications for the table API. Essentially everything needs to become async/lazy.
+- Big if true. I just don't understand how it could work and bundle yet. Maybe a qwik adapter for table could explore this?
 
 - ## [Webworker support · konvajs/react-konva](https://github.com/konvajs/react-konva/issues/474)
 - i dont think react-konva is slow. I am using it to create grids, around 1 million rows x 1 million columns. I find it really fast, comparable to native canvas, with marginal difference.

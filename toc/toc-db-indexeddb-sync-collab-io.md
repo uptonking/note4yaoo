@@ -88,16 +88,6 @@ modified: 2022-10-22T18:47:16.228Z
   - Playing with service workers, indexeddb and background sync.
   - https://www.jawsdb.com/
     - Database as a service
-
-- https://github.com/logux/core /202209/ts
-  - https://logux.io/
-  - Logux is a new way to connect client and server. Instead of sending HTTP requests (e.g., AJAX and GraphQL), it synchronizes log of operations between client, server, and other clients.
-  - when multiple users work with the same document. Logux has features inspired by CRDT to resolve edit conflicts between users. 
-  - Time travel to keep actions order the same on every client. A distributed timer to detect the latest changes.
-  - offline first: Logux saves Redux actions to IndexedDB and has a lot of features to merge changes from different users.
-  - Logux combines WebSocket with modern reactive client architecture. It synchronizes Redux actions between clients and servers, and keeps the same order of actions.
-  - Optimistic UI to improve UI performance by updating UI without waiting for an answer from the server. Time travel will revert changes later if the server refuses them.
-  - Compatible with modern stack: Redux, Vuex and pure JS API, works with any back-end language and any database.
 # collab
 - https://github.com/yjs/y-indexeddb
   - IndexedDB database adapter for Yjs

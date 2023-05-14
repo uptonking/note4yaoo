@@ -29,6 +29,21 @@ modified: 2020-11-02T19:13:04.103Z
 - https://github.com/jshjohnson/Choices
   - configurable select box/text input plugin. Similar to Select2 and Selectize but without the jQuery
   - 依赖redux、fuse.js(fuzzy-search in js)
+# react-context-redux
+- https://github.com/bergkvist/react-context-toolkit /ts
+  - Toolkit for React Context API heavily inspired by @reduxjs/toolkit and react-redux.
+  - It uses the React Context API instead of Redux for managing state under the hood.
+  - Depends on use-context-selector to prevent unnecessary rerenders.
+  - createSlice(): This is exported directly from @reduxjs/toolkit
+
+- https://github.com/didierfranc/react-waterfall /js
+  - https://github.com/didierfranc/react-waterfall-example
+  - React store built on top of the new context API
+  - During development redux-devtools are automatically enabled. 
+  - [Replacing Redux with core React APIs | by Didier FRANC | Medium](https://medium.com/@DidierFranc/replacing-redux-with-the-new-react-context-api-8f5d01a00e8c)
+
+- https://github.com/RichardBray/no-redux /js
+  - [Replacing redux with react hooks and context (part 1)](https://medium.com/octopus-labs-london/replacing-redux-with-react-hooks-and-context-part-1-11b72ffdb533)
 # redux-utils
 - https://github.com/rt2zz/redux-persist
   - Persist and rehydrate a redux store.

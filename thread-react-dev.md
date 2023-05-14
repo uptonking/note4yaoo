@@ -12,6 +12,16 @@ modified: 2021-01-06T14:40:11.360Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## TIL: console.log in React render doesn't mean a component will be really rendered. Put console.log to useEffect to check whether a render happens.
+- https://twitter.com/evoluhq/status/1608253814099820544
+
+- Did you know? useReducer and useState behave differently in React 18. So, preferring useState that can optimize more makes sense when useReducer isn't necessary. useState works for most cases even with _reducer_ 
+  - https://twitter.com/dai_shi/status/1534170089981100032
+
 - ## 💡 React tip: I think most implementations of `usePrevious` will write to a ref in an effect and return it, but the rules of react advise us to not read refs during render.
 - https://twitter.com/TkDodo/status/1653418107103264774
   - I know it looks weird, but calling `setState` during render (guarded by an `if` to avoid infinite loops) is actually the recommended way.
@@ -136,7 +146,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                         `ValueFront`,                         `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                           `ValueFront`,                           `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors
