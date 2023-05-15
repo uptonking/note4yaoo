@@ -26,6 +26,10 @@ modified: 2023-02-17T21:48:01.840Z
   - Packages for improving your development workflow with react admin
   - 已提供: rbac, layout
   - wip: search
+- https://github.com/BlackBoxVision/ra-data-simple-microservices
+  - React Admin DataProvider with support for micro-services architecture.
+- https://github.com/BlackBoxVision/ra-data-jsonapi-microservices
+  - React Admin provider with support for microservices with JSON API Spec
 - https://github.com/BigBasket/ra-components /js
   - Opensource components for react-admin.
 - https://github.com/ValentinnDimitroff/ra-compact-ui /js

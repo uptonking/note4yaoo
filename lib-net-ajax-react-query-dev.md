@@ -46,6 +46,9 @@ modified: 2023-03-05T08:55:03.696Z
   - it's only sent to the server. 
   - For example, cookies that persist in server-side sessions don't need to be available to JavaScript and should have the HttpOnly attribute. 
   - This precaution helps mitigate cross-site scripting (XSS) attacks.
+# discuss-faq
+- ## [fix(query-core): correct placeholderData prevData value with select fn](https://github.com/TanStack/query/pull/5227)
+- for v5, replace `keepPreviousData: true` with `placeholderData: (prev) => prev`
 # discuss
 - ## 
 
@@ -58,9 +61,6 @@ modified: 2023-03-05T08:55:03.696Z
 - 💡 heh, I actually did the `array->Map` switch for the Redux core in v5 alpha
 - Ooh do XState next (we love our bespoke artisanal handcrafted observables)
   - All ActorRefs (what is returned from interpret(...)) are observable
-
-
-
 
 - ## Should we return a typed `setData` function from `useQuery` ?
 - https://twitter.com/TkDodo/status/1650104471555383299

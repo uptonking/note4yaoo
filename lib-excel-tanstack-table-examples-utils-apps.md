@@ -11,10 +11,16 @@ modified: 2022-08-21T10:36:31.021Z
 
 # utils-v8
 - https://github.com/utsavdotpro/ReactTable-Utils
-  - TableHeaderBuilder Class
+  - `TableHeaderBuilder` Class
   - Headless, just like ReactTable
   - Util functions & classes for working with TanStack Table v8 (ReactTable) easily & quickly.
   - More readable & maintainable code than config object
+
+- https://github.com/thisisrishabh22/react-table-autocomplete
+  - Magical solution for editable react-table with autocomplete feature
+
+- https://github.com/bightg30098/tanstack-react-table-virtual-overlayscrollbar
+  - @tanstack/react-table v8, @tanstack/virtual v3, overlayscrollbars
 # utils-v7
 - https://github.com/GuillaumeJasmin/react-table-sticky
   - Sticky hook for React Table v7
@@ -67,8 +73,8 @@ modified: 2022-08-21T10:36:31.021Z
 
 - https://github.com/quantmind/metablock-js
   - TypeScript tools for the metablock cloud
-# ref
-- [Beautiful drag and drop interactions with react hooks](https://dev.to/griffadev/beautiful-drag-and-drop-interactions-with-react-hooks-4obo)
+# more
+- [Beautiful drag and drop interactions with react hooks + react-table.v7 + dnd-kit](https://dev.to/griffadev/beautiful-drag-and-drop-interactions-with-react-hooks-4obo)
   - build a drag and drop sortable table using @dnd-kit and react-table.
   - https://codesandbox.io/s/react-table-drag-and-drop-sort-rows-with-dnd-kit-btpy9
 
@@ -76,5 +82,5 @@ modified: 2022-08-21T10:36:31.021Z
 
 - https://github.com/Blezzoh/RTable7
   - React Table 7 implementation example
-  - https://codesandbox.io/s/github/Blezzoh/RTable7
   - [React-table 7 Tutorial](https://medium.com/@blaiseiradukunda/react-table-7-tutorial-3d8ba6ac8b16)
+  - 纯前端

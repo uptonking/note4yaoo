@@ -62,7 +62,7 @@ modified: 2022-08-21T10:02:05.129Z
   - 前端依赖 undb, dnd-kit、tanstack-table, redux-toolkit, emotion, @loadable/component, jotai, react-hook-form, trpc
     - 可在redux-devtools中查看数据结构
   - 后端依赖 nestjs、mikro-orm、trpc、undb
-  - [feature/frontend next_20230503, 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
+  - [feature/frontend next_20230503(v0.3), 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
     - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
 
 - nocodb /33kStar/AGPLv3/202212/ts/vue/重后端/多视图

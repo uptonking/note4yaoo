@@ -41,6 +41,8 @@ modified: 2022-08-21T10:19:58.756Z
 - 参考
   - react-aria-grid: aria grid pattern
   - react-pivottable
+  - 基于virtual-grid实现table
+  - server-optimize
 
 - 定制filter/sort的顺序
 # react-table表格实现的ui结构层次

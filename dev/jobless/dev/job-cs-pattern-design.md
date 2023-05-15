@@ -56,6 +56,7 @@ modified: 2021-09-23T18:31:42.015Z
   - [JavaScript设计模式与开发实践 | 汪图南](https://wangtunan.github.io/blog/designPattern/)
   - [JavaScript设计模式es6（23种) - 掘金](https://juejin.cn/post/6844904032826294286)
   - [JavaScript中常见的十五种设计模式 - -渔人码头- - 博客园](https://www.cnblogs.com/imwtr/p/9451129.html)
+  - [Hooks Pattern](https://www.patterns.dev/posts/hooks-pattern)
   - [JavaScript 设计模式](https://www.freecodecamp.org/chinese/news/javascript-design-patterns-explained/)
     - [JavaScript Design Patterns – Explained with Examples](https://www.freecodecamp.org/news/javascript-design-patterns-explained/)
 # 创建型

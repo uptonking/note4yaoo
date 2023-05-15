@@ -15,16 +15,15 @@ modified: 2020-12-19T18:22:27.577Z
 - resources
   - https://github.com/deebloo/things-you-can-do-in-a-web-worker
 # worker-web
-- https://github.com/albertodeago/cloc-web
+- https://github.com/albertodeago/cloc-web /ts
   - https://cloc-web.netlify.app/
-  - The objective of this project is to implement a simple CLOC application using WebWorkers to keep the UI interactive and the new WebFileSystemAPI to let the user select the project from the local file-system.
+  - The objective of this project is to implement a simple CLOC(Count Lines Of Code) application using WebWorkers to keep the UI interactive and the new WebFileSystemAPI `FileSystemHandle` to let the user select the project from the local file-system.
 
 - https://github.com/StudentOfJS/query-plus
   - fetch and process data in web worker, store in indexedDB.
   - We created Query+ as a React hook library, to make fetching, processing and caching data as easy as possible.
 
-- https://github.com/ampproject/worker-dom
-  - /2.6kStar/Apache2/202012/ts
+- https://github.com/ampproject/worker-dom /2.6kStar/Apache2/202012/ts
   - The same DOM API and Frameworks you know, but in a Web Worker.
   - An in-progress implementation of the DOM API intended to run within a Web Worker.
   - Purpose: Move complexity of intermediate work related to DOM mutations to a background thread, 
@@ -77,6 +76,11 @@ modified: 2020-12-19T18:22:27.577Z
   - Fast Datagrid widget for the Jupyter Notebook and JupyterLab
   - [I see some cons using Web Workers like it is done in ipysheet](https://github.com/bloomberg/ipydatagrid/issues/3)
 # worker-utils
+- https://github.com/jimmywarting/await-sync /js
+  - Perform async work synchronously using web worker and SharedArrayBuffer
+  - The only cross compatible solution that works fine in Deno, NodeJS and also Web Workers
+  - The benefit of this package over other desync or synckit, make-synchronous and others libs is that this only uses web tech like Worker and SharedArrayBuffer instead of spawning new processes or using any nodes specific like: receiveMessageOnPort(port) or WorkerData to transfer the data.
+
 - https://github.com/BuilderIO/partytown
   - Relocate resource intensive third-party scripts off of the main thread and into a web worker
 

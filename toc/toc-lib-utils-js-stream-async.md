@@ -14,9 +14,11 @@ modified: 2023-04-04T22:36:31.529Z
   - streams data for tables in the background, updates and renders them using templating frameworks like Mustache.js, HandleBars.js
   - The idea behind StreamTable.js is to initially populate minimum rows (maybe 10 or 20) and after that it streams data silently in the background and update the table.
 - https://github.com/EloquentStudio/filter.js /201802/js
+  - http://eloquentstudio.github.io/filter.js/
   - Complete solution for client side filtering and rendering using JSON data
+  - client-side JSON objects filter which can render html elements. 
+  - Multiple filter criteria can be specified and used in conjunction with each other.
   - Add data using ajax streaming
-
 
 - https://github.com/jimmywarting/StreamSaver.js /js
   - the solution to saving streams in the web browser. 
@@ -41,7 +43,6 @@ modified: 2023-04-04T22:36:31.529Z
   - Because of the structure of the HTML `<table>` element,  `<td>` elements must be aligned with their respective row/column, which causes default `<regular-table>` to only be able to scroll in increments of a cell, which can be irregular when column data is of different lengths. 
   - regular-table is natively compatible with `perspective`, a WebAssembly streaming visualization engine. 
     - https://github.com/finos/perspective
-
 # stream
 - https://github.com/zoubin/streamify-your-node-program
   - 对Node.js中stream模块的学习积累和理解

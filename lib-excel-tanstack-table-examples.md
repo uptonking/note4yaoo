@@ -10,10 +10,11 @@ modified: 2022-08-21T10:37:01.349Z
 # guide
 
 - tips
-  - react-table的问题在于没有成熟的使用案例，没有大公司案例支持，缺少样式主题、性能优化，特别是缺少在表格的单元格中显示图表的示例如ag-grid-charts
+  - 没有成熟的使用案例，没有大公司案例支持，
     - github最新的issues多维表格界面基于react-table实现
     - outline wiki使用了react-table和react-window
-  - ✨ list和grid切换功能 需要自己实现
+  - 缺少样式主题、性能优化，特别是缺少在表格的单元格中显示图表的示例如ag-grid-charts
+  - list和grid切换功能 需要自己实现
 
 - usecase
   - rowy
@@ -28,7 +29,11 @@ modified: 2022-08-21T10:37:01.349Z
   - more/rewrite
     - 重写ui-table
     - personal-kanban
-    - pivot-table in v7
+    - pivot-table
+
+- dev-xp
+  - 服务端表格示例，可以参考其他经典的无限滚动列表实现，
+    - 不一定要表格，比如react-window
 # popular-v8
 - mantine/material-react-table /301Star/MIT/202212/ts
   - https://github.com/KevinVandy/material-react-table
@@ -57,6 +62,13 @@ modified: 2022-08-21T10:37:01.349Z
   - Data Grid component with Mantine UI and react-table v8.
   - 样式非常友好
 
+- https://github.com/bgrins/data-ui-tests
+  - https://bgrins.github.io/data-ui-tests/
+  - benchmarks with vanilla-table/handsontable, revo-grid
+- https://github.com/ganeshmani/react-ag-data-grid
+  - https://react-ag-data-grid.vercel.app/
+  - Using ag-grid-react in React: Guide and Alternatives
+
 - mantine-datagrid /1Star/ISC/202208/ts/inactive
   - https://github.com/FabienDeborde/mantine-datagrid
   - https://mantine-datagrid.netlify.app/
@@ -77,7 +89,7 @@ modified: 2022-08-21T10:37:01.349Z
   - Private first, unified, self-hosted no code database.
   - 前端依赖 undb, dnd-kit、tanstack-table, react-redux, emotion, @loadable/component, jotai, react-hook-form, trpc
   - 后端依赖 nestjs、mikro-orm、trpc、undb
-  - [feature/frontend next_20230503, 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
+  - [feature/frontend next_20230503(v0.3), 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
     - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
 
 - https://github.com/klassenl/react-grid /202210/ts/单击编辑单元格
@@ -109,18 +121,17 @@ modified: 2022-08-21T10:37:01.349Z
   - ref
     - https://github.com/toofaniCoder/react-table-8.5-crud
 
-- https://github.com/bilalzafarr0001/server-side-data-pagination-filtering-sorting-using-react-table-tanstack /v7
-  - implement Pagination(Offset based and Cursor based) with Mongoose and Nodejs(Handling 1M records)
+- https://github.com/zendricom/tableus /ts/inactive
+  - A react library for rendering highly configurable tables.
+  - intended to be integrated fully with your backend to deliver tables with sorting, filtering and pagination.
+  - Tableus does not state any requirements on your preferred UI (bootstrap, material UI, etc.) or backend API (REST, GraphQL, etc.), by externalizing those into seperate modules called fetchers and UIs.
+  - tableus uses react-query under the hood to improve performance.
+  - ref
+    - https://github.com/zendricom/tableus-ui-bootstrap5
+    - https://github.com/zendricom/tableus-fetcher-laravel-rest
 
 - https://github.com/Serkan-Ucakcioglu/React-Query-React-Table-Pagination /v7
   - Tanstack react query and react table and pagination.
-
-- https://github.com/bgrins/data-ui-tests
-  - https://bgrins.github.io/data-ui-tests/
-  - benchmarks with vanilla-table/handsontable, revo-grid
-- https://github.com/ganeshmani/react-ag-data-grid
-  - https://react-ag-data-grid.vercel.app/
-  - Using ag-grid-react in React: Guide and Alternatives
 
 - @uidu/table /19Star/MIT/202212/ts/react
   - https://github.com/uidu-org/guidu
@@ -145,14 +156,6 @@ modified: 2022-08-21T10:37:01.349Z
 - https://github.com/devsayog/nextjs-ecommerce
   - https://fashion-lac.vercel.app/
   - Nextjs ecommerce is fullstack ecommerce web app with admin panel.
-
-- https://github.com/zendricom/tableus /inactive
-  - A react library for rendering highly configurable tables.
-  - intended to be integrated fully with your backend to deliver tables with sorting, filtering and pagination.
-  - Tableus does not state any requirements on your preferred UI (bootstrap, material UI, etc.) or backend API (REST, GraphQL, etc.), by externalizing those into seperate modules called fetchers and UIs.
-  - ref
-    - https://github.com/zendricom/tableus-ui-bootstrap5
-    - https://github.com/zendricom/tableus-fetcher-laravel-rest
 
 - https://github.com/HeartLee/table-tanstack /202212/ts/starter/wip
   - 使用tanstack table 开发一个满足设计体系定制、性能优秀的Table组件
@@ -181,6 +184,29 @@ modified: 2022-08-21T10:37:01.349Z
   - example of handling Tabular Data with Advanced Filters, Sorting and Optimizations in React
   - 不依赖tanstack-table，但展示了数据处理方法
   - 依赖tanstack-query、zustand、mui5
+
+- https://github.com/paalamugan/excel-sheet-react-table /js
+  - https://paalamugan.github.io/excel-sheet-react-table/
+  - You can import you excel sheet and edit your excel sheet in the UI and download that updated excel sheet.
+  - 依赖 react-table.v7、react-window、react-toastify、xlsx-parse-json
+# ajax/server-side
+- https://github.com/bilalzafarr0001/server-side-data-pagination-filtering-sorting-using-react-table-tanstack /js/v7
+  - implement Pagination(Offset based and Cursor based) with Mongoose and Nodejs(Handling 1M records)
+  - 依赖react-table.v7、express、mongoose
+
+## in-memory
+
+- https://github.com/nodew/lazyList /ts
+  - A lazy list implementation with generator and iterator
+
+- https://github.com/francisrstokes/Lazy-Infinite-List /js
+  - Lazily Evaluated Infinite List Data Structure.
+  - lazy-infinite uses generators to define a potentially infinite data structure, and allows you to describe transforming the elements in that structure without evaluating it
+
+- https://github.com/ugaya40/leseq /ts/NoDeps
+  - Lazy list(lazy list) with high tree-shaking affinity and easy customization.
+  - Iterable can also be seamlessly treated as Async Iterator.
+  - To achieve tree-shaking, we use an rxjs-like syntax.
 # design-system-ui-v8
 - https://github.com/saas-js/saas-ui/tree/main/packages/saas-ui-data-table
   - https://saas-ui.dev/docs/components/data-display/data-table
@@ -218,12 +244,6 @@ modified: 2022-08-21T10:37:01.349Z
 
 - https://github.com/zakodium-oss/react-science
   - React components and tools to build scientific applications.
-# utils
-- https://github.com/thisisrishabh22/react-table-autocomplete
-  - Magical solution for editable react-table with autocomplete feature
-
-- https://github.com/bightg30098/tanstack-react-table-virtual-overlayscrollbar
-  - @tanstack/react-table v8, @tanstack/virtual v3, overlayscrollbars
 # examples-v8
 - https://github.com/rizqitsani/learn-tanstack-table
   - http://learn-tanstack-table.vercel.app/
@@ -340,9 +360,6 @@ modified: 2022-08-21T10:37:01.349Z
 - https://github.com/aoigj100a/react-table-demo
   - react-table v8、chakra-ui
 
-- https://github.com/Mallet1/tanstack-editable-data
-  - https://codesandbox.io/s/github/Mallet1/tanstack-editable-data
-
 - https://github.com/sajclarke/react-table-8-rowactions
   - an example of using Tanstack table v8 with row action column displaying Edit and Delete buttons
 
@@ -362,7 +379,7 @@ modified: 2022-08-21T10:37:01.349Z
 
 - https://github.com/wooboo/the-playform
   - https://the-playform.vercel.app/admin/dashboard
-  - 提供了典型的仪表板示例
+  - 提供了典型的仪表板示例，样式友好
   - 依赖 headlessui、trpc、recharts、prisma、next-auth
 
 - https://github.com/freewind-demos/typescript-tanstack-react-table-global-filter-demo
@@ -411,10 +428,6 @@ modified: 2022-08-21T10:37:01.349Z
 - https://github.com/cjroth/vertex-solid
   - built a Virtualized table with @solid_js and @tan_stack virtual (also playing with @zag_js and Hope UI!):
   - It's showing the max number of rows that Chrome will support due to max element height.
-
-- react-table /1Star/ISC/202212/ts
-  - https://github.com/rsrv1/react-table
-  - react data-table implementation for server returned dynamic data source
 
 - https://github.com/zakodium-oss/react-science
   - https://react-science.pages.dev/

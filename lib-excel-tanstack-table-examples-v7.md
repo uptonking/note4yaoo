@@ -107,6 +107,7 @@ modified: 2022-08-21T10:37:01.349Z
 
 - https://github.com/patternfly/patternfly-react/tree/main/packages/react-table
   - https://patternfly-react.surge.sh/components/table
+  - 不依赖react-table
   - 给了很多示例，Compound expandable，Tree table
 - @equinor/fusion-react-table
   - https://github.com/equinor/fusion-react-components/tree/main/packages/table
@@ -139,8 +140,16 @@ modified: 2022-08-21T10:37:01.349Z
 - https://github.com/iTwin/iTwinUI-react/tree/main/src/core/Table
 
 - https://www.npmjs.com/package/@preamp/tables
-- https://www.npmjs.com/package/@gmfe/table-x
 # examples-v7
+- https://github.com/paalamugan/excel-sheet-react-table /js
+  - https://paalamugan.github.io/excel-sheet-react-table/
+  - You can import you excel sheet and edit your excel sheet in the UI and download that updated excel sheet.
+  - 依赖 react-table.v7、react-window、react-toastify、xlsx-parse-json
+
+- https://github.com/bilalzafarr0001/server-side-data-pagination-filtering-sorting-using-react-table-tanstack /js/v7
+  - implement Pagination(Offset based and Cursor based) with Mongoose and Nodejs(Handling 1M records)
+  - 依赖react-table.v7、express、mongoose
+
 - https://github.com/ggascoigne/react-table-example
   - https://codesandbox.io/s/github/ggascoigne/react-table-example
   - Demo of React Table V7 using TypeScript as well as Material UI v4
@@ -150,11 +159,6 @@ modified: 2022-08-21T10:37:01.349Z
 - https://github.com/toni783/MUI-react-virtual-table
   - https://codesandbox.io/s/github/toni783/MUI-react-virtual-table
   - react-table.v7, react-virtual, material-ui.v4
-
-- https://github.com/paalamugan/excel-sheet-react-table
-  - https://paalamugan.github.io/excel-sheet-react-table/
-  - You can import you excel sheet and edit your excel sheet in the UI and download that updated excel sheet.
-  - 依赖 react-table、react-window、react-toastify、xlsx-parse-json
 
 - https://github.com/bezkoder/react-table-crud-example
   - React Table example: CRUD App with react-table v7, axios, Bootstrap
@@ -179,9 +183,12 @@ modified: 2022-08-21T10:37:01.349Z
   - 依赖bootstrap4、react-table7、reactstrap8
   - [React Table 7 - Hooks based library](https://thewidlarzgroup.com/react-table-7/)
 
+- https://github.com/vishal-nath-chauhan/React-table-v7-blog-series
+  - https://github.com/vishal-nath-chauhan/React-table-v7-blog-series-Part-2
+
 - https://github.com/Eversoft-Group/react-table
-  - React table component build with Bootstrap and react-table
   - https://eversoft-group.github.io/react-table/
+  - React table component build with Bootstrap and react-table
 
 - https://github.com/datopian/datapub
   - https://tech.datopian.com/publish/
@@ -196,13 +203,10 @@ modified: 2022-08-21T10:37:01.349Z
   - 依赖d3、react-table、react-dropzone、html-react-parser、bootstrap4
   - 示例简单实用，表格很简单
 
-- https://github.com/vishal-nath-chauhan/React-table-v7-blog-series
-  - https://github.com/vishal-nath-chauhan/React-table-v7-blog-series-Part-2
-
 - https://github.com/nteract/data-explorer
   - https://data-explorer.nteract.io/
   - Data Explorer is nteract's automatic visualization tool.
-  - 依赖react-table6
+  - 依赖react-table.v6
   - 样式比比较简陋
 - data-catalog-components /5Star/GPLv3/202104/js
   - https://github.com/getdkan/data-catalog-components
@@ -215,9 +219,13 @@ modified: 2022-08-21T10:37:01.349Z
 - react-table chart column 图表作为一列
   - https://codesandbox.io/s/react-table-highcharts-jm125
 
-- https://github.com/codefromrvk/sql-editor
+- https://github.com/codefromrvk/sql-editor /js
   - https://sql-editor-demo.netlify.app/
+  -  Upload the sql, sqlite files or use existing table for testing. 
+  -  Created this feature using react-drag-drop-files package 
 
 - https://github.com/earthshakira/csv-modifier /python
   - https://csv-update-pipeline.herokuapp.com/
   - CSV Uploads, Validation, Editing and Storage
+  - Redux Toolkit
+  - Django was used as it provides it's own ORM along with DRF which builds on it to making it quick to develop APIs

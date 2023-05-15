@@ -7,8 +7,15 @@ modified: 2023-01-23T11:24:41.943Z
 
 # toc-lib-olap-pivot
 
-# pivot
+# guide
 
+# olap-dataset
+- [Get samples for Power BI - Power BI | Microsoft Learn](https://learn.microsoft.com/en-us/power-bi/create-reports/sample-datasets)
+  - An Excel workbook version of the AdventureWorks dimensional model
+
+- [Curated Datasets Overview / ObservableHQ](https://observablehq.com/@observablehq/curated-datasets)
+  - [Sample Datasets / Observable](https://observablehq.com/@observablehq/sample-datasets)
+# pivot
 - pivottable /3.5kStar/MIT/201902/CoffeeScript
   - https://github.com/nicolaskruchten/pivottable
   - https://pivottable.js.org/examples/
@@ -85,13 +92,7 @@ modified: 2023-01-23T11:24:41.943Z
   - [How to Use Excel Pivot Tables to Organize Data](https://www.timeatlas.com/excel-pivot-tables/)
   - Excel_notes 教學檔案
     - https://github.com/jeanetsai/Excel_notes
-# pivot/olap-data
-- [Get samples for Power BI - Power BI | Microsoft Learn](https://learn.microsoft.com/en-us/power-bi/create-reports/sample-datasets)
-  - An Excel workbook version of the AdventureWorks dimensional model
-
-- [Curated Datasets Overview / ObservableHQ](https://observablehq.com/@observablehq/curated-datasets)
-  - [Sample Datasets / Observable](https://observablehq.com/@observablehq/sample-datasets)
-
+# pivot/olap
 - duckdb /7.5kStar/MIT/202212/cpp
   - https://github.com/duckdb/duckdb
   - http://www.duckdb.org/

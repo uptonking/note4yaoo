@@ -62,7 +62,7 @@ modified: 2022-08-21T10:19:58.756Z
  })
 ```
 
-# faq-discussion
+# discussion-faq
 
 - how to use React Router's `<Link />` to wrap a table row
   - This is an HTML issue which requires `td` to be direct children of `tr` . 

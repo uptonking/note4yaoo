@@ -88,7 +88,12 @@ modified: 2021-05-25T09:40:55.797Z
   - PocketBase is an open source Go backend
   - embedded database (SQLite) with realtime subscriptions
   - built-in files and users management
-# baas backend-as-a-service
+
+- https://github.com/easycrud/easycrud
+  - https://easycrud.org/
+  - This project is aimed at providing a series of handy packages for the development of a typical CRUD web application.
+  - The packages are work around a kind of schema written in JSON for database table.
+# baas/backend-as-a-service
 
 # more
 

@@ -119,6 +119,10 @@ modified: 2020-12-19T13:04:40.865Z
   - An Isomorphic MVC Framework supports both SSR and CSR
   - MVC 三者都是 Isomorphic，既是服务端 MVC，也是浏览器端 MVC。
   - https://github.com/Lucifier129/isomorphic-cnode
+# react-ssr
+
+- https://github.com/panDaxiang/ssr
+  - react服务端渲染demo
 # more-ssr
 - https://github.com/pmb0/express-tsx-views
   - Server-side JSX/TSX rendering for your express or NestJS application

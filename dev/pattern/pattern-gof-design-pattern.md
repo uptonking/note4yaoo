@@ -13,6 +13,7 @@ modified: 2020-12-20T15:43:51.808Z
   - Design Patterns
   - Rendering Patterns
   - Performance Patterns
+  - [JavaScript Patterns Workshop | JavaScript Patterns](https://javascriptpatterns.vercel.app/patterns)
 
 - Observer 观察者模式
   - MutationObserver

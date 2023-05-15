@@ -78,7 +78,7 @@ $$('[contenteditable]')
 - slate-wangeditor
   - model, view, sync, collab
   - slate-docs-examples
-- 👉🏻 eg-focalboard
+- 👉🏻 eg-pivot-views/focalboard
   - table view
   - kanban view
 - 👉🏻 eg-tanstack-table-v8

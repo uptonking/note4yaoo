@@ -9,6 +9,10 @@ modified: 2021-05-11T14:36:13.256Z
 
 # guide
 
+- resources
+  - [Hooks Pattern](https://www.patterns.dev/posts/hooks-pattern)
+  - [JavaScript Patterns Workshop | JavaScript Patterns](https://javascriptpatterns.vercel.app/patterns)
+
 - [ariakit RFC: Component stores](https://github.com/ariakit/ariakit/issues/1875)
   - https://codesandbox.io/s/ariakit-component-stores-forked-248do5
 - The problems
@@ -95,18 +99,17 @@ const funcMap = {
 
 funcMap["a"]("HELLO!"); // Logs "Hello!" to the console
 ```
+
 ## [Use an object instead of a switch - DEV Community](https://dev.to/ubmit/use-an-object-instead-of-a-switch-1e55)
 
-- tl;dr: whenever we notice that the switch is doing nothing more than mapping keys to values, we should use an object instead
+- tl; dr: whenever we notice that the switch is doing nothing more than mapping keys to values, we should use an object instead
   - the usage of an object makes this code less complex and also more readable, since it's less verbose than the switch statement
-
 
 - use `keyof typeof` keywords to pull the object keys directly from the object, so you don't need to explicitly define the keys
 
 - Even if it isn’t just mapping, you can also use methods in object to perform more logic per case.
   - This method has way more uses than mapping keys to values tho. 
   - We could make the object keys functions for infinite possibilities (if it is needed)
-
 
 - I think I tend to see your use-cases here, but apperately this might have been a bad choice for replacing it with a map methodology.
   - Switch-Case are generally understood even by all kind of software engineers (while loose object referencing is not that common in many languages)
@@ -117,22 +120,15 @@ funcMap["a"]("HELLO!"); // Logs "Hello!" to the console
   - However somewhere around size > 1000 things get less predictable with V8 (Chromium). Perhaps putting getObjectSwitch on the hot code path may give it the full Turbofan treatment at some point in time.
 
 ## [Replace Conditional With Map Refactoring](https://blog.rstankov.com/replace-conditional-with-map-refactoring/)
-- This is one of my favorite refactorings. It helps to group logic, making code easier to read and extend.
 
+- This is one of my favorite refactorings. It helps to group logic, making code easier to read and extend.
 
 - replace if-else/switch-case with map
 - for redux, I always prefer to use a utility like redux-create-reducer, to remove the noise from here and handle things like default case.
 
-
 ## [Simplifying Code with Maps In JavaScript and React | ClarityDev blog](https://claritydev.net/blog/simplifying-code-with-maps-in-javascript)
 
 - Using a `Map` in this scenario is more advantageous than using an `Object`, as it simplifies the code, maintains the **order** of the tabs, and allows us to leverage the direct iteration and other benefits that Map provides.
-
-
-- 
-- 
-- 
-- 
 
 ## [React Conditional Rendering With Type Safety and Exhaustive Checking - Lloyd Atkinson](https://www.lloydatkinson.net/posts/2022/react-conditional-rendering-with-type-safety-and-exhaustive-checking/)
 
@@ -172,10 +168,20 @@ const ConditionalMovie = ({type})=>{
 }
 ```
 
-- 
-- 
-- 
+# hooks factory
 
+## [React Hooks Factories - DEV Community](https://dev.to/pietmichal/react-hooks-factories-48bi)
+
+- It will be a custom hook wrapping useState but it will set a default value provided at the time of creation.
+- Sharing state across hooks to create context without Context API
+  - this hook provides a shared state without having to wrap an app with a Context Provider.
+
+- I love this technique, but how did you handle the **race condition** that can occur when using the useSharedState hook? 
+  - useEffect is asynchronous, so when the component is first mounted there is a moment of time between when useState is called and when the component registers itself to listen for changes in useEffect. 
+  - During this moment of time, another component could change the state value, but the new component would be unaware because it is still waiting to register.
+  - I ask because I have implemented a factory very similar to the approach you have described and am currently running into this issue.
+  - I could setState from within useEffect (with a useRef to avoid infinite looping); however, that seems a bit hacky. Thoughts?
+- It sounds to me that your abstraction breaks the single responsibility principle. Maybe your hook also has to include the asynchronous logic so it can flag that it is loading and prevent child components from setting the state?
 # [React wrapper hell was a mistake](https://twitter.com/aralroca/status/1644068034716356628)
 - but why is this bad ?i mean it is so easy to compose this way
 

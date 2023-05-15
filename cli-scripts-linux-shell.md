@@ -13,6 +13,12 @@ modified: 2023-01-07T15:58:14.300Z
 - shell工具
 
 ```shell
+
+# 查看端口占用
+sudo netstat -tunlp|grep 8000
+sudo lsof -i:8000
+ 
+
 # base64解码
 echo aHR0cHM6Ly9tYXMudG8vQG9jYXZ1ZQo= | base64 -d
 

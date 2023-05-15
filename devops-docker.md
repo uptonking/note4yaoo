@@ -19,7 +19,9 @@ docker ps
 docker container ls
 
 # 禁止docker自动启动
-docker update --restart=no container-name
+docker update --restart=no containerId
+
+docker stop containerId
 ```
 
 # discuss
