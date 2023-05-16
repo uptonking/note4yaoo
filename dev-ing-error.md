@@ -593,14 +593,12 @@ Option 'allowJs' cannot be specified with option 'declaration'.
     - 纯手打的handleClick1()不能执行，但ide自动补全的handleClick1()能执行，在线codepen手打也能执行
         - 可能与编辑环境的编码有关
 
-```
-
+```jsx
 <button onclick="clear()">Clear</button>
 <button onclick="clear2()">Clear2</button>
 <button onclick="handleClick1()">Click1</button>
 <button onclick="handleClick1()">单击或双击我</button>
 <button οnclick="handleClick1()">单击或双击我</button>
-
 ```
 
 - Warning: React.createElement: type is invalid -- expected a string Check the render method of
@@ -632,6 +630,7 @@ Cannot invoke an expression whose type lacks a call signature. Type 'ReactNode' 
 ```
 
 类似的，下面也会异常
+
 ```
 
 type F =   
@@ -653,8 +652,10 @@ function f2 (f: F) {
 - 当children类型声明为 `children?: ((props: T) => React.ReactNode) | React.ReactNode;` 时，会异常，解决方法有2个
     - `(children as ((props: T) => React.ReactNode))(renderRest);`
     - use type guard
+    - https://stackoverflow.com/questions/56076608/cannot-invoke-an-expression-whose-type-lacks-a-call-signature-in-typescript
+    - https://github.com/Microsoft/TypeScript/issues/7960
 
-    ```
+```
 
     if (typeof children === 'function') {
       children(renderRest); 
@@ -671,7 +672,9 @@ function f2 (f: F) {
 
 - styled-components  
 
-  ```
+  
+
+```
 
   Type is not assignable to type 'Readonly<ThemeProviderProps<any, any>>'.
 
@@ -684,8 +687,9 @@ function f2 (f: F) {
 ```
 
     - 异常的位置是  
+        
 
-        ```
+```
 
           <ThemeProvider theme={theme}>
               {/* 这个是绿色 */}
@@ -719,17 +723,21 @@ function f2 (f: F) {
 - junit中方法的执行顺序并不一定按照源码中的书写顺序，如ExcelParserBasicTest类
 - app-jcef-example  
     - 错误  
+    - https://stackoverflow.com/questions/56076608/cannot-invoke-an-expression-whose-type-lacks-a-call-signature-in-typescript
+    - https://github.com/Microsoft/TypeScript/issues/7960
 
-    ```
+```
 
     thread "AWT-EventQueue-0" java.lang. NoSuchMethodError: onScheduleMessagePumpWork  
     
 
 ```
 
-    maven打包后的main class是 example.simple.CefFrameExample  
+    maven打包后的main class是 example.simple. CefFrameExample  
     报错原因可能是cef不同版本的方法不一样  
-    ```
+    
+
+```
 
     java  -Djava.library.path=/home/yaoo/Documents/repo/opensource/java-cef/src/jcef_build/native/Release -cp .:/home/yaoo/Documents/repo/opensource/java-cef/src/third_party/jogamp/jar/*:target/* example.simple. CefFrameExample
     
@@ -738,8 +746,10 @@ function f2 (f: F) {
 
 - jcef-quickstart
     - 运行成功，在任意目录
+    - https://stackoverflow.com/questions/56076608/cannot-invoke-an-expression-whose-type-lacks-a-call-signature-in-typescript
+    - https://github.com/Microsoft/TypeScript/issues/7960
 
-    ```
+```
 
     java  -Djava.library.path=/home/yaoo/Documents/repo/opensource/java-cef/src/jcef_build/native/Release -cp .:/home/yaoo/Documents/repo/opensource/java-cef/src/third_party/jogamp/jar/*:/home/yaoo/Downloads/jcef-quickstart/target/classes  tests.simple. MainFrame
     
@@ -747,15 +757,20 @@ function f2 (f: F) {
 ```
 
     - 运行成功，在maven项目根目录
+    - https://stackoverflow.com/questions/56076608/cannot-invoke-an-expression-whose-type-lacks-a-call-signature-in-typescript
+    - https://github.com/Microsoft/TypeScript/issues/7960
 
-    ```
+```
 
     java  -Djava.library.path=/home/yaoo/Documents/repo/opensource/java-cef/src/jcef_build/native/Release -cp .:lib/jogamp/jar/*:target/classes  tests.simple. MainFrame
     
 
 ```
 
-    ```
+    - https://stackoverflow.com/questions/56076608/cannot-invoke-an-expression-whose-type-lacks-a-call-signature-in-typescript
+    - https://github.com/Microsoft/TypeScript/issues/7960
+
+```
 
     java  -Djava.library.path=/home/yaoo/Documents/repo/opensource/java-cef/src/jcef_build/native/Release -cp .:lib/jogamp/jar/*:target/*  tests.simple. MainFrame
     
@@ -764,7 +779,10 @@ function f2 (f: F) {
 
     - 运行失败，core dumped
 
-    ```
+    - https://stackoverflow.com/questions/56076608/cannot-invoke-an-expression-whose-type-lacks-a-call-signature-in-typescript
+    - https://github.com/Microsoft/TypeScript/issues/7960
+
+```
 
     java  -Djava.library.path=lib/native/Release -cp .:lib/jogamp/jar/*:target/classes  tests.simple. MainFrame
     
@@ -773,7 +791,10 @@ function f2 (f: F) {
 
     - jcef自带示例，运行成功，在任意目录均可
 
-    ```
+    - https://stackoverflow.com/questions/56076608/cannot-invoke-an-expression-whose-type-lacks-a-call-signature-in-typescript
+    - https://github.com/Microsoft/TypeScript/issues/7960
+
+```
 
     java  -Djava.library.path=/home/yaoo/Documents/repo/opensource/java-cef/src/jcef_build/native/Release -cp .:/home/yaoo/Documents/repo/opensource/java-cef/src/third_party/jogamp/jar/*:/home/yaoo/Documents/repo/opensource/java-cef/src/out/linux64 tests.simple. MainFrame
     
@@ -782,8 +803,10 @@ function f2 (f: F) {
 
 - jcef build
 - error1
+    - https://stackoverflow.com/questions/56076608/cannot-invoke-an-expression-whose-type-lacks-a-call-signature-in-typescript
+    - https://github.com/Microsoft/TypeScript/issues/7960
 
-    ```
+```
 
     [ 71%] Linking CXX executable Release/jcef_helper
     /usr/bin/ld: cannot find -lX11
@@ -799,19 +822,21 @@ function f2 (f: F) {
 ```
 
     - sudo apt-get install libx11-dev -y
+
 - error2    
+    - https://stackoverflow.com/questions/56076608/cannot-invoke-an-expression-whose-type-lacks-a-call-signature-in-typescript
+    - https://github.com/Microsoft/TypeScript/issues/7960
 
-    ```
-
+```
     jdk1.8.0_201/include/linux/jawt_md.h:31:10: fatal error: X11/Intrinsic.h: No such file or directory   
     #include <X11/Intrinsic.h>
-    ```
+```
 
-    -  sudo apt-get install libxt-dev -y
+-  sudo apt-get install libxt-dev -y
+
+
 - npm WARN Invalid version: "1.0"
-    - change 1.0 to 1.0.0
-# not-yet
-- ERROR in ./example-client/components/common/error-boundary.tsx
-  - Module build failed (from ../../node_modules/@linaria/webpack5-loader/lib/index.js):
-  - Error: /home/yaoo/Documents/repos/yaoo-toys/lts/nostalgia-studio/node_modules/@udecode/plate-core/dist/index.es.js has no shaker metadata
-  - linaria对三方包的代码不友好，使用了反引号模版字符串会异常，解决方法是fork三方包源码自己打包
+- change 1.0 to 1.0.0
+
+
+

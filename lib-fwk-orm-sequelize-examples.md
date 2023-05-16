@@ -32,6 +32,7 @@ modified: 2023-02-05T18:50:32.900Z
   - A Scrum Management App for teams
   - 依赖reduxjs-toolkit、mantine、dnd-kit、formik
   - 提供了project、team等基础功能，还支持看板
+  - 仅支持第3方登录，未提供注册
   - https://github.com/bissbr01/Command-backend /js
     - 依赖sequelize6
     - A containerized REST API for the Command project managment app.
@@ -44,16 +45,30 @@ modified: 2023-02-05T18:50:32.900Z
   - Database Migrations with umzug
   - JWT Security RS256
   - 数据库依赖docker
+  - 仅支持第3方登录，未提供注册
   - https://github.com/ruyd/fullstack-monorepo
     - Fullstack Canvas Drawing App and TypeScript Starter Template
     - React, Redux, React Query,Material UI
     - Sequelize,Postgres,auth0
+
+- https://github.com/MyungWanPark/shopping-mall-backend /ts
+  - https://github.com/MyungWanPark/shopping-mall-frontend
+  - https://shoppingmall-myungwan.netlify.app/
+  - 后端express、sequelize、mysql、jwt
+  - 前端依赖react、mui、ApexCharts、axios
+  - State Management: Context API
+  - 支持注册登录jwt、购物车、简单销售仪表板、搜索
 
 - https://github.com/lalalilo/express-crud-router /113Star/MIT/202201/ts/无db
   - Expose resource CRUD routes for Express & Sequelize. 
   - Compatible with React Admin Simple Rest Data Provider. 
   - The lib is ORM agnostic
   - https://github.com/lalalilo/express-crud-router-sequelize-v6-connector
+
+- https://github.com/tiagospeckart/geekscript-backend
+  - https://github.com/GabrielGameDev/geek-script-front
+  - This repository is the final project for the Gama Academy Web Development course
+  - 实现了登录，未实现注册
 
 - https://github.com/nmanikiran/rest-api-node-typescript /202106/ts/inactive
   - simple REST API with node and express with typescript
@@ -81,9 +96,13 @@ modified: 2023-02-05T18:50:32.900Z
   - Requires Sequelize v2.x.x, v3.x.x, v4.x.x or v5.x.x.
   - [Add initial support for Sequelize V6](https://github.com/overlookmotel/sequelize-hierarchy/pull/223)
   - [Sequelize V6](https://github.com/overlookmotel/sequelize-hierarchy/issues/174)
+  - https://github.com/fizure/sequelize-hierarchy
   - https://github.com/astrosoftpro/sequelize-hierarchy-next
   - https://github.com/SecurityESys/sequelize-hierarchy
-  - https://github.com/fizure/sequelize-hierarchy
+
+- https://github.com/sequelize/sequelize-sscce
+  - Base repository for creating and sharing Sequelize SSCCEs
+  - Short, Self Contained, Correct (Compilable), Example
 # server-sent event
 - https://github.com/dexterio200/chat-app-server
   - Server side of a chat room app - built with Node.js, Express, Sequelize & Server-sent events.
@@ -128,7 +147,7 @@ modified: 2023-02-05T18:50:32.900Z
   - https://sequelizeui.app/
   - a Sequelize ORM code generator, which generates a full Node.js TypeScript project, entirely in the browser
   - Use the schema editor to design your database tables, fields and associations, then preview the Sequelize models and migrations in the code viewer before downloading the project as a zip file or copying code from individual files.
-  - Sequelize UI currenly only generates TypeScript Sequelize code, not js
+  - Sequelize UI currently only generates TypeScript Sequelize code, not js
 
 - https://github.com/andyforever/sequelizer
   - A GUI Desktop App for export sequelize models from database automatically.
@@ -145,6 +164,7 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/thedenisnikulin/chattitude-app-backend
   - a well structured Typescript version of old Chattitude
+  - https://github.com/thedenisnikulin/chattitude-app-frontend
 
 - https://github.com/xcfstudio/woodfish-server
   - 多用户电子木鱼系统，基于Koa2
@@ -168,6 +188,7 @@ modified: 2023-02-05T18:50:32.900Z
   - basic NodeJS application for web API microservices that uses express with express-session, sequelize-typescript to connect to a SQL database and authenticate users.
   - The app is written following the proper OOP approach using TypeScript classes with decorators
   - 过于简单
+  - If the registration/login was successful, the user should be instantly logged in with a session. 
 
 - https://github.com/Mohammad-Faisal/professional-express-sequelize-docker-boilerplate /typedi
   - ExpressJS Boilerplate with Typescrip+Docker+Sequelize integration
@@ -190,12 +211,38 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/teo-garcia/fastify-template-sequelize
   - using Fastify with Sequelize.
+
+## auth-login
+
+- https://github.com/rahulthackkar/nodejs-mysql-jwt-sequelize /js
+  - Node JS + Express + User authentication using JWT + Sequelize + Jest + Docker
+
+- https://github.com/bezkoder/node-js-express-login-example /js
+  - Express Login example (with Registration) using JWT, Cookies, MySQL database
+  - 流程图很清晰
+  - [Node.js Express: Login and Registration example with JWT - BezKoder](https://www.bezkoder.com/node-js-express-login-example/)
+
+- https://github.com/kylewhittemore/react-sequelize-template /js
+  - Full-stack react with passport js local strategy for authentication
 # utils
+- https://github.com/Kaltsoon/sequelize-cursor-pagination
+  - Cursor-based pagination queries for Sequelize models
+- https://giCursor-based pagination queries for Sequelize modelsthub.com/ephys/sequelize-cursor-pagination
+  - Implements cursor pagination in the Sequelize ORM
+  - This library has been designed with the GraphQL Cursor Connections Specification in mind, but can likely be used for any cursor pagination (including REST).
+- https://github.com/unthread-io/sequelize-cursor-pagination
+  - Cursor (aka keyset) pagination for Sequelize.
+
 - https://github.com/rfink/sequelize-redis-cache /js
   - Small fluent interface for caching sequelize database query results in redis more easily
 
 - https://github.com/nealwp/smodg
   - Generate Sequelize models from TypeScript type definitions
+
+- https://github.com/blankstar85/sequelize-central-log
+  - Maintain Sequelize Model change history in a central table. 
+  - This is highly configurable and supports composite primary keys ( up to 3 for now). 
+  - Written in Typescript and provides typing.
 # more
 - https://github.com/PIYoung/node-express-boilerplate-multitenant
   - node express postgres boilerplate for multitenant(saas)

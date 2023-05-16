@@ -37,6 +37,10 @@ modified: 2022-08-21T10:19:58.756Z
   - handsontable
   - tinybase
   - mobile
+# dev-pivot-views
+
+- dev-to
+  - 替换trpc
 # dev-later
 - 参考
   - react-aria-grid: aria grid pattern

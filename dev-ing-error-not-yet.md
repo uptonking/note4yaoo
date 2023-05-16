@@ -11,7 +11,16 @@ modified: 2021-03-29T19:29:15.528Z
 
 - vscode 的 quick fix 偶尔会缺少
   - Add all missing members
+
+- ERROR in ./example-client/components/common/error-boundary.tsx
+  - Module build failed (from ../../node_modules/@linaria/webpack5-loader/lib/index.js):
+  - Error: /home/yaoo/Documents/repos/yaoo-toys/lts/nostalgia-studio/node_modules/@udecode/plate-core/dist/index.es.js has no shaker metadata
+  - linaria对三方包的代码不友好，使用了反引号模版字符串会异常，解决方法是fork三方包源码自己打包
 # done
+- ## [typescript - error TS6059: File is not under 'rootDir' .. 'rootDir' is expected to contain all source files - Stack Overflow](https://stackoverflow.com/questions/57422458/error-ts6059-file-is-not-under-rootdir-rootdir-is-expected-to-contain-al)
+  - One fix is to just remove `"rootDir": "src"` from compiler options, so it gets set automatically. Caution: rootDir will then consider both projects as inputs!
+  - 解决方式就是删除这个配置项
+
 - ## Type of 'await' operand must either be a valid promise or must not contain a callable 'then' member
 - 尽量不要自定义名称叫then的方法
 

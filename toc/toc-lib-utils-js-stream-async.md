@@ -97,6 +97,13 @@ modified: 2023-04-04T22:36:31.529Z
   - Asynchronous JSON parser and stringify APIs that make use of generator patterns
   - This library provides asynchronous version of standard `JSON.parse` and `JSON.stringify` APIs.
 
+- https://gitlab.com/philbooth/bfj /js
+  - Big-Friendly JSON. Asynchronous streaming functions for large JSON data sets.
+  - If you need to parse huge JSON strings or stringify huge JavaScript data sets, it monopolises the event loop and can lead to out-of-memory exceptions.
+  - BFJ implements asynchronous functions and uses pre-allocated fixed-length arrays to try and alleviate those issues.
+  - Is it fast?
+    - No. BFJ yields frequently to avoid monopolising the event loop, interrupting its own execution to let other event handlers run. The frequency of those yields can be controlled with the yieldRate option, but fundamentally it is not designed for speed.
+
 - https://github.com/uhop/stream-json /js
   - It can parse JSON files far exceeding available memory streaming individual primitives using a SAX-inspired API.
   - `jsonl/Parser` parses a JSONL file producing objects similar to StrIt can parse JSON files far exceeding available memory.

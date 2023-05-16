@@ -29,7 +29,6 @@ modified: 2020-12-08T14:05:41.408Z
   - 可查看源码 WebpackOptionsDefaulter.js
   - if your Webpack target is `node`, it looks at the `module` and `main` for entry. Otherwise, it goes to the `browser`, then `module`, then `main`.
   - 技巧：module可指向源码，main指向转义后的es5代码
-
 # webpack-internals
 - [手写一个webpack，看看AST怎么用](https://juejin.cn/post/6930877602840182791)
   - webpack最基本的功能其实是将JS的高级模块化语句，import和require之类的转换为浏览器能认识的普通函数调用语句。
@@ -150,6 +149,9 @@ modified: 2020-12-08T14:05:41.408Z
   - https://github.com/flegall/monopack
     - A JavaScript bundler for node.js monorepo-codebased applications.
   - https://github.com/lucasgdb/monorepo-react-node-postgres-ts
+# dev-error
+- [WARNING in DefinePlugin Conflicting values for 'process.env. NODE\_ENV' · Issue #7924 · nrwl/nx](https://github.com/nrwl/nx/issues/7924)
+  - Turns out Webpack's mode parameter sets process.env. NODE_ENV via DefinePlugin [0]. So, if you use both mode: 'development' and an instance of DefinePlugin, process.env. NODE_ENV can get set with conflicting values...
 # ref
 - [webpack: Choosing a Development Tool](https://webpack.js.org/guides/development/ )
 - [Cutting our webpack build times in half_201905](https://www.cargurus.dev/Cutting-our-webpack-build-time-in-half/)

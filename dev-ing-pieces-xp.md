@@ -11,6 +11,12 @@ modified: 2021-04-28T20:54:58.126Z
 
 # issues
 
+## cors问题
+
+- [ajax - CORS: Cannot use wildcard in Access-Control-Allow-Origin when credentials flag is true - Stack Overflow](https://stackoverflow.com/questions/19743396/cors-cannot-use-wildcard-in-access-control-allow-origin-when-credentials-flag-i)
+
+- 原因是server代码需要rebuild，因为执行的是 node dist/server.js，而不是src/server.ts
+
 ## tanstack-virtual+query的无限滚动只能滚动一页
 
 - 对照原示例跑了很多次，没发现代码上的问题，反而在css-in-js上花费过多时间

@@ -52,7 +52,7 @@ https://meeting.tencent.com/p/9606972663
 # dev-review
 
 ```shell
-DEBUG=* npm install --legacy-peer-deps --loglevel silly
+DEBUG=* npm install --legacy-peer-deps --no-audit --loglevel silly
 
 $$('[contenteditable]')
 ```
@@ -263,6 +263,34 @@ $$('[contenteditable]')
 # dev-05
 
 ## 050
+
+## 0516
+
+- [Webpack: Bundle.js - Uncaught ReferenceError: process is not defined - Stack Overflow](https://stackoverflow.com/questions/41359504/webpack-bundle-js-uncaught-referenceerror-process-is-not-defined)
+
+```JS
+// webpack.config.js
+const webpack = require('webpack')
+const dotenv = require('dotenv')
+
+// this will update the process.env with environment variables in .env file
+dotenv.config();
+
+module.exports = {
+  //...
+  plugins: [
+    // ...
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env)
+    })
+    // ...
+  ]
+  //...
+}
+
+// Access environment variables in your source code:
+alert(process.env.NODE_ENV)
+```
 
 ## 0514
 
