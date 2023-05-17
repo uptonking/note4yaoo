@@ -36,9 +36,9 @@ modified: 2023-05-14T04:32:30.696Z
 - ### Have you considered something like logux? How are you resolving conflicts?
 - https://twitter.com/okonetchnikov/status/1042812504206991360
   - Never heard of it, at a glance tho, I don't think it's the right approach. It should only sit at the lowest-level db layer via insert/update/delete commands per item. Looks like they try to do LWW, but how does it generate `time`? I don't see anything about hybrid logical clocks
-- It is something like Redux + CRDT
-  - Very nice! Do you implement the hybrid logical clock algorithm specifically? Looks very close. A lot of good stuff in there.
-- Yeap, own clock. I am not sure how clock will fit DBs needs, but I try to create a easy to understand clock for application level. Maybe you know sooner list of distribution time implementations? To compare different clicks and choose for your task?
+- It(logux) is something like Redux + CRDT
+- Very nice! Do you implement the hybrid logical clock algorithm specifically? Looks very close. A lot of good stuff in there.
+  - Yeap, own clock. I am not sure how clock will fit DBs needs, but I try to create a easy to understand clock for application level. Maybe you know sooner list of distribution time implementations? To compare different clicks and choose for your task?
 - Yeap, good (hlc)clock for DB.
   - Seems like there is no idea case for every case 
   - I tried to solve, when you do not have a connection between nodes for a while and also one of client could have wrong time. (I think it is very popular case when you are making JS framework like @logux_io )

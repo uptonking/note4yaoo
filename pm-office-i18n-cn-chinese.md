@@ -12,7 +12,6 @@ modified: 2023-01-14T15:47:04.431Z
 - 针对中文优化的参考
   - vditor lute, 对中文语境优化的 Markdown 引擎，支持 Go 和 JavaScript
   - 直接参考中文编辑器，如wangEditor
-
 # 中文文档特色
 - 特殊符号
   - 顿号、
@@ -29,6 +28,11 @@ modified: 2023-01-14T15:47:04.431Z
   - 支持英文名和中文名
 # translation
 - 很多自动翻译的工具会翻译code block里面的代码单词
+# i18n-utils
+- https://github.com/noveogroup-amorgunov/localizify /ts/NoDeps
+  - performant library for translation and localization in Node.js and the browser.
+  - Detection user language in browser and in server requests
+  - Easy scope system (nested-object translations)
 # discuss
 - ## 
 

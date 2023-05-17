@@ -31,10 +31,10 @@ modified: 2022-08-21T09:56:53.708Z
   - Multi-team views
   - more
     - some database features have mobile support
-# undb-nocode
-- focalboard底层数据库设计包括 boards/blocks
-
-- undb底层数据库设计包括 table/field/view/attachment
+# design
+- focalboard底层数据库设计包括 blocks/boards
+  - block表拥有 boardId 属性与业务关联，还有type/fields
+  - board表不直接与block相关，通过props和cardProps描述内容
 # focalboard-rewrite
 - goals
   - relicense => better-coding/pattern

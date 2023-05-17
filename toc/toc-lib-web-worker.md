@@ -15,6 +15,11 @@ modified: 2020-12-19T18:22:27.577Z
 - resources
   - https://github.com/deebloo/things-you-can-do-in-a-web-worker
 # worker-web
+- https://github.com/Kanaries/web-data-loader /ts
+  - allows you to load large data files in browser. 
+  - It supports stream data and runs in webworker which will not block the main thread while loading the data. 
+  - web-data-loader also support stream data sampling, it now support Reservoir Sampling methods.
+
 - https://github.com/albertodeago/cloc-web /ts
   - https://cloc-web.netlify.app/
   - The objective of this project is to implement a simple CLOC(Count Lines Of Code) application using WebWorkers to keep the UI interactive and the new WebFileSystemAPI `FileSystemHandle` to let the user select the project from the local file-system.

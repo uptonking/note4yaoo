@@ -10,7 +10,8 @@ modified: 2023-01-20T21:59:47.792Z
 # guide
 
 - cms-dev
-  - 交互的核心通常是编辑器
+  - cms业务架构一般分为 服务端、管理端、展示端
+  - 管理端交互的核心通常是编辑器
 
 - [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809)
   - platform, baas, cms, workflow, airtable-like

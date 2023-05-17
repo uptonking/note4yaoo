@@ -25,7 +25,11 @@ modified: 2021-08-28T11:49:05.730Z
 
 - ## 
 
-- ## 
+- ## would it be useful to replace all trivial random numbers in an app with seeded randomness instead, and then replace the seed with a random seed?
+- https://twitter.com/steveruizok/status/1658736018063872001
+- It's useful for replicating bugs found in testing, but it's a bad idea to actually test against the randomised value even if it's now deterministic, because that introduces a hidden dependency on test order
+- automerge does that; can't tell if only for testing or has other utility
+  - could be useful in tldraw too, since it lets developers pick which way new record ids e.g. right now i'm patching nanoid with uuid since my schema only accepts the latter for ids
 
 - ## Nested `describe` blocks are bad!
 - https://twitter.com/TkDodo/status/1619998044317192192

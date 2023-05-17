@@ -23,8 +23,13 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/evoluhq/evolu
   - https://www.evolu.dev/
   - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
-  - 依赖fp-ts、protobuf、kysely、murmurhash、~~zod~~
+  - 依赖fp-ts、protobuf、kysely(sql-builder)、murmurhash、~~zod~~
   - 提供了dbworker.worker
+  - [Release evolu@5.0.0 · evoluhq/evolu](https://github.com/evoluhq/evolu/releases/tag/evolu%405.0.0)
+    - For now, Evolu is using a synchronous version of SQLite. 
+    - But soon, we will also use asynchronous SQLite for other platforms where synchronous SQLite is not available. 
+    - With Effect, the code is the same.
+    - Without Effect, we would always use Promises, even for synchronous code. Or we would have to write the same logic twice. 
   - All table columns except for ID are nullable by default. It's not a bug; it's a feature. Local-first data are meant to last forever, but schemas evolve. 
   - writing local-first software has been challenging because of the lack of libraries and design patterns. I personally failed several times, and that's why I created Evolu.
   - Evolu architecture is almost a clone of James Long CRDT for mortals. Rewritten and improved
@@ -42,6 +47,7 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/logux/examples
   - Logux is an WebSocket client/server framework to make: collaborative apps; realtime apps; offline-first
   - Logux is a new way to connect client and server. Instead of sending HTTP requests (e.g., AJAX and GraphQL), it synchronizes log of operations between client, server, and other clients.
+  - 官方交流方式是 [gitter](https://gitter.im/logux/logux)
   - when multiple users work with the same document. Logux has features inspired by CRDT to resolve edit conflicts between users. 
   - Time travel to keep actions order the same on every client. A distributed timer to detect the latest changes.
   - offline first: Logux saves Redux actions to IndexedDB and has a lot of features to merge changes from different users.

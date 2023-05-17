@@ -140,6 +140,15 @@ modified: 2023-01-23T11:24:41.943Z
 - https://github.com/Kanaries/graphic-walker
   - https://graphic-walker.kanaries.net/
   - An open source alternative to Tableau.
+  - The original purpose of graphic-walker is not to be a heavy BI platform, but a easy to embed, lite, plugin.
+  - A grammar of graphics based visual analytic user interface where users can build visualizations from low-level visual channel encodings. (based on `vega-lite`)
+- https://github.com/Kanaries/pygwalker /python
+  - Turn your pandas dataframe into a Tableau-style User Interface for visual analysis
+  - It integrates Jupyter Notebook (or other jupyter-based notebooks) with Graphic Walker
+- https://github.com/Kanaries/web-data-loader /ts
+  - allows you to load large data files in browser. 
+  - It supports stream data and runs in webworker which will not block the main thread while loading the data. 
+  - web-data-loader also support stream data sampling, it now support Reservoir Sampling methods.
 
 - OLAP-cube /26Star/MIT/201709/js/单文件
   - https://github.com/fibo/OLAP-cube

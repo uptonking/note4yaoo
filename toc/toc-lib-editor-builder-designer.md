@@ -74,13 +74,11 @@ modified: 2020-11-17T13:38:19.107Z
   - Drag and drop website builder javascript library.
   - 依赖jquery和bootstrap4
 
-
 - grapesjs /BSD/17.2kStar/202301/ts
   - https://github.com/artf/grapesjs
   - https://grapesjs.com/
   - a free and open source Web Builder Framework 
   - 依赖underscore，backbone，codemirror5
-
 
 - react-page /MIT/8.2kStar/202008/ts
   - https://github.com/react-page/react-page
@@ -175,6 +173,13 @@ modified: 2020-11-17T13:38:19.107Z
 - h5-dooring /7kStar/GPLv3/202211/ts
   - https://github.com/MrXujiang/h5-Dooring
   - http://h5.dooring.cn/
+  - https://github.com/H5-Dooring/dooringx
+    - 快速高效搭建可视化拖拽平台
+  - https://github.com/MrXujiang/lowcode-cms
+    - 基于dooring低代码社区的开源cms系统
+    - 基于koa2自研服务端开发架构
+    - server 基于nodejs的服务端, 启动后可直接访问3000 端口, 也就是内容SSR端
+    - admin CMS的管理后台, 集成了用户管理, 内容审核, 内容发布, 数据统计等模块
   - H5可视化页面配置解决方案
   - 技术栈以react和typescript为主， 后台采用nodejs开发, 正在探索h5-lowcode解决方案
   - editor依赖antd4、braft-editor、react-dnd

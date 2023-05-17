@@ -167,7 +167,7 @@ $$('[contenteditable]')
 
 - dev-to
   - streaming-infinite-list/tree
-  - 表格视图
+  - 表格视图 remove trpc from tables
     - 透视表、database多视图、编辑器内的database
     - editable-react-table、undb/focalboard、noseditor
   - slate-docs-examples
@@ -264,33 +264,12 @@ $$('[contenteditable]')
 
 ## 050
 
-## 0516
+## 0517
 
-- [Webpack: Bundle.js - Uncaught ReferenceError: process is not defined - Stack Overflow](https://stackoverflow.com/questions/41359504/webpack-bundle-js-uncaught-referenceerror-process-is-not-defined)
-
-```JS
-// webpack.config.js
-const webpack = require('webpack')
-const dotenv = require('dotenv')
-
-// this will update the process.env with environment variables in .env file
-dotenv.config();
-
-module.exports = {
-  //...
-  plugins: [
-    // ...
-    new webpack.DefinePlugin({
-      'process.env': JSON.stringify(process.env)
-    })
-    // ...
-  ]
-  //...
-}
-
-// Access environment variables in your source code:
-alert(process.env.NODE_ENV)
-```
+- [What is difference between reducers and extrareducers in redux toolkit? - Stack Overflow](https://stackoverflow.com/questions/66425645/what-is-difference-between-reducers-and-extrareducers-in-redux-toolkit)
+  - The reducers property both creates an action creator function and responds to that action in the slice reducer. 
+  - The extraReducers allows you to respond to an action in your slice reducer but does not create an action creator function.
+  - You would use extraReducers when you are dealing with an action that you have already defined somewhere else. The most common examples are responding to a createAsyncThunk action and responding to an action from another slice.
 
 ## 0514
 

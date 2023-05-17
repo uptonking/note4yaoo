@@ -9,4 +9,11 @@ modified: 2021-01-02T10:42:26.068Z
 
 # guide
 
-# pieces
+# dev
+
+# blogs
+
+## more-blogs
+
+- [Bitwise Binary Search: Elegant and Fast](https://orlp.net/blog/bitwise-binary-search/)
+# more

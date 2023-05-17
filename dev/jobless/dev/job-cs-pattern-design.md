@@ -46,11 +46,11 @@ modified: 2021-09-23T18:31:42.015Z
   - 备忘录
 
 - 框架中常用的数据结构
-  - stack栈：JS执行栈、react stack reconciler
-  - queue队列：异步任务队列
-  - tree树：dom树、js生成ast、react vdom树
-  - 哈希表：vue diff算法key作用
-  - 图：GC标记清除算法在标记过程中维护可达图、webpack在编译过程中维护可达图
+  - tree树: dom树、js生成ast、react vdom树
+  - stack栈: JS执行栈、react stack reconciler
+  - queue队列: 异步任务队列
+  - 哈希表: vue diff算法key作用
+  - 图: GC标记清除算法在标记过程中维护可达图、webpack在编译过程中维护可达图
 
 - resources
   - [JavaScript设计模式与开发实践 | 汪图南](https://wangtunan.github.io/blog/designPattern/)
@@ -62,6 +62,9 @@ modified: 2021-09-23T18:31:42.015Z
 # 创建型
 
 ## 建造者
+
+- usecase
+  - redux createReducer ActionReducerMapBuilder
 
 - Use the Builder pattern to clean up code in situations where you have a constructor with too many parameters.
 

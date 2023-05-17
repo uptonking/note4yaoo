@@ -295,6 +295,8 @@ modified: 2022-08-18T16:57:46.405Z
   - https://github.com/Atypon-OpenSource/manuscripts-article-editor
   - the editor package of Manuscripts app to be used in a react application.
   - 数据保存支持 pouchdb-adapter-idb
+  - https://github.com/Atypon-OpenSource/manuscripts-body-editor
+    - A React + ProseMirror editor for manuscripts.
   - https://gitlab.com/mpapp-public/manuscripts-manuscript-editor
   - https://gitlab.com/mpapp-public/manuscripts-frontend
     - /CPAL-1.0; 类似MPL
@@ -303,6 +305,8 @@ modified: 2022-08-18T16:57:46.405Z
   - 编辑器样式采用论文简洁风格，支持 摘要、脚注、交叉引用、评论
   - Manuscripts.io web frontend which makes API calls to manuscripts-api and manuscripts-sync
   - This repository contains the browser client for the Manuscripts collaborative authoring environment, in a single-page React app (desktop and mobile app embeddable using cocos).
+  - https://github.com/Atypon-OpenSource/manuscripts-data
+    - source data for use by Manuscripts client applications
   - ref
     - https://gitlab.com/mpapp-public/manuscripts-api
     - https://gitlab.com/mpapp-public/manuscripts-sync

@@ -51,7 +51,8 @@ modified: 2023-03-03T08:06:36.592Z
   - Self-hosted, offline capable and easy to setup.
   - its translation engine is powered by the open source Argos Translate library.
   - 依赖flask
-- https://github.com/argosopentech/argos-translate
+
+- https://github.com/argosopentech/argos-translate /python
   - Open-source offline translation library written in Python
   - Argos Translate uses OpenNMT for translations
   - 支持中日韩

@@ -28,6 +28,11 @@ modified: 2023-04-04T22:36:31.529Z
   - I also built native-file-system-adapter so you can have it in all Browsers, Deno, and NodeJS with different storages
     - https://github.com/jimmywarting/native-file-system-adapter
 
+- https://github.com/Kanaries/web-data-loader /ts
+  - allows you to load large data files in browser. 
+  - It supports stream data and runs in webworker which will not block the main thread while loading the data. 
+  - web-data-loader also support stream data sampling, it now support Reservoir Sampling methods.
+
 - https://github.com/jahewson/node-byline
   - Line-by-line Stream reader for node.js
 
