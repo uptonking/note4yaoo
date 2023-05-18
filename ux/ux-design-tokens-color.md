@@ -163,15 +163,7 @@ modified: 2021-01-04T16:18:46.383Z
   - Convey emotion or mood
   - Don’t forget about color contrast
     - Always check the color-contrast ratio to ensure accessiblity
-  - Gradient design tools
-    - https://uigradients.com/
-    - https://github.com/webkul/coolhue
-    - https://www.grabient.com/
-    - https://github.com/itmeo/webgradients
-    - https://gradientbuttons.colorion.co/
-    - https://webgradients.com/
-    - https://gradienthunt.com/
-  - ref
+ - ref
     - https://www.smashingmagazine.com/2018/01/gradients-user-experience-design/
     - https://uxplanet.org/why-gradients-are-back-to-rule-in-2018-8b36711c335f
     - https://blog.prototypr.io/design-with-gradients-fdba5ec856d4

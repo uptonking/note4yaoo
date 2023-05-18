@@ -70,108 +70,10 @@ Math.random()
   .substring(0, 5);
 ```
 
-- authing 返回值
-
-```JS
-{
-  "thirdPartyIdentity": {
-    "provider": null,
-    "refreshToken": null,
-    "accessToken": null,
-    "scope": null,
-    "expiresIn": null,
-    "updatedAt": null
-  },
-  "id": "619cb7c0032ec5e844cb3afe",
-  "createdAt": "2021-11-23T09:43:28.608Z",
-  "updatedAt": "2021-11-24T06:30:23.372Z",
-  "userPoolId": "60c8119da4f0d6f59c0b9560",
-  "isRoot": false,
-  "status": "Activated",
-  "oauth": null,
-  "email": "jinyaoo@qq.com",
-  "phone": null,
-  "username": null,
-  "unionid": null,
-  "openid": null,
-  "nickname": null,
-  "company": null,
-  "photo": "https://files.authing.co/authing-console/default-user-avatar.png",
-  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36 Edg/96.0.1054.29",
-  "device": "Windows",
-  "password": "aebb787f0bd5f0f99a252af7015881dd",
-  "salt": "ief7ddcppmn",
-  "loginsCount": 13,
-  "lastIp": "183.128.81.208",
-  "name": null,
-  "givenName": null,
-  "familyName": null,
-  "middleName": null,
-  "profile": null,
-  "preferredUsername": null,
-  "website": null,
-  "gender": "U",
-  "birthdate": null,
-  "zoneinfo": null,
-  "locale": null,
-  "address": null,
-  "formatted": null,
-  "streetAddress": null,
-  "locality": null,
-  "region": null,
-  "postalCode": null,
-  "city": null,
-  "province": null,
-  "country": null,
-  "registerSource": [
-    "basic:email"
-  ],
-  "secretInfo": null,
-  "emailVerified": true,
-  "phoneVerified": false,
-  "lastLogin": "2021-11-24T06:30:23.363Z",
-  "blocked": false,
-  "isDeleted": false,
-  "sendSmsCount": 0,
-  "sendSmsLimitCount": 1000,
-  "encryptedPassword": "rNCATAAD4zq4N1faSBGrBWC0CsA0spYZHrzA1OoqGDlOC+u4UGk6rT13Iystmbgo7c7aQiM2uHRMHBVFLFD0TyWJ4J9sA1uqYrr/wk7w/vmk+jw6YNWJrVnPUAzdaOiY2jovycjoIAg29d6ZKIusP70Kte4WMmT8LsBVONP/JaM=",
-  "signedUp": "2021-11-23T09:43:28.608Z",
-  "externalId": null,
-  "mainDepartmentId": null,
-  "mainDepartmentCode": null,
-  "lastMfaTime": null,
-  "passwordSecurityLevel": 1,
-  "resetPasswordOnFirstLogin": false,
-  "syncExtInfo": null,
-  "phoneCountryCode": null,
-  "lastIP": "183.128.81.208",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cGRhdGVkX2F0IjoiMjAyMS0xMS0yM1QxMzozMToxOS4yMDdaIiwiYWRkcmVzcyI6eyJjb3VudHJ5IjpudWxsLCJwb3N0YWxfY29kZSI6bnVsbCwicmVnaW9uIjpudWxsLCJmb3JtYXR0ZWQiOm51bGx9LCJwaG9uZV9udW1iZXJfdmVyaWZpZWQiOmZhbHNlLCJwaG9uZV9udW1iZXIiOm51bGwsImxvY2FsZSI6bnVsbCwiem9uZWluZm8iOm51bGwsImJpcnRoZGF0ZSI6bnVsbCwiZ2VuZGVyIjoiVSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJlbWFpbCI6Imppbnlhb29AcXEuY29tIiwid2Vic2l0ZSI6bnVsbCwicGljdHVyZSI6Imh0dHBzOi8vZmlsZXMuYXV0aGluZy5jby9hdXRoaW5nLWNvbnNvbGUvZGVmYXVsdC11c2VyLWF2YXRhci5wbmciLCJwcm9maWxlIjpudWxsLCJwcmVmZXJyZWRfdXNlcm5hbWUiOm51bGwsIm5pY2tuYW1lIjpudWxsLCJtaWRkbGVfbmFtZSI6bnVsbCwiZmFtaWx5X25hbWUiOm51bGwsImdpdmVuX25hbWUiOm51bGwsIm5hbWUiOm51bGwsInN1YiI6IjYxOWNiN2MwMDMyZWM1ZTg0NGNiM2FmZSIsImV4dGVybmFsX2lkIjpudWxsLCJ1bmlvbmlkIjpudWxsLCJ1c2VybmFtZSI6bnVsbCwiZGF0YSI6eyJ0eXBlIjoidXNlciIsInVzZXJQb29sSWQiOiI2MGM4MTE5ZGE0ZjBkNmY1OWMwYjk1NjAiLCJhcHBJZCI6IjYxOTYxYTdiOGI5MGFmMzdlN2M0MjJlMCIsImlkIjoiNjE5Y2I3YzAwMzJlYzVlODQ0Y2IzYWZlIiwidXNlcklkIjoiNjE5Y2I3YzAwMzJlYzVlODQ0Y2IzYWZlIiwiX2lkIjoiNjE5Y2I3YzAwMzJlYzVlODQ0Y2IzYWZlIiwicGhvbmUiOm51bGwsImVtYWlsIjoiamlueWFvb0BxcS5jb20iLCJ1c2VybmFtZSI6bnVsbCwidW5pb25pZCI6bnVsbCwib3BlbmlkIjpudWxsLCJjbGllbnRJZCI6IjYwYzgxMTlkYTRmMGQ2ZjU5YzBiOTU2MCJ9LCJ1c2VycG9vbF9pZCI6IjYwYzgxMTlkYTRmMGQ2ZjU5YzBiOTU2MCIsImF1ZCI6IjYxOTYxYTdiOGI5MGFmMzdlN2M0MjJlMCIsImV4cCI6MTYzODk0NTAyMywiaWF0IjoxNjM3NzM1NDIzLCJpc3MiOiJodHRwczovL2FmZmluZS5hdXRoaW5nLmNuL29pZGMifQ.wfYszdakFTr4ag39xgEnbYzV2OnrkEymHBErxcMGtpg",
-  "tokenExpiredAt": "2021-12-08T06:30:23.357Z",
-  "_id": "619cb7c0032ec5e844cb3afe",
-  "registerMethod": "basic:email",
-  "registerInClient": "60c8119da4f0d6f59c0b9560",
-  "decryptedToken": {
-    "type": "user",
-    "userPoolId": "60c8119da4f0d6f59c0b9560",
-    "appId": "61961a7b8b90af37e7c422e0",
-    "id": "619cb7c0032ec5e844cb3afe",
-    "userId": "619cb7c0032ec5e844cb3afe",
-    "_id": "619cb7c0032ec5e844cb3afe",
-    "phone": null,
-    "email": "jinyaoo@qq.com",
-    "username": null,
-    "unionid": null,
-    "openid": null,
-    "clientId": "60c8119da4f0d6f59c0b9560"
-  }
-}
-```
-
 - 图片 base64 编码示例
 
 ```
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEX///+EMTGAJyeDLi6sfn5/JCR8GBiYV1fk1dW8l5d+ICDKsLB5DQ2CKyv9+vqcYGB6ExPYxMTw5+e3j4+OQ0N6EBB9HR2hamq/nZ3Su7umc3Pq39/cysp4BAS5kpJ7FxeIOTmRS0v38/PFpaWyiIjt5OSod3eINzeeZmaaXFyUUlKPSEjcOe1gAAAE6klEQVR4nO3dbVfaShSG4ZnEIAJRUAmgUKxw7LH9///v9GW51tHkCZM9k72Jfe7PBXIZCiHsIc6hbjfru146PMLH1Gz8Oq+KrJcm8/utNc+59a70/ZXv1ubAZY++X82NidtZz8CfxCtT4Y8+n6JvxC+GwHHfz9E/xDs74WGiIfT7o5nwIlMR+pEZUUvoRxefXegrI6Ke0FcPn11oRNQU2hBVhX6y+uxCC2JdmEfXSvzXXJjfR/fURiy0iTXhKP5T+bpoJb4m2OwO1YXj6Pu8ahVqEw2EvvieYMODsxDqEk2EPvt6nWDbw7IRahKNhD77oUW0Evrs/jnB5gdkJlQj2gl96VWIhkJfPmkQdYTgYLzMFYgqwvwVnLPUeKKqCCebKfjuoMxvEyBa0xFOHSSWfRO1hHZENaHbAGJe/BPPaElPiIlZr0RFISYmOK+A0xS6BfgqLy96JKoKMbHHvagrdNt58+FNXsU/LEhZiIn7vojaQrddAuK8J6K6UH0v6gvdGO3FWS/jUwZCN0Z7cd4H0ULoHkfgA+OuB6KJ0I0RcbmIfvSP2QjdY4X2YnKikRATl5vox3+fldA9ZoA4S0w0E7oNmjdLTLTbh/iU47LpDyLOSojeE//sxZREI+F43zrPkHIv2gi3s1bgzzeNQ/RWvGUi3J4e250nI1oI0Sf9dy1Tzb8bCBdhs/Op5t/1hZvQyfJERHUhOvfdREwy4q8t7AD0fp9ixF9ZeOi2+CEFUVeIgOUIDIEmGPFXFaIlVsXl9Qoch8cTNYUQ+GsIDBJjR/wVhV/mAHj5+1YPVT9EPSEEvg1jImLkQg014XF/AujcCyK+DEF4HDVv/eTmfzeExJhVDEqzGBcAWNy8uyX6Z1XEiL/OxNA38HZXm9xHxIhVDJZTX01LEyDxpuGBgrIUNu4Y9B+2kBINhWBxyd3pF91O2QnhC+SJI4OumQlb3gHSEq2Ere/iV4goWcVgJDxxmLIGxOx79/l3G+HJ47ADOBUgWMVgIgw4lj6gvdh5FYOFMOjz0HQHiPcdiQbCKuxj+xS89XddxVATVovb2I6tK2/L1XPQvTxfgbvpSKyvkq3msZ1YWlzG3k23VQzKK53TVH7rQByksNMqhmEKfRn+ijpQoZ8Ef6cxVKHfhT5PByusQr/qH6ywCH2aDlaYhZ5hHKywDD1vQ+HZRiGF5x+FLcL4H56tT+WVRWy1zZQLs5foHw9+/UgsH9ax1bZTLkxwnqb2K0qNU9Dd2n788tRUGDbn3a0FhTAKJVEoiUIchZIolEQhjkJJFEqiEEehJAolUYijUBKFkijEUSiJQkkU4iiURKEkCnEUSqJQEoU4CiVRKIlCHIWSKJREIY5CSRRKohBHoSQKJVGIo1AShZIoxFEoiUJJFOIolEShJApxFEqiUBKFOAolUSiJQhyFkiiURCGOQkkUSqIQR6EkCiVRiKNQEoWSKMRRKIlCSRTiKJREoSQKcRRKolAShTgKJVEoiUIchZLOXFiN3XVcjcLY+0wo9NUstvql8ybR91m7njWvjUDh+UchhecfhX+R8DhYYfO15+vVrgkzlLKwqwo7t91bb6qwahModL5+daZBVAVfanUKLvF95o0OoUDnHibWWytoEvpK+rvVfmhP1HzUCejcoaiyMh9KZVYV625A564Xx9XlUFodF/BF5j+Mt9zZWpXGVgAAAABJRU5ErkJggg==
-
 ```
 
 - install app-ubuntu-calibre
@@ -180,7 +82,6 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEX///
 - TO-DO: components、datable、chart
 
 - 知乎禁止转载的回答测试
-
   - https://www.zhihu.com/question/25950466/answer/31731502
   - 只有复制内容较长时才会提示申请转载，比如复制超过 150 字
 
@@ -287,3 +188,23 @@ $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$nu
     - 6212 2518 0900 0758 487
     - 6212251809000758487
 
+- debt-freeze
+  - 现金发放
+  - 借用亲友银行卡
+    - 工资发亲人卡上，一般公司都不太愿意，怕以后跟你扯皮，有风险有麻烦。
+    - 而且证明你和亲人的关系也比较麻烦。
+  - 办新卡，可能被再次冻结
+
+- 🤝🏻 老范，一晃10个月过去了，我竟然还没出去工作。
+- 这期间一直在杭州，做了很多想做的事，包括数据库、多人协作编辑、编辑器、表格
+- 我最有代表性的作品是类似WPS/Word的编辑器，完成度中等 https://windrunnermax.github.io/DocEditor/
+- 年后我意识到这个编辑器的亮点不够大，所以近期在做多维表格，业务场景是任务管理、内容管理，目标效果类似飞书多维表格 https://www.feishu.cn/product/base
+- 你可能不理解我为什么对技术这么执着，今天我30岁，没有技术代表作和产品代表作我就感觉这些年白干了
+- 💡 对工作和公司的想法我有了变化，上份工作我对编辑器非常执着才加入了投光编辑器，离职原因是工作忙且不想写没有积累的代码；可是，很遗憾我错过了一个亿的机会，投光改名Affine在2022年底Pre-A轮融资1000万美元，原来创业独角兽曾经就在我身边可是我没把握住
+- 又积累了10个月后，我坚定自己做编辑器和内容管理的方向是没错的。产品亮点是自研在编辑器中支持多维表格，初步效果可以在这里体验下(我在模仿这个) https://demo.undb.xyz/
+- 不得不承认，在工作中代码并没有我想的那么重要，融资前的代码乱七八糟，但演示demo效果还行，老板很能吹，所以能融1000万；在我的技术代表作稳定后，我就会花更多时间在产品和业务项目上
+- 我准备最后打磨下作品，然后就面试工作了，代码问题不是一时能改完的
+- [衰]这次找你是因为钱用完了，去年处理完老家事情手里大概3万多，现在手里只剩2000，我也是催自己赶紧做出代表作然后面试工作，火烧眉毛了
+- 希望你能再次帮我，我挺无颜面对老同学的，但自己几乎无社交，事不过三。这次打算借6000开始新工作，主要用于房租日用。因为前些年债务的原因，最近我的微信钱包被冻结了，所以银行卡转账可能被冻结也可能正常，所以希望你能先转3000，等我确定工作地点入职时再转3000。没想到有什么能回报你，如果有一天我创业了，可以找你做市场顾问。
+- 我还是太任性了，但年轻时没有代表作，估计以后也不会有了。现在我很能理解你考公的选择了，普通工作几乎都不轻松，有没有润的动力，希望我们都能做到自己想做的。
+- [抱拳]

@@ -17,7 +17,9 @@ modified: 2023-05-17T07:36:07.757Z
 - 去掉table概念，将field作为最底层基础block
   - 将table只视为field的一种具体组合，field还可以组合为kanban/tree
 
-- 去掉loadable-component
+- cleanup
+  - 去掉loadable-component
+  - disable attachment(-field)
 # codebase
 - undb底层数据库设计包括 table/field/view/attachment
 

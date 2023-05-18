@@ -307,6 +307,10 @@ modified: 2021-05-06T09:58:23.803Z
   - https://github.com/aykutkardas/svgps
     - https://svgps.app/
     - SVGPS removes the burden of working with a cluster of SVG files by converting your icons into a single JSON file. You can easily use this file in your frontend or mobile projects.
+# logos
+
+- [FreeLogo.me – Free SVG Logo Templates](https://freelogo.me/)
+  - SVG Logo placeholders you can download and use with no restrictions for free.
 # ref
 - https://github.com/fontello/fontello
   - This tool lets you combine icon webfonts

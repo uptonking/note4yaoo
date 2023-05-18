@@ -264,6 +264,13 @@ $$('[contenteditable]')
 
 ## 050
 
+## 0518
+
+- [Retrieve data from a ReadableStream object? - Stack Overflow](https://stackoverflow.com/questions/40385133/retrieve-data-from-a-readablestream-object)
+  - `let text = await new Response(yourReadableStream).text();`.
+  - Note that you can only read a stream once, so in some cases, you may need to clone the response in order to repeatedly read it
+    - `fetch('example.json') .then(res=>res.clone().json()) .then( json => console.log(json))`
+
 ## 0517
 
 - [What is difference between reducers and extrareducers in redux toolkit? - Stack Overflow](https://stackoverflow.com/questions/66425645/what-is-difference-between-reducers-and-extrareducers-in-redux-toolkit)

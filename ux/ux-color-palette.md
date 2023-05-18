@@ -172,6 +172,18 @@ modified: 2022-10-23T14:57:23.473Z
 
 - https://github.com/keeev/brandcolors /201507
   - Brandcolors (LESS & Sass Variables) for all known brands like Facebook, Twitter, Kickstarter and many more.
+# gradient
+- Gradient design tools
+  - https://cssgradient.io/gradient-backgrounds/
+  - https://uigradients.com/
+  - https://github.com/webkul/coolhue
+  - https://www.grabient.com/
+  - https://github.com/itmeo/webgradients
+  - https://gradientbuttons.colorion.co/
+  - https://webgradients.com/
+  - https://gradienthunt.com/
+ 
+
 # color-repos
 - https://github.com/adobe/leonardo
   - https://leonardocolor.io/
