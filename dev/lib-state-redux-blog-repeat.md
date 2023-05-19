@@ -14,9 +14,6 @@ modified: 2021-05-13T03:20:00.313Z
   - [React doesn't need state management tool, I said](https://dev.to/tolgee_i18n/react-doesnt-need-state-management-tool-i-said-31l4)
     - https://github.com/tolgee/tolgee-platform/blob/main/webapp/src/fixtures/createProvider.tsx
 # blogs
-
-## [手写一个Redux，深入理解其原理 - 掘金](https://juejin.cn/post/6845166891682512909)
-
 - https://github.com/dennis-jiang/Front-End-Knowledges/tree/master/Examples/React/redux
 
 - [webpack核心模块tapable用法解析 - 掘金](https://juejin.cn/post/6939794845053485093)

@@ -13,7 +13,10 @@ modified: 2020-10-22T13:02:56.929Z
   - https://github.com/kentcdodds/dom-testing-library-with-anything
     - This repo is a bunch of simple examples of using DOM Testing Library to test a Counter component in various frameworks
 - todomvc
+  - https://todomvc.com/
   - https://github.com/tastejs/todomvc
+  - https://github.com/twinstae/todomvc-for-all
+  - https://github.com/rokoroku/react-redux-typescript-boilerplate
 - realword
   - https://github.com/gothinkster/realworld
 

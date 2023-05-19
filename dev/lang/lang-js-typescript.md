@@ -12,6 +12,9 @@ modified: 2020-07-14T09:27:08.258Z
 - ts vs flow
   - ts特性 > 静态类型检查(flow) + ES新语法(babel) + ide支持(vscode)
 
+
+- typescript-learning
+  - [TypeScript: Cheat Sheets](https://www.typescriptlang.org/cheatsheets)
 # dev-log
 
 - `!` 操作符

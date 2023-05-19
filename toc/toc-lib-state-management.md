@@ -197,6 +197,16 @@ modified: 2020-07-14T11:03:53.196Z
     - It could be months before RxJS it eventually supports Deno.
     - No official guideline on how to integrate RxJS with React.
   - EVT is an attempt to address all these points while trying to remain as accessible as EventEmitter.
+# comparison
+- https://github.com/dai-shi/will-this-react-global-state-work-in-concurrent-rendering
+  - Test tearing and branching in React concurrent rendering
+
+- https://github.com/turtleflyer/compare-react-state-management-solutions
+  - The objective of this project is to compare the performance of the use-interstate library with the popular state management libraries for React, namely Redux and Recoil.
+  - use-interstate is an unopinionated state management solution for React that leans to be as simple as the standard hook useState
+
+- https://github.com/Odonno/react-state-management-comparison
+  - Comparison of different React state management libraries (hooks, mobx, recoiljs)
 # signals
 - https://github.com/preactjs/signals /ts
   - Signals is a performant state management library with two primary goals
@@ -246,6 +256,38 @@ modified: 2020-07-14T11:03:53.196Z
 - more-signal
   - https://github.com/dai-shi/valtio-signal
   - https://github.com/react-gx/gx
+# atom-multi-stores
+- https://github.com/Omnistac/zedux
+  - A Molecular State Engine for React.
+  - Zedux is a multi-paradigm state management tool that features a powerful composable store model wrapped in a DI-driven atomic architecture.
+# state-machine
+- https://github.com/jakesgordon/javascript-state-machine
+  - /7.4kStar/MIT/201807/js
+  - A library for finite state machines. xstate也是
+  - [web前端为什么很少用有限状态机设计框架？](https://www.zhihu.com/question/278938893)
+    - 我觉得区别还是前端树状结构比较明显，所以整个问题可以用决策树（路由）或组件树（vDOM tree）+很简单的局部状态来建模，所以不会有游戏里那种 很大的有限状态机，局部状态用几个变量来存就行了
+- https://github.com/davestewart/javascript-state-machine
+  - An expressive, feature-rich, event-driven JavaScript finite-state machine
+- https://github.com/ifandelse/machina.js
+  - js ex machina - finite state machines in JavaScript
+- https://github.com/matthewp/robot
+  - A functional, immutable Finite State Machine library
+
+- https://github.com/Jblew/xstatedb
+  - State database using xstate
+- https://github.com/steelbreeze/state
+  - Hierarchical/Executable finite state machine for TypeScript and JavaScript
+  - v8 does not yet contain any support for serialization due to the challanges brought by the introduction of deferred events
+
+- https://github.com/thefrontside/microstates
+  - Microstates makes working with pure functions over immutable data feel like working with the classic, mutable models we all know
+  - A Microstate is just an object that is created from a value and a type. 
+  - The value is just data, and the type is what defines how you can transition that data from one form into the next. 
+  - Unlike normal JavaScript objects, microstates are 100% immutable and cannot be changed. 
+- https://github.com/ralusek/statorade
+  - JavaScript event-driven state machine.
+- https://github.com/alexmdodge/ts-state-machine
+  - A package with a simple state machine for the purpose of learning
 # react
 - react-redux-useMutableSource(api已升级为useSyncExternalStore)
   - https://codesandbox.io/s/react-redux-usemutablesource-eyxoe
@@ -364,38 +406,6 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/redux-zero/redux-zero
   - /1.9kStar/MIT/202008/ts
   - lightweight state container based on Redux
-# atom-multi-stores
-- https://github.com/Omnistac/zedux
-  - A Molecular State Engine for React.
-  - Zedux is a multi-paradigm state management tool that features a powerful composable store model wrapped in a DI-driven atomic architecture.
-# state-machine
-- https://github.com/jakesgordon/javascript-state-machine
-  - /7.4kStar/MIT/201807/js
-  - A library for finite state machines. xstate也是
-  - [web前端为什么很少用有限状态机设计框架？](https://www.zhihu.com/question/278938893)
-    - 我觉得区别还是前端树状结构比较明显，所以整个问题可以用决策树（路由）或组件树（vDOM tree）+很简单的局部状态来建模，所以不会有游戏里那种 很大的有限状态机，局部状态用几个变量来存就行了
-- https://github.com/davestewart/javascript-state-machine
-  - An expressive, feature-rich, event-driven JavaScript finite-state machine
-- https://github.com/ifandelse/machina.js
-  - js ex machina - finite state machines in JavaScript
-- https://github.com/matthewp/robot
-  - A functional, immutable Finite State Machine library
-
-- https://github.com/Jblew/xstatedb
-  - State database using xstate
-- https://github.com/steelbreeze/state
-  - Hierarchical/Executable finite state machine for TypeScript and JavaScript
-  - v8 does not yet contain any support for serialization due to the challanges brought by the introduction of deferred events
-
-- https://github.com/thefrontside/microstates
-  - Microstates makes working with pure functions over immutable data feel like working with the classic, mutable models we all know
-  - A Microstate is just an object that is created from a value and a type. 
-  - The value is just data, and the type is what defines how you can transition that data from one form into the next. 
-  - Unlike normal JavaScript objects, microstates are 100% immutable and cannot be changed. 
-- https://github.com/ralusek/statorade
-  - JavaScript event-driven state machine.
-- https://github.com/alexmdodge/ts-state-machine
-  - A package with a simple state machine for the purpose of learning
 # observable
 - https://github.com/xolvio/pojo-observer
   - A minimalist object observer with React hooks support. 

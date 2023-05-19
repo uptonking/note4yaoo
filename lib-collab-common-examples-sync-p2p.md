@@ -30,6 +30,17 @@ modified: 2023-01-17T19:13:01.845Z
   - A real-time data backend for browser-based applications.
   - core Rust driftdb implementation.
 
+- https://github.com/webstudio-is/immerhin
+  - Send patches around to keep the system in sync.
+  - The core idea is to use patches to keep the UI in sync between client and server, multiple clients, or multiple windows.
+  - 依赖 immer
+  - It uses Immer as an interface for state mutations and provides a convenient way to group mutations into a single transaction, and enables undo/redo out of the box.
+  - Sync application state using patches
+  - Get undo/redo for free
+  - You can use anything to create containers, it could be a Redux store, could be an observable, a nano state or nanostores.
+
+
+
 - https://github.com/Rolands-Laucis/Socio
   - A WebSocket based realtime duplex Front-End and Back-End syncing API paradigm framework
 

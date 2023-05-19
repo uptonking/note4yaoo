@@ -9,6 +9,10 @@ modified: 2021-09-22T16:41:02.529Z
 
 # guide
 
+- recheck
+  - 目标一致: 更好的技术、更好的产品、更大的市场
+  - 对技术leader: 技术交流
+  - 对产品主管: 看竞品分析多吗，融资事件
 # 编辑器类，适合我的能力
 - 模型层
   - model更新都由拦截keydown/input事件触发，还是MutationObserver触发
@@ -35,6 +39,7 @@ modified: 2021-09-22T16:41:02.529Z
   - feature分支开发的流程
   - 需求讨论、项目排期
   - 多久合一次主分支，ci/cd是的执行时机
+  - 发版的流程，monorepo
   - code review有吗
 
 - 技术栈

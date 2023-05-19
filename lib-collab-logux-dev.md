@@ -42,4 +42,22 @@ modified: 2023-05-14T04:30:34.915Z
 - Proxy server for Web Sockets
 - Logux Proxy re-send changes to clients
 - Changes have time mark to keep order
+# docs
+- Logux uses the peer-to-peer model. 
+  - There is no big difference between client and server. 
+  - This is why we call both client and server “nodes”.
+- Logux Core provides BaseNode class, which will synchronize actions between two nodes. 
+  - ClientNode and ServerNode classes extend this class with small behaviour changes.
+- If a user opens a website with Logux in multiple browser tabs, tabs will elect one leader, and only this leader will keep the connection. If the user closes the leader tab, tabs will re-elect a new leader.
+
+- subscriptions and channels are the main way to get data from the server. 
+  - It asks the server to send current data state and re-send all actions with these data changes.
+- Channel is just a string like exchange-rate or users/14.
+- The client remembers all the subscriptions. If the client loses connection, it will re-subscribe to channels again.
+# examples
+- https://github.com/logux/examples
+  - 仅支持单用户多窗口同步
+
+- https://github.com/zumkorn/logux-simple-app
+  - front+back
 # more

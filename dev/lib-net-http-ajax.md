@@ -203,7 +203,24 @@ modified: 2023-02-06T09:14:40.114Z
 
 - ## 
 
-- ## 
+- ## [浏览器允许的并发请求资源数是什么意思？ - 知乎](https://www.zhihu.com/question/20474326)
+- 首先，是基于端口数量和线程切换开销的考虑，浏览器不可能无限量的并发请求，因此衍生出来了并发限制和HTTP/1.1的Keep alive。
+  - 而随着技术的发展，负载均衡和各类NoSQL的大量应用，基本已经足以应对C10K的问题。 
+  - 但却并不是每个网站都懂得利用domain hash也就是多域名来加速访问。
+  - 因此，新的浏览器加大了并发数的限制，但却仍控制在8以内。
+
+- 补充一小点就是浏览器即使放弃保护自己，将所有请求一起发给服务器，也很可能会引发服务器的并发阈值控制而被BAN，而另外一个控制在8以内的原因也是keep alive技术的存在使得浏览器复用现有连接和服务器通信比创建新连接的性能要更好一些。
+
+- 浏览器的并发请求数目限制是针对同一域名的。
+  - 同一时间针对同一域名下的请求有一定数量限制。
+  - 超过限制数目的请求会被阻塞，这就是为什么会有zhimg.com, http://twimg.com 之类域名的原因。
+
+- 半开连接指的是 TCP 连接的一种状态，当客户端向服务器端发出一个 TCP 连接请求，在客户端还没收到服务器端的回应并发回一个确认的数据包时，这个 TCP 连接就是一个半开连接。
+  - 若服务器到超时以后仍无响应，那么这个 TCP 连接就等于白费了，所以操作系统会本能的保护自己，限制 TCP 半开连接的总个数，以免有限的内核态内存空间被维护 TCP 连接所需的内存所浪费。
+
+- 由于 TCP 协议的限制，PC 端只有65536个端口可用以向外部发出连接，而操作系统对半开连接数也有限制以保护操作系统的 TCP\IP 协议栈资源不被迅速耗尽，因此浏览器不好发出太多的 TCP 连接，而是采取用完了之后再重复利用 TCP 连接或者干脆重新建立 TCP 连接的方法。
+- 如果采用阻塞的套接字模型来建立连接，同时发出多个连接会导致浏览器不得不多开几个线程，而线程有时候算不得是轻量级资源，毕竟做一次上下文切换开销不小。
+- 这是浏览器作为一个有良知的客户端在保护服务器。就像以太网的冲突检测机制，客户端在使用公共资源的时候必须要自行决定一个等待期。当超过2个客户端要使用公共资源时，强势的那个邪恶的客户端可能会导致弱势的客户端完全无法访问公共资源。从前迅雷被喷就是因为它不是一个有良知的客户端，它作为 HTTP 协议客户端没有考虑到服务器的压力，作为 BT 客户端没有考虑到自己回馈上传量的义务。
 
 - ## 争议: We will very likely be removing the onSuccess / onError / onSettled callbacks from `useQuery` in v5. 
 - https://twitter.com/TkDodo/status/1647347026135330816
@@ -214,8 +231,6 @@ modified: 2023-02-06T09:14:40.114Z
   - should probably both be in the global queryCache callback so that you a) only have to set it up once and b) it doesn't trigger multiple times.
   - in mobile apps there are lot of cases where we need to handle every error differently. having it setup once will not be suitable for this case.
   - depends on what handling it differently means. I've had a good experience with the global callbacks + the meta field
-
-
 
 - ## [OData adoption rate? : dotnet](https://www.reddit.com/r/dotnet/comments/11eoa6d/odata_adoption_rate/)
 
