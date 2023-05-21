@@ -14,6 +14,15 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
+- ## 
+
+- ## 我视能不能解决庞大的屎山为新手老手的分水岭
+- https://twitter.com/Soulogic/status/1659386692904816641
+- 软件工程师 3 个进阶的思考维度，也是任何严肃的系统，从设计阶段就应该考虑的：
+  01. Debugability, 运行中出了错误，是否能快速定位到根本原因？
+  02. Testability, 重构了代码，任何原因修改了代码，是否可以保证没有引入 bug.
+  03. Toolability, 性能有问题，是否可以很快用自动化工具定位到瓶颈。
+
 - ## Tip: Write a design doc (what, why, how, whatever) for any feature you are going to implement. 
 - https://twitter.com/evoluhq/status/1261766649679667208
 
@@ -76,9 +85,9 @@ modified: 2021-01-21T17:52:13.333Z
 - https://twitter.com/yeshu_in_future/status/1642032791444656129
   - 它们和传统页面的差异在于，应用往往会常驻在标签页中，生命周期更长，用户的使用时间也更长。
 - 有一些常见的优化思路：
-  01.         关注事件绑定，无论是抽象的event bus 或是 dom 事件，都要在必要的时候解绑
-  02.         关注DOM数量，理想情况是不会预期外的增长
-  03.         关注一切可复用的变量，比如组件不要反复销毁重建，复用渲染；对象的key如果要用字符串拼接，可能不如拆开几个map 或者用二维数组，比如表示表格单元格的位置和值；避免重复渲染大量svg icon ，基于id 复用，等
+  01.          关注事件绑定，无论是抽象的event bus 或是 dom 事件，都要在必要的时候解绑
+  02.          关注DOM数量，理想情况是不会预期外的增长
+  03.          关注一切可复用的变量，比如组件不要反复销毁重建，复用渲染；对象的key如果要用字符串拼接，可能不如拆开几个map 或者用二维数组，比如表示表格单元格的位置和值；避免重复渲染大量svg icon ，基于id 复用，等
 
 - ## When polishing creative work, I can often get into decision paralysis about the priority of things to fix.
 - https://twitter.com/aboodman/status/1648835192285704193

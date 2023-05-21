@@ -12,6 +12,13 @@ modified: 2022-12-05T19:10:15.451Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## @StarRocksLabs just released version 3, Big change, from sharing nothing to shared disk
+- https://twitter.com/mim_djo/status/1658675242930442241
+
 - ## 💡 Why Analytical Tools don't speak native SQL ? that's the Mother of all questions.
 - https://twitter.com/mim_djo/status/1656450400051171329
   - [Cubing and Metrics in SQL, Oh My! - YouTube](https://www.youtube.com/watch?v=oo1uwJ3qHwE)

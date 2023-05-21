@@ -11,9 +11,11 @@ modified: 2023-02-11T11:07:05.558Z
 
 - not-yet
   - 如何集成现有json
-# faq
+# [faq](https://fluidframework.com/docs/faq/)
 
 ## Can the Fluid Framework be used in a situation without access to the internet?
+
+- In order to keep all clients in sync, they must be connected to a Fluid service.
 
 - Clients do have to be connected to the Fluid service. 
   - Fluid can tolerate brief network outages and continue operating but eventually the promise of being able to merge local changes weakens. 
@@ -47,10 +49,6 @@ modified: 2023-02-11T11:07:05.558Z
   - The only caveat is that for performance and storage efficiency, operations need to be summarized from time to time. 
   - This may cause a loss of granularity.
 
-- 
-- 
-- 
-
 ## What is a DDS?
 
 - DDS is short for distributed data structure. DDSes are the foundation of the Fluid Framework.
@@ -60,11 +58,15 @@ modified: 2023-02-11T11:07:05.558Z
 
 ## Where is the data stored?
 
+- The specifics of data storage (both session data and persistent data) will depend on the implementation of the Fluid service. 
+  - There is a great deal of flexibility here and developers of Fluid services may choose to offer options around where and how data is stored.
+
 - There are two classes of data storage to discuss
-- Session storage is managed by the Fluid service and is, essentially, a central record of all the operations (ops) performed on the DDSes. 
+- **Session storage** is managed by the Fluid service and is, essentially, a central record of all the operations (ops) performed on the DDSes. 
   - This record is used by the Fluid clients to produce identical local instances of the DDSes. 
   - Session storage also includes ops that summarize all past operations to improve performance for clients that join sessions later and for efficiencies when saving to persistent storage.
-- Persistent storage is a record of ops (and summary ops) saved outside of the Fluid service. 
+
+- **Persistent storage** is a record of ops (and summary ops) saved outside of the Fluid service. 
   - This could be a database, blob storage, or a file. 
   - Using persistent storage allows a Fluid solution to persist across sessions. 
   - For example, current Microsoft 365 Fluid experiences save ops in .fluid files in SharePoint and OneDrive. 
@@ -308,7 +310,7 @@ modified: 2023-02-11T11:07:05.558Z
 
 - Optimistic DDSes apply Fluid operations locally before they are sequenced by the Fluid service. 
   - The local changes are said to be applied optimistically in that they are applied before receiving confirmation from the Fluid service, hence the name optimistic DDSes.
-  - Many of the most commonly used DDSes are optimistic, including `SharedMap`,    `SharedSequence`, and `SharedString`.
+  - Many of the most commonly used DDSes are optimistic, including `SharedMap`,         `SharedSequence`, and `SharedString`.
 
 - Consensus-based DDSes are different from optimistic DDSes because they wait for confirmation from the Fluid service before applying operations – even local operations. 
   - These data structures offer additional behavior guarantees and can be used when you need atomicity or synchronous behavior.

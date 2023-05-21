@@ -547,6 +547,13 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/bazed-editor/bazed /rope
   - the baz editor.
   - The editor consists of a backend including the core data structure on which modifications are made consistent through CRDT and plugin engine (stew).
+
+## rust
+
+- https://github.com/loro-dev/crdt-richtext
+  - https://crdt-richtext-quill-demo.vercel.app/
+  - Rich text CRDT that implements Peritext and Fugue
+  - [The Art of the Fugue: Minimizing Interleaving in Collaborative Text Editing](https://arxiv.org/abs/2305.00583)
 # last-write-win/llw
 - https://github.com/ymlsam/lww-element-dict
   - a LWW key-value store, a conflict-free replicated data type (CRDT)

@@ -67,6 +67,28 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Is useSyncExternalStore meant to support streaming SSR?
+- https://twitter.com/oleg008/status/1603062246497730561
+- it has support for SSR but it is a little bit tricky to support this if you use this hook a lot. It accept `getServerSnapshot` and you should return from it whatever you have used to render this component on the server
+- are we talking about streaming SSR? notice I specifically  asked about streaming
+  - Yes, streaming is just another version of SSR. In both types of SSR u need (most likely) render a `<script/>` with your ssred data, without streaming u can put that into head, with streaming u must always append to the end of the stream (after u already flush head)
+- nanostores specifically dont handle this completely alright because they provide the same function to getSnapshot and getServerSnapshot arguments (we also do the same in xstate/react)
+
+- ## I have a great use case for a custom react reconciler, 
+- https://twitter.com/devongovett/status/1550907896799432704
+  - but then I realized that it's almost 30 KB minified + gzipped (it has grown a lot recently). And it's bundled into react-dom, so you get two copies if you use multiple reconcilers
+  - I want to collect children from a collection component (e.g. list) without actually rendering them to the DOM. We do this in React Aria by walking the JSX tree, but it prevents composition. A custom reconciler could solve that pretty nicely I think.
+- why do you need to know all the children? Imo treating children as an opaque JSX. Element is an intentional part of React’s abstraction. What use case requires knowing the precise children?
+  - Keyboard navigation, selection, virtualized scrolling, etc. Lots of libraries need this info. Most approaches involve either rendering all elements to the DOM (breaking virtualized scrolling), or some other compromise. Reach UI has a good writeup
+  - https://github.com/reach/reach-ui/tree/dev/packages/descendants
+
+- Wow, this is such a great writeup! I tend to mostly work with client rendered apps these days, so I usually reach for the context approach for composition, but none of these approaches are perfect for every use case.
+  - Yeah I believe Ariakit, Radix, Reach, and Headless UI all use roughly the same approach.
+
 - ## why is there no `<ClientOnly />` component for nextjs?
 - https://twitter.com/aidenybai/status/1649173385501609984
 - Imaging you can put `<ClientOnly>` everywhere such as h1 title, then it might re-render on client after SSR hydration, then the mismatch between server and client creates layout shifts. Loading it asynchronously later on client can avoid these issues.

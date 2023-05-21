@@ -33,6 +33,18 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 通过 `<datalist>` 可以为 `<input>` 定义一个数据列表，实现类似 React Select 的下拉选择和过滤功能。
+- https://twitter.com/novoreorx/status/1658531596818063361
+  - 可惜交互太少了，不能 tab 补全之类的
+
+- ## There are two DOM APIs that I'd love to exist today. 
+- https://twitter.com/trueadm/status/1659679705862209536
+  - `reconcileChildNodes(arrOfNodes)` ; 
+  - `createDocumentFragment({persistent: true})` ; 
+  - Their usage would be primarily by frameworks and libraries, resulting in less code and fewer bugs and more consistent performance
+
 - ## Two types of issues I've seen in every web app I ever needed to work on: timezones and scrollbars. I dread them both equally.
 - https://twitter.com/TkDodo/status/1645859388014448661
 

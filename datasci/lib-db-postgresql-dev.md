@@ -9,10 +9,14 @@ modified: 2020-12-18T05:01:44.282Z
 
 # guide
 
-- https://github.com/decileapp/decile
-  - Connect any postgres database. Save and share queries with your team. Export to Google Sheets. Schedule queries and automatically update your Google Sheet.
-
 # dev
 
+# pg-devops
+
+# pg-examples
+- https://github.com/decileapp/decile /ts
+  - https://decile.app/
+  - Connect any postgres database. Save and share queries with your team. Export to Google Sheets. 
+  - Schedule queries and automatically update your Google Sheet.
 # ref
 - [Ubuntu PostgreSQL安装和配置](https://www.cnblogs.com/Siegel/p/6917213.html)

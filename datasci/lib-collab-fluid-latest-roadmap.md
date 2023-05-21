@@ -10,7 +10,6 @@ modified: 2023-02-12T19:42:17.181Z
 # guide
 
 # roadmap
-
 - 核心是dds
 
 - [SharedTree Engineering Plan](https://github.com/microsoft/FluidFramework/issues/8662)
@@ -25,9 +24,6 @@ modified: 2023-02-12T19:42:17.181Z
 - [Epic: Large Data Support](https://github.com/microsoft/FluidFramework/issues/10494)
   - Replace JSON serialization with a faster/compact binary alternative
   - Incremental Summaries
-
-
-
 # changelog
 
 ## v1.0.0_20220609

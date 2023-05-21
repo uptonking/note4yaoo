@@ -29,6 +29,14 @@ modified: 2023-01-14T15:47:04.431Z
 # translation
 - 很多自动翻译的工具会翻译code block里面的代码单词
 # i18n-utils
+- react-intl: focalboard, atlaskit-editor
+  - 更多使用 FormattedMessage 组件，或intl.formatMessage()方法
+  - 翻译可集中定义
+
+- i18n-next: outline, undb
+  - 使用 useTranslation() 返回的 t 方法，类似ckeditor
+  - 翻译可集中定义
+
 - https://github.com/noveogroup-amorgunov/localizify /ts/NoDeps
   - performant library for translation and localization in Node.js and the browser.
   - Detection user language in browser and in server requests

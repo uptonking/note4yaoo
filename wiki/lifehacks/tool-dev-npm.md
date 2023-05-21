@@ -24,6 +24,9 @@ modified: 2020-12-08T14:05:52.048Z
   - styled-components, 
   - ramda, deepmerge, date-fns
   - marked
+
+- proxy
+  - [常用网络问题库的url，部分地址失效待检查](https://github.com/cnpm/binary-mirror-config/blob/master/package.json)
 # usage
 - [[BUG] ^7.20.3 no longer resolves local package first on install (workspaces)](https://github.com/npm/cli/issues/3637)
   - you can update your package.json files directly. The format is `"<package_name>": "*"` where the version number is `"*"`. If you do this, npm will recognize it as a local dependency
@@ -68,6 +71,15 @@ modified: 2020-12-08T14:05:52.048Z
 - private-npm-registry
   - https://github.com/verdaccio/verdaccio
 # bugs
+
+- [[QUESTION] xxx is not a valid npm option](https://github.com/npm/cli/issues/5852)
+  - node.js 18 comes with npm v9, which disallows 3rd party configs and breaks our pipeline. A new pr for upgrading is recommended. 
+- [Cannot set store-dir in NPM v9](https://github.com/pnpm/pnpm/issues/5621)
+  - `echo 'store-dir=/some/path/.pnpm-store' >> /usr/local/etc/npmrc`
+
+
+
+
 - [npx doesn't work when in child workspace](https://github.com/npm/cli/issues/2826)
   - npm exec -w website -- docusaurus
 # faq

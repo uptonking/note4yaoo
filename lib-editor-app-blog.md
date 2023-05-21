@@ -410,8 +410,10 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
   - 服务器就在你本地。。。懂了没？？只是和编辑器分开了，通过通信来交流
   - 网络传输会让你的ide跑的慢死 目前的都是本地服务器也就是个跨进程通讯而已
 # more
+- [How to choose a text editor for a digital-first newsroom?](https://autentika.com/blog/how-to-choose-a-text-editor-for-a-digital-first-newsroom)
+
 - [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)
-- [TEXT EDITING HATES YOU TOO](https://lord.io/text-editing-hates-you-too/)
+  - [TEXT EDITING HATES YOU TOO](https://lord.io/text-editing-hates-you-too/)
 
 - [为什么 ContentEditable 很恐怖](https://www.oschina.net/translate/why-contenteditable-is-terrible)
 
@@ -425,8 +427,6 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
   - From a very high-level perspective, a rich text editor is comprised of two components:
   - A data model and the core logic to operate on it.
   - A view that renders the state of said data model and that handles the user interactions.
-
-- [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)
 
 - [Over 14 years of todos recorded in text: My productivity app is a never-ending .txt file](https://jeffhuang.com/productivity_text_file/)
 

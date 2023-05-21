@@ -168,10 +168,10 @@ $$('[contenteditable]')
   - 处理初试
 
 - dev-to
-  - streaming-infinite-list/tree
   - 表格视图 remove trpc from tables
     - 透视表、database多视图、编辑器内的database
     - editable-react-table、undb/focalboard、noseditor
+    - [x] streaming-infinite-list/tree
   - slate-docs-examples
   - dnd-kit preset-tree
     - 参考react-sortable-tree
@@ -265,6 +265,12 @@ $$('[contenteditable]')
 # dev-05
 
 ## 050
+
+## 0521
+
+- [makefile - How does "make" app know default target to build if no target is specified? - Stack Overflow](https://stackoverflow.com/questions/2057689/how-does-make-app-know-default-target-to-build-if-no-target-is-specified)
+  - By default, it begins by processing the first target that does not begin with a `.` aka the default goal; to do that, it may have to process other targets - specifically, ones the first target depends on.
+  Calling the first target `all` is just a convention
 
 ## 0518
 

@@ -11,19 +11,22 @@ modified: 2022-08-21T09:56:38.596Z
 
 - 前端webapp开发历史记录
   - https://github.com/mattermost/focalboard/commits/main/webapp/src
+
+- xp
+  - 桌面版不支持share，但web版支持share
 # roadmap
 - theme
-  - 支持 notion/airtable
+- 支持 notion/airtable
+# design
+- focalboard底层数据库设计包括 blocks/boards
+  - block表拥有 boardId 属性与业务关联，还有type/fields
+  - board表不直接与block相关，通过props和cardProps描述内容
 # faq
 - 删除或编辑卡片的操作，状态是如何变化、更新的？
   - 数据操作通过调用全局的mutator方法
-# not-yet
-- 看板核心内容视图实现的结构
-  - 可以总体为一行，每列包含顶部列标题、当前列内容卡片
-  - 可以总体为两行，第1行展示每列标题，第2行展示每列内容卡片
 # 多维表格相关
 - 视图切换原理
-  - activeView.fields.viewType 支持 kanban/table/calendar/gallery 4种视图
+  - `activeView.fields.viewType` 支持 kanban/table/calendar/gallery 4种视图
 
 - 多维表格视图入口 CenterPanel
   - 定义了会传给所有视图进行数据更新的方法，如addCard
@@ -127,9 +130,9 @@ modified: 2022-08-21T09:56:38.596Z
   - 服务端api对应的前端请求工具类
   - 这里定义了这个操作的url: const path = '/api/v2/login'
 # state-management
-- 典型的数据更新流程
+- 💡 典型的数据更新流程
   - 先执行http请求，触发服务端数据更新
-  - 等服务端更新完成后，再在 afterRedo 方法中传入服务端返回的最新数据，更新前端redux数据
+  - 等服务端更新完成后，再在 `afterRedo` 方法中传入服务端返回的最新数据，更新前端redux数据
 # codebase
 - 前端整体结构
   - MainApp 传入reduxStore、处理用户初始化、首次连接websocket
@@ -146,11 +149,16 @@ modified: 2022-08-21T09:56:38.596Z
   - 定义了核心视图的左右布局，左侧边栏展示视图列表，右侧内容区展示表格等视图
   - CenterContent会渲染多维表格的核心视图组件 CenterPanel
     - 这里从全局store中取出了核心数据 board、cards、activeView、groupByProperty、views
+# 桌面版 b/s架构
+- windows基于wpf、c#、WebView2简单封装
+  - Windows Personal Desktop packages a lightweight C# Windows App with the Windows build of the server, and the webapp. 
+  - The server is run in a single-user mode.
+  - 启动服务端的代码 `DllImport(@"focalboard-server.dll"`
 
-- 项目国际化方案比较
-  - react-intl: focalboard, atlaskit-editor
-    - 更多使用 FormattedMessage组件，或intl.formatMessage()方法
-    - 翻译可集中定义
-  - i18n-next: outline
-    - 使用 useTranslation()返回的 t 方法，类似ckeditor
-    - 翻译可集中定义
+- linux版基于webview简单封装
+  - runServer(port)
+  - w := webview. New(debug)
+  - `w.Navigate(fmt.Sprintf("http://localhost:%d", port))`
+
+- mac版基于swift简单封装
+  - WKWebView

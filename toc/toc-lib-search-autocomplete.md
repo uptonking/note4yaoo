@@ -161,7 +161,9 @@ modified: 2023-01-01T13:24:35.994Z
   - Free text search query that is using BM25 ranking function
 
 - https://github.com/leeoniya/uFuzzy /202212/js
-  - a fuzzy search library designed to match a relatively short search phrase (needle) against a large list of short-to-medium phrases (haystack
+  - a fuzzy search library designed to match a relatively short search phrase (needle) against a large list of short-to-medium phrases (haystack)
+  - It might be best described as a more forgiving String.indexOf().
+  - ufuzzy.js 能在手机上 9ms 内模糊搜索 16 万单词和短语，搞不懂为什么需要关系数据库
 - https://github.com/farzher/fuzzysort /202211/js
   - Fast SublimeText-like fuzzy search for JavaScript.
 
@@ -205,6 +207,11 @@ modified: 2023-01-01T13:24:35.994Z
   - Simple autocomplete pure vanilla Javascript library.
   - Powerful Search Engine with two different modes: strict/loose
   - Works on anything (<`input>`,  `<textarea>` and `contentEditable` elements)
+# search-wasm
+- https://github.com/kbumsik/blogsearch /202007/ts
+  - a pure client-side, full-text search engine for static websites, powered by SQLite compiled to WebAssembly.
+  - The search engine basically is SQLite with the FTS5 extension, compiled to WebAssembly. 
+  - The SQLite FTS5 offers the built-in BM25 ranking algorithm for the search functionality.
 # search-non-js
 - https://github.com/tj/reds
   - simple full text search module for node.js - backed by Redis
@@ -242,7 +249,7 @@ modified: 2023-01-01T13:24:35.994Z
 
 - https://github.com/manticoresoftware/manticoresearch /202211/cpp
   - an easy to use open source fast database for search. 
-  - Good alternative for Elasticsearch. 
+  - Good alternative for Elasticsearch.
 # search-ui-examples
 - elastic-search-ui /1.8kStar/apache2/202212/ts
   - https://github.com/elastic/search-ui

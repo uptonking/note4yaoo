@@ -45,7 +45,6 @@ modified: 2022-08-21T10:02:05.129Z
 
 - https://github.com/archit-p/editable-react-table
   - React table built to resemble a database.
-  - 未完成
 - https://github.com/RafaelGB/obsidian-db-folder
   - Obsidian Plugin to Allow Notion like database based on folders
   - https://github.com/blacksmithgu/datacore
@@ -157,7 +156,7 @@ modified: 2022-08-21T10:02:05.129Z
 - focalboard /10.3kStar/src-AGPL & bin-MIT/202203/ts/go
   - https://github.com/mattermost/focalboard
   - https://www.focalboard.com/
-  - 前端webapp依赖 @reduxjs/toolkit、react-redux.v7、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
+  - 前端webapp依赖 @reduxjs/toolkit、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
   - an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
   - Focalboard comes in two main editions:
     - Personal Desktop: A stand-alone single-user Mac, Windows, or Linux desktop app for your todos and personal projects.

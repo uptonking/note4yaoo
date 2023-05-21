@@ -104,7 +104,8 @@ modified: 2023-01-23T11:24:41.943Z
 
 - olap-cube-js /51Star/MIT/201912/js
   - https://github.com/feonit/olap-cube-js
-  - The simplest data analysis tools written in javascript. This solution is a means for extracting and replenishing data, which together with your data storage means and a means of providing aggregate data, is intended for decision making.
+  - The simplest data analysis tools written in javascript. 
+  - This solution is a means for extracting and replenishing data, which together with your data storage means and a means of providing aggregate data, is intended for decision making.
   - Tree structure for representing hierarchical data
 
 - olap-in-memory /6Star/202004/js
@@ -124,6 +125,7 @@ modified: 2023-01-23T11:24:41.943Z
   - https://chspace.oss-cn-hongkong.aliyuncs.com/pivot-chart/index.html
   - 数据透视表数据展示的形式不再限于单纯的数字，使得用户可以同时拥有数据透视(旋转、切片、下钻、上卷)与可视化图表的能力。
   - pivot-chart是基于cube-core提供的前端cube计算能力搭建的。
+  - 依赖cube-core、immer、react-beautiful-dnd、vega-lite
   - pivot chart is build based on cube-core: an MOLAP cube solution in js.
   - Sync Pivot Chart 的计算都发生在前端。这里叫sync其实有点不合适，因为后续优化这些计算也可以发生在webworker中。
   - Async Pivot Chart的cube计算是服务端或用户自己提供的。组件本身会帮助用户缓存一些已经计算过的结果
@@ -158,7 +160,7 @@ modified: 2023-01-23T11:24:41.943Z
   - OLAP functionality for use with data visualizations. Aggregating and grouping data along key dimensions.
 
 - https://github.com/agershun/olap /201507/js
-  - extensible and ambeddable JavaScript Online Analytical Processing server and library for browser and Node.js
+  - extensible and embeddable JavaScript Online Analytical Processing server and library for browser and Node.js
   - 提供了多种接口
   - olap.execute(mdx); 
   - olap.xmla(xmla); 
@@ -168,7 +170,7 @@ modified: 2023-01-23T11:24:41.943Z
   - library to talk to multiple OLAP backends from multiple frontends
   - olap4js is intended to be a common set of JS objects that can run on multiple clients and with multiple OLAP backends
 
-- https://github.com/steelbreeze/pivot
+- https://github.com/steelbreeze/pivot /ts/非典型
   - A minimalist pivot table library for TypeScript/JavaScript.
   - It provides a minimalist pivot table capability, slicing data into cells defined by two dimensions. 
   - This is a spin-off(副产品，派生物) from the steelbreeze/landscape project, where instead of aggregating numerical data from the pivot cube, non-numerical data is needed.

@@ -72,6 +72,11 @@ modified: 2021-01-04T17:26:25.032Z
     - https://swiperjs.com/
     - Most modern mobile touch slider with hardware accelerated transitions
 # md-database
+- https://github.com/datopian/markdowndb /ts
+  - a javascript library for treating markdown files as a database
+  - Parses your markdown files to extract structured data (frontmatter, tags etc) and creates an index in a local SQLite database
+  - Provides a lightweight javascript API for querying the database and importing files into your application
+
 - https://github.com/lukesrw/md-database /202109/ts
   - Middleware for producing SQL queries from Markdown
   - Currently only SQLite is fully supported, with support for MySQL being worked on.

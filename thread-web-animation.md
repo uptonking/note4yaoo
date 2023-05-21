@@ -12,9 +12,30 @@ modified: 2021-01-08T17:14:34.841Z
 # discuss
 - ## 
 
-- ## 
+- ## framer motion had signals five years ago 
+- https://twitter.com/steveruizok/status/1635197073078513664
+  - `MotionValue` provide reactive composable atomic state that provided a second channel for data that didn’t cause React to re-render (essential for animations). They can be computed via “transform” hooks.
 
-- ## 
+- I wonder what @mattgperry you’ve learned after this time with such a system? Has MotionValue matured, any changes to its API that came out of long use?
+  - These have roots in the Popmotion value API which as you can see in the opening summary "A multicast reaction that tracks the state of a number and allows velocity queries" I wrote when I was shitfaced on Rx
+  - The API has remained the same since day 1. Easily my favourite part of Framer Motion and imo the most underused power feature. No notes
+  - The only thing that's changed is I occasionally add a "naughty" method to make my life easier somewhere like `setWithVelocity`, which I basically use to force a new value and velocity to transfer a value from WAAPI back to the main thread. 
+  - It would be great to have signals that you could pass straight into React's style but honestly I trust my render loop/render functions to be optimised for this
+
+- This is the reason for stuff like animated.* out of react-spring.
+  - Something I've wanted between signals & concurrency is a way to accumulate per-frame changes and apply them synchronously outside of React's scheduler. This is something I'd do in a game engine or renderer as mutating shared or WIP GPU memory can have severe perf ramifications.
+- Exactly this, non of these data models efficiently support constant changing of values ala game engines from physics, game play, and AI control. Double goes for multiplayer except for netcode style. The rate of change and amount of entities would break all of the de jour app state/reactivity solutions. Rejecting simulation/emergent change isn't the not the end game.
+- We’re halfway there with Theatre’s “signals” implementation. It’s a few years old but battle tested at this point.
+
+- react-spring has had this for a long time as well,  `SpringValues` are observables that can omit events to their animated nodes.
+
+- ## I realized recently that Framer Motion values are actually signals. 
+- https://twitter.com/devongovett/status/1658573125125312512
+  - They update outside React's render cycle. 
+  - Good for performance, but I find the API a bit cumbersome compared to plain React. 
+  - Hoping the React compiler finally enables animations without special wrappers.
+- The challenge is locality of reactivity. Like components are the thing that changes. It makes easy bounds but is at odds with the cross-cutting independence you want. A compiler can "fix" this but only through masking the decoupling. Hooks already suggest this solution
+- I think framer motion exists before "signals" were named that way so perhaps signals are motion values ; ) But yeah they work in a similar fashion
 
 - ## @framer Motion 9.1 adds more hardware accelerated animations!
 - https://twitter.com/mattgperry/status/1628738974096261121

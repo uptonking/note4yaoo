@@ -16,6 +16,10 @@ modified: 2020-12-09T09:30:24.694Z
   - [day7主页大屏数据展示, vue+echarts](http://doc.bufanui.com/docs/leju-admin/leju-admin-1cmgcm5kelp3c)
   - [不凡学院 文档](http://doc.bufanui.com/)
 # bi-analytics
+- https://github.com/djouallah/Testing_BI_Engine /jupyter
+  - Testing OLAP SQL Engine using TPC-H
+  - so Far Tested Snowflake, BigQuery, Databrciks SQL, SingleStore, DuckDB, and PowerBI Datamart, I only include DB that take less than 100 second to finish the benchmark
+
 - lightdash /2kStar/MIT/202301/ts/dbt
   - https://github.com/lightdash/lightdash
   - https://lightdash.com/

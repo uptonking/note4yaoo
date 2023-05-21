@@ -9,6 +9,19 @@ modified: 2023-05-14T04:30:34.915Z
 
 # guide
 
+- features
+  - collaborative using crdt
+  - realtime/reactive using webSocket client/server framework
+  - optimistic ui
+  - offline-first with actions and merge-conflicts
+  - no vender lock-in, works with any db
+  - cross-tab communication in browser
+  - compatibility between different client versions
+  - 架构灵活，支持多框架，react/vue/django
+  - Logux uses the peer-to-peer model. 
+
+- cons
+  - 案例少
 # dev
 - tips
   - logux client/server

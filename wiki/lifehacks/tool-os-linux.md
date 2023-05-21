@@ -7,8 +7,13 @@ modified: 2020-12-22T12:42:14.745Z
 
 # tool-os-linux
 
-# pieces
+# guide
 
+# linux-cli-shell
+- https://github.com/Xfennec/progress
+  - Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
+  - Progress 可以显示当前一些耗时操作的进度，比如 大文件的 cp/mv/dd, 甚至还可以显示下载进度等等。它还提供了一个类似 top 的界面，可以全面监控各种进度。
+  - It simply scans `/proc` for interesting commands, and then looks at directories fd and fdinfo to find opened files and seek positions, and reports status for the largest file.
 # ubuntu
 - 系统升级的困扰
   - 可能变化的ui：系统图标、字体

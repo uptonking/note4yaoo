@@ -29,6 +29,19 @@ modified: 2021-08-30T15:50:54.515Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 今天发现 在 DB 里面对于 时间/空间或者多维的数据操作 , 用 R tree  来减少工作量似乎是个冷知识了.
+- https://twitter.com/fuergaosi/status/1658470145109680132
+- 已经见过好几次有老哥为了计算时间区间, 把数据拉到内存里面 For loop 计算了
+- 当年 LBS 跟现在的 AIGC 一样火的时候，R tree 都可以写到简历上来吹牛逼了。
+
+- ## 和ChatGPT聊DB设计获得新知，Nested Set Model：
+- https://twitter.com/TooooooBug/status/1659041013800001536
+  - 将父子关系映射到数轴上变为数字范围的包含关系，然后通过数字范围大小就能计算出各条记录的父子关系，避免反复递归。
+
 - ## [Mongo (Atlas) vs. Planetscale for my simple SaaS? : Database](https://www.reddit.com/r/Database/comments/wh9rd1/mongo_atlas_vs_planetscale_for_my_simple_saas/)
 - Mongo:
 - Pros: I have the most experience with it, super easy to get up and running, built for simple document structure like my use case, very cheap pay-as-you-go pricing on Atlas.

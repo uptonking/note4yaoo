@@ -1,11 +1,11 @@
 ---
-title: lib-db-sqlite-community-usecase
-tags: [community, sqlite, usecase]
+title: lib-db-sqlite-community-showcase
+tags: [community, showcase, sqlite]
 created: 2023-04-30T16:50:54.098Z
-modified: 2023-04-30T16:51:05.466Z
+modified: 2023-05-21T14:54:15.817Z
 ---
 
-# lib-db-sqlite-community-usecase
+# lib-db-sqlite-community-showcase
 
 # guide
 

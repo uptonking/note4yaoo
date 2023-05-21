@@ -12,7 +12,7 @@ modified: 2022-05-24T17:57:49.545Z
 # dev-summary
 - company-unskilled
   - 确认下一步工作计划
-- **markdown-editor for vscode**
+  - ~~markdown-editor for vscode~~
 
 - 工作开发问题
   - 原因定位
@@ -76,6 +76,11 @@ modified: 2022-05-24T17:57:49.545Z
     - 降低前端业务开发对后端的依赖
       - 分离dbBlock和editorBlock，两者没有直接关系，但可以转换得到
     - 在service层提供observe这类自动更新的方法，不需要在前端各个组件中连接websocket
+
+- 让b/s架构项目支持纯前端使用的思路
+  - 前端使用完整数据库idb，在前端重写所有get/post操作为idb操作，将后端数据模型复制到前端
+  - mock get/post 的计算和返回，
+  - 考虑成本，对于复杂计算迁移成本太高
 
 - vanillajs框架集成react组件的问题
   - 通过createPortal，可以拿到主应用中的state、theme、event

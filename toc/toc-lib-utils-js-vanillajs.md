@@ -82,6 +82,9 @@ modified: 2023-04-04T22:35:59.255Z
   - "data-first" approach is more natural and more programmer friendly for pick/omit
   - "data-last" approach is helpful when writing data transformations aka pipes.
 # lang-js
+- https://github.com/thoughtspile/awesome-tiny-js
+  - A collection of tiny JS libraries to put your bundle on a diet
+
 - https://github.com/kriskowal/asap /js
   - High-priority task queue for Node.js and browsers
   - The library asap uses these tricks to provide a cross-browser way of queueing a microtask.

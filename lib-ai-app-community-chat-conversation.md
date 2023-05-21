@@ -40,6 +40,9 @@ modified: 2023-04-16T10:02:58.738Z
 
 - ## 
 
+- ## 借鉴 `json/yaml/toml/markdown` 设计，搞了个 pdl 格式（Prompt Description Language），并相比于其他格式，可以最大化节省 Token 数量。
+- https://twitter.com/blackanger/status/1659826017341702146
+
 - ## 今天跟一位朋友讨论为什么国产的AI产品已经沦落到到免费都没人去用了，原因总结下来是两点：
 - https://twitter.com/oran_ge/status/1653753194206601216
   - 我的覆盖群体基本人手 ChatGPT/Claude

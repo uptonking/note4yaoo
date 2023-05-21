@@ -68,10 +68,10 @@ modified: 2022-11-04T14:20:37.172Z
   - a pure client-side, full-text search engine for static websites, powered by SQLite compiled to WebAssembly.
   - The search engine basically is SQLite with the FTS5 extension, compiled to WebAssembly. 
   - The SQLite FTS5 offers the built-in BM25 ranking algorithm for the search functionality.
-  - https://github.com/kbumsik/sqlite-wasm
-    - Run SQLite on the web, using WebAssembly
-    - a fork of sql.js with the following changes in typescript
-    - This is a reimplementation of sql.js in TypeScript.
+- https://github.com/kbumsik/sqlite-wasm
+  - Run SQLite on the web, using WebAssembly
+  - a fork of sql.js with the following changes in typescript
+  - This is a reimplementation of sql.js in TypeScript.
 
 - https://github.com/leodr/fulltext-search-static-sqlite
   - An unsuccessful attempt of performing full-text search without a server with static site hosting.
