@@ -113,7 +113,7 @@ modified: 2022-06-03T22:06:16.249Z
   - Key Value storage for Browser, Node.js, and In-Memory.
   - I want to get universal storage library that works on Browser and Node.js.
   - Previously, I've created localstorage-ponyfill for this purpose. 
-    - However,  `Window.localStorage` does not work on Web Workers or Service Worker
+    - However `Window.localStorage` does not work on Web Workers or Service Worker
   - @kvs/* packages provide async storage API using IndexedDB etc and resolve this issue.
 
 - https://github.com/gruns/ImmortalDB /202008/js/inactive

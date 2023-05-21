@@ -11,6 +11,9 @@ modified: 2021-03-29T19:29:32.505Z
 
  
 
+- Cannot write file  because it would overwrite input file.
+  - 删除 `rootDir` 即可
+
 - $refreshreg$ is not defined
   - react-refresh导致异常
   - 方法是配置@linaria/webpack-loader时传入自定义babel配置对象，而不用babel.config.js配置，通过configFile:false
@@ -834,9 +837,5 @@ function f2 (f: F) {
 
 -  sudo apt-get install libxt-dev -y
 
-
 - npm WARN Invalid version: "1.0"
 - change 1.0 to 1.0.0
-
-
-

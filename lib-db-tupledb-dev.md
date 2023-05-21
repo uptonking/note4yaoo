@@ -56,7 +56,7 @@ modified: 2022-12-14T18:26:38.588Z
   - For my client side store I've just switched to https://valtio.pmnd.rs + a modified version of https://github.com/Noitidart/valtio-persist to persist to IndexedDb
   - On the server I'm using MongoDb in an earlier app and RocksDb for the new app.
   - Before yjs I spent considerably time and effort with Logux https://logux.io but hit too many roadblocks.
-  - 
+
 - Super interesting! May I ask you what you think about the datascript/datomic approach? It does not offer persistence; I'm more particularly asking about the datoms, EAVT/AVET/etc systematic indexes, and it's datalog query engines.
   - The triplestore indexes are great. This database is a lower level abstraction, and I do in fact use datalog queries and EAV indexes most of the time I use this database(tupledb)
 - As for general thoughts on Datomic…
@@ -85,19 +85,6 @@ modified: 2022-12-14T18:26:38.588Z
 - This article specifically helped me get started understanding things...
   - Just remember that Datomic also allows you to query into the past so that's why `tx` lands in their indexes.
   - [Indexes | Datomic](https://docs.datomic.com/pro/query/indexes.html)
-- 
-- 
-- 
-- 
-
-
-
-
-- 
-- 
-- 
-- 
-
 
 - ## Where is perspective discussed in software design?
 - https://twitter.com/ccorcos/status/1622664703536435201
@@ -137,10 +124,11 @@ modified: 2022-12-14T18:26:38.588Z
   - Only difference is that I haven't implemented any compression or anything like that yet.
   - But storage is cheap - I'm not worried about it yet.
 
-- So my point there is that I can build a SQL layer on top of tuple-database, but why would I do that? I could make my own query language DSL, but why do that either? 
-  - I find it much more powerful and flexible to use the underlying abstractions directly...
-  - That said, I am keen on using this database to model triplestores. 
+- So my point there is that I can build a SQL layer on top of tuple-database, but why would I do that? I could make my own query language DSL, but why do that either? I find it much more powerful and flexible to use the underlying abstractions directly...
+  - 👉🏻 That said, I am keen on using this database(tupledb) to model triplestores. 
   - Similar to RDF/Datomic/Datalog, triple stores are a powerful abstraction for modeling very flexible data.
+  - And do I have built up some abstractions on top of this model. But notice those abstractions are all just functions for reading and writing...
+  - https://github.com/ccorcos/tuple-database/blob/master/src/examples/triplestore.ts
 
 - don't you think to write the core in Rust? 
   - Totally. I'd love to hire someone to do that. But it's not my main skillset and at the end of the day, this is premature optimization

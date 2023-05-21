@@ -50,12 +50,11 @@ modified: 2023-03-07T04:43:58.713Z
   - peritext
   - [Under the Hood of Spark Email Real-Time Collaboration](https://readdle.com/blog/under-the-hood-of-spark-email-real-time-collaboration)
 
-- ?
+- not-yet
   - timestamp如何计算的，插入时如何确定位置
 
 - tips
   - insert依赖preceding元素的id/counter/timestamp，这可以有效避免interleaving
-  - 
 
 - https://github.com/pfrazee/crdt_notes
   - The Replicated Growing Array (RGA) implements a sequence as a linked list (a linear graph). 
@@ -134,7 +133,7 @@ modified: 2023-03-07T04:43:58.713Z
 - a CT ORDT(op-based) and an RGA CRDT work pretty much the same. 
   - The mechanics map nearly 1 to 1.
   - The main difference is that RGA doesn't explicitly treat operations as fundamental units of data, nor the data structure as an event log. Everything is muddled together. 
-  - RGA defines operations very similarly to a CT, as units of atomic data with timestamp+UUID metadata; 
+  - RGA defines operations very similarly to a CT, as units of atomic data with `timestamp+UUID` metadata; 
   - but as soon as operations are received, their causality metadata is stripped and they're inserted into their final spot in the array. 
   - Similarly, delete operations immediately turn their targets into tombstones, which are later "purged" once all sites have received the deletion. 
 - RGA is a very effective algorithm, but it doesn't make the logical leap of treating its data structure as an event log, even though that's what it is in practice. Traditionally, one would say that an RGA insert is applied and turned into data; but another way to look at it is that the insert operation is placed in the position of its intended output, then stripped of its metadata. ORDTs make this explicit.

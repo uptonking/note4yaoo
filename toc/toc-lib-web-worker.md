@@ -10,7 +10,8 @@ modified: 2020-12-19T18:22:27.577Z
 # guide
 
 - worker-usecase
-  - Use web worker for Excel export 
+  - Use web worker for Excel export
+  - 搜索
 
 - resources
   - https://github.com/deebloo/things-you-can-do-in-a-web-worker
@@ -20,13 +21,26 @@ modified: 2020-12-19T18:22:27.577Z
   - It supports stream data and runs in webworker which will not block the main thread while loading the data. 
   - web-data-loader also support stream data sampling, it now support Reservoir Sampling methods.
 
-- https://github.com/albertodeago/cloc-web /ts
-  - https://cloc-web.netlify.app/
-  - The objective of this project is to implement a simple CLOC(Count Lines Of Code) application using WebWorkers to keep the UI interactive and the new WebFileSystemAPI `FileSystemHandle` to let the user select the project from the local file-system.
+- evolu /101Star/GPLv3/202210/ts
+  - https://github.com/evoluhq/evolu
+  - https://www.evolu.dev/
+  - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
+  - 依赖fp-ts、protobuf、kysely(sql-builder)、murmurhash、~~zod~~
+  - 提供了dbworker.worker
 
 - https://github.com/StudentOfJS/query-plus
   - fetch and process data in web worker, store in indexedDB.
   - We created Query+ as a React hook library, to make fetching, processing and caching data as easy as possible.
+
+- https://github.com/bvaughn/js-worker-search
+  - Full text client-side search based on `js-search` but with added web-worker support for better performance.
+
+- https://github.com/gustavodomenico/web-worker-sorting /js
+  - Application to show the usage of web workers and how to have responsive UIs while doing some heavy computation in the background.
+
+- https://github.com/albertodeago/cloc-web /ts
+  - https://cloc-web.netlify.app/
+  - The objective of this project is to implement a simple CLOC(Count Lines Of Code) application using WebWorkers to keep the UI interactive and the new WebFileSystemAPI `FileSystemHandle` to let the user select the project from the local file-system.
 
 - https://github.com/ampproject/worker-dom /2.6kStar/Apache2/202012/ts
   - The same DOM API and Frameworks you know, but in a Web Worker.
@@ -53,9 +67,6 @@ modified: 2020-12-19T18:22:27.577Z
   - Low Output Latency streaming HTML rewriter/parser with CSS-selector based API.
   - It is designed to modify HTML on the fly with minimal buffering. 
   - It can quickly handle very large documents, and operate in environments with limited memory resources. 
-
-- https://github.com/bvaughn/js-worker-search
-  - Full text client-side search based on js-search but with added web-worker support for better performance.
 # worker-examples
 - [Excel export web worker script](https://gist.github.com/damoresa/77b40cd393d1606ea10c92a4d802d32c)
 
@@ -70,9 +81,6 @@ modified: 2020-12-19T18:22:27.577Z
 
 - https://github.com/sws2apps/react-sw-helper
   - A pure react component for managing service worker life cycle. 
-
-- https://github.com/gustavodomenico/web-worker-sorting /js
-  - Application to show the usage of web workers and how to have responsive UIs while doing some heavy computation in the background.
 
 - https://github.com/cranx/profiles-search /vue/js
   - A simple application that demonstrates responsive real-time filtering of a large list using a virtual list and a web worker
@@ -126,7 +134,7 @@ modified: 2020-12-19T18:22:27.577Z
 
 - https://github.com/AlloyTeam/alloy-worker
   - 面向事务的高可用 Web Worker 通信框架
-# worker-node
+# worker-nodejs
 - [Support Web Workers · nodejs/node](https://github.com/nodejs/node/issues/43583)
   - Node.js does have `worker_threads`, but the API differs in many ways and it's really difficult to properly bridge them. 
   - There are attempts at bridging these APIs in user-land, but the most popular one is incomplete and not actively maintained.
@@ -143,8 +151,9 @@ modified: 2020-12-19T18:22:27.577Z
 
 - https://github.com/GoogleChrome/workbox /ts/inactive
   - JavaScript libraries for Progressive Web Apps
-  - Introducing Workbox, a set of modules that simplify common service worker routing and caching.
+  -  Workbox is a set of modules that simplify common service worker routing and caching. 
   - [Workbox - Chrome Developers](https://developer.chrome.com/docs/workbox/)
+  - [Maintain status](https://github.com/GoogleChrome/workbox/issues/3149)
 
 - https://github.com/gauntface/simple-push-demo /js
   - A simple example of use push notifications on the web using Service Workers

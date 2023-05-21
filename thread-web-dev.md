@@ -55,7 +55,6 @@ modified: 2021-01-08T17:13:43.392Z
 - Fighting with people about it is harder than fighting the domain.
 
 - I just refuse to modify scrollbars; leave user's workspace alone!
-  - it's more about double scrollbars, or even triple scrollbars 
 
 - Getting the scroll bar of a virtualised table (just a bunch of divs) to work consistent between all browsers is the stuff nightmares are made of
 

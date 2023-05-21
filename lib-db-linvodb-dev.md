@@ -8,6 +8,10 @@ modified: 2022-12-22T15:22:15.191Z
 
 # guide
 
+- why web db
+  - db适合复杂业务模型
+  - db适合类似excel/多维表格的场景
+
 - 放开思路，可以将insert/find视为key-value映射表的get/set
 
 - nedb与linvodb的区别

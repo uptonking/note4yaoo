@@ -145,7 +145,7 @@ modified: 2023-01-01T13:24:35.994Z
   - https://fusejs.io/
   - [a lightweight fuzzy-search, in JS, with zero dependencies.](https://gist.github.com/ericyd/fe4ce86a1143e86b821e0d12d5daf236)
     - 实现很简单
-  - Fuse JS Web Worker implementation
+    - an example of how to implement fuse.js with a web worker
 
 - https://github.com/superhuman/command-score
   - Yet another javascript fuzzy string matching library!

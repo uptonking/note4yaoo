@@ -17,7 +17,11 @@ modified: 2023-05-14T04:31:17.785Z
 # discuss-authors
 - ## 
 
-- ## 
+- ## [Vector clock and Lamport timestamps](https://github.com/logux/core/issues/14)
+- First, what clock is better for distributed system is still an open question. 
+- To solve all these requirements Logux uses own clock `[timestamp, uniqueNodeID, actionNumberInCurrentMillisecond]` .
+- But clock doesn’t really hard-coded in Logux components. 
+  - If your tasks need Lamport clock, you still can do it by customizing
 
 - ## We released Nano Stores 0.5, _202110
 - https://twitter.com/sitnikcode/status/1452629669933731849

@@ -117,6 +117,65 @@ modified: 2022-12-20T05:39:08.948Z
 - 为了支持这种批量处理数据的需求，CPU设计厂家又搞出了SIMD这种大杀器，SIMD (Single Instruction Multiple Data，单指令多数据)
 - SIMD指令的作用是向量化执行(Vectorized Execution)，中文通常翻译成向量化，但是这个词并不是很好，更好的翻译是数组化执行，表示一次指令操作数组中的多个数据，而不是一次处理一个数据；向量则代表有数值和方向，显然在这里的意义用数组更能准确的表达。
 
+## [A Graph-Based Firebase](https://stopa.io/post/296)
+
+- In A Database in the Browser(blog), I wrote that the schleps(艰难的旅途) we face as UI engineers are actually database problems in disguise(装扮；伪装)
+- my co-founder Joe and I decided to build one and find out. This became Instant. 
+  - I’d describe it as a graph-based successor to Firebase.
+  - You have relational queries and basic auth. Optimistic updates come out of the box, and everything is reactive. 
+- we started with SQL but ended up with a triple store and a query language that transpiles to Datalog.
+-  Why triple store? What query language? read on.
+
+- Delightful Apps
+  - Optimistic Updates
+  - Multiplayer
+  - Offline-Mode
+
+- Bespoke Solutions
+A. DB
+B. Permissions
+C. Sockets
+D. In-Memory Store
+E. IndexedDB
+F. Screens
+G. Mutations
+
+- Inspiration
+  - if we look at how Figma, Linear, and Notion work, we find clues. Squint, and their architecture looks like a database!
+- If our Local DB and Backend DB spoke the same language, both could understand and apply the same mutations. 
+- Databases handle replication. So what if we made the client a special node? The Local DB already knows the queries to satisfy. So it can talk to the backend and get the data it needs.
+
+- A SQL-based tool is closest at hand. I enjoyed looking at absurd-sql. This uses sql.js (SQLLite compiled to webassembly) and persists state into IndexedDB.
+- SQL has a schema. Schema is useful, but it make things less easy than Firebase. 
+- SQL isn’t simple or easy. It’s a tough combination of lots of features, with little of it being useful for the frontend.
+
+- So we wrote a graph database to find out. 
+  - We chose Triple Stores, one of the simplest kinds of graph databases. 
+- If you haven’t tried one, here’s a quick intuition:
+  - we need to be able to express a node with attributes. These sentences translate to lists
+  - Then we want a way to describe references.these translate to lists just as well
+- Put these lists in a table, and you have a triple store! Triple is the name of the list we’ve been writing
+  - The first item is always an `id`, the second the `attribute`, and the third, the `value`. 
+  - Turns out triples are all we need to express a graph. 
+- once you’ve expressed a graph, you can traverse it. 
+  - Triple stores have interesting query languages. 
+  - Here’s Datalog
+
+- ### [A Graph-Based Firebase | Hacker News_202208](https://news.ycombinator.com/item?id=32595895)
+
+- I came to many similar conclusions completely independently, even attempted to build a typesafe in memory datalog in typescript.
+  - I also came to the conclusion that just exposing datalog triples as a query language would never feel right and tried to expose a graphql like language that generated the datalog triples.
+
+- I have built my own similar reactive in-memory triple store with typescripts type safety, but then I realized I still need transactions which are a bit of a pain, because transactions are bundling the otherwise separete triplets, so the atomic, independent logic of triplets and related effects breaks a bit. (I am sure it's solvable.)
+  - The example code uses a `transact` function. But it really depends on what you mean by “transaction”. 
+  - 👉🏻 We don’t use a triple store at Notion, but we do use an abstraction that ensures a collection of operations either all succeed or all fail. 
+  - We don’t support “interactive” transaction, where you can read, modify, write as an atomic group. 
+  - This just isn’t desirable in a multiplayer or offline system - in cases we need that kind of consistency we use a normal HTTP API which is online-only.
+
+- Datalog also has nothing to do with triples, they are two completely orthogonal concepts.
+
+- tripletstore/datalog actually seems like a decent compromise between SQL and no-SQL that could actually work out! Awesome idea!
+
 ## [Caching Partially Materialized Views Consistently](https://blog.the-pans.com/caching-partially-materialized-views-consistently/)
 
 - According to the PostgreSQL wiki
@@ -124,7 +183,7 @@ modified: 2022-12-20T05:39:08.948Z
   - That is, the data in the table changes when the data in the underlying tables changes.
 
 - According to Wikipedia
-  - a materialized view is a database object that contains the results of a query. 
+  - a materialized view is a database object that contains the results of a query.
   - For example, it may be a local copy of data located remotely, or may be a subset of the rows and/or columns of a table or join result, or may be a summary using an aggregate function.
 
 - A materialized view is a cache. 
@@ -141,9 +200,8 @@ modified: 2022-12-20T05:39:08.948Z
 # more
 - [处理海量数据：列式存储综述（存储篇） - 知乎](https://zhuanlan.zhihu.com/p/35622907)
 
-- [Using TTL to Manage Data Lifecycles in ClickHouse](https://clickhouse.com/blog/using-ttl-to-manage-data-lifecycles-in-clickhouse?utm_source=twitter&utm_medium=social&utm_campaign=blog)
+- [Using TTL to Manage Data Lifecycles in ClickHouse](https://clickhouse.com/blog/using-ttl-to-manage-data-lifecycles-in-clickhouse)
   - Databases should make it easy to delete stale data, whether to save on storage costs or for compliance reasons.
   - Read about how you can use TTL (time-to-live) clauses in ClickHouse to delete, reset, or compress old data that’s no longer necessary.
 
 - [Database in the Browser, a Spec](https://stopa.io/post/279)
-- [A Graph-Based Firebase](https://stopa.io/post/296)

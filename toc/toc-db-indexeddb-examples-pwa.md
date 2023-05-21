@@ -147,7 +147,7 @@ modified: 2022-11-14T15:12:02.783Z
 # pwa-utils
 - https://github.com/GoogleChrome/workbox /ts/inactive
   - JavaScript libraries for Progressive Web Apps
-  - Introducing Workbox, a set of modules that simplify common service worker routing and caching.
+  -  Workbox is a set of modules that simplify common service worker routing and caching. 
   - [Workbox - Chrome Developers](https://developer.chrome.com/docs/workbox/)
 
 - https://github.com/ionic-team/capacitor

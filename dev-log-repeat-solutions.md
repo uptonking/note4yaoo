@@ -63,7 +63,7 @@ modified: 2021-07-20T13:50:23.433Z
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~
 - collab
-  - 👉🏻 crdt, yjs, rga, fluid-framework, hlc
+  - 👉🏻 crdt, logux, yjs, rga, fluid-framework, hlc
 
 ## solutions: inter(re)active knowledge-base/wiki
 
@@ -101,7 +101,7 @@ modified: 2021-07-20T13:50:23.433Z
   - collaborative
   - easy pivot table in document
   - interactive-contents: variable, attachment, viz
-  - backlinks/bidirectional: [[Wikilinks (stub)]], providing more context around backlink reference
+  - backlinks/bidirectional: [[Wikilinks(stub)]], providing more context around backlink reference
   - relations: trilium-relation-map, trilium-link-map, dendron-hierarchical
   - scientific writing: latex, bibtex, citation，data
   - rich-ui: collapsible, floating, emoji

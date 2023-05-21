@@ -16,12 +16,15 @@ modified: 2021-09-09T18:31:39.852Z
 - [202003 - Adopt BSL 1.1 license](https://github.com/outline/outline/pull/1197)
   - v0.40.1_202002, BSD
   - v0.40.2_202002, NA202303
-  - v0.43.0_202005, NA20230x, 在20200523将编辑器迁移到v10，但未添加失效日期
-  - v0.44.0_202007, NA202307, 在v0.45.0里面才添加失效日期, 编辑器在202009升级到v11，但变化不大
-  - v0.50.0_202011, NA202311, 集中修复bug
-  - v0.51.0_202012, NA202312, [release notes](https://github.com/outline/outline/tags?after=v0.57.0)
+  - v0.43.0_202005, NA20230x, ✨ 在20200523将编辑器迁移到v10-prosemirror，但未添加失效日期
+  - v0.44.0_202007, NA202307, 在v0.45.0里面才添加失效日期
+  - v0.47.1_202209, NA202309，将编辑器升级到v11，但变化不大
+  - v0.48.1_202009, NA20230926, ✨ 集中修复bug， Added support for importing html and docx files
+  - v0.49.0_202010, NA202310, Importing ".doc" files exported from Confluence is now supported，协作初步demo但不在源码
+  - v0.50.0_202011, NA202311, [Sessions are now synced across browser tabs](https://github.com/outline/outline/releases/tag/v0.50.0)
+  - v0.51.0_202012, NA202312, [the first community translation，git发版记录](https://github.com/outline/outline/tags?after=v0.57.0)
   - v0.55.0_202104, NA202404， pluggable authentication, Collection Permissions & Viewers
-  - v0.59.0_202109, NA202509
+  - v0.59.0_202109, NA202509, Generic OIDC authentication provider; history侧边栏能显示修改、移动、删除
   - v0.60.0_202111, NA202511, 支持collab
   - v0.61.0_202111, NA202511, Move to Typescript
   - v0.62.1-202203, NA202603, Move editor into codebase

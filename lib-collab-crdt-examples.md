@@ -529,6 +529,9 @@ modified: 2022-04-05T10:08:25.947Z
   - Intrigued by collaboration tools like Google Docs, we set out to build one from scratch. 
   - Conclave uses (CRDT) to make sure all users stay in-sync and WebRTC to allow users to send messages directly to one another. 
 
+- https://github.com/peer-base/peer-pad /201907/js
+  - Online editor providing collaborative editing in really real-time using CRDTs and IPFS.
+
 - https://github.com/nybblr/LSEQTree
   - provide an implementation of a CRDT-based array  with an underlying exponential tree and the allocation strategy LSeq
 

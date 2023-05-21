@@ -15,9 +15,10 @@ modified: 2023-05-19T12:17:49.983Z
   - kiwicom/orbit
   - react-flow-editor
 # dev
+- memoize
 
+- [Nano Stores 0.9](https://github.com/nanostores/nanostores/issues/172)
 # examples
-
 - https://github.com/tiana-y/todos
   - Small project for training with React context and styled-components
 
@@ -31,4 +32,20 @@ modified: 2023-05-19T12:17:49.983Z
 
 - https://github.com/v4irajvimu/nanostores-demo
   - counter，依赖多
+# docs
+- Action is a function which change the store.
+  - This wrap allows DevTools to see the name of action, which changes the store.
 # more
+
+# discuss
+
+- ## [How to work with nested objects?](https://github.com/orgs/nanostores/discussions/142)
+  - `state.setKey(2, { ...state.get()[2], street: 'New' })`
+
+- ## [Context](https://github.com/nanostores/nanostores/issues/171)
+  - Problem 1: Cache API
+  - Problem 2: SSR
+    - In SSR, Node.js will render HTML for multiple users in the same time (in the same Node.js environment). If you just export store from a file, all users will share the same store. It could be a very dangerous.
+    - the best solutions is to export store creators and not stores themselves. And then create a single instance in application root.
+  - Problem 3: Mocks
+  - Problem 4: DevTools

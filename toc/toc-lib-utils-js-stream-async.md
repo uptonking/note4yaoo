@@ -179,7 +179,7 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/sindresorhus/p-limit
   - Run multiple promise-returning & async functions with limited concurrency
 
-- https://github.com/andywer/threads.js
+- https://github.com/andywer/threads.js /ts
   - Make web workers & worker threads as simple as a function call.
   - Offload CPU-intensive tasks to worker threads in node.js, web browsers and electron using one uniform API.
   - Uses web workers in the browser, worker_threads in node 12+ and tiny-worker in node 8 to 11.
