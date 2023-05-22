@@ -26,6 +26,16 @@ if(val) // doSth
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 开发小建议：代码的switch case分支条件超过8个以上，switch case效率下降，不妨替换成map
+- https://twitter.com/stephenzhang233/status/1660478131764080641
+- map还有个好处，支持 fp 还可以 partial
+- 直接多维数组
+- 看语言支持不支持。Java我一般使用枚举来实现了。
+
 - ## 如果希望能准确表示js小数和计算，那该怎么做？
 - https://twitter.com/lewangdev/status/1657046362452819969
   - 前几天公司有位前端小哥发现一个奇怪的浮点数问题来问我：通过 MQTT 上传了温度 23.4，经过后台处理后存到数据库再读出来后却变成了 23.399999618530273
@@ -448,3 +458,30 @@ items.reduce((acc, item) => {
 - Default exports de-sugar roughly to the below, which is why incrementing num has no effect. It's assignment by value, not reference.(Invalid syntax since you can't name an export "default", but you get the point).
   - `export const default = num'` 类似
 - Same if you actually define a function at the module to update the variable thats being exported. Defaults exports are immutable, it seems
+
+# ts-enum
+- ## [The difference between enum, const enum and declare enum in Typescript : javascript](https://www.reddit.com/r/javascript/comments/pp08u5/the_difference_between_enum_const_enum_and/)
+- i recommend using union types instead of enums, like: `type DownloadStatus = 'IDLE' | 'LOADING' | 'DONE';` , 
+  - it will cause a lot less problems than enums when dealing with webpack&babel&etc.
+- For me the thing that really eliminated the desire to use enums, was deriving union type alias from an array, so the values can also be iterated without being repeated. Like:
+
+```typescript
+export const colors = ['red', 'green', 'blue'] as const;
+export type Color = typeof colors[number];
+
+export const COLORS = Object.freeze(['red', 'green', 'blue'] as const);
+```
+
+- That's very close to what we had to do at my job. We now define our "enums" as a `const` object, which lets us change the const object without having to also change the type
+
+```typescript
+export const Example = { First: "first", Second: "second" } as const;
+export type Example = (typeof Example)[keyof typeof Example];
+```
+
+- The only downside so far is that array's type is narrowed to a tuple of literals
+  - 数组的includes方法会异常
+  - Because this is an extremely common pattern for us, we've taken to using the `lodash` function includes which is typed differently but performs the exact same check under the hood.
+
+- [enum vs "as const" vs Object.freeze() what is the difference between those 3? : typescript](https://www.reddit.com/r/typescript/comments/ztpl9k/enum_vs_as_const_vs_objectfreeze_what_is_the/)
+  - `Object.freeze` is a runtime thing whereas `as const` is purely in compile time

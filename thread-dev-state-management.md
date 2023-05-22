@@ -66,6 +66,15 @@ modified: 2021-02-28T07:29:07.622Z
   - Haven't used it too much to have an informed opinion, but overusing observables for state management leads to what I call "operator juggling", 
   - where you're just mixing various operators to get the desired result instead of clearly and explicitly specifying logic.
 
+- ## Normalize your data model for writes, denormalize for reads. 
+- https://twitter.com/gunnarmorling/status/1660569588608774145
+  - All read models should be derived fully automatically from a single canonical write model; 
+  - everything else will quickly turn into a maintenance nightmare with (not so) subtle data inconsistencies.
+- A bit like CQRS, yes, but in a more general sense. E.g. you application shouldn't write to OLTP DB _and_ search index or DWH at once. I think Event Sourcing is an independent/orthogonal concern to that.
+- But in some cases writing at once makes more sense for instance updating the materialized view of _search_index for critical updates such as immediately displaying the deleted flag true or false, as explained in this video
+  - Definitely, there's a space for synchronously materialized views. If possible though, they should be derived from the write model ("source of truth"), rather then being "manually" updated by the application.
+- Application writes to the database which is the source of the truth, so after successfully writing it can produce to kafka topic, just to avoid going through whole cycle of debezium->kafkastreams->sink connector->Elasticsearch. It'll shorten the path sinkConnector->Elasticsearch
+
 - ## ref
 - [RTK Query comparison](https://rtk-query-docs.netlify.app/introduction/comparison/)
 - [React Query vs SWR vs Apollo vs RTK Query](https://react-query.tanstack.com/comparison)
@@ -78,7 +87,6 @@ modified: 2021-02-28T07:29:07.622Z
 - ## 
 
 - ## 
-
 
 - ## IMO some things cleanly map to state machines, but a lot don’t. 
 - https://twitter.com/devongovett/status/1528013087470649345

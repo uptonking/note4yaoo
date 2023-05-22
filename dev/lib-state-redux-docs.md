@@ -13,9 +13,10 @@ modified: 2020-12-08T13:27:16.321Z
   - `useSelector` : subscribes to the store and returns the selected value
   - `useDispatch` : returns the store's dispatch function
   - `useStore` : returns the store instance itself
-- 唯一会使用到bindActionCreators的场景是当你需要把action creator往下传到一个组件上，却不想让这个组件觉察到Redux的存在，而且不希望把dispatch或Redux store传给它
-- 通过redux的combineReducers可以很好的扁平化数据
-- compose：作用是从右到左来组合多个函数，其实就是让你少写几个函数嵌套， `compose(funcA, funcB, funcC)` 等价于 `funcA(funcB(funcC))`
+
+- 唯一会使用到`bindActionCreators`的场景是当你需要把action creator往下传到一个组件上，却不想让这个组件觉察到Redux的存在，而且不希望把dispatch或Redux store传给它
+  - 要得到`dispatch(action)`需要传2个参数，bindAction后只用传一个
+- compose：作用是少写几个函数嵌套， `compose(funcA, funcB, funcC)` 等价于 `funcA(funcB(funcC))`
 # resources
 - redux api docs
 	- https://cn.redux.js.org/docs/api/
@@ -293,6 +294,7 @@ store.dispatch({ type: 'INCREMENT' })
 	- Each of these two moments usually require a change in the application state
 - Usually, for any API request you'll want to dispatch at least three different kinds of actions:
 	- 示例
+
 	
 
 ```
@@ -557,6 +559,7 @@ https://cn.redux.js.org/docs/FAQ.html
 	- 不小心直接修改了对象
 	- 重复代码
 	- 性能问题
+
 	
 
 - Won't calling “all my reducers” for each action be slow?
@@ -576,6 +579,7 @@ https://cn.redux.js.org/docs/FAQ.html
 	- First, in terms of raw memory usage, Redux is no different than any other JavaScript library. The only difference is that all the various object references are nested together into one tree
 	- Second, a typical Redux app would probably have somewhat less memory usage than an equivalent Backbone app because Redux encourages use of plain JavaScript objects and arrays rather than creating instances of Models and Collections.
 	- Finally, Redux only holds onto a single state tree reference at a time. Objects that are no longer referenced in that tree will be garbage collected, as usual.
+
 	
 
 - Will caching remote data cause memory problems?

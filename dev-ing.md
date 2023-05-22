@@ -266,6 +266,19 @@ $$('[contenteditable]')
 
 ## 050
 
+## 0522
+
+- [HTTP GET with request body - Stack Overflow](https://stackoverflow.com/questions/978061/http-get-with-request-body)
+  - Yes, you can send a request body with GET but it should not have any meaning. 
+  - If you give it meaning by parsing it on the server and changing your response based on its contents, then you are ignoring this recommendation in the HTTP/1.1 spec, section 4.3:
+  - if the request method does not include defined semantics for an entity-body, then the message-body SHOULD be ignored when handling the request.
+- the description of the GET method in the HTTP/1.1 spec, section 9.3:
+  - The GET method means retrieve whatever information ([...]) is identified by the Request-URI.
+  - which states that the request-body is not part of the identification of the resource in a GET request, only the request URI.
+- The RFC2616 referenced as "HTTP/1.1 spec" is now obsolete.
+  - It's now just "Request message framing is independent of method semantics, even if the method doesn't define any use for a message body" 
+
+
 ## 0521
 
 - [makefile - How does "make" app know default target to build if no target is specified? - Stack Overflow](https://stackoverflow.com/questions/2057689/how-does-make-app-know-default-target-to-build-if-no-target-is-specified)

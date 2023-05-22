@@ -17,7 +17,14 @@ modified: 2021-08-16T06:45:26.099Z
 
 - ## 
 
-- ## 
+- ## 有没有友友知道这种图怎么做. 浅灰白背景上建筑立体凸起
+- https://twitter.com/Jackywine/status/1660121948381229063
+- Probably Rayshader or ArcGIS
+  - 见过用QGis做的
+- 在unity 里可以新建一个很大的地图，然后导入转为黑白的地形高资料图，然后对照卫星图用笔刷工具绘制绿色草地等贴图。其他地方绘制白色、蓝色贴图即可。最后把主光源设置好，添加一个看板标签即可。
+- dem做个阴影再叠加底图就差不多了，一模一样的需要仔细微调。
+- 游戏里称为，灰度图
+- 现在可以试试看midjourney啥的。
 
 - ## Voronoi World Map 100% made with #Javascript & #d3js.
 - https://twitter.com/neocartocnrs/status/1383025241434247169

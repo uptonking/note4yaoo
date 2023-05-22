@@ -41,6 +41,8 @@ modified: 2020-12-22T14:08:27.952Z
   - rsc发送的不是html，定制的格式能使refetch时客户端状态不丢失
   - ssr渲染到html是同步的，渲染时不能取数
     - rsc支持异步取数，渲染时也能取数，流式传输能边下载边渲染
+# blogs
+- [Understanding React Server Components_202305](https://www.callstack.com/blog/understanding-react-server-components)
 # discuss-stars
 - ## React should have a `useUniqueId()` hook that is SSR-stable built-in, 
 - https://twitter.com/buildsghost/status/1397347873637818370

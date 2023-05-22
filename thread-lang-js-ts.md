@@ -16,9 +16,17 @@ Symbol('a') === Symbol('a'); //false
 # discuss
 - ## 
 
-- ## 
+- ## Timers are expensive in general. 
+- https://twitter.com/jarredsumner/status/1660421032027750400
+  - setTimeout is at least one JS value that has to be held onto and keep the event alive (your function). 
+  - Calling the function itself is a little bit expensive. Reading the timer is a syscall (系统调用 on Linux)
+  - Each one is a memory allocation to hold those values and the function and a reference to an event loop timer
+- isn't it just a while(true) loop and very interaction checking if something needs to happen?
+- Does AbortSignal.timeout() follow this same behavior?
+  - Depends on the implementation but in bun yes and I imagine in other implementations too
 
 - ## JS trivial! which `value` breaks if you: `${value}` but work if you do? `String(value)`
+
 - https://twitter.com/manucorporat/status/1656669731892645891
   - i was not aware of this behaviour before, specially since `Symbol().toString()` works!
 

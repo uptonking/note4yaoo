@@ -64,6 +64,11 @@ modified: 2023-02-08T10:46:26.912Z
     - https://github.com/hacker-DOM/github-by-stars
       - /inactive
   - repo项目名支持中文名，url中部分path支持中文名
+
+## issues
+
+- [Bring back `sort:indexed` for code searches](https://github.com/orgs/community/discussions/52932)
+  - NA
 # github-search
 - search-pr
   - is:unmerged
