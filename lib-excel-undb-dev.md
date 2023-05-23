@@ -38,6 +38,16 @@ modified: 2023-05-17T07:36:07.757Z
 - across-board
 # codebase
 - undb底层数据库设计包括 table/field/view/attachment
+
+- 前后端模块
+  - 共用的模块 core/cqrs/i18n
+  - 前端的模块 store-redux, trpc-def
+  - 后端的模块 db-sqlite, trpc-def
+
+- 状态管理
+  - 服务端缓存使用rtk-query，如table/field数据
+  - 前端非持久化状态使用jotai，如弹窗开关、initialValue、lastOpened
+
 # design
 - 看板整体布局的结构
   - 可以总体为一行，每列包含顶部列标题、当前列内容卡片

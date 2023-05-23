@@ -266,6 +266,8 @@ $$('[contenteditable]')
 
 ## 050
 
+## 0523
+
 ## 0522
 
 - [HTTP GET with request body - Stack Overflow](https://stackoverflow.com/questions/978061/http-get-with-request-body)
@@ -277,7 +279,6 @@ $$('[contenteditable]')
   - which states that the request-body is not part of the identification of the resource in a GET request, only the request URI.
 - The RFC2616 referenced as "HTTP/1.1 spec" is now obsolete.
   - It's now just "Request message framing is independent of method semantics, even if the method doesn't define any use for a message body" 
-
 
 ## 0521
 
@@ -451,7 +452,7 @@ this.setState({ employees });
 },
 ```
 
-# dev-04
+# dev-04-slate-image/dnd-kit
 
 ## 0429
 
@@ -703,7 +704,7 @@ function isDefined<T>(value: T | undefined | null): value is T {
 <hr style="width:100px; transform:rotate(90deg);">
 ```
 
-# dev-03
+# dev-03-slate-table/toolbar
 
 ## 0331
 
@@ -1222,7 +1223,7 @@ JSON.parse(''); // SyntaxError: Unexpected end of JSON input
   - Vite can switch to the swc/rust transform if necessary, we currently chose not to do that because adding swc to the deps list is extra weight, and even without it HMR is fast enough.
   - In the long run we may also consider using turbopack under the hood to replace esbuild/Rollup (where suitable), due to its strong caching capabilities.
   - [feat!: transform jsx with esbuild instead of babel by rtsao · Pull Request #9590 · vitejs/vite_202211](https://github.com/vitejs/vite/pull/9590)
-# dev-02
+# dev-02-typewriter+slate
 
 ## 0228
 
@@ -1391,10 +1392,10 @@ color2 instanceof String; // returns false (color2 is not a String object)
 ## 0205
 
 - npm ERR! Invalid comparator: github:thecodrr/htmlparser2
-  - [[BUG] \`overrides\` in \`package.json\` do not allow file paths of any kind (including fake ones) · Issue #5843 · npm/cli](https://github.com/npm/cli/issues/5843)
+  - [[BUG] \`overrides\` in \`package.json\` do not allow file paths of any kind (including fake ones)](https://github.com/npm/cli/issues/5843)
   - I really hope this can be fixed. Overrides otherwise only fully work in npm v8.
   - npm v9 最新版已修复
-# dev-01
+# dev-01-linvo-search+sync
 
 ## 0126
 

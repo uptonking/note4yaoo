@@ -63,6 +63,9 @@ modified: 2022-08-21T10:02:05.129Z
   - 后端依赖 nestjs、mikro-orm、trpc、undb
   - [feature/frontend next_20230503(v0.3), 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
     - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
+- https://github.com/baastronaut/baastronaut /ts
+  - Open-source Airtable alternative
+  - 依赖 nestjs、reactgrid、@mui/x-data-grid、mantine.v6、next
 
 - nocodb /33kStar/AGPLv3/202212/ts/vue/重后端/多视图
   - https://github.com/nocodb/nocodb

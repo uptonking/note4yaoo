@@ -7,7 +7,10 @@ modified: 2020-12-08T13:27:16.321Z
 
 # lib-state-redux-docs
 - Redux is a predictable state container for JavaScript apps.
-  - Redux is a pattern and library for managing and updating application state, using events called "actions". 
+  - Redux is a pattern and library for managing and updating application state, using events called "actions".
+
+- rtk-query
+  - rtk-query-endpoints的query 和 自定义fetch请求 的顺序难以确定，这是使用框架的坏处
 # dev-tips
 - we ultimately wound up shipping three hooks:
   - `useSelector` : subscribes to the store and returns the selected value
@@ -85,6 +88,13 @@ modified: 2020-12-08T13:27:16.321Z
 - React's `unstable_batchedUpdate()` API allows any React updates in an event loop tick to be batched together into a single render pass. 
   - React already uses this internally for its own event handler callbacks. 
   - This API is actually part of the renderer packages like ReactDOM and React Native, not the React core itself.
+# rtk-query
+
+## [Customizing Queries](https://redux-toolkit.js.org/rtk-query/usage/customizing-queries)
+
+- To process queries, endpoints are defined with a `query` option, which passes its return value to a common `baseQuery` function used for the API.
+  - At its core, a `baseQuery` function only needs to have the minimum return value to be valid; an object with a `data` or `error` property
+- `transformResponse` is called with the data that a successful `baseQuery` returns for the corresponding endpoint, and the return value of `transformResponse` is used as the cached data associated with that endpoint call.
 # redux docs
 
 ## Getting Started with Redux
@@ -294,7 +304,6 @@ store.dispatch({ type: 'INCREMENT' })
 	- Each of these two moments usually require a change in the application state
 - Usually, for any API request you'll want to dispatch at least three different kinds of actions:
 	- 示例
-
 	
 
 ```
@@ -559,7 +568,6 @@ https://cn.redux.js.org/docs/FAQ.html
 	- 不小心直接修改了对象
 	- 重复代码
 	- 性能问题
-
 	
 
 - Won't calling “all my reducers” for each action be slow?
@@ -579,7 +587,6 @@ https://cn.redux.js.org/docs/FAQ.html
 	- First, in terms of raw memory usage, Redux is no different than any other JavaScript library. The only difference is that all the various object references are nested together into one tree
 	- Second, a typical Redux app would probably have somewhat less memory usage than an equivalent Backbone app because Redux encourages use of plain JavaScript objects and arrays rather than creating instances of Models and Collections.
 	- Finally, Redux only holds onto a single state tree reference at a time. Objects that are no longer referenced in that tree will be garbage collected, as usual.
-
 	
 
 - Will caching remote data cause memory problems?
