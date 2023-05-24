@@ -12,7 +12,20 @@ modified: 2021-08-30T17:33:46.086Z
 # discuss
 - ## 
 
-- ## 
+- ## Nobody is feasibly going to rewrite Sqlite in Rust.
+- https://news.ycombinator.com/item?id=25464846
+  - Is making à file based database that hard, compared to creating new programming language for example ?
+
+- If you gave me two year I'm not sure I could implement a filesystem API that correctly did something as simple as "atomically append to a file". See also Dan Luu's writing on the topic of filesystems
+
+- The problem is to write a reliable file database. 
+  - Firefox got a lot of bugs related to history file corruption until it was replaced with SQLite. 
+  - The same story was with Subversion where they replaced Berkeley key DB due to reliability issues.
+  - This reliability comes from a very deep knowledge of OS API and all their corner cases. 
+  - Creating a programming language typically involves less corner cases and the bugs in the compiler/runtime are much simple to reproduce (again, typically).
+
+- 
+- 
 
 - ## [Xlite: Query Excel and Open Document spreadsheets as SQLite virtual tables | Hacker News](https://news.ycombinator.com/item?id=31874767)
 - Sqlite does not allow table valued functions to return results with varying schemas. The schema must be defined once up front and then cannot change.
@@ -67,3 +80,10 @@ modified: 2021-08-30T17:33:46.086Z
   - Since rowid is now aliased to your application data, it would not be acceptable for sqlite to change it.
 - If you really really really absolutely need the rowid to change on a VACUUM, you can avoid this aliasing behavior. Note that it will decrease the performance of any table lookups using your primary key.
   - To avoid the aliasing, and degrade your performance, you can use `INT` instead of `INTEGER` when defining your key
+
+## [Why Is SQLite Coded in C (2017) | Hacker News](https://news.ycombinator.com/item?id=28278859)
+
+- But it's still a database, a low level, high performance software system. 
+  - Even if you write it in rust, some percentage of the code will be unsafe rust or rust that calls a library written in C. 
+  - It will be safer, but still not a panacea. 
+  - It would be more viable in my opinion to improve the safety of the C code that currently makes up sqlite.

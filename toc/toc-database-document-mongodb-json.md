@@ -209,6 +209,8 @@ modified: 2022-11-03T04:14:11.987Z
   - FerretDB (previously MangoDB) was founded to become the de-facto open-source substitute to MongoDB
   - 直接在PostgreSQL上对外提供 MongoDB 的 API
   - FerretDB is an open-source proxy, converting the MongoDB 6.0+ wire protocol queries to SQL - using PostgreSQL as a database engine.
+  - [FerretDB v1.2.0_20230522](https://blog.ferretdb.io/ferretdb-v-1-2-0-minor-release/)
+    - support SQLite database backend. 
 # more-document-json
 - https://github.com/ashleydavis/sql-to-mongodb
   - A Node.js script to convert an SQL database to a MongoDB database.

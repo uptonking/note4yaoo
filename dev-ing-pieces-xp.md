@@ -17,7 +17,9 @@ modified: 2021-04-28T20:54:58.126Z
 
 - `res.json()` is a promise too
 
-- 自定义fetch和rtk-query的fetch难以确定
+- 自定义fetch和rtk-query的fetch执行顺序难以确定
+  - 就算使用redux支持的自定义query，顺序仍然难确定
+  - 从devtools里面的actions顺序分析
 
 ## cors问题
 

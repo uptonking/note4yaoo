@@ -11,7 +11,7 @@ modified: 2022-06-04T00:44:40.955Z
 
 - 实现浮层的2个要点
   - 浮层元素 visible
-  - 浮层元素anchored to reference element
+  - 浮层元素 anchored to reference element
 
 - resources
 

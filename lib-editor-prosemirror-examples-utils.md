@@ -85,6 +85,9 @@ modified: 2022-08-18T16:57:29.058Z
   - Customizable language selector
   - Lazy-loaded language support
 
+- https://github.com/emergence-engineering/prosemirror-link-preview
+  - [Link preview for prosemirror!](https://emergence-engineering.com/blog/prosemirror-link-preview)
+
 - https://gitlab.com/emergence-engineering/prosemirror-image-plugin
   - Upload images to endpoints, showing placeholder until the upload finishes
   - Customizable overlay for alignment 

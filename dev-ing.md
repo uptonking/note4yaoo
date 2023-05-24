@@ -266,7 +266,18 @@ $$('[contenteditable]')
 
 ## 050
 
-## 0523
+## 0524
+
+- [reactjs - MIME type ('text/html') is not executable, and strict MIME type checking is enabled - Stack Overflow](https://stackoverflow.com/questions/49617440/mime-type-text-html-is-not-executable-and-strict-mime-type-checking-is-enab)
+  - Adding Public Path in output of webpack.config.js works:
+
+```JS
+output: {
+  path: `${__dirname}/dist`,
+  filename: 'bundle.js',
+  publicPath: '/',
+}
+```
 
 ## 0522
 

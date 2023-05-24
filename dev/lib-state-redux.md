@@ -6,18 +6,18 @@ modified: 2021-05-13T03:14:10.096Z
 ---
 
 # lib-state-redux
-
 - Redux is a predictable state container for JavaScript apps.
-
 # guide
-
 - redux vs pub sub
 - redux原则
   - 架构设计：single store, read only state, reducer as pure function
   - 要让状态的变化可追踪，可重复，可维护
-
+# dev
+- redux-persist初始化流程
+  - @@INIT, api/middlewareRegistered注册后
+  - persist/PERSIST, REHYDRATE
+  - api ajax auth/user/data
 # faq
-
 - 为什么很多人将fetch请求和redux绑定在一起使用
   - 因为不管是改全局state还是fetch什么的，在我的组件内部都是副作用，副作用的东西之后，它还要改一层全局状态，如果你的场景是请求了改这个组件，那没啥问题，但如果你请求了数据，这个数据在多层次都要用到，你得放全局，这个fetch得副作用你觉得放哪能解决你的问题？既然redux那块有一层改全局state的功能划分，再加一层副作用异步改全局state的能力，redux-thunk提供了，所以effects这种副作用理应靠在redux那边。这个你用一下dva+umi的方式可能更好理解。
 
@@ -65,9 +65,7 @@ modified: 2021-05-13T03:14:10.096Z
     - Personally my take on React Context is that it could be used for storing local app state that doesn't need to live in a global store and also prevent prop drilling. 
     - So, sort of a complement to Redux IF you expect to build a large app. 
     - Otherwise we could also possibly just use React Context as a global store instead of Redux for smaller apps?
-
 # pieces
-
 - Redux is not supposed to "replace the initial idea of react.js", 
   - think of it more like a library to manage shared state between components and to coordinate state mutations. 
   - Redux does use a pub/sub pattern indeed
@@ -100,9 +98,7 @@ modified: 2021-05-13T03:14:10.096Z
 - Pub/sub implementations such as redux exist largely to decouple publishers and subscribers. 
   - Thus we should not name actions in a way that describes how the reducer will handle them. 
   - Action names should indicate what happened, not what needs to happen
-
 # redux-toolkit
-
 - The official, opinionated, batteries-included toolset for efficient Redux development
 
 - three common concerns about Redux:
@@ -142,9 +138,7 @@ modified: 2021-05-13T03:14:10.096Z
   - https://github.com/acivan/react-rtk-ts
 
 - 202104-switch RTK's build tooling from tsdx to esbuild
-
 # ref
-
 - [Why you should NEVER use Redux with Angular](https://morioh.com/p/548aad273e3e)
   - Angular is a highly opinionated framework around dependency injection (DI). 
     - This makes it easy to share state out of the box. 

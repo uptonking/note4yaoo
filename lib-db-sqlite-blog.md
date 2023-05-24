@@ -90,6 +90,7 @@ modified: 2022-11-18T17:06:54.371Z
   - The schema of an SQL database is able to represent information more directly and succinctly than a key/value database such as a ZIP archive. 
 
 ## [Consider SQLite](https://blog.wesleyac.com/posts/consider-sqlite)
+
 - There are a few legitimate downsides to using SQLite. 
   - First off, the data type system. It's bad. Luckily, as of a month ago, you can use strict typing instead, which somewhat improves the situation. 
   - Support for migrations is worse — SQLite has essentially no support for live migrations, so you need to instead make a new table, copy the data from the old table into the new one, and switch over. 
@@ -103,6 +104,11 @@ modified: 2022-11-18T17:06:54.371Z
 - Freelists: a special area inside a SQLite database, which contains recently deleted data
 - Journal and Write-Ahead Log (WAL) files: transactional files, which can store recently added or recently deleted data
 - Unallocated space: not to be confused with hard drive unallocated space, this SQLite feature allows finding deleted data even outside of freelists
-# more
 
+## [SQLite Internals: Pages & B-trees · Fly.io](https://fly.io/blog/sqlite-internals-btree/)
+- SQLite is so easy to use and, more importantly, it's simple and reliable.
+
+### [SQLite Internals: Pages and B-trees | Hacker News](https://news.ycombinator.com/item?id=32250426)
+
+# more
 - [SQLite的文艺复兴 - 知乎](https://zhuanlan.zhihu.com/p/601510076)

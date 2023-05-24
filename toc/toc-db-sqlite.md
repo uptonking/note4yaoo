@@ -75,6 +75,9 @@ modified: 2021-08-30T18:56:18.632Z
   - features
     - randomized ROWID
     - WebAssembly User Defined Functions
+  - https://github.com/libsql/sqld
+    - sqld is a server mode for libSQL. 
+    - Access over HTTP and WebSockets from any Edge platform
 - https://github.com/chiselstrike/chiselstrike
   - ChiselStrike abstracts common backends components like databases and message queues, and let you drive them from a convenient TypeScript business logic layer
   - ChiselStrike keeps things as close as possible to pure TypeScript, and a translation layer takes care of index creation, database query generation, and even communicating with external systems like Kafka.
@@ -101,14 +104,36 @@ modified: 2021-08-30T18:56:18.632Z
 - https://github.com/inloop/sqlite-viewer
   - View SQLite file online
 # db-powered-by-sqlite
-- https://github.com/rqlite/rqlite
+- https://github.com/rqlite/rqlite /go
   - distributed relational database built on SQLite
   - https://github.com/rqlite/rqlite-js
     - promise based client library for rqlite
+
+- https://github.com/rusqlite/rusqlite
+  - an ergonomic wrapper for using SQLite from Rust.
+  - Historically, the API was based on the one from rust-postgres. However, the two have diverged in many ways, and no compatibility between the two is intended.
+
+- https://github.com/litements/s3sqlite /python
+  - Query SQLite databases in S3 using s3fs
+  - [Show HN: Query SQLite files stored in S3 | Hacker News](https://news.ycombinator.com/item?id=32828799)
+
+- https://github.com/benbjohnson/litestream /202211/go
+  - Streaming replication for SQLite.
+  - Litestream is a standalone disaster recovery tool for SQLite. 
+  - It runs as a background process and safely replicates changes incrementally to another file or S3. 
+  - Litestream only communicates with SQLite through the SQLite API so it will not corrupt your database.
 # sqlite-rewrite
-- https://github.com/joaoh82/rust_sqlite
+- https://github.com/joaoh82/rust_sqlite /1kStar/MIT/202207/rust
   - a simple embedded database modeled off SQLite, but developed with Rust. 
   - The goal is get a better understanding of database internals by building one.
+  - [SQLRite – SQLite clone from scratch in Rust | Hacker News_202104](https://news.ycombinator.com/item?id=26749737)
+
+- https://github.com/cstack/db_tutorial /c
+  - Writing a sqlite clone from scratch in C
+  - B-Tree Leaf Node Format
+  - prepare_statement (our “SQL Compiler”) does not understand SQL right now. In fact, it only understands two words select and insert
+  - [How Does a Database Work? | Let’s Build a Simple Database](https://cstack.github.io/db_tutorial/)
+  - [Writing a SQLite clone from scratch in C (2017) | Hacker News](https://news.ycombinator.com/item?id=27731966)
 
 - https://gitlab.com/cznic/sqlite /go
   - a CGo-free port of SQLite/SQLite3 in go
@@ -118,7 +143,21 @@ modified: 2021-08-30T18:56:18.632Z
 - https://github.com/LumoSQL/LumoSQL
   - a modification (not a fork) of the SQLite
   - LumoSQL adds security, privacy, performance and measurement features to SQLite.
-  - LumoSQL can swap back end key-value store engines in and out of SQLite. 
+  - LumoSQL can swap back end key-value store engines in and out of SQLite.
+
+- https://github.com/CsharpDatabase/csharp-sqlite
+  - C# port of the SQLite library
+  - https://code.google.com/archive/p/csharp-sqlite/
+# sqlite-like
+- sqlite /3.3kStar/public/202212/clang
+  - https://github.com/sqlite/sqlite
+  - https://sqlite.org/
+  - a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. 
+
+- dqlite /3.2kStar/LGPLv3/202212/clang
+  - https://github.com/canonical/dqlite
+  - dqlite is a C library that implements an embeddable and replicated SQL database engine with high-availability and automatic failover.
+  - dqlite extends SQLite with a network protocol that can connect together various instances of your application and have them act as a highly-available cluster, with no dependency on external databases.
 # more
 - https://github.com/loladb/nodejs-examples
   - https://loladb.com/

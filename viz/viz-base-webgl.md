@@ -19,7 +19,7 @@ modified: 2020-12-21T07:47:02.451Z
 - webgl-cons
   - 基于webgl的开发更依赖图形学和数学知识，canvas被封装得更好，canvas开发更容易
 
-- [cesium大牛-四季留歌-小结](https://www.zhihu.com/question/457815533/answer/2611385063)
+- [cesium玩家-四季留歌-小结](https://www.zhihu.com/question/457815533/answer/2611385063)
   - 喜欢手撸原生但是懒得封装基本过程用 twgl
   - 不想写原生的过程式代码用 regl
   - 不想接触底层api用 threejs

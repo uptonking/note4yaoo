@@ -42,7 +42,7 @@ modified: 2022-11-27T19:20:02.987Z
 
 ## [Writing a sqlite clone from scratch in C](https://cstack.github.io/db_tutorial/)
 
-- https://github.com/cstack/db_tutorial
+- https://github.com/cstack/db_tutorial /c
   - Writing a sqlite clone from scratch in C
   - B-Tree Leaf Node Format
   - prepare_statement (our “SQL Compiler”) does not understand SQL right now. In fact, it only understands two words select and insert
