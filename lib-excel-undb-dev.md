@@ -27,13 +27,18 @@ modified: 2023-05-17T07:36:07.757Z
   - https://github.com/orgs/sequelize/projects/1
   - https://github.com/orgs/chakra-ui/projects/3
 # dev-to
+- 将trpc迁移到rtk-query
+# dev-later
 - 去掉table概念，将field作为最底层基础block
   - 将table只视为field的一种具体组合，field还可以组合为kanban/tree
 
 - cleanup
-  - 去掉loadable-component
   - disable attachment(-field)
+  - 去掉react-hook-form devtool
+  - [x] 去掉loadable-component
 # dev-maybe
+- column-virtualizer
+
 - board-insights
 - across-board
 # codebase
@@ -47,7 +52,6 @@ modified: 2023-05-17T07:36:07.757Z
 - 状态管理
   - 服务端缓存使用rtk-query，如table/field数据
   - 前端非持久化状态使用jotai，如弹窗开关、initialValue、lastOpened
-
 # design
 - 看板整体布局的结构
   - 可以总体为一行，每列包含顶部列标题、当前列内容卡片

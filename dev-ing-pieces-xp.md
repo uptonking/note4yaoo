@@ -11,6 +11,17 @@ modified: 2021-04-28T20:54:58.126Z
 
 # issues
 
+## 刷新页面自动登录用户帐号
+
+- 需求
+  - 登录时，/login(添加token) > /userMe > /data
+  - 刷新时，/userMe > /data
+
+- 每次刷新会请求类似`/userMe`的接口
+  - 但在注册登录页不会请求，注册登录页在userMe的children中，
+  - 若已登录，会自动跳转数据页
+  - 若未登录，则无token，也不会发起useMe
+
 ## fetch的response在await后仍然是promise，调试了很久
 
 - [Why fetch returns promise pending? - Stack Overflow](https://stackoverflow.com/questions/59394620/why-fetch-returns-promise-pending)
