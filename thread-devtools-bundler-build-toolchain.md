@@ -1,11 +1,11 @@
 ---
-title: thread-devtools-bundler-build-tooling
-tags: [compiler, devtools, thread, tool]
+title: thread-devtools-bundler-build-toolchain
+tags: [bundler, compiler, devtools, thread, toolchain]
 created: 2021-07-07T07:14:21.190Z
-modified: 2021-09-22T05:47:54.470Z
+modified: 2023-05-26T11:09:41.593Z
 ---
 
-# thread-devtools-bundler-build-tooling
+# thread-devtools-bundler-build-toolchain
 
 # guide
 
@@ -14,7 +14,10 @@ modified: 2021-09-22T05:47:54.470Z
 
 - ## 
 
-- ## 
+- ## 有个疑问想问下万能的推友（非引战），为什么最新的注重性能的 web 基础工具大多采用了 rust 而非 golang？
+- https://twitter.com/rxliuli/status/1661999393258762240
+- 因为用 Rust 写可以用 @napi_rs 弄出在 Node.js 里面跑的 JavaScript 可以直接调用的 Library. 
+  - 用 Golang 只能通过 stdio 互相传数据，回调，异步流程控制等高级 API 根本写不动
 
 - ## Wireshark and Fiddler are both exceptional tools that serve vastly different purposes focusing on different OSI layers. 
 - https://news.ycombinator.com/item?id=15792677

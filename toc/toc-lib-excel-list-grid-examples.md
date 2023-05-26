@@ -11,9 +11,7 @@ modified: 2022-08-21T10:03:52.222Z
 
 - 应用示例
   - [h5dw 数据仓库示例， 未开源](http://www.satrda.com/h5dw/)
-
 # list/grid view
-
 - https://github.com/ShuvoHabib/reactjs-toggle-list-grid-view
   - toggle through List and Grid view
 - https://github.com/vesnaguja/react-users
@@ -35,6 +33,47 @@ modified: 2022-08-21T10:03:52.222Z
 - https://github.com/turbolent/collection-view
   - A container for displaying large ordered collections of data items and presenting them using arbitrary layouts (e.g. lists, grids). 
 # app
+- https://github.com/bruceleejie/exceldemo
+  - 管理系统中可能需要的导出、导入功能，前端导出、导入excel文件的demo
+
+- https://github.com/UgnisSoftware/react-spreadsheet-import /ts
+  - https://ugnissoftware.github.io/react-spreadsheet-import
+  - Import flow for Excel (.xlsx) and CSV file with automated column matching and validation.
+  - A component used for importing XLS / XLSX / CSV documents built with Chakra UI.
+
+- https://github.com/renanlecaro/importabular /js/MIT
+  - https://importabular.lecaro.me/
+  - Lightweight spreadsheet editor for the web, to easily let your users import their data from excel.
+  - No sorting, pivot, formula, etc
+  - No sorting, pivot, formula, etc
+
+- https://github.com/Aayush-Kindo/Excel-Clone /js/公式未实现
+  - https://incandescent-gecko-f9d681.netlify.app/
+  - An excel sheet clone using HTML, CSS, and JavaScript allows users to create spreadsheets within a web browser.
+
+- https://github.com/GrigoryGerasimov/excel-in-js /js
+  - https://grigorygerasimov.github.io/excel-in-js/
+  - Excel variation written in Vanilla JS
+  - Self-written DOM framework for Excel
+  - Self-written Redux
+  - Self-written EventEmitter (Observer pattern) and ProcessEmitter (DIP)
+  - Unit testing done with Jest
+
+- https://github.com/decatur/gridchen /js
+  - editable web grid with strict MS-Excel adherence to user experience
+  - Very modern (web components, es6 modules) with no dependencies.
+
+- https://github.com/sujitIwale/sharesheet /js
+  - https://sharesheet.netlify.app/landing
+  - Upload and Edit Csv File ( Spreadsheet Clone )
+
+- https://github.com/JannikWibker/spreadsheets /ts
+  - small little spreadsheet program with formula support soon
+
+- https://github.com/kevinschaich/mintable /MIT/ts
+  - https://kevinschaich.io/mintable/
+  - Automate your personal finances – for free, with no ads, and no data collection.
+
 - gridstudio /AGPLv3/7.8kStar/202006/go/python
   - https://github.com/ricklamers/gridstudio
   - https://gridstudio.io/
@@ -44,6 +83,14 @@ modified: 2022-08-21T10:03:52.222Z
   - https://gitlab.com/bramw/baserow
   - Baserow is an open source online database tool and Airtable alternative.
   - 依赖Django、Nuxt.js、PostgreSQL
+
+- https://github.com/anita-app/anita /ts/暂不支持同步
+  - https://anita-app.com/
+  - Anita is a private, no-server, powerful and fully customizable data management solution
+  - Your data is stored on your computer in a JSON file and/or on a remote database of your choice: flexible, open & no lock-in. Stay independent from servers that will go away, sooner or later.
+  - full support for CRUD operations on data stored
+  - locally in the browser's IndexedDB (with Dexie.js)
+  - locally in a JSON or SQLite file in the device FS 
 
 - nocodb /33kStar/AGPLv3/202212/ts/vue
   - https://github.com/nocodb/nocodb
@@ -114,6 +161,9 @@ modified: 2022-08-21T10:03:52.222Z
 
 - https://github.com/PranjaliPatil14/CRUDOperationsWithAgGrid
   - client side Crate, Read, Update, Delete operations on react data grid using AgGrid library.
+
+- https://github.com/bryanjtc/text-extraction-app /js
+  - Web app that performs automated extraction of structured data from images and converts them to excel files.
 # examples
 - table /463Star/BSD/202009/js
   - https://github.com/gajus/table
@@ -154,4 +204,7 @@ modified: 2022-08-21T10:03:52.222Z
   - Webix UI library is licensed under "GPL v3" licence
   - Starting from Webix 2.4, it possible to use a FLOSS Exception to the GPL License. 
   - This exception works only for Open Source projects. If you want to distribute Webix as a part of your commercial product, you’ll need to purchase the Webix License instead.
+
+- https://github.com/warmthsea/xlsx-preview /ts/vue
+  - 基于XLSX、TypeScript、Vue3的 .xlsx 类型文件预览
 # more

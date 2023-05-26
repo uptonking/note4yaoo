@@ -16,6 +16,10 @@ modified: 2023-01-09T11:03:32.533Z
 - https://github.com/nod-engineering/docx
   - Easily generate .docx files with JS/TS. 
   - Works for Node and on the Browser.
+
+- https://github.com/open-xml-templating/docxtemplater /MIT/js/excel收费
+  - a library to generate docx/pptx documents from a docx/pptx template.
+  - Functionality can be added with the following paid modules
 # examples
 
 # parser-generator

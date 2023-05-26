@@ -55,7 +55,7 @@ modified: 2022-08-21T09:57:46.814Z
 
 # blogging
 
-## [LuckySheet源码分析目录_202011](https://blog.csdn.net/u010593516/article/details/109604358)
+## [LuckySheet源码分析目录_舟翁_202011](https://blog.csdn.net/u010593516/article/details/109604358)
 
 1. 源代码项目结构
 2. core.js源码分析
@@ -64,7 +64,7 @@ modified: 2022-08-21T09:57:46.814Z
 5. 主界面绘制draw.js
 6. 界面刷新策略fresh.js
 
-## [MiniSheet目录_202102](https://blog.csdn.net/u010593516/article/details/113743472)
+## [MiniSheet开发记录目录_舟翁_202102](https://blog.csdn.net/u010593516/article/details/113743472)
 
 - https://gitee.com/zhouweng/mini_sheet
 

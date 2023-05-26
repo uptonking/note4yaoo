@@ -264,6 +264,17 @@ modified: 2023-04-04T22:36:31.529Z
 
 - https://github.com/qualiancy/breeze-dag /201211/js
   - Async flow control for directed-acyclic-graph iteration.
+
+- https://github.com/snapview/sunrise /ts
+  - Spreadsheet-like dataflow programming in TypeScript
+  - Sunrise provides a spreadsheet-like computing environment consisting of source cells and formula cells and introduces the Cell interface to represent both
+
+- https://github.com/taggon/tiny-formula /ts/NoDeps
+  - A toolset for parsing excel-like formula and calculating with custom functions.
+
+- https://github.com/elis/djit /js
+  - Javascript Spreadsheet Engine
+  - Create an Excel-like object in Javascript that automagically computes itself whenever updated.
 # stream-examples
 - https://github.com/nagix/chartjs-plugin-streaming
   - Chart.js plugin for live streaming data
@@ -274,7 +285,7 @@ modified: 2023-04-04T22:36:31.529Z
   - officegen should work on any environment that supports Node.js including Linux, OSX and Windows. 
   - officegen also supporting PowerPoint native charts objects with embedded data.
 
-- https://github.com/eclipse/streamsheets
+- https://github.com/eclipse/streamsheets /js
   - An open-source tool for processing stream data using a spreadsheet-like interface.
 
 - https://github.com/paulmillr/readdirp

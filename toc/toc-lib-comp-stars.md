@@ -7,6 +7,22 @@ modified: 2021-01-12T18:49:07.422Z
 
 # toc-lib-comp-stars
 
+# guide
+
+# calendar
+- https://github.com/nhn/tui.calendar
+  - http://ui.toast.com/tui-calendar
+  - available when using the Plain JavaScript, React, Vue Component.
+  - 依赖tui-date-picker、tui-time-picker、preact、immer
+  - date依赖moment、moment-timezone
+
+- https://github.com/fullcalendar/fullcalendar
+  - https://fullcalendar.io/
+  - Full-sized drag & drop event calendar in JavaScript
+
+- https://github.com/Zertz/tempocal
+  - https://tempocal.pierluc.io/
+  - Highly flexible building blocks to craft calendars with Temporal API
 # calendar-heatmap
 - https://github.com/grubersjoe/react-activity-calendar
   - https://grubersjoe.github.io/react-activity-calendar/

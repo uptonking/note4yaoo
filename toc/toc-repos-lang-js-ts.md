@@ -56,7 +56,7 @@ modified: 2021-05-14T15:04:55.849Z
   - /6.9kStar/MIT/202009/ts
   - a graph visualization engine: rendering, layout, analysis, interaction, animation
 - https://github.com/antvis/data-set
-  - /state driven all in one data process for data visualization
+  - state driven all in one data process for data visualization
 - https://github.com/BabylonJS/Babylon.js
   - /12.3kStar/Apache2/202009/ts
   - simple and open game and rendering engine packed into a friendly js framework.

@@ -78,28 +78,22 @@ $$('[contenteditable]')
 - slate-wangeditor
   - model, view, sync, collab
   - slate-docs-examples
-- 👉🏻 eg-pivot-views/focalboard
+- eg-pivot-views/focalboard
   - table view
   - kanban view
-- 👉🏻 eg-tanstack-table-v8
+- eg-tanstack-table-v8
   - [x] 内存数据: nedb, blinkdb
   - [x] 流式数据: linvodb, tingodb
   - [ ] 方便接入已有的外部数据源
   - tuple-database 支持内存和持久化
   - tinybase 支持内存和持久化
 
-- 若slate-model层采用扁平化Node
-  - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath
-  - 优化方向可参考tree的crud及协作
-  - 协作时还应该考虑 json patch + last-write-win
-  - Node定义采用unist
-  - lww的字符串改为针对crdt优化的类型
-
 - collab-sync
+  - string-crdt: ? list-crdt
   - evolu(hlc+worker)
   - logux
-  - string-crdt: ? list-crdt
-  - collab-data-structure: lww-with-hlc
+    - sqlite-persistor
+    - collab-data-structure: lww-with-hlc
   - remoteStorage: google-drive、网盘、七牛对象存储
   - lo-fi-sync-server
   - pouchdb
@@ -111,14 +105,21 @@ $$('[contenteditable]')
 
 - long-term
   - cms, airtable, lowcode
-- techstacks
+- techstacks-to
   - async/generator, stream, buffer, binary, scheduler, arrow
   - 样式片段也可在 w3schools.com 在线尝试
 
 - 支持切换内存和持久化的示例
-  - abstract-level, localforage
   - tanstack-table server-side row model
+  - abstract-level, localforage
   - tupledb
+
+- 若slate-model层采用扁平化Node
+  - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath
+  - 优化方向可参考tree的crud及协作
+  - 协作时还应该考虑 json patch + last-write-win
+  - Node定义采用unist
+  - lww的字符串改为针对crdt优化的类型
 
 - 内容的存储与更新如何与数据库集成
   - 编辑器内容自动保存一般通过在onChange方法中执行saveToDB
@@ -129,18 +130,18 @@ $$('[contenteditable]')
 
 - log2022 数据同步、冲突处理、本地存储
   - 07-focalboard-views
-  - 08-block-editor-tiny-write
+  - 08-block-editor, tiny-write
   - 09-prosemirror-examples
-  - 10-prosemirror-collab - otjs - crdt-hlc
-  - 11-idb-sync-crdt
-  - 12-nedb-linvodb
+  - 10-prosemirror-collab, otjs
+  - 11-crdt-hlc, idb-sync
+  - 12-nedb, linvodb
 
 - log2023 编辑器、表格、协作、cms
-  - 01-linvo-search + tinybase-sync-hlc-wip
-  - 02-typewriter-quill + tanstack-table + slate-table
-  - 03-crdt-rga + slate-yjs + slate-editor
-  - 04-slate-editor + dnd-kit
-  - 05-table/image-sequelize
+  - 01-linvo-search, tinybase-sync-hlc-wip
+  - 02-typewriter-quill, tanstack-table, slate-table
+  - 03-crdt-rga, slate-yjs, slate-editor
+  - 04-slate-editor-toolbar, dnd-kit
+  - 05-tanstack-table-database, rtk-query
 
 - why use es6 class
   - 运行时类型检查，instanceof
@@ -156,9 +157,9 @@ $$('[contenteditable]')
 - dev-later
   - crdt tutorials
   - 默认 last-write-win, 出现冲突时，提示用户选择版本
-  - 腰包掉到床头版与墙的夹缝中了
-  - 离屏渲染，keep-alive
+  - 离屏渲染, keep-alive
   - 分层渲染
+  - 腰包掉到床头版与墙的夹缝中了
 
 ## 050
 

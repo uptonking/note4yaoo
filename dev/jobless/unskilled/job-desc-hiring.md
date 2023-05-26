@@ -31,6 +31,8 @@ modified: 2021-09-26T16:44:04.493Z
     - 去掉react依赖，move logic from components to stores
     - 探索协作层sync-layer最佳实践，logux/text-crdt/db层
     - 重构组件，支持纯前端与服务端2种模式
+    - table迁移到canvas
+    - responsive/移动端
   - 目前技术原创性偏低
   - 产品代表作: 低代码
   - 商业化的探索: 平台工具，如飞书、小程序； 项目外包

@@ -157,6 +157,10 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/egomobile/node-orm
   - https://github.com/egomobile/node-orm-pg
   - A simple and generic ORM mapper.
+
+- https://github.com/js-data/js-data /202201/js/inactive
+  - JSData is a framework-agnostic, datastore-agnostic ORM for Node.js and the Browser.
+  - Adapters allow JSData to connect to various data sources such as Firebase, MySql, RethinkDB, MongoDB, localStorage, Redis, a REST API
 # database
 - https://github.com/codefollower/H2-Research
   - H2数据库源代码学习研究

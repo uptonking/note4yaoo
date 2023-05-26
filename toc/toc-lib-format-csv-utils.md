@@ -13,6 +13,20 @@ modified: 2022-11-06T15:46:05.676Z
 
 # examples
 
+- https://github.com/mirite/csv-magic /ts
+  - https://csvmagic.cloud/
+  - CSV Magic is a spreadsheet editor that allows for sorting, filtering, and other large scale manipulations within one or multiple CSV files. 
+  - The app runs entirely in browser with no backend supporting it.
+  - 依赖react、csvtojson、json2csv
+
+- https://github.com/UgnisSoftware/react-spreadsheet-import /ts
+  - https://ugnissoftware.github.io/react-spreadsheet-import
+  - Import flow for Excel (.xlsx) and CSV file with automated column matching and validation.
+  - A component used for importing XLS / XLSX / CSV documents built with Chakra UI.
+
+- https://github.com/react-csv/react-csv /js
+  - https://react-csv.github.io/react-csv/
+  - React components to build CSV files on the fly basing on Array/literal object of data
 # parser-generator
 - https://github.com/C2FO/fast-csv
   - library for parsing and formatting CSVs or any other delimited value file in node.

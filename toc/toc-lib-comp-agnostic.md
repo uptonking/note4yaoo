@@ -28,6 +28,16 @@ modified: 2020-11-13T07:28:27.824Z
     - excited to push all interactive components from Zag.js into Chakra UI in v4.
     - [The Future of Chakra UI in 4 parts_202102: styling build time, state-machine, a11y, motion](https://www.youtube.com/watch?v=I5xEc9t-HZg)
 
+- papanasi /298Star/MIT/202211/ts
+  - https://github.com/CKGrafico/papanasi
+  - http://papanasi.js.org/
+  - a UI library to use cross Frameworks. 
+  - A set of components to use in Angular, Preact, Qwik, React, Solid, Svelte, Vue and Web Components. 
+  - Is based on the `Mitosis` library 
+  - https://github.com/BuilderIO/mitosis
+    - Write components once, compile to every framework
+    - While `Zag.js` focuses on writing framework-agnostic interactions, `Mitosis` focuses on writing framework-specific components.
+
 - https://github.com/phonon-framework/phonon
   - /421Star/MIT/202004/ts/inactive
   - responsive front-end framework with a focus on flexibility in Sass and TS
@@ -99,16 +109,6 @@ modified: 2020-11-13T07:28:27.824Z
   - the philosophy of AgnosticUI is to curate the top-level component.html and component.css, and then to synchronize the css down into the framework-based variants. 
     - This is done via a simple Node script which literally copies the CSS over.
     - The above approach forces our framework-specific implementations to use the same single stylesheet. 
-
-- papanasi /298Star/MIT/202211/ts
-  - https://github.com/CKGrafico/papanasi
-  - http://papanasi.js.org/
-  - a UI library to use cross Frameworks. 
-  - A set of components to use in Angular, Preact, Qwik, React, Solid, Svelte, Vue and Web Components. 
-  - Is based on the Mitosis library 
-  - https://github.com/BuilderIO/mitosis
-    - Write components once, compile to every framework
-    - While Zag.js focuses on writing framework-agnostic interactions, Mitosis focuses on writing framework-specific components.
 
 - Reef /631Star/MIT/202010/js/NoDeps
   - https://github.com/cferdinandi/reef

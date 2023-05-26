@@ -55,6 +55,10 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/Hopding/pdf-lib
   - Create and modify PDF documents in any JavaScript environment
+# examples
+- https://github.com/awesome-yasin/PDF-Verse /MIT/js/ejs
+  - a powerful web based PDF Editor with tools for editing, converting, and manipulating PDFs.
+  - Merge, compress, add or remove pages, or extract text using OCR technology. 
 # utils
 - https://github.com/RelaxedJS/ReLaXed
   - creates PDF documents interactively using HTML or Pug (a shorthand for HTML). 

@@ -171,6 +171,14 @@ modified: 2022-04-05T10:08:25.947Z
   - https://twitter.com/matthewweidner3/status/1444475869121110017
     - Collabs is directly inspired by Automerge and Yjs, and uses similar techniques (network-agnostic CRDTs).  
     - The main difference is its API: we try to mimic a non-replicated collections library, with flexibility, composition tools, and strong typing.
+
+- https://github.com/anita-app/anita /ts/暂不支持同步
+  - https://anita-app.com/
+  - Anita is a private, no-server, powerful and fully customizable data management solution
+  - Your data is stored on your computer in a JSON file and/or on a remote database of your choice: flexible, open & no lock-in. Stay independent from servers that will go away, sooner or later.
+  - full support for CRUD operations on data stored
+  - locally in the browser's IndexedDB (with Dexie.js)
+  - locally in a JSON or SQLite file in the device FS 
 # crdt-rewrite
 - https://github.com/josephg/crdt-examples
   - CRDT examples from a DWEB talk

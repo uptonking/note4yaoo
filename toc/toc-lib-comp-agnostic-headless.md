@@ -9,9 +9,15 @@ modified: 2021-04-11T06:17:51.318Z
 
 # guide
 
+- components-design
+  - styling
+  - state
+  - accessible
+  - animation
+
 - pick-ui-components
-  - headless/unstyled
   - framework-agnostic
+  - headless/unstyled
   - accessible
 
 - 💡️ 不必执着于完整的现有组件库，可分析其他组件支持多个框架的方法，如tanstack-table
@@ -59,24 +65,6 @@ modified: 2021-04-11T06:17:51.318Z
     - https://icons.radix-ui.com/
     - A crisp set of 15×15 icons designed by the WorkOS team.
 
-- react-spectrum /7.3kStar/Apache2/202210
-  - https://github.com/adobe/react-spectrum
-  - https://react-spectrum.adobe.com/react-spectrum/Dialog.html
-  - A React implementation of Spectrum, Adobe’s design system
-  - 组件基于hooks实现
-  - React Aria: library of React Hooks that provides accessible UI primitives for your design system.
-  - React Stately: library of React Hooks that provides cross-platform state management for your design system.
-  - https://github.com/adobe/spectrum-css
-    - CSS implementation of the Spectrum design language.
-
-- headlessui /17kStar/MIT/202009/ts
-  - https://github.com/tailwindlabs/headlessui
-  - https://headlessui.com/react/dialog
-  - unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS
-  - [Headless UI: Unstyled, Accessible UI Components](https://blog.tailwindcss.com/headless-ui-unstyled-accessible-ui-components)
-  - [Any way of using headlessui without react or vue](https://github.com/tailwindlabs/headlessui/discussions/984)
-    - Headless UI is created and coupled to React & Vue right now
-
 - zag /1.5kStar/MIT/202210/ts
   - https://github.com/chakra-ui/zag
   - https://zagjs.com/overview/introduction
@@ -95,6 +83,25 @@ modified: 2021-04-11T06:17:51.318Z
   - https://reakit.io/
   - Toolkit for building accessible rich web apps with React.
   - [Framework-agnostic architecture for examples](https://github.com/ariakit/ariakit/issues/1854)
+  - [Ariakit newsletter](https://newsletter.ariakit.org/archive)
+
+- react-spectrum /7.3kStar/Apache2/202210
+  - https://github.com/adobe/react-spectrum
+  - https://react-spectrum.adobe.com/react-spectrum/Dialog.html
+  - A React implementation of Spectrum, Adobe’s design system
+  - 组件基于hooks实现
+  - React Aria: library of React Hooks that provides accessible UI primitives for your design system.
+  - React Stately: library of React Hooks that provides cross-platform state management for your design system.
+  - https://github.com/adobe/spectrum-css
+    - CSS implementation of the Spectrum design language.
+
+- headlessui /17kStar/MIT/202009/ts
+  - https://github.com/tailwindlabs/headlessui
+  - https://headlessui.com/react/dialog
+  - unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS
+  - [Headless UI: Unstyled, Accessible UI Components](https://blog.tailwindcss.com/headless-ui-unstyled-accessible-ui-components)
+  - [Any way of using headlessui without react or vue](https://github.com/tailwindlabs/headlessui/discussions/984)
+    - Headless UI is created and coupled to React & Vue right now
 
 - downshift /11.2kStar/MIT/202301/js/paypal
   - https://github.com/downshift-js/downshift
@@ -156,20 +163,7 @@ modified: 2021-04-11T06:17:51.318Z
   - https://tiptap.dev/
   - A headless, framework-agnostic and extendable rich text editor, comes without any CSS. You are in full control over markup, styling and behaviour.
 
-- https://github.com/atomiks/tippyjs
-  - https://atomiks.github.io/tippyjs/
-  - 只依赖 @popperjs/core.v2
-  - Tippy.js is the complete tooltip, popover, dropdown, and menu solution for the web, powered by Popper.
-  - "Headless Tippy" refers to Tippy without any of the default element rendering or CSS. 
-    - This allows you to create your own element from scratch and use Tippy for its logic only.
-
-- neodrag /509Star/MIT/202210/ts
-  - https://github.com/PuruVJ/neodrag
-  - https://stackblitz.com/edit/typescript-wvnloa
-  - A vanilla JS draggable library
-  - Lightweight multi-framework libraries for draggability on the web.
-
-- https://github.com/elastic/search-ui
+- https://github.com/elastic/search-ui /ts
   - https://github.com/elastic/search-ui/tree/master/packages/search-ui
   - 依赖date-fns、history、qs
   - The "Headless Search UI" that serves as a foundation for the react-search-ui library.
@@ -187,17 +181,10 @@ modified: 2021-04-11T06:17:51.318Z
   - Provides the logic for a datepicker. Apply your own UI on top.
   - Relies on moment.js
 
-- https://github.com/formium/formium
-  - https://formium.io/
-  - Formium is an API-first, headless online form builder and automation tool
-  - In addition to hosting forms and surveys on formium.io, you can use your own React components to natively render your forms and surveys in your existing apps 
-  - 依赖 formik
-  - https://github.com/formium/formik
-    - Formik is the world's most popular open source form library for React and React Native.
-
 - https://github.com/ivan-dalmet/formiz
   - https://formiz-react.com/
   - React forms with ease! Composable, headless & with built-in multi steps
+
 - accessible-ui /inactive
   - https://github.com/accessible-ui
   - Accessible style-agnostic components for React
@@ -208,8 +195,8 @@ modified: 2021-04-11T06:17:51.318Z
   - Uses Image implementation and canvas from node-canvas. 
   - Tiles, Markers and vector layers work well with leaflet-image
 
-- https://github.com/jshjohnson/Choices
-  - https://joshuajohnson.co.uk/Choices/
+- https://github.com/jshjohnson/Choices /ts
+  - https://choices-js.github.io/Choices/
   - configurable select box/text input plugin.
   - Similar to Select2 and Selectize but without the jQuery dependency.
   - Flexible styling
@@ -282,7 +269,7 @@ modified: 2021-04-11T06:17:51.318Z
     - Core architecture of reactive UI libraries
     - 依赖redux、redux-thunk、xdate
 
-- https://github.com/yairEO/tagify
+- https://github.com/yairEO/tagify /js
   - https://yaireo.github.io/tagify/
   - Transforms an input field or a textarea into a Tags component
   - Tags input component in VanillaJS/React/Angular/Vue

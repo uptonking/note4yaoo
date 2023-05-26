@@ -112,4 +112,14 @@ ctx.fillText('中', 0, 0)
 
 ## [OpenOffice Sparse Matrix](https://iq.opengenus.org/data-structure-for-spreadsheet/#openofficesimplementation)
 
+## [How to Recalculate a Spreadsheet | Hacker News](https://news.ycombinator.com/item?id=25039393)
+
+- [How to Recalculate a Spreadsheet – Lord.io](https://lord.io/spreadsheets/)
+
+## [A spreadsheet in fewer than 30 lines of JavaScript, no library used | Hacker News_201311](https://news.ycombinator.com/item?id=6725387)
+
+- http://jsfiddle.net/ondras/hYfN3/
 # more
+
+
+

@@ -27,7 +27,6 @@ modified: 2021-01-01T18:00:01.202Z
   - You can use whatever you want in your sources: a static set of searches terms, search results from an external source like an Algolia index, recent searches, and more.
   - The library creates an input and provides the interactivity and accessibility attributes, but you’re in full control of the DOM elements to output.
   - Unlike InstantSearch, Autocomplete doesn’t provide a library of ready-made UI widgets
-
 # vanillajs-components
 - https://github.com/gajus/contents
   - /406Star/BSD/201906

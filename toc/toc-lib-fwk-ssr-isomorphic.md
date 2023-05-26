@@ -152,8 +152,8 @@ modified: 2020-12-19T13:04:40.865Z
     - Just install the appropriate middleware for your app (or check out the source code and build your own)
     - Make sure search engines have a way of discovering your pages (e.g. `sitemap.xml` and links from other parts of your site or from around the web)
 
-- https://github.com/stereobooster/react-snap
-  - /4kStar/MIT/201910/js
+- react-snap /4kStar/MIT/201905/js/inactive
+  - https://github.com/stereobooster/react-snap
   - Pre-renders a web app into static HTML. 
   - Uses Headless Chrome to crawl all available links starting from the root. 
   - Heavily inspired by prep and react-snapshot, but written from scratch. 

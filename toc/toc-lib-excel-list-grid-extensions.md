@@ -47,11 +47,14 @@ modified: 2022-08-21T10:03:57.063Z
   - a website to compare the performance of two excel-type React spreadsheet components: react-data-grid and handsontable
 - https://github.com/burnash/dataimport
   - Simple JavaScript CSV Importer
-# grid-utils
+# excel-utils
 - https://github.com/dominictarr/excel-stream
   - A stream that converts excel spreadsheets into JSON object arrays.
   - excel isn't really a streamable format. 
   - But it's easy to work with streams because everything is a stream. This writes to a tmp file, then pipes it through the unfortunately named j then into csv-stream
+
+- https://github.com/patrik-csak/BB26
+  - Convert between numbers and base-26 spreadsheet column letters
 
 - https://github.com/unosquare/tubular-common
   - Tubular Common provides TypeScript and Javascript models and data transformer to use any Tubular DataGrid component with an array of Javascript objects.
