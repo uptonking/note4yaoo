@@ -65,11 +65,18 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss
 - ## 
 
-- ## 
+- ## Understand resumability from the ground up by building your own resumable framework.
+- https://twitter.com/mhevery/status/1661093361737150464
+  - [Build your own resumability](https://www.builder.io/blog/build-your-own-resumability)
 
-- ## 
+- ## The "KeepAlive" component is a super power, if you are implementing an app. 
+- https://twitter.com/fabiospampinato/status/1662073437634928640
+  - The ability to keep in memory portions of your interface, suspending side effects in them while unmounted, and resuming side effects in them once remounted, feels like cheating your way to performance 
+  - VanillaJS beats the framework only if the framework is kinda bad or the use case is pretty simple. But if the framework is good and the use case is complicated good luck implementing the same optimizations in VanillaJS.
+- Your vanilla code is going to grow to be a framework anyway. One not so optimized nor so tested. If not, your code is going to be a mess, or you'll write double the code, the double probability of 🐛
 
-- ## 
+- ## server components Rebrand: React Serialized Components.
+- https://twitter.com/ryanflorence/status/1662270570258628609
 
 - ## Is useSyncExternalStore meant to support streaming SSR?
 - https://twitter.com/oleg008/status/1603062246497730561

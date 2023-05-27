@@ -41,6 +41,27 @@ modified: 2023-02-03T05:55:22.102Z
 
 - ## 
 
+- ## 
+
+- ## 折腾了一下终于把外链预览图做到鼠标悬浮了
+- https://twitter.com/thecalicastle/status/1656456586922164224
+  - 前端组件思路很简单，主要就是搭建了一个后端 API 服务，专门用 Playwright + Chromium 可以生成截图，然后缓存起来
+  - 左 PeekabooLink 组件，右 link-preview API 路由用 @shuding_ 的 Satori 渲染 img
+- 有过同样的想法，但是考虑到 Chromium 可能过重，所以用了 OG 实现的
+  - 一开始我的思路也是这样，后来还是想尝试截图法，其实考虑了一下，每个网址不一定都有 og image，但起码能有截图
+- 截图兼容性确实高。原来有专门的服务做缓存，我还以为冷启动能做到这么快🤯
+
+- 还有发现另一个相关的小设计，quick links 将页面的所有链接整合以方便进行快速浏览
+
+
+
+- ## just built a link preview component using @radix_ui and puppeteer.
+- https://twitter.com/anas_araid/status/1610963312761622528
+- does puppeteer render the website server side? how expensive is it? (as in: how well does it scale?) 
+  - yes it can be used to render web pages on the server side. 
+  - I’m not exactly sure how expensive it is, but it just uses the resources of the machine it's running on. 
+  - btw on my github you can find the code (it's not perfect, but it might give you some ideas)
+
 - ## Paste tweet link, hit return
 - https://twitter.com/graeme_fulton/status/1625814615295680512
   - it needs a few tweaks since some websites like medium block the node-fetch from reading the open graph data. Can be done with puppeteer instead

@@ -13,7 +13,10 @@ modified: 2021-02-26T16:42:06.878Z
 
 - ## 
 
-- ## 
+- ## How I typically test performance
+- https://twitter.com/iamakulov/status/1661475656050556930
+- When I’m optimizing Core Web Vitals, I typically focus on LCP and CLS. LCP is roughly “how quickly the page renders”, CLS is “how much the page jumps during loading”.
+- When I’m profiling LCP, I like to work through http://WebPageTest.org (WPT).
 
 - ## How to optimize style recalculations
 - https://twitter.com/fabiospampinato/status/1652326018613379074

@@ -115,10 +115,14 @@ modified: 2023-04-16T13:34:33.706Z
 - https://github.com/kufii/CodeSnap
   - Take beautiful screenshots of your code in VS Code
 # source-code-screenshot
-- https://github.com/carbon-app/carbon
+- https://github.com/carbon-app/carbon /js
   - https://carbon.now.sh/
   - Create and share beautiful images of your source code
   - 对源码生成截图时支持多种theme
+
+- https://github.com/Idered/chalk.ist /ts/vue
+  - https://chalk.ist/
+  - Create beautiful images of your source code
 
 - https://unhtml.com/code
   - unhtml for code/markdown/picture
@@ -127,9 +131,7 @@ modified: 2023-04-16T13:34:33.706Z
 - https://ray.so/
   - code screenshot
 
-- https://github.com/Idered/chalk.ist
-  - https://chalk.ist/
-  - Create beautiful images of your source code
+## vscode
 # more
 - https://github.com/antfu/broz
   - A simple, frameless browser for screenshots

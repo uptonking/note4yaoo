@@ -11,7 +11,7 @@ modified: 2022-08-21T10:02:27.788Z
 
 - 开源表格
   - 国内: luckysheet
-  - 国外: ag-grid, tanstack-table, glide, handsontable, tui-grid
+  - 国外: ag-grid, tanstack-table, glide, handsontable, o-spreadsheet, tui-grid
   - tinybase
 
 - src-list-grid
@@ -128,6 +128,8 @@ modified: 2022-08-21T10:02:27.788Z
   - 状态使用自定义createStore
   - Powerful Component to Display and Edit Data.
   - TOAST UI Grid is available when using the Plain JS, React, Vue Component.
+  - [Is there no undo function?_202207](https://github.com/nhn/tui.grid/issues/1735)
+    - Unfortunately, it is not supported.
 
 - hyperformula /1.5kStar/GPLv3/202304/ts
   - https://github.com/handsontable/hyperformula
@@ -465,6 +467,7 @@ modified: 2022-08-21T10:02:27.788Z
   - 本项目源于 Luckysheet，并继承了它的很多代码。我们为将其转换为typescript做了很多努力，并且解决了一些原项目设计层面的问题。
   - 完全使用typescript编写。
   - 去掉了 jQuery 的依赖, 用React/Vue + immer来管理DOM和状态。
+    - 架构分为 core+react
   - 同页面支持多个实例。目前只支持单个实例，因为有全局状态
   - 避免在window对象上存储数据。
   - 用一个forked handsontable/formula-parser 来处理公式计算。
@@ -481,11 +484,13 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/myliang/x-spreadsheet /js
   - https://myliang.github.io/x-spreadsheet
   - A web-based JavaScript（canvas） spreadsheet
+  - Undo & Redo
 
 - o-spreadsheet /130Star/LGPLv3/202305/ts
   - https://github.com/odoo/o-spreadsheet
   - https://odoo.github.io/o-spreadsheet/
   - A standalone spreadsheet for the web, easily integrable and extendable.
+  - 支持公式
   - 依赖bootstrap5、@odoo/owl
   - Real time collaboration
     - The solution we implement is based on Operation Transform (OT).
@@ -504,7 +509,9 @@ modified: 2022-08-21T10:02:27.788Z
   - https://grid.glideapps.com/
   - https://glideapps.github.io/glide-data-grid
   - high-performance React grid component, with rich rendering
+  - core依赖react、marked、canvas-hypertxt
   - features
+    - 支持undo/redo
     - 未实现group
     - scales to millions of rows. Cells are rendered lazily on demand for memory efficiency.
     - Supports multiple types of cells. Numbers, text, markdown, bubble, image, drilldown, uri
@@ -519,6 +526,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://treb.app/
   - TREB is a library for adding fully interactive spreadsheets to any web page, web app or blog with just a few lines of code.
   - 支持公式
+  - 支持undo，暂未实现redo
 
 - simple-sheet /89Star/MIT/202208/ts
   - https://github.com/lvming6816077/simple-sheet
@@ -526,7 +534,7 @@ modified: 2022-08-21T10:02:27.788Z
   - 高性能（使用canvas进行渲染）
   - 依赖react-knova、mobx-react-lite、react-viewer
   - 支持行、列宽度高度、自动筛选视图、单元格样式和格式设置等
-  - [【simple-sheet】前端在线Sheet文档技术解析](https://zhuanlan.zhihu.com/p/547293952)
+  - [【simple-sheet】前u n do端在线Sheet文档技术解析](https://zhuanlan.zhihu.com/p/547293952)
 
 - json5-sheet-editor /10Star/MIT/202208/js
   - https://github.com/smalllong/json5-sheet-editor

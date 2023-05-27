@@ -37,8 +37,15 @@ modified: 2023-05-19T12:17:49.983Z
   - This wrap allows DevTools to see the name of action, which changes the store.
 # more
 
-# discuss
+# changelog
 
+## [v0.9_20230525](https://twitter.com/sitnikcode/status/1661652304141983746)
+
+- New version will call subscribers only if store value was really changed (not on every store.set() call as it was before).
+  - @IAmTrySound changed it to sync behavior across all frameworks (React’s useSyncExternalStore requires it) and improve performance
+- In new versions we also introduced new code style with having `$` in store’s variables.
+  - It will separate variable with store and with store’s value. But it is completely optional. For instance, this code style is not compatible with Svelte.
+# discuss
 - ## [How to work with nested objects?](https://github.com/orgs/nanostores/discussions/142)
   - `state.setKey(2, { ...state.get()[2], street: 'New' })`
 

@@ -14,15 +14,19 @@ modified: 2022-04-05T13:25:40.892Z
 
 - ## 
 
-- ## 
+- ## 💡 What is being measured here are *client* ops / sec. 
+- https://twitter.com/Horusiath/status/1660705223818596358
+  - These are strictly correlated with actions of individual users.
+  - What gets replicated are deltas, which are not discussed in the post
+- I just read the code. Its code doesn't support encoding/decoding yet for StringRga. But it seems like it might as well get pretty fast on those tasks.
+- Thing is you don't need to optimize client ops beyond certain point. They are constrained to actions of a single client. What you may want to optimize are store/load updates, as they scale with number of connected clients and their actions.
+- Now, when it comes to replication Yrs can serialize document state made of 259778 client operations (inserts and deletes) in 2-3ms (86.5mln client ops/sec) and sync it in 13ms (~20mln ops/sec) with a payload size of 160kB (less than 1B per op). On a single core.
+  - Tbh. most of Yrs speed comes right off the bat and I barely did any optimisations there. 
 
 - ## [Real Differences Between OT and CRDT for Co-Editors | Hacker News](https://news.ycombinator.com/item?id=18191867)
 - On page 30 par 2 you conclude that OT has time complexity O(1) while CRDT is O(C) or so... I guess, you compare a rope-based OT implementation and a naive CRDT implementation (like, one doing a full rewrite on each key press). At least, that is my best guess.
   - Why don't you compare them the other way around? Rope-based CRDT and a naive OT? String splicing is O(N), you may put it on either side of the scales. Hashtable-hosted Causal Tree is O(1); hashtable-hosted RGA is basically the same.
   - I find the general discourse of the article not so useful. I may guess, you overreacted to certain marketing messages coming from the CRDT community.
-
-
-
 
 - 
 - 

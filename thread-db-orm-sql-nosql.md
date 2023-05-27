@@ -32,9 +32,57 @@ modified: 2021-05-23T10:17:05.993Z
 # discuss
 - ## 
 
-- ## 
+- ## There is one place where having an ORM was unequivocally(表达明确的；毫不含糊的) the right decision and much of my career was built on extending it to get developers to "do the right thing.". That place was Meta.
+- https://twitter.com/tantaman/status/1662502624963223560
+  - The Ent framework at Meta:
+1. Let us colocate privacy rules with data. Each entity definition was required to have read and write privacy policies.
+2. Data validation & migrations.
+3. Integrations. The SDL, being code, could be extended by devs to support use cases outside of data storage.
+4. Arbitrary backends.
+5. Arbitrary indexing services.
+6. Deletion.
 
-- ## 
+- If your ORM only talks SQL, can't link multiple datastores, doesn't support extending it's codegen with custom plugins, doesn't support row level security, can't do dual reads and writes to support live migrations -- then you might as well stick with raw SQL.
+
+- ## 💡 On the debate between raw SQL & ORMs, I find myself flip-flopping over the years.
+- https://twitter.com/tantaman/status/1662123332051914758
+- ORMs should be used till you need to tune queries, then you should write your own. If your app starts with raw sql, you’ll eventually roll your own orm for the basics, which is worse.
+- What reasons do people usually end up rolling their own in your opinion? I’d like to understand the deficiencies of SQL better so I can improve upon it with some extensions. E.g., composability is a big issue in sql.
+  - Extensions to sql? I don’t think that is the right focus. 
+  - People roll their own orm because they end up writing the same select, insert, update queries for every table. 
+  - An orm is sql composability.
+- I think composability & pulling hierarchical (rather than tabular) data is solvable with some minor tweaks to the language --
+  - Interesting. What’s your goal? Using sql to query non-relational databases? Or writing more complex queries for current dbs? If it’s the latter, it may be useful on things like client-side SQLite, but I would think it would get hard to nail down performance on large databases.
+- Most custom orms are written by teams that didn’t pick an out of the box orm in the first place.
+  - And this is a natural journey. Most teams shouldn’t jump to the end. Start with an out of the box orm until you run into performance issues. Then dig a layer deeper to tune your queries. Finally consider denormalizing to nosql if you need it.
+  - The journey is orm -> tuned custom queries -> denormalized nosql.
+
+- The final answer is sql if you absolutely need to normalise your data. However that’s rarely the case and you probably should be using document storage, else you need to rebuild your domain model.
+  - I find the opposite to be true. Best to normalize asap, always problematic to use a document store.
+- The reason I usually avoid relational storage is neatly explained here
+  - [DDD & Data Modelling: How Do I Persist Aggregates? - James Hickey](https://www.jamesmichaelhickey.com/how-do-i-persist-ddd-aggregates/)
+  - however if you’re not working with aggregates then sql imho is the way to go. 
+  - ORM often adds more complexity than it takes away.
+- People often use document storage as a way to avoid dealing with sql. This will give issues sooner or later as you still need to model your data [in a DDD way]. Sql just forces you to model [in a normalised way], so it might give the impression to be a better solution.
+
+- Thinking of entities as maps; everytime we update a map, do we generate a string of "update map set key1=value1 where id="? Or every map read, create a string of "select key1 ..." and ask the map to parse it? That's why I don't like raw SQL for 80% of app code that is CRUD 
+
+- I think the strongest argument for ORM’s is enforcing good practices w.r.t SQL injections. That being said I use an ORM mostly because I hate writing SQL and just want to avoid it where I can - but sometimes you can’t avoid it for performance
+- There are some good frameworks that leverage typed format strings to eliminate SQL injection. E.g., in the JavaScript world, this one that creates a `sql` template tag which escapes  variables provided to the template string
+  - yeah this is a great alternative to ORM's!
+- I would love a DB abstraction that lets my app do relational reasoning and lenses over projections in a much simpler way than Apache Calcite
+  - Odds that someone somewhere has a `SQL -> Calcite -> ORM'ed Objects -> SQL` flow?
+- I dont like building my own migration frameworks and always want someone to figure out the best possible moves there for my DB. I built Notion’s SQLite one after a bunch of research and its fine
+- I'm a fan of just using SQL. SQL is already a wonderful abstraction over data storage. Treating a relational database like nested documents just leads to confusion. (Nothing wrong with nested documents, but then... why use an RDBMS?)
+
+- There's a nice sweet spot with query builders, especially if they're very thin & map 1:1*. 
+  - Writing raw SQL only, more often than not, you end up maintaining your own query builder logic. 
+  - You should'nt do it in-house, especially when Knex & @kysely_ exist, proven, battle-hardened
+
+- IMHO: ORMs are just another thing to learn and debug. Never have I worked on a project that uses an ORM where I didn’t have to also write & read SQL.
+
+- It depends, but just use SQL (with a query builder if needed). Kill ORMs
+- Query builders can be a nice middle ground in my experience
 
 - ## AFAIK the technique used in SQL WHERE queries with index support relies on building a bitmap which represents keys that satisfy the query. 
 - https://twitter.com/Horusiath/status/1634447500525404163

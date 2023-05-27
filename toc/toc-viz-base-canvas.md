@@ -132,6 +132,9 @@ modified: 2020-10-05T06:17:42.467Z
   - [CanvasKit](https://skia.org/docs/user/modules/canvaskit/) 
     - WebGL context encapsulated as an SkSurface, allowing for direct drawing to an HTML canvas
 
+- https://github.com/wcandillon/canvaskit-lite
+  - A polyfill of CanvasKit that uses browser APIs
+
 - https://github.com/Automattic/node-canvas
   - a Cairo-backed Canvas implementation for Node.js.
 

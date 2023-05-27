@@ -50,3 +50,9 @@ modified: 2023-03-27T17:45:27.440Z
   - https://surveyjs.io/form-library
   - Free JavaScript form builder library with integration for React, Angular, Vue, jQuery, and Knockout.
 # more
+
+# discuss
+
+- ## Wrote a guide about 11 popular HTML and JS mistakes in forms.
+- https://twitter.com/sitnikcode/status/1661411602443247616
+  - [11 HTML best practices for login & sign-up forms—Martian Chronicles, Evil Martians’ team blog](https://evilmartians.com/chronicles/html-best-practices-for-login-and-signup-forms)

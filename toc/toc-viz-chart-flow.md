@@ -23,7 +23,7 @@ modified: 2020-10-22T10:22:55.878Z
   - https://jsplumbtoolkit.com/features
   - Visual connectivity for webapps
   - dev/4.x branch is a rewrite in Typescript
-  - 基于dom实现
+  - 基于dom实现，不支持undo/redo
   - `const instance = jsPlumb.newInstance({container});` 初始化
   - [automatic layout](https://github.com/jsplumb/jsPlumb/issues/205)
     - available in paid edition
@@ -43,6 +43,9 @@ modified: 2020-10-22T10:22:55.878Z
   - core依赖 react, d3-drag, d3-selection, d3-zoom, zustand
   - library for building interactive node-based UIs, editors, flow charts and diagrams
   - React Flow Pro is not an additional library, it is a paid subscription around the React Flow
+  - [Is that possible to undo dragging and revert it to original position in some condition?](https://github.com/jsplumb/jsplumb/issues/628)
+    - in pro
+    - the short answer is you'd have to do this manually right now. but a "can drop in group" callback is something we could think about adding if you were interested.
   - [is Dynamic auto layouting using dagre possible?](https://github.com/wbkd/react-flow/issues/1113)
     - Dynamic auto layout with dagre is possible. As explained you need to re-layout your graph when you add a node. The easiest way is to have pre-defined dimensions for your nodes. If that's not possible you need to wait for the first render and then do a re-calculation of the layout.
 
