@@ -17,15 +17,22 @@ modified: 2020-10-22T10:22:55.878Z
   - Generation of diagram and flowchart from text in a similar manner as markdown
   - [Poll - next diagram type addition: PlantUML](https://github.com/mermaid-js/mermaid/issues/177)
 
-- jsplumb /7.3kStar/MIT/202302/ts
+- jsplumb /7.3kStar/MIT/202302/ts/NoDeps
   - https://github.com/jsplumb/jsplumb
   - https://jsplumbtoolkit.com/
   - https://jsplumbtoolkit.com/features
   - Visual connectivity for webapps
   - dev/4.x branch is a rewrite in Typescript
   - 基于dom实现
+  - `const instance = jsPlumb.newInstance({container});` 初始化
   - [automatic layout](https://github.com/jsplumb/jsPlumb/issues/205)
     - available in paid edition
+  - [Pan and Zoom in jsPlumb Community Edition with Dagre and jQueryUI Draggable](https://gist.github.com/archetana/b11d1a3712c2761f2c45cafd2bcb9b50)
+  - [jsPlumb Community Edition with Dagre layout](https://codepen.io/viswesh/pen/ejrLPx)
+  - [dg-jsplumb.js](https://gist.github.com/michiel/2e632cd50c435594cc44)
+  - [前端可视化建模技术概览](https://leungwensen.github.io/blog/2015/frontend-visual-modeling.html)
+- https://gitee.com/openEA/FlowDesigner
+  - FlowDesigner来源于Linkey BPM中的流程设计器，作用于流程运行过程中的图形描述
 
 - react-flow /2.8kStar/MIT/202103/ts
   - https://github.com/wbkd/react-flow
@@ -36,13 +43,16 @@ modified: 2020-10-22T10:22:55.878Z
   - core依赖 react, d3-drag, d3-selection, d3-zoom, zustand
   - library for building interactive node-based UIs, editors, flow charts and diagrams
   - React Flow Pro is not an additional library, it is a paid subscription around the React Flow
+  - [is Dynamic auto layouting using dagre possible?](https://github.com/wbkd/react-flow/issues/1113)
+    - Dynamic auto layout with dagre is possible. As explained you need to re-layout your graph when you add a node. The easiest way is to have pre-defined dimensions for your nodes. If that's not possible you need to wait for the first render and then do a re-calculation of the layout.
 
 - LogicFlow /4.5kStar/apache2/202305/ts
   - https://github.com/didi/LogicFlow
   - https://docs.logic-flow.cn/examples/#/gallery
   - 专注于业务自定义的流程图编辑框架，支持实现脑图、ER图、UML、工作流等各种图编辑场景
-  - core依赖preact、mousetrap
+  - core依赖preact、mobx、mousetrap
   - 视图层依赖preact，但使用时不要求react环境，通过instance.render()执行
+  - 部分使用class组件
   - 兼容各种产品自定义的流程编辑需求，绝大部分模块以插件的形式实现，支持各模块自由插拔
   - [LogicFlow案例分享](https://github.com/didi/LogicFlow/issues/716)
   - [perf: 优化layout](https://github.com/didi/LogicFlow/pull/518)
@@ -74,6 +84,7 @@ modified: 2020-10-22T10:22:55.878Z
   - https://mrblenny.github.io/react-flow-chart/index.html
   - A flexible, stateless, declarative flow chart library for react
   - 依赖react-draggable、react-zoom-pan-pinch
+  - [Automatic layout](https://github.com/MrBlenny/react-flow-chart/issues/61)
 
 - joint /3.9kStar/MPL/202305/js
   - https://github.com/clientIO/joint
@@ -123,6 +134,9 @@ modified: 2020-10-22T10:22:55.878Z
 - https://github.com/emilwidlund/nodl
   - framework for visual node graphs. 
   - It has a core library & a React-library as of now, runs on MobX and leverages the power of RxJS & Zod for computational magic. 
+
+- https://github.com/alyssaxuu/flowy
+  - The minimal javascript library to create flowcharts
 # uml
 - https://github.com/jgraph/mxgraph
   - /6.1kStar/Apache2/202011/archived
@@ -155,6 +169,22 @@ modified: 2020-10-22T10:22:55.878Z
 - https://github.com/fibo/flow-view
   - a visual editor for Dataflow programming
   - Nodes and edges can be created via API
+# auto-layout
+- https://github.com/kieler/elkjs /js
+  - ELK's layout algorithms for JavaScript
+  - The Eclipse Layout Kernel (ELK) implements an infrastructure to connect diagram editors or viewers to automatic layout algorithms. 
+  - This library takes the layout-relevant part of ELK and makes it available to the JavaScript 
+  - Note that elkjs is not a diagramming framework itself - it computes positions for the elements of a diagram.
+  - elkjs is the successor of klayjs.
+  - https://github.com/kieler/klayjs
+    - a layer-based layout algorithm that is particularly suited for node-link diagrams with an inherent direction and ports (explicit attachment points on a node's border)  
+
+- https://github.com/iVis-at-Bilkent/cytoscape.js-fcose
+  - a faster version of our earlier compound spring embedder algorithm named CoSE, implemented as a Cytoscape.js extension
+
+- https://github.com/cytoscape/cytoscape.js /js
+  - Cytoscape.js is a fully featured graph theory library. 
+  - Cytoscape.js contains a graph theory model and an optional renderer to display interactive graphs. 
 # more
 - https://github.com/aislelabs/react-flowchart-editor
   - http://data.aislelabs.com/demo/index.html

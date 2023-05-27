@@ -9,14 +9,16 @@ modified: 2020-11-11T13:22:28.098Z
 
 # datasource-catalog
 
-- https://github.com/collections/open-data
+- awesome
+  - https://github.com/collections/open-data
+  - https://github.com/opendatadiscovery/awesome-data-catalogs
+    - a curated list of awesome data catalogs and observability platforms that help you discover, manage, and observe data in your organization.
 
 - OpenCelliD
   - https://alpercinar.com/open-cell-id/
   - OpenCelliD is the world's largest open database of cell towers with a license CC BY-SA 4.0
   - Data has full world coverage and freely available for download
   - This tabular data[1] has ~40 million rows and 6 columns in it but only 3 columns (latitude, longitude, and type) are used in this visualization.
-
 
 - NVD: NATIONAL VULNERABILITY DATABASE
   - https://nvd.nist.gov/
@@ -28,7 +30,6 @@ modified: 2020-11-11T13:22:28.098Z
 - ArcGIS Open Data
   - https://hub.arcgis.com/search
 # organization
-
 - 北京大学开放研究数据平台
   - http://opendata.pku.edu.cn/
 

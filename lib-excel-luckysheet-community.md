@@ -24,6 +24,14 @@ modified: 2022-08-21T09:57:42.969Z
 
 - 你这个如果做成这种最好，通过URL传递远程word或者exel， 然后在线预览。
   - dream-num.github.io/xls?url=http://xx.com/test.xls
+
+- ## [Feature request]精简数据结构
+- https://github.com/dream-num/Luckysheet/issues/418
+- 通常excel导入后数据量会膨胀很多倍，
+  - 方案一是pako压缩，
+  - 再者，Luckysheet的本身数据也可以做优化，因为有许多配置是重复的，考虑写一个转换引擎作为前置插件，获取到用户操作类的配置，走插件转化为Luckysheet可识别的格式
+
+- 我目前的做法是后端只保存表头跟开始行的数据结构，其余行的数据根据开始行这一行的数据结构，在前端去遍历组装。这样数据量就少很多很多
 # discuss
 - ## 
 
@@ -34,7 +42,7 @@ modified: 2022-08-21T09:57:42.969Z
   - 我前年就在群里说过，大佬得搞定制开发，基础开源，上层定制开发
   - 有了基础开源，用户比较信任，上层定制的项目比较好谈。不像咱谈个项目，人家就不信任，因为看不到东西
 - 前面有个高山，但是用户可不管这些，excel有的功能你都的有
-- 走excel路线就死了，wps作为老二，半死不活。lT业没有老三的生存空间，何况lucky之上还有很多商业级类似系统
+- 走excel路线就死了，wps作为老二，半死不活。IT业没有老三的生存空间，何况lucky之上还有很多商业级类似系统
   - 只有卖增值服务才有饭吃
   - 走excel是通用路线，卖增值是定制路线
 - 增值要建立在用户量基础上，通用是引流品
@@ -130,14 +138,6 @@ modified: 2022-08-21T09:57:42.969Z
 - You know your stuff, I can tell! In a pre-release version, we had hidden the native scrollbar and put our own scrollbar graphic on it that would animate using CSS transform according to native scroll offsets vs. DGXL viewport dimensions. The scrollbar size (width/height) and position made more sense, but at the end we couldn't get it to feel quite right. We're quite happy with the native scrollbar. It's fine on mobile too.
 - The way I solved this in my own (not finished) web-based spreadsheet app is to have a scrollable div positioned over the canvas and to size the transparent div contents to the width/height of the sheet. Then I register scroll event handlers and redraw the canvas appropriately when the scroll changes. I think this is how Google sheets works, although it's a bit difficult to tell for sure.
 - It seems difficult for a canvas-based spreadsheet to do native scrolling. The DOM is drawn in advance and there is no cost to scroll. But canvas is different, every frame of scrolling means calculation. In this case, the use of native scrolling will cause jamming and poor experience.
-
-- ## [Feature request]精简数据结构
-- https://github.com/dream-num/Luckysheet/issues/418
-- 通常excel导入后数据量会膨胀很多倍，
-  - 方案一是pako压缩，
-  - 再者，Luckysheet的本身数据也可以做优化，因为有许多配置是重复的，考虑写一个转换引擎作为前置插件，获取到用户操作类的配置，走插件转化为Luckysheet可识别的格式
-
-- 我目前的做法是后端只保存表头跟开始行的数据结构，其余行的数据根据开始行这一行的数据结构，在前端去遍历组装。这样数据量就少很多很多
 
 - ## 10 powerful Google Sheets formulas advanced users should know
 - https://twitter.com/benlcollins/status/1511054363363524621

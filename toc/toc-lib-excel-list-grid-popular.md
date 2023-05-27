@@ -123,6 +123,9 @@ modified: 2022-08-21T10:02:27.788Z
   - 基于table标签实现，合并表头列实际样式为.tui-grid-lside/rside-area
   - 支持sort, filter, 不支持group
   - 依赖xlsx、tui-date-picker、tui-pagination
+  - 视图层依赖preact，但使用时不要求react环境，通过new Grid(options)
+  - 部分使用class组件，
+  - 状态使用自定义createStore
   - Powerful Component to Display and Edit Data.
   - TOAST UI Grid is available when using the Plain JS, React, Vue Component.
 
@@ -465,6 +468,7 @@ modified: 2022-08-21T10:02:27.788Z
   - 同页面支持多个实例。目前只支持单个实例，因为有全局状态
   - 避免在window对象上存储数据。
   - 用一个forked handsontable/formula-parser 来处理公式计算。
+  - A working example with Express (backend server) and MongoDB (data persistence) is available in backend-demo folder.
 
 - x-sheet /50Star/MPL/202209/js/vanillajs/luckysheet开发者
   - https://github.com/eiji-th/x-sheet
@@ -478,9 +482,22 @@ modified: 2022-08-21T10:02:27.788Z
   - https://myliang.github.io/x-spreadsheet
   - A web-based JavaScript（canvas） spreadsheet
 
-- https://github.com/nusr/excel /MIT/ts/NoDeps
-  - https://nusr.github.io/excel/
-  - Online Excel
+- o-spreadsheet /130Star/LGPLv3/202305/ts
+  - https://github.com/odoo/o-spreadsheet
+  - https://odoo.github.io/o-spreadsheet/
+  - A standalone spreadsheet for the web, easily integrable and extendable.
+  - 依赖bootstrap5、@odoo/owl
+  - Real time collaboration
+    - The solution we implement is based on Operation Transform (OT).
+    - concurrent undo/redo are allowed
+    - This solution has a lot of pros, but also some cons:
+    - We need to write a transformation function for each command we create
+    - Undo/Redo is synchronous, i.e. it should be accepted by the server before being executed locally.
+  - https://github.com/odoo/owl
+    - A web framework for structured, dynamic and maintainable applications
+    - Class based components with hooks, reactive state and concurrent mode
+    - a fine grained reactivity system similar to Vue
+    - Owl components are defined with ES6 classes and xml templates, uses an underlying virtual DOM, integrates beautifully with hooks, and the rendering is asynchronous.
 
 - glide-data-grid /836Star/MIT/202202/ts
   - https://github.com/glideapps/glide-data-grid
@@ -501,18 +518,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/trebco/treb
   - https://treb.app/
   - TREB is a library for adding fully interactive spreadsheets to any web page, web app or blog with just a few lines of code.
-
-- o-spreadsheet /130Star/LGPLv3/202305/ts
-  - https://github.com/odoo/o-spreadsheet
-  - https://odoo.github.io/o-spreadsheet/
-  - A standalone spreadsheet for the web, easily integrable and extendable.
-  - 依赖bootstrap5、@odoo/owl
-  - Real time collaboration
-  - https://github.com/odoo/owl
-    - A web framework for structured, dynamic and maintainable applications
-    - Class based components with hooks, reactive state and concurrent mode
-    - a fine grained reactivity system similar to Vue
-    - Owl components are defined with ES6 classes and xml templates, uses an underlying virtual DOM, integrates beautifully with hooks, and the rendering is asynchronous.
+  - 支持公式
 
 - simple-sheet /89Star/MIT/202208/ts
   - https://github.com/lvming6816077/simple-sheet
@@ -556,6 +562,14 @@ modified: 2022-08-21T10:02:27.788Z
   - online excel built with canvas
   - 半成品玩具
 
+- https://github.com/nusr/excel /MIT/ts/NoDeps
+  - https://nusr.github.io/excel/
+  - Online Excel
+
+- https://github.com/ykg3211/KGSheet /ts/wip
+  - http://ykgykg.fun/
+  - 一个开源的 Canvas 绘制的高性能 Sheet 组件
+
 - OpenWebSheet /MIT/14Star/202003/ts/vue/inactive
   - https://github.com/SiamandMaroufi/OpenWebSheet
   - https://siamandmaroufi.github.io/OpenWebSheet/
@@ -579,10 +593,6 @@ modified: 2022-08-21T10:02:27.788Z
   - 基于Canvas开发Excel的技术预研项目
 - https://github.com/Harlock123/LCTDataGrid
   - keep the Canvas object as small as possible by only rendering the visible parts of the resulting Grid
-
-- https://github.com/ykg3211/KGSheet /ts/wip
-  - http://ykgykg.fun/
-  - 一个开源的 Canvas 绘制的高性能 Sheet 组件
 # list-grid-with-svg
 - svgtable /10Star/NALic/202105/js/d3
   - https://github.com/analyzer2004/svgtable
