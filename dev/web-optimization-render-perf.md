@@ -77,7 +77,7 @@ modified: 2021-01-04T17:09:19.278Z
     - parts of the render tree (or the whole tree) will need to be revalidated and the node dimensions recalculated. This is called a reflow, or layout, or layouting. Note that there's at least one reflow - the initial layout of the page
     - parts of the screen will need to be updated, either because of changes in geometric properties of a node or because of stylistic change, such as changing the background color. This screen update is called a repaint, or a redraw.
   - All of the below properties or methods, when requested/called in JavaScript, will trigger the browser to synchronously calculate the style and layout. This is also called reflow or layout thrashing, and is common performance bottleneck.
-- 很多文章里说，修改opacity、transform这两个属性仅仅会触发合成，不会触发重绘和合成。所以一定要用这两个属性来实现动画，没有重绘重排，效率很高。
+- 🤔 很多文章里说，修改opacity、transform这两个属性仅仅会触发合成，不会触发重绘和合成。所以一定要用这两个属性来实现动画，没有重绘重排，效率很高。
   - 并不一定是这样。
   - 只有一个元素在被提升为合成层之后，上述情况才成立。
   - 在合成多个合成层时，确实可以借助3D API的相关参数，从而直接实现合成层的transform、opacity效果。所以如果你将一个元素提升为合成层，然后用JS修改其transform或opacity 或者在 transform或opacity 上施加CSS过渡或动画，确实会避免CPU的Paint过程，因为transform和opacity可以直接基于GPU的合成参数来完成。
@@ -121,7 +121,7 @@ modified: 2021-01-04T17:09:19.278Z
   - Chrome DevTools
   - Lighthouse
 
-# Rendering Performance Overview
+# [Rendering Performance Overview](https://web.dev/rendering-performance/)
 
 - Performance is the art of avoiding work, and making any work you do as efficient as possible.
 - 60fps and Device Refresh Rates

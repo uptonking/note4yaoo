@@ -73,6 +73,15 @@ modified: 2021-05-23T10:17:05.993Z
 - I would love a DB abstraction that lets my app do relational reasoning and lenses over projections in a much simpler way than Apache Calcite
   - Odds that someone somewhere has a `SQL -> Calcite -> ORM'ed Objects -> SQL` flow?
 - I dont like building my own migration frameworks and always want someone to figure out the best possible moves there for my DB. I built Notion’s SQLite one after a bunch of research and its fine
+  - there was nothing out there that fit our use-case of "talk to SQLite from a browser app over IPC to a native app"
+- ah ok. I (eventually) need a migration thing for my kv store, and i cant find much out there about kv database migration…
+  - If you don’t have transactions, IDK. Generally people run a job to iterate the key space and copy v1 records to v2, and then a cleanup job that re-enques anything written to v1 keys to get migrated again. Finally at some point you decide you’ll read and write only v2 records.
+- For KV things I try to draft off of what people do with DynamoDB. Maybe this can serve as inspiration
+- https://github.com/sensedeep/onetable-migrate /js
+  - This library provides migrations support for DynamoDB OneTable.
+- this is cool, thanks! The up/down idea is similar to what I had in mind. Also looking at stripe’s versioning thing
+  - Seems the idea is basically a pipeline of versioned codecs.
+
 - I'm a fan of just using SQL. SQL is already a wonderful abstraction over data storage. Treating a relational database like nested documents just leads to confusion. (Nothing wrong with nested documents, but then... why use an RDBMS?)
 
 - There's a nice sweet spot with query builders, especially if they're very thin & map 1:1*. 

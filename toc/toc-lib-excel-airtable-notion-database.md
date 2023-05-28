@@ -30,8 +30,12 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/nick-keller/react-datasheet-grid
   - https://github.com/Equify/react-datasheet-grid
   - https://react-datasheet-grid.netlify.app/docs/features
-  - 依赖react、react-window、react-resize-detector
+  - 依赖react、tanstack-virtual、react-resize-detector
   - more like Airtable or Notion and less like Excel in the sense that instead of dealing with individual cells it deals with entire rows, and each column is responsible for a single property of each row
+  - 默认可编辑单元格
+  - 操作支持获取operation对象
+  - Supports copy / pasting to and from Excel, Google-sheet...
+  - Virtualized rows and columns, supports hundreds of thousands of rows
   - [V2 status update_202106](https://github.com/Equify/react-datasheet-grid/issues/37)
   - [Feature Roadmap_202106](https://github.com/Equify/react-datasheet-grid/issues/38)
   - Fast
@@ -51,6 +55,7 @@ modified: 2022-08-21T10:02:05.129Z
     - Datacore is a work-in-progress re-imagining of Dataview with a focus on 2-10x better query and rendering performance, as well as fully interactible views.
 
 - https://github.com/linyows/notionate
+  - https://notionate.linyo.ws/
   - React components that uses the Notion API to display the Notion's database and page.
 
 - undb /20Star/AGPLv3/202304/ts
@@ -249,7 +254,7 @@ modified: 2022-08-21T10:02:05.129Z
 
 - https://github.com/mukulchugh/kanboard-notion-kanban-react /js
   - https://notion-kanboard-mukul.netlify.app/
-  - 暂不支持视图切换
+  - 暂不支持表格视图
 # notion-database-like
 - https://github.com/NotionX/react-notion-x
   - https://react-notion-x-demo.transitivebullsh.it/

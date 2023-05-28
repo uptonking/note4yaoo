@@ -172,7 +172,7 @@ const foo = await new Promise((res, rej) => setTimeout(res, 0));
 - 这也不是 setInterval 的坑，非实时系统的定时都是不精确的。即便可以通过提高优先级提升精度，恢复到应用场景过程中还是有可能被抢占而丢失精度。
   - 运行时的关系。应该是JS在单线程的事件循环里处理时钟事件，一旦有别的事件阻塞了这个线程，计时就不可靠了。Java和Swift往往使用单独的线程来处理时间。
 
-- [如何实现准时的setTimeout](https://mp.weixin.qq.com/s/ENU93_jSUaAONCkfTQTK-Q)
+- ### [如何实现准时的setTimeout](https://mp.weixin.qq.com/s/ENU93_jSUaAONCkfTQTK-Q)
 - while: 想得到准确的，我们第一反应就是如果我们能够主动去触发，获取到最开始的时间，以及不断去轮询当前时间，如果差值是预期的时间，那么这个定时器肯定是准确的，那么用 while 可以实现这个功能。
   - Web Worker为Web内容在后台线程中运行脚本提供了一种简单的方法。线程可以执行任务而不干扰用户界面。
   - 在 worker 中写入一个 while 循环，当达到我们的预取时间的时候，再向主线程发送一个完成事件，就不会因为主线程的其他代码的干扰而造成数据不准的情况。

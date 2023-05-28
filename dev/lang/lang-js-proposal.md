@@ -12,14 +12,32 @@ modified: 2020-07-07T08:10:16.774Z
 - [finished proposals](https://github.com/tc39/proposals/blob/main/finished-proposals.md)
 
 - https://babeljs.io/docs/en/plugins
-- https://github.com/babel/proposals
+  - https://github.com/babel/proposals
 - [top tc39 proposals](https://github.com/search?o=desc&q=user%3Atc39&s=stars&type=Repositories)
   - pipeline-operator(|>), optional-chaining(?.), pattern-matching(case-when), observable, dynamic-import, bind-operator(::), object-rest-spread, decorators
   - [tc39 proposals stages](https://github.com/tc39/proposals)
-
 # proposals-trending
+- https://github.com/tc39/proposal-json-modules /s3
+  - Proposal to import JSON files as modules
+  - `import json from "./foo.json" assert { type: "json" };`
 
-- https://github.com/tc39/proposal-explicit-resource-management
+- https://github.com/tc39/proposal-import-attributes /s2
+  - formerly known as Import Assertions, adds an inline syntax for module import statements to pass on more information alongside the module specifier
+  - The specification of JSON modules was originally part of this proposal, but it was resolved during the July 2020 meeting to split JSON modules out into a separate Stage 3 proposal.
+
+- https://github.com/tc39/proposal-temporal /s3
+  - The JavaScript Temporal proposal has reached stage 3 in TC39. 
+  - Proper Date & Time handling are coming!
+  - `@internationalized/date` is a date library built by the React Aria team
+    - https://twitter.com/devongovett/status/1641069934460510214
+    - The API is inspired by Temporal, and eventually we will back it by Temporal when implemented in browsers. 
+
+- https://github.com/tc39/proposal-shadowrealm /s3
+  - [ES6 Realms API](https://gist.github.com/dherman/7568885)
+  - A realm object abstracts the notion of a distinct global environment, with its own global object, copy of the standard library, and "intrinsics" (standard objects that are not bound to global variables, like the initial value of Object.prototype).
+  - Extensible web: This is the dynamic equivalent of a same-origin `<iframe>` without DOM.
+
+- https://github.com/tc39/proposal-explicit-resource-management /s3
   - https://github.com/tc39/proposal-async-explicit-resource-management
   - This proposal intends to address a common pattern in software development regarding the lifetime and management of various resources (memory, I/O, etc.). 
   - This pattern generally includes the allocation of a resource and the ability to explicitly release critical resources.
@@ -28,6 +46,11 @@ modified: 2020-07-07T08:10:16.774Z
 - html import
 - [proposal-bind-operator `::`](https://github.com/tc39/proposal-bind-operator)
   - [Is this proposal dead?](https://github.com/tc39/proposal-bind-operator/issues/53)
+
+- ref
+  - https://github.com/sudheerj/ECMAScript-features
+  - https://kangax.github.io/compat-table/esnext/
+  - [Rethinking JavaScript Infrastructure: Check out a (controversial) proposal to improve JavaScript Infrastructure.](https://cpojer.net/posts/rethinking-javascript-infrastructure)
 # guide
 - [ECMAScript-new-features-list](https://github.com/daumann/ECMAScript-new-features-list)
 
@@ -103,32 +126,17 @@ modified: 2020-07-07T08:10:16.774Z
 - Promise.any & AggregateError
 - WeakRefs & FinalizationRegistry
 
-
-
 ## esX-deprecated
 
 - cancellable promise
 
 ## more-proposals
+
 - https://github.com/rbuckton/proposal-enum
   - https://github.com/Jack-Works/proposal-enum
+
 ## stage3/4
-- https://github.com/tc39/proposal-temporal
-  - The JavaScript Temporal proposal has reached stage 3 in TC39. 
-  - Proper Date & Time handling are coming!
-  - `@internationalized/date` is a date library built by the React Aria team
-    - https://twitter.com/devongovett/status/1641069934460510214
-    - The API is inspired by Temporal, and eventually we will back it by Temporal when implemented in browsers. 
 
-- https://github.com/tc39/proposal-shadowrealm
-  - [ES6 Realms API](https://gist.github.com/dherman/7568885)
-  - A realm object abstracts the notion of a distinct global environment, with its own global object, copy of the standard library, and "intrinsics" (standard objects that are not bound to global variables, like the initial value of Object.prototype).
-  - Extensible web: This is the dynamic equivalent of a same-origin `<iframe>` without DOM.
-
-- ref
-  - https://github.com/sudheerj/ECMAScript-features
-  - https://kangax.github.io/compat-table/esnext/
-  - [Rethinking JavaScript Infrastructure: Check out a (controversial) proposal to improve JavaScript Infrastructure.](https://cpojer.net/posts/rethinking-javascript-infrastructure)
 # class fields
 - stage 3
   - https://github.com/tc39/proposal-class-fields

@@ -229,7 +229,6 @@ modified: 2022-08-21T10:02:27.788Z
 - https://github.com/infinite-table/infinite-react
   - https://infinite-table.com/
   - https://infinite-table.com/docs/learn/examples/dynamic-pivoting-example
-  - Infinite Table is the modern DataGrid for building React apps — faster.
   - Infinite Table is a React DataGrid component for displaying virtualized tabular data. 
   - row grouping - both server-side and client-side
   - pivoting - both server-side and client-side
@@ -481,10 +480,14 @@ modified: 2022-08-21T10:02:27.788Z
 
 - x-spreadsheet/wolf-table /10.1kStar/MIT/202112/ts
   - https://github.com/wolf-table/table /ts
-  - https://github.com/myliang/x-spreadsheet /js
-  - https://myliang.github.io/x-spreadsheet
+  - https://github.com/wolf-table/table-renderer
   - A web-based JavaScript（canvas） spreadsheet
   - Undo & Redo
+  - https://github.com/myliang/x-spreadsheet /js
+    - https://myliang.github.io/x-spreadsheet
+    - [类似石墨文档多人编辑同一个文档是否可以锁定某个区域单元格](https://github.com/myliang/x-spreadsheet/issues/121)
+      - 表格对于协同编辑没有什么意义，暂时不会考虑类似功能
+    - [Load Json Data Or Excel Data](https://github.com/myliang/x-spreadsheet/issues/55)
 
 - o-spreadsheet /130Star/LGPLv3/202305/ts
   - https://github.com/odoo/o-spreadsheet
@@ -498,8 +501,11 @@ modified: 2022-08-21T10:02:27.788Z
     - This solution has a lot of pros, but also some cons:
     - We need to write a transformation function for each command we create
     - Undo/Redo is synchronous, i.e. it should be accepted by the server before being executed locally.
-  - https://github.com/odoo/owl
+  - [[WIP] Version history](https://github.com/odoo/o-spreadsheet/pull/2259)
+    - I'd keep the concepts of tree and branches hidden. They really are internal implementation details of the data structure.
+  - https://github.com/odoo/owl /ts/NoDeps
     - A web framework for structured, dynamic and maintainable applications
+    - 初始化前，需要先从服务器fetch界面ui相关的xml模版文件
     - Class based components with hooks, reactive state and concurrent mode
     - a fine grained reactivity system similar to Vue
     - Owl components are defined with ES6 classes and xml templates, uses an underlying virtual DOM, integrates beautifully with hooks, and the rendering is asynchronous.
@@ -614,6 +620,8 @@ modified: 2022-08-21T10:02:27.788Z
   - 依赖numbro, moment, pikaday
   - a JS HTML5 data grid with spreadsheet look & feel.
   - free for all non-commercial purposes since 7.0
+  - 不支持协作
+  - [Q: Possible to combine multiple actions into single undo/redo step?](https://github.com/handsontable/handsontable/issues/7324)
   - https://github.com/handsontable/handsontable/releases/tag/7.0.0
   - [Handsontable drops open source for a non-commercial license_201903](https://github.com/handsontable/handsontable/issues/5831)
   - forks

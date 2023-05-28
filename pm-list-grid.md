@@ -33,7 +33,6 @@ modified: 2021-05-23T16:34:27.206Z
 - ckeditor-pivot-table
   - alternative to ckeditor-table
 - refactor pivot table  to vanillajs
-  - react-table v7 to v8
 - refactor to plugins support
 # guide
 - ag-grid源码要点
@@ -135,13 +134,12 @@ modified: 2021-05-23T16:34:27.206Z
 - remotion
   - 快速制作数据动态变化图/视频
 
+- whisper-语音输入文字，语音填写表格
 # table-solutions
-
 - 如何以文本格式保存和展示tabular数据
   - markdown table
   - gnu recutils
     - [recutils tutorial example](https://gist.github.com/gmolveau/6be062d9b9005cf985cda98dabdf0baa)
-
 # grid-implementation
 - ## react-table
   - required-props: data, columns

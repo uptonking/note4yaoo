@@ -11,7 +11,6 @@ modified: 2022-11-06T11:21:27.612Z
 
 - [DB Fiddle - SQL Database Playground](https://www.db-fiddle.com/)
   - An online SQL database playground for testing, debugging and sharing SQL snippets.
-
 # rest
 - https://github.com/formio/resquel /202101/ts/inactive
   - Express.js middleware library that is able to convert SQL databases into a REST API.
@@ -53,7 +52,9 @@ modified: 2022-11-06T11:21:27.612Z
 - https://github.com/MrSmallLiu/node-datax /202012/ts
   - 使用TypeScript开发的Node的数据提取工具
   - 仅支持postgres
-
+# migrate
+- https://github.com/sensedeep/onetable-migrate /js/参考kv存储的迁移
+  - This library provides migrations support for DynamoDB OneTable.
 # utils
 - https://github.com/w3tecch/typeorm-seeding
   - A delightful way to seed test data into your database.

@@ -7,6 +7,15 @@ modified: 2022-02-12T23:36:22.503Z
 
 # toc-saas-repos
 
+# guide
+
+# office-apps
+- https://github.com/documenso/documenso /AGPLv3/ts
+  - https://documenso.com/
+  - Signing documents digitally is fast, easy and should be best practice for every document signed worldwide. 
+  - This is technically quite easy today, but it also introduces a new party to every signature: The signing tool providers. 
+  - Documenso aims to be the world's most trusted document signing tool. 
+  - This trust is built by empowering you to self-host Documenso and review how it works under the hood. 
 # saas-apps
 - https://github.com/timeoffthescheduler/server /js
   - Server Side Implementation of TimeOff TS, A Scheduler

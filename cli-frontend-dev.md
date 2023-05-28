@@ -198,8 +198,6 @@ function range(start, end) {
   - Renders Markdown as pure React components
 - marked
   - A markdown parser built for speed
-- raf
-  - requestAnimationFrame polyfill for node and the browser
 - fast-memoize
   - fastest memoization library in js that supports N arguments
   - memoization is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again

@@ -169,10 +169,6 @@ $$('[contenteditable]')
   - 处理初试
 
 - dev-to
-  - 表格视图 remove trpc from tables
-    - 透视表、database多视图、编辑器内的database
-    - editable-react-table、undb/focalboard、noseditor
-    - [x] streaming-infinite-list/tree
   - slate-docs-examples
   - dnd-kit preset-tree
     - 参考react-sortable-tree
@@ -263,13 +259,20 @@ $$('[contenteditable]')
   - collab
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
+  - [x] streaming-infinite-list/tree
 # dev-05
 
 ## 050
 
+## 0528
+
+- [Promises/Fetch in JavaScript: how to extract text from text file - Stack Overflow](https://stackoverflow.com/questions/50401390/promises-fetch-in-javascript-how-to-extract-text-from-text-file)
+  - fetch支持直接获取服务端设备文件的文本内容
+  - `console.log( (await fetch('sample.txt')).text() );`
+
 ## 0524
 
-- [reactjs - MIME type ('text/html') is not executable, and strict MIME type checking is enabled - Stack Overflow](https://stackoverflow.com/questions/49617440/mime-type-text-html-is-not-executable-and-strict-mime-type-checking-is-enab)
+- [MIME type ('text/html') is not executable, and strict MIME type checking is enabled - Stack Overflow](https://stackoverflow.com/questions/49617440/mime-type-text-html-is-not-executable-and-strict-mime-type-checking-is-enab)
   - Adding Public Path in output of webpack.config.js works:
 
 ```JS

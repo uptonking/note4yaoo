@@ -11,6 +11,15 @@ modified: 2021-03-29T19:30:00.059Z
 
 # logging
 
+## [jsx相比模板有什么优点？ - 知乎](https://www.zhihu.com/question/411745998)
+
+- jsx比模板灵活，因为本质是js，最后经过代码预处理后就是createElement。因为js灵活所以jsx也具有一样的灵活性。
+
+- 每个模版引擎的语法都是不一样的并且绝大部分极其的难用
+
+- [Vue JSX 深入解析 - 知乎](https://zhuanlan.zhihu.com/p/59434351)
+  - 当引入 babel-plugin-transform-vue-jsx 这个 Babel 插件后，就可以在 Vue 使用 JSX 语法
+
 ## [What's the difference between HEAD^ and HEAD~ in Git?](https://stackoverflow.com/questions/2221658)
 
 - ~N 第一个parent的倒数第N个提交
@@ -134,7 +143,7 @@ function dataToUint8Array(data) {
 
 ## `URL.createObjectURL` vs `FileReader.readAsDataURL`
 
-### [`URL.createObjectURL` instead of `FileReader.readAsDataURL`](https://forweb.dev/en/blog/2020-05-05-object-url/)
+### [ `URL.createObjectURL` instead of `FileReader.readAsDataURL` ](https://forweb.dev/en/blog/2020-05-05-object-url/)
 
 - 注意两者产生的url是不同的
   - createObjectURL 产生的url是临时的`blob://`，每次刷新需要更新
@@ -228,72 +237,6 @@ var t2 = new Date().getTime();
 ### [process.hrtime()](https://nodejs.org/api/process.html#process_process_hrtime_time)
 
 - returns the current high-resolution real time in a [seconds, nanoseconds] tuple Array, where nanoseconds is the remaining part of the real time that can't be represented in second precision.
-
-## [requestIdleCallback和requestAnimationFrame详解](https://www.cnblogs.com/cangqinglang/p/13877078.html)
-
-- 页面是一帧一帧绘制出来的，当每秒绘制的帧数（FPS）达到 60 时，页面是流畅的
-  - 每一帧分到的时间是 1000/60 ≈ 16 ms。所以我们书写代码时力求不让一帧的工作量超过 16ms。
-- 浏览器每一帧都需要完成哪些工作？ life of a frame
-1. 处理用户的交互
-  - blocking input events: touch wheel
-  - non-blocking input events: click, keypress
-2. JS执行
-  - 如事件处理函数
-3. 帧开始。窗口尺寸变更，页面滚动等的处理
-  - window resize
-  - scroll
-  - mediaquery changed
-  - animation events
-4. requestAnimationFrame(rAF)/IntersectionObserver callbacks
-5. Layout
-  - recalc style
-  - update layout
-  - ResizeObserver callbacks
-6. Paint
-  - compositing update
-  - patint invalidation
-  - records
-- requestIdleCallback 可能不会执行
-- 上面六个步骤完成后没超过 16 ms，说明时间有富余，此时就会执行 `requestIdleCallback` 里注册的任务。
-- requestAnimationFrame 每一帧必定会执行，requestIdleCallback 是捡浏览器空闲来执行任务。
-
-- 👉🏻 layout > `useLayoutEffect` > `requestAnimationFrame` > Update layer tree > paint > `useEffect`
-  - [What's useEffect execution order and its internal clean-up logic when requestAnimationFrame and cancelAnimationFrame are used? - Stack Overflow](https://stackoverflow.com/questions/53781632)
-
-- [浏览器渲染详细过程：重绘、重排和 composite 只是冰山一角 - 掘金](https://juejin.cn/post/6844903476506394638)
-  - html5官方规范： [html5 event loop processing model](https://html.spec.whatwg.org/multipage/webappapis.html#event-loop-processing-model)
-1. 判断当前的document是否需要渲染，用官方规范的说法就是浏览器会判断这个document是否会从UI Render中获益，因为只需要保持60Hz的刷新率即可，而每轮event loop都是非常快的，所以没必要每轮loop都Render UI，而是差不多16ms的时候再Render
-2. 触发resize事件
-3. 触发scroll事件
-4. 计算是否触发media query
-5. 执行css animation和触发‘animationstart’等animation相关事件. run the fullscreen rendering steps：
-6. 执行requestAnimationFrame的回调
-7. 执行IntersectionObserver的回调，也许你在图片懒加载的逻辑里用过这个api。
-8. 更新、渲染用户界面
-
-- resize和scroll事件是在渲染流程里触发的
-  - 这意味着如果你想在scroll事件上绑回调去执行动画，那么根本不需要用requestAnimationFrame去节流，scroll事件本身就是在每帧真正渲染前执行，自带节流效果！
-  - 当然，滚动图片懒加载、滚动内容无限加载等业务逻辑而非动画逻辑还是需要throttle的。
-
-- 一些低优先级的任务可使用 requestIdleCallback 等浏览器不忙的时候来执行，同时因为时间有限，它所执行的任务应该尽量是能够量化，细分的微任务（micro task）。
-  - 因为它发生在一帧的最后，此时页面布局已经完成，所以不建议在 requestIdleCallback 里再操作 DOM，这样会导致页面再次重绘。DOM 操作建议在 rAF 中进行。
-- Promise也不建议在这里面进行，因为 Promise 的回调属性 Event loop 中优先级较高的一种微任务，会在 requestIdleCallback 结束时立即执行，不管此时是否还有富余的时间，这样有很大可能会让一帧超过 16 ms。
-
-- requestAnimationFrame(callback) 会在浏览器每次重绘前执行 callback 回调, 每次 callback 执行的时机都是浏览器刷新下一帧渲染周期的起点上。
-
-- requestAnimationFrame 方法不同与 setTimeout 或 setInterval，它是由系统来决定回调函数的执行时机的，会请求浏览器在下一次重新渲染之前执行回调函数。
-  - 无论设备的刷新率是多少，requestAnimationFrame 的时间间隔都会紧跟屏幕刷新一次所需要的时间
-  - 需要注意的是这个方法虽然能够保证回调函数在每一帧内只渲染一次，但是如果这一帧有太多任务执行，还是会造成卡顿的；因此它只能保证重新渲染的时间间隔最短是屏幕的刷新时间。
-
-- https://groups.google.com/a/chromium.org/g/blink-dev/c/j7YQtj0Yyxs?pli=1
-  - Update Layer Tree is currently measuring two things:
-    - Blink compositing update (decides which PaintLayers should be composited, allocates or clears their CompositedLayerMapping, creates and sets geometry and other properties of GraphicsLayers)
-    - prepaint tree walk (issues paint invalidations on the layout objects, and builds paint property trees)
-  - Update Layer is measuring some of the bookkeeping that occurs in between paint and commit (PictureLayer:: Update).  I think the main thing this is doing is copying paint ops out of the DrawingDisplayItem (which was created during paint) and into the PictureLayer's RecordingSource (so that the commit can transfer them into the PictureLayerImpl's RasterSource).
-  - Composite Layers is actually the time that the main thread spends waiting for the commit to finish on the compositor thread.  I agree it should instead be named "Commit Layers".
-
-- [When exactly are use(Layout)Effect hooks called? : reactjs](https://www.reddit.com/r/reactjs/comments/ms8qk5/when_exactly_are_uselayouteffect_hooks_called/)
-  - useLayoutEffect is called on the requestAnimationFrame loop. Because requestAnimationFrame is synced with the browsers own refresh rate you can enter a state where the DOM has been committed but not painted.
 
 ## [React 源码解析 - 调度模块原理 - 实现 requestIdleCallback](https://www.jianshu.com/p/87533d64626a)
 

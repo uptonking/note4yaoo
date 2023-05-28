@@ -291,8 +291,30 @@ modified: 2020-11-13T07:31:20.012Z
 
 ## tab 标签页
 
-- http://reactcommunity.org/react-tabs/
-  - https://github.com/reactjs/react-tabs
+- https://github.com/Zertz/react-headless-tabs  /ts
+  - https://react-headless-tabs.pierluc.io/#examples
+  - Headless and highly flexible tab-like primitives built with react hooks
+  - 支持dropdown显示更多
+
+- https://github.com/reactjs/react-tabs  /js
+  - https://reactcommunity.org/react-tabs/
+  - Accessible and easy tab component for ReactJS
+
+- https://github.com/jeetiss/tabs  /js
+  - https://jeetiss.github.io/tabs/
+  - Headless tabs component for React
+  - 实现非常简洁
+    - https://github.com/jeetiss/tabs/blob/master/src/index.js
+  - https://github.com/Andarist/use-constant/blob/master/src/index.ts
+    - 不变的数据基于 useRef 实现
+
+- https://github.com/react-component/tabs  /antd/ts
+  - https://tabs.react-component.now.sh/
+  - React Tabs component (for antd)
+
+- https://github.com/ctxhou/react-tabtab  /201811/js
+  - https://ctxhou.github.io/react-tabtab/
+  - A mobile support, draggable, editable and api based Tab for ReactJS.
 
 ## form 表单
 

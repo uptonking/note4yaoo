@@ -11,10 +11,23 @@ modified: 2021-04-27T09:19:37.711Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## The View Transitions API is an absolute game changer and will effectively deprecate single page apps in most cases.
+- https://twitter.com/dannymoerkerke/status/1597187172783693824
+  - What you see in the video below is an MPA that does a full page reload on each navigation
+- The transitions are 100% CSS, zero JavaScript. 
+  - Currently, What PWA Can Do Today is a SPA and the only reason for that is I wanted native app-like page transitions. 
+  - I need quite complex JS to this but with the View Transition API it's now only a few lines of CSS.
+  - I use a Service Worker to stream all responses so page navigations (full reload!) are very fast.
+  - [What PWA Can Do Today](https://whatpwacando.today/)
+
 - ## Pro Tip: You can increase the speed of a video with DevTools. Inspect the element and run:
 - https://twitter.com/umaar/status/1654079892240171010
 - https://twitter.com/umaar/status/1654079892240171010
-  - `$0.playbackRate = 2`, or `$('video').playbackRate=2` in console
+  - `$0.playbackRate = 2` , or `$('video').playbackRate=2` in console
   - Useful for when websites make it tricky to do that in their UI
 - and `$0.requestPictureInPicture()` !
 

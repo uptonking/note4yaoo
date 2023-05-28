@@ -26,8 +26,19 @@ modified: 2023-05-17T07:36:07.757Z
 - kanban-examples
   - https://github.com/orgs/sequelize/projects/1
   - https://github.com/orgs/chakra-ui/projects/3
+  - [How Notion uses Notion – Notion Template Gallery](https://www.notion.so/templates/categories/how-notion-uses-notion)
+
+- 桌面版
+  - 不支持刷新页面恢复状态
 # dev-to
 - 将trpc迁移到rtk-query
+
+- 表格视图
+  - 去掉ui依赖
+  - 重构为可复用组件
+  - absolute position
+  - 透视表、database多视图、编辑器内的database
+  - editable-react-table、undb/focalboard、noseditor
 # dev-later
 - 去掉table概念，将field作为最底层基础block
   - 将table只视为field的一种具体组合，field还可以组合为kanban/tree
@@ -52,12 +63,21 @@ modified: 2023-05-17T07:36:07.757Z
 - 状态管理
   - 服务端缓存使用rtk-query，如table/field数据
   - 前端非持久化状态使用jotai，如弹窗开关、initialValue、lastOpened
+
+# faq-not-yet
+- 只使用了getCoreRowModel，那么sort/group是如何实现的
+
+# faq
+
+
 # design
 - 看板整体布局的结构
   - 可以总体为一行，每列包含顶部列标题、当前列内容卡片
     - 案例: github-project-board, wekan,undb,dnd-kit,react-beautiful-dnd
   - 可以总体为两行，第1行展示每列标题，第2行展示每列内容卡片
     - 案例: focalboard
+
+
 # dev
 
 # docs
