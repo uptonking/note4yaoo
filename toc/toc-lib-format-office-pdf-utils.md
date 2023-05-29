@@ -19,6 +19,9 @@ modified: 2022-11-11T10:46:41.519Z
   - Comes with a CLI, S3 storage and webhooks for notifying subscribers about generated PDFs
 # extension-superset
 
+# converters
+- https://github.com/yWorks/svg2pdf.js /MIT/ts
+  - A javascript-only SVG to PDF conversion utility that runs in the browser leveraging jsPDF.
 # utils
 
 # more

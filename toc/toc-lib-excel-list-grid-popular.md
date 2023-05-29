@@ -9,6 +9,13 @@ modified: 2022-08-21T10:02:27.788Z
 
 # focus
 
+- requirements
+  - group/aggregate/pivot
+  - virtualized
+  - undo/redo
+  - operations
+  - keyboard/a11y
+
 - 开源表格
   - 国内: luckysheet
   - 国外: ag-grid, tanstack-table, glide, handsontable, o-spreadsheet, tui-grid
@@ -495,6 +502,7 @@ modified: 2022-08-21T10:02:27.788Z
   - A standalone spreadsheet for the web, easily integrable and extendable.
   - 支持公式
   - 依赖bootstrap5、@odoo/owl
+  - 图标基于chart.js.v2
   - Real time collaboration
     - The solution we implement is based on Operation Transform (OT).
     - concurrent undo/redo are allowed
@@ -506,6 +514,11 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/odoo/owl /ts/NoDeps
     - A web framework for structured, dynamic and maintainable applications
     - 初始化前，需要先从服务器fetch界面ui相关的xml模版文件
+    - 视图层使用xml模版，组件与视图耦合，react也这样
+    - Model is the owner of the state of the Spreadsheet
+      - it defers the actual state manipulation work to plugins.
+      - State changes are then performed through commands.  Commands are dispatched to the model
+      - Model can be used in a standalone way to manipulate programmatically a spreadsheet
     - Class based components with hooks, reactive state and concurrent mode
     - a fine grained reactivity system similar to Vue
     - Owl components are defined with ES6 classes and xml templates, uses an underlying virtual DOM, integrates beautifully with hooks, and the rendering is asynchronous.
@@ -924,6 +937,11 @@ modified: 2022-08-21T10:02:27.788Z
 - https://github.com/activewidgets/js /js
   - ActiveWidgets is a multi-framework UI component library. 
   - This package provides datagrid component for javascript / no-framework environments.
+
+- https://github.com/jamerst/o-data-grid
+  - A React Data Grid and Query Builder for OData APIs. Based on the Material-UI DataGrid/DataGridPro.
+  - an extension to the MUI DataGrid React component which implements features such as sorting, pagination, column selection, and filtering using the OData Standard. 
+  - It also utilises Recoil for state management in the filter builder
 
 - https://github.com/antvis/data-set
   - state driven all in one data process for data visualization

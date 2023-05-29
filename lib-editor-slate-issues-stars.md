@@ -15,8 +15,15 @@ modified: 2023-02-05T19:03:12.723Z
 
 ## 
 
-## 
+## [Introduce `editor.transaction()` to replace `without*` functions](https://github.com/ianstormtaylor/slate/issues/2658)
 
+- But it seems to me like in the most recent version Editor.withoutNormalizing pretty much does what is suggested here and the withoutSaving and withoutMerging functions seem to not exist anymore.
+
+## [Feature suggestion: isolated/atomic operation groups in HistoryEditor](https://github.com/ianstormtaylor/slate/issues/3874)
+
+- My question here is how is this different than just using `Editor.withoutNormalizing`, which basically batches a set of Operations into an "atomic" unit anyways (and, as a consequence, makes the history state include that batch of operations)? I think `Editor.withoutNormalizing` could be renames to `Editor.transaction` really and it might be more descriptive.
+
+- that is what `Editor.withoutNormalizing` does. It baches all Operations submitted within the callback into 1 "transaction" in the history stack.
 
 ## [Selection is null after editor loses focus](https://github.com/ianstormtaylor/slate/issues/3412)
 

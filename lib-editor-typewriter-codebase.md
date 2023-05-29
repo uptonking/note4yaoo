@@ -18,11 +18,10 @@ modified: 2023-02-09T12:26:14.281Z
 - lines是块级元素
   - 类似quill中的blocks, formats, embeds
 
-- editor model数据变化后，会在update中自动触发视图更新
+- Editor自身是一个eventemitter，
+  - 在editor的构造函数，会注册默认view即rendering模块的onChange方法到editor， `editor.on('change', renderOnChange);`。
+  - editor数据更新时，会手动执行this.update，从而触发view更新 `this.dispatchEvent(new EditorChangeEvent())`
   - prosemirror的数据变化后，可以手动在dispatchTransaction中view.updateState(newState)
-
-- Editor自身是一个eventemitter，在view模块初始化时，会注册view的onChange方法到editor
-  - editor数据更新时，会触发执行view模块注册过的方法
 
 - 触发rerender/update的场景
   - scroll

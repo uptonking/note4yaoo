@@ -9,6 +9,14 @@ modified: 2022-11-08T19:04:00.289Z
 
 # guide
 
+- requirements
+  - collaborative
+  - draggable
+  - columns
+  - block-style data model
+  - virtualized
+  - search
+
 - 开源编辑器
   - 国内: wangEditor, vditor, textbus, am-editor/editablejs, ueditor
   - 国外: prosemirror, slate, quill, lexical, tinymce, etherpad, ckeditor

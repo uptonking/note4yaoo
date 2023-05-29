@@ -9,30 +9,78 @@ modified: 2020-10-22T10:22:55.878Z
 
 # guide
 
+- requirements
+  - undo/redo
+  - auto layout
+  - transaction(like prosemirror/mxgraph)
+
 - usecase
   - 自动化任务
+
+- resources
+  - [diagram-js vs gojs vs jointjs vs jsplumb vs mxgraph | npm trends](https://npmtrends.com/diagram-js-vs-gojs-vs-jointjs-vs-jsplumb-vs-mxgraph)
+  - [流程图制作: BPMN流程图在线绘制](https://segmentfault.com/a/1190000019385581)
 # flowchart
 - mermaid /32.1kStar/MIT/202009/js
   - https://github.com/mermaid-js/mermaid
   - Generation of diagram and flowchart from text in a similar manner as markdown
   - [Poll - next diagram type addition: PlantUML](https://github.com/mermaid-js/mermaid/issues/177)
 
+- maxGraph /500Star/apache2/202305/ts
+  - https://github.com/maxGraph/maxGraph
+    - https://jgraph.github.io/mxgraph/
+  - https://jgraph.github.io/mxgraph/docs/manual.html
+  - https://jgraph.github.io/mxgraph/docs/js-api/files/view/mxGraph-js.html
+  - maxGraph is a fully client side JavaScript diagramming library
+  - It provides many of the diagramming features which would be expected by a piece of presentation software like Microsoft® PowerPoint™ or LibreOffice® Impress such as being able to resize, move or rotate nodes, but has a stronger focus on automatic layout algorithms and applications of Graph Theory.
+  - [mxgraph 系列【2】：项目结构说明 - 掘金](https://juejin.cn/post/6844904153873924110)
+  - [mxgraph 系列【4】：事务管理 - 掘金](https://juejin.cn/post/6844904193094860808)
+  - https://github.com/jgraph/mxgraph
+    - https://jgraph.github.io/mxgraph/javascript/examples/autolayout.html
+    - Development on mxGraph has now stopped, this repo is effectively end of life.
+    - We created mxGraph in 2005, we moved onto commercial activity around draw.io
+    - mxGraph is pretty much feature complete, production tested in many large enterprises and stable for many years.
+    - [mxGraph - Known Issues](https://jgraph.github.io/mxgraph/docs/known-issues.html)
+- https://github.com/process-analytics/bpmn-visualization-js
+  - https://process-analytics.github.io/bpmn-visualization-js/
+  - a TypeScript library for visualizing process execution data on BPMN diagrams
+  - 依赖mxgraph
+- https://github.com/convergencelabs/mxgraph-demo /js
+  - This project demonstrates collaborative diagram editing using the mxGraph open source diagraming framework integrated with Convergence
+
 - jsplumb /7.3kStar/MIT/202302/ts/NoDeps
   - https://github.com/jsplumb/jsplumb
   - https://jsplumbtoolkit.com/
   - https://jsplumbtoolkit.com/features
   - Visual connectivity for webapps
+  - 基于dom实现
   - dev/4.x branch is a rewrite in Typescript
-  - 基于dom实现，不支持undo/redo
+  - In 5.x, the undo/redo functionality was pulled into the Toolkit core
   - `const instance = jsPlumb.newInstance({container});` 初始化
+  - Toolkit Edition 专属功能
+    - undo/redo, Graph Operations, layout, search
   - [automatic layout](https://github.com/jsplumb/jsPlumb/issues/205)
     - available in paid edition
-  - [Pan and Zoom in jsPlumb Community Edition with Dagre and jQueryUI Draggable](https://gist.github.com/archetana/b11d1a3712c2761f2c45cafd2bcb9b50)
-  - [jsPlumb Community Edition with Dagre layout](https://codepen.io/viswesh/pen/ejrLPx)
-  - [dg-jsplumb.js](https://gist.github.com/michiel/2e632cd50c435594cc44)
+    - [jsPlumb Community Edition with Dagre layout](https://codepen.io/viswesh/pen/ejrLPx)
+    - [dg-jsplumb.js](https://gist.github.com/michiel/2e632cd50c435594cc44)
+    - [Pan and Zoom in jsPlumb Community Edition with Dagre and jQueryUI Draggable](https://gist.github.com/archetana/b11d1a3712c2761f2c45cafd2bcb9b50)
+  - [Is that possible to undo dragging and revert it to original position in some condition?](https://github.com/jsplumb/jsplumb/issues/628)
+    - in pro
+    - the short answer is you'd have to do this manually right now. but a "can drop in group" callback is something we could think about adding if you were interested.
   - [前端可视化建模技术概览](https://leungwensen.github.io/blog/2015/frontend-visual-modeling.html)
+  - examples
+    - https://github.com/jsplumb-toolkit-demonstrations/flowchart-builder
+    - https://github.com/jsplumb-toolkit-demonstrations/react-database-visualizer
 - https://gitee.com/openEA/FlowDesigner
   - FlowDesigner来源于Linkey BPM中的流程设计器，作用于流程运行过程中的图形描述
+
+- diagram-js /1.4kStar/MIT/202305/js
+  - https://github.com/bpmn-io/diagram-js
+  - A toolbox for displaying and modifying diagrams on the web.
+  - [支持Redo/Undo](https://github.com/bpmn-io/diagram-js/issues/9)
+  - examples
+    - https://github.com/bpmn-io/bpmn-auto-layout
+    - https://github.com/bpmn-io/diagram-js-examples
 
 - react-flow /2.8kStar/MIT/202103/ts
   - https://github.com/wbkd/react-flow
@@ -43,9 +91,6 @@ modified: 2020-10-22T10:22:55.878Z
   - core依赖 react, d3-drag, d3-selection, d3-zoom, zustand
   - library for building interactive node-based UIs, editors, flow charts and diagrams
   - React Flow Pro is not an additional library, it is a paid subscription around the React Flow
-  - [Is that possible to undo dragging and revert it to original position in some condition?](https://github.com/jsplumb/jsplumb/issues/628)
-    - in pro
-    - the short answer is you'd have to do this manually right now. but a "can drop in group" callback is something we could think about adding if you were interested.
   - [is Dynamic auto layouting using dagre possible?](https://github.com/wbkd/react-flow/issues/1113)
     - Dynamic auto layout with dagre is possible. As explained you need to re-layout your graph when you add a node. The easiest way is to have pre-defined dimensions for your nodes. If that's not possible you need to wait for the first render and then do a re-calculation of the layout.
 
@@ -57,6 +102,7 @@ modified: 2020-10-22T10:22:55.878Z
   - 视图层依赖preact，但使用时不要求react环境，通过instance.render()执行
   - 部分使用class组件
   - 兼容各种产品自定义的流程编辑需求，绝大部分模块以插件的形式实现，支持各模块自由插拔
+  - 支持undo/redo
   - [LogicFlow案例分享](https://github.com/didi/LogicFlow/issues/716)
   - [perf: 优化layout](https://github.com/didi/LogicFlow/pull/518)
     - 自动布局这个功能后来发现有很多不足，所以放弃了，我先合并进来，但是这个插件暂时不提供对外文档。
@@ -111,6 +157,9 @@ modified: 2020-10-22T10:22:55.878Z
   - https://github.com/antvis/X6
   - JavaScript diagramming library
   - core无依赖
+  - [前端图可视化引擎antv的g6和x6区别是什么，如何选择？ - 知乎](https://www.zhihu.com/question/435855401)
+    - 如果你想做一个像 draw.io 那样的图编辑器，特别是流程图编辑，用 X6。
+    - 如果你想做一个像 gephi、keylines 的几个应用那样的分析场景，用 G6。
 - wfd-g6 /519Star/MIT/202006
   - https://github.com/guozhaolong/wfd
   - https://guozhaolong.github.io/wfd/

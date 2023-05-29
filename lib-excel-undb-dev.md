@@ -63,12 +63,9 @@ modified: 2023-05-17T07:36:07.757Z
 - 状态管理
   - 服务端缓存使用rtk-query，如table/field数据
   - 前端非持久化状态使用jotai，如弹窗开关、initialValue、lastOpened
-
 # faq-not-yet
 - 只使用了getCoreRowModel，那么sort/group是如何实现的
-
 # faq
-
 
 # design
 - 看板整体布局的结构
@@ -76,8 +73,6 @@ modified: 2023-05-17T07:36:07.757Z
     - 案例: github-project-board, wekan,undb,dnd-kit,react-beautiful-dnd
   - 可以总体为两行，第1行展示每列标题，第2行展示每列内容卡片
     - 案例: focalboard
-
-
 # dev
 
 # docs
