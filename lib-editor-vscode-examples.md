@@ -20,4 +20,8 @@ modified: 2023-01-21T18:58:29.846Z
   - [The Molecule Roadmap 2022](https://github.com/DTStack/molecule/discussions/680)
 # apps
 
+# extensions
+- https://github.com/bebo-dot-dev/jjs-vscode-toolbar
+  - A VSCode toolbar and context menu extension
+  - Modifies the VSCode toolbar and context menu to include a few useful commands 
 # more

@@ -141,6 +141,14 @@ modified: 2020-11-13T07:28:27.824Z
     - Wrapper (top-down runtime approach): packages existing framework dependent components with a thin interoperability layer 
     - Primitive (bottom-up runtime approach): framework agnostic low-level building blocks.Each primitive acts as an adapter to plug framework dependent logic.
     - Compiler (build time approach): Use a build tool to generate, from a single source code, either web component (eg. via Stencil) or per framework implementations (eg. via Mitosis).
+# vanillajs
+- https://github.com/vitmalina/w2ui /202305/js
+  - UI widgets for modern apps. 
+  - Data table, forms, toolbars, sidebar, tabs, tooltips, popups. 
+  - All under 120kb (gzipped).
+  - Since v2.0, w2ui has no dependencies
+  - All the widgets are written as es6 classes
+  - All classes in w2ui are extended from w2base class that provides basic event functionality. 
 # xplat-ios/android
 - https://github.com/framework7io/framework7
   - open source mobile HTML framework to develop hybrid mobile apps or web apps with iOS & Android native look and feel.

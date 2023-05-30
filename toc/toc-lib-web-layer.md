@@ -93,7 +93,7 @@ modified: 2021-01-17T06:18:28.855Z
 - https://github.com/iamhosseindhv/notistack
   - https://notistack.com/
   - customizable notification snackbars (toasts) that can be stacked on top of each other
-# examples-menu-toolbar
+# menu/toolbar
 - toolbar/button-group
   - https://www.radix-ui.com/docs/primitives/components/toolbar
   - https://carbondesignsystem.com/patterns/text-toolbar-pattern/
@@ -119,6 +119,9 @@ modified: 2021-01-17T06:18:28.855Z
   - https://cmdk.paco.me/
   - unstyled command menu React component.
   - 依赖 @radix-ui/react-dialog
+
+- https://github.com/kenshin54/popline
+  - 支持显示在选区中心上方，或mouseup/keyup的位置，在选区高度较高时位置不同
 # modal/portal
 - https://github.com/wellyshen/react-cool-portal
   - hook for Portals, which renders modals, dropdowns, tooltips etc. to `<body>` or else.

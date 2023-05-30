@@ -47,6 +47,21 @@ modified: 2023-05-14T04:32:30.696Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I'm keen on adding a few things that Evolu doesn't have atm
+- https://twitter.com/kndwindev/status/1663431276119085057
+- Poke protocol simliar to Replicache
+  - [Poke | Replicache Docs](https://doc.replicache.dev/byob/poke)
+  -  WebSocket-based services are more complex to scale because they have to keep state in memory for each connected client.
+  - Replicache instead uses WebSockets only to hint the client that it should pull again. No data is sent over the socket. 
+  - This enables developers to build their realtime web applications in the standard stateless request/response style.
+  - We refer to this WebSocket hint as a poke, to go along with push and pull. You can use any hosted WebSocket service to send pokes, such as socket.io or Pusher
+- Drizzle ORM's relational queries
+- Maybe even Prisma's schema generation
+
 - ## Today, I'm going to improve Evolu's useQuery to add some missing features from SWR.
 - https://twitter.com/evoluhq/status/1635681745935773700
   - But it will be simpler because useQuery can't fail and because "Many Small Queries Are Efficient In SQLite".

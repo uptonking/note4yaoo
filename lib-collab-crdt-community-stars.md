@@ -14,6 +14,15 @@ modified: 2022-04-05T10:09:51.343Z
 # discuss
 - ## 
 
+- ## 
+
+- ## You may not need crdt
+- https://twitter.com/aboodman/status/1663523389133434880
+  - Replicache and Reflect don't use CRDTs. 
+  - Replicache is instead built on an older technique from multiplayer games. 
+  - Turns out there's still a lot to love in that smooth old-school sync.
+  - [You might not need a CRDT | Drifting in Space](https://driftingin.space/posts/you-might-not-need-a-crdt)
+
 - ## GPT-4 as a viable alternative to text CRDTs? 
 - https://twitter.com/geoffreylitt/status/1645961623289438208
 - Yes I think this is promising for async merges!

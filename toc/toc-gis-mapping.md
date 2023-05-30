@@ -72,6 +72,15 @@ modified: 2021-01-04T16:21:18.990Z
   - http://kothic.org/
   - a full-featured JavaScript map rendering engine using HTML5 Canvas. 
   - It was initially developed as a JavaScript port of Kothic rendering engine written in Python
+# leaflet
+- https://github.com/geoman-io/leaflet-geoman /js
+  - https://geoman.io/leaflet-geoman
+  - powerful leaflet plugin for drawing and editing geometry layers
+# draw-on-map
+- https://github.com/JamesLMilner/terra-draw /ts
+  - https://terradraw.io/
+  - Cross provider map drawing library, supporting Mapbox, MapLibre, Google Maps, OpenLayers and Leaflet out the box
+  - Terra Draw centralises map drawing logic and provides a host of out the box drawing modes that work across different JavaScript mapping libraries
 # 3d
 - cesium /6.2kStar/Apache2/202009/js
   - https://github.com/CesiumGS/cesium

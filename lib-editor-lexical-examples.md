@@ -43,7 +43,11 @@ modified: 2022-05-15T18:37:27.994Z
   - https://github.com/calcom/ui
   - open-source Calendly alternative.
 # extensions
-
+- https://github.com/konstantinmuenster/lexical-floating-menu
+  - https://lexical-floating-menu.vercel.app/
+  - Improve your text editing experience with an intuitive floating menu / bubble menu
+  - Designed for @lexical/react. 
+  - Headless & fully customizable.
 # mobile
 - https://github.com/facebook/lexical-ios
   - An extensible text editor/renderer written in Swift, built on top of TextKit, and sharing a philosophy and API with Lexical JavaScript.

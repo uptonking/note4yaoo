@@ -10,8 +10,9 @@ modified: 2023-05-29T17:33:33.600Z
 # guide
 
 - examples
-  - [Level of detail(LOD) example for mxGraph](https://jgraph.github.io/mxgraph/javascript/examples/lod.html)
   - 还可以在相关issues的引用issues里面找示例
+  - [Level of detail(LOD) example for mxGraph](https://jgraph.github.io/mxgraph/javascript/examples/lod.html)
+  - [mxgraph入门解析 - 入门示例分析](https://gcgligoudan.github.io/mxgraph/)
 # popular
 - maxGraph /500Star/apache2/202305/ts
   - https://github.com/maxGraph/maxGraph
