@@ -115,6 +115,10 @@ modified: 2023-04-04T22:39:45.442Z
   - http://viliusle.github.io/miniPaint/
   - Online image editor lets you create, edit images using HTML5 technologies.
   - miniPaint operates directly in the browser. Nothing will be sent to any server.
+# image-tiles/lod
+- https://github.com/EddieMachete/em-ui-quadrant
+  - Quadrant is a tile based, JavaScript web component which allows viewing an image in different levels of detail while optimizing the download process. 
+  - Quadrant is based on my interpretation of Google Maps applied to image viewing over the web.
 # more
 - https://github.com/jiechud/fast-image-editor
   - 一款开源图片编辑器，采用React + Typescript + React-knova 框架开发.

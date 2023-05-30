@@ -312,7 +312,7 @@ class Plugins {
   - 这个是业务相关的问题，但总体来看，开源的，基础功能以及体现核心竞争力的可以内置
 
 - [插件化架构设计(2): 插件化从设计到实践该考量的问题汇总 - zhoulujun - 博客园](https://www.cnblogs.com/zhoulujun/p/17231013.html)
-# plugin-system-examples
+# plugin-examples
 - https://github.com/unjs/unplugin /ts
   - Unified plugin system for Vite, Rollup, Webpack, esbuild, and more
   - unplugin is very high level to adapt plugins to bundlers
@@ -428,6 +428,10 @@ class Plugins {
   - A generic purpose plugin loading system to be used in node projects. 
   - It uses npm modules and annotations in package.json to easily set up a project with plugin support. 
   - It is fully Promise-based.
+
+- https://github.com/mortalYoung/plugin-system
+  - A mock simple plugin system for learning
+  - This is a repository refer to umi.
 
 ## plugin-react
 

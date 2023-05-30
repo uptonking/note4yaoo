@@ -27,6 +27,9 @@ modified: 2020-10-05T06:18:29.671Z
   - Use deck.gl layers as custom mapbox-gl-js layers
     - mapbox扩展模块依赖mapbox-gl.v2
 
+- https://github.com/lmcinnes/LOD_text_layer
+  - This repo is a work in progress to provide a custom deck.gl layer for use in pydeck that allows for a text layer that resolves varying levels of detail on zooming.
+
 - kepler.gl /9kStar/MIT/202210/ts
   - https://github.com/keplergl/kepler.gl
   - http://kepler.gl/
@@ -65,6 +68,17 @@ modified: 2020-10-05T06:18:29.671Z
     - This means that when you draw or create an object (a Two.Path or Two.Group), two actually stores and remembers that. 
   - Two.js has a built in animation loop. 
   - Two.js features a Scalable Vector Graphics Interpreter
+
+- https://github.com/jessehhydee/level-of-detail
+  - A comparison on performance and rendering speed between three.js LOD tool and two self written LOD tools.
+  - Level of detail is used to improve rendering performance. If an assets is not near the camera, there is no need to show it in great detail.
+
+- https://github.com/gl-vis/snap-points-2d
+  - Hierarchically snap round a set of 2d points for optimizing level of detail rendering in WebGL
+
+- https://github.com/e-eq-mc2/lod.js /js
+  - http://e-eq-mc2.github.io/lod.js/
+  - A WebGL demo based on Level of Detail (LOD).
 # gl-utils
 - luma.gl /1.7kStar/MIT/202009
   - https://github.com/visgl/luma.gl
@@ -86,6 +100,10 @@ modified: 2020-10-05T06:18:29.671Z
 - https://github.com/threlte/threlte
   - A three.js component library for svelte.
   - Build three.js scenes declaratively with threlte components that are reactive to the core, readily interactive and can participate in Svelte's ecosystem.
+
+- https://github.com/jbouny/LODplane
+  - Basic Level Of Detail plane for Three.js
+  - https://github.com/shaper-pmp/lod.js
 # webgl-animation
 - https://github.com/scottstensland/webgl-3d-animation
   - An interactive 3D animation using WebGL to depict a 2D predator prey ecology on a grid real-time mapped onto the surface of a 3D torus. 

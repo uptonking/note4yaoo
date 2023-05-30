@@ -181,9 +181,9 @@ modified: 2020-11-13T07:28:27.824Z
   - /214Star/MIT/202009
   - A UI Components Library for Intact, Vue, React and Angular.
   - kpc是基于intact框架实现的js组件库，通过胶水层自动生成react/vue/angular的组件
-  - https://github.com/Javey/intact /46Star/MIT/202006
-    - An inheritable and strong logic template front-end mvvm framework
-    - 基于vdt，vdt是基于虚拟DOM实现的模板引擎，支持前后端渲染
+- https://github.com/Javey/intact /46Star/MIT/202006/js/inactive
+  - An inheritable and strong logic template front-end mvvm framework
+  - 基于vdt，vdt是基于虚拟DOM实现的模板引擎，支持前后端渲染
   - https://github.com/ksc-fe/intact-react
     - A compatibility layer for running intact component in react
     - intact提供了react、vue、angular的胶水层

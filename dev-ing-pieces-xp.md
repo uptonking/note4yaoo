@@ -11,6 +11,20 @@ modified: 2021-04-28T20:54:58.126Z
 
 # issues
 
+## webpack circular dependencies 打包失败
+
+- 尝试借助 dpdm/circular-plugin 分析问题deps并解决
+
+- 借助eslint自动添加import type
+
+- 解决方法是将@babel/preset-typescript的 `onlyRemoveTypeImports`保持默认值false
+
+- [@babel/plugin-transform-typescript · Babel](https://babeljs.io/docs/babel-plugin-transform-typescript)
+  - `onlyRemoveTypeImports: true` is equivalent to `importsNotUsedAsValues: preserve`, while `onlyRemoveTypeImports: false` is equivalent to `importsNotUsedAsValues: remove`. 
+
+- 变通方法是，tsc支持build含有循环依赖的源码
+  - 但verbatimModuleSyntax不能为true，否则运行会异常
+
 ## 刷新页面自动登录用户帐号
 
 - 需求

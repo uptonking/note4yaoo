@@ -474,3 +474,8 @@ function getOffsetX(event) {
 - [命中测试 | 功能例子 | SpreadJS JavaScript 学习指南](https://demo.grapecity.com.cn/spreadjs/SpreadJSTutorial/features/workbook/hit-testing/purejs)
 # more-layout-position
 - https://caniuse.com/mdn-api_window_visualviewport
+# dev
+- ## `new Event()` + `dispatchEvent()` synthetic event
+- bubbles by default is false
+- Unlike "native" events, which are fired by the browser and invoke event handlers asynchronously via the event loop,  `dispatchEvent()` invokes event handlers synchronously. 
+  - All applicable event handlers are called and return before `dispatchEvent()` returns.

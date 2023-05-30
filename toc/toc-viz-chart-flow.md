@@ -31,6 +31,7 @@ modified: 2020-10-22T10:22:55.878Z
     - https://jgraph.github.io/mxgraph/
   - https://jgraph.github.io/mxgraph/docs/manual.html
   - https://jgraph.github.io/mxgraph/docs/js-api/files/view/mxGraph-js.html
+  - https://github.com/gelvidge/maxGraph
   - maxGraph is a fully client side JavaScript diagramming library
   - It provides many of the diagramming features which would be expected by a piece of presentation software like Microsoft® PowerPoint™ or LibreOffice® Impress such as being able to resize, move or rotate nodes, but has a stronger focus on automatic layout algorithms and applications of Graph Theory.
   - [mxgraph 系列【2】：项目结构说明 - 掘金](https://juejin.cn/post/6844904153873924110)
@@ -41,12 +42,6 @@ modified: 2020-10-22T10:22:55.878Z
     - We created mxGraph in 2005, we moved onto commercial activity around draw.io
     - mxGraph is pretty much feature complete, production tested in many large enterprises and stable for many years.
     - [mxGraph - Known Issues](https://jgraph.github.io/mxgraph/docs/known-issues.html)
-- https://github.com/process-analytics/bpmn-visualization-js
-  - https://process-analytics.github.io/bpmn-visualization-js/
-  - a TypeScript library for visualizing process execution data on BPMN diagrams
-  - 依赖mxgraph
-- https://github.com/convergencelabs/mxgraph-demo /js
-  - This project demonstrates collaborative diagram editing using the mxGraph open source diagraming framework integrated with Convergence
 
 - jsplumb /7.3kStar/MIT/202302/ts/NoDeps
   - https://github.com/jsplumb/jsplumb

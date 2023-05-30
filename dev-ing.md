@@ -264,6 +264,10 @@ $$('[contenteditable]')
 
 ## 050
 
+## 0529
+
+- [eslint - Is there a way to automatically fix \`import type\` errors on TypeScript when using "importsNotUsedAsValues": "error"? - Stack Overflow](https://stackoverflow.com/questions/71080256/is-there-a-way-to-automatically-fix-import-type-errors-on-typescript-when-usin)
+  - I found ESLint rule consistent-type-imports which basically ensure the same as "importsNotUsedAsValues": "error" TypeScript compiler flag but on ESLint level.
 ## 0528
 
 - [Promises/Fetch in JavaScript: how to extract text from text file - Stack Overflow](https://stackoverflow.com/questions/50401390/promises-fetch-in-javascript-how-to-extract-text-from-text-file)

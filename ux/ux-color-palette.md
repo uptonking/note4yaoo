@@ -73,10 +73,10 @@ modified: 2022-10-23T14:57:23.473Z
   - darkorange: #ff8c00
   - gold: #ffd700 金黄色
   - lightyellow: #ffffe0
+  - wheat: #f5deb3
   - khaki: #f0e68c 卡其色，米黄色
   - lemonchiffon：粉黄色，有点浅
   - orange: #ffa500
-  - wheat: #f5deb3
   - bisque: #ffe4c4 浅黄，有点红
   - darkorange：深橙色
   - lavenderblush：淡紫红，有点浅

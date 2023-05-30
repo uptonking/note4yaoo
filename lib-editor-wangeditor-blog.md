@@ -116,13 +116,13 @@ modified: 2023-02-22T19:49:55.242Z
   - 编辑区域内部的改动，因为是 contenteditable ，修改的是开放的，键盘可随便输入、删除、换行等
   - 第二类，我可以用 mutation observer 来监听，不用再去劫持各种 keydown
 - 我花费了两天的业余时间，尝试去解读 mutation observer 对于回车换行的处理，但是没搞定。 两天之后我就放弃了，不是知难而退，而是这种情况，即便真的废力气解决了，那也是一个很复杂的设计。
-  - Quill 只用 mutation observer 监听文本改动。其他的 enter delete 等，都还是劫持 keydown ，修改 model 。
+  - 👉🏻 **Quill 只用 mutation observer 监听文本改动。其他的 enter delete 等，都还是劫持 keydown ，修改 model** 。
 
 - 调研其他产品，应该同时多看几个，可以相互弥补。因为只看一个你不可能看懂 100% 。
-  - 我花了几天业余时间看了看 Quill slate proseMirror ，从主流程上大概了解了，但还需要进一步探索细节。
-- 不是修改 model ，而是重新生成（不可变数据，如用 immer）。副作用会变得不可控，越大越乱。
-- command 不会直接修改 model ，而是 command -> operation -> model -> vdom & patchView
-- model 并不是 DOM 结构的样子，而是扁平化甚至线性化，这样才能更好的进行 range 操作
+- 我花了几天业余时间看了看 Quill slate proseMirror ，从主流程上大概了解了，但还需要进一步探索细节。
+  - 👉🏻 不是修改 model ，而是重新生成（不可变数据，如用 immer）。副作用会变得不可控，越大越乱。
+  - command 不会直接修改 model ，而是 command -> operation -> model -> vdom & patchView
+  - model 并不是 DOM 结构的样子，而是扁平化甚至线性化，这样才能更好的进行 range 操作
 
 - 调研其他作品的关键是什么？精力有限，请务必抓住核心、抓住主要矛盾。
   - 它的重要概念和数据结构，如 Quill 的 Delta

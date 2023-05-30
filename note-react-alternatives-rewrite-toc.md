@@ -12,6 +12,16 @@ modified: 2021-09-20T20:12:38.499Z
 - react alternative/like/mini/clone
   - js: preact, didact, fre.v1, luy, mini-react
   - ts: inferno, nerv
+# react-rewrite
+- https://github.com/leontrolski/leontrolski.github.io/blob/master/33-line-react-with-comments.js
+  - [33 line React](https://leontrolski.github.io/33-line-react.html)
+
+- https://github.com/pomber/didact
+  - /3.8kStar/MIT/202010/js
+  - [A DIY guide to build your own React](https://pomb.us/build-your-own-react/)
+- https://github.com/manasb-uoe/didact
+  - Typed version of didact
+  - this repository refactors the code into separate files of TypeScript code and adds more features: useEffect, userMemo, useRef
 # react-alternatives
 - https://github.com/BetaSu/just-react
   - https://react.iamkasong.com/
@@ -98,13 +108,6 @@ modified: 2021-09-20T20:12:38.499Z
   - 还提供了源码解析系列文档，有28个文档
 - https://github.com/AttackXiaoJinJin/reactExplain
   - React源码解析16.8.6，还发布了掘金系列文章  /js
-
-- https://github.com/pomber/didact
-  - /3.8kStar/MIT/202010/js
-  - [A DIY guide to build your own React](https://pomb.us/build-your-own-react/)
-- https://github.com/manasb-uoe/didact
-  - Typed version of didact
-  - this repository refactors the code into separate files of TypeScript code and adds more features: useEffect, userMemo, useRef
 
 - react核心源码解析__全栈潇晨
   - [react源码解析19. 手写迷你版react](https://zhuanlan.zhihu.com/p/383433662)

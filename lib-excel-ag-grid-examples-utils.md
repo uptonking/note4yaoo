@@ -82,6 +82,9 @@ modified: 2022-08-21T18:32:08.391Z
 
 - https://github.com/cluemediator/get-total-row-count-react-ag-grid
   - How to get the total number of rows in AG Grid
+
+- https://github.com/mfreeborn/ag-grid-rs /rust
+  - to use the AG Grid datatable library within a Wasm context in Rust.
 # integrations
 - https://github.com/plotly/dash-ag-grid
   - a Dash component wrapper for the AG Grid Javascript package, enabling you to display AG Grid tables natively in your Dash app.

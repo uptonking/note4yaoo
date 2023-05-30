@@ -63,7 +63,7 @@ modified: 2023-02-05T19:03:12.723Z
     - 现在wangEditor内置的各个功能，也都是通过扩展插件和模块的形式搭建起来的
   - dev-xp
     - 表格方向键未实现
-  - https://github.com/wangfupeng1988/slate-dom-view
+  - https://github.com/wangfupeng1988/slate-dom-view /ts/💡
     - slate.js for DOM, without React.
 
 - prezly-slate /31Star/MIT/202208/ts/提交多

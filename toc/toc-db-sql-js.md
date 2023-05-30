@@ -99,6 +99,10 @@ modified: 2021-08-30T18:56:14.863Z
 # sql-utils
 - https://github.com/fibo/SQL92-JSON
   - can stringify a JSON into an SQL and viceversa parse an SQL and serialize it into a JSON
+# sql-parser
+- https://github.com/DTStack/dt-sql-parser /ts
+  - SQL Parsers for BigData, built with antlr4.
+  - We have provided a monaco-sql-languages package, you can integrate with monaco-editor easily.
 # more
 - https://github.com/webqit/objective-sql /202201/js
   - Objective SQL is a query client that wraps powerful concepts in a simple, succint API.

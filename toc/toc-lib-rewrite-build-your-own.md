@@ -47,6 +47,12 @@ modified: 2021-09-29T13:23:09.969Z
 
 - https://github.com/snabbdom/snabbdom /ts
   - A virtual DOM library with focus on simplicity, modularity, powerful features and performance.
+  - 每个VNode的属性
+    - selector: tag#id.className
+    - data: any
+    - children: VNode[]
+    - text: string
+    - elm: 每个VNode对应的真实dom节点
   - Snabbdom consists of an extremely simple, performant and extensible core that is only ≈ 200 SLOC. 
   - It offers a modular architecture with rich functionality for extensions through custom modules. 
   - To keep the core simple, all non-essential functionality is delegated to modules.

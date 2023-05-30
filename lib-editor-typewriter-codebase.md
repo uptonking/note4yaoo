@@ -9,6 +9,9 @@ modified: 2023-02-09T12:26:14.281Z
 
 # guide
 
+- dev-xp
+  - 视图层实现和wangEditor类似，但wangEditor使用了主流vdom工具库snabbdom
+
 - dev-to
   - 支持表格
 # not-yet
@@ -18,7 +21,8 @@ modified: 2023-02-09T12:26:14.281Z
 - lines是块级元素
   - 类似quill中的blocks, formats, embeds
 
-- Editor自身是一个eventemitter，
+- Editor自身是一个经典自定义eventemitter，
+  - 注意触发事件基于dom event，类似`this.dispatchEvent(new Event('root'));`，默认不冒泡
   - 在editor的构造函数，会注册默认view即rendering模块的onChange方法到editor， `editor.on('change', renderOnChange);`。
   - editor数据更新时，会手动执行this.update，从而触发view更新 `this.dispatchEvent(new EditorChangeEvent())`
   - prosemirror的数据变化后，可以手动在dispatchTransaction中view.updateState(newState)
@@ -40,6 +44,26 @@ modified: 2023-02-09T12:26:14.281Z
   - TextDocument将\n作为分隔符，拆分出了一个段落的op作为分隔符
 
 ## view/render
+
+- render渲染，基于自定义vdom实现，类似react
+  - lines/formats/embeds的render属性定义了渲染细节，`() => h('img', props)`
+
+```typescript
+// vnode中不包含真实dom
+export interface VNode {
+  type: string;
+  props: Props;
+  children: VChild[];
+  key: any;
+}
+```
+
+- 对于renderSingleLine
+  - line.content会作为children渲染，`type.render( line.attributes, renderInline(editor, line.content) )`; 
+  - renderInline会遍历operations，分别处理insert text和embeds，返回 VChild[]
+
+- view update
+  - 对于renderWhole和renderChanges，都是最小化dom更新操作 patchDom(newDom, oldDom, vdom)
 
 - 视图层在apply op时会设置change的来源 Source
   - user, input, history, paste, api

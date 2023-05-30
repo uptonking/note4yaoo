@@ -179,6 +179,9 @@ modified: 2022-04-05T10:08:25.947Z
   - full support for CRUD operations on data stored
   - locally in the browser's IndexedDB (with Dexie.js)
   - locally in a JSON or SQLite file in the device FS 
+
+- https://github.com/convergencelabs/javascript-examples
+  - Examples for the Convergence Real-time Collaboration Engine
 # crdt-rewrite
 - https://github.com/josephg/crdt-examples
   - CRDT examples from a DWEB talk

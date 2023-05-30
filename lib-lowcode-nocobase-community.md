@@ -9,9 +9,16 @@ modified: 2023-03-31T02:09:29.112Z
 
 # guide
 
-- not-yet
-  - [How can I create Search functionality?](https://github.com/nocobase/nocobase/discussions/1535)
-  - [建议：增加图表的定时刷新功能或者在图表上方增加刷新按钮，目前无法处理实时交互的数据图表](https://github.com/nocobase/nocobase/discussions/704)
+# not-yet
+- [How can I create Search functionality?](https://github.com/nocobase/nocobase/discussions/1535)
+  - not-yet
+
+- [预期会支持多租户的功能吗？或者说个人如果想开发一个多租户插件的话，应该从哪些地方开始入手？](https://github.com/nocobase/nocobase/discussions/1380)
+  - 目前有多租户插件，在线 demo 就是。后续需要继续完善
+
+- [建议：增加图表的定时刷新功能或者在图表上方增加刷新按钮，目前无法处理实时交互的数据图表](https://github.com/nocobase/nocobase/discussions/704)
+
+
 # discuss-stars
 - ## [服务器端字段目前没有校验功能](https://github.com/nocobase/nocobase/issues/303)
   - 有一个名为 email 的字段，需要做邮件格式校验，在界面添加是有校验的，但如果用 api 形式调用发现服务器端目前还没有做校验。

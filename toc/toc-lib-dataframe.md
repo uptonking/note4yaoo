@@ -7,8 +7,10 @@ modified: 2021-05-13T16:14:41.762Z
 
 # toc-lib-dataframe
 
-# data-notebook
+# guide
 
+- [How do pandas DataFrames work?](https://leontrolski.github.io/fake-data-frame.html)
+# data-notebook
 - https://github.com/jupyter/jupyter
   - /11.4kStar/BSD/202012/python
   - https://github.com/jupyter/notebook
@@ -18,9 +20,7 @@ modified: 2021-05-13T16:14:41.762Z
   - Python data analysis workflows often rely on the de facto standards pandas and Jupyter notebooks.
   - CARTOframes give the ability to communicate reproducible analysis while providing t
   - he ability to gain from CARTO's services like hosted, dynamic or static maps and Data Observatory augmentation.
-
 # python
-
 - https://github.com/pandas-dev/pandas
   - /27.5kStar/BSD/202011
   - 依赖 NumPy, python-dateutil, pytz
@@ -37,17 +37,13 @@ modified: 2021-05-13T16:14:41.762Z
 
 - https://github.com/wesm/feather /202102/inactive
   - Feather: fast, interoperable binary data frame storage for Python, R, and more powered by Apache Arrow
-
 # java
-
 - https://github.com/jtablesaw/tablesaw
   - /2.4kStar/Apache2/202011
   - It includes a dataframe and a visualization library, as well as utilities for loading, transforming, filtering, and summarizing data.
 - https://github.com/haifengl/smile
   - Statistical Machine Intelligence & Learning Engine
-
 # cpp
-
 - https://github.com/hosseinmoein/DataFrame
   - /730Star/BSD/202012
   - a C++ statistical library that provides an interface similar to Pandas package in Python.

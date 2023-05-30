@@ -11,9 +11,9 @@ modified: 2022-08-21T10:02:27.788Z
 
 - requirements
   - group/aggregate/pivot
-  - virtualized
+  - **operations support**
   - undo/redo
-  - operations
+  - virtualized
   - keyboard/a11y
 
 - 开源表格
@@ -502,23 +502,24 @@ modified: 2022-08-21T10:02:27.788Z
   - A standalone spreadsheet for the web, easily integrable and extendable.
   - 支持公式
   - 依赖bootstrap5、@odoo/owl
-  - 图标基于chart.js.v2
+  - 图表基于chart.js.v2
+  - 自定义实现了`css()`形式的css-in-js的方法
   - Real time collaboration
     - The solution we implement is based on Operation Transform (OT).
     - concurrent undo/redo are allowed
     - This solution has a lot of pros, but also some cons:
     - We need to write a transformation function for each command we create
     - Undo/Redo is synchronous, i.e. it should be accepted by the server before being executed locally.
+  - Model is the owner of the state of the Spreadsheet
+    - it defers the actual state manipulation work to plugins.
+    - State changes are then performed through commands.  Commands are dispatched to the model
+    - Model can be used in a standalone way to manipulate programmatically a spreadsheet
   - [[WIP] Version history](https://github.com/odoo/o-spreadsheet/pull/2259)
     - I'd keep the concepts of tree and branches hidden. They really are internal implementation details of the data structure.
   - https://github.com/odoo/owl /ts/NoDeps
     - A web framework for structured, dynamic and maintainable applications
     - 初始化前，需要先从服务器fetch界面ui相关的xml模版文件
     - 视图层使用xml模版，组件与视图耦合，react也这样
-    - Model is the owner of the state of the Spreadsheet
-      - it defers the actual state manipulation work to plugins.
-      - State changes are then performed through commands.  Commands are dispatched to the model
-      - Model can be used in a standalone way to manipulate programmatically a spreadsheet
     - Class based components with hooks, reactive state and concurrent mode
     - a fine grained reactivity system similar to Vue
     - Owl components are defined with ES6 classes and xml templates, uses an underlying virtual DOM, integrates beautifully with hooks, and the rendering is asynchronous.

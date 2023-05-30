@@ -10,10 +10,10 @@ modified: 2022-11-08T19:04:00.289Z
 # guide
 
 - requirements
+  - **block-style data model**
   - collaborative
   - draggable
   - columns
-  - block-style data model
   - virtualized
   - search
 
@@ -27,7 +27,7 @@ modified: 2022-11-08T19:04:00.289Z
   - [Rich Text Editors](https://gist.github.com/stormwild/044e184f8ef9bf3062a1ca950d6c0569)
 # known-text-editor
 - prosemirror /6kStar/MIT/202208/ts
-  - https://github.com/ProseMirror/prosemirror
+  - https://github.com/ProseMirror/prosemirrorp
   - http://prosemirror.net/
   - rich semantic content editor based on contentEditable, with support for collaborative editing and custom document schemas.
   - ProseMirror library consists of a number of separate modules.
