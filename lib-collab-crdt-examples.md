@@ -9,6 +9,11 @@ modified: 2022-04-05T10:08:25.947Z
 
 # guide
 
+- requirements
+  - **extensible-data-structure**
+  - undo/redo
+  - sync protocol
+
 - ref
   - https://github.com/alangibson/awesome-crdt
   - [Alternatives · ElectricSQL](https://electric-sql.com/docs/reference/alternatives)

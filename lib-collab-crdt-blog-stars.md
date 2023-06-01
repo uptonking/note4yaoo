@@ -11,6 +11,69 @@ modified: 2023-03-11T15:37:59.134Z
 
 # blogs
 
+## [You might not need a CRDT, but server reconciliation _Replicache](https://pitch.com/public/a49fccb0-da65-4d64-966e-e519674d951f)
+
+- replicache doesn't use crdt
+  - it uses server reconciliation, technology from the late 2000s
+  - popularized by video game industry, but has a lot of advantages for web apps too
+- some products also dont use crdt
+  - figma
+  - notion
+  - linear
+  - google docs
+
+- yjs is sequence crdt
+  - designed for long list/text/sorted-map
+- counter is not sequence or map, so yjs doesnot fit
+  - yjs `map.set` may cause `increment` op lost
+
+- how replicache works
+  - mutations continuously added at each device independently, without waiting for server
+  - mutations continuously pushed to server
+  - server linearizes mutations arbitrarily, iie in order of arrival
+  - server applies mutations to create new authoritative state
+- mutations are often added while awaiting confirmation of earlier ones
+- pending/unacked mutations are rebased atop latest server state by again running their code
+
+- when crdts work well, it's by capturing and preserving user intent
+- server reconciliation generalizes this idea. apps define their own intents using mutators
+- instead of each intent having to define a custom merge function, history linearization serves as a general-purpose merge.
+
+- crdts cannot easily implement data validation
+- with server reconciliation, only intents are sent upstream and server computes effect for itself
+  - this means u get validation for free
+  - if server ignores or alters a mutation, clients will all do the same
+
+- because server is authoritative, mutations do not have to be deterministic
+
+### [Slides for yesterday's talk on Replicache and Reflect](https://twitter.com/aboodman/status/1664008955214061569)
+
+- Are you considering evolving towards full OT by allowing mutators to transform pending mutations?
+  - Well *now* I am. 
+- I've built this system. The linearization is the part that makes the rest simple, add a simple logical clock   
+- It's a cool idea but I'm curious about concrete benefits that it would provide over the current simple model.
+  - The classic example is text editing. You receive two text insert operations that are individually valid and causally concurrent, but after you apply one, the other is incorrect unless its offsets are transformed by the length of the first.
+- I wish I had more time to think about this problem in particular.
+  - I keep thinking that there is probably something interesting and useful we can do for text editing in particular that takes advantage of the server. I'd love to have time to do a survey of the state of collaborative text editing and how they map to replicache.
+  - Like it's a pretty powerful thing that the mutators are *code* that can run and change its own result. Given the right state the second "insert" mutator ought to be able to implement the offsetting logic itself.
+- 💡 Yeah, so you could implement OT in mutators: keep a sequence number on the doc as a logical clock, **send sequence number with operation**, store the operations in a log along with their sequence number...
+  - then implement computeOffset by looking at all operations in the log with a sequence number greater than what was sent with the mutation.
+
+- The slides are good - some of the things that you’ve said are difficult with CRDTs is more a limitation of the libraries. E.g transactions, counters, server authority. 
+  - CRDT’s are network agnostic and can work well in centralised environments. Also Figma uses some CRDTs.
+- Can you expand? "Transaction" is a bit of a squishy word, but isolated transactions are only possible in a CRDT if you sacrifice durability. I believe durable transactions are possible but AFAIK it has never been demonstrated and would be research-level work.
+  - It is certainly possible to have a server be one of the nodes in a CRDT, but it is not easy to have the server actually be authoritative. You can filter operations before applying to server but (a) this is difficult to do well because you end up having to reverse engineer intent, and (b) you have to do something about the client that has now diverged.
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 ## [You might not need a CRDT | Drifting in Space](https://driftingin.space/posts/you-might-not-need-a-crdt)
 
 - CRDTs differ from simple leader/follower replication in that they do not designate an authoritative source-of-truth that all writes must pass through.

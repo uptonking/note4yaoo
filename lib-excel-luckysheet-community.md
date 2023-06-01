@@ -69,7 +69,7 @@ modified: 2022-08-21T09:57:42.969Z
 
 - luckysheet没有做好基础架构时，就开始大量的堆积功能上去了，功能真挺全乎，实现不堪目睹
   - 这个luckysheet功能强，如果走报表，功能太强，如果走协同，协同这块代码又太弱。3.0的方向和代码压力很大。我感觉
-  - 只能做小报表[表情]
+  - 只能做小报表
 
 - ## LUCKYSHEET每次操作都会保存全部，为了UNDO/REDO
   - 不支持变化量UNDO/redo
@@ -114,7 +114,9 @@ modified: 2022-08-21T09:57:42.969Z
 
 - 商业的话，组件技术支持必须跟得上，因为商业数据灾难，哪怕出现一次，都可能入狱
 
-- 还是那个问题：究竟朝什么方向走？报表？现在开源的太多！协同？这个工作量超级大，需求还少！
+- 还是那个问题：究竟朝什么方向走？
+  - 报表？现在开源的太多！
+  - 协同？这个工作量超级大，需求还少！
 
 - wps有web版本
   - 永中有web版本
@@ -143,3 +145,15 @@ modified: 2022-08-21T09:57:42.969Z
 - https://twitter.com/benlcollins/status/1511054363363524621
 - 1) QUERY
 - 2) SPARKLINE
+
+# discuss-collab
+- ## 
+
+- ## 
+
+- ## [[BUG]ot算法有问题](https://github.com/dream-num/Luckysheet/issues/224)
+- 并发插入列（行），插入在相同位置，文档状态不一致。
+
+- ## [[BUG]两个bug](https://github.com/dream-num/Luckysheet/issues/1212)
+  - 开启协同功能后, 前端websocket发给后端的数据无法用pako解压报, 报头错误, , , 我下断点拦截压缩之前的数据, 然后复制到本地用测试(直接copy的controller/server.js里面一模一样的代码)pako压缩后数据居然和我正常后端收到的数据不一样
+- 已经解决了, 将luckysheet的pako升级到最新版重新build即可解决, 官方能不能走点心啊, 还是这个项目彻底摆烂了?

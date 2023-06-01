@@ -15,7 +15,16 @@ modified: 2023-02-07T09:43:01.972Z
   - a Tanstack Query extension to seamlessly integrate Protobuf
   - It enables effortless communication with servers that speak the Connect Protocol.
   - One of the best features of this library is that once you write your schema in Protobuf form, the TypeScript types are generated and then inferred.
+
+- https://github.com/msolvaag/redux-db
+  - a normalized redux store and easy object management.
+  - redux-db uses internal indexes to speed up lookups and is quite fast at the current state.
+  - inspired by libraries such as normalizr and redux-orm.
+
 # query-react
+- https://github.com/data-client/rest-hooks
+  - Normalized state management for async data. Safe. Fast. Reusable.
+
 
 # fetch/axios
 - https://github.com/sindresorhus/ky /ts

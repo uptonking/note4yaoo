@@ -54,6 +54,41 @@ modified: 2022-08-21T09:54:02.990Z
   - RowRender初始化时，会注册各种redraw事件
   - rowRenderer.onModelUpdated会执行 redrawAfterModelUpdate
     - 计算需要重新渲染的行的索引index，然后遍历这些行索引创建或更新RowComp
+  - rowRenderer.redrawAfterModelUpdate 直接操作dom
+    - 先计算rowsToRecycle
+    - this.redraw(rowsToRecycle, animate);
+      - this.calculateIndexesToDraw(rowsToRecycle);
+      - this.removeRowCompsNotToDraw > renderedRow.destroy()
+      - this.createOrUpdateRowComp
+      - 先获取数据rowNode, this.paginationProxy.getRow(rowIndex);
+      - 再渲染视图, this.createRowComp(rowNode) 
+        - new RowComp 
+        - this.setupRowContainers()
+        - createRowContainer
+        - createCells
+        - rowContainerComp.appendRowTemplate(cellTemplatesAndComps)
+    - this.restoreFocusedCell
+  - rowRenderer.refreshCells
+    - cellComp.refreshCell
+    - el.removeChild(el.firstChild);
+    - this.eParentOfValue.innerHTML = _.escape(valueToUse);
+# undo/redo
+- 对于rowEditing/cellEditing/paste/fill操作，都会触发事件执行
+  - const action = new UndoRedoAction(this.cellValueChanges); 
+    - 会保留 oldValue和newValue
+  - pushActionsToUndoStack(action); 
+
+- undo
+  - action = this.undoStack.pop(); 
+  - currentRow.setDataValue(columnId, oldValue); 
+  - this.redoStack.push(undoAction); 
+
+- redo
+  - action = this.redoStack.pop(); 
+  - currentRow.setDataValue(columnId, newValue); 
+  - this.undoStack.push(redoAction); 
+
+- 对于特殊类型的action要特殊处理
 # packages/modules
 - ag-grid-packages
   - ag-grid-community: All Community Features

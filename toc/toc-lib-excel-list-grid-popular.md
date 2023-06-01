@@ -36,7 +36,7 @@ modified: 2022-08-21T10:02:27.788Z
   - glide-data-grid: react组件
   - x-spreadsheet/wolf: class类和函数式都有
   - cheetah-grid(ts): 基于class类继承
-# list-grid-with-div
+# list-grid-div
 - ag-grid /MIT/6.4kStar/202202/ts/NoDeps
   - https://github.com/ag-grid/ag-grid
   - https://www.ag-grid.com/example/
@@ -58,9 +58,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://react-table.tanstack.com/
   - Hooks for building fast and extendable tables and datagrids for React
   - React Table is a headless utility, which means it doesn't supply any actual UI elements.
-  - react-virtual /MIT/1.1kStar/202007
-    - https://github.com/tannerlinsley/react-virtual
-    - Hooks for virtualizing scrollable elements in React
+  - https://github.com/tannerlinsley/react-virtual
 
 - Luckysheet /4.5kStar/MIT/202202/js/vanillajs
   - https://github.com/mengshukeji/Luckysheet
@@ -84,6 +82,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/ruilisi/fortune-sheet
   - https://ruilisi.github.io/fortune-sheet-docs/zh/guide/
   - https://ruilisi.github.io/fortune-sheet-demo
+  - https://ruilisi.github.io/fortune-sheet-demo/
   - FortuneSheet是一款开箱即用的类似Excel和Google Sheets的javascript表格组件。
   - 本项目源于 Luckysheet，并继承了它的很多代码。我们为将其转换为typescript做了很多努力，并且解决了一些原项目设计层面的问题。
   - 完全使用typescript编写。
@@ -93,6 +92,10 @@ modified: 2022-08-21T10:02:27.788Z
   - 避免在window对象上存储数据。
   - 用一个forked handsontable/formula-parser 来处理公式计算。
   - A working example with Express (backend server) and MongoDB (data persistence) is available in backend-demo folder.
+  - 👀 从luckysheet未迁移的功能
+    - undo/redo、协作
+    - 透视表、图表、拖拽
+    - 下拉填充、查找替换
   - [Is there any plan to make a Vue version? soon](https://github.com/ruilisi/fortune-sheet/issues/14)
 
 - x-sheet /50Star/MPL/202209/js/vanillajs/luckysheet开发者
@@ -109,6 +112,7 @@ modified: 2022-08-21T10:02:27.788Z
   - 依赖bootstrap5、@odoo/owl
   - 图表基于chart.js.v2
   - 自定义实现了`css()`形式的css-in-js的方法
+  - 透视表和图表功能弱于luckysheet
   - Real time collaboration
     - The solution we implement is based on Operation Transform (OT).
     - concurrent undo/redo are allowed
@@ -121,13 +125,18 @@ modified: 2022-08-21T10:02:27.788Z
     - Model can be used in a standalone way to manipulate programmatically a spreadsheet
   - [[WIP] Version history](https://github.com/odoo/o-spreadsheet/pull/2259)
     - I'd keep the concepts of tree and branches hidden. They really are internal implementation details of the data structure.
-  - https://github.com/odoo/owl /ts/NoDeps
-    - A web framework for structured, dynamic and maintainable applications
-    - 初始化前，需要先从服务器fetch界面ui相关的xml模版文件
-    - 视图层使用xml模版，组件与视图耦合，react也这样
-    - Class based components with hooks, reactive state and concurrent mode
-    - a fine grained reactivity system similar to Vue
-    - Owl components are defined with ES6 classes and xml templates, uses an underlying virtual DOM, integrates beautifully with hooks, and the rendering is asynchronous.
+- https://github.com/odoo/owl /ts/NoDeps
+  - A web framework for structured, dynamic and maintainable applications
+  - 初始化前，需要先从服务器fetch界面ui相关的xml模版文件
+  - 视图层使用xml模版，组件与视图耦合，react也这样
+  - Class based components with hooks, reactive state and concurrent mode
+  - a fine grained reactivity system similar to Vue
+  - Owl components are defined with ES6 classes and xml templates, uses an underlying **virtual DOM**, integrates beautifully with hooks, and the rendering is asynchronous.
+  - [owl/comparison with react/vue](https://github.com/odoo/owl/blob/master/doc/miscellaneous/comparison.md)
+    - Owl supports slots, which is the primary mechanism to make generic reusable/composable components
+    - Owl is not dependant on any external build tool.Owl uses the standard xml parser that comes with every browser.
+    - components in OWL are totally asynchronous. useful for lazy/dynamic loading
+    - owl reactivity is done with a Proxy. once state prop changes, rendering is scheduled in the next microtask(promise)
 
 - react-window /14kStar/MIT/202304/js
   - https://github.com/bvaughn/react-window
@@ -186,7 +195,7 @@ modified: 2022-08-21T10:02:27.788Z
   - React components for efficiently rendering large lists and tabular data
 - react-data-grid /MIT/4kStar/202201/ts
   - https://github.com/adazzle/react-data-grid
-  - https://adazzle.github.io/react-data-grid/canary/
+  - https://adazzle.github.io/react-data-grid/
   - 基于div实现，每行对应的dom元素存在，未实现row/column span(merging cells)
   - 项目模块化，分为core和addons
   - Excel-like grid component built with React, with editors, keyboard navigation, copy...
@@ -196,6 +205,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://serenity-is.github.io/sleekgrid/
   - a complete rewrite of the original SlickGrid in TypeScript with ES6 modules
   - 支持插件
+  - 提供了编辑、undo、format示例
   - used extensively in Serenity, our open source ASP. NET Core / TypeScript based business application framework. 
 
 - tui.grid /2.2kStar/MIT/202305/ts/vanillajs
@@ -333,8 +343,9 @@ modified: 2022-08-21T10:02:27.788Z
 - https://github.com/flexicious/react-data-grid /未开源/示例多/测试数据
   - https://flexicious.github.io/react-data-grid/
   - a team with 20+ years of experience building data grids
+  - This is a monorepo of all the samples and examples
 
-- reactdatagrid /25Star/MIT/202201/js/class组件
+- reactdatagrid /25Star/MIT/202201/ts/class组件/示例友好
   - https://github.com/inovua/reactdatagrid
   - https://reactdatagrid.io/demo
   - 基于div实现，每行对应的dom元素存在
@@ -343,9 +354,19 @@ modified: 2022-08-21T10:02:27.788Z
   - Community Edition
     - sort,filter,pagination,edit inline,row selection
     - colspan,context menu,remote data source,column resize/reorder
-  - Enterprise Edition
+  - Enterprise Edition也开源了 ye
     - group,pivot,master/detail,tree-grid
     - locked column,row resize/reorder,footer
+
+- reactgrid /MIT/229Star/202202/ts
+  - https://github.com/silevis/reactgrid
+  - https://reactgrid.com/
+  - 基于div实现
+  - Add spreadsheet-like behavior to your React app
+  - ReactGrid is available in two versions, MIT (this package) which serve the full interface but is limited in functionality and PRO which is fully functional version.
+  - ReactGrid is NOT
+    - Record-based data table(like ag-grid, handsontable)
+    - Spreadsheet with formulas(like Telerik Kendo UI DataTable, dhtmlxSpreadsheet)
 
 - https://github.com/softindex/uikernel /ts
   - React.js UI library for building forms, editable grids and reports with drilldowns and filters, based on simple unified record model with client-side and server-side validations and data bindings.
@@ -364,7 +385,7 @@ modified: 2022-08-21T10:02:27.788Z
 - https://github.com/Magnithor/CanvasTable /202201/ts/inactive
   - https://magni.strumpur.net/CanvasTable/
   - Typescript library who draws a table on canvas
-  - If you like to use offscreenCanvas and/or keep the data in webworker then you use mthb-offscreen-canvas-table on main javascript and mthb-offscreen-canvas-table-worker in weworker they will work to geather
+  - If you like to use offscreenCanvas and/or keep the data in webworker, then you use mthb-offscreen-canvas-table on main javascript and mthb-offscreen-canvas-table-worker in webworker they will work together
 
 - https://github.com/finos/regular-table /202303/js/NoDeps
   - regular-table exports a custom element named `<regular-table>`, which renders a regular HTML `<table>` to a sticky position within a scrollable viewport. 
@@ -383,7 +404,14 @@ modified: 2022-08-21T10:02:27.788Z
   - A data table component for the Vue Stacks Ecosystem
   - VSTX Data Table is a powerful data grid component plugin (Vue.js 2.4+) for displaying, sorting, searching, filtering, and interacting with large and deeply nested data set
   - (Optional) Web Worker support for Filtering, Sorting, and Slicing data
-# div-react
+# list-grid-div-react
+- fixed-data-table-2 /BSD/1kStar/202111/js
+  - https://github.com/schrodinger/fixed-data-table-2
+  - http://schrodinger.github.io/fixed-data-table-2/
+  - React table component designed to allow presenting millions of rows of data.
+  - https://github.com/facebook/fixed-data-table
+    - /4.3kStar/archived
+
 - react-data-table-component /1.2kStar/Apache2/202112/ts
   - https://github.com/jbetancur/react-data-table-component
   - https://jbetancur.github.io/react-data-table-component
@@ -396,12 +424,6 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/ThaddeusJiang/react-advanced-table
   - http://react-advanced-table.vercel.app/
   - React Advanced Table
-- fixed-data-table-2 /BSD/1kStar/202111/js
-  - https://github.com/schrodinger/fixed-data-table-2
-  - http://schrodinger.github.io/fixed-data-table-2/
-  - React table component designed to allow presenting millions of rows of data.
-  - https://github.com/facebook/fixed-data-table
-    - /4.3kStar/archived
 - react-spreadsheet-grid /MIT/949Star/202101/js/inactive
   - https://github.com/denisraslov/react-spreadsheet-grid
   - https://denisraslov.github.io/grid
@@ -417,15 +439,6 @@ modified: 2022-08-21T10:02:27.788Z
   - https://papasnippy.github.io/react-bolivianite-grid/
   - 基于div实现，每行对应的dom元素不存在
   - React grid component for virtualized rendering large tabular data.
-- reactgrid /MIT/229Star/202202/ts
-  - https://github.com/silevis/reactgrid
-  - https://reactgrid.com/
-  - 基于div实现
-  - Add spreadsheet-like behavior to your React app
-  - ReactGrid is available in two versions, MIT (this package) which serve the full interface but is limited in functionality and PRO which is fully functional version.
-  - ReactGrid is NOT
-    - Record-based data table(like ag-grid, handsontable)
-    - Spreadsheet with formulas(like Telerik Kendo UI DataTable, dhtmlxSpreadsheet)
 - react-datagrid2 /MIT/20Star/201903/js
   - https://github.com/stevelacy/react-datagrid2
   - https://stevelacy.github.io/react-datagrid2/
@@ -471,9 +484,6 @@ modified: 2022-08-21T10:02:27.788Z
   - Data grids in functional style with ReactJS
   - made with React-Virtualized for creating data grids with filtering, sorting, grouping and aggregates computation.
   - written in functional programming style with ES2016 and Flow.
-- https://github.com/flexicious/react-datagrid
-  - /8kStar/MIT/201810/js
-  - Powerful DataGrid/DataTable/Tree Table component for React
 - smart-grid /3Star/NALic/202006/ts/NoDeps
   - https://github.com/mukuljainx/smart-grid
   - https://mukuljainx.github.io/smart-grid/
@@ -523,43 +533,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/ZingGrid/zinggrid
   - Our main focus is on fast, responsive, and customizable grids utilizing ES6 and native web components.
   - Our goal is to solve the problem of creating a CRUD grid in under five minutes.
-# list-grid-with-canvas
-- Luckysheet /4.5kStar/MIT/202202/js/vanillajs
-  - https://github.com/mengshukeji/Luckysheet
-  - https://github.com/dream-num/univer
-  - https://mengshukeji.github.io/LuckysheetDemo/
-  - an online spreadsheet like excel
-  - 基于canvas实现
-  - 依赖jspdf
-  - forks
-    - https://github.com/carl-jin/RichSpreadsheet
-    - https://github.com/fromatlantis/Luckysheet
-    - https://github.com/titanDevelopers/Luckysheet
-- https://gitee.com/zhouweng/mini_sheet /js
-  - 我花了两周时间，通读了LuckySheet的源码，并且裁剪出了可执行的最小项目MiniSheet
-  - [MiniSheet目录_舟翁的博客](https://blog.csdn.net/u010593516/article/details/113743472)
-
-- fortune-sheet /1.4kStar/MIT/202208/ts
-  - https://github.com/ruilisi/fortune-sheet
-  - https://ruilisi.github.io/fortune-sheet-docs/zh/guide/
-  - https://ruilisi.github.io/fortune-sheet-demo
-  - FortuneSheet是一款开箱即用的类似Excel和Google Sheets的javascript表格组件。
-  - 本项目源于 Luckysheet，并继承了它的很多代码。我们为将其转换为typescript做了很多努力，并且解决了一些原项目设计层面的问题。
-  - 完全使用typescript编写。
-  - 去掉了 jQuery 的依赖, 用React/Vue + immer来管理DOM和状态。
-    - 架构分为 core+react
-  - 同页面支持多个实例。目前只支持单个实例，因为有全局状态
-  - 避免在window对象上存储数据。
-  - 用一个forked handsontable/formula-parser 来处理公式计算。
-  - A working example with Express (backend server) and MongoDB (data persistence) is available in backend-demo folder.
-  - [Is there any plan to make a Vue version? soon](https://github.com/ruilisi/fortune-sheet/issues/14)
-
-- x-sheet /50Star/MPL/202209/js/vanillajs/luckysheet开发者
-  - https://github.com/eiji-th/x-sheet
-  - https://gitee.com/eigi/x-sheet
-  - 高性能 web javaScript 电子表格
-  - 依赖exceljs
-
+# list-grid-canvas
 - x-spreadsheet/wolf-table /10.1kStar/MIT/202112/ts
   - https://github.com/wolf-table/table /ts
   - https://github.com/wolf-table/table-renderer
@@ -571,7 +545,7 @@ modified: 2022-08-21T10:02:27.788Z
       - 表格对于协同编辑没有什么意义，暂时不会考虑类似功能
     - [Load Json Data Or Excel Data](https://github.com/myliang/x-spreadsheet/issues/55)
 
-- glide-data-grid /836Star/MIT/202202/ts
+- glide-data-grid /836Star/MIT/202202/ts/react-heavy
   - https://github.com/glideapps/glide-data-grid
   - https://grid.glideapps.com/
   - https://glideapps.github.io/glide-data-grid
@@ -595,13 +569,13 @@ modified: 2022-08-21T10:02:27.788Z
   - 支持公式
   - 支持undo，暂未实现redo
 
-- simple-sheet /89Star/MIT/202208/ts
+- simple-sheet /89Star/MIT/202208/ts/react
   - https://github.com/lvming6816077/simple-sheet
   - https://www.nihaoshijie.com.cn/mypro/simple-sheet/index.html
   - 高性能（使用canvas进行渲染）
   - 依赖react-knova、mobx-react-lite、react-viewer
   - 支持行、列宽度高度、自动筛选视图、单元格样式和格式设置等
-  - [【simple-sheet】前u n do端在线Sheet文档技术解析](https://zhuanlan.zhihu.com/p/547293952)
+  - [【simple-sheet】前端在线Sheet文档技术解析](https://zhuanlan.zhihu.com/p/547293952)
 
 - json5-sheet-editor /10Star/MIT/202208/js
   - https://github.com/smalllong/json5-sheet-editor
@@ -609,25 +583,29 @@ modified: 2022-08-21T10:02:27.788Z
   - A simple and high efficient JSON5 based spreadsheet editor
   - 依赖自研lightue、json5
 
-- cheetah-grid /1.3kStar/MIT/202304/ts/NoDeps/vanillajs
+- cheetah-grid /1.3kStar/MIT/202304/ts/NoDeps/vanillajs/偏展示
   - https://github.com/future-architect/cheetah-grid
   - https://future-architect.github.io/cheetah-grid/documents/introduction/
   - Cheetah Grid is a high performance JavaScript data table component that works on canvas
   - 只能选择表格最外层容器div元素，canvas元素无法直接通过拾取工具选中
+
+- rowsncolumns-grid /MIT/29Star/202105/ts/react/inactive
+  - https://github.com/rowsncolumns/grid
+  - https://rowsncolumns.app/
+  - https://rowsncolumns.github.io/grid
+  - Declarative Canvas Grid.
+  - 示例非常丰富
+  - 依赖react-konva、scroller
+  - SpreadSheet - Commercially available Excel-like Grid
+  - Exporter - Excel Export plugin
+  - Formulas with Cross-sheet references
+  - Konva Grid is a pure renderer, that will work with many third-party table plugins
 
 - canvas-datagrid /BSD/636Star/202202/js/支持vanillajs和web-comp
   - https://github.com/TonyGermaneri/canvas-datagrid
   - https://tonygermaneri.github.io/canvas-datagrid/tutorials/demo.html
   - Canvas based data grid web component.
   - Capable of displaying millions of contiguous hierarchical rows and columns without paging or loading, on a single canvas element.
-
-- rowsncolumns-grid /MIT/29Star/202105/ts/inactive
-  - https://github.com/rowsncolumns/grid
-  - https://rowsncolumns.app/
-  - Declarative Canvas Grid.
-  - 依赖react-konva、scroller
-  - SpreadSheet - Commercially available Excel-like Grid
-  - Exporter - Excel Export plugin
 
 - https://github.com/ericdrowell/PowerGrid /inactive
   - blazing fast performance and massive scale (100M cells+) via virtualized viewport
@@ -668,12 +646,12 @@ modified: 2022-08-21T10:02:27.788Z
   - 基于Canvas开发Excel的技术预研项目
 - https://github.com/Harlock123/LCTDataGrid
   - keep the Canvas object as small as possible by only rendering the visible parts of the resulting Grid
-# list-grid-with-svg
+# list-grid-svg
 - svgtable /10Star/NALic/202105/js/d3
   - https://github.com/analyzer2004/svgtable
   - https://observablehq.com/@analyzer2004/svgtable
   - An SVG Table with sticky rows, columns and many other features.
-# list-grid-with-table-tr-td
+# list-grid-table-tr-td
 - handsontable 6.2.2 /MIT/13.8kStar/202007/js
   - https://github.com/handsontable/handsontable
   - https://handsontable.com/
@@ -697,6 +675,16 @@ modified: 2022-08-21T10:02:27.788Z
   - HTML table plugin written in TypeScript using vanilla js
   - Grid.js can be used with any JavaScript frameworks (React, Angular, Preact or VanillaJS)
 
+- Simple-DataTables /1.1kStar/LGPLv3/202304/ts
+  - https://github.com/fiduswriter/Simple-DataTables
+  - https://fiduswriter.github.io/Simple-DataTables/
+  - A extendable, dependency-free javascript HTML table plugin.
+  - Similar to jQuery DataTables, but without the jQuery dependency.
+  - Based on Vanilla-DataTables, but written in ES2018.
+  - Using diffDOM for updating the DOM
+  - https://github.com/Mobius1/Vanilla-DataTables
+    - /MIT/inactive
+
 - jexcel /MIT/4.8kStar/202007/js
   - https://github.com/paulhodel/jexcel
   - https://bossanova.uk/jexcel
@@ -714,14 +702,26 @@ modified: 2022-08-21T10:02:27.788Z
   - Only visible cells are rendered and queried from a natively async virtual data model, making regular-table ideal for enormous or remote data sets.
   - Small bundle size, no dependencies.
 
-- Simple-DataTables /1.1kStar/LGPLv3/202304/ts
-  - https://github.com/fiduswriter/Simple-DataTables
-  - https://fiduswriter.github.io/Simple-DataTables/
-  - A extendable, dependency-free javascript HTML table plugin.
-  - Similar to jQuery DataTables, but without the jQuery dependency.
-  - Based on Vanilla-DataTables, but written in ES2018.
-  - https://github.com/Mobius1/Vanilla-DataTables
-    - /MIT/inactive
+- GridManager /551Star/MIT/202010/ts
+  - https://github.com/baukh789/GridManager
+  - https://gridmanager.lovejavascript.com/
+  - https://gridmanager.lovejavascript.com/demo/index.html
+  - 快速、灵活的对Table标签进行实例化，让Table标签充满活力
+  - 支持常见功能，还提供了如: 导出、打印、列配置、右键菜单、行列移动、用户偏好记忆等功能。
+  - 支持在原生JS、jQuery、Angular 1.x、Vue、React环境下使用
+  - 内置基础类库jTool, 对原生DOM提供了缓存机制。
+
+- https://github.com/renanlecaro/importabular /js
+  - https://renanlecaro.github.io/importabular/
+  - 功能较少
+  - Minimal spreadsheet javascript component
+  - spreadsheet editor for the web, to easily let your users import their data from excel
+
+- https://github.com/NeXTs/Clusterize.js
+  - https://clusterize.js.org/
+  - /6.8kStar/GPLv3/201901/js
+  - Tiny vanilla JS plugin to display large data sets easily
+  - 支持table标签、li标签
 
 - FathGrid /12Star/MIT/202011/js/NoDeps
   - https://github.com/admirhodzic/FathGrid
@@ -735,26 +735,24 @@ modified: 2022-08-21T10:02:27.788Z
   - adding search, sort, filters and flexibility to tables, lists and various HTML elements.
   - Built to be invisible and work on existing HTML.
 
-- CSS responsive table
-  - https://codepen.io/scottjehl/pen/abJrPOP
-  - A CSS-only responsive table with fixed column & row headers, inside a layout, with scroll snapping!
-
 - https://github.com/lebonnet/bomtable /js
   - https://lebonnet.github.io/
   - web table like simple excel
 
 ## table-tr-td-react
 
-- react-datasheet /MIT/4.2kStar/202108/NoDeps
+- ka-table /58Star/MIT/202305/ts/react/示例丰富
+  - https://github.com/komarovalexander/ka-table
+  - http://ka-table.com/
+  - https://komarovalexander.github.io/ka-table
+  - 基于table标签实现
+  - Controllable React Table component with Sorting, Filtering, Grouping, Virtualization, Editing and many more
+
+- react-datasheet /MIT/4.2kStar/202108/js/NoDeps
   - https://github.com/nadbm/react-datasheet
   - https://nadbm.github.io/react-datasheet/
   - Excel-like data grid (table) component for React
   - 基于table标签实现，样式太简单
-- https://github.com/komarovalexander/ka-table
-  - /58Star/MIT/202010/ts/inactive
-  - http://ka-table.com/
-  - 基于table标签实现
-  - Controllable React Table component with Sorting, Filtering, Grouping, Virtualization, Editing and many more
 
 - rc-table /MIT/693star/202010/ts
   - https://github.com/react-component/table
@@ -883,10 +881,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://demo.vaadin.com/spreadsheet/
   - 基于div实现
   - a UI component add-on for Vaadin 7 which provides means to view and edit Excel spreadsheets in Vaadin applications.
-- https://github.com/renanlecaro/importabular
-  - https://renanlecaro.github.io/importabular/
-  - 功能较少
-  - Minimal spreadsheet javascript component
+
 - backgrid /2kStar/MIT/201702/js/backbone
   - https://github.com/cloudflarearchive/backgrid
   - an easily stylable semantic HTML data grid
@@ -898,12 +893,7 @@ modified: 2022-08-21T10:02:27.788Z
   - mobile-ready, data-driven, modular grid widget designed for use with dstore
   - Dojo core is the only hard dependency for dgrid
   - dstore >= 1.0.3 or 1.1.1, for store-backed grids
-- GridManager /551Star/MIT/202010/js
-  - https://github.com/baukh789/GridManager
-  - https://gridmanager.lovejavascript.com/
-  - 快速、灵活的对Table标签进行实例化，让Table标签充满活力
-  - 支持常见功能，还提供了如: 导出、打印、列配置、右键菜单、行列移动、用户偏好记忆等功能。
-  - 支持在原生JS、jQuery、Angular 1.x、Vue、React环境下使用
+
 - ornamentum /140Star/MIT/202001/ts/angular
   - https://github.com/yohangz/ornamentum
   - https://ornamentum.app/
@@ -915,10 +905,7 @@ modified: 2022-08-21T10:02:27.788Z
   - http://uiplay.jui.io/?p=xtable_1
   - 基于table标签实现
   - JUI grid can handle millions of data, and can display data in a hierarchical structure
-- https://github.com/NeXTs/Clusterize.js
-  - /6.8kStar/GPLv3/201901/js
-  - Tiny vanilla JS plugin to display large data sets easily
-  - 支持table标签、li标签
+
 - https://github.com/vitmalina/w2ui
   - /1.8kStar/MIT/202009/js
   - UI widgets for modern apps. Data table, forms, toolbars, sidebar, tabs, tooltips, popups. All under 120kb (gzipped).
@@ -965,6 +952,9 @@ modified: 2022-08-21T10:02:27.788Z
 - https://github.com/handsontable/spreadsheet-viewer /NonOpen
   - A 30-day trial license is available
 # css-table/grid
+- https://codepen.io/scottjehl/pen/abJrPOP
+  - A CSS-only responsive table with fixed column & row headers, inside a layout, with scroll snapping!
+
 - https://github.com/coston/react-super-responsive-table
   - https://react-super-responsive-table.netlify.app/
   - converts your table data to a user-friendly list in mobile view.

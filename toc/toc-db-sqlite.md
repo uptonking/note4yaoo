@@ -84,9 +84,10 @@ modified: 2021-08-30T18:56:18.632Z
   - Internally, ChiselStrike uses a SQLite database 
 
 - https://github.com/x2bool/xlite /rust
-  - Query Excel spredsheets (.xlsx, .xls, .ods) using SQLite
+  - Query Excel spreadsheets (.xlsx, .xls, .ods) using SQLite
   - allow working with spreadsheets from SQLite exposing them as virtual tables.
   - XLite is a SQLite extension written in Rust. 
+
 # sqlite-viewer
 - https://github.com/inukshuk/sqleton
   - Visualizes your SQLite database schema.

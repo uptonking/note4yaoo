@@ -161,7 +161,7 @@ $$('[contenteditable]')
   - 分层渲染
   - 腰包掉到床头版与墙的夹缝中了
 
-## 050
+## 06
 
 - not-yet
   - todo remove hashId在编辑器model中有什么作用
@@ -260,14 +260,19 @@ $$('[contenteditable]')
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming-infinite-list/tree
-# dev-05
+# dev-06
 
-## 050
+## 060
+
+## 0601
+
+# dev-05-tanstack-table-virtual/sequelize/undb
 
 ## 0529
 
 - [eslint - Is there a way to automatically fix \`import type\` errors on TypeScript when using "importsNotUsedAsValues": "error"? - Stack Overflow](https://stackoverflow.com/questions/71080256/is-there-a-way-to-automatically-fix-import-type-errors-on-typescript-when-usin)
   - I found ESLint rule consistent-type-imports which basically ensure the same as "importsNotUsedAsValues": "error" TypeScript compiler flag but on ESLint level.
+
 ## 0528
 
 - [Promises/Fetch in JavaScript: how to extract text from text file - Stack Overflow](https://stackoverflow.com/questions/50401390/promises-fetch-in-javascript-how-to-extract-text-from-text-file)

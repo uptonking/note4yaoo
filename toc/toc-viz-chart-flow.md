@@ -10,8 +10,8 @@ modified: 2020-10-22T10:22:55.878Z
 # guide
 
 - requirements
+  - **auto-layout**
   - undo/redo
-  - auto layout
   - transaction(like prosemirror/mxgraph)
 
 - usecase
