@@ -507,6 +507,10 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/minheq/stela
   - Rich Text Editor Slate port in Flutter.
 
+- https://github.com/nathanfaucett/svelte-slate /ts
+  - https://nathanfaucett.github.io/svelte-slate/
+  - tries to mimic the react api from slate-react as much as possible
+
 ## slate-v0.47
 
 - https://github.com/372623460jh/sand-slate /js

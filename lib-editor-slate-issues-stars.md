@@ -9,7 +9,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 # guide
 
-# faq
+# issues
 
 ## 
 
@@ -17,13 +17,23 @@ modified: 2023-02-05T19:03:12.723Z
 
 ## [Introduce `editor.transaction()` to replace `without*` functions](https://github.com/ianstormtaylor/slate/issues/2658)
 
-- But it seems to me like in the most recent version Editor.withoutNormalizing pretty much does what is suggested here and the withoutSaving and withoutMerging functions seem to not exist anymore.
+- But it seems to me like in the most recent version `Editor.withoutNormalizing` pretty much does what is suggested here and the withoutSaving and withoutMerging functions seem to not exist anymore.
 
 ## [Feature suggestion: isolated/atomic operation groups in HistoryEditor](https://github.com/ianstormtaylor/slate/issues/3874)
 
 - My question here is how is this different than just using `Editor.withoutNormalizing`, which basically batches a set of Operations into an "atomic" unit anyways (and, as a consequence, makes the history state include that batch of operations)? I think `Editor.withoutNormalizing` could be renames to `Editor.transaction` really and it might be more descriptive.
 
-- that is what `Editor.withoutNormalizing` does. It baches all Operations submitted within the callback into 1 "transaction" in the history stack.
+- when you use `Editor.withoutNormalizing` and multiple Operations are submitted within the callback, then all those Operations are merged into a single array in the history stack.
+  - When we want to ensure a given "user action" is 1 history event, we wrap it in Editor.withoutNormalizing. This works for wrapping/unwrapping links, etc. in our codebase as it stands now.
+  - I am actually in favor of renaming `Editor.withoutNormalizing` to `Editor.transaction` as that is more descriptive of what it actually does.
+
+- If you want to batch Operations, defer normalization and onChange and have those batched operations show up in the history stack in a single array, that is what Editor.withoutNormalizing is for.
+
+- Operations are batched (per event tick) automatically; that's what the Promise.resolve in createEditor() does.
+  -  I assume this exists so onChange doesn't fire for every single operation. 
+
+- Your change to how onChange gets called is interesting (synchronously instead of like currently on next tick), do you think it could be a reasonable default?
+  - Yes, we have been using it for 12 months at Aline and it works very well. Just wrap anything you don't want to synchronously normalize in withoutNormalizing and you're good.
 
 ## [Selection is null after editor loses focus](https://github.com/ianstormtaylor/slate/issues/3412)
 

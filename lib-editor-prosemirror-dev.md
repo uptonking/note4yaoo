@@ -9,9 +9,14 @@ modified: 2021-05-06T09:39:53.522Z
 
 # guide
 - prosemirror-pros
-  - modular and extensible
+  - powerful features
+  - modular, extensible
+  - selective undo/redo
+  - support branch
 
 - prosemirror-cons
+  - 数据结构层的设计不够通用
+    - step/transform不是典型的ot operation
   - 不支持动态改变schema
   - 与其他框架的集成不是很完美，ReactNodeView用不用portal的最佳实践不明确
   - 编辑器的多个插件存在依赖关系时如何处理
@@ -60,6 +65,78 @@ modified: 2021-05-06T09:39:53.522Z
   - tiptap的drawing示例，可以在空svg元素上画路径
   - atlaskit-editor开源了自定义renderer可以参考
   - atlaskit-editor实现了layout多列插件和图片排版插件
+  - 
+
+# faq-not-yet
+
+> 参考 site:github.com/ottypes
+
+## 是否支持 batch update
+
+- 另一个方向是先compose operations，再update model, 再update view
+
+- `transform.Step.merge` (merge/group)
+  - Try to merge this step with another one, to be applied directly after it. Returns the merged step when possible, null if the steps can't be merged.
+
+- you can add steps and other updates to transaction
+
+- https://github.com/facebook/lexical
+  - The most common way to update the editor is to use editor.update()
+  - When starting a fresh update, the current editor state is cloned and used as the starting point.
+  - Creating an update is typically an async process that allows Lexical to batch multiple updates together in a single update – improving performance. 
+
+- react更新也用了transaction
+  - ReactUpdatesFlushTransaction
+- [React transaction完全解读](https://segmentfault.com/a/1190000021303172)
+- [理解React如何实现批量状态更新](https://huangtengxiao.gitee.io/post/%E7%90%86%E8%A7%A3React%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%89%B9%E9%87%8F%E7%8A%B6%E6%80%81%E6%9B%B4%E6%96%B0.html)
+  - 所有的setState会将生成一个update对象，并加入到一个队列中。接着会调用下面的requestWork方法，进行更新的任务调度。
+  - 而在其中，会判断isBatchingUpdates是否为true。如果是，则将任务放置在队列，等待UnbatchingUpdates时统一执行，否则，就会同步执行。
+  - 如果你现在去拉react的最新代码，会发现里面已经找不到Transcation这个类了。不过你可以在ReactFiberWorkLoop文件中，找到batchedEventUpdates这个方法。里面的实现基本是和transcation一样的，只是bool值换成了枚举
+  - 如果setState不在这个transcation过程中执行，那么就会导致同步更新。比如说通过setTimeout方法，异步设置state。
+  - React的batchedUpdates方法，也是类似Transcation的方式，将执行包裹在一个BatchedContext的环境中。从而实现批量调用。
+
+- yjs通过 observe和observeDeep 实现了协同数据的监听
+  - 当协同数据更新时，会触发监听的回调函数，回调函数会通过更新事件`YEvent`传入当前的更新内容，从而执行相应的操作。
+  - YEvent包含transaction对象
+# faq
+
+## prosemirror-transaction vs mxgraph-transaction
+
+- 效果类似
+  - 在transaction内所有operations结束后，才触发modelUpdate事件
+
+- [prosemirror transaction](https://prosemirror.net/docs/guide/#state)
+  - prosemirror的tr类似steps/operations/actions工厂，可以不更新state
+  - 一般先更新state/model，再更新视图
+
+```JS
+let state = EditorState.create({ schema })
+let view = new EditorView(document.body, {
+  state,
+  dispatchTransaction(transaction) {
+    let newState = view.state.apply(transaction);
+    view.updateState(newState);
+  }
+});
+
+// easiest way to create a transaction is with the tr getter on an editor state
+let tr = state.tr
+tr.insertText("hello")
+let newState = state.apply(tr)
+tr.delete(6, 8);
+tr.setSelection(TextSelection.create(tr.doc, 3));
+```
+
+- [mxgraph 系列【4】：事务管理](https://juejin.cn/post/6844904193094860808)
+  - mxGraph 的事务功能与此类似，当我们需要一次执行多个图形更新操作时，可将代码放入一个事务上下文中执行
+  - 默认情况下在 try-catch 中出现异常中断时，异常语句之前的更新代码会被正常执行，而之后的代码则没有应用到图形上。此时，视场景需求可选择使用 mxGraphModel.prototype.currentEdit.undo 接口回滚所有操作
+  - 事务接口支持嵌套调用
+
+- [mxgraph](https://jgraph.github.io/mxgraph/docs/manual.html#3.1.2)
+- there is a counter in the model that increments for every beginUpdate call and decrements for every endUpdate call. 
+  - After increasing to at least 1, when this count reaches 0 again, the model transaction is considered complete and the event notifications of the model change are fired.
+- This provide the ability in mxGraph to create separate transactions that be used as “library transactions”, the ability to create compound changes and for one set of events to be fired for all the changes and only one undo created. 
+  - Automatic layouting is a good example of where the functionality is required.
 # [cs-repeat: Marijn Haverbeke: Salvaging contentEditable: Building a Robust WYSIWYG Editor | JSConf EU__201510](https://www.youtube.com/watch?v=EEF2DlOUkag)
 - some new editors like google docs drop contenteditable and create their own selection and caret
   - good xp

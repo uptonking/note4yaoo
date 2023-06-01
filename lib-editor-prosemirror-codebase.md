@@ -76,6 +76,26 @@ modified: 2021-06-02T17:13:37.692Z
 - 渲染出来的编辑器，默认内容为 `<p><br></p>`，`transaction.before.content.size`默认大小为2
 - 编辑器默认支持按backspace退格键删除、del删除键
 - 编辑器默认不支持enter换行
+# architecture
+- dataflow
+  - 先更新state/model，再更新view
+
+```JS
+let state = EditorState.create({ schema })
+let view = new EditorView(document.body, {
+  state,
+  dispatchTransaction(transaction) {
+    let newState = view.state.apply(transaction);
+    view.updateState(newState);
+  }
+})
+```
+
+- model-layer
+  - Node树
+
+- view-layer
+  - ViewSpec vdom
 # state
 - [recommended way to communicate from a plugin to a NodeView](https://discuss.prosemirror.net/t/how-can-i-communicate-from-a-plugin-to-a-custom-nodeview/952)
   - it seems possible to decorate the NodeViews and then update the decorations when the external data changes

@@ -31,6 +31,25 @@ modified: 2023-05-29T15:09:30.865Z
   - graph.insertEdge
 # not-yet
 - plugin设计
+# architecture
+- dataflow
+  - Graph初始化时注册`InternalEvent.CHANGE`事件，会在model更新时更新view
+  - 在事务的`endUpdate`方法中，默认会触发 change event
+
+- model-layer GraphDataModel
+  - Cell: 内容树节点，用于存储vertex、edge、group等图元的状态信息
+  - `root: Cell` 节点树
+  - `cells: { [key: string]: Cell }` 映射表
+  - currentEdit changes data
+  - updateLevel
+
+- view-layer cellRenderer.redraw(state)
+  - redrawShape
+    - 若shape.style变化，则先`this.node.parentNode.removeChild(this.node);`清空dom
+    - 若是新shape，则createShapeSvg + container.appendChild
+  - redrawLabel
+  - redrawCellOverlays
+  - redrawControl
 # codebase
 - 都是EventSource实例
   - graphManager, graphModel, graphSelection, graphView

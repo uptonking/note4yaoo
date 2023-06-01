@@ -19,6 +19,7 @@ modified: 2022-08-21T09:57:46.814Z
   - 用一个forked handsontable/formula-parser 来处理公式计算。
   - 用SVG代替iconfont的图标，因为iconfont的图标对其他开发者而言很不方便改动。
   - 容器外面不创建可见的页面元素。
+  - [Is there any plan to make a Vue version? soon](https://github.com/ruilisi/fortune-sheet/issues/14)
 
 - luckysheet-repos
   - https://github.com/mengshukeji/Luckysheet

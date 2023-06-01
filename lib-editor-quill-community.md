@@ -16,12 +16,11 @@ modified: 2023-02-09T18:23:43.486Z
 
 - ## 
 
-- ## 
+- ## [IME / Composing breaks when receiving ops](https://github.com/quilljs/quill/issues/3143)
+- When using an IME, like Chinese input — or even these days, an English swiping keyboard on mobile — Quill enters "batch" mode to avoid committing the change until compositionend. However, if we call updateContents before the end of composition, then Editor.applyDelta prematurely calls batchEnd, which flushes the intermediary IME input, which is undesirable.
 
-- ## [What Quill version to use? · Issue #3356 · quilljs/quill](https://github.com/quilljs/quill/issues/3356)
+- ## [What Quill version to use?](https://github.com/quilljs/quill/issues/3356)
   - 1.3.7 which is installed from npm by npm install quill and was published 2 years ago.
   - 2.0.0-dev3 - this version is required for modules quill-better-table and quill-table-ui . It was published 3 years ago (???).
   - 2.0.0-dev4 - this version I found in npm versions history. It was published a year ago
 - it looks like dead from current 1.1k open issues, and this Contributors Insights: 2013-2017 were the most active days, and since 2019 very low development activities
-
-

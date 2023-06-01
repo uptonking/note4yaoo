@@ -9,6 +9,8 @@ modified: 2021-06-15T00:07:49.228Z
 
 # guide
 
+# [《ProseMirror》专栏](https://juejin.cn/column/7085905991698481183)
+
 # [Why we picked Remirror/Prosemirror as WYSIWYG editor in our React application__202108](https://medium.com/collaborne-engineering/rich-text-editor-for-react-f7d71746867f)
 - We could address some of these points with Quill’s many config options and modules. 
   - Yet, in the end, we realized that we got it all wrong: A monolithic editor with tons of config options would never bring us there. 

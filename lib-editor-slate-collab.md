@@ -11,6 +11,35 @@ modified: 2023-02-05T19:03:12.722Z
 
 - why use binding to implement collab?
   - flexibility over performance
+# collaboration solutions
+
+## [logux crdt Conflict Resolution](https://logux.io/guide/concepts/state/)
+
+- Logux Redux and Logux Vuex uses time travel to keep the same order of actions on all machines. 
+  - It uses ID and time from meta to detect order and time travel to insert action in the right moment of history. 
+- Time travel is a technique when Logux Redux reverts recent actions, apply new action, and then re-apply recent actions.
+
+- As a result, if the developer used atomic actions, conflict actions will override each other (“the last write wins” model). 
+  - In complicated cases, you can define merge logic in reducers.
+  - We recommend keeping actions atomic. It means that action should not contain current state. 
+  - For instance, it is better to generate likes/add and likes/remove on the client, rather than likes/set with the exact number.
+
+- In any moment server can send logux/undo action and client will revert changes of this action. 
+  - Logux Redux will load the closest state snapshot and then re-apply all actions without reverted action.
+
+## [o-spreadsheet](https://github.com/odoo/o-spreadsheet/blob/saas-16.3/doc/integrating/collaborative/collaborative.md)
+
+- based on Operational Transformation
+- In order to identify and resolve which operations conflict, we need a way to detect two concurrent actions, and a way to order them.
+  - To detect concurrency, we introduce a revision log, which is a unique identifier to indicate on which state the action is executed. 
+  - Each time an action is received and accepted by the server (the revision log of the server is the same as the action), the revision log is incremented.
+- When a client executes an action, it's locally executed, sent to the server and kept in the pending actions of the user. 
+  - If the action is accepted by the server, the action is removed from the pending ones. 
+  - In the other case, the pending actions are reverted, transformed with the action received from the server, re-applied locally and resent to the server until they are accepted.
+
+- cons
+  - We need to write a transformation function for each command we create
+  - Undo/Redo is synchronous, i.e. it should be accepted by the server before being executed locally.
 # collab
 - 支持响应式移动端时，如何支持小屏元素的鼠标位置
 # [slate-yjs](https://docs.slate-yjs.dev/)

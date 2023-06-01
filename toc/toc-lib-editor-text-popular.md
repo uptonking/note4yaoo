@@ -11,10 +11,10 @@ modified: 2022-11-08T19:04:00.289Z
 
 - requirements
   - **block-style data model**
+  - virtualized
   - collaborative
   - draggable
   - columns
-  - virtualized
   - search
 
 - 开源编辑器

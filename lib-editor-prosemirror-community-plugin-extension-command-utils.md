@@ -12,9 +12,20 @@ modified: 2022-08-30T22:07:26.164Z
 # discuss
 - ## 
 
-- ## 
+- ## [Plugin's appendTransaction should be "appended" by definition](https://discuss.prosemirror.net/t/plugins-appendtransaction-should-be-appended-by-definition/1331)
+  - It seems that when appending a transaction via plugin, to the array of current transactions, by definition it should be part of the same history block
+  - In the history module, appendedTransactions are still dependent of the time between changes
 
-- ## 
+
+
+- ## [Discussion: The limits of actions and reducers - discuss. ProseMirror_201612](https://discuss.prosemirror.net/t/discussion-the-limits-of-actions-and-reducers/551)
+  - In 0.11, ProseMirror moved to a linear dataflow architecture, where the editor state isn’t imperatively updated, but only changes in response to actions that must be explicitly applied to a state to get a new state
+
+- The main complicating requirement is modularity. 
+  - Most of the literature around Elm or Redux assumes that the action types and reducers that act on a given piece of state are designed and written as a single coherent module. 
+  - But ProseMirror’s plugin architecture means that plugins can define new action types, add state fields with their own reducers, and may need to respond to actions that influence other parts of the state (the document or selection, usually).
+- Decoupling state transitions from reducers
+  - This has downsides too.
 
 - ## [Should I use a state based plugin or a view based one? - Show - discuss. ProseMirror](https://discuss.prosemirror.net/t/should-i-use-a-state-based-plugin-or-a-view-based-one/5214)
 - Decorations that rely on DOM measurements are definitely tricky in that they create a data dependency cycle 

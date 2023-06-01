@@ -16,7 +16,25 @@ modified: 2022-10-22T18:47:16.228Z
 # discuss-collab-transform-operation
 - ## 
 
-- ## 
+- ## [Recreating steps - Show - discuss. ProseMirror](https://discuss.prosemirror.net/t/recreating-steps/1805)
+- https://gitlab.com/mpapp-public/prosemirror-recreate-steps
+  - Recreating steps can be interesting for example in order to show the changes between two document versions without having access to the original steps. 
+  - Merging Transforms can be of interest should two users have worked on the same document over time without any means for synchronizing their work.
+
+- ## [How to combine multiple transactions](https://discuss.prosemirror.net/t/how-to-combine-multiple-transactions/4386)
+- This isn’t supported in ProseMirror—because they may include opaque metadata that describes exactly the changes that transaction makes, arbitrary transactions can’t be combined.
+
+- ## [Combine Multiple transactions into one history step](https://discuss.prosemirror.net/t/combine-multiple-transactions-into-one-history-step-solved/2486)
+  - How would I go about it if I wanted all the changes to be included in just one history step ? 
+- Combine the changes into a single transaction.
+- I have now added every change as a step to a transaction and dispatch that transaction only once. Seems to work fine
+
+- ## [Merging steps in collab](https://discuss.prosemirror.net/t/merging-steps-in-collab/602)
+- Can collab be extended to support merging ?
+  - As I repeatedly said in the other thread, no.
+
+- ## [Collab editing — step grouping](https://discuss.prosemirror.net/t/collab-editing-step-grouping/1168)
+- a collab implementation should batch transactions at least on the same granularity as applyTransaction
 
 - ## ProseMirror, YJS and decorations tip__202201
 - https://discuss.prosemirror.net/t/prosemirror-yjs-and-decorations-tip/4368

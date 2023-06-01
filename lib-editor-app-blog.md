@@ -410,6 +410,8 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
   - 服务器就在你本地。。。懂了没？？只是和编辑器分开了，通过通信来交流
   - 网络传输会让你的ide跑的慢死 目前的都是本地服务器也就是个跨进程通讯而已
 # more
+- [重学编辑器 - 掘金](https://juejin.cn/post/7231476258163900476)
+
 - [How to choose a text editor for a digital-first newsroom?](https://autentika.com/blog/how-to-choose-a-text-editor-for-a-digital-first-newsroom)
 
 - [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)

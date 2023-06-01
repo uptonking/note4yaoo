@@ -32,7 +32,8 @@ modified: 2022-08-21T10:19:58.756Z
 - 一个feature的设计
   - 添加到table options
   - 在table、column、header暴露api
-# architecture/dataflow
+# architecture
+- dataflow
 - data => model
   - 计算rowModel的入口 `const rowModel = table.getRowModel(); `，手动触发
 - 计算rowModel的顺序 💡 从下向上
@@ -49,6 +50,9 @@ modified: 2022-08-21T10:19:58.756Z
   - table.getCoreRowModel(), 
 
 - serverModel
+  - 提供了`manual*`控制属性
+
+- model-layer
 # virtual
 - 固定高度的原理
   - 在目标区域上下方显示invisible元素高度和

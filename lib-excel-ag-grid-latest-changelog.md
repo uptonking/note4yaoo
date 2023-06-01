@@ -12,12 +12,15 @@ modified: 2022-08-21T09:55:17.539Z
 - [ag-Grid Changelog](https://www.ag-grid.com/ag-grid-changelog/)
 
 - What's Next for React UI
-  - In AG Grid v26.2 has a production ready version of React UI. 
-    - It is turned on by setting the grid property reactUi=true.
+  - In AG Grid v26.2 has a production ready version of React UI, by setting the grid property reactUi=true.
   - In AG Grid v27 we plan to make this the default with a fallback property to keep the old rendering. 
-    - The fallback property will be for emergency only and will be released as deprecated.
   - In AG Grid v28 we plan to remove the old way of React rendering.
 # changelog
+
+## v27
+
+- [Regarding removal of Immutable data mode](https://github.com/ag-grid/ag-grid/issues/5139)
+  - Immutable data is now just working by default, all you have to do is set the getRowId, and all should work as before
 
 ## v24.0.0-20200909
 

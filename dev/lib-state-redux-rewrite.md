@@ -12,7 +12,7 @@ modified: 2021-05-13T03:44:33.382Z
 - resources
   - [手写Redux/React-Redux核心API - 掘金](https://juejin.cn/post/7040748250516684814)
   - [手写一个Redux，深入理解其原理 - 掘金](https://juejin.cn/post/6845166891682512909)
-
+  - [Build Your Own Redux (nytimes)](https://nytimes.github.io/oak-byo-react-prosemirror-redux/post/build-your-own-redux/)
 # State Management with React Hooks and Context in 10 lines of code
 - ref
   - [State Management with React Hooks and Context API in 10 lines of code](https://medium.com/simply/state-management-with-react-hooks-and-context-api-at-10-lines-of-code-baf6be8302c)

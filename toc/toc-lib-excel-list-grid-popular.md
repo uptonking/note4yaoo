@@ -11,8 +11,10 @@ modified: 2022-08-21T10:02:27.788Z
 
 - requirements
   - group/aggregate/pivot
-  - **operations support**
-  - undo/redo
+  - **editable operations support**
+  - _undo/redo_
+  - _collaborative_
+  - _transaction_
   - virtualized
   - keyboard/a11y
 
@@ -37,12 +39,17 @@ modified: 2022-08-21T10:02:27.788Z
 # list-grid-with-div
 - ag-grid /MIT/6.4kStar/202202/ts/NoDeps
   - https://github.com/ag-grid/ag-grid
-  - https://www.ag-grid.com/example.php
+  - https://www.ag-grid.com/example/
   - 基于div实现，每行对应的dom元素存在
   - a fully-featured and highly customizable JavaScript data grid
     - has no 3rd party dependencies
     - integrates smoothly with all major JavaScript frameworks
   - ag-grid-enterprise is Commercial licensed but opensourced
+  - [Client-Side Data - Transaction Updates](https://www.ag-grid.com/javascript-data-grid/data-update/)
+    - A `transaction` object contains the details of what rows should be added, removed and updated
+    - There are some differences with updating Row Data (with Row IDs) and Transaction Updates
+      - When setting Row Data, the grid will have the overhead of identifying what rows are added, removed and updated.
+      - When setting Row Data, the grid stores the data in the same order as the data was provided
   - [Why is the minified bundle so large?](https://github.com/ag-grid/ag-grid/issues/1459)
     - Main reason IMO: the grids has no dependencies
 
@@ -54,6 +61,73 @@ modified: 2022-08-21T10:02:27.788Z
   - react-virtual /MIT/1.1kStar/202007
     - https://github.com/tannerlinsley/react-virtual
     - Hooks for virtualizing scrollable elements in React
+
+- Luckysheet /4.5kStar/MIT/202202/js/vanillajs
+  - https://github.com/mengshukeji/Luckysheet
+  - https://github.com/dream-num/univer
+  - https://mengshukeji.github.io/LuckysheetDemo/
+  - an online spreadsheet like excel
+  - 基于canvas实现
+  - 依赖jquery、pako、jspdf
+  - https://github.com/dream-num/chartMix /js
+    - chart plugins for Luckysheet
+    - 依赖echarts4、jquery、element-ui、vue2、vuex3
+  - forks
+    - https://github.com/carl-jin/RichSpreadsheet
+    - https://github.com/fromatlantis/Luckysheet
+    - https://github.com/titanDevelopers/Luckysheet
+- https://gitee.com/zhouweng/mini_sheet /js
+  - 我花了两周时间，通读了LuckySheet的源码，并且裁剪出了可执行的最小项目MiniSheet
+  - [MiniSheet目录_舟翁的博客](https://blog.csdn.net/u010593516/article/details/113743472)
+
+- fortune-sheet /1.4kStar/MIT/202208/ts
+  - https://github.com/ruilisi/fortune-sheet
+  - https://ruilisi.github.io/fortune-sheet-docs/zh/guide/
+  - https://ruilisi.github.io/fortune-sheet-demo
+  - FortuneSheet是一款开箱即用的类似Excel和Google Sheets的javascript表格组件。
+  - 本项目源于 Luckysheet，并继承了它的很多代码。我们为将其转换为typescript做了很多努力，并且解决了一些原项目设计层面的问题。
+  - 完全使用typescript编写。
+  - 去掉了 jQuery 的依赖, 用React/Vue + immer来管理DOM和状态。
+    - 架构分为 core+react
+  - 同页面支持多个实例。目前只支持单个实例，因为有全局状态
+  - 避免在window对象上存储数据。
+  - 用一个forked handsontable/formula-parser 来处理公式计算。
+  - A working example with Express (backend server) and MongoDB (data persistence) is available in backend-demo folder.
+  - [Is there any plan to make a Vue version? soon](https://github.com/ruilisi/fortune-sheet/issues/14)
+
+- x-sheet /50Star/MPL/202209/js/vanillajs/luckysheet开发者
+  - https://github.com/eiji-th/x-sheet
+  - https://gitee.com/eigi/x-sheet
+  - 高性能 web javaScript 电子表格
+  - 依赖exceljs
+
+- o-spreadsheet /130Star/LGPLv3/202305/ts
+  - https://github.com/odoo/o-spreadsheet
+  - https://odoo.github.io/o-spreadsheet/
+  - A standalone spreadsheet for the web, easily integrable and extendable.
+  - 支持公式formula
+  - 依赖bootstrap5、@odoo/owl
+  - 图表基于chart.js.v2
+  - 自定义实现了`css()`形式的css-in-js的方法
+  - Real time collaboration
+    - The solution we implement is based on Operation Transform (OT).
+    - concurrent undo/redo are allowed
+    - This solution has a lot of pros, but also some cons:
+    - We need to write a transformation function for each command we create
+    - Undo/Redo is synchronous, i.e. it should be accepted by the server before being executed locally.
+  - Model is the owner of the state of the Spreadsheet
+    - it defers the actual state manipulation work to plugins.
+    - State changes are then performed through commands.  Commands are dispatched to the model
+    - Model can be used in a standalone way to manipulate programmatically a spreadsheet
+  - [[WIP] Version history](https://github.com/odoo/o-spreadsheet/pull/2259)
+    - I'd keep the concepts of tree and branches hidden. They really are internal implementation details of the data structure.
+  - https://github.com/odoo/owl /ts/NoDeps
+    - A web framework for structured, dynamic and maintainable applications
+    - 初始化前，需要先从服务器fetch界面ui相关的xml模版文件
+    - 视图层使用xml模版，组件与视图耦合，react也这样
+    - Class based components with hooks, reactive state and concurrent mode
+    - a fine grained reactivity system similar to Vue
+    - Owl components are defined with ES6 classes and xml templates, uses an underlying virtual DOM, integrates beautifully with hooks, and the rendering is asynchronous.
 
 - react-window /14kStar/MIT/202304/js
   - https://github.com/bvaughn/react-window
@@ -478,6 +552,7 @@ modified: 2022-08-21T10:02:27.788Z
   - 避免在window对象上存储数据。
   - 用一个forked handsontable/formula-parser 来处理公式计算。
   - A working example with Express (backend server) and MongoDB (data persistence) is available in backend-demo folder.
+  - [Is there any plan to make a Vue version? soon](https://github.com/ruilisi/fortune-sheet/issues/14)
 
 - x-sheet /50Star/MPL/202209/js/vanillajs/luckysheet开发者
   - https://github.com/eiji-th/x-sheet
@@ -495,34 +570,6 @@ modified: 2022-08-21T10:02:27.788Z
     - [类似石墨文档多人编辑同一个文档是否可以锁定某个区域单元格](https://github.com/myliang/x-spreadsheet/issues/121)
       - 表格对于协同编辑没有什么意义，暂时不会考虑类似功能
     - [Load Json Data Or Excel Data](https://github.com/myliang/x-spreadsheet/issues/55)
-
-- o-spreadsheet /130Star/LGPLv3/202305/ts
-  - https://github.com/odoo/o-spreadsheet
-  - https://odoo.github.io/o-spreadsheet/
-  - A standalone spreadsheet for the web, easily integrable and extendable.
-  - 支持公式
-  - 依赖bootstrap5、@odoo/owl
-  - 图表基于chart.js.v2
-  - 自定义实现了`css()`形式的css-in-js的方法
-  - Real time collaboration
-    - The solution we implement is based on Operation Transform (OT).
-    - concurrent undo/redo are allowed
-    - This solution has a lot of pros, but also some cons:
-    - We need to write a transformation function for each command we create
-    - Undo/Redo is synchronous, i.e. it should be accepted by the server before being executed locally.
-  - Model is the owner of the state of the Spreadsheet
-    - it defers the actual state manipulation work to plugins.
-    - State changes are then performed through commands.  Commands are dispatched to the model
-    - Model can be used in a standalone way to manipulate programmatically a spreadsheet
-  - [[WIP] Version history](https://github.com/odoo/o-spreadsheet/pull/2259)
-    - I'd keep the concepts of tree and branches hidden. They really are internal implementation details of the data structure.
-  - https://github.com/odoo/owl /ts/NoDeps
-    - A web framework for structured, dynamic and maintainable applications
-    - 初始化前，需要先从服务器fetch界面ui相关的xml模版文件
-    - 视图层使用xml模版，组件与视图耦合，react也这样
-    - Class based components with hooks, reactive state and concurrent mode
-    - a fine grained reactivity system similar to Vue
-    - Owl components are defined with ES6 classes and xml templates, uses an underlying virtual DOM, integrates beautifully with hooks, and the rendering is asynchronous.
 
 - glide-data-grid /836Star/MIT/202202/ts
   - https://github.com/glideapps/glide-data-grid

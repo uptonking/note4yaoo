@@ -9,10 +9,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 # guide
 
-# not-yet
-- [vanilla Slate - removing the React dependency](https://github.com/ianstormtaylor/slate/issues/4302)
 
-- [Preact implementation](https://github.com/ianstormtaylor/slate/issues/2599)
-# more
+# issues
 - [Produce slate-compatible ast tree from markdown in nodejs (aka: md deserialization)](https://github.com/ianstormtaylor/slate/discussions/4117)
   - You can check out hanford/remark-slate

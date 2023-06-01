@@ -14,6 +14,12 @@ modified: 2023-02-07T17:38:05.336Z
 - alternatives
   - jira, trello, linear
 # popular
+- https://github.com/makeplane/plane /python/ts
+  - https://plane.so/
+  - Open Source JIRA, Linear and Height Alternative. 
+  - 依赖后端django、djangorestframework
+  - 依赖前端blueprintjs、nivo-chart、remirror、nextjs、swr
+
 - https://github.com/xiweicheng/tms /js/java
   - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
 # microsoft-teams/org

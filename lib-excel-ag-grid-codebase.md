@@ -9,6 +9,52 @@ modified: 2022-08-21T09:54:02.990Z
 
 # overview
 
+# architecture
+- dataflow
+- init
+  - Grid入口类初始化时
+    - 会初始化很多基础类，注册很多事件
+    - 会执行rowModel.start()，计算rowModel
+  - EVENT_MODEL_UPDATED会触发PaginationProxy.onModelUpdated计算分页数据，
+    - 然后执行rowRenderer注册的onPageLoaded
+    - rowRenderer.onPageLoaded.onModelUpdated会执行 redrawAfterModelUpdate，触发首次渲染当前页所有行
+  - rowModel初始化时会注册很多事件到eventService
+    - 比如EVENT_SORT/Filter_CHANGED，这些事件被触发时会执行refreshModel更新rowModel
+- update
+  - refreshModel在rowModel每次计算后都会触发EVENT_MODEL_UPDATED事件，从而更新ui
+    - 主要触发paginationProxy.onModelUpdated
+  - `api.setRowData` 更新全量数据
+    - this.clientSideRowModel.setRowData(rowData)
+    - this.nodeManager.setRowData(rowData);
+    - 先清空原rowModel，再重新计算全量rowModel
+    - refreshModel触发view更新
+  - `applyTransaction(tr)` 更新多行才触发modelUpdated事件
+    - this.clientSideRowModel.updateRowData(tr)
+    - this.nodeManager.updateRowData(tr)
+    - 依次执行add/remove/update tr，根据参数id逐个查找
+    - refreshModel触发view更新
+    - ~~this.rowRenderer.refreshFullWidthRows();~~
+    - this.rowRenderer.refreshCells();  // do change detection for all present cells
+  - `applyTransactionAsync`异步批量更新
+    - this.clientSideRowModel.batchUpdateRowData(tr)
+    - 在setTimeout(cb)的cb中执行this.nodeManager.updateRowData + refreshModel
+  - 对于modelUpdated事件
+    - rowComp.onModelUpdated会更新每行样式
+
+- model-layer
+  - ClientSideRowModel是event-emitter
+  - primaryColumnTree
+    - 计算成多叉树平衡树结构的表头对象
+  - secondaryBalancedTree
+    - If pivoting, these are the generated columns as a result of the pivot
+
+- view-layer
+  - GridCore会从内置模板template初始化dom
+  - GridPanel初始化时，会注册到rowRenderer
+  - RowRender初始化时，会注册各种redraw事件
+  - rowRenderer.onModelUpdated会执行 redrawAfterModelUpdate
+    - 计算需要重新渲染的行的索引index，然后遍历这些行索引创建或更新RowComp
+# packages/modules
 - ag-grid-packages
   - ag-grid-community: All Community Features
     - community-modules: 主要4部分
@@ -38,10 +84,7 @@ modified: 2022-08-21T09:54:02.990Z
   - ag-grid-react: React Support
   - ag-grid-vue: Vue Support
   - ag-grid-angular: Angular Support
-  - ag-grid-polymer: Polymer Support
-  - examples-grid/charts
-  - charts-packages
-    - 也是4种实现: community, react, vue, angular
+  - charts-packages 也提供了框架集成
 
 - There are two main ways to install ag-Grid - either by using `packages` , or by using `modules` .
   - packages are the easiest way to use ag-Grid, but by default include all code specific to each package, 

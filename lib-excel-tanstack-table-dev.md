@@ -16,8 +16,10 @@ modified: 2022-08-21T10:19:58.756Z
   - support server side data model
 
 - cons
+  - 编辑功能支持不多，ag-grid也是
   - react组件会过多rerender
   - focus-management
+  - accessible
   - 如何支持多个table，且每个table数据模型不同，还要支持typescript
   - 在某一种表格布局下的功能实现与优化，如flex/absolute
 
@@ -38,7 +40,6 @@ modified: 2022-08-21T10:19:58.756Z
   - tinybase
   - mobile
 # dev-pivot-views
-
 - dev-to
   - 替换trpc
 # dev-later

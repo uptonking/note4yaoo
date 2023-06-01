@@ -21,9 +21,11 @@ modified: 2023-02-05T19:03:12.722Z
 
 - pros
   - easy to start
+  - transfrom/operation 默认异步batch
 
 - cons
   - core精简，但编辑器周边功能参考较少
+  - 不支持 selective undo
   - 未提供comment示例
 
 - who is using #slate

@@ -36,6 +36,9 @@ modified: 2022-05-15T18:37:27.994Z
 - https://github.com/juliankrispel/lexical-react-boilerplate
   - Boilerplate for lexical editor projects
 # examples
+- https://github.com/lyove/lexical-vanilla-editor /js
+  - An extensible web text-editor based on Lexical Vanilla Js
+
 - https://github.com/konstantinmuenster/lexical-rich-text-react-demo  
   - [How To Build A Text Editor With Lexical and React](https://konstantin.digital/blog/how-to-build-a-text-editor-with-lexical-and-react)
 

@@ -24,4 +24,5 @@ modified: 2022-08-21T10:37:45.959Z
   - 容器外面不创建可见的页面元素。
   - 数据结构总体兼容Luckysheet
   - 👀 未迁移luckysheet的功能：透视表、图表、协作、截图、拖拽
+  - [Is there any plan to make a Vue version? soon](https://github.com/ruilisi/fortune-sheet/issues/14)
 # more-luckysheet
