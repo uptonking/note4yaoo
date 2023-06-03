@@ -107,6 +107,12 @@ modified: 2021-01-04T16:21:18.990Z
   - TimeMap is a standalone frontend application that allows to explore and monitor events in time and space
   - TimeMap uses OpenStreetMap satellite imagery as a backdrop by default, but can also be configured to use mapbox.
   - The recommended way to run a backend for timemap is using datasheet-server.
+# tiles
+- https://github.com/apache/incubator-baremaps
+  - http://baremaps.apache.org/
+  - https://demo.baremaps.com/
+  - Apache Baremaps is a toolkit and a set of infrastructure components for creating, publishing, and operating online maps.
+  - It provides a data pipeline enabling developers to build maps with different data sources with live reload capabilities. 
 # map-app
 - https://github.com/giswqs/leafmap
   - https://leafmap.org/

@@ -122,3 +122,11 @@ modified: 2023-04-04T22:39:45.442Z
 # more
 - https://github.com/jiechud/fast-image-editor
   - 一款开源图片编辑器，采用React + Typescript + React-knova 框架开发.
+
+
+- lazy-loaded images need all the CSS to be loaded before it can decide if the image is needed. 
+  - https://twitter.com/tunetheweb/status/1664224241879769089
+  - If you add `loading=lazy` to an `<img>` the browser won’t load the image until it KNOWS it needs it. 
+  - It can’t know it needs it until it’s got all the CSS and completed the page layout. 
+  - So don’t use it unless it’s going to be off screen. 
+  - Particularly don’t use on LCP images.

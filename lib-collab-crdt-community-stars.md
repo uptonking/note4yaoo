@@ -11,13 +11,29 @@ modified: 2022-04-05T10:09:51.343Z
 
  
 
+- resources
+
 # discuss
 - ## 
 
-- ## 
+- ## I was blown away by @aboodman 's talk and the Replicache model 
+- https://twitter.com/tantaman/status/1664635160984272896
+  - so I spent the last day experimenting with a variation on the idea: "Creating CRDTs without specialized knowledge"
+- Glad to think about the CRDT version of this idea so more. I had forgotten but there are actually a few implementations of it. One of the key challenges I think is enforcing determinism.
+  - https://tanglesync.com by @kettlecorn does this by running in a wasm container that controls indeterminism.
+  - There was another product awhile back -- I swear it was called parquet -- that did the same thing by running JS in a special environment that controlled indeterminism. But now I can't find that product.
+  - You're thinking of https://croquet.io/
+- AssemblyScript, for mutations, might make the wasm container route bearable.
+
+
+- 
+- 
+- 
+- 
 
 - ## You may not need crdt
 - https://twitter.com/aboodman/status/1663523389133434880
+  - [LFW.dev/4 Meetup - YouTube](https://www.youtube.com/watch?v=7Bb0KRLL8FI&t=1892s)
   - Replicache and Reflect don't use CRDTs. 
   - Replicache is instead built on an older technique from multiplayer games. 
   - Turns out there's still a lot to love in that smooth old-school sync.

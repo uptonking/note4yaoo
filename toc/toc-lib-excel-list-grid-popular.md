@@ -15,11 +15,14 @@ modified: 2022-08-21T10:02:27.788Z
   - _undo/redo_
   - _collaborative_
   - _transaction_
-  - headless utils/toolkit
+  - headless utils/toolkit: props + api
+  - view-layer: vdom-based
   - virtualized
   - keyboard/a11y
   - optimized for text-table/markdown-table
   - support list
+  - image
+    - 单元格图片懒加载
 
 - 开源表格
   - 国内: luckysheet
@@ -207,18 +210,29 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/serenity-is/sleekgrid
   - https://serenity-is.github.io/sleekgrid/
   - a complete rewrite of the original SlickGrid in TypeScript with ES6 modules
+  - 未实现分页
   - 支持插件
-  - 提供了编辑、undo、format示例
+  - 提供了编辑、format示例
+  - 实现了undo，未实现redo
+    - 原理是将command记录保存在stack，每次undo会恢复prevValue，注意值的粒度在单元格，ag-grid也这样
+    - 很多更新操作都基于EditorLock
+    - A locking helper to track the active edit controller and ensure that only a single controller can be active at a time.
+    - This prevents a whole class of state and validation synchronization issues.
   - used extensively in Serenity, our open source ASP. NET Core / TypeScript based business application framework. 
   - 为了兼容jquery，添加了很多判断`if(this._jQuery)`的逻辑
   - 大多数事件都是直接操作dom
-  - 初始化流程
+  - init初始化流程
     - new BasicLayout() + init container
     - calcViewportSize
     - measureCellPaddingAndBorder
     - createColumnHeaders
-    - this.resizeCanvas(); 触发renderRows
-    - 注册各种事件，触发更新都会renderRows，使用了_rowsCache
+    - this.resizeCanvas();  > 触发render
+  - update更新流程
+    - 注册各种事件，触发更新都会触发render
+      - cleanupRowsFromCache
+      - renderRows，使用了_rowsCache，里面缓存了dom对象
+      - 创建rowNode使用document.createElement
+    - 有的cb会先this.invalidate，再rerender
 
 - Simple-DataTables /1.1kStar/LGPLv3/202304/ts
   - https://github.com/fiduswriter/Simple-DataTables
@@ -226,11 +240,11 @@ modified: 2022-08-21T10:02:27.788Z
   - A extendable, dependency-free javascript HTML table plugin.
   - DataTable自身是个event-emitter
   - 使用了diff-dom中的vnode定义
-  - 初始化
+  - init初始化流程
     - 优先从dom中读取table元素，构建初始vdom
     - 读取数据
     - 使用update触发首次渲染
-  - 更新rerender
+  - update更新流程
     - 各种事件都绑定了update回调
     - _paginate()
     - _renderPage()
