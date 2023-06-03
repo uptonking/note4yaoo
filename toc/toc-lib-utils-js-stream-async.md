@@ -36,6 +36,14 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/jahewson/node-byline
   - Line-by-line Stream reader for node.js
 
+- https://github.com/vweevers/detect-tabular /js
+  - A stream that detects tabular data (spreadsheets, dsv or json) and yields objects.
+  - npm i detect-tabular map-tabular-keys snake-case jsonstream
+  - support
+    - text: csv,tsv,json,ndjson
+    - binary: xlsx,xls,ods
+  - https://github.com/vweevers/tabular-stream
+
 - https://github.com/finos/regular-table /js/NoDeps
   - A Javascript library for the browser, regular-table exports a custom element named `<regular-table>`, which renders a regular HTML `<table>` to a sticky position within a scrollable viewport. 
   - Only visible cells are rendered and queried from a natively async virtual data model, making regular-table ideal for enormous or remote data sets

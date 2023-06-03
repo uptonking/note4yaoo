@@ -9,6 +9,12 @@ modified: 2020-11-03T06:54:59.051Z
 
 # amazing-ux-viz
 
+- https://github.com/moshang-xc/lottery
+  - https://moshang-xc.github.io/lottery/
+  - 年会抽奖程序，基于 Express + Three.js的 3D 球体抽奖程序，
+  - 奖品，文字，图片，抽奖规则均可配置
+  - 抽奖人员信息Excel一键导入，抽奖结果Excel导出
+
 - [A better React 18 startTransition demo](https://swizec.com/blog/a-better-react-18-starttransition-demo/)
   - https://react-fractals-git-react-18-swizec.vercel.app/
   - https://github.com/Swizec/react-fractals

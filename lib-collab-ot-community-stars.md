@@ -39,11 +39,6 @@ modified: 2022-10-02T20:54:07.621Z
 - You can implement correct and performant OT with both a centralized server or with a fully decentralized topology, using TP2/CP2-avoidance and/or with TP2/CP-preservation. I've built multiple production systems with all the varieties. I generally do prefer OT with TP2/CP2-avoidance on a server, but it's not because OT can't avoid TP2/CP2 without a server or preserve TP2/CP2, it is that there is not much real-world evidence showing clear benefits moving a collaborative editing system to decentralized topology, esp when most of the CRDT-based p2p proposals in papers that I've come across involves a server one way or another.
 
 - TP2/CP2 in OT is often stood up as a straw-man(被用作挡箭牌的人; 起吓唬作用的稻草人) so folks can throw stones against its correctness, it is really a solved problem. The unfortunately outcome is that you see a ton of papers adopting this strategy to get published and overtime the conversation becomes really convoluted(错综复杂的；晦涩难懂的).
-
-- 
-- 
-- 
-
 # discuss
 - ## 
 

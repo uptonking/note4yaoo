@@ -68,6 +68,13 @@ modified: 2022-10-02T20:51:30.444Z
   - 前端依赖react-native-web
   - 后端依赖express、mongoose、sharedb
   - Observer pattern: When you subscribe to a channel, you are being added to the list of subscribers who then will be notified about new
+
+- https://github.com/3mcd/p2p-edit /js/201606/inactive
+  - collaborative text editor powered by WebRTC and OT. 
+  - Local operations to the document are reconciled by remote clients by use of a data structure called text-tp2.
+  - https://github.com/ottypes/text-tp2
+    - an implementation of OT for text which implements transform property 2 through the use of tombstones.
+    - this data structure can be used in peer-to-peer situations
 # ot-rewrite
 - https://github.com/Operational-Transformation/ot.js /js
   - http://operational-transformation.github.io/

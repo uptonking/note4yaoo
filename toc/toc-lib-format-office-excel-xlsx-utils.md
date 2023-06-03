@@ -30,9 +30,15 @@ modified: 2023-01-09T11:04:13.958Z
 - SheetJS js-xlsx Community Edition /Apache2/21.9kStar/202006
   - https://github.com/SheetJS/sheetjs
   - https://oss.sheetjs.com/
+  - https://sheetjs.com/pro/
+  - [sheetjs data model: csf](https://docs.sheetjs.com/docs/csf/)
   - 依赖cfb(Compound File Binary File Format extractor), ssf  
   - 常作为excel读写的工具库，而不用来渲染，官网示例上传excel可渲染成canvas或td
   - 无依赖，自己实现了办公类文档的各种解析器 js-word、js-ppt、ssf、js-cfb
+  - pro: edit/image/chart
+  - SheetJS presents a simple JS interface that works with "Array of Arrays" and "Array of JS Objects".
+  - https://github.com/mgcrea/node-xlsx
+    - excel file parser and builder, using sheetjs
 
 - https://github.com/exceljs/exceljs /6.4kStar/MIT/202010/js
   - Read, manipulate and write spreadsheet data and styles to XLSX and JSON.

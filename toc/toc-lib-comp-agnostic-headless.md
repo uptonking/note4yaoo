@@ -26,6 +26,7 @@ modified: 2021-04-11T06:17:51.318Z
 - I wonder... should these be called ui patterns rather than components.
 
 - headless-ui-examples
+  - popular: floating-ui, dnd-kit, autocomplete
   - radix-ui
     - 提供了自研stitches的样式解决方案
   - react-spectrum
@@ -157,6 +158,9 @@ modified: 2021-04-11T06:17:51.318Z
 - https://github.com/Bedrock-Layouts/Bedrock
   - https://bedrock-layout.dev/
   - Foundational Layout Primitives for your React App
+
+- https://github.com/webeetle/react-headless-hooks
+  - Hooks for build and design powerful components while retaining 100% control over markup and styles.
 # headless-component
 - tiptap /16.1kStar/MIT/202208/ts/prosemirror
   - https://github.com/ueberdosis/tiptap
@@ -165,21 +169,54 @@ modified: 2021-04-11T06:17:51.318Z
 
 - https://github.com/elastic/search-ui /ts
   - https://github.com/elastic/search-ui/tree/master/packages/search-ui
+  - https://docs.elastic.co/search-ui/overview
   - 依赖date-fns、history、qs
   - The "Headless Search UI" that serves as a foundation for the react-search-ui library.
+  - this library can be used in conjunction with any other framework. 
+  - Instead of working with components as you do in React, you simply work directly with state and actions.
 
 - autocomplete /2.3kStar/MIT/202212/ts
   - https://github.com/algolia/autocomplete
-  - https://www.algolia.com/doc/ui-libraries/autocomplete/introduction/what-is-autocomplete/
+  - https://alg.li/autocomplete
+  - [Create an end-to-end search experience with autocomplete | Algolia Blog](https://www.algolia.com/blog/product/creating-an-end-to-end-search-experience-with-autocomplete-and-instant-search-results/)
+  - [Creating a custom renderer](https://www.algolia.com/doc/ui-libraries/autocomplete/guides/creating-a-renderer/)
+    - https://codesandbox.io/s/github/algolia/autocomplete/tree/next/examples/react-renderer
+    - If you want to build a custom UI that differs from the autocomplete-js output, for example in React or another frontend framework, the autocomplete-core package provides all the primitives to build it.
   - JavaScript library for building autocomplete experiences.
+  - 依赖preact(实现vdom)、htm
+  - 示例
+    - react-renderer基于autocomplete-core
+    - vue基于autocomplete-js
   - The data that populates the autocomplete results are called sources. 
-  - You can use whatever you want in your sources: a static set of searches terms, search results from an external source like an Algolia index, recent searches, and more.
+    - You can use whatever you want in your sources: a static set of searches terms, search results from an external source like an Algolia index, recent searches, and more.
+    - Autocomplete lets you fetch from different sources and display different types of results(如更多推荐).
   - The library creates an input and provides the interactivity and accessibility attributes, but you’re in full control of the DOM elements to output.
   - Unlike InstantSearch, Autocomplete doesn’t provide a library of ready-made UI widgets
+  - The rendering system of Autocomplete uses an agnostic virtual DOM implementation
+  - An Autocomplete plugin is an object that implements the AutocompletePlugin interface.
+    - It can provide sources, react to state changes, and hook into various autocomplete lifecycle steps
+  - `autocomplete-js` package is an agnostic virtual DOM renderer. 
+    - You can use it in JavaScript, Preact, React, or Vue projects. 
+    - Renderers provide a UI to headless autocomplete experiences built with `autocomplete-core`.
+
+- https://github.com/TanStack/ranger
+  - Headless utilities for building range and multi-range sliders in React, Preact, Solid, Vue, Svelte and Angular
+
+- https://github.com/roginfarrer/collapsed
+  - https://react-collapsed.netlify.app/
+  - Headless UI for for creating flexible and accessible expand/collapse components
+  - Includes adapter for React.
 
 - https://github.com/TBear79/headless-datepicker
   - Provides the logic for a datepicker. Apply your own UI on top.
   - Relies on moment.js
+
+- https://github.com/handsontable/hyperformula /ts
+  - An advanced headless evaluator and parser of Excel formulas
+
+- https://github.com/vincentdchan/blocky-editor
+  - An headless editor built with blocks
+  - The core of the editor. Written in vanilla JS.
 
 - https://github.com/ivan-dalmet/formiz
   - https://formiz-react.com/
@@ -258,8 +295,7 @@ modified: 2021-04-11T06:17:51.318Z
   - /2Star/NALic/202004
   - Headless component in React with Custom hooks
 # framework-agnostic
-- https://github.com/appbaseio/searchbox
-  - https://github.com/appbaseio/searchbox
+- https://github.com/appbaseio/searchbox /js
   - a lightweight and performance focused search UI component library to query and display results from your ElasticSearch index using declarative props. 
   - It's available for React, Vue, React Native and Flutter.
   - https://github.com/appbaseio/reactivesearch

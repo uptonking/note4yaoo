@@ -159,6 +159,8 @@ modified: 2022-06-03T21:34:54.893Z
   - HedgeDoc is a real-time, multi-platform collaborative markdown note editor.
   - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.
   - We are currently working on HedgeDoc 2, a complete rewrite of HedgeDoc.
+  - [Proposal: Replace OT with CRDTs](https://github.com/hedgedoc/hedgedoc/issues/527)
+    - By using y.js we are using CRDTs now.
   - [fork history](https://hedgedoc.org/history/): HedgeDoc is the community-driven fork of CodiMD
 - https://github.com/hedgedoc/react-client
   - https://ui-test.hedgedoc.org/intro

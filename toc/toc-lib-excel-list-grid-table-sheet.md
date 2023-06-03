@@ -16,17 +16,13 @@ modified: 2022-08-21T10:02:36.042Z
     - XLS/XLSX/XLSB and other spreadsheet formats
   - [vaadin spreadsheet test sheets](https://github.com/vaadin/spreadsheet/tree/master/vaadin-spreadsheet/src/test/resources/test_sheets)
 # awesome-list-grid
-- https://github.com/hughfenghen/spreadsheet-demo
-  - 电子表格从调研到demo的杂乱记录
-  - SpreadJS时间较长，基本上对标Excel，功能比Hot丰富。比如对公式（Hot 处于alpha版，不支持自定义）、分组（Hot不支持）、图表（Hot需要继承第三方图表）的支持。
+- https://jsgrids.statico.io/
+  - https://github.com/statico/jsgrids
+  - 卡片上列出了该项目所支持的表格特性及不支持的特性
 
 - https://amitmy.github.io/grids/
   - https://github.com/AmitMY/grids
   - A grid comparison. 只比较特性，统计不完整。
-
-- https://jsgrids.io/
-  - https://github.com/statico/jsgrids
-  - 卡片上列出了该项目所支持的表格特性及不支持的特性
 
 - 很多design system都实现了自己的list和grid组件
 - https://jspreadsheets.com/
@@ -35,6 +31,10 @@ modified: 2022-08-21T10:02:36.042Z
 
 - https://github.com/FancyGrid/awesome-grid
   - A curated list of grid(table) libraries and resources that developers may find useful.
+
+- https://github.com/hughfenghen/spreadsheet-demo
+  - 电子表格从调研到demo的杂乱记录
+  - SpreadJS时间较长，基本上对标Excel，功能比Hot丰富。比如对公式（Hot 处于alpha版，不支持自定义）、分组（Hot不支持）、图表（Hot需要继承第三方图表）的支持。
 # excel
 - https://github.com/dataspread/dataspread-web
   - http://dataspread.github.io/
@@ -50,13 +50,10 @@ modified: 2022-08-21T10:02:36.042Z
     - investigates how a spreadsheet system stores data and whether it adopts optimizations to speed up computation.
   - Our benchmark has been implemented for three popular spreadsheet systems, Microsoft Excel, LibreOffice Calc, and Google Sheets.
 
-- https://github.com/programcsharp/griddly
+- https://github.com/programcsharp/griddly /c#
   - Griddly is an extremely configurable MVC/AJAX grid that separates render and data logic. 
   - Data is returned from an action method, settings are done in the view.
   - install NuGet, Install-Package Griddly
-
-- https://github.com/Neovici/cosmoz-omnitable /202211/js
-  - Filtering, grouping, sorting table with support for remote data
 # commercial-list-grid
 - FancyGrid /OneOffLic
   - https://www.fancygrid.com/

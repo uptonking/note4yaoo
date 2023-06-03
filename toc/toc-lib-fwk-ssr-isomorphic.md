@@ -120,7 +120,6 @@ modified: 2020-12-19T13:04:40.865Z
   - MVC 三者都是 Isomorphic，既是服务端 MVC，也是浏览器端 MVC。
   - https://github.com/Lucifier129/isomorphic-cnode
 # react-ssr
-
 - https://github.com/panDaxiang/ssr
   - react服务端渲染demo
 # more-ssr
@@ -139,6 +138,12 @@ modified: 2020-12-19T13:04:40.865Z
   - Dynamic rendering is not a recommended approach and there are better approaches(ssr) to rendering on the web.
   - [单页面(如react，vue)网站的服务器渲染 SSR 之 SEO 大杀器 Rendertron - 知乎](https://zhuanlan.zhihu.com/p/66672794)
     - 首先，服务器上装有个google-chrome，rendertron把他打开，然后在服务器（官方推荐express）中增加中间件，先判断UA（user-agent）里面有没有带有类似Baiduspider（百度爬虫）等字样，如果没有，就像正常的单页面服务器那样，把原始html推送出去，由客户端浏览器完成js、css渲染的工作；如果带有指定UA头字样，就先把网页推送给本地服务器那个google-chrome，等他渲染好对应页面后，把渲染好的html结果推送出去。不就是为了SEO么，你爬虫来了我再渲染给你总行了吧
+- https://github.com/algolia/renderscript /ts
+  - An API to render a page inside a real Chromium (with JavaScript enabled) and send back the raw HTML
+  - This project was heavily inspired by GoogleChrome/rendertron.
+  - It was based on `puppeteer-core` but we switched to `Playwright`.
+  - This project is directly written for and consumed by Algolia Crawler.
+  - Renderscript has everything abstracted to render a page and login to website with minimal configuration required.
 
 - https://github.com/prerender/prerender
   - Prerender is a node server that uses Headless Chrome to render HTML, screenshots, PDFs, and HAR files out of any web page. 

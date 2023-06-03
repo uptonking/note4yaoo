@@ -244,3 +244,7 @@ modified: 2023-01-23T11:24:41.943Z
 
 - https://github.com/ankoh/dashql /202203/ts+cpp/inactive
   - Scalable Analytics Dashboards powered by WebAssembly
+
+- https://github.com/flexmonster/flexmonster-mongodb-connector
+  - Flexmonster Pivot is a powerful JavaScript tool for interactive web reporting. 
+  - It allows you to visualize and analyze data from JSON, CSV, SQL, NoSQL, Elasticsearch, and OLAP data sources quickly and conveniently.

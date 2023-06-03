@@ -38,6 +38,13 @@ modified: 2020-12-19T18:22:27.577Z
 - https://github.com/gustavodomenico/web-worker-sorting /js
   - Application to show the usage of web workers and how to have responsive UIs while doing some heavy computation in the background.
 
+- https://github.com/neomjs/neo /js
+  - https://neomjs.github.io/pages/
+  - create scalable & high performant Apps using more than just one CPU core.
+  - You can switch between dedicated and shared workers at any point.
+  - The dedicated workers setup uses 3-6 threads (CPUs). 
+  - Safari does not support SharedWorkers yet
+
 - https://github.com/albertodeago/cloc-web /ts
   - https://cloc-web.netlify.app/
   - The objective of this project is to implement a simple CLOC(Count Lines Of Code) application using WebWorkers to keep the UI interactive and the new WebFileSystemAPI `FileSystemHandle` to let the user select the project from the local file-system.
@@ -116,6 +123,11 @@ modified: 2020-12-19T18:22:27.577Z
 - https://github.com/tbela99/workerize
   - Export a class or function into a web worker
 
+- https://github.com/piscinajs/piscina /ts
+  - efficient Node.js Worker Thread Pool implementation
+  - Supports flexible pool sizes
+  - heavy_check_mark Custom task queues
+
 - https://github.com/dumbmatter/promise-worker-bi
   - Promise-based messaging for Web Workers and Shared Workers
   - performant library for communicating with web workers and shared workers, using promises. 
@@ -174,3 +186,6 @@ modified: 2020-12-19T18:22:27.577Z
 - https://github.com/markwylde/workerbox
   - A secure sandbox to execute untrusted user JavaScript, in a web browser, without any risk to your own domain/site/page.
 # more
+
+- https://github.com/GoogleChromeLabs/clooney /ts/201910/inactive
+  - Clooney is an actor library for the web. Use workers without thinking about workers.

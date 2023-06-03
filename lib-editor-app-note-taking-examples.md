@@ -335,6 +335,9 @@ modified: 2023-02-05T18:05:44.122Z
   - CodiMD is the free software version of HackMD, developed by the HackMD team with reduced features (without book mode)
 - https://github.com/hedgedoc/hedgedoc
   - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.
+  - [Proposal: Replace OT with CRDTs](https://github.com/hedgedoc/hedgedoc/issues/527)
+    - By using y.js we are using CRDTs now.
+
 
 - https://github.com/FoxUSA/OpenNote /201802/js
   - OpenNote was built to be an open web-based alternative to Microsoft OneNote (T) and EverNote.

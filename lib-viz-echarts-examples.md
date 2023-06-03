@@ -9,15 +9,16 @@ modified: 2023-02-05T19:08:03.320Z
 
 # guide
 
-- ref
-  - https://github.com/ecomfe/awesome-echarts
-  - search: echarts react
-
 - usage
   - superset
   - hash block protocal
   - merico-dev/table
   - admin-dashboard
+
+- ref
+  - https://github.com/ecomfe/awesome-echarts
+  - search: echarts react
+  - https://github.com/search?type=users&q=chart+type%3Aorg
 # popular
 - https://github.com/apache/echarts-examples
   - https://echarts.apache.org/examples/en/
@@ -180,6 +181,21 @@ modified: 2023-02-05T19:08:03.320Z
 
 - https://github.com/sakitam-fdd/ol3Echarts
   - openlayers extension to echarts
+# server
+- https://github.com/highcharts/node-export-server /js
+  - Highcharts Node.js export server
+  - Convert Highcharts. JS charts to static image files
+  - We are currently working on a refactor which amongst other things replaces PhantomJS with Puppeteer.
+  - This is a node.js application/service that converts Highcharts. JS charts to static image files. 
+  - It supports PNG, JPEG, SVG, and PDF output; and the input can be either SVG, or JSON-formatted chart options.
+
+- https://github.com/AnyChart/Node.js-Report-Server /js/archived
+  - a lightweight web server that provides API for generating vector graphics (PDF, SVG, or PS), bitmap images (PNG, JPG, or TIFF), PDF reports, and data in CSV and XLSX (Excel).
+  - https://github.com/AnyChart/AnyChart-NodeJS
+  - https://github.com/AnyChart/export-server /clojure
+# data
+- https://github.com/amcharts/amcharts4-geodata
+  - 大多json，少数js
 # more
 - https://github.com/jiang-jt/zrenderBar
   - zrender实践，使用zrender实现类似echarts的柱状图效果。

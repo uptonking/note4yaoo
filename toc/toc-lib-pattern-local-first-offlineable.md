@@ -109,10 +109,6 @@ modified: 2021-09-04T14:03:39.046Z
   - IDBSideSync will upload the client's oplog entries (CRDT state mutation messages) to the remote data store using the registered plugins, and also download other client's oplog entries
   - A hybrid logical clock (i.e., time + counter) is maintained among the clients to help figure out which operations "win" if more than one exists for the same database store/record/property.
 
-- https://github.com/pubkey/broadcast-channel
-  - BroadcastChannel allows you to send data between different browser-tabs or nodejs-processes.
-  - It works completely client-side and offline, 
-
 - https://github.com/logux/client
   - https://logux.io/
   - Logux is a new way to connect client and server. 
@@ -122,6 +118,14 @@ modified: 2021-09-04T14:03:39.046Z
     - Logux combines WebSocket with modern reactive client architecture. It synchronizes Redux actions between clients and servers, and keeps the same order of actions.
     - Offline-first for the next billion users or New York City Subway. Logux saves Redux actions to IndexedDB and has a lot of features to merge changes from different users.
     - Compatible with modern stack: Redux, Vuex and pure JS API, works with any back-end language and any database.
+
+- https://github.com/anita-app/anita /ts/暂不支持同步
+  - https://anita-app.com/
+  - Anita is a private, no-server, powerful and fully customizable data management solution
+  - Your data is stored on your computer in a JSON file and/or on a remote database of your choice: flexible, open & no lock-in. Stay independent from servers that will go away, sooner or later.
+  - full support for CRUD operations on data stored
+  - locally in the browser's IndexedDB (with Dexie.js)
+  - locally in a JSON or SQLite file in the device FS 
 
 - https://github.com/nornagon/autowiki /automerge
   - Autowiki is a tool for creating networked documents.

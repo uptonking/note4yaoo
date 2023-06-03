@@ -26,6 +26,9 @@ modified: 2021-05-23T18:45:59.139Z
   - The UpSetJS React component is implemented as a pure functional component solely depending on the given properties.
   - [UpSet: Visualizing Intersecting Sets](https://jku-vds-lab.at/tools/upset/)
   - [upset live demo](http://vcg.github.io/upset/)
+# data
+- https://github.com/antvis/data-set
+  - state driven all in one data process for data visualization
 # data-tools
 - https://github.com/tellery/tellery
   - Tellery lets you build metrics using SQL and bring them to your team. 

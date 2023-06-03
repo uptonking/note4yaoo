@@ -292,6 +292,11 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 ## software
 
+- browsers
+  - [Is it possible to install Safari on Ubuntu 14.04?](https://askubuntu.com/questions/676496/is-it-possible-to-install-safari-on-ubuntu-14-04)
+    - Safari uses webkit as web browser engine. You can use epiphany-browser which also uses webkit engine
+    - sudo apt install epiphany-browser
+
 - ms-office 2021官方镜像下载安装激活一条龙
   - https://www.cnblogs.com/hushaojun/p/15967885.html
 

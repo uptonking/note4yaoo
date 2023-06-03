@@ -74,4 +74,12 @@ modified: 2023-02-08T10:25:14.173Z
   - Webhook payloads are never stored on the server, or in any database; 
     - the Smee.io server is simply a pass-through. 
     - However, we do store payloads in localStorage in your browser
+# web-testing
+- https://github.com/puppeteer/puppeteer
+  - Node.js API for Chrome
+
+- https://github.com/microsoft/playwright
+  - a framework for Web Testing and Automation. 
+  - It allows testing Chromium, Firefox and WebKit with a single API.
+  - microsoft/playwright-python is almost call-for-call compatible with puppeteer, and gives you access to Firefox and Webkit as well.
 # more

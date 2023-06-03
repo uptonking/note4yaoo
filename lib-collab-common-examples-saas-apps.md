@@ -97,6 +97,8 @@ modified: 2023-01-17T19:14:47.611Z
 
 - https://github.com/hedgedoc/hedgedoc
   - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.
+  - [Proposal: Replace OT with CRDTs](https://github.com/hedgedoc/hedgedoc/issues/527)
+    - By using y.js we are using CRDTs now.
 
 - https://github.com/plankanban/planka /AGPLv3/js
   - https://plankanban.github.io/planka/

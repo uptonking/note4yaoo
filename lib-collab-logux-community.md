@@ -17,6 +17,14 @@ modified: 2023-05-14T04:31:17.785Z
 # discuss-authors
 - ## 
 
+- ## 
+
+- ## [Adding deepMap implementation_v0.8.0_202304](https://github.com/nanostores/nanostores/pull/161)
+- TLDR: MapStore that's friendly to nested attributes and arrays.
+- Main magic happens in our own naïve implementation of object-path getting/setting. 
+  - It uses recursion to only change object reference (via structuredClone) for the object that has some changed keys. 
+  - It only works with **plain objects and arrays**, not sets, maps, getters/setters and other stuff.
+
 - ## [Vector clock and Lamport timestamps](https://github.com/logux/core/issues/14)
 - First, what clock is better for distributed system is still an open question. 
 - To solve all these requirements Logux uses own clock `[timestamp, uniqueNodeID, actionNumberInCurrentMillisecond]` .
@@ -32,6 +40,8 @@ modified: 2023-05-14T04:31:17.785Z
   - With onMount you can, for example, lazy load data from the server only when the store was used on the page.
 
 - Logux Client 0.14 was released with migration to Nano Stores 0.5
+
+- ## [Nano Stores 0.5 · Issue_202109](https://github.com/nanostores/nanostores/issues/57)
 
 - ## I renamed my new state manager from Logux State to Nano Stores:_202106
 - https://twitter.com/sitnikcode/status/1402611749195497473

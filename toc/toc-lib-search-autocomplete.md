@@ -14,6 +14,7 @@ modified: 2023-01-01T13:24:35.994Z
 
 - ref
   - database search solutions
+  - [Tips for a good search | DocSearch by Algolia](https://docsearch.algolia.com/docs/tips)
 # popular
 - elasticsearch /62.3kStar/ElasticLic/202301/java
   - https://github.com/elastic/elasticsearch
@@ -347,6 +348,8 @@ modified: 2023-01-01T13:24:35.994Z
 # more-search
 - https://github.com/algolia/docsearch
   - The easiest way to add search to your documentation
+  - [Run your own | DocSearch by Algolia](https://docsearch.algolia.com/docs/legacy/run-your-own/)
+    - The scraper is a python tool based on scrapy
 
 - https://github.com/typicode/json-server
   - Get a full fake REST API with zero coding

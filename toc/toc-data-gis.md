@@ -12,6 +12,9 @@ modified: 2021-01-04T16:20:47.941Z
 - Spatial Data sources Notion Pages
   - https://vlckel.notion.site/vlckel/a360dea317234868a0f7cfb1ef249843
 # popular
+- https://github.com/amcharts/amcharts4-geodata
+  - 大多json，少数js
+
 - https://github.com/giswqs/geospatial-data-catalogs
   - open geospatial datasets available on AWS, Earth Engine, Planetary Computer, NASA CMR, and STAC Index
 

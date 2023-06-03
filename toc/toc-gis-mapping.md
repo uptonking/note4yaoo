@@ -102,6 +102,11 @@ modified: 2021-01-04T16:21:18.990Z
 - https://github.com/stamen/toner-carto
   - "Toner" is the name of Stamen's black and white map tiles.
   - CartoCSS port of Toner
+
+- https://github.com/forensic-architecture/timemap /js
+  - TimeMap is a standalone frontend application that allows to explore and monitor events in time and space
+  - TimeMap uses OpenStreetMap satellite imagery as a backdrop by default, but can also be configured to use mapbox.
+  - The recommended way to run a backend for timemap is using datasheet-server.
 # map-app
 - https://github.com/giswqs/leafmap
   - https://leafmap.org/

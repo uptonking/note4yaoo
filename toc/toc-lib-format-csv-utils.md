@@ -10,9 +10,12 @@ modified: 2022-11-06T15:46:05.676Z
 # guide
 
 # popular
-
+- https://github.com/mholt/PapaParse /js
+  - https://www.papaparse.com/
+  - the fastest in-browser CSV (or delimited text) parser for JavaScript. 
+  - Papa Parse can parse a Readable Stream instead of a File when used in Node.js 
+  - It is reliable and correct according to [RFC 4180 - Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://datatracker.ietf.org/doc/html/rfc4180)
 # examples
-
 - https://github.com/mirite/csv-magic /ts
   - https://csvmagic.cloud/
   - CSV Magic is a spreadsheet editor that allows for sorting, filtering, and other large scale manipulations within one or multiple CSV files. 

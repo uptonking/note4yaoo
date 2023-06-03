@@ -1,11 +1,11 @@
 ---
-title: lib-state-nanostores-dev
+title: lib-collab-nanostores-dev
 tags: [nanostores, state]
 created: 2023-05-19T12:17:24.870Z
-modified: 2023-05-19T12:17:49.983Z
+modified: 2023-06-02T23:14:54.641Z
 ---
 
-# lib-state-nanostores-dev
+# lib-collab-nanostores-dev
 
 # guide
 - who is using #nanostores
@@ -21,6 +21,10 @@ modified: 2023-05-19T12:17:49.983Z
 # examples
 - https://github.com/tiana-y/todos
   - Small project for training with React context and styled-components
+
+- https://github.com/dkzlv/nanoform
+  - form library for Nano Stores.
+  - Only rerenders those fields that got updates.
 
 - https://github.com/franjsb1903/weather-app
   - https://fran-saa-weather-app.vercel.app/

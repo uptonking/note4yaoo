@@ -33,8 +33,9 @@ modified: 2022-08-21T10:03:52.222Z
 - https://github.com/turbolent/collection-view
   - A container for displaying large ordered collections of data items and presenting them using arbitrary layouts (e.g. lists, grids). 
 # app
-- https://github.com/bruceleejie/exceldemo
+- https://github.com/bruceleejie/exceldemo /js/vue
   - 管理系统中可能需要的导出、导入功能，前端导出、导入excel文件的demo
+  - 在Export2Excel.js文件中新增了适合自己的方法，可以给大家伙借鉴
 
 - https://github.com/UgnisSoftware/react-spreadsheet-import /ts
   - https://ugnissoftware.github.io/react-spreadsheet-import
@@ -44,8 +45,7 @@ modified: 2022-08-21T10:03:52.222Z
 - https://github.com/renanlecaro/importabular /js/MIT
   - https://importabular.lecaro.me/
   - Lightweight spreadsheet editor for the web, to easily let your users import their data from excel.
-  - No sorting, pivot, formula, etc
-  - No sorting, pivot, formula, etc
+  - No sorting, pivot, formula, virtualization etc
 
 - https://github.com/Aayush-Kindo/Excel-Clone /js/公式未实现
   - https://incandescent-gecko-f9d681.netlify.app/
