@@ -32,3 +32,11 @@ modified: 2023-05-20T14:00:05.623Z
   - For every client and queue, we are creating action queue. The server will start action, resend, process, or load only if the previous action in the same queue was finally processed.
 
 - This feature will require big action processing refactoring with proper queues.
+
+- ## [Context](https://github.com/nanostores/nanostores/issues/171)
+- Problem 1: Cache API
+- Problem 2: SSR
+  - In SSR, Node.js will render HTML for multiple users in the same time (in the same Node.js environment). If you just export store from a file, all users will share the same store. It could be a very dangerous.
+  - the best solutions is to export store creators and not stores themselves. And then create a single instance in application root.
+- Problem 3: Mocks
+- Problem 4: DevTools

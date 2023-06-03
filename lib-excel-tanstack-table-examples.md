@@ -15,6 +15,7 @@ modified: 2022-08-21T10:37:01.349Z
     - outline wiki使用了react-table和react-window
   - 缺少样式主题、性能优化，特别是缺少在表格的单元格中显示图表的示例如ag-grid-charts
   - list和grid切换功能 需要自己实现
+  - row-dnd的示例，拖拽移动行结束时，会全量更新数据
 
 - usecase
   - rowy

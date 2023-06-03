@@ -288,12 +288,17 @@ modified: 2023-03-07T04:43:58.713Z
   - [DTNDocs: A delay tolerant peer-to-peer collaborative editing system_201801](https://ieeexplore.ieee.org/document/8343092)
     - DTNDocs Android application uses IBR-DTN to communicate over a delay tolerant network and a modified LogootSplit algorithm for ensuring consistency in shared contents.
 
+- [Faster CRDTs: An Adventure in Optimization | Hacker News_202108](https://news.ycombinator.com/item?id=28017204)
+  - This is still hard for me to determine when position-based list CRDT (Logoot, LogootSPlit, ...) are better than tombstone-based list CRDT (RGA, RgaSplit, Yata, ...). It could be worth to assess that.
+  - 3 year ago I started an update of LogootSplit. The new CRDT is named Dotted LogootSplit [1] and enables delta-synchronizations. The work is not finished: I had other priorities such as writing my thesis
+  - I have to perform some benchmark. However I'm more interested in the hypothetical advantages of Dotted LogootSplit regarding synchronization over unreliable networks. From an engineering point-of-view, I'm using a partially-persistent-capable AVL tree [2]. Eventually I would like to switch to a partially-persistent-capable b-tree. Unfortunately writing a paper is very time consuming, and time is missing.
+
 - https://news.ycombinator.com/item?id=18193094
   - My hunch(预感；直觉) is that because CRDTs are so much easier to grok(通过感觉意会) than OT, engineers are empowered to make use case-specific improvements that aren't reflected in academic literature.
   - For example, the Logoot/LSEQ CRDTs have issues with concurrent insert interleaving; however, this can be solved by dedicating a bit-space in each ID solely for followup inserts.
   - The "Inconsistent-Position-Integer-Ordering" problem is solved by comparing ids level-by-level instead of in one shot.
-- Additionally, the best CRDTs (like Logoot/LSEQ) don't require tombstones, garbage collection, or "quiescence." The complexity burden is far lower.
-- To top it off, CRDTs are offline-capable by default.
+  - Additionally, the best CRDTs (like Logoot/LSEQ) don't require tombstones, garbage collection, or "quiescence." The complexity burden is far lower.
+  - To top it off, CRDTs are offline-capable by default.
 
 ### [LSEQ: an Adaptive Structure for Sequences in Distributed Collaborative Editing](https://hal.science/hal-00921633/en)
 

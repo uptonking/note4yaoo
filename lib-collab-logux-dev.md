@@ -65,6 +65,9 @@ modified: 2023-05-14T04:30:34.915Z
 
 - https://github.com/zumkorn/logux-simple-app
   - front+back
+
+- https://github.com/meafmira/crdt-codeshare
+  - App uses CRDT for collaborative editing and implement it through logux web framework.
 # docs
 - Logux synchronizes action log between peer-to-peer nodes.
 

@@ -13,7 +13,7 @@ modified: 2022-08-21T10:02:27.788Z
   - group/aggregate/**pivot**
   - **editable operations support**
   - _undo/redo_
-  - _collaborative_
+  - _collaborative optional_
   - _transaction_
   - headless utils/toolkit: props + api
   - view-layer: vdom-based
@@ -24,16 +24,21 @@ modified: 2022-08-21T10:02:27.788Z
   - image
     - 单元格图片懒加载
 
+- collab-如何在表中间位置插入行或列
+  - 最简单和常见的数据结构是crdt map，可尝试基于`无序map+有序array`实现有序arrayMap
+  - 前端问题都可从db的角度来考虑，在db表上可添加一个单独的order列
+  - tanstack-table使用了 `type ColumnOrderState = string[]`
+  - [Is it possible to insert data into the mid section of a table using the INSERT command?](https://stackoverflow.com/questions/4127169)
+
 - 开源表格
   - 国内: luckysheet
-  - 国外: ag-grid, tanstack-table, glide, handsontable, o-spreadsheet, tui-grid
+  - 国外: ag-grid, tanstack-table, handsontable, glide, o-spreadsheet, sleekgrid
   - tinybase
 
 - src-list-grid
   - **ag-grid**
   - **tanstack-table**
   - **react-window**
-  - **react-virtuoso**
   - react-tiny-virtual-list
   - react-virtualized
 

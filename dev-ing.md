@@ -264,8 +264,84 @@ $$('[contenteditable]')
 
 ## 060
 
-## 0601
+## 0603
 
+- ### [Insert an array item after a specific value in mongodb - Stack Overflow](https://stackoverflow.com/questions/35792128/insert-an-array-item-after-a-specific-value-in-mongodb)
+  - I want to insert an element into children array. 
+  - It is easy when you know the index. $position can be used for this purpose
+  - But lets say I don't know the position index, I know the value of element that I want to insert after.
+
+- There is no function to get position and update at one go, so in you problem you need to get position before update and pass it to query 
+
+- ### 🤔 [Is it possible to insert data into the mid section of a table using the INSERT command? - Stack Overflow](https://stackoverflow.com/questions/4127169/is-it-possible-to-insert-data-into-the-mid-section-of-a-table-using-the-insert-c)
+- Just insert the data; tables are not fundamentally ordered. The only ordering of table results occurs when you define it yourself in your select statement.
+  - if what you want is to have a separate ordering, you would be well served by having a separate "order" column. 
+  - I'd recommend making it of type float, so you can insert entries anywhere between other entries without requiring any updating
+
+- The method that you described -- **update the index of the moved row and every one in the list after it** -- is exactly the right method here.
+  - Why do you say that "that's too many sql updates"? 
+  - **As long as you have a MySQL index applied to the index column, those updates will be lightening fast**, even for very large lists (they will be on the order of milliseconds).
+
+- ### [What is the best approach to insert a record between two sequencial rows? - Stack Overflow](https://stackoverflow.com/questions/31901318/what-is-the-best-approach-to-insert-a-record-between-two-sequencial-rows)
+  - It cause to shifting greater ranks
+- If your table has N rows with Rank from 1 to N, and you insert a new row with Rank=2, then you'll have to UPDATE (i.e. change) values in N-2 rows. 
+  - You'll have to write a lot of changes to the table. 
+  - **I'm afraid there is no magic way to speed it up.**
+- But, maybe, you don't really need to have the Rank as an **integer** without gaps.
+  - FloatRank
+- Technically, you can't keep dividing an 8-byte float interval in half indefinitely, so **once in a while you should run a maintenance procedure that "normalizes" your float ranks** and updates all rows in a table. 
+  - But, at least this costly procedure could be run not often and when the load on the system is minimal
+- Also, you can start with float values not 1, but further apart. For example, instead of 1, 2, 3, 4... start with 1000, 2000, 3000, 4000, 
+- I voted your answer because of reducing Delete (and any manipulation) operation cost. 
+  - In conclusion, the main advantage of your approach is the lower cost in data manipulation. BUT it causes increase data reading cost, because of rank normalization (First problem). 
+  - and if we don't normalize then may have gap in rank numbers and it will be bad in our UI phase(second problem)
+
+- The most simple and transparent way is to add column where you will define the sequence of rows in your table and than create clustered index on that column. This index will keep the data as you want.
+
+- ### [How to Insert row between two rows and give it priority in database? - Stack Overflow](https://stackoverflow.com/questions/1354070/how-to-insert-row-between-two-rows-and-give-it-priority-in-database)
+- Use a float column for Priority rather than an int.
+
+- ### [Insert row into SQL table at a specified index - Stack Overflow](https://stackoverflow.com/questions/20596588/insert-row-into-sql-table-at-a-specified-index)
+- Firstly, best practice is to never ever modify the primary key of a row once it is inserted (I assume id is your primary key?). Just Don't Do It™.
+- Instead, create an additional column (called importance/priority/something, and modify that field as necessary.
+- I would recommend that you have another column for this purpose.
+
+- ### [Insert into a row at specific position into SQL server table with PK - Stack Overflow](https://stackoverflow.com/questions/6962867/insert-into-a-row-at-specific-position-into-sql-server-table-with-pk)
+- Relational tables have no 'position'. 
+  - As an optimization, an index will sort rows by the specified key, if you wish to insert a row at a specific rank in the key order, insert it with a key that sorts in that rank position.
+  
+- Usually you do not want to use primary keys this way. A better approach would be to create another column called 'position' or similar where you can keep track of your own ordering system.
+
+- ### [Using a sort order column in a database table - Stack Overflow](https://stackoverflow.com/questions/8607998/using-a-sort-order-column-in-a-database-table/8608085)
+  - I create an Order column (integer) to use for sorting records but that gives me some headaches regarding performance due to the primitive methods I use to change the order of every record after the one I actually need to change. An example:
+
+- Regarding best practice; most environments I've been in typically want something grouped by category and sorted alphabetically or based on "popularity on sale" thus negating the need to provide a user defined sort.
+
+- ### [INSERT data on MySQL to specific position based on its value (similar to ORDER BY) - Database Administrators Stack Exchange](https://dba.stackexchange.com/questions/105485/insert-data-on-mysql-to-specific-position-based-on-its-value-similar-to-order-b)
+- A table is, by definition, an unordered bag of rows. 
+  - There is no guarantee that if you say SELECT * FROM table you will get the rows back in the same order you inserted.
+  - No ORDER BY is essentially telling the database you don't care about order.
+- If you do care about order, you need two things:
+  - At least one column that can dictate order (an auto increment column, a date/time column populated with now(), or something you manually specify).
+  - An actual ORDER BY expression on the outermost part of the query that presents the data (and don't forget to include a tie-breaker, if the first column might not be unique).
+
+- ### 
+
+- ### 
+
+- ### [How to preserve order of hashmap in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/25041814/how-to-preserve-order-of-hashmap-in-javascript)
+  - You can have an array of the keys, to keep the order, and then use the map like normal.
+  - You can use a second array to preserve the order of keys.
+  - Preserving consistency of the order array might be tricky since you always need to update the order array when you modify the original map.
+
+- [Insert key value pair at certain position in an object of javascript - Stack Overflow](https://stackoverflow.com/questions/55016950/insert-key-value-pair-at-certain-position-in-an-object-of-javascript)
+  - There is no guarantee of order in Javascript objects. 
+  - In ES6+ environments, in which non-numeric properties are iterated over in insertion order
+  - you cannot choose the order of keys. choose your data structure wisely.
+
+- [Does JavaScript guarantee object property order? - Stack Overflow](https://stackoverflow.com/questions/5525795/does-javascript-guarantee-object-property-order)
+  - The iteration order for objects follows a certain set of rules since ES2015, but it does not (always) follow the insertion order. 
+  - Simply put, the iteration order is a combination of the insertion order for strings keys, and ascending order for number-like keys
 # dev-05-tanstack-table-virtual/sequelize/undb
 
 ## 0529
@@ -706,6 +782,7 @@ function isDefined<T>(value: T | undefined | null): value is T {
   - GNU Screen是一款由GNU计划开发的用于命令行终端切换的自由软件。用户可以通过该软件同时连接多个本地或远程的命令行会话，并在其间自由切换。
   - GNU Screen可以看作是窗口管理器的命令行界面版本。它提供了统一的管理多个会话的界面和相应的功能。
   - 只要Screen本身没有终止，在其内部运行的会话都可以恢复。
+
     - 这一点对于远程登录的用户特别有用——即使网络连接中断，用户也不会失去对已经打开的命令行会话的控制。只要再次登录到主机上执行screen -r就可以恢复会话的运行。
     - 同样在暂时离开的时候，也可以执行分离命令detach，在保证里面的程序正常运行的情况下让Screen挂起（切换到后台）。这一点和图形界面下的VNC很相似。
 

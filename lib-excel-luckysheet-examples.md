@@ -33,11 +33,12 @@ modified: 2022-08-21T10:37:45.959Z
   - 同页面支持多个实例。目前只支持单个实例，因为有全局状态
   - 避免在window对象上存储数据。
   - 用一个forked handsontable/formula-parser 来处理公式计算。
+  - 基于operation实现undo/redo和协同编辑
   - 用SVG代替iconfont的图标，因为iconfont的图标对其他开发者而言很不方便改动。
   - 容器外面不创建可见的页面元素。
   - 数据结构总体兼容Luckysheet
   - 👀 从luckysheet未迁移的功能
-    - 透视表、图表、协作、截图、拖拽
+    - 透视表、图表、截图
   - [Is there any plan to make a Vue version? soon](https://github.com/ruilisi/fortune-sheet/issues/14)
   - [collabration 是如何解决两个用户操作冲突的](https://github.com/ruilisi/fortune-sheet/issues/308)
     - collabration是当一位用户进行操作时，会将用户操作转化为op并使用websocket对其它客户端通信，其它客户端收到op后会进行相应更改

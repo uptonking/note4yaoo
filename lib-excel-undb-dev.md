@@ -17,6 +17,7 @@ modified: 2023-05-17T07:36:07.757Z
 - cons
   - 不支持undo/redo
   - 每个url只能显示一个table
+  - 用户每新建一张表，就会在数据库中创建一张物理表
 
 - features
   - private-first / self-hostable
@@ -31,6 +32,9 @@ modified: 2023-05-17T07:36:07.757Z
 - 桌面版
   - 不支持刷新页面恢复状态
 # dev-to
+- 数据库重构
+  - 用户的每张表并不需要对应数据库中物理表，可使用triple store
+
 - 将trpc迁移到rtk-query
 
 - 表格视图
@@ -54,6 +58,10 @@ modified: 2023-05-17T07:36:07.757Z
 - across-board
 # codebase
 - undb底层数据库设计包括 table/field/view/attachment
+  - 每个table保存了 views_order
+  - 每个view保存了 fields_order
+
+- 前端一张表，对应数据库中的一张表
 
 - 前后端模块
   - 共用的模块 core/cqrs/i18n
@@ -64,9 +72,12 @@ modified: 2023-05-17T07:36:07.757Z
   - 服务端缓存使用rtk-query，如table/field数据
   - 前端非持久化状态使用jotai，如弹窗开关、initialValue、lastOpened
 # faq-not-yet
-- 只使用了getCoreRowModel，那么sort/group是如何实现的
+- ❓ 在表的中间位置插入row/column时顺序如何决定
+  - 插入column时，更新view表的fields_order字段
+  - 插入row时，更新
 # faq
-
+- 只使用了getCoreRowModel，那么sort/group是如何实现的
+  - 每次调整顺序都会从数据库重新全量取数
 # design
 - 看板整体布局的结构
   - 可以总体为一行，每列包含顶部列标题、当前列内容卡片

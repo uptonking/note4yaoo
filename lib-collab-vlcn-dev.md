@@ -13,7 +13,7 @@ modified: 2023-06-03T14:43:26.987Z
 
 # blogs
 
-##  [vlcn: A Framework for Convergence](https://vlcn.io/articles/crdt-substrate)
+## [vlcn: A Framework for Convergence](https://vlcn.io/articles/crdt-substrate)
 
 - While CRDTs and other structures may meet the mathematical definition of convergence, it is likely that they will not meet the user's expectations of convergence.
 - The problem with both examples is that we're using array index (or alias) to indirectly reference what we are actually talking about.
