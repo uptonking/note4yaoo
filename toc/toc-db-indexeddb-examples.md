@@ -21,6 +21,12 @@ modified: 2022-06-03T22:06:47.464Z
   - 只提供下载队列的状态数据，你可以自由定制 UI
   - 丰富的配置，你可以限制文件类型、每个切片大小、线程数、请求并发数、是否开启离线缓存等
 
+- https://github.com/DeepBlueCLtd/RCO /ts/纯前端
+  - https://deepbluecltd.github.io/RCO/
+  - Secure asset register
+  - 依赖ra-data-local-forage、mitt、react-admin.v4、mui5
+  - indexeddb保存扁平化数据
+
 - https://github.com/rpecuch/text-editor /js
   - The purpose of this project was to build a single-page application that meets Progressive Web Application criteria. 
   - 后端只依赖express

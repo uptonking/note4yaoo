@@ -30,6 +30,10 @@ modified: 2023-03-05T08:55:03.696Z
 # react-query-examples
 - https://github.com/alan2207/react-query-auth
   - Authenticate your react applications easily with react-query.
+# query-solutions
+- https://github.com/data-client/rest-hooks /ts
+  - Normalized state management for async data. 
+  - automatically optimizes performance by caching the results, deduplicating fetches
 # cookies
 
 ## security

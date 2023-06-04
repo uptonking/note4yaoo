@@ -21,6 +21,25 @@ modified: 2022-12-02T11:16:05.028Z
   - Another problem was that many issues in PouchDB have never been fixed, but only closed by the issue-bot
   - The whole PouchDB RxStorage code was full of workarounds and monkey patches to resolve these issues for RxDB users.
   - In version 10.0.0 RxDB introduced the RxStorage layer which allows users to swap out the underlying storage engine where RxDB stores and queries documents from. 
+# docs
+
+## [crdt plugin](https://github.com/pubkey/rxdb/blob/master/docs-src/crdt.md)
+
+- with crdt, all document writes are represented as CRDT operations in plain JSON. 
+- The CRDT **operations are stored together with the document** and each time a conflict arises, the CRDT conflict handler will automatically merge the operations in a deterministic way.
+- CRDT operations are stored inside of a special field besides your 'normal' document fields
+- When replicating document data with the RxDB replication or the CouchDB replication or even any custom replication, the CRDT operations must be replicated together with the document data as if they would be 'normal' a document property.
+- When any instances makes a write to the document, it is required to update the CRDT operations accordingly. 
+  - For example if your custom backend updates a document, it must also do that by adding a CRDT operation. 
+
+- Why not automerge.js or yjs?
+  - Users do not have to learn a new syntax but instead can use the NoSQL operations which they already know.
+  - RxDB is often used to replicate data with any custom backend on an already existing infrastructure. Using NoSQL operators instead of binary data in CRDTs, makes it easy to implement the exact same logic on these backends so that the backend can also do document writes and still be compliant to the RxDB CRDT plugin.
+
+- When to not use CRDTs
+  - CRDT can only be use when your business logic allows to represent document changes via static json operators. 
+  - If you can have cases where user interaction is required to correctly merge conflicting document states, you cannot use CRDTs for that.
+- Also when CRDTs are used, it is no longer allowed to do non-CRDT writes to the document properties.
 # discuss
 - ## 
 

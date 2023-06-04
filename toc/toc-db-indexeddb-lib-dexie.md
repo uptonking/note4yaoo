@@ -31,6 +31,11 @@ modified: 2022-11-25T17:19:08.656Z
   - [Offline use with Sync to Server](https://github.com/only-cliches/Nano-SQL/issues/18)
     - Dexie.Syncable the Sync Server just uses Nedb as a quick way to get a sample running. You would replace that with MongoDB or whatever backend DB you wanted so you con isn't relevant here.
 
+- https://github.com/tykoth/ra-data-dexie /js
+  - Experimental React-Admin data provider using Dexie (IndexedDB)
+  - 依赖react-admin
+  - 更好的参考 ra-data-localForage
+
 - https://github.com/subshell/data-repositories
   - This is a wrapper around Dexie, which itself is already a wrapper around IndexedDB. 
   - This wrapper allows to create repository classes, similar as you might be used to from Java and Spring Data.
@@ -46,7 +51,7 @@ modified: 2022-11-25T17:19:08.656Z
   - The mobile first markdow editor for web & desktop with tiptap plugins and more
   - 依赖pouchdb、dexie、daisyui、tiptap、react-query
 # examples
-- https://github.com/deechris27/browserStorage
+- https://github.com/deechris27/browserStorage /js
   - https://deechris27.github.io/browserStorage/
   - Reactjs file upload, Dexie-indexeddb browser storage
 
@@ -63,14 +68,12 @@ modified: 2022-11-25T17:19:08.656Z
 - https://github.com/DarthAmun/pnptome
   - https://darthamun.github.io/pnptome/
   - project written in react/typescript for managing once collection of homebrew. 
-  - The project itself is a PWA and was made primarily to learn said technologies.
+
+- https://github.com/TBosak/notomato /ts
+  - Pomodoro notes app built in Ionic & Angular frameworks, using Dexie.js to persist tasks/notes in IndexedDB.
 
 - https://github.com/agilworld/reactjs-redux-form-builder-indexedDB-dexie /201904/js
   - Form Builder under React JS + Redux + Dexie Indexed DB
-
-- https://github.com/tykoth/ra-data-dexie
-  - Experimental React-Admin data provider using Dexie (IndexedDB)
-  - 依赖react-admin
 
 - https://github.com/AldoHub/React-Dexie /201907/js
   - React implementation using Hooks, IndexedDb with Dexiejs and file uploading

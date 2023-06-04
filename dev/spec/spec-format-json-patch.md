@@ -13,6 +13,9 @@ modified: 2023-02-26T21:03:56.167Z
   - It is used by all operations in JSON Patch to specify the part of the document to operate on.
 
 - [RFC 6902: JavaScript Object Notation (JSON) Patch](https://www.rfc-editor.org/rfc/rfc6902)
+
+- json-patch未解决的问题
+  - 给内层数组添加元素时，该元素后面所有元素会更新
 # typewriter-json-patch
 - sync实现要点
   - client发送内容op/patch/changes, 发送时机，接收内容

@@ -17,6 +17,10 @@ modified: 2022-08-21T10:02:41.845Z
   - 若用parentId作为key，则只要更新同级节点数组顺序
   - 若用path作为key，则要更新所有受影响的子孙节点的key
 
+- flat-data-model的示例
+  - frontend/in-memory database，如rxdb/pouchdb
+  - 还可以参考indexeddb相关示例，如dexie, react-admin-dexie/localforage
+
 ## 基于id+parentId
 
 - https://github.com/naisutech/react-tree /202302/ts/不支持drag
@@ -72,7 +76,15 @@ modified: 2022-08-21T10:02:41.845Z
   - Table with dnd, indent and outdent rows with flat data-structure and preserving parent-child relationship.
   - 数据源直接使用indent数值，其实类似path
 
+- https://github.com/uptick/react-keyed-file-browser
+  - https://uptick.github.io/react-keyed-file-browser/
+  - 依赖 react-dnd、date-fns
+  - Folder based file browser given a flat keyed list of objects
+
 ## more-flat
+
+- https://github.com/tinyplex/tinybase
+  - https://tinybase.org/demos/movie-database/
 
 - react-sortable-tree /MIT/3.3kStar/202005/js/inactive
   - https://github.com/frontend-collective/react-sortable-tree
@@ -84,7 +96,6 @@ modified: 2022-08-21T10:02:41.845Z
   - 不支持显示拖拽指示线
   - 每一行容器都是`position: absolute`，默认 `display: block` 布局
     - 从左到右依次是，折叠按钮+横线 > 父级连接线(竖线+横线，通过::before/::after实现) > nodeContent
-
 # tree-ui
 - dnd-kit /3.9kStar/MIT/202201/ts
   - https://github.com/clauderic/dnd-kit
@@ -274,6 +285,9 @@ modified: 2022-08-21T10:02:41.845Z
 
 - https://github.com/Pierre-LouisDeu/NoSQL-Folders
   - A CRUD API to manage your documents in a NoSQL folder tree.
+
+- https://github.com/hughsk/flat /js
+  - Flatten/unflatten nested Javascript objects
 # crdt-tree
 - https://github.com/ymlsam/lww-element-dict
   - a LWW key-value store, a conflict-free replicated data type (CRDT) implemented in Typescript/Javascript

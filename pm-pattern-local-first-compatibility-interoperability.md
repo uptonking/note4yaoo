@@ -60,6 +60,11 @@ modified: 2022-11-14T20:12:25.671Z
   - You can build your own blocks, embed them in a website, or allow your users to embed blocks directly within your application.
   - HASH is our forthcoming open-source, all-in-one workspace platform built around structured data and interactive blocks.
 
+- https://github.com/githubnext/blocks
+  - https://github.com/githubnext/blocks-examples
+  - With Blocks, you can extend GitHub's interface in some pretty powerful ways! 
+  - It could be as simple as a custom renderer for files or folders in your repository, and it can be as flexible as a full interface for editing content.
+
 ## solid-specification 
 
 - solid-specification /371Star/MIT/202211/md

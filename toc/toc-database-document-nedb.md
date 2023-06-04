@@ -199,14 +199,17 @@ modified: 2022-11-26T17:35:24.870Z
     - AVL Tree for Node and the browser with TypeScript
     - I forked the binary tree written in nedb and rewrote most of it and added some extra restrictions and capabilities
 
-- blinkdb /59Star/MIT/202211/ts
+- blinkdb /59Star/MIT/202211/ts/不支持sync
   - https://github.com/blinkdb-js/blinkdb
   - https://blinkdb.io/
   - 依赖sorted-btree
   - An in-memory JS database optimized for large scale storage on the frontend.
-    - with full support for indexes, queries, and both unstructured & relational data.
+    - With database features such as **indexes**, **query optimization** and support for both relational & non-relational data, BlinkDB allows you to query your data with filters, sort and paginate in one go - just like a real database, and just as performant
+  - stores like Redux or MobX - are not optimized for performance with large quantities of entities.
+  - Keep your UI reactive by watching for changes on your database.
+    - it’s a bad idea to query the database everytime you want to render its items in your components
+    - watch() will observe a table and call the provided callback every time an item is inserted, updated, or deleted
   - Filter, sort, and implement pagination directly within BlinkDB.
-  - It uses the same techniques & data structures as existing databases in order to speed up the retrieval of items, resulting in incredible performance
   - [BlinkDB has a powerful query system and can filter, sort & limit your data](https://blinkdb.io/docs/filters/)
     - in order to prevent loading all items at once
     - in the backend, this is most often solved by offset-based pagination or cursor-based pagination - both of which BlinkDB supports.

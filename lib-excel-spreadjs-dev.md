@@ -25,21 +25,6 @@ modified: 2022-08-24T10:48:29.318Z
   - How to integrate it into reactJS?
 
 - Currently, the Designer is built as a standalone application using VanillaJS, JQuery, and Knockout. So if you need to use it inside a react application, you would have to create a react wrapper around the designer to use it in the react.
-# docs
-- grapecity
-  - ActiveReportsJS, SpreadJS, and Wijmo are pure JavaScript components, and have **no dependencies**. 
-  - SpreadJS: The definitive JavaScript spreadsheet library for creating Excel-like experiences
-  - Wijmo: An extensible JavaScript UI component suite with grids, charts, and much more
-  - ActiveReportsJS: A new advanced javascript reporting suite for complete data visualization
-
-- [SpreadJS Designer Component](https://www.grapecity.com/spreadjs/docs/spreadjs_designer_component)
-  - The designer components include ribbon, formula bar, status bar, side panel, and context menu. 
-
-- [Introduction to the SpreadJS Designer Component_202011](https://www.grapecity.com/blogs/introduction-to-the-spread-designer-component)
-  - we now also offer a new separate designer add-on component that is highly customizable, flexible, and could be easily embedded into your web application.
-  - Although the new designer UI looks like the previous designer, it is a significant upgrade over its predecessor in terms of usability and customization.
-  - Pure JS component
-  - Easily customizable using JSON config files.
 # blogs-spreadjs
 
 ## [葡萄城 SpreadJS 前端表格技术分享_202007](https://zhuanlan.zhihu.com/p/164731403)
@@ -140,6 +125,21 @@ modified: 2022-08-24T10:48:29.318Z
 - The HitTest functionality is now supported at the workbook level.
 - Columns can now be easily indented for tree structures.
 - Excel 2013-2016 functions are now supported.
+# docs
+- grapecity
+  - ActiveReportsJS, SpreadJS, and Wijmo are pure JavaScript components, and have **no dependencies**. 
+  - SpreadJS: The definitive JavaScript spreadsheet library for creating Excel-like experiences
+  - Wijmo: An extensible JavaScript UI component suite with grids, charts, and much more
+  - ActiveReportsJS: A new advanced javascript reporting suite for complete data visualization
+
+- [SpreadJS Designer Component](https://www.grapecity.com/spreadjs/docs/spreadjs_designer_component)
+  - The designer components include ribbon, formula bar, status bar, side panel, and context menu. 
+
+- [Introduction to the SpreadJS Designer Component_202011](https://www.grapecity.com/blogs/introduction-to-the-spread-designer-component)
+  - we now also offer a new separate designer add-on component that is highly customizable, flexible, and could be easily embedded into your web application.
+  - Although the new designer UI looks like the previous designer, it is a significant upgrade over its predecessor in terms of usability and customization.
+  - Pure JS component
+  - Easily customizable using JSON config files.
 # more-blogs
 - [简介：开发在线文档时，这个技术难点你解决了吗？ 多人协作](https://www.grapecity.com.cn/blogs/spreadjs-technical-difficulties-of-online-documentation)
 - SpreadJS 采用了稀疏数组 (Sparse Array) 作为存储模型，相较于传统的链式存储或数组存储，稀疏数组只会对非空数据进行存储，而不需要对空数据开辟额外的内存空间。

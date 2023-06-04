@@ -120,6 +120,9 @@ $$('[contenteditable]')
   - 协作时还应该考虑 json patch + last-write-win
   - Node定义采用unist
   - lww的字符串改为针对crdt优化的类型
+- flat-data-model的示例
+  - frontend/in-memory database，如rxdb/pouchdb
+  - 还可以参考indexeddb相关示例，如dexie
 
 - 内容的存储与更新如何与数据库集成
   - 编辑器内容自动保存一般通过在onChange方法中执行saveToDB
@@ -263,6 +266,15 @@ $$('[contenteditable]')
 # dev-06
 
 ## 060
+
+## 0604
+
+- [Displaying normalized data in the react UI component - Stack Overflow](https://stackoverflow.com/questions/40058340/displaying-normalized-data-in-the-react-ui-component)
+  - Yup, you have to denormalize before displaying
+
+- [React Children And Iteration Methods — Smashing Magazine](https://www.smashingmagazine.com/2021/08/react-children-iteration-methods/)
+  - This is because `React.Children.toArray doesn’t` traverse into fragments.
+  - `React.Children` is a leaky abstraction, and is in maintenance mode.
 
 ## 0603
 

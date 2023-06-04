@@ -9,6 +9,98 @@ modified: 2021-05-13T03:12:40.723Z
 
 # state-blog
 
+## [wordpress frontend: Our Approach to Data](https://github.com/Automattic/wp-calypso/blob/trunk/docs/our-approach-to-data.md)
+
+- [wordpress client utils](https://github.com/Automattic/wp-calypso/tree/trunk/client/lib)
+
+- History
+- First Era: Emitter Objects (June 2014 - April 2015)
+  - Our original approach to managing data took an object-oriented approach, wherein an instance of the store would inherit the `EventEmitter` interface.
+  - Typically, a single instance of each object store was shared across the entire application
+  - Used in combination with a data-observe mixin, a developer could monitor an instance of the store passed as a prop to a React component to automatically re-render its contents if the store emitted a change event.
+- Second Era: Facebook Flux (April 2015 - December 2015)
+  - a unidirectional data flow in which stores can only be manipulated via actions dispatched by a global dispatcher object.
+  - data can only be accessed by using helper ("getter") methods from the exported object. 
+  - Much like the event emitter object approach, a Flux store module inherits from the EventEmitter interface, though a Flux store should only ever emit a change event
+- Third Era: Redux Global State Tree (December 2015 - February 2020)
+  - a single store instance which maintains all state for the entire application
+- Fourth Era: Modularized Redux State Tree (February 2020 - Present)
+  - instead of creating a single monolithic root reducer on boot, the goal is instead to have individual reducers register themselves when needed. This is done synchronously and automatically through dependency graph resolution.
+  - Modularized reducers are not imported in the root reducer
+  - Modularized portions of state include an init module that registers the reducer as a side effect
+
+- Data Normalization
+- When a subject needs to refer to another part of the tree, store a reference (likely an ID). 
+  - Tracking an indexed set of items makes it easy to navigate the tree when needing to perform a lookup.
+  - data is normalized in a way such that it is always kept in sync, avoiding duplication, and facilitating lookup.
+
+- splitting data and visual concerns:
+  - Presentational and Container Components
+- An app component wraps a visual component, connecting it to the global application state. 
+  - We use the react-redux library to assist in creating bindings between React components and the Redux store instance.
+- Query components
+  - Query components accept as few props as possible to describe the data needs of the context in which they're used. 
+  - They are responsible for dispatching the actions that fetch the desired data from the WordPress.com REST API. 
+  - They should neither accept nor render any children. 自身作为leaf，没有children
+  - That they neither accept nor render children eliminates the need for ancestor components to concern themselves with the data needs of leaf components and can be more performant.
+
+- it's important to distinguish when and why it's appropriate to use the Redux store over, say, a React component's state.
+  - We recommend that you only use the global state tree to store user interface state when you know that the data being stored should be persisted between page views, or when it's to be used by distinct areas of the application on the same page
+  - I don't have the same expectation that this interaction be preserved when I later leave and return to the page. In these cases, it might be more appropriate to use React state to track the expanded status of the component, local only to the current rendering context. 
+
+- Persisting our Redux state to browser storage (IndexedDB) allows us to avoid completely rebuilding the Redux tree from scratch on each page load and to display cached data in the UI (instead of placeholders) while fetching the latest updates from the REST API is still in progress.
+
+### [Reactivity and Loading States](https://github.com/Automattic/wp-calypso/blob/trunk/docs/reactivity.md)
+
+- If something changes on the server, Calypso needs to be able to reflect that without user intervention. 
+- We currently have a `data-poller` module that continuously request data from the server, but we may switch that to an open `WebSocket` connection in the future to establish a more explicit flow of data from both sides. 
+  - To achieve this, initially, we had a simple `data-observe` module that handled the event listeners and re-rendered a component when its registered props emitted a change event. 
+  - We have since moved towards more robust Redux-like approaches to handle these flows.
+
+- [Data Poller](https://github.com/Automattic/wp-calypso/tree/trunk/client/lib/data-poller)
+
+- Poller is an abstraction that can be used to add polling to any data module that uses the following conventions:
+  - The module emits change events when data changes and expects consumers to bind to the change event to be notified when a change occurs
+  - Uses the EventEmitter or a derivative to emit the change event
+  - Has a method or public function that can be called to initiate an AJAX request for new data
+  - The data module is a single object instance that is used throughout
+
+- The module works by initiating polling when the data module has one or more objects listening for a change and stopping when there are no longer any change events bound. 
+  - Polling is also paused when the visibility state of the page changes to hidden and resumed when the page is focused.
+
+
+
+### [Server-side Rendering](https://github.com/Automattic/wp-calypso/blob/trunk/docs/server-side-rendering.md)
+
+- When rendering on the server, we have a special set of constraints that we need to follow when building components and libraries.
+- tl; dr: 
+  - Don't depend on the DOM/BOM; 
+  - make sure your initial render is synchronous; 
+  - don't mutate class variables; 
+  - add a test to `renderToString` your server-side rendered page.
+
+- Because it is necessary to serve the redux state along with a server-rendered page, we use two levels of cache on the server: one to store the redux state, and one to store rendered layouts.
+- data cache
+  - At render time, the Redux state is serialized and cached, using the current path as the cache key, unless there is a query string, in which case we don't cache.
+  - This means that all data that was fetched to render a given page is available the next time the corresponding route is hit
+- render cache
+  - There is a shared cache for rendered layouts
+  - Multiple paths resulting in the same rendered content should ideally map to one cache entry
+
+- I want to server-side render my components!
+  - Have a look at the Isomorphic Routing docs to see how to achieve this. 
+- In addition, there are a couple of things you'll need to keep in mind: 
+  - if your components need dynamic data, we'll need to cache; 
+  - `renderToString` is synchronous, and will affect server response time; 
+  - you should add a test to your section that ensures that it can really be rendered with renderToString; 
+  - if you want to SSR something logged in, dependency nightmares will ensue.
+
+### [Isomorphic Routing](https://github.com/Automattic/wp-calypso/blob/trunk/docs/server-side-rendering.md)
+
+- Isomorphic routing means that you define your routes (i.e. what middleware to run for which path) only once, using them both on the client, and the server.
+- The contract is that at the end of each route's middleware chain, context.layout should contain the React render tree to be rendered, which will be done magically by either the client or the server render, as appropriate. 
+  - (This is clearly different from the previous client-side-only routing approach where you'd have to render to #primary/#secondary DOM elements.)
+
 ## [现代前端框架响应模型对比: Vue, Mobx, React, Redux - 掘金](https://juejin.cn/post/6929727475304005639)
 
 - 一个核心流程是 state 映射到 view，这里是渲染和更新过程，虚拟 dom 在这个过程发挥作用，

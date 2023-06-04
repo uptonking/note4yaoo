@@ -78,9 +78,9 @@ modified: 2023-03-09T13:47:07.317Z
   - using IndexedDB/Dexie.js
   - Docs stay in sync using CRDTs (Automerge)
   - 依赖userbase-js
-  - https://github.com/smallbets/userbase
+  - https://github.com/smallbets/userbase /js
     - Userbase is the easiest way to add user accounts and user data persistence to your static site.
-    - All Userbase features are accessible through a very simple JavaScript SDK, directly from the browser. No backend necessary.
+    - All Userbase features are accessible through a very simple **JavaScript SDK**, directly from the browser. No backend necessary. 类似Authing
     - 100% open source, MIT licensed. You can host it yourself 
 # office-inactive
 - https://github.com/airbornio/airborn /AGPLv3/202105/js

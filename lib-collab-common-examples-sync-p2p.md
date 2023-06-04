@@ -11,9 +11,10 @@ modified: 2023-01-17T19:13:01.845Z
 - 考虑到客户端升级的问题
   - 同步前一定要检查一个version，参考indexeddb upgrade
 # sync-examples
-- lo-fi /7Star/MIT/202211/ts
+- verdant/lo-fi /7Star/MIT/202211/ts
   - https://github.com/a-type/lo-fi
-  - https://lo-fi.gfor.rest/
+  - https://github.com/a-type/verdant
+  - https://verdant.dev/
   - An IndexedDB-powered database and data sync solution for lightweight, local-first web apps.
   - server依赖sqlite、jwt、ws
   - Undo and redo changes
@@ -30,16 +31,17 @@ modified: 2023-01-17T19:13:01.845Z
   - A real-time data backend for browser-based applications.
   - core Rust driftdb implementation.
 
-- https://github.com/webstudio-is/immerhin
+- https://github.com/webstudio-is/immerhin /ts
   - Send patches around to keep the system in sync.
-  - The core idea is to use patches to keep the UI in sync between client and server, multiple clients, or multiple windows.
-  - 依赖 immer
+  - The core idea is to use immer-patches to keep the UI in sync between client and server, multiple clients, or multiple windows.
+  - 依赖 immer-patches
   - It uses Immer as an interface for state mutations and provides a convenient way to group mutations into a single transaction, and enables undo/redo out of the box.
-  - Sync application state using patches
   - Get undo/redo for free
-  - You can use anything to create containers, it could be a Redux store, could be an observable, a nano state or nanostores.
-
-
+  - Server agnostic
+  - State management libraries agnostic (a container interface)
+  - **Resolve conflicts (not implemented yet)**
+  - [Patches | Immer](https://immerjs.github.io/immer/patches/)
+    - The generated patches are similar (but not the same) to the RFC-6902 JSON patch standard, except that the path property is an array, rather than a string. 
 
 - https://github.com/Rolands-Laucis/Socio
   - A WebSocket based realtime duplex Front-End and Back-End syncing API paradigm framework

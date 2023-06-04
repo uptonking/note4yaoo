@@ -15,6 +15,11 @@ modified: 2023-04-13T03:32:04.013Z
 - [GitHub Next | Flat Data](https://githubnext.com/projects/flat-data)
   - Flat explores how to make it easy to work with data in git and GitHub. 
   - It builds on the “git scraping” approach
+  - https://github.com/githubocto/flat-demo-NASA-photo-of-the-day
+    - This repository uses a Flat Data Action to fetch a JSON file with information about NASA's image of the day every day at 8 am UTC. Using a postprocessing script, Flat grabs the image URL within the JSON data and downloads the image as well.
+  - https://github.com/githubocto/flat-demo-covid-dashboard
+    - https://githubocto.github.io/flat-demo-covid-dashboard/
+    - This uses a Flat Action to fetch data about COVID-19 and display it in a dashboard. 
 
 - https://github.com/microsoft/vscode-webview-ui-toolkit
   - [GitHub Next | React Webview UI Toolkit for VS Code](https://githubnext.com/projects/react-webview-ui-toolkit/)

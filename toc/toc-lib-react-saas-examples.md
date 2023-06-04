@@ -22,6 +22,8 @@ modified: 2022-08-13T06:59:54.741Z
   - Backend Agnostic: Connects to any API (REST or GraphQL)
   - React-admin uses an adapter approach, with a concept called Data Providers.
   - designed as loosely coupled React components and hooks exposing reusable controller logic. It is very easy to replace any part of react-admin with your own
+  - forks
+  - https://github.com/ITopGun/B2BAdmin-React
 
 - https://github.com/plantain-00/protocol-first-design-demo
   - API 协议优先，相关数据只需要相对集中地、相对方便地定义一次，其它信息由此派生或生成出来

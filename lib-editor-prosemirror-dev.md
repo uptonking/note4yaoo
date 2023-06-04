@@ -14,6 +14,7 @@ modified: 2021-05-06T09:39:53.522Z
   - selective undo/redo
   - support branch
   - 支持多实例，参考官方示例
+  - optional collaborative plugin
 
 - prosemirror-cons
   - 数据结构层的设计不够通用

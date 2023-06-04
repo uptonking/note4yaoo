@@ -256,6 +256,32 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 - qq linux版
   - [QQ Linux版](https://im.qq.com/linuxqq/index.shtml)
 
+### apps-flatpak
+
+- used
+  - [Linux QQ | Flathub](https://flathub.org/apps/com.qq.QQ)
+
+- system
+  - [Flatseal | Flathub](https://flathub.org/apps/com.github.tchx84.Flatseal)
+  - [GNOME Web | Flathub](https://flathub.org/apps/org.gnome.Epiphany)
+
+- devtools
+  - [VSCodium | Flathub](https://flathub.org/apps/com.vscodium.codium)
+    - https://github.com/VSCodium/vscodium
+    - binary releases of VS Code without MS branding/telemetry/licensing
+  - [Code - OSS | Flathub](https://flathub.org/apps/com.visualstudio.code-oss)
+    - [Differences between the repository and Visual Studio Code](https://github.com/microsoft/vscode/wiki/Differences-between-the-repository-and-Visual-Studio-Code)
+    - Visual Studio Code is a distribution of the Code - OSS repository with Microsoft specific customizations, including additional source code and extensions, released under a traditional Microsoft product license.
+  - [DBeaver Community | Flathub](https://flathub.org/apps/io.dbeaver.DBeaverCommunity)
+  - [JupyterLab Desktop | Flathub](https://flathub.org/apps/org.jupyter.JupyterLab)
+  - [QGIS Desktop | Flathub](https://flathub.org/apps/org.qgis.qgis)
+
+- office
+  - [LibreOffice | Flathub](https://flathub.org/apps/org.libreoffice.LibreOffice)
+  - [ONLYOFFICE Desktop Editors | Flathub](https://flathub.org/apps/org.onlyoffice.desktopeditors)
+
+- collection
+
 ## dev
 
 - ubuntu-mysql

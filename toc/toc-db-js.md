@@ -121,7 +121,6 @@ modified: 2022-11-25T15:50:48.226Z
   - https://blinkdb.io/
   - 依赖sorted-btree
   - An in-memory JS database optimized for large scale storage on the frontend.
-    - with full support for indexes, queries, and both unstructured & relational data.
   - Filter, sort, and implement pagination directly within BlinkDB.
   - It uses the same techniques & data structures as existing databases in order to speed up the retrieval of items, resulting in incredible performance
 
@@ -137,6 +136,10 @@ modified: 2022-11-25T15:50:48.226Z
     - At the moment you can either use `PouchDB` or `Dexie.js` or `LokiJS` as underlaying storage. 
     - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
     - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
+  - [Add RxDB CRDT Plugin_202210](https://github.com/pubkey/rxdb/pull/4087)
+  - [crdt plugin](https://github.com/pubkey/rxdb/blob/master/docs-src/crdt.md)
+    - with crdt, all document writes are represented as CRDT operations in plain JSON. 
+    - The CRDT **operations are stored together with the document** and each time a conflict arises, the CRDT conflict handler will automatically merge the operations in a deterministic way.
   - [backlog should be implemented in the future](https://github.com/pubkey/rxdb/blob/master/orga/BACKLOG.md)
 
 - nedb /13.1kStar/MIT/201602/js
@@ -223,12 +226,13 @@ modified: 2022-11-25T15:50:48.226Z
   - https://github.com/teambition/ReactiveDB /201707/ts
     - Reactive ORM for Lovefield
     - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS
-
 - https://github.com/arthurhsu/lovefield-ts
   - [ブラウザで動くSQLite alternativesとしてのLovefield - console.lealog(); ](https://lealog.hateblo.jp/entry/2023/03/03/092649)
   - Lovefield Typescript port and modernization.
   - All namespaces are flattened
   - no Static schema: it was designed for use with Closure compiler.
+- https://github.com/ReactiveDB/core
+  - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS。
 
 - https://github.com/robtweed/glsdb /202209/js
   - Global Storage Database Abstraction for Node.js

@@ -16,7 +16,7 @@ modified: 2021-03-29T19:29:32.505Z
   - 解决方法是，查找 `.yarnrc` 是否存在version定义，再查找 `.npmrc` 是否存在version定义，注释掉该行即可
 
 - vips/vips8:35:10: fatal error: glib-object.h: No such file or directory
-  - 需要手动安装libvips8
+  - 需要手动安装 libvips8
   - 搜索 libvips8 ubuntu build from source
 
 - [fatal error: 'vips/vips8' file not found · Issue #1882 · lovell/sharp](https://github.com/lovell/sharp/issues/1882)

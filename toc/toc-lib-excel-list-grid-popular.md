@@ -664,6 +664,12 @@ modified: 2022-08-21T10:02:27.788Z
   - https://www.zinggrid.com/
   - Our main focus is on fast, responsive, and customizable grids utilizing ES6 and native web components.
   - Our goal is to solve the problem of creating a CRUD grid in under five minutes.
+
+- https://github.com/githubocto/flat-ui /ts
+  - a React component that will render your flat dataset (an array of objects) in a table view
+  - 依赖radix-ui、d3、downshift、react-window、zustand
+  - https://github.com/githubocto/flat-viewer
+    - a tool to view un-nested data (CSV & JSON files) in an interactive table
 # list-grid-canvas
 - x-spreadsheet/wolf-table /10.1kStar/MIT/202112/ts
   - https://github.com/wolf-table/table /ts
