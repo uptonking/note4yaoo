@@ -27,6 +27,12 @@ modified: 2022-05-15T18:37:07.368Z
 
 - lexical-resources
   - https://lexical.dev/docs/intro
+# faq-not-yet
+- editor.update(()=>{}) 和 immer 更新的原理相同吗
+  - When starting a fresh update, the current editor state is cloned and used as the starting point. 
+  - From a technical perspective, this means that Lexical leverages a technique called double-buffering during updates. 
+  - There's an editor state to represent what is current on the screen, and another work-in-progress editor state that represents future changes.
+  - Creating an update is typically an async process that allows Lexical to batch multiple updates together in a single update – improving performance.
 # [Rethinking Rich Text: A Deep Dive Into the Design of Lexical - Acy Watson_202210](https://www.youtube.com/watch?v=EwoS0dIx_OI)
 - problems with draftjs
   - code size

@@ -64,6 +64,12 @@ export type Cell = {
 
 ## view-layer
 
+- 编辑基于全局唯一的cellInput dom
+  - updateCell model
+    - 修改context基于immer，对ctx的修改都会触发保存和记录patches
+    - setCellValue > d[r][c] = cell;
+  - cellInput.innerText = value; 
+
 - canvas.drawMain
   - 计算可见范围
   - this.cellRender

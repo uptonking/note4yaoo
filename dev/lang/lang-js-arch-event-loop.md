@@ -9,6 +9,10 @@ modified: 2021-08-30T06:52:33.680Z
 
 # guide
 
+
+- tips
+  - [面试必问的异步顺序问题，用 Performance devtools 轻松理清 - 知乎](https://zhuanlan.zhihu.com/p/603691968)
+
 - micoroTask
   - [Tasks, microtasks, queues and schedules - JakeArchibald.com](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
 # blogs

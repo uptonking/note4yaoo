@@ -16,11 +16,12 @@ modified: 2022-11-11T03:09:56.491Z
     - 参考twitter个人界面，在其他界面retweet后，个人界面也会随着更新，有延时
   - ❓ 更换浏览器时，pwa如何同步
     - 第三方云存储
+    - 基于浏览器内置sync
   - ❓ 更换设备时，pwa如何同步
     - 类似手机厂商的桌面云同步
     - 操作系统的同步桌面，或同步标签页
 
-- 考虑用pwa只处理桌面端跨端离线使用的问题，不处理移动端
+- 考虑用pwa只处理桌面端跨端离线使用的问题，不处理移动端商店
   - 对移动端需要简化逻辑和调整ui
   - 不要在自动打包上折腾过多精力，一个store一个标准
   - react-native封装webview的方式也许更好
@@ -29,6 +30,7 @@ modified: 2022-11-11T03:09:56.491Z
 - 实现离线时不使用浏览器扩展的形式
   - indexeddb的访问存在same-origin的限制，不应该维护两套数据(在线url和扩展页url不同)
   - pwa支持离线使用，使用webview打包也简单
+  - 但pwa一般不支持类似浏览器的刷新页面
 
 - pwa的离线
   - service worker只处理离线资源，不拦截请求而做缓存
@@ -41,6 +43,7 @@ modified: 2022-11-11T03:09:56.491Z
 - 国外案例
   - [excalidraw](https://excalidraw.com/)
   - [tldraw](https://www.tldraw.com/)
+  - [draw.io](https://app.diagrams.net/)
 
 - 国内案例
   - [微博 移动版](https://m.weibo.cn/)

@@ -145,9 +145,7 @@ modified: 2021-03-29T19:14:57.440Z
   - 可参考react的版本号，将大更新的hooks放在中小版本，然后大版本处理未来的兼容
   - 使用日期做版本的优点是方便查看更新，缺点是特性版本不明确
   - 可参考ubuntu和node的版本号，定期发布新版本，偶数年发布lts版，引入不兼容改变
-
 # dev-tricks
-
 - 少用if-else，多用卫语句
   - 先对可能的条件进行检验，程序的主逻辑在验证之后才开始运行
 - 文档生成的解决方案还是基于markdown更方便
@@ -157,24 +155,22 @@ modified: 2021-03-29T19:14:57.440Z
   - 若obj的属性值也是对象，则打印的对象也是最终值，不是之前的
 - debug时尽量使用单元测试或实现单独功能的页面，在原来复杂的源码中不便于分析生命周期顺序
   - 准备好单独的boilerplate项目或单独的unit test文件
-
 # 技术前景与趋势
-
 - realtime/实时
 - dynamic/动态
 - 3d/三维
 - automation/自动化ai
 - performance/算法优化
-
 # 开发原则
-
 - learn by practice/实用为先/使用为先
+
+- api设计
+  - 大多数组件都是 dom-container + data/source + view/templates/vdom + options，包括react
+
 - 不要花费过多时间进行工具选择
   - 工具只是解决问题的捷径
   - 在解决业务问题后，可以花更多时间深入工具原理与抽象自己的工具
-
 # pieces
-
 - 名称标识符identifier的特殊前缀选择
   - 考虑使用场景，如markdown中不要选用`
   - 设计前缀、后缀、分隔符、特殊符号、预定义编码的结构
@@ -198,7 +194,7 @@ modified: 2021-03-29T19:14:57.440Z
     - 比如说电商平台，比如说上面说到的 GPS
     - 再举个例子，假设你现在有个新的业务，规定要用 JSON 上传数据 ，你的客户端是 物联网设备，你有几万这样的设备，要求每设备 5 秒上报一次数据，每次上报有几百条数据，在这种比较极端的场景，你是考虑这种 JSON OBJECT 数组，还是 JSON 对象数组？
 
-``` JS
+```JS
 let user_table = {
   "columns": [
     { "column_name": "user_name", "data_type": "string" },
@@ -293,9 +289,7 @@ let client_user_table = [
     - However, if the two projects use incompatible licenses, then this may not be possible. 
     - For example, code developed for the Linux operating system, which uses the GPL, cannot be used by the Apache web server project because the GPL specifies additional requirements that are incompatible with the Apache license. 
     - To avoid this problem, some open-source projects have chosen to make their source code available under a dual-licensing scheme that gives developers a choice as to which license they will be bound by.
-
 # code-engineering 
-
 - It’s contradictory to design a component with the intention of reusing it globally, then modify that component in just one specific part of the product.
 - `AnotherBodyOne > SomeNewBodyOne > BodyOne > Text`
     - fraught with maintenance issues. You'll constantly be trying to hunt down where some override happens and how to modify something in the chain without breaking everything else.
@@ -306,9 +300,7 @@ let client_user_table = [
     - It's the same concern as low-level vs high-level API.I've generally survived with being pretty restrictive for high-level components, but save myself some effort by having a handful (not many, Box & Text only usually) of low-level components that are more permissive.Users would only ever use high-level components, and have the surety they won't 'break' rules due to a restrictive styling API.
 - ref
     - https://spectrum.chat/styled-system/general/opinion-do-you-prefer-more-strict-or-more-flexible-base-components~c1299d13-241d-41ec-882a-5051e8420822
-
 # JavaFX 框架 前景 观点
-
 - 参考
   - https://www.zhihu.com/question/305434657
   - https://www.zhihu.com/question/266195521
@@ -333,9 +325,7 @@ let client_user_table = [
   - Oracle的JDK在中文输入的场景一直做得很烂。特别是用搜狗输入法的时候，有很多意料之外的行为。包括JavaFX和Swing都有问题。目前基于Java的成熟的商业应用，都会包含自己魔改过的JRE。典型例子就是Jetbrains加的产品。之前是直接借助系统JDK运行的，但后来发生了滚动条失灵、中文输入法无法输入等问题后，就捆绑了基于OpenJDK的自家的Jetbreans JRE。
   - wps office 2019 addons文件夹包含软件各个组件，几乎都是html实现的，.kuip文件包含主题样式
   - wps未使用qml
-
 # jackson-core源码结构
-
 - JsonParser、JsonGenerator提供顶层读写抽象类、JsonFactory提供工厂方法
 - io包提供输入输出方法：跳过特殊字符、encode/decode、mergedStream、utf8->utf32
 - json包提供读写具体实现
@@ -355,9 +345,7 @@ let client_user_table = [
 - 将JSON分解成一系列的token，然后迭代token解析，token类型由JsonToken中一系列的常量来表示
 - 如果token指向的是字段名称，JsonParser的getCurrentName()方法返回当前字段的名称。
 - 如果token指向的是字符串字段值，getValueAsString()方法以字符串的形式返回当前token的值，JsonParser还有更多相似的方法，如getText()
-
 # easyexcel 源码结构
-
 - ExcelReader、ExcelWriter、ExcelFactory提供顶层读写具体类
 - analysis包提供解析03、07格式excel的方法
 - write包提供生成excel的方法
@@ -370,9 +358,7 @@ let client_user_table = [
 - support提供枚举类
 - util提供各种工具类
 - constant提供常量
-
 # SAX解析XML方法执行顺序
-
 1. startDocument()：开始处理文档；
 2. startElement(String uri, String localName, String qName, Attributes attributes)：处理元素的开始；
 3. characters(char[] ch, int start, int length)：用来读取文本内容；
@@ -398,16 +384,13 @@ startElement --> characters --> endElement --> characters
 startElement --> characters --> endElement  
 
 # XML的生成
-
 - SAX parsing is for reading documents, not writing them. You can write XML with the XMLStreamWriter.
 - Generating XML via Java (https://www.techrepublic.com/article/generating-xml-via-java/)
 - Using the StringBuffer class
 - Using DOM
 - Using SAX
 - Using a custom XmlWriter class
-
 # xlsx Excel2007 常用标签结构
-
 - sheet1.xml 
   - worksheet
       - dimension： ref=A1:D9，存放的是sheet的行列数
@@ -420,9 +403,7 @@ startElement --> characters --> endElement
                   - v：存放单元格数据， `<v>0</v>` ，文本字符串用的是sharedStrings.xml中的索引
       - pageMargins
       - headerFooter
-
 # xlsx Excel2007 格式解析 
-
 - Excel2007是使用XML格式来存储的，把一个excel文件(test.xlsx)后缀改为.zip，解压后的结构
 - [Content_Types].xml：列出Excel解压后各个XML文件名及其类型
 - xl文件夹
@@ -440,9 +421,7 @@ startElement --> characters --> endElement
 - docProps文件夹：整个excel文档的元信息
   - core.xml：描述文件的创建时间、修改时间、创建者、修改者、主题
   - app.xml ：描述文档的其他属性如文档类型、版本、是否只读、是否共享、安全属性，还包括创建该文档的软件
-
 # apache poi
-
 - poi Class SharedStringsTable
   - Table of strings shared across all sheets in a workbook.
   - When displaying text in the spreadsheet, the cell table will just contain an index into the string table as the value of a cell, instead of the full string.
@@ -451,9 +430,7 @@ startElement --> characters --> endElement
   - poi-scratchpad-version.jar：用于操作.ppt、.doc、.vsd、.pub、.msg文件；依赖于poi；
   - poi-ooxml-version.jar、poi-ooxml-schemas-version.jar：用于操作.xlsx、.pptx、docx文件；依赖于poi, dom4j，xmlbeans, stax-api-1.0.1；
   - 操作Excel主要是指ss包、xssf包；
-
 # xml的解析方式
-
 - 基于dom
   - 将整个xml加载到内存中，形成文档对象，所有对xml操作都对内存中文档对象进行，几乎所有开发语言都支持
   - Tree model parser (Object based) (Tree of nodes).

@@ -122,6 +122,14 @@ modified: 2020-12-19T13:04:40.865Z
 # react-ssr
 - https://github.com/panDaxiang/ssr
   - react服务端渲染demo
+
+# microfrontend
+
+- https://github.com/single-spa/single-spa /js
+  - The router for easy microfrontends
+  - Build micro frontends that coexist and can (but don't need to) be written with their own framework
+  - Use multiple frameworks on the same page without refreshing the page (React, AngularJS, Angular, Ember)
+  - Lazy load code for improved initial load time.
 # more-ssr
 - https://github.com/pmb0/express-tsx-views
   - Server-side JSX/TSX rendering for your express or NestJS application
