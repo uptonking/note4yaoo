@@ -88,6 +88,9 @@ $$('[contenteditable]')
   - tuple-database 支持内存和持久化
   - tinybase 支持内存和持久化
 
+- headless-architecture
+  - state + action
+
 - collab-sync
   - string-crdt: ? list-crdt
   - evolu(hlc+worker)
@@ -266,6 +269,16 @@ $$('[contenteditable]')
 # dev-06
 
 ## 060
+
+## 0606
+
+- ### [How can I change an element's class with JavaScript? - Stack Overflow](https://stackoverflow.com/questions/195951/how-can-i-change-an-elements-class-with-javascript)
+- Modern browsers have added `classList`.
+  - dom.classList.add/remove/contains
+- To replace all existing classes with one or more new classes
+  - dom.className = "MyClass"; 
+- 💡 You can use `el.setAttribute('class', newClass)` or better `el.className = newClass`. 
+  But not `el.setAttribute('className', newClass)`
 
 ## 0604
 

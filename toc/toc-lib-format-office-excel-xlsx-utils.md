@@ -42,6 +42,11 @@ modified: 2023-01-09T11:04:13.958Z
 
 - https://github.com/exceljs/exceljs /6.4kStar/MIT/202010/js
   - Read, manipulate and write spreadsheet data and styles to XLSX and JSON.
+- https://github.com/zurmokeeper/excelize
+  - 需要完成一个读取WPS带密码保密的excel功能，找遍了社区所有的库，都没有找到，一开始发现 xlsx-populate 支持解密，后面发现只支持 ecma376 agile encryption。是现在office xlsx格式的加密方式，不是WPS的加密方法，所以无法解密.
+  - 后面发现 WPS 对xlsx文件的加解密用的是 ecma376 standard encryption
+  - 本来是想给exceljs提PR的，但是发现exceljs快2年没人维护了
+  - xlsx，是sheetjs出的，这个功能最广，支持读取xls格式。但是这个库其实是个社区版，阉割了加解密功能
 
 - https://github.com/vweevers/spreadsheet-stream /js
   - Semi-streaming XLS(X) / ODS / QPW (and more) parser.

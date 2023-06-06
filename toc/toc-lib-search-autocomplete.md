@@ -16,6 +16,13 @@ modified: 2023-01-01T13:24:35.994Z
   - database search solutions
   - [Tips for a good search | DocSearch by Algolia](https://docsearch.algolia.com/docs/tips)
 # popular
+- OpenSearch protocol
+  - https://github.com/dewitt/opensearch
+  - OpenSearch is a collection of simple formats for the sharing of search results.
+  - launched in 2005 by A9.com, an Amazon subsidiary, as a means for sharing search queries and search results in a standardized format.
+  - The specification has been unchanged and stable for over a decade
+  - The OpenSearch protocol lets you describe a search engine for your website, so that browsers or other search clients can use that search engine.
+
 - elasticsearch /62.3kStar/ElasticLic/202301/java
   - https://github.com/elastic/elasticsearch
   - https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
@@ -56,10 +63,11 @@ modified: 2023-01-01T13:24:35.994Z
   - [whether this library supports reading from IndexedDb instead of memory](https://github.com/nextapps-de/flexsearch/issues/289)
     - This is actually not supported(202210). Supporting interfaces may be provided in future. Since the "flat index" instance hold the whole data structure of one index, it has a good chance to make interfaces for every database.
 
-- lyra /5.1kStar/apache2/202212/ts
-  - https://github.com/LyraSearch/lyra
+- orama/lyra /5.1kStar/apache2/202212/ts
   - https://github.com/oramasearch/orama
+  - https://github.com/LyraSearch/lyra
   - https://docs.lyrasearch.io/
+  - https://docs.oramasearch.com/
   - Fast, in-memory, typo-tolerant, full-text search engine written in TypeScript.
   - Lyra is an immutable, runtime-agnostic, edge, and in-memory full-text search engine that works both on client and server.
   - Lyra has been developed thinking of a simple way to add new features via a plugin system, leaving the core as small as possible.
@@ -99,6 +107,16 @@ modified: 2023-01-01T13:24:35.994Z
   - It is respectful of resources, and it can comfortably run both in Node and in the browser.
   - MiniSearch addresses use cases where full-text search features are needed (e.g. prefix search, fuzzy search, ranking, boosting of fields…)
   - Memory-efficient index, designed to support memory-constrained use cases like mobile browsers.
+
+- itemsjs /274Star/apache2/202208/js/NoDeps
+  - https://github.com/itemsapi/itemsjs
+  - Full text, faceted, (almost) dependency free search engine in javascript
+  - **Created to perform fast search on json dataset (up to 100K items)**.
+  - working on backend and frontend
+  - If native full text search is not enough then you can integrate with external full text search, like minisearch/lunr.js
+  - pagination
+  - https://github.com/unplatform-io/instantsearch-itemsjs-adapter
+  - https://github.com/unplatform-io/clientside-instantsearch-demo
 
 - search-index /1.3kStar/MIT/202207/js
   - https://github.com/fergiemcdowall/search-index
@@ -175,13 +193,6 @@ modified: 2023-01-01T13:24:35.994Z
   - Queryable via HTTP
   - pagable, filterable and sortable results
   - Real time BUT: jsii is not transaction safe, because there is no 'commit'
-
-- itemsjs /274Star/apache2/202208/js/NoDeps
-  - https://github.com/itemsapi/itemsjs
-  - Full text, faceted, (almost) dependency free search engine in javascript
-  - Created to perform fast search on json dataset (up to 100K items).
-  - working on backend and frontend
-  - If native full text search is not enough then you can integrate with external full text search, like minisearch/lunr.js
 # search-autocomplete
 - tom-select /947Star/apache2/202212/ts
   - https://github.com/orchidjs/tom-select
@@ -208,6 +219,9 @@ modified: 2023-01-01T13:24:35.994Z
   - Simple autocomplete pure vanilla Javascript library.
   - Powerful Search Engine with two different modes: strict/loose
   - Works on anything (<`input>`,  `<textarea>` and `contentEditable` elements)
+# search-data
+- https://github.com/searchkit/searchkit/tree/main/sample-data
+  - movies, electronics-ecommerce
 # search-wasm
 - https://github.com/kbumsik/blogsearch /202007/ts
   - a pure client-side, full-text search engine for static websites, powered by SQLite compiled to WebAssembly.
@@ -254,15 +268,40 @@ modified: 2023-01-01T13:24:35.994Z
 # search-ui-examples
 - elastic-search-ui /1.8kStar/apache2/202212/ts
   - https://github.com/elastic/search-ui
-  - https://www.elastic.co/enterprise-search/search-ui
-  - A React library that allows you to quickly implement search experiences without re-inventing the wheel
+  - https://docs.elastic.co/search-ui/overview
+  - https://docs.elastic.co/search-ui/solutions/ecommerce
+  - [Customizing Styles and Components](https://codesandbox.io/s/github/elastic/search-ui/tree/main/examples/sandbox?from-embed=&initialpath=/customizing-styles-and-html)
+  - Search UI. Libraries for the fast development of modern, engaging search experiences.
+  - Flexible front-end - Not just for React. Use with any JavaScript library, even vanilla JavaScript.
+  - Flexible back-end - Use it with Elasticsearch, Elastic Enterprise Search, or any other search API.
+  - The core is a separate, headless vanilla JS library
+    - It provides the underlying "state" and "actions" associated with that view
+  - build a custom connector so you can use Search UI with your own API.
+  - [A non-react guide to Search UI](https://github.com/elastic/search-ui/issues/332)
+  - https://github.com/iMicknl/search-ui-azure-connector
+  - [What are you building with Search UI?](https://github.com/elastic/search-ui/issues/793)
+
+- https://github.com/algolia/instantsearch
+  - https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/
+  - https://codesandbox.io/embed/github/algolia/instantsearch/tree/master/examples/js/getting-started
+  - Libraries for building performant and instant search experiences with Algolia. 
+  - Compatible with JavaScript, TypeScript, React and Vue.
+  - https://github.com/meilisearch/instant-meilisearch
+  - https://github.com/typesense/typesense-instantsearch-adapter
+    - https://github.com/typesense/typesense-instantsearch-demo
+    - https://typesense.org/docs/overview/demos.html
+  - https://github.com/unplatform-io/instantsearch-itemsjs-adapter
+    - https://github.com/unplatform-io/clientside-instantsearch-demo
+    - https://clientside-instantsearch-demo.vercel.app/
 
 - https://github.com/riccox/meilisearch-ui
   - fast meilisearch admin dashboard UI for managing your meilisearch instances
 
 - https://github.com/searchkit/searchkit
   - /3.9kStar/Apache2/202008
-  - a suite of UI components built in react to rapidly create beautiful elasticsearch applications
+  - Search UI for Elasticsearch & Opensearch. 
+  - Compatible with Algolia's Instantsearch and Autocomplete components. 
+  - React & Vue support
   - https://github.com/searchkit/searchkit-starter-app
 
 - https://github.com/appbaseio/dejavu

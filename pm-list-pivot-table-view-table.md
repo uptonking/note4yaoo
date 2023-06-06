@@ -20,6 +20,8 @@ modified: 2022-12-16T01:52:33.729Z
 - table-in-table
   - 加强版支持类似lod的效果，显示表中细节
   - [Bootstrap Table Examples - Sub Table](https://examples.bootstrap-table.com/#welcomes/sub-table.html)
+
+- search-view
 # table-in-editor
 - [CKEditor 5 table](https://ckeditor.com/docs/ckeditor5/latest/features/table.html)
   - 行列操作在悬浮工具条的二级菜单

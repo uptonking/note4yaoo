@@ -12,12 +12,28 @@ modified: 2023-01-02T08:49:39.114Z
 # discuss
 - ## 
 
-- ## 
+- ## 搜索功能实现不便宜，一篇短文介绍几种方案的成本对比(成本从低到高排序)：
+- https://twitter.com/zhdsuperman/status/1663791183565570050
+  1. pg/mysql 全文搜索
+  2. SaaS 版：Algolia
+  3. 自部署： Elasticsearch + DB Sync
+  4. OpenAI Embedding API + Vector DB
+  5. 托管版 Elasticsearch
+  6. 无服务器：Aws Opensearch Serverless
+  7. 自主设计搜索系统
+- [搜索功能的实现成本有多高？ - HackerTalk_202306](https://hackertalk.net/posts/451747509008605184)
+  - 黑客说 2.0 已经整体迁移完毕，但目前搜索功能还是残废状态，主要原因是现在实现的方案太复杂、效果太差，我直接关闭了。
+  - Hackertalk 最早的搜索版本是用阿里云的 elasticsearch + 数据同步实现的，机器成本大概每月 200$，每次改动 table 都要重建索引，重新同步，维护成本很高，由于我没有深度优化 es，搜索质量也不行，后来项目越来越多，每个都要这样做，运维成本太高了，于是打算切换方案，自部署 es 的方案因为维护成本更高，从始至终都没考虑过。
+  - 之后尝试 mysql nlp 全文搜索，效果实在太差，分词方式不友好，定制能力差，在 2.0 切换到 pg 之后尝试类似的方式，效果预计有所提升，需要不少开发工作，还在观望中
+
+- 我是自己部署 typesense 做搜索，最新版支持向量召回，小规模数据上效果感觉还可以。后面我打算试下 weaviate 在大规模数据上做召回，embedding 也不必调 OpenAI，虽然便宜，但上规模之后还是有成本的
+- 阿里云的 tablestore？
+  - 嗯嗯，es的api基本都兼容
+- 我喜欢用 in-memory、per-application
 
 - ## [请教一个问题，搜索词的生成应该怎么做。 - V2EX](https://www.v2ex.com/t/888629)
   - 例如在 Google 中输入：Java google 会生成: javascript, java binary search, java 教程等一些列
   - 搜索日志，只能优化排序，原生的搜索词生成是基于系统的关键字检索出来的，系统在冷启动时，排序可以是随机的，随着使用情况，逐步优化。当然也可以初始化一些排序。
-
 
 - 一般都不是算法生成的。suggest 数据都会有以下一些来源：
   1. 搜索数据本身的一些 title 、tag 属性等

@@ -23,6 +23,7 @@ modified: 2022-08-21T10:02:27.788Z
   - support list
   - image
     - 单元格图片懒加载
+  - 接入现有组件库
 
 - collab-如何在表中间位置插入行或列
   - 最简单和常见的数据结构是crdt map，可尝试基于`无序map+有序array`实现有序arrayMap
@@ -992,6 +993,11 @@ modified: 2022-08-21T10:02:27.788Z
   - https://demo.vaadin.com/spreadsheet/
   - 基于div实现
   - a UI component add-on for Vaadin 7 which provides means to view and edit Excel spreadsheets in Vaadin applications.
+
+- https://github.com/stacksjs/table
+  - Vue component library
+  - fast facet-filtering, sorting, and searching.
+  - Meilisearch & Laravel Scout API compatible
 
 - backgrid /2kStar/MIT/201702/js/backbone
   - https://github.com/cloudflarearchive/backgrid
