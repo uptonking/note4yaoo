@@ -1,0 +1,42 @@
+---
+title: lib-excel-ospreadsheet-community
+tags: [community, ospreadsheet]
+created: 2023-06-07T22:37:30.774Z
+modified: 2023-06-07T22:37:47.793Z
+---
+
+# lib-excel-ospreadsheet-community
+
+# guide
+
+# issues
+- ## 
+
+- ## 
+
+- ## [[IMP] find_and_replace: sheet granularity in Find & Replace](https://github.com/odoo/o-spreadsheet/pull/2330)
+- Previously, the find and replace functionality only worked on the active sheet, which made it difficult to determine if the content was available in any other sheet or to replace content in all sheets.
+- the code has been updated to search for content in all available sheets and replace it in all sheets.
+
+- ## [[IMP] add history in CoreView plugins](https://github.com/odoo/o-spreadsheet/pull/2408)
+- add history to some CoreView plugins
+
+- ## [[IMP] selection: drag and drop selection on the grid](https://github.com/odoo/o-spreadsheet/pull/1023)
+- Add a new component named "selection" allowing to cut/paste a selection by grabbing and moving it.
+
+- ## [Can extract data from the sheet](https://github.com/odoo/o-spreadsheet/issues/2030)
+- I just set my model mode from headless to normal and it worked but only for
+one sheet while the evaluated data in other sheets shows 'Loading'
+
+- ## [Possible to use formula parser as a backend library?](https://github.com/odoo/o-spreadsheet/issues/2187)
+- owl is a frontend library but can be used in the backend. While the App of owl is not mounted, it should be good.
+
+- we tried to install the library as a backend (full nodejs app) and it cannot run as it is. 
+  - the data model is relying on the owl library as well, which simply cannot run on a nodejs server because it uses the web API. Sorry for misleading you. 
+  - However, we are currently considering different approaches to make the lib backend-only asap.
+# discuss
+- ## 
+
+- ## 
+
+- ## 

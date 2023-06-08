@@ -9,9 +9,6 @@ modified: 2020-12-31T15:32:40.135Z
 
 # popular
 
-- https://github.com/alibaba/DataX
-  - /7.3kStar/Apache2/202009
-  - 离线数据同步工具/平台，实现包括 MySQL、Oracle、Postgres、HDFS等各种异构数据源之间高效的数据同步功能
 - https://github.com/alibaba/easyexcel
   - /17.1kStar/Apache2/202009
   - 简单且能避免OOM的java处理Excel工具
@@ -27,6 +24,19 @@ modified: 2020-12-31T15:32:40.135Z
     - 跨平台GUI工具(Windows/Linux/macOS)
   - https://github.com/xresloader/xresconv-cli
     - 跨平台命令行工具，兼容python2和python3
+# etl
+- https://github.com/alibaba/DataX
+  - /7.3kStar/Apache2/202009
+  - 离线数据同步工具/平台，实现包括 MySQL、Oracle、Postgres、HDFS等各种异构数据源之间高效的数据同步功能
+
+- https://github.com/Claviz/bellboy /202305/ts
+  - Highly performant JavaScript data stream ETL engine.
+  - Bellboy streams input data row by row. Every row, in turn, goes through user-defined function where it can be transformed.
+  - When enough data is collected in batch, it is being loaded to destination.
+  - A job in bellboy is a relationship link between processor and destinations
+  - Each processor in bellboy is a class which has a single responsibility of processing data of specific type
+  - Every job can have as many destinations (outputs) as needed. For example, one job can load processed data into a database, log this data to stdout and post it by HTTP simultaneously.
+  - New processors and destinations can be made by extending existing ones.
 # infrastructure
 - https://github.com/coollabsio/coolify
   - https://coollabs.io/coolify

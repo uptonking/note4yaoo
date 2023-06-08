@@ -26,7 +26,7 @@ modified: 2022-08-21T10:02:05.129Z
   - Notion 工程师 Chet 以警察信息管理系统为例，用普通人能理解的大白话，从文件、文件夹、文件柜逐步介绍关系型数据库的构成和实现原理
   - [Maybe some misunderstanding of how SQL DB indexes work?](https://github.com/ccorcos/tuple-database/issues/11)
 # popular
-- react-datasheet-grid /133Star/MIT/202205/ts
+- react-datasheet-grid /259Star/MIT/202305/ts
   - https://github.com/nick-keller/react-datasheet-grid
   - https://github.com/Equify/react-datasheet-grid
   - https://react-datasheet-grid.netlify.app/docs/features
@@ -36,6 +36,8 @@ modified: 2022-08-21T10:02:05.129Z
   - 操作支持获取operation对象
   - Supports copy / pasting to and from Excel, Google-sheet...
   - Virtualized rows and columns, supports hundreds of thousands of rows
+  - undo支持撤销编辑单元格，不支持撤销添加行
+    - [Is there anyway I can implement Undo, Update button just after addRow button ?](https://github.com/nick-keller/react-datasheet-grid/discussions/221)
   - [V2 status update_202106](https://github.com/Equify/react-datasheet-grid/issues/37)
   - [Feature Roadmap_202106](https://github.com/Equify/react-datasheet-grid/issues/38)
   - Fast

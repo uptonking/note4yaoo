@@ -50,6 +50,7 @@ modified: 2022-08-21T10:03:52.222Z
 - https://github.com/Aayush-Kindo/Excel-Clone /js/公式未实现
   - https://incandescent-gecko-f9d681.netlify.app/
   - An excel sheet clone using HTML, CSS, and JavaScript allows users to create spreadsheets within a web browser.
+  - https://github.com/crimemaster007/Excel-Clone
 
 - https://github.com/GrigoryGerasimov/excel-in-js /js
   - https://grigorygerasimov.github.io/excel-in-js/

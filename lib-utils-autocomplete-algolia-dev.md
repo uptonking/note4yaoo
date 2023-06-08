@@ -14,6 +14,7 @@ modified: 2023-06-05T07:04:54.711Z
 
 - pros
   - framework-agnostic
+  - 扩展性强，支持plugins、注册components、自定义view
 
 - cons
   - 不支持多实例
@@ -23,6 +24,9 @@ modified: 2023-06-05T07:04:54.711Z
   - where to render
   - what to render
   - how to render
+
+- autocomplate vs dropdown 区别
+  - autocomplate是支持搜索的dropdown
 # roadmap
 - keyboard
   - tab autocomplete
@@ -41,12 +45,22 @@ modified: 2023-06-05T07:04:54.711Z
   - autocomplete.js is a standalone UI library and is unrelated to the Autocomplete widget in the Instantsearch.js UI library
 - https://github.com/typesense/typesense-instantsearch-adapter
   - An adapter to use the awesome Instantsearch.js library with a Typesense Search Server, to build rich search interfaces.
-  - If your search interface is built on a custom autocomplete component, or is based on @algolia/autocomplete-js, then you don't need this adapter to use it with Typesense, as typesense-js library already supports client-side fetching data from any async data sources. 
+  - If your search interface is built on a custom autocomplete component, or is based on @algolia/autocomplete-js, then you don't need this adapter to use it with Typesense, as typesense-js library already supports client-side fetching data from any async data sources.
+
+- https://github.com/kalkafox/cargo-search
+  - A simple web page using Algolia's Autocomplete to query cargo dependencies on the fly.
+
+
 # codebase
-- 轻量视图渲染层
+- 自定义轻量视图渲染层
   - reactive定义可变值，runReactives批量更新
-  - runEffect立即执行effect fn
+  - runEffect注册并立即执行effect fn，runEffects执行注册过的fn
   - 每次dispatch(action)，都会执行onStateChange，触发scheduleRender，renderSearchBox + renderPanel
+
+- 自定义渲染层的问题
+  - runEffects时每个fn都会执行，很可能过度执行，缺少类似onMount的一次性执行选项
+  - onStateChangeRef每次state更新都会触发全量rerender，为了提高性能使用了debounce，基于setTimeout(render, 0)
+  - effect是在函数执行过程中同步执行的
 
 ## architecture
 

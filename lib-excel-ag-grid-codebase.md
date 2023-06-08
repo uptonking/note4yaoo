@@ -15,11 +15,12 @@ modified: 2022-08-21T09:54:02.990Z
   - Grid入口类初始化时
     - 会初始化很多基础类，注册很多事件
     - 会执行rowModel.start()，计算rowModel
-  - EVENT_MODEL_UPDATED会触发PaginationProxy.onModelUpdated计算分页数据，
+  - EVENT_MODEL_UPDATED会触发paginationProxy.onModelUpdated计算分页数据，
     - 然后执行rowRenderer注册的onPageLoaded
     - rowRenderer.onPageLoaded.onModelUpdated会执行 redrawAfterModelUpdate，触发首次渲染当前页所有行
   - rowModel初始化时会注册很多事件到eventService
     - 比如EVENT_SORT/Filter_CHANGED，这些事件被触发时会执行refreshModel更新rowModel
+
 - update
   - refreshModel在rowModel每次计算后都会触发EVENT_MODEL_UPDATED事件，从而更新ui
     - 主要触发paginationProxy.onModelUpdated
@@ -40,42 +41,40 @@ modified: 2022-08-21T09:54:02.990Z
     - 在setTimeout(cb)的cb中执行this.nodeManager.updateRowData + refreshModel
   - 对于modelUpdated事件
     - rowComp.onModelUpdated会更新每行样式
-
-- model-layer
-  - ClientSideRowModel是event-emitter
-  - primaryColumnTree
-    - 计算成多叉树平衡树结构的表头对象
-  - secondaryBalancedTree
-    - If pivoting, these are the generated columns as a result of the pivot
-
-- view-layer
-  - GridCore会从内置模板template初始化dom
-  - GridPanel初始化时，会注册到rowRenderer
-  - RowRender初始化时，会注册各种redraw事件
-  - rowRenderer.onModelUpdated会执行 redrawAfterModelUpdate
-    - 计算需要重新渲染的行的索引index，然后遍历这些行索引创建或更新RowComp
-  - rowRenderer.redrawAfterModelUpdate 直接操作dom
-    - 先计算rowsToRecycle
-    - this.redraw(rowsToRecycle, animate);
-      - this.calculateIndexesToDraw(rowsToRecycle);
-      - this.removeRowCompsNotToDraw > renderedRow.destroy()
-      - this.createOrUpdateRowComp
-      - 先获取数据rowNode, this.paginationProxy.getRow(rowIndex);
-      - 再渲染视图, this.createRowComp(rowNode) 
-        - new RowComp 
-        - this.setupRowContainers()
-        - createRowContainer
-        - createCells
-        - rowContainerComp.appendRowTemplate(cellTemplatesAndComps)
-    - this.restoreFocusedCell
-  - rowRenderer.refreshCells
-    - cellComp.refreshCell
-    - el.removeChild(el.firstChild);
-    - this.eParentOfValue.innerHTML = _.escape(valueToUse);
+# model-layer
+- ClientSideRowModel是event-emitter
+- primaryColumnTree
+  - 计算成多叉树平衡树结构的表头对象
+- secondaryBalancedTree
+  - If pivoting, these are the generated columns as a result of the pivot
+# view-layer
+- GridCore会从内置模板template初始化dom
+- GridPanel初始化时，会注册到rowRenderer
+- RowRender初始化时，会注册各种redraw事件
+- rowRenderer.onModelUpdated会执行 redrawAfterModelUpdate
+  - 计算需要重新渲染的行的索引index，然后遍历这些行索引创建或更新RowComp
+- rowRenderer.redrawAfterModelUpdate 直接操作dom
+  - 先计算rowsToRecycle，会复用已有行
+  - this.redraw(rowsToRecycle, animate); 
+    - this.calculateIndexesToDraw(rowsToRecycle);
+    - this.removeRowCompsNotToDraw > renderedRow.destroy()
+    - this.createOrUpdateRowComp
+    - 先获取数据rowNode, this.paginationProxy.getRow(rowIndex);
+    - 再渲染视图, this.createRowComp(rowNode) 
+      - new RowComp 
+      - this.setupRowContainers()
+      - createRowContainer
+      - createCells
+      - rowContainerComp.appendRowTemplate(cellTemplatesAndComps)
+  - this.restoreFocusedCell
+- rowRenderer.refreshCells
+  - cellComp.refreshCell
+  - el.removeChild(el.firstChild); 
+  - this.eParentOfValue.innerHTML = _.escape(valueToUse); 
 # undo/redo
 - 对于rowEditing/cellEditing/paste/fill操作，都会触发事件执行
   - const action = new UndoRedoAction(this.cellValueChanges); 
-    - 会保留 oldValue和newValue
+    - 会保留 **oldValue和newValue**
   - pushActionsToUndoStack(action); 
 
 - undo

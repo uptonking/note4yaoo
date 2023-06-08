@@ -76,6 +76,12 @@ modified: 2021-01-12T18:48:52.713Z
   - 样式普通
   - A set of React components to facilitate the creation of Open Data Catalogs with React.
   - built for dkan(基于php，而ckan基于python)
+
+- https://github.com/Talend/ui /js/ts
+  - created to simplify the development of Talend's front-end stack.
+  - containers: A component here should never embed HTML or CSS. Only connection to the store and behavior should be done. All the state should be synchronised with redux using react-cmf API.
+  - presenters: A set of stateless components. We want to avoid {children} for leaf as much as possible. 
+  - react-cmf: a framework to build configurable React App using redux/redux-saga.
 # amazing
 - Denali Design /Verizon Media
   - /69Star/MIT/202012/scss

@@ -8,6 +8,17 @@ modified: 2022-11-06T03:19:28.284Z
 # toc-db-sqlite-web-indexeddb
 
 # popular
+
+- https://github.com/karlb/litespread /202108/js/inactive
+  - https://github.com/karlb/litespread/wiki
+  - https://www.litespread.com/
+  - Webapp that uses SQLite as a spreadsheet engine
+  - Litespread is viewer and editor for SQLite and CSV files with basic spreadsheet functionality.
+  - Litespread runs in your browser without the need for any server-side code
+  - 依赖sql.js、blueprintjs、file-saver、moment、papaparse、react
+  - Sync data via Remote Storage
+  - Use SQL syntax in formulas
+
 - https://github.com/uglyer/storelite.js
   - 基于sql.js(sqlite)实现的状态仓库，支持 web worker、react 绑定
 

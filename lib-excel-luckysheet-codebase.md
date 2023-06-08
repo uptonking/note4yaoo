@@ -16,13 +16,14 @@ modified: 2022-08-21T09:57:39.501Z
 - init初始化流程
   - initSheetData: convert SheetType to CellMatrix
   - const tableCanvas = new Canvas(refs.canvas.current!, context); 
-  - tableCanvas.drawMain
+  - `tableCanvas.drawMain`
 
 - update更新流程
   - Redraw canvas When context changes
   - All context changes will trigger this
   - 每次context-change都会重新创建实例
-  - tableCanvas.drawMain
+    - const tableCanvas = new Canvas(refs.canvas.current!, context);
+    - `tableCanvas.drawMain`
 
 ## model-layer
 

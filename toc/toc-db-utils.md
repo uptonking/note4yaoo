@@ -42,9 +42,14 @@ modified: 2022-11-06T11:21:27.612Z
     - The core abstraction used in Tad for programmatically constructing and executing relational SQL queries.
     - This also defines the driver interface implemented by specific database back-ends, and a small, transport-agnostic remoting layer to allow queries and results to be transmitted between a web browser (or electron renderer process) and a reltab backend server.
 # etl
-- https://github.com/Claviz/bellboy /202212/ts
+- https://github.com/Claviz/bellboy /202305/ts
   - Highly performant JavaScript data stream ETL engine.
-  - Bellboy streams input data row by row. Every row, in turn, goes through user-defined function where it can be transformed. 
+  - Bellboy streams input data row by row. Every row, in turn, goes through user-defined function where it can be transformed.
+  - When enough data is collected in batch, it is being loaded to destination.
+  - A job in bellboy is a relationship link between processor and destinations
+  - Each processor in bellboy is a class which has a single responsibility of processing data of specific type
+  - Every job can have as many destinations (outputs) as needed. For example, one job can load processed data into a database, log this data to stdout and post it by HTTP simultaneously.
+  - New processors and destinations can be made by extending existing ones.
 
 - https://github.com/ZJONSSON/node-etl /202201/js
   - ETL is a collection of stream based components that can be piped together to form a complete ETL pipeline with buffering, bulk-inserts and concurrent database streams. 

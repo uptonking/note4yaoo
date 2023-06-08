@@ -9,6 +9,22 @@ modified: 2023-04-07T04:09:54.488Z
 
 # guide
 
+- tips
+  - signals和immutable的mental model有很大不同
+  - 实现协作的案例更多基于immutable，但基于proxy的实现也有，如o-spreadsheet
+
+- preactjs-signals的实现不基于proxy
+  - tldraw-signia也不基于
+  - [Signal Boosting | Preact](https://preactjs.com/blog/signal-boosting/)
+    - Turns out Preact's signals are not Proxy-based (as Vue's refs), they are get/set based. 
+    - I guess that's because they are not deeply reactive. 
+
+- mobx
+  - [By default, MobX uses proxies to make arrays and plain objects observable](https://mobx.js.org/configuration.html)
+    - [Object.defineProperty and useProxies: "ifavailable"](https://github.com/mobxjs/mobx/issues/2876)
+    - [Proposal: MobX 6: drop decorators,😱unify ES5 and proxy implementations](https://github.com/mobxjs/mobx/issues/2325)
+
+- immer-core/plugin都基于proxy
 # discuss-stars
 - ## 
 
@@ -64,7 +80,26 @@ state1.state.deniz = 11; // nothing
 # discuss
 - ## 
 
-- ## 
+- ## Why are people so obsessed with signals right now
+- https://twitter.com/m1nd_killer/status/1629530182636781568
+- It is same technology that we had 2 years ago, as immer, just in new format
+- Immer is amazing, but pretty different. Mobx on the other hand (by the same creator) would be the much closer comparison
+- I mean both technologies let you make mutations with Proxy under the hood. And signals just a new way to solve the same issue.
+  - But mobx more about observables and huge stores.
+  - Anyway, mutating with proxy let make code easier to read
+
+- ##  I don’t think Vue 3 refs should be used as an example of “Proxy based reactivity” - only deep access is tracked using Proxies
+- https://twitter.com/youyuxi/status/1635416467645829120
+  - the .value itself is a simple getter, very much like Preact / Qwik signals. 
+  - The shallow version of it (shallowRef) is identical to signals
+- Why have proxies a bad rep. Seems like people don't like to have all the reactivity based on them, any reason for this?
+  - Performance.
+
+- ## I keep wondering if there's some way to speed up React-Redux via signals/proxies/etc.
+- https://twitter.com/acemarke/status/1628103434577510400
+  - @dai_shi had a POC PR that added a `useTrackedState` hook a while back
+- Immutability and signals are like water an oil imo, they don't mix well together.
+- The primary speedups come from lazy subscriptions and diff bypass. It might be possible to get the former, but very unlikely the latter.
 
 - ## Signals are cool but don't be fooled, 
 - https://twitter.com/PeerReynders/status/1568754562739195906
@@ -211,8 +246,10 @@ state1.state.deniz = 11; // nothing
   - MobX is great! Was a heavy user of it. 
   - 💡 We decided against intercepting built in objects as there are too many of them and too many ways to mutate them. 
   - Always using a signal and reading from it via .value felt more consistent and simpler. So we went with that
-- How does that work for signals that capture large object trees, that are rendered by different components (e.g. classic todo app)? One big signal would over render, creating many small signals would be cumbersome from DX?
-  - You'd create the more granular signals yourself. We nudge folks to subscribe as late as possible vs MobX proxies which set up subs eagerly. Wouldn't say one or the other approach is better, just a different tradeoff.
+
+- 🤔 How does that work for signals that capture large object trees, that are rendered by different components (e.g. classic todo app)? One big signal would over render, creating many small signals would be cumbersome from DX?
+  - You'd create the more granular signals yourself. **We nudge folks to subscribe as late as possible vs MobX proxies which set up subs eagerly**. Wouldn't say one or the other approach is better, just a different tradeoff.
+  - You can build the same MobX-style Proxy API on top of signals
 - Could you elaborate on the "sets up subs eagerly"? I'd say MobX does it late as well, but maybe we're referring to something different
   - Reading my tweet again I could have phrased it better. I meant that in the ideal case we want the renderer to set up subscriptions. With proxies or object getters it's too early as just accessing obj.foo usually sets up the subscription already.
 - But that happens only during rendering, so sounds the same?

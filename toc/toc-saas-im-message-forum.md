@@ -63,7 +63,7 @@ modified: 2021-05-14T15:04:15.333Z
 - MBBS /52Star/MIT/202207/ts/功能全
   - https://github.com/linfaxin/MBBS
   - http://mbbs.cc/
-  - 轻量级全功能论坛、移动/PC双端适配、无依赖一键启动、技术栈 express + sqlite + react（MBBS论坛托管服务开源版）
+  - 轻量级全功能论坛、移动/PC双端适配、无依赖一键启动、技术栈 express + sqlite + react
   - 后端依赖express、sequelize、sqlite3、svg-captcha
   - 前端依赖mui、ahooks、umi3
   - 全功能论坛：板块/楼中楼/角色权限/审核/富文本编辑/个性化配置/邮件通知 等

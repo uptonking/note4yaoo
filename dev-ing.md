@@ -124,8 +124,10 @@ $$('[contenteditable]')
   - Node定义采用unist
   - lww的字符串改为针对crdt优化的类型
 - flat-data-model的示例
-  - frontend/in-memory database，如rxdb/pouchdb
+  - frontend/in-memory database，如rxdb/pouchdb/tupledb
   - 还可以参考indexeddb相关示例，如dexie
+  - sqlite-react
+  - 参考现有组件: tree
 
 - 内容的存储与更新如何与数据库集成
   - 编辑器内容自动保存一般通过在onChange方法中执行saveToDB
@@ -269,6 +271,12 @@ $$('[contenteditable]')
 # dev-06
 
 ## 060
+
+## 0607
+
+- [Understanding the difference between Object.create() and new SomeFunction() - Stack Overflow](https://stackoverflow.com/questions/4166616/understanding-the-difference-between-object-create-and-new-somefunction)
+  - `new X` is `Object.create(X.prototype)` with additionally running the constructor function. 
+  -  that `new X` actually runs constructor code, whereas `Object.create` will not execute the constructor code.
 
 ## 0606
 

@@ -213,6 +213,7 @@ modified: 2020-07-14T11:03:53.196Z
     - Make it as easy as possible to write business logic for small up to complex app
     - Integrate into frameworks as if they were native built-in primitives
   - Signals can be accessed directly and your component will automatically re-render when the signal's value changes.
+  - [Reactive/Store-like primitive](https://github.com/preactjs/signals/issues/4)
 - https://github.com/luisherranz/deepsignal
   - Preact signals, but using regular JavaScript objects
   - DeepSignal works by wrapping the object with a Proxy that intercepts all property accesses and returns the signal value by default.
@@ -233,6 +234,12 @@ modified: 2020-07-14T11:03:53.196Z
   - Reactive signals that scale, by tldraw.
   - It uses a new clock-based lazy reactivity system that allows signals to scale with complex data-intensive applications.
   - Signia has a global logical clock. This is an integer that gets incremented every time any atom is updated.
+  - signia-react实现基于proxy
+    - With the native Proxy, all other calls such as access/setting to/of properties will be forwarded to the target Component
+  - https://twitter.com/djsheldrick/status/1631572755777830912
+    - Signia is like MobX and computed, but with the diffing thing mentioned above, and always-on caching for computeds. 
+    - (MobX throws cached values away when there are no active observers). 
+    - Signia doesn't use proxies to wrap data.
 
 - https://github.com/WebReflection/usignal
   - A blend(混合，融合) of @preact/signals-core and solid-js basic reactivity API, with API and DX mostly identical to @preact/signals-core but extra goodness inspired by solid-js

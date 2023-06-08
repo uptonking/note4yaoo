@@ -84,6 +84,7 @@ modified: 2020-10-05T06:18:29.671Z
   - https://github.com/visgl/luma.gl
   - https://luma.gl/
   - High-performance Toolkit for WebGL-based Data Visualization
+  - luma.gl aims to provide support for GPU programmers that need to work directly with shaders and want a low abstraction API that remains conceptually close to the WebGPU and WebGL APIs. 
   - While generic enough to be used for general 3D rendering, luma.gl's mandate(指令、契约) is primarily to support GPU needs of data visualization frameworks in the vis.gl suite
 # threejs
 - https://github.com/mrdoob/three.js

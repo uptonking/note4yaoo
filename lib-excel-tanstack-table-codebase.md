@@ -23,17 +23,16 @@ modified: 2022-08-21T10:19:58.756Z
 # codebase
 - table和virtual都用到了react forceRender模式
 
-- createTable 的初始化流程
-  - 计算插件options，合并feature options
-  - 添加插件initialState到全局initialState
-  - add core props and methods to table instance
-  - 逐个执行插件的createTable方法，将table实例作为参数传入来增强
-
 - 一个feature的设计
   - 添加到table options
   - 在table、column、header暴露api
 # architecture
-- dataflow
+- init createTable 的初始化流程
+  - 计算插件options，合并feature options
+  - 添加插件initialState到全局initialState
+  - add core props and methods to table instance
+  - 逐个执行插件的createTable方法，将table实例作为参数传入来增强
+# model-layer
 - data => model
   - 计算rowModel的入口 `const rowModel = table.getRowModel(); `，手动触发
 - 计算rowModel的顺序 💡 从下向上
@@ -51,8 +50,6 @@ modified: 2022-08-21T10:19:58.756Z
 
 - serverModel
   - 提供了`manual*`控制属性
-
-- model-layer
 # virtual
 - 固定高度的原理
   - 在目标区域上下方显示invisible元素高度和

@@ -15,7 +15,7 @@ modified: 2022-08-21T10:02:27.788Z
   - _undo/redo_
   - _collaborative optional_
   - _transaction_
-  - headless utils/toolkit: props + api
+  - headless utils: state/actions/props/api
   - view-layer: vdom-based
   - virtualized
   - keyboard/a11y
@@ -39,9 +39,9 @@ modified: 2022-08-21T10:02:27.788Z
 - src-list-grid
   - **ag-grid**
   - **tanstack-table**
-  - **react-window**
+  - **react-virtual**
   - react-tiny-virtual-list
-  - react-virtualized
+  - react-virtualized/window
 
 - src-list-grid-canvas
   - **luckysheet**: 未使用class类，函数式风格
@@ -121,6 +121,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://odoo.github.io/o-spreadsheet/
   - A standalone spreadsheet for the web, easily integrable and extendable.
   - 支持公式formula
+  - 支持history、undo、branch
   - 依赖bootstrap5、@odoo/owl
   - 图表基于chart.js.v2
   - 自定义实现了`css()`形式的css-in-js的方法
@@ -137,18 +138,33 @@ modified: 2022-08-21T10:02:27.788Z
     - Model can be used in a standalone way to manipulate programmatically a spreadsheet
   - [[WIP] Version history](https://github.com/odoo/o-spreadsheet/pull/2259)
     - I'd keep the concepts of tree and branches hidden. They really are internal implementation details of the data structure.
-- https://github.com/odoo/owl /ts/NoDeps
+- https://github.com/odoo/owl /LGPLv3/ts/NoDeps
   - A web framework for structured, dynamic and maintainable applications
   - 初始化前，需要先从服务器fetch界面ui相关的xml模版文件
-  - 视图层使用xml模版，组件与视图耦合，react也这样
+  - 视图层使用xml模版，组件与视图耦合(view+state+effect)，react也这样
+  - Owl's virtual dom is a fork of `snabbdom`.
   - Class based components with hooks, reactive state and concurrent mode
   - a fine grained reactivity system similar to Vue
   - Owl components are defined with ES6 classes and xml templates, uses an underlying **virtual DOM**, integrates beautifully with hooks, and the rendering is asynchronous.
+  - Most frameworks will compile templates ahead of time. 
+    - However, this is not what Odoo needs: Odoo will fetch templates from the database and need to compile them only at the last possible moment, so we can apply all necessary xpaths
+    - Odoo needs to be able to generate (and compile) templates at runtime.
   - [owl/comparison with react/vue](https://github.com/odoo/owl/blob/master/doc/miscellaneous/comparison.md)
     - Owl supports slots, which is the primary mechanism to make generic reusable/composable components
-    - Owl is not dependant on any external build tool.Owl uses the standard xml parser that comes with every browser.
+    - Owl is not dependant on any external build tool. Owl uses the standard xml parser that comes with every browser.
     - components in OWL are totally asynchronous. useful for lazy/dynamic loading
-    - owl reactivity is done with a Proxy. once state prop changes, rendering is scheduled in the next microtask(promise)
+    - owl reactivity is done with a `Proxy`. once state prop changes, rendering is scheduled in the next microtask(promise)
+      - We like the way Vue did it, but it has a flaw: it is not really optional. 
+      - there certainly are situations where we need a state, which is not read-only, and not observed. For example, a spreadsheet
+      - It may have a very large internal state, and it knows exactly when it needs to be rendered (basically, whenever the user performs some action). Then, observing its state is a net performance loss, both for the CPU and the memory.
+  - [perfectly synchronising actual DOM update of components](https://github.com/odoo/owl/issues/845)
+    - What we want is the button to change color at the exact same time as the composer dropdown appearing.
+    - Owl is designed asynchronously, and you cannot force two child components to be updated at the same time. This is just not possible.
+    - this is really weird to me, if there is no async work going on, they will however be updated in the same animation frame
+    - problem: there is a css transition rule on the button
+  - [[IMP] reactivity: synchronous batch context](https://github.com/odoo/owl/pull/1157)
+    - Can be useful for implementing computed values.
+    - rename to transaction
 
 - react-window /14kStar/MIT/202304/js
   - https://github.com/bvaughn/react-window
@@ -321,6 +337,21 @@ modified: 2022-08-21T10:02:27.788Z
   - JS grid library with charts integration and server communication.
   - 基于div实现，实现很特别，表格ui是一列一列相邻放置构成的，每列对应的dom元素存在
 
+- react-datasheet-grid /259Star/MIT/202305/ts
+  - https://github.com/nick-keller/react-datasheet-grid
+  - https://github.com/Equify/react-datasheet-grid
+  - https://react-datasheet-grid.netlify.app/docs/features
+  - 依赖react、tanstack-virtual、react-resize-detector
+  - more like Airtable or Notion and less like Excel in the sense that instead of dealing with individual cells it deals with entire rows, and each column is responsible for a single property of each row
+  - 默认可编辑单元格
+  - 操作支持获取operation对象
+  - Supports copy / pasting to and from Excel, Google-sheet...
+  - Virtualized rows and columns, supports hundreds of thousands of rows
+  - undo支持撤销编辑单元格，不支持撤销添加行
+    - [Is there anyway I can implement Undo, Update button just after addRow button ?](https://github.com/nick-keller/react-datasheet-grid/discussions/221)
+  - [V2 status update_202106](https://github.com/Equify/react-datasheet-grid/issues/37)
+  - [Feature Roadmap_202106](https://github.com/Equify/react-datasheet-grid/issues/38)
+
 - react-base-table /1.4kStar/MIT/202303/js
   - https://github.com/Autodesk/react-base-table
   - https://autodesk.github.io/react-base-table/
@@ -328,12 +359,7 @@ modified: 2022-08-21T10:02:27.788Z
   - 依赖react-window、memoize-one
   - A react table component to display large datasets with high performance and flexibility
   - 未实现row select(作者为组件unopinionated的目标而未合并pr)，但提供示例
-- react-datasheet-grid /242Star/MIT/202302/ts
-  - https://github.com/nick-keller/react-datasheet-grid
-  - https://react-datasheet-grid.netlify.app/docs/features
-  - 依赖react、tanstack-virtual~~react-window~~、react-resize-detector
-  - more like Airtable or Notion and less like Excel in the sense that instead of dealing with individual cells it deals with entire rows, and each column is responsible for a single property of each row
-
+ 
 - fast-grid /23Star/NALic/202305/ts
   - https://github.com/gabrielpetersson/fast-grid
   - https://fast-grid.vercel.app/
@@ -479,6 +505,17 @@ modified: 2022-08-21T10:02:27.788Z
 - https://github.com/Kuechlin/mantine-data-grid
   - https://kuechlin.github.io/mantine-data-grid/
   - Data Grid component with Mantine UI and react-table v8
+
+- https://github.com/karlb/litespread /202108/js/inactive
+  - https://github.com/karlb/litespread/wiki
+  - https://www.litespread.com/
+  - Webapp that uses SQLite as a spreadsheet engine
+  - Litespread is viewer and editor for SQLite and CSV files with basic spreadsheet functionality.
+  - Litespread runs in your browser without the need for any server-side code
+  - 依赖sql.js、blueprintjs、file-saver、moment、papaparse、react
+  - formula公式几乎未实现
+  - Use SQL syntax in formulas
+  - Sync data via Remote Storage
 # async/concurrency/worker
 - https://github.com/Magnithor/CanvasTable /202201/ts/inactive
   - https://magni.strumpur.net/CanvasTable/

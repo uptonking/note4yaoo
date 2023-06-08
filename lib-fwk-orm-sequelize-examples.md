@@ -88,7 +88,7 @@ modified: 2023-02-05T18:50:32.900Z
   - A proposal for the usage of Sequelize within an Express. JS application.
 
 - https://github.com/overlookmotel/sequelize-hierarchy /js/201906/inactive
-  - Relational databases aren't very good at dealing with nested hierarchies like folders/categories/Tree
+  - Relational databases aren't very good at dealing with nested hierarchies like **folders/categories/Tree**
   - To store a hierarchy in a database, the usual method is to give each record a `ParentID` field which says which is the record one level above it.
   - if you want to retrieve an entire tree/hierarchy structure from the database, it requires multiple queries, recursively getting each level of the hierarchy. 
     - For a big tree structure, this is a lengthy process, and annoying to code.
@@ -103,6 +103,16 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/sequelize/sequelize-sscce
   - Base repository for creating and sharing Sequelize SSCCEs
   - Short, Self Contained, Correct (Compilable), Example
+
+- MBBS /52Star/MIT/202207/ts/功能全
+  - https://github.com/linfaxin/MBBS
+  - http://mbbs.cc/
+  - [论坛等级和功能对比](http://bbs.mbbs.cc/#/thread/detail/5)
+  - 轻量级全功能论坛、移动/PC双端适配、无依赖一键启动、技术栈 express + sqlite + react
+  - 后端依赖express、sequelize、sqlite3、svg-captcha
+  - 前端依赖mui、ahooks、umi3
+  - 全功能论坛：板块/楼中楼/角色权限/审核/富文本编辑/个性化配置/邮件通知 等
+  - 自带授权登录：免开发支持 QQ/微信/支付宝 授权登录
 # server-sent event
 - https://github.com/dexterio200/chat-app-server
   - Server side of a chat room app - built with Node.js, Express, Sequelize & Server-sent events.

@@ -36,6 +36,15 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/jahewson/node-byline
   - Line-by-line Stream reader for node.js
 
+- https://github.com/Claviz/bellboy /202305/ts
+  - Highly performant JavaScript data stream ETL engine.
+  - Bellboy streams input data row by row. Every row, in turn, goes through user-defined function where it can be transformed.
+  - When enough data is collected in batch, it is being loaded to destination.
+  - A job in bellboy is a relationship link between processor and destinations
+  - Each processor in bellboy is a class which has a single responsibility of processing data of specific type
+  - Every job can have as many destinations (outputs) as needed. For example, one job can load processed data into a database, log this data to stdout and post it by HTTP simultaneously.
+  - New processors and destinations can be made by extending existing ones.
+
 - https://github.com/vweevers/detect-tabular /js
   - A stream that detects tabular data (spreadsheets, dsv or json) and yields objects.
   - npm i detect-tabular map-tabular-keys snake-case jsonstream
@@ -272,6 +281,8 @@ modified: 2023-04-04T22:36:31.529Z
 
 - https://github.com/qualiancy/breeze-dag /201211/js
   - Async flow control for directed-acyclic-graph iteration.
+
+## excel/sheet-formula
 
 - https://github.com/snapview/sunrise /ts
   - Spreadsheet-like dataflow programming in TypeScript

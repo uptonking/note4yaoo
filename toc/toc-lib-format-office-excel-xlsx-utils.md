@@ -23,6 +23,10 @@ modified: 2023-01-09T11:04:13.958Z
   - When xltpl reads a xlsx file, it creates a tree for each worksheet.
   - And, each tree is translated to a nunjucks(jinja2) template with custom tags.
 
+- https://github.com/sail-sail/ejsExcel /js
+  - node export excel, ejsExcel
+  - https://github.com/sail-sail/ejsexcel-browserify
+
 - https://github.com/open-xml-templating/docxtemplater /MIT/js/excel收费
   - a library to generate docx/pptx documents from a docx/pptx template.
   - Functionality can be added with the following paid modules
@@ -92,6 +96,10 @@ modified: 2023-01-09T11:04:13.958Z
 
 - https://github.com/taggon/tiny-formula /ts/NoDeps
   - A toolset for parsing excel-like formula and calculating with custom functions.
+
+- https://github.com/LeanyLabs/formula-engine
+  - Extendable formula parser and executor.
+  - It supports three types of literals (data types): string/number/boolean
 # template
 - https://github.com/Siemienik/XToolset /ts
   - Export data to Ecma-376 . XLSX Excel files based on template
@@ -100,6 +108,10 @@ modified: 2023-01-09T11:04:13.958Z
 - https://github.com/plantain-00/js-excel-template
   - A js excel template used in browser or nodejs environment.
   - Generate Excel based on Excel template
+
+- https://github.com/yumdocs/yumdocs
+  - https://dev.yumdocs.com/docs/tutorials/typescript-tutorial
+  - a template engine to automate Word, PowerPoint and Excel documents.
 # utils
 - https://github.com/joway/sheetsql
   - Google Spreadsheet as a Database.

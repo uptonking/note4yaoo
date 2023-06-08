@@ -12,6 +12,16 @@ modified: 2022-06-03T22:07:49.519Z
 - resources
   - https://github.com/asg017/sqlite-ecosystem
 # popular
+- https://github.com/karlb/litespread /202108/js/inactive
+  - https://github.com/karlb/litespread/wiki
+  - https://www.litespread.com/
+  - Webapp that uses SQLite as a spreadsheet engine
+  - Litespread is viewer and editor for SQLite and CSV files with basic spreadsheet functionality.
+  - Litespread runs in your browser without the need for any server-side code
+  - 依赖sql.js、blueprintjs、file-saver、moment、papaparse、react
+  - Sync data via Remote Storage
+  - Use SQL syntax in formulas
+
 - https://github.com/ShivamJoker/SQL-Play
   - Simple app to practice and learn SQL in React Native using SQLite
 
@@ -50,10 +60,10 @@ modified: 2022-06-03T22:07:49.519Z
   - 编辑器使用的是简单 textarea，Write in the plain textarea without any burden
   - It has no external dependency.
 
-- https://github.com/thevahidal/soul
-  - Soul is command line tool, 
-  - after installing it, Run soul -d sqlite.db -p 8000 and it'll start a REST API on http://localhost:8000 and a Websocket server on ws://localhost:8000.
-  - It should return a list of the tables inside sqlite.db database.
+- https://github.com/thevahidal/soul /js
+  - A SQLite REST and realtime server
+  - Soul is command line tool, after installing it, Run soul -d sqlite.db -p 8000 and it'll start a REST API on http://localhost:8000 and a Websocket server on ws://localhost:8000.
+  - Soul Studio provides a GUI to work with your database.
 
 - https://github.com/assafmo/SQLiteProxy
   - A simple HTTP JSON proxy for SQLite.
@@ -63,6 +73,11 @@ modified: 2022-06-03T22:07:49.519Z
   - A static blog generator powered by GNU Make, Node.js & SQLite. 
   - Includes support for podcast feeds & FTS (full text search).
   - write blog posts in markdown, and create themes using ejs.
+
+- https://github.com/sqlighter/sqlighter /ts
+  - SQLighter is a database explorer born for SQLite that helps you design and deploy your application database in minutes. 
+  - SQLighter is built in Typescript using Next.js with a React frontend and Node backend. 
+  - 依赖mui5、nextjs、react-dnd、sql.js、swr、express、knex
 # crud-rest-api
 - https://github.com/machelslack/api-with-sqlite
   - node express api using a sqlite in memory database
