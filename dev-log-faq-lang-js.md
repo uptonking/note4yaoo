@@ -35,7 +35,11 @@ modified: 2021-03-29T19:18:55.989Z
 # 
 
 # class的实例方法 vs class中值为箭头函数的实例属性
-- You should avoid using arrow functions in class as they won't be the part of prototype and thus not shared by every instance. 
+- 实例属性f不在原型上
+  - 无法继承、super.f
+  - 内存消耗更大
+
+- You should avoid using arrow functions in class as they won't be the part of prototype and thus not shared by every instance.
   - It is same as giving the same copy of function to every instance.
 
 - [Arrow Functions in Class Properties Might Not Be As Great As We Think_201711](https://medium.com/@charpeni/arrow-functions-in-class-properties-might-not-be-as-great-as-we-think-3b3551c440b1)

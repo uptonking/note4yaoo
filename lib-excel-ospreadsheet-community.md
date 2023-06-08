@@ -12,7 +12,9 @@ modified: 2023-06-07T22:37:47.793Z
 # issues
 - ## 
 
-- ## 
+- ## [[IMP] commands: Introducing TRANSACTION to batch commands](https://github.com/odoo/o-spreadsheet/pull/1682)
+  - Unfortunately, dispatching several commands from the outside means different entries in the history stack; meaning we won't be able to undo/redo the commands together.
+  - doesn't and won't work. it cannot handle the allowdispatch of other commands. We need to find another approach
 
 - ## [[IMP] find_and_replace: sheet granularity in Find & Replace](https://github.com/odoo/o-spreadsheet/pull/2330)
 - Previously, the find and replace functionality only worked on the active sheet, which made it difficult to determine if the content was available in any other sheet or to replace content in all sheets.
@@ -39,4 +41,16 @@ one sheet while the evaluated data in other sheets shows 'Loading'
 
 - ## 
 
-- ## 
+- ## [Master allow dispatch UI plugin generic adrm](https://github.com/odoo/o-spreadsheet/pull/2364)
+- Before this commit, local commands were going through the allowDispatch
+of core plugins. This wasn't a problem per se, but was wrong from an
+architecture standpoint, core plugins shouldn't be aware of what's
+happening locally. This also made it so that zones/ranges of local commands
+missing a sheetId (because it is implicitly the active sheet) weren't
+checked.
+
+- ## [[IMP] Convert AST to formula string and batch row deletions](https://github.com/odoo/o-spreadsheet/pull/480)
+- With this commit, consecutive rows are deleted in batch, reducing cell visits.
+
+- ## [[REF] range: Remove rows and columns in batch](https://github.com/odoo/o-spreadsheet/pull/708)
+- To speed up the process, we remove consecutive rows/columns in one go

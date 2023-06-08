@@ -16,8 +16,9 @@ modified: 2023-06-07T22:37:26.731Z
 
 - update
   - SpreadsheetComp初始化时会注册 this.model.on("update", this, () => this.render(true)); 
-  - 每次model更新都会重渲染整个sheet组件
-  - keydown事件，如delete this.env.model.dispatch("DELETE_CONTENT", payload)
+    - 每次model更新都会重渲染整个SpreadsheetComp
+  - keydown事件，如delete会this.env.model.dispatch("DELETE_CONTENT", payload)
+    - dispatch事件会触发 this.trigger("update");
 # plugin
 - Since the spreadsheet internal state is quite complex, it is split into multiple parts, each managing a specific concern.
 
@@ -26,30 +27,46 @@ modified: 2023-06-07T22:37:26.731Z
   - **core plugins handling persistent data**
   - **UI plugins handling transient(短暂的；临时的) data**
 
-- BasePlugin
-  - this.history = Object.create(stateObserver); 每个plugin都有自己的history
+- `BasePlugin implements CommandHandler`
+  - this.history = Object.create(stateObserver); 
+    - 每个plugin都有自己的history，但update方法使用全局
   - this.dispatch = dispatch; 
+    - 全局dispatch
+  - allowDispatch: if the command is allowed
+  - beforeHandle: This should only be used if it is not possible to do the work in the handle method
+  - handle: handle any command
+  - finalize: only want to reevaluate the cell values once at the end
 
 - Core plugins handle spreadsheet data.
   - They are responsible to import, export and maintain the spreadsheet persisted state.
   - They should not be concerned about UI parts or transient state.
 
-- CorePlugin extends BasePlugin
-  - this.range = range
+- `CorePlugin extends BasePlugin`
+  - this.range = range; 
+  - this.getters = getters; 
+  - this.uuidGenerator = uuidGenerator; 
+  - adaptRanges: loop over the plugin's data structure and adapt the plugin's ranges.
 
 - UI plugins handle any transient data required to display a spreadsheet.
   - They can draw on the grid canvas.
 
-- UIPlugin extends BasePlugin
+- `UIPlugin extends BasePlugin`
   - this.selection = selection; 
   - this.ui = uiActions; 
-  - drawGrid
+  - this.getters = getters; 
+  - drawGrid(ctx: GridRenderingContext, layer: LAYERS) {}
+
+- Changes to the plugin state that must be restored by Undo must be done through the function `this.history.update()`.
+  - `this.history.update("records", 1, "data", 1, "text", "Bye");` can be used with multiple level of depth
+  - update操作，属性path中的多个key作为参数
+    - add用新key
+    - remove用undefined作为值
 
 - corePluginRegistry: persistent data
   - SheetPlugin
+  - CellPlugin
   - HeaderVisibilityPlugin
   - FiltersPlugin
-  - CellPlugin
   - MergePlugin
   - HeaderSizePlugin
   - BordersPlugin
@@ -83,15 +100,41 @@ modified: 2023-06-07T22:37:26.731Z
   - SheetViewPlugin
   - CustomColorsPlugin
 # model-layer
+- spreadsheet的核心数据结构
+  - sheet: `{ sheetId:string, rows:Array<{cells: {columnIndex:cellId} }> }` rows并不存放具体数据
+  - cells: `{ sheetId: { cellId: cellContent } }` cellId直接用的数字
+  - 🤔 优化时可进一步扁平化，~~{ rowId: cellIndex[] }~~, { cellId: {sheetId, rowId, cellIndex} }
+
 - Model初始化
   - load data to get `WorkbookData` internal data
   - setupConfig
-  - for (let Plugin of corePluginRegistry.getAll()) 获取并实例化core plugins
+  - for (let Plugin of corePluginRegistry.getAll()) 
+    - new CorePlugin
+    - plugin.import(data); 从数据中获取插件自身需要的数据
     - 会收集commands和handler
   - 依次实例化插件 statefulUIPluginRegistry, coreViewsPluginRegistry, featurePluginRegistry
+    - new UIPlugin
+    - 将layer排序后存放this.renderers
   - this.dispatch("START"); 触发plugins中注册过的事件
   - this.selection.observe使selection更新时也触发模型更新
   - this.joinSession 协作相关
+
+- `sheetPlugin.sheets: Record<UID, Sheet>` 作为核心数据源
+
+- UIPlugin的图层设计
+
+```typescript
+export const enum LAYERS {
+  Background,
+  Highlights,
+  Clipboard,
+  Search,
+  Chart,
+  Autofill,
+  Selection,
+  Headers, // Probably keep this at the end
+}
+```
 
 - The `Model` class is the owner of the state of the Spreadsheet. 
   - However, it has more a coordination role: it **defers the actual state manipulation work to plugins**.
@@ -116,7 +159,7 @@ modified: 2023-06-07T22:37:26.731Z
   - this.dispatchToHandlers(this.handlers, command); 
   - this.state.recordChanges
   - this.session.save(command, commands, changes); 协作相关
-  - this.trigger("update"); 
+  - `this.trigger("update")`; 通知视图层
   - commands are dispatched most of the time recursively until no plugin want to react anymore.
   - CoreCommands dispatched from this function are saved in the history.
 - `dispatch` is defined as an arrow function.  There are two reasons for this:
@@ -128,8 +171,109 @@ modified: 2023-06-07T22:37:26.731Z
   - This is then done by calling this method, which will dispatch the call to all registered plugins.
   - Note that nothing prevent multiple grid components from calling this method each, or one grid component calling it multiple times with a different context. 
   - This is probably the way we should do if we want to be able to freeze a part of the grid (so, we would need to render different zones)
+
+## sheet
+
+```typescript
+export interface Sheet {
+  id: UID;
+  name: string;
+  numberOfCols: number;
+  rows: Row[];
+  areGridLinesVisible: boolean;
+  isVisible: boolean;
+  panes: PaneDivision;
+}
+
+export interface Row {
+  // number is a column index, uid is cellId
+  cells: Record<number, UID | undefined>; 
+}
+
+class CellPlugin{
+  cells: { [sheetId: string]: { [id: string]: Cell } } = {};
+}
+
+export type Cell = LiteralCell | FormulaCell;
+
+interface Cell {
+  readonly id: UID;
+  /**
+   * 👇🏻 Raw cell content
+   */
+  readonly content: string;
+  readonly style?: Style;
+  readonly format?: Format;
+}
+```
+
+## StateObserver
+
+- commands: CoreCommand[] 记录操作历史
+- changes: root, path, beforeVal, afterVal 记录新旧值
+
+## history/undo
+
+- plugin-state的更新基于统一的history机制
+  - this.history.update("sheets", sheet.id, "rows", rows); 
+  - 每次更新值都会保存change到全局 stateObserver
+  - this.changes.push({ root, path, before: value[key], after: val, }); 
+
+- A revision represents a whole client action (Create a sheet, merge a Zone, Undo, ...).
+- A revision contains the following information:
+ - id: ID of the revision
+ - commands: CoreCommands that are linked to the action, and should be dispatched in other clients
+ - clientId: Client who initiated the action
+ - changes: List of changes applied on the state.
+
+- `session.revisions`存放了当前协作文档的changes
+  - 支持revertOperation
+
+- `class HistoryPlugin extends UIPlugin`
+  - The local history is responsible for tracking the locally state updates
+  - It maintains the local undo and redo stack to allow to undo/redo only local changes
+  - undoStack: UID[]
+  - redoStack: UID[]
+- 👉🏻 History changes (undo & redo) are *not* applied optimistically on the local state.
+  - We wait a global confirmation from the server. 
+  - The goal is to avoid handling concurrent history changes on multiple clients which are very hard to manage correctly.
+
+```JS
+if (type === "UNDO") {
+  this.session.undo(id);
+  this.redoStack.push(id);
+} else {
+  this.session.redo(id);
+  this.undoStack.push(id);
+}
+```
+
+- `session.undo` 会发送消息到server
+  - 客户端接受到ack后，执行`revisions.undo`; 
+  - revertOperation
+  - history-tree.undo
+  - fastForward: Replay the operations between the current HEAD_BRANCH and the end of the tree
+  - 协同时undo的可能是中间某个op，所以该位置后的op都要转换
+
+- version-history示例
+  - session.getRevisions().fastForward(); 
+  - session.getRevisions().revertTo(revision.operation.id); 
+  - revertOperation
+  - 显示version-history时，sheet不可编辑
+
+- The selective history is a data structure used to register changes/updates of a state.
+  - Each change/update is called an "operation".
+  - An operation can be represented by any data structure. It can be a "command", a "diff", etc.
+  - The data structure allows to easily cancel (and redo) any operation individually.
+  - Since this data structure doesn't know anything about the state nor the structure of operations, the actual work must be performed by external functions given as parameters. 
+
+- The tree is a data structure used to maintain the different branches of the `SelectiveHistory`.
+  - Branches can be "stacked" on each other and an execution path can be derived from any stack of branches. The rules to derive this path is explained below.
+  - An operation can be cancelled/undone by inserting a new branch below this operation.
 # view-layer
 - 基于odoo自研owl框架，类似vue的reactivity + vdom
 
 - Model初始化时markRaw(this)，未使用owl的reactivity
 # more
+- `key in {}` is ~12 times slower than `{}[key]`.
+  - So, we check the absence of key only when the direct access returns a falsy value. It's done to ensure that the registry can contains falsy values

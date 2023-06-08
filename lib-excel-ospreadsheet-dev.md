@@ -10,12 +10,15 @@ modified: 2023-06-07T22:37:07.042Z
 # guide
 
 - features
+  - license LGPLv3
   - 支持公式formula
   - 支持图表，基于chart.js.v2
+  - 支持批量删除rows，但未暴露transaction
 
-- pros 架构清晰可扩展
-  - license LGPLv3
+- pros
+  - 架构清晰可扩展
   - 支持协作，基于ot
+  - 支持selective undo，支持branch
   - 支持添加自定义函数，addFunction("MY. FUNC", MY_FUNC); 
 
 - cons
@@ -25,4 +28,13 @@ modified: 2023-06-07T22:37:07.042Z
 - tips
 # dev
 
+# examples
+- https://github.com/hokolomopo/o-spreadsheet-chrome-tools
+  - Clear & Reload o-spreadsheet with a keyboard shortcut
+
+- https://github.com/hokolomopo/o-spreadsheet-demo-data-generator
+  - copy the results in results/demoData.json
+
+- https://github.com/rrahir/spreadsheet-tools
+  - O-spreadsheet deployment tooling
 # more

@@ -81,10 +81,11 @@ $$('[contenteditable]')
 - eg-pivot-views/focalboard
   - table view
   - kanban view
+  - **结合tanstack-table的pivot和ospreadsheet的edit/architecture**
 - eg-tanstack-table-v8
+  - [ ] 方便接入已有的外部数据源
   - [x] 内存数据: nedb, blinkdb
   - [x] 流式数据: linvodb, tingodb
-  - [ ] 方便接入已有的外部数据源
   - tuple-database 支持内存和持久化
   - tinybase 支持内存和持久化
 
@@ -271,6 +272,40 @@ $$('[contenteditable]')
 # dev-06
 
 ## 060
+
+## 0608
+
+- [在Chrome上面按F12修改页面的源代码里面的JS代码为什么无法生效？ - 知乎](https://www.zhihu.com/question/30701118)
+  - 在sources菜单中直接修改js文件，复制粘贴到控制台运行；
+  - 在控制台对事件重新绑定方法，触发事件执行方法；
+  - 在文件的头部打断点, 刷新页面, 执行到断点处，再修改js内容，继续执行就会生效。
+
+- [一些有用的 JavaScript 调试技巧（二）](https://jelly.jd.com/article/62e642a905de4d019eddc008)
+  - DevTools 允许你以多种不同的方式设置断点。
+
+- [谷歌浏览器开发调试工具中Sources面板 js调试等 完全介绍 - 爱你爱自己 - 博客园](https://www.cnblogs.com/grimm/p/7068563.html)
+  - 为了避免你的调试代码重复执行，我们可以在调试时直接在console控制台上一次性地输出当前断点处的信息（推荐这样做）。为了验证我们在console面板中拥有的是当前断点环境，我门可以对比断点执行前后的this值变化。
+  - 直接在浏览器sources中修改代码然后看到效果。
+  - 在Sinppets中，我们也 可以编辑（重写）js代码片段。这些代码片段在浏览器刷新的时候既不会消失，也不会执行，除非是你手动执行它。
+- [Chrome Devtools: Sources篇 - WEB札记 - SegmentFault 思否](https://segmentfault.com/a/1190000040265729)
+
+- [Cannot define prototype properties within ES6 class definition - Stack Overflow](https://stackoverflow.com/questions/38311805/cannot-define-prototype-properties-within-es6-class-definition)
+  - I cannot define prototype property or instance property within class definition, why forbids it?
+  - Neither of those will be on the class prototype.
+  - `class Foo { bar = 1; }` syntax will assign a value to the class instance, to be accessed with `this.bar`.
+  - `class Foo { static bar = 1; }` syntax will assign a value to the class constructor, to be accessed with `Foo.bar`.
+  - I would suggest the class instance property and just use this.sight everywhere you need it.
+
+- [I am confused with the 'this' keyword in arrow function for this case - Stack Overflow](https://stackoverflow.com/questions/61941039/i-am-confused-with-the-this-keyword-in-arrow-function-for-this-case)
+  - for a detached Arrow-Function
+  - Its behavior will be as if you invoked bind on a normative function and passed in the [parent] function's `this` context as the first argument.
+
+- ### [Object spread vs. Object.assign - Stack Overflow](https://stackoverflow.com/questions/32925460/object-spread-vs-object-assign)
+- 还需要考虑代码风格，immutable vs mutation
+- Whether `Object.assign` or `...spread` is faster, it depends on what you are trying to combine, and the runtime you are using (implementations and optimisations happen from time to time). 
+  - For small objects, it does not matter.
+  - For bigger objects, Object.assign is usually better. Especially if you do not need to care about side-effects, the speed gains come from saving time by just adding properties to the first object, rather than copying from two and creating a brand new one
+- Performance aside, there is generally no up/downside to using either, until you reach edge cases, such copying objects containing getters/setters, or read-only properties
 
 ## 0607
 

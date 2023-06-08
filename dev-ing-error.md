@@ -620,7 +620,6 @@ Option 'allowJs' cannot be specified with option 'declaration'.
 - react-data-grid
     - simple-grid-demo运行起来，单元格的border未显示
         - 因为未导入bootstrap样式
-    - Arrow function should not return assignment
 - TS2605: JSX element type 'ReactTable' is not a constructor function for JSX elements.
     - Type 'ReactTable' is missing the following properties from type 'ElementClass': context, setState, forceUpdate, props, refs
     - TS2607: JSX element class does not support attributes because it does not have a 'props' property

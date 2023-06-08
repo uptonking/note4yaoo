@@ -24,6 +24,7 @@ modified: 2023-05-14T04:30:34.915Z
   - 案例少
 # dev
 - tips
+  - version-history的效果可直接参考redux-devtools
   - logux client/server
   - nanostores提供persistent/router/query-fetch/logux-sync
 # roadmap

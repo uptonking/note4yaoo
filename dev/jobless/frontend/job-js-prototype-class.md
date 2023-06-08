@@ -40,8 +40,8 @@ a.prototype // {b:9, constructor}
 
 Function.prototype.__proto__ === Object.prototype // true
 
-Array.constructor === Function  //true
-Function.constructor === Function  //true
+Array.constructor === Function //true
+Function.constructor === Function //true
 
 function aa() {}
 
@@ -60,8 +60,9 @@ aaObj.__proto__ === aa.prototype // true
 
 ```JS
 // 关于类与继承
-
-class A { aa = '11'; }
+// 👀 注意aa和ss属性都不在prototype上
+class A { aa = '11';
+  static ss = 'ss'; }
 class B extends A { bb = '22' }
 
 // 可以将class作为function来分析结果
@@ -72,7 +73,7 @@ A.prototype.__proto__ === Object.prototype // true
 B.__proto__ === A // true
 B.prototype.__proto__ === A.prototype // true
 
-// 继承实现的原理
+// 继承实现的原理，子类没有自己的this对象，会继承父类this对象，并加工
 // Object.setPrototypeOf(B.prototype, A.prototype) // B的实例继承A的实例
 // Object.setPrototypeOf(B, A)  // B的实例继承A的静态属性
 

@@ -42,6 +42,9 @@ modified: 2020-07-07T08:10:16.774Z
   - This proposal intends to address a common pattern in software development regarding the lifetime and management of various resources (memory, I/O, etc.). 
   - This pattern generally includes the allocation of a resource and the ability to explicitly release critical resources.
   - `DisposableStack`
+# proposals-finished
+- https://github.com/tc39/proposal-class-static-block
+  - provide a mechanism to perform additional static initialization during class definition evaluation.
 # proposals-dead
 - html import
 - [proposal-bind-operator `::`](https://github.com/tc39/proposal-bind-operator)
