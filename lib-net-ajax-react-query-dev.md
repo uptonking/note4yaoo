@@ -13,6 +13,9 @@ modified: 2023-03-05T08:55:03.696Z
   - query的持久化使用前端数据库
     - 实现类似于缓存: client-app > localDb > fetch > server
 
+- [You Might Not Need React Query_202305](https://tkdodo.eu/blog/you-might-not-need-react-query)
+  - pointing out that RSCs and R-Q solve _mostly_ the same problem, and if you use RSCs you _probably_ don't need R-Q
+
 - [Let's Build React Query in 150 Lines of Code_202106](https://www.youtube.com/watch?v=9SrIirrnwk0)
 
 - [用react-query解决你一半的状态管理问题](https://zhuanlan.zhihu.com/p/351280149)

@@ -78,10 +78,6 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/sequelize/sequelize
   - An easy-to-use multi SQL dialect ORM for Node.js
   - 不支持mongo
-  - https://github.com/nielsgl/sequelize-paper-trail
-    - Sequelize plugin for tracking revision history of model instances.
-  - https://github.com/sequelize/sequelize-typescript
-    - Decorators and some other features for sequelize (v6).
 
 - typetta /63Star/apache2/202301/ts
   - https://github.com/twinlogix/typetta

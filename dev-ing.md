@@ -127,8 +127,8 @@ $$('[contenteditable]')
 - flat-data-model的示例
   - frontend/in-memory database，如rxdb/pouchdb/tupledb
   - 还可以参考indexeddb相关示例，如dexie
-  - sqlite-react
-  - 参考现有组件: tree
+  - sqlite-react: vlcn-orm
+  - 参考案例: tree、react-admin
 
 - 内容的存储与更新如何与数据库集成
   - 编辑器内容自动保存一般通过在onChange方法中执行saveToDB

@@ -12,7 +12,7 @@ modified: 2022-08-21T10:02:27.788Z
 - requirements
   - group/aggregate/**pivot**
   - **editable operations support**
-  - _undo/redo_
+  - _undo/redo+batch-undo_
   - _collaborative optional_
   - _transaction_
   - headless utils: state/actions/props/api
@@ -238,8 +238,11 @@ modified: 2022-08-21T10:02:27.788Z
   - 实现了undo，未实现redo
     - 原理是将command记录保存在stack，每次undo会恢复prevValue，注意值的粒度在单元格，ag-grid也这样
     - 很多更新操作都基于EditorLock
-    - A locking helper to track the active edit controller and ensure that only a single controller can be active at a time.
-    - This prevents a whole class of state and validation synchronization issues.
+    - A locking helper to track the active edit controller and ensure that only a single controller can be active at a time. This prevents a whole class of state and validation synchronization issues.
+  - EditCommand设计
+    - 数据 value,prevValue,cell,row
+    - execute: update cell+row，更新单元格时会更新行
+    - undo: update cell+row
   - used extensively in Serenity, our open source ASP. NET Core / TypeScript based business application framework. 
   - 为了兼容jquery，添加了很多判断`if(this._jQuery)`的逻辑
   - 大多数事件都是直接操作dom
@@ -835,7 +838,7 @@ modified: 2022-08-21T10:02:27.788Z
   - a JS HTML5 data grid with spreadsheet look & feel.
   - free for all non-commercial purposes since 7.0
   - 不支持协作
-  - [Q: Possible to combine multiple actions into single undo/redo step?](https://github.com/handsontable/handsontable/issues/7324)
+  - 支持undo，[Q: Possible to combine multiple actions into single undo/redo step?](https://github.com/handsontable/handsontable/issues/7324)
   - https://github.com/handsontable/handsontable/releases/tag/7.0.0
   - [Handsontable drops open source for a non-commercial license_201903](https://github.com/handsontable/handsontable/issues/5831)
   - forks

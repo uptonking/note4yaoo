@@ -164,12 +164,15 @@ modified: 2021-03-29T19:14:57.440Z
 # 开发原则
 - learn by practice/实用为先/使用为先
 
-- api设计
-  - 大多数组件都是 dom-container + data/source + view/templates/vdom + options，包括react
-
 - 不要花费过多时间进行工具选择
   - 工具只是解决问题的捷径
   - 在解决业务问题后，可以花更多时间深入工具原理与抽象自己的工具
+# api-design
+- 参考主流api，如dom api
+
+- 前端组件
+  - 大多数组件都是 dom-container + data/source + view/templates/vdom + options，包括react
+  - where/what/how to render
 # pieces
 - 名称标识符identifier的特殊前缀选择
   - 考虑使用场景，如markdown中不要选用`

@@ -13,7 +13,22 @@ modified: 2022-08-21T10:19:58.756Z
 # discuss
 - ## 
 
-- ## Inspired by @shadcn 's data table, I made a version using React Aria Components
+- ## 
+
+- ## 
+
+- ## 🤔 On the scale of column filters living inside table columns vs outside the table, I'm definitely leaning towards the latter more these days
+- https://twitter.com/tannerlinsley/status/1666637468425388032
+
+- Especially when you know which filters will be used more often
+
+- I'm in this dilemma right now, and doing this with the tanstack table. Use case: a checkbox outside the table for filtering out some data. Currently I'm pre-filtering the data before sending to the table. But I'm also using the columnFilters for more filtering further down.
+  - Curious about your reasoning for keeping the 'filters' outside the table? For me it's because of various use-cases that I need to work-around using context/children/pre-filtering, all of which could be easier if filters just lived outside the table (then it's all pre-filter)
+- 💡 I personally **split my table instance and table component** for this reason. It makes it easier to **build a supplementary ui around the table logic before rendering the actual table**.
+
+- One universal filter outside of the table is good for 80% cases. Then add common filters if needed
+
+- ## Inspired by @shadcn's data table, I made a version using React Aria Components
 - https://twitter.com/devongovett/status/1656100596406157312
 - Important to note: if you just wanna display some data and it doesn't need to be interactive (e.g. selection, sorting), then an HTML `<table>` is perfect! 
   - Data tables with interactivity should implement the ARIA grid pattern for a11y (e.g. via React Aria).

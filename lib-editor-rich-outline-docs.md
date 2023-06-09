@@ -7,7 +7,7 @@ modified: 2021-09-09T18:30:24.610Z
 
 # lib-editor-rich-outline-docs
 
-> The fastest wiki and knowledge base for growing teams. 
+> The fastest wiki and knowledge base for growing teams.
 
 # guide
 
@@ -32,3 +32,8 @@ modified: 2021-09-09T18:30:24.610Z
 
 - Linking to another document automatically creates backlinks which are kept up-to-date and shown at the bottom of the document, 
   - so you can create a library of linked information and easily answer the question "which other documents link here?".
+
+- [Revision history](https://docs.getoutline.com/s/guide/doc/revision-history-AiL6p22Ssq)
+  - As documents are edited, Outline will automatically keep a record of revision history. 
+  - At most, a version is recorded for every 5 minutes of editing.
+  - Note that restoring a version will create another version and not rollback history to this point in time. In this way it is a non-destructive action.

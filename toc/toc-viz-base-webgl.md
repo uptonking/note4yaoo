@@ -105,6 +105,14 @@ modified: 2020-10-05T06:18:29.671Z
 - https://github.com/jbouny/LODplane
   - Basic Level Of Detail plane for Three.js
   - https://github.com/shaper-pmp/lod.js
+
+## r3f
+
+- https://github.com/try-triplex/triplex
+  - https://triplex.dev/
+  - Triplex is an editor that enables you to edit React Three Fiber components visually, with changes saved straight back to code.
+  - Modifying source syncs the editor as well.
+  - Triplex is made for coders, artists, everyone! 
 # webgl-animation
 - https://github.com/scottstensland/webgl-3d-animation
   - An interactive 3D animation using WebGL to depict a 2D predator prey ecology on a grid real-time mapped onto the surface of a 3D torus. 

@@ -19,6 +19,8 @@ modified: 2023-06-07T22:37:26.731Z
     - 每次model更新都会重渲染整个SpreadsheetComp
   - keydown事件，如delete会this.env.model.dispatch("DELETE_CONTENT", payload)
     - dispatch事件会触发 this.trigger("update");
+
+- 实现了自己的`css`工具方法
 # plugin
 - Since the spreadsheet internal state is quite complex, it is split into multiple parts, each managing a specific concern.
 
@@ -26,6 +28,9 @@ modified: 2023-06-07T22:37:26.731Z
 - There are two kind of plugins: 
   - **core plugins handling persistent data**
   - **UI plugins handling transient(短暂的；临时的) data**
+
+- 实现时，一个feature可拆分为多个plugin，组合多个corePlugin和uiPlugin
+  - 比如SheetPlugin+SheetUIPlugin，HeaderVisibilityPlugin+HeaderVisibilityUIPlugin
 
 - `BasePlugin implements CommandHandler`
   - this.history = Object.create(stateObserver); 
@@ -43,8 +48,8 @@ modified: 2023-06-07T22:37:26.731Z
 
 - `CorePlugin extends BasePlugin`
   - this.range = range; 
-  - this.getters = getters; 
   - this.uuidGenerator = uuidGenerator; 
+  - this.getters = getters; 
   - adaptRanges: loop over the plugin's data structure and adapt the plugin's ranges.
 
 - UI plugins handle any transient data required to display a spreadsheet.
@@ -166,6 +171,9 @@ export const enum LAYERS {
   - this means that the dispatch method can be "detached" from the model, which is done when it is put in the environment (see the Spreadsheet component)
   - This allows us to define its type by using the interface CommandDispatcher
 
+- actions的设计，类似redux
+  - const UNDO_ACTION = (env: SpreadsheetChildEnv) => env.model.dispatch("REQUEST_UNDO"); 
+
 - `drawGrid` rendering
   - When the Grid component is ready (= mounted), it has a reference to its canvas and need to draw the grid on it.  
   - This is then done by calling this method, which will dispatch the call to all registered plugins.
@@ -212,19 +220,32 @@ interface Cell {
 - commands: CoreCommand[] 记录操作历史
 - changes: root, path, beforeVal, afterVal 记录新旧值
 
-## history/undo
+- 每次dispatch时都会recordChanges
+
+- 让SelectiveHistory的applyOperation持有了recordChanges方法
+
+## undo/history/revision
+
+```typescript
+export interface HistoryChange {
+  root: any;
+  path: (string | number)[];
+  before: any;
+  after: any;
+}
+```
 
 - plugin-state的更新基于统一的history机制
   - this.history.update("sheets", sheet.id, "rows", rows); 
   - 每次更新值都会保存change到全局 stateObserver
   - this.changes.push({ root, path, before: value[key], after: val, }); 
 
-- A revision represents a whole client action (Create a sheet, merge a Zone, Undo, ...).
+- A `Revision` represents a whole client action (Create a sheet, merge a Zone, Undo, ...).
 - A revision contains the following information:
- - id: ID of the revision
- - commands: CoreCommands that are linked to the action, and should be dispatched in other clients
- - clientId: Client who initiated the action
- - changes: List of changes applied on the state.
+  - `id`: ID of the revision
+  - `clientId`: Client who initiated the action
+  - `commands`: CoreCommands that are linked to the action, and should be dispatched in other clients
+  - `changes`: List of changes applied on the state.
 
 - `session.revisions`存放了当前协作文档的changes
   - 支持revertOperation
@@ -270,10 +291,28 @@ if (type === "UNDO") {
 - The tree is a data structure used to maintain the different branches of the `SelectiveHistory`.
   - Branches can be "stacked" on each other and an execution path can be derived from any stack of branches. The rules to derive this path is explained below.
   - An operation can be cancelled/undone by inserting a new branch below this operation.
+# collaboration-ot
+- An Operation can be executed to change a data structure from state A to state B.
+  - It should hold the necessary data used to perform this transition.
+  - It should be possible to revert the changes made by this operation.
+- **In the context of o-spreadsheet, the data from an operation would be a revision (the commands are used to execute it, the `changes` are used to revert it**).
+
+- ot转换transform，分为 genericTransform 和 specificTransform
+  - src/collaborative/ot/ot.ts
+    - Apply all generic transformation based on the characteristic of the given commands.
+  - src/collaborative/ot/ot_specific.ts
+
+- For all Core commands, a transformation function should be written for all core commands. 
+- In practice, the transformations are very similar:
+  - Checking the sheet on which the command is triggered
+  - **Adapting coord, zone, target** with structure manipulation commands (remove, add cols and rows, ...)
+- If a command should be skipped (insert a text in a deleted sheet), the transformation function should return undefined.
 # view-layer
 - 基于odoo自研owl框架，类似vue的reactivity + vdom
 
 - Model初始化时markRaw(this)，未使用owl的reactivity
+# formula
+- 基于ast
 # more
 - `key in {}` is ~12 times slower than `{}[key]`.
   - So, we check the absence of key only when the direct access returns a falsy value. It's done to ensure that the registry can contains falsy values

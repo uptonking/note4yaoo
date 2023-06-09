@@ -93,3 +93,15 @@ let subscription = commandKeys(inputElement).subscribe({
   complete() { console.log("Stream complete") },
 });
 ```
+
+# discuss
+- ## 
+
+- ## 
+
+- ## A non-RxJS observable in the wild! @solid_js edition!!
+- https://twitter.com/BenLesh/status/1666517010354675712
+  - https://github.com/solidjs/solid/blob/main/packages/solid/src/reactive/observable.ts
+  - [signals are the most primitive of the Observables in Solid, and resemble BehaviorSubjects in RxJS](https://github.com/solidjs/solid/blob/b99587cd8be8b26a92d0ae89d3c46e62effebe48/documentation/observables.md#signals)
+- Curious on what angular’s version looks like
+  - It's similar

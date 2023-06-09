@@ -72,6 +72,13 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss
 - ## 
 
+
+
+- ## So why is Next.js so pushy about [React Server Components]? I can't avoid feeling that the new direction taken by Next.js is not designed to help developers, but to help Vercel sell React
+- https://twitter.com/claviska/status/1666252828111675392
+- a SPA is a single JS file that can be hosted for free anywhere. But a server-side rendered app needs a server to run. And a server is a product that can be sold. I do very much agree with that sentiment and I am not sold on the "edge computing" argument either!
+- For practically all use cases client side apps are better and simpler to operate. Most apps don't "need" RSC. Users don't care about that.
+
 - ## Understand resumability from the ground up by building your own resumable framework.
 - https://twitter.com/mhevery/status/1661093361737150464
   - [Build your own resumability](https://www.builder.io/blog/build-your-own-resumability)

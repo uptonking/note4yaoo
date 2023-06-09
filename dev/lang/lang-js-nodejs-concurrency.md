@@ -124,3 +124,8 @@ modified: 2022-12-19T01:59:01.625Z
 - fork 则是用于执行 js 文件的
   - cluster 的 fork 是创建多个子进程以及通信的，会执行到分叉的地方
 - 而关于通信：cp 的 api 都支持管道的 pipe，而所有的进程创建方式都支持事件的方式，底层是消息队列
+
+# actor-model
+- [[译] 你想知道的关于 actor 模型但可能不敢问的所有信息](https://skyao.io/post/202206-the-actor-model-everything-you-wanted-to-know/)
+
+- [为什么我觉得 Actor 很难用？ - 知乎](https://www.zhihu.com/question/37792465/answers/updated)

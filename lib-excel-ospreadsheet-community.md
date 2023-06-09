@@ -39,7 +39,13 @@ one sheet while the evaluated data in other sheets shows 'Loading'
 # discuss
 - ## 
 
-- ## 
+- ## [[IMP] spreadsheet: Add data filters](https://github.com/odoo/o-spreadsheet/pull/1447)
+- It is now possible to create tables in
+sheets that allow to filter the rows that contain certain values.
+  - Add a Filter plugin that manage the data of the filters and adapt their zone with the grid modification. 
+  - A new UI plugin FilterEvaluation will keep track of which rows are currently filtered by the defined filters.
+  - The core plugin will manage the col/row hidden by the user, and the UI plugin will combine these with the filtered rows. 
+  - Many visibility getters are thus moved in UIGetters and cannot be accessed in core plugins.
 
 - ## [Master allow dispatch UI plugin generic adrm](https://github.com/odoo/o-spreadsheet/pull/2364)
 - Before this commit, local commands were going through the allowDispatch

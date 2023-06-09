@@ -235,6 +235,15 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/kylewhittemore/react-sequelize-template /js
   - Full-stack react with passport js local strategy for authentication
 # utils
+- https://github.com/tylerjpeterson/sequelize-history /js
+  - This module will setup automatic revision tracking for any Sequelize model. 
+  - This is effectively a re-write of sequelize-temporal
+- https://github.com/nielsgl/sequelize-paper-trail /js
+  - Sequelize plugin for tracking revision history of model instances.
+
+- https://github.com/sequelize/sequelize-typescript
+  - Decorators and some other features for sequelize (v6).
+
 - https://github.com/Kaltsoon/sequelize-cursor-pagination
   - Cursor-based pagination queries for Sequelize models
 - https://giCursor-based pagination queries for Sequelize modelsthub.com/ephys/sequelize-cursor-pagination

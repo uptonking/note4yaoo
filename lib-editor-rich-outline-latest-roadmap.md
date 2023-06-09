@@ -35,6 +35,7 @@ modified: 2021-09-09T18:31:39.852Z
 
 - 202209 - document update notifications without having to open it
   - Visualizing document history
+  - [feat: Show diff when navigating revision history](https://github.com/outline/outline/pull/4069)
 
 - 202204 - embed support JSFiddle, Gliffy, Otter.ai, tldraw
   - Shared documents now include search
@@ -47,6 +48,7 @@ modified: 2021-09-09T18:31:39.852Z
 
 - [v0.60.0_202111, NA202511](https://github.com/outline/outline/releases/tag/v0.60.0)
   - We're excited to include the first beta of collaborative editing in this release.
+  - [Store CRDT snapshots with revisions](https://github.com/outline/outline/pull/2698)
 
 - [202109 - Collaborative Editing Beta](https://www.getoutline.com/changelog/collaborative-editing)
 
@@ -78,6 +80,7 @@ modified: 2021-09-09T18:31:39.852Z
   - Sessions are now synced across browser tabs, logging in or out in one tab will be reflected in others. 
   - Table of contents is now displayed on publicly shared docs by default
   - Awkward scroll behavior when caret is moved at the end of a header
+  - [chore: Refactor backlinks and revisions_20201028](https://github.com/outline/outline/pull/1611)
 
 - 202009 - Import from Microsoft Word, confluence
   - The last two weeks we've been focused on bug fixing, performance and reliability. 

@@ -20,6 +20,11 @@ modified: 2021-03-29T19:30:00.059Z
 - [Vue JSX 深入解析 - 知乎](https://zhuanlan.zhihu.com/p/59434351)
   - 当引入 babel-plugin-transform-vue-jsx 这个 Babel 插件后，就可以在 Vue 使用 JSX 语法
 
+- ### Never thought we'd still be arguing about template vs JSX in 2023.
+- https://twitter.com/youyuxi/status/1664818071113027584
+  - Plus you can use JSX with Vue. If you didn't know now you do.
+- It’s old irrelevant debate. Of corse @MarkoDevTeam DSL is the superior
+
 ## [What's the difference between HEAD^ and HEAD~ in Git?](https://stackoverflow.com/questions/2221658)
 
 - ~N 第一个parent的倒数第N个提交

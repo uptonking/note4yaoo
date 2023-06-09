@@ -63,9 +63,10 @@ modified: 2022-04-05T13:25:40.892Z
   - At the same time, we provide analytics on how Liveblocks is used to help product teams prioritize their collaborative features and if they still want to integrate Liveblocks further.
 - We're also hosting the WebSocket infrastructure and make it scale because we know how troublesome it can be to maintain.
 
-- how does this compare to something like https://replicache.dev/
+- 🤔 how does this compare to something like https://replicache.dev/
 - From what I understand from Replicache, it focuses only on conflicts resolution with CRDTs, and it does not come with a web socket infrastructure nor a hosted backend. You need to have your own servers or use external services to have live cursors. (https://doc.replicache.dev/guide/poke)
-- At Liveblocks, we want to bundle all that together because we believe that being tightly integrated is necessary to provide a great experience.
+- **At Liveblocks, we want to bundle all that together** because we believe that being tightly integrated is necessary to provide a great experience.
+- Some people might prefer managing their own backend infrastructure, but we want to provide it because we know how difficult it might be to scale and load balance web sockets rooms. We want to help companies focus on their core product and not spend too much time working on the multiplayer infrastructure and algorithms.
 
 - I work in the "realtime" space too (founder of Fanout, low level push infra).
   - Liveblocks looks like it's somewhere between Firebase and Sendbird, providing live updates and state management, but for specific use-cases and stopping short of the UI. I haven't seen too many products operating at that level of abstraction, so maybe you're on to something. I also like how you solve for more use-cases than chat, the dominant "block" in the market.
