@@ -119,4 +119,7 @@ modified: 2022-11-06T03:19:28.284Z
 
 - https://github.com/tomayac/sqlite-wasm
   - SQLite Wasm conveniently wrapped as an ES Module.
+
+- https://github.com/optuna/optuna-dashboard/tree/main/standalone_app
+  - 依赖recoil、mui5、optuna超参数优化框架
 # more-sqlite-web

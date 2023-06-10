@@ -51,6 +51,7 @@ modified: 2022-12-31T20:13:33.307Z
     - ReadableStream
     - WritableStream
     - TransformStream
+  - [v16.15.1 removing the --experimental-json-modules flag](https://stackoverflow.com/questions/73824694/node-16-is-the-experimental-json-modules-cli-flag-still-required)
 
 - v16.0.0_2021-04-20
   - Stable `AbortController` implementation based on the AbortController Web API

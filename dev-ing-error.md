@@ -11,6 +11,9 @@ modified: 2021-03-29T19:29:32.505Z
 
  
 
+- [ts-node fails when tsc runs ok](https://github.com/TypeStrong/ts-node/issues/391)
+  - Workaround that worked for me: update file extension from .d.ts to .ts and then import it in your index.ts file
+
 - error An unexpected error occurred: "Failed to replace env in config: ${version}".
   - 执行yarn时的异常
   - 解决方法是，查找 `.yarnrc` 是否存在version定义，再查找 `.npmrc` 是否存在version定义，注释掉该行即可

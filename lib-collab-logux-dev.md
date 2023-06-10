@@ -10,8 +10,9 @@ modified: 2023-05-14T04:30:34.915Z
 # guide
 
 - features
-  - collaborative using crdt
-  - realtime/reactive using webSocket client/server framework
+  - 实时通信+冲突处理
+    - collaborative using crdt 
+    - realtime/reactive using webSocket client/server framework
   - optimistic ui
   - offline-first with actions and merge-conflicts
   - no vender lock-in, works with any db
@@ -22,12 +23,24 @@ modified: 2023-05-14T04:30:34.915Z
 
 - cons
   - 案例少
+  - 更新数据的逻辑未设计成plugin的形式，若启用同步则会同步到server，若关闭同步则仅本地执行
+
+- logux vs crdt-for-mortals
+  - 实现了**支持多人协作的undo，先undo旧的再按时间戳执行**
+  - websocket实时通信，支持channels
+  - optimistic ui
+  - 网络可靠性，客户端自动请求，处理server异常
+  - action的设计耦合度更低，元信息区分本地和远程
+  - 实现了cross-tab-sync
+  - 自定义服务端可支持多个版本的clients，基于Subprotocol
 # dev
 - tips
   - version-history的效果可直接参考redux-devtools
   - logux client/server
   - nanostores提供persistent/router/query-fetch/logux-sync
 # roadmap
+- sync as optional plugin
+
 - 如何持久化actions
 
 - [WYSIWYG editor](https://github.com/logux/logux/issues/12)
@@ -63,6 +76,37 @@ modified: 2023-05-14T04:30:34.915Z
 # examples
 - https://github.com/logux/examples
   - 仅支持单用户多窗口同步
+
+- https://github.com/ai/martian-logux-demo
+  - Here is a small example app from the talk. 
+  - Search “// Step X” in sources and follow the steps for a basic guide of adding Logux to your real-time web app.
+  - Step 1: Create shared folder for protocol
+  - Step 2: Create server
+  - Step 3: Add authentication
+  - Step 4: Import Logux Client and protocol in client
+  - Step 5: Create client and connect
+  - Step 6: Import widget like badge/confirm
+  - Step 7: Add widget, log and confirm in client entry
+  - Step 8: Add client to React and provide common error pages for 40x/50x
+  - Step 9: Create SyncMap template by defineSyncMap in store
+  - Step 10: Load hooks for Logux SyncMap like useFilter
+  - Step 11: Load tasks(store) from server
+  - Step 12: Add channel to load data from server
+  - Step 13: Import store action by `useClient` in React Component
+  - Step 14: Get client
+  - Step 15: Create task in event handler
+  - Step 16: Add operations-listener for tasks, and will send to server
+  - Step 17: Import Logux tools by `useClient` in React Component
+  - Step 18: Get client
+  - Step 19: Delete task event handler
+  - Step 20: change task event handler
+  - Step 21: Change task finished
+  - Step 22: define action for finish all in protocol
+  - Step 23: import store’s actions function to store
+  - Step 24: Use finish all action
+  - Step 25: In reactive way describe reaction separately from action
+  - Step 26: Add finish all support to server
+  - Step 27: Use store extensions: update client on action
 
 - https://github.com/zumkorn/logux-simple-app
   - front+back
@@ -103,7 +147,7 @@ modified: 2023-05-14T04:30:34.915Z
   - If the user closes the leader tab, other tabs will re-elect a leader.
 
 - in Logux subscriptions is a way to request data from the server.
-- Clients or server should create an action to change data.
+- **Clients or server should create an action to change data**.
 
 - We created Logux to have better UX in non-stable networks of the real world.
 - Sending data to the server is a basic feature of any web application. 

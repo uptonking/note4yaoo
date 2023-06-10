@@ -9,20 +9,15 @@ modified: 2023-05-20T14:00:05.623Z
 
 # guide
 
+- [Add Todo app examples](https://github.com/logux/logux/issues/5)
 # discuss
 - ## 
 
 - ## 
 
-- ## [Glitches (Diamond problem)](https://github.com/nanostores/nanostores/issues/30)
-- I do not have a solution for this problem yet
-  - It is not a high priority task for now, since the main use case of Nano Stores (in contrast with RX) is to have big stores, not small atomic reactive steps.
-- [fix: diamond problem](https://github.com/nanostores/nanostores/pull/58)
-  - This pull request resolves the diamond dependency problem in 2 steps:
-  - Listen to only writable stores
-  - Bind callback with arguments (run function)
-
 - ## [Action processing queues feature request](https://github.com/logux/logux/issues/54)
+  - [Add action queues pr](https://github.com/logux/server/pull/140)
+
 - Right now Logux Server process all actions “in parallel” (on one thread, just in async “parallel”). It could cause a problem when actions are related:
   - Client A created post with Optimistic UI
   - Client A rendered new post
@@ -32,6 +27,14 @@ modified: 2023-05-20T14:00:05.623Z
   - For every client and queue, we are creating action queue. The server will start action, resend, process, or load only if the previous action in the same queue was finally processed.
 
 - This feature will require big action processing refactoring with proper queues.
+
+- ## [Glitches (Diamond problem)](https://github.com/nanostores/nanostores/issues/30)
+- I do not have a solution for this problem yet
+  - It is not a high priority task for now, since the main use case of Nano Stores (in contrast with RX) is to have big stores, not small atomic reactive steps.
+- [fix: diamond problem](https://github.com/nanostores/nanostores/pull/58)
+  - This pull request resolves the diamond dependency problem in 2 steps:
+  - Listen to only writable stores
+  - Bind callback with arguments (run function)
 
 - ## [Context](https://github.com/nanostores/nanostores/issues/171)
 - Problem 1: Cache API

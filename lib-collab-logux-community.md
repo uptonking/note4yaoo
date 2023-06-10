@@ -14,6 +14,22 @@ modified: 2023-05-14T04:31:17.785Z
   - [CRDT: Conflict-free Data Types for Collaborative Editing and Offline-First - NEJSCONF - YouTube_201810](https://www.youtube.com/watch?v=JqsAw_3JDII)
   - [ReactiveConf 2017: Andrey Sitnik - Using Logux in Production - YouTube](https://www.youtube.com/watch?v=DvHNOplQ-tY)
     - [ppt: Using Logux in Production](https://slides.com/ai/logux2)
+# issues
+- ## 
+
+- ## [Compress build-in Logux actions in protocol](https://github.com/logux/logux/issues/72)
+- We can improve performance by compressing `logux/*` actions in WS protocol
+
+- ## [Add API to implement pagination](https://github.com/logux/logux/issues/96)
+- In initial idea of Logux API I had query concept like: useQuery
+
+- ## [SSR data loading](https://github.com/logux/logux/issues/16)
+- Right now there is not easy out-of-box solution.
+- I am thinking about this API for SSR
+
+- ## [Add a way for server to answer on action](https://github.com/logux/logux/issues/44)
+- Maybe it should be more like API Meteor.methods(methods)
+
 # discuss-authors
 - ## 
 
@@ -149,6 +165,35 @@ modified: 2023-05-14T04:31:17.785Z
   - Logux will provide you distributed time and reducers time travel to make development easier.
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Request only changes in offline SyncMap](https://github.com/logux/logux/issues/107)
+- @logux/server was not created to store state in the log, since I think it is not the best format for the server (where state could be enormous(巨大的) and could not fit to in one server).
+  - The standard way is to request it from some well-known persistence storage in server.channel() or addSyncMap() callbacks.
+
+- I didn’t add offline support to SyncMap yet 
+  - The protocol has since key in logux/subscribe action, which is used to request updates.
+  - But we are not using it mostly because:
+  - a. I have no time to implement it
+  - b. The changes between since and the current time for offline mode will be big and this optimization will not be very helpful.
+
+- ## [How does this work in a load balanced environment?](https://github.com/logux/server/issues/52)
+- This architecture will allow you to use any simple load balance strategies (like connect the new user to a random server)
+  - It will work great if you will not store any important data in Logux server memory. All important data should be stored in Redis, PostgreSQL/MySQL or any other central DB.
+  - You will use Redis or any broadcast system to resend new action from one server to other and call server.sendAction(action, meta) on all other servers. So when a client will send the new action to server A, server A will apply the action (save the result to DB) and then send the new action to server B and C, servers B and C will send this action to all clients subscribed to a specific channel.
+- This is the best simplest strategy. But when you have too many actions, it could create a big load on the servers (since **all servers will receive all actions**).
+- When you will have more actions you may want to have the smarter way: You will remove “send all actions to all servers and pass it to sendAction” code and replace it 
+
+- I recommend to add a Node.js proxy for Java in the beginning
+  - Firewall allow only internal connection to Logux HTTP. You will use it only to connect to Java.
+  - On new action Logux server will send HTTP request to legacy Java backend.
+  - When Java backend wants to add action to client’s log, it will send HTTP request to Logux server.
+
+- ## [Should client be able to control re-sending actions to any node/client/user/channel?](https://github.com/logux/server/issues/62)
+- we need to add extra checks to client and/or verify resending meta-fields in access() hook on server.
 
 - ## How we at @evilmartians reduced regressions in @amplifr front-end and performed a huge refactoring without stopping feature delivery
 - https://twitter.com/sitnikcode/status/1237811692777680896

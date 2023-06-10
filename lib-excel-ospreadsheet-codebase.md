@@ -9,6 +9,8 @@ modified: 2023-06-07T22:37:26.731Z
 
 # guide
 
+# dev-to
+- action-queues async
 # architecture
 - init
   - 在initiateConnection时，new Model(demoData)
@@ -292,6 +294,8 @@ if (type === "UNDO") {
   - Branches can be "stacked" on each other and an execution path can be derived from any stack of branches. The rules to derive this path is explained below.
   - An operation can be cancelled/undone by inserting a new branch below this operation.
 # collaboration-ot
+- 若初始化时不传入socketService，就会使用默认LocalTransportService，执行简单的内存操作
+
 - An Operation can be executed to change a data structure from state A to state B.
   - It should hold the necessary data used to perform this transition.
   - It should be possible to revert the changes made by this operation.

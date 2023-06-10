@@ -11,11 +11,26 @@ modified: 2021-04-28T20:54:58.126Z
 
 # issues
 
+## 
+
+## 
+
+## 更新logux后ts-node server无法运行
+
+> Error: Debug Failure. False expression: Output generation failed
+
+- 不要一次性更新全部包再检查能否运行
+  - 在能正常运行时，逐个替换，逐个检查，便能轻松发送问题
+  - 一次性全替换后，bug不知从哪个包开始查
+
+- 尝试ts-node的替代品tsm，也能够解决问题
+
+- 调试时复现问题，问题出在 `export * from './index.d';`，注释即可
+
 ## webpack circular dependencies 打包失败
 
 - 尝试借助 dpdm/circular-plugin 分析问题deps并解决
-
-- 借助eslint自动添加import type
+- 尝试借助eslint自动添加import type
 
 - 解决方法是将@babel/preset-typescript的 `onlyRemoveTypeImports`保持默认值false
 
