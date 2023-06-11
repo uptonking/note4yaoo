@@ -12,6 +12,7 @@ modified: 2023-04-07T04:09:54.488Z
 - tips
   - signals和immutable的mental model有很大不同
   - 实现协作的案例更多基于immutable，但基于proxy的实现也有，如o-spreadsheet
+  - [介绍 Preact Signals - 掘金](https://juejin.cn/post/7144373510016598023)
 
 - preactjs-signals的实现不基于proxy
   - tldraw-signia也不基于

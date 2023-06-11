@@ -44,6 +44,10 @@ modified: 2023-02-05T19:03:27.730Z
   - Notesnook encrypts everything on your device using XChaCha20-Poly1305 & Argon2.
   - 服务端数据同步代码未找到
 
+- https://github.com/chenyuncai/tiptap-track-change-demo /vue
+  - https://track-change.onrender.com/
+  - [Implement new track changes in current document, just lice office review mode](https://discuss.prosemirror.net/t/implement-new-track-changes-in-current-document-just-lice-office-review-mode/4890)
+
 - better-virgool /9Star/MIT/NALic/202208/ts/tiptap
   - https://github.com/ahhshm/better-virgool
   - https://ahhshm.github.io/better-virgool/
@@ -170,7 +174,7 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/Young6118/dudu-editor
   - 基于 tiptap v2 的富文本编辑器
 
-- https://github.com/shikimori/shiki-editor /vue/提交多/active
+- https://github.com/shikimori/shiki-editor /js/vue/提交多/active
   - a wysiwyg editor based on prosemirror
   - highly inspired by tiptap source code. Many parts of the code are taken from there.
 
@@ -244,7 +248,6 @@ modified: 2023-02-05T19:03:27.730Z
   - https://notes.keymorph.com/
   - 依赖tiptap2、dnd-kit、mui、tanstack-query、nextjs、@azure/cosmos--db
   - A free web application for creating and editing notes.
-
 
 - note-it /16Star/Apache2/202208/ts/tiptap
   - https://github.com/MuhametSmaili/note-it

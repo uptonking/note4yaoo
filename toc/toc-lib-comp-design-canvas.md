@@ -55,6 +55,13 @@ modified: 2021-05-19T13:54:12.338Z
   - Rendering engine that can renders graphics in CanvasRenderingContext2D, WebGLRenderingContext, SVG, DOM
   - Lightweight and simple with size of 75kb (Smaller than Two.js and Hilo)
 
+- https://github.com/plantain-00/composable-editor-canvas
+  - https://plantain-00.github.io/composable-editor-canvas/
+  - A composable editor canvas library.
+  - 基于svg实现的图形编辑器
+  - 提供了多种编辑场景示例
+  - 实现了多种react-render-target: canvas, svg, webgl
+
 - https://github.com/LibertyGlobal/ReactLiberty /201705/archived
   - choose between WebGL/Canvas/DOM/Native or any other UI renderer
   - a React library designed to abstract renderer by presenting three kinds of entities. 

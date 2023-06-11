@@ -99,6 +99,7 @@ modified: 2022-11-08T19:04:00.289Z
   - A composable editor canvas library.
   - 基于svg实现的图形编辑器
   - 提供了多种编辑场景示例
+  - 实现了多种react-render-target: canvas, svg, webgl
 
 - https://github.com/lqs469/editor-playground
   - https://editor-playground.now.sh/

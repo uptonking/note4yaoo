@@ -8,6 +8,11 @@ modified: 2021-01-13T19:30:59.508Z
 # toc-lib-ux-style-sketch-hand-drawn
 - search
   - paper, reading, reader, document
+
+
+- whiteboard-solutions
+  - [Excalidraw白板调研文档](http://wangxiang.website/docs/work/excalidraw.html)
+    - npm 包目前不支持：多人协作、共享链接等，不过 Excalidraw 团队已经在规划当中，不久就会以插件的形式支持。
 # popular
 - tldraw /5.8kStar/MIT/202202/ts
   - https://github.com/tldraw/tldraw
@@ -35,6 +40,7 @@ modified: 2021-01-13T19:30:59.508Z
     - Excalidraw stores everything into a giant variable "AppState" and whenever it changes, we re-draw the canvas and optionally the UI if needs be.
     - We don't use `requestAnimationFrame`, we respond to DOM events directly. 
     - History is implemented pushing `JSON.stringify(appState)` to an array. It's pretty memory heavy, we need to optimize this at some point! 
+  - [产品经理：客户想要个画板，你们前端能不能做？ | 学习笔记](http://wangxiang.website/docs/work/excalidraw-use.html)
   - https://github.com/UreekaBiz/svg-poc
     - An Excalidraw-like SVG Proof-of-Concept
 

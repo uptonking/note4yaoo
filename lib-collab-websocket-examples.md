@@ -16,6 +16,9 @@ modified: 2023-01-23T19:27:46.948Z
   - A text based CRDT server storing, sending and receiving updates using Express and Websockets
   - 基于ws创建连接，用数组存放changes
   - 初次连接发送所有changes，后续只发送单次change的msg，为中心服务器架构设计
+
+- https://github.com/plantain-00/ws-heartbeat
+  - Server-side and client-side heartbeat library for ws and browser-side Websocket.
 # collab
 
 # apps-networking

@@ -87,6 +87,10 @@ modified: 2022-08-18T16:57:29.058Z
 
 - https://github.com/emergence-engineering/prosemirror-link-preview
   - [Link preview for prosemirror!](https://emergence-engineering.com/blog/prosemirror-link-preview)
+  - Because of CORS you can't fetch the link preview from the client directly. 
+  - You need to have a custom backend that will fetch the link preview for you. 
+  - You either use payed OpenGraph fetcher API or use `link-preview-js` library on your backend to do this. 
+  - In this article we will use link-preview-js with Next.js API to do this.
 
 - https://gitlab.com/emergence-engineering/prosemirror-image-plugin
   - Upload images to endpoints, showing placeholder until the upload finishes

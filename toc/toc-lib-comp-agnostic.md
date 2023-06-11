@@ -141,6 +141,30 @@ modified: 2020-11-13T07:28:27.824Z
     - Wrapper (top-down runtime approach): packages existing framework dependent components with a thin interoperability layer 
     - Primitive (bottom-up runtime approach): framework agnostic low-level building blocks.Each primitive acts as an adapter to plug framework dependent logic.
     - Compiler (build time approach): Use a build tool to generate, from a single source code, either web component (eg. via Stencil) or per framework implementations (eg. via Mitosis).
+# adapters
+- https://github.com/plantain-00/schema-based-json-editor
+  - https://plantain-00.github.io/schema-based-json-editor/packages/react/demo/
+  - A reactjs and vuejs component of schema based json editor.
+
+- https://github.com/plantain-00/tree-component
+  - https://plantain-00.github.io/tree-component/packages/react/demo/
+  - A reactjs and vuejs tree component.
+  - drag and drop between different tree
+  - composition model(reactjs children and vuejs slot)
+
+- https://github.com/plantain-00/select2-component
+  - https://plantain-00.github.io/select2-component/packages/react/demo/
+  - A vuejs and reactjs select component.
+  - local search
+  - multiple selection
+
+- https://github.com/plantain-00/file-uploader-component
+  - https://plantain-00.github.io/file-uploader-component/packages/react/demo/
+  - A reactjs and vuejs component of file uploader.
+  - drag file(s) and drop to the component
+  - click to choose file(s)
+  - paste file from clipboard
+  - progress bar
 # vanillajs
 - https://github.com/vitmalina/w2ui /202305/js
   - UI widgets for modern apps. 

@@ -98,6 +98,9 @@ modified: 2022-08-18T16:57:15.296Z
   - https://mdsilo.com/
   - A mind silo for storing ideas, thought, knowledge with a powerful writing tool. 
 
+- https://github.com/shi-yan/Epiphany /js/tauri
+  - A note-taking App with a static blog generator focusing on technical writing, inspiration from Notion
+
 - UreekaBiz-notebook /11Star/MIT/202208/ts/提交多
   - https://github.com/UreekaBiz/notebook
   - ProseMirror, Firebase Collaborative Editor.

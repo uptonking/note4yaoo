@@ -184,6 +184,13 @@ modified: 2020-10-22T10:22:55.878Z
 
 - https://github.com/alyssaxuu/flowy
   - The minimal javascript library to create flowcharts
+
+- https://github.com/plantain-00/composable-editor-canvas
+  - https://plantain-00.github.io/composable-editor-canvas/
+  - A composable editor canvas library.
+  - 基于svg实现的图形编辑器
+  - 提供了多种编辑场景示例
+  - 实现了多种react-render-target: canvas, svg, webgl
 # uml
 - https://github.com/jgraph/mxgraph
   - /6.1kStar/Apache2/202011/archived

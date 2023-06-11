@@ -57,6 +57,11 @@ The team can not find a way to handle such situation because it's just a react c
 - Ian suggested (#259 (comment)) that Slate should be unopinionated about OT/CRDT considerations.
   - as far as I know, the Slate data model doesn't consider absolute reference of its atoms, which is the key point in CRDT : the problem with indexes is that they shift, how would you find the location of a Slate change in the counterpart model ?
 - I'm interested in Slate being able to support CRDT, however I have yet to see a CRDT approach that I think feels viable for nested documents and for real-world use cases where documents don't balloon to huge sizes. For that reason most of Slate's collaborative support has been focused on making OT possible first, which it already is today with the current codebase.
-- 
-- 
-- 
+
+- ## [Multiple SlateJS Editors on the Same Page_201901](https://medium.com/@brendanrc/multiple-slatejs-editors-on-the-same-page-a065b6ebefe3)
+- With Slate, you can have as many editors as you want on one page. 
+- There are only a couple important rules to follow:
+- Initialize the editors with different values
+  - Slate builds a value object and assigns each node a unique key. This key is rendered on the DOM, and is used to identify which nodes in the DOM correspond to which nodes in the Value. So once you’ve built your value, you should only use it in one of your editors.
+- Don’t call `KeyUtils.resetGenerator` multiple times
+  - this could cause editor instances to end up with nodes that have the same keys. 

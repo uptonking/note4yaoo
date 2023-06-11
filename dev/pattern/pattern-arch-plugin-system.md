@@ -313,6 +313,9 @@ class Plugins {
   - 这个是业务相关的问题，但总体来看，开源的，基础功能以及体现核心竞争力的可以内置
 
 - [插件化架构设计(2): 插件化从设计到实践该考量的问题汇总 - zhoulujun - 博客园](https://www.cnblogs.com/zhoulujun/p/17231013.html)
+
+## more-plugins-blog
+- [Discussion: The limits of actions and reducers - discuss.ProseMirror](https://discuss.prosemirror.net/t/discussion-the-limits-of-actions-and-reducers/551/4)
 # plugin-examples
 - https://github.com/unjs/unplugin /ts
   - Unified plugin system for Vite, Rollup, Webpack, esbuild, and more

@@ -8,20 +8,23 @@ modified: 2021-05-06T09:39:53.522Z
 # lib-editor-prosemirror-dev
 
 # guide
-- prosemirror-pros
+- pros
   - powerful features
   - modular, extensible
   - selective undo/redo
   - support branch
   - 支持多实例，参考官方示例
   - optional collaborative plugin
+  - 支持rebase
+  - selection支持多个ranges
 
-- prosemirror-cons
+- cons
   - 数据结构层的设计不够通用
     - step/transform不是典型的ot operation
   - 不支持动态改变schema
-  - 与其他框架的集成不是很完美，ReactNodeView用不用portal的最佳实践不明确
   - 编辑器的多个插件存在依赖关系时如何处理
+  - 示例没有强调json优先，不如slate的数据直观
+  - 与其他框架的集成不是很完美，ReactNodeView用不用portal的最佳实践不明确
 
 - features
   - Unopinionated

@@ -162,6 +162,9 @@ modified: 2021-04-11T06:17:51.318Z
 - https://github.com/webeetle/react-headless-hooks
   - Hooks for build and design powerful components while retaining 100% control over markup and styles.
 # headless-component
+- tips
+  - tanstack
+
 - tiptap /16.1kStar/MIT/202208/ts/prosemirror
   - https://github.com/ueberdosis/tiptap
   - https://tiptap.dev/
@@ -198,6 +201,12 @@ modified: 2021-04-11T06:17:51.318Z
   - `autocomplete-js` package is an agnostic virtual DOM renderer. 
     - You can use it in JavaScript, Preact, React, or Vue projects. 
     - Renderers provide a UI to headless autocomplete experiences built with `autocomplete-core`.
+
+- https://github.com/plantain-00/select2-component
+  - https://plantain-00.github.io/select2-component/packages/react/demo/
+  - A vuejs and reactjs select component.
+  - local search
+  - multiple selection
 
 - https://github.com/TanStack/ranger
   - Headless utilities for building range and multi-range sliders in React, Preact, Solid, Vue, Svelte and Angular

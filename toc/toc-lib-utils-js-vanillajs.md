@@ -93,6 +93,11 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/angus-c/just /js
   - A library of dependency-free JavaScript utilities that do just one thing.
 
+- https://github.com/angular/zone.js
+  - https://github.com/angular/angular/tree/main/packages/zone.js
+  - Implements Zones for JavaScript, inspired by Dart.
+  - A Zone is an execution context that persists across async tasks. You can think of it as thread-local storage for JavaScript VMs.
+
 - https://github.com/bestiejs/benchmark.js
   - A robust benchmarking library that supports high-resolution timers & returns statistically significant results. 
   - As used on jsPerf.com.
@@ -152,6 +157,9 @@ modified: 2023-04-04T22:35:59.255Z
 # localStorage
 - https://github.com/aykutkardas/lookie
   - Store your data in localStorage with optional expiration time.
+# cross-platform
+- https://github.com/lzyzsd/JsBridge /java
+  - android java and javascript bridge, inspired by wechat webview jsbridge
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

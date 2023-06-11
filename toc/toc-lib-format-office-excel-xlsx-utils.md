@@ -100,6 +100,9 @@ modified: 2023-01-09T11:04:13.958Z
 - https://github.com/LeanyLabs/formula-engine
   - Extendable formula parser and executor.
   - It supports three types of literals (data types): string/number/boolean
+
+- https://github.com/plantain-00/expression-engine
+  - An expression tokenizer, parser and evaluator.
 # template
 - https://github.com/Siemienik/XToolset /ts
   - Export data to Ecma-376 . XLSX Excel files based on template

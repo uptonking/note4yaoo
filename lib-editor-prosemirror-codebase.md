@@ -11,9 +11,9 @@ modified: 2021-06-02T17:13:37.692Z
 
 - 编辑器的设计与实现
   - 最核心的文档数据结构
+  - 选区与slice
   - 节点类型与约束
   - 文档操作 operation与transform
-  - 选区与slice
   - editorState
   - editorView
   - 协作
@@ -39,6 +39,11 @@ modified: 2021-06-02T17:13:37.692Z
 - PMENode与DOM
   - parseDOM实现解析
   - 编辑时要toDOM，特殊节点如footnote/编辑操作一般是通过insert菜单
+# roadmap
+- plugin既可以包含state，也可以包含view，显得混乱
+
+- 直接将plugin的状态挂在editorState对象上
+  - @see EditorState.create
 # not-yet
 - ## editor pluginState、pluginView的更新顺序
 - ？NodeView.update() 和plugin.view().update()的先后顺序
@@ -93,10 +98,17 @@ let view = new EditorView(document.body, {
 
 - model-layer
   - Node树
+  - model更新基于node.copy复用数据，❓只是局部更新，是immutable的吗
 
 - view-layer
   - ViewSpec vdom
 # state
+- immutable state
+  - 分析keypress插入文本
+  - 会触发 view.dispatch(view.state.tr.insertText(text).scrollIntoView()); 
+  - dispatch()会执行view.updateState(this.state.apply(tr)); 
+  - 其中state.apply总是返回new EditorState()，数据对象引用变了，但变化的节点Node是通过copy()替换的，内容尽可能复用了
+
 - [recommended way to communicate from a plugin to a NodeView](https://discuss.prosemirror.net/t/how-can-i-communicate-from-a-plugin-to-a-custom-nodeview/952)
   - it seems possible to decorate the NodeViews and then update the decorations when the external data changes
 
@@ -120,7 +132,9 @@ let view = new EditorView(document.body, {
 - 编辑输入时如何更新dom
   - 编辑器最外层样式类为`. ProseMirror`的div元素的`contenteditable`为true，所以编辑器内元素都可编辑
 # plugin
-
+- editorState的更新总是2部
+  - const newState= new EditorState()
+  - newState[pluginKey] = pluginNewState; 
 # model
 
 # transform

@@ -178,6 +178,7 @@ modified: 2020-12-21T07:46:54.190Z
 
 # blogging
 
+## [KonvaJS 原理解析 - 掘金](https://juejin.cn/post/7016559372331401253)
 ## [The Future Web: Will Canvas Rendering Replace the DOM?_202105](https://medium.com/young-coder/the-future-web-will-canvas-rendering-replace-the-dom-847be872884c)
 
 - There’s been a lot of hand-wringing recently about Google’s decision to use the HTML `<canvas>` for all of its rendering in Google Docs.

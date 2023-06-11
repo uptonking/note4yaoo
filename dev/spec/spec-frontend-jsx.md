@@ -7,8 +7,10 @@ modified: 2021-01-14T13:21:33.678Z
 
 # spec-frontend-jsx
 
-# [facebook jsx](https://facebook.github.io/jsx/)
+# guide
 
+- [60行代码实现简单模板语法 - 掘金](https://juejin.cn/post/6844903734095380494)
+# [facebook jsx](https://facebook.github.io/jsx/)
 - Why not Template Literals
   - ES6 introduces template literals which are intended to be used for embedding DSL in ECMAScript.
   - Template literals work well for long embedded DSLs.

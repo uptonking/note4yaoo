@@ -54,6 +54,10 @@ modified: 2021-09-20T09:00:43.564Z
 # 多刷几遍
 - [面试底层逻辑整理](https://docs.google.com/document/d/1srnMc_hiOsyH7MuK196vExGGFjLJ0f-NDBih7jPJ2fE/edit)
 
+- [前端面试技巧和总结，针对毕业一年左右的前端](https://juejin.cn/post/7039544454516047909)
+  - [金三银四的前端社招面经 - 掘金](https://juejin.cn/post/6939774328858738696)
+  - [寒冬中的前端社招面试 - 掘金](https://juejin.cn/post/6844903799035789325)
+
 - [2020年中大厂前端面试总结 高频+超高频](https://github.com/funnycoderstar/blog/issues/156)
 - [两年前端双非二本，科班出身面经分享（已拿阿里，头条，pdd，快手offer）](https://juejin.cn/post/6894101837696204808)
 

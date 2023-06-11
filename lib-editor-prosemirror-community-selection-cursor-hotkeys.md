@@ -12,6 +12,14 @@ modified: 2022-08-30T22:09:32.804Z
 # discuss
 - ## 
 
+- ## 
+
+- ## [Support for Multiple, Discontinuous Selections?](https://discuss.prosemirror.net/t/support-for-multiple-discontinuous-selections/1560)
+  - Is there a clean, established way to create multiple selections and/or a selection with multiple, discontinuous ranges?
+  - I notice that `Selection` contains a `ranges` array, but I don’t see any constructors or static helper methods for creating multiple ranges.
+
+- Yes, creating a new `Selection` subclass, along with all the user interactions that go with it, would be the way to do this. You can see the `CellSelection` class in the tables module for an example.
+
 - ## Prosemirror-virtual-cursor
 - https://discuss.prosemirror.net/t/prosemirror-virtual-cursor/5044
   - When the cursor is right between two different marks, it will show a little tail to indicate the mark of following input. 

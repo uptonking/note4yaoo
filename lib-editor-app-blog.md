@@ -13,10 +13,6 @@ modified: 2022-08-21T10:11:37.453Z
 - contenteditable gives you one very important feature that you can't fake yourself: access to the browser's spell check and corrections
 - Yep, we do use contentEditable as an input source and also as the view to which we render (you wouldn't be able to reliably handle the keyboard otherwise).
 # blogs
-- [[方案]造一个富文本 简介](http://luo0412.gitee.io/core/nav.4-2.ui/ch5-toolbox/02-5047253998648002.html)
-
-- [哔哩哔哩 从零开始的富文本编辑器（上）_slate_202209](https://www.bilibili.com/read/cv18606877)
-  - [哔哩哔哩 从零开始的富文本编辑器（下） - 列表-图片_slate_202210](https://www.bilibili.com/read/cv19147722)
 
 ## [如履薄冰的复制粘贴-clipboard详解 - 掘金](https://juejin.cn/post/6903698870694313991)
 
@@ -227,26 +223,6 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
   - So I’m tempted now to build an easy to understand reference implementation of a complete text editor. It’d be based off my existing code for the Ken editor, but entirely framework agnostic, fast and future-proof. Instead of a higher level wrapper around ProseMirror (such as TipTap)
   - Another approach that’s tempting for me is to revive Substance.js, but remove the rendering part of the library and use Svelte instead. 
 
-## [CKEditor 5 - comparing Revision History with Track Changes](https://ckeditor.com/blog/ckeditor-5-comparing-revision-history-with-track-changes/)
-
-- These two features of CKEditor 5 include Revision History and Track Changes, also known as Suggestion Mode.
-- Both Track Changes and Revision History are premium plugins and features within CKEditor 5
-- Track Changes is the ability to work collaboratively with others, not necessarily in real time, by seeing the suggestions they made to a document and being able to accept or reject them.
-- Revision History revolves around the ability for users to analyze earlier versions of a document, compare them with one another and revert to a chosen version if desired.
-  - Writers will need to periodically save states, or versions of their document, so that they show up on the chronological list 
-
-- they are used at different stages of a document editing workflow. 
-  - Track Changes enables users to apply suggestions that need to be reviewed by another user. This mode suggests what could be changed in the future; 
-  - Revision History looks at what was already changed in the past. However, it may also include suggestions that haven’t been accepted yet within the revisions, if both features are enabled simultaneously.
-
-- Revision History, on the other hand, focuses on providing users with three additional and key functionalities that Track Changes does not have. 
-  - creating snapshots (revisions) of content, where such a snapshot is the state of the content at the time the user makes a save
-  - comparing individual revisions with each other
-  - restoring individual revisions
-
-- In summary, Track Changes is more of a functionality improving the aspect of collaboration between users, 
-  - while Revision History extends the application’s capabilities with content audit-trail and versioning functionality.
-
 ## [Why ContentEditable is Terrible. Or: How the Medium Editor Works | by Nick Santos | Medium Engineering_201405](https://medium.engineering/why-contenteditable-is-terrible-122d8a40e480)
 
 ## [从流行的编辑器架构聊聊富文本编辑器的困境_202003](http://yoyoyohamapi.me/2020/03/01/%E4%BB%8E%E6%B5%81%E8%A1%8C%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E6%9E%B6%E6%9E%84%E8%81%8A%E8%81%8A%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%9B%B0%E5%A2%83/)
@@ -410,6 +386,11 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
   - 服务器就在你本地。。。懂了没？？只是和编辑器分开了，通过通信来交流
   - 网络传输会让你的ide跑的慢死 目前的都是本地服务器也就是个跨进程通讯而已
 # more
+- [[方案]造一个富文本 简介](http://luo0412.gitee.io/core/nav.4-2.ui/ch5-toolbox/02-5047253998648002.html)
+
+- [哔哩哔哩 从零开始的富文本编辑器（上）_slate_202209](https://www.bilibili.com/read/cv18606877)
+  - [哔哩哔哩 从零开始的富文本编辑器（下） - 列表-图片_slate_202210](https://www.bilibili.com/read/cv19147722)
+
 - [重学编辑器 - 掘金](https://juejin.cn/post/7231476258163900476)
 
 - [How to choose a text editor for a digital-first newsroom?](https://autentika.com/blog/how-to-choose-a-text-editor-for-a-digital-first-newsroom)
