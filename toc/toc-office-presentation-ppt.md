@@ -34,6 +34,12 @@ modified: 2021-04-30T20:14:17.669Z
   - https://formidable.com/open-source/spectacle/docs/tutorial/
   - ReactJS based Presentation Library
   - 依赖history、marksy、prism-react-renderer、react-spring、styled-comp
+- https://github.com/cpojer/remdx /ts
+  - Create beautiful minimalist presentations with React & MDX.
+  - The core of ReMDX is a lean fork of Spectacle. 
+  - create-remdx is based on Slidev. 
+  - Slidev is modern but only works with Vue instead of React. 
+  - I wanted to build a fast MDX-based slide deck tool on top of Vite that uses React and only supports a minimal set of features.
 - marpit /MIT/287Star/22009
   - https://github.com/marp-team/marpit
   - https://marpit.marp.app/

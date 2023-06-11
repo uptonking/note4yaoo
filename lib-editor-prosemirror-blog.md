@@ -345,6 +345,14 @@ modified: 2021-06-15T00:07:49.228Z
 - 视图描述只是虚拟DOM，如果一个视图描述节点需要更新时，它会为自己设置一个dirty属性，表示需要更新。
 - 视图描述指示文档DOM的更新，深度遍历从叶子节点往上遍历，完成一个层级就调用renderDescs()来更新相应的DOM。
 # more-prosemirror-blogs
+- [prosemirror-tables 源码解读 - 简书](https://www.jianshu.com/u/ef3da5e2ac90)
+  - [一文搞定前端html内容转图片、pdf和word等文件 - 简书](https://www.jianshu.com/p/e2091c81f515)
+  - [常见附件预览：图片、视频、音频、文本、pdf、office... - 简书](https://www.jianshu.com/p/eabd8e183e97)
+  - 首推微软在线 Office Web Viewer
+  - [Is Office Online Server free, and does it require authorization? - Microsoft Q&A](https://learn.microsoft.com/en-us/answers/questions/676252/is-office-online-server-free-and-does-it-require-a)
+    - you can use Office online server to view office documents from browser. 
+    - However, If you need edit options, you need to have commercial license
+
 - [Decouple look&feel from Remirror extensions](https://medium.com/collaborne-engineering/decouple-look-feel-from-remirror-extensions-87a06ad9214e)
   - The Remirror extension thereby exposes an option in the format of `(state) => React.ReactElement` and uses this afterwards to render the component.
 

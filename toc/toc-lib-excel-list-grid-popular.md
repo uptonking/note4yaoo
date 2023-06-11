@@ -594,6 +594,14 @@ modified: 2022-08-21T10:02:27.788Z
   - A headless UI component libray for managing complex table state in React.
   - Inspired by react-table but with Typescript support built in and a simpler API.
 
+- react-table-library /563Star/MIT/202305/ts
+  - https://github.com/table-library/react-table-library
+  - yet another table library for React
+  - 依赖styled-components
+  - 提供了多个主题 material-ui、semantic、bootstrap、antd
+  - server-side operations (e.g. search, pagination) as first-class citizens
+  - composition over configuration
+
 - react-data-table-component /1.2kStar/Apache2/202112/ts
   - https://github.com/jbetancur/react-data-table-component
   - https://jbetancur.github.io/react-data-table-component
@@ -608,11 +616,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/ThaddeusJiang/react-advanced-table
   - http://react-advanced-table.vercel.app/
   - React Advanced Table
-- react-table-library /51Star/MIT/202202/js
-  - https://github.com/table-library/react-table-library
-  - yet another table library for React
-  - 依赖styled-components
-  - 提供了多个主题 material-ui、semantic、bootstrap、antd
+
 - react-bolivianite-grid /MIT/85Star/201905/inactive
   - https://github.com/papasnippy/react-bolivianite-grid
   - https://papasnippy.github.io/react-bolivianite-grid/

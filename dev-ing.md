@@ -273,6 +273,12 @@ $$('[contenteditable]')
 
 ## 060
 
+## 0610
+
+- [Do I need to `return` after `throw` in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/26067190/do-i-need-to-return-after-throw-in-javascript)
+  - You do not need to put a `return` statement after `throw`, the return line will never be reached as throwing an exception immediately hands control back to the caller Unless there is a `CATCH` to handle the thrown error in any path of the call stack.
+  - The `throw` statement throws a user-defined exception. Execution of the current function will stop (the statements after `throw` won't be executed), and control will be passed to the first `catch` block in the call stack. **If no `catch` block exists among caller functions, the program will terminate**.
+
 ## 0608
 
 - [在Chrome上面按F12修改页面的源代码里面的JS代码为什么无法生效？ - 知乎](https://www.zhihu.com/question/30701118)

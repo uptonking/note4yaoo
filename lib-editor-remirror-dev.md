@@ -20,6 +20,10 @@ modified: 2021-06-27T19:16:51.396Z
 - https://github.com/bprofiro/editor
   - https://remirror-editor-demo.vercel.app/
   - A editor with the main features created using Remirror and with a special code block 
+
+- https://github.com/linebyline-group/linebyline
+  - 希望找一些伙伴一起做个 Markdown 编辑器，目标是做到 Typora 那样比较成熟的
+  - 项目主要用的技术是Tauri，前端用 React + Ts ，编辑器部分使用的 Remirror
 # discuss
 - ## React Native
 - https://github.com/remirror/remirror/discussions/779

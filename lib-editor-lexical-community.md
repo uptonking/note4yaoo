@@ -12,23 +12,26 @@ modified: 2022-05-15T18:35:39.272Z
 - ## Differences between Prosemirror and Lexical_202204
 - https://discuss.prosemirror.net/t/differences-between-prosemirror-and-lexical/4557
 - They(lexical) affirm that their value proposition differentiates them from RTE as Prosemirror in the following points:
-  - Mutable state approach: I would appreciate if someone can elaborate on this point.
-  - Prevent the DOM from being manipulated externally (i.e. extensions) to guarantee that the DOM always matches the EditorState
-  - React +18 support: The main point here and the one that is the biggest new thing in React 18 is concurrency. This feature allows you to choose which nodes to render instead of the whole tree/page
+  - **Mutable state approach**: I would appreciate if someone can elaborate on this point.
+  - **Prevent the DOM from being manipulated externally (i.e. extensions)** to guarantee that the DOM always matches the EditorState
+  - **React +18 support**: The main point here and the one that is the biggest new thing in React 18 is concurrency. This feature allows you to choose which nodes to render instead of the whole tree/page
 
 - 202205
-- I was on the React Core team for 3+ years, and we spent a lot of time looking into APIs and how we could eliminate whole classes of issue by simply making the edge-cases implementation details of the framework itself. The same thing applies to Lexical.
+- 💡 I was on the React Core team for 3+ years, and we spent a lot of time looking into APIs and how we could eliminate whole classes of issue by simply making the edge-cases implementation details of the framework itself. The same thing applies to Lexical.
 - We look at Lexical as being the React of editors – in terms of its declarative approach to promoting imperative APIs and how you go about reasoning intent. 
-  - An example might be schemas from ProseMirror. 
-  - Lexical doesn’t have schemas as a hot keyword, but it does offer the same functionality via Lexical’s node APIs. 
+- An example might be schemas from ProseMirror. 
+  - **Lexical doesn’t have schemas as a hot keyword, but it does offer the same functionality via Lexical’s node APIs**. 
+  - Many ElementNode and TextNode methods define the intent of an interaction or a relationship with a parent, sibling, or child. 
+  - You can extend one of the Lexical core nodes and just over-ride those methods and specific your heuristics for your node as needed. Which is far less boilerplate, and fully type-able in Flow/TypeScript – which is priority at Meta.
 - we’re also investing in building native versions of Lexical for mobile (in native mobile languages) and also investing into building React Native bindings for those who use those surfaces. 
   - So we need something that can scale now, not something that can scale later.
-- Lexical is in a fortunate position, where we can take from what has existed previously – including ProseMirror, React, Yjs, and leverage it with latest browser APIs. 
+  - Lexical is in a fortunate position, where we can take from what has existed previously – including ProseMirror, React, Yjs, and leverage it with latest browser APIs. 
   - Lexical doesn’t support IE, or legacy Edge, and we work closely with engineers from Mozilla and Google to patch bugs in their evergreen browsers to ensure all web editors work better (that’s why we leverage `beforeinput` so much).
-- We are also trying to do best in-class for accessibility
+- We are also trying to do best in-class for **accessibility**
   - VoiceOver, Dragon Naturally Speaking and JAWS being key tools that fail with most web editors today. 
   - A good example is the horizontal caret that is awesome in ProseMirror. Unfortunately, this doesn’t pass WCAG guidelines and doesn’t work well on mobile, so whilst we supported this in the past, we’re now going back to look at how we can insert whitespace upon moving selection to a place where the user might struggle with it (like a paragraph, for example).
-- For collaboration, I worked closely with Kevin (author of Yjs) to ensure we could “sync” the Lexical editor state between many clients. We use the tree structure of Lexical to sync to Y. XmlElement, and Y. Text accordingly. 
+- For collaboration, I worked closely with Kevin (author of Yjs) to ensure we could “sync” the Lexical editor state between many clients. 
+  - We use the tree structure of Lexical to sync to `Y.XmlElement`, and `Y.Text` accordingly. 
   - We flatten text within a given block, and use inline Y. Map nodes between characters to infer the beginning and end of Lexical TextNodes. The Y. Map also holds all the properties of the TextNode, or user extended TextNode and scales well without having to use attribute ranges, which isn’t performant in Lexical’s case with CRDT. 
   - We are internally shipping Lexical with Yjs today and we hope to expand this in the future to more surfaces, including mobile.
 - If anything, the reason I’m here on the ProseMirror discussion board is to praise ProseMirror’s efforts and ideas. Without them, we wouldn’t have the Lexical we have today. 

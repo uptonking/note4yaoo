@@ -21,7 +21,7 @@ modified: 2023-03-24T05:06:08.832Z
 - https://github.com/octokit/octokit.js
   - all-batteries-included GitHub SDK for Browsers, Node.js, and Deno.
 
-- https://github.com/PlasmoHQ/plasmo
+- https://github.com/PlasmoHQ/plasmo /ts
   - https://www.plasmo.com/
   - The Plasmo Framework is a battery-packed browser extension SDK
   - Build your extension and let Plasmo handle browser-specific behaviors and bundling

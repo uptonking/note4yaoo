@@ -74,8 +74,18 @@ modified: 2023-02-05T19:03:12.722Z
 - tips
   - 协作3大要点: 模型数据、光标选区、undo/redo
 
-- editor.sharedRoot
-  - 与编辑器相关的ydoc/ytext直接挂在slate editor对象上
+- 网络通信socket，基于框架隐藏了网络通信的细节
+  - 客户端连接使用HocuspocusProvider
+  - 服务端使用@hocuspocus/server
+
+- `editor.sharedRoot`共享状态在createEditor时作为插件参数传入
+  - sharedRoot直接挂在slate editor对象上，方便存取
+
+- each time slate doc change, update ydoc
+  - e.onChange = ()=> YjsEditor.flushLocalChanges(e); 
+
+- each time ydoc change, update slate doc
+  - e.connect = ()=> e.sharedRoot.observeDeep(handleYEvents); 
 
 - connect时会初始化editor数据
   - editor.children = convertToSlate(editor.sharedRoot)
