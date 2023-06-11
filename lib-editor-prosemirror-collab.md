@@ -23,7 +23,7 @@ modified: 2021-10-14T05:03:19.234Z
   - This means that everybody ends up applying the changes in the same order, so convergence is trivial.
 # blogs
 
-## [Collaborative text editor with ProseMirror and a syncing database](https://emergence-engineering.com/blog/prosemirror-sync-1_202007)
+## [Collaborative text editor with ProseMirror and a syncing database_202007](https://emergence-engineering.com/blog/prosemirror-sync-1)
 
 - [blog src code](https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1)
 
@@ -36,6 +36,9 @@ modified: 2021-10-14T05:03:19.234Z
   - This is usually done with WebSockets, which adds another layer in the stack where bugs can hide. 
   - This article shows a path to get rid of that layer by using a well-tested layer in the form as a syncing database. (PouchDB/CouchDB)
   - This approach has also been tested with Firestore.
+
+- You can follow the steps (changes) that are emitted from the active editor in the ClientSteps list table. Here you can see all the steps that are being sent from the clients.
+- The ServerSteps list table displays the history of the valid conflict free steps ( changes ). Each of these steps has a version just like git commits.
 
 - step: an object which describes the necessary information to update a document ( like add/delete a letter from a given position in a document.
 - ProseMirror document version: A version of the document starts from 0 and incremented every time a new step is applied.
@@ -51,6 +54,24 @@ modified: 2021-10-14T05:03:19.234Z
 - In this demo there are two ProseMirror editors and each of them has a dedicated PouchDB instance. 
   - These databases sync up to a third database, which belongs to a "server". 
   - If client A is updated, then the server is updated which ideally propagates client B.
+
+- we use PouchDB for this demo which is a JavaScript implementation of the CouchDB protocol. There are three collections:
+  - 1. PMDocument: stores the ProseMirror document
+  - 2. ClientSteps: stores the steps coming from the clients
+  - 3. ServerSteps: stores the steps accepted by the server
+
+- Data flow on the server
+  - The server listens to new documents in ClientSteps
+  - If the version of the steps is correct, the client is synced up to the server
+  - And finally: the server updates the ProseMirror document stored in PMDocument ( referenced by the incoming step ) and saves the accepted steps to ServerSteps
+
+- Data flow on the clients
+  - postSteps.ts is called by ProseMirror whenever there is an incoming ProseMirror transaction ( either the user did something in the editor, or the server sent new steps coming from another user ). 
+  - In that function, sendable steps are calculated by the prosemirror-collab module, and if there's any then they are written to the database as ClientSteps. 
+  - The ProseMirror view is also updated.
+  - only listens to the step in ServerSteps which has the version that updates the current document. I
+
+-  Offline functionality is also possible with the same structure ( with some added code ), but keep in mind that ProseMirror's collaborative feature is not meant for offline use and it is possible to lose some information ( for example if a user typed into an existing paragraph when offline, and then the paragraph is deleted then the information is lost ), but in general, it works great.
 # [Collaborative Editing in ProseMirror__201507](https://marijnhaverbeke.nl/blog/collaborative-editing.html)
 
 ## [「译」ProseMirror 中的协同编辑实现](https://www.xheldon.com/tech/Collaborative-Editing-in-ProseMirror.html)

@@ -10,13 +10,13 @@ modified: 2022-08-21T10:02:27.788Z
 # focus
 
 - requirements
-  - group/aggregate/**pivot**
-  - **editable operations support**
+  - group/aggregate/**pivot**: tanstack-table
+  - **editable operations support**: logux/ospreadsheet
   - _undo/redo+batch-undo_
   - _collaborative optional_
   - _transaction_
-  - headless utils: state/actions/props/api
-  - view-layer: vdom-based
+  - headless utils: state/actions/props/api : autocomplete/tanstack
+  - view-layer: vdom : autocomplete/Simple-DataTables/slate/sleek
   - virtualized
   - keyboard/a11y
   - optimized for text-table/markdown-table
@@ -24,6 +24,15 @@ modified: 2022-08-21T10:02:27.788Z
   - image
     - 单元格图片懒加载
   - 接入现有组件库
+
+- plugins-ready
+  - prosemirror Plugin class
+  - slate hoc
+  - tanstack-table hoc
+  - luckysheet
+  - ospreadsheet
+  - sleekgrid
+  - autocomplete
 
 - collab-如何在表中间位置插入行或列
   - 最简单和常见的数据结构是crdt map，可尝试基于`无序map+有序array`实现有序arrayMap
@@ -110,7 +119,7 @@ modified: 2022-08-21T10:02:27.788Z
     - 下拉填充、查找替换
   - [Is there any plan to make a Vue version? soon](https://github.com/ruilisi/fortune-sheet/issues/14)
 
-- x-sheet /50Star/MPL/202209/js/vanillajs/luckysheet开发者
+- x-sheet /50Star/MPL/202209/js/vanillajs/canvas/luckysheet开发者
   - https://github.com/eiji-th/x-sheet
   - https://gitee.com/eigi/x-sheet
   - 高性能 web javaScript 电子表格
@@ -258,11 +267,14 @@ modified: 2022-08-21T10:02:27.788Z
       - renderRows，使用了_rowsCache，里面缓存了dom对象
       - 创建rowNode使用document.createElement
     - 有的cb会先this.invalidate，再rerender
+  - https://github.com/ghiscoding/slickgrid-universal
+    - a monorepo which includes all Editors, Filters, Extensions, Services and is Framework Agnostic to take full advantage of SlickGrid core lib
 
 - Simple-DataTables /1.1kStar/LGPLv3/202304/ts
   - https://github.com/fiduswriter/Simple-DataTables
   - https://fiduswriter.github.io/simple-datatables/
   - A extendable, dependency-free javascript HTML table plugin.
+  - 支持编辑，不支持undo
   - DataTable自身是个event-emitter
   - 使用了diff-dom中的vnode定义
   - init初始化流程

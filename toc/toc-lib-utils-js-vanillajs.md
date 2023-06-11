@@ -81,6 +81,10 @@ modified: 2023-04-04T22:35:59.255Z
   - Remeda is written and tested in TypeScript and that means there won't be any problems with custom typings.
   - "data-first" approach is more natural and more programmer friendly for pick/omit
   - "data-last" approach is helpful when writing data transformations aka pipes.
+# performance
+- https://github.com/verlok/vanilla-lazyload /js
+  - flexible script that speeds up your website by deferring the loading of your below-the-fold images, backgrounds, videos, iframes and scripts to when they will enter the viewport. 
+  - Written in plain "vanilla" JavaScript, it leverages IntersectionObserver, supports responsive images and enables native lazy loading.
 # lang-js
 - https://github.com/thoughtspile/awesome-tiny-js
   - A collection of tiny JS libraries to put your bundle on a diet
@@ -154,7 +158,12 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/DustinBrett/daedalOS
   - https://dustinbrett.com/
   - Desktop environment in the browser
-# localStorage
+# web-dom
+- https://github.com/retentioneering/retentioneering-dom-observer
+  - The package contains tools for parsing DOM data, observing DOM and tracking changes.
+  - This class is a wrapper over MutationObservers, allowing you to observe changes even of those nodes that are not already in the DOM
+  - Observation will automatically start as soon as the target node appends in the DOM.
+# web-localStorage
 - https://github.com/aykutkardas/lookie
   - Store your data in localStorage with optional expiration time.
 # cross-platform

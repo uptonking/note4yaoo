@@ -113,6 +113,19 @@ modified: 2023-02-05T18:50:32.900Z
   - 前端依赖mui、ahooks、umi3
   - 全功能论坛：板块/楼中楼/角色权限/审核/富文本编辑/个性化配置/邮件通知 等
   - 自带授权登录：免开发支持 QQ/微信/支付宝 授权登录
+
+- https://github.com/PelagicCreatures/marlin /202204/js/inactive
+  - An ExpressJS CMS for sites with Sequelize db backends
+  - Data model driven database (sequelize)
+  - Admin data editing UI suite automatically built from data model
+  - ACL access control on tables by user role (superuser, admin, etc.)
+  - 前端依赖pug，未找到prosemirror
+  - https://github.com/PelagicCreatures/marlin-app
+    - a boilerplate app that includes many common functions of a web site/app featuring registered users. 
+    - we use HIJAX to load pages after the initial load. 
+    - 【DOM编程艺术】 Hijax---渐进增强地使用Ajax 
+    - 按照老传统，让表单把整个页面都提交到服务器，然后服务器再发回来一个包含反馈的新页面，所有处理操作都在服务器上完成
+    - 为了给这个登录表单添加AJAX功能，就需要拦截提交表单的请求,让XMLHttpRequest请求来代为发送
 # server-sent event
 - https://github.com/dexterio200/chat-app-server
   - Server side of a chat room app - built with Node.js, Express, Sequelize & Server-sent events.

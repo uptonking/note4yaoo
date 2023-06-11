@@ -9,7 +9,6 @@ modified: 2021-01-13T19:30:59.508Z
 - search
   - paper, reading, reader, document
 
-
 - whiteboard-solutions
   - [Excalidraw白板调研文档](http://wangxiang.website/docs/work/excalidraw.html)
     - npm 包目前不支持：多人协作、共享链接等，不过 Excalidraw 团队已经在规划当中，不久就会以插件的形式支持。
@@ -92,7 +91,13 @@ modified: 2021-01-13T19:30:59.508Z
   - A composable editor canvas library.
   - 基于svg实现的图形编辑器
   - 提供了多种编辑场景示例
-# infinite-canvas-drawing-tools
+# canvas-drawing-
+- https://github.com/dlemrry/editor
+  - real time collaborative documents using web socket
+  - Web application for editing texteditor and painting canvas in real-time collaboration.
+  - 展示了 quill、draftjs、canvas+mousemove 几个示例
+  - 提供了client+server，可作为通用协作方案
+
 - https://infinitecanvas.tools/gallery/
   - 画板类产品列表
   - The infinite canvas is the foundation of a new class of apps from design tools, to code editors, and workspaces.

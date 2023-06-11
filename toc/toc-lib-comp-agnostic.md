@@ -152,7 +152,7 @@ modified: 2020-11-13T07:28:27.824Z
   - drag and drop between different tree
   - composition model(reactjs children and vuejs slot)
 
-- https://github.com/plantain-00/select2-component
+- https://github.com/plantain-00/select2-component /ts
   - https://plantain-00.github.io/select2-component/packages/react/demo/
   - A vuejs and reactjs select component.
   - local search

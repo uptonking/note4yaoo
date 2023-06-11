@@ -15,6 +15,15 @@ modified: 2020-12-20T15:46:29.566Z
   - eclipse
   - [The Power Of The Plugin Architecture In Python - YouTube](https://www.youtube.com/watch?v=iCE1bDoit9Q)
   - [前端插件式可扩展架构设计心得](https://www.51cto.com/article/675413.html)
+
+- plugins-ready
+  - prosemirror Plugin class
+  - slate hoc
+  - tanstack-table hoc
+  - luckysheet
+  - ospreadsheet
+  - sleekgrid
+  - autocomplete
 # blogs
 
 ## [Designing a JavaScript Plugin System](https://css-tricks.com/designing-a-javascript-plugin-system/)
@@ -315,7 +324,8 @@ class Plugins {
 - [插件化架构设计(2): 插件化从设计到实践该考量的问题汇总 - zhoulujun - 博客园](https://www.cnblogs.com/zhoulujun/p/17231013.html)
 
 ## more-plugins-blog
-- [Discussion: The limits of actions and reducers - discuss.ProseMirror](https://discuss.prosemirror.net/t/discussion-the-limits-of-actions-and-reducers/551/4)
+
+- [Discussion: The limits of actions and reducers - discuss. ProseMirror](https://discuss.prosemirror.net/t/discussion-the-limits-of-actions-and-reducers/551/4)
 # plugin-examples
 - https://github.com/unjs/unplugin /ts
   - Unified plugin system for Vite, Rollup, Webpack, esbuild, and more

@@ -102,6 +102,9 @@ let view = new EditorView(document.body, {
 
 - view-layer
   - ViewSpec vdom
+  - NodeView 与模型层数据紧密相关，仅在相关node数据变化时update
+  - Decoration 与模型层数据相关，可与具体节点无关
+  - plugin view 可控制EditorView的dom之外的元素渲染和交互
 # state
 - immutable state
   - 分析keypress插入文本
@@ -132,7 +135,7 @@ let view = new EditorView(document.body, {
 - 编辑输入时如何更新dom
   - 编辑器最外层样式类为`. ProseMirror`的div元素的`contenteditable`为true，所以编辑器内元素都可编辑
 # plugin
-- editorState的更新总是2部
+- editorState的更新总是2步
   - const newState= new EditorState()
   - newState[pluginKey] = pluginNewState; 
 # model

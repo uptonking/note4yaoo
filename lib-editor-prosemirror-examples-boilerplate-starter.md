@@ -12,7 +12,7 @@ modified: 2022-09-05T03:41:15.727Z
 - resources
   - [codesandbox prosemirror-state deps](https://codesandbox.io/examples/package/prosemirror-state)
   - [codesandbox tiptap deps](https://codesandbox.io/examples/package/@tiptap/core)
-# prosemirror-starter
+# prose-starter
 - https://github.com/ueberdosis/tiptap/tree/main/packages/starter-kit
   - 官方提供了模版工具箱 `@tiptap/starter-kit` npm包
   - https://github.com/syfxlin/tiptap-starter-kit
@@ -44,7 +44,7 @@ modified: 2022-09-05T03:41:15.727Z
 - DoX /6Star/NALic/202208/js
   - https://github.com/AlbertCerfeda/DoX
   - https://doxeditor.herokuapp.com/
-  - 依赖 express、passport、socket.io、bootstrap4
+  - 依赖 prosemirror-collab、express、passport、socket.io、bootstrap4
   - features
     - 文档支持简单分享、权限设置
     - 协作支持显示光标

@@ -15,7 +15,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 评论
 
 - prosemirror-futuristic
-  - 方向：collab、markdown、pivot-table、math/formula、media/embed
+  - 方向：collab、markdown、pivot-table、math/formula、media/embed、cms
   - 大部分的方案是以vanillajs为core，react为wrapper
   - toys
     - 尝试保留rich-markdown-editor的api，将core用~~tiptap~~重写
@@ -23,22 +23,22 @@ modified: 2022-08-18T16:57:46.405Z
     - react indexeddb， 编辑器数据频繁的更新可参考编辑器实时协作的更新
 
 - 💡 vanillajs-first
-  - tiptap/dante/wix, bangle.dev, tui.editor.v3
-  - guardian-prosemirror-elements/typerighter/invisibles/noting
-  - stacks-editor(StackOverflow), syllepsis(字节)
+  - tiptap/dante/wix, tui.editor.v3, stacks-editor(StackOverflow), bangle.dev
+  - guardian-prosemirror-elements/invisibles/noting
   - milkdown(Typora), jcmnunes-bc-editor(md)
   - start-editor, zeditor, emirror, NotionEditor(toy)
 
 - 💡 react-first
-  - remirror, @atlaskit/editor-core, rich-markdown-editor/keyboardnotes
-  - wax-prosemirror(coko editor), curvenote-editor(redux), czi/licit(word), perry-white(newspaper)
+  - remirror, @atlaskit/editor-core, yandex-yfm, syllepsis(字节)
+  - wax-prosemirror(coko), manuscript-editor, curvenote-editor(redux), czi/licit(word)
+  - rich-markdown-editor
   - smartblock(202003), xen-editor，nib-edit(高级功能未开源如comment/collab)
 
 - more-prosemirror
   - pageboard/client(页面搭建), noteworthy(solidjs)
   - 建站编辑器应该参考gutenberg、wix
   - [npmtrends for pme](https://npmtrends.com/@remirror/react-vs-@tiptap/core-vs-lexical-vs-prosemirror-view-vs-remirror-vs-slate)
-# prosemirror-popular
+# popular
 - tiptap /16.1kStar/MIT/202208/ts
   - https://github.com/ueberdosis/tiptap
   - https://tiptap.dev/
@@ -93,14 +93,15 @@ modified: 2022-08-18T16:57:46.405Z
     - https://github.com/pioug/atlassian-frontend-mirror
 
 - BlockNote /14Star/MPL.v2/202208/ts
-  - https://github.com/YousefED/BlockNote
-  - https://blocknote-main.vercel.app/
+  - https://github.com/TypeCellOS/BlockNote
+  - https://www.blocknotejs.org/
   - A "Notion-style" block-based extensible text editor built on top of Prosemirror and Tiptap.
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，特别是支持将list item拖入拖出列表
   - 支持斜杠菜单、悬浮菜单修改标题层级、多级列表、顺滑动画
   - 支持协作
   - 依赖tiptap.v2、tippyjs、styled-components
+  - core+react-slashMenu/toolbar
   - bugs
     - 复制粘贴多行文本
 
@@ -111,6 +112,22 @@ modified: 2022-08-18T16:57:46.405Z
   - Notion like editor built on top of tiptap.
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，但list item不支持拖入拖出
+
+- tui.editor.v3 /15.1kStar/MIT/202208/ts/几乎无依赖/生态丰富
+  - https://github.com/nhn/tui.editor
+  - https://ui.toast.com/tui-editor
+  - https://nhn.github.io/tui.editor/latest/tutorial-example01-editor-basic
+  - 👀 v3新版本迁移到了prosemirror
+  - 只依赖prosemirror，mark解析自己实现了toastmark，公司还自研了很多ui组件
+  - core只依赖 codemirror5，另外提供了react/vue-editor
+  - 全都是vanillajs，react的封装很薄，只有3文件
+  - 编辑器支持分屏查看、双屏同步滚动、配置图表chart、uml、语法高亮、合并单元格、自定义toolbar、i18n、theming
+  - 代码复杂度高
+  - 支持通过代码块中的图表配置信息生成图表
+  - The Editor allows you to edit your Markdown documents using text or WYSIWYG and comes with Syntax Highlighting, Scroll-Sync, Live Preview, and Chart features.
+  - ref
+    - [example: Editor with Chart Plugin](https://nhn.github.io/tui.editor/latest/tutorial-example07-editor-with-chart-plugin)
+    - https://github.com/QinHongZhe/hongzhe-tui.editor
 
 - bangle.dev-editor /527Star/MIT/202208/ts
   - https://github.com/bangle-io/bangle.dev
@@ -125,28 +142,14 @@ modified: 2022-08-18T16:57:46.405Z
     - 提供了 indexed-db-storage-provider, fs
     - A web only WYSIWYG note taking app that saves notes locally in markdown format
 
-- tui.editor.v3 /15.1kStar/MIT/202208/ts/popular
-  - https://github.com/nhn/tui.editor
-  - https://ui.toast.com/tui-editor
-  - 👀 v3新版本迁移到了prosemirror
-  - 只依赖prosemirror，mark解析自己实现了toastmark，公司还自研了很多ui组件
-  - core只依赖 codemirror5，另外提供了react/vue-editor
-  - 全都是vanillajs，react的封装很薄，只有3文件
-  - 编辑器支持分屏查看、双屏同步滚动、配置图表chart、uml、语法高亮、合并单元格、自定义toolbar、i18n、theming
-  - 代码复杂度高
-  - 支持通过代码块中的图表配置信息生成图表
-  - The Editor allows you to edit your Markdown documents using text or WYSIWYG and comes with Syntax Highlighting, Scroll-Sync, Live Preview, and Chart features.
-  - ref
-    - [example: Editor with Chart Plugin](https://nhn.github.io/tui.editor/latest/tutorial-example07-editor-with-chart-plugin)
-    - https://github.com/QinHongZhe/hongzhe-tui.editor
-
-- wax-prosemirror /9Star/MIT/202208/js
+- wax-prosemirror /9Star/MIT/202208/js/react
   - https://gitlab.coko.foundation/wax/wax-prosemirror
   - https://waxjs.net/docs/wax/
   - http://wax-demo.coko.foundation/
   - https://waxjs.net/features/
   - 提供了丰富示例，包括编辑器内带下拉框的表单、脚注面板浮层、Track changes
-  - 👀 支持评论，评论卡片可与编辑器内容水平对齐，但被评论文本不支持部分重叠
+  - 支持评论，评论卡片可与编辑器内容水平对齐，但被评论文本不支持部分重叠
+  - 👉🏻 实现了suggestion mode
   - The Word Processor for the Web
   - Wax depends on the following libraries.
     - React for the view(UI)
@@ -190,12 +193,21 @@ modified: 2022-08-18T16:57:46.405Z
     - Elements contain user-defined Fields that can model many different kinds of content, including rich text fields and arbitrary data.
     - Each Element is made up of Fields, which represent a data type – for example, text, rich text, or custom data types.
 
+- yfm-editor /3Star/MIT/202211/ts/md-it
+  - https://github.com/yandex-cloud/yfm-editor
+  - https://preview.yandexcloud.dev/yfm-editor/
+  - https://ydocs.tech/en/
+  - 依赖prosemirror、markdown-it、react-use、gravity-ui
+  - Yandex Flavored Markdown (YFM) is a Markdown dialect and a set of tools for transforming Markdown to HTML in real time and building complete documentation projects.
+  - 支持显示tab
+  - Expandable: you can add any plugin for markdown-it or write your own.
+
 - Stacks-Editor /218Star/MIT/202208/ts
   - https://github.com/StackExchange/Stacks-Editor
   - https://editor.stackoverflow.design/
   - Stacks-Editor is a combination rich text/markdown editor that powers Stack Overflow's post editing experience.
   - 依赖prosemirror, hightlight.js、markdown-it、@lezer/markdown、stacks-ui，不依赖react
-  - 全部基于es6 class，[new EditorView()](https://github.com/StackExchange/Stacks-Editor/blob/481492297f680472c51e57c981f050133681edc6/src/rich-text/editor.ts#L76)的过程非常标准，无封装
+  - 全部基于es6 class，[new EditorView()](https://github.com/StackExchange/Stacks-Editor/blob/main/src/rich-text/editor.ts#L105)的过程非常标准，无封装
 
 - syllepsis /187Star/MIT/202208/ts/字节/参考中文支持
   - https://github.com/bytedance/syllepsis
@@ -246,6 +258,35 @@ modified: 2022-08-18T16:57:46.405Z
     - I don't have prior experience with building word processors, much of the project's design has been trial and error.
     - There are 2 features that I'm still trying to figure out, with no satisfactory solution so far: Pasting, Text formatting 
 
+- manuscript-editor /7Star/apache2/202208/ts/react
+  - https://github.com/Atypon-OpenSource/manuscripts-article-editor
+  - the editor package of Manuscripts app to be used in a react application.
+  - 数据保存支持 pouchdb-adapter-idb
+  - https://github.com/Atypon-OpenSource/manuscripts-body-editor
+    - A React + ProseMirror editor for manuscripts.
+  - https://gitlab.com/mpapp-public/manuscripts-manuscript-editor
+  - https://gitlab.com/mpapp-public/manuscripts-frontend
+    - /CPAL-1.0; 类似MPL
+  - A React + ProseMirror editor for manuscripts.
+  - 编辑器依赖prosemirror、@jupyterlab/services、codemirror5、popperjs、react-dnd
+  - 编辑器样式采用论文简洁风格，支持 摘要、脚注、交叉引用、评论
+  - Manuscripts.io web frontend which makes API calls to manuscripts-api and manuscripts-sync
+  - This repository contains the browser client for the Manuscripts collaborative authoring environment, in a single-page React app (desktop and mobile app embeddable using cocos).
+  - https://github.com/Atypon-OpenSource/manuscripts-data
+    - https://github.com/Atypon-OpenSource/manuscripts-examples
+    - source data for use by Manuscripts client applications
+  - ref
+    - https://gitlab.com/mpapp-public/manuscripts-api
+    - https://gitlab.com/mpapp-public/manuscripts-sync
+    - https://gitlab.com/mpapp-public/manuscripts-data
+  - [Manuscripts.io is a ProseMirror-based editor in a React application_202011](https://discuss.prosemirror.net/t/manuscripts-io/3299), 
+    - served as a PWA that works offline and can be installed as a desktop application via Chrome.
+    - instead of using ProseMirror’s standard collaboration plugin, 👉🏻 Manuscripts serializes each block of the document to a JSON object with an id, which is stored in the browser’s local storage (IndexedDB) using RxDB/PouchDB and then synced with Couchbase via Sync Gateway, which handles permissions and validates each object according to a defined schema. 
+    - Manuscripts.io 64 is built by a team within Atypon; Atypon成立于1996年，是一家为全球期刊发展服务的软件系统公司，Atypon旗下出版平台Literatum为全球近100000本期刊和919家出版商网站、45%的英文同行评审学术期刊和其他语种的出版物提供服务。
+    - Conflict resolution is handled in each client, with any conflicting changes in the document’s content presented to the user for them to choose the most appropriate resolution.
+    - Collaboration in Manuscripts.io 64 works at the project level — each project can contain several manuscripts — and collaborators can either be responsible for editing parts of the document or can simply comment by adding annotations to blocks or ranges of the manuscript.
+    - Manuscripts.io 64 includes some innovations: figures that can be (re)generated dynamically by evaluating code in a hosted Jupyter kernel; built-in searching of online reference databases; configurable paragraph, section and inline styles, and output to multiple formats (DOCX, PDF, JATS XML, HTML, and others).
+
 - wode /3Star/MIT/202206/ts
   - https://github.com/wenerme/wode
   - https://wode.vercel.app/tiptap
@@ -291,35 +332,6 @@ modified: 2022-08-18T16:57:46.405Z
   - 基础 schema 是两个 doc 和 text, 这是 Prosemirror 默认的两个最大和最小可编辑 schema. 而设计 schema 的时候我使用的最小编辑单元是 textblock, 表现形式是一个 div 中包含着 text
   - 所有的元素都是使用 div 进行模拟, 而不是使用语义化的 p/ul/ol 等进行, 这是为了摆脱浏览器的限制, 如段落嵌套段落的时候, p 标签无法嵌套块级元素等.
   - 使用了 React 构建界面的有: Slash
-
-- manuscript-editor /7Star/apache2/202208/ts
-  - https://github.com/Atypon-OpenSource/manuscripts-article-editor
-  - the editor package of Manuscripts app to be used in a react application.
-  - 数据保存支持 pouchdb-adapter-idb
-  - https://github.com/Atypon-OpenSource/manuscripts-body-editor
-    - A React + ProseMirror editor for manuscripts.
-  - https://gitlab.com/mpapp-public/manuscripts-manuscript-editor
-  - https://gitlab.com/mpapp-public/manuscripts-frontend
-    - /CPAL-1.0; 类似MPL
-  - A React + ProseMirror editor for manuscripts.
-  - 编辑器依赖prosemirror、@jupyterlab/services、codemirror5、popperjs、react-dnd
-  - 编辑器样式采用论文简洁风格，支持 摘要、脚注、交叉引用、评论
-  - Manuscripts.io web frontend which makes API calls to manuscripts-api and manuscripts-sync
-  - This repository contains the browser client for the Manuscripts collaborative authoring environment, in a single-page React app (desktop and mobile app embeddable using cocos).
-  - https://github.com/Atypon-OpenSource/manuscripts-data
-    - source data for use by Manuscripts client applications
-  - ref
-    - https://gitlab.com/mpapp-public/manuscripts-api
-    - https://gitlab.com/mpapp-public/manuscripts-sync
-    - https://gitlab.com/mpapp-public/manuscripts-data
-    - https://gitlab.com/mpapp-public/manuscripts-examples
-  - [Manuscripts.io is a ProseMirror-based editor in a React application_202011](https://discuss.prosemirror.net/t/manuscripts-io/3299), 
-    - served as a PWA that works offline and can be installed as a desktop application via Chrome.
-    - instead of using ProseMirror’s standard collaboration plugin, 👉🏻 Manuscripts serializes each block of the document to a JSON object with an id, which is stored in the browser’s local storage (IndexedDB) using RxDB/PouchDB and then synced with Couchbase via Sync Gateway, which handles permissions and validates each object according to a defined schema. 
-    - Manuscripts.io 64 is built by a team within Atypon; Atypon成立于1996年，是一家为全球期刊发展服务的软件系统公司，Atypon旗下出版平台Literatum为全球近100000本期刊和919家出版商网站、45%的英文同行评审学术期刊和其他语种的出版物提供服务。
-    - Conflict resolution is handled in each client, with any conflicting changes in the document’s content presented to the user for them to choose the most appropriate resolution.
-    - Collaboration in Manuscripts.io 64 works at the project level — each project can contain several manuscripts — and collaborators can either be responsible for editing parts of the document or can simply comment by adding annotations to blocks or ranges of the manuscript.
-    - Manuscripts.io 64 includes some innovations: figures that can be (re)generated dynamically by evaluating code in a hosted Jupyter kernel; built-in searching of online reference databases; configurable paragraph, section and inline styles, and output to multiple formats (DOCX, PDF, JATS XML, HTML, and others).
 
 - prosemirror-adapter /12Star/MIT/202212/ts
   - https://github.com/Saul-Mirone/prosemirror-adapter
@@ -388,7 +400,7 @@ modified: 2022-08-18T16:57:46.405Z
       - 合并了其他人的修复 https://github.com/kepta/prosemirror-dev-tools
     - https://github.com/luke-john-atlassian/prosemirror-devtools /单独app或extension/inactive
     - [Is there a good way to understand the “pos” that is used all over?](https://discuss.prosemirror.net/t/is-there-a-good-way-to-understand-the-pos-that-is-used-all-over/3458)
-# tiptap/milkdown/remirror/atlassian/wax
+# tiptap/milkdown/remirror/atlassian
 - typist /8Star/MIT/202211/ts
   - https://github.com/Doist/typist
   - https://typist.doist.dev/
@@ -428,7 +440,7 @@ modified: 2022-08-18T16:57:46.405Z
   - whilst Remirror does support native drag-n-drop events, it doesn't support react-beautiful-dnds Draggables.
   - Our react-beautiful-dnd based solution requires lots of workarounds, that could be confusing to maintain.
     - If your use case for drag-n-drop behaviour is simple, it may be more worthwhile to remove react-beautiful-dnd's abstraction layer, and use the native implementation instead.
-# prosemirror-editors-for-design-system
+# for-design-system
 - https://github.com/cultureamp/rich-text-toolkit
   - https://cultureamp.design/storybook/?path=/story/components-rich-text-editor-rich-text-editor--default
   - helpers for building a rich text editor (WYSIWYG) with ProseMirror.
@@ -438,7 +450,7 @@ modified: 2022-08-18T16:57:46.405Z
 - https://github.com/equinor/fusion-components/tree/master/src/customElements/components/markdown-editor
   - https://equinor.github.io/fusion-components/?path=/story/general-markdown-editor--default
   - 依赖prosemirror、prosemirror-markdown、lit
-# prosemirror-editors-collection
+# editors-collection
 - licit /33Star/MIT/202208/js
   - https://github.com/MO-Movia/licit
   - http://greathints.com/licit/
@@ -593,5 +605,5 @@ modified: 2022-08-18T16:57:46.405Z
 
 - https://github.com/ubavic/marble-edit 
   - Rich text editor with Latex math support
-  - Based on ProseMiror and prosemirror-math
+  - Based on ProseMirror and prosemirror-math
   - 代码过于简单

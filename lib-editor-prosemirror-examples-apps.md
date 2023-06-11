@@ -20,8 +20,6 @@ modified: 2022-08-18T16:57:15.296Z
   - 样式与airframe-react dashboard风格类似
   - [Adopt BSL 1.1 license__202003.v0.41.0](https://github.com/outline/outline/pull/1197)
   - [Convert from slate to Prosemirror_202005.v10.0.0](https://github.com/outline/rich-markdown-editor/pull/150)
-  - ref
-    - https://github.com/ProseWorker/ProseWriter
 
 - noteworthy /166Star/AGPLv3/202207/ts/electron
   - https://github.com/benrbray/noteworthy
@@ -127,13 +125,14 @@ modified: 2022-08-18T16:57:15.296Z
   - 无需后端, 完全使用github进行存储你的所有数据, 文字和图片
   - 支持完全离线使用
   - 支持完整版数据导入导出
-# prosemirror-apps
+# prose-apps
 - fiduswriter /455Star/AGPLv3/202209/python/js
   - https://github.com/fiduswriter/fiduswriter
   - https://github.com/fiduswriter/fiduswriter/blob/main/fiduswriter/document/static/js/modules/editor/index.js
   - 依赖@vivliostyle/print、prosemirror、sortablejs、mathlive
   - an online collaborative editor especially made for academics who need to use citations and/or formulas.
   - The editor focuses on the content rather than the layout, so that with the same text, you can later on publish it in multiple ways: On a website, as a printed book, or as an ebook. 
+  - 实现了track-changes
 
 - binder /24Star/NALic/202210/ts
   - https://github.com/mpazik/binder
@@ -198,8 +197,8 @@ modified: 2022-08-18T16:57:15.296Z
 
 - https://github.com/Privoce/privoce-editor
   - This editor supports markdown, @ and #.
-# pm-cms
-- like
+# prose-cms
+- alternatives
   - outline
 
 - https://github.com/dasmikko/strapi-tiptap-editor
@@ -210,7 +209,7 @@ modified: 2022-08-18T16:57:15.296Z
   - https://alinea.sh/
   - an open source headless CMS written in Typescript.
   - 非wysiwyg，左侧编辑块数据，右侧预览
-  - 依赖dnd-kit、yjs、react-query
+  - 依赖dnd-kit、yjs、react-query、tiptap
   - Content is stored in flat files and committed to your repository
   - 👀 Content is easily queryable through an in-memory SQLite database
   - Content is fully typed
@@ -218,7 +217,10 @@ modified: 2022-08-18T16:57:15.296Z
 
 - https://github.com/PelagicCreatures/marlin /202204/js/inactive
   - An ExpressJS CMS for sites with Sequelize db backends
-  - This package implements a relational typed admin backend built from sequelize model definitions with granular access control for editing tables using ACLs for users and roles.
+  - Data model driven database (sequelize)
+  - Admin data editing UI suite automatically built from data model
+  - ACL access control on tables by user role (superuser, admin, etc.)
+  - 前端依赖pug，未找到prosemirror
   - https://github.com/PelagicCreatures/marlin-app
     - a boilerplate app that includes many common functions of a web site/app featuring registered users. 
     - we use HIJAX to load pages after the initial load. 

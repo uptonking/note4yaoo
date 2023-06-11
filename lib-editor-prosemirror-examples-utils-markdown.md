@@ -10,7 +10,7 @@ modified: 2022-11-08T21:14:54.399Z
 # guide
 
 # markdown-editor
-- milkdown /6.5kStar/MIT/202208/ts/remark
+- milkdown /7.5kStar/MIT/202306/ts/remark
   - https://github.com/Saul-Mirone/milkdown
   - https://milkdown.dev/
   - https://milkdown.dev/online-demo
@@ -34,10 +34,11 @@ modified: 2022-11-08T21:14:54.399Z
 
 - yfm-editor /3Star/MIT/202211/ts/md-it
   - https://github.com/yandex-cloud/yfm-editor
-  - https://ydocs.tech/en/
   - https://preview.yandexcloud.dev/yfm-editor/
+  - https://ydocs.tech/en/
   - 依赖prosemirror、markdown-it、react-use、gravity-ui
   - Yandex Flavored Markdown (YFM) is a Markdown dialect and a set of tools for transforming Markdown to HTML in real time and building complete documentation projects.
+  - 支持显示tab
   - Expandable: you can add any plugin for markdown-it or write your own.
 
 - Stacks-Editor /218Star/MIT/202208/ts

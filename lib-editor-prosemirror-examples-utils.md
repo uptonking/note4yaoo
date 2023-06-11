@@ -9,7 +9,7 @@ modified: 2022-08-18T16:57:29.058Z
 
 # guide
 
-# prosemirror-model-data-structure
+# model-data-structure
 - amat-react /1Star/MIT/202207/js/提交多
   - https://github.com/APMG/amat-react
   - Amat React renders ProseMirror JSON Documents as HTML
@@ -34,11 +34,6 @@ modified: 2022-08-18T16:57:29.058Z
   - 文档节点视图切换：tree/radial/network
   - 可视化依赖  d3.v7
 
-- https://github.com/sueddeutsche/prosemirror-recreate-transform
-  - This module allows recreating the steps needed to go from document A to B
-  - it allows merging two different Transforms (sets of steps) whose steps may be conflicting.
-  - Recreating steps can be interesting for example in order to show the changes between two document versions without having access to the original steps.
-
 - https://github.com/ryaninvents/prosemirror-doc-tpl
   - jsx转PMNode，代码量很少
   - provides a concise way to create Prosemirror documents using a JSX-like syntax, for testing or content generation.
@@ -50,6 +45,18 @@ modified: 2022-08-18T16:57:29.058Z
   - The missing ReplaceAttrsStep for prosemirror
   - In prosemirror, in order to update attributes of a node, you must delete it and replace with a new node with updated attributes.
   - While this works perfectly, during collaboration it does not go well with undo history. 
+
+- https://github.com/sueddeutsche/prosemirror-recreate-transform
+  - This module allows recreating the steps needed to go from document A to B
+  - it allows merging two different Transforms (sets of steps) whose steps may be conflicting.
+  - Recreating steps can be interesting for example in order to show the changes between two document versions without having access to the original steps.
+- https://gitlab.com/mpapp-public/manuscripts-manuscript-transform
+  - It provides a way to import/export Manuscript JSON Schema formatted data from and to other formats such as (JATS XML, STS XML, HTML, ProseMirror Model)
+- https://gitlab.com/mpapp-public/prosemirror-recreate-steps /js
+  - This module allows recreating the steps needed to go from document A to B should these not be available otherwise, and it allows merging two different Transforms (sets of steps) whose steps may be conflicting.
+
+- https://github.com/ProseMirror/prosemirror-changeset
+  - a helper module that can turn a sequence of document changes into a set of insertions and deletions, for example to display them in a change-tracking interface
 
 - https://github.com/hamflx/prosemirror-diff /202207
   - 支持保留新版本状态的标记
@@ -69,12 +76,12 @@ modified: 2022-08-18T16:57:29.058Z
 
 - https://github.com/BlueMona/prosemirror-react-renderer /201710/ts
   - An alternative to ProseMirror's DOMSerializer that converts documents into React elements instead of DOM fragments.
-# prosemirror-table
+# table
 - prosemirror-datagrid /3Star/MIT/202109/ts
   - https://github.com/hedgerwang/prosemirror-datagrid
   - https://hedgerwang.github.io/prosemirror-datagrid/dist/demo.html
   - This module defines a schema extension to support datagrid with virtual scrolling and editing support.
-# prosemirror-elements-node
+# elements-node
 - https://github.com/MH4GF/prosemirror-details-list
   - https://prosemirror-details-list.vercel.app/
   - an open/closeable details element that works with rich text editor based on ProseMirror.
@@ -96,13 +103,13 @@ modified: 2022-08-18T16:57:29.058Z
   - Upload images to endpoints, showing placeholder until the upload finishes
   - Customizable overlay for alignment 
   - Image resizing with body resize listeners, so the image always fits the editor ( inspired by czi-prosemirror )
-# prosemirror-media/embed
+# media/embed
 - https://github.com/OrkhanAlikhanov/prosemirror-image-uploader
   - The necessary image uploader for prosemirror based editors like (tiptap, remirror).
 - https://github.com/shoobyban/prosemirror-dropimage
   - File upload by dragging the images onto the Prosemirror editor. No upload form, no hassle. 
   - Accepts svg, png, jpg and gif.
-# prosemirror-port-lang
+# port-lang
 - https://github.com/fellowapp/prosemirror-py
   - Python implementation of core ProseMirror modules
   - Until now, the only option for manipulating and working with ProseMirror documents from Python was to embed a JS runtime. 
@@ -116,9 +123,9 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/Xiphoseer/prosemirror-rs
   - Implementation of the https://prosemirror.net model/transform API in Rust
 
-- https://github.com/Holoon/ProseMirror.Model
+- https://github.com/Holoon/ProseMirror.Model /c#
   - C# definitions of ProseMirror's content model, the data structures used to represent and work with documents.
-# utils-extensions
+# utils/extensions
 - https://github.com/ueberdosis/prosemirror-to-html
   - Takes ProseMirror JSON and outputs HTML. 基于php实现
 - https://github.com/enVolt/prosemirror-to-html
@@ -186,6 +193,10 @@ modified: 2022-08-18T16:57:29.058Z
   - A simple implementation of invisible characters in ProseMirror.
   - A plugin that uses decorations to show invisible characters in ProseMirror
 
+- https://github.com/guardian/prosemirror-noting
+  - https://guardian.github.io/prosemirror-noting/
+  - This plugin allows you to add notes as marks to prosemirror. 支持 toggle note
+
 - https://github.com/xylk/prosemirror-compress /201805/js
   - ProseMirror data compression
 
@@ -206,7 +217,7 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/b-kelly/prosemirror-highlightjs
   - Due to how ProseMirror renders decorations, some existing highlight.js themes might not work as expected.
   - ProseMirror collapses all nested/overlapping decoration structures
-# more-prosemirror-utils
+# more-utils
 - https://github.com/remirror/prosemirror-migration
   - a tool for migrating ProseMirror documents when you have breaking changes to your document schema.
   - It takes a JSON encoded ProseMirror document, and recursively descends through each node, executing a migration strategy for a node type.

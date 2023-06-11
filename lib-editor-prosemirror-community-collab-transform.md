@@ -16,10 +16,15 @@ modified: 2022-10-22T18:47:16.228Z
 # discuss-collab-transform-operation
 - ## 
 
-- ## [Recreating steps - Show - discuss. ProseMirror](https://discuss.prosemirror.net/t/recreating-steps/1805)
-- https://gitlab.com/mpapp-public/prosemirror-recreate-steps
-  - Recreating steps can be interesting for example in order to show the changes between two document versions without having access to the original steps. 
-  - Merging Transforms can be of interest should two users have worked on the same document over time without any means for synchronizing their work.
+- ## 
+
+- ## 
+
+- ## [Question about track-changes with prosemirror-changeset](https://discuss.prosemirror.net/t/question-about-track-changes-with-prosemirror-changeset/3801/7)
+- Yes each Span has was it data payload that can contain arbitrary data. Then you can define your own method for joining spans to merge them properly.
+
+- 🤔 Is there a way to persist changeset? Maybe in a DB in JSON format?
+  - Not currently, I think. **The typical approach is to persist steps and rebuild changesets on-demand**.
 
 - ## [How to combine multiple transactions](https://discuss.prosemirror.net/t/how-to-combine-multiple-transactions/4386)
 - This isn’t supported in ProseMirror—because they may include opaque metadata that describes exactly the changes that transaction makes, arbitrary transactions can’t be combined.
@@ -161,10 +166,6 @@ modified: 2022-10-22T18:47:16.228Z
 - Having that many authors in a single document likely never makes sense.
   - 👉🏻️ What makes more sense when scaling up to many servers, is to filter by URL and have different servers handle different individual documents. 
   - So for example one server can handle all messages for document 4, 10, 15, 21 and 78 and another for document 5, 6, 7, 12, 14, 99 and 278.
-
-- ## Socalled “Tracked changes” using ProseMirror_201806
-- https://discuss.prosemirror.net/t/socalled-tracked-changes-using-prosemirror/1365
-- https://github.com/fiduswriter/fiduswriter/blob/main/fiduswriter/document/static/js/modules/editor/track/accept.js
 
 - ## I believe ProseMirror's OT handles all the intent-preservation requirements in the article. Without being truly distributed, of course, unless you add a vector clock or something.
 - https://twitter.com/MarijnJH/status/1463272309544861706

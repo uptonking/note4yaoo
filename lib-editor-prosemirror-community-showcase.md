@@ -28,9 +28,7 @@ modified: 2023-06-11T07:07:55.724Z
   - There was a PR that tried to get fix this using the new `useSyncExternalStore` hook
 - The `forceUpdate` is necessary in our case for the `LayoutGroup` implementation, which relies on the `useLayoutEffect` hook to update a Set stored in a Ref. Since Ref updates don’t result in re-renders, we have to separately force a re-render by bumping some state!
 
-
 - It looks like TipTap uses it to force a re-rendering in React in response to a transaction on the editor. The possibility for useSyncExternalStore may have been if TipTop treats the Editor View as a source of external state.
-
 
 - In react-prosemirror, we don’t attempt to treat the Editor View as a source of external state, because the expectation is that **React is actually the source of the state for the Editor View**
   - Any dispatching of a transaction should result in changing React state, and the state flows back to the Editor VIew through React, without any need for a forced update.
@@ -41,7 +39,7 @@ modified: 2023-06-11T07:07:55.724Z
   - We provide the useEditorEffect hook to let components get access to the editor view.
 - React has layout effects that run synchronously after an update, bottom-to-top. 
 
-
 - Remirror is a much heavier framework. We had an existing, non-trivial application that was using ProseMirror directly, with many ProseMirror plugins and many existing components. We wanted something light and close to the ProseMirror API to migrate to that focused only on state and rendering integration.
-  - 
-  - 
+
+- ## [Socalled "Tracked changes" using ProseMirror_201806](https://discuss.prosemirror.net/t/socalled-tracked-changes-using-prosemirror/1365)
+- https://github.com/fiduswriter/fiduswriter/blob/main/fiduswriter/document/static/js/modules/editor/track/accept.js

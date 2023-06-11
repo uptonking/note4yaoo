@@ -154,7 +154,7 @@ label: {
 - https://discuss.prosemirror.net/t/figure-and-editable-caption/462
 - https://glitch.com/edit/#!/pet-figcaption
 
-- ## what difference between the plugin view and nodeViews and schema and decoration?
+- ## difference between the plugin view and nodeViews and schema and decoration?
 - https://discuss.prosemirror.net/t/what-can-plugin-view-do-or-what-should-it-be-used-for/3517
 - `NodeView` is used to control how a specific node is rendered (like a codeblock) but is within the editorview and semi-managed by ProseMirror
   - There are a limit set of hooks like `update` , `destroy` to control the `NodeView` similar to that of a `PluginView` (but more scoped/granular); 
@@ -167,6 +167,16 @@ label: {
   - Notifying other parts of your application when something changes or if you have to save content (e.g. like executing a callback when the content of the Prosemirror document changes)
   - I almost think “view” should just be called “effects”
 
+- ## Custom NodeView and NodeSpec.toDOM()
+- https://discuss.prosemirror.net/t/custom-nodeview-and-nodespec-todom/650
+- I need some clarification about the following:
+  - when defining custom `nodeViews` with its own `dom` property, I assumed I can strip away the `toDOM()` in the schema. 
+  - But then things like dragging seem to be broken (and the official nodeViews example also has it not stripped out). 
+  - So the schema `toDOM()` function needs to be kept, to allow a node to be serialized for special purpose such as drag and drop ?
+- Yes, a **node view is used when the node is displayed inside the editor**, 
+  - but **you’ll still need some way to turn the node into semantic HTML for `copy/paste` and `drag/drop` ** (and possibly also `export/import` , if you use HTML for that) reasons.
+- Suggestion: maybe prosemirror could use the dom created by the nodeView to get a default serialization of the node ?
+
 - ## [How can I communicate from a plugin to a custom nodeView?](https://discuss.prosemirror.net/t/how-can-i-communicate-from-a-plugin-to-a-custom-nodeview/952)
   - when the node attributes of the custom nodeView change and therefore the underlying doc changes, I just replace the node and all works as expected.
   - But now I would like to communicate to the nodeView, without actually changing the node. So I tried to set from my plugin a node decoration on that nodeview (putting my payload into the spec argument). 
@@ -175,7 +185,7 @@ label: {
   - I have a similar situation where a plugin gets external data that various NodeViews use. 
   - I need those NodeViews to update (re-render) themselves when that external data changes. 
   - So I really just need a way to tell prosemirror to re-render the NodeViews.
-  - From this thread it seems possible to decorate the NodeViews and then update the decorations when the external data changes. 
+  - **From this thread it seems possible to decorate the NodeViews and then update the decorations when the external data changes**. 
   - The decoration change will then trigger prosemirror to re-render the NodeViews. 
   - It seems like a round about way to force a re-render but if its the best way then I’ll do it
   - Yes. it's recommended
@@ -242,16 +252,6 @@ label: {
   - the node view is responsible for rendering it (and could, if it wanted, use `node.type.spec.toDOM` in the process).
 - Thanks for the quick clarification, I’ve added a bit of logic to keep the attributes in-sync when updating. 
   - For future readers take a look at `(prosemirror-model.)renderSpec` to figure out how prosemirror turns `toDOM` into a usable element.
-
-- ## Custom NodeView and NodeSpec.toDOM()
-- https://discuss.prosemirror.net/t/custom-nodeview-and-nodespec-todom/650
-- I need some clarification about the following:
-  - when defining custom `nodeViews` with its own `dom` property, I assumed I can strip away the `toDOM()` in the schema. 
-  - But then things like dragging seem to be broken (and the official nodeViews example also has it not stripped out). 
-  - So the schema `toDOM()` function needs to be kept, to allow a node to be serialized for special purpose such as drag and drop ?
-- Yes, a **node view is used when the node is displayed inside the editor**, 
-  - but **you’ll still need some way to turn the node into semantic HTML for `copy/paste` and `drag/drop` ** (and possibly also `export/import` , if you use HTML for that) reasons.
-- Suggestion: maybe prosemirror could use the dom created by the nodeView to get a default serialization of the node ?
 
 - ## [Draggable and NodeViews](https://discuss.prosemirror.net/t/draggable-and-nodeviews/955)
 - You’ll have to define a `toDOM` and `parseDOM` on your task node if you want it to be able to go through the clipboard or be dragged – clipboard content is represented as HTML.

@@ -11,7 +11,7 @@ modified: 2021-01-01T18:00:01.202Z
 
 - tom-select /947Star/apache2/202212/ts
   - https://github.com/orchidjs/tom-select
-  - https://tom-select.js.org/examples/
+  - https://tom-select.js.org/examples/remote/
   - Tom Select is a dynamic, framework agnostic, and lightweight (~16kb gzipped) `<select>` UI control.
   - Tom Select was forked from `selectize.js` with the goal of modernizing the code base, decoupling from jQuery, and expanding functionality.
   - Options are efficiently scored and sorted on-the-fly (using sifter). 

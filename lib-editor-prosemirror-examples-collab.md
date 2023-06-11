@@ -18,7 +18,7 @@ modified: 2022-10-04T23:32:30.824Z
   - atlaskit-editor
   - dox
   - paper-editor
-# collab-starter-simplified
+# collab-starter
 
 ## 基于y-prosemirror实现协作的示例
 
@@ -40,9 +40,39 @@ modified: 2022-10-04T23:32:30.824Z
   - Stripped out prosemirror website collab example into a stand alone environment for learning and toying around.
 - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example/tree/master/packages/api-collab
   - an example collaboration server based on prosemirror-collab
+# collab-examples
+- https://github.com/TeemuKoivisto/prosemirror-track-changes-example
+  - https://teemukoivisto.github.io/prosemirror-track-changes-example/
+  - simple track-changes example with prosemirror-changeset
+  - [Question about track-changes with prosemirror-changeset](https://discuss.prosemirror.net/t/question-about-track-changes-with-prosemirror-changeset/3801)
 
-## tiptap.v1、vue2 实现协作的示例
+- https://github.com/milahu/prosemirror-track-changes-demo /js
+  - https://milahu.github.io/prosemirror-track-changes-demo/
+  - add a "track changes" feature to prosemirror
 
+- https://github.com/newsdev/prosemirror-change-tracking-prototype /201609/js
+  - ProseMirror change tracking proof-of-concept
+
+- https://github.com/dlemrry/editor
+  - real time collaborative documents using web socket
+  - Web application for editing texteditor and painting canvas in real-time collaboration.
+  - 展示了 quill、draftjs、canvas+mousemove 几个示例
+  - 提供了client+server，可作为通用协作方案
+# collab-solutions
+- https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1
+  - using a sync database ( PouchDB, but it works with firebase ) as a communication layer between client and server.
+  - [Article / code about prosemirror collab & PouchDB](https://discuss.prosemirror.net/t/article-code-about-prosemirror-collab-pouchdb/3045)
+  - [Collaborative text editor with ProseMirror and a syncing database](https://emergence-engineering.com/blog/prosemirror-sync-1_202007)
+
+- https://gitlab.com/mpapp-public/manuscripts-sync
+  - https://gitlab.com/mpapp-public/library-sync
+  - https://gitlab.com/mpapp-public/pouchdb-replication
+  - tests for a Couchbase Sync Gateway instance configured to act as a realtime synchronisation backend, from the frontend application interacted with using RxDB / PouchDB.
+
+- https://github.com/microsoft/FluidFramework/tree/main/examples/data-objects/prosemirror
+  - An experimental implementation of how to take the open source ProseMirror rich text editor and enable real-time coauthoring using the Fluid Framework.
+  - Fluid Framework is a library for building distributed, real-time collaborative web applications using JavaScript or TypeScript.
+# tiptap.v1、vue2 实现协作的示例
 - https://github.com/dekunma/tiptap-collaboration
   - 包含client+server
 - https://github.com/powlaa/text-editor
@@ -107,20 +137,6 @@ modified: 2022-10-04T23:32:30.824Z
    - https://github.com/mms-gianni/prosemirror-collaborationserver
     - https://github.com/mms-gianni/tiptap-collaboration-demo
     - 依赖 tiptap.v1、vue2
-# collab-using-database
-- https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1
-  - using a sync database ( PouchDB, but it works with firebase ) as a communication layer between client and server.
-  - [Article / code about prosemirror collab & PouchDB](https://discuss.prosemirror.net/t/article-code-about-prosemirror-collab-pouchdb/3045)
-# collab-examples
-- https://github.com/dlemrry/editor
-  - real time collaborative documents using web socket
-  - Web application for editing texteditor and painting canvas in real-time collaboration.
-  - 展示了 quill、prosemirror、draftjs 几个示例
-  - 提供了client+server，可作为通用协作方案
 # more-collab
 - https://github.com/sakheli/sync-doc
   - 未实现实时协作
-
-- https://github.com/microsoft/FluidFramework/tree/main/examples/data-objects/prosemirror
-  - An experimental implementation of how to take the open source ProseMirror rich text editor and enable real-time coauthoring using the Fluid Framework.
-  - Fluid Framework is a library for building distributed, real-time collaborative web applications using JavaScript or TypeScript.

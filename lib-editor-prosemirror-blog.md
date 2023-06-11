@@ -9,6 +9,8 @@ modified: 2021-06-15T00:07:49.228Z
 
 # guide
 
+- refs
+  - [NEXT Engineering](https://medium.com/collaborne-engineering)
 # [《ProseMirror》专栏](https://juejin.cn/column/7085905991698481183)
 
 # [Why we picked Remirror/Prosemirror as WYSIWYG editor in our React application__202108](https://medium.com/collaborne-engineering/rich-text-editor-for-react-f7d71746867f)
@@ -345,7 +347,6 @@ modified: 2021-06-15T00:07:49.228Z
 - 视图描述只是虚拟DOM，如果一个视图描述节点需要更新时，它会为自己设置一个dirty属性，表示需要更新。
 - 视图描述指示文档DOM的更新，深度遍历从叶子节点往上遍历，完成一个层级就调用renderDescs()来更新相应的DOM。
 # more-prosemirror-blogs
-
 - [prosemirror相关](http://wangxiang.website/more/docs.html)
   - [prosemirror-tables 源码解读 - 简书](https://www.jianshu.com/u/ef3da5e2ac90)
   - [一文搞定前端html内容转图片、pdf和word等文件 - 简书](https://www.jianshu.com/p/e2091c81f515)

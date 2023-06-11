@@ -9,6 +9,61 @@ modified: 2023-03-02T14:25:34.817Z
 
 # guide
 
+# [Prosemirror: Highlights & Comments_202205](https://medium.com/collaborne-engineering/prosemirror-highlights-comments-20ce820149ed)
+
+> Model highlights/comments as marks instead of annotations to allow for collaborative editing
+> We open sourced our annotation feature as a Remirror extension
+
+- tldr
+  - 默认用marks实现comment或highlight
+  - 对于需要自定义颜色形状的comment，marks中只保存id
+  - 飞书的comment不参与undo/redo，但高亮/背景色很可能需要
+
+- When we built our initial version of highlighting, we modeled them as annotations: We stored the highlighted sections as a separate data structure in our database. 
+  - Each highlight contained a.o. the position where it started and where it ended (from/to). 
+  - On opening the editor, we injected the highlights as Prosemirror decorations. 
+  - Whenever a highlighted section changed, we updated the database accordingly.
+- Collaborative editing allows multiple users to work in the same Prosemirror document. 
+  - We shared the two data structures about the same document via two communication channels: The Prosemirror changes were distributed via yjs/webrtc; whereas highlights were written directly to the database and then sync’ed back via websocket subscriptions.
+- And this blew up annotations in every way possible.
+  - For a starter, the **communication channels have very different latencies**: webrtc is basically instant while calling database and awaiting can take 1–2 seconds. This meant that the document might have already been updated whereas the highlight still pointed to the old position. 
+  - Worse, if one of the channels failed, we ended up with a corrupted document.
+
+- We concluded that both data structures had to be communicated via the same communication channel. 
+  - Luckily, yjs isn’t Prosemirror-specific but provides generic shared data structures.
+  - This allowed us to add the array of highlights to the yjs document, and get both data structures sync’ed together.
+
+- This did indeed resolve our biggest synchronization issues. 
+- Unfortunately, those had just shadowed everything else that could go wrong with our annotation-based approach. 
+  - For example, copy/paste works flawless in the Prosemirror document but supporting the same for highlights proved to be a nightmare. 
+  - Undo was another really hard one.
+
+- In the end, we concluded that communicating both data structures via the same channel alone could never fully solve the issue. 
+  - What we need was to merge the data structures: Instead of storing highlights separated from the Prosemirror document, we had to store the highlights as part of the document.
+- To achieve this, we attach a Prosemirror mark to the highlighted text. By making the highlights part of the document, the from/to positions are bound to be correct.
+
+- What complicates matters: We have to show highlights also outside the context of the document. 
+  - For this, **we still need to store the highlights in a database**, so we can easily query them. 
+  - Yet, the database contains only derived data: The source of truth is always the Prosemirror document. 
+  - So, even if data gets out of sync, it will be eventually consistent.
+
+- One final challenge came when users wanted to add some highlight meta data outside the context of the editor. 
+  - For example, change the color of the highlight. 
+  - This meant that the Prosemirror document can’t be the source of truth for the complete highlight. 
+  - Instead, we define for each highlight field what the source of truth is. 
+  - For the color, we store in the mark only an ID identifying the highlight but the color itself is stored directly in the database.
+
+## [If I want to implement the comment function, is mark the best way?](https://discuss.prosemirror.net/t/if-i-want-to-implement-the-comment-function-is-mark-the-best-way/3831)
+
+- Keeping the comments in a data structure outside of the doc and showing them as decorations might make them easier to manage when they can cross block boundaries. 
+  - But using marks should also work, especially if you want them to be part of the document and automatically included in collaborative editing and the undo history.
+
+- Can mark customize a view? Similar to nodeview
+  - No, marks can’t do most of the things nodeview can. You can only change the element used to render the mark.
+
+- In my experience it’s best to move this functionality “out” from ProseMirror, a mark just stores the threadId, and make a plugin which captures clicks in the editor, checks if the click was on a “thread” mark, if that’s the case then it sets it’s internal state the thread’s id & position. 
+  - Then you watch editorState changes, and if the “thread” plugin is signaling that you’ve clicked on the mark then you display the thread component in whatever framework you’re using.
+  - You will need posAtCoords / coordsAtPos to determine the thread component’s position / to get if the click was inside a thread mark.
 # [ProseMirror - 入门_lastnigtic_202008](https://lastnigtic.cn/prosemirror-first/)
 - prosemirror-model：
   - 负责prosemirror的内容结构。

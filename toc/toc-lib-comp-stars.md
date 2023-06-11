@@ -76,6 +76,10 @@ modified: 2021-01-12T18:49:07.422Z
 - https://github.com/cookpete/react-player
   - React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, DailyMotion and Kaltura.
   - If you aren’t using React, you can still render a player using the standalone library
+- https://github.com/Collaborne/media-player
+  - A media player build in React on top of CookPete/react-player.
+  - It supports the MUI theming and components and own functionality of the Picture-in-Picture and Fullscreen API
+  - You can play both: audio and video files.
 # embeddable-widget
 - https://github.com/shobhitsharma/embedo
   - It adds a layer on top of third party embed APIs while ensuring best practices and native guidelines for each component. 
