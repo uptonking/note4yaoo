@@ -125,6 +125,13 @@ modified: 2023-01-20T21:59:47.792Z
 - https://github.com/tryghost/Ghost /js/MIT
   - Turn your audience into a business. 
   - Publishing, memberships, subscriptions and newsletters.
+
+- https://github.com/MrXujiang/lowcode-cms
+  - 基于dooring低台, 代码社区的开源cms系统
+  - 后端依赖koa-session、koa-views、pug、qiniu
+  - 前端依赖antd-pro-layout、umi.v3、braft-editor、turndown
+  - server基于nodejs的服务端, 启动后可直接访问3000 端口, 也就是内容SSR端
+  - admin CMS的管理后 集成了用户管理, 内容审核, 内容发布, 数据统计等模块
 # discuss
 - ## 
 
@@ -162,6 +169,9 @@ modified: 2023-01-20T21:59:47.792Z
   - 核心功能是提供了通过ui操作执行读写github的能力、文件编辑器、自动构建和发布
     - 文件内容可保存在本地或github
     - 文件内容的样式主题由dev控制
+- https://github.com/decaporg/decap-cms /js
+  - https://decapcms.org/
+  - A Git-based CMS for Static Site Generators
 
 - https://github.com/StaticJsCMS/static-cms
   - https://www.staticcms.org/

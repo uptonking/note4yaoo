@@ -21,6 +21,7 @@ modified: 2023-02-11T11:07:17.008Z
 - https://github.com/microsoft/FluidExamples
   - examples of collaborative applications built with the Fluid Framework.
   - audience的示例需要先选择一个用户创建房间，然后其他用户输入这个房间号后进入
+  - https://github.com/microsoft/FluidExamples/tree/main/collaborative-text-area
 
 - https://github.com/znewton/fluid-chat
   - A chat app built with FluidFramework. 

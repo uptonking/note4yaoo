@@ -33,6 +33,10 @@ modified: 2021-05-25T12:02:08.398Z
   - Heavily inspired by React's theme-ui.
   - Universal (Android, iOS, Web, & more)
   - After trying many, many different ways, I'm convinced this approach is the answer. 
+# electron
+
+- https://github.com/mozilla/positron /201703/cpp/archived
+  - a experimental, Electron-compatible runtime on top of Gecko
 # more
 - https://github.com/vincentriemer/react-native-dom /201901/archived
   - https://rntester.now.sh/

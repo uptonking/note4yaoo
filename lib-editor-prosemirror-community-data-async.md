@@ -14,6 +14,13 @@ modified: 2022-10-03T10:47:44.104Z
 
 - ## 
 
+- ## [Saving content onchange](https://discuss.prosemirror.net/t/saving-content-onchange/3557)
+  - We need to implement saving on change, but saving the whole document state seems expensive, even with debounce.
+  - We tried to save changes in each “high level node”, and store them separately adding an attribute like “sortOrder” to restore the full state on first load. But is seems difficult in some cases. And also we save diffrent versions, so that we can apply diff in future.
+  - May be you have ideas how to do this better? Save Steps instead of nodes?
+
+- Saving steps (possibly compressing them with `merge`), along with occasional snapshots is what many people are doing, and seems to work well.
+
 - ## [Non-linear performance when pasting content_201612](https://github.com/ProseMirror/prosemirror/issues/364)
   - I'm assessing the limits of ProseMirror from a performance perspective, and have found that overall things seem really good, however pasting large amounts of content degrades poorly.
 - Quadratic(平方的；二次方的) complexity is expected at this point (my data structure requires copying updated nodes, and if you make X changes each of which grows the size of the top node, that's quadratic).
@@ -31,9 +38,12 @@ modified: 2022-10-03T10:47:44.104Z
 - ## Creating Plugin that make request to backend
 - https://discuss.prosemirror.net/t/creating-plugin-that-make-request-to-backend/4684
 - 👉🏻 I would keep the asynchronous HTTP calls out of your plugins. 
-  - Instead, use `dispatchTransaction` to get any updates from the editor you need. 
+  - Instead, **use `dispatchTransaction` to get any updates from the editor** you need. 
   - When such an update comes, you can send the document (or changes) to the server.
   - If you need to apply a change to the document as a result of such an HTTP call, you would create a new Transaction and dispatch that to the view. 👉🏻 The collab demo on the website is an example of this.
+
+- I think http calls in plugins is perfectly fine, but should be done in the “view” section. Doing it in the state section is problematic as it creates uncontrolled side effects. Instead, you could collect steps you need in plugin state and then “flush” those steps to the service when the doc changes with some sort of throttle/debounce.
+  - We think about the state methods like redux reducers while the “view” section is for side effects (like http calls, setting up global listeners, etc.).
 
 - ## Async toDOM
 - https://discuss.prosemirror.net/t/async-todom/2762

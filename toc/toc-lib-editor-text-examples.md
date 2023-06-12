@@ -87,16 +87,7 @@ modified: 2022-11-08T19:03:33.865Z
 - https://github.com/DenverCoder1/unicode-formatter
   - https://unicode-formatter.demolab.com/
   - Convert portions of text to fancy text using unicode fonts for use on Twitter and other sites that don't support rich text
-# collab
-- https://github.com/dukelester/collaborator_text_editor
-  - A simple realtime multiuser collaboration text application with Node js and React js.
-  - 客户端依赖slate
 
-- https://github.com/vinsdragonis/Project-Dimension
-  - Real-time text editor built using React.js, Node.js, MongoDB, and Socket.io
-
-- https://github.com/francescorizzello94/typescript-markdown
-  - Real-time text-to-markdown editor
 # more
 - https://github.com/leewhui/text-effect-editor
   - https://ephemeral-druid-42201c.netlify.app/

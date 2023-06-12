@@ -26,14 +26,29 @@ modified: 2020-11-17T13:38:19.107Z
     - Grida's Design to code core library. 
     - Convert your figma, sketch and adobe xd design to flutter, react, vue and more.
 
-- craft.js /MIT/3kStar/202009/ts
+- craft.js /5.9kStar/MIT/202305/ts
   - https://github.com/prevwong/craft.js
   - https://craft.js.org/
-  - core依赖immer，layers依赖react-contenteditable、s-c
+  - core依赖react、lodash，layers依赖react-contenteditable、s-c
   - A React Framework for building extensible drag and drop page editors
   - Craft.js is an abstraction where you implement your own page editor upon. 
     - For example, it does not come with a ready-made user interface.
     - However, you could still consider using the examples as a starting point.
+  - [Future of Craft.js - taking it to the next level!_202304](https://github.com/prevwong/craft.js/issues/507)
+    - The current Craft's EditorState is essentially the equivalent of building a single UI component without states and props; and with the ability of adding/reordering JSX templates and mutating simple prop values of those JSX templates.
+    - I spent the past couple of months trying to build a new state management system for Craft, reka
+    - The current Craft EditorState is a simple implicit tree data structure, whereas Reka is an AST. As such, a Reka AST for an equivalent EditorState is expected to be larger
+- https://github.com/prevwong/reka.js /ts/yjs/暂未用在craft
+  - https://reka.js.org/
+  - Reka is a state management system for building no-code editors.
+  - Reka solves this by providing an AST-powered state system that enables end-users to create UI components that are nearly as complex as ones that developers could write in code
+  - along with an interpreter to efficiently compute an output that could be rendered on the browser.
+  - core依赖mobx、lodash
+  - It's primarily built to serve as the new state management system to power `Craft.js` and its page builders.
+  - Reka computes a Component instance from its State by generating a `View` tree
+    - The View tree is a simple serializable JSON structure.
+    - building a renderer for Reka simply means taking this JSON structure and rendering it in your preferred UI framework.
+  - Reka provides an external package that allows real-time collaboration via a fully-featured CRDT backed by Yjs
 
 - webstudio-designer /172Star/MIT/202212/ts
   - https://github.com/webstudio-is/webstudio-designer
@@ -175,15 +190,16 @@ modified: 2020-11-17T13:38:19.107Z
   - http://h5.dooring.cn/
   - https://github.com/H5-Dooring/dooringx
     - 快速高效搭建可视化拖拽平台
-  - https://github.com/MrXujiang/lowcode-cms
-    - 基于dooring低代码社区的开源cms系统
-    - 基于koa2自研服务端开发架构
-    - server 基于nodejs的服务端, 启动后可直接访问3000 端口, 也就是内容SSR端
-    - admin CMS的管理后台, 集成了用户管理, 内容审核, 内容发布, 数据统计等模块
   - H5可视化页面配置解决方案
   - 技术栈以react和typescript为主， 后台采用nodejs开发, 正在探索h5-lowcode解决方案
   - editor依赖antd4、braft-editor、react-dnd
   - ui依赖umi、antd-pro、react-grid-layout
+  - https://github.com/MrXujiang/lowcode-cms
+    - 基于dooring低代码社区的开源cms系统
+    - 后端依赖koa-session、koa-views、pug、qiniu
+    - 前端依赖antd-pro-layout、umi.v3、braft-editor、turndown
+    - server基于nodejs的服务端, 启动后可直接访问3000 端口, 也就是内容SSR端
+    - admin CMS的管理后台, 集成了用户管理, 内容审核, 内容发布, 数据统计等模块
 
 - luban-h5 /5.6kStar/GPLv3/202209/js/vue
   - https://github.com/ly525/luban-h5

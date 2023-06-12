@@ -28,9 +28,7 @@ modified: 2021-05-13T03:08:52.583Z
     - The only way to load a native module safely for now, is to make sure the app loads no native modules after the Web Workers get started.
   - ref
     - https://www.electronjs.org/docs/tutorial/multithreading
-
 # pieces
-
 - Electron运行package.json中的main脚本中的进程被称为主进程，该进程在应用整个生命周期只会存在唯一一个，负责面窗口的创建、控制、销毁等管理行为，同时也能控制整个应用的生命周期。
   - 主进程本质上是一个 Node.js 进程，该进程充分利用了 Node.js 的跨平台特性，在其 API 的底层，抹掉了不同操作系统中的差异
   - 主进程同时提供一套跨平台的接口，能控制各个操作系统中的原生资源，如：对话框、菜单、文件拖拽等，使得 Electron 的用户体验极大的接近了原生应用。
@@ -47,9 +45,7 @@ modified: 2021-05-13T03:08:52.583Z
 - Setting `nodeIntegration` to `false` will disable node.js in the renderer process - i.e. your app can only do what a web browser will do.
   - BrowserWindow提供的preload的配置是为了在页面第一次加载文档之前预先加载js脚本文件, preload配置的脚本文件路径，只能为本地文件，其协议必须是file:、asar: 二者之一
   - preload脚本仍然有能力去访问所有的 Node APIs, 即使配置 `nodeIntegration: false` 。但是当这个脚本执行执行完成之后，通过Node 注入的全局对象（global objects）将会被删除
-
 # 进程通信
-
 - 不同于一般的原生应用开发，Electron的渲染进程与主进程分别属于独立的进程中
 - Electron官方提供的进程间通讯方式
   - LocalStorage, window.postMessage
@@ -103,9 +99,7 @@ modified: 2021-05-13T03:08:52.583Z
       - child_process模块为node.js提供了原始的子进程方式。通过测试我们发现，在子进程中，即使长时间运行 CPU 密集型的操作，渲染进程以及主进程都不会受到应用。经过一系列的重构，我们将绝大部分业务逻辑转移到子进程中，真正彻底地解决了CPU密集型运算导致的渲染进程卡顿的问题。
 - ref 
   - https://www.iguan7u.cn/2019/06/30/Electron-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E8%AF%A6%E8%A7%A3/
-
 # Electron开发总结
-
 - 主进程任务
   - 窗口管理及生命周期控制
   - 进程间通信
@@ -161,9 +155,20 @@ modified: 2021-05-13T03:08:52.583Z
       - 通讯传递数据的过程中，由于不是共享内存（因为 IPC 是基于 Socket 的），导致出现多份数据副本
 - ref
   - https://juejin.im/post/5e0010866fb9a015fd69c645
+# discuss
+- ## [CEF和Electron的区别是什么？ - 知乎](https://www.zhihu.com/question/510368054)
+- Electron面向的开发者是纯前端开发者，会用JavaScript，HTML，CSS，但不会用C++。
+- CEF面向的开发者是会用C++也会用JavaScript，HTML，CSS的开发者。
 
+- V8只负责解析并执行JavaScript，它是没有访问操作系统的能力的，比如读写文件，访问网络（这里主要指通过Socket访问网络），访问进程信息等，这些能力V8没有，集成了Node.js后，开发者就拥有这些能力了，
+  - 但光集成Node.js还不够，Electron自己还封装了一些操作系统的能力供JavaScript调用，比如访问剪切板，发送系统通知，访问托盘图标等，
+  - 这些能力是V8和Node.js都没有的，但却是开发一个桌面应用所必备的。
+
+- CEF则比较单纯，只对Chromium做了精简和封装，允许开发者通过C++代码控制Chromium核心，允许JavaScript和C++互操作，允许开发者在Chromium的多个进程间通信，
+  - 像访问托盘图标、访问剪切板、Socket通信、读写文件这类事情，它都没做，要完成这些工作，开发者得自己写代码。
+  - 这也无可厚非，因为C++开发者可以很容易的完成这些任务。
+  - 但JavaScript开发者就很难完成这些任务，所以Electron为他们做了这些事情，而且做的很好。
 # ref
-
 - https://github.com/GoogleChromeLabs/carlo /deprecated
   - Carlo provides Node applications with Google Chrome rendering capabilities, 
     - communicates with the locally-installed browser instance using the Puppeteer project, 

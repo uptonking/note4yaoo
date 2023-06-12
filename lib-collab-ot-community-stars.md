@@ -18,7 +18,7 @@ modified: 2022-10-02T20:54:07.621Z
   - The new type should support conversion between JSON operations and JSON Patch (RFC 6902). 
   - I want those conversions to be bidirectional if possible, although converting embedded custom OT types to JSON Patch won't work.
 
-- ## Why OT cannot be applied on P2P networks? Does Google Docs use a transformation-based server mean that all OT need a central server?_201810
+- ## 💡 Why OT cannot be applied on P2P networks? Does Google Docs use a transformation-based server mean that all OT need a central server?_201810
 - https://news.ycombinator.com/item?id=18192147
 
 - 👉🏻 josephg: Simple OT algorithms do work a lot better with a centralized server.

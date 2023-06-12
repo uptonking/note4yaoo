@@ -67,6 +67,33 @@ modified: 2023-02-05T19:03:12.722Z
   - 首先确认更新范围，onChange执行后useEffect才执行将 slateSel-TO-domSel，所以更新sel发生在渲染前
   - 排查定位到，执行op `insert_text`时，顺便就把selection更新了
   - 不需要在op-text执行后单独执行op-selection来更新sel
+# undo/history
+- 思路是先计算inverseOps，再执行它
+
+```JS
+e.history = { undos: [], redos: [] }; // 👈🏻 都是 BaseOperation[][]，可包括选区/文本/节点op
+
+e.undo = () => {
+  const { history } = e;
+  const { undos } = history;
+  const batch = undos[undos.length - 1];
+  const inverseOps = batch.map(Operation.inverse).reverse();
+
+  for (const op of inverseOps) {
+    e.apply(op);
+  }
+
+  history.redos.push(batch);
+  history.undos.pop();
+}
+
+e.apply = (op: Operation) => {
+  undos.push([op]);
+
+  apply(op);
+}
+```
+
 # slate-yjs
 - not-yet
   - undo/redo的按键事件是在哪里处理的

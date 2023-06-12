@@ -9,6 +9,14 @@ modified: 2023-03-18T17:53:25.909Z
 
 # guide
 
+# tools
+- https://github.com/docmirror/dev-sidecar
+  - 为开发者打辅助的边车工具
+  - dns优选（解决***污染问题）
+  - 请求拦截
+  - github加速
+  - Stack Overflow 加速
+  - npm加速
 # discuss
 - ## 
 

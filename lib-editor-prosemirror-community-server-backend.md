@@ -12,8 +12,6 @@ modified: 2022-10-03T10:15:05.904Z
 # discuss-transform-operation
 - ## 
 
-- ## 
-
 - ## [Current state of the art on syncing data to backend](https://discuss.prosemirror.net/t/current-state-of-the-art-on-syncing-data-to-backend/5175)
 - I am still torn on how to sync my data to backend
   - documents can be very big. Like, 10Mb JSONs. (P. S. Prosemirror handles those pretty well, actually impressive)

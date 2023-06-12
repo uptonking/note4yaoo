@@ -12,7 +12,6 @@ modified: 2023-03-09T13:47:07.317Z
 - office-online
   - [Zoho Writer](https://www.zoho.com/writer/)
 # office-popular
-
 - onlyoffice-sdkjs /190Star/AGPLv3/202302/js
   - https://github.com/ONLYOFFICE/sdkjs
   - https://personal.onlyoffice.com/
@@ -68,6 +67,12 @@ modified: 2023-03-09T13:47:07.317Z
   - This is also the source for the Collabora Office apps for iOS and Android.
   - Collaborative editing features
   - [Collabora Office: The enterprise-ready edition of LibreOffice](https://news.ycombinator.com/item?id=26614654)
+
+- https://github.com/zserge/awfice /3.3kStar/MIT/202108/html
+  - the world smallest office suite
+  - a word processor, a spreadsheet, a drawing app and a presentation maker
+  - packaged as data URLs, so you can use them right away, without downloading or installing
+  - but they can't store their state, so whatever you type there would be lost on page refresh
 # office-like
 - https://github.com/mnt-ltd/moredoc /go
   - moredoc，魔豆文库，基于golang开发的类似百度文库的开源文库系统，dochub文库的重构版本。

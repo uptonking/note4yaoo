@@ -13,7 +13,22 @@ modified: 2023-02-05T19:03:12.723Z
 
 ## 
 
-## 
+## [Editor crashes with redux](https://github.com/ianstormtaylor/slate/issues/3478)
+
+- bug: The editor crashes if we connect the `onChange` function with redux action and our typing speed is just nominally fast, and wait for the state update. Given below in the codesandbox link just try to type nominally fast and the editor will crash.
+
+- I am facing the same issue. I used debounce to solve this problem.
+  - As a React developer, we like to put everything into the single source to manage state. However, if you need to update a big big big state like our SlateEditor, you have to bypass it by storing the latest value and skip unnecessary updates to Redux store. 
+  - Our Redux store will be updated too frequently. It's costy becaues the state of SlateEditor is really huge. It's a JSON format, not just a pure text. What we can do is to use debounce. 
+  - until we found user have finished their input, and then store a complete string "12345678999999999" into our Redux store.
+
+- I think the reproducing example is slightly misleading. I believe the core of the issue is calling onChange asynchronously, and not necessarily taking a lot of time. As long as your redux update remains synchronous, I believe it should work fine.
+
+- I understand the desire to keep state consistently in redux if possible, but unless you have a specific reason to have slate read from your redux store, it seems more performant to not subscribe to it.
+
+- 💡 As I said: we had the same issue with Apollo Client. And we did exactly the same: we kept the state close to the editor. However, I suppose people will run into that issue again and again since it's pretty common to hold you state in a global data store like Redux. Maybe we could add a hint in the docs at least? 
+
+- did you read the advice in the thread and make dispatch to the redux store a one way operation? Or are you also consuming the value updates asynchronously from the redux store? Doing the latter is going to cause a delay in slate receiving value updates and is going to make it not work correctly.
 
 ## [Introduce `editor.transaction()` to replace `without*` functions](https://github.com/ianstormtaylor/slate/issues/2658)
 
@@ -195,7 +210,7 @@ modified: 2023-02-05T19:03:12.723Z
 - All of these generate element endpoints (in most cases) in the browsers I've tested (Chrome, Firefox, Safari, all on a Mac), and in most cases the element endpoints turn into a hanging selection in Slate.
   - It's good to have hanging selections! There's no other way in Slate to represent the selection of a whole block, and there are lots of actions that sensibly work on a whole block
 
-- But hanging selections have some bugs:
+- 👉🏻 But hanging selections have some bugs:
 - First, browsers differ in exactly how they generate selection endpoints for the actions above:
   - Chrome always generates an element endpoint for the selection focus, which points to an element preceding the next editable text location, so Slate generates a hanging selection.
   - Safari behaves like Chrome, except when there is an image before the next editable location; then it generates a text endpoint in the original paragraph (so Slate generates a non-hanging selection).
@@ -213,7 +228,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 - Currently the onChange event of slate is fired for changes on the document structure but also for changes on the selection. 
 - you can distinguish in the onChange event like:
-  - if (editor.operations.every(op => op.type === "set_selection"))
+  - `if (editor.operations.every(op => op.type === "set_selection"))`
 
 ## [Why is content pasted as plain text?](https://docs.slatejs.org/general/faq)
 
@@ -232,8 +247,9 @@ modified: 2023-02-05T19:03:12.723Z
 
 - [Focusing on nested contenteditable element](https://stackoverflow.com/questions/40907091)
   - I have two contenteditable divs nested inside of another. When it is focused, nested should be focused but using console.log(document.activeElement); it shows that the top is focused and it doesn't recognize the nested div.
-- 👀 The way [contenteditable] elements are handled by browser made any nested [contenteditable] not handling any event, the editing host is the former editable parent. See spec:
-  - If an element is editable and its parent element is not, or if an element is editable and it has no parent element, then the element is an editing host. Editable elements can be nested. User agents must make editing hosts focusable (which typically means they enter the tab order). An editing host can contain non-editable sections, these are handled as described below. An editing host can contain non-editable sections that contain further editing hosts.
+- 💡 The way [contenteditable] elements are handled by browser made **any nested [contenteditable] not handling any event, the editing host is the former editable parent**. See spec:
+  - If an element is editable and its parent element is not, or if an element is editable and it has no parent element, then the element is an editing host. 
+  - Editable elements can be nested. User agents must make editing hosts focusable (which typically means they enter the tab order). An editing host can contain non-editable sections, these are handled as described below. An editing host can contain non-editable sections that contain further editing hosts.
 - Now as a workaround, you could make focused nested editable element the hosting host by setting any of its editable parent temporarily not editable
 - Give `tabindex=-1` to the nested div, than can be focused
   - 👀 `contenteditable` is inherited, so there is no need to specify it again.

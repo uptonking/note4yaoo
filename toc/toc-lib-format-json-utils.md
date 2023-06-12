@@ -8,7 +8,9 @@ modified: 2022-11-06T15:45:36.913Z
 # toc-lib-format-json-utils
 
 # guide
-
+- tips
+  - > also see tree; editor-render-only
+  - 本地保存为文本过于灵活，易损坏格式，折中选择是本地保存为office格式如docx/xlsx
 # popular
 - https://github.com/streamich/json-joy
   - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
@@ -42,6 +44,9 @@ modified: 2022-11-06T15:45:36.913Z
 - https://github.com/TexteaInc/json-viewer
   - a React component for displaying and editing JavaScript/TypeScript arrays and JSON objects.
   - https://github.com/mac-s-g/react-json-view
+
+- https://github.com/blitlabs/online-json-diff
+  - https://json-diff.com/
 
 - https://github.com/josdejong/jsoneditor
   - A web-based tool to view, edit, format, and validate JSON

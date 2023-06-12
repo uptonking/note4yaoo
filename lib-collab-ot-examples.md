@@ -51,8 +51,12 @@ modified: 2022-10-02T20:51:30.444Z
   - https://github.com/share/sharedb
   - ShareDB is a realtime database backend based on Operational Transformation (OT) of JSON documents. 
   - It is the realtime backend for the DerbyJS web application framework.
+  - 依赖json0
+  - [Remove JSON0 Dependency for Client](https://github.com/share/sharedb/issues/548)
   - https://github.com/derbyjs/derby
     - MVC framework making it easy to write realtime, collaborative applications that run in both Node.js and browsers
+  - https://github.com/vizhub-core/sharedb-client-browser
+    - A distribution of the ShareDB client suitable for use in Vite, Rollup and other build tools that do not have built-in support for CommonJS
 - https://github.com/derbyjs/racer /js
   - Realtime model synchronization engine for Node.js
   - By leveraging ShareDB, multiple users can interact with the same data in realtime via Operational Transformation

@@ -580,6 +580,7 @@ modified: 2023-03-07T04:43:58.713Z
 
 - https://github.com/ryankaplan/woot-collaborative-editor
   - When a textarea-change is detected, diff the textarea content against the last known content. 
+  - 编辑器使用textarea，依赖diff-match-patch
   - With the help of WootTypes. WString, turn that diff into `WStringOperations` and broadcast those operations to the server.
   - When we receive operations from the server, apply those operations to our WString instance and apply them to the text in #collab-doc.
 

@@ -183,6 +183,15 @@ modified: 2020-12-28T12:24:09.275Z
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
   - [change license of plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
 
+- fast-crud /512Star/MIT/202306/ts
+  - https://github.com/fast-crud/fast-crud
+  - http://fast-crud.docmirror.cn/
+  - 面向配置的crud开发框架，快速开发crud功能，可作为低代码平台的基础框架
+  - 可以直接使用示例中的fs-admin，特点是简单
+  - 也可以采用其他的admin开源项目，然后集成fast-crud
+  - 基于目前市面上开源的高星admin项目fork，集成fast-crud，Antdv 3x 、Element-Plus 、NaiveUI 三选一
+    - https://github.com/fast-crud/fs-admin-antdv /vue
+
 - directus /19.5kStar/GPLv3/202301/ts/vue
   - https://github.com/directus/directus
   - https://directus.io/

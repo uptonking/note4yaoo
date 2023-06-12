@@ -54,8 +54,8 @@ modified: 2022-11-06T16:47:43.444Z
 - https://github.com/dharmafly/jsonpatch.js /202202/js
   - An implementation of the JSONPatch (and JSONPointer) IETF RFCs for Javascript (Node. JS and the Browser)
 
-- https://github.com/cujojs/jiff
-  - JSON Patch and diff based on rfc6902
+- https://github.com/cujojs/jiff /201601/js
+  - an implementation of JSON Patch RFC6902, plus a Diff implementation that generates compliant patches.
 - https://github.com/wizedix/json-patch-apply
   - an implementation of JSON patch RFC 6902
 

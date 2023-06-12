@@ -14,7 +14,7 @@ modified: 2020-10-22T16:09:43.158Z
   - https://storymap.knightlab.com/
   - a simple tool to help you tell stories with maps.
 
-- TimelineJS /2.6kStar/MPLv2/202209/js
+- TimelineJS /2.6kStar/MPLv2/202303/js
   - https://github.com/NUKnightLab/TimelineJS3
   - http://timeline.knightlab.com/
   - A Storytelling Timeline built in JavaScript.

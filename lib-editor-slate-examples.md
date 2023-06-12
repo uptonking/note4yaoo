@@ -814,8 +814,16 @@ modified: 2023-02-05T19:03:12.723Z
   - 不依赖slate-yjs
 
 - https://github.com/itoumlilt/crdt-md-editor /202209/ts/slate/PouchDB
+  - https://github.com/concordant/c-markdown-editor
   - React Typescript CRDT based Collaborative Markdown Editor
+  - 依赖slate.v0.59、tippyjs，依赖少
+  - 代码中未找到协同代码
+    - 参考同作者项目 https://github.com/itoumlilt/CRDT-Spreasheet
+  - This app aims to show a collaborative text editing application using two eventual consitency backends: revision-based and CRDT-based.
+  - This demo shows that with a revision based approach, the user loses updates, either if updates are executed concurrently online, or if multiple users edit the document offline. 
+  - With the CRDT-based backend, update convergence is available out-of-the-box.
   - The current demo is implemented on top of PouchDB which offers replication and offline support, but can be easily ported on other equivalent backends. 
+  - If you want to run with cross-replica synchronization, just run a CouchDB Server
 
 - https://github.com/geoffreylitt/automerge-slate-playground /v0.59
   - Playing with Automerge + Slate
@@ -829,6 +837,8 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/ahixon/slate-sync-bridge /201906
   - slate-automerge
 
+## slate-ot
+
 - https://github.com/onechunlin/collaborative-docs
   - 基于 Slate 和 ShareDb 实现的基于 OT 算法的协同文档
 
@@ -836,9 +846,17 @@ modified: 2023-02-05T19:03:12.723Z
   - Operation Transformations for slate 0.5x.
   - 依赖sharedb
 
+- https://github.com/pubuzhixing8/ottype-slate
+  - 基于 Slate 编辑器数据模型的 OTType ，基于标准的 ottypes 实现。
+  - 基于原子操作的类型转换还在开发中。
+  - 示例基于sharedb、slate.v0.65
+
 - https://github.com/Immortalin/slate-operational-transform
   - Slate JS Editor Operational Transform Example using ShareDB (used in production at Narration Box)
+  - 依赖slate.v0.57、sharedb、json0-ot-diff
   - Invoking JSON0-ot-diff on every edit is not very efficient.
+  - A debounce would trade off between granularity (important for good UX) versus performance. 
+  - If you paste a large body of text there is a second or two of lag as diff function has to catch up.
 
 - https://github.com/timbuckley/slate-collaborative
   - A collaborative implementation for the slatejs editor using operational transform
@@ -846,6 +864,9 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/grimmer0125/slatejs-exp /201807/js
   - use socket.io to sync & show other people's cursors (carets) when collaborating to edit the same content by slatejs editor
+
+- https://github.com/qqwee/slate-ottype
+  - 依赖slate.v0.44、sharedb
 # more-slate
 - https://github.com/vip-git/universal-json-schema
   - https://react-jsonschema-form-material-ui.github56.now.sh/

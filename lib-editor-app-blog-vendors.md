@@ -12,6 +12,7 @@ modified: 2022-10-19T20:09:13.427Z
   - 互联网最全大厂技术分享PPT
 
 - [支付宝体验科技大会 2020-2022](https://www.yuque.com/seeconf)
+- [D2 终端技术大会](https://www.yuque.com/d2conference)
 # editor-cn
 
 ## [TWeb2021 腾讯前端技术大会](https://www.modb.pro/topic/153858)

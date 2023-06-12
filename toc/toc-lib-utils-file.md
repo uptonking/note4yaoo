@@ -258,4 +258,9 @@ modified: 2023-04-05T19:35:14.347Z
 # file-utils
 - https://github.com/plantain-00/files2text
   - A CLI tool and library to get text structure of files in a folder.
+# undo/history
+- https://github.com/pomber/git-history
+  - https://githistory.xyz/
+  - Quickly browse the history of files in any git repo
+  - Go to a file in GitHub (or GitLab, or Bitbucket); Replace github.com with github.githistory.xyz
 # more

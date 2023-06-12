@@ -169,6 +169,60 @@ modified: 2023-04-04T22:35:59.255Z
 # cross-platform
 - https://github.com/lzyzsd/JsBridge /java
   - android java and javascript bridge, inspired by wechat webview jsbridge
+# vdom
+- https://github.com/patrick-steele-idem/morphdom /js
+  - lightweight DOM diffing/patching (no virtual DOM needed)
+  - Lightweight module for morphing an existing DOM node tree to match a target DOM node tree. 
+  - Instead of replacing the existing DOM tree with a new DOM tree we want to transform the existing DOM tree to match the new DOM tree while minimizing the number of changes to the existing DOM tree. 
+  - morphdom does not rely on any virtual DOM abstractions. Because morphdom is using the real DOM, the DOM that the web browser is maintaining will always be the source of truth. 
+  - morphdom can be used with any templating language that produces an HTML string.
+  - The transformation is done in a single pass of both the original DOM tree and the target DOM tree and is designed to minimize changes to the DOM 
+  - the algorithm used by this module will automatically match up elements that have corresponding IDs and that are found in both the original and target DOM tree
+  - Support for diffing the real DOM with a virtual DOM was introduced in v2.1.0
+  - Both morphdom and virtual DOM based solutions update the real DOM with the minimum number of changes. The only difference is in how the differences are determined. **morphdom compares real DOM nodes while virtual-dom and others only compare virtual DOM nodes**.
+
+- https://github.com/natemoo-re/micromorph /ts
+  - A very tiny library for diffing live DOM nodes.
+  - With the /nav entrypoint, Micromorph automatically converts your MPA into a SPA while only re-rendering content that has changed.
+
+- https://github.com/google/incremental-dom /ts
+  - Incremental DOM is a library for building up DOM trees and updating them in-place when data changes. 
+  - 👉🏻 It differs from the established virtual DOM approach in that no intermediate tree is created (the existing tree is mutated in-place). 
+  - This approach significantly reduces memory allocation and GC thrashing
+  - Incremental DOM is primarily intended as a compilation target for templating languages. 
+  - Think of it as ASM.dom
+# diff
+- https://github.com/google/diff-match-patch
+  - https://github.com/JackuB/diff-match-patch
+  - The Diff Match and Patch libraries offer robust algorithms to perform the operations required for synchronizing plain text.
+- https://github.com/karak/diff-match-patch-line-and-word /ts
+  - An extension module that adds line-mode and word-mode on google-diff-match-patch, hosted as diff-patch-merge at NPM
+- https://github.com/gamedevsam/diff-match-patch-emoji-issue
+  - isolates and demonstrates the emoji diff problem in the diff-match-patch
+- ts-port
+  - https://github.com/rars/diff-match-patch-ts
+  - https://github.com/nonoroazoro/diff-match-patch-typescript
+- https://github.com/NPCDW/HtmlDiff
+  - Html文本比对实现，基于google的diff_match_patch
+
+- https://github.com/davidar/pandiff
+  - Prose diffs for any document format supported by Pandoc
+  - Supported output formats:
+    - HTML
+    - PDF, via LaTeX
+    - Word docx with Track Changes
+    - CriticMarkup
+
+- https://github.com/ace-diff/ace-diff
+  - A diff/merging wrapper for Ace Editor built on google-diff-match-patch
+
+- https://github.com/wickedest/Mergely /js/LGPL
+  - a JavaScript component for differencing and merging files interactively in a browser (diff/merge).
+  - Mergely has a JavaScript implementation of the Longest Common Subsequence (LCS) diff algorithm, and a customizable markup engine.
+
+- https://github.com/jhchen/fast-diff
+  - a simplified import of the excellent diff-match-patch library into the Node.js environment
+  - The diff function is an implementation of "An O(ND) Difference Algorithm and its Variations" (Myers, 1986) with the suggested divide and conquer strategy along with several optimizations Neil added.
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

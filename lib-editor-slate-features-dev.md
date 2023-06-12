@@ -21,6 +21,10 @@ modified: 2023-03-16T16:29:47.610Z
   - 页眉、页脚
   - 虚拟渲染
 
+- 判断数据存放在marks还是编辑器外
+  - 需要支持collab的放在marks，如highlight
+  - 不需要协作的放在编辑器外，如comment
+
 - editor-ecosystem
   - data-grid
   - chart

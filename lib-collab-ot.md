@@ -20,7 +20,9 @@ modified: 2022-04-05T10:09:36.436Z
   - mongodb realm Atlas Device Sync Protocol
 
 - ot vs crdt
-  - ot的主流实现依赖中心服务器决定op的顺序
+  - **ot的主流实现依赖中心服务器决定op的接收顺序，server根据版本号判断是否接收op**
+    - server发送到客户端的是转换后的op，opPrime
+    - op在不同客户端的apply顺序可能不同
     - crdt的op可乱序到达其他节点
 
 - 协作方案参考

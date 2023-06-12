@@ -10,7 +10,7 @@ modified: 2021-01-12T18:49:07.422Z
 # guide
 
 # calendar
-- https://github.com/nhn/tui.calendar
+- https://github.com/nhn/tui.calendar /ts
   - http://ui.toast.com/tui-calendar
   - available when using the Plain JavaScript, React, Vue Component.
   - 依赖tui-date-picker、tui-time-picker、preact、immer
@@ -52,6 +52,23 @@ modified: 2021-01-12T18:49:07.422Z
 - https://github.com/DKirwan/calendar-heatmap
   - A d3 heatmap for representing time series data similar to github's contribution chart
   - 依赖d3 v3
+# timeline
+- https://github.com/prabhuignoto/react-chrono /ts
+  - https://5f985eb478dcb00022cfd60e-wfennyutax.chromatic.com/
+  - Modern Timeline Component for React
+  - Render timelines in three different modes (Horizontal, Vertical, Vertical-Alternating).
+  - Auto play the timeline with the slideshow mode.
+  - Nested timelines
+  - Styled with emotion.
+
+- https://github.com/visjs/vis-timeline /js
+  - https://visjs.github.io/vis-timeline/
+  - customizable, interactive timelines and 2d-graphs with items and ranges.
+
+- TimelineJS /2.6kStar/MPLv2/202303/js
+  - https://github.com/NUKnightLab/TimelineJS3
+  - http://timeline.knightlab.com/
+  - A Storytelling Timeline built in JavaScript.
 # keyboard-shortcuts
 - https://github.com/pacocoursey/cmdk
   - https://cmdk.paco.me/

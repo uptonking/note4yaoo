@@ -12,6 +12,18 @@ modified: 2022-09-05T03:25:02.690Z
 # discuss
 - ## 
 
+- ## [How can I select a node from the current doc?](https://discuss.prosemirror.net/t/how-can-i-select-a-node-from-the-current-doc/5297/3)
+- A node object does not identify a node in the document. These don’t have a meaningful identity, they are just values—you can create a document containing the same node object multiple times. 
+  - Thus, as you found, **the library uses positions to identify nodes**.
+
+- ## [Data structure with ids](https://discuss.prosemirror.net/t/data-structure-with-ids/33?page=2)
+  - Now we’re using a `data-grid-id` attribute on each top-level child of our editable. We have a function to make a new id if new blocks are made by the editor.
+
+- Go through the transform interface if you want to change something about the document.
+
+- Basically like above, we store each top level node by a unique key, and we persist updates to the doc by a transaction with the key of the top level node that was changed, and the new data within. Will this mesh ok with Prosemirror or should I look at other editors?
+  - You should be able to map between such a system and ProseMirror transactions, if you really want to. Getting collaborative editing working with such a representation is another issue, but maybe that’s not a requirement for you.
+
 - ## Store Document in memory
 - https://discuss.prosemirror.net/t/store-document-in-memory/1238
 - note that just because a step can be applied doesn’t mean that it is valid—the content of inserted nodes, for example, isn’t checked when they are inserted as a whole. So you might also want to call .check() on the resulting document to make sure it conforms to the schema. Are you already validating the JSON data against a schema? The fromJSON methods are not terribly defensive, and might create bogus nodes when given bad input.

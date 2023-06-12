@@ -8,7 +8,8 @@ modified: 2022-08-21T10:02:41.845Z
 # toc-lib-excel-list-tree
 
 # guide
-
+- tips
+  - > see also json/ast; editor-render-only
 # flat-tree
 - 更推荐用parentId的方式
   - path的优势在于查找更快，且符合直觉易理解

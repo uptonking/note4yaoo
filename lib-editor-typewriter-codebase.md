@@ -23,8 +23,8 @@ modified: 2023-02-09T12:26:14.281Z
 
 - Editor自身是一个经典自定义eventemitter，
   - 注意触发事件基于dom event，类似`this.dispatchEvent(new Event('root'));`，默认不冒泡
-  - 在editor的构造函数，会注册默认view即rendering模块的onChange方法到editor， `editor.on('change', renderOnChange);`。
-  - editor数据更新时，会手动执行this.update，从而触发view更新 `this.dispatchEvent(new EditorChangeEvent())`
+  - 在editor的构造函数中，初始化rendering模块时会注册事件， `editor.on('change', renderOnChange);`。
+  - editor数据更新时，会手动执行this.update，从而触发view更新 `editor.dispatchEvent(new EditorChangeEvent())`
   - prosemirror的数据变化后，可以手动在dispatchTransaction中view.updateState(newState)
 
 - 触发rerender/update的场景
@@ -100,3 +100,17 @@ export interface VNode {
   - 在beforeinput中处理了Gboard输入bugs、historyUndo
 
 ## collab
+
+### undo
+
+- 会保存op记录: `{ undo: [], redo: [] }`，都是 `TextChange[]`
+
+```JS
+const undoOp = new TextChange(
+  null,
+  change.delta.invert(oldDoc.toDelta()), // 👈🏻 相反指令
+  oldDoc.selection,
+);
+
+const redoOp = new TextChange(null, change.delta, change.selection);
+```

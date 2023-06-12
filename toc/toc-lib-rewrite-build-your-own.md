@@ -60,6 +60,13 @@ modified: 2021-09-29T13:23:09.969Z
 - https://github.com/AFASSoftware/maquette /ts
   - simple virtual DOM library
 
+- https://github.com/google/incremental-dom /ts
+  - Incremental DOM is a library for building up DOM trees and updating them in-place when data changes. 
+  - 👉🏻 It differs from the established virtual DOM approach in that no intermediate tree is created (the existing tree is mutated in-place). 
+  - This approach significantly reduces memory allocation and GC thrashing
+  - Incremental DOM is primarily intended as a compilation target for templating languages. 
+  - Think of it as ASM.dom
+
 - https://github.com/Matt-Esch/virtual-dom /10.8kStar/MIT/201604/js
   - A JavaScript DOM model supporting element creation, diff computation and patch operations for efficient re-rendering
 

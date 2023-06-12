@@ -11,12 +11,12 @@ modified: 2022-08-21T10:02:27.788Z
 
 - requirements
   - group/aggregate/**pivot**: tanstack-table
-  - **editable operations support**: logux/ospreadsheet
-  - _undo/redo+batch-undo_
-  - _collaborative optional_
+  - **editable operations support**: logux/ospreadsheet/slate/typewriter
+  - _undo/redo+batch-undo_: 存反向op和存值2种方案
+  - _collaborative optional_: 作为插件
   - _transaction_
-  - headless utils: state/actions/props/api : autocomplete/tanstack
-  - view-layer: vdom : autocomplete/Simple-DataTables/slate/sleek
+  - headless utils: state/actions/props/api : autocomplete/tanstack，state和a11y不同粒度
+  - view-layer: vdom+reactive(mobx/signal) : autocomplete/quill-typewriter/Simple-DataTables/sleek
   - virtualized
   - keyboard/a11y
   - optimized for text-table/markdown-table
@@ -26,6 +26,7 @@ modified: 2022-08-21T10:02:27.788Z
   - 接入现有组件库
 
 - plugins-ready
+  - plugin支持视图层的优点包括更灵活的渲染(decorations)、场景更广的commands，参考prosemirror
   - prosemirror Plugin class
   - slate hoc
   - tanstack-table hoc
@@ -222,7 +223,6 @@ modified: 2022-08-21T10:02:27.788Z
   - Supports variable heights/widths, sticky items, scrolling to index, and more
   - https://github.com/clauderic/react-infinite-calendar /inactive
     - 依赖tiny-virtual-list,date-fns
-
 - react-virtualized /MIT/19.5kStar/202105/js
   - https://github.com/bvaughn/react-virtualized
   - http://www.reactvirtualized.com/
@@ -230,6 +230,11 @@ modified: 2022-08-21T10:02:27.788Z
   - 基于div实现，每行对应的dom元素不存在
   - 表格主体ReactVirtualized__Grid__innerScrollContainer内全是单元格
   - React components for efficiently rendering large lists and tabular data
+- https://github.com/developit/preact-virtual-list
+  - https://jsfiddle.net/developit/qqan9pdo/
+  - Virtual List that only renders visible items. Supports millions of rows.
+  - 单文件，代码简单
+
 - react-data-grid /MIT/4kStar/202201/ts
   - https://github.com/adazzle/react-data-grid
   - https://adazzle.github.io/react-data-grid/
@@ -563,6 +568,16 @@ modified: 2022-08-21T10:02:27.788Z
   - A data table component for the Vue Stacks Ecosystem
   - VSTX Data Table is a powerful data grid component plugin (Vue.js 2.4+) for displaying, sorting, searching, filtering, and interacting with large and deeply nested data set
   - (Optional) Web Worker support for Filtering, Sorting, and Slicing data
+# collab-excel
+- https://github.com/microsoft/FluidFramework/tree/main/examples/data-objects/table-view
+  - a basic table/grid view built on top of the `@fluid-example/table-document` data object.
+  - it only uses it's DDS to store a reference to the created Table Document
+
+- https://github.com/itoumlilt/CRDT-Spreasheet
+  - CRDT based collaborative Spreadsheet
+  - 依赖concordant-crdtlib、delta-crdts
+  - This demo app shows a collaborative application developed using a draft implementation of the Concordant API.
+  - The application uses the C-Service API which currently supports two eventual consistency backends: revision-based and CRDT-based
 # list-grid-div-react
 - fixed-data-table-2 /BSD/1kStar/202111/js
   - https://github.com/schrodinger/fixed-data-table-2
@@ -671,11 +686,6 @@ modified: 2022-08-21T10:02:27.788Z
   - https://mukuljainx.github.io/smart-grid/
   - highly customizable with css.
   - 基于div实现，无依赖，功能较少
-
-- https://github.com/developit/preact-virtual-list
-  - https://jsfiddle.net/developit/qqan9pdo/
-  - Virtual List that only renders visible items. Supports millions of rows.
-  - 单文件，代码过于简单
 
 - react-list /MIT/1.8kStar/202009/layout
   - https://github.com/caseywebdev/react-list
@@ -833,7 +843,7 @@ modified: 2022-08-21T10:02:27.788Z
   - Spreadsheet like react canvas datagrid optimized for performance
 - canvas-table /12Star/MIT/202009/ts
   - https://github.com/el/canvas-table
-  - https://codesandbox.io/s/canvas-table-6q65o?fontsize=14&hidenavigation=1
+  - https://codesandbox.io/s/canvas-table-6q65o
   - fast table implementation in Canvas with string truncating support.
   - Supports both browser HTML5 canvas and node-canvas
 - https://github.com/bojue/canvas-excel
@@ -967,7 +977,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://miadwang.github.io/sou-react-table/
   - A spreadsheet component for React
 
-- reactabular /MIT/895star/202001/js/NoDeps
+- reactabular /MIT/895star/202001/js/NoDeps/inactive
   - https://github.com/reactabular/reactabular
   - https://reactabular.js.org/#/examples/all-features
   - 基于table标签实现，提供了扩展包sticky、virtualized、dnd、resizable

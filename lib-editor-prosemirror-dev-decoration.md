@@ -14,7 +14,11 @@ modified: 2021-07-09T18:08:34.957Z
 
 - ## 
 
-- ## 
+- ## [Code example for applying decorations asynchronously](https://discuss.prosemirror.net/t/code-example-for-applying-decorations-asynchronously/3664)
+- Is there a simple example of how to apply decorations async? This is a common need for linting, spell checking, grammar checking, etc. 
+  - Not really, but there’s not a lot to it. Start your request as appropriate (probably a debounce on document updates) from a view plugin. When it returns, dispatch a transaction with metadata that tells your state field to add the decorations. Either drop responses that are outdated, or record mappings in order to be able to map them to the updated document.
+
+- initialize the debounced API request from within the `apply` method, and just use the `update` method of the view plugin to keep the plugin up to do with the editor.
 
 - ## The Grid Ed: Overlay widgets
 - https://discuss.prosemirror.net/t/the-grid-ed-overlay-widgets/150

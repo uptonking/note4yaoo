@@ -32,7 +32,8 @@ modified: 2022-08-14T16:26:48.558Z
   - 支持跨block选择部分文字
   - 不支持拖拽block修改顺序
   - 支持协作
-  - an editor which supports the concept of blocks. It can help you to build an editor like Notion. 
+  - preact的封装很少，大部分vanillajs
+  - An headless editor built with blocks
   - Extensible. Extend the editor with custom blocks and spans.
   - Currently, the document tree of BlockyEditor supports collaborative editing using operation transforming(known as OT).
   - You can also use a CRDT library such as YJS and bind the data model to it.
@@ -71,12 +72,13 @@ modified: 2022-08-14T16:26:48.558Z
   - Just a little writing tool with markdown shortcuts that saves every change to local indexeddb.
   - 跨平台客户端基于tauri实现，tari部分使用rust实现
 
-- editorjs /19.8kStar/Apache2/202206/ts
+- editorjs /19.8kStar/Apache2/202206/ts/vanillajs
   - https://github.com/codex-team/editor.js
   - https://editorjs.io/
   - A block-styled editor with clean JSON output
   - 不支持跨block选择部分文字，只能全选block
   - 不支持拖拽block修改顺序
+  - [wip: feat(ui) : the block can be drag n drop](https://github.com/codex-team/editor.js/pull/2285)
   - https://github.com/editor-js/awesome-editorjs
   - https://github.com/omegion/horul-editor
     - horul-editor is editorjs wrapper component with vue

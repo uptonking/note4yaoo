@@ -70,3 +70,15 @@ modified: 2020-12-21T07:44:48.911Z
 
 - chrominum
   - https://www.chromium.org/getting-involved/download-chromium
+# firefox-unsupported
+- [Bring back PWA (progressive web apps)](https://connect.mozilla.org/t5/ideas/bring-back-pwa-progressive-web-apps/idi-p/35)
+
+## extensions
+
+- [Option to allow extensions to run only on specific sites](https://connect.mozilla.org/t5/ideas/option-to-allow-extensions-to-run-only-on-specific-websites/idi-p/146)
+
+## cross-platform
+- [Ability to embed Gecko as an alternative to Chromium Embedding Framework](https://connect.mozilla.org/t5/ideas/ability-to-embed-gecko-as-an-alternative-to-chromium-embedding/idi-p/186)
+## mobile
+
+- [Expand Add-on Compatibility in Firefox for Android](https://connect.mozilla.org/t5/ideas/expand-add-on-compatibility-in-firefox-for-android/idi-p/191)

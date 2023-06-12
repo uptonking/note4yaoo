@@ -242,7 +242,7 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/ryankaplan/woot-collaborative-editor
   - A real time collaboration toy project based on WOOT. Implemented with node.js and ws.
-  - 编辑器使用textarea
+  - 编辑器使用textarea，依赖diff-match-patch
   - When a textarea-change is detected, diff the textarea content against the last known content. 
   - With the help of WootTypes. WString, turn that diff into `WStringOperations` and broadcast those operations to the server.
   - When we receive operations from the server, apply those operations to our WString instance and apply them to the text in #collab-doc.
@@ -460,6 +460,11 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/hldb/welo
   - peer-to-peer, collaborative states using Merkle-CRDTs
+
+- https://github.com/concordant/c-crdtlib /kotlin
+  - CRDT library in Kotlin for the Concordant platform API. 
+  - This project is based on Kotlin multiplatform feature.
+  - The Kotlin code is compiled to both JVM Bytecode and Javascript/Typescript
 # crdt-editing
 - https://github.com/KristoferSundequist/Collaborative-texteditor
   - Collaborative texteditor based on a Conflict free replicated datatype(CRDT) with a NodeJS client/server. 
@@ -711,6 +716,8 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/itoumlilt/CRDT-Spreasheet
   - CRDT based collaborative Spreadsheet
   - 依赖concordant-crdtlib、delta-crdts
+  - This demo app shows a collaborative application developed using a draft implementation of the Concordant API.
+  - The application uses the C-Service API which currently supports two eventual consistency backends: revision-based and CRDT-based
 
 - https://github.com/Roffelchen/spreadsheet-crdt
   - /yjs

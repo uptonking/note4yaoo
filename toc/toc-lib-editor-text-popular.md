@@ -296,3 +296,22 @@ modified: 2022-11-08T19:04:00.289Z
 - https://github.com/nytimes/ice /201402/js
   - Ice is a track changes implementation, built in javascript, for anything that is contenteditable on the web. 
   - Conceived by the CMS Group at The New York Times, ice is powering the editor used for writing articles in the newsroom.
+# collab
+- https://github.com/microsoft/FluidExamples/tree/main/collaborative-text-area
+  - an example to demonstrate building a collaborative text area in React using the SharedString
+
+- https://github.com/gleicon/editor.js /201107/js
+  - a collaborative editor based on javascript technology both for frontend and for backend
+  - Its a proof of concept to apply simple libraries and tools. There is no multi document/persistence for now.
+  - Each browser has an internal editing buffer which is diff'ed against the text area, and the resulting patches are broadcasted using websockets to everyone connected.
+  - Whenever the server receives a patch, it applies against its internal editing buffer, so new clientes will receive the full buffer.
+
+- https://github.com/vinsdragonis/Project-Dimension
+  - Real-time text editor built using React.js, Node.js, MongoDB, and Socket.io
+
+- https://github.com/francescorizzello94/typescript-markdown
+  - Real-time text-to-markdown editor
+
+- https://github.com/dukelester/collaborator_text_editor
+  - A simple realtime multiuser collaboration text application with Node js and React js.
+  - 客户端依赖slate
