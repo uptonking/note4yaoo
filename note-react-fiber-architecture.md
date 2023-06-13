@@ -15,8 +15,63 @@ modified: 2020-07-14T11:58:47.593Z
   - [React Fiber的优先级调度机制与事件系统](https://zhuanlan.zhihu.com/p/95443185)
 - ref
   - [react fiber 主流程及功能模块梳理](https://juejin.im/post/6844903781805752328)
-
 # blog
+
+## [Fiber架构的心智模型](https://react.iamkasong.com/process/fiber-mental.html)
+
+- 代数效应能够将副作用（例子中为请求图片数量）从函数逻辑中分离，使函数关注点保持纯粹。
+- 从React15到React16，协调器（Reconciler）重构的一大目的是：将老的同步更新的架构变为异步可中断更新。
+- 异步可中断更新可以理解为：更新在执行过程中可能会被打断（浏览器时间分片用尽或有更高优任务插队），当可以继续执行时恢复之前执行的中间状态。
+- 其实，浏览器原生就支持类似的实现，这就是Generator。
+- 但是Generator的一些缺陷使React团队放弃了他：
+  - 类似async，Generator也是传染性的，使用了Generator则上下文的其他函数也需要作出改变。这样心智负担比较重。
+  - Generator执行的中间状态是上下文关联的。
+- 只考虑“单一优先级任务的中断与继续”情况下Generator可以很好的实现异步可中断更新。
+- 但是当我们考虑“高优先级任务插队”的情况，如果此时已经完成doExpensiveWorkA与doExpensiveWorkB计算出x与y。
+  - 如果通过全局变量保存之前执行的中间状态，又会引入新的复杂度。
+- 基于这些原因，React没有采用Generator实现协调器。
+
+- 每个任务更新单元为React Element对应的Fiber节点。
+
+## [Fiber架构的工作原理](https://react.iamkasong.com/process/doublebuffer.html)
+
+- 当我们用canvas绘制动画，每一帧绘制前都会调用ctx.clearRect清除上一帧的画面。
+  - 如果当前帧画面计算量比较大，导致清除上一帧画面到绘制当前帧画面之间有较长间隙，就会出现白屏。
+  - 为了解决这个问题，我们可以在内存中绘制当前帧动画，绘制完毕后直接用当前帧替换上一帧画面，由于省去了两帧替换间的计算时间，不会出现从白屏到出现画面的闪烁情况。
+  - 这种在内存中构建并直接替换的技术叫做双缓存 (opens new window)。
+
+- React使用“双缓存”来完成Fiber树的构建与替换——对应着DOM树的创建与更新。
+- 在React中最多会同时存在两棵Fiber树。当前屏幕上显示内容对应的Fiber树称为current Fiber树，正在内存中构建的Fiber树称为workInProgress Fiber树。
+- current Fiber树中的Fiber节点被称为current fiber，workInProgress Fiber树中的Fiber节点被称为workInProgress fiber，他们通过alternate属性连接。
+- 当workInProgress Fiber树构建完成交给Renderer渲染在页面上后，应用根节点的current指针指向workInProgress Fiber树，此时workInProgress Fiber树就变为current Fiber树。
+
+- https://twitter.com/acdlite/status/978696799757086720
+  - So much of React's architecture is based on stuff game developers figured out decades ago.
+  - Like double buffering. React has a current tree and a work-in-progress tree. When the WIP tree is finished rendering, we swap. The WIP becomes current.
+  - Is it true that the entire WIP tree is rebuilt on every component render call?
+    - No, we reuse the parts that don’t change
+  - Interesting. The caveat about having two buffers, could structural sharing help with that on low memory devices or would that strategy itself use too much memory?
+    - Yeah, we use structural sharing. The parts of the tree that don't change are reused.
+    - We also swap back and forth between the same two fibers, so there are only two fiber allocations at most per component.
+    - Nice. Reminds me of frame re-use in TCO recursion.
+
+## [源码解析一 Fiber and FiberRoot](https://github.com/LuSuguru/fake-react/blob/master/doc/fiber-and-fiberRoot.md)
+
+- 在v15的stack reconciler中，如果某个节点setState，会从当前节点开始，一直递归到整个dom树的最底层，找到需要修改的信息，并传递给renderer进行渲染。
+  - 这整个过程在react中是通过递归实现，一气呵成，连续不可中断。
+  - 如果需要渲染的组件树过于庞大，js执行占据主线程时间较长，导致页面响应度变差，就会很明显造成卡顿现象
+
+- 为了解决这个问题，React重构了整个调和架构，称为新的fiber reconciler，它支持：
+  - 能够把任务切片处理，拆分任务并能调度的能力
+  - 对每个任务划分优先级，优先级通过事件判定，根据优先级不同分配到不同的 Task 中处理
+  - 能够调整优先级，重置或者复用任务
+
+- 每一个ReactElement，都会生成相应的工作单元（我们把每个工作单元称为Fiber），根据这些节点的层级关系，会生成整个Fiber树。
+- FiberRoot是整个Fiber树的根节点，无论是更新还是渲染，都是从根节点开始的
+- 在fiber reconciler中，在全局维护着一条关于FiberRoot的队列，如下图，每次在更新渲染时，都会更新当前 fiberRoot的优先级，并塞到任务队列的末尾
+- Fiber是一个工作单元，由于一切的调度更新渲染都是围绕着它展开，在fiber reconciler下，操作是可以分成很多小部分，并且可以被中断的，所以同步操作DOM可能会导致Fiber树与实际DOM的不同步。对于每个节点，不光需要存储了对应元素节点的基本信息，还要保存一些用于任务调度的信息，以及跟周围节点的关系信息
+- WorkInProgress 是Fiber进行调度时生成的一个副本，与Fiber通过alternate相互连接，
+  - 由于现在的任务都是可中断的，如果直接在原树上操作，若此时需要中断，归还控制权，那么更新到一半的Fiber树该怎么办，保留，回滚? 为了解决这个问题，在Fiber reconciler中，Mount或者Update时，都会基于当前 Fiber树生成一棵新的WorkInProgress树（副本树），调度完成后用整个WorkInProgress树替代当前的Fiber树，成为当前的Fiber树
 
 ## [React Hooks(三): concurrency](https://zhuanlan.zhihu.com/p/99977314)
 
@@ -149,9 +204,7 @@ modified: 2020-07-14T11:58:47.593Z
   - Iterator返回一次，断点就会变更为下一个，这样的话等你渲染完，还怎么返回hook断点来异步更新。
   - 而Fiber是链表上的节点，组件可以记录当前执行位置用于后续返回。
   - React保持组件纯度和副作用隔离一部分原因是为了SSR。
-
-# pieces
-
+# dev
 - The Fiber architecture can solve blocking (and a host of other problems) because Fiber made it possible to split reconciliation and rendering to the DOM into two separate phases.
   - Phase 1 is called Render/Reconciliation.
   - Phase 2 is called Commit.

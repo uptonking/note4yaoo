@@ -276,52 +276,16 @@ $$('[contenteditable]')
 
 ## 0613
 
-- ### [来深入了解下 requestIdleCallback 呗 ？ - 掘金](https://juejin.cn/post/7033959714794766372)
-  - 预加载js/图片、预渲染
-  - 数据的分析和上报
-  - 检测卡顿，如果 requestIdleCallback 长时间内没能得到执行，说明一直没有空闲时间，很有可能就是发生了卡顿，可上报
-  - 拆分耗时任务
-    - React 把 diff 的过程从早前的递归变成了现在的迭代，对两个大对象进行递归 diff 就是个耗时的任务，如果能够拆解成小任务，那该有多好。
-    - 但是递归又不能中途终止，所以 React 采用了 fiber 这种数据结构，把递归变成了链表迭代，迭代就可以中途停止，我们就不用一次性 diff 完。
-- 简单模拟实现 requestIdleCallback
-  - setTimeout 并不算是真正的利用空闲时间，而是在满足timeout的条件下尽可能快的执行你的代码
-  - 用 requestAnimationFrame + MessageChannel 实现
-    - MessageChannel 的执行在 setTimeout 之前，并且没有 4ms 的最小延时。
-  - 这两种方法都不是 polyfill，只是尽可能靠近 requestIdleCallback，并且剩余时间也是猜测的。
-- 为什么不用微任务模拟呢？
-  - 因为如果你用微任务模拟的话，在代码执行完之后，所有的微任务就会继续全部执行，不能及时的让出主线程。
+- [Why are Objects not Iterable in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/29886552/why-are-objects-not-iterable-in-javascript)
+  - There is no meaningful way to implement the iteration protocols for objects, because not every object is a collection
+  - If object properties were iterable by default, program and data level were mixed-up. Since every composite type in Javascript is based on plain objects this would apply for Array and Map as well.
+  - if your object doesnot represent a collection, then it's up to the programmer to not treat it like a collection.
 
-- 注意 ❗️ safari和safari ios至今(202306)都不支持requestIdleCallback
-- requestIdleCallback 可能不会每个frame都执行
-- callback执行时不可中断，注意不要将特别耗时的任务放在里面
-- 避免在回调中更改 dom
-  - 因为我们本来就是利用渲染后的时间，期间操作 dom 或者读取某些元素的布局属性大概率会造成重新渲染。
-  - 只在 requestAnimationFrame 回调中进行对 DOM 更新，因为浏览器分配的时候就考虑到了这种类型的任务。
-- 避免在回调中使用 promise
-  - 因为 promise 的回调属于优先级较高的微任务，所以会在 requestIdleCallback 回调结束后立即执行，可能会给这一帧带来超时的风险。
-- 在需要的时候才使用 timeout 触发强制执行
-
-- [How to write Javascript code that doesn't block the ui - Stack Overflow](https://stackoverflow.com/questions/53600315/how-to-write-javascript-code-that-doesnt-block-the-ui)
-
-- [What happen if a requestIdleCallback's callback is executed too long to finish in an idle period? - Stack Overflow](https://stackoverflow.com/questions/63786952/what-happen-if-a-requestidlecallbacks-callback-is-executed-too-long-to-finish-i)
-  - when the event loop will choose what's the next task to execute it will never choose the idle callbacks if there is something else to do, i.e, your idle callbacks have the lowest priority.
-  - But once they are being executed, they will get executed to their end, there is no prioritization scheme anymore, the event loop will simply not run again before it's done with that task, so there is no way it can pass an higher prioritized task.
-
-```JS
-// 传一个回调函数（必传）和超时参数（超过这个时间后，如果任务还没执行，则强制执行，不必等待空闲。）
-requestIdleCallback(doWork, { timeout: 1000 });
-
-// deadline 上面有一个 timeRemaining() 方法，能够获取当前frame的剩余空闲时间，单位 ms
-function doWork(deadline) {
-  console.log(`当前帧剩余时间: ${deadline.timeRemaining()}`);
-  if (deadline.timeRemaining() > 1 || deadline.didTimeout) {
-    // 走到这里，说明时间有余，我们就可以在这里写自己的代码逻辑
-  }
-
-  // 走到这里，说明时间不够了，就让出控制权给主线程，下次空闲时继续调用
-  requestIdleCallback(doWork);
-}
-```
+- [Double Buffering for Game objects, what's a nice clean generic C++ way? - Stack Overflow](https://stackoverflow.com/questions/2008948/double-buffering-for-game-objects-whats-a-nice-clean-generic-c-way)
+  - I recently dealt with a similar desire in a generalized way by "snapshotting" a data structure that used **Copy-On-Write** under the hood. 
+  - An aspect I like of this strategy is that you can make many snapshots if you need them, or just have one at a time to get your "double buffer".
+  The only downside of this approach compared to true double/triple buffering that I can think of is the frequent allocation and deallocation due to old allocated state being discarded instead of reused. Perhaps a derivative of QSharedData or QSharedDataPointer to solve this, maybe using placement new, is in order
+  - Triple buffering is also trivial to achieve if you could find a need for it.
 
 - ### [Does React always check the whole tree? - Stack Overflow](https://stackoverflow.com/questions/34696816/does-react-always-check-the-whole-tree)
   - [Does React compares whole tree on every change? - Stack Overflow](https://stackoverflow.com/questions/76143032/does-react-compares-whole-tree-on-every-change)

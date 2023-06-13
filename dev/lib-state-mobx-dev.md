@@ -11,6 +11,12 @@ modified: 2023-04-07T03:10:46.225Z
 
 # dev
 - Mobx数据管理方案，采用观察者模式，观察可变数据，持有细粒度的数据响应模式，感知到哪些组件需要被更新的时间复杂度是`O(1)`的
+# rewrite
+- https://github.com/liam61/minbx
+  - [从零到 observable 一个 object 如何](https://github.com/liam61/blog/blob/master/js/mobx-source/1.observable-an-object.md)
+
+- https://github.com/Jacky-Summer/mini-mobx /js
+  - 模拟实现 MobX 的 observable 和 autorun 方法
 # blogs
 
 ## [Mobx 思想的实现原理，及与 Redux 对比 - 知乎](https://zhuanlan.zhihu.com/p/25585910)
@@ -85,4 +91,16 @@ modified: 2023-04-07T03:10:46.225Z
   - setup的写法解决的首要问题和hooks是一致的这个一目了然。
 
 - Vuex的响应原理跟vue是一样的，因为对比的是响应原理，不是用法
+# blogs-rewrite
+- [手写实现MobX的observable和autorun方法 | JackySummer](https://jacky-summer.github.io/2021/01/01/%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0MobX%E7%9A%84observable%E5%92%8Cautorun%E6%96%B9%E6%B3%95/)
+  - [手写状态管理库: Mobx - 掘金](https://juejin.cn/post/7076329672706883591)
+  - https://github.com/Jacky-Summer/mini-mobx /js
+
+- [实现一个简单的 MobX](https://xie.infoq.cn/article/d90440a8fb574299b4454ef96)
+
+## [Build your own MobX-like state management library in 40 lines of code
+
+](https://czaplinski.io/blog/make-your-own-mobx/)
+
+- We want our library to build up a mapping between every property available in the store and a list of components that should re-render when that property changes.
 # more

@@ -19,7 +19,22 @@ modified: 2023-04-07T04:09:30.491Z
   - 传统useState的状态提升可能造成过度rerender，需要memo
   - context内容混乱，订阅者下面的任何组件现在必须重新渲染
 
+- signals特点
+  - 能根据值的变化自动更新
+  - 没有依赖数组
+  - Signals 跳过了数据在组件树中的传递，而是直接更新所引用的组件。
+  - 默认惰性求值（lazy evaluate）- 只有被使用到的才会被监听和更新
+  - 直接访问状态值，不需要 selector 或其他 hooks
 
+- Signals，类似的方案有Observables(Mobx等)，Atoms(Recoil, Jotai等)，Refs(Vue等)。
+  - 不过基本意思都一样，表示一个响应式数据的单元。
+- reaction, 类似effect
+- derivation也叫 computed, memo 等
+  - 衍生能缓存计算结果，避免重复的计算，并且也能自动追踪依赖以及同步更新。
+- 响应式数据管理会存储不同节点之间的链接关系，当每次节点更新之后，会重新检查链接关系。如果不在关联，就会解绑链接，取消依赖
+
+- 另外响应式还有一点就是同步更新，同步更新避免了状态不一致的问题（相信使用React的同学深有感受），也提高了更好的预测性和可测试性。
+  - 在响应式数据更新的基础上，有些也会加入比如批量更新，批量更新在避免重复执行反应和衍生上大有好处，大大避免了一些多余额外的执行消耗
 
 ## [Signals vs. Observables, what's all the fuss about?](https://www.builder.io/blog/signals-vs-observables)
 
