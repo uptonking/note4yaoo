@@ -709,7 +709,6 @@ function ListItemLink(props) {
 ```
 
 # [React Architecture: The React Provider Pattern](https://mortenbarklund.com/blog/react-architecture-provider-pattern/)
-- The React Provider Pattern
 - Going from the above to what I consider to be the React Provider Pattern is merely an act of reorganising all the parts into a more organised structure.
 - `folder/context.js` – the file defining the context variable used by the structure
   - `const UserContext = React.createContext({state:{}, action:{}})`

@@ -180,7 +180,8 @@ const useReducer = (reducer, state) => {
 - In the code above effect's dependencies are being added but not really used anywhere except for cleaning itself
 
 - why do we need to cleanup in general?
-  - The observer pattern is inherently leaky. Signals don't need cleanup but any subscription does. If the signal outlives the subscriber it will have no longer relevant subscriptions. At minimum we need to mark the subscriber as dead. The fact that we dynamically create and tear down subscriptions on each run has us doing this work anyway.
+  - The observer pattern is inherently leaky. Signals don't need cleanup but any subscription does. If the signal outlives(比…活得长) the subscriber it will have no longer relevant subscriptions. 
+  - At minimum we need to mark the subscriber as dead. The fact that we dynamically create and tear down subscriptions on each run has us doing this work anyway.
 
 ## [Why I'm not a fan of Single File Components - DEV Community](https://dev.to/ryansolid/why-i-m-not-a-fan-of-single-file-components-3bfl)
 

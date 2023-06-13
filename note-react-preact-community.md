@@ -27,7 +27,32 @@ modified: 2021-05-13T03:46:35.666Z
 - afaiu spectrum is pretty new, so that may change. Though its size makes it a bit of an odd choice for preact apps (each spectrum component is larger than preact itself).
   - Seriously though, I think that’s how it should be. Preact is really just a thin layer on top of the DOM. Building actual components takes a lot of code, no matter the framework.
   - But also that’s not entirely true. Our components have a lot of overlapping pieces. One component may look large on bundlephobia, but most of the big pieces are shared between many different components, so it evens out in real apps.
-# discuss-stars
+# discuss-architecture
+
+- ## [async rendering · Pull Request_202112](https://github.com/preactjs/preact/pull/3386)
+- https://github.com/matrix-marketing/preact
+  - [Preact Async Rendering: Solution to Initial Render Blocking - DEV Community](https://dev.to/cagdas_ucar/preact-async-rendering-51p2)
+- The only problem I have is that Google page speed insights keep telling me that our sites have too much blocking time. 
+  - The solution is of course async rendering. It's not a new concept. 
+  - It's similar to React Fiber but the implementation is quite different. 
+- preact async rendering is exactly what's supposed to help with that. I've been using it in production with great success.
+
+
+
+- ## [react-three-fiber on Preact? (discussion)](https://github.com/preactjs/preact/issues/2538)
+- 202209: Preact always had a reconciler internally, but we don't expose it as it's closely married to the DOM. There are no current plans to change that, which means react-three-fiber is not supported.
+
+- https://twitter.com/Cody_J_Bennett/status/1632674026408558592
+  - Got custom renderers working in @preactjs by implementing react-reconciler via option hooks.
+
+- [Add demos for performance comparisons](https://github.com/preactjs/preact/issues/1136)
+  - Crucially the point of the triangle demo isn't to demo "performance", it's to show that there's separate scheduling for high priority and low priority updates, and that we can "rebase" the low priority reconciliation on top of a high priority update. 
+  - It's nothing Preact would be able to do anyway without implementing a double buffer like in Fiber (and then resuming — which we are still missing).
+
+
+
+- [Asynchronous rendering pipeline based on microtask](https://github.com/preactjs/preact/issues/3127)
+
 - ## I have been working on an experimental ground-up rewrite of Preact's renderer. It now renders TodoMVC faster than hand-written vanilla JS.
 - https://twitter.com/_developit/status/1412451442946981890
   - It's somewhere between 1.5x and 3x faster than Preact 10 (depending on VM optimization state).

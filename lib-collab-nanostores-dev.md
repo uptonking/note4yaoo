@@ -16,6 +16,8 @@ modified: 2023-06-02T23:14:54.641Z
   - react-flow-editor
 # dev
 - memoize
+
+- [done: Remove Proxy hack_202102](https://github.com/nanostores/nanostores/commit/c2a5e8042fe3487035727af175a87a84ebb27bf7)
 # examples
 - https://github.com/tiana-y/todos
   - Small project for training with React context and styled-components

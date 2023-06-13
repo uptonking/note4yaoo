@@ -31,6 +31,7 @@ modified: 2023-04-07T04:09:54.488Z
 
 - ## Here is a little demo I whipped up using Preact Signals - can be used without a framework!
 - https://twitter.com/wesbos/status/1650589973215584260
+  - Here is a little demo I whipped up(匆匆做) using Preact Signals - can be used without a framework!
 
 ```JS
 const createState = (s) => {
@@ -66,7 +67,7 @@ state1.state.deniz = 11; // nothing
 - https://twitter.com/0xca0a/status/1567846559655632896
 - signal is not new, it's lie mobx valtio et al, the interesting bit and why it went viral is because it cleverly hacks the reconciler. i wouldn't want a proxy near a big project, and i wouldn't want a framework to conform around one. i want react to be immutable that's all.
 
-- ## Why @preactjs , @solid_js and @QwikDev recommend using Context API to share Signals/Stores?
+- ## Why @preactjs, @solid_js and @QwikDev recommend using Context API to share Signals/Stores?
 - https://twitter.com/_aantipov/status/1634832927556276226
   - Why not simply export/import them similar to Zustand and deprecate Context?
   - for instance, Vue seems to work just fine with exported/imported reactive data.
@@ -89,7 +90,7 @@ state1.state.deniz = 11; // nothing
   - But mobx more about observables and huge stores.
   - Anyway, mutating with proxy let make code easier to read
 
-- ##  I don’t think Vue 3 refs should be used as an example of “Proxy based reactivity” - only deep access is tracked using Proxies
+- ## I don’t think Vue 3 refs should be used as an example of “Proxy based reactivity” - only deep access is tracked using Proxies
 - https://twitter.com/youyuxi/status/1635416467645829120
   - the .value itself is a simple getter, very much like Preact / Qwik signals. 
   - The shallow version of it (shallowRef) is identical to signals

@@ -13,6 +13,92 @@ modified: 2020-07-14T11:51:59.253Z
   - [React JS Best Practices From The New Docs](https://sebastiancarlos.com/react-js-best-practices-from-the-new-docs-1c65570e785d)
   - [use-context-selector demystified](https://dev.to/romaintrotard/use-context-selector-demystified-4f8e)
     - https://codesandbox.io/s/own-implem-27kv6
+# [来深入了解下 requestIdleCallback 呗 ？](https://juejin.cn/post/7033959714794766372)
+- 预加载js/图片、预渲染
+- 数据的分析和上报
+- 检测卡顿，如果 requestIdleCallback 长时间内没能得到执行，说明一直没有空闲时间，很有可能就是发生了卡顿，可上报
+- 拆分耗时任务
+  - React 把 diff 的过程从早前的递归变成了现在的迭代，对两个大对象进行递归 diff 就是个耗时的任务，如果能够拆解成小任务，那该有多好。
+  - 但是递归又不能中途终止，所以 React 采用了 fiber 这种数据结构，把递归变成了链表迭代，迭代就可以中途停止，我们就不用一次性 diff 完。
+- 简单模拟实现 requestIdleCallback
+- setTimeout 并不算是真正的利用空闲时间，而是在满足timeout的条件下尽可能快的执行你的代码
+- 用 requestAnimationFrame + MessageChannel 实现
+  - MessageChannel 的执行在 setTimeout 之前，并且没有 4ms 的最小延时。
+- 这两种方法都不是 polyfill，只是尽可能靠近 requestIdleCallback，并且剩余时间也是猜测的。
+- 为什么不用微任务模拟呢？
+- 因为如果你用微任务模拟的话，在代码执行完之后，所有的微任务就会继续全部执行，不能及时的让出主线程。
+
+- 注意 ❗️ safari和safari ios至今(202306)都不支持requestIdleCallback
+- requestIdleCallback 可能不会每个frame都执行
+- callback执行时不可中断，注意不要将特别耗时的任务放在里面
+- 避免在回调中更改 dom
+- 因为我们本来就是利用渲染后的时间，期间操作 dom 或者读取某些元素的布局属性大概率会造成重新渲染。
+- 只在 requestAnimationFrame 回调中进行对 DOM 更新，因为浏览器分配的时候就考虑到了这种类型的任务。
+- 避免在回调中使用 promise
+- 因为 promise 的回调属于优先级较高的微任务，所以会在 requestIdleCallback 回调结束后立即执行，可能会给这一帧带来超时的风险。
+- 在需要的时候才使用 timeout 触发强制执行
+
+- ## [💡 Using requestIdleCallback - Chrome Developers](https://developer.chrome.com/blog/using-requestidlecallback/#faq)
+  - What happens if I overrun(多用 时间、钱财等) the deadline? 
+    - If `timeRemaining()` returns zero, but you opt to run for longer, you can do so without fear of the browser halting(使…停止；阻止) your work. 
+    - However, the browser gives you the deadline to try and ensure a smooth experience for your users, so unless there’s a very good reason, you should always adhere to the deadline.
+  - **What happens if I set a new idle callback inside of another?** 
+    - The new idle callback will be scheduled to run as soon as possible, **starting from the next frame (rather than the current one)**.
+
+- [How to write Javascript code that doesn't block the ui - Stack Overflow](https://stackoverflow.com/questions/53600315/how-to-write-javascript-code-that-doesnt-block-the-ui)
+
+- [What happen if a requestIdleCallback's callback is executed too long to finish in an idle period? - Stack Overflow](https://stackoverflow.com/questions/63786952/what-happen-if-a-requestidlecallbacks-callback-is-executed-too-long-to-finish-i)
+- when the event loop will choose what's the next task to execute it will never choose the idle callbacks if there is something else to do, i.e, your idle callbacks have the lowest priority.
+- But once they are being executed, they will get executed to their end, there is no prioritization scheme anymore, the event loop will simply not run again before it's done with that task, so there is no way it can pass an higher prioritized task.
+
+- [Why does requestIdleCallback give me more than 16 ms of time - Stack Overflow](https://stackoverflow.com/questions/53059977/why-does-requestidlecallback-give-me-more-than-16-ms-of-time)
+  - timeRemaining gives me 49.9ms of time. Does it mean that Chrome doesn't re-render every 16ms? I assume that it's true in this case, if nothing changes there's no need to re-render.
+  - The spec supports your assumption
+
+```JS
+// 传一个回调函数（必传）和超时参数（超过这个时间后，如果任务还没执行，则强制执行，不必等待空闲。）
+requestIdleCallback(doWork, { timeout: 1000 });
+
+// deadline 上面有一个 timeRemaining() 方法，能够获取当前frame的剩余空闲时间，单位 ms
+function doWork(deadline) {
+  console.log(`当前帧剩余时间: ${deadline.timeRemaining()}`);
+  if (deadline.timeRemaining() > 1 || deadline.didTimeout) {
+    // 走到这里，说明时间有余，我们就可以在这里写自己的代码逻辑
+  }
+
+  // 走到这里，说明时间不够了，就让出控制权给主线程，下次空闲时继续调用
+  requestIdleCallback(doWork);
+}
+```
+
+- ## [How to stop recursive loop with `requestAnimationFrame` - Stack Overflow](https://stackoverflow.com/questions/63964705/how-to-stop-recursive-loop-with-requestanimationframe)
+- First, it's not really recursive since it queues the callback on the event loop rather than calling the callback directly. So you don't have to worry about running out of memory on the call stack.
+  - To stop calling requestAnimationFrame, you simply don't call it. The question is, when do you want to stop calling it? If you are providing a utility function for someone else, you usually let them dictate when to "unsubscribe" or stop the updates.
+  - You can also skip binding by using Lexical scope like I've done here. Storing this in a variable self that I can lookup at any point.
+
+```JS
+recursiveLoopWithDelay(loopFn: any, delay: number) {
+  const self = this;
+  let stamp = Date.now();
+
+  function _loop() {
+    // If we aren't looping anymore, just exit the code.
+    // Don't requeue requestAnimationFrame
+    if (!self.isLoopOn) {
+      return;
+    }
+
+    if (Date.now() - stamp >= delay) {
+      loopFn();
+      stamp = Date.now();
+    }
+
+    window.requestAnimationFrame(_loop);
+  }
+
+  window.requestAnimationFrame(_loop);
+}
+```
 
 # [How Readable Are Your React Component's TypeScript Props Typing?](https://www.chakshunyu.com/blog/how-readable-are-your-react-component's-typescript-props-typing/)
 - This article will discuss and analyse three different ways of implementing the TypeScript implementation of a React component’s props typing.
@@ -287,7 +373,7 @@ function useDebounce(callback, delay) {
 - why don't we use `useState` instead? 
   - We don't want to use `useState` because we don't need to trigger a component re-render when we update to the latest value. 
   - In fact, in our case if we tried, we'd trigger an infinite loop (go ahead, try it).
-- because we don't need or want a re-render when we update the `callback` to the latest value, it means we also don't need to (and really shouldn't) include it in a dependency array for `useEffect`, `useCallback`, or in our case `useMemo`.
+- because we don't need or want a re-render when we update the `callback` to the latest value, it means we also don't need to (and really shouldn't) include it in a dependency array for `useEffect`,          `useCallback`, or in our case `useMemo`.
 - It's really important that you follow the `eslint-plugin-react-hooks/exhaustive-deps` rule and always include all dependencies. 
   - But you should skip the `current` value of a ref. 
   - This is because updating a ref doesn't trigger a re-render anyway, so React can't call the effect callback or update memoized values when the ref is updated. 
@@ -402,7 +488,7 @@ function useDebounce(callback, delay) {
     - `<div>{['First ', <span>&middot;</span>, ' Second']}</div>`
   - As a last resort, you always have the ability to insert raw HTML.
     - `<div dangerouslySetInnerHTML={{__html: 'First &middot; Second'}} />`
-- If you pass properties to native HTML elements that do not exist in the HTML specification, React will not render them. 
+- **If you pass properties to native HTML elements that do not exist in the HTML specification, React will not render them**. 
   - If you want to use a custom attribute, you should prefix it with `data-`.
 - Web Accessibility attributes starting with `aria-` will be rendered properly.
 
@@ -559,12 +645,7 @@ export default function ReactQueryDemo() {
     5. Should I handle server cache separately from app state?
     6. Should I avoid refetching recently fetched data?
     7. Should I prefetch data the user is likely to want?
-# [Fetching Data in React using React Async](https://css-tricks.com/fetching-data-in-react-using-react-async/)
-  - [Using data in React with the Fetch API and axios](https://css-tricks.com/using-data-in-react-with-the-fetch-api-and-axios/)
-# [Fetching Data in React using Hooks](https://blog.bitsrc.io/fetching-data-in-react-using-hooks-c6fdd71cb24a)
-
 # [Patterns for data fetching in React](https://blog.logrocket.com/patterns-for-data-fetching-in-react-981ced7e5c56/)
-
 - Data fetching strategies in React
   - Server-provided data
   - Components fetch their own data
@@ -590,22 +671,8 @@ export default function ReactQueryDemo() {
 - Custom Data Fetching Hook
 - Reducer Hook for Data Fetching
 - Abort Data Fetching in Effect Hook
-# [How to fetch data in React_201807](https://www.robinwieruch.de/react-fetching-data)
-- The article gives you a walkthrough on how to fetch data in React. 
-- There is no external state management solution, such as Redux or MobX, involved to store your fetched data. 
-- Instead you will use React's local state management.
-- ## Where to fetch in React's component tree?
-- ## How to fetch data in React?
-- ## What about loading spinner and error handling?
-- ## How to fetch data with Axios in React
-- ## How to test data fetching in React?
-- ## How to fetch data with Async/Await in React?
-- ## How to fetch data in Higher-Order Components?
-- ## How to fetch data in Render Props?
-- ## How to fetch data from a GraphQL API in React?
 
-- ref
-  - [Example: Using AJAX results to set local state](https://reactjs.org/docs/faq-ajax.html)
+- [How to fetch data in React_201807](https://www.robinwieruch.de/react-fetching-data)
 # [React-cache, time slicing, and fetching with a synchronous API_201901](https://www.freecodecamp.org/news/react-cache-time-slicing-and-fetching-with-a-synchronous-api-2a57dc9c2e6d/)
 - This article doesn’t aim at describing how to use some of the new features but rather at proving how they may have been built. Just for the sake of understanding what we are playing with.
 - This kind of modification has allowed React to split into three phases with their own advantages and particularities:
@@ -841,7 +908,6 @@ class FavoriteNumbers extends React.Component {
     return (
       <ul>
         {this.props.favoriteNumbers.map(number => (
-          // TADA! 
           // This is a function defined in the render method!
           // Hooks did not introduce this concept.
           // We've been doing this all along.

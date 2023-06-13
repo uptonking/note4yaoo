@@ -13,12 +13,21 @@ modified: 2020-07-14T11:54:44.711Z
 - 16.6-lazy loading with Suspense
 - 16.3-new context api
 - 16.0-fiber reconciliation
-
 # changelog
-
 - ref
   - https://github.com/facebook/react/blob/master/CHANGELOG.md       
   - https://reactjs.org/versions      
+
+## v17
+
+- [Event Pooling – React](https://legacy.reactjs.org/docs/legacy-event-pooling.html)
+  - React 17 removes the “event pooling” optimization from React. 
+  - It doesn’t improve performance in modern browsers and confuses even experienced React users
+  - With React 16 and earlier, you have to call `e.persist()` to properly use the event, or read the property you need earlier.
+  - Note that e.persist() is still available on the React event object, but now it doesn’t do anything.
+  - 从 React 17 开始，React DOM 已经将 e.persist() 设为 noop，仅在 React Native 中仍然保留 Event Pool 和 e.persist()
+
+## v16
 
 - 16.13.0-20200226
   - In Strict Development Mode, React calls lifecycle methods twice to flush out any possible unwanted side effects. 
@@ -157,7 +166,7 @@ modified: 2020-07-14T11:54:44.711Z
   - Support for Selection events., Composition events
   - Support for additional DOM properties, SVG properties
 - 0.4.0-20130717  
-  - Support for more DOM elements and attributes (e.g., `<canvas>` )
+  - Support for more DOM elements and attributes (e.g.,  `<canvas>` )
   - Support for the `key` prop
 - 0.3.0-20130529
   - initial public release

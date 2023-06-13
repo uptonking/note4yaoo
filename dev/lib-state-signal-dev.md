@@ -13,6 +13,12 @@ modified: 2023-04-07T04:09:30.491Z
 
 # blogs
 
+## [从 Signals 看响应式状态管理 - 掘金](https://juejin.cn/post/7148001367947214856)
+
+- signals解决了哪些问题？
+  - 传统useState的状态提升可能造成过度rerender，需要memo
+  - context内容混乱，订阅者下面的任何组件现在必须重新渲染
+
 
 
 ## [Signals vs. Observables, what's all the fuss about?](https://www.builder.io/blog/signals-vs-observables)
@@ -37,7 +43,6 @@ modified: 2023-04-07T04:09:30.491Z
   - Values have no reactivity.
   - Observable can express things that can't be expressed in Signals at the expense of more complex API.
   - Signals are a happy medium where API is simple and good enough for most things UI.
-
 
 ## [The Evolution of Signals in JavaScript - DEV Community](https://dev.to/this-is-learning/the-evolution-of-signals-in-javascript-8ob)
 

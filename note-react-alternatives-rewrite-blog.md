@@ -9,6 +9,11 @@ modified: 2021-09-20T20:13:21.764Z
 
 # guide
 
+- tips
+  - render-vdom > diff-vdom > commit-patch-dom
+  - Function/ReactComponent是一个react element factory
+
+- [Can Swyx recreate React Hooks and useState in under 30 min?_201907](https://www.youtube.com/watch?v=KJP1E-Y-xyo)
 # react-core
 
 ## [Build your own React in 90 lines of JavaScript](https://dev.to/ameerthehacker/build-your-own-react-in-90-lines-of-javascript-1je2)

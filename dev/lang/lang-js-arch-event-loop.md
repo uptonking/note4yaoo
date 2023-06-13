@@ -9,7 +9,6 @@ modified: 2021-08-30T06:52:33.680Z
 
 # guide
 
-
 - tips
   - [面试必问的异步顺序问题，用 Performance devtools 轻松理清 - 知乎](https://zhuanlan.zhihu.com/p/603691968)
 
@@ -156,6 +155,23 @@ function App() {
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [How does the event loop in the browser deal with the event queue, job queue, render queue at the same time? - Stack Overflow](https://stackoverflow.com/questions/65456485/how-does-the-event-loop-in-the-browser-deal-with-the-event-queue-job-queue-ren)
+- messages from other processes and previous tasks will queue new tasks in various task-sources, themselves ending in fewer task-queues. (This feeds the left loop of Jake's diagram).
+- at each iteration, the first step of the event-loop is to pick the first task from one of these task-queues (chosen as they wish, this allows task prioritization).
+- after this main task is completed (step 7 in the specs), the event loop will look at the microtask queue in what is called a microtask-checkpoint.
+- only for the Documents where the active display monitor did emit its SYNC pulse since the last iteration (once every 16.67ms on a 60Hz monitor), it **updates the rendering** (right loop in Jake's diagram, steps 11.6~11.15 in the specs).
+- During these steps it will execute a few tasks like firing UI events, updating animations and run the animation frame callbacks. Every time one of these algorithm invokes a callback, the user-agent has to perform a new microtask-checkpoint as per the clean up after running algorithm, so for instance every animation frame callback will get interleaved with such a checkpoint, and some of these algorithms even perform the microtask-checkpoint directly.
+
+- So this means that the **microtask-checkpoint is not just executed in a single point** in the event loop, **it is executed once after the main task, and many times after each callback execution in the update the rendering steps**.
+
+- The user-agent can not just delay the microtask, it has to execute it right after the task that queued it did complete, i.e, from the event loop perspective, microtasks are executed synchronously.
+
+- In the same way, the "render queue" is not a task-queue either, it has to run when the browser has a "rendering opportunity", it can't be part of the task prioritization mechanism 
+
 - ## [When will requestAnimationFrame be executed? - Stack Overflow](https://stackoverflow.com/questions/43050448/when-will-requestanimationframe-be-executed)
 - The spec now says when this happens in the Event Loop Processing Model section. The shortened version with a lot of detail removed is:
 - Do the oldest (macro) task
@@ -166,6 +182,7 @@ function App() {
   - Render
 
 - ## [Does requestAnimationFrame run between microstasks? - Stack Overflow](https://stackoverflow.com/questions/73477611/does-requestanimationframe-run-between-microstasks)
+- microtask-queue is not a task queue.
 - there is a priority system in the event-loop, the first step of the event-loop is to choose a task among all the possible task-queues. That's where the priority is set. We'll even soon be able to have control over it in the near future. 
   - However rAF has a special place in the event loop, it's not a task per se and thus doesn't participate in the prioritization system, it will get called as part of the event loop processing when the monitor sends its VSync signal. So it will slip in even a flow of highest priority tasks.
   - However, microtask aren't tasks, and the microtask queue doesn't work like a task queue. It will get emptied entirely before it comes back to the event loop, and **new microtask queued during the microtask-checkpoint will also get executed in that same checkpoint**. (To be noted, after each rAF callbacks you have a microtask-checkpoint, so you could even rewrite below example with one rAF callback firing before the blocking loop, and another firing after, both would participate in the same "rendering frame"). 

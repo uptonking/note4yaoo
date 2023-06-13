@@ -9,6 +9,9 @@ modified: 2021-09-20T20:12:38.499Z
 
 # guide
 
+- 难点
+  - ❓ setState只触发子组件的渲染
+
 - react alternative/like/mini/clone
   - js: preact, didact, fre.v1, luy, mini-react
   - ts: inferno, nerv
@@ -19,16 +22,24 @@ modified: 2021-09-20T20:12:38.499Z
 - https://github.com/pomber/didact
   - /3.8kStar/MIT/202010/js
   - [A DIY guide to build your own React](https://pomb.us/build-your-own-react/)
+- https://github.com/davidbarone/didact
+  - The original Didact source code has been slightly modified 
+  - Inclusion of addition hooks
 - https://github.com/manasb-uoe/didact
   - Typed version of didact
   - this repository refactors the code into separate files of TypeScript code and adds more features: useEffect, userMemo, useRef
 # react-alternatives
+- https://github.com/LuSuguru/fake-react /75Star/202007/ts
+  - 基于React 16.8.6 的源码并使用 TypeScript 仿写的 React, 实现了90%的功能
+  - 还提供了源码解析系列文档，有28个文档
+
 - https://github.com/BetaSu/just-react
   - https://react.iamkasong.com/
   - 卡颂 《React技术揭秘》 一本自顶向下的React源码分析书(不是又一个手撸react)
   - 本书的宗旨是打造一本严谨、易懂的React源码分析教程，分为理念篇、架构篇、实现篇
   - 本书在React版本更新后会及时补充，当前版本v17.0.0-alpha
-- https://github.com/BetaSu/react-on-the-way
+- https://github.com/BetaSu/big-react /文章丰富但功能少，useState触发全量render
+  - https://github.com/BetaSu/react-on-the-way
   - /364Star/202007/js
   - 基于V16.13.1，从0实现React
   - v1 Render-Commit整体架构体系, HostComponent的首屏渲染
@@ -37,6 +48,7 @@ modified: 2021-09-20T20:12:38.499Z
   - v4 实现了React Diff算法，可以更新多个兄弟子节点了
   - v5 实现useEffect hook首屏及再次渲染的完整逻辑
   - v6 之前的版本中，我们都是同步执行render流程；为产生的update赋予一个优先级，高优先级的update会优先进入render流程。
+  - https://github.com/BetaSu/simple-virtual-DOM
 
 - million /5.4kStar/MIT/202211/ts
   - https://github.com/aidenybai/million
@@ -52,6 +64,8 @@ modified: 2021-09-20T20:12:38.499Z
 - https://github.com/preactjs/preact
   - /27.8kStar/MIT/202108/js
   - Fast 3kB React alternative with the same modern API. Components & Virtual DOM.
+- https://github.com/matrix-marketing/preact
+  - [Preact Async Rendering: Solution to Initial Render Blocking - DEV Community](https://dev.to/cagdas_ucar/preact-async-rendering-51p2)
 
 - API
   - Not all the React features are present in Preact; 
@@ -102,12 +116,13 @@ modified: 2021-09-20T20:12:38.499Z
   - The setState works synchronously. 
   - To use any of the React components, you first need to write and use a React component.
 # react-src-code
-- https://github.com/LuSuguru/fake-react
-  - /75Star/202007/ts
-  - 基于React 16.8.6 的源码并使用 TypeScript 仿写的 React, 实现了90%的功能
-  - 还提供了源码解析系列文档，有28个文档
-- https://github.com/AttackXiaoJinJin/reactExplain
+- https://github.com/AttackXiaoJinJin/reactExplain /js
   - React源码解析16.8.6，还发布了掘金系列文章  /js
+
+- https://github.com/bubucuo/mini-react /ts
+  - Mini React是我为了React课程而写的项目
+  - https://github.com/bubucuo/DebugReact
+    - 本项目用于调试源码，即修改配置使得项目中引用的 react 包来自 src/react
 
 - react核心源码解析__全栈潇晨
   - [react源码解析19. 手写迷你版react](https://zhuanlan.zhihu.com/p/383433662)
@@ -132,6 +147,8 @@ modified: 2021-09-20T20:12:38.499Z
     - hooks 已经支持了
   - [What's the tradeoff?](https://github.com/NervJS/nerv/issues/10)
     - for Nerv, compatible with React is our main goal, by doing that, we can sacrifice performance and size.
+    - Is there any react's feature you don't and won't support definitely?
+      - React Fiber and React Native. I afraid we will stick with stack reconciler instead of fiber. 
 
 - https://github.com/Ajaxy/teact
   - super-performant web framework with zero dependencies implementing React paradigm.
@@ -172,12 +189,12 @@ modified: 2021-09-20T20:12:38.499Z
   - fake react
 - https://github.com/djwxfdt/react-source-doc
   - 用typescript重写react源码，逐行写上阅读理解，支持直接调试。
-  - 任务调度（scheduler）	已完成
-  - 协调（react-reconciler）	进行中
+  - 任务调度（scheduler）已完成
+  - 协调（react-reconciler）进行中
 
 - js实现
 
-- https://github.com/alan-oliv/mini-react
+- https://github.com/alan-oliv/mini-react /js
   - a library built to basically study fiber algorithm and implementation
   - mini-react, mini-react-dom, mini-react-reconciler
 - https://github.com/djalbat/reaction

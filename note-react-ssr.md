@@ -114,6 +114,7 @@ modified: 2023-05-08T14:48:55.886Z
 
 ## more-ssr
 
+- [现代前端框架的渲染模式 - 掘金](https://juejin.cn/post/7241027834490437669)
 # blogs-seo
 
 ## [浅谈：SPA 及其 SEO 优化方案](https://github.com/jtwang7/React-Note/issues/36)

@@ -216,7 +216,7 @@ modified: 2020-07-14T11:03:53.196Z
   - [Reactive/Store-like primitive](https://github.com/preactjs/signals/issues/4)
 - https://github.com/luisherranz/deepsignal
   - Preact signals, but using regular JavaScript objects
-  - DeepSignal works by wrapping the object with a Proxy that intercepts all property accesses and returns the signal value by default.
+  - DeepSignal works by wrapping the object with a `Proxy` that intercepts all property accesses and returns the signal value by default.
   - This allows you to easily create a deep object that can be observed for changes, while still being able to mutate the object normally.
   - Nested objects and arrays are also converted to deep signal objects/arrays, allowing you to create fully reactive data structures.
   - https://github.com/EthanStandel/deepsignal
