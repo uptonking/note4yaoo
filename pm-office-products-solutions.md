@@ -215,6 +215,14 @@ modified: 2021-07-11T08:31:00.660Z
 ## 飞书文档
 
 - 从 etherpad 迁移到 block-editor
+
+## [Google Sheets vs. Excel: Complete Overview](https://sada.com/insights/blog/google-sheets-for-microsoft-excel-users-5-key-differences/)
+
+1. Google Sheets is entirely cloud-based
+2. Google Sheets automatically saves all files to Google Drive
+3. Google Sheets makes collaboration simple
+4. Easily view and revert back to previous versions of Sheets spreadsheets
+5. Google Sheets seamlessly integrates with AppSheet
 # new-office-products
 - [黑客说，类twitter/知乎的社交与内容平台](https://hackertalk.net/)
 # office-online-products

@@ -65,7 +65,8 @@ modified: 2022-10-22T18:47:16.228Z
 - The main thing that we use, by way of example, that wouldn’t work without some kind of transaction mapping is indeed decorations; the ability to map positions transaction-wise is what allows us to do efficient transaction-wise computations only when needed (e.g. only recalculating a data structure for the parts of the document that have changed). 
   - If the tradeoff here is how expensive it is to compute the diffs that happen as part of a Yjs update vs. how full resolution the diffs are, for my part, I’d be happy with marginally lower resolution diffs 
 
-- Comparing structure-sharing trees should actually be doable really efficiently (since you can skip all the shared nodes right away). 
+- >　From my personal experience computing “minimal diffs” is a bit expensive
+  - **Comparing structure-sharing trees should actually be doable really efficiently** (since you can skip all the shared nodes right away). 
   - (There was an implementation of this in a very early ProseMirror system that relied on it for its redrawing algorithm, and it wasn’t very complicated.)
 
 - what I think is the crucial feature is that it works serverless. No central instance you need to trust and end-to-end encryption is also doable.

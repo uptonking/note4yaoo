@@ -1,11 +1,11 @@
 ---
-title: dev-ing-pieces-xp
-tags: [dev, xp]
+title: dev-ing-log-debug
+tags: [debug, dev, xp]
 created: 2021-04-28T20:54:34.301Z
-modified: 2021-04-28T20:54:58.126Z
+modified: 2023-06-14T00:53:15.226Z
 ---
 
-# dev-ing-pieces-xp
+# dev-ing-log-debug
 
 # dev-2023
 
@@ -26,6 +26,7 @@ modified: 2021-04-28T20:54:58.126Z
 - 尝试ts-node的替代品tsm，也能够解决问题
 
 - 调试时复现问题，问题出在 `export * from './index.d';`，注释即可
+  - index.d.ts文件中包含部分函数声明
 
 ## webpack circular dependencies 打包失败
 

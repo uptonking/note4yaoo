@@ -34,6 +34,9 @@ modified: 2021-05-19T08:32:28.120Z
   - The export pdf feature is available now, see feature/pdf
   - [一个开源可分页的富文本编辑器_202212](https://zhuanlan.zhihu.com/p/592004147)
 
+- https://github.com/karpov-kir/canvas-block-editor /ts
+  - A block based canvas text editor.
+
 - primrose /506Star/MIT/202011/js
   - https://github.com/capnmidnight/Primrose
   - https://www.primrosevr.com/
@@ -56,7 +59,7 @@ modified: 2021-05-19T08:32:28.120Z
 - https://github.com/cfu288/canvas-text-editor
   - https://cfu288.github.io/canvas-text-editor/
   - A proof of concept text editor implemented with HTML5 Canvas
-  - Currently this editor uses an array of Gap Buffers to represent and manipulate the file data. 
+  - Currently this editor uses an array of **Gap Buffer**s to represent and manipulate the file data. 
   - Internal benchmarks show it is more performant than a javascript simple array or another implementation of Gap Buffer using javascript Typed Arrays.
 
 - https://github.com/makepad/makepad /rust

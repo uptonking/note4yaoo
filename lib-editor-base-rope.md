@@ -57,7 +57,7 @@ modified: 2023-01-12T11:33:28.084Z
   - 提供了crdt测试
     - [bench npm jumprope](https://gist.github.com/josephg/bcb2e74e52dc9c4651249fdffc48d1cf)
   - This code is based on an older skiplist based C rope library I wrote several years ago
-    - Instead of simply being implemented as a skiplist, jumprope is a skiplist where each leaf node contains a Gap Buffer.
+    - Instead of simply being implemented as a skiplist, jumprope is a skiplist where each leaf node contains a **Gap Buffer**.
 
 - https://github.com/cessen/ropey /rust
   - a utf8 text rope for Rust, designed to be the backing text-buffer for applications such as text editors
@@ -72,7 +72,6 @@ modified: 2023-01-12T11:33:28.084Z
   - AnyRope is an arbitrary data type rope for Rust, designed for similar operations that a rope would do, but targeted at data types that are not text.
   - [AnyRope, a rope for anything! : rust](https://www.reddit.com/r/rust/comments/11qkm4i/anyrope_a_rope_for_anything/)
     - this rope is a heavily modified fork of Ropey
-
 
 - https://github.com/lapce/xi-editor/tree/master/rust/rope
   - A generic rope data structure built on top of B-Trees
@@ -117,6 +116,9 @@ modified: 2023-01-12T11:33:28.084Z
   - The aim of this library is to implement a (immutable) "rope" data structure based on the one used in xi-editor
   - Xi's rope type is a CRDT (based on WOOT) permitting decentralized collaborative editing without vector clocks.
 # blog
+
+## more-blog
+
 - [Rope --高效字符串处理数据结构](https://blog.csdn.net/ai_xiangjuan/article/details/79246289)
 
 - [绳索数据结构（字符串快速拼接）](https://blog.csdn.net/sinat_36246371/article/details/72719174)

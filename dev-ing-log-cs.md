@@ -1,11 +1,11 @@
 ---
-title: dev-ing-pieces-cs
+title: dev-ing-log-cs
 tags: [cs, dev]
 created: 2020-03-28T19:35:12.408Z
-modified: 2021-03-29T19:29:56.558Z
+modified: 2023-06-14T00:52:40.274Z
 ---
 
-# dev-ing-pieces-cs
+# dev-ing-log-cs
 
 # pieces
 

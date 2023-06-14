@@ -60,6 +60,11 @@ modified: 2023-01-23T19:27:46.948Z
 
 - https://github.com/gotify/server /go
   - A simple server for sending and receiving messages in real-time per WebSocket. (Includes a sleek web-ui)
+# WebRTC
+- https://github.com/feross/simple-peer /js
+  - Simple WebRTC video, voice, and data channels
+  - works in node and the browser
+  - supports data channel for text, binary data, node.js duplex stream interface
 # more
 - https://github.com/well-known-components/template-server
   - Template Node.js server using well-known-components library.

@@ -80,6 +80,8 @@ modified: 2022-06-03T21:34:54.893Z
   - 多编辑器实例的缺点
     - 自定义选区的同步和更新变得复杂
     - 跨block的操作变得复杂
+  - https://github.com/zzj3720/blocksvite
+    - simple Block editor like BlockSuite, based on Vue and @blocksuite/store
 - https://github.com/JhinBoard/jhin
   - Next-Gen Collaborative Knowledge Base, A free replacement for Notion & Miro
 

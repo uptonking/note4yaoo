@@ -66,6 +66,17 @@ modified: 2023-02-05T19:03:12.723Z
   - https://github.com/wangfupeng1988/slate-dom-view /ts/💡
     - slate.js for DOM, without React.
 
+- rich-block-editor /2Star/ISC/202306/ts
+  - https://github.com/rgbui/rich
+  - https://shy.live/
+  - 诗云富文本编辑器
+  - 依赖wangeditor、codemirror6、katex、marked、remark-gfm、mobx-react、prismjs、react-loadable、react-markdown
+  - https://github.com/rgbui/shy
+    - 诗云应用程序，包括web、mobile
+    - 依赖dexie、mobx、ethers(Ethereum library and wallet implementation)
+  - https://github.com/rgbui/api
+    - 诗云api
+
 - prezly-slate /31Star/MIT/202208/ts/提交多
   - https://github.com/prezly/slate 
   - 依赖`plate`的工具方法而不依赖编辑器、popperjs2、@prezly/sdk、react-bootstrap
@@ -325,6 +336,16 @@ modified: 2023-02-05T19:03:12.723Z
   - Modern, lightweight & modulable page builder
   - @poool/oak-addon-richtext-field: WYSIWYG text field using Slate
   - @poool/oak-addon-richtext-field-prosemirror: WYSIWYG text field using ProseMirror
+
+- dmeditor /14Star/GPL/202306/ts
+  - https://github.com/dmeditor/dmeditor
+  - https://dmeditor.io/
+  - https://demo.dmeditor.io/editor?d=demo
+  - a block-based visual editor, written in React.
+  - 不支持跨block选择部分文字
+  - 可切换设备尺寸查看效果
+  - 依赖mui、react-bootstrap、slate
+  - https://github.com/dmeditor/dmeditor-sample
 
 - https://github.com/uimix-editor/uimix /类似figma的设计工具
   - UIMix is a WYSIWYG editor for React components that offers a Figma or Framer-like experience for creating and maintaining React components.
@@ -673,6 +694,14 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/blockprotocol/blockprotocol
   - The open Block Protocol
 
+- https://github.com/streamich/json-joy/blob/master/src/json-cli/docs/json-patch-test.md
+  - 支持slate split、merge、extend
+
+## render-only
+
+- tips
+  - 甚至可参考notion-render
+
 - https://github.com/rockettomatooo/slate-react-presentation /js
   - a small package that lets you render a slate.js document without the overhead of the actual editor.
 
@@ -692,9 +721,6 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/arrizalamin/slate-fast-renderer /201911/js
   - small renderer for read-only slate.js document for web and react-native
-
-- https://github.com/streamich/json-joy/blob/master/src/json-cli/docs/json-patch-test.md
-  - 支持slate split、merge、extend
 # slate-apps
 - https://github.com/Kffhi/flomo-react /ts
   - https://www.kffhi.com/flomo/

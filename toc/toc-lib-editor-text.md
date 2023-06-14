@@ -16,6 +16,11 @@ modified: 2021-07-27T15:12:39.959Z
   - https://jaredreich.com/pell/
   - smallest WYSIWYG text editor with no dependencies
 
+- https://github.com/victrme/pocket-editor /ts/NoDeps/块级选区
+  - https://pocketeditor.vercel.app/
+  - fast block style wysiwyg editor that returns markdown
+  - Reliable markdown output
+
 - modern-editor-core /3Star/MIT/202210/ts/代码少
   - https://github.com/qq15725/modern-editor-core
   - A modern rich text editor core.

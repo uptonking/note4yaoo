@@ -53,6 +53,9 @@ modified: 2022-10-04T23:32:30.824Z
 - https://github.com/newsdev/prosemirror-change-tracking-prototype /201609/js
   - ProseMirror change tracking proof-of-concept
 
+- https://github.com/dmonad/Yed /js
+  - A collaborative editor built with ProseMirror - demo
+
 - https://github.com/dlemrry/editor
   - real time collaborative documents using web socket
   - Web application for editing texteditor and painting canvas in real-time collaboration.

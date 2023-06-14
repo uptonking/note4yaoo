@@ -1,11 +1,11 @@
 ---
-title: dev-ing-pieces-frontend
+title: dev-ing-log-frontend
 tags: [dev, frontend]
 created: 2019-06-09T15:54:12.063Z
-modified: 2021-03-29T19:30:00.059Z
+modified: 2023-06-14T00:53:02.797Z
 ---
 
-# dev-ing-pieces-frontend
+# dev-ing-log-frontend
 
 > about web development
 

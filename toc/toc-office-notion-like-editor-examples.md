@@ -58,8 +58,6 @@ modified: 2022-06-03T22:07:23.308Z
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，但list item不支持拖入拖出
 
-
-
 - https://github.com/kiaksarg/edu-editor  /slate
   - https://edu-editor.netlify.app/
   - a basic medium/notion like rich text editor based on Slate.js framework
@@ -286,7 +284,7 @@ modified: 2022-06-03T22:07:23.308Z
 - https://github.com/Lalit2005/pagely /inactive
   - Launch beautiful websites straight from your Notion workspace or from your GitHub repo
 
-- https://github.com/Dashibase/lotion /GPLv3
+- https://github.com/Dashibase/lotion /GPLv3/vue/ts
   - An open-source Notion UI built with Vue 3
 # more-notion-like
 - https://github.com/tzhangchi/Travel

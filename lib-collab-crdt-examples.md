@@ -13,12 +13,16 @@ modified: 2022-04-05T10:08:25.947Z
   - **extensible-data-structure**
   - undo/redo
   - sync protocol
+  - 实时协作
+  - 离线合并
 
 - ref
   - https://github.com/alangibson/awesome-crdt
   - [Alternatives · ElectricSQL](https://electric-sql.com/docs/reference/alternatives)
   - [CRDTs for Non Academics - YouTube](https://www.youtube.com/watch?v=vBU70EjwGfw)
   - https://github.com/doodlewind/crdt-and-local-first
+
+- 能不能将协作的粒度从字符提升为句子
 # popular
 - https://github.com/pubuzhixing8/awesome-collaboration
   - Collaborative editing of technical resources, article translation
@@ -627,11 +631,22 @@ modified: 2022-04-05T10:08:25.947Z
     - The rest of this post introduces a basic UniquelyDenseTotalOrder that I especially like. 
     - I have not seen it in the existing literature, although it is similar enough to Logoot, Treedoc, and others that I wouldn’t be surprised if it’s already known. For now, I call it Plain Tree.
 
-- https://github.com/atom-editor/teletype-crdt
+- https://github.com/atom-editor/teletype-crdt /js
   - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom
+  - [Atom-teletype代码协同编辑原理详解_202011](https://mp.weixin.qq.com/s?src=11&timestamp=1686732708&ver=4589&signature=8ifZN03y4mobAX0Mn0CnG1Pv3oT5RHfMds3ZQX4IbFMeBLv6di-WBPRSMDXf-4Y6DW5u6nzCQGw3KZuKTap-bdOPzO9bZQpRKQWI6uo9RAdEmPiihZ2be3lwelV-LT4V&new=1)
+    - 本文主要介绍 TELETYPE-CRDT中如何设计 WOOT算法来保证文本类型数据的最终一致性，并使用复合的数据结构（称之为 IDTree）来优化代码的运行效率。
+  - [Resolve conflicts during remote insertion integration in O(log n)_201711](https://github.com/atom/teletype-crdt/pull/4)
+    - The previous approach was entirely based on the algorithm proposed by Yu in 2014, which was a revisitation of the original WOOT algorithm discovered in 2006.
   - https://github.com/atom/teletype-crdt /js/archived
     - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom.
   - https://github.com/atom/teletype
+
+- https://github.com/josephg/simple-crdt-text /ts
+  - This implements automerge's underlying algorithm (RGA)
+  - The goal is to have some simple code that I can use to clarify semantics and as a basis for fuzz testing correctness of a faster implementation.
+  - [automerge-and-yjs-minimal.ts](https://gist.github.com/josephg/26ade72d5ced0470485c734fb1ebb6ca)
+  - [yjs-minimal.ts](https://gist.github.com/josephg/dcb1bce2ceb0f0b50ffcac0245a55907)
+  - [yjs_testcase.ts](https://gist.github.com/josephg/88c006724435a61afaec5ff3f1bacd87)
 
 - https://github.com/kindone/text-versioncontrol
   - provides version and concurrency control for text editing 

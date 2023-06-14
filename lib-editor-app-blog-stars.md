@@ -67,8 +67,8 @@ modified: 2022-08-21T10:11:43.095Z
 
 - With CKEditor 5 we are planning to conclude this process by letting the browser insert text only, but with CKEditor’s control.
 
-
 ## [Text Editor: Data Structures | Hacker News_201710](https://news.ycombinator.com/item?id=15381886)
+
 - in my editor (CodeMirror) I'm also using a rope/tree style representation, because it's pleasantly general and easy to reason about
   - [CodeMirror's document representation_201209](https://marijnhaverbeke.nl/blog/codemirror-line-tree.html)
 
@@ -135,11 +135,11 @@ modified: 2022-08-21T10:11:43.095Z
   - The basic editing commands, including indentation and paren matching, are more simply done as synchronous operations, and I think avoiding that complexity is key.
 # blogs-dev
 - [编辑器背后的数据结构](https://dontpanic.blog/data-structures-under-editors/)
-  - 部分Emacs使用了Gap Buffer，包括古老的 Emacs on TECO、现代的GNU/Emacs及其前辈Gosling Emacs。
+  - 部分Emacs使用了**Gap Buffer**，包括古老的 Emacs on TECO、现代的GNU/Emacs及其前辈Gosling Emacs。
   - Scintilla (即包括Code:: Blocks在内的很多IDE/编辑器使用的代码编辑控件) 也使用了Gap Buffer
-  - Emacs进入由Lisp实现的时代后，一些Emacs版本使用了LinkedLine。
+  - Emacs进入由Lisp实现的时代后，一些Emacs版本使用了**LinkedLine**。
   - Vim使用的是一种基于行的数据结构，但行与行之间不是简单地使用链表连接，而是用一种树结构进行管理。
-  - KDE的Okteta 16进制编辑器使用了Piece Table Buffer
+  - KDE的Okteta 16进制编辑器使用了**Piece Table** Buffer
 
 - [《从零开始, 开发一个 Web Office 套件》系列博客目录_赵康_202202](https://www.cnblogs.com/forzhaokang/p/15907371.html)
   - https://github.com/zhaokang555/canvas-text-editor
@@ -159,4 +159,3 @@ modified: 2022-08-21T10:11:43.095Z
 - [自研一个word应用，需要哪些基本功能](https://juejin.cn/post/6922682336412696584)
 
 - [基于Clipboard的复制粘贴实现](https://juejin.cn/post/7118899649687060487)
-

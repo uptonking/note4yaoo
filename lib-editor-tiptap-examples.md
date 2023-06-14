@@ -11,6 +11,7 @@ modified: 2023-02-05T19:03:27.730Z
 
 - resources
   - https://github.com/ueberdosis/awesome-tiptap
+  - https://tiptap.dev/experiments
   - [提供了类似块编辑器的drag示例](https://tiptap.dev/guide/node-views/examples)
 # popular
 - BlockNote /14Star/MPL.v2/202208/ts
@@ -47,6 +48,11 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/chenyuncai/tiptap-track-change-demo /vue
   - https://track-change.onrender.com/
   - [Implement new track changes in current document, just lice office review mode](https://discuss.prosemirror.net/t/implement-new-track-changes-in-current-document-just-lice-office-review-mode/4890)
+
+- https://github.com/johnpuddephatt/gutentap
+  - https://gutentap.letsdance.agency/
+  - Tiptap based block editor
+  - a UI for Tiptap, inspired by the Wordpress editor, Gutenberg. It uses a static floating toolbar as well as slash commands for inserting new blocks.
 
 - better-virgool /9Star/MIT/NALic/202208/ts/tiptap
   - https://github.com/ahhshm/better-virgool

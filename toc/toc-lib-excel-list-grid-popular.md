@@ -12,7 +12,7 @@ modified: 2022-08-21T10:02:27.788Z
 - requirements
   - group/aggregate/**pivot**: tanstack-table
   - **editable operations support**: logux/ospreadsheet/slate/typewriter
-  - _undo/redo+batch-undo_: 存反向op和存值2种方案
+  - _undo/redo+batch-undo_: 存反向op和存值2种方案，存值本身也是反向op
   - _collaborative optional_: 作为插件
   - _transaction_
   - headless utils: state/actions/props/api : autocomplete/tanstack，state和a11y不同粒度
@@ -25,15 +25,34 @@ modified: 2022-08-21T10:02:27.788Z
     - 单元格图片懒加载
   - 接入现有组件库
 
+- collaborative-editing
+  - 数据模型考虑 持久化(一般db-text/json/blob)、展示(json)、协作(llw/map/sequence)、衍生计算(如聚合)
+    - 以哪种数据作为single source of truth
+    - 一般以内存中crdt形式的数据结构作为唯一数据源
+  - 实时协作、冲突处理
+  - 离线合并
+
 - plugins-ready
   - plugin支持视图层的优点包括更灵活的渲染(decorations)、场景更广的commands，参考prosemirror
+    - 明确区分state-only-plugin和with-view-plugin，纯state相关的plugin可跨框架使用
   - prosemirror Plugin class
   - slate hoc
   - tanstack-table hoc
   - luckysheet
   - ospreadsheet
-  - sleekgrid
-  - autocomplete
+  - sleekgrid: plugin.init(thisGrid)
+  - autocomplete: state层的hooks
+
+- view-layer 进一步优化需要深入前端框架如react
+  - 避免每次全量render和diff的方案
+    - 使用double buffer，参考react-fiber/lexical
+    - immer使用copy-on-write和structural-sharing
+    - prosemirror的node使用structural-sharing
+  - 提高性能方案，异步渲染
+    - react reconciler废弃递归，使用fiber链表
+    - 腾讯文档智能表格使用异步分片计算
+  - block/cell-based render
+    - 参考 notion-render/editor-render
 
 - collab-如何在表中间位置插入行或列
   - 最简单和常见的数据结构是crdt map，可尝试基于`无序map+有序array`实现有序arrayMap
@@ -679,7 +698,6 @@ modified: 2022-08-21T10:02:27.788Z
   - 自身依赖react hooks，示例依赖@reduxjs/toolkit、react-router、material-ui，示例效果好
   - 多用于布局
   - This component is for building grid where elements can be expanded and collapsed.
-  - It's just like accordion. And if you set up this grid one column you get same accordion effect.
 
 - smart-grid /3Star/NALic/202006/ts/NoDeps
   - https://github.com/mukuljainx/smart-grid
@@ -1123,6 +1141,10 @@ modified: 2022-08-21T10:02:27.788Z
   - jsreport is a reporting server letting developers define reports using javascript templating engines like handlebars. 
   - It supports various report output formats like html, pdf, excel, docx, and others. 
   - It also includes advanced reporting features like user management, REST API, scheduling, designer, or sending emails.
+
+- https://github.com/tjbearse/sheet-block-editor /js
+  - https://tjbearse.github.io/sheet-block-editor/
+  - A block based visual editor for Google Sheets
 # server
 - https://github.com/forensic-architecture/datasheet-server /202105/js/inactive
   - Turn spreadsheet data into a structured, dynamic API.

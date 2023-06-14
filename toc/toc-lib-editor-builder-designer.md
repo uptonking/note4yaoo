@@ -20,7 +20,7 @@ modified: 2020-11-17T13:38:19.107Z
   - studio's surface is built on react
   - https://github.com/gridaco/design-server
   - https://github.com/gridaco/nothing
-    - everything drawable graphics engine. Built for Grida - 
+    - everything drawable graphics engine. Built for Grida
     - Open source UI graphics tool
   - https://github.com/gridaco/code
     - Grida's Design to code core library. 
@@ -83,7 +83,7 @@ modified: 2020-11-17T13:38:19.107Z
   - https://openchakra.app/
   - 画布编辑区全部基于dom实现
   - visual editor and code generator for React using Chakra UI
-- VvvebJs /Apache2/3.3kStar/202007
+- VvvebJs /Apache2/3.3kStar/202306/js
   - https://github.com/givanz/VvvebJs
   - http://www.vvveb.com/vvvebjs/editor.html
   - Drag and drop website builder javascript library.
@@ -101,6 +101,11 @@ modified: 2020-11-17T13:38:19.107Z
   - 画布编辑区全部基于dom实现
   - content editor for the browser - based on React and Redux and written in TypeScript. WYSIWYG on steroids.
   - LGPLv3 to MIT(202010)
+
+- https://github.com/sitebud
+  - https://sitebudcms.com/documentation
+  - https://github.com/ipselon/sitebud-libs
+  - SiteBud CMS, a content management system tailored for both content creators and developers, leverages the power of NextJS and seamless GitHub integration.
 - react-ui-builder-editor /GPL/12Star/202006
   - https://github.com/react-ui-builder/react-ui-builder-editor
   - An online editor of the Interactive Platform for React Component Libraries
@@ -113,12 +118,22 @@ modified: 2020-11-17T13:38:19.107Z
 - UI-Builder /Apache2/19Star/201901
   - https://github.com/iwangbowen/UI-Builder
   - 基于 bootstrap 4和jquery实现
+
 - react-design-editor /556Star/MIT/202009
   - https://github.com/salgum1114/react-design-editor
   - https://salgum1114.github.io/react-design-editor/
   - 画布区是canvas，其余地方是dom，直接导出图片或json
   - developed direct manipulation of editable design tools like Powerpoint
   - We've developed it with reactjs, ant.design, fabricjs
+- react-designer /1.7kStar/MIT/201906/js
+  - https://github.com/react-designer/react-designer
+  - http://react-designer.github.io/react-designer/
+  - Editable vector graphics in your react apps
+  - 形状基于svg
+  - https://github.com/fritz-c/react-shape-editor
+    - /49Star/MIT/202002
+    - Simple shape editor component with React and SVG
+
 - antd-visual-editor /443SStar/201904
   - https://github.com/yu-tou/antd-visual-editor
   - https://yu-tou.github.io/antd-visual-editor/index.html
@@ -182,14 +197,14 @@ modified: 2020-11-17T13:38:19.107Z
   - http://fex-team.github.io/amis-editor
   - 可视化编辑器在线工具 
   - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
- 
-
 # h5-editor
 - h5-dooring /7kStar/GPLv3/202211/ts
   - https://github.com/MrXujiang/h5-Dooring
   - http://h5.dooring.cn/
   - https://github.com/H5-Dooring/dooringx
     - 快速高效搭建可视化拖拽平台
+  - https://github.com/MrXujiang/pc-Dooring
+    - 轻松搭建PC页面, Web网站, PC端网站. lowcode
   - H5可视化页面配置解决方案
   - 技术栈以react和typescript为主， 后台采用nodejs开发, 正在探索h5-lowcode解决方案
   - editor依赖antd4、braft-editor、react-dnd
@@ -207,14 +222,6 @@ modified: 2020-11-17T13:38:19.107Z
   - 鲁班H5是基于Vue2.0开发、通过拖拽快速生成页面的平台
   - 类似 易企秀、Maka、百度 H5 等平台
 
-- react-designer /1.7kStar/MIT/201906/js
-  - https://github.com/react-designer/react-designer
-  - http://react-designer.github.io/react-designer/
-  - Editable vector graphics in your react apps
-  - 形状基于svg
-  - https://github.com/fritz-c/react-shape-editor
-    - /49Star/MIT/202002
-    - Simple shape editor component with React and SVG
 - https://github.com/lzuntalented/lz-h5-edit
   - /289Star/NALic/202009
   - http://show.lzuntalented.cn/

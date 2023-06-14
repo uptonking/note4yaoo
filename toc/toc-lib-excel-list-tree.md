@@ -366,7 +366,7 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/springload/react-accessible-accordion
   - https://springload.github.io/react-accessible-accordion
   - Accessible Accordion component for React
-- https://github.com/glennflanagan/react-collapsible
+- https://github.com/glennflanagan/react-collapsible /js
   - React component to wrap content in Collapsible element with trigger to open and close.
   - It's like an accordion, but where any number of sections can be open at the same time.
   - Collapsible can receive any HTML elements or React component as it's children. Collapsible will wrap the contents, as well as generate a trigger element which will control showing and hiding.

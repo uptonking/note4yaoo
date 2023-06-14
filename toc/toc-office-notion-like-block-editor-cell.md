@@ -89,7 +89,30 @@ modified: 2022-08-14T16:26:48.558Z
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，但不支持拖入拖出list item，蓝色拖拽指示器已实现
   - The Block Editor project for WordPress and beyond
+  - 依赖react
   - 第三方的插件特别丰富
+  - https://github.com/gambitph/Stackable
+    - a beautiful collection of ready-to-use blocks for Gutenberg
+  - https://github.com/CakeWP/block-options /js
+    - https://editorskit.com/
+    - EditorsKit provides set of page building block options and tools for the new WordPress Gutenberg editor.
+
+- dmeditor /14Star/GPL/202306/ts
+  - https://github.com/dmeditor/dmeditor
+  - https://dmeditor.io/
+  - https://demo.dmeditor.io/editor?d=demo
+  - a block-based visual editor, written in React.
+  - 不支持跨block选择部分文字
+  - 可切换设备尺寸查看效果
+  - 依赖mui、react-bootstrap、slate
+  - https://github.com/dmeditor/dmeditor-sample
+
+- https://github.com/Blocks-Editor/react-blocks-editor /ts
+  - Embed the Blocks Editor anywhere using a React component.
+  - 偏向计算函数
+  - https://github.com/Blocks-Editor/blocks /js
+    - https://blocks-editor.github.io/blocks 
+    - An online drag-and-drop smart contract builder.
 
 - smartblock /249Star/MIT/202003/ts/inactive/prosemirror
   - https://github.com/appleple/smartblock
@@ -98,6 +121,14 @@ modified: 2022-08-14T16:26:48.558Z
   - 支持跨block选择部分文字
   - 不支持拖拽block修改顺序，但有上下箭头按钮
   - intuitive block based wysiwyg editor built with React and ProseMirror
+
+
+- https://github.com/karpov-kir/canvas-block-editor /ts
+  - A block based canvas text editor.
+
+- https://github.com/fengkx/plastic-editor-react
+  - Plastic Editor implentation with React.js
+  - https://github.com/djyde/plastic-editor/
 
 - MoEditor /2Star/NALic/202208/ts
   - https://github.com/spaced-all/MoEditor
