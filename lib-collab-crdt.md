@@ -287,7 +287,3 @@ update("transactions", {
   - https://github.com/bdewey/KeyValueCRDT /swift
   - My goal with KeyValueCRDT is to provide a CRDT implementation that can work as a file format for a wide range of applications.
   - KeyValueCRDT uses SQLite for its storage
-
-- [Peritext: A CRDT for Rich-Text Collaboration](https://www.inkandswitch.com/peritext/)
-  - supports overlapping inline formatting, and shown how to implement it efficiently.
-  - it simply allows two versions of a rich-text document to be merged automatically.

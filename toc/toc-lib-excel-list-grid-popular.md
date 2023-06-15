@@ -28,9 +28,9 @@ modified: 2022-08-21T10:02:27.788Z
 - collaborative-editing
   - 数据模型考虑 持久化(一般db-text/json/blob)、展示(json)、协作(llw/map/sequence)、衍生计算(如聚合)
     - 以哪种数据作为single source of truth
-    - 一般以内存中crdt形式的数据结构作为唯一数据源
+    - 一般以crdt形式的数据结构作为唯一数据源，是否在内存？
   - 实时协作、冲突处理
-  - 离线合并
+  - 离线合并，last-write-win对同一用户不同设备的合并不友好
 
 - plugins-ready
   - plugin支持视图层的优点包括更灵活的渲染(decorations)、场景更广的commands，参考prosemirror
@@ -59,6 +59,10 @@ modified: 2022-08-21T10:02:27.788Z
   - 前端问题都可从db的角度来考虑，在db表上可添加一个单独的order列
   - tanstack-table使用了 `type ColumnOrderState = string[]`
   - [Is it possible to insert data into the mid section of a table using the INSERT command?](https://stackoverflow.com/questions/4127169)
+  - [What could be the direction for making Peritext support block elements](https://github.com/inkandswitch/peritext/issues/27)
+    - I helped design a convergent data model for tables at Notion recently that would work well using 3 convergent data types: Map (to group and address fields), Ordered Set (for defining the order of rows and the order of columns), and Rich Text (for defining the contents of cells).
+    - `type Table = { rowOrder: OrderedSet<RowId>, columnOrder: OrderedSet<ColumnId>, rows: Map<RowId, Row> }` 行顺序和列顺序都单独存储
+    - `type Row = { cells: Map<ColumnId, RichText> }`
 
 - 开源表格
   - 国内: luckysheet

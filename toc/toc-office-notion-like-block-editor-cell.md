@@ -122,13 +122,12 @@ modified: 2022-08-14T16:26:48.558Z
   - 不支持拖拽block修改顺序，但有上下箭头按钮
   - intuitive block based wysiwyg editor built with React and ProseMirror
 
-
 - https://github.com/karpov-kir/canvas-block-editor /ts
   - A block based canvas text editor.
 
 - https://github.com/fengkx/plastic-editor-react
   - Plastic Editor implentation with React.js
-  - https://github.com/djyde/plastic-editor/
+  - https://github.com/djyde/plastic-editor /svelte
 
 - MoEditor /2Star/NALic/202208/ts
   - https://github.com/spaced-all/MoEditor

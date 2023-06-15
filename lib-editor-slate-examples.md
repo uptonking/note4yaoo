@@ -853,6 +853,11 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/geoffreylitt/automerge-slate-playground /v0.59
   - Playing with Automerge + Slate
+  - Automerge doc is the source of truth. 
+  - The entire text content is stored as a single Automerge. Text string. 
+  - Comments and rich text formatting are stored as an array of annotations, per the OAFS idea; also similar to atjson.
+  - Doesn't meaningfully use Slate's tree representation. Just treats the doc as a single text node.
+  - Intercepts insert/delete operations from the Slate editor, and converts to corresponding Automerge Text ops to edit
 
 - https://github.com/cudr/slate-collaborative /ts/inactive/automerge
   - A example of a collaborative editor using Slate and Automerge

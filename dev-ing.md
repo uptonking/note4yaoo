@@ -276,6 +276,9 @@ $$('[contenteditable]')
 
 ## 0614
 
+- [How to debug Mocha + Typescript + ESM in VS Code - Stack Overflow](https://stackoverflow.com/questions/76193863/how-to-debug-mocha-typescript-esm-in-vs-code)
+  - https://github.com/pariesz/vscode-debug-issue
+  - 测试debug项目
 
 ## 0613
 

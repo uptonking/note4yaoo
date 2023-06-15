@@ -36,6 +36,12 @@ modified: 2022-11-06T15:45:36.913Z
   - It's designed for React/Redux/Flux apps. Inspired by Normalizr.
   - We can transform the whole Redux store, that can incude complex nested json objects, into a simple flat structure using Simplifr.
   - https://github.com/krispo/redux-json-tree
+
+- https://github.com/CondeNast/atjson /ts
+  - https://atjson.condenast.io/docs/getting-started
+  - atjson is a living content format for annotating content
+  - we need a format that can be rich, extensible, and portable. It is important that the content source provide little ambiguity about how a story should be displayed
+  - A document has a content field and a list of annotations, each of which have a spatial offset in the document.
 # json-editor/viewer
 - https://github.com/plantain-00/schema-based-json-editor
   - https://plantain-00.github.io/schema-based-json-editor/packages/react/demo/

@@ -33,15 +33,6 @@ modified: 2022-04-05T10:11:40.379Z
 - https://twitter.com/nayajunimesh/status/1482192104503713792
   - https://codesandbox.io/s/y-presence-demo-live-avatars-65xpc
 
-- ## yjs vs peritext
-- https://news.ycombinator.com/item?id=29328431
-- They way I see it there are two (or maybe more of a spectrum of) types of CRDT, from generic and to domain specific. 
-  - Yjs actually has multiple different types, very generic types (Array and Map), slightly more specific types (XMLFragment and XMLElement), and then there is the Text type that covers both a generic plain text type but also has provision for rich formatting if needed. 
-  - Peritext is basically a different method of implementing the Text type which aims to maintain a little more editor intent than Yjs currently does.
-- For a full document, you need to represent both text elements with rich text formatting marks, but also block elements. With Yjs you would do this with the XMLElement type which as you would expect has attributes and can nest further XMLElements or Text within it. 
-  - Peritext does not yet have support for block types.
-- So, although the most common use of Yjs is for collaborative rich text editing, it can be used for many other things such as 2D/3D drawing or even gaming.
-
 - ## Main takeaways from toying with both Yjs and Automerge_202112
 - https://news.ycombinator.com/item?id=29507948
 

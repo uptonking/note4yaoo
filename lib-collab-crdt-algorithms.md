@@ -24,7 +24,16 @@ modified: 2023-03-07T04:43:58.713Z
   - id的结构，创建方式
   - insert op
   - delete op
+
+- crdt-text
+  - 能不能将协作的粒度从字符提升为句子
+  - 或者crdt-text-by-lines, still sequence crdt，参考typewriter-quill
 # crdt-experts
+- Martin Kleppmann, automerge
+  - https://github.com/ept
+  - [blog posts](https://martin.kleppmann.com/archive.html)
+  - [crdt.tech](https://crdt.tech/)
+
 - Oster, woot/logoot
   - [Publications – Gérald OSTER](https://members.loria.fr/goster/publications/)
   - 2005年发布WOOT
@@ -147,6 +156,13 @@ modified: 2023-03-07T04:43:58.713Z
 - RGA is a very effective algorithm, but it doesn't make the logical leap of treating its data structure as an event log, even though that's what it is in practice. Traditionally, one would say that an RGA insert is applied and turned into data; but another way to look at it is that the insert operation is placed in the position of its intended output, then stripped of its metadata. ORDTs make this explicit.
 
 ### implementation
+
+- https://github.com/inkandswitch/peritext /MIT/ts
+  - https://www.inkandswitch.com/peritext/
+  - A CRDT for asynchronous rich-text collaboration, where authors can work independently and then merge their changes.
+  - Peritext builds upon RGA, which is similar to Causal Trees, although our algorithm could use any of these plain text CRDTs with minor adaptations. 
+  - [Peritext algorithm may attach deleted mark to new inserted text](https://github.com/inkandswitch/peritext/issues/32)
+  - [What could be the direction for making Peritext support block elements](https://github.com/inkandswitch/peritext/issues/27)
 
 - https://github.com/maca/ace-crdt /js/rga
   - Collaborative text editor proof of concept using CRDT
@@ -293,6 +309,7 @@ modified: 2023-03-07T04:43:58.713Z
 
 - who is using #logoot
   - mute
+  - Conclave
   - [DTNDocs: A delay tolerant peer-to-peer collaborative editing system_201801](https://ieeexplore.ieee.org/document/8343092)
     - DTNDocs Android application uses IBR-DTN to communicate over a delay tolerant network and a modified LogootSplit algorithm for ensuring consistency in shared contents.
 

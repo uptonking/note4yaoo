@@ -22,7 +22,9 @@ modified: 2022-04-05T10:08:25.947Z
   - [CRDTs for Non Academics - YouTube](https://www.youtube.com/watch?v=vBU70EjwGfw)
   - https://github.com/doodlewind/crdt-and-local-first
 
-- 能不能将协作的粒度从字符提升为句子
+- crdt-text
+  - 能不能将协作的粒度从字符提升为句子
+  - 或者crdt-text-by-lines, still sequence crdt，参考typewriter-quill
 # popular
 - https://github.com/pubuzhixing8/awesome-collaboration
   - Collaborative editing of technical resources, article translation
@@ -78,6 +80,9 @@ modified: 2022-04-05T10:08:25.947Z
     - [Doc: Is Fluid OT or CRDT?_202201](https://github.com/microsoft/FluidFramework/issues/8920)
     - The service part of Fluid is OT/CRDT agnostic and possibly of interest to CRDT developers looking for a managed backend solution.
     - Some of the built-in Fluid DDS implementations may be of general interest to CRDT researchers.
+  - The Fluid Framework requires a Fluid service to sync data between clients. 
+    - The role of the server is very simple: it orders operations and broadcasts them to all clients. 
+    - It’s also responsible for saving operations to persistent data storage
   - What kind of support is there for real-time editing of text?
     - This is the scenario that Fluid was first designed to support. 
     - Consequently, the Fluid Framework is an ideal foundation for rich text editors that support simultaneous editing by multiple clients. 
@@ -99,13 +104,23 @@ modified: 2022-04-05T10:08:25.947Z
   - The xi-editor project is currently discontinued. 
   - CRDT: This approach follows WOOT.
 
-- https://github.com/atom-archive/xray /rust
+- https://github.com/atom-archive/xray /201904/rust/archived
   - Text is stored in a copy-on-write CRDT.
     - We use a variant of RGA called RGASplit
   - Our current understanding is that in Xi, the buffer is stored in a rope data structure, then a secondary layer is used to incorporate edits. 
   - In Xray, the fundamental storage structure of all text is itself a CRDT.
     - It's similar to Xi's rope in that it uses a copy-on-write B-tree to index all inserted fragments, but it does not require any secondary system for incorporating edits.
   - [Xray – An experimental next-generation Electron-based text editor | Hacker News](https://news.ycombinator.com/item?id=16525735)
+
+- https://github.com/atom-editor/teletype-crdt /201810/js
+  - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom
+  - [Atom-teletype代码协同编辑原理详解_202011](https://mp.weixin.qq.com/s?src=11&timestamp=1686732708&ver=4589&signature=8ifZN03y4mobAX0Mn0CnG1Pv3oT5RHfMds3ZQX4IbFMeBLv6di-WBPRSMDXf-4Y6DW5u6nzCQGw3KZuKTap-bdOPzO9bZQpRKQWI6uo9RAdEmPiihZ2be3lwelV-LT4V&new=1)
+    - 本文主要介绍 TELETYPE-CRDT中如何设计 WOOT算法来保证文本类型数据的最终一致性，并使用复合的数据结构（称之为 IDTree）来优化代码的运行效率。
+  - [Resolve conflicts during remote insertion integration in O(log n)_201711](https://github.com/atom/teletype-crdt/pull/4)
+    - The previous approach was entirely based on the algorithm proposed by Yu in 2014, which was a revisitation of the original WOOT algorithm discovered in 2006.
+  - https://github.com/atom/teletype-crdt /js/archived
+    - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom.
+  - https://github.com/atom/teletype
 
 - https://github.com/zkpranav/crdt-sync-client /未完成
   - https://github.com/zkpranav/crdt-sync-server
@@ -135,7 +150,7 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/streamich/json-joy
   - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
 
-- https://github.com/inkandswitch/peritext
+- https://github.com/inkandswitch/peritext /MIT/ts
   - https://www.inkandswitch.com/peritext/
   - A CRDT for asynchronous rich-text collaboration, where authors can work independently and then merge their changes.
   - Peritext builds upon RGA, which is similar to Causal Trees, although our algorithm could use any of these plain text CRDTs with minor adaptations. 
@@ -144,8 +159,12 @@ modified: 2022-04-05T10:08:25.947Z
     - A prototype integration with ProseMirror editor
     - An interactive demo UI where you can try out the editor
     - A test suite
+  - [Peritext algorithm may attach deleted mark to new inserted text](https://github.com/inkandswitch/peritext/issues/32)
+  - [What could be the direction for making Peritext support block elements](https://github.com/inkandswitch/peritext/issues/27)
+    - I helped design a convergent data model for tables at Notion recently that would work well using 3 convergent data types: Map (to group and address fields), Ordered Set (for defining the order of rows and the order of columns), and Rich Text (for defining the contents of cells).
   - forks
   - https://github.com/philschatz/peritext
+    - 更新了版本、迁移到vite
 
 - https://github.com/supabase/pg_crdt /rust
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.
@@ -536,15 +555,19 @@ modified: 2022-04-05T10:08:25.947Z
   - A nearly vanilla implementation of CRDT RGA (operation per character).
 
 - https://github.com/ritzyed/ritzy /201509/js/inactive
+  - https://github.com/ritzyed/ritzy-demo
   - Ritzy editor is a rich text, real-time character-by-character collaborative embeddable browser-based editor. 
   - It shuns(避免) use of the `contentEditable` attribute in favor of a custom editor surface and layout engine, exactly like the approach implemented by Google Docs.
-  - Ritzy is built with real-time collaborative editing support from the ground up, underlying mechanism for this is a causal tree CRDT.
+  - Ritzy is built with real-time collaborative editing support from the ground up, underlying mechanism for this is a **causal tree CRDT**.
+  - Unlike Google Docs, Ritzy does not (currently) support complex page-based layout needed to build a word processor.
 
 - https://github.com/conclave-team/conclave /202106/js/inactive
+  - https://conclave-team.github.io/conclave-site/
   - CRDT and WebRTC based real-time, peer-to-peer, collaborative text editor
   - 示例使用simplemde、rxjs、peerjs
   - Intrigued by collaboration tools like Google Docs, we set out to build one from scratch. 
-  - Conclave uses (CRDT) to make sure all users stay in-sync and WebRTC to allow users to send messages directly to one another. 
+  - Conclave uses (CRDT) to make sure all users stay in-sync and WebRTC to allow users to send messages directly to one another.
+  - Similar non-academic implementation with optimizations and tweaks - based on Logoot/LSEQ.
 
 - https://github.com/peer-base/peer-pad /201907/js
   - Online editor providing collaborative editing in really real-time using CRDTs and IPFS.
@@ -630,16 +653,6 @@ modified: 2022-04-05T10:08:25.947Z
   - [Plain Tree: A Basic List CRDT](https://mattweidner.com/2022/10/21/basic-list-crdt.html)
     - The rest of this post introduces a basic UniquelyDenseTotalOrder that I especially like. 
     - I have not seen it in the existing literature, although it is similar enough to Logoot, Treedoc, and others that I wouldn’t be surprised if it’s already known. For now, I call it Plain Tree.
-
-- https://github.com/atom-editor/teletype-crdt /js
-  - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom
-  - [Atom-teletype代码协同编辑原理详解_202011](https://mp.weixin.qq.com/s?src=11&timestamp=1686732708&ver=4589&signature=8ifZN03y4mobAX0Mn0CnG1Pv3oT5RHfMds3ZQX4IbFMeBLv6di-WBPRSMDXf-4Y6DW5u6nzCQGw3KZuKTap-bdOPzO9bZQpRKQWI6uo9RAdEmPiihZ2be3lwelV-LT4V&new=1)
-    - 本文主要介绍 TELETYPE-CRDT中如何设计 WOOT算法来保证文本类型数据的最终一致性，并使用复合的数据结构（称之为 IDTree）来优化代码的运行效率。
-  - [Resolve conflicts during remote insertion integration in O(log n)_201711](https://github.com/atom/teletype-crdt/pull/4)
-    - The previous approach was entirely based on the algorithm proposed by Yu in 2014, which was a revisitation of the original WOOT algorithm discovered in 2006.
-  - https://github.com/atom/teletype-crdt /js/archived
-    - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom.
-  - https://github.com/atom/teletype
 
 - https://github.com/josephg/simple-crdt-text /ts
   - This implements automerge's underlying algorithm (RGA)

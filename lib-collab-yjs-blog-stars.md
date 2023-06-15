@@ -9,7 +9,7 @@ modified: 2022-10-22T18:45:23.619Z
 
 # guide
 
-# [探秘前端 CRDT 实时协作库 Yjs 工程实现 - 知乎](https://zhuanlan.zhihu.com/p/452980520)
+# [探秘前端 CRDT 实时协作库 Yjs 工程实现 - 知乎_202201](https://zhuanlan.zhihu.com/p/452980520)
 - 本文会从 Yjs 的工程实现出发，介绍一个典型的工业级 CRDT 库是如何实现以下能力的：
 - 建模数据结构
 - 解决并发冲突
@@ -21,6 +21,8 @@ modified: 2022-10-22T18:45:23.619Z
   2. 不支持移动操作，移动后的合并位置不符合预期
   3. ContentFormat 不支持同类型样式的嵌套或交错（不能还原 ProseMirror Mark 的特性）
   4. ProseMirror 的 Step 和 Yjs 的 insert/delete API 不匹配，y-prosemirror 采用了一套 diff 算法，导致用户意图丢失。也许与 Quilljs 结合没有这样的问题。
+
+# [Yjs——一个基于CRDT的数据协同框架_腾讯alloy_202104](https://mp.weixin.qq.com/s?src=11×tamp=1686787686&ver=4591&signature=0vaM7PBUtg8XVbWmk8vJypnfhEzMZKA*n2ZLsyNLrvul6UKW2aw8*1teZ1rzopI6YHA*2wP1t9PSaUaQhpkV0XhyA6jRigandep79YE59mpO5*e*tJGuHIoORlbpDViE&new=1)
 # [Near Real-Time Peer-to-Peer Shared Editing on Extensible Data Types](https://www.researchgate.net/publication/310212186_Near_Real-Time_Peer-to-Peer_Shared_Editing_on_Extensible_Data_Types)
 
 # [【译】Near Real-Time Peer-to-Peer Shared Editing on Extensible Data Types - 掘金](https://juejin.cn/post/7027487213525041166)

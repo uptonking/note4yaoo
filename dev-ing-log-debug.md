@@ -13,7 +13,11 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## vscode里面调试mocha测试的命令调了很久
+
+- 先在控制台调通，再修改launch.json
+
+- 原因是 --experimental-loader 误写成了 --loader
 
 ## 更新logux后ts-node server无法运行
 

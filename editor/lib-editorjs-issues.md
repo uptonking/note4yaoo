@@ -39,14 +39,14 @@ modified: 2020-11-17T09:39:37.776Z
 
 - ## 
 
-- ## [💡 Real-time collaborative editing with editor.js](https://github.com/codex-team/editor.js/discussions/1874)
+- ## [🚨 Real-time collaborative editing with editor.js](https://github.com/codex-team/editor.js/discussions/1874)
 - 蓝湖: we have implemented collaborative documentation (including collaborative cursors) using editor.js + yjs and we are now live.
   - https://github.com/hughfenghen/y-editorjs
 
-- Recently(202303), I tried to make a binding between the YJS and EditorJS. I think the EditorJS(v2.x) has some issues with compatibility design for the collaboration scenarios.
+- 💡 Recently(202303), I tried to make a binding between the YJS and EditorJS. I think the EditorJS(v2.x) has some issues with compatibility design for the collaboration scenarios.
   - **Absent the reactive & incremental state of EditorJS**. updates from other remote clients to local will only use the update method of the block’ API. 
   - **Too many unnecessary DOM mutations in the EditorJS’s internal**.
-- Thank you for your research! We were discussing exactly the same problems internally. Therefore we are working on the architecture redesign to enable reactive data-first approach.
+- Thank you for your research! We were discussing exactly the same problems internally. Therefore **we are working on the architecture redesign to enable reactive data-first approach**.
   - That is a challenging problem as existing solutions usually work with known in advance set of content blocks. Whereas Editor.js core doesn't know much about connected Tools. We are on the research stage now
 
 - ## [Collaborative editing based on yjs](https://github.com/codex-team/editor.js/discussions/1892)

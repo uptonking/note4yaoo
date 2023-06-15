@@ -20,12 +20,16 @@ modified: 2023-02-08T10:47:19.056Z
 
 - 侧边栏最小宽度
 # keyboard-shortcuts
+- navigate
+  - back:    Ctrl+Alt+-
+  - forward: Ctrl+Shift+-
+
 - 选中括号内内容 shift+alt+right
-  - [keyboard shortcuts - Select everything between matching brackets in VS Code - Stack Overflow](https://stackoverflow.com/questions/37835012/select-everything-between-matching-brackets-in-vs-code)
+  - [keyboard shortcuts - Select everything between matching brackets in VS Code](https://stackoverflow.com/questions/37835012/select-everything-between-matching-brackets-in-vs-code)
 # extensions-stars
 - ## import sorter
 
-- [Option to allow for only sorting · Issue #36 · daidodo/format-imports-vscode](https://github.com/daidodo/format-imports-vscode/issues/36)
+- [Option to allow for only sorting](https://github.com/daidodo/format-imports-vscode/issues/36)
   - I guess what you want is that the extension formats imports/exports first, and then prettier format the whole file?
   - If yes, you could install prettier AFTER this extension in VSCode, e.g. uninstall prettier and then install again. (I'm not sure how to specify formatter orders in VSCode but did once enter the situation that prettier ran after this extension.)
 

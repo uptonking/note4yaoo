@@ -36,12 +36,27 @@ modified: 2023-02-05T19:12:13.098Z
 # discuss-collaboration
 - ## 
 
-- ## 💡 [Block Collab: New package, a framework for collaborative editing_202006](https://github.com/WordPress/gutenberg/pull/23129)
+- ## [Block Collab: New package, a framework for collaborative editing_202006](https://github.com/WordPress/gutenberg/pull/23129)
 - I have not seen any progress since Sep 2021.
 
 - [[WIP] Draft: Sync Editor React state with Yjs](https://github.com/WordPress/gutenberg/pull/18357)
 
 - ## [Collaborative editing using WebRTC](https://github.com/WordPress/gutenberg/issues/1930)
+
+- ## [Concurrency control in core-data](https://github.com/WordPress/gutenberg/issues/26325)
+- I discovered what appears to be a massive problem with API interactions in core-data.
+  - There seems to be no concept of concurrency control
+
+- Possible solutions
+- Atomic operations
+  - We could prevent concurrent conflicting operations:
+  - By not resolving while write operation is in progress
+  - Using locking (shared lock and exclusive lock maybe?).
+  - Stacking multiple conflicting operations may take a long time to process
+- Re-use fetched data
+
+- [[core data] State locks for concurrency control_202011](https://github.com/WordPress/gutenberg/pull/26389)
+  - it addressed the bulk of this problem. It would still be amazing to implement a lock-less solution or be more "optimistic" about different operations
 
 - ## 💡 p2p Real Time Collaborative Core Data Entity Editing
 - https://github.com/WordPress/gutenberg/pull/17964
@@ -50,7 +65,7 @@ modified: 2023-02-05T19:12:13.098Z
 - Here is the minimum code/effort approach that I think would work:
   - Convert block edits into conflict-free replicated data types (CRDT). This should be pretty straight forward because they are mostly Redux action POJOs. We would need to add a version vector for them and a new relative index based abstraction for storing block position, i.e. inserting a block between block 1 and block 2 should yield a new block at position 1.5 and not change the others’ indexes.
   - This would essentially mean that all block edits would become idempotent and commutative. We would also need to implement undo in block-editor, instead of relying on core-data, so that we can keep the undo stack specific to the client.
-- For RichText, things will be a bit more complex and a CRDT refactor might be too costly, but we could easily implement diff-sync for it or use a compatible library.
+- For `RichText` , things will be a bit more complex and a CRDT refactor might be too costly, but we could easily implement **diff-sync** for it or use a compatible library.
   - Diff-sync, in short, is when the client keeps a copy of what the server has and the server keeps a copy of what each client has. When the client wants to sync, it can easily send a diff, the server then applies that diff both to its copy of the client’s contents and to itself. 
   - The only issue with diff-sync is that you need a host, now although not ideal, if the WordPress instance does not support being a host for this, we could fallback to a client acting as the host. Otherwise, we could embark on the RichText refactor or just lock RichText fields and send CRDT edits for their whole value.
 - This PR explores a Conflict-free Replicated Data Type (CRDT) based p2p approach to collaborative core-data entity (#17368) editing.
@@ -77,21 +92,6 @@ modified: 2023-02-05T19:12:13.098Z
 
 - If I'm correct, Gutenberg has an immutable data structure - similar to ProseMirror (another editor that Yjs supports)
   - yes
-
-- ## [Concurrency control in core-data](https://github.com/WordPress/gutenberg/issues/26325)
-- I discovered what appears to be a massive problem with API interactions in core-data.
-  - There seems to be no concept of concurrency control
-
-- Possible solutions
-- Atomic operations
-  - We could prevent concurrent conflicting operations:
-  - By not resolving while write operation is in progress
-  - Using locking (shared lock and exclusive lock maybe?).
-  - Stacking multiple conflicting operations may take a long time to process
-- Re-use fetched data
-
-- [[core data] State locks for concurrency control_202011](https://github.com/WordPress/gutenberg/pull/26389)
-  - it addressed the bulk of this problem. It would still be amazing to implement a lock-less solution or be more "optimistic" about different operations
 # discuss
 - ## 
 
