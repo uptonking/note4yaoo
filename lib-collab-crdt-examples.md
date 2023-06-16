@@ -334,6 +334,7 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/jaredly/local-first/tree/master/packages/text-crdt
   - This algorithm is largely based on RGA, with support for rich-text formatting added, along with a number of optimizations.
   - integrate with Quill.
+  - Your approach seems to resemble RGASplit which I believe is bases for
 
 ## crdt-more
 
@@ -556,7 +557,9 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/ritzyed/ritzy /201509/js/inactive
   - https://github.com/ritzyed/ritzy-demo
-  - Ritzy editor is a rich text, real-time character-by-character collaborative embeddable browser-based editor. 
+  - Ritzy editor is a rich text, real-time character-by-character collaborative embeddable browser-based editor.
+  - 依赖react、swarm.v0.3
+  - 采用flux架构，暴露了state/action
   - It shuns(避免) use of the `contentEditable` attribute in favor of a custom editor surface and layout engine, exactly like the approach implemented by Google Docs.
   - Ritzy is built with real-time collaborative editing support from the ground up, underlying mechanism for this is a **causal tree CRDT**.
   - Unlike Google Docs, Ritzy does not (currently) support complex page-based layout needed to build a word processor.
@@ -567,10 +570,12 @@ modified: 2022-04-05T10:08:25.947Z
   - 示例使用simplemde、rxjs、peerjs
   - Intrigued by collaboration tools like Google Docs, we set out to build one from scratch. 
   - Conclave uses (CRDT) to make sure all users stay in-sync and WebRTC to allow users to send messages directly to one another.
+  - We implemented an “adaptive allocation strategy for sequence CRDT” called LSEQ(exponential tree).
   - Similar non-academic implementation with optimizations and tweaks - based on Logoot/LSEQ.
 
 - https://github.com/peer-base/peer-pad /201907/js
   - Online editor providing collaborative editing in really real-time using CRDTs and IPFS.
+  - 依赖codemirror5、quill.v1、remark.v10
 
 - https://github.com/nybblr/LSEQTree
   - provide an implementation of a CRDT-based array  with an underlying exponential tree and the allocation strategy LSeq

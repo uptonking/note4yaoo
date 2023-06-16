@@ -8,7 +8,12 @@ modified: 2022-11-07T17:36:22.236Z
 # lib-collab-common-examples-editing-whiteboard-anno
 
 # guide
-- 实现协作要考虑到切换冲突处理算法，如slate-yjs/automerge/sharedb
+- 实现协作要考虑到切换冲突处理算法
+  - 如slate或成熟编辑器都支持binding到不同的协作数据yjs/automerge/sharedb
+
+- [Why CRDT didn't work out as well for collaborative editing xi-editor](https://news.ycombinator.com/item?id=19886883)
+  - 研发编辑器不仅要考虑协作，其他功能如find、syntax-highlight对用户体验甚至更重要
+  - 所以还是要参考成熟编辑器的可复用功能，如copy-paste、import-export、word-excel
 # whiteboard-blogs
 - [Excalidraw: Building Excalidraw's P2P Collaboration Feature_202003](https://blog.excalidraw.com/building-excalidraw-p2p-collaboration-feature/)
   - 协作编辑同一个shape时，协作算法并未特殊处理，可能会有数据丢失，但versionNonce保证了最终一致

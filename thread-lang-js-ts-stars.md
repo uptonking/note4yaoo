@@ -28,7 +28,16 @@ if(val) // doSth
 
 - ## 
 
-- ## 
+- ## What library do JS developers use to set/remove/update values in deeply nested objects and arrays?
+- https://twitter.com/sgrove/status/1157375114490478592
+  - lodash: setPath(data, ["user", "id"], userId);
+  - immer: updatePath(data, ["user", "greeting"], greeting => (greeting || "Hello, ") + userName;
+
+
+- If immutable, I use immer. Otherwise lodash.set/get
+- ramda
+- Immer. Or automerge if you need CRDT.
+
 
 - ## 开发小建议：代码的switch case分支条件超过8个以上，switch case效率下降，不妨替换成map
 - https://twitter.com/stephenzhang233/status/1660478131764080641

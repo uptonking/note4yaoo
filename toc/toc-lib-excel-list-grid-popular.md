@@ -16,7 +16,7 @@ modified: 2022-08-21T10:02:27.788Z
   - _collaborative optional_: 作为插件
   - _transaction_
   - headless utils: state/actions/props/api : autocomplete/tanstack，state和a11y不同粒度
-  - view-layer: vdom+reactive(mobx/signal) : autocomplete/quill-typewriter/Simple-DataTables/sleek
+  - view-layer: vdom+reactive(mobx/signal) : autocomplete/typewriter/Simple-DataTables/slate-dom/sleek
   - virtualized
   - keyboard/a11y
   - optimized for text-table/markdown-table
@@ -31,6 +31,8 @@ modified: 2022-08-21T10:02:27.788Z
     - 一般以crdt形式的数据结构作为唯一数据源，是否在内存？
   - 实时协作、冲突处理
   - 离线合并，last-write-win对同一用户不同设备的合并不友好
+  - 对于现有系统，是不是只用替换模型层数据结构且保留api接口不变就可以了
+  - 自己实现sync，参考hlc；使用现有同步层，参考logux、automerge
 
 - plugins-ready
   - plugin支持视图层的优点包括更灵活的渲染(decorations)、场景更广的commands，参考prosemirror
@@ -44,6 +46,10 @@ modified: 2022-08-21T10:02:27.788Z
   - autocomplete: state层的hooks
 
 - view-layer 进一步优化需要深入前端框架如react
+  - 自定义组件的渲染返回值都是vnode，允许用户替换默认renderFunction
+    - 自定义组件都是纯函数，状态放在编辑器数据层统一触发更新
+    - 是否可以使用多个vdom-tree，允许只订阅部分state的更新
+    - recursive render to iteration，在迭代时方便考虑并行
   - 避免每次全量render和diff的方案
     - 使用double buffer，参考react-fiber/lexical
     - immer使用copy-on-write和structural-sharing
@@ -330,16 +336,27 @@ modified: 2022-08-21T10:02:27.788Z
 - tui.grid /2.2kStar/MIT/202305/ts/vanillajs
   - https://github.com/nhn/tui.grid
   - http://ui.toast.com/tui-grid/
+  - https://nhn.github.io/tui.grid/latest/tutorial-example26-infinite-scroll
   - 基于table标签实现，合并表头列实际样式为.tui-grid-lside/rside-area
   - 支持sort, filter, 不支持group
   - 支持Merging cell
   - 依赖xlsx、tui-date-picker、tui-pagination
-  - 视图层依赖preact(多使用extends Component)，但使用时不要求react环境，通过new Grid(options)
-  - 状态使用自定义createStore，很少使用setState, didMount/Update有使用
+  - 视图层依赖preact(多使用extends Component)
+    - 但使用时不要求react环境，通过new Grid(options)
+    - 很少使用setState, didMount/Update有使用
+  - 状态使用自定义createStore，包含rawData(Row[])、viewData(ViewRow[])、column
+    - 内部是个observable对象，基于Object.defineProperty拦截get实现
+    - 更新store通过dispatch，统一管理了所有setState的方法，updateFn(store, ...args);
   - Powerful Component to Display and Edit Data.
   - TOAST UI Grid is available when using the Plain JS, React, Vue Component.
   - [Is there no undo function?_202207](https://github.com/nhn/tui.grid/issues/1735)
     - Unfortunately, it is not supported.
+  - init初始化流程
+    - createStore时会注册一些函数
+    - 初始render时会传入dispatch到视图层并放在context，所有后代组件都能拿到
+  - update更新流程
+    - 交互操作都通过 `grid.dispatch('opName', 参数)` 来触发store更新
+    - 自定义connect高阶hoc选取store中部分值传到view层顶级组件，在store值变化时通过hoc更新
 
 - hyperformula /1.5kStar/GPLv3/202304/ts
   - https://github.com/handsontable/hyperformula

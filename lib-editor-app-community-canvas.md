@@ -164,7 +164,6 @@ modified: 2023-03-13T08:05:09.453Z
 - ## [用 SVG 实现的富文本编辑器有什么优势？DOM 和 Canvas 实现又有什么劣势？ - 知乎](https://www.zhihu.com/question/367165828/answers/updated)
 - iCloud Pages 和 WPS（web 端）的核心编辑区域直接用 SVG 渲染
 
-
 - 首先SVG也是DOM，普通的div反过来本质上也是一个长方形的SVG。这两者本质上没有太大区别，在浏览器里就是当作矢量图渲染的（矢量图性能很差）。
 - wps（web端）之所以选用svg是为了解决移动端长按文字内容选中的问题，
   - 根据我的测试发现，目前世面上除了金山解决了移动端选择内容的问题。
@@ -176,10 +175,8 @@ modified: 2023-03-13T08:05:09.453Z
   - 一，对文字的渲染能力较弱，不能使用css合成元素Canvas内的图元，也就是各种文字，图片的大小都需要通过canvas API来调整，，可能会有性能问题。
   - 二，处理失真问题Canvas要复杂很多。
 
-
 - 文字是可以转成路径用 SVG 控制的，只是渲染成本比较高而已
   - 不转路径的话，相当于字体排版全部交由浏览器默认控制，可能满足不了硬核富文本编辑的需求…比如默认的换行中划线斜体这些都不一定符合得了 wysiwyg 的预期，word 里某种排版的文档直接导到浏览器里可能变成另一种，这个坑真要填就太深了…
-
 
 - ## carota: Rich text editor implemented in JavaScript that uses HTML5 Canvas
 - https://www.reddit.com/r/javascript/comments/1zjfcg/rich_text_editor_implemented_in_javascript_that/

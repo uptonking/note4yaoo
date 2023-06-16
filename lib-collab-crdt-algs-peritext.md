@@ -69,7 +69,7 @@ modified: 2023-06-15T02:06:59.597Z
   - However, unlike Peritext, it does not support different policies for text insertion at span boundaries
 - Another approach would be to use a tree-structured representation of formatted text, akin to HTML, XML
   - For example, Automerge provides a CRDT that can store a JSON object with nested maps and lists. We could store each contiguous span of formatted text as an object containing the string text contents and a list of format markers
-  - Unfortunately, when we use the Automerge semantics for merging JSON documents, this representation does a poor job at preserving user intent. 比如`删除+该样式`会合并为添加新元素和新样式
+  - Unfortunately, when we use the Automerge semantics for merging JSON documents, this representation does a poor job at preserving user intent. 比如`删除+改样式`会合并为添加新元素和新样式
   - The problem here is that users intended to only change the formatting, but their actions were represented in the JSON document in a way that suggested they were also modifying the text content. 
 
 - a model of intent-preserving merge behavior

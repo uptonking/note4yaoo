@@ -53,9 +53,14 @@ modified: 2021-09-29T13:23:09.969Z
     - children: VNode[]
     - text: string
     - elm: 每个VNode对应的真实dom节点
+  - who is using #snabbdom
+    - vue, owl1
   - Snabbdom consists of an extremely simple, performant and extensible core that is only ≈ 200 SLOC. 
   - It offers a modular architecture with rich functionality for extensions through custom modules. 
   - To keep the core simple, all non-essential functionality is delegated to modules.
+  - https://github.com/ged-odoo/blockdom
+    - Owl framework 1.x is based on a fork of snabbdom
+    - version 2 is not ready yet, but will be based on blockdom.
 
 - https://github.com/AFASSoftware/maquette /ts
   - simple virtual DOM library

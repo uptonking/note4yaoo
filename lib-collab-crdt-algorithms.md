@@ -29,6 +29,11 @@ modified: 2023-03-07T04:43:58.713Z
   - 能不能将协作的粒度从字符提升为句子
   - 或者crdt-text-by-lines, still sequence crdt，参考typewriter-quill
 # crdt-experts
+- Kevin Jahns, yjs
+  - https://github.com/dmonad
+  - https://github.com/yjs/yjs
+  - port到各种语言
+
 - Martin Kleppmann, automerge
   - https://github.com/ept
   - [blog posts](https://martin.kleppmann.com/archive.html)
@@ -48,10 +53,6 @@ modified: 2023-03-07T04:43:58.713Z
 - Seph Gentle, sharedb/diamond-types
   - https://github.com/josephg
   - https://github.com/josephg/diamond-types
-
-- Kevin Jahns, yjs
-  - https://github.com/dmonad
-  - https://github.com/yjs/yjs
 # crdt-algorithms
 
 ## RGA(Replicated Growable Array) / Causal Tree
@@ -155,7 +156,7 @@ modified: 2023-03-07T04:43:58.713Z
   - Similarly, delete operations immediately turn their targets into tombstones, which are later "purged" once all sites have received the deletion. 
 - RGA is a very effective algorithm, but it doesn't make the logical leap of treating its data structure as an event log, even though that's what it is in practice. Traditionally, one would say that an RGA insert is applied and turned into data; but another way to look at it is that the insert operation is placed in the position of its intended output, then stripped of its metadata. ORDTs make this explicit.
 
-### implementation
+### impl
 
 - https://github.com/inkandswitch/peritext /MIT/ts
   - https://www.inkandswitch.com/peritext/
@@ -173,6 +174,11 @@ modified: 2023-03-07T04:43:58.713Z
 - https://github.com/josephg/simple-crdt-text /ts
   - This implements automerge's underlying algorithm (RGA)
   - The goal is to have some simple code that I can use to clarify semantics and as a basis for fuzz testing correctness of a faster implementation.
+
+- https://github.com/jaredly/local-first/tree/master/packages/text-crdt
+  - This algorithm is largely based on RGA, with support for rich-text formatting added, along with a number of optimizations.
+  - integrate with Quill.
+  - Your approach seems to resemble RGASplit which I believe is bases for
 
 - https://github.com/gritzko/citrea-model
   - A CRDT-based collaborative editor engine of letters.yandex.ru (2012, historical)
@@ -203,7 +209,8 @@ modified: 2023-03-07T04:43:58.713Z
 
 - 考虑到数据源和持久化，通常会将json扁平化，normalize
   - 还要考虑编码解码
-  - 扁平化后方便使用 lww + map
+  - 扁平化后方便持久化 lww + map
+  - 合理设计数据结构，避免json
 
 ### [Shelf: a remarkably small, remarkably useful CRDT](https://braid.org/algorithms/shelf)
 
@@ -297,175 +304,6 @@ modified: 2023-03-07T04:43:58.713Z
 
 - [JSON-CRDT](https://github.com/ipfs/notes/blob/master/CRDT/json-crdt.md)
 
-## Logoot/LogootSplit
-
-- pros
-  - no tombstone
-
-- cons
-  - interleaving
-
-### tips
-
-- who is using #logoot
-  - mute
-  - Conclave
-  - [DTNDocs: A delay tolerant peer-to-peer collaborative editing system_201801](https://ieeexplore.ieee.org/document/8343092)
-    - DTNDocs Android application uses IBR-DTN to communicate over a delay tolerant network and a modified LogootSplit algorithm for ensuring consistency in shared contents.
-
-- [Faster CRDTs: An Adventure in Optimization | Hacker News_202108](https://news.ycombinator.com/item?id=28017204)
-  - This is still hard for me to determine when position-based list CRDT (Logoot, LogootSPlit, ...) are better than tombstone-based list CRDT (RGA, RgaSplit, Yata, ...). It could be worth to assess that.
-  - 3 year ago I started an update of LogootSplit. The new CRDT is named Dotted LogootSplit [1] and enables delta-synchronizations. The work is not finished: I had other priorities such as writing my thesis
-  - I have to perform some benchmark. However I'm more interested in the hypothetical advantages of Dotted LogootSplit regarding synchronization over unreliable networks. From an engineering point-of-view, I'm using a partially-persistent-capable AVL tree [2]. Eventually I would like to switch to a partially-persistent-capable b-tree. Unfortunately writing a paper is very time consuming, and time is missing.
-
-- https://news.ycombinator.com/item?id=18193094
-  - My hunch(预感；直觉) is that because CRDTs are so much easier to grok(通过感觉意会) than OT, engineers are empowered to make use case-specific improvements that aren't reflected in academic literature.
-  - For example, the Logoot/LSEQ CRDTs have issues with concurrent insert interleaving; however, this can be solved by dedicating a bit-space in each ID solely for followup inserts.
-  - The "Inconsistent-Position-Integer-Ordering" problem is solved by comparing ids level-by-level instead of in one shot.
-  - Additionally, the best CRDTs (like Logoot/LSEQ) don't require tombstones, garbage collection, or "quiescence." The complexity burden is far lower.
-  - To top it off, CRDTs are offline-capable by default.
-
-### [LSEQ: an Adaptive Structure for Sequences in Distributed Collaborative Editing](https://hal.science/hal-00921633/en)
-
-- In order to preserve the total order on the elements of the sequence, a unique and immutable identifier is associated with each basic element of the structure (character, line or paragraph according to the chosen granularity). 
-- This allows distinguishing two classes of sequence CRDTs: 
-- (i) Fixed size identifier (also called the tombstones class). 
-  - This class includes WOOT [11], WOOTO [20], WOOTH [1], CT [7], RGA [13], [23]. 
-  - In this class, a tombstone replaces each suppressed element. 
-  - Although it enjoys a fixed length for identifiers and it has a space complexity which depends on the number of operations. 
-  - For example, a document with an history of a million operations and ﬁnally containing a single line can have as much as 499999 tombstones. 
-  - Garbaging tombstones requires costly protocols in decentralized distributed systems. 
-- (ii) Variable-size identifiers. 
-  - This class includes for example Logoot [21]. It does not require tombstones, but its identifiers can grow unbounded. Consequently, although it does not require garbage protocols, its space complexity remains till now linear with the number of insert operations. Thus, it is possible to have only a single element in the sequence having an identifier of length 499999. 
-  - Treedoc [12] uses both tombstones and variable size identifiers but relies on a complex garbage protocol when identifiers grow too much.
-- In this paper, we propose a new approach, called LSEQ, that belongs to the variable-size identifiers class of sequence CRDTs.
-  - LSEQ is an adaptive allocation strategy with a sub-linear upper-bound in its spatial complexity. 
-- We choose Logoot (for comparison) as it delivers overall best performances for variable-size sequence CRDTs
-
-- The Logoot paper [21] already highlighted the importance of allocation strategies (alloc). 
-- Indeed, experiments concerned two strategies. 
-  - (1) Random: randomly choosing between the identifiers of the two neighbours. It delivers poor performance because the identifiers quickly saturate the space, resulting in the creation of new levels. As consequence, the size of identifiers grows quickly. 
-  - (2) Boundary: randomly choosing between the identifiers of the two neighbours bounded by a boundary maximum value. The strategy allocates the new identifiers closer to their preceding identifier. Of course, it works well when the editions are performed right-to-left.
-- LSEQ applies a very simple strategy: each time it creates a new level in the tree between two identifiers p and q, it doubles the base of this depth and it randomly chooses a strategy among boundary+ and boundary–.
-  - boundary+ allocates from p plus a fixed boundary, boundary– allocates from q minus a fixed boundary. 
-  - The boundary never changes whatever the depth of the tree.
-
-- Logoot’s [21] underlying allocation strategy always uses the same base to allocate its identifiers. 
-  - With regard to the tree representation, it means that the arity is set to base.
-- A high base value is not profitable if the number of insert operations in this part of the sequence is low.
-  - On the contrary, keeping a constant base value when the number of insert operations starts to be very high does not allow to fully benefit of the boundary strategy.
-- the objective is to adapt the base according to the number of insertions in order to make a better reflection of the actual size of the document. 
-  - Since it is impossible to know a priori the size of the document, the idea is to start with a small base due to the empty sequence, and then to double it when and where necessary, i.e. when the depth of identifiers increases.
-- Doubling the base at each depth implies an exponential growth of the number of available identifiers. 
-  - Thus, the model corresponds to the exponential trees and consequently it benefits of their complexities. 
-
-- The variable-size identifiers class of CRDT includes Logoot [21] and Treedoc [12]. 
-- These CRDTs use growing identifiers to encode the total order among elements of the sequence. 
-  - In the worst case, the size of identifiers is linear in the total number of insert operations done on the document [1]. 
-- Logoot and Treedoc [12] have different allocation strategies. 
-- Treedoc has two allocation strategies: 
-  - (i) the first strategy allocates an identifier by directly appending a bit on one of its neighbour identifier. 
-  - (ii) The second strategy increases the depth of this new identifier by ⌈log2(h)⌉+1 (where h is the highest depth of the identifiers already allocated) and allocates the lowest value possible with this growth, in prevision of future insertions. 
-- Logoot’s boundary strategy and Treedoc’s second strategy are very similar, both in their goals and their weaknesses. 
-  - They assume an editing behaviour in the end, and therefore they become application dependent. 
-- Compared to Logoot and Treedoc, LSEQ is adaptive and significantly enlarges the applicability of sequence CRDTs.
-
-- In this paper, we presented an original allocation strategy for sequence CRDTs called LSEQ. 
-  - Compared to state of art, LSEQ is adaptive, i.e., it handles unpredictable different editing behaviour and achieves sub-linear space complexity. 
-  - Consequently LSEQ does not require a costly protocol to garbage or re-balance identifiers, and is suitable for building better distributed collaborative editors based on sequence CRDTs.
-- Three components compose LSEQ: 
-  - (1) a base doubling, 
-  - (2) two allocation strategies boundary+ and boundary–, 
-  - (3) a random strategy choice.
-  - Although each component cannot achieve sub-linear complexity, the conjunction of three components provides the expected behaviour.
-
-### TreeDoc: A Commutative Replicated Data Type for Cooperative Editing
-
-- Logoot uses a sparse n-ary tree rather than Treedoc's dense binary tree. 
-  - A position identifier is a list of (long) unique identifiers, and Logoot does not flatten.
-
-- A Logoot position identifier is a sequence of fixed-sized unique identifiers.
-- Position identifiers are ordered in lexicographical order of their components. 
-- Logoot allocates position identifiers sparsely in order to facilitate insertions. 
-- To insert, Logoot allocates a free unique identifier ordered between the left and right position identifiers, if one exists; otherwise it extends the identifier of the left position with an additional layer. 
-- A deleted atom can be removed immediately, but Logoot does not flatten the tree.
-
-### [Collaborative text editing with Logoot_201712](https://medium.com/@ravernkoh/collaborative-text-editing-with-logoot-a632735f731f)
-
-- To collaborate in a document, the naive approach would be to send over each operation a user performs to all other users editing the document. 
-  - when network latency becomes significant, it is incredibly easy to achieve race conditions like this one.
-- When using CRDTs instead of OT, we are trading time complexity for space complexity. 
-  - This means that while OT will take more time to process than CRDTs, CRDTs will usually end up using significantly more memory than OT.
-
-- it assigns unique identifiers to each character/group of characters in the document, and performs the insertions and deletions based on the position of these identifiers.
-- In Logoot, the document is split up into groups of text. 
-- A group of text is called an **atom**. 
-- Each atom is given a unique identifier, or a uid
-- Each uid is comparable to other uids. 
-- The document is then stored as an array of (uid, atom) pairs, sorted by the uids within the pairs in ascending order. 
-- There will also be two special, blank lines that exist in every document. 
-  - One at the very start which will have the MIN_uid, and at the very bottom, which will have the MAX_uid.
-
-- the most important part
-  - 👉🏻 For any two different uids, you should always be able to find a uid in between them. 
-- using integers as uids does not adhere to the property 
-  - what about floats? 
-  - However, in the context of a computer, this isn’t possible. 
-  - Floating point numbers are simply approximations of real numbers, which means that it’s not always possible to find a floating point number between any two floating point numbers.
-  - Simply put, you cannot represent an infinite number of floating point numbers in just 32/64-bits.
-- So how are these uids represented? 
-  - The answer is lists. 
-  - A uid is represented by a list of integers. 
-  - Let’s say we have the uids [4] and [5] 
-  -  In order to find a uid in between [4] and [5], we can simply make a longer list, that starts with a 4 (e.g. [4, 8])
-  - in Logoot, uids are represented by lists of integers.
-
-- In Logoot, a document is made up of an array of pairs. 
-  - Each pair containing a uid, and an atom. 
-  - An atom is simply a string, containing some of the content in the document. 
-  - The pairs in the document are always sorted by their uids. 
-  - To get the content of the entire document, simply concatenate all the atoms in order. 
-- To perform an insertion, you simply need to have the pair to insert. 
-  - To generate the uid for the pair, you simply have to take two existing uids and generate a random uid in between them.
-- To perform a deletion, you only need to know the uid to delete.
-- to insert in a blank document, the start and end lines are two lines that always exist in a Logoot document. 
-  - They contain an empty atom and their uids are 0 and MAX respectively, where MAX is the maximum size of an integer.
-
-### implementation
-
-- https://github.com/mkdynamic/logoot
-  - Collaborative text editor using Logoot CRDT algorithm. 
-  - Adds an informal versioning scheme based on state vectors to ensure casual ordering of operations is maintained.
-
-- https://github.com/t-mullen/logoot-crdt
-  - Implemented as a tree for fast character position lookups.
-
-- https://github.com/nybblr/logoot /js
-  - Test-driven implementation of the Logoot CRDT, with LSEQ strategy and a healthy distaste for mutation.
-
-- impl
-  - https://github.com/usecanvas/logoot-js /js
-  - https://github.com/bnoguchi/logoot /js
-  - https://github.com/ravern/logoot /go
-
-### more-logoot
-
-- [Conflict-Free Replicated Data Types (CRDT) for Distributed JavaScript Apps. - YouTube](https://www.youtube.com/watch?v=M8-WFTjZoA0)
-  - lsql, logoot
-
-- [Introduction to CRDTs for Realtime Collaboration - DEV Community](https://dev.to/nyxtom/introduction-to-crdts-for-realtime-collaboration-2eb1)
-  - Logoot/LSEQ/TreeDoc does not store tombstone deletions and instead takes an approach with fractional/unbounded divisible indexing. 
-  - This, as discussed earlier, can cause issues with interleaving edits so it becomes impractical to guarantee proper sane convergence with concurrent operations.
-
-- [An Elixir implementation of the Logoot CRDT](https://hexdocs.pm/logoot/readme.html)
-  - Because of how these atom identifiers are structured, they are totally ordered, as opposed to causally ordered. 
-  - No identifier cares about the identifier before it once it’s been created, and so tombstones are not necessary.
-
-- [A simple approach to building a real-time collaborative text editor_201710](https://digitalfreepen.com/2017/10/06/simple-real-time-collaborative-text-editor.html)
-  - I adapted Logoot
-
-- [Interleaving anomalies in collaborative text editors](https://martin.kleppmann.com/2019/03/25/papoc-interleaving-anomalies.html)
-
 ## WOOT
 
 - pros
@@ -475,7 +313,9 @@ modified: 2023-03-07T04:43:58.713Z
   - tombstone
   - ? interleaving
 
-- 业务产品并不多，参考fro scala.js
+- who is using #crdt-woot
+  - 业务产品并不多，参考fro scala.js
+  - atom-teletype
 
 ### [Atom-teletype代码协同编辑原理详解_202011](https://mp.weixin.qq.com/s?src=11&timestamp=1686732708&ver=4589&signature=8ifZN03y4mobAX0Mn0CnG1Pv3oT5RHfMds3ZQX4IbFMeBLv6di-WBPRSMDXf-4Y6DW5u6nzCQGw3KZuKTap-bdOPzO9bZQpRKQWI6uo9RAdEmPiihZ2be3lwelV-LT4V&new=1)
 
@@ -648,13 +488,7 @@ modified: 2023-03-07T04:43:58.713Z
     - 多人光标待改进
   - https://github.com/PHedkvist/crdt-server
 
-### implementation
-
-- https://github.com/d6y/wootjs /scala.js
-  - WOOT is a collaborative text editing algorithm, 
-  - allowing multiple users (`sites`) to insert or delete characters (`WChar`) from a shared document (`WString`).
-  - The algorithm preserves the intention of users, and ensures that the text converges to the same state for all users.
-  - Its key properties are simplicity, and avoiding the need for a reliable network or vector clocks (it can be peer-to-peer).
+### impl
 
 - https://github.com/ryankaplan/woot-collaborative-editor
   - When a textarea-change is detected, diff the textarea content against the last known content. 
@@ -662,14 +496,192 @@ modified: 2023-03-07T04:43:58.713Z
   - With the help of WootTypes. WString, turn that diff into `WStringOperations` and broadcast those operations to the server.
   - When we receive operations from the server, apply those operations to our WString instance and apply them to the text in #collab-doc.
 
+- https://github.com/d6y/wootjs /scala.js
+  - WOOT is a collaborative text editing algorithm, 
+  - allowing multiple users (`sites`) to insert or delete characters (`WChar`) from a shared document (`WString`).
+  - The algorithm preserves the intention of users, and ensures that the text converges to the same state for all users.
+  - Its key properties are simplicity, and avoiding the need for a reliable network or vector clocks (it can be peer-to-peer).
+
 ### more-woot
 
 - [WOOT: an Algorithm for Concurrent and Collaborative Authoring (2013) [video] | Hacker News](https://news.ycombinator.com/item?id=10677667)
+
+## Logoot/LogootSplit
+
+- pros
+  - no tombstone
+
+- cons
+  - interleaving
+
+### tips
+
+- who is using #crdt-logoot
+  - mute
+  - Conclave(lseq)
+  - [DTNDocs: A delay tolerant peer-to-peer collaborative editing system_201801](https://ieeexplore.ieee.org/document/8343092)
+    - DTNDocs Android application uses IBR-DTN to communicate over a delay tolerant network and a modified LogootSplit algorithm for ensuring consistency in shared contents.
+
+- [Faster CRDTs: An Adventure in Optimization | Hacker News_202108](https://news.ycombinator.com/item?id=28017204)
+  - This is still hard for me to determine when position-based list CRDT (Logoot, LogootSPlit, ...) are better than tombstone-based list CRDT (RGA, RgaSplit, Yata, ...). It could be worth to assess that.
+  - 3 year ago I started an update of LogootSplit. The new CRDT is named Dotted LogootSplit [1] and enables delta-synchronizations. The work is not finished: I had other priorities such as writing my thesis
+  - I have to perform some benchmark. However I'm more interested in the hypothetical advantages of Dotted LogootSplit regarding synchronization over unreliable networks. From an engineering point-of-view, I'm using a partially-persistent-capable AVL tree [2]. Eventually I would like to switch to a partially-persistent-capable b-tree. Unfortunately writing a paper is very time consuming, and time is missing.
+
+- https://news.ycombinator.com/item?id=18193094
+  - My hunch(预感；直觉) is that because CRDTs are so much easier to grok(通过感觉意会) than OT, engineers are empowered to make use case-specific improvements that aren't reflected in academic literature.
+  - For example, the Logoot/LSEQ CRDTs have issues with concurrent insert interleaving; however, this can be solved by dedicating a bit-space in each ID solely for followup inserts.
+  - The "Inconsistent-Position-Integer-Ordering" problem is solved by comparing ids level-by-level instead of in one shot.
+  - Additionally, the best CRDTs (like Logoot/LSEQ) don't require tombstones, garbage collection, or "quiescence." The complexity burden is far lower.
+  - To top it off, CRDTs are offline-capable by default.
+
+### [LSEQ: an Adaptive Structure for Sequences in Distributed Collaborative Editing](https://hal.science/hal-00921633/en)
+
+- In order to preserve the total order on the elements of the sequence, a unique and immutable identifier is associated with each basic element of the structure (character, line or paragraph according to the chosen granularity). 
+- This allows distinguishing two classes of sequence CRDTs: 
+- (i) Fixed size identifier (also called the tombstones class). 
+  - This class includes WOOT [11], WOOTO [20], WOOTH [1], CT [7], RGA [13], [23]. 
+  - In this class, a tombstone replaces each suppressed element. 
+  - Although it enjoys a fixed length for identifiers and it has a space complexity which depends on the number of operations. 
+  - For example, a document with an history of a million operations and ﬁnally containing a single line can have as much as 499999 tombstones. 
+  - Garbaging tombstones requires costly protocols in decentralized distributed systems. 
+- (ii) Variable-size identifiers. 
+  - This class includes for example Logoot [21]. It does not require tombstones, but its identifiers can grow unbounded. Consequently, although it does not require garbage protocols, its space complexity remains till now linear with the number of insert operations. Thus, it is possible to have only a single element in the sequence having an identifier of length 499999. 
+  - Treedoc [12] uses both tombstones and variable size identifiers but relies on a complex garbage protocol when identifiers grow too much.
+- In this paper, we propose a new approach, called LSEQ, that belongs to the variable-size identifiers class of sequence CRDTs.
+  - LSEQ is an adaptive allocation strategy with a sub-linear upper-bound in its spatial complexity. 
+- We choose Logoot (for comparison) as it delivers overall best performances for variable-size sequence CRDTs
+
+- The Logoot paper [21] already highlighted the importance of allocation strategies (alloc). 
+- Indeed, experiments concerned two strategies. 
+  - (1) Random: randomly choosing between the identifiers of the two neighbours. It delivers poor performance because the identifiers quickly saturate the space, resulting in the creation of new levels. As consequence, the size of identifiers grows quickly. 
+  - (2) Boundary: randomly choosing between the identifiers of the two neighbours bounded by a boundary maximum value. The strategy allocates the new identifiers closer to their preceding identifier. Of course, it works well when the editions are performed right-to-left.
+- LSEQ applies a very simple strategy: each time it creates a new level in the tree between two identifiers p and q, it doubles the base of this depth and it randomly chooses a strategy among boundary+ and boundary–.
+  - boundary+ allocates from p plus a fixed boundary, boundary– allocates from q minus a fixed boundary. 
+  - The boundary never changes whatever the depth of the tree.
+
+- Logoot’s [21] underlying allocation strategy always uses the same base to allocate its identifiers. 
+  - With regard to the tree representation, it means that the arity is set to base.
+- A high base value is not profitable if the number of insert operations in this part of the sequence is low.
+  - On the contrary, keeping a constant base value when the number of insert operations starts to be very high does not allow to fully benefit of the boundary strategy.
+- the objective is to adapt the base according to the number of insertions in order to make a better reflection of the actual size of the document. 
+  - Since it is impossible to know a priori the size of the document, the idea is to start with a small base due to the empty sequence, and then to double it when and where necessary, i.e. when the depth of identifiers increases.
+- Doubling the base at each depth implies an exponential growth of the number of available identifiers. 
+  - Thus, the model corresponds to the exponential trees and consequently it benefits of their complexities. 
+
+- The variable-size identifiers class of CRDT includes Logoot [21] and Treedoc [12]. 
+- These CRDTs use growing identifiers to encode the total order among elements of the sequence. 
+  - In the worst case, the size of identifiers is linear in the total number of insert operations done on the document [1]. 
+- Logoot and Treedoc [12] have different allocation strategies. 
+- Treedoc has two allocation strategies: 
+  - (i) the first strategy allocates an identifier by directly appending a bit on one of its neighbour identifier. 
+  - (ii) The second strategy increases the depth of this new identifier by ⌈log2(h)⌉+1 (where h is the highest depth of the identifiers already allocated) and allocates the lowest value possible with this growth, in prevision of future insertions. 
+- Logoot’s boundary strategy and Treedoc’s second strategy are very similar, both in their goals and their weaknesses. 
+  - They assume an editing behaviour in the end, and therefore they become application dependent. 
+- Compared to Logoot and Treedoc, LSEQ is adaptive and significantly enlarges the applicability of sequence CRDTs.
+
+- In this paper, we presented an original allocation strategy for sequence CRDTs called LSEQ. 
+  - Compared to state of art, LSEQ is adaptive, i.e., it handles unpredictable different editing behaviour and achieves sub-linear space complexity. 
+  - Consequently LSEQ does not require a costly protocol to garbage or re-balance identifiers, and is suitable for building better distributed collaborative editors based on sequence CRDTs.
+- Three components compose LSEQ: 
+  - (1) a base doubling, 
+  - (2) two allocation strategies boundary+ and boundary–, 
+  - (3) a random strategy choice.
+  - Although each component cannot achieve sub-linear complexity, the conjunction of three components provides the expected behaviour.
+
+### TreeDoc: A Commutative Replicated Data Type for Cooperative Editing
+
+- Logoot uses a sparse n-ary tree rather than Treedoc's dense binary tree. 
+  - A position identifier is a list of (long) unique identifiers, and Logoot does not flatten.
+
+- A Logoot position identifier is a sequence of fixed-sized unique identifiers.
+- Position identifiers are ordered in lexicographical order of their components. 
+- Logoot allocates position identifiers sparsely in order to facilitate insertions. 
+- To insert, Logoot allocates a free unique identifier ordered between the left and right position identifiers, if one exists; otherwise it extends the identifier of the left position with an additional layer. 
+- A deleted atom can be removed immediately, but Logoot does not flatten the tree.
+
+### [Collaborative text editing with Logoot_201712](https://medium.com/@ravernkoh/collaborative-text-editing-with-logoot-a632735f731f)
+
+- To collaborate in a document, the naive approach would be to send over each operation a user performs to all other users editing the document. 
+  - when network latency becomes significant, it is incredibly easy to achieve race conditions like this one.
+- When using CRDTs instead of OT, we are trading time complexity for space complexity. 
+  - This means that while OT will take more time to process than CRDTs, CRDTs will usually end up using significantly more memory than OT.
+
+- it assigns unique identifiers to each character/group of characters in the document, and performs the insertions and deletions based on the position of these identifiers.
+- In Logoot, the document is split up into groups of text. 
+- A group of text is called an **atom**. 
+- Each atom is given a unique identifier, or a uid
+- Each uid is comparable to other uids. 
+- The document is then stored as an array of (uid, atom) pairs, sorted by the uids within the pairs in ascending order. 
+- There will also be two special, blank lines that exist in every document. 
+  - One at the very start which will have the MIN_uid, and at the very bottom, which will have the MAX_uid.
+
+- the most important part
+  - 👉🏻 For any two different uids, you should always be able to find a uid in between them. 
+- using integers as uids does not adhere to the property 
+  - what about floats? 
+  - However, in the context of a computer, this isn’t possible. 
+  - Floating point numbers are simply approximations of real numbers, which means that it’s not always possible to find a floating point number between any two floating point numbers.
+  - Simply put, you cannot represent an infinite number of floating point numbers in just 32/64-bits.
+- So how are these uids represented? 
+  - The answer is lists. 
+  - A uid is represented by a list of integers. 
+  - Let’s say we have the uids [4] and [5] 
+  -  In order to find a uid in between [4] and [5], we can simply make a longer list, that starts with a 4 (e.g. [4, 8])
+  - in Logoot, uids are represented by lists of integers.
+
+- In Logoot, a document is made up of an array of pairs. 
+  - Each pair containing a uid, and an atom. 
+  - An atom is simply a string, containing some of the content in the document. 
+  - The pairs in the document are always sorted by their uids. 
+  - To get the content of the entire document, simply concatenate all the atoms in order. 
+- To perform an insertion, you simply need to have the pair to insert. 
+  - To generate the uid for the pair, you simply have to take two existing uids and generate a random uid in between them.
+- To perform a deletion, you only need to know the uid to delete.
+- to insert in a blank document, the start and end lines are two lines that always exist in a Logoot document. 
+  - They contain an empty atom and their uids are 0 and MAX respectively, where MAX is the maximum size of an integer.
+
+### impl
+
+- https://github.com/mkdynamic/logoot
+  - Collaborative text editor using Logoot CRDT algorithm. 
+  - Adds an informal versioning scheme based on state vectors to ensure casual ordering of operations is maintained.
+
+- https://github.com/t-mullen/logoot-crdt
+  - Implemented as a tree for fast character position lookups.
+
+- https://github.com/nybblr/logoot /js
+  - Test-driven implementation of the Logoot CRDT, with LSEQ strategy and a healthy distaste for mutation.
+
+- impl
+  - https://github.com/usecanvas/logoot-js /js
+  - https://github.com/bnoguchi/logoot /js
+  - https://github.com/ravern/logoot /go
+
+### more-logoot
+
+- [Conflict-Free Replicated Data Types (CRDT) for Distributed JavaScript Apps. - YouTube](https://www.youtube.com/watch?v=M8-WFTjZoA0)
+  - lsql, logoot
+
+- [Introduction to CRDTs for Realtime Collaboration - DEV Community](https://dev.to/nyxtom/introduction-to-crdts-for-realtime-collaboration-2eb1)
+  - Logoot/LSEQ/TreeDoc does not store tombstone deletions and instead takes an approach with fractional/unbounded divisible indexing. 
+  - This, as discussed earlier, can cause issues with interleaving edits so it becomes impractical to guarantee proper sane convergence with concurrent operations.
+
+- [An Elixir implementation of the Logoot CRDT](https://hexdocs.pm/logoot/readme.html)
+  - Because of how these atom identifiers are structured, they are totally ordered, as opposed to causally ordered. 
+  - No identifier cares about the identifier before it once it’s been created, and so tombstones are not necessary.
+
+- [A simple approach to building a real-time collaborative text editor_201710](https://digitalfreepen.com/2017/10/06/simple-real-time-collaborative-text-editor.html)
+  - I adapted Logoot
+
+- [Interleaving anomalies in collaborative text editors](https://martin.kleppmann.com/2019/03/25/papoc-interleaving-anomalies.html)
 
 ## LSEQ
 
 - cons
   - interleaving
+
+- who is using #crdt-lseq
+  - conclave
 
 - In case of LSeq these identifiers are represented as sequences of bytes, which can be ordered in lexical order
 
@@ -687,6 +699,19 @@ ba => v5
   - There are many possible ways to implement such generator - the trivial one we're going to use is to simply compare both bounds byte by byte and insert the byte that's 1 higher than a corresponding byte of the lower bound, BUT only if it's smaller than corresponding byte of the higher bound
 - One issue of LSeq data type is how it deals with concurrent updates interleaving.
   - This problem can be solved (or at least amortized) in theory: we just need to generate byte sequences in a "smart way", so that elements pushed by the same actor one after another will land next to each other after sync. Problem? So far no one presented such "smart" algorithm.
+
+- [LSEQ and causal tree · conclave-team/conclave](https://github.com/conclave-team/conclave/issues/14)
+  - LSEQ isn't so much a data type as it is a data allocation strategy. 
+  - It keeps track of all of the characters that have already been inserted into the document and is used to determine the position of a new character when it is inserted.
+  - When a new character is inserted, it will look at the position of the character before it and after it on the tree and generate a position between them.
+  - It follows a tree structure, but LSEQ trees are dynamic and grow according to how large the document is. 
+  - That also means that nodes in an LSEQ tree are removed when the corresponding characters are removed. 
+  - Also, the behavior of an LSEQ tree depends on what level of the tree you're on and which allocation strategy you chose to use.
+
+### impl
+
+- https://github.com/Chat-Wane/LSEQTree /js
+  - an implementation of a CRDT-based array with an underlying exponential tree and the allocation strategy LSeq
 
 ## TreeDoc
 
@@ -706,6 +731,11 @@ ba => v5
 - Logoot and TreeDoc used variable-length identifiers.
 
 - [CRDT: Tree-Based Indexing - Made by Evan](https://madebyevan.com/algos/crdt-tree-based-indexing/)
+
+### impl
+
+- https://github.com/matanbroner/Text-Editor-CRDT /js
+  - Basic text editor CRDT based on the the TreeDoc data structure
 # discuss
 - ## 
 
@@ -713,7 +743,12 @@ ba => v5
 
 - ## 
 
-- ## 
+- ## Here's a visual comparison of the data structures underlying three different "collaborative text editing" algorithms.
+- https://twitter.com/jaredforsyth/status/1232532781936173056
+  - yjs uses a doubly-linked list of nodes
+  - mine(local-first-rga) uses a tree
+  - automerge uses a transaction log (and has in-memory caches for perf)
+- Your approach seems to resemble RGASplit which I believe is bases for
 
 - ## [CRDT: Fractional Indexing_202211](https://news.ycombinator.com/item?id=33764449)
 - I’m not the GP, but OT is pretty annoying to implement. There are so many cases that it’s quite difficult to formally prove an OT correct. On the other hand, a large subset of CRDTs can be implemented in Datalog and if you do that you can’t possibly end up with an invalid CRDT.

@@ -15,7 +15,21 @@ modified: 2021-09-25T08:10:17.911Z
 
 ## 
 
-## 
+## [From Recursion to Iteration.](https://sunnypp.medium.com/from-recursion-to-iteration-49cef2918b11)
+
+- Is the iterative version faster? It depends! 
+  - Your language may have its optimizations for recursive functions (like auto-converting tail-recursive calls). 
+  - Also, while we can convert the map for children to a parallel one (assume that we are not tied to JavaScript), converting the iterative one will lead to **more complexity** in ordering the processed children. 
+  - And when we can run things in parallel, the slight increase in speed that we may have in those massive scenarios should be quite negligible.
+
+- [尾递归为啥能优化？ - 知乎](https://zhuanlan.zhihu.com/p/36587160)
+  - 普通递归的问题在于展开的时候会产生非常大的中间缓存，而每一层的中间缓存都会占用我们宝贵的栈上空间，所有导致了当这个 n 很大的时候，栈上空间不足则会产生“爆栈”的情况
+  - 尾递归：若函数在尾位置调用自身（或是一个尾调用本身的其他函数等等），则称这种情况为尾递归
+  - 可通过优化，使得计算仅占用常量栈空间 (Stack Space)。
+  - 语言的编译器或者解释器所做了“尾递归优化”，才让它不会爆栈的。
+  - 函数栈的目的是啥？是保持入口环境。因为尾递归的情况下，我们保持这个函数的入口环境没意义，所以我们就可以把这个函数的调用栈给优化掉。
+  - **怎么在语言层面上手动实现一个尾递归优化呢？这其实就是一个把递归变成循环的过程嘛**
+  - 把这种简单的重复操作交给计算机那当然是理所当然的了。我这里可以给出一个简易的通过正则的和字符串拼接的实现。
 
 ## [What are the time complexities of preorder, inorder, postorder, and level order binary tree traversals with both recursive and iterative algorithms?](https://www.quora.com/What-are-the-time-complexities-of-preorder-inorder-postorder-and-level-order-binary-tree-traversals-with-both-recursive-and-iterative-algorithms)
 

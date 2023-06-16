@@ -1504,9 +1504,9 @@ document.body.ownerDocument === document.body.getRootNode() // true
 
 ## 0222
 
-- [The dataset cannot set dashed names · Issue #1031 · snabbdom/snabbdom](https://github.com/snabbdom/snabbdom/issues/1031)
+- [The dataset cannot set dashed names · snabbdom/snabbdom](https://github.com/snabbdom/snabbdom/issues/1031)
   - the easiest correction might be using setAttribute/removeAttribute only.
-- [dataset module · Issue #90 · snabbdom/snabbdom](https://github.com/snabbdom/snabbdom/issues/90)
+- [dataset module · snabbdom/snabbdom](https://github.com/snabbdom/snabbdom/issues/90)
   - Both `{attrs: {'data-foo': foo}}` and `{dataset: {foo: 'foo'}}` modify the underlying HTML so I am not sure if it is not be better to simply use some random custom property instead: {props: {datasetfoo: 'foo'}}.
 
 - [Is there a way selecting MULTIPLE areas of text with JS in Chrome and/or IE? - Stack Overflow](https://stackoverflow.com/questions/4985284/is-there-a-way-selecting-multiple-areas-of-text-with-js-in-chrome-and-or-ie)

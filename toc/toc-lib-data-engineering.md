@@ -35,7 +35,7 @@ modified: 2020-12-31T15:32:40.135Z
   - When enough data is collected in batch, it is being loaded to destination.
   - A job in bellboy is a relationship link between processor and destinations
   - Each processor in bellboy is a class which has a single responsibility of processing data of specific type
-  - Every job can have as many destinations (outputs) as needed. For example, one job can load processed data into a database, log this data to stdout and post it by HTTP simultaneously.
+  - **Every job can have as many destinations (outputs)** as needed. For example, one job can load processed data into a **database**, **log** this data to stdout and post it by **HTTP** simultaneously.
   - New processors and destinations can be made by extending existing ones.
 # infrastructure
 - https://github.com/coollabsio/coolify

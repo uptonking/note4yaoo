@@ -19,7 +19,6 @@ modified: 2023-02-22T19:49:14.823Z
 
 - cons
 # codebase
-
 - dev-to
   - link异常
   - image异常
@@ -27,12 +26,31 @@ modified: 2023-02-22T19:49:14.823Z
 ## not-yet
 
 - 状态与视图
-  - view > state >view
 
-## overview
+## architecture
+
+- ReactEditor组件初始化时
+  - createEditor会传入setState逻辑到onChange属性，可以触发整个view更新
+  - coreCreateEditor会new TextArea(selector)创建核心视图对象
+
+- TextArea核心视图组件(可能不是html-textarea)初始化时
+  - editor.on('change', this.changeViewState.bind(this)); 
+    - updateView-vdom 触发更新编辑器的核心视图
+  - editor.on('change', () => onChange(editor)); 
+    - 触发更新用户视图层
+
+- slate的onChange事件被增强
+  - 除了执行原来的，还会 e.emit('change'); 
 
 - init-default-config
   - 注册了toolbar、hoverbar相关的各种配置
+
+## model-layer
+
+- custom slate model
+
+## view-layer
+
 # dev
 
 # docs
