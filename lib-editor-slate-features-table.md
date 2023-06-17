@@ -12,11 +12,16 @@ modified: 2023-02-27T19:07:31.111Z
 - 版本
   - viewer: 仅展示，类似tanstack-table
   - editing: 支持编辑/undo，类似o-spreadsheet
+  - 支持hide header
 
 - views
   - table
   - kanban
   - search-view
+  - multi-column
+# not-yet
+- 如何让react组件与非react组件更好的结合
+  - 参考autocomplete，将render方法和vnode都暴露出去，支持修改
 # dev-to
 - 如何去掉event-emitter
   - 难点在需要在最外层容器触发内层的 keydown/mousedown

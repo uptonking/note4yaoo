@@ -59,6 +59,9 @@ modified: 2022-08-21T10:02:27.788Z
     - 腾讯文档智能表格使用异步分片计算
   - block/cell-based render
     - 参考 notion-render/editor-render
+  - 👉🏻 reactive实现的方案
+    - 发布订阅，参考redux、ag-grid、ospreadsheet、tui.grid、gridjs
+    - 手动先更新数据再更新view，参考prosemirror、slate、typewriter、sleekgrid、simple-dt
 
 - collab-如何在表中间位置插入行或列
   - 最简单和常见的数据结构是crdt map，可尝试基于`无序map+有序array`实现有序arrayMap
@@ -72,7 +75,7 @@ modified: 2022-08-21T10:02:27.788Z
 
 - 开源表格
   - 国内: luckysheet
-  - 国外: ag-grid, tanstack-table, handsontable, glide, o-spreadsheet, sleekgrid
+  - 国外: ag-grid, tanstack-table, handsontable, o-spreadsheet, tui.grid, sleekgrid, simple-datatables
   - tinybase
 
 - src-list-grid
@@ -267,7 +270,7 @@ modified: 2022-08-21T10:02:27.788Z
 - react-data-grid /MIT/4kStar/202201/ts
   - https://github.com/adazzle/react-data-grid
   - https://adazzle.github.io/react-data-grid/
-  - 基于div实现，每行对应的dom元素存在，未实现row/column span(merging cells)
+  - 基于div实现，每行对应的dom元素存在，未实现row/column-span(merge cells)
   - 项目模块化，分为core和addons
   - Excel-like grid component built with React, with editors, keyboard navigation, copy...
 
@@ -316,7 +319,7 @@ modified: 2022-08-21T10:02:27.788Z
     - 读取数据
     - 使用update触发首次渲染
   - update更新流程
-    - 各种事件都绑定了update回调
+    - 各种事件都绑定了update回调； 也有先手动更新数据再手动调用update
     - _paginate()
     - _renderPage()
     - _renderTable()
@@ -341,12 +344,13 @@ modified: 2022-08-21T10:02:27.788Z
   - 支持sort, filter, 不支持group
   - 支持Merging cell
   - 依赖xlsx、tui-date-picker、tui-pagination
+  - 支持多实例，初始化时返回实例id，用于store/dataSource/eventemitter
   - 视图层依赖preact(多使用extends Component)
     - 但使用时不要求react环境，通过new Grid(options)
     - 很少使用setState, didMount/Update有使用
   - 状态使用自定义createStore，包含rawData(Row[])、viewData(ViewRow[])、column
     - 内部是个observable对象，基于Object.defineProperty拦截get实现
-    - 更新store通过dispatch，统一管理了所有setState的方法，updateFn(store, ...args);
+    - 更新store通过dispatch，统一列出了所有更新store的方法，执行`updateFn(store, ...args)`，更新时直接store.prop1 = newValue
   - Powerful Component to Display and Edit Data.
   - TOAST UI Grid is available when using the Plain JS, React, Vue Component.
   - [Is there no undo function?_202207](https://github.com/nhn/tui.grid/issues/1735)
@@ -357,6 +361,18 @@ modified: 2022-08-21T10:02:27.788Z
   - update更新流程
     - 交互操作都通过 `grid.dispatch('opName', 参数)` 来触发store更新
     - 自定义connect高阶hoc选取store中部分值传到view层顶级组件，在store值变化时通过hoc更新
+
+- gridjs /MIT/3.3kStar/202202/ts
+  - https://github.com/grid-js/gridjs
+  - https://gridjs.io/
+  - 基于display-table实现，使用class类风格
+  - 依赖preact，但只作为视图层，useState/useEffect有使用
+  - store对象自身是个eventemitter，和redux几乎相同，暴露了getState/dispatch/subscribe
+    - 使用ContextProvider直接将store传下去
+    - 后代组件都可以通过useContext拿到并触发 dispatch(actionFn)，这里和redux不同，会触发所有subscribe过的子状态更新
+    - 取值时使用的是useSelector，而不是getState
+  - HTML table plugin written in TypeScript using vanilla js
+  - Grid.js can be used with any JavaScript frameworks (React, Angular or VanillaJS)
 
 - hyperformula /1.5kStar/GPLv3/202304/ts
   - https://github.com/handsontable/hyperformula
@@ -501,16 +517,17 @@ modified: 2022-08-21T10:02:27.788Z
   - We've poured our soul into ReactDataGrid and built it from scratch with React
   - Community Edition
     - sort,filter,pagination,edit inline,row selection
-    - colspan,context menu,remote data source,column resize/reorder
+    - **colspan**,context menu,remote data source,column resize/reorder
   - Enterprise Edition也开源了
     - group,pivot,master/detail,tree-grid
     - locked column,row resize/reorder,footer
 
-- reactgrid /MIT/229Star/202202/ts
+- reactgrid /760Star/MIT/202206/ts/inactive
   - https://github.com/silevis/reactgrid
   - https://reactgrid.com/
   - https://reactgrid.com/examples
   - 基于div实现
+  - 支持编辑、
   - Add spreadsheet-like behavior to your React app
   - ReactGrid is NOT
     - Record-based data table(like ag-grid, handsontable)
@@ -518,6 +535,8 @@ modified: 2022-08-21T10:02:27.788Z
   - [The Great Merge of PRO version into MIT_202201](https://github.com/silevis/reactgrid/pull/65)
   - [Is there any pricing for this library](https://github.com/silevis/reactgrid/issues/101)
     - MIT License
+  - https://github.com/silevis/reactgrid-samples
+    - /ts/202011
   - fork
     - https://github.com/alonshmiel/reactgrid
 
@@ -910,14 +929,6 @@ modified: 2022-08-21T10:02:27.788Z
     - https://github.com/swsvindland/opentable /inactive
     - https://github.com/rathbone-labs/jacksontable /inactive
     - https://github.com/pingyuanChen/handsontable /inactive
-
-- gridjs /MIT/3.3kStar/202202/ts
-  - https://github.com/grid-js/gridjs
-  - https://gridjs.io/
-  - 基于display-table实现，使用class类风格
-  - 依赖preact，但只作为视图层，useState/useEffect有使用
-  - HTML table plugin written in TypeScript using vanilla js
-  - Grid.js can be used with any JavaScript frameworks (React, Angular or VanillaJS)
 
 - jspreadsheet-ce /6.4kStar/MIT/202305/js
   - https://github.com/jspreadsheet/ce

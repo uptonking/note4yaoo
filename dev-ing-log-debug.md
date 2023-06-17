@@ -13,6 +13,17 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
+## 
+
+## 
+
+## watarble-snabbdom渲染细节
+
+- 首次渲染需要 vnode的顶层节点 与 已存在的domNode 匹配，所以一般要先创建domNode或修改vnode顶层节点的选择器
+
+- useReactTable的实现，每次执行改hook时，会执行setOptions更新table实例的配置
+  - 自己封装时，也要在createTable后立即setOptions
+
 ## vscode里面调试mocha测试的命令调了很久
 
 - 先在控制台调通，再修改launch.json

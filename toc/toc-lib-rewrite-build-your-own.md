@@ -58,6 +58,7 @@ modified: 2021-09-29T13:23:09.969Z
   - Snabbdom consists of an extremely simple, performant and extensible core that is only ≈ 200 SLOC. 
   - It offers a modular architecture with rich functionality for extensions through custom modules. 
   - To keep the core simple, all non-essential functionality is delegated to modules.
+  - [Support custom elements 已支持](https://github.com/snabbdom/snabbdom/issues/141)
   - https://github.com/ged-odoo/blockdom
     - Owl framework 1.x is based on a fork of snabbdom
     - version 2 is not ready yet, but will be based on blockdom.
