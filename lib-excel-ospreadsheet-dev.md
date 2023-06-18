@@ -23,6 +23,8 @@ modified: 2023-06-07T22:37:07.042Z
 
 - cons
   - 视图层基于odoo自研的owl
+  - 不支持外部数据源
+  - undo和collab的插件不够解耦
   - 透视表和图表功能弱于luckysheet
 
 - tips

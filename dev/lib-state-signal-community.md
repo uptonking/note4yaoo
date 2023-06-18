@@ -86,7 +86,7 @@ state1.state.deniz = 11; // nothing
 - https://twitter.com/m1nd_killer/status/1629530182636781568
 - It is same technology that we had 2 years ago, as immer, just in new format
 - Immer is amazing, but pretty different. Mobx on the other hand (by the same creator) would be the much closer comparison
-- I mean both technologies let you make mutations with Proxy under the hood. And signals just a new way to solve the same issue.
+- I mean both technologies let you **make mutations with `Proxy`** under the hood. And signals just a new way to solve the same issue.
   - But mobx more about observables and huge stores.
   - Anyway, mutating with proxy let make code easier to read
 

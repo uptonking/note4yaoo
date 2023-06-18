@@ -10,12 +10,12 @@ modified: 2022-08-21T10:02:27.788Z
 # focus
 
 - requirements
-  - group/aggregate/**pivot**: tanstack-table
+  - group/aggregate/**pivot**: tanstack-table(大量缓存)
   - **editable operations support**: logux/ospreadsheet/slate/typewriter
   - _undo/redo+batch-undo_: 存反向op和存值2种方案，存值本身也是反向op
-  - _collaborative optional_: 作为插件
+  - _collaborative optional_: 作为插件，似乎将ospreadsheet的ot去掉就是llw了
   - _transaction_
-  - headless utils: state/actions/props/api : autocomplete/tanstack，state和a11y不同粒度
+  - headless utils: state/actions/props/api : autocomplete/tanstack，state和a11y不同粒度，可实现为core+plugin
   - view-layer: vdom+reactive(mobx/signal) : autocomplete/typewriter/Simple-DataTables/slate-dom/sleek
   - virtualized
   - keyboard/a11y
@@ -44,6 +44,8 @@ modified: 2022-08-21T10:02:27.788Z
   - ospreadsheet
   - sleekgrid: plugin.init(thisGrid)
   - autocomplete: state层的hooks
+  - gridjs: a function component to render
+  - 未实现plugin: tui.grid
 
 - view-layer 进一步优化需要深入前端框架如react
   - 自定义组件的渲染返回值都是vnode，允许用户替换默认renderFunction
@@ -60,8 +62,8 @@ modified: 2022-08-21T10:02:27.788Z
   - block/cell-based render
     - 参考 notion-render/editor-render
   - 👉🏻 reactive实现的方案
-    - 发布订阅，参考redux、ag-grid、ospreadsheet、tui.grid、gridjs
-    - 手动先更新数据再更新view，参考prosemirror、slate、typewriter、sleekgrid、simple-dt
+    - 发布订阅，参考redux、ag-grid、ospreadsheet、tui.grid、gridjs、mxgraph
+    - 手动先更新数据再更新view，参考prosemirror、slate、typewriter、tanstack-table、sleekgrid、simple-dt
 
 - collab-如何在表中间位置插入行或列
   - 最简单和常见的数据结构是crdt map，可尝试基于`无序map+有序array`实现有序arrayMap
@@ -342,37 +344,51 @@ modified: 2022-08-21T10:02:27.788Z
   - https://nhn.github.io/tui.grid/latest/tutorial-example26-infinite-scroll
   - 基于table标签实现，合并表头列实际样式为.tui-grid-lside/rside-area
   - 支持sort, filter, 不支持group
-  - 支持Merging cell
+  - 支持Merging-cell、支持级联列(column-relations)
   - 依赖xlsx、tui-date-picker、tui-pagination
   - 支持多实例，初始化时返回实例id，用于store/dataSource/eventemitter
   - 视图层依赖preact(多使用extends Component)
     - 但使用时不要求react环境，通过new Grid(options)
     - 很少使用setState, didMount/Update有使用
+    - .tsx组件大概40个
   - 状态使用自定义createStore，包含rawData(Row[])、viewData(ViewRow[])、column
-    - 内部是个observable对象，基于Object.defineProperty拦截get实现
+    - 内部是个observable对象，基于Object.defineProperty拦截set/get实现
     - 更新store通过dispatch，统一列出了所有更新store的方法，执行`updateFn(store, ...args)`，更新时直接store.prop1 = newValue
-  - Powerful Component to Display and Edit Data.
-  - TOAST UI Grid is available when using the Plain JS, React, Vue Component.
-  - [Is there no undo function?_202207](https://github.com/nhn/tui.grid/issues/1735)
-    - Unfortunately, it is not supported.
   - init初始化流程
     - createStore时会注册一些函数
     - 初始render时会传入dispatch到视图层并放在context，所有后代组件都能拿到
   - update更新流程
-    - 交互操作都通过 `grid.dispatch('opName', 参数)` 来触发store更新
+    - 交互操作都通过 `grid.dispatch('upFn Name', 参数)` 来触发store更新
     - 自定义connect高阶hoc选取store中部分值传到view层顶级组件，在store值变化时通过hoc更新
+  - Powerful Component to Display and Edit Data.
+  - TOAST UI Grid is available when using the Plain JS, React, Vue Component.
+  - [Is there no undo function?_202207](https://github.com/nhn/tui.grid/issues/1735)
+    - Unfortunately, it is not supported.
+  - [dataSource](https://github.com/nhn/tui.grid/blob/master/packages/toast-ui.grid/docs/en/data-source.md)
+    - Generally, the TOAST UI Grid operates with the local data in the Front End environment. 
+    - However, with `dataSource`, TOAST UI Grid can be configured to host remote data as well.
+    - Usually when sending a request to a remote server, Pagination is required. 
 
 - gridjs /MIT/3.3kStar/202202/ts
   - https://github.com/grid-js/gridjs
   - https://gridjs.io/
   - 基于display-table实现，使用class类风格
+  - data参数支持 `TCell[][]` 或 `{ [key: string]: TCell }[]` or Function
   - 依赖preact，但只作为视图层，useState/useEffect有使用
+    - .tsx大概16个，包含主要ui组件
   - store对象自身是个eventemitter，和redux几乎相同，暴露了getState/dispatch/subscribe
     - 使用ContextProvider直接将store传下去
     - 后代组件都可以通过useContext拿到并触发 dispatch(actionFn)，这里和redux不同，会触发所有subscribe过的子状态更新
-    - 取值时使用的是useSelector，而不是getState
+    - 取值时使用的是useSelector而不是getState，每次都会自动subscribe
   - HTML table plugin written in TypeScript using vanilla js
   - Grid.js can be used with any JavaScript frameworks (React, Angular or VanillaJS)
+  - Grid.js has an internal pipeline which takes care of processing, filter and refining the raw data.
+  - [Server-side setup | Grid.js](https://gridjs.io/docs/server-side)
+    - components like search, sort and pagination can be connected to a server-side backend.
+    - All Grid.js plugins support server-side storage.
+  - [Plugin basics | Grid.js](https://gridjs.io/docs/plugins/basics)
+    - A Grid.js plugin is a Preact Functional Component that render a Virtual Node. 
+    - Grid.js will take care of rendering your plugin.
 
 - hyperformula /1.5kStar/GPLv3/202304/ts
   - https://github.com/handsontable/hyperformula

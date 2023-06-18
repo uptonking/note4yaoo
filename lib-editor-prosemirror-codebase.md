@@ -77,10 +77,6 @@ modified: 2021-06-02T17:13:37.692Z
 
 - ## 如何实现virtualized虚拟化渲染
 - 参考思路，先实现分页，再渲染前后2页
-# tutorials-examples
-- 渲染出来的编辑器，默认内容为 `<p><br></p>`，`transaction.before.content.size`默认大小为2
-- 编辑器默认支持按backspace退格键删除、del删除键
-- 编辑器默认不支持enter换行
 # architecture
 - dataflow
   - 先更新state/model，再更新view
@@ -106,6 +102,15 @@ let view = new EditorView(document.body, {
   - Decoration 与模型层数据相关，可与具体节点无关
   - plugin view 可控制EditorView的dom之外的元素渲染和交互
 # state
+- state内容
+  - doc、selection、storedMarks、plugins-state
+
+- state是plugins的容器
+
+- editorState的更新总是2步
+  - const newState= new EditorState()
+  - newState[pluginKey] = pluginNewState; 
+
 - immutable state
   - 分析keypress插入文本
   - 会触发 view.dispatch(view.state.tr.insertText(text).scrollIntoView()); 
@@ -127,21 +132,37 @@ let view = new EditorView(document.body, {
 - ## 涉及NodeView时，EditorState和plugin.state的更新顺序
   - 所有plugin.state.apply()依次执行 > editorView.dispathTransaction(tr) > `NodeView.init()/update()` > plugin.view().update()
 # view
+- view模块
+  - vdom定义、decoration、selection同步、domObserver状态同步、dom-coords、clipboard处理、浏览器兼容性处理
+
 - decoration vs NodeView vs plugin.view()
   - decoration不影响prosemirror document
   - NodeView可以完全定制渲染逻辑和更新逻辑，只有在编辑器中存在该类型PMNode时，才会创建和更新
   - plugin.view()只要EditorView更新了，就会被调用，因此要注意控制更新逻辑提高性能
 
+- editorView.props存放了editorState，获取时会同步获取最新的
+  - this._props.state = this.state
+
 - 编辑输入时如何更新dom
   - 编辑器最外层样式类为`. ProseMirror`的div元素的`contenteditable`为true，所以编辑器内元素都可编辑
+  - 浏览器编辑发生后，通过domObserver将修改同步到editorState
 # plugin
-- editorState的更新总是2步
-  - const newState= new EditorState()
-  - newState[pluginKey] = pluginNewState; 
+- pluginProps和editorProps基本相同，方便理解和扩展编辑器的能力
+
+- state允许plugin有自己的状态
+
+- view允许plugin影响ui
+
+- filter/appendTransaction允许影响action/op
 # model
 
 # transform
-
+- Transactions track changes to the document, but also other state changes, like selection updates and adjustments of the set of storedMarks
+  - you can store metadata properties in a transaction
+# tutorials-examples
+- 渲染出来的编辑器，默认内容为 `<p><br></p>`，`transaction.before.content.size`默认大小为2
+- 编辑器默认支持按backspace退格键删除、del删除键
+- 编辑器默认不支持enter换行
 # prosemirror-mdx-dev
 - 一种实现思路是使用react组件作为NodeView，视图层用react封装prosemirror-view实现，一般基于portal渲染
   - pros：使用丰富的react组件和prosemirror插件

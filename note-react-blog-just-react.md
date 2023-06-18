@@ -12,6 +12,79 @@ modified: 2023-03-03T09:10:48.068Z
 - [卡颂 《React技术揭秘》](https://github.com/BetaSu/just-react)
 # docs
 
+## [React’s diff algorithm_201312](https://calendar.perfplanet.com/2013/diff/)
+
+- React is a JavaScript library for building user interfaces, designed from the ground up with performance in mind
+
+- vdom
+  - It is important to understand that the result of render is not an actual DOM node. 
+  - Those are just lightweight JavaScript objects. 
+  - We call them the virtual DOM.
+
+- Finding the minimal number of modifications between two arbitrary trees is a O(n^3) problem
+  - React uses simple and yet powerful heuristics to find a very good approximation in O(n).
+  - React only tries to reconcile trees level by level.
+  - You can provide a `key` attribute in order to help React figure out the mapping of list
+  - React will match only components with the same class.
+
+- Event Delegation
+  - Attaching event listeners to DOM nodes is painfully slow and memory-consuming. 
+  - Instead, React implements a popular technique called “event delegation”. 
+  - React goes even further and re-implements a W3C compliant event system.
+- A single event listener is attached to the root of the document. 
+  - When an event is fired, the browser gives us the target DOM node. 
+  - In order to propagate the event through the DOM hierarchy, React doesn’t iterate on the virtual DOM hierarchy.
+  - Instead we use the fact that every React component has a unique id that encodes the hierarchy. 
+  - We can use simple string manipulation to get the id of all the parents. 
+  - By storing the event listeners in a hash map, we found that it performed better than attaching them to the virtual DOM.
+  - The browser creates a new event object for each event and each listener. 
+  - `dispatchEvent('click', 'a.b.c', event) clickCaptureListeners['a'](event); clickCaptureListeners['a.b'](event); clickCaptureListeners['a.b.c'](event); clickBubbleListeners['a.b.c'](event); clickBubbleListeners['a.b'](event); clickBubbleListeners['a'](event);`
+
+- Rendering
+  - Whenever you call `setState` on a component, React will mark it as dirty. 
+  - **At the end of the event loop, React looks at all the dirty components and re-renders them.**
+  - This batching means that during an event loop, there is exactly one time when the DOM is being updated.
+- **When `setState` is called, the component rebuilds the virtual DOM for its children.**
+  - If you call setState on the root element, then the entire React app is re-rendered. 
+  - All the components, even if they didn’t change, will have their render method called
+- Finally, you have the possibility to prevent some sub-trees to re-render. 
+  - shouldComponentUpdate(object nextProps, object nextState)
+
+- The techniques that make React fast are not new. 
+  - We’ve known for a long time that touching the DOM is expensive, you should batch write and read operations, event delegation is faster …
+- What makes React stand out is that all those optimizations happen by default. 
+
+## [状态更新](https://react.iamkasong.com/state/prepare.html#%E5%87%A0%E4%B8%AA%E5%85%B3%E9%94%AE%E8%8A%82%E7%82%B9)
+
+- render阶段开始于performSyncWorkOnRoot或performConcurrentWorkOnRoot方法的调用。这取决于本次更新是同步更新还是异步更新。
+
+- 每次状态更新都会创建一个保存更新状态相关内容的对象，我们叫他Update。在render阶段的beginWork中会根据Update计算新的state。
+  - 现在触发状态更新的fiber上已经包含Update对象。
+
+- render阶段是从rootFiber开始向下遍历。那么如何从触发状态更新的fiber得到rootFiber呢？
+  - 调用markUpdateLaneFromFiberToRoot方法。
+
+- commit阶段开始于commitRoot方法的调用。其中rootFiber会作为传参。
+
+- ClassComponent与HostRoot（即rootFiber.tag对应类型）共用同一种Update结构。
+  - lane：优先级相关字段
+  - tag：更新的类型，包括UpdateState | ReplaceState | ForceUpdate | CaptureUpdate。
+  - next：与其他Update连接形成链表。
+- Update存在一个连接其他Update形成链表的字段next
+- Fiber节点组成Fiber树，页面中最多同时存在两棵Fiber树：
+  - 代表当前页面状态的current Fiber树
+  - 代表正在render阶段的workInProgress Fiber树
+  - 在commit阶段完成页面渲染后，workInProgress Fiber树变为current Fiber树，workInProgress Fiber树内Fiber节点的updateQueue就变成current updateQueue
+
+- [setState的流程](https://react.iamkasong.com/state/setstate.html)
+
+- [In-depth explanation of state and props update in React - React inDepth](https://indepth.dev/posts/1009/in-depth-explanation-of-state-and-props-update-in-react)
+  - [Inside Fiber: in-depth overview of the new reconciliation algorithm in React - React inDepth](https://indepth.dev/posts/1008/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react)
+
+- [didact](https://pomb.us/build-your-own-react/)
+  - In Didact, we are walking the whole tree during the render phase. React instead follows some hints and heuristics to skip entire sub-trees where nothing changed.
+  - We are also walking the whole tree in the commit phase. React keeps a linked list with just the fibers that have effects and only visit those fibers.
+
 ## [双缓存机制](https://github.com/BetaSu/just-react/blob/master/docs/process/doubleBuffer.md)
 
 - 当我们用canvas绘制动画，每一帧绘制前都会调用ctx.clearRect清除上一帧的画面。

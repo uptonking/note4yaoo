@@ -51,6 +51,9 @@ modified: 2023-03-16T16:29:47.610Z
   - 作为DraggableEditor的static方法
   - 在editor.isCollapsibleElement被增强
 
+- anchors
+  - jump back and forward
+
 ## drag
 
 - 多级列表下的第一个p元素，无法拖拽到这个位置

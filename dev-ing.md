@@ -274,6 +274,24 @@ $$('[contenteditable]')
 
 ## 060
 
+## 0618
+
+- dev-log
+  - 重构watarble视图层为class，方便实现destroyView
+  - 重构示例数据流，排序时不会新建table和state
+
+- Cannot assign to `current` because it is a read-only property.
+  - [What typescript type do I use with useRef() hook when setting current manually? - Stack Overflow](https://stackoverflow.com/questions/58017215/what-typescript-type-do-i-use-with-useref-hook-when-setting-current-manually)
+  - 解决方案是 `useRef<Watarble>(null)` > `useRef<Watarble | null>(null)`
+
+```JS
+function useRef < T > (initialValue: T): MutableRefObject < T > ;
+
+function useRef < T > (initialValue: T | null): RefObject < T > ;
+
+// If the initial value includes null, but the specified type param doesn't, it'll be treated as an immutable RefObject.
+```
+
 ## 0614
 
 - [How to debug Mocha + Typescript + ESM in VS Code - Stack Overflow](https://stackoverflow.com/questions/76193863/how-to-debug-mocha-typescript-esm-in-vs-code)
@@ -555,7 +573,13 @@ this.setState({ employees });
 - [Assigning objects to const variables vs let variables - Stack Overflow](https://stackoverflow.com/questions/46569598/javascript-assigning-objects-to-const-variables-vs-let-variables)
   - ES6 `const` makes the binding immutable, not the value.
   - Your example isn't bad practice, and is perfectly acceptable because person still refers to the same object, even though you've changed a property. 
-  If you wish to make your object value immutable, you can do that with `Object.freeze()`
+  - 👉🏻 If you wish to make your object value immutable, you can do that with `Object.freeze()`
+
+```JS
+const returnedTarget = Object.assign(target, source);
+
+console.log(returnedTarget === target); //true
+```
 
 ## 0507
 

@@ -9,11 +9,11 @@ modified: 2022-08-21T10:19:58.756Z
 
 # guide
 - features
-  - unstyled
+  - 支持外部数据源 server side data model
+  - headless/unstyled
   - framework-agnostic core
-  - typescript
-  - support virtualize
-  - support server side data model
+  - 支持virtualize
+  - 支持常见操作 filter/sort/group/pagination
 
 - cons
   - 编辑功能支持不多，ag-grid也是

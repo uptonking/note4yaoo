@@ -10,8 +10,11 @@ modified: 2022-08-21T10:19:58.756Z
 # guide
 
 # server side
-- [A server side external sorting and filtering example](https://github.com/TanStack/table/discussions/2033)
-  - [Server-side filtering, pagination and sorting with query state in URL](https://github.com/TanStack/table/discussions/3945)
+- ## [A server side external sorting and filtering example](https://github.com/TanStack/table/discussions/2033)
+
+- ## [Server-side filtering, pagination and sorting with query state in URL](https://github.com/TanStack/table/discussions/3945)
+
+- ## [get access to selected row data from outside table component](https://github.com/TanStack/table/discussions/2155)
 # hooks
 
 ## [Pass custom hooks conditionally in useTable](https://github.com/tannerlinsley/react-table/discussions/2452)

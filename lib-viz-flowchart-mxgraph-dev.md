@@ -50,9 +50,39 @@ modified: 2023-05-29T15:09:30.865Z
   - redrawLabel
   - redrawCellOverlays
   - redrawControl
+# model-layer
+
+```JS
+// as controller/manager
+class Graph extends EventSource {
+
+  constructor() {
+    this.model = new GraphDataModel();
+    this.view = this.createGraphView();
+    this.cellRenderer = this.createCellRenderer();
+
+    this.getDataModel().addListener(
+      InternalEvent.CHANGE,
+      () => {
+        this.updateSelection();
+        // update dom
+        this.view.validate();
+        this.sizeDidChange();
+      }
+    );
+  }
+
+}
+
+class GraphDataModel extends EventSource
+
+class GraphView extends EventSource
+
+class GraphSelectionModel extends EventSource
+```
+
 # codebase
-- 都是EventSource实例
-  - graphManager, graphModel, graphSelection, graphView
+
 # blogs
 
 ## [mxgraph 系列](https://juejin.cn/post/6844904148379369480)

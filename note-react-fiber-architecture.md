@@ -22,16 +22,24 @@ modified: 2020-07-14T11:58:47.593Z
 - 代数效应能够将副作用（例子中为请求图片数量）从函数逻辑中分离，使函数关注点保持纯粹。
 - 从React15到React16，协调器（Reconciler）重构的一大目的是：将老的同步更新的架构变为异步可中断更新。
 - 异步可中断更新可以理解为：更新在执行过程中可能会被打断（浏览器时间分片用尽或有更高优任务插队），当可以继续执行时恢复之前执行的中间状态。
+
 - 其实，浏览器原生就支持类似的实现，这就是Generator。
-- 但是Generator的一些缺陷使React团队放弃了他：
+- 但是**Generator的一些缺陷使React团队放弃了他**：
   - 类似async，Generator也是传染性的，使用了Generator则上下文的其他函数也需要作出改变。这样心智负担比较重。
   - Generator执行的中间状态是上下文关联的。
 - 只考虑“单一优先级任务的中断与继续”情况下Generator可以很好的实现异步可中断更新。
+
 - 但是当我们考虑“高优先级任务插队”的情况，如果此时已经完成doExpensiveWorkA与doExpensiveWorkB计算出x与y。
   - 如果通过全局变量保存之前执行的中间状态，又会引入新的复杂度。
 - 基于这些原因，React没有采用Generator实现协调器。
 
 - 每个任务更新单元为React Element对应的Fiber节点。
+
+- A Fiber is essentially an incremental unit for rendering purposes. 
+  - By breaking down what needs to be rendered and updated to the DOM, React is able to update the most important things first.
+  - A fiber is a javascript object that contains data about the component as well as data about that component’s input and output. 
+  - A fiber is both an instance of a component as well as frame in the call stack.
+  - Fibers have both types and keys(for reconciliation), just like React elements. 
 
 ## [Fiber架构的工作原理](https://react.iamkasong.com/process/doublebuffer.html)
 
@@ -44,6 +52,11 @@ modified: 2020-07-14T11:58:47.593Z
 - 在React中最多会同时存在两棵Fiber树。当前屏幕上显示内容对应的Fiber树称为current Fiber树，正在内存中构建的Fiber树称为workInProgress Fiber树。
 - current Fiber树中的Fiber节点被称为current fiber，workInProgress Fiber树中的Fiber节点被称为workInProgress fiber，他们通过alternate属性连接。
 - 当workInProgress Fiber树构建完成交给Renderer渲染在页面上后，应用根节点的current指针指向workInProgress Fiber树，此时workInProgress Fiber树就变为current Fiber树。
+
+- Fiber节点组成Fiber树，页面中最多同时存在两棵Fiber树：
+  - 代表当前页面状态的current Fiber树
+  - 代表正在render阶段的workInProgress Fiber树
+  - 在commit阶段完成页面渲染后，workInProgress Fiber树变为current Fiber树，workInProgress Fiber树内Fiber节点的updateQueue就变成current updateQueue
 
 - https://twitter.com/acdlite/status/978696799757086720
   - So much of React's architecture is based on stuff game developers figured out decades ago.

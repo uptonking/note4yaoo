@@ -18,14 +18,16 @@ modified: 2021-02-27T15:31:23.130Z
 - [基于状态机的JSON解析](https://juejin.cn/post/7032491400516075557)
 # faq
 
-## [Can an array be top-level JSON-text? - Stack Overflow](https://stackoverflow.com/questions/3833299/can-an-array-be-top-level-json-text)
+## [Can an array be top-level JSON-text?](https://stackoverflow.com/questions/3833299/can-an-array-be-top-level-json-text)
+
+- yes, valid `["apple","pear","banana"]`
 
 - Yes, an array is legal as top-level JSON-text.
 - There are four standard documents defining JSON: RFC 4627, RFC 7159 (which obsoletes RFC 4627), ECMA-404, and RFC 8259 (which obsoletes RFC 7159, and calls ECMA-404 normative). 
   - They differ in which top-level elements they allow, but all allow an object or an array as the top-level element.
 
-- Yes, but you should consider making the root an object instead in some scenarios, due to JSON hijacking. 
-  - This is an information disclosure vulnerability based on overriding the array constructor in JavaScript.
+- Yes, but you should consider making the root an object instead in some scenarios, due to JSON hijacking.
+  - but JSON hijacking is not an issue for modern browsers
 
 - [Can JSON start with "["? - Stack Overflow](https://stackoverflow.com/questions/5034444/can-json-start-with)
 
