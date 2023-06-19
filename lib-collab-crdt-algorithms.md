@@ -490,11 +490,19 @@ modified: 2023-03-07T04:43:58.713Z
 
 ### impl
 
-- https://github.com/ryankaplan/woot-collaborative-editor
+- https://github.com/ryankaplan/woot-collaborative-editor /201601/ts
   - When a textarea-change is detected, diff the textarea content against the last known content. 
   - 编辑器使用textarea，依赖diff-match-patch
   - With the help of WootTypes. WString, turn that diff into `WStringOperations` and broadcast those operations to the server.
   - When we receive operations from the server, apply those operations to our WString instance and apply them to the text in #collab-doc.
+  - WOOT, as an approach, gets really slow unless you implement tombstone garbage collection (aka getting rid of text that users have deleted) which can only happen when everyone has disconnected from a document.
+
+- https://github.com/atom/teletype-crdt
+  - [Can teletype-crdt work with other wysiwyg editor ?](https://github.com/atom/teletype-crdt/issues/6)
+  - Probably not. This CRDT is for text. A wysiwyg editor’s underlying model isn’t text, it’s a tree (with nodes and properties to represent rich text).
+  - teletype-crdt is a CRDT that exposes APIs that work only with plain text and markers. A WYSIWYG editor has a more complex structure than just text, so you will need to enhance it in such a way that can support your use case.
+  - [协同编辑冲突处理算法综述](https://mp.weixin.qq.com/s?__biz=MjM5MTY2NTIyMA==&mid=2649000528&idx=1&sn=98521c16c3f24809f426fe39ae48e203&chksm=bea2377b89d5be6df3656e8b8c76d022ab1fe6deece6b3f16e88ab07b5cba227542240f7d5d7)
+    - atom 编辑器的协同插件 teletype 即是基于 WOOT 实现
 
 - https://github.com/d6y/wootjs /scala.js
   - WOOT is a collaborative text editing algorithm, 

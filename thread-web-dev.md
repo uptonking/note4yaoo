@@ -804,12 +804,6 @@ decode('&#70;'); // => F
 - I'd thought that TypedArrays and DataViews made it simpler. 
   - Support for binary data on the web is quite solid by now.
 
-- ## Just learned about how @excalidraw implements encryption by encrypting the data 
-- https://twitter.com/christoomey/status/1351234746139947013
-  - and then putting the key in the hash of the URL (which browsers don't send with the request). 
-  - Self-contained security via browser features, so neat!
-- Interesting, I didn’t think about adding it to the payload. 
-  - That would solve the problem I was trying to avoid: increasing the length of the url. Thanks! Would you be interested in implementing it?
 
 - ## It might be a "Hot take". But. You need a really good reason to be mocking API requests in @storybookjs
 - https://twitter.com/jh3yy/status/1351288120881385479

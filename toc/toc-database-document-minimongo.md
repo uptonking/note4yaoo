@@ -47,6 +47,7 @@ modified: 2022-11-30T18:57:26.459Z
 - https://github.com/lgandecki/modifyjs /201803/js
   - Modify your objects with a mongo like syntax. 
   - This is based on a modify function of Meteor's brilliant minimongo package, cleaned up, rewritten to es6, changed to work without Meteor context
+  - rxdb crdt使用
 - https://github.com/crcn/sift.js
   - Use Mongodb queries in JavaScript
 

@@ -15,6 +15,8 @@ modified: 2023-01-12T11:33:28.084Z
 
 - https://github.com/JokerLHF/piece-table
   - ts 版实现 mini piece-table
+- https://github.com/PsychoLlama/piece-table.rs
+  - A tiny piece table implementation in Rust
 
 - [Rope理论与实践 for Java String](https://web.archive.org/web/20160306020543/https://www.ibm.com/developerworks/cn/java/j-ropes/)
 # rope-impl

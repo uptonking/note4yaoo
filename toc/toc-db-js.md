@@ -328,6 +328,8 @@ modified: 2022-11-25T15:50:48.226Z
 
 - https://github.com/mafintosh/hyperdb /201808/js
   - Distributed scalable database.
+- https://github.com/beakerbrowser/webdb /201807/js
+  - A database that reads and writes records on dat:// websites.
 
 - https://github.com/Telios-org/nebula
   - Real-time distributed storage for files and key value databases built on top of Hypercore Protocol
@@ -362,9 +364,6 @@ modified: 2022-11-25T15:50:48.226Z
 
 - https://github.com/codemix/ts-sql
   - a SQL database implemented purely in TypeScript type annotations.
-
-- https://github.com/mafintosh/hyperdb /201808/js
-  - Distributed scalable database
 
 - https://github.com/leoafarias/neardb /ts/inactive
   - Simple document db made for infinitely scalable globally distributed reads.

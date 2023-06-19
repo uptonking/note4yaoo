@@ -27,7 +27,7 @@ modified: 2023-01-17T19:14:47.611Z
   - Slack/Mattermost, IFTTT Integration
   - 各种集成
 
-- https://github.com/excalidraw/excalidraw-room
+- https://github.com/excalidraw/excalidraw-room /ts
   - Collaboration server for Excalidraw
 
 - cryptpad /4.3kStar/AGPLv3/202301/js

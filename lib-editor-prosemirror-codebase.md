@@ -104,6 +104,8 @@ let view = new EditorView(document.body, {
 # state
 - state内容
   - doc、selection、storedMarks、plugins-state
+  - config、schema
+  - tr创建新的transaction
 
 - state是plugins的容器
 
@@ -120,16 +122,16 @@ let view = new EditorView(document.body, {
 - [recommended way to communicate from a plugin to a NodeView](https://discuss.prosemirror.net/t/how-can-i-communicate-from-a-plugin-to-a-custom-nodeview/952)
   - it seems possible to decorate the NodeViews and then update the decorations when the external data changes
 
-- ## EditorState和plugin.state的首次创建顺序
+- EditorState和plugin.state的首次创建顺序
   - `EditorState.create()` > 所有plugin.state.init() > `new EditorView()` > **所有plugin.view()**  > 所有plugin.state.apply() > editorView.dispathTransaction(tr) > ~~部分~~插件plugin.view().update()
   - 注意：NodeView的init()在实际创建Node时才执行，编辑器中没有此类型的Node时不会创建和更新
   - 实例场景：在plugin.view()中也可以创建和更新dom，基于ReactDOM.render()，参考Aditor，功能上可以部分替代NodeView，但需要自己控制update的内容; 
   - plugin.view()方法自身只执行一次，但返回值中的view().update()后面编辑器更新时会多次执行
 
-- ## 不涉及NodeView(如只按回车键)时，EditorState和plugin.state的更新顺序
+- 不涉及NodeView(如只按回车键)时，EditorState和plugin.state的更新顺序
   - 所有plugin.state.apply()依次执行 > editorView.dispathTransaction(tr) > plugin.view().update()
 
-- ## 涉及NodeView时，EditorState和plugin.state的更新顺序
+- 涉及NodeView时，EditorState和plugin.state的更新顺序
   - 所有plugin.state.apply()依次执行 > editorView.dispathTransaction(tr) > `NodeView.init()/update()` > plugin.view().update()
 # view
 - view模块
@@ -147,11 +149,18 @@ let view = new EditorView(document.body, {
   - 编辑器最外层样式类为`. ProseMirror`的div元素的`contenteditable`为true，所以编辑器内元素都可编辑
   - 浏览器编辑发生后，通过domObserver将修改同步到editorState
 # plugin
+- plugin-dev
+  - undo和collab都作为plugin实现
+  - plugin.state的初始化时机在editorState之后
+  - 可影响op的执行
+
 - pluginProps和editorProps基本相同，方便理解和扩展编辑器的能力
 
 - state允许plugin有自己的状态
+  - init和apply分别提供初始值和更新逻辑
 
 - view允许plugin影响ui
+  - update + destroy
 
 - filter/appendTransaction允许影响action/op
 # model

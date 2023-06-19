@@ -15,8 +15,6 @@ modified: 2023-03-20T10:28:16.979Z
   - YugaByte DB
   - tinybase
   - crsqlite
-
-- notes
   - TiDB: Centralized clock
 
 - hlc可以解决lamport逻辑时钟无限增长的问题
@@ -26,6 +24,9 @@ modified: 2023-03-20T10:28:16.979Z
   - 每个单元格都有一个clock，其实可以每行保存一个clock+每列保存到该clock的偏移量
   - ref
     - [crsqlite](https://github.com/vlcn-io/cr-sqlite#3-crdts-for-mortals)
+
+- tips
+  - 不必执着于hlc的使用案例，可对成熟案例在业务逻辑不变的情况下将其他clock替换成hlc
 
 ## blogs
 
@@ -155,7 +156,7 @@ else {
   - 注意即使物理时间上e发生于d之后，但由于两个事件并没有因果关系，所以排序时没有按照物理时间顺序也不会有问题。
 - 全序关系 ⇒ 有什么用呢？在论文中，Lamport老爷子举了一个分布式锁的例子来描述 ⇒ 的作用。
 
-- 全序关系 ⇒ 可以为系统中所有事件排序，但是**系统外的事件却可能破坏这种关系**，导致异常行为。
+- 👉🏻 全序关系 ⇒ 可以为系统中所有事件排序，但是**系统外的事件却可能破坏这种关系**，导致异常行为。
 - 外部事件，我们的分布式系统并不能感知到这个外部事件。
 - 解决这个问题有两个方法：
   - 第一种方法是给外部事件也加上分布式系统的时钟，比如上面例子中，a事件的逻辑时钟是Ta，给上海朋友电话时，带上Ta，然后上海朋友提交b请求时带上晚于Ta的时钟。
@@ -227,11 +228,10 @@ else {
 
 ### more
 
-- [Hybrid Logical Clocks | Jared Forsyth.com](https://jaredforsyth.com/posts/hybrid-logical-clocks/)
-  - https://github.com/jaredly/hybrid-logical-clocks-example
-
-## implementations-consento-hlc
-
+# examples-hlc
+- https://github.com/jaredly/hybrid-logical-clocks-example /js
+  - [Hybrid Logical Clocks | Jared Forsyth.com](https://jaredforsyth.com/posts/hybrid-logical-clocks/)
+# implementations-consento-hlc
 - https://github.com/consento-org/hlc /js
   - a Hybrid Logical Clock implementation in JavaScript. 
   - It is comparable to CockroachDB's implementation. 

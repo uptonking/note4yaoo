@@ -15,6 +15,7 @@ modified: 2020-12-19T18:22:27.577Z
 
 - resources
   - https://github.com/deebloo/things-you-can-do-in-a-web-worker
+  - [Web Worker 文献综述_202007](https://github.com/CntChen/cntchen.github.io/issues/19)
 # worker-web
 - https://github.com/Kanaries/web-data-loader /ts
   - allows you to load large data files in browser. 

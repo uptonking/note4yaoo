@@ -15,6 +15,7 @@ modified: 2022-04-05T10:08:25.947Z
   - sync protocol
   - 实时协作
   - 离线合并
+  - 冲突处理算法 + 网络通信
 
 - ref
   - https://github.com/alangibson/awesome-crdt
@@ -25,12 +26,15 @@ modified: 2022-04-05T10:08:25.947Z
 - crdt-text
   - 能不能将协作的粒度从字符提升为句子
   - 或者crdt-text-by-lines, still sequence crdt，参考typewriter-quill
+
+- tips
+  - 不必执着于hlc的使用案例，可对成熟案例在业务逻辑不变的情况下将其他clock替换成hlc
 # popular
 - https://github.com/pubuzhixing8/awesome-collaboration
   - Collaborative editing of technical resources, article translation
   - [OT 与 CRDT 的Battle，堪称神仙打架](https://github.com/pubuzhixing8/awesome-collaboration/blob/master/fairy-fight/collaborative-editing.md)
 
-- evolu /101Star/GPLv3/202210/ts
+- evolu /101Star/GPLv3/202210/ts/hlc
   - https://github.com/evoluhq/evolu
   - https://www.evolu.dev/
   - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
@@ -71,7 +75,7 @@ modified: 2022-04-05T10:08:25.947Z
   - https://fluidframework.com/
   - Library for building distributed, real-time collaborative web applications
   - 示例未渲染协作鼠标
-  - 依赖中心服务器转发op及定顺序
+  - 依赖中心服务器转发op及定顺序，依赖server的clock，未使用分布式时钟
   - 不支持长时间的offline
   - [Does Fluid use CRDT?](https://fluidframework.com/docs/faq/#does-fluid-use-crdt)
     - Fluid does not use Conflict-Free Replicated Data Types (CRDTs), but our model is more similar to CRDT than OT. 
@@ -118,17 +122,9 @@ modified: 2022-04-05T10:08:25.947Z
     - 本文主要介绍 TELETYPE-CRDT中如何设计 WOOT算法来保证文本类型数据的最终一致性，并使用复合的数据结构（称之为 IDTree）来优化代码的运行效率。
   - [Resolve conflicts during remote insertion integration in O(log n)_201711](https://github.com/atom/teletype-crdt/pull/4)
     - The previous approach was entirely based on the algorithm proposed by Yu in 2014, which was a revisitation of the original WOOT algorithm discovered in 2006.
-  - https://github.com/atom/teletype-crdt /js/archived
+  - https://github.com/atom/teletype-crdt /js/archived/与上面仓库相同
     - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom.
   - https://github.com/atom/teletype
-
-- https://github.com/zkpranav/crdt-sync-client /未完成
-  - https://github.com/zkpranav/crdt-sync-server
-  - Implementation of a CRDT based networking layer for a collaboration tool.
-  - heavily inspired by Figma's implementation of their networking layer.
-  - A Document consists of a set of objects structured in a hierarchical tree-like structure. 
-    - Each Object has an associated ID which is globally unique, and a set of property-value pairs. 
-    - Parent-Child relationships are maintained as a link from the child to its parent.
 
 - https://github.com/Horusiath/crdt-examples
   - An example implementations of various CRDTs，实现语言为F#
@@ -164,7 +160,7 @@ modified: 2022-04-05T10:08:25.947Z
     - I helped design a convergent data model for tables at Notion recently that would work well using 3 convergent data types: Map (to group and address fields), Ordered Set (for defining the order of rows and the order of columns), and Rich Text (for defining the contents of cells).
   - forks
   - https://github.com/philschatz/peritext
-    - 更新了版本、迁移到vite
+    - 更新了版本、迁移到vite、基于automerge-wasm
 
 - https://github.com/supabase/pg_crdt /rust
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.
@@ -200,8 +196,34 @@ modified: 2022-04-05T10:08:25.947Z
     - Collabs is directly inspired by Automerge and Yjs, and uses similar techniques (network-agnostic CRDTs).  
     - The main difference is its API: we try to mimic a non-replicated collections library, with flexibility, composition tools, and strong typing.
 
-- https://github.com/convergencelabs/javascript-examples
+- https://github.com/convergencelabs/javascript-examples /202105/js/inactive
   - Examples for the Convergence Real-time Collaboration Engine
+  - https://github.com/convergencelabs/input-element-bindings
+  - https://github.com/convergencelabs/html-text-collab-ext
+
+- https://github.com/PsychoLlama/graph-crdt /201707/js/inactive
+  - Designed for serializing arbitrary data structures, making offline edits, and seamlessly merging changes back in. All data is observable and event driven.
+  - graph-crdt is a modified version of a LWW-E-Set with inline garbage collection using lamport clocks and JavaScript's lexicographic comparison on deterministically serialized JSON for the predetermined conflict resolution bias.
+- https://github.com/PsychoLlama/mytosis /202003/js/基于graph-crdt
+  - A peer-to-peer data sync framework
+  - Mytosis organizes data as one massive object which contains other objects. The root is called the graph, and its children are called nodes.
+  - [Mytosis Redesign](https://github.com/PsychoLlama/mytosis/wiki)
+  - [The data structures and merge algorithms implemented by Mytosis](https://github.com/PsychoLlama/mytosis/wiki/CRDTs)
+
+- https://github.com/hockyy/peertocp /202211/js
+  - Electron Project for WebRTC Based Code Editor, Compiler, and C++ runner
+  - CRDT Peer-to-Peer Branch using modified y-webrtc
+  - CRDT Client-Server Branch using modified y-websocket
+  - Operational Transformation Client-Server Branch using `@codemirror/collab` OT, based on Codemirror Collab Website Example for code editor
+  - https://github.com/hockyy/peertocp-web /unfinished
+
+- https://github.com/zkpranav/crdt-sync-client /未完成
+  - https://github.com/zkpranav/crdt-sync-server
+  - Implementation of a CRDT based networking layer for a collaboration tool.
+  - heavily inspired by Figma's implementation of their networking layer.
+  - A Document consists of a set of objects structured in a hierarchical tree-like structure. 
+    - Each Object has an associated ID which is globally unique, and a set of property-value pairs. 
+    - Parent-Child relationships are maintained as a link from the child to its parent.
 # crdt-rewrite
 - https://github.com/josephg/crdt-examples
   - CRDT examples from a DWEB talk
@@ -246,6 +268,15 @@ modified: 2022-04-05T10:08:25.947Z
 
 ## woot
 
+- https://github.com/ryankaplan/woot-collaborative-editor /201601/ts
+  - A real time collaboration toy project based on WOOT. Implemented with node.js and ws.
+  - 编辑器使用textarea，依赖diff-match-patch
+  - This is a server and client for a real-time collaborative document editor (aka a drastically simplified Google Docs).
+  - When a textarea-change is detected, diff the textarea content against the last known content. 
+  - With the help of WootTypes. WString, turn that diff into `WStringOperations` and broadcast those operations to the server.
+  - When we receive operations from the server, apply those operations to our WString instance and apply them to the text in #collab-doc.
+  - WOOT, as an approach, gets really slow unless you implement tombstone garbage collection (aka getting rid of text that users have deleted) which can only happen when everyone has disconnected from a document.
+
 - https://github.com/phedkvist/crdt-sequence
   - CRDT Sequence is a very basic collaborative text editing implementation
   - 自己实现了 history、activeUsers
@@ -263,13 +294,6 @@ modified: 2022-04-05T10:08:25.947Z
   - [Collaborative Editing Using CRDTs](https://pierrehedkvist.com/posts/collaborative-editing-using-crdts)
   - [Introduction to Conflict Free Replicated Data-type](https://medium.com/swlh/introduction-to-conflict-free-replicated-data-type-959a944098c4)
 
-- https://github.com/ryankaplan/woot-collaborative-editor
-  - A real time collaboration toy project based on WOOT. Implemented with node.js and ws.
-  - 编辑器使用textarea，依赖diff-match-patch
-  - When a textarea-change is detected, diff the textarea content against the last known content. 
-  - With the help of WootTypes. WString, turn that diff into `WStringOperations` and broadcast those operations to the server.
-  - When we receive operations from the server, apply those operations to our WString instance and apply them to the text in #collab-doc.
-
 - https://github.com/t-mullen/woot-crdt
   - Replicate text or sequences over networks.
 - https://github.com/t-mullen/logoot-crdt
@@ -279,7 +303,7 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/kana-sama/edita-server
   - 示例监听span文字的crud，未使用编辑器框架
 
-- https://github.com/bcherny/crdt-demo
+- https://github.com/bcherny/crdt-demo /ts
   - WOOT-style CRDT implementation
   - 👉🏻 提供了server，编辑器使用draftjs
   - WOOT propagates identifier-based operations defined on the internal object
@@ -580,7 +604,7 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/nybblr/LSEQTree
   - provide an implementation of a CRDT-based array  with an underlying exponential tree and the allocation strategy LSeq
 
-- https://github.com/widmogrod/js-crdt
+- https://github.com/widmogrod/js-crdt /ts/201711
   - explore applications of data structure called CRDT in context of real time collaboration 
   - https://github.com/widmogrod/notepad-app
     - Collaborative notepad app (demo).
@@ -710,8 +734,9 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/crdteam/causal-tree-ts
   - causal tree replicated data type (RDT) in Typescript.
 
-- https://github.com/codesandbox/crdt-tree
+- https://github.com/codesandbox/crdt-tree /ts
   - A highly-available move operation for replicated trees and distributed filesystems
+  - https://github.com/maidsafe/crdt_tree /rust
 # crdt-utils
 - https://github.com/danielstaleiny/CRDT-sqlite
   - 依赖 idb
@@ -783,6 +808,10 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/orda-io/orda
   - Orda: A client and server written in Go. CRDT-based data synchronization supporting document database.
   - Orda project is a multi-device data synchronization platform based on MongoDB (which could be other document databases such as CouchBase). 
+
+- https://github.com/collabserver/collabserver-grapheditor /cpp
+  - a command line graph editor for realtime collaboration using the CollabServer Framework
+  - https://github.com/collabserver/collabserver-server /cpp
 
 - https://github.com/hughfenghen/rtc-live-show
   - 基于WEB RTC + rrweb实现的页面“直播”demo

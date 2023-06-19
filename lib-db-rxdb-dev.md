@@ -32,9 +32,9 @@ modified: 2022-12-02T11:16:05.028Z
 - When any instances makes a write to the document, it is required to update the CRDT operations accordingly. 
   - For example if your custom backend updates a document, it must also do that by adding a CRDT operation. 
 
-- Why not automerge.js or yjs?
+- 🤔 Why not automerge.js or yjs?
   - Users do not have to learn a new syntax but instead can use the NoSQL operations which they already know.
-  - RxDB is often used to replicate data with any custom backend on an already existing infrastructure. Using NoSQL operators instead of binary data in CRDTs, makes it easy to implement the exact same logic on these backends so that the backend can also do document writes and still be compliant to the RxDB CRDT plugin.
+  - RxDB is often used to replicate data with any custom backend on an already existing infrastructure. Using NoSQL operators instead of binary data in CRDTs, makes it **easy to implement the exact same logic on these backends** so that the backend can also do document writes and still be compliant to the RxDB CRDT plugin.
 
 - When to not use CRDTs
   - CRDT can only be use when your business logic allows to represent document changes via static json operators. 

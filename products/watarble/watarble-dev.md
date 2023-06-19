@@ -9,6 +9,12 @@ modified: 2022-11-24T11:39:26.000Z
 
 # guide
 
+# dev-to
+
+# dev-later
+- ~~将ClientId改为actorId~~，client更通用
+# dev-maybe
+
 # codebase
 - 数据库第一次构建索引会很慢
   - 思路1: 持久化索引来快速还原，参考BST的序列化和反序列化

@@ -41,6 +41,7 @@ modified: 2023-05-12T02:04:52.918Z
 - https://github.com/lgandecki/modifyjs /201803/js
   - Modify your objects with a mongo like syntax. 
   - This is based on a modify function of Meteor's brilliant minimongo package, cleaned up, rewritten to es6, changed to work without Meteor context
+  - rxdb crdt使用
 # jsonpath
 - who is using #jsonpath
   - [Amazon States Language](https://states-language.net/spec.html)

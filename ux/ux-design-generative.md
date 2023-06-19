@@ -16,6 +16,9 @@ modified: 2021-09-04T16:35:14.449Z
     - https://twitter.com/georgedoescode
     - https://georgefrancis.dev/writing/
 
+- [Free SVG generators, color tools & web design tools](https://fffuel.co/)
+  - color tools and free SVG generators for gradients, patterns, textures, shapes & backgrounds
+
 ## generative art 重复的线条、形状、色彩
 
 - [THE IMPORTANCE OF GENERATIVE ART](https://tylerxhobbs.com/essays/2021/the-importance-of-generative-art)

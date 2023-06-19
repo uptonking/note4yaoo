@@ -63,6 +63,12 @@ modified: 2022-09-21T15:47:41.340Z
 
 - https://github.com/jaqarrick/yjs-canvas
   - Collaborative canvas using Yjs CRDT
+
+- https://github.com/hockyy/peertocp /202211/js
+  - Electron Project for WebRTC Based Code Editor, Compiler, and C++ runner
+  - CRDT Peer-to-Peer Branch using modified y-webrtc
+  - CRDT Client-Server Branch using modified y-websocket
+  - Operational Transformation Client-Server Branch using `@codemirror/collab` OT, based on Codemirror Collab Website Example for code editor
 # yjs-utils
 - https://github.com/samwillis/yjs-sqlite-test
   - http://samwillis.co.uk/yjs-sqlite-test/

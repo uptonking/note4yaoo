@@ -51,6 +51,8 @@ modified: 2023-05-17T07:36:07.757Z
   - disable attachment(-field)
   - 去掉react-hook-form devtool
   - [x] 去掉loadable-component
+
+- 统一enum的const和类型定义的命名和位置
 # dev-maybe
 - column-virtualizer
 

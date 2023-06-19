@@ -386,7 +386,8 @@ function applyChange(change: HistoryChange, target: "before" | "after") {
 - An Operation can be executed to change a data structure from state A to state B.
   - It should hold the necessary data used to perform this transition.
   - It should be possible to revert the changes made by this operation.
-- **In the context of o-spreadsheet, the data from an operation would be a revision (the commands are used to execute it, the `changes` are used to revert it**).
+- **In the context of o-spreadsheet, the data from an operation would be a revision**.
+  - the commands are used to execute it, the `changes` are used to revert it
 
 - `session.onMessageReceived`收到REMOTE_REVISION时
   - revisionNew = new Revision(message)
@@ -404,6 +405,21 @@ function applyChange(change: HistoryChange, target: "before" | "after") {
   - Checking the sheet on which the command is triggered
   - **Adapting coord, zone, target** with structure manipulation commands (remove, add cols and rows, ...)
 - If a command should be skipped (insert a text in a deleted sheet), the transformation function should return undefined.
+
+## commands
+
+- There are two kinds of commands: CoreCommands and LocalCommands
+- CoreCommands are commands that
+  1. manipulate the imported/exported spreadsheet state
+  2. are shared in collaborative environment
+- LocalCommands: every other command
+  1. manipulate the local state
+  2. can be converted into CoreCommands
+  3. are not shared in collaborative environment
+- For example, "RESIZE_COLUMNS_ROWS" is a CoreCommand. "AUTORESIZE_COLUMNS" can be (locally) converted into a "RESIZE_COLUMNS_ROWS", and therefore, is not a CoreCommand
+- CoreCommands should be "device agnostic". 
+  - This means that they should contain all the information necessary to perform their job. 
+  - Local commands can use inferred information from the local internal state, such as the active sheet.
 # view-layer
 - 基于odoo自研owl框架，类似vue的reactivity + vdom
 

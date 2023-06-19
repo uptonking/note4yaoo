@@ -79,6 +79,9 @@ modified: 2022-10-02T20:51:30.444Z
   - https://github.com/ottypes/text-tp2
     - an implementation of OT for text which implements transform property 2 through the use of tombstones.
     - this data structure can be used in peer-to-peer situations
+
+- https://github.com/ryankaplan/pattern-based-ot /201601/ts
+  - A server/client for the Pattern-Based Operational Transform algorithm
 # ot-rewrite
 - https://github.com/Operational-Transformation/ot.js /js
   - http://operational-transformation.github.io/
