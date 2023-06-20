@@ -15,7 +15,10 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## type 'getRowModel' is not assignable to type 'keyof TablePlugin'
+
+- 调试浪费了很多时间
+  - 原因是之前改名了，getRowModel > getTableRowModel
 
 ## watarble-snabbdom渲染细节
 

@@ -25,6 +25,7 @@ modified: 2022-08-21T10:19:58.756Z
   - manualFiltering
   - manualSorting
   - manualGrouping
+  - manualPagination
   - manualExpanding
 
 - ~~table和virtual都用到了react forceRender模式~~

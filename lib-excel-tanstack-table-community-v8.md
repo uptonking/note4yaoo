@@ -15,7 +15,9 @@ modified: 2022-08-21T10:19:58.756Z
 
 - ## 
 
-- ## 
+- ## [table-core throw errors when trying to call table table.getHeaderGroups()](https://github.com/TanStack/table/issues/4358)
+- 原因是createTable以后需要先setOptions
+  - From the first screen, you'll see that you have to add the initial state to the table before doing anything else.
 
 - ## 🤔 On the scale of column filters living inside table columns vs outside the table, I'm definitely leaning towards the latter more these days
 - https://twitter.com/tannerlinsley/status/1666637468425388032

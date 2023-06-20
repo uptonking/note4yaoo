@@ -429,3 +429,5 @@ function applyChange(change: HistoryChange, target: "before" | "after") {
 # more
 - `key in {}` is ~12 times slower than `{}[key]`.
   - So, we check the absence of key only when the direct access returns a falsy value. It's done to ensure that the registry can contains falsy values
+
+- `interface Cloneable<T> {  clone: (args?: Partial<T>) => T;  }` 创建一个新对象，用在deepCopy时
