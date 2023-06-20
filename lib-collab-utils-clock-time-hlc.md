@@ -228,9 +228,17 @@ else {
 
 ### more
 
-# examples-hlc
+# examples
+
+## hlc
+
 - https://github.com/jaredly/hybrid-logical-clocks-example /js
   - [Hybrid Logical Clocks | Jared Forsyth.com](https://jaredforsyth.com/posts/hybrid-logical-clocks/)
+
+## vector-clock
+
+- https://github.com/MattLloyd101/ts-vector-clock
+  - A Typescript Vector Clock implementation
 # implementations-consento-hlc
 - https://github.com/consento-org/hlc /js
   - a Hybrid Logical Clock implementation in JavaScript. 

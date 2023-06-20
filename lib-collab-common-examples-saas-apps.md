@@ -227,6 +227,11 @@ modified: 2023-01-17T19:14:47.611Z
   - GUN supports more than just key/value pairs, it is a graph database that can store SQL-like tables, JSON-like documents, files and livestreaming video, plus relational and hypergraph data!
   - [Is GUN suitable for building collaborative text editor using causal-tree merging strategy?](https://github.com/amark/gun/issues/459)
   - Gun is a graph database. I don't think Orbit uses a graph system, but instead uses feeds or KV stores. So that's a another difference. But Gun can use IPFS as a storage adapter if you wanted.
+- https://github.com/TopGunBuild/topgun /ts/gundb
+  - Reimplementation of gunDB in TypeScript
+  - A graph data synchronisation engine for building realtime, offline-first, secure and scalable applications.
+
+
 
 - https://github.com/Manwe-777/tool-db /ts
   - a peer-to-peer model for a decentralized database, inspired by GundB

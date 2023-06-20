@@ -22,6 +22,7 @@ modified: 2022-04-05T10:08:25.947Z
   - [Alternatives · ElectricSQL](https://electric-sql.com/docs/reference/alternatives)
   - [CRDTs for Non Academics - YouTube](https://www.youtube.com/watch?v=vBU70EjwGfw)
   - https://github.com/doodlewind/crdt-and-local-first
+  - https://github.com/topics/crdt?l=typescript&o=desc&s=updated
 
 - crdt-text
   - 能不能将协作的粒度从字符提升为句子
@@ -143,6 +144,10 @@ modified: 2022-04-05T10:08:25.947Z
   - B3: Many conflicts
   - B4: Real-world editing dataset
 
+- https://github.com/josephg/editing-traces
+  - This repository contains some editing histories from real world character-by-character editing traces
+  - The goal of this repository is to provide some standard benchmarks that we can use to compare the performance of rope libraries and various OT / CRDT implementations.
+
 - https://github.com/streamich/json-joy
   - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
 
@@ -224,6 +229,18 @@ modified: 2022-04-05T10:08:25.947Z
   - A Document consists of a set of objects structured in a hierarchical tree-like structure. 
     - Each Object has an associated ID which is globally unique, and a set of property-value pairs. 
     - Parent-Child relationships are maintained as a link from the child to its parent.
+
+- https://github.com/andykswong/mithic /ts
+  - https://andykswong.github.io/mithic/
+  - mithic provides the building blocks for creating real-time, offline-first client-server or decentralized applications, using CQRS architecture with CRDT eventsourcing for storage and data replication.
+  - minimal example to get started. Uses the Redux store preset
+  - crdt基于自己实现的lseq
+  - Linear sequence of values based on `ORMap` of base64 fractional index to values
+  - timestamp基于逻辑时钟
+
+- https://github.com/TopGunBuild/topgun /ts/gundb
+  - Reimplementation of gunDB in TypeScript
+  - A graph data synchronisation engine for building realtime, offline-first, secure and scalable applications.
 # crdt-rewrite
 - https://github.com/josephg/crdt-examples
   - CRDT examples from a DWEB talk
@@ -617,6 +634,10 @@ modified: 2022-04-05T10:08:25.947Z
   - the baz editor.
   - The editor consists of a backend including the core data structure on which modifications are made consistent through CRDT and plugin engine (stew).
 
+- https://github.com/kindone/text-versioncontrol
+  - Text-VersionControl provides version and concurrency control for text editing based on OT(Operational Transformation) and CRDT(Conflict-free Replicated Data Type) ideas
+  - Text-VersionControl utilizes Quill's Delta representation in JSON. It supports Operational Transformation's basic representations(retain, delete, and insert). 
+
 ## rust
 
 - https://github.com/loro-dev/crdt-richtext
@@ -738,6 +759,10 @@ modified: 2022-04-05T10:08:25.947Z
   - A highly-available move operation for replicated trees and distributed filesystems
   - https://github.com/maidsafe/crdt_tree /rust
 # crdt-utils
+- https://github.com/mweidner037/fugue /ts
+  - Code and benchmarks for the paper "The Art of the Fugue: Minimizing Interleaving in Collaborative Text Editing"
+  - Tree-Fugue Simple, List-Fugue Simple
+
 - https://github.com/danielstaleiny/CRDT-sqlite
   - 依赖 idb
 - https://github.com/awmuncy/sqlite-crdt
@@ -780,16 +805,29 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/Roffelchen/spreadsheet-crdt
   - /yjs
 # state-management-crdt
+- redux-crdt
+  - logux
+  - local-first-web/state: automerge
+  - CRDX
+
 - https://github.com/HerbCaudill/crdx
   - CRDX is a state container for JavaScript apps.
-  - It is also a CRDT, allowing you to create a local-first application that syncs state directly with peers, with no need for a authoritative central server. 
-  - If you’ve used a state container like Redux before, there’s a lot about CRDX that will be very familiar. 
+  - It is also an operation-based CRDT. Each operation in the CRDT is signed and encrypted. 
+  - This library started life as the internal data store for @localfirst/auth
   - We already have excellent JavaScript CRDT libaries such as Automerge and Yjs. So what does this project bring to the table?
     - Automerge and Yjs define a conflict as two peers assigning different values to the same property, and they resolve conflicts by choosing one of the two values as the "winner", in an arbitrary but predictable way.
     - But what a conflict involves more than one property? Or what if you have your own rules for resolving conflicts? 
     - Detecting conflicts may be more subtle than just noticing when two users concurrently modify a property. 
     - And resolving conflicts may involve requirements that won't let us just resolve conflicts in an arbitrary way.
     - To support peer-to-peer replication, we need to deal with concurrent changes, which means a simple append-only list of actions won’t be sufficient. Instead, we arrange actions in a directed acyclic graph (DAG).
+
+- https://github.com/grrowl/redux-scuttlebutt /201701/js
+  - [redux-scuttlebutt; eventually consistent shared state among peers](https://medium.com/@grrowl/redux-scuttlebutt-eventually-consistent-shared-state-among-peers-191d48102079)
+  - Self-replicating, self-ordering log of actions shared between peers
+  - When we encounter actions with a (one or more actions ago), we rewind and replay history in the correct order.
+  - While redux-scuttlebutt facilitates action sharing and enhancing the store, it's the responsiblity of the app's reducers to apply actions. 
+  - implement CRDT helpers for reducers to easily implement complex shared data types.
+  - `Timestamps are logical (not wall-clock based) and are in the format <logical timestamp>-<source>`.
 # more-crdt
 - https://github.com/netopyr/wurmloch-crdt
   - Experimental implementations of conflict-free replicated data types (CRDTs) for the JVM

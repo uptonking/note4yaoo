@@ -20,6 +20,9 @@ modified: 2022-09-21T15:47:41.340Z
   - Uses redis-pubsub for horizontal scaling and uses redis-queues to provide eventual-consistency and better behaviour when users join a document being edited by other users.
   - https://github.com/kapv89/yjs-scalable-ws-backend-test
 
+- https://github.com/dev-badace/textrdt /ts
+  - a basic implementation of a text crdt based on the yata this is not meant to be used in production
+
 - https://github.com/yousefed/SyncedStore
   - https://syncedstore.org/docs/
   - SyncedStore CRDT is an easy-to-use library for building live, collaborative applications that sync automatically.
@@ -70,15 +73,22 @@ modified: 2022-09-21T15:47:41.340Z
   - CRDT Client-Server Branch using modified y-websocket
   - Operational Transformation Client-Server Branch using `@codemirror/collab` OT, based on Codemirror Collab Website Example for code editor
 # yjs-utils
+- https://github.com/rozek/y-lwwmap
+  - Yjs provides a complete ecosystem for (persisting and) sharing "Conflict-free replicated data types" (CRDT) among multiple clients using a variety of persistence and communication providers. 
+  - The shared data types include arrays and maps, with shared maps becoming inefficient in most practical cases, which is why there is an alternative implementation based on shared arrays in the `y-utility` package.
+  - Being compatible to the Yjs ecosystem, LWWMaps can be shared as part of a Y. Doc using y-websocket, y-webrtc
+  - Its implementation is based on that of YKeyValue but uses a "last-write-wins" strategy during synchronization
+
 - https://github.com/samwillis/yjs-sqlite-test
   - http://samwillis.co.uk/yjs-sqlite-test/
   - This is a test project to combine yjs and sqlite wasm, it lets you store yjs documents in a sqlite database, update them in place and query the content. 
   - Perfect for building a local first web app.
 
-- https://github.com/pluv-io/pluv
+- https://github.com/pluv-io/pluv /ts/yjs
   - Multi-platform, E2E type-safe realtime packages
   - allows you to build real-time collaborate features with a fully end-to-end type-safe api.
   - Inspired by trpc, Built with yjs
+  - @pluv/io, @pluv/client, @pluv/crdt-yjs and @pluv/react all require yjs as a peer dependency.
 
 - https://github.com/JonnysCode/y-solid
   - An experimental Solid protocol provider for Yjs
@@ -186,7 +196,13 @@ modified: 2022-09-21T15:47:41.340Z
   - https://block-based-editors.github.io/automerge-tree/
   - (real-time) collaboration on blocks with automerge saved in a tree
 
+- https://github.com/ben-ryder/automerge-encryption-demo
+  - A proof of concept using Automerge in a React app with client-side encryption, multi device sync via a server and more.
+
 ## automerge-v1
+
+- https://github.com/jonfk/text-crdt-experiment-automerge-ts
+  - test out Automerge text features to see if it would be a usable for the core data structure of an offline first syncing text editor.
 
 - https://github.com/nornagon/autowiki
   - a tool for creating networked documents.

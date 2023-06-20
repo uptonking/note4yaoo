@@ -804,7 +804,7 @@ modified: 2023-02-05T19:03:12.723Z
   - https://www.neolace.com/
   - The next-generation knowledge graph platform.
   - Neolace uses the Neo4j Graph Database as its primary datastore.
-# slate-collab
+# collab
 - https://github.com/yomorun/react-cursor-chat /slate无关/仅参考
   - React Component helps bring Figma's Cursor Chat to your web applications
   - making real-time collaboration anywhere based on Presencejs.
@@ -825,6 +825,11 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/Regloom/slatesyncedit
   - 每次同步全量数据
   - 注意测试时要用相同url代表在一个房间里面
+
+- https://github.com/transcribee/slate-automerge-doc /ts
+  - Syncs slate with an automerge document. Bring your own transport.
+  - https://github.com/transcribee/slate-collaborative
+  - https://github.com/transcribee/automerge-py
 
 - https://github.com/BitPhinix/slate-yjs
   - https://docs.slate-yjs.dev/

@@ -13,7 +13,16 @@ modified: 2022-08-21T10:19:58.756Z
 # discuss
 - ## 
 
-- ## 
+- ## [How do you get the value from `onSortingChange` , or even `onStateChange` ?](https://github.com/TanStack/table/discussions/4005)
+
+```JS
+ {
+   onSortingChange: (sortingUpdater) => {
+     const newSortVal = sortingUpdater(oldSortingVal);
+     onSortChange(newSortVal);
+   }
+ }
+```
 
 - ## [table-core throw errors when trying to call table table.getHeaderGroups()](https://github.com/TanStack/table/issues/4358)
 - 原因是createTable以后需要先setOptions
