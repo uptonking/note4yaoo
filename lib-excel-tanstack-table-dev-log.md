@@ -23,6 +23,8 @@ modified: 2023-06-17T14:11:16.672Z
   - Pagination
   - columnOrddering
 # dev-log
+- RevisionManager似乎可以只作为历史记录映射表，无需协作的情况下可以当作readonly使用，因为具体的undoStack是保存在historyPlugin
+
 - 设置了自定义onSortingChange后，默认的onStateChange就被覆盖不会触发了，要注意具体分析实现细节
   - 自定义插件的onChange不会触发table.onStateChange，但不自定义时就会执行默认的，这里是2选1，要做取舍
 

@@ -274,6 +274,29 @@ $$('[contenteditable]')
 
 ## 060
 
+## 0621
+
+- [How to define static property in TypeScript interface - Stack Overflow](https://stackoverflow.com/questions/13955157/how-to-define-static-property-in-typescript-interface?answertab=modifieddesc#tab-top)
+  - static modifiers cannot appear on a type member (TypeScript error TS1070). 
+  That's why I recommend to use an abstract class and inheritance to solve the mission
+
+```typescript
+
+// Interface definition
+abstract class MyInterface {
+  static MyName: string;
+  abstract getText(): string;
+}
+
+// Interface implementation
+class MyClass extends MyInterface {
+  static MyName = 'TestName';
+  getText(): string {
+    return `This is my name static name "${MyClass.MyName}".`;
+  }
+}
+```
+
 ## 0618
 
 - dev-log

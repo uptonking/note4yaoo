@@ -34,6 +34,8 @@ modified: 2022-08-21T10:02:27.788Z
   - 离线合并，last-write-win对同一用户不同设备的合并不友好
   - 对于现有系统，是不是只用替换模型层数据结构且保留api接口不变就可以了
   - 自己实现sync，参考hlc；使用现有同步层，参考logux、automerge
+  - undo/redo的实现
+    - slate： inverseOps = batch.map(Operation.inverse).reverse(); 再逐个apply
 
 - plugins-ready
   - plugin支持视图层的优点包括更灵活的渲染(decorations)、场景更广的commands，参考prosemirror

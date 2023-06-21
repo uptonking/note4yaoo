@@ -16,7 +16,7 @@ modified: 2021-10-10T09:31:04.461Z
 
 - `obj.__proto__` 隐式原型: implicit prototype link
   - js中任意对象都有一个内置属性`[[Prototype]]`，在ES5之前没有标准的方法访问这个内置属性，但是大多数浏览器都支持通过 `__proto__` 来访问。
-  - **对象的隐式原型指向创建这个对象的构造函数(constructor)的prototype**
+  - 👉🏻 **对象的隐式原型指向创建这个对象的构造函数(constructor)的prototype**
   - ES5中有了对于这个内置属性标准的Get方法 `Object.getPrototypeOf()` .
   - **隐式原型的作用：构成原型链查找属性，同样用于实现基于原型的继承**
 
@@ -61,9 +61,12 @@ aaObj.__proto__ === aa.prototype // true
 ```JS
 // 关于类与继承
 // 👀 注意aa和ss属性都不在prototype上
-class A { aa = '11';
-  static ss = 'ss'; }
+class A {
+  aa = '11';
+  static ss = 'ss';
+}
 class B extends A { bb = '22' }
+// B.ss // ss 静态属性和静态方法默认继承
 
 // 可以将class作为function来分析结果
 A.__proto__ === Function.prototype // true
