@@ -9,12 +9,20 @@ modified: 2020-11-13T07:28:27.824Z
 
 # guide
 
+- framework-agnostic的实现思路
+  - 基于css，但未解决a11y
+  - 基于web-components，但仍未解决状态与视图的同步问题
+
 - 没必要执着于render agnostic
   - 具体场景需求不同，如ui组件、图表、动画
-  - 跨平台的差异
+  - 考虑和现有资源集成的场景，如figma、tldraw、excalidraw
+  - 跨平台的差异，考虑拖拽、弹层
   - react-canvas/webgl，在一定程度也是将vdom渲染到不同平台
+
+- refs
+  - https://github.com/SaraVieira/ui-libraries /组件库对比
 # framework-agnostic components
-- zag /1.5kStar/MIT/202210/ts
+- zag /1.5kStar/MIT/202210/ts/state-machine/panda-css
   - https://github.com/chakra-ui/zag
   - https://zagjs.com/overview/introduction
   - Finite state machines for accessible JavaScript components
@@ -110,6 +118,12 @@ modified: 2020-11-13T07:28:27.824Z
     - This is done via a simple Node script which literally copies the CSS over.
     - The above approach forces our framework-specific implementations to use the same single stylesheet. 
 
+- https://github.com/stacksjs/stacks
+  - https://stacksjs.dev/
+  - The goal of the framework is to help you create & maintain frontends, backends, and clouds
+  - Because Stacks optimizes the development of easily reusable & composable component & function libraries, the primary intention is to always keep it simple, yet configurable.
+  - After you installed your Stacks generated library, you can use a "Custom Element" (Web Component)
+
 - Reef /631Star/MIT/202010/js/NoDeps
   - https://github.com/cferdinandi/reef
   - https://reefjs.com/
@@ -172,7 +186,13 @@ modified: 2020-11-13T07:28:27.824Z
   - All under 120kb (gzipped).
   - Since v2.0, w2ui has no dependencies
   - All the widgets are written as es6 classes
-  - All classes in w2ui are extended from w2base class that provides basic event functionality. 
+  - All classes in w2ui are extended from w2base class that provides basic event functionality.
+# css
+- https://github.com/themesberg/flowbite
+  - https://flowbite.com/docs/getting-started/introduction/
+  - UI components based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, templates, and more.
+  - All of the elements are built using the utility classes from Tailwind CSS and vanilla JavaScript with support for TypeScript.
+  - Flowbite also offers an API for using the components programmatically with vanillajs
 # xplat-ios/android
 - https://github.com/framework7io/framework7
   - open source mobile HTML framework to develop hybrid mobile apps or web apps with iOS & Android native look and feel.

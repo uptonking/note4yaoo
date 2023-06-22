@@ -340,16 +340,22 @@ modified: 2020-11-13T07:31:20.012Z
 
 ## sidebar/drawer 侧边栏
 
+- https://github.com/azouaoui-med/react-pro-sidebar
+  - https://azouaoui-med.github.io/react-pro-sidebar/
+  - Customizable and responsive react sidebar library with dropdown menus and unlimited number of nested submenus
+- https://github.com/azouaoui-med/pro-sidebar-template /js
+  - https://azouaoui-med.github.io/pro-sidebar-template/src
+  - https://codepen.io/azouaoui-med/pen/wpBadb
+  - https://github.com/azouaoui-med/css-pro-layout
+  - Responsive sidebar template with dropdown menu based on bootstrap
+  - toggable, pinnable
+
 - http://balloob.github.io/react-sidebar/example/
   - https://github.com/balloob/react-sidebar
   - 不支持同时打开多个sidebar
   - 侧边栏宽度会随着内容宽度变化
 - https://react-motion-drawer.netlify.com
   - https://github.com/stoeffel/react-motion-drawer
-
-- https://github.com/azouaoui-med/react-pro-sidebar
-  - https://azouaoui-med.github.io/react-pro-sidebar/
-  - Customizable and responsive react sidebar library with dropdown menus and unlimited number of nested submenus
 
 ## datepicker 时间日期选择器
 

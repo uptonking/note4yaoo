@@ -22,9 +22,16 @@ modified: 2021-07-29T20:37:05.228Z
 
 > 要参考主流组件库实现
 
-- https://github.com/nkbt/react-collapse /NoDeps
+- https://github.com/roginfarrer/collapsed /ts
+  - https://react-collapsed.netlify.app/
+  - Headless UI for for creating flexible and accessible expand/collapse components
+  - Includes adapter for React.
+  - 支持nested
+
+- https://github.com/nkbt/react-collapse /js/NoDeps
+  - http://nkbt.github.io/react-collapse
   - Component-wrapper for collapse animation for elements with variable (and dynamic) height
-  - 支持动态修改内容高度、支持嵌套collapse
+  - 支持动态修改内容高度、支持nested
 
 - https://github.com/roginfarrer/react-collapsed
   - https://react-collapsed.netlify.app/

@@ -49,8 +49,6 @@ modified: 2023-06-05T07:04:54.711Z
 
 - https://github.com/kalkafox/cargo-search
   - A simple web page using Algolia's Autocomplete to query cargo dependencies on the fly.
-
-
 # codebase
 - 自定义轻量视图渲染层
   - reactive定义可变值，runReactives批量更新
@@ -260,6 +258,8 @@ export interface AutocompleteState<TItem extends BaseItem> {
 
 # issues
 
+- [Autocomplete elements with combobox role are missing required children](https://github.com/algolia/autocomplete/issues/589)
+
 - [Is there a way to configure the triggering character? Currently colon, hash sign, 'at' char triggers suggestion popup to appear](https://github.com/algolia/autocomplete/issues/266)
   - [Create a rich text box with Autocomplete](https://www.algolia.com/doc/ui-libraries/autocomplete/solutions/rich-text-box-with-mentions-and-hashtags/)
   - https://github.com/algolia/autocomplete/tree/next/examples/twitter-compose-with-typeahead
@@ -272,6 +272,12 @@ export interface AutocompleteState<TItem extends BaseItem> {
   - While autocomplate can technically render multiple instances in the same document, in practice it results in inconsistent behavior when a user interacts with them.
   - This is because we currently bind pointer events on `Window` to determine whether a panel should be closed after a user clicks outside of it. This only works for one of the autocomplete added to the document.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## [instantsearch.js without Algolia possible?](https://github.com/algolia/instantsearch/issues/2205)
 
 - There are a few libraries which will help you achieve this:

@@ -36,7 +36,8 @@ modified: 2023-03-16T16:29:47.610Z
   - 国外: prosemirror, slate, quill, lexical, tinymce, etherpad, ckeditor
   - mobile
   - [GitHub Blocks](https://blocks.githubnext.com/)
-# noseditor
+
+# duseditor
 
 # to-refactor
 - serialize/deserialize的定制逻辑暴露在各个plugin，而不是统一的useSerDes
@@ -157,4 +158,7 @@ modified: 2023-03-16T16:29:47.610Z
 - 复制粘贴时，处理伪元素::before/::after
 # search
 - 搜索时能够搜索emoji
+# idea
+- page级别的视图切换
+  - 类似codepen的editor/page，注意codepen有tv视图
 # more

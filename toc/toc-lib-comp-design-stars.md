@@ -13,14 +13,26 @@ modified: 2021-01-12T18:48:52.713Z
   - headless/unstyled
   - framework-agnostic
   - accessible
+  - 还要参考dashboard
+
+- refs
+  - https://github.com/SaraVieira/ui-libraries /组件库对比
+
+- css-ui
+  - https://ui.shadcn.com/examples /主色黑白灰
+  - https://ui.mantine.dev /默认浅灰背景色-组件多
+  - https://www.tremor.so/blocks /侧重图表recharts
+  - https://flowbite.com/blocks /大部分付费-可参考效果
+  - https://daisyui.com/components /无app-ui
 # components-stars
 - https://github.com/argyleink/open-props
   - https://open-props.style/
+  - https://stackblitz.com/@argyleink/collections/open-props
   - CSS custom properties to help accelerate adaptive and consistent design.
   - 毛玻璃风格
   - These props come in many flavors: CSS, PostCSS, JSON, or Javascript.
   - [A json source for style dictionary](https://github.com/argyleink/open-props/issues/288)
-    - one of the reasons I dont ship Style Dictionary format is because there's so many props that wouldnt convert to other platforms. 
+    - one of the reasons I dont ship Style Dictionary format is because there's **so many props that wouldnt convert to other platforms**. 
 
 - https://github.com/mantinedev/mantine
   - https://mantine.dev/
@@ -28,6 +40,24 @@ modified: 2021-01-12T18:48:52.713Z
   - React components library with native dark theme support
   - 134 responsive components built with Mantine
   - 样式依赖emotion，支持sx
+
+- https://github.com/shadcn/ui
+  - https://ui.shadcn.com/docs/primitives/dropdown-menu
+  - Beautifully designed components built with Radix UI and Tailwind CSS
+  - 默认白色主题很有设计感
+
+- https://github.com/skeletonlabs/skeleton /风格glassmorphism
+  - https://skeleton.dev/
+  - The UI toolkit for Svelte and Tailwind.
+
+- NextUI /8.3kStar/MIT/202211/ts
+  - https://github.com/nextui-org/nextui
+  - https://nextui.org/
+  - React UI library: themeable, fast
+  - 依赖stitches-css-in-js、
+  - created with React.js and Stitches, based on React Aria and inspired by Vuesax(vue).
+  - modal的模糊背景特效很好
+  - 大量使用阴影
 
 - radix-ui /6.2kStar/MIT/202210/ts
   - https://github.com/radix-ui/primitives
@@ -41,20 +71,6 @@ modified: 2021-01-12T18:48:52.713Z
   - https://github.com/radix-ui/icons
     - https://icons.radix-ui.com/
     - A crisp set of 15×15 icons designed by the WorkOS team.
-
-- https://github.com/shadcn/ui
-  - https://ui.shadcn.com/docs/primitives/dropdown-menu
-  - Beautifully designed components built with Radix UI and Tailwind CSS
-  - 默认白色主题很有设计感
-
-- NextUI /8.3kStar/MIT/202211/ts
-  - https://github.com/nextui-org/nextui
-  - https://nextui.org/
-  - React UI library: themeable, fast
-  - 依赖stitches-css-in-js、
-  - created with React.js and Stitches, based on React Aria and inspired by Vuesax(vue).
-  - modal的模糊背景特效很好
-  - 大量使用阴影
 
 - https://github.com/dracula/dracula-ui
   - https://ui.draculatheme.com/

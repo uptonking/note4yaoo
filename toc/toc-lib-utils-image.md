@@ -120,9 +120,15 @@ modified: 2023-04-04T22:39:45.442Z
   - Quadrant is a tile based, JavaScript web component which allows viewing an image in different levels of detail while optimizing the download process. 
   - Quadrant is based on my interpretation of Google Maps applied to image viewing over the web.
 # more
+- https://github.com/ascorbic/unpic-img
+  - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 
+  - It then generates the correct srcset and sizes attributes for the image. 
+  - It uses new features built into modern browsers to handle lazy loading, fetch priority and decoding. 
+  - It also uses pure CSS to handle responsive resizing of images, preserving aspect ratio and avoiding layout shift.
+  - Unlike most other image components, it does not use any client-side JavaScript by default, and generates just a single `<img>` tag without any wrapper divs or padding elements.
+
 - https://github.com/jiechud/fast-image-editor
   - 一款开源图片编辑器，采用React + Typescript + React-knova 框架开发.
-
 
 - lazy-loaded images need all the CSS to be loaded before it can decide if the image is needed. 
   - https://twitter.com/tunetheweb/status/1664224241879769089

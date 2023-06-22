@@ -16,6 +16,7 @@ modified: 2021-01-08T11:48:16.590Z
   - dashboard的设计与业务场景紧密相关，一次性居多，难以复用具体计算逻辑，要考虑根据业务和内容设计布局
   - 仪表板上的内容一般基于网格或拖拽实现，如react-grid-layout
   - 深入一个基于css实现的和一个基于框架实现的dashboard
+  - 注意codepen上有些示例是figma或其他设计软件导出code
 
 - usecase示例
   - 针对admin的框架包括adminjs/react-admin

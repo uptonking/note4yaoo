@@ -33,6 +33,7 @@ modified: 2021-05-14T15:03:38.010Z
 
 - open source alternatives
 - https://github.com/chinchang/web-maker
+  - https://webmaker.app/
   - an offline playground for your web experiments. 
   - Something like CodePen or JSFiddle, but much more faster and offline supported because it runs completely on your system.
 - https://github.com/lostintangent/codeswing

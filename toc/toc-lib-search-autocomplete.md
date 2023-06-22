@@ -266,6 +266,9 @@ modified: 2023-01-01T13:24:35.994Z
   - an easy to use open source fast database for search. 
   - Good alternative for Elasticsearch.
 # search-ui-examples
+- Faceted Search ui
+  - [Tailwind CSS Faceted Search Drawers](https://flowbite.com/blocks/application/faceted-search-drawers/)
+
 - elastic-search-ui /1.8kStar/apache2/202212/ts
   - https://github.com/elastic/search-ui
   - https://docs.elastic.co/search-ui/overview

@@ -206,6 +206,8 @@ modified: 2021-07-21T18:07:43.056Z
   - https://storybook.js.org/
   - UI component dev & test: React, Vue, Angular, Web Components & more
   - 定位很尴尬，做测试有更专业的jest，做文档不够灵活，适合边开发边预览
+- https://github.com/fwouts/previewjs
+  - Preview.js lets you preview React, Preact, Solid, Svelte, Vue components and Storybook stories instantly in your IDE (or in your browser via the CLI).
 - vitro /248Star/ISC/202103/ts
   - https://github.com/remorses/vitro
   - https://vitro.vercel.app/

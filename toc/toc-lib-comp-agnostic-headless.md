@@ -18,10 +18,10 @@ modified: 2021-04-11T06:17:51.318Z
 - pick-ui-components
   - framework-agnostic
   - headless/unstyled
+    - headless, renderless, no styling, unstyled, accessible
   - accessible
 
 - 💡️ 不必执着于完整的现有组件库，可分析其他组件支持多个框架的方法，如tanstack-table
-- headless, renderless, no styling, unstyled, accessible
 - 有状态无渲染，有渲染无状态，且状态尽量与具体业务解耦，状态逻辑尽量通用，这也是hooks设计的思路
 - I wonder... should these be called ui patterns rather than components.
 
@@ -35,7 +35,7 @@ modified: 2021-04-11T06:17:51.318Z
     - listbox/select,dropdown/menu,switch,radio-group
     - dialog,popover,disclosure,transition
     - 示例组件的动画体验非常好
-  - reakit/ariakit
+  - ariakit/reakit
     - used-by: bumbag-ui
   - adaptui/renderlesskit-react
     - 依赖reakit,react-aria,chakra-ui
@@ -53,19 +53,6 @@ modified: 2021-04-11T06:17:51.318Z
 - ref
   - https://github.com/jxom/awesome-react-headless-components
 # headless-ui
-- radix-ui /6.2kStar/MIT/202210/ts
-  - https://github.com/radix-ui/primitives
-  - https://www.radix-ui.com/docs/primitives/components/toolbar
-  - Unstyled, accessible components for building high‑quality design systems and web apps in React.
-  - https://github.com/radix-ui/design-system
-    - https://design-system.modulz-deploys.com/
-    - 使用纯.css样式文件，未使用自研的stitches
-    - Design system maintained and used by WorkOS.
-    - Built with Stitches and Radix UI Primitives.
-  - https://github.com/radix-ui/icons
-    - https://icons.radix-ui.com/
-    - A crisp set of 15×15 icons designed by the WorkOS team.
-
 - zag /1.5kStar/MIT/202210/ts
   - https://github.com/chakra-ui/zag
   - https://zagjs.com/overview/introduction
@@ -86,6 +73,13 @@ modified: 2021-04-11T06:17:51.318Z
   - [Framework-agnostic architecture for examples](https://github.com/ariakit/ariakit/issues/1854)
   - [Ariakit newsletter](https://newsletter.ariakit.org/archive)
 
+- AdaptUI/renderlesskit-react /197Star/MIT/202207/ts
+  - https://github.com/adaptui/react
+  - https://github.com/adaptui/react-tailwind
+  - https://github.com/timelessco/renderlesskit-react
+  - https://adaptui-react-tailwind.vercel.app/
+  - Collection of headless components/hooks that are accessible, composable, customizable from low level to build your own UI & Design System powered by Reakit System.
+
 - react-spectrum /7.3kStar/Apache2/202210
   - https://github.com/adobe/react-spectrum
   - https://react-spectrum.adobe.com/react-spectrum/Dialog.html
@@ -95,6 +89,19 @@ modified: 2021-04-11T06:17:51.318Z
   - React Stately: library of React Hooks that provides cross-platform state management for your design system.
   - https://github.com/adobe/spectrum-css
     - CSS implementation of the Spectrum design language.
+
+- radix-ui /6.2kStar/MIT/202210/ts
+  - https://github.com/radix-ui/primitives
+  - https://www.radix-ui.com/docs/primitives/components/toolbar
+  - Unstyled, accessible components for building high‑quality design systems and web apps in React.
+  - https://github.com/radix-ui/design-system
+    - https://design-system.modulz-deploys.com/
+    - 使用纯.css样式文件，未使用自研的stitches
+    - Design system maintained and used by WorkOS.
+    - Built with Stitches and Radix UI Primitives.
+  - https://github.com/radix-ui/icons
+    - https://icons.radix-ui.com/
+    - A crisp set of 15×15 icons designed by the WorkOS team.
 
 - headlessui /17kStar/MIT/202009/ts
   - https://github.com/tailwindlabs/headlessui
@@ -107,12 +114,6 @@ modified: 2021-04-11T06:17:51.318Z
 - downshift /11.2kStar/MIT/202301/js/paypal
   - https://github.com/downshift-js/downshift
   - A set of primitives to build simple, flexible, WAI-ARIA compliant React autocomplete, combobox or select dropdown components.
-
-- renderlesskit-react/AdaptUI /197Star/MIT/202207/ts
-  - https://github.com/adaptui/react
-  - https://github.com/timelessco/renderlesskit-react
-  - https://renderlesskit-react.vercel.app/
-  - Collection of headless components/hooks that are accessible, composable, customizable from low level to build your own UI & Design System powered by Reakit System.
 
 - Zendesk Garden /1kStar/Apache2/202210/ts
   - https://github.com/zendeskgarden/react-containers
@@ -135,6 +136,12 @@ modified: 2021-04-11T06:17:51.318Z
   - https://github.com/eBay/skin
     - https://ebay.github.io/skin/
     - Pure CSS framework designed & developed by eBay
+
+- https://github.com/gluestack/gluestack-ui
+  - https://ui.gluestack.io/
+  - Universal headless components for React Native, Next.js & React with beautiful & optional styling
+
+
 # ui-primitives
 - webrix /399Star/Apache2/202210/js
   - https://github.com/open-amdocs/webrix

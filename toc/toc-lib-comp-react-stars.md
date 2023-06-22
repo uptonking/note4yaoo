@@ -7,7 +7,7 @@ modified: 2021-01-12T18:49:02.623Z
 
 # toc-lib-comp-react-stars
 
-# accessible
+# accessible-ui
 
 - Reach UI /React Training team
   - /3.6kStar/MIT/202010/ts
@@ -23,29 +23,7 @@ modified: 2021-01-12T18:49:02.623Z
   - A11Y Nutrition Cards is an attempt to digest and simplify the accessibility expectations when it comes to component authoring. 
   - Based on the WAI ARIA Authoring Practices Guide.
   - Accordion, Button, Disclosure (Show/Hide), Menu & Menu Button, Tabs, Tooltip
-
-# optimization
-- https://github.com/piotr-oles/use-transition-effect
-  - Run long effects without blocking the main thread
-  - hook provides a way to split long-running effects into smaller chunks to unblock the main thread. 
-  - It uses scheduler package (from React) to schedule smaller units of work and coordinate it with React rendering.
-
-- https://github.com/n1ru4l/use-async-effect
-  - type-safe async effects for React powered by generator functions.
-  - Doing async stuff with useEffect clutters your code:
-    - You cannot pass an async function to useEffect
-    - You cannot cancel an async function
-    - You have to manually keep track whether you can set state or not
-
-- https://github.com/CJY0208/react-activation
-  - Vue 中 `<keep-alive />` 功能在 React 中的黑客实现
-  - 建议关注 React 18.x 中的官方实现 Offscreen  api
-  - 由于 `<Keeper />` 不会被卸载，故能实现缓存功能
-
-- https://github.com/CharlesStover/use-offline
-  - React hook for listening to online/offline events.
-  - Want to change your #ReactJS app when your users disconnect from the internet? Now you can.
-# starred
+# collection
 - https://github.com/nikxda/react-xray
   - https://react-xray.vercel.app/
   - A component to reveal images on user interaction, written with TypeScript + React.
@@ -138,15 +116,6 @@ modified: 2021-01-12T18:49:02.623Z
 - https://github.com/jquense/react-widgets
   - extensible, and accessible form inputs built for React.
   - 很多组件都使用了 uncontrollable 的模式，react-bootstrap也用了这个模式
-# datetime
-- https://github.com/wojtekmaj/react-date-picker
-  - A date picker for your React app.
-- https://github.com/wojtekmaj/react-time-picker
-  - A time picker for your React app.
-- https://github.com/wojtekmaj/react-calendar
-  - Ultimate calendar for your React app.
-- https://github.com/gpbl/react-day-picker
-  - Lightweight date picker component for React
 # more
 - https://github.com/johvin/react-performance-optimization
   - React性能优化的误区

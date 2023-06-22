@@ -7,8 +7,11 @@ modified: 2021-01-10T22:18:36.696Z
 
 # toc-lib-ux-bootstrap
 
-# bs-components
+# guide
 
+- built on top of bootstrap
+  - [Webpixels: Bootstrap Components, Templates and UI Kits](https://webpixels.io/)
+# bs-components
 - react-bootstrap /20.4kStar/MIT/202202/ts
   - https://github.com/react-bootstrap/react-bootstrap
   - https://react-bootstrap.github.io/getting-started/introduction
@@ -29,8 +32,9 @@ modified: 2021-01-10T22:18:36.696Z
 - https://github.com/snapappointments/bootstrap-select
   - jQuery plugin that brings select elements. 
   - Now with Bootstrap 4 support.
-- https://github.com/azouaoui-med/pro-sidebar-template
+- https://github.com/azouaoui-med/pro-sidebar-template /js
   - https://azouaoui-med.github.io/pro-sidebar-template/src
+  - https://codepen.io/azouaoui-med/pen/wpBadb
   - Responsive sidebar template with dropdown menu based on bootstrap
   - toggable, pinnable
 - https://github.com/easysoft/zui

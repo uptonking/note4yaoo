@@ -29,7 +29,7 @@ modified: 2020-11-13T07:31:23.527Z
   - /1Star/MIT/202007
   - https://xl-vision.rhysxia.me/
   - React component library based on react hooks instead of class
-# components-hooks
+# comp-hooks
 - hooks组件库参考
   - https://github.com/microsoft/fluentui
   - https://github.com/mui-org/material-ui
@@ -129,6 +129,27 @@ modified: 2020-11-13T07:31:23.527Z
 - https://github.com/sandiiarov/use-simple-undo
   - handle undo\redo turned into React Hooks.
   - /inactive
+# optimization
+- https://github.com/piotr-oles/use-transition-effect
+  - Run long effects without blocking the main thread
+  - hook provides a way to split long-running effects into smaller chunks to unblock the main thread. 
+  - It uses scheduler package (from React) to schedule smaller units of work and coordinate it with React rendering.
+
+- https://github.com/n1ru4l/use-async-effect
+  - type-safe async effects for React powered by generator functions.
+  - Doing async stuff with useEffect clutters your code:
+    - You cannot pass an async function to useEffect
+    - You cannot cancel an async function
+    - You have to manually keep track whether you can set state or not
+
+- https://github.com/CJY0208/react-activation
+  - Vue 中 `<keep-alive />` 功能在 React 中的黑客实现
+  - 建议关注 React 18.x 中的官方实现 Offscreen  api
+  - 由于 `<Keeper />` 不会被卸载，故能实现缓存功能
+
+- https://github.com/CharlesStover/use-offline
+  - React hook for listening to online/offline events.
+  - Want to change your #ReactJS app when your users disconnect from the internet? Now you can.
 # more-hooks
 - https://github.com/Raathigesh/retoggle
   - /1.4kStar/MIT/202007

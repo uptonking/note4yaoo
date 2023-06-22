@@ -7,8 +7,15 @@ modified: 2021-01-28T21:14:14.667Z
 
 # toc-lib-css-fwk
 
-# popular
+# guide
 
+- css-ui
+  - https://ui.shadcn.com/examples/music /主色黑白灰
+  - https://ui.mantine.dev /默认浅灰背景色加线框分隔-组件多
+  - https://flowbite.com/blocks /大部分付费-可参考效果
+  - https://www.tremor.so/blocks /侧重图表recharts
+  - https://daisyui.com/components /无app-ui
+# popular
 - https://github.com/argyleink/open-props
   - https://open-props.style/
   - CSS custom properties to help accelerate adaptive and consistent design.
@@ -41,6 +48,7 @@ modified: 2021-01-28T21:14:14.667Z
   - 大多是业务组件，样式干净，很有设计感，有一点点bootstrap的味道
   - Spruce UI 未开源，但示例组件提供了scss，doesn’t have its public repository
   - We made a controversial decision with Spruce to leave a classical grid system out.
+  - [v2_202305:  config() function supports sass and css vars](https://github.com/conedevelopment/sprucecss/releases/tag/v2.0.0)
 
 - https://github.com/codyhouse/codyframe /v4
   - https://github.com/CodyHouse/codyhouse-framework /v3

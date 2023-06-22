@@ -39,6 +39,10 @@ modified: 2022-11-16T16:09:02.278Z
   - 毛玻璃风格
   - These props come in many flavors: CSS, PostCSS, JSON, or Javascript.
 
+- https://github.com/skeletonlabs/skeleton /风格glassmorphism
+  - https://skeleton.dev/
+  - The UI toolkit for Svelte and Tailwind.
+
 - https://github.com/themesberg/glass-ui /NonOpen/白背景示例
   - https://ui.glass/
   - https://ui.glass/generator/
