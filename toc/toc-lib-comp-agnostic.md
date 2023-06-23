@@ -180,6 +180,9 @@ modified: 2020-11-13T07:28:27.824Z
   - paste file from clipboard
   - progress bar
 # vanillajs
+- https://github.com/thepassle/generic-components /js/inactive
+  - A collection of generic web components with a focus on accessibility, and ease of use
+
 - https://github.com/vitmalina/w2ui /202305/js
   - UI widgets for modern apps. 
   - Data table, forms, toolbars, sidebar, tabs, tooltips, popups. 
@@ -188,8 +191,8 @@ modified: 2020-11-13T07:28:27.824Z
   - All the widgets are written as es6 classes
   - All classes in w2ui are extended from w2base class that provides basic event functionality.
 # css
-- https://github.com/themesberg/flowbite
-  - https://flowbite.com/docs/getting-started/introduction/
+- https://github.com/themesberg/flowbite /ts
+  - https://flowbite.com/blocks/
   - UI components based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, templates, and more.
   - All of the elements are built using the utility classes from Tailwind CSS and vanilla JavaScript with support for TypeScript.
   - Flowbite also offers an API for using the components programmatically with vanillajs

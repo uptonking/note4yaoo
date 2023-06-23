@@ -140,8 +140,6 @@ modified: 2021-04-11T06:17:51.318Z
 - https://github.com/gluestack/gluestack-ui
   - https://ui.gluestack.io/
   - Universal headless components for React Native, Next.js & React with beautiful & optional styling
-
-
 # ui-primitives
 - webrix /399Star/Apache2/202210/js
   - https://github.com/open-amdocs/webrix
@@ -253,6 +251,7 @@ modified: 2021-04-11T06:17:51.318Z
   - configurable select box/text input plugin.
   - Similar to Select2 and Selectize but without the jQuery dependency.
   - Flexible styling
+  - 依赖redux、fuse.js(fuzzy-search in js)
 # headless-react
 - https://github.com/chatscope/use-chat
   - https://chatscope.io/demo/

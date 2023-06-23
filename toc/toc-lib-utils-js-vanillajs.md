@@ -112,6 +112,9 @@ modified: 2023-04-04T22:35:59.255Z
 
 - [Moment Timezone | Home](https://momentjs.com/timezone/)
   - Parse and display dates in any timezone.
+
+- https://github.com/adobe/ferrum /js
+  - Features from the rust language in javascript: Provides Traits/Type classes & a hashing infrastructure and an advanced library for working with sequences/iterators in js
 # lang-nodejs
 - https://github.com/RafaelGSS/nodejs-bench-operations
   - This repository provides benchmarks for basic operations to aid in determining a high-performance solution.

@@ -131,7 +131,7 @@ selector:pseudo-class {
   - It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key.
   - This pseudo-class applies only to the focused element itself. Use `:focus-within` if you want to select an element that contains a focused element.
 
-- `:focus-visible` pseudo-class applies while an element matches the `:focus` pseudo-class and the UA (User Agent) determines via heuristics that the focus should be made evident on the element. (Many browsers show a “focus ring” by default in this case.)
+- `:focus-visible` pseudo-class applies while an element matches the `:focus` pseudo-class **and** the UA (User Agent) determines via heuristics that the focus should be made evident on the element. (Many browsers show a “focus ring” by default in this case.)
   - This selector is useful to provide a different focus indicator based on the user’s input modality (mouse vs. keyboard).
   - usecase: button点击时无outline，tab时显示outline
   - 注意：safari不支持

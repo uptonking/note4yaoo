@@ -74,7 +74,7 @@ $$('[contenteditable]')
 - deep into lib/fwk
   - src-code, issues, pr, forks, extensions/alternatives
 # dev-2023-方向+方法+时间
-- 👉🏻 output: 代码、产品、生态积累
+- 👉🏻 output: 代码产出、产品落地、生态积累
 - slate-wangeditor
   - model, view, sync, collab
   - slate-docs-examples
@@ -178,6 +178,7 @@ $$('[contenteditable]')
   - 处理初试
 
 - dev-to 提炼核心`需求+产出`工作流
+  - headless: sidebar
   - replace forceUpdate with useSyncExternalStore
   - slate-docs-examples
   - dnd-kit preset-tree

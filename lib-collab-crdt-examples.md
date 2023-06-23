@@ -167,6 +167,13 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/philschatz/peritext
     - 更新了版本、迁移到vite、基于automerge-wasm
 
+- https://github.com/serenity-kit/secsync
+  - Is an architecture to relay end-to-end encrypted CRDTs over a central service.
+  - eg: End-to-end encrypted document using Yjs incl. Cursor Awareness
+  - eg: End-to-end encrypted todo list using Automerge
+  - Why use a central relay service?
+    - The main reason is to exchange data asynchronously.
+
 - https://github.com/supabase/pg_crdt /rust
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.
   - It supports Yjs/Yrs and Automerge.

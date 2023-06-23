@@ -33,6 +33,8 @@ modified: 2021-05-05T07:48:16.100Z
 - I'm assuming date and time pickers can be combined into a date-time-picker
   - Yeah the naming is still in flux, but DateField, DatePicker, and DateRangePicker also support times. There's a `granularity` prop to control that (e.g. day/hours/minutes/seconds).
 # changelog
+- [Standard card Component](https://github.com/adobe/react-spectrum/issues/2080)
+
 - ref
   - [This chronological list](https://spectrum.adobe.com/page/whats-new/) shows all of the items that have been added or updated in the design system.
   - [releases](https://react-spectrum.adobe.com/releases/index.html)

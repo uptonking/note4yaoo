@@ -12,7 +12,9 @@ modified: 2023-03-07T04:10:13.906Z
 # discuss
 - ## 
 
-- ## 
+- ## is there an accompanying paper to describe the CRDT behind ‘micromerge’ or is ‘A Conflict-Free Replicated JSON Datatype’ the closest?
+- https://automerge.slack.com/archives/C61RJCN9J/p1683034175607929
+- There isn't really a good paper describing this, sorry. Micromerge/Automerge differ from the JSON CRDT paper in terms of the deletion semantics: the paper implements deletion as recursive clearing, which leads to the weird behaviour shown in Fig. 6. Micromerge/Automerge instead implement deletion as removing the reference to the deleted object, which means that any concurrent changes to the deleted object are simply discarded.
 
 - ## [Automerge 2.0_202301](https://automerge.org/blog/automerge-2/)
 - Earlier versions of Automerge were implemented in pure JavaScript. 

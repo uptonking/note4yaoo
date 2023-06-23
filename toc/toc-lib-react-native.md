@@ -20,6 +20,7 @@ modified: 2022-08-13T04:55:58.999Z
   - https://tamagui.dev/
   - The worlds fastest React UI kit also happens to work on Native + Web
   - It does this with an optimizing compiler that outputs platform-specific optimizations
+  - The compiler generates atomic CSS and partially evaluated code that gains significant runtime performance.
 
 - https://github.com/marklawlor/nativewind
   - React Native utility-first universal design system - powered by Tailwind CSS

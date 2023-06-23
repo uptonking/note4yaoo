@@ -51,6 +51,9 @@ modified: 2022-08-21T10:02:27.788Z
   - 未实现plugin: tui.grid
 
 - view-layer 进一步优化需要深入前端框架如react
+  - 视图层的优化方案主要2个方向
+    - 优化rerender，参考memo、forget
+    - 优化reconciliation，参考million.js
   - 自定义组件的渲染返回值都是vnode，允许用户替换默认renderFunction
     - 自定义组件都是纯函数，状态放在编辑器数据层统一触发更新
     - 是否可以使用多个vdom-tree，允许只订阅部分state的更新

@@ -66,7 +66,7 @@ modified: 2021-07-25T10:48:21.307Z
   - https://github.com/app-generator
   - AppSeed: Production-ready seed projects crafted on top of modern UI Kits. 
 
-- dashboards examples
+- dashboards-examples
   - [Bootstrap Themes](https://themes.getbootstrap.com/shop/?orderby=popularity)
   - https://www.admin-dashboards.com/
     - https://github.com/admin-dashboards

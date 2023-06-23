@@ -27,6 +27,18 @@ modified: 2022-11-25T15:50:48.226Z
     - a Postgres SQL syntax parser. 基于nearley、moo实现
     - This parser does not support (yet) PL/pgSQL.
 
+- skdb /61Star/NonCommercial/202306/ts/wasm/似乎未开源
+  - https://github.com/SkipLabs/skdb
+  - The SQL database that tells you when your query results changed
+  - SKDB is a general-purpose SQL database that lets you subscribe to changes to your queries. 
+  - Through a new construction called "virtual views", you can ask the database to keep a particular view up-to-date at all times
+  - SKDB can also process ephemeral streams of data which can be used to receive alerts or to compute real-time analytics.
+  - SKDB is inspired by SQLite and supports the same subset of SQL (including transactions). 
+  - What sets it apart is that it is also highly concurrent. 
+    - SKDB supports processing complex queries from multiple simultaneous readers/writers without stalling other database users.
+  - https://github.com/SkipLabs/skdb_minimal
+    - minimal example using skdb in a browser
+
 - supabase /41.1kStar/apache2/202211/ts
   - https://github.com/supabase/supabase
   - https://supabase.com/

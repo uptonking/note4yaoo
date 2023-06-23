@@ -10,7 +10,15 @@ modified: 2021-04-12T18:07:01.092Z
 # guide
 
 - [Add CRUD example for Table and add useListData and useTreeData hooks](https://github.com/adobe/react-spectrum/pull/439)
-# pieces
+# disccuss-stars
+- ## 
+
+- ## 
+
+- ## [Framework agnostic aria tools · react-spectrum](https://github.com/adobe/react-spectrum/issues/1329)
+- It's not on the core team roadmap because it's not something we need ourselves
+
+# disccuss
 - ## 
 
 - ## 

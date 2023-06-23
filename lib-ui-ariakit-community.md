@@ -36,3 +36,25 @@ modified: 2023-06-22T05:33:12.658Z
 
 - ember-headless-table is another headless ui library that doesn't render HTML on its own.
 Instead, it provides the math, calculations, and props for managing common table features (because no one needs to be re-implementing those every time they switch companies)
+
+## [ariakit RFC: Component stores_202209](https://github.com/ariakit/ariakit/issues/1875)
+
+- https://codesandbox.io/s/ariakit-component-stores-forked-248do5
+- The problems
+- We can't reuse the state logic outside of React
+- Host components render on every state update
+- Methods as deps in useEffect, useCallback, etc.
+- Component stores
+- The store would be implemented with vanilla JS so we can reuse it in other frameworks. 
+- The React hook would use the `useSyncExternalStore` hook internally, so we can keep it compatible with concurrent rendering.
+- Accessing state inside event handlers without re-rendering
+- Computed selectors can be easily achieved in userland
+
+- [ariakit RFC: Support controlled state hooks](https://github.com/ariakit/ariakit/issues/487)
+- another proposal will be fully possible in Reakit v3: a single parameter that can receive both uncontrolled and controlled state.
+- `const state = useDialogState({ initialVisible: false })`; 
+- `const state = useDialogState({ visible, setVisible })`; 
+
+### [Framework-agnostic architecture for examples](https://github.com/ariakit/ariakit/issues/1854)
+
+### [Offer Vue components / hooks](https://github.com/ariakit/ariakit/discussions/1723)

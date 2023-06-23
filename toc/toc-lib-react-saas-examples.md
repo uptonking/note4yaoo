@@ -153,7 +153,7 @@ modified: 2022-08-13T06:59:54.741Z
   - An opinionated collection of components, hooks, and utilities for your Next.js project.
   - Typescript-first ORM for Node.js
 # crud
-- https://github.com/taniarascia/react-hooks
+- https://github.com/taniarascia/react-hooks /js
   - https://taniarascia.github.io/react-hooks/
   - [Build a CRUD App in React with Hooks](https://www.taniarascia.com/crud-app-in-react-with-hooks/)
   - a simple CRUD app that can add, update, or delete users.

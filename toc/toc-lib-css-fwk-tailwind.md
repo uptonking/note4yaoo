@@ -26,6 +26,30 @@ modified: 2023-02-26T18:25:01.328Z
   - https://tw-tokens.netlify.app/
   - Use Tailwind tokens as CSS variables, SASS map, SASS variables, ES module, JSON & Common JS module.
 # tailwind-ui
+- https://github.com/MarsX-dev/floatui /js/非常简洁
+  - https://floatui.com/components
+  - https://floatui.com/demo
+  - responsive UI components and templates for React and Vue (soon) with Tailwind CSS.
+
+- https://github.com/htmlstreamofficial/preline /js
+  - https://preline.co/examples.html
+  - prebuilt UI components based on the utility-first Tailwind CSS
+  - [Application AI Prompt](https://preline.co/examples/application-ai-prompt.html)
+
+- https://github.com/merakiui/merakiui /css
+  - https://merakiui.com/components
+  - Tailwind CSS components that support RTL languages & fully responsive based on Flexbox & CSS Grid with elegant Dark Mode
+
+- https://github.com/themesberg/flowbite /ts/很多分隔线
+  - https://flowbite.com/blocks/
+  - UI components based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, templates, and more.
+  - All of the elements are built using the utility classes from Tailwind CSS and vanilla JavaScript with support for TypeScript.
+  - Flowbite also offers an API for using the components programmatically with vanillajs
+
+- https://github.com/TailGrids/tailwind-ui-components
+  - https://tailgrids.com/components
+  - 500+ free & premium Tailwind CSS UI components
+
 - https://github.com/Siumauricio/rippleui
   - https://ripple-ui.com/
   - modern and beautiful Tailwind CSS components.
@@ -33,6 +57,19 @@ modified: 2023-02-26T18:25:01.328Z
 - https://github.com/sailboatui/sailboatui
   - https://sailboatui.com/
   - modern UI component library for Tailwind CSS
+
+- https://github.com/saadeghi/daisyui
+  - https://daisyui.com/components/
+  - The most popular, free and open-source Tailwind CSS component library
+
+- https://shuffle.dev/
+  - Shuffle gives you 8, 000+ fully responsive UI components 
+
+- https://github.com/konstaui/konsta
+  - https://konstaui.com/
+  - Mobile UI components made with Tailwind CSS
+  - All Konsta UI components come with pixel perfect native-like iOS and Material Design themes
+  - Konsta UI mostly designed to be used with "parent" frameworks like Ionic or Framework7.
 # style-dictionary
 - https://github.com/StefanKandlbinder/styledictionarytailwindbridge
   - https://stylewind.netlify.app/

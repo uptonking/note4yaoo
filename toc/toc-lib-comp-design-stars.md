@@ -24,6 +24,8 @@ modified: 2021-01-12T18:48:52.713Z
   - https://www.tremor.so/blocks /侧重图表recharts
   - https://flowbite.com/blocks /大部分付费-可参考效果
   - https://daisyui.com/components /无app-ui
+  - https://floatui.com/components
+  - https://preline.co/examples.html
 # components-stars
 - https://github.com/argyleink/open-props
   - https://open-props.style/

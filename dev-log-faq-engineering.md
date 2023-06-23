@@ -21,6 +21,18 @@ modified: 2021-03-29T19:17:06.810Z
 
 # 
 
+# infinite-scroll的实现要点
+
+> 也是常见业务组合的场景
+
+- 是否实现virtualized render: 
+  - 参考tanstack-virtual
+- ally: 键盘导航
+  - 参考ariakit、radix-ui
+- 拖拽改变顺序: 
+  - 参考dnd-kit
+- async-data、网络请求
+  - 参考tanstack-table
 # 类似slate，将各种change函数放在全局map的设计
 - pros
   - 存取方便

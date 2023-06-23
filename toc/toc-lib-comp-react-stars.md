@@ -23,7 +23,7 @@ modified: 2021-01-12T18:49:02.623Z
   - A11Y Nutrition Cards is an attempt to digest and simplify the accessibility expectations when it comes to component authoring. 
   - Based on the WAI ARIA Authoring Practices Guide.
   - Accordion, Button, Disclosure (Show/Hide), Menu & Menu Button, Tabs, Tooltip
-# collection
+# comp-collection
 - https://github.com/nikxda/react-xray
   - https://react-xray.vercel.app/
   - A component to reveal images on user interaction, written with TypeScript + React.

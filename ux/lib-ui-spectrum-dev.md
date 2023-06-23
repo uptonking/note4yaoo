@@ -11,6 +11,9 @@ modified: 2021-04-12T18:07:14.658Z
 
 - faq
   - 对animation的支持
+
+- who is using #react-aria
+  - nextui.v2
 # examples
 - https://github.com/prisma/lens
   - https://github.com/prisma/lens

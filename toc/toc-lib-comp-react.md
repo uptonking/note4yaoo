@@ -280,8 +280,10 @@ modified: 2020-11-13T07:31:20.012Z
 
 ## card 卡片类
 
-- https://nukeop.github.io/react-ui-cards/
-  - https://github.com/nukeop/react-ui-cards
+- https://github.com/nukeop/react-ui-cards /ts
+  - https://nukeop.github.io/react-ui-cards/
+  - 支持图片、flip
+
 - https://aaronccwong.github.io/react-card-flip/
   - https://github.com/AaronCCWong/react-card-flip
 - http://cameronbourke.github.io/react-cardstack
@@ -344,7 +346,7 @@ modified: 2020-11-13T07:31:20.012Z
   - https://azouaoui-med.github.io/react-pro-sidebar/
   - Customizable and responsive react sidebar library with dropdown menus and unlimited number of nested submenus
 - https://github.com/azouaoui-med/pro-sidebar-template /js
-  - https://azouaoui-med.github.io/pro-sidebar-template/src
+  - https://azouaoui-med.github.io/pro-sidebar-template/
   - https://codepen.io/azouaoui-med/pen/wpBadb
   - https://github.com/azouaoui-med/css-pro-layout
   - Responsive sidebar template with dropdown menu based on bootstrap
@@ -382,14 +384,6 @@ modified: 2020-11-13T07:31:20.012Z
   - 自动隐藏header
 - color picker
   - http://react-component.github.io/color-picker/
-- pdf
-  - http://projects.wojtekmaj.pl/react-pdf/
-  - https://mozilla.github.io/pdf.js/web/viewer.html
-      - https://github.com/mozilla/pdf.js
-  - https://parall.ax/products/jspdf
-      - https://github.com/MrRio/jsPDF
-  - https://react-pdf.org/
-      - https://github.com/diegomura/react-pdf
 # animation
 - http://reactcommunity.org/react-transition-group/css-transition/
   - https://github.com/reactjs/react-transition-group

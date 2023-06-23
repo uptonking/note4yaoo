@@ -32,7 +32,9 @@ modified: 2021-01-12T18:49:07.422Z
   - Ultimate calendar for your React app.
 - https://github.com/gpbl/react-day-picker
   - Lightweight date picker component for React
+
 ## calendar-heatmap
+
 - https://github.com/grubersjoe/react-activity-calendar
   - https://grubersjoe.github.io/react-activity-calendar/
   - A React component to display activity data in a calendar (heatmap)
@@ -95,6 +97,22 @@ modified: 2021-01-12T18:49:07.422Z
 
 - https://github.com/dzucconi/use-keyboard-list-navigation
   - A React hook to navigate through lists with your keyboard.
+
+- https://github.com/taniarascia/react-hooks /js
+  - https://taniarascia.github.io/react-hooks/
+  - [Build a CRUD App in React with Hooks](https://www.taniarascia.com/crud-app-in-react-with-hooks/)
+  - a simple CRUD app that can add, update, or delete users.
+
+- https://github.com/exivity/react-crud-hook
+  - make it easier to perform CRUD-operations while also providing methods to set attributes and relationships on a record. 
+  - Records should conform to the JSON: API specs
+
+- https://github.com/bezkoder/react-typescript-api-call
+  - https://github.com/bezkoder/react-hooks-crud-web-api /js
+  - Build a React Hooks CRUD Application to consume Web API with Axios, display and modify data with Router & Bootstrap.
+
+- https://github.com/candraKriswinarto/react-crud-context-api
+  - Create CRUD application using react hooks and context api, Reactstrap
 # keyboard-shortcuts
 - https://github.com/pacocoursey/cmdk
   - https://cmdk.paco.me/

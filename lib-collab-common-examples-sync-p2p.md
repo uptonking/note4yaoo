@@ -46,6 +46,13 @@ modified: 2023-01-17T19:13:01.845Z
 - https://github.com/Rolands-Laucis/Socio
   - A WebSocket based realtime duplex Front-End and Back-End syncing API paradigm framework
 
+- https://github.com/serenity-kit/secsync
+  - Is an architecture to relay end-to-end encrypted CRDTs over a central service.
+  - eg: End-to-end encrypted document using Yjs incl. Cursor Awareness
+  - eg: End-to-end encrypted todo list using Automerge
+  - Why use a central relay service?
+    - The main reason is to exchange data asynchronously.
+
 - https://github.com/peers/peerjs /202303/ts
   - PeerJS provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams.
 
