@@ -28,6 +28,7 @@ modified: 2023-06-22T05:32:58.602Z
   - motion
 
 - tips
+  - 从另一个角度思考，所谓state/logic复用，hooks本身就是一种实现方式，但hooks需放在组件内
   - 将state移出react的方案还可参考nanostores、redux
   - css样式可参考shadcn-ui、skeleton-ui、tailwind、flowbite、daisyui组件
   - 实现agnostic的2种思路，一是类似ariakit只处理状态，二是类似tanstack将所有状态和事件移出去

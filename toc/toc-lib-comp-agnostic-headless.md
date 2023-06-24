@@ -141,7 +141,7 @@ modified: 2021-04-11T06:17:51.318Z
   - https://ui.gluestack.io/
   - Universal headless components for React Native, Next.js & React with beautiful & optional styling
 # ui-primitives
-- webrix /399Star/Apache2/202210/js
+- webrix /399Star/Apache2/202212/js/inactive/参考use-gesture
   - https://github.com/open-amdocs/webrix
   - https://webrix.amdocs.com/
   - building blocks for React-based web applications
@@ -151,16 +151,7 @@ modified: 2021-04-11T06:17:51.318Z
   - https://primer.style/primitives
   - Color, typography, and spacing primitives in json.
 
-- dripsy /648Star/MIT/202105/ts
-  - https://github.com/nandorojo/dripsy
-  - https://dripsy.xyz/
-  - Responsive, unstyled UI primitives for React Native + Web.
-  - A responsive, theme-based design system for Expo + React Native Web.
-  - Heavily inspired by React's theme-ui.
-  - Universal (Android, iOS, Web, & more)
-  - After trying many, many different ways, I'm convinced this approach is the answer. 
-
-- https://github.com/Bedrock-Layouts/Bedrock
+- https://github.com/Bedrock-Layouts/Bedrock /202306/ts
   - https://bedrock-layout.dev/
   - Foundational Layout Primitives for your React App
 

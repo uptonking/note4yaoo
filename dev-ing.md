@@ -176,6 +176,7 @@ $$('[contenteditable]')
   - todo remove hashId在编辑器model中有什么作用
   - 处理解冻card
   - 处理初试
+  - 做完tailwind-table就面试
 
 - dev-to 提炼核心`需求+产出`工作流
   - headless: sidebar
