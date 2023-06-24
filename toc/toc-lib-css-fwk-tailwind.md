@@ -9,6 +9,62 @@ modified: 2023-02-26T18:25:01.328Z
 
 # guide
 
+- tips
+  - 重点组件: card, table, form
+
+- ui-references
+  - https://floatui.com/components
+  - https://preline.co/examples.html
+  - https://flowbite.com/blocks/
+  - https://tailwindui.com/components /很多分隔线
+  - https://merakiui.com/components
+# tailwind-ui
+- https://github.com/MarsX-dev/floatui /2kStar/202306/js/非常简洁/已被收购
+  - https://floatui.com/components
+  - https://floatui.com/demo
+  - responsive UI components and templates for React and Vue (soon) with Tailwind CSS.
+  - 提供了components、templates、demo
+
+- https://github.com/htmlstreamofficial/preline /2kStar/202306/js
+  - https://preline.co/examples.html
+  - prebuilt UI components based on the utility-first Tailwind CSS
+  - [Application AI Prompt](https://preline.co/examples/application-ai-prompt.html)
+
+- https://github.com/merakiui/merakiui /2kStar/202212/css/inactive
+  - https://merakiui.com/components
+  - Tailwind CSS components that support RTL languages & fully responsive based on Flexbox & CSS Grid with elegant Dark Mode
+
+- https://github.com/themesberg/flowbite /4.9kStar/202306/ts/组件超丰富
+  - https://flowbite.com/blocks/
+  - UI components based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, templates, and more.
+  - 很多付费解锁，但可参考效果
+  - All of the elements are built using the utility classes from Tailwind CSS and vanilla JavaScript with support for TypeScript.
+  - Flowbite also offers an API for using the components programmatically with vanillajs
+
+- https://github.com/TailGrids/tailwind-ui-components /588Star/202301/css
+  - https://tailgrids.com/components
+  - 500+ free & premium Tailwind CSS UI components
+
+- https://github.com/Siumauricio/rippleui /620Star/202305
+  - https://ripple-ui.com/
+  - modern and beautiful Tailwind CSS components.
+
+- https://github.com/sailboatui/sailboatui /760Star/202302
+  - https://sailboatui.com/
+  - modern UI component library for Tailwind CSS
+
+- https://github.com/saadeghi/daisyui
+  - https://daisyui.com/components/
+  - The most popular, free and open-source Tailwind CSS component library
+
+- https://shuffle.dev/
+  - Shuffle gives you 8, 000+ fully responsive UI components 
+
+- https://github.com/konstaui/konsta
+  - https://konstaui.com/
+  - Mobile UI components made with Tailwind CSS
+  - All Konsta UI components come with pixel perfect native-like iOS and Material Design themes
+  - Konsta UI mostly designed to be used with "parent" frameworks like Ionic or Framework7.
 # popular
 - https://github.com/xiaoluoboding/tailwind-pre-processor
   - https://tailwind-pre-processor.vercel.app/
@@ -25,51 +81,6 @@ modified: 2023-02-26T18:25:01.328Z
 - https://github.com/itaditya/tw-universal-tokens
   - https://tw-tokens.netlify.app/
   - Use Tailwind tokens as CSS variables, SASS map, SASS variables, ES module, JSON & Common JS module.
-# tailwind-ui
-- https://github.com/MarsX-dev/floatui /js/非常简洁
-  - https://floatui.com/components
-  - https://floatui.com/demo
-  - responsive UI components and templates for React and Vue (soon) with Tailwind CSS.
-
-- https://github.com/htmlstreamofficial/preline /js
-  - https://preline.co/examples.html
-  - prebuilt UI components based on the utility-first Tailwind CSS
-  - [Application AI Prompt](https://preline.co/examples/application-ai-prompt.html)
-
-- https://github.com/merakiui/merakiui /css
-  - https://merakiui.com/components
-  - Tailwind CSS components that support RTL languages & fully responsive based on Flexbox & CSS Grid with elegant Dark Mode
-
-- https://github.com/themesberg/flowbite /ts/很多分隔线
-  - https://flowbite.com/blocks/
-  - UI components based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, templates, and more.
-  - All of the elements are built using the utility classes from Tailwind CSS and vanilla JavaScript with support for TypeScript.
-  - Flowbite also offers an API for using the components programmatically with vanillajs
-
-- https://github.com/TailGrids/tailwind-ui-components
-  - https://tailgrids.com/components
-  - 500+ free & premium Tailwind CSS UI components
-
-- https://github.com/Siumauricio/rippleui
-  - https://ripple-ui.com/
-  - modern and beautiful Tailwind CSS components.
-
-- https://github.com/sailboatui/sailboatui
-  - https://sailboatui.com/
-  - modern UI component library for Tailwind CSS
-
-- https://github.com/saadeghi/daisyui
-  - https://daisyui.com/components/
-  - The most popular, free and open-source Tailwind CSS component library
-
-- https://shuffle.dev/
-  - Shuffle gives you 8, 000+ fully responsive UI components 
-
-- https://github.com/konstaui/konsta
-  - https://konstaui.com/
-  - Mobile UI components made with Tailwind CSS
-  - All Konsta UI components come with pixel perfect native-like iOS and Material Design themes
-  - Konsta UI mostly designed to be used with "parent" frameworks like Ionic or Framework7.
 # style-dictionary
 - https://github.com/StefanKandlbinder/styledictionarytailwindbridge
   - https://stylewind.netlify.app/

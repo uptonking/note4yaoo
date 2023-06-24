@@ -578,7 +578,7 @@ modified: 2022-04-05T10:08:25.947Z
   - CRDT based collaborative code/text editor.
   - 依赖flask，requests
 
-- https://github.com/rehnarama/MALTE /rga+split
+- https://github.com/rehnarama/MALTE /ts/rga+split
   - https://rehnarama.github.io/MALTE/index.html
   - Multi-access live text editor
   - An in-browser collaborative coding environment, in which one can edit and compile code a server using an built-in shell.

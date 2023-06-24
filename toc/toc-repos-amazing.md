@@ -52,6 +52,11 @@ modified: 2020-11-03T06:54:59.051Z
   - create amazing illustrations by using hand-drawn sketch components. 
   - We proudly offer a cool selection of 5 gradients and the ability to use ai., svg. or png. formats. 
 # amazing-tools
+- https://github.com/aarondail/react-zoomable-ui /202301/ts/类似画板缩放
+  - https://aarondail.github.io/react-zoomable-ui/example/
+  - Make your HTML elements and React components zoomable, and build interesting zoomable UIs. 
+  - Make your whole page zoomable and pan-able, or just part of it.
+
 - https://github.com/rrweb-io/rrweb
   - https://www.rrweb.io/
   - /7.6kStar/MIT/202009/ts

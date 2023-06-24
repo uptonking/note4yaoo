@@ -84,6 +84,13 @@ export interface RowModel<TData extends RowData> {
 - serverModel
   - 提供了`manual*`控制属性
 # virtual
+- 触发ui更新的原因是options.onChange()，执行时机包括
+  - observeElementRect
+  - observeElementOffset
+  - _measureElement/measure
+  - calculateRange
+  - 可考虑通过useSyncStore订阅这些值来去掉onChange
+
 - 固定高度的原理
   - 在目标区域上下方显示invisible元素高度和
 

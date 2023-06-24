@@ -10,7 +10,11 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Bug: useSyncExternalStore update not batched within unstable_batchedUpdates](https://github.com/facebook/react/issues/24831)
+- `unstable_batchedUpdates` is a way to deprioritize an update by delaying it. 
+  - The default priority is even more delayed and more batched than unstable_batchedUpdates. **So `unstable_batchedUpdates` is a noop in React 18**.
+- If you need the consistency you need to compromise - by making your updates less batched and flush earlier than they otherwise would - using `flushSync` .
+  - That's the compromise of using useSyncExternalStore. To preserve consistency with external mutable store you have to make it less batchable - less delayed, than other forms of updates.
 
 - ## RSC from Scratch. Part 1: Server Components
 - https://twitter.com/dan_abramov/status/1664681506218864640
@@ -71,8 +75,6 @@ modified: 2021-01-06T14:40:03.364Z
 
 # discuss
 - ## 
-
-
 
 - ## So why is Next.js so pushy about [React Server Components]? I can't avoid feeling that the new direction taken by Next.js is not designed to help developers, but to help Vercel sell React
 - https://twitter.com/claviska/status/1666252828111675392

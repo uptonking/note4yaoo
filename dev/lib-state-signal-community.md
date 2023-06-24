@@ -82,11 +82,40 @@ state1.state.deniz = 11; // nothing
 # discuss
 - ## 
 
+- ## 
+
+- ## the debate about signals is the same one we had about 2-way data binding vs unidirectional data flow 10 years ago. 
+- https://twitter.com/devongovett/status/1629540226589663233
+  - Signals are mutable state! They’re bindings with a new name. The simplicity of UI as a function of state is lost when updates flow unpredictably.
+  - Say what you want about hooks and performance, but the programming model of writing a function that simply maps props/state to JSX is way simpler than thinking about how each individual value flows through your whole app.
+- With signals, you have to think about how each individual value is propagated. For example, in Solid, these components do different things!
+- I'm not just picking on Solid here. Preact's signals and Vue's refs have the same problems, but even worse because they can also be mutated from anywhere too. That makes it really hard to reason about where updates are coming from and how they flow through an app.
+
+- 👉🏻 **React's programming model optimizes for correctness and simplicity by default, whereas signals optimize for maximum performance**. 
+  - There are some use cases where this is the most important thing, but it's rare for most apps. That's why a React compiler is more exciting to me.
+
+- This is incorrect. Signals are mutable, but mutation automatically triggers rendering. There is no two-way binding, because there are no bindings.
+  - signals, at least not in any of the implementations I've seen, do not bind bidirectionally.
+- Depends what you mean by "bind". If you mean directly to DOM inputs, then sure, but that's a minor implementation detail. However, by definition of being mutable, they do bind bidirectionally in general because mutations in one component affect others.
+
+- I liked the concept of "actions up ☝️ data down👇" from the ember world.
+
+- ## [What Are Signals?_202303](https://news.ycombinator.com/item?id=35009417)
+- I used a signals-like reactive programming model in VueJS a while ago and hated that you could never be sure exactly where things were being changed. 
+  - Thankfully it seems that the React creators and maintainers are not hopping on the signals train and are instead adamant about unidirectional dataflow with explicit mapping of state to UI, which, as has been the reason for why React had been invented in the first place, makes reasoning about the application much easier
+
+- Another interesting bit - as the article above rightfully points out,  `useState` and `useMemo` are signals. The main difference is that you have to track and specify your dependencies manually, whereas Solid auto-tracks dependencies based on their usage while the computation runs.
+
+- Elm managed to move away from signals back in 2016 (controversial at the time, but IMO a great move).
+  - [A Farewell to FRP](https://elm-lang.org/news/farewell-to-frp)
+
+- Personally I just use Redux Toolkit with RTK Query for any synchronization with backend state. What I like about Redux is that it takes the immutable functional approach, you cannot change previous state but must instead derive new state from the old state very explicitly. In this way, it's the antithesis of signal-based state.
+
 - ## Why are people so obsessed with signals right now
 - https://twitter.com/m1nd_killer/status/1629530182636781568
 - It is same technology that we had 2 years ago, as immer, just in new format
 - Immer is amazing, but pretty different. Mobx on the other hand (by the same creator) would be the much closer comparison
-- I mean both technologies let you **make mutations with `Proxy`** under the hood. And signals just a new way to solve the same issue.
+- I mean both technologies let you **make mutations with `Proxy` ** under the hood. And signals just a new way to solve the same issue.
   - But mobx more about observables and huge stores.
   - Anyway, mutating with proxy let make code easier to read
 

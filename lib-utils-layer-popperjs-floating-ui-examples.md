@@ -88,6 +88,11 @@ modified: 2023-03-27T11:59:53.482Z
     - https://www.npmjs.com/package/@wordpress/components
     - github.com/WordPress/gutenberg
 
+- https://github.com/plantain-00/tour-component
+  - A vuejs and reactjs tour component.
+  - highlight target element
+  - scroll to target
 # menu/toolbar
+
 # more-popper-layer-examples
 - https://github.com/wix/ricos/tree/master/packages/toolbars-v3

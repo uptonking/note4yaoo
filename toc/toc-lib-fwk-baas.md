@@ -94,8 +94,9 @@ modified: 2021-05-25T09:40:55.797Z
   - This project is aimed at providing a series of handy packages for the development of a typical CRUD web application.
   - The packages are work around a kind of schema written in JSON for database table.
 # baas/backend-as-a-service
-
+- https://github.com/lagonapp/lagon /rust/ts
+  - Lagon is an open-source runtime and platform that allows developers to run TypeScript and JavaScript Serverless Functions close to users.
+  - I've been building this fully open-source edge runtime and platform as an alternative to CF Workers & Deno Deploy for the past 10 months
 # more
-
 - https://github.com/nils-simons/spackoDB /202206/js/starter
   - Firestore Alternative

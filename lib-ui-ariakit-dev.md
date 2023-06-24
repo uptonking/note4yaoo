@@ -11,7 +11,8 @@ modified: 2023-06-22T05:32:58.602Z
 
 - features
   - low-level hooks/components
-  - accessible ui
+  - accessible-ui
+  - 渲染灵活，支持自定义render和wrapElement
 
 - pros
   - 支持多store
@@ -28,17 +29,21 @@ modified: 2023-06-22T05:32:58.602Z
 
 - tips
   - 将state移出react的方案还可参考nanostores、redux
-  - css样式可参考shadcn-ui、skeleton-ui、tailwind
+  - css样式可参考shadcn-ui、skeleton-ui、tailwind、flowbite、daisyui组件
+  - 实现agnostic的2种思路，一是类似ariakit只处理状态，二是类似tanstack将所有状态和事件移出去
+    - ariakit的优点是对react更友好，core-store的核心状态~~不含外部event~~方便序列化
+    - tanstack的优点是对多框架的支持更友好，事件也会作为props返回，默认非受控状态且支持部分受控状态
+  - useSyncExternalStore对react友好，对其他框架不友好
 
 - resources
   - [Ariakit | newsletter](https://newsletter.ariakit.org/)
 # dev-to
 - new-components
   - reakit: grid/input(已迁移少文档)
-  - menu/select/combobox-autocomplete/radio/switch/tabs
+  - menu/select/combobox-autocomplete/radio/tabs
   - disclosure/dialog/popover
   - 👉🏻 card/list
-  - form: TextInput/search/slider
+  - form: switch/TextInput/search/slider
   - carousel/progress
   - sidebar
   - more: calendar, darg-layout, media
@@ -54,11 +59,19 @@ modified: 2023-06-22T05:32:58.602Z
   - checkbox
   - disclosure
 
+- react层的逻辑
+  - 同步自定义store和reactState
+  - 在react层通过useEvent准备事件监听器如onChange、处理animation
+  - 组合a11y相关的mouse/keyboard事件
+  - 根据props中的配置，给返回的props中加上a11y相关的attrs
+  - 给组件props加上render和wrapElement
+  - 组件api的设计更符合react
+
 - useCheckboxStore
   - `store = useStore(() => Core.createCheckboxStore(props))`; 
     - 会在react组件内执行createStore，并通过useSyncExternalStore实现自定义useState方法
   - `return useCheckboxStoreProps(store, props)`; 
-    - 将props中的初始值和其他参数同步到core-store
+    - 注册listener，在core-store变化时更新props.value和setValue
 
 - useCheckbox返回创建checkbox组件所有的props，
   - 但自身并未创建store，需要外部传入store

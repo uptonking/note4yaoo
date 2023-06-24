@@ -29,6 +29,9 @@ modified: 2020-10-22T13:17:19.943Z
 
 - https://tpdns.vercel.app/
   - https://github.com/xprc/tpdns
+
+# app-store
+- [AI工具集导航 | 500+ AI工具导航大全，国内外AI工具集合网站](https://ai-bot.cn/)
 # bootstrap
 - https://startbootstrap.com/
   - Bootstrap themes, templates, and more to help you start your next project!

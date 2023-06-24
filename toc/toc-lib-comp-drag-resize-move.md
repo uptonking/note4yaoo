@@ -31,6 +31,7 @@ modified: 2022-02-05T18:45:34.558Z
 - use-gesture /7.5kStar/MIT/202302/ts/vanillajs
   - https://github.com/pmndrs/use-gesture
   - https://use-gesture.netlify.app/docs/examples/
+  - core无依赖
   - a library that lets you bind richer mouse and touch events to any component or view
   - move it, zoom it, drag it, scroll it, pinch it
   - originally built for React, v10 is now platform agnostic, and can work in vanilla javascript.
@@ -44,6 +45,16 @@ modified: 2022-02-05T18:45:34.558Z
   - https://react-grid-layout.github.io/react-resizable/index.html
   - A simple React component that is resizable with a handle.
   - 依赖react-draggable
+- react-grid-layout /16.9kStar/MIT/202202/js
+  - https://github.com/react-grid-layout/react-grid-layout
+  - https://strml.github.io/react-grid-layout/examples/0-showcase.html
+  - A draggable and resizable grid layout with responsive breakpoints, for React.
+  - 卡片能随意拖动和缩放
+  - 静止状态时，卡片不可重叠遮挡
+  - forks
+  - https://github.com/DEXAGA/react-grid-layout-hooks /202105/ts
+    - Migration to Hooks
+    - Migration to Typescript
 
 - react-dnd /14.5kStar/MIT/202009/ts/redux
   - https://github.com/react-dnd/react-dnd
@@ -60,10 +71,10 @@ modified: 2022-02-05T18:45:34.558Z
   - rbd is a higher level abstraction specifically built for lists (vertical, horizontal, movement between lists, nested lists and so on). 
   - [DnD with line drop indicators](https://github.com/atlassian/react-beautiful-dnd/issues/2461)
     - https://codesandbox.io/s/react-beautiful-dnd-react-virtualized-forked-c7sm5b
-  - [Maintenance will continue with @hello-pangea/dnd 🎉 (react 18 support)](https://github.com/atlassian/react-beautiful-dnd/issues/2437)
+  - [Maintenance will continue with @hello-pangea/dnd (react 18 support)](https://github.com/atlassian/react-beautiful-dnd/issues/2437)
 - https://github.com/hello-pangea/dnd /ts
   - https://dnd.hellopangea.com/
-  - 依赖react-redux.v8、memoize-one、raf-schd
+  - 依赖react-redux.v8、memoize-one、raf-schd、css-box-model
 
 - dflex /1.5kSStar/MIT/202302/ts
   - https://github.com/dflex-js/dflex
@@ -98,17 +109,6 @@ modified: 2022-02-05T18:45:34.558Z
   - https://daybrush.com/moveable/
   - Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable! Pinchable! Groupable! Snappable!
 
-- react-grid-layout /16.9kStar/MIT/202202/js
-  - https://github.com/react-grid-layout/react-grid-layout
-  - https://strml.github.io/react-grid-layout/examples/0-showcase.html
-  - A draggable and resizable grid layout with responsive breakpoints, for React.
-  - 卡片能随意拖动和缩放
-  - 静止状态时，卡片不可重叠遮挡
-  - forks
-  - https://github.com/DEXAGA/react-grid-layout-hooks /202105/ts
-    - Migration to Hooks
-    - Migration to Typescript
-
 - https://github.com/wouterraateland/use-pan-and-zoom
   - https://codesandbox.io/s/n3rpmj60w0
   - React hook for panning and zooming a container
@@ -123,20 +123,23 @@ modified: 2022-02-05T18:45:34.558Z
   - not modifying the DOM except to change the cursor (but you can disable that)
   - Support for HTML and SVG
 # zoomable ui
-- https://github.com/aarondail/react-zoomable-ui
+- https://github.com/aarondail/react-zoomable-ui /202301/ts/类似画板缩放
   - https://aarondail.github.io/react-zoomable-ui/example/
   - Make your HTML elements and React components zoomable, and build interesting zoomable UIs. 
   - Make your whole page zoomable and pan-able, or just part of it.
-- https://github.com/zumly/zumly
+
+- https://github.com/zumly/zumly /202202/js/inactive/类似prezi-无限层级
   - https://zumly.org/
   - a JS library for building zooming user interfaces
   - Instead of hyperlinks and windows, Zumly uses zooming as a metaphor for browsing through information.
-- https://github.com/zircleUI/zircleUI
+  - Zumly is a new approach based on another library I made, Zircle UI
+- https://github.com/zircleUI/zircleUI /vue
   - https://zircleui.github.io/docs/
   - Enjoy a different UI/UX with the built-in zoomable navigation.
   - Circles everywhere: Breaking away from the conventional UI with a circular UI Kit.
+  - I've been working on a new zooming engine. Give Zumly a try
 
-- https://github.com/allain/zuite /202205/js
+- https://github.com/allain/zuite /202205/js/inactive
   - A toolkit for building modern zoomable user interfaces
 # more
 - sortablejs /21.1kStar/MIT/202203/js/NoDeps/代码少/inactive

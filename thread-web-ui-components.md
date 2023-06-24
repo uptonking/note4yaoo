@@ -23,13 +23,32 @@ modified: 2021-01-19T04:46:23.100Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 💡 [Is it wise to build a carousel with purely CSS and no JS?](https://www.reddit.com/r/Frontend/comments/zoxf1y/is_it_wise_to_build_a_carousel_with_purely_css/)
+- More importantly, ask yourself if you should use a carousel at all.
+
+- No, **there is no accessible way to do this without JavaScript swapping out attributes for screen readers**. 
+  - You can definitely do all the interactions and positioning with only CSS though.
+- But it could be just a horizontally scrollable div with CSS snap points set on the images which are wrapped with page anchors and each image also has a left/right link to the anchor of the prev/next slide.
+
+- If you’re on a team, always code like the design could change! (Happens a lot!)
+  - Ask yourself, am I relying on a trick that only works because the design is JUST so? CSS-only is cool and can be robust in some cases—but more often is fragile to slight changes in design requirements.
+
+- If you can satisfy the requirements then sure. IMO pure CSS solutions are always preferable since they don’t run on yhe same thread as JS.
+  - What about compatibility and consistency between browsers? Isn't that a problem when you're going for a purely CSS made carousel, or anything else for that matter? You mentioned one of the tradeoffs of using JS, what about those of using a purely CSS approach?
+
+- You must first consider if the carousel should be fully automatic or if you want to have some manual controls for things like forward/back or jump to a specific item. It is practical to build a fully automatic carousel in pure CSS. 
+  - It is theoretically possible to do a pure CSS version with manual controls, but this is immensely complex, requires a substantial amount of redundant code, and requires using the checkbox hack. 
+  - It is totally impractical and is generally done only to show off pure CSS skills. 
+  - If you want manual controls, it definitely should be done with JS.
+  - Note that there are accessibility and SEO issues with the pure CSS approach for either type of carousel.
+
 - ## Framework agnostic ui components, are they a thing already? I hear webcomponents aren't the holy grail?
 - https://twitter.com/meijer_s/status/1614913937098657794
 - Stencil is an answer. Alternative would be something like what @tannerlinsley built for TanStack. Vanilla core and then wrap it in framework-specific stuff. I would go that way instead of using something meta. You’re at the mercy of Stencil’s compilers versus your own wrappers.
-- 
-- 
-- 
-
 
 - ## highlighted-code is a textarea builtin extend that's embarrassing how simple, a11y compliant, versatile and lightweight is, compared to most competitors
 - https://twitter.com/WebReflection/status/1507814171211087875
@@ -58,7 +77,6 @@ if (type of props.children === string && noOtherExpensiveProps) {
   return <SlimText />
 }
 ```
-
 
 - ## Pouring over the details of other designers and doing some layout studies today. Grid is everything
 - https://twitter.com/souporserious/status/1416884764691161089

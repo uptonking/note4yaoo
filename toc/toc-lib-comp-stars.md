@@ -133,6 +133,20 @@ modified: 2021-01-12T18:49:07.422Z
 - https://github.com/harshhhdev/kmenu
   - https://kmenu.hxrsh.in/
   - An animated and accessible command menu
+# gesture
+- https://github.com/rcbyr/keen-slider /4.1kStar/MIT/202212/ts/NoDeps/vanillajs
+  - https://keen-slider.io/
+  - Easily create sliders, carousels and much more.
+  - Library Agnostic: Works well in JavaScript, TypeScript, React, Vue, Angular
+  - Mobile First: Supports multi touch and is fully responsive
+
+- https://github.com/Splidejs/splide /202210/ts/NoDeps
+  - https://splidejs.com/
+  - flexible and accessible slider/carousel written in TypeScript.
+
+- https://github.com/FormidableLabs/nuka-carousel
+  - https://formidable.com/open-source/nuka-carousel/
+  - accessibility-first React carousel library with an easily customizable UI 
 # media
 - https://github.com/cookpete/react-player
   - React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, DailyMotion and Kaltura.
@@ -141,6 +155,11 @@ modified: 2021-01-12T18:49:07.422Z
   - A media player build in React on top of CookPete/react-player.
   - It supports the MUI theming and components and own functionality of the Picture-in-Picture and Fullscreen API
   - You can play both: audio and video files.
+# highlight
+- https://github.com/FormidableLabs/prism-react-renderer
+  - Renders highlighted Prism output to React (+ theming & vendored Prism)
+  - This library tokenises code using Prism and provides a small render-props-driven component to quickly render it out into React.
+  - It's bundled with a modified version of Prism that won't pollute the global namespace and comes with a couple of common language syntaxes.
 # embeddable-widget
 - https://github.com/shobhitsharma/embedo
   - It adds a layer on top of third party embed APIs while ensuring best practices and native guidelines for each component. 

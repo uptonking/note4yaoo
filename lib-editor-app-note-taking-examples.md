@@ -31,6 +31,8 @@ modified: 2023-02-05T18:05:44.122Z
   - Notesnook encrypts everything on your device using XChaCha20-Poly1305 & Argon2.
   - 不支持协作，需要投票
   - 服务端数据同步代码使用c#
+  - [Allow for 3rd party syncing](https://github.com/streetwriters/notesnook/issues/168)
+    - 202306: 3rd party syncing is out of scope for Notesnook. We will add support for self hosting but that's it.
 
 - Standard Notes /3.6kStar/AGPLv3/202208/ts
   - https://github.com/standardnotes/app
@@ -337,7 +339,6 @@ modified: 2023-02-05T18:05:44.122Z
   - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.
   - [Proposal: Replace OT with CRDTs](https://github.com/hedgedoc/hedgedoc/issues/527)
     - By using y.js we are using CRDTs now.
-
 
 - https://github.com/FoxUSA/OpenNote /201802/js
   - OpenNote was built to be an open web-based alternative to Microsoft OneNote (T) and EverNote.

@@ -33,6 +33,10 @@ modified: 2021-09-20T20:12:38.499Z
   - 基于React 16.8.6 的源码并使用 TypeScript 仿写的 React, 实现了90%的功能
   - 还提供了源码解析系列文档，有28个文档
 
+- https://github.com/JokerLHF/mini-react-web
+  - 基于react 17 使用 ts 实现了一个 mini-react
+  - 抛弃了 ClassComponent，只支持 FunctionComponent
+
 - https://github.com/BetaSu/just-react
   - https://react.iamkasong.com/
   - 卡颂 《React技术揭秘》 一本自顶向下的React源码分析书(不是又一个手撸react)

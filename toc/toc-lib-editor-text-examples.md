@@ -54,6 +54,15 @@ modified: 2022-11-08T19:03:33.865Z
 - https://github.com/FormidableLabs/use-editable
   - `useEditable` is a small hook that enables elements to be `contenteditable` while still being fully renderable. 
   - This is ideal for creating small code editors or prose textareas in just 2kB!
+  - there have been three options when choosing editing surfaces
+    - full control with prosemirror-like
+    - contenteditable
+    - textarea
+  - use-editable creates a `MutationObserver`, which watches over all changes that are made to the `contenteditable` element. 
+    - Before it reports these changes to React it first rolls back all changes to the DOM so that React sees what it expects.
+    - it also preserves the current position of the caret, the selection, and restores it once React has updated the DOM itself. 
+    - This is a rather common technique for `contenteditable` editors, but the `MutationObserver` addition is what enables `use-editable` to let another view library update the element's content.
+    - Since use-editable doesn't aim to be a full component that manages the render cycle, it doesn't have to keep any extra state, but will only pass the DOM's text back to the onChange callback.
 # computational-editor
 - https://github.com/jaredreich/calcutext
   - Calcutext is a web app where you can do calculations with your written text.
@@ -87,7 +96,6 @@ modified: 2022-11-08T19:03:33.865Z
 - https://github.com/DenverCoder1/unicode-formatter
   - https://unicode-formatter.demolab.com/
   - Convert portions of text to fancy text using unicode fonts for use on Twitter and other sites that don't support rich text
-
 # more
 - https://github.com/leewhui/text-effect-editor
   - https://ephemeral-druid-42201c.netlify.app/

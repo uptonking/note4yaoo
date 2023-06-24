@@ -10,6 +10,9 @@ modified: 2020-11-17T13:38:19.107Z
 # guide
 - designer侧重编辑器和图形
   - 将可拖拽编辑器用于界面设计、交互设计、产品原型设计
+
+- ui-prototype
+  - https://uigenerator.org/
 # popular
 - grida /104Star/Apache2/202206/ts/design2code
   - https://github.com/gridaco/grida
@@ -56,6 +59,17 @@ modified: 2020-11-17T13:38:19.107Z
   - Webstudio Designer is a NoCode Visual Tool inspired by Webflow
   - block块级元素不支持拖拽
   - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
+
+- https://github.com/plantain-00/schema-based-json-editor
+  - https://plantain-00.github.io/schema-based-json-editor/packages/react/demo/
+  - A reactjs and vuejs component of schema based json editor.
+- https://github.com/plantain-00/template-editor-demo /ts/vue3
+  - https://plantain-00.github.io/template-editor-demo/
+  - A poster template edit and generation design document and demo
+  - 依赖vue-schema-based-json-editor、fast-json-patch
+  - 根据 typescript 代码中定义的数据结构模型来生成 json schema，并用于验证数据合法性。
+  - 海报模板也可以使用模版引擎来简化生成逻辑，只不过操作的是设计元素而不是 html 标签。
+  - 可以通过创建、websocket 转发、应用 json patch 的方式，实现简单的多人协同编辑模板功能。
 
 - brick-design/react-visual-editor /MIT/2.3kStar/202008
   - https://github.com/brick-design/brick-design

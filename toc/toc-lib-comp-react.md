@@ -318,22 +318,6 @@ modified: 2020-11-13T07:31:20.012Z
   - https://ctxhou.github.io/react-tabtab/
   - A mobile support, draggable, editable and api based Tab for ReactJS.
 
-## form 表单
-
-- https://github.com/formium/formik
-  - form library for React and React Native.
-- https://github.com/erikras/redux-form
-  - redux-form works with react-redux to enable an html form in React to use Redux to store all of its state.
-  - The author of Redux Form took all of the lessons he learned about form use cases from maintaining Redux Form and built **React Final Form**
-  - The only good reason to use Redux Form in your application is if you need really tight coupling of your form data with Redux
-- https://github.com/final-form/react-final-form
-  - [Philosophy](https://final-form.org/docs/react-final-form/philosophy)
-  - React Final Form is a minimal wrapper around the **zero-dependency Final Form core**.
-  - All React Final Form does is know how to get form values out of SyntheticEvent and manage field subscriptions to the form.
-- https://github.com/mozilla-services/react-jsonschema-form
-- https://joepuzzo.github.io/informed
-  - https://github.com/joepuzzo/informed
-
 ## dropdown 下拉菜单
 
 - http://fraserxu.me/react-dropdown/

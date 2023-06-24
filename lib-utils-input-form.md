@@ -10,7 +10,7 @@ modified: 2023-03-27T17:45:27.440Z
 # guide
 
 # forms-examples
-- https://github.com/jaredpalmer/formik /ts/代码少
+- https://github.com/jaredpalmer/formik /ts/react/代码少
   - https://formik.org/
   - Build forms in React, without the tears.
   - forks
@@ -22,6 +22,16 @@ modified: 2023-03-27T17:45:27.440Z
   - Formium is an API-first, headless online form builder and automation tool
   - In addition to hosting forms and surveys on formium.io, you can use your own React components to natively render your forms and surveys in your existing apps 
   - 依赖 formik
+
+- https://github.com/react-hook-form/react-hook-form /代码高度模块化
+  - https://react-hook-form.com/
+  - React Hooks for form state management and validation (Web + React Native)
+  - 只依赖react
+
+- https://github.com/TanStack/form /代码少
+  - https://tanstack.com/form
+  - type-safe form state management for the web.
+  - Designed with first-class TypeScript support, headless UI components, and a framework-agnostic design
 
 - https://github.com/final-form/react-final-form /js/vanillajs
   - https://github.com/final-form/final-form

@@ -36,6 +36,7 @@ modified: 2022-08-21T10:02:27.788Z
   - 自己实现sync，参考hlc；使用现有同步层，参考logux、automerge
   - undo/redo的实现
     - slate： inverseOps = batch.map(Operation.inverse).reverse(); 再逐个apply
+    - [撤销重做的程序设计](https://plantain-00.github.io/blogs/?src=./contents/undo-redo.md)
 
 - plugins-ready
   - plugin支持视图层的优点包括更灵活的渲染(decorations)、场景更广的commands，参考prosemirror

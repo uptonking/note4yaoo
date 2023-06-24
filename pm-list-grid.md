@@ -108,6 +108,9 @@ modified: 2021-05-23T16:34:27.206Z
 
 - 类似wikipedia，设计模版时，当连续几行单元格内容相同时，自动合并单元格
 - table-diff: 类似图片上一层阴影窗帘可以左右拉查看内容变化
+
+- auto-collecting
+  - 支持自动统计平台上仓库相关信息
 # extensions
 - grid-config(defaults+utils)
 

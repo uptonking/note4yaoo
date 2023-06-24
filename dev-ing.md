@@ -174,7 +174,7 @@ $$('[contenteditable]')
 
 - not-yet
   - todo remove hashId在编辑器model中有什么作用
-  - 处理解冻
+  - 处理解冻card
   - 处理初试
 
 - dev-to 提炼核心`需求+产出`工作流
