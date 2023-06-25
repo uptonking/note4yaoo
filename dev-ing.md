@@ -276,7 +276,11 @@ $$('[contenteditable]')
 
 ## 060
 
-## 0622
+## 0625
+
+- [regex - How to match "any character" in regular expression? - Stack Overflow](https://stackoverflow.com/questions/2912894/how-to-match-any-character-in-regular-expression)
+  - . = any char except newline
+  - .* = .{0, } = match any char except newline zero or more times
 
 ## 0621
 

@@ -138,6 +138,26 @@ react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", {
 - [Using the "css" tag in runtime is not supported. Make sure you have set up the Babel plugin correctly.](https://github.com/callstack/linaria/issues/617)
   - If you use ts-jest for jest test, you should mock linaria in setupTest.ts
   - Digging into another issue, I found that linaria will trigger @linaria/babel-preset/lib/transform-stages/helpers/loadLinariaOptions.js's loadLinariaOptions will multiple times on the same files.
+# panda-css
+- pros
+  - build time 
+- cons
+  - 只支持输出atomic-css
+
+
+- features
+  - [Why Panda CSS](https://panda-css.com/docs/why-panda)
+  - Write style objects or style props, extract them at **build time**
+    - Panda uses a set of PostCSS plugins to convert the parsed data to atomic css at build time. 
+  - Modern CSS output — cascade layers @layer, css variables and more
+  - Works with most JavaScript frameworks
+  - Recipes and Variants - Just like Stitches
+  - design tokens support for simultaneous themes
+  - Type-safe styles and autocomplete (via codegen)
+
+- Codegen(样式名的映射表): Panda generates a lightweight runtime JS code that is used to author styles. 
+  - Think of it as an optimized function that joins key-value pairs of an object. 
+  - It doesn't generate styles in the browser nor inject styles in the `<head>`.
 # examples
 - https://github.com/remirror/remirror
   - https://github.com/user-focus/remirror-extension-note

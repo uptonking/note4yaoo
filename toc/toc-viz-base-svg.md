@@ -19,7 +19,7 @@ modified: 2020-10-05T06:18:21.639Z
   - /13.3kStar/MIT/201909
   - JS library to make drawing animation on SVG
 - https://github.com/adobe-webplatform/Snap.svg
-  - /12.9kStar/Apache2/201710
+  - /12.9kStar/Apache2/201710/js
   - http://snapsvg.io/
   - JS library for modern SVG graphics
 # svg-utils

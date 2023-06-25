@@ -27,10 +27,18 @@ modified: 2023-06-22T05:32:58.602Z
   - a11y: ariakit
   - motion
 
+- patterns-common
+  - collection
+  - command-press-pointer
+  - composite-arrow-keys
+  - focus-tab
+  - group-label + separator
+  - portal
+
 - tips
-  - 从另一个角度思考，所谓state/logic复用，hooks本身就是一种实现方式，但hooks需放在组件内
+  - 从另一个角度看，对state/logic的复用，hooks本身就是一种实现方式，但hooks需放在组件内
   - 将state移出react的方案还可参考nanostores、redux
-  - css样式可参考shadcn-ui、skeleton-ui、tailwind、flowbite、daisyui组件
+  - css样式可参考shadcn-ui、skeleton-ui、tailwind-ui、flowbite、daisyui组件
   - 实现agnostic的2种思路，一是类似ariakit只处理状态，二是类似tanstack将所有状态和事件移出去
     - ariakit的优点是对react更友好，core-store的核心状态~~不含外部event~~方便序列化
     - tanstack的优点是对多框架的支持更友好，事件也会作为props返回，默认非受控状态且支持部分受控状态

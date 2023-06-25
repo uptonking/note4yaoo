@@ -45,9 +45,7 @@ modified: 2021-01-04T17:33:00.370Z
   - https://arwes.dev/
   - Arwes is a web framework to build user interfaces for web applications
   - It is built on top of React, JSS, Anime, and Howler.
-
 # design-system-edu
-
 - Decanter design system /Stanford University
   - /24Star/MIT/202010/js/twig
   - https://github.com/SU-SWS/decanter
@@ -64,9 +62,7 @@ modified: 2021-01-04T17:33:00.370Z
   - https://github.com/washingtonstateuniversity/wsu-web-design-system
   - https://washingtonstateuniversity.github.io/wsu-web-design-system/storybook/public/
   - The front-end markup for creating and using components in the WSU Web Design System.
-
 # design-system-gov
-
 - United States Web Design System  
   - /CC0 1.0/5.4kStar/201912
   - https://github.com/uswds/uswds
@@ -123,7 +119,6 @@ modified: 2021-01-04T17:33:00.370Z
 - https://github.com/USPTO/USPTO-DS-Theme
   - /1Star/NALic/202010/css
   - USPTO's next-gen open source Design System theme, based on the USWDS and Boostrap. Version 2.x (Alpha)
-
 # design-system-framework
 
 ## web-components
@@ -151,35 +146,6 @@ modified: 2021-01-04T17:33:00.370Z
 - https://github.com/unicefnz/unicorn
   - https://unicorn.is/
   - Web Component library for the Unicorn Design System
-
-## vue
-
-- Fish Tank /Bloomberg
-  - /14Star/Apache2/202007/ts/vue
-  - https://github.com/bloombergindustry/fishtank-vue
-  - http://fishtank.bna.com/
-  - Fish Tank Design and Component System - VueJS Component Library
-- Vue Design System /Viljami Salminen
-  - https://github.com/viljamis/vue-design-system
-  - /1.9kStar/MIT/202004/js/vue
-  - https://vueds.com/
-  - An open source tool for building UI Design Systems with Vue.js
-  - The tool is built on top of Vue.js, Vue Styleguidist, Webpack, and Theo and is aimed for designers and front-end developers
-  - https://vue-styleguidist.github.io/vueds/
-    - Vue Design System’s demo documentation and component library. 
-    - Generated with Vue Styleguidist
-- https://github.com/rei/rei-cedar
-  - /86Star/MIT/202010/vue
-  - https://rei.github.io/rei-cedar-docs/
-  - REI Digital Design System presentation framework.
-  - The overall goals of this project are to provide a common scaffolding for UI elements, and a set of themes that build on this scaffolding.
-  - We started this project in 2015 as a fork of Bootstrap. 
-- https://github.com/at-ui/at-ui
-  - /2.2kStar/MIT/201802/js/vue2
-  - flat UI-Kit specially for desktop application
-- https://github.com/learningequality/kolibri-design-system
-  - https://kolibri-design-system.netlify.app/
-  - Kolibri Design System
 
 ## angular
 

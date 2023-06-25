@@ -9,13 +9,13 @@ modified: 2023-06-25T03:57:34.243Z
 
 # guide
 
-- common-patterns
+- patterns-common
   - collections
   - data-async
+  - selection
   - form
   - drag
   - layer
-  - selection
   - date
   - color
   - status

@@ -19,20 +19,19 @@ modified: 2023-02-26T18:25:01.328Z
   - https://tailwindui.com/components /很多分隔线
   - https://merakiui.com/components
 # tailwind-ui
-- https://github.com/MarsX-dev/floatui /2kStar/202306/js/非常简洁/已被收购
-  - https://floatui.com/components
-  - https://floatui.com/demo
-  - responsive UI components and templates for React and Vue (soon) with Tailwind CSS.
-  - 提供了components、templates、demo
-
 - https://github.com/htmlstreamofficial/preline /2kStar/202306/js
   - https://preline.co/examples.html
   - prebuilt UI components based on the utility-first Tailwind CSS
+  - table示例元素丰富、色彩丰富、操作丰富
+  - sidebar可多级
+  - modal按钮位置多变，分隔线很少
+  - 分隔线用的不多
   - [Application AI Prompt](https://preline.co/examples/application-ai-prompt.html)
-
-- https://github.com/merakiui/merakiui /2kStar/202212/css/inactive
-  - https://merakiui.com/components
-  - Tailwind CSS components that support RTL languages & fully responsive based on Flexbox & CSS Grid with elegant Dark Mode
+  - https://github.com/SynapseTech/preline-react /ts
+    - Preline UI bindings for React
+    - Preline already supports react, so why this?It does support react, but not very nicely.
+  - https://github.com/rioarray/kumonos-ui
+    - Using Tailwind as CSS framework. Big thanks to Preline
 
 - https://github.com/themesberg/flowbite /4.9kStar/202306/ts/组件超丰富
   - https://flowbite.com/blocks/
@@ -40,6 +39,21 @@ modified: 2023-02-26T18:25:01.328Z
   - 很多付费解锁，但可参考效果
   - All of the elements are built using the utility classes from Tailwind CSS and vanilla JavaScript with support for TypeScript.
   - Flowbite also offers an API for using the components programmatically with vanillajs
+  - https://github.com/themesberg/flowbite-react /MIT
+    - https://www.flowbite-react.com/
+    - Official React components built for Flowbite and Tailwind CSS
+
+- https://github.com/MarsX-dev/floatui /2kStar/202306/js/非常简洁/已被收购
+  - https://floatui.com/components
+  - https://floatui.com/demo
+  - responsive UI components and templates for React and Vue (soon) with Tailwind CSS.
+  - 提供了components、templates、demo
+  - table过于简单
+  - card设计很烂
+
+- https://github.com/merakiui/merakiui /2kStar/202212/css/inactive
+  - https://merakiui.com/components
+  - Tailwind CSS components that support RTL languages & fully responsive based on Flexbox & CSS Grid with elegant Dark Mode
 
 - https://github.com/TailGrids/tailwind-ui-components /588Star/202301/css
   - https://tailgrids.com/components

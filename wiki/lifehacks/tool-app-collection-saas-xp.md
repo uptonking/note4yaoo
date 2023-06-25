@@ -88,12 +88,13 @@ modified: 2022-11-07T10:25:12.034Z
     - https://github.com/StevenBlack/hosts
   - 自用 github-hosts
     - https://raw.githubusercontent.com/Leon406/pyutil/master/github/hosts
+    - https://search.gitee.com/?skin=rec&type=repository&q=GitHub520&sort=updated_at
   - https://github.com/ineo6/hosts
     - GitHub最新hosts
 - 备用方法
-  - 直接百度搜索 github hosts，选择条件时间1月内，执行二次搜索
-  - gitee上搜索hosts
-    - https://gitee.com/yuchi-shentang/Hosts
+  - 直接百度搜索 github-hosts，选择条件时间1月内，执行二次搜索
+  - gitee上搜索hosts (github520)
+    - https://search.gitee.com/?skin=rec&type=repository&q=GitHub520&sort=updated_at
     - https://gitee.com/monkeycc/GitHub520
       - https://raw.hellogithub.com/hosts
 

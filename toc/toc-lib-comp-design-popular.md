@@ -7,9 +7,17 @@ modified: 2020-11-13T07:29:55.201Z
 
 # toc-lib-comp-design-popular
 
-# popular-design-system
+# guide
 
-- guide
+# popular-storybook
+- resources
+  - https://storybook.js.org/showcase/projects
+
+- https://github.com/mondaycom/monday-ui-react-core
+  - https://style.monday.com/
+  - Official monday.com UI resources for application development in React.js
+# popular-design-system
+- resources
   - design-tokens(推荐styled-dictionary)
     - polaris,fluid,官方examples
   - theming(推荐css vars)
