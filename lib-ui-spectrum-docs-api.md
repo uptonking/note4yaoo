@@ -104,5 +104,4 @@ modified: 2021-04-12T18:07:20.604Z
   - It automatically handles creating an id for the field and associates the label with it.
   - By default,  `useLabel` assumes that the label is a native HTML label element.
   - However, if you are labeling a non-native form element, be sure to use an element other than a `<label>` and set the `labelElementType` prop appropriately.
-
 # react-spectrum components

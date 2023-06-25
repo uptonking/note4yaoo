@@ -10,7 +10,6 @@ modified: 2021-04-12T18:06:54.456Z
 # guide
 
 # react-spectrum
-
 - useComp hook的参数一般都是3个：props、state、domRef
 
 - useComp(options) hook传入的参数会作为内部各个函数的默认值，最后返回的对象也会包含这些默认值属性及新的属性，如事件处理函数
@@ -22,7 +21,6 @@ modified: 2021-04-12T18:06:54.456Z
   - allowsTabNavigation: true
 - useAccordionItem使用了useSelectItem来处理item相关事件
   - 主要是将mouse相关事件处理函数都变为调用onSelect方法
-
 # react-aria
 
 ## Collection相关
@@ -42,9 +40,7 @@ modified: 2021-04-12T18:06:54.456Z
 ## interaction相关
 
 - useHover返回的hoverProps会在鼠标进入元素触发一次，鼠标离开元素也会触发一次
-
 # react-stately
-
 - CollectionBase类型的属性children和items的区别
   - children是必需属性而非可选，可用于静态或动态数据集合
   - items是可选属性，用来实现 dynamic collections
@@ -205,12 +201,8 @@ modified: 2021-04-12T18:06:54.456Z
 - 函数内大多数局部变量都是let块级可再赋值的变量，特别是props参数
   - https://github.com/adobe/react-spectrum/pull/93
   - Creating a new variable is a recipe for bugs in this case. I'd immediately forget to use the new variable not named props and keep using props later in the code, not realizing that it isn't actually all of the props. Already did this several times.
-
-# pieces
-
 # state
 
 # docs
-
 - 几乎所有文档都在mdx文件中，部分文档从组件源码的注释中提取
   - 各种文件以及特殊的import形式，参考.parcelrc配置

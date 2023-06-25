@@ -10,8 +10,8 @@ modified: 2021-05-05T07:48:16.100Z
 # guide
 
 # roadmap
-- https://react-spectrum.adobe.com/Support.html
 - https://github.com/adobe/react-spectrum/projects
+  - https://react-spectrum.adobe.com/Support.html
 # breaking-changes
 
 # release-notes

@@ -275,6 +275,12 @@ modified: 2023-02-05T18:50:32.900Z
   - Maintain Sequelize Model change history in a central table. 
   - This is highly configurable and supports composite primary keys ( up to 3 for now). 
   - Written in Typescript and provides typing.
+# cms
+- https://github.com/apstanisic/zmaj /ts
+  - https://zmaj.vercel.app/
+  - a headless CMS with RESTful API for your database and admin panel to easily manage your data
+  - Built on top of React and React Admin for admin panel, and NestJS and Sequelize for API.
+  - 依赖nestjs-passport、knex、sequelize
 # more
 - https://github.com/PIYoung/node-express-boilerplate-multitenant
   - node express postgres boilerplate for multitenant(saas)

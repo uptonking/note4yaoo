@@ -1,47 +1,156 @@
 ---
-title: lib-ui-spectrum-codebase-architecture
-tags: [adobe-spectrum, architecture, codebase]
+title: lib-ui-spectrum-docs-architecture
+tags: [adobe-spectrum, architecture, docs]
 created: 2021-04-12T17:14:17.736Z
-modified: 2021-04-12T18:06:57.616Z
+modified: 2023-06-25T03:57:34.243Z
 ---
 
-# lib-ui-spectrum-codebase-architecture
+# lib-ui-spectrum-docs-architecture
 
 # guide
 
-- For React Spectrum v3, a new architecture is proposed taking advantage of hooks in React 16.8, 
-  - which abstracts components into three reusable pieces: 
-    - platform agnostic state management, 
-    - theme agnostic behavior, 
-    - and themed components. 
-  - This will allow new platforms to reuse common state, and new themes to utilize common behavior while getting accessibility and more out of the box.
+- common-patterns
+  - collections
+  - data-async
+  - form
+  - drag
+  - layer
+  - selection
+  - date
+  - color
+  - status
 
+- For React Spectrum v3, a new architecture is proposed taking advantage of hooks in React 16.8, which abstracts components into three reusable pieces: 
+  - platform-agnostic state management, 
+  - platform-specific behavior/a11y and theme-agnostic behavior, 
+  - and themed components. 
+- This will allow new platforms to reuse common state, and new themes to utilize common behavior while getting accessibility and more out of the box.
 # react-stately
+- collections
+  - collection interface
+  - useListState
+  - useSingleSelectListState
+  - useTabListState
+  - useTableState
+  - useTreeState
+
+- data
+  - useListData
+  - useTreeData
+  - useAsyncList
+
+- form
+  - useCheckbox
+  - useRadioGroup
+  - useNumber
+  - useSearchField
+  - useSelect
+  - useCombobox
+  - useSlider
+
+- drag
+  - useDraggable
+  - useDroppable
+
+- overlay
+  - useMenuTrigger
+  - useOverlayTrigger
+  - useTooltip
+
+- selection
+  - selection
+  - selectionManager
+  - useMultipleSelectionState
+
+- date
+  - useCalendar
+  - useDate
+  - useDateRanger
+  - useTime
+
+- color
+  - useColorArea/Field/SliderState
+
+- status
+  - useToastState
 
 - implements state management and core logic for each component. 
-  - It handles complex logic for things like collections and selection in a fully cross-platform way that you could reuse on the web, in react-native, etc.
+  - It handles complex logic for things **like collections and selection in a fully cross-platform way** that you could reuse on the web, in react-native, etc.
   - React Stately hooks can be used independently in your own components, or paired with React Aria hooks to get more of the behavior and user interactions for web applications out of the box. 
   - We do not yet have behavior hooks for other platforms however, so if you're working in react-native or another view system, you'll need to use React Stately directly.
-
 # react-aria
+- interactions/gesture
+  - useFocus
+  - useFocusVisible
+  - useKeyboard
+  - usePress
+  - useLongPress
+  - useMove
+  - useHover
+  - useDrag
+  - useDrop
 
-- implements behavior and accessibility for the web according to WAI-ARIA Authoring Practices. 
+- focus
+  - FocusRing
+  - useFocusRing
+  - FocusScope
+
+- nav
+  - useLink
+  - useBreadcrumbs
+  - useTabList
+
+- overlay
+  - useDialog
+  - usePopover
+  - useTooltip
+
+- components
+  - useButton
+  - useListBox
+  - useMenu
+  - useTable
+  - useSeparator
+  - color
+  - date/time
+  - form
+
+- status
+  - useProgressBar
+  - useToast
+  - useMeter
+
+- i18n
+  - I18nProvider
+  - useCollator
+  - useLocale
+  - useDateFormatter
+  - useNumberFormatter
+  - useFilter
+
+- utils
+  - VisuallyHidden
+  - mergeProps
+  - useId
+  - useLabel
+  - useField
+
+- React Aria Components is a new library of unstyled components implementing ARIA patterns, built on top of the existing React Aria hooks
+  - components provide a default DOM structure and styling API, and abstract away the glue code necessary to connect the hooks together.
+
+- implements **behavior and accessibility** for the web according to WAI-ARIA Authoring Practices. 
   - It includes full screen reader and keyboard navigation support, along with mouse and touch interactions that have been tested across a wide variety of devices and browsers. 
   - It also implements internationalization for over 30 languages, including right-to-left specific behavior, localized date and number formatting, and more.
   - Most importantly, React Aria is fully customizable, since it doesn't implement any rendering or impose a DOM structure or styling methodology. 
   - You just need to spread the props returned by each React Aria hook onto the appropriate DOM elements, and you get high quality interactions, behavior, and accessibility pretty much for free. 
   - All you need to do is provide the styling.
-
 # react-spectrum
-
 - puts all of these pieces together and implements the Adobe-specific styling. 
   - It's designed to be adaptive, and works across mouse, touch, and keyboard interactions, on devices of any screen size. 
   - It supports theming, including automatic support for dark mode and responsive scaling for large hit targets on touch devices.
   - If you're integrating with Adobe software, React Spectrum is a great way to make your UI consistent. 
   - It's also a really great example of how to use React Aria and React Stately to build a full design system
-
 # [Architecture](https://react-spectrum.adobe.com/architecture.html)
-
 - each company tends to reimplement many of the same components from scratch. 
   - This has become easier to do with React and other modern view libraries, 
   - but implementing full support for accessibility, internationalization, keyboard, mouse, and touch interactions, and other features is still extraordinarily difficult.
@@ -64,7 +173,7 @@ modified: 2021-04-12T18:06:57.616Z
 
 - State hook
 - At the bottom is the state hook. 
-  - This hook is shared across platforms — it could work on the web, react-native, or any other platform, and makes no assumptions about the view system it is running on. 
+  - This hook is shared **across platforms** — it could work on the web, react-native, or any other platform, and makes no assumptions about the view system it is running on. 
   - It also has no theme or design system specific logic.
   - The state hook accepts common props from the component and provides state management. 
   - It implements the core logic for the component and returns an interface for reading and updating the component state.
@@ -74,7 +183,7 @@ modified: 2021-04-12T18:06:57.616Z
 
 - Behavior hook
 - In the middle is the behavior hook. 
-  - This hook is platform specific, and depends on the platform API (e.g. the DOM or react-native). 
+  - This hook is **platform specific**, and depends on the platform API (e.g. the DOM or react-native). 
   - It also has no theme or design system specific logic. 
   - It implements event handling, accessibility, internationalization, etc. — all the parts of a component that could be shared across multiple design systems.
   - The behavior hook uses the state hook in order to implement component behavior. 
@@ -87,7 +196,7 @@ modified: 2021-04-12T18:06:57.616Z
 
 - Component
   - At the top is the component, which lives in each design system and composes all of these pieces together. 
-  - It provides the theme and design system specific logic, and renders the actual platform elements. 
+  - It provides the **theme and design system specific logic**, and renders the actual platform elements. 
   - It applies styles, which could be implemented in many different ways (e.g. CSS classes, CSS-in-JS, etc.).
   - The component uses props returned by the behavior hook and state from the state hook to implement the visual appearance. 
   - It spreads props returned from the behavior hook onto elements that it renders to apply semantics and interactions, and can use the state from the state hook to adjust its visual appearance. 

@@ -150,6 +150,12 @@ modified: 2023-01-20T21:59:47.792Z
   - If you're looking for a system that's not developer dependant, we are just wrapping up several new features on the Page Builder side of our product, making it much more powerful and easier to use and in Q1/2023 
   - we'll be launching also the ability to build fully dynamic pages by combining our Page Builder with our Headless CMS. Happy to share more details if you're interested.
 # cms-framework
+- https://github.com/apstanisic/zmaj /ts
+  - https://zmaj.vercel.app/
+  - a headless CMS with RESTful API for your database and admin panel to easily manage your data
+  - Built on top of React and React Admin for admin panel, and NestJS and Sequelize for API.
+  - 依赖nestjs-passport、knex、sequelize
+
 - refine /6.5kStar/MIT/202212/ts
   - https://github.com/refinedev/refine
   - https://refine.dev/

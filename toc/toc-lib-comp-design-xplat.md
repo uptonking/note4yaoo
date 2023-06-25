@@ -32,6 +32,8 @@ modified: 2021-05-25T12:02:08.398Z
 - https://github.com/3lang3/react-vant
   - https://react-vant.3lang.dev/
   - React mobile UI Components base on Vant
+- https://github.com/bijinfeng/rn-vant
+  - React Native UI Components base on Vant
 
 - https://github.com/jdf2e/nutui
   - https://nutui.jd.com/

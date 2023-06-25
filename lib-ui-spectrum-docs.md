@@ -9,7 +9,7 @@ modified: 2021-04-12T18:07:17.615Z
 
 # guide
 
-# pieces
+# overview
 
 # [layout](https://react-spectrum.adobe.com/react-spectrum/layout.html)
 
@@ -24,9 +24,7 @@ modified: 2021-04-12T18:07:17.615Z
 - The `Flex` component can be used to create flexbox containers, and any React Spectrum component can be used as a child. 
   - React Spectrum also shims the `gap` property, along with `rowGap` and `columnGap`
 - Several React Spectrum components include pre-defined layouts that you can insert elements into via slots. 
-
 # [styling](https://react-spectrum.adobe.com/react-spectrum/styling.html)
-
 - React Spectrum components are designed to be consistent across all Adobe applications.
   - They include built-in styling that has been considered carefully, and extensively tested. 
   - In general, customizing Spectrum design is discouraged, but most components do offer control over layout and other aspects. 
@@ -43,9 +41,7 @@ modified: 2021-04-12T18:07:17.615Z
 - While the traditional `className` and `style` props are not supported in React Spectrum components, there are two escape hatches that you can use at your own risk. 
   - These are `UNSAFE_className` and `UNSAFE_style`. 
   - Use of these props should be considered a last resort.
-
 # [theming](https://react-spectrum.adobe.com/react-spectrum/theming.html)
-
 - React Spectrum is built to support theming. 
   - Colors, sizing, and spacing options can be customized through the use of CSS variables which are defined using the Provider component. 
   - Themes consist of variable definitions for light and dark color schemes, along with medium and large platform scales. 
@@ -61,9 +57,7 @@ modified: 2021-04-12T18:07:17.615Z
   - The defaultTheme uses the Spectrum light and darkest color themes and is suitable for most applications.
   - The darkTheme uses the Spectrum dark and darkest color themes, and is suitable for applications that are optimal with a darker interface regardless of operating system setting (e.g. photo/video editors).
   - The lightTheme uses the Spectrum lightest and darkest color themes, and is suitable for applications that require high brightness levels while in light mode and high contrast ratios while in dark mode.
-
 # [ssr: Server Side Rendering](https://react-spectrum.adobe.com/react-spectrum/ssr.html)
-
 - SSR is the process of rendering components to HTML on the server, rather than rendering them only on the client. 
 - Static rendering is a similar approach, but pre-renders pages to HTML at build time rather than on each request. 
 - These techniques can help improve perceived loading performance and SEO. 

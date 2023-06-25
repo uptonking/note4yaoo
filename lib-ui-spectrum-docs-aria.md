@@ -7,10 +7,9 @@ modified: 2021-04-12T18:07:23.824Z
 
 # lib-ui-spectrum-docs-aria
 
-> - platform-specific; theme-agnostic; 
+> platform-specific; theme-agnostic; 
 
 # [overview](https://react-spectrum.adobe.com/react-aria/getting-started.html)
-
 - It provides accessibility and behavior for many common UI components so you can focus on your unique design and styling.
 - It implements adaptive interactions to ensure the best experience possible for all users, including support for mouse, touch, keyboard, and screen readers.
 - It provides behavior and accessibility through React Hooks. 
@@ -27,9 +26,7 @@ modified: 2021-04-12T18:07:23.824Z
 - react-aria separates the state management logic into a separate hook that lives in react-stately.
   - The state hook holds the state for the component, and provides an interface to read and update that state. 
   - This allows this logic to be reused across different platforms, e.g. in react-native. 
-
 # [Why React Aria](https://react-spectrum.adobe.com/react-aria/why.html)
-
 - The fully styleable primitives that the web offers (e.g. `<div>`) are quite powerful, but they lack semantic meaning. 
   - This means that accessibility is often missing
   - Even if you use ARIA to provide semantics, you still need to implement all of the behavior for each component from scratch using JavaScript, 
@@ -40,9 +37,7 @@ modified: 2021-04-12T18:07:23.824Z
   - it provides no rendering at all, just behavior and accessibility. 
   - We impose no specific DOM structure or styling methodology. 
   - The hooks are small and composable, which allows you to combine them together and achieve your design with only the features you need in your component.
-
 # [Accessibility](https://react-spectrum.adobe.com/react-aria/accessibility.html)
-
 - Accessibility is the ability for applications to be used by everyone, including those with disabilities. 
   - This encompasses all types of disabilities, including vision, auditory, motor, and cognitive disabilities.
   - React Aria addresses aspects of vision and motor disabilities through screen reader and keyboard navigation support.
@@ -68,9 +63,7 @@ modified: 2021-04-12T18:07:23.824Z
 - Mobile
   - all functionality must be accessible to a screen reader, including things that would typically be handled by keyboard interactions.
   - React Aria allows you to handle this by placing a hidden button inside the dialog or popover that screen reader users can navigate to in order to close it.
-
 # [Interactions](https://react-spectrum.adobe.com/react-aria/interactions.html)
-
 - the web supports mouse, touch, keyboard, gamepads, screen readers, and more.
 - Unfortunately, the web platform doesn't have any high level abstractions across these interaction models.
   - We just have low level events like mouse, touch, keyboard, and focus events, and it's up to developers to put them together properly. 
@@ -108,9 +101,7 @@ modified: 2021-04-12T18:07:23.824Z
 - Assistive technology
   - An assistive technology, such as a screen reader, relies on semantic information exposed to the browser through ARIA or native HTML element semantics. 
   - React Aria is careful to handle events fired by assistive technology, and normalizes this behavior as needed so it is consistent with other interactions.
-
 # [Internationalization](https://react-spectrum.adobe.com/react-aria/internationalization.html)
-
 - React Aria supports many aspects of localization for many components out of the box, 
   - including translations for builtin strings, localized date and number formatting, right-to-left interactions, and more.
 - because React Aria provides no rendering, most of the builtin strings are for non-visible content to provide accessible labels. 
@@ -125,9 +116,7 @@ modified: 2021-04-12T18:07:23.824Z
   - you can account for it in your CSS using logical properties or other means.
   - For example, flexbox and CSS grid both automatically flip their layouts depending on the direction.
 - The root most element of your application should define the `lang` and `dir` attributes so that the browser knows which language and direction the user interface should be rendered in. 
-
 # [Server Side Rendering/SSR](https://react-spectrum.adobe.com/react-aria/ssr.html)
-
 - In React, SSR works by rendering the component to HTML on the server, and then hydrating the DOM tree with events and state on the client. 
   - This enables applications to both render complete HTML in advance for performance and SEO, but also support rich interactions on the client.
 - When using SSR, only a single copy of React Aria can be on the page at a time.

@@ -7,7 +7,7 @@ modified: 2021-04-12T18:07:42.879Z
 
 # lib-ui-spectrum-docs-stately
 
-> - platform-agnostic; theme-agnostic; 
+> platform-agnostic; theme-agnostic; 
 
 # [overview](https://react-spectrum.adobe.com/react-stately/getting-started.html)
 

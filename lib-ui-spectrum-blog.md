@@ -10,6 +10,5 @@ modified: 2021-04-12T18:06:46.356Z
 # guide
 
 - ref
-  - https://react-spectrum.adobe.com/blog/index.html
-
+  - [React Spectrum Blog](https://react-spectrum.adobe.com/blog/index.html)
 # blog

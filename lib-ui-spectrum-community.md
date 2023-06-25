@@ -18,9 +18,8 @@ modified: 2021-04-12T18:07:01.092Z
 - ## [Framework agnostic aria tools · react-spectrum](https://github.com/adobe/react-spectrum/issues/1329)
 - 202201: It's not on the core team roadmap because it's not something we need ourselves
 
-
 - ## [Support for React Native/Native](https://github.com/adobe/react-spectrum/issues/696)
-- The architecture is designed to support using the lowest layer, `react-stately`, cross platform. 
+- The architecture is designed to support using the lowest layer, `react-stately` , cross platform. 
   - `react-aria` specifically is **web only** since it relies heavily on browser APIs. Electron should work since it's essentially just Chrome. 
   - We don't have anything around React Native yet, but we'd be interested in working with the community on building out the higher layers on top of react-stately.
 

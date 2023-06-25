@@ -7,7 +7,7 @@ modified: 2021-04-12T18:07:34.356Z
 
 # lib-ui-spectrum-docs-components
 
-> - platform-specific; - theme-specific; 
+> platform-specific; theme-specific; 
 
 # [overview](https://react-spectrum.adobe.com/react-spectrum/getting-started.html)
 
