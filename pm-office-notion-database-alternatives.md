@@ -11,6 +11,12 @@ modified: 2023-01-23T11:24:14.630Z
 
 # products
 - [Glide • No Code App Builder • Nocode Application Development](https://www.glideapps.com/)
+
+- comparison
+  - [Airtable vs monday👍🏻](https://monday.com/alternative/airtable)
+    - collaboration,aggregate and update live data, comment, project status
+  - [Airtable👍🏻 vs Monday](https://www.airtable.com/lp/compare/airtable-vs-monday)
+    - sync data, custom data model, custom ui, more free records limit
 # discuss
 - ## [APITable: open-source Airtable alternative | Hacker News_202212](https://news.ycombinator.com/item?id=34127804&ref=upstract.com)
 - online demo: https://gitpod.io/#https://github.com/apitable/apitable

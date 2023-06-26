@@ -25,6 +25,12 @@ modified: 2023-02-05T18:50:53.563Z
 - https://github.com/masb0ymas/expresso-mongoose
   - expresso with Mongoose
 
+- https://github.com/kyooowe/PineUI /ts/mern
+  - https://home-two-ebon.vercel.app/
+  - Boilerplate using TurboRepo, Vite, React, and Express. Provides a fast and efficient setup for building modern web apps.
+  - 前端依赖react-popper、preline、zustand、tanstack-query.v4、formik、framer-motion、jsonwebtoken、recharts
+  - 后端依赖express、mongoose
+
 - https://github.com/shrihari-prakash/liquid
   - Seamless authentication and user management APIs for your projects based on TypeScript, MongoDB and Redis.
   - open source TypeScript implementation of oauthjs/node-oauth2-server based Mongo DB and Redis with user sign up and login

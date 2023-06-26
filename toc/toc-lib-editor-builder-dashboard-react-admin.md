@@ -12,7 +12,11 @@ modified: 2023-02-17T21:48:01.840Z
 # react-admin
 - react-admin /21.1kStar/MIT/202212/ts
   - https://github.com/marmelab/react-admin
-  - https://marmelab.com/react-admin-demo/
+  - https://marmelab.com/react-admin/Demos.html
+  - [demo E-commerce](https://marmelab.com/react-admin-demo/)
+  - [demo CRM](https://marmelab.com/react-admin-crm/)
+  - [demo HelpDesk](https://marmelab.com/react-admin-helpdesk/)
+  - [demo Music Player 黑色主题](https://demo.navidrome.org/app/)
   - A frontend Framework for building data-driven applications on top of REST/GraphQL APIs, React and Material Design.
   - core依赖react-query.v3、react-hook-form
   - 默认帐号是 login/password

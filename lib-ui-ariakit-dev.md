@@ -9,23 +9,24 @@ modified: 2023-06-22T05:32:58.602Z
 
 # guide
 
-- features
-  - low-level hooks/components
-  - accessible-ui
-  - 渲染灵活，支持自定义render和wrapElement
-
 - pros
   - 支持多store
   - 支持batch-update
 
 - cons
-  - 组件比较少
+  - 组件较少
+
+- features
+  - low-level hooks/components
+  - accessible-ui
+  - 渲染灵活，支持自定义render和wrapElement
 
 - architecture
   - state: component-store
   - styling: unstyled
   - a11y: ariakit
   - motion
+  - css样式可参考shadcn-ui、skeleton-ui、tailwind-ui、flowbite、daisyui组件
 
 - patterns-common
   - collection
@@ -37,11 +38,11 @@ modified: 2023-06-22T05:32:58.602Z
 
 - tips
   - 从另一个角度看，对state/logic的复用，hooks本身就是一种实现方式，但hooks需放在组件内
-  - 将state移出react的方案还可参考nanostores、redux
-  - css样式可参考shadcn-ui、skeleton-ui、tailwind-ui、flowbite、daisyui组件
+  - 将state移出react的方案还可参考nanostores、redux、jotai
   - 实现agnostic的2种思路，一是类似ariakit只处理状态，二是类似tanstack将所有状态和事件移出去
     - ariakit的优点是对react更友好，core-store的核心状态~~不含外部event~~方便序列化
     - tanstack的优点是对多框架的支持更友好，事件也会作为props返回，默认非受控状态且支持部分受控状态
+    - spectrum-aria采用的state+a11y+ui三层模式
   - useSyncExternalStore对react友好，对其他框架不友好
 
 - resources
@@ -121,6 +122,7 @@ modified: 2023-06-22T05:32:58.602Z
 # changelog
 - 202304
   - [Component stores](https://newsletter.ariakit.org/p/component-stores)
+  - [Rewrite packages: Implemented component stores_20230412](https://github.com/ariakit/ariakit/pull/2058)
 # docs
 - Ariakit exports a set of unstyled React components and hooks that you can use to build accessible web apps.
   - Ariakit provides unstyled components by default. 
@@ -173,9 +175,4 @@ modified: 2023-06-22T05:32:58.602Z
   - Attach an element to a DOM node outside the parent component's hierarchy.
 - Role
   - Provide the basic Ariakit features to any component.
-- 
-- 
-- 
-- 
-
 # more

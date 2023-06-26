@@ -77,6 +77,11 @@ modified: 2021-01-12T18:48:52.713Z
 - https://github.com/dracula/dracula-ui
   - https://ui.draculatheme.com/
   - A dark-first collection of UI patterns and components.
+
+- https://github.com/ampproject/amphtml /js
+  - https://bentojs.dev/
+  - If you’re using React or Preact to render your pages, go with the React version, in all other cases, try the Web Components version.
+  - 依赖preact、@ampproject/bento-compiler、@ampproject/worker-dom、react-jss
 # data-centric-components
 - guidu /13Star/MIT/202105/ts/react
   - https://github.com/uidu-org/guidu

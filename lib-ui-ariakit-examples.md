@@ -14,12 +14,19 @@ modified: 2023-06-23T10:02:11.336Z
   - https://scrollen.vercel.app/
   - A performant utility scroll hook for React
   - 依赖@ariakit/react-core
+
+- https://github.com/adaptui/react
+  - https://adaptui-react.vercel.app/
+  - headless components/hooks that are accessible, composable, customizable from low level to build your own UI & Design System powered by Ariakit.
+  - 依赖ariakit、react-aria、react-stately
+  - 实现了calendar、progress、slider
+- https://github.com/adaptui/react-tailwind
+  - https://adaptui-react-tailwind.vercel.app/
+  - React UI built with @adaptui/react, ariakit & tailwind
+  - 实现了avatarGroup、tag、badge、form、tooltip
 # design-system-ui
 - https://github.com/multiexperience/mx-ui
   - @ariakit/react
-
-- https://github.com/merthelva/ui-components
-  -  a personal repository and it represents a collection of the most common UI components's implementation.
 
 - https://github.com/slingshot/paris
   - https://paris.slingshot.fm/
@@ -35,7 +42,6 @@ modified: 2023-06-23T10:02:11.336Z
 
 - https://github.com/WordPress/gutenberg
   - The Block Editor project for WordPress and beyond. 
-
+# more
 - https://github.com/marigold-dev/tzsafe-ui
   - TzSafe is a website to interact with multi-signatures wallets. The goal is to have a UI layer above the LIGO contracts
-# more

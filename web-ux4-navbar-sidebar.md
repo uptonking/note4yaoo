@@ -70,6 +70,47 @@ modified: 2021-07-29T20:37:50.995Z
 
 - examples
   - https://getbootstrap.com/docs/5.0/examples/sidebars/
+  - https://marmelab.com/react-admin-demo/
+
+- sidebar-css，支持dock和浮层2种模式时fixed最灵活
+  - 浮层多用 `position: fixed` 布局
+  - 宽屏和窄屏都用 `position: fixed`: react-admin、flowbite-admin、windster、volt、argon、soft
+  - 宽屏正常布局窄屏fixed: xstream、purple
+  - 通过改变位置隐藏元素，除了更新left/right可使用tansform，参考argon、soft
+  - 还可直接删除dom元素，参考flexy、react-admin，改变了显示的dom元素
+
+```CSS
+/* react-admin */
+width: 200px;
+/* antd-pro */
+width: 208px;
+
+/* storybook */
+width: 230px;
+
+/* soft/argon 250px */
+width: 100%;
+max-width: 15.625rem !important;
+
+/* 💡 flowbite-admin/preline/flexy */
+width: 265px;
+width: 16rem;
+
+/* berry */
+width: 260px;
+
+/* mantine 300px */
+width: 18.75rem;
+min-width: 18.75rem
+```
+
+- 左侧边栏的折叠图标和logo的冲突问题可分别单独设计
+  - 侧边栏的折叠需考虑移动端和键盘操作，少用hover显示隐藏，甚至直接参考移动端主流app的设计
+  - 现有方案：窄屏幕只显示折叠图标直接隐藏logo
+  - s1: 窄屏幕上，header中间显示logo，左边显示折叠图标，移动端空间有限可在操作时隐藏logo
+  - s2: 在logo区域内，左边显示logo，右边显示折叠图标
+  - s3: 显示悬浮图标来控制打开隐藏
+  - s4: 直接参考移动端主流app的设计，左边显示头像可显示隐藏侧边栏，右边显示搜索，或左边折叠图标+logo文字
 
 - 点击导航条的汉堡菜单，出现左侧sidebar
   - spectrum，halfmoon

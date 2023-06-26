@@ -17,6 +17,13 @@ modified: 2021-01-08T11:48:16.590Z
   - 仪表板上的内容一般基于网格或拖拽实现，如react-grid-layout
   - 深入一个基于css实现的和一个基于框架实现的dashboard
   - 注意codepen上有些示例是figma或其他设计软件导出code
+  - 左侧边栏的折叠图标和logo的冲突问题可分别单独设计，可完全自定义导航条在宽屏和窄屏的内容
+    - 侧边栏的折叠需考虑移动端和键盘操作，少用hover显示隐藏，甚至直接参考移动端主流app的设计
+    - 现有方案：窄屏幕只显示折叠图标直接隐藏logo
+    - s1: 窄屏幕上，header中间显示logo，左边显示折叠图标，移动端空间有限可在操作时隐藏logo
+    - s2: 在logo区域内，左边显示logo，右边显示折叠图标
+    - s3: 显示悬浮图标来控制打开隐藏
+    - s4: 直接参考移动端主流app的设计，左边显示头像可显示隐藏侧边栏，右边显示搜索，或左边折叠图标+logo文字
 
 - usecase示例
   - 针对admin的框架包括adminjs/react-admin
@@ -27,6 +34,10 @@ modified: 2021-01-08T11:48:16.590Z
   - 飞书控制台；语雀工作台、知识空间；confluence spaces
   - [觅道文档: 云笔记、云文档、知识管理私有化部署方案](https://github.com/zmister2016/MrDoc/blob/master/README-zh.md)
   - [思源笔记: 笔记本文件夹下 .sy后缀的文件用于保存文档数据，数据格式为JSON](https://b3log.org/siyuan/download.html)
+
+- dashboard-demos
+  - flowbite-admin、windster
+  - react-admin、material
 
 - 依赖react-bootstrap
   - creativetimofficial: light-bootstrap-dashboard-react(右边有面板)
@@ -82,7 +93,7 @@ modified: 2021-01-08T11:48:16.590Z
   - DesignSystem on which AdminJS is based on
   - 依赖tiptap、styled-components、styled-system
 
-- AdminLTE /35.8kStar/MIT/202008
+- AdminLTE /35.8kStar/MIT/202206/js
   - https://github.com/ColorlibHQ/AdminLTE
   - https://adminlte.io/
   - https://adminlte.io/themes/v3/
@@ -136,7 +147,7 @@ modified: 2021-01-08T11:48:16.590Z
     - Bootstrap 4 UI kit packed with extra templates and components
 
 - https://github.com/tafcoder/sleek-dashboard
-  - https://sleek.tafcoder.com/
+  - https://demo.themefisher.com/sleek/
   - 依赖bootstrap4、jquery、simplebar、chart.js、google.maps；自己实现了大多数js，依赖较少
   - 样式符合最新流行风格，dashboard卡片上全是图表
   - 提供了2个dashboard：ecommerce、analytics； /主题色靛蓝
@@ -173,7 +184,7 @@ modified: 2021-01-08T11:48:16.590Z
   - 左边不可折叠，右边没有
   - Bootstrap 5 admin dashboard template
 
-- https://github.com/themekita/Atlantis-Lite
+- https://github.com/themekita/Atlantis-Lite /201812/js/inactive
   - [free](https://themekita.com/demo-atlantis-lite-bootstrap/livepreview/examples/demo1/)
   - [pro](https://themekita.com/demo-atlantis-bootstrap/livepreview/examples/demo1/)
   - 左边可折叠，右边有浮动面板可设置
@@ -222,13 +233,10 @@ modified: 2021-01-08T11:48:16.590Z
   - http://lite.codedthemes.com/datta-able/react/default/dashboard/default
   - 左边可折叠，右边没有
   - 依赖react-bootstrap、redux、react-nvd3、jquery、react-loadable
-- https://github.com/creativetimofficial/light-bootstrap-dashboard-react
-  - https://demos.creative-tim.com/light-bootstrap-dashboard-react/
-  - 依赖react-bootstrap，chartist
-  - 左边不可折叠，右边有
 
 - https://github.com/horizon-ui/horizon-ui-chakra /js/白色主题
   - https://horizon-ui.com/horizon-ui-chakra/
+  - https://horizon-ui.com/chakra-pro/
   - Admin Template for Chakra UI & React
 
 - https://github.com/0wczar/airframe-react
@@ -241,9 +249,6 @@ modified: 2021-01-08T11:48:16.590Z
   - /主题白色；样式普通
   - https://github.com/webkom-co/airframe-next
     - Dashboard based on Bootstrap 4 & React 16 + Next.js
-- https://github.com/creativetimofficial/now-ui-dashboard-react
-  - https://demos.creative-tim.com/now-ui-dashboard-react/#/admin/dashboard
-  - 依赖reactstrap.v8、chart.js.v3、perfect-scrollbar
 - https://github.com/NiceDash/Vibe
   - https://vibe.nicedash.com/
   - React.js dashboard built with Bootstrap 4
@@ -264,7 +269,7 @@ modified: 2021-01-08T11:48:16.590Z
 - https://github.com/minimal-ui-kit/material-kit-react
   - [free](https://minimal-kit-react.vercel.app/)
     - 左边不可折叠，右边没有浮动面板
-  - [full/minimal-ui($69)](https://minimals.cc/dashboard/app)
+  - [full/minimal-ui($69)](https://minimals.cc/dashboard)
     - 左边可折叠，右边有浮动面板
   - 依赖material-ui.v5、emotion、apexcharts、faker、formik、framer-motion、react-router-dom.v6；无redux
   - 样式超级友好，但没有正式感；免费版只提供了7个页面
@@ -279,8 +284,9 @@ modified: 2021-01-08T11:48:16.590Z
   - 样式超级友好的仪表板
   - 没有提供vanillajs版本
 - https://github.com/devias-io/material-kit-react
-  - http://material-kit-react.devias.io/
-  - 非常普通的仪表板；左边不可折叠，右边没有
+  - https://material-kit-react.devias.io/
+  - https://material-kit-pro-react.devias.io/dashboard
+  - 白色主题
 - Modular Admin
   - https://github.com/modularcode/modular-admin-html
     - https://modularcode.io/modular-admin-html/
@@ -464,7 +470,7 @@ modified: 2021-01-08T11:48:16.590Z
 - https://github.com/Ahadul360/Admin-Panel-Template
   - 过于简单
 # admin dashboard
-- Dashboard UI kit /28.2kStar/MIT/202005/ts/paid
+- Dashboard UI kit /28.2kStar/MIT/202005/ts/paid/broken
   - https://github.com/march08/dashboard-ui-kit
   - https://developer.dashboard-ui.com/docs/react/installation
   - https://preview.dashboard-ui.com/docs/react

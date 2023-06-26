@@ -11,14 +11,39 @@ modified: 2021-01-01T22:09:59.545Z
 
 ## w3c-design-token
 
-- https://github.com/drwpow/cobalt-ui
+- https://github.com/drwpow/cobalt-ui /ts
   - https://cobalt-ui.pages.dev/
-  - Cobalt turns your W3C design tokens into code
+  - Cobalt turns your W3C design tokens into code using a CLI or Node.js
+  - Works with Tokens Studio for Figma
   - The general approach is similar to Style Dictionary or Universal Design Tokens to solve the problem of creating a single source of truth for design tokens that is platform-agnostic and easy to build tooling for.
-  - https://github.com/LiamMartens/w3c-design-tokens-lib
+  - Cobalt supports 100% of the spec, but with the following changes:
+    - Cobalt introduces the concept of Modes(useful for theming)
+    - Cobalt supports assets via the `link` type
+    - Cobalt ignores unknown properties rather than throwing errors as the spec requires.
+  - Best practices
+    - Use aliases
+    - Prefer camelCased properties when possible(more predictable naming, and in many languages is simpler to reference in js)
+    - Logical color numbering
+  - Good usecases for modes(Modes work best when a user can’t be in 2 contexts at once)
+    - User preferences (e.g. text size, reduced motion, colorblind mode)
+    - Device (e.g. mobile or desktop)
+    - Region/language
+    - Product/application area (e.g. different typographic settings in a dashboard UI vs longform content in marketing pages and documentation)
+  - Bad usecases for modes(when 2 or more things are frequently used side-by-side, modes should be avoided)
+    - Semantic color (e.g success or error)
+    - Localized state (e.g. disabled or active)
+    - Color shades/hues
+    - Components (e.g. card or button)
+  - Tokens Studio for Figma is a free plugin that makes managing design tokens in Figma easy (docs). While it doesn’t use the W3C Design Tokens format like Cobalt does, Cobalt supports most of Tokens Studio’s format.
 
 - https://github.com/lukasoppermann/style-dictionary-utils
   - a collection of parsers, filters, transformers and formats for Style Dictionary that make working with w3c design tokens a lot easier.
+
+- https://github.com/LiamMartens/w3c-design-tokens-lib
+  - w3c-design-tokens-lib
+
+- https://github.com/Supernova-Studio/design-tokens-format-module
+  - Exporting tokens from Supernova to Design Tokens Format Module by W3C DTCG.
 # style-dictionary-examples
 - https://github.com/infor-design/design-system
   - https://design.infor.com/code/ids-enterprise/latest

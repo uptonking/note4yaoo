@@ -34,6 +34,9 @@ modified: 2021-05-23T16:34:27.206Z
   - alternative to ckeditor-table
 - refactor pivot table  to vanillajs
 - refactor to plugins support
+
+- features
+  - dependencies management
 # guide
 - ag-grid源码要点
   - ioc

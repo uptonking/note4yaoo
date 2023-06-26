@@ -27,6 +27,9 @@ modified: 2023-03-27T17:45:27.440Z
   - https://react-hook-form.com/
   - React Hooks for form state management and validation (Web + React Native)
   - 只依赖react
+- https://github.com/kodkafa/reform
+  - React Hook Form + Yup + Tailwind
+  - Tailwind is optional. And you can use Preline UI too.
 
 - https://github.com/TanStack/form /代码少
   - https://tanstack.com/form

@@ -31,6 +31,10 @@ modified: 2022-11-07T10:26:22.510Z
   - FTP：21
   - MYSQL：3306
 - 可用ping检测ip，用telnet检测端口
+# productivity
+- 局域网传输工具
+  - 飞鸽传书
+
 # pc-dir
 - 网易云音乐
   - /home/yaoo/.cache/netease-cloud-music/CachedSongs

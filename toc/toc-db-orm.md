@@ -22,6 +22,9 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/tkssharma/nodejs-db-orm-world /202003/ts
   - Node JS with different ORM like Typeorm, Knex, Prisma and Sequelize with Node JS API Development Node JS with without any ORM (MYSQL raw queries)
 
+- https://github.com/MiroslavPetrik/edgedb-vs-knex
+  - Comparison of Knex/Objection ORM & EdgeDB query builders by implementing & testing a task model with each setup.
+
 - typeorm /30.1kStar/MIT/202301/ts
   - https://github.com/typeorm/typeorm
   - http://typeorm.io/

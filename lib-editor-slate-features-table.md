@@ -13,6 +13,7 @@ modified: 2023-02-27T19:07:31.111Z
   - viewer: 仅展示，类似tanstack-table
   - editing: 支持编辑/undo，类似o-spreadsheet
   - 支持hide header
+  - dependencies management
 
 - views
   - table

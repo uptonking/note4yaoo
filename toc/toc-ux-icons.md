@@ -129,7 +129,8 @@ modified: 2021-05-06T09:58:23.803Z
   - https://materialdesignicons.com/
   - converted icons from Google's official icon set
   - available via Webfont/SCSS, JavaScript/TypeScript, SVG/Meta.json, react
-- react-icons  /MIT/3kStar/201905
+
+- react-icons  /9.9kStar/MIT/202306
   - https://github.com/react-icons/react-icons
   - https://react-icons.github.io/react-icons/
   - svg react icons of popular icon packs, including fa, md 
@@ -308,7 +309,6 @@ modified: 2021-05-06T09:58:23.803Z
     - https://svgps.app/
     - SVGPS removes the burden of working with a cluster of SVG files by converting your icons into a single JSON file. You can easily use this file in your frontend or mobile projects.
 # logos
-
 - [FreeLogo.me – Free SVG Logo Templates](https://freelogo.me/)
   - SVG Logo placeholders you can download and use with no restrictions for free.
 # ref

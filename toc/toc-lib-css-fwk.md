@@ -11,10 +11,14 @@ modified: 2021-01-28T21:14:14.667Z
 
 - css-ui
   - https://ui.shadcn.com/examples/music /主色黑白灰
-  - https://ui.mantine.dev /默认浅灰背景色加线框分隔-组件多
   - https://flowbite.com/blocks /大部分付费-可参考效果
   - https://www.tremor.so/blocks /侧重图表recharts
+  - https://ui.mantine.dev /默认浅灰背景色加线框分隔-组件多
   - https://daisyui.com/components /无app-ui
+
+- ux-designer
+  - https://dribbble.com/timelessco
+  - https://twitter.com/anguriostegui
 # popular
 - https://github.com/argyleink/open-props
   - https://open-props.style/

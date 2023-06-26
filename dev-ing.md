@@ -276,6 +276,27 @@ $$('[contenteditable]')
 
 ## 060
 
+## 0626
+
+- [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
+  - spacing is important in `calc()` css function,  `calc(24rem - 13px)`; 
+  - You just need to add a space around the minus operator
+
+- [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)
+  - The actual unit of the single value is not determined. However, for serialization (as you'd see in the browser's dev tools for example). lengths are represented in pixels. Not all calculations are represented in pixels though. Angles, for example, calculating on degrees and radians and turns, will be represented in degrees. Other types of values have other canonical units.
+
+- [How to make a div 100% height of the browser window - Stack Overflow](https://stackoverflow.com/questions/1575141/how-to-make-a-div-100-height-of-the-browser-window)
+  - If you want to set the height of a `<div>` or any element, you should set the height of `<body>` and `<html>` to 100% too. 
+  - Correct me if I'm wrong, But i think you also need to set the height to all the parents of the div, to actually work
+  - you are right. You do need to set the height to all the parents of the div, with the implications of everything having the height of the screen.
+
+- [PointerEvent指针事件简单介绍 - 掘金](https://juejin.cn/post/6982387923266043941)
+  - 早期的浏览器，只存在鼠标事件（MouseEvent）
+  - 触屏设备开始普及，交互方式发生了改变。但为了使现有功能不受影响，在很多情况下，触摸事件和鼠标事件会相继触发（以使非触摸专用的代码仍然可以与用户交互）。例如轻触屏幕会触发touchstart事件，如果不调用event.preventDefault()会继续触发mousedown事件。
+  - 但在面对多点触控的时候，鼠标事件就显得无能为力了。因此，引入了触摸事件（TouchEvent）。
+  - 很多其他输入设备（如触控笔）有自己的特性。如果此时推出基于触控笔的API，那后面万一又有新特性的输入设备出现时，又怎么办呢？而且同时维护两份处理鼠标事件和触摸事件的代码已经很笨重了
+  - （PointerEvent）是HTML5的事件规范之一，它主要目的是用来将鼠标（Mouse），触摸（Touch）和触控笔（Pen）三种事件整合为统一的API。
+
 ## 0625
 
 - [regex - How to match "any character" in regular expression? - Stack Overflow](https://stackoverflow.com/questions/2912894/how-to-match-any-character-in-regular-expression)

@@ -14,8 +14,6 @@ modified: 2020-12-29T11:27:41.474Z
   - 蓝紫红色系，交互感很强
 # glassmorphism
 - [Float UI - Modern UI Components & Templates](https://www.floatui.com/)
-  - https://www.floatui.com/get-access
-  - 非开源
 
 ## 渐变颜色字体
 
@@ -40,12 +38,15 @@ modified: 2020-12-29T11:27:41.474Z
 
 - https://vazurio.co/
   - 干净简洁，纯白背景，大量使用圆角矩形，设计感很强
-  - https://github.com/vazurio/buildkit-doc
+  - https://uriostegui.vercel.app/
   - https://github.com/vazurio/white-wolf
   - https://portfolio-anyelos.vercel.app/
 
 - https://testimonial.to/
   - 背景纯白，简洁干净
+
+- [Ditto Insurance: Buy the best insurance plan for you today through our expert advisors!](https://joinditto.in/)
+  - 白色背景 + 动画
 # theming-dark
 - [DarkModes | The best dark mode implementations on the Internet](https://darkmodes.com/)
 

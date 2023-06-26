@@ -19,34 +19,34 @@ modified: 2021-07-25T10:48:21.307Z
   - 大厂的dashboard一般会提供多种框架实现的版本，但有些较新的也会只提供一个版本
   - creativetimofficial的仓库要比bootstrapdash多很多，更容易长期维护
   - https://www.creative-tim.com/
-    - https://github.com/creativetimofficial
+    - https://github.com/orgs/creativetimofficial/repositories?type=source
     - material, argon, black, now-ui
     - 第三方依赖都较少；大多基于reactstrap.v8
     - 样式普通不出色，pro版功能不多，浮动面板配置项少
     - **更新较频繁，很多repos都长期维护**
-    - free repos多，但页面功能较少
+    - free repos多，但页面功能较少，代表是argon/soft
     - 示例大多左边没有，右边有
+  - https://themesberg.com/
+    - https://github.com/orgs/themesberg/repositories?type=source
+    - volt(react-bootstrap)
+  - https://www.wrappixel.com/
+    - https://github.com/wrappixel?tab=repositories&type=source
+    - flexy, xtreme, ample, matrix
+    - 第三方依赖都较少；大多基于reactstrap.v8，少部分基于material-ui.v4、bootstrap
+    - 样式一般；更新不太频繁
+    - 示例大多左边有，右边没有
   - https://www.bootstrapdash.com/
-    - https://github.com/BootstrapDash
+    - https://github.com/orgs/BootstrapDash/repositories?type=source
     - Star Admin 2, Purple Admin, skydash
     - 第三方依赖都很多；大多基于react-bootstrap.v1
     - **样式符合最新流行风格，大量使用圆角卡片**
     - free repos不太多；更新不太频繁
     - 示例大多左边有，右边有
-  - https://www.wrappixel.com/
-    - https://github.com/wrappixel
-    - flexy, xtreme, ample, matrix
-    - 第三方依赖都较少；大多基于reactstrap.v8，少部分基于material-ui.v4、bootstrap
-    - 样式一般；更新不太频繁
-    - 示例大多左边有，右边没有
-  - https://themesberg.com/
-    - https://github.com/themesberg
-    - volt(react-bootstrap)
   - https://codedthemes.com/
-    - https://github.com/codedthemes
+    - https://github.com/orgs/codedthemes/repositories?type=source
     - berry(material-ui), datta-able(react-bootstrap)
   - https://flatlogic.com
-    - https://github.com/flatlogic
+    - https://github.com/orgs/flatlogic/repositories?type=source
     - 第三方依赖有点多；大多依赖reactstrap.v8
     - 示例大多左边没有，右边没有
     - 样式都很一般
@@ -113,6 +113,100 @@ modified: 2021-07-25T10:48:21.307Z
     - 用react hooks重写实现组件，只复用css
     - CoreUI for React.js replaces and extends the Bootstrap javascript. 
     - Components have been built from scratch as true React hook components, without jQuery and unneeded dependencies.
+# WrapPixel dashboards
+- Flexy
+- https://github.com/wrappixel/flexy-react-lite
+  - [free](https://www.wrappixel.com/demos/free-admin-templates/flexy-react-dashboard-lite/main/#/dashboards/dashboard1)
+  - https://github.com/wrappixel/flexy-bootstrap-lite
+  - 依赖material-ui.v5, emotion, apexcharts
+  - 样式符合最新流行风格，超级友好
+  - 左边不可折叠，右边没有
+
+- Xtreme
+- https://github.com/wrappixel/xtreme-react-lite
+  - [free](https://wrappixel.com/demos/free-admin-templates/xtreme-reactadmin-lite/main/#/dashboard)
+  - [pro](https://www.wrappixel.com/demos/react-admin-templates/xtreme-react-admin/main/dashboards/classic)
+  - 依赖reactstrap.v8、history、chart.js
+  - 提供了bootstrap版、react版、angular版
+  - 左边可折叠，右边没有；样式还行
+  - 左边侧边栏fixed
+- https://github.com/wrappixel/xtreme-admin-lite
+  - https://www.wrappixel.com/demos/free-admin-templates/xtreme-admin-lite/xtreme-html/ltr/
+  - 左边可折叠，右边没有
+
+- Ample
+- https://github.com/wrappixel/ample-react-lite
+  - https://wrappixel.com/demos/admin-templates/ampleadmin/ample-admin-lite/dashboard.html
+  - 左边可折叠，右边没有；和xtreme类似
+  - 左边侧边栏不能fixed
+
+- Matrix
+- https://github.com/wrappixel/matrix-admin-bt5
+  - 左边可折叠；纯色块metro风格，样式普通
+
+- more-dashboards
+- https://github.com/wrappixel/materialpro-react-lite
+  - https://wrappixel.com/demos/free-admin-templates/materialpro-reactadmin-lite/main/#/starter/starter
+# creative tim dashboards
+- tips
+  - free版几乎都是 左边不可折叠，右边有浮动面板
+  - pro 版几乎都是 左边可折叠，右边有浮动面板
+
+- argon-dashboard
+  - 生态最为丰富，还提供了next、nuxt等实现
+  - 样式符合最新流行风格
+  - [free](https://demos.creative-tim.com/argon-dashboard/examples/dashboard.html)
+    - 左边不可折叠，右边没有浮动面板
+  - [pro](https://demos.creative-tim.com/argon-dashboard-pro/pages/dashboards/default.html)
+    - 左边可折叠，右边没有
+  - [free argon-design-system](https://demos.creative-tim.com/argon-design-system/)
+    - design system based on Bootstrap 4.
+
+- soft-ui-dashboard
+  - 基于bootstrap5，暂时没有实现react版本
+  - 样式符合最新流行风格，大量运用卡片，按钮有点浮雕凸起的效果
+  - [free](https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html)
+  - [pro](https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html)
+    - 实现不完美，折叠到图标的侧边栏因为部分文字过多就显示了水平滚动条
+  - https://github.com/creativetimofficial/soft-ui-dashboard
+    - Bootstrap 5 Dashboard
+  - https://github.com/creativetimofficial/soft-ui-design-system
+    - https://demos.creative-tim.com/soft-ui-design-system/index.html
+    - Bootstrap 5 design system
+  - https://github.com/creativetimofficial/soft-ui-react-native
+    - app template built over React Native and Expo
+  - paid
+    - https://github.com/creativetimofficial/ct-soft-ui-design-system-pro
+    - https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro
+
+- black-dashboard
+  - [free](https://demos.creative-tim.com/black-dashboard/examples/dashboard.html)
+  - [pro](https://demos.creative-tim.com/marketplace/black-dashboard-pro/examples/dashboard.html)
+
+- now-ui-dashboard  
+  - [free](https://demos.creative-tim.com/now-ui-dashboard/examples/dashboard.html)
+  - [pro](https://demos.creative-tim.com/now-ui-dashboard-pro/examples/dashboard.html)
+
+- light-bootstrap-dashboard
+  - [free](https://demos.creative-tim.com/light-bootstrap-dashboard/examples/dashboard.html)
+  - [pro](https://demos.creative-tim.com/light-bootstrap-dashboard-pro/examples/dashboard.html)
+
+- material-dashboard
+  - [free](https://demos.creative-tim.com/material-dashboard/examples/dashboard.html)
+  - [pro](https://demos.creative-tim.com/material-dashboard-pro/examples/dashboard.html)
+
+- paper-dashboard
+  - 基于bootstrap3
+  - [free](https://demos.creative-tim.com/bs3/paper-dashboard/dashboard.html)
+  - [pro](https://demos.creative-tim.com/paper-dashboard-pro/examples/dashboard/overview.html)
+
+- paper-dashboard-2
+  - [free](https://demos.creative-tim.com/paper-dashboard/examples/dashboard.html)
+  - [pro](https://demos.creative-tim.com/paper-dashboard-2-pro/examples/dashboard.html)
+
+- vue-white-dashboard
+  - [free](https://demos.creative-tim.com/vue-white-dashboard/#/dashboard)
+  - [pro](https://demos.creative-tim.com/vue-white-dashboard-pro/#/dashboard)
 # BootstrapDash dashboards 
 - 缺点
   - 左边侧边栏不能fixed，滚动过长时会消失
@@ -174,97 +268,3 @@ modified: 2021-07-25T10:48:21.307Z
 - https://github.com/BootstrapDash/RoyalUI-Free-Bootstrap-Admin-Template
   - https://www.bootstrapdash.com/demo/royalui-free/template/index.html
   - 卡片直角
-# WrapPixel dashboards
-- Flexy
-- https://github.com/wrappixel/flexy-react-lite
-  - [free](https://www.wrappixel.com/demos/free-admin-templates/flexy-react-dashboard-lite/main/#/dashboards/dashboard1)
-  - https://github.com/wrappixel/flexy-bootstrap-lite
-  - 依赖material-ui.v5, emotion, apexcharts
-  - 样式符合最新流行风格，超级友好
-  - 左边不可折叠，右边没有
-
-- Xtreme
-- https://github.com/wrappixel/xtreme-react-lite
-  - [free](https://wrappixel.com/demos/free-admin-templates/xtreme-reactadmin-lite/main/#/dashboard)
-  - [pro](https://www.wrappixel.com/demos/react-admin-templates/xtreme-react-admin/main/dashboards/classic)
-  - 依赖reactstrap.v8、history、chart.js
-  - 提供了bootstrap版、react版、angular版
-  - 左边可折叠，右边没有；样式还行
-  - 左边侧边栏fixed
-- https://github.com/wrappixel/xtreme-admin-lite
-  - https://www.wrappixel.com/demos/free-admin-templates/xtreme-admin-lite/xtreme-html/ltr/
-  - 左边可折叠，右边没有
-
-- Ample
-- https://github.com/wrappixel/ample-react-lite
-  - https://wrappixel.com/demos/admin-templates/ampleadmin/ample-admin-lite/dashboard.html
-  - 左边可折叠，右边没有；和xtreme类似
-  - 左边侧边栏不能fixed
-
-- Matrix
-- https://github.com/wrappixel/matrix-admin-bt5
-  - 左边可折叠；纯色块metro风格，样式普通
-
-- more-dashboards
-- https://github.com/wrappixel/materialpro-react-lite
-  - https://wrappixel.com/demos/free-admin-templates/materialpro-reactadmin-lite/main/#/starter/starter
-# creative tim dashboards
-- tips
-  - free版几乎都是 左边不可折叠，右边有浮动面板
-  - pro 版几乎都是 左边可折叠，右边有浮动面板
-
-- argon-dashboard
-  - 生态最为丰富，还提供了next、nuxt等实现
-  - 样式符合最新流行风格
-  - [free](https://demos.creative-tim.com/argon-dashboard/examples/dashboard.html)
-    - 左边不可折叠，右边没有浮动面板
-  - [pro](https://demos.creative-tim.com/argon-dashboard-pro/pages/dashboards/dashboard.html)
-    - 左边可折叠，右边没有
-  - [free argon-design-system](https://demos.creative-tim.com/argon-design-system/)
-    - design system based on Bootstrap 4.
-
-- soft-ui-dashboard
-  - 基于bootstrap5，暂时没有实现react版本
-  - 样式符合最新流行风格，大量运用卡片，按钮有点浮雕凸起的效果
-  - [free](https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html)
-  - [pro](https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html)
-    - 实现不完美，折叠到图标的侧边栏因为部分文字过多就显示了水平滚动条
-  - https://github.com/creativetimofficial/soft-ui-dashboard
-    - Bootstrap 5 Dashboard
-  - https://github.com/creativetimofficial/soft-ui-design-system
-    - https://demos.creative-tim.com/soft-ui-design-system/index.html
-    - Bootstrap 5 design system
-  - https://github.com/creativetimofficial/soft-ui-react-native
-    - app template built over React Native and Expo
-  - paid
-    - https://github.com/creativetimofficial/ct-soft-ui-design-system-pro
-    - https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro
-
-- black-dashboard
-  - [free](https://demos.creative-tim.com/black-dashboard/examples/dashboard.html)
-  - [pro](https://demos.creative-tim.com/marketplace/black-dashboard-pro/examples/dashboard.html)
-
-- now-ui-dashboard  
-  - [free](https://demos.creative-tim.com/now-ui-dashboard/examples/dashboard.html)
-  - [pro](https://demos.creative-tim.com/now-ui-dashboard-pro/examples/dashboard.html)
-
-- light-bootstrap-dashboard
-  - [free](https://demos.creative-tim.com/light-bootstrap-dashboard/examples/dashboard.html)
-  - [pro](https://demos.creative-tim.com/light-bootstrap-dashboard-pro/examples/dashboard.html)
-
-- material-dashboard
-  - [free](https://demos.creative-tim.com/material-dashboard/examples/dashboard.html)
-  - [pro](https://demos.creative-tim.com/material-dashboard-pro/examples/dashboard.html)
-
-- paper-dashboard
-  - 基于bootstrap3
-  - [free](https://demos.creative-tim.com/bs3/paper-dashboard/dashboard.html)
-  - [pro](https://demos.creative-tim.com/paper-dashboard-pro/examples/dashboard/overview.html)
-
-- paper-dashboard-2
-  - [free](https://demos.creative-tim.com/paper-dashboard/examples/dashboard.html)
-  - [pro](https://demos.creative-tim.com/paper-dashboard-2-pro/examples/dashboard.html)
-
-- vue-white-dashboard
-  - [free](https://demos.creative-tim.com/vue-white-dashboard/#/dashboard)
-  - [pro](https://demos.creative-tim.com/vue-white-dashboard-pro/#/dashboard)
