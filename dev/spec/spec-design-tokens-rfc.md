@@ -18,6 +18,10 @@ modified: 2021-01-04T17:07:34.171Z
 
 ## w3c Design Tokens Format
 
+- cobalt-ui 开发体验
+  - 暂不支持boxShadow多个叠加
+  - ~~gradient的路径点单位是 length-percentage，但无对应类型~~
+
 - [Share your tools that support the DTCG format](https://github.com/design-tokens/community-group/issues/211)
 
 - https://github.com/drwpow/cobalt-ui

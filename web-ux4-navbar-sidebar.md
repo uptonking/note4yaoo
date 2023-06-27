@@ -24,6 +24,11 @@ modified: 2021-07-29T20:37:50.995Z
 - mobile
   - form elements表单元素会折叠或收起或收缩为图标
 
+- navbar-height
+  - 64px: windster、flowbite、preline、purple
+  - 48px: react-admin、antd、mantine
+  - 80+: berry
+
 ## tips
 
 - 导航条的汉堡菜单在 左侧
@@ -93,7 +98,7 @@ width: 100%;
 max-width: 15.625rem !important;
 
 /* 💡 flowbite-admin/preline/flexy */
-width: 265px;
+width: 256px;
 width: 16rem;
 
 /* berry */

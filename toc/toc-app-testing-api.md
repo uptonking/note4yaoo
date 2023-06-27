@@ -85,4 +85,8 @@ modified: 2023-02-08T10:25:14.173Z
   - a framework for Web Testing and Automation. 
   - It allows testing Chromium, Firefox and WebKit with a single API.
   - microsoft/playwright-python is almost call-for-call compatible with puppeteer, and gives you access to Firefox and Webkit as well.
+# web-debug
+- https://github.com/liriliri/eruda /js
+  - https://eruda.liriliri.io/
+  - Console for Mobile Browsers.
 # more

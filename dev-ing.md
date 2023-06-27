@@ -276,6 +276,13 @@ $$('[contenteditable]')
 
 ## 060
 
+## 0627
+
+- [mac电脑的默认字体是什么 - Apple 社区](https://discussionschinese.apple.com/thread/253967664)
+  - 苹方字体(又称苹方黑体，英文字体名PingFang SC)是ios9上默认的中文字体，苹方字体不仅字型优美，而且能提升字体在手机、电脑屏幕上的清晰度和易读性。
+  - 随着APP及UI设计的流行，苹方字体也就成了UI设计师必备的字体包。苹方字体包含6种字重，分别是苹方黑体常规体、中黑、细体、特粗体、特细体、粗体，可以很好地满足日常设计和阅读的需求。
+
+
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)

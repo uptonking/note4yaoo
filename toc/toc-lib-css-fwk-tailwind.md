@@ -22,7 +22,19 @@ modified: 2023-02-26T18:25:01.328Z
 - dashboard-demos
   - flowbite-admin、windster
   - react-admin、material
+
+- tailwind-css-classes
+  - [Tailwind CSS Cheat Sheet - Flowbite](https://flowbite.com/tools/tailwind-cheat-sheet/)
 # preline
+- design-tokens-from-figma 从figma中找token太慢了，直接在demo中找
+  - brand-color用的blue-600
+  - 文章内容的颜色 gray-800(#1f2937)
+  - 暗色内容的颜色
+    - demo中是gray-600(#4b5563)
+    - 设计稿中是slate-600(#475569)
+  - 默认border是gray-200(#e5e7eb)
+  - input中提交按钮背景色默认blue-500
+
 - https://github.com/htmlstreamofficial/preline /2kStar/MIT/202306/js
   - https://preline.co/examples.html
   - prebuilt UI components based on the utility-first Tailwind CSS

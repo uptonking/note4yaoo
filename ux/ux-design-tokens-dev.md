@@ -16,8 +16,16 @@ modified: 2021-01-01T20:09:10.218Z
     - 极大提高组件设计修改的灵活性，花费更多精力，针对某一平台进行优化更方便
     - 很多现有的设计系统采用这种方式
 
+- tokens-common
+  - font
+  - color
+  - spacing
+  - size
+  - border
+  - shadow
+  - transition
+  - zIndex
 # guide
-
 - design-tokens-awesome-catalog
   - 主流tokens工具及标准参考
     - system-ui-theme-specification
@@ -54,9 +62,7 @@ modified: 2021-01-01T20:09:10.218Z
   - [Airbnb Lona Component Definition](https://github.com/airbnb/Lona/blob/master/docs/file-formats/component.md)
     - Currently component data is encoded in JSON.
     - JSON is problematic because it's not easily mergeable or human-editable. 
-
 # pieces
-
 - Should I use theo or style dictionary?
   - 结论是，推荐使用json格式来描述design tokens
   - Both are good! Both have very active communities on the design systems slack. 
@@ -68,7 +74,6 @@ modified: 2021-01-01T20:09:10.218Z
 
 - I figure a way to implement design tokens on @framer X using style-dictionary.
   - The output is a collection of CSS Variables and I was able to use them on CSS objects, with Styled components, and with Emotion.
-
 # discuss
 
  
@@ -103,8 +108,6 @@ modified: 2021-01-01T20:09:10.218Z
   4. Take the time to look at the design and really comprehend it without doing anything else
   5. Make a judgment whether anything about this is going to require anything more than plain html/css/js 
   6. Make a time/effort estimate 
-
 # ref
-
 - [Documenting Design Tokens](https://dbanks.design/blog/documenting-design-tokens/)
 - [design-tokens-in-action](https://sproutsocial.com/seeds/resources/tokens/)
