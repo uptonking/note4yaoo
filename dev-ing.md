@@ -276,17 +276,37 @@ $$('[contenteditable]')
 
 ## 060
 
+## 0628
+
+- [Uncaught TypeError: Cannot convert undefined or null to object at Function.keys (<anonymous>) - Stack Overflow](https://stackoverflow.com/questions/65224320/uncaught-typeerror-cannot-convert-undefined-or-null-to-object-at-function-keys)
+  - That error is coming from Object.keys(props.ingredients), as props.ingredients is undefined or null, as stated on the error message
+  - 在Object.keys(esNamespaceImportObject)时可能会出现此问题，加上fallback可解决
+  - `const keys = Object.keys(ingredients || {}).map(i => i);`
+
+- [How to access the first property of a Javascript object? - Stack Overflow](https://stackoverflow.com/questions/983267/how-to-access-the-first-property-of-a-javascript-object)
+  - obj[Object.keys(obj)[0]]; 
+
+- ### [CSS height 100% percent not working - Stack Overflow](https://stackoverflow.com/questions/21357238/css-height-100-percent-not-working)
+
+- When you're assigning a percentage in an element (i.e. divs) the css compiler needs to know the size of the parent element. If you don't assign that, you should see divs without height.
+
+- I would say you have two options:
+  - to get all parent divs styled with 100% height (including body and html)
+  - to use absolute positioning for one of the parent divs (for example #content) and then all child divs set to height 100%
+  - Position fixed works too
+
+- Incidentally, the reason why you have to specify `height` and `min-height` to `html` and `body` respectively is because neither element has any intrinsic height. Both are `height: auto` by default. It is the viewport that has 100% height, so height: 100% is taken from the viewport, then applied to body as a minimum to allow for scrolling of content.
+
 ## 0627
 
 - [mac电脑的默认字体是什么 - Apple 社区](https://discussionschinese.apple.com/thread/253967664)
   - 苹方字体(又称苹方黑体，英文字体名PingFang SC)是ios9上默认的中文字体，苹方字体不仅字型优美，而且能提升字体在手机、电脑屏幕上的清晰度和易读性。
   - 随着APP及UI设计的流行，苹方字体也就成了UI设计师必备的字体包。苹方字体包含6种字重，分别是苹方黑体常规体、中黑、细体、特粗体、特细体、粗体，可以很好地满足日常设计和阅读的需求。
 
-
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
-  - spacing is important in `calc()` css function,  `calc(24rem - 13px)`; 
+  - spacing is important in `calc()` css function,       `calc(24rem - 13px)`; 
   - You just need to add a space around the minus operator
 
 - [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)

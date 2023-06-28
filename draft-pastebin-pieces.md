@@ -22,6 +22,15 @@ https://us05web.zoom.us/j/7754416829?pwd=TUlMR3dMWEpaajdVR1VNdDR5N29NZz09
 
 ---
 
+- 西溪丽晶退租事项
+  - 退租时间 30号早上
+  - 押金可以退家人微信
+
+- 象牙客
+  - 包含电费 50元
+  - 包周 248
+  - 包月 858
+
 ```JS
 const unsubscribe2 = editor.selection.onSelectionChange(info => {
   console.log(';; sel-chge ', info.type);

@@ -12,7 +12,49 @@ modified: 2022-08-21T10:11:19.219Z
 # discuss
 - ## 
 
-- ## The amount of time I wasted because MutationObserver just stops working in @googlechrome is insane.
+- ## 
+
+- ## Google Docs now has variables? Wow
+- https://twitter.com/thorstenball/status/1673636222626050048
+  - 类似 figma variables
+
+- ## Who in my network has a bunch of experience building rich text editors using contentEditable? (not using libraries like Prosemirror, Quill, etc).
+- https://twitter.com/JungleSilicon/status/1673577996899463168
+
+- Why? Let me guess, you want one editor per block and these tools are multiblock. Correct?
+  - That's part of it - i'm creating an isolated example to test ranges for my rich-text CRDT. I also believe that our tools influence the design of the things we create so i'm experimenting with how I would design one from the ground up for the kinds of computation i'm doing.
+
+- I turned Notion from “one editor per block” into a single ContentEditable
+  - no frameworks here… just React and raw-dog ContentEditable
+  - One editor per block: your users will hate it, but it’s easier to build with raw ContentEditable. Raw ContentEditable: lots of control, but your developers will hate it. Solution to both: use a library like ProseMirror/TipTap.
+
+- Curious: why isn't Notion using prosemirror? 
+  -Separating rendering from input is basically building a Google docs-like layout engine.
+- 💡 Notion predates ProseMirror. 
+  - We’ve assessed rebuilding on it, but found limitations in CJK & Android. 
+  - The risk&cost to adopt outweighs the reward. 
+  - **Our time would be better spent separating input handling from rendering**. 
+  - Using the same element for both is a dead end.
+
+- Would I be wrong in supposing that synchronising plain text with external markup (standoff properties) would be somewhat less complicated than synchronising text with embedded markup ...?
+
+- don't try rendering from state. incremental direct manipulation updates only. main issue is the cursor position index doesn't take newlines into account properly (for restoring correct cursor pos after a rerender)
+
+- 👉🏻 you can select across multiple text blocks in `BlockSuite`, but we don’t have monolithic ContentEditable! 
+  - What do you do to allow the browser selection? If there’s no root ContentEditable, I would think the browser doesn’t allow a selection like the one you describe
+  - ah, your selection strategy only works in Chrome. 
+  - In Safari, I can't select across blocks. Doesn't load in FF. 
+  - This might be challenging to support for touch input, you'll need to draw your own selection drag handles on iOS/Android/Windows, and artificial selection in Safari
+  - You need an extra hack (a root contentEditable=true then a contentEditable=false to preserve safety) for this to work in desktop Safari. It doesn't really work on iOS even with the hack.
+- I tested this approach for Notion when planning our multi-block select refactor but decided it was too janky in Webkit 😔
+- 💡 I've seen another hack where on `pointerdown` you toggle the container to contentEditable, then native selection works (but hidden). You capture native selection rects, render a fake selection in their place.
+  - Upon `pointerup` or keypress, you disable the container contentEditable.
+  - **The issue with fake selection** is that although it works on mobile and desktop. **It doesn't work with screen readers who lose selection entirely** and a11y is essential.
+- Just speculating: can't we have a hidden shadow tree, that holds native editor states for a11y? At least Google Docs seem to have solved a11y this way? after they moved to canvas?
+
+- The experience using Google Docs with JAWS was rough last time I tried it. I really wished they hadn't moved to canvas and instead invested their vast resources internally in improving contentEditable.
+
+- ## The amount of time I wasted because `MutationObserver` just stops working in @googlechrome is insane.
 - https://twitter.com/fabiospampinato/status/1642232960135966720
   - I think that a whole bunch of other issues happen if you reload the page while the debugger is on or something, definitely worth a look, that feature is not stable at all.
 
@@ -56,8 +98,6 @@ observer.observe(div, config);
 - We chose slate for mostly other reasons than performance we needed a model that would support all the complexity that a full featured editor like tinymce needs and we did look at other engines in the evaluation process during the planning phase. 
   - Some of these other models have a very flat design probably making them faster but also less flexible.
   - Performance is a balance it's all what you are willing to trade. Compatibility, flexibility, future proofing all comes into play.
-
-
 
 - ## ACE2 is EtherPad's editor, a content-editable-based rich text editor. 
 - https://news.ycombinator.com/item?id=18371309

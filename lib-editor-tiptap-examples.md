@@ -280,6 +280,18 @@ modified: 2023-02-05T19:03:27.730Z
 - https://t.co/cSLL2bvRp6
   - using @tailwindcss @tiptap_editor @vuejs & @nuxt_js
 # cms-like
+
+- https://github.com/vriteio/vrite /AGPLv3/ts
+  - https://app.vrite.io/
+  - https://editor.vrite.io/
+  - headless CMS intended for technical content like programming blogs or documentation
+  - 后端依赖trpc-server/openapi、fastify、yjs、zod、open-graph-scraper
+  - 协作依赖mongodb、hocuspocus
+  - 前端依赖solid-primitives、tiptap、trpc-client、yjs
+  - Built-in Kanban dashboard for managing content production and delivery;
+  - Versitile API and Extension System for customizing your experience and delivering content to any frontend;
+
+
 - alinea /654Star/MIT/202301/ts
   - https://github.com/alineacms/alinea
   - https://alinea.sh/
@@ -290,6 +302,9 @@ modified: 2023-02-05T19:03:27.730Z
   - 👀 Content is easily queryable through an in-memory SQLite database
   - Content is fully typed
   - Alinea supports custom backends that can be hosted as a simple Node.js process or on serverless runtimes.
+
+
+
 
 - https://github.com/primodotso/primo
   - https://primo.so/

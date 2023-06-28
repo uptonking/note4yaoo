@@ -18,6 +18,13 @@ modified: 2023-02-03T05:55:22.102Z
   - Metadata scraper with support for oEmbed, Twitter Cards and Open Graph Protocol for Node.js
   - take a url and some options, fetch the url, extract the metadata we care about and format the result in a sane way.
   - It supports all major metadata providers and expanding it to work for any others should be trivial.
+
+## utils
+
+- https://github.com/jshemas/openGraphScraper /ts
+  - Node.js scraper service for Open Graph Info and More!
+  - A simple node module(with TypeScript declarations) for scraping Open Graph and Twitter Card info off a site.
+  - doesn't support browser usage
 # blogs
 
 ## [A framework for building Open Graph images | The GitHub Blog_202106](https://github.blog/2021-06-22-framework-building-open-graph-images/)
@@ -52,8 +59,6 @@ modified: 2023-02-03T05:55:22.102Z
 - 截图兼容性确实高。原来有专门的服务做缓存，我还以为冷启动能做到这么快🤯
 
 - 还有发现另一个相关的小设计，quick links 将页面的所有链接整合以方便进行快速浏览
-
-
 
 - ## just built a link preview component using @radix_ui and puppeteer.
 - https://twitter.com/anas_araid/status/1610963312761622528

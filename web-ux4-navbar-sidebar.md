@@ -84,6 +84,13 @@ modified: 2021-07-29T20:37:50.995Z
   - 通过改变位置隐藏元素，除了更新left/right可使用tansform，参考argon、soft
   - 还可直接删除dom元素，参考flexy、react-admin，改变了显示的dom元素
 
+- 👉🏻 dev-xp
+  - 使用fixed布局，切换sidebar时改变mainContent宽度会出现闪屏的问题
+  - 使用flex布局，mainContent的宽度由flex-grow自动填充，问题有所缓解
+  - 最外层整体布局采用flex-column的好处是方便主内容的高度自动填充
+  - 但flex布局时侧边栏会随内容一起滚上去，还是要用fixed布局
+  - 显示sidebar时，主内容区div将`width: calc(100% - ${sidebarWidth})`设置在外层无水平滚动条，设置在内层会出现滚动条，主内容区宽度会动态计算
+
 ```CSS
 /* react-admin */
 width: 200px;
