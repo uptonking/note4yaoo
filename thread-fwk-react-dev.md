@@ -167,19 +167,6 @@ modified: 2021-01-06T14:40:03.364Z
 - Actually when I built Inferno and also looked into this when on the React team - 👉🏻 arrays were significantly slower. Not for creation that’s fast. It’s when you access and reference the bits you need that things slow down. Props might not be monomorphic but the vnode is
   - This is particularly important when dealing with keyed lists, where you often need to reference `vNode.key` to apply a diff from one list to another – it needs to be very fast and monomorphic vnodes allow that. If you had arrays, you'd have to lookup the key pair each time.
 
-- ## A kinda pretty use case for reactivity: 
-- https://twitter.com/fabiospampinato/status/1620067141704892417
-  - I'm drawing a vscode-like minimap.
-  - Each line has its own effect, so if only it changes I don't have to re-draw the whole thing. Fast & easy.
-  - What's the React equivalent? "Re-draw everything" works only up until perf really matters.
-- Why wouldn’t react work for this? With any state management, you can make sure only the line that was invalidated re-renders
-- It could work, but how would you write it?
-  - Maybe I'm missing something. 👉🏻 Create a jotai atom family for the rows, and when you edit in the editor, update the atom, which will only invalidate the equivalent row in the minimap. If its canvas, then you should be using a different react renderer. Like tldraw does.
-  - I used jotai, but any of the popular state management libraries, except maybe redux, allow creating this fine-grained reactive state.
-
-- Custom renderer: it would be counter productive, I don't want to turn my lines into VDOM and render that specially, there's just no VDOM to think about here.
-- Custom state manager: sure you can bypass React entirely potentially, like you can use Solid inside React.
-
 - ## Is useReducer the only client state manager that can closure over props / server state? I don't  think you can do something like this with zustand, xstate or others. You probably can with redux, but only if all your state lives in redux.
 - https://twitter.com/TkDodo/status/1533528718064361474
   - I meant reading something / having access to something from the outer scope, in this case, the `amount` . I think it would've been clearer if I inlined the reducer in the example instead of currying it.

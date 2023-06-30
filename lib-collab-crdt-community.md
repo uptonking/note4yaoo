@@ -12,7 +12,9 @@ modified: 2022-04-05T13:25:40.892Z
 # discuss
 - ## 
 
-- ## 
+- ## What properties would the design of a programming language need to have to be sync / collaboration friendly?
+- https://twitter.com/JungleSilicon/status/1673146654818725889
+  - Which programming concepts would be best represented by tree's, lists, ranges, etc? Is plain text a poor binding between what we write and the AST, would some kind of rich-text format for code be more effective?
 
 - ## 💡 What is being measured here are *client* ops / sec. 
 - https://twitter.com/Horusiath/status/1660705223818596358
@@ -22,6 +24,23 @@ modified: 2022-04-05T13:25:40.892Z
 - Thing is you don't need to optimize client ops beyond certain point. They are constrained to actions of a single client. What you may want to optimize are store/load updates, as they scale with number of connected clients and their actions.
 - Now, when it comes to replication Yrs can serialize document state made of 259778 client operations (inserts and deletes) in 2-3ms (86.5mln client ops/sec) and sync it in 13ms (~20mln ops/sec) with a payload size of 160kB (less than 1B per op). On a single core.
   - Tbh. most of Yrs speed comes right off the bat and I barely did any optimisations there. 
+
+- ## I’m surprised there is no popular framework to build Figma-like apps. (Correct me if I’m wrong.) 
+- https://twitter.com/reneeshah123/status/1674130544207220736
+- Things I’d want in a framework: 
+  1. An easy way to build desktop-like experiences in the browser – especially for data intensive apps
+  2. Multiplayer support
+  3. Great devex
+- @liveblocks , @replicache , and @FluidFramework all do multiplayer. @drifts_in_space does "session-lived backends" for these apps. All are compelling, and I'm sure I'm missing many.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## [Real Differences Between OT and CRDT for Co-Editors | Hacker News](https://news.ycombinator.com/item?id=18191867)
 - On page 30 par 2 you conclude that OT has time complexity O(1) while CRDT is O(C) or so... I guess, you compare a rope-based OT implementation and a naive CRDT implementation (like, one doing a full rewrite on each key press). At least, that is my best guess.

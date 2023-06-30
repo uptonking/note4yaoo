@@ -12,6 +12,18 @@ modified: 2022-03-03T18:20:12.075Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I am watching the talks from the Berlin Local-First meetup and liked the talk by @schickling “why you need Local First”.
+- https://twitter.com/sitnikcode/status/1673740334872797186
+  - Short answer: for DX
+- 1. We constantly try to think that the frontend is something simple, not a distributed system. As a result, we design the architecture on simple request-response communications.
+- 2. But in reality there are a bunch of distributed systems problems (latency, performance). To solve them, we create caches and make them too complex. In the end, the cache becomes like a small database (like Apollo client).
+- 3. But since our architecture was created a long time ago without taking into account the distributed system (and we thought that we would have a simple cache, not a real database), the DX and speed of development drops a lot
+- 4. The idea of Local First is that we don't lie to ourselves, but think of the frontend and backend as nodes of a distributed system. As a result, we have a database on the client, not a cache. Maybe even source of truth. The server becomes much simpler, the DX improves.
+
 - ## Offline is not just online with extreme latency. This is one of those "mathematically true, but not true for humans" things.
 - https://twitter.com/aboodman/status/1648777443262488576
   - You can't automatically merge conflicts when are disconnected for long periods, because their *intents* can diverge such that they become incompatible.

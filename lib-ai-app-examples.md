@@ -60,9 +60,14 @@ modified: 2023-02-08T07:20:48.475Z
 - [Open Prompt](https://openprompt.co/)
 
 ## gpt-impl
+
 - https://github.com/newhouseb/potatogpt
   - Pure Typescript, dependency free, ridiculously slow implementation of GPT2 for educational purposes
 # chat
+- https://github.com/PKU-YuanGroup/ChatLaw
+  - https://chatlaw.cloud/lawchat/
+  - 中文法律大模型
+
 - https://github.com/LAION-AI/Open-Assistant
   - OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.
 # coding-copilot

@@ -33,7 +33,10 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
-- ## 
+- ## I learned that the `EventTarget` interface is a web-native event emitter. 
+- https://twitter.com/stefanjudis/status/1673033968583581699
+  - [How to use EventTarget as a web-native event emitter | Stefan Judis Web Development](https://www.stefanjudis.com/today-i-learned/how-to-use-eventtarget-as-a-web-native-event-emitter/)
+- it has some downsides if you decide to implement the event contract supporting both browser and Node.js. EventTarget is also heavily DOM-oriented and operates with Events primarily.
 
 - ## 通过 `<datalist>` 可以为 `<input>` 定义一个数据列表，实现类似 React Select 的下拉选择和过滤功能。
 - https://twitter.com/novoreorx/status/1658531596818063361
@@ -803,7 +806,6 @@ decode('&#70;'); // => F
   - But with this client deals with json not protos, but no extra client side code.
 - I'd thought that TypedArrays and DataViews made it simpler. 
   - Support for binary data on the web is quite solid by now.
-
 
 - ## It might be a "Hot take". But. You need a really good reason to be mocking API requests in @storybookjs
 - https://twitter.com/jh3yy/status/1351288120881385479

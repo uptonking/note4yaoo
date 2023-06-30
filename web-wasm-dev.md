@@ -95,6 +95,8 @@ People should not try to turn WASM into a cult. Tech is meant to be used and lev
     - 不要轻易改变变量的类型
     - Node.js像Java一样也存在JIT预热？
 # blogs
+- [A step-by-step tutorial on Compiling mkbitmap to WebAssembly](https://web.dev/compiling-mkbitmap-to-webassembly/)
+
 - [From Web SQL to SQLite Wasm: the database migration guide - Chrome Developers](https://developer.chrome.com/blog/from-web-sql-to-sqlite-wasm/)
 # more
 - [Node.js大家是用什么方式链接C++代码的](https://www.v2ex.com/t/568399)

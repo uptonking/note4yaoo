@@ -471,7 +471,10 @@ class Plugins {
 # discuss
 - ## 
 
-- ## 
+- ## What’s an open source JavaScript project with a really good extension / plugin architecture?
+- https://twitter.com/steveruizok/status/1672926467393564673
+- Nobody wants it to be true but it’s webpack. Tapable is such a powerful library. You can expose so much power.
+- prosemirror
 
 - ## [How to design a pluggable system in functional style? - Stack Overflow](https://stackoverflow.com/questions/29069095/how-to-design-a-pluggable-system-in-functional-style)
 - Functional programming is all about the explicit composition of functions. No magic. If you need plugins, compose functions by some configuration. That's all.

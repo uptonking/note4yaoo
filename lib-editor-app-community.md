@@ -12,7 +12,37 @@ modified: 2022-08-21T10:11:19.219Z
 # discuss
 - ## 
 
-- ## 
+- ## 💡 What's the go-to approach for implementing text-based mini-maps in html / css / js like the one in visual studio?
+- https://twitter.com/JungleSilicon/status/1674649906387234816
+  - minimap
+  - s1:　Using the `element()` css function
+  - s2: Building a simplified version of the site using SVG's.
+
+- `element()` sounds so cool but it looks like it never got adopted
+
+- vscode uses a `<canvas>` and the code for it is quite large...
+
+- I've not dug into the way vscode does it but I'd imagine it's a case of either iterating the document tree and mapping it to something similar in shape but simplified (so a `<p>` just maps to a `<rect>` and the length is a rough estimate) seems like a fun problem actually!
+  - Yeah, this is where i’ve landed too!
+
+- Rendering a second webview but waaay zoomed out 
+  - Hmm - maybe a more performant approach would be to simplify the rendering using svg or canvas.
+- I mean yes, your best approach is probably to take the textmate/treesitter tree and render that using webgl (or svg for an easier time) but that’s booring
+
+- Id go for a simplified canvas probably
+
+- ## A kinda pretty use case for reactivity: 
+- https://twitter.com/fabiospampinato/status/1620067141704892417
+  - I'm drawing a vscode-like minimap.
+  - Each line has its own effect, so if only it changes I don't have to re-draw the whole thing. Fast & easy.
+  - What's the React equivalent? "Re-draw everything" works only up until perf really matters.
+- Why wouldn’t react work for this? With any state management, you can make sure only the line that was invalidated re-renders
+- It could work, but how would you write it?
+  - Maybe I'm missing something. 👉🏻 Create a jotai atom family for the rows, and when you edit in the editor, update the atom, which will only invalidate the equivalent row in the minimap. If its canvas, then you should be using a different react renderer. Like tldraw does.
+  - I used jotai, but any of the popular state management libraries, except maybe redux, allow creating this fine-grained reactive state.
+
+- Custom renderer: it would be counter productive, I don't want to turn my lines into VDOM and render that specially, there's just no VDOM to think about here.
+- Custom state manager: sure you can bypass React entirely potentially, like you can use Solid inside React.
 
 - ## Google Docs now has variables? Wow
 - https://twitter.com/thorstenball/status/1673636222626050048

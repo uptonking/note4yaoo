@@ -188,6 +188,28 @@ modified: 2023-04-04T22:36:31.529Z
 
 - https://github.com/aldipermanaetikaputra/simple-chunk-reader
   - Simple, buffered, chunk-by-chunk file reader with customizable buffer size.
+
+## html
+
+- https://github.com/snappyjs/node-xml-stream /js
+  - A tiny simple and fast XML/HTML stream parser with an easy-to-use interface (using NodeJS streams)
+  - It is a perfect match for use in feed parsers (e.g. ATOM/RSS/RDF)
+  - If you need a parser that is more heavy-weight with more functionality I recommend node-sax-js
+
+- https://github.com/marko-js/writable-dom
+  - write a stream of raw HTML chunks into an existing element in the DOM. 
+  - Each chunk of HTML is handled in a way that is similar to how browsers process and display it.
+
+- https://github.com/justinwilaby/sax-wasm /rust/ts
+  - The first streamable, low memory XML, HTML, JSX and Angular Template parser for WebAssembly.
+  - Inspired by sax js and rebuilt with Rust for WebAssembly, sax-wasm brings optimizations for speed and support for JSX syntax.
+
+- https://github.com/mscdex/busboy /js
+  - A streaming parser for HTML form data for node.js
+  - A node.js module
+
+- https://github.com/popeindustries/lit /js
+  - Fast server-rendering and client-hydration of lit-html templates and web components
 # concurrency/async
 - https://github.com/sindresorhus/p-queue
   - Promise queue with concurrency control

@@ -20,6 +20,11 @@ modified: 2023-03-01T15:04:46.328Z
   - A very simple tool to parse through an XML string.
   - A stepping stone to a streaming HTML parser.
 
+- https://github.com/snappyjs/node-xml-stream /js
+  - A tiny simple and fast XML/HTML stream parser with an easy-to-use interface (using NodeJS streams)
+  - It is a perfect match for use in feed parsers (e.g. ATOM/RSS/RDF)
+  - If you need a parser that is more heavy-weight with more functionality I recommend node-sax-js
+
 - https://github.com/lddubeau/saxes /ts
   - A sax-style non-validating parser for XML.
   - 支持浏览器和nodejs

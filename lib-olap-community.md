@@ -14,7 +14,12 @@ modified: 2022-12-05T19:10:15.451Z
 
 - ## 
 
-- ## 
+- ## I've been advocating to add measures (columns whose value is evaluated as a context-sensitive expression) to SQL's data model. 
+- https://twitter.com/julianhyde/status/1674128899977154562
+  - Is there a similar concept in the data frames world (R, Pandas, Spark, ...)?
+- Isn’t it what “the semantic layer” is trying to address as an additional layer
+  -  remain to be convinced that the "semantic layer" is anything but a few bits of fluff
+- [Power BI: Custom Column Vs Calculated Column | Power BI](https://devoworx.net/custom-column-vs-calculated-column-power-bi/)
 
 - ## @StarRocksLabs just released version 3, Big change, from sharing nothing to shared disk
 - https://twitter.com/mim_djo/status/1658675242930442241

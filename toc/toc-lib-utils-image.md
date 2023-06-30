@@ -101,6 +101,9 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/vercel/satori /ts
   - Enlightened library to convert HTML and CSS to SVG
   - What if there’s a `<Satori>` component that adds fluid layout & style transitions to your elements?
+
+- https://github.com/imgly/background-removal-js /GPLv3/ts
+  - Remove backgrounds from images directly in the browser environment with ease and no additional costs or privacy concerns
 # codec
 - https://github.com/GoogleChromeLabs/squoosh /ts
   - Squoosh does not send your image to a server. All image compression processes locally.

@@ -55,6 +55,19 @@ modified: 2021-02-27T15:31:23.130Z
   - Lossless JSON-to-AST Parser and AST-to-JSON Generator
   - The AST is based on ASTy-ASTq
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## whats the best way to diff two big json files?
+- https://twitter.com/jarredsumner/status/1673782475573850113
+- difftastic seems best
+- ave enjoyed using jsondiffpatch
+
+- I always use a good old fashioned printer. Then using a ruler go line by line. Never failed me.
+
 - ## The advantage of JSON Schema is that it's JSON. I can use the same schema in the frontend or backend, across languages, etc. I can generate a form from it.
 - https://twitter.com/DavidKPiano/status/1621243040034611204
   - Zod is JS/TS-only (but can be converted to JSON Schema, like you said)

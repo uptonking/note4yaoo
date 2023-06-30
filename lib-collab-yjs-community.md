@@ -14,7 +14,11 @@ modified: 2022-04-05T10:11:40.379Z
 
 - ## 
 
-- ## 
+- ##  I had no idea how popular yjs was compared to other folks in this space
+- https://twitter.com/steveruizok/status/1673442035611717632
+- Yeah yjs was miles ahead in terms of performance until the recent wave of optimisations hit. Now I think some of the other libraries are doing comparatively / outperforming in different ways but the community support still makes it the defacto for a lot of people.
+
+- for a long time it was the only game in town that was a) fast, and b) actively maintained
 
 - ## [Show HN: SyncedStore CRDT – build multiplayer collaborative apps for React / Vue | Hacker News_202112](https://news.ycombinator.com/item?id=29483913)
   - It's designed specifically for React, Vue, Svelte but also works with plain JS. 

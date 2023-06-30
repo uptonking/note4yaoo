@@ -14,7 +14,14 @@ modified: 2023-02-08T06:56:54.945Z
 
 - ## 
 
-- ## 
+- ## databricks已经彻底疯了，不光搞AI函数，连整个transform都用提示词写了。
+- https://twitter.com/niyue/status/1674557959094018049
+  - [Introducing English as the New Programming Language for Apache Spark | Databricks Blog](https://www.databricks.com/blog/introducing-english-new-programming-language-apache-spark)
+  - 原来我看MarvinAI搞AI函数说用在总结/定性分析/情感分析等这些不要求精准结果的领域，砖厂这搞法对AI可靠程度信心满满啊
+- 看实际效果, 云厂选 Azure 相对稳一点.
+- 
+- 
+- 
 
 - ## tensorflow.js 真是起了个大早，不知道能不能赶上晚集。
 - https://twitter.com/xicilion/status/1647143660910436356

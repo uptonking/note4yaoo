@@ -297,6 +297,13 @@ $$('[contenteditable]')
 
 - Incidentally, the reason why you have to specify `height` and `min-height` to `html` and `body` respectively is because neither element has any intrinsic height. Both are `height: auto` by default. It is the viewport that has 100% height, so height: 100% is taken from the viewport, then applied to body as a minimum to allow for scrolling of content.
 
+## 0630
+
+- [element() - CSS function](https://developer.mozilla.org/en-US/docs/Web/CSS/element)
+  - chrome和safari都不支持
+  - `element()` CSS function defines an `<image>` value generated from an arbitrary HTML element. 
+  - This image is live, meaning that if the HTML element is changed, the CSS properties using the resulting value are automatically updated.
+
 ## 0627
 
 - [mac电脑的默认字体是什么 - Apple 社区](https://discussionschinese.apple.com/thread/253967664)
@@ -306,7 +313,7 @@ $$('[contenteditable]')
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
-  - spacing is important in `calc()` css function,       `calc(24rem - 13px)`; 
+  - spacing is important in `calc()` css function,        `calc(24rem - 13px)`; 
   - You just need to add a space around the minus operator
 
 - [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)

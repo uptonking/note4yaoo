@@ -59,6 +59,12 @@ modified: 2021-09-04T14:03:39.046Z
   - Evolu is not pure P2P software. For syncing and backup, there needs to be a server. 
   - Evolu CRDT has no support for transactions because CRDT transactions are still an unsolved issue. 
 
+- dxos /20Star/MIT/202306/ts
+  - https://github.com/dxos/dxos
+  - https://www.dxos.org/
+  - TypeScript implementation of the DXOS protocols, SDK, and toolchain.
+  - A decentralized alternative to the commercial cloud for privacy preserving software.
+
 - redux-offline /6.1kStar/202012/MIT/js
   - https://github.com/redux-offline/redux-offline
   - https://github.com/redux-offline/offline-side-effects /202101/ts

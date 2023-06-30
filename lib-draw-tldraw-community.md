@@ -34,4 +34,5 @@ modified: 2023-06-19T12:33:38.006Z
 
 - ## 
 
-- ## 
+- ## I’d like to dog food our shapes as plugins but there are so many logical cutouts associated with that shape
+- https://twitter.com/steveruizok/status/1672973458165178369

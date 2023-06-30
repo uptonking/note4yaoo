@@ -105,7 +105,21 @@ modified: 2022-12-05T16:05:40.690Z
 
 - ## 
 
-- ## 
+- ## Snowflake has a pre-built TPCH SF100 dataset, and when you run tpch query 1 in an XSMALL configuration, you'll be amazed, oh my god, it's less than 100ms. 
+- https://twitter.com/DreaMer31004339/status/1674323207980208129
+  - Then, if you turn off the result cache: `ALTER SESSION SET USE_CACHED_RESULT = FALSE;` things change and the time becomes 15s.
+  - 15 second is spectacular when using only 8 cores
+
+- Seriously, results cache vs running from disc vs running from remote storage, I don't understand your point
+  - And that was not my experience, first run of ❄️ is from remote storage, they don't pre cache stuff. Are U sure U didn't run it before
+- Maybe a colleague, Snowflake keep result cache from other users
+
+- cold run 12 second
+  - hot run 9 second
+  - result cache 106 ms
+
+- Benchmark became much meaningless especially for a fully managed cloud service. It’s a blackbox that you won’t know the detail about how your queries are executed and the spec of their cluster. The only thing users would care about is typing their query and click the big button.
+  - If you find that the performance of your query is not as expected, they have a query acceleration service for you. Just pay for better performance then.
 
 - ## This week, I'll focus on generating a TPC-H-like dataset with @faker_js.
 - https://twitter.com/ghalimi/status/1609981590125543426

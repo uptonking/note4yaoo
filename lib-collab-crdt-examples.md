@@ -126,6 +126,9 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/atom/teletype-crdt /js/archived/与上面仓库相同
     - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom.
   - https://github.com/atom/teletype
+- https://github.com/jure/rgass /js
+  - A JS implementation of RGASS, a CRDT synchronization algorithm
+  - No longer in development, for similar use cases (and using the same basic approach) take a look at teletype-crdt
 
 - https://github.com/Horusiath/crdt-examples
   - An example implementations of various CRDTs，实现语言为F#

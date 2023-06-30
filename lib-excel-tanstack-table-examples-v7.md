@@ -70,11 +70,12 @@ modified: 2022-08-21T10:37:01.349Z
     - https://github.com/EQWorks/lumen-ui
 
 - @heathmont/moon-table
-  - https://github.com/coingaming/moon-design
-  - https://moon.io/components/table/table
+  - https://github.com/coingaming/moon-design/tree/develop/packages/table
+  - https://moon.io/components/table
   - display布局: table.div-block, tr.div-flex, td.div-block
   - 拖动表格滚动条时，可以显示minimap
   - 提供了日期字段作为一列的Calendar示例
+  - 依赖react-table.v7
 
 - table-x
   - https://github.com/gmfe/gm-pc/tree/master/packages/table-x
