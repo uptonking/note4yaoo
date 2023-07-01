@@ -982,7 +982,7 @@ myStore.get(['a', 'b']) // look for id1=a + id2=b
 
 - [Command-line "code ." not available with flatpak app](https://github.com/flathub/com.visualstudio.code/issues/19)
   - You can add `/var/lib/flatpak/exports/bin` to PATH though and you'll get `com.visualstudio.code`
-  - Yeah, flathub doesn't export arbitary names for security reasons (it'd be too easy for malicious apps to takeover your system) so I'll have to close it noting the workarounds.
+  - Yeah, flathub doesn't export arbitrary names for security reasons (it'd be too easy for malicious apps to takeover your system) so I'll have to close it noting the workarounds.
 
 ## 1109
 

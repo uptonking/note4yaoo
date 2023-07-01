@@ -9,10 +9,6 @@ modified: 2021-03-29T19:29:42.140Z
 
 # ubuntu
 
-
-- [Some Flatpak Qt Apps fail to start after latest Update - Support / Snap/Flatpak - Manjaro Linux Forum](https://forum.manjaro.org/t/some-flatpak-qt-apps-fail-to-start-after-latest-update/99973)
-  - flatpak upgrade
-
 - zip分卷压缩
   - 使用zip -s可创建a.z01等分卷文件
   - 如何合并这些分卷文件更好，cat命令创建的大压缩包无法解压，只能通过zip -F创建
@@ -29,9 +25,7 @@ error: invalid zip file with overlapped components (possible zip bomb)
 ```
 
 - [tracker-store and tracker-miner-fs eating up my CPU on every startup](https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup)
-
 # hp-envy-15
-
 - tracker-miner-fs cpu high
   - 导致触摸板的鼠标指针失效，或者不流畅
   - [tracker-miner-fs is taking 90% of CPU](https://askubuntu.com/questions/1258757)

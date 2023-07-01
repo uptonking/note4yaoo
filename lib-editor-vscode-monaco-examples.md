@@ -10,7 +10,11 @@ modified: 2023-01-21T18:57:47.811Z
 # guide
 
 # popular
-
+- https://github.com/microsoft/monaco-editor /基于dom实现
+  - https://microsoft.github.io/monaco-editor/
+  - Monaco Editor is the code editor that powers VS Code.
+  - supports Edge, Chrome, Firefox, Safari and Opera. 
+  - The Monaco editor is not supported in mobile browsers or mobile web frameworks.
 # extensions
 
 # monaco-based

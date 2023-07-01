@@ -13,7 +13,10 @@ modified: 2021-03-11T11:26:06.670Z
 
 - ## 
 
-- ## 
+- ## 💡 My latest blog post goes in-depth on why & how to remove SVGs from your JS bundle
+- [Breaking Up with SVG-in-JS in 2023 | Jacob Groß | kurtextrem.de](https://kurtextrem.de/posts/svg-in-js)
+
+- I use Iconify library which you could fetch the icon and embed the svg on the runtime and keep the bundle free + have all the advantages to animate or color you icon
 
 - ## Know of any SVG to pdf libraries that support shadows?
 - https://twitter.com/steveruizok/status/1512533051154305027

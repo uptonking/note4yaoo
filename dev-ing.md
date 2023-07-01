@@ -151,6 +151,7 @@ $$('[contenteditable]')
   - 03-crdt-rga, slate-yjs, slate-editor
   - 04-slate-editor-toolbar, dnd-kit
   - 05-tanstack-table-database, rtk-query
+  - 06-ospreadsheet2watarble
 
 - why use es6 class
   - 运行时类型检查，instanceof
@@ -313,7 +314,7 @@ $$('[contenteditable]')
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
-  - spacing is important in `calc()` css function,        `calc(24rem - 13px)`; 
+  - spacing is important in `calc()` css function,         `calc(24rem - 13px)`; 
   - You just need to add a space around the minus operator
 
 - [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)

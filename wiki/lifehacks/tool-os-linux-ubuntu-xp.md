@@ -81,6 +81,13 @@ modified: 2021-01-01T22:26:57.773Z
       - Shutdown the device after a specific time.
     - Impatience
       - Speed up the gnome-shell animation speed
+
+## hardware
+
+- https://github.com/TheWeirdDev/Bluetooth_Headset_Battery_Level
+  - https://extensions.gnome.org/extension/3991/bluetooth-battery/
+  - A python script to get battery level from Bluetooth headsets
+  - [Add bluetooth headset battery's percentage in Ubuntu_202209](https://www.goulin.fr/blog/bluetooth-headset-battery-percentage-ubuntu)
 # Wayland
 - [Boycott Wayland. It breaks everything!](https://gist.github.com/probonopd/9feb7c20257af5dd915e3a9f2d1f2277)
   - Wayland does not work properly on NVidia hardware?
