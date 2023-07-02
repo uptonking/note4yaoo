@@ -8,6 +8,8 @@ modified: 2021-08-05T04:31:02.298Z
 # thread-lang-js-ts-types
 
 # guide
+
+# discuss-stars
 - ## React TypeScript Cheatsheet
 - https://github.com/typescript-cheatsheets/react
   - https://react-typescript-cheatsheet.netlify.app/docs/basic/setup
@@ -21,15 +23,28 @@ modified: 2021-08-05T04:31:02.298Z
   - build steps make sense for apps, they make much less sense for libraries
 - Agree. In open source build step (for TS or meaningless bundler) only reduces library maintainability.
   - All my open source ( @PostCSS , @logux_io ) is written in JS and have TS types in separated files (tests also is using TS to check that types and JS code are synced).
+
+- ## If you're working in a TS codebase make sure you have these lint rules enabled, these just caught several serious bugs in a 5+ year old codebase
+- https://twitter.com/tommoor/status/1675150188908822530
+
+```JS
+{
+  '@typescript-eslint/no-floating-promises': 2,
+  '@typescript-eslint/no-misused-promises': 2,
+  '@typescript-eslint/await-thenable': 2,
+}
+```
+
+- Pretty sure these are included if you just put these in your eslintrc ‘extends’ rule
+  - plugin:@typescript-eslint/recommended
+  - plugin:@typescript-eslint/recommended-requiring-type-checking', 
 # discuss
 - ## 
 
 - ## TypeScript pro tip: Instead of using `filter(Boolean)` to remove null and undefined values from arrays, create a type guard function. 
 - https://twitter.com/diegohaz/status/1667197904006569991
 - I've  also been using flatMap for that
-  - const nonNullArray = [1,2,null,undefined,3].flatMap(v=>v?[v]:[])
-- 
-- 
+  - const nonNullArray = [1, 2, null, undefined, 3].flatMap(v=>v?[v]:[])
 
 - ## 泛型傻瓜式*指南了，从三个角度描述了泛型的作用
 - https://twitter.com/mattpocockuk/status/1625838626742435842

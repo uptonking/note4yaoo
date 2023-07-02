@@ -85,3 +85,47 @@ modified: 2020-12-27T10:32:58.026Z
   - The `ref` is forwarded to the root element. 
   - This means that, without changing the rendered root element via the `component` prop, it is forwarded to the outermost DOM element which the component renders. 
   - If you pass a different component via the `component` prop, the ref will be attached to that component instead.
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Let’s say you have an editor with extensions that add functionality (eg a history extension that adds undo / redo commands to the editor API). 
+- https://twitter.com/steveruizok/status/1675470978447441920
+  - How would you do this with Typescript? 
+
+```typescript
+// @tiptap_editor uses declarations, any other way?
+declare module '@tiptap/core' {
+  interface Commands<ReturnType> {
+    history: {
+      undo: () => ReturnType,
+      redo: () => ReturnType,
+    }
+  }
+}
+
+editor
+  .addCommand(undo)
+  .addKeyboardShortcut(“mod+z”, () => editor.commands.undo())
+```
+
+```typescript
+const editor = withReact(withHistory(createEditor()));
+
+// it seems to cast types explicitly
+const withHistory = <T extends Editor>(editor: T) => {
+const e = editor as T & HistoryEditor;
+
+e.undo = ()=>{}
+
+e.redo = ()=>{}
+
+return e;
+}
+
+```

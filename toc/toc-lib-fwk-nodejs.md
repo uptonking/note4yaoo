@@ -91,6 +91,9 @@ modified: 2022-12-19T01:49:01.371Z
 - https://github.com/ts-rest/ts-rest
   - https://ts-rest.com/
   - RPC-like client, contract, and server implementation for a pure REST API
+  - ts-rest offers a simple way to define a contract for your API, giving you end to end type safety without the hassle or code generation.
+  - No Code Generation
+  - Full optional OpenAPI integration
 
 - egg /16.5kStar/MIT/202011/js
   - https://github.com/eggjs/egg

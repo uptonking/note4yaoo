@@ -26,7 +26,7 @@ modified: 2022-12-19T01:50:43.427Z
 - is this related to gRPC?
   - No, it's not related at all. It's a common misconception because of the similarity of the names. But both are sort of RPC-inspired things, right.
 
-- ## [Naming / other transports / JSON-RPC · Issue #6 · trpc/trpc](https://github.com/trpc/trpc/issues/6)
+- ## [Naming / other transports / JSON-RPC · trpc/trpc](https://github.com/trpc/trpc/issues/6)
 - the name trpc sort of implies it being a generic RPC and not a specific type of transport
 - still, there's a lot of http concepts (status codes) etc
 

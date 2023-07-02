@@ -133,7 +133,7 @@ modified: 2021-07-29T20:37:05.228Z
 - Use it in the past and had terrible support in Safari + Firefox regarding css customization. 
   - Ended up creating the same behavior from scratch in JS.
 
-- ## Twitter A11y people if I am using a <details> element for the open and close behaviour in a menu, what should it's role be?
+- ## Twitter A11y people if I am using a `<details>` element for the open and close behaviour in a menu, what should it's role be?
 - https://twitter.com/AdaRoseCannon/status/1310515208482426880
 - accessibility mappings for HTML is in its own spec
 

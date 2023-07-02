@@ -75,9 +75,11 @@ modified: 2021-08-30T18:56:18.632Z
   - features
     - randomized ROWID
     - WebAssembly User Defined Functions
-  - https://github.com/libsql/sqld
-    - sqld is a server mode for libSQL. 
-    - Access over HTTP and WebSockets from any Edge platform
+
+- https://github.com/libsql/sqld
+  - sqld is a server mode for libSQL. 
+  - Access over HTTP and WebSockets from any Edge platform
+
 - https://github.com/chiselstrike/chiselstrike
   - ChiselStrike abstracts common backends components like databases and message queues, and let you drive them from a convenient TypeScript business logic layer
   - ChiselStrike keeps things as close as possible to pure TypeScript, and a translation layer takes care of index creation, database query generation, and even communicating with external systems like Kafka.
@@ -87,7 +89,6 @@ modified: 2021-08-30T18:56:18.632Z
   - Query Excel spreadsheets (.xlsx, .xls, .ods) using SQLite
   - allow working with spreadsheets from SQLite exposing them as virtual tables.
   - XLite is a SQLite extension written in Rust. 
-
 # sqlite-viewer
 - https://github.com/inukshuk/sqleton
   - Visualizes your SQLite database schema.

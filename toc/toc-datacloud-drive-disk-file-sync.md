@@ -244,6 +244,14 @@ modified: 2022-09-10T02:26:52.062Z
     - Current behavior: Entire file must be pulled back to process one column
     - [Amazon S3 Select supports only the SELECT SQL command.](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html)
   - CloudServer is useful for Developers, either to run as part of a continuos integration test environment to emulate the AWS S3 service locally or as an abstraction layer
+# local-network
+- https://github.com/localsend/localsend /dart
+  - https://localsend.org/
+  - An open source cross-platform alternative to AirDrop
+
+- https://github.com/LANDrop/LANDrop /cpp
+  - https://landrop.app/
+  - Drop any files to any devices on your LAN.
 # more-drive
 - https://github.com/FazioNico/dDrive
   - An alternative storage solution to Google Drive

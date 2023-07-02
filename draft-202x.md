@@ -6,11 +6,12 @@ modified: 2022-10-05T04:56:59.409Z
 ---
 
 # draft-202x
-
 - yaoo-accounts-social
 - mastodon
   - https://fosstodon.org/
     - open source software
+  - https://mastodon.social/
+    - twitter-like
   - https://vis.social/
     - data viz and d3
   - https://en.osm.town/

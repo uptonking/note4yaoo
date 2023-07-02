@@ -314,6 +314,12 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/verbb/vizy /php
   - A flexible visual editor for Craft CMS
   - 依赖tiptap2、vue3、tippy.js、codemirror-editor-vue
+# fans-tiptap
+
+- https://github.com/xiaohanyu
+  - Spent another two days to write a recursive descent evaluation to convert 
+@tiptap_editor
+ 's JSON format to TeX snippet
 # more
 - https://github.com/ujw0712/editor-and-pdf
   - 依赖 vue3、jspdf, html2canvas、@tiptap/extension-collaboration, yjs, @hocuspocus/provider
