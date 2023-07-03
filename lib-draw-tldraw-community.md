@@ -32,6 +32,60 @@ modified: 2023-06-19T12:33:38.006Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## is this kind of a memory leaky pattern?
+- https://twitter.com/steveruizok/status/1675762561008951296
+
+- Check with —expose-gc
+  - And WeakRef
+
+- ## Let’s say you have an editor with extensions that add functionality (eg a history extension that adds undo / redo commands to the editor API). 
+- https://twitter.com/steveruizok/status/1675470978447441920
+  - How would you do this with Typescript? 
+
+```typescript
+// @tiptap_editor uses declarations, any other way?
+declare module '@tiptap/core' {
+  interface Commands<ReturnType> {
+    history: {
+      undo: () => ReturnType,
+      redo: () => ReturnType,
+    }
+  }
+}
+
+editor
+  .addCommand(undo)
+  .addKeyboardShortcut(“mod+z”, () => editor.commands.undo())
+```
+
+```typescript
+const editor = withReact(withHistory(createEditor()));
+
+// it seems to cast types explicitly
+const withHistory = <T extends Editor>(editor: T) => {
+const e = editor as T & HistoryEditor;
+
+e.undo = ()=>{}
+
+e.redo = ()=>{}
+
+return e;
+}
+
+```
+
+- I would look at lexicals plugin system for inspiration. Very well thought out! Let’s you register handlers with priority (so that plugin order doesn’t matter)
+
+- In playwright, you can call `test.extend` with fixtures to return a new “test” object you can use those fixtures in. I love that pattern, since it means the test objects are immutable; no worry about the command being loaded as a side effect somewhere, just use the correct editor
+
+- Rich-Harris explored autogenerating types for SvelteKit packages and end up at declarations. Do with that what you will.
+
 - ## API design question. For tldraw, our extension / customization story is quite a ride. 
 - https://twitter.com/steveruizok/status/1675075608613728256
   - We have a common interface for all of our shapes, however that interface is very large/flexible due to the variety of things it supports: drawn lines, editable text, arrows, etc

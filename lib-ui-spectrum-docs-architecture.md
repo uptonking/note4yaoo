@@ -11,9 +11,9 @@ modified: 2023-06-25T03:57:34.243Z
 
 - patterns-common
   - collections
-  - data-async
   - selection
   - form
+  - data-async
   - drag
   - layer
   - date

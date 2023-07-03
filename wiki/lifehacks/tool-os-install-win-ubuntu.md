@@ -210,9 +210,9 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
 ## software
 
 - 常用软件都可以直接在ubuntu官方包repository找到
+  - 👉🏻 更推荐使用flatpak安装，支持自动更新
   - apt支持 vlc，clementine，goldendict, gimp, inkscape
-  - 更推荐使用flatpak安装，支持自动更新
-  - https://packages.ubuntu.com/
+    - https://packages.ubuntu.com/
 
 ```shell
 sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser

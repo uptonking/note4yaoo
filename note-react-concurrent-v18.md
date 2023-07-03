@@ -9,6 +9,10 @@ modified: 2022-12-19T01:59:01.628Z
 
 # guide
 
+# resources
+- ## My “React Concurrency, Explained” talk from React Summit is now live_202306
+- https://twitter.com/iamakulov/status/1675658158646128642
+  - Explains and shows *how exactly* useTransition works under the hood
 # discuss
 - ## I had asked in the React 18 Working Group about the status of the "context selectors" PR
 - https://github.com/reactwg/react-18/discussions/73

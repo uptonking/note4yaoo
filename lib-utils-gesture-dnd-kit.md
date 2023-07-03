@@ -82,7 +82,9 @@ modified: 2022-06-04T00:44:30.749Z
   - performance: rerender
   - collision
 
-- [Is there any way to force a droppable to accept draggables that come from outside its parent DndContext? ](https://github.com/clauderic/dnd-kit/discussions/181)
+- [dnd-kit/core@6.0.0+: infinity loop when using with variadic-width approach](https://github.com/clauderic/dnd-kit/issues/842)
+
+- [Is there any way to force a droppable to accept draggables that come from outside its parent DndContext?](https://github.com/clauderic/dnd-kit/discussions/181)
   - [Difficult to manage drags across sections of the app](https://github.com/clauderic/dnd-kit/issues/58)
   - This should be a lot easier to manage with the introduction of the `useDndMonitor` hook along with the fact that data defined in `useDraggable` and `useDroppable` is now exposed on the `active` and `over` properties.
 
@@ -108,6 +110,7 @@ modified: 2022-06-04T00:44:30.749Z
   - when you drop that item you keep that same unique id and generate a new one for the sidebar to replace the item that was just moved from the sidebar to your other droppable region
   - [Consider adding Clone from List example](https://github.com/clauderic/dnd-kit/issues/45)
   - https://codesandbox.io/s/distracted-mendel-hibbgu
+  - [how to copy item to other container？](https://github.com/clauderic/dnd-kit/issues/1164)
 
 - [How do I implement multiple items drag in a container](https://github.com/clauderic/dnd-kit/issues/1048)
   - [Multiple draggable at the same time?](https://github.com/clauderic/dnd-kit/issues/644)

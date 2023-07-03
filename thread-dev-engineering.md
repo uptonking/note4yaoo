@@ -12,7 +12,8 @@ modified: 2021-01-21T17:52:13.333Z
 # discuss
 - ## 
 
-- ## 
+- ## Take YouTube as an example. Backend sends all the data in 100ms for the landing page, logged in. Frontend then takes ~1500ms to present that data to the user
+- https://twitter.com/nikitonsky/status/1675505359052500994
 
 - ## 以前还很菜的时候就很喜欢过度优化，喜欢学各种高大上的东西，
 - https://twitter.com/null12022202/status/1673252095473102849

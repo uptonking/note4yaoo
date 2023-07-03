@@ -30,4 +30,4 @@ modified: 2023-07-01T07:14:31.456Z
 - snap 只有一个官方仓库，flatpak 倒是可以自选（/建）仓库。
 
 - ## [Some Flatpak Qt Apps fail to start after latest Update](https://forum.manjaro.org/t/some-flatpak-qt-apps-fail-to-start-after-latest-update/99973)
-  - flatpak upgrade
+  - flatpak upgrade -y

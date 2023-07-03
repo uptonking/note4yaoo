@@ -171,7 +171,7 @@ $$('[contenteditable]')
   - 分层渲染
   - 腰包掉到床头版与墙的夹缝中了
 
-## 06
+## 07
 
 - not-yet
   - todo remove hashId在编辑器model中有什么作用
@@ -180,7 +180,7 @@ $$('[contenteditable]')
   - 做完tailwind-table就面试
 
 - dev-to 提炼核心`需求+产出`工作流
-  - headless: sidebar
+  - headless-comp: sidebar
   - replace forceUpdate with useSyncExternalStore
   - slate-docs-examples
   - dnd-kit preset-tree
@@ -189,6 +189,7 @@ $$('[contenteditable]')
   - unit-tests
     - test in firefox
   - drag
+    - rewrite dndkit by use-gesture
     - dnd-kit tree performance
       - 自定义冲突解决
       - 拖拽指示线
@@ -273,9 +274,24 @@ $$('[contenteditable]')
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming-infinite-list/tree
-# dev-06-ospreadsheet2watarble+resume/八股文+面试
+# dev-07
 
-## 060
+## 070
+
+## 0703
+
+- [uptime(1) - Linux manual page](https://man7.org/linux/man-pages/man1/uptime.1.html)
+  - uptime gives a one line display of the following information.
+  - The current time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes.
+
+- [how to extract a rar file with multiple parts? - Ask Ubuntu](https://askubuntu.com/questions/1259832/how-to-extract-a-rar-file-with-multiple-parts)
+  - sudo apt install unrar
+  - unrar x filename.part1.rar
+  - rar x filename.part1.rar
+  - [Unrar multiple parts - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/162987/unrar-multiple-parts)
+  
+
+# dev-06-ospreadsheet2watarble+resume/八股文+面试
 
 ## 0628
 
@@ -314,7 +330,7 @@ $$('[contenteditable]')
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
-  - spacing is important in `calc()` css function,         `calc(24rem - 13px)`; 
+  - spacing is important in `calc()` css function,           `calc(24rem - 13px)`; 
   - You just need to add a space around the minus operator
 
 - [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)

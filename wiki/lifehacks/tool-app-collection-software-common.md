@@ -11,9 +11,7 @@ modified: 2022-11-07T10:26:22.510Z
 
 - search
   - 搜索某一类资料时，加上.pdf或.docx之类的后缀，可能质量更高
-
 # 软件选择参考
-
 - 优先选择: 长期更新，维护活跃，自用免费
 - 大公司支持
   - vscode和atom中选择vscode，因为github被microsoft收购了
@@ -34,7 +32,6 @@ modified: 2022-11-07T10:26:22.510Z
 # productivity
 - 局域网传输工具
   - 飞鸽传书
-
 # pc-dir
 - 网易云音乐
   - /home/yaoo/.cache/netease-cloud-music/CachedSongs
@@ -95,14 +92,6 @@ modified: 2022-11-07T10:26:22.510Z
       - https://mojim.com/ 魔镜歌词网
       - https://www.kugeci.com 酷歌词，带时间戳
       - 木兰词
-- learning
-  - goldendict
-      - 1.5.0-RC2 - 201907
-      - win/linux
-      - http://goldendict.org/
-          - https://github.com/goldendict/goldendict
-          - GPLv3
-  - dict:eudic
 - office
   - notable: note-taking
   - pocket
@@ -140,6 +129,80 @@ modified: 2022-11-07T10:26:22.510Z
   - wps note/google keep
   - netdisk
   - emarket
+
+## dict
+
+- tips
+  - 平时用谷歌就行了
+- 美式英语
+  - American Heritage
+  - Webster
+  - 买美式词典一般可选梅–韦氏、美国传统
+- 英式英语
+  - oxford
+  - collins
+  - Chambers
+  - 买英式词典一般可选牛津、朗文、麦克米伦
+- esl(English as a second or foreign language
+)
+  - Cambridge
+  - Longman
+  - Macmillan
+
+- goldendict /GPLv3
+  - 1.5.0-RC2 - 201907
+  - win/linux
+  - https://github.com/goldendict/goldendict
+    - http://goldendict.org/
+  - https://github.com/xiaoyifang/goldendict-ng
+    - Some significant features of this fork
+    - webengine with latest html/css feature support
+    - support >4GB dictionary
+    - support Qt5.15.2 and higher ,include latest Qt6
+- 欧路词典支持mdx
+
+- 词库资料
+  - mdx一般是主体的文本，网页，索引头
+  - mdd是对应的媒体文件，发音，图片，css，甚至视频等
+  - 有可能只有mdx，也可能是mdx+mdd，即使后者，也只是一部字典，而非多部。但是不可能只有mdd。
+  - 坛内常见某字典的mdx（文字）和css文件（排版）更新，mdd（音频和图片数据）却一直不变的情况，这时你也许需要找好几个帖子才能凑齐三个（或更多个）同名但不同后缀的文件才能安好一本词典
+
+- [FreeMdict - mdx mdd download](https://freemdict.com/)
+  - https://downloads.freemdict.com
+  - https://forum.freemdict.com/
+- [MW Online 2020四合一](https://forum.freemdict.com/t/topic/8284)
+  - [Merriam-Webster Unabridged Online 2020 - 英英](https://forum.freemdict.com/t/topic/2684)
+  - [Merriam-Webster Dictionary Online(2020) - 英英](https://forum.freemdict.com/t/topic/4030)
+- [關於AHD，有沒有推薦的mdx？ - 词典及语言学习交流](https://forum.freemdict.com/t/topic/18087)
+- [Oald10(3月5日修复词汇列表一些词汇链接错误的问题) - 英英 - FreeMdict Forum](https://forum.freemdict.com/t/topic/10925)
+  - [隆重推出 牛津英语同义词学习词典](https://forum.freemdict.com/t/topic/21884)
+- [LDOCE5+++Activ (2021-12-23) - 英汉](https://forum.freemdict.com/t/topic/9947)
+- [柯林斯cobuild高阶双解词典第八版+反查 - 英汉汉英-英式](https://forum.freemdict.com/t/topic/9207)
+
+- [汉英词典（第三版）A Chinese-English Dictionary - 汉英 外研社](https://forum.freemdict.com/t/topic/2071/1)
+
+- [现代汉语词典7-[施工现场]](https://forum.freemdict.com/t/topic/12102)
+  - [现代汉语词典第7版](https://forum.freemdict.com/t/topic/4445)
+- [一些汉语词典（恢复部分词典的图片等数据） - 汉汉](https://forum.freemdict.com/t/topic/16533)
+
+- [掌上百科 - PDAWIKI](https://www.pdawiki.com/forum/forum.php)
+  - [PDAWIKI 2008-2023 存档 - 资源分享 - FreeMdict Forum](https://forum.freemdict.com/t/topic/20443)
+  - [一个告别声明 - 掌上百科站务处_202303](https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=48789&extra=page%3D1)
+  - 从2008年开始，掌上百科作为词典爱好者论坛，为大家提供了一个分享MDict等软件自制词库的平台，近两年由于部分用户利用版权数据牟利，打击了出版方数字化的积极性，也给管理团队造成不必要的法律困扰，
+  - 决定自2023年4月1日起，关闭涉版权部分板块，如MDict 词库资源区、掌上百科编纂处、资源专区等，此去江湖有缘再见！
+- [一百多GB的MDX词库资源集合下载](https://mdict.org/post/mdx/)
+  - https://mdx.mdict.org/
+- https://github.com/Dictionaryphile/All_Dictionaries
+  - 最全在线词典网站导航
+
+## wiki
+
+- zhwiki dump
+  - https://dumps.wikimedia.org/zhwiki/
+
+- wiki-like
+  - [第三次基本结束・Wiktionary2023 + OxfordreFerence+中英专业词典](https://forum.freemdict.com/t/topic/10746)
+  - [中国文学大辞典[1991][马良春]](https://forum.freemdict.com/t/topic/13400)
 # calendar
 - https://github.com/lwlsw/Chinese-Lunar-Calendar-ics
   - 现成的中国农历ics文件 2015-2100
@@ -149,10 +212,10 @@ modified: 2022-11-07T10:26:22.510Z
   - firefox/opera/yandex/vivaldi/brave/edge
 - java反编译
   - jd-gui，win/linux/mac, GPLv3
-      - https://github.com/java-decompiler/jd-core
+    - https://github.com/java-decompiler/jd-core
   - Android反编译gui工具Jadx
   - java反编译类库 fernflower，由intellij idea作为插件开源，Apache2.0
-      - https://github.com/fesh0r/fernflower
+    - https://github.com/fesh0r/fernflower
 - ide
   - vscode
   - intellij idea community edition
