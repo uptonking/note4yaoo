@@ -284,13 +284,16 @@ $$('[contenteditable]')
   - uptime gives a one line display of the following information.
   - The current time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes.
 
+- [How to unzip a multipart (spanned) ZIP on Linux? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/40480/how-to-unzip-a-multipart-spanned-zip-on-linux)
+  - I created a test in its own folder, zipping up a PDF into `test.zip.001`, .002, and .003. How do I go about unzipping it?
+  - You will need to join them first.
+  - `cat test.zip* > ~/test.zip`
+
 - [how to extract a rar file with multiple parts? - Ask Ubuntu](https://askubuntu.com/questions/1259832/how-to-extract-a-rar-file-with-multiple-parts)
   - sudo apt install unrar
   - unrar x filename.part1.rar
   - rar x filename.part1.rar
   - [Unrar multiple parts - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/162987/unrar-multiple-parts)
-  
-
 # dev-06-ospreadsheet2watarble+resume/八股文+面试
 
 ## 0628
@@ -330,7 +333,7 @@ $$('[contenteditable]')
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
-  - spacing is important in `calc()` css function,           `calc(24rem - 13px)`; 
+  - spacing is important in `calc()` css function,             `calc(24rem - 13px)`; 
   - You just need to add a space around the minus operator
 
 - [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)

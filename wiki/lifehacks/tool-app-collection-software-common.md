@@ -149,6 +149,10 @@ modified: 2022-11-07T10:26:22.510Z
   - Longman
   - Macmillan
 
+- dicts
+  - [词库使用心得: 同一系列词典中，只留下最精美的和最大的](https://forum.freemdict.com/t/topic/1090)
+  - [十大mdict——对你最有用的十大mdict是哪些？](https://forum.freemdict.com/t/topic/9012)
+
 - goldendict /GPLv3
   - 1.5.0-RC2 - 201907
   - win/linux
@@ -159,25 +163,40 @@ modified: 2022-11-07T10:26:22.510Z
     - webengine with latest html/css feature support
     - support >4GB dictionary
     - support Qt5.15.2 and higher ,include latest Qt6
+
 - 欧路词典支持mdx
+  - [欧路词典客户端实用大更新，在线词典和翻译引擎开源](https://forum.freemdict.com/t/topic/11002)
+
+- https://github.com/ikey4u/wikit
+  - Wikit is a free and open-source dictionary program that enable you translate word for different languages
+  - Desktop application for Windows, Linux and MacOS which is developed using tauri and yew.
+  - [全新的mdx/mdd词典制作工具](https://forum.freemdict.com/t/topic/6621)
+  - wikit 的本地词典可以从 mdx 直接生成, 或者从 mdx 的源码生成.
+  - wikit 的server端可以去加载另外一个 server 端的词典, 也就是词典中继, 你可以中继另外一个人的词典
 
 - 词库资料
+  - [【教学】三、MDX MDD 基础知识](https://forum.freemdict.com/t/topic/1823)
+  - [词库种类及使用方法](https://forum.freemdict.com/t/topic/17795)
   - mdx一般是主体的文本，网页，索引头
-  - mdd是对应的媒体文件，发音，图片，css，甚至视频等
+  - mdd是对应的媒体文件，发音，图片，czss，甚至视频等
   - 有可能只有mdx，也可能是mdx+mdd，即使后者，也只是一部字典，而非多部。但是不可能只有mdd。
   - 坛内常见某字典的mdx（文字）和css文件（排版）更新，mdd（音频和图片数据）却一直不变的情况，这时你也许需要找好几个帖子才能凑齐三个（或更多个）同名但不同后缀的文件才能安好一本词典
 
 - [FreeMdict - mdx mdd download](https://freemdict.com/)
   - https://downloads.freemdict.com
+  - https://search.freemdict.com/
   - https://forum.freemdict.com/
 - [MW Online 2020四合一](https://forum.freemdict.com/t/topic/8284)
   - [Merriam-Webster Unabridged Online 2020 - 英英](https://forum.freemdict.com/t/topic/2684)
   - [Merriam-Webster Dictionary Online(2020) - 英英](https://forum.freemdict.com/t/topic/4030)
 - [關於AHD，有沒有推薦的mdx？ - 词典及语言学习交流](https://forum.freemdict.com/t/topic/18087)
-- [Oald10(3月5日修复词汇列表一些词汇链接错误的问题) - 英英 - FreeMdict Forum](https://forum.freemdict.com/t/topic/10925)
+- [Oald10(3月5日修复词汇列表一些词汇链接错误的问题) - 英英](https://forum.freemdict.com/t/topic/10925)
   - [隆重推出 牛津英语同义词学习词典](https://forum.freemdict.com/t/topic/21884)
 - [LDOCE5+++Activ (2021-12-23) - 英汉](https://forum.freemdict.com/t/topic/9947)
 - [柯林斯cobuild高阶双解词典第八版+反查 - 英汉汉英-英式](https://forum.freemdict.com/t/topic/9207)
+
+- [关于21世纪大英汉词典的版本 另外求隔壁站 henices 的版](https://forum.freemdict.com/t/topic/1976/39)
+  - 大家惦记的henices版本来了。37万的词头，加上词组
 
 - [汉英词典（第三版）A Chinese-English Dictionary - 汉英 外研社](https://forum.freemdict.com/t/topic/2071/1)
 
@@ -199,6 +218,8 @@ modified: 2022-11-07T10:26:22.510Z
 
 - zhwiki dump
   - https://dumps.wikimedia.org/zhwiki/
+  - [中文喂鸡百科20230320文字版](https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=22626&extra=page%3D1)
+  - [英文喂鸡百科20190401文字试用版](https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=17377&extra=page%3D1)
 
 - wiki-like
   - [第三次基本结束・Wiktionary2023 + OxfordreFerence+中英专业词典](https://forum.freemdict.com/t/topic/10746)
