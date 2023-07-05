@@ -41,9 +41,19 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## TIL that `typeof v === 'function'` and `isFunction(v)` behave differently in TS
+- https://twitter.com/AndaristRake/status/1676574933407735808
+- this might be because **JS classes have typeof 'function' too**, and they can't be invoked like functions
+
 - ## TypeScript pro tip: Instead of using `filter(Boolean)` to remove null and undefined values from arrays, create a type guard function. 
 - https://twitter.com/diegohaz/status/1667197904006569991
-- I've  also been using flatMap for that
+- I've also been using flatMap for that
   - const nonNullArray = [1, 2, null, undefined, 3].flatMap(v=>v?[v]:[])
 
 - ## 泛型傻瓜式*指南了，从三个角度描述了泛型的作用

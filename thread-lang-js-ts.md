@@ -16,6 +16,35 @@ Symbol('a') === Symbol('a'); //false
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## i actually didn't knew that mutating while looping on a `forEach` would skip indexes
+- https://twitter.com/meijer_s/status/1676506116736397312
+- Does it skip indexes when you delete elements in the loop? This is the sort of thing that makes me nervous to see but theoretically I would expect it to work
+  - It does indeed. 
+
+```JS
+const h = new Map();
+
+for (let i = 0; i < 10; i++) {
+  h.set(`x-custom-${i}`, i % 3 === 0 ? i : undefined);
+}
+
+h.forEach((v, k) => {
+  if (v && v !== 'undefined' && v !== 'null') return;
+  h.delete(k);
+});
+
+// 💡 上面delete后，对应的kv就消失了，这里只会迭代打印3次
+h.forEach((v, k) => {
+  console.log(k, v);
+});
+```
+
 - ## Timers are expensive in general. 
 - https://twitter.com/jarredsumner/status/1660421032027750400
   - setTimeout is at least one JS value that has to be held onto and keep the event alive (your function). 

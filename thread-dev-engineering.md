@@ -12,6 +12,18 @@ modified: 2021-01-21T17:52:13.333Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 一般做一件更傻逼的事儿，然后修正，大家会忘记之前有点傻逼的事儿。比如现在，很少有人讨论推特不登陆不能浏览了。
+- https://twitter.com/yihong0618/status/1676530968096833536
+
+- ## 最近一直在重构屎山，让我明白一件事
+- https://twitter.com/Ehco1996/status/1676513295166246912
+  - 你以为的理由：代码实现太挫，风格混乱，缺少 UT
+  - 实际上的理由：屎山堆不动了，一加新功能就出 bug 测试一次要两小时起步，再不重构一天到晚全是 oncall，没人力可以交付新 feature 了
+- 键是搞这东西对KPI没有帮助，关键业务指标无增长，费力不讨好
+- 如果工作量比较大，还是要老板支持才行
+
 - ## Take YouTube as an example. Backend sends all the data in 100ms for the landing page, logged in. Frontend then takes ~1500ms to present that data to the user
 - https://twitter.com/nikitonsky/status/1675505359052500994
 
@@ -22,9 +34,9 @@ modified: 2021-01-21T17:52:13.333Z
 - ## 我视能不能解决庞大的屎山为新手老手的分水岭
 - https://twitter.com/Soulogic/status/1659386692904816641
 - 软件工程师 3 个进阶的思考维度，也是任何严肃的系统，从设计阶段就应该考虑的：
-  01.  Debugability, 运行中出了错误，是否能快速定位到根本原因？
-  02.  Testability, 重构了代码，任何原因修改了代码，是否可以保证没有引入 bug.
-  03.  Toolability, 性能有问题，是否可以很快用自动化工具定位到瓶颈。
+  01.   Debugability, 运行中出了错误，是否能快速定位到根本原因？
+  02.   Testability, 重构了代码，任何原因修改了代码，是否可以保证没有引入 bug.
+  03.   Toolability, 性能有问题，是否可以很快用自动化工具定位到瓶颈。
 
 - ## Tip: Write a design doc (what, why, how, whatever) for any feature you are going to implement. 
 - https://twitter.com/evoluhq/status/1261766649679667208

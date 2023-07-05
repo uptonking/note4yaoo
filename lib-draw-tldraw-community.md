@@ -44,7 +44,7 @@ modified: 2023-06-19T12:33:38.006Z
 - Check with —expose-gc
   - And WeakRef
 
-- ## Let’s say you have an editor with extensions that add functionality (eg a history extension that adds undo / redo commands to the editor API). 
+- ## Let’s say you have an editor with extensions that add functionality (eg a history extension that adds undo/redo commands to the editor API). 
 - https://twitter.com/steveruizok/status/1675470978447441920
   - How would you do this with Typescript? 
 
@@ -65,6 +65,7 @@ editor
 ```
 
 ```typescript
+// slate solution
 const editor = withReact(withHistory(createEditor()));
 
 // it seems to cast types explicitly
@@ -83,6 +84,7 @@ return e;
 - I would look at lexicals plugin system for inspiration. Very well thought out! Let’s you register handlers with priority (so that plugin order doesn’t matter)
 
 - In playwright, you can call `test.extend` with fixtures to return a new “test” object you can use those fixtures in. I love that pattern, since it means the test objects are immutable; no worry about the command being loaded as a side effect somewhere, just use the correct editor
+  - Yeah interface declarations like this are the ONLY way to mutate a type in Typescript. Basic function composition tends to be simpler.
 
 - Rich-Harris explored autogenerating types for SvelteKit packages and end up at declarations. Do with that what you will.
 

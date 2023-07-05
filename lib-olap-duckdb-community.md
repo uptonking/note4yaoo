@@ -37,7 +37,12 @@ modified: 2022-12-05T16:01:25.243Z
 
 - ## 
 
-- ## 
+- ## Larger than RAM group bys have landed in @DuckDB 's master branch!_20230705
+- https://twitter.com/__AlexMonahan__/status/1676598327117328385
+  - This means that now every operator in DuckDB can handle larger than memory intermediates.
+  - So the max data a single node can handle is the size of your SSD, not RAM!
+  - There is future work planned around better coordination across operators when memory is constrained, but this is still a major step forward. 
+  - And check out the benchmark in the PR - **perf only declines by 20% when RAM is shrunk by 90%**! The single node keeps getting more powerful!
 
 - ## Hot take: once @DuckDB 's native file format becomes stable, it will be on its path to becoming the new CSV.
 - https://twitter.com/ghalimi/status/1620641265955270657
@@ -46,7 +51,6 @@ modified: 2022-12-05T16:01:25.243Z
 - I think it might replace parquet but not csv. People store things in csv so it is human readable.
   - For small data, I agree with you. But data is getting bigger and bigger...
 - Fwiw I suspect a lot of data vendors actually use CSV to pretend the data they are selling is "big". You might know the ones I'm talking about
-
 
 - Wouldn't it be better if there was a format where row, vector, and human-readable were all interchangeable without loss of information?
   - I'm not sure that I understand what you mean. If you want human-readable, you can't compress. In that case, CSV is probably the way to go. But if you want compression, you really want a columnar format. Can you elaborate your thinking? I might be missing something here.

@@ -20,7 +20,7 @@ modified: 2021-01-01T20:06:36.094Z
   - 支持styled和css两种方式
 
 - linaria cons
-  - 🚨 依赖自身实现的 @linaria/webpack5-loader
+  - 🚨 编译构建依赖@linaria/webpack5-loader，且社区方案不多
     - 对业务代码中组件的导出顺序有要求，若先使用再导出会异常
     - 对三方包的代码不友好，使用了反引号模版字符串会异常，解决方法是fork三方包源码自己打包
   - css支持所有，但框架集成只支持react
@@ -32,11 +32,11 @@ modified: 2021-01-01T20:06:36.094Z
   - 样式书写只支持css字符串样式，不直接支持object style syntax
     - It might be tricky to introduce this syntax to linaria since we are strongly basing on TaggedTemplateExpressions
     - 代码实现紧密依赖css字符串字面量的处理逻辑，实现style object难度较大
-  - No IE11 support when using dynamic styles in components with styled, since it uses CSS custom properties
   - Dynamic styles are not supported with css tag. 
   - Modules used in the CSS rules cannot have side-effects.
     - css `color: ${colors.text};`.
     - We recommend to move helpers and shared configuration to files without any side-effects.
+  - 不支持react-native, [React Native support](https://github.com/callstack/linaria/issues/236)
 
 - who is using #linaria-css-in-js
   - [Airbnb's Trip to Linaria_202206](https://medium.com/airbnb-engineering/airbnbs-trip-to-linaria-dc169230bd12)
@@ -143,7 +143,6 @@ react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", {
   - build time 
 - cons
   - 只支持输出atomic-css
-
 
 - features
   - [Why Panda CSS](https://panda-css.com/docs/why-panda)
