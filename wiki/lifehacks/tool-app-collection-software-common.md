@@ -185,6 +185,7 @@ modified: 2022-11-07T10:26:22.510Z
 - [FreeMdict - mdx mdd download](https://freemdict.com/)
   - https://downloads.freemdict.com
   - https://search.freemdict.com/
+  - https://downloads.freemdict.com/%E5%B0%9A%E6%9C%AA%E6%95%B4%E7%90%86/%E5%85%B1%E4%BA%AB2020.5.11/content/
   - https://forum.freemdict.com/
 - [MW Online 2020四合一](https://forum.freemdict.com/t/topic/8284)
   - [Merriam-Webster Unabridged Online 2020 - 英英](https://forum.freemdict.com/t/topic/2684)
@@ -205,7 +206,8 @@ modified: 2022-11-07T10:26:22.510Z
 - [一些汉语词典（恢复部分词典的图片等数据） - 汉汉](https://forum.freemdict.com/t/topic/16533)
 
 - [掌上百科 - PDAWIKI](https://www.pdawiki.com/forum/forum.php)
-  - [PDAWIKI 2008-2023 存档 - 资源分享 - FreeMdict Forum](https://forum.freemdict.com/t/topic/20443)
+  - [PDAWIKI存档在线浏览/搜索上线](https://forum.freemdict.com/t/topic/20482)
+  - [PDAWIKI 2008-2023](https://forum.freemdict.com/t/topic/20443)
   - [一个告别声明 - 掌上百科站务处_202303](https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=48789&extra=page%3D1)
   - 从2008年开始，掌上百科作为词典爱好者论坛，为大家提供了一个分享MDict等软件自制词库的平台，近两年由于部分用户利用版权数据牟利，打击了出版方数字化的积极性，也给管理团队造成不必要的法律困扰，
   - 决定自2023年4月1日起，关闭涉版权部分板块，如MDict 词库资源区、掌上百科编纂处、资源专区等，此去江湖有缘再见！

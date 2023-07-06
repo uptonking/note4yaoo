@@ -20,6 +20,13 @@ modified: 2020-12-12T19:32:36.255Z
   - It scrapes, stores and exports data.
   - At its core, an ordered list of plugins is executed against each to be scraped URL.
 
+- https://github.com/openzim/mwoffliner /ts
+  - Mediawiki scraper: all your wiki articles in one highly compressed ZIM file
+  - 依赖linux/mac环境、redis、libzim
+  - MWoffliner is a tool for making a local offline HTML snapshot of any online MediaWiki instance.
+  - It goes through all online articles (or a selection if specified) and create the corresponding ZIM file. 
+  - **It has mainly been tested against Wikimedia projects like Wikipedia and Wiktionary** --- but it should also work for any recent MediaWiki.
+
 - https://github.com/xiyuan-fengyu/ppspider
   - 基于puppeteer的web爬虫框架，提供灵活的任务队列管理调度方案，提供便捷的数据保存方案（nedb/mongodb），提供数据可视化和用户交互的实现方案
 
@@ -36,7 +43,6 @@ modified: 2020-12-12T19:32:36.255Z
 - https://github.com/soffchen/GeoIP2-CN
   - 更小巧、更实时的中国大陆 GeoIP2 数据库及 IP 地址段，基于 chnroutes2
   - 提供下载txt、mmdb
-
 # screen-sharing
 - https://github.com/screego/server /ts/go
   - https://screego.net/

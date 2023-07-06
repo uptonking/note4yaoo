@@ -278,6 +278,12 @@ $$('[contenteditable]')
 
 ## 070
 
+## 0706
+
+- [Chrome: The website uses HSTS. Network errors...this page will probably work later - Stack Overflow](https://stackoverflow.com/questions/33268264/chromethe-website-uses-hsts-network-errors-this-page-will-probably-work-late)
+  - Click anywhere in chrome window and type `thisisunsafe` (instead of badidea previously) in chrome.
+  - Its 2021 and typing thisisunsafe as described in this post worked for me. Guys its typing not copy and paste!!!!
+
 ## 0703
 
 - [uptime(1) - Linux manual page](https://man7.org/linux/man-pages/man1/uptime.1.html)
@@ -333,7 +339,7 @@ $$('[contenteditable]')
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
-  - spacing is important in `calc()` css function,             `calc(24rem - 13px)`; 
+  - spacing is important in `calc()` css function,              `calc(24rem - 13px)`; 
   - You just need to add a space around the minus operator
 
 - [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)

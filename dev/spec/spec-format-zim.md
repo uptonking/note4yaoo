@@ -11,8 +11,20 @@ modified: 2023-07-05T10:22:57.942Z
 
 - resources
   - [ZIM file format](https://wiki.openzim.org/wiki/ZIM_file_format)
+  - https://library.kiwix.org/
 # spec
 
+- 
+
+## [OpenZIM](https://wiki.openzim.org/wiki/OpenZIM)
+
+- The openZIM project proposes offline storage solutions for content coming from the Web. 
+- The project has two different targets:
+  - Definition of the ZIM file format: an open and standardized file format, 
+  - Implementation of the libzim: an open source (GPLv2) implementation of the ZIM file format.
+
+- 
+- 
 - 
 
 # faq
@@ -24,13 +36,25 @@ modified: 2023-07-05T10:22:57.942Z
 - 
 
 # dev
+
+## kiwix
+
+- Kiwix是一个用于浏览离线内容的自由开源浏览器，最初用于离线浏览维基百科。
+  - Kiwix可以读取以压缩形式存储在ZIM格式文件中的内容，使用户能够在没有网络连接的情况下浏览维基百科及其他支持的内容。
+
+## zim file format
+
+- tips
+  - 不方便修改编辑
+
 - ZIM文件格式是一种自由档案格式，用于存储 Wiki 内容，以便离线浏览。
   - 它主要用于维基百科和其它维基百科项目。
-  - 这种格式允许压缩文章，支持全文搜索索引以及本地分类和图像管理，类似 MediaWiki。
+  - 这种格式**允许压缩文章，支持全文搜索索引以及本地分类和图像管理**，类似 MediaWiki。
   - 和原始的 Wikipedia XML 维基百科: 数据库下载 不同，整个文件可以容易的索引，并且可以被类似Kiwix的程序读取。
   - 维基百科在2012年一月的镜像大概有三百八十万篇不含图片的文章，有 7.5 GiB，对应的 ZIM 文件有 9.7 GiB（大约30%的额外开销）。
   - 除了自由文件格式，openZIM 项目还提供一个开源的 ZIM 阅读器。
 - ZIM 文件格式替代了早期的 Zeno 文件格式。 ZIM 意为“ Zeno Improved ”（改进的 Zeno）
+  - The ZIM file format is based on the Zeno File Format
 
 - The standard encoding for ZIM archive content is UTF-8. So both article data and URLs should be handled accordingly.
   - All types are little-endian.
@@ -63,6 +87,10 @@ modified: 2023-07-05T10:22:57.942Z
   - Readers allowing to read an embedded archive must adapt offset accordingly.
 - The MIME type list always follows directly after the header, so the mimeListPos also defines the end and size of the ZIM file header.
 
+- **The current major version is `6`**. 
+  - You may found old zim archives with major version 5. 
+  - They are the same than 6 less extended cluster, so you can read a 5 major version as if it was a 6.
+
 - Directory entries hold the meta information about all entries, images and other objects in a ZIM archive.
 - The clusters contain the actual data of the directory entries. 
   - Clusters can be compressed or uncompressed. 
@@ -78,30 +106,7 @@ modified: 2023-07-05T10:22:57.942Z
 - 
 - 
 
-# goldendict
-- 全文索引fts的位置
-  - ~/.var/app/org.goldendict. GoldenDict/cache/goldendict/index/
-
-## community
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [GoldenDict always fully occupies 1 CPU core](https://github.com/goldendict/goldendict/issues/640)
-- Have you read GD help about full-text search? It is FTS indexing process. Indexing statistic you can see in full-text search dialog.
-
-- Can we cache results of the FTS indexing process to not start it again every time program runs?
-  - It should be one time process. If the process was interrupted, it will continue, just give it time
-  - You can disable Full Text Search in the Preferences (F4).
-
-- ## [Indexing wikipedia zim - once and for all](https://github.com/goldendict/goldendict/issues/914)
-- If your machine doesn't have enough memory to complete the indexing of wikipedia_nopic_201?.zim, use the following workaround:
-  - set the limit indicated in the image above. somewhere between 2000000 and 10000000 should work. This eliminates FTS indexing for very large files.
-  - anything between 2M and 10M should work. This reduces title indexing to be less extensive for files with more then 2M articles.
-
+# examples
+- https://github.com/openzim/libzim /cpp
+  - Reference implementation of the ZIM specification
 # more
