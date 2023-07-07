@@ -103,3 +103,8 @@ modified: 2022-12-05T19:10:15.451Z
 - 确实，你看 clickbench 才上线多久，大家都已经开始在上面搞事情了
 - 但是很多人搞过benchmark，最终也是消失在茫茫文献里
   - 说明设计合理的benchmark并推广它并不容易，比如ImageNet就是这样，不冲突
+
+- ## 非常好懂的一篇文章。作者发现在CloudNative的OLAP数据库中，实际上存在Push查询到存储（如S3）和Cache两种实现存储和计算分离的方法。
+- https://twitter.com/ant_sz/status/1436346537718652935
+  - 更进一步，Cache往往速度更快但是受限于计算节点的空间，Pushdown受到网络、存储格式、查询类型的影响性能表现会有差别。因此想要结合两种方法
+  - 原理也很简单，就是将适合Pushdown的部分Pushdown，其他的部分Cache起来。FPDB总是Cache源表而不是中间结果，主要贡献在于发现并提出了这个优化的点以及决定是否Cache的启发式算法和Cache管理算法，实验表明提升还是很大的

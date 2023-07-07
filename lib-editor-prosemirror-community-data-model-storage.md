@@ -12,6 +12,17 @@ modified: 2022-09-05T03:25:02.690Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [How can I listen to transactions and “translate” them to something more concrete like “moveNode”, “replaceNode” or “deleteNode”?](https://discuss.prosemirror.net/t/listen-and-categorize-changes/5606)
+  - I’m starting to use PM for my startup https://mintter.com in our editor, we do not save the whole state value in the backend, but **we send the backend all the operations that happened at a specific node level**: we have a block-based editor similar to notion, and we are just storing changes at the block level (moves, replace and delete).
+  - I’m finding really hard to translate transactions and steps into our changes types
+  - From what I’ve seen, I need to always create a new state and compare both the oldState and the newState of the whole document to determine what changed and what block changed. This sounds to much considering that we might need to control this operations for long documents with thousands of blocks. not sure if this is the right approach?
+- ProseMirror’s steps take a completely different approach to describing modifications than the vocabulary you’re using, so yeah, diffing is probably the best approach. I don’t believe it’ll be that slow—you can just skip over nodes that were reused between the documents with an object equality check.
+- from the documentation provided, the transaction provides a docChange keyword, you can compare it with the next transaction. The creation of a plugin to handle the entire doc, I don’t see how is feasible
+
 - ## [How can I select a node from the current doc?](https://discuss.prosemirror.net/t/how-can-i-select-a-node-from-the-current-doc/5297/3)
 - A node object does not identify a node in the document. These don’t have a meaningful identity, they are just values—you can create a document containing the same node object multiple times. 
   - Thus, as you found, **the library uses positions to identify nodes**.
@@ -43,15 +54,51 @@ modified: 2022-09-05T03:25:02.690Z
 - DOMParser will add wrapping nodes when necessary, but it won’t break content out of wrapping nodes. 
   - 👉🏻️ So yes, this is something that should be done with a pre-processor.
 
-- ## Theoretical saving question
-- https://discuss.prosemirror.net/t/theoretical-saving-question/656
+# discuss-saving
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How Edit/Save works in ProseMirror?](https://discuss.prosemirror.net/t/how-edit-save-works-in-prosemirror/5664)
+- Depending on what you want in your database, you can store `state.doc.toJSON()` or use `DOMSerializer` and then `innerHTML` to convert the document to HTML.
+
+- ## [Current state of the art on syncing data to backend](https://discuss.prosemirror.net/t/current-state-of-the-art-on-syncing-data-to-backend/5175)
+- I am still torn on how to sync my data to backend
+  - documents can be very big. Like, 10Mb JSONs. (P. S. Prosemirror handles those pretty well, actually impressive)
+  - So sending entire JSON to backend is not good. 
+  - I’d rather just send diffs.
+  - Sending Steps occurred to me, but I have no way of applying this to my backend.
+
+- I haven’t really heard of people working with 10mb documents—is there something like images-as-data-urls or something in your documents that makes them so big? In most setups, sending the documents back and forth is unproblematic, because they generally are not that big.
+
+- I guess you could try something like JSON diffing to only send a small patch over, if you really need to.
+
+- For anyone looking for a solution with this, we have successfully implemented a POC that is consisting of:
+  - We then compare the reference state with the last captured state and calculate a JSON diff via this library and generate JSON patch array.
+  - **For calculating patches, we are using a Web Worker**
+  - Backend: Since we are doing JSON patches, most of backends support these patches, we then just patch the JSON and save it. For our particular setup, we translate the patches to MongoDB methods.
+  - For an extra layer of security, we are thinking of sending a hash of state to backend, so the backend can compare it after applying the patch. If hashes don’t match, a reconciliation step should occur, we are still tinkering with this.
+
+- How do you pass the editor state to that worker? As far as I’m aware, that involves serializing and deserializing the whole thing.
+  - It(`calculatePatches`) sends the two JSONs to worker and gets the result back.
+
+- ## [Saving content onchange](https://discuss.prosemirror.net/t/saving-content-onchange/3557)
+  - We need to implement saving on change, but saving the whole document state seems expensive, even with debounce.
+  - We tried to save changes in each “high level node”, and store them separately adding an attribute like “sortOrder” to restore the full state on first load. But is seems difficult in some cases. And also we save diffrent versions, so that we can apply diff in future.
+  - May be you have ideas how to do this better? Save Steps instead of nodes?
+
+- Saving steps (possibly compressing them with `merge`), along with occasional snapshots is what many people are doing, and seems to work well.
+
+- ## [Theoretical saving question](https://discuss.prosemirror.net/t/theoretical-saving-question/656)
   - Better to save a user document from ProseMirror in a whole file on the database or as separate individual changes?
   - Currently a user creates a written document here in the editor. We save the entire doc locally every 1/3 of sec for them and then save a backup copy on the server on doc close or page close. Always running on the local copy.
   - But realized we can’t reconstitute a document later as a document can be overwritten on the server from the local.
 
 - This very much depends on your use case and the features you wish to support. 
   - For my use case, I store a single record for the document. So, I’m writing over the previous document with the newly saved document (and then rails auto updates the updated_at timestamp for me).
-  - If you want to support change history (which I do but am not tackling yet), you’ll need to either A. store every version of the document or B. store the diffs (I believe ProseMirror can output some json representation of the changes). Again, I haven’t tackled this part yet so my understanding is a little vague.
+  - 👉🏻 **If you want to support change history** (which I do but am not tackling yet), you’ll need to either A. store every version of the document or B. store the diffs (I believe ProseMirror can output some json representation of the changes). Again, I haven’t tackled this part yet so my understanding is a little vague.
 
 - 👉🏻 Both are valid approaches – I know several users are saving all steps, in order to be able to later display or revert changes, and to be able to go back to earlier versions. Whether you need that complexity depends on what you want to do.
 

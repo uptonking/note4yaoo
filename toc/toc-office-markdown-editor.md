@@ -38,6 +38,14 @@ modified: 2022-11-09T11:53:13.093Z
   - https://harrychen0506.github.io/react-markdown-editor-lite/
   - 基于textarea和React的markdown编辑器，实现简单且清晰
   - UI可配置, 如只显示编辑区或预览区，支持编辑区和预览区同步滚动
+
+- https://github.com/mdx-editor/editor /ts/lexical
+  - https://mdxeditor.dev/
+  - https://mdxeditor.dev/editor/demo
+  - open-source React component that allows users to author markdown documents naturally
+  - MDXEditor is a rich, client-side component that does not benefit from server-side rendering. To use it in your server components, you should use next/dynamic
+  - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form
+
 - https://github.com/uiwjs/react-md-editor
   - A simple markdown editor with preview, implemented with React.js and TypeScript.
   - This is based on textarea encapsulation, so it does not depend on any modern code editors such as Acs, CodeMirror, Monaco etc.

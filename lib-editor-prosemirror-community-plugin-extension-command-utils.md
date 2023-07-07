@@ -32,14 +32,20 @@ modified: 2022-08-30T22:07:26.164Z
   - Define a Transaction class that fills its role instead, while also replacing the EditorTransform class. 
   - These are objects that represent any kind of atomic change in the editor state. They are still applied, much like actions currently are, but instead of being interpreted by reducers they rather explicitly declare the kind of changes they embody. 
 
-- ## [Should I use a state based plugin or a view based one?](https://discuss.prosemirror.net/t/should-i-use-a-state-based-plugin-or-a-view-based-one/5214)
-- Decorations that rely on DOM measurements are definitely tricky in that they create a data dependency cycle 
+- ## [🤔 Should I use a state based plugin or a view based one?](https://discuss.prosemirror.net/t/should-i-use-a-state-based-plugin-or-a-view-based-one/5214)
+  - We’re in the process of doing a proof of concept for pagination (e.g. painting page dividers + #page) using Tiptap / Prosemirror. 
+  - In order to do this, we’re using decorations + custom plugin. 
+
+- 👉🏻 Decorations that rely on DOM measurements are definitely tricky in that they create a data dependency cycle 
   - (the rendering of the doc uses decorations as input, the measuring needs the doc to be rendered, and the decorations are computed from the measures). 
-  - So you’ll probably need to schedule your own re-measures somewhere outside the editor’s own update cycle.
+  - **So you’ll probably need to schedule your own re-measures somewhere outside the editor’s own update cycle**.
+- **Decorations have to go into the state (or be recomputed on the fly)**, so you’ll need a state field to store them. 
+  - The general approach here would be to, in the state field apply method, try to preserve the old page break decorations by mapping them, and in a plugin view update method, see if the page breaks have to be re-checked/recomputed, and if so, schedule a process that measures the doc and determines appropriate page breaks, compare those to the existing page breaks, and update a transaction that updates the state if they differ.
 
-- Decorations have to go into the state (or be recomputed on the fly), so you’ll need a state field to store them. The general approach here would be to, in the state field apply method, try to preserve the old page break decorations by mapping them, and in a plugin view update method, see if the page breaks have to be re-checked/recomputed, and if so, schedule a process that measures the doc and determines appropriate page breaks, compare those to the existing page breaks, and update a transaction that updates the state if they differ.
+- Even if we forget about the scheduling problem part of this, I think there is a bigger problem that we just recently found. This is, tables. We’re relying on this tiptap custom extension that allow us to paint table elements in the doc. Following above approach causes a bunch of scenarios to pain divider / pagebreak inside a cell, reason being that `posAtCoords` is content agnostic, so it can return a pos inside of a table cell, and that’s where we paint the divider which is no bueno(Yes or affirmative).
 
-- Even if we forget about the scheduling problem part of this, I think there is a bigger problem that we just recently found. This is, tables. We’re relying on this tiptap custom extension that allow us to paint table elements in the doc. Following above approach causes a bunch of scenarios to pain divider / pagebreak inside a cell, reason being that posAtCoords is content agnostic, so it can return a pos inside of a table cell, and that’s where we paint the divider which is no bueno.
+- Google docs (and probably also the online MS office tools) do their own layout entirely, rather than relying on the browser’s DOM/CSS. And probably included pagination in their layout design from the start.
+  - They compute where things are in JavaScript, rather then letting DOM/CSS control the positioning. Of course, I don’t know a lot, since none of this is open source.
 
 - ## not a big fan of the prosemirror schema myself
 - https://twitter.com/_mql/status/1615796336070168584

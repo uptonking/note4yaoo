@@ -13,6 +13,12 @@ modified: 2022-09-05T03:41:15.727Z
   - [codesandbox prosemirror-state deps](https://codesandbox.io/examples/package/prosemirror-state)
   - [codesandbox tiptap deps](https://codesandbox.io/examples/package/@tiptap/core)
 # prose-starter
+- https://github.com/ocavue/prosemirror-playground
+  - https://stackblitz.com/fork/github/ocavue/prosemirror-playground
+  - A super simple ProseMirror demo repository. I use this repo to test out new ideas and report bugs.
+
+
+
 - https://github.com/ueberdosis/tiptap/tree/main/packages/starter-kit
   - 官方提供了模版工具箱 `@tiptap/starter-kit` npm包
   - https://github.com/syfxlin/tiptap-starter-kit

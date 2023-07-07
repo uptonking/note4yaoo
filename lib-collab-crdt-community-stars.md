@@ -15,6 +15,21 @@ modified: 2022-04-05T10:09:51.343Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Has anyone seen a good comparison between @partykit_io @liveblocks @replicache ?
+- https://twitter.com/ptsi/status/1676064189385785344
+- I've used @liveblocks and the DX is insane with zustand which my projects previously used. But it's very expensive. I think pricing is fair for enterprise products but hard to do for freemium.
+  - @partykit_io sounds cool too, but never tried that... 
+  - @replicache sounds more of like a sync-changes between clients thing than a instant-collaboration toolkit
+- I have played around a bit with replicache and pusher, but it can be slow at times. 
+  - Partykit looks interesting, but docs always seemed scant(不足的，缺少的). It’s built on cloud flare objects. y-partykit is built on yjs. 
+  - Liveblocks is pretty well documented and widely used. Hugging Face uses it.
+  - Live blocks can get expensive quickly. Replicache has very good docs. The way it can merge/conflict resolve is useful. I’m a yjs self roll it fan tbh.
+  - I believe Liveblocks can do conflict resolution as well. Also of note is automerge if you are more into the roll it yourself yjs camp. Replicache can be used with whatever popular backend you like, postgres/mysql/couch included so you aren’t required to use their hosted service
+
 - ## I was blown away by @aboodman 's talk and the Replicache model 
 - https://twitter.com/tantaman/status/1664635160984272896
   - so I spent the last day experimenting with a variation on the idea: "Creating CRDTs without specialized knowledge"

@@ -65,10 +65,10 @@ modified: 2021-08-30T15:50:54.515Z
 - https://twitter.com/mim_djo/status/1632318627142852610
   - although Google Map reduce system was a bad idea, all new shared disk DWH ( BigQuery, Snowflake, Dremio, Databricks etc ) stole the best part from it, which is separating Storage from Compute
 - relational DB system are just too good in stealing other people innovations.
-  -Separating compute from storage
-  -Json
-  -Graph
-  -Open table format ( Iceberg, delta)
+  - Separating compute from storage
+  - Json
+  - Graph
+  - Open table format (Iceberg, delta)
 
 - ## What database has the best query language that’s not sql?
 - https://twitter.com/aboodman/status/1607790827996327936

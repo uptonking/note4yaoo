@@ -51,7 +51,7 @@ modified: 2022-08-30T01:46:22.149Z
 - Writing correct document-changing commands, especially schema-agnostic ones, is ridiculously hard right now. 
 - Also the extension system is not as powerful as that in codemirror 6.
 
-- Can you talk more about the formalisms ProseMirror adopts that you admire?
+- Can you talk more about the formalisms(形式(的实例)) ProseMirror adopts that you admire?
   - I'm still discovering it but mostly the transaction and NodeView systems. Make it really easy to add custom behaviour. I just added checkbox support for my notetaking app in a few lines of code.
 
 - ## Remove contenteditable completely?
@@ -61,19 +61,15 @@ modified: 2022-08-30T01:46:22.149Z
   - For most use cases, this is not a problem. 
   - However, this makes implementing certain features that rely on knowing where things are rendered more difficult. 
   - From what I’ve seen, commercial close-sourced word processors such as Google Docs and MS Word Online handle rendering/cursor tracking instead of delegating to contenteditable.
+
 - Some example use cases:
-  - Break up document to fixed-size pages
-
-    - can’t do this without knowing the height of each line being rendered
-
-  - Multiple cursor placement in collaborative editing
-
-    - the browser can only render one cursor, to render multiple cursors we need to be able to project document position to screen coordinates, expensive to do without having rendered layout information cached
-
-  - More sophisticated marks such as inline highlighting and commenting 
-
-    - as far as I know, marks in ProseMirror are rendered by wrapping inline text with spans and decorating the wrapper spans, 
-    - if you want to render more complex structures, such as a popover comment box centered/above the highlighted text, you’d have to render the highlight as a span, and then determine the wrapper span bounding box position after the mark is rendered and append the popover comment box, which I think is a workaround to the system
+- Break up document to fixed-size pages
+  - can’t do this without knowing the height of each line being rendered
+- Multiple cursor placement in collaborative editing
+  - the browser can only render one cursor, to render multiple cursors we need to be able to project document position to screen coordinates, expensive to do without having rendered layout information cached
+- More sophisticated marks such as inline highlighting and commenting 
+  - as far as I know, marks in ProseMirror are rendered by wrapping inline text with spans and decorating the wrapper spans, 
+  - if you want to render more complex structures, such as a popover comment box centered/above the highlighted text, you’d have to render the highlight as a span, and then determine the wrapper span bounding box position after the mark is rendered and append the popover comment box, which I think is a workaround to the system
 
 - I have been exploring the possibility of handling layout/rendering instead of delegating to contenteditable. 
   - It seems this involves breaking up the document into boxes that cannot be broken up further and laying them out as lines with the document’s size constraints, before finally rendering them. 
@@ -107,4 +103,3 @@ modified: 2022-08-30T01:46:22.149Z
   - you wouldn’t believe the amount of CSS & decoration stuff I had to code to get something even-approaching word-style selection behaviour.
   - In terms of complex UI overlays, inline highlighting/commenting, etc. I thought I’d pipe in, you can quite nicely implement sophisticated overlays with decorations and Vue.js where that’s concerned.
   - Obviously, you can switch out Vue and implement reactivity with a different framework
-

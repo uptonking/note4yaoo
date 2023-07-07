@@ -139,6 +139,7 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/objectlegal/slate-snippets
   - Slate snippets
   - Convert data from v0.47 to v.0.50+
+  - https://github.com/horacioh/slate-snippets
 - https://github.com/juliankrispel/slate-patterns
   - Patterns for slate.js
   - 提供了示例 iframe、autocomplete

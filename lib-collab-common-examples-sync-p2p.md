@@ -98,6 +98,17 @@ modified: 2023-01-17T19:13:01.845Z
   - Nango continuously syncs data from any API endpoint (that returns JSON) to your database.
   - Nango has built-in support for OAuth through our sister project Pizzly
 
+- https://github.com/primus/primus /202301/js
+  - Primus, the creator god of the transformers & an abstraction layer for real-time to prevent module lock-in.
+  - There are a lot of real-time frameworks available for Node.js and they all have different opinions on how real-time should be done. 
+  - Primus provides a common low level interface to communicate in real-time using various real-time frameworks.
+  - Built-in reconnect, it just works. 
+  - Offline detection, Primus is smart enough to detect when users drop their internet connection (switching WIFI points/cell towers for example) and reconnects when they are back online.
+  - Automatically encodes and decodes messages using custom parsers. Can be easily switched for binary encoding for example.
+  - A clean, stream-compatible interface for the client and server.
+  - Comes with an amazing plugin interface to keep the core library as fast and lean as possible while still allowing the server and the client to be extended
+  - Primus doesn't ship with real-time frameworks as dependencies, it assumes that you as user add them yourself as a dependency. This is done to keep the module as lightweight as possible
+
 - synceddb-multi-backends /388Star/MIT/201803/js/indexeddb/支持多种后端存储
   - https://github.com/paldepind/synceddb
   - makes it easy to write offline-first applications with real-time syncing and server-side persistence.

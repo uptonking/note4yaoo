@@ -82,9 +82,22 @@ modified: 2022-08-18T16:57:29.058Z
   - https://hedgerwang.github.io/prosemirror-datagrid/dist/demo.html
   - This module defines a schema extension to support datagrid with virtual scrolling and editing support.
 # elements-node
-- https://github.com/MH4GF/prosemirror-details-list
-  - https://prosemirror-details-list.vercel.app/
-  - an open/closeable details element that works with rich text editor based on ProseMirror.
+- https://github.com/ocavue/prosemirror-flat-list
+  - https://prosemirror-flat-list.netlify.app/
+  - https://remirror-extension-flat-list.netlify.app/
+  - Powerful list for ProseMirror and Remirror
+  - This project introduces a new ProseMirror(opens in a new tab) list design different from the prosemirror-schema-list.
+  - This project simplifies the list design in ProseMirror(opens in a new tab) by providing only one node type: list. You can add any block nodes as a children of a list node, including another list node. The first child can also be any block type, not just a paragraph.
+  - [ProseMirror Flat list (Alpha)](https://discuss.prosemirror.net/t/prosemirror-flat-list-alpha/5191)
+    - Some wrapper framework of prosemirror may want to limit the schema groups. For example, in Milkdown, I expect everything under doc should be block.
+
+- https://github.com/emergence-engineering/prosemirror-slash-menu
+  - A ProseMirror plugin to handle the state of a slash menu. 
+  - It is intended to be opened inline with /, searched and navigated by keyboard. 
+  - https://github.com/emergence-engineering/prosemirror-slash-menu-react
+    - provide a UI element for the plugin, or you could write your own.
+  - [Slash menu for ProseMirror](https://discuss.prosemirror.net/t/prosemirror-slash-menu-prosemirror-slash-menu-react-slash-menu-for-prosemirror/5629)
+  - [Emergence Engineering - prosemirror-slash-menu](https://emergence-engineering.com/blog/prosemirror-slash-menu)
 
 - https://gitlab.com/emergence-engineering/prosemirror-codemirror-block
   - CodeMirror 6 code_block in ProseMirror
@@ -103,6 +116,10 @@ modified: 2022-08-18T16:57:29.058Z
   - Upload images to endpoints, showing placeholder until the upload finishes
   - Customizable overlay for alignment 
   - Image resizing with body resize listeners, so the image always fits the editor ( inspired by czi-prosemirror )
+
+- https://github.com/MH4GF/prosemirror-details-list
+  - https://prosemirror-details-list.vercel.app/
+  - an open/closeable details element that works with rich text editor based on ProseMirror.
 # media/embed
 - https://github.com/OrkhanAlikhanov/prosemirror-image-uploader
   - The necessary image uploader for prosemirror based editors like (tiptap, remirror).
@@ -150,9 +167,18 @@ modified: 2022-08-18T16:57:29.058Z
   - Under the hood, I hide the native cursor and use `Decoration.widget` to insert a `<span>` element to the cursor position
     - 👉🏻 I refactored prosemirror-virtual-cursor and overlay the cursor over the editor.
 
-- https://github.com/joelewis/prosemirror-mentions
+- https://github.com/curvenote/editor/tree/main/packages/prosemirror-autocomplete
+  - can be used to create suggestions similar to Notion, Google Docs or Confluence; it is created and used by Curvenote. 
+  - The library does not provide a user interface beyond the demo code.
+  - 仅依赖pm-state/view
+
+- https://github.com/ccorcos/prosemirror-examples/blob/master/src/app/components/Autocomplete.tsx
+  - https://ccorcos.github.io/prosemirror-examples/
+
+- https://github.com/joelewis/prosemirror-mentions /js
   - https://star-drug.glitch.me/
   - A ProseMirror plugin that enables @mentions and #hashtags in a prosemirror view.
+  - https://github.com/quartzy/prosemirror-suggestions
 
 - https://github.com/lukesmurray/prosemirror-async-query
   - A simple declarative API for using promises in prosemirror plugin state.

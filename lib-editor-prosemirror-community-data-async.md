@@ -14,12 +14,6 @@ modified: 2022-10-03T10:47:44.104Z
 
 - ## 
 
-- ## [Saving content onchange](https://discuss.prosemirror.net/t/saving-content-onchange/3557)
-  - We need to implement saving on change, but saving the whole document state seems expensive, even with debounce.
-  - We tried to save changes in each “high level node”, and store them separately adding an attribute like “sortOrder” to restore the full state on first load. But is seems difficult in some cases. And also we save diffrent versions, so that we can apply diff in future.
-  - May be you have ideas how to do this better? Save Steps instead of nodes?
-
-- Saving steps (possibly compressing them with `merge`), along with occasional snapshots is what many people are doing, and seems to work well.
 
 - ## [Non-linear performance when pasting content_201612](https://github.com/ProseMirror/prosemirror/issues/364)
   - I'm assessing the limits of ProseMirror from a performance perspective, and have found that overall things seem really good, however pasting large amounts of content degrades poorly.

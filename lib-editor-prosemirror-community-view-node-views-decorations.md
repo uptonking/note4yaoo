@@ -12,7 +12,12 @@ modified: 2022-09-05T02:20:41.366Z
 # discuss
 - ## 
 
-- ## 
+- ## [What is the best way to replace emojis with custom inline image format?](https://discuss.prosemirror.net/t/what-is-the-best-way-to-replace-emojis-with-custom-inline-image-format/2882)
+- The best way to figure out which regions a step replaced is to iterate over its step map (stepMap.forEach). You may also not need to invert and replay the steps—iterating over the new ranges (the stepmap’s ranges mapped forward over any further steps that come after them) and checking those for the pattern you’re interested in should make it possible to just directly patch only the parts of the document that need updating.
+  - Have you considered just leaving them as plain-text emoji in the document, and having a plugin replace them with image widgets through decorations? Text seems to be a suitable format for representing emoji.
+
+- I’m trying to do the same and I’m curious about the performance of decorations approach. Sounds a bit “slow” to look for unicodes in the whole document and replace them with decorations.
+  - some implement emoji support with separate prosemirror-node (e.g. remirror emoji-extension) Any ideas about shortcoming of this approach? I can think of next ones: migration of existing documents, need to handle Paste, anything else?
 
 - ## Split editor with custom views
 - https://discuss.prosemirror.net/t/split-editor-with-custom-views/3779
@@ -25,9 +30,6 @@ modified: 2022-09-05T02:20:41.366Z
 - Suggestions and autocomplete plugin library,  `prosemirror-autocomplete` from curvenote
   - https://discuss.prosemirror.net/t/suggestions-and-autocomplete-plugin-library-prosemirror-autocomplete/4151
   - There are a few related projects, prosemirror-suggestions , prosemirror-mentions , prosemirror-suggest
-  - https://github.com/curvenote/editor/tree/main/packages/prosemirror-autocomplete
-
-- https://github.com/ccorcos/prosemirror-examples/blob/master/src/app/components/Autocomplete.tsx
 
 - ## https://discuss.prosemirror.net/t/making-decoration-node-play-nice-with-node-views/3776
 - https://discuss.prosemirror.net/t/making-decoration-node-play-nice-with-node-views/3776

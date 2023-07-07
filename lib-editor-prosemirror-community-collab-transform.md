@@ -18,7 +18,19 @@ modified: 2022-10-22T18:47:16.228Z
 
 - ## 
 
-- ## 
+- ## ❓ 仍未解决 [Implementing google docs like "suggest edit" mode](https://discuss.prosemirror.net/t/implementing-google-docs-like-suggest-edit-mode/5033)
+  -  Implementing comments was easy enough, however I’m a bit at a loss when it comes to implementing something like Google Doc’s “suggest edit” mode.
+- What you’re trying to do is one of the hardest things that you could try 
+  - What I’ve seen working at various products is changing the default `dispatchTransaction` method, and replacing every transaction with another one that includes the added “removal” / “addition” marks.
+  - That puts everything on its head, there are a ton of corner cases.
+  - For example: Since a transaction can have multiple steps you have multiple steps and now you replace every step you have to re-map all the steps before transforming them.
+  - I ( with my company ) plan to come out with a plugin that can solve this this problem since a ton of people try to solve this, hopefully we’ll find a time for that.
+
+- 
+- 
+- 
+- 
+- 
 
 - ## [Question about track-changes with prosemirror-changeset](https://discuss.prosemirror.net/t/question-about-track-changes-with-prosemirror-changeset/3801/7)
 - Yes each Span has was it data payload that can contain arbitrary data. Then you can define your own method for joining spans to merge them properly.

@@ -9,6 +9,40 @@ modified: 2020-12-18T05:02:58.499Z
 
 # guide
 
+# blogs-query-engine
+
+## [How Query Engines Work by Andy Grove [Leanpub PDF/iPad/Kindle]](https://leanpub.com/how-query-engines-work)
+
+- This book provides an introduction to the high-level concepts behind query engines and walks through all aspects of **building a fully working SQL query engine in `Kotlin`**.
+  - 本书的重点是查询引擎设计，它通常与编程语言无关。
+  - 本书选择 Kotlin 是因为它简洁易懂。它还与 Java 100% 兼容，这意味着您可以从 Java 和其他基于 Java 的语言（例如 Scala）调用 Kotlin 代码。
+  - Apache Arrow项目中的 DataFusion 查询引擎也主要基于本书的设计
+
+### [How Query Engines Work 学习记录](https://frankma.me/posts/database/how-query-engines-work/)
+
+- 可以作为0基础的查询引擎的入门资料，尤其是从RecordBatch定义，到DataSource构建，再到logical plan和physical plan实现，会对查询引擎的基本概念有一定的了解。
+  - 但是从SQL Support开始，后面章节的内容过于太generial了，只能做简单了解。
+  - 总体来说，还是很适合从0入门的，可以使用自己擅长的语言实现一遍，比如我的golang port
+  - https://github.com/Fedomn/how-query-engine-work
+
+- 构建查询引擎第一步是，选择一个type system，去代表查询引擎处理的数据类型。
+- 查询引擎 需要考虑处理数据的方式：row-by-row 还是 columnar format。
+- 现代大多数查询引擎都是基于Volcano Query Planner，它的每个step本质是一个iterator去访问rows。 
+  - 它是可以简单实现的模型，但如果处理billions级别的数据时，它的per-row overheads就会体现出来(大量虚函数调用)。
+- 减轻overhead的方式，通过iterator over batches of data 来批量处理数据。
+- 进一步，如果batch操作的是columnar data而不是rows，就可以利用vectorized processing，即利用SIMD去处理一个column里的多个值，在a single CPU instruction里。
+- 这里使用Apache Arrow作为基础的类型系统
+- 我们基于arrow的array类型，即用一批columnar的数据，来构造一批rows。减少了per-row overheads(虚函数调用)，利用SIMD提高CPU一个cycle的处理数据量。
+
+- 一个逻辑计划(logical plan) 代表 data transformation or action，它返回一些行数据(a set of tuples)。
+  - 每个logical plan都可以有 其它的logical plans作为inputs。
+  - 一个逻辑表达式(logical expression) 代表 将要对input logical plan执行的expression，它最后会返回一个具体的数据类型。它是logical plan的基础构建块，在runtime时被执行。
+
+- 将logical和physical plans明显区分开来的原因是：一个logical plan可以存在 多种physical plan去执行operation。
+  - 一个physical expression会将input的RecordBatch 进行evaluate，并产生一列数据。
+  - physical expression有了后，就可以组装起physical plans。
+
+- distributed query execution介绍如何利用multi-core CPU 和 multi-servers。内容主要都是high level层介绍。
 # blogs
 
 ## [DQL、DML、DDL、DCL的概念与区别](https://blog.csdn.net/tomatofly/article/details/5949070)

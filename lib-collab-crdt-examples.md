@@ -170,12 +170,25 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/philschatz/peritext
     - 更新了版本、迁移到vite、基于automerge-wasm
 
-- https://github.com/serenity-kit/secsync
+- https://github.com/serenity-kit/secsync /ts
   - Is an architecture to relay end-to-end encrypted CRDTs over a central service.
+  - It was created out of the need to have an end-to-end encrypted protocol to allow data synchronization/fetching incl. real-time updates to support local-first apps in combination with a web clients without locally stored data.
   - eg: End-to-end encrypted document using Yjs incl. Cursor Awareness
   - eg: End-to-end encrypted todo list using Automerge
   - Why use a central relay service?
     - The main reason is to exchange data asynchronously.
+  - https://github.com/serenity-kit/Serenity /ts
+    - End-to-end encrypted pages for your team
+
+- https://github.com/partykit/partykit /ts
+  - https://partykit.io/
+  - partykit is an SDK designed for creating real-time collaborative applications.
+  - The fundamental components of a partykit application are the server and the client. 
+    - The server is a simple JavaScript module exporting an object that defines how your server behaves, primarily in response to WebSocket events. 
+    - The client connects to this server and listens for these events.
+  - First-class integrations with popular collaboration frameworks and libraries. Y.js, automerge, replicache, they all Just Work
+  - `y-partykit` is an addon library for partykit designed to host backends for Yjs
+  - [automerge backend](https://github.com/partykit/partykit/issues/97)
 
 - https://github.com/supabase/pg_crdt /rust
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.

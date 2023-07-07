@@ -7,8 +7,23 @@ modified: 2020-10-22T06:50:47.668Z
 
 # toc-lib-olap4j
 
-# olap4j
+# guide
 
+# rust
+- https://github.com/apache/arrow-datafusion /rust
+  - extensible query engine for building high-quality data-centric systems in Rust, using the Apache Arrow in-memory format. 
+  - Python Bindings are also available.
+  - DataFusion offers SQL and Dataframe APIs, excellent performance, built-in support for CSV, Parquet, JSON, and Avro, extensive customization, and a great community.
+  - https://github.com/apache/arrow-datafusion/tree/main/datafusion-examples
+
+- https://github.com/apache/arrow-ballista /rust
+  - Ballista is a distributed SQL query engine powered by the Rust implementation of Apache Arrow and DataFusion.
+  - Ballista implements a similar design to Apache Spark (particularly Spark SQL)
+  - Ballista is designed from the ground up to use columnar data, enabling a number of efficiencies such as vectorized processing (SIMD) and efficient compression. Although Spark does have some columnar support, it is still largely row-based today.
+  - The use of Apache Arrow as the memory model and network protocol means that data can be exchanged efficiently between executors using the Flight Protocol, and between clients and schedulers/executors using the Flight SQL Protocol
+  - Supports HDFS as well as cloud object stores. S3 is supported today and GCS and Azure support is planned.
+  - Clients can connect to a Ballista cluster using Flight SQL.
+# olap4j
 - CBoard /2.9kStar/apache2/202104/js+java/angularjs/inactive
   - https://github.com/TuiQiao/CBoard
   - https://tuiqiao.github.io/CBoardDoc/#/
@@ -63,7 +78,7 @@ modified: 2020-10-22T06:50:47.668Z
   - The Open Source Retool Alternative
   - An all-in-one IDE to create internal or customer-facing apps.
   - A place to create, build and share building blocks of web applications.
-# stack
+# solutions
 - elasticsearch /Apache2/49.9kStar/202007
   - https://github.com/elastic/elasticsearch
   - https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html

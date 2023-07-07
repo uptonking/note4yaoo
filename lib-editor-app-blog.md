@@ -14,6 +14,19 @@ modified: 2022-08-21T10:11:37.453Z
 - Yep, we do use contentEditable as an input source and also as the view to which we render (you wouldn't be able to reliably handle the keyboard otherwise).
 # blogs
 
+## [Bike: Innovative Rich Text Editing](https://www.hogbaysoftware.com/posts/bike-rich-text/)
+
+- Bike Outliner now supports rich text!
+- link button
+  - 点击text可编辑link文本
+  - 点击末尾icon可以跳转
+- typing affinity
+  - 当光标在mark边缘时，会显示短下划线指示当前位置会与前面还是后面样式相同
+- floating format toolbar
+  - 支持快捷键和左右箭头
+- visible typing attributes
+  - 在光标位置会显示当前format的名称和样式
+
 ## [如履薄冰的复制粘贴-clipboard详解 - 掘金](https://juejin.cn/post/6903698870694313991)
 
 - 本文将从浏览器自身的复制粘贴功能出发，带领大家了解复制粘贴背后的功能实现，对比多个富文本文档实现，在浏览器的各种限制下，如何实现一个基于JSON-MODEL数据并且适用于类富文本的剪切板。
@@ -222,6 +235,13 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
   - However Ken is built with React, and I wanted to use React components for everything
   - So I’m tempted now to build an easy to understand reference implementation of a complete text editor. It’d be based off my existing code for the Ken editor, but entirely framework agnostic, fast and future-proof. Instead of a higher level wrapper around ProseMirror (such as TipTap)
   - Another approach that’s tempting for me is to revive Substance.js, but remove the rendering part of the library and use Svelte instead. 
+
+### [How to implement a web-based rich text editor in 2023?](https://discuss.prosemirror.net/t/how-to-implement-a-web-based-rich-text-editor-in-2023/5271)
+- 
+- 
+- 
+- 
+- 
 
 ## [Why ContentEditable is Terrible. Or: How the Medium Editor Works | by Nick Santos | Medium Engineering_201405](https://medium.engineering/why-contenteditable-is-terrible-122d8a40e480)
 

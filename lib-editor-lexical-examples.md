@@ -30,6 +30,13 @@ modified: 2022-05-15T18:37:27.994Z
   - block块级元素不支持拖拽
   - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
 
+- https://github.com/mdx-editor/editor /ts/lexical
+  - https://mdxeditor.dev/
+  - https://mdxeditor.dev/editor/demo
+  - open-source React component that allows users to author markdown documents naturally
+  - MDXEditor is a rich, client-side component that does not benefit from server-side rendering. To use it in your server components, you should use next/dynamic
+  - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form
+
 - https://github.com/juliankrispel/lexical-workshop-playground
   - Getting started with lexical by jumping in the deep end
 

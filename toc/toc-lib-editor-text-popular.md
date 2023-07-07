@@ -10,9 +10,10 @@ modified: 2022-11-08T19:04:00.289Z
 # guide
 
 - requirements
-  - **block-style data model**
-  - virtualized
   - collaborative
+  - **block-style data model** for editor
+  - virtualized
+  - lazy-editor: easier for custom layout
   - draggable
   - columns
   - search

@@ -56,7 +56,7 @@ modified: 2022-10-03T10:41:14.480Z
   - https://gitlab.coko.foundation/wax/wax-prosemirror
   - http://wax-demo.coko.foundation/
   - https://waxjs.net/docs/wax/
-  - 给出的文档例子包含批注形式
+  - 给出的文档例子包含suggestion-mode
   - Wax depends on the following libraries.
     - React for the view(UI)
     - Styled-components for theming and styling.

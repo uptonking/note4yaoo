@@ -81,6 +81,10 @@ modified: 2021-01-16T20:50:23.893Z
 - https://github.com/pkolchanov/tablesapp
   - Tablesapp is an local-first table design tool.
   - All tables are ready for one-click cloud sharing. Hosted on Google Firebase.
+# tauri
+- https://github.com/12joan/ping-ui
+  - A simple GUI for the ping command-line utility built using Tauri.
+  - Requires ping to be in the PATH and for the output of ping to have the following format
 # more
 - https://github.com/uptick/react-keyed-file-browser
   - https://uptick.github.io/react-keyed-file-browser/

@@ -278,6 +278,13 @@ $$('[contenteditable]')
 
 ## 070
 
+## 0707
+
+- [Prettier 3.0: Hello, ECMAScript Modules! · Prettier](https://prettier.io/blog/2023/07/05/3.0.0.html)
+  - We have made the migration to using ECMAScript Modules for all our source code. This change has significantly improved the development experience
+  - One notable change is the alteration in markdown formatting - spaces are no longer inserted between Latin characters and Chinese or Japanese characters. 
+  - Another important change in this release is the significant overhaul of the plugin interface. Prettier now supports plugins written using ECMAScript Modules and async parsers.
+
 ## 0706
 
 - [Chrome: The website uses HSTS. Network errors...this page will probably work later - Stack Overflow](https://stackoverflow.com/questions/33268264/chromethe-website-uses-hsts-network-errors-this-page-will-probably-work-late)
@@ -339,7 +346,7 @@ $$('[contenteditable]')
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
-  - spacing is important in `calc()` css function,              `calc(24rem - 13px)`; 
+  - spacing is important in `calc()` css function,                 `calc(24rem - 13px)`; 
   - You just need to add a space around the minus operator
 
 - [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)
