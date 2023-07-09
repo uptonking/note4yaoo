@@ -36,7 +36,6 @@ modified: 2023-03-16T16:29:47.610Z
   - 国外: prosemirror, slate, quill, lexical, tinymce, etherpad, ckeditor
   - mobile
   - [GitHub Blocks](https://blocks.githubnext.com/)
-
 # duseditor
 
 # to-refactor
@@ -147,6 +146,10 @@ modified: 2023-03-16T16:29:47.610Z
 - 多级列表的缩进宽度
   - notion 24
   - 飞书 24
+
+## link
+
+- link支持渲染带有中文的文字为正常文字，且支持编辑
 # image
 
 # mention

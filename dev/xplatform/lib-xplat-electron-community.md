@@ -9,9 +9,20 @@ modified: 2023-01-02T10:30:19.459Z
 
 # guide
 
-# discuss
+# discuss-electron-vs-tauri/nw
 - ## 
 
+- ## 
+
+- ## I love Tauri but I'd still choose Electron for a production app with thousands of users. 
+- https://twitter.com/timfishy/status/1672344034172362754
+  - Electron allows you to test and validate on the actual browser your users will be using. 
+  - WebView gets updates after you've shipped your app which is a maintenance nightmare.
+- what’s different from doing web dev? or any dev for that matter.. they all have frameworks that require update or brake constantly. I think only windows have long lived legacy apps running on it. (although it is nice to have a static version of chromium to work with, for ~200mb)
+  - 👉🏻 Users of desktop apps don't expect them to stop working after install! On top of that, updating desktop apps is nowhere near as simple as changing the source of your website.
+- It's just extra work as well keeping up with a moving target. We've shipped Electron apps that don't require any maintenance and work for new customers years later.
+
+# discuss
 - ## 
 
 - ## 

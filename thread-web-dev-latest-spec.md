@@ -13,7 +13,9 @@ modified: 2021-04-27T09:19:37.711Z
 
 - ## 
 
-- ## 
+- ## BIMI is a new email protocol to show your company profile picture in outgoing emails. 
+- https://twitter.com/zhovner/status/1678053189650636801
+  - It is already adopted by Apple, Instagram, PayPal, eBay and recently by us.
 
 - ## The View Transitions API is an absolute game changer and will effectively deprecate single page apps in most cases.
 - https://twitter.com/dannymoerkerke/status/1597187172783693824
