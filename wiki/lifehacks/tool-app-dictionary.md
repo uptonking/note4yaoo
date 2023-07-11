@@ -134,4 +134,17 @@ modified: 2023-07-08T12:47:00.141Z
 - wiki-like
   - [第三次基本结束・Wiktionary2023 + OxfordreFerence+中英专业词典](https://forum.freemdict.com/t/topic/10746)
   - [中国文学大辞典[1991][马良春]](https://forum.freemdict.com/t/topic/13400)
+# books
+- books-online
+  - [超星读书-电子书在线免费阅读网站-中文免费电子书阅读网站](http://book.chaoxing.com/)
+
+- libraries-online
+  - [全国图书馆参考咨询联盟](http://www.ucdrs.superlib.net/)
+    - [如何免费下载国家图书馆和全国图书馆参考咨询联盟的电子书？ - 知乎](https://www.zhihu.com/question/26518317/answers/updated)
+  - [中国国家数字图书馆](http://www.nlc.cn/web/index.shtml)
+
+- ebooks-searching
+  - [求一个进Z-library的方法? - 知乎](https://www.zhihu.com/question/532521148/answers/updated)
+  - [zhelper search 配置小工具](https://tool.yibook.org/)
+  - [图书检索系统](https://ps.uuttdx.com/)
 # more

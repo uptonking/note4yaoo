@@ -129,6 +129,14 @@ modified: 2022-11-07T10:26:22.510Z
   - wps note/google keep
   - netdisk
   - emarket
+# search
+- 网盘搜索
+  - [有哪些好用不火的网盘资源搜索工具，求推荐？ - 知乎](https://www.zhihu.com/question/449835465/answers/updated)
+  - [有哪些比较好用的网盘搜索引擎？ - 知乎](https://www.zhihu.com/question/552116773/answers/updated)
+  - [小云搜索 - 轻松简单的云盘搜索 | 网盘搜索引擎](https://www.yunso.net/)
+  - [猫狸盘搜 - 阿里云盘搜索神器](https://www.alipansou.com/)
+  - [易搜-网盘搜索](https://yiso.fun/)
+  - [咔帕搜索 - 资源超丰富的综合云盘资源搜索网站！](https://www.cuppaso.com/)
 # calendar
 - https://github.com/lwlsw/Chinese-Lunar-Calendar-ics
   - 现成的中国农历ics文件 2015-2100

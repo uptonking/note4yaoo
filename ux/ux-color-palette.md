@@ -8,6 +8,7 @@ modified: 2022-10-23T14:57:23.473Z
 # ux-color-palette
 - tips
   - 通常需要花更多时间精力参考设计稿及交互细节，而不是在颜色上纠结
+  - 可通过rgb某一位的加减1来规避版权问题
 
 - pgd色板设计，10级色彩，根据对比度
   - logo可参考田字格
@@ -52,19 +53,38 @@ modified: 2022-10-23T14:57:23.473Z
     - 60 对应 WCAG 4.5:1
     - 45 对应 WCAG 3:1
 # named-colors: variant/alike/light/单色无色板
+
+> 综合中国传统色+满庭芳国色+网红色卡
+
 - Gray: #808080
   - slategray/lightslategray: #708090 / #778899
   - silver: #c0c0c0 银灰色，比gray浅
   - snow: #fffafa
   - ghostwhite: #f8f8ff
   - dimgray/gray/silver/lightgray/lavender/gainsboro/whitesmoke: 灰色，由深到浅
+  - 月白: #d4e5ef(郭浩) #d6ecf0(网红) #eef7f2(色谱) #D1E2DE(王定理)
+  - 银白: #e9e7ef #f1f0ed(色谱) #EBE5D5(王定理) #cdd1d3(银鱼白)
   - 铅白(国画颜料): #f0f0f4
-  - 银白: #e9e7ef
+  - 凝脂: #e7e7e7(满庭芳) #F5F2E9(郭浩)
+  - 米色: #eeead9 #f9e9cd(色谱) #E9E6C5(王定理)
+  - 鱼肚白: #f7f4ed(色谱) #cdd1d3(银鱼白-色谱) #fcefe8(网红)
   - 苍白: #d1d9e0
   - 苍黑: #395260
   - 墨色: #50616d
   - 苍色: #75878a
   - 墨灰: #758a99
+  - 缟色: #f2ecde
+  - 老银: #bacac6
+  - 玄色: #622a1d
+  - 玄天: #6B5458(郭浩) #2e201d(满庭芳)
+  - 玄青: #3d3b4f
+  - 乌黑: #392f41
+  - 青骊: #000013
+  - 铅灰: #bbb5ac
+  - 银灰: #918072 #c1b2a3(淡银灰)
+  - 草灰: #675B46(王定理)
+  - 灯草灰: #363532(王定理)
+  - 烟墨: #3F3F3C(王定理) #5C4F55(郭浩) #50616d(墨色-网红)
 
 - Red: #ff0000
   - coral: #ff7f50 珊瑚红，有点黄
@@ -89,13 +109,29 @@ modified: 2022-10-23T14:57:23.473Z
   - fuchsia/magenta: #ff00ff
   - lightcoral: #f08080 珊瑚红，艳丽
   - lightpink: #ffb6c1 粉红
-  - 胭脂/燕脂(装扮、国画颜料): #9d2933/rgb(157, 41, 51), #9F353A/rgb(159, 53, 58)
-  - 绛紫: #8c4356/rgb(140, 67, 86)
-  - 海棠红: #db5a6b
-  - 嫣红: #ef7a82
-  - 银红(颜料): #f05654
+  - 桃红: #f47983(网红) #f0ada0(色谱) #bc3540(满庭芳)
+  - 梅红: #da6d83(满庭芳) #f1939c(色谱)
+  - 胭脂/燕脂(装扮、国画颜料): #9d2933 #b32142(满庭芳) #f03f24(色谱) #952E3A(王定理)
+  - 银朱: #871f24(满庭芳) #D12920(郭浩) #f43e06(色谱) #D15D5E(王定理)
+  - 银红(颜料): #C56978(王定理) #f05654(网红) #E7CAD3(郭浩)
+  - 赭色: #be7e4a(色谱) #955539 #B56F58(王定理)
+  - 赭石: #C37E5F(王定理) #9c5333 #862617(色谱) 
+  - 海棠红: #D13559(王定理) #db5a6b #f03752(色谱) 
+  - 朱颜酡: #F29A76(郭浩) #ef856d(满庭芳) #f9906f(网红)
+  - 丁香: #cca4e3(满庭芳) #ce93b4(郭浩) #e9d7df(色谱) #695776(王定理)
+  - 藕荷: #e4c6d0 #edc3ae(色谱) #D5CCD3(淡藕荷) #edd1d8
+  - 青莲紫: #95509F(王定理) #8b2671(色谱) #801dae(偏蓝的紫色-网红)
   - 黛螺(画眉颜料): #4a4266/rgb(74, 66, 102)
+  - 远山黛: #43465f(满庭芳)
   - 乌黑: #392f41
+  - 绾: #a98175 
+  - 绛紫: #8c4356
+  - 酱紫: #815476 #4d1018(色谱)
+  - 霁红: #6e2221(郭浩)
+  - 硃砂: #B84B48(王定理)
+  - 牡丹: #eb3c70(松叶牡丹红-色谱) #eea2a4(牡丹粉红) #B80233(牡丹红-王定理)
+  - 砖红: #AA4D3D(王定理) #cd6227(火砖红-色谱)
+  - 烟红: #9D858F(郭浩) #894e54(色谱) #643441(深烟红-王定理) 
 
 - Yellow: #ffff00
   - darkorange: #ff8c00
@@ -109,12 +145,24 @@ modified: 2022-10-23T14:57:23.473Z
   - darkorange：深橙色
   - lavenderblush：淡紫红，有点浅
   - cornsilk：玉米穗黄，极浅黄偏白，适合背景色
-  - 赤金: #f2be45
-  - 乌金: #a78e44
-  - 琥珀: #ca6924
-  - 茶色: #b35c44/rgb(179, 92, 68)
-  - 赭土(颜料): #9c5333/#955539
+  - 缃色: #ecd452(郭浩) #f0c239(网红)
+  - 松花: #ffee6f(郭浩) #bce672(网红)
+  - 杏黄: #ffa631 #f28e16(色谱)
+  - 鹅黄: #F2C867(郭浩-嫩鹅黄) #fff143(网红) #F5A31F(王定理) 
+  - 姜黄: #e2c027(色谱) #ffc773 #B49436(王定理) #E2BD3B(嫩姜黄) #D6C560(郭浩)
+  - 明黄: #F0C649(王定理)
+  - 秋香: #d9b611 #BF9C46(郭浩)
   - 秋色: #896c39
+  - 琥珀: #ca6924 #feba07(色谱) 
+  - 棕茶: #B8844F(王定理)
+  - 栗棕: #5c1e19(色谱) #673424(淡栗棕)
+  - 栗色: #544847(王定理) #6F5750(深栗色) #60281e(网红) #775039(栗壳-郭浩)
+  - 乌金: #a78e44
+  - 赤金: #f2be45
+  - 金色: #eacd76
+  - 苍黄: #a29b7c #806332(色谱) #B6A014(郭浩)
+  - 茶色: #b35c44/rgb(179, 92, 68)
+  - 草黄: #DBCE54(王定理) #d2b42c(色谱)
 
 - Green: #008000 ~~#00ff00~~
   - teal: #008080 深青色
@@ -131,18 +179,33 @@ modified: 2022-10-23T14:57:23.473Z
   - lightskyblue: 深蓝色
   - mediumslateblue：中暗蓝，深蓝偏紫
   - lightgoldenrodyellow：浅金黄，新绿活力
-  - 松花色: #bce672
-  - 松柏绿: #21a675
   - teal5: #20c997
-  - 松花绿: #057748
-  - 竹青: #789262
-  - 碧绿: #2add9c
-  - 青碧: #48c0a3
+  - 松绿: #057748 #BEC5B5(王定理) 浅松緑#84C0BE 深松緑#67B4B0 #6e8b74(瓦松绿-色谱)
+  - 松柏绿: #21a675
+  - 石绿: #347d5b(满庭芳) #57c3c2(色谱) #206864(郭浩)
+  - 铜绿: #549688 #2bae85(色谱) #533c1b(古铜绿)
+  - 翠绿: #20a162(色谱) #006E5F(王定理) #c6dfc8(淡翠绿)
+  - 吉翠: #2b6868(满庭芳)
+  - 油绿: #253d24(色谱) #5D7259(郭浩) #00bc12
+  - 苍绿: #223e36(色谱) #4E5F45(王定理)
+  - 缥色: #D5EBE1(天缥) #80A492(缥碧) #7fecad 
   - 黛绿: #426666
+  - 松石: #75c1c4(满庭芳)
+  - 竹青: #789262
+  - 枯绿: #B7B278(王定理) #b78d12(色谱) #d3b17d(枯黄-网红)
   - 苍翠: #519a73
-  - 铜绿: #549688
+  - 碧绿: #2add9c
   - 鸦青: #424c50
-  - 松石: #779a99
+  - 石青: #7bcfa6
+  - 葱黄: #a3d900 
+  - 葱绿: #9ed900 
+  - 葱青: #0eb83a 
+  - 草灰绿: #8e804b(色谱)
+  - 草绿: #40de5a
+  - 官绿: #2A6E3F(郭浩)
+  - 荷叶绿: #1a6840(色谱)
+  - 荷茎绿: #96BB8F(王定理)
+  - 青矾绿: #2c9678(色谱)
 
 - Blue: #0000ff
   - royalblue: #4169e1 墨蓝，又亮又深
@@ -153,12 +216,23 @@ modified: 2022-10-23T14:57:23.473Z
   - skyblue: #87ceeb
   - deepskyblue: #00bfff
   - cyan/aqua: #00ffff
-  - 宝蓝: #4b5cc4 (群青-#5666b8)
-  - 靛蓝: #065279
-  - 靛青: #177cb0
+  - 群青: #133d7e(满庭芳) #2E59A7(郭浩) #1772b4(色谱) #084495(王定理) #4c8dae
+  - 靛青: #1661ab(色谱) #177cb0(网红)
+  - 绀青: #003371(网红) #3F486C(王定理)
+  - 花青: #1A2847(郭浩) #2376b7(色谱) #546B83(王定理)
+  - 元青: #3E3C3D(王定理)
+  - 青灰: #2b333e(色谱) #575A5D(王定理)
+  - 竹月: #5E90B8(王定理) #2578B5(深竹月) #7F9FAF(郭浩)
+  - 毛月: #3A89B0(王定理) #2B5F8E(深毛月)
+  - 靛蓝: #065279 #293150(王定理)
   - 藏青: #2e4e7e
   - 苍青: #7397ab
-  - 群青: #4c8dae (吉翠-#427284)
+  - 黛色: #4a4266 
+  - 霁青: #63bbd0(色谱)
+  - 碧青: #5cb3cc(色谱) #48c0a3(青碧-网红)
+  - 宝蓝: #4b5cc4
+  - 孔雀蓝: #4994C4(郭浩) #0041A5(王定理) #0eb0c9(色谱)
+  - 宝石蓝: #1F3696(王定理) #2486b(色谱)
 
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
@@ -275,11 +349,10 @@ modified: 2022-10-23T14:57:23.473Z
 - https://github.com/arcticicestudio/nord
   - https://github.com/arcticicestudio/nord
   - 冷绿色系
-# 中国风配色/色板
-- resources
-  - [dribbble search 中文风/古风/水墨/复古/诗词/古诗](https://dribbble.com/search/%E4%B8%AD%E5%9B%BD%E9%A3%8E)
-
+# 中国风配色/色板/chinoiserie
 - 国风设计参考，传统色+布局
+  - [在哪里能找到中国传统色彩的RGB色卡？ - 知乎](https://www.zhihu.com/question/30491221)
+  - [dribbble search 中文风/古风/水墨/复古/诗词/古诗](https://dribbble.com/search/%E4%B8%AD%E5%9B%BD%E9%A3%8E)
   - [中国风界面-站酷ZCOOL](https://www.zcool.com.cn/collection/ZNTM3MTc0NA==)
   - [ui古风-站酷ZCOOL-基本都是游戏](https://www.zcool.com.cn/collection/ZMzA3NjE2NjA=)
   - https://dribbble.com/zhixuefeng
@@ -287,15 +360,21 @@ modified: 2022-10-23T14:57:23.473Z
   - https://dribbble.com/anhuimeng
   - https://dribbble.com/Bossbao
   - https://dribbble.com/yangliming
+  - 国色很少用蓝色，多用青色替代
 
-- http://zhongguose.com /参考《色谱》中科院科技情报编委会名词室. 科学出版社-1957
+- 中科院-色谱 /625色
+  - [markdown表格仅收录250色](https://gist.github.com/kagurazakayashi/b21e7e06137e4910942e4f380cbd947d)
+  - http://zhongguose.com /参考《色谱》中科院科技情报编委会名词室. 科学出版社-1957
   - https://nipponcolors.com
-  - 每种颜色都有名字
 
-- 中国传统色 系列书籍
+- 王定理-中国的传统色 /320色
+  - https://www.qhsou.com/color /支持中日文切换
+
+- 郭浩-中国传统色 系列书籍 /384色
   - https://www.figma.com/community/file/932547561953107053
   - [《中国传统色-故宫里的色彩美学》_202010](https://book.douban.com/subject/35166650/)
-    - 两位作者查找中日色彩相关文献近400部，严谨考据384种中国传统色名(24组x16色)
+    - https://weibo.com/u/1401955215
+    - 查找中日色彩相关文献近400部，严谨考据**384种**中国传统色名(24组x16色)
     - 根据24节气72物候，在几十万件故宫文物中选取应时应节的96件，从文物中提取传统色
     - 书很美，但是文字就和看百科一样只是一堆资料的罗列
   - [中国传统色 网页版](https://chinesecolor.org/)
@@ -303,6 +382,258 @@ modified: 2022-10-23T14:57:23.473Z
   - [因为找颜色太困难，我做了一份excel表格，来源于三个参考，中国传统色-故宫+色彩通识+中科院中国色色谱](https://book.douban.com/review/14384195/)
     - 分为8个色系: 红橙黄绿青蓝紫褐
     - 每个色彩都有有色名、色彩、CMYK和RGB色值、色彩来历或解释，以及参考出处
+  - https://github.com/daodaolee/china-color
+    - http://china-color.daodaolee.cn/
+
+- [配色方案: Chinoiserie 中国风](https://www.btbat.com/2855.html)
+  - Chinoiserie，法语，意即中国风。但与传统源于中国的中国风不同，Chinoiserie 是浪漫的幻象，是 18 世纪欧洲人臆想出来的「中国风」。
+  - 东方印象
+  - 花城往事
+  - 闲中花鸟
+  - 仲夏夜之梦
+  - 帝国斜阳
+  - https://dribbble.com/search/chinoiserie
+  - https://www.behance.net/search/projects?search=chinoiserie
+  - https://www.zcool.com.cn/search/content?word=chinoiserie
+  - https://www.shutterstock.com/zh/search/chinoiserie
+  - http://krearte.id/wall-mural/chinoiserie
+  - https://www.miltonandking.com/style/chinoiserie-wallpaper/
+  - [这位公认的配色高手，又要带火这个惹眼新projects颜色了！ - 知乎](https://zhuanlan.zhihu.com/p/67653152)
+  - [Chinoiserie中国风的消亡与发展（四） - 知乎](https://zhuanlan.zhihu.com/p/260190945)
+    - 18世纪当越来越多的欧洲人踏上这片神州土地的时候，惊讶于完全不符合他们的想象。到处破破烂烂，不见金碧辉煌的景象
+    - 中产阶级的增长使得越来越多的中国风从贵族家庭走入了普通中产家庭。
+    - 中国风潮在从欧洲宫廷渐渐式微之后，在时光中逐渐演变成为一种家居装饰风格。这种风格一直在变化发展，融入了西方现代家居的血液之中。所以我们现在看到的很多家居装饰其实都带着中国风的影子。
+
+- 满庭芳·国色(2023央视春晚创意节目) /43色
+  - 歌词中一共出现了43种传统颜色，再加上五大主色（除了在歌词中重复出现的缃叶），该节目一共展现了**47种**传统色彩
+  - 以中国传统五色红、黄、青、白、黑作为节目的五大色系，再从这五大色系中挑选出桃红、缃叶、群青、凝脂、沉香作为《满庭芳·国色》的主色，每一种颜色都有自己独特的寓意。
+  - 《中国传统色》的作者郭浩也是春晚创意节目《满庭芳·国色》的策划
+  - [我为央视春晚策划了《满庭芳·国色》这个节目，在此我为大家送上节目的中所有国色的详细解说，色值+出处 皆出自中国传统色系列书籍](https://www.bilibili.com/opus/753658583337402373)
+    - 注意作者发布的满庭芳配色与中国传统色的同名色(如琅玕紫)部分色值不同，第三方文章有的会引用混乱
+  - https://www.figma.com/community/file/1200404676464249013/
+  - 赤
+    - 桃红 #bc3540
+    - 梅红 #da6d83 #c45a65
+    - 胭脂 #b32142 #B95A89 #F03F24
+    - 魏红 #b03766
+    - 菡萏 #ef92b5 #f092b5
+    - 杨妃 #ee95a1
+    - 𫄸黄 #c3513f
+    - 朱樱 #77161b
+    - 银朱 #871f24
+    - 霁红 #6e2221
+    - 岱赭 #63241f
+    - 福色 #662b2f
+    - 苏方 #81474c
+    - 丁香 #ce93b4 #cca4e3
+    - 琅玕紫 #d46a8f #CB5C83
+    - 海天霞 #f8c7be
+    - 朱颜酡 #ef856d
+  - 青
+    - 群青 #133d7e
+    - 青金石 #2b2e77
+    - 吉翠 #2b6868
+    - 石绿 #347d5b
+    - 松石 #75c1c4
+    - 绿沉 #354e40
+    - 沧浪 #acd6cc
+    - 欧碧 #d8e699
+    - 麹尘 #c0d09d #bed09c
+    - 无心绿 #bfd1b2
+  - 黄
+    - 缃叶 #ecd452 #ecd353
+    - 松花 #ffee6f #e5e067
+    - 鞠衣 #d7a63b #d4a136
+    - 雄黄 #f3993a
+    - 黄丹 #ea5514
+    - 缙云 #ee7755
+    - 十样棉 #f8c6b5
+    - 海天霞 #f8c7be
+  - 白
+    - 凝脂 #e7e7e7
+    - 月白 #d4e5ef
+    - 天缥 #d4eceb
+    - 浅云 #e0f0eb
+    - 东方亮 #f5fbfe
+    - 米汤娇 #eeead9
+    - 半见 #fffcdb
+  - 黑
+    - 沉香 #786253 #99806C(郭浩)
+    - 伽罗 #6d5c3d
+    - 玄天 #2e201d #6B5458(郭浩)
+    - 青骊 #000013
+    - 凝夜紫 #32163c
+    - 远山黛 #43465f
+  - [满庭芳·国色 47种中国风颜色带色值完整版](https://www.xiaohongshu.com/explore/63ccebd1000000000200358b)
+  - [《满庭芳·国色》43张色卡 - 哔哩哔哩](https://www.bilibili.com/read/cv21378771/)
+  - [满庭芳配色 色值 - 简书](https://www.jianshu.com/p/7264e726fdb9)
+  - [《满庭芳·国色》最全47种中国传统色高清色卡（附 RGB + CMYK + HEX 色值） – 大作社](https://www.dazuoshe.com/mantingfangguosezuiquan47zho.html)
+  - [从《满庭芳·国色》看中国传统色彩体系的审美意趣 - 知乎](https://zhuanlan.zhihu.com/p/604312776)
+    - 五大主色，即青、赤、黄、白、黑五种颜色，古代以此五色为正色
+
+- 国家地理 中国美色系列明信片
+  - [一篇文章看懂中国美色](https://www.sohu.com/a/254227605_594400)
+  - 2015年《中国国家地理》杂志社推出了一款叫《中国美色》的明信片，明信片里还夹有一张色卡。
+  - 杂志社依据古代历史上相关文物的经典配色对98种中国传统颜色做了一个罗列。杂志社罗列的其中51种中国传统颜色
+  - 国家地理杂志《中华遗产》增刊《中国美色》，其色彩没有色值
+  - 红+紫
+    - 朱砂 
+    - 胭脂 
+    - 赭色 
+    - 苏方 
+    - 琥珀色 
+    - 曙色 
+    - 丹色 
+    - 朱槿色 
+    - 绛色 
+    - 牡丹红 
+    - 石榴红 
+    - 桃红 
+    - 青莲 
+    - 木槿紫 
+    - 雪青 
+    - 丁香 
+    - 藕荷 
+  - 蓝+青
+    - 沙青 
+    - 绀青 
+    - 花青 
+    - 霁色 
+    - 柏坊灰蓝 
+    - 竹月 
+    - 毛月 
+  - 绿
+    - 黛色 
+    - 翠绿 
+    - 松绿 
+    - 品绿 
+    - 缥色 
+    - 孔雀绿 
+    - 碧玉石 
+    - 秘色 
+    - 荷茎绿 
+    - 青豆色 
+    - 铜绿 
+    - 枯绿 
+  - 黄
+    - 缃色 
+    - 秋香 
+    - 姜黄 
+    - 明黄 
+    - 萱草黄 
+    - 棕茶色 
+  - 灰
+    - 月白 
+    - 练色 
+    - 米色 
+    - 甘石粉 
+    - 玄色 
+    - 烟栗 
+    - 酱色 
+    - 燈草灰 
+    - 百草霜 
+  - [中国美色·明信片 使用说明 - 文章](https://weibo.com/p/1001603872123902147549)
+    - 每张明信片都附带印刷色卡一张，每张有同色系的七种颜色色标，全套明信片共选取98种有代表性的中国传统色的色标，色值参照国内外权威机构发布的色卡作为参考，并直接参照古籍记载、文物和自然实物，反复对照确定，以期最大程度的接近本来的颜色。
+
+- 乾隆色谱
+  - [乾隆色谱2.0：清代宫廷丝织品的色彩重建-中国丝绸博物馆](https://www.chinasilkmuseum.com/yz/info_18.aspx?itemid=28366)
+  - 由中国丝绸博物馆通过染色实验还原，在博物馆内展出，网上能找到通过拍照加整理的版本，虽总数不多但具备较高的参考价值，不过网上能找到的版本自身也有色差
+  - 红紫
+    - 桃红
+    - 大红
+    - 水红
+    - 鱼红
+    - 紫红
+    - 藕荷紫
+    - 青莲紫
+    - 铁紫
+  - 蓝青
+    - 宝蓝
+    - 深蓝
+    - 元青
+    - 石青
+    - 红青
+  - 绿
+    - 松绿
+    - 官绿
+    - 砂绿
+    - 水绿
+    - 豆绿
+    - 瓜皮绿
+  - 黄
+    - 金黄
+    - 明黄
+    - 杏黄
+    - 葵黄
+    - 柿黄
+    - 秋香
+  - 灰
+    - 月白
+    - 鱼白
+    - 米色
+    - 酱色
+    - 墨色
+  - [乾隆色谱2.0：清代宫廷丝织品的色彩重建-中国丝绸博物馆_202109](https://www.chinasilkmuseum.com/yz/info_18.aspx?itemid=28366)
+    - [乾隆色谱在线版](https://www.museum24h.com/360/qianlongsepu/)
+  - [乾隆色谱：从历史档案复原清代色彩-中国丝绸博物馆_201404](https://www.chinasilkmuseum.com/yz/info_18.aspx?itemid=25761)
+    - [乾隆色谱 (豆瓣)](https://book.douban.com/subject/35079329/)
+
+- 金成熺《染作江南春水色》
+  - 作者虽为韩国人，但本书其实很下功夫，网上其实能下到PDF全书
+  - 对于《天工开物》和《多能鄙事》记录的染色方法有做还原实验，但是《布经》《辍耕录》里的颜色是怎么得出来的就有点模糊，感觉准确性也有所下降，主要推荐《天工开物》和《多能鄙事》部分的色卡
+  - 红色系
+    - 桃红
+    - 银红
+    - 水红
+    - 木红
+    - 大红
+    - 小红
+    - 莲红
+  - 紫色系
+    - 紫色
+    - 天青
+    - 葡萄青
+  - 青色系
+    - 蛋青
+    - 翠蓝
+    - 天蓝
+    - 月白
+    - 草白
+    - 毛青
+  - 绿
+    - 大红官绿色
+    - 豆绿
+    - 油绿
+  - 黄色系
+    - 鹅黄
+  - 褐色
+    - 藕色
+    - 茶褐色
+    - 枣褐色
+    - 银褐色
+    - 艾褐
+  - 黑色系
+    - 包头青
+    - 皂
+  - 灰色系
+    - 砖褐色
+
+- 国染馆馆长黄荣华 中国传统植物染
+  - [中国传统色绣花线色谱（精装）第二版完成_202306](https://www.bilibili.com/read/cv24251842)
+    - [中国传统色（绣花线）部分色卡_202205](https://blog.sina.com.cn/s/blog_4a83139e0102zljz.html)
+    - [中国传统染色绣花线色卡（确定版）完成，1082颜色](https://blog.sina.com.cn/s/blog_4a83139e0102zlef.html)
+  - [《国色五百色》完稿，即将付梓，为中国传统色再添一片瓦_202212](https://www.bilibili.com/read/cv20204657)
+    - [中国传统色谱黑白灰色系136个颜色](https://blog.sina.com.cn/s/blog_4a83139e0102zldm.html)
+    - [中国传统棕色色谱90色](https://blog.sina.com.cn/s/blog_4a83139e0102zld2.html)
+    - [中国传统色谱紫色系88色](https://blog.sina.com.cn/s/blog_4a83139e0102zlcg.html)
+    - [中国传统绿色色谱136色](https://blog.sina.com.cn/s/blog_4a83139e0102zlc2.html)
+    - [中国传统黄色色谱96色](https://blog.sina.com.cn/s/blog_4a83139e0102zlbr.html)
+    - [中国传统红色色谱135色](https://blog.sina.com.cn/s/blog_4a83139e0102zlbg.html)
+    - [中国传统蓝（青）色色谱90色_202203](https://blog.sina.com.cn/s/blog_4a83139e0102zlb4.html)
+  - [《红楼寻色》--红楼梦色彩研究书稿完成_正式名为红楼梦日历锦色版_201901](https://blog.sina.com.cn/s/blog_4a83139e0102yy4c.html)
+
+- 中国传统色彩图鉴_鸿洋_2010
+  - 和网红色卡相似度高
 
 - [pixso色卡推荐 | 传统中国风配色-及风景图片](https://pixso.cn/designskills/traditional-chinese-color-matching/)
   - https://pixso.cn/community/file/vcQlTWUQ_6GPN_azI4rDjg
@@ -352,20 +683,6 @@ modified: 2022-10-23T14:57:23.473Z
     - 藏花红 #E9A182
     - 铜器青 #283F3E
 
-- [配色方案: Chinoiserie 中国风](https://www.btbat.com/2855.html)
-  - Chinoiserie，法语，意即中国风。但与传统源于中国的中国风不同，Chinoiserie 是浪漫的幻象，是 18 世纪欧洲人臆想出来的「中国风」。
-  - https://dribbble.com/search/chinoiserie
-  - https://www.behance.net/search/projects?search=chinoiserie
-  - https://www.zcool.com.cn/search/content?word=chinoiserie
-  - https://www.shutterstock.com/zh/search/chinoiserie
-  - http://krearte.id/wall-mural/chinoiserie
-  - https://www.miltonandking.com/style/chinoiserie-wallpaper/
-  - [这位公认的配色高手，又要带火这个惹眼新颜色了！ - 知乎](https://zhuanlan.zhihu.com/p/67653152)
-  - [Chinoiserie中国风的消亡与发展（四） - 知乎](https://zhuanlan.zhihu.com/p/260190945)
-    - 18世纪当越来越多的欧洲人踏上这片神州土地的时候，惊讶于完全不符合他们的想象。到处破破烂烂，不见金碧辉煌的景象
-    - 中产阶级的增长使得越来越多的中国风从贵族家庭走入了普通中产家庭。
-    - 中国风潮在从欧洲宫廷渐渐式微之后，在时光中逐渐演变成为一种家居装饰风格。这种风格一直在变化发展，融入了西方现代家居的血液之中。所以我们现在看到的很多家居装饰其实都带着中国风的影子。
-
 - https://colors.ichuantong.cn/
   - https://github.com/zerosoul/chinese-colors
   - 中国传统颜色在线手册
@@ -385,36 +702,18 @@ modified: 2022-10-23T14:57:23.473Z
   - https://coolfishstudio.github.io/cfs-color/
   - 传统色谱
 
-- 满庭芳·国色(2023春晚节目创意背景)
-  - [满庭芳配色 色值 - 简书](https://www.jianshu.com/p/7264e726fdb9)
-  - [满庭芳·国色 47种中国风颜色带色值完整版](https://www.xiaohongshu.com/explore/63ccebd1000000000200358b)
-  - https://www.xiaohongshu.com/explore/63ccebd1000000000200358b
-  - [《满庭芳·国色》43张色卡 - 哔哩哔哩](https://www.bilibili.com/read/cv21378771/)
-  - [《满庭芳·国色》最全47种中国传统色高清色卡（附 RGB + CMYK + HEX 色值） – 大作社](https://www.dazuoshe.com/mantingfangguosezuiquan47zho.html)
-  - [从《满庭芳·国色》看中国传统色彩体系的审美意趣 - 知乎](https://zhuanlan.zhihu.com/p/604312776)
-
 - [525 种「颜值」与「文化」并存的中国风配色 - MasterGo](https://mastergo.com/blog/31)
 
-- [中国传统色](https://peiseka.com/zhongguochuantongse.html)
-
 - more
-  - http://color.xunmi.cool/
-  - https://htmlcss.jp/color/china.html
+  - [中国の伝統色320色](https://htmlcss.jp/color/china.html)
   - [颜色库查询-DIC TRADITIONAL COLOR OF CHINA中国传统色](https://www.colortell.com/colorbook/?callbook=s)
-
-- 乾隆色谱
-  - 由中国丝绸博物馆通过染色实验还原，在博物馆内展出，网上能找到通过拍照加整理的版本，虽总数不多但具备较高的参考价值，不过网上能找到的版本自身也有色差
-  - [乾隆色谱2.0：清代宫廷丝织品的色彩重建-中国丝绸博物馆_202109](https://www.chinasilkmuseum.com/yz/info_18.aspx?itemid=28366)
-  - [乾隆色谱：从历史档案复原清代色彩-中国丝绸博物馆_201404](https://www.chinasilkmuseum.com/yz/info_18.aspx?itemid=25761)
-
-- 金成熺《染作江南春水色》
-  - 作者虽为韩国人，但本书其实很下功夫，网上其实能下到PDF全书
-  - 对于《天工开物》和《多能鄙事》记录的染色方法有做还原实验，但是《布经》《辍耕录》里的颜色是怎么得出来的就有点模糊，感觉准确性也有所下降，主要推荐《天工开物》和《多能鄙事》部分的色卡
+  - [中国传统色 简单列表](https://peiseka.com/zhongguochuantongse.html)
 
 - ref
   - [中国风配色卡-花瓣网](https://huaban.com/boards/57122778)
 # Open source color system from components.ai
 - https://components.ai/theme/sRr4Q9BGmH0jAOA99nc2
+  - https://components.ai/
 
 - 提供了多套色板数据
   - bootstrap.v5, open color, material 2014, palx, tachyons.v5
@@ -424,7 +723,12 @@ modified: 2022-10-23T14:57:23.473Z
 - The first 6 steps in each scale are accessible with white
   - the last 6 steps are accessible with black
 - Export as CSS, JS, JSON, or Sass 
-# [canva color palettes](https://www.canva.com/learn/brand-color-palette/)
+# [color palettes collections](https://www.canva.com/learn/brand-color-palette/)
+
+## [20 Unique And Memorable Color Palettes To Inspire You](https://www.designhill.com/design-blog/unique-and-memorable-color-palettes-to-inspire-you/)
+
+- https://twitter.com/canva/status/772693000581414912
+
 - 01. Rich and Adventurous  温暖饱和感
     - sheer/浅蓝灰           #c5d2db
     - shutter blue/深天蓝    #2096ba
@@ -434,7 +738,7 @@ modified: 2022-10-23T14:57:23.473Z
 - 02. Warm Antique
 - 03. Waimea Waters
 - 04. Tropical Punch
-- 05. Bolivian Beauty  
+- 05. Bolivian Beauty
 - 06. Fall Collection
 - 07. Very Venice
 - 08. Vintage Sundown  一点点温暖
@@ -480,16 +784,27 @@ modified: 2022-10-23T14:57:23.473Z
     - currant/深紫偏黑      #45415e
     - slate/极青深灰        #2b4251
     - creosote/深黑深灰     #2e323c
+
+## more-palettes
+
+- [The 20 Best Color Combinations to Try on Your Website](https://blog.hubspot.com/website/website-color-schemes)
+- [23 color palette ideas to inspire your next graphic design project - Undullify](https://undullify.com/23-color-palette-ideas-to-inspire-your-next-graphic-design-project/)
 # colors-inspiring
 - [Pantone潘通色卡将收费？](https://pixso.cn/designskills/pantone-color-card/)
+
+- 德国 劳尔色卡
+  - [RAL国际标准色卡对照表](https://zhuanlan.zhihu.com/p/367900940)
+  - [RAL劳尔设计师版色彩查询电子版1825色 - 千通彩色库](https://www.qtccolor.com/secaiku/dir/8)
 # color-etymology
+- resources
+  - [千通彩色库 查询所有品牌颜色](https://www.qtccolor.com/secaiku/dir)
+
 - [颜色参考来源](https://www.zhihu.com/question/30491221/answer/154649194)
-  - [中国国家数字图书馆](http://www.nlc.cn/web/index.shtml)
   - [《色谱》_1957 - 625](http://find.nlc.cn/search/showDocDetails?docId=-3901948874488792801&dataSource=ucs01&query=%E8%89%B2%E8%B0%B1)
   - 《中国色名综览》_1979 - 672
-  - 中国的传统色_1986 - 320
-  - 中国颜色名称_1997 - 1867(很多流行色)
-  - [《国色五百色》完稿，即将付梓，为中国传统色再添一片瓦 - 知乎](https://zhuanlan.zhihu.com/p/588827592)
+  - 《中国的传统色》_1986 - 320
+  - 《中国颜色名称》_1997 - 1867(很多流行色)
+  - [《国色五百色》完稿，即将付梓，为中国传统色再添一片瓦 - 知乎_202212](https://zhuanlan.zhihu.com/p/588827592)
 
 ## [在哪里能找到中国传统色彩的RGB色卡？](https://www.zhihu.com/question/30491221)
 
@@ -509,19 +824,18 @@ modified: 2022-10-23T14:57:23.473Z
   - 鸿洋《中国传统色彩图鉴》，部分和国画颜料不符
   - 《中国国家地理》中国美色系列明信片
 
-- 不同色卡同名的颜色都有差异，因为中国传统色多是以一些近似颜色的物体来命名，基本都是一个范围，无法用RGB或者CYMK色值准确定义的，比如桃红，同一棵树上的两朵桃花颜色都不一样，甚至同一朵花同一片花瓣还有渐变色。另外很多色名记载久远，传了几个朝代已经出现词义变更，更不用说传到现代了。
-
-## [《色谱》与《中国の传统色》, 《中国色名综览》之色名比较研究(ZT)](https://www.douban.com/note/393997307/?_i=8942553XUA7MP0)
+## [《色谱》与《中国の传统色》, 《中国色名综览》之色名比较研究_2006](https://www.douban.com/note/393997307/?_i=8942553XUA7MP0)
 
 - 结语 
 - 研究后发现, 
   - 《色谱》的色名大多来自於自然界中的动, 植物, 占总数的50%, 
   - 《中国の传统色》的色名选订或解释多采自织染, 服饰, 绘画领域, 
-  - 《中国色名综览》是根据《色谱》编定的, 差异相同.
+  - 《中国色名综览》是根据《色谱》编定的, 差异相同
   - 但三研究对象在取样上均出现有偏颇不全的现象或取样过度集中的情形, 且未经客观且广泛且完整的搜集工作, 使得信赖度令人质疑
-- 《中国の传统色》在汉字的使用上, 与《色谱》, 《中国色名综览》有所出入, 例如藕荷与藕合, 虽然只有一字之差, 但是却会造成色彩表10 达上的误解
-  - 其中也发现单字的中国色名未被列入考虑, 却强加了许多近代外来的翻译性色名, 令人对「传统」两字的时间与区域定义产生困扰
-- 也发现《中国色名综览》一书所列色名, 根据其所配合的曼塞尔(Munsell)色相表对照比较, 发现同属5R 6/12的大红, 珊瑚红及鱼腮红三色, 虽为色相相同, 却有著不同的命名.
+- 《中国の传统色》在汉字的使用上, 与《色谱》, 《中国色名综览》有所出入, 例如藕荷与藕合, 虽然只有一字之差, 但是却会造成色彩表达上的误解
+  - 其中也发现**单字的中国色名未被列入考虑, 却强加了许多近代外来的翻译性色名**, 令人对「传统」两字的时间与区域定义产生困扰
+- 也发现《中国色名综览》一书所列色名, 根据其所配合的曼塞尔(Munsell)色相表对照比较, 发现同属5R 6/12的大红, 珊瑚红及鱼腮红三色, 虽为色相相同, 却有著不同的命名
+- 本研究仅透过比较来理解其中的异同, 藉以一窥中国传统色的建构初期努力的缺失, 期以抛砖引玉, 诱发史料, 绘画, 服饰, 染料等资料的汇整调查, 回归色名最初形成的由来与究明其意义, 如此将有助於日后中国传统色彩体系的建构
 # yaoo-color-palettes
 - open-color with contrast
   - https://leonardocolor.io/theme.html?name=pgd-green&config=%7B%22baseScale%22%3A%22green-teal%22%2C%22colorScales%22%3A%5B%7B%22name%22%3A%22gray%22%2C%22colorKeys%22%3A%5B%22%23adb5bd%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Atrue%7D%2C%7B%22name%22%3A%22red%22%2C%22colorKeys%22%3A%5B%22%23ff6b6b%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22orange%22%2C%22colorKeys%22%3A%5B%22%23ff922b%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22yellow%22%2C%22colorKeys%22%3A%5B%22%23fcc419%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22green-sea%22%2C%22colorKeys%22%3A%5B%22%233cb371%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22green-pine%22%2C%22colorKeys%22%3A%5B%22%2321a675%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22green-teal%22%2C%22colorKeys%22%3A%5B%22%2320c997%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22blue%22%2C%22colorKeys%22%3A%5B%22%23339af0%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%2C%7B%22name%22%3A%22blue-indigo%22%2C%22colorKeys%22%3A%5B%22%235c7cfa%22%5D%2C%22colorspace%22%3A%22RGB%22%2C%22ratios%22%3A%5B%220%22%2C%2211%22%2C%2222%22%2C%2233%22%2C%2244%22%2C%2255%22%2C%2263%22%2C%2272%22%2C%2281%22%2C%2290%22%5D%2C%22smooth%22%3Afalse%7D%5D%2C%22lightness%22%3A100%2C%22contrast%22%3A1%2C%22saturation%22%3A100%2C%22formula%22%3A%22wcag3%22%7D
