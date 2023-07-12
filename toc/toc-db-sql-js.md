@@ -75,8 +75,10 @@ modified: 2021-08-30T18:56:14.863Z
   - Sorting, Filtering and Cross-Filtering joined tables
 # sql-alternatives
 - https://github.com/PRQL/prql /rust
+  - https://prql-lang.org/
   - PRQL is a modern language for transforming data — a simple, powerful, pipelined SQL replacement
-  - Unlike SQL, it forms a logical pipeline of transformations, and supports abstractions such as variables and functions.
+  - Like SQL, it's readable, explicit and declarative. 
+  - Unlike SQL, it forms a logical pipeline of transformations, and supports abstractions such as variables and functions. 
   - It can be used with any database that uses SQL, since it compiles to SQL.
 # sql-extensions-mdx
 
@@ -90,12 +92,7 @@ modified: 2021-08-30T18:56:14.863Z
   - every Malloy query turns into a single SQL query
   - [A sequel to SQL? An intro to Malloy | Hacker News](https://news.ycombinator.com/item?id=32738874)
 
-- https://github.com/PRQL/prql /rust
-  - https://prql-lang.org/
-  - PRQL is a modern language for transforming data — a simple, powerful, pipelined SQL replacement
-  - Like SQL, it's readable, explicit and declarative. 
-  - Unlike SQL, it forms a logical pipeline of transformations, and supports abstractions such as variables and functions. 
-  - It can be used with any database that uses SQL, since it compiles to SQL.
+
 # sql-utils
 - https://github.com/fibo/SQL92-JSON
   - can stringify a JSON into an SQL and viceversa parse an SQL and serialize it into a JSON

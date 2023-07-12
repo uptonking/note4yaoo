@@ -70,7 +70,7 @@ modified: 2022-08-14T16:26:48.558Z
   - 不支持/斜杠菜单
   - 依赖solid-js、codemirror6、idb-keyval、date-fns、markdown-it、y-prosemirror
   - Just a little writing tool with markdown shortcuts that saves every change to local indexeddb.
-  - 跨平台客户端基于tauri实现，tari部分使用rust实现
+  - 跨平台客户端基于tauri实现，tauri部分使用rust实现
 
 - editorjs /19.8kStar/Apache2/202206/ts/vanillajs
   - https://github.com/codex-team/editor.js

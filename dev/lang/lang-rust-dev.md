@@ -23,11 +23,28 @@ modified: 2022-11-11T06:57:09.670Z
 # dev
 
 # examples
+- tips
+  - 经典示例可参考wasm、tauri、数据库、搜索、reader/parser/generator/stream
+
+- https://github.com/tw93/Pake
+  - Turn any webpage into a desktop app with Rust with ease.
+  - 很简单的用 Rust 打包网页生成很小的桌面App
+
+- https://github.com/asg017/sqlite-loadable-rs
+  - A framework for writing fast and performant SQLite extensions in Rust
+
+- https://github.com/x2bool/xlite /202210/rust
+  - SQLite extension for querying Excel (.xlsx, .xls, .ods) files as virtual tables
+
 - https://github.com/skyzh/type-exercise-in-rust
   - 包含了一整套数据库执行器的类型设计
   - [用 Rust 做类型体操 (上篇) - Alex Chi](https://www.skyzh.dev/posts/articles/2022-01-22-rust-type-exercise-in-database-executors/)
 
-- https://github.com/risinglightdb/risinglight
+- https://github.com/erikgrinaker/toydb /202205/rust
+  - Distributed SQL database in Rust, written as a learning project
+  - 内部自己实现了SQL Parser、Query Planner、Storage（包括一个B+Tree）和Raft，都是直接编写的（简化版本）的源码而不是用外部库，确实很适合用来学习
+
+- https://github.com/risinglightdb/risinglight /rust
   - An OLAP database system for educational purpose
 # blogs
 

@@ -7,11 +7,17 @@ modified: 2021-08-30T06:55:46.491Z
 
 # lang-js-engine-v8
 
+# guide
+
 # v8
 
 # blog
 
-## [Roll your own JavaScript runtime](https://deno.com/blog/roll-your-own-javascript-runtime)
+## [Roll your own JavaScript runtime using rust](https://deno.com/blog/roll-your-own-javascript-runtime)
+
+- In this post we’ll walk through creating a custom JavaScript runtime. Let’s call it runjs. 
+  - Think of it as building a (much) simplified version of deno itself. 
+  - A goal of this post is to create a CLI that can execute local JavaScript files, read a file, write a file, remove a file and has simplified console API.
 
 ## [认识 V8 引擎](https://zhuanlan.zhihu.com/p/27628685)
 

@@ -85,9 +85,10 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/JhinBoard/jhin
   - Next-Gen Collaborative Knowledge Base, A free replacement for Notion & Miro
 
-- https://github.com/aliscie/autodox /rust
+- https://github.com/aliscie/odoc /rust
   - This app is Notion.so clone, roam research clone and obsidian clone. 
   - The main purpose of this app is not to just clone these note-taking apps but to make an all-in-one Open source note-taking app with automation features.
+  - make sure to install zstd llvm, clang and openssl, gcc, rocksdb in order for the desktop app to work (surealdb requirements).
 
 - https://github.com/Requarks/wiki /AGPLv3/js/vue
   - https://js.wiki/

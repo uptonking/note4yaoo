@@ -29,8 +29,8 @@ modified: 2021-09-26T16:44:04.493Z
   - 减少焦虑、减少自己的兴趣，专注
   - 技术代表作: 打磨编辑器、表格, 
     - 去掉react依赖，move logic from components to stores
-    - 探索协作层sync-layer最佳实践，logux/text-crdt/db层
-    - 重构组件，支持纯前端与服务端2种模式，似乎logux支持
+    - 支持外部数据源，即纯前端与服务端2种模式，可参考tanstack-table/logux
+    - 探索协作层sync-layer的最佳实践，logux/text-crdt/db层
     - table迁移到canvas
     - responsive/移动端
   - 目前技术原创性偏低

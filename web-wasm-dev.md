@@ -95,9 +95,46 @@ People should not try to turn WASM into a cult. Tech is meant to be used and lev
     - 不要轻易改变变量的类型
     - Node.js像Java一样也存在JIT预热？
 # blogs
-- [A step-by-step tutorial on Compiling mkbitmap to WebAssembly](https://web.dev/compiling-mkbitmap-to-webassembly/)
 
-- [From Web SQL to SQLite Wasm: the database migration guide - Chrome Developers](https://developer.chrome.com/blog/from-web-sql-to-sqlite-wasm/)
+
+## [Compiling Javascript to wasm - Wasm Builders 🧱](https://www.wasm.builders/gunjan_0307/compiling-javascript-to-wasm-34lk)
+- Are there any good reason to use this approach? Because if you want to run JavaScript without a browser, you can just use NodeJS.
+  - So one key reason would be security. Since WebAssembly uses a sandbox model, you can prevent a malicious or buggy JavaScript application from compromising the host. 
+  - Other reasons might be performance and portability. Depending on the application, it might be faster to run the WebAssembly code directly (no Nodejs overhead). 
+  - As for portability, you might run this same application anywhere without recompilation (server, client, edge, IoT, whatever).
+- For me, it was simply getting byte code off my JavaScript files, it's like dream comes true.
+## [WebAssembly入门 - 知乎](https://zhuanlan.zhihu.com/p/278028242)
+
+- ASM.js 是 Mozilla 在 2013 年推出的，是 javaScript 的一个严格子集，可以作为C/C++等其他语言编译的目标语言，从而使得 js 引擎可以采用 AOT(Ahead Of Time) 的编译策略，也就是在运行前直接编译成机器码，因此运行速度会有一定的提升。
+  - ASM.js 标准中还规定了很多类似的标记规则，用于告诉 js 引擎变量的类型，便于进行 AOT 优化。
+
+- WebAssembly 于 2019 年 12 月 5 日成为万维网联盟（W3C）的推荐标准，与 HTML，CSS 和 JavaScript 一起成为 Web 的第四种语言。
+
+- 从 .wasm 源文件到实例化的对象主要有三个步骤，加载 -> 编译 -> 实例化 -> 调用。
+  - 加载：读取 .wasm 字节码到本地中，一般是通过 fetch 从网络中取得。
+  - 编译：在 Worker 线程进行，编译成平台相关的代码。
+  - 实例化：将宿主环境的一些对象、方法导入到 wasm 模块中，比如导入操作 dom 的方法。
+  - 调用：通过上一步已经实例化的对象，来调用 wasm 模块中的方法。
+
+### [javascript为什么不像java一样直接事先编译成字节码然后跑在v8上？ - 知乎](https://www.zhihu.com/question/429597199)
+
+- javascript 一段程序， 翻译到机器码， 体积可能就大个好几倍。 好几倍的体积， 在弱网情况下可就伤了神了。 
+  - v8： 要不你给我源码吧。 我现编译还快。 
+  - 这也是大文件先 zip 再传输。 传输到目标机器上再 unzip 的道理。
+- wasm， 一个浏览器支持的 汇编语言。wasm 编译很快。 因为本身就做了比较严格的要求。 但是传输快不快还得看各个语言编译器的实现。 有的语言要打一个 runtime 包到目标文件里。
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+## [A step-by-step tutorial on Compiling mkbitmap to WebAssembly](https://web.dev/compiling-mkbitmap-to-webassembly/)
+
+## [From Web SQL to SQLite Wasm: the database migration guide - Chrome Developers](https://developer.chrome.com/blog/from-web-sql-to-sqlite-wasm/)
+
 # more
 - [Node.js大家是用什么方式链接C++代码的](https://www.v2ex.com/t/568399)
 - 打算用 electron 做 UI，CPP 做内核。但是在选择使用什么方式在 C++和 electron 之间搭桥的时候遇到了困难。

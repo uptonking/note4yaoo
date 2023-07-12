@@ -242,8 +242,8 @@ modified: 2023-01-01T13:24:35.994Z
 
 - https://github.com/toshi-search/Toshi /202204/rust
   - Toshi is meant to be a full-text search engine similar to Elasticsearch.
-  - https://github.com/quickwit-oss/tantivy
-    - Tantivy is a full-text search engine library inspired by Apache Lucene and written in Rust
+- https://github.com/quickwit-oss/tantivy
+  - Tantivy is a full-text search engine library inspired by Apache Lucene and written in Rust
 
 - bibliothecula /152Star/GPLv3/202107/rust/archived
   - https://github.com/epilys/bibliothecula

@@ -7,9 +7,20 @@ modified: 2022-12-19T01:49:06.760Z
 
 # lang-js-nodejs-community
 
+# guide
+
 # discuss
+- ## 
 
 - ## 
+
+- ## [I finally escaped Node | Hacker News_202103](https://news.ycombinator.com/item?id=26561847)
+- We went away from node as a backend technology for a bunch of reasons. Here's a list of the biggest pain points:
+  - Lack of a good standard API; compared to environments like Java, C# or Go, node's standard library is significantly sparse.
+  - The tendency for small libraries/frameworks leads to a very high number of third party code with all the problems attached; bigger attack surface, licensing challenges, it's economically impossible to vet and review dependencies
+  - There's a tendency in the ecosystem to abandon projects rather soon (~1-2 years) and to keep changing things. Further, we have had several situations where maintainers did not respect semver. The state of documentation of a lot of projects is non-existent.
+  - Lack of multi threading. We have used all the options, including RPC implementations, but that doesn't even come close to approaches like Java threads or go routines. Neither in performance, nor in maintainability.
+  - Lack of typing. That's probably the biggest one. Yes, we use TypeScript, quite extensively even. But TypeScript brings its own problems. First, it's only declarative. If you have a `something: number` , there's no guarantee that it's actually a number upon execution, so if you have a bug in a layer interacting with another system, that might fail a couple levels deep. You hence end up with type checks at some places and you cannot really trust it anyway. Second, TypeScript's tooling is slow and has some annoying quirks (e.g. aliases not being resolved upon compilation). Having aliases allowing to shorten import paths is a big, big win, though. Third, the typing, given the complexity of JavaScript, can be confusing, sometimes even seemingly impossible to get right.
 
 - ## [node.js和前端js有什么区别？](https://www.zhihu.com/question/60164095/answers/updated)
 
@@ -30,9 +41,7 @@ modified: 2022-12-19T01:49:06.760Z
     - database（数据库）
 - node.js就是把js作为编程语言工具的一种，进行了扩展，来实现各种后端操作。
   - 所谓后端，更多的关注各种数据结构，运算逻辑，如果非要用前端的方式去理解，学学用js画canvas吧，画个绽放的烟花，后端的算法也就感受一二了。
-
-- ## node environment vs browser environment
-
+# node environment vs browser environment
 - ### [Differences between Node.js and the Browser](https://nodejs.dev/learn/differences-between-nodejs-and-the-browser)
 - In the browser, most of the time what you are doing is interacting with the DOM, or other Web Platform APIs like Cookies. 
   - Those do not exist in Node.js, of course. 

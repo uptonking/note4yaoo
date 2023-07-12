@@ -14,7 +14,10 @@ modified: 2023-03-01T13:00:27.664Z
 
 - ## 
 
-- ## 
+- ## @Tan_Stack Actions just got some upgrades to be on par with TanStack Loaders.
+- https://twitter.com/tannerlinsley/status/1678498390873886720
+  - This is a smaller, lighter library meant to be used with Router + Loaders.  Think of it like `useMutation` , but more composable, bite-size and less-opinionated.
+  - It's really just an extremely tiny state manager special-built for router-based mutation flows
 
 - ## bling: new javascript framework?
 - We're currently working on a prototype right now.

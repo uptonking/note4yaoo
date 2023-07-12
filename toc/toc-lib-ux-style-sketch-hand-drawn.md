@@ -122,18 +122,23 @@ modified: 2021-01-13T19:30:59.508Z
   - https://bafs.github.io/Gutenberg
   - Modern framework to print web pages correctly
   - Gutenberg.css is the base stylesheet but there are themes available in the themes folder.
-
+# 古文
 - https://github.com/ethantw/Han /2kStar/MIT/201903/js
   - https://hanzi.pro/
   - Han.css: the CSS typography framework optimised for Hanzi.
   - 「汉字标准格式」是一套支援各种印刷效果的Sass + JavaScript排版框架
   - 集成「语意样式标准化」「文字设计」「高级排版功能」三大模组，并为繁体中文、简体中文及日文配置的本地化设计
+
 - https://github.com/sivan/heti
   - https://sivan.github.io/heti/
   - 专为中文网页内容设计的排版样式增强。 
   - 预置多种排版样式（行间注、多栏、竖排等）；
   - 中英文混排优化：无论你的输入习惯是否在中西文间留有空格，都会统一成标准间距（¼字宽的空白）；
   - 标点挤压：自动对中文标点进行½字宽的挤压（弯引号和间隔符挤压¼字宽）
+- https://github.com/crazyurus/ancient-heti
+  - https://ancient-heti.vercel.app/
+  - 古文，采用 heti.css 排版
+
 - https://github.com/KyleAMathews/typography.js
   - http://kyleamathews.github.io/typography.js/
   - /3.5kStar/MIT/202008/js

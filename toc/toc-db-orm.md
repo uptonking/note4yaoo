@@ -196,7 +196,10 @@ modified: 2021-08-30T18:56:09.644Z
   - Talent Plan 301 课程 TinySQL, 实现一个 Mini 版本的分布式关系型数据库
   - Talent Plan 302 课程 TinyKV, 实现一个 Mini 版本的分布式 Key-Value 数据库
 
-- https://github.com/unum-cloud/ukv /cpp
+- https://github.com/risinglightdb/risinglight /rust
+  - An OLAP database system for educational purpose
+
+- https://github.com/unum-cloud/ukv /cpp/modular
   - Modular Transactional NoSQL Database
   - choose either: RocksDB • LevelDB • UDisk • UMem 
   - to store: Blobs • Documents • Graphs • Vectors • Texts

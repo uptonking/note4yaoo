@@ -76,7 +76,7 @@ modified: 2021-01-16T20:24:48.984Z
   - remarkjs/remark-react and mdx-js/mdx both can have plugins to the parser and transform plugins.
 
 - https://github.com/wooorm/mdxjs-rs
-  - Did you know that mdxjs-rs (Rust™) is 7 times faster than mdx-js/mdx (JavaScript), even from Node.js?!
+  - Did you know that mdxjs-rs is 7 times faster than mdx-js/mdx (JavaScript), even from Node.js?!
   - https://twitter.com/wooorm/status/1645857458982645761
     - it's basically the same algorithm in JS and in RS.
     - a lot of the performance win with "rewrite it in rust" is using better algos.
