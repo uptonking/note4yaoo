@@ -278,6 +278,10 @@ $$('[contenteditable]')
 
 ## 070
 
+## 0712
+
+- [Dribbble Color Palette not matching ColorZilla Color PIcker : dribbble](https://www.reddit.com/r/dribbble/comments/d1chf6/dribbble_color_palette_not_matching_colorzilla/)
+  - The dribbble palette is a rough guide of the colors used in an image, ColorZilla will give you the accurate color for a specific pixel.
 ## 0711
 
 - [为什么 Python（或 Ruby、Perl 等）没有取代 Bash 成为系统 Shell？ - 知乎](https://www.zhihu.com/question/20506693)

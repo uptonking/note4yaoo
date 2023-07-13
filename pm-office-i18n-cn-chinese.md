@@ -46,6 +46,19 @@ modified: 2023-01-14T15:47:04.431Z
   - performant library for translation and localization in Node.js and the browser.
   - Detection user language in browser and in server requests
   - Easy scope system (nested-object translations)
+# solutions
+- https://github.com/sivan/heti
+  - https://sivan.github.io/heti/
+  - 赫蹏（hètí）是专为中文内容展示设计的排版样式增强
+  - 贴合网格的排版；
+  - 预置多种排版样式（行间注、多栏、竖排等）；
+  - 中西文混排美化，不再手敲空格，（基于 JavaScript 脚本）
+  - 全角标点挤压（基于 JavaScript 脚本）；
+  -  繁体中文支持
+  - 自适应黑暗模式
+  - https://github.com/sivan/devonthink-heti
+    - https://sivan.github.io/devonthink-heti/
+    - 基于赫蹏为 DEVONthink 的 Markdown 预览和 RSS 阅读器制作的样式，支持黑暗模式。
 # discuss
 - ## 
 
@@ -58,3 +71,10 @@ modified: 2023-01-14T15:47:04.431Z
 - React is a pain to work with external string 
 - [Consider making it possible to evaluate strings like tagged template literals · Issue #19 · tc39/proposal-intl-messageformat](https://github.com/tc39/proposal-intl-messageformat/issues/19)
   - For complex use cases like DOM or React localization, we're not aiming to necessarily provide a direct solution, but the building blocks that allow for its construction.
+
+# 古文
+
+## [css 古文排版(含阿拉伯数字) - 简书](https://www.jianshu.com/p/7e42b6145101)
+- 古文排版：从右到左，从上到下。基本用`writing-mode: vertical-rl;`都能解决。
+  - 但是，如果文字中含有阿拉伯数字，排版就会和你预期不一样。
+  - 针对阿拉伯数字那块，可以用`text-combine-upright: all;`来处理

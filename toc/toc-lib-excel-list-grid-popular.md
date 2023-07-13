@@ -20,6 +20,7 @@ modified: 2022-08-21T10:02:27.788Z
   - closer to excel
   - virtualized
   - keyboard/a11y
+  - mobile friendly
   - optimized for text-table/markdown-table
   - support list
   - image

@@ -91,17 +91,17 @@ modified: 2021-01-13T19:30:59.508Z
   - A composable editor canvas library.
   - 基于svg实现的图形编辑器
   - 提供了多种编辑场景示例
-# canvas-drawing-
-- https://github.com/dlemrry/editor
+# canvas-drawing
+- https://infinitecanvas.tools/gallery/
+  - 画板类产品列表
+  - The infinite canvas is the foundation of a new class of apps from design tools, to code editors, and workspaces.
+
+- https://github.com/dlemrry/editor /202109/js/inactive
   - real time collaborative documents using web socket
   - Web application for editing texteditor and painting canvas in real-time collaboration.
   - 展示了 quill、draftjs、canvas+mousemove 几个示例
   - 提供了client+server，可作为通用协作方案
-
-- https://infinitecanvas.tools/gallery/
-  - 画板类产品列表
-  - The infinite canvas is the foundation of a new class of apps from design tools, to code editors, and workspaces.
-# paper
+# typesetting
 - https://github.com/imrishabh18/text-to-handwriting
   - https://imrishabh18.github.io/text-to-handwriting
   - convert text copied or typed into handwriting, which can be downloaded in images making it look real.
@@ -122,8 +122,15 @@ modified: 2021-01-13T19:30:59.508Z
   - https://bafs.github.io/Gutenberg
   - Modern framework to print web pages correctly
   - Gutenberg.css is the base stylesheet but there are themes available in the themes folder.
-# 古文
-- https://github.com/ethantw/Han /2kStar/MIT/201903/js
+
+- https://github.com/KyleAMathews/typography.js
+  - http://kyleamathews.github.io/typography.js/
+  - /3.5kStar/MIT/202008/js
+  - Typography is a complex system of interrelated styles. 100s of style declarations on dozens of elements must be in harmonious order. Trying one design change can mean making dozens of tedious recalculations and CSS value changes. Creating new Typography themes with CSS feels hard.
+  - You can provide configuration to the Typography.js JS api and it uses its Typography engine to generate CSS for block and inline elements.
+  - Typography.js themes are simple Javascript objects. As such they're easy to share across projects
+# 汉字与排版
+- https://github.com/ethantw/Han /2kStar/MIT/201903/js/inactive
   - https://hanzi.pro/
   - Han.css: the CSS typography framework optimised for Hanzi.
   - 「汉字标准格式」是一套支援各种印刷效果的Sass + JavaScript排版框架
@@ -135,16 +142,33 @@ modified: 2021-01-13T19:30:59.508Z
   - 预置多种排版样式（行间注、多栏、竖排等）；
   - 中英文混排优化：无论你的输入习惯是否在中西文间留有空格，都会统一成标准间距（¼字宽的空白）；
   - 标点挤压：自动对中文标点进行½字宽的挤压（弯引号和间隔符挤压¼字宽）
-- https://github.com/crazyurus/ancient-heti
-  - https://ancient-heti.vercel.app/
-  - 古文，采用 heti.css 排版
+  - https://github.com/crazyurus/ancient-heti
+    - https://ancient-heti.vercel.app/
+    - 古文，采用 heti.css 排版
 
-- https://github.com/KyleAMathews/typography.js
-  - http://kyleamathews.github.io/typography.js/
-  - /3.5kStar/MIT/202008/js
-  - Typography is a complex system of interrelated styles. 100s of style declarations on dozens of elements must be in harmonious order. Trying one design change can mean making dozens of tedious recalculations and CSS value changes. Creating new Typography themes with CSS feels hard.
-  - You can provide configuration to the Typography.js JS api and it uses its Typography engine to generate CSS for block and inline elements.
-  - Typography.js themes are simple Javascript objects. As such they're easy to share across projects
+- https://github.com/sparanoid/chinese-copywriting-guidelines
+  - https://sparanoid.com/note/chinese-copywriting-guidelines/
+  - 统一中文文案、排版的相关用法，降低团队成员之间的沟通成本
+
+- https://github.com/sofish/typo.css
+  - 目标：一致化浏览器排版效果，构建最适合中文阅读的网页排版。包括桌面和移动平台。
+  - 强制换行：添加 .textwrap 到文本所在的容器，如果是 table 测还需要 .textwrap-table
+
+- https://github.com/Haixing-Hu/typesetting-standard
+  - 中文书刊排版相关标准和规范
+
+## 排版工具
+
+- https://github.com/satouriko/copywriting-correct
+  - 中英文文案排版纠正器。
+  - 本项目是 ricoa/copywriting-correct 的 JavaScript 实现。
+  - 基于 中文文案排版指北（简体中文版） 进行纠正，帮助解决中英文混排的排版问题，提高文案可阅读性。
+
+## 支持中文的字体
+
+- https://github.com/Warren2060/Chillkai
+  - 寒蝉正楷体，为优化中西文排版的楷体项目
+  - 由中文字体 全字库正楷体 和西文字库 Gentium 整合优化
 # wireframe
 - https://github.com/tsx/shireframe
   - http://rawgit.com/tsx/shireframe/master/examples/doodle.html

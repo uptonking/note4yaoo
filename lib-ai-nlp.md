@@ -15,6 +15,10 @@ modified: 2023-03-03T08:06:36.592Z
 # nlp-products
 
 # nlp-datasets
+- https://github.com/fighting41love/funNLP
+  - 几乎最全的中文NLP资源库
+  - 中英文敏感词、语言检测、中外手机/电话归属地/运营商查询、名字推断性别、手机号抽取、身份证抽取、邮箱抽取、中日文人名库、中文缩写库、拆字词典、词汇情感值、停用词、反动词表、暴恐词表、繁简体转换、英文模拟中文发音
+
 - https://github.com/tech-podcasts/JinJinLeDao_QA_Dataset
   - 做了一个基于中文播客的问答数据集，这个数据集来自《津津乐道》播客，包含了18, 663个中文问答对，这些问答对根据281个播客节目字幕，配合GPT-3.5和提示词自动生成。
 # translation
