@@ -10,11 +10,15 @@ modified: 2022-11-07T10:58:24.512Z
 # guide
 
 # ideas
-- 搜集碎片数据
+- 数据碎片搜集
   - pc, mobile, browser ext
     - list-pin
     - 复制列表/表格数据
     - 表格行列数统计
+  - 数据整理
+    - 各级统计局
+    - 国外统计局
+    - 权威公开数据
 
 - color-mode-converter
   - rgb-hsl-hsv/b-contrast

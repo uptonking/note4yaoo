@@ -47,6 +47,9 @@ modified: 2023-01-14T15:47:04.431Z
   - Detection user language in browser and in server requests
   - Easy scope system (nested-object translations)
 # solutions
+- tips
+  - 参考各种中文版本标准或产品
+
 - https://github.com/sivan/heti
   - https://sivan.github.io/heti/
   - 赫蹏（hètí）是专为中文内容展示设计的排版样式增强
@@ -75,6 +78,7 @@ modified: 2023-01-14T15:47:04.431Z
 # 古文
 
 ## [css 古文排版(含阿拉伯数字) - 简书](https://www.jianshu.com/p/7e42b6145101)
+
 - 古文排版：从右到左，从上到下。基本用`writing-mode: vertical-rl;`都能解决。
   - 但是，如果文字中含有阿拉伯数字，排版就会和你预期不一样。
   - 针对阿拉伯数字那块，可以用`text-combine-upright: all;`来处理
