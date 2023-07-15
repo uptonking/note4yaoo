@@ -29,8 +29,28 @@ modified: 2023-06-22T07:22:04.591Z
 - [Ubuntu 明年将推出完全基于 Snap 的桌面版本_202306](https://www.oschina.net/news/243309/immutable-all-snap-ubuntu-desktop)
 # appimage
 
-# discuss
+- [Appimagehub.com](https://www.appimagehub.com/)
+  - This catalog has 1282 AppImages
+  - https://github.com/prateekmedia/appimagepool
+    - modern AppImageHub Client, powered by flutter.
 
+- https://github.com/TheAssassin/AppImageLauncher
+  - https://github.com/TheAssassin/AppImageLauncher/wiki
+  - AppImageLauncher is a novel and unique solution of integrating with the system. It intercepts all attempts to open an AppImage to provide its integration features.
+
+- https://github.com/SalaniLeo/Immagini
+  - An application made to easily manage and create .AppImage apps
+
+- https://github.com/mijorus/gearlever
+  - Manage AppImages with ease 
+
+- https://github.com/ryonakano/pinit
+  - Create the shortcut to your favorite portable apps into your app launcher.
+
+- https://github.com/AppImage/AppImageKit
+  - https://appimage.org/
+  - AppImageKit is a concrete implementation of the AppImage format, especially the tiny runtime that becomes part of each AppImage.
+# discuss
 - ## 
 
 - ## 

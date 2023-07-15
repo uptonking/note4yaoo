@@ -19,11 +19,10 @@ modified: 2022-10-23T14:57:23.473Z
   - later
     - hitu插件使用国漫人物
 
-- https://github.com/nordtheme/nord /MIT
-  - https://www.nordtheme.com/docs/colors-and-palettes
-  - A total of sixteen, carefully selected, dimmed pastel colors
-  - 雪白: #fffef9(色谱)   银白: #e9e6f1(黄仁达)
-  - 烟墨: #3F3F3C(王定理) 银鼠灰: #71727A(王定理)
+- 传统色-bookmarks
+  - 传统色很少用蓝色
+  - 铅白: #f0f0f4(网红)   银白: #e9e6f1(黄仁达)  经典背景色: #fafafa
+  - 烟墨: #3F3F3C(王定理) 银鼠灰: #71727A(王定理) 青灰: #575A5D(王定理)
   - 胭脂: #952E3A(王定理) 玫瑰红: #D2357D(色谱)
   - 丁香: #cca4e3(满庭芳) 洋葱紫: #a8456b(色谱)
   - 缃色: #ecd452(郭浩)   杏黄: #f28e16(色谱) 
@@ -32,17 +31,15 @@ modified: 2022-10-23T14:57:23.473Z
   - 葱绿: #94C66B(王定理) 铜绿: #2bae85(色谱) 
   - 群青: #133d7e(满庭芳) 竹月: #7F9FAF(郭浩) 
   - 石青: #4F64AE(黄仁达) 孔雀蓝: #4994C4(郭浩)
+
+- https://github.com/nordtheme/nord /MIT/16色
+  - https://www.nordtheme.com/docs/colors-and-palettes
+  - A total of sixteen, carefully selected, dimmed pastel colors
   - #1d2129
   - #2E3440 #434C5E #434C5E #4C566A
   - #D8DEE9 #E5E9F0 #ECEFF4   #f1f3f5 #f2f4f8
   - #8FBCBB #88C0D0 #81A1C1 #5E81AC
   - #BF616A #D08770 #EBCB8B #A3BE8C #B48EAD
-  - 苍白: #d1d9e0
-  - 苍黑: #395260
-  - 苍色: #75878a
-  - 苍翠: #519a73
-  - 苍青: #7397ab
-  - 苍黄: #a29b7c
 
 - https://github.com/yeun/open-color /MIT
   - https://yeun.github.io/open-color/
@@ -67,7 +64,7 @@ modified: 2022-10-23T14:57:23.473Z
 > 综合中科院-色谱+王定理-中国的传统色+郭浩-中国传统色满庭芳国色+网红色卡
 
 - usage-xp
-  - 缺少muted-text灰色，暂用银鼠灰替代
+  - 缺少muted-text灰色，暂用青灰/银鼠灰替代
 
 - ## Gray: #808080 /黑白灰
   - slategray/lightslategray: #708090 / #778899
@@ -75,20 +72,20 @@ modified: 2022-10-23T14:57:23.473Z
   - snow: #fffafa
   - ghostwhite: #f8f8ff
   - dimgray/gray/silver/lightgray/lavender/gainsboro/whitesmoke: 灰色，由深到浅
-  - 月白: #d4e5ef(郭浩) #d6ecf0(网红) #D1E2DE(王定理) #eef7f2(色谱) #ebf5f2(黄仁达)
-  - 银白: #e9e7ef(网红) #e9e6f1(黄仁达) #f1f0ed(色谱) #EBE5D5(王定理) #cdd1d3(银鱼白-色谱)
-  - 铅白(国画颜料): #f0f0f4 #fffcf0(黄仁达)
-  - 凝脂: #e7e7e7(满庭芳) #F5F2E9(郭浩)
+  - 月白: #d4e5ef(郭浩--偏蓝) #d6ecf0(网红) #D1E2DE(王定理) #eef7f2(色谱--有点绿) #ebf5f2(黄仁达)
+  - 银白: #e9e7ef(网红--偏灰) #e9e6f1(黄仁达) #f1f0ed(色谱--有点黄) #EBE5D5(王定理--偏黄) #cdd1d3(银鱼白-色谱--青灰)
+  - 铅白(国画颜料): #f0f0f4(网红--有点灰) #fffcf0(黄仁达--偏黄)
+  - 凝脂: #e7e7e7(满庭芳--暗灰) #F5F2E9(郭浩--偏黄)
   - 米色: #eeead9 #f9e9cd(色谱) #E9E6C5(王定理)
-  - 鱼肚白: #f7f4ed(色谱) #cdd1d3(银鱼白-色谱) #fcefe8(网红)
-  - 瓷白: #FFFFFB(黄仁达)
-  - 雪白: #FFFEF9(色谱) #f2fdff(网红)
+  - 鱼肚白: #f7f4ed(色谱--偏黄) #cdd1d3(银鱼白-色谱) #fcefe8(网红)
+  - 瓷白: #FFFFFB(黄仁达--淡黄灰)
+  - 雪白: #FFFEF9(色谱--淡黄灰) #f2fdff(网红)
   - 象牙: #FFFEF8(色谱) #fffbf0(网红)
-  - 玉白: #FDFCF3(黄仁达)
-  - 乳白: #F9F4DC(色谱)
-  - 练色/素色: #FFFBE7(黄仁达)
+  - 玉白: #FDFCF3(黄仁达--淡黄灰)
+  - 乳白: #F9F4DC(色谱--黄灰)
+  - 练色/素色: #FFFBE7(黄仁达--黄灰)
   - 素: #E0F0E9(画师)
-  - 苍白: #d1d9e0
+  - 苍白: #d1d9e0(网红-青灰)
   - 苍黑: #395260
   - 苍色: #75878a #519673(黄仁达)
   - 墨灰: #758a99
@@ -96,7 +93,7 @@ modified: 2022-10-23T14:57:23.473Z
   - 老银: #bacac6
   - 蜜合: #DFD7C2(郭浩)
   - 云母白: #C6BEB1(郭浩) #fdfcf5(黄仁达)
-  - 银鱼白: #CDD1D3(色谱)
+  - 银鱼白: #CDD1D3(色谱-青灰)
   - 月影白: #C0C4C3(色谱)
   - 玄色: #622a1d(黄仁达)
   - 玄天: #6B5458(郭浩) #2e201d(满庭芳)
@@ -109,8 +106,8 @@ modified: 2022-10-23T14:57:23.473Z
   - 烟墨: #3F3F3C(王定理) #5C4F55(郭浩) #585248(墨黪-郭浩)
   - 铁灰: #37444B(王定理) #5b423a(淡铁灰-色谱)
   - 青灰: #575A5D(王定理--做字色很深) #6a6e71(黄仁达) #2B333E(色谱) 
-  - 银灰: #acb8be(黄仁达) #918072(色谱) #c1b2a3(淡银灰-色谱) #B2AE9B(深银灰-王定理)
   - 银鼠灰: #71727A(王定理) #b4b4b5(黄仁达) #B5AA90(色谱) 
+  - 银灰: #acb8be(黄仁达) #918072(色谱) #c1b2a3(淡银灰-色谱) #B2AE9B(深银灰-王定理)
   - 草灰: #675B46(王定理) #363532(灯草灰-王定理)
   - 铅灰: #BBB5AC(色谱)
   - 珍珠灰: #E4DFD7(色谱)

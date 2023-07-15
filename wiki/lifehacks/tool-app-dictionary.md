@@ -119,6 +119,10 @@ modified: 2023-07-08T12:47:00.141Z
 
 ## usage
 
+- 某些字典文件会把css打包进mdx或mdd中，此时覆盖样式的方法
+  - 打开devtools，inspect元素样式找到样式文件的名称如ahd52017.css，注意大小写
+  - 然后在本地新建同名css文件，再把原文件内容copy过来修改，注意覆盖样式要考虑已打包的样式名，增加specificity
+
 - [GoldenDict的简繁转换【已解决】](https://forum.freemdict.com/t/topic/2662)
   - 也就只能实现简繁搜索，不能简繁转换词典正文？
   - 没错，仅仅是把搜索词转换一下
@@ -147,4 +151,7 @@ modified: 2023-07-08T12:47:00.141Z
   - [求一个进Z-library的方法? - 知乎](https://www.zhihu.com/question/532521148/answers/updated)
   - [zhelper search 配置小工具](https://tool.yibook.org/)
   - [图书检索系统](https://ps.uuttdx.com/)
+# utils-repos
+- https://github.com/Litles/AutoMdxBuilder /python
+  - 自动化制作 mdx 词典工具，人人都可以制作电子词典
 # more

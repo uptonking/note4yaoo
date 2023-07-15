@@ -10,6 +10,9 @@ modified: 2021-01-01T15:57:59.157Z
 # guide
 
 # 统计局
+- tips
+  - 查找数据成果或出版物时，可不根据搜索关键字，而根据作者或出版单位的所有作品排序
+
 - [Fun的小作坊 数据资源+干货分享基地 👉🏻需付费 - 知乎](https://www.zhihu.com/column/c_1269445456717230080)
   - [有没有国家统计局这样数据的API？ - 知乎](https://www.zhihu.com/question/27144737/answers/updated)
 
@@ -32,6 +35,7 @@ modified: 2021-01-01T15:57:59.157Z
 ## [统计年鉴数据库](http://statsdatabank.com/)
 
 ### 版权相关
+
 - [购买数据](http://47.93.57.215/doc/sysreadme.html)
   - 本系统是一个收费的系统，除了部分向用户的免费提供的数据外，系统用户查看使用的数据都是需要购买的
 # gis-cn

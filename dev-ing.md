@@ -278,10 +278,47 @@ $$('[contenteditable]')
 
 ## 070
 
+## 0714
+
+- [How can I replace text with CSS? - Stack Overflow](https://stackoverflow.com/questions/7896402/how-can-i-replace-text-with-css)
+
+```CSS
+.pvw-title {
+  font-size: 0;
+}
+
+.pvw-title:after {
+  font-size: 1rem;
+  content: 'I am a totally different piece of text!';
+}
+```
+
+- [html - How do I vertically center text with CSS? - Stack Overflow](https://stackoverflow.com/questions/8865458/how-do-i-vertically-center-text-with-css)
+  - Don't set the height attribute of the div, but instead use padding: to achieve the effect. 
+  - Similarly to line-height, it only works if you have one line of text. 
+  - Although this way, if you have more content, the text will still be centered, but the div itself will be slightly larger.
+
+```CSS
+/* instead of going with: */
+
+div {
+  height: 120px;
+  line-height: 120px;
+}
+
+/* to */
+
+div {
+  padding: 60px 0;
+  /* Maybe 60 minus font-size divided by two, if you want to be exact */
+}
+```
+
 ## 0712
 
 - [Dribbble Color Palette not matching ColorZilla Color PIcker : dribbble](https://www.reddit.com/r/dribbble/comments/d1chf6/dribbble_color_palette_not_matching_colorzilla/)
   - The dribbble palette is a rough guide of the colors used in an image, ColorZilla will give you the accurate color for a specific pixel.
+
 ## 0711
 
 - [为什么 Python（或 Ruby、Perl 等）没有取代 Bash 成为系统 Shell？ - 知乎](https://www.zhihu.com/question/20506693)
@@ -359,7 +396,7 @@ $$('[contenteditable]')
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
-  - spacing is important in `calc()` css function,                   `calc(24rem - 13px)`; 
+  - spacing is important in `calc()` css function,                        `calc(24rem - 13px)`; 
   - You just need to add a space around the minus operator
 
 - [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)
