@@ -12,7 +12,7 @@ modified: 2023-02-05T18:39:58.183Z
 - roadmap
   - multi tenancy 多租户
 # dev
-
+- [How To Build A Multi-Tenant App With Payload](https://payloadcms.com/blog/how-to-build-a-multi-tenant-app-with-payload)
 # nocobase
 - roadmap
   - 快速复制一张表结构，然后导入数据

@@ -39,7 +39,10 @@ modified: 2022-06-13T02:56:51.029Z
 
 - ## 
 
-- ## 
+- ## 如果把 IndexedDB 当成一个 KV 缓存，如何实现过期一个月自动清除呢？ 有什么思路吗？
+- https://twitter.com/hamsterbase/status/1679479640753340418
+- 可参考支持过期失效的localStorage
+- Value头部带过期时间，懒删除+定时删除
 
 - ## [Indexing array values in an object in an IndexedDB - Stack Overflow](https://stackoverflow.com/questions/36921561/indexing-array-values-in-an-object-in-an-indexeddb)
 - the missing of the possibility to index object values in arrays, makes using indexedDB really unneeded complicated. It's a failure in design. This forces the developer to do things like in relational DBs, while lacking all the possibilities of SQL. 

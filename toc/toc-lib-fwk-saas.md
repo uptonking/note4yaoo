@@ -16,6 +16,8 @@ modified: 2021-05-25T09:41:29.066Z
   - 基于模板配置生成内容管理界面，无须编写代码
   - 支持 Webhook 触发，可以方便的与外部系统集成
 # saas-multi-tenant
+- [How To Build A Multi-Tenant App With Payload](https://payloadcms.com/blog/how-to-build-a-multi-tenant-app-with-payload)
+
 - [现在主流的saas软件所有租户共用一个数据库吗？ - 知乎](https://www.zhihu.com/question/43650948)
   - 现在主流的saas类软件，比如： 金蝶云ERP， 管家婆云进销存， 纷享销客，阿里丁丁等等， 他们是每个租户有独立的数据库还是共用一个数据库？
 

@@ -40,7 +40,13 @@ modified: 2023-01-09T15:41:17.179Z
 # discuss
 - ## 
 
-- ## 
+- ## Route-based dialogs are not great. But breadcrumbs are great ... btw...
+- https://twitter.com/kentcdodds/status/1679936799291084801
+  - I've removed route-based dialogs from the Epic Stack in favor of full-page routes and breadcrumbs. 
+  - [Remove Route-based Dialogs (and breadcrumbs are great)](https://github.com/epicweb-dev/epic-stack/discussions/309)
+
+- Agreed that dialogs are a UI/UX crutch(支撑物, 支柱). But if you're using them... giving your dialogs their own route is an ice bath of simplicity for your codebase
+- Main use case for route-based dialogs is to prevent the "lost focus on the main page" , normaly happen during Back button or Click the link back to home page. Reddit is good example of using route-based dialog.
 
 - ## Am I the only one that doesn't like file system routers? 
 - https://twitter.com/devongovett/status/1626635855199600660

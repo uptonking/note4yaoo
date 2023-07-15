@@ -29,6 +29,32 @@ modified: 2023-06-19T12:33:38.006Z
 - https://twitter.com/kevin_jahns/status/1440635129928380418
   - https://www.youtube.com/watch?v=Dkn72yYEqNk
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## I'm in the descending phase of the product diamond_202307
+- https://twitter.com/steveruizok/status/1676332626293014528
+  - with tldraw, I initially wanted to build a general purpose abstraction for "infinite canvas" user interfaces. But taking stock of the project, I'm not sure we've done that.
+  - What we have _built_ is a hackable, customizable, and fundamentally excellent whiteboard. If I presented it (or sold it) as anything more than that, I think that would be misleading.
+  - Whiteboards are complex enough on their own. In order to make it better for being a whiteboard, we've made it worse for other things. It certainly can be extended in some really powerful ways but it does not quite contain the multitudes that I initially imagined.
+- 👉🏻 If I squint(眯眼/斜视) at it, I can make out the borders of the general abstraction. 
+  - A lot would be the same: the **in memory database and signals**, most of the **event system**, the way we approach **camera control and culling(挑选/挑出)**, the use of outlines and transforms...
+- I think we could do that. I think it would be extremely useful and cool and successful as an open source project. I don't think it would be as strictly valuable as creating a very good whiteboard, though.
+- A little art school lesson is that you're never really "starting from scratch". Your creativity is always bounded by conditions, materials, time, place, light, etc; and so your work is never completely your own. Relax!
+  - Have an outcome in mind but always be ready to treat the present state as a fresh set of initial circumstances. Stop drawing A and start drawing B, same drawing. It's no less your own, the twists and turns are yours too.
+- Anyway, for tldraw, I think we need to look where we're at and adjust the direction to be more of what it is rather than more of what it isn't.
+
+- ## we’re talking about how to roll out a commercial product around tldraw’s open source library
+- https://twitter.com/steveruizok/status/1675946321637969920
+  - I’ve looked at a lot of different similar products here, mainly text editors and image editors and maps, how they do it, and where the successful ones end up
+  - It seems like everyone ends up with some variation on “if you want to use this in a commercial product, you need to be a customer”
+  - Originally I thought we would do a free editor as the wedge + services and stuff on top, but that seems like the main value in these kinds of things is the thing itself
+
+- I find a lot of value in the OSS code separate from the product/app. I am recently taking some snippets from tldraw around zooming, panning, cursors etc that have been invaluable, and so tldraw helps ‘lifts all boats’ on the web. but, wouldn’t be possible with commercial licenses
+
+- From my experience, offering users who are willing to pay more features on top makes the most sense for projects where the delineation between business/non-business required features is clear. People who would not respect a license do value their time and reliability.
 # discuss
 - ## 
 
