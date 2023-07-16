@@ -34,16 +34,7 @@ modified: 2023-07-08T12:47:00.141Z
 - dicts
   - [词库使用心得: 同一系列词典中，只留下最精美的和最大的](https://forum.freemdict.com/t/topic/1090)
   - [十大mdict——对你最有用的十大mdict是哪些？](https://forum.freemdict.com/t/topic/9012)
-
-- https://github.com/ikey4u/wikit
-  - Wikit is a free and open-source dictionary program that enable you translate word for different languages
-  - Desktop application for Windows, Linux and MacOS which is developed using tauri and yew.
-  - [全新的mdx/mdd词典制作工具](https://forum.freemdict.com/t/topic/6621)
-  - wikit 的本地词典可以从 mdx 直接生成, 或者从 mdx 的源码生成.
-  - wikit 的server端可以去加载另外一个 server 端的词典, 也就是词典中继, 你可以中继另外一个人的词典
-
-## 词库
-
+# 词库
 - 词库资料
   - [【教学】三、MDX MDD 基础知识](https://forum.freemdict.com/t/topic/1823)
   - [词库种类及使用方法](https://forum.freemdict.com/t/topic/17795)
@@ -52,7 +43,7 @@ modified: 2023-07-08T12:47:00.141Z
   - 有可能只有mdx，也可能是mdx+mdd，即使后者，也只是一部字典，而非多部。但是不可能只有mdd。
   - 坛内常见某字典的mdx（文字）和css文件（排版）更新，mdd（音频和图片数据）却一直不变的情况，这时你也许需要找好几个帖子才能凑齐三个（或更多个）同名但不同后缀的文件才能安好一本词典
 
-### freemdict
+## freemdict
 
 - [FreeMdict - mdx mdd download](https://freemdict.com/)
   - https://downloads.freemdict.com
@@ -84,7 +75,7 @@ modified: 2023-07-08T12:47:00.141Z
   - [现代汉语词典第7版](https://forum.freemdict.com/t/topic/4445)
 - [一些汉语词典（恢复部分词典的图片等数据） - 汉汉](https://forum.freemdict.com/t/topic/16533)
 
-### PDAWIKI
+## PDAWIKI
 
 - [掌上百科 - PDAWIKI](https://www.pdawiki.com/forum/forum.php)
   - [PDAWIKI存档在线浏览/搜索上线](https://forum.freemdict.com/t/topic/20482)
@@ -101,7 +92,40 @@ modified: 2023-07-08T12:47:00.141Z
 - [CC-CEDICT](https://cc-cedict.org/wiki/)
   - The objective of the CEDICT project was to create an online, downloadable (as opposed to searchable-only) public-domain Chinese-English dictionary.
 # en-cn
+- 权威
+  - oxford
+  - ahd
+  - longman
+  - webster
+  - collins
 
+- 英汉
+  - 外研社 新世纪英汉
+  - 陆谷孙 英汉大词典
+  - 李华驹 21世纪英汉
+  - 张柏然 新时代英汉
+# 词库样式
+- test
+  - 常用词: mark, wonder, doubt
+
+- highlight
+  - red, carmine
+
+- notes/category
+  - jadeite
+
+- navigation
+  - ultramarine
+  - 不同级的解释缩进为4px
+
+- word-title-header
+
+- 词性+释义group
+
+- 释义+例句
+
+- fonts
+  - 默认英文18px，中文16px
 # goldendict
 - goldendict /GPLv3
   - 1.5.0-RC2 - 201907
@@ -140,6 +164,7 @@ modified: 2023-07-08T12:47:00.141Z
   - [中国文学大辞典[1991][马良春]](https://forum.freemdict.com/t/topic/13400)
 # books
 - books-online
+  - z-library
   - [超星读书-电子书在线免费阅读网站-中文免费电子书阅读网站](http://book.chaoxing.com/)
 
 - libraries-online
@@ -154,4 +179,11 @@ modified: 2023-07-08T12:47:00.141Z
 # utils-repos
 - https://github.com/Litles/AutoMdxBuilder /python
   - 自动化制作 mdx 词典工具，人人都可以制作电子词典
+
+- https://github.com/ikey4u/wikit /rust
+  - Wikit is a free and open-source dictionary program that enable you translate word for different languages
+  - Desktop application for Windows, Linux and MacOS which is developed using tauri and yew.
+  - [全新的mdx/mdd词典制作工具](https://forum.freemdict.com/t/topic/6621)
+  - wikit 的本地词典可以从 mdx 直接生成, 或者从 mdx 的源码生成.
+  - wikit 的server端可以去加载另外一个 server 端的词典, 也就是词典中继, 你可以中继另外一个人的词典
 # more

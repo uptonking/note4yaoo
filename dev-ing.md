@@ -278,6 +278,16 @@ $$('[contenteditable]')
 
 ## 070
 
+## 0716
+
+- `line-height: normal` 默认值为normal
+  - Depends on the user agent. Desktop browsers (including Firefox) use a default value of roughly `1.2`, depending on the element's `font-family.`
+
+- [css - Margin-Top not working for span element? - Stack Overflow](https://stackoverflow.com/questions/11700985/margin-top-not-working-for-span-element)
+  - vertical margins will not have any effect on non-replaced inline elements.
+  - Always remember one thing: we can not apply margin vertically to inline elements. 
+  - If you want to apply vertical margins then change its `display` type to `block` or `inline-block`
+
 ## 0714
 
 - [How can I replace text with CSS? - Stack Overflow](https://stackoverflow.com/questions/7896402/how-can-i-replace-text-with-css)
@@ -396,7 +406,7 @@ div {
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
-  - spacing is important in `calc()` css function,                         `calc(24rem - 13px)`; 
+  - spacing is important in `calc()` css function,                            `calc(24rem - 13px)`; 
   - You just need to add a space around the minus operator
 
 - [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)
