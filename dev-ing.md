@@ -278,6 +278,11 @@ $$('[contenteditable]')
 
 ## 070
 
+## 0717
+
+- [html - Making a longer and slightly more diagonal slash in css - Stack Overflow](https://stackoverflow.com/questions/39244591/making-a-longer-and-slightly-more-diagonal-slash-in-css)
+  - You can use transform to create a slash instead of using the text.
+
 ## 0716
 
 - `line-height: normal` 默认值为normal
@@ -300,6 +305,20 @@ $$('[contenteditable]')
 .pvw-title:after {
   font-size: 1rem;
   content: 'I am a totally different piece of text!';
+}
+```
+
+```CSS
+/* an element that is positioned absolutely is taken out of the flow and thus takes up no space when placing other elements.
+ */
+button {
+  position: absolute;
+  visibility: hidden;
+}
+
+button:before {
+  content: "goodbye";
+  visibility: visible;
 }
 ```
 
@@ -406,7 +425,7 @@ div {
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
-  - spacing is important in `calc()` css function,                            `calc(24rem - 13px)`; 
+  - spacing is important in `calc()` css function,                               `calc(24rem - 13px)`; 
   - You just need to add a space around the minus operator
 
 - [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)

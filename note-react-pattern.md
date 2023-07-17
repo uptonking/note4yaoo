@@ -21,6 +21,14 @@ modified: 2021-05-11T14:36:13.256Z
 
 - [React conditional rendering: 9 methods with examples - LogRocket Blog](https://blog.logrocket.com/react-conditional-rendering-9-methods/)
 
+## [Which has better performance in JavaScript: a switch or a lookup table?](https://twitter.com/kadikraman/status/1680886385010528256)
+
+- 待确认: You can speed up the lookup access, by checking if it's a property first by using `name in obj`
+
+- I would hope the switch stmt given the compiler knows the choices will never change. Even if you moved the object creation out of the loop.
+
+- The magic of JS, they probably optimize for switch because of the high usage compare to lookup. Note that a lookup has an upfront init cost which makes it useless on small datasets. Bottom line, a constant (0(1)) vs O(n) is a no-brainer.
+
 ## [Conditionally render react components in cleaner way](https://dev.to/hey_yogini/conditionally-render-react-components-in-cleaner-way-1ik5)
 
 - 提出了 enum 和 switch-case 2种方法并讨论，可以是Component或ReactElement(自带实参props)

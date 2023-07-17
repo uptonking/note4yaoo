@@ -12,7 +12,18 @@ modified: 2021-01-06T14:40:11.360Z
 # discuss
 - ## 
 
-- ## 
+- ## Today we run into a fun case with concurrent React 18.
+- https://twitter.com/oleg008/status/1679857963714899970
+  - We had a useEffect that was sometimes not running. 
+  - Turned out by throttling CPU it can be made reliably reproducible.
+  - Turns out you can't rely on useEffect dependencies to run something. 
+- Yes, that's why they do flushSync in v4 of react-use-websocket
+  - Basically it's a feature, not a bug, it batches setState by default so you can't rely that you setState will cause a re-render
+  - [Introduction to React v18 automatic batch updates and flushSync | by Uday Hiwarale | JsPoint | Medium](https://medium.com/jspoint/introduction-to-react-v18-automatic-batch-updates-and-flushsync-9ab9e6c76f0d)
+- 
+- 
+- 
+
 
 - ## Situation: Multiple teams are collaborating to create a single, big React app. How would you handle it?
 - https://twitter.com/housecor/status/1659618313624797186

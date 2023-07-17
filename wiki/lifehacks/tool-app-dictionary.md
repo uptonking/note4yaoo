@@ -163,8 +163,20 @@ modified: 2023-07-08T12:47:00.141Z
   - [第三次基本结束・Wiktionary2023 + OxfordreFerence+中英专业词典](https://forum.freemdict.com/t/topic/10746)
   - [中国文学大辞典[1991][马良春]](https://forum.freemdict.com/t/topic/13400)
 # books
+- z-library
+  - [这个合并了Z-Library、Library Genesis和Sci-Hub](https://forum.freemdict.com/t/topic/18836)
+  - [如何解决Z-Library每日限额已用完](https://forum.freemdict.com/t/topic/14445)
+  - [出版物（图书、期刊杂志……）资源获取经验分享](https://forum.freemdict.com/t/topic/21654)
+  - [无限下载的免费Zlib镜像](https://forum.freemdict.com/t/topic/15961)
+  - A lot of people choose to upload books to Zlibrary which leads to Zlibrary has a larger collection than LibGen.
+
+- books-forum
+  - [哪个网站的电子书最多？ - 知乎](https://www.zhihu.com/question/30026587/answers/updated)
+  - [读秀电子书免费分享，秒传代码方式，不限次数](https://forum.freemdict.com/t/topic/15461)
+    - https://freembook.com/
+  - [易书论坛](https://bbs.yibook.org/)
+
 - books-online
-  - z-library
   - [超星读书-电子书在线免费阅读网站-中文免费电子书阅读网站](http://book.chaoxing.com/)
 
 - libraries-online
