@@ -297,9 +297,7 @@ modified: 2020-12-08T14:44:40.651Z
 - sass
   - 嵌套选择器
   - source-map
-
 # book-CSS设计指南. 第3版_Charles Wyke-Smith_2013
-
 - toc
   - 选择器
   - 盒模型
@@ -371,7 +369,7 @@ modified: 2020-12-08T14:44:40.651Z
     - 可以给父元素新添加最后一个子元素div并clear:left
     - 还可以通过伪元素:after给父元素添加一个无高度且clear过的伪元素
 
-``` CSS
+```CSS
 .clearfix:after {
   content: ".";
   display: block;

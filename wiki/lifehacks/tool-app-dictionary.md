@@ -105,18 +105,21 @@ modified: 2023-07-08T12:47:00.141Z
   - 李华驹 21世纪英汉
   - 张柏然 新时代英汉
 # 词库样式
+- tips
+  - 样式方案暂用rgb，红色核心、蓝色导航、绿色说明
+
 - test
   - 常用词: mark, wonder, doubt
 
-- highlight
+- highlight 红色突出核心释义
   - red, carmine
 
-- notes/category
-  - jadeite
-
-- navigation
+- navigation 蓝色突出导航与结构
   - ultramarine
   - 不同级的解释缩进为4px
+
+- notes/category 绿色突出补充说明与注意事项
+  - jadeite
 
 - word-title-header
 
