@@ -105,3 +105,12 @@ modified: 2022-01-05T14:36:28.057Z
 - One thing I suggest most of the time: if someone use zustand + immer, my recommendation is to try valtio instead.
   - I suggest considering valtio if they haven't, for people who consider zustand with immer middleware. 
   - If people prefer the mutable state model, it's a built-in feature in valtio, whereas zustand is basically on the immutable state model. 
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## We have three state management libraries at Poimandres. What's in common is they prefer simpler APIs
+- https://twitter.com/dai_shi/status/1681514924173037569

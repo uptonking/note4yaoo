@@ -124,7 +124,7 @@ modified: 2022-12-20T05:39:08.948Z
   - I’d describe it as a graph-based successor to Firebase.
   - You have relational queries and basic auth. Optimistic updates come out of the box, and everything is reactive. 
 - we started with SQL but ended up with a triple store and a query language that transpiles to Datalog.
--  Why triple store? What query language? read on.
+- Why triple store? What query language? read on.
 
 - Delightful Apps
   - Optimistic Updates

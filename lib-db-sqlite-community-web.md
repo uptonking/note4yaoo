@@ -12,6 +12,31 @@ modified: 2022-11-25T09:47:43.079Z
 # discuss
 - ## 
 
+- ## 
+
+- ## Thinking about local-first apps with SQLite for apps without auth.
+- https://twitter.com/ralex1993/status/1679877455308283907
+  - Run a single server with a SQLite database.
+  - Backup that database to file storage like S3
+  - Every browser client downloads the database to OPFS
+  - Hacked browser-based ORM so writes are HTTP proxied to server
+- OBFS = Origin Private File System, a way to store big files in browser-based apps.
+  - This would depend on a realtime sync engine to get origin DB updates to connected browsers.
+  - And I still have no idea how to do auth and gated content in local-first apps. It's a tough problem.
+  - So so so many other caveats with this approach. It's a seriously idle thought, and I've considered exactly 0 implementation details or edge cases. But it could be a fun experiment.
+
+- I've had requests for something similar with Litestream. People wanted to stream up to S3 and then have replicas stream down. The latency is not great but the bigger problem is usually egress cost ($0.09/GB).
+
+- ## I'm looking for feedback on an idea I have for massively scaling @Cosmos infra costs by serving just the node's DB over the internet and running the node in the browser.
+- https://twitter.com/assafmo/status/1681659436329488384
+- 💡 How it works:
+  - Run a regular node with a PostgreSQL/SQLite DB backend
+  - Compile a version of the node to Wasm. We just need the query & simulation logic, no need to keep up with blocks or p2p.
+  - Run that node in the browser, connecting to the remote DB
+  - Profit
+- This would massively reduce the infrastructure costs of running @CosmosSDK nodes just to serve queries, as this delegates the heavy computations to the client, while the backend only serves the DB.
+- However, there are some technical challenges that would need to be addressed in order to implement this idea. Namely, compiling just the relevant parts to Wasm, but also how to run that node in the browser in a way that it would still be compatible with current client libraries.
+
 - ## vlcn: One of the things I'm most excited for is partnering with the LibSQL folks to create a custom syntax for defining tables which are backed by CRDTs!
 - https://twitter.com/tantaman/status/1643588081067384834
 

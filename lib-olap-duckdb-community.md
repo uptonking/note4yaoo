@@ -35,7 +35,14 @@ modified: 2022-12-05T16:01:25.243Z
 
 - ## 
 
-- ## 
+- ## I'm gonna use it(duckdb) with WASM to let users query data in the browser, but otherwise, I don't see what problem it solves that sqlite doesn't.
+- https://twitter.com/JamesTimmins/status/1676742803114827776
+- right now i think embedded use cases are #1, single machine ETL and analytics use cases are growing. 
+  - @matsonj has built something here. 
+  - @lloydtabb has built some nice malloy demos that leverage duckdb well. 
+  - single write really limits broader use cases right now tho
+- Here’s an example of using DuckDB to do distributed queries against flat log files, saving nearly 90% over moving the data to a lake 
+- One fairly straightforward application that DuckDB does very well is ingesting CSV or JSON files into Parquet. Very lightweight installation because it doesn't need a cluster of any sort, good speed and the fact it's SQL allows you to do some light data cleansing right away
 
 - ## Larger than RAM group bys have landed in @DuckDB 's master branch!_20230705
 - https://twitter.com/__AlexMonahan__/status/1676598327117328385

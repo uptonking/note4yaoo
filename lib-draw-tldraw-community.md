@@ -29,10 +29,43 @@ modified: 2023-06-19T12:33:38.006Z
 - https://twitter.com/kevin_jahns/status/1440635129928380418
   - https://www.youtube.com/watch?v=Dkn72yYEqNk
 
-# discuss-stars
+# discuss-kickstarter
 - ## 
 
-- ## 
+- ## We’ve been spending the last few weeks figuring out our product strategy around tldraw’s developer library. 
+- https://twitter.com/glipsman/status/1681319437285359619
+  - The original plan was extremely loose: build something that people liked, make it available in alpha, and see what our users were asking for.
+  - Granted I’m only seeing the engaged users in our community, who might be more on the experimental customization and extension side: folks who are looking for an canvas engine rather than a drop-in whiteboard. The latter might be well served, numerous, but silent about it.
+  - Our sales would tell that story… which is all the more reason to find the seam between the open source product and the commercial offering.
+
+- We’ve got a lot of options there.
+- The easiest would be to fold tldraw into a single close source library, create a lot of docs and demos, and then sell licenses / distributions on a customer-by-customer basis.
+  - We could split the library into a free offering (permissively licensed) with fewer features and a customer library with the rest. This dual licensed approach would also rely on separate distributions.
+- Another option would be to release the full version under a restrictive license (eg with a watermark that should not be removed) and the same version without that watermark.
+  - Possibly the same distribution but with a prop that accepts either “I’m a customer” or “I’m using this in a non commercial product” and rely on good faith.
+  - The benefit of this approach is that everyone gets to evaluate the full version, we wouldn’t need a separate distribution, and it gives a more clear purpose to the free offering.
+  - The downside would be that it would greatly reduce the amount of permissibly licensed stuff that we offer.
+  - In order to keep this option open and interesting, I’ve spent the last week extracting almost all of the tldraw-product-specific code out of our editor library, so that the core can remain open and permissively licensed in any case.
+- Another direction, and one we’ve also been exploring this summer, is rearchitecting tldraw as an extensions first library.
+  - That would open up other options: having a free core, free packages, and then premium packages and premium products.
+  - Here the core would be the tldraw library, while the current tldraw-like experience would become something like “tldraw whiteboard”, a product that we could market separately.
+  - This would address the “drop in whiteboard” crowd without muddying that water with our open source / customization narrative.
+  - What I like about this last approach is that it opens up more product offerings: with tldraw as an engine, we can make tldraw/whiteboard, tldraw/mindmap, tldraw/slides—all of which can exist as siblings, with their own developer markets, end user products, etc.
+  - Of course the current library isn’t architected in an extensions first way, so there would be more work to do there. And maybe one of the other options could work in the meantime.
+
+- TipTap has an open source platform / commercial extension approach. I'm not sure how it's working for them financially, but the platform they wrap (ProseMirror) is sufficiently complicated that I can imagine many developers and companies shelling out(shell out sth for sth 付款-常指不情愿地 ) the $29 subscription fee.
+
+- CodeMirror is extension-first, but I see a lot of people picking Monaco even though it’s much worse on mobile & for accessibility because shrink wrap is easier than build-it-yourself. Extensions are great but make sure you keep a compelling and easy drop in
+  - Extension API is always kind of awkward if you ship big extensions — I wanna customize the UI/UX of the extension; now your extensions need extensions? This is annoying in CodeMirror as I read extension source to see how I can inject my logic through eye of needle to customize
+
+- Mixing up commercial and open source parts always backfired for me.
+  - My current approach is to develop two completely separate projects, one for-profit offering/product and one pure, open source branch.
+  - I don‘t like extension-first anymore, copy+remix is much better.
+- How did it backfire(事与愿违; 产生反作用)?
+  - You start with a pure, self-contained open source implementation and end up with a monster because you need to integrate business demands. No plugin system will save the core from being affected.
+  - To make my point a bit more nuanced, I was mainly referring to higher level UI things, where libraries create lots of indirection. But on the lower-level side core+plugins makes sense from a maintainability point of view. E.g. I'm using ProseMirror+custom plugins under the hood.
+
+- Free with logo, pay to remove logo has worked pretty well for amCharts for more than 15 years now.
 
 - ## I'm in the descending phase of the product diamond_202307
 - https://twitter.com/steveruizok/status/1676332626293014528

@@ -76,6 +76,19 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I've been doing some digging into how various frameworks handle rendering of values different types of value to the UI.
+- https://twitter.com/trueadm/status/1681215292058238977
+  - What should happen if `value` is null, undefined, a boolean, function, object, array or function? Should it render an empty string?
+  - The reason this is interesting is because frameworks are not consistent in their approach here.
+  - React, Solid and Preact only render strings and numbers
+  - Vue and Lit render null/undefined to empty string but all the others are toString()'d
+  - Svelte renders all values to string
+  - Another one is rendering `NaN` . How many times have you seen that by accident on a web UI?
+
 - ## So why is Next.js so pushy about [React Server Components]? I can't avoid feeling that the new direction taken by Next.js is not designed to help developers, but to help Vercel sell React
 - https://twitter.com/claviska/status/1666252828111675392
 - a SPA is a single JS file that can be hosted for free anywhere. But a server-side rendered app needs a server to run. And a server is a product that can be sold. I do very much agree with that sentiment and I am not sold on the "edge computing" argument either!

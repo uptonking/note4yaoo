@@ -16,7 +16,9 @@ modified: 2023-03-29T17:23:37.126Z
 
 - ## 
 
-- ## 
+- ## notion: Earlier this year(2023), our infra team 3×-ed our backend database capacity (AKA “sharding”) to support Notion’s growing userbase — all without any app downtime!
+- https://twitter.com/NotionHQ/status/1681364115309334530
+  - [The Great Re-shard: adding Postgres capacity (again) with zero downtime](https://www.notion.so/blog/the-great-re-shard)
 
 - ## 倍速重听了 21 年这期访谈 Logseq 的播客。 
 - https://twitter.com/mr_easonyang/status/1642902992683950080
