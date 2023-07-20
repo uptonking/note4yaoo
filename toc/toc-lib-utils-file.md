@@ -264,3 +264,30 @@ modified: 2023-04-05T19:35:14.347Z
   - Quickly browse the history of files in any git repo
   - Go to a file in GitHub (or GitLab, or Bitbucket); Replace github.com with github.githistory.xyz
 # more
+
+# discuss
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## To find out whether a file is UTF-8 text file in browser.
+- https://twitter.com/__enix__/status/1681710341372117003
+  - This is especially FAST when compared to the common solution that loads the whole file as a BLOB into memory.
+
+```JS
+const decoder = new TextDecoderStream()
+
+file.stream().pipeTo(decoder.writable);
+
+const reader = decoder.readable.getReader();
+
+const { done, value } = await reader.read()
+
+// unrecognized bytes will be turned into \ufffd
+if (value?.includes('\ufffd')) {
+  return false;
+}
+```

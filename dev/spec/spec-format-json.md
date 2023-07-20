@@ -132,3 +132,4 @@ modified: 2020-10-15T13:41:01.275Z
   - 支持在 JSON 中传输更多数据类型，例如 ArrayBuffer、Date、ObjectId
   - 同时支持 HTTP/WebSocket
 # more
+- [Proof of concept: jsos - drop-in JSON replacement that produces smaller payloads](https://evanhahn.com/jsos-proof-of-concept/)

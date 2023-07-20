@@ -166,6 +166,9 @@ modified: 2023-04-04T22:35:59.255Z
   - The package contains tools for parsing DOM data, observing DOM and tracking changes.
   - This class is a wrapper over MutationObservers, allowing you to observe changes even of those nodes that are not already in the DOM
   - Observation will automatically start as soon as the target node appends in the DOM.
+
+- https://github.com/wilsonpage/fastdom /js
+  - Eliminates layout thrashing by batching DOM measurement and mutation tasks
 # web-localStorage
 - https://github.com/aykutkardas/lookie
   - Store your data in localStorage with optional expiration time.

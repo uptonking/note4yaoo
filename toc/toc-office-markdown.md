@@ -32,9 +32,9 @@ modified: 2021-01-04T17:26:25.032Z
   - 依赖markdown-it
   - We designed Markdoc to power Stripe's public docs
   - Markdoc extends Markdown with a custom syntax for tags and annotations
-  - Markdoc uses markdown-it as a tokenizer, building an Abstract Syntax Tree (AST) from the array of tokens emitted by markdown-it.
-    - The logic that parses the tag syntax is generated from a peg.js grammar.
-  - Markdoc has its own dedicated rendering architecture rather than relying on markdown-it to generate its output. 
+  - Markdoc uses `markdown-it` as a tokenizer, building an Abstract Syntax Tree (AST) from the array of tokens emitted by markdown-it.
+    - The logic that parses the tag syntax is generated from a `peg.js` grammar.
+  - **Markdoc has its own dedicated rendering architecture rather than relying on markdown-it to generate its output**. 
     - Developing an independent rendering system was necessary in order to handle Markdoc's custom tags and support multiple output formats.
 # md-parser-generator
 - markdown-it /10.4kStar/MIT/202009

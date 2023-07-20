@@ -16,7 +16,10 @@ modified: 2023-06-22T05:33:12.658Z
 
 - ## 
 
-- ## 
+- ## I’ve been maintaining component libraries focused on accessibility for the past 6 years. While they help a lot, the amount of a11y that can be automated with a lib is 10% or less.
+- https://twitter.com/diegohaz/status/1681697273342722049
+  - Most a11y issues come from design, content, page structure, and relationships between multiple components.
+  - A well-designed component library will increase awareness around a11y rather than make developers forget about it, because automatic accessibility isn’t really a thing.
 
 - ## There's an @​ariakit/core library where most of the code will live._20230430
 - https://twitter.com/diegohaz/status/1652542224679288832
@@ -37,7 +40,7 @@ modified: 2023-06-22T05:33:12.658Z
 - ember-headless-table is another headless ui library that doesn't render HTML on its own.
 Instead, it provides the math, calculations, and props for managing common table features (because no one needs to be re-implementing those every time they switch companies)
 
-## [ariakit RFC: Component stores_202209](https://github.com/ariakit/ariakit/issues/1875)
+- ## [ariakit RFC: Component stores_202209](https://github.com/ariakit/ariakit/issues/1875)
 
 - https://codesandbox.io/s/ariakit-component-stores-forked-248do5
 - The problems

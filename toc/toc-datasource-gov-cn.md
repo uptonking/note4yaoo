@@ -38,6 +38,10 @@ modified: 2021-01-01T15:57:59.157Z
 
 - [购买数据](http://47.93.57.215/doc/sysreadme.html)
   - 本系统是一个收费的系统，除了部分向用户的免费提供的数据外，系统用户查看使用的数据都是需要购买的
+# law
+- [国家法律法规数据库](https://flk.npc.gov.cn/)
+
+- [中国裁判文书网](https://wenshu.court.gov.cn/)
 # gis-cn
 - 自然资源部 标准地图服务
   - http://bzdt.ch.mnr.gov.cn/

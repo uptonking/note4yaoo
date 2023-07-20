@@ -7,6 +7,10 @@ modified: 2022-10-05T04:56:59.409Z
 
 # draft-202x
 - yaoo-accounts-social
+  - cons
+    - 用户的toots和retweet服务器不会保存，需要用户自己手动保存
+  - pros
+    - 用户可以自己搭建server
 - mastodon
   - https://fosstodon.org/
     - open source software

@@ -220,6 +220,12 @@ modified: 2021-08-23T05:27:08.068Z
   - gitfs is a FUSE file system that fully integrates with git. 
   - You can mount a remote repository's branch locally, and any subsequent changes made to the files will be automatically committed to the remote.
   - 但vscode不是直接集成git了吗
+
+- https://github.com/sxyazi/yazi
+  - yazi，一个新的终端文件管理器，使用 Rust 开发，基于 async I/O
+  - 目标是同时兼顾性能、功能，核心部分完全 Rust 实现，减少外部依赖以避免性能瓶颈和体验劣化。
+  - 要不要看看 #OpenDAL，顺手支持一把更多存储服务？
+    - OpenDAL 是一个 rust lib，提供了各种存储服务的访问能力。没有直接提供这些功能，不过本质上就是一堆 seek & read 操作，是可以实现的
 # web-storage
 - https://github.com/ncisrc/cookies-storage
   - It's like localStorage or sessionStorage but with cookies.

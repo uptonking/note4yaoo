@@ -104,9 +104,7 @@ modified: 2021-05-14T15:04:42.225Z
 - https://github.com/uber/react-vis
   - /7.4kStar/MIT/202007
   - react components to render common data visualization charts
-- https://github.com/metricsgraphics/metrics-graphics
-  - /7.3kStar/MPLv2/202004
-  - a library built for visualizing and laying out time-series data
+
 - https://github.com/markmarkoh/datamaps
   - Customizable SVG map visualizations for the web in a single Javascript file using D3.js
 - https://github.com/nteract/semiotic

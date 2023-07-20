@@ -18,19 +18,28 @@ modified: 2022-10-22T18:47:16.228Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## yjs 提供的 y-prosemirror 的 undo plugin还有点bug
+- https://t.me/xheldon_tech/2982
+  - undo-plugin 会对ydoc进行监听变化
+  - 这个挂载监听的逻辑写在了 pluginState 的 init 钩子里面 而 销毁监听的逻辑 写在 pluginView的destory里面
+  - 现在我对pm的state调用一次reconfigure，这个destory会执行一次，但是这个plugin会被复用所以init不会执行，然后监听就丢失了
+  - undo功能就无效了
+
+- tiptap 2.0 已经采用了 这个 issue114 的方案临时修复了
+
+- 官方说众筹到 3w 刀就重构
+
 - ## ❓ 仍未解决 [Implementing google docs like "suggest edit" mode](https://discuss.prosemirror.net/t/implementing-google-docs-like-suggest-edit-mode/5033)
-  -  Implementing comments was easy enough, however I’m a bit at a loss when it comes to implementing something like Google Doc’s “suggest edit” mode.
+  - Implementing comments was easy enough, however I’m a bit at a loss when it comes to implementing something like Google Doc’s “suggest edit” mode.
 - What you’re trying to do is one of the hardest things that you could try 
   - What I’ve seen working at various products is changing the default `dispatchTransaction` method, and replacing every transaction with another one that includes the added “removal” / “addition” marks.
   - That puts everything on its head, there are a ton of corner cases.
   - For example: Since a transaction can have multiple steps you have multiple steps and now you replace every step you have to re-map all the steps before transforming them.
   - I ( with my company ) plan to come out with a plugin that can solve this this problem since a ton of people try to solve this, hopefully we’ll find a time for that.
-
-- 
-- 
-- 
-- 
-- 
 
 - ## [Question about track-changes with prosemirror-changeset](https://discuss.prosemirror.net/t/question-about-track-changes-with-prosemirror-changeset/3801/7)
 - Yes each Span has was it data payload that can contain arbitrary data. Then you can define your own method for joining spans to merge them properly.

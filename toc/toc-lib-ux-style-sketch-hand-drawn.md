@@ -129,7 +129,34 @@ modified: 2021-01-13T19:30:59.508Z
   - Typography is a complex system of interrelated styles. 100s of style declarations on dozens of elements must be in harmonious order. Trying one design change can mean making dozens of tedious recalculations and CSS value changes. Creating new Typography themes with CSS feels hard.
   - You can provide configuration to the Typography.js JS api and it uses its Typography engine to generate CSS for block and inline elements.
   - Typography.js themes are simple Javascript objects. As such they're easy to share across projects
-# 汉字与排版
+# typesetting
+- https://github.com/davidmerfield/Typeset
+  - https://typeset.lllllllllllllllll.com/
+  - An HTML pre-proces­sor for web ty­pog­ra­phy
+  - Typeset does not re­quire any client-side JavaScript and uses less than a kilo­byte of CSS. 
+  - Processed HTML & CSS works in Internet Explorer 5 and with­out any CSS. 
+  - pro­vides ty­po­graphic fea­tures used tra­di­tion­ally in ﬁne print­ing which re­main un­avail­able to browser lay­out en­gines.
+    - Real hang­ing punc­tu­a­tion
+    - Optical mar­gin align­ment
+    - Small caps de­tec­tion
+    - Soft hy­phen in­ser­tion
+    - Punctuation sub­sti­tu­tion
+
+- https://github.com/bramstein/typeset /js
+  - TeX line breaking algorithm in JavaScript
+  - This is an implementation of the Knuth and Plass line breaking algorithm using JavaScript.
+
+- https://github.com/palantir/typesettable /ts/inactive
+  - a library for measuring, wrapping, and writing text on Canvas, SVG, and HTML.
+  - developers often want wrapped text to auto-hyphenate and truncate with ellipses when overflowing the bounding box. Typesettable aims to make this entire process easier.
+  - Typesettable works with native browser APIs and has no external dependencies.
+
+- https://github.com/exogen/react-typesetting /js/inactive
+  - https://exogen.github.io/react-typesetting/
+  - React components for creating beautifully typeset designs.
+
+## typesetting-cn/汉字与排版
+
 - https://github.com/ethantw/Han /2kStar/MIT/201903/js/inactive
   - https://hanzi.pro/
   - Han.css: the CSS typography framework optimised for Hanzi.
@@ -154,21 +181,92 @@ modified: 2021-01-13T19:30:59.508Z
   - 目标：一致化浏览器排版效果，构建最适合中文阅读的网页排版。包括桌面和移动平台。
   - 强制换行：添加 .textwrap 到文本所在的容器，如果是 table 测还需要 .textwrap-table
 
+- https://github.com/CoffeeIO/TypesetBot /ts/GPLv3
+  - https://coffeeio.com/typesetbot/
+  - bringing TeX level typesetting to the web
+
+- https://github.com/harttle/md-padding
+  - https://harttle.land/md-padding/
+  - 修复 Markdown 中的混排空格：中英文、数字、链接等。
+
 - https://github.com/Haixing-Hu/typesetting-standard
   - 中文书刊排版相关标准和规范
-
-## 排版工具
 
 - https://github.com/satouriko/copywriting-correct
   - 中英文文案排版纠正器。
   - 本项目是 ricoa/copywriting-correct 的 JavaScript 实现。
   - 基于 中文文案排版指北（简体中文版） 进行纠正，帮助解决中英文混排的排版问题，提高文案可阅读性。
 
-## 支持中文的字体
+### 支持中文的字体
 
 - https://github.com/Warren2060/Chillkai
   - 寒蝉正楷体，为优化中西文排版的楷体项目
   - 由中文字体 全字库正楷体 和西文字库 Gentium 整合优化
+
+- https://github.com/heangfat/cjk-math-type
+  - 中華數碼之排版工具與方法
+  - 本庫提供一款可變字型，包含筭籌、花碼、筮數，並簡述其基本用法。
+# latex/printing
+- overleaf /10.5kStar/AGPLv3/202211/js/latex
+  - https://github.com/overleaf/overleaf
+  - https://github.com/overleaf/overleaf/wiki
+  - A web-based collaborative LaTeX editor
+  - 编辑器依赖ace
+  - https://github.com/overleaf/ace
+  - https://github.com/amitness/open-in-overleaf
+    - Open latex of any arxiv.org paper on overleaf
+
+- https://github.com/fiduswriter/fiduswriter /js/python
+  - https://fiduswriter.org/
+  - an online collaborative editor especially made for academics who need to use citations and/or formulas.
+
+- https://github.com/michael-brade/LaTeX.js /livescript
+  - https://latex.js.org/
+  - https://latex.js.org/playground.html
+  - a LaTeX to HTML5 translator written in JavaScript using PEG.js. 
+  - LaTeX.js tries to be absolutely and uncompromisingly exact and compatible with LaTeX. 
+  - If you need a LaTeX to HTML translator that also understands TeX to some extent, take a look at: tex4ht、latex2html
+
+- https://github.com/manuels/texlive.js /inactive
+  - http://manuels.github.com/texlive.js/
+  - Compiling LaTeX (TeX live) in your browser
+  - This is a port of TeX live 2016 to Javascript. It is based on the port of the pdftex TeX compiler to Javascript using emscripten. It creates PDF files from LaTeX code and supports packages.
+
+- https://github.com/SaswatPadhi/pseudocode.js /js
+  - https://saswatpadhi.github.io/pseudocode.js
+  - a JavaScript library that typesets pseudocode beautifully to HTML.
+  - Pseudocode.js takes a LaTeX-style input that supports the algorithmic constructs from LaTeX's algorithm packages
+  - The HTML output produced by pseudocode.js is (almost) identical with the pretty algorithms printed on publications that are typeset by LaTeX.
+  - pseudocode.js can render math formulas using either KaTeX, or MathJax.
+
+- https://github.com/James-Yu/LaTeX-Workshop
+  - an extension for Visual Studio Code, aiming to provide core features for LaTeX typesetting with Visual Studio Code.
+
+## tex-markdown
+
+- https://github.com/susam/texme /js
+  - a lightweight JavaScript utility to create self-rendering Markdown + LaTeX documents.
+
+- https://github.com/parpalak/upmath.me
+  - Markdown and LaTeX online editor - create text for web with equations and diagrams
+# math
+- https://github.com/cortex-js/compute-engine /ts
+  - https://cortexjs.io/
+  - An engine for symbolic manipulation and numeric evaluation of math formulas expressed with MathJSON
+  - MathJSON is a lightweight mathematical notation interchange format based on JSON.
+  - The Cortex Compute Engine can parse LaTeX to MathJSON, serialize MathJSON to LaTeX, format, simplify and evaluate MathJSON expressions.
+
+- https://github.com/KaTeX/KaTeX /js/NoDeps
+  - https://katex.org/
+  - Fast math typesetting for the web.
+  - KaTeX renders its math synchronously and doesn't need to reflow the page. See how it compares to a competitor in this speed test.
+  - KaTeX's **layout** is based on **Donald Knuth's TeX**, the gold standard for math typesetting.
+  - support ssr
+  - KaTeX supports much (but not all) of LaTeX and many LaTeX packages.
+
+- https://github.com/pyramation/LaTeX2JS /js
+  - Author interactive math equations and diagrams online using LaTeX and PSTricks
+  - thanks to MathJax
 # wireframe
 - https://github.com/tsx/shireframe
   - http://rawgit.com/tsx/shireframe/master/examples/doodle.html

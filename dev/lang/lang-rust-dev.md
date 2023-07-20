@@ -46,6 +46,12 @@ modified: 2022-11-11T06:57:09.670Z
 
 - https://github.com/risinglightdb/risinglight /rust
   - An OLAP database system for educational purpose
+
+- https://github.com/sxyazi/yazi
+  - yazi，一个新的终端文件管理器，使用 Rust 开发，基于 async I/O
+  - 目标是同时兼顾性能、功能，核心部分完全 Rust 实现，减少外部依赖以避免性能瓶颈和体验劣化。
+  - 要不要看看 #OpenDAL，顺手支持一把更多存储服务？
+    - OpenDAL 是一个 rust lib，提供了各种存储服务的访问能力。没有直接提供这些功能，不过本质上就是一堆 seek & read 操作，是可以实现的
 # blogs
 
 ## why rust

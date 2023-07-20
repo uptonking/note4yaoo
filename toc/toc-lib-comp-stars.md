@@ -80,6 +80,10 @@ modified: 2021-01-12T18:49:07.422Z
   - https://github.com/NUKnightLab/TimelineJS3
   - http://timeline.knightlab.com/
   - A Storytelling Timeline built in JavaScript.
+
+- https://github.com/metricsgraphics/metrics-graphics /7.3kStar/MPLv2/202004/ts/inactive
+  - a library built for visualizing and laying out time-series data
+  - currently supports line charts, scatterplots and histograms, as well as features like rug plots.
 # react-list-keyboard
 - react-window默认显示滚动条，但可通过css隐藏滚动条同时使内容支持滚动
   - [Add option to FixedSizeList for hiding scrollbar](https://github.com/bvaughn/react-window/issues/375)

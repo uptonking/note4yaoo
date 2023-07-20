@@ -63,3 +63,7 @@ modified: 2022-03-17T17:50:05.384Z
 # notion-database
 - [Working with databases](https://developers.notion.com/docs/working-with-databases)
 # notion-like-database
+
+# ideas
+
+- 类似mdx词典的只读知识库，wikipedia的zim格式针对查询进行了优化

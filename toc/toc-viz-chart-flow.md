@@ -116,6 +116,12 @@ modified: 2020-10-22T10:22:55.878Z
 - https://github.com/towersxu/draft-flow
   - 基于LogicFlow和rough.js实现的手绘风格流程图
 
+- https://github.com/alibaba/butterfly /js
+  - 基于JS的数据驱动的节点式编排组件库
+  - 利用DOM/REACT/VUE来定制元素；灵活性，可塑性，拓展性优秀
+  - 依赖jquery、lodash、antv/hierarchy、d3-force、dagre、ml-matrix、dom-to-image
+  - 在issues里面反馈的bugs超多
+
 - kroki /1.1kStar/MIT/202109
   - https://github.com/yuzutech/kroki
   - https://kroki.io/

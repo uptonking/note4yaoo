@@ -191,6 +191,12 @@ modified: 2023-07-08T12:47:00.141Z
   - [求一个进Z-library的方法? - 知乎](https://www.zhihu.com/question/532521148/answers/updated)
   - [zhelper search 配置小工具](https://tool.yibook.org/)
   - [图书检索系统](https://ps.uuttdx.com/)
+
+## books-assets
+
+- https://github.com/lingr7/HongLouMeng-ZhiPingBen /tex
+  - 这是我自己排版的红楼梦脂评本，在内容上源自亚马逊
+  - 拙编《红楼梦脂评汇校本》出版，发布定稿电子版 v3.1416
 # utils-repos
 - https://github.com/Litles/AutoMdxBuilder /python
   - 自动化制作 mdx 词典工具，人人都可以制作电子词典
@@ -202,3 +208,19 @@ modified: 2023-07-08T12:47:00.141Z
   - wikit 的本地词典可以从 mdx 直接生成, 或者从 mdx 的源码生成.
   - wikit 的server端可以去加载另外一个 server 端的词典, 也就是词典中继, 你可以中继另外一个人的词典
 # more
+
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [关于开源词典软件项目的一点想法](https://forum.freemdict.com/t/topic/17929)
+- 目前最好的词典开源软件就是 GoldenDict，与其期待新的开源项目，不如紧密团结在 Xiaoyifang 同志周围，为实现 GoldenDict 的伟大复兴贡献自己的力量。
+- 目前的词典的功能一个重要盲点是无法处理好带有层级结构的资料，典型的就是编程手册中如对象-属性/方法这样的东西。如果这个问题能解决，词典这种资料类型的应用将得到极大的拓展。
+
+- 几乎所有的词典数据都来自第三方，你应该先去和汉语大词典编辑部、牛津、剑桥、柯林斯、朗文建议一下，让他们增加序号和层级，这样以后网友复制、侵权制作出来的词典更好用。
+  - 别人用爱发电，无偿制作分享词典够可以了。你发起一个新的词典格式、提出一个新的词典需求，让制作者必须遵守，给制作者发工资了吗？Mdict、欧路、GD这些客户端要适配你的规则，excuse me？
+
+- 在下的想法可能行不通，本以為用 Excel 和 Emeditor 能搞定，後來發現，資料量會隨著單字長度展開膨漲數千倍，模型應該是沒錯，但工具可能得用編程才行，想法得往後擺 

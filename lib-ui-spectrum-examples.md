@@ -21,6 +21,13 @@ modified: 2023-06-25T04:13:54.132Z
   - https://github.com/osuresearch/electron-example
     - Electron React Boilerplate uses Electron, React, React Router, Webpack and React Fast Refresh.
 
+- https://github.com/zwgnr/BaseLayer
+  - https://baselayer.dev/
+  - Re-usable multi part components built on React Aria and TailwindCSS.
+  - BaseLayer is comprised of two primary areas:
+    - BaseLayer Components: These are reusable multi part components with styles available as .tsx files.
+    - Example Components: These are assembled components available as VScode Snippets. They are the assembeld from the multi part base layer.
+
 - https://github.com/dossierhq/dossierhq/tree/main/libraries/design
   - https://design.dossierhq.dev/
   - The design system for Dossier, @dossierhq/design is part of Dossier
