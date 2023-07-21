@@ -89,6 +89,8 @@ modified: 2021-01-28T21:31:18.697Z
   - The Eclipse Layout Kernel (ELK) implements an infrastructure to connect diagram editors or viewers to automatic layout algorithms. 
   - This library takes the layout-relevant part of ELK and makes it available to the JavaScript world. 
   - ELK's flagship is a layer-based layout algorithm that is particularly suited for node-link diagrams with an inherent direction and ports (explicit attachment points on a node's border). 
+  - https://github.com/kieler/elk-live
+    - A web page with a text editor for ELK Graph and a synchronized graphical view.
 # ref
 - [csslayout](https://github.com/phuoc-ng/csslayout)
   - https://csslayout.io/

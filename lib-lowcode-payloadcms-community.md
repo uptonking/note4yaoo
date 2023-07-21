@@ -70,6 +70,17 @@ modified: 2023-02-05T18:40:43.969Z
 
 - I think it should be avoided to use operations which are not provided by cloud database providers like Planetscale or Neon.tech. Especially starting from scratch It is easy to avoid these kind of things.
 
+- what kind of schema are you going for in sqlite?
+  - We're working through some prototypes right now. The goal is to not lean too heavily on JSON. As long as we can get the level of normalization, query performance and dev experience, we're going to make it work like a traditional relational database. More on this later.
+- Great stuff! Really excited for this. I hope schemas will be supported for Postgres. It would be awesome to be able to keep a full database of `public` schema for app related records and a `content` schema for the CMS. This way we can also manually query between the two without cluttering(使杂乱) the public schema.
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 - ## vercel: We’re introducing visual editing of content from headless CMSes bringing back one of the best features of monolithic CMSes for composable architectures–with no changes to your code!
 - https://twitter.com/cramforce/status/1653792488770125826
   - The key new technology: Content source maps. They allow your content to pass through N layers of abstractions that obscure where it came from, yet enable the visual editors to trace its origin to the correct source data in the CMS.

@@ -236,6 +236,8 @@ modified: 2020-10-22T10:22:55.878Z
   - This library takes the layout-relevant part of ELK and makes it available to the JavaScript 
   - Note that elkjs is not a diagramming framework itself - it computes positions for the elements of a diagram.
   - elkjs is the successor of klayjs.
+  - https://github.com/kieler/elk-live
+    - A web page with a text editor for ELK Graph and a synchronized graphical view.
   - https://github.com/kieler/klayjs
     - a layer-based layout algorithm that is particularly suited for node-link diagrams with an inherent direction and ports (explicit attachment points on a node's border)  
 

@@ -38,8 +38,9 @@ modified: 2021-05-14T15:04:15.333Z
   - Spectrum aims to be the best platform to build any kind of community online by combining the best of forums and real-time chat apps.
 - https://github.com/discourse/discourse
   - 依赖ruby、emberjs、postgresql、redis
-  - discussion platform built for the next decade of the Internet. 
-- https://github.com/NodeBB/NodeBB
+  - discussion platform built for the next decade of the Internet.
+
+- https://github.com/NodeBB/NodeBB /js
   - Node.js based forum software built for the modern web
 
 - ddd-forum /1.5kStar/ISC/202204/ts/hacker-news
@@ -272,6 +273,12 @@ modified: 2021-05-14T15:04:15.333Z
   - https://www.chatbotui.com/
   - Chatbot UI is an advanced chatbot kit for OpenAI's chat models built on top of Chatbot UI Lite using Next.js, TypeScript, and Tailwind CSS.
 # mastodon
+- resources
+  - https://joinmastodon.org/apps
+  - [Statuzer: Multi-accounts, multi-columns Mastodon client](https://statuzer.com/)
+  - [Elk](https://elk.zone/m.webtoo.ls/public/local)
+  - [Phanpy](https://phanpy.social/)
+
 - mastodon /34.8kStar/AGPLv3/202211/js/ruby
   - https://github.com/mastodon/mastodon
   - https://joinmastodon.org/
@@ -283,7 +290,46 @@ modified: 2021-05-14T15:04:15.333Z
   - https://github.com/nathanlesage/academics-on-mastodon
     - lists consisting of academics on Mastodon
 
-- pinafore /808Star/AGPLv3/202211/js
+- https://github.com/neet/masto.js /ts
+  - Mastodon API client for JavaScript, TypeScript, Node.js, browsers
+
+- https://github.com/cheeaun/phanpy /js
+  - https://phanpy.social/
+  - opinionated Mastodon web client
+  - Multiple accounts
+  - Single or multi-column
+  - 还列出了很多平替 Alternative web clients
+  - Preact - UI library
+  - Valtio - State management
+  - React Router - Routing
+  - masto.js - Mastodon API client
+
+- https://github.com/soapbox-pub/soapbox /ts/类似twitter
+  - https://gitlab.com/soapbox-pub/soapbox
+  - https://soapbox.pub/
+  - A social media frontend with a focus on custom branding and ease of use
+  - You can run Mastodon+Soapbox, Rebased+Soapbox, and more.
+  - Soapbox is the frontend (what users see) while Mastodon is the backend (data, APIs). You can mix-and-match in the Fediverse ecosystem.
+  - Soapbox was born out of the need to build independent platforms with a unique identity and brand.
+
+- https://github.com/elk-zone/elk /ts/vue
+  - https://elk.zone/
+  - A nimble Mastodon web client
+  - https://github.com/Distal-Labs/elk
+    - A friendly fork of Elk
+
+- https://github.com/NicolasConstant/sengi /AGPLv3/ts/angular
+  - https://nicolasconstant.github.io/sengi/
+  - Mastodon & Pleroma Multi-account Desktop Client
+  - It takes inspiration from the old Tweetdeck client, the new Tweetdeck webapp and Mastodon UI.
+  - [Color themes](https://github.com/NicolasConstant/sengi/issues/396)
+    - 只有darkMode，没有lightMode
+  - It is strongly focused on multi-accounts usage and One column at a time display
+  - It is released as a browser webapp and also packaged as an cross-platform desktop application (Mac, Windows, and Linux).
+  - https://github.com/NicolasConstant/sengi-electron /AGPLv3/js
+    - build the Electron Wrapper available for the webapp Sengi.
+
+- pinafore /808Star/AGPLv3/202211/js/svelte2/deprecated
   - https://github.com/nolanlawson/pinafore
   - https://pinafore.social/
   - Alternative web client for Mastodon
@@ -291,21 +337,27 @@ modified: 2021-05-14T15:04:15.333Z
   - Progressive Web App features
   - Multi-instance support
   - Support non-Mastodon instances (e.g. Pleroma) as well as possible
+  - [Retiring Pinafore_202301](https://nolanlawson.com/2023/01/09/retiring-pinafore/)
+    - I don’t have the energy to do this anymore. 
+    - I suspect one of the reasons for this is that Pinafore is written in Svelte v2 and Sapper – both of which are deprecated in favor of Svelte v3 and SvelteKit
   - Non-goals
     - React Native / NativeScript / hybrid-native version
     - Android/iOS apps (using Cordova or similar)
     - Multi-column support
+  - https://github.com/NickColley/semaphore
+    - Semaphore continues the Pinafore project
 
 - whalebird-desktop /672Star/MIT/202211/ts+vue
   - https://github.com/h3poteto/whalebird-desktop
   - An Electron based Mastodon, Pleroma and Misskey client for Windows, Mac and Linux
 
-- https://github.com/NicolasConstant/sengi
-  - Mastodon & Pleroma Multi-account Desktop Client
-
 - https://github.com/tuskyapp/Tusky
   - An Android client for the microblogging server Mastodon
   - Completely open-source - no non-free dependencies like Google services
+
+- https://github.com/cloudflare/wildebeest /ts
+  - Wildebeest is an ActivityPub and Mastodon-compatible server whose goal is to allow anyone to operate their Fediverse server and identity on their domain without needing to keep infrastructure, with minimal setup and maintenance, and running in minutes.
+  - Wildebeest runs on top Cloudflare's Supercloud, uses Workers, Pages, Durable Objects, Queues, the D1 database to store metadata and configurations, Zero Trust Access to handle auth
 # notification
 - https://github.com/novuhq/novu
   - The open-source notification infrastructure for products. 

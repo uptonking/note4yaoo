@@ -29,6 +29,12 @@ modified: 2021-01-16T20:50:23.893Z
 - https://github.com/low-teck/vault
   - A react-electron app that secures user data locally using AES algorithm with the help of nedb and crypto-js ans styled with chakra-ui.
   - https://github.com/codegiik/electron-react-nedb-boilerplate
+
+- https://github.com/wavebox/waveboxapp
+  - https://wavebox.io/
+  - Browser for Work
+  - Wavebox gives you customizable toolbars, sleeping tabs, cookie containers and multiple profile
+  - Wavebox 10, a complete fork of Chromium launched in 2019, but if you're looking for the Electron based Wavebox Classic, there's an archive of the code here
 # utils
 - https://github.com/alexiusacademia/electron-db
   - let you simplify database creation and operation on a json file.

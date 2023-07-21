@@ -47,6 +47,12 @@ modified: 2020-12-20T08:23:22.808Z
 - https://github.com/imsun/gitment /201804
   - a comment system based on GitHub Issues, which can be used in the frontend without any server-side implementation.
 # comment-backend-api
+- https://github.com/djyde/cusdis /ts
+  - https://cusdis.com/
+  - lightweight, privacy-first alternative to Disqus
+  - You can set a Webhook URL that will be triggered when your websites have new comment. Integrate Cusdis with your favorite tools such as Telegram.
+  - 依赖next、next-auth、next-connect、prisma、mantine、svelte、turndown
+
 - chirpy /328Star/Apache2/202208/ts
   - https://github.com/devrsi0n/chirpy
   - https://chirpy.dev/

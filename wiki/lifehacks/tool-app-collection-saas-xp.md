@@ -74,6 +74,13 @@ modified: 2022-11-07T10:25:12.034Z
     - http://blog.luckly-mjw.cn/tool-show/m3u8-downloader/index.html
     - 当前下载卡住时，可以尝试刷新页面，再次输入url开始下载
     - 一个m3u8的视频经常会提供320/480/720多种分辨率，可是换一种m3u8地址
+# mastodon
+- tips
+  - bookmarks支持export，favorites不支持export
+
+- [Does mastodon has advance search](https://stackoverflow.com/questions/74570622/does-mastodon-has-advance-search)
+  - This is not possible (intentionally / by design).
+  - Mastodon supports full-text search when ElasticSearch is available. Mastodon’s full-text search allows logged in users to find results from their own statuses, their mentions, their favourites, and their bookmarks. It deliberately does not allow searching for arbitrary strings in the entire database.
 # 邮箱注册
 - 不需要手机号的邮箱
   - mail.protonmail.com

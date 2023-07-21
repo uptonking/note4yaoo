@@ -79,6 +79,7 @@ modified: 2021-08-30T18:57:27.645Z
   - 测试项目 sqlite3、knex、prisma、mikro
   - https://github.com/drizzle-team/drizzle-orm
     - TypeScript ORM for SQL
+
 - https://github.com/therealyo/northwind2
   - northwind traders task implementation using different ORMS
 # db-examples

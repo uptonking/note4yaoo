@@ -12,6 +12,17 @@ modified: 2022-08-21T10:11:19.219Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## If you type "ad", then bold it. If you insert "d" before the "d", how would a diff know whether the new d is before or after the existing one?
+- https://twitter.com/JungleSilicon/status/1682220175272333314
+- I mean shouldn’t information about the styling / boldness of the letters be stored in an object? It seems like this example is assuming that styles are added on top of plain text or something. Don’t people use rope data structures for text?
+- Selection information is needed for sure, but you can also store the styles or “marks” the user is intended to add I’d “ad” is not bold, but the user presses “cmd+b”, then the next character inserted should be bold.
+
 - ## 💡 What's the go-to approach for implementing text-based mini-maps in html / css / js like the one in visual studio?
 - https://twitter.com/JungleSilicon/status/1674649906387234816
   - minimap
