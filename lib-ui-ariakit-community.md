@@ -61,3 +61,39 @@ Instead, it provides the math, calculations, and props for managing common table
 ### [Framework-agnostic architecture for examples](https://github.com/ariakit/ariakit/issues/1854)
 
 ### [Offer Vue components / hooks](https://github.com/ariakit/ariakit/discussions/1723)
+
+# discuss-reakit
+- ## 
+
+- ## 
+
+- ## In @reakitjs' Menu/Submenu, there's some Math to calculate the pointer movement so it doesn't close the submenu while you're trying to move to it in a non-straight line._202007
+- https://twitter.com/diegohaz/status/1283557473027346439
+  - Solution consists in verifying if the cursor is moving in a virtual triangle area. This was one of the rare moments that I had to use Math from school in web dev. But school wasn't really helpful as I had to learn everything again to fix this.
+  - https://github.com/ariakit/ariakit/blob/reakit/packages/reakit/src/Menu/__utils/useTransitToSubmenu.ts
+  - 可参考 [useHover#safePolygon | Floating UI](https://floating-ui.com/docs/usehover#safepolygon)
+
+- ### Notion 优化了走直线选不中子级菜的问题，想起之前 @height_app 的一篇关于 context menus 细节的文章。
+- https://twitter.com/leadream4/status/1629307997175549952
+  - 一般的解决方案是加一个延迟，但是更好的方式是增加三角安全区域，亚马逊和苹果都是这样处理的。
+  - [Breaking down Amazon's mega dropdown](https://bjk5.com/post/44698559168/breaking-down-amazons-mega-dropdown)
+  - [A comprehensive guide to creating intuitive context menus - Height](https://height.app/blog/guide-to-build-context-menus)
+  - [Invisible details - Building contextual menus - Linear Blog_202009](https://linear.app/blog/invisible-details).
+  - `clip-path` is a cool css property that lets you define a region of the component that should be drawn to the screen. In this case we use a polygon to draw a triangle.
+  - [MouseSafeArea.ts](https://gist.github.com/eldh/51e3825b7aa55694f2a5ffa5f7de8a6a)
+
+- ### notion: Before, you had to be really precise with your cursor so menus wouldn’t disappear on you. Should feel much more polished now
+- https://twitter.com/NotionHQ/status/1629175696177389569
+
+- Can you open source your implementation?
+  - looks like a delay when the menu loses focus, instead of closing immediately it waits for like 3 seconds
+
+- I remember a talk from @peduarte for a similar functionality that they included in the dropdown for `@radix_ui` lib, curious about the implementation
+  - [So You Think You Can Build A Dropdown? - Pedro Duarte - (Next.js Conf 2021) - YouTube](https://www.youtube.com/watch?v=pcMYcjtWwVI)
+
+- ## A thread of threads about JavaScript, React, @reakitjs and front-end development in general_202008
+- https://twitter.com/diegohaz/status/1291090534161887236
+  - Why explicit hook-based APIs are better than implicit context-based APIs. And why they're not.
+  - Menu/Submenu Math.
+  - Composite widgets.
+  - Avoiding unnecessary re-renders with React.memo and non-primitive props.

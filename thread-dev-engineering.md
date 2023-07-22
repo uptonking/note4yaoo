@@ -18,7 +18,20 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## So, metrics. Push or pull?
+- https://twitter.com/gunnarmorling/status/1682454573015871488
+- I feel push is more efficient but the nice thing about pull is you can see an explicit log entry for when the pull failed. It’s a little easier to troubleshoot IMO
+  - Yeah, also rate limiting seems much easier with pull.
+  - That too. But I could see pull at large scale becoming difficult as well managing multiple pull agents. Maybe if 1 pull agent is enough pull is easier. But once you need multiple pull agents push is easier? Thinking out loud
+- Pull. Hard to scale histogram with push.
+- Pull on long running, push for jobs/tasks
+
+- Prometheus is the answer
+  - Supports both actually
+- Pros and cons on both. Hybrid.
+
+- Pull, because then the metrics server is in control and has the responsibility
+- Async push, synchronous pull
 
 - ## 调优，高并发这些基本上都是伪需求。
 - https://www.zhihu.com/question/602234735/answer/3056761380
@@ -63,9 +76,9 @@ modified: 2021-01-21T17:52:13.333Z
 - ## 我视能不能解决庞大的屎山为新手老手的分水岭
 - https://twitter.com/Soulogic/status/1659386692904816641
 - 软件工程师 3 个进阶的思考维度，也是任何严肃的系统，从设计阶段就应该考虑的：
-  01.     Debugability, 运行中出了错误，是否能快速定位到根本原因？
-  02.     Testability, 重构了代码，任何原因修改了代码，是否可以保证没有引入 bug.
-  03.     Toolability, 性能有问题，是否可以很快用自动化工具定位到瓶颈。
+  01.      Debugability, 运行中出了错误，是否能快速定位到根本原因？
+  02.      Testability, 重构了代码，任何原因修改了代码，是否可以保证没有引入 bug.
+  03.      Toolability, 性能有问题，是否可以很快用自动化工具定位到瓶颈。
 
 - ## Tip: Write a design doc (what, why, how, whatever) for any feature you are going to implement. 
 - https://twitter.com/evoluhq/status/1261766649679667208

@@ -157,6 +157,9 @@ modified: 2021-01-13T19:30:59.508Z
 
 ## typesetting-cn/汉字与排版
 
+- tips
+  - [The Type — 文字 / 设计 / 文化 » 中文排版网格系统的五大迷思](https://www.thetype.com/2020/01/16565/)
+
 - https://github.com/ethantw/Han /2kStar/MIT/201903/js/inactive
   - https://hanzi.pro/
   - Han.css: the CSS typography framework optimised for Hanzi.
@@ -295,3 +298,8 @@ modified: 2021-01-13T19:30:59.508Z
 
 - d3-svg
   - [Build a free-hand drawing app with React Hooks](https://reactfordataviz.com/articles/mouse-events-with-d3v6-react-hooks/)
+# discuss-typesetting
+- ## 中式排版必须先计算栏宽定下版心之后，再把版心摆放到页面上，
+- https://twitter.com/Kongque_Chinese/status/1682265824076402689
+  - 至于页边距的数值，是页面减去版心之后计算出来的；
+  - 也就是说，并非事先「定」出来、而是之后「余」出来的，这与西式排版正相反。

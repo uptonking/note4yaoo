@@ -114,6 +114,12 @@ modified: 2021-01-17T06:18:28.855Z
 - https://github.com/fkhadra/react-contexify /ts
   - https://fkhadra.github.io/react-contexify/
   - Add a context menu to your react app with ease
+  - [未实现 Safe triangle / delay before closing submenu](https://github.com/fkhadra/react-contexify/issues/205)
+  - [[Feature Request]: Improve ContextMenu to provide a safe triangle area · carbon-design-system](https://github.com/carbon-design-system/carbon/issues/13271)
+
+- https://github.com/bvaughn/use-context-menu /ts
+  - https://use-context-menu.vercel.app/
+  - React components for displaying configurable context menus
 
 - https://github.com/pacocoursey/cmdk
   - https://cmdk.paco.me/

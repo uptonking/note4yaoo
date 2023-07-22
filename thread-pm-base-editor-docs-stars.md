@@ -28,10 +28,14 @@ modified: 2021-08-22T07:29:34.045Z
 - https://twitter.com/leadream4/status/1629307997175549952
   - 一般的解决方案是加一个延迟，但是更好的方式是增加三角安全区域，亚马逊和苹果都是这样处理的。
   - [Breaking down Amazon's mega dropdown](https://bjk5.com/post/44698559168/breaking-down-amazons-mega-dropdown)
-  - [Building like it's 1984: A comprehensive guide to creating intuitive context menus - Height](https://height.app/blog/guide-to-build-context-menus)
-  - [Invisible details - Building contextual menus - Linear Blog](https://linear.app/blog/invisible-details).
+  - [A comprehensive guide to creating intuitive context menus - Height](https://height.app/blog/guide-to-build-context-menus)
+  - [Invisible details - Building contextual menus - Linear Blog_202009](https://linear.app/blog/invisible-details).
   - `clip-path` is a cool css property that lets you define a region of the component that should be drawn to the screen. In this case we use a polygon to draw a triangle.
   - [MouseSafeArea.ts](https://gist.github.com/eldh/51e3825b7aa55694f2a5ffa5f7de8a6a)
+
+- ## Personally, if I had a choice, I would always, always, always start designing with a click-menu instead of a hover menu
+- https://twitter.com/vitalyf/status/1630481527497687040
+  - Hover menus delays will be too fast for some users, too slow for others; the UI can feel confusing and frustrating, and unresponsive.
 
 - ## GitHub is experimenting with interactive README components, called "blocks."
 - https://twitter.com/FredKSchott/status/1590438076677238784
@@ -95,8 +99,9 @@ modified: 2021-08-22T07:29:34.045Z
   - Play with live implementation 
   - view source
 
-- ## Notion、WordPress 等有基于Block概念的编辑器。人们喜欢 Block。我们似乎标准化了一件事：插入新 Block 的 / 键。但是其他所有的内容都是完全专有且非标准的
+- ## Notion、WordPress 等有基于Block概念的编辑器。人们喜欢 Block。
 - https://twitter.com/EryouHao/status/1486954447943057409
+  - 我们似乎标准化了一件事：插入新 Block 的 / 键。但是其他所有的内容都是完全专有且非标准的
   - 如果在网络上的 Block 是可互换和可重复使用的，不是很酷吗？
   - 于是一个开放的、免费的、非专有的协议诞生了
 - https://blockprotocol.org/

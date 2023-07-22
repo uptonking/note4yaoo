@@ -953,6 +953,9 @@ modified: 2022-08-21T10:02:27.788Z
     - https://github.com/swsvindland/opentable /inactive
     - https://github.com/rathbone-labs/jacksontable /inactive
     - https://github.com/pingyuanChen/handsontable /inactive
+  - repos
+    - https://github.com/warpech/walkontable
+      - This project is currently not maintained in this repo, but as part of Handsontable
 
 - jspreadsheet-ce /6.4kStar/MIT/202305/js
   - https://github.com/jspreadsheet/ce

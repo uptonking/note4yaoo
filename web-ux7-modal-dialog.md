@@ -10,6 +10,10 @@ modified: 2021-07-29T20:37:39.797Z
 # guide
 
 - layer管理时要考虑焦点管理 FocusTrap/Lock
+
+- not-yet
+  - router-based dialog
+
 - [popper > floating-ui motivation](https://floating-ui.com/docs/motivation)
 # discuss
 - ## The Floating UI components package will largely will consist of composable effects that have a similar API to the positioning middleware. 

@@ -39,6 +39,9 @@ Problem 8: Size
 Problem 9: Browser bugs
 
 # docs
+- docs-repeat
+  - [useHover#safePolygon | Floating UI](https://floating-ui.com/docs/usehover#safepolygon)
+
 - floating-ui offers two main features:
 - Anchor positioning: 
   - Anchor a floating element (such as a tooltip) to another element (such as a button) while simultaneously ensuring it stays in view as best as possible by avoiding collisions. 

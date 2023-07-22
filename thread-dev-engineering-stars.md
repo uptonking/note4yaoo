@@ -11,6 +11,26 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## What types of app logic would you ideally move into your database layer (if you could)?
+- https://twitter.com/calcsam/status/1682610083698728960
+- Besides the usual (replication, mvcc, transactions, indices):
+  - multiplayer / collaboration 
+  - reactivity / live queries
+  - paging out cold app state from mem to disk
+  - paging out colder state from disk to cloud 
+  - permissions / row level security 
+  - incremental view maintenance
+
+- outside of very tailored custom systems for massive volume, most teams I've seen come to **regret pushing stuff to the db** 
+  - read write and search only imo
+- Backup, usage tracking for main tables. Domain code is usually avoided.
+
 - ## 🤔 以前我也很信“大佬们”说这些，直到我加入了Office团队，我终于发现这些乱七八糟的规则都是浮云。
 - https://twitter.com/geniusvczh/status/1680029213695557632
   - 只要代码够多，什么都是难的，根本没有程度的区分。

@@ -56,6 +56,10 @@ modified: 2022-08-21T10:03:57.063Z
 - https://github.com/patrik-csak/BB26
   - Convert between numbers and base-26 spreadsheet column letters
 
+- https://github.com/warpech/sheetclip /201505/js
+  - Copy/paste from your HTML5 web app to a spreadsheet
+  - Tiny library that transforms JavaScript 2-dimensional arrays to clipboard strings compatible with spreadsheets such as Microsoft Excel, Google Docs, LibreOffice and OpenOffice
+
 - https://github.com/unosquare/tubular-common
   - Tubular Common provides TypeScript and Javascript models and data transformer to use any Tubular DataGrid component with an array of Javascript objects.
   - https://github.com/unosquare/tubular-react

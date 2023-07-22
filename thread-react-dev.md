@@ -12,6 +12,14 @@ modified: 2021-01-06T14:40:11.360Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I just spent a few hours debugging an issue and the root cause surprised me: React replaces the `value` setter on `<input>` with an (intentionally) incorrect implementation.
+- https://mastodon.social/@developit/110753572938750564
+  - `node.value = toString(getToStringValue(value));`
+
 - ## Today we run into a fun case with concurrent React 18.
 - https://twitter.com/oleg008/status/1679857963714899970
   - We had a useEffect that was sometimes not running. 
@@ -23,7 +31,6 @@ modified: 2021-01-06T14:40:11.360Z
 - 
 - 
 - 
-
 
 - ## Situation: Multiple teams are collaborating to create a single, big React app. How would you handle it?
 - https://twitter.com/housecor/status/1659618313624797186
@@ -158,7 +165,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                            `ValueFront`,                            `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                             `ValueFront`,                             `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

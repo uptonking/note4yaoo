@@ -163,13 +163,11 @@ modified: 2021-09-04T14:03:39.046Z
 - https://github.com/milahu/browserforge
   - run github + github-pages + codesandbox in your browser, offline-first - CONCEPT
 # local-first-examples
-
 - https://github.com/kndwin/jikan
   - https://jikan-murex.vercel.app/
   - I've been using the T3 stack but below is my new option
     - https://twitter.com/kndwindev/status/1675367708437692416
     - @DrizzleOrm - typesafety with relational queries
-
 
 - https://github.com/crutchcorn/offline-first-react-app
   - a proof-of-concept for an offline-first React app that interacts with a server.
