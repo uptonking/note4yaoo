@@ -15,28 +15,26 @@ modified: 2020-12-20T15:47:26.038Z
 # functional dom ui
 
 # popular
-- https://github.com/reactivex/rxjs
-  - /23.3kStar/Apache2/202011/ts
-  - https://rxjs.dev/
-  - A reactive programming library for JavaScript
-  - [callbag和rxjs有什么区别](https://www.zhihu.com/question/270126057/answer/352363505)
-- https://github.com/staltz/callbag-basics
-  - /1.5kStar/MIT/201711/js
+
+- https://github.com/staltz/callbag-basics /1.5kStar/MIT/201711/js
   - allbag is just a spec, but callbag-basics is a real library you can use.
+  - [callbag和rxjs有什么区别](https://www.zhihu.com/question/270126057/answer/352363505)
   - https://github.com/callbag/callbag
     - A standard for JS callbacks that enables lightweight observables and iterables
     - Callbag中的source可以转换成RxJS的Observable
 
-- https://github.com/cyclejs/cyclejs
-  - /9.8kStar/MIT/202009/ts
+- https://github.com/reactivex/rxjs
+  - /23.3kStar/Apache2/202011/ts
+  - https://rxjs.dev/
+  - A reactive programming library for JavaScript
+- https://github.com/cyclejs/cyclejs /9.8kStar/MIT/202009/ts
   - A functional and reactive JavaScript framework for predictable code
   - @cycle/state依赖rxjs
-- https://github.com/staltz/xstream
-  - /2.2kStar/MIT/202010/ts
+- https://github.com/staltz/xstream /2.2kStar/MIT/202010/ts
   - An extremely intuitive, small, and fast functional reactive stream library for JavaScript
   - Only 26 core operators and factories
   - Tailored for Cycle.js, or applications with limited use of subscribe
-- https://github.com/baconjs/bacon.js
+- https://github.com/baconjs/bacon.js /ts
   - Functional reactive programming library for TypeScript and JavaScript
 - https://github.com/kefirjs/kefir
   - A Reactive Programming library for JavaScript

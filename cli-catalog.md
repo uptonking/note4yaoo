@@ -17,9 +17,6 @@ const log = (...args) => queueMicrotask(console.log.bind(console, ...args));
 # 前端工程化工具相关
 
 ```shell
-# delete all node_modules folders recursively
-find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
-
 python -m http.server 8000
 python2 -m SimpleHTTPServer 8000
 ```

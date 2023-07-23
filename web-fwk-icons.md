@@ -10,12 +10,23 @@ modified: 2021-07-28T19:22:07.339Z
 # guide
 
 # popular-icons-solutions
-
 - ## heroicons
 - https://github.com/tailwindlabs/heroicons
 - @heroicons/react
-
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Your icons should be SVG sprites instead of JSX
+- https://twitter.com/jacobmparis/status/1682904429366857732
+  - make a component like `<Icon name="trash" />` (referenced by string)
+  - get autocomplete for icon names
+  - auto build the spritesheet when new svgs are added
+  - [Use svg sprite icons in React](https://www.jacobparis.com/content/svg-icons)
+- Good writeup! One suggestion I have would be that if you're going to write a JSON file to disk as part of the SVG generation script, you might as well just write out a Typescript type definition instead to simplify things. Same goes for the Icon component itself!
 
 - ## Please don't import SVGs as JSX. 
 - https://twitter.com/_developit/status/1382838799420514317
@@ -45,7 +56,7 @@ modified: 2021-07-28T19:22:07.339Z
 
 - Just want to know what would be the best way to use svg. 
 
-``` jsx
+```jsx
 const icon from './icon.svg';
 function Icon(props) {
   return <img src={icon} {...props} />

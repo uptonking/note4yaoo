@@ -24,3 +24,9 @@ modified: 2020-12-12T19:01:56.749Z
   - Parseable uses a simple, index-free mechanism to organize and query data allowing low latency, and high throughput ingestion and query. 
   - It can use either a local mount point or object storage (S3/compatible stores) for data storage.
   - For comparison, Parseable consumes up to ~80% lower memory and ~50% lower CPU than Elastic for similar ingestion throughput. 
+# status-page
+- https://github.com/openstatusHQ/openstatus
+  - https://openstatus.dev/
+  - The Open-source Status Page and Alerting System
+  - The Statuspage Open Source Alternative.
+# more

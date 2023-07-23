@@ -546,6 +546,11 @@ modified: 2022-08-21T10:02:27.788Z
     - group,pivot,master/detail,tree-grid
     - locked column,row resize/reorder,footer
 
+- https://github.com/fbaligand/kibana-enhanced-table
+  - This project is a Kibana plugin that provides two visualizations:
+  - Enhanced Table: same than Data Table, but with enhanced features like computed columns, filter bar and pivot table.
+  - Document Table (NEW): same thing than 'Enhanced Table' visualization, but for single documents (not aggregations).
+
 - reactgrid /760Star/MIT/202206/ts/inactive
   - https://github.com/silevis/reactgrid
   - https://reactgrid.com/

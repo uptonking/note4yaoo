@@ -166,6 +166,11 @@ modified: 2020-11-17T13:38:19.107Z
   - https://ant-extensions.herokuapp.com/?path=/story/page-maker-example--example
   - https://github.com/wrannaman/mui-scaffold
     - Drag and drop material ui components on to the page.
+
+- https://github.com/components-ai/css.gui /ts
+  - https://components.ai/css-gui
+  - Visual development environment for CSS
+  - 效果类似page-builder
 # designer-prototype
 - alva /MIT/3.5kStar/201907/ts
   - https://github.com/meetalva/alva

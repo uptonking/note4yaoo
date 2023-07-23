@@ -16,7 +16,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## 才知道VSCode提供了扩展二分查找功能。它能禁用一半的插件，然后问你能否复现问题，再禁用其一半，如此反复，直到找到导致问题的插件。
+- https://twitter.com/RikaKagurazaka/status/1682770407634632706
+- 对于老司机来说大多数情况是直接用 empty 的 profile，再打开怀疑可能有问题的插件或者设置会更快。这就和 git bisect 一样，当可能有问题的提交数太多的时候，容易把自己搞晕
 
 - ## So, metrics. Push or pull?
 - https://twitter.com/gunnarmorling/status/1682454573015871488
@@ -76,9 +78,9 @@ modified: 2021-01-21T17:52:13.333Z
 - ## 我视能不能解决庞大的屎山为新手老手的分水岭
 - https://twitter.com/Soulogic/status/1659386692904816641
 - 软件工程师 3 个进阶的思考维度，也是任何严肃的系统，从设计阶段就应该考虑的：
-  01.      Debugability, 运行中出了错误，是否能快速定位到根本原因？
-  02.      Testability, 重构了代码，任何原因修改了代码，是否可以保证没有引入 bug.
-  03.      Toolability, 性能有问题，是否可以很快用自动化工具定位到瓶颈。
+  01.       Debugability, 运行中出了错误，是否能快速定位到根本原因？
+  02.       Testability, 重构了代码，任何原因修改了代码，是否可以保证没有引入 bug.
+  03.       Toolability, 性能有问题，是否可以很快用自动化工具定位到瓶颈。
 
 - ## Tip: Write a design doc (what, why, how, whatever) for any feature you are going to implement. 
 - https://twitter.com/evoluhq/status/1261766649679667208

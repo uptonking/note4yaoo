@@ -226,13 +226,50 @@ modified: 2021-01-08T11:48:16.590Z
   - 操作的ui不一定是panel，可能是toolbar、floating-action-button
   - https://github.com/onitecsoft/smarti.dock.js
     - JQuery floating dock panel. Native configuration, custom layout and css style
-# resize-grid-layout
+# split-panels
 - react-resizable-panels /452Star/MIT/202212/ts
   - https://github.com/bvaughn/react-resizable-panels
   - https://react-resizable-panels.vercel.app/
   - React components for resizable panel groups/layouts.
   - panel 不重叠，不可悬浮
 
+- https://github.com/nathancahill/split /js/NoDeps
+  - https://split.js.org/
+  - Unopinionated utilities for resizeable split views
+  - No overhead or attached window event listeners, uses pure CSS for resizing.
+  - Split.js - The original library, maintained since 2014, works with float and flex layouts
+  - Split Grid - Successor to Split.js, for grid layouts. 基于display-grid实现
+
+- https://github.com/devbookhq/splitter /ts
+  - a React component that allows you to split views into resizable panels. Similar to vscode
+  - inspired by Split.js and written as 100% functional component
+  - All size calculation is done through CSS using `calc` with minimal JS
+
+- https://github.com/johnwalley/allotment /ts
+  - https://allotment-storybook.netlify.app/
+  - React component for resizable split views
+  - 提供了复刻vscode界面的示例
+  - Like VS Code's split view implementation? You're in luck! This component is derived from the same codebase.
+
+- https://github.com/b-zurg/react-collapse-pane /ts
+  - https://storybook-collapse-pane.netlify.app/
+  - The splittable, draggable, collapsible panel layout library
+  - 依赖mui
+
+- https://github.com/xcfox/react-tile-pane /ts
+  - https://xcfox.github.io/react-tile-pane/demo/
+  - A React tiling pane manager
+  - use @use-gesture/react, react-use-measure as peerDependencies
+
+- https://github.com/bokuweb/react-sortable-pane /ts
+  - http://bokuweb.github.io/react-sortable-pane
+  - Sortable and resizable pane component for react.
+  - 支持uncontrolled和controlled
+
+- https://github.com/tomkp/react-split-pane /3kStar/MIT/201911/js/inactive
+  - https://tomkp.github.io/react-split-pane
+  - Split-Pane component, can be nested or split vertically or horizontally!
+# resize-grid-layout
 - muuri /10.1kStar/MIT/202107/js
   - https://github.com/haltu/muuri
   - https://muuri.dev/
@@ -276,11 +313,6 @@ modified: 2021-01-08T11:48:16.590Z
 - https://github.com/MichalBures/electron-simple-window-manager
   - Easily manage (open, hide, move, ...) your Electron windows.
 # more
-- https://github.com/tomkp/react-split-pane
-  - https://tomkp.github.io/react-split-pane
-  - /2.4kStar/MIT/202008/js
-  - Split-Pane component, can be nested or split vertically or horizontally!
-
 - https://github.com/krishpranav/js-os
   - js-os is an open-source web desktop platform with a window manager, application APIs, GUI toolkit, filesystem abstractions and much more.
 

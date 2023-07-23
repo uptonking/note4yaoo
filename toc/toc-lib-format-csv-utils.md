@@ -16,16 +16,25 @@ modified: 2022-11-06T15:46:05.676Z
   - Papa Parse can parse a Readable Stream instead of a File when used in Node.js 
   - It is reliable and correct according to [RFC 4180 - Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://datatracker.ietf.org/doc/html/rfc4180)
 # examples
+- https://github.com/UgnisSoftware/react-spreadsheet-import /ts
+  - https://ugnissoftware.github.io/react-spreadsheet-import
+  - Import flow for Excel (.xlsx) and CSV file with automated column matching and validation.
+  - A component used for importing XLS / XLSX / CSV documents built with Chakra UI.
+
+- https://github.com/beamworks/react-csv-importer /ts/依赖少
+  - This library combines an uploader + CSV parser + raw file preview + UI for custom user column mapping, all in one.
+  - drag-drop UI to remap input columns as needed
+  - 1GB+ CSV file size (true streaming support without crashing browser)
+  - automatically strip leading BOM character in data
+  - Papa Parse for CSV parsing
+  - react-dropzone for file upload
+  - @use-gesture/react for drag-and-drop
+
 - https://github.com/mirite/csv-magic /ts
   - https://csvmagic.cloud/
   - CSV Magic is a spreadsheet editor that allows for sorting, filtering, and other large scale manipulations within one or multiple CSV files. 
   - The app runs entirely in browser with no backend supporting it.
   - 依赖react、csvtojson、json2csv
-
-- https://github.com/UgnisSoftware/react-spreadsheet-import /ts
-  - https://ugnissoftware.github.io/react-spreadsheet-import
-  - Import flow for Excel (.xlsx) and CSV file with automated column matching and validation.
-  - A component used for importing XLS / XLSX / CSV documents built with Chakra UI.
 
 - https://github.com/react-csv/react-csv /js
   - https://react-csv.github.io/react-csv/

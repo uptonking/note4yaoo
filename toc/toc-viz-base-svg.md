@@ -52,4 +52,9 @@ modified: 2020-10-05T06:18:21.639Z
 - https://github.com/notoriousb1t/polymorph
   - morphs between two or more svg paths using a simple function
   - compatible with Just Animate, Popmotion, nm8, TweenRex, and other animation libraries
+# vector
+- https://github.com/TeselaGen/openVectorEditor /js
+  - http://teselagen.github.io/openVectorEditor/
+  - Teselagen's Open Source Vector/Plasmid Editor Component
+  - Built With React & Redux
 # more-repos

@@ -93,6 +93,11 @@ modified: 2021-01-17T06:18:28.855Z
 - https://github.com/iamhosseindhv/notistack
   - https://notistack.com/
   - customizable notification snackbars (toasts) that can be stacked on top of each other
+
+- https://github.com/ErnestoRB/usePosition
+  - Retrieve element's screen position, and some extra values of interest
+  - This hook helps to know if a element has changed its position on the screen. 
+  - Relies on requestAnimationFrame and boundingClientRect
 # menu/toolbar
 - toolbar/button-group
   - https://www.radix-ui.com/docs/primitives/components/toolbar

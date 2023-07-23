@@ -33,6 +33,15 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## DOMParser and innerHTML deactivate inline event handlers (except Chrome’s DOMParser does not deactivate `<img src=* onerror=“alert(‘evil’)”>` ).
+- https://twitter.com/dfkaye/status/1682848179270606848
+  - XHR.response doesn’t deactivate any. 
+  - It’s best to define a CSP header for ‘script-src’ that at minimum excludes ‘unsafe-inline’.
+
 - ## I learned that the `EventTarget` interface is a web-native event emitter. 
 - https://twitter.com/stefanjudis/status/1673033968583581699
   - [How to use EventTarget as a web-native event emitter | Stefan Judis Web Development](https://www.stefanjudis.com/today-i-learned/how-to-use-eventtarget-as-a-web-native-event-emitter/)

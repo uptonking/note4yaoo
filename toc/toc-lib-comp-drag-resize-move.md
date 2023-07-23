@@ -7,8 +7,13 @@ modified: 2022-02-05T18:45:34.558Z
 
 # toc-lib-comp-drag-resize-move
 
-# popular
+# guide
 
+- features
+  - drag between lists
+  - virtualizable
+  - grid layout
+# popular
 - dnd-kit /7kStar/MIT/202302/ts/NoDeps
   - https://github.com/clauderic/dnd-kit
   - http://dndkit.com/
@@ -28,7 +33,7 @@ modified: 2022-02-05T18:45:34.558Z
     - https://github.com/wix-playground/dnd-kit
     - https://github.com/replayio/dnd-kit
 
-- use-gesture /7.5kStar/MIT/202302/ts/vanillajs
+- use-gesture /7.5kStar/MIT/202307/ts/vanillajs
   - https://github.com/pmndrs/use-gesture
   - https://use-gesture.netlify.app/docs/examples/
   - core无依赖
@@ -63,6 +68,17 @@ modified: 2022-02-05T18:45:34.558Z
   - Drag and Drop for React
   - 拖拽列表项的示例，没有显示底层被拖拽项的阴影
 
+- https://github.com/hello-pangea/dnd /ts
+  - https://dnd.hellopangea.com/
+  - accessible drag and drop for lists with React
+  - 依赖react-redux.v8、memoize-one、raf-schd、css-box-model
+  - a higher level abstraction specifically built for lists (vertical, horizontal, movement between lists, nested lists and so on). 
+    - it does not provide the breadth of functionality offered by `react-dnd`. 
+    - One shortcoming is that **grid layouts are not supported** (yet). 
+  - No creation of additional wrapper dom nodes - flexbox and focus management friendly!
+  - Movement between lists
+  - Multi drag support
+  - Tree support through the @atlaskit/tree package
 - react-beautiful-dnd /26.2kStar/Apache2/202103/js/redux/inactive
   - https://github.com/atlassian/react-beautiful-dnd
   - https://react-beautiful-dnd.netlify.app/
@@ -72,9 +88,6 @@ modified: 2022-02-05T18:45:34.558Z
   - [DnD with line drop indicators](https://github.com/atlassian/react-beautiful-dnd/issues/2461)
     - https://codesandbox.io/s/react-beautiful-dnd-react-virtualized-forked-c7sm5b
   - [Maintenance will continue with @hello-pangea/dnd (react 18 support)](https://github.com/atlassian/react-beautiful-dnd/issues/2437)
-- https://github.com/hello-pangea/dnd /ts
-  - https://dnd.hellopangea.com/
-  - 依赖react-redux.v8、memoize-one、raf-schd、css-box-model
 
 - dflex /1.5kSStar/MIT/202302/ts
   - https://github.com/dflex-js/dflex

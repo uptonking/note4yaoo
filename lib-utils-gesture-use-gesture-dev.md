@@ -8,18 +8,71 @@ modified: 2023-07-03T08:55:09.372Z
 # lib-utils-gesture-use-gesture-dev
 
 # guide
+- who is using #use-gesture
+  - antd-mobile, react-vant, zarm, nutui-react
+  - @react-three/drei
+  - gutenberg-components
+# examples
+- https://github.com/tackboon/react-grid-rearrange /ts
+  - Rearrange grid items via drag and drop
+  - 依赖use-gesture、react-spring/web
 
+- https://github.com/woofers/react-sheet-slide /ts
+  - https://jaxs.onl/react-sheet-slide/
+  - A responsive React draggable sheet and dialog component
+  - 依赖use-gesture、react-spring/web
+
+- https://github.com/Mattixes/bottomsheet /ts
+  - https://bottomsheet.mattixes.com/
+  - built on top of @react-spring/web and @use-gesture/react
+
+- https://github.com/marcoromag/react-tiles-dnd /ts
+  - https://codesandbox.io/s/react-tiles-dnd-responsive-bd0ly
+  - Manage tiles that can be reordered with drag and drop
+  - tiles in multiple sizes: each tile can span an arbitrary number of columns and rows of the grid
+
+- https://github.com/xcfox/react-tile-pane /ts
+  - https://xcfox.github.io/react-tile-pane/demo/
+  - A React tiling pane manager
+  - use @use-gesture/react, react-use-measure as peerDependencies
+
+- https://github.com/beamworks/react-csv-importer /ts/依赖少
+  - This library combines an uploader + CSV parser + raw file preview + UI for custom user column mapping, all in one.
+  - drag-drop UI to remap input columns as needed
+  - 1GB+ CSV file size (true streaming support without crashing browser)
+  - automatically strip leading BOM character in data
+  - Papa Parse for CSV parsing
+  - react-dropzone for file upload
+  - @use-gesture/react for drag-and-drop
+
+- https://github.com/jotform/dnd-builder /43Star/MIT/202305/js
+  - https://www.jotform.com/open-source/dnd-builder/
+  - accessible drag and drop page builder with React
+  - 依赖use-gesture、fuse.js、react-dnd-cjs、react-quill、recharts
+  - 示例很好
+
+- https://github.com/qiuxiang/canvas-tilemap /ts
+  - Super smooth 2d tilemap build with canvas2d.
+
+- https://github.com/wobsoriano/svelte-gesture
+  - utility for component-tied mouse/touch gestures in Svelte.
 # blogs
 
 ## [building mobile-friendly UI interfaces](https://use-gesture.netlify.app/docs/extras/)
 
-- touch-action
+- `touch-action` css property
   - you don't want the `body` of your page to scroll along with the user manipulating the item horizontally. 
   - Your first instinct might be to prevent the event default action by calling `event.preventDefault()` in your handler. 
   - But there is a simpler, more effective solution, which has to do with a simple CSS property.
   - `touch-action` is a CSS property that sets how an element's region can be manipulated by a touchscreen user.
-  - Applications using Touch events disable the browser handling of gestures by calling `preventDefault()`, but should also use `touch-action` to ensure the browser knows the intent of the application before any event listeners have been invoked.
-  - When a gesture is started, the browser intersects the `touch-action` values of the touched element and its ancestors, up to the one that implements the gesture (in other words, the first containing scrolling element). This means that in practice,  `touch-action` is typically applied only to top-level elements which have some custom behavior, without needing to specify touch-action explicitly on any of that element's descendants.
+    - `auto`: 默认值。 Enable browser handling of all panning and zooming gestures.
+    - `none`: Disable browser handling of all panning and zooming gestures.
+    - By default, panning (scrolling) and pinching gestures are handled exclusively by the browser. 
+    - By explicitly specifying which gestures should be handled by the browser, an application can supply its own behavior in pointermove and pointerup listeners for the remaining gestures. 
+    - Applications using Touch events disable the browser handling of gestures by calling `preventDefault()`, but should also use `touch-action` to ensure the browser knows the intent of the application before any event listeners have been invoked.
+    - When a gesture is started, the browser intersects the `touch-action` values of the touched element and its ancestors, up to the one that implements the gesture (in other words, the first containing scrolling element). 
+    - This means that in practice,  `touch-action` is typically applied only to top-level elements which have some custom behavior, without needing to specify touch-action explicitly on any of that element's descendants.
+    - After a gesture starts, changes to touch-action will not have any impact on the behavior of the current gesture.
 
 - https://github.com/willmcpo/body-scroll-lock /js
   - When you have a menu overlay on top of your page you generally don't want the body to scroll along with the menu content. Body scroll lock is a javascript library that disable body scroll.
@@ -28,7 +81,7 @@ modified: 2023-07-03T08:55:09.372Z
 - https://github.com/d4nyll/lethargy
   - help distinguish between scroll events initiated by the user, and those by inertial scrolling
 # faq
-- ## What are the differences between using use[Gesture] hooks and adding listeners manually?
+- ## What are the differences between using `use[Gesture]` hooks and adding listeners manually?
 - Not a lot! 
   - Essentially these `useXXXX` hooks simplify the implementation of the drag and pinch gestures, calculate kinematics values you wouldn't get out of the box from the listeners, and debounce move, scroll and wheel events to let you know when they end.
 

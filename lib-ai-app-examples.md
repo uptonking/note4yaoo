@@ -50,6 +50,9 @@ modified: 2023-02-08T07:20:48.475Z
   - https://twitter.com/imyuanx/status/1641715695762436098
   - https://github.com/imyuanx/ai-lawyer
 
+- https://github.com/nicepkg/gpt-runner
+  - Conversations with your files! Manage and run your AI presets!
+
 ## api
 
 - [https://www.steamship.com](https://www.steamship.com/)

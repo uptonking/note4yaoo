@@ -151,6 +151,9 @@ modified: 2021-01-12T18:49:07.422Z
 - https://github.com/FormidableLabs/nuka-carousel
   - https://formidable.com/open-source/nuka-carousel/
   - accessibility-first React carousel library with an easily customizable UI 
+
+- https://github.com/joaorr3/react-slip-and-slide /ts
+  - A react and react-native carousel
 # media
 - https://github.com/cookpete/react-player
   - React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, DailyMotion and Kaltura.
@@ -159,6 +162,14 @@ modified: 2021-01-12T18:49:07.422Z
   - A media player build in React on top of CookPete/react-player.
   - It supports the MUI theming and components and own functionality of the Picture-in-Picture and Fullscreen API
   - You can play both: audio and video files.
+
+- https://github.com/shaka-project/shaka-player /js
+  - JavaScript library for adaptive media. 
+  - It plays adaptive media formats (such as DASH, HLS and MSS) in a browser, without using plugins or Flash. 
+  - Instead, Shaka Player uses the open web standards MediaSource Extensions and Encrypted Media Extensions.
+  - supports offline storage and playback of media using IndexedDB. Content can be stored on any browser. 
+- https://github.com/WINOFFRG/limeplay /ts
+  - a React based Headless UI library made to work with HTML5 & Shaka Player
 # highlight
 - https://github.com/FormidableLabs/prism-react-renderer
   - Renders highlighted Prism output to React (+ theming & vendored Prism)

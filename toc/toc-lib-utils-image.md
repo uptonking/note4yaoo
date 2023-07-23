@@ -94,6 +94,11 @@ modified: 2023-04-04T22:39:45.442Z
   - https://mirador-dev.netlify.app/__tests__/integration/mirador/
   - web based, multi-window image viewing platform with the ability to zoom, display, compare and annotate
 
+- https://github.com/ZitySpace/react-annotate /ts
+  - https://react-annotate-demo.vercel.app/
+  - React component for computer vision dataset annotation
+  - 依赖fabric、react-draggable、use-gesture
+
 - https://github.com/wojtekmaj/react-pdf /js
   - Display PDFs in your React app as easily as if they were images.
   - For React-PDF to work,  `PDF.js` worker needs to be provided.
