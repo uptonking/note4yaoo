@@ -56,6 +56,8 @@ modified: 2021-01-04T16:00:05.478Z
   - ngrx: 472
   - mobx: 364
   - event bus: 189
-# ref
+# more
+- [github: The top programming languages of 2022](https://octoverse.github.com/2022/top-programming-languages)
+
 - [State of JavaScript 2020 overview](https://css-tricks.com/state-of-javascript-2020/)
   - https://2020.stateofjs.com/en-us/

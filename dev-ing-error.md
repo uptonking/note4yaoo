@@ -21,8 +21,9 @@ modified: 2021-03-29T19:29:32.505Z
 - vips/vips8:35:10: fatal error: glib-object.h: No such file or directory
   - 需要手动安装 libvips8
   - 搜索 libvips8 ubuntu build from source
+  - 再次碰到此问题_20230724: 根据异常信息，未安装依赖，sudo apt-get install liblcms2-dev -y
 
-- [fatal error: 'vips/vips8' file not found · Issue #1882 · lovell/sharp](https://github.com/lovell/sharp/issues/1882)
+- [fatal error: 'vips/vips8' file not found · Issue · lovell/sharp](https://github.com/lovell/sharp/issues/1882)
   - apt-get update && apt-get install -y glib2.0-dev libvips-dev
 
 - Cannot write file  because it would overwrite input file.

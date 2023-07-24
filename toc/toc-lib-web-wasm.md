@@ -92,6 +92,11 @@ modified: 2020-12-31T15:19:37.542Z
 - https://github.com/38/plotters
   - A rust drawing library for high quality data plotting for both WASM and native, statically and realtimely
 # wasm-toolchain
+- https://github.com/devongovett/napi-wasm /js
+  - An implementation of the napi API for WASM. 
+  - Enables using some native Node modules in browsers and other environments.
+  - It's a minimal node-api shim written in JS that allows you to compile for WASM with minimal changes.
+
 - https://github.com/WebAssembly/wabt
   - The WebAssembly Binary Toolkit
 - https://github.com/iodide-project/pyodide

@@ -9,8 +9,7 @@ modified: 2023-07-03T08:55:45.218Z
 
 # guide
 
-# 
-
+# issues
 - ## [Handling for drop targets?](https://github.com/pmndrs/use-gesture/issues/88)
   - I've been digging around the issues and examples looking for solutions for discrete draggable components and drop targets, but haven't been able to find much
 
@@ -22,7 +21,8 @@ modified: 2023-07-03T08:55:45.218Z
 - The "gesture" starts as soon as the user starts interacting, and the threshold controls when we determine it to be an intentional gesture and call handlers. 
   - the gesture had already started before the threshold was reached.
 
-- the main reason why I though to not include threshold is because when moving the dragged element, you generally want to respond 1:1 with your pointer. If you include the pre-threshold in the movement, you will experience a jump equivalent to the threshold — unless you animate the jump, but you might have to catchup with the pointer, so this will result in using an animation library during the whole gesture if you see what I mean.
+- the main reason why I though to not include threshold is because when moving the dragged element, you generally want to respond 1:1 with your pointer. 
+  - 👉🏻 If you include the pre-threshold in the movement, you will experience a jump equivalent to the threshold — unless you animate the jump, but you might have to catchup with the pointer, so this will result in using an animation library during the whole gesture if you see what I mean.
 # discuss
 - ## 
 
