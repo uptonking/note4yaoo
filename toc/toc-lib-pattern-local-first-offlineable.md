@@ -91,6 +91,8 @@ modified: 2021-09-04T14:03:39.046Z
     - Please, uncheck "save pages in background" in options (Misc) than you will get the correct title name!
   - https://github.com/gildas-lormeau/SingleFileZ
     - a fork of SingleFile that allows you to save a webpage as a self-extracting HTML file
+  - https://github.com/gildas-lormeau/SingleFile-Lite /js
+    - This is the new version of SingleFile compatible with the long-awaited Manifest V3!
 
 - https://github.com/aphrodite-sh/aphrodite
   - Aphrodite is a schema layer whose first goal is to make P2P & Local-First software as easy to develop as traditional client-server software.

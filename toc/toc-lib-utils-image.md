@@ -127,6 +127,13 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/EddieMachete/em-ui-quadrant
   - Quadrant is a tile based, JavaScript web component which allows viewing an image in different levels of detail while optimizing the download process. 
   - Quadrant is based on my interpretation of Google Maps applied to image viewing over the web.
+# image/cover-generator
+- https://github.com/PJijin/Cover-Image-Generator /js
+  - Generate a cover image for your blog post online.
+
+- https://github.com/daveearley/screenshot.rocks /ts
+  - Screenshot.rocks is an online tool which allows you to create beautiful mobile & browser mockups from screenshots.
+  - https://chrome.google.com/webstore/detail/screenshotrocks-one-click/oolmphedpohnagciifbnfpemadolahki
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

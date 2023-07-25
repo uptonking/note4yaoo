@@ -29,20 +29,6 @@ modified: 2021-05-23T10:17:05.993Z
   - https://github.com/simonw/sqlite-diffable
   - it works by dumping the DB to plain text (ndjson)
   - ultimately my use-case was append-only, so I went with the retry-upon-failure strategy (which only really matters in case of concurrent action execution). Not elegant but did the trick!
-# discuss
-- ## 
-
-- ## There is one place where having an ORM was unequivocally(表达明确的；毫不含糊的) the right decision and much of my career was built on extending it to get developers to "do the right thing.". That place was Meta.
-- https://twitter.com/tantaman/status/1662502624963223560
-  - The Ent framework at Meta:
-1. Let us colocate privacy rules with data. Each entity definition was required to have read and write privacy policies.
-2. Data validation & migrations.
-3. Integrations. The SDL, being code, could be extended by devs to support use cases outside of data storage.
-4. Arbitrary backends.
-5. Arbitrary indexing services.
-6. Deletion.
-
-- If your ORM only talks SQL, can't link multiple datastores, doesn't support extending it's codegen with custom plugins, doesn't support row level security, can't do dual reads and writes to support live migrations -- then you might as well stick with raw SQL.
 
 - ## 💡 On the debate between raw SQL & ORMs, I find myself flip-flopping over the years.
 - https://twitter.com/tantaman/status/1662123332051914758
@@ -93,6 +79,24 @@ modified: 2021-05-23T10:17:05.993Z
 - It depends, but just use SQL (with a query builder if needed). Kill ORMs
 - Query builders can be a nice middle ground in my experience
 
+- ## There is one place where having an ORM was unequivocally(表达明确的；毫不含糊的) the right decision and much of my career was built on extending it to get developers to "do the right thing.". That place was Meta.
+- https://twitter.com/tantaman/status/1662502624963223560
+  - The Ent framework at Meta:
+1. Let us colocate privacy rules with data. Each entity definition was required to have read and write privacy policies.
+2. Data validation & migrations.
+3. Integrations. The SDL, being code, could be extended by devs to support use cases outside of data storage.
+4. Arbitrary backends.
+5. Arbitrary indexing services.
+6. Deletion.
+
+- If your ORM only talks SQL, can't link multiple datastores, doesn't support extending it's codegen with custom plugins, doesn't support row level security, can't do dual reads and writes to support live migrations -- then you might as well stick with raw SQL.
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## AFAIK the technique used in SQL WHERE queries with index support relies on building a bitmap which represents keys that satisfy the query. 
 - https://twitter.com/Horusiath/status/1634447500525404163
   - Can anyone point me to a source code where such bitmap is being build by the query executor?
@@ -101,7 +105,7 @@ modified: 2021-05-23T10:17:05.993Z
 - ## how & why #ScyllaDB engineers moved to B-tree & B+-tree data structures for linear search in their #NoSQL distributed database.
 - [The Taming of the B-Trees](https://www.scylladb.com/2021/11/23/the-taming-of-the-b-trees/)
 
-- ## Very common mistake in ActiveRecord: checking for the existence of a belongs_to associated record with `present?` or `blank?` . 
+- ## Very common mistake in ActiveRecord: checking for the existence of a `belongs_to` associated record with `present?` or `blank?` . 
 - https://twitter.com/nateberkopec/status/1441406828424822792
   - This is an almost-guaranteed N+1. 
   - You have the foreign key on the record you're looking at - just check if the foreign key is `nil?` .
@@ -133,7 +137,7 @@ modified: 2021-05-23T10:17:05.993Z
 - Mikro absolutely thrashes TypeORM with its hands tied behind its back. 
   - It even gives Prisma a run for its money as well (I’ve used all three of these in high load applications at scale). 
   - Unit of work is wonderful and “just works” once you properly connect it to your request context.
-  - The only thing that was killing me was lack of type safety when calling toJSON(), but that’s already staged for the next release!
+  - The only thing that was killing me was **lack of type safety when calling `toJSON()` **, but that’s already staged for the next release!
 - My question is are you able to do everything using an ORM efficiently? Or do you still write complex SQL’s? For my job, we don’t use an ORM, and have basically a long list of a couple hundred stored procedures in Oracle DB to do every task. What are your views on this?
   - Any ORM will give you a “perfect” query for simple stuff, and I’ve found it’s a perfect fit for 95% of queries. 
   - You absolutely have to drop down to pure sql for the more complex queries.

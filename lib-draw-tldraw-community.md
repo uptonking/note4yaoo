@@ -95,7 +95,11 @@ modified: 2023-06-19T12:33:38.006Z
 
 - ## 
 
-- ## 
+- ## This refactor switches most of our hit testing from DOM based (with listeners on every element) to pure js. 
+- https://twitter.com/steveruizok/status/1683609271194329088
+  - It will roughly halve(减半) the number of DOM nodes on the canvas in any given project, while giving us so much more control over what gets selected.
+  - Our selection / overlays / inputs still use DOM events / hit tests. The system works with both!
+- We don’t rely on rendering for any information so we can test interactions and their results without using visual tests. (We do have visual tests but they just guarantee that the rendered output corresponds correctly to our data)
 
 - ## is this kind of a memory leaky pattern?
 - https://twitter.com/steveruizok/status/1675762561008951296

@@ -19,7 +19,7 @@ modified: 2023-04-16T13:34:33.706Z
   - Export component as jpeg, png or pdf
   - 依赖html2Canvas、jspdf
 # js-screenshot
-- https://github.com/niklasvh/html2canvas
+- https://github.com/niklasvh/html2canvas /ts
   - https://html2canvas.hertzen.com/
   - Screenshots with JavaScript
   - The script allows you to take "screenshots" of webpages or parts of it, directly on the users browser.
@@ -33,14 +33,14 @@ modified: 2023-04-16T13:34:33.706Z
 
 - https://github.com/bubkoo/html-to-image /540Star/MIT/202101/ts
   - Generates an image from a DOM node using HTML5 canvas and SVG.
-  - Fork from dom-to-image with more maintainable code and some new features.
+  - Fork from `dom-to-image` with more maintainable code and some new features.
 
 - https://github.com/rsify/pico /ts
   - Pico's goal is to produce high precision screenshots of any viewport entirely client side.
   - This is different from simply capturing a webpage using Puppeteer or a similar tool in that the screenshot taking happens entirely client side.
   - how it works
     - This program renders whatever is displayed in the given Window into an image, thanks to svg's `<foreignObject>`.
-    - No server side code is required to produce the screenshot.
+    - **No server side code is required to produce the screenshot**.
 
 - https://github.com/tsayen/dom-to-image /7kStar/201706
   - turn arbitrary DOM node into a vector (SVG) or raster (PNG or JPEG) image, written in JavaScript.
@@ -55,10 +55,32 @@ modified: 2023-04-16T13:34:33.706Z
       - HTML content needs to be serialized to XML, and all styles have to be inlined.
     - The DOM object is not linked, but copied 
     - Content outside the bounding box of the element will be cut of per default if painted to Canvas. Don't worry though, simply pass a more comfortable offset to the toImage function
-# page-screenshot-browser-extensions
-- https://github.com/mrcoles/full-page-screen-capture-chrome-extension
-  - Go FullPage
-  - takes a screen capture of a full web page.
+
+## capture-utils
+
+- https://github.com/likaia/js-screen-shot /ts
+  - web端自定义截屏插件(原生JS版)
+  - 支持electron环境下使用插件
+
+- https://github.com/xataio/screenshot /ts
+  - zero-dependency browser-native way to take screenshots powered by the native web MediaDevices API.
+
+- https://github.com/sindresorhus/pageres
+  - Capture screenshots of websites in various resolutions. 
+  - It can also be used to render SVG images.
+  - 基于puppeter
+
+- https://github.com/premieroctet/screen-guru
+  - Take clean screenshot of any websites
+  - 基于puppeter
+
+- https://github.com/flowko/website-shot /vue
+  - 基于puppeter
+# screenshot-browser-extensions
+- https://github.com/Chromo-lib/screenshot /202210/js
+  - Screenshot tool for making a full page or partial screen capture with further edit, download.
+  - 只支持firefox和edge，不支持chrome
+  - built with Chrome DevTools Protocol 
 
 - note-it /16Star/Apache2/202208/ts/tiptap
   - https://github.com/MuhametSmaili/note-it
@@ -67,35 +89,40 @@ modified: 2023-04-16T13:34:33.706Z
   - 依赖React、Tiptap、tesseract.js、pdfmake、html-to-pdfmake
   - You can take notes, convert images to text, download notes to pdf, and more.
 
+- https://github.com/felixfbecker/svg-screenshots /726Star/MIT/202105/ts
+  - Browser extension to take scalable, semantic, accessible screenshots of websites in SVG format.
+  - The SVG will not run any JavaScript.
+  - 截图某些动态元素时，可能会变颜色
+  - 依赖dom-to-svg、svgo
+  - https://github.com/felixfbecker/dom-to-svg
+
 - https://github.com/lxieyang/screenshot-extension /202011/ts
   - browser extension that takes full-page or partial screenshots!
   - 仅截图全屏，无滚动和编辑
+  - https://chrome.google.com/webstore/detail/screenshot-extension-open/hmkbkbpdnembpeadgpcmjekihjmckdjh
 
-- https://github.com/Chromo-lib/screenshot-fullpage-extension /202210/js
-  - Screenshot tool for making a full page or partial screen capture with further edit, download.
-  - 只支持firefox和edge，不支持chrome
-  - built with Chrome DevTools Protocol 
+- https://github.com/mrcoles/full-page-screen-capture-chrome-extension /js
+  - Go FullPage
+  - takes a screen capture of a full web page.
+  - 提供了付费版-未开源
 
 - https://github.com/timii/Snapper /202207/js
   - An easy-to-use extension for taking screenshots in your browser
 
-- https://github.com/Aminadav/1click-webpage-screenshot /201902/js
+- https://github.com/simov/screenshot-capture /202212/js/功能简单
+  - Screenshot Capture / Browser Extension
+  - https://chrome.google.com/webstore/detail/screenshot-capture/giabbpobpebjfegnpcclkocepcgockkc
+
+- https://github.com/Aminadav/1click-webpage-screenshot /201902/js/功能丰富
   - Entire page Screenshot extension for Google Chrome
   - Annotate it with rectangles, circles, arrows, lines and text.
 
 - https://github.com/folletto/Blipshot /202108/js
   - simple one-click full-page screenshots with drag and drop.
+  - [This plugin isn't in development anymore](https://github.com/folletto/Blipshot/issues/28)
 
 - https://github.com/ashrene-roy/blackboard /202107/js
   - annotate webpages, capture and save full page screenshots
-
-- https://github.com/felixfbecker/svg-screenshots
-  - Browser extension to take scalable, semantic, accessible screenshots of websites in SVG format.
-  - The SVG will not run any JavaScript.
-  - 截图某些动态元素时，可能会变颜色
-
-- https://github.com/simov/screenshot-capture /202012/js
-  - Screenshot Capture / Browser Extension
 
 - https://github.com/CamilleCharp/browsershot
   - take a screenshot and put it in a browser-like window, it is inspired by code-snapshot on VsCode.
@@ -107,13 +134,15 @@ modified: 2023-04-16T13:34:33.706Z
 - https://github.com/williamemir/driveshot
   - takes screenshots and uploads to google drive, only for testing of manifest v3 
 
-## screenshot-for-vscode
-
-- https://github.com/jeffersonlicet/snipped
-  - Save SVG or PNG screenshots of code selection or all lines of your file.
-
-- https://github.com/kufii/CodeSnap
-  - Take beautiful screenshots of your code in VS Code
+- web-clipper /4.7kStar/GPLv2/202208/ts
+  - https://github.com/webclipper/web-clipper
+  - https://clipper.website/
+  - use Web Clipper to save anything on the web to anywhere.
+  - 支持收藏链接、选区文字
+  - 支持
+    - flowus、wolai、语雀、有道、flomo
+    - notion、github、onenote、joplin
+  - https://chrome.google.com/webstore/detail/web-clipper/mhfbofiokmppgdliakminbgdgcmbhbac
 # source-code-screenshot
 - https://github.com/carbon-app/carbon /js
   - https://carbon.now.sh/
@@ -132,6 +161,16 @@ modified: 2023-04-16T13:34:33.706Z
   - code screenshot
 
 ## vscode
+
+- https://github.com/jeffersonlicet/snipped /ts
+  - Save SVG or PNG screenshots of code selection or all lines of your file.
+
+- https://github.com/kufii/CodeSnap /js
+  - Take beautiful screenshots of your code in VS Code
+
+- https://github.com/octref/polacode /js
+  - Polaroid for your code
+  - Resize the snippet / container by dragging the lowerright corner
 # more
 - https://github.com/antfu/broz
   - A simple, frameless browser for screenshots

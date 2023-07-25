@@ -88,6 +88,8 @@ modified: 2020-12-28T12:24:09.275Z
     - tags
     - templates
     - sharing
+  - https://github.com/drudge/n8n-nodes-puppeteer
+    - n8n node for requesting webpages using Puppeteer, a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol.
 
 - baidu-amis /12.9kStar//apache2/202301/ts/编辑器未开源
   - https://github.com/baidu/amis

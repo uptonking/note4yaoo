@@ -9,8 +9,8 @@ modified: 2021-06-02T18:24:50.218Z
 
 # guide
 
+# draft
+- 兼容现有浏览器的扩展
 # xp-file-manager
-
 - 难以直接将当前文件移动到父目录
-
 # xp-editor

@@ -46,6 +46,15 @@ modified: 2021-08-30T18:56:09.644Z
   - Unit of Work maintains a list of objects (entities) affected by a business transaction and coordinates the writing out of changes. 
   - Identity Map ensures that each object (entity) gets loaded only once by keeping every loaded object in a map. Looks up objects using the map when referring to them. 
 
+- https://github.com/sequelize/sequelize
+  - An easy-to-use multi SQL dialect ORM for Node.js
+  - 不支持mongo
+
+- https://github.com/drizzle-team/drizzle-orm
+  - a TypeScript ORM for SQL databases
+  - 支持mysql、postgresql、sqlite，不支持mongo
+  - 代码量少
+
 - prisma /28.1kStar/apache2/202301/ts
   - https://github.com/prisma/prisma
   - https://www.prisma.io/
@@ -78,10 +87,6 @@ modified: 2021-08-30T18:56:09.644Z
       - 数据库和数据模型来自同一个地方
       - 控制力高于SQL构造器，低于手写SQL； 但生产力最高
 
-- https://github.com/sequelize/sequelize
-  - An easy-to-use multi SQL dialect ORM for Node.js
-  - 不支持mongo
-
 - typetta /63Star/apache2/202301/ts
   - https://github.com/twinlogix/typetta
   - ORM written in TypeScript that aims to allow seamless access to data in a typed fashion to all main SQL databases 
@@ -95,11 +100,6 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/balderdashy/waterline /202208/js/inactive
   - An adapter-based ORM for Node.js with support for mysql, mongo, postgres, mssql (SQL Server), and more
   - Waterline is a next-generation storage and retrieval engine, and the default ORM used in the Sails framework.
-
-- https://github.com/drizzle-team/drizzle-orm
-  - a TypeScript ORM for SQL databases
-  - 支持mysql、postgresql、sqlite，不支持mongo
-  - 代码量少
 
 - bookshelf /6.3kStar/MIT/202007/js/inactive
   - https://github.com/bookshelf/bookshelf

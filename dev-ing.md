@@ -280,7 +280,16 @@ $$('[contenteditable]')
   - [x] streaming-infinite-list/tree
 # dev-07
 
-## 070
+## 072
+
+## 0725
+
+- [Using position absolute in a child of a flex parent - Stack Overflow](https://stackoverflow.com/questions/69644462/using-position-absolute-in-a-child-of-a-flex-parent)
+  - If you do `position: absolute;` on a flex-child element, it will still have flex-alignment until you give it left, right, top, bottom
+
+- [CSS Flexbox with position absolute confusion - Stack Overflow](https://stackoverflow.com/questions/71359535/css-flexbox-with-position-absolute-confusion)
+  - an absolutely-positioned child of a flex container does not participate in flex layout.
+  - The static position of an absolutely-positioned child of a flex container is determined such that the child is positioned as if it were the sole flex item in the flex container, assuming both the child and the flex container were fixed-size boxes of their used size. For this purpose, auto margins are treated as zero.
 
 ## 0717
 
@@ -429,7 +438,7 @@ div {
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
-  - spacing is important in `calc()` css function,                                   `calc(24rem - 13px)`; 
+  - spacing is important in `calc()` css function,                                    `calc(24rem - 13px)`; 
   - You just need to add a space around the minus operator
 
 - [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)

@@ -16,9 +16,11 @@ modified: 2022-11-11T11:04:29.007Z
   - https://github.com/webclipper/web-clipper
   - https://clipper.website/
   - use Web Clipper to save anything on the web to anywhere.
+  - 支持收藏链接、选区文字
   - 支持
     - flowus、wolai、语雀、有道、flomo
     - notion、github、onenote、joplin
+  - https://chrome.google.com/webstore/detail/web-clipper/mhfbofiokmppgdliakminbgdgcmbhbac
 
 - https://github.com/pfcao/abookmark /js
   - Advanced bookmark manager comes with labels, sticky notes, and trash mode.
@@ -40,7 +42,6 @@ modified: 2022-11-11T11:04:29.007Z
 
 - https://github.com/zotero/zotero
   - a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
-
 # web-clipper
 - maoxian-web-clipper /596Star/MIT/202209/js
   - https://github.com/mika-cn/maoxian-web-clipper
@@ -200,6 +201,7 @@ modified: 2022-11-11T11:04:29.007Z
 - https://github.com/akawashiro/jendeley
   - a JSON-based document organizing software.
   - the database is stored as a plain text JSON file, making it easily editable using your preferred editor. 
+
 ## bookmark-manager-as-browser-extension
 
 - https://github.com/danny0838/webscrapbook

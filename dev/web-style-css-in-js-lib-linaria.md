@@ -52,6 +52,12 @@ modified: 2021-01-01T20:06:36.094Z
 - compiled-css-in-js会编译出atomic css
   - linaria也支持
 
+- resources
+  - [Use CSS Variables instead of React Context](https://epicreact.dev/css-variables/)
+  - [[RFC] Zero-runtime CSS-in-JS implementation · mui/material-ui](https://github.com/mui/material-ui/issues/38137)
+# dev-xp
+- :global样式中sass的! 符号要去掉
+# linaria原理
 - **linaria生成样式的原理解析**
 - `styled`纯静态样式
 
@@ -92,10 +98,6 @@ react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", {
 }, "h2\u6807\u9898");
 ```
 
-- resources
-  - [Use CSS Variables instead of React Context](https://epicreact.dev/css-variables/)
-# dev-xp
-- :global样式中sass的! 符号要去掉
 # issues
 - [Conditional CSS with styled tag](https://github.com/callstack/linaria/issues/409)
   - No support for conditional CSS using the styled tag is the biggest hurdle for us moving to linaria from styled-components in a typescript project

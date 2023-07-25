@@ -15,7 +15,7 @@ modified: 2023-07-03T08:55:45.218Z
 
 - I’m sorry but unfortunately this lib doesn’t support drag and drop events.
 
-- I found a solution to simulate drop events that solved my problem perfectly. `Document.elementFromPoint(x, y)`  100% mobile browser compatible
+- I found a solution to simulate drop events that solved my problem perfectly. `Document.elementFromPoint(x, y)` 100% mobile browser compatible
 
 - ## [Drag movement does not include pre-threshold movement](https://github.com/pmndrs/use-gesture/issues/314)
 - The "gesture" starts as soon as the user starts interacting, and the threshold controls when we determine it to be an intentional gesture and call handlers. 
@@ -23,12 +23,25 @@ modified: 2023-07-03T08:55:45.218Z
 
 - the main reason why I though to not include threshold is because when moving the dragged element, you generally want to respond 1:1 with your pointer. 
   - 👉🏻 If you include the pre-threshold in the movement, you will experience a jump equivalent to the threshold — unless you animate the jump, but you might have to catchup with the pointer, so this will result in using an animation library during the whole gesture if you see what I mean.
+
+- ## [Keyboard accessibility improvements](https://github.com/pmndrs/use-gesture/issues/598
+- It would be good to contemplate(考虑) the keyboard accessibility for drag move gestures, as the current implementation is not working the same as other libraries that implement this feature. 
+- The current implementation starts the drag gesture as soon as any of the keyboard keys are pressed and it brings the following issues:
+  - Dragging from the keyboard is complicated and doesn't feel good because the actions are direction locked where the gesture was initiated.
+  - This makes implementing accessibility for complex gestures or even dnd oriented libraries based on use-gesture really complicated, as many drag gestures in those cases would rely on moving elements on more than a single axis.
+
+- It could be good togo with the dnd-kit approach, where the gesture has to be activated with Enter or Spacebar before moving when you are using the keyboard (This is also used in other libraries like svelte-dnd-action and react-beautiful-dnd, so it seems like the common / intuitive behavior). 
+
+- I believe that adding an option to debounce the `keyup` handler and leave it to the user to config the debounce time seems like a good fix for the issue in the meantime.
+
+- [4 Major Patterns for Accessible Drag and Drop | by Jesse Hausler | Salesforce Designer | Medium](https://medium.com/salesforce-ux/4-major-patterns-for-accessible-drag-and-drop-1d43f64ebf09)
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [update local value from outside ?](https://github.com/pmndrs/use-gesture/discussions/54)
+- [Pragmatically set value of X](https://github.com/pmndrs/use-gesture/discussions/55)
 
 - ## [Exclude children from the gesture](https://github.com/pmndrs/use-gesture/issues/433)
   - Is there a way to exclude specific children of an element from triggering the gesture / getting events as they should ? 

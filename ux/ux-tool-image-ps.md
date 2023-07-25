@@ -23,5 +23,6 @@ modified: 2021-04-08T09:19:36.626Z
   - The main goal behind Pika is to fasten this process of designing screenshots.
   - Pika uses `dom-to-image` to generate an image from a DOM element.
 
-- https://github.com/daveearley/screenshot.rocks
+- https://github.com/daveearley/screenshot.rocks /ts
   - Screenshot.rocks is an online tool which allows you to create beautiful mobile & browser mockups from screenshots.
+  - https://chrome.google.com/webstore/detail/screenshotrocks-one-click/oolmphedpohnagciifbnfpemadolahki

@@ -160,8 +160,12 @@ modified: 2020-12-21T07:46:17.578Z
   - I also ran the benchmark using `display:table-cell` and it hit 30ms, right between the two flexbox implementations.
   - The benchmarks above only represent the Blink & WebKit side of things. Due to the time of implementation, flexbox is nearly identical across Safari, Chrome & Android.
 # [Flexbox and absolute positioning](https://chenhuijing.com/blog/flexbox-and-absolute-positioning/)
+- the Flexbox specification
+  - an absolutely-positioned child of a flex container does not participate in flex layout
+    - If you position a flex item absolutely, it no longer participates in the flex layout. This means any flex properties on the item become moot. 
+  - The static position of an absolutely-positioned child of a flex container is determined such that the child is positioned as if it were the sole flex item in the flex container, assuming both the child and the flex container were fixed-size boxes of their used size.
 
+- [CSS Flexbox with position absolute confusion - Stack Overflow](https://stackoverflow.com/questions/71359535/css-flexbox-with-position-absolute-confusion)
 # blogs
-
 - [flex 布局的浏览器兼容性方案](https://juejin.cn/post/6871025038036844558)
   - https://github.com/hezhikai/blog-flex_compatible

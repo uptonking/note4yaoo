@@ -85,14 +85,14 @@ modified: 2023-07-03T08:55:25.659Z
 
 ## config/options
 
-- threshold
+- `threshold` (per axis)
   - By default, your gesture handler will be triggered as soon as an event is fired
   - `threshold` is the minimum displacement the gesture movement needs to travel before your handler is fired.
   - threshold works per axis: if the gesture exceeds the threshold value horizontally, you will get updates for horizontal displacement, but vertical threshold will have to be reached before vertical displacement is registered
   - If you still want your handler to be triggered for non intentional displacement, this is where the `triggerAllEvents` config option and the intentional state attribute become useful.
 
-- triggerAllEvents
-  - Forces the handler to fire even for non intentional displacement (ignores the threshold). 
+- `triggerAllEvents` (boolean)
+  - Forces the handler to fire even for non intentional displacement (ignores the `threshold`). 
 
 - `axis` makes it easy to constrain the user gesture to a specific axis.
   - in reality axis does slightly more than just locking the gesture direction: if it detects that the user intent is to move the component in a different direction, it will stop firing the gesture handler. 
@@ -108,9 +108,9 @@ modified: 2023-07-03T08:55:25.659Z
 - `delay` delays the drag gesture for the amount of milliseconds you specify. 
   - This might be useful if you don't want your logic to fire right away.
   - 👉🏻 Note that if the the pointer is moved by the user, the drag gesture will fire immediately without waiting for the delay.
-  - When using `delay` and `threshold` options at the same time, the drag will start after the delay no matter what.
+  - When using `delay` and `threshold` options at the same time, the **drag will start after the delay no matter what**.
 
-- `filterTaps`: Making a draggable component tappable or clickable can be tricky: differenciating a click from a drag is not always trivial.
+- `filterTaps`: Making a draggable component tappable or clickable can be tricky: differentiating a click from a drag is not always trivial.
   - When you set `filterTaps` to true, the tap state attribute will be true on release if the total displacement is inferior(低的、次要的) to `3 pixels` while down will remain false all along.
   - When using the filterTaps option, taps are only triggered when the displacement is inferior to 3 pixels. You can customize that value by using `tapsThreshold`.
 
@@ -141,15 +141,27 @@ modified: 2023-07-03T08:55:25.659Z
 
 - Every time a handler is called, it will get passed a gesture state that includes the source event and adds multiple attributes such as velocity, previous value, and much more.
   - States structure doesn't vary much across different gestures: the only distinction comes from the `pinch` gesture which handles distance and angle values (how distant your fingers are on screen, and what is their angle), when all other hooks deal with x and y coordinates.
-
-- With the exception of `xy/cancel/canceled` all the attributes below are common to all gestures.
+  - With the exception of `xy/cancel/canceled` all the attributes below are common to all gestures.
 
 - `movement` and `offset` are the attributes you're going to use most of the time when dragging or pinching.
   - They represent relative values of the gesture, in contrast with `xy and da` which are absolute values of your pointers. 
   - `movement` expresses the gesture movement, while `offset` is the sum of all gesture movements on the same component. 
+  - `xy`: [x, y] values (pointer position or scroll offset)
+  - initial: xy value when the gesture started
+  - `offset`: offset since the first gesture
+  - lastOffset: offset when the last gesture started
+  - `movement`: displacement between offset and lastOffset
+  - `delta`: movement delta (movement - previous movement)
+  - `distance`: offset distance per axis
+  - We're using the word "movement" to mean "the vector distance this motion has travelled from its origin", for which I believe the correct physics word is "displacement". 
+  - I agree with the terminology, displacement is a better word than movement, but I didn't think of it two years ago unfortunately.
+  - [Drag movement does not include pre-threshold movement](https://github.com/pmndrs/use-gesture/issues/314)
+    - 👉🏻 As a clarification, `offset` represents the cumulative(累积的) `movement` across gestures: `movement` is reset to zero when the gesture starts, while `offset` isn't.
+    - `initial` is the position of the mouse when the drag starts, so it doesn't depend on the threshold being set.
 
 - `memo` stores the value returned by the previous call of your handler. 
   - The most common usecase for using memo should be simplified by using initial
+  - `memo`: value returned by your handler on its previous run
 
 - swipe (drag only) is a convenient state attribute for the drag gesture that will help you detect swipes. 
   - swipe is a vector which both components are either -1, 0 or 1. 

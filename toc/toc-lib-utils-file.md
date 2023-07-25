@@ -68,6 +68,15 @@ modified: 2023-04-05T19:35:14.347Z
   - 多线程计算，面对大文件处理更快
   - 只提供下载队列的状态数据，你可以自由定制 UI
   - 丰富的配置，你可以限制文件类型、每个切片大小、线程数、请求并发数、是否开启离线缓存等
+
+- https://github.com/diced/zipline /ts
+  - A ShareX/file upload server that is easy to use, packed with features, and with an easy setup!
+  - Built with Next.js & React
+  - Gallery viewer, and multiple file format support
+  - File Chunking (for large files)
+  - Automatic video thumbnail generation
+- https://github.com/TannerReynolds/ShareX-Upload-Server /js
+  - Feature full & Stable ShareX and file server in node. Includes images, videos, code, text, markdown rendering, password protected uploads, logging via discord, administration through Discord, url shortening, and a full front end. Use standalone or via reverse proxy
 # opfs/Origin Private File System
 - [chromium sqlite3-api-opfs.js](https://www.blick-newwsch.com/?_=%2Fexternal%2Fgithub.com%2Fsqlite%2Fsqlite%2F%2B%2Frefs%2Fheads%2Fopfs-lock-without-xlock%2Fext%2Fwasm%2Fapi%2Fsqlite3-api-opfs.js%23Zn%2F56Y4trIg2C2EYQD%2F9g5ZYfX%2BnMC3zulsbohqB0K9j)
   - This file holds the synchronous half of an sqlite3_vfs
@@ -263,6 +272,11 @@ modified: 2023-04-05T19:35:14.347Z
   - https://githistory.xyz/
   - Quickly browse the history of files in any git repo
   - Go to a file in GitHub (or GitLab, or Bitbucket); Replace github.com with github.githistory.xyz
+# file-types
+- https://github.com/sindresorhus/file-type /js
+  - Detect the file type of a Buffer/Uint8Array/ArrayBuffer
+  - file type is detected by checking the magic number of the buffer.
+  - This package is for detecting binary-based file formats, not text-based formats like .txt, .csv, .svg, etc.
 # more
 
 # discuss

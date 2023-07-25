@@ -54,6 +54,11 @@ modified: 2021-08-22T16:08:42.552Z
   - https://codesandbox.io/s/github/seek-oss/vanilla-extract/tree/master/examples/webpack-react
 
 - https://codesandbox.io/s/radix-ui-with-vanilla-extract-rnl9d
+
+## utils
+
+- https://github.com/TheMightyPenguin/dessert-box
+  - An utility to create a Box component from your vanilla-extract + sprinkles tokens.
 # discuss
 - ## 
 

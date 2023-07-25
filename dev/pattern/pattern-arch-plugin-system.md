@@ -13,6 +13,7 @@ modified: 2020-12-20T15:46:29.566Z
   - react hooks
   - vscode
   - eclipse
+  - web-clipper
   - [The Power Of The Plugin Architecture In Python - YouTube](https://www.youtube.com/watch?v=iCE1bDoit9Q)
   - [前端插件式可扩展架构设计心得](https://www.51cto.com/article/675413.html)
 
