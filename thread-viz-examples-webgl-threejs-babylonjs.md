@@ -15,7 +15,7 @@ modified: 2021-08-07T16:44:32.377Z
 # discuss
 - ## 
 
-- ## I feel like `@react -three/fiber` is *almost* what I want. 
+- ## I feel like `@react-three/fiber` is *almost* what I want. 
 - https://twitter.com/JungleSilicon/status/1645699043388170242
   - I want a data-driven version of Three JS, but I'd like Three JS to be ejected from React and have React update based on changes to the internal state.
 - Check out pex-renderer@4. Maybe that's something for you? Sill alpha but used in production already. PBR capable and ECS driven. Happy to answer any questions.

@@ -277,7 +277,7 @@ function StateProvider({ children }) {
 - 2021 will introduce the`useSelectedContext` hook (eventually).
   - This is a first-party solution for the previously mentioned performance issues.
   - In the future, React will automatically figure out which components to re-render ("auto-memoization") 
-- I predict humorously that by 2022? or later React may adopt ECS entity-component-system using entities (in place of hooks) to manage a local state, contain blocks of components, update their blocks across frames/life cycles, making scale, multi-user, webworkers, & 3D apps easier.
+- I predict humorously that by 2022? or later React may adopt `ECS entity-component-system` using entities (in place of hooks) to manage a local state, contain blocks of components, update their blocks across frames/life cycles, making scale, multi-user, webworkers, & 3D apps easier.
 
 - ## [React state management in 2020](https://twitter.com/chrisachard/status/1272963243225632768)
 - React includes: local state (which nearly every app uses at some point) and Context

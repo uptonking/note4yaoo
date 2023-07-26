@@ -15,7 +15,8 @@ modified: 2021-07-20T13:50:23.433Z
   - 涉猎saas解决方案，积累方案、算法、库、框架、业务模版
   - 深入一个项目
     - model, view, dataflow
-    - src-code, issues, pr, forks, extensions/alternative, most-commented-issues
+    - src-code, issues, pr, forks, extensions, most-commented-issues
+    - roadmap, open-issues, alternatives
   - 抽空在线体验，工作专注代码
 
 - 技术方向js: 富文本编辑器，多维表格，协作; dnd，floating，state

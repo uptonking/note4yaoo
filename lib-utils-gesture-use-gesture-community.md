@@ -10,6 +10,12 @@ modified: 2023-07-03T08:55:45.218Z
 # guide
 
 # issues
+- ## [Add tap, long tap and double tap gesture](https://github.com/pmndrs/use-gesture/issues/241)
+- Note that `onDblClick` and `onClick` handlers exist in React + this lib has a `tap` state attribute and a `delay` config option.
+  - All in all I guess this makes detection of any of these gestures trivial IMO.
+
+- I ended up just implemented everything myself, wasn't to difficult but that might be helpful if I need more animations.
+
 - ## [Handling for drop targets?](https://github.com/pmndrs/use-gesture/issues/88)
   - I've been digging around the issues and examples looking for solutions for discrete draggable components and drop targets, but haven't been able to find much
 
@@ -35,6 +41,9 @@ modified: 2023-07-03T08:55:45.218Z
 - I believe that adding an option to debounce the `keyup` handler and leave it to the user to config the debounce time seems like a good fix for the issue in the meantime.
 
 - [4 Major Patterns for Accessible Drag and Drop | by Jesse Hausler | Salesforce Designer | Medium](https://medium.com/salesforce-ux/4-major-patterns-for-accessible-drag-and-drop-1d43f64ebf09)
+
+- ## [Improve pinch algorithm for wheel-based gestures](https://github.com/pmndrs/use-gesture/issues/401)
+- This depends on the wheel velocity, which is something that I guess could be hardware related and possibly configured by each user. This is not something we could normalize.
 # discuss
 - ## 
 

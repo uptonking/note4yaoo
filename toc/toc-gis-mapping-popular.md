@@ -23,6 +23,19 @@ modified: 2021-08-05T06:48:22.687Z
     - a fork of mapbox/mapbox-gl-js, adding support for CGCS2000.
   - https://github.com/socrata/mapbox-gl-js
     - Support for clustering points like supercluster by SOQL(Salesforce)
+- https://github.com/maplibre/maplibre-rs /rust
+  - https://maplibre.org/maplibre-rs/docs/book/
+  - A map rendering library written in Rust for Web, Mobile and Desktop
+  - maplibre-rs is a portable and performant vector maps renderer. 
+  - We aim to support web, mobile and desktop applications. This is achieved by the novel WebGPU specification
+  - This project is in a **proof-of-concept** state. The proof of concept is done except for text rendering. The Rust ecosystem is suited very well for this project.
+  - The current implementation serves as a proof-of-concept of the used technology stack. It is unclear whether the high-performance requirements of rendering maps using vector graphics are achievable using the current stack.
+  - The renderer of `maplibre-rs` is heavily based on the renderer of `bevy`. Bevy's renderer was forked into this project in order to have a solid and generic base.
+  - https://github.com/bevyengine/bevy /rust
+    - https://bevyengine.org/
+    - Bevy is a refreshingly simple data-driven game engine built in Rust.
+    - Offer a complete 2D and 3D feature set
+    - Data-oriented architecture using the **Entity Component System** paradigm
 
 - https://github.com/mapbox/mapbox-gl-js
   - https://github.com/mapbox/mapbox-gl-js/tree/v1.13.0

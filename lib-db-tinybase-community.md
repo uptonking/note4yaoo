@@ -16,6 +16,61 @@ modified: 2023-04-21T11:42:46.575Z
 
 - tinysync的示例存在一定问题
   - 在同步的同时产生的新op因为listening为0而被忽略
+# dev
+
+## [lofi-meeting-tinybase_20230725](https://www.youtube.com/watch?v=sshvBCK5NDs&t=1140s)
+
+- no deps
+- opinionated data structure: table/row/cell
+
+- roadmap
+  - auth and permissions
+  - sharding: sync partial data
+  - local-first and ai
+  - we lack the killer local-first app
+
+## [lofi-meeting-crsqlite_20230725](https://www.youtube.com/watch?v=sshvBCK5NDs&t=2400s)
+
+- problem1: partial-sharing
+  - share a doc or a whole repository
+  - edit permitted sections/rows of a doc
+  - comment only
+- solutions
+  - implement rules in the client
+    - all data of doc available
+    - doc contains acl
+    - view rendered/hidden based on acl
+    - not so safe
+  - encrypt sections of the doc
+    - each shareable unit in a doc requires a key to decrypt
+    - maybe another key to sign edits
+    - edits get rejected if not verified
+    - not so good
+- solutions above are not perfect
+  - users have to got entire doc even if they only need subset
+  - transclusion(嵌入、引用): include on doc inside another and changes update both
+- solutions
+- doc slicing
+  - single doc
+  - share a query result of data
+  - cons: complex to impl privacy
+- doc atomization
+  - atomize a doc to pieces 
+  - each shareable unit is its own doc/permissions
+  - read checked on send
+  - write checked on receive
+- it's a database problem
+
+- problem2: tiered(分层的) storage
+  - each layer(ui > memory > disk > cloud) is a different view of the base data
+  - views are expressed as queries
+  - give devs power to explicitly hydrate and sync each layer
+
+- challenges
+  - auth
+  - schema evolution
+  - compute over data
+  - consistency: causal, strong, cache-only
 # changelog
 - [v3.0.0_20230130](https://github.com/tinyplex/tinybase/releases/tag/v3.0.0)
   - adds key/value store functionality to TinyBase

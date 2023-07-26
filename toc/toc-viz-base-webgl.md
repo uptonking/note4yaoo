@@ -106,6 +106,13 @@ modified: 2020-10-05T06:18:29.671Z
   - Basic Level Of Detail plane for Three.js
   - https://github.com/shaper-pmp/lod.js
 
+- https://github.com/aframevr/aframe /js
+  - https://aframe.io/
+  - Web framework for building virtual reality experiences
+  - A-Frame handles the 3D and WebVR boilerplate required to get running across platforms including mobile, desktop, Vive, and Rift just by dropping in `<a-scene>`.
+  - A-Frame is a three.js framework with an entity-component-system (ECS) architecture. 
+  - ECS architecture is a common and desirable pattern in 3D and game development that follows the composition over inheritance and hierarchy principle.
+
 ## r3f
 
 - https://github.com/try-triplex/triplex

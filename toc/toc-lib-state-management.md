@@ -419,6 +419,21 @@ modified: 2020-07-14T11:03:53.196Z
   - Allows you to separate concerns between presentation and interaction logic
   - This library is a minimal observer pattern implementation that takes in a POJO as a subject, instruments it, and performs callbacks when the subject has changed. 
   - It's not opinionated at all and allows you to use it however you see fit, like choosing the event library to add (or not).
+# games
+- https://github.com/fritzy/ape-ecs /js
+  - performant, featureful, and flexible Entity-Component-System library for JavaScript, intended for use in games and simulations.
+  - Persisted Queries (indexes) are updated as Entity composition changes.
+  - Not all systems need to run every frame.
+  - The Entity-Component-System paradigm is great for managing dynamic objects in games and simulations.
+
+- https://github.com/pmndrs/racing-game /ts/r3f
+  - https://racing.pmnd.rs/
+  - This project is a showcase for the feasibility of React in gaming. 
+  - Every thing is a self contained component using react-three-fiber to express threejs with React semantics. 
+  - [before this gets too complex, let's discuss some directions](https://github.com/pmndrs/racing-game/issues/117)
+    - Following ECS means the project won't be as easy as it is today to understand, copy/paste, and so on. 
+  - https://github.com/coldi/r3f-game-demo
+    - A demo on how to do a simple tile-based game with React and react-three-fiber
 # more-state
 - https://github.com/regionjs/region-core
   - region-core is a progressive View Model Management Framework. 

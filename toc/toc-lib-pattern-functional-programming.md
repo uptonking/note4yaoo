@@ -1,21 +1,18 @@
 ---
-title: toc-lib-pattern-pattern-functional-programming
+title: toc-lib-pattern-functional-programming
 tags: [functional, pattern, toc]
 created: 2020-11-02T19:13:11.667Z
-modified: 2020-12-20T15:47:26.038Z
+modified: 2023-07-26T11:23:38.282Z
 ---
 
-# toc-lib-pattern-pattern-functional-programming
+# toc-lib-pattern-functional-programming
 
 # guide
 
 - functional-examples
   - guardian-editor
   - britecharts
-# functional dom ui
-
 # popular
-
 - https://github.com/staltz/callbag-basics /1.5kStar/MIT/201711/js
   - allbag is just a spec, but callbag-basics is a real library you can use.
   - [callbag和rxjs有什么区别](https://www.zhihu.com/question/270126057/answer/352363505)
@@ -60,7 +57,7 @@ modified: 2020-12-20T15:47:26.038Z
   - functional reactive Node.js framework for building server-side applications, based on TS and RxJS.
 - https://github.com/hufeng/iflux
   - iflux = immer.js + react.js
-
+# functional dom ui
 - https://github.com/choojs/choo
   - /6.5kStar/MIT/202001/js
   - A 4kb framework for creating sturdy frontend applications
@@ -107,6 +104,53 @@ modified: 2020-12-20T15:47:26.038Z
 - https://github.com/michael-klein/hookuspocus
   - allow you to add hooks to any function.
   - Internally, hookuspocus uses WeakMaps if possible to keep states between runs (and falls back to simple Maps).
+# games
+- https://github.com/LastOliveGames/becsy /ts/NoDeps
+  - https://lastolivegames.github.io/becsy/
+  - A multithreaded Entity Component System (ECS) for TypeScript and JavaScript, inspired by ECSY and bitecs.
+  - Becsy is currently in 0.x status. What's there is reasonably well tested but many features are still missing and you can expect frequent API changes. Most importantly, multi-threading is not yet implemented.
+  - bidirectional entity references with strong referential integrity
+  - declarative system ordering based on data dependencies
+  - built-in support for representing state machines (per Sander Mertens)
+  - From ECSY we take:
+    - a friendly object-oriented API for both JS and TS clients
+    - reactive queries (rather than event callbacks)
+    - references to native JS objects in components
+  - From bitecs we take:
+    - extensive use of ArrayBuffer for performance
+    - a sparse array architecture
+
+- https://gitlab.inria.fr/Loki/PolyphonyECS /js
+  - Polyphony is an experimental toolkit demonstrating the use of Entity-Component-System (ECS) to design Graphical User Interfaces (GUI). 
+  - It also extends the original ECS model to support advanced interfaces.
+  - Systems are entities → we can model their dependencies and ordering with components
+  - Devices are also entities → it makes it easy to access their data, and allows the support for multiple devices (mice, keyboards, ...)
+  - Events are signaled using temporary components (deleted at the end of the systems chain) → systems can react to events without callbacks and observer patterns
+  - [Polyphony ECS GUI and future](https://github.com/traffaillac/traffaillac.github.io/issues/1)
+
+- https://github.com/NateTheGreatt/bitECS /js/NoDeps
+  - Functional, minimal, data-oriented, ultra-high performance ECS library written using JavaScript TypedArrays.
+
+- https://github.com/ecsyjs/ecsy /js/archived
+  - https://ecsyjs.github.io/ecsy/
+  - ECSY (pronounced as "eck-see") is an highly experimental Entity Component System framework implemented in javascript, aiming to be lightweight, easy to use and with good performance.
+  - Framework agnostic
+  - Designed to avoid garbage collection as possible
+  - Support for reactive behaviour on systems (React to changes on entities and components)
+  - ECSY will not ship with features that bind it to a rendering engine or framework. Instead, we encourage the community to build framework specific projects like ecsy-three, ecsy-babylon, and ecsy-two.
+  - ECSY does not adhere strictly to "pure ECS design". We focus on APIs that push users towards good ECS design like putting their logic in systems and data in components. 
+
+- inspired by ecsy
+  - https://github.com/DavidPeicho/ecstra /ts
+    - Fast & Flexible EntityComponentSystem (ECS) for JavaScript and Typescript, available in browser and Node.js.
+  - https://github.com/mreinstein/ecs /js
+    - data oriented, functional entity component system.
+
+- https://github.com/fritzy/ape-ecs /js
+  - performant, featureful, and flexible Entity-Component-System library for JavaScript, intended for use in games and simulations.
+  - Persisted Queries (indexes) are updated as Entity composition changes.
+  - Not all systems need to run every frame.
+  - The Entity-Component-System paradigm is great for managing dynamic objects in games and simulations.
 # more-fp
 - https://github.com/paldepind/flyd
   - /1.5kStar/MIT/201809/js
