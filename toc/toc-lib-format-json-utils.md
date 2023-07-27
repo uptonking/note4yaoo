@@ -82,6 +82,10 @@ modified: 2022-11-06T15:45:36.913Z
 
 - https://github.com/WebReflection/flatted /js
   - A super light (0.5K) and fast circular JSON parser, directly from the creator of CircularJSON.
+# diff
+- https://github.com/zgrossbart/jdd /js
+  - JSON Diff expands on the amazing work by the team at jsonlint.com and provides a semantic compare tool for JSON documents.
+  - JSON Diff sorts, formats, and compares two JSON documents to find the actual semantic differences instead of just the text ones.
 # utils
 - https://github.com/datavis-tech/json-templates
   - Simple templating within JSON structures

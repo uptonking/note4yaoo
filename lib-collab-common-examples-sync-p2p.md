@@ -12,11 +12,12 @@ modified: 2023-01-17T19:13:01.845Z
   - 同步前一定要检查一个version，参考indexeddb upgrade
 # sync-examples
 - verdant/lo-fi /7Star/MIT/202211/ts
-  - https://github.com/a-type/lo-fi
   - https://github.com/a-type/verdant
+  - https://github.com/a-type/lo-fi
   - https://verdant.dev/
   - An IndexedDB-powered database and data sync solution for lightweight, local-first web apps.
   - server依赖sqlite、jwt、ws
+  - 基于hybrid-logical-clock
   - Undo and redo changes
   - it includes an optional server which unlocks the power of sync and realtime
   - the goal of lo-fi is to be simple and recognizable.

@@ -62,8 +62,8 @@ $$('[contenteditable]')
 ```
 
 - dev-goals
-  - rich-editor: text/code/block
-  - pivot-table
+  - rich-editor: text/block
+  - pivot-table: editable
   - collaboration
   - local-first-database
   - annotation/comment/whiteboard/pdf
@@ -98,12 +98,14 @@ $$('[contenteditable]')
 
 - collab-sync
   - string-crdt: ? list-crdt
-  - evolu(hlc+worker)
   - logux
     - sqlite-persistor
     - collab-data-structure: lww-with-hlc
+  - verdant/lo-fi: hlc + websocket, no-merkle
+  - harika: hlc + sqlite + absurd-sql, no-merkle
+  - jaredly/local-first: hlc + rga
+  - evolu: hlc + merkle + worker
   - remoteStorage: google-drive、网盘、七牛对象存储
-  - lo-fi-sync-server
   - pouchdb
 
 - sqlite-web
@@ -438,7 +440,7 @@ div {
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
-  - spacing is important in `calc()` css function,                                    `calc(24rem - 13px)`; 
+  - spacing is important in `calc()` css function,                                          `calc(24rem - 13px)`; 
   - You just need to add a space around the minus operator
 
 - [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)

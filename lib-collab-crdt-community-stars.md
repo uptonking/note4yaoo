@@ -17,7 +17,10 @@ modified: 2022-04-05T10:09:51.343Z
 
 - ## 
 
-- ## 
+- ## [What do you recommend for conflict-free replicated data type (CRDT) support in Rust? : rust](https://www.reddit.com/r/rust/comments/1064f9s/what_do_you_recommend_for_conflictfree_replicated/)
+- you may find the hybrid logical clock approach more convenient than trying to maintain and manage a vector clock etc...
+
+- I think CRDTs are the correct solution here. Another Rust-based offline-first CRDT framework is Holochain. It frequently gets mistaken for blockchain due to the name and its proximity to that space, but it is not a blockchain in any way
 
 - ## Has anyone seen a good comparison between @partykit_io @liveblocks @replicache ?
 - https://twitter.com/ptsi/status/1676064189385785344

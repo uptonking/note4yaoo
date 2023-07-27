@@ -36,3 +36,34 @@ modified: 2022-06-02T06:11:16.758Z
     - 类似json，支持注释
 # who is using #logseq
 - https://note.xuanwo.io/#/all-pages
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [[WIP] Database version](https://github.com/logseq/logseq/pull/9858)
+
+- ### @logseq DB / Database version on the way?
+- https://twitter.com/ednico_/status/1680134195484434432
+  - There's not a switch. Two storage methods (file, DB) will be in parallel.
+  - DB storage is for users looking for good outliner performance and structured data support. Also, there will be a full graph markdown export with automatic refreshing to cover the local-first demands.
+- benefits
+  - Performance +++
+  - No more re-index required
+  - No more structural parsing required
+  - Reliable page & block timestamp
+  - Reliable page & block history
+  - Reliable sync & RTC
+  - Reliable & snappy multi-window
+  - Enabling more features on web app"
+
+- How will it compare to other database products on the market?
+
+- ### A nice little update on the @logseq db / database version  - getting closer and closer
+- https://twitter.com/ednico_/status/1674111439173189660
+- Easy converting between MD and db will make this a winner for sure. Seems to be going in a similar direction to @notesnook
+
+- Imo this defeats the purpose completely of using logseq, which is to have markdown as the source of truth
+# more

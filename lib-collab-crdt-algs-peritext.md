@@ -9,6 +9,7 @@ modified: 2023-06-15T02:06:59.597Z
 
 # guide
 
+# examples
 - https://github.com/inkandswitch/peritext /MIT/ts
   - https://www.inkandswitch.com/peritext/
   - A CRDT for asynchronous rich-text collaboration, where authors can work independently and then merge their changes.
@@ -20,6 +21,21 @@ modified: 2023-06-15T02:06:59.597Z
   - forks
   - https://github.com/philschatz/peritext
     - 更新了版本、迁移到vite、基于automerge-wasm
+
+- https://github.com/loro-dev/crdt-richtext /169Star/MIT/202305/rust
+  - https://crdt-richtext-quill-demo.vercel.app/
+  - Rich text CRDT that implements Peritext and Fugue
+  - This CRDT lib combines Peritext and Fugue's power, delivering impressive performance specifically tailored for rich text. 
+  - It leverages the `generic-btree` library to boost speed, and the `serde-columnar` simplifies the implementation of efficient columnar encoding.
+  - loro-wasm and fugue only support plain text for now
+  - This crate contains a subset of Loro CRDT(which is not yet open-source)
+  - [The Art of the Fugue: Minimizing Interleaving in Collaborative Text Editing](https://arxiv.org/abs/2305.00583)
+
+- https://github.com/jaredly/local-first/tree/master/packages/text-crdt
+  - This algorithm is largely based on RGA, with support for rich-text formatting added, along with a number of optimizations.
+  - integrate with Quill.
+  - Your approach seems to resemble RGASplit which I believe is bases for
+  - Hybric Logical Clocks was very much based on [this go implementation] and [james long's demo]
 # issues
 - [Peritext algorithm may attach deleted mark to new inserted text](https://github.com/inkandswitch/peritext/issues/32)
 
@@ -206,6 +222,23 @@ modified: 2023-06-15T02:06:59.597Z
 - The Chrome JavaScript engine was slower than Firefox in many cases as Chrome's v8 used to wrap every temporary string as a garbage-collected JavaScript string.
 - The project was axed(关闭) as the management decided to buy a proper solution from a reputable supplier (Microsoft). So they leased Office 365. 
   - Eventually, that partnership also ceased and Yandex switched to an open-source solution
+
+## [Where is the CRDT for syntax trees](https://writer.zohopublic.com/writer/published/grcwy5c699d67b9c444219b60cdb90ccbabc7)
+
+- While the community around distributed data structures are settling on CRDTs as the future, 
+I’m surprised there is not much CRDT literature/projects for dealing with rich text. 
+- While Peritext has got a lot of things right with how content and formatting is weaved together, dealing with block elements like lists and tables was declared as a work in progress. 
+  - To be honest, handling semantic blocks like lists and tables is a different beast altogether.
+  - When we move on to block elements, we are now making the content of the document into a tree (like how most UI representations are trees). 
+  - To be specific, the document is now a proper tree with flat character arrays existing at the leaf nodes. Imagine DOM.  
+
+- To put it in perspective, the algorithm might end up having to compose a delete character operation, a node addition operation and a formatting operation - all landing concurrently with overlapping locations and somehow the algorithm has to figure out how to resolve this with the most sensible outcome - all while keeping your rich-text tree semantically correct- i.e renderable by the rendering program. 
+- This last part about keeping the tree renderable is the key. 
+  - That is the reason why we would not be able to apply generic JSON based CRDTs like Automerge. 
+  - Automerge will have zero idea about what will make a renderable tree. 
+  - While Automerge will always give you an eventually consistent JSON tree, it cannot guarantee the tree follows all the rules of your grammar.  
+- Talking about trees with certain grammar, does it ring any bells? Yes, ASTs! Almost all abstract syntax trees of programming languages are trees that follow a specification or a grammar. 
+- if we are able to arrive at a CRDT for syntax trees, we’ll be able to make collaborative programming always auto-resolve with the syntactically correct program (hypothetically) and we’ll also be able to deal with block elements in rich text in such a way the resolved rich-text data structure is always renderable!  
 # discuss
 - ## 
 

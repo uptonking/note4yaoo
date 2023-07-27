@@ -65,6 +65,10 @@ modified: 2023-04-04T22:36:31.529Z
   - Because of the structure of the HTML `<table>` element,  `<td>` elements must be aligned with their respective row/column, which causes default `<regular-table>` to only be able to scroll in increments of a cell, which can be irregular when column data is of different lengths. 
   - regular-table is natively compatible with `perspective`, a WebAssembly streaming visualization engine. 
     - https://github.com/finos/perspective
+
+- https://github.com/holepunchto/hypercore /js
+  - Hypercore is a secure, distributed append-only log.
+  - Built for sharing large datasets and streams of real time data
 # stream
 - https://github.com/zoubin/streamify-your-node-program
   - 对Node.js中stream模块的学习积累和理解
@@ -341,6 +345,23 @@ modified: 2023-04-04T22:36:31.529Z
   - The issue has been marked as "Won't fix" in Chrome and Firefox.
   - When using HTTP/2, the maximum number of simultaneous HTTP streams is negotiated between the server and the client (defaults to 100).
   - 对于移动端是够用的
+
+- https://github.com/valkyrjs/valkyr /ts
+  - https://valkyrjs.com/
+  - toolkit for creating event sourced applications using javascript/typescript.
+  - A collection of TypeScript + JavaScript tools and libraries to build full stack software applications.
+  - Valkyr is designed to be framework agnostic and can be used with any framework or no framework at all. We provide initial base support for SolidJS and ReactJS
+- https://github.com/cmdo-toolkit/events /ts/legacy
+  - A distributed event sourcing solution written in TypeScript.
+  - Logical hybrid clock timestamp representing the wall time when the event was created.
+  - https://github.com/cmdo-toolkit/react-starter
+    - A full stack cmdo boilerplate for react.js, node.js and typescript
+    - 全家桶架构: client-db + store + api
+  - https://github.com/cmdo-toolkit/db
+    - Client side database solution written in TypeScript.
+    - 依赖mingo(MongoDB query language for in-memory objects)
+  - https://github.com/valkyrjs/valkyr /ts
+    - toolkit for creating event sourced applications using javascript/typescript.
 
 - https://github.com/xolvio/typescript-event-sourcing
   - Domain Driven Design, Event Sourcing & Command Query Responsibility Segregation with Typescript

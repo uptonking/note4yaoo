@@ -9,8 +9,14 @@ modified: 2023-03-20T10:28:16.979Z
 
 # guide
 
+- search
+  - https://github.com/search?type=code&q=HybridLogicalClock++language%3Ajavascript
 # hybrid logical clock
 - who is using #hybrid-logical-clock
+  - jaredly/local-first: hlc + rga
+  - verdant/lo-fi: hlc + websocket, no-merkle
+  - harika: hlc + sqlite + absurd-sql, no-merkle
+  - evolu: hlc + sqlite + merkle-tree
   - CockroachDB
   - YugaByte DB
   - tinybase
@@ -226,24 +232,102 @@ else {
   - 也就是说对于同一个数据的写事务，Spanner并发量是每秒125个。这是论文发表时的数据，论文中也写到未来希望把误差 ε 降低到1ms。
 - We believe it is better to have application programmers deal with performance problems due to overuse of transactions as bottlenecks arise, rather than always coding around the lack of transactions.
 
-### more
+### more-blogs
 
 # examples
 
 ## hlc
 
+- verdant/lo-fi /7Star/MIT/202211/ts/indexeddb
+  - https://github.com/a-type/verdant
+  - https://github.com/a-type/lo-fi
+  - https://verdant.dev/
+  - An IndexedDB-powered database and data sync solution for lightweight, local-first web apps.
+  - server依赖sqlite、jwt、ws
+  - 基于hybrid-logical-clock
+
+- https://github.com/quolpr/harika /ts/hlc/不依赖merkle
+  - offline-first, performance-focused note taking app.
+  - Synchronization with server. It's done with LWW CRDT per field on top of SQLite
+  - using absurd-sql for web version
+  - It uses LWW per field CRDT and stores all changes on the server, so time travel is possible to implement.
+  - https://twitter.com/quolpr/status/1558848201771319298
+
+- IDBSideSync /8Star/MIT/202104/ts
+  - https://github.com/clintharris/IDBSideSync
+  - https://idbsidesync-todo-demo.vercel.app/
+  - IDBSideSync is an experimental JavaScript library that makes it possible to sync browser-based IndexedDB databases using CRDT concepts
+
 - https://github.com/jaredly/hybrid-logical-clocks-example /js
-  - [Hybrid Logical Clocks | Jared Forsyth.com](https://jaredforsyth.com/posts/hybrid-logical-clocks/)
+  - https://hybrid-logical-clocks-example.surge.sh/
+  - [Hybrid Logical Clocks | Jared Forsyth](https://jaredforsyth.com/posts/hybrid-logical-clocks/)
+
+- https://github.com/jaredly/local-first/tree/master/packages/text-crdt
+  - This algorithm is largely based on RGA, with support for rich-text formatting added, along with a number of optimizations.
+  - integrate with Quill.
+  - Your approach seems to resemble RGASplit which I believe is bases for
+  - Hybric Logical Clocks was very much based on [this go implementation] and [james long's demo]
+
+- https://github.com/daaku/kombat /ts/hlc+merkle-tree
+  - Infrastructure for CRDT powered applications.
+  - Timestamp for Hybrid Logical Clocks.
+- https://github.com/etienne-graveyard/kiip /ts/merkle/inactive
+  - An offline-first database (using Hybrid Logical Clock & Merkle Tree)
+
+- https://github.com/Mirror-Labs/MirrorDB /ts/wip
+  - An application-centric p2p database with super powers
+  - Hybrid Logical Clock (HLC) to track the order of events in a distributed system.
+  - Not thread safe. (does not matter in browsers!)
+
+- https://github.com/cmdo-toolkit/events /ts/inactive
+  - A distributed event sourcing solution written in TypeScript.
+  - Logical hybrid clock timestamp representing the wall time when the event was created.
+  - https://github.com/cmdo-toolkit/react-starter
+    - A full stack cmdo boilerplate for react.js, node.js and typescript
+    - 全家桶架构: client-db + store + api
+  - https://github.com/cmdo-toolkit/db
+    - Client side database solution written in TypeScript.
+    - 依赖mingo(MongoDB query language for in-memory objects)
+  - https://github.com/valkyrjs/valkyr /ts
+    - toolkit for creating event sourced applications using javascript/typescript.
+
+- https://github.com/iam-kevin/papai /4Star/MIT/202206/ts/wip
+  - Local-first storage adapter for JSON-modeled data. Intended to work with self store implementation
+  - Papai is storage provider intended for Local-first use with support for distributed storage implementation.
+  - With ever-growing implementations for different storage options like localStorage, AsyncStorage, level, IndexedDB, WebSQL, Papai makes it possible to use the same interface attached to different storage options, leaving you concerned with building the business side of your applications.
+  - 基于HybridLogicalClock和State-based CRDTs
+  - examples
+    - https://github.com/Elsa-Health/mammoth
+    - https://github.com/Elsa-Health/ctc-impl
+
+- https://github.com/Mookiies/crdt-exploration-frontend
+  - 基于HybridLogicalClock
+  - https://github.com/Mookiies/crdt-exploration /ruby/backend
+
+- https://github.com/theproductiveprogrammer/hybrid-logical-clock /js
+  - A Hybrid Logical Clock is a resilient and simple distributed clock that provides the ability for identity and ordering of messages in a distributed system.
+
+- https://github.com/atolab/uhlc-rs
+  - This library is an implementation of an Hybrid Logical Clock (HLC) associated to a unique identifier. 
+  - Thus, it is able to generate timestamps that are unique across a distributed system, without the need of a centralized time source.
 
 ## vector-clock
 
+- https://github.com/jlongster/crdt-example-app /201912/js
+  - https://crdt.jlongster.com/client/
+  - https://github.com/clintharris/crdt-example-app_annotated
+  - A full implementation of CRDTs using hybrid logical clocks and a demo app that uses it
+
 - https://github.com/MattLloyd101/ts-vector-clock
   - A Typescript Vector Clock implementation
-# implementations-consento-hlc
+# impl-consento-hlc
 - https://github.com/consento-org/hlc /js
   - a Hybrid Logical Clock implementation in JavaScript. 
   - It is comparable to CockroachDB's implementation. 
     - It creates Timestamps with a nanosecond WallClock (using bigint-time) that supports de-/encoding to fixed size **96bit** Uint8Arrays (compatible with codecs) or JSON object.
+  - https://github.com/rjmackay/vue-todo-kappa-db
+    - A Todo PWA using KappaDB and Hypercore for syncing data. 
+    - Built with Vue 3 + Vuex + Bootstrap 5.
 
 - The basic of HLC's is that you call .now() multiple times and it will always increment the timestamp, no matter if the .wallTime (the time of the OS) changed not not. This means that two calls will not never the same timestamps after another.
 
@@ -285,3 +369,4 @@ else {
   - BigInt numbers can grow to any size practically limited to your systems memory/disc-space.
 - Here you can see that the binary representation never exceeds the 96bit limit but the JSON representation does so by a lot. 
   - An attacker could use this to break your system by providing a very large timestamp and every subsequent timestamp would need to be even larger.
+# more

@@ -387,6 +387,9 @@ modified: 2023-01-01T13:24:35.994Z
   - Using this architecture you can query your levelup database using your own query langauge with full index support.
   - forks
     - https://github.com/mvayngrib/level-queryengine
+# code-search
+- https://github.com/bytefish/ElasticsearchCodeSearch /csharp
+  - This repository is an Elasticsearch experiment to see how to build a code search engine.
 # more-search
 - https://github.com/algolia/docsearch
   - The easiest way to add search to your documentation

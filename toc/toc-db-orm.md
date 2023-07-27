@@ -205,6 +205,13 @@ modified: 2021-08-30T18:56:09.644Z
   - to store: Blobs • Documents • Graphs • Vectors • Texts
   - It is a "build your database" toolkit and an open standard for NoSQL potentially-transactional databases, defining zero-copy binary interfaces for CRUD
 
+- https://github.com/arangodb/arangodb /cpp/js
+  - https://www.arangodb.com/
+  - ArangoDB is a native multi-model database with flexible data models for documents, graphs, and key-values.
+  - Native graphs, an integrated search engine, and JSON support, via a single query language. 
+  - ArangoDB runs on-prem, in the cloud – anywhere.
+  - ArangoDB is available in a free and open-source Community Edition, as well as a commercial Enterprise Edition with additional features.
+
 - https://github.com/isar/isar /Flutter
   - Extremely fast, easy to use, and fully async NoSQL database for Flutter
   - The new Isar Core (written in Rust) can be compiled to wasm and will be insanely fast with all features. Unlike the current IndexedDB implementation.

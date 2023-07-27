@@ -63,16 +63,6 @@ modified: 2023-03-11T15:37:59.134Z
   - CRDT’s are network agnostic and can work well in centralised environments. Also Figma uses some CRDTs.
 - Can you expand? "Transaction" is a bit of a squishy word, but isolated transactions are only possible in a CRDT if you sacrifice durability. I believe durable transactions are possible but AFAIK it has never been demonstrated and would be research-level work.
   - It is certainly possible to have a server be one of the nodes in a CRDT, but it is not easy to have the server actually be authoritative. You can filter operations before applying to server but (a) this is difficult to do well because you end up having to reverse engineer intent, and (b) you have to do something about the client that has now diverged.
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
 ## [You might not need a CRDT | Drifting in Space](https://driftingin.space/posts/you-might-not-need-a-crdt)
 
@@ -117,6 +107,23 @@ modified: 2023-03-11T15:37:59.134Z
 
 - Although CRDTs aren’t always the best solution for always-online collaborative apps, it’s still fascinating tech that has real use cases.
   - Apps that need to run offline in general are good candidates for CRDTs.
+
+## [You might not need a CRDT | Hacker News](https://news.ycombinator.com/item?id=33865672)
+
+- This is the most underrated problem with CRDTs:
+  - > Both paths will allow us to ensure that each replica converges on the same state, but that alone does not guarantee that this state is the “correct” state from the point of view of user intent.
+  - In context of richtext editors, it's easy to converge a rich-text JSON into a single state for all collaborators. 
+  - What's difficult is to ensure that the converged state is renderable as richtext. For example, is there a table cell that was inserted where a column was deleted?
+  - I wrote a summary of this issue with CRDTs here
+  - [Where is the CRDT for syntax trees](https://writer.zohopublic.com/writer/published/grcwy5c699d67b9c444219b60cdb90ccbabc7)
+  - PS: We currently use OT for collaboration in Zoho Writer_202212
+
+- They/crdts are "conflict free" in as much as they are able to merge and resolve in the basic sense. That does not mean that the resulting state is valid or meets your internal schema.
+  - A good example of this is using Yjs with ProseMirror, it's possible for two concurrent edits to resolve to a structure that doesn't meet your ProseMirror schema.
+  - It's possible for two users to add that caption to the figure concurrently, Yjs will happily merge its XMLFragment structures and place two captions in the figure. However when this is loaded into ProseMirror it will see that the document does not match its schema and dump the second caption. 
+  - This is all ok if you are doing the merging on the front end, but if you try to merge the documents on the server, not involving ProseMirror, the structure you save, and potentially index or save as html, will be incorrect.
+  - Point is, it's still essential with CRDTs to have a schema and a validation/resolution process. That or you use completely custom CRDTs that encodes into their resolution process the validation of the schema.
+- I'm surprised that MS's concurrent revisions [1] haven't taken off because this is what they do by default: you specify a custom merge function for any versioned data type so you can resolve conflicts using any computable strategy.
 
 ## [Designing Data Structures for Collaborative Apps - Matthew Weidner](https://mattweidner.com/2022/02/10/collaborative-data-design.html)
 

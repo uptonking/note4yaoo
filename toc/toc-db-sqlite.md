@@ -17,8 +17,8 @@ modified: 2021-08-30T18:56:18.632Z
   - https://kikko-doc.netlify.app/
   - Powerful SQLite adapter for web, mobile and desktop. Build reactive UI on top of it
   - It brings transaction support, middlewares for queries, and SQLite adapters for the most popular platforms.
-  - https://github.com/kikko-land/boono
-    - While other builders tend to be universal, Boono is specially tailored for SQLite. 
+  - https://github.com/kikko-land/boono /ts
+    - An advanced SQL builder, specially tailored for SQLite
     - That allows supporting all the features SQLite offers.
   - https://github.com/kikko-land/wa-sqlite-web-backend
     - 依赖 wa-sqlite

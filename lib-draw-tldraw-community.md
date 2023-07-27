@@ -88,9 +88,40 @@ modified: 2023-06-19T12:33:38.006Z
 - I find a lot of value in the OSS code separate from the product/app. I am recently taking some snippets from tldraw around zooming, panning, cursors etc that have been invaluable, and so tldraw helps ‘lifts all boats’ on the web. but, wouldn’t be possible with commercial licenses
 
 - From my experience, offering users who are willing to pay more features on top makes the most sense for projects where the delineation between business/non-business required features is clear. People who would not respect a license do value their time and reliability.
-# discuss
+# discuss-breaking-changes
 - ## 
 
+- ## v2: We’ve prioritized building features ahead of building APIs, with the intention to later build APIs around the requirements of those features._20230715
+- https://discord.com/channels/859816885297741824/1104089016955048007/1129708419427876886
+  - That’s the phase that we’re in now: taking the tldraw v2 library, with it’s basically complete feature set but somewhat hacky APIs, and designing an architecture where those features can be extracted out into plugins.
+  - Really the challenge is to take all of the things we’re doing in tldraw (for example, the text shape, the tools you use to create or select a text shape, and behaviors like creating a text shape when you double click the canvas) and building APIs that allow anyone to create those from user land
+
+- ## Is there a list somewhere of the key improvements in v2?_20230518
+- https://discord.com/channels/859816885297741824/911921430617284638/1108429858163404893
+  - We've dedicated many many man months of building custom functionality on top of the tldraw v1 and it's unclear what benefits we'll gain from the likely massive work we'd have to do to reimplement things for v2.
+  - We have already deployed our whiteboard to a number of commercial customers like Swarovski, ASICS, and Restoration Hardware. We especially use it for our powerpoint/pdf export functionality.
+  - We've also intimately tied the board to elasticsearch as we have custom shapes that wrap complex business objects like a company's product that may be rendered in one of any number of ways (cards/carousels/floorplans/etc) but at the end of the day are some reference to an object + options as to how to render it + size/position info for TLDraw.  We have our own data model so that each 'shape' is a row in a database that can be independently queried/updated/full-text-searched/etc
+  - I'd be very interested to pickup some of your performance improvements - I've noticed that the way you do the shape transforms is very different in v2 (matrix transforms)
+
+- 👉🏻 I should draft a list of the major changes, but in short:
+  - nested / masked shapes (ie frames)
+  - embeds and bookmarks
+  - better text handling / export
+  - better file handling / image export
+  - better clipboard handling
+
+- I am still built on tldraw/core, vect, etc
+  - But not tlrdraw/app at all as I completely reimplemented everything there + a zillion things
+  - But if there are core features to the renderer I could backport to v1 without violating a new license or whatever, I'd love to do so - you must have changed your transforms for a good reason
+  - I have super complex copy/paste/drag drop functionality
+  - All that stuff is more 'app' featureset
+- yeah, you might be on your own if you want to re-implement things. We're deciding now between keeping the core Apache and then commercializing on pro features, or whether instead of license the core as AGPL and commercialize on non-AGPL licenses.
+  - Which I'm not too concerned about picking up, it's easy enough for me to reimplement anything that looks useful from userspace, but I'm much more concerned with core/renderer sort of stuff.  The absolutely killer feature for me with tldraw is that it's html/css and NOT canvas - which means any component can be used with it
+  - I added a hook in my version to override your getShapeTree stuff, I memoize it and such - reduces a lot of churn. This way if a shape breaks it doesn't crash the board
+  - The whiteboard is very much a secondary feature in the platform but it's been extremely useful to allow for building free form UIs and I plan to use it in the future to do all sorts of crazy stuff like let customers define what a 'product card' looks like by building a template in the whiteboard bound to live data, saving it as a reusable template, and then rendering their entire catalog view (grouped/filtered/sorted cards) with the 'card' being that whiteboard template realized.
+  - There's so little overhead in rendering N whiteboards that it's really no different than any other react component
+  - We're about to kickoff building a 3d configurator sub-application using the whiteboard as a building block, basically a three JS 'shape' set to the viewport's bounds and then tool windows on top of it
+# discuss
 - ## 
 
 - ## 

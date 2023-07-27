@@ -19,6 +19,23 @@ modified: 2023-01-23T19:27:46.948Z
 
 - https://github.com/plantain-00/ws-heartbeat
   - Server-side and client-side heartbeat library for ws and browser-side Websocket.
+
+- https://github.com/valkyrjs/valkyr /ts
+  - https://valkyrjs.com/
+  - toolkit for creating event sourced applications using javascript/typescript.
+  - A collection of TypeScript + JavaScript tools and libraries to build full stack software applications.
+  - Valkyr is designed to be framework agnostic and can be used with any framework or no framework at all. We provide initial base support for SolidJS and ReactJS
+- https://github.com/cmdo-toolkit/events /ts/legacy
+  - A distributed event sourcing solution written in TypeScript.
+  - Logical hybrid clock timestamp representing the wall time when the event was created.
+  - https://github.com/cmdo-toolkit/react-starter
+    - A full stack cmdo boilerplate for react.js, node.js and typescript
+    - 全家桶架构: client-db + store + api
+  - https://github.com/cmdo-toolkit/db
+    - Client side database solution written in TypeScript.
+    - 依赖mingo(MongoDB query language for in-memory objects)
+  - https://github.com/valkyrjs/valkyr /ts
+    - toolkit for creating event sourced applications using javascript/typescript.
 # collab
 
 # apps-networking

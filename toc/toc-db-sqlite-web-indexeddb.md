@@ -109,7 +109,7 @@ modified: 2022-11-06T03:19:28.284Z
 - https://github.com/bgrins/opfs-sqlite-demo
   - /js
 
-- https://github.com/rhashimoto/wa-sqlite
+- https://github.com/rhashimoto/wa-sqlite /js
   - This is a WebAssembly build of SQLite with experimental support for writing SQLite virtual filesystems and virtual table modules completely in Javascript. 
   - This allows alternative browser storage options such as IndexedDB and File System Access.
   - [blobs should be uint8array not int8array?](https://github.com/rhashimoto/wa-sqlite/issues/65)

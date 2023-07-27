@@ -268,7 +268,7 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/josephg/crdt-examples
   - CRDT examples from a DWEB talk
 
-- https://github.com/jlongster/crdt-example-app  /201912/js
+- https://github.com/jlongster/crdt-example-app /201912/js
   - https://crdt.jlongster.com/client/
   - https://github.com/clintharris/crdt-example-app_annotated
   - A full implementation of CRDTs using hybrid logical clocks and a demo app that uses it
@@ -279,6 +279,13 @@ modified: 2022-04-05T10:08:25.947Z
   - It provides a server to store and retrieve messages, so that clients don't have to connect peer-to-peer.
   - Server: 132 lines of JS
   - Client: 639 lines of JS
+- https://github.com/daaku/kombat /ts/hlc+merkle-tree
+  - Infrastructure for CRDT powered applications.
+  - Timestamp for Hybrid Logical Clocks.
+  - https://github.com/daaku/kombat-indexed-db
+    - Kombat storage implemented using IndexedDB.
+  - https://github.com/daaku/kombat-firestore
+    - Kombat storage implemented using Firebase Firestore Database.
 
 - https://github.com/ipfs-shipyard/peer-crdt /js
   - collection of operation-based CRDTs that are meant to work over a p2p network.
@@ -412,10 +419,17 @@ modified: 2022-04-05T10:08:25.947Z
     - About a decade ago, I implemented the Causal Tree CRDT (aka RGA, Timestamped Insertion Tree) in regular expressions using a Unicode string as a storage. Later we made a collaborative editor for Yandex based on that code.
     - Recently(202107) I greatly improved CTs by introducing the Chronofold data structure
     - I remember seeing that (regex CTs) and immediately thinking "wtf, why would anyone want to do that". Took me quite a while to understand that it's actually a pretty clever way to write fast state machines in browserland. So thank you for this work!
-- https://github.com/gritzko/swarm
+- https://github.com/gritzko/swarm /2.7kStar/MIT/201805/js/inactive
   - Swarm is like "git for data" except it's real-time and never has a merge conflict. 
   - Swarm is based on Replicated Object Notation (RON), a distributed live data format.
   - RON is based on CRDT
+  - https://github.com/Empia/swarm/blob/master/swarm-protocol/src/Clock.js
+    - Swarm is based on the Lamport model of time and events in a distributed system, so Lamport logical timestamps are essential to its functioning.
+    - Still, in most of the cases, it is useful to know the actual wall clock time of an event.
+    - Hence, we use logical timestamps that match the wall clock time numerically.
+    - A similar approach was termed "hybrid timestamps"
+    - this is logical clock that tries to be as close to wall clock as possible
+
 - https://github.com/decentralized-hse/collab-edit /kotlin
   - the state of text and cursor positions are stored as Chronofold on each client. 
   - When the user updates the text or the cursor position on one client, it calculates diff via `diff-match-patch`, updates its Chronofold, and sends new operations to another client. 
@@ -663,9 +677,13 @@ modified: 2022-04-05T10:08:25.947Z
 
 ## rust
 
-- https://github.com/loro-dev/crdt-richtext
+- https://github.com/loro-dev/crdt-richtext /169Star/MIT/202305/rust
   - https://crdt-richtext-quill-demo.vercel.app/
   - Rich text CRDT that implements Peritext and Fugue
+  - This CRDT lib combines Peritext and Fugue's power, delivering impressive performance specifically tailored for rich text. 
+  - It leverages the `generic-btree` library to boost speed, and the `serde-columnar` simplifies the implementation of efficient columnar encoding.
+  - loro-wasm and fugue only support plain text for now
+  - This crate contains a subset of Loro CRDT(which is not yet open-source)
   - [The Art of the Fugue: Minimizing Interleaving in Collaborative Text Editing](https://arxiv.org/abs/2305.00583)
 # last-write-win/llw
 - https://github.com/ymlsam/lww-element-dict
