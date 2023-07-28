@@ -105,12 +105,6 @@ modified: 2023-02-05T19:03:27.730Z
     - Solution 2: Relying on the Markdown preview endpoint
   - ref
     - https://github.com/gitlabhq/gitlabhq/tree/master/app/assets/javascripts/content_editor
-
-- rhino-editor /26Star/MIT/202212/ts/ruby
-  - https://github.com/KonnorRogers/rhino-editor
-  - https://rhino-editor.vercel.app/
-  - a grab and go WYSIWYG editing experience that can hook into Ruby on Rails ActionText backend.
-  - Currently this package does so using TipTap but will most likely include another integration for ProseMirror to allow for both Markdown + WYSIWYG editing.
 # tiptap-editors
 - dante3 /1.7kStar/MIT/202208/js
   - https://github.com/michelson/Dante
@@ -232,6 +226,32 @@ modified: 2023-02-05T19:03:27.730Z
   - The extension does not implement a spellchecker itself: you have to pass it a proofreader object implementing the IProofreaderInterface interface. 
   - That proofreader can work locallyin the browser, or it can call an online service, 
   - This extension is inspired by the tiptap-languagetool extension.
+
+## tiptap-ruby
+
+- rhino-editor /26Star/MIT/202212/ts/ruby
+  - https://github.com/KonnorRogers/rhino-editor
+  - https://rhino-editor.vercel.app/
+  - a grab and go WYSIWYG editing experience that can hook into Ruby on Rails ActionText backend.
+  - Currently this package does so using TipTap but will most likely include another integration for ProseMirror to allow for both Markdown + WYSIWYG editing.
+
+- https://github.com/afomera/richer-text.js /js/ruby
+  - A Richer Text Editor experience based on Tiptap
+  - written in React, using the TipTap libraries and extensions, compiled into a web component
+  - RicherText aims to provide a richer text editing experience than what comes out of the box with ActionText in Rails. 
+  - It is however a separate thing from ActionText and is not backwards compatible.
+  - 依赖@rails/activestorage、tiptap、react-to-webcomponent
+  - Basic image uploading for ActiveStorage
+  - not-yet
+    - Support for disabling extensions/portions out of the library.
+    - There is a hardcoded requirement for `ActionStorage` to be installed and setup for Image support to work. 
+
+- https://github.com/decidim/decidim
+  - Decidim is a participatory democracy framework, written in Ruby on Rails, originally developed for the Barcelona City government online and offline participation website
+  - [To Trix or not to Trix · Discussion](https://github.com/decidim/decidim/discussions/7585)
+
+- [Thoughts on Action Text](https://www.reddit.com/r/rails/comments/rt2qvo/thoughts_on_action_text/)
+  - Action Text seems too coupled to Trix
 # examples
 - https://github.com/SkyGuardian42/piko.space /202212/ts
   - https://piko.space/
@@ -280,17 +300,17 @@ modified: 2023-02-05T19:03:27.730Z
 - https://t.co/cSLL2bvRp6
   - using @tailwindcss @tiptap_editor @vuejs & @nuxt_js
 # cms-like
-
-- https://github.com/vriteio/vrite /AGPLv3/ts
-  - https://app.vrite.io/
+- vrite /1kStar/AGPLv3/202307/ts
+  - https://github.com/vriteio/vrite
+  - https://vrite.io/
   - https://editor.vrite.io/
   - headless CMS intended for technical content like programming blogs or documentation
   - 后端依赖trpc-server/openapi、fastify、yjs、zod、open-graph-scraper
   - 协作依赖mongodb、hocuspocus
-  - 前端依赖solid-primitives、tiptap、trpc-client、yjs
-  - Built-in Kanban dashboard for managing content production and delivery;
-  - Versitile API and Extension System for customizing your experience and delivering content to any frontend;
-
+  - 前端依赖solid-js、solid-primitives、tiptap、trpc-client、yjs
+  - editor包不依赖solid-js
+  - Built-in Kanban dashboard for managing content production and delivery; 
+  - Versitile API and Extension System for customizing your experience and delivering content to any frontend; 
 
 - alinea /654Star/MIT/202301/ts
   - https://github.com/alineacms/alinea
@@ -303,9 +323,6 @@ modified: 2023-02-05T19:03:27.730Z
   - Content is fully typed
   - Alinea supports custom backends that can be hosted as a simple Node.js process or on serverless runtimes.
 
-
-
-
 - https://github.com/primodotso/primo
   - https://primo.so/
   - ui基于svelte
@@ -315,11 +332,11 @@ modified: 2023-02-05T19:03:27.730Z
   - A flexible visual editor for Craft CMS
   - 依赖tiptap2、vue3、tippy.js、codemirror-editor-vue
 # fans-tiptap
-
 - https://github.com/xiaohanyu
   - Spent another two days to write a recursive descent evaluation to convert 
 @tiptap_editor
  's JSON format to TeX snippet
+
 # more
 - https://github.com/ujw0712/editor-and-pdf
   - 依赖 vue3、jspdf, html2canvas、@tiptap/extension-collaboration, yjs, @hocuspocus/provider

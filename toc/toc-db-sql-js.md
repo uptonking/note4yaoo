@@ -33,6 +33,12 @@ modified: 2021-08-30T18:56:14.863Z
   - https://ukrbublik.github.io/react-awesome-query-builder/
   - User-friendly React component to build queries (filters).
   - 工具条设计很经典，and/or/not在上层
+
+- https://github.com/vlcn-io/typed-sql /rust
+  - Generates types for your SQL.
+  - https://github.com/tantaman/TreeSQL
+    - This is just a prototype of an alternate SQL syntax to pull hierarchies.
+    - it compiles to plain SQL.
 # db-sql-tools
 - https://github.com/sqlpad/sqlpad
   - A web app for writing and running SQL queries and visualizing the results. 

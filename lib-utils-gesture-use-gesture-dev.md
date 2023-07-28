@@ -15,8 +15,10 @@ modified: 2023-07-03T08:55:09.372Z
 # codebase
 - drag-example示例
   - 被拖拽元素的样式 
-    - position: absolute;
-    - 位置信息保存在 style="transform: translate3d(-80px, -5px, 0px) scale(1);"
+    - `position: absolute;` 浮层元素基于绝对定位
+    - 位置信息保存在 `style="transform: translate3d(-80px, -5px, 0px) scale(1);"` 
+
+
 
 - 很多非ui类功能(如dnd、zoom)的实现都是给dom对象添加事件监听器
   - 很多hooks的返回值就是这些listeners

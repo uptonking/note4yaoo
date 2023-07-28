@@ -101,7 +101,7 @@ modified: 2021-01-13T19:30:59.508Z
   - Web application for editing texteditor and painting canvas in real-time collaboration.
   - 展示了 quill、draftjs、canvas+mousemove 几个示例
   - 提供了client+server，可作为通用协作方案
-# typesetting
+# styling
 - https://github.com/imrishabh18/text-to-handwriting
   - https://imrishabh18.github.io/text-to-handwriting
   - convert text copied or typed into handwriting, which can be downloaded in images making it look real.
@@ -155,7 +155,7 @@ modified: 2021-01-13T19:30:59.508Z
   - https://exogen.github.io/react-typesetting/
   - React components for creating beautifully typeset designs.
 
-## typesetting-cn/汉字与排版
+## cn/汉字与排版
 
 - tips
   - [The Type — 文字 / 设计 / 文化 » 中文排版网格系统的五大迷思](https://www.thetype.com/2020/01/16565/)
@@ -199,6 +199,9 @@ modified: 2021-01-13T19:30:59.508Z
   - 中英文文案排版纠正器。
   - 本项目是 ricoa/copywriting-correct 的 JavaScript 实现。
   - 基于 中文文案排版指北（简体中文版） 进行纠正，帮助解决中英文混排的排版问题，提高文案可阅读性。
+
+- https://github.com/huacnlee/autocorrect /rust
+  - AutoCorrect 是一个基于 Rust 编写的工具，用于「自动纠正」或「检查并建议」文案，给 CJK（中文、日语、韩语）与英文混写的场景，补充正确的空格，纠正单词，同时尝试以安全的方式自动纠正标点符号等等。
 
 ### 支持中文的字体
 

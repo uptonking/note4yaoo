@@ -82,6 +82,7 @@ $$('[contenteditable]')
 - slate-wangeditor
   - model, view, sync, collab
   - slate-docs-examples
+  - general-editing-backend: ActionText, cms-payload
 - eg-pivot-views/focalboard
   - table view
   - kanban view
@@ -279,10 +280,29 @@ $$('[contenteditable]')
   - collab
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
-  - [x] streaming-infinite-list/tree
+  - [x] streaming infinite-list/tree
 # dev-07
 
 ## 072
+
+## 0728
+
+- mdn: tabindex
+  - If an HTML element renders and has `tabindex` attribute with any valid integer value, the element can be focused with JavaScript (by calling the `focus()` method) or visually by clicking with the mouse. 
+  - The particular `tabindex` value controls whether the element is tabbable (i.e. reachable via sequential keyboard navigation, usually with the Tab key).
+  - A negative value (the exact negative value doesn't actually matter, usually `tabindex="-1"`) means that the element is not reachable via sequential keyboard navigation.
+  - `tabindex="-1"` may be useful for elements that should not be navigated to directly using the Tab key, but need to have keyboard focus set to them. Examples include an off-screen modal 
+  - [Accessibility: does \`tabindex="-1"\` mean the element is not visible to screenreaders (similar to \`aria-hidden="true"\`) - Stack Overflow](https://stackoverflow.com/questions/59459273/accessibility-does-tabindex-1-mean-the-element-is-not-visible-to-screenrea)
+    - tabindex="-1" means that an item is only focusable programatically.
+    - aria-hidden="true" means that item is completely removed from the accessibility tree.
+  - `tabindex="0"` means that the element should be focusable in sequential keyboard navigation, **after** any positive tabindex values. 
+  - If the tabindex attribute is included with no value set, whether the element is focusable is determined by the user agent.
+
+- [`http-equiv` meta 标签](https://wayou.github.io/2019/10/12/http-equiv-meta-%E6%A0%87%E7%AD%BE/)
+  - http-equiv 只是 `<meta>` 标签的一种属性，与同名**http响应头**功能一样
+  - 最典型的，CSP（Content Security Policy） 除了可通过在响应头中进行配置外，另一种方式便是使用 http-equiv meta 标签
+  - http-equiv 属性可以使用伪装 HTTP 响应头部信息。
+  - http-equiv 属性值依赖 content属性的值。
 
 ## 0725
 
@@ -440,7 +460,7 @@ div {
 ## 0626
 
 - [css - Why is calc not working with rem and px combined? - Stack Overflow](https://stackoverflow.com/questions/73070945/why-is-calc-not-working-with-rem-and-px-combined)
-  - spacing is important in `calc()` css function,                                          `calc(24rem - 13px)`; 
+  - spacing is important in `calc()` css function `calc(24rem - 13px)`; 
   - You just need to add a space around the minus operator
 
 - [css - What is the resultant unit type of some VW value + some REM value? - Stack Overflow](https://stackoverflow.com/questions/70170065/what-is-the-resultant-unit-type-of-some-vw-value-some-rem-value)
@@ -451,12 +471,21 @@ div {
   - Correct me if I'm wrong, But i think you also need to set the height to all the parents of the div, to actually work
   - you are right. You do need to set the height to all the parents of the div, with the implications of everything having the height of the screen.
 
-- [PointerEvent指针事件简单介绍 - 掘金](https://juejin.cn/post/6982387923266043941)
+- ### [PointerEvent指针事件简单介绍 - 掘金](https://juejin.cn/post/6982387923266043941)
   - 早期的浏览器，只存在鼠标事件（MouseEvent）
   - 触屏设备开始普及，交互方式发生了改变。但为了使现有功能不受影响，在很多情况下，触摸事件和鼠标事件会相继触发（以使非触摸专用的代码仍然可以与用户交互）。例如轻触屏幕会触发touchstart事件，如果不调用event.preventDefault()会继续触发mousedown事件。
   - 但在面对多点触控的时候，鼠标事件就显得无能为力了。因此，引入了触摸事件（TouchEvent）。
   - 很多其他输入设备（如触控笔）有自己的特性。如果此时推出基于触控笔的API，那后面万一又有新特性的输入设备出现时，又怎么办呢？而且同时维护两份处理鼠标事件和触摸事件的代码已经很笨重了
   - （PointerEvent）是HTML5的事件规范之一，它主要目的是用来将鼠标（Mouse），触摸（Touch）和触控笔（Pen）三种事件整合为统一的API。
+
+- Applications using Touch events should disable the browser handling of gestures by calling `preventDefault()`, but should also use `touch-action` to ensure the browser knows the intent of the application before any event listeners have been invoked
+
+- ### [How to bind both Mousedown and Touchstart, but not respond to both? Android, JQuery - Stack Overflow](https://stackoverflow.com/questions/13655919/how-to-bind-both-mousedown-and-touchstart-but-not-respond-to-both-android-jqu)
+  - calling `preventDefault()` on a `touchstart` or the first `touchmove` event of a series prevents the corresponding mouse events from firing
+  - You get `touchstart`, but once you cancel it you no longer get `mousedown`. Contrary to what the accepted answer says, you don't need to call stopPropagation unless it's something you need. The event will propagate normally even when cancelled. The browser will ignore it, but your hooks will still work.
+  - When a touch is initiated, the order of events is 1) `touchstart` 2) `touchmove` 3) `touchend` 4) `mousemove` 5) `mousedown` 6) `mouseup` 7) `click`. Based on this, we will mark a touch interaction from `touchstart` (first in chain) until `click` (last in chain). 
+    - If a `mousedown` is registered outside of this touch interaction, it is safe to be picked up.
+    - As you can see my listeners are placed on `document`. It is thus crucial that I do not stopPropagation() or preventDefault() these events so they can bubble up to other elements. 
 
 ## 0625
 

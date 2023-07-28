@@ -25,7 +25,28 @@ modified: 2023-01-02T10:30:19.459Z
 # discuss
 - ## 
 
-- ## 
+- ## Would anyone like to partner on creating an Electron alternative that builds on top of React Server Components?
+- https://twitter.com/tomus_sherman/status/1684522055696351234
+  - It would take the good parts of Electron, Tauri, and React Native. The IPC would be replaced with the server components (React Flight)
+
+- Try building the React parts on top of Electron first, and then replace Electron once you’ve got the abstractions in the right spot — and you’re sure Electron is the problem
+- This is a good place for a POC, but really I wanna avoid shipping chromium. This just seems silly to me
+- Building an app framework that can do the native things Electron can across multiple platforms sounds like not much challenge, but a lot of work.
+- 👉🏻 I think the issue with Electron apps is primarily the Javascript in the render process and multi-process architecture **without shared memory**, not the webview engine. Getting bytes from native-land into any webview involves annoyingly expensive copying.
+- What use cases are blocked or hindered because of that copying across processes?
+- The example I hit recently building a screenshot editing app:
+  1. Trigger screenshot using global shortcut in main process
+  2. Capture screenshot using native API in main process
+  3. Copy screenshot from main process to render process
+  - All the unavoidable encode/copy/decode take time. Even optimized using a Worker to receive and decode the image bytes, my app feels laggy compared to native screenshot apps
+- Tbh I struggle to believe this is an absolute blocker, otherwise how would we have performant apps like VS Code?
+  - Well the big difference between my app and VS Code is the amount of bytes we need to copy from the main process to the WebView process. VS Code needs *at minimum* a screen of text, <10kb. I need *at minimum* ~600kb of JPG image (noticeably bad) or ~15mb of PNG image.
+- but this is not over the network. How can this even be noticeable? Think about how fast ram is compared to the network and still loading of images on the web feels fast (enough).
+
+- What about implement the new RN architecture for desktop, Fabric, instead of the bridge concept
+  - I want to specifically avoid JS<->native foreign function calls (eg. Tauri, RN) because it requires complicated codegen among other nastiness. Instead I want to use the React Flight spec for all IPC
+
+- I feel Electron/Tauri and React Native are in very different spaces. The former display web content, the latter uses a javascript / react runtime, but displays *native* platform widgets via a bridge. Many conflate them, but I think the difference is really significant
 
 - ## [【CEP 扩展开发一】简介 - 知乎](https://zhuanlan.zhihu.com/p/506927682)
 - Adobe 插件，大致可以分成以下几类：

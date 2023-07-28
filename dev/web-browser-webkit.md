@@ -7,8 +7,13 @@ modified: 2021-01-01T20:11:00.889Z
 
 # web-browser-webkit
 
-# read: WebKit技术内幕_2014
+# guide
 
+- resources
+  - [WebKit | User Agents](https://user-agents.net/rendering-engines/webkit)
+  - [List of web browsers - Wikipedia](https://en.wikipedia.org/wiki/List_of_web_browsers#WebKit-based)
+  - [Google and Mozilla are working on iOS browsers that aren't based on WebKit | Hacker News_202302](https://news.ycombinator.com/item?id=34690788)
+# read: WebKit技术内幕_2014
 - 浏览器的功能越来越丰富，包括网页浏览、网络请求、资源管理、多页面管理、插件和扩展、书签管理、历史记录管理、设置、下载、账户同步、安全隐私、外观主题、开发者工具等
 - html5的标准包含10个大的类别
   - offline、storage、connectivity、file access、semantics、audio/video、3d/graphics、presentation、performance、nuts and bolts(其他)
@@ -62,9 +67,7 @@ modified: 2021-01-01T20:11:00.889Z
   - WebKit2 接口不同于 WebKit 的接口，它们是不兼容的，但目的却是差不多 的，都是提供嵌入式的应用接口。
 - Chromium 使用的仍然是 WebKit 接口，而不是 WebKit2 接口，也就是说 Chromium 是在 WebKit 接口之上构建的多进程架构
 - Chromium 中每个进程都是从相同的二进制可执行文件启动，而基于WebKit2 的进程则未必如此
-
 # 浏览器的渲染过程
-
 - 浏览器将HTML，CSS，JavaScript代码转换成屏幕上所能呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径（Critical Rendering Path）
 1. DOM Tree的构建
   - 从网络或者磁盘下读取的HTML原始字节码，通过设置的charset编码，转换成相字符
@@ -117,9 +120,7 @@ modified: 2021-01-01T20:11:00.889Z
 - Graphics Layer负责将自己的Render Layer及其子代所包含的Render Object绘制到位图里。然后将位图作为纹理交给GPU。所以现在GPU收到了HTML元素的Graphics Layer的纹理，也可能还收到某些因为有3d transform之类属性而提升为Graphics Layer的元素的纹理。
 - 现在GPU需要对多层纹理进行合成(composite)，同时GPU在纹理合成时对于每一层纹理都可以指定不同的合成参数，从而实现对纹理进行transform、mask、opacity等等操作之后再合成，而且GPU对于这个过程是底层硬件加速的，性能很好。最终，纹理合成为一幅内容最终draw到屏幕上。
 - 所以在元素存在transform、opacity等属性的css animation或者css transition时，动画处理会很高效，这些属性在动画中不需要重绘，只需要重新合成即可。
-
 # 浏览器的渲染过程 - Composite
-
 - DOM Tree：浏览器将HTML解析成树形的数据结构。
 - Style Rules：浏览器将CSS解析成树形的数据结构，对应我们的CSSOM。
 - Render Tree：DOM和CSSOM合并后生成Render Tree。
@@ -140,9 +141,7 @@ modified: 2021-01-01T20:11:00.889Z
 - 提升到合成层后合成层的位图会交GPU处理，但请注意，仅仅只是合成的处理（把绘图上下文的位图输出进行组合）需要用到GPU，生成合成层的位图处理（绘图上下文的工作）是需要CPU。
 - 当需要repaint的时候可以只repaint本身，不影响其他层，但是paint之前还有style， layout, 那就意味着即使合成层只是repaint了自己，但style和layout本身就很占用时间。
 - 仅仅是transform和opacity不会引发layout和paint，那么其他的属性不确定。
-
 # reflow
-
 - reflow
   - 如果引起reflow，样式首先必须重新计算，因此重排会触发两种操作
   - force reflow 

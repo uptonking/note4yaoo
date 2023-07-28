@@ -237,6 +237,7 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
   - Another approach that’s tempting for me is to revive Substance.js, but remove the rendering part of the library and use Svelte instead. 
 
 ### [How to implement a web-based rich text editor in 2023?](https://discuss.prosemirror.net/t/how-to-implement-a-web-based-rich-text-editor-in-2023/5271)
+
 - 
 - 
 - 
@@ -406,6 +407,20 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
   - 服务器就在你本地。。。懂了没？？只是和编辑器分开了，通过通信来交流
   - 网络传输会让你的ide跑的慢死 目前的都是本地服务器也就是个跨进程通讯而已
 # more
+- [Rich text editors from backend perspective](https://habr.com/en/articles/533956/)
+  - in this article I’m going to overview the most popular types of rich text editors, tradeoffs of their use from a backend perspective
+  - Streaming of content from the rich text editor to other infrastructure tools like full-text search, warehouses, etc.
+  - Retrieving of content to clients: mobile, web, desktop.
+  - Storing of content in some kind of storage (SQL database in my case)
+  - Analyzing of content, which includes point 1, but also analyzing it from the perspective of our application
+  - My hybrid solution
+    - As I don’t find any Json based free editors, and there was not enough markdown functionality, I decided to make a hybrid solution.
+    - I use a rich text editor, but I implement parsers on the backend side so that I have my custom JSON structure inside the backend as well as raw HTML structure.
+    - I have enough flexibility, because even if text editor implementation will change — it won’t affect guys who use JSON content type from the backend, because it remains the same, but yes, I would need to update the parsers.
+    - As a trade-off — it costs because you need to implement parsing from HTML to JSON and vice versa along with tests
+    - JSON costs more space in your storage, but as I said, the choice of editor is about trade-offs.
+    - Have you seen GoogleDocs developers.google.com/docs/api for inspiration. Looks well structured and at least well documented for me
+
 - [[方案]造一个富文本 简介](http://luo0412.gitee.io/core/nav.4-2.ui/ch5-toolbox/02-5047253998648002.html)
 
 - [哔哩哔哩 从零开始的富文本编辑器（上）_slate_202209](https://www.bilibili.com/read/cv18606877)

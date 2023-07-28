@@ -44,10 +44,29 @@ modified: 2023-07-03T08:55:45.218Z
 
 - ## [Improve pinch algorithm for wheel-based gestures](https://github.com/pmndrs/use-gesture/issues/401)
 - This depends on the wheel velocity, which is something that I guess could be hardware related and possibly configured by each user. This is not something we could normalize.
+# discuss-touch
+- ## 
+
+- ## [Jerky behaviour with touch drag](https://github.com/pmndrs/use-gesture/issues/210)
+- Applications using Touch events should disable the browser handling of gestures by calling `preventDefault()` , but should also use `touch-action` to ensure the browser knows the intent of the application before any event listeners have been invoked
+  - `touch-action` is only of use when you use a touch-enabled pointer, which your mouse shouldn't be.
+  - touch-action is made exactly for that purpose (ie indicating to the browser the user intent of the interaction with the element) 
+
+- For Pointer Events, there is no way to prevent the default behaviour of the browser on touch devices when interacting with a draggable element from the pointer event listeners. Using `touch-action: none;` is the only way to reliably prevent scrolling for pointer events.
+Further, using touch-action: none; is currently the only reliable way to prevent scrolling in iOS Safari for both Touch and Pointer events. 
+
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Two finger tap](https://github.com/pmndrs/use-gesture/discussions/400)
+  - I'm trying to implement a two-finger/three-finger taps for undo and redo, similar to what you may have used in procreate or other apps for the iPad. Before I start trying to implement this on my own, I was wondering if anyone has worked on this before? Or if there is anything in the library that could help me in recognizing these events?
+
+- There's no easy way to do this out of the box, although this is definitely something I could work on since the whole multi fingers detection is there. 
+  - Give me some time, I'll figure something out, possibly introducing a new hook like useTap.
 
 - ## [update local value from outside ?](https://github.com/pmndrs/use-gesture/discussions/54)
 - [Pragmatically set value of X](https://github.com/pmndrs/use-gesture/discussions/55)

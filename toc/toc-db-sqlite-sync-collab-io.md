@@ -33,11 +33,14 @@ modified: 2022-11-04T14:21:31.365Z
 - https://github.com/tomatkungen/indexeddb-sqlite-json
   - sqlite3 Json1 Extension Wrapper for Indexeddb
 
-- https://github.com/vlcn-io/cr-sqlite
-  - crsql is a run time loadable extension for SQLite that adds CRDT and sync support.
+- https://github.com/vlcn-io/cr-sqlite /MIT/rust/ts
+  - https://vlcn.io/
+  - CR-SQLite is a run-time loadable extension for SQLite and libSQL. 
+  - It allows merging different SQLite databases together that have taken independent writes.
   - This project implements CRDTs and CRRs in SQLite, allowing databases that share a common schema to merge their state together.
   - crsqlite works by adding metadata tables and triggers around your existing database schema. 
   - crsqlite only keeps an extra int per column and a clock per row.
+  - [expo： [POC][sqlite] Investigate possibility of using crsqlite in expo-sqlite which allows database syncing between clients · expo/expo](https://github.com/expo/expo/pull/23728)
 - https://github.com/vlcn-io/vlcn-orm
   - a schema layer whose first goal is to make P2P & Local-First software easy to develop
   - everything in Aphrodite begins with a schema. This schema encodes the application's data, its relationships, consistency rules, allowed mutations and privacy.

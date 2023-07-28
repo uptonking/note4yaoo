@@ -94,6 +94,18 @@ modified: 2021-07-27T15:12:39.959Z
   - an attempt at creating an open-source, web-based and lightweight alternative to word processors like Google Docs or Microsoft Word. 
   - It is built on Draft.js, ReactiveX (RxJS) and MobX.
   - Most features are currently not implemented; the main purpose of this demo currently is to show how pagination can be achieved in a web-based word processor. 
+# editor-server
+
+## non-js
+
+- https://github.com/huacnlee/actiontext-lite /202002/ruby/inactive
+  - [我终于受不了 ActionText，做了一个 Lite 版本 · Ruby China](https://ruby-china.org/topics/39130)
+  - ActionText 默认高度集成了 Trix，但实际情况是 Trix 在 90% 的项目情况下都不符合实际的需求，我们的用户、后台编辑人员不喜欢它
+  - Active Storage 为默认的附件存储，也是高度集成，难以清理干净，可它往往也不符合我们的需求，我们正文的附件、图片往往是需要公开的 URL 地址（Active Storage 目前不支持）
+  - Action Text 带有默认的 HTML sanitize 规则，但那个规则过于严苛
+  - 类似 ActiveText 的存储 API，兼容 ActionText 的 Model API，你可以保持那个好的东西
+  - 数据存储依然保持在 ActionText 那个 action_text_rich_texts 表里面，所以引入它，只是会让 ActionText 没了 Trix 和 ActiveStorage 的集成
+  - 你存什么进去，就拿什么出来，不做任何 sanitize 处理，把规则交给你自己处理
 # editor-utils
 - https://github.com/juliankrispel/react-text-selection-popover
   - https://juliankrispel.github.io/react-text-selection-popover

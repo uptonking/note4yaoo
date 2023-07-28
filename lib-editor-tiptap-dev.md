@@ -18,7 +18,7 @@ modified: 2023-02-05T19:03:27.730Z
 
 - who is using #tiptap
   - gitlab
-  - mantine-ui
+  - mantine-ui-editor
   - hashnode
     - https://twitter.com/sandro_vol/status/1676869292724305920
 

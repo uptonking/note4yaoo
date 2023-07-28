@@ -291,11 +291,11 @@ modified: 2021-08-06T07:36:05.864Z
   - Nope, each pointer down immediately fires a single click. Like in the browser, a double click is always a single click first.
   - So a triple click will look like this: 1st click: single 2nd: single, double 3rd: single, double, triple
 
-- ## Did the hard work today of splitting tldraw's v2 into a core library (headless) and a react library, which opens up possible futures for vue/svelte/etc. 
+- ## Did the hard work today of splitting tldraw's v2 into a core library (headless) and a react library, which opens up possible futures for vue/svelte/etc._202112
 - https://twitter.com/steveruizok/status/1470525905328091156
   - Also extracting skeleton shapes/tools into their own packages.
 - Are there any parts of the vanilla code now that looked/felt better when it was done in React?
-  - The types around events were more clean before, as I’m now having to inject a map of events to event types (eg pointer: React. PointerEvent). Other than that, I’d also kept things pretty separate no big changes.
+  - The types around events were more clean before, as I’m now having to inject a map of events to event types (eg `pointer: React.PointerEvent` ). Other than that, I’d also kept things pretty separate no big changes.
 
 - ## Put together a quick multiplayer implementation on tldraw using Yjs
 - https://twitter.com/nayajunimesh/status/1477165474622234624
