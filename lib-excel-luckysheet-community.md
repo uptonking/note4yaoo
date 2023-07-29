@@ -9,6 +9,9 @@ modified: 2022-08-21T09:57:42.969Z
 
 # guide
 
+
+- fans
+  - 图图
 # discuss-stars
 - ## [作为普通开发人员，最需要的在线预览Word和Excel](https://github.com/dream-num/univer/issues/11)
 - 能把Office三大利器制作成在线编辑这个难度极高。

@@ -16,7 +16,7 @@ modified: 2023-06-14T00:53:15.226Z
 ## list item前的黑点大小不一致，黑点基于 `::before` 伪元素实现
 
 - 因为before伪元素的父元素的font-family会影响伪元素的渲染，字体不同时渲染出的黑点大小不一致
-  - 还要考虑`::marker`伪元素的默认样式
+  - 还要考虑基于`::marker`实现的伪元素的默认样式
 
 - inline元素设置margin-top/bottom不会生效，可转换为inline-block
 
@@ -29,7 +29,7 @@ modified: 2023-06-14T00:53:15.226Z
 
 - 首次渲染需要 vnode的顶层节点 与 已存在的domNode 匹配，所以一般要先创建domNode或修改vnode顶层节点的选择器
 
-- useReactTable的实现，每次执行改hook时，会执行setOptions更新table实例的配置
+- useReactTable的实现，每次执行该hook时，会执行setOptions更新table实例的配置，手动更新state
   - 自己封装时，也要在createTable后立即setOptions
 
 ## vscode里面调试mocha测试的命令调了很久
@@ -191,7 +191,9 @@ try {
 - 排查的方向一开始就错了，不是eslint造成的
   - 因为关闭ide后执行eslint fix 是通过的，这也可作为一种变通方案
 - 确定原因是prettier
-# webpack: ReferenceError: Cannot access x before initialization
+
+## webpack: ReferenceError: Cannot access x before initialization
+
 - 临时方案，禁用webpack hmr热加载
   - 使用插件提前检查并处理 https://github.com/aackerman/circular-dependency-plugin
 

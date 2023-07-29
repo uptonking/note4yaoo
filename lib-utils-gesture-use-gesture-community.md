@@ -53,8 +53,7 @@ modified: 2023-07-03T08:55:45.218Z
   - touch-action is made exactly for that purpose (ie indicating to the browser the user intent of the interaction with the element) 
 
 - For Pointer Events, there is no way to prevent the default behaviour of the browser on touch devices when interacting with a draggable element from the pointer event listeners. Using `touch-action: none;` is the only way to reliably prevent scrolling for pointer events.
-Further, using touch-action: none; is currently the only reliable way to prevent scrolling in iOS Safari for both Touch and Pointer events. 
-
+  - Further, using `touch-action: none;` is currently the only reliable way to prevent scrolling in iOS Safari for both Touch and Pointer events. 
 # discuss
 - ## 
 

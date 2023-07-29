@@ -12,6 +12,14 @@ modified: 2021-01-01T20:11:00.889Z
 - resources
   - [WebKit | User Agents](https://user-agents.net/rendering-engines/webkit)
   - [List of web browsers - Wikipedia](https://en.wikipedia.org/wiki/List_of_web_browsers#WebKit-based)
+    - 开源浏览器很难生存和持续
+    - android: dolphin
+    - linux: epiphany(flathub/snap), otter,midori(webkit2blink),konqueror(khtml/webkit)
+    - win: otter,midori, Playwright with WebKit mini browser,split,ultralight,Maxthon(webkit2blink), run Linux's Surf browser on WSL2.
+    - 以键盘操作为主: qutebrowser, vimb
+    - 基于qtWebEngine/blink: Dooble,Falkon
+    - 基于qtWebkit
+  - geco: firefox, icecat
   - [Google and Mozilla are working on iOS browsers that aren't based on WebKit | Hacker News_202302](https://news.ycombinator.com/item?id=34690788)
 # read: WebKit技术内幕_2014
 - 浏览器的功能越来越丰富，包括网页浏览、网络请求、资源管理、多页面管理、插件和扩展、书签管理、历史记录管理、设置、下载、账户同步、安全隐私、外观主题、开发者工具等
@@ -205,3 +213,24 @@ modified: 2021-01-01T20:11:00.889Z
 - ref
   - https://jinlong.github.io/2015/09/30/what-forces-layout-reflow/
   - https://www.zcfy.cc/article/fastersite-how-not-to-trigger-a-layout-in-webkit
+# discuss-webkit-browsers
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Frequently asked questions | qutebrowser](https://qutebrowser.org/doc/faq.html)
+- qutebrowser uses Qt and `QtWebEngine` by default (and supports `QtWebKit` optionally). 
+  - `QtWebEngine` is based on Google’s Chromium. With an up-to-date Qt, it has much more man-power behind it than WebKitGTK+ has, and thus supports more modern web features - it’s also arguably more secure.
+  - While Qt only updates to a new Chromium release on every minor Qt release (all ~6 months), every patch release backports security fixes from newer Chromium versions
+- QtWebKit is also supported as an alternative backend, but hasn’t seen new releases in a while. It also doesn’t have any process isolation or sandboxing.
+
+- ## [Browser engine in Otter_202206](https://www.reddit.com/r/browsers/comments/vdq7td/browser_engine_in_otter/)
+  - I have a question - Wiki says that Otter supports both QtWebkit (not supported by Qt anymore) and QtWebEngine (which is the Blink engine as used in Chromium).
+  - When I downloaded the Windows version of Otter it seems to use the Webkit version, with no option to change. The user agent string says "AppleWebKit/602.1". I don't know how old the 602 is but according to this website it corresponds to Safari 10.0 from 2016.
+- AFAIK, Otter Browser uses the latest QtWebkit-ng on Windows. It scores 341 points in HTML5Test. There is also an experimental Qt WebEngine backend.
+
+- [affected by chromium dropping support ?](https://dndsanctuary.eu/index.php?PHPSESSID=1233ccab74c6651ba984e00c892d6b4a&topic=3969.0)
+  - The default is QtWebKit, but you can switch either specific domains or everything to QtWebEngine if it was compiled with support for that. 
+- 

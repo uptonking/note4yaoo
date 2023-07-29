@@ -1273,8 +1273,8 @@ new webpack.DefinePlugin({
   - window.scrollX、window.scrollY只读不写; 
   - scrollTop、scrollLeft：可读可写
 
-- [javascript - AddEventListener fires automatically upon assignment - Stack Overflow](https://stackoverflow.com/questions/27037272/addeventlistener-fires-automatically-upon-assignment)
-  - 💡 非react场景也会出现此问题，document.addEventListener先注册，然后onClick触发的事件才冒泡才这里
+- [addEventListener fires automatically upon assignment - Stack Overflow](https://stackoverflow.com/questions/27037272/addeventlistener-fires-automatically-upon-assignment)
+  - 💡 非react场景也会出现此问题，cb1执行时document.addEventListener注册cb2，事件冒泡，然后会立即执行cb2
   - What is happening is that when you click on your li element, the click is then transmitted to the container, and so on up to the window (the so-called event bubbling), and as you have added a event listener on the document (which is between your li and the window), it is being triggered.
   - The solution proposed here `e.stopPropagation` stops the propagation so that the click on the document is not triggered.
 

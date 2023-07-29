@@ -9,6 +9,8 @@ modified: 2023-02-21T00:09:17.475Z
 
 # guide
 
+- forum
+  - [feat: 删除 qq 群 · textbus_20230704](https://github.com/textbus/textbus/commit/865aa7ec9bfe473609224b2760cfb9f536789462)
 # discuss
 - ## 
 

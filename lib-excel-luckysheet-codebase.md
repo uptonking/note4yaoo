@@ -97,4 +97,6 @@ export type Cell = {
   - selection
 # luckysheet
 
+# univer
+- doc/sheet/slide都基于canvas实现
 # more

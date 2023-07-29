@@ -12,10 +12,25 @@ modified: 2022-08-24T10:48:29.318Z
   - [Rows and Columns](https://www.grapecity.com/spreadjs/demos/features/worksheet/rows-and-columns/purejs)
   - [custom toolbar](https://www.grapecity.com/spreadjs/spreadsheet/)
   - [Web Designer](https://demo.grapecity.com.cn/SpreadJS/WebDesigner/)
-
+  - [SpreadJS 价格与授权 - 葡萄城官网](https://www.grapecity.com.cn/developer/spreadjs/price)
+  - [SpreadJS-v11-慧都网](https://www.evget.com/product/3819)
+  - [SpreadJS-v16-慧都网](https://www.evget.com/product/3558)
+  - [Unminify JS, CSS, HTML，支持大文件](https://www.unminify2.com/)
+    - prettier-cli在命令行执行格式化也很方便
+# markdown-based docs
 - resources
   - [spreadjs技术博客](https://www.grapecity.com.cn/blogs/categories/spread)
   - [SegmentFault D-Day 技术分享：葡萄城电子表格技术__202108](https://www.grapecity.com.cn/blogs/spreadjs-segmentfault-d-day)
+
+- alternatives
+  - luckysheet
+  - onlyoffice
+# codebase
+
+## v11
+
+- sheets-core 暴露在GC命名空间下
+- sheets-designer 依赖jquery, jquery-ui, knockout, zTreeStyle, FileSaver
 # discuss
 - ## 
 
