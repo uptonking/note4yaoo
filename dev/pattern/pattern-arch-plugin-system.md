@@ -352,6 +352,12 @@ class Plugins {
   - supports async hooks
   - full control over how plugins are configured / loaded
 
+- https://github.com/zuoez02/siyuan-plugin-system /js
+  - 思源插件系统，依赖于“代码片段”功能。
+  - [Plugin system · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/5086)
+    - 后续我们将在主程序中集成该插件系统，依然由社区开发者进行贡献维护，感谢各位插件开发者的探索！_20230413
+    - 主题总算可以回归原来的地位了，只改变外观和样式。功能特性还得是靠插件啊
+
 - https://github.com/SkyIsTheLimit/pluggin /ts
   - A library for creating plugin systems.
   - There are 2 types of plugins, a function style plugin and a class style plugin

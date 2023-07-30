@@ -10,7 +10,10 @@ modified: 2022-09-15T04:43:16.440Z
 # discuss
 - ## 
 
-- ## 
+- ## [Plugin system · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/5086)
+  - 后续我们将在主程序中集成该插件系统，依然由社区开发者进行贡献维护，感谢各位插件开发者的探索！_20230413
+
+- 主题总算可以回归原来的地位了，只改变外观和样式。功能特性还得是靠插件啊
 
 - ## [打通正文与文件树的壁障](https://github.com/siyuan-note/siyuan/issues/556)
 - 思源笔记拥有解决这个问题的先天优势，因为在思源笔记里，无论是文件还是正文里的元素，全都拥有一个 id，
