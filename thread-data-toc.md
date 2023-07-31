@@ -11,6 +11,11 @@ modified: 2021-01-31T08:40:11.675Z
 
 - https://www.data-is-plural.com/
   - a weekly newsletter of useful/curious datasets
+# data-image
+- ## [PaddleOCR: 常用版面分析数据集](https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/dataset/layout_datasets.md)
+  - publaynet数据集
+  - CDLA数据集
+  - TableBank数据集
 # data-collecting
 - ## 
 

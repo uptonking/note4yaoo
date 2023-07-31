@@ -7,7 +7,7 @@ modified: 2020-11-11T13:22:28.098Z
 
 # toc-datasource-open
 
-# datasource-catalog
+# data-catalog
 
 - awesome
   - https://github.com/collections/open-data

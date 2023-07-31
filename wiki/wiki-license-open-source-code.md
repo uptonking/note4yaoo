@@ -431,6 +431,32 @@ modified: 2021-09-14T18:58:58.275Z
   - there is only one thing you cannot do, and that is use it to make a competing SaaS offering. 
   - For example, it does not allow hosting of Confluent ksqlDB, Confluent Schema Registry, Confluent REST Proxy, or other software licensed under the Confluent Community License as online service offerings that compete with Confluent SaaS products or services that provide the same software.  
   - If you are not doing what is excluded, this license change will not affect you.
+# data - CDLA(Community Data License Agreement Permissive 2.0)
+
+> aka. CDLA-Permissive-2.0
+
+- refs
+  - [Community Data License Agreement Permissive 2.0 | Software Package Data Exchange (SPDX)](https://spdx.org/licenses/CDLA-Permissive-2.0.html)
+
+- [CDLA](https://cdla.dev/)
+  - Open source software communities have shown the power of open collaboration building some of the world’s most important software assets together. 
+  - There are communities also looking to collaboratively build datasets that can be shared and developed in a very similar model to software.
+  - The challenge is that intellectual property systems around the world treat data differently than software. 
+  - In June 2021, we released the CDLA-Permissive-2.0
+
+- [规范使用开源数据集，一定要看License - 知乎](https://zhuanlan.zhihu.com/p/544854011)
+  - 常用的数据集许可协议有3种来源
+  - 知识共享 (CC)
+    - 主要涉及4项权利，署名（BY）权，传染（SA-shareAlike）权，非盈利（NC）权，禁止演绎（ND）权。
+    - 知识共享组织于2009年发布了一种放弃著作权的便捷方式，即CC0。严格来讲CC0并非双方的许可合同，而是一种单方的声明。选择CC0作为许可协议，则说明作者将数据集捐赠给公众使用，此数据集完全公有，使用时无需署名，也无其他限制
+  - 开放数据共享 (ODC)
+    - 为开放数据提供合法工具，他们提供三种许可类型
+    - ODC-PDDL: 版权所有者永久删除所有版权，不保留任何权利。这对应于CC0 许可协议。
+    - ODC-BY: 你可以自由分享和改编，但需要注明出处，允许商业用途。这对应于CC BY（署名）许可。
+    - ODC-ODbL: 你可以自由分享和改编，并在基于原作创作的新作品适用同类型的许可协议。允许商业用途。这对应于CC BY-SA (署名-相同方式共享)许可协议。
+  - 社区数据许可协议 (CDLA)
+    - CDLA-Permissive-2.0: 对开放数据的贡献者和使用者不作要求。你可以使用、修改和共享，许可协议不对结果的使用、修改或共享施加任何限制或义务。
+    - CDLA-Sharing-1.0: 这属于copyleft（强制共享）许可类别，你可以使用、修改和共享，但无论是否修改，基于原作创作的新作品必须与原始版本有相同的许可协议。
 # relicense-known
 - [Grafana, Loki, and Tempo will be relicensed to AGPLv3_202104](https://grafana.com/blog/2021/04/20/grafana-loki-tempo-relicensing-to-agplv3/)
   - Over the last few years, we’ve watched closely as almost every at-scale open source company that we admire (such as Elastic, Redis Labs, MongoDB, Timescale, Cockroach Labs, and many others) has evolved their license regime. 
