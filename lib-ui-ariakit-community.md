@@ -14,7 +14,14 @@ modified: 2023-06-22T05:33:12.658Z
 
 - ## 
 
-- ## 
+- ## I'm thinking of writing a guide on Ariakit to clarify the code style choices made in the code examples showcased on the site.
+- https://twitter.com/diegohaz/status/1685937027596926976
+  1. Use interface instead of type.
+  2. Declare named functions inside forwardRef.
+  3. Import styles first.
+  4. Import with the .jsx extension.
+
+- Depending on what you want to enforce, I'd say to import the styles last (this allows to override styles imported by the other files more easily)
 
 - ## I’ve been maintaining component libraries focused on accessibility for the past 6 years. While they help a lot, the amount of a11y that can be automated with a lib is 10% or less.
 - https://twitter.com/diegohaz/status/1681697273342722049

@@ -20,14 +20,40 @@ https://us05web.zoom.us/j/7754416829?pwd=TUlMR3dMWEpaajdVR1VNdDR5N29NZz09
 会议号：775 441 6829
 密码：uZKAn9
 
+- yaoo-accounts-social
+  - cons
+    - 用户的toots和retweet服务器不会保存，需要用户自己手动保存
+  - pros
+    - 用户可以自己搭建server
+- mastodon
+  - https://fosstodon.org/
+    - open source software
+  - https://mastodon.social/
+    - twitter-like
+  - https://vis.social/
+    - data viz and d3
+  - https://en.osm.town/
+    - OpenStreetMap
+  - https://mapstodon.space/
+    - map
+  - https://m.cmx.im/
+    - 中文社区
+
+- wechat-luckiikawayii
+  - 技术积累
+    - 前端基础html/css/js语法 👉🏻 笔记
+    - 快速开发框架react/vue，状态管理 👉🏻 mvc-app
+    - ajax前后端交互，对后端开发有基本了解 👉🏻 mock-api数据
+  - 工作思路
+    - 更重视解决问题的能力，而不是面试和做题
+      - 分析现状，抓住重点，培养兴趣
+    - 在某一方向的技术深度，长期积累
+    - 长期维护的技术代表作
+
 ---
 
-- 西溪丽晶退租事项
-  - 退租时间 30号早上
-  - 押金可以退家人微信
-
 - 象牙客
-  - 包含电费 50元
+  - 电费 50元
   - 包周 248
   - 包月 858
 
@@ -47,28 +73,6 @@ const unsubscribe = editor.selection.onSelectEnd(info => {
         current_selection_in_text_block
       );
 ```
-
-- 拼多多 链接分析
-
-```
-
-- 小虎宝儿 买一送一
-
-https://mobile.yangkeduo.com/promotion_op.html?id=181215&subject_id=&type=5&refer_share_id=de9501e0a57f42b7a702565df1d963b4&refer_share_uid=9312667688517&refer_share_uin=TDBQE7Z3O5XOS4XUPTVYWPPN4E_GEXDA&refer_share_channel=copy_link&refer_share_form=text
-
-- 拓路者 买一送一 首页入口
-  - 这里可以选择 外套、裤装
-
-https://mobile.yangkeduo.com/promotion_op.html?id=181999&subject_id=&type=5&refer_share_id=6b73d175a0c644e1ac09971b272f40f1&refer_share_uid=9312667688517&refer_share_uin=TDBQE7Z3O5XOS4XUPTVYWPPN4E_GEXDA&refer_share_channel=copy_link&refer_share_form=text
-
-- 拓路者 买一送一 男装 入口 春上新
-
-https://mobile.yangkeduo.com/promotion_op.html?id=181805&subject_id=&type=5&refer_share_id=7959ea7f435843ef9de48771eb8802d1&refer_share_uid=9312667688517&refer_share_uin=TDBQE7Z3O5XOS4XUPTVYWPPN4E_GEXDA&refer_share_channel=copy_link&refer_share_form=text
-```
-
-- 拓路者 买一送一 夏上新
-
-https://mobile.yangkeduo.com/promotion_op.html?id=182650&subject_id=&type=5&refer_share_id=2941cbf46e2343fa95ff0f21ca74c120&refer_share_uid=9312667688517&refer_share_uin=TDBQE7Z3O5XOS4XUPTVYWPPN4E_GEXDA&refer_share_channel=copy_link&refer_share_form=text
 
 - js 产生定长字符串
 

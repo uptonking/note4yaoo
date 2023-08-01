@@ -9,6 +9,8 @@ modified: 2022-11-23T17:51:08.635Z
 
 # guide
 
+- tips
+  - [Sparse arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#sparse_arrays)
 # blogs
 
 ## [一文带你学会 Blob（含 7 个使用场景）](https://xie.infoq.cn/article/9974df9a229e5c28679c77773)

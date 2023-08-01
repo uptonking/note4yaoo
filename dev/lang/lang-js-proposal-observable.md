@@ -97,7 +97,16 @@ let subscription = commandKeys(inputElement).subscribe({
 # discuss
 - ## 
 
-- ## 
+- ## I'm working to bring Observables to the web platform by reviving a @thedomstandard  proposal that got some attention a while ago. 
+- https://twitter.com/RyanCarniato/status/1686069829172912129
+
+- I think this is interesting. By boiling down observables to basically standalone primitives (like Array, Map, Set) makes them way more approachable than with operators. But with enough functionality to be useful on their own without RxJS (not that you couldn't use this with it)
+
+- Understanding Signals and Observables are completely different, almost all Signal libraries have interop for them. This is the level of base functionality I'd want. It removes the feeling of introducing a second reactive system. It pushes RxJS back to where it is most natural.
+  - What's the ideal use case for RxJS? I may have never stumbled on a scenario where using RxJS-style Observables was a good idea, I think 🤔 Which doesn't mean these scenarios don't exist of course.
+- It is a good solution for Observables. But like has nothing to do with Signals which have a ton of other unrelated functionality. We don't really get any benefit here. I used Observables at the start of Solid and realized they weren't the right fit.
+
+- I think Observables are better off as a library than get included in DOM (what I mean is I hate maintaining Observable infested code, which will multiply if it becomes part of DOM)
 
 - ## A non-RxJS observable in the wild! @solid_js edition!!
 - https://twitter.com/BenLesh/status/1666517010354675712

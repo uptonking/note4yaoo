@@ -11,7 +11,15 @@ modified: 2021-04-27T09:19:37.711Z
 
 - ## 
 
-- ## 
+- ## Recently learned about the bfcache (backward/forward cache) which is an in-memory dump of the page including javascript heap so that JS execution state can pick up when the page is restored.
+- https://twitter.com/hnasr/status/1685459417842806785
+  - Enabled automatically as long as you don’t have no-store on the page and no unload
+  - Safari had bfcache like years years ago, wondering why it took so long for Chrome to catch up
+- How long has chrome had bfcache for?
+  - It’s not just those two reasons btw. But those are the main two causes. Use the test in Chrome DevTools or Lighthouse to check for other reasons.
+  - We’re looking to removing these as blockers for bfcache in certain circumstance (unload handlers already don’t disqualify on mobile).
+
+- Safari back-forward logic is so different from other browsers, because of bfcache. It is somewhat a pain to code for, bfcache enabled browsers and browsers without it
 
 - ## BIMI is a new email protocol to show your company profile picture in outgoing emails. 
 - https://twitter.com/zhovner/status/1678053189650636801

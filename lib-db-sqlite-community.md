@@ -12,6 +12,27 @@ modified: 2021-08-30T17:33:46.086Z
 # discuss
 - ## 
 
+- ## 
+
+- ## I used to think forking sqlite (e.g., @libsqlhq ) was crazy but I'm on board now. 
+- https://twitter.com/tantaman/status/1684917032096030722
+  - While SQLite is great, I just don't think it is ready for the demands of the coming years.
+- What do you mean specifically? The weak update hook?
+  1. weak update hook / subscriptions 
+  2. lack of write concurrency 
+  3. lack of pluggable storage engines (eg custom btree rather than vfs or vtab)
+  4. limited types
+  5. lack of tiered storage
+  - Now abandoned SQLite 4 had fixed 3, SQLite hc-tree might fix 2
+
+- Agree about update hook. BEGIN CONCURRENT is not enough write concurrency? I guess not if you want update hook anyway I wonder how long until libsql has a rocksdb backend
+- Notion is using SQLite on mobile, correct? How do you guys deal with reacting to mutations?
+  - `sqlite3_update_hook` works for us
+
+- Yeah let’s do it and add cell-level reactivity while we are at it.
+# discuss
+- ## 
+
 - ## Nobody is feasibly going to rewrite Sqlite in Rust.
 - https://news.ycombinator.com/item?id=25464846
   - Is making à file based database that hard, compared to creating new programming language for example ?

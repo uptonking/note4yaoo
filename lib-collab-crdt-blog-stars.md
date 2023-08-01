@@ -125,6 +125,13 @@ modified: 2023-03-11T15:37:59.134Z
   - Point is, it's still essential with CRDTs to have a schema and a validation/resolution process. That or you use completely custom CRDTs that encodes into their resolution process the validation of the schema.
 - I'm surprised that MS's concurrent revisions [1] haven't taken off because this is what they do by default: you specify a custom merge function for any versioned data type so you can resolve conflicts using any computable strategy.
 
+- ### You may not need crdt
+- https://twitter.com/aboodman/status/1663523389133434880
+  - [LFW.dev/4 Meetup - YouTube](https://www.youtube.com/watch?v=7Bb0KRLL8FI&t=1892s)
+  - Replicache and Reflect don't use CRDTs. 
+  - Replicache is instead built on an older technique from multiplayer games. 
+  - Turns out there's still a lot to love in that smooth old-school sync.
+
 ## [Designing Data Structures for Collaborative Apps - Matthew Weidner](https://mattweidner.com/2022/02/10/collaborative-data-design.html)
 
 - A good starting point is to design an ordinary (non-CRDT) data model, using ordinary objects, collections, etc., then convert it to a CRDT version. 

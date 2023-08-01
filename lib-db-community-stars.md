@@ -14,7 +14,20 @@ modified: 2021-08-30T15:51:28.094Z
   - it looks like they use two tables for each “thing”, so a thing/data pair for accounts, a thing/data pair for links, etc.
 # discuss-stars
 - ## 
+
+- ## Myth: Using UUID as the primary key will slow down inserts. 
+- https://twitter.com/gwenshap/status/1686148804821811200
+  - Fact: Not in Postgres.
+  - I often recommend using UUIDs instead of integer sequences as primary keys. I was surprised to discover that many developers are uncomfortable with them and believe they will slow down inserts. 
+  - [UUIDs are Bad for Performance in MySQL - Is Postgres better? Let us Discuss - YouTube](https://www.youtube.com/watch?v=Y5mWz4vK10A)
+- It makes the code easier as well because you can generate IDs on the client.
+  - Exactly! this also makes the system as a whole more scalable. This is not something you need early on, but changing PKs later is super hard and starting with UUIDs is not.
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [sql server - Will index be fully loaded into memory_201011](https://stackoverflow.com/questions/4296027/will-index-be-fully-loaded-into-memory)

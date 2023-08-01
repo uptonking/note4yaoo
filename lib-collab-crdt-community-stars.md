@@ -17,7 +17,7 @@ modified: 2022-04-05T10:09:51.343Z
 
 - ## 
 
-- ## [What do you recommend for conflict-free replicated data type (CRDT) support in Rust? : rust](https://www.reddit.com/r/rust/comments/1064f9s/what_do_you_recommend_for_conflictfree_replicated/)
+- ## [What do you recommend for conflict-free replicated data type (CRDT) support in Rust?](https://www.reddit.com/r/rust/comments/1064f9s/what_do_you_recommend_for_conflictfree_replicated/)
 - you may find the hybrid logical clock approach more convenient than trying to maintain and manage a vector clock etc...
 
 - I think CRDTs are the correct solution here. Another Rust-based offline-first CRDT framework is Holochain. It frequently gets mistaken for blockchain due to the name and its proximity to that space, but it is not a blockchain in any way
@@ -42,55 +42,12 @@ modified: 2022-04-05T10:09:51.343Z
   - You're thinking of https://croquet.io/
 - AssemblyScript, for mutations, might make the wasm container route bearable.
 
-- 
-- 
-- 
-- 
-
-- ## You may not need crdt
-- https://twitter.com/aboodman/status/1663523389133434880
-  - [LFW.dev/4 Meetup - YouTube](https://www.youtube.com/watch?v=7Bb0KRLL8FI&t=1892s)
-  - Replicache and Reflect don't use CRDTs. 
-  - Replicache is instead built on an older technique from multiplayer games. 
-  - Turns out there's still a lot to love in that smooth old-school sync.
-  - [You might not need a CRDT | Drifting in Space](https://driftingin.space/posts/you-might-not-need-a-crdt)
-
 - ## GPT-4 as a viable alternative to text CRDTs? 
 - https://twitter.com/geoffreylitt/status/1645961623289438208
 - Yes I think this is promising for async merges!
   - Probably still want tools to review what it did, but in simple cases like this can just be a ✅
   - Auto-merging code seems easier than prose since easier to verify...
 - For more synchronous workflows you probably still want something fast and deterministic, but CRDTs are already good at that part; it's these "semantic merges" that are harder
-
-- ## I think it's possible to build a state-based BFT resistant CRDT.
-- https://twitter.com/JungleSilicon/status/1637482087136788480
-  - The general idea is for versions to be a combination of a sequence number and the value.
-  - 👉🏻 Then if sequences hit the max possible value, you wrap them back around to zero and set a new parent uid.
-  - When wrapping it around you must specify what you are overriding.
-  - https://github.com/siliconjungle/Tiny-Merge-BFT
-
-- Byzantine Fault Tolerant.
-  - This solution is kind of *interesting*, its *mostly* eventually consistent, except for when agents have different "parents" (that should only change by bad actors).
-  - Different parents is treated as a merge event before exchanging information.
-
-- https://twitter.com/JungleSilicon/status/1637425083806539776
-  - An interesting conclusion to trying to limit how many sequence numbers an agent can increase in a distributed system.
-  - TLDR: You can only verify changes that you've seen.
-  - Alternatively centralised systems & blockchains (which are kind of like centralised / decentralised systems) can also stop this.
-  - If you have a full history you can undo changes that weren't supposed to occur. If you don't each agent needs to sign other agents changes before passing them along and then you can have a maximum of MAX_CHANGES * NUM_AGENTS.
-
-- ## if anyone has novel solutions to this problem: sequence number can reach the max interger
-- https://twitter.com/JungleSilicon/status/1636364948187250703
-  - Another approach is to just restrict the amount a sequence number can grow by, but that feels imperfect.
-
-- Do you mean in the context of an HLC? There’s only so much collaborative work you can do in a microsecond!
-  - It's true, but it's more of an intellectual problem than anything for me.
-
-- I faced a similar but not identical problem recently. Sharing my solution as an inspiration, I know it is not directly applicable. I needed a way to determine which items in a cache have not been used the longest.
-  - It is an embedded and constrained system, so I needed something simple. I decided to label each item with MAX_INT initially, decrementing all labels by one on each cache access, the exception being the label of the actual element being accessed, which is reset to MAX_INT
-  - When I hit 0, I just don't decrement anymore, so I lose the time ordering for the very very old items, but for those items the time ordering matters the least anyway. So, the trick was to accept a lossy scheme that loses the least valuable part of the information.
-- is your idea like lru cache? just throw the very very old items away
-  - Yes, but with the twist that I can let the age saturate and it's OK and that the code is simpler if I keep track of (MAX_INT - age) instead of age.
 
 - ## I remember having read about Gun a few years ago and there was a lot of (apparently) valid criticism. Do you know how much of that is still valid today?_201803
 - https://news.ycombinator.com/item?id=16523087
@@ -172,55 +129,6 @@ interface CRDTSyncDir{
 
 ```
 
-- ## I've begun building out a server tick rate for message sending in Tiny Merge._202211
-- https://twitter.com/JungleSilicon/status/1597770904716865538
-  - 轮询：Starting out with 30 messages per connection per second.
-  - I'm thinking I'll eventually move to something like a minimum send rate and a maximum depending on activity.
-
-- we should talk more, I'd argue for pull-based with some good use cases there.
-- I think it depends on the kind of application you're building. 
-  - For real-time applications like a game a tick-rate would be more ideal. 
-  - For something like a notion or linear something pull-based could be more ideal.
-- ooh yeah, I think about modern multiplayer techniques there and I agree with that.
-  - rollback-based multiplayer I think is what I'm thinking of there.
-
-- ## If anyone has been curious about how to build a CRDT but thought the idea was too daunting. tiny-merge-legacy_202205
-- https://twitter.com/JungleSilicon/status/1526123548753858560
-  - I've created one with as much of the complexity stripped out as I could whilst keeping it useful.
-  - I call it Tiny CRDT.
-  - Refactored it by separating the ram from the crdt & added a sequencer.
-
-- https://github.com/siliconjungle/tiny-merge-ts
-  - A Tiny CRDT library.
-  - I converted the trimmed-down version of Tiny Merge to Typescript and swapped the objects out for maps.
-  - https://github.com/siliconjungle/tiny-merge-ts/tree/feature-rich
-
-- https://github.com/siliconjungle/tiny-merge-legacy
-  - A tiny CRDT implementation in Javascript.
-
-- ## The main trade offs between history and state based CRDT's is this:
-- https://twitter.com/JungleSilicon/status/1559749305467957248
-- History:
-  - More capabilities (rewinding time, more complex merging logic).
-  - Requires more storage.
-  - Can have smaller network messages.
-  - Is more complicated.
-- State:
-  - Simpler.
-  - Less capabilities.
-  - Less storage required.
-  - Larger message sizes (especially on connect).
-
-- ## It's becoming really clear that CRDT's become much more powerful and easy to reason about when you break them down into their tiniest pieces.
-- https://twitter.com/JungleSilicon/status/1525515082876063750
-  - Below I've separated where values are defined from the keys that reference them. This separation allows you to easily modify the data and change which keys point to which data in memory.
-- https://github.com/siliconjungle/reference-crdt
-  - An implementation of CRDT object references.
-
-- ## I made a simple list CRDT that only supports push and replace operations. (No inserts before the end).
-- https://twitter.com/JungleSilicon/status/1511523633294094337
-  - It requires no history and is extremely light-weight. Useful for things like message histories or posts.
-
 - ## The future of apps is local-first and CRDTs
 - https://twitter.com/AdventureBeard/status/1495973698846736387
   - [Local-first software](https://www.inkandswitch.com/local-first/)
@@ -285,10 +193,12 @@ interface CRDTSyncDir{
   - The lexer only cares about knowing what character ranges changed, which does not require CRDT. The typical model for this kind of edit is what vscode's document text changes provide (IE For a given text edit, old start , old end, new start , new end)
   - **The parser only cares about what token ranges changed, which does not require CRDT**.
 
-- ## more-discuss
+# discuss-more
 - Open source collaborative text editors _201905
   - https://news.ycombinator.com/item?id=19845776
+
 - An Introduction to Conflict-Free Replicated Data Types _202006
   - https://news.ycombinator.com/item?id=23737639
+
 - CRDTs: The Hard Parts [video]_202007
   - https://news.ycombinator.com/item?id=23802208

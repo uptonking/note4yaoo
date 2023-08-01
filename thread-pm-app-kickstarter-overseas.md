@@ -12,7 +12,38 @@ modified: 2023-03-31T16:22:00.794Z
 # discuss
 - ## 
 
-- ## 
+- ## In winter'23, @infisical went through @ycombinator . Here are my top YC devtools:
+- https://twitter.com/matsiiako/status/1679877511705149441
+
+Email: 
+@resendlabs
+
+DB: 
+@supabase
+
+Analytics: 
+@posthog
+
+Docs: 
+@mintlify
+
+Editor: 
+@tiptap_editor
+
+Integr.: 
+@NangoHQ
+
+Bg jobs: 
+@triggerdotdev
+
+CICD: 
+@dagger_io
+
+Dev: 
+@Replit
+
+SecretOps: 
+@infisical
 
 - ## 中国的 Discord 产品为什么没有一个火起来的？ 是因为大部分需求被微信群吃掉了吗？
 - https://twitter.com/oran_ge/status/1653733656094183424

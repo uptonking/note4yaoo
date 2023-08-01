@@ -37,6 +37,9 @@ modified: 2021-09-30T07:43:15.350Z
 # mvt
 
 # Overture Maps
+- resources
+  - [Overture Maps: From Data to Map. Including Parquet, GeoParquet, DuckDB and QGIS](https://bertt.wordpress.com/2023/07/31/overture-maps/)
+
 - overture vs osm
   - Overture is a data-centric map project, not a community of individual map editors. 
   - Therefore, Overture is intended to be complementary to OSM. 

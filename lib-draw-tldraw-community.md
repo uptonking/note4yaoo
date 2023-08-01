@@ -91,6 +91,17 @@ modified: 2023-06-19T12:33:38.006Z
 # discuss-breaking-changes
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Design the API first in JavaScript. Don’t let the constraints of TypeScript’s compiler (or your skill in type crafting) lead you to design a worse API
+- https://twitter.com/steveruizok/status/1685738781977018368
+  - (ofc do as I say, not as I do)
+- One of my favorite parts of TypeScript is the ability to gradually type things rather than splitting this into two separate phases. My early API designs have lots of ‘any’s
+
 - ## v2: We’ve prioritized building features ahead of building APIs, with the intention to later build APIs around the requirements of those features._20230715
 - https://discord.com/channels/859816885297741824/1104089016955048007/1129708419427876886
   - That’s the phase that we’re in now: taking the tldraw v2 library, with it’s basically complete feature set but somewhat hacky APIs, and designing an architecture where those features can be extracted out into plugins.
