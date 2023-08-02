@@ -208,12 +208,13 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/Odonno/react-state-management-comparison
   - Comparison of different React state management libraries (hooks, mobx, recoiljs)
 # signals
-- https://github.com/preactjs/signals /ts
+- https://github.com/preactjs/signals /ts/实现不依赖proxy
   - Signals is a performant state management library with two primary goals
     - Make it as easy as possible to write business logic for small up to complex app
     - Integrate into frameworks as if they were native built-in primitives
   - Signals can be accessed directly and your component will automatically re-render when the signal's value changes.
   - [Reactive/Store-like primitive](https://github.com/preactjs/signals/issues/4)
+  - [Reasoning for using prototype over classes](https://github.com/preactjs/signals/issues/216)
 - https://github.com/luisherranz/deepsignal
   - Preact signals, but using regular JavaScript objects
   - DeepSignal works by wrapping the object with a `Proxy` that intercepts all property accesses and returns the signal value by default.

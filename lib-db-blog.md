@@ -203,3 +203,5 @@ G. Mutations
 - [处理海量数据：列式存储综述（存储篇） - 知乎](https://zhuanlan.zhihu.com/p/35622907)
 
 - [Database in the Browser, a Spec](https://stopa.io/post/279)
+
+- [Things DBs Don't Do - But Should | Nile - The database for modern SaaS](https://www.thenile.dev/blog/things-dbs-dont-do)

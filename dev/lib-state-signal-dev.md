@@ -61,9 +61,9 @@ modified: 2023-04-07T04:09:30.491Z
 
 ## [The Evolution of Signals in JavaScript - DEV Community](https://dev.to/this-is-learning/the-evolution-of-signals-in-javascript-8ob)
 
--  The starting of declarative JavaScript frameworks had 3 takes on it all released within 3 months of each other: Knockout.js (July 2010), Backbone.js (October 2010), Angular.js (October 2010).
-   -  Angular's Dirty Checking, Backbone's model-driven re-renders, and Knockout's fine-grained updates. 
-   -  Each was a little different but would ultimately serve as the basis for how we manage state and update the DOM today.
+- The starting of declarative JavaScript frameworks had 3 takes on it all released within 3 months of each other: Knockout.js (July 2010), Backbone.js (October 2010), Angular.js (October 2010).
+  - Angular's Dirty Checking, Backbone's model-driven re-renders, and Knockout's fine-grained updates. 
+  - Each was a little different but would ultimately serve as the basis for how we manage state and update the DOM today.
 - Knockout.js is of special importance to the topic of this article, as their fine-grained updates were built on what we've come to call Signals. 
   - They introduced initially 2 concepts observable (the state) and computed (side effect) but over the next couple of years would introduce the 3rd pureComputed (derived state) to the language of the frontend.
 
