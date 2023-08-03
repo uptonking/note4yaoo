@@ -35,7 +35,9 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
-- ## 
+- ## Apparently, the JavaScript URL parser will omit the default port for a protocol (80 for HTTP and 443 for HTTPS) even if it was explicitly specified.
+- https://twitter.com/ZoltanKochan/status/1684531065019416578
+  - `new URL('http://localhost:80').port` 结果为空字符串
 
 - ## DOMParser and innerHTML deactivate inline event handlers (except Chrome’s DOMParser does not deactivate `<img src=* onerror=“alert(‘evil’)”>` ).
 - https://twitter.com/dfkaye/status/1682848179270606848

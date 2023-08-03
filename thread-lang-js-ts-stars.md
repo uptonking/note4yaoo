@@ -24,20 +24,31 @@ if(val) // doSth
 # discuss
 - ## 
 
-- ## 
+- ## Zod is a fantastic, powerful primitive to have in a dev's toolkit. 
+- https://twitter.com/mattpocockuk/status/1612397810183274497
+  - It lets you validate data at runtime - making a whole class of problems easier.
+  - So, when should you use it? And when should you NOT use it?
 
-- ## 
+- when you don't trust the data coming into your app, Zod is a priceless addition. That means:
+  - Forms
+  - Public API Endpoints/Webhooks
+  - localStorage
+
+- ## What if you could store a global state at typelevel in typescript.
+- https://twitter.com/ecyrbedev/status/1686852448915189760
+  - Thanks to interface and function overriding, you can
+- I use this in all my tanstack libraries
+  - coming to TanStack Query in v5
+- http://viem.sh uses this. its a pretty cool feature
 
 - ## What library do JS developers use to set/remove/update values in deeply nested objects and arrays?
 - https://twitter.com/sgrove/status/1157375114490478592
-  - lodash: setPath(data, ["user", "id"], userId);
-  - immer: updatePath(data, ["user", "greeting"], greeting => (greeting || "Hello, ") + userName;
-
+  - lodash: setPath(data, ["user", "id"], userId); 
+  - immer: updatePath(data, ["user", "greeting"], greeting => (greeting || "Hello, ") + userName; 
 
 - If immutable, I use immer. Otherwise lodash.set/get
 - ramda
 - Immer. Or automerge if you need CRDT.
-
 
 - ## 开发小建议：代码的switch case分支条件超过8个以上，switch case效率下降，不妨替换成map
 - https://twitter.com/stephenzhang233/status/1660478131764080641

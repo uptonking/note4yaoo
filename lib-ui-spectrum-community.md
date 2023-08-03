@@ -32,7 +32,11 @@ modified: 2021-04-12T18:07:01.092Z
 
 - ## 
 
-- ## 
+- ## Maybe people don’t realize, but it’s not just me working on React Aria. 
+- https://twitter.com/devongovett/status/1685716188570202112
+  - We have a team of 6 full time engineers working on it at Adobe! 
+  - Most of them aren’t on Twitter so you might not hear from them, but it’s a whole team effort and I definitely can’t take all the credit. 
+  - Hard to remember if you’re on here a lot, but you actually don’t need to be on social media to be a great engineer. Many of the best people I’ve worked with aren’t.
 
 - ## I'm often asked why React Aria is hooks-based rather than component-based. 
 - https://twitter.com/devongovett/status/1438188332001808384

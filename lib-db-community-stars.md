@@ -15,7 +15,7 @@ modified: 2021-08-30T15:51:28.094Z
 # discuss-stars
 - ## 
 
-- ## Myth: Using UUID as the primary key will slow down inserts. 
+- ## Myth(神话，想像或虚构的人物): Using UUID as the primary key will slow down inserts. 
 - https://twitter.com/gwenshap/status/1686148804821811200
   - Fact: Not in Postgres.
   - I often recommend using UUIDs instead of integer sequences as primary keys. I was surprised to discover that many developers are uncomfortable with them and believe they will slow down inserts. 
