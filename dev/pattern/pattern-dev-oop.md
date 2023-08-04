@@ -113,3 +113,5 @@ modified: 2020-12-20T15:48:03.553Z
   - Preact’s renderer is already responsible for retaining a mirror tree in order to perform Virtual DOM diffing, which means there’s already a clear place to perform direct event handler binding during updates
 - To minimize any invocation cost associated with `addEventListener()` and `removeEventListener()`, a single proxy listener is registered for all events that looks up the current listener for a given event when it is fired. 
   - This means “swapping” an event handler to a new function reference only updates the current handler reference and does not remove or re-add any event listeners.
+# more-patterns
+- [The Outbox Pattern](https://www.kamilgrzybek.com/blog/posts/the-outbox-pattern)

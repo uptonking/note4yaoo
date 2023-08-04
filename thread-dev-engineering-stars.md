@@ -15,8 +15,6 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
-
 - ## What types of app logic would you ideally move into your database layer (if you could)?
 - https://twitter.com/calcsam/status/1682610083698728960
 - Besides the usual (replication, mvcc, transactions, indices):
@@ -102,6 +100,9 @@ modified: 2021-08-10T03:51:01.891Z
   5. 缩短发布周期，提升部署频率
 
 - 要老板资源支持可能更重要：1）让老板认同重构的价值，老板不懂技术的话，要花点心思，2）老板愿意为了这点价值投入多长时间，多少资源，这两点可能决定了成与败。
+
+- ## 有同事问我，你觉得重构中最重要的点是什么？我想了一下，回答道，是老板的理解和支持。
+- https://twitter.com/michaelwong666/status/1676257775557705728
 
 - ## engineering上的好的决策是重构出来的。
 - https://twitter.com/geniusvczh/status/1594452820459388929

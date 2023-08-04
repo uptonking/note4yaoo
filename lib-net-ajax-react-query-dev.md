@@ -13,9 +13,6 @@ modified: 2023-03-05T08:55:03.696Z
   - query的持久化使用前端数据库
     - 实现类似于缓存: client-app > localDb > fetch > server
 
-- [You Might Not Need React Query_202305](https://tkdodo.eu/blog/you-might-not-need-react-query)
-  - pointing out that RSCs and R-Q solve _mostly_ the same problem, and if you use RSCs you _probably_ don't need R-Q
-
 - [Let's Build React Query in 150 Lines of Code_202106](https://www.youtube.com/watch?v=9SrIirrnwk0)
 
 - [用react-query解决你一半的状态管理问题](https://zhuanlan.zhihu.com/p/351280149)
@@ -30,13 +27,54 @@ modified: 2023-03-05T08:55:03.696Z
   - Since TanStack Query is most often used for data fetching in combination with data fetching libraries, the default network mode is `online`.
   - In `online` mode, Queries and Mutations will not fire unless you have network connection
   - 在测试时可改为 `always`
-# react-query-examples
+# query-examples
 - https://github.com/alan2207/react-query-auth
   - Authenticate your react applications easily with react-query.
-# query-solutions
+
+## utils
+
 - https://github.com/data-client/rest-hooks /ts
   - Normalized state management for async data. 
   - automatically optimizes performance by caching the results, deduplicating fetches
+# blogs
+
+## [You Might Not Need React Query_202305](https://tkdodo.eu/blog/you-might-not-need-react-query)
+
+- ### @tkdodo wrote a great post recently on "You Might Not Need React Query", pointing out that RSCs and R-Q solve _mostly_ the same problem, and if you use RSCs you _probably_ don't need R-Q
+- https://twitter.com/acemarke/status/1666564887055671297
+  - Same thing goes for RTK Query
+
+### [You Might Not Need React Query for Jotai · Daishi Kato's blog_202301](https://blog.axlight.com/posts/you-might-not-need-react-query-for-jotai/)
+
+## [Thinking in React Query | TkDodo's blog_20230706](https://tkdodo.eu/blog/thinking-in-react-query)
+
+- ### Key Takeaways:
+- https://twitter.com/TkDodo/status/1667279661980610565
+  1. react-query does not care how you fetch: It is an async state manager as long as your provide is a promise
+  2. revisit staletime: tune this accordingly; most people don't need it set to it's default, at 0
+  3. useEffect and onSuccess callbacks are deprecated
+
+- ### We will very likely be removing the onSuccess / onError / onSettled callbacks from `useQuery` in v5
+- https://twitter.com/TkDodo/status/1647341498227097600
+
+### [Breaking React Query's API on purpose | TkDodo's blog](https://tkdodo.eu/blog/breaking-react-querys-api-on-purpose)
+
+- `useQuery` has three callback functions: `onSuccess`,  `onError` and `onSettled`, which will be called when the Query ran either successfully or had an error (or in both cases). 
+  - You can (apparently) use them to execute side effects, like showing error notifications
+  - Users like this API because it's intuitive. Without those callbacks, you would seemingly need the dreaded useEffect hook to perform such a side effect
+  - Many users see it as a huge selling point of React Query that they don't need to write `useEffect` anymore. 
+  - In this example, the effect clearly shows the **drawback** of this approach: If we call useTodos() two times in our App, we will get two error notifications!
+
+- 👉🏻 The best way to address this problem is to use the global cache-level callbacks when setting up your QueryClient
+  - This callback will only be invoked once per Query. 
+  - It also exists outside the component that called useQuery, so we don't have a closure problem.
+- Just add an onDataChanged callback then that will fire whenever data changes.💡 I initially thought this to be a good idea, but then again, how would we implement that callback? 
+  - The currently existing ones can be invoked after the queryFn runs, because we are already in a side effect scope. But if we render and read from the cache only, we can't just invoke a callback during rendering
+  - We would have to spawn our own `useEffect`. And that is something you can do in userland, too, if there is really a case where state-syncing is unavoidable. 
+  - Sure, it's not the most beautiful code ever written, but state-syncing is not something that should be encouraged. 
+- 
+- 
+
 # cookies
 
 ## security
@@ -56,15 +94,67 @@ modified: 2023-03-05T08:55:03.696Z
 # discuss-faq
 - ## [fix(query-core): correct placeholderData prevData value with select fn](https://github.com/TanStack/query/pull/5227)
 - for v5, replace `keepPreviousData: true` with `placeholderData: (prev) => prev`
+# discuss-authors
+- ## 
+
+- ## 
+
+- ## Unless I hear a good reason not to, TanStack Query v5 will ship with a default `staleTime` of 30s instead of 0.
+- https://twitter.com/TkDodo/status/1687454784209448962
+  - This has mostly upsides, but also a slight downside
+- `staleTime` defines the time when your data goes from `fresh` to `stale` . As long as it's fresh, `useQuery` will only read data from the cache, without refetching.
+  - With `staleTime:0` , you'll always get a background refetch on mount / window focus / reconnect / key change.
+  - zero is as aggressive as it gets, and I think too aggressive for most apps. I mostly advised to set a default staleTime globally, and overwrite it when needed.
+  - It's what allows you to call `useQuery` wherever you want to without fetching every time. It's what makes window focus refetching great, because it won't happen _every time_. That feature is turned off prematurely(提前的；过早的), largely b/c of staleTime:0.
+- Why 30s though? Is this a random value?
+  - It's a metric I borrowed from the nextJs team - they use that value for the **Router Cache**. For navigations happening in that timeframe between routes, it's better UX to see the page as it was when you left it, even if that data is outdated. I tend to agree with that.
+
+- make sure its documented in a big banner with bold text, to avoid the issues NextJS had by surprising everyone with their 30s caching that wasn't anywhere until a few days ago.
+  - Will do. The big problem in nextjs is that you have absolutely no way to opt out of that 30s cache. Query always lets you customize everything 
+
+- Great! 30s is a good value and I always set this minimum. SWR has a default of 2 or 5 for window focus refetching interval and it was always annoying AF. 30 is a solid value, sometimes it works with even higher values!
+
+- Disabling refetch on focus is one of the first things I disable in RQ, so this is welcome.
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## [Is there any need to use Context API with React Query?](https://github.com/TanStack/query/discussions/3859)
+- Putting data from react-query into the context api is not the worst idea though - it's just a decoupling of some sorts, just like prop drilling.
+
+- I think this is a valid use-case, and it's also not the usual state-syncing anti-pattern, as the single source of truth is still the query itself (or whatever other source we have for that context). 
+
+- One thing to keep in mind is to memoize the children to the Provider to avoid unnecessarily re-rendering the whole tree, and you also cannot do fine grained subscriptions like you can do with e.g. the select option on useQuery
+
+- ## if you're using a framework like @remix_run or @nextjs , you might not even need React Query. 
+- https://twitter.com/DavidKPiano/status/1543623611877138433
+  - Fetch server-side whenever feasible, and client-side only when necessary.
+
+- 💡 do initial fetches on the server (e.g. next), but do refetches on the client (react-query). 
+  - Same as rendering really: initially on the server, but then on the client only.
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Common scenario: You want to pre-fill some local state (e.g. the selection of a Dropdown component) with server state, e.g. a PersonSelect that fetches person data and selects the first option.
+- https://twitter.com/TkDodo/status/1672168421339938818
+  - How can we do this without `onSuccess` or `useEffect` ? We DERIVE it
+  - State should be as minimal as possible. Imo, our user hasn't really "selected" the first value - they have selected nothing, so unless they change that, they are happy with the provided default. We don't need to put that into our state, we can derive it.
+
+- React Query is a data synchronization tool. If a background refetch occurs that you haven't accounted for, it will result in a bad UX if our users select an entry from the dropdown, and their selection will be suddenly overwritten. Very unexpected!
+
+- Alternatively, we can split things up into two components: A wrapper that fetches data and the actual select that takes an `initialSelection`. This will push state further down, but refetches are completely ignored with that.
 
 - ## Non-RxJS Observables in the wild... tanstack edition
 - https://twitter.com/BenLesh/status/1656746366553452573
 - Yes, yes, it's more of a "Subject"... which is an observable.
-- Incidentally, @tannerlinsley , I don't know all of the usage here, but as a pro-tip, *if* you can move away from an array of listeners to a Set it will help perf a lot. (But comes with idempotent listener adds, obviously)
+- Incidentally, @tannerlinsley , I don't know all of the usage here, but as a pro-tip, *if* you can move away from an array of listeners to a `Set` it will help perf a lot. (But comes with idempotent listener adds, obviously)
   - (I've been wanting to do that to RxJS Subjects, but it would be too broad of a breaking change for us)
-  - Prior art is EventTarget, though: addEventListener is idempotent.
+  - Prior art is `EventTarget` , though: `addEventListener` is idempotent.
 - 💡 heh, I actually did the `array->Map` switch for the Redux core in v5 alpha
 - Ooh do XState next (we love our bespoke artisanal handcrafted observables)
   - All ActorRefs (what is returned from interpret(...)) are observable
@@ -239,7 +329,7 @@ modified: 2023-03-05T08:55:03.696Z
   - Any component inside `<Suspense>` can say "Halt! Don't render me yet". React waits until every "halt" is resolved to render the children.
   - While components resolve, React shows the fallback.
 
-# discuss-react-query-incubating
+# discuss-incubating-2020
 - React Query is for managing server state, not client-only application state. 
   - For that, feel free to keep using redux or react context.
 

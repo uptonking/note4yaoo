@@ -16,9 +16,14 @@ modified: 2022-06-13T06:14:26.048Z
   - 不必过于纠结crdt的集成或三方库，关注于官方同步示例，如block-editor/y-indexeddb/dexie-sync
 # Dexie
 
-## [Prior art for PSD?](https://github.com/dexie/Dexie.js/discussions/1617)
+## [Prior art for PSD(Promise and Zone)?](https://github.com/dexie/Dexie.js/discussions/1617)
 
-- When first implemented PSD in dexie, I was not aware of other context-preserving techniques, which is the reason for its proprietary naming which is unique to Dexie.js. The concept is more known as zones (like angular's zone.js) or contexts, as known in libraries such as react, vue, svelte and solidjs. Dexie's PSD context is unique compared to other libraries in that it is preserved across async calls.
+- I noticed that Dexie patches Promises to enable async context and refers to this as "PSD"
+  - I haven't heard of context propagation referred to as PSD before nor can I find it with some googling. Are there some original resources of context prop and PSD that you can refer me to?
+
+- When first implemented PSD in dexie, I was not aware of other context-preserving techniques, which is the reason for its proprietary naming which is unique to Dexie.js. 
+  - 👉🏻 The concept is more known as **zones** (like angular's zone.js) or **contexts**, as known in libraries such as react, vue, svelte and solidjs. 
+  - Dexie's PSD context is unique compared to other libraries in that it is preserved across async calls.
 
 ## [What is the future of dexie-observable and dexie-syncable?_202104](https://github.com/dexie/Dexie.js/issues/1289)
 

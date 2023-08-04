@@ -33,7 +33,26 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
-- ## 
+- ## People sometimes to to replicate lit-html with a system that returns an HTML strings and replaces the whole DOM each render.
+- https://twitter.com/justinfagnani/status/1687119365001592832
+  - Yes, that's simpler and a lot less code.
+  - No, it's not good. Making minimal DOM changes is the whole game.
+  - I do with you could write a good 10 line lit-html replacement. That's why we're working on the Template Instantiation proposal. But it *has* to handle updates, attributes, properties, events, lists, and composition. That's the MVP.
+
+- Why so? Doing diffs in JavaScript is likely much slower than browser does.
+  - The browser doesn't do diffs. If you set `innerHTML` it recreates all of the DOM.
+  - lit-html also doesn't do diffs, because yes, diffs are too slow.
+  - Don't do: el.innerHTML= html`contentString`; 
+- How do you know? Browsers have many optimizations that are invisible.
+  - It's specified and empirically provable that browsers don't do diffs.
+  - The spec will be the DOM spec for innerHTML.
+
+- You're saying that if I set the `innerHTML` of a div with a string that generates 5, 000 nodes, and it only differs from the existing 5, 000 nodes by a single class name, that it would be impossible for a browser to optimize that and reuse the existing nodes?
+  - Yes
+- You'd also realize that if browser's retained some elements and recreated some on assigning to innerHTML, it would terribly break expectation! They don't even have the right to make assumptions there.
+
+- Recreating all the DOM is slow or quick? Why would it be slow, surely it has fast memory allocation, it is designed to be fast even with rubbish JS, aren’t we over optimising? Is there a benchmark showing the actual difference? You guys at Google should do such benchmark please
+  - It can be very slow if you do it the root of the page, and maybe more importantly it destroys all of the DOM state. Focus, scroll, input state, state of components. It's not viable.
 
 - ## Apparently, the JavaScript URL parser will omit the default port for a protocol (80 for HTTP and 443 for HTTPS) even if it was explicitly specified.
 - https://twitter.com/ZoltanKochan/status/1684531065019416578

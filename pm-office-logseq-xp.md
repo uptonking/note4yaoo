@@ -45,7 +45,7 @@ modified: 2022-06-02T06:11:16.758Z
 
 - ## [[WIP] Database version](https://github.com/logseq/logseq/pull/9858)
 
-- ### @logseq DB / Database version on the way?
+- ### @logseq DB / Database version on the way?_20230715
 - https://twitter.com/ednico_/status/1680134195484434432
   - There's not a switch. Two storage methods (file, DB) will be in parallel.
   - DB storage is for users looking for good outliner performance and structured data support. Also, there will be a full graph markdown export with automatic refreshing to cover the local-first demands.

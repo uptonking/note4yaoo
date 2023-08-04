@@ -7,8 +7,10 @@ modified: 2023-06-14T00:52:40.274Z
 
 # dev-ing-log-cs
 
-# pieces
+# guide
 
+- There are only two hard things in Computer Science: cache invalidation and naming things. -- Phil Karlton.
+# cs
 - ## 
 
 - ## 

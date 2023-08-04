@@ -95,3 +95,30 @@ modified: 2023-05-26T11:09:41.593Z
 - https://github.com/ritz078/transform
   - https://transform.tools/
   - A polyglot web converter.
+# discuss-webpack
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I just spent an hour debugging a webpack (?) error that was caused because I wrote this:
+- https://twitter.com/diegohaz/status/1682388478355488769
+  - const url = new URL("path", import.meta.url)
+  - const worker = new Worker(url)
+  - not: const worker = new Worker(new URL("path", import.meta.url))
+
+- Dealt with this at work too. They chose this syntax because "to allow running code without bundler".
+
+- Because it uses static code analysis. It's not really different from
+
+```JS
+await import('path')
+
+// vs
+
+const name = 'path'
+await import(name)
+```

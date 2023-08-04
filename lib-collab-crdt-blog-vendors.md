@@ -11,6 +11,8 @@ modified: 2023-05-30T15:50:39.683Z
 
 # blogs
 
+## [jupyterlab-rtc: We can class the RTC Algorithms into 3 main categories crdt/ot/diff](https://jupyterlab-rtc.readthedocs.io/en/latest/about-rtc/algorithms.html)
+
 ## [How CRDTs make multiplayer text editing part of Zed's DNA_2022212](https://zed.dev/blog/crdts)
 
 # more

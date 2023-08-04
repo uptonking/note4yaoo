@@ -134,6 +134,9 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/daveearley/screenshot.rocks /ts
   - Screenshot.rocks is an online tool which allows you to create beautiful mobile & browser mockups from screenshots.
   - https://chrome.google.com/webstore/detail/screenshotrocks-one-click/oolmphedpohnagciifbnfpemadolahki
+# ocr
+- https://github.com/naptha/tesseract.js /js
+  - a javascript library that gets words in almost any language out of images.
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

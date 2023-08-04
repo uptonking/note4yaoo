@@ -17,6 +17,25 @@ modified: 2023-08-01T08:59:45.360Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Applying a series of ranges (emphasis, strong, underline) to a series of characters
+- https://twitter.com/JungleSilicon/status/1673728494260588547
+  - Overlapping ranges is really the *hard case*.
+
+- Yeah, I’ve been reading the peritext paper quite a lot lately. The algorithm needs to be slightly different for tiny merge, but the core ideas are the same.
+  - The main difference is Tiny Merges use of paths rather than UIDs.
+
+- ## If you use a sync engine that can sync arbitrary data...
+- https://twitter.com/JungleSilicon/status/1678910691640754176
+  - One of the *huge* benefits of data-driven libraries / notations is that creating a multiplayer version of that library is as simple as hooking it up to the store.
+- When I hear "Syncing arbitrary data" I think "multi-value registers" (the CRDT term). If you need to match all structures how else do you do it?
+  - You can use multi-value registers, last-writer-wins registers, lamport clocks or something OT based, it really depends on your use-case.
+
+- It depends on your use-case, OT is generally less network agnostic. OT can be mixed with CRDTs (e.g. Diamond Types does something like this) for performance optimisations.
+
 - ## I’ve found a simple way to explain the list CRDT I wrote.
 - https://twitter.com/JungleSilicon/status/1685797755351179265
   - Each run by a single agent of consecutive inserts is grouped together.

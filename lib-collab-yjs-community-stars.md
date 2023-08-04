@@ -14,7 +14,14 @@ modified: 2022-10-22T18:46:45.456Z
 
 - ## 
 
-- ## 
+- ## 🤔 We’re open sourcing y-sweet, a standalone Yjs CRDT server written in Rust.
+- https://twitter.com/drifting_corp/status/1687148228259577856
+  - The core idea of y-sweet is that documents are files, not database entries. 
+  - It uses a session backend model to store files directly on S3-compatible storage (including R2).
+- 👉🏻 We discussed the idea that file editors should use files, rather than databases, in the last Browsertech Digest. 
+  - y-sweet’s architecture is heavily inspired by Figma’s persistence and multiplayer.
+- Our goal is to help to elevate Yjs to the level of end-to-end developer ergonomics developers expect from a collaboration frameworks, but without the lock-in. 
+  - We’re also releasing React hooks and an SDK for integrating client token generation with your existing auth.
 
 - ## Seriously question, is YATA/YJS the same model as WooT and/or WootH. _202009
 - https://twitter.com/kevin_jahns/status/1300857487466229760

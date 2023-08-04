@@ -22,6 +22,16 @@ Symbol('a') === Symbol('a'); //false
 
 - ## 
 
+- ## Zod is a fantastic, powerful primitive to have in a dev's toolkit. 
+- https://twitter.com/mattpocockuk/status/1612397810183274497
+  - It lets you validate data at runtime - making a whole class of problems easier.
+  - So, when should you use it? And when should you NOT use it?
+
+- when you don't trust the data coming into your app, Zod is a priceless addition. That means:
+  - Forms
+  - Public API Endpoints/Webhooks
+  - localStorage
+
 - ## i actually didn't knew that mutating while looping on a `forEach` would skip indexes
 - https://twitter.com/meijer_s/status/1676506116736397312
 - Does it skip indexes when you delete elements in the loop? This is the sort of thing that makes me nervous to see but theoretically I would expect it to work

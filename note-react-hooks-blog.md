@@ -9,6 +9,7 @@ modified: 2020-12-29T14:18:03.808Z
 
 # guide
 
+- [Timeline of a React Component With Hooks](https://julesblom.com/writing/react-hook-component-timeline)
 # [Are many useStates better than useState(object)?](https://thoughtspile.github.io/2021/10/11/usestate-object-vs-multiple/)
 - Lately I’ve converted a lot of class components to functional.
   -  why do I feel like splitting the old class state into so many useState(atom) — one for each state key? Is there any real benefit in it?

@@ -24,6 +24,7 @@ modified: 2022-06-04T00:44:40.955Z
   - select/macos-select/virtualized-select
   - autocomplete/combobox
   - emoji-picker
+  - safe-polygon: 二级菜单支持三角形安全区
 # blogs
 
 ## [Everything I Know About Positioning Poppers (Tooltips, Popovers, Dropdowns) in UIs by popperjs-author_202004](https://dev.to/atomiks/everything-i-know-about-positioning-poppers-tooltips-popovers-dropdowns-in-uis-3nkl)

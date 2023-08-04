@@ -65,8 +65,8 @@ $$('[contenteditable]')
   - rich-editor: text/block
   - pivot-table: editable
   - collaboration
-  - local-first-database
-  - annotation/comment/whiteboard/pdf
+  - local-first database
+  - flowchart/whiteboard/pdf/annotation/comment
   - 事项--截止日期(0730+休整)--重要性(hml/s1-s3)
   - rich-editor-vanillajs
   - pivot-table-grid--0828--h
@@ -93,9 +93,11 @@ $$('[contenteditable]')
   - [x] 流式数据: linvodb, tingodb
   - tuple-database 支持内存和持久化
   - tinybase 支持内存和持久化
+- cache-query for web storage
+  - 参考 tanstack-query, localforage
 
 - headless-architecture
-  - state + action
+  - state + action: 参考autocomplete、search-ui
 
 - collab-sync
   - string-crdt: ? list-crdt
@@ -281,9 +283,13 @@ $$('[contenteditable]')
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-07
+# dev-08-use-gesture
 
-## 072
+## 080
+
+## 0804
+
+# dev-07-chinoiserie-color-mdx-styling
 
 ## 0728
 
@@ -292,7 +298,7 @@ $$('[contenteditable]')
   - The particular `tabindex` value controls whether the element is tabbable (i.e. reachable via sequential keyboard navigation, usually with the Tab key).
   - A negative value (the exact negative value doesn't actually matter, usually `tabindex="-1"`) means that the element is not reachable via sequential keyboard navigation.
   - `tabindex="-1"` may be useful for elements that should not be navigated to directly using the Tab key, but need to have keyboard focus set to them. Examples include an off-screen modal 
-  - [Accessibility: does \`tabindex="-1"\` mean the element is not visible to screenreaders (similar to \`aria-hidden="true"\`) - Stack Overflow](https://stackoverflow.com/questions/59459273/accessibility-does-tabindex-1-mean-the-element-is-not-visible-to-screenrea)
+  - [Accessibility: does `tabindex="-1"` mean the element is not visible to screenreaders (similar to `aria-hidden="true"`) - Stack Overflow](https://stackoverflow.com/questions/59459273/accessibility-does-tabindex-1-mean-the-element-is-not-visible-to-screenrea)
     - tabindex="-1" means that an item is only focusable programatically.
     - aria-hidden="true" means that item is completely removed from the accessibility tree.
   - `tabindex="0"` means that the element should be focusable in sequential keyboard navigation, **after** any positive tabindex values. 
@@ -323,7 +329,7 @@ $$('[contenteditable]')
 - `line-height: normal` 默认值为normal
   - Depends on the user agent. Desktop browsers (including Firefox) use a default value of roughly `1.2`, depending on the element's `font-family.`
 
-- [css - Margin-Top not working for span element? - Stack Overflow](https://stackoverflow.com/questions/11700985/margin-top-not-working-for-span-element)
+- [margin-top not working for span element? - Stack Overflow](https://stackoverflow.com/questions/11700985/margin-top-not-working-for-span-element)
   - vertical margins will not have any effect on non-replaced inline elements.
   - Always remember one thing: we can not apply margin vertically to inline elements. 
   - If you want to apply vertical margins then change its `display` type to `block` or `inline-block`
@@ -380,7 +386,7 @@ div {
 
 ## 0712
 
-- [Dribbble Color Palette not matching ColorZilla Color PIcker : dribbble](https://www.reddit.com/r/dribbble/comments/d1chf6/dribbble_color_palette_not_matching_colorzilla/)
+- [Dribbble Color Palette not matching ColorZilla Color PIcker](https://www.reddit.com/r/dribbble/comments/d1chf6/dribbble_color_palette_not_matching_colorzilla/)
   - The dribbble palette is a rough guide of the colors used in an image, ColorZilla will give you the accurate color for a specific pixel.
 
 ## 0711

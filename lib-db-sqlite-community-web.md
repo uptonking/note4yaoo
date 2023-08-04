@@ -9,6 +9,7 @@ modified: 2022-11-25T09:47:43.079Z
 
 # guide
 
+- [The Current State of SQLite Persistence on the Web_202307](https://www.powersync.co/blog/sqlite-persistence-on-the-web)
 # discuss
 - ## 
 

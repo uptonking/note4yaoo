@@ -16,7 +16,11 @@ modified: 2022-11-11T06:57:09.670Z
 
 - ## 
 
-- ## 
+- ## 3位研究人员在C语言中创造了一种替代Rust的方案。它的名字叫C-rusted
+- https://twitter.com/blackanger/status/1687150565351116800
+- 这个挺有意思的。思路跟typescript是一样的，相当于非侵入式增强了类型系统，如果能做到ts那种带any又能保证安全边界，我觉得应用价值还是很高的
+
+- 然而这个文章没说具体技术细节怎么做的，还需要观望。
 
 - ## If not for speed, Rust will be net negative for frontend tools 
 - https://twitter.com/youyuxi/status/1644677516312072194

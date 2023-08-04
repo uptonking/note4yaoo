@@ -14,9 +14,14 @@ modified: 2022-08-21T10:11:19.219Z
 
 - ## 
 
-- ## 
+- ## Thinking about Makepad's continuous code folding animation again. 
+- https://twitter.com/thesephist/status/1668074952681988098
+  - Feels like we should be able to do this with prose text now — find the key ideas/sentences and zoom out the rest of a document.
+  - 缩放动画很好
 
-- ## 
+- ## The Trix editor is showing its age.
+- https://twitter.com/hopsoft/status/1680060324026757121
+- It seems to work great in Basecamp and HEY.
 
 - ## If you type "ad", then bold it. If you insert "d" before the "d", how would a diff know whether the new d is before or after the existing one?
 - https://twitter.com/JungleSilicon/status/1682220175272333314
@@ -59,7 +64,7 @@ modified: 2022-08-21T10:11:19.219Z
 - https://twitter.com/thorstenball/status/1673636222626050048
   - 类似 figma variables
 
-- ## Who in my network has a bunch of experience building rich text editors using contentEditable? (not using libraries like Prosemirror, Quill, etc).
+- ## 💡 Who in my network has a bunch of experience building rich text editors using contentEditable? (not using libraries like Prosemirror, Quill, etc).
 - https://twitter.com/JungleSilicon/status/1673577996899463168
 
 - Why? Let me guess, you want one editor per block and these tools are multiblock. Correct?

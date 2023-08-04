@@ -24,15 +24,9 @@ if(val) // doSth
 # discuss
 - ## 
 
-- ## Zod is a fantastic, powerful primitive to have in a dev's toolkit. 
-- https://twitter.com/mattpocockuk/status/1612397810183274497
-  - It lets you validate data at runtime - making a whole class of problems easier.
-  - So, when should you use it? And when should you NOT use it?
+- ## 
 
-- when you don't trust the data coming into your app, Zod is a priceless addition. That means:
-  - Forms
-  - Public API Endpoints/Webhooks
-  - localStorage
+- ## 
 
 - ## What if you could store a global state at typelevel in typescript.
 - https://twitter.com/ecyrbedev/status/1686852448915189760

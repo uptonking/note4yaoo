@@ -54,6 +54,11 @@ modified: 2021-09-30T07:43:15.350Z
   - Feature Geometries follow the OGC Simple Feature Access specifications.
   - Measurements use SI units (e.g. meters for building heights) and local units for regulations and restrictions (e.g. speed limits in mph in the US and km/h in Germany).
 
+- https://github.com/msbarry/planetiler-overture-demo
+  - https://msbarry.github.io/planetiler-overture-demo/
+  - This demo website shows vector tiles built from the Overture 2023-07-26-alpha.0 release using Planetiler's experimental overture schema. 
+  - Overture data has structured metadata for each element (see schema), but maplibre-gl-js only supports simple key/value pairs
+
 ## map-data
 
 - Overture data is licensed under the Community Database License Agreement – Permissive v2 (CDLA)

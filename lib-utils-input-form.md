@@ -66,6 +66,19 @@ modified: 2023-03-27T17:45:27.440Z
 
 # discuss
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 使用fetch()上传formData数据时，千万不要在headers中设定content-type！
+- https://twitter.com/ahshengchen/status/1687377120459378688
+
+- multipart/form-data 如果修改了content type会覆盖解析数据需要的boundary。标准server就解析不到数据了，可以用postman or paw之类的查看一下和application/x-www-form-urlencoded的报文区别。
+
+- 可以 postman 里测好了，用他的代码生成代码
+
 - ## Wrote a guide about 11 popular HTML and JS mistakes in forms.
 - https://twitter.com/sitnikcode/status/1661411602443247616
   - [11 HTML best practices for login & sign-up forms—Martian Chronicles, Evil Martians’ team blog](https://evilmartians.com/chronicles/html-best-practices-for-login-and-signup-forms)
