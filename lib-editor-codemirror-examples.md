@@ -10,9 +10,9 @@ modified: 2023-06-23T12:46:53.288Z
 # guide
 
 # popular
-
+- https://github.com/justinfagnani/codemirror-elements /ts
+  - A set of HTML custom elements for editing source code with CodeMirror.
 # collab
-
 - https://github.com/ekzhang/cm-collab /ts
   - A tiny collaborative Markdown editor based on CodeMirror, communicating with a minimal server and database.
   - Supports multiple real-time documents, with live cursors. Based on CodeMirror's **operational transformation** extension

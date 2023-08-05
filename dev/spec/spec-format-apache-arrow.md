@@ -65,3 +65,9 @@ modified: 2021-07-24T08:14:45.182Z
 - ADBC is an Arrow-based, vendor-neutral API for interacting with databases. 
 - Applications that use ADBC simply receive Arrow data. 
 - Just like JDBC/ODBC, underneath the ADBC API are drivers that translate the API for specific databases.
+
+## [DuckDB ADBC - Zero-Copy data transfer via Arrow Database Connectivity - DuckDB_202308](https://duckdb.org/2023/08/04/adbc.html)
+
+- TLDR: DuckDB has added support for Arrow Database Connectivity (ADBC), an API standard that enables efficient data ingestion and retrieval from database systems, similar to Open Database Connectivity (ODBC) interface. 
+  - However, unlike ODBC, ADBC specifically caters to the columnar storage model, facilitating fast data transfers between a columnar database and an external application.
+  - Database interface standards allow developers to write application code that is independent of the underlying database management system (DBMS) being used.

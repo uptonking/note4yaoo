@@ -14,7 +14,10 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## Nothing beats console.log for debugging.
+- https://twitter.com/DwayneCodes/status/1687574301200003072
+- closest friend: `border: 1px solid red` ; 
+- console.table
 
 - ## Business logic in JS. I think this makes sense.
 - https://twitter.com/tantaman/status/1687090113958797312

@@ -283,6 +283,9 @@ modified: 2020-10-22T10:22:33.292Z
     - It also runs in completely static settings, so you can host a million-point scatterplot over something like Github Pages.
   - https://twitter.com/benmschmidt/status/1646549908546113537
 # examples
+- 可通过滑块调整百分比的饼状图
+  - https://codepen.io/leaverou/pen/KKrEvVj
+
 - https://github.com/joewalnes/smoothie
   - http://smoothiecharts.org/
   - a really small charting library designed for live streaming data. 

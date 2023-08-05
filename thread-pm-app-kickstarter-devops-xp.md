@@ -11,6 +11,21 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
+- ## 
+
+- ## 如何凭借开源赚钱
+- https://twitter.com/tison1096/status/1687704828859043842
+- 找份相关的工作
+  - flink, opendal, netty
+- 锻炼技能，找份谋生的工作
+  - kvrocks, curator, ffmpeg
+- 顾问和咨询
+  - yjs, tidelift
+- sponsor计划
+  - vue, zig
+- 创业
+  - elastic, confluent, api7
+
 - ## You can jump on every new trend like crypto, web3, AI. 
 - https://twitter.com/yongfook/status/1616635377586180096
   - Or you can slowly build something “boring” like a CRM for veterinarians. 
