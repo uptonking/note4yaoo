@@ -9,18 +9,29 @@ modified: 2021-01-01T20:11:00.889Z
 
 # guide
 
+- tips
+  - 不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店
+
 - resources
+  - [History of Web Browser Engines from 1990 until today](https://eylenburg.github.io/browser_engines.htm#)
   - [WebKit | User Agents](https://user-agents.net/rendering-engines/webkit)
+  - [WebKit for Developers_201302](https://www.paulirish.com/2013/webkit-for-developers/)
+  - [Applications using WebKit/GTK+](https://trac.webkit.org/wiki/ApplicationsGtk)
   - [List of web browsers - Wikipedia](https://en.wikipedia.org/wiki/List_of_web_browsers#WebKit-based)
     - 开源浏览器很难生存和持续
     - android: dolphin
     - linux: epiphany(flathub/snap), otter,midori(webkit2blink),konqueror(khtml/webkit)
     - win: otter,midori, Playwright with WebKit mini browser,split,ultralight,Maxthon(webkit2blink), run Linux's Surf browser on WSL2.
     - 以键盘操作为主: qutebrowser, vimb
-    - 基于qtWebEngine/blink: Dooble,Falkon
-    - 基于qtWebkit
+    - 基于QtWebEngine/blink: Falkon,Dooble,qutebrowser
+    - 基于Webkit: otter-old, midori-old
+      - On qt5-webkit : otter-browser, qutebrowser
+      - On webkit2-gtk3 : epiphany,midori,surf-browser,badwolf
   - geco: firefox, icecat
   - [Google and Mozilla are working on iOS browsers that aren't based on WebKit | Hacker News_202302](https://news.ycombinator.com/item?id=34690788)
+
+- **all Chrome variants except iOS now use Blink**
+  - The restriction to use WebKit as the rendering engine for 3rd party Web browser apps exists solely on iOS. 
 # read: WebKit技术内幕_2014
 - 浏览器的功能越来越丰富，包括网页浏览、网络请求、资源管理、多页面管理、插件和扩展、书签管理、历史记录管理、设置、下载、账户同步、安全隐私、外观主题、开发者工具等
 - html5的标准包含10个大的类别
@@ -213,12 +224,72 @@ modified: 2021-01-01T20:11:00.889Z
 - ref
   - https://jinlong.github.io/2015/09/30/what-forces-layout-reflow/
   - https://www.zcfy.cc/article/fastersite-how-not-to-trigger-a-layout-in-webkit
+# electron-chromium
+- products
+  - midori-next: 桌面版基于wexond, 移动版基于gecko
+  - [Is Duckduckgo privacy browser based on chromium, gecko or webview ? : androidapps](https://www.reddit.com/r/androidapps/comments/gwpb9n/is_duckduckgo_privacy_browser_based_on_chromium/)
+    - The DuckDuckGo browser uses WebView, the OS-provided rendering engine. In its essence, it's just a UI slapped on to WebView, which is why it's so small. 
+    - At the moment, the only WebView options are Chrome and Chromium, so basically, DDG uses Chrome/Chromium.
+
+- https://github.com/samuelmaddock/electron-browser-shell /ts
+  - A minimal, tabbed web browser with support for Chrome extensions—built on Electron.
+  - forks
+  - https://github.com/fvulich/electron-chrome-extensions
+
+- https://github.com/wexond/browser-base /ts/最近版本v5.2_202102/更新到202201/archived
+  - Wexond Base is a modern web browser, built on top of modern web technologies such as Electron and React, that can also be used as a framework to create a custom web browser
+  - wexond: We've also moved to Chromium as Electron just lacked many important browser features._202111
+    - https://twitter.com/sentialx/status/1457867597156917251
+    - And we had our fork of Electron which tried to import those features from Chromium, but it was just too much to manually implement all of them, at least for me alone.
+  - Wexond has been acquired_202211
+    - https://twitter.com/sentialx/status/1588103883494227971
+  - [forks](https://github.com/wexond/browser-base/forks)
+    - https://github.com/Alex313031/promethium
+    - https://github.com/skyebrowser/skye
+    - https://github.com/Nalem14/browser-base
+
+- https://github.com/TrueHerobrine/SwiftBrowse /python
+  - Fast, Private, Lightweight browser based on PyQt5/QtWebEngine
+  - [Making a browser using Webkit and Python : browsers](https://www.reddit.com/r/browsers/comments/14u8jf3/making_a_browser_using_webkit_and_python/)
+  - QtWebEngine is chromium but significantly easier to maintain. All-in-all, with a tab system and cookies
+# firefox-gecko
+- https://github.com/Floorp-Projects/Floorp
+  - https://floorp.app/
+  - Firefox-based, flexible browser developed in Japan with a variety of features!
+
+- https://github.com/dothq/browser-desktop
+  - https://www.dothq.org/
+  - web browser with rugged privacy features out-of-the-box
+# webkit-browsers
+- https://github.com/OtterBrowser/otter-browser /cpp/GPLv3
+  - https://otter-browser.org/
+  - Otter Browser aims to recreate the best aspects of the classic Opera (12.x) UI using Qt5
+
+- https://github.com/kapouer/node-webkitgtk /js/deprecated
+  - webkitgtk bindings for Node.js
+  - see express-dom version >= 6 to prerender web pages using playwright.
+  - Typically, express-dom can run on webkitgtk's jsdom mode - developers can work on other platforms where jsdom builds fine.
+
+## webkit-apps
+
+- https://github.com/sonnyp/Playhouse
+  - Playground for HTML/CSS/JavaScript
+  - GTK, GLib, Flatpak, GtkSourceView, libadwaita, GJS, Blueprint, WebkitGTK
+
+- https://github.com/vikdevelop/photopea_app
+  - Photopea Desktop App for Flatpak (Electron + WebKitGTK wrapper)
+
+- https://github.com/devongovett/node-wkhtmltopdf
+  - A wrapper for the wkhtmltopdf HTML to PDF converter using WebKit
 # discuss-webkit-browsers
 - ## 
 
-- ## 
+- ## [Why are there no open source browsers using Webkit as the core engine? | The FreeBSD Forums](https://forums.freebsd.org/threads/why-are-there-no-open-source-browsers-using-webkit-as-the-core-engine.88112/)
+- Webkit, while OSS, is corporate owned and driven by Apple - also the reason why Google created their own fork, Blink, to get free of Apple's influence
+- Building Webkit takes forever, even on a quite powerful machine, 
 
-- ## 
+- ## [Why did Google decide fork Webkit instead of Gecko? : browsers](https://www.reddit.com/r/browsers/comments/12usnvw/why_did_google_decide_fork_webkit_instead_of_gecko/)
+- Back then (and now), Mozilla code base was quite large and slow. Compared to webkit, much smaller and easier to develop new features for.
 
 - ## [Frequently asked questions | qutebrowser](https://qutebrowser.org/doc/faq.html)
 - qutebrowser uses Qt and `QtWebEngine` by default (and supports `QtWebKit` optionally). 
@@ -233,4 +304,3 @@ modified: 2021-01-01T20:11:00.889Z
 
 - [affected by chromium dropping support ?](https://dndsanctuary.eu/index.php?PHPSESSID=1233ccab74c6651ba984e00c892d6b4a&topic=3969.0)
   - The default is QtWebKit, but you can switch either specific domains or everything to QtWebEngine if it was compiled with support for that. 
-- 

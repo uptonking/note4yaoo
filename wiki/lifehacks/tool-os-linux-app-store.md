@@ -11,6 +11,9 @@ modified: 2023-06-22T07:22:04.591Z
 
 - tips
   - GNOME的Software和KDE的Discover都有snap/flatpak的插件
+  - 优先级: flathub(可镜像), snap-store, appimage, ppa/custom-repo/synaptic, apt/yum/dnf
+# web-apps
+- https://github.com/tauri-webapps
 # linux-apps
 - bauh
   - https://github.com/vinifmor/bauh
@@ -22,12 +25,14 @@ modified: 2023-06-22T07:22:04.591Z
   - https://appoutlet.github.io/tags/app-outlet/
   - A Universal linux app store
   - It currently supports AppImages, Flatpaks and Snaps packages.
-# flatpak
 
-# snap
+## flatpak
+
+## snap
 
 - [Ubuntu 明年将推出完全基于 Snap 的桌面版本_202306](https://www.oschina.net/news/243309/immutable-all-snap-ubuntu-desktop)
-# appimage
+
+## appimage
 
 - [Appimagehub.com](https://www.appimagehub.com/)
   - This catalog has 1282 AppImages
@@ -39,7 +44,7 @@ modified: 2023-06-22T07:22:04.591Z
   - AppImageLauncher is a novel and unique solution of integrating with the system. It intercepts all attempts to open an AppImage to provide its integration features.
 
 - https://github.com/SalaniLeo/Immagini
-  - An application made to easily manage and create .AppImage apps
+  - An application made to easily manage and create . AppImage apps
 
 - https://github.com/mijorus/gearlever
   - Manage AppImages with ease 
@@ -50,6 +55,10 @@ modified: 2023-06-22T07:22:04.591Z
 - https://github.com/AppImage/AppImageKit
   - https://appimage.org/
   - AppImageKit is a concrete implementation of the AppImage format, especially the tiny runtime that becomes part of each AppImage.
+# win-apps
+- https://github.com/marticliment/WingetUI /python
+  - https://www.marticliment.com/wingetui/
+  - The main goal of this project is to create an intuitive GUI for the most common CLI package managers for Windows 10 and Windows 11, such as Winget, Scoop, Chocolatey, Pip and Npm
 # discuss
 - ## 
 

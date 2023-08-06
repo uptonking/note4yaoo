@@ -118,11 +118,19 @@ modified: 2023-04-04T22:39:45.442Z
 # ps-online
 - https://github.com/photopea/photopea
   - Photopea is not fully open-source
+- https://github.com/sclang007/Open-Photopea /201811/js/inactive
+  - Photopea is the best Photoshop alternative. Their program runs as a web app. Photopea is capable of running PSD, XCF and Sketch files.
+  - Photopea is a closed source software. So I decide to extract the code and Open Source it, but if they ask me to remove it I will be 100% fine with their decition.
+- https://github.com/vikdevelop/photopea_app
+  - Photopea Desktop App for Flatpak (Electron + WebKitGTK wrapper)
 
 - https://github.com/viliusle/miniPaint /js/Photoshop-alternative
   - http://viliusle.github.io/miniPaint/
   - Online image editor lets you create, edit images using HTML5 technologies.
   - miniPaint operates directly in the browser. Nothing will be sent to any server.
+
+- https://github.com/iyadahmed/AwesomeImageEditor3 /python
+  - open-source, user friendly and high-performance image editor made from scratch with Python and Qt
 # image-tiles/lod
 - https://github.com/EddieMachete/em-ui-quadrant
   - Quadrant is a tile based, JavaScript web component which allows viewing an image in different levels of detail while optimizing the download process. 

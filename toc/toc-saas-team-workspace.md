@@ -22,6 +22,11 @@ modified: 2023-02-07T17:38:05.336Z
 
 - https://github.com/xiweicheng/tms /js/java
   - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
+
+- https://github.com/ferdium/ferdium-app
+  - https://ferdium.org/
+  - Ferdium is a desktop app that helps you organize how you use your favourite apps by combining them into one application. 
+  - It is based on Franz - a software already used by thousands of people - with the difference that Ferdium gives you many additional features and doesn't restrict its usage! 
 # microsoft-teams/org
 - growi /1.1kStar/MIT/202301/ts/remark
   - https://github.com/weseek/growi
@@ -237,6 +242,41 @@ modified: 2023-02-07T17:38:05.336Z
 
 - https://github.com/kvandake/lexorank-ts
   - A reference implementation of a list ordering system like JIRA's Lexorank algorithm
+# browser/thunderbird-inspired
+- products
+  - [Rambox | Workspace Simplifier to Boost your Productivity](https://rambox.app/)
+
+- https://github.com/ferdium/ferdium-app /ts
+  - https://ferdium.org/
+  - All your services in one place, built by the community
+  - Hard-fork of Franz, adding awesome features and removing unwanted ones.
+  - 依赖electron-window-state、immutable-js.v4、mobx-react、sqlite3、@adonisjs/ace/auth/lucid
+
+- https://github.com/meetfranz/franz /js
+  - https://meetfranz.com/
+  - free messaging app for Slack, Telegram and more
+
+- https://github.com/getstation/desktop-app /ts
+  - https://getstation.com/
+  - One app to rule them all
+  - open-source smart browser for busy people. 
+  - 依赖graphql、apollo-client/link、immutable-js.v3、electron-chrome-extension、redux、rxjs
+
+- https://github.com/wavebox/waveboxapp
+  - https://wavebox.io/
+  - Browser for Work
+  - Wavebox gives you customizable toolbars, sleeping tabs, cookie containers and multiple profile
+  - Wavebox 10, a complete fork of Chromium launched in 2019, but if you're looking for the Electron based Wavebox Classic, there's an archive of the code here
+
+- https://github.com/sonnyp/Tangram
+  - https://apps.gnome.org/app/re.sonny.Tangram/
+  - Browser for your pinned tabs
+  - Tangram is a new kind of browser. It is designed to organize and run your Web applications. Each tab is persistent and independent.
+  - Tabs are independent and sandboxed from each others.
+  - You can set multiple tabs with different accounts for the same application.
+  - Both Flatpak and non-Flatpak versions of Tangram provide sandboxing for Web applications.
+    - Flatpak via our restricted permissions
+    - Non-Flatpak through `WebkitGTK` Sandboxing (requires WebkitGTK >= 2.26)
 # more
 - https://github.com/kndwin/solaces
   - Linear clone with different reactive local database POC's

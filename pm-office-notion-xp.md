@@ -14,8 +14,9 @@ modified: 2022-03-17T17:49:45.743Z
 
 # pros
 
+- powerful database views and organization
 # cons
-
+- 缺少类似flomo、tldraw这样的快速笔记入口
 # features
 
 ## 文本格式类

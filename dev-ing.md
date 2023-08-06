@@ -287,8 +287,10 @@ $$('[contenteditable]')
 
 ## 080
 
-## 0804
+## 0806
 
+- [GPU process isn't usable. Goodbye.](https://github.com/Automattic/simplenote-electron/issues/3096)
+  - run `/opt/Simplenote/simplenote --no-sandbox`
 # dev-07-chinoiserie-color-mdx-styling
 
 ## 0728

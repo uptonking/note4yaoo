@@ -6,10 +6,16 @@ modified: 2021-01-16T20:50:23.893Z
 ---
 
 # toc-dev-pc-electron
+- tips
+  - 不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现
+
 - ref
   - search: file
   - https://github.com/sindresorhus/awesome-electron
 # popular
+- https://github.com/Elanis/web-to-desktop-framework-comparison
+  - to create an objective comparison of multiple framework that grant us to "transform" our web app to desktop application formats.
+
 - https://github.com/microsoft/vscode
   - https://code.visualstudio.com/
   - Visual Studio Code
@@ -35,6 +41,11 @@ modified: 2021-01-16T20:50:23.893Z
   - Browser for Work
   - Wavebox gives you customizable toolbars, sleeping tabs, cookie containers and multiple profile
   - Wavebox 10, a complete fork of Chromium launched in 2019, but if you're looking for the Electron based Wavebox Classic, there's an archive of the code here
+
+- https://github.com/samuelmaddock/electron-browser-shell /ts
+  - A minimal, tabbed web browser with support for Chrome extensions—built on Electron.
+  - forks
+  - https://github.com/fvulich/electron-chrome-extensions
 # utils
 - https://github.com/alexiusacademia/electron-db
   - let you simplify database creation and operation on a json file.
@@ -91,6 +102,10 @@ modified: 2021-01-16T20:50:23.893Z
 - https://github.com/12joan/ping-ui
   - A simple GUI for the ping command-line utility built using Tauri.
   - Requires ping to be in the PATH and for the output of ping to have the following format
+# nwjs
+- https://github.com/nwutils/electron-to-nwjs /js
+  - This project aims to build an Electron app as a NW.js app.
+  - The Electron main file is converted into the NW.js main file using webpack, by replacing the Electron modules with compatibility layers that make them use the NW.js commands instead. 
 # more
 - https://github.com/uptick/react-keyed-file-browser
   - https://uptick.github.io/react-keyed-file-browser/

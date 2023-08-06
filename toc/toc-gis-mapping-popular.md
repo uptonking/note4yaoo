@@ -74,6 +74,9 @@ modified: 2021-08-05T06:48:22.687Z
 - https://github.com/mapbox/tippecanoe
   - Builds vector tilesets from large (or small) collections of GeoJSON, Geobuf, or CSV features, like these.
   - The goal of Tippecanoe is to enable making a scale-independent view of your data
+  - https://github.com/felt/tippecanoe
+    - Version 2.0.0 is equivalent to 1.36.0 in the original repository. Thank you Mapbox for the many years of early support.
+
 - https://github.com/mapbox/rasterio
   - Rasterio reads and writes geospatial raster datasets with gdal
 - https://github.com/mapbox/robosat

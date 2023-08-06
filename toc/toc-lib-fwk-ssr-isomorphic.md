@@ -51,6 +51,9 @@ modified: 2020-12-19T13:04:40.865Z
   - https://github.com/electrode-io/electrode-native
     - A platform to ease integration&delivery of React Native apps in existing mobile applications
 
+- https://github.com/kapouer/express-dom /js
+  - Express middleware for (pre)rendering web pages with playwright.
+
 ## examples
 
 - https://github.com/htdangkhoa/react-ssr-starter /js/inactive
@@ -122,9 +125,7 @@ modified: 2020-12-19T13:04:40.865Z
 # react-ssr
 - https://github.com/panDaxiang/ssr
   - react服务端渲染demo
-
 # microfrontend
-
 - https://github.com/single-spa/single-spa /js
   - The router for easy microfrontends
   - Build micro frontends that coexist and can (but don't need to) be written with their own framework

@@ -165,6 +165,7 @@ modified: 2020-07-14T09:32:35.359Z
   - 构建系统。Electron通过libchromiumcontent来访问Chromium的Content API，避免了构建整个Chromium带来的复杂度
   - 与Node集成。在NW.js，网页中的Node集成需要通过给Chromium打补丁来实现，Electron通过各个平台的消息循环与libuv的循环集成，避免了直接在Chromium上做改动
   - 多上下文语境。NW.js包括Node上下文和web上下文，自从0.13以来NW.js选择性支持多上下文。通过使用Node的multi-context特性，Electron不需要在网页中引入新的js上下文
+
 - node app on PC: Electron, NW.js
 - react-desktop
   - React UI Components for macOS High Sierra and Windows 10
