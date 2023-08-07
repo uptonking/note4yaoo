@@ -95,7 +95,12 @@ modified: 2023-06-19T12:33:38.006Z
 
 - ## 
 
-- ## 
+- ## What are the best multitouch interactions you’ve seen, apart from the obvious pan / pinch?
+- https://twitter.com/steveruizok/status/1688113371420168192
+  - Some of my other surprise favorites are in Apple’s native apps, or maybe they’re just baked into the OS, where I  dragging one item but can still perform other multitouch gestures, like scrolling or swiping between pages.
+
+- The two finger tap to undo / three finger tap to redo from @Procreate and other apps is great, too. 
+  - I’ve implemented that a few times in tldraw, it’s crazy complex but when done right feels totally natural.
 
 - ## Design the API first in JavaScript. Don’t let the constraints of TypeScript’s compiler (or your skill in type crafting) lead you to design a worse API
 - https://twitter.com/steveruizok/status/1685738781977018368

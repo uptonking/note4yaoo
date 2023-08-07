@@ -46,6 +46,9 @@ modified: 2021-01-16T20:50:23.893Z
   - A minimal, tabbed web browser with support for Chrome extensions—built on Electron.
   - forks
   - https://github.com/fvulich/electron-chrome-extensions
+
+- https://github.com/Electron-Store/electron-app-store /inactive
+  - A Cross-Platform App Store for Electron.js Apps
 # utils
 - https://github.com/alexiusacademia/electron-db
   - let you simplify database creation and operation on a json file.

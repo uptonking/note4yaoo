@@ -36,6 +36,8 @@ modified: 2023-03-05T08:55:03.696Z
 - https://github.com/data-client/rest-hooks /ts
   - Normalized state management for async data. 
   - automatically optimizes performance by caching the results, deduplicating fetches
+# changelog
+- [RFC: remove callbacks from useQuery_202304](https://github.com/TanStack/query/discussions/5279)
 # blogs
 
 ## [You Might Not Need React Query_202305](https://tkdodo.eu/blog/you-might-not-need-react-query)
@@ -119,6 +121,37 @@ modified: 2023-03-05T08:55:03.696Z
 - ## 
 
 - ## 
+
+- ## [using the data of one query to fetch the data for another](https://github.com/TanStack/query/discussions/3147)
+- The dependent queries section in the docs shows that quite nicely, and I would just put the two things into a custom hook so that the GC issue doesn't even arise because as long as queryB is used (which uses query A, query A will also be used)
+
+- ## [Recommended pattern for list-details-layout](https://github.com/TanStack/query/discussions/1269)
+- This is what I do right now in production:
+  - I have a custom hook (let's call it useArticles) to get the list to show in the sidebar, the list doesn't have all the info, only the needed to be displayed in the list (e.g. it doesn't have the whole content).
+  - I have another custom hook (let's call it useArticle) to get a single item to show in the content area, this has the whole information including the content which can be large.
+  - Then, when something is updated in one of the articles I trigger a revalidation of the list and the individual article, this way the list will always be updated with that current info of each item.
+
+- ## [Supporting a stream-based flow (EventSource, SSE)](https://github.com/TanStack/query/discussions/418)
+  - Just curious if you would be interested in supporting a new use case for streamed data. For instance, it could support EventSource.
+  - From what I can foresee, this would "look-like" the infinite query flow - with the difference being that it's not the front-end pulling new data but the server sending it intermittently(断续的；间歇的:).
+
+- if you can write a custom hook that uses the `useInfiniteQuery` hook and does this with an event source, then we can have a better discussion on whether something like this should belong in React Query, or simply as a new npm module like `react-query-use-event-source`
+
+- I made two rough things:
+  - One using async generator to pull data
+  - one using simple callback paradigm
+
+- I have found a simpler solution using the `queryClient` API and updating the data from the event source events. Maybe this is an anti pattern for react-query but it works nicely for me. 
+  - why would you do that with useQuery instead of with a normal useEffect ? The problem I see with this approach is that the queryFn can run multiple times due to background refetches, and each time it does, you're leaking an event source and a listener, because there is no way to clean it up inside the queryFn. 
+  - Initially I did try this with a useEffect but ran in to some problems, the main one being reusability.
+
+- ### [Using Sockets](https://github.com/TanStack/query/discussions/358)
+- sockets are not transaction based, so there would be nothing to "refetch" if you will. 
+  - Unless you are using your socket to both request and receive data, then I guess you could theoretically set up a new system 
+- IMO that's a tone of work for little benefits. 
+  - If you are considering this, then I would suggest you introspect on your architecture and ask yourself what your true technical requirements are for your data. 
+  - If you are working with transactional data, then you're going to want a transactional interface, like promises. 
+  - If you are working with streaming data, then you won't really be able to rely on any transactional features of it any way.
 
 - ## [Is there any need to use Context API with React Query?](https://github.com/TanStack/query/discussions/3859)
 - Putting data from react-query into the context api is not the worst idea though - it's just a decoupling of some sorts, just like prop drilling.

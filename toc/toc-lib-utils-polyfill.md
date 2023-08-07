@@ -9,6 +9,10 @@ modified: 2023-03-15T09:30:48.968Z
 
 # guide
 
+# js
+- https://github.com/ungap/new /js
+  - An extension to allow `Class.new(...args)` instead of `new Class(...args)`.
+  - `new Class(...args)`, a syntax that might not be available in foreign programming languages.
 # html
 - https://github.com/timruffles/mobile-drag-drop
   - http://timruffles.github.io/mobile-drag-drop/demo/

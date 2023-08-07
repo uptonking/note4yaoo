@@ -9,7 +9,21 @@ modified: 2021-01-08T17:14:34.841Z
 
 # guide
 
+# discuss-raf
+- ## 
+
+- ## 
+
+- ## @googlechrome currently contains a bug where the timestamp provided to `requestAnimationFrame` is roughly the time when rAF was invoked, *not* when the provided callback is triggered.
+- https://twitter.com/mattgperry/status/1688509448120082432
+  - This means if the main thread is blocked in the meantime, the timestamp provided will not represent the current frame but some time in the distant past.
+  - Will ship a fix for Framer Motion today that uses http://performance.now() instead
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## framer motion had signals five years ago 

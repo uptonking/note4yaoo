@@ -32,6 +32,12 @@ modified: 2022-11-07T10:26:22.510Z
 # productivity
 - 局域网传输工具
   - 飞鸽传书
+
+## vim
+
+- vim你们都:wq保存退出么，听说过直接按 shift zz 保存退出么
+  - 一直用:x。x跟wq是不同的。如果內容沒有改變，x不會刷新文件時間。而wq是寫入和關閉兩個命令，無論內容是否改變都會執行寫入並刷新文件時間。
+  - 原推里的 ZZ 跟 :x 一样的行为
 # pc-dir
 - 网易云音乐
   - /home/yaoo/.cache/netease-cloud-music/CachedSongs

@@ -28,6 +28,15 @@ modified: 2023-06-22T07:22:04.591Z
 
 ## flatpak
 
+- Applications and runtimes that are installed system-wide are available to all users on the system. 
+  - Applications and runtimes that are installed per-user are only available to the users that installed them.
+  - The same principle applies to repositories
+- **Flatpak commands are run system-wide by default**.
+
+- Flatpak is built on top of a technology called **OSTree**, which is influenced by and very similar to the Git version control system. 
+  - Like Git, OSTree allows versioned data to be tracked and to be distributed between different repositories. Like Git, Flatpak uses repositories to store data, and it tracks the differences between versions. 
+  - However, where Git is designed to track source files, OSTree is **designed to track binary files and other large data**.
+
 ## snap
 
 - [Ubuntu 明年将推出完全基于 Snap 的桌面版本_202306](https://www.oschina.net/news/243309/immutable-all-snap-ubuntu-desktop)

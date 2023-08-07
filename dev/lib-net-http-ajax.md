@@ -201,7 +201,10 @@ modified: 2023-02-06T09:14:40.114Z
 # discuss
 - ## 
 
-- ## 
+- ## Here's a wrapper around `fetch()` that validates the response body against a zod schema.
+- https://twitter.com/gimenete/status/1688297547243077632
+  - I use it when I need to use a 3rd party API and using their SDK would be overkill, or there's no SDK or the SDK is Node-only and I'm on Cloudflare workers.
+  - [A wrapper around the fetch function that validates the response body against a Zod schema](https://gist.github.com/gimenete/dd1886288ee3d3baaeae573ca226048f)
 
 - ## [浏览器允许的并发请求资源数是什么意思？ - 知乎](https://www.zhihu.com/question/20474326)
 - 首先，是基于端口数量和线程切换开销的考虑，浏览器不可能无限量的并发请求，因此衍生出来了并发限制和HTTP/1.1的Keep alive。
