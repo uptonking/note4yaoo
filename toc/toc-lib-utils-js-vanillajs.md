@@ -175,6 +175,7 @@ modified: 2023-04-04T22:35:59.255Z
 # cross-platform
 - https://github.com/lzyzsd/JsBridge /java
   - android java and javascript bridge, inspired by wechat webview jsbridge
+  - [JS Bridge 通信原理与实践](https://github.com/yinguangyao/blog/issues/50)
 # vdom
 - https://github.com/patrick-steele-idem/morphdom /js
   - lightweight DOM diffing/patching (no virtual DOM needed)

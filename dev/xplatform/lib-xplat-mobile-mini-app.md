@@ -9,8 +9,24 @@ modified: 2023-01-13T10:28:06.306Z
 
 # guide
 
+- tips
+  - [微信小程序 WebView First 开发方案实践 - 知乎](https://zhuanlan.zhihu.com/p/554983566)
+
 - [w3c/miniapp: MiniApps Standardization](https://github.com/w3c/miniapp)
   - [MiniApp Standardization White Paper version 2](https://w3c.github.io/miniapp-white-paper/)
+# blogs
+
+- [微信小程序底层的实现原理是怎样的？ - 知乎](https://www.zhihu.com/question/50920642/answers/updated)
+
+## usecase
+
+- [携程小程序内嵌webview实践指南 - 知乎_202304](https://zhuanlan.zhihu.com/p/622576911)
+
+- [微信小程序web-view与H5 通信方式探索 - 知乎_202211](https://zhuanlan.zhihu.com/p/583973895)
+
+## more
+
+- [小程序内嵌webview实现支付 - 知乎](https://zhuanlan.zhihu.com/p/516292320)
 # architecture
 
 ## [Skyline 渲染引擎](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/skyline/introduction.html)
@@ -112,23 +128,24 @@ modified: 2023-01-13T10:28:06.306Z
 # discuss
 - ## 
 
-- ## 
+- ## [微信小程序只有一个 webview 能通过审核吗？ - 知乎](https://www.zhihu.com/question/616214091/answers/updated)
+- webview是可以通过审核的。但前提是webview的内容要于服务内容一致。
+- 小程序后台添加业务域名就可以了
 
 - ## [如何评价微信小程序新渲染引擎skyline?_202208](https://www.zhihu.com/question/546709238/answers/updated)
 - 旧架构：小程序基于 Webview 的渲染架构
-  - 当小程序基于 WebView 环境下时，WebView 的 JS 逻辑、DOM 树创建、CSS 解析、样式计算、Layout、Paint (Composite) 都发生在同一线程，在 WebView 上执行过多的 JS 逻辑可能阻塞渲染，导致界面卡顿。以此为前提，小程序同时考虑了性能与安全，采用了目前称为「双线程模型」的架构。
-  - AppService：
+  - 当小程序基于 WebView 环境下时，WebView 的 JS 逻辑、DOM 树创建、CSS 解析、样式计算、Layout、Paint (Composite) 都发生在同一线程，在 WebView 上执行过多的 JS 逻辑可能阻塞渲染，导致界面卡顿。
+  - 以此为前提，小程序同时考虑了性能与安全，采用了目前称为「双线程模型」的架构。
 
-    - 执行业务代码（app + page + component 的 js 逻辑）
-    - 调用 jsbridge 将 data 序列化传递给 PageFrame
-
-  - PageFrame：
-
-    - 初始化 Webview，执行 render(data) 函数（由 wxml 转译而来），得到 vdom，然后patch到dom；
-    - 响应用户事件，序列化后通过 jsbridge 传递给 AppService
-
-  - 内存占用大：每个 Page() 实例对应一个独立的 Webview （相当于 MPA），那么用户打开的每个小程序都对应 n+1 个 Webview。
+- AppService：
+  - 执行业务代码（app + page + component 的 js 逻辑）
+  - 调用 jsbridge 将 data 序列化传递给 PageFrame
+- PageFrame：
+  - 初始化 Webview，执行 render(data) 函数（由 wxml 转译而来），得到 vdom，然后patch到dom；
+  - 响应用户事件，序列化后通过 jsbridge 传递给 AppService
+- 内存占用大：每个 Page() 实例对应一个独立的 Webview （相当于 MPA），那么用户打开的每个小程序都对应 n+1 个 Webview。
   - 无法在页面之间共享元素：都是不同的渲染实例了，那当然共享元素就做不了。
+
 - Skyline 创建了一条渲染线程来负责 Layout, Composite 和 Paint 等渲染任务，并在 AppService 中划出一个独立的上下文，来运行之前 WebView 承担的 JS 逻辑、DOM 树创建等逻辑。
   - AppService 新增渲染上下文 （个人猜测是 JSCContex / v8::context）; 
     - 接收和执行 render(data)，vdom diff -> patch 节点 op
@@ -142,6 +159,13 @@ modified: 2023-01-13T10:28:06.306Z
 - 除非你是叫小程序标准，而不是什么微信小程序，xx小程序
 
 - 因为小程序的限制，渲染层的改进带来的优势极其不明显。
+
+- 到今天为止(202304)，skyline依旧是一个看起来能用实际上根本没法用的解决方案。举几个例子：
+  - 在css实现上犹豫不决，如果决定只实现一个子集，那就只实现这个子集，不要先推出一部分，又说之后要支持，css variables、伪元素等等都是这种情况，我到底是用你这个半吊子子集，还是等你都实现好呢？
+  - 仅实现的css部分能力差，有不少bug，什么position:absolute和bottom不能共用了，min-height算不准了，只是做个项目demo就这样了，实际能力更无法想象。
+  - js代码实现和项目配置要强绑定：使用weblet动画必须要勾选编译到es5的选项？不知道怎么想的
+
+- 因为小程序的限制，渲染层的改进带来的优势极其不明显。而且听说这个项目在微信内部也孵化了好几年了，感觉也是因为找不到真正的价值，最后不得不先登场，看社区反应，如果好就继续搞，如果不好就叫停废弃，把人力释放出来。
 
 - ## [2022年了，uniapp发展的怎么样了?](https://www.zhihu.com/question/444976489/answer/1978635281)
 - 优点是：

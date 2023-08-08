@@ -153,6 +153,7 @@ modified: 2021-05-14T15:05:02.456Z
 - https://github.com/lzyzsd/JsBridge
   - /8kStar/MIT/201911
   - android java and javascript bridge, inspired by wechat webview jsbridge
+  - [JS Bridge 通信原理与实践](https://github.com/yinguangyao/blog/issues/50)
 - https://github.com/apereo/cas
   - /8kStar/Apache2/202009
   - Enterprise Single Sign On for all earthlings and beyond.

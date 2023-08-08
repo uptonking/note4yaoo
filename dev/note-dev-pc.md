@@ -190,6 +190,18 @@ modified: 2020-07-14T09:32:35.359Z
   - JetBrains在Kotlin生态的推进上，经常东一榔头西一棒子。Kotlin for JVM, Javascript, Native 四面开花，很多开源项目做个demo或alpha版，就渐渐搁置了。
 # qt
 
+## [是什么让 Ubuntu 选用 Qt 而不是 GTK？ - 知乎](https://www.zhihu.com/question/20153991/answers/updated)
+
+- 要开发 C++ 就选QT
+  - 要开发 C就先GTK
+  - 并不是因为它们之间不兼容，是因为 GTK是用C写的, QT是用C++写的, 开发的时候利用起来比较“顺手”不用再做语言之间的转换。
+# [Chromium is developing support for using Qt on Linux_202204](https://www.reddit.com/r/linux/comments/u3m7s0/chromium_is_developing_support_for_using_qt_on/)
+- For some time now, Chromium loads GTK at runtime (and you can switch between GTK3 and GTK4)
+  - Now it seems, they will add support for Qt
+
+- GTK is dead as a dev platform after they killed the community with repeated API breaking; devs can't trust GTK. At is nowadays the only sensible way forward.
+
+- [Did you know chromium is developing a QT backend?](https://www.reddit.com/r/kde/comments/yaesom/did_you_know_chromium_is_developing_a_qt_backend/)
 # native
 
 # discuss-linux-desktop
@@ -207,6 +219,7 @@ modified: 2020-07-14T09:32:35.359Z
   - 开源社区和系统厂商们不愿意将自己系统的未来置于Qt的收费风险之下，大部分默认桌面都给了Gnome，那些不会、不需要或者不愿意换桌面环境的人就会沿用Gnome。
 
 - RHEL、SLES均采用Gnome作为默认桌面环境，同样作为受众比较广的发行版，Canonical的业务重心基本全在Server版上，采用Gnome也就不难理解了。
+  - 最简单的优势就是，作为各商业发行版的默认桌面，你可以开箱即用而不会遇到大量bug
 
 - 莫非是因为GNOME是GNU默认桌面？
 

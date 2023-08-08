@@ -364,7 +364,7 @@ modified: 2021-09-14T18:58:58.275Z
   - 目前关心的组件主要有GPLv2(compiler/vm)、UPL(truffle/js)和BSD(sulong)三种协议
   - UPL是非常开放友好的开源协议。不仅允许任意重用代码(包括商业使用)，而且明确提供了专利授权和保护，法律风险非常低
 
-- A highly permissive license similar to the MIT License 
+- A highly permissive license **similar to the MIT** License 
   - with added features including an explicit patent grant, clear ability to relicense (to commercial, proprietary, copyleft or etc...) and usable as a CLA.  
   - It is compatible with most commercial and copyleft (GPL-family) licenses.
 

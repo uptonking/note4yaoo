@@ -8,6 +8,7 @@ modified: 2021-01-16T20:50:23.893Z
 # toc-dev-pc-electron
 - tips
   - 不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现
+  - ? electron-for-android/ios vs apps
 
 - ref
   - search: file

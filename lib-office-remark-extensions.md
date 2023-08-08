@@ -38,6 +38,10 @@ modified: 2021-06-02T16:49:11.370Z
   - Remark plugin to extract `code` nodes from markdown.
   - Remark plugin for selecting and storing code blocks from markdown.
 
+- https://github.com/expressive-code/expressive-code/tree/main/packages/remark-expressive-code
+  - a unified (remark) plugin to automatically render code blocks in your markdown / MDX documents using Expressive Code.
+  - Expressive Code is an engine for presenting source code on the web, aiming to make your code easy to understand and visually stunning.
+
 - https://github.com/remcohaszing/remark-mdx-code-meta
   - interprets markdown code block metadata as JSX props.
 - https://github.com/shawnbot/remark-fenced-props

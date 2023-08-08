@@ -12,6 +12,11 @@ modified: 2023-06-23T12:46:53.288Z
 # popular
 - https://github.com/justinfagnani/codemirror-elements /ts
   - A set of HTML custom elements for editing source code with CodeMirror.
+
+- https://github.com/expressive-code/expressive-code /ts
+  - Expressive Code is an engine for presenting source code on the web, aiming to make your code easy to understand and visually stunning.
+  - On top of accurate syntax highlighting powered by the same engine as VS Code, Expressive Code allows you to annotate code blocks using text markers, diff highlighting, code editor & terminal window frames, and more.
+  - All annotations are based on a powerful plugin architecture 
 # collab
 - https://github.com/ekzhang/cm-collab /ts
   - A tiny collaborative Markdown editor based on CodeMirror, communicating with a minimal server and database.

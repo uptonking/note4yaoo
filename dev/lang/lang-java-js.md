@@ -17,7 +17,7 @@ modified: 2021-01-15T04:08:46.423Z
   - jdk 15删除了Nashorn JavaScript 引擎、相关 API 和jjs工具
 - graaljs
   - 在新项目中推荐使用
-# Graal.js
+# graaljs
 - graaljs /933Star/UPL/202101/cpp
   - https://github.com/oracle/graaljs
   - https://www.graalvm.org/reference-manual/js/
@@ -41,7 +41,7 @@ modified: 2021-01-15T04:08:46.423Z
   - This includes npm packages with native implementations. 
   - Note that some npm modules will require to be re-compiled from source with GraalVM JavaScript if they ship with binaries that have been compiled for Node.js based on V8. 
   - Node.js support is only available in full GraalVM releases, but not in the standalone GraalVM JavaScript distribution.
-# nashorn
+# nashorn (jdk 8-10)
 - nashorn /55Star/GPLv2+ClasspathExp/202101/java
   - https://github.com/openjdk/nashorn
   - http://openjdk.java.net/projects/nashorn/
@@ -54,7 +54,7 @@ modified: 2021-01-15T04:08:46.423Z
 
 - [如何看待 Java11 即将弃用 Nashorn 引擎？](https://www.zhihu.com/question/282928698/answers/updated)
   - 如果不能兼容node，光支持js没有太大意义
-# rhino
+# rhino (jdk 6-7)
 - rhino /2.8kStar/MPL2/202101/cpp
   - https://github.com/mozilla/rhino
   - https://www.mozilla.org/rhino/

@@ -29,7 +29,15 @@ modified: 2021-08-30T15:50:54.515Z
 
 - ## 
 
-- ## 
+- ## This document from ScyllaDB makes a strong case why B-trees make a good choice for in-memory collections as well
+- https://twitter.com/debasishg/status/1688551567044251648
+  - B-trees are usually used for disk based storage. 
+  - [The Taming(驯服) of the B-Trees - ScyllaDB](https://www.scylladb.com/2021/11/23/the-taming-of-the-b-trees/)
+- Also TIL: Google has implemented a C++ template library that implements B-tree containers with an analogous interface to the standard STL map, set, multimap, and multiset containers
+- I tested several B-tree implementations on the JVM in https://github.com/szeiger/forest/tree/master/main/src/main/scala/forest/mutable. 
+  - I don't remember the exact benchmark results but there was no conclusive case to use them instead of the red-black trees in Scala's TreeMaps.
+
+- Obvious in retrospect, but I just realized that if you use prolly trees for your DB indices, you can run queries against any historical state of your DB (by simply not GC'ing old data). And in fact, @DoltHub supports that
 
 - ## "InfluxDB uses DataFusion for its Query Execution and Arrow as its internal data representation"
 - https://twitter.com/gunnarmorling/status/1683184256011366400

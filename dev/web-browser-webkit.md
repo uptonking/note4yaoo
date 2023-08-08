@@ -160,6 +160,12 @@ modified: 2021-01-01T20:11:00.889Z
 - 提升到合成层后合成层的位图会交GPU处理，但请注意，仅仅只是合成的处理（把绘图上下文的位图输出进行组合）需要用到GPU，生成合成层的位图处理（绘图上下文的工作）是需要CPU。
 - 当需要repaint的时候可以只repaint本身，不影响其他层，但是paint之前还有style， layout, 那就意味着即使合成层只是repaint了自己，但style和layout本身就很占用时间。
 - 仅仅是transform和opacity不会引发layout和paint，那么其他的属性不确定。
+# blogs
+
+## [手把手教你实现一个浏览器引擎（一）Start [译文] - 知乎](https://zhuanlan.zhihu.com/p/106494297)
+
+- https://github.com/mbrubeck/robinson /rust/201408
+  - A toy web rendering engine
 # reflow
 - reflow
   - 如果引起reflow，样式首先必须重新计算，因此重排会触发两种操作
@@ -281,6 +287,59 @@ modified: 2021-01-01T20:11:00.889Z
 
 - https://github.com/devongovett/node-wkhtmltopdf
   - A wrapper for the wkhtmltopdf HTML to PDF converter using WebKit
+# discuss-💡webview
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [what is the difference between Webview, Chromium and Gecko based browers? : androidapps](https://www.reddit.com/r/androidapps/comments/121q81o/what_is_the_difference_between_webview_chromium/)
+
+- Webview is a component for Android apps to show web content. It is based on Chromium, but has less features and depends on the system.
+
+- What is webview? It's a core app of Android that uses chromium to provide web content inside other apps. 
+  - Non browser applications use webview to show webpage features (logins, ads, payment etc.) without going to an external browser. 
+  - It has no interface of its own, no browser-like features, no settings. It uses relatively very less memory to render webpages.
+  - Chrome and Webview use the same library (Trichrome Library) but they don't share data between each other.
+- About webview-based browsers
+  - You'll see many browsers that are based on webview. They claim to be small in size, faster than light etc etc. But they don't provide all the features and security of a dedicated browser. 
+  - I see a lot of Browsers which are based on Webview and not Chromium, requires a very little size. Like Via, Lighting and Fulguris where size ranges from merely 1Mb to 5Mb while the Chromium based browsers like Bromite, Mulch and Chrome are around 130 to 180Mbs.
+
+- ## [基于webview和基于chromium实现一个android浏览器，哪个更好？ - 知乎](https://www.zhihu.com/question/319347088/answers/updated)
+- 如果你是指android上的话，webview在4.4以后默认也是基于chromium实现的，
+  - 但是webview缺乏一些常见的浏览器功能比如下载管理，tab等，它只是个view，而chromium是一个完整的浏览器，完整到你可能需要花大力气去掉一些不要的功能，比如登陆同步等。
+
+- ## [webview和webkit是什么关系？ - 知乎](https://www.zhihu.com/question/53343196)
+
+- 为了可跨平台开发一次可以部署iOS、Android等平台；发布更新快；在服务器端发布；还能够实时更新终端展示；便于快速升级以及紧急修复bug；排版复杂的内容等等。WebView诞生并开始逐渐发展起来。
+
+- 从IOS2开始，UIWebView出现了，开发者只需创建一个 UIWebView 对象，便可将其附加到窗口，然后向其发送加载 Web 内容的请求。
+  - 从IOS8之后，WKWebView出现，UIWebView慢慢不再被使用
+- WKWebView是一个现代的支持最新Webkit 功能的网页浏览控件
+  - 采用跨进程方案
+  - Nitro JS解析器，60fps的刷新率，性能和safari比肩，对h5实现了高度支持
+  - 内存开销更小
+  - 和safari使用相同的js引擎 JavaScriptCore
+
+- Android（4.4 KitKat 版本之前）使用的是Webkit作为其引擎，4.4开始（API 级别 targetSdkVersion 19）引入了基于 Chromium 的新版 WebView，自此包括了 V8 JavaScript 引擎，并支持以前在旧 WebViews 中缺少的现代 Web 标准。
+  - 新的 WebView 与安卓上的Chrome for Android有一样的引擎，因此 WebView 和安卓里的 Chrome 之间的渲染更加一致
+  - 从 Android 7（API 级别 24）开始，WebView在Google Play 商店中作为单独的应用程序提供。我们可以安装它们的任意组合来测试几个即将发布的 WebView 版本以及最新的稳定版本。
+
+- ## [为啥安卓原生开发要倒腾那么一大堆布局？直接Webview+js桥不香么？ - 知乎](https://www.zhihu.com/question/425726082)
+- 原生开发的优势，在于可以更好地调用手机底层资源（摄像头、通讯录、存储等），而非样式布局。
+
+- 安卓团队诞生于2003年10月
+  - 而HTML5正式发布是在2008年。
+
+- 已经有这样的技术了，Google的flutter就是朝着这个目标努力，为啥不用webview其他人回答过了，webview没法提供像原生一样的流畅感，更关键的是Javascript桥接的速度不咋样。
+  - 原生安卓的弊端也是对于不同分辨率设备适配的问题，就算你用webview适配不同分辨率也够让人头疼的。
+
+- ## [为什么android不采用NB的chromium或者blink作为缺省内核，而采用webview? - 知乎](https://www.zhihu.com/question/23955365)
+- WebView是Android提供的API，是为了方便程序员使用的浏览器引擎封装。至于WebView的实现，可以有多种方法，比如自Android 4.4之后就使用了blink引擎。
+  - chromium有一大特点，就是极耗内存，在硬件配置不那么高的机器上，渲染性能是比不上原来的webkit内核的。
+  - 在chrome新版本中(201703)，webview已经由chrome for android驱动，还没有研究是怎么做到的。也就是说以后只要chrome for android版本升级，就是系统的web引擎升级了。再也不用等android版本升级
+
 # discuss-webkit-browsers
 - ## 
 

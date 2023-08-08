@@ -15,6 +15,19 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
+- ## Business logic in JS. I think this makes sense.
+- https://twitter.com/tantaman/status/1687090113958797312
+  - Business logic is less likely to change between platforms than your view
+  - JS is the portable language
+  - Why have we been focusing on view portability over model portability all these years? 🤣
+
+- Exactly what I've been wondering lately. Particularly when:
+  - You want to embrace the native feel of a platform (i.e. UI/UX) which differs across platforms
+  - Business logic usually stays the same across platforms
+
+- I'm trying not to sound bitter, but... do most frontend code bases really have a concept of 'business logic' that lives outside of a react component? In my experience they don't.
+  - Thick(厚的；粗的) clients, in my experience, have pretty hefty(大的, 粗壮的) business logic.
+
 - ## What types of app logic would you ideally move into your database layer (if you could)?
 - https://twitter.com/calcsam/status/1682610083698728960
 - Besides the usual (replication, mvcc, transactions, indices):

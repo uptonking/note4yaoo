@@ -38,6 +38,16 @@ modified: 2023-03-05T08:55:03.696Z
   - automatically optimizes performance by caching the results, deduplicating fetches
 # changelog
 - [RFC: remove callbacks from useQuery_202304](https://github.com/TanStack/query/discussions/5279)
+
+- [v5.0.0-alpha.0_20230227](https://twitter.com/TkDodo/status/1630159547405877249)
+  - 🔁 better infinite queries
+  - 💪 simplistic optimistic updates
+  - ⚡️ ~20% smaller bundlesize
+  - 🚫 removed overloads
+  - ☠️ dropped react17 support
+  - 🟦 needs TS 4.7
+  - 🎨 reduced API surface
+  - solidJs: Island and streaming SSR support
 # blogs
 
 ## [You Might Not Need React Query_202305](https://tkdodo.eu/blog/you-might-not-need-react-query)
@@ -49,6 +59,8 @@ modified: 2023-03-05T08:55:03.696Z
 ### [You Might Not Need React Query for Jotai · Daishi Kato's blog_202301](https://blog.axlight.com/posts/you-might-not-need-react-query-for-jotai/)
 
 ## [Thinking in React Query | TkDodo's blog_20230706](https://tkdodo.eu/blog/thinking-in-react-query)
+
+- [Thinking in React Query_2023ReactSummit](https://portal.gitnation.org/contents/thinking-in-react-query)
 
 - ### Key Takeaways:
 - https://twitter.com/TkDodo/status/1667279661980610565

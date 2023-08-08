@@ -19,7 +19,12 @@ modified: 2023-08-01T08:59:45.360Z
 
 - ## 
 
-- ## 
+- ## I think there is quite a bit of potential in the CRDT space for pruning(修剪; 精简) using distributed reference counters. 
+- https://twitter.com/JungleSilicon/status/1688782836533522432
+  - (Keeping track of how many references there are to CRDTs that you're currently connected to).
+- I see there are two main areas for pruning:
+  - Is this a new operation that I have not seen before.
+  - Can I clear some data or will one of my peers need to reference it via UID?  Reference counters could help with the latter.
 
 - ## Applying a series of ranges (emphasis, strong, underline) to a series of characters
 - https://twitter.com/JungleSilicon/status/1673728494260588547

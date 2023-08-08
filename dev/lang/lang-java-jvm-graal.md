@@ -40,15 +40,15 @@ modified: 2021-01-15T04:09:25.198Z
   - With polyglot language interoperability support. 
   - Running Node.js applications!
 
-- [Node.js vs Graal.js Performance](https://github.com/oracle/graaljs/issues/74)
+- ## [Node.js vs Graal.js Performance](https://github.com/oracle/graaljs/issues/74)
   - [GraalJS is around 70X slower than NodeJS 14_202010](https://github.com/oracle/graaljs/issues/360)
     - Revisit that in 6 Month and you will get much better results
 
-- [Node.js Runtime](https://www.graalvm.org/latest/reference-manual/js/NodeJS/)
+- ## [Node.js Runtime](https://www.graalvm.org/latest/reference-manual/js/NodeJS/)
   - GraalVM’s Node.js runtime is based on a recent version of Node.js, and runs the GraalVM JavaScript engine instead of Google V8. 
   - Thus, some internal features (e.g., VM-internal statistics, configuration, profiling, debugging, etc.) are unsupported, or supported with potentially different behavior.
 
-- [Using JavaScript Modules and Packages in GraalVM JavaScript](https://www.graalvm.org/22.0/reference-manual/js/Modules/)
+- ## [Using JavaScript Modules and Packages in GraalVM JavaScript](https://www.graalvm.org/22.0/reference-manual/js/Modules/)
   - GraalVM ships with a specific Node.js version that it is compatible with. Applications can therefore freely import and use NPM packages compatible with the supported Node.js version, including CommonJS, ES modules, and modules that use native bindings.
   - When **embedded** in a Java application (using the Context API), GraalVM JavaScript can execute JavaScript applications and modules that do not depend on Node.js’ built-in modules such as 'fs', 'events', or 'http' or Node.js-specific functions such as setTimeout() or setInterval(). 
   - On the other hand, modules that depend on such Node.js builtins cannot be loaded in a GraalVM polyglot Context.
@@ -63,7 +63,7 @@ modified: 2021-01-15T04:09:25.198Z
   - It uses a pair of radically different execution and optimisation techniques known as self-specialising-ASTs, and partial evaluation, and runs on the JVM.
   - But a sibling project, [Graal-Node.js](https://github.com/oracle/graaljs/tree/master/graal-nodejs), does include vendored code from Node.js in order to be compatible with Node.js applications. That's where the commits come from I'd guess.
 
-- [Graal.js API for other languages?](https://github.com/oracle/graaljs/issues/542)
+- ## [Graal.js API for other languages?](https://github.com/oracle/graaljs/issues/542)
   - GraalJS (like any Java application) can be used from the native code using JNI (Java Native Interface). 
   - JNI Invocation API allows you to spawn and use JVM in the same process. Note that you can use JNI even if you don't want to use JVM but the native image (containing GraalJS) instead because native image supports JNI as well. 
   - If you plan to use the native image then you can also use its C API.

@@ -19,11 +19,6 @@ modified: 2021-01-21T17:52:13.333Z
 - closest friend: `border: 1px solid red` ; 
 - console.table
 
-- ## Business logic in JS. I think this makes sense.
-- https://twitter.com/tantaman/status/1687090113958797312
-  - Business logic is less likely to change between platforms than your view
-  - JS is the portable language
-  - Why have we been focusing on view portability over model portability all these years? 🤣
 
 - ## Declarative APIs are simpler because they come with a lot of implicit concepts that actually makes them simple.
 - https://twitter.com/oleg008/status/1686292446651543552
