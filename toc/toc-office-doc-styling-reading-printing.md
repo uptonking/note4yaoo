@@ -165,6 +165,13 @@ modified: 2022-10-05T04:57:38.647Z
   - A starter built with gatsby to help you create books with ease.
   - 样式简单
 
+- https://github.com/readium/ts-toolkit /ts
+  - Implements the Readium Architecture for Web Apps
+- https://github.com/edrlab/thorium-reader /ts
+  - A cross platform desktop reading app, based on the Readium Desktop toolkit
+- https://github.com/troyeguo/koodo-reader /ts
+  - A modern ebook manager and reader with sync and backup capacities for Windows, macOS, Linux and Web
+
 - https://github.com/readium/readium-css
   - https://readium.org/readium-css/docs/
   - stylesheets for EPUB Reading Systems, starting with Readium 2.

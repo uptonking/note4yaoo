@@ -194,7 +194,7 @@ modified: 2021-08-23T05:27:08.068Z
 
 - https://github.com/gerhardberger/electron-pdf-window /201709
   - view PDF files in electron browser windows
-- https://github.com/fraserxu/electron-pdf /202010
+- https://github.com/fraserxu/electron-pdf /202010/js
   - A command line tool to generate PDF from URL, HTML or Markdown files with electron.
 - https://github.com/artiebits/pdf-to-printer /202101
   - Print PDF files from Node.js and Electron.

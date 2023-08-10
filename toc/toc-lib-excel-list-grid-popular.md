@@ -1205,10 +1205,17 @@ modified: 2022-08-21T10:02:27.788Z
   - jsreport is a reporting server letting developers define reports using javascript templating engines like handlebars. 
   - It supports various report output formats like html, pdf, excel, docx, and others. 
   - It also includes advanced reporting features like user management, REST API, scheduling, designer, or sending emails.
+  - https://github.com/jsreport/jsreport/tree/master/packages/jsreport-electron-pdf
+    - jsreport recipe which renders pdf from html using electron
 
 - https://github.com/tjbearse/sheet-block-editor /js
   - https://tjbearse.github.io/sheet-block-editor/
   - A block based visual editor for Google Sheets
+
+- https://github.com/tabulapdf/tabula /js
+  - http://tabula.technology/
+  - Tabula is a tool for liberating data tables trapped inside PDF files
+  - Tabula only works on text-based PDFs, not scanned documents
 # server
 - https://github.com/forensic-architecture/datasheet-server /202105/js/inactive
   - Turn spreadsheet data into a structured, dynamic API.

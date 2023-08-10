@@ -68,7 +68,7 @@ modified: 2022-11-08T19:03:33.865Z
   - Calcutext is a web app where you can do calculations with your written text.
   - Write any math operations, as available in `mathjs`, as a series of written lines to make notes and do calculations
 # apps
-- https://github.com/Novout/betterwrite
+- https://github.com/Novout/betterwrite /ts/vue
   - A Open Source Word Processor
   - 依赖milkdown、vue
   - Offline First

@@ -8,7 +8,12 @@ modified: 2021-01-01T22:26:57.773Z
 # tool-os-linux-ubuntu-xp
 
 # guide
-
+- tips
+  - launcher/pin-app，很可能是伪需求
+    - 最高频的apps可使用收藏或dock
+    - 常用apps可使用menu列表
+    - 系统级的launcher集成在菜单中，操作方便，第三方launcher需要自动启动和替换默认
+  - 桌面甚至是不必要的，更推荐类似mac的spotlight
 # usage
 - 查看各程序网络带宽占用
   - sudo apt-get install nethogs
@@ -88,10 +93,38 @@ modified: 2021-01-01T22:26:57.773Z
   - https://extensions.gnome.org/extension/3991/bluetooth-battery/
   - A python script to get battery level from Bluetooth headsets
   - [Add bluetooth headset battery's percentage in Ubuntu_202209](https://www.goulin.fr/blog/bluetooth-headset-battery-percentage-ubuntu)
-# Wayland
+
+## launcher
+
+- https://github.com/Ulauncher/Ulauncher /python/vue/支持扩展
+  - https://ulauncher.io/
+  - Ulauncher is a fast application launcher for Linux. 
+  - It's written in Python using GTK+, and features: App Search (fuzzy matching), Calculator, Extensions, Shortcuts, File browser mode and Custom Color Themes
+  - [How Ulauncher launches apps](https://github.com/Ulauncher/Ulauncher/wiki/How-Ulauncher-launches-apps)
+  - roadmap
+    - [Sort shortcuts](https://github.com/Ulauncher/Ulauncher/issues/1008)
+
+- https://github.com/arunk140/gnome-command-menu /js/基于自定义菜单
+  - A GNOME Shell Extension to manage shortcuts in Top Bar (Inspired by Shuttle and SSHMenu)
+  - [Standard Icon Names](https://specifications.freedesktop.org/icon-naming-spec/latest/ar01s04.html)
+  - [use multiple commands](https://github.com/arunk140/gnome-command-menu/issues/6)
+# wayland
 - [Boycott Wayland. It breaks everything!](https://gist.github.com/probonopd/9feb7c20257af5dd915e3a9f2d1f2277)
   - Wayland does not work properly on NVidia hardware?
   - Wayland breaks screen recording applications
   - Wayland breaks screen sharing applications
   - Wayland breaks AppImages that don't ship a special Wayland Qt plugin
   - Wayland prevents GUI applications from running as root
+# discuss-ubuntu
+- refs
+  - [Latest Desktop/Team Updates](https://discourse.ubuntu.com/c/desktop/team-updates/23)
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 

@@ -57,4 +57,8 @@ modified: 2020-10-05T06:18:21.639Z
   - http://teselagen.github.io/openVectorEditor/
   - Teselagen's Open Source Vector/Plasmid Editor Component
   - Built With React & Redux
+# svg-editor
+- https://github.com/SVG-Edit/svgedit /js
+  - web-based, JavaScript-driven SVG drawing editor that works in any modern browser. 
+  - SVGEdit is based on a powerful SVG canvas @svgedit/svgcanvas
 # more-repos

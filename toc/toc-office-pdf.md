@@ -8,6 +8,10 @@ modified: 2021-01-04T17:26:43.784Z
 # toc-office-pdf
 
 # guide
+
+- tips
+  - 支持导出pdf是大多数产品的基本功能，如drawio/jsreport/thorium-reader/notesnook
+
 - https://printcss.live/
   - 渲染pdf的多种js示例
 # popular
@@ -22,6 +26,9 @@ modified: 2021-01-04T17:26:43.784Z
   - https://parall.ax/products/jspdf
   - A library to generate PDFs in JavaScript.
   - 支持web和node
+  - https://github.com/AaronClaes/jspdf-editor
+    - https://jspdf-editor.vercel.app/
+    - *WIP* Design pdfs and generate code for jspdf
 
 - pdfkit /8.5kStar/MIT/202110/js
   - https://github.com/foliojs/pdfkit
@@ -32,6 +39,24 @@ modified: 2021-01-04T17:26:43.784Z
   - React renderer for creating PDF files on the browser and server
   - This package is used to create PDFs using React. 
     - If you wish to display existing PDFs, you may be looking for https://github.com/wojtekmaj/react-pdf
+  - https://github.com/enescang/react-pdf-table
+    - Simple table generator for @react-pdf/renderer
+
+- https://github.com/react-pdf-viewer/react-pdf-viewer /ts
+  - https://react-pdf-viewer.dev/
+  - React component to view a PDF document
+
+- https://github.com/aexol-studio/react-pdf-editor /ts
+  - Pdf editor react component
+  - [Refactor 2022](https://github.com/aexol-studio/react-pdf-editor/issues/69)
+- https://github.com/snamoah/react-pdf-editor /js
+  - PDF Editor built with react
+  - This project is a react port of the svelte version here so most of the pdf generation and editing logic was lifted from there.
+
+- https://github.com/neslxzhen/pdf-editor /ts
+  - No Server, No Install PDF Editor with React
+  - https://github.com/oren-l/PdfEditor /js
+  - https://github.com/pgarciacamou/pdf-editor /js
 
 - https://github.com/wojtekmaj/react-pdf /js
   - Display PDFs in your React app as easily as if they were images.
@@ -49,26 +74,218 @@ modified: 2021-01-04T17:26:43.784Z
   - http://pdfmake.org/
   - PDF document generation library for server-side and client-side in pure JavaScript.
 
+- https://github.com/Hopding/pdf-lib /ts
+  - Create and modify PDF documents in any JavaScript environment.
+  - Designed to work in any modern JavaScript runtime. Tested in Node, Browser, Deno, and React Native environments.
+
 - https://gitlab.coko.foundation/pagedjs/pagedjs
   - Paged.js is a free and open-source library that paginates any HTML content to produce beautiful print-ready PDF. 
   - The library fragments the content, reads your CSS print declarations and presents a paginated preview in your browser that you can save as PDF.
 
 - https://github.com/Hopding/pdf-lib
   - Create and modify PDF documents in any JavaScript environment
-# examples
+# pdf-editor
+- https://github.com/luke-browning/pdf-web-edit /ts/c#/ng
+  - a web-based application for manipulating PDF files. It's main purpose is to pre-process documents before they are imported into a Document Management System (DMS) such as Paperless (-ng and -ngx) or stored in a directory based strucutre.
+
+- https://github.com/jichang/unionpdf /ts
+  - A universal pdf rendering/editing library
+  - model, engine, react
+
 - https://github.com/awesome-yasin/PDF-Verse /MIT/js/ejs
-  - a powerful web based PDF Editor with tools for editing, converting, and manipulating PDFs.
+  - https://pdf-verse.vercel.app/
+  - a powerful web based PDF Editor with tools fexamplesor editing, converting, and manipulating PDFs.
   - Merge, compress, add or remove pages, or extract text using OCR technology. 
+
+- https://github.com/ShizukuIchi/pdf-editor /202011/js/inactive
+  - https://pdf-editor.now.sh/
+  - Offline PDF editor. Add images, signatures, text to PDF in your browser
+
+- https://github.com/gr2m/pdf-editor
+  - WYSIWYG PDF-Editor, plugin-free, using pdfkit and pdf.js
+
+- https://github.com/xinglie/report-designer
+  - https://xinglie.github.io/report-designer/
+  - 打印设计、可视化、标签打印、编辑器、设计器、数据分析、报表设计、组件化、表单设计、h5页面、调查问卷、pdf生成、流程图、试卷、SVG、图形元素、物联网、标签纸
+  - https://github.com/xinglie/magix5-playground
+
+- https://github.com/rylog/pdf-editor-electron
+  - /ts
+
+- https://github.com/yashu2001/PDF-Generator-Electron-App /js
+  - an electron app used to generate pdf documents with some text for making labels
+
+- https://github.com/fraserxu/electron-pdf /202010/js
+  - A command line tool to generate PDF from URL, HTML or Markdown files with electron.
+
+- https://github.com/thinreports/thinreports
+  - Thinreports is a PDF generation tool that provides Thinreports Basic Editor and Thinreports Section Editor, a design tool for editing templates, and Thinreports Generator, a Ruby library for generating PDFs.
+
+- https://github.com/GoDinRyu/editor.md-electron /js
+  - 基于Editor.md的markdown编辑客户端，支持docx转化md，导出到pdf文档。
+# generator
+- https://github.com/carboneio/carbone /js
+  - simple report generator, from JSON to pdf, xslx, docx, odt...
+  - Powerful report generator in any format PDF, DOCX, XLSX, ODT, PPTX, ODS, XML, CSV using templates and your JSON data as input !
+
+- https://github.com/betterwrite/pdfeasy /ts
+  - JavaScript Client/Server Side PDF-Generator based in PDFKit
+  - Plugins Ready!
+
+- https://github.com/PejmanNik/jikji /ts
+  - report generator with React and NodeJS
+  - Unlike the puppeteer-report, this library uses its layout engine instead of the browser layout engine for pagination, so it is 100% customizable. 
+  - It supports both Client-side rendering and server-side generation.
+  - Jikji provides all the necessary components to creates reach reports; you can build sections and pages with the header, footer, watermarks, etc. And give you the power to use thousands of JS libraries to create beautiful charts and distinguished reports and export it to PDF, Image ot HTML.
+
+- https://github.com/isneezy/pdf-generator-service /ts
+  - simple express service that generates a pdf based on the submitted HTML using Chromium and Puppeteer.
+
+- https://github.com/tuanpham-dev/react-invoice-generator /ts
+  - allows you quickly make invoices and export them as PDF
+
+- https://github.com/baptistejamin/node-microinvoice /js
+  - elegant PDF invoice generator for Node using PDFKit. No Puppeteer
+- https://github.com/Astrocoders/node-pdf-invoice /js
+  - A Phantom free PDF invoice generator built with PDFKit
+
+- https://github.com/rimiti/invoice-it /js
+  - Generate your orders or your invoices and export them in html, pdf or buffer easily.  
+
+- https://github.com/AmirTugi/tea-school
+  - Simplified `HTML + CSS --> PDF` Generator for Nodejs
+  - just a method combining PugJS, Node-Sass, and Puppeteer
+
+- https://github.com/bleek42/pdf-generator /js
+  - PDF file creation tool, using React, MaterialUI, JSPDF & html2canvas
+
+- https://github.com/johnuberbacher/invoice-generator /js
+  - An Invoice creator project built with React. 
+  - Uses jspdf-react to capture the data from the modal and convert it from canvas -> pdf.
+
+- https://github.com/IonicaBizau/nodeice /js
+  - Another PDF invoice generator
+
+- https://github.com/sschandi/create-resume /ts
+  - Client Side, Private, PDF Resume Generator
+
+- https://github.com/pdsuwwz/puppeteer-server
+  - 基于 Puppeteer + Koa + Rollup + TypeScript, 将任意网页快速转换为 PDF, 图像, 支持将多个网页合并生成为一个 PDF 文件，支持 Cookie 的注入、PDF 水印和页眉页脚的插入
+
+- https://github.com/kevalbhatt/puppeteer-pdf-generator /js
+  - Internally server starts a headless browser and opens http://localhost:3000 application and creates the pdf (i.e print layout).
+  - Note: Server-side pdf generator code is hardcoded so you will get same pdf every time.
+# reader/viewer
+- https://github.com/TheWebDevel/electron-pdf-conversion-article-proj /js
+  - [Converting an Electron view content to PDF - DEV Community](https://dev.to/sathish/converting-an-electron-view-content-to-pdf-caa)
+  - simple electron app to demonstrate the conversion of view into PDF.
+- https://github.com/ikuokuo/electron-pdf-viewer
+  - Demo for using PDF.js in Electron, with antd
+- https://github.com/ZeroX-DG/EasyPDF /js
+  - A simple library that use PDF.js for rendering pdf file on electron
+
+- https://github.com/HeiSir2014/URL2PDF /js
+  - An electron app that can convert HTML into pdf file. url 网页 转 pdf服务
+  - 通过 Session WebRequest API 监控页面请求，当所有请求完成时，数据加载完毕后，开始执行printPDF功能，完整的打印所有页面内容。
+  - Windows 用户需要确保Windows服务中的Spooler服务处于开启的状态，否则会打印失败
+  - https://github.com/zeay/pdfmaker
+    - Pdf maker electron and phantomjs
+
+- https://github.com/CMOISDEAD/next-library /js
+  - Next Library is an innovative virtual library application that offers a seamless and personalized way to manage your book collection
+  - Custom PDF Viewer Tool: Open and view PDF files directly within the virtual library program using a customized PDF viewer tool.
+
+- https://github.com/PSPDFKit/pspdfkit-electron-example /JS
+  - PSPDFKit for Electron Example Application
+
+- https://github.com/nikensss/sign_here /js
+  - Small electron app to add hand signature image to PDF
+
+- https://github.com/praharshjain/Electron-PDF-Viewer /js
+  - PDF viewer created using Electron framework and PDF.js
+  - https://github.com/praharshjain/Vudit-Desktop
+    - cross-platform desktop file viewer
+
+- https://github.com/ollm/OpenComic /JS
+  - Comic and Manga reader, written with Node.js and using Electron
+
+- pdf viewer
+  - https://github.com/AlexRogalskiy/electron-pdfviewer
+  - https://github.com/chastain1337/pdf_toolbox
+    - An electron-react app for manipulating PDFs.
+
+- https://github.com/scribusproject/scribus /cpp
+  - open source page layout program which produces commercial grade output in PDF and Postscript, primarily, though not exclusively, for Linux.
+
+- https://github.com/sagargurtu/lector /201908/js
+  - PDF Reader built using Electron and PDF.js
+
+- https://github.com/PDFTron/webviewer-mendix-sample
+  - WebViewer is a powerful JavaScript-based PDF Library that's part of the Apryse PDF SDK. 
+  - It provides a slick out-of-the-box responsive UI that interacts with the core library to view, annotate and manipulate PDFs that can be embedded into any web project.
+
+- https://github.com/koreader/koreader /lua
+  - An ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats, running on Cervantes, Kindle, Kobo, PocketBook and Android devices
 # utils
+- https://github.com/YuHuaOu/electron-print
+  - 支持直接传PDF、图片的资源地址(将资源地址传到桌面端打印程序的接口中)，完成打印。electron、PDF、PNG
+  - 支持直接传PDF、图片的资源地址到打印服务的接口中，完成打印
+  - pdf打印目前仅支持windows平台
+  - 应用接口收到内容后，包装一层数据，将其传进写好的打印队列调度器中进行打印任务处理
+
 - https://github.com/RelaxedJS/ReLaXed
   - creates PDF documents interactively using HTML or Pug (a shorthand for HTML). 
   - It allows complex layouts to be defined with CSS and JavaScript, while writing the content in a friendly, minimal syntax close to Markdown or LaTeX.
+
+- https://github.com/USEPA/pdf-data-extraction /js
+  - The purpose of this project is to further the research and development of tools that NCEA can use in their creation of machine-readable datasets and machine learning research. 
+
+- https://github.com/FanQinFred/OCRmyPDF-Desktop
+  - 在OCRmyPDF的基础上，集成了所需环境，并使用Electron开发了桌面端
+
+- https://github.com/Cimorexave/desktop-document-manager /js
+  - a desktop ElectronJS app to extract and edit data and tables from pdf to other formats
+
+- https://github.com/ifnoelse/pdf-bookmark /java
+  - pdf bookmark generator 目录 书签 大纲
+  - 本项目用来给pdf书籍自动打上书签方便阅读
+
+- https://github.com/stimulsoft/Samples-Reports.JS-for-Node.js
+  - examples of usage Stimulsoft Reports. JS reporting tool in the Node.js applications, using JavaScript report engine. 
+
+- https://github.com/plainlab/plainmerge /ts
+  - PDF mail merge (PDF data merge / PDF generator using Excel files)
+# examples
+- https://github.com/AnsellMaximilian/electron-excel-to-pdf-invoice-generator /ts
+  - A desktop invoice generator that turns excel files (with a specifically formatted workbook) into pdf invoices for every customer.
+  - 依赖xlsx、pdfkit
+
+- https://github.com/tithanayut/pagepdf-rendering-server /js
+  - a service for generating PDF file from HTML (via URL) on server. It integrates electron-pdf with express and lowdb to serve client as a REST API.
+  - https://github.com/fraserxu/electron-pdf
+
+- https://github.com/85599/Desktop-PDF-Generator-Electron /js
+  - an electron app used to generate pdf documents with some text for making labels
+
+- https://github.com/tani/yomu /js/pdfjs/简单渲染pdf
+  - 英和辞書付きPDF閲覧ソフト
+
+- https://github.com/bjrmatos/jsreport-electron-pdf /js
+  - jsreport recipe which renders pdf from html using electron 
+
+- https://github.com/surveyjs/survey-pdf
+  - Supplementary component to the SurveyJS Form Library to download surveys as PDF files and generate editable PDF forms.
 # office
 - databyss /39Star/AGPLv3/202208/js
   - https://github.com/databyss-org/databyss
   - https://databyss.org/
   - Write and cite, research and re-search, and never get lost in Databyss. Welcome to your new word processor.
   - Drag highlighted and/or annotated PDF files into any Page. Databyss will extract all your margin notes and highlighted passages so you can easily edit and search them.
+
+- https://github.com/SpiderStrategies/pdf-officegen /js
+  - A NPM module that accepts one or more PDF files and converts them into pptx/docs
+  - This module is the successor of pdf-powerpoint
+  - A rendering engine is used to transform each page of a PDF into a PNG image.
 # pdf4j
 - OpenPDF /1.7kStar/LGPLv2||MPLv2/202009
   - https://github.com/LibrePDF/OpenPDF

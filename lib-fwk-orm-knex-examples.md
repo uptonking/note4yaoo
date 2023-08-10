@@ -22,6 +22,9 @@ modified: 2023-01-22T19:52:59.120Z
   - lowcode integration
   - 流程自动化
 
+- tips
+  - [Multitenancy using multiple databases using knex](https://vincit.github.io/objection.js/recipes/multitenancy-using-multiple-databases.html)
+
 - ref
 # popular
 - https://github.com/shalior/express-ts-template /结构合理

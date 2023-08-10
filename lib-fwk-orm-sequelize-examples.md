@@ -16,6 +16,7 @@ modified: 2023-02-05T18:50:32.900Z
 
 - tips
   - 模版参考: react-admin
+  - [Multitenancy using multiple databases using knex](https://vincit.github.io/objection.js/recipes/multitenancy-using-multiple-databases.html)
 # popular
 - https://github.com/masb0ymas/expresso-sequelize /提交多/功能丰富
   - Sequelize ORM v6.x + Sequelize TypeScript v2.x
@@ -182,6 +183,19 @@ modified: 2023-02-05T18:50:32.900Z
   - React | React Router | Redux Toolkit
   - Real-time chat using web-sockets
 
+- https://github.com/khaled-badenjki/cilo /202307/js
+  - Cilo simplifies the build of multi tenant applications by providing a wrapper around sequelize that handles the multi-tenancy for you.
+  - The code will bahave the same as if you were building a single tenant application.
+
+- https://github.com/Wind213/sequelize-multi-tenant /201901/js
+  - An example of shared database schema isolated multi-tenant implementation with express, nodejs and sequelize.
+
+- https://github.com/AnishLushte07/multi-tenant-application /201909/js
+  - Multi tenant application using NodeJs, express, sequelize, mysql.
+
+- https://github.com/ali-husnain/expressjs-multi-tenant-rest-graphql-api-boilerplate /js
+  - This is a proof-of-concept (POC), multi-tenant RESTful Web Services application built on top of NodeJS.
+
 - https://github.com/raphaelalmeidamartins/fullstack-bank
   - Digital wallet full stack application developed with Next.js and Node.js
 
@@ -275,6 +289,9 @@ modified: 2023-02-05T18:50:32.900Z
   - Maintain Sequelize Model change history in a central table. 
   - This is highly configurable and supports composite primary keys ( up to 3 for now). 
   - Written in Typescript and provides typing.
+
+- https://github.com/westmark/sequelize-multi-tenant-enhancer /201702/js
+  - A Proxy based enhancer function which enables schema based multi tenancy in Sequelize.
 # cms
 - https://github.com/apstanisic/zmaj /ts
   - https://zmaj.vercel.app/

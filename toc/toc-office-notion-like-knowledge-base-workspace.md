@@ -93,6 +93,14 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/Requarks/wiki /AGPLv3/js/vue
   - https://js.wiki/
   - A modern and powerful wiki app built on Node.js
+
+- https://github.com/slotDumpling/multibility /ts
+  - https://slotdumpling.github.io/multibility/
+  - Collaborative notes and PDF annotations / 协同笔记与PDF批注
+
+- https://github.com/appotry/dootask /php/vue
+  - https://www.dootask.com/
+  - 轻量级的开源在线项目任务管理工具，提供各类文档协作工具、在线思维导图、在线流程图、项目管理、任务分发、即时IM，文件管理等工具。
 # github-wiki-confluence-like
 - MrDoc /2.1kStar/GPL.v3/202208/js/python/仅网页版
   - https://github.com/zmister2016/MrDoc

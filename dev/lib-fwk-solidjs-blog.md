@@ -7,6 +7,8 @@ modified: 2020-12-08T13:27:35.701Z
 
 # lib-fwk-solidjs-blog
 
+# guide
+
 # blog-solidjs
 
 ## [SolidJS · Reactive Javascript Library](https://www.solidjs.com/guides/reactivity#how-it-works)
@@ -301,7 +303,9 @@ const useReducer = (reducer, state) => {
 - React had all the strong principals, and vision but the implementation incompatibility would likely never be bridged.
 - Vue is a large library that has to cater to people of all backgrounds.
 - If you are interested in a library that has the discipline of React, transparent implementation that doesn't cut corners for easiness, and all the performance to back it up, maybe SolidJS is the library for you.
-# ref
+# more
+- [Comparative study of reactivity across frameworks and implications for Resumability](https://www.youtube.com/watch?v=vf1v7n2ApHI)
+
 - [Designing SolidJS: Components](https://t.co/JBBZSaanu1?amp=1)
 - [Designing SolidJS: JSX](https://t.co/Y3MQ34um1R?amp=1)
 - [Designing SolidJS: Reactivity](https://t.co/P9aD3WHBZe?amp=1)

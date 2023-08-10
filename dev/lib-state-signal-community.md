@@ -29,6 +29,30 @@ modified: 2023-04-07T04:09:54.488Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 💡 What’s the difference between Stores (svelte / nanostores), Signals (solid), Ref (vue), and Hooks (react)?
+- https://twitter.com/RyanCarniato/status/1688954143917133824
+- There are 3 things here:
+  1. Signals - signals(Solid), ref(Vue)
+  2. Subscribable - stores(Svelte/Nanostores)
+  3. Hooks - hooks(React)
+- Hooks are state that persist over each component re-run. 
+  - When updated they cause a component re-execution. 
+  - They are tied to a component's lifecycle.
+- Subscribables are event emitters. 
+  - On value change, it propagates. 
+  - You .subscribe to get the latest. 
+  - Some APIs take a Subscribable as an arg or use a compiler to automatically sub to make it easier. 
+  - They are not owned by components, but manual subs tend to coarser(大颗粒的；粗糙的) grained updates.
+- Signals are like subscribables except they enforce synchronous execution and auto-sub on value access through wrappers. 
+  - They ensure change propagates each node once and glitch-free. 
+  - Used often in templating. 
+  - Good for local and global state. 
+  - Makes fine-grained updates easier.
+
+- nano-stores is generic state library that can be used with multiple solutions including Svelte/React etc... Svelte has its own store mechanism that looks a little similar. Svelte/SvelteKit generally makes client-routed apps so this isn't a concern.
+
 - ## Here is a little demo I whipped up using Preact Signals - can be used without a framework!
 - https://twitter.com/wesbos/status/1650589973215584260
   - Here is a little demo I whipped up(匆匆做) using Preact Signals - can be used without a framework!

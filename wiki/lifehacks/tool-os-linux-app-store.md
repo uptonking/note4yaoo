@@ -28,6 +28,9 @@ modified: 2023-06-22T07:22:04.591Z
 
 ## flatpak
 
+- [Where are all the installed flatpak apps .desktop files located](https://github.com/flatpak/flatpak/issues/1286)
+  - /var/lib/flatpak/exports/share/applications/org.gnome. Builder.desktop
+
 - Applications and runtimes that are installed system-wide are available to all users on the system. 
   - Applications and runtimes that are installed per-user are only available to the users that installed them.
   - The same principle applies to repositories
@@ -38,6 +41,9 @@ modified: 2023-06-22T07:22:04.591Z
   - However, where Git is designed to track source files, OSTree is **designed to track binary files and other large data**.
 
 ## snap
+
+- [Programs installed via snap not showing up in Launcher - Ask Ubuntu](https://askubuntu.com/questions/910821/programs-installed-via-snap-not-showing-up-in-launcher)
+  - /var/lib/snapd/desktop/applications
 
 - [Ubuntu 明年将推出完全基于 Snap 的桌面版本_202306](https://www.oschina.net/news/243309/immutable-all-snap-ubuntu-desktop)
 
@@ -71,6 +77,7 @@ modified: 2023-06-22T07:22:04.591Z
 # discuss
 - ## 
 
-- ## 
+- ## [nautilus - How to set Nemo as the default file manager in Ubuntu? - Ask Ubuntu](https://askubuntu.com/questions/1066752/how-to-set-nemo-as-the-default-file-manager-in-ubuntu/1173861#1173861)
 
-- ## 
+- ## [How to add flatpak & snap app icon to desktop?](https://www.reddit.com/r/pop_os/comments/wa3p50/how_to_add_flatpak_snap_app_icon_to_dekstop/)
+- There's a gnome extension called **add to desktop** that I always use that just let's you right click an application in the launcher and it will add it to the desktop.

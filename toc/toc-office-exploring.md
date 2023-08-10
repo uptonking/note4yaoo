@@ -41,7 +41,7 @@ modified: 2021-01-04T17:31:49.998Z
   - Based on Flying Saucer and Apache pdfbox 2. 
   - With SVG image support. 
   - Now also with accessible PDF support(WCAG, Section 508, PDF/UA)!
-- https://github.com/ifnoelse/pdf-bookmark
+- https://github.com/ifnoelse/pdf-bookmark /java
   - pdf bookmark generator 目录 书签 大纲
   - 本项目用来给pdf书籍自动打上书签方便阅读
 - https://github.com/katjas/PDFrenderer

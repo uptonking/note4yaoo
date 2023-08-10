@@ -8,6 +8,12 @@ modified: 2023-07-03T08:55:09.372Z
 # lib-utils-gesture-use-gesture-dev
 
 # guide
+
+- features
+  - support multi gestures: drag/scroll/pinch/zoom
+  - configurable
+  - plays well with any animation fwk, like react-spring/r3f
+
 - who is using #use-gesture
   - antd-mobile, react-vant, zarm, nutui-react
   - @react-three/drei

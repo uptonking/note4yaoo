@@ -104,6 +104,11 @@ modified: 2021-07-21T18:09:20.751Z
   - A starter built with gatsby to help you create books with ease.
   - 样式简单
 
+- https://github.com/readium/ts-toolkit /ts
+  - Implements the Readium Architecture for Web Apps
+- https://github.com/edrlab/thorium-reader
+  - A cross platform desktop reading app, based on the Readium Desktop toolkit
+
 - https://github.com/readium/readium-css
   - https://readium.org/readium-css/docs/
   - stylesheets for EPUB Reading Systems, starting with Readium 2.
@@ -160,12 +165,13 @@ modified: 2021-07-21T18:09:20.751Z
 - https://github.com/mraible/infoq-mini-book
   - 依赖java、jruby、asciidoctor-gradle-plugin
   - Template project for creating an InfoQ Mini-Book with Asciidoctor
-
 # latex
-
 - https://github.com/vincentdoerig/latex-css
   - https://latex.vercel.app/
   - This almost class-less CSS library turns your HTML document into a website that looks like a LATEX document. 
+# reader
+- https://github.com/koreader/koreader /lua
+  - An ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats, running on Cervantes, Kindle, Kobo, PocketBook and Android devices
 # more
 - https://github.com/wecatch/markdown-css
   - http://wecatch.me/markdown-css/
