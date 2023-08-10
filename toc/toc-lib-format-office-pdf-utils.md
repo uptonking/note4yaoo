@@ -14,6 +14,7 @@ modified: 2022-11-11T10:46:41.519Z
   - locally hosted web application that allows you to perform various operations on PDF files
   - locally hosted web based PDF manipulation tool using docker that allows you to perform various operations on PDF files
   - 依赖 Spring Boot + Thymeleaf、pdfbox、itext7、libreoffice转换格式、ocrMyPdf
+  - [New Browser-based PDF Editor (github link) : selfhosted](https://www.reddit.com/r/selfhosted/comments/10pexhn/new_browserbased_pdf_editor_github_link/)
 
 - https://github.com/SimplePDF/simplepdf-embed /MIT/ts
   - https://simplepdf.eu/embed
@@ -21,6 +22,12 @@ modified: 2022-11-11T10:46:41.519Z
   - Merge, rotate PDF pages – iframe, script and React component
   - Client-based: the document and data filled in does not leave the browser
   - The library is a simple wrapper around an Iframe that loads SimplePDF on-demand (whenever the user clicks the wrapped link), as such the footprint for this "opening an Iframe" mechanism is very tiny
+  - As for the editor itself, it's not open-source
+    - The generation part is done using **PDF-lib**
+  - [I made a free PDF editor that works in your browser](https://www.reddit.com/r/InternetIsBeautiful/comments/zxdz3e/i_made_a_free_pdf_editor_that_works_in_your/)
+    - The PDF editor is completely free and does not require an account to be used.
+    - I want to keep it for free for individuals, but there's a paid service for companies
+    - I am resting on the shoulders of giants: I used every possible help (read open source work from others) and combined them into the result you're able to use. So I haven't luckily had to spend a lot of time dealing with the complexity of PDFs.
 
 - https://github.com/tabulapdf/tabula /js
   - http://tabula.technology/

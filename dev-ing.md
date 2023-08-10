@@ -285,7 +285,13 @@ $$('[contenteditable]')
   - [x] streaming infinite-list/tree
 # dev-08-use-gesture
 
-## 080
+## 081
+
+## 0810
+
+- pip install   "Looking in indexes"
+  - 原因是镜像地址写得太多了，可删掉不常用的
+  - [pip安装镜像全局配置 - 等日落 - 博客园](https://www.cnblogs.com/suncolor/p/17607642.html)
 
 ## 0806
 

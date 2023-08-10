@@ -74,16 +74,17 @@ modified: 2021-01-04T17:26:43.784Z
   - http://pdfmake.org/
   - PDF document generation library for server-side and client-side in pure JavaScript.
 
-- https://github.com/Hopding/pdf-lib /ts
+- https://github.com/Hopding/pdf-lib /202111/ts/inactive
   - Create and modify PDF documents in any JavaScript environment.
   - Designed to work in any modern JavaScript runtime. Tested in Node, Browser, Deno, and React Native environments.
+  - [Is this thing still on?](https://github.com/Hopding/pdf-lib/issues/1423)
+  - forks
+  - https://github.com/cantoo-scribe/pdf-lib
+    - This fork adds the support for svg to the pdf-lib project.
 
 - https://gitlab.coko.foundation/pagedjs/pagedjs
   - Paged.js is a free and open-source library that paginates any HTML content to produce beautiful print-ready PDF. 
   - The library fragments the content, reads your CSS print declarations and presents a paginated preview in your browser that you can save as PDF.
-
-- https://github.com/Hopding/pdf-lib
-  - Create and modify PDF documents in any JavaScript environment
 # pdf-editor
 - https://github.com/luke-browning/pdf-web-edit /ts/c#/ng
   - a web-based application for manipulating PDF files. It's main purpose is to pre-process documents before they are imported into a Document Management System (DMS) such as Paperless (-ng and -ngx) or stored in a directory based strucutre.
@@ -255,6 +256,17 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/plainlab/plainmerge /ts
   - PDF mail merge (PDF data merge / PDF generator using Excel files)
+
+- https://github.com/kkdai/pdf_online_editor /python
+  - a simple web application that allows users to upload a PDF file and display its pages as images. 
+  - Users can select a page from the uploaded PDF and view its content as text.
+  - 依赖streamlit、pdf2image、pypdf2、pillow
+
+- https://github.com/pdfarranger/pdfarranger /python
+  - Small python-gtk application, which helps the user to merge or split PDF documents and rotate, crop and rearrange their pages using an interactive and intuitive graphical interface.
+
+- https://github.com/hkdb/Densify /python
+  - A GTK+ GUI Application written in Python that simplifies compressing PDF files with Ghostscript
 # examples
 - https://github.com/AnsellMaximilian/electron-excel-to-pdf-invoice-generator /ts
   - A desktop invoice generator that turns excel files (with a specifically formatted workbook) into pdf invoices for every customer.
@@ -286,6 +298,9 @@ modified: 2021-01-04T17:26:43.784Z
   - A NPM module that accepts one or more PDF files and converts them into pptx/docs
   - This module is the successor of pdf-powerpoint
   - A rendering engine is used to transform each page of a PDF into a PNG image.
+# sign
+- https://github.com/open-pdf-sign/open-pdf-sign /java
+  - Digitally sign PDF files from your commandline
 # pdf4j
 - OpenPDF /1.7kStar/LGPLv2||MPLv2/202009
   - https://github.com/LibrePDF/OpenPDF
@@ -301,12 +316,12 @@ modified: 2021-01-04T17:26:43.784Z
       - The last release dates from 2009 (iText 2.1.7 / iTextSharp 4.1.6.0)
     - iText 5.x and iTextSharp 5.x (2009-2016)
       - In 2009, the license changed from the LGPL/MPL to the AGPL
-      - iTextSharp was designed as the . NET port of the library 
-        - and the release numbers were synchronized at the moment iText 5.0.0/iTextSharp 5.0.0 was released.
+      - iTextSharp was designed as the .NET port of the library 
+      - and the release numbers were synchronized at the moment iText 5.0.0/iTextSharp 5.0.0 was released.
       - In Java, the library moved to Java 5.
     - iText 7.x (2016-present)
       - A complete rewrite, focusing on extensibility and modularity.
-      - We no longer talk about iTextSharp, but iText for Java and for . Net (C#)
+      - We no longer talk about iTextSharp, but iText for Java and for .Net (C#)
       - The Java version moved to Java 7.
       - iText 7 is dual licensed as AGPL/Commercial software.
       - Buying a license is mandatory as soon as you develop commercial activities distributing the iText software inside your product or deploying it on a network without disclosing the source code

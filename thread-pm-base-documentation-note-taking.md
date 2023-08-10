@@ -14,7 +14,13 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 
 
-- ## 
+- ## In Europe, Estonia has had the digital signature for some time and it works really well:
+- https://www.reddit.com/r/InternetIsBeautiful/comments/zxdz3e/i_made_a_free_pdf_editor_that_works_in_your/
+  - https://github.com/open-eid – it's all open-source.
+  - Using their protocol, any document (PDF or not) can be put in an envelope to be signed.
+- Let's hope that more countries adopt it!
+
+-  I would most likely rely on open-source implementations such as this one: https://github.com/open-pdf-sign/open-pdf-sign
 
 - ## 你需要一个faq或者产品知识库，
 - https://twitter.com/guageaaa/status/1643405528809480193

@@ -20,10 +20,25 @@ modified: 2023-04-11T02:24:25.572Z
   - edge浏览器右上角一直无法登录同步因为国内网络问题，折中方案是点击右侧边栏的outlook或office按钮，在侧边栏登录后，整个浏览器也会登录
   - flatpak安装的chrome默认支持系统代理，但edge浏览器未支持，所以edge不能访问特殊网站
     - [edge: Add proxy support?](https://github.com/flathub/com.microsoft.Edge/pull/181)
-
+# apps-common
 - chrome应用商店 #镜像站点
   - [极简插件_Chrome扩展插件商店_优质crx应用下载](https://chrome.zzzmh.cn/)
   - [收藏猫插件](https://chrome.pictureknow.com/)
+
+- https://github.com/cerebroapp/cerebro /MIT/js/支持plugins/electron
+  - https://www.cerebroapp.com/
+  - an open-source launcher to improve your productivity and efficiency
+  - https://github.com/cerebroapp/awesome-cerebro
+
+- https://github.com/oliverschwendener/ueli /ts/实现基于plugin但未对外开放
+  - https://ueli.app/
+  - Keystroke launcher for Windows and macOS
+  - [[feature request] For linux](https://github.com/oliverschwendener/ueli/issues/94)
+    - I just tested the fork here using Arch Linux and KDE as DE and the core functions are working great!
+    - I just compiled it on Ubuntu 20.04.4 LTS and it works like charm!
+  - [Support for plugins](https://github.com/oliverschwendener/ueli/issues/96)
+    - in each plugin there is a plugin.json specifies all the basic metadata.This idea gives user full control of the functionality they want
+    - In my opinion implementing a plugin manager is too overkill for now and will complicate stuff too much. If someone wants to implement a new plugin/feature it can be integrated directly to the app by making a pull request.
 # ubuntu22.04
 
 ## guide
@@ -316,6 +331,16 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 - [使用WinNTSetup安装win10时提示efi part有红叉(win10安装UEFI系统安装）](https://www.cnblogs.com/sjdn/p/8975583.html)
   - 引导盘要选esp分区，也就是第一个分区100/300M空间的那个
+
+- https://github.com/Wox-launcher/Wox /csharp/python
+  - http://wox.one/
+  - Launcher for Windows, an alternative to Alfred and Launchy.
+- https://github.com/Flow-Launcher/Flow.Launcher
+  - Quick file search & app launcher for Windows with community-made plugins
+
+- https://github.com/alyssaxuu/omni /js
+  - use your browser like a pro. Manage tabs, bookmarks, your browser history, perform all sorts of actions and more with a simple command interface
+  - Get it now for Chrome and for Firefox
 
 ## software
 

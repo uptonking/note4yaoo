@@ -96,13 +96,28 @@ modified: 2021-01-01T22:26:57.773Z
 
 ## launcher
 
-- https://github.com/Ulauncher/Ulauncher /python/vue/支持扩展
+- https://github.com/cerebroapp/cerebro /MIT/js/支持plugins/electron
+  - https://www.cerebroapp.com/
+  - an open-source launcher to improve your productivity and efficiency
+  - https://github.com/cerebroapp/awesome-cerebro
+
+- https://github.com/Ulauncher/Ulauncher /python/gtk/vue/支持扩展
   - https://ulauncher.io/
   - Ulauncher is a fast application launcher for Linux. 
+  - 结合了spotlight的易用性和plugin的扩展性
+  - 使用github仓库作为扩展分发方式，优点是现有用户多，缺点是网络不稳定，最好能支持仓库url的代理url
   - It's written in Python using GTK+, and features: App Search (fuzzy matching), Calculator, Extensions, Shortcuts, File browser mode and Custom Color Themes
   - [How Ulauncher launches apps](https://github.com/Ulauncher/Ulauncher/wiki/How-Ulauncher-launches-apps)
   - roadmap
     - [Sort shortcuts](https://github.com/Ulauncher/Ulauncher/issues/1008)
+  - extensions
+    - https://github.com/friday/ulauncher-gnome-settings
+    - https://github.com/jetbug123/ulauncher-ssh
+    - https://github.com/NastuzziSamy/ulauncher-custom-scripts
+    - https://github.com/kleber-swf/ulauncher-turn-off-screen
+    - https://github.com/sa-0001/ulauncher-mongodb-objectid
+  - ext-imcompatible
+    - https://github.com/sandler31/ulauncher-local-listeners
 
 - https://github.com/arunk140/gnome-command-menu /js/基于自定义菜单
   - A GNOME Shell Extension to manage shortcuts in Top Bar (Inspired by Shuttle and SSHMenu)

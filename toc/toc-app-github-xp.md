@@ -184,6 +184,10 @@ modified: 2023-02-08T10:46:26.912Z
 # github-proxy
 - https://github.com/521xueweihan/GitHub520
   - https://raw.hellogithub.com/hosts 服务器续费了3年到2024.12
+- https://github.com/ineo6/hosts
+  - https://gitlab.com/ineo6/hosts
+  - 通过修改host的方式加速GitHub访问，解决图片无法加载以及访问速度慢的问题。
+  - 域名对应的ip与github520基本相同
 
 - download release and repo
   - https://pd.zwc365.com/
