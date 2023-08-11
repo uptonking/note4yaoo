@@ -14,7 +14,24 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
-- ## 
+- ## React could significantly improve by including a built-in `useDescendants` hook. 
+- https://twitter.com/diegohaz/status/1689699208238923776
+  - This would operate much like `useContext` , supporting SSR, but bottom-up. 
+- The existing userland solutions are far from ideal.
+- Generally, the current solutions require a register function that is passed down. Descendants then invoke this function using useEffect, which means it doesn't execute on the server.
+- Additionally, maintaining the correct order of descendants is challenging. For example, if a new element is lazily inserted in the middle of the list, it will be registered last. You must either re-register all descendants with each render or inspect the DOM order.
+- In Ariakit, the issue is resolved by passing a register function down and comparing the DOM order. This is what the `Collection` component does
+
+- Yes! This is one of the hardest problems for library developers in React. Last I heard @sophiebits was thinking about the problem space.
+  - https://github.com/reach/reach-ui/tree/dev/packages/descendants
+
+- Unity basically works like this, I agree it's much better than the current context situation.
+
+- I've come to terms with the situation that it'll never be supported and I just have to pass content as props so the component can do whatever it wants with the prop and then render. not clean but no magic
+
+- 
+- 
+- 
 
 - ## Do you know of a resource that demonstrate when #React Hooks / ref callbacks are called and in what order when: [mounting/ unmounting], [suspending, resolved], 
 - https://twitter.com/SCooperDev/status/1686793459942780930
@@ -170,7 +187,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                              `ValueFront`,                              `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                               `ValueFront`,                               `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

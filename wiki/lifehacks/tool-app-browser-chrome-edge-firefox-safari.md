@@ -9,6 +9,9 @@ modified: 2021-08-19T13:02:28.478Z
 
 # guide
 
+- news
+  - [Prepare your Firefox desktop extension for the upcoming Android release_202308](https://blog.mozilla.org/addons/2023/08/10/prepare-your-firefox-desktop-extension-for-the-upcoming-android-release/)
+    - Firefox will become the only major Android browser to support an open extension ecosystem
 # ideas
 
 ## browser extensions

@@ -13,7 +13,16 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
+- ## Problem: You’re building a big feature that will require weeks of work. 
+- https://twitter.com/housecor/status/1689656571570114560
+  - Mistake: A long-lived feature branch.
+  - Solution: Use a feature flag to hide the feature until it’s ready. Now you can merge daily.
+  - Principle: Integrate *continuously*.
+- What do you do if the new feature involves db schema changes that can affect the current app behavior?
+  - Avoid breaking DB schema changes. 
+  - Example: Instead of renaming a column, create a new column, then remove the old one once no one is using it.
+- Is there a feature flag tool you would recommend?
+  - You probably don’t need one. I typically use an env var, the URL, the user that’s logged in, or a simple checkbox in an admin UI.
 
 - ## Business logic in JS. I think this makes sense.
 - https://twitter.com/tantaman/status/1687090113958797312

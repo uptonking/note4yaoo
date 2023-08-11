@@ -43,7 +43,7 @@ modified: 2021-07-27T16:35:20.057Z
   - 知识管理工具、在线协作中心：FlowUs 息流笔记@FlowUs
   - 白板笔记：Heptabase、氢图@氢图
   - 写作软件：Effie、Ulysses、Writeathon
-  - 思维导图工具：MindNode、Xmind @Xmind思维导图
+  - 思维导图工具：MindNode、Xmind
   - 白板工具合辑：微软白板、Apple Freeform
 
 - ## 语雀知乎上怎么这么多说好用的，看文章好像已经是同类产品的top1了？

@@ -142,4 +142,14 @@ modified: 2021-01-01T22:26:57.773Z
 
 - ## 
 
-- ## 
+- ## [How Can I Monitor My Laptop Battery Usage? - Ask Ubuntu](https://askubuntu.com/questions/953770/how-can-i-monitor-my-laptop-battery-usage)
+- install an application like PowerTOP (sudo apt install powertop). 
+  - It shows which processes are most actively using the CPU. 
+  - After PowerTOP has run on battery for some time and has taken enough measurements, it will start showing process power consumption in terms of wattage.
+- [How to check Which Application is Draining Your Battery on Linux - DEV Community](https://dev.to/thamaraiselvam/how-to-check-which-application-is-draining-your-battery-on-linux-cbo)
+  - sudo powertop --html=powerreport.html
+  - 再手动打开powerreport.html文件可查看电池使用报告
+- [Powertop - ArchWiki](https://wiki.archlinux.org/title/powertop)
+
+- ## [cpu - 100.0% usage by Audio codec hwC0D0: Realtek - Ask Ubuntu](https://askubuntu.com/questions/91359/100-0-usage-by-audio-codec-hwc0d0-realtek)
+- No, it just means that you have (probably digital) sound output enabled. If you have some sound outputs, such as digital (optical/coaxial) or hdmi you are not using, then you can blacklist their drivers and you might save some battery. 

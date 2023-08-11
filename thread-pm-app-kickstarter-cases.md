@@ -10,6 +10,11 @@ modified: 2023-03-30T13:31:09.049Z
 # guide
 
 # discuss-stars
+- ## 我在前几天发了条帖子说（新人）独立开发选择笔（日）记、记账、Todo主流三件套之一等于加速死亡。
+- https://twitter.com/bestlacklock/status/1689934612737429504
+  - 引发了一点点🤏🏻争议。刚好我在选择 app 方向的时候也深思过这个问题，所以我展开讲讲，分享一下我的想法
+  - [为什么App独立开发最好别做日记、记账 - 掘金](https://juejin.cn/post/7265967971162898487)
+
 - ## “被动研究院”里，我的案例分析基本会按照这个模式: 
 - https://twitter.com/JourneymanChina/status/1653359693048459264
   1. 原文文稿(如果有的话)

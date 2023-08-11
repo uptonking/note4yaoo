@@ -10,6 +10,23 @@ modified: 2020-12-29T14:18:03.808Z
 # guide
 
 - [Timeline of a React Component With Hooks](https://julesblom.com/writing/react-hook-component-timeline)
+# hooks vs mixins
+- [React custom Hooks vs. Mixins | Ben Ilegbodu](https://www.benmvp.com/blog/react-custom-hooks-mixins/)
+- [React’s Hooks are Mixins Done Right](https://medium.com/@alexandroskatechis/reacts-hooks-are-mixins-done-right-b2e981f22bf8)
+
+## es-class-mixins
+
+- [TypeScript: Documentation - Mixins](https://www.typescriptlang.org/docs/handbook/mixins.html)
+  - TypeScript’s best mixin support is done via the class expression pattern.
+  - The pattern relies on using generics with class inheritance to extend a base class. 
+
+
+- [Mixins in ECMAScript 6 - Awkward, inconvenient, powerful. - DEV Community](https://dev.to/codelitically_incorrect/mixins-in-ecmascript-6-awkward-inconvenient-powerful-4jf2)
+- [Mixins Are Dead. Long Live Composition](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750)
+- ["Real" Mixins with JavaScript Classes: The Good, the Bad, and the Ugly](https://justinfagnani.com/2015/12/21/real-mixins-with-javascript-classes/)
+
+- [what is an elegant mixin/composition syntax for ES6 classes? - Stack Overflow](https://stackoverflow.com/questions/56083157/what-is-an-elegant-mixin-composition-syntax-for-es6-classes)
+- [How to add mixins to ES6 javascript classes? - Stack Overflow](https://stackoverflow.com/questions/42247434/how-to-add-mixins-to-es6-javascript-classes)
 # [Are many useStates better than useState(object)?](https://thoughtspile.github.io/2021/10/11/usestate-object-vs-multiple/)
 - Lately I’ve converted a lot of class components to functional.
   -  why do I feel like splitting the old class state into so many useState(atom) — one for each state key? Is there any real benefit in it?
