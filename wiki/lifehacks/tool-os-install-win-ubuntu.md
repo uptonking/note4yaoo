@@ -25,6 +25,10 @@ modified: 2023-04-11T02:24:25.572Z
   - [极简插件_Chrome扩展插件商店_优质crx应用下载](https://chrome.zzzmh.cn/)
   - [收藏猫插件](https://chrome.pictureknow.com/)
 
+## launcher/spotlight
+
+- 更建议使用系统自带search和spotlight，操作更编辑无覆盖，无需重复索引
+
 - https://github.com/cerebroapp/cerebro /MIT/js/支持plugins/electron
   - https://www.cerebroapp.com/
   - an open-source launcher to improve your productivity and efficiency
@@ -39,7 +43,7 @@ modified: 2023-04-11T02:24:25.572Z
   - [Support for plugins](https://github.com/oliverschwendener/ueli/issues/96)
     - in each plugin there is a plugin.json specifies all the basic metadata.This idea gives user full control of the functionality they want
     - In my opinion implementing a plugin manager is too overkill for now and will complicate stuff too much. If someone wants to implement a new plugin/feature it can be integrated directly to the app by making a pull request.
-# ubuntu22.04
+# ubuntu
 
 ## guide
 
@@ -57,6 +61,7 @@ modified: 2023-04-11T02:24:25.572Z
 
 - terminal
   - 回到顶部/底部: shift + Home/End
+  - [How to install Alacritty Terminal on Ubuntu](https://linux.how2shout.com/how-to-install-alacritty-terminal-on-ubuntu-22-04-lts/)
 
 ## os-starter
 
@@ -222,6 +227,10 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
 
 - [files - How to preview DDS and WEBP images on nautilus? - Ask Ubuntu](https://askubuntu.com/questions/617047/how-to-preview-dds-and-webp-images-on-nautilus)
   - nano ~/.local/share/thumbnailers/webp.thumbnailer
+# desktop-gnome
+- https://github.com/G-dH/overview-feature-pack
+  - A GNOME Shell extension that adds useful features to the Activities Overview. 
+  - 可定制activities overview界面
 
 ## software
 
@@ -229,6 +238,7 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
   - 👉🏻 更推荐使用flatpak安装，支持自动更新
   - apt支持 vlc，clementine，goldendict, gimp, inkscape
     - https://packages.ubuntu.com/
+  - 考虑支持用户自定义仓库和搜索 https://launchpad.net/ubuntu/+ppas
 
 ```shell
 sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
@@ -238,6 +248,10 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - chmod a+x *. AppImage
   - ./qq. AppImage
 
+- Clementine建议使用.deb安装，而不是fathub/snap
+  - 注意更新前备份歌单
+  - 无权限访问其他磁盘或分区的文件
+  - 不同来源
 - Clementine不支持抓取到last.fm的解决方法
   - mkdir ~/.local/share/Last.fm
   - [Last.fm plugin not submitting scrobbles when track has finished](https://github.com/clementine-player/Clementine/issues/6829)

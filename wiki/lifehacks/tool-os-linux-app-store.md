@@ -12,6 +12,7 @@ modified: 2023-06-22T07:22:04.591Z
 - tips
   - GNOME的Software和KDE的Discover都有snap/flatpak的插件
   - 优先级: flathub(可镜像), snap-store, appimage, ppa/custom-repo/synaptic, apt/yum/dnf
+  - 考虑支持用户自定义仓库和搜索 https://launchpad.net/ubuntu/+ppas
 # web-apps
 - https://github.com/tauri-webapps
 # linux-apps
@@ -27,6 +28,8 @@ modified: 2023-06-22T07:22:04.591Z
   - It currently supports AppImages, Flatpaks and Snaps packages.
 
 ## flatpak
+
+- [Graphical front-end to manage apps](https://github.com/flatpak/flatpak/issues/859)
 
 - [Where are all the installed flatpak apps .desktop files located](https://github.com/flatpak/flatpak/issues/1286)
   - /var/lib/flatpak/exports/share/applications/org.gnome. Builder.desktop

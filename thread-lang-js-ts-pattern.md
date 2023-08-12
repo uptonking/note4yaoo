@@ -1,6 +1,6 @@
 ---
 title: thread-lang-js-ts-pattern
-tags: [js, pattern, architecture]
+tags: [architecture, js, pattern]
 created: 2023-08-04T18:28:05.397Z
 modified: 2023-08-04T18:28:26.530Z
 ---

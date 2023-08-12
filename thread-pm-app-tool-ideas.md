@@ -12,6 +12,9 @@ modified: 2022-11-07T10:58:24.512Z
 - 产品的入口形态比较
   - 浏览器，需要用户培养习惯，优点是方便跨端
   - 系统级组件如spotlight，优点是与系统是深度集成、操作方便，缺点是通用性不强
+
+- 某一类数据源聚合的产品
+  - 搜索多个app-store，如flathub/snap
 # ideas
 - 数据碎片搜集
   - pc, mobile, browser ext

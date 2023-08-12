@@ -10,10 +10,12 @@ modified: 2021-01-01T22:26:57.773Z
 # guide
 - tips
   - launcher/pin-app，很可能是伪需求
+    - 悬浮search搜索框打断用户操作影响更小
     - 最高频的apps可使用收藏或dock
     - 常用apps可使用menu列表
     - 系统级的launcher集成在菜单中，操作方便，第三方launcher需要自动启动和替换默认
   - 桌面甚至是不必要的，更推荐类似mac的spotlight
+  - 更建议使用系统自带search和spotlight，操作更编辑无覆盖，无需重复索引
 # usage
 - 查看各程序网络带宽占用
   - sudo apt-get install nethogs
@@ -95,6 +97,8 @@ modified: 2021-01-01T22:26:57.773Z
   - [Add bluetooth headset battery's percentage in Ubuntu_202209](https://www.goulin.fr/blog/bluetooth-headset-battery-percentage-ubuntu)
 
 ## launcher
+
+- 更建议使用系统自带search和spotlight，操作更编辑无覆盖，无需重复索引
 
 - https://github.com/cerebroapp/cerebro /MIT/js/支持plugins/electron
   - https://www.cerebroapp.com/
