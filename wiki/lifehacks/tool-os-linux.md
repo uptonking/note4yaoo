@@ -9,6 +9,7 @@ modified: 2020-12-22T12:42:14.745Z
 
 # guide
 
+- [主流linux发行版分为几个派系](https://www.zhihu.com/question/399967127/answer/3015229817)
 # linux-cli-shell
 - https://github.com/Xfennec/progress
   - Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)

@@ -9,6 +9,13 @@ modified: 2023-05-30T21:36:55.391Z
 
 # guide
 
+- [Rendering like Butter - a Confluence Whiteboards Story - Atlassian Engineering_202308](https://www.atlassian.com/engineering/rendering-like-butter-a-confluence-whiteboards-story)
+  - Great insight into building high performance whiteboard for the Web
+  - Finite State Machine
+  - Entity Component System
+  - WebGL
+  - Tiling
+  - While the essay concluded that the most efficient way to render things was using WebGL, the benchmark also showed that DOM+React was not that bad (3~4x slower than Raw WebGL)—small products and personal projects may not need the burden of WebGL.
 # discuss
 - ## 
 

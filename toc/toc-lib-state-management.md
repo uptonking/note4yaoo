@@ -214,6 +214,7 @@ modified: 2020-07-14T11:03:53.196Z
     - Integrate into frameworks as if they were native built-in primitives
   - Signals can be accessed directly and your component will automatically re-render when the signal's value changes.
   - [Reactive/Store-like primitive](https://github.com/preactjs/signals/issues/4)
+  - [Proposal: Multi-value Signal using bitmaps (bit arrays)](https://github.com/preactjs/signals/pull/217)
   - [Reasoning for using prototype over classes](https://github.com/preactjs/signals/issues/216)
 - https://github.com/luisherranz/deepsignal
   - Preact signals, but using regular JavaScript objects

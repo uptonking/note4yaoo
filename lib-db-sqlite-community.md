@@ -12,7 +12,24 @@ modified: 2021-08-30T17:33:46.086Z
 # discuss
 - ## 
 
-- ## 
+- ## imagine there was a sqlite extension for making KV virtual tables. What features would you expect? 
+- https://twitter.com/agarcia_me/status/1690474942285103104
+  - ttl/expiry for entries? Multiple keys? Keys besides strings? Subscriptions?
+
+- aren't you describing redis. Basically any feature of redis say yeah sure all the way until you have a pub sub model with channels.
+
+- I’d model it after Redis - both relative TTLs and absolute Unix seconds. 
+  - But with SQL, you could also potentially query all (e.g) “keys expiring in the next 5 minutes” + similar table-wide ops that Redis can’t.
+
+- We used to build relational databases on top of kv stores e.g. MySQL using BerkeleyDB and some engines let you specify you want non-key values stored in the index so you don't need to read other files eg Postgres exposing this layer of sqlite could be cool to make smaller files
+
+- why this need “extension”?????
+  - How do you guarantee that this cache will stay within a certain memory limit? Redis can guarantee it.
+  - SQLite can already provide database level heap limits so with some hacking that could plausibly be extended for a use case like this, I think.
+- I'm thinking of table-level size-on-disk or row count limits. Like "make a new KV table that's a max 50MB" or "this KV table has a max 5K rows" or something. enforced with virtual table logic on INSERT/UPDATEs
+  - For notions cache we have a row count limit, but need to carefully schedule our delete & LRU time stamp update transactions for low read & update IO times to avoid degrading app performance
+- SQLite doesn’t have this kind of hard limit. You can limit max pages, but you’ll need at most 2x the page limit of the DB to VACUUM, and WAL things may go over too
+- Yup, mostly to enforce the ttl so you don't have to do it manually. Otherwise `CREATE TABLE kv (key TEXT PRIMARY KEY, value ANY)` is just fine
 
 - ## I used to think forking sqlite (e.g., @libsqlhq ) was crazy but I'm on board now. 
 - https://twitter.com/tantaman/status/1684917032096030722

@@ -161,6 +161,18 @@ modified: 2021-09-14T18:58:58.275Z
 - LGPL允许商业软件通过类库引用(link)方式使用LGPL类库而不需要开源商业软件的代码。这使得采用LGPL协议的开源代码可以被商业软件作为类库引用并发布和销售。
 - 如果修改LGPL协议的代码或者衍生，则所有修改的代码，涉及修改部分的额外代码和衍生的代码都必须采用LGPL协议。因此LGPL协议的开源代码很适合作为第三方类库被商业软件引用，但不适合希望以LGPL协议代码为基础，通过修改和衍生的方式做二次开发的商业软件采用。
 - 采用LGPL的代码，一般情况下它本身就是一个第三方库，这时候开发人员仅仅用到了它的功能，而没有对库本身进行任何修改，那么开发人员也不必公布自己的商业源代码。但是如果你修改了这个库的代码，那么你修改的代码必须全部开源，并且协议也是LGPL，但除了库源码之外的商业代码，仍不必公布
+
+- [LGPL license in a concatenated JS file - Open Source Stack Exchange](https://opensource.stackexchange.com/questions/8063/lgpl-license-in-a-concatenated-js-file)
+  - LGPL goes only for the code it's licensed under and for modifications of said code.
+  - If the LGPL code would be in a separate file, then you would only open source that file under LGPL.
+
+- [LGPL is more business friendly than GPL; it's literally "lesser" GPL.](https://news.ycombinator.com/item?id=35461088)
+  - You can use LGPL in commercial, closed-source projects as long as you keep the LGPL code in a separate dynamically linked library, e.g. a DLL, and provide a way for users to swap it out for their own patched DLL if they wish. (Plus some other license terms.)
+  - Also, you can always use LGPL code under the terms of the GPL, so there's no way LGPL is more restrictive than GPL.
+  - Beware that you may need to be careful using LGPL code in a browser: JavaScript is source code not object code, arguing WASM is a DLL wouldn’t help, **most JavaScript minifiers perform static linking**, and sending LGPL code to the browser could be considered distribution. I always avoided all LGPL licensed libraries when doing commercial front-end work.
+
+- [How to legally use LGPL javascript in a commercial web site? – iTecNote](https://itecnote.com/tecnote/javascript-how-to-legally-use-lgpl-javascript-in-a-commercial-web-site/)
+  - That make sense for programs you compile to binary, but what about JavaScript?
 # AGPL (Affero General Public License)
 - you have to allow the source to be downloaded even if you never distribute the binary but do provide a service
 - GPL v2和v3还有一个非常大的“漏洞”，就是软件“发布” 才必须开源。

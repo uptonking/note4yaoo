@@ -194,15 +194,39 @@ modified: 2020-07-14T09:32:35.359Z
 
 - 要开发 C++ 就选QT
   - 要开发 C就先GTK
-  - 并不是因为它们之间不兼容，是因为 GTK是用C写的, QT是用C++写的, 开发的时候利用起来比较“顺手”不用再做语言之间的转换。
-# [Chromium is developing support for using Qt on Linux_202204](https://www.reddit.com/r/linux/comments/u3m7s0/chromium_is_developing_support_for_using_qt_on/)
+  - 👉🏻 并不是因为它们之间不兼容，是因为 GTK是用C写的, QT是用C++写的, 开发的时候利用起来比较“顺手”不用再做语言之间的转换。
+
+## [Chromium is developing support for using Qt on Linux_202204](https://www.reddit.com/r/linux/comments/u3m7s0/chromium_is_developing_support_for_using_qt_on/)
+
 - For some time now, Chromium loads GTK at runtime (and you can switch between GTK3 and GTK4)
   - Now it seems, they will add support for Qt
 
 - GTK is dead as a dev platform after they killed the community with repeated API breaking; devs can't trust GTK. At is nowadays the only sensible way forward.
 
 - [Did you know chromium is developing a QT backend?](https://www.reddit.com/r/kde/comments/yaesom/did_you_know_chromium_is_developing_a_qt_backend/)
-# native
+# kde/qt
+- who is using #kde
+  - kubuntu
+# gnome/gtk
+- who is using #gnome
+  - ubuntu, debian, fedora, redhat, oracle-solaris
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Linux的GTK+值得学吗？还有MFC和Qt呢？ - 知乎](https://www.zhihu.com/question/28008048/answers/updated)
+- 你看看除了gnome，gtk+有什么大型应用？ 
+  - gtk+的跨平台性简直就是个笑话，api也难用的要死，和qt完全没有可比性。
+  - gui是非常非常需要oop思想的，gtk+强行用c语言来面向对象，在结构体里面套一大堆东西，给人的心智造成极大的负担。
+- 硬要用gtk+，我也选择vala和gtk-rs，
+  - 其实vala确实不错，语法类似c#，用来写图像界面很好用，可惜，以gtk社区的尿性，7，8年了连个能用的ide都没有，
+  - 每天把几个api折腾来折腾去，说好的gtk+4也是一再跳票，缩放也是至今只能整数倍
+- 说实话，要不是qt过去有协议问题，连gnome都不会用gtk+...
 
 # discuss-linux-desktop
 - ## 
@@ -213,7 +237,7 @@ modified: 2020-07-14T09:32:35.359Z
 # discuss
 - ## 
 
-- ## [用 KDE 的人为什么没有用 Gnome 的人多？ - 知乎](https://www.zhihu.com/question/20238837/answers/updated)
+- ## 💡 [用 KDE 的人为什么没有用 Gnome 的人多？ - 知乎](https://www.zhihu.com/question/20238837/answers/updated)
 
 - Gtk用的GPL协议，Qt用的协议有闭源风险。
   - 开源社区和系统厂商们不愿意将自己系统的未来置于Qt的收费风险之下，大部分默认桌面都给了Gnome，那些不会、不需要或者不愿意换桌面环境的人就会沿用Gnome。

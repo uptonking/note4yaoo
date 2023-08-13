@@ -11,7 +11,10 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
+- ## Without any subjective, measurable, and agreed on goals and metrics, striving for "clean code" is a waste of time. 
+- https://twitter.com/gunnarmorling/status/1690685859140411394
+  - People will just go forth and back pushing through their favorite patterns and idioms, without creating much value along the way.
+- Just ask a successful person. That's the fastest xd
 
 - ## Problem: You’re building a big feature that will require weeks of work. 
 - https://twitter.com/housecor/status/1689656571570114560

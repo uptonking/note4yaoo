@@ -46,6 +46,9 @@ modified: 2021-01-01T22:26:57.773Z
 - [ctrl+shift+e 会导致键盘停留在e，按键会暂时失效](https://askubuntu.com/questions/1125726)
   - Open Ibus preferences(ibus-setup) in your terminal, visit the Emoji tab, then click the Emoji Annotation to either Delete or change the shortcut
 # ubuntu-usage
+- turn off screen 命令
+  - xset dpms force off 按任意键可激活屏幕
+
 - [Why does Linux have no user subfolder such as /AppData? - Quora](https://www.quora.com/Why-does-Linux-have-no-user-subfolder-such-as-AppData)
   - Linux’ user subfolder is /home
   - /home/yourusername contains, besides all personal files and data, a number of hidden “dot” directories like .config and .local in which software stores their user-specific configuration.
@@ -144,7 +147,33 @@ modified: 2021-01-01T22:26:57.773Z
 
 - ## 
 
-- ## 
+- ## [Fractional scaling makes browser blurred - Ask Ubuntu](https://askubuntu.com/questions/1415924/fractional-scaling-makes-browser-blurred)
+- I found a workaround which is not ideal but achieves the same effect as 125% fractional scaling, without making browser text blurred.
+  - Instead of enabling fractional scaling, go to settings => accessibility and enable large texts.
+
+- I solved this problem (on my 4k monitor 31.5") by keeping it 100% scaling, but increasing the system font to 30% using the command (adjust the factor for your needs, the effect is visible immediately):
+  - gsettings set org.gnome.desktop.interface text-scaling-factor 1.3
+
+- ## [Google Chrome is blurry on Ubuntu 23.04 (Wayland + Nvidia 3050 Ti HiDPI screen with 200% scaling) - Ask Ubuntu](https://askubuntu.com/questions/1472847/google-chrome-is-blurry-on-ubuntu-23-04-wayland-nvidia-3050-ti-hidpi-screen-w)
+- It seems to be caused by the new Wayland fractional scaling feature. What worked for me was turning it off using --disable-features=WaylandFractionalScaleV1.
+
+- ## [Can't use Wayland with Nvidia 510 drivers on Ubuntu 22.04 LTS - Ask Ubuntu](https://askubuntu.com/questions/1403854/cant-use-wayland-with-nvidia-510-drivers-on-ubuntu-22-04-lts)
+- edit  /usr/lib/udev/rules.d/61-gdm.rules
+
+```
+LABEL = "gdm_prefer_xorg"
+#RUN += "/usr/lib/gdm-runtime-config set daemon PreferredDisplayServer xorg"
+GOTO = "gdm_end"
+
+LABEL = "gdm_disable_wayland"
+#RUN += "/usr/lib/gdm-runtime-config set daemon WaylandEnable false"
+GOTO = "gdm_end
+```
+
+- ## In GNOME, desktop extensions written in JS and for the new version 45 they all have to be rewritten to ESM.
+- https://twitter.com/sitnikcode/status/1690733883392729088
+  - It’s cool that if you don’t like the way the battery icon works on Linux, you can write a JS extension in a 10 LOC and everything becomes the way you want.
+  - GNOME designers often test new ideas in the form of extensions (and evolve the design by looking at popular extensions).
 
 - ## [How Can I Monitor My Laptop Battery Usage? - Ask Ubuntu](https://askubuntu.com/questions/953770/how-can-i-monitor-my-laptop-battery-usage)
 - install an application like PowerTOP (sudo apt install powertop). 
