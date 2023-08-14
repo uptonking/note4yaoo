@@ -14,7 +14,21 @@ modified: 2022-11-11T06:57:09.670Z
 
 - ## 
 
-- ## 
+- ## a Rust macro that generates JS code to access struct fields directly in memory via a typed array
+- https://twitter.com/devongovett/status/1687941873821007872
+  - Hoping something like this can help speed up JS plugins in native build tools by avoiding serializing and deserializing things.
+- It's so similar to the flatbuffers
+  - sort of but it's a bit different. there's no wrapper on the rust side, they are just normal structs/enums/etc. it's also designed for in memory storage and mutation, not serialization, so you can have things like resizable vectors etc.
+
+- Been toying with building something similar in just JS to share memory across contexts (tabs and worker)
+
+- V8 supports external strings, so you can create JS strings from native ones without copying. But yeah you have to copy the other direction.
+
+- What is the underlying library that's letting you map buffers directly into JS objects?
+  - No library, it’s built from scratch
+
+- something worth experimenting with: utf16-le for strings in the native code
+  - It might be cheaper because JS strings can internally be utf16
 
 - ## 3位研究人员在C语言中创造了一种替代Rust的方案。它的名字叫C-rusted
 - https://twitter.com/blackanger/status/1687150565351116800

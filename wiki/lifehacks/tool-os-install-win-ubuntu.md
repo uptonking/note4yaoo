@@ -63,6 +63,49 @@ modified: 2023-04-11T02:24:25.572Z
   - 回到顶部/底部: shift + Home/End
   - [How to install Alacritty Terminal on Ubuntu](https://linux.how2shout.com/how-to-install-alacritty-terminal-on-ubuntu-22-04-lts/)
 
+## gnome
+
+- sudo dpkg-reconfigure gdm3/sddm
+  - gdm的login screen在选择用户名后，可在右下角选择登录的桌面类型gnome/kde/wayland
+
+- pros
+  - many solutions for gpu/x11/wayland/usage
+  - wayland support with nvidia
+
+- cons
+  - fractional scaling 1.75 causes blurry chrome/apps
+
+## kde
+
+- pros
+  - global scale support 1.75 under x11
+
+- cons
+  - no wayland support with nvidia
+  - no gesture(3 fingers) for activities/tabs
+  - chinese input method not working
+
+- [How To Turn Ubuntu 22.04 into Kubuntu](https://www.ubuntubuzz.com/2022/05/how-to-turn-ubuntu-2204-into-kubuntu.html)
+
+- [Is there a way to seamlessly switch desktop environments? - Ask Ubuntu](https://askubuntu.com/questions/1405180/is-there-a-way-to-seamlessly-switch-desktop-environments)
+  - Makulu Linux Switch can do this. It comes with 8 different Desktop Environments. 
+  - But you can install 'gnome-desktop' on Kubuntu. When logging in there should be a gear icon where you can choose between KDE- and Gnome-desktop. You won't loose any data installing the DE.
+
+- [KDE desktop environment alongside GNOME - Ask Ubuntu](https://askubuntu.com/questions/261797/kde-desktop-environment-alongside-gnome)
+  - kde-plasma-desktop: a minimal core of KDE apps and utilities. 
+  - kde-full: full range of KDE applications and utilities.
+  - kubuntu-desktop: includes the full KDE suite, plus all of Ubuntu's "Kubuntu" look and feel
+
+- [I'm on 5.24(Kubuntu LTS 21, Wayland ALWAYS) any idea how to enable/get Windows like three finger fling touchpad gestures? : r/kde](https://www.reddit.com/r/kde/comments/uxeohb/im_on_524kubuntu_lts_21_wayland_always_any_idea/)
+  - Better touch gestures will come in 5.25 (which Kubuntu 22.04 LTS won't get in it's standard repos unfortunately, because that's how LTS works). But user configuration options for touch gestures will only come in 5.26 or later.
+  - You can also try third party software like **Touchegg** to add more gestures but it's kind of hacky and far from a perfect solution.
+  - The devs said they will bring it to 5.26 but they could not. They focused on stability on this release I guess. My laptop does not support 4 finger gestures either. 5.27 will be the last plasma 5 version and it will be an LTS release, so I hope they will add an option to customise gestures when it releases.
+
+- [Three-finger gesture for equivalent of alt-tabbing : r/kde](https://www.reddit.com/r/kde/comments/10kvw6f/threefinger_gesture_for_equivalent_of_alttabbing/)
+  - three-finger swipes in KDE (only on Wayland) are set to switching workspaces (you cannot change this unfortunately). 
+  - However, if you use https://github.com/JoseExposito/touchegg with the https://github.com/JoseExposito/touche GUI, you can customise a gesture to press Alt-Tab.
+  - It's worth noting that Touchegg does not support Wayland
+
 ## os-starter
 
 - [装了5次Ubuntu，告诉你win10+Ubuntu双系统的正确打开方式](https://zhuanlan.zhihu.com/p/101307629)

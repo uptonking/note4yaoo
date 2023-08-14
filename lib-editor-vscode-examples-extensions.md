@@ -9,6 +9,7 @@ modified: 2023-01-21T19:02:58.833Z
 
 # guide
 
+- [Open VSX Registry: Extensions for VS Code Compatible Editors](https://open-vsx.org/)
 # popular
 
 # utils
