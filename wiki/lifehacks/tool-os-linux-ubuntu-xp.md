@@ -131,12 +131,43 @@ modified: 2021-01-01T22:26:57.773Z
   - [Standard Icon Names](https://specifications.freedesktop.org/icon-naming-spec/latest/ar01s04.html)
   - [use multiple commands](https://github.com/arunk140/gnome-command-menu/issues/6)
 # wayland
-- [Boycott Wayland. It breaks everything!](https://gist.github.com/probonopd/9feb7c20257af5dd915e3a9f2d1f2277)
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [图形的未来](http://happyseeker.github.io/graphic/2016/11/10/the-future-of-the-desktop.html)
+- xorg因为其原有的架构设计与现如今各种严苛的绘图需求不相匹配，主要表现如：
+  - Xorg大管家管事太多，除了管理input，所有的**绘图请求、窗口管理、窗口合成**都必须要与Xorg进行交互，导致Xorg上存在性能瓶颈。根源还在于Xorg的架构太复杂。
+  - Xorg绘图无法充分利用GPU的硬件加速。所有绘图操作都必须提交到Xorg完成，而Xorg自身，对于2D加速，虽然有EXA；对于3D加速，虽然有Glamour，但仍旧无法充分利用硬件加速。
+
+- Wayland的优势
+  - 架构简单，有更好的性能。简单说，就是职责变少，不管闲事，使客户端自己控制绘图操作(比如分配缓冲区)，与客户端的交互减少，消除了性能瓶颈。
+  - 硬件加速利用更充分。由于客户端自己控制绘图操作，绘图(比如画个圆)不在通过Xorg，而是客户端自己分配缓冲区，自己绘制，那么客户端就可以直接利用GPU来画(比如OpenGL接口)，不需要经过Xorg中转，显然会有更好的性能
+
+- 什么阻碍了Wayland
+  - 最主要的还是生态问题
+  - 图形开发工具(上层)。比如GTK+和QT，当前图形环境中的绝大部分应用程序都是基于这两个工具开发的，Wayland要thrive，必然需要这两个的支持
+  - 图形桌面环境。比如Gnome、KDE、Mate，用户直接接触是桌面环境，包括面板、桌面(Shell)、登陆管理器、窗口管理器、文件资源浏览器等，需要整个桌面环境都支持Wayland，而这些组件原本都严重依赖于Xorg，要切换，那相应的移植工作量可不是一点点
+  - 硬件驱动。这里主要指显卡，在原有的Xorg架构中，显卡驱动通常由两部分组成：位于Xorg中DDX层的用户态驱动和位于内核的drm驱动，切换至Wayland后，看似不需要用户态驱动了，但其实由于绘图操作转由客户应用程序完成，用户态驱动仍然是需要的
+
+- ## [Mir 和 Wayland 等 X11 替代品，相比 X11 有哪些具体的优点？ - 知乎](https://www.zhihu.com/question/22052356)
+- X 系统非常复杂。而且这个复杂度的设计目的是为了灵活性而不是为了可靠性。所谓的灵活性就是可以提供很多策略：比如 Window Manager 可以更换，可以支持远端桌面。
+- X 系统的灵活性到了今天，很多都是屠龙之技。于是又不得不加上各种 hack。比如说，为了保持原来的标准，支持远端桌面的传统协议还要支持，同时为了显卡硬件加速，又加了一套平行的本地优化。整个系统最初的设计初衷已经被改得乱七八糟。
+- 因为 X 开发者的时间并没有像 BSD 或者 Linux 内核那样，始终集中在提高稳定性上，而是在做很多无用功 —— **先花大笔的 performance overhead 来实现一个过于灵活的 framework**，然后又再上面打补丁取消 performance overhead，同时还要保持向后兼容。这种悠久的历史，反而是稳定性的毒药。
+
+- 什么是over-designed，Xwindow就是典型的例子。很可惜Wayland也好不到哪儿去。
+
+- ## [Boycott Wayland. It breaks everything!](https://gist.github.com/probonopd/9feb7c20257af5dd915e3a9f2d1f2277)
   - Wayland does not work properly on NVidia hardware?
   - Wayland breaks screen recording applications
   - Wayland breaks screen sharing applications
   - Wayland breaks AppImages that don't ship a special Wayland Qt plugin
   - Wayland prevents GUI applications from running as root
+
 # discuss-ubuntu
 - refs
   - [Latest Desktop/Team Updates](https://discourse.ubuntu.com/c/desktop/team-updates/23)

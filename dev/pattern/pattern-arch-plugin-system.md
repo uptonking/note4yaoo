@@ -17,6 +17,11 @@ modified: 2020-12-20T15:46:29.566Z
   - [The Power Of The Plugin Architecture In Python - YouTube](https://www.youtube.com/watch?v=iCE1bDoit9Q)
   - [前端插件式可扩展架构设计心得](https://www.51cto.com/article/675413.html)
 
+- powerful plugin system
+  - 类似vscode支持共享扩展的能力
+  - 类似excel支持自定义vb/js脚本的能力
+  - 类似observable-notebook/deno的 dynamic import url/deps的能力
+
 - plugins-ready
   - prosemirror Plugin class
   - slate hoc

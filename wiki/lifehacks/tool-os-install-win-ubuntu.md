@@ -304,7 +304,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 - 腾讯会议的linux版本发布之后，我去体验了一把，提示不支持wayland
   - https://blog.csdn.net/m0_52640673/article/details/124911402
   - sudo gedit /etc/gdm3/custom.conf
-  - 取消注释 # WaylandEnable=false
+  - 取消注释 WaylandEnable=false
   - sudo service gdm3 restart
   - 也可以不使用wayland不支持的产品，比如不用腾讯会议而用飞书
 
