@@ -13,6 +13,7 @@ modified: 2023-02-07T17:38:05.336Z
 # guide
 - alternatives
   - jira, trello, linear
+  - 可以从主流产品的issues/discussions里面找替代品
 # popular
 - https://github.com/makeplane/plane /python/ts
   - https://plane.so/
@@ -212,7 +213,7 @@ modified: 2023-02-07T17:38:05.336Z
   - Kanban project management software
   - https://github.com/aljawaid/KanboardCSS
 
-## kanban realtime
+## realtime
 
 - https://github.com/plankanban/planka /AGPLv3/js
   - https://plankanban.github.io/planka/#/
@@ -246,7 +247,11 @@ modified: 2023-02-07T17:38:05.336Z
 - products
   - [Rambox | Workspace Simplifier to Boost your Productivity](https://rambox.app/)
 
-- https://github.com/ferdium/ferdium-app /ts
+- https://github.com/alyssaxuu/omni /js/browser-ext
+  - use your browser like a pro. Manage tabs, bookmarks, your browser history, perform all sorts of actions and more with a simple command interface
+  - Get it now for Chrome and for Firefox
+
+- https://github.com/ferdium/ferdium-app /apache2/ts
   - https://ferdium.org/
   - All your services in one place, built by the community
   - Hard-fork of Franz, adding awesome features and removing unwanted ones.
@@ -262,11 +267,11 @@ modified: 2023-02-07T17:38:05.336Z
   - open-source smart browser for busy people. 
   - 依赖graphql、apollo-client/link、immutable-js.v3、electron-chrome-extension、redux、rxjs
 
-- https://github.com/wavebox/waveboxapp
+- https://github.com/wavebox/waveboxapp /js
   - https://wavebox.io/
   - Browser for Work
   - Wavebox gives you customizable toolbars, sleeping tabs, cookie containers and multiple profile
-  - Wavebox 10, a complete fork of Chromium launched in 2019, but if you're looking for the Electron based Wavebox Classic, there's an archive of the code here
+  - Wavebox 10, a complete **fork of Chromium** launched in 2019, but if you're looking for the Electron based Wavebox Classic, there's an archive of the code here
 
 - https://github.com/sonnyp/Tangram
   - https://apps.gnome.org/app/re.sonny.Tangram/

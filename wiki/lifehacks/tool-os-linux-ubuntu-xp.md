@@ -23,6 +23,9 @@ modified: 2021-01-01T22:26:57.773Z
   - sudo nethogs -v 3   查看消耗总流量
   - https://github.com/GyulyVGC/sniffnet
     - Cross-platform application to comfortably monitor and analyse network traffic
+
+- window
+  - 窗口无法拖拽缩放的原因，可能是自定义themes的cursor不支持，注意要慎用自定义cursor图标
 # gnome-extensions
 - [Tray Icons: Reloaded](https://extensions.gnome.org/extension/2890/tray-icons-reloaded/)
   - https://github.com/MartinPL/Tray-Icons-Reloaded

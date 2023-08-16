@@ -9,6 +9,11 @@ modified: 2021-08-30T07:01:09.493Z
 
 # guide
 
+- tips
+  - 部分浏览器支持scheduler和TaskController可用来取消task，但firefox和safari不支持
+
+- [Learn Asynchronous Patterns in JavaScript with Kyle Simpson | Frontend Masters](https://frontendmasters.com/courses/rethinking-async-js/)
+
 # discuss
 - ## 
 

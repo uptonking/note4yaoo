@@ -216,6 +216,7 @@ modified: 2020-07-14T11:03:53.196Z
   - [Reactive/Store-like primitive](https://github.com/preactjs/signals/issues/4)
   - [Proposal: Multi-value Signal using bitmaps (bit arrays)](https://github.com/preactjs/signals/pull/217)
   - [Reasoning for using prototype over classes](https://github.com/preactjs/signals/issues/216)
+    - It performed better in benchmarks, and avoided cruft resulting from transpiled TypeScript classes
 - https://github.com/luisherranz/deepsignal
   - Preact signals, but using regular JavaScript objects
   - DeepSignal works by wrapping the object with a `Proxy` that intercepts all property accesses and returns the signal value by default.
@@ -255,7 +256,7 @@ modified: 2020-07-14T11:03:53.196Z
   - It interoperates natively with React state management patterns, Svelte stores, the Vue composition API, and Ember's auto-tracking system.
   - Use normal JavaScript APIs and access patterns. 
 
-- https://github.com/maverick-js/signals
+- https://github.com/maverick-js/signals /ts
   - a tiny (~1kB minzipped) library for creating reactive observables via functions called signals. 
   - You can use signals to store state, create computed properties (y = mx + b), and subscribe to updates as its value changes
 

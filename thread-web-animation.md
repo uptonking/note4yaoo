@@ -24,7 +24,14 @@ modified: 2021-01-08T17:14:34.841Z
 
 - ## 
 
-- ## 
+- ## Preact Signals-inspired API for useTransform
+- https://twitter.com/mattgperry/status/1691442096279064576
+  - Subscribes to MotionValues used within the provided callback, rather than having to pass them in manually.
+  - `useTransform( () => x.get() * 2 )`
+
+- I kinda like the explicit dep array, but I guess at this point people are probably accustomed enough to seeing implicit subscriptions that it wouldn’t be confusing
+
+- The thing that annoys me about it is having to rename the latest values(in old solution with deps). latest- is a convention but you’d probably choose to call them the same thing you called the MotionValues
 
 - ## framer motion had signals five years ago 
 - https://twitter.com/steveruizok/status/1635197073078513664

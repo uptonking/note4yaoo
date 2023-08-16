@@ -9,9 +9,14 @@ modified: 2020-12-08T13:27:56.600Z
 
 # guide
 
-- https://github.com/ryansolid/solid
+- https://github.com/solidjs/solid /ts/代码量不大
   - A reactive and declarative frontend library, inspired by React but working like Svelte (no VirtualDOM). 
+  - 实现包括: reactive-core, render, server, store
   - Includes modern features like JSX, Fragments, Context, Portals, Suspense, SSR, Error Boundaries, and Asynchronous Rendering.
+
+- https://github.com/fabiospampinato/flimsy
+  - A single-file <1kb min+gzip simplified implementation of the reactive core of Solid, optimized for clean code.
+  - Check out the annotated source, if you'd like to more in depth understand how Solid works
 # discuss
 - ## 
 

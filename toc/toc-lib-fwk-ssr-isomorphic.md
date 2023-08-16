@@ -22,6 +22,9 @@ modified: 2020-12-19T13:04:40.865Z
   - [如何看待最近正式发布的 Web 全栈框架 Fresh? - 知乎](https://zhuanlan.zhihu.com/p/556336887)
   - Fresh 中关于 Islands 架构的实现是基于 Preact 的，我本人也借鉴了 Fresh 的思路，通过拦截 React.createElement 方法在 React 当中也实现了 Islands 架构
 
+- https://github.com/childrentime/island-architecture
+  - a demo of implementing the Island Architecture in React.
+
 - https://github.com/winwiz1/crisp-react /202201/ts
   - Crisp React can optionally split a monolithic React app into multiple Single Page Applications (SPAs) and selectively prerender the landing/index page of any SPA at the build time.
   - Helps to split a monolithic React app into multiple SPAs and avoid vendor lock-in.

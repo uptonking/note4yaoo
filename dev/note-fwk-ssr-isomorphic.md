@@ -140,6 +140,9 @@ modified: 2020-12-19T13:05:23.294Z
   - 运行时，支持 hydrate 跳过对静态节点的内容检查
 - 基于上面这两点，其他的代表性编译时框架如Solid、Svelte 很难实现 Vue 的 Shell 架构(没法标记静态节点)，因此 Shell 方案可以理解为在 Vue 框架下的一个特殊优化了。
   - 对于 Vue 外的其它框架方案，仍然可以采用 Islands 进行特定场景的优化。
+
+- https://github.com/childrentime/island-architecture
+  - a demo of implementing the Island Architecture in React.
 # discuss
 - ## 
 

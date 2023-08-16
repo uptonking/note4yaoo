@@ -23,6 +23,12 @@ modified: 2021-08-28T11:49:05.730Z
 # discuss
 - ## 
 
+- ## 
+
+- ## Tip: @ChromeDevTools can now override the content of Fetch/XHR requests! Great for mocking APIs without waiting on backend changes!
+- https://twitter.com/addyosmani/status/1691833832817967315
+  - more in Chrome 117_202308
+
 - ## 发现 zod-mock 很好用，我以前都是手动维护 mock-data，虽然有 GitHub Copilot 帮助也不算麻烦，但是还是会造成代码量增加。
 - https://twitter.com/uptonking2/status/1681561542377230336
   - 我是一个坚信 less code less bug 的开发者，zod-mock 通过 zod schema 自动生成模拟数据的解决方案对于我来说很优雅

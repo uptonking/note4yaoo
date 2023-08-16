@@ -218,6 +218,10 @@ sudo snap refresh
 - [Install NVIDIA Driver & Switch Between Intel and NVIDIA in Ubuntu 22.04](https://ubuntuhandbook.org/index.php/2021/06/install-nvidia-driver-switch-between-intel-nvidia-ubuntu/)
   - 切换n卡时只支持 xorg，没有完美的方案
 
+- [解决Ubuntu/Linux中文字体异常显示问题 - 掘金](https://juejin.cn/post/7245127080064450619)
+  - 检查软件 Clementine、kid3-qt
+  - 也可以在各个应用层软件分别设置字体
+
 - ubuntu安装字体ttf
   - 创建目录 ~/.fonts，只需将字体粘贴到那里，支持 .ttf 或 .otf
   - 要使字体对所有用户生效，/usr/local/share/fonts
@@ -395,7 +399,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 - https://github.com/Flow-Launcher/Flow.Launcher
   - Quick file search & app launcher for Windows with community-made plugins
 
-- https://github.com/alyssaxuu/omni /js
+- https://github.com/alyssaxuu/omni /js/browser-ext
   - use your browser like a pro. Manage tabs, bookmarks, your browser history, perform all sorts of actions and more with a simple command interface
   - Get it now for Chrome and for Firefox
 

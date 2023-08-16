@@ -29,6 +29,10 @@ modified: 2021-09-29T13:23:09.969Z
 - https://github.com/JokerLHF/tiny-library
   - 各种库的模拟实现, express, koa
 # data-structure
+
+- https://github.com/childrentime/mini-immer
+  - create a minimal version of the immer library that illustrates the core principles of immer.
+
 - [Mutable immutability: creating immutable objects with Immer clone | CKEditor](https://ckeditor.com/blog/immutability-with-immer-clone/)
 # web
 

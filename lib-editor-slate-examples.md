@@ -472,6 +472,8 @@ modified: 2023-02-05T19:03:12.723Z
     - Sanity.io has powerful APIs for querying, patching, and mutating data in the real-time content backend. In addition to our GROQ(Graph-Relational Object Queries) API, we also support deploying GraphQL APIs to query your content.
     - [Query JSON documents in the Terminal with GROQ](https://css-tricks.com/query-json-documents-in-the-terminal-with-groq/)
       - Graph-Relational Object Queries (GROQ) is a query language (like SQL, but different) which is designed to work directly on JSON documents.
+  - [Provide a (real) self hosted version](https://github.com/sanity-io/sanity/issues/3258)
+    - Sanity Studio is only the editor interface, though. Sanity's hosted content backend, the Sanity Content Lake, on the other hand, is not open-source.
 
 - https://github.com/contentful/field-editors/tree/master/packages/rich-text
   - https://contentful-field-editors.netlify.app/rich-text

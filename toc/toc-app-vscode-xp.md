@@ -13,7 +13,10 @@ modified: 2023-02-08T10:47:19.056Z
   - The Open VSX Registry offers a community driven, fully open platform for publishing and consuming VS Code extensions. 
   - The Registry is built on Eclipse Open VSX
 # nice-to-have
-- ctrl+p: 搜索文件名时，没有像在左边搜索文字那样方便，左边搜文字时可以一次性展示所有文件及匹配点
+- search-通过ctrl+p搜索文件名时，没有像在左边搜索文字那样方便，左边搜文字时可以一次性展示所有文件及匹配点
+
+- search面板
+  - 对文件名的二次搜索过滤不支持模糊匹配
 
 - 编辑器
   - js注释 // 与 /** */ 一键转换

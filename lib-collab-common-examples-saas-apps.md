@@ -139,7 +139,6 @@ modified: 2023-01-17T19:14:47.611Z
   - It comes with an open-source editing environment called Sanity Studio that you can customize with JavaScript and a real-time hosted data store. 
   - Sanity is a platform for creating and working with structured content. Your content is stored in the cloud
   - [Provide a (real) self hosted version](https://github.com/sanity-io/sanity/issues/3258)
-    - how to run Sanity frontend without depending on privative Sanity backend? 
     - Sanity Studio is only the editor interface, though. Sanity's hosted content backend, the Sanity Content Lake, on the other hand, is not open-source.
 
 - https://github.com/hanse/groceries
@@ -230,8 +229,6 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/TopGunBuild/topgun /ts/gundb
   - Reimplementation of gunDB in TypeScript
   - A graph data synchronisation engine for building realtime, offline-first, secure and scalable applications.
-
-
 
 - https://github.com/Manwe-777/tool-db /ts
   - a peer-to-peer model for a decentralized database, inspired by GundB

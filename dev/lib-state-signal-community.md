@@ -31,6 +31,33 @@ modified: 2023-04-07T04:09:54.488Z
 
 - ## 
 
+- ## 
+
+- ## Honestly the only major issue I see with Observables/Signals/AsyncIterables/Iterables/Promises/Callbacks/etc is...
+- https://twitter.com/BenLesh/status/1691488885367353344
+  - People of all skill levels tend to latch onto one and try to leverage it for EVERYTHING. API designers do the same thing. It's honestly very frustrating to see.
+  - Each one is good at something different. We need ways to switch between them cleanly, and the world needs to understand them better.
+
+- comfort zone bias
+
+- I dislike that when I get a single data packet from somewhere that needs to update 5 observables, everything downstream happens 5 times.
+  - the benefit of single reactive model
+
+- Signals are not composable and composition is key in programming!
+
+- ## 👉🏻 Signals are inverted AsyncIterators in a way.
+- https://twitter.com/BenLesh/status/1691488028127113231
+  - Just another shaped reactive type with it's own traits.
+  - pull - Iterable/function
+  - push - Observable/Promise
+  - pull-then-push - AsyncIterable
+  - push-then-pull - Signal
+  - A "functional" movement has nothing to do any of this. You could build an (oddly shaped, weird to use) signal with pure functions, really.  (notify: (getter: () => T) => void) => void
+
+- the async is promise which resolves when ready (push) and you react to it when it comes (via the unwind of await).
+  - signal pull then push works like a message queue (eg FIFO) which requires a consumer. that consumer function is the callback registered on the notify array...
+- i think i agree with your statement ben i'm not sure if functional has anything to do with it
+
 - ## 💡 What’s the difference between Stores (svelte / nanostores), Signals (solid), Ref (vue), and Hooks (react)?
 - https://twitter.com/RyanCarniato/status/1688954143917133824
 - There are 3 things here:
@@ -106,7 +133,16 @@ state1.state.deniz = 11; // nothing
 # discuss
 - ## 
 
-- ## 
+- ## Native Signals can be done completely absent of scheduling and effects. 
+- https://twitter.com/RyanCarniato/status/1691473859202146304
+  - @modderme123 released Reactively last year that shipped with no effects or autorun. 
+  - https://github.com/modderme123/reactively
+  - It was just a pull based system
+  - He continued his work at @bubble and generalized approach to async propagation, but again effects aren't needed. The lib provides an effect.ts but it isn't necessary. It could be done implemented completely in userland by extending the Computation class.
+- I love this example as the whole scheduler and Effect mechanism is in that single file. Its a little more complicated because it considers heirarchical reactivity (the key to Solid's rendering). But with this control of scheduling one can build their own Suspense/Offscreen etc.
+- The result is Solid 2.0 and Bubble's own reactive system which are different with our own scheduling and flushing behaviors can be completely compatible as they share the same tracking system.
+
+- Angular signals are also architected this way. Effects aren't part of the core library, but are built on top of the abstractions it provides.
 
 - ## the debate about signals is the same one we had about 2-way data binding vs unidirectional data flow 10 years ago. 
 - https://twitter.com/devongovett/status/1629540226589663233
