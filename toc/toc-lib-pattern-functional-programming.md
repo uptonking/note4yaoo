@@ -25,17 +25,30 @@ modified: 2023-07-26T11:23:38.282Z
   - https://rxjs.dev/
   - A reactive programming library for JavaScript
 - https://github.com/cyclejs/cyclejs /9.8kStar/MIT/202009/ts
+  - [Cycle.js - Streams](https://cycle.js.org/streams.html)
   - A functional and reactive JavaScript framework for predictable code
-  - @cycle/state依赖rxjs
+  - reactive: it is fully responsible for managing its own state by reacting to external events. 
+    - The selling point for widespread Reactive programming is to build self-responsible modules which focus on their own functionality rather than changing external state. 
+    - This leads to Separation of Concerns.
+  - Reactive programming can be implemented with: event listeners, RxJS, Bacon.js, Kefir, most.js, EventEmitter, Actors, and more
+    - Even spreadsheets utilize the same idea of the cell formula defined at the arrow head. 
+    - The above definition of Reactive programming is not limited to streams
+  - Cycle.js supports multiple stream libraries, such as RxJS, xstream, and most.js, 
+    - by default we choose `xstream` because it was custom built for Cycle.js.
+    - a Stream in xstream is an event stream which can emit zero or more events, and may or may not finish. 
+    - If it finishes, then it does so by either emitting an error or a special “complete” event.
 - https://github.com/staltz/xstream /2.2kStar/MIT/202010/ts
   - An extremely intuitive, small, and fast functional reactive stream library for JavaScript
   - Only 26 core operators and factories
   - Tailored for Cycle.js, or applications with limited use of subscribe
 - https://github.com/baconjs/bacon.js /ts
+  - https://baconjs.github.io/
   - Functional reactive programming library for TypeScript and JavaScript
 - https://github.com/kefirjs/kefir
   - A Reactive Programming library for JavaScript
   - inspired by Bacon.js and RxJS with focus on high performance and low memory usage.
+- https://github.com/cujojs/most /js/inactive
+  - Monadic streams for reactive programming
 
 - https://github.com/ramda/ramda
   - /19.7kStar/MIT/202010/js
@@ -51,12 +64,87 @@ modified: 2023-07-26T11:23:38.282Z
   - Though unlike Promises, Futures are lazy and adhere to the monadic(单元的，单体的) interface.
 - https://github.com/SodiumFRP/sodium-typescript
   - Typescript/Javascript implementation of Sodium FRP (Functional Reactive Programming) library
-- https://github.com/cyclejs/cyclejs
-  - A functional and reactive JavaScript framework for predictable code
 - https://github.com/marblejs/marble
   - functional reactive Node.js framework for building server-side applications, based on TS and RxJS.
 - https://github.com/hufeng/iflux
-  - iflux = immer.js + react.js
+  - immer.js + react.js
+# reactive
+- tips
+  - 具体的业务如ospreadsheet会禁用框架内部的reactivity，自己管理数据和状态，以便实现undo、协作等功能
+  - reactive编程模式大多会引入operator的复杂度
+
+- https://github.com/modderme123/js-reactivity-benchmark
+  - Current reactivity benchmarks (S.js, CellX) are focused on creation time, and update time for a static graph.
+  - We've created a new benchmark that allows library authors to compare their frameworks against each other, and against the existing benchmarks, as well as against a new configurable benchmark with dynamically changing sources.
+
+- https://github.com/justin-schroeder/arrow-js /ts/NoDeps
+  - https://www.arrow-js.com/docs/
+  - A tiny ~2kb library for building reactive interfaces in native JavaScript
+  - Static by default, reactive by choice
+  - No Virtual DOM
+  - Arrow relies heavily on modern features of JavaScript such as template literals, modules (think import and export), and Proxies.
+  - Reactive Data => reactive
+    - Reactive data objects have an $on and $off methods that allow us to observe mutations to their properties. 
+  - Templates => html
+    - Reactive expressions are callable functions, everything else is a static expression.
+  - Watching data => watch
+    - tracks any reactive data dependencies of that function, and then re-calls that function if any of the dependencies change
+
+- https://github.com/adamhaile/S /ts/inactive
+  - S.js is a small reactive programming library. 
+  - It combines an automatic dependency graph with a synchronous execution engine.
+  - https://github.com/adamhaile/surplus
+    - Surplus is a compiler and runtime to allow S.js applications to create high-performance web views using JSX. 
+    - Surplus treats JSX like a macro language for native DOM instructions.
+    - These DOM instructions create real DOM nodes that match your JSX. There's no virtual DOM middle layer standing between your JSX and the DOM.
+    - DOM updates are handled by S computations.
+
+- https://github.com/modderme123/reactively /ts/实现未使用proxy
+  - a library for fine grained reactive programming. 
+  - Use Reactively to add smart recalculation and caching almost anywhere. 
+  - shipped with no effects or autorun. It was just a pull based system
+  - [Native Signals can be done completely absent of scheduling and effects.](https://twitter.com/RyanCarniato/status/1691473859202146304)
+    - @modderme123 released Reactively last year that shipped with no effects or autorun. 
+    - It was just a pull based system
+  - [Super Charging Fine-Grained Reactive Performance - DEV Community](https://dev.to/modderme123/super-charging-fine-grained-reactive-performance-47ph)
+    - I've been working on a new fine grained reactivity libary called Reactively inspired by my work on the SolidJS team.
+  - Reactively caches the results of the render() function automatically and Reactively won't run render() again unless its inputs have changed. So the second call to render() is optimized into a no-op.
+  - Reactively is useful to avoid unnecessarily repeating expensive operations 
+    - (memory allocation, network operations, storage, long computations, DOM manipulation, etc.) 
+    - While you can manually write your own caching and dependency checking, a declarative approach is easier, and the result is more maintainable.
+  - Traditionally, if you want to memoize a function in JavaScript, you have to manually specify all the dependencies as parameters, even if sometimes you don't use all the parameters.
+    - Reactively eschews(避开, 回避) that in favor of automatically detecting what variables you use in a reactive expression.
+    - Additionally, Reactively allows you to dynamically change which variables you depend on at runtime
+  - Reactively is a hybrid push-pull system. 
+    - It pushes dirty notifications down the graph, and then executes reactive elements lazily on demand as they are pulled from leaves. 
+    - This costs the framework some bookkeeping and an extra traversal of its internal graph. But the developer wins by getting the simplicity of a pull system and the most of the execution efficiency of a push system.
+  - Push systems emphasize pushing changes from the roots down to the leaves. 
+    - Push algorithms are fast for the framework to manage but can push changes even through unused parts of the graph, which wastes time on unused user computations and may surprise the user. 
+    - For efficiency, push systems typically expect the user to specify a 'batch' of changes to push at once.
+  - Pull systems emphasize traversing the graph in reverse order, from user consumed reactive elements up towards roots. 
+    - Pull systems have a simple developer experience and don’t require explicit batching. 
+    - But pull systems are are apt to traverse the tree too often. 
+    - Each leaf element needs to traverse all the way up the tree to detect changes, potentially resulting in many extra traversals.
+- https://github.com/bubblegroup/bubble-reactivity /ts
+  - He continued his work at @bubble and generalized approach to async propagation, but again effects aren't needed. The lib provides an effect.ts but it isn't necessary. It could be done implemented completely in userland by extending the Computation class.
+
+- https://github.com/alibaba/formily /ts/多框架
+  - https://formilyjs.org/
+  - High Performance Normal Form/Dynamic(JSON Schema) Form/Form Builder 
+  - Support React/React Native/Vue 2/Vue 3
+  - 阿里巴巴统一前端表单解决方案
+  - 代码量大，功能全
+  - Formily2.x 在实现的过程中发现 Mobx 还是存在一些不兼容 Formily 核心思想的问题，最终，只能重新造了一个轮子，延续 Mobx 的核心思想的 @formily/reactive
+
+- https://github.com/emberjs/data /ts
+  - a lightweight reactive data library for JavaScript applications that provides composable primitives for ordering query/mutation/peek flows, managing network and cache, and reducing data for presentation.
+  - The core of Ember‍Data is the Store, which coordinates interaction between your application, the Cache, and sources of data (such as your API or a local persistence layer). Optionally, the Store can be configured to hydrate the response data into rich presentation classes.
+
+- https://github.com/vanjs-org/van /js
+  - https://vanjs.org/
+  - lightweight, zero-dependency and unopinionated Reactive UI framework based on pure vanilla JavaScript and DOM. 
+  - You can convert any HTML snippet into VanJS code with our online converter.
+  - VanJS helps you manage states and UI bindings as well, with a more natural API
 # functional dom ui
 - https://github.com/choojs/choo
   - /6.5kStar/MIT/202001/js
@@ -104,7 +192,7 @@ modified: 2023-07-26T11:23:38.282Z
 - https://github.com/michael-klein/hookuspocus
   - allow you to add hooks to any function.
   - Internally, hookuspocus uses WeakMaps if possible to keep states between runs (and falls back to simple Maps).
-# games
+# games/ecs
 - https://github.com/LastOliveGames/becsy /ts/NoDeps
   - https://lastolivegames.github.io/becsy/
   - A multithreaded Entity Component System (ECS) for TypeScript and JavaScript, inspired by ECSY and bitecs.

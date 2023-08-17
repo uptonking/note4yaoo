@@ -11,6 +11,9 @@ modified: 2022-12-19T01:51:01.389Z
 
 - mock-api
   - [fetch-mock vs json-server vs nock](https://www.npmtrends.com/fetch-mock-vs-json-server-vs-nock)
+
+- solutions
+  - [Arrow Flight RPC — Apache Arrow](https://arrow.apache.org/docs/format/Flight.html)
 # api-spec
 - https://github.com/json-api/json-api
   - https://jsonapi.org/

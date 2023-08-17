@@ -33,6 +33,20 @@ modified: 2023-04-07T04:09:54.488Z
 
 - ## 
 
+- ## Native Signals can be done completely absent of scheduling and effects. 
+- https://twitter.com/RyanCarniato/status/1691473859202146304
+  - @modderme123 released Reactively last year that shipped with no effects or autorun. 
+  - It was just a pull based system
+  - https://github.com/modderme123/reactively
+  - He continued his work at @bubble and generalized approach to async propagation, but again effects aren't needed. The lib provides an effect.ts but it isn't necessary. It could be done implemented completely in userland by extending the Computation class.
+- https://github.com/bubblegroup/bubble-reactivity/blob/main/src/effect.ts
+  - I love this example as the whole scheduler and Effect mechanism is in that single file. 
+  - Its a little more complicated because it considers heirarchical reactivity (the key to Solid's rendering). 
+  - But with this control of  scheduling one can build their own Suspense/Offscreen etc.
+- The result is Solid 2.0 and Bubble's own reactive system which are different with our own scheduling and flushing behaviors can be completely compatible as they share the same tracking system.
+
+- 👉🏻 Angular signals are also architected this way. Effects aren't part of the core library, but ar e built on top of the abstractions it provides.
+
 - ## Honestly the only major issue I see with Observables/Signals/AsyncIterables/Iterables/Promises/Callbacks/etc is...
 - https://twitter.com/BenLesh/status/1691488885367353344
   - People of all skill levels tend to latch onto one and try to leverage it for EVERYTHING. API designers do the same thing. It's honestly very frustrating to see.
@@ -58,7 +72,7 @@ modified: 2023-04-07T04:09:54.488Z
   - signal pull then push works like a message queue (eg FIFO) which requires a consumer. that consumer function is the callback registered on the notify array...
 - i think i agree with your statement ben i'm not sure if functional has anything to do with it
 
-- ## 💡 What’s the difference between Stores (svelte / nanostores), Signals (solid), Ref (vue), and Hooks (react)?
+- ## 💡 What’s the difference between Stores(svelte/nanostores), Signals(solid), Ref(vue), and Hooks(react)?
 - https://twitter.com/RyanCarniato/status/1688954143917133824
 - There are 3 things here:
   1. Signals - signals(Solid), ref(Vue)
@@ -133,16 +147,37 @@ state1.state.deniz = 11; // nothing
 # discuss
 - ## 
 
-- ## Native Signals can be done completely absent of scheduling and effects. 
-- https://twitter.com/RyanCarniato/status/1691473859202146304
-  - @modderme123 released Reactively last year that shipped with no effects or autorun. 
-  - https://github.com/modderme123/reactively
-  - It was just a pull based system
-  - He continued his work at @bubble and generalized approach to async propagation, but again effects aren't needed. The lib provides an effect.ts but it isn't necessary. It could be done implemented completely in userland by extending the Computation class.
-- I love this example as the whole scheduler and Effect mechanism is in that single file. Its a little more complicated because it considers heirarchical reactivity (the key to Solid's rendering). But with this control of scheduling one can build their own Suspense/Offscreen etc.
-- The result is Solid 2.0 and Bubble's own reactive system which are different with our own scheduling and flushing behaviors can be completely compatible as they share the same tracking system.
+- ## 
 
-- Angular signals are also architected this way. Effects aren't part of the core library, but are built on top of the abstractions it provides.
+- ## Ok what are signals? I literally have no idea
+- https://twitter.com/BenLesh/status/1637751668577038339
+- The reactivity model from Solid , MobX, Ember, Knockout, et al. It pushes a notification with an observable-like mechanism that something has changed, there’s a dependency graph (implicit or explicit) that is notified. Then, it schedules a pull to calculate values.
+  - More succinctly(简洁的): A type where you get push notified that a change happened, then you pull the value.
+  - Implementations vary. But that’s the general idea. It’s been around a while.
+
+- shouldn't redux be listed here as well?
+  - Redux is mostly push. The calculation happens during the push. It’s basically observables
+
+- Isn't that how angular worked all along?
+  - No. Angular was doing dirty checks before. Where it would check everything. With signals you only recalculate what’s necessary. 
+  - You can do the same with observables, but since observables are push-only they can “glitch” (double calculate) in edge cases.
+
+- Signals are a slightly more complicated type. Basically the marriage of an observable and a getter (in a naive sense). Push then pull. 
+  - AsyncIterable is pull then push. 
+  - Observable is push. 
+  - Iterable is pull.
+
+- so at the highest level it's very similar to typical observables?
+  - The notification would be basically `Observable<void>`. Then there’s a getter or function to pull the updated value.
+  - It's closer to BehaviorSubject
+
+- ## 👉🏻 Knockout(2010) and MobX(2015) observables often get the nod.
+- https://twitter.com/RyanCarniato/status/1604764288052142080
+  - But S.js(2013) Signals deserve major credit for redefining how we look at this sort of reactivity. I had only been working on SolidJS for about a year when I stumbled on the library in 2017 and that changed everything.
+  - 👉🏻 People might forget Vue had this sort of reactivity under the hood for years before the Composition API.
+  - The reason this has gotten attention again is using it to **escape component-grained rendering and updates**, and remove the need for a VDOM. That's a very old idea but was unpopular until more recently.
+- `S.js` was indeed a great implementation of reactive patterns & the only one I know that reifies the notion of clocks - though RxJS does expose schedulers. Synchrony is a key, overlooked, but bug-prone aspect of reactive programming.
+  - It also was the first I saw to do automatic disposal in an automatic dependency tracking system. It basically encouraged nested reactivity which opened up a different way to model solutions. A quintessential part in how these newer VDOM-less runtime reactive renderers work.
 
 - ## the debate about signals is the same one we had about 2-way data binding vs unidirectional data flow 10 years ago. 
 - https://twitter.com/devongovett/status/1629540226589663233
@@ -181,7 +216,7 @@ state1.state.deniz = 11; // nothing
 
 - ## I don’t think Vue 3 refs should be used as an example of “Proxy based reactivity” - only deep access is tracked using Proxies
 - https://twitter.com/youyuxi/status/1635416467645829120
-  - the .value itself is a simple getter, very much like Preact / Qwik signals. 
+  - the .value itself is a simple getter, very much like Preact/Qwik signals. 
   - The shallow version of it (shallowRef) is identical to signals
 - Why have proxies a bad rep. Seems like people don't like to have all the reactivity based on them, any reason for this?
   - Performance.

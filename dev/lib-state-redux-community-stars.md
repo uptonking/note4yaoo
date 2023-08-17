@@ -18,7 +18,7 @@ modified: 2021-06-09T01:09:55.241Z
 
 - ## 
 
-- ## What are people using these days for React state management?
+- ## What are people using these days for React state management?_202308
 - https://twitter.com/ccorcos/status/1689440157781606400
   - I’m talking more about UI state as opposed to backend/data stuff.
   - useState: plumbing can get annoying

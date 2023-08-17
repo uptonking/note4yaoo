@@ -104,7 +104,7 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/node-formidable/formidable
   - A Node.js module for parsing form data, especially file uploads.
 
-- https://github.com/staltz/xstream
+- https://github.com/staltz/xstream /ts
   - An extremely intuitive, small, and fast functional reactive stream library for JavaScript
   - Only 26 core operators and factories
   - Tailored for Cycle.js, or applications with limited use of subscribe

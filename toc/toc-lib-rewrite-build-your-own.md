@@ -29,7 +29,6 @@ modified: 2021-09-29T13:23:09.969Z
 - https://github.com/JokerLHF/tiny-library
   - 各种库的模拟实现, express, koa
 # data-structure
-
 - https://github.com/childrentime/mini-immer
   - create a minimal version of the immer library that illustrates the core principles of immer.
 
@@ -49,6 +48,10 @@ modified: 2021-09-29T13:23:09.969Z
   - [vdom 原理解析与简单实现](https://github.com/fantasticit/coding/issues/23)
   - 实际应用：https://github.com/spritejs/q-charts
 
+  - https://github.com/aidenybai/hundred /ts/NoDeps
+    - Hundred is intended to be a toy block virtual DOM based off of Million.js, and is a proof-of-concept and a learning resource
+    - This implementation is similarly based off of [blockdom](https://github.com/ged-odoo/blockdom).
+
 - https://github.com/snabbdom/snabbdom /ts
   - A virtual DOM library with focus on simplicity, modularity, powerful features and performance.
   - 每个VNode的属性
@@ -62,6 +65,7 @@ modified: 2021-09-29T13:23:09.969Z
   - Snabbdom consists of an extremely simple, performant and extensible core that is only ≈ 200 SLOC. 
   - It offers a modular architecture with rich functionality for extensions through custom modules. 
   - To keep the core simple, all non-essential functionality is delegated to modules.
+  - [snabbdom的源码以及 仿写一个自己的vDOM库](https://lastnigtic.cn/posts/virtual-dom/)
   - 未使用event-delegation或synthetic
     - `elm.addEventListener(name, listener, false)` 直接操作dom
     - Snabbdom allows swapping event handlers between renders. This happens without actually touching the event handlers attached to the DOM

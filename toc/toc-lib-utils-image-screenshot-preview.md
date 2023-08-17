@@ -144,6 +144,10 @@ modified: 2023-04-16T13:34:33.706Z
     - notion、github、onenote、joplin
   - https://chrome.google.com/webstore/detail/web-clipper/mhfbofiokmppgdliakminbgdgcmbhbac
 # source-code-screenshot
+- https://github.com/riccardoperra/codeimage /ts
+  - https://codeimage.dev/
+  - A tool to beautify your code screenshots. Built with SolidJS
+
 - https://github.com/carbon-app/carbon /js
   - https://carbon.now.sh/
   - Create and share beautiful images of your source code

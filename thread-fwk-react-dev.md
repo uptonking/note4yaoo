@@ -16,11 +16,6 @@ modified: 2021-01-06T14:40:03.364Z
 - If you need the consistency you need to compromise - by making your updates less batched and flush earlier than they otherwise would - using `flushSync` .
   - That's the compromise of using useSyncExternalStore. To preserve consistency with external mutable store you have to make it less batchable - less delayed, than other forms of updates.
 
-- ## RSC from Scratch. Part 1: Server Components
-- https://twitter.com/dan_abramov/status/1664681506218864640
-  - [RSC From Scratch. Part 1: Server Components](https://github.com/reactwg/server-components/discussions/5)
-  - we'll implement a very simplified version of React Server Components (RSC) from the scratch.
-
 - ## do you know why we need @reactjs ? why not build an app using only DOM API directly?
 - https://twitter.com/sseraphini/status/1379547345130565632
 - For me it’s the declarative way to define how your UI and data behaves and not having to care about the necessary dom changes to do that.

@@ -31,6 +31,12 @@ modified: 2020-12-14T11:29:00.678Z
   - Observable can express things that can't be expressed in Signals at the expense of more complex API.
   - Signals are a happy medium where API is simple and good enough for most things UI.
 # es-observable
+- Given the extensive prior art in this area, there exists a public "Observable Contract".
+  - [ReactiveX - The Observable Contract](https://reactivex.io/documentation/contract.html)
+- many JavaScript APIs been trying to adhere to the contract defined by the TC39 proposal from 2015
+  - there is a library, symbol-observable, that ponyfills (polyfills) Symbol.observable to help with interoperability between observable types that adheres to exactly the interface defined here
+  - This is similar to how Promises/A+ specification that was developed before Promises were adopted into ES2015 as a first-class language primitive.
+
 - https://github.com/tc39/proposal-observable
 
 - This proposal introduces an `Observable` type to the ECMAScript standard library. 
@@ -55,8 +61,6 @@ modified: 2020-12-14T11:29:00.678Z
 - Implementations
   - rxjs
   - core-js
-  - https://github.com/vobyjs/oby
-    - A tiny Observable implementation
 
 - Example: Observing Keyboard Events
 
@@ -94,17 +98,67 @@ let subscription = commandKeys(inputElement).subscribe({
 });
 ```
 
+## dom-observable
+
+- https://github.com/domfarolino/observable
+
+- Observables were first proposed to the platform in TC39 in May of 2015. 
+  - The proposal failed to gain traction, in part due to some opposition that the API was suitable to be a language-level primitive. 
+  - Despite ample developer demand, lots of discussion, and no strong objectors, the DOM Observables proposal sat mostly still for several years (with some flux in the API design) due to a lack of implementer prioritization.
+
+- This is the explainer for the Observable API proposal for more ergonomic and composable event handling.
+
+- This proposal adds an `.on()` method to `EventTarget` that becomes a better `addEventListener()`
+- Observables turn event handling, filtering, and termination, into an explicit, declarative flow that's easier to understand and compose than today's imperative version, which often requires nested calls to addEventListener() and hard-to-follow callback chains.
+
+- Observables are first-class objects representing composable, repeated events. 
+  - They're like Promises but for multiple events, and specifically with EventTarget integration, 
+  - they are to events what Promises are to callbacks. 
+- We propose the following operators in addition to the Observable interface
+
+- 
+- 
+- 
+- 
+
+# observable-impl
+- https://github.com/vobyjs/oby
+  - A tiny Observable implementation
 # discuss
 - ## 
 
-- ## I'm working to bring Observables to the web platform by reviving a @thedomstandard  proposal that got some attention a while ago. 
+- ## Every lib has to write its own implementation of observables because it’s such an important and ubiquitous concept. 
+- https://twitter.com/lexswed/status/1685027901031256064
+  - So why not build it into the language so all these libraries can simply use the built in one instead of rolling their own
+
+- Please, no! To handle observables nicely, you need a lot of operators. All this world of specific semantics doesn't worth it. I wrote a lot of comparisons, and most of the code could be written imperatively and be pretty readable.
+
+- I appreciate you really believe in them. I’m concerned about anti-patterns I’ve seen:
+  - Merging two observables requires time assumption hacks
+  - Cold vs hot observables are invisible until runtime
+  - One observable subscriber writing to another subject creates stateful spaghetti
+
+- Please don't make subscription cause repeated side effects. The mess in rxjs where subscribing initiates the action and then having all the operators to stop that (like replay) is pretty horrible. Promises got this right.
+
+- ## [Java Spring WebFlux vs RxJava - Stack Overflow](https://stackoverflow.com/questions/56461260/java-spring-webflux-vs-rxjava)
+- Just like object-oriented programming, functional programming, or procedural programming, reactive programming is another programming paradigm.
+
+- RxJava 2.0 and Reactor are based on ReactiveX project. 
+  - 👉🏻 And **Spring WebFlux uses Reactor internally**.
+- Since Project Reactor you can consider it fix the drawbacks in RxJava and more suitable for Backend development. 
+
+- Both Spring WebFlux (project-reactor) and RxJava2+ are implementation of reactive-streams.
+
+- ReactiveX is a combination of the best ideas from the Observer pattern, the Iterator pattern, and functional programming. It extends the observer pattern to support sequences of data and/or events and adds operators that allow you to compose sequences together declaratively while abstracting away concerns about things like low-level threading, synchronization, thread-safety, concurrent data structures, and non-blocking I/O.
+
+- ## I'm working to bring Observables to the web platform by reviving a @thedomstandard  proposal that got some attention a while ago.
 - https://twitter.com/RyanCarniato/status/1686069829172912129
 
 - I think this is interesting. By boiling down observables to basically standalone primitives (like Array, Map, Set) makes them way more approachable than with operators. But with enough functionality to be useful on their own without RxJS (not that you couldn't use this with it)
 
 - Understanding Signals and Observables are completely different, almost all Signal libraries have interop for them. This is the level of base functionality I'd want. It removes the feeling of introducing a second reactive system. It pushes RxJS back to where it is most natural.
   - What's the ideal use case for RxJS? I may have never stumbled on a scenario where using RxJS-style Observables was a good idea, I think 🤔 Which doesn't mean these scenarios don't exist of course.
-- It is a good solution for Observables. But like has nothing to do with Signals which have a ton of other unrelated functionality. We don't really get any benefit here. I used Observables at the start of Solid and realized they weren't the right fit.
+- It is a good solution for Observables. But like has nothing to do with Signals which have a ton of other unrelated functionality. We don't really get any benefit here. 👉🏻 I used Observables at the start of Solid and realized they weren't the right fit.
 
 - I think Observables are better off as a library than get included in DOM (what I mean is I hate maintaining Observable infested code, which will multiply if it becomes part of DOM)
 

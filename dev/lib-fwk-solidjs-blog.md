@@ -185,11 +185,9 @@ const useReducer = (reducer, state) => {
   - The observer pattern is inherently leaky. Signals don't need cleanup but any subscription does. If the signal outlives(比…活得长) the subscriber it will have no longer relevant subscriptions. 
   - At minimum we need to mark the subscriber as dead. The fact that we dynamically create and tear down subscriptions on each run has us doing this work anyway.
 
-## [Super Charging Fine-Grained Reactive Performance - DEV Community](https://dev.to/modderme123/super-charging-fine-grained-reactive-performance-47ph)
-
+## [Super Charging Fine-Grained Reactive Performance_202212](https://dev.to/modderme123/super-charging-fine-grained-reactive-performance-47ph)
 
 - I've been working on a new fine grained reactivity libary called Reactively inspired by my work on the SolidJS team.
-
 
 - Let's explore some of the different algorithmic approaches to fine grained reactivity
 
@@ -200,42 +198,34 @@ const useReducer = (reducer, state) => {
   - Using these libraries, programmers can make individual variables and functions reactive. 
   - Reactive functions run automatically, and re-run 'in reaction' to changes in their sources.
 
-
 - Reactive libraries work by maintaining a graph of dependencies between reactive elements. 
   - Modern libraries find these dependencies automatically, so there's little work for the programmer beyond simply labeling reactive elements. 
   - The library's job is to efficiently figure out which reactive functions to run in responses to changes elsewhere in the graph. 
-
 
 - Reactivity libraries are at the heart of modern web component frameworks like Solid, Qwik, Vue, and Svelte. 
   - Reactively comes with a decorator for adding reactive properties to any class, as well as prototype integration with Lit.
   - Preact Signals comes with a prototype integration with React
 
-
 - The goal of a reactive library is to run reactive functions when their sources have changed.
   - Efficient: Never overexecute reactive elements (if their sources haven't changed, don't rerun)
   - Glitch free: Never allow user code to see intermediate state where only some reactive elements have updated
 
-
 - Reactive libraries can be divided into two categories: lazy and eager.
   - In an eager reactive library, reactive elements are evaluated as soon as one of their sources changes. (In practice, most eager libraries defer and batch evaluations for performance reasons).
   - In a lazy reactive library, reactive elements are only evaluated when they are needed. (In practice, most lazy libraries also have an eager phase for performance reasons).
-
 
 - MobX is an eager reactive library
   - MobX uses a two pass algorithm, with both passes proceeding from A down through its observers. 
   - MobX stores a count of the number of parents that need to be updated with each reactive element.
   - MobX stores a count of the number of parents that need to be updated with each reactive element.
 
-
 - Preact started with the MobX algorithm, but they switched to a lazy algorithm.
   - Preact also has two phases, and the first phase "notifies" down from A, but the second phase recursively looks up the graph from D.
   - Preact checks whether the parents of any signal need to be updated before updating that signal. 
   - It does this by storing a version number on each node and on each edge of the reactive dependency graph.
 
-
 - Like Preact, Reactively uses one down phase and one up phase. Instead of version numbers, Reactively uses only graph coloring.
   - Ryan Carniato describes a related algorithm that powers Solid in his video announcing Solid 1.5.
-
 
 - Current reactivity benchmarks (Solid, CellX, Maverick) are focused on creation time, and update time for a static graph. 
   - Additionally, existing benchmarks aren't very configurable, and don't test for dynamic dependencies.
@@ -248,6 +238,7 @@ const useReducer = (reducer, state) => {
 - 
 - 
 - 
+
 ## [Why I'm not a fan of Single File Components - DEV Community](https://dev.to/ryansolid/why-i-m-not-a-fan-of-single-file-components-3bfl)
 
 - The crux of the problem with restricting files to a single component is we only get a single level of state/lifecycle to work with. 
@@ -366,8 +357,23 @@ const useReducer = (reducer, state) => {
 - React had all the strong principals, and vision but the implementation incompatibility would likely never be bridged.
 - Vue is a large library that has to cater to people of all backgrounds.
 - If you are interested in a library that has the discipline of React, transparent implementation that doesn't cut corners for easiness, and all the performance to back it up, maybe SolidJS is the library for you.
+
+## [Future Reactivity Design - HackMD_202305](https://hackmd.io/@0u1u3zEAQAO0iYWVAStEvw/rJCOaC_Z2)
+
+- I want to focus on 2 key mechanisms that I believe central to moving to lazy reactivity. 
+  - This document will layout ideas on how they could work.
+
+- Root-Scoped Effect Queues
+  - One of the biggest benefits of lazy pull based reactivity is that we can defer work until we need it. 
+  - Idea 1: Merging with Existing Roots
+- Async Transactions
+  - Idea behind this is starting from the root of a change no changes are applied until all pure calculations are resolved.
+- Async Primitive
+  - Option: Async Components
+  - Option: Fine-Grained Blocking
 # more
-- [Comparative study of reactivity across frameworks and implications for Resumability](https://www.youtube.com/watch?v=vf1v7n2ApHI)
+- [Comparative study of reactivity across frameworks and implications for Resumability_202308](https://www.youtube.com/watch?v=vf1v7n2ApHI)
+  - It has my favorite visualization of the differences between Signals and Observables and a great example to show the difference between reactivity in frameworks.
 
 - [Designing SolidJS: Components](https://t.co/JBBZSaanu1?amp=1)
 - [Designing SolidJS: JSX](https://t.co/Y3MQ34um1R?amp=1)

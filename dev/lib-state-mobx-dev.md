@@ -9,6 +9,16 @@ modified: 2023-04-07T03:10:46.225Z
 
 # guide
 
+- pros
+  - popular with signals
+
+- cons
+  - 设计模式不是immutable
+  - 示例很多使用@装饰器
+  - bundle size
+
+- who is using #mobx
+  - linear
 # dev
 - Mobx数据管理方案，采用观察者模式，观察可变数据，持有细粒度的数据响应模式，感知到哪些组件需要被更新的时间复杂度是`O(1)`的
 # rewrite
@@ -97,6 +107,8 @@ modified: 2023-04-07T03:10:46.225Z
   - https://github.com/Jacky-Summer/mini-mobx /js
 
 - [实现一个简单的 MobX](https://xie.infoq.cn/article/d90440a8fb574299b4454ef96)
+
+- [mobx的原理以及 仿写自己的状态管理库](https://lastnigtic.cn/posts/mobx/)
 
 ## [Build your own MobX-like state management library in 40 lines of code
 

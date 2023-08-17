@@ -7,8 +7,11 @@ modified: 2021-09-20T18:38:00.319Z
 
 # thread-dev-http-restful-rpc
 
-# discuss
+# guide
 
+- solutions
+  - [Arrow Flight RPC — Apache Arrow](https://arrow.apache.org/docs/format/Flight.html)
+# discuss
 - ## What is tRPC?
 - https://twitter.com/t3dotgg/status/1438434802839945220
   - tRPC is a genius abuse of Typescript to create a typesafe API on server and client with strong inference and validation.

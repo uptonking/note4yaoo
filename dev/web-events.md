@@ -91,25 +91,29 @@ modified: 2021-04-23T17:10:52.920Z
 - return false
   - 会同时阻止事件冒泡和默认行为
   - react使用自己包装的SyntheticEvent，return false不会阻止事件传播(从v0.14起)
-- oneventtype vs addEventListener
+
+- 💡 oneventtype vs addEventListener
   - onclick事件在同一时间只能指向唯一对象
     - 若分别指定window.onresize=f1/f2/f3时，只会生效在最后一个指定的事件
     - 若同时使用onresize和addEventListener时，会交替执行，若事件相同则重复执行!!！
     - 若使用addEventListener重复定义相同的listener事件，只会执行一次
-    - 通过onxxx绑定的事件方法，只能在目标阶段和冒泡阶段执行
+    - 通过onXxx绑定的事件方法，只能在目标阶段和冒泡阶段执行
     - 通过addEventListener绑定的事件方法，我们可以通过第三个参数控制在捕获(true)或冒泡(false)阶段执行(默认为false)
   - addEventListener给一个对象注册多个listener
   - addEventListener对任何DOM都是有效的，而onclick仅限于HTML
   - addEventListener可以控制listener的触发阶段（捕获/冒泡），对于多个相同的事件处理器，不会重复触发，不需要手动使用removeEventListener清除
   - 对于IE9之前，相对应的是attachEvent和detachEvent
   - addEventListener
-    - This method allows the registration of event listeners on the event target. 
+    - 连续执行 addEventListener('click', cbFnRefVariable)时，只注册了一个cb
+    - 连续执行 addEventListener('click', ()=>{})时，注册了多个cb
+    - allows the registration of event listeners on the event target. 
     - If an EventListener is added to an EventTarget while it is processing an event, it will not be triggered by the current actions but may be triggered during a later stage of event flow, such as the bubbling phase.
     - If multiple identical EventListeners are registered on the same EventTarget with the same parameters, the duplicate instances are discarded. 
     - They do not cause the EventListener to be called twice and since they are discarded they do not need to be removed with the removeEventListener method.
   - Although the inline event registration model is ancient and reliable, it has one serious drawback. 
     - It requires you to write JavaScript behavior code in your XHTML structure layer, where it doesn't belong.
     - **avoid** writing inline javascript. It makes it harder to debug
+
 - onkeydown vs onchange
   - onkeydown: 当按键按下时，先触发事件发生，然后处理完后才会把按键对应的按键值显示在文本框中。当用户按下键盘按键时触发。
     - onkeypress event handler has been deprecated. You may want to use onkeydown instead。当键盘按键被按下并释放一个键时发生。

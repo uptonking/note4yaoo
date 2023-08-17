@@ -45,6 +45,11 @@ modified: 2023-01-14T15:47:04.431Z
   - 使用 useTranslation() 返回的 t 方法，类似ckeditor
   - 翻译可集中定义
 
+- https://github.com/inlang/inlang /ts
+  - https://inlang.com/
+  - globalization infrastructure for software && version control for apps
+  - [discussion about reactivity architecture](https://github.com/inlang/inlang/issues/1122)
+
 - https://github.com/noveogroup-amorgunov/localizify /ts/NoDeps
   - performant library for translation and localization in Node.js and the browser.
   - Detection user language in browser and in server requests

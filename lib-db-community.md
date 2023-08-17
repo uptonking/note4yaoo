@@ -39,10 +39,6 @@ modified: 2021-08-30T15:50:54.515Z
 
 - Obvious in retrospect, but I just realized that if you use prolly trees for your DB indices, you can run queries against any historical state of your DB (by simply not GC'ing old data). And in fact, @DoltHub supports that
 
-- ## "InfluxDB uses DataFusion for its Query Execution and Arrow as its internal data representation"
-- https://twitter.com/gunnarmorling/status/1683184256011366400
-  - Enjoyed reading this article about the system architecture of #InfluxDB 3.0
-  - [InfluxDB 3.0: System Architecture](https://www.influxdata.com/blog/influxdb-3-0-system-architecture/)
 
 - ## 今天发现 在 DB 里面对于 时间/空间或者多维的数据操作 , 用 R tree  来减少工作量似乎是个冷知识了.
 - https://twitter.com/fuergaosi/status/1658470145109680132

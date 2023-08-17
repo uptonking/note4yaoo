@@ -71,3 +71,6 @@ modified: 2022-08-21T10:03:57.063Z
   - https://github.com/tarunbatta/excelexportjs
   - Various server-side binaries and support libraries are present to help us export grids/tables data to excel sheets, but the same export handling at client side is a tough nut to crack. 
   - This plugin helps you achieve that, thereby providing advance features as well.
+# could-excel
+- https://github.com/odwyersoftware/sheet2api-js /js
+  - JavaScript Library for Google Sheets/Microsoft Excel Online through [sheet2api](https://sheet2api.com/).

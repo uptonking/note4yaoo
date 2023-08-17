@@ -313,6 +313,11 @@ function Note(props) {
 
 - ## 
 
+- ## RSC from Scratch. Part 1: Server Components
+- https://twitter.com/dan_abramov/status/1664681506218864640
+  - [RSC From Scratch. Part 1: Server Components](https://github.com/reactwg/server-components/discussions/5)
+  - we'll implement a very simplified version of React Server Components (RSC) from the scratch.
+
 - ## I want to recap a few points from our talk about the different kinds of components.
 - https://twitter.com/dan_abramov/status/1342260256638951425
 - Server Components are the new proposed kind of components. 

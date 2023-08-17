@@ -60,8 +60,12 @@ modified: 2021-09-20T20:12:38.499Z
   - Million is a drop-in replacement for React with a lightweight (<1kb) Virtual DOM
   - By computing the user interface beforehand with a compiler, Million reduces the overhead of traditional Virtual DOM.
   - While alternative libraries like Preact reduce bundle sizes by efficient code design, Million takes it a step further by leveraging compilation to make a quantum leap in improving bundle size and render speed.
+  - [How does Million.js ( @milliondotjs ) work?](https://twitter.com/aidenybai/status/1647005716350406656)
   - https://github.com/aidenybai/million-react
     - React Fiber is not supported by default, some features, particularly Suspense, are implemented only as passthrough components.
+  - https://github.com/aidenybai/hundred /ts/NoDeps
+    - Hundred is intended to be a toy block virtual DOM based off of Million.js, and is a proof-of-concept and a learning resource
+    - This implementation is similarly based off of [blockdom](https://github.com/ged-odoo/blockdom).
 
 ## preact
 

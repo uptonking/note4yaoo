@@ -937,6 +937,14 @@ modified: 2022-08-21T10:02:27.788Z
   - 基于Canvas开发Excel的技术预研项目
 - https://github.com/Harlock123/LCTDataGrid
   - keep the Canvas object as small as possible by only rendering the visible parts of the resulting Grid
+
+- https://github.com/jakever/canvas-spreadsheet /js/vue/inactive
+  - https://harlen.cn/canvas-spreadsheet/
+  - 基于Canvas的一款高性能在线编辑组件，拥有仿Excel的复制粘贴、拖拽柄、实时编辑、6种不同数据类型、基本数据校验等功能
+  - 支持undo/redo
+  - 目前仅提供了Vue版组件，后续会提供React版组件和支持纯JS环境中使用
+
+
 # list-grid-svg
 - svgtable /10Star/NALic/202105/js/d3
   - https://github.com/analyzer2004/svgtable
