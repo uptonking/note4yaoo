@@ -9,6 +9,16 @@ modified: 2023-03-18T09:44:00.939Z
 
 # guide
 
+# web-office
+- 支持私有/中立仓库，如openvsx，获取apps数据的api与桌面版可相同
+  - 通过平台标签描述支持的平台、浏览器、编辑器
+# extensions
+- extensions
+  - 类似vscode、ms-appsource
+  - 支持私有/中立仓库，如openvsx
+
+- scripts
+  - 类似script-lab, react-live
 # 飞书
 
 ## [字节跳动，投了一个EDA专家_202211](https://www.chinaventure.com.cn/news/113-20221123-372283.html)

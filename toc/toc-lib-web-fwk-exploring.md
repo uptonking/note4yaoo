@@ -32,6 +32,7 @@ modified: 2020-12-31T17:05:37.410Z
   - https://www.dataformsjs.com
   - A minimal JS Framework and standalone components for rapid development of single page applications.
   - 支持react, vue, handlebars, graphql
+  - A tiny browser-based JSX Compiler is also included as part of this Framework.
   - A few of the reasons for fast development include displaying JSON services using only Markup and Templating (Handlebars, Underscore, etc.) and defining App and Site features using HTML attributes and small JavaScript Plugins.
   - Now that both React and Vue have become very popular. 
     - separate React Components have been developed to help with React Development 
@@ -87,7 +88,7 @@ const CountingComponent = () => {
   - This allows the developer more freedom in the choice of the view syntax.
   - The Sinuous `observable` module provides a mechanism to store and update the application state in a reactive way. 
 
-- https://github.com/hyperhype/hyperscript /201901
+- https://github.com/hyperhype/hyperscript /201901/js/inactive
   - Create HyperText with JavaScript, on client or server.
   - https://github.com/Raynos/mercury
     - a modular ui framework influenced by hyperscript but much more heavily optimized.

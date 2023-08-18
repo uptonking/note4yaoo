@@ -66,7 +66,8 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## Weex 坟头草都几丈高啦，全指望开源社区驱动维护这么复杂的技术方案是不可行的
 - https://twitter.com/Brooooook_lyn/status/1678226894158954497
-  - 目前已知使用 Vue.js 手机 APP 的有 DCloud 的 UniApp 和来自社区维护的 Vue Native（基于 React Native）。但是，他们对于 Vue.js 官方的新技术的支持，并不是那么及时。甚至性能上，还会出很大的问题。
+  - 目前已知使用 Vue.js 手机 APP 的有 DCloud 的 UniApp 和来自社区维护的 Vue Native（基于 React Native）。
+  - 但是，他们对于 Vue.js 官方的新技术的支持，并不是那么及时。甚至性能上，还会出很大的问题。
 
 - ## 非核心业务，要尽量用别人的 API, 不要自己累死累活去重新研究和发明轮子。
 - https://twitter.com/Svwang1/status/1646669244158066689

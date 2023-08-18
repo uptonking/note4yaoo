@@ -208,4 +208,7 @@ modified: 2022-08-21T10:03:52.222Z
 
 - https://github.com/warmthsea/xlsx-preview /ts/vue
   - 基于XLSX、TypeScript、Vue3的 .xlsx 类型文件预览
+
+- https://github.com/hung1503/SpreadSheet /js
+  - An application used to fetch data from SPARQL api and display it on an Excel like table, built with React, JavaScript, and SCSS.
 # more

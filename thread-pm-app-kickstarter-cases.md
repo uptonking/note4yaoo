@@ -26,6 +26,16 @@ modified: 2023-03-30T13:31:09.049Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 小朋友入门学编程，推荐在 iPad 上玩 Playground 应用、程序员升职记（Human Resource Machine）游戏。
+- https://twitter.com/onlyice0328/status/1692364789996229022
+  - 这些都是编程游戏，边学边练，难度循序渐进，甚至不需要大人帮助
+# discuss-cases
+- ## 
+
 - ## 我是如何开发我的第一款产品BilibiliSummary，为什么放弃收费，最后如何在放弃开发的！！！
 - https://twitter.com/lxfater/status/1657646711735730176
 

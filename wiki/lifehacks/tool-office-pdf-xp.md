@@ -45,9 +45,15 @@ modified: 2020-12-29T17:52:48.584Z
 
 - ## 
 
-- ## 
+- ## 一个冷知识： 有些pdf文件加了密码限制编辑操作（就是你可以看不能改）， 
+- https://twitter.com/syeerzy/status/1692413182202327198
+  - 从pdf的文件格式标准来看，实际上“限制编辑”是不可能完成的， 因此这个功能其实是需要 “编辑软件” 和 “pdf文件” 串通一起完成，
+  - 因此只需要一个不支持此特性的pdf工具就能完美绕过
+- 最简单的不支持此特性的工具就是“打印机驱动” 
+  - 无须安装，不管macOS还是Windows，你都很容易“打印”一个限制编辑的pdf文件， 在弹出的打印窗口里，你都可以选择“保存为pdf” （不同操作系统版本描述略不同） 
+  - 这个新的pdf就是没有限制编辑的。
 
-- ## [Why is There a Lack of Open-Source PDF Editor Options? : opensource](https://www.reddit.com/r/opensource/comments/uoxbmn/why_is_there_a_lack_of_opensource_pdf_editor/)
+- ## [Why is There a Lack of Open-Source PDF Editor Options?](https://www.reddit.com/r/opensource/comments/uoxbmn/why_is_there_a_lack_of_opensource_pdf_editor/)
   - a few basic tasks: page manipulation, drawing, inserting text and images, filling out forms, and redactions. 
   - The general consensus from that thread is that there is no one free tool that does all of those, and several responders mentioned using a combination of tools.
   - I would imagine that such an editor would be low-hanging fruit for open-source development, especially when we have powerful open-source alternatives for things like Microsoft Office and the rest of the Adobe suite. Why does an open-source alternative to Adobe Acrobat Pro not exist
@@ -67,7 +73,7 @@ modified: 2020-12-29T17:52:48.584Z
 - LibreOffice is great at creating PDFs, but I've found that when I try to open and manipulate existing PDFs, everything gets corrupted. LibreOffice doesn't seem to preserve fonts, layouts, spacing, etc.
   - Inkscape can only do one page at a time, and it has problems similar to LibreOffice.
 
-- ## [Open-Source PDF viewer and editor : opensource](https://www.reddit.com/r/opensource/comments/dej32w/opensource_pdf_viewer_and_editor/)
+- ## [Open-Source PDF viewer and editor](https://www.reddit.com/r/opensource/comments/dej32w/opensource_pdf_viewer_and_editor/)
 - LibreOffice Draw allows you to view and edit PDFs. You can also use Firefox as a PDF(pdfjs) viewer
 
 - LibreOffice can edit PDF files, but will often corrupt formatting in my experience. 

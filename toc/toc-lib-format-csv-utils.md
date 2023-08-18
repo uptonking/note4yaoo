@@ -15,6 +15,9 @@ modified: 2022-11-06T15:46:05.676Z
   - the fastest in-browser CSV (or delimited text) parser for JavaScript. 
   - Papa Parse can parse a Readable Stream instead of a File when used in Node.js 
   - It is reliable and correct according to [RFC 4180 - Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://datatracker.ietf.org/doc/html/rfc4180)
+
+- https://github.com/fabiospampinato/csv-simple-parser /ts
+  - A simple, fast and configurable CSV parser.
 # examples
 - https://github.com/UgnisSoftware/react-spreadsheet-import /ts
   - https://ugnissoftware.github.io/react-spreadsheet-import

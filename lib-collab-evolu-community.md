@@ -12,6 +12,14 @@ modified: 2023-05-14T04:32:30.696Z
 # discuss-authors
 - ## 
 
+- ## 
+
+- ## I completely refactored Evolu and am finally satisfied with the code structure. Why? Because of @EffectTS_ Layer._202308
+- https://twitter.com/evoluhq/status/1692221690388885886
+  - The Effect Layer is just a functional constructor. 
+  - Now all platform dependencies are injected and hence switchable.
+  - React Native full support soon
+
 - ## ✨ introducing Evolu - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT._20220929
 - https://twitter.com/evoluhq/status/1575478499648774145
 - AbsurdSQL is dead and buggy. I had to rewrite it to wa-sqlite.

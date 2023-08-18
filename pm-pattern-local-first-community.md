@@ -9,6 +9,38 @@ modified: 2022-03-03T18:20:12.075Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## what's the Component-level big idea for local first apps? 
+- https://twitter.com/threepointone/status/1691454722518208513
+- Lots of cross over between local first and server side components, ie writing sync code that talks to your db rather than doing fetches by hand. 
+  - See @geoffreylitt ‘s awesome talk on **riffle** here
+- yeah, i think there's a big idea lurking which is basically like: at its best, local-first makes writing your app feel like php in a good simple way, but with a great modern UX
+- I think this direction is actually a _red herring(熏青鱼；转移注意力的话题；与事实不相干的论点)_. 
+  - After heading down that path, I realized that local-first is just a normal app with a fast network.
+  - Inevitably, you want to separate the render and main processes so you’ll be caching data in the render process after all…
+- I think this is what limited riffle as well, that every query blocked the main thread. Gotta go fast!
+  - Yeah (riffle)we’ve kept everything in render process for now. Has gotten us surprisingly far. Solves many problems, creates lots of new problems :) Probably will need a more split architecture eventually, but I still believe in keeping things synchronous as much as possible
+- I did something something similar using Electron with `nodeIntegration: true` . Then you can use SQLite directly in the renderer process.
+  - I really liked how it simplified your performance analysis. Everything has to fit in a single frame and can happen in a single call stack.
+  - It reminds me of game development. Because in a game, everything HAS to happen in a single frame. And you have to work with that performance constraint so you don’t have very complex queries.
+  - But I’m a productivity tool with dynamic queries, that’s going to be an issue…
+- The _final straw(终于导致失败(或垮台)的因素)_ for me was the security model. 
+  - If your app is using the internet, the lack of process isolation is really scary from a security perspective.
+
+- Most apps we use nowadays are cloud-first apps which mostly become useless when:
+  - there is no stable internet connection
+  - the service is offline or discontinued (h/t Google)
+
+- 
+- 
+- 
+- 
+- 
+
 # discuss
 - ## 
 

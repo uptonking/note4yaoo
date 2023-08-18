@@ -84,9 +84,11 @@ const fc = memo(() => {
 - https://twitter.com/wulianwen1/status/1691810099738677532
   - 因此mobx自己在内部写了一套数组的操作，保证数组的api只产生一次reaction。
   - 有没有更好的方法呢
+- 我理解的 batching 一般是将用户的多次修改合并为一次更新，而这里是 shift 是一次修改触发了多次 effect
 
 - 不确定是不是和我写的这个有一丢丢关系，vue 的 reactivity 这个底层包是没有做 reaction 的 batch 的，但是上层 runtime-core 是封装做了的
-- 我理解的 batching 一般是将用户的多次修改合并为一次更新，而这里是 shift 是一次修改触发了多次 effect
+  - 你是对的，微任务把之前的同步操作隔开了，所以连续多次的set操作不会同步触发watchEffect，而是在下一个微任务到来的时候触发一次reaction
+  - effect 和 watchEffect 的差别应该就是一个同步跑的，一个加了 schedule
 
 - Vue3's update has a flush queue, it provide a batch update ability.
 

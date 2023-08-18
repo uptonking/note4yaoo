@@ -16,14 +16,22 @@ modified: 2023-07-26T11:23:38.282Z
 - https://github.com/staltz/callbag-basics /1.5kStar/MIT/201711/js
   - allbag is just a spec, but callbag-basics is a real library you can use.
   - [callbag和rxjs有什么区别](https://www.zhihu.com/question/270126057/answer/352363505)
+    - 从终端用户角度没有区别，operator库实现者要换个写法。从思维模式上没有本质区别。
+    - 从使用思维上仍然是把业务逻辑包装成流，然后把流通过operator合起来运算。没有本质差别。
+    - 编程模型上几乎是等价的，只是API设计的口味不一样
   - https://github.com/callbag/callbag
     - A standard for JS callbacks that enables lightweight observables and iterables
     - Callbag中的source可以转换成RxJS的Observable
+  - https://github.com/0no-co/wonka
+    - https://wonka.kitten.sh/
+    - A tiny but capable push & pull stream library for TypeScript and Flow, loosely following the callbag spec
+    - a lightweight iterable and observable library loosely based on the callbag spec. 
 
 - https://github.com/reactivex/rxjs
   - /23.3kStar/Apache2/202011/ts
   - https://rxjs.dev/
   - A reactive programming library for JavaScript
+  - 替代: bacon, most
 - https://github.com/cyclejs/cyclejs /9.8kStar/MIT/202009/ts
   - [Cycle.js - Streams](https://cycle.js.org/streams.html)
   - A functional and reactive JavaScript framework for predictable code
@@ -44,7 +52,11 @@ modified: 2023-07-26T11:23:38.282Z
 - https://github.com/baconjs/bacon.js /ts
   - https://baconjs.github.io/
   - Functional reactive programming library for TypeScript and JavaScript
-- https://github.com/kefirjs/kefir
+  - Bacon.js is quite similar to RxJs
+    - The major difference is that in bacon, there are two distinct kinds of Observables: the EventStream and the Property. 
+    - The former is for discrete events while the latter is for observable properties that have the concept of "current value".
+    - there are no "cold observables", which means also that all EventStreams and Properties are consistent among subscribers
+- https://github.com/kefirjs/kefir /js/inactive
   - A Reactive Programming library for JavaScript
   - inspired by Bacon.js and RxJS with focus on high performance and low memory usage.
 - https://github.com/cujojs/most /js/inactive
@@ -77,7 +89,7 @@ modified: 2023-07-26T11:23:38.282Z
   - Current reactivity benchmarks (S.js, CellX) are focused on creation time, and update time for a static graph.
   - We've created a new benchmark that allows library authors to compare their frameworks against each other, and against the existing benchmarks, as well as against a new configurable benchmark with dynamically changing sources.
 
-- https://github.com/justin-schroeder/arrow-js /ts/NoDeps
+- https://github.com/justin-schroeder/arrow-js /ts/NoDeps/在benchmark非常靠后
   - https://www.arrow-js.com/docs/
   - A tiny ~2kb library for building reactive interfaces in native JavaScript
   - Static by default, reactive by choice
@@ -136,6 +148,18 @@ modified: 2023-07-26T11:23:38.282Z
   - 代码量大，功能全
   - Formily2.x 在实现的过程中发现 Mobx 还是存在一些不兼容 Formily 核心思想的问题，最终，只能重新造了一个轮子，延续 Mobx 的核心思想的 @formily/reactive
 
+- https://github.com/ryansolid/mobx-jsx /ts
+  - Raw MobX performance without being restrained by a Virtual DOM
+  - a demonstration of how MobX fine grain control can be leveraged directly in JSX for considerably better performance than pairing it with a Virtual DOM library
+  - It compiles JSX to DOM statements and wraps expressions in functions that can be called by the library of choice.
+  - MobX JSX works both with function and Class components
+  - MobX JSX also supports a Context API.
+  - Alternatively supports Tagged Template Literals or HyperScript
+  - Tagged Template solution is much more performant that the HyperScript version, but HyperScript opens up compatibility with some companion tooling
+
+- https://github.com/Riim/cellx /ts
+  - fast implementation of reactivity for javascript
+
 - https://github.com/emberjs/data /ts
   - a lightweight reactive data library for JavaScript applications that provides composable primitives for ordering query/mutation/peek flows, managing network and cache, and reducing data for presentation.
   - The core of Ember‍Data is the Store, which coordinates interaction between your application, the Cache, and sources of data (such as your API or a local persistence layer). Optionally, the Store can be configured to hydrate the response data into rich presentation classes.
@@ -146,8 +170,8 @@ modified: 2023-07-26T11:23:38.282Z
   - You can convert any HTML snippet into VanJS code with our online converter.
   - VanJS helps you manage states and UI bindings as well, with a more natural API
 # functional dom ui
-- https://github.com/choojs/choo
-  - /6.5kStar/MIT/202001/js
+- choo /6.5kStar/MIT/202001/js/在benchmark非常靠后
+  - https://github.com/choojs/choo
   - A 4kb framework for creating sturdy frontend applications
   - At the core of Choo is an event emitter, which is used for both application logic but also to interface with the framework itself. The package we use for this is nanobus.
   - Choo uses nanomorph, which diffs real DOM nodes instead of virtual nodes

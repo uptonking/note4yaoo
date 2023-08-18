@@ -45,7 +45,7 @@ modified: 2021-05-13T03:12:23.257Z
   - React standalone will use html so it needs a browser. So electron is like a chrome sandbox and it uses a lot of ressources.
   - The goal of react native is to compile and use native element. So you don't need the browser part and use less ressources.
 - React Native Mobile code cannot be shifted to RN for Windows/MAc since lot of RN mobile libs dont work with RNW
-# pieces
+# dev
 - react-native之前是滚动更新式的，定期发布。
   - 现在是做milestone式的，然后发现各种issue互相依赖，扯完皮几个月过去了... 
     - 当然现在这个项目由官方主导变成社区主导也是一个原因
@@ -53,6 +53,27 @@ modified: 2021-05-13T03:12:23.257Z
     - 扶不起的QT
   - 各自写一遍其实也没想象的工作量大
     - 如果有图表的话，工作量就大了
+# NativeScript
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [如何评价NativeScript？ - 知乎](https://www.zhihu.com/question/29468045/answers/updated)
+- 虽然NativeScript越来越成熟了，也加入了对vue的支持
+
+- ## [为啥国内很少人用NativeScript？ - 知乎](https://www.zhihu.com/question/268684469)
+- 坑太多了，实在是做不下去....
+  - 姑且不说组件你要想自定义非常麻烦（得写原生），有些组件是没有开源的。
+  - 生态的缺失就是一个大问题。
+
+# examples
+
+## xplat-solutions
+
+- https://github.com/OpenNative/open-native
+  - For our first integration, we've enabled NativeScript to use React Native native modules the same way one would use them in React Native.
 # hermes
 - hermes /6.4kStar/MIT/202106/cpp
   - https://github.com/facebook/hermes

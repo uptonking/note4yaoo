@@ -14,6 +14,7 @@ modified: 2020-12-08T14:05:52.048Z
 
 - tips
   - [npmjs.com displays per-version download counts](https://github.blog/changelog/2021-01-27-npmjs-com-displays-per-version-download-counts/)
+  - [npmgraph - enter npm module name to see the dependency graph](https://npmgraph.js.org/)
 
 - [most depended upon packages](https://www.npmjs.com/browse/depended)
   - lodash, core-js, moment, debug, uuid
@@ -71,14 +72,10 @@ modified: 2020-12-08T14:05:52.048Z
 - private-npm-registry
   - https://github.com/verdaccio/verdaccio
 # bugs
-
 - [[QUESTION] xxx is not a valid npm option](https://github.com/npm/cli/issues/5852)
   - node.js 18 comes with npm v9, which disallows 3rd party configs and breaks our pipeline. A new pr for upgrading is recommended. 
 - [Cannot set store-dir in NPM v9](https://github.com/pnpm/pnpm/issues/5621)
   - `echo 'store-dir=/some/path/.pnpm-store' >> /usr/local/etc/npmrc`
-
-
-
 
 - [npx doesn't work when in child workspace](https://github.com/npm/cli/issues/2826)
   - npm exec -w website -- docusaurus

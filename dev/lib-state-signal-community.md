@@ -407,3 +407,23 @@ state1.state.deniz = 11; // nothing
 - Should the computed example in the Guide then not access todo.completed.value to work as intended? Would we need to mark each property of a todo as a signal, or can we just do signal(todo) to make all its properties observable a la MobX?
   - We don't do deep observability by default like MobX.
   - There is an addon called preact-signal-store that turns all object properties into a signal
+# discuss-reactive
+- ## 
+
+- ## 
+
+- ## we use RxJS. Bacon is a great alternative, as is Most.js. 
+- https://twitter.com/BenLesh/status/588406868160024576
+  - The main advantage in RxJS is scheduling
+
+- ## RxJS isn't easy to learn. But the alternative lessons you'll learn if you try to roll your own streaming paradigm for your app with a lot of streaming data will be much, much more painful and costly.
+- https://twitter.com/BenLesh/status/1260332868234022914
+  - anything you create will just be another flavor of Observable without the safety guarantees.
+  - You don't like reading RxJS? Great! Don't use the operators! No one is forcing you. But creating your own observation pattern is a monumental mistake.
+
+- The operators aren't the real win to RxJS. They're just icing on the cake if you learn them.
+- The real wins are the guarantees.
+  - Guaranteed cleanup
+  - Idempotent unsubscribe
+  - Guarantees around call ordering
+  - Thoroughly tested and battle-tested types.
