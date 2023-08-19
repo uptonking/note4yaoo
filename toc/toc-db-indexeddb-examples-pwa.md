@@ -7,8 +7,11 @@ modified: 2022-11-14T15:12:02.783Z
 
 # toc-db-indexeddb-examples-pwa
 
-# pwa-with-indexeddb
+# guide
 
+- pwa-showcase
+  - vscode
+# pwa-with-indexeddb
 - https://github.com/mohitk0208/notes-pwa /202207/ts
   - https://notes-ysau.pages.dev/
   - Make notes in the browser itself, it runs offline and the data is saved in the browser.

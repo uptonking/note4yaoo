@@ -10,9 +10,6 @@ modified: 2023-01-21T18:58:29.846Z
 # guide
 
 # popular
-
-# vscode-web
-
 - https://github.com/DTStack/molecule
   - https://dtstack.github.io/molecule/
   - a lightweight Web IDE UI framework which is built with React.js and inspired by the VSCode. 
@@ -26,10 +23,27 @@ modified: 2023-01-21T18:58:29.846Z
   - 不提供针对特定端的以下能力
     - Desktop IDE 场景下的窗口管理
     - Cloud IDE 场景下的容器/虚拟机管理
+
+- https://github.com/VSCodium/vscodium
+  - binary releases of VS Code without MS branding/telemetry/licensing
+  - [Run vscodium in browser](https://github.com/VSCodium/vscodium/discussions/1469)
+    - is there a definitive answer for a web version of vscodium?
 # apps
 
-# extensions
-- https://github.com/bebo-dot-dev/jjs-vscode-toolbar
-  - A VSCode toolbar and context menu extension
-  - Modifies the VSCode toolbar and context menu to include a few useful commands 
+# vscode-web
+- https://github.com/Felx-B/vscode-web /js
+  - This project is aimed to build a web version of VSCode, this is not a fork, simply a web compilation of the VSCode project.
+  - Microsoft recently open sourced VSCode web compilation, so I simplified the build process to use the official compilation (no more tweak needed).
+# vscode-server
+- https://github.com/coder/code-server /ts
+  - VS Code in the browser
+  - Run VS Code on any machine anywhere and access it in the browser.
+  - Linux machine with WebSockets enabled, 1 GB RAM, and 2 vCPUs
+
+- https://github.com/gitpod-io/openvscode-server
+  - This project provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser. 
+  - It's based on the very same architecture used by Gitpod or GitHub Codespaces at scale.
+# vscode-integrations
+- https://github.com/betatim/vscode-binder /python
+  - VS Code on Binder, because sometimes you need a real editor.
 # more

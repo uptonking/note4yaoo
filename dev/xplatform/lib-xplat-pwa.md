@@ -41,6 +41,7 @@ modified: 2022-11-11T03:09:56.491Z
   - https://github.com/hemanth/awesome-pwa
 # usecase
 - 国外案例
+  - vscode
   - [excalidraw](https://excalidraw.com/)
   - [tldraw](https://www.tldraw.com/)
   - [draw.io](https://app.diagrams.net/)

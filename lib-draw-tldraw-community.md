@@ -137,6 +137,36 @@ modified: 2023-06-19T12:33:38.006Z
   - The whiteboard is very much a secondary feature in the platform but it's been extremely useful to allow for building free form UIs and I plan to use it in the future to do all sorts of crazy stuff like let customers define what a 'product card' looks like by building a template in the whiteboard bound to live data, saving it as a reusable template, and then rendering their entire catalog view (grouped/filtered/sorted cards) with the 'card' being that whiteboard template realized.
   - There's so little overhead in rendering N whiteboards that it's really no different than any other react component
   - We're about to kickoff building a 3d configurator sub-application using the whiteboard as a building block, basically a three JS 'shape' set to the viewport's bounds and then tool windows on top of it
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🚨 places where we wasted time over the last year
+- https://twitter.com/steveruizok/status/1692868098586509535
+- setting up cross device testing with wdio/browserstack. 
+  - We never really figured out how to test device specific stuff like copy/paste/files, and ended up with end to end tests using playwright instead. 
+  - **Wish we’d spent that time writing more e2e tests**
+- Setting up Sentry for error reporting. 
+  - Big lift to set up and we haven’t actioned a lot of work off of the results. We got a few rare useful errors but our community mostly shared those same errors.
+  - (Almost all of our sentry errors are cross browser issues, mainly with Firefox and browser APIs. A surprising number of people tried to use tldraw in Firefox’s private browsing mode, which disables idb storage)
+- Making detailed specs / designs for features. 
+  - To be fair I never really spent a lot of time doing this because I knew how hard it was to know ahead of time how a feature like image cropping/selection should work. 
+  - But 99% of spec work was tossed(抛弃；丢弃), just jump in
+  - 100000%. Requires a competent engineering team but the best place to design and smooth out rough edges is directly in a feature branch.
+- Using libraries as organizational chunks. 
+  - Lots of stuff was given it’s own package just because it was self contained, but that alone is not really a good reason to separate code into a package.
+  - I feel this. Sometimes I wonder what would be worse if we had drastically fewer of them at work.
+- Using a different origin for tldraw’s beta. 
+  - I didn’t appreciate that idb is contained within each origin, so we spent time trying to shuffle data when we closed the beta. **It should have been http://tldraw.com/beta rather than http://beta.tldraw.com**.
+- Nothing wrong with wasting time ofc, but these are places where time traveler Steve would have made different decisions
+- 
+- 
+- 
+- 
+
 # discuss
 - ## 
 

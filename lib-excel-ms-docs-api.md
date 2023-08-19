@@ -14,14 +14,17 @@ modified: 2023-08-17T08:28:11.799Z
 
 - ext vs scripts
   - 扩展的设置可保存与恢复，脚本每次重新执行
+  - 扩展适合打包较复杂的包含外部依赖的逻辑，脚本的逻辑不适合包含外部依赖，否则难以实现在线打包和执行
 
 - ext的实现
   - 参考编辑器插件扩展
+  - 支持本地/私有/中立仓库，如openvsx
 
 - scripts的实现
   - 难点
     - 在线导入并打包依赖如react/xlsx的能力，可通过预构建的扩展变通解决
-  - 参考react-live/mdx-live，每次将数据对象和解析后的代码传进去
+  - 参考react-live/mdx-live/script-lab，每次将数据对象和解析后的代码传进去
+  - 类似vscode像codepen的实时预览扩展
 # docs
 
 ## Excel JavaScript API

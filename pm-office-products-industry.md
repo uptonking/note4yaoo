@@ -15,10 +15,11 @@ modified: 2023-03-18T09:44:00.939Z
 # extensions
 - extensions
   - 类似vscode、ms-appsource
-  - 支持私有/中立仓库，如openvsx
+  - 支持本地/私有/中立仓库，如openvsx
 
 - scripts
-  - 类似script-lab, react-live
+  - 类似script-lab/react-live/mdx-live
+  - 类似vscode像codepen的实时预览扩展
 # 飞书
 
 ## [字节跳动，投了一个EDA专家_202211](https://www.chinaventure.com.cn/news/113-20221123-372283.html)
