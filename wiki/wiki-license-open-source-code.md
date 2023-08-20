@@ -23,6 +23,9 @@ modified: 2021-09-14T18:58:58.275Z
   - https://choosealicense.com/licenses/
   - linkware, watermark
   - [SPDX License List | Software Package Data Exchange (SPDX)](https://spdx.org/licenses/)
+  - [Open Source License Usage_202008](https://solutionshub.epam.com/blog/post/examining-open-source-license-usage)
+    - custom/32.7%, apache/27.8%, mit/26.3%, gpl/4.8%, agpl/1.40%, mpl/1.37%, others/3.4%
+  - [Open Source License Compliance](https://fossa.com/blog/tag/open-source-license-compliance/)
 
 - Copyright”指软件的版权和其它一切权利归软件作者所私有，用户只有使用权，没有其它如复制、重新修改发布等权利。
 - 而“Copyleft”的特点是仅有版权归原作者所有，其他一切权利可以与任何人共享。
@@ -136,7 +139,10 @@ modified: 2021-09-14T18:58:58.275Z
 - 如果你的确需要发布你的程序，但又不想开源，规避GPL的方法是通过LPC或者RPC间接调用库里的接口。只要库和你的程序不运行在同一进程下，就不需要开源
 # LGPL (Lesser GPL)
 - ref
+  - 修改后的源码和产物都必须同样以LGPL发布，对使用友好，对修改和发布不友好
   - https://tldrlegal.com/license/gnu-lesser-general-public-license-v3-(lgpl-3)
+
+- who is using #lgpl-license
 
 - This license is mainly applied to libraries. 
   - You may copy, distribute and modify the software provided that modifications are described and licensed for free under LGPL. 
@@ -162,17 +168,205 @@ modified: 2021-09-14T18:58:58.275Z
 - 如果修改LGPL协议的代码或者衍生，则所有修改的代码，涉及修改部分的额外代码和衍生的代码都必须采用LGPL协议。因此LGPL协议的开源代码很适合作为第三方类库被商业软件引用，但不适合希望以LGPL协议代码为基础，通过修改和衍生的方式做二次开发的商业软件采用。
 - 采用LGPL的代码，一般情况下它本身就是一个第三方库，这时候开发人员仅仅用到了它的功能，而没有对库本身进行任何修改，那么开发人员也不必公布自己的商业源代码。但是如果你修改了这个库的代码，那么你修改的代码必须全部开源，并且协议也是LGPL，但除了库源码之外的商业代码，仍不必公布
 
+- ## [The LGPL License - FOSSA](https://fossa.com/blog/open-source-software-licenses-101-lgpl-license/)
+- As a copyleft license, LGPL requires users to release the source code of any changes to the original software
+  - However, this requirement applies to a narrower set of code than the “regular” GPL.
+  - A strong copyleft license (GPL v3, for instance) applies to the entire software program, including linked libraries and other components.
+  - If you were to modify that LGPL-library and distribute it, then you’d have to release the changes. 
+  - But **if your program simply uses the LGPL-library, there’s no need to share your source code for your part of the program**. 
+  - You could even make your part of the program proprietary if you wanted to.
+- The LGPL has different requirements depending on how the library is integrated with the remainder of the program. 
+  - Generally, dynamic linking of LGPL code is considered best practice, as static linking makes meeting the license requirements more complicated. 
+  - While it is possible to comply with LGPL code that is integrated into proprietary code as a statically linked library, it requires more effort. 
+  - There is a kind of safe harbor for using LGPL code as a dynamically linked library; 
+  - **for statically linked libraries, a distributor must offer access to not only the library’s source code, but other information or materials necessary to rebuild the program**. 
+  - However, many programming languages have no equivalent of static linking, so that makes the dynamic linking safe harbor extremely helpful and effective in LGPL compliance.
+- Like GPL, LGPL imposes no conditions on using the code in software that’s sold commercially.
+
+- **LGPL is slightly different from other weak copyleft licenses, like the Mozilla Public License or Eclipse Public License, due to its special safe harbor for dynamic linking integration**.
+
+- The LGPL does not permit sublicensing of the code, nor does it allow contributors to be held liable for legal issues or damages.
+  - Like the MPL and CDDL, the EPL allows for sublicensing. 
+
+- ## [Does compiling a JS bundle with webpack/browserify violate the LGPL license?](https://opensource.stackexchange.com/questions/5139/does-compiling-a-js-bundle-with-webpack-browserify-violate-the-lgpl-license)
+  - In the case of Javascript, source code has to be understood as the source on which the programmer will make modifications, i.e. the non-minified source.
+  - The compilation process is not going to produce a binary but a minified version of the code that should be considered "object code".
+  - Thus, you can respect the terms of the license by releasing "object code" (the minified version) of the work using the library without the library itself. You could just put a link somewhere in your application so that users can download it.
+
+- ## [Want to use LGPL licensed library, do I need to change license or configure linker in some way?](https://www.reddit.com/r/rust/comments/fevz37/want_to_use_lgpl_licensed_library_do_i_need_to/)
+  - The LGPL does not forbid static linking, this is a common misconception. 
+  - The LGPL doesn't need your project to be licensed under LGPL, nor does it require dynamic linking. 
+  - All it requires you to do is to give abilities to modify the LGPL bits if they wish to (also, if you modify the LGPL bits you need to make your changes available under the LGPL) - that doesn't mean just giving people access to the LGPL source code, it means giving people the ability to run your application with arbitrary modified versions of the LGPL code. 
+  - The easiest way to satisfy that requirement is via dynamic linking, but it's not the only one. 
+  - If you give people access to the source code and the right to modify it (which you're normally doing with MIT licensed projects) that is one way to satisfy that requirement
+  - If your project wasn't open source you still wouldn't technically be forbidden from static linking, but you'd still have to make it possible to swap out the LGPL bits (for example, by providing object files of your project), although this is getting into territories where it is a bit tricky to comply so some commercial projects just straight up ban the use of LGPL licensed code.
+  - 👉🏻 The intent of the license is that a user should be able to substitute the library for their version
+    - There are some possible approaches.
+    - You can dynamically link the library. 
+    - You can provide a separate dynamically linked library that wraps over an LGPL licensed crate with C compatible API and load it with a library like libloading.
+    - You can provide the source code of your program. It doesn't have to be free software. 
+
+- [LGPL protected file](https://github.com/jsdom/jsdom/issues/2642)
+  - LGPL is suitable for a "dynamically-linked" file, but NOT for a "statically-linked" file. What do those terms mean in a JS context?
+  - Using webpack, minify, etc to aggregate a JS/TS project (as is standard practice), makes the project into a "statically-linked" monolith - which makes the entire work into an GPL-derivative work. 
+
 - [LGPL license in a concatenated JS file - Open Source Stack Exchange](https://opensource.stackexchange.com/questions/8063/lgpl-license-in-a-concatenated-js-file)
   - LGPL goes only for the code it's licensed under and for modifications of said code.
   - If the LGPL code would be in a separate file, then you would only open source that file under LGPL.
 
-- [LGPL is more business friendly than GPL; it's literally "lesser" GPL.](https://news.ycombinator.com/item?id=35461088)
+- ## [LGPL is more business friendly than GPL; it's literally "lesser" GPL.](https://news.ycombinator.com/item?id=35461088)
   - You can use LGPL in commercial, closed-source projects as long as you keep the LGPL code in a separate dynamically linked library, e.g. a DLL, and provide a way for users to swap it out for their own patched DLL if they wish. (Plus some other license terms.)
   - Also, you can always use LGPL code under the terms of the GPL, so there's no way LGPL is more restrictive than GPL.
   - Beware that you may need to be careful using LGPL code in a browser: JavaScript is source code not object code, arguing WASM is a DLL wouldn’t help, **most JavaScript minifiers perform static linking**, and sending LGPL code to the browser could be considered distribution. I always avoided all LGPL licensed libraries when doing commercial front-end work.
+# MPL (Mozilla Public License)
+- ref
+  - 修改后的源码必须同样以LGPL发布
+  - 产物可以不同license发布，**对修改友好**
+  - 可以兼容GPL
+  - https://tldrlegal.com/license/mozilla-public-license-2.0-(mpl-2)
+  - [MPL 2.0 FAQ — Mozilla](https://www.mozilla.org/en-US/MPL/2.0/FAQ/)
 
-- [How to legally use LGPL javascript in a commercial web site? – iTecNote](https://itecnote.com/tecnote/javascript-how-to-legally-use-lgpl-javascript-in-a-commercial-web-site/)
-  - That make sense for programs you compile to binary, but what about JavaScript?
+- who is using #MPL-license
+  - mozilla firefox/thunderbird
+  - libreoffice
+
+- MPL is a copyleft license that is easy to comply with. 
+  - You must make the source code for any of your changes available under MPL, 
+  - but you can combine the MPL software with proprietary code, as long as you keep the MPL code in separate files. 
+  - Version 2.0 is, by default, compatible with LGPL and GPL version 2 or greater. 
+  - You can distribute binaries under a proprietary license, as long as you make the source available under MPL.
+- must include copyright/license/original, disclose source
+
+- 特点
+  - 版权约束较弱（受限于单个文件）
+  - 项目作品适合商业用途
+  - 被许可方可以修改项目
+  - 被许可方必须提供引用说明
+  - 被许可方可以根据不同条款重新发布衍生作品
+  - 被许可方不得重新许可MPL许可的资源
+  - 被许可方**必须将其衍生作品与MPL许可的源代码一起分发**
+
+- MPL虽然要求对于经MPL许可证发布的源代码的修改也要以MPL许可证的方式再许可出来，以保证其他人可以在MPL的条款下共享源代码。
+  - 但是，在MPL许可证中对“发布”的定义是“以源代码方式发布的文件”，这就意味着MPL允许一个企业在自己已有的源代码库上加一个接口，除了接口程序的源代码以MPL许可证的形式对外许可外，源代码库中的源代码就可以不用MPL许可证的方式强制对外许可。
+  - 这些，就为借鉴别人的源代码用做自己商业软件开发的行为留了一个方式
+- MPL许可证第三条第7款中允许被许可人将经过MPL许可证获得的源代码同自己其他类型的代码混合得到自己的软件程序。
+- 要求源代码的提供者不能提供已经受专利保护的源代码
+- 要求所有再发布者都得有一个专门的文件就对源代码程序修改的时间和修改的方式有描述
+- MPL 2.0与Apache许可证以及GPL第二版或更新、LGPL2.1版或更新，及AGPL第三版或更新兼容。而1.1版因为有“一些复杂的限制”造成与GPL的不兼容（从而阻止升级到MPL 2.0）
+
+- The MPL is a simple copyleft license. 
+  - The MPL's "file-level" copyleft is designed to encourage contributors to share modifications they make to your code, while still allowing them to combine your code with code under other licenses (open or proprietary) with minimal restrictions.
+
+- ## [Mozilla Public License 2.0 - FOSSA](https://fossa.com/blog/open-source-software-licenses-101-mozilla-public-license-2-0/)
+- Weak copyleft licenses like the Mozilla Public License 2.0 also require users to disclose their changes to the source code, but requires sharing of a narrower set of code. 
+  - If an author reworks any of the original files, they have to release those updates when distributing the code and license them under the MPL.
+  - 👉🏻 However, **if the author keeps the MPL’d code in separate files, they can combine that code with closed-source code to create an aggregate work**. 
+  - The new code files can be kept proprietary or released **under a different license**.
+  - This is sometimes referred to as file-based copyleft.
+- MPL 2.0 obligates users to state that the code is under the MPL license and share where they can find the license
+- Sublicense binaries. **A developer may place binaries under a different license in the context of an aggregate work**.
+
+- ### mpl vs lgpl
+- Unlike the MPL, the LGPL does not allow users to sublicense the code. 
+  - It also requires anyone who includes the code as part of a consumer device to include any installation information necessary to update and reinstall the software.
+
+- ### mpl vs epl
+
+- [What are some differences between MPLv2 and EPLv2?](https://opensource.stackexchange.com/questions/10860/what-are-some-differences-between-mplv2-and-eplv2)
+  - The MPL is compatible with the GPL by default.
+  - The EPL is not compatible with the GPL by default. 
+
+- Both the MPL v2.0 and EPL v2.0 allow contributors to optionally release code either under the license by which it was originally released or under future published versions of the respective licenses. As far as I can tell, neither license implicitly upgrades to a future version
+
+- These two licenses have a fair amount in common, including that both allow for aggregate works to be sublicensed. 
+- One key difference is that the EPL offers additional legal protections to contributors.
+  - Namely, any company that uses EPL’d code in commercial software must defend the code’s contributors should any lawsuits or damages arise regarding that software. Both licenses contain an explicit grant of patent rights.
+
+- ## [How does the scope of the MPL's copyleft compare with the LGPL and GPL's copyleft?](https://www.mozilla.org/en-US/MPL/2.0/FAQ/)
+- MPL: The copyleft applies to any files containing MPLed code.
+- LGPL: The copyleft applies to any library based on LGPLed code.
+- GPL: The copyleft applies to all software based on GPLed code.
+
+- ## I want to use software which is available under the MPL. What do I have to do?
+- Nothing. 
+- Like all other free and open source software, software available under the MPL is available for anyone (including individuals and companies) to use for any purpose. 
+- The **MPL only creates obligations for you if you want to distribute the software outside** your organization.
+
+- ## I want to distribute (outside my organization) executable programs or libraries that I have compiled from someone else's unchanged MPL-licensed source code, either standalone or part of a larger work. 
+- You must inform the recipients where they can get the source for the MPLed code in the executable program or library you are distributing (i.e., you must comply with Section 3.2). 
+- You may distribute any executables you create under a license of your choosing, as long as that license does not interfere with the recipients' rights to the source under the terms of the MPL.
+
+- ## I want to distribute (outside my organization) MPL-licensed source code that I have modified. 
+- You must inform the recipients that the **source code is made available to them under the terms of the MPL** (Section 3.1), including any Modifications (as defined in Section 1.10) that you have created.
+- You must respect the restrictions on removing or altering notices in the source code
+
+- ## I want to distribute (outside my organization) an executable program based on MPL-licensed source code that I have modified. What do I have to do?
+- You must **make available the MPL-licensed portions of the source code** as described in the previous question, and inform the recipients how they can obtain such source code
+
+- ## If I use MPL-licensed code in my proprietary application, will I have to give all the source code away?
+- No. The license requires that Modifications (as defined in Section 1.10 of the license) must be licensed under the MPL and made available to anyone to whom you distribute the Source Code. 
+- However, new files containing no MPL-licensed code are not Modifications, and therefore do not need to be distributed under the terms of the MPL, even if you create a Larger Work (as defined in Section 1.7) by using, compiling, or distributing the non-MPL files together with MPL-licensed files. 
+- This allows, for example, programs using MPL-licensed code to be statically linked to and distributed as part of a larger proprietary piece of software, which would not generally be possible under the terms of stronger copyleft licenses.
+# EPL (Eclipse Public License)
+- ref
+  - 对修改友好，但默认与GPL不兼容
+  - https://tldrlegal.com/license/eclipse-public-license-1.0-(epl-1.0)
+  - https://www.eclipse.org/legal/epl-2.0/faq.php
+
+- who is using #epl-license
+  - eclipse jetty/golo
+  - clojure
+
+- This license, made and used by the Eclipse Foundation, is **similar to GPL** but allows you to link code under the license to proprietary applications. 
+  - You may also license binaries under a proprietary license, as long as the source code is available under EPL.
+- must include copyright/license/original, disclose source, compensate for damages
+
+- EPL1.0 特点
+  - 较弱的版权约束（受限于软件“模块”）
+  - 项目作品适合商业用途
+  - 被许可方可以修改项目
+  - 如果你修改了作品，则**必须以相同的条款发布修改后的作品**
+  - 如果你使用了作品，无需以相同的条款发布衍生作品
+  - 软件的商业分销商必须在因商业用途导致的诉讼/损害中保护或赔偿原始EPL贡献者
+
+- 对商用友好
+  - 要求 公开源码、协议和版权信息
+  - 允许 商用、分发、修改、专利授权、私用、附加协议
+  - 禁止 责任承担
+
+- ## [The Eclipse Public License - FOSSA](https://fossa.com/blog/open-source-software-licenses-101-eclipse-public-license/)
+- As a weak copyleft license, the EPL is a middle ground of sorts between permissive options (like the MIT License or Apache License 2.0) and strong copyleft licenses (like GPL v2 and GPL v3.)
+- A core requirement of the EPL — one that’s not part of permissive licenses — is that derivative works of EPL-licensed code must also be licensed under the EPL. 
+  - (As such, anyone who distributes a program that constitutes such a derivative work must also make their source code available.)
+- 👉🏻 However, the EPL’s definition for a derivative work is narrower than GPL’s.
+  - **Under the EPL, if you simply use — rather than modify — an EPL-licensed component and keep it in a separate file, that would not constitute a derivative work, and you would not be required to make available your source code**. 
+  - With the GPLs, however, any use (modified or not) of the licensed code would create a derivative work.
+- Users can rework the code, but if they distribute these modifications, they must release these updates in source code form.
+- Users can add a Secondary License to enable compatibility with GPL v2 or later
+
+- ### EPL vs MPLv2
+- A notable difference between the two is that the the MPL 2.0 does not include the EPL’s legal protections for project contributors.
+
+- Like the EPL, the Mozilla Public License 2.0 allows users to keep (unmodified) MPL’d code in a separate file, then combine that code with code under a different license to create an aggregate work. The new/additional files can be released under a different license.
+
+- ### epl vs lgpl
+- A notable difference between the LGPL and other weak copyleft licenses is that the LGPL does not allow users to sublicense binaries under other terms, while the EPL and MPL 2.0 do.
+
+- ## What are the major changes between EPL-1.0 and EPL-2.0?
+- The term of art is now referred to as "file" rather than "module"; 
+- The choice of law provisions has been removed; 
+- The license is **now suitable for scripting languages such as JavaScript**; and
+- The license now includes an option to add a secondary license for GPL-2.0+ compatibility.
+
+- ## [EPL-Licensed Library with Closed-Source Commercial Product](https://softwareengineering.stackexchange.com/questions/152983/epl-licensed-library-with-closed-source-commercial-product)
+- EPLv1 is copyleft, because it requires you to release any changes you made to the EPL code while working on your main app. 
+- **The difference from GPL is that it's a commercial-friendly copyleft, requiring you only to make those changes available and only if you distribute your commercial app**. 
+  - **And if you made no changes, no source code to release**
+
+- You need to mention it includes EPL code, and allow them to request access to the source code of the EPL code if they want, including any modifications you've made to it. Your own code though, which only uses the EPL code in an import for example, does not need to be made EPL, and you do not have to give its source away
+
+- ## Is my EPL-2.0 licensed project GPL compatible by default?
+- No. EPL-2.0 licensed projects may explicitly add GPL compatibility by way of adding a Secondary License
 # AGPL (Affero General Public License)
 - you have to allow the source to be downloaded even if you never distribute the binary but do provide a service
 - GPL v2和v3还有一个非常大的“漏洞”，就是软件“发布” 才必须开源。
@@ -180,6 +374,33 @@ modified: 2021-09-14T18:58:58.275Z
   - 随着以Google为代表的软件作为服务的互联网公司的兴起，它们的“不分发软件，为客户提供网络服务”的商业模式就不受GPL协议的约束
 - AGPL = GPL + 一条限制
 - 一条限制：如果使用AGPL许可的软件与用户通过网络进行交互，也需要提供源代码给用户，所有的修改也要给用户
+
+- ## [The AGPL License - FOSSA](https://fossa.com/blog/open-source-software-licenses-101-agpl-license/)
+- The idea behind the AGPL License was to address the “application service provider (ASP) loophole(漏洞), ”
+  - The AGPL License is based on GPL v3. It has the same requirements, plus the statement regarding remote access via a network.
+  - Let’s say you create a software program. Another developer takes and modifies it, and then provides access to that modification to paying customers through a software-as-a-service model. 
+  - Under the GPL v3, that modification would essentially become proprietary because it wasn’t technically distributed. 
+  - Under AGPL, however, that developer would need to make their modified source code available for download.
+
+- Users can change or rework the code, but if they distribute these changes/modifications in any public way (including over a server), they must release these updates in source code form under the AGPL license.
+  - As long as these modifications are also released under the GNU AGPL, they can be distributed to others.
+
+- The AGPL License does not permit sublicensing of the code; 
+  - that is, you cannot rework or add to the code and then close those changes off to the public. 
+  - The “open source-ness” of the original code follows any update or addition. 
+  - Both GPL v2 and GPL v3 contain this provision as well.
+# Server Side Public License (SSPL)
+- [Server Side Public License FAQ](https://www.mongodb.com/licensing/server-side-public-license/faq)
+- [Server Side Public License (SSPL) | MongoDB](https://www.mongodb.com/licensing/server-side-public-license)
+
+- ## Why did you base the SSPL on GPL v3 instead of AGPL?
+  - The AGPL is a modified version of GPL v3. 
+  - The only additional requirement of AGPL is in section 13: if you run a modified program on a server and let other users communicate with it there, you must open source the source code corresponding to your modified version, known as the “Remote Network Interaction” provision of AGPL.
+  - 👉🏻 **There is some confusion in the marketplace about the trigger and scope of the Remote Network Interaction provision of AGPL**.
+  - As a result, we decided to base the SSPL on GPL v3 and to add a new section 13 which clearly and explicitly sets forth the conditions to offering the licensed program as a third-party service.
+
+- ## What specifically is the difference between the GPL and the SSPL?
+  - The only substantive modification is section 13, which makes clear the condition to offering MongoDB as a service. A company that offers a publicly available MongoDB as a service must release the software it uses to offer such service under the terms of the SSPL, including the management software, user interfaces, application program interfaces, automation software, monitoring software, backup software, storage software and hosting software, all such that a user could run an instance of the service using the source code made available.
 # BSD
 - ref
   - https://tldrlegal.com/license/bsd-3-clause-license-(revised)
@@ -245,96 +466,6 @@ modified: 2021-09-14T18:58:58.275Z
 - must include copyright/license
 
 - The ISC license is functionally equivalent to the BSD 2-Clause and MIT licenses, removing some language that is no longer necessary.
-# MPL (Mozilla Public License)
-- ref
-  - https://tldrlegal.com/license/mozilla-public-license-2.0-(mpl-2)
-
-- MPL is a copyleft license that is easy to comply with. 
-  - You must make the source code for any of your changes available under MPL, 
-  - but you can combine the MPL software with proprietary code, as long as you keep the MPL code in separate files. 
-  - Version 2.0 is, by default, compatible with LGPL and GPL version 2 or greater. 
-  - You can distribute binaries under a proprietary license, as long as you make the source available under MPL.
-- must include copyright/license/original, disclose source
-
-- 特点
-  - 版权约束较弱（受限于单个文件）
-  - 项目作品适合商业用途
-  - 被许可方可以修改项目
-  - 被许可方必须提供引用说明
-  - 被许可方可以根据不同条款重新发布衍生作品
-  - 被许可方不得重新许可MPL许可的资源
-  - 被许可方**必须将其衍生作品与MPL许可的源代码一起分发**
-
-- BSD协议和GPL协议的折衷点
-  - 要求 公开源码、协议和版权信息
-  - 允许 商用、分发、修改、专利授权、私用、附加协议
-  - 禁止 责任承担、商标使用
-- MPL虽然要求对于经MPL许可证发布的源代码的修改也要以MPL许可证的方式再许可出来，以保证其他人可以在MPL的条款下共享源代码。
-  - 但是，在MPL许可证中对“发布”的定义是“以源代码方式发布的文件”，这就意味着MPL允许一个企业在自己已有的源代码库上加一个接口，除了接口程序的源代码以MPL许可证的形式对外许可外，源代码库中的源代码就可以不用MPL许可证的方式强制对外许可。
-  - 这些，就为借鉴别人的源代码用做自己商业软件开发的行为留了一个方式
-- MPL许可证第三条第7款中允许被许可人将经过MPL许可证获得的源代码同自己其他类型的代码混合得到自己的软件程序。
-- 要求源代码的提供者不能提供已经受专利保护的源代码
-- 要求所有再发布者都得有一个专门的文件就对源代码程序修改的时间和修改的方式有描述
-- MPL 2.0与Apache许可证以及GPL第二版或更新、LGPL2.1版或更新，及AGPL第三版或更新兼容。而1.1版因为有“一些复杂的限制”造成与GPL的不兼容（从而阻止升级到MPL 2.0）
-
-- ## [How does the scope of the MPL's copyleft compare with the LGPL and GPL's copyleft?](https://www.mozilla.org/en-US/MPL/2.0/FAQ/)
-- MPL: The copyleft applies to any files containing MPLed code.
-- GPL: The copyleft applies to all software based on GPLed code.
-- LGPL: The copyleft applies to any library based on LGPLed code.
-
-- ## I want to use software which is available under the MPL. What do I have to do?
-- Nothing. 
-- Like all other free and open source software, software available under the MPL is available for anyone (including individuals and companies) to use for any purpose. 
-- The MPL only creates obligations for you if you want to distribute the software outside your organization.
-
-- ## I want to distribute (outside my organization) executable programs or libraries that I have compiled from someone else's unchanged MPL-licensed source code, either standalone or part of a larger work. 
-- You must inform the recipients where they can get the source for the MPLed code in the executable program or library you are distributing (i.e., you must comply with Section 3.2). 
-- You may distribute any executables you create under a license of your choosing, as long as that license does not interfere with the recipients' rights to the source under the terms of the MPL.
-
-- ## I want to distribute (outside my organization) MPL-licensed source code that I have modified. 
-- You must inform the recipients that the source code is made available to them under the terms of the MPL (Section 3.1), including any Modifications (as defined in Section 1.10) that you have created.
-- You must respect the restrictions on removing or altering notices in the source code
-
-- ## I want to distribute (outside my organization) an executable program based on MPL-licensed source code that I have modified. What do I have to do?
-- You must make available the MPL-licensed portions of the source code as described in the previous question, and inform the recipients how they can obtain such source code
-
-- ## If I use MPL-licensed code in my proprietary application, will I have to give all the source code away?
-- No. The license requires that Modifications (as defined in Section 1.10 of the license) must be licensed under the MPL and made available to anyone to whom you distribute the Source Code. 
-- However, new files containing no MPL-licensed code are not Modifications, and therefore do not need to be distributed under the terms of the MPL, even if you create a Larger Work (as defined in Section 1.7) by using, compiling, or distributing the non-MPL files together with MPL-licensed files. 
-- This allows, for example, programs using MPL-licensed code to be statically linked to and distributed as part of a larger proprietary piece of software, which would not generally be possible under the terms of stronger copyleft licenses.
-# EPL (Eclipse Public License)
-- ref
-  - https://tldrlegal.com/license/eclipse-public-license-1.0-(epl-1.0)
-  - https://www.eclipse.org/legal/epl-2.0/faq.php
-
-- This license, made and used by the Eclipse Foundation, is **similar to GPL** but allows you to link code under the license to proprietary applications. 
-  - You may also license binaries under a proprietary license, as long as the source code is available under EPL.
-- must include copyright/license/original, disclose source, compensate for damages
-
-- EPL1.0 特点
-  - 较弱的版权约束（受限于软件“模块”）
-  - 项目作品适合商业用途
-  - 被许可方可以修改项目
-  - 如果你修改了作品，则**必须以相同的条款发布修改后的作品**
-  - 如果你使用了作品，无需以相同的条款发布衍生作品
-  - 软件的商业分销商必须在因商业用途导致的诉讼/损害中保护或赔偿原始EPL贡献者
-
-- 对商用友好
-  - 要求 公开源码、协议和版权信息
-  - 允许 商用、分发、修改、专利授权、私用、附加协议
-  - 禁止 责任承担
-- EPL 1.0
-  - 允许Recipients任意使用、复制、分发、传播、展示、修改以及改后闭源的二次商业发布
-  - 当一个Contributors将源码的整体或部分再次开源发布的时候, 必须继续遵循EPL开源协议来发布, 而不能改用其他协议发布
-  - 商业软件可以使用，也可以修改EPL协议的代码，但要承担代码产生的侵权责任
-- What are the major changes between EPL-1.0 and EPL-2.0?
-  - The term of art is now referred to as "file" rather than "module"; 
-  - The choice of law provisions has been removed; 
-  - The license is now suitable for scripting languages such as JavaScript; and
-  - The license now includes an option to add a secondary license for GPL-2.0+ compatibility.
-- EPLv1 is copyleft, because it requires you to release any changes you made to the EPL code while working on your main app. 
-  - The difference from GPL is that it's a commercial-friendly copyleft, requiring you only to make those changes available and only if you distribute your commercial app. 
-  - And if you made no changes, no source code to release
 # Common Public Attribution License
 - ref
   - https://tldrlegal.com/license/common-public-attribution-license-version-1.0-(cpal-1.0)
@@ -414,18 +545,6 @@ modified: 2021-09-14T18:58:58.275Z
   - https://github.com/DataGridXL/DataGridXL
   - https://github.com/ailon/markerjs2
   - https://icons8.com/license
-# Server Side Public License (SSPL)
-- [Server Side Public License FAQ](https://www.mongodb.com/licensing/server-side-public-license/faq)
-- [Server Side Public License (SSPL) | MongoDB](https://www.mongodb.com/licensing/server-side-public-license)
-
-- Why did you base the SSPL on GPL v3 instead of AGPL?
-  - The AGPL is a modified version of GPL v3. 
-  - The only additional requirement of AGPL is in section 13: if you run a modified program on a server and let other users communicate with it there, you must open source the source code corresponding to your modified version, known as the “Remote Network Interaction” provision of AGPL.
-  - There is some confusion in the marketplace about the trigger and scope of the Remote Network Interaction provision of AGPL.
-  - As a result, we decided to base the SSPL on GPL v3 and to add a new section 13 which clearly and explicitly sets forth the conditions to offering the licensed program as a third-party service.
-
-- What specifically is the difference between the GPL and the SSPL?
-  - The only substantive modification is section 13, which makes clear the condition to offering MongoDB as a service. A company that offers a publicly available MongoDB as a service must release the software it uses to offer such service under the terms of the SSPL, including the management software, user interfaces, application program interfaces, automation software, monitoring software, backup software, storage software and hosting software, all such that a user could run an instance of the service using the source code made available.
 # Elastic License
 - [FAQ on Elastic License 2.0 (ELv2)](https://www.elastic.co/licensing/elastic-license/faq)
 - [Elastic License 2.0](https://www.elastic.co/licensing/elastic-license)

@@ -99,6 +99,9 @@ modified: 2020-12-08T14:05:41.408Z
   - Using Webpack in development in a monorepo can be challenging because, by default, it will try to keep your entire JavaScript codebase in memory.
     - Kevin addresses this problem by allowing you to create separate Webpack configs for different parts of your codebase; 
     - it then manages these configs by having Webpack only watch and build relevant files.
+
+- https://github.com/godaddy/radpack /js
+  - Radpack fuses the best of both worlds by taking advantage of build-time bundling, with graph-based run-time loading to prevent wasteful waterfalls.
 # repos-monorepo
 - 在子repo中共用webpack配置的示例
   - monorepo-react-webpack-ts

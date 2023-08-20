@@ -15,7 +15,7 @@ modified: 2022-11-08T19:04:00.289Z
   - virtualized
   - lazy-editor: easier for custom layout
   - draggable
-  - columns
+  - layout-columns
   - search
 
 - 开源编辑器

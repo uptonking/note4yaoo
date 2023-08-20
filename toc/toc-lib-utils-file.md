@@ -277,6 +277,9 @@ modified: 2023-04-05T19:35:14.347Z
   - Detect the file type of a Buffer/Uint8Array/ArrayBuffer
   - file type is detected by checking the magic number of the buffer.
   - This package is for detecting binary-based file formats, not text-based formats like .txt, .csv, .svg, etc.
+# archive/zip/rar
+- https://github.com/SheetJS/cfb-editor
+  - Archive (ZIP/CFB/MAD) Editor
 # more
 
 # discuss

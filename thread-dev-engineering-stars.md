@@ -7,8 +7,17 @@ modified: 2021-08-10T03:51:01.891Z
 
 # thread-dev-engineering-stars
 
-# discuss
+# discuss-stars
 
+- ## 
+
+- ## 
+
+- ## You don’t like something? Fix it, instead of complaining.
+- https://twitter.com/catalinmpit/status/1693165227183837429
+- Complain, but be nice and provide suggestions.
+
+# discuss
 - ## 
 
 - ## Without any subjective, measurable, and agreed on goals and metrics, striving for "clean code" is a waste of time. 

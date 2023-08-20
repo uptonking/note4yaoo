@@ -36,6 +36,17 @@ one sheet while the evaluated data in other sheets shows 'Loading'
 - we tried to install the library as a backend (full nodejs app) and it cannot run as it is. 
   - the data model is relying on the owl library as well, which simply cannot run on a nodejs server because it uses the web API. Sorry for misleading you. 
   - However, we are currently considering different approaches to make the lib backend-only asap.
+# discuss-authors
+- ## 
+
+- ## 
+
+- ## 
+
+- ## As of now(202207), spreadsheet is more used as BI for reporting on Odoo data; so we prefer to monetize it to finance devs.
+- https://twitter.com/fpodoo/status/1545015420360556550
+  - We have a long term goal to develop a full open source office suite; it's just one step forward. (no promise, as it's difficult to guarantee priorities in long term)
+
 # discuss
 - ## 
 

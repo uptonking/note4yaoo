@@ -125,6 +125,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/tannerlinsley/react-virtual
 
 - luckysheet /4.5kStar/MIT/202202/js/vanillajs
+  - https://github.com/dream-num/Luckysheet
   - https://github.com/mengshukeji/Luckysheet
   - https://github.com/dream-num/univer
   - https://mengshukeji.github.io/LuckysheetDemo/
@@ -943,15 +944,13 @@ modified: 2022-08-21T10:02:27.788Z
   - 基于Canvas的一款高性能在线编辑组件，拥有仿Excel的复制粘贴、拖拽柄、实时编辑、6种不同数据类型、基本数据校验等功能
   - 支持undo/redo
   - 目前仅提供了Vue版组件，后续会提供React版组件和支持纯JS环境中使用
-
-
 # list-grid-svg
 - svgtable /10Star/NALic/202105/js/d3
   - https://github.com/analyzer2004/svgtable
   - https://observablehq.com/@analyzer2004/svgtable
   - An SVG Table with sticky rows, columns and many other features.
 # list-grid-table-tr-td
-- handsontable 6.2.2 /MIT/13.8kStar/202007/js
+- handsontable v6.2.2 /13.8kStar/MIT~Paid/202007/js
   - https://github.com/handsontable/handsontable
   - https://handsontable.com/
   - 基于table标签实现
@@ -962,6 +961,8 @@ modified: 2022-08-21T10:02:27.788Z
   - 支持undo，[Q: Possible to combine multiple actions into single undo/redo step?](https://github.com/handsontable/handsontable/issues/7324)
   - https://github.com/handsontable/handsontable/releases/tag/7.0.0
   - [Handsontable drops open source for a non-commercial license_201903](https://github.com/handsontable/handsontable/issues/5831)
+    - [Handsontable v7 and later versions are fully commercial so it really depends on your case](https://twitter.com/handsontable/status/1164198101726433282). 
+    - If you want to fully integrate it with your software while maintaining the OSS license, then your only option is to use v6.2.2 - the last one released under the MIT license.
   - forks
     - https://github.com/swsvindland/opentable /inactive
     - https://github.com/rathbone-labs/jacksontable /inactive
@@ -1189,8 +1190,9 @@ modified: 2022-08-21T10:02:27.788Z
 - https://github.com/handsontable/formula.js /MIT/js
   - JavaScript implementation of most Microsoft Excel formula functions
   - forks
+  - https://github.com/formulajs/formulajs /MIT/js
   - https://github.com/jspreadsheet/formulajs
-  - https://github.com/formulajs/formulajs
+  - https://github.com/sutoiku/formula.js
 
 - https://github.com/wx-chevalier/excel.ts /ts
   - excel.ts 是基于 TypeScript 编写的前端 Excel 综合解决方案，包含了 POJO Schema 定义、多框架支持的 Web 端渲染以及 Node 导出服务
@@ -1210,7 +1212,7 @@ modified: 2022-08-21T10:02:27.788Z
 - jsreport /1.1kStar/LGPLv3/202305/js
   - https://github.com/jsreport/jsreport
   - https://jsreport.net/
-  - jsreport is a reporting server letting developers define reports using javascript templating engines like handlebars. 
+  - a reporting server letting developers define reports using javascript templating engines like handlebars. 
   - It supports various report output formats like html, pdf, excel, docx, and others. 
   - It also includes advanced reporting features like user management, REST API, scheduling, designer, or sending emails.
   - https://github.com/jsreport/jsreport/tree/master/packages/jsreport-electron-pdf

@@ -9,6 +9,8 @@ modified: 2023-01-09T11:04:13.958Z
 
 # guide
 
+- https://github.com/SheetJS/notes
+  - Various spreadsheet file format notes
 # popular
 - https://github.com/x2bool/xlite /rust
   - Query Excel spreadsheets (.xlsx, .xls, .ods) using SQLite
@@ -31,7 +33,8 @@ modified: 2023-01-09T11:04:13.958Z
   - a library to generate docx/pptx documents from a docx/pptx template.
   - Functionality can be added with the following paid modules
 
-- SheetJS js-xlsx Community Edition /Apache2/21.9kStar/202006
+- SheetJS js-xlsx Community Ed. /33.4kStar/apache2/202208/ts/大多功能在pro版
+  - https://git.sheetjs.com/SheetJS/sheetjs
   - https://github.com/SheetJS/sheetjs
   - https://oss.sheetjs.com/
   - https://sheetjs.com/pro/
@@ -41,17 +44,20 @@ modified: 2023-01-09T11:04:13.958Z
   - 无依赖，自己实现了办公类文档的各种解析器 js-word、js-ppt、ssf、js-cfb
   - pro: edit/image/chart
   - SheetJS presents a simple JS interface that works with "Array of Arrays" and "Array of JS Objects".
-  - https://github.com/mgcrea/node-xlsx
-    - excel file parser and builder, using sheetjs
+  - https://github.com/mgcrea/node-xlsx /ts
+    - NodeJS excel file parser & builder
+    - Relies on SheetJS xlsx module to parse/build excel sheets
 
-- https://github.com/exceljs/exceljs /6.4kStar/MIT/202010/js
+- exceljs /11.7kStar/MIT/202305/js
+  - https://github.com/exceljs/exceljs
   - Read, manipulate and write spreadsheet data and styles to XLSX and JSON.
 - https://github.com/zurmokeeper/excelize /js
+  - forked from exceljs v4.3.0_20230505
   - 需要完成一个读取WPS带密码保密的excel功能，找遍了社区所有的库，都没有找到，一开始发现 xlsx-populate 支持解密，后面发现只支持 ecma376 agile encryption。是现在office xlsx格式的加密方式，不是WPS的加密方法，所以无法解密.
   - 后面发现 WPS 对xlsx文件的加解密用的是 ecma376 standard encryption
   - 本来是想给exceljs提PR的，但是发现exceljs快2年没人维护了
   - xlsx，是sheetjs出的，这个功能最广，支持读取xls格式。但是这个库其实是个社区版，阉割了加解密功能
-  - [推荐一个新的excel处理库， @zurmokeeper/exceljs，支持xlsx文件的解密功能](https://cnodejs.org/topic/647e911256d983d3ff9d9cfa)
+  - [推荐一个新的excel处理库，支持xlsx文件的解密功能](https://cnodejs.org/topic/647e911256d983d3ff9d9cfa)
 
 - https://github.com/vweevers/spreadsheet-stream /js
   - Semi-streaming XLS(X) / ODS / QPW (and more) parser.
@@ -60,6 +66,10 @@ modified: 2023-01-09T11:04:13.958Z
 - https://github.com/liyuec/easyExcelJs /js
   - 简单的操作生成漂亮的EXCEL，快速上手。提供漂亮模板直接使用
   - 组件依附 exceljs 和 file-saver 进行封装
+
+- https://github.com/jmaister/excellentexport /ts
+  - JavaScript library to create export to Excel/CSV from HTML tables in the browser. No server required.
+  - support XLSX
 # examples
 - https://github.com/renanlecaro/importabular /js/MIT
   - https://importabular.lecaro.me/

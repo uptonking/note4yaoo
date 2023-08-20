@@ -38,7 +38,14 @@ modified: 2023-04-16T10:02:58.738Z
 # discuss
 - ## 
 
-- ## 
+- ## 目前市面上“用户提供 PDF 文件，得到一个专向 AI 聊天工具” 的产品，哪个效果最好？
+- https://twitter.com/taresky/status/1693112350075965841
+  - ChatGPT Code Interpreter 无法顺利阅读 PDF，有第三方插件好用吗？
+  - Chatpdf 回答质量很低。
+  - Chatbase 还不错，有没有更好的？
+
+- copilothub 好像针对 ocr 做了一些公式/图理解优化，可以试试？
+- gptbase.ai 不支持理解图片内容，其他大概满足需求
 
 - ## 借鉴 `json/yaml/toml/markdown` 设计，搞了个 pdl 格式（Prompt Description Language），并相比于其他格式，可以最大化节省 Token 数量。
 - https://twitter.com/blackanger/status/1659826017341702146

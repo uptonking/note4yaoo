@@ -34,6 +34,32 @@ modified: 2022-08-21T10:11:43.095Z
     - collab
 # blogs
 
+## [What is a JavaScript Data Grid? display-first vs edit-first](https://handsontable.com/blog/what-is-a-javascript-data-grid)
+
+- A data grid is essentially a feature-rich interface for working with tabular data.
+  - The traditional “table” refers to an interface that displays tabular data but doesn’t offer much interactivity.
+
+- Display-first
+  - Represents the data and its structure in easy to explore way
+  - Column-oriented
+  - filter/sort/group/pagination
+  - pivot
+  - tree-view
+  - cell-types
+  - virtualization
+
+- Edit-first
+  - Captures data and allows it to be modified
+  - Cell-oriented
+  - cell-editing
+  - cells-spanning/merged
+  - copy/paste
+  - auto-fill
+  - formula
+  - comments
+
+- If you need a well-made, edit-first data grid, consider Handsontable
+
 ## [Browsertech Digest: Figma is a File Editor](https://digest.browsertech.com/archive/browsertech-digest-figma-is-a-file-editor/)
 
 - Most desktop applications are what I call file editors.

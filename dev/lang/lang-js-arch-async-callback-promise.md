@@ -13,7 +13,50 @@ modified: 2021-08-30T07:01:09.493Z
   - 部分浏览器支持scheduler和TaskController可用来取消task，但firefox和safari不支持
 
 - [Learn Asynchronous Patterns in JavaScript with Kyle Simpson | Frontend Masters](https://frontendmasters.com/courses/rethinking-async-js/)
+# discuss-async-loading
+- ## 
 
+- ## 
+
+- ## what are good usecases for _dynamic_ imports in js
+- https://twitter.com/threepointone/status/1491467308065243148
+  - i.e. `const something = await import(xyz);` where xyz is _not_ statically known / can _not_ be known ahead of runtime? 
+  - looking for good usecases that don't have great workarounds.
+
+- One of my pain points with authoring a lib with ES modules is that I _can't_ conditionally import something that's needed for sync startup in DEV mode.
+  - We've got some stupid search/replace build shenanigans in redux-RTK related to that.
+- Cant it be done with dynamic import?
+  - No, and that was exactly the point. In our case, we have Redux middleware that only run in dev. But all the store setup is done synchronously during app setup / module loading. You can't dynamically import a middleware and add it to the store - it has to exist _now_.
+- With export conditions u could do this but it probably would involve having to create an identity/noop/passthrough middleware for production
+  - Those are still fairly new and some tools might not always support this in the same way
+
+- a plugin system where the list of plugins is stored as user data in a db?
+  - yeah, plugin/config systems looks like a very good usecase here
+
+- Plugins...oh 'good' use cases..sorry that's on me I got nothing.
+  - only thing worse is order dependent globally mutating middleware
+
+- Loading i18n translations on demand?
+  - the workaround here would be a map of keys to imports, like -  { "en-US" : () => import('./translations/en-us'), ... }
+
+- One example that comes to mind is code that doesn't need to run until a user has scrolled to a certain point on a page (e.g., with IntersectionObserver). No need to statically bundle the dependencies if a user hasn't scrolled to that point yet (or a certain distance from it)
+  - Actually, this is exactly what I’m doing. Page contains several React components, and each is imported only when needed/viewed. This: `import(`components/${data.componentPath}/index.jsx`) `.
+
+1. Test runners that load your test files dynamically. 
+2. Plugins that are loaded by (dev) tools (eslint, prettier, StrykerJS) 
+3. A playground that lets you create and run multiple JS files
+
+- Importing a module for a new feature behind a feature flag
+
+- Remix uses this for importing the js for routes dynamically on client side transition 
+
+- ## Performance tip: use dynamic imports to ensure JS is only downloaded when needed
+- https://twitter.com/Steve8708/status/1502084919488495621
+  - When used responsibly, they can greatly reduce your bundle sizes and boost page load times
+
+- The code for dynamic `import` can be placed in the `head` of the file instead of inside the `onClick` function, two benefits: 
+  - 1. maintain page performance (dynamic import will start loading after the static import), 
+  - 2. no need to wait to use the function inside the onClick function
 # discuss
 - ## 
 

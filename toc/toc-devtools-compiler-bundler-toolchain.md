@@ -17,6 +17,23 @@ modified: 2022-11-01T01:05:07.873Z
 
 - dev-server
 # frontend-compiler
+
+# dynamic-import
+
+- https://github.com/Rich-Harris/shimport /js
+  - A 2kb shim for import and export. Allows you to use JavaScript modules in all browsers, including dynamic import().
+  - A 2kb shim for import and export. Allows you to use JavaScript modules in all browsers, including dynamic import().
+  - if they are, just use the native module loader
+  - if not, use Shimport
+# webpack
+
+## wp-ext
+
+- https://github.com/godaddy/radpack /js
+  - Radpack fuses the best of both worlds by taking advantage of build-time bundling, with graph-based run-time loading to prevent wasteful waterfalls.
+
+## wp-rewrite
+
 - https://github.com/JinJieTan/mini-webpack
   - 本文会先介绍webpack的打包流程，运行原理，然后去实现一个简单的webpack
 
