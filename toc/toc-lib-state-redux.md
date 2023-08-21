@@ -29,6 +29,13 @@ modified: 2020-11-02T19:13:04.103Z
 - https://github.com/jshjohnson/Choices
   - configurable select box/text input plugin. Similar to Select2 and Selectize but without the jQuery
   - 依赖redux、fuse.js(fuzzy-search in js)
+
+- https://github.com/microsoft/redux-dynamic-modules /202003/ts/inactive
+  - aims to make Redux Reducers and middleware easy to modular-ize and add/remove dynamically.
+  - In large Javascript applications, it is often desired to perform some kind of code-splitting, so that the initial script size is small. 
+  - However, in Redux, you are required to define your reducers and middleware up-front; 
+  - there is no good way to dynamically add/remove these constructs at runtime.
+  - designed to make dynamically loading these constructs easier
 # react-context-redux
 - https://github.com/bergkvist/react-context-toolkit /ts
   - Toolkit for React Context API heavily inspired by @reduxjs/toolkit and react-redux.

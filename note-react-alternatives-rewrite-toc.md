@@ -208,7 +208,7 @@ modified: 2021-09-20T20:12:38.499Z
 - https://github.com/djalbat/reaction
   - An alternative implementation of React.
   - 不支持hooks
-- https://github.com/neact/neact
+- https://github.com/neact/neact /js
   - Neact is a fast alternative to React, support ie8
 - https://github.com/Foveluy/Luy
   - a React-like framework

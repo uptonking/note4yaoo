@@ -10,10 +10,26 @@ modified: 2022-11-25T09:47:43.079Z
 # guide
 
 - [The Current State of SQLite Persistence on the Web_202307](https://www.powersync.co/blog/sqlite-persistence-on-the-web)
+# discuss-stars
+- ## 
+
+- ## Feature table of all the possible ways of using a sqlite database in a JavaScript environment
+- https://twitter.com/fabiospampinato/status/1693379882409922788
+- better-sqlite3: it's good, but it's a native dependency, and those can be painful to work with (Electron, C++), and it only works with Node.
+- Binaries: nice simple trick, but mainly the serialization overhead for binary blobs is too large, and notarization is painful.
+- FFI: amazing if you don't need to use neither custom builds nor Node/Browser.
+- JS: mainly sql.js requires reading/writing the entire database at once, which should be a deal breaker.
+- WASM: amazing, but without memory-mapping WAL is not supported, and file locking is tricky.
+
 # discuss
 - ## 
 
-- ## 
+- ## SQLite is just corruption-prone under Windows?
+- https://twitter.com/fabiospampinato/status/1693284873581060429
+  - SQLite is very clear that you can corrupt a database if file locking APIs are not working correctly.
+  - By the way POSIX advisory lock APIs that only work on linux/mac are still pretty valuable for server-only use cases, nobody sane uses Windows there anyway. 
+
+- SQLite CLI on Windows works without any special warning though … not sure if that’s due specific Windows code or just a “no need to warn users here stuff easily breaks” but I’m also sure SQLite is used in many Windows only projects too
 
 - ## Thinking about local-first apps with SQLite for apps without auth.
 - https://twitter.com/ralex1993/status/1679877455308283907

@@ -13,6 +13,36 @@ modified: 2021-08-30T07:01:09.493Z
   - 部分浏览器支持scheduler和TaskController可用来取消task，但firefox和safari不支持
 
 - [Learn Asynchronous Patterns in JavaScript with Kyle Simpson | Frontend Masters](https://frontendmasters.com/courses/rethinking-async-js/)
+# examples
+- https://github.com/eldargab/load-script /js
+  - load-script appends a `script` node to the `<head>` element in the dom.
+
+- https://github.com/rumkin/pill /js
+  - Pill adds dynamic content loading to static sites and makes content loading smooth for users.
+  - Intercepts navigation attempts: links clicks and history navigation.
+  - Loads requested url using fetch.
+  - Grabs content from received HTML
+  - Replaces current page content.
+
+## dynamic-load
+
+- https://github.com/systemjs/systemjs /js
+  - Dynamic ES module loader
+
+- https://github.com/microsoft/redux-dynamic-modules /202003/ts/inactive
+  - aims to make Redux Reducers and middleware easy to modular-ize and add/remove dynamically.
+  - In large Javascript applications, it is often desired to perform some kind of code-splitting, so that the initial script size is small. 
+  - However, in Redux, you are required to define your reducers and middleware up-front; 
+  - there is no good way to dynamically add/remove these constructs at runtime.
+  - designed to make dynamically loading these constructs easier
+
+## react-remote
+
+- https://github.com/hupe1980/react-script-hook /ts
+  - React hook to dynamically load an external script and know when its loaded
+
+- https://github.com/Paciolan/remote-component /ts
+  - Dynamically load a React Component from a URL
 # discuss-async-loading
 - ## 
 

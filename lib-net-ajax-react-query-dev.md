@@ -24,6 +24,8 @@ modified: 2023-03-05T08:55:03.696Z
   - https://codesandbox.io/s/magical-bush-gbsk7
 
 - [Arrow Flight RPC — Apache Arrow](https://arrow.apache.org/docs/format/Flight.html)
+
+- [Sending UI over APIs](https://www.builder.io/blog/ui-over-apis)
 # dev-xp-log
 - [Network Mode | TanStack Query Docs](https://tanstack.com/query/v5/docs/react/guides/network-mode)
   - Since TanStack Query is most often used for data fetching in combination with data fetching libraries, the default network mode is `online`.

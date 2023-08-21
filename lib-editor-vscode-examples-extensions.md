@@ -14,7 +14,7 @@ modified: 2023-01-21T19:02:58.833Z
   - 支持本地/私有/中立仓库，如openvsx
 
 - scripts的实现
-  - 参考react-live/mdx-live/script-lab，每次将数据对象和解析后的代码传进去
+  - 参考react-live/mdx-live/script-lab/sandbox-play，每次将数据对象和解析后的代码传进去
   - 类似vscode像codepen的实时预览扩展
 # vscode-ext
 - [Extension Capabilities Overview](https://code.visualstudio.com/api/extension-capabilities/overview)

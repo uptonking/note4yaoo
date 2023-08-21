@@ -105,6 +105,10 @@ modified: 2021-09-29T13:23:09.969Z
 - https://github.com/HiWayne/Self-Vue
   - 自己实现的vue监听数据变化和双向绑定源码，单文件
 
+- https://github.com/bplok20010/vue-toy /ts
+  - [vue-toy: 200行代码模拟Vue实现](https://my.oschina.net/nobo/blog/4310649)
+  - 观察对象主要使用的是Object.defineProperty或Proxy来实现
+
 - https://github.com/leaon4/mini-vue
   - 大概是最全的一个基于vue3的 mini-vue 实现了
   - 项目结构尽量还原 vue3 源码，只做主线任务

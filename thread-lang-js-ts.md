@@ -75,18 +75,6 @@ h.forEach((v, k) => {
   - It'd be even nicer if a Set-like class that worked like that was implementable efficiently within the language.
 - class MySet extends Array and implement add using WeakSet to check for existence.
 
-- ## What are some good / safe options for executing javascript in the browser that has been submitted by users?
-- https://twitter.com/JungleSilicon/status/1633632436948176896
-  - My initial thoughts are to embed a js interpreter inside of js with limited access to external state.
-- https://github.com/justjake/quickjs-emscripten
-  - Safely execute untrusted Javascript in your Javascript, and execute synchronous code that uses async functions
-- Figma described their approach to sandboxed JS
-  - [An update on plugin security](https://www.figma.com/blog/an-update-on-plugin-security/)
-- Using a js interpreter is probably simpler, but you can read about my approach using web workers here 
-  - [A Maybe Kinda Secure Way to Evaluate Untrusted Javascript in a Web Browser\*](https://humanprogramming.substack.com/p/a-maybe-kinda-secure-way-to-evaluate)
-- Or use an iframe and something like sandpack, but the perf would get bad if you wanted each 3rd party hook running in its own iframe for isolation from each other
-  - That’s still the safest approach. There is probably a higher perf subset user code that could run with AOT and in webassembly with sharearraybuffers
-
 - ## [Why do you actually need higher order functions? : learnjavascript](https://www.reddit.com/r/learnjavascript/comments/rgddk9/why_do_you_actually_need_higher_order_functions/)
 - Your code sample is an example of currying, where a function that accepts multiple arguments can be rewritten as a series of functions that each accept one argument. This is just one of the many uses of higher order functions.
 - One much more common use for higher order functions is to abstract some patterns like looping over an array and performing some action for each value in the array

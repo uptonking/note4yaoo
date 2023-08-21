@@ -35,3 +35,16 @@ modified: 2021-09-14T06:29:41.503Z
 - Partial application has much wider applicability anyway, and should get in first to reinforce the cowpaths that ACTUALLY need to be paved.
 - I agree deeply with your conclusion. The F# + partial application proposal makes much more sense than the Hack proposal. The Hack proposal feels really bad. JS has been making progress by adding features that make sense and compose well together. The second proposal makes sense.
 - Sad they skipped the F# pipe.
+# discuss-js-features
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 虽然我知道 JavaScript 的 number 在精度上和其他语言不匹配，没有 int32 int64 这种细分，但我也不喜欢 long.js ，很容易出 bug。
+- https://twitter.com/ThaddeusJiang/status/1693578008601526470
+  - 建议轻易不要使用 long.js， 除非，你也上了 #gRPC #protobuf 的破船
+  - 代码能跑，但结果不符合期待
+
+- 我知道js只支持到2**53 但是我之前记得在那看过 新特性解决了这个问题 还支持有无符号 难道是我记忆错位

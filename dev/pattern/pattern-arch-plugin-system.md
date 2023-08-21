@@ -182,6 +182,13 @@ class Plugins {
 
 ## [figma: How to build a plugin system on the web and also sleep well at night_201908](https://www.figma.com/blog/how-we-built-the-figma-plugin-system/)
 
+> Since we published this blog post, we decided to **change our sandbox implementation to an alternative approach**: compiling a JavaScript VM written in C to WebAssembly. As you'll see in the blog post below, it was one of several ideas we originally weighed.
+> We decided to implement this alternative after a security vulnerability in the Realms shim (which our original approach uses) was privately disclosed to us.
+
+- [An update on plugin security_201910](https://www.figma.com/blog/an-update-on-plugin-security/)
+
+- Figma plugins API enables third-party developers to run code directly inside our browser-based design tool, so teams can adapt Figma to their own workflows.
+
 - Attempt #1: The `<iframe>` sandbox approach
   - Problem #1: async/await is not user friendly
 - Problem #2: copying the scene is expensive
@@ -220,6 +227,29 @@ class Plugins {
   - If the proposal gets accepted, you will not need the polyfill. This would also work with any JS embedding (browsers, node, etc...) as it would be baked in the language.
 
 - Google Gadgets (on the iGoogle custom homepage) used a similar scheme for exposing a select API to untrusted JS running in frames.
+
+- 🤔 Does anyone know of other resources (blog posts or books) talking about how to build such extensibility in a SaaS app?
+  - Among big names, I can think of Zendesk (uses iframes), Coda (runs third-party code on their servers IIRC, isolated via server mechanisms), Salesforce (not sure exactly what they do, but I think they also use Realms as a component to their system).
+  - [Sandboxing JavaScript. tldr; iframes are likely your best bet | Zendesk Engineering_201608](https://zendesk.engineering/sandboxing-javascript-e4def55e855e)
+  - 👉🏻 The folks at Agoric are probably the leading experts actively working on untrusted code isolation in a browser environment right now.follow them if you want: https://github.com/Agoric/SES
+
+- ### what's the safest way to run insecure code in node? Is that even possible? The consequences are more dangerous than web
+- https://twitter.com/jlongster/status/1164598099672801281
+  - I think the only viable solution would be their #2 attempt - run it in an interpreter. The consequences are just too dire when you could get access to the filesystem.
+
+- any way you expose APIs by IPC/attenuated functions/membranes are all subject to potential abuse.
+
+- ### What are some good/safe options for executing javascript in the browser that has been submitted by users?
+- https://twitter.com/JungleSilicon/status/1633632436948176896
+  - My initial thoughts are to embed a js interpreter inside of js with limited access to external state.
+- https://github.com/justjake/quickjs-emscripten
+  - Safely execute untrusted Javascript in your Javascript, and execute synchronous code that uses async functions
+- Figma described their approach to sandboxed JS
+
+- Using a js interpreter is probably simpler, but you can read about my approach using web workers here 
+  - [A Maybe Kinda Secure Way to Evaluate Untrusted Javascript in a Web Browser\*](https://humanprogramming.substack.com/p/a-maybe-kinda-secure-way-to-evaluate)
+- Or use an iframe and something like sandpack, but the perf would get bad if you wanted each 3rd party hook running in its own iframe for isolation from each other
+  - That’s still the safest approach. There is probably a higher perf subset user code that could run with AOT and in webassembly with sharearraybuffers
 
 ## [The Complete Guide to the Fastify Plugin System - NearForm](https://www.nearform.com/blog/complete-guide-fastify-plugin-system/)
 
