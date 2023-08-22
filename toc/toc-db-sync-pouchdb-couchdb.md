@@ -68,10 +68,18 @@ modified: 2022-11-30T18:56:07.072Z
 - delta-pouch /184Star/apache2/201706/js
   - https://github.com/redgeoff/delta-pouch
   - Conflict-free collaborative editing for PouchDB
-  - A PouchDB plugin for partial updates that uses the every-doc-is-a-delta storage pattern. 
+  - A PouchDB plugin for partial updates that uses the **every-doc-is-a-delta** storage pattern. 
   - You can use delta pouch to enable conflict-free collaborative editing of the same docs.
+  - Delta pouch stores every change as a doc.
+  - [Question: a helpful link describing the "every-doc-is-a-delta storage pattern"?](https://github.com/redgeoff/delta-pouch/issues/53)
+    - Sounds like "every-doc-is-a-delta" is another way of saying "log database". Is that right?
+    - I would look up anything related to "Event Sourcing" which perhaps is a superset of this idea. Basically, the idea is that you save the events that happen in your system and then compile those into views.
   - forks
     - https://github.com/Brainsway-Cloud/delta-pouch
+- https://github.com/delta-db/deltadb /201602/js/inactive
+  - DeltaDB is an offline-first database designed to talk directly to clients and works great offline and online.
+  - I have decided to suspend development of DeltaDB for the following reasons:
+  - last-write-wins policy is nice when starting a new project as it is automatic, but other conflict resolution policies that force the user to manually resolve the conflict, like CouchDB’s revision protocol, have become more of the standard in the offline-first world.
 
 - pouchdb-sync-to-anything /43Star/MIT/201807/js
   - https://github.com/karlwestin/pouchdb-sync-to-anything

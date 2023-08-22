@@ -85,6 +85,11 @@ modified: 2021-07-27T15:12:39.959Z
 - https://github.com/imzbf/md-editor-rt
   - Markdown editor for react, developed in jsx and typescript.
   - https://github.com/imzbf/md-editor-v3 /vue3
+# editor-electron
+- https://github.com/pulsar-edit/pulsar /js
+  - https://pulsar-edit.dev/
+  - A Community-led Hyper-Hackable Text Editor, Forked from Atom, built on Electron.
+  - Designed to be deeply customizable, but still approachable using the default configuration.
 # desktop-editor
 - https://github.com/lapce/lapce
   - written in pure Rust with a UI in Druid (which is also written in Rust). 
@@ -106,6 +111,12 @@ modified: 2021-07-27T15:12:39.959Z
   - 类似 ActiveText 的存储 API，兼容 ActionText 的 Model API，你可以保持那个好的东西
   - 数据存储依然保持在 ActionText 那个 action_text_rich_texts 表里面，所以引入它，只是会让 ActionText 没了 Trix 和 ActiveStorage 的集成
   - 你存什么进去，就拿什么出来，不做任何 sanitize 处理，把规则交给你自己处理
+
+- https://github.com/helix-editor/helix /rust
+  - https://helix-editor.com/
+  - A Kakoune / Neovim inspired editor, written in Rust.
+  - [Plugin system](https://github.com/helix-editor/helix/discussions/3806)
+  - [WebAssembly plugins system](https://github.com/helix-editor/helix/issues/122)
 # editor-utils
 - https://github.com/juliankrispel/react-text-selection-popover
   - https://juliankrispel.github.io/react-text-selection-popover

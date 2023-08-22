@@ -336,6 +336,12 @@ modified: 2020-12-28T12:24:09.275Z
 - https://github.com/steedos/steedos-platform
   - 华炎魔方是Salesforce低代码平台的开源替代方案
   - 华炎魔方前端使用 React 开发表单、列表视图控件，并基于 Meteor 实现完整界面。
+
+- https://github.com/alibaba/designable /ts/inactive
+  - https://designable.netlify.app/
+  - If you are worrying about something builder, Such as form builder/table builder/chart builder/app builder etc. Designable is your perfect choice.
+  - [Designable2.0详细规划&任务分解](https://github.com/alibaba/designable/discussions/240)
+    - 目前暂停维护中，未来会重启，感谢大家的支持
 # workflow-automation-tasks-pipeline
 - tips
   - 考虑跨平台/系统的task兼容性、分享，主流的airflow/ifttt

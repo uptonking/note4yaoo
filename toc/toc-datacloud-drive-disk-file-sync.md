@@ -119,6 +119,12 @@ modified: 2022-09-10T02:26:52.062Z
     - Database setup (MariaDB)
   - https://github.com/internxt/drive-mobile
     - Current react-native-reanimated fails with Android using RN 0.64
+
+- https://github.com/frappe/drive /python/vue
+  - easy to use, document sharing and management solution
+  - 依赖werkzeug
+  - Upload and store files across multiple platforms.
+  - Preview files such as images, videos, PDFs, etc.
 # cloud-drive-sync
 - https://github.com/reruin/sharelist
   - ShareList 是一个易用的网盘工具，支持快速挂载 GoogleDrive、OneDrive

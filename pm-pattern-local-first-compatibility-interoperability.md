@@ -139,3 +139,14 @@ Nostr 不是区块链，也不是App， 是一个用于服务器和客户端通�
 2. 抗审查
 3. 减少垃圾邮件
 4. 降低数据存储成本
+
+## Farcaster
+
+- https://github.com/farcasterxyz/protocol
+  - Farcaster is a community-created protocol for building decentralized social applications.
+
+## Noosphere
+
+- https://github.com/subconsciousnetwork/noosphere /rust
+  - Noosphere, like its namesake, is a worldwide medium for thinking together. We like to think of it as a protocol for thought.
+  - Noosphere is the foundational protocol that the Subconscious app builds upon to enable an open-ended, permissionless multiplayer experience.

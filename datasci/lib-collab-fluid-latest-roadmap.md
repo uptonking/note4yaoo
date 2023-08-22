@@ -9,6 +9,7 @@ modified: 2023-02-12T19:42:17.181Z
 
 # guide
 
+- Update June 21 2023: BREAKING.md and the processes described below are being replaced by Changesets.
 # roadmap
 - 核心是dds
 

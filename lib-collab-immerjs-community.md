@@ -22,7 +22,9 @@ modified: 2023-06-04T21:27:01.100Z
 # discuss-collaboration
 - ## 
 
-- ## 
+- ## [add immer-yjs to built-with.md](https://github.com/immerjs/immer/pull/915)
+- immer-yjs allows manipulating y.js data types with the api provided by immer.
+- Two-way binding between y.js and plain (nested) json object/array.
 
 - ## [Maintaining invariants with non-Immer managed derived state through applyPatches](https://github.com/immerjs/immer/issues/940)
   - Does Immer have any recommended "best practices" for this sort of thing?

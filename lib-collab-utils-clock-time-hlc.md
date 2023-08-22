@@ -22,6 +22,7 @@ modified: 2023-03-20T10:28:16.979Z
   - tinybase
   - crsqlite
   - TiDB: Centralized clock
+  - Ditto: 
 
 - hlc可以解决lamport逻辑时钟无限增长的问题
 
@@ -35,6 +36,16 @@ modified: 2023-03-20T10:28:16.979Z
   - 不必执着于hlc的使用案例，可对成熟案例在业务逻辑不变的情况下将其他clock替换成hlc
 
 ## blogs
+
+### [Ditto Delta State CRDT](https://docs.ditto.live/javascript/common/how-it-works/crdt)
+
+- [Extend Hybrid Logical Clock documentation](https://github.com/getditto/docs/issues/413)
+
+- The Ditto document is a JSON like document made from a CRDT Map that represents the JSON Object. 
+- The JSON properties are map keys, and the values are any of the Counter/Register/Map types
+- The foundation of determining how data should be merged is using a Ditto document's version vector.
+- Each document in each peer contains a hidden metadata map of a Site_ID and a HLC. The HLC stands for a hybrid logical clock. This HLC is used to determine whether a change has "happened before".
+- In Ditto's distributed system, the HLC is a 64-bit timestamp comprised of 48 bits of a physical timestamp and 16 bits of a monotonically increasing logical clock.
 
 ### [计算机的时钟（五）：混合逻辑时钟 Hybrid Logical Clocks](http://yang.observer/2020/12/16/hlc/)
 

@@ -72,6 +72,14 @@ modified: 2022-09-21T15:47:41.340Z
   - CRDT Peer-to-Peer Branch using modified y-webrtc
   - CRDT Client-Server Branch using modified y-websocket
   - Operational Transformation Client-Server Branch using `@codemirror/collab` OT, based on Codemirror Collab Website Example for code editor
+
+- https://github.com/drifting-in-space/y-sweet /MIT/rust/ts
+  - https://y-sweet.dev/
+  - A standalone yjs server with persistence to S3 or filesystem.
+  - building on the excellent y-crdt library
+  - Persists document data to a network filesystem or S3-compatible storage, inspired by Figma’s infrastructure.
+  - Scales horizontally with a session backend model.
+  - Provides document-level access control via client tokens.
 # yjs-utils
 - https://github.com/rozek/y-lwwmap
   - Yjs provides a complete ecosystem for (persisting and) sharing "Conflict-free replicated data types" (CRDT) among multiple clients using a variety of persistence and communication providers. 
@@ -217,3 +225,4 @@ modified: 2022-09-21T15:47:41.340Z
   - Built for sharing large datasets and streams of real time data
   - [hypercore and Yjs : how to make them work together](https://github.com/hypercore-protocol/hypercore/issues/296)
     - the y-dat implementation does not actually use the core feature of the hypercore’s append only merkle tree signed log, due to the mutable nature of the Yjs CRDT implementation.
+  - https://github.com/tradle/why-hypercore

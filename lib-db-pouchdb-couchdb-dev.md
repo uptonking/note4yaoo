@@ -65,7 +65,7 @@ modified: 2022-12-02T11:15:15.257Z
   - https://github.com/pouchdb/upsert
   - There is also a guide in the pouchdb docs about using upserts to help manage conflicts. 
 - There's a big difference: 
-  - 👉🏻 C/PouchDB's Conflict resultion suggestion is to use an arbitrary version of two conflicting items (I think on default it is to just ignore conflicts). 
+  - 👉🏻 C/PouchDB's Conflict resultion suggestion is to **use an arbitrary version of two conflicting items** (I think on default it is to just ignore conflicts). 
   - Ex: JSON Item A and JSON Item B have both the same rev number when they want to be added to the main database. 
   - Since both have different changes, only one item can be used (like the last submitted). In contrast, automerge would look for the differences in the actual JSON objects, and automatically merge both, so that the latest changes of each version is added to the database.
 

@@ -19,8 +19,26 @@ modified: 2023-06-04T20:37:37.337Z
   - We discussed that we can generate an id of the active "builder/maintainer" who can update the build. Whoever reloaded the latest automatically becomes maintainer and receives the id that we send with every patch. If user has outdated id, they get an error: "In single-player mode only one user can edit at a time. Please reload the window to enable editing from it."
 # more
 
-# discuss
+# discuss-collab
 
+- ## 
+
+- ## 
+
+- ## [Explore realtime collaboration](https://github.com/webstudio-is/webstudio-builder/issues/46)
+- There is a lot of things to consider when building a realtime multiplayer UI
+  - offline first
+  - state management
+  - server architecture
+  - database: sqlite/rxdb
+  - conflicts: yjs/automerge/hlc
+  - change types
+
+- ## thinking of conflicts resolution, why not roll back every change that has resulted in a conflict, make it obvious in the UI, 
+- https://twitter.com/oleg008/status/1525422477362573312
+  - You can't do that if you are operating on a single blob, but it could be viable if your changes are atomic and have specific semantic meaning, right?
+
+# discuss
 - ## 
 
 - ## 

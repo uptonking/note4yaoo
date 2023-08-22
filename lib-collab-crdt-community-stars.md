@@ -15,7 +15,11 @@ modified: 2022-04-05T10:09:51.343Z
 # discuss
 - ## 
 
-- ## 
+- ## [JSON CRDT 2.0](https://github.com/streamich/json-joy/issues/228)
+- Things to consider:
+  - Move operations across different document nodes.
+  - Low-level multi-value register support. (MV register can be done in user-space using an RGA array.)
+  - Currently, JSON CRDT is operation-based CRDT. Consider if it also should work as state-based CRDT and delta CRDT.
 
 - ## [What do you recommend for conflict-free replicated data type (CRDT) support in Rust?](https://www.reddit.com/r/rust/comments/1064f9s/what_do_you_recommend_for_conflictfree_replicated/)
 - you may find the hybrid logical clock approach more convenient than trying to maintain and manage a vector clock etc...

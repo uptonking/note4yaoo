@@ -12,6 +12,10 @@ modified: 2021-01-01T20:11:00.889Z
 - tips
   - 不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店
 
+- blink vs webkit
+  - bsd license
+  - v8 as better js engine
+
 - resources
   - [History of Web Browser Engines from 1990 until today](https://eylenburg.github.io/browser_engines.htm#)
   - [WebKit | User Agents](https://user-agents.net/rendering-engines/webkit)
@@ -86,6 +90,20 @@ modified: 2021-01-01T20:11:00.889Z
   - WebKit2 接口不同于 WebKit 的接口，它们是不兼容的，但目的却是差不多 的，都是提供嵌入式的应用接口。
 - Chromium 使用的仍然是 WebKit 接口，而不是 WebKit2 接口，也就是说 Chromium 是在 WebKit 接口之上构建的多进程架构
 - Chromium 中每个进程都是从相同的二进制可执行文件启动，而基于WebKit2 的进程则未必如此
+
+## [《webkit技术内幕》这本书怎么样？里面的哪些内容有了变动？ - 知乎](https://www.zhihu.com/question/266787740)
+
+- 作者现在好像离职去了阿里做高管。
+  - 据说此书是根据他博客和一些他在公司内部分享的资料集合而成，所以难免会让人看了觉得很零散，
+  - 而且讲的刚要到深处就戛然而止，里面chromium的关键点全都提了一遍，但又没详细剖析。
+  - 这书主要是给浏览器内核开发者用的，前端关心的性能优化等提的较少。而且如果对chromium架构不熟悉的话，基本很难懂。但如果是浏览器开发者，必看，因为市面上实在找不到同类书了。。。
+
+- 通过看这本书可以了解浏览器的分层化渲染、为什么采用分层化渲染、硬件加速渲染的优势、软件渲染在当时的优势和缺点、光栅化的过程、为什么transform相关的变换能够被硬件加速等等这些和你的页面图像渲染性能息息相关的知识点。
+  - 光看这本书是不够的，要会自己思考。比如知道了这些知识点，你得思考如何利用好硬件加速提高性能、如何提前规划合成层以达到更好的动画性能、应该为哪些元素提前创建合成层、如何规避overlap机制等等。
+  - 但是有必要说明的是，现在和我们开发息息相关的chromium内核和早期的版本有了非常大的变化，比如sliming-paint计划、全GPU的光栅化、等等新的设计思想和优化
+- 其实讲的比较泛，只讲了大概的框架和原理，想了解底层可以对着书撸chrome源码。不过高版本的chrome代码变动比较大，撸的时候要注意区分
+
+- 比较认真的看过这本书，个人觉得不如看官方文档好。里面很多内容也都是翻译的官方文档。
 # 浏览器的渲染过程
 - 浏览器将HTML，CSS，JavaScript代码转换成屏幕上所能呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径（Critical Rendering Path）
 1. DOM Tree的构建
@@ -363,3 +381,49 @@ modified: 2021-01-01T20:11:00.889Z
 
 - [affected by chromium dropping support ?](https://dndsanctuary.eu/index.php?PHPSESSID=1233ccab74c6651ba984e00c892d6b4a&topic=3969.0)
   - The default is QtWebKit, but you can switch either specific domains or everything to QtWebEngine if it was compiled with support for that. 
+
+- ## [为什么同是开源内核，但是大多数浏览器都选择Blink，而很少选择Webkit和Gecko？ - 知乎](https://www.zhihu.com/question/585262310/answers/updated)
+- 某种程度上这也是赢家通吃。当chromium占据多数时，网页只会适配chromium
+  - 开源社区是最善于用脚投票的。最早大家都跟着 KDE 搞 KHTML，Apple 进来以后，大家都跟着 AppleWebKit 这个硬分叉，与原来的社区分了家。后来随着 Google 又插了进来，慢慢的成为了新社区的另一个带头大哥
+  - 从技术上说，尽管Mozilla出了许多黑科技，譬如xpcom，譬如rust，但gecko总体而言，只能说是一个小巧简约的内核。而且连Mozilla也越来越没有能力维护一个浏览器了；ff连日来bug愈多，前些年说要用rust开发新内核，终于放弃
+  - 在这个前端JS化，静态页面越来越少的时代，JS引擎的重要性越来越凸显。而Google家的v8在三家之中仍属于性能最好，优化最多的
+
+- WebKit 缺乏跨平台的技术支持，Apple 就只关心iOS 和 mac OS，Windows 那边早已停止支持多年。
+  - Apple 也从来不关心 Linux，完全完全靠 QT 之类的团队支撑 WebKit 在其他平台上的发展。就单这一点原因，已经让很多浏览器开发厂商望而却步了。
+- Blink 的 JS 引擎是 V8，而 WebKit 的 JsCore，在执行效率方完全无法和V8相提并论。此外，V8还有诸如 Electron、Node.js、Deno 等下游开源项目的技术反哺。而 JsCore 的贡献者，恐怕只有 Apple 一家了。
+
+- 就是Gecko和WebKit的MPL和GPL都是必须开源的
+  - 而Blink的BSD不是
+
+- Chromium、WebKit 和 Gecko 在渲染速度上存在差异。
+  - Chromium 的渲染引擎 Blink 采用了多进程架构，对于多线程和多核 CPU  的利用效果较好，因此渲染速度相对较快；
+  - WebKit 的渲染速度也比较快，但由于采用单进程架构，对于多线程和多核 CPU  的利用效果较差，相比而言更适合于移动端；
+  - Gecko 的渲染速度较慢，但具有高度的灵活性和可扩展性
+
+- WebKit目前有两个版本，一个是1一个是2，两个版本都在开发迭代。
+- Chrome最早是基于WebKit 1的，但并不是完全基于WebKit，只用到了WebKit的WebCore部分，即排版引擎，而JavascriptCore则被自家研发的V8换掉了。
+
+- ## [同样是开源，微软为何选择了 Chromium，而不是 Firefox？](https://www.zhihu.com/question/305010938)
+
+- 因为Chromium的BSD是最商用友好的许可，开发者可以随便搞。
+  - 因为这个原因，Firefox的Gecko的使用率就很难超过chrome的Blink。
+
+- 以chromium内核的游览器已经占据市场大多数，edge可以借助已有的生态，而且chromium的v8引擎性能很好
+  - 最关键的在于可以利用chrome已经创造出的浏览器插件生态，从chrome手里抢夺用户
+  - 学习一个东西最快的办法，是直接找老大去抄袭，而不是选择老二。。话说那个时候FireFox还不如IE占有率吧。
+  - 在web标准的战斗，ms已经投降了
+
+- 微软现在在html引擎这里是认输了，但是在windows图形界面可还是要有自己的坚持，这么重要的一个软件不用自家的wpf，以后还怎么推广给其它程序员用，还要不要面子了。而且XUL它还真未必能用的好，这东西一个二十多年的积淀，里面坑无数，微软不用自己的屎山要去吃别人的屎山么。
+
+- 我倒觉得是步好棋，如果以后Windows预装了Chromium，那的确装Chrome的意义变小了，
+  - 尤其在中国，微软搞个自己的不用翻墙的插件服务器啥的
+  - 不说影响Chrome市占率，最起码也能沉重打击国产双核浏览器吧
+- 杀死Edge的就是Google
+  - Google搜索一发现你用Edge就给你打广告
+  - YouTube的代码里面甚至有发现如果不说Chromium内核就自动减速加载
+  - Firefox也被Google用同样的方式恶心（不过好就好在Firefox的生态相对好 所以有YouTube加速加载的插件）
+  - 至于Firefox 我很敬佩他们 这样是为什么那么多Linux发行版默认带Firefox的原因
+
+- 从研发上来说困难。Firefox的代码并不是为了开放平台而设计的，
+  - 与之相比，Chromium平台已经有太多二次开发经验了，无论是接口的完备性还是人才招聘的难度，都比Firefox好太多了。
+  - chromium内核开发外面一招一大堆，firefox内核开发怕不是要自己从零开始培养，从各个方面来说Gecko都没有竞争力。

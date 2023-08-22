@@ -9,13 +9,30 @@ modified: 2023-02-11T11:07:43.781Z
 
 # guide
 
-# discuss
+# discuss-stars
 - ## 
 
 - ## 
 
 - ## [How can you ensure the database is the source of truth in the Fluid world?](https://github.com/microsoft/FluidFramework/discussions/9536)
 - not yet
+
+- ### 🤔 [Production grade source-of-truth](https://github.com/microsoft/FluidFramework/discussions/9574)
+- Persistence is really the missing part of the entire documentation around Fluid Framework. As you mention from all your bullet points its very hard to trust this as a database when you can't see what's going on underneath.
+  - My only solution right now, if I were to build a collaborative environment on Fluid is to **pull a recent copy of the data I need from a database** like CosmosDB, populate the container, connect the clients and then **periodically save to the database** using the client. 
+  - Once all users have disconnected I'd have to make sure **a fresh copy is pulled from the DB once a new user tries to get** that content again.
+- Not sure this is really a valid production framework until everything you've stated is resolved. As solution like CosmosDB changefeed + azure functions + SignalR seems to be the way to go for now, but that's hard to use for collaborative text.
+
+- Exactly this. I've read through all the docs multiple times. I still can't understand when you would want to use Fluid Framework. It seems great when looking at simple demos. But how would it fit into a real-world collaborative app? 
+  - As far as I can perceive, **all the data that ends up in the containers become a black box to the rest of my app**. Other features in my app can't interact with that data.
+- This leaves me to feel like Fluid Framework is only meant to be used for temporal collaborative features. Like showing activity indicators, audience lists, etc. Basically, the sorts of stuff you wouldn't need to persist anyways (ex: indicators to show which text a user has highlighted in a collaborative editor).
+
+- 👉🏻 Totally agree and your comment is still relevant today (202307 year after) even the Fluid Framework is almost in V2 and Azure Fluid Relay is generally available I was not able to find "production use case" as no documentation is available on how to get the state of the container to persist for long term...
+  - From Azure Fluid Relay documentation: "If an application stores data that may need to be exported by end users, the application developer is responsible for building that export functionality into their application, using the current state of the Fluid container as represented by the Distributed Data Structures defined in the container." Hard to understand this from a paid service in Azure.
+# discuss
+- ## 
+
+- ## 
 
 - ## [Building a BFT JSON CRDT | Hacker News](https://news.ycombinator.com/item?id=33694568)
 - It's the Byzantine Fault Tolerant part of this that is particularly innovative and based on Kleppmanns most recent work. I believe it solves the issue of either malicious actors in the networks modifying others transactions, spoofing them, or the messages being modified by third parties ("outside" the network) who have MITM the connection. These are really great problems to solve.

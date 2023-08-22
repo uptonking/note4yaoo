@@ -26,6 +26,9 @@ modified: 2023-01-17T19:13:01.845Z
     - NO. Having to deeply understand CRDTs
     - NO. Peer to peer networking
     - NO. WASM-compiled databases in your browser
+  - [Investigate: move off dependency on sync SQLite (and multi-node scaling)](https://github.com/a-type/verdant/issues/263)
+    - Using better-sqlite3 for synchronous writes also meant that writes block reads for the whole server, which is convenient from an abstract standpoint but also bad from a scaling and adaptability standpoint.
+    - Another thing that would block multi-node scaling is server order (unless I did something like LiteStream and only allowed one writer node, but that kind of feels too rigid when I've already got CRDTs in use...).
 
 - https://github.com/drifting-in-space/driftdb /ts/rust
   - https://driftdb.com/
@@ -183,6 +186,8 @@ modified: 2023-01-17T19:13:01.845Z
 
 - https://github.com/lloydeverett/json-sync-server
   - Simple ExpressJS HTTP server that allows all clients to sync (read or update) a single JSON object. 
+# sync-state
+
 # more
 - https://github.com/owojcikiewicz/realtime-sync
   - enables collaborative editing of HTML inputs in real-time across multiple websites and clients.

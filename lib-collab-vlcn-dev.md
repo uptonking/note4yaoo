@@ -75,4 +75,45 @@ modified: 2023-06-03T14:43:26.987Z
   - A way to know when it is safe to prune events out of the log
 # docs
 
+# discuss-stars
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [investigate sequence/text crdts](https://github.com/vlcn-io/cr-sqlite/issues/65)
+- If we don't target WASM I think adding diamond types will be easy.
+  - Targeting WASM makes everything harder since WASM binaries currently can not load other binaries (AFAIK) so we have to compile Rust code with C code. 
+  - Maybe I'm worried about nothing and that is actually an easy thing to do?
+
+- We've (iver & myself) been discussing this a bunch offline and here is a summary of where we're at so far:
+  - 💡 **Queries that order by a recursive relationship in SQLite are actually rather performant** 
+  - Because of (1), _we can represent any tree-based CRDT in a table_
+  - A proposed table structure is something like below
+
+- If you're interested, one alternative is to use a "CRDT-quality" version of fractional indices. 
+  - These will never be as storage-efficient as a dedicated list CRDT, but you can generate the strings in <100 LOC and put them in a "position" column that you ORDER BY.
+- I still haven't seen any fractional indexing string which didn't have interleaving problems.. Has that been solved?
+  - Yeah, it was also my impression that you couldn't fix the interleaving problem with fractional indexing.
+  - btw -- we have implemented fractional indexing in cr-sqlite. 
+
+- It should be non-interleaving in both directions. 
+  - The total order is equivalent to a tree walk over a binary-ish tree; concurrently-inserted sequences end up in different subtrees, which don't interleave.
+  - **You do pay for this with longer strings**, though: "averaging" two neighboring strings adds a UID (~13 chars) instead of a single bit, except when the in-order optimization kicks in.
+
+- I think we can implement a variant of Fugue [1] that stores multiple chars per row. (Untested)
+
+- Closing this as I think enough research has been done and I'm ready to start implementing 
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # more

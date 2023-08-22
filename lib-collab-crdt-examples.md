@@ -28,6 +28,11 @@ modified: 2022-04-05T10:08:25.947Z
   - 能不能将协作的粒度从字符提升为句子
   - 或者crdt-text-by-lines, still sequence crdt，参考typewriter-quill
 
+- crdt-db: search repos + issues/discussions
+  - indexeddb-crdt, db-crdt
+    - 💡 db很可能只是持久化的位置，计算逻辑仍发生在内存，计算逻辑中的crdt可复用
+  - js-db: rxdb, tinybase
+
 - tips
   - 不必执着于hlc的使用案例，可对成熟案例在业务逻辑不变的情况下将其他clock替换成hlc
 # popular
@@ -170,15 +175,20 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/philschatz/peritext
     - 更新了版本、迁移到vite、基于automerge-wasm
 
-- https://github.com/serenity-kit/secsync /ts
-  - Is an architecture to relay end-to-end encrypted CRDTs over a central service.
-  - It was created out of the need to have an end-to-end encrypted protocol to allow data synchronization/fetching incl. real-time updates to support local-first apps in combination with a web clients without locally stored data.
-  - eg: End-to-end encrypted document using Yjs incl. Cursor Awareness
-  - eg: End-to-end encrypted todo list using Automerge
-  - Why use a central relay service?
-    - The main reason is to exchange data asynchronously.
-  - https://github.com/serenity-kit/Serenity /ts
-    - End-to-end encrypted pages for your team
+- https://github.com/composablesys/collabs /ts
+  - https://collabs.readthedocs.io/
+  - Collabs is a collections library for collaborative data structures. 
+  - These are data structures that look like Set, Map, Array, etc., except they are synchronized between multiple users
+  - Collabs is a library for collaborative data structures, not just a menu of built-in options (but we provide those too). So if our data structures don’t meet your needs, you can create your own
+  - [Network and Storage Providers](https://collabs.readthedocs.io/en/latest/guide/providers.html)
+    - Collabs documents don’t come with networking or storage built-in. 
+    - you should configure 可选 ws-client/tab-sync/indexeddb/local-storage
+    - Collabs documents don’t come with networking or storage built-in. Instead, you should configure 
+  - https://github.com/composablesys/collabs-e2e-benchmark
+  - [Collabs: Composable Collaborative Data Structures_2022](https://arxiv.org/abs/2212.02618)
+  - https://twitter.com/matthewweidner3/status/1444475869121110017
+    - Collabs is directly inspired by Automerge and Yjs, and uses similar techniques (network-agnostic CRDTs).  
+    - The main difference is its API: we try to mimic a non-replicated collections library, with flexibility, composition tools, and strong typing.
 
 - https://github.com/partykit/partykit /ts
   - https://partykit.io/
@@ -215,19 +225,20 @@ modified: 2022-04-05T10:08:25.947Z
   - [Liveblocks: Add real‑time collaboration to your product in minutes_202107](https://news.ycombinator.com/item?id=27994480)
   - User permissions and privileges in a collaborative app are much easier to handle with a centralised server
 
-- https://github.com/composablesys/collabs /ts
-  - Collabs is a collections library for collaborative data structures. 
-  - These are data structures that look like Set, Map, Array, etc., except they are synchronized between multiple users
-  - https://github.com/composablesys/collabs-e2e-benchmark
-  - [Collabs: Composable Collaborative Data Structures_2022](https://arxiv.org/abs/2212.02618)
-  - https://twitter.com/matthewweidner3/status/1444475869121110017
-    - Collabs is directly inspired by Automerge and Yjs, and uses similar techniques (network-agnostic CRDTs).  
-    - The main difference is its API: we try to mimic a non-replicated collections library, with flexibility, composition tools, and strong typing.
-
 - https://github.com/convergencelabs/javascript-examples /202105/js/inactive
   - Examples for the Convergence Real-time Collaboration Engine
   - https://github.com/convergencelabs/input-element-bindings
   - https://github.com/convergencelabs/html-text-collab-ext
+
+- https://github.com/serenity-kit/secsync /ts
+  - Is an architecture to relay end-to-end encrypted CRDTs over a central service.
+  - It was created out of the need to have an end-to-end encrypted protocol to allow data synchronization/fetching incl. real-time updates to support local-first apps in combination with a web clients without locally stored data.
+  - eg: End-to-end encrypted document using Yjs incl. Cursor Awareness
+  - eg: End-to-end encrypted todo list using Automerge
+  - Why use a central relay service?
+    - The main reason is to exchange data asynchronously.
+  - https://github.com/serenity-kit/Serenity /ts
+    - End-to-end encrypted pages for your team
 
 - https://github.com/PsychoLlama/graph-crdt /201707/js/inactive
   - Designed for serializing arbitrary data structures, making offline edits, and seamlessly merging changes back in. All data is observable and event driven.
@@ -560,9 +571,6 @@ modified: 2022-04-05T10:08:25.947Z
   - the choice is State-based
   - 使用了redis和mq，过于复杂
 
-- https://github.com/hldb/welo
-  - peer-to-peer, collaborative states using Merkle-CRDTs
-
 - https://github.com/concordant/c-crdtlib /kotlin
   - CRDT library in Kotlin for the Concordant platform API. 
   - This project is based on Kotlin multiplatform feature.
@@ -869,6 +877,14 @@ modified: 2022-04-05T10:08:25.947Z
   - While redux-scuttlebutt facilitates action sharing and enhancing the store, it's the responsiblity of the app's reducers to apply actions. 
   - implement CRDT helpers for reducers to easily implement complex shared data types.
   - `Timestamps are logical (not wall-clock based) and are in the format <logical timestamp>-<source>`.
+
+- https://github.com/hldb/welo /ts
+  - peer-to-peer, collaborative states using Merkle-CRDTs
+  - HLDB implementation in Typescript
+  - [Welo Version 3 tasks-list](https://github.com/hldb/welo/issues/102)
+  - https://github.com/hldb/hldb
+    - A peer-to-peer database protocol
+    - There is no encryption built into the protocol yet.
 # more-crdt
 - https://github.com/netopyr/wurmloch-crdt
   - Experimental implementations of conflict-free replicated data types (CRDTs) for the JVM

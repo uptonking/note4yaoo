@@ -14,7 +14,11 @@ modified: 2023-03-07T04:10:13.906Z
 
 - ## 
 
-- ## 
+- ## [is amfs means AutoMerge Filesystem?](https://github.com/ConradIrwin/amfs/issues/1)
+- That’s correct, and it uses automerge-go under the hood.
+  - the goal was to play with file systems that sync in real time, so as you type in VSCode it is immediately reflected on the filesystem. 
+  - It’s currently using NFS, because I found a simple nfs server template, but it’s a little slow (and very “works on my machine”).
+  - The end goal was to build a replacement for git that you didn’t have to remember to use, but I am currently thinking about doing something that doesn’t use NFS instead.
 
 - ## [how does automerge compare to holochain?](https://github.com/automerge/automerge/issues/566)
 - Automerge is like Docs. Holochain is Bittorrent.

@@ -36,6 +36,29 @@ modified: 2023-02-05T19:12:13.098Z
 # discuss-collaboration
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Sync Engine and Real-Time Collaboration · WordPress/gutenberg__20230713](https://github.com/WordPress/gutenberg/issues/52593)
+  - [Real-Time Collaboration](https://make.wordpress.org/core/2023/07/03/real-time-collaboration/)
+  - [Real-time Collaboration: architecture](https://make.wordpress.org/core/2023/07/13/real-time-collaboration-architecture/)
+
+- The goals are multiple here:
+  - Allow multiple users connected to the same WP-Admin to collaborate together on the same content (multiple posts/templates...) live.
+  - Enabling offline editing and synchronization of data.
+  - Offer a great DevX where developers are freed from thinking about the collaborative editing needs. Data is collaborative and synced by default and abstracted away from the UI developer.
+
+- [Bootstrap a minimal sync package_202308](https://github.com/WordPress/gutenberg/pull/52681)
+  - The goal of this PR is to introduce a new package @wordpress/sync that will serve as a playground for us to iterate on the synchronization and live collaboration features.
+  - It's most likely going to take a lot of time and iterations for us to arrive a decent API and experience for the sync engine and live collaboration
+
+- At the moment, the **base architecture of the package is in place** but it's not entirely hooked into all the necessary places:
+  - relies on `yjs` to synchronize and merge changes.
+  - Some entities of core-data have their corresponding "syncConfig" which allow their records to be synchronized.
+  - The package allows offline indexeddb persistence (default yjs provider).
+  - a "non-working" WebRTC connector to set the API in place, It relies on the default yjs public signaling server but that server is not working properly at the moment.
+
 - ## [Block Collab: New package, a framework for collaborative editing_202006](https://github.com/WordPress/gutenberg/pull/23129)
 - I have not seen any progress since Sep 2021.
 

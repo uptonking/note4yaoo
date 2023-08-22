@@ -41,12 +41,18 @@ modified: 2022-11-04T14:21:31.365Z
   - crsqlite works by adding metadata tables and triggers around your existing database schema. 
   - crsqlite only keeps an extra int per column and a clock per row.
   - [expo： [POC][sqlite] Investigate possibility of using crsqlite in expo-sqlite which allows database syncing between clients · expo/expo](https://github.com/expo/expo/pull/23728)
-- https://github.com/vlcn-io/vlcn-orm
+- https://github.com/vlcn-io/vlcn-orm /ts
   - a schema layer whose first goal is to make P2P & Local-First software easy to develop
   - everything in Aphrodite begins with a schema. This schema encodes the application's data, its relationships, consistency rules, allowed mutations and privacy.
   - Aphrodite Schemas are written in a DSL.
+  - [IndexedDB support?](https://github.com/vlcn-io/vlcn-orm/issues/48)
 - https://github.com/vlcn-io/orm-browser-starter
   - Aphrodite running and saving data locally in the browser
 - https://github.com/tantaman/Strut
   - collaborative editing and offline support, powered by vlcn.io
+
+- https://github.com/mycelial/mycelite /rust
+  - https://mycelial.com/
+  - Mycelite is a SQLite extension that allows you to synchronize changes from one instance of SQLite to another
+  - Currently, it only supports one-way synchronization, but eventually, it will support two-way synchronization.
 # more

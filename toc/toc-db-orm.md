@@ -215,6 +215,15 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/isar/isar /Flutter
   - Extremely fast, easy to use, and fully async NoSQL database for Flutter
   - The new Isar Core (written in Rust) can be compiled to wasm and will be insanely fast with all features. Unlike the current IndexedDB implementation.
+# db-streaming
+- https://github.com/MaterializeInc/materialize /rust
+  - https://materialize.com/
+  - Materialize is a fast, distributed SQL database built on streaming internals.
+  - Materialize is a streaming database powered by Timely and Differential Dataflow, purpose-built for low-latency applications. 
+  - https://github.com/TimelyDataflow/timely-dataflow
+    - A modular implementation of timely dataflow in Rust
+  - https://github.com/TimelyDataflow/differential-dataflow
+    - An implementation of differential dataflow over timely dataflow on Rust.
 # more-database
 - https://github.com/lealone/Lealone
   - /1.6kStar/Apache2+H2MPL2/202012/java

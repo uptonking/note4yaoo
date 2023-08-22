@@ -764,6 +764,11 @@ modified: 2023-02-05T19:03:12.723Z
   - Redux, Redux Thunk, axios, Slate, Lodash
   - Sign-in with JWT token
 
+- https://github.com/mkoskim/mawejs /js
+  - Mawe writer's editor with ElectronJS, React and NodeJS. 
+  - Third generation of the editors I have written for my own use.
+  - I needed a tool for myself, that's why I wrote Mawe with Python/GTK, and now with ElectronJS, Javascript and React.
+
 - https://github.com/sagemathinc/cocalc
   - CoCalc is web-based software that enables collaboration in research, teaching, and scientific publishing.
   - It includes Jupyter Notebooks, Sage Worksheets, a LaTeX Editor and a Linux Terminal to help people work together in real time

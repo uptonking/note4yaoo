@@ -17,6 +17,7 @@ modified: 2021-05-13T03:08:52.583Z
 - refs
   - [Cross platform software frameworks](https://blog.tomayac.com/2023/02/23/cross-platform-software-frameworks/)
   - [electron alternatives](https://dev.to/urielsouza29/comment/1lb73)
+  - [QQ技术团队分享：新QQ NT桌面版/electron内存优化探索之路_202308](https://mp.weixin.qq.com/s/uk_KKk3YuMyY2Auk68SwgA)
 
 - https://github.com/Elanis/web-to-desktop-framework-comparison
   - to create an objective comparison of multiple framework that grant us to "transform" our web app to desktop application formats.
@@ -82,6 +83,13 @@ modified: 2021-05-13T03:08:52.583Z
   - 在NW.js，网页中的Node集成需要通过给Chromium打补丁来实现，Electron通过各个平台的消息循环与libuv的循环集成，避免了直接在Chromium上做改动
 - 多上下文语境。
   - NW.js包括Node上下文和web上下文，自从0.13以来NW.js选择性支持多上下文。通过使用Node的multi-context特性，Electron不需要在网页中引入新的js上下文
+
+### [为什么用 electron 开发的桌面应用那么多？ - 知乎](https://www.zhihu.com/question/509656170/answers/updated)
+
+- 飞书和钉钉肯定不是，他俩用的CEF。
+  - Electron和CEF底下其实都是chromium内核。
+
+- 因为软件开发太卷了，及其追求速度，所以怎么快怎么来呗，至于性能啥的，后面再说，又不是不能用
 
 ## electron中可以使用web worker吗？
 

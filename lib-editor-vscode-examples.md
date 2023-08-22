@@ -43,6 +43,12 @@ modified: 2023-01-21T18:58:29.846Z
 - https://github.com/gitpod-io/openvscode-server
   - This project provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser. 
   - It's based on the very same architecture used by Gitpod or GitHub Codespaces at scale.
+# vscode-collab
+- https://github.com/sekassel-research/vscode-collab-plugin /ts
+  - Collaborative editing plugin for VSCode/code-server/fulib.org Projects
+  - This extension is designed to work with code-server and allows for real-time synchronization of work on projects. 
+  - However, it's important to note that this synchronization only works when users are working on the same directory. 
+  - The extension does not support synchronization between different directories or projects
 # vscode-integrations
 - https://github.com/betatim/vscode-binder /python
   - VS Code on Binder, because sometimes you need a real editor.
