@@ -46,7 +46,7 @@ modified: 2022-04-05T10:08:25.947Z
   - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
   - 依赖fp-ts、protobuf、kysely(sql-builder)、murmurhash、~~zod~~
   - 提供了dbworker.worker
-  - [Release evolu@5.0.0 · evoluhq/evolu](https://github.com/evoluhq/evolu/releases/tag/evolu%405.0.0)
+  - [Release evolu@5.0.0](https://github.com/evoluhq/evolu/releases/tag/evolu%405.0.0)
     - For now, Evolu is using a synchronous version of SQLite. 
     - But soon, we will also use asynchronous SQLite for other platforms where synchronous SQLite is not available. 
     - With Effect, the code is the same.
@@ -190,6 +190,20 @@ modified: 2022-04-05T10:08:25.947Z
     - Collabs is directly inspired by Automerge and Yjs, and uses similar techniques (network-agnostic CRDTs).  
     - The main difference is its API: we try to mimic a non-replicated collections library, with flexibility, composition tools, and strong typing.
 
+- https://github.com/TopGunBuild/topgun /ts/gundb
+  - https://gun.eco/docs/
+  - Reimplementation of gunDB in TypeScript
+  - A graph data synchronisation engine for building realtime, offline-first, secure and scalable applications.
+  - [recently started TopGun. TopGun is still at an early stage](https://matrix.to/#/!apmkrFyPwFRRvQgtEw:gitter.im/EXselrV0t3CAC9wC8pYiNaom57VTS_JU-PXXVscXpmY?via=gitter.im&via=matrix.org&via=matrix.thisisjoes.site)
+    - does the version number 1.x mean the first stable release has already been done?
+    - Unfortunately TopGun isn't stable yet, this is my first attempt at using semantic-release and I missed the point when the auto-upgrade was over 1.x
+    - I tried awaiting a .put in the for-loop, but then I guess something starting hanging in GUN and it stopped calling the .put callbacks
+
+- https://github.com/okdistribute/piratedb /js/inactive
+  - A multiwriter peer-to-peer database with a last-writer-wins CRDT.
+  - 依赖subleveldown、unordered-materialized-kv、randombytes
+  - 测试用例使用kappa-core、memdb、random-access-memory
+
 - https://github.com/partykit/partykit /ts
   - https://partykit.io/
   - partykit is an SDK designed for creating real-time collaborative applications.
@@ -271,10 +285,6 @@ modified: 2022-04-05T10:08:25.947Z
   - crdt基于自己实现的lseq
   - Linear sequence of values based on `ORMap` of base64 fractional index to values
   - timestamp基于逻辑时钟
-
-- https://github.com/TopGunBuild/topgun /ts/gundb
-  - Reimplementation of gunDB in TypeScript
-  - A graph data synchronisation engine for building realtime, offline-first, secure and scalable applications.
 # crdt-rewrite
 - https://github.com/josephg/crdt-examples
   - CRDT examples from a DWEB talk
@@ -431,6 +441,7 @@ modified: 2022-04-05T10:08:25.947Z
     - Recently(202107) I greatly improved CTs by introducing the Chronofold data structure
     - I remember seeing that (regex CTs) and immediately thinking "wtf, why would anyone want to do that". Took me quite a while to understand that it's actually a pretty clever way to write fast state machines in browserland. So thank you for this work!
 - https://github.com/gritzko/swarm /2.7kStar/MIT/201805/js/inactive
+  - Swarm.js is a JavaScript client for the Swarm database.
   - Swarm is like "git for data" except it's real-time and never has a merge conflict. 
   - Swarm is based on Replicated Object Notation (RON), a distributed live data format.
   - RON is based on CRDT
@@ -834,6 +845,13 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/Haotian-Yang/CRDTree
   - 服务端基于ws
+# crdt-rust
+- https://github.com/RhizomeDB/rs-rhizome /MIT/rust
+  - https://fission.codes/ecosystem/rhizomedb/
+  - Rhizome is an in-development database for use in building local-first applications over a content addressable store, like IPFS.
+  - RhizomeDB employs our PomoDB protocol to execute a local-first edge database for querying decentralized data. 
+  - It extends support for concurrent access to structured and unstructured data distributed in content-addressable networks and enables the creation of decentralized, collaborative applications.
+  - [Ship TodoMVC as an example app later](https://github.com/RhizomeDB/rs-rhizome/issues/83)
 # apps-examples
 - https://github.com/Sambigeara/fuzzynote /go
   - Terminal-based, hyper-fast, CRDT-backed, collaborative note-taking tool

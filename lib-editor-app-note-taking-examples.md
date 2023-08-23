@@ -181,6 +181,9 @@ modified: 2023-02-05T18:05:44.122Z
   - Outline editor and repurposable workspace shell.
   - Minimal dependencies, mainly Mithril.js.
   - Built with Deno toolchain. Zero Node.js utilization.
+
+- https://github.com/cybersemics/em /ts/web/ios/android
+  - minimalistic note-taking app for personal sensemaking.
 # note-browser-extensions
 - note-it /16Star/Apache2/202208/ts/tiptap
   - https://github.com/MuhametSmaili/note-it

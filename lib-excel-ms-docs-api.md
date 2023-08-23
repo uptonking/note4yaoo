@@ -25,6 +25,7 @@ modified: 2023-08-17T08:28:11.799Z
     - 在线导入并打包依赖如react/xlsx的能力，可通过预构建的扩展变通解决
   - 参考react-live/mdx-live/script-lab，每次将数据对象和解析后的代码传进去
   - 类似vscode像codepen的实时预览扩展
+  - [Announcing Python in Excel](https://techcommunity.microsoft.com/t5/excel-blog/announcing-python-in-excel-combining-the-power-of-python-and-the/ba-p/3893439)
 # docs
 
 ## Excel JavaScript API

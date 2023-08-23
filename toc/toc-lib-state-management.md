@@ -440,6 +440,13 @@ modified: 2020-07-14T11:03:53.196Z
   - https://github.com/coldi/r3f-game-demo
     - A demo on how to do a simple tile-based game with React and react-three-fiber
 # more-state
+- https://github.com/josephg/statecraft /201911/ts/inactive
+  - Manage state with finesse
+  - Statecraft is a protocol and set of tools for interacting with data that changes over time. 
+  - It is the spiritual successor to Sharedb.
+  - The store guarantees that the data is immutable with respect to time. (So if the data changes, the version number goes up).
+  - Unlike traditional transactional databases, Statecraft stores compose together like LEGO. Stores wrap one another
+
 - https://github.com/regionjs/region-core
   - region-core is a progressive View Model Management Framework. 
   - You can use it while using react state, redux, and benefit from it.

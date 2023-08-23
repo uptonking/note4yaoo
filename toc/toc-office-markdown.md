@@ -85,7 +85,7 @@ modified: 2021-01-04T17:26:25.032Z
   - Markdown-backed database with queries, user-defined actions, validators, variable expansion, and reporters in JavaScript
   - gg is a CLI to import, query, act on, and report on local Markdown files with support for user-defined JavaScript extensions.
   - gg supports a subset of Markdown for parsing: headers, paragraphs (the "type-inferred values"), and un-nested bullet lists 
-# utils
+# tools
 - monotome /151Star/AGPLv3/202208/js
   - https://github.com/cblgh/monotome
   - a personal knowledge base system. markdown markup, runs in the browser
@@ -121,6 +121,14 @@ modified: 2021-01-04T17:26:25.032Z
 
 - https://github.com/plantain-00/markdown_to_pdf
   - A CLI tool to convert a markdown to a pdf file.
+
+- https://github.com/silverbulletmd/silverbullet /ts
+  - https://silverbullet.md/
+  - SilverBullet is an extensible, open source personal knowledge platform. 
+  - implemented as an offline-first PWA
+  - At its core it’s a clean markdown-based writing/note taking application that stores your pages (notes) as plain markdown files in a folder referred to as a space. 
+  - While SB uses a database for indexing and caching some indexes, all of that can be rebuilt from its markdown source at any time. 
+  - extensible with plugs, and you can customize it
 # apps
 - https://github.com/motifland/markprompt
   - Markprompt is a platform for building GPT-powered prompts. 

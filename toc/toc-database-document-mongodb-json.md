@@ -43,14 +43,22 @@ modified: 2022-11-03T04:14:11.987Z
     - https://github.com/allwi290/zangodb
       - cjs to es
 
-- ForerunnerDB /707Star/MIT/202006/js/v2+v3
+- https://github.com/rain1017/memdb /201511/js/inactive
+  - 全球首个支持分布式事务的MongoDB
+  - Distributed Transactional In-Memory Database
+  - MongoDB and Mongoose Compatible
+  - It's just a 'MongoDB' with a cache layer which support distributed transaction.
+
+- ForerunnerDB /707Star/MIT/202006/js/v2
   - https://github.com/Irrelon/ForerunnerDB
+  - http://www.irrelon.com/
   - ForerunnerDB is a NoSQL JavaScript JSON database with a query language based on MongoDB (with some differences) and runs on browsers and Node.js.
   - ForerunnerDB supports data persistence on both the client (via LocalForage) and in Node.js (by saving and loading JSON data files).
   - ForerunnerDB is an in-memory store but you choose how often (if at all) data is loaded and saved with underlying storage engines.
   - https://github.com/Irrelon/forerunnerdb-core /202110/js/v3/inactive
     - This project contains the core query/match/update functionality of ForerunnerDB 3.x
-    - forerunnerdb-core provides the core of ForerunnerDB 3.0 which is a complete rewrite of ForerunnerDB in ES6
+    - provides the core of ForerunnerDB 3.0 which is a complete rewrite of ForerunnerDB in ES6
+    - 3.0 is being built in a completely modular fashion with extensibility at heart.
     - queries in ForerunnerDB 3.x use MongoDB query language by default.
   - [How does load work?](https://github.com/Irrelon/ForerunnerDB/issues/247)
     - The load() method does indeed load everything into memory 

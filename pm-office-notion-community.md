@@ -11,7 +11,7 @@ modified: 2023-03-29T17:23:37.126Z
 
 # changelog
 - We recently made our Personal Plan free and removed the block limit!_202007
-# discuss
+# discuss-author
 - ## 
 
 - ## 
@@ -19,6 +19,11 @@ modified: 2023-03-29T17:23:37.126Z
 - ## notion: Earlier this year(2023), our infra team 3×-ed our backend database capacity (AKA “sharding”) to support Notion’s growing userbase — all without any app downtime!
 - https://twitter.com/NotionHQ/status/1681364115309334530
   - [The Great Re-shard: adding Postgres capacity (again) with zero downtime](https://www.notion.so/blog/the-great-re-shard)
+
+# discuss
+- ## 
+
+- ## 
 
 - ## 倍速重听了 21 年这期访谈 Logseq 的播客。 
 - https://twitter.com/mr_easonyang/status/1642902992683950080
@@ -69,14 +74,12 @@ modified: 2023-03-29T17:23:37.126Z
   - Our source-of-truth data store is Postgres, with a Memcached cache on top.
   - Most of our queries are "pointer chasing" - we follow a reference from one record in memory to fetch another record from the data store. To optimize recursive pointer-chasing queries, we cache the set of visited pointers in Memcached.
   - We use Elasticsearch for search features like QuickFind.
-- 
-- 
-- 
-- 
 
-- ## #Notion will not have #offline mode.
+- ## Notion will not have #offline mode.
 - https://twitter.com/ianberdin/status/1592848167632244736
-  - @NotionHQ has Postgres based backend with deep tree structure. There are no available technologies to sync such structure with a relational database. And yes, Notion can not rewrite their logic using OT, CRDT. It won't work.
+  - @NotionHQ has Postgres based backend with deep tree structure. 
+  - There are no available technologies to sync such structure with a relational database. 
+  - And yes, Notion can not rewrite their logic using OT, CRDT. It won't work.
 
 - ## no user wants to fiddle with a merge UI or picking versions like with iCloud.
 - https://news.ycombinator.com/item?id=28717848

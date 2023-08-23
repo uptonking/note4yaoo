@@ -137,12 +137,18 @@ modified: 2023-06-19T12:33:38.006Z
   - The whiteboard is very much a secondary feature in the platform but it's been extremely useful to allow for building free form UIs and I plan to use it in the future to do all sorts of crazy stuff like let customers define what a 'product card' looks like by building a template in the whiteboard bound to live data, saving it as a reusable template, and then rendering their entire catalog view (grouped/filtered/sorted cards) with the 'card' being that whiteboard template realized.
   - There's so little overhead in rendering N whiteboards that it's really no different than any other react component
   - We're about to kickoff building a 3d configurator sub-application using the whiteboard as a building block, basically a three JS 'shape' set to the viewport's bounds and then tool windows on top of it
-# discuss-stars
+# discuss-author
 - ## 
 
 - ## 
 
-- ## 
+- ## 🤔 I’m thinking of implementing a tldraw block type for my notebook app, 
+- https://twitter.com/JungleSilicon/status/1694046938877018314
+  - but that means that there will be many instances of tldraw within the same document. Do you foresee any issues?
+- Depends on how many. Each canvas is meant to be isolated wrt kbds / inputs / rendering, but performance may take hits when multiple big documents are open. 
+  - **I’d use images if you can for inline drawings and have a single modal editor that opens up for editing**.
+- if you use IntersectionObserver, save the UI state then unload the tldraw instances that are off viewport, rehydrate when the user scrolls them back into view. If you're super fancy you can make a PNG snapshot of the document before unloading for smoother transitions
+  - That’s a good idea! Though there’s also some state that could be lost, like focus / editing inputs / iframes
 
 - ## 🚨 places where we wasted time over the last year
 - https://twitter.com/steveruizok/status/1692868098586509535

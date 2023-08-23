@@ -110,6 +110,9 @@ $$('[contenteditable]')
   - evolu: hlc + merkle + worker
   - remoteStorage: google-drive、网盘、七牛对象存储
   - pouchdb
+  - 使用hlc: idbsidesync, verdant, harika
+  - 结合hlc+crdt: idbsidesync, evolu, rga-crdt
+  - 结合hlc+db: piratedb, tinybase, kappa-db-stream, linvodb
 
 - sqlite-web
   - evolu(hlc+worker)

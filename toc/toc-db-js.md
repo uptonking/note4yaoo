@@ -235,16 +235,16 @@ modified: 2022-11-25T15:50:48.226Z
   - 👉🏻 Provides SQL-like APIs that are fast, safe, and easy to use.
   - 不支持原版SQL，支持`todoDb.select().from(item).where(item.done.eq(false)).exec();` 类SQL方法
   - [Lovefield wraps IndexedDB objects in different classes](https://github.com/google/lovefield/blob/master/docs/dd/02_data_store.md)
-  - https://github.com/teambition/ReactiveDB /201707/ts
-    - Reactive ORM for Lovefield
-    - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS
 - https://github.com/arthurhsu/lovefield-ts
   - [ブラウザで動くSQLite alternativesとしてのLovefield - console.lealog(); ](https://lealog.hateblo.jp/entry/2023/03/03/092649)
   - Lovefield Typescript port and modernization.
   - All namespaces are flattened
   - no Static schema: it was designed for use with Closure compiler.
-- https://github.com/ReactiveDB/core
+- https://github.com/ReactiveDB/core /MIT/ts
   - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS。
+  - https://github.com/teambition/ReactiveDB /201707/ts/inactive
+    - Reactive ORM for Lovefield
+    - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS
 
 - https://github.com/robtweed/glsdb /202209/js
   - Global Storage Database Abstraction for Node.js
@@ -280,6 +280,16 @@ modified: 2022-11-25T15:50:48.226Z
   - It provides basic insert/update/delete/query capabilities. 
   - localStorageDB has no dependencies, and is not based on WebSQL. 
   - Underneath it all, the structured data is stored as serialized JSON in localStorage or sessionStorage.
+
+- https://github.com/kappa-db/kappa-core /ISC/202011/js/inactive
+  - Minimal peer-to-peer database, based on kappa architecture.
+  - kappa-core is built on an abstraction called a kappa architecture, or "event sourcing". 
+    - This differs from the traditional approach to databases, which is centered on storing the latest value for each key in the database.
+    - In contrast, **kappa architecture centers on a primitive called the "append-only log"** as its single source of truth.
+    - Each entry in a log is addressable by its "sequence number" (starting at 0, then 1, 2, 3, ...). In the case of kappa-core, which uses hypercore underneath
+  - kappa-core still uses tables like the above, though. 
+    - However, instead of being the source of truth, these **tables are generated (or materialized) from the log data**, providing a view of the log data in a new or optimized context. 
+    - These are called materialized views.
 # db-json
 - lowdb /18.7Star/MIT/202211/ts
   - https://github.com/typicode/lowdb
@@ -323,10 +333,12 @@ modified: 2022-11-25T15:50:48.226Z
   - A database software completely built as JSON files in backend
 # db-distributed-collab
 - orbit-db /7.4kStar/MIT/202301/js
-  - https://github.com/orbitdb/orbit-db
+  - https://github.com/orbitdb/orbitdb
   - OrbitDB is a serverless, distributed, peer-to-peer database. 
-  - OrbitDB **uses IPFS as its data storage** and IPFS Pubsub to automatically sync databases with peers. 
-  - It's an eventually consistent database that uses CRDTs for conflict-free database merges making OrbitDB an excellent choice for decentralized apps (dApps), blockchain applications and local-first web applications.
+  - OrbitDB **uses IPFS as its data storage** and Libp2p Pubsub to automatically sync databases with peers.
+  - It's an eventually consistent database that uses Merkle-CRDTs for conflict-free database writes and merges
+  - OrbitDB provides various types of databases for different data models and use cases
+  - All databases are implemented on top of `ipfs-log`, an immutable, cryptographically verifiable, operation-based CRDT
   - https://news.ycombinator.com/item?id=22918714
     - OrbitDB's core is an append-only, immutable log CRDT.The log in OrbitDB is a Merkle-DAG, so, a graph.
     - Key-Value databases, feeds, and other data model types that OrbitDB supports by default, are all built on that log. You can also create your custom database types, ie. custom data models.
@@ -341,6 +353,15 @@ modified: 2022-11-25T15:50:48.226Z
 - https://github.com/cypsela/sailplane-web /js
   - https://cypsela.github.io/sailplane-web
   - Collaborative p2p file sharing in the browser
+- orbit /2.3kStar/MIT/202209/ts
+  - https://github.com/orbitjs/orbit
+  - Orbit is a composable data framework for managing the complex needs of today's web applications.
+  - Although Orbit is **primarily used as a flexible client-side ORM**, it can also be used server-side in Node.js.
+  - Interact with data from a variety of sources: a REST server, a WebSocket stream, an IndexedDB backup, an in-memory store, etc.
+  - Work offline, work online, and seamlessly transition between both modes.
+  - Support undo、redo
+  - [How difficult is to create an offline-first app?](https://github.com/orbitjs/orbit/issues/790)
+    - There is currently no CRDT implementation in orbit. There is no server implementation at all.
 
 - https://github.com/mafintosh/hyperdb /201808/js
   - Distributed scalable database.

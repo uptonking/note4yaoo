@@ -243,6 +243,9 @@ modified: 2021-04-11T06:17:51.318Z
   - Similar to Select2 and Selectize but without the jQuery dependency.
   - Flexible styling
   - 依赖redux、fuse.js(fuzzy-search in js)
+
+- https://github.com/ivkan/ts-select2
+  - a version of Select2 written in typescript without any dependencies.
 # headless-react
 - https://github.com/chatscope/use-chat
   - https://chatscope.io/demo/

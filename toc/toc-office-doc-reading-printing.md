@@ -172,6 +172,9 @@ modified: 2021-07-21T18:09:20.751Z
 # reader
 - https://github.com/koreader/koreader /lua
   - An ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats, running on Cervantes, Kindle, Kobo, PocketBook and Android devices
+
+- https://github.com/janeczku/calibre-web /python/js
+  - a web app that offers a clean and intuitive interface for browsing, reading, and downloading eBooks using a valid Calibre database.
 # more
 - https://github.com/wecatch/markdown-css
   - http://wecatch.me/markdown-css/

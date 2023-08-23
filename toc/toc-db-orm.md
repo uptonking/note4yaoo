@@ -119,10 +119,12 @@ modified: 2021-08-30T18:56:09.644Z
 - orbit /2.3kStar/MIT/202209/ts
   - https://github.com/orbitjs/orbit
   - Orbit is a composable data framework for managing the complex needs of today's web applications.
-  - Although Orbit is primarily used as a flexible client-side ORM, it can also be used server-side in Node.js.
+  - Although Orbit is **primarily used as a flexible client-side ORM**, it can also be used server-side in Node.js.
   - Interact with data from a variety of sources: a REST server, a WebSocket stream, an IndexedDB backup, an in-memory store, etc.
   - Work offline, work online, and seamlessly transition between both modes.
   - Support undo、redo
+  - [How difficult is to create an offline-first app?](https://github.com/orbitjs/orbit/issues/790)
+    - There is currently no CRDT implementation in orbit. There is no server implementation at all.
 
 - https://github.com/Fibonacci-Solucoes-Ageis/MyBatisNodeJs /js
   - MyBatisNodeJs is a port from the The MyBatis data mapper framework for Node. Js.
@@ -177,6 +179,11 @@ modified: 2021-08-30T18:56:09.644Z
   - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
   - It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
   - 可直接将 PostgreSQL 数据库发布成 REST API，甚至有基于此库的 SaaS 服务如 supabase 可提供类 Google Firebase 的功能。
+# db-state-management
+- https://github.com/oslabs-beta/LiveStateDB /js/inactive
+  - LiveStateDB is a database subscription API that enables developers to make state reflect database changes in real time. 
+  - Currently, LiveStateDB only supports MongoDB.
+  - LiveStateDB features a client side library and a server side library that can be installed via npm or yarn with the following commands. The libraries need to be installed on both sides in order to make use of LiveStateDB's real time updates.
 # orm-non-js
 - https://github.com/upper/db /202208/go
   - Data access layer for PostgreSQL, CockroachDB, MySQL, SQLite and MongoDB with ORM-like features
@@ -212,6 +219,18 @@ modified: 2021-08-30T18:56:09.644Z
   - ArangoDB runs on-prem, in the cloud – anywhere.
   - ArangoDB is available in a free and open-source Community Edition, as well as a commercial Enterprise Edition with additional features.
 
+- https://github.com/engula/engula /apache2/rust/inactive/selectdb成员项目
+  - https://engula.io/
+  - a distributed key-value store, used as a cache, database, and storage engine.
+  - [Engula Development Guide](https://github.com/engula/engula/discussions/244)
+    - API: inspired by Redis, and some programming languages like Rust, Python, etc.
+    - Architecture: inspired by Socrates, Aurora, Spanner, BigTable, TAO.
+    - Transaction: inspired by hybrid-logical-clocks (HLC)
+    - Stream engine: inspired by LogDevice, Delos
+    - Object engine: inspired by RocksDB, GFS, and DeltaLake.
+  - https://github.com/w41ter/sekas /rust
+    - a distributed key-value store, used as cache, database, and storage engine for other distributed system.
+
 - https://github.com/isar/isar /Flutter
   - Extremely fast, easy to use, and fully async NoSQL database for Flutter
   - The new Isar Core (written in Rust) can be compiled to wasm and will be insanely fast with all features. Unlike the current IndexedDB implementation.
@@ -220,6 +239,7 @@ modified: 2021-08-30T18:56:09.644Z
   - https://materialize.com/
   - Materialize is a fast, distributed SQL database built on streaming internals.
   - Materialize is a streaming database powered by Timely and Differential Dataflow, purpose-built for low-latency applications. 
+  - [adapter: Switch to Hybrid Logical Timestamps (HLT)_202303](https://github.com/MaterializeInc/materialize/issues/17936)
   - https://github.com/TimelyDataflow/timely-dataflow
     - A modular implementation of timely dataflow in Rust
   - https://github.com/TimelyDataflow/differential-dataflow

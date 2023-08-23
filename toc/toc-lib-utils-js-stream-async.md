@@ -9,6 +9,9 @@ modified: 2023-04-04T22:36:31.529Z
 
 # guide
 
+- blogs
+  - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
+
 # popular
 - https://github.com/EloquentStudio/StreamTable.js /201604/js
   - streams data for tables in the background, updates and renders them using templating frameworks like Mustache.js, HandleBars.js

@@ -21,8 +21,8 @@ modified: 2023-03-20T10:28:16.979Z
   - YugaByte DB
   - tinybase
   - crsqlite
+  - Ditto: hlc
   - TiDB: Centralized clock
-  - Ditto: 
 
 - hlc可以解决lamport逻辑时钟无限增长的问题
 
@@ -303,7 +303,8 @@ else {
     - toolkit for creating event sourced applications using javascript/typescript.
 
 - https://github.com/iam-kevin/papai /4Star/MIT/202206/ts/wip
-  - Local-first storage adapter for JSON-modeled data. Intended to work with self store implementation
+  - Local-first storage adapter for JSON-modeled data. 
+  - Intended to work with self store implementation
   - Papai is storage provider intended for Local-first use with support for distributed storage implementation.
   - With ever-growing implementations for different storage options like localStorage, AsyncStorage, level, IndexedDB, WebSQL, Papai makes it possible to use the same interface attached to different storage options, leaving you concerned with building the business side of your applications.
   - 基于HybridLogicalClock和State-based CRDTs
@@ -318,7 +319,7 @@ else {
 - https://github.com/theproductiveprogrammer/hybrid-logical-clock /js
   - A Hybrid Logical Clock is a resilient and simple distributed clock that provides the ability for identity and ordering of messages in a distributed system.
 
-- https://github.com/atolab/uhlc-rs
+- https://github.com/atolab/uhlc-rs /rust
   - This library is an implementation of an Hybrid Logical Clock (HLC) associated to a unique identifier. 
   - Thus, it is able to generate timestamps that are unique across a distributed system, without the need of a centralized time source.
 
@@ -336,6 +337,7 @@ else {
   - a Hybrid Logical Clock implementation in JavaScript. 
   - It is comparable to CockroachDB's implementation. 
     - It creates Timestamps with a nanosecond WallClock (using bigint-time) that supports de-/encoding to fixed size **96bit** Uint8Arrays (compatible with codecs) or JSON object.
+  - 依赖biginit-time、longfn
   - https://github.com/rjmackay/vue-todo-kappa-db
     - A Todo PWA using KappaDB and Hypercore for syncing data. 
     - Built with Vue 3 + Vuex + Bootstrap 5.

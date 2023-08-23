@@ -201,8 +201,8 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/orda-io/orda /go
   - A client and server written in Go. 
   - CRDT-based data synchronization supporting document database.
-  - Orda project is a multi-device data synchronization platform based on MongoDB 
-  - Orda is based on CRDT(conflict-free data types), which enables operation-based synchronization.
+  - Orda project is a multi-device data synchronization platform based on MongoDB (which could be other document databases such as CouchBase).
+    - Orda is based on CRDT(conflict-free data types), which enables operation-based synchronization.
   - https://github.com/orda-io/orda-js
     - Javascript(or Typescript) SDK for Orda project. 
 
@@ -248,8 +248,12 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/earthstar-project/react-earthstar
   - https://earthstar-project.org/
   - A library for using React with Earthstar, a library for building syncing, decentralised online tools.
-- https://github.com/earthstar-project/earthstar
+- https://github.com/earthstar-project/earthstar /ts
+  - Storage for private, distributed, offline-first applications.
   - Earthstar is a specification and Javascript library for building online tools you can truly call your own.
+  - [Comparison to Kappa-db?](https://github.com/earthstar-project/earthstar/discussions/228)
+    - Kappa-db is a bundle of append-only logs (hypercores), one per author per device. It builds indexes by processing messages from the logs, in order, to build up a reduced state. The logs grow forever.
+    - Earthstar is a key-value database.You can hold any subset of the documents, sync them in any order, do partial sync, drop ones you don't want.
 
 - https://github.com/google/ot-crdt-papers
   - This repository will hold papers Raph Levien is writing on technologies for collaborative text editing, in particular at the intersection of Operational Transformation and Conflict-free Replicated Data Types (CRDT's).

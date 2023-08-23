@@ -32,6 +32,18 @@ modified: 2022-11-03T04:14:00.563Z
   - https://github.com/jaredwray/keyv
   - Simple key-value storage with support for multiple backends
   - Storage Adapters: etcd, mongodb, redis, sqlite
+
+- https://github.com/engula/engula /apache2/rust/inactive/selectdb成员项目
+  - https://engula.io/
+  - a distributed key-value store, used as a cache, database, and storage engine.
+  - [Engula Development Guide](https://github.com/engula/engula/discussions/244)
+    - API: inspired by Redis, and some programming languages like Rust, Python, etc.
+    - Architecture: inspired by Socrates, Aurora, Spanner, BigTable, TAO.
+    - Transaction: inspired by hybrid-logical-clocks (HLC)
+    - Stream engine: inspired by LogDevice, Delos
+    - Object engine: inspired by RocksDB, GFS, and DeltaLake.
+  - https://github.com/w41ter/sekas /rust
+    - a distributed key-value store, used as cache, database, and storage engine for other distributed system.
 # leveldb-like
 - https://github.com/Level/bench
   - Benchmark `abstract-level` databases. 
@@ -89,6 +101,13 @@ modified: 2022-11-03T04:14:00.563Z
 
 - https://github.com/heineiuo/rippledb
   - Embeddable key-value database engine in pure TypeScript, based on LSM-Tree
+
+- https://github.com/belayeng/quadstore /MIT/ts
+  - https://belayeng.github.io/quadstore
+  - Quadstore is a LevelDB-backed RDF graph database / triplestore for JavaScript runtimes (browsers, Node.js, Deno, Bun, ...) written in TypeScript.
+  - Implements the Sink, Source and Store RDF/JS interfaces for maximum interoperability with other RDF libraries
+  - Supports SPARQL queries via quadstore-comunica, a tailored configuration and distribution of the Comunica querying framework
+  - Natively capable of querying across named graphs
 # level-search
 - search-index /1.3kStar/MIT/202207/js
   - https://github.com/fergiemcdowall/search-index
@@ -126,15 +145,18 @@ modified: 2022-11-03T04:14:00.563Z
   - A full MongoDB query language implementation with INDEXES for querying your levelup/leveldb database.
   - This is a plugin for level-queryengine.
 # level-multi
+- https://github.com/tradle/multi-hyperbee /js
+  - A LevelUP compatible leaderless multi-master database with eventual consistency, **using hyperbee + CRDT + HLC**. 
+  - Similarly CockroachDB achieves replication on top of RocksDB, but here it is a pure P2P **streaming** database, with zero central management.
+  - like all other low-level components of hypercore ecosystem it is a single-writer data structure. Multi-writer is a higher-level abstraction, hence the name multi-hyperbee.
+  - batch is not yet supported
+  - In this version we only add multi-writer to Hyperbee. But we can extend it to Trie and Drive
+
 - https://github.com/juliangruber/multilevel /201802/js
   - Expose a LevelDB over the network
 
 - https://github.com/mafintosh/multi-master-merge /201511/js
   - A database with multi master replication and merge support based on leveldb, fwdb and scuttleup
-
-- https://github.com/tradle/multi-hyperbee
-  - A LevelUP compatible leaderless multi-master database with eventual consistency, using hyperbee + CRDT + HLC. 
-  - Similarly CockroachDB achieves replication on top of RocksDB, but here it is a pure P2P streaming database, with zero central management. 
 # level-utils
 - https://github.com/fergiemcdowall/pumbledb /201308/js
   - a Node.js key-value server that uses LevelDB

@@ -83,8 +83,6 @@ modified: 2023-06-03T14:43:26.987Z
 
 - ## 
 
-- ## 
-
 - ## [investigate sequence/text crdts](https://github.com/vlcn-io/cr-sqlite/issues/65)
 - If we don't target WASM I think adding diamond types will be easy.
   - Targeting WASM makes everything harder since WASM binaries currently can not load other binaries (AFAIK) so we have to compile Rust code with C code. 
@@ -116,4 +114,10 @@ modified: 2023-06-03T14:43:26.987Z
 - ## 
 
 - ## 
+
+- ## Primary key choices matter again once you start working with CRDT database.
+- https://twitter.com/tantaman/status/1547954669250457600
+  - Having a uuid for every row doesn't make sense when rows created by different peers can have the same identity and need to be merged.
+  - E.g., a topic in a collaborative library. If we both create the "Science" topic independently, they should both represent the same thing and merge together.
+
 # more

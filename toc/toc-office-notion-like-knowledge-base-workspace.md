@@ -101,6 +101,10 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/appotry/dootask /php/vue
   - https://www.dootask.com/
   - 轻量级的开源在线项目任务管理工具，提供各类文档协作工具、在线思维导图、在线流程图、项目管理、任务分发、即时IM，文件管理等工具。
+
+- https://github.com/mintterteam/mintter /go/ts
+  - https://mintter.com/
+  - Mintter is a decentralized knowledge collaboration application for open communities powered by a knowledge graph.
 # github-wiki-confluence-like
 - MrDoc /2.1kStar/GPL.v3/202208/js/python/仅网页版
   - https://github.com/zmister2016/MrDoc
@@ -282,6 +286,9 @@ modified: 2022-06-03T21:34:54.893Z
   - 依赖slate、yjs、rxjs
   - WYSIWYG Block Editor built upon Slate.js, with drag & drop, custom block rendering, etc.
   - Cross platform powered by Electron.
+
+- https://github.com/courajs/referent /js
+  - An offline-first, realtime-collaborative wiki engine
 # workspace built with vscode
 - foam /12.5kStar/MIT/202208/ts/vscode
   - https://github.com/foambubble/foam
@@ -313,6 +320,14 @@ modified: 2022-06-03T21:34:54.893Z
   - 无需服务端开发，只需支持http静态访问网页空间
   - 自动更新文库导航目录，支持多级目录
   - 无需服务端的全文库内容搜索与计分排序
+
+- https://github.com/silverbulletmd/silverbullet /ts
+  - https://silverbullet.md/
+  - SilverBullet is an extensible, open source personal knowledge platform. 
+  - implemented as an offline-first PWA
+  - At its core it’s a clean markdown-based writing/note taking application that stores your pages (notes) as plain markdown files in a folder referred to as a space. 
+  - While SB uses a database for indexing and caching some indexes, all of that can be rebuilt from its markdown source at any time. 
+  - extensible with plugs, and you can customize it
 # kb-search
 - https://github.com/coderabbit214/document-ai
   - go基于向量数据库与GPT3.5的通用本地知识库方案

@@ -15,6 +15,24 @@ modified: 2022-04-05T10:09:51.343Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 💡 You can move CRDT data over whatever data layer you have on hand, and insert them into whatever data stores you want. 
+- https://news.ycombinator.com/item?id=30984776
+  - Care for the special **semantics of CRDT are only needed when merging CRDTs**, storage and transportation is like any other encoded format, like moving a JPEG encoded image over HTTP, or storing a JPEG as a byte stream in a database. 
+  - Neither the HTTP client or the database need to know how to turn the JPEG bytes into screen pixels.
+- Here’s a possible design for a CRDT editor system:
+- Browser client composes a CRDT locally in-memory, and saves the CRDT data into IndexedDB periodically as a Blob of bytes.
+- When the client is online, it periodically performs a sync with the server using HTTP, with this protocol:
+- This scheme is not optimally efficient, but shows that you can put together a CRDT system with a normal database and a bit of HTTP.
+- See https://docs.yjs.dev/api/document-updates#syncing-clients for more info on how Yjs (the most production ready library) handles these concepts.
+
+- Yep. I've done something very similar on top of Diamond Types for a little personal wiki.
+
 - ## [JSON CRDT 2.0](https://github.com/streamich/json-joy/issues/228)
 - Things to consider:
   - Move operations across different document nodes.

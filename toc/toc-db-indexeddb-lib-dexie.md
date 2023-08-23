@@ -9,6 +9,7 @@ modified: 2022-11-25T17:19:08.656Z
 
 # guide
 
+- [Dexie 4.0 Road Map](https://github.com/dexie/Dexie.js/discussions/1455)
 # popular
 - Dexie.js /8kStar/Apache2/202206/ts
   - https://github.com/dexie/Dexie.js

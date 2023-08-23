@@ -495,3 +495,23 @@ your suggestion here
   - There could be an explosion of low quality libraries that only serve to add confusion.
 - What's the difference between this and GumHub by @m1guelpf ?
   - Sell access to your GitHub repos with Gumroad
+
+# discuss-office-rooms
+- ## 
+
+- ## 
+
+- ## 考察了一下EFC这边写字楼（美国中心）的价格。小办公室大约60平（建筑面积，实际40平），每平3块多
+- https://twitter.com/tualatrix/status/1694237227793191246
+  - 家里的鱼太多了
+- 还是缺少仪式感
+- 物业费也是很大的一块支出
+  - 写字楼物业费挺贵的，这块估计得到 10 块钱一平一月。水费公摊，相比房租少两个数量级。电会贵一点。宽带在写字楼只能拉企业宽带，电信的话慧企通最低 299 每月，200M 下行 30M 上行
+- 40 其实还算上公摊的，实际上能够坐的工位也就4-6个，非常的不实用（还有顺便提一句，EFC 的停车费也和‘欧美’挂钩的，比上海都贵…
+
+- 从我这些年经历过写字楼，wework单间，独立公寓的小团队办公室经验来看。如果你附近公寓租金便宜，优先推荐租个居民公寓，腾空自己适当布置，感受和性价比会远高于前两者
+- 一开始还是用联合办公空间比较合适，或者租民房办公
+  - 民房同样的面积往往比写字楼便宜一倍，反正不是要对外迎客的话，都差不多。不过民房不能做工商注册。
+
+- efc没必要啦 余杭那么多便宜的地方
+- 可以看看附近的杭师大科技园的，或者再向西看看人工智能小镇的，大概可以便宜1/3。

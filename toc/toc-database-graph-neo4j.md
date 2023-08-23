@@ -11,11 +11,17 @@ modified: 2022-11-03T04:49:42.587Z
 
 - blogs
   - [一文了解各大图数据库查询语言（Gremlin vs Cypher vs nGQL）| 操作入门篇 - 知乎](https://zhuanlan.zhihu.com/p/110995885)
-
 # db-graph
 - https://github.com/neo4j/neo4j  /java
   - the world’s leading Graph Database
   - Neo4j offers orders of magnitude performance benefits compared to relational DBs.
+
+- https://github.com/belayeng/quadstore /MIT/ts
+  - https://belayeng.github.io/quadstore
+  - Quadstore is a LevelDB-backed RDF graph database / triplestore for JavaScript runtimes (browsers, Node.js, Deno, Bun, ...) written in TypeScript.
+  - Implements the Sink, Source and Store RDF/JS interfaces for maximum interoperability with other RDF libraries
+  - Supports SPARQL queries via quadstore-comunica, a tailored configuration and distribution of the Comunica querying framework
+  - Natively capable of querying across named graphs
 
 - https://github.com/levelgraph/levelgraph  /202108/js
   - LevelGraph is a Graph Database, built on the uber-fast key-value store LevelDB through the powerful LevelUp library. 

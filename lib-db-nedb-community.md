@@ -136,7 +136,8 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
 
 ### LevelDB
 
-> LevelDB is a Google-developed key-value storage database written in C++. Node.js and Electron bindings are available via `classic-level` which builds upon `abstract-level` to implement the LevelDB bindings. [Level/classic-level](https://github.com/Level/classic-level)
+> LevelDB is a Google-developed key-value storage database written in C++. Node.js and Electron bindings are available via `classic-level` which builds upon `abstract-level` to implement the LevelDB bindings. 
+> [Level/classic-level](https://github.com/Level/classic-level)
 >  
 
 #### Pros
@@ -174,7 +175,8 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
 
 ### LowDB
 
-> A simple local JSON database. Use native JavaScript API to query. Written in TypeScript. ([typicode/lowdb](https://github.com/typicode/lowdb))
+> A simple local JSON database. Use native JavaScript API to query. Written in TypeScript. 
+> ([typicode/lowdb](https://github.com/typicode/lowdb))
 >  
 
 #### Pros

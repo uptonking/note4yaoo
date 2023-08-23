@@ -92,8 +92,8 @@ modified: 2022-09-21T15:47:41.340Z
   - This is a test project to combine yjs and sqlite wasm, it lets you store yjs documents in a sqlite database, update them in place and query the content. 
   - Perfect for building a local first web app.
 
-- https://github.com/pluv-io/pluv /ts/yjs
-  - Multi-platform, E2E type-safe realtime packages
+- https://github.com/pluv-io/pluv /MIT/ts/yjs
+  - https://pluv.io/
   - allows you to build real-time collaborate features with a fully end-to-end type-safe api.
   - Inspired by trpc, Built with yjs
   - @pluv/io, @pluv/client, @pluv/crdt-yjs and @pluv/react all require yjs as a peer dependency.
@@ -209,8 +209,8 @@ modified: 2022-09-21T15:47:41.340Z
 
 ## automerge-v1
 
-- https://github.com/automerge/hypermerge
-  - Hypermerge is deprecated. This library is no longer maintained and uses an ancient and slow version of Automerge. 
+- https://github.com/automerge/hypermerge /ts
+  - Hypermerge is deprecated. 
   - Hypermerge is a Node.js library for building p2p collaborative applications without any server infrastructure. It combines Automerge, a CRDT, with hypercore, a distributed append-only log.
   - Hypermerge stores an automerge document as a set of separate Hypercores, one per actor ID. Each actor ID in the document is the discovery key of a Hypercore, which allows recursive lookup.
 

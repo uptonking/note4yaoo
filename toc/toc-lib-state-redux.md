@@ -60,7 +60,7 @@ modified: 2020-11-02T19:13:04.103Z
 - https://github.com/react-stack/redux-storage
   - Persistence layer for redux with flexible backends
   - install at least one redux-storage-engine, as redux-storage is only the "management core".
-  - https://github.com/michaelcontento/redux-storage
+  - https://github.com/michaelcontento/redux-storage /201608/js/inactive
     - Persistence layer for redux with flexible backends
 
 - https://github.com/redux-observable/redux-observable
@@ -71,12 +71,28 @@ modified: 2020-11-02T19:13:04.103Z
   - Build Offline-First Apps for Web and React Native
   - 🤔 没必要执着于寻找已有的offline方案，使用 persist + crdt 也可以实现协作
 
-- redux-database /18Star/MIT/202005/ts/NoDeps
+- https://github.com/redux-orm/redux-orm /202104/js/inactive
+  - https://redux-orm.github.io/redux-orm/
+  - simple and immutable ORM to manage relational data in your Redux store.
+  - Redux-ORM deals with related data, structured similar to a relational database. The database in this case is a simple JavaScript object database.
+  - For simple apps, writing reducers by hand is alright, but when the number of object types you have increases and you need to maintain relations between them, things get hairy. 
+    - ImmutableJS goes a long way to reduce complexity in your reducers, but Redux-ORM is specialized for relational data.
+  - [Call for Maintainer and Contributors](https://github.com/redux-orm/redux-orm/issues/123)
+    - I've been moving away from redux to things like react-query and lost traction on redux-orm
+
+- redux-database /18Star/MIT/202005/ts/NoDeps/inactive
   - https://github.com/nerdgeschoss/redux-database
   - https://nerdgeschoss.github.io/redux-database
   - Simple reducer based in-memory database with strong typings and immutable documents, with plugins for redux and react.
   - Client side data normalization is hard. This library helps you to organize your state in a relational way, with queries and joins as you would expect from an SQL based database. 
   - There is a storage adaper for redux or you can use it as a standalone library (redux-database has no dependencies!).
+
+- https://github.com/msolvaag/redux-db /201902/ts/inactive
+  - provides a normalized redux store and easy object management.
+  - Having a normalized state is a good strategy if your data is nested in different ways. 
+- https://github.com/cape-io/redux-graph /js/inactive
+  - Redux Graph Database
+  - basic graph database with entity and triple storage
 
 - https://github.com/lscheibel/redux-yjs-bindings
   - https://lscheibel.github.io/redux-yjs-bindings/

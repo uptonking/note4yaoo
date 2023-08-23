@@ -252,6 +252,14 @@ modified: 2022-11-26T17:35:24.870Z
   - If you have large JavaScript objects (~10-100MB) you may hit some performance issues. 
     - This is because whenever you call `db.write`, the whole `db.data` is serialized using `JSON.stringify` and written to storage.
     - If you plan to scale, it's highly recommended to use databases like PostgreSQL or MongoDB instead.
+  - [data not sync from two instance for pm2 ( exec_mode cluster)](https://github.com/typicode/lowdb/issues/344)
+    - Sorry, lowdb doesn't support concurrency/clusters, instead it's supposed to be run in one instance.
+    - You can force a re-read by calling db.read() though, but you'll probably have issues so I wouldn't recommend that
+  - [Whether to support cluster](https://github.com/typicode/lowdb/issues/100)
+    - When using lowdb, you should always have a single Node instance running.
+    - If you have 2 instances of Node, each will have a different version of your database but both will write to one file and one of the instance data will be lost.
+  - [Can you use more than one instance of lowdb?](https://github.com/typicode/lowdb/issues/296)
+    - Yes, it's possible. Simply create 2 adapters/db instance
   - used-by
     - json-server
 

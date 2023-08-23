@@ -9,6 +9,10 @@ modified: 2023-03-07T04:10:13.906Z
 
 # guide
 
+# not-yet
+- 将https://github.com/automerge/hypermerge迁移到v2
+# roadmap
+
 # discuss
 - ## 
 

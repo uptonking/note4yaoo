@@ -10,7 +10,6 @@ modified: 2022-04-23T18:48:32.550Z
 # guide
 
 # discuss
-
 - ## 
 
 - ## 🎙 Recording → ✍️ Text → 💭 Analysis with AI now available in Glide! 

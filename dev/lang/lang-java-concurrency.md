@@ -15,7 +15,30 @@ modified: 2022-12-19T01:59:01.628Z
 
 - ## 
 
-- ## 
+- ## [没有vert.x之前java是如何解决高并发问题的？ - 知乎](https://www.zhihu.com/question/316926737/answers/updated)
+
+- 多得很呀，比如跟vert.x不相上下的undertow呀，裸netty呀。。。
+
+- 前端高并发解决方法有
+  - 题主说的烧机器。 http无状态，tomcat用线程池（pool几百个thread)可以hold住大量的client（1000个左右），排队呗；系统瓶颈在中间的事务管理器 和后端数据库的设计上。java ee规范已经考虑cluster了，花钱堆机器横向扩展可以解决，应用开发也要符合可扩展的规范
+  - 魔改jvm的线程实现，比如 BEA 的旧版本jrockit jvm （jvm1.3之前的时代）使用“green thread”(jvm实现的虚拟机内部使用的thread)，jrockit jvm管理的线程数 比os 调度的native thread要高2到3个数量级
+  - 自己按照servlet规范做服务器。比如有魔改tomcat，把session接口用memcached之类的实现
+
+- 新jdk引入 非阻塞IO 和异步调用，设计风格转erlang。 用惯了jvm线程，这些都学不会了。比如网游类型的系统，需要MOBA，服务器端手撕socket和状态机，和tomcat没啥关系了。
+
+- 最开始，根本没有什么高并发问题，联网的东西没几个，select/poll够够的。
+  - 后来互联网兴起了，并发蹭蹭涨，活跃么不一直活跃的，poll也不够用了，开始有epoll。
+  - 有了epoll，java开始有nio。可惜java官方api太难用，很多坑。先行者踩完坑，就有了netty/mina。现在应该是netty更流行了。
+  - 再后来移动互联网了，并发又涨了点，咋办呢，把事件回调那套应用到curd全流程，充分利用cpu。
+  - 可是回调太难写了咋办，有了future，reactive，各种m:n协程，vert的类actor也算。
+  - 怎么提升呢？持久性内存，rdma, dpdk 等等现在高大上的技术可能变成标配，内核也开始统一为各种io提供统一高性能异步接口。并发范式上还是csp, actor，到看不到什么突破，不过可能被serverless/streaming隐藏起来。
+
+- nio是利用epoll的吗是调用系统的api吗
+  - linux上是的，bsd上是kqueue，win上是iocp
+
+- 之后jboss team在red hat慢慢发展出了netty这些东西，进而发展出了vert.x
+  - nio即便有了，还有两个东西没有，一个是java 2011 1.7之后弄的nio 2，future来包装callback，其实更为重要的是1.8之后的lambda，没有lambda之前，你要想写一个callback，乖乖，你需要匿名内部类，所以代码会相对难看
+  - 还有什么，我想下，哦，对了，nosql
 
 - ## JVM Virtual Thread，同一套 API 能同时在 Platform Thread 和 Virtual Thread 上工作看上去有点科幻，但好像也确实没啥不行
 - https://twitter.com/YangKeao/status/1646590131925839872
