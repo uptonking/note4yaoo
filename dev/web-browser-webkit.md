@@ -276,6 +276,13 @@ modified: 2021-01-01T20:11:00.889Z
   - Fast, Private, Lightweight browser based on PyQt5/QtWebEngine
   - [Making a browser using Webkit and Python : browsers](https://www.reddit.com/r/browsers/comments/14u8jf3/making_a_browser_using_webkit_and_python/)
   - QtWebEngine is chromium but significantly easier to maintain. All-in-all, with a tab system and cookies
+
+- https://github.com/Alex313031/beaker-ng /js
+  - It is a continued fork of Beaker.
+  - Beaker-ng is an experimental peer-to-peer Web browser based on Electron. 
+  - It adds new APIs for building hostless applications while remaining compatible with the rest of the Web. 
+  - It can use the `dat://` and `hyper://` URL schemes/protocols.
+
 # firefox-gecko
 - https://github.com/Floorp-Projects/Floorp
   - https://floorp.app/

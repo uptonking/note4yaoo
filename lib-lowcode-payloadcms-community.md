@@ -74,6 +74,11 @@ modified: 2023-02-05T18:40:43.969Z
   - We're working through some prototypes right now. The goal is to not lean too heavily on JSON. As long as we can get the level of normalization, query performance and dev experience, we're going to make it work like a traditional relational database. More on this later.
 - Great stuff! Really excited for this. I hope schemas will be supported for Postgres. It would be awesome to be able to keep a full database of `public` schema for app related records and a `content` schema for the CMS. This way we can also manually query between the two without cluttering(使杂乱) the public schema.
 
+- Another thing to note is that in Directus/Strapi, they have some pretty serious limitations when it comes to using their equivalent of our more complex field types, including the array field.
+  - For example, Directus goes straight to a JSON column for their array field, which means that you can't have relationships or localized content within array rows. 
+  - We would never let that fly - in Payload, we use relationships within array rows constantly. Relations within a JSON column might be possible, but it could be argued that it would be more complex to join relations on JSON array column data.
+- I can't promise that we will jump right to JSON columns, though, and the problems above are just a small snippet of what we are foreseeing now.
+
 - 
 - 
 - 

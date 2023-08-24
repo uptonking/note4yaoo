@@ -23,7 +23,14 @@ modified: 2021-08-28T11:49:05.730Z
 # discuss
 - ## 
 
-- ## 
+- ## 将本地开发的 localhost:3000 映射到一个具体网址(还要带 https)有什么办法
+- https://twitter.com/vikingmute/status/1694539022125949393
+  - 我之前都用的是 nginx，后来看到讨论中用的 Caddy
+  - 自带 https，配置非常简单（比 nginx 简单多了）
+- 其他的高赞一些方案：
+  * Docker + Docker Compose + Traefik + Mkcert, 这里面的这个 mkcert，本地生成证书的， 可以收藏了
+  * Localcan https://localcan.com，居然还有一个专门的 App，太神奇了
+  * localtest, https://readme.localtest.me, 一个简单的小教程
 
 - ## Tip: @ChromeDevTools can now override the content of Fetch/XHR requests! Great for mocking APIs without waiting on backend changes!
 - https://twitter.com/addyosmani/status/1691833832817967315

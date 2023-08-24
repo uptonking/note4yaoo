@@ -14,9 +14,24 @@ modified: 2023-03-07T04:10:13.906Z
 # roadmap
 
 # discuss
+
 - ## 
 
 - ## 
+
+- ## 
+
+- ## hypermerge used to provide a p2p gateway for automerge but was forsaken because it uses an outdated automerge version
+- https://automerge.slack.com/archives/C61RJCM9S/p1687580301244489
+  - I also noticed that it had a couple shortcomings, wondering if those would be solved with the current versions of both libraries.
+- I'd be interested in seeing an automerge-repo-network-hyperswarm but I don't have any current plans to implement it. I'm not sure exactly how it would work but having written a few takes on it with hypermerge, I'm sure it's doable.
+- We would love to explore that one and not waste time on hyperswarm if it does not meet automerge requirements
+
+- ## Is there any chance that we can eventually get an improved Text API on the roadmap?_202308
+- https://automerge.slack.com/archives/C61RJCM9S/p1692886056954899
+  - I still don't think it's possible to do real text editor integration without linear scans of text to reconcile javascript vs automerge string representations, but it seems like that stuff could be hidden behind an API anyway (which I believe libraries like yjs do). I understand that this may not be a priority, but is there an intention to improve this situation eventually?
+- Good text editor bindings are the next thing on the list after we get the automerge-repo release out. 
+  - I already have half complete prosemirror and codemirror bindings which we will be officially supporting so yes, a good text API is on the list
 
 - ## [is amfs means AutoMerge Filesystem?](https://github.com/ConradIrwin/amfs/issues/1)
 - That’s correct, and it uses automerge-go under the hood.

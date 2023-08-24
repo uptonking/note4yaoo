@@ -42,6 +42,14 @@ modified: 2023-01-21T18:53:04.519Z
 
 - ## 
 
+- ## 
+
+- ## Google 的 Web 版 VSCode - Project IDX 今天开放了公众测试版，
+- https://twitter.com/indigo11/status/1694497731832951265
+  - 快速感受了一下，界面几乎和 VSCode 一样，完全在浏览器中运行，
+  - 集成了很多云端的 Runtime 环境，导入项目很方便
+- 相比codespace有优势吗
+
 - ## GH CodeSpaces = Backed by a VM, vscode.dev = backed by a virtual FS 
 - https://twitter.com/orta/status/1431925117555257345
   - It's kinda like code sandbox vs the typescript playground

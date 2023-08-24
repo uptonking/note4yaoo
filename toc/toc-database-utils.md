@@ -29,6 +29,17 @@ modified: 2023-08-23T17:15:46.484Z
   - Secure. Uses signed merkle trees to verify log integrity in real time.
   - Version 10 is not compatible with earlier versions (9 and earlier), but is considered LTS
 
+- https://github.com/datrs/hypercore-protocol-rs /rust
+  - https://github.com/datrs/hypercore /rust
+  - https://docs.rs/hypercore/latest/hypercore/
+  - Rust implementation of Hypercore protocol
+  - This crate provides a low-level streaming API to hypercore-protocol and exposes an interface that should make it easy to implement actual protocol logic on top. This crate targets Hypercore 9 (Dat 2) only.
+  - It uses `async-std` for async IO, and `snow` for the Noise handshake.
+
+- https://github.com/RangerMauve/hyper-sdk /js
+  - A Software Development Kit for the hypercore-protocol
+  - Hypercore-protocol and it's ecosystem consists of a bunch of low level building blocks for working with data in distributed applications. Although this modularity makes it easy to mix and match pieces, it adds complexity when it comes to actually building something.
+
 - https://github.com/holepunchto/hyperbee /js
   - https://docs.holepunch.to/building-blocks/hyperbee
   - An append-only B-tree running on a Hypercore. 
@@ -37,17 +48,60 @@ modified: 2023-08-23T17:15:46.484Z
   - It uses a single Hypercore for storage, using a technique called embedded indexing.
   - It provides features like cache warmup extension, efficient diffing, version control, sorted iteration, and sparse downloading.
   - As with the Hypercore, a Hyperbee can only have a single writer on a single machine
+  - https://github.com/geut/hyperbee-live-stream
+    - Creates a ReadableStream but keep watching for changes in the range defined
 
 - https://github.com/holepunchto/hyperdrive /js
   - https://docs.holepunch.to/building-blocks/hyperdrive
-  - a secure, real-time distributed file system designed for easy P2P file sharing. 
+  - a secure, real-time distributed file system designed for easy P2P file sharing.
+
+
+- https://github.com/Telios-org/nebula /js
+  - Real-time distributed storage for files and key value databases built on top of Hypercore Protocol
+  - A lot of inspiration was taken from Hyperdrive, but Hyperdrive didn't have options for fine-grain access control, multiple writers, and the ability to delete files from disk once added to the drives.
+
+
+- https://github.com/holepunchto/hyperblobs /js
+  - A simple blob store for Hypercore.
+  - Each blob is identified by its unique bounds within the Hypercore, which makes them easy to save and retrieve
+
+- https://github.com/RangerMauve/hypercore-fetch /js
+  - Implementation of Fetch that uses the Hyper SDK for loading p2p content
 
 - https://github.com/tradle/multi-hyperbee /js
   - A LevelUP compatible leaderless multi-master database with eventual consistency, **using hyperbee + CRDT + HLC**. 
   - Similarly CockroachDB achieves replication on top of RocksDB, but here it is a pure P2P **streaming** database, with zero central management.
   - like all other low-level components of hypercore ecosystem it is a single-writer data structure. Multi-writer is a higher-level abstraction, hence the name multi-hyperbee.
 
+- https://github.com/holepunchto/autobase
+  - Autobase lets you write concise multiwriter data structures with Hypercore
+  - https://github.com/lejeunerenard/autobase-event-bus
+
+- https://github.com/dxos/feed-level-indexer
+  - Index messages into a leveldb through multiple hypercore feeds.
+
+- https://github.com/digidem/multi-core-indexer /js
+  - You can use this module to index one or more hypercores
+  - This module is useful if you want to create an index of items in multiple Hypercores. 
+  - There is no guarantee of ordering, so the indexer needs to be able to index unordered data. 
+  - Sparse hypercores are supported, and undownloaded entries in the hypercore will be indexed when they are downloaded.
+
+- https://github.com/digidem/websocket-hypercore-replicator
+  - Replicate a hypercore over a websocket
+
+- https://github.com/fsteff/hyperobjects
+  - Simple object store with transaction support, built on hypercore.
+  - concurrent, atomic transactions
+
+
+- https://github.com/rafapaezbas/hypercore-speed-tests
+  - Test with Hypercore and Hyperbee
+
 ### dat-ecosystem
+
+- refs-dat
+  - [Dat Ecosystem](https://dat-ecosystem.org/)
+  - https://dat-ecosystem-archive.github.io/how-dat-works/
 
 - https://github.com/dat-ecosystem/dat
   - https://dat.foundation/
@@ -58,7 +112,10 @@ modified: 2023-08-23T17:15:46.484Z
 ## kappa-db
 
 - https://github.com/kappa-db/kappa-core /ISC/202011/js/inactive
-  - Minimal peer-to-peer database, based on kappa architecture.
+  - kappa-core is a minimal peer-to-peer database, based on append-only logs and materialized views.
+  - kappa-core is built atop two major building blocks:
+    - hypercore, which is used for (append-only) log storage; parts of logs can be selectively sync'd between peers
+    - materialized views, which are built by traversing logs in potentially out-of-order sequence
   - kappa-core is built on an abstraction called a kappa architecture, or "event sourcing". 
     - This differs from the traditional approach to databases, which is centered on storing the latest value for each key in the database.
     - In contrast, **kappa architecture centers on a primitive called the "append-only log"** as its single source of truth.
@@ -66,7 +123,17 @@ modified: 2023-08-23T17:15:46.484Z
   - kappa-core still uses tables like the above, though. 
     - However, instead of being the source of truth, these **tables are generated (or materialized) from the log data**, providing a view of the log data in a new or optimized context. 
     - These are called materialized views.
-  - https://github.com/Frando/kappa-core
+  - [Running kappa in the browser?](https://github.com/kappa-db/kappa-core/issues/25)
+    - For regular Node use, people tend to use level and random-access-file for storage, and then maybe hyperswarm for network discovery.
+    - check out random-access-storage/random-access-web and RangerMauve/hyperswarm-web. Level/browser-level supports browser use.
+  - https://github.com/Frando/kappa-core /用于kappa-record-db
+
+- https://github.com/kappa-db/workshop /js
+  - https://kappa-db.github.io/workshop/build/01.html
+  - let's learn how to write peer-to-peer applications in javascript!
+  - A small series of workshops to introduce kappa architecture and how to build p2p programs with modules like hypercore, multifeed, and kappa-core.
+  - https://github.com/aral/kappa-architecture-workshop-work-files
+  - https://github.com/dwyl/learn-kappa-architecture
 
 - https://github.com/arso-project/kappa-record-db /202005/js/inactive
   - A peer-to-peer database built on hypercores and kappa-core@experimental.
@@ -76,6 +143,16 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/arso-project/sonar /js/ts
   - https://sonar.arso.xyz/
   - A p2p content database and search engine
+
+- https://github.com/mafintosh/hyperdb /201901/js/inactive
+  - HyperDB is a scalable peer-to-peer key-value database.
+  - A HyperDB is fundamentally a set of hypercores.
+  - The combination of all operations performed on a HyperDB by all of its members forms a DAG (directed acyclic graph). 
+  - HyperDB builds an incremental index with every new key/value pairs ("nodes") written
+
+- https://github.com/peermaps/kappa-sparse-query /js/inactive
+  - architecture for sparse data flows over kappa-core driven by peer queries
+  - eplicate feeds for kappa-core@experimental views using sparse queries
 
 - https://github.com/kappa-db/multifeed /js
   - multi-writer hypercore

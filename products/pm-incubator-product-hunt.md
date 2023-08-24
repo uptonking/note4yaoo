@@ -19,7 +19,7 @@ modified: 2023-08-15T16:49:24.915Z
 - [Product Hunt 月榜、日榜](https://www.producthunt.com/time-travel)
   - [Golden Kitty Awards yearly](https://www.producthunt.com/golden-kitty-awards/hall-of-fame)
   - [Best rated products of month ?](https://www.producthunt.com/products?order=best_rated)
-  - [社区讨论: Best launches in 2022 🔥](https://www.producthunt.com/discussions/best-launches-in-2022)
+  - [社区讨论: Best launches in 2022](https://www.producthunt.com/discussions/best-launches-in-2022)
 
 - [新趣集 - 一起发现有趣的新产品](https://xinquji.com/)
   - 可查看日榜、月榜
@@ -60,7 +60,8 @@ modified: 2023-08-15T16:49:24.915Z
 
 - [Capacities](https://www.capacities.io/)
   - /knowledge-base/202307/notion-like
-  - Capacities is a place for all your information. A tool for PKM (personal knowledge management). A place for thinking and creating lasting(持久的, 长久的) knowledge.
+  - Capacities is a place for all your information. 
+  - A tool for PKM (personal knowledge management). A place for thinking and creating lasting(持久的, 长久的) knowledge.
   - It stores your knowledge and can resurface it, right when you need it. 
   - Our units of thinking are objects such as books, people, conversations, or ideas.
     - Media as first-class citizens (=objects)

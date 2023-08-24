@@ -93,6 +93,13 @@ modified: 2023-02-07T17:38:05.336Z
   - minimal project management app, powered by Next.js and Typescript
   - 依赖trpc、next、reduxjs-toolkit、recoil、react-query
   - 样式友好
+
+- vikunja
+  - https://vikunja.io/
+  - open-source, self-hostable to-do app.
+  - https://kolaente.dev/vikunja/frontend /vue
+  - web frontend for Vikunja, written in Vue.js.
+  - https://kolaente.dev/vikunja/api /go
 # user/permissions/scrum/Inventory
 - https://github.com/bissbr01/Command-project-management /ts
   - A Scrum Management App for teams

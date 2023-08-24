@@ -12,7 +12,24 @@ modified: 2021-01-06T14:40:11.360Z
 # discuss
 - ## 
 
-- ## 
+- ## Is the tuple returned from useState referentially stable?
+- https://twitter.com/TkDodo/status/1694608330063245510
+  - do I need to go through destruct valueAndSetter, do useMemo that creates value & pass that?
+
+```typescript
+const valueAndSetter = React.useState(initialValue);
+
+<MyContext.Provider value={valueAndSetter}>
+```
+
+- useState on rerenders calls useReducer, that calls useReducerImp and this is the only return statement in this function, it returns a fresh tuple each time
+  - updateReducerImpl
+  - https://github.com/facebook/react/blob/main/packages/react-reconciler/src/ReactFiberHooks.js
+
+- So it means in order to put a state value and its getter into the same react context and have it stable, I need to destruct, useMemo to create another tuple or object, and then pass that? Seems a bit tedious
+
+- The getter is not. I wrap it in useMemo every time. 
+  - The setter is but if you pass them like that I think it’s gonna be recalculated. You need to do exactly what you said.
 
 - ## React could significantly improve by including a built-in `useDescendants` hook. 
 - https://twitter.com/diegohaz/status/1689699208238923776
@@ -187,7 +204,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                               `ValueFront`,                               `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                     `ValueFront`,                                     `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

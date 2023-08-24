@@ -183,7 +183,7 @@ $$('[contenteditable]')
   - 分层渲染
   - 腰包掉到床头版与墙的夹缝中了
 
-## 07
+## 08
 
 - not-yet
   - todo remove hashId在编辑器model中有什么作用
