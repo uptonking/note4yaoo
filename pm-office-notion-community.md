@@ -9,6 +9,10 @@ modified: 2023-03-29T17:23:37.126Z
 
 # guide
 
+- notion社区-中文
+  - [Notion. Work](https://notion.work/)
+  - [Notion 中文社区导航](https://cnotion.notion.site/Notion-e18268991cd14de89b1cad0de60baa91)
+  - [NotionChina 用户手册](https://notionchina.co/)
 # changelog
 - We recently made our Personal Plan free and removed the block limit!_202007
 # discuss-author

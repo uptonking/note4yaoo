@@ -42,10 +42,20 @@ modified: 2023-03-20T10:28:16.979Z
 - [Extend Hybrid Logical Clock documentation](https://github.com/getditto/docs/issues/413)
 
 - The Ditto document is a JSON like document made from a CRDT Map that represents the JSON Object. 
-- The JSON properties are map keys, and the values are any of the Counter/Register/Map types
-- The foundation of determining how data should be merged is using a Ditto document's version vector.
-- Each document in each peer contains a hidden metadata map of a Site_ID and a HLC. The HLC stands for a hybrid logical clock. This HLC is used to determine whether a change has "happened before".
-- In Ditto's distributed system, the HLC is a 64-bit timestamp comprised of 48 bits of a physical timestamp and 16 bits of a monotonically increasing logical clock.
+  - The JSON properties are map keys, and the values are any of the Counter/Register/Map types
+  - One way to think about the types that make up a Ditto document is like a tree, where there are collections (Array and Map) and leaf values that are registers or counters.
+  - Register: A single primitive value (Number, String, Boolean, Binary File)
+  - Counter: A special number capable of preserving incrementing and decrementing semantics
+  - Map: A dictionary of name->value mappings
+
+- The foundation of determining how data should be merged is using a Ditto document's **version vector**.
+  - Every time a change is made to a document, the version of that document is incremented by one. 
+  - When a peer incorporates changes from other peers, the local peer can use the incoming remote peer's version vectors to determine whether the changes are new or old. 
+
+- Each document in each peer contains a hidden metadata map of a `Site_ID` and a `HLC`. 
+  - The HLC stands for a hybrid logical clock. This HLC is used to determine whether a change has "happened before".
+  - Ditto uses a `UInt128` to represent the `Site_ID` and `64bit` timestamp for the `HLC`. But for educational purposes, this documentation will often use strings and numbers for readability.
+- In Ditto's distributed system, the HLC is a `64-bit` timestamp comprised of `48 bits` of a physical timestamp and `16 bits` of a monotonically increasing logical clock.
 
 ### [计算机的时钟（五）：混合逻辑时钟 Hybrid Logical Clocks](http://yang.observer/2020/12/16/hlc/)
 

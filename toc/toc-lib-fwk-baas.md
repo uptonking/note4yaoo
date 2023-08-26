@@ -97,6 +97,16 @@ modified: 2021-05-25T09:40:55.797Z
 - https://github.com/lagonapp/lagon /rust/ts
   - Lagon is an open-source runtime and platform that allows developers to run TypeScript and JavaScript Serverless Functions close to users.
   - I've been building this fully open-source edge runtime and platform as an alternative to CF Workers & Deno Deploy for the past 10 months
+# python-framework
+- https://github.com/jam-py/jam-py /BSD/python/js
+  - https://jam-py.com/
+  - Jam.py is an object oriented, event driven framework with hierarchical structure, modular design and very tight DB/GUI coupling. 
+  - The server side of Jam.py is written in Python, 
+  - the client utilizes JavaScript, jQuery and Bootstrap.
+  - 依赖werkzeug、sqlalchemy
+  - https://jampyapplicationbuilder.com/
+    - https://jampyapp.pythonanywhere.com/
+    - https://northwind.pythonanywhere.com/
 # more
 - https://github.com/nils-simons/spackoDB /202206/js/starter
   - Firestore Alternative

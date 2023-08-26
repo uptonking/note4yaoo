@@ -160,6 +160,10 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/ForsakenHarmony/parket
   - A library to manage application state, heavily inspired by mobx-state-tree
   - This library uses Proxies and Symbols
+
+- https://github.com/oslabs-beta/ZusTime
+  - With ZusTime you can inspect your Zustand store and application by stepping both forward and backwards in your code, allowing you to visualize snapshots of state at various points in time. 
+  - This type of debugging tool limits the need for countless console logs and prevents you from having to run your application over and over again
 # event pub/sub
 - EventEmitter /3kStar/Unlicense/202001/js/NoDeps
   - https://github.com/Olical/EventEmitter

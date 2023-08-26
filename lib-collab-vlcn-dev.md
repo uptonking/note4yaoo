@@ -113,7 +113,11 @@ modified: 2023-06-03T14:43:26.987Z
 
 - ## 
 
-- ## 
+- ## [Yjs simple provider](https://github.com/vlcn-io/cr-sqlite/pull/120)
+  - Adds a yjs provider that persists to crsqlite and syncs through crsqlite.
+
+- going to shelve this for now.
+  - crsqlite shouldn't concern itself with application layer integrations at this point in time.
 
 - ## Primary key choices matter again once you start working with CRDT database.
 - https://twitter.com/tantaman/status/1547954669250457600

@@ -12,6 +12,8 @@ modified: 2023-01-09T16:29:46.049Z
 # not-yet
 - update是基于insert实现，作者表示wonky ?
 
+- git-like versions for tables(参考dolt)
+
 - ❓ 怪异的执行顺序
   - 代码中update操作然后remove，实际上update操作的cb比remove操作的cb后执行
   - 代码中先 insert>update, 但cb顺序update>insert

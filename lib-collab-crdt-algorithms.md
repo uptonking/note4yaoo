@@ -195,11 +195,11 @@ modified: 2023-03-07T04:43:58.713Z
 - [Replicated Growable Array / Causal Tree](https://replicated.cc/rdts/rga/)
   - Overall, RON 2.1 RGA/CT follows the classic RGA/CT data structure
 
-- [Which algorithm y-array is using? · y-js/y-array](https://github.com/y-js/y-array/issues/9)
+- [💡 Which algorithm y-array is using? · y-js/y-array](https://github.com/y-js/y-array/issues/9)
   - Yjs does not share any concepts with the RGA algorithm. 
-  - If you want to compare it conceptually, Yjs is actually more similar to WOOT. 
+  - If you want to compare it conceptually, Yjs is actually more similar to WOOT.
 
-- [CRDT: Tree-Based Indexing - Made by Evan](https://madebyevan.com/algos/crdt-tree-based-indexing/)
+- [CRDT: Tree-Based Indexing](https://madebyevan.com/algos/crdt-tree-based-indexing/)
   - Compared to fractional indexing, tree-based indexing is more complicated but prevents interleaving of concurrently-inserted runs, which makes it appropriate for textual data. 
   - The algorithm presented here is similar to a well-known one called "RGA" but with reordering layered on top.
 
@@ -497,10 +497,10 @@ modified: 2023-03-07T04:43:58.713Z
   - When we receive operations from the server, apply those operations to our WString instance and apply them to the text in #collab-doc.
   - WOOT, as an approach, gets really slow unless you implement tombstone garbage collection (aka getting rid of text that users have deleted) which can only happen when everyone has disconnected from a document.
 
-- https://github.com/atom/teletype-crdt
+- https://github.com/atom/teletype-crdt /js
   - [Can teletype-crdt work with other wysiwyg editor ?](https://github.com/atom/teletype-crdt/issues/6)
-  - Probably not. This CRDT is for text. A wysiwyg editor’s underlying model isn’t text, it’s a tree (with nodes and properties to represent rich text).
-  - teletype-crdt is a CRDT that exposes APIs that work only with plain text and markers. A WYSIWYG editor has a more complex structure than just text, so you will need to enhance it in such a way that can support your use case.
+    - Probably not. This CRDT is for text. A wysiwyg editor’s underlying model isn’t text, it’s a tree (with nodes and properties to represent rich text).
+    - teletype-crdt is a CRDT that exposes APIs that work only with plain text and markers. A WYSIWYG editor has a more complex structure than just text, so you will need to enhance it in such a way that can support your use case.
   - [协同编辑冲突处理算法综述](https://mp.weixin.qq.com/s?__biz=MjM5MTY2NTIyMA==&mid=2649000528&idx=1&sn=98521c16c3f24809f426fe39ae48e203&chksm=bea2377b89d5be6df3656e8b8c76d022ab1fe6deece6b3f16e88ab07b5cba227542240f7d5d7)
     - atom 编辑器的协同插件 teletype 即是基于 WOOT 实现
 

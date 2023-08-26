@@ -9,6 +9,9 @@ modified: 2023-04-16T10:02:58.738Z
 
 # guide
 
+- HuggingFace
+  - [魔搭社区](https://modelscope.cn/home)
+    - 汇聚各领域最先进的机器学习模型，提供模型探索体验、推理、训练、部署和应用的一站式服务
 # discuss-stars
 - ## AutoGPT现在超火，它是一个由开发者 Significant Gravitas 推出的项目，​可以根据用户设置的目标，​使用 GPT-4 自动帮助完成任务。
 - https://twitter.com/duanzi/status/1647284362541662213

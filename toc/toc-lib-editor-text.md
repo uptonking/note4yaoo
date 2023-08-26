@@ -86,10 +86,12 @@ modified: 2021-07-27T15:12:39.959Z
   - Markdown editor for react, developed in jsx and typescript.
   - https://github.com/imzbf/md-editor-v3 /vue3
 # editor-electron
-- https://github.com/pulsar-edit/pulsar /js
+- https://github.com/pulsar-edit/pulsar /MIT/js
   - https://pulsar-edit.dev/
   - A Community-led Hyper-Hackable Text Editor, Forked from Atom, built on Electron.
   - Designed to be deeply customizable, but still approachable using the default configuration.
+  - https://github.com/atom-community/atom
+    - Community build of the hackable text editor
 # desktop-editor
 - https://github.com/lapce/lapce
   - written in pure Rust with a UI in Druid (which is also written in Rust). 

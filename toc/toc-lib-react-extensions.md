@@ -116,6 +116,10 @@ modified: 2020-11-19T12:43:25.788Z
 - https://github.com/jquense/uncontrollable
   - Wrap a controlled react component, to allow specific prop/handler pairs to be omitted by Component consumers. 
   - Uncontrollable allows you to write React components, with minimal state, and then wrap them in a component that will manage state for prop/handlers if they are excluded.
+# devtools
+- https://github.com/open-source-labs/reactime /ts
+  - https://www.reacti.me/
+  - Reactime is an open-source Chrome developer tool for time travel debugging and performance monitoring in React applications. 
 # more-react
 - https://github.com/lelandrichardson/react-primitives
   - This library attempts to propose an ideal set of primitives around building React applications, regardless of Platform. 

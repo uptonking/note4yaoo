@@ -173,6 +173,8 @@ modified: 2023-02-05T18:50:32.900Z
   - Use the schema editor to design your database tables, fields and associations, then preview the Sequelize models and migrations in the code viewer before downloading the project as a zip file or copying code from individual files.
   - Sequelize UI currently only generates TypeScript Sequelize code, not js
 
+
+
 - https://github.com/andyforever/sequelizer
   - A GUI Desktop App for export sequelize models from database automatically.
 

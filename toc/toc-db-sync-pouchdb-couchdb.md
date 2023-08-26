@@ -237,7 +237,9 @@ modified: 2022-11-30T18:56:07.072Z
 - https://github.com/pouchdb-community/pouchdb-full-sync /201607/js
   - Fully replicate two PouchDB or CouchDB databases, while preserving absolutely all document history and conflicts.
   - Useful for: Implementing infinite undo/redo in your app
-  - Normally, the CouchDB replication protocol only replicates the leafs between two databases. This preserves conflicts (which is awesome!), but it discards non-leafs for performance reasons.
+  - Normally, the CouchDB replication protocol only replicates the leafs between two databases. 
+    - This preserves conflicts (which is awesome!), but it discards non-leafs for performance reasons.
+  - Notice that all the revisions are kept, even the non-leafs. 
 
 - https://github.com/pietervandereems/PeerPouch /201501/js
   - PouchDB over WebRTC

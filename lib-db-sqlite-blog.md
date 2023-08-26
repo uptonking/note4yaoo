@@ -106,9 +106,32 @@ modified: 2022-11-18T17:06:54.371Z
 - Unallocated space: not to be confused with hard drive unallocated space, this SQLite feature allows finding deleted data even outside of freelists
 
 ## [SQLite Internals: Pages & B-trees · Fly.io](https://fly.io/blog/sqlite-internals-btree/)
+
 - SQLite is so easy to use and, more importantly, it's simple and reliable.
 
 ### [SQLite Internals: Pages and B-trees | Hacker News](https://news.ycombinator.com/item?id=32250426)
 
+## [3 things that surprised me while running SQLite in production](https://www.joseferben.com/posts/3-things-that-surprised-me-while-running-sqlite-in-production/)
+
+- In-memory SQLite is not too exciting
+  - At least not in my JavaScript benchmarks where I compared SQLite in-memory and SQLite backed by a file.
+  - Similarly, when I switched my Django tests from file to in-memory, there wasn't much of a difference.
+- SQLite is surprisingly fast
+  - At least compared to native JavaScript data structures. 
+  - I ran some benchmarks for inserting and updating entities stored as JSON blobs. 
+  - The builtin JavaScript `Map` was only 1-2 orders of magnitude faster
+- SQLite feels surprisingly concurrent
+  - SQLite is not truly concurrent. No matter what you do, there can only be a single writer process.
+
+### [Things that surprised me while running SQLite in production | Hacker News](https://news.ycombinator.com/item?id=36579347)
+
+- There are massive performance gains to be had by using transactions. 
+  - In other RDBMSs transactions are about atomicity/consistency. 
+  - But in SQLite, transactions are about batching inserts for awesome speed gains. Use them!
+
+- 👉🏻 SQLite is unlike other RDBMS in that **you typically do NOT want to create a new connection per logical unit of work**, because that means opening an actual file on disk each time. The more you can re-use a SQLite connection instance the better.
+  - SQLite is internally handling the locking for you under most providers[0]. Any sort of external attempts at the same will just make things go slower. The only thing that could really beat the internal SQLite mutex is to put a very high performance MPSC queue in front of your single SQLite connection and take resulting micro batches of logical requests into transactions as noted above, or some more consolidated form of representation.
 # more
 - [SQLite的文艺复兴 - 知乎](https://zhuanlan.zhihu.com/p/601510076)
+
+- [Exciting SQLite Improvements Since 2020 | Hacker News](https://news.ycombinator.com/item?id=35740683)

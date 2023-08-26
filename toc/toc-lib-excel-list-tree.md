@@ -264,7 +264,7 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/tibdex/tree-to-flat-map
   - converts a tree to a flat map with dot-separated keys.
 
-- freezer /1.3kStar/MIT/201803/js/NoDeps
+- freezer /1.3kStar/MIT/201803/js/NoDeps/inactive
   - https://github.com/arqex/freezer
   - A tree data structure that emits events on updates, even if the modification is triggered by one of the leaves, making it easier to think in a reactive way.
   - Immutable trees to make fast comparison among nodes.
@@ -307,6 +307,16 @@ modified: 2022-08-21T10:02:41.845Z
   - It helps you manipulate tree data structure for user interface. (Can be used in Tree, Select, Dropdown, Table, Menu components and ...)
   - In treemate, a tree is composed of node (optional group node and optional ignored).
 
+- https://github.com/Yomguithereal/baobab /js
+  - JavaScript & TypeScript persistent and optionally immutable data tree with cursors.
+  - It is mainly inspired by functional zippers (such as Clojure's ones) and by Om's cursors.
+  - It aims at providing a centralized model holding an application's state and can be paired with React easily through mixins, higher order components, wrapper components or decorators
+  - you can create cursors to easily access nested data in your tree and listen to changes concerning the part of the tree you selected.
+  - Note that the tree, being a persistent data structure, will shift the references of the objects it stores in order to enable immutable comparisons between one version of the state and another
+  - Baobab lets you record the successive states of any cursor so you can seamlessly implement undo/redo features.
+  - https://github.com/Yomguithereal/baobab-react
+    - React integration for Baobab.
+
 - https://github.com/jlxw/static-json-db
   - A NoSQL key-value database stored as a directory tree of small JSON files which can be deployed as part of a static website and queried from client browsers in an efficient manner.
   - Data is stored in JSON files which are branched into smaller JSON files as size tresholds are met.
@@ -330,6 +340,12 @@ modified: 2022-08-21T10:02:41.845Z
   - data structures in JavaScript tend to be slower than the built-in Array and Map data structures in typical cases, because the built-in data structures are mostly implemented in a faster language such as C++
 - https://github.com/w8r/splay-tree
   - This tree is based on top-down splaying algorithm by D. Sleator.
+
+- https://github.com/mikolalysenko/functional-red-black-tree /js
+  - A fully persistent red-black tree written 100% in JavaScript. Works both in node.js and in the browser 
+  - Functional (or fully persistent) data structures allow for non-destructive updates.
+  - Functional (or fully persistent) data structures allow for non-destructive updates. So if you insert an element into the tree, it returns a new tree with the inserted element rather than destructively updating the existing tree in place. Doing this requires using extra memory
+  - this data structure saves some memory by recycling references to previously allocated subtrees. This requires using only O(log(n)) additional memory per update instead of a full O(n) copy.
 # tree-like/nested
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!

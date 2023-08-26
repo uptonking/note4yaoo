@@ -11,6 +11,9 @@ modified: 2021-08-30T18:56:09.644Z
 
 - 支持mongodb的orm
   - typeorm, prisma, mikro-orm, typetta, dittorm
+
+- https://dbdb.io/
+  - Discover and learn about 924 database management systems
 # orm
 - https://github.com/edgedb/imdbench
   - A benchmark intended to compare various Python and JavaScript ORMs with realistic queries required for a hypothetical IMDB-style movie database application.
@@ -234,6 +237,10 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/isar/isar /Flutter
   - Extremely fast, easy to use, and fully async NoSQL database for Flutter
   - The new Isar Core (written in Rust) can be compiled to wasm and will be insanely fast with all features. Unlike the current IndexedDB implementation.
+
+- https://github.com/pruttned/owl-invoice /ts
+  - [Turning Git into an application database](https://nede.dev/blog/turning-git-into-an-application-database)
+  - using Git backed filesystem as an application database.
 # db-streaming
 - https://github.com/MaterializeInc/materialize /rust
   - https://materialize.com/

@@ -52,6 +52,11 @@ modified: 2022-11-11T06:57:09.670Z
   - 目标是同时兼顾性能、功能，核心部分完全 Rust 实现，减少外部依赖以避免性能瓶颈和体验劣化。
   - 要不要看看 #OpenDAL，顺手支持一把更多存储服务？
     - OpenDAL 是一个 rust lib，提供了各种存储服务的访问能力。没有直接提供这些功能，不过本质上就是一堆 seek & read 操作，是可以实现的
+# rs-data-structure-algorithms
+- https://github.com/josephg/skiplistrs
+  - high performance skiplist implementation packed with useful features
+  - Skip lists are super fun structures which can be used in a similar way to a B-Tree, but with an arguably simpler implementation.
+  - You can use a secondary index to refer to items in the skiplist. 
 # blogs
 
 ## why rust

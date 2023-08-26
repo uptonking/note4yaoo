@@ -49,7 +49,7 @@ modified: 2023-01-12T11:33:28.084Z
 - https://github.com/component/rope /js
   - an implementation of the rope data structure in JavaScript.
 
-## rope-rs
+## rope-rust
 
 - https://github.com/josephg/jumprope-rs /rust
   - https://github.com/josephg/jumprope /js

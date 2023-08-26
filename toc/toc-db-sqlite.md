@@ -76,9 +76,10 @@ modified: 2021-08-30T18:56:18.632Z
     - randomized ROWID
     - WebAssembly User Defined Functions
 
-- https://github.com/libsql/sqld
+- https://github.com/libsql/sqld /rust
   - sqld is a server mode for libSQL. 
   - Access over HTTP and WebSockets from any Edge platform
+  - SQLite-compatible API that you can drop-in with LD_PRELOAD in your application to switch from local database to a remote database.
 
 - https://github.com/chiselstrike/chiselstrike
   - ChiselStrike abstracts common backends components like databases and message queues, and let you drive them from a convenient TypeScript business logic layer

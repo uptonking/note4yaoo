@@ -58,9 +58,6 @@ modified: 2020-11-03T06:55:09.225Z
   - A browser based editor for a simple DSL to perform calculations.
   - [Writing a browser based editor using Monaco and ANTLR](https://tomassetti.me/writing-a-browser-based-editor-using-monaco-and-antlr/)
 
-- https://github.com/isomorphic-git/isomorphic-git
-  - a pure JavaScript reimplementation of git that works in both Node.js and browser 
-
 - https://github.com/codrops/BookBlock
   - A jQuery plugin that will create a booklet-like component that let's you navigate through its items by flipping the pages.
   - 书翻页的效果

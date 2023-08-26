@@ -30,6 +30,11 @@ modified: 2022-12-05T16:01:25.243Z
     - Eventually, we moved focus from the no-code notebook to narrow sharing use cases for analysts, but still, it wasn’t sticking. What was the problem?
     - BI is a mature and broad category. It might feel like it should be ripe for unbundling given how many jobs that single piece of software does (and dbt has shown that it’s possible for the modeling part). But visualization and reporting is BI’s bread and butter and it’s not obvious to us how you wedge yourself in from that angle.
   - Assumption 3: Go to market through bottom-up adoption
+# discuss-not-yet
+- ## 
+
+- ## [[Feature] dolt-like versioning](https://github.com/duckdb/duckdb/discussions/3715)
+
 # discuss
 - ## 
 

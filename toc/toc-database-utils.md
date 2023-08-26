@@ -55,11 +55,9 @@ modified: 2023-08-23T17:15:46.484Z
   - https://docs.holepunch.to/building-blocks/hyperdrive
   - a secure, real-time distributed file system designed for easy P2P file sharing.
 
-
 - https://github.com/Telios-org/nebula /js
   - Real-time distributed storage for files and key value databases built on top of Hypercore Protocol
   - A lot of inspiration was taken from Hyperdrive, but Hyperdrive didn't have options for fine-grain access control, multiple writers, and the ability to delete files from disk once added to the drives.
-
 
 - https://github.com/holepunchto/hyperblobs /js
   - A simple blob store for Hypercore.
@@ -92,7 +90,6 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/fsteff/hyperobjects
   - Simple object store with transaction support, built on hypercore.
   - concurrent, atomic transactions
-
 
 - https://github.com/rafapaezbas/hypercore-speed-tests
   - Test with Hypercore and Hyperbee
@@ -163,6 +160,11 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/kappa-db/kappa-view-level /js
   - make kappa-core views over leveldb
   - inspired by https://github.com/flumedb/flumeview-level
+
+- https://github.com/ssbc/ssb-server /js
+  - ssb-server is an open source peer-to-peer log store used as a database, identity provider, and messaging system. 
+  - ssb-server behaves just like a Kappa Architecture DB. 
+  - ssb-servers comprise(包含；构成) a global gossip-protocol mesh without any host dependencies.
 
 - https://github.com/okdistribute/peerfs /js
   - multiwriter peer-to-peer filesystem, built on kappa-core and hyperdrive

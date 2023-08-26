@@ -40,7 +40,16 @@ modified: 2021-09-14T06:29:41.503Z
 
 - ## 
 
-- ## 
+- ## I will admit, TS enums are kind of useful. But only for one specific case.
+- https://twitter.com/mattpocockuk/status/1694703900778025210
+
+- JS people don’t see object syntax having anything to do with ordering anyway. i would rather use the enum with explicit order values for readability
+
+- Object mapping communicates the intent better than implicit enums. Someone not familiar with the syntax will scratch their head after looking at your example.
+
+- I would avoid enums at all costs, too manny issues with tools.
+
+- string union > enums
 
 - ## 虽然我知道 JavaScript 的 number 在精度上和其他语言不匹配，没有 int32 int64 这种细分，但我也不喜欢 long.js ，很容易出 bug。
 - https://twitter.com/ThaddeusJiang/status/1693578008601526470

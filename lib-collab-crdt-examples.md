@@ -107,35 +107,43 @@ modified: 2022-04-05T10:08:25.947Z
     - Server also store all the changes and recalculate snapshots on new received changes and send those snapshots back to the client. 
     - Due to we store all the changes at server, it is also planned to add time travel, when CRDT is not what user expect at some cases.
 
-- xi-editor /19.7kStar/apache2/202206/rust
+- xi-editor /19.7kStar/apache2/202206/rust/woot
   - https://github.com/xi-editor/xi-editor
   - https://xi-editor.io/
   - A modern editor with a backend written in Rust.
   - The xi-editor project is currently discontinued. 
   - CRDT: This approach follows WOOT.
+  - https://github.com/lapce/lapce
+    - written in pure Rust with a UI in Floem
+    - designed with Rope Science from the Xi-Editor which makes for lightning-fast computation, and leverages Wgpu for rendering
 
-- https://github.com/atom-archive/xray /201904/rust/archived
+- https://github.com/atom-archive/xray /201904/rust/RGASplit/archived
+  - [Xray – An experimental next-generation Electron-based text editor | Hacker News](https://news.ycombinator.com/item?id=16525735)
   - Text is stored in a copy-on-write CRDT.
     - We use a variant of RGA called RGASplit
   - Our current understanding is that in Xi, the buffer is stored in a rope data structure, then a secondary layer is used to incorporate edits. 
   - In Xray, the fundamental storage structure of all text is itself a CRDT.
     - It's similar to Xi's rope in that it uses a copy-on-write B-tree to index all inserted fragments, but it does not require any secondary system for incorporating edits.
-  - [Xray – An experimental next-generation Electron-based text editor | Hacker News](https://news.ycombinator.com/item?id=16525735)
+  - zed.dev is by ex Atom devs and sound like successor to Xray philosophy
 
-- https://github.com/atom-editor/teletype-crdt /201810/js
+- https://github.com/atom-editor/teletype-crdt /201810/js/woot
   - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom
+  - https://github.com/atom/teletype-crdt /js/archived/与上面仓库相同
+  - it adopts splay trees and several other optimizations to improve the asymptotic complexity of common operations.
   - [Atom-teletype代码协同编辑原理详解_202011](https://mp.weixin.qq.com/s?src=11&timestamp=1686732708&ver=4589&signature=8ifZN03y4mobAX0Mn0CnG1Pv3oT5RHfMds3ZQX4IbFMeBLv6di-WBPRSMDXf-4Y6DW5u6nzCQGw3KZuKTap-bdOPzO9bZQpRKQWI6uo9RAdEmPiihZ2be3lwelV-LT4V&new=1)
     - 本文主要介绍 TELETYPE-CRDT中如何设计 WOOT算法来保证文本类型数据的最终一致性，并使用复合的数据结构（称之为 IDTree）来优化代码的运行效率。
   - [Resolve conflicts during remote insertion integration in O(log n)_201711](https://github.com/atom/teletype-crdt/pull/4)
-    - The previous approach was entirely based on the algorithm proposed by Yu in 2014, which was a revisitation of the original WOOT algorithm discovered in 2006.
-  - https://github.com/atom/teletype-crdt /js/archived/与上面仓库相同
-    - String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom.
+    - This pull-request proposes a modification to the current O(k2) insertion integration algorithm, where k represents the number of insertions that occurred concurrently to the insertion that is being integrated.
+    - The previous approach was entirely based on the algorithm proposed by Yu in 2014, which was a revisitation of the original `WOOT` algorithm discovered in 2006.
+  - [Can teletype-crdt work with other wysiwyg editor ?](https://github.com/atom/teletype-crdt/issues/6)
+    - Probably not. This CRDT is for text. A wysiwyg editor’s underlying model isn’t text, it’s a tree (with nodes and properties to represent rich text).
+    - teletype-crdt is a CRDT that exposes APIs that work only with plain text and markers. A WYSIWYG editor has a more complex structure than just text, so you will need to enhance it in such a way that can support your use case.
   - https://github.com/atom/teletype
-- https://github.com/jure/rgass /js
-  - A JS implementation of RGASS, a CRDT synchronization algorithm
-  - No longer in development, for similar use cases (and using the same basic approach) take a look at teletype-crdt
+  - https://github.com/jure/rgass /js
+    - A JS implementation of RGASS, a CRDT synchronization algorithm
+    - No longer in development, for similar use cases (and using the same basic approach) take a look at `teletype-crdt`
 
-- https://github.com/Horusiath/crdt-examples
+- https://github.com/Horusiath/crdt-examples /F#
   - An example implementations of various CRDTs，实现语言为F#
   - It serves mainly academic purposes (the implementations are meant to be simple and easy to understand, not optimized)
 
@@ -156,8 +164,12 @@ modified: 2022-04-05T10:08:25.947Z
   - This repository contains some editing histories from real world character-by-character editing traces
   - The goal of this repository is to provide some standard benchmarks that we can use to compare the performance of rope libraries and various OT / CRDT implementations.
 
-- https://github.com/streamich/json-joy
-  - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
+- https://github.com/streamich/json-joy/tree/master/src/json-crdt
+  - json-crdt中提供了rga、lww-object
+  - [Block-wise RGA algorithm implementation for json-joy_202305](https://jsonjoy.com/blog/performant-rga-list-crdt-algorithm)
+  - [Benchmarking json-joy against Automerge v2 and Y-libraries_202305](https://jsonjoy.com/blog/list-crdt-benchmarks)
+  - [Fuzz Testing RGA CRDT_202306](https://jsonjoy.com/blog/fuzz-testing-rga-crdt)
+    - using fuzz testing you can make sure your collaborative editing algorithms are 100% correct
 
 - https://github.com/inkandswitch/peritext /MIT/ts
   - https://www.inkandswitch.com/peritext/
@@ -175,11 +187,26 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/philschatz/peritext
     - 更新了版本、迁移到vite、基于automerge-wasm
 
+- https://github.com/loro-dev/crdt-richtext /169Star/MIT/202305/rust
+  - https://crdt-richtext-quill-demo.vercel.app/
+  - Rich text CRDT that implements Peritext and Fugue
+  - This CRDT lib combines Peritext and Fugue's power, delivering impressive performance specifically tailored for rich text. 
+  - It leverages the `generic-btree` library to boost speed, and the `serde-columnar` simplifies the implementation of efficient columnar encoding.
+  - loro-wasm and fugue only support plain text for now
+  - This crate contains a subset of Loro CRDT(which is not yet open-source)
+  - [富文本 CRDT crdt-richtext 开源啦 - 知乎](https://zhuanlan.zhihu.com/p/629580388)
+  - [The Art of the Fugue: Minimizing Interleaving in Collaborative Text Editing](https://arxiv.org/abs/2305.00583)
+  - [Feat richtext ](https://github.com/loro-dev/crdt-richtext/pull/1)
+    - This PR implements an RGA CRDT + Peritext. It's also optimized for high speed with a relatively low memory footprint.
+    - Under the hood, it uses the generic-btree crate to store the text content, the text ops, and the Peritext range anchors in a unified way.
+
 - https://github.com/composablesys/collabs /ts
   - https://collabs.readthedocs.io/
   - Collabs is a collections library for collaborative data structures. 
   - These are data structures that look like Set, Map, Array, etc., except they are synchronized between multiple users
   - Collabs is a library for collaborative data structures, not just a menu of built-in options (but we provide those too). So if our data structures don’t meet your needs, you can create your own
+  - [Text and List Optimizations_202203](https://github.com/composablesys/collabs/pull/218)
+    - Replaces RgaDenseLocalList with ListPositionSource. This uses the same underlying CRDT design (Double RGA)
   - [Network and Storage Providers](https://collabs.readthedocs.io/en/latest/guide/providers.html)
     - Collabs documents don’t come with networking or storage built-in. 
     - you should configure 可选 ws-client/tab-sync/indexeddb/local-storage
@@ -308,7 +335,7 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/daaku/kombat-firestore
     - Kombat storage implemented using Firebase Firestore Database.
 
-- https://github.com/ipfs-shipyard/peer-crdt /js
+- https://github.com/ipfs-shipyard/peer-crdt /js/deprecated
   - collection of operation-based CRDTs that are meant to work over a p2p network.
   - 提供了多种类型，代码不复杂，无服务端
   - not maintained. Superseded by delta-crdts
@@ -325,14 +352,19 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/eugene-eeo/crunch-crdt-benchmarks
   - https://github.com/jimpick/delta-crdt-ordering-demo
   - https://github.com/jimpick/causual-playground
-  - https://github.com/JMLX42/rust-delta-crdts
-    - Delta state-based CRDTs in Rust.
+- https://github.com/rust-crdt/rust-crdt /rust/只提供了基础类型
+  - a collection of well-tested, serializable CRDTs for Rust
+  - A family of CRDT's supporting both State and Op based replication.
+  - List is based on the LSEQ and LOGOOT
+  - [Support for recursive data types (e.g. JSON) ?](https://github.com/rust-crdt/rust-crdt/issues/51)
+    - Yep, Map is indeed recursive, but it has the limitation that every value in the map is of the same type so it does not behave like a JSON CRDT where values may have different structures if that's what your goal is.
+    - you don't need an RGA for strings, just a LWW register. In the Riak DT map (and other proprietary JSON like CRDTs I have worked on). Strings have been LWW registers. **If you think of CRDTs as containers (Array, Map, Set) and values (Counter, Register) then you can make a JSON like thing with those alone (you don't even need the Set)**.
+    - I still wonder how the ops should be structured though. I can't see a way to have document level CRDT ops that would not store some kind of a path to the target inner field. Since ops are serializable, that path must be serializable too. AFAIK, ditto did it using JSON pointers and I still see no better way to do that.
+- https://github.com/JMLX42/rust-delta-crdts
+  - Delta state-based CRDTs in Rust.
 
 - https://github.com/siliconjungle/delta-crdt /单文件
   - A simple delta CRDT implementation.
-
-- https://github.com/streamich/json-joy
-  - json-crdt中提供了rga、lww-object
 
 ## woot
 
@@ -395,10 +427,22 @@ modified: 2022-04-05T10:08:25.947Z
   - Bachelor Project: CRDT for Fonto
   - Our CRDT is based on a logoot
 
+- https://github.com/coast-team/dotted-logootsplit
+  - Most of the CRDT embeds metadata in order to avoid conflicting edits. The challenge is to keep these metadata as small as possible.
+  - LogootSplit is a sequence CRDT which reduces the metadata of preceding sequence CRDT; to do so it aggregates elements
+    - LogootSplit is an operation-based CRDT. 
+    - Hence, it is necessary to use a network layer to deliver exactly-once the operations. 
+    - It requires also to deliver removals after insertions. In practice, this is difficult to implement.
+  - Delta-based CRDT have less assumptions. 
+    - Most of delta-based CRDT simply assume a FIFO delivery (deltas from a same replica, are merged in-order). 
+    - They also enable to merge two states.
+  - Dotted LogootSplit offers a delta-based version of LogootSplit with smaller metadata. We provide both op-based and delta-based synchronizations.
+  - Dotted LogootSplit is a replicated data structure designed for collaborative editing. The data structure combines a search tree and a rope.
+
 ## rga/causal-tree
 
 - usecase
-  - automerge
+  - automerge(v1使用js，v2使用rust)
   - peritext
 
 - https://github.com/maca/ace-crdt /js/rga
@@ -413,14 +457,14 @@ modified: 2022-04-05T10:08:25.947Z
     - Operation-based CRDTs: arrays
     - where LSeq virtual pointers use byte sequences, in RGA it's just a combination of a single monotonically increasing number and replica identifier
 
-- https://github.com/josephg/simple-crdt-text /ts
+- https://github.com/josephg/simple-crdt-text /ts/rga
   - This implements automerge's underlying algorithm (RGA)
   - The goal is to have some simple code that I can use to clarify semantics and as a basis for fuzz testing correctness of a faster implementation.
   - [automerge-and-yjs-minimal.ts](https://gist.github.com/josephg/26ade72d5ced0470485c734fb1ebb6ca)
   - [yjs-minimal.ts](https://gist.github.com/josephg/dcb1bce2ceb0f0b50ffcac0245a55907)
   - [yjs_testcase.ts](https://gist.github.com/josephg/88c006724435a61afaec5ff3f1bacd87)
 
-- https://github.com/josephg/reference-crdts
+- https://github.com/josephg/reference-crdts /ts
   - This repository contains simple proof-of-concept reference implementations of yjs, automerge and sync9's list types - all implemented in the same codebase. 
 
 - https://github.com/jaredly/local-first/tree/master/packages/text-crdt
@@ -428,13 +472,33 @@ modified: 2022-04-05T10:08:25.947Z
   - integrate with Quill.
   - Your approach seems to resemble RGASplit which I believe is bases for
 
-## crdt-more
+- https://github.com/rehnarama/MALTE /ts/rga+block
+  - https://rehnarama.github.io/MALTE/index.html
+  - Multi-access live text editor
+  - An in-browser collaborative coding environment, in which one can edit and compile code a server using an built-in shell.
+  - rga作为单独包，并带有测试
+  - includes optimisation to the RGA called "block-wise RGA" which allows for chunk insertions.
+
+- https://github.com/streamich/json-joy/blob/master/src/json-crdt/types/rga-array/ArrayRga.ts
+  - 提供了 rga-array, rga-string, rga-binary
+  - [JSON CRDT text split 待实现](https://github.com/streamich/json-joy/issues/215)
+
+- https://github.com/slightknack/together /rust
+  - [Thinking about efficient backing stores for CRDTs — Isaac Clayton](https://slightknack.dev/blog/backing-crdt-store/)
+  - Today, we’re going to focus on creating out an efficient backing store for a particular family of algorithms known as Replicated Growth Arrays (RGA).
+  - Under RGA, we represent documents as trees of strings. although conceptually RGA operates on trees, implementation-wise, it’s not a requirement
+  - The merging algorithm behind RGA is pretty elegant. Each character in the tree points to the one before it.
+
+- https://github.com/el10savio/rga-crdt /go
+  - RGA CRDT Implemented in Go
+
+## rewrite-more
 
 - https://github.com/dglittle/shelf
   - Here is a shelf: [VALUE, VERSION_NUMBER]
   - [josephg/shelf.ts](https://gist.github.com/josephg/c433d3bcc078d911e7696c6d64381bf1)
 
-- https://github.com/gritzko/citrea-model /201712/js
+- https://github.com/gritzko/citrea-model /201712/js/rga/causal-tree
   - A CRDT-based collaborative editor engine of letters.yandex.ru (2012, historical)
   - https://news.ycombinator.com/item?id=28018129
     - About a decade ago, I implemented the Causal Tree CRDT (aka RGA, Timestamped Insertion Tree) in regular expressions using a Unicode string as a storage. Later we made a collaborative editor for Yandex based on that code.
@@ -451,20 +515,6 @@ modified: 2022-04-05T10:08:25.947Z
     - Hence, we use logical timestamps that match the wall clock time numerically.
     - A similar approach was termed "hybrid timestamps"
     - this is logical clock that tries to be as close to wall clock as possible
-
-- https://github.com/decentralized-hse/collab-edit /kotlin
-  - the state of text and cursor positions are stored as Chronofold on each client. 
-  - When the user updates the text or the cursor position on one client, it calculates diff via `diff-match-patch`, updates its Chronofold, and sends new operations to another client. 
-  - Another client adds these operations to its Chronofold and updates the text and cursor positions accordingly.
-
-- https://github.com/wangdashuaihenshuai/crdt-edit /201810/vue/js
-  - [我自己从零实现的一个文本文档的协同编辑demo，上面是输入框，下面是数据结构的可视化](https://zhuanlan.zhihu.com/p/48229762)
-  - 每个操作都是依赖前一个操作的结果，这样的数据结构就是有操作依赖生成的一颗 因果树
-  - 依赖konva的画图app
-
-- https://github.com/siliconjungle/tiny-merge
-  - State-based CRDT with a Tiny footprint.
-  - 包含server、client，服务端依赖supabase
 
 - https://github.com/eugene-eeo/crunch-crdt-benchmarks /js
   - some crdt benchmarks
@@ -484,6 +534,22 @@ modified: 2022-04-05T10:08:25.947Z
   - I will be using this repo to experiment with CvRDTs
 - more-crdt-impl
   - https://github.com/streaver/crdt-examples
+
+- https://github.com/wangdashuaihenshuai/crdt-edit /201810/vue/js
+  - [我自己从零实现的一个文本文档的协同编辑demo，上面是输入框，下面是数据结构的可视化](https://zhuanlan.zhihu.com/p/48229762)
+  - 每个操作都是依赖前一个操作的结果，这样的数据结构就是有操作依赖生成的一颗 因果树
+  - 依赖konva的画图app
+
+- https://github.com/siliconjungle/tiny-merge
+  - State-based CRDT with a Tiny footprint.
+  - 包含server、client，服务端依赖supabase
+
+- https://github.com/dkellner/chronofold /rust
+  - Chronofold is a conflict-free replicated data structure (a.k.a. CRDT) for versioned text.
+- https://github.com/decentralized-hse/collab-edit /kotlin
+  - the state of text and cursor positions are stored as Chronofold on each client. 
+  - When the user updates the text or the cursor position on one client, it calculates diff via `diff-match-patch`, updates its Chronofold, and sends new operations to another client. 
+  - Another client adds these operations to its Chronofold and updates the text and cursor positions accordingly.
 
 - https://github.com/patreu22/react-crdt
   - part of a bachelor thesis dealing with conflict-free data types in web development.
@@ -521,18 +587,6 @@ modified: 2022-04-05T10:08:25.947Z
   - https://twitter.com/JungleSilicon/status/1504446998329499653
     - It's operation based but it's very easy to consume and cull(cull sth from sth 选出，挑出) those operations.
     - For anyone interested in collaborative editing, I've implemented a new approach to the shelf CRDT.
-
-- https://github.com/coast-team/dotted-logootsplit
-  - Most of the CRDT embeds metadata in order to avoid conflicting edits. The challenge is to keep these metadata as small as possible.
-  - LogootSplit is a sequence CRDT which reduces the metadata of preceding sequence CRDT; to do so it aggregates elements
-    - LogootSplit is an operation-based CRDT. 
-    - Hence, it is necessary to use a network layer to deliver exactly-once the operations. 
-    - It requires also to deliver removals after insertions. In practice, this is difficult to implement.
-  - Delta-based CRDT have less assumptions. 
-    - Most of delta-based CRDT simply assume a FIFO delivery (deltas from a same replica, are merged in-order). 
-    - They also enable to merge two states.
-  - Dotted LogootSplit offers a delta-based version of LogootSplit with smaller metadata. We provide both op-based and delta-based synchronizations.
-  - Dotted LogootSplit is a replicated data structure designed for collaborative editing. The data structure combines a search tree and a rope.
 
 - https://github.com/SDharan93/replicated-document
   - A replicated document that allows collaborative editing. 
@@ -586,6 +640,11 @@ modified: 2022-04-05T10:08:25.947Z
   - CRDT library in Kotlin for the Concordant platform API. 
   - This project is based on Kotlin multiplatform feature.
   - The Kotlin code is compiled to both JVM Bytecode and Javascript/Typescript
+
+- sync9 /js
+  - https://github.com/braid-org/braidjs/tree/master/sync9
+  - Sync9 is interesting given that it stores actual character indices in the CRDT so appending new writes does not require any lookups of parent events and constructing a doc from the event log is trivial. 
+  - Sync9 also solves the same interleaving problems as Fugue.
 # crdt-editing
 - https://github.com/KristoferSundequist/Collaborative-texteditor
   - Collaborative texteditor based on a Conflict free replicated datatype(CRDT) with a NodeJS client/server. 
@@ -612,7 +671,7 @@ modified: 2022-04-05T10:08:25.947Z
   - A simple list-based CmRDT to implement collaborate editor
   - 依赖mongodb
 
-- mute /96Star/AGPLv3/202302/ts/rxjs
+- mute /96Star/AGPLv3/202302/ts/rxjs/logootsplit
   - https://github.com/coast-team/mute
   - https://mutehost.loria.fr/
   - a scalable collaborative document editor with CRDT, P2P and E2EE
@@ -623,35 +682,6 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/coast-team/dotted-logootsplit /MPL
     - a delta-based version of LogootSplit with smaller metadata. We provide both op-based and delta-based synchronizations.
 
-- https://github.com/geetesh-gupta/py-crdt-collab-editor
-  - CRDT based collaborative code/text editor.
-  - 依赖flask，requests
-
-- https://github.com/rehnarama/MALTE /ts/rga+split
-  - https://rehnarama.github.io/MALTE/index.html
-  - Multi-access live text editor
-  - An in-browser collaborative coding environment, in which one can edit and compile code a server using an built-in shell.
-  - rga作为单独包，并带有测试
-  - includes optimisation to the RGA called "block-wise RGA" which allows for chunk insertions.
-
-- https://github.com/prSquirrel/crdt-demo /rga
-  - A collaborative text editor demo based on Causal Tree CRDT (variant of RGA).
-  - 编辑器基于textarea
-  - currently no STUN/TURN servers are configured, so it only works with local peers
-  - Uses WebSockets for signaling and WebRTC Data Channels for p2p communication. 
-
-- https://github.com/ROKAF-ResourceManagementSystemDeveloper/crdt /ts/go/rga
-  - Simple demo of CRDT(Conflict-free Replicated Data Types)
-
-- https://github.com/mountainflo/collaborative-text-editor /js/go
-  - Collaborative realtime texteditor with gRPC using RGAs (Replicated Growable Arrays).
-  - using a variant of RGAs (Replicated Growable Arrays). 
-  - The RGA-protocol is implemented as Timestamped Insertion Tree (TI Tree) 
-
-- https://github.com/munhitsu/CRAttributes /swift
-  - Enables colaboration on text field (and other fields) across multiple iOS devices.
-  - A nearly vanilla implementation of CRDT RGA (operation per character).
-
 - https://github.com/ritzyed/ritzy /201509/js/inactive
   - https://github.com/ritzyed/ritzy-demo
   - Ritzy editor is a rich text, real-time character-by-character collaborative embeddable browser-based editor.
@@ -661,7 +691,7 @@ modified: 2022-04-05T10:08:25.947Z
   - Ritzy is built with real-time collaborative editing support from the ground up, underlying mechanism for this is a **causal tree CRDT**.
   - Unlike Google Docs, Ritzy does not (currently) support complex page-based layout needed to build a word processor.
 
-- https://github.com/conclave-team/conclave /202106/js/inactive
+- https://github.com/conclave-team/conclave /202106/js/lseq/inactive
   - https://conclave-team.github.io/conclave-site/
   - CRDT and WebRTC based real-time, peer-to-peer, collaborative text editor
   - 示例使用simplemde、rxjs、peerjs
@@ -669,6 +699,29 @@ modified: 2022-04-05T10:08:25.947Z
   - Conclave uses (CRDT) to make sure all users stay in-sync and WebRTC to allow users to send messages directly to one another.
   - We implemented an “adaptive allocation strategy for sequence CRDT” called LSEQ(exponential tree).
   - Similar non-academic implementation with optimizations and tweaks - based on Logoot/LSEQ.
+
+- https://github.com/geetesh-gupta/py-crdt-collab-editor
+  - CRDT based collaborative code/text editor.
+  - 依赖flask，requests
+
+- https://github.com/prSquirrel/crdt-demo /ts/rga
+  - A collaborative text editor demo based on Causal Tree CRDT (variant of RGA).
+  - 编辑器基于textarea
+  - currently no STUN/TURN servers are configured, so it only works with local peers
+  - Uses WebSockets for signaling and WebRTC Data Channels for p2p communication. 
+  - use a Splay tree implementation
+
+- https://github.com/ROKAF-ResourceManagementSystemDeveloper/crdt /ts/go/rga
+  - Simple demo of CRDT(Conflict-free Replicated Data Types)
+
+- https://github.com/mountainflo/collaborative-text-editor /js/go
+  - Collaborative realtime texteditor with gRPC using RGAs (Replicated Growable Arrays).
+  - using a variant of RGAs.
+  - The RGA-protocol is implemented as Timestamped Insertion Tree (TI Tree) 
+
+- https://github.com/munhitsu/CRAttributes /swift
+  - Enables colaboration on text field (and other fields) across multiple iOS devices.
+  - A nearly vanilla implementation of CRDT RGA (operation per character).
 
 - https://github.com/peer-base/peer-pad /201907/js
   - Online editor providing collaborative editing in really real-time using CRDTs and IPFS.
@@ -686,24 +739,16 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/MatherLyn/co-editing-engine
   - A co-editing engine based on crdt written in JavaScript.
 
-- https://github.com/bazed-editor/bazed /rope
-  - the baz editor.
-  - The editor consists of a backend including the core data structure on which modifications are made consistent through CRDT and plugin engine (stew).
-
 - https://github.com/kindone/text-versioncontrol
   - Text-VersionControl provides version and concurrency control for text editing based on OT(Operational Transformation) and CRDT(Conflict-free Replicated Data Type) ideas
-  - Text-VersionControl utilizes Quill's Delta representation in JSON. It supports Operational Transformation's basic representations(retain, delete, and insert). 
+  - Text-VersionControl utilizes Quill's Delta representation in JSON. 
+  - Text-VersionControl borrows Quill Delta's representation and many of its method names but does not behave the same in a few cases.
 
 ## rust
 
-- https://github.com/loro-dev/crdt-richtext /169Star/MIT/202305/rust
-  - https://crdt-richtext-quill-demo.vercel.app/
-  - Rich text CRDT that implements Peritext and Fugue
-  - This CRDT lib combines Peritext and Fugue's power, delivering impressive performance specifically tailored for rich text. 
-  - It leverages the `generic-btree` library to boost speed, and the `serde-columnar` simplifies the implementation of efficient columnar encoding.
-  - loro-wasm and fugue only support plain text for now
-  - This crate contains a subset of Loro CRDT(which is not yet open-source)
-  - [The Art of the Fugue: Minimizing Interleaving in Collaborative Text Editing](https://arxiv.org/abs/2305.00583)
+- https://github.com/bazed-editor/bazed /rust/rope/inactive
+  - the baz editor.
+  - The editor consists of a backend including the core data structure on which modifications are made consistent through CRDT and plugin engine (stew).
 # last-write-win/llw
 - https://github.com/ymlsam/lww-element-dict
   - a LWW key-value store, a conflict-free replicated data type (CRDT)
@@ -764,7 +809,7 @@ modified: 2022-04-05T10:08:25.947Z
     - The rest of this post introduces a basic UniquelyDenseTotalOrder that I especially like. 
     - I have not seen it in the existing literature, although it is similar enough to Logoot, Treedoc, and others that I wouldn’t be surprised if it’s already known. For now, I call it Plain Tree.
 
-- https://github.com/josephg/simple-crdt-text /ts
+- https://github.com/josephg/simple-crdt-text /ts/rga
   - This implements automerge's underlying algorithm (RGA)
   - The goal is to have some simple code that I can use to clarify semantics and as a basis for fuzz testing correctness of a faster implementation.
   - [automerge-and-yjs-minimal.ts](https://gist.github.com/josephg/26ade72d5ced0470485c734fb1ebb6ca)
@@ -774,6 +819,7 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/kindone/text-versioncontrol
   - provides version and concurrency control for text editing 
   - utilizes Quill's Delta representation in JSON.
+  - Text-VersionControl borrows Quill Delta's representation and many of its method names but does not behave the same in a few cases.
 
 - https://github.com/disordinary/crdtstring
   - A CRDT string manipulation library for concurrent editing.
@@ -794,8 +840,9 @@ modified: 2022-04-05T10:08:25.947Z
   - DSON - JSON CRDT Using Delta-Mutations
   - Prototype implementation of delta based CRDTs supporting JSON data using Javascript.
 
-- https://github.com/jackyzha0/bft-json-crdt /202211/rust
+- https://github.com/jackyzha0/bft-json-crdt /202211/rust/rga
   - the first JSON-like Byzantine Fault Tolerant CRDT in Rust
+  - An RGA-like list CRDT
   - [Building a BFT JSON CRDT](https://jzhao.xyz/posts/bft-json-crdt/)
 
 - https://github.com/streamich/json-joy/tree/master/src/json-crdt
@@ -833,6 +880,17 @@ modified: 2022-04-05T10:08:25.947Z
   - End-to-end encrypted document using Yjs incl. Cursor Awareness
   - End-to-end encrypted todo list using Automerge
 
+- https://github.com/jakobivarsson/neuron /js/inactive
+  - Neuron is a replicated real-time collaborative data store
+  - Replicated: Data should automatically be synced across participants.
+  - Real-time: Synchronization should be efficient and fast, updates should be applied optimistically (optimistic replication)
+  - Collaborative: Concurrent edits should be merged and conflicts automatically handled
+  - Data store: Support basic data types such as Map, List, String, Number and Bool as well as embedding in Map and List
+  - Ordered list based on the RGA CRDT.
+
+- https://github.com/mitkury/toy-crdt-js /js
+  - ReplicatedTreeOfBlocks is based on the CRDT algorithm called RGA
+
 - https://github.com/yorkie-team/yorkie /go
   - Yorkie is an open source document store for building collaborative editing applications. 
   - Yorkie uses JSON-like documents(CRDT) with optional types.
@@ -846,6 +904,18 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/Haotian-Yang/CRDTree
   - 服务端基于ws
 # crdt-rust
+- https://github.com/josephg/diamond-types /rust
+  - This repository contains a high performance rust CRDT for text editing. 
+  - This is a special data type which supports concurrent editing of lists or strings (text documents) by multiple users in a P2P network without needing a centralized server.
+  - This version of diamond types only supports plain text editing. 
+    - Work is underway to add support for other JSON-style data types. 
+  - [diamond-types/INTERNALS](https://github.com/josephg/diamond-types/blob/master/INTERNALS.md)
+  - [Question: some question about 《5000x faster CRDTs: An Adventure in Optimization》](https://github.com/josephg/diamond-types/discussions/9)
+    - RGA conceptually forms a tree. My contribution is that we can represent that tree using a list.
+    - Yjs uses a different CRDT algorithm than RGA. (It uses YATA). 
+    - `left` in YATA is semantically equivalent to the `parent` field in Yjs. 
+    - Yjs has no `seq` field. RGA has no `right` field.
+
 - https://github.com/RhizomeDB/rs-rhizome /MIT/rust
   - https://fission.codes/ecosystem/rhizomedb/
   - Rhizome is an in-development database for use in building local-first applications over a content addressable store, like IPFS.

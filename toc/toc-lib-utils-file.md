@@ -280,6 +280,12 @@ modified: 2023-04-05T19:35:14.347Z
 # archive/zip/rar
 - https://github.com/SheetJS/cfb-editor
   - Archive (ZIP/CFB/MAD) Editor
+
+## formats
+
+- https://github.com/fabiospampinato/siar
+  - a simple random-access archive format. 
+  - It's similar to Electron's asar (compact, json header, random access) but with: no integrity checks, browser support, tree-shaking, much smaller, zero party dependencies. Fast.
 # more
 
 # discuss

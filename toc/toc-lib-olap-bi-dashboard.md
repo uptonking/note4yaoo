@@ -47,7 +47,7 @@ modified: 2020-12-09T09:30:24.694Z
   - https://github.com/yangfei4913438/superset-api-client
     - superset默认的ui没办法提供浏览器自适应，个性化图表渲染等功能，但是superset提供了一系列的API。所以我们可以使用这些API来定制适合我们自己需求的前端界面。
 
-- mprove /270Star/apache2/202301/ts
+- mprove /270Star/apache2/202302/ts/inactive
   - https://github.com/mprove-io/mprove
   - https://mprove.io/
   - Open Source Self-service Business Intelligence with Version Control
@@ -130,9 +130,6 @@ modified: 2020-12-09T09:30:24.694Z
   - https://github.com/tabixio/tabix
   - http://dash.tabix.io/
   - simple business intelligence application and sql editor tool for Clickhouse.
-
-- https://github.com/mprove-io/mprove
-  - Open Source Self-service Business Intelligence with Version Control
 
 - countly /4.7kStar/AGPLv3/202101/js
   - https://github.com/Countly/countly-server

@@ -288,7 +288,17 @@ $$('[contenteditable]')
   - [x] streaming infinite-list/tree
 # dev-08-use-gesture
 
-## 081
+## 082
+
+## 0825
+
+- [post为什么会发送两次请求？](https://juejin.cn/post/7269952188927017015)
+  - 简单请求不会触发 CORS 预检请求。Content-Type（仅限于 application/x-www-form-urlencoded、multipart/form-data、text/plain）。请求中没有使用 ReadableStream 对象。
+  - 非简单请求的 CORS 请求，会在正式通信之前，增加一次 HTTP 查询请求，称为 预检请求。
+  - 预检请求是在进行跨域资源共享 CORS 时，由浏览器自动发起的一种 OPTIONS 请求。它的存在是为了保障安全，并允许服务器决定是否允许跨域请求。
+  - 一个请求全符合简单请求时，也会出现预请求现象，根源就是同源策略；谷歌浏览器版本最新的话，你不符合同源策略，也会触发预请求，甚至浏览器会主动禁止你的预请求，哪怕你后端进行了预请求处理，也没有用，浏览器都不会让你的请求发出去
+  - 需预检的请求要求必须首先使用 OPTIONS 方法发起一个预检请求到服务器，以获知服务器是否允许该实际请求。预检请求 的使用，可以避免跨域请求对服务器的用户数据产生未预期的影响。
+  - 一旦服务器通过了 预检请求，以后每次浏览器正常的 CORS 请求，就都跟简单请求一样，会有一个 Origin 头信息字段。服务器的回应，也都会有一个 Access-Control-Allow-Origin 头信息字段。
 
 ## 0810
 

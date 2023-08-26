@@ -328,6 +328,9 @@ modified: 2022-06-03T21:34:54.893Z
   - At its core it’s a clean markdown-based writing/note taking application that stores your pages (notes) as plain markdown files in a folder referred to as a space. 
   - While SB uses a database for indexing and caching some indexes, all of that can be rebuilt from its markdown source at any time. 
   - extensible with plugs, and you can customize it
+
+- https://github.com/danobot/notorious /31Star/GPLv3/202102/inactive
+  - Offline-first note taking and knowledge management application 
 # kb-search
 - https://github.com/coderabbit214/document-ai
   - go基于向量数据库与GPT3.5的通用本地知识库方案

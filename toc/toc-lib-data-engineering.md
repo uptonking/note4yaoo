@@ -37,6 +37,11 @@ modified: 2020-12-31T15:32:40.135Z
   - Each processor in bellboy is a class which has a single responsibility of processing data of specific type
   - **Every job can have as many destinations (outputs)** as needed. For example, one job can load processed data into a **database**, **log** this data to stdout and post it by **HTTP** simultaneously.
   - New processors and destinations can be made by extending existing ones.
+
+- https://github.com/cloudquery/cloudquery /go
+  - https://cloudquery.io/
+  - high-performance data integration framework built for developers.
+  - CloudQuery extracts, transforms, and loads configuration from cloud APIs to variety of supported destinations such as databases, data lakes, or streaming platforms for further analysis.
 # infrastructure
 - https://github.com/coollabsio/coolify
   - https://coollabs.io/coolify

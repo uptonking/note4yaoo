@@ -168,7 +168,10 @@ modified: 2023-05-14T04:31:17.785Z
 
 - ## 
 
-- ## 
+- ## [Dose logux support RGA? ](https://github.com/logux/logux/issues/106)
+- Not right now(202206).
+  - But you can implement any CRDT type on your own by creating custom Nano Stores store . 
+  - Check how we implemented Map in SyncMap
 
 - ## [Request only changes in offline SyncMap](https://github.com/logux/logux/issues/107)
 - @logux/server was not created to store state in the log, since I think it is not the best format for the server (where state could be enormous(巨大的) and could not fit to in one server).

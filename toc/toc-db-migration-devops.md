@@ -17,13 +17,15 @@ modified: 2022-11-25T16:17:17.100Z
   - Command line utility to synchronize and version control relational database objects across databases.
   - 支持sqlite、postgresql
 
-
 - https://github.com/db-migrate/node-db-migrate
   - Database migration framework for node
 
+- https://github.com/sastraxi/pgsh /js
+  - Branch your PostgreSQL Database like Git
+  - pgsh provides a slightly-more-user-friendly interface to knex's migration system.
+
 - https://github.com/seppevs/migrate-mongo
   - A database migration tool for MongoDB in Node
-
 
 - https://github.com/okv/east
   - node.js database migration tool for different databases (extensible via adapters) with transpiled languages support (e.g. TypeScript).

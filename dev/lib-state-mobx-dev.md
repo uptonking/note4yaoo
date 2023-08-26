@@ -28,6 +28,9 @@ modified: 2023-04-07T03:10:46.225Z
 - https://github.com/Jacky-Summer/mini-mobx /js
   - 模拟实现 MobX 的 observable 和 autorun 方法
 # examples
+
+## utils
+
 - https://github.com/ryansolid/mobx-jsx /ts
   - Raw MobX performance without being restrained by a Virtual DOM
   - a demonstration of how MobX fine grain control can be leveraged directly in JSX for considerably better performance than pairing it with a Virtual DOM library
@@ -36,6 +39,9 @@ modified: 2023-04-07T03:10:46.225Z
   - MobX JSX also supports a Context API.
   - Alternatively supports Tagged Template Literals or HyperScript
   - Tagged Template solution is much more performant that the HyperScript version, but HyperScript opens up compatibility with some companion tooling
+
+- https://github.com/BrascoJS/delorean /js
+  - A MobX-React Time Travel Debugger
 # blogs
 
 ## [Mobx 思想的实现原理，及与 Redux 对比 - 知乎](https://zhuanlan.zhihu.com/p/25585910)

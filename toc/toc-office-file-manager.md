@@ -206,7 +206,7 @@ modified: 2021-08-23T05:27:08.068Z
   - quickly preview and edit Markdown files using Electron.
 - https://github.com/jersou/markdown-explorer /202009
   - view and edit markdown documentation of a file tree
-- https://github.com/danobot/notorious /202012/GPLv3/31Star
+- https://github.com/danobot/notorious /31Star/GPLv3/202102/inactive
   - Offline-first note taking and knowledge management application 
 - https://github.com/Merlin04/multipad
   - Notepad for the future - a swiss army knife file editor/viewer.
@@ -216,10 +216,9 @@ modified: 2021-08-23T05:27:08.068Z
 
 - https://github.com/libfuse/libfuse
   - The reference implementation of the Linux FUSE (Filesystem in Userspace) interface
-- https://github.com/presslabs/gitfs
+- https://github.com/presslabs/gitfs /python
   - gitfs is a FUSE file system that fully integrates with git. 
   - You can mount a remote repository's branch locally, and any subsequent changes made to the files will be automatically committed to the remote.
-  - 但vscode不是直接集成git了吗
 
 - https://github.com/sxyazi/yazi
   - yazi，一个新的终端文件管理器，使用 Rust 开发，基于 async I/O

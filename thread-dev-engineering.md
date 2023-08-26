@@ -12,13 +12,13 @@ modified: 2021-01-21T17:52:13.333Z
 # discuss
 - ## 
 
-- ## 
+- ## uid 不需要可读性，如果需要可读性可以添加一个新的 id 属性。
+- https://twitter.com/ThaddeusJiang/status/1694915724354142678
 
 - ## Nothing beats console.log for debugging.
 - https://twitter.com/DwayneCodes/status/1687574301200003072
 - closest friend: `border: 1px solid red` ; 
 - console.table
-
 
 - ## Declarative APIs are simpler because they come with a lot of implicit concepts that actually makes them simple.
 - https://twitter.com/oleg008/status/1686292446651543552

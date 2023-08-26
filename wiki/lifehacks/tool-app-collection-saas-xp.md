@@ -7,14 +7,10 @@ modified: 2022-11-07T10:25:12.034Z
 
 # tool-app-collection-saas-xp
 
-# saas-xp
+# guide
 - https://github.com/iamadamdev/bypass-paywalls-chrome
   - help bypass paywalls for selected sites.
   - Bypass the following sites' paywalls: bloomberg, fortune, glassdoor, medium, national geographic, quora, vanity fair, vulture
-# zhihu
-- 有时候评论的内容比回答的内容更有意思
-
-- [知乎违规记录](https://www.zhihu.com/community/reported)
 # search-google
 - [Tips for efficiently Googling. Search by:](https://twitter.com/addyosmani/status/1444195449095737346)
   - Exact match > `"javascript modules"`
@@ -31,6 +27,12 @@ modified: 2022-11-07T10:25:12.034Z
   - [如何找到自己在知乎里发表的评论？](https://www.zhihu.com/question/19585656/answers/updated)
 
 - dogedoge 多吉搜索被知乎屏蔽了
+# zhihu
+- 有时候评论的内容比回答的内容更有意思
+
+- [知乎违规记录](https://www.zhihu.com/community/reported)
+# hackernews
+- [搜索版](https://hn.algolia.com/)
 # twitter
 - search
   - 搜索关键词时，可加上'min_replies:1'的条件，筛选出被讨论过的质量更高的内容
