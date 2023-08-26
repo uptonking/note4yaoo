@@ -9,6 +9,16 @@ modified: 2023-08-25T21:17:31.432Z
 
 # guide
 
+# [类Git数据库Dolt的使用方法 - 掘金](https://juejin.cn/post/7232600368752115770)
+- Dolt支持三种使用模式，三种都可对数据进行版本控制
+  - 数据库模式，使用时通过类Mysql客户端连接和操作
+  - Git模式，本地修改后推送到远端，只是操作的是表和数据，编辑具体的数据是用dolt sql -q "增册改查sql"来实现。
+  - 数据库副本模式，将Dolt配置为Mysql的副本，与Mysql主备模式类似
+
+- 遇到的大坑
+  - 我用的腾讯云Mysql8，有些字符排序规则Dolt还没有支持
+  - 不支持一些字符排序规则，例如：utf8mb4_0900_ai_ciutf8mb4_0900_ai_ci
+  - Dolt部分设置没有做持久化，每次重启时需要重新设置
 # [Building with Patterns: The Document Versioning Pattern | MongoDB_201904](https://www.mongodb.com/blog/post/building-with-patterns-the-document-versioning-pattern)
 - Document Versioning Pattern
   - This pattern is all about keeping the version history of documents available and usable. 
@@ -75,3 +85,5 @@ Versioning in lakeFS
 - [Mergeable persistent data structures](https://blog.acolyer.org/2015/01/14/mergeable-persistent-data-structures/)
   - What if you could version-control a (mutable) persistent data structure, inspect its history, clone a remote state and revert it to a previous state?
   - Irmin is an OCaml implementation of this idea, using the Git repository format
+
+- [Dolt数据库版本控制 - 知乎](https://zhuanlan.zhihu.com/p/623256407)

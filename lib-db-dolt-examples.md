@@ -15,7 +15,6 @@ modified: 2023-08-25T22:31:05.132Z
   - 数据库，如dolt、mongodb-doc-ver
   - version/revision history可以在orm层实现，不必执着于数据库内置
   - branch的粒度在table-row，而不是全库-文件
-
 # popular
 - https://github.com/mikolalysenko/version-tree /201404/js/inactive
   - A data structure for maintaining a tree of versions. 
@@ -247,6 +246,8 @@ modified: 2023-08-25T22:31:05.132Z
 - https://github.com/flyway/flyway java
   - https://flywaydb.org/
   - Database Migrations Made Easy.
+  - Flyway是一个简单开源数据库版本控制器（约定大于配置），主要提供migrate、clean、info、validate、baseline、repair等命令。
+  - 它支持SQL（PL/SQL、T-SQL）方式和Java方式，支持命令行客户端等，还提供一系列的插件支持（Maven、Gradle、SBT、ANT等）。
   - https://github.com/domdinnes/node-flyway
 
 - https://github.com/qri-io/qri /go/inactive

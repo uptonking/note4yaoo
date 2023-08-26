@@ -24,6 +24,11 @@ modified: 2022-12-24T06:46:19.423Z
   - reltab
     - The core abstraction used in Tad for programmatically constructing and executing relational SQL queries.
     - This also defines the driver interface implemented by specific database back-ends, and a small, transport-agnostic remoting layer to allow queries and results to be transmitted between a web browser (or electron renderer process) and a reltab backend server.
+
+- https://github.com/duckdb/duckdb-wasm /cpp/rust/ts
+  - https://shell.duckdb.org/
+  - DuckDB-Wasm brings DuckDB to every browser thanks to WebAssembly.
+  - Duckdb-Wasm speaks Arrow fluently, reads Parquet, CSV and JSON files backed by Filesystem APIs or HTTP requests
 # examples
 
 # utils

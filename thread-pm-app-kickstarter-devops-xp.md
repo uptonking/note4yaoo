@@ -97,6 +97,42 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
+- ## 
+
+- ## If you're starting a SaaS, just remember this: building = fun, marketing = $$
+- https://twitter.com/Timb03/status/1695328737670426935
+- These marketing methods grew Pallyy to 58k MRR:
+  • product pages 
+  • blog posts (3/week) 
+  • social posts (3/week) 
+  • free tools  
+  • affiliate system 
+  • getting in posts like "top X tools" 
+  • feedback board @cannyHQ 
+  • SEO optimization (speed, titles) 
+  • alternative pages
+- Did the 2 years of development helped make the product easier to market, or do you think if you started marketing earlier, the result would have been the same? Common for founders to think: “can’t market until I have this feature that all competitors have”
+  - If I started marketing earlier then I would've had a better idea of the features to add.
+  - In the beginning, I was adding features that customers wanted, but that usually means a feature ONE customer wanted.
+  - Starting from day one would have a huge difference.
+- could you share how did you start to market? if it was paid ads or "organic" community based marketing like on Twitter or Reddit?
+  - started focusing on SEO mostly. Blog posts, building free tools, on page optimisation, affiliates etc.
+
+- ## 科班出身的人做竞品调研会像咨询公司一样做Porter's Five Forces看行业竞争，
+- https://twitter.com/0xthefool/status/1695133379833082041
+  - 做市场地图和行业价值链看行业，做SWOT/PESTEL模型看环境。
+  - 但是一线创业者这样去做分析最终的结果大概率是裤衩都亏掉，因为没抓到重点。
+  - 宏观的战略分析固然重要，但是其实能够研究明白一家企业一个产品具体的操盘细节更能够帮助我们的产品增长。
+- 分享给朋友们我最常用的5个工具。
+- 用SimilarWeb（http://similarweb.com）调研竞品流量来源、用户画像和行为、有哪些关键搜索词，相应调整自己市场推广资源分配
+- 用ahrefs（http://ahrefs.com）确定竞品所有的backlink入站链接流量排名，分析哪些平台、媒体、作者、文章类型可以引流。
+- 用SEMrush（http://semrush.com）查看竞品所在品类有哪些导航站发布、所有评论平台的用户评价、发布了哪些广告大概预算和效果如何、所有的社交媒体流量来自于什么内容
+- 用BuzzSumo（http://buzzsumo.com）看到竞品在所有的海外社交媒体上都有哪些热点词和热点新闻，哪些用户和KOL的推荐带来了更多流量。
+- 用ScreamingFrog（http://screamingfrog.co.uk/seo-spider/) 把竞品域名下所有的网站和文章全部爬虫抓取后分析网站内容和sitemap，熟悉对方如何通过站内内容优化SEO。
+
+- 这五个工具的使用相当于可以让我们拿到这个团队如何做搜索引擎优化、如何投放广告、如何做社交媒体、如何做外部链接引用、如何社区带货。
+  - 这种方法不仅能够迅速借鉴对方大量资金投入下试错所得的成功增长策略，还能够找到对方在某些方面偏弱之处，从而有针对性地推动自身的增长。
+
 - ## 博客园如果挂掉，只能说经营不善，medium每年5千万营收说明博客平台仍有生命力
 - https://twitter.com/NalaGinrut/status/1692959178309156928
 - 博客园的运营，没有将用户的主动性发挥到最优。好几年前，有个志愿译文的事，我报了名了但不了了之

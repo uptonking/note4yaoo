@@ -11,6 +11,9 @@ modified: 2022-06-03T22:07:49.519Z
 
 - resources
   - https://github.com/asg017/sqlite-ecosystem
+
+- db-manager
+  - /home/yaoo/.local/share/DBeaverData/workspace6/.metadata/sample-database-sqlite-1/
 # popular
 - https://github.com/karlb/litespread /202108/js/inactive
   - https://github.com/karlb/litespread/wiki

@@ -9,6 +9,10 @@ modified: 2022-12-20T05:39:08.948Z
 
 # guide
 
+# blogs-vendors
+- [TiKV 源码解析系列文章](https://cn.pingcap.com/blog/?tag=TiKV%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90)
+- [TiDB 源码阅读系列文章](https://cn.pingcap.com/blog/?tag=TiDB%20%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB)
+- [DM 源码阅读系列文章 TiDB Data Migration](https://cn.pingcap.com/blog/?tag=DM%20%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB)
 # blogs
 
 ## kappa-lambda
@@ -36,8 +40,6 @@ modified: 2022-12-20T05:39:08.948Z
 - [Apache Flink 101: Understanding the Architecture](https://techlake.dev/apache-flink-101-understanding-the-architecture)
   - In Kappa architecture, batch processing is a special case of stream processing hence it is able to perform both batch and real-time processing, especially for analytics, with a single technology stack.
   - Apache Flink is built on Kappa architecture hence it excels at processing unbounded and bounded data sets.
-
-
 
 - [实时数仓之 Kappa 架构与 Lambda 架构 - 知乎](https://zhuanlan.zhihu.com/p/584255261)
 

@@ -126,10 +126,11 @@ modified: 2021-08-30T18:56:18.632Z
   - It runs as a background process and safely replicates changes incrementally to another file or S3. 
   - Litestream only communicates with SQLite through the SQLite API so it will not corrupt your database.
 # sqlite-rewrite
-- https://github.com/joaoh82/rust_sqlite /1kStar/MIT/202207/rust
+- https://github.com/joaoh82/rust_sqlite /1kStar/MIT/202207/rust/代码不多
   - a simple embedded database modeled off SQLite, but developed with Rust. 
   - The goal is get a better understanding of database internals by building one.
   - [SQLRite – SQLite clone from scratch in Rust | Hacker News_202104](https://news.ycombinator.com/item?id=26749737)
+  - [Column or row oriented store](https://github.com/sqlrite/design/discussions/6)
 
 - https://github.com/cstack/db_tutorial /c
   - Writing a sqlite clone from scratch in C

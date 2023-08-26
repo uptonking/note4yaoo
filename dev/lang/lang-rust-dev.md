@@ -53,6 +53,11 @@ modified: 2022-11-11T06:57:09.670Z
   - 要不要看看 #OpenDAL，顺手支持一把更多存储服务？
     - OpenDAL 是一个 rust lib，提供了各种存储服务的访问能力。没有直接提供这些功能，不过本质上就是一堆 seek & read 操作，是可以实现的
 # rs-data-structure-algorithms
+- https://github.com/joaoh82/rust_sqlite /1kStar/MIT/202207/rust/代码不多
+  - a simple embedded database modeled off SQLite, but developed with Rust. 
+  - The goal is get a better understanding of database internals by building one.
+  - [SQLRite – SQLite clone from scratch in Rust | Hacker News_202104](https://news.ycombinator.com/item?id=26749737)
+
 - https://github.com/josephg/skiplistrs
   - high performance skiplist implementation packed with useful features
   - Skip lists are super fun structures which can be used in a similar way to a B-Tree, but with an arguably simpler implementation.

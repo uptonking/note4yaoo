@@ -10,6 +10,12 @@ modified: 2021-06-02T15:26:39.741Z
 # guide
 
 # discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
 - ## [Thoughts On Markdown](https://www.smashingmagazine.com/2022/02/thoughts-on-markdown/)
 - At Sanity.io, we decided early that the block content format should never assume HTML as neither input nor output, and that we could use algorithms to synchronize text strings. 
   - More importantly, was it that block content and rich text should be deeply typed and queryable. 
@@ -184,6 +190,16 @@ export default FrontPage
 - ## 
 
 - ## 
+
+- ## [Obsidian → Foam → Marksman: the evolution of bi-directional linking implementation](https://twitter.com/novoreorx/status/1695445709666030033)
+- 最早选择使用 Obsidian 是由于它简洁的界面、好用的 Markdown 编辑器和本地化纯文本存储，但随着使用越来越顺手，我意识到它为我带来的价值远不止于此。
+  - 双向链接的概念和功能，帮助我将无序的笔记关联起来，而有了回溯和再发现的学习价值。
+- 自此我持续关注具有双向链接功能的软件，Foam这款 VSCode 插件使我眼前一亮，它为 VSCode 赋予了双向链接能力，使其得以扩展成一个现代知识库管理工具。
+  - 代码编辑器？我灵光一闪，所谓的「双向链接」，不就是基于 Markdown 语法所实现的一种代码分析和提示吗？
+  - 而如今正是 Language Server Protocol 逐步抹平语言差异、统一底层框架的时代，那何不为 Markdown 写一个 language server，实现可以在不同编辑器环境下通用的双向链接语法提示器呢？
+- 虽然有了想法，但由于时间、技术力的限制，始终没有动手。
+  - 好在一年多以后的今天，终于通过一篇博客发现有人做出了这个东西，那就是 Marksman。
+  - 无需自己动手便获得了想要的东西，不仅如此，自己的理论被证实可行，这让我获得了双份的开心。
 
 - ## FWIW markdown-it doesn't escape single apostrophes [0], and the most performant way than I know to do that in the browser involves using the XMLSerializer thing [1], I think that was only some 20% faster or something.
 - https://twitter.com/fabiospampinato/status/1533419227100721158
