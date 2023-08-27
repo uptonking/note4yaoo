@@ -12,6 +12,8 @@ modified: 2023-08-25T21:17:11.979Z
 # discuss-versioning
 - ## 
 
+
+
 - ## [数据库版本管理应该如何实现？ - 知乎](https://www.zhihu.com/question/20080857/answers/updated)
 - 😣 目前是把DDL、存储过程、函数、核心数据整理成SQL文件，做为baseline，提交SVN；
   - 每次修改，均记录到文件、整理成增量的sql update语句，提交svn；同时更新整体的SQL语句。

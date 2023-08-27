@@ -68,6 +68,59 @@ modified: 2023-08-26T02:51:41.206Z
 
 - In this article, we learned about persistent data structures and the different methods available to copy a complex one, as well as how to persist them in a relational database.
   - you may also want to check the Event Sourcing pattern, which suggests persisting the change itself instead of the changed data.
+
+## [Undo, the art of – Part 1](https://maxliani.wordpress.com/2021/09/01/undo-the-art-of-part-1/)
+
+- I’ll touch on the fact that there is no right or wrong, that undo can be implemented in a variety of different ways and that the best practice strongly depends on the choice of data structures you designed for your application.
+- At its essence, undo is a history of changes in the data within a program
+- Undo must record the sequence of edit events the user executes, and unwind or rewind the changes in the data. 
+- 
+- 
+- 
+- 
+- 
+- 
+
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## how would you write an undo system for a raster graphics illustration/painting application?
+- https://twitter.com/FreyaHolmer/status/1441541405298630657
+  - there's some low hanging fruit - only storing the rectangular region of the pixels that were changed, and its content, would save a lot
+  - maybe some RLE compression? especially when the alpha channel is 0, but that would add compression/decompression to the time undo/redo takes
+  - then there's also the question of where the data should be stored: GPU-VRAM? RAM? Disk?
+- a radical alternative is to store actions on an action stack rather than raster/image data, but, this has massive implications on the architecture of, uh, everything, and has lots of drawbacks that I don't think would make it worth it
+- I don’t know if it’s a good way, but what I’ve done in the past is get the delta, changed pixels, between before/after, and use RLE style compression - all non-changed pixels would compress away as “empty”. Applying the delta would undo the action.
+- Reapplying deltas to a buffer repeatedly is likely to introduce small variations and possibly artifacts. The only system I'd seen in the past worked via snapshots and a stack of actions. Curious how PS Lightroom works. Has a "complete" history and is non destructive.
+- Hm. I wonder if you could take that idea further with a quadtree style structure? Slice down to a min cell size to cull transparent cells... or would that contain too much overhead for the tree? Could make pixel storage more challenging.
+
+- this is far and away the best solution in my experience, for any kind of editor (outside of implementation practicality). i normally store the entire state each undo step in my tools since like. i'm never working with a lot of data, its super easy to implement and never breaks
+- storing the entire state for image editors I feel like wouldn't work because of how much data it involves
+  - storing actions means everything needs to serialize and also be reapplyable quickly on undo, and you'd likely need a hybrid model so that you can keyframe every n actions
+- hybrid makes a lot of sense! the work with delta is in like. the framework (and fixing consistency bugs). the implementation of each action could definitely be sometimes just pixel data and sometimes purely tool/action information
+  - maybe pixel data is the default thing that gets stored, with zero implementation (you just create a new undo state and it gets the pixel data thats changed), then you can add better data for the steps when you need to, like performance optimisations
+- the drawback would be that if you have an undo history length of 80 actions, then undoing a single action means reapplying/rerendering 79 things, which, may or may not have been expensive actions, right?not to mention all actions now need to be serializable
+- Make the actions reversable. When you draw, capture the data of the pixel you overwrite. That way you can undo by doing the inverse of the do.
+  - this is not always possible, many actions are irreversible (gaussian blur, for example)
+- Making the actions serializable shouldn't be too hard... For the redo thing, you could smooth it over by caching a certain number of previous states, as tractable. If the state is cached just swap it in; if it's past the cache window then regenerate it
+
+- NSUndoManager on macOS implements a generic version of this
+  - [NSUndoManager | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsundomanager)
+
+- Every X actions, you make copy of the state and mark it as a checkpoint. Reroll from there.
+- Action object that holds everything for the do/undo + push(do), pop(undo) from a stack is good. For doing 80+ things, need to use OpenGL/WebGL which will easily re-render everything quickly. CPU shouldn’t really touch pixel data. E.g. a brush stroke will end up being a GL drawcall
+
+- I briefly worked on a little touchscreen drawing app that never saw the light of day and my plan was a hybrid approach of an action stack and bitmap history - store full-frame bitmaps every few actions, and undo by re-performing just the actions since the most recent snapshot.
+
+- Action stacks would be the way, pen down to pen up as the separator, then everything in betweeen is tweakable (though usually forgotten)
+
+- In my experience, you’ll need this anyway, to unify all ops into a single undo stack. Where an op is reversible, you can store it parametrically, where it isn’t, you have to fall back to storing previous states. That’s when you get into as you said, dirty regions and compression!
 # more
 - [Data model for storing revision history in FoundationDB · couchdb](https://github.com/apache/couchdb/issues/1957)
 
