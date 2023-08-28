@@ -290,6 +290,12 @@ modified: 2022-11-25T15:50:48.226Z
   - kappa-core still uses tables like the above, though. 
     - However, instead of being the source of truth, these **tables are generated (or materialized) from the log data**, providing a view of the log data in a new or optimized context. 
     - These are called materialized views.
+
+- https://github.com/lideming/btrdb /ts
+  - a NoSQL database engine with B-tree Copy-on-Write mechanism inspired by btrfs.
+  - https://github.com/lideming/btrdb/tree/main/btrdbfs
+    - btrdbfs is a project to run filesystem on btrdb using FUSE.
+    - btrdbfs implements FUSE filesystem using Node.js with the binding fuse-native.
 # db-json
 - lowdb /18.7Star/MIT/202211/ts
   - https://github.com/typicode/lowdb

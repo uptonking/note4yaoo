@@ -406,6 +406,24 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
 - 我只有一个问题， 这玩意会上传代码到服务器么？
   - 服务器就在你本地。。。懂了没？？只是和编辑器分开了，通过通信来交流
   - 网络传输会让你的ide跑的慢死 目前的都是本地服务器也就是个跨进程通讯而已
+# editor-non-js
+
+## [kilo: Build Your Own Text Editor](https://viewsourcecode.org/snaptoken/kilo/)
+
+- [kilo: Build Your Own Text Editor | Hacker News_201908](https://news.ycombinator.com/item?id=20603567)
+
+- This is an instruction booklet that shows you how to build a text editor in C.
+
+- https://github.com/antirez/kilo /c
+  - a small text editor in less than 1K lines of code
+
+## [Hecto: Build your own text editor in Rust](https://www.flenker.blog/hecto/)
+
+- This is a series of blog posts that shows you how to build a text editor in Rust. 
+  - It’s a re-implementation of kilo in Rust
+
+- https://github.com/vruss/Hecto /rust
+  - This is a personal project mainly to learn Rust by implementing a text editor
 # more
 - [Rich text editors from backend perspective](https://habr.com/en/articles/533956/)
   - in this article I’m going to overview the most popular types of rich text editors, tradeoffs of their use from a backend perspective
@@ -461,3 +479,5 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
   - [从零开始写一个富文本编辑器（一） - 掘金](https://juejin.cn/post/6924346082797289480)
 
 - [富文本编辑器：TinyMCE、Editor.js、Lexical、CKEditor与CodeMirror对比 - ercwang](https://0x763ad28bc4436590fd61998561730b0f7790e955.xlog.app/TinyMCEEditorjsLexicalCKEditorCodeMirror)
+
+- [Ask HN: How to do cross platform GUI? | Hacker News](https://news.ycombinator.com/item?id=24242412)

@@ -209,6 +209,11 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/risinglightdb/risinglight /rust
   - An OLAP database system for educational purpose
 
+- https://github.com/surrealdb/echodb /rust
+  - An embedded, in-memory, immutable, copy-on-write, key-value database engine
+  - Multi-version concurrency control
+  - Rich transaction support with rollbacks
+
 - https://github.com/unum-cloud/ukv /cpp/modular
   - Modular Transactional NoSQL Database
   - choose either: RocksDB • LevelDB • UDisk • UMem 

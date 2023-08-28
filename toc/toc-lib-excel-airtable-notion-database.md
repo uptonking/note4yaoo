@@ -227,7 +227,8 @@ modified: 2022-08-21T10:02:05.129Z
   - https://support.getgrist.com/
   - 表格不支持视图切换，支持各种widgets，类似dashboard
   - 前端基于backbone、jquery
-  - Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database to organize your data and make you more productive.
+  - Grist is a modern relational spreadsheet. 
+  - It combines the flexibility of a spreadsheet with the robustness of a database to organize your data and make you more productive.
   - Columns work like they do in databases.
   - Columns can be filled by formula
   - A portable, self-contained format. Based on SQLite

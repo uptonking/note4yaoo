@@ -40,8 +40,10 @@ modified: 2023-01-12T11:33:28.084Z
     - The data structure combines a search tree and a rope.
     - For now, Cow List uses a partially persistent AVL tree.
 
-- https://github.com/marijnh/rope-sequence /js
+- https://github.com/marijnh/rope-sequence /MIT/js
   - This module implements a single data type, RopeSequence, which is a persistent sequence type implemented as a loosely-balanced rope. 
+  - It supports appending, prepending, and slicing without doing a full copy. 
+  - Random access is somewhat more expensive than in an array (logarithmic, with some overhead), but should still be relatively fast.
 
 - https://github.com/linkdotnet/ts-stringoperations /ts
   - Implementation of some known string algorithms and data structures like: Rope, Trie, Knuth Morris Pratt, Boyer Moore, Levenshtein
@@ -95,6 +97,10 @@ modified: 2023-01-12T11:33:28.084Z
 
 - https://github.com/josephg/librope
   - C library for heavyweight utf-8 strings (rope).
+
+- https://github.com/vinzmay/go-rope /go
+  - Go implementation of a persistent rope data structure, useful to manipulate large text. 
+  - Persistent means that any operation on the rope doesn't modify it, so it's inherently thread safe.
 
 ## rope-crdt
 

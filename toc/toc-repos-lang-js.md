@@ -9,15 +9,28 @@ modified: 2021-05-14T15:04:42.225Z
 
 # js-enhanced
 
-- https://github.com/Conaclos/cow-list
+- https://github.com/pull-stream/pull-stream
+  - pull streams work great for "object" streams as well as streams of raw text or binary data.
+  - pull-streams are not directly compatible with node streams, but pull-streams can be converted into node streams
+
+## js-data-structure
+
+- https://github.com/Conaclos/cow-list /ts
   - Cow List provides a Copy-On-Write iterable list that supports logarithmic searches. 
   - It provides also a mutable iterable List with versioning capabilities.
   - Cow List naively supports lengthy values (objects with a length property). 
   - This makes Cow List a perfect fit to implement a `rope`.
 
-- https://github.com/pull-stream/pull-stream
-  - pull streams work great for "object" streams as well as streams of raw text or binary data.
-  - pull-streams are not directly compatible with node streams, but pull-streams can be converted into node streams
+- https://github.com/immutable-js/immutable-js /js/NoDeps
+  - https://immutable-js.com/
+  - Immutable persistent data collections for Javascript which increase efficiency and simplicity.
+  - Immutable data cannot be changed once created, leading to much simpler application development, no defensive copying, and enabling advanced memoization and change detection techniques with simple logic. 
+  - Persistent data presents a mutative API which does not update the data in-place, but instead always yields new updated data.
+  - Immutable.js provides many Persistent Immutable data structures including: List, Stack, Map, OrderedMap, Set, OrderedSet and Record.
+  - These data structures are highly efficient on modern JavaScript VMs by using structural sharing via hash maps tries and vector tries as popularized by Clojure and Scala, minimizing the need to copy or cache data.
+
+- https://github.com/swannodette/mori /ClojureScript/inactive
+  - A simple bridge to ClojureScript's persistent data structures and supporting APIs for vanilla JavaScript.
 # focus
 - https://github.com/tannerlinsley/react-table
 - https://github.com/bvaughn/react-window

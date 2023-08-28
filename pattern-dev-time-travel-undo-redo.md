@@ -39,6 +39,8 @@ modified: 2023-08-26T02:51:41.206Z
   - This is because you may need to transitively apply all the deltas from origin.
 - There's also a theory formalising how deltas works called "Patch Theory", which is used by the Darcs and Pijul version control system.
 
+## [Arrays that let us time travel](https://arpitbhayani.me/blogs/fully-persistent-arrays/)
+
 ## [Introduction to a data structure that let's us time travel](https://arpitbhayani.me/blogs/persistent-data-structures-introduction/)
 
 - Ordinary data structures are ephemeral implying that any update made to it destroys the old version and all we are left with is the updated latest one. 
@@ -74,13 +76,11 @@ modified: 2023-08-26T02:51:41.206Z
 - I’ll touch on the fact that there is no right or wrong, that undo can be implemented in a variety of different ways and that the best practice strongly depends on the choice of data structures you designed for your application.
 - At its essence, undo is a history of changes in the data within a program
 - Undo must record the sequence of edit events the user executes, and unwind or rewind the changes in the data. 
-- 
-- 
-- 
-- 
-- 
-- 
 
+## [onlyoffice: Simplify History Structure](https://github.com/ONLYOFFICE/document-server-integration/issues/437)
+
+
+## [Version Control · vkbo/novelWriter](https://github.com/vkbo/novelWriter/issues/383)
 # discuss
 - ## 
 
@@ -100,6 +100,8 @@ modified: 2023-08-26T02:51:41.206Z
 - Reapplying deltas to a buffer repeatedly is likely to introduce small variations and possibly artifacts. The only system I'd seen in the past worked via snapshots and a stack of actions. Curious how PS Lightroom works. Has a "complete" history and is non destructive.
 - Hm. I wonder if you could take that idea further with a quadtree style structure? Slice down to a min cell size to cull transparent cells... or would that contain too much overhead for the tree? Could make pixel storage more challenging.
 
+  - iirc photoshop does it by storing every version and sharing overlapping data between them using a persistent data structure.
+
 - this is far and away the best solution in my experience, for any kind of editor (outside of implementation practicality). i normally store the entire state each undo step in my tools since like. i'm never working with a lot of data, its super easy to implement and never breaks
 - storing the entire state for image editors I feel like wouldn't work because of how much data it involves
   - storing actions means everything needs to serialize and also be reapplyable quickly on undo, and you'd likely need a hybrid model so that you can keyframe every n actions
@@ -118,9 +120,40 @@ modified: 2023-08-26T02:51:41.206Z
 
 - I briefly worked on a little touchscreen drawing app that never saw the light of day and my plan was a hybrid approach of an action stack and bitmap history - store full-frame bitmaps every few actions, and undo by re-performing just the actions since the most recent snapshot.
 
-- Action stacks would be the way, pen down to pen up as the separator, then everything in betweeen is tweakable (though usually forgotten)
+- Action stacks would be the way, pen down to pen up as the separator, then everything in between is tweakable (though usually forgotten)
 
 - In my experience, you’ll need this anyway, to unify all ops into a single undo stack. Where an op is reversible, you can store it parametrically, where it isn’t, you have to fall back to storing previous states. That’s when you get into as you said, dirty regions and compression!
+
+- We do this the old-fashioned way: a layer is split up in 64x64 pixel tiles, and we store the before-tiles in the undo/redo action. We don't keep per-stroke data -- though we're considering doing that.
+  - neat! seems similar to what SAI is doing judging by the other replies I saw
+  - I feel like it makes more sense than my initial idea of saving/loading the bounding rectangle of the changed regions, diagonal strokes and all that
+
+- A good way is to divide image into fixed size blocks (say 64x64). 
+  - Before editing a block, make sure it's either exclusively owned, or first copy the block (copy-on-write). Different versions of the image (for undo/redo) share the blocks that haven't changed
+  - The blocks need to be reference counted and GC'd so you can determine when a block is no longer used (can be freed), exclusively owned (so you don't need to copy-on-write), or shared (so you need to first COW it before editing)
+
+- Substance Painter stores the strokes in world space.  Which fucking sucks because you can't update your model
+
+- I have a very simple system in rx (http://rx.cloudhead.io) -- I save a compressed snapshot of the canvas everytime it is changed. With google's 'snappy' compression library, the delay is not perceptible for reasonably sized canvases.
+  - The problem with implementing brush-based optimizations is that they don't work for other types of edits, eg. flipping the canvas, filling, color replacement etc.
+
+- Continuous undo/redo: record unit over time, use a slider/dial to move backwards or forwards in time.
+
+- Take the diff between your start and end image and store it in a quad tree. Then serialize as byte array and gzip if you want it as small as possible.
+
+- I think I remember a talk from adobe that said something like their canvas is basically a 2d array of pointers rather than values, so when you paint, you're just changing the pointers of those specific pixels allowing low memory footprint and enables things like the history brush
+  - [GoingNative 2013 Inheritance Is The Base Class of Evil - YouTube](https://www.youtube.com/watch?v=2bLkxj6EVoM)
+  - Had some free time to prototype this. Very good balance between simplicity and memory efficiency
+
+- Refing some stuff other people mentioned in the comments, but keeping a hist of modified but also keeping a space-efficient history of each tile sounds like something a modern GPU's sparse-texture/sparse-residency would perfectly lend itself to
+  - Maintain a current-state image, a change happens, you mark the tiles touched, save their state(lots of compression decisions happen here) and an undo would just be rebinding those tiles to that memory, and the older it gets, it goes from vram>ram>disc. Sparse textures are soo good
+  - I've reverse engineered Paintool Sai, and they do a tile-based approach. I haven't looked at the undo system in particular, but I have reason to believe that they probably do just-that for their undo system based on how it's their core intermediate format
+  - 
+- 
+- 
+- 
+- 
+
 # more
 - [Data model for storing revision history in FoundationDB · couchdb](https://github.com/apache/couchdb/issues/1957)
 

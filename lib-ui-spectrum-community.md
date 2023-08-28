@@ -10,7 +10,7 @@ modified: 2021-04-12T18:07:01.092Z
 # guide
 
 - [Add CRUD example for Table and add useListData and useTreeData hooks](https://github.com/adobe/react-spectrum/pull/439)
-# disccuss-stars
+# discuss-stars
 - ## 
 
 - ## 
@@ -27,7 +27,7 @@ modified: 2021-04-12T18:07:01.092Z
   - A library of React Hooks for React-Native (Android/iOS/web) to provide accessible UI primitives for a design system
   - 依赖很多react-aria的子包
   - https://github.com/GeekyAnts/react-native-aria /archived
-# disccuss
+# discuss
 - ## 
 
 - ## 

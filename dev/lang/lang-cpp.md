@@ -7,8 +7,14 @@ modified: 2020-07-14T09:26:25.358Z
 
 # lang-cpp
 
-# dev
+# guide
 
+- classic-examples-cpp
+  - onlyoffice-core(server是c#)
+  - crdt
+  - dolt, git-like
+  - more: focalboard
+# dev
 - make用来执行Makefile
   - make工具可以看成是一个智能的批处理工具，它本身并没有编译和链接的功能，而是用类似于批处理的方式，通过调用makefile文件中用户指定的命令来进行编译和链接的
   - makefile命令中就包含了调用gcc（也可以是别的编译器）去编译某个源文件的命令
@@ -40,7 +46,6 @@ modified: 2020-07-14T09:26:25.358Z
   - 在不少项目中都有使用，例如在Golang中就使用了类似的算法进行内存分配
   - 它具有现代化内存分配器的基本特征：对抗内存碎片、在多核处理器能够scale
   - 据称，它的内存分配速度是glibc2.3中实现的malloc的数倍
-
 # C
 
 # C++

@@ -154,6 +154,10 @@ modified: 2022-12-19T02:01:20.161Z
   - 以editor为基础的论坛，支持页面评论，页面统计，整体效果类似论坛
 # ux
 - 当视口宽度变窄时，tab页或宽卡片可以像tweetdeck一样折叠以缩小空间，折叠的过程可显示动画
+# business-features
+- 规避版权问题的内容讨论平台
+  - 科技分享，类似hacker-news
+  - 产品讨论，类似product-hunt
 # faq
 - 如何不使用图床而将图片直接嵌入到笔记中
   - [MarkDown图片存储格式-Textbundle格式](https://zhuanlan.zhihu.com/p/368463926)

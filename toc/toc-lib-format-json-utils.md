@@ -82,6 +82,12 @@ modified: 2022-11-06T15:45:36.913Z
 
 - https://github.com/WebReflection/flatted /js
   - A super light (0.5K) and fast circular JSON parser, directly from the creator of CircularJSON.
+
+- https://github.com/simdjson/simdjson-java /java
+  - A Java version of simdjson - a JSON parser using SIMD instructions, based on the paper Parsing Gigabytes of JSON per Second
+  - Support for Unicode characters
+  - Full support for parsing floats
+  - Support for 512-bit vectors
 # diff
 - https://github.com/zgrossbart/jdd /js
   - JSON Diff expands on the amazing work by the team at jsonlint.com and provides a semantic compare tool for JSON documents.

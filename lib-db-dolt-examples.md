@@ -168,19 +168,33 @@ modified: 2023-08-25T22:31:05.132Z
   - Provide temporary full-size database clones for SQL query analysis and optimization
 
 - https://github.com/sirixdb/sirix /BSD/java
-  - https://sirix.io/
-  - SirixDB is an embeddable, temporal, evolutionary database system, which uses an append-only approach to store immutable revisions. 
+  - https://sirix.io/docs/index.html
+  - an embeddable, temporal, evolutionary database system, which uses an append-only approach to store immutable revisions. 
+  - a log-structured, temporal JSON and XML database system, which stores evolutionary data. It never overwrites any data on disk.
+  - stores a revision history of every resource in the database without imposing extra overhead. It uses a huge persistent, durable page tree for indexing revisions and data.
   - It keeps the full history of each resource. 
-  - Every commit stores a space-efficient snapshot through structural sharing. 
+  - Every commit stores a space-efficient snapshot through structural sharing.
   - It is log-structured and never overwrites data. 
-  - SirixDB uses a novel page-level versioning approach.
-  - SirixDB appends data to an indexed log file without the need of a WAL
+    - Similarly to the file systems Btrfs and ZFS, SirixDB uses CoW semantics, meaning that SirixDB never overwrites data. Instead, database-page fragments are copied/written to a new location. 
+    - SirixDB does not simply copy whole pages. Instead, it only copies changed records plus records, which fall out of a sliding window.
+  - uses a novel page-level versioning approach.
+  - appends data to an indexed log file without the need of a WAL
   - One file stores the data with all revisions and possibly secondary indexes. 
-  - A second file stores offsets into the file to quickly search for a revision by a given timestamp using an in-memory binary search.
+    - A second file stores offsets into the file to quickly search for a revision by a given timestamp using an in-memory binary search.
+  - [Why And How We Built a Temporal Database System Called SirixDB From Scratch | HackerNoon_201812](https://hackernoon.com/why-and-how-we-built-a-temporal-database-system-called-sirixdb-open-source-from-scratch-a7446f56f201?source=rss----3a8144eabfe3---4)
+  - [Building A Time-Traveling Contacts App with SirixDB - DEV Community](https://dev.to/sirixdb/building-a-time-traveling-contacts-app-with-sirixdb-2amo)
   - It currently supports the storage and (time travel) querying of XML and JSON data in its binary encoding, tailored to support versioning. 
     - The index structures and the whole storage engine has been written from scratch to support versioning natively. 
     - We might also implement storing and querying other data formats as relational data.
-  - SirixDB uses a huge persistent (in the functional sense) tree of tries, wherein the committed snapshots share unchanged pages and even common records in changed pages
+  - uses a huge persistent (in the functional sense) tree of tries, wherein the committed snapshots share unchanged pages and even common records in changed pages
+    - The system only stores page fragments during a copy-on-write out-of-place operation instead of full pages during a commit to reduce write-amplification
+    - During read operations, the system reads the page fragments in parallel to reconstruct an in-memory page 
+  - not only supports snapshot-based versioning on a record granular level through a novel versioning algorithm called sliding snapshot, but also time travel queries, efficient diffing between revisions, and storing semi-structured data.
+  - [Introduce Dagger as DI framework for the project](https://github.com/sirixdb/sirix/pull/381)
+  - [Implementation of a form of Adaptive Radix Trie for secondary index structures](https://github.com/sirixdb/sirix/issues/306)
+    - Reducing storage space of the "compound nodes" can be done as in ART and Hash Array Mapped Tries (like we also do in our simple trie for dense ascending IDs).
+  - in SirixDB to use a persistent data structure and a sliding snapshot data page versioning algorithm
+  - uses a novel page versioning algorithm and stores binary JSON and XML resources in a huge persistent (persistent data structure) and durable index-tree, sequentially written to a log-file.
 
 - https://github.com/pfrazee/hyper-vcr /ts
   - A p2p version-controlled repo (built on hypercore)
@@ -268,10 +282,16 @@ modified: 2023-08-25T22:31:05.132Z
 - https://github.com/jelmer/dulwich /python
   - Pure-Python Git implementation
   - It aims to provide an interface to git repos (both local and remote) that doesn't call out to git directly but instead uses pure Python.
+
+## git-ui
+
+- https://github.com/corylus-git/corylus /ts/electron
+  - https://corylus.dev/
+  - Corylus is a graphical user interface for Git. 
+  - It aims to offer much of the power and flexibility of Git without having to remember CLI commands.
 # apps
 
 # utils
-
 - https://github.com/VladislavPixel/persi-library /ts
   - Library of persistent data structures with support for change history and versioning.
   - https://github.com/VladislavPixel/library-persi /js
@@ -297,6 +317,10 @@ modified: 2023-08-25T22:31:05.132Z
   - https://github.com/Yomguithereal/baobab-react
     - React integration for Baobab.
 
+- https://github.com/functional-data-structure/persistent /js
+  - Persistent data structures for JavaScript
+  - https://github.com/functional-data-structure/finger-tree
+
 - https://github.com/simonlast/node-persist /js
   - easy persistent data structures in Node.js
   - Node-persist doesn't use a database. Instead, JSON documents are stored in the file system for persistence. 
@@ -317,11 +341,16 @@ modified: 2023-08-25T22:31:05.132Z
   - https://sdq.github.io/history-tree/
   - An interactive history tree for undo/redo/reset/revisit in javascript
 
-- https://github.com/orium/rpds /rust
+- https://github.com/orium/rpds /1kStar/MPLv2/202308/rust
   - provides fully persistent data structures with structural sharing.
+  - support: List, Stack, Queue, Vector, HashTrieMap/Set, RedBlackTreeMap/Set
+  - All data structures in this crate can be shared between threads, but that is an opt-in ability. This is because there is a performance cost to make data structures thread safe. 
+  - This crate supports no_std.
+  - We support serialization through serde
 
-- https://github.com/victorcolombo/prust
+- https://github.com/victorcolombo/prust /rust
   - a collection of immutable and persistent data structures, inspired by the standard libraries found in Haskell, OCaml, Closure and Okasaki's Purely Functional Data Structures book.
+  - Prust's data structures are inherently thread-safe
 
 - https://github.com/tobgu/pyrsistent /python
   - Pyrsistent is a number of persistent collections (by some referred to as functional data structures). 
@@ -330,4 +359,9 @@ modified: 2023-08-25T22:31:05.132Z
 
 - https://github.com/ssaarela/javersion /java
   - a data versioning toolkit for Java.
+
+- https://github.com/elves/elvish/tree/master/pkg/persistent /EPL/go
+  - a Go clone of Clojure's persistent data structures.
+  - The list provided here is a singly-linked list and is very trivial to implement.
+  - The implementation of persistent vector and hash map and based on a series of excellent blog posts as well as the Clojure source code
 # more

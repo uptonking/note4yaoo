@@ -467,9 +467,11 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/GantMan/ReactStateMuseum
   - A whirlwind tour of React state management systems by example
 - concent /MIT/626Star/202007
+  - https://github.com/heluxjs/helux
   - https://github.com/concentjs/concent
   - https://concentjs.github.io/concent-doc/
   - 内置依赖收集，可预测、零入侵、渐进式、高性能的react开发框架
+  - [redux、mobx、concent特性大比拼, 看后生如何对局前辈 - 掘金](https://juejin.cn/post/6844904116284555271)
 - https://github.com/EOSIO/demux-js
   - Deterministic event-sourced state and side effect handling for blockchain applications
   - Taking inspiration from the Flux Architecture pattern and Redux

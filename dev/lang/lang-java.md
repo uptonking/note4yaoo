@@ -7,8 +7,14 @@ modified: 2020-07-14T09:26:35.281Z
 
 # lang-java
 
-# 开发通用问题
+# guide
 
+- classic-examples-java
+  - apache-poi
+  - crdt
+  - sirixdb, git-like
+  - more: jedit, apitable
+# 开发通用问题
 - 搜索
 - 缓存
 - 消息

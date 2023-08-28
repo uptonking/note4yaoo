@@ -13,6 +13,9 @@ modified: 2023-06-04T21:27:01.100Z
   - webstudio
   - luckysheet
 
+- immerjs基于 copy-on-write
+- immutablejs基于 hash maps tries
+
 - resources
   - [Distributing state changes using snapshots, patches and actions — Part 1 | by Michel Weststrate | Medium](https://medium.com/@mweststrate/distributing-state-changes-using-snapshots-patches-and-actions-part-1-2811a2fcd65f)
   - [Distributing state changes using snapshots, patches and actions — Part 2 | by Michel Weststrate | Medium](https://medium.com/@mweststrate/distributing-state-changes-using-snapshots-patches-and-actions-part-2-2f50d8363988)
@@ -44,7 +47,17 @@ modified: 2023-06-04T21:27:01.100Z
 # discuss
 - ## 
 
-- ## 
+- ## [Immer or ImmutableJS ](https://www.reddit.com/r/javascript/comments/96xqnu/immer_or_immutablejs/)
+- The difference is that Immer doesn’t protect you against making mistakes and mutating data you shouldn’t. 
+  - Immutable.js forces you to never mutate the underlying data in an unsafe way because it wraps the data
+- Inside of a produce callback, it's totally safe to "mutate" data - Immer uses Proxies to track what changes you're trying to make, and correctly applies those updates immutably to create the result value.
+  - Per the docs, it also automatically freezes the return value in development, which helps catch accidental mutations elsewhere.
+
+- I despise immutable, and it’s a HEAVY commitment because you’re not using plain JavaScript objects so if you decide to change your decision... good luck with that refactor.
+
+- Don't bother with immutable, it pollutes your entire application.
+
+- Immer is based on Proxies (and has a fallback implementation as well for older environments).
 
 - ## [Introducing Immer: Immutability the easy way_201801](https://medium.com/hackernoon/introducing-immer-immutability-the-easy-way-9d73d8f71cb3)
 - Immutable, structurally shared data structures are a great paradigm for storing state. 

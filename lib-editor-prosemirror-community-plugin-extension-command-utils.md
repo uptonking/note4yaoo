@@ -12,6 +12,16 @@ modified: 2022-08-30T22:07:26.164Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How to insert an async uploaded image?](https://discuss.prosemirror.net/t/how-to-insert-an-async-uploaded-image/589)
+- view is a mutable object that has its `state` property updated when you call `updateState` or `update` , 
+  - and **state objects are persistent immutable values that are recreated (sharing as much of the old structure as possible) when updated**
+
 - ## [Plugin's appendTransaction should be "appended" by definition](https://discuss.prosemirror.net/t/plugins-appendtransaction-should-be-appended-by-definition/1331)
   - It seems that when appending a transaction via plugin, to the array of current transactions, by definition it should be part of the same history block
   - In the history module, appendedTransactions are still dependent of the time between changes

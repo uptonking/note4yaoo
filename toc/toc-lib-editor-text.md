@@ -85,6 +85,10 @@ modified: 2021-07-27T15:12:39.959Z
 - https://github.com/imzbf/md-editor-rt
   - Markdown editor for react, developed in jsx and typescript.
   - https://github.com/imzbf/md-editor-v3 /vue3
+
+- https://github.com/test-it-edu/notebook-dev /ts
+  - Notebook is a simple Markdown and LaTeX Math editor build in React. 
+  - The goal of this project is to create a modular / extensible editor for the web
 # editor-electron
 - https://github.com/pulsar-edit/pulsar /MIT/js
   - https://pulsar-edit.dev/

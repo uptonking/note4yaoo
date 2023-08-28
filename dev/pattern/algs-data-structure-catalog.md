@@ -7,17 +7,73 @@ modified: 2020-12-20T15:27:57.656Z
 
 # algs-data-structure-catalog
 
-# List
+# guide
 
-# Map
+# list
 
-# Tree
+# map
 
-# String
+# tree
+
+# string
 - [xi-editor: Rope science - Introduction](https://xi-editor.io/docs/rope_science_00.html)
 
 - [Fleet: Data Structures in the Fleet Editor | Hacker News](https://news.ycombinator.com/item?id=30415868)
   - [Fleet Below Deck, Part II – Breaking down the editor: Ropes everywhere](https://blog.jetbrains.com/fleet/2022/02/fleet-below-deck-part-ii-breaking-down-the-editor/)
+# patterns-for-data-structure
+- https://github.com/tnfe/limu /ts
+  - https://tnfe.github.io/limu
+  - A fast immutable data js lib, based on shallow copy on read and mark modified on write mechanism
+  - No freeze by default, faster than immer in different situations.
+  - 默认支持Map、Set，兼容immer大部分接口
+  - 更强的隐藏式代理机制，让用户像查看原生数据一样查看草稿数据任意节点
+  - only run on JavaScript runtime that supports proxy
+
+- https://github.com/Conaclos/cow-list /ts
+  - Cow List provides a Copy-On-Write iterable list that supports logarithmic searches. 
+  - It provides also a mutable iterable List with versioning capabilities.
+  - Cow List naively supports lengthy values (objects with a length property). 
+  - This makes Cow List a perfect fit to implement a `rope`.
+  - Cow List uses a **partially persistent AVL tree**. This could change in the future in order to achieve better performances.
+
+- https://github.com/RReverser/cow-utils-rs
+  - Copy-on-write string utilities for Rust
+
+- https://github.com/penberg/tihku /rust
+  - Tihku is an work-in-progress, open-source implementation of the Hekaton multi-version concurrency control (MVCC) written in Rust. 
+  - The project aims to provide a foundational building block for implementing database management systems.
+  - One of the projects using Tihku is an experimental libSQL branch with MVCC that aims to implement `BEGIN CONCURRENT` with Tihku improve SQLite write concurrency.
+  - Main memory architecture, rows are accessed via an index
+  - Optimistic multi-version concurrency control
+  - [Copy-on-write cloning](https://github.com/penberg/tihku/issues/21)
+    - Many database management systems implement "branching", which allows users to create a copy-on-write clones of a database. 
+    - With a row manager, we can make a copy of the in-memory index and bump the reference counts
+    - For example, let's say we have a database A and we make a clone B. Initially, they both point to the same set of rows. If either one of them updates a row, the other one will not be affected because the updating clone just marks the shared row version as deleted, but the actual row is unchanged.
+    - As a future optimization, we could also use a copy-on-write hash table to even share the index between clones.
+
+- https://github.com/purpleprotocol/hashcow /rust
+  - a Rust HashMap implementation with copy-on-write keys and values.
+  - Originally built for optimizing the Purple Protocol, this library provides a way to link HashMaps in memory that have duplicate entries. 
+  - Instead of the duplicate data, it is instead borrowed and it is only cloned when mutation is needed.
+# discuss-data-structure
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## A persistent data structure is a data structure that always keeps a previous version of itself when modified, they are cloned very cheaply (in constant or logarithmic time)
+- https://twitter.com/____abiodun____/status/1267925344079790081
+  - The simplest example is a linked-list or `con` based list, removing the head of a linked-list is 0(1)...
+  - Deleting the head is/can be 0(1) too, they are versionable as you just need the pointer to not point to the head or point to a new head, in case data are being added or deleted 
+  - It also has structural sharing between which makes cloning cheap
+- React Virtual DOM is effectively a tree data structure(trie), tree data structures support structural sharing, hence they can be used as a persistent data structure
+  - However, I think LinkedList is a more easily accessible definition as they are easier to understand
+
 # more-data-structure
 
 ## [一些不常见但是很重要的数据结构](https://www.cnblogs.com/sing1ee/archive/2012/10/12/2765064.html)

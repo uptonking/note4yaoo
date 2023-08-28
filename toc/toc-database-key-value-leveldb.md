@@ -44,6 +44,12 @@ modified: 2022-11-03T04:14:00.563Z
     - Object engine: inspired by RocksDB, GFS, and DeltaLake.
   - https://github.com/w41ter/sekas /rust
     - a distributed key-value store, used as cache, database, and storage engine for other distributed system.
+
+- https://github.com/dicedb/dice /go
+  - Re-implementation of Redis in Golang
+  - simple Golang-based in-memory KV store that speaks the Redis dialect
+  - not production ready
+  - started building Dice DB to understand Redis better with [Redis Internals Course](https://arpitbhayani.me/redis-internals/)
 # leveldb-like
 - https://github.com/Level/bench
   - Benchmark `abstract-level` databases. 

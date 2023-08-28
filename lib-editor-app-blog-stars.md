@@ -34,6 +34,51 @@ modified: 2022-08-21T10:11:43.095Z
     - collab
 # blogs
 
+## [vscode: Text Buffer Reimplementation, a Visual Studio Code Story to piece-tree](https://code.visualstudio.com/blogs/2018/03/23/text-buffer-reimplementation)
+
+## [Text Editor Data Structures](https://cdacamar.github.io/data%20structures/algorithms/benchmarking/text%20editors/c++/editor-data-structures/)
+
+- I wanted to solve all the problems that having a single giant text buffer had
+  - Efficient insertion/deletion.
+  - Efficient undo/redo.
+  - Must be flexible enough to enable UTF-8 encoding.
+  - Efficient multi-cursor editing.
+
+- Gap buffer
+  - gap buffer is very simple to implement and Emacs famously uses a gap buffer as its data structure
+  - pros
+    - Efficient insertion/deletion
+    - Must be flexible enough to enable UTF-8 encoding
+  - cons
+    - Efficient undo/redo
+    - Efficient multi-cursor editing
+
+- Rope
+  - rope splits the file up into several smaller allocations which allow for very fast amortized insertions or deletions at any point in the file, O(lg n). 
+  - pros
+    - Efficient insertion/deletion
+    - Must be flexible enough to enable UTF-8 encoding
+    - Efficient multi-cursor editing
+  - cons
+    - Efficient multi-cursor editing
+
+- Piece Table
+  - Microsoft Word used a piece table once upon a time to implement features like fast undo/redo as well as efficient file saving
+  - drawback: Due to the fact that the traditional piece table is implemented as a contiguous array of historical edits, it implies that long edit sessions could end up in a place where adding lots of small edits to the same file will cause some of the artifacts we saw with the giant text buffer start to appear, e.g. randomly your editor may slow down because the piece table is reallocated to a larger array. Not only this, undo/redo stacks need to store this potentially large array of entries.
+  - Then, the VSCode team went and solved the problem. Enter **piece tree**
+  - pros
+    - Efficient insertion/deletion (minus very long edit sessions).
+    - Efficient undo/redo (minus very long edit sessions).
+    - Must be flexible enough to enable UTF-8 encoding.
+    - Efficient multi-cursor editing
+
+- Piece Tree
+  - The piece table that VSCode implemented is like if the traditional piece table and a rope data structure had a baby
+  - You get all of the beauty of rope-like insertion amortization cost with the memory compression of a piece table. 
+  - The piece tree achieves the fast and compressed insertion times through the use of a red-black tree (RB tree) to store the individual pieces. 
+  - This data structure is useful because its guarantees about being a balanced search tree allow it to maintain a O(lg n) search time no matter how many pieces are added over time.
+  - the VSCode implementation does not use immutable data structures, which means that I will need to copy the entire piece tree (not the underlying data of course) in order to capture undo/redo stacks. So it does have some of the drawback of the piece table, so let’s just fix it! it's hard
+
 ## [What is a JavaScript Data Grid? display-first vs edit-first](https://handsontable.com/blog/what-is-a-javascript-data-grid)
 
 - A data grid is essentially a feature-rich interface for working with tabular data.
@@ -158,7 +203,7 @@ modified: 2022-08-21T10:11:43.095Z
 
 - I'd like to see someone write on how web based rich text editing tools store their textual data.
   - quill/draftjs/prosemirror/trix 
-  - Each of them might be relying on some form of Tree to store the content which actuates the views to react. I'm only guessing. A deeper, closer look might be interesting and useful.
+  - Each of them might be relying on some form of `Tree` to store the content which actuates the views to react. I'm only guessing. A deeper, closer look might be interesting and useful.
 
 ## [xi-editor retrospective_202006](https://raphlinus.github.io/xi/2020/06/27/xi-retrospective.html)
 

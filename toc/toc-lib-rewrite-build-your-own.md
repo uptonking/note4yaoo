@@ -9,6 +9,11 @@ modified: 2021-09-29T13:23:09.969Z
 
 # guide
 
+- https://github.com/aosabook/500lines
+  - https://aosabook.org/en/
+  - This is the source for the book 500 Lines or Less, the fourth in the Architecture of Open Source Applications series.
+  - 示例包括 spreadsheet、template-engine、crawler、server
+
 - https://github.com/gouflv/build-my-own-x
   - 再次发明轮子, 重写常用api和工具库
 
@@ -121,7 +126,3 @@ modified: 2021-09-29T13:23:09.969Z
 - https://github.com/JokerLHF/mini-vue3
   - 模拟vue3，实现了模板编译、创建组件实例、运行渲染函数、挂载虚拟 dom、接合响应式系统、patch 更新渲染、scheduler 任务调度， 基本上完成主线任务。
 # more
-- https://github.com/aosabook/500lines
-  - https://aosabook.org/en/
-  - This is the source for the book 500 Lines or Less, the fourth in the Architecture of Open Source Applications series.
-  - 示例包括 spreadsheet、template-engine、crawler、server

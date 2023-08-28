@@ -44,9 +44,55 @@ modified: 2022-08-21T10:12:02.964Z
 
 - ## 
 
-- ## 
+- ## [kilo: Build Your Own Text Editor | Hacker News_201908](https://news.ycombinator.com/item?id=20603567)
+- What I instantly liked is, how literally it starts from scratch and builds a couple of lines at a time.
+  - Can anybody refer to a similar step by step guide to building a compiler?
 
-- ## 
+- ## [Ask HN: How to learn about text editor architectures and implementations? | Hacker News](https://news.ycombinator.com/item?id=29874669)
+- Similar suggestion: if you're trying to learn the architecture of a big established project like Vim or Emacs, don't start at the top and try to follow everything. Start with a small feature you would like to tweak, implement, or understand. How does Emacs render the modeline, for example
+- probably you are studying editors that are too big for your purposes - find something smaller in scope
+
+- [Build Your Own Text Editor](https://viewsourcecode.org/snaptoken/kilo/)
+  - This is an instruction booklet that shows you how to build a text editor in C.
+
+- [Hecto: Build your own text editor in Rust](https://www.flenker.blog/hecto/)
+  - This is a series of blog posts that shows you how to build a text editor in Rust. 
+  - It’s a re-implementation of kilo in Rust
+
+- There’s also the Racket editors, which includes a text editor control, in the Racket Graphical Interface Toolkit. It’s what is used to implement the DrRacket IDE.
+  - [Editors](https://docs.racket-lang.org/gui/editor-overview.html)
+
+- Rob Pike has published several great papers about sam, the Plan 9 text editor he wrote.
+
+- Architecture-wise, you can start with an ordered list of lines, with each line stored as a string.
+- Features that complicate things are:
+  - supporting large documents and staying speedy (“replace all” is a good test case)
+  - supporting line wrapping or proportional fonts (makes it harder to translate between screen locations and (line, character) offsets)
+  - supporting Unicode (makes it harder to translate between screen locations and (line, byte position) offsets)
+  - syntax-colouring
+  - plug-ins
+  - regular expression based search (fairly simple for single-line search _if_ you store each line as a string; harder for custom data structures, as you can’t just use a regexp library)
+  - supporting larger-than-memory files (especially on systems without virtual memory, but I think that’s somewhat of a lost art)
+  - safely saving documents even if the disk doesn’t have space for two files (a lost art. Might not even have been fully solved, ever)
+
+- Rope was my original thought too as one of the original data structures for text editing. It's used to quickly insert/delete within a very large string.
+- In my opinion, the rope is easily superior to these other types, but it also depends on whether your language supports abstractions well. The problem with an "array of paragraphs" is that it helps when your problem involves the paragraph boundary, but gets in the way when it doesn't. For example, pressing backspace at the beginning of paragraph 2 causes a merge of paragraphs 1 and 2, which is not trivial. With a rope, it's the same as deleting a backspace within a simple string, once you have a good rope library under you.
+- The other big reason to prefer a rope is that the worst case complexity is excellent. 
+  - Basically all incremental operations are O(log n). 
+  - With an "array of paragraphs" you get various pathological performance cases such as a huge number of small paragraphs or one very big one.
+
+- I used a double-linked list of gap buffers (each in its own fixed length block that can swapped out to disk) for JOE. It works great on large files, but still I would start with rope these days.
+  - Gap buffer was appealing on really slow machines, where you are counting cycles on each key-press. If the gap is at the right position, the cycle count is very low. But you can probably do the same even with a tree-structure: you need to keep a pointer to the leaf in the abstract pointer used for the cursor.
+  - Also I would tie in the undo system to the data structure if possible. Rope does this with copy-on-write. Every version of the file could be a different top-node, and most middle and leaf nodes would be shared between revisions.
+
+- [A Brief Glance at How Various Text Editors Manage Their Textual Data (2015) | Hacker News](https://news.ycombinator.com/item?id=11244103)
+  - JOE was written in the final days of expensive memory and was written so that it can edit files larger than memory. Even today this is sometimes useful: you can edit an 8 GB file on a 32-bit machine.
+  - It uses a doubly linked list of gap buffers. Each gap buffer has a header and a 4K data page. The headers are always in memory, but the data pages can be swapped out to a file in /tmp. The memory usage limit is 32 MB. Possibly this is no longer a good idea- it's easily possible that you could have more RAM than /tmp space.
+  - The header has the data page's offset in the swap file, the link pointers, the gap location and a count of the number of newlines in the gap buffer.
+  - When a file is read in, the gap buffers are completely full. So read-in turns into a direct read of the file into memory (or into the swap file). The only thing it has to do is count the newlines in each 4K data page and generate the headers.
+  - The newline count is to speed up seeks to specific line numbers. [A long standing enhancement idea is to generate the newline count on demand and use mmap. This would allow the read in to be a NOP- just demand load the pages from the original file as needed and use copy-on-write when any change is made to preserve the original. But I'm also not sure it's a good idea to not take a snapshot of the original file- so this probably should be optional.]
+  - JOE uses smart pointers to the edit buffer. Each pointer has the address of the header and a memory pointer to the data page (which is always swapped in if there is a pointer to it). The software virtual memory system has a reference count on each page. Each pointer holds a reference on the data page it's pointing to. If there is no pointer to a page, the reference count is zero, so it can be swapped out.
+  - The other purpose of the smart pointers is automatically stick to the text they are pointing to, even through insert and delete operations. So if you insert at one point in the file, any pointers to further locations are updated (including line number, byte offset, column number and memory offset).
 
 - ## [Writing Software to Last 50 Years | Hacker News_202001](https://news.ycombinator.com/item?id=22042186)
 - Text files are king! I store every single byte I can in text files. Examples:

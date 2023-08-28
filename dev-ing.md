@@ -290,6 +290,12 @@ $$('[contenteditable]')
 
 ## 082
 
+## 0828
+
+- [Are JavaScript strings immutable? Do I need a "string builder" in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/51185/are-javascript-strings-immutable-do-i-need-a-string-builder-in-javascript)
+  - The string type value is immutable, but the String object, which is created by using the String() constructor, is mutable, because it is an object and you can add new properties to it.
+  - In conclusion, 1. all string type value (primitive type) is immutable. 2. The String object is mutable, but the string type value (primitive type) it contains is immutable.
+
 ## 0825
 
 - [post为什么会发送两次请求？](https://juejin.cn/post/7269952188927017015)
@@ -584,7 +590,7 @@ function useRef < T > (initialValue: T | null): RefObject < T > ;
   - [Does React compares whole tree on every change? - Stack Overflow](https://stackoverflow.com/questions/76143032/does-react-compares-whole-tree-on-every-change)
   - No, React will not go through the whole tree when you called setState only on a leaf node.
   - On call of setState, react will only re-render the component (tree node) for which setState was called on and any components (nodes) which are children.
-  - It's important to understand that when you call setState on a component, all of its sub trees components will be re rendered. To avoid this performance implication, we need to intelligently use ` shouldComponentUpdate(object nextProps, object nextState) `.
+  - It's important to understand that when you call setState on a component, all of its sub trees components will be re rendered. To avoid this performance implication, we need to intelligently use `shouldComponentUpdate(object nextProps, object nextState)`.
 
 ## 0610
 

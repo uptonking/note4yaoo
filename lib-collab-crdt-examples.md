@@ -117,7 +117,7 @@ modified: 2022-04-05T10:08:25.947Z
     - written in pure Rust with a UI in Floem
     - designed with Rope Science from the Xi-Editor which makes for lightning-fast computation, and leverages Wgpu for rendering
 
-- https://github.com/atom-archive/xray /201904/rust/RGASplit/archived
+- https://github.com/atom-archive/xray /201904/rust/js/RGASplit/archived
   - [Xray – An experimental next-generation Electron-based text editor | Hacker News](https://news.ycombinator.com/item?id=16525735)
   - Text is stored in a copy-on-write CRDT.
     - We use a variant of RGA called RGASplit
