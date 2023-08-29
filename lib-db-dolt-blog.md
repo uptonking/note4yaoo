@@ -9,6 +9,34 @@ modified: 2023-08-25T21:17:31.432Z
 
 # guide
 
+- resources
+# author-blogs
+- [Have Postgres. Want Dolt. | DoltHub Blog](https://www.dolthub.com/blog/2022-03-28-have-postgres-want-dolt/)
+
+- [Benchmarking Dolt with TPC-C | DoltHub Blog](https://www.dolthub.com/blog/2022-09-16-tpcc-update/)
+
+- [Everything through the SQL Engine | DoltHub Blog](https://www.dolthub.com/blog/2022-01-22-everything-to-sql-path/)
+
+- [Maintained Wikipedia ngrams dataset in Dolt | DoltHub Blog](https://www.dolthub.com/blog/2019-12-04-maintained-wikipedia-ngrams-dataset/)
+
+- [How Dolt Types Work | DoltHub Blog](https://www.dolthub.com/blog/2020-04-15-how-dolt-types-work/)
+# [Three-Way Merges in Dolt: Modeling Schema Conflicts | DoltHub Blog](https://www.dolthub.com/blog/2023-05-01-schema-conflicts/)
+- At the storage layer, Dolt and Git both leverage Merkle-Trees that enable scalable diff algorithms. 
+  - However, Dolt's implementation is specifically tailored to handle database tables and schemas. 
+  - This unique storage engine is what sets it apart from other databases: it was built from the ground up to support the database version control use-case.
+- Dolt's three-way merge model is designed to accommodate a wide range of workflows and scenarios, making it a versatile and powerful tool for Dolt users
+- Today's blog details the mechanics of three-way merge in Dolt and how we solved the problem of versioning schema and data with a performant approach.
+
+- we have a database with one table and two branches. Both branches have made changes since the common ancestor
+  - Post-merge we can see that all the changes are reflected on the tip of branch main and the history of both branches are reflected in the commit log. 
+  - Merkle-Tree storage engine allows this merge process to scale sub-linearly with the size of the table, regardless of how deep and complicated the commit history is. The cost of doing a three-way merge only depends on the size of the change sets being merged.
+
+- 👉🏻 **Dolt's three-way merge algorithm works by first reconciling schema differences between each side of the merge, and then merging the table data using this new schema**.
+- Dolt's merge algorithm is "cell-wise", meaning we can automatically merge any change sets that are disjoint at the cell level. 
+  - However, if both branches change the same cell to a different value, we have no choice but to escalate this decision to the user and let them decide what the final value should be
+- When two branches both modify the same portion of a table's schema, we must escalate the resolution decision to the user and let them decide what the final schema should look like. You can find a full list of Dolt's schema conflict rules in the docs 
+
+- This approach to version control allows users to keep track of changes to database schema and data, making it easier to collaborate with others and maintain a consistent version history.
 # [类Git数据库Dolt的使用方法 - 掘金](https://juejin.cn/post/7232600368752115770)
 - Dolt支持三种使用模式，三种都可对数据进行版本控制
   - 数据库模式，使用时通过类Mysql客户端连接和操作
@@ -37,6 +65,18 @@ modified: 2023-08-25T21:17:31.432Z
   - This is why one of the requirements to use this pattern is that it occurs on data that isn’t changed too frequently.
 
 - [Building with Patterns: The Schema Versioning Pattern | MongoDB](https://www.mongodb.com/blog/post/building-with-patterns-the-schema-versioning-pattern)
+# [So you want Database Forks? | DoltHub Blog](https://www.dolthub.com/blog/2022-07-29-database-forks/)
+- Conceptually, a "fork" in the software context is a copy that can be modified with the intent of living on as a separate copy
+  - This is distinct from a "branch" which implies the intent to merge the changes on the copy back into the original
+  - A "fork" means you are making a copy and never coming back.
+
+- Making a database fork is pretty simple practically. 
+  - First, you create a backup. 
+  - Then you restore from the backup in another location, like on another server.
+  - The issue with this approach is backing up and restoring can be slow. 
+  - If you abstract the storage from the database, you maybe be able to fork faster. 
+
+- Cloud Hosted Databases Make Forking Easy
 # [So you want a Git Database? | DoltHub Blog](https://www.dolthub.com/blog/2021-11-26-so-you-want-git-database/)
 - Dolt implements the Git command line and associated operations on table rows instead of files. 
 - Data and schema are modified in the working set using SQL.
@@ -66,9 +106,46 @@ modified: 2023-08-25T21:17:31.432Z
 - Dolt is a SQL database that lets you clone, branch, diff, merge, and fork your data just like you can with a filesystem tree in Git. 
 - This blog post explores one of the fundamental datastructures that underlies Dolt's implementation of SQL tables.
 - Dolt currently supports a subset of SQL where every table must have a primary key
-- The SQL layer is implemented on top of a table storage layer that models a key-value store, where keys and values are both byte arrays. 
-- The data structure that allows the storage layer to achieve these properties in Dolt is called a Prolly-tree. A Prolly-tree is a block-oriented search tree that combines the properties of a B-tree and a merkle tree. It uses a clever approach to forming variable-sized blocks in order to optimize for structural sharing and to minimize write amplification on small mutations.
+- 👉🏻 The SQL layer is implemented on top of a table storage layer that models a key-value store, where keys and values are both byte arrays. 
+- The data structure that allows the storage layer to achieve these properties in Dolt is called a Prolly-tree. 
+  - A Prolly-tree is a block-oriented search tree that combines the properties of a B-tree and a merkle tree. 
+  - It uses a clever approach to forming variable-sized blocks in order to optimize for structural sharing and to minimize write amplification on small mutations.
 - Prolly-tree is at the heart of Dolt's ability to efficiently implement Git functionality, such as branch, merge, and diff, for relational data with SQL semantics.
+# [Introducing Secondary Indexes | DoltHub Blog](https://www.dolthub.com/blog/2020-05-22-introducing-secondary-indexes/)
+- Indexes are a data structure that is used by many relational databases to allow for quick retrieval of a value given a key. 
+- Typically indexes are implemented as additional tables that reference the target table, but in all cases, they rely upon the data that is stored in their target table.
+- indexes are not always perfect for every table, as they incur a performance penalty to write operations on those tables, since the **indexes must be kept in sync with their target table's data**. 
+  - If a table is primarily for storage of data, with a relatively small amount of retrieval of that data, then an index may hurt more than help. 
+  - However, for tables that are heavily read from, indexes are the best option to improve query performance.
+- For the user, indexes usually don't involve any extra bookkeeping after their creation. The database updates the indexes for you, allowing you to keep the same workflow as before their creation.
+
+- Perhaps the most common index is usually one that isn't referred to as such: the primary key! It has special significance in that it is used to determine the uniqueness of a row in a table
+- primary keys may be one of the most well-known indexes, but they're far from the only one. 
+  - We call all of these other indexes "secondary indexes". 
+- For this article, I'll just mention three others
+- the column index
+  - It may be applied to a single column, and it supports the majority of commonly-used data types, such as INT, DATETIME, VARCHAR, etc
+- composite index
+  - applied to multiple columns, and generally the order of the columns is important.
+  - The data types allowed are the same as with column indexes.
+- unique indexes
+  - These are either column or composite indexes, however they have a unique constraint on them. 
+  - This constraint enforces uniqueness amongst the values or value combinations within a table.
+  - Some databases will actually make use of a unique index as the primary key if one is provided during table creation and no explicit primary key is specified.
+
+- 💡 How they're implemented in Dolt
+- In Dolt, table data is implemented as a sorted map, with 
+  - the key being a tuple of the primary keys, 
+  - and the value being a tuple of all of the other columns.
+- For indexes, this idea is modified a bit. 
+  - For the key tuple, we take the columns that are indexed and append the primary keys to them (if they're not a part of the indexed columns), and store that as the key for the map. 
+  - The value is left empty, which essentially turns the map into a set.
+
+- If we did not have a secondary index, then we would have to scan the entire table, row by row, to find all rows that satisfy the conditions.
+  - However, by using the index, we can jump to where we first find 1.0, and iterate until we find a different number
+- indexes make writes more expensive. 
+- Right now, Dolt has full support for column, composite, and unique indexes.
+- In the future, we plan to add support for index prefixes (also known as partial indexes), fulltext indexes, and spatial indexes. 
 # [lakeFS: The Guide to Data Versioning](https://lakefs.io/blog/data-versioning/)
 - How Is Data Versioning Implemented?
 Versioning Approach #1: Full Duplication
@@ -87,3 +164,5 @@ Versioning in lakeFS
   - Irmin is an OCaml implementation of this idea, using the Git repository format
 
 - [Dolt数据库版本控制 - 知乎](https://zhuanlan.zhihu.com/p/623256407)
+
+- [What's a good algorithm for 2-dimensional diffs? | Lobsters](https://lobste.rs/s/ypmznb/what_s_good_algorithm_for_2_dimensional)

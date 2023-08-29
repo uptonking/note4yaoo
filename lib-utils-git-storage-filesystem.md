@@ -1,11 +1,13 @@
 ---
-title: note-git-filesystem
-tags: [filesystem, git]
+title: lib-utils-git-storage-filesystem
+tags: [database, filesystem, git, storage]
 created: 2021-06-01T16:54:44.333Z
-modified: 2021-06-01T16:55:31.113Z
+modified: 2023-08-29T10:23:33.198Z
 ---
 
-# note-git-filesystem
+# lib-utils-git-storage-filesystem
+
+# guide
 
 # [Git数据存储的原理浅析](https://segmentfault.com/a/1190000016320008)
 - 我的疑问：
@@ -39,13 +41,20 @@ modified: 2021-06-01T16:55:31.113Z
 - ref
   - [Git内部存储原理](https://zhaohuabing.com/post/2019-01-21-git/)
 # [What filesystem does GitHub use for its repositories and why?](https://www.quora.com/What-filesystem-does-GitHub-use-for-its-repositories-and-why)
+
+# discuss
+
+- ## 
+
+- ## 
+
 - ## [github是如何存储海量的代码的，用到了什么技术，使用了什么数据库？](https://www.zhihu.com/question/56516064)
 - 看看他们的技术博客，libgit2、glb-director
 - 常见的分布式文件系统 GFS、HDFS、Lustre 、Ceph 、GridFS 、mogileFS、TFS、FastDFS等。
   - 各自适用于不同的领域，它们都不是系统级的分布式文件系统，而是应用级的分布式文件存储服务。
 
-- [github的大量小文件存取是如何实现的?](https://www.zhihu.com/question/20056542)
-  - 按常理来看，写的部分应该是正常文件系统，但读的部分肯定是要用数据库的，不可能文件系统之间直接网络请求
+- ## [github的大量小文件存取是如何实现的?](https://www.zhihu.com/question/20056542)
+- 按常理来看，写的部分应该是正常文件系统，但读的部分肯定是要用数据库的，不可能文件系统之间直接网络请求
   - 写的时候比如说SSH推送commit，或者是网页上的merge等命令, 这些最终都会转移到文件服务器来做具体的git操作，然后把变化映射到数据库里面。这些写的请求绝对数量虽然大，但比起网络请求的数量就不值一提了。
   - 然后数据库加缓存应付大访问量就很成熟了，没有什么特殊的。
 
@@ -67,15 +76,11 @@ modified: 2021-06-01T16:55:31.113Z
 
 > Slave file servers keeps memcache server.
 
-```
-
 - Grit gives you object oriented read/write access to Git repositories via Ruby.
 - Grit is no longer maintained. Check out libgit2/rugged.
   - Rugged is a library for accessing libgit2 in Ruby.
 - libgit2 is a pure C implementation of the Git core methods. 
   - It's designed to be fast and portable.
-
-```
 
 - Github uses Rackspace instead of Amazon EC2 as Amazon Elastic Block Store was not nearly as fast as bare metal when they ran benchmarks for handling high disk IO operations.
 
@@ -84,7 +89,7 @@ modified: 2021-06-01T16:55:31.113Z
   - After connecting more servers to the file system, performance degraded rapidly.
   - For MySQL database replication they were using DRBD (Database Replicated Block Device) which is a distributed, flexible and versatile replicated storage solution for Linux.
 
-- New Github Storage
+- ✨ New Github Storage
   - In the new architecture, Github removed the shared file system completely and started using federated storage (a collection of autonomous storage resources which are being monitored by a common management system that provides rules, how data is stored, managed and migrated throughout the storage network).
   - In the new system, they could add as many additional machines (Linux machines running ext3/ext4) they wanted, without hitting the performance.
 

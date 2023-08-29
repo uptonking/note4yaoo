@@ -239,3 +239,6 @@ G. Mutations
 - [Database in the Browser, a Spec](https://stopa.io/post/279)
 
 - [Things DBs Don't Do - But Should | Nile - The database for modern SaaS](https://www.thenile.dev/blog/things-dbs-dont-do)
+
+- [Database Systems: 8Base, Dolt, MindsDB, Xata – SQL Rob](https://sqlrob.com/2023/04/17/database-systems-8base-dolt-mindsdb-xata/)
+  - [15 futuristic databases you’ve never heard of - YouTube](https://www.youtube.com/watch?v=jb2AvF8XzII)

@@ -48,6 +48,10 @@ modified: 2020-11-11T13:16:42.423Z
   - https://pomber.github.io/covid19/timeseries.json
   - Updated three times a day using GitHub Actions.
   - JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country - updated daily
+
+- https://www.dolthub.com/repositories/Liquidata/corona-virus
+  - This dataset is an import of data from John Hopkins University CSSE. 
+  - The source of this data is this GitHub Repository
 # vaccine
 - [Coronavirus (COVID-19) Vaccinations](https://ourworldindata.org/covid-vaccinations)
   - Our World in Data will be tracking recent announcements on the first countries to administer these vaccinations. 

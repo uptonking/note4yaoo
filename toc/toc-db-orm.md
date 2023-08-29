@@ -209,6 +209,13 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/risinglightdb/risinglight /rust
   - An OLAP database system for educational purpose
 
+- https://github.com/dolthub/go-mysql-server /go
+  - A MySQL compatible database engine written in pure Go
+  - go-mysql-server is a drop-in replacement for MySQL. Any client library, tool, query, SQL syntax, SQL function, etc. that works with MySQL should also work with go-mysql-server.
+  - go-mysql-server is a data-source agnostic SQL engine and server which runs queries on data sources you provide, using the MySQL dialect and wire protocol. 
+  - A simple in-memory database implementation is included, and you can query any data source you want by implementing your own backend.
+  - dolt is the main production database implementation of this package.
+
 - https://github.com/surrealdb/echodb /rust
   - An embedded, in-memory, immutable, copy-on-write, key-value database engine
   - Multi-version concurrency control

@@ -39,6 +39,10 @@ modified: 2023-08-25T22:31:05.132Z
     - All mutation operations on either a leaf node's content or on the vertree itself cause the version to be incremented both at the node where the change occurred and at every node above it
   - CAS and related operations
 
+- https://github.com/versionpress/versionpress /php/ts/inactive
+  - https://versionpress.com/
+  - a user-friendly versioning solution for WordPress powered by Git
+
 - https://github.com/bokusunny/Elaborate /ISC/201911/ts/inactive
   - A hosting, version controlling service for documents.
   - created by diverting the idea of Git into document development. It enables to host their documents centralizedly and to control their versions.
@@ -47,32 +51,6 @@ modified: 2023-08-25T22:31:05.132Z
   - a "GitHub for Writers" built using the MERN stack -- Express, MongoDB, and React/Redux.
   - We enabled writers to execute complex version control actions by recreating the committing and branching workflows natively and simplifying processes by removing the use of terminal and using custom React modals in its place. 
     - We used **Myers' diff** algorithm to identify the text differences between commits and branches.
-
-- https://github.com/isomorphic-git/isomorphic-git /7kStar/MIT/202307/js
-  - https://isomorphic-git.org/
-  - a pure JavaScript reimplementation of git that works in both Node.js and browser 
-  - It can read and write to git repositories, fetch from and push to git remotes (such as GitHub), all without any native C++ module dependencies.
-    - rather than relying on the `fs` and `http` modules, isomorphic-git lets you bring your own file system and HTTP client.
-    - work with LightningFS/BrowserFS/Filer
-  - Isomorphic-git aims for 100% interoperability with the canonical git implementation. 
-    - This means it does all its operations by modifying files in a ".git" directory just like the git you are used to.
-  - https://github.com/isomorphic-git/lightning-fs /js
-    - I wanted to see if I could make something faster than BrowserFS or filer that still implements enough of the fs API to run the isomorphic-git test suite in browsers.
-- https://github.com/creationix/js-git /3.8kStar/MIT/201907/js/inactive
-  - A JavaScript implementation of Git.
-  - It also enables using git as a database to replace SQL and no-SQL data stores in many applications.
-  - https://github.com/es-git/es-git /202012/ts/inactive
-    - Git implemented in EcmaScript (a fork of JS-Git)
-  - https://github.com/creationix/git-node-fs
-    - A node adapter for the fs-db mixin for js-git. This enables access to Git repositories on the filesystem using Node.js.
-  - https://github.com/creationix/js-github
-    - An implementation of the js-git interface that mounts a live github repo.
-
-- https://github.com/Byron/gitoxide /rust
-  - an implementation of git written in Rust
-  - for the most part, git operations are heavily reliant on memory mapped IO as well as CPU to decompress data, which doesn't lend itself well to async IO out of the box.
-  - https://github.com/chrisdickinson/git-rs
-    - Implementing git in rust for fun and education!
 # data-branch-versions/revisions
 - https://github.com/snowtrack/snowfs /GPLv3/ts/inactive
   - https://www.snowtrack.io/
@@ -108,7 +86,7 @@ modified: 2023-08-25T22:31:05.132Z
   - The versioned, forkable, syncable database
   - Dolt is a fork of this project and actively maintained.
 
-- https://github.com/dolthub/dolt /apache2/go
+- https://github.com/dolthub/dolt /apache2/go/170k-loc
   - https://docs.dolthub.com/introduction/what-is-dolt
   - Dolt – Git for Data
   - Dolt is a SQL database that you can fork, clone, branch, merge, push and pull just like a Git repository.
@@ -121,6 +99,9 @@ modified: 2023-08-25T22:31:05.132Z
     - In SQL, Dolt exposes version control read operations as system tables and version control write operations as stored procedures.
   - Dolt produces cell-wise diffs and merges, making data debugging between versions tractable. 
   - That makes Dolt the only SQL database on the market that has branches and merges.
+  - https://github.com/dolthub/go-mysql-server /go
+    - go-mysql-server is a drop-in replacement for MySQL. Any client library, tool, query, SQL syntax, SQL function, etc. that works with MySQL should also work with go-mysql-server.
+    - A simple in-memory database implementation is included, and you can query any data source you want by implementing your own backend.
 
 - https://github.com/terminusdb/terminusdb-store /apache2/rust
   - a tokio-enabled data store for triple data
@@ -276,21 +257,6 @@ modified: 2023-08-25T22:31:05.132Z
 - https://github.com/presslabs/gitfs /python
   - gitfs is a FUSE file system that fully integrates with git. 
   - You can mount a remote repository's branch locally, and any subsequent changes made to the files will be automatically committed to the remote.
-
-## git-like
-
-- https://github.com/jelmer/dulwich /python
-  - Pure-Python Git implementation
-  - It aims to provide an interface to git repos (both local and remote) that doesn't call out to git directly but instead uses pure Python.
-
-## git-ui
-
-- https://github.com/corylus-git/corylus /ts/electron
-  - https://corylus.dev/
-  - Corylus is a graphical user interface for Git. 
-  - It aims to offer much of the power and flexibility of Git without having to remember CLI commands.
-# apps
-
 # utils
 - https://github.com/VladislavPixel/persi-library /ts
   - Library of persistent data structures with support for change history and versioning.
@@ -353,7 +319,7 @@ modified: 2023-08-25T22:31:05.132Z
   - Prust's data structures are inherently thread-safe
 
 - https://github.com/tobgu/pyrsistent /python
-  - Pyrsistent is a number of persistent collections (by some referred to as functional data structures). 
+  - a number of persistent collections (by some referred to as functional data structures). 
   - Persistent in the sense that they are immutable.
   - All methods on a data structure that would normally mutate it instead return a new copy of the structure containing the requested updates. 
 
