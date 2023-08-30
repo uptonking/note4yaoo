@@ -180,6 +180,24 @@ FrontPage.getInitialProps = async ({ req }) => {
 export default FrontPage
 ```
 
+# discuss-md-json
+- ## 
+
+- ## 
+
+- ## 
+
+- ## neither Markdown nor atJSON is good for collaborative editing; can't merge changes from multiple actors
+- https://twitter.com/geoffreylitt/status/1453008693440749584
+  - I've been working w/ folks at Ink&Switch on extending the Automerge CRDT to support formatted text, maybe could help w/ use cases like this
+- I think there's kind of a tipping point between, say, Obsidian vs (Roam and Notion) -- strongly delineated blocks seem probably better for org-mode type stuff than free-flowing documents, but also aren't as great for writing long documents
+
+- ## atjson is great but the spec should be much more precise. 
+- https://twitter.com/nichtich/status/1387301823762079745
+  - Writing specs is not easy, it took years to get a good spec of Markdown with CommonMark
+- atjson isn't really a spec; there's space for someone with the energy to do that to go ahead and standardise something, but so far we've just built a tool that meets our needs. I think it's a good approach, and @codexeditor independently came up with almost the same thing
+- One of the differences to conmonmark is that it's more of an approach. The spec is: here's some Unicode text, here are some annotations on that text (standoff per codex). Annotations have a type, start and end indexes, and a set of type-specific attributes. That's really it!
+
 # discuss
 - ## 
 

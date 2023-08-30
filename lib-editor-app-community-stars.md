@@ -40,9 +40,15 @@ modified: 2022-08-21T10:12:02.964Z
 # discuss
 - ## 
 
-- ## 
 
-- ## 
+- ## Have we talked about sub-documents?
+- https://twitter.com/blaine/status/1409611697157918728
+  - Long story short, we have recursive logic in atjson to render atjson documents that are embedded in annotations. Useful for lots of things; e.g., comments can be fully annotated/formatted, tombstones of deleted text can contain the full deleted text (including formatting, etc)
+- A sub-document in an annotation is definitely a convenient solution for first level footnotes, margin notes, etc., but if you want an indefinitely extensible text canvas then at some point you would want to reference external texts, I think. It leans more into the graph model.
+- Do you contain the other document inside an annotation or do you reference it? 
+  - We just store it straight in the document, but whether it's a reference or embedded is an implementation detail, I think?
+- I'm not very comfortable with the idea of annotations containing a whole new document, which itself contains another one, but how can it be prevented? Force the user to write shorter notes
+- Yes, you're quite right about circular reference - if the sub-documents are not literally stored on the annotations, but say in a parallel structure. In any case, I doubt it is practical to carry around a large document graph in JSON when you can fetch each one as needed.
 
 - ## [kilo: Build Your Own Text Editor | Hacker News_201908](https://news.ycombinator.com/item?id=20603567)
 - What I instantly liked is, how literally it starts from scratch and builds a couple of lines at a time.

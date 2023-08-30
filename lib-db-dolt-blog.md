@@ -102,6 +102,70 @@ modified: 2023-08-25T21:17:31.432Z
 - This data structure allows for fast diff and merge on binary trees, the core data structure in most databases, without compromising too much read or write performance. 
 - Combining prolly trees with a Merkle DAG allows data to be structurally shared across versions, preserving disk space. 
 - Recently, a couple new databases have emerged using this or similar technology, TerminusDB for graph or document databases and Dolt for relational databases.
+# [So You Want Git for Data? | DoltHub Blog](https://www.dolthub.com/blog/2020-03-06-so-you-want-git-for-data/)
+- Do you mean data versioning? If so, which parts of version control do you care about? Do you care about rollback? Diffs? Lineage, i.e. who changed what and when? Branch/merge? Sharing changes with others?
+
+- we encountered a number of products with some relationship to “Git for data”. 
+  - We narrowed the list to nine
+- The products fell into three general categories
+
+## Data catalogs
+
+### Kaggle
+
+- Kaggle started by hosting machine learning competitions. 
+- The contest runner posts an open dataset, sets the terms of the contest, and receives model submissions.
+- It has evolved into a social network of sorts for data scientists, continuing to run contests, but also hosting public datasets and modeling code in the form of notebooks. 
+- The datasets are distributed as CSVs or JSON. Datasets are versioned in the sense that older versions are still available on Kaggle.
+
+### data.world
+
+- an online tool for building data projects. 
+- As part of data projects there is data hosting. 
+- The focus is at a higher level than the data itself. On data.world, you create a data project with data, documentation, queries, insights, etc.
+- You can collaborate and share those projects with other people.
+- I could not locate a versioned dataset but there is an activity link on the dataset page. It looks like data versioning is not really a priority for data.world.
+
+### Quilt
+
+- Quilt v2 as Yum, Homebrew, or NPM for data
+- The data was immutable and versioned, as in multiple versions of the packages existed in the central repository, but there was no diff or branch/merge.
+- v2019 launch seemed to indicate the shift from data versioning to data discovery on top of S3.
+
+### qri
+
+- Qri is a data catalog built on the distributed web. 
+- There is a command line tool as well as a desktop application to get access to and publish datasets.
+- Qri structures data into a few components including the schema and data, but also metadata like a README.
+- Qri really seems to be chasing the “Git and GitHub for data” analogy pretty closely
+- I struggled with whether to put Qri in the data catalog or versioned database section of this blog
+  - I settled on the data catalog section because fundamentally, Qri is not a database. 
+  - It is a wrapper around a file-based data format. 
+  - There is no query language and I don't think it handles multiple tables in the same dataset right now.
+
+## Data pipeline versioning
+
+### Pachyderm
+
+- Pachyderm is a data pipeline versioning tool. 
+- In the Pachyderm model, data is stored as a set of content-addressed files in a repository. 
+- Pipeline code is also stored as a content-addressed set of code files. 
+- When pipeline code is run on data, Pachyderm models this as a sort of merge commit, allowing for versioning concepts like branching and lineage across your data pipeline.
+
+### DVC (Data Version Control)
+
+- Similar to Pachyderm, DVC versions data pipelines. 
+- Unlike Pachyderm, DVC does not have its own execution engine. 
+- DVC is a wrapper around Git that allows for large files (like git-lfs) and versioning code along with data. 
+- It also comes with some friendly pipeline hooks like visualizations and reproduce commands.
+- DVC seems lighter weight and more community-driven than Pachyderm. 
+
+### Noms
+
+- The versioned, forkable, syncable database.
+- Attic Labs sold to Salesforce in January 2018. The open source project has not seen many updates since.
+- Aaron Boodman, the founder and CEO, recently announced a new project that may or may not be Noms-based called Replicache. 
+- Noms implements a Merkle DAG that allows the database to be truly distributed, just like Git.
 # [How Dolt Stores Table Data | DoltHub Blog](https://www.dolthub.com/blog/2020-04-01-how-dolt-stores-table-data/)
 - Dolt is a SQL database that lets you clone, branch, diff, merge, and fork your data just like you can with a filesystem tree in Git. 
 - This blog post explores one of the fundamental datastructures that underlies Dolt's implementation of SQL tables.
@@ -166,3 +230,5 @@ Versioning in lakeFS
 - [Dolt数据库版本控制 - 知乎](https://zhuanlan.zhihu.com/p/623256407)
 
 - [What's a good algorithm for 2-dimensional diffs? | Lobsters](https://lobste.rs/s/ypmznb/what_s_good_algorithm_for_2_dimensional)
+
+- [Git like Branching with Graph database](https://digitalcarpenter.dev/graph-branching-timeseries)

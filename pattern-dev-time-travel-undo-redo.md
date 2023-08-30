@@ -79,8 +79,8 @@ modified: 2023-08-26T02:51:41.206Z
 
 ## [onlyoffice: Simplify History Structure](https://github.com/ONLYOFFICE/document-server-integration/issues/437)
 
-
 ## [Version Control · vkbo/novelWriter](https://github.com/vkbo/novelWriter/issues/383)
+
 # discuss
 - ## 
 

@@ -444,6 +444,10 @@ modified: 2020-07-14T11:03:53.196Z
   - https://github.com/coldi/r3f-game-demo
     - A demo on how to do a simple tile-based game with React and react-three-fiber
 # more-state
+- https://github.com/GantMan/ReactStateMuseum /js
+  - A whirlwind tour of React state management systems by example
+  - Examples to help portray the how, why, which, pros, and cons of various state management systems in the React ecosystem.
+
 - https://github.com/josephg/statecraft /201911/ts/inactive
   - Manage state with finesse
   - Statecraft is a protocol and set of tools for interacting with data that changes over time. 
@@ -464,9 +468,8 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/vuejs/vuex
 - https://github.com/Tencent/westore
   - 微信小程序解决方案 - 1KB js 覆盖状态管理、跨页通讯、插件开发和云数据库开发
-- https://github.com/GantMan/ReactStateMuseum
-  - A whirlwind tour of React state management systems by example
-- concent /MIT/626Star/202007
+
+- concent/helux /MIT/626Star/202007
   - https://github.com/heluxjs/helux
   - https://github.com/concentjs/concent
   - https://concentjs.github.io/concent-doc/

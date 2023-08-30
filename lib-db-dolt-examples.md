@@ -82,9 +82,23 @@ modified: 2023-08-25T22:31:05.132Z
   - https://neon.tech/
   - separates storage and compute and substitutes the PostgreSQL storage layer by redistributing data across a cluster of nodes.
 
-- https://github.com/attic-labs/noms /go/archived
+- https://github.com/attic-labs/noms /apache2/go/archived
   - The versioned, forkable, syncable database
   - Dolt is a fork of this project and actively maintained.
+  - forks
+    - https://github.com/ndau/noms
+  - [Question: What is a Prolly Tree?](https://github.com/attic-labs/noms/issues/3849)
+    - Prolly trees are very different than tries. 
+    - While tries have a history-independent structure, they do not have the performance /noms of b-trees.
+    - b-trees guarantee a min/max fanout, independent of the data you put in. 
+    - Prolly trees guarantee an *average* fanout, independent of the data you put in.
+  - [Remove noms JS implementation](https://github.com/attic-labs/noms/issues/3120)
+    - JS isn't a great place to be implementing a full noms client.
+  - [Some notes and questions on Prolly Trees](https://github.com/attic-labs/noms/issues/3878)
+    - Noms only exposes data structures like maps, sets and lists. It doesn't have a notion of a table. Maybe you are thinking of Dolt?
+  - [Noms — The Decentralized Database](https://github.com/attic-labs/noms/blob/master/doc/decent/about.md)
+    - Like most databases, Noms features a rich data model, atomic transactions, support for large-scale data, and efficient searches, scans, reads, and updates.
+    - Unlike any other database, Noms has built-in multiparty sync and conflict resolution. This feature makes Noms a very good fit for P2P decentralized applications.
 
 - https://github.com/dolthub/dolt /apache2/go/170k-loc
   - https://docs.dolthub.com/introduction/what-is-dolt
@@ -211,6 +225,11 @@ modified: 2023-08-25T22:31:05.132Z
   - Version your data and models. Store them in your cloud storage but keep their version info in your Git repo
   - Track experiments in your local Git repo (no servers needed).
   - Compare any data, code, parameters, model, or performance plots.
+
+- https://github.com/orpheus-db/implementation /python/inactive
+  - OrpheusDB is a hosted system that supports relational dataset version management. 
+  - OrpheusDB is built using PostgreSQL and Click
+  - Our current version supports advanced querying capabilities, using both the git-style version control commands, as well as SQL queries on one or more dataset versions.
 
 - https://github.com/liquibase/liquibase /java
   - https://www.liquibase.org/

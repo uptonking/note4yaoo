@@ -165,23 +165,6 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/js-data/js-data /202201/js/inactive
   - JSData is a framework-agnostic, datastore-agnostic ORM for Node.js and the Browser.
   - Adapters allow JSData to connect to various data sources such as Firebase, MySql, RethinkDB, MongoDB, localStorage, Redis, a REST API
-# database
-- https://github.com/codefollower/H2-Research
-  - H2数据库源代码学习研究
-  - 包括代码注释、文档、用于代码分析的测试用例
-# rdbms
-- https://github.com/erikgrinaker/toydb /202205/rust
-  - Distributed SQL database in Rust, written as a learning project
-  - 内部自己实现了SQL Parser、Query Planner、Storage（包括一个B+Tree）和Raft，都是直接编写的（简化版本）的源码而不是用外部库，确实很适合用来学习
-
-- https://github.com/nukep/llamadb /201712/rust
-  - a simple SQL database, written entirely in Rust 
-
-- https://github.com/PostgREST/postgrest
-  - https://postgrest.org/
-  - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
-  - It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
-  - 可直接将 PostgreSQL 数据库发布成 REST API，甚至有基于此库的 SaaS 服务如 supabase 可提供类 Google Firebase 的功能。
 # db-state-management
 - https://github.com/oslabs-beta/LiveStateDB /js/inactive
   - LiveStateDB is a database subscription API that enables developers to make state reflect database changes in real time. 
@@ -208,6 +191,19 @@ modified: 2021-08-30T18:56:09.644Z
 
 - https://github.com/risinglightdb/risinglight /rust
   - An OLAP database system for educational purpose
+
+- https://github.com/erikgrinaker/toydb /202205/rust
+  - Distributed SQL database in Rust, written as a learning project
+  - 内部自己实现了SQL Parser、Query Planner、Storage（包括一个B+Tree）和Raft，都是直接编写的（简化版本）的源码而不是用外部库，确实很适合用来学习
+
+- https://github.com/nukep/llamadb /201712/rust
+  - a simple SQL database, written entirely in Rust 
+
+- https://github.com/PostgREST/postgrest
+  - https://postgrest.org/
+  - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
+  - It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
+  - 可直接将 PostgreSQL 数据库发布成 REST API，甚至有基于此库的 SaaS 服务如 supabase 可提供类 Google Firebase 的功能。
 
 - https://github.com/dolthub/go-mysql-server /go
   - A MySQL compatible database engine written in pure Go
@@ -253,6 +249,10 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/pruttned/owl-invoice /ts
   - [Turning Git into an application database](https://nede.dev/blog/turning-git-into-an-application-database)
   - using Git backed filesystem as an application database.
+
+- https://github.com/codefollower/H2-Research
+  - H2数据库源代码学习研究
+  - 包括代码注释、文档、用于代码分析的测试用例
 # db-streaming
 - https://github.com/MaterializeInc/materialize /rust
   - https://materialize.com/

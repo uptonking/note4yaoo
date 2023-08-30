@@ -12,7 +12,15 @@ modified: 2022-10-22T18:46:45.456Z
 # discuss
 - ## 
 
-- ## 
+- ## 💡 [Document branches like git branches? - Yjs Community](https://discuss.yjs.dev/t/document-branches-like-git-branches/697)
+  - I’m wondering if I can build like a branch structure with Yjs docs.
+  - My use case, imagine I have a parent document with a lot of work made on it, then we want to make a copy of this document to derivate some content.
+  - We should have the possibility to integrate parent changes in our clone, and reversely we want to be able to move back some child content to the parent.
+  - And the child document could have different user and access policies, so we want to kindly clean the data.
+
+- So if I want to collapse the metadata at the end, I can simply create a brand new doc and iterate over the previous one to clone the content, so I would have only one clientID and one clock.
+  - The clientIDs don’t leak any user information. In order to get rid of stored content, you can simply load the content into a fresh Y. Doc with gc enabled (it is enabled by default).
+  - This way you can still merge updates from the original document and vice versa. The metadata that is retained doesn’t leak any user-information or editing snippets. If you tried might be able to recognize editing patterns as you can see how much content was inserted and deleted.
 
 - ## 🤔 We’re open sourcing y-sweet, a standalone Yjs CRDT server written in Rust.
 - https://twitter.com/drifting_corp/status/1687148228259577856
@@ -41,10 +49,10 @@ modified: 2022-10-22T18:46:45.456Z
 - I'm also curious on a more complete benchmark of Chronofold and using RON for encoding. I saw @gritzko posted here https://github.com/dmonad/crdt-benchmarks/issues/3 One thing that jumps out for me is that chronofolds may not necessarily have the same op seq as each of the peers (though still converges)
   - Whoops, you already shared the link. But the point is that RONs representation is apparently worse in B1.4 than Yjs (100kB RON, 30kB Yjs). The C++ implementation runs obviously much faster than js. We should be able to compare Yjs with more CRDTs once Yjs has a Rust port.
 
-- ## [Support for PubSub communication protocol · Issue #63 · yjs/yjs_201701](https://github.com/yjs/yjs/issues/63)
+- ## [Support for PubSub communication protocol · yjs/yjs_201701](https://github.com/yjs/yjs/issues/63)
 - We recently published a paper about the CRDT used it Yjs: yjs.pdf If you are familiar with WOOT: they share some similarities.
 
-- ## [Which algorithm y-array is using? · y-js/y-array_201708](https://github.com/y-js/y-array/issues/9)
+- ## 💡 [Which algorithm y-array is using? · y-js/y-array_201708](https://github.com/y-js/y-array/issues/9)
 - Yjs does not share any concepts with the RGA algorithm. 
   - If you want to compare it conceptually, Yjs is actually more similar to WOOT.
 

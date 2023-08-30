@@ -1197,6 +1197,16 @@ modified: 2022-08-21T10:02:27.788Z
 - https://github.com/wx-chevalier/excel.ts /ts
   - excel.ts 是基于 TypeScript 编写的前端 Excel 综合解决方案，包含了 POJO Schema 定义、多框架支持的 Web 端渲染以及 Node 导出服务
 
+- https://github.com/paulfitz/coopy /clang/inactive
+  - Diffing, patching, merging, and revision-control for spreadsheets and databases. 
+  - Focused on keeping data in sync across different technologies (e.g. a MySQL table and an Excel spreedsheet).
+- https://github.com/paulfitz/daff /HaxeLang
+  - http://paulfitz.github.io/daff/
+  - a library for comparing tables, producing a summary of their differences, and using such a summary as a patch file. 
+  - It is optimized for comparing tables that share a common origin, in other words multiple versions of the "same" table.
+  - The daff library is written in Haxe Lang, which can be translated reasonably well into js/python/java
+  - example shows the changes made in the modified table with respect to the original table. The format used is the highlighter tabular diff.
+
 - https://github.com/SeunMatt/excel_uploader /js
   - a simple JavaScript library that simplify the process of uploading data from large excel files to the server
   - processing the file on the local machine and uploading the extracted data (which is what you actually want) to the server in batch.

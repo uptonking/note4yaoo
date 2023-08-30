@@ -42,6 +42,7 @@ modified: 2022-11-06T15:45:36.913Z
   - atjson is a living content format for annotating content
   - we need a format that can be rich, extensible, and portable. It is important that the content source provide little ambiguity about how a story should be displayed
   - A document has a content field and a list of annotations, each of which have a spatial offset in the document.
+  - atjson came out of trying to build a text editor called Poetica
 # json-editor/viewer
 - https://github.com/plantain-00/schema-based-json-editor
   - https://plantain-00.github.io/schema-based-json-editor/packages/react/demo/

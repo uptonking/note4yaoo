@@ -54,7 +54,7 @@ modified: 2022-08-13T06:59:54.741Z
 - https://github.com/horacioh/multi-tenancy-react-example
   - Multi tenant architecture example
 
-- async-labs/saas /3.2kStar/MIT/202209/ts
+- async-labs/saas /3.2kStar/MIT/202209/ts/inactive
   - https://github.com/async-labs/saas
   - https://saas-app.async-await.com/
   - Open source web app that saves you many days of work when building your own SaaS product.

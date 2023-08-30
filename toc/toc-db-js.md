@@ -296,6 +296,16 @@ modified: 2022-11-25T15:50:48.226Z
   - https://github.com/lideming/btrdb/tree/main/btrdbfs
     - btrdbfs is a project to run filesystem on btrdb using FUSE.
     - btrdbfs implements FUSE filesystem using Node.js with the binding fuse-native.
+
+- https://github.com/mikeal/CADB /js/inactive
+  - Experimental single file content addressed database.
+  - "Content address" means that data is keyed by a hash digest.
+  - CADB is a single file database for storing content addressed block data. 
+  - You can think of it like a key/value store where the keys MUST be hash digests, of a sufficient length and security, and the value is arbitrary binary data.
+  - CADB is a special B+ tree which is both sorted and balanced using hash digests. 
+    - The keys (digests) are sorted by binary comparison 
+    - and the tree's structure is chunked using randomness derived from the tail of each hash. 
+    - This produces a self-balancing and well sorted structure on-disc.
 # db-json
 - lowdb /18.7Star/MIT/202211/ts
   - https://github.com/typicode/lowdb

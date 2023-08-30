@@ -51,6 +51,10 @@ modified: 2020-07-19T16:24:10.919Z
 - https://github.com/amalfra/fluid-table
   - A tiny library to create responsive HTML tables
   - 移动端每列都会显示表头列名
+# codepen-tables
+- https://codepen.io/argyleink/pen/abPOmgj
+  - Animates `<table>`.
+  - viva View Transitions
 # more
 - https://freefrontend.com/css-tables/
 - [A Complete Guide to the Table Element](https://css-tricks.com/complete-guide-table-element/)

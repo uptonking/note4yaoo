@@ -28,6 +28,14 @@ modified: 2023-04-07T03:10:46.225Z
 - https://github.com/Jacky-Summer/mini-mobx /js
   - 模拟实现 MobX 的 observable 和 autorun 方法
 # examples
+- https://github.com/xaviergonz/mobx-keystone /ts
+  - https://mobx-keystone.js.org/
+  - A MobX powered state management solution based on data trees with first class support for Typescript, support for snapshots, patches and much more
+  - it tries to combine the best features of both immutability (transactionality, traceability and composition) and mutability (discoverability, co-location and encapsulation) based approaches to state management
+  - Central in mobx-keystone is the concept of a living tree. 
+  - By default trees can only be modified by using an action that belongs to the same subtree
+  - because changes can be detected on a fine-grained level, JSON patches are supported out of the box.
+  - because it supports snapshots, action middlewares and replayable actions out of the box, it is possible to replace a Redux store and reducer with a MobX data model. This makes it possible to connect the Redux devtools to mobx-keystone.
 
 ## utils
 

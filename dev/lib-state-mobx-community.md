@@ -52,6 +52,20 @@ const fc = memo(() => {
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## dan_abramov, BlueSky uses Mobx.what are your thoughts on using Mobx now?
+- https://twitter.com/acemarke/status/1695569310498914357
+- it seems to be primarily used as sort of a cache for the fetched server data. i think i’d prefer to work with plain objects for this kind of use case but i don’t actively mind it. i might explore alternatives if it starts getting in the way somehow
+- Components as signal trackers with render effect
+
+- ## years later MobX still makes people go home early by keeping complicated projects scalable and fast
+- https://twitter.com/mweststrate/status/1696571664601936181
+  - the trias politicas of observable > derived > effect has become so much the de-facto mental model, that it has become the standard way of doing reactivity/signals
+- It feels to me, like the React team don't have enough experience with libraries as MST/Ember Data, because after you use them, everything else feels so bureaucratic
+
 - ## I hope all of this fervor for signals is helping us finally realize that mobx is by far the most underappreciated state management library for React
 - https://twitter.com/Steve8708/status/1628916464781787136
 - The problem with MobX is "proxy" and "class" centric - not friendly for some people.

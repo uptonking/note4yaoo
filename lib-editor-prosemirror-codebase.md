@@ -45,6 +45,9 @@ modified: 2021-06-02T17:13:37.692Z
 - 直接将plugin的状态挂在editorState对象上
   - @see EditorState.create
 # not-yet
+- branch的实现思路
+  - 保存各branch的name/delta-changes/baseBranchId，然后根据以上数据获取分支对应的所有delta-changes，然后计算出文档对象数据
+
 - ## editor pluginState、pluginView的更新顺序
 - ？NodeView.update() 和plugin.view().update()的先后顺序
 - 简单测试结果

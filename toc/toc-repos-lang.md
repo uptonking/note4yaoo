@@ -66,9 +66,7 @@ modified: 2020-11-03T06:56:19.448Z
     - MSVC's implementation of the C++ Standard Library.
   - https://github.com/leethomason/tinyxml2
     - C++ XML parser that can be easily integrated into other programs
-
 # c
-
 - https://github.com/DaveGamble/cJSON
   - /4.9kStar/MIT/202009
   - Ultralightweight JSON parser in ANSI C.
@@ -84,9 +82,7 @@ modified: 2020-11-03T06:56:19.448Z
     - Cross-platform asynchronous I/O
   - https://github.com/taosdata/TDengine
     - big data platform designed and optimized for the Internet of Things (IoT).
-
 # python
-
 - https://github.com/pallets/flask
   - /52.2kStar/BSD/202009
   - Python micro framework for building web applications.
@@ -103,3 +99,8 @@ modified: 2020-11-03T06:56:19.448Z
     - IT automation platform that makes your applications and systems easier to deploy
   - https://github.com/django/django
     - The Web framework for perfectionists with deadlines.
+# rust
+- https://github.com/khonsulabs/sediment
+  - A low-level MVCC file format for storing blobs.
+  - This storage format is meant to provide a foundation for building ACID-compliant databases.
+  - Uses a write-ahead log for efficient, atomic, durable writes.

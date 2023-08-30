@@ -61,6 +61,25 @@ modified: 2022-10-04T23:32:30.824Z
   - Web application for editing texteditor and painting canvas in real-time collaboration.
   - 展示了 quill、draftjs、canvas+mousemove 几个示例
   - 提供了client+server，可作为通用协作方案
+# versions
+
+- https://github.com/inkandswitch/upwelling-code /ts
+  - https://upwelling-prototype.netlify.app/
+  - [Upwelling: Combining real-time collaboration with version control for writers](https://www.inkandswitch.com/upwelling/)
+  - 依赖@atjson/document、@atjson/renderer-react、prosemirror
+
+- https://gitlab.com/peer/doc /js
+  - [PeerDoc – Scaling real-time text editing](https://mitar.tnode.com/post/peerdoc-scaling-real-time-text-editing/)
+  - PeerDoc is a collaborative real-time rich-text editor with undo/redo, cursor tracking, inline comments, permissions/sharing control over documents, a change history. 
+  - 依赖meteor、vuetify、prosemirror
+  - it provides two types of collaboration:
+    - real-time collaboration between collaborators on the draft of the document (push-based collaboration).Push-based collaboration is collaboration where a change can be made directly (pushed).
+    - fork and merge request style of collaboration with others, allowing collaboration to scale beyond a small group of collaborators (pull-based collaboration). Pull-based collaboration works by offering a change that must be approved before it is integrated (pulled). 
+  - PeerDoc is a stable prototype. It has been already used in production.
+  - Rebasing requires branches to have a shared base
+  - When a fork is merged, it can no longer be edited and changes from the parent document are not propagated to it. When a fork is merged, it can no longer be edited and changes from the parent document are not propagated to it. 
+  - PeerDoc does not have all the answers (yet) about how exactly to best use a combination of these two types of collaboration.
+  - PeerDoc currently rebases all changes and maintains a linear history of all documents, but would a branched history without rebasing be better when trying to understand how documents came about?
 # collab-solutions
 - https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1
   - using a sync database ( PouchDB, but it works with firebase ) as a communication layer between client and server.

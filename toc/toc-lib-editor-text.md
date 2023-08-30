@@ -31,6 +31,7 @@ modified: 2021-07-27T15:12:39.959Z
   - https://github.com/Alex-D/Trumbowyg
   - https://alex-d.github.io/Trumbowyg
   - a simple and lightweight WYSIWYG editor, weight only 20kB minifed (8kB gzip) for faster page loading.
+  - You can create your own plugins 
 
 - https://github.com/tzhangchi/docs
   - https://tzhangchi.github.io/docs/

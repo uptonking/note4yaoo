@@ -29,6 +29,10 @@ modified: 2021-05-14T15:04:42.225Z
   - Immutable.js provides many Persistent Immutable data structures including: List, Stack, Map, OrderedMap, Set, OrderedSet and Record.
   - These data structures are highly efficient on modern JavaScript VMs by using structural sharing via hash maps tries and vector tries as popularized by Clojure and Scala, minimizing the need to copy or cache data.
 
+- https://github.com/skeate/lambdata /ts
+  - https://skeate.github.io/lambdata/
+  - lambdata is a library of persistent, purely functional data structures, written in Typescript using fp-ts, based on the work of Chris Okasaki.
+
 - https://github.com/swannodette/mori /ClojureScript/inactive
   - A simple bridge to ClojureScript's persistent data structures and supporting APIs for vanilla JavaScript.
 # focus
@@ -336,3 +340,7 @@ modified: 2021-05-14T15:04:42.225Z
   - Lightweight, robust, elegant syntax highlighting.
 - https://github.com/mobz/elasticsearch-head
   - A web front end for an elasticsearch cluster
+# data-structure
+- https://github.com/liljenzin/confluent /cpp
+  - Confluent sets and maps are sorted associative containers written in C++11.
+  - [[1301.3388] Confluently Persistent Sets and Maps](https://arxiv.org/abs/1301.3388)

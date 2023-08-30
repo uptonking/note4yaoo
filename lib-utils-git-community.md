@@ -9,9 +9,28 @@ modified: 2023-08-29T10:13:31.070Z
 
 # guide
 
-# discuss
+# discuss-git-db
 - ## 
 
+- ## [How to implement git-like "branching" on a MongoDB database in Node.js - Stack Overflow](https://stackoverflow.com/questions/64635567/how-to-implement-git-like-branching-on-a-mongodb-database-in-node-js)
+- I think you are diving into the world of temporal data so it would probably help a lot to start drawing timelines.
+
+- ## [Does git use databases? - Quora](https://www.quora.com/Does-git-use-databases)
+- Git stores everything inside objects found inside .git directory.
+- All the references (40 characters hash) pointing to those references are stored inside refs directory.
+- git treats files and directories in 3 stages: your normal files/directories, staging area, committed area(repo). 
+
+
+
+- ## [Is there a better database than Git (with serializable, immutable, versioned trees)? - Stack Overflow](https://stackoverflow.com/questions/7152276/is-there-a-better-database-than-git-with-serializable-immutable-versioned-tre)
+- Datomic provides a persistent data storage and a built-in time notion.
+
+- Although the index/working copy parts of git can be separated out easily enough, git is not designed for merges or commits at the rate of thousands per second on a single machine. The core code is not even threadsafe, for the most part. You will likely need to create some new system for your data (you can still use git for the code, of course, and can also look into generating git commits to represent your data when necessary, etc).
+- So libgit2 isn't thread-safe? It would seem that Git would be inherently thread-safe considering it's data structure
+  - Nope! It has cache structures, etc, that are not thread-safe. The core git code was only designed to run in a single-threaded manner as command line tools, after all.
+
+- [Git: the NoSQL Database - Speaker Deck](https://speakerdeck.com/bkeepers/git-the-nosql-database)
+# discuss
 - ## 
 
 - ## 

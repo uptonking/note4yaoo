@@ -302,6 +302,12 @@ modified: 2022-11-30T18:56:07.072Z
 
 - https://github.com/mehtaarn000/reactdrive /202211/js
   - File storage system built with Reactjs, Expressjs, Nodejs, and CouchDB.
+
+- https://github.com/pgte/dribbledb /201112/js/inactive
+  - MVCC database written in javascript
+  - a browser local store capable of remote syncing.
+  - It supports several storage strategies and remote pushing and pulling strategies.
+  - It works with CouchDB-style APIs and a lot more to come.
 # examples-collab
 - https://github.com/Mo0812/MKNote
   - a note web app, which uses Markdown to render your notes.

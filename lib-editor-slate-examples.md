@@ -311,6 +311,7 @@ modified: 2023-02-05T19:03:12.723Z
   - 依赖 prezly/slate-lists
   - 示例样式友好
   - 依赖redux、react-dnd
+  - [Show HN: Edtr.io – Intuitive web editor, open source and fully adaptable | Hacker News_202002](https://news.ycombinator.com/item?id=22451568)
 
 - onlyoffice-sdkjs /190Star/AGPLv3/202302/js
   - https://github.com/ONLYOFFICE/sdkjs

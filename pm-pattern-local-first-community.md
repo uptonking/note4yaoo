@@ -44,9 +44,24 @@ modified: 2022-03-03T18:20:12.075Z
 # discuss
 - ## 
 
-- ## 
+- ## Are products changing from "one giant DB with all user data mixed" to "Isolated data. E.g., 1 DB per user"?
+- https://twitter.com/tantaman/status/1696165303464468489
+- collaboration in a "db per user" model is a disaster.
+  - I have strong opinions that people should stick with a model that mixes user data and enforce separation via  row level security.
 
-- ## 
+- A totally different approach that seems to work well for some classes of applications is "db per file"
+
+- Go one step further: decouple data from app entirely and colocate data with the user.
+  - Not just 1 db per user per app, but 1 db per user, period
+
+- ## upwelling: version control for writing
+- https://twitter.com/geoffreylitt/status/1633956142996127744
+  - Perhaps the most important idea in the piece: creative privacy is valuable! We shouldn't just accept always editing in a public doc. Our tools should actively let us decide when we're ready to share.
+  - Another key idea, often lost in discussions around CRDTs: in creative work, many conflicts cannot be automatically resolved.
+  - All you can do is have data structures, UI, and workflows that make it easy for humans to review and decide
+  - I'm now strongly convinced that a critical primitive for the future of creative tools is: git-style branching version control, adapted for non-programmers, with smarter conflict detection heuristics, blended with realtime collaboration
+
+- I'd say this is a requirement for any interactive software, and that the programming platform should support that. We shouldn't expect each tool to reinvent this
 
 - ## I am watching the talks from the Berlin Local-First meetup and liked the talk by @schickling “why you need Local First”.
 - https://twitter.com/sitnikcode/status/1673740334872797186

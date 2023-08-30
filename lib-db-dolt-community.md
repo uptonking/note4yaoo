@@ -25,7 +25,8 @@ modified: 2023-08-25T21:17:11.979Z
 # discuss-dolt-stars
 - ## 
 
-- ## 
+- ## [Building a branched versioning model for relational databases - Database Administrators Stack Exchange](https://dba.stackexchange.com/questions/74210/building-a-branched-versioning-model-for-relational-databases)
+- Managing and keeping track on data modification (insert, update, delete) can be done quite easy using an audit table with trigger that keep track on every change.
 
 - ## Anyone have a good algorithms for minimum 2-dimensional diff? 
 - https://twitter.com/DoltHub/status/1331751370802642944
@@ -75,12 +76,78 @@ modified: 2023-08-25T21:17:11.979Z
 - ## 
 
 - ## [Dolt is Git for data | Hacker News_202003](https://news.ycombinator.com/item?id=22731928)
+
+- Does Dolt have any benchmarks against other databases at scale? I would think that a git SQL database would not be very snappy at scale
+  - We're working on building performance benchmarks right now. We started with correctness. 
+  - We think over time (like years) we can achieve read performance parity with MySQL or PostgreSQL. 
+  - Architecturally, we will always be slower on write than other SQL databases, given the versioned storage engine.
+- Right now, Dolt is built to be used offline for data sharing. And in that use case, the data and all of its history needs to fit on a single logical storage system. 
+  - The biggest Dolt repository we have right now is 300Gb. It tickles some performance bottlenecks.
+  - In the long run, if we get traction we imagine building "big dolt" which is a distributed version of Dolt, where the network cuts happen at logical points in the Merkle DAG. Thus, you could run an arbitrarily large storage and compute cluster to power it.
+
+- With Dolt, you can view a human-readable diff of the data you received last time versus the data you received this time. How is this accomplished if the data is binary?
+  - No data diffs is the data is binary. But diffs are cell-wise
+  - `git-lfs` lets you put store large files on GitHub. 
+  - With Dolt, we offer a similar a similar utility called `git-dolt`. 
+  - Both these allow you to store large things on GitHub as a reference to another storage system, not the object itself.
+
+- 
+- 
+- 
+- One really important feature of time series data is the preservation of what the dataset looked like at each point in time. 
+  - Financial data providers will make a mistake (off by order of magnitude, missed a stock split, etc) and then go back and correct it. 
+  - This means you end up training models entirely on corrected data, but trade based on uncorrected data.
+
+- storage engine is a mashup of a Merkle DAG and a B-tree called a Prolly Tree
+
+- What is your take on the need for time-travel queries for versioned, mutable data?
+- The storage system we use only stores the rows that change. 
+
+- For the record, Replicache uses Noms internally, so I think ... something ... will still become of Noms. We're just not sure how to move forward with it at this point.
+
+
 - 
 - 
 - 
 - 
-- 
-- 
+
+- Is it feasible to use Conflict-free Replicated Data Types (CRDT) for this?
+  - I'm not familiar with CRDT. Will read up on that.
+- you can read some of the old docs from Noms here (Dolt uses a fork of Noms as its internal storage layer).
+  - To answer your question, it is pretty easy to make Noms (or Dolt) into a CRDT by defining a merge function that is deterministic.
+  - We experimented with this in Noms but the result wasn't that satisfying and we didn't take it any further
+  - [Noms — The Decentralized Database](https://github.com/attic-labs/noms/blob/master/doc/decent/about.md)
+    - Like most databases, Noms features a rich data model, atomic transactions, support for large-scale data, and efficient searches, scans, reads, and updates.
+    - Unlike any other database, Noms has built-in multiparty sync and conflict resolution. This feature makes Noms a very good fit for P2P decentralized applications.
+
+- How does this compare to something like Pachyderm?
+- Weighing in as Pachyderm founder.
+  - We're designed for version controlling data pipelines, as well as the data they input and output.
+  - Pachyderm's filesystem, pfs, is the component that's most similar to dolt. Pfs is a filesystem, rather than a database, so it tends to be used for bigger data formats like videos, genomics files, sometimes databases dumps. 
+  - And the main reason people do that is so they can run pipelines on top of those data files.
+  - Under the hood the datastructures are actually very similar though, we use a Merkle Tree, rather than a DAG. 
+  - But the overall algorithm is very similar. 
+  - Dolt, I think, is a great approach to version controlling SQL style data and access. Noms was a really cool idea that didn't seem to quite find its groove. 
+  - Whereas dolt seems to have taken the algorithm and made it into more of a tool with practical uses.
+
+- Git succeeded because it was free, and then business models were able to be built up around the open-source ecosystem after a market evolved naturally. There is a need, but if you go into it trying to build a business from scratch, you're going to have a bad time.
+- Mercurial has since added features, that are not the recommended workflow according to their docs, to have similar branching model to git but the default "as designed" workflow of hg is arguably inferior to git 
+
+- 关于产品方向的改变
+- I started a company with the same premise(前提; 假定, 假设) 9 years ago, during the prime "big data" hype cycle. 
+  - We burned through a lot of investor money only to realize that there was not a market opportunity to capture. 
+  - That is, many people thought it was cool - we even did co-sponsored data contests with The Economist - 
+  - but at the end of the day, we couldn't find anyone with an urgent problem that they were willing to pay to solve.
+  - Perhaps things have changed; we were part of a flock of 5 or 10 similar projects and I'm pretty sure the only one still around today is Kaggle.
+- We also started "Git for data" several years ago but since then pivoted to data science/ML tooling by building features that people actually want on the original product. 
+  - I guess "Git for data" is not very useful if you don't have the whole platform built around it to actually use the features. We mainly use it for data synchronization between the nodes and provenance tracking so people can see what data was used to build specific models and to track how the project evolves itself without forcing people to "commit" their changes manually (as we have seen that often data scientists don't even use git, just files on their Jupyter notebooks).
+
+- https://github.com/dat-ecosystem/dat
+  - this project is old. I brought it up in the context of older projects, independent of whether they succeeded pivoted, etc. (2013) - 'Introducing Dat: If Git Were Designed For Big Data' Talk by the founder.
+  - My point is they pivoted and so maybe this idea won't work, or this was too early.
+  - Dat is more about distribution (decentralized, distributed, P2P) but it's not possible to make queries.
+  - Yes, the project used to associate itself as a git for data, but I guess not in the sense of a db.
+  - That project looks like a command-line p2p file sharing system. There doesn't appear to be any branching. It also doesn't appear to be a database (like with a schema), but simply raw files being passed around. There's no data types or queries.
 
 - ## [Dolt is Git for Data | Hacker News_202103](https://news.ycombinator.com/item?id=26370572)
 - Dolt might be good but never underestimate the power of Type 2 Slowly Changing Dimension tables
@@ -265,26 +332,12 @@ modified: 2023-08-25T21:17:11.979Z
 
 - ## 
 
-- ## [Git for Data – A TerminusDB Technical Paper [pdf] | Hacker News_202001](https://news.ycombinator.com/item?id=22045801)
+- ## [Git for Data – A TerminusDB Technical Paper | Hacker News_202001](https://news.ycombinator.com/item?id=22045801)
 - TerminusDB is the graph cousins of Dolt. Great to see so much energy in the version control database world!
   - We are currently focused on data mesh use cases. 
   - Rather than trying to be GitHub for Data, we're trying to be YOUR GitHub for Data. 
   - Get all that good git lineage, pull, push, clone etc. and have data producers in your org own their data.
   - We see lots of organizations with big 'shadow data' problems and data being centrally managed rather than curated by domain experts.
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
 - ## With there only being a handful of temporal, datalog based databases out there, what sets TerminusDB apart from XTDB, and when would one choose one over the other?
 - https://discord.com/channels/689805612053168129/689892819678134354/1133508959341395969

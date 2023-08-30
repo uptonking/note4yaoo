@@ -100,7 +100,7 @@ modified: 2023-08-23T17:15:46.484Z
   - [Dat Ecosystem](https://dat-ecosystem.org/)
   - https://dat-ecosystem-archive.github.io/how-dat-works/
 
-- https://github.com/dat-ecosystem/dat
+- https://github.com/dat-ecosystem/dat /js
   - https://dat.foundation/
   - peer-to-peer sharing & live synchronization of files via command line
   - Use dat command line to share files with version control, back up data to servers, browse remote files on demand, and automate long-term data preservation

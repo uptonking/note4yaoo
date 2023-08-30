@@ -136,4 +136,10 @@ modified: 2022-06-03T22:07:49.519Z
   - It is a modification of the SQLite engine to support branching, like git!
   - Each database transaction is saved as a commit, and each commit has an incremental number
   - We cannot write to the database when we are in a defined commit, writing is only possible at the head of each branch. If you want to make modifications to some previous commit you must create a new branch that starts at that commit.
+
+- https://github.com/losfair/mvsqlite /rust
+  - Distributed, MVCC SQLite that runs on FoundationDB.
+  - mvSQLite integrates with SQLite as a custom VFS layer. It is a layer "below" SQLite, and all of SQLite's features are available.
+  - Time travel: Checkout the snapshot of your database at any point of time in the past.
+  - mvSQLite inherits FoundationDB's lock-free property - not a single distributed lock is acquired during data plane operation.
 # more-sqlite-examples
