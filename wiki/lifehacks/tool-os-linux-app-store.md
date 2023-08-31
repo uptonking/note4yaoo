@@ -77,6 +77,15 @@ modified: 2023-06-22T07:22:04.591Z
 - https://github.com/marticliment/WingetUI /python
   - https://www.marticliment.com/wingetui/
   - The main goal of this project is to create an intuitive GUI for the most common CLI package managers for Windows 10 and Windows 11, such as Winget, Scoop, Chocolatey, Pip and Npm
+
+# app-store-more
+
+- [Umbrel App Store](https://apps.umbrel.com/)
+  - Browse the ever-growing selection of self-hosted apps on umbrelOS
+  - [Umbrel — The ultimate home server and OS for self-hosting](https://umbrel.com/)
+  - Use umbrelOS from your browser.
+  - Run umbrelOS on Ubuntu or Debian on any hardware (or a VM on Mac or Windows) 
+
 # discuss
 - ## 
 

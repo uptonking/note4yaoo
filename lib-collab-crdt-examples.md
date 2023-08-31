@@ -836,8 +836,8 @@ modified: 2022-04-05T10:08:25.947Z
   - Only complete states are saved and merged, there is no sense of a "diff". 
   - Conflicts are resolved by Last-Write-Wins (LWW).
 
-- https://github.com/crdt-ibm-research/json-delta-crdt
-  - DSON - JSON CRDT Using Delta-Mutations
+- https://github.com/crdt-ibm-research/json-delta-crdt /js/inactive
+  - JSON CRDT Using Delta-Mutations
   - Prototype implementation of delta based CRDTs supporting JSON data using Javascript.
 
 - https://github.com/jackyzha0/bft-json-crdt /202211/rust/rga
@@ -891,11 +891,12 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/mitkury/toy-crdt-js /js
   - ReplicatedTreeOfBlocks is based on the CRDT algorithm called RGA
 
-- https://github.com/yorkie-team/yorkie /go
+- https://github.com/yorkie-team/yorkie /apache2/go
   - Yorkie is an open source document store for building collaborative editing applications. 
   - Yorkie uses JSON-like documents(CRDT) with optional types.
   - Clients can have a replica of the document representing an application model locally on several devices.
   - Each client can independently update the document on their local device, even while offline
+  - Yorkie provides SDKs for Go, JavaScript, iOS, and Android
 
 - https://github.com/cudr/scto
   - Strings Comparing To Operations (OT model)
@@ -903,6 +904,14 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/Haotian-Yang/CRDTree
   - 服务端基于ws
+
+- https://github.com/slashdotted/libmelda /rust
+  - A General Purpose Delta State JSON CRDT
+  - Melda natively supports the JSON data format and provides a way to synchronize changes made to arbitrary JSON documents.
+  - In the Kibi w/Melda repository you can find a fork of the original Kibi text editor with collaboration features implemented using Melda.
+  - https://github.com/slashdotted/kibi
+    - In this fork, simple collaboration features based on Melda have been implemented. 
+    - The implemented paradigm is save and refresh: when the user saves the local copy, changes from other users are merged. 
 # crdt-rust
 - https://github.com/josephg/diamond-types /rust
   - This repository contains a high performance rust CRDT for text editing. 

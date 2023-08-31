@@ -21,7 +21,7 @@ modified: 2022-11-06T16:47:43.444Z
 - https://github.com/mongodb-js/jsonpatch-to-mongodb
   - Convert JSON patches into a MongoDB update
 # json-patch-diff
-- https://github.com/Starcounter-Jack/JSON-Patch
+- https://github.com/Starcounter-Jack/JSON-Patch /ts
   - Lean and mean Javascript implementation of the JSON-Patch standard (RFC 6902).
   - Update JSON documents using delta patches.
   - JSON-Patch (RFC6902) is a standard format that allows you to update a JSON document by sending the changes rather than the whole document. 
@@ -76,11 +76,13 @@ modified: 2022-11-06T16:47:43.444Z
 - https://github.com/ken107/jsonpatch-observe
   - Observe an object tree for changes and generate JSON Patches (RFC 6902).
 
-- https://github.com/benjamine/jsondiffpatch
+- https://github.com/benjamine/jsondiffpatch /45kStar/MIT/js
   - Diff & patch JavaScript objects
   - simplistic, pure JSON, low footprint delta format
   - reverse a delta
   - unpatch (eg. revert object to its original state using a delta)
+  - (optionally) uses google  `diff-match-patch` for long text diffs (diff at character level)
+  - smart array diffing using LCS
 
 - https://github.com/pierreinglebert/json-merge-patch
   - An implementation of the JSON Merge Patch (RFC 7396)

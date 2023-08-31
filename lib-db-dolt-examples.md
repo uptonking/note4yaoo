@@ -123,7 +123,7 @@ modified: 2023-08-25T22:31:05.132Z
   - This library is intended as a common base for anyone who wishes to build a database containing triple data.
   - This library is tokio-enabled. Any i/o and locking happens through futures, and as a result, many of the functions in this library return futures. 
   - The HDT format, which the terminusdb-store layer format is based on
-  - We are constantly developing terminusdb-store to make it a high quality succinct graph representation versioned datastorage layer. 
+  - We are constantly developing terminusdb-store to make it a high quality succinct(简洁的) graph representation versioned datastorage layer. 
 
 - https://github.com/terminusdb/terminusdb /prolog语言
   - https://terminusdb.com/
@@ -137,6 +137,12 @@ modified: 2023-08-25T22:31:05.132Z
     - TerminusDB has full schema and data versioning capability. 
     - but offers a graph database interface using a custom query language called Web Object Query Language (WOQL). WOQL is schema optional. 
     - TerminusDB just released the option to query JSON directly, similar to MongoDB, giving users a more document database style interface.
+
+- https://github.com/perkeep/perkeep /apache2/go
+  - https://perkeep.org/
+  - a set of open source formats, protocols, and software for modeling, storing, searching, sharing and synchronizing data in the post-PC era. 
+  - Data may be files or objects, tweets or 5TB videos, and you can access it via a phone, browser or FUSE filesystem.
+  - [Perkeep – Open-source data modeling, storing, search, sharing and synchronizing | Hacker News_201712](https://news.ycombinator.com/item?id=15928685)
 
 - https://github.com/treeverse/lakeFS /go
   - https://docs.lakefs.io/
@@ -190,6 +196,11 @@ modified: 2023-08-25T22:31:05.132Z
     - Reducing storage space of the "compound nodes" can be done as in ART and Hash Array Mapped Tries (like we also do in our simple trie for dense ascending IDs).
   - in SirixDB to use a persistent data structure and a sliding snapshot data page versioning algorithm
   - uses a novel page versioning algorithm and stores binary JSON and XML resources in a huge persistent (persistent data structure) and durable index-tree, sequentially written to a log-file.
+  - SirixDB was forked from Treetank
+  - https://github.com/sebastiangraf/treetank /201503/java/inactive
+    - Secure Treebased Storage
+    - Treetank stores data securely by applying different layers on the stored data. 
+    - Flexible handling of flat as well as tree-based data is supported by a native encoding of the tree-structures ongoing with suitable paging supporting integrity and confidentiality to provide throughout security.
 
 - https://github.com/pfrazee/hyper-vcr /ts
   - A p2p version-controlled repo (built on hypercore)
@@ -226,8 +237,10 @@ modified: 2023-08-25T22:31:05.132Z
   - Track experiments in your local Git repo (no servers needed).
   - Compare any data, code, parameters, model, or performance plots.
 
-- https://github.com/orpheus-db/implementation /python/inactive
-  - OrpheusDB is a hosted system that supports relational dataset version management. 
+- https://github.com/orpheus-db/implementation /MIT/201709/python/inactive
+  - http://orpheus-db.github.io/
+  - OrpheusDB is a database system with versioning capabilities.
+  - OrpheusDB is a hosted system that supports relational dataset version management.
   - OrpheusDB is built using PostgreSQL and Click
   - Our current version supports advanced querying capabilities, using both the git-style version control commands, as well as SQL queries on one or more dataset versions.
 
@@ -276,6 +289,11 @@ modified: 2023-08-25T22:31:05.132Z
 - https://github.com/presslabs/gitfs /python
   - gitfs is a FUSE file system that fully integrates with git. 
   - You can mount a remote repository's branch locally, and any subsequent changes made to the files will be automatically committed to the remote.
+
+- https://github.com/fluree/db /agpl/Clojure
+  - https://developers.flur.ee/docs/overview/about/
+  - an immutable RDF graph database written in Clojure and built on W3C standards. 
+  - The Fluree system natively supports JSON and JSON-LD and can leverage or enforce any RDF ontology
 # utils
 - https://github.com/VladislavPixel/persi-library /ts
   - Library of persistent data structures with support for change history and versioning.

@@ -16,9 +16,9 @@ modified: 2022-10-05T04:57:38.647Z
 - atlaskit-editor 样式使用 styled-components
   - https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink
 
-- https://react-notion-x-demo.transitivebullsh.it/
+- https://react-notion-x-demo.transitivebullsh.it/ /MIT
   - https://github.com/NotionX/react-notion-x/blob/master/packages/react-notion-x/src/styles.css
-  - /MIT
+  - Fast and accurate React renderer for Notion. TS batteries included. 
 
 - https://www.tiny.cloud/docs/tinymce/6/premium-full-featured/
   - https://www.tiny.cloud/docs/tinymce/6/full-featured-open-source-demo/
@@ -37,13 +37,11 @@ modified: 2022-10-05T04:57:38.647Z
   - https://github.com/codex-team/editor.js/blob/next/src/styles/ui.css
   - /Apache2
 
-- https://rich.etherpad.com/
+- https://rich.etherpad.com/ /apache2
   - https://github.com/ether/etherpad-lite/blob/develop/src/static/css/pad.css
-  - /Apache2
 
-- https://milkdown.dev/online-demo
+- https://milkdown.dev/online-demo /MIT
   - https://github.com/Saul-Mirone/milkdown/blob/main/packages/theme-nord/src/style.ts
-  - /MIT
   - themes基于@emotion/css通过代码实现
 
 - https://nhn.github.io/tui.editor/latest/tutorial-example03-editor-with-wysiwyg-mode
@@ -75,14 +73,16 @@ modified: 2022-10-05T04:57:38.647Z
   - /986Star/MIT/201912/css
   - 类似没有ribbon menu的word文档，支持显示分页、编辑
   - Word processor in your browser using HTML and CSS(e.g. for invoices, legal notices...)
+
 - https://github.com/edwardtufte/tufte-css
   - https://edwardtufte.github.io/tufte-css/
   - 示例右侧会显示批注
-  - Tufte CSS is a CSS-only solution for styling HTML for the web.
-  - Tufte CSS provides tools to style web articles using the ideas demonstrated by Edward Tufte’s books and handouts.
+  - a CSS-only solution for styling HTML for the web.
+  - provides tools to style web articles using the ideas demonstrated by Edward Tufte’s books and handouts.
+
 - https://themes.jsonresume.org/theme/paper
   - http://yangmann.github.io/Paper/
-  - 古籍风格的书纸，给出了竖排的示例
+  - 古籍风格的书纸，给出了中文竖排的示例
   - a modern CSS framework with a vintage breeze of China
 
  
@@ -166,7 +166,7 @@ modified: 2022-10-05T04:57:38.647Z
   - 样式简单
 
 - https://github.com/readium/ts-toolkit /ts
-  - Implements the Readium Architecture for Web Apps
+  - 💡 Implements the Readium Architecture for Web Apps
 - https://github.com/edrlab/thorium-reader /ts
   - A cross platform desktop reading app, based on the Readium Desktop toolkit
 - https://github.com/troyeguo/koodo-reader /ts
@@ -248,9 +248,10 @@ modified: 2022-10-05T04:57:38.647Z
   - https://kirilllive.github.io/tuesday-js/
   - a free open source engine for creating visual novels, interactive stories and text-based adventure games. 
 
-- https://github.com/luin/readability
+- https://github.com/luin/readability /js
   - Turn any web page into a clean view
   - This module is based on arc90's readability project.
+  - Supporting encodings such as GBK and GB2312.
 
 - https://github.com/vinitkumar/white-paper
   - http://vinitkumar.github.io/white-paper/

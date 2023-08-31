@@ -410,20 +410,30 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
 
 ## [kilo: Build Your Own Text Editor](https://viewsourcecode.org/snaptoken/kilo/)
 
+- https://github.com/antirez/kilo /c
+  - a small text editor in less than 1K lines of code
+
+- https://github.com/vruss/Hecto /rust
+  - This is a personal project mainly to learn Rust by implementing a text editor
+
+- https://github.com/ilai-deutel/kibi /MIT/rust
+  - Kibi: A text editor in ≤1024 lines of code, written in Rust
+  - A configurable text editor with UTF-8 support, incremental search, syntax highlighting, line numbers and more
+  - Kibi is compatible with Linux, macOS, and Windows 10
+  - This project is inspired by kilo
+  - Porting the kilo source code from C to Rust and trying to make it idiomatic was interesting
+  - https://github.com/slashdotted/kibi
+    - In this fork, simple collaboration features based on Melda have been implemented. 
+    - The implemented paradigm is save and refresh: when the user saves the local copy, changes from other users are merged. 
+
 - [kilo: Build Your Own Text Editor | Hacker News_201908](https://news.ycombinator.com/item?id=20603567)
 
 - This is an instruction booklet that shows you how to build a text editor in C.
-
-- https://github.com/antirez/kilo /c
-  - a small text editor in less than 1K lines of code
 
 ## [Hecto: Build your own text editor in Rust](https://www.flenker.blog/hecto/)
 
 - This is a series of blog posts that shows you how to build a text editor in Rust. 
   - It’s a re-implementation of kilo in Rust
-
-- https://github.com/vruss/Hecto /rust
-  - This is a personal project mainly to learn Rust by implementing a text editor
 # more
 - [Rich text editors from backend perspective](https://habr.com/en/articles/533956/)
   - in this article I’m going to overview the most popular types of rich text editors, tradeoffs of their use from a backend perspective

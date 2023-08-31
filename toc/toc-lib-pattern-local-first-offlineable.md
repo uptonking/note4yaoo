@@ -210,6 +210,12 @@ modified: 2021-09-04T14:03:39.046Z
 
 - https://github.com/cloudpeers/tlfs  /rust
   - offers a stack to write applications as productively as when using state-of-the-art cloud-based architectures, while providing the Seven Ideals for Local-First Software
+
+- https://github.com/delta-db/deltadb /201602/js/inactive
+  - DeltaDB is an offline-first database designed to talk directly to clients and works great offline and online.
+  - I have decided to suspend development of DeltaDB for the following reasons:
+  - last-write-wins policy is nice when starting a new project as it is automatic, but other conflict resolution policies that force the user to manually resolve the conflict, like CouchDB’s revision protocol, have become more of the standard in the offline-first world.
+  - Building a DB that scales and is Building a DB that scales and is distributed over many nodes, takes a lot of work. distributed over many nodes, takes a lot of work. 
 # collab
 - https://github.com/YousefED/Matrix-CRDT
   - Use Matrix as a backend for local-first applications with the Matrix-CRDT Yjs provider.

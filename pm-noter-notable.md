@@ -158,6 +158,7 @@ modified: 2022-12-19T02:01:20.161Z
 - 规避版权问题的内容讨论平台
   - 科技分享，类似hacker-news
   - 产品讨论，类似product-hunt
+  - 打分评论，类似豆瓣电影与音乐
 # faq
 - 如何不使用图床而将图片直接嵌入到笔记中
   - [MarkDown图片存储格式-Textbundle格式](https://zhuanlan.zhihu.com/p/368463926)

@@ -25,6 +25,12 @@ modified: 2023-08-25T21:17:11.979Z
 # discuss-dolt-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## [Building a branched versioning model for relational databases - Database Administrators Stack Exchange](https://dba.stackexchange.com/questions/74210/building-a-branched-versioning-model-for-relational-databases)
 - Managing and keeping track on data modification (insert, update, delete) can be done quite easy using an audit table with trigger that keep track on every change.
 
@@ -104,7 +110,6 @@ modified: 2023-08-25T21:17:11.979Z
 - The storage system we use only stores the rows that change. 
 
 - For the record, Replicache uses Noms internally, so I think ... something ... will still become of Noms. We're just not sure how to move forward with it at this point.
-
 
 - 
 - 
@@ -325,12 +330,102 @@ modified: 2023-08-25T21:17:11.979Z
 
 - ## [Document Version Control · frappe-erp](https://github.com/frappe/frappe/issues/22075)
 
+# discuss-noms
+- ## 
+
+- ## [Noms – A new decentralized database based on ideas from Git | Hacker News_201608](https://news.ycombinator.com/item?id=12211754)
+- this reminds me a little bit of datomic - all data history is preserved/deduplicated, fork/decentralization features. Can you comment on how it compares?
+  - I feel weird speaking for them, but at a product level, I think it's fair to characterize Datomic as an application database -- competing with things like mongo, mysql, rethink, etc.
+  - While Noms might be a good fit for certain kinds of application databases (cases where history, or sync, is really important) we're really more focused more on archival, version control, and moving data between systems than being an online transactional database.
+  - Also, at a technical level, unless I'm wildly mistaken, I don't believe that Datomic is content-addressed, and I wouldn't call it "decentralized" (though that word is a bit squishy).
+
+- Could you tell us a bit about how this compares to dat?
+  - Dat is (currently) focused on synchronizing files in a peer-to-peer network.
+  - Noms can store files, but it is much more focused on structured data. You put individual values (numbers, strings, rows, structs, etc) into noms, using a type system that noms defines, and this allows you to query, diff, and efficiently update that data.
+  - Also Noms isn't peer-to-peer (although we hypothesize that it could run reasonably on top of an existing network like IPFS).
+  - dat has changed so much, and there has been so much hype and tooling (probably now broken) around it, and yet it doesn't seem to be delivering anything, nor there seems to be many data willing to be published with it.
+
+- Why would you exclusively support schema inference, rather than also allowing users to manually specify their schemas?
+  - In Noms every value has a type. It's an immutable system, so this type just is. 
+  - We don't try to infer a general database schema from a few instances of data. We just apply this aggregation up the tree and report the result.
+  - That all said, we do want to eventually add schema _validation_, by which I mean the ability to associate a type with a dataset and have the database enforce that any value committed to the dataset is compatible with that type (following subtyping rules).
+- It sounds like Noms is dynamically typed, rather like SQLite — types are associated with values, not (just) with datasets. The difference is that SQLite (like Python or JS) only types leaf/atomic data, while you're also typing aggregate data. Is that right?
+  - Right - the challenge is that with dynamic typing and without schema validation, it's incredibly easy to break any strongly typed client/consuming application. You think you are dealing with a `List<Number>`, you have Go/Java/Haskell/whatever apps which are consuming that in a strongly typed fashion using their idiomatic record types, and then suddenly a user accidentally sends in a single value which turns the tree of values into a `List<Number|String>`, and all your consuming apps break.
+  - Given that schema validation ("does this instance match this type?") is simpler to implement than schema inference ("what is the type of this instance?"), it's surprising to me to deliver inference first
+
+- if you want people to be able to link to Noms datasets on the web, maybe you should switch to using URLs to name the datasets, instead of a two-part identifier with an URL separated from a dataset name by a "::"? Darcs and Git seem to get by more or less with URLs and relative URLs; do you think that cold work for Noms too?
+  - The super REST harmonious way to do this would be to define a new media-type for Noms databases with a smallish document that links to the component parts. Like torrent files, but using URLs (maybe relative URLs) instead of SHA1 hashes for the components, maybe?
+- We never thought of these strings as URLs, but there are places where it would be nice to use them that only want URLs (the href attribute, for example).
+- The hash portion of a URL is not transmitted to the server by browsers, so it wouldn't help in the case of putting the string into a URL bar or a hyperlink.
+
+- Is it possible that their target market is not current users of decentralized DBs?
+  - At first glance, it strikes me as a solution for people storing something like scientific data sets rather than application data. In which case, posting CSV files on a website is pretty much best-case scenario. Although, in the "scientific data set" scenario, I'm not sure how much value there would be in storing version history.
+  - Right, this looks like it has far more immediate value for storing data which will be collaboratively mutated, so: a company directory, a knowledgebase, a CRM datastore... For large scale datasets, I'd be looking at GIS data maybe.
+
+- ## 💡 We are using Noms heavily inside @replicache and it's overall pretty good._20200401
+- https://twitter.com/pvh/status/1245202163384500224
+  - There are some *really* sharp API edges, but it's a powerful tool.
+- Are there any good articles comparing/contrasting Noms and Dat?
+  - Not that I know of, but they are pretty wildly different at this point. 
+  - Noms doesn't include any networking component at all -- if you can find some way to get two Noms nodes to talk to each other they can sync, but how they do that is out of scope for Noms itself.
+  - And dat doesn't expose any sort of structured data model at all - it's about syncing files around p2p and forking/branching them.
+- True, I guess I'm thinking of how automerge/hypermerge used dat. I'm guessing @pvh might be able to weigh in
+  - Dat is replicated append-only logs. 
+  - Noms is a database designed for rsyncing. 
+  - They're... neighbors in the p2p ghetto but they don't share a wall.
+- Still no article that I'm aware of, they aren't really trying to do the same thing. 
+  - There are so many differences, but maybe the simplest way to think of the difference is the problem the three set out to solve:
+  - Automerge: I have this JSON document. I wish that multiple parties could be editing it disconnected and the edits would always merge correctly.
+  - Hypermerge: Same as Automerge, 'cept I want to do it over P2P. 
+  - Noms: I wish there was something like SQLite, but where I could see the history of changes and push/pull them to and from servers.
+  - Or stated another way: Noms is a much lower level piece of machinery: it doesn't guarantee convergence by itself, you'd have to put something on top that does. **Noms is also focused a lot more on being a database** (larger data, better performance, indexes, etc).
+
+- noms is a git-like database, implementing B+Trees (maps, sets, secondary indexes, lists, blobs) with chunks, split at boundaries chosen by rolling hash function to deduplicate. 
+# discuss-branching
+- ## 
+
+- ## [LiteTree: SQLite with Branches | Hacker News](https://news.ycombinator.com/item?id=17865687)
+- Fossil is a SCM system (like git) created by the very same author of SQLite (D. Richard Hipp). 
+  - It uses SQLite as its database and implements versioning and branching and even merging (which LiteTree doesn't do) on its own, by recording the changes on each item on a separate table.
+  - This approach is more complex to implement but a lot more versatile and flexible. Most of times you wouldn't want to version or branch the whole database, but only parts of it.
+
+- 
+- 
+- 
+- 
+- 
+
+- ## [How does irmin compare to camlistore?](https://news.ycombinator.com/item?id=8054721)
+- They are different design philosophies: Irmin is closer to "Sqlite-with-Git-instead-of-SQL", since it's just an OCaml library that lets you build graph-based datastructures that are persisted into memory or Git. Higher-level datastructures are built in the usual OCaml style on top of it.
+- You could build a Camlistore-like service on top of Irmin, but this design/eval hasn't happened yet to my knowledge. It's on the TODO list for Irmin applications -- while I really like Camlistore, I do also want finer control over routing of blobs in a content-addressed network to manage the physical placement of my personal data.
+- Another interesting aspect of Irmin is that the backend blob stores are also just another functor. In addition to the existing memory/HTTP-REST/Git backends, we've sketched out the design for a convergent-encrypted backend store as well. Other backends such as existing k/v stores like LevelDB or Arakoon shouldn't be difficult, and patches are welcome.
+
+# discuss-fossil
+- ## 
+
+- ## 
+
+- ## 
 # discuss-terminusdb
 - ## 
 
-- ## 
+- ## it seems to be the only db to do what I want, which is immutable graph DB, with branching, AND query!
+- https://discord.com/channels/689805612053168129/722568409211994194/951039054722510868
+  - Was looking into Fluree before, but no branching
 
-- ## 
+- ## [TerminusDB – An open source in-memory graph database | Hacker News_202004](https://news.ycombinator.com/item?id=22867767)
+- TerminusDB is an open source (GPLv3) full featured in-memory graph database management system with a rich query language: WOQL (the Web Object Query Language).
+- the linked-data and RDF tool-chains were severely lacking. We evaluated several tools in an attempt to architect a solution, including Virtuoso and the most mature technology StarDog, but found the tools were not really up to the task.
+- the HDT library exhibited a number of problems. 
+  - First it was not really designed to allow programmatic access which was required during transactions and so we found it quite awkward. 
+  - Second, we had a lot of problems with re-entrance leading to segfaults. This was a serious problem on the Polish commercial use case which needed multi-threading to make search and update feasible. Managing all of the layering information in prolog was obviously less than ideal - this should clearly be built into the solution at the low level. We either had to fix HDT and extend it. Or build something else.
+- To take advantage of this DataOps/’Git for data’ use case we implement a graph database with a strong schema so as to retain both simplicity and generality of design. Second, we implement this graph using succinct immutable data structures. 
+
+- I am curious why a new query language WOQL was designed and implemented instead of just using SPARQL. It seems like it would be not too difficult to write a converter between WOQL and SPARQL.
+- We debated using SPARQL initially, and even had a test implementation leveraging the version shipped with SWI-prolog. However we found SPARQL to have a number of short comings that we wanted to see addressed.
+  - Firstly, there were features. Tighter integration with OWL and schema-awareness was something we wanted to build in at a low level. We also wanted to leverage CLP(fd) for time and other range queries. If we were going to need to fundamentally alter the semantics anyhow, it didn't seem that important to start with SPARQL. Other features that are coming down the pipes very soon are access to recursive queries and manipulation of paths through the graph.
+  - Secondly, we wanted better composability. One of the real strengths of SQL as a language is that it is very easy to compose language elements. By contrast SPARQL feels quite ad-hoc, mimicing some of the style of SQL but losing this feature.
+  - Lastly, we wanted to have a language which would be easy to compose from Javascript, or python. Javascript, because we live in a web age, and python, because it's the choice for many datascientists. JSON-LD provides a nice intermediate language in which to write queries in either of these languages. No need to paste together strings! And then, because of the choice of JSON-LD, we can naturally store our queries in the graph (and even query our queries).
 
 - ## [Git for Data – A TerminusDB Technical Paper | Hacker News_202001](https://news.ycombinator.com/item?id=22045801)
 - TerminusDB is the graph cousins of Dolt. Great to see so much energy in the version control database world!
@@ -364,11 +459,11 @@ modified: 2023-08-25T21:17:11.979Z
   - That said I don't think we've had anyone develop a proper app with terminusdb and i'm not sure how viable it is to have the server running on a phone. 
   - We know we can build on ARM (as long as it is 64 bit) so that shouldn't be the issue. The issue is more going to be in packaging it all
 
-- ## I've been looking for a graph database that might have the possibility of being used in an offline-first mobile application written in Rust and run through Tauri
+- ## 💡 I've been looking for a graph database that might have the possibility of being used in an offline-first mobile application written in Rust and run through Tauri
 - https://discord.com/channels/689805612053168129/689892819678134354/1130415411792453744
   - I came across the Terminus-Store Github repo, which is the new Terminus datastore layer and is compatible with Rust and offers a "triple store".
-  - Would using the Terminus-Store package still give you the same querying power  (especially that Datalog syntax)  as the regular Terminus DB clients ?
-- store will not give you the same querying power. 
+  - Would using the Terminus-Store package still give you the same querying power (especially that Datalog syntax) as the regular Terminus DB clients ?
+- 👉🏻 **store will not give you the same querying power**. 
   - The only thing it can do is iterate over all triples, or look up by a few predefined patterns (by subject, by subject-predicate, by object, or by predicate).
   - All the actual dataloggy stuff, as well as all the document extraction logic, is in terminusdb proper 
 - we have been pushing more and more things down into rust though_20230717, and it's not unimaginable that at some point, we will have a standalone rust version for at least a significant portion of the server. 

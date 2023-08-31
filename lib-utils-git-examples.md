@@ -56,6 +56,21 @@ modified: 2023-08-29T10:12:22.345Z
 
 - https://github.com/facebook/sapling /rust
   - Sapling SCM is a cross-platform, highly scalable, Git-compatible source control system.
+
+- https://github.com/drhsqlite/fossil-mirror /c
+  - https://fossil-scm.org/home/dir?ci=trunk&type=tree
+  - https://fossil-scm.org/
+  - A test of the ability of the Fossil DVCS to mirror to GitHub
+  - Fossil SCM(Source Control Management) uses SQLite as its database and implements versioning and branching and even merging (which LiteTree doesn't do) on its own, by recording the changes on each item on a separate table.
+  - This approach is more complex to implement but a lot more versatile and flexible. Most of times you wouldn't want to version or branch the whole database, but only parts of it.
+  - [Fossil: Branching, Forking, Merging, and Tagging](https://fossil-scm.org/home/doc/trunk/www/branching.wiki)
+    - The Alternative to Forking: Branching
+    - A branch is a named, intentional fork.
+
+- https://github.com/dchest/fossil-delta-js /js
+  - https://dchest.github.io/fossil-delta-js/
+  - Fossil SCM delta compression in JavaScript
+  - The cool thing about it is that plain text inputs generate plain text deltas (binary inputs, of course, may generate binary deltas).
 # git-ui
 - https://github.com/corylus-git/corylus /ts/electron
   - https://corylus.dev/
@@ -104,13 +119,12 @@ modified: 2023-08-29T10:12:22.345Z
   - it stands on the shoulders of Git and Git-annex to deliver a decentralized system for data exchange. 
   - This includes automated ingestion of data from online portals and exposing it in readily usable form as Git(-annex) repositories, so-called datasets. 
   - The actual data storage and permission management, however, remains with the original data providers.
+  - https://github.com/datalad/datalad-next
+    - This DataLad extension can be thought of as a staging area for additional functionality, or for improved performance and user experience. 
 
 - https://github.com/janelia-flyem/dvid /go
   - http://dvid.io/
   - DVID is a Distributed, Versioned, Image-oriented Dataservice written to support neural reconstruction, analysis and visualization efforts at HHMI Janelia Research Center. 
   - It provides storage with branched versioning of a variety of data necessary for our research including teravoxel-scale image volumes, JSON descriptions of objects, sparse volumes, point annotations with relationships (like synapses), etc.
   - All versions are available for queries. There is no checkout to read committed data.
-
-
-
 # more

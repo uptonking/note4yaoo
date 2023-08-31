@@ -46,7 +46,10 @@ modified: 2021-06-02T17:13:37.692Z
   - @see EditorState.create
 # not-yet
 - branch的实现思路
-  - 保存各branch的name/delta-changes/baseBranchId，然后根据以上数据获取分支对应的所有delta-changes，然后计算出文档对象数据
+  - 保存各branch的id-name/delta-changes/baseBranchId，然后根据以上数据获取分支对应的所有delta-changes，然后计算出文档对象数据
+  - 分支相关数据:
+    - change表: branch-id-name, author, timestamp(实现版本)
+    - branch表: branch-id-name, base-branch-id, start-timestamp, latest-timestamp
 
 - ## editor pluginState、pluginView的更新顺序
 - ？NodeView.update() 和plugin.view().update()的先后顺序

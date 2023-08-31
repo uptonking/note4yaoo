@@ -1,11 +1,11 @@
 ---
-title: toc-lib-utils-writing
-tags: [lib, toc, utils, writing]
+title: toc-lib-utils-writing-reading
+tags: [lib, reading, toc, utils, writing]
 created: 2023-01-09T10:21:05.889Z
-modified: 2023-01-09T10:21:44.025Z
+modified: 2023-08-31T04:01:14.658Z
 ---
 
-# toc-lib-utils-writing
+# toc-lib-utils-writing-reading
 
 # guide
 
