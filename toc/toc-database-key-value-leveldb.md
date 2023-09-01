@@ -15,6 +15,7 @@ modified: 2022-11-03T04:14:00.563Z
 - resources
   - leveldb vs redis
   - https://github.com/Level/awesome
+  - [LSM-Tree 论文的中文翻译](https://github.com/tangwz/LSM-Tree-CN/blob/main/LSM-Tree-CN.md)
 # db-key-value
 - snap-db /58Star/MIT/202001/ts/Nano-SQL
   - https://github.com/only-cliches/snap-db
@@ -105,8 +106,8 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/jed/sheet-down
   - This library uses abstract-leveldown to turn a worksheet within a Google Spreadsheet into a leveldown-compatible store for use with levelup.
 
-- https://github.com/heineiuo/rippledb
-  - Embeddable key-value database engine in pure TypeScript, based on LSM-Tree
+- https://github.com/heineiuo/rippledb /MIT/ts/inactive
+  - an embeddable key-value database engine in pure TypeScript, based on LSM-Tree, Inspired by LevelDB.
 
 - https://github.com/belayeng/quadstore /MIT/ts
   - https://belayeng.github.io/quadstore
@@ -114,6 +115,22 @@ modified: 2022-11-03T04:14:00.563Z
   - Implements the Sink, Source and Store RDF/JS interfaces for maximum interoperability with other RDF libraries
   - Supports SPARQL queries via quadstore-comunica, a tailored configuration and distribution of the Comunica querying framework
   - Natively capable of querying across named graphs
+
+- https://github.com/lotusdblabs/lotusdb /go
+  - LotusDB is a fast k/v database compatible with LSM tree and B+ tree, optimization of badger and bbolt.
+  - Much lower read and space amplification(倍率，放大率) than typical LSM
+  - LotusDB is inspired by a paper named SLM-DB in USENIX FAST ’19, and the Wisckey paper also helps a lot.
+
+- https://github.com/skyzh/mini-lsm /rust
+  - https://skyzh.github.io/mini-lsm/
+  - Build a simple key-value storage engine in a week!
+  - Log-structured merge tree is a data structure to maintain key-value pairs. 
+  - This data structure is widely used in distributed database systems like TiDB and CockroachDB as their underlying storage engine. 
+  - RocksDB, based on LevelDB, is an implementation of LSM-Tree storage engine.
+  - For RB-Tree and B-Tree, all data operations are in-place. That is to say, when you update the value corresponding to the key, the value will be overwritten at its original memory or disk space. 
+  - But in an LSM Tree, all write operations, i.e., insertions, updates, deletions, are performed in somewhere else. These operations will be batched into SST (sorted string table) files and be written to the disk. Once written to the disk, the file will not be changed. These operations are applied lazily on disk with a special task called compaction. The compaction job will merge multiple SST files and remove unused data.
+- https://github.com/Fullstop000/wickdb
+  - Pure Rust LSM-tree based embedded storage engine
 # level-search
 - search-index /1.3kStar/MIT/202207/js
   - https://github.com/fergiemcdowall/search-index

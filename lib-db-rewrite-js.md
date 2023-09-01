@@ -40,15 +40,25 @@ modified: 2022-11-27T19:20:02.987Z
     - This parser does not support (yet) PL/pgSQL.
 # db-non-js
 
+## [Writing a SQL database from scratch in Go](https://notes.eatonphil.com/tags/databases.html)
+
+- [1. SELECT, INSERT, CREATE and a REPL](https://notes.eatonphil.com/database-basics.html)
+- [2. binary expressions and WHERE filters](https://notes.eatonphil.com/database-basics-expressions-and-where.html)
+- [3. indexes](https://notes.eatonphil.com/database-basics-indexes.html)
+- [4. a database/sql driver](https://notes.eatonphil.com/database-basics-a-database-sql-driver.html)
+
+- https://github.com/eatonphil/gosql /go
+  - An early PostgreSQL implementation in Go
+
+- [Writing a SQL database from scratch in Go | Hacker News](https://news.ycombinator.com/item?id=22850817)
+
 ## [Writing a sqlite clone from scratch in C](https://cstack.github.io/db_tutorial/)
 
 - https://github.com/cstack/db_tutorial /c
   - Writing a sqlite clone from scratch in C
   - B-Tree Leaf Node Format
   - prepare_statement (our “SQL Compiler”) does not understand SQL right now. In fact, it only understands two words select and insert
-
 # more
-
 - https://github.com/plexidev/quick.db
   - https://quickdb.js.org/
   - provide an easy way for beginners and people of all levels to access & store data in a low to medium volume environment. 

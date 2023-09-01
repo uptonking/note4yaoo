@@ -59,10 +59,10 @@ modified: 2022-12-02T11:16:05.028Z
 - It’s an open question and ultimately depends on your app. 
   - For our mobile app we try to merge simple changes automatically and for trickier ones we allow the user to merge or select changes with a UI, a bit like git. 
   - We try to keep our objects small and granular enough that this very rarely occurs. 
-  - For a lot of apps last write wins (e.g compare and always take the lastest timestamp) is enough and probably the most common solution you’ll see but you have to be OK with a certain amount of data loss. 
+  - **For a lot of apps last write wins (e.g compare and always take the lastest timestamp) is enough** and probably the most common solution you’ll see but you have to be OK with a certain amount of data loss. 
   - Newer, fancier CRDT based merging solutions are on the horizon, like Automerge for example but I feel they’re a little way off mainstream adoption.
 
-- Earlier this year I experimented [1][2] with combining CRDTs using the incredible yJS[3] with PouchDB. It worked really well, completely magic syncing with full automatic handling of sync conflicts! 
+- Earlier this year I experimented with combining CRDTs using the incredible yJS[3] with PouchDB. It worked really well, completely magic syncing with full automatic handling of sync conflicts! 
   - [(Alpha) PouchDB integration for Yjs](https://gist.github.com/samwillis/1465da23194d1ad480a5548458864077)
 
 - I think my main problem with PouchDB and by extension CouchDB was that it seemed hard to add validation in the backend (including authentication/authorization). I remember having to build some kind of proxy that hooks into the CouchDB protocol to deny certain requests. I am pretty sure that's solved by now

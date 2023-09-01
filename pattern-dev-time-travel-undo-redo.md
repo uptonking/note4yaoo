@@ -77,10 +77,11 @@ modified: 2023-08-26T02:51:41.206Z
 - At its essence, undo is a history of changes in the data within a program
 - Undo must record the sequence of edit events the user executes, and unwind or rewind the changes in the data. 
 
-## [onlyoffice: Simplify History Structure](https://github.com/ONLYOFFICE/document-server-integration/issues/437)
+## more-blogs
 
-## [Version Control · vkbo/novelWriter](https://github.com/vkbo/novelWriter/issues/383)
+- [onlyoffice: Simplify History Structure](https://github.com/ONLYOFFICE/document-server-integration/issues/437)
 
+- [Version Control · vkbo/novelWriter](https://github.com/vkbo/novelWriter/issues/383)
 # discuss
 - ## 
 

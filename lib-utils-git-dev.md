@@ -18,6 +18,8 @@ modified: 2023-08-29T10:11:26.348Z
 
 - resources
   - [精通Git | 汪图南](https://wangtunan.github.io/blog/books/git/)
+# rewrite
+- 在实现branching时使用structural sharing，尽可能复用数据
 # dev
 
 # more

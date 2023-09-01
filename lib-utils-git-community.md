@@ -20,8 +20,6 @@ modified: 2023-08-29T10:13:31.070Z
 - All the references (40 characters hash) pointing to those references are stored inside refs directory.
 - git treats files and directories in 3 stages: your normal files/directories, staging area, committed area(repo). 
 
-
-
 - ## [Is there a better database than Git (with serializable, immutable, versioned trees)? - Stack Overflow](https://stackoverflow.com/questions/7152276/is-there-a-better-database-than-git-with-serializable-immutable-versioned-tre)
 - Datomic provides a persistent data storage and a built-in time notion.
 
@@ -75,3 +73,32 @@ modified: 2023-08-29T10:13:31.070Z
 - 像你这种场景, 要么使用传统中心式版本控制系统, 比如 SVN, 要么通过在线的协作环境, 比如 Microsoft 自己的 Office Web 版, 或者 Google Doc. 
 - 但回到最初的问题: 你需要的真的是一个"版本控制系统"吗? 也许仅仅是一个集中分享的地方, 也许仅仅是希望一个人修改的时候, 另一个人不能修改, 而已.
 - 其实！你们忽略了一件事情！pptx文件实际上是个zip文件，解压开来全是文本的xml和你加进去的视频、图片，是可以用git管理的！
+
+# discuss-fossil
+- ## 
+
+- ## 
+
+- ## [Why I'm using Fossil SCM instead of other source control systems (2016) | Hacker News_202206](https://news.ycombinator.com/item?id=31634560)
+- I’m just waiting for the next VCS that brings significant changes. We’d absolutely switch over if there was some feature we wouldn’t get elsewhere. But it’d need a couple of months/years of sustained advocacy.
+  - The next big thing will be semantic code versioning. I.e. a tool that **understands language syntax and can track when a symbol is changed**.
+  - There are already experiments in this area, but I don't think any are ready for mass adoption yet.
+  - The fact that it's 2022 and we're still working with red/green line-based diffs is absurd. Our tools should be smarter and we shouldn't have to handhold them as much as we do with Git. It wouldn't surprise me if the next big VCS used ML to track code changes and resolve conflicts. I personally can't wait.
+
+- Feature for feature Fossil is more like a competitor to Github or gitlab. 
+  - Basically it is a SCM based on sqlite that is a lightweight version of those websites offer.
+  - To add some detail here. The features it offers (tickets, wiki, chat, forums, etc) are stored within the repo, unlike github or gitlab where those things may be separate.
+  - Basically, if you have the repo and the fossil binary you have everything. Is this better? I never saw a lot of advantages in my style of work, but i could see this being huge for someone who has intermittent connectivity. Or maybe someone who wants to use the ticket tracking, etc without setting up a separate server or public instance.
+  - I just love that fossil exists and there is a diversity of opinion on how things can work.
+
+- Fossil came out in a time when your options were basically CVS, SVN, or something commercial like Perforce. 
+  - Git is an innovation that came out around 2005 (A year before Fossil), and it took a few years to get some traction, but holy moly are either of these better than what came before. 
+
+- I suppose a competitor could also have some kind of git compatibility shim built in to ease the adoption.
+  - Fossil does let you import and export git I think. Fossil just has the wiki and issues on its side
+
+- I hear a lot of larger teams insist on squash commits for PRs. Fossil isn't a fan of squashing.
+
+- Would the wiki part of fossil be a good static site generator?
+  - Not in the general case, no. Fossil-generated wiki/markdown output expect to be browsed within the context of a fossil repository, and will generate links accordingly. 
+  - There might be very limited use cases where it would work reasonably well, but not generically. e.g. adding a link to a local file or another wiki page will not work if the output is browsed from outside of a fossil repo instance.

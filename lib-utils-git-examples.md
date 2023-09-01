@@ -122,9 +122,12 @@ modified: 2023-08-29T10:12:22.345Z
   - https://github.com/datalad/datalad-next
     - This DataLad extension can be thought of as a staging area for additional functionality, or for improved performance and user experience. 
 
-- https://github.com/janelia-flyem/dvid /go
+- https://github.com/janelia-flyem/dvid /BSD/go
   - http://dvid.io/
   - DVID is a Distributed, Versioned, Image-oriented Dataservice written to support neural reconstruction, analysis and visualization efforts at HHMI Janelia Research Center. 
-  - It provides storage with branched versioning of a variety of data necessary for our research including teravoxel-scale image volumes, JSON descriptions of objects, sparse volumes, point annotations with relationships (like synapses), etc.
+  - It **provides storage with branched versioning** of a variety of data necessary for our research including teravoxel-scale image volumes, JSON descriptions of objects, sparse volumes, point annotations with relationships (like synapses), etc.
   - All versions are available for queries. There is no checkout to read committed data.
+  - DVID can be used as a **general-purpose branched versioning file system** that handles billions of files and terabytes of data by creating instances of the keyvalue datatype. 
+    - Our team uses the keyvalue datatype for branched versioning of JSON, configuration, and other files using the simple key-value HTTP API.
+    - DVID currently handles branched versioning of large-scale data and does not provide domain-specific diff tools to compare data from versions, which would be a necessary step for user-friendly pull requests and truly collaborative data editing.
 # more

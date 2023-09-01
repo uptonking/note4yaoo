@@ -25,7 +25,7 @@ modified: 2023-02-11T14:38:16.451Z
   - Simple data structures can be composed to create more complex ones. 
   - This makes it easy for app programmers to model their own data (e.g., using classes), and it also lets complex data structures inherit behavior and correctness guarantees from their components (e.g., a hash set can internally use a hash map).
 - However, no existing RDT libraries combine these properties. 
-- Yjs [Jahns 2022; Nicolaescu et al. 2016], Automerge [contributors 2022], and OWebSync [Jannes et al. 2021] support either composable maps and lists or JSON-formatted data, but they use monolithic architectures that rule out programmer- added data structures; 
+- 👉🏻 Yjs [Jahns 2022; Nicolaescu et al. 2016], Automerge [contributors 2022], and OWebSync [Jannes et al. 2021] support either composable maps and lists or JSON-formatted data, but they use monolithic architectures that rule out programmer- added data structures; 
 - ShareDB [Smith and Gentle 2022] and Fluid Framework [Fluid Framework 2022] allow modular custom RDTs but do not support composition techniques.
 
 ## [Solving real time collaboration using Eventual Consistency_202009](https://matt.aimonetti.net/posts/2020-09-solving-real-time-collaboration-using-eventual-consistency/)

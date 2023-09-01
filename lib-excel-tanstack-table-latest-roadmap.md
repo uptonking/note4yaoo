@@ -11,9 +11,9 @@ modified: 2022-08-21T10:19:58.757Z
 
 - [[Umbrella] v7 Stable Release ](https://github.com/tannerlinsley/react-table/issues/1964)
   - Fix row-selection bug
-  - Consider Col/Row-span plugin requirements (not the actual plugin) (#1342, #1933) (Non v7 release, but soon after hopefully)
-  - Ensure no infinite rendering loops like in #1911
-  - Ensure prop getter utilities and column decorators can and will generate stable callbacks and values (#1936)
+  - Consider Col/Row-span plugin requirements (not the actual plugin)(Non v7 release, but soon after hopefully)
+  - Ensure no infinite rendering loops
+  - Ensure prop getter utilities and column decorators can and will generate stable callbacks and values
 # changelog
 
 ## v8.0.0-20220627

@@ -35,7 +35,10 @@ modified: 2022-10-22T18:46:45.456Z
 - https://twitter.com/kevin_jahns/status/1300857487466229760
   - What are the characteristic differences that distinguish from this original implementation and recent updates inspired by RGA?
 - 👉🏻 I don't see how YATA is similar to WOOT. They are completely different algorithms with different performance characteristics. IMO the biggest contribution of the YATA paper was that conflicts can be visualized.
-  - Choosing a CRDT algorithm is always a tradeoff. YATA requires additional metadata for conflict resolution (one integer more). Using the compression format, this drawback is eliminated (just look at https://github.com/dmonad/crdt-benchmarks/pull/4). In exchange, Yjs applies updates more efficiently.
+  - Choosing a CRDT algorithm is always a tradeoff. 
+  - YATA requires additional metadata for conflict resolution (one integer more). 
+  - Using the compression format, this drawback is eliminated (just look at https://github.com/dmonad/crdt-benchmarks/pull/4). 
+  - In exchange, Yjs applies updates more efficiently.
 - Nice! In regards to GC "a tombstone object can be removed only if no future operation will be concurrent with  the delete operation that converted the object into a tombstone" Isn't this mathematically impossible given conditions like being disconnected/offline?
   - Yes, exactly! But if you assume that clients will be connected (which I did at the time, as it is the case with GDocs that also didn't allow offline editing), then you can garbage collect tombstones. You could gc after a week, and assume that all documents synced in that time.
 - Just to be completely clear here: GC approaches can work, but they are not worth the risk of diverging documents. Which is why this GC approach is no longer a part of Yjs. There are other ways to compress tombstones in a secure manner, as I explained here

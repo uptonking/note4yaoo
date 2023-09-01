@@ -1,11 +1,11 @@
 ---
-title: lib-collab-crdt-algs-peritext
-tags: [collaboration, crdt, peritext, prosemirror]
+title: lib-collab-lab-peritext
+tags: [automerge, collaboration, crdt, peritext, prosemirror]
 created: 2023-06-15T02:05:59.639Z
-modified: 2023-06-15T02:06:59.597Z
+modified: 2023-09-01T05:13:55.075Z
 ---
 
-# lib-collab-crdt-algs-peritext
+# lib-collab-lab-peritext
 
 # guide
 

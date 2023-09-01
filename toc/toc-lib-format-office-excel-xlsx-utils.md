@@ -70,13 +70,6 @@ modified: 2023-01-09T11:04:13.958Z
 - https://github.com/jmaister/excellentexport /ts
   - JavaScript library to create export to Excel/CSV from HTML tables in the browser. No server required.
   - support XLSX
-
-- https://github.com/paulfitz/daff /HaxeLang
-  - http://paulfitz.github.io/daff/
-  - a library for comparing tables, producing a summary of their differences, and using such a summary as a patch file. 
-  - It is optimized for comparing tables that share a common origin, in other words multiple versions of the "same" table.
-  - The daff library is written in Haxe Lang, which can be translated reasonably well into js/python/java
-  - example shows the changes made in the modified table with respect to the original table. The format used is the highlighter tabular diff.
 # examples
 - https://github.com/renanlecaro/importabular /js/MIT
   - https://importabular.lecaro.me/
@@ -222,7 +215,19 @@ modified: 2023-01-09T11:04:13.958Z
   - Crosswalker is a general purpose tool for joining columns of text data(csv/json) that don't perfectly match
 # xls
 
-# more
+# diff-excel/tables
 
+- https://github.com/Caleydo/taco /ts
+  - http://taco.caleydo.org/
+  - https://jku-vds-lab.at/publications/2017_infovis_taco/
+  - TACO (for Table Comparison) is an interactive comparison tool that effectively visualizes the differences between multiple tables at various levels of granularity.
+
+- https://github.com/paulfitz/daff /HaxeLang
+  - http://paulfitz.github.io/daff/
+  - a library for comparing tables, producing a summary of their differences, and using such a summary as a patch file. 
+  - It is optimized for comparing tables that share a common origin, in other words multiple versions of the "same" table.
+  - The daff library is written in Haxe Lang, which can be translated reasonably well into js/python/java
+  - example shows the changes made in the modified table with respect to the original table. The format used is the highlighter tabular diff.
+# more
 - https://github.com/rohanhrk/Excel-clone
   - I've made a google sheet clone using HTML, CSS, Javascript

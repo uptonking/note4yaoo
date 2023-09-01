@@ -14,6 +14,7 @@ modified: 2023-01-01T13:24:35.994Z
 
 - ref
   - database search solutions
+  - [Various search databases and backends as alternatives to Elasticsearch](https://gist.github.com/manigandham/58320ddb24fed654b57b4ba22aceae25)
   - [Tips for a good search | DocSearch by Algolia](https://docsearch.algolia.com/docs/tips)
 # popular
 - OpenSearch protocol

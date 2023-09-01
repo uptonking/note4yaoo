@@ -11,17 +11,6 @@ modified: 2023-08-25T21:17:11.979Z
 
 - creators
   - https://twitter.com/ZachMusgrave
-# discuss-versioning
-- ## 
-
-- ## [数据库版本管理应该如何实现？ - 知乎](https://www.zhihu.com/question/20080857/answers/updated)
-- 😣 目前是把DDL、存储过程、函数、核心数据整理成SQL文件，做为baseline，提交SVN；
-  - 每次修改，均记录到文件、整理成增量的sql update语句，提交svn；同时更新整体的SQL语句。
-  - 很复杂，尤其是开发、内部测试、客户手上多个版本，想死的心都有了
-
-- [用版本控制工具将数据库版本化](https://blog.csdn.net/tywo45/article/details/2480078)
-  - 版本化数据库的起点——创建一个数据库Schema基线，这个基线是一些数据库脚本（包括 create table ，alter table ，drop table ，insert data ，update data ，delete data等）。
-  - 这些脚本可以位于同一.sql文件中，也可根据其它规划分别位于不同文件中，例如将视图脚本，初始化数据脚本，建表脚本分别置于不同的文件中。
 # discuss-dolt-stars
 - ## 
 
@@ -30,9 +19,6 @@ modified: 2023-08-25T21:17:11.979Z
 - ## 
 
 - ## 
-
-- ## [Building a branched versioning model for relational databases - Database Administrators Stack Exchange](https://dba.stackexchange.com/questions/74210/building-a-branched-versioning-model-for-relational-databases)
-- Managing and keeping track on data modification (insert, update, delete) can be done quite easy using an audit table with trigger that keep track on every change.
 
 - ## Anyone have a good algorithms for minimum 2-dimensional diff? 
 - https://twitter.com/DoltHub/status/1331751370802642944
@@ -62,7 +48,7 @@ modified: 2023-08-25T21:17:11.979Z
   - The actual Dolt data is stored and served from S3 through an API. 
   - The OLTP database on DoltHub doesn't do the heavy stuff.
 
-- ## discuss-author
+- ## discuss-author-dolt
 - https://twitter.com/DoltHub/status/1694034481739390984
 - We want Dolt to be a drop-in replacement for MySQL.
   - A customer reported problems getting XCA to work with Dolt. 
@@ -70,16 +56,59 @@ modified: 2023-08-25T21:17:11.979Z
 
 - We are a fork of Noms. Lots of incremental changes and we're in the process of a major storage engine overhaul (what we use Noms for) for performance as we speak.
 
-- 
-- 
-- 
-- 
-- 
+- https://news.ycombinator.com/item?id=23012410
+  - Tim , CEO of Liquidata, the company that built Dolt and DoltHub here. This is how we store the version controlled rows so that we **get structural sharing across versions** (ie. 50M + one row change becomes 50M+1 entries in the database not 100M with no need to replay logs)
+  - You have to move your data to Dolt. Dolt is a database. It's got its own storage layer, query engine, and query parser. Diff queries are fast because of the way the storage layer works.
+  - Right now(202004), Dolt can't be distributed (ie. data must fit on one hard drive) easily so it's not meant for big data, more data that humans interact with, like mapping tables or daily summary tables. But, long term if we can get some traction, we plan on building "big dolt" which would be a distributed version that can scale to as big as you want.
+- Ah now I understand! So for most analytic workloads, typically a columnstore db is used due to the need for performance and advanced SQL features (windowing functions) for complex analytic queries -- which I don't expect Dolt to replace. Which means if we wanted to use Dolt's features, we would have to continuously ETL the data into Dolt, which would entail(必然导致) mirroring the entire database (or at least the parts we want to version control).
+  - Dolt essentially becomes a derived database specifically used for versioning. I see how this might work for some use cases.
+- If you are working within the Apache Spark ecosystem you can us DeltaLake to create 'merge' datasets which are transactional, versioned and allow time travel by both version number and timestamp.
+  - Another alternative to Deltalake is Apache Hudi, which also includes bloom filters for indexing time-travel queries (efficiently exclude any files given the supplied time constraint). Z-ordered indexing in Deltalake is not available yet in open-source deltalake, only in Databricks version.
 
+- https://news.ycombinator.com/item?id=23632298
+  - The thing Dolt does that splitgraph does not do is support branches, diffs, merges and conflicts on data and schema. Dolt has its own storage engine to do this efficiently whereas Splitgraph relies on Postgres.
+  - Having native Postgres with a versioning layer on top has other advantages so we're excited to see how Splitgraph's approach works in practice. Excited to play with it. We love to see more tools in this underserved space.
+  - There aren't many places where Splitgraph intersects with Dolt. Dolt aims to build a database from the ground up to have Git semantics and a real commit graph, whereas Splitgraph works on top of an existing RDBMS (PostgreSQL) and performs its operations by manipulating database tables. Here's a quick overview of differences where we do intersect.
 # discuss-dolt
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Show HN: Sortabase, a collaborative, visual database builder for communities | Hacker News](https://news.ycombinator.com/item?id=35951126)
+- This feels like a combination of Airtable (before the push to be a no-code app platform) and Reddit. This seems way better than the public Google Sheets that make their way around the latter site.
+
+- ## [Recently minted database technologies that I find intriguing | Hacker News](https://news.ycombinator.com/item?id=23531825)
+- Has anybody tried using Dolt? It looks quite young.
+  - I think this idea is really valuable, but I usually see it implemented as a time-series extension on top of Postgres or MySQL, like SQLAlchemy-Continuum or TimescaleDB. i.e. you caan get most of the useful git-like time-travel semantics (modulo schema migrations) out of timeseries data with a separate transaction history table.
+  - edit: TerminusDB also looks very cool, although it's approaching this problem from a graph-database angle rather than a relational one. Their architecture (prolog server on top of a rust persistence core) also seems super fascinating, I'd love to read more on how they chose it.
+- CEO of Dolt here. You are indeed correct, we are quite young. We are also focused at this stage(202006) on the data distribution use case (ie. use Dolt instead of putting a CSV or JSON file on GitHub). 
+  - So, we haven't spent much time on query performance or scale. 
+  - The current model is that the database and all of its history have to fit on the user's hard drive. 
+  - The format is easily distributed (ie. put content addressed chunks on different servers, optimize for fewer network hops) but that's not how it works today.
+  - That being said, we think architecturally we can eventually get pretty close to parity with other RDBMS on the read path. We will be slower on the write path given the need to build the Merkle DAG on writes.
+  - Long ways to go though, we only launched open source last August. On a suite of MySQL ~6M correctness benchmarks, we currently execute 3-4X more slowly. These aren't large sets either so we suspect we'll run into some non-linearities in performance. This is just normal SQL. We haven't really tested the limits of how many branches we can handle or how long branch creation or merge takes at scale. Not because we don't want to but because it's not the use case we're focused on.
+
+- I work as a SWE at a large AI consultancy. We've been experimenting with "git for data" products for a while, and we've been trying to get rid of them (notably Pachyderm) for -at least- 2 years.
+  - What they all share is a) awful performances, and b) bad design.
+  - Git semantics, ("branche", "merge", "commit") are not well suited for data, because merging dataframes and creating "branches" often leads to misunderstandings and delays. Time travel is very nice to have, but it's often the case where you would like to consume your input datasets at different point in time in the same repository (unless you do one dataset per repository, but then, what's the point ?).
+  - Performances are bad, because all updates needs to go through some kind of coordination mechanism (etcd, zookeeper, or raft directly). In a single instance scenario, you often end-up flooding it or needing additional memory to cope with the load. However, you could deliver high throughput and high availability by using proper sharding and distributing updates to specific masters (like you would do in any actor-based architecture).
+  - As a replacement, we're now using a custom event-sourcing framework on top of AWS S3/Azure blob. It's faster, more reliable, and most importantly, better designed.
+- The shortcomings are not from the tools themselves, it's a fundamental issue with the design.
+  - First, branching and merging. In git, branching allows you to make uncoordinated parallel progress for the price of a reconciliation step. In a datastore, you want the exact opposite: A single, consistent, available source of truth. Having different branches of the same dataset bring more confusion while solving zero problem.
+  - Then, commits. In git, a commit represent a snapshot of the entire state of your repository. This is particularly attractive because it guarantees that your code will build no matter what kind of update will follow (without incidence: editing a readme ; severely destructive: removing an src folder). In a datastore, this is nice but unnecessary. As I mentioned it in this thread, datasets move at different speeds, and attaching an new hash to something that didn't change doesn't add value. However, I have to recognize, I failed to mention earlier that datasets are often unrelated and not relational. This would be to reconsider if it were the case, of course. Most of the time, a dataset is represented as a single dataframe (or a single collection of dataframes).
+  - There some points where git semantics make sense: immutability of commits, linearizability within branches. Both are extremely important if you want to enable reproducibility of your pipeline. These are traits coming from Event Sourcing.
+  - Reproducibility is also claimed by DVC and Pachyderm, but their issue here is more a problem of trying to do too much things at once but not managing to do it right. Running code within Pachyderm pipelines was a recipe for disaster and the first thing we got rid of.
+  - As for performances, the write side is where it matters, because it needs to be coordinated. Reads almost never are an issue with good caching. In any case, it should be robust enough to fill the gap between csv files sent to s3 and a full kafka cluster, eg: not complaining for a few TB. To my knowledge, the only multi-leader datastore suitable for storing sharded datasets as a continuous log is Kafka.
+
+- That's very interesting. This is why we think (Luke from TerminusDB again) designing your own full featured graph DB is the best appraoch to the problem - you can work from the ground up and ensure performance is satisfactory for the operations you want to deliver. I don't agree that Git semantics are not well suited to data, but you do have to be very careful about how you advance.
+  - We like Prolog for Querying, constraint checking and user interaction. Rust is great for low-level data manipulation. Prolog is a superpower - very simple but very powerful, but quite far removed from the hardware and uses abstractions not under our control so not good at nitty-gritty bit manipulation. We like Rust as a low-level memory-safe language (and it has a great community).
+
+- Dolt isn't just time travel. If all you want is time travel (or append-only data), you can do that with Postgres or MySQL pretty easily and get great performance. What Dolt brings to the table is actual Git semantics, a real commit graph you can branch, merge, fork, clone. You can inspect the historical values of each cell and examine the author and commit message for each change. It's a database built for collaboration from the ground up.
+
+- ## [Building a branched versioning model for relational databases - Database Administrators Stack Exchange](https://dba.stackexchange.com/questions/74210/building-a-branched-versioning-model-for-relational-databases)
+- Managing and keeping track on data modification (insert, update, delete) can be done quite easy using an audit table with trigger that keep track on every change.
 
 - ## [Dolt is Git for data | Hacker News_202003](https://news.ycombinator.com/item?id=22731928)
 
@@ -333,8 +362,25 @@ modified: 2023-08-25T21:17:11.979Z
 # discuss-noms
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Show HN: Domain-tailored CRDTs for collaboration without server involvement | Hacker News](https://news.ycombinator.com/item?id=17221221)
+- noms includes efficient (cost proportional to size of diff, not size of input) diff and merge for sets, lists, maps, and user-defined structs. The built-in merge strategies are commutative and idempotent, so if your operations can be merged using it, then your schema is a (state-based) crdt.
+- We didn't initially build Noms for this type of p2p, masterless architecture, but more and more recently, I find myself thinking it's a great fit.
+- There's still more work that needs to be done to make Noms work really well for this kind of use case, but I think it's one that makes a lot of sense.
+
 - ## [Noms – A new decentralized database based on ideas from Git | Hacker News_201608](https://news.ycombinator.com/item?id=12211754)
-- this reminds me a little bit of datomic - all data history is preserved/deduplicated, fork/decentralization features. Can you comment on how it compares?
+
+- In case of conflicts, CouchDB assumes the most modified branch of the document (i.e., the document with the higher revision number) is the winner. You can resolve the conflict by choosing a different branch/revision manually, but you can also choose to not do anything.
+  - But it also keeps conflicts around, so users who care about them can correctly resolve them.
+
+- Isn't the append-only design unsuitable for scenarios where many updates/deletes are made? If you update/delete 1GB of your 2GB database each day, then after a year the database is 365GB in size, but the live data is only 2GB. I think the git-like features (history, merging) are very helpful for internal work, but when the dataset must be published, I think in most cases only the newest snapshot should be made available. But then the question is what format should it have...?
+  - It just depends on the details. If you have a dataset in which 50% of values changes every day, and it doesn't compress well, then yeah, your Noms archive of that entire dataset is going to grow quickly.
+  - In such situations, you could either (eventually, when it is implemented) prune old data, or aggregate the changes into bigger blocks.
+
+- this reminds me a little bit of **datomic** - all data history is preserved/deduplicated, fork/decentralization features. Can you comment on how it compares?
   - I feel weird speaking for them, but at a product level, I think it's fair to characterize Datomic as an application database -- competing with things like mongo, mysql, rethink, etc.
   - While Noms might be a good fit for certain kinds of application databases (cases where history, or sync, is really important) we're really more focused more on archival, version control, and moving data between systems than being an online transactional database.
   - Also, at a technical level, unless I'm wildly mistaken, I don't believe that Datomic is content-addressed, and I wouldn't call it "decentralized" (though that word is a bit squishy).
@@ -344,6 +390,37 @@ modified: 2023-08-25T21:17:11.979Z
   - Noms can store files, but it is much more focused on structured data. You put individual values (numbers, strings, rows, structs, etc) into noms, using a type system that noms defines, and this allows you to query, diff, and efficiently update that data.
   - Also Noms isn't peer-to-peer (although we hypothesize that it could run reasonably on top of an existing network like IPFS).
   - dat has changed so much, and there has been so much hype and tooling (probably now broken) around it, and yet it doesn't seem to be delivering anything, nor there seems to be many data willing to be published with it.
+
+- Git is a competitor. It is fairly common to check data (e.g., csv or json files) into Git today.
+  - However, this falls down pretty rapidly. 
+  - In order to get reasonable diffs, the data has to be sorted, and line-oriented. 
+  - Also Git just doesn't scale well to larger repos or individual objects.
+  - Otherwise, we see the competitors as the way that people distribute data today - custom APIs, zip files full of CSV, etc.
+
+- 👉🏻 While Git is referenced as an inspiration, **the implementation of Noms does not use Git**. 
+  - Noms performs diffs on the data - as records or whatever other structure you used in importing your data. 
+  - CSV is but one example of a way to import data into Noms, but since so much data is available in that format it is an easy one to reference that most people know. 
+  - Noms can also import JSON, XML and many other data types if you are willing to write JS or Go code (more to come). 
+
+- 🤔 Couldn't you just put a CSV/JSON file(s) behind VCS? Eg. Drop my CSV/JSON file(s) onto github.com and then it will be version-controlled ?
+- You can, and people do that today. It has limitations though:
+  * The data must be sorted in order for Git to provide good diffs
+  * It does not scale very well. On my machine, Git refuses to diff files over 1GB (maybe there is a setting for that)
+  * You must clone the entire repository onto your machine to work with it
+  * There is no programmatic API -- you must work with the data and changes as text and line diffs
+
+- We've been struggling managing a collection of periodically updated CSVs & binaries over a few GB's in size, we struggled with Git-LFS and gave up, and we were considering (dreading) SVN, this looks really promising. Cheers!
+
+- Can you elaborate a bit on how the hashing and chunking works? There's a rolling hash for determining chunk boundaries, and also SHA-512/256 somewhere. Does the same data chunked differently have a different hash?
+  - Briefly, there are two main hash functions in use in noms.
+  - sha-2 is used to compute the hash of individual chunks. This is the classic use of hashing in content-addressed systems.
+  - We also use a rolling hash to compute chunk boundaries. We do this in the typical way that tools like bup, camlistore, rsync, and others do for large files.
+  - But our observation was that if you squint your eyes, a merkle tree looks a little like a b-tree. So we use a rolling hash to break up huge lists, maps, and sets into trees where nodes are roughly 4KB. So it's a kind of self-balancing, probabilistic, deterministic b-tree thing.
+  - We never chunk the same data differently. An inviolable rule of Noms is that the same logical value is always chunked the same way and always has the same hash.
+- How do you handle hash collision?
+  - We assume that within a given version of the database format, there will never be a collision. The chances of a sha2 collision are beyond astronomical, and if you can create one, there are better things to do with your time that bother us.
+  - So it was important to us to have an escape hatch - a way to increase the strength of the hash we use over time.
+  - That's why we built a format version into Noms from the beginning. Our design is predicated on the fact that within a given version of the format, there is a 1:1 correspondence between hashes and values. Every value has exactly one hash, and every hash encodes exactly one value.
 
 - Why would you exclusively support schema inference, rather than also allowing users to manually specify their schemas?
   - In Noms every value has a type. It's an immutable system, so this type just is. 
@@ -381,31 +458,51 @@ modified: 2023-08-25T21:17:11.979Z
   - Or stated another way: Noms is a much lower level piece of machinery: it doesn't guarantee convergence by itself, you'd have to put something on top that does. **Noms is also focused a lot more on being a database** (larger data, better performance, indexes, etc).
 
 - noms is a git-like database, implementing B+Trees (maps, sets, secondary indexes, lists, blobs) with chunks, split at boundaries chosen by rolling hash function to deduplicate. 
-# discuss-branching
+# discuss-branching/versioning
 - ## 
+
+- ## [Database branching: three-way merge for schema changes | Hacker News](https://news.ycombinator.com/item?id=35716824)
+- Dolt does 3-way merge for both schema and data
+
+- ## [Show HN: Version Control for Databases | Hacker News](https://news.ycombinator.com/item?id=21742222)
+- there are purpose-built databases for this purpose such as Dolt
+  - Because it's baked into the database, you can do complex things like diffs and merges, but it requires that you run everything on that RDBMS vs. something standard. 
+  - Generic diffing from two arbitrary data states of any database is pretty challenging, even if you have all the transaction history.
+- 👉🏻 Yeah, **Dolt is built for distribution/collaboration of data sets, rather than for actually hosting live data in production (although it can do that)**. The workflow you would use to diff your database versions would be very similar to OPs: periodically take a snapshot dump of prod, then import that snapshot into Dolt. The reason this is better than just diffing the snapshot directly (i.e. textual diff where you see which INSERT statements are present in one version but not the other) is that 1) you get git-like version control semantics where each revision is associated with a person and a commit message, and 2) you can run SQL queries to inspect what's different between two revisions, rather than needing to write some analysis program.
+
+- We built a Git-style version controlled SQL database called Dolt 
+  - **You do have to move a copy of your data to Dolt**, it does not sit on top or beside of your current database. So, it is an extra step in your data modification workflow, similar to versioning code. You had to add a version control step into your code modification workflow.
 
 - ## [LiteTree: SQLite with Branches | Hacker News](https://news.ycombinator.com/item?id=17865687)
 - Fossil is a SCM system (like git) created by the very same author of SQLite (D. Richard Hipp). 
   - It uses SQLite as its database and implements versioning and branching and even merging (which LiteTree doesn't do) on its own, by recording the changes on each item on a separate table.
   - This approach is more complex to implement but a lot more versatile and flexible. Most of times you wouldn't want to version or branch the whole database, but only parts of it.
 
-- 
-- 
-- 
-- 
-- 
+- There has been earlier work on getting git-style branched versioning on top of databases. 
+  - For relational databases, OrpheusDB puts a layer over PostgreSQL. They also supply a gRPC layer for interacting with the server.
+
+- For key-value systems, there are simple techniques for adding branched versioning to key-value (particularly ordered key-value) stores. We are using it for our research dataservice that holds 25+ TB of Connectomics data, which includes 3d image and segmentation data
+  - We can use a variety of key-value storage backends and are experimenting with versioned relational DBs, so I'll definitely give LiteTree a look.
+
+- Is the function similar to PostgreSQL's deprecated "Time Travel". AFAIK this can be a foundation for some form of Snapshot Isolation 
+  - Well, we can read the database at any point-in-time by selecting the branch and commit number. So it is similar to a snapshot. And yes, it is a type of Snapshot Isolation or MVCC (Multi Version Concurrency Control) but more than that because we can have concurrent readers on different branches.
+
+- Noms doesn't have the appeal of SQL, but it is versioned and forkable and strongly typed data.
+  - A few other and I are attempting to use noms specifically as a versioned database. I haven't seen anything else that can do everything that noms does. Its only problem is that it's really a database engine, not a full fledged database... so some development work is needed to get it usable within a project.
 
 - ## [How does irmin compare to camlistore?](https://news.ycombinator.com/item?id=8054721)
 - They are different design philosophies: Irmin is closer to "Sqlite-with-Git-instead-of-SQL", since it's just an OCaml library that lets you build graph-based datastructures that are persisted into memory or Git. Higher-level datastructures are built in the usual OCaml style on top of it.
 - You could build a Camlistore-like service on top of Irmin, but this design/eval hasn't happened yet to my knowledge. It's on the TODO list for Irmin applications -- while I really like Camlistore, I do also want finer control over routing of blobs in a content-addressed network to manage the physical placement of my personal data.
 - Another interesting aspect of Irmin is that the backend blob stores are also just another functor. In addition to the existing memory/HTTP-REST/Git backends, we've sketched out the design for a convergent-encrypted backend store as well. Other backends such as existing k/v stores like LevelDB or Arakoon shouldn't be difficult, and patches are welcome.
 
-# discuss-fossil
-- ## 
+- ## [数据库版本管理应该如何实现？ - 知乎](https://www.zhihu.com/question/20080857/answers/updated)
+- 😣 目前是把DDL、存储过程、函数、核心数据整理成SQL文件，做为baseline，提交SVN；
+  - 每次修改，均记录到文件、整理成增量的sql update语句，提交svn；同时更新整体的SQL语句。
+  - 很复杂，尤其是开发、内部测试、客户手上多个版本，想死的心都有了
 
-- ## 
-
-- ## 
+- [用版本控制工具将数据库版本化](https://blog.csdn.net/tywo45/article/details/2480078)
+  - 版本化数据库的起点——创建一个数据库Schema基线，这个基线是一些数据库脚本（包括 create table ，alter table ，drop table ，insert data ，update data ，delete data等）。
+  - 这些脚本可以位于同一.sql文件中，也可根据其它规划分别位于不同文件中，例如将视图脚本，初始化数据脚本，建表脚本分别置于不同的文件中。
 # discuss-terminusdb
 - ## 
 
@@ -474,3 +571,32 @@ modified: 2023-08-25T21:17:11.979Z
   - but rust is much better when it comes down to actually storing things, doing bit-level operations, synchronizing access, etc
   - much faster too
   - we also tend to push things down into rust once we understand an area well and the interface to it has stabilized, but we want it to go faster. In that case it's worth spending the extra effort to get a bit more power
+
+# discuss-sirixdb
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Launch HN: Quilt (YC W16) – A versioned data portal for S3_201909](https://news.ycombinator.com/item?id=21062977)
+- (dolt)We've taken the Git and GitHub for data analogy a lot more literally than Quilt has
+  - We are a SQL database with native Git semantics. 
+  - Instead of versioning files like Git, we version table rows. This allows for diff and conflict detection down to the cell level. 
+  - We think there is a ton of room in this space for a bunch of tools: Quilt, Noms, QRI, Pachyderm, and even Git. 
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+- Regarding XML and JSON SirixDB[1] already provides full blown time-travel queries using a fork of Brackit[2], that is basically XQuery to process and query both the XML as well JSON documents. That said SirixDB in principal could also store relational data or graph data. The storage engine has been built from scratch to offer the best possible versioning capabilities. However I've never implemented branching/merging as I didn't come up with good use cases. It seems it's then always more of a versioning system like Git, but more fine granular.
+  - I always struggled to implement this as SirixDB currently only allows a single read-write transaction on a resource. Thus, if it would support branching and merging users would have to manually handling conflicts when merging (or automatically -- using a merge-strategy which is often case not good).
+  - There's however plently of optimization potential, as SirixDB optionally stores a lot of metadata for each node (number of descendants, a rolling hash, Dewey-IDs, number of children... as well as user-defined, typed secondary index-structures). I'll have to look how to build AST rewrite rules and implement a lot of optimizations into my Brackit binding in the future, so it's just the starting point (but everything should at least work already) :-)
+
+- I think if you can use a simple monotonically increasing sequence number, SirixDB has indexing advantages as for instance when storing XML and JSON documents or graph data.
+- The cool thing also is that SirixDB not only copies changed database pages but it implements a sliding window algorithm for versioning the database pages itself along with well known backup versioning strategies. Furthermore user-specified, typed secondary index structures are also naturally versioned.
+- One downside is that **SirixDB doesn't support branching**, even though it would be relatively easily possible to implement I guess, but I'm not convinced that it's needed. I don't want that anyone has to merge merge conflicts. I think automatic algorithms to do this are also not the right thing. But of course it's really interesting and I also thought about it :-) maybe someone has a really good use case?
+- BTW: Everything in SirixDB is immutable regarding updates of resources in databases. Of course you can revert to an old revision and change stuff, but the revisions in-between will still be accessible.

@@ -93,8 +93,24 @@ modified: 2022-11-06T15:45:36.913Z
 - https://github.com/zgrossbart/jdd /js
   - JSON Diff expands on the amazing work by the team at jsonlint.com and provides a semantic compare tool for JSON documents.
   - JSON Diff sorts, formats, and compares two JSON documents to find the actual semantic differences instead of just the text ones.
+# merge
+- https://github.com/avian2/jsonmerge /python
+  - merge a series of JSON documents into a single one
+  - We call the document we are merging changes into base and the changed document head. 
+  - jsonmerge by default returns fields that appear in either base or head document. For other JSON types, it simply replaces the older value. These principles are also applied in case of multiple nested JSON objects.
 # utils
 - https://github.com/datavis-tech/json-templates
   - Simple templating within JSON structures
   - `parse("{{foo.value:baz}}")`
+
+- https://github.com/RedisJSON/RedisJSON /rust
+  - https://redis.io/docs/stack/json/
+  - RedisJSON is a Redis module that implements ECMA-404 The JSON Data Interchange Standard as a native data type. 
+  - It allows storing, updating and fetching JSON values from Redis keys (documents).
+  - JSONPath syntax for selecting elements inside documents
+  - Documents are stored as binary data in a tree structure, allowing fast access to sub-elements
 # more
+- [JSON Merge Strategies: 2-way, 3-way Merges and Graft - DeltaXML](https://www.deltaxml.com/blog/json/json-merge-strategies/)
+  - To combine the information in two JSON files – simple JSON Data Merge
+  - Merging Changes between JSON files
+  - If we make the changes we want in one of the files, can we use merge to apply those changes to the other file? The answer is yes, and it is a merge very similar to the one described above but it is not quite the same. A name given to this particular type of merge in some source code control systems is ‘graft’, i.e. we graft the changes from one branch onto another branch

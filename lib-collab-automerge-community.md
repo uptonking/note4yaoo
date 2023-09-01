@@ -1,25 +1,32 @@
 ---
-title: lib-collab-yjs-community-automerge
-tags: [automerge, community, crdt, yjs]
+title: lib-collab-automerge-community
+tags: [automerge, community, collaboration, crdt]
 created: 2023-03-07T04:09:57.751Z
-modified: 2023-03-07T04:10:13.906Z
+modified: 2023-09-01T10:13:59.044Z
 ---
 
-# lib-collab-yjs-community-automerge
+# lib-collab-automerge-community
 
 # guide
 
-# not-yet
-- 将https://github.com/automerge/hypermerge迁移到v2
-# roadmap
+# discuss-not-yet
+- ## 
+
+- ## [wishlist: File format v3](https://github.com/automerge/automerge/issues/588)
+- Use a tighter leb encoding
+- Unify definition of change time
+- Making change hashes more robust
+- Removing the compressed change chunk option
+- Define limits on op/change counts
 
 # discuss
-
 - ## 
 
-- ## 
+- ## [Granular merging of nested objects](https://github.com/automerge/automerge/issues/549)
+- What you have run into here is what we have been referring to as the "initial data problem". The problem is that individual objects within automerge have their own identity
+  - 👉🏻 The solution to this problem for now is to create a skeleton document which contains the top level keys you know you need and ship it with your app.
 
-- ## 
+- ## [Speed Comparisons Between Automerge Implementations](https://github.com/automerge/automerge/issues/41)
 
 - ## hypermerge used to provide a p2p gateway for automerge but was forsaken because it uses an outdated automerge version
 - https://automerge.slack.com/archives/C61RJCM9S/p1687580301244489

@@ -301,8 +301,11 @@ modified: 2023-04-04T22:35:59.255Z
   - A diff/merging wrapper for Ace Editor built on google-diff-match-patch
 
 - https://github.com/wickedest/Mergely /js/LGPL
+  - http://www.mergely.com/
+  - [Mergely Visualized Diff demo](https://codepen.io/wickedest/pen/yLowrde)
   - a JavaScript component for differencing and merging files interactively in a browser (diff/merge).
-  - Mergely has a JavaScript implementation of the Longest Common Subsequence (LCS) diff algorithm, and a customizable markup engine.
+  - It is suitable for comparing text files online, such as .txt, .html, .xml, .c, .cpp, .java, .js, etc.
+  - Mergely has a JavaScript implementation of the Longest Common Subsequence (LCS) diff algorithm, and a customizable markup engine. It computes the diff within the browser.
 
 - https://github.com/jhchen/fast-diff
   - a simplified import of the excellent diff-match-patch library into the Node.js environment

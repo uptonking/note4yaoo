@@ -199,6 +199,27 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/nukep/llamadb /201712/rust
   - a simple SQL database, written entirely in Rust 
 
+- https://github.com/khonsulabs/bonsaidb /MIT/rust
+  - https://bonsaidb.io/
+  - A developer-friendly document database that grows with you
+  - ACID-compliant, transactional storage of Collections
+  - Role-Based Access Control (RBAC)
+  - Local-only access, networked access via QUIC, or networked access via WebSockets
+  - [Branch support](https://github.com/khonsulabs/nebari/issues/29)
+    - For BonsaiDb we plan on supporting the replication logic at the BonsaiDb level, and we are hoping to support bi-directional replication with customizable conflict resolution. This is a form of branching, because you can clone a database using replication, modify it, and then eventually replicate again in either direction.
+  - https://github.com/khonsulabs/nebari /rust
+    - A pure Rust database implementation using an append-only B-Tree file format.
+    - This crate provides the Roots type, which is the transactional storage layer for BonsaiDb. It is loosely inspired by Couchstore.
+    - This crate blocks the current thread when accessing the filesystem. If you are looking for an async-ready database, BonsaiDb is our vision of an async-aware database built atop Nebari.
+    - Nebari exposes multiple levels of functionality. The lowest level functionality is the `TreeFile`. A `TreeFile` is a key-value store that uses an append-only file format for its implementation.
+    - Using TreeFiles and a transaction log, Roots enables ACID-compliant, multi-tree transactions.
+  - Why use an append-only file format?
+    - Creating ACID-compliance with append-only formats is much easier to achieve, however, as long as you can guarantee two things:
+    - When opening a previously existing file, can you identify where the last valid write occurred?
+    - When writing the file, do not report that a transaction has succeeded until the file is fully flushed to disk.
+    - The B-Tree implementation in Nebari is designed to offer those exact guarantees.
+    - The major downside of append-only formats is that deleted data isn't cleaned up until a maintenance process occurs: compaction. 
+
 - https://github.com/PostgREST/postgrest
   - https://postgrest.org/
   - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
@@ -253,6 +274,12 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/codefollower/H2-Research
   - H2数据库源代码学习研究
   - 包括代码注释、文档、用于代码分析的测试用例
+
+- https://github.com/erthink/libmdbx /c/inactive
+  - an extremely fast, compact, powerful, embedded, transactional key-value database, with permissive license. 
+  - Provides extraordinary performance, minimal overhead through Memory-Mapping and Olog(N) operations costs by virtue of B+ tree.
+  - Compact and friendly for fully embedding. Only ≈25KLOC of C11, ≈64K x86 binary code of core, no internal threads neither server process(es), but implements a simplified variant of the Berkeley DB and dbm API.
+  - Historically, libmdbx is a deeply revised and extended descendant of the amazing Lightning Memory-Mapped Database. libmdbx inherits all benefits from LMDB, but resolves some issues and adds a set of improvements.
 # db-streaming
 - https://github.com/MaterializeInc/materialize /rust
   - https://materialize.com/

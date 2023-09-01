@@ -142,9 +142,10 @@ modified: 2021-08-30T18:56:18.632Z
 - https://gitlab.com/cznic/sqlite /go
   - a CGo-free port of SQLite/SQLite3 in go
 
-- https://github.com/LMDB/sqlightning
+- https://github.com/LMDB/sqlightning /201504/c/inactive
   - SQLite3 ported to use LMDB instead of its original Btree code.
-- https://github.com/LumoSQL/LumoSQL
+  - LumoSQL as a fork
+- https://github.com/LumoSQL/LumoSQL /c
   - a modification (not a fork) of the SQLite
   - LumoSQL adds security, privacy, performance and measurement features to SQLite.
   - LumoSQL can swap back end key-value store engines in and out of SQLite.

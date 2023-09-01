@@ -253,6 +253,8 @@ else {
   - 也就是说对于同一个数据的写事务，Spanner并发量是每秒125个。这是论文发表时的数据，论文中也写到未来希望把误差 ε 降低到1ms。
 - We believe it is better to have application programmers deal with performance problems due to overuse of transactions as bottlenecks arise, rather than always coding around the lack of transactions.
 
+### [Distributed Clocks and CRDTs – Adam Wulf](https://adamwulf.me/2021/05/distributed-clocks-and-crdts/)
+
 ### more-blogs
 
 # examples

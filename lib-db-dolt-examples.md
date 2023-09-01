@@ -167,6 +167,11 @@ modified: 2023-08-25T22:31:05.132Z
 - https://github.com/postgres-ai/database-lab-engine /go
   - Blazing-fast Postgres cloning and branching
   - Provide temporary full-size database clones for SQL query analysis and optimization
+  - Available for any PostgreSQL, including self-managed and managed* like AWS RDS, GCP CloudSQL, Supabase, Timescale.
+  - **Thin cloning is fast because it is based on Copy-on-Write(CoW)**. 
+    - DBLab employs two technologies for enabling thin cloning: ZFS (default) and LVM.
+    - Using ZFS, DBLab routinely takes new snapshots of the data directory, managing a collection of them and removing old or unused ones. When requesting a fresh clone, users have the option to select their preferred snapshot.
+  - [How Database Lab Works | Database branching for any Postgres DB](https://postgres.ai/products/how-it-works)
 
 - https://github.com/sirixdb/sirix /BSD/java
   - https://sirix.io/docs/index.html

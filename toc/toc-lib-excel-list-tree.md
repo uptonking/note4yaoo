@@ -225,6 +225,11 @@ modified: 2022-08-21T10:02:41.845Z
 
 - [Tree views in CSS](https://iamkate.com/code/tree-views/)
   - A tree view (collapsible list) can be created using only html and css, without the need for JavaScript.
+
+- https://github.com/dgreene1/react-accessible-treeview /ts
+  - https://dgreene1.github.io/react-accessible-treeview
+  - A react component that implements the treeview pattern as described by the WAI-ARIA Authoring Practices.
+  - Highly customizable through the use of the render prop and prop getter patterns.
 # tree-crud-operations
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!
@@ -300,6 +305,9 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/crdteam/causal-tree-ts
   - causal tree replicated data type (RDT) in Typescript.
 # tree-data-structure
+- ref
+  - [LSM-Tree 论文的中文翻译](https://github.com/tangwz/LSM-Tree-CN/blob/main/LSM-Tree-CN.md)
+
 - treemate /54Star/MIT/202208/ts
   - https://github.com/07akioni/treemate
   - https://treemate.vercel.app/guide.html
@@ -346,6 +354,34 @@ modified: 2022-08-21T10:02:41.845Z
   - Functional (or fully persistent) data structures allow for non-destructive updates.
   - Functional (or fully persistent) data structures allow for non-destructive updates. So if you insert an element into the tree, it returns a new tree with the inserted element rather than destructively updating the existing tree in place. Doing this requires using extra memory
   - this data structure saves some memory by recycling references to previously allocated subtrees. This requires using only O(log(n)) additional memory per update instead of a full O(n) copy.
+
+- https://github.com/gutobortolozzo/node-lsm /js/inactive
+  - a log-structured-merge-tree, implemented in node.js
+
+- https://github.com/Pr65/minilsm /rust
+  - A simple, single threaded LSM tree implementation
+- https://github.com/kaimast/lsm-rs /rust
+  - Modular, Asynchronous Implementation of a Log-Structured Merge Tree
+  - This implementation does not aim to reimplement LevelDB
+- https://github.com/WyattJia/Pomegranate /rust/archived
+  - tiny skiplist based log-structured merge-tree written in Rust
+
+- https://github.com/chrislessard/LSM-Tree /python
+  - An implementation of an LSM Tree in Python
+
+- https://github.com/dhanus/lsm-tree /c
+  - an implementation of a two-level single-threaded log structure merge (LSM) tree. 
+  - The in-memory data structure is a simple array. 
+  - The on-disk data structure is also a simple array, which can be sorted using merge sort.
+
+- https://github.com/eileen-code4fun/LSM-Tree /go
+  - A simplified Golang implementation for log structured merge tree. 
+  - Data is only stored in memory. 
+  - Disk files are simulated by in-memory byte arrays.
+  - Put and Get are supported. Compaction is also supported. 
+- https://github.com/krasun/lsmtree /go
+  - a log-structured merge-tree implementation in Go.
+  - not goroutine-safe - calling any methods on it from a different goroutine without synchronization is not safe and might lead to data corruption
 # tree-like/nested
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!

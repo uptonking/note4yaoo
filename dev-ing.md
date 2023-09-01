@@ -61,7 +61,7 @@ DEBUG=* npm install --legacy-peer-deps --no-audit --loglevel silly
 $$('[contenteditable]')
 ```
 
-- dev-goals
+- dev-goals 不能在产品中检验的技术不玩
   - rich-editor: text/block
   - pivot-table: editable
   - collaboration
@@ -93,7 +93,7 @@ $$('[contenteditable]')
   - [x] 流式数据: linvodb, tingodb
   - tuple-database 支持内存和持久化
   - tinybase 支持内存和持久化
-- cache-query for web storage
+- cache/stream for web storage
   - 参考 tanstack-query, localforage
 
 - headless-architecture
@@ -114,6 +114,11 @@ $$('[contenteditable]')
   - 结合hlc+crdt: idbsidesync, evolu, rga-crdt
   - 结合hlc+db: piratedb, tinybase, kappa-db-stream, linvodb
 
+- undo/redo与branching可拆分实现
+  - undo与versioning/history基于persistent data structure
+  - branching与merge可在应用层实现
+  - 多个branching可通过structural sharing共享数据结构
+
 - sqlite-web
   - evolu(hlc+worker)
   - absurd-sql-ts: read ArrayBuffer
@@ -123,7 +128,7 @@ $$('[contenteditable]')
   - cms, airtable, lowcode
 - techstacks-to
   - async/generator, stream, buffer, binary, scheduler, arrow
-  - 样式片段也可在 w3schools.com 在线尝试
+  - 样式片段也可在线尝试: codepen, w3schools.com 
 
 - 支持切换内存和持久化的示例
   - tanstack-table server-side row model
@@ -164,6 +169,8 @@ $$('[contenteditable]')
   - 04-slate-editor-toolbar, dnd-kit
   - 05-tanstack-table-database, rtk-query
   - 06-ospreadsheet2watarble
+  - 07-mdx-styling-QTWebkitEngine
+  - 08-db-kappa-dolt-git
 
 - why use es6 class
   - 运行时类型检查，instanceof
@@ -183,7 +190,7 @@ $$('[contenteditable]')
   - 分层渲染
   - 腰包掉到床头版与墙的夹缝中了
 
-## 08
+## 09
 
 - not-yet
   - todo remove hashId在编辑器model中有什么作用
@@ -191,7 +198,7 @@ $$('[contenteditable]')
   - 处理初试
   - 做完tailwind-table就面试
 
-- dev-to 提炼核心`需求+产出`工作流
+- dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
   - headless-comp: sidebar
   - replace forceUpdate with useSyncExternalStore
   - slate-docs-examples
@@ -286,9 +293,7 @@ $$('[contenteditable]')
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-08-use-gesture
-
-## 082
+# dev-08-pdf-electron/excel-js-scripts/db-kappa-dolt-git
 
 ## 0828
 

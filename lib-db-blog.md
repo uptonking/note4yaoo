@@ -233,12 +233,14 @@ G. Mutations
   - OpenDAL 最幸运的地方在于它孵化自 Databend 的真实场景。Databend 持续不断地提出新需求，这些需求帮助我判断需求的必要性、调整任务优先级并修正错误假设。
 # blogs-db-vendors
 - [Building and operating a pretty big storage system called S3](https://www.allthingsdistributed.com/2023/07/building-and-operating-a-pretty-big-storage-system.html)
+
+- [Database branching: three-way merge for schema changes](https://planetscale.com/blog/database-branching-three-way-merge-schema-changes)
 # more
 - [处理海量数据：列式存储综述（存储篇） - 知乎](https://zhuanlan.zhihu.com/p/35622907)
 
 - [Database in the Browser, a Spec](https://stopa.io/post/279)
 
-- [Things DBs Don't Do - But Should | Nile - The database for modern SaaS](https://www.thenile.dev/blog/things-dbs-dont-do)
+- [Things DBs Don't Do - But Should](https://www.thenile.dev/blog/things-dbs-dont-do)
 
 - [Database Systems: 8Base, Dolt, MindsDB, Xata – SQL Rob](https://sqlrob.com/2023/04/17/database-systems-8base-dolt-mindsdb-xata/)
   - [15 futuristic databases you’ve never heard of - YouTube](https://www.youtube.com/watch?v=jb2AvF8XzII)

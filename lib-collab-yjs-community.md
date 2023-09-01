@@ -48,9 +48,3 @@ modified: 2022-04-05T10:11:40.379Z
 2. Watch out implementations of underline libraries. Trace lib0 libraries usage and internals in Yjs for example;JavaScript engines use UTF-16 encoding. Golang (my main backend language) is using UTF-8 ... reimplementing Yjs code in Golang with algorithms and optimization and futher scaling might become impossible for small startups.
 3. Rich editing similar to Google Doc is very very complicated subject with lot of landmines
 4. There's ProseMirror editor for collaborative editing. However you might not like its internals compare to Slatejs 
-# automerge
-- ## Automerge: A JSON-like data structure (a CRDT) that can be modified concurrently_202202
-- https://news.ycombinator.com/item?id=30412550
-
-- ## Automerge: JSON-like data structure for building collaborative apps_201802
-- https://news.ycombinator.com/item?id=16309533
