@@ -1,6 +1,6 @@
 ---
 title: lib-collab-automerge-community
-tags: [automerge, community, collaboration, crdt]
+tags: [automerge, collaboration, community, crdt]
 created: 2023-03-07T04:09:57.751Z
 modified: 2023-09-01T10:13:59.044Z
 ---

@@ -98,4 +98,15 @@ modified: 2023-03-09T13:47:07.317Z
 
 - https://github.com/Graphite-Docs/graphite /js
   - Encrypted, secure, user-owned productivity suite
+# office-viewer
+- https://github.com/webodf/ViewerJS /agpl/js/inactive
+  - https://viewerjs.org/
+  - the easiest way to use presentations, spreadsheets, PDF's and other documents on your website or blog without any external dependencies
+  - WebODF makes it easy to add Open Document Format (ODF) support to your website and to your mobile or desktop applications. 
+  - mozilla pdf.js explores building a faithful and efficient Portable Document Format (PDF) renderer without native code assistance.
+- https://github.com/webodf/WebODF /agpl/202002/js/inactive
+  - https://webodf.org/
+  - WebODF is a JavaScript library that makes it easy to add Open Document Format (ODF) support to your website
+  - It uses HTML and CSS to display ODF documents.
+  - compiled by using the Closure Compiler.
 # more-office

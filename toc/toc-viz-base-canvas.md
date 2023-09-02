@@ -103,7 +103,7 @@ modified: 2020-10-05T06:17:42.467Z
 - https://github.com/nihaojob/vue-fabric-editor
   - 基于fabric.js和Vue的图片编辑器，可自定义字体、素材、设计模板。
 
-- https://github.com/cburgmer/rasterizeHTML.js
+- https://github.com/cburgmer/rasterizeHTML.js /js
   - http://cburgmer.github.io/rasterizeHTML.js
   - Renders HTML into the browser's canvas
   - it is possible by embedding the HTML into an SVG image as a `<foreignObject>` and then drawing the resulting image via `ctx.drawImage()`.

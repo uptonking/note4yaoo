@@ -7,14 +7,40 @@ modified: 2021-05-14T15:04:42.225Z
 
 # toc-repos-lang-js
 
-# js-enhanced
+# js-utils
 
-- https://github.com/pull-stream/pull-stream
+- https://github.com/pull-stream/pull-stream /js
+  - https://pull-stream.github.io/
   - pull streams work great for "object" streams as well as streams of raw text or binary data.
   - pull-streams are not directly compatible with node streams, but pull-streams can be converted into node streams
 
-## js-data-structure
+- https://github.com/gvergnaud/ts-pattern /ts
+  - The exhaustive Pattern Matching library for TypeScript with smart type inference.
+  - Pattern-match on any data structure: nested Objects, Arrays, Tuples, Sets, Maps and all primitive types.
+  - Supports predicates, unions, intersections and exclusion patterns for non-trivial cases.
+  - Pattern Matching is a code-branching technique coming from functional programming languages that's more powerful and often less verbose than imperative alternatives (if/else/switch statements), especially for complex conditions.
 
+- https://github.com/swan-io/boxed /ts
+  - https://swan-io.github.io/boxed/
+  - https://swan-io.github.io/boxed/core-concepts
+  - Utility types for functional TypeScript
+  - Provide utility types that make data-manipulation and storage easier
+  - Immutable (all provided types are)
+  - Compatibility with ts-pattern (using patterns we provide).
+  - The way we like to think of the data-structures we expose are that they're boxes (or containers) that may or may not contain a value.
+
+- https://github.com/fluture-js/Fluture /202005/js/inactive
+  - Fantasy Land compliant (monadic) alternative to Promises
+  - Much like Promises, Futures represent the value arising from the success or failure of an asynchronous operation (I/O). 
+  - Though unlike Promises, Futures are lazy and adhere to the monadic(单元的，单体的) interface.
+
+- https://github.com/mitranim/posterus /js/NoDeps/inactive
+  - Composable async primitives with cancelation, control over scheduling, and coroutines. 
+  - Superior replacement for JS Promises.
+  - Supports cancelation.
+  - Mostly synchronous.
+  - Exposes its scheduler, allowing to opt into asynchrony, and opt out by flushing pending tasks on demand.
+# js-data-structure
 - https://github.com/Conaclos/cow-list /ts
   - Cow List provides a Copy-On-Write iterable list that supports logarithmic searches. 
   - It provides also a mutable iterable List with versioning capabilities.
@@ -35,7 +61,11 @@ modified: 2021-05-14T15:04:42.225Z
 
 - https://github.com/swannodette/mori /ClojureScript/inactive
   - A simple bridge to ClojureScript's persistent data structures and supporting APIs for vanilla JavaScript.
-# focus
+
+- https://github.com/liljenzin/confluent /cpp
+  - Confluent sets and maps are sorted associative containers written in C++11.
+  - [[1301.3388] Confluently Persistent Sets and Maps](https://arxiv.org/abs/1301.3388)
+# repos
 - https://github.com/tannerlinsley/react-table
 - https://github.com/bvaughn/react-window
   - /9kStar/MIT/202001
@@ -94,7 +124,6 @@ modified: 2021-05-14T15:04:42.225Z
   - CodeMirror 6 is a rewrite of the CodeMirror code editor. 
   - The new system provides solid accessibility, touchscreen support, better content analysis
   - It is not API-compatible with the old code.
-# popular
 
 ## viz
 
@@ -148,7 +177,7 @@ modified: 2021-05-14T15:04:42.225Z
 - https://github.com/adrai/flowchart.js
   - Draws simple SVG flow chart diagrams from textual representation of the diagram
 
-## js-app
+## apps
 
 - https://github.com/getredash/redash
   - /17.3kStar/BSD/202009/python
@@ -340,7 +369,7 @@ modified: 2021-05-14T15:04:42.225Z
   - Lightweight, robust, elegant syntax highlighting.
 - https://github.com/mobz/elasticsearch-head
   - A web front end for an elasticsearch cluster
-# data-structure
+# more
 - https://github.com/liljenzin/confluent /cpp
   - Confluent sets and maps are sorted associative containers written in C++11.
   - [[1301.3388] Confluently Persistent Sets and Maps](https://arxiv.org/abs/1301.3388)

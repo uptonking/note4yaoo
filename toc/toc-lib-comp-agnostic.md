@@ -272,7 +272,7 @@ modified: 2020-11-13T07:28:27.824Z
   - A closure based Web Component library
   - https://github.com/vasturiano/react-kapsule
     - React wrapper for kapsule-style web components
-- https://github.com/krakenjs/zoid
+- https://github.com/krakenjs/zoid /js
   - Render an iframe or popup on a different domain, and pass down props
   - Call callbacks natively from the child window without worrying about post-messaging or cross-domain restrictions
   - Create and expose components to share functionality from your site to others!

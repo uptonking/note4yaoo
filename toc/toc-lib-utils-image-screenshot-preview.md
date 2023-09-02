@@ -31,30 +31,41 @@ modified: 2023-04-16T13:34:33.706Z
 - https://github.com/johnnywang1994/jsPDF-html2canvas
   - A combine usage with jsPDF & html2canvas, which translating html content to PDF file.
 
+- https://github.com/rsify/pico /ts
+  - Pico's goal is to produce high precision screenshots of any viewport entirely client side.
+  - This is different from simply capturing a webpage using Puppeteer or a similar tool in that the **screenshot taking happens entirely client side**.
+  - This program renders whatever is displayed in the given `Window` into an image, thanks to svg's `<foreignObject>`.
+  - **No server side code is required to produce the screenshot**.
+  - Pico's selling point is representing the whole viewport as accurately as possible. If you want to render a single DOM node instead, consider using one of the above libraries.
+  - Pico is built using Fluture and in addition to the Promise also provides a direct API to Fluture via functions suffixed with Fluture
+
 - https://github.com/bubkoo/html-to-image /540Star/MIT/202101/ts
   - Generates an image from a DOM node using HTML5 canvas and SVG.
   - Fork from `dom-to-image` with more maintainable code and some new features.
 
-- https://github.com/rsify/pico /ts
-  - Pico's goal is to produce high precision screenshots of any viewport entirely client side.
-  - This is different from simply capturing a webpage using Puppeteer or a similar tool in that the screenshot taking happens entirely client side.
-  - how it works
-    - This program renders whatever is displayed in the given Window into an image, thanks to svg's `<foreignObject>`.
-    - **No server side code is required to produce the screenshot**.
+- https://github.com/1904labs/dom-to-image-more /js
+  - a library which can turn arbitrary DOM node, including same origin and blob iframes, into a vector (SVG) or raster (PNG or JPEG) image, written in JavaScript.
+  - Anatolii's version was based on domvas by Paul Bakaus and has been completely rewritten
+  - This fork of `dom-to-image`
 
-- https://github.com/tsayen/dom-to-image /7kStar/201706
+- https://github.com/tsayen/dom-to-image /7kStar/201706/inactive
   - turn arbitrary DOM node into a vector (SVG) or raster (PNG or JPEG) image, written in JavaScript.
   - It's based on domvas
 - https://github.com/pbakaus/domvas /370Star/201307
   - Domvas implements the missing piece that connects the DOM and Canvas.
   - It gives to the ability to take arbitrary DOM content and paint it to a Canvas of your choice.
-  - how it works
-    - Domvas uses a feature of SVG that allows you to embed XHTML content into the SVG 
-    - the actual SVG can be used as a data uri, and therefore behaves like a standard image.
-    - I brought CSS transforms to browsers that did not have them.
-      - HTML content needs to be serialized to XML, and all styles have to be inlined.
-    - The DOM object is not linked, but copied 
-    - Content outside the bounding box of the element will be cut of per default if painted to Canvas. Don't worry though, simply pass a more comfortable offset to the toImage function
+  - Domvas uses a feature of SVG that allows you to embed XHTML content into the SVG 
+  - the actual SVG can be used as a data uri, and therefore behaves like a standard image.
+  - I brought CSS transforms to browsers that did not have them.
+    - HTML content needs to be serialized to XML, and all styles have to be inlined.
+  - The DOM object is not linked, but copied 
+  - Content outside the bounding box of the element will be cut of per default if painted to Canvas. Don't worry though, simply pass a more comfortable offset to the toImage function
+
+- https://github.com/cburgmer/rasterizeHTML.js /js
+  - http://cburgmer.github.io/rasterizeHTML.js
+  - Renders HTML into the browser's canvas
+  - it is possible by embedding the HTML into an SVG image as a `<foreignObject>` and then drawing the resulting image via `ctx.drawImage()`.
+  - SVG is not allowed to link to external resources and so rasterizeHTML.js will load external images, fonts and stylesheets and store them inline via data: URIs (or inline style elements respectively).
 
 ## capture-utils
 

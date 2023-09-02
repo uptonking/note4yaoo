@@ -507,7 +507,7 @@ class Plugins {
 - https://github.com/elijahgreen/plugin-frame
   - plugin-frame is a library for running untrusted code in a sandboxed iframe.
 
-- https://github.com/krakenjs/zoid
+- https://github.com/krakenjs/zoid /js
   - Cross domain components
   - Render an iframe or popup on a different domain, and pass down props, including objects and functions
 # discuss

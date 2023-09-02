@@ -25,8 +25,6 @@ modified: 2020-11-19T12:43:25.788Z
 
 - https://github.com/sibiraj-sr/iframe-widget-boilerplate
   - React app rendered inside an iframe using zoid, like a widget.
-  - https://github.com/krakenjs/zoid
-    - A cross-domain component toolkit
 
 - https://github.com/yahoo/react-i13n
   - A performant, scalable and pluggable approach to instrumenting your React application.
@@ -111,7 +109,6 @@ modified: 2020-11-19T12:43:25.788Z
   - A custom partial React SSR renderer for prefetching and suspense
   - react-dom/server does not have support for suspense yet.
   - react-ssr-prepass is a partial server-side React renderer that does a prepass on a React element tree and suspends when it finds thrown promises.
-
 # react-patterns
 - https://github.com/jquense/uncontrollable
   - Wrap a controlled react component, to allow specific prop/handler pairs to be omitted by Component consumers. 

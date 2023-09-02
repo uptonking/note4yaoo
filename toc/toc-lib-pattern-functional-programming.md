@@ -70,7 +70,7 @@ modified: 2023-07-26T11:23:38.282Z
 - https://github.com/gcanti/fp-ts
   - /5kStar/MIT/202010/ts
   - Functional programming in TypeScript
-- https://github.com/fluture-js/Fluture
+- https://github.com/fluture-js/Fluture /202005/js/inactive
   - Fantasy Land compliant (monadic) alternative to Promises
   - Much like Promises, Futures represent the value arising from the success or failure of an asynchronous operation (I/O). 
   - Though unlike Promises, Futures are lazy and adhere to the monadic(单元的，单体的) interface.

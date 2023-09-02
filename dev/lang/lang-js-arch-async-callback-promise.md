@@ -12,7 +12,11 @@ modified: 2021-08-30T07:01:09.493Z
 - tips
   - 部分浏览器支持scheduler和TaskController可用来取消task，但firefox和safari不支持
 
-- [Learn Asynchronous Patterns in JavaScript with Kyle Simpson | Frontend Masters](https://frontendmasters.com/courses/rethinking-async-js/)
+- [Learn Asynchronous Patterns in JavaScript with Kyle Simpson](https://frontendmasters.com/courses/rethinking-async-js/)
+
+- [JavaScript Promises vs. RxJS Observables](https://auth0.com/blog/javascript-promises-vs-rxjs-observables/)
+  - Promises are very eager(热切的，渴望的). If we had a callback function provided to a Promise, once the Promise is resolved, the `.then` gets executed.
+  - Observables are very lazy. We create the Observable, and then it will wait to be subscribed to. We create the Observable, and then it will wait to be subscribed to.
 # examples
 - https://github.com/eldargab/load-script /js
   - load-script appends a `script` node to the `<head>` element in the dom.
@@ -89,6 +93,13 @@ modified: 2021-08-30T07:01:09.493Z
   - 2. no need to wait to use the function inside the onClick function
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Why people still compare Observables as "better" than promise as a primitive?](https://www.reddit.com/r/angular/comments/w9ipf4/why_people_still_compare_observables_as_better/)
+- Because observables are much more powerful.
 
 - ## [💡 Why the Microtask queued after chained promises are executed after the first promise resolution ignoring the chained ones? - Stack Overflow](https://stackoverflow.com/questions/75373806/why-the-microtask-queued-after-chained-promises-are-executed-after-the-first-pro)
 

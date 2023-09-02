@@ -19,12 +19,22 @@ modified: 2023-02-03T05:55:22.102Z
   - take a url and some options, fetch the url, extract the metadata we care about and format the result in a sane way.
   - It supports all major metadata providers and expanding it to work for any others should be trivial.
 
+- https://github.com/itteco/iframely /js
+  - https://iframely.com/
+  - oEmbed proxy. Supports over 1800 domains via custom parsers, oEmbed, Twitter Cards and Open Graph
+  - This is the self-hosted version of Iframely's APIs and HTML parsers.
+  - Iframely takes your URL and returns its metadata. If supported on the URL, we'll add HTML of rich media embeds.
+  - This package includes specific domain parsers for most popular publishers. 
+
 ## utils
 
 - https://github.com/jshemas/openGraphScraper /ts
   - Node.js scraper service for Open Graph Info and More!
   - A simple node module(with TypeScript declarations) for scraping Open Graph and Twitter Card info off a site.
   - doesn't support browser usage
+
+- https://github.com/microlinkhq/browserless /js
+  - interact with a headless browser built in top of puppeteer.
 # blogs
 
 ## [A framework for building Open Graph images | The GitHub Blog_202106](https://github.blog/2021-06-22-framework-building-open-graph-images/)
