@@ -52,7 +52,6 @@ modified: 2022-06-08T11:14:10.668Z
   - Shortcodes, in the classic editor, didn’t have such a discovery method.
 - Re-usable blocks allow you to easily create content you can re-use across posts or pages, see this nice tutorial on WP Beginner.
 # discuss-stars
-
 - ## We've been working a new protocol at @hashintel. It's called the block protocol
 - https://twitter.com/Mappletons/status/1488131234089873408
   - It allows you to build reusable blocks (aka. components) that are interchangeable across website/apps
@@ -116,6 +115,32 @@ modified: 2022-06-08T11:14:10.668Z
   * After years of developer disappointment the earth is pretty much salted.
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I've been building a modular / block-based malleable software environment. I'm a bit stuck on the model
+- https://twitter.com/JungleSilicon/status/1697641281856708730
+- The first model is that blocks are spreadsheet cells.
+- The second model is a separation of block state from the events that trigger changes to that state.
+  - Then you can just call setState or apply operations, etc.
+- The third is to integrate an entire spreadsheet (with named cells) which sets separately to the code that triggers on event changes for blocks.
+  - The model then becomes blocks are bound to spreadsheet cells, cells can be dependent on one another but their values are event driven.
+
+- It seems to me that the question is granularity. A cell in a spreadsheet is like an atom of information, but a list of things in a Markdown block is not. In  my view, blocks define convenient boundaries, but they do often contain granular data that may be interactively edited.
+  - Yeah - the direction i'm leaning towards atm is to have two json-tree / spreadsheet like data structures, one for local data, the other for multiplayer data. Then the blocks have code which is executed when events happen or dependencies change (kind of like a use effect).
+
+- did you check observablehq-notebook
+  - that's a good reference for how they run the blocks based on their dependencies (and I will likely do something similar), but the requirements for observable hq are somewhat different.
+  - i see that each cell is a display function for the associated block returning data – so you can have a JSON displayed as string or a tree or color coded 
+- you should check out some prior art: blockly, logo, snap/scratch, hackity hack.
+  - about state/io: yep, input and output are different beasts - everything with side effects, really. haskell and (more accessibly) standard ml do it in an interesting way.
+  - I/O and data flow is a problem that many visual sound synthesis system had in the past, so I'd take a look at those as well!
+
+- It feels a little like the challenges that Jupyter notebooks have had over the years.
 
 - ## GitHub is experimenting with interactive README components, called "blocks."
 - https://twitter.com/FredKSchott/status/1590438076677238784

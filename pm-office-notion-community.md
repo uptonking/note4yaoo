@@ -182,3 +182,20 @@ modified: 2023-03-29T17:23:37.126Z
   - 👉🏻 We don’t use a triple store at Notion, but we do use an abstraction that ensures a collection of operations either all succeed or all fail. 
   - We don’t support “interactive” transaction, where you can read, modify, write as an atomic group. 
   - This just isn’t desirable in a multiplayer or offline system - in cases we need that kind of consistency we use a normal HTTP API which is online-only.
+
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## @jkosoy ’s first month as a new Notion employee (AKA Newtino), in his own kanban
+- https://twitter.com/NotionHQ/status/1697660535704322514
+  - 页面渲染多个分类，效果类似看板
+- How does Notion at Notion deal with unbearable database speeds once you have too many relations  and rollups? Notion is a dream of a software and one of the most important in my life, but the performance is just sooooo annoying
+  - I just had a conversation with our infra team about it yesterday. It can be a little annoying, but rest assured they are thinking about this *all the time*. 

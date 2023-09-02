@@ -20,6 +20,13 @@ modified: 2020-07-17T10:54:16.341Z
   - TeX Gyre Cursor can be used as a replacement for Courier
     - https://www.1001fonts.com/monospaced+serif-fonts.html
 
+- ## I'm not sure WOFF and WOFF2 actually make sense as font formats. 
+- https://twitter.com/fabiospampinato/status/1697942557265650050
+  - They are basically just TTF fonts but with individually compressed tables, with deflate and brotli respectively.
+  - Isn't it better to simply let the server compress the entire TTF file (presumably with better compression ratios, since tables wouldn't get compressed individually) and potentially with better algorithms (I think people are working on adding support for Zstandard to browsers)?
+- We are basically sending `.zip` files over the network
+- You can also use OTF format for WOFF instead of TTF. But they can be significantly slower on Windows
+
 - ## [安卓系统的默认中文字体是什么？](https://www.zhihu.com/question/23487706)
 - android 4.0（<=4.0）之前只有三种字体: 有衬线、无衬线、等宽
   - normal (Droid Sans), serif (Droid Serif), and monospace(Droid Sans Mono).

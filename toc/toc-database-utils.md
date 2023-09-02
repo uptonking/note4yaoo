@@ -17,7 +17,7 @@ modified: 2023-08-23T17:15:46.484Z
 
 ## hypercore
 
-- https://github.com/holepunchto/hypercore /js
+- https://github.com/holepunchto/hypercore /MIT/js
   - https://docs.holepunch.to/building-blocks/hypercore
   - Hypercore is a secure, distributed append-only log.
   - **Built for sharing large datasets and streams of real time data**
@@ -124,6 +124,7 @@ modified: 2023-08-23T17:15:46.484Z
     - For regular Node use, people tend to use level and random-access-file for storage, and then maybe hyperswarm for network discovery.
     - check out random-access-storage/random-access-web and RangerMauve/hyperswarm-web. Level/browser-level supports browser use.
   - https://github.com/Frando/kappa-core /用于kappa-record-db
+    - https://www.npmjs.com/package/@frando/kappa-core /v6
 
 - https://github.com/kappa-db/workshop /js
   - https://kappa-db.github.io/workshop/build/01.html
@@ -178,7 +179,27 @@ modified: 2023-08-23T17:15:46.484Z
 - https://gitlab.com/coboxcoop/drive
   - a wrapper for kappa-drive
 
+- https://github.com/eliquious/kappa /go
+  - an implementation of the Kappa Architecture written in Go.
+  - https://github.com/blacklabeldata/kappa
+
+- https://github.com/ouyi/kafka-flink-demo /java
+  - A demo application implementing the Kappa architecture, based on Kafka, Flink, and ELK.
+
+- https://github.com/hkwi/osara /python
+  - micro-framework on top of kafka / kappa architecture
+
+- [Kappa Architecture - Where Everything Is A Stream · java-design-patterns](https://github.com/iluwatar/java-design-patterns/issues/892)
+
+- [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
+
+- [Kappa Architecture - A big data engineering approach](https://pradeepl.com/blog/kappa-architecture/)
+
 ## append-only-log
+
+- https://github.com/ssbc/ssb-db /202209/js/flumedb团队/inactive
+  - ssb-db provides tools for dealing with unforgeable append-only message feeds.
+  - secret-stack plugin which provides storing of valid secure-scuttlebutt messages in an append-only log.
 
 - https://github.com/flumedb/flumedb /MIT/202006/js/inactive
   - A modular database made for moving logs with streams.

@@ -12,6 +12,18 @@ modified: 2021-01-06T14:40:11.360Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## How many React perf problems are in this block?
+- https://twitter.com/jasonlaster11/status/1697740863588417641
+  - setState inside for-loop of useEffect
+- Alright I’m seeing two: the dependency array obviously and the fact that if your run in StrictMode you’re going to dispatch twice. What else am I missing ?
+  - You got it. It’s also super scary.
+- What’s the right way to do something like this
+  - multi dispatch in an effect with no dep array is bad
+
 - ## Is the tuple returned from useState referentially stable?
 - https://twitter.com/TkDodo/status/1694608330063245510
   - do I need to go through destruct valueAndSetter, do useMemo that creates value & pass that?
@@ -204,7 +216,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                     `ValueFront`,                                     `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                      `ValueFront`,                                      `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

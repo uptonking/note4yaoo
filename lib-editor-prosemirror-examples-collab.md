@@ -80,6 +80,9 @@ modified: 2022-10-04T23:32:30.824Z
   - When a fork is merged, it can no longer be edited and changes from the parent document are not propagated to it. When a fork is merged, it can no longer be edited and changes from the parent document are not propagated to it. 
   - PeerDoc does not have all the answers (yet) about how exactly to best use a combination of these two types of collaboration.
   - PeerDoc currently rebases all changes and maintains a linear history of all documents, but would a branched history without rebasing be better when trying to understand how documents came about?
+  - https://twitter.com/mitar_m/status/1465439429867286536
+    - merging real-time editing with forking/proposing/merging back. 
+    - We managed to do it without CRDT though
 # collab-solutions
 - https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1
   - using a sync database ( PouchDB, but it works with firebase ) as a communication layer between client and server.

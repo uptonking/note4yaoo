@@ -149,11 +149,10 @@ modified: 2023-01-17T19:13:01.845Z
 
 - https://github.com/ssbc/secret-stack /js
   - create secure peer to peer networks using secret-handshakes.
-  - This provides a framework to make building secure, decentralized systems easier. (such as ssb-server which this was refactored out of ;)
-  - https://github.com/ssbc/ssb-db
+  - This provides a framework to make building secure, decentralized systems easier. (such as ssb-server which this was refactored out of ; )
+  - https://github.com/ssbc/ssb-db /js
+    - ssb-db provides tools for dealing with unforgeable append-only message feeds.
     - secret-stack plugin which provides storing of valid secure-scuttlebutt messages in an append-only log.
-
-
 # sync-json
 - https://github.com/zettant/realtime-object-sync
   - server and client libraries for realtime JSON object synchronization.

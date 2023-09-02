@@ -16,7 +16,10 @@ modified: 2023-06-11T07:07:55.724Z
 
 - ## 
 
-- ## 
+- ## linear: editor improvements to come. I’m excited for this and the ones that follow.
+- https://twitter.com/artman/status/1697266389814243396
+  - Our editor is based on Prosemirror.
+  - We’re using Prosemirror at the core, with a lot of in-house functionality added (+ lots more really cool stuff still coming)
 
 - ## [Announcing React ProseMirror_202303](https://discuss.prosemirror.net/t/announcing-react-prosemirror/5328)
 - It looks like Tiptap takes the same approach we did wherein React node views register themselves to be rendered as portals.
