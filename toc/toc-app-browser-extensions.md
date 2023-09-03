@@ -175,7 +175,14 @@ modified: 2023-02-08T10:24:11.422Z
 # devtools
 - https://github.com/shanebell/JaSON /202104/ts/inactive
   - a Google Chrome extension for testing APIs and making HTTP network requests.
-  - Automatically sends cookies from Chrome. This is extremely handy for APIs which require authentication. 
+  - Automatically sends cookies from Chrome. This is extremely handy for APIs which require authentication.
+
+# extensions-manager
+
+- https://github.com/hankxdev/one-click-extensions-manager /js
+  - a simple chrome extension to manage chrome extension
+
+
 # settings-sync
 - https://github.com/shanalikhan/code-settings-sync
   - Synchronize your Visual Studio Code Settings Across Multiple Machines using GitHub GIST
@@ -184,6 +191,11 @@ modified: 2023-02-08T10:24:11.422Z
   - Command pallet for the browser. 
   - Enables fuzzy search for histories, tabs and bookmarks.
   - Inspired by the Sidekick search dialogue
+# bookmarks
+- https://github.com/vaeth/bookmarkdupes /js
+  - A WebExtension which can display/remove duplicate bookmarks or empty folders
+- https://github.com/zaksid/ext-duplicate-bookmarks-finder /js
+  - Find and delete duplicate bookmarks.
 # twitter
 - https://github.com/tweetback/tweetback
   - Take ownership of your Twitter data. 

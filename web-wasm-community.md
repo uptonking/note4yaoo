@@ -12,7 +12,11 @@ modified: 2022-12-24T07:31:48.493Z
 # discuss
 - ## 
 
-- ## 
+- ## 用 WebAssembly 做 Faas 和 JavaScript 相比很大的问题是服务商应该没有源代码的。
+- https://twitter.com/fuxiaohei/status/1698143547193786694
+  - 通过 cli 工具上传 wasm 文件到云端直接部署执行就行，根本不知道客户写的啥。
+  - 换句话，控制台没必要做代码编辑
+- 我看到问题是WebAssembly还没有那么普及，原来的项目不太容易转换，想听听你的想法
 
 - ## Weekend project... video conversions without a server. 
 - https://twitter.com/okikio_dev/status/1649949687468773379

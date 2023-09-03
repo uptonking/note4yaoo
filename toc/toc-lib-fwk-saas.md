@@ -99,7 +99,38 @@ modified: 2021-05-25T09:41:29.066Z
   - An open-source, hassle-free, self-hostable Heroku & Netlify alternative
 # micro-frontend
 - https://github.com/microsoft/redux-micro-frontend
-  - This library can be used for using Redux in a Micro Frontend based architecture. 
+  - This library can be used for using Redux in a Micro Frontend based architecture.
+# auth
+- https://github.com/nextauthjs/next-auth /ISC/ts
+  - https://authjs.dev/
+  - a set of open-source packages that are built on Web Standard APIs for authentication in modern applications with any framework on any platform in any JS runtime.
+  - [database adapters](https://authjs.dev/reference/adapters)
+    - 支持sequelize、prisma、drizzle
+  - [NextAuth.js is becoming Auth.js_20221215](https://twitter.com/balazsorban44/status/1603082914362986496)
+    - Runtime/framework agnostic
+  - https://github.com/nextauthjs/next-auth-example
+    - Example showing how to use NextAuth.js with Next.js
+
+- https://github.com/logto-io/logto /MPL/ts
+  - https://logto.io/
+  - a modern Auth0 alternative for building identity infrastructure with minimal effort
+  - offers a comprehensive identity solution covering both the front and backend, complete with pre-built infrastructure
+  - OIDC-based authentication and RBAC authorization.
+  - Flexible connectors, scalable with community contributions, customizable with SAML, OAuth, and OIDC protocols.
+  - Various sign-in options, such as social, email, phone number, and username, including passwordless authentication
+  - User management and audit logs help you understand user identity-related information and keep your security on track.
+
+- https://github.com/pilcrowOnPaper/lucia /MIT/ts
+  - https://lucia-auth.com/
+  - a simple and flexible user and session management library that provides an abstraction layer between your app and your database. 
+  - Middleware allows Lucia to read the request and response since these are different across frameworks and runtime
+    - 支持express、fastify、nextjs、astro
+  - uses adapters to connect to your database
+    - 支持mongoose、sqlite、pg、redis、prisma、drizzle-orm、kysely
+
+- https://github.com/casbin/node-casbin /ts
+  - https://casbin.org/
+  - An authorization library that supports access control models like ACL, RBAC, ABAC in Node.js and Browser
 # sass-examples
 
 # more

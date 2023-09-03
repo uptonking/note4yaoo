@@ -28,10 +28,6 @@ modified: 2022-06-03T22:07:23.308Z
   - [探索 Notion 的实现](https://zhuanlan.zhihu.com/p/152964640)
   - [Notion 的数据协同原理](https://juejin.cn/post/7070062834901598216)
   - [Notion 编辑器是怎么实现的？](https://www.yuexun.me/blog/how-the-notion-editor-is-implemented/)
-# notion-sketch-drawing
-- https://github.com/MrFoxPro/bloki
-  - https://bloki.app/
-  - 支持在文档上放画板，ui设计友好
 # notion-like-editor
 - plate /1.6kStar/MIT/202208/ts
   - https://github.com/udecode/plate
@@ -57,6 +53,12 @@ modified: 2022-06-03T22:07:23.308Z
   - Notion like editor built on top of tiptap.
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，但list item不支持拖入拖出
+
+- novel /7.3kStar/MIT/202309/ts
+  - https://github.com/steven-tey/novel
+  - https://novel.sh/
+  - a Notion-style WYSIWYG editor with AI-powered autocompletion. Built with [Tiptap](https://tiptap.dev/) + [Vercel AI SDK](https://sdk.vercel.ai).
+  - 依赖tiptap、@vercel/kv/blob、nextjs、react-markdown.v8
 
 - https://github.com/kiaksarg/edu-editor  /slate
   - https://edu-editor.netlify.app/
@@ -179,7 +181,11 @@ modified: 2022-06-03T22:07:23.308Z
 - notionapi /1.7kStar/BSD/202208/go
   - https://github.com/kjk/notionapi
   - https://developers.notion.com/reference/block
-  - [Using Notion API Go client ](https://blog.kowalczyk.info/article/c9df78cbeaae4e0cb2848c9964bcfc94/using-notion-api-go-client.html)
+  - [Using Notion API Go client](https://blog.kowalczyk.info/article/c9df78cbeaae4e0cb2848c9964bcfc94/using-notion-api-go-client.html)
+# notion-sketch-drawing
+- https://github.com/MrFoxPro/bloki
+  - https://bloki.app/
+  - 支持在文档上放画板，ui设计友好
 # notion-clone-api
 - https://github.com/minwook-shin/notion-database
   - https://notion-database.readthedocs.io/

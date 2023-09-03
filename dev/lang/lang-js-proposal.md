@@ -135,7 +135,7 @@ modified: 2020-07-07T08:10:16.774Z
 
 ## more-proposals
 
-- https://github.com/rbuckton/proposal-enum
+- https://github.com/rbuckton/proposal-enum /stage0
   - https://github.com/Jack-Works/proposal-enum
 
 ## stage3/4

@@ -21,7 +21,8 @@ modified: 2021-05-10T04:06:02.843Z
 
 - ## 
 
-- ## 
+- ## 设计一个标识，一共有七个字，不同的位置摆法，感受完全不同
+- https://twitter.com/NodYoung/status/1697844929064780142
 
 - ## google search ui history animation ui变化时间线
 - https://www.google.com/search/howsearchworks/our-history/

@@ -54,6 +54,12 @@ modified: 2023-02-05T19:03:27.730Z
   - Tiptap based block editor
   - a UI for Tiptap, inspired by the Wordpress editor, Gutenberg. It uses a static floating toolbar as well as slash commands for inserting new blocks.
 
+- novel /7.3kStar/MIT/202309/ts
+  - https://github.com/steven-tey/novel
+  - https://novel.sh/
+  - a Notion-style WYSIWYG editor with AI-powered autocompletion. Built with [Tiptap](https://tiptap.dev/) + [Vercel AI SDK](https://sdk.vercel.ai).
+  - 依赖tiptap、@vercel/kv/blob、nextjs、react-markdown.v8
+
 - better-virgool /9Star/MIT/NALic/202208/ts/tiptap
   - https://github.com/ahhshm/better-virgool
   - https://ahhshm.github.io/better-virgool/
