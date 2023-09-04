@@ -64,9 +64,14 @@ modified: 2022-02-05T18:45:34.558Z
 - react-dnd /14.5kStar/MIT/202009/ts/redux
   - https://github.com/react-dnd/react-dnd
   - https://react-dnd.github.io/react-dnd/examples/sortable/simple
-  - core依赖于redux
-  - Drag and Drop for React
+  - dnd-core只依赖redux，react-dnd依赖react
+  - a set of React utilities to help you build complex drag and drop interfaces while keeping your components decoupled
+  - unidirectional data flow, built on Redux
   - 拖拽列表项的示例，没有显示底层被拖拽项的阴影
+  - HTML5 drag and drop has an awkward API full of pitfalls and browser inconsistencies. React DnD handles them internally for you
+  - React DnD uses the HTML5 drag and drop under the hood, but it also lets you supply a custom “backend”, like touch
+  - [[Shared]vue3-dnd, React Dnd implementation in Vue Composition-api](https://github.com/react-dnd/react-dnd/issues/3472)
+    - https://github.com/hcg1023/vue3-dnd
 
 - https://github.com/hello-pangea/dnd /ts
   - https://dnd.hellopangea.com/
@@ -88,6 +93,8 @@ modified: 2022-02-05T18:45:34.558Z
   - [DnD with line drop indicators](https://github.com/atlassian/react-beautiful-dnd/issues/2461)
     - https://codesandbox.io/s/react-beautiful-dnd-react-virtualized-forked-c7sm5b
   - [Maintenance will continue with @hello-pangea/dnd (react 18 support)](https://github.com/atlassian/react-beautiful-dnd/issues/2437)
+  - [Does this really need to be a react-only library?](https://github.com/atlassian/react-beautiful-dnd/issues/1217)
+    - I don't see it being on the cards for a while as we are still trying to deliver some core features
 
 - dflex /1.5kSStar/MIT/202302/ts
   - https://github.com/dflex-js/dflex

@@ -9,6 +9,15 @@ modified: 2023-09-03T13:20:58.188Z
 
 # guide
 
+- pros
+  - support combining draggables
+  - accessible with keyboard/screen-reader
+
+- cons
+  - react-only
+  - not support drag axis locking
+  - dynamic add/remove items while dragging 功能有问题
+
 - features
   - accessible with keyboard/screen-reader
   - performant
@@ -23,12 +32,16 @@ modified: 2023-09-03T13:20:58.188Z
   - Add and remove items during a drag
   - Tree support through the @atlaskit/tree package
   - Compatible with semantic `<table>` reordering - table pattern
+# roadmap
+- [Roadmap](https://github.com/hello-pangea/dnd/issues/419)
+  - Remove redux connected api in favor of redux hooks
+  - storybook examples with mui/antd/tailwind
+  - support grid layout
 
-- pros
-  - accessible with keyboard/screen-reader
-
-- cons
-  - react-only
+- [CSS `will-change` attribute massively improve performance](https://github.com/atlassian/react-beautiful-dnd/issues/1892)
+# changelog
+- [v15.0.0_202204](https://github.com/hello-pangea/dnd/issues/293)
+  - Support react v18
 # dev
 
 # more

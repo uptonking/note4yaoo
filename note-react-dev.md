@@ -313,6 +313,10 @@ React.cloneElement(
 - 不要在同一个方法连续写两个setState()，异步更新可能只更新一个
 - fiber是React 16中新的和解引擎，它的主要目的是使虚拟DOM能够进行增量渲染   
 - vdom虚拟的视图被保存在内存中，并通过诸如ReactDOM这样的库与真实的DOM保持同步
+# lifecycle
+- 对于函数式组件的rerender
+  - render1 > child1 > re-render2 > unmount > child1
+  - 注意unmount事件发生在下一次render2之后
 # react-basis
 - react要点
   - 组件的设计：jsx、生命周期、高阶组件、容器组件、非受控组件

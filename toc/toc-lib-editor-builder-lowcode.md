@@ -216,6 +216,37 @@ modified: 2020-12-28T12:24:09.275Z
   - Webstudio features a UI to create API bindings. You can add a GraphQL binding to any component and choose which endpoint and data properties to bind to each component property. 
   - block块级元素不支持拖拽
 
+- https://github.com/codebdy/rxdrag /ts/antd
+  - https://rxdrag.vercel.app/
+  - https://github.com/codebdy/minions-go /golang/逻辑编排go引擎
+  - 可视化编辑，设计一切基于HTML的东西，模块化设计
+  - editor-core依赖redux-toolkit、lodash
+  - react-runner依赖react-router.v6、@monaco-editor/react、styled-components
+  - 侧边栏模块: 页面、组件资源、大纲、历史记录
+  - [实战，一个高扩展、可视化低代码前端，详实、完整 - 掘金](https://juejin.cn/post/7205361008272326716)
+    - RxEditor是一款开源企业级可视化低代码前端，目标是可以编辑所有 HTML 基础的组件。比如支持 React、VUE、小程序等，目前仅实现了 React 版
+    - 目标，是能够通过拖拽的方式操作基于 HTML 制作的组件，如：调整这些组件的包含关系，并设置组件属性。
+    - 编辑器（RxEditor）要维护一个树形模型，这个模型描述的是组件的隶属关系，以及 props。同时还能跟 dom 树交互，通过各种 dom 事件，操作组件模型树。
+    - 这里关键的一个点是，编辑器需要知道 dom 节点跟组件节点之间的对应关系。在不侵入组件的前提下，并且还要忽略前端库的差异，比较理想的方法是给 dom 节点赋一个特殊属性，并跟模型中组件的 id 对应，在 RxEditor 中，这个属性是rx-id，比如在dom节点中这样表示 `<div rx-id="one-uuid">`. 
+    - rx-id 算是设计器的基础性原理，它给设计器内核抹平了前端框架的差异
+    - 编辑器操作的是JSON格式的组件树，设计时，设计引擎根据这个组件树渲染画布。这个组件树是设计器的数据模型，通常会被叫做 Schema。
+    - 项目中的前端组件，要在两个地方渲染，一是设计引擎的画布，另一处是预览页面。这两处使用的是不同渲染引擎
+    - 设计形态，在设计器画布内渲染，需要提供ref或者转发rx-id，有能力跟设计引擎交互。
+    - 预览形态，预览引擎使用，渲染机制跟运行时渲染一样。相当于普通的前端组件。
+    - 设计形态的组件跟预览形态的组件，对应的是同一份schema，只是在渲染时，使用不同的组件实现。
+    - Material，物料的定义。一个Schema，只是用来描述一个组件，这个组件相关的配置，比如多语言信息、在工具箱中的图标、编辑规则（比如：内容类型限制）等等这些信息，需要一个配置来描述，这个就是物料
+    - 状态管理。rxjs虽然看起来不错，但是没有使用经验，暂时放弃了。mobx，个人不喜欢，与上面的设计原则“尽量减少对组件的入侵，最大程度使用已有组件资源”相悖，也只能放弃。最后，选择了Redux。
+    - 软件架构
+    - 设计器，用于设计页面，消费的是设计形态的组件。生成页面Schema。
+    - 运行时，把设计器生成的页面Schema，渲染为正常运行的页面，消费的是预览形态的组件。 采用分层设计架构，上层依赖下层。
+  - [挑战零代码：可视化逻辑编排 - 掘金](https://juejin.cn/post/7257814347463671863)
+    - 逻辑编排的目的，是用最少甚至不用代码来实现软件的业务逻辑，包括前端业务逻辑跟后端业务逻辑。
+    - 本文前端代码基于typescript、react技术栈，后端基于golang。
+    - 涵盖内容：数据流驱动的逻辑编排原理，业务编排编辑器的实现，页面控件联动，前端业务逻辑与UI层的分离，子编排的复用、自定义循环等嵌入式子编排的处理、事务处理等
+    - 逻辑编排编辑器，顾名思义，可视化编辑器，根据物料提供的元件信息，编辑生成JSON格式的“编排描述数据”。
+    - 前端解析引擎，Typescript 实现的解析引擎，直接解析“编排描述数据”并执行，从而实现的软件的业务逻辑。
+    - 后端解析引擎，Golang 实现的解析引擎，直接解析“编排描述数据”并执行，从而实现的软件的业务逻辑
+
 - https://github.com/page-pipepline/pipeline-editor /201910/js/inactive
   - 页面可视化搭建框架的 web 编辑器
   - 实现了编辑器和页面前端框架的分离, 可以支持不同的前端框架.

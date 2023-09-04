@@ -9,6 +9,13 @@ modified: 2022-06-04T00:44:30.749Z
 
 # guide
 
+- pros
+  - accessible with keyboard/screen-reader
+  - modular and extensible
+
+- cons
+  - react-only
+
 - features
   - good docs and examples
     - tree
