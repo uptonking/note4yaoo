@@ -85,6 +85,7 @@ modified: 2022-08-18T16:57:15.296Z
   - A free note-taking software for programmers and Computer Science students
 
 - mdSilo-web /208Star/AGPLv3/202208/ts/web+桌面
+  - https://github.com/mdSilo/mdSilo-web
   - https://github.com/danloh/mdSilo-web
   - https://mdsilo.com/
   - A mind silo for storing ideas, thought, knowledge with a powerful writing tool.
@@ -92,6 +93,7 @@ modified: 2022-08-18T16:57:15.296Z
   - 依赖 react、tauri/rust、dnd-kit、headlessui、popperjs、react-spring、tailwindcss、d3-drag/selection、fuse.js、immer、codemirror.v6、styled-comp、react-virtualized、zustand
   - Available for Web, Linux, Windows and macOS. 
 - mdSilo-app /93Star/AGPLv3/202208/ts/tauri
+  - https://github.com/mdSilo/mdSilo-app
   - https://github.com/danloh/mdSilo-app
   - https://mdsilo.com/
   - A mind silo for storing ideas, thought, knowledge with a powerful writing tool. 

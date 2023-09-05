@@ -375,6 +375,16 @@ modified: 2020-12-28T12:24:09.275Z
   - If you are worrying about something builder, Such as form builder/table builder/chart builder/app builder etc. Designable is your perfect choice.
   - [Designable2.0详细规划&任务分解](https://github.com/alibaba/designable/discussions/240)
     - 目前暂停维护中，未来会重启，感谢大家的支持
+
+- https://github.com/AnsGoo/openDataV /ts/vue
+  - http://datav.byteportrait.com/
+  - OpenDataV 是一个纯前端的拖拽式、可视化、低代码数据可视化开发平台，同时支持用户方便的开发自己的组件并接入平台
+  - 支持用户操作记录的恢复、撤销功能
+  - 本项目采用Vue3 + vite + TypeScript开发，界面库使用NaiveUI，使用面向对象方式封装了路由、请求、存储，组件采用自动扫描注册、异步加载，提升渲染速度；
+  - 使用IndexDB存储快照数据，减少快照数据内存占用，加快访问速度；
+  - 组件独立依赖，解耦了组件和基础框架的依赖库，方便后续独立开发组件。
+  - https://gitee.com/small_bud_star/open-data-backend
+    - 低代码可拖拽前端库OpenDataV的Python后端实现
 # workflow-automation-tasks-pipeline
 - tips
   - 考虑跨平台/系统的task兼容性、分享，主流的airflow/ifttt

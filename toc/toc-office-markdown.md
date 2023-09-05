@@ -134,7 +134,8 @@ modified: 2021-01-04T17:26:25.032Z
   - Markprompt is a platform for building GPT-powered prompts. 
   - It scans Markdown, Markdoc and MDX files in your GitHub repo and creates embeddings that you can use to create a prompt
 # more-md
-- https://github.com/mgmeyers/obsidian-kanban
+- https://github.com/mgmeyers/obsidian-kanban /ts
+  - https://publish.obsidian.md/kanban/
   - Create markdown-backed Kanban boards in Obsidian.
 
 - https://github.com/rstudio/rmarkdown

@@ -78,6 +78,17 @@ modified: 2022-06-04T00:44:30.749Z
 - tips
   - 左右拖拽时，要区分水平移动和创建分栏，一般只在顶层创建分栏
   - 向左拖拽子级节点时，被拖拽节点会自动提升到父节点的下一个节点，符合预期，参考文件拖拽
+# roadmap
+- [future of library & maintenance_20230829](https://github.com/clauderic/dnd-kit/issues/1194)
+  - I want to reassure everyone that I'm still actively working on this library. 
+  - The reason why a lot of issues have gone unaddressed for a while is that I have been working on a significant refactor of @dnd-kit since earlier this year.
+  - Framework agnostic by building an agnostic layer that can be extended by concrete implementations, such as a DOM layer.
+  - Keep most of the same core concepts, such as sensors, collision detection algorithms, and modifiers, but make the library easier to learn and adopt.
+  - Making the core library extensible via a plugin system.
+  - More granularity: Each draggable can have its own sensors and modifiers, and each droppable can have its own collision detection algorithm.
+  - Performance improvements: reducing unnecessary re-renders being very high on the list
+  - I am hoping to launch the refactor with React and Vanilla as the main two targets, and lots of APIs are still in flux, so it's a bit early to involve others in this refactor.
+  - I will be looking for developers who have experience working in other frameworks such as Vue, SolidJS, Svelte, etc. to adapt @dnd-kit to work with those frameworks and maintain those compatibility layers. 
 # issues
 
 ## not-yet
@@ -108,13 +119,15 @@ modified: 2022-06-04T00:44:30.749Z
   - None of the built-in sorting strategies of @dnd-kit/sortable support unpredictable layouts.
   - The recommended approach in that situation is to move the items onDragOver instead of onDragEnd and passing a sorting strategy that returns nothing to SortableContext
 
+- [Placeholders feature request](https://github.com/clauderic/dnd-kit/pull/740)
+
 ## done
 
 - 🤔 树的递归渲染是如何实现的
   - dnd-kit tree示例，渲染时先将数据扁平化，再作为列表渲染，未使用递归渲染
 
 - [How to drag by copying?](https://github.com/clauderic/dnd-kit/issues/456)
-  - when you drop that item you keep that same unique id and generate a new one for the sidebar to replace the item that was just moved from the sidebar to your other droppable region
+  - when you drop that item, you keep that same unique id and generate a new one for the sidebar to replace the item that was just moved from the sidebar to your other droppable region
   - [Consider adding Clone from List example](https://github.com/clauderic/dnd-kit/issues/45)
   - https://codesandbox.io/s/distracted-mendel-hibbgu
   - [how to copy item to other container？](https://github.com/clauderic/dnd-kit/issues/1164)

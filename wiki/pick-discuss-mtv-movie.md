@@ -35,10 +35,12 @@ modified: 2022-01-01T18:37:51.020Z
     - 背景音乐由平静到激烈
   - [热带往事 预告片2：定档版 (中文字幕)](https://movie.douban.com/trailer/275340/)
     - 单人讲述故事线索，逼格高
-# bgm
-- [宇宙洋洋 一口气看完谍影重重五部电影合集](https://www.bilibili.com/video/BV1aW4y117Zr)
 
-
+- 解说
+  - [宇宙洋洋 一口气看完谍影重重五部电影合集](https://www.bilibili.com/video/BV1aW4y117Zr)
+# music
+- search
+  - 现场、版本、舞台、公演
 # yaoo-info
 - username
   - uptonking/yaork

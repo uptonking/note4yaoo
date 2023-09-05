@@ -93,7 +93,7 @@ modified: 2022-11-07T10:25:12.034Z
 # 图片资源
 - unsplash镜像战
   - https://unsplash.dogedoge.com/
-# gfw/proxy
+# gfw-proxy
 - [googlehosts 作者放弃维护了吗？几个月没更新了](https://github.com/googlehosts/hosts/issues/503)
   - 新发现了个正在活跃维护的
     - https://github.com/StevenBlack/hosts
@@ -108,6 +108,16 @@ modified: 2022-11-07T10:25:12.034Z
     - https://search.gitee.com/?skin=rec&type=repository&q=GitHub520&sort=updated_at
     - https://gitee.com/monkeycc/GitHub520
       - https://raw.hellogithub.com/hosts
+
+- https://github.com/hwanz/SSR-V2ray-Trojan
+  - SSR-V2ray-Trojan机场推荐
+
+- 机场gfw
+  - https://ikuuu.club/
+
+- 一元机场
+  - https://github.com/yiyuanjichang/dizhi
+  - [一元机场节点安全吗，不会是钓鱼吧 - V2EX](https://www.v2ex.com/t/913781)
 
 - git最近更新了socks5的语法，去掉了引号，git config --global http.proxy socks5://127.0.0.1:10808配合V2RayN可用
   - #只对github.com

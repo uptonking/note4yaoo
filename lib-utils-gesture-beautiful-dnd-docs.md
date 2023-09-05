@@ -218,6 +218,11 @@ modified: 2023-09-03T15:31:12.260Z
   - We build a virtual model of every `<Draggable /> and <Droppable />` when a drag starts. We do not recollect these during a drag. 
   -  If you want to modify dimensions before a drag starts you can use `onBeforeCapture`
 
+- It is **highly recommended** that while a user is dragging that you block any state updates that might impact the amount of `<Draggable />`s and `<Droppable />`s, or their dimensions. 
+  - Please listen to `onDragStart` and block updates to the `<Draggable />`s and `<Droppable />`s until you receive at `onDragEnd`.
+  - During a drag you should not apply any server updates that could effect what is visible. 
+  - ignore any results from server calls during a drag (do not call setState in your component with the new data)
+
 ## [How we use DOM events](https://github.com/hello-pangea/dnd/blob/main/docs/guides/how-we-use-dom-events.md)
 
 > Note: due to a bug in webkit, particular events such as `mousemove` will not correctly set `event.defaultPrevented` to true when `event.preventDefault()` is called.

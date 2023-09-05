@@ -9,6 +9,112 @@ modified: 2021-01-04T16:00:05.478Z
 
 # guide
 
+# [stackoverflow developer survey](https://survey.stackoverflow.co/)
+
+## [2023](https://survey.stackoverflow.co/2023/)
+
+- In May 2023 over 90, 000 developers responded to our annual survey
+
+- Web frameworks and technologies
+  - react, 40.6%
+  - vue, 16.4%
+  - angular, 17.5%
+  - svelte, 6.6%
+  - solidjs, 1.4%
+  - nextjs, 16.7%
+
+- Programming languages
+  - js, 63.6%
+  - ts, 38.9%
+  - python, 49.3%
+  - sql, 48.7%
+  - java, 30.6%
+  - cpp, 22.4%
+  - c, 19.3%
+  - go, 13.24%
+  - rust, 13.05%
+  - assembly, 5.4%
+
+- asynchronous collaboration tool 大多数不提供免费套餐
+  - jira
+  - confluence
+  - markdown files
+  - notion
+  - trello
+  - github-discussions, you-track
+  - miro
+  - wikis
+  - clickup, asana
+  - linear
+  - basecamp
+  - monday, airtable
+  - doxygen, redmine
+
+- synchronous collaboration tool
+  - microsoft-teams
+  - slack
+  - zoom
+  - discord
+  - telegram
+  - mattermost
+  - matrix
+  - rocketchat
+
+## [2022](https://survey.stackoverflow.co/2022/)
+
+- In May 2022 over 70, 000 developers told us how they learn and level up
+
+- Web frameworks and technologies
+  - react, 42.6%
+  - vue, 18.8%
+  - angular, 20.4%
+  - svelte, 4.6%
+  - nextjs, 13.5%
+
+- Programming languages
+  - js, 65.4%
+  - ts, 38.5%
+  - python, 48.1%
+  - sql, 49.4%
+  - java, 33.3%
+  - cpp, 22.6%
+  - c, 19.3%
+  - go, 11.2%
+  - rust, 9.3%
+  - assembly, 5.4%
+
+- asynchronous collaboration tool 大多数不提供免费套餐
+  - notion
+  - confluence
+  - workzone
+  - leankor
+  - wimi
+  - cerri
+  - swit
+  - jira
+  - trello
+  - airtable/monday
+  - smartsheet
+  - clickup
+  - asana
+  - [Wrike: Powerful, Versatile Work Management Platform](https://www.wrike.com/main/)
+
+- synchronous collaboration tool 
+  - slack
+  - mattermost
+  - coolfire
+  - microsoft-teams
+  - wickr
+  - zoom
+  - wire
+
+- Version control platforms
+  - github
+  - gitlab
+  - bitbucket
+  - azure-repos
+  - aws-code-commit
+  - custom
 # [2022大前端总结和2023就业分析 - 知乎](https://zhuanlan.zhihu.com/p/603410758)
 - 当前(2022)前端趋于成熟
   1、性能

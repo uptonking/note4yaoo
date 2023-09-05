@@ -75,6 +75,18 @@ modified: 2023-01-20T21:59:47.792Z
       - You have to set SERVE_APP=true in your .env file in order to run the api in dev mode with the build app.
       - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
 
+- vrite /1kStar/AGPLv3/202307/ts
+  - https://github.com/vriteio/vrite
+  - https://vrite.io/
+  - https://editor.vrite.io/
+  - headless CMS intended for technical content like programming blogs or documentation
+  - 后端依赖trpc-server/openapi、fastify、yjs、zod、open-graph-scraper
+  - 协作依赖mongodb、hocuspocus
+  - 前端依赖solid-js、solid-primitives、tiptap、trpc-client、yjs
+  - editor包不依赖solid-js
+  - Built-in Kanban dashboard for managing content production and delivery; 
+  - Versitile API and Extension System for customizing your experience and delivering content to any frontend; 
+
 - tinacms /8.3kStar/apache2/202301/ts/git
   - https://github.com/tinacms/tinacms
   - https://tina.io/

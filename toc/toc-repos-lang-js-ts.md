@@ -392,10 +392,6 @@ modified: 2021-05-14T15:04:55.849Z
   - platform for data monitoring and observability
   - written in pure react and go.
   - Datav is forked from @grafana, but changed a lot
-- https://github.com/kiswa/TaskBoard
-  - /1.1kStar/MIT/202009
-  - A Kanban-inspired app for keeping track of things that need to get done
-  - 依赖php7
 # ts-repos
 - https://github.com/julianshapiro/velocity
   - Accelerated JavaScript animation.

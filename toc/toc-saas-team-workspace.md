@@ -11,17 +11,21 @@ modified: 2023-02-07T17:38:05.336Z
 > team, admin-members
 
 # guide
+- tips
+  - 看板的ui状态和样式很容易实现
+  - 看板的数据模型及持久化要考虑兼容主流看板及任务类产品，如trello、notion-database
+
 - alternatives
   - jira, trello, linear
   - 可以从主流产品的issues/discussions里面找替代品
 # popular
-- https://github.com/makeplane/plane /python/ts
+- https://github.com/makeplane/plane /AGPLv3/python/ts
   - https://plane.so/
-  - Open Source JIRA, Linear and Height Alternative. 
+  - Open Source JIRA, Linear and Height Alternative.
   - 依赖后端django、djangorestframework
   - 依赖前端blueprintjs、nivo-chart、remirror、nextjs、swr
 
-- https://github.com/xiweicheng/tms /js/java
+- https://github.com/xiweicheng/tms /MIT/js/java
   - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
 
 - https://github.com/ferdium/ferdium-app
@@ -165,7 +169,16 @@ modified: 2023-02-07T17:38:05.336Z
   - Trello clone/sample app for Automerge persistence library
   - Trellis is a Trello clone built as an Electron desktop application. 
 
-- https://github.com/apankrat/nullboard
+- https://github.com/arthurfigueiredo/Kanban.js /MIT/js
+  - http://arthurfigueiredo.github.io/Kanban.js/
+  - Javascript plugin to build kanban boards only 2KB
+- https://github.com/riktar/jkanban /914Star/apache2/js/202112/inactive
+  - https://www.riccardotartaglia.it/jkanban/
+  - Vanilla Javascript plugin for manage kanban boards
+- https://github.com/otiagosoares/kanban-vanilla-js
+  - https://codepen.io/otiagosoares/pen/rNWQGeb
+
+- https://github.com/apankrat/nullboard /BSD/js/jquery/单文件
   - https://nullboard.io/preview
   - Nullboard is a minimalist take on a kanban board / a task list manager, designed to be compact, readable and quick in use.
   - All data is stored locally, for now using localStorage.
@@ -174,15 +187,12 @@ modified: 2023-02-07T17:38:05.336Z
   - https://react-beautiful-dnd.netlify.app/iframe.html?id=board--simple
   - 官方示例就是看板
 
-- https://github.com/nishantpainter/personal-kanban
+- https://github.com/nishantpainter/personal-kanban /ts
   - https://personalkanban.js.org/
   - 依赖 material-ui.v4, formik, i18next, moment, react-beautiful-dnd
   - columns and cards
   - an offline capable application or tool that implements kanban to manage work at personal level
 
-- https://github.com/riktar/jkanban /914Star/apache2/js/202112/inactive
-  - https://www.riccardotartaglia.it/jkanban/
-  - Vanilla Javascript plugin for manage kanban boards
 - https://github.com/asseinfo/react-kanban
   - https://nvjp3.csb.app/
   - 样式较简单
@@ -216,14 +226,41 @@ modified: 2023-02-07T17:38:05.336Z
   - https://notion-kanboard-mukul.netlify.app/
   - 暂不支持视图切换
 
+- https://github.com/BaldissaraMatheus/Tasks.md /MIT/js
+  - A self-hosted, file based task management board that supports Markdown syntax
+  - Write cards as Markdown files; 
+  - built with SolidJS and Koa. 
+  - It also uses Stacks-Editor for text editing and serve-static to serve the css files as-is.
+
+- https://github.com/shellyln/kanban-board-app /ts/redux/inactive
+  - Kanban style task management board app
+  - Synchronize multiple device boards with CouchDB remote server
+
+- https://github.com/JordanKnott/taskcafe /go/ts
+  - Manage tasks through a Kanban board interface (set due dates, labels, add checklists)
+  - Task comments and activity
+
 - https://github.com/kanboard/kanboard /php
   - Kanban project management software
   - https://github.com/aljawaid/KanboardCSS
 
+- https://github.com/kiswa/TaskBoard /php
+  - /1.1kStar/MIT/202009
+  - A Kanban-inspired app for keeping track of things that need to get done
+
+- https://github.com/ParabolInc/parabol /ts
+  - https://parabol.co/retro-demo
+  - open-source application for running agile meetings 
+  - 依赖node、graphql、relay
+
+- https://github.com/mgmeyers/obsidian-kanban /ts
+  - https://publish.obsidian.md/kanban/
+  - Create markdown-backed Kanban boards in Obsidian.
+
 ## realtime
 
 - https://github.com/plankanban/planka /AGPLv3/js
-  - https://plankanban.github.io/planka/#/
+  - https://plankanban.github.io/planka/
   - The realtime kanban board for workgroups built with React and Redux.
   - React, Redux, Redux-Saga, Redux-ORM, Semantic UI React, react-beautiful-dnd
     - 前端单独分离出来了
@@ -289,6 +326,15 @@ modified: 2023-02-07T17:38:05.336Z
   - Both Flatpak and non-Flatpak versions of Tangram provide sandboxing for Web applications.
     - Flatpak via our restricted permissions
     - Non-Flatpak through `WebkitGTK` Sandboxing (requires WebkitGTK >= 2.26)
+# format
+- https://github.com/imdone/imdone-core /MIT/js
+  - https://imdone.io/
+  - Imdone is text based kanban processor with a simple syntax that uses comment tags like TODO and FIXME and todo.txt format. 
+  - This model allows the user to create and modify tasks using the keyboard and automatically establishes a link between their tasks and work.
+
+- https://github.com/todomd/todo.md
+  - The TODO.md format is based on GFM - GitHub Flavored Markdown - Task Lists.
+  - Tasks in TODO.md can be visualized using Kanban Board where sections become columns on the board.
 # more
 - https://github.com/kndwin/solaces
   - Linear clone with different reactive local database POC's
