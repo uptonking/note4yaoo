@@ -325,4 +325,14 @@ modified: 2022-08-21T10:02:05.129Z
   - SeaTable is originally built by the Seafile team (haiwen/seafile). 
   - The source code will be uploaded to GitHub later. 
   - https://github.com/seatable/dtable-ui-component
+# examples
+- tips
+  - usecase
+
+- https://github.com/1657744680/obsidian-yaml-database /ts
+  - 像notion database一样浏览编辑文档的YAML属性
+  - 注意：这个表格编辑YAML它是只能编辑一个文件夹下的”子“文档，意思就是这个文件夹的子文件夹下的文档并不会被索引。
+
+- https://github.com/jdan/notes /js/类似渲染表格数据的其他视图
+  - Turn a Notion database into a deck of cards
 # more

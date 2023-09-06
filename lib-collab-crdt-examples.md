@@ -940,7 +940,10 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/markandre13/workflow
   - A Collaborative Real-Time White- and Kanban Board
+  - maintain drawing in the browser's permanent storage using IndexedDB
+  - export/import drawing to/from local file encoded in ISO/IEC 19500-2
   - 偏向画板
+  - 依赖knex
 
 - https://github.com/itoumlilt/CRDT-Spreasheet
   - CRDT based collaborative Spreadsheet

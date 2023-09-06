@@ -355,6 +355,21 @@ const overId = getFirstCollision(collisions, 'id');
 - https://github.com/matews-sousa/trello-clone
   - A Trello Clone application called Thullo. Built with Next.js, Firebase, TailwindCSS and DnD Kit.
 
+- https://github.com/Kliton/react-kanban-board-dnd-kit-tutorial-yt
+  - https://react-kanban-board-dnd-kit-tutorial-yt.vercel.app/
+  - Kanban Board: React, Typescript, Tailwind, Dnd-Kit
+- https://github.com/kadir-akar/drag-and-drop-kanban-board
+  - customize your column and tasks then take your note
+- https://github.com/BechirMakhlouf/kanban-board
+  - kanban board using dnd-kit
+- https://github.com/Georgegriff/react-dnd-kit-tailwind-shadcn-ui
+  - Drag and drop Accessible kanban board implementing using React, @dnd-kit, tailwind and shadcn/ui
+
+- https://github.com/GraniusZ/Granius.Space
+  - https://kanban-granius.netlify.app/
+  - simple kanban web application built with React and Firebase.
+  - 依赖dnd-kit, redux-toolkit, rtk-query, firebase
+
 ## builder
 
 - https://github.com/mongodb-js/compass

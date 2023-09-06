@@ -41,6 +41,7 @@ modified: 2022-01-01T18:37:51.020Z
 # music
 - search
   - 现场、版本、舞台、公演
+  - 主打、年度、十年、盘点
 # yaoo-info
 - username
   - uptonking/yaork

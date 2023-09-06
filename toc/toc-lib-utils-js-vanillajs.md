@@ -146,6 +146,11 @@ modified: 2023-04-04T22:35:59.255Z
 
 - https://github.com/wilsonpage/fastdom /js
   - Eliminates layout thrashing by batching DOM measurement and mutation tasks
+
+- https://github.com/CoCreate-app/CoCreate-clone /js
+  - https://cocreate.app/docs/clone
+  - Clone an html element by #id, identify targeted elements using clone_id="" attribute. 
+  - Capable of creating nested & complex cloning logic for kanbans, tasklists etc. 
 # web-localStorage
 - https://github.com/aykutkardas/lookie
   - Store your data in localStorage with optional expiration time.

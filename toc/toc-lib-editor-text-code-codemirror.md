@@ -81,6 +81,12 @@ modified: 2022-08-18T11:29:26.644Z
 
 ## apps
 
+- https://github.com/TeamCodeStream/codestream /ts
+  - https://www.codestream.com/
+  - CodeStream is a free open-source extension for VS Code, Visual Studio, and JetBrains.
+  - CodeStream helps dev teams discuss, review, and understand code. 
+  - Discussing code is now as simple as commenting on a Google Doc — select the code and type your question.
+
 - https://github.com/vizhub-core/vizhub
   - https://vizhub.community/
   - Self Hosted CMS for Web-based Dataviz

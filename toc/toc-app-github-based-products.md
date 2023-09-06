@@ -33,6 +33,10 @@ modified: 2023-04-13T03:32:04.013Z
   - Simply ask your question in natural language and Data Explorer will generate SQL, query the data, and present the results visually. 
     - It's built with Chat2Query, a GPT-powered SQL generator in TiDB Cloud.
 # github-apps
+- https://github.com/eioluseyi/repub
+  - https://git-repub.netlify.app/
+  - A proof of concept application that shows an overview of the active branches on a GitHub repository.
+# github-examples
 - https://githubwrapped.tech/
   - take a look at all the contributions you as an individual made to the open-source community
 

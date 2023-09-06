@@ -111,8 +111,32 @@ modified: 2022-11-07T10:25:12.034Z
 
 - https://github.com/hwanz/SSR-V2ray-Trojan
   - SSR-V2ray-Trojan机场推荐
+- https://github.com/limbopro/paolujichang
+  - 跑路机场名单收集（2020-2023）
+  - Rixcloud/喵帕斯/Blinkload/速蛙云/世外桃源等等一系列已经跑路的机场告诉我们，机场的尽头就是跑路。
+  - 本跑路名单未记录但实际已跑路的机场还有很多，改头换面重复收割韭菜的也有。
 
 - 机场gfw
+  - [VPS虚拟主机测评_IDC主机测评](https://shuziren.github.io/ssrvps/)
+  - [FlowerCloud - 产品套餐](https://huacloud.dev/product.html)
+    - 128￥/年: 20G/月
+    - 低等级套餐没有性价比，但是他家有0.2倍率的实验性节点，也就是说你只用实验性节点的话流量可以按照5倍来看。
+    - 0.2倍率的实验性节点三条线路也是广港+沪日，这点很良心。
+    - 开业时间: 2020
+    - domains
+      - [FlowerCloud - 国际网络加速服务，致力于提高网络质量！](https://huacloud.net/)
+      - [购物车 - FlowerCloud](https://flowercloud.net/cart.php)
+  - [TAG Internet](https://tagss01.pro)
+    - 154￥/年: 200G/年
+  - [泡泡云PRO](https://ppy.buzz/)
+    - 168￥/年: 1024G/月
+    - 85￥/年: 256G/年
+  - [泡泡Dog](https://www.paopao.dog)
+    - 7.5￥/月: 70G/月
+    - 30￥/年: 150G/年
+    - 开业时间：2022.04；老板肉身：海外(确定)
+  - [KuLi云-IEPL](https://cyuuu.co)
+    - 180￥/年: 200G/月
   - https://ikuuu.club/
 
 - 一元机场

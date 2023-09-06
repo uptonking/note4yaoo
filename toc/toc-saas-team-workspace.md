@@ -17,20 +17,24 @@ modified: 2023-02-07T17:38:05.336Z
 
 - alternatives
   - jira, trello, linear
+  - focalboard, nocodb
   - 可以从主流产品的issues/discussions里面找替代品
 # popular
 - https://github.com/makeplane/plane /AGPLv3/python/ts
   - https://plane.so/
   - Open Source JIRA, Linear and Height Alternative.
-  - 依赖后端django、djangorestframework
-  - 依赖前端blueprintjs、nivo-chart、remirror、nextjs、swr
+  - 后端依赖django、djangorestframework
+  - 前端依赖blueprintjs、nivo-chart、remirror、nextjs、swr
 
-- https://github.com/xiweicheng/tms /MIT/js/java
-  - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
+- https://github.com/JordanKnott/taskcafe /go/ts
+  - open source project management tool with Kanban boards
+  - Manage tasks through a Kanban board interface (set due dates, labels, add checklists)
+  - Task comments and activity
+  - One of the primary goals of Taskcafe is to provide a project management tool that I personally enjoy using
 
 - https://github.com/ferdium/ferdium-app
   - https://ferdium.org/
-  - Ferdium is a desktop app that helps you organize how you use your favourite apps by combining them into one application. 
+  - a desktop app that helps you organize how you use your favourite apps by combining them into one application. 
   - It is based on Franz - a software already used by thousands of people - with the difference that Ferdium gives you many additional features and doesn't restrict its usage! 
 # microsoft-teams/org
 - growi /1.1kStar/MIT/202301/ts/remark
@@ -52,6 +56,9 @@ modified: 2023-02-07T17:38:05.336Z
   - pages that end with slashes (/) are automatically generated as list views. 
   - 功能和样式都很普通
   - 依赖mongoose、es、redis、swig
+
+- https://github.com/xiweicheng/tms /MIT/js/java
+  - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
 
 - https://github.com/bennymeier/mern-stack-project-management
   - A project management platform built with the MERN-Stack.
@@ -76,6 +83,13 @@ modified: 2023-02-07T17:38:05.336Z
   - Real time document collaboration
   - [Slack, gDrive and Trello have a self-hosted baby : Twake : selfhosted](https://www.reddit.com/r/selfhosted/comments/q1pmd7/slack_gdrive_and_trello_have_a_selfhosted_baby/)
     - Frontend is in React and backend in PHP.
+
+- https://github.com/ever-co/ever-teams /ts
+  - https://app.ever.team/
+  - Open Work and Project Management Platform
+  - https://github.com/ever-co/ever-gauzy /ts
+    - https://gauzy.co/
+    - Open-Source Business Management Platform (ERP/CRM/HRM)
 # project-management
 - https://github.com/jacobrdz77/selfwork
   - A project management system for small teams and freelancers.
@@ -177,15 +191,32 @@ modified: 2023-02-07T17:38:05.336Z
   - Vanilla Javascript plugin for manage kanban boards
 - https://github.com/otiagosoares/kanban-vanilla-js
   - https://codepen.io/otiagosoares/pen/rNWQGeb
+- https://github.com/Eshh/kanban-board /js
+  - drag and drop mini project using Vanilla JS
+- https://github.com/ThierryRakotomanana/kanban-js /js/NoDeps
+  - https://thierryrakotomanana.github.io/kanban-js/
+  - simple task manager write enterily with a Vanilla Javascript and CSS. 
+  - No framework or any dependencies
 
 - https://github.com/apankrat/nullboard /BSD/js/jquery/单文件
   - https://nullboard.io/preview
   - Nullboard is a minimalist take on a kanban board / a task list manager, designed to be compact, readable and quick in use.
   - All data is stored locally, for now using localStorage.
+  - https://github.com/justinpchang/nullboard-agent-express /js
+    - Local backup agent for Nullboard (MacOS/Linux compat)
+
+- https://github.com/khanh-devos/Capstone2-Kanban /js
+  - https://khanh-devos.github.io/Capstone2-Kanban/
+  - Kanban board for workload management. 
+  - Redux was implemented in only vanila JS for experimenting.
 
 - https://github.com/atlassian/react-beautiful-dnd
   - https://react-beautiful-dnd.netlify.app/iframe.html?id=board--simple
   - 官方示例就是看板
+- https://github.com/alireza-askarpour/kanban-board-frontend /ts
+  - React Hook Form
+- https://github.com/moaazelsayed1/Koplin /js
+  - kanban application built using React, Nodejs, Express, and Postgres.
 
 - https://github.com/nishantpainter/personal-kanban /ts
   - https://personalkanban.js.org/
@@ -198,7 +229,7 @@ modified: 2023-02-07T17:38:05.336Z
   - 样式较简单
   - 只依赖 react-beautiful-dnd
   - Yet another Kanban/Trello board lib for React.
-- https://github.com/rcdexta/react-trello /1.5kStar/202012
+- https://github.com/rcdexta/react-trello /1.5kStar/js
   - https://rcdexta.com/react-trello/
   - Pluggable components to add a kanban board to your application
 - https://github.com/wekan/wekan
@@ -226,19 +257,41 @@ modified: 2023-02-07T17:38:05.336Z
   - https://notion-kanboard-mukul.netlify.app/
   - 暂不支持视图切换
 
-- https://github.com/BaldissaraMatheus/Tasks.md /MIT/js
-  - A self-hosted, file based task management board that supports Markdown syntax
-  - Write cards as Markdown files; 
-  - built with SolidJS and Koa. 
-  - It also uses Stacks-Editor for text editing and serve-static to serve the css files as-is.
-
 - https://github.com/shellyln/kanban-board-app /ts/redux/inactive
   - Kanban style task management board app
   - Synchronize multiple device boards with CouchDB remote server
 
-- https://github.com/JordanKnott/taskcafe /go/ts
-  - Manage tasks through a Kanban board interface (set due dates, labels, add checklists)
-  - Task comments and activity
+- https://github.com/DawidBugajski/kanban-task-management /ts/提交多/样式友好
+  - https://kanban-task-management-ecru.vercel.app/
+  - Advanced task management
+- https://github.com/Keith-Web3/Kanban-Task-Manager /ts/和上面几乎相同
+  - https://incredible-bavarois-17a54a.netlify.app/
+  - Kanban task management app with React, TypeScript, SCSS, Zustand, and customizable themes.
+  - Create, edit, and delete tasks
+  - Automatically save task updates using Zustand 
+- https://github.com/BUMBAIYA/kanban
+  - https://kannban-board.vercel.app/
+  - Kanban board made using Reactjs and tailwindcss to keep track of your tasks
+- https://github.com/raiane-oliveira/Kanban /js
+  - https://kanbandev.vercel.app/
+
+- https://github.com/distDev/Betsu /ts/redux/firebase
+  - an realtime agile planner and calendar web app made with React, Redux-Toolkit, Firebase, React Beautiful DND and Chakra UI. 
+  - It is heavily inspired by Trello.
+
+- https://github.com/waterrmalann/task-raft /ts
+  - A trello-like kanban board for team based task management.
+
+- https://github.com/sakihet/trellith /ts
+  - https://trellith.vercel.app/
+  - Tiny Trello clone PWA built with Preact and TypeScript, not storing data in cloud storage
+  - Data is only stored in your browser's localStorage
+  - Since data is stored in `localStorage`, the main thread gets blocked, and there is a `5MB` size limit.
+
+- https://github.com/ritik2358/Kanban-board /js
+  - https://kanban-board-ritik2358.vercel.app/
+  - Kanban board-inspired task management application
+  - 依赖MongoDB、express
 
 - https://github.com/kanboard/kanboard /php
   - Kanban project management software
@@ -257,9 +310,52 @@ modified: 2023-02-07T17:38:05.336Z
   - https://publish.obsidian.md/kanban/
   - Create markdown-backed Kanban boards in Obsidian.
 
+## kanban-fullstack
+
+- https://github.com/ApelsinU/KanbanBoard /ts
+  - Fetch, Custom hook for Http
+  - Zustand State Manager
+  - MongoDB
+
+- https://github.com/MukulSethi123/mini-jira /ts
+  - Kanban-style task management application like JIRA
+
+- https://github.com/drodzewicz/Work-Flow /ts
+  - web-based Kanban-style list making application used to manage work at personal or organizational level.
+  - Inspiration came from Github Projects and Trello
+  - built using technologies like React on frontend and and Express and mongodb on backend. 
+  - This application is also using websockets so that when working with a team all changes can be seen without refreshing the page.
+
+- https://github.com/KanRule/KanRule /前端js+后端ts
+  - https://kanrule.com/
+  - A simplified Jira clone built with React and Node
+
+- https://github.com/hironarita/kanban-lite /ts
+  - Simplified version of Trello built with React
+  - https://github.com/hironarita/kanban-lite-backend /js
+
+- https://github.com/kanban-org/kanban-board /js
+  - https://www.kanban.live/
+  - full-stack Kanban task management app
+  - 依赖Sequelize
+
+- https://github.com/DishaGup/kanban-board /js
+  - Kanban Board web application designed to enhance task management
+
+- https://github.com/getlost01/Intelli-Kanban /ts
+  - https://intelli-kanban-tec.vercel.app/
+  - Frontend of AI based Kanban enhancement tool named Intelli-Kanban
+  - Integration of Chat-GPT API for comprehensive task descriptions/breakdown
+  - 依赖mui、Redux、nextjs、mongodb
+  - https://github.com/getlost01/intelli-kanban-backend /js
+
+- https://github.com/onoseremejohn/kanban-MERN-version /ts
+  - full-stack task manager app built with React TS, Node, Express, and MongoDB
+  - https://github.com/onoseremejohn/Kanban-Task-Manager
+
 ## realtime
 
-- https://github.com/plankanban/planka /AGPLv3/js
+- https://github.com/plankanban/planka /AGPLv3/202309/js/redux
   - https://plankanban.github.io/planka/
   - The realtime kanban board for workgroups built with React and Redux.
   - React, Redux, Redux-Saga, Redux-ORM, Semantic UI React, react-beautiful-dnd
@@ -267,7 +363,10 @@ modified: 2023-02-07T17:38:05.336Z
   - Sails.js, Knex.js
   - PostgreSQL
 
-## trello/kanban-api
+- https://github.com/RARgames/4gaBoards /js
+  - realtime kanban boards for groups
+
+## api-trello/kanban
 
 - https://github.com/MrRefactoring/trello.js
   - JavaScript/TypeScript library for Node. JS and browsers to easily interact with Atlassian Trello API
@@ -287,6 +386,40 @@ modified: 2023-02-07T17:38:05.336Z
 
 - https://github.com/kvandake/lexorank-ts
   - A reference implementation of a list ordering system like JIRA's Lexorank algorithm
+
+- https://github.com/alejo-ortega/kanban-api-typescript /ts
+  - KanBan Project Management REST API made with Node.js, Express.js, TypeScript, zod, prisma and SQLite
+
+## more-kanban
+
+- https://github.com/discourse/discourse-kanban-theme /js
+  - https://meta.discourse.org/t/kanban-board/118164
+  - A Discourse theme component providing basic kanban-board functionality
+  - allows you to display and organise topics using a kanban board interface.
+
+- https://github.com/leif81/bzkanban /js
+  - allows you to visualize bugs from a Bugzilla server on a Kanban board.
+  - The goal is to compliment the Bugzilla workflow you are already using. 
+  - implemented as a client side SPA using Ajax with the Bugzilla 5 server REST API. 
+  - your Bugzilla server database is the single source of truth, the bzkanban app is just a view of your Bugzilla database.
+
+- https://github.com/LexMachinaInc/quadro /js
+  - kanban board for Github issues
+
+- https://github.com/mrinalxdev/KanToday /ts
+  - kanban web app to note down all your daily activates
+
+- https://github.com/loydcose/tusk
+  - https://tusk-kanban.vercel.app/
+  - minimalist project manager inspired by Trello, designed to help you organize your tasks efficiently.
+
+- https://github.com/mux-mux/kanban /js
+  - localStorage & webpack
+
+- https://github.com/d3ward/b2ntp /js
+  - https://b2ntp.vercel.app/
+  - Kanban style New Tab Page extension with your bookmarks and powerful search
+  - support chrome/firefox
 # browser/thunderbird-inspired
 - products
   - [Rambox | Workspace Simplifier to Boost your Productivity](https://rambox.app/)
@@ -332,10 +465,22 @@ modified: 2023-02-07T17:38:05.336Z
   - Imdone is text based kanban processor with a simple syntax that uses comment tags like TODO and FIXME and todo.txt format. 
   - This model allows the user to create and modify tasks using the keyboard and automatically establishes a link between their tasks and work.
 
+- https://github.com/BaldissaraMatheus/Tasks.md /MIT/js
+  - A self-hosted, file based task management board that supports Markdown syntax
+  - Write cards as Markdown files; 
+  - built with SolidJS and Koa. 
+  - It also uses Stacks-Editor for text editing and serve-static to serve the css files as-is.
+
 - https://github.com/todomd/todo.md
   - The TODO.md format is based on GFM - GitHub Flavored Markdown - Task Lists.
   - Tasks in TODO.md can be visualized using Kanban Board where sections become columns on the board.
 # more
+- https://github.com/avisek-official/simple-notes /ts
+  - https://next-simple-notes.vercel.app/
+  - Simple Apps, your all-in-one productivity companion that consists of two micro apps
+  - a powerful note-taking tool, a versatile kanban board application and an AI based knowledge test tool.
+  - 依赖nextjs、mongodb、chartjs
+
 - https://github.com/kndwin/solaces
   - Linear clone with different reactive local database POC's
 
