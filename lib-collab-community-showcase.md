@@ -21,7 +21,7 @@ modified: 2023-05-21T15:46:35.896Z
   - It's probably possible via a clever change of representation but if you have the option of a server authority, take it and save yourself the PhD work and keep the intuitive representation.
 - Yeah, 100% I do think CRDTs are in a hype cycle and the enthusiasts will eventually have to reconsider that they are not a good choice for vanilla app development. They have unique strengths but huge drawbacks too so the problem has be matched for CRDTs to be the answer
 
-- ## Announcing Reflect✨ – high-performance sync for the multiplayer web
+- ## ✨ Announcing Reflect – high-performance sync for the multiplayer web_202305
 - https://twitter.com/aboodman/status/1658251815929126913
   - This is the next step for @replicache and something we’ve been working on and dreaming of for some time.
 

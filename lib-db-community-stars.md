@@ -23,6 +23,18 @@ modified: 2021-08-30T15:51:28.094Z
 - It makes the code easier as well because you can generate IDs on the client.
   - Exactly! this also makes the system as a whole more scalable. This is not something you need early on, but changing PKs later is super hard and starting with UUIDs is not.
 
+# discuss-db-log
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+
+
 # discuss-db-streaming
 - ## 
 

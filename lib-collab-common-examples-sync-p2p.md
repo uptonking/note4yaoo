@@ -149,10 +149,22 @@ modified: 2023-01-17T19:13:01.845Z
 
 - https://github.com/ssbc/secret-stack /js
   - create secure peer to peer networks using secret-handshakes.
-  - This provides a framework to make building secure, decentralized systems easier. (such as ssb-server which this was refactored out of ; )
-  - https://github.com/ssbc/ssb-db /js
+  - This provides a framework to make building secure, decentralized systems easier. such as ssb-server which this was refactored out of
+  - https://github.com/ssbc/ssb-db2 /js
+    - a new database for secure-scuttlebutt, it is meant as a replacement for ssb-db
+    - Run in the browser via ssb-browser-core
+  - https://github.com/ssbc/ssb-db /js/flumedb团队
     - ssb-db provides tools for dealing with unforgeable append-only message feeds.
     - secret-stack plugin which provides storing of valid secure-scuttlebutt messages in an append-only log.
+  - https://github.com/staltz/ppppp-db /js
+    - It's a secret-stack plugin much like ssb-db2. 
+    - Other than that, you can also use the feed format
+  - https://github.com/arj03/ssb-browser-core
+    - Run Secure Scuttlebutt (similar to ssb-server) in a browser
+    - SSB browser core is a full implementation of SSB running in the browser only (but not limited to, of course). 
+    - Your feed key is stored in the browser together with the log, indexes and smaller images. 
+    - Wasm is used for crypto and is around 90% the speed of the C implementation. 
+    - A WebSocket is used to connect to pubs or rooms
 # sync-json
 - https://github.com/zettant/realtime-object-sync
   - server and client libraries for realtime JSON object synchronization.

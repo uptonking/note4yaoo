@@ -73,3 +73,10 @@ modified: 2022-12-02T11:15:15.257Z
   - It saves the changes in order and syncs the changes. 
   - The data is a result of all changes applied in order. 
   - It is mentioned in PouchDB Conflicts guide.
+# discuss-couchdb
+- ## 
+
+- ## 
+
+- ## [What is the difference between CouchDB and Couchbase? - Stack Overflow](https://stackoverflow.com/questions/5578608/what-is-the-difference-between-couchdb-and-couchbase)
+- [Couchbase vs CouchDB NoSQL Systems: Difference Between Them](https://www.couchbase.com/comparing-couchbase-vs-couchdb/)

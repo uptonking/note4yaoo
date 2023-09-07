@@ -54,3 +54,13 @@ modified: 2020-12-22T12:42:14.745Z
   - http://app-outlet.github.io/
   - App Outlet is a Universal application store.
   -  It currently supports AppImages, Flatpaks and Snaps packages.
+
+- https://github.com/pacstall/pacstall
+  - https://pacstall.dev/
+  - An AUR-inspired package manager for Ubuntu
+
+- https://github.com/fsquillace/junest
+  - The lightweight Arch Linux based distro that runs, without root privileges, on top of any other Linux distro.
+  - JuNest is a lightweight Arch Linux based distribution that allows the creation of disposable and partially isolated GNU/Linux environments within any generic GNU/Linux host OS and without requiring root privileges to install packages.
+  - JuNest is built around pacman, the Arch Linux package manager, which allows access to a wide range of packages from the Arch Linux repositories.
+  - Run on a different architecture from the host OS via QEMU.

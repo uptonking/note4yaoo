@@ -101,6 +101,12 @@ modified: 2023-02-05T18:50:32.900Z
   - https://github.com/astrosoftpro/sequelize-hierarchy-next
   - https://github.com/SecurityESys/sequelize-hierarchy
 
+- https://github.com/grantcarthew/node-mppg /js/inactive
+  - The Materialized Paths pattern is a simple method to store tree or hierarchical data into a flat data store. 
+  - It stores each tree node as a row in a table. 
+  - Each row stores the identifiers of the node’s ancestors or path as a string.
+  - The pattern also provides more flexibility in working with the path, such as finding nodes by partial paths.
+
 - https://github.com/sequelize/sequelize-sscce
   - Base repository for creating and sharing Sequelize SSCCEs
   - Short, Self Contained, Correct (Compilable), Example
@@ -172,8 +178,6 @@ modified: 2023-02-05T18:50:32.900Z
   - a Sequelize ORM code generator, which generates a full Node.js TypeScript project, entirely in the browser
   - Use the schema editor to design your database tables, fields and associations, then preview the Sequelize models and migrations in the code viewer before downloading the project as a zip file or copying code from individual files.
   - Sequelize UI currently only generates TypeScript Sequelize code, not js
-
-
 
 - https://github.com/andyforever/sequelizer
   - A GUI Desktop App for export sequelize models from database automatically.
@@ -294,6 +298,11 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/westmark/sequelize-multi-tenant-enhancer /201702/js
   - A Proxy based enhancer function which enables schema based multi tenancy in Sequelize.
+# search
+- https://github.com/mujz/pg-search-sequelize /js/inactive
+  - Postgres full-text search in Node.js and Sequelize.
+  - https://github.com/mujz/pg-search-sequelize-example /js/inactive
+    - An example use case of pg-search-sequelize
 # cms
 - https://github.com/apstanisic/zmaj /ts
   - https://zmaj.vercel.app/

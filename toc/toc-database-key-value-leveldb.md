@@ -183,6 +183,32 @@ modified: 2022-11-03T04:14:00.563Z
 # level-utils
 - https://github.com/fergiemcdowall/pumbledb /201308/js
   - a Node.js key-value server that uses LevelDB
+# kv-based
+- https://github.com/earthstar-project/earthstar /LGPLv3/ts
+  - Storage for private, distributed, offline-first applications.
+  - Earthstar is an offline-first key-value database which supports author versions.
+  - This is a reference implementation written in Typescript. You can use it to add Earthstar functionality to applications running on servers, browsers, the command line, or anywhere else JavaScript can be run.
+  - can store arbitrary data, keyed by two pieces of information: a free-form `path` and a public `key` identifying the author. So a single path like /wiki/flowers may hold revisions by multiple authors.
+  - A share's data is stored on its users' devices using replicas.
+    - A replica is a concrete copy of the data in a share, stored on a user's device.
+    - When two replicas are configured to use the same share address, they can synchronise their data with each other
+  - Data stored in a replica are persisted as separate Documents.
+    - Documents describe and contain your share's data.
+    - Every document has a path like /my-story.txt.
+  - [Comparison to Kappa-db?](https://github.com/earthstar-project/earthstar/discussions/228)
+    - Kappa-db is a bundle of append-only logs (hypercores), one per author per device. It builds indexes by processing messages from the logs, in order, to build up a reduced state. The logs grow forever.
+    - Earthstar is a key-value database.You can hold any subset of the documents, sync them in any order, do partial sync, drop ones you don't want.
+    - Kappa-db uses hyperswarm to find peers and the hypercore protocol to sync data, with some custom stuff to handle multiple hypercores.
+    - Earthstar is not well developed here. It can connect to cloud peers over HTTP for syncing, in the style of SSB pubs. I'm planning to add hyperswarm also for direct p2p connections.
+    - Kappa-db relies on "logs that sync" as the underlying abstraction. 
+    - Earthstar relies on a specification for "signed versioned documents".
+
+- https://github.com/digidem/unordered-materialized-kv /js/inactive
+  - materialized view key/id store based on unordered log messages
+  - This library presents a familiar key/value materialized view for append-only log data which can be inserted in any order. 
+  - This library implements a multi-register conflict strategy, so each key may map to more than one value. To merge multiple values into a single value, point at more than one ancestor id.
+  - This library is useful for **kappa architectures** with missing or out of order log entries, or where calculating a topological ordering would be expensive
+  - This library does not store values itself, only the IDs to look up values. This way you can use an append-only log to store your primary values without duplicating data.
 # more-key-value
 - https://github.com/pgte/alfred /201109/js
   - Alfred is a fast in-process key-value store for node.js.

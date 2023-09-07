@@ -11,6 +11,20 @@ modified: 2022-12-19T01:48:01.974Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Today I learned that node's EventEmitter suffers from an issue called "producer interference".
+- https://twitter.com/BenLesh/status/1699477675054707149
+  - That's where an error thrown by a synchronous consumer (whomever called `on` ) prevents the producer (the `EventEmitter` ) from notifying subsequent other consumers.
+  - This is something we had to change about Observable/Subject in RxJS 6 because of discussion about it in the original TC39 proposal and issues we saw it cause in production apps.
+  - `EventTarget` (which is on the browser and node) does NOT suffer from this issue.
+
+- I'm pretty sure this is the biggest source of issues in ldapjs. The nature of LDAP makes using an EventEmitter interface the natural fit, but handling protocol vs connection errors gets very ugly. I haven't determined how I'm going to remove EM yet, but I want to
+
+- I discovered a while ago and rolled my own simple event emitter.
+
 - ## Trying Node.js test runner: Gleb Bakhmutov examines capabilities of new built-in test runner that became stable from Node.js v20
 - https://twitter.com/forweb_en/status/1646587007399854081
 

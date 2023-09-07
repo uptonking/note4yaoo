@@ -22,11 +22,33 @@ modified: 2023-09-01T10:13:59.044Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## [Granular merging of nested objects](https://github.com/automerge/automerge/issues/549)
 - What you have run into here is what we have been referring to as the "initial data problem". The problem is that individual objects within automerge have their own identity
   - 👉🏻 The solution to this problem for now is to create a skeleton document which contains the top level keys you know you need and ship it with your app.
 
 - ## [Speed Comparisons Between Automerge Implementations](https://github.com/automerge/automerge/issues/41)
+
+- ## We run automerge over hypercore + hyperswarm and call it hypermerge. Works reasonably well.
+- https://twitter.com/pvh/status/1246144720474005505
+
+- ## I'm exploring ways to put docs synced by hypermerge into a query layer to give "realtime" updates of views into my data.  (give me all the docs that contain these words/tags)
+- https://twitter.com/pvh/status/1259375354952572928
+  - Are there technologies you recommend checking out?
+- streaming queries/subscriptions are definitely what you're talking about. this was a key painpoint in building pushpin, since things like FTS were crazy slow for the lack of it. 
+  - @conradirwin pointed me to baobab as an inspiration but i haven't tried it.
+- the way path here is uncharted (welcome to the frontier) but i suspect GIN + subscriptions + "derived documents/materialized views" are probably all elements of the path forward
+  - also, if you haven't already seen it, there's a ton of interesting documentation about how the Postgres internals work for GIN which might help guide a design, though you may also want to look at things like tf-idf to improve relevance.
+
+- ## We explored some of this in hypermerge, but it's tricky to do on hypercore, or was at the time.
+- https://twitter.com/pvh/status/1544890917668106240
+  - The hard parts, roughly, were deciding what the names should be and keeping track of all the network connections and file handles. 
+  - We used a private set intersection algorithm for deciding the list of mutual feeds to synchronize.
 
 - ## hypermerge used to provide a p2p gateway for automerge but was forsaken because it uses an outdated automerge version
 - https://automerge.slack.com/archives/C61RJCM9S/p1687580301244489

@@ -60,6 +60,24 @@ modified: 2021-01-04T16:00:05.478Z
   - matrix
   - rocketchat
 
+- popular operating system for developers /2023
+  - win, 59.7%
+  - mac, 32.6%
+  - wsl, 16.9%
+  - ubuntu, 27.3%
+  - debian, 8.4%
+  - arch, 8.1%
+  - fedora, 4.4%
+  - chromeos, 1.9%
+  - android, 17.6%
+  - ios, 11.7%
+
+- popular operating system for developers /2022
+  - win, 62.3%
+  - mac, 31.1%
+  - wsl, 15%
+  - linux, 40.2%
+
 ## [2022](https://survey.stackoverflow.co/2022/)
 
 - In May 2022 over 70, 000 developers told us how they learn and level up

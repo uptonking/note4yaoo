@@ -27,6 +27,17 @@ modified: 2023-06-22T07:22:04.591Z
   - A Universal linux app store
   - It currently supports AppImages, Flatpaks and Snaps packages.
 
+## 星火商店
+
+- 为何热衷于搞发行版的多，搞应用程序开发的少？
+  - Linux最多余的就是各种发行版，最缺的就是应用程序，特别是行业应用程序。
+  - [星火提供的 Wine QQ、微信 也是经过优化的（主要打包者也是用 ubuntu 的）](https://www.zhihu.com/question/534029323/answer/2705133986)
+
+- [mobile web Spark Store](https://d.store.deepinos.org.cn/store/#/)
+
+- [商店希望尽快引入星火应用商店&Xdroid -](https://forum.openkylin.top/forum.php?mod=viewthread&tid=197106&extra=page%3D1)
+  - 这个“星火商店”上的软件很多都存在法律上的风险， 例如上面的linux原生版微信就是使用定制版微信进魔改后重新打包的产物（使用后有用户收到官方的登录异常警告），还有一些软件是使用软件官方原版拆包再重新打包，一些软件是发行方禁止外泄的内测版，一些wine版的软件是使用版权不明的wine版本，还存在一些wine游戏等是未经版权方同意的破解版，这些已经是侵权行为。星火商店目前都是以不盈利为目的并不代表上面的软件是没有问题。
+
 ## flatpak
 
 - [Graphical front-end to manage apps](https://github.com/flatpak/flatpak/issues/859)
@@ -77,15 +88,12 @@ modified: 2023-06-22T07:22:04.591Z
 - https://github.com/marticliment/WingetUI /python
   - https://www.marticliment.com/wingetui/
   - The main goal of this project is to create an intuitive GUI for the most common CLI package managers for Windows 10 and Windows 11, such as Winget, Scoop, Chocolatey, Pip and Npm
-
 # app-store-more
-
 - [Umbrel App Store](https://apps.umbrel.com/)
   - Browse the ever-growing selection of self-hosted apps on umbrelOS
   - [Umbrel — The ultimate home server and OS for self-hosting](https://umbrel.com/)
   - Use umbrelOS from your browser.
   - Run umbrelOS on Ubuntu or Debian on any hardware (or a VM on Mac or Windows) 
-
 # discuss
 - ## 
 

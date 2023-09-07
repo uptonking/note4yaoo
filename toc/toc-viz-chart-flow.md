@@ -217,6 +217,13 @@ modified: 2020-10-22T10:22:55.878Z
 - https://github.com/dagrejs/dagre /201801/js/deprecated
   - Directed graph layout for JavaScript
   - This project does not have a maintainer or active project members
+
+- https://github.com/jacomyal/sigma.js /ts
+  - https://www.sigmajs.org/
+  - JavaScript library aimed at visualizing graphs of thousands of nodes and edges
+  - Since version v2,  `sigma.js` focuses on the management of graph display: rendering, interaction... 
+  - The graph model is managed in a separate library called `graphology`.
+  - Sigma.js uses WebGL to render graphs. It is also possible to customize rendering, but it is harder than it would be with SVG or Canvas based solutions.
 # dataflow
 - jerosoler/Drawflow /3.2kStar/MIT/202206/js/inactive
   - https://github.com/jerosoler/Drawflow

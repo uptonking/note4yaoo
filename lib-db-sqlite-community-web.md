@@ -206,13 +206,13 @@ modified: 2022-11-25T09:47:43.079Z
   - Secondly I want to modify my Grid Plug-in so it accesses this offline SQLite storage instead of the Oracle DB. Changes are written back to SQLite and later synced by the first plugin.
   - Now we have a offline Grid editing experience by only adding 2 Plug-ins.
 - SQLite is cool for this because it is fast with lots of data and I can „mirror“ my source table and add indexes and constraints.
-  - Other browser storage options are either nosql, slow or just weird (IndexedDB 😅).
+  - Other browser storage options are either nosql, slow or just weird (IndexedDB).
 
 - ## [SQLite in the browser with WASM/JS_202210](https://news.ycombinator.com/item?id=33374402)
 - You may have seen “Absurd SQL” which was a proof of concept for building a SQLite Virtual FS backend using IndexedDB. It provided full ACID compliment transactions. Incredible work but a hack at best.
   - The OPFS supersedes all that and makes it possible to have proper consistent and resilient transactions.
 
-- ## A long, tragic history of SQLite, the web, and my career.
+- ## 👉🏻 A long, tragic history of SQLite, the web, and my career.
 - https://twitter.com/aboodman/status/1633351945464475648
   - 2020: Chrome implements cache partioning, killing the ability to share large wasm objects like SQLite across web pages.
   - So what's the takeaway? I guess for me some concrete ones are:

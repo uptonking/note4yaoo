@@ -152,7 +152,7 @@ modified: 2022-10-05T04:57:38.647Z
   - 提供了多个主题切换
 - https://github.com/mixu/markdown-styles
   - Markdown to static HTML generator and multiple CSS themes for Markdown
-# reader/book/documentation layout/component/interface/ui/page
+# reader/book/documentation layout/ui
 - https://github.com/evnbr/bindery
   - https://evanbrooks.info/bindery/docs/
   - 提供了多种视图，打印预览、grid多页、flip翻页
@@ -167,14 +167,23 @@ modified: 2022-10-05T04:57:38.647Z
 
 - https://github.com/readium/ts-toolkit /ts
   - 💡 Implements the Readium Architecture for Web Apps
+  - https://github.com/readium/architecture
+    - Documents the architecture of the Readium project
+    - All Readium implementations (mobile, desktop or Web) are split in two main modules, which use the Readium Web Publication Manifest to communicate together.
+    - On the Web, the Publication Server is responsible for serving a Readium Web Publication Manifest and the resources of a publication over HTTPS.
+    - In native apps, the Streamer is responsible for parsing packaged publications and exposing them using an in-memory model.
+  - https://github.com/readium/webpub-manifest
+    - a JSON-based document meant to represent and distribute publications over HTTPS.
+    - It is the primary exchange format used in the Readium Architecture and serves as the main building block for OPDS 2.0.
+  - https://github.com/readium/readium-css /202005/css/inactive
+    - https://readium.org/readium-css/docs/
+    - stylesheets for EPUB Reading Systems, starting with Readium 2.
+
 - https://github.com/edrlab/thorium-reader /ts
   - A cross platform desktop reading app, based on the Readium Desktop toolkit
 - https://github.com/troyeguo/koodo-reader /ts
   - A modern ebook manager and reader with sync and backup capacities for Windows, macOS, Linux and Web
 
-- https://github.com/readium/readium-css
-  - https://readium.org/readium-css/docs/
-  - stylesheets for EPUB Reading Systems, starting with Readium 2.
 - https://github.com/robinsloan/perfect-edition
   - https://robinsloan.github.io/perfect-edition/build/web/index.html
   - responsive web e-book template

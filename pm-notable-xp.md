@@ -23,10 +23,12 @@ modified: 2021-06-02T18:24:28.052Z
     - 因为文章内容较长时，对于随页面滚动的toc会滚动到页面顶部然后消失
 - themeable markdown editor and viewer  
   - optimized table editor and viewer 
+
 - don't
   - inline preview: 边书写边预览，会隐藏实际文本，只预览部分内联元素
   - video/audio 
   - paste html into md
+
 - format
   - 一级标题的相互替换，如 `## 标题名` 与 `标题名 ---`
   - 当逗号后紧跟`符号时，每次格式化都会加一个空格
@@ -82,22 +84,6 @@ modified: 2021-06-02T18:24:28.052Z
     - 可能不符合阅读习惯，比如word中顶部一级标题常用最大号，此处渲染可用代码修改
 - table
   - 对于数据对比类的表格，要注明制表日期，方便更新和维护
-# conpetitive-alternatives
-- notion
-
-- [我来](https://www.wolai.com/)
-- [从Notion到wolai，这些中文细节优化真是让人心动](https://zhuanlan.zhihu.com/p/346197555)
-  - 中文排版优化
-    - 会自动在中英文内容插入间隔，插入的间隔并非实际空格，只是样式上的限定
-    - 一旦将文字复制或者导出为本地文件，却是没有空格的。
-  - 直接粘贴markdown图片格式或者粘贴markdown全部图文，图片都会自动加载
-  - wolai的编辑体验最让我印象深刻的是对全角字符的兼容
-    - 无论是Notion的快捷输入还是markdown格式，一般都是需要在英文输入状态下支持，因此导致在中文输入中需要频繁切换输入法，
-    - 但在wolai中则省事多了，如1。也可以识别为有序列表
-  - 对拼音的支持非常好，如[/img], [/tupian], [/tp]
-  - 支持右侧显示悬浮目录，在窄屏会显示小黑条
-  - 多媒体内容与国内服务商结合紧密，特别是视频、地图
-  - 表头提供了免费授权的背景图
 # requirements
 - io模块
 - 编辑模块
@@ -126,10 +112,7 @@ modified: 2021-06-02T18:24:28.052Z
 - discuss
   - markdown顶部元数据采用注释形式，而不是多级键值对
   - 添加快捷键：复制文字的链接url
-# experimental
-- [interactive notebooks](https://nteract.io/)
-  - We build SDKs, applications, and libraries that help you and your team make the most of interactive (particularly Jupyter) notebooks and REPL.
-# notable-community
+# discuss-notable
 - ## At the moment I'm leaning toward a sort of hybrid approach:
 - https://discord.com/channels/715934079559663646/720653307747500092/969614509037744258
 1. 使用本地数据库抹平不同操作系统文件读写操作的差异。The app would work with a single-file database and most of its codebase would only know about that, all the differences between Windows and Linux/Mac filesystems would be abstracted away, all the ugliness of the filesystem for most of the codebase would be just a sad memory.
@@ -199,21 +182,21 @@ modified: 2021-06-02T18:24:28.052Z
 
 ## notable-xp-dev-to
 
-- [ ] fix: lgt symbol not rendered properly, e.g. `Pick<Props, "name">`
+- [ ] fix: lgt symbol not rendered properly, e.g. `Pick<Props, "name">`.
 - [ ] fix: note file name shouldn't change when cut the most front text
 - [ ] search: hightlight search results on current page
 - [ ] toc: 一级toc目录点击后会切换页面，但toc能保持原位，而不是回到第一项
 - [ ] edit: edit at where you click  
 - [ ] edit: collapse current node  
 - [ ] edit: insert one blank line below  
-- [ ] edit-character: special character support, like `「Microsoft Store」`
+- [ ] edit-character: special character support, like `「Microsoft Store」`.
   - https://copychar.cc/symbols/
 - [ ] edit-emoji: emoji with different theme, 素描线划风格的表情字符
 - [ ] edit-list: list symbol to number
 - [ ] edit-list: toggle lines to list
   - 直接添加`- `将多行文字里的每行转换成列表中的一项，甚至可以添加`- [ ]`转换成待办事项列表
 - [ ] edit: 粘贴后，批量删除中文段落中部分英文单词两边的空格
-- [ ] edit: write x to checkbox without deleting following whitespace `- [ ]`
+- [ ] edit: write x to checkbox without deleting following whitespace `- [ ]`.
 - [ ] keyboard: alt+arrow, move current line up/down
 - [ ] file: 第一次直接使用第一行文字作为标题，之后需要在中间栏修改标题，不能直接在文件中修改标题
 

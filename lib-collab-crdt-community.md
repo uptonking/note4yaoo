@@ -16,7 +16,7 @@ modified: 2022-04-05T13:25:40.892Z
 - https://twitter.com/JungleSilicon/status/1673146654818725889
   - Which programming concepts would be best represented by tree's, lists, ranges, etc? Is plain text a poor binding between what we write and the AST, would some kind of rich-text format for code be more effective?
 
-- ## 💡 What is being measured here are *client* ops / sec. 
+- ## 💡 What is being measured here are *client* ops/sec. 
 - https://twitter.com/Horusiath/status/1660705223818596358
   - These are strictly correlated with actions of individual users.
   - What gets replicated are deltas, which are not discussed in the post
@@ -33,23 +33,10 @@ modified: 2022-04-05T13:25:40.892Z
   3. Great devex
 - @liveblocks , @replicache , and @FluidFramework all do multiplayer. @drifts_in_space does "session-lived backends" for these apps. All are compelling, and I'm sure I'm missing many.
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
 - ## [Real Differences Between OT and CRDT for Co-Editors | Hacker News](https://news.ycombinator.com/item?id=18191867)
 - On page 30 par 2 you conclude that OT has time complexity O(1) while CRDT is O(C) or so... I guess, you compare a rope-based OT implementation and a naive CRDT implementation (like, one doing a full rewrite on each key press). At least, that is my best guess.
   - Why don't you compare them the other way around? Rope-based CRDT and a naive OT? String splicing is O(N), you may put it on either side of the scales. Hashtable-hosted Causal Tree is O(1); hashtable-hosted RGA is basically the same.
   - I find the general discourse of the article not so useful. I may guess, you overreacted to certain marketing messages coming from the CRDT community.
-
-- 
-- 
-- 
 
 - ## If you store a CRDT as a BLOB in a SQLite column, you can do efficient partial reads or incremental writes instead of reading/writing the whole thing via UPDATE 
 - https://twitter.com/jitl/status/1530308079237070848

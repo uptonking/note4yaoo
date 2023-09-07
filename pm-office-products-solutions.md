@@ -63,17 +63,6 @@ modified: 2021-07-11T08:31:00.660Z
   - 国外主流：GSuite, MSOffice
   - 周边产品：Canva、Gravit、Framer
 
-- who is using #ProseMirror
-  - new york times
-  - guardian
-
-- who is using #Slate
-  - taskade
-
-- who is using #Quill
-  - vaadin rich-text-editor is built with Quill
-    - https://vaadin.com/docs/latest/components/rich-text-editor
-
 - [效率软件综合测评 知乎专栏](https://www.zhihu.com/column/c_1486707752840425473)
 # editor-meeting-psp-block-editor-20220704
 - 编辑器的模型包括renderTree和blockTree
@@ -122,6 +111,24 @@ modified: 2021-07-11T08:31:00.660Z
   - The hub for visual collaboration
 
 ## Notion竞品分析
+
+- [我来](https://www.wolai.com/)
+
+- [从Notion到wolai，这些中文细节优化真是让人心动](https://zhuanlan.zhihu.com/p/346197555)
+  - 中文排版优化
+    - 会自动在中英文内容插入间隔，插入的间隔并非实际空格，只是样式上的限定
+    - 一旦将文字复制或者导出为本地文件，却是没有空格的。
+  - 直接粘贴markdown图片格式或者粘贴markdown全部图文，图片都会自动加载
+  - wolai的编辑体验最让我印象深刻的是对全角字符的兼容
+    - 无论是Notion的快捷输入还是markdown格式，一般都是需要在英文输入状态下支持，因此导致在中文输入中需要频繁切换输入法，
+    - 但在wolai中则省事多了，如1。也可以识别为有序列表
+  - 对拼音的支持非常好，如[/img], [/tupian], [/tp]
+  - 支持右侧显示悬浮目录，在窄屏会显示小黑条
+  - 多媒体内容与国内服务商结合紧密，特别是视频、地图
+  - 表头提供了免费授权的背景图
+
+- [interactive notebooks](https://nteract.io/)
+  - We build SDKs, applications, and libraries that help you and your team make the most of interactive (particularly Jupyter) notebooks and REPL.
 
 - [Top 12 Notion Alternatives 2022 (Free & Paid Competitors)](https://clickup.com/blog/notion-alternatives/)
   - 点评了最新的notion竞品，总结了features和pros
@@ -223,7 +230,7 @@ modified: 2021-07-11T08:31:00.660Z
 3. Google Sheets makes collaboration simple
 4. Easily view and revert back to previous versions of Sheets spreadsheets
 5. Google Sheets seamlessly integrates with AppSheet
-# new-office-products
+# latest-office-products
 - [黑客说，类twitter/知乎的社交与内容平台](https://hackertalk.net/)
 # office-online-products
 - 选型参考

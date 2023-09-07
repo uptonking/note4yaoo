@@ -109,4 +109,9 @@ modified: 2023-02-05T18:50:53.563Z
 
 - https://github.com/victorteokw/seedgoose
   - Mongoose data seeding with smart id references tracking.
+
+- https://github.com/janez89/mongoose-materialized /js/inactive
+  - A mongoose plugin for the materialized paths.
+- https://github.com/ilinieja/node-mongoose-materialized-views-example /ts
+  - [How to create and manage Mongo DB Materialized Views using triggers.](https://bonigopalan.medium.com/how-to-create-and-manage-mongo-db-materialized-views-using-triggers-a2fb58a4d1a0)
 # more

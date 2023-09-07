@@ -28,6 +28,14 @@ modified: 2023-08-23T17:15:46.484Z
   - Performant. Uses a simple flat file structure to maximize I/O performance.
   - Secure. Uses signed merkle trees to verify log integrity in real time.
   - Version 10 is not compatible with earlier versions (9 and earlier), but is considered LTS
+  - [Proposal integrate Query able append only log](https://github.com/holepunchto/hypercore/issues/312)
+    - this data structure is called fleece, allows you to exchange less data and keep it query able while streaming 
+    - it's the core of couchbase the fastest most complet database implementation that exists by the way using a lot of nice stuff. 
+  - [Add custom storage](https://github.com/holepunchto/hypercore/pull/294)
+    - This is a proof-of-concept to see whether Hypercore could support alternative storage to random-access-storage.
+    - In 10, we have intermediaries for everything (ie a BlockStore stores the blocks), so can be abstracted easily now, if RAF is too low level for the usecase.
+  - https://github.com/gmaclennan/hypercore-storage-level
+    - Levelup storage for Hypercore
 
 - https://github.com/datrs/hypercore-protocol-rs /rust
   - https://github.com/datrs/hypercore /rust
@@ -163,8 +171,9 @@ modified: 2023-08-23T17:15:46.484Z
   - inspired by https://github.com/flumedb/flumeview-level
 
 - https://github.com/ssbc/ssb-server /js
+  - https://ssbc.github.io/ssb-server/
   - ssb-server is an open source peer-to-peer log store used as a database, identity provider, and messaging system. 
-  - ssb-server behaves just like a Kappa Architecture DB. 
+  - ssb-server **behaves just like a Kappa Architecture DB**. 
   - ssb-servers comprise(包含；构成) a global gossip-protocol mesh without any host dependencies.
 
 - https://github.com/okdistribute/peerfs /js
@@ -197,9 +206,42 @@ modified: 2023-08-23T17:15:46.484Z
 
 ## append-only-log
 
-- https://github.com/ssbc/ssb-db /202209/js/flumedb团队/inactive
-  - ssb-db provides tools for dealing with unforgeable append-only message feeds.
-  - secret-stack plugin which provides storing of valid secure-scuttlebutt messages in an append-only log.
+- https://github.com/ssbc/async-append-only-log /js
+  - A new append-only-log for SSB purposes
+  - This module is heavily inspired by flumelog-aligned-offset. It is an attempt to implement the same concept but in a simpler fashion
+  - A log consists of a number of blocks, that contain a number of records. A record is simply it's length, as a 16-bit unsigned integer, followed by the data bytes. 
+  - This module is not compatible with flume without a wrapper around stream as it uses the same terminology as JITDB and ssb-db2 of using offset for the byte position of a record instead of seq.
+- https://github.com/ssbc/jitdb /js
+  - A database on top of async-append-only-log with automatic index generation and maintenance.
+  - Async append only log takes care of persistance of the main log. It is expected to use bipf to encode data.
+  - JITDB lazily creates and maintains indexes based on the way the data is queried.
+    - JITDB lazily creates and maintains indexes based on the way the data is queried.
+    - Specific indexes will only updated when it is queried again. These indexes are tiny compared to normal flume indexes.
+  - For this to be feasible it must be really fast to do a full log scan. 
+    - It turns out that the combination of push streams and bipf makes streaming the full log not much slower than reading the file.
+
+- https://github.com/ssbc/ssb-db2 /js
+  - a new database for secure-scuttlebutt, it is meant as a replacement for ssb-db
+  - Run in the browser via ssb-browser-core
+  - https://github.com/ssbc/ssb-db /js/flumedb团队
+    - ssb-db provides tools for dealing with unforgeable append-only message feeds.
+    - secret-stack plugin which provides storing of valid secure-scuttlebutt messages in an append-only log.
+  - https://github.com/staltz/ppppp-db /js
+    - It's a secret-stack plugin much like ssb-db2. 
+    - Other than that, you can also use the feed format
+  - https://github.com/arj03/ssb-browser-core
+    - Run Secure Scuttlebutt (similar to ssb-server) in a browser
+    - SSB browser core is a full implementation of SSB running in the browser only (but not limited to, of course). 
+    - Your feed key is stored in the browser together with the log, indexes and smaller images. 
+    - Wasm is used for crypto and is around 90% the speed of the C implementation. 
+    - A WebSocket is used to connect to pubs or rooms
+
+- https://github.com/digidem/unordered-materialized-kv /js/inactive
+  - materialized view key/id store based on unordered log messages
+  - This library presents a familiar key/value materialized view for append-only log data which can be inserted in any order. 
+  - This library implements a multi-register conflict strategy, so each key may map to more than one value. To merge multiple values into a single value, point at more than one ancestor id.
+  - This library is useful for kappa architectures with missing or out of order log entries, or where calculating a topological ordering would be expensive
+  - This library does not store values itself, only the IDs to look up values. This way you can use an append-only log to store your primary values without duplicating data.
 
 - https://github.com/flumedb/flumedb /MIT/202006/js/inactive
   - A modular database made for moving logs with streams.

@@ -220,7 +220,7 @@ modified: 2021-09-04T14:03:39.046Z
 - https://github.com/YousefED/Matrix-CRDT
   - Use Matrix as a backend for local-first applications with the Matrix-CRDT Yjs provider.
 
-- https://github.com/rocicorp/replicache
+- https://github.com/rocicorp/replicache /NonOpen
   - Realtime Sync for Any Backend Stack
 # exploring
 - https://github.com/drifting-in-space/plane /202212/rust

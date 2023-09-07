@@ -64,6 +64,15 @@ modified: 2022-04-05T10:09:51.343Z
   - You're thinking of https://croquet.io/
 - AssemblyScript, for mutations, might make the wasm container route bearable.
 
+- ## @replicache does give you local-first state, but you provide the backend
+- https://twitter.com/aboodman/status/1637192004441612288
+  - Convex has the “you program via client side js and it’s reactive” like firebase, but it doesn’t “sync” in the sense of having local-first; offline accessible state afaik. 
+  - Supabase same but with sql-based db
+- Replicache works with anything w/ serializable transactions but the server-side reactive functions, builtin logical timestamps, and JS aspect of Convex should make it a tastes-great-together with Replicache
+- Convex doesn't e.g. store pending mutations past closing the browser tab. You could do this in userspace (and maybe Convex will add this) but approaching the problem holistically, Replicache does it right.
+
+- A terrific amount of work has been put into Replicache to do background sync + partial offline support Right
+
 - ## GPT-4 as a viable alternative to text CRDTs? 
 - https://twitter.com/geoffreylitt/status/1645961623289438208
 - Yes I think this is promising for async merges!

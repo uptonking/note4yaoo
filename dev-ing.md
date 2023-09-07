@@ -7,7 +7,7 @@ modified: 2022-05-24T17:53:08.400Z
 
 # dev-ing
 
-# dev-2023
+# guide
 - 分析核心需求和问题，拆分问题，梳理任务、子任务，排期开发
 
 金瑶 邀请您加入【金瑶的个人会议室】
@@ -35,11 +35,8 @@ https://meeting.tencent.com/p/9606972663
   - inline editing
   - orm integration
   - sortable-filterable-groupable-table
-- 产品日历组件
-  - headless-date-picker
-- module/fwk/server
-  - 灵活的tag/bookmark系统
-  - cms, tables, bi
+- 产品日历组件: headless-date-picker
+- module/fwk/server: 灵活的tag/bookmark系统, cms, tables, bi
 - 编辑器参考
   - atlassian-editor
     - https://atlaskit.atlassian.com/packages/editor/editor-core
@@ -77,6 +74,7 @@ $$('[contenteditable]')
 
 - deep into lib/fwk
   - src-code, issues, pr, forks, extensions/alternatives
+  - storage, sync, conflicts
 # dev-2023-方向+方法+时间
 - 👉🏻 output: 代码产出、产品落地、生态积累
 - slate-wangeditor
@@ -90,16 +88,19 @@ $$('[contenteditable]')
 - eg-tanstack-table-v8
   - [ ] 方便接入已有的外部数据源
   - [x] 内存数据: nedb, blinkdb
-  - [x] 流式数据: linvodb, tingodb
+  - [x] 流式数据: linvodb, tingodb; 可参考kappa架构
   - tuple-database 支持内存和持久化
   - tinybase 支持内存和持久化
+
 - cache/stream for web storage
   - 参考 tanstack-query, localforage
 
-- headless-architecture
-  - state + action: 参考autocomplete、search-ui
+- 🤔 支持切换内存和异步数据源的示例
+  - tanstack-table server-side row model
+  - abstract-level, localforage
+  - tupledb, tinybase
 
-- collab-sync
+- collab-sync, partial-sync
   - string-crdt: ? list-crdt
   - logux
     - sqlite-persistor
@@ -108,6 +109,7 @@ $$('[contenteditable]')
   - harika: hlc + sqlite + absurd-sql, no-merkle
   - jaredly/local-first: hlc + rga
   - evolu: hlc + merkle + worker
+  - automerge: hypermerge
   - remoteStorage: google-drive、网盘、七牛对象存储
   - pouchdb
   - 使用hlc: idbsidesync, verdant, harika
@@ -130,10 +132,8 @@ $$('[contenteditable]')
   - async/generator, stream, buffer, binary, scheduler, arrow
   - 样式片段也可在线尝试: codepen, w3schools.com 
 
-- 支持切换内存和持久化的示例
-  - tanstack-table server-side row model
-  - abstract-level, localforage
-  - tupledb
+- headless-architecture
+  - state + action: 参考autocomplete、search-ui
 
 - 若slate-model层采用扁平化Node
   - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath
@@ -188,13 +188,11 @@ $$('[contenteditable]')
   - 默认 last-write-win, 出现冲突时，提示用户选择版本
   - 离屏渲染, keep-alive
   - 分层渲染
-  - 腰包掉到床头版与墙的夹缝中了
 
 ## 09
 
 - not-yet
   - todo remove hashId在编辑器model中有什么作用
-  - 处理解冻card
   - 处理初试
   - 做完tailwind-table就面试
 
