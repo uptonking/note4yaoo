@@ -15,6 +15,13 @@ modified: 2021-08-30T15:51:28.094Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## Most databases were built when data was static and queries were dynamic. 
+- https://twitter.com/tantaman/status/1699826662408409383
+  - For applications, most queries are static and the data is dynamic
+- What you really want is a database where a query is the same things as an index, is the same thing as a subscription... These are all the same underlying mechanic.
+
 - ## Myth(神话，想像或虚构的人物): Using UUID as the primary key will slow down inserts. 
 - https://twitter.com/gwenshap/status/1686148804821811200
   - Fact: Not in Postgres.
@@ -24,7 +31,6 @@ modified: 2021-08-30T15:51:28.094Z
   - Exactly! this also makes the system as a whole more scalable. This is not something you need early on, but changing PKs later is super hard and starting with UUIDs is not.
 
 # discuss-db-log
-
 - ## 
 
 - ## 
@@ -32,9 +38,6 @@ modified: 2021-08-30T15:51:28.094Z
 - ## 
 
 - ## 
-
-
-
 # discuss-db-streaming
 - ## 
 

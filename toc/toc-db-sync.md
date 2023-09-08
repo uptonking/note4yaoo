@@ -27,18 +27,33 @@ modified: 2022-11-25T15:41:47.534Z
   - [rxdb alternatives](https://rxdb.info/alternatives.html)
   - [Automerge CRDT Sync Protocol](https://automerge.org/docs/how-it-works/sync/)
 
-- [RxDB replication protocol](https://rxdb.info/replication.html)
-  - 支持websocket、graphql、couchdb、p2p
-  - The RxDB replication protocol provides the ability to replicate the database state in realtime between the clients and the server.
-  - The backend server does not have to be a RxDB instance; you can build a replication with any infrastructure. For example you can replicate with a custom GraphQL endpoint or a http server on top of a PostgreSQL database.
-  - 👉🏻 RxDB resolves all conflicts on the client so it would call the conflict handler of the RxCollection and create a new document state D that can then be written to the master.
-  - The default conflict handler will always drop the fork/client state and use the master/server state.
-    - This ensures that clients that are offline for a very long time, do not accidentally overwrite other peoples changes when they go online again. 
-    - You can specify a custom conflict handler by setting the property `conflictHandler` when calling addCollection().
-  - It is not possible to do a multi-master replication, like with CouchDB. RxDB always assumes that the backend is the single source of truth.
-
 - [Comparison of Offline Sync Protocols and Implementations](https://offlinefirst.org/sync/)
   - couchdb/realm/firebase
+# blogs-sync
+
+## [RxDB replication protocol](https://rxdb.info/replication.html)
+
+- 支持websocket、graphql、couchdb、p2p
+- The RxDB replication protocol provides the ability to replicate the database state in realtime between the clients and the server.
+- The backend server does not have to be a RxDB instance; you can build a replication with any infrastructure. For example you can replicate with a custom GraphQL endpoint or a http server on top of a PostgreSQL database.
+- 👉🏻 RxDB resolves all conflicts on the client so it would call the conflict handler of the RxCollection and create a new document state D that can then be written to the master.
+- The default conflict handler will always drop the fork/client state and use the master/server state.
+  - This ensures that clients that are offline for a very long time, do not accidentally overwrite other peoples changes when they go online again. 
+  - You can specify a custom conflict handler by setting the property `conflictHandler` when calling addCollection().
+- It is not possible to do a multi-master replication, like with CouchDB. RxDB always assumes that the backend is the single source of truth.
+
+## [Different approaches to p2p data sync](https://status-im.github.io/bigbrother-specs/data_sync/p2p-data-sync-comparison.html)
+
+- https://github.com/status-im/bigbrother-specs/blob/master/data_sync/p2p-data-sync-comparison.md
+
+- Briar Bramble
+- Matrix
+- Secure Scuttlebutt (SSB) 
+# sync-protocols
+- https://code.briarproject.org/briar/briar-spec/-/tree/master
+  - [Bramble Synchronisation Protocol, version 0](https://code.briarproject.org/briar/briar-spec/-/blob/master/protocols/BSP.md)
+    - BSP is an application layer data synchronisation protocol suitable for delay-tolerant networks.
+  - [A Quick Overview of the Protocol Stack](https://code.briarproject.org/briar/briar/-/wikis/A-Quick-Overview-of-the-Protocol-Stack)
 # db-sync
 - synceddb-multi-backends /388Star/MIT/201803/js/indexeddb/支持多种后端存储
   - https://github.com/paldepind/synceddb
@@ -53,6 +68,9 @@ modified: 2022-11-25T15:41:47.534Z
     - the client provides elegant conflict handling and events for reacting to changes from the server.
   - Persistence options are provided based on the following currently supported databases:
     - In memory, MySQL, PostgreSQL, CouchDB
+  - [What makes synceddb a good offline-first database?](https://github.com/paldepind/synceddb/issues/47)
+    - One of the distinguishing features of SyncedDB is that it attempts to be a very lightweight wrapper around IndexedDB. 
+    - It's essentially IndexedDB + migrations + promises + syncing.
 
 - sync_server-nedb /33Star/MIT/201807/js/nedb
   - https://github.com/nponiros/sync_server
@@ -63,11 +81,24 @@ modified: 2022-11-25T15:41:47.534Z
     - The server was made to work with the `ISyncProtocol` and `Dexie.Syncable`. 
     - 👉🏻 It supports the poll pattern using AJAX and the react pattern using nodejs-websocket.
   - The server supports 4 different protocols: http, https, ws and wss
+  - [Syncable: possible collaboration · dexie/Dexie.js](https://github.com/dexie/Dexie.js/issues/397)
 - sync_client-dexie /29Star/MIT/201804/js
   - https://github.com/nponiros/sync_client
   - This module can be used to write data to IndexedDB using `Dexie` and to synchronize the data in IndexedDB with a server.
   - `Dexie.Syncable` is used for the synchronization. This module contains an implementation of the `ISyncProtocol`. 
   - It was primarily written to work with `sync-server` but should work with other servers which offer the same API.
+
+- https://github.com/viant/dbsync /go
+  - SQL based cross database cost effective synchronization
+  - data synchronization between various database and cloud vendor becomes more and more frequent task. 
+  - This project provides SQL based cross database vendor data synchronization for small and large(billions+ records) tables/views in a cost effective way.
+  - This is achieved by both determining the smallest changed dataset and by dividing transferable dataset in the partitioned/chunked segments. Both read and writes can be easily parallelized.
+  - Chunk synchronization uses ID based range to divide a dataset into a smaller segments. 
+  - Query based synchronization: In some cases view or actual SQL can be source for data sync, in that scenario SQL can be used as source.
+
+- https://github.com/leapfrogtechnology/sync-db /ts
+  - Command line utility to synchronize and version control relational database objects across databases.
+  - This utility uses Knex under the hood
 
 - https://github.com/drifting-in-space/driftdb /ts/rust
   - https://driftdb.com/
@@ -162,7 +193,7 @@ modified: 2022-11-25T15:41:47.534Z
   - https://github.com/Kinto/kinto.js
     - An Offline-First JavaScript client for Kinto.
 
-- dagdb /133Star/MIT/202010/js/leveldb/git
+- dagdb /133Star/MIT/202010/js/leveldb/git/inactive
   - https://github.com/mikeal/dagdb
   - DagDB is a portable and syncable database for the Web.
   - It can run as a distributed database in Node.js, including using AWS services as a backend.
@@ -185,9 +216,6 @@ modified: 2022-11-25T15:41:47.534Z
   - Nango continuously syncs data from any API endpoint (that returns JSON) to your database.
   - Nango has built-in support for OAuth through our sister project Pizzly
 
-- https://github.com/leapfrogtechnology/sync-db
-  - Command line utility to synchronize and version control relational database objects across databases.
-
 - https://github.com/urish/firebase-server
   - Firebase Web Socket Protocol Server. Useful for emulating the Firebase server in tests.
   - As of May 2019 there are officially supported emulators for many Firebase services, removing the need for a third-party solution like firebase-server.
@@ -198,6 +226,11 @@ modified: 2022-11-25T15:41:47.534Z
   - Knowing which data is on the server.
   - Keeping a list of data which still needs to be sent to the server.
   - Supplying the App with all data required to handle version conflicts when they occur.
+
+- https://github.com/ankane/pgsync /ruby
+  - Sync data from one Postgres database to another (like pg_dump/pg_restore).
+  - tables are transferred in parallel
+  - sync partial tables, groups of tables, and related records
 # db-distributed-collab
 - orbit-db /7.4kStar/MIT/202301/js
 - https://github.com/orbitdb/orbit-db

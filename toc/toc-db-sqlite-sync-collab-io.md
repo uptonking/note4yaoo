@@ -11,11 +11,17 @@ modified: 2022-11-04T14:21:31.365Z
 
 # export/import
 - https://github.com/fitnr/sqlite-json
-  - Convert Sqlite3 tables to JSON
 
 - https://github.com/isaiahnields/csv-to-sqlite
   - A desktop app to convert CSV files to SQLite databases!
 # sync
+- https://github.com/orbitinghail/sqlsync /rust
+  - a collaborative offline-first wrapper around SQLite. 
+  - It is designed to synchronize web application state between users, devices, and the edge.
+  - Eventually consistent SQLite
+  - Optimistic reads and writes
+  - Cross-tab sync
+
 - https://github.com/aNinjaMonk/sync-server /201911/js
   - Syncing between local SQLite & remote PostgreSQL
 

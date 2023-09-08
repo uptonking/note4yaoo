@@ -233,6 +233,15 @@ modified: 2021-08-30T18:56:09.644Z
   - A simple in-memory database implementation is included, and you can query any data source you want by implementing your own backend.
   - dolt is the main production database implementation of this package.
 
+- https://github.com/mozilla/mentat /rust/inactive
+  - https://mozilla.github.io/mentat/
+  - A persistent, relational store inspired by Datomic and DataScript
+  - Mentat is intended to be a flexible relational (not key-value, not document-oriented) store that makes it easy to describe, grow, and reuse your domain schema.
+  - Just like DataScript, Mentat speaks Datalog for querying and takes additions and retractions as input to a transaction.
+  - Unlike DataScript, Mentat exposes free-text indexing, thanks to SQLite.
+  - Mentat was designed for embedding, initially in an experimental Electron app 
+  - Mentat uses partial indices, which are available in SQLite 3.8.0 and higher
+
 - https://github.com/surrealdb/echodb /rust
   - An embedded, in-memory, immutable, copy-on-write, key-value database engine
   - Multi-version concurrency control
@@ -280,6 +289,12 @@ modified: 2021-08-30T18:56:09.644Z
   - Provides extraordinary performance, minimal overhead through Memory-Mapping and Olog(N) operations costs by virtue of B+ tree.
   - Compact and friendly for fully embedding. Only ≈25KLOC of C11, ≈64K x86 binary code of core, no internal threads neither server process(es), but implements a simplified variant of the Berkeley DB and dbm API.
   - Historically, libmdbx is a deeply revised and extended descendant of the amazing Lightning Memory-Mapped Database. libmdbx inherits all benefits from LMDB, but resolves some issues and adds a set of improvements.
+
+- https://github.com/hoytech/quadrable /cpp
+  - Quadrable is an authenticated multi-version database that can efficiently sync itself with remote instances. 
+  - It is implemented as a sparse binary merkle tree with compact partial-tree proofs. 
+  - Many different versions of the database can exist at the same time. Deriving one version from another doesn't require copying the database. Instead, all of the data that is common between the versions is shared. This copy-on-write behaviour allows very inexpensive database snapshots and checkpoints.
+  - applications can synchronise with remote instances. Conflict-handling is flexible, and can work by either cloning one side or by merging the states together (like a CRDT)
 # db-streaming
 - https://github.com/MaterializeInc/materialize /rust
   - https://materialize.com/

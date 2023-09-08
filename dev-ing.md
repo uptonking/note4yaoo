@@ -74,7 +74,7 @@ $$('[contenteditable]')
 
 - deep into lib/fwk
   - src-code, issues, pr, forks, extensions/alternatives
-  - storage, sync, conflicts
+  - storage, sync, conflicts, partial
 # dev-2023-方向+方法+时间
 - 👉🏻 output: 代码产出、产品落地、生态积累
 - slate-wangeditor

@@ -16,6 +16,11 @@ modified: 2022-11-29T20:41:25.566Z
   - client发送内容op/patch/changes, 发送时机，接收内容
   - server接收，发送内容
 
+- partial/selective-sync
+  - sync by table/collection
+  - sync by versionNumber/timestamp
+  - 👉🏻 query-based sync: 取数基于query，query时可使用各种filter
+
 - 协作方案参考
   - Liveblocks, synced-store, FluidFramework, gun, pouchdb
   - automerge(2017), yjs(2015), sharedb(2013)
@@ -297,6 +302,100 @@ modified: 2022-11-29T20:41:25.566Z
 
 - when will linear open source the react-query for sync?
   - Haha there are also a lot of other options: replicache, http://convex.dev, http://clientdb.dev, a new one called aphrodite
+# discuss-partial-sync
+- ## 
+
+- ## [🤔 I created PouchDB. After a year... | Hacker News](https://news.ycombinator.com/item?id=24355263)
+- I created PouchDB. After a year or so I handed that project off to some great maintainers that made it much better as I had grown a little skeptical of the replication model and wanted to pursue some alternatives.
+- It’s been about 10 years, much longer than I thought it would take, but I have a young project that finally realizes the ideas I had back then.
+- Sometime after PouchDB was created I realized that it just **wasn’t going to work to replicate a whole database to every client**. 
+  - In fact, even a view of the database wasn’t going to work, because the developer isn’t in a position to really understand the replication profile of every user on all of their devices, you need a model that has partial, or more accurately “selective” replication based on what the application accesses in real time.
+- I became convinced that the right primitives were already present in git: merkle trees. Unfortunately, git did a very poor job of surfacing those primitives for general use and I wasn’t having much luck finding the right approach myself.
+- Shortly after joining Protocol Labs I realized they had already figured this out in a project called IPLD. Not long after that, I started leading the IPLD project/team and then putting together my ideal database whenever I found a free moment.
+- It’s very young, lots of missing features, still working on some better data-structures for indexing, but it is very much a database that replicates the way git does and approaches indexing over a primary store the way CouchDB does, but there’s a lot more too.
+- With these primitives we can easily **nest databases inside of other databases** (and create unified indexes over them) and we can easily extend the data types in the database to user provided types. Using some of these features it already supports streams of binary data, databases in databases, and linking between pieces of data.
+
+- dagdb /133Star/MIT/202010/js/leveldb/git/inactive
+  - https://github.com/mikeal/dagdb
+  - DagDB is a portable and syncable database for the Web.
+  - It can run as a distributed database in Node.js, including using AWS services as a backend.
+
+- ## [CouchDB 2.1.0 | Hacker News](https://news.ycombinator.com/item?id=14950060)
+- If you are looking for something like CouchDB but only syncs partial subsets of the data you request (rather than the whole thing), try checking out gundb
+
+- ## [PouchDB, the JavaScript Database That Syncs | Hacker News](https://news.ycombinator.com/item?id=13101870)
+- PouchDB's replication capability is interesting, but is there a way to make it lazy load to the local DB instead of doing everything up front? I hesitate to use it for a web project with 10+ MB of docs where it would otherwise be ideal.
+  - You can provide a **server-side filter function** to replication and progressively filter partial replications until eventually everything gets replicated. At that point it becomes a question of architecture of your documents: how much is needed to replicate before a user may be productive?
+  - You can also explore **pouchdb-replication-stream** to build bundles that PouchDB can bootstrap from a little bit faster than a chatty replication.
+  - That said, I've found initial replications of large databases (one I've worked with this week is a 25+ MB CouchDB database full of photos) is quick enough (and mostly bandwidth constrained) that I haven't had much in the way of concern over it.
+
+- ## [Limit records synchronized in PouchDB/CouchDB - Stack Overflow](https://stackoverflow.com/questions/38834877/limit-records-synchronized-in-pouchdb-couchdb)
+- Yes you can, use filtered replication 
+
+- ## [Partial syncing in pouchdb/couchdb with a particular scenario - Stack Overflow](https://stackoverflow.com/questions/39536131/partial-syncing-in-pouchdb-couchdb-with-a-particular-scenario)
+- If you take a look at the PouchDB documentation, you should see the options.doc_ids. 
+  - This parameter let you setup a replication on certain document ids. 
+
+- ## [Syncable: possible collaboration · dexie/Dexie.js](https://github.com/dexie/Dexie.js/issues/397)
+- What my library does is synchronize with the server every couple of minutes but the server is offline most of the time. 
+  - I use a timestamp to know what to synchronize and the data update is done automatically, the user does not have to define how to do the update.
+- Your use case seems similar to that of Dexie. Syncable - background sync that just happens when online without the user having to think about it. 
+  - With Dexie. Syncable, the user is just using Dexie in the same way as if the addons weren't present but Dexie. Syncable will continuously keep the database in sync with the server bidirectionally.
+
+- I want to implement partial data sending but I'm not sure I understood the concept correctly.
+  - clientIdentity is essential for the server to be able to buffer uncommitted changes
+
+- ## [Implementing Dexie. Syncable ISyncProtocol · dexie/Dexie.js](https://github.com/dexie/Dexie.js/issues/901)
+- As what I recall partial changes are put in an intermediate table named "uncommittedChanges".
+  - as I recall, the Dexie. Syncable framework should directly start another sync in case it was part partial so it continues to recieve data until partial is false. Then the framework should commit the uncommitted changes into the db.
+- I did implement partial also for server -> client
+  - Client sends the latest revision it got from the server. When using partial for server -> client, the server returns only a part of the array and the latest revision is the newest element in the partial array. Next time the client requests data with that revision, the changes are newly calculated. The server also tells the client that it was a partial data set so that the client can immediately request more data.
+
+- ## [🤔 mongodb: Query Based sync support?](https://www.mongodb.com/community/forums/t/query-based-sync-support/5329/2)
+- MongoDB Realm currently(202006) only supports full sync.
+  - The team is considering how to architect more flexible sync options in future, but there isn’t a specific timeline for this yet
+
+- We are still(202103) a long way away from launching query-based sync 2.0 with a more flexible syncing API. 
+  - My suggestion would be to **use partition-based sync** and not wait as we will not have QBS production ready before the legacy realm cloud shuts down.
+
+- [The timing for supporting partial synchronization](https://www.mongodb.com/community/forums/t/the-timing-for-supporting-partial-synchronization/4116)
+  - Since it is uncertain when partial sync will be supported, we will move data from the partial sync realm to the full sync realm.
+
+- ## [Partially synced patterns · WordPress/gutenberg](https://github.com/WordPress/gutenberg/discussions/50456)
+- [The `wp:pattern` block](https://github.com/WordPress/gutenberg/issues/48458)
+
+- Partially synced mode is different. When a pattern that's partially synced is inserted, it retains a reference to the source pattern. The blocks within the pattern are locked so that they cannot be removed or reordered and new blocks cannot be inserted (this is called contentOnly locking). Only specific parts of the pattern considered 'content' can be edited (denoted by adding __experimentalRole: 'content' to a block's definition).
+
+- The concept of partial syncing could be considered as similar to the way a handlebars, mustache, or other templating system works.
+  - For partially synced patterns, I think it's also important that the data (the values of 'content' attributes) is kept separate from the template (the source pattern). This way, the data can be interpolated or injected into the pattern to produce the resulting HTML.
+
+- ## [[Sync] Allow for partial push · Nozbe/WatermelonDB](https://github.com/Nozbe/WatermelonDB/issues/206)
+- Three ideas come to mind, from simplest to hardest:
+- Just Sync Everything — like I suggested before. 
+  - I think in most cases there's just no harm in this, and only benefits.
+- Per-collection sync enable — currently ALL tables (except for magic localStorage table) are synced. 
+  - I think a lot of apps might have a need for tables for local stuff (needing more complex stuff than LocalStorage provides), so it's reasonable to add a parameter to synchronize() to point to which tables to sync / skip syncing. 
+  - This complicates your code, since you'd need to have two classes — one for synced orders, one for draft orders. 
+  - But I think you could easily manage it with subclassing (AbstractOrder extends Model; Order extends AbstractOrder; DraftOrder extends AbstractOrder — the first would have most of the common logic, and the other two would just have stuff like publish() etc.)
+- New sync status — currently there's created, updated, deleted (local changes waiting to be pushed) and synced (no local changes since pulled). 
+  - There could also be draft. 
+  - Your app would be responsible for managing such status — as this is much simpler on Watermelon's end and more versatile for apps with different needs. 
+  - Needless to say, records would be recognized by client as changed if draft, but would not be pushed until changed to created. 
+  - This seems doable, but further analysis is needed. And lots of tests if one was to implement it
+
+- ## [Initial Sync Download · Nozbe/WatermelonDB](https://github.com/Nozbe/WatermelonDB/issues/650)
+- My first idea was to limit the sync size to a number of versions (or timestamps as per the default implementation) so it chunked the data. 
+  - Once i tried this i quickly realised that i cannot guarantee how much data is between the 2 timestamps/versions as the data may or may not have been added to certain tables, therefore impossible to gauge.
+  - So the core of the problem is that there is a risk of passing too much data between a server and a device, so i decided it would be better to calculate the size of the data between 2 versions and store this in a table. version_from	version_to	size
+
+- 
+- 
+- 
+
+- ## [vlcn: Partial CRR Sync](https://vlcn.io/docs/networking/partial-crr-sync)
+- While it is possible to implement partial sync with the primitives available to you today, it is not advised and not supported. 
+  - In Q3/Q4 2023 we will be releasing primitives specifically intended to support partial sync, row level security, and large scale multi-tenant databases.
+
 # discuss
 - ## 
 

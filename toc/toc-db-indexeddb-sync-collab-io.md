@@ -70,7 +70,8 @@ modified: 2022-10-22T18:47:16.228Z
   - Entities without `keyPath` are not currently supported.
   - Only the last version of each entity is kept on the client side.
   - conflict: The last write wins (though you can customize the behavior in the `onpusherror` handler).
-  - https://github.com/darrachequesne/synceddb-todo-example
+  - Inspired from Dexie.js liveQuery.
+  - https://github.com/darrachequesne/synceddb-todo-example /js/express-server
 
 - https://github.com/azer/indexeddb /202005/ts/inactive
   - Well-tested wrapper around the IndexedDB API. It can sync locally and remotely.

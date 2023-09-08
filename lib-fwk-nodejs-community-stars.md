@@ -40,4 +40,6 @@ modified: 2022-12-19T01:50:08.791Z
 
 - ## 
 
-- ## 
+- ## [What do you think is the biggest missing piece in the selfhosted world? : selfhosted](https://www.reddit.com/r/selfhosted/comments/15dsvix/what_do_you_think_is_the_biggest_missing_piece_in/)
+- More universal communication protocols or a platform to build it upon, for example things like CalDAV.
+  - It‘s annoying that there have to be specific API-using programs/modules/add-ons/whatever for two services when they are only doing simple data transfer.

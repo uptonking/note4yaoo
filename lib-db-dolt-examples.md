@@ -39,6 +39,10 @@ modified: 2023-08-25T22:31:05.132Z
     - All mutation operations on either a leaf node's content or on the vertree itself cause the version to be incremented both at the node where the change occurred and at every node above it
   - CAS and related operations
 
+- https://github.com/mikeal/prolly-trees /js
+  - Implementation of peer-to-peer search trees (probabalistic b-trees trees) as used in dolt and noms.
+  - It does not have an opinion about how blocks are encoded and hashed.
+
 - https://github.com/versionpress/versionpress /php/ts/inactive
   - https://versionpress.com/
   - a user-friendly versioning solution for WordPress powered by Git

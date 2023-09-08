@@ -111,6 +111,10 @@ modified: 2021-08-30T18:56:18.632Z
   - distributed relational database built on SQLite
   - https://github.com/rqlite/rqlite-js
     - promise based client library for rqlite
+  - https://github.com/dkulchenko/watchdb /go/inactive
+    - a tool that enables quick setup of master-slave synchronization for SQLite databases across a network.
+    - Synchronization is one-way only (changes made on the master will overwrite changes made on slaves). Slave databases are kept read-only to prevent accidental writes from application code.
+    - watchdb replication is eventually consistent by design, so it's AP in CAP. If you need strong consistency (at the expense of performance and required changes to application code), take a look at rqlite.
 
 - https://github.com/rusqlite/rusqlite
   - an ergonomic wrapper for using SQLite from Rust.
