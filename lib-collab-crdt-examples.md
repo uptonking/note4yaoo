@@ -427,7 +427,7 @@ modified: 2022-04-05T10:08:25.947Z
   - Bachelor Project: CRDT for Fonto
   - Our CRDT is based on a logoot
 
-- https://github.com/coast-team/dotted-logootsplit
+- https://github.com/coast-team/dotted-logootsplit /MPL/ts
   - Most of the CRDT embeds metadata in order to avoid conflicting edits. The challenge is to keep these metadata as small as possible.
   - LogootSplit is a sequence CRDT which reduces the metadata of preceding sequence CRDT; to do so it aggregates elements
     - LogootSplit is an operation-based CRDT. 
@@ -679,7 +679,7 @@ modified: 2022-04-05T10:08:25.947Z
   - 示例基于tui-editor.v2、codemirror5、angular
   - https://github.com/coast-team/mute-core
     - 依赖rxjs、dotted-logootsplit
-  - https://github.com/coast-team/dotted-logootsplit /MPL
+  - https://github.com/coast-team/dotted-logootsplit /MPL/ts
     - a delta-based version of LogootSplit with smaller metadata. We provide both op-based and delta-based synchronizations.
 
 - https://github.com/ritzyed/ritzy /201509/js/inactive

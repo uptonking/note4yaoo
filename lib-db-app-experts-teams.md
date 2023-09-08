@@ -9,6 +9,15 @@ modified: 2023-02-02T03:22:07.941Z
 
 # guide
 
+# db-trending
+- dolt
+  - version history
+  - branching
+
+- scuttlebutt
+  - log-based
+  - kappa architecture
+  - crdt
 # popular
 - Zongzhi Chen (baotiao)
   - https://github.com/baotiao

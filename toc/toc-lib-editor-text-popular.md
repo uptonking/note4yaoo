@@ -294,7 +294,7 @@ modified: 2022-11-08T19:04:00.289Z
   - https://github.com/substance/substance
   - JavaScript library for web-based content editing
 
-- https://github.com/nytimes/ice /201402/js
+- https://github.com/nytimes/ice /201402/js/inactive
   - Ice is a track changes implementation, built in javascript, for anything that is contenteditable on the web. 
   - Conceived by the CMS Group at The New York Times, ice is powering the editor used for writing articles in the newsroom.
 # collab

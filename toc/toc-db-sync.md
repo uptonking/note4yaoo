@@ -198,12 +198,19 @@ modified: 2022-11-25T15:41:47.534Z
   - DagDB is a portable and syncable database for the Web.
   - It can run as a distributed database in Node.js, including using AWS services as a backend.
   - It also runs in the browser. 
-    - In fact, there is no "client and server" in DagDB, everything is just a DagDB database replicating from another database. 
+  - In fact, there is no "client and server" in DagDB, everything is just a DagDB database replicating from another database. 
     - In this way, it's closer to git than a traditional database workflow.
   - The closest thing to DagDB replication you're familiar with is git. 
     - The way changes are merged from one branch to another and from one remote to another. 
     - We even have a system for keeping track of remote databases that feels a lot like git.
     - if you have two database instances locally you can easily merge one into the other without using the remote system.
+  - DagDB's primary storage system is a simple key-value store. 
+    - Keys can be any string, and values can be almost anything.
+  - DagDB uses a technique called "content addressing" that links data by hashing the value. 
+    - This means that, even if you create the link again with the same data, the link will be the same and the data will be deduplicated.
+  - Since it is often problematic to store large amounts of binary as a single value, DagDB also natively supports storing streams of binary data.
+    - DagDB treats any async generator as a binary stream. 
+    - Node.js Streams are valid async generators so they work right away.
 # sync-utils
 - https://github.com/siliconjungle/tick-network-server
   - An example of a server that sends messages at a regular interval.

@@ -109,7 +109,7 @@ modified: 2023-02-09T12:24:23.549Z
   - These editors do not allow as much flexibility over the output as their hierarchical cousins, but many (perhaps most) types of content can be represented linearly, and you don’t need a PhD in the editor to customize it.
 
 - Typewriter pulls bits from all these editors and takes the best of each of them.
-- 👉🏻 Typewriter goes with the linear approach, building off the same data model as Quill.js, the [Delta](https://github.com/quilljs/delta/) format.
+- 👉🏻 Typewriter goes with the linear approach, building off the same data model as Quill.js, the [Delta](https://github.com/quilljs/delta) format.
   - Typewriter modifies Delta to provide better memory usage with an immutable approach and adds a layer on top `TextDocument`, which splits a `Delta` document into lines to add even more memory benefits for large documents. 
   - This model is more similar to the Medium editor (which is line-based) and provides greater runtime performance, especially on larger documents. 
   - It also paves the way for document virtualization which allows documents with hundreds of thousands of words to render as quickly as a hundred word document and gives responsive typing.

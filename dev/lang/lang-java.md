@@ -10,10 +10,10 @@ modified: 2020-07-14T09:26:35.281Z
 # guide
 
 - classic-examples-java
-  - apache-poi
+  - office: apache-poi, pdf
   - crdt
   - sirixdb, git-like
-  - more: jedit, apitable, tree
+  - more: jedit, apitable, json-parser, tree
 # 开发通用问题
 - 搜索
 - 缓存

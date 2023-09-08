@@ -16,6 +16,13 @@ modified: 2023-09-01T03:56:10.056Z
 # utils
 
 # diff
+
+- https://github.com/icflorescu/textdiff-patch /ISC/js
+  - simple module for applying lean text diff delta patches created by textdiff-create.
+  - https://github.com/icflorescu/textdiff-create /ISC/js
+    - simple module for creating lean text diff deltas, based on the excellent fast-diff by Jason Chen.
+    - Instead of sending the entire block of text to the server on each save, you'd ideally want to submit a "minimal patch" for each operation
+
 - https://github.com/wickedest/Mergely /js/LGPL
   - http://www.mergely.com/
   - [Mergely Visualized Diff demo](https://codepen.io/wickedest/pen/yLowrde)

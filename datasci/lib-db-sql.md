@@ -23,7 +23,7 @@ modified: 2020-12-18T05:02:58.499Z
 - 可以作为0基础的查询引擎的入门资料，尤其是从RecordBatch定义，到DataSource构建，再到logical plan和physical plan实现，会对查询引擎的基本概念有一定的了解。
   - 但是从SQL Support开始，后面章节的内容过于太generial了，只能做简单了解。
   - 总体来说，还是很适合从0入门的，可以使用自己擅长的语言实现一遍，比如我的golang port
-  - https://github.com/Fedomn/how-query-engine-work
+  - https://github.com/Fedomn/how-query-engine-work /go
 
 - 构建查询引擎第一步是，选择一个type system，去代表查询引擎处理的数据类型。
 - 查询引擎 需要考虑处理数据的方式：row-by-row 还是 columnar format。

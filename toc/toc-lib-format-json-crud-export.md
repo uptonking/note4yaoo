@@ -24,7 +24,7 @@ modified: 2022-11-06T16:47:43.444Z
 - https://github.com/Starcounter-Jack/JSON-Patch /ts
   - Lean and mean Javascript implementation of the JSON-Patch standard (RFC 6902).
   - Update JSON documents using delta patches.
-  - JSON-Patch (RFC6902) is a standard format that allows you to update a JSON document by sending the changes rather than the whole document. 
+  - JSON-Patch (RFC6902) is a standard format that allows you to update a JSON document by sending the changes rather than the whole document.
   - JSON Patch plays well with the HTTP PATCH verb (method) and REST style programming.
 
 - https://github.com/typewriter-editor/json-patch
@@ -35,6 +35,20 @@ modified: 2022-11-06T16:47:43.444Z
     - This sync method is not as robust as operational transformation, but it only stores a little data in addition to the object and is much simpler
     - It does not handle adding/removing array items, though entire arrays can be set. 
     - It should work great for documents that don't need merging text like Figma
+
+- https://github.com/benjamine/jsondiffpatch /45kStar/MIT/ts
+  - https://benjamine.github.io/jsondiffpatch/demo/index.html
+  - Diff & patch JavaScript objects
+  - simplistic, pure JSON, low footprint delta format
+  - JSON Patch format RFC 6902 support
+  - reverse a delta
+  - unpatch (eg. revert object to its original state using a delta)
+  - (optionally) uses google  `diff-match-patch` for long text diffs (diff at character level)
+  - smart array diffing using LCS
+  - [Delta Format](https://github.com/benjamine/jsondiffpatch/blob/master/docs/deltas.md)
+    - This page intends to be a reference for JSON format used to represent deltas (i.e. the output of jsondiffpatch.diff).
+    - This format was created with a balance between readability and low footprint in mind.
+  - [Convert to TypeScript_202309](https://github.com/benjamine/jsondiffpatch/pull/345)
 
 - https://github.com/frameable/pigeon /js
   - Diff, patch, merge, and synchronize JSON documents with an Automerge-compatible interface
@@ -75,14 +89,6 @@ modified: 2022-11-06T16:47:43.444Z
 
 - https://github.com/ken107/jsonpatch-observe
   - Observe an object tree for changes and generate JSON Patches (RFC 6902).
-
-- https://github.com/benjamine/jsondiffpatch /45kStar/MIT/js
-  - Diff & patch JavaScript objects
-  - simplistic, pure JSON, low footprint delta format
-  - reverse a delta
-  - unpatch (eg. revert object to its original state using a delta)
-  - (optionally) uses google  `diff-match-patch` for long text diffs (diff at character level)
-  - smart array diffing using LCS
 
 - https://github.com/pierreinglebert/json-merge-patch
   - An implementation of the JSON Merge Patch (RFC 7396)

@@ -17,9 +17,9 @@ modified: 2022-11-29T20:41:25.566Z
   - server接收，发送内容
 
 - partial/selective-sync
-  - sync by table/collection
+  - sync by table/collection/doc，可参考 pouchdb
   - sync by versionNumber/timestamp
-  - 👉🏻 query-based sync: 取数基于query，query时可使用各种filter
+  - 👉🏻 query-based sync: 取数基于query，query时可使用各种filter，可参考mongo-realm
 
 - 协作方案参考
   - Liveblocks, synced-store, FluidFramework, gun, pouchdb

@@ -50,6 +50,11 @@ modified: 2023-04-07T03:10:46.225Z
 
 - https://github.com/BrascoJS/delorean /js
   - A MobX-React Time Travel Debugger
+
+- https://github.com/sindresorhus/on-change /js
+  - Watch an object or array for changes
+  - It works recursively, so it will even detect if you modify a deep property like `obj.a.b[0].c = true`.
+  - Uses the `Proxy` API.
 # blogs
 
 ## [Mobx 思想的实现原理，及与 Redux 对比 - 知乎](https://zhuanlan.zhihu.com/p/25585910)

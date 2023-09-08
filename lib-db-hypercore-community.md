@@ -14,7 +14,9 @@ modified: 2023-09-07T15:58:27.967Z
 
 - ## 
 
-- ## 
+- ## [Hypercore has realtime sync, but is limited to log structured data. Dat can do d... | Hacker News](https://news.ycombinator.com/item?id=15467438)
+- Hypercore has realtime sync, but is limited to log structured data. Dat can do diffs on data, but is meant for large datasets, not realtime changes. This sounds like it would be difficult (or not scalable) to build something like a Wiki, features in social networks, Trello, or other apps (i.e., anything with shared mutable state). How would you do this?
+  - 👉🏻 The real-time syncing immutable, append-only log that hypercore provides can also be accessed randomly, allowing for lots of cool parallel/distributed log processing architectures (Kappa architecture), similar to Kafka (which is also based on immutable, append-only logs). We have just focused on syncing a filesystem at first because we had a strong use case there, but you could totally build a CRDT on top of an append only log.
 
 - ## The real-time syncing immutable, append-only log that hypercore provides can also be accessed randomly, 
 - https://news.ycombinator.com/item?id=15468295

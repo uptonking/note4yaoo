@@ -13,7 +13,7 @@ modified: 2022-11-11T06:57:09.670Z
   - kilo-editor
   - crdt
   - rust-kv, terminusdb-store, git-like
-  - more: wasm, tree
+  - more: wasm, json-parser, tree, kanban
 
 - resource
   - [Rust语言圣经(Rust Course)](https://course.rs/about-book.html)
