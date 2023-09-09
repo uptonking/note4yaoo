@@ -33,6 +33,8 @@ modified: 2022-11-30T18:56:07.072Z
     - Because of the CouchDB compatibility, PouchDB has to do a lot of overhead in handling the revision tree of document, which is why it can show bad performance for bigger datasets.
     - RxDB was originally build around PouchDB until the storage layer was abstracted out in version 10.0.0(202107)
     - PouchDB has some performance issues because of how it has to store the document revision tree to stay compatible with the CouchDB API.
+  - [how to to do partial (descending)l sync? F.e. chat messages](https://github.com/pouchdb/pouchdb/issues/8221)
+    - You can use filtered replication
 
 - pouchdb-server /894Star/apache2/202108/js/内存/sqlite
   - https://github.com/pouchdb/pouchdb-server
@@ -151,6 +153,15 @@ modified: 2022-11-30T18:56:07.072Z
 
 - https://github.com/cozy-labs/cozy-desktop
   - File Synchronisation for Cozy on Desktop and Laptop
+# pouchdb-p2p
+- https://github.com/garbados/pouchdb-hypercore /js
+  - Synchronize PouchDB or CouchDB with P2P Hypercores
+  - A PouchDB plugin that maps records in hypercores, a P2P append-only datastructure, to a PouchDB or CouchDB instance. 
+  - A PouchDB plugin that maps records in hypercores, a P2P append-only datastructure, to a PouchDB or CouchDB instance. 
+
+- https://github.com/garbados/pouchdb-cabal /js
+  - Interact with Cabal using PouchDB
+  - Comparable to cabal-core
 # pouchdb-utils
 - https://github.com/pouchdb-community/relational-pouch /202211/ts
   - a plugin for PouchDB that allows you to interact with PouchDB/CouchDB like a relational data store, with types and relations.

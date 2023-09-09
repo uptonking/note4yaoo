@@ -9,6 +9,10 @@ modified: 2022-12-02T11:15:15.257Z
 
 # guide
 
+- roadmap
+  - kappa-architecture?
+# blogs
+- [A Veteran's Guide to PouchDB](https://garbados.github.io/my-blog/veteran-pouchdb.html)
 # docs
 
 ## [Conflicts](https://pouchdb.com/guides/conflicts.html)
@@ -27,12 +31,31 @@ modified: 2022-12-02T11:15:15.257Z
   - In practice, this means that you never update or remove existing documents – you only create new documents.
   - This strategy has been called the "every doc is a delta" strategy. 
   - There is also a PouchDB plugin that implements this strategy: delta-pouch.
+# discuss-stars
+- ## 
+
+- ## [LevelUP Proposal_201401](https://github.com/pouchdb/pouchdb/issues/1250)
+- theres work to experiment using a level based backend 
+
+- ## [Sync Issue](https://github.com/pouchdb/pouchdb/issues/5291)
+  - would like to know if theres a way to sync between local and remote db's only some specific documents, and only some specific attributes in each document, instead of the default behavior that syncs every document and attribute ?
+
+- Sounds like you want to do a filtered replication
+- In CouchDB (and PouchDB) there is a concept of a design document, this can give you a partial representation of your database (like a view).
+
+- ## [how to to do partial (descending)l sync? F.e. chat messages](https://github.com/pouchdb/pouchdb/issues/8221)
+  - Imagine I have chat app, and chat may have potentially million of messages in a room. What is a best practice to sync such a database to web browser? Is it possible to sync f.e. last 1000 messages, then if user scrolls, resync last 2000 messages?
+  - As I understand I can achieve this passing query_selector to replicate method, but the question is, will it resync items with sequence_number lower then last sync? I mean will it sync oldest messages after newer message was synced?
+
+- You can use filtered replication
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [Are partial indexes supported when passing a selector to replication?](https://github.com/pouchdb/pouchdb/issues/7342)
+- No it isn’t supported. Partial indexes are only supported for querying for CouchDB not for replication.
+  - It would need to be implemented in CouchDB first
 
 - ## @pouchdb wont lose data, the conflict is stored and reported, both(all) documents available to choose/create winner, 
 - https://twitter.com/daleharvey/status/1043057187113848832

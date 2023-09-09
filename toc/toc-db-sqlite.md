@@ -134,6 +134,7 @@ modified: 2021-08-30T18:56:18.632Z
   - a simple embedded database modeled off SQLite, but developed with Rust. 
   - The goal is get a better understanding of database internals by building one.
   - [SQLRite – SQLite clone from scratch in Rust | Hacker News_202104](https://news.ycombinator.com/item?id=26749737)
+  - [What would SQLite look like if written in Rust? — Part 0_202102](https://dev.to/thepolyglotprogrammer/what-would-sqlite-look-like-if-written-in-rust-part-0-4f4k)
   - [Column or row oriented store](https://github.com/sqlrite/design/discussions/6)
 
 - https://github.com/cstack/db_tutorial /c
@@ -143,8 +144,15 @@ modified: 2021-08-30T18:56:18.632Z
   - [How Does a Database Work? | Let’s Build a Simple Database](https://cstack.github.io/db_tutorial/)
   - [Writing a SQLite clone from scratch in C (2017) | Hacker News](https://news.ycombinator.com/item?id=27731966)
 
-- https://gitlab.com/cznic/sqlite /go
-  - a CGo-free port of SQLite/SQLite3 in go
+- https://gitlab.com/cznic/sqlite /BSD/go
+  - http://godoc.org/modernc.org/sqlite
+  - Package sqlite is a sql/database driver using a CGo-free port of the C SQLite3 library.
+  - modernc.org/sqlite is an automatically generated translation of the original C source code of SQLite into Go. It passes the full SQLite test suite.
+  - https://github.com/zombiezen/go-sqlite /go
+    - Low-level Go interface to SQLite 3
+    - It is a fork of crawshaw.io/sqlite that uses modernc.org/sqlite
+    - It includes APIs for streaming blob I/O, schema migrations, and user-defined functions.
+    - [New advanced, CGo-free SQLite package_202104](https://www.reddit.com/r/golang/comments/n1u2b1/new_advanced_cgofree_sqlite_package/)
 
 - https://github.com/LMDB/sqlightning /201504/c/inactive
   - SQLite3 ported to use LMDB instead of its original Btree code.
@@ -154,7 +162,7 @@ modified: 2021-08-30T18:56:18.632Z
   - LumoSQL adds security, privacy, performance and measurement features to SQLite.
   - LumoSQL can swap back end key-value store engines in and out of SQLite.
 
-- https://github.com/CsharpDatabase/csharp-sqlite
+- https://github.com/CsharpDatabase/csharp-sqlite /201401/inactive
   - C# port of the SQLite library
   - https://code.google.com/archive/p/csharp-sqlite/
 # sqlite-like

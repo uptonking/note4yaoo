@@ -36,6 +36,10 @@ modified: 2022-11-11T10:46:41.519Z
 # examples
 
 # parser-generator
+
+- https://github.com/tradle/pdf-parse /js
+  - Pure javascript cross-platform module to extract texts from PDFs.
+
 - https://github.com/esbenp/pdf-bot /js
   - A Node queue API for generating PDFs using headless Chrome. 
   - Comes with a CLI, S3 storage and webhooks for notifying subscribers about generated PDFs

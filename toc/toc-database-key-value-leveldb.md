@@ -188,6 +188,8 @@ modified: 2022-11-03T04:14:00.563Z
   - Storage for private, distributed, offline-first applications.
   - Earthstar is an offline-first key-value database which supports author versions.
   - This is a reference implementation written in Typescript. You can use it to add Earthstar functionality to applications running on servers, browsers, the command line, or anywhere else JavaScript can be run.
+  - [What Earthstar is and is not](https://github.com/earthstar-project/earthstar-docs/blob/main/docs/intro/rules-of-earthstar.md)
+    - It's a delta-state based CRDT that works in adversarial conditions.
   - can store arbitrary data, keyed by two pieces of information: a free-form `path` and a public `key` identifying the author. So a single path like /wiki/flowers may hold revisions by multiple authors.
   - A share's data is stored on its users' devices using replicas.
     - A replica is a concrete copy of the data in a share, stored on a user's device.
@@ -195,6 +197,8 @@ modified: 2022-11-03T04:14:00.563Z
   - Data stored in a replica are persisted as separate Documents.
     - Documents describe and contain your share's data.
     - Every document has a path like /my-story.txt.
+  - [Comparison to GUN?](https://github.com/earthstar-project/earthstar/discussions/230)
+    - Designed to allow partial sync of the data, but not quite implemented yet
   - [Comparison to Kappa-db?](https://github.com/earthstar-project/earthstar/discussions/228)
     - Kappa-db is a bundle of append-only logs (hypercores), one per author per device. It builds indexes by processing messages from the logs, in order, to build up a reduced state. The logs grow forever.
     - Earthstar is a key-value database.You can hold any subset of the documents, sync them in any order, do partial sync, drop ones you don't want.

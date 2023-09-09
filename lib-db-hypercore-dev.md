@@ -9,6 +9,8 @@ modified: 2023-09-07T15:58:04.082Z
 
 # guide
 
+- who is using #hypercore
+  - Tradle
 # dev
-
+- Dat was renamed to Hypercore in 2020
 # more

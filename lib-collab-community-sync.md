@@ -305,6 +305,19 @@ modified: 2022-11-29T20:41:25.566Z
 # discuss-partial-sync
 - ## 
 
+- ## 
+
+- ## [IndexedDB chunkstore · attic-labs/noms](https://github.com/attic-labs/noms/issues/2602)
+- At the moment people use pouchdb and other things to enable offline first apps, but sync back to the server is less than stellar(杰出的) in terms of options, and couchbase is pretty tough to work with IMHO.
+  - And lastly i can use gopherjs and bind to the JS NOM OR to the golang noms.
+  - I guess you need to abstract a file system into a indexeddb, which is not a huge feat.
+
+- ## [how to to do partial (descending)l sync? F.e. chat messages](https://github.com/pouchdb/pouchdb/issues/8221)
+  - Imagine I have chat app, and chat may have potentially million of messages in a room. What is a best practice to sync such a database to web browser? Is it possible to sync f.e. last 1000 messages, then if user scrolls, resync last 2000 messages?
+  - As I understand I can achieve this passing query_selector to replicate method, but the question is, will it resync items with sequence_number lower then last sync? I mean will it sync oldest messages after newer message was synced?
+
+- You can use filtered replication
+
 - ## [🤔 I created PouchDB. After a year... | Hacker News](https://news.ycombinator.com/item?id=24355263)
 - I created PouchDB. After a year or so I handed that project off to some great maintainers that made it much better as I had grown a little skeptical of the replication model and wanted to pursue some alternatives.
 - It’s been about 10 years, much longer than I thought it would take, but I have a young project that finally realizes the ideas I had back then.

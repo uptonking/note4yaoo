@@ -140,6 +140,8 @@ modified: 2023-08-23T17:15:46.484Z
   - A small series of workshops to introduce kappa architecture and how to build p2p programs with modules like hypercore, multifeed, and kappa-core.
   - https://github.com/aral/kappa-architecture-workshop-work-files
   - https://github.com/dwyl/learn-kappa-architecture
+  - https://github.com/tradle/hypercore-workshop
+    - we forked it to update to new materials and shift focus to core Hypercore modules.
 
 - https://github.com/arso-project/kappa-record-db /202005/js/inactive
   - A peer-to-peer database built on hypercores and kappa-core@experimental.

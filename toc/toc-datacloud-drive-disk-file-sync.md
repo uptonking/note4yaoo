@@ -258,6 +258,11 @@ modified: 2022-09-10T02:26:52.062Z
 - https://github.com/LANDrop/LANDrop /cpp
   - https://landrop.app/
   - Drop any files to any devices on your LAN.
+# file-sharing
+- https://gitlab.com/timvisee/send /MPLv2/202306/js
+  - https://send.vis.ee/
+  - Simple, private file sharing
+  - A fork of Mozilla's Firefox Send. Mozilla discontinued Send, this fork is a community effort to keep the project up-to-date and alive.
 # more-drive
 - https://github.com/FazioNico/dDrive
   - An alternative storage solution to Google Drive

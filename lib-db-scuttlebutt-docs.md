@@ -12,7 +12,9 @@ modified: 2023-09-07T15:56:25.565Z
 - [Scuttlebutt · GitBook](https://handbook.scuttlebutt.nz/)
 # blogs
 - [Comparing Peer to Peer Protocols_202203](https://blog.mauve.moe/posts/protocol-comparisons)
-  -  BitTorrent, IPFS, Secure Scuttlebutt (SSB) and Hypercore
+  - BitTorrent, IPFS, Secure Scuttlebutt (SSB) and Hypercore
+  - [Exploring Alternatives to the Centralized Web: ipfs/hypercore/ssb/bitTorrent](https://hypha.coop/dripline/p2p-primer-part-1/)
+  - [Exploring Data Models and Mutability](https://hypha.coop/dripline/p2p-primer-part-2/)
 
 - [Nostr v SSB](https://mattlorentz.com/weblog/2023/01/18/nostr-v-ssb.html)
   - [How is this different than Secure Scuttlebutt? I remember following that for a w... | Hacker News](https://news.ycombinator.com/item?id=35691461)

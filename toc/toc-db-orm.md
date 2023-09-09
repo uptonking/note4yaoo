@@ -196,7 +196,7 @@ modified: 2021-08-30T18:56:09.644Z
   - Distributed SQL database in Rust, written as a learning project
   - 内部自己实现了SQL Parser、Query Planner、Storage（包括一个B+Tree）和Raft，都是直接编写的（简化版本）的源码而不是用外部库，确实很适合用来学习
 
-- https://github.com/nukep/llamadb /201712/rust
+- https://github.com/nukep/llamadb /201712/rust/inactive
   - a simple SQL database, written entirely in Rust 
 
 - https://github.com/khonsulabs/bonsaidb /MIT/rust
