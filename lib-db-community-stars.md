@@ -30,7 +30,7 @@ modified: 2021-08-30T15:51:28.094Z
 - It makes the code easier as well because you can generate IDs on the client.
   - Exactly! this also makes the system as a whole more scalable. This is not something you need early on, but changing PKs later is super hard and starting with UUIDs is not.
 
-# discuss-db-log
+# discuss-db-oplog
 - ## 
 
 - ## 
@@ -38,6 +38,21 @@ modified: 2021-08-30T15:51:28.094Z
 - ## 
 
 - ## 
+
+- ## Write-ahead logging is a standard way to ensure data integrity and reliability. 
+- https://twitter.com/arpit_bhayani/status/1508665078929047552
+  - Any changes made on the database are first logged in an append-only file called write-ahead Log or Commit Log. 
+  - Then the actual blocks having the data (row, document) on the disk are updated
+  - An operation like Update Query, Delete Query is logged in the commit log and not the actual changes making the write lightning-fast.
+  - WAL also takes care of its data integrity by writing a CRC-32 before logging the operation. This CRC is checked during reading and replicating
+
+- Advantages of using WAL
+  - we can skip flushing the data to the disk on every update
+  - significantly reduce the number of disk writes
+  - we can recover the data in case of a data loss
+  - we can have point-in-time snapshots
+
+- A write-ahead log is the append-only source of truth in a database; each transaction appends events to it before table files are updated. Change data capture (which Marta is referring to) lets you retrieve and consume changes from that log. 
 # discuss-db-streaming
 - ## 
 

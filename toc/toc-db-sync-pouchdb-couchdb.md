@@ -157,7 +157,7 @@ modified: 2022-11-30T18:56:07.072Z
 - https://github.com/garbados/pouchdb-hypercore /js
   - Synchronize PouchDB or CouchDB with P2P Hypercores
   - A PouchDB plugin that maps records in hypercores, a P2P append-only datastructure, to a PouchDB or CouchDB instance. 
-  - A PouchDB plugin that maps records in hypercores, a P2P append-only datastructure, to a PouchDB or CouchDB instance. 
+  - The plugin allows you to follow changes in hypercores locally and remotely.
 
 - https://github.com/garbados/pouchdb-cabal /js
   - Interact with Cabal using PouchDB

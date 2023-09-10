@@ -9,6 +9,21 @@ modified: 2023-09-07T15:58:04.082Z
 
 # guide
 
+- pros
+  - mutable and versioning
+  - support streaming large-data/subset
+  - network agnostic
+
+- cons
+  - few showcases
+
+- features
+  - Uses append-only log
+  - dat offers mutability whereas IPFS doesn't
+  - No block-level dedup. 
+    - Change in one byte, creates a new version of the file. 
+    - File-level dedup can be achieved with additional management level, called corestore.
+
 - who is using #hypercore
   - Tradle
 # dev

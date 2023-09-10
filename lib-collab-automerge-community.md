@@ -34,6 +34,12 @@ modified: 2023-09-01T10:13:59.044Z
 
 - ## [Speed Comparisons Between Automerge Implementations](https://github.com/automerge/automerge/issues/41)
 
+- ## A hypercore conflates(合并，混合) several things in hypermerge
+- https://twitter.com/pvh/status/1219777305632894976
+  - it's not just an append only log, it's a sharable unit, a verifiable signature, and a Merkle tree.
+  - I am absolutely ready to move off hypercore as storage if you have the gumption to propose an alternative
+- The nice thing about IPFS is that because it's content addressed, you don't need a lot of the metadata hypercores include, so for static content I think it would make a ton of sense. There are substantial privacy downsides if you advertise all your content to the world though.
+
 - ## We run automerge over hypercore + hyperswarm and call it hypermerge. Works reasonably well.
 - https://twitter.com/pvh/status/1246144720474005505
 
@@ -68,14 +74,16 @@ modified: 2023-09-01T10:13:59.044Z
   - It’s currently using NFS, because I found a simple nfs server template, but it’s a little slow (and very “works on my machine”).
   - The end goal was to build a replacement for git that you didn’t have to remember to use, but I am currently thinking about doing something that doesn’t use NFS instead.
 
-- ## [how does automerge compare to holochain?](https://github.com/automerge/automerge/issues/566)
-- Automerge is like Docs. Holochain is Bittorrent.
+- ## 🆚️ [how does automerge compare to holochain?](https://github.com/automerge/automerge/issues/566)
+- Automerge is like Docs. 
+  - Holochain is Bittorrent.
   - Both attempt to ensure data integrity in different circumstances.
-  - Automerge (a CRDT) tries to ensure data integrity when two different people are working on the same file at once, solving the problem of data integrity via eventual consistency.
+  - Automerge (a CRDT) tries to ensure data integrity when two different people are working on the same file at once, **solving the problem of data integrity via eventual consistency**.
   - Holochain tries to ensure data integrity of a file across the network. However, if you change the file, it is no longer part of the network consensus and your version of the file is no longer the same file. The network is not interested in your changes and merging them, it is interested in maintaining the ground truth. Hence the "-chain" part. The majority (ledger) is king.
   - These two bits of software are both interested in maintaining data integrity, but with completely different goals in mind.
 
-- The most noticeable difference between Automerge and Holochain is that the former doesn't require a specific network and the latter does; Automerge can synchronize data between peers over a LAN.
+- The most noticeable difference between Automerge and Holochain is that the former doesn't require a specific network and the latter does; 
+  - Automerge can synchronize data between peers over a LAN.
 
 - ## is there an accompanying paper to describe the CRDT behind ‘micromerge’ or is ‘A Conflict-Free Replicated JSON Datatype’ the closest?
 - https://automerge.slack.com/archives/C61RJCN9J/p1683034175607929

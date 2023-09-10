@@ -74,7 +74,7 @@ modified: 2023-08-25T21:17:11.979Z
 
 - ## 
 
-- ## 
+- ## [I Want Decentralized Version Control for Structured Data | Hacker News](https://news.ycombinator.com/item?id=22843085)
 
 - ## [Show HN: Sortabase, a collaborative, visual database builder for communities | Hacker News](https://news.ycombinator.com/item?id=35951126)
 - This feels like a combination of Airtable (before the push to be a no-code app platform) and Reddit. This seems way better than the public Google Sheets that make their way around the latter site.

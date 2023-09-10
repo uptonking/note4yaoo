@@ -8,7 +8,10 @@ modified: 2023-09-09T19:04:07.030Z
 # lib-db-hypercore-faq
 
 # guide
-- [Hypercore universe FAQ](https://github.com/tradle/why-hypercore/blob/master/FAQ.md)
+- [tradle: Hypercore universe FAQ](https://github.com/tradle/why-hypercore/blob/master/FAQ.md)
+- [Dat Docs  FAQ](https://docs.datproject.org/docs/faq)
+- [IPFS Docs - IPFS comparisons](https://docs.ipfs.tech/concepts/comparisons/)
+- [earthstar - Comparisons with other distributed systems](https://earthstar-project.org/docs/comparisons)
 # faq-repeat
 
 ## 
@@ -30,7 +33,25 @@ modified: 2023-09-09T19:04:07.030Z
 
 ## 🆚️ How is Hypercore different from IPFS?
 
-- [Hypercore Protocol](https://www.reddit.com/r/ipfs/comments/glnra9/hypercore_protocol/)
+- IPFS is a general-purpose file system that uses a distributed hash table (DHT) to route and transfer content-addressed data. 
+- Hypercore is a decentralized data-sharing tool that uses a distributed hash table (DHT) for data storage. It focuses on enabling data sharing and collaboration.
+
+- [Dat Questions · IPFS](https://docs.datproject.org/docs/faq#how-is-dat-different-than-ipfs)
+- IPFS and Dat share a number of underlying similarities but address different problems. 
+- Both deduplicate content-addressed pieces of data and have a mechanism for searching for peers who have a specific piece of data. 
+  - Both have implementations which work in modern Web browsers, as well as command line tools.
+
+- The two systems also have a number of differences. 
+- Dat keeps a secure version **log of changes** to a dataset over time which allows Dat to act as a version control tool. 
+  - The type of Merkle tree used by Dat lets peers compare which pieces of a specific version of a dataset they each have and efficiently exchange the deltas to complete a full sync. 
+  - It is not possible to synchronize or version a dataset in this way in IPFS without implementing such functionality yourself, as IPFS provides a CDN and/or filesystem interface but not a synchronization mechanism.
+
+- Dat prioritizes speed and efficiency for the most basic use cases, especially when sharing large datasets. 
+  - Dat does not duplicate data on the local filesystem, unlike **IPFS which duplicates on import** (although IPFS now has experimental support for no-copy imports). 
+  - Dat's pieces can also be easily decoupled for implementing lower-level object stores. See hypercore and hyperdb for more information.
+
+- In order for IPFS to provide guarantees about interoperability, IPFS applications must use only the IPFS network stack. 
+  - In contrast, Dat is only an application protocol and is **agnostic to which network protocols** (transports and naming systems) are used.
 
 - Both are cool open source P2P data projects that have existed for roughly the same 5-7 years.
 
@@ -61,6 +82,23 @@ modified: 2023-09-09T19:04:07.030Z
 - 
 - 
 - 
+
+## Can data be deleted?
+
+- Somewhat - you can clear() your content locally, 
+  - but **if someone replicated it already, you can’t force them to clear**. 
+  - Also, internal data integrity records are still kept, but they do not leak any data
+
+## How does Hyperbee relate to Hypercore?
+
+- Hyperbee uses Hypercore as an underlying storage and a replication mechanism. 
+  - The cool thing is that **one replication stream can carry many Hypercores, which can carry Hyperbees, Hypertries, and Hyperdrives**.
+- To manage multiple hypercore feeds, with permissions, use the `corestore`.
+
+- Hyperbee, like any other Hypercore-based data structure is single-writer. 
+  - That means when it is replicated, it is replicated as-is, and eventually reaches the same state. 
+
+- hyperbee needs to be wrapped into Hyperbeedown and fed into LevelUP.
 
 ## Is Hypercore multi-process-safe?
 
@@ -102,7 +140,10 @@ modified: 2023-09-09T19:04:07.030Z
 
 ## 
 
-## 
+## Does Dat store version history?
+
+- Version history is built into our core modules but only some clients support it (more soon!). 
+- We have dat tools, intended for servers, such as hypercore-archiver and hypercloud that store the full content history.
 
 ## What is the USP (Unique Selling Proposition) of Hypercore?
 
@@ -148,6 +189,9 @@ modified: 2023-09-09T19:04:07.030Z
 
 - WebTorrent's tech can be helpful to Hypercore, as it perfected peer discovery (via DHT) on the Web
 
+- BitTorrent takes a single indelible snapshot of a collection of files, forcing users to start over when they need to add or change data. Dat's ability to update data and efficiently synchronize changes is much better suited to active research on datasets that grow and change. 
+  - BitTorrent is also inefficient at providing random access to data in larger datasets. 
+
 ## Is there a synergy between blockchain and Hypercore?
 
 - Both blockchain and Hypercore provide verifiable data structures. 
@@ -187,22 +231,6 @@ modified: 2023-09-09T19:04:07.030Z
 ## Can Hypercore network protocol be extended?
 
 - Yes. The protocol is formalized with protobuf and supports defining extensions.
-
-## Can data be deleted?
-
-- Somewhat - you can clear() your content locally, 
-  - but **if someone replicated it already, you can’t force them to clear**. 
-
-## How does Hyperbee relate to Hypercore?
-
-- Hyperbee uses Hypercore as an underlying storage and a replication mechanism. 
-  - The cool thing is that one replication stream can carry many Hypercores, which can carry Hyperbees, Hypertries, and Hyperdrives.
-- To manage multiple hypercore feeds, with permissions, use the corestore.
-
-- Hyperbee, like any other Hypercore-based data structure is single-writer. 
-  - That means when it is replicated, it is replicated as-is, and eventually reaches the same state. 
-
-- hyperbee needs to be wrapped into Hyperbeedown and fed into LevelUP.
 
 ## How can Hyperdrive be shared?
 

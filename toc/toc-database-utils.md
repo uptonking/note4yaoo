@@ -28,6 +28,7 @@ modified: 2023-08-23T17:15:46.484Z
   - Performant. Uses a simple flat file structure to maximize I/O performance.
   - Secure. Uses signed merkle trees to verify log integrity in real time.
   - Version 10 is not compatible with earlier versions (9 and earlier), but is considered LTS
+    - v10 adds support for truncate and many other things
   - [Proposal integrate Query able append only log](https://github.com/holepunchto/hypercore/issues/312)
     - this data structure is called fleece, allows you to exchange less data and keep it query able while streaming 
     - it's the core of couchbase the fastest most complet database implementation that exists by the way using a lot of nice stuff. 
@@ -41,18 +42,17 @@ modified: 2023-08-23T17:15:46.484Z
   - https://github.com/datrs/hypercore /rust
   - https://docs.rs/hypercore/latest/hypercore/
   - Rust implementation of Hypercore protocol
-  - This crate provides a low-level streaming API to hypercore-protocol and exposes an interface that should make it easy to implement actual protocol logic on top. This crate targets Hypercore 9 (Dat 2) only.
+  - This crate provides a low-level streaming API to hypercore-protocol and exposes an interface that should make it easy to implement actual protocol logic on top. 
+  - This crate targets Hypercore 9 (Dat 2) only.
+    - For ongoing work to support the latest version 10 of hypercore see the v10 branch.
   - It uses `async-std` for async IO, and `snow` for the Noise handshake.
-
-- https://github.com/RangerMauve/hyper-sdk /js
-  - A Software Development Kit for the hypercore-protocol
-  - Hypercore-protocol and it's ecosystem consists of a bunch of low level building blocks for working with data in distributed applications. Although this modularity makes it easy to mix and match pieces, it adds complexity when it comes to actually building something.
 
 - https://github.com/holepunchto/hyperbee /js
   - https://docs.holepunch.to/building-blocks/hyperbee
   - An append-only B-tree running on a Hypercore. 
   - It provides a key/value-store API, atomic batch insertions, and creating sorted iterators.
   - 依赖streamx、mutexify
+  - Hyperbee is a key-value database that's built on top of hypercore. It works basically like leveldb but it's networked with a hyper:// address, so reads work remotely
   - It uses a single Hypercore for storage, using a technique called embedded indexing.
   - It provides features like cache warmup extension, efficient diffing, version control, sorted iteration, and sparse downloading.
   - As with the Hypercore, a Hyperbee can only have a single writer on a single machine
@@ -95,12 +95,48 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/digidem/websocket-hypercore-replicator
   - Replicate a hypercore over a websocket
 
-- https://github.com/fsteff/hyperobjects
-  - Simple object store with transaction support, built on hypercore.
-  - concurrent, atomic transactions
-
 - https://github.com/rafapaezbas/hypercore-speed-tests
   - Test with Hypercore and Hyperbee
+
+### examples-hypercore
+
+- https://github.com/Ruulul/automerge_hypercore_demos /js
+  - local_sync_textareas
+
+- https://github.com/CodelyTV/p2p-editor /js/inactive
+  - P2P Editor is a code editor that works in the browser which lets you share live coding sessions.
+  - Code editor: Ace
+  - Database: append only log (hypercore)
+  - Communication: WebRTC RTCDataChannel (webrtc-swarm)
+  - Peer discovery: WebRTC signaling server (signalhub)
+  - Storage: RAM
+
+- https://github.com/LuKks/hyperfind
+  - Explore hypercores (quick demo)
+  - https://github.com/LuKks/use-hyper
+    - React hooks for the hypercore-protocol stack
+
+### utils-hypercore
+
+- https://github.com/RangerMauve/hyper-sdk /js
+  - A Software Development Kit for the hypercore-protocol
+  - Hypercore-protocol and it's ecosystem consists of a bunch of low level building blocks for working with data in distributed applications. Although this modularity makes it easy to mix and match pieces, it adds complexity when it comes to actually building something.
+  - The Hyper SDK combines the lower level pieces of the Hyper stack into high level APIs that you can use across platforms 
+
+- https://github.com/extendedmind/peermerge /rust
+  - Peer protocol (hypercore or p2panda) + Automerge in Rust
+
+- https://github.com/HDegroote/hypercore-rehost-server /js
+  - Simple server to keep hypercores available.
+  - A CLI to interact with this server is provided at hypercore-rehost-cli.
+
+- https://github.com/fsteff/hyperobjects /ts
+  - Simple object store with transaction support, built on hypercore.
+  - concurrent, atomic transactions
+  - internally uses an octree to store object-ID > hypercore index mappings
+
+- https://github.com/emilbayes/hypercore-dag /js/inactive
+  - DAGs on top of hypercore, allowing verified random-access to graph nodes
 
 ### dat-ecosystem
 
@@ -113,6 +149,11 @@ modified: 2023-08-23T17:15:46.484Z
   - peer-to-peer sharing & live synchronization of files via command line
   - Use dat command line to share files with version control, back up data to servers, browse remote files on demand, and automate long-term data preservation
   - dat is the first application based upon the Hypercore Protocol, and drove the architectural design through iterative development between 2014 and 2017. T
+
+- https://github.com/garbados/pouchdb-hypercore /js
+  - Synchronize PouchDB or CouchDB with P2P Hypercores
+  - A PouchDB plugin that maps records in hypercores, a P2P append-only datastructure, to a PouchDB or CouchDB instance. 
+  - The plugin allows you to follow changes in hypercores locally and remotely.
 
 ## kappa-db
 

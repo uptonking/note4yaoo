@@ -11,15 +11,15 @@ modified: 2023-09-07T15:56:25.565Z
 
 - [Scuttlebutt · GitBook](https://handbook.scuttlebutt.nz/)
 # blogs
-- [Comparing Peer to Peer Protocols_202203](https://blog.mauve.moe/posts/protocol-comparisons)
-  - BitTorrent, IPFS, Secure Scuttlebutt (SSB) and Hypercore
-  - [Exploring Alternatives to the Centralized Web: ipfs/hypercore/ssb/bitTorrent](https://hypha.coop/dripline/p2p-primer-part-1/)
-  - [Exploring Data Models and Mutability](https://hypha.coop/dripline/p2p-primer-part-2/)
-
-- [Nostr v SSB](https://mattlorentz.com/weblog/2023/01/18/nostr-v-ssb.html)
-  - [How is this different than Secure Scuttlebutt? I remember following that for a w... | Hacker News](https://news.ycombinator.com/item?id=35691461)
-  - After using Nostr a bit, I don't think there's a huge difference between SSB and it except that Nostr has no blob sync and they abandoned append-only logs and use different signing key cryptography.
+- 🆚️ [Nostr v SSB](https://mattlorentz.com/weblog/2023/01/18/nostr-v-ssb.html)
+  - [How is this different than Secure Scuttlebutt? | Hacker News](https://news.ycombinator.com/item?id=35691461)
+  - After using Nostr a bit, I don't think there's a huge difference between SSB and it except that **Nostr has no blob sync and they abandoned append-only logs** and use different signing key cryptography.
   - Scuttlebutt just suffers from an inaccessible implementation at the moment, but there is a team coming together to make a working implementation again.
+
+- [nostr: The problem with SSB (Secure Scuttlebutt)](https://github.com/nostr-protocol/nostr#the-problem-with-ssb-secure-scuttlebutt)
+  - its protocol is too complicated because it wasn't thought about being an open protocol at all. 
+  - It insists on having a chain of updates from a single user, which feels unnecessary to me and something that adds bloat and rigidity to the thing
+  - It is not as simple as Nostr, as it was primarily made for P2P syncing, with "pubs" being an afterthought; 
 # overview
 
 # docs
