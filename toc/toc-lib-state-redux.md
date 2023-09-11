@@ -115,6 +115,11 @@ modified: 2020-11-02T19:13:04.103Z
   - A mock store for testing Redux async action creators and middleware. T
   - this library is designed to test the action-related logic, not the reducer-related one. 
   - In other words, it does not update the Redux store. 
+
+- https://github.com/neurosnap/robodux /ts
+  - By using the robodux pattern the amount of redux boilerplate is dramatically reduced. 
+  - In most cases, wiring up action types, action creators, and reducers can be done in one line of code.
+  - createTable: Thinking of reducers as database tables, this function builds actions, reducer, and selectors that builds simple and repeatable operations for that table.
 # redux-saas-crud
 - https://github.com/Dbuggerx/react-pokeapi
   - https://dbuggerx.github.io/react-pokeapi

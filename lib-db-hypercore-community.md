@@ -16,7 +16,13 @@ modified: 2023-09-07T15:58:27.967Z
 # discuss-ipfs-ssb
 - ## 
 
-- ## 
+- ## After researching decentralized systems for the last months, I’m sure IPFS was the chosen one protocol, destroyed by implementation by committee. libp2p fuels my nightmares.
+- https://twitter.com/LuaSolDel/status/1630663906946326552
+  - An over complex stack of modular libraries that you have to pray for to work together. 
+  - The TS/JS implementation is mainly focused on node. So much bloat, so little documentation. Things are changing slowly through yet some new slow moving working groups.
+  - Also the associations to crypto and web3 did not seem to help in building a good community.
+
+- But I wouldn’t be surprised if protocols like earthstar or hyperhyperspace will overtake IPFS one day. Small projects that explore the space of p2p way better imo. Or maybe holepunch can resurrect Hypercore aka dat and bring it to the web.
 
 - ## [Hypercore Protocol](https://www.reddit.com/r/ipfs/comments/glnra9/hypercore_protocol/)
 - dat offers mutability whereas IPFS doesn't
@@ -120,9 +126,25 @@ modified: 2023-09-07T15:58:27.967Z
 
 - ## 
 
-- ## 
+- ## do you have any hello-world type example of hypercore running in the browser?
+- https://discord.com/channels/709519409932140575/709519410557222964/1068520819204051084
+  - If it can run directly in the browser without the need of a proxy server, it would be even better
+- the problem is the DHT won't run in the browser, so it isn't useful without the proxy to the DHT server
+- You have to setup a public dht-relay on a server, and/or you could let users run their own local dht-relay and let them configure host and port on your web app
+  - You could easily do this on any React project
+  - [browser-dht.js](https://gist.github.com/LuKks/c144fa0f72ebfd303515d0ce7dadb477)
 
-- ## 
+- ## 💰 blue sky is doing a lot of stuff and was born from jack/twitter who is also making "web5". theres motive there. 
+- https://discord.com/channels/985129863348371516/1057659276778274986/1085946345031995495
+  - ipfs/filecoin have their own VC's. 
+  - every pure p2p project has no real funding. 
+  - hypercore is in an interesting spot as it has a lot of funding but its almost more grass roots and aligning with BTC, and not creating another blockchain 
+  - as for lume, the answer is hosting services and web3 domains 
+- So my hope is lume can bridge divides and do things better since I have no puppet master.
+  - and libp2p and hyper are becoming the primary 2 nets. and tbh you could prob get hyper chains running over libp2p. they use a similar DHT, same key curve, and both use noise. So they are building in parallel in a way
+  - and libp2p and hyper are becoming the primary 2 nets. and tbh you could prob get hyper chains running over libp2p. they use a similar DHT, same key curve, and both use noise. So they are building in parallel in a way
+  - to me though libp2p feels like they built IPFS then went backwards to generalize
+  - hyper is generalized 1st and not overengineered
 
 - ## In the past, Hypercore has used a daemon called "hyperspace."_202111
 - https://twitter.com/pfrazee/status/1456017050074234889
@@ -168,7 +190,25 @@ modified: 2023-09-07T15:58:27.967Z
 
 - ## 
 
-- ## 
+- ## IPFS has been working on gossipsub for years and years and it still only barely works 
+- https://discord.com/channels/709519409932140575/912672739947585576/1079181966232006676
+  - but maybe I really should use IPFS given they have a lot of it figured out...
+  - these problems worry me because without a very very non trivial system to prevent it, it seems very trivial for someone to just spam gossip constantly and clog the network
+  - I have ways of rate limiting posting, which involve actually scanning the posts, but that only stops it once they have already crossed the network. Rate limiting before that is more difficult
+- yeah that's a valid concern. 
+  - the autobase-manager might be improved a bit on this end to reduce messages. 
+  - but generally this concern about a malicious actor on the network would be a communication layer (aka the means of acquiring a stream) combined with a app layer responsibility. 
+  - If using hyperswarm, you have the ability to .ban() a peer when they are clogging the network. 
+  - on the autobase-manager end, its main concern is gossiping core keys. the allow() argument puts the business logic for detecting and rejecting spam into the developers hands.
+  - in the end autobase-manager doesn't make the connection, just uses it to distribute keys
+- Yeah but it's the part that is using the gossip, so it has information to potentially determine who is being malicious, ie, sending things unnecessarily. That's really why it's complicated, this traverses multiple layers, as a problem.
+  - At the communication layer, you might be able to tell if someone is using a lot of bandwidth, but that's not necessarily enough to determine if they are trying to attack you
+  - I don't have a simple solution for this, though
+
+- right that's why i was saying it was communication layer combined with app layer. 
+  - So **let the app decide whats an actual abuse of the communication and then ban peers etc**. 
+  - If its an autobase input or output thats abusing the system, then the allow() gives the app the choice to block the key from being added again.
+  - a nice catch all for either scenario is letting the user ban a peer / hypercore. it wont mean that the user will catch the problem in time but it gives them the power.
 
 - ## 🤔 To be clear: IPFS itself won't work because it is ridiculous, but the promise of P2P addressable databases will materialize and will be so easy and performant that even Fiatjaf will use it.
 - https://twitter.com/ArNazeh/status/1628017292209451011
@@ -196,6 +236,87 @@ modified: 2023-09-07T15:58:27.967Z
 - ## 
 
 - ## 
+
+- ## 🤔 [The Reactive Monolith – How to Move from CRUD to Event Sourcing | Hacker News_202109](https://news.ycombinator.com/item?id=28691728)
+- I used to be really excited about event sourcing but yeah, its usually just over-engineering. 
+  - It appeals to the nerd in me because its a powerful & clean model - events are immutable, your entire database can theoretically be reconstructed at any point in time by just replaying an event log up to time X. 
+  - In the ideal form its sort of the highest fidelity version of data storage, throwing nothing away, supporting all ways of querying as materialized views or dependent DBs built on the stream. Its beautiful.
+- But also we live in reality. 
+- 👉🏻 DBs use checkpoints because storing/replaying an event log from time 0 would take ungodly amounts of space and time. 
+  - You deleted or resized a column to save some space? Lol no, the event log lives forever. 
+  - You wanted to use SQL, a battle tested language to query your data? Lol no, the database is "inside out" so tough luck buddy, you're building the database now. 
+  - Sure you might have to rebuild compaction, joins, query languages, concurrency control and the other 100 things a DB gives you, but on the plus side that one audit log that you could have built with some glue and a few INSERT triggers in Postgres is now an elegant map/reduce on your 100TB dataset! Yay!
+
+- For non-trivial amounts of data you should combine event sourcing with snapshots - i.e. a somewhat up-to-date materialized view/DB table - so you don't have to start for 0. At that point you can delete older events or move them to cold storage.
+  - A valid question then is: "what do you gain over just using the table"? You gain a well-described model of your business domain, with very clear actions about what should happen on which real-world event, and an audit log. Whether that's worth it depend on your use case.
+
+- Secondary benefits include easily being able to share events for new apps or use-cases, business analysts really like them, and making it unlikely things go wrong because data is in an inconsistent state.
+
+- I would like to see answers to the question: why move from Crud to event sourcing. Because I have seen at least 5 moderate projects trying to integrate ES. They all failed in the sense that either people didn't understand the code anymore, huge integration times, performance issues and even complete project cancellation because of all people walking away
+
+- I understand this thread is about dumping on ES... However, I must notice in your case it was an audit log. An ES system wouldn't work at all without access to events.
+  - If the ES is "unnecessary", then it's not ES by definition. If events are not your source of truth, it's not event sourcing, just event logging.
+
+- Two examples of systems that use a variant of event sourcing:
+  - relational database systems (their journals and async replication in particular)
+  - git
+
+- As a proponent of Radical Simplicity, I'm always sceptical about event sourcing.
+
+- I would recommend to rename "Event Sourcing" to "Evil Sourcing". You guy don't even know how many companies went bankrupt just because they tried to introduce this evil technology that makes your app 100x more complex.
+
+- ## [I've been developing high performance databases for the last five years | Hacker News](https://news.ycombinator.com/item?id=8979043)
+- It's tough to beat MVCC for a database that wants isolated concurrent transactions. Append only designs seem attractive, but they don't actually help much with write throughput on SSDs (but avoiding in-place updates does, due to erase blocks.) And they often require writing much more information. E.g. writing 100 bytes in LMDB, which is an append only btree, requires copying all pages from the root to the leaf and writing them all out, typically 64k or more. Writing 100 bytes to a transaction log or WAL costs about 100 bytes. There's a huge write amplification going on.
+
+- ## [A way to do atomic writes | Hacker News](https://news.ycombinator.com/item?id=20040779)
+- Appending log based file system has a lot of appeals. A lot of hard problems, like atomic write, become trivial. A log based FS shares similar properties as the transaction log in RDBMS, making consistency and recovery easy. Write performance is fantastic. With enough cache memory, read performance should be good, too. The only down-size is the performance hit when doing garbage collection. 
+  - Totally agree. Log based file system makes things much easier, such as atomic write, data consistency and failure recovery. Along with COW semantics, transaction isolation also becomes easier. By its append-only writing nature, file versioning is trivial as well. Garbage collection is performance downside indeed, but it can be mitigated by COW switching and delayed bulk collection IMHO. Overall, the cost is worthwhile and that is what I am currently doing in ZboxFS
+
+- I think elements of that generationality are the foundations of the Log Structured Merge Trees used by KV Stores like LevelDB and RocksDB. Atleast I think that's the same concept, I'm not well read on filesystems.
+- Yes, LSMT is a good example of pushing the idea of a hybrid append log and in memory data structure further.
+- However, LSMT is for relatively smaller data set, i.e. ordered key-value. It has worse write amplification than a simple append log. There're 2~3 writes per change.
+  - Also it doesn't offer help to address the frequent update block problem. All versions of a data change are written to disk. A merge is needed to get rid of the old versions.
+  - But it has a number of good implementation ideas that can be borrowed.
+
+- ## 🤔 [Immutable Data (2015) | Hacker News](https://news.ycombinator.com/item?id=36470739)
+- Author here, 8 years on. Although the advantages are real, I can't say I have had much opportunity to implement schemas like this. The extra complexity is usually what gets in the way, and it can add difficulty to migrations.
+  - I think it would be useful in certain scenarios, for specific parts of an application. Usually where the history is relevant to the user. I think using it more generally could be helped by some theoretical tooling for common patterns and data migrations.
+- You can use Datomic for instance or SirixDB on which I'm working in my spare time.
+  - The idea is an indexed append-only log-structure and to use a functional tree structure (sharing unchanged nodes between revisions) plus a novel algorithm to balance incremental and full dumps of database pages using a sliding window instead.
+
+- 👉🏻 I agree this is more of an application level concern than a database thing. If you need to maintain a history for the user requirement then you will naturally land on a scheme like this.
+- We also have help from other quarters nowadays.
+- Databases often provide a time travel feature where we can query AS OF a certain date.
+- Some people went down the whole event sourcing/CQRS/Kafka route where there is an immutable audit log of updates.
+- Data warehousing has moved on such that we can implement “slowly changing data” there.
+- All in all, complicating our application logic, migrations and GDPR in order to maintain history in line of business applications might not be worthwhile.
+
+- Suppose that instead of a typical User table, you have a User_Revision table like suggested. If this information gets leaked, the user is exposed to more vectors of attack.
+  - GDPR and the right to having your personal data deleted certainly puts a bit of a stopper on using an immutable database for anything personally identifying.
+
+- I'll argue that this is bad design. It works as long as the amount of data is small, but even then taking a low-data scenario and building lots of views or triggers just seems a bit weird. 
+
+- ## [Speaking of B-trees, I find CouchDB's implementation really interesting: the bac... | Hacker News](https://news.ycombinator.com/item?id=7522724)
+- Speaking of B-trees, I find CouchDB's implementation really interesting: the backing file is append-only, meaning that modifying the tree implies appending the modified nodes at the end of the file (for example, if I change a leaf, than I rewrite it at the end of the file, and rewrite its parent so that it points to the leaf's new position, and so on until we reach the root node).
+  - Sounds like a waste of space, but it solves a bunch of problems, like being crash-proof (since we never overwrite anything, it's always possible to just find the last root) and allowing reads concurrent with a write without any synchronizing necessary. Plus, it's actually optimized for SSD's due to its log-like structure!
+
+- Massive waste of space though. LMDB is also copy-on-write and crash-proof but doesn't require compaction like CouchDB does
+
+- ## [Building a Distributed Log from Scratch, Part 1: Storage Mechanics | Hacker News](https://news.ycombinator.com/item?id=15983185)
+- [Building a Distributed Log from Scratch, Part 1: Storage Mechanics – Brave New Geek](https://bravenewgeek.com/building-a-distributed-log-from-scratch-part-1-storage-mechanics/)
+
+- I have to admit that I only recently got familiar with logs. 
+  - I was designing a B+Tree in Python for fun and was struggling to make it survive crashes: a single insertion in a tree often results in multiple page writes which is not atomic.
+  - The solution to this problem is simple and elegant with a **Write-Ahead Log**. Every page write is appended to the log and only merged back into the tree file when it's sure that the log is safely written to storage.
+
+- If you're interested in those, there are at least two other designs you should have a look at:
+  - couchdb uses a single file for each db, which means the write ahead log _is_ the storage. The atomicity is guaranteed by saying that the latest root is the valid root. If writes are interrupted, everything since the last root is invalid and discarded upon restart. A simple design that just works, although it tends to be wasteful and requires frequent compactions
+  - lmdb uses copy on write to make sure space is properly used, and atomicity is provided by sharing only the strict minimal pieces of information, so small in fact atomicity is guaranteed by the os.
+
+- ## [The database I wish I had : programming](https://www.reddit.com/r/programming/comments/ijwz5b/the_database_i_wish_i_had/)
+- technically PouchDB is also append-only, but its history tracking isn't as elaborate as git.
+  - PouchDB's _rev field is a common pitfall for new people when starting with it.
+  - I was trying to use those _revs for revision control myself, and I had to watch her say it a few times in order to convince myself to stop doing it
 
 - ## The real-time syncing immutable, append-only log that hypercore provides can also be accessed randomly, 
 - https://news.ycombinator.com/item?id=15468295

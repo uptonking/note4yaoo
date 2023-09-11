@@ -64,6 +64,12 @@ modified: 2022-11-11T06:57:09.670Z
   - The goal is get a better understanding of database internals by building one.
   - [SQLRite – SQLite clone from scratch in Rust | Hacker News_202104](https://news.ycombinator.com/item?id=26749737)
 
+- https://github.com/Shaance/rust-simple-log-append-db /rust
+  - Simple db using append only log file. 
+  - This runs in a single thread
+  - Implemented for learning purpose
+  - When log file exceeds a certain size (1 MB in the main.rs file usage of the db), compaction process will kick-in.
+
 - https://github.com/josephg/skiplistrs
   - high performance skiplist implementation packed with useful features
   - Skip lists are super fun structures which can be used in a similar way to a B-Tree, but with an arguably simpler implementation.

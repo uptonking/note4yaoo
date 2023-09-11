@@ -12,6 +12,23 @@ modified: 2023-08-29T10:13:31.070Z
 # discuss-git-db
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [GitDB, a distributed embeddable database on top of Git | Hacker News](https://news.ycombinator.com/item?id=31987240)
+- version control in general turns out to be highly applicable in many areas far beyond source code. I think it's still under-utilized.
+  - Yes, it's extremely common to see applications which need a datastore to end up needing lots of version control type features later on, which end up implemented ad-hoc over a general database.
+- Git is an abstraction over file trees (or even more generally just chunks of data), and it turns out a ton of problems in software are easily modeled and dealt with as files in a tree.
+  - Lots of problems in software are easily modeled as ordered lists, but that doesn't mean linked lists are the right tool for accomplishing that.
+
+- GitDB doesn't handle merge conflicts, so I'm not convinced it would handle multiple clients well. The It's again marked as something they might do in the future someday. I suspect this is pretty fragile. (Note: I was _not_ claiming litestream would do such a thing. Just replication.)
+
+- You can already store and sync issues in git repo metadata, check out git-bug: https://github.com/MichaelMure/git-bug
+
+- How does merging work? Would it even be acceptable to allow automatic merging in all types of application?
+  - To be honest, I would be completely fine with a use case that offloads conflict prevention to the application.
+
 - ## [How to implement git-like "branching" on a MongoDB database in Node.js - Stack Overflow](https://stackoverflow.com/questions/64635567/how-to-implement-git-like-branching-on-a-mongodb-database-in-node-js)
 - I think you are diving into the world of temporal data so it would probably help a lot to start drawing timelines.
 

@@ -26,6 +26,12 @@ modified: 2023-09-07T15:58:04.082Z
 
 - who is using #hypercore
   - Tradle
+
+- 选择与比较
+  - storage
+  - sync and networking
+  - conflicts
+  - ecosystem/layers/stacks
 # dev
 - Dat was renamed to Hypercore in 2020
 # more

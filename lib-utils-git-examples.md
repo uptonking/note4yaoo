@@ -20,6 +20,9 @@ modified: 2023-08-29T10:12:22.345Z
     - This means it does all its operations by modifying files in a ".git" directory just like the git you are used to.
   - https://github.com/isomorphic-git/lightning-fs /js
     - I wanted to see if I could make something faster than BrowserFS or filer that still implements enough of the fs API to run the isomorphic-git test suite in browsers.
+  - https://github.com/fasiha/isomorphic-gatty /ts
+    - Append-only log for isomorphic-git, expected to be used as remote sync for local-first web app
+    - Gatty saves a stream of events to a git repo and synchronizes it with a remote git server (e.g., GitHub, Gitlab, Gogs, Azure Repos, etc.). The “events” are just plain strings that your app generates and understands: Gatty doesn’t know anything about them.
 - https://github.com/creationix/js-git /3.8kStar/MIT/201907/js/inactive
   - A JavaScript implementation of Git.
   - It also enables using git as a database to replace SQL and no-SQL data stores in many applications.
@@ -29,6 +32,10 @@ modified: 2023-08-29T10:12:22.345Z
     - A node adapter for the fs-db mixin for js-git. This enables access to Git repositories on the filesystem using Node.js.
   - https://github.com/creationix/js-github
     - An implementation of the js-git interface that mounts a live github repo.
+- https://github.com/maryrosecook/gitlet /js
+  - http://gitlet.maryrosecook.com/
+  - http://gitlet.maryrosecook.com/docs/gitlet.html
+  - I can only understand something by implementing it. So, I wrote Gitlet, my own version of Git
 
 - https://github.com/Byron/gitoxide /rust
   - an implementation of git written in Rust
@@ -130,4 +137,8 @@ modified: 2023-08-29T10:12:22.345Z
   - DVID can be used as a **general-purpose branched versioning file system** that handles billions of files and terabytes of data by creating instances of the keyvalue datatype. 
     - Our team uses the keyvalue datatype for branched versioning of JSON, configuration, and other files using the simple key-value HTTP API.
     - DVID currently handles branched versioning of large-scale data and does not provide domain-specific diff tools to compare data from versions, which would be a necessary step for user-friendly pull requests and truly collaborative data editing.
+
+- https://github.com/gogitdb/gitdb /go/inactive
+  - GitDB is a decentralized document database written in Go that uses Git under the hood to provide database-like functionalities via strictly defined interfaces.
+  - [GitDB, a distributed embeddable database on top of Git | Hacker News](https://news.ycombinator.com/item?id=31987240)
 # more

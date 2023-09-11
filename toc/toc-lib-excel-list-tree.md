@@ -261,7 +261,7 @@ modified: 2022-08-21T10:02:41.845Z
   - Convert flat array into tree structure. 
   - O(n) time complexity.
 
-- https://github.com/mafintosh/flat-tree
+- https://github.com/mafintosh/flat-tree /js
   - A series of functions to map a binary tree to a list
 - https://github.com/cheton/flattree
   - Convert hierarchical tree structure to flat structure.
@@ -325,6 +325,11 @@ modified: 2022-08-21T10:02:41.845Z
   - https://github.com/Yomguithereal/baobab-react
     - React integration for Baobab.
 
+- https://github.com/mafintosh/append-tree /js/hypercore/inactive
+  - Model a tree structure on top of an append-only log.
+  - stores a small index for every entry in the log, meaning no external indexing is required to model the tree. 
+  - Also means that you can perform fast lookups on sparsely replicated logs.
+
 - https://github.com/jlxw/static-json-db
   - A NoSQL key-value database stored as a directory tree of small JSON files which can be deployed as part of a static website and queried from client browsers in an efficient manner.
   - Data is stored in JSON files which are branched into smaller JSON files as size tresholds are met.
@@ -355,6 +360,8 @@ modified: 2022-08-21T10:02:41.845Z
   - Functional (or fully persistent) data structures allow for non-destructive updates. So if you insert an element into the tree, it returns a new tree with the inserted element rather than destructively updating the existing tree in place. Doing this requires using extra memory
   - this data structure saves some memory by recycling references to previously allocated subtrees. This requires using only O(log(n)) additional memory per update instead of a full O(n) copy.
 
+## lsm
+
 - https://github.com/gutobortolozzo/node-lsm /js/inactive
   - a log-structured-merge-tree, implemented in node.js
 
@@ -365,6 +372,13 @@ modified: 2022-08-21T10:02:41.845Z
   - This implementation does not aim to reimplement LevelDB
 - https://github.com/WyattJia/Pomegranate /rust/archived
   - tiny skiplist based log-structured merge-tree written in Rust
+
+- https://github.com/tomfran/LSM-Tree /java
+  - Log-Structured Merge Tree Java implementation
+  - Sorted String Table (SSTable) is a collection of files modelling key-value pairs in sorted order by key. It is used as a persistent storage for the LSM tree.
+- https://github.com/ingaleniranjan365/lsmdb /java
+  - Implementation of log-structured merge-trees to create a key-value store
+  - Implement a generic key-value database in Java that fulfills /element/:id/timestamp/:timestamp
 
 - https://github.com/chrislessard/LSM-Tree /python
   - An implementation of an LSM Tree in Python

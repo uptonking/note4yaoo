@@ -188,6 +188,9 @@ modified: 2021-08-30T18:56:09.644Z
   - https://tidb.net/talent-plan
   - Talent Plan 301 课程 TinySQL, 实现一个 Mini 版本的分布式关系型数据库
   - Talent Plan 302 课程 TinyKV, 实现一个 Mini 版本的分布式 Key-Value 数据库
+  - https://github.com/iFaceless/tinkv
+    - fast key-value storage engine written in Rust. Inspired by basho/bitcask, written after attending the Talent Plan courses.
+    - provides a bultin CLI and a Redis compatible server
 
 - https://github.com/risinglightdb/risinglight /rust
   - An OLAP database system for educational purpose
@@ -295,6 +298,12 @@ modified: 2021-08-30T18:56:09.644Z
   - It is implemented as a sparse binary merkle tree with compact partial-tree proofs. 
   - Many different versions of the database can exist at the same time. Deriving one version from another doesn't require copying the database. Instead, all of the data that is common between the versions is shared. This copy-on-write behaviour allows very inexpensive database snapshots and checkpoints.
   - applications can synchronise with remote instances. Conflict-handling is flexible, and can work by either cloning one side or by merging the states together (like a CRDT)
+
+- https://github.com/mkaminski1988/mkdb /go
+  - a SQL-based relational database management system (RDBMS) written in Golang (1.18+) with zero third-party dependencies. 
+  - The goal of the project is to provide a creative outlet for developers who want to experiment with database development 
+  - On-disk B+ tree
+  - Write-ahead logging (WAL)
 # db-streaming
 - https://github.com/MaterializeInc/materialize /rust
   - https://materialize.com/

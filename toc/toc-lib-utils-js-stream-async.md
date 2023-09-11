@@ -11,7 +11,6 @@ modified: 2023-04-04T22:36:31.529Z
 
 - blogs
   - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
-
 # popular
 - https://github.com/EloquentStudio/StreamTable.js /201604/js
   - streams data for tables in the background, updates and renders them using templating frameworks like Mustache.js, HandleBars.js
@@ -422,6 +421,10 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/EventSource/eventsource
   - EventSource client for Node.js and Browser (polyfill)
 
+- https://github.com/fraktalio/fstore-sql
+  - event store based on the Postgres database
+  - Append events to the ordered, append-only log, using entity id/decider id as a key
+
 ## server-sent events
 
 - https://github.com/dpskvn/express-sse
@@ -458,4 +461,12 @@ modified: 2023-04-04T22:36:31.529Z
 
 - https://github.com/chrisdickinson/sse-stream
   - Expose HTML5 Server Sent Events as an installable appliance on Node. JS http servers; connections are emitted as Writable streams.
+# storage
+- https://github.com/maxogden/abstract-blob-store /js/inactive
+  - A test suite and interface you can use to implement streaming file (blob) storage modules for various storage backends and platforms.
+  - The goal of this module is to define a de-facto standard streaming file storage/retrieval API. Inspired by the abstract-leveldown module
+
+- https://github.com/hackergrrl/append-only-log /js/inactive
+  - Abstract interface for an append-only log.
+  - Like abstract-blob-store, but for append-only logs.
 # more

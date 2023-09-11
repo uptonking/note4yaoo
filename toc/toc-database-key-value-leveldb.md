@@ -24,7 +24,7 @@ modified: 2022-11-03T04:14:00.563Z
   - Data is persisted to disk using a Log Structure Merge Tree (LSM Tree) inspired by LevelDB / RocksDB. 
   - SnapDB has 100% API compatibility with LevelDB & RocksDB and also includes additional functionality.
 
-- https://github.com/apple/foundationdb /Apache2/c++
+- https://github.com/apple/foundationdb /Apache2/cpp
   - a distributed database designed to handle large volumes of structured data across clusters of commodity servers.
   - It organizes data as an ordered key-value store and employs ACID transactions for all operations. 
   - It is especially well-suited for read/write workloads but also has excellent performance for write-intensive workloads.
@@ -51,6 +51,29 @@ modified: 2022-11-03T04:14:00.563Z
   - simple Golang-based in-memory KV store that speaks the Redis dialect
   - not production ready
   - started building Dice DB to understand Redis better with [Redis Internals Course](https://arpitbhayani.me/redis-internals/)
+
+- https://github.com/spacejam/sled /rust/bw-tree
+  - https://docs.rs/sled
+  - http://sled.rs/
+  - a high-performance embedded database with an API that is similar to a `BTreeMap<[u8], [u8]>`.
+  - fully thread-safe, and all operations are atomic.
+  - subscribe to changes on key prefixes
+  - flash-optimized log-structured storage
+  - uses modern b-tree techniques such as prefix encoding and suffix truncation for reducing the storage costs of long keys with shared prefixes.
+  - lock-free tree on a lock-free pagecache on a lock-free log
+  - Sled uses a hybrid architecture of B+ Trees and LSM Tree (Bw Trees)
+  - https://github.com/panicfarm/sltest
+    - Demonstrates potential memory leak in SLED.
+  - [Subscriptions and the Pit of Success](https://github.com/spacejam/sled/issues/1162)
+  - [Sled: Embedded Database Written in Rust | Hacker News](https://news.ycombinator.com/item?id=22375979)
+    - LevelDB is a LSM database. 
+    - LSM is generally better for write workloads over BTree DBs like LMDB and sled. LMDB also has a single writer restriction.
+
+- https://github.com/JetBrains/xodus /java
+  - a transactional schema-less embedded database
+  - initially developed for JetBrains YouTrack, also used in JetBrains Hub
+  - highly concurrent. Reads are completely non-blocking due to MVCC and true snapshot isolation.
+  - written in pure Java and Kotlin.
 # leveldb-like
 - https://github.com/Level/bench
   - Benchmark `abstract-level` databases. 

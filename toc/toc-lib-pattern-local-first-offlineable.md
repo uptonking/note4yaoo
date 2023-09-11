@@ -213,6 +213,7 @@ modified: 2021-09-04T14:03:39.046Z
 
 - https://github.com/delta-db/deltadb /201602/js/inactive
   - DeltaDB is an offline-first database designed to talk directly to clients and works great offline and online.
+  - Stores all data as a series of deltas, which allows for smooth collaborative experiences even in frequently offline scenarios.
   - I have decided to suspend development of DeltaDB for the following reasons:
   - last-write-wins policy is nice when starting a new project as it is automatic, but other conflict resolution policies that force the user to manually resolve the conflict, like CouchDB’s revision protocol, have become more of the standard in the offline-first world.
   - Building a DB that scales and is Building a DB that scales and is distributed over many nodes, takes a lot of work. distributed over many nodes, takes a lot of work. 
@@ -228,6 +229,21 @@ modified: 2021-09-04T14:03:39.046Z
   - Plane implements an architecture we call session backends.
   - Plane assigns a unique subdomain to each instance, through which it proxies HTTPS/WebSocket connections. When all inbound connections to a container are dropped, Plane shuts it down.
   - [Session Backends](https://driftingin.space/posts/session-lived-application-backends)
+
+- https://github.com/p2panda/aquadoggo /rust
+  - https://p2panda.org/
+  - aquadoggo is a reference node implementation for p2panda. 
+  - It is a intended as a tool for making the design and build of local-first, collaborative p2p applications as simple as possible
+  - aquadoggo can run both on your own device for local-first applications, or on a public server when acting as shared community infrastructure. 
+  - Stores operations of the network in an SQL database of your choice (SQLite, PostgreSQL).
+  - Materializes views on top of the known data.
+  - Answers filtered, sorted and paginated data queries via GraphQL.
+  - Awaits signed operations from clients via GraphQL.
+  - [P2panda: P2P protocol for secure, energy-efficient local-first web applications | Hacker News](https://news.ycombinator.com/item?id=37212462)
+    - We're using our own CRDT called "Operations" giving us multi-writer conflict-free editing. It's a simple key/value map with a last-write win rule while we keep some sort of vector clock for every write to understand what every peer has seen when they updated the Document.
+    - we could model many applications already with such simple CRDT. It is also possible to add your own or already existing CRDT frameworks on top of p2panda.
+    - The basic data sync is based on an append only log. 
+    - Check out our section on "Operations", this is the data type we've built on top of the append-only log structure for multi-writer and conflict free data editing
 # more
 - https://github.com/cwise89/react-detect-offline
   - Components that track offline and online state. Render certain content only when online (or only when offline).

@@ -89,7 +89,17 @@ modified: 2023-08-26T02:51:41.206Z
 
 - ## 
 
-- ## 
+- ## [Build Your Own X | Hacker News](https://news.ycombinator.com/item?id=32157759)
+- One advice: for any of these topics take a tutorial directed at language X and implement the solution in language Y. This will prevent you from mindlessly copying the code and will force you to understand what you are doing.
+
+- I wonder what resources it would contain to help design a software with undo/redo feature.
+  - A Merkle-tree data structure + an append only log with checkpoints + a command processor would provide a basic foundation.
+  - Your data can be represented in a Merkle-tree. You provide operations add-node, delete-node, move-node etc., on the Merkle-tree and build a command processor that takes as input a checkpointed Merkle-tree snapshot (could be empty when you start) and a log of operations (essentially an sequence of operations). The command processor then applies the series of tree operations in the log to build the final state of the tree. The special checkpoint operation saves a snapshot of the Merkle-tree.
+- This basic set of operations should allow you to do unlimited undo/redo/transaction playback capabilities.
+- check out emacs' undo-tree for a cool implementation
+  - [Emacs has a powerful undo system.](https://www.dr-qubit.org/undo-tree/undo-tree.txt)
+  - Unlike the standard undo/redo system in most software, it allows you to recover *any* past state of a buffer (whereas the standard undo/redo system can lose past states as soon as you redo). 
+  - Emacs’s undo system is quite frankly amazing. Not only can you recover any state through an arbitrary number of undo and redo operations, but you can also localize the undo/redo operations to a selected region of the buffer.
 
 - ## how would you write an undo system for a raster graphics illustration/painting application?
 - https://twitter.com/FreyaHolmer/status/1441541405298630657

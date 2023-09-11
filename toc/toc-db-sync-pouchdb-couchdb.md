@@ -81,6 +81,7 @@ modified: 2022-11-30T18:56:07.072Z
 
 - https://github.com/delta-db/deltadb /201602/js/inactive
   - DeltaDB is an offline-first database designed to talk directly to clients and works great offline and online.
+  - Stores all data as a series of deltas, which allows for smooth collaborative experiences even in frequently offline scenarios.
   - I have decided to suspend development of DeltaDB for the following reasons:
   - last-write-wins policy is nice when starting a new project as it is automatic, but other conflict resolution policies that force the user to manually resolve the conflict, like CouchDB’s revision protocol, have become more of the standard in the offline-first world.
   - Building a DB that scales and is Building a DB that scales and is distributed over many nodes, takes a lot of work. distributed over many nodes, takes a lot of work. 
@@ -199,7 +200,7 @@ modified: 2022-11-30T18:56:07.072Z
 - https://github.com/medihack/redux-pouchdb-plus /201806/js
   - Synchronize Redux store with PouchDB to have a persistent store.
 
-- https://github.com/Terreii/use-pouchdb /202206/ts
+- https://github.com/Terreii/use-pouchdb /apache2/202304/ts
   - a collection of React Hooks to access data in a PouchDB database from React components.
 - https://github.com/davidmartinez10/use-pouchdb-collection /202204/ts
   - simple React hook for PouchDB. 
@@ -370,7 +371,7 @@ modified: 2022-11-30T18:56:07.072Z
 
 - https://github.com/fasiha/gotanda-pouchdb-server /202011/ts
   - A centralized Node.js server for your PouchDB-wielding local-first apps to sync to. Multiple users ok, multiple apps ok. Login with GitHub.
-  - This repo, Gotanda PouchDB, is intended to service apps that use PouchDB to store their data locally—web apps or mobile apps or wherever PouchDB is supported.
+  - This repo is intended to service apps that use PouchDB to store their data locally—web apps or mobile apps or wherever PouchDB is supported.
   - your apps direct users to log into Gotanda with their GitHub login. Gotanda stores a minimal amount of data from GitHub.
   - Your app creates a remote PouchDB, pointing to a Gotanda URL, which logs in with cookie authentication (Gotanda also supports token authentication).
 

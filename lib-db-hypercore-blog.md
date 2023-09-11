@@ -11,42 +11,37 @@ modified: 2023-09-07T15:59:12.947Z
 
 # blogs
 
+## [You Don't Need A Blockchain](https://gist.github.com/joepie91/a90e21e3d06e1ad924a1bfdfe3c16902)
+
+- Blockchains aren't a desirable thing; they're defined by having trustless consensus, which necessarily has to involve some form of costly signaling to work; that's what prevents attacks like sybil attacks.
+
+- If you just need to provide authenticity for a piece of data: A cryptographic signature. 
+- If you need an immutable chain of data: Something simple that uses a merkle tree. A well-known example of this application is Git, especially in combination with signed commits.
+- If that immutable chain of data needs to be added to by multiple parties (eg. companies) that mutually distrust each other: A cryptographically signed, append-only, replicated log.
+- If that immutable chain of data needs to be added to by multiple parties (eg. companies) that mutually distrust each other: A cryptographically signed, append-only, replicated log.
+
+- 
+- 
+
+## [Beaker Browser is now archived_202212](https://github.com/beakerbrowser/beaker/blob/master/archive-notice.md)
+
+- The backstory to Beaker starts with Secure Scuttlebutt (SSB). I had been working on applications for SSB for about two years (2014-2016) and really getting my feet wet with decentralized tech.
+- With SSB, we had made a social-networking protocol that was local first (meaning it ran mostly on-device) and was therefore extremely hackable. 
+- The problem as I saw it was that app-distribution was too hard. Most of the SSB clients at the time were built on Electron or were local-hosted web servers. I wanted apps to be as easy to load as websites.
+- This is how the idea for Beaker started. If apps could be distributed with one of these bittorrent-variants, I figured, and then run within a safe sandbox, then we'd be able to create a flourishing ecosystem of apps on shared decentralized network. That was the big premise.
+  - with electron, I was able to produce a demo of Beaker hosting websites via dat/hypercore within 2 weeks. This got a positive response from folks
+  - After I ran out of ideas for making Beaker work, I decided to give a p2p + servers hybrid a shot with a project called CTZN, another stab at a social network. 
+  - The smartest thing I did there was live stream every day of development
+  - That live-stream ultimately caught the attention of Jay Graber as she was forming the Bluesky team, and at the start of 2022 I began working with Bluesky. 
+- A smattering of additional lessons I learned over the years.
+- Don't be too proud to follow people with inspiration. 
+  - Every time things went better for me, it's because I followed someone who was already doing something great.
+- With Bluesky we've opted for using p2p structures (IPLD) on a federated network, giving us some of the key advantages of p2p like account portability while retaining the performance and reliability advantages of servers. 
+  - but I think it's a bad fit for large scale social networks and sticking with it for Bluesky would've been a mistake.
+- Never go negative with competiting projects. 
+  - Stay focused on the shared mission if there is one.
+  - As I ended up more in the dat/hyper ecosystem, IPFS was often raised as a competing technology and I was frequently asked to comment on the differences. I never went negative, and thank goodness I didn't because one of my colleagues at Bluesky is a core contributor on IPFS, and we've become exceedingly good friends. Besides, going negative is a bad look.
 # blogs-comparisons
-
-## [IPFS and Friends: A Qualitative Comparison of Next Generation Peer-to-Peer Data Networks](https://arxiv.org/abs/2102.12737)
-
-### ipfs
-
-- concepts such as content addressing and deduplication are promising as they have the potential to improve retrieval times and storage overhead.
-- different subprotocols like libp2p for man- aging the peer discovery and connection handling, and Bitswap for exchanging data are great developments, that provide many opportunities for other P2P networks.
-- The wide support of different protocols increases the difficulty to grasp the finer details of IPFS, though.
-- IPFS could have similar privacy problems to BitTorrent. 
-- Further more, for good and bad it is not possible to prevent replication or enforce deletion of content once released.
-
-### hypercore
-
-- supports incremental versioning of the content and meta data similar to Git. 
-- supports different storage modes
-- supports subscription to live changes of all/any files in a directory
-- All communication in the protocol is encrypted. 
-- The protocol is designed to share large amounts of mutable data. 
-- Hypercore allows sharing of data by exchanging a public key. 
-  - It is possible to acquire a specific version and only specific regions of the data. 
-  - This makes it simple, especially for large datasets, and allows mutable data.
-
-- but it is not possible to reverse the public key. 
-- lack of additional authentication mechanisms beyond the public key, which prevents additional fine-grained access control
-- Hypercore has no incentive structure for replicating data and the data persistence relies on its participants.
-
-## [Paul explains the difference between IPFS and Hypercore - YouTube_202012](https://www.youtube.com/watch?v=Sfi3KewTGQM)
-
-- Jerry Green made very well articulated points:
-  1. Dat/Hypercore indeed is "for geeks interested in p2p" now, but I feel it is nearing the point where it can explode in usage. I am making this point in the above github repo https://github.com/tradle/why-hypercore
-  2. The most interesting point you make, Jerry, is that the path to mainstream is in  "decoupling apps from data". I am working exactly on that right now!! 
-- 
-- 
-- 
-- 
 
 ## [Comparing Peer to Peer Protocols_202203](https://blog.mauve.moe/posts/protocol-comparisons)
 
@@ -88,6 +83,46 @@ modified: 2023-09-07T15:59:12.947Z
 - Similarly to Hypercore, SSB's public keys and active replication streams mean that data can propagate fairly quickly via peers.
   - One difference is that the network topology of SSB relies more on central "pub" servers and "rooms" to discover peers
 
+### conclusion
+
+- a series of tradeoffs to choose from
+- For those that don't want to settle on a single protocol, check out useful cross-protocol projects such as Distributed Press or the Agregore Browser.
+
+### ref
+
+
+## [IPFS and Friends: A Qualitative Comparison of Next Generation Peer-to-Peer Data Networks](https://arxiv.org/abs/2102.12737)
+
+### ipfs
+
+- concepts such as content addressing and deduplication are promising as they have the potential to improve retrieval times and storage overhead.
+- different subprotocols like libp2p for man- aging the peer discovery and connection handling, and Bitswap for exchanging data are great developments, that provide many opportunities for other P2P networks.
+- The wide support of different protocols increases the difficulty to grasp the finer details of IPFS, though.
+- IPFS could have similar privacy problems to BitTorrent. 
+- Further more, for good and bad it is not possible to prevent replication or enforce deletion of content once released.
+
+### hypercore
+
+- supports incremental versioning of the content and meta data similar to Git. 
+- supports different storage modes
+- supports subscription to live changes of all/any files in a directory
+- All communication in the protocol is encrypted. 
+- The protocol is designed to share large amounts of mutable data. 
+- Hypercore allows sharing of data by exchanging a public key. 
+  - It is possible to acquire a specific version and only specific regions of the data. 
+  - This makes it simple, especially for large datasets, and allows mutable data.
+
+- but it is not possible to reverse the public key. 
+- lack of additional authentication mechanisms beyond the public key, which prevents additional fine-grained access control
+- Hypercore has no incentive structure for replicating data and the data persistence relies on its participants.
+
+## [Paul explains the difference between IPFS and Hypercore - YouTube_202012](https://www.youtube.com/watch?v=Sfi3KewTGQM)
+
+- Jerry Green made very well articulated points:
+  1. Dat/Hypercore indeed is "for geeks interested in p2p" now, but I feel it is nearing the point where it can explode in usage. I am making this point in the above github repo https://github.com/tradle/why-hypercore
+  2. The most interesting point you make, Jerry, is that the path to mainstream is in  "decoupling apps from data". I am working exactly on that right now!! 
+- 
+- 
 - 
 - 
 

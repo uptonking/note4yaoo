@@ -228,6 +228,9 @@ modified: 2023-01-09T11:04:13.958Z
   - It is optimized for comparing tables that share a common origin, in other words multiple versions of the "same" table.
   - The daff library is written in Haxe Lang, which can be translated reasonably well into js/python/java
   - example shows the changes made in the modified table with respect to the original table. The format used is the highlighter tabular diff.
+# table-format
+- https://github.com/microsoft/lst-bench /java
+  - a framework that allows users to run benchmarks specifically designed for evaluating the performance, efficiency, and stability of Log-Structured Tables (LSTs), also commonly referred to as table formats, such as Delta Lake, Apache Hudi, and Apache Iceberg.
 # more
 - https://github.com/rohanhrk/Excel-clone
   - I've made a google sheet clone using HTML, CSS, Javascript

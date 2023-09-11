@@ -9,14 +9,13 @@ modified: 2023-08-23T17:15:46.484Z
 
 # guide
 
+- log-based-db
+  - flume/ssb
 # utils
 
 # distributed
 
-# db-protocols/spec
-
-## hypercore
-
+# hypercore
 - https://github.com/holepunchto/hypercore /MIT/js
   - https://docs.holepunch.to/building-blocks/hypercore
   - Hypercore is a secure, distributed append-only log.
@@ -98,7 +97,7 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/rafapaezbas/hypercore-speed-tests
   - Test with Hypercore and Hyperbee
 
-### examples-hypercore
+## examples-hypercore
 
 - https://github.com/Ruulul/automerge_hypercore_demos /js
   - local_sync_textareas
@@ -116,7 +115,7 @@ modified: 2023-08-23T17:15:46.484Z
   - https://github.com/LuKks/use-hyper
     - React hooks for the hypercore-protocol stack
 
-### utils-hypercore
+## utils-hypercore
 
 - https://github.com/RangerMauve/hyper-sdk /js
   - A Software Development Kit for the hypercore-protocol
@@ -138,7 +137,7 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/emilbayes/hypercore-dag /js/inactive
   - DAGs on top of hypercore, allowing verified random-access to graph nodes
 
-### dat-ecosystem
+## dat-ecosystem
 
 - refs-dat
   - [Dat Ecosystem](https://dat-ecosystem.org/)
@@ -154,9 +153,7 @@ modified: 2023-08-23T17:15:46.484Z
   - Synchronize PouchDB or CouchDB with P2P Hypercores
   - A PouchDB plugin that maps records in hypercores, a P2P append-only datastructure, to a PouchDB or CouchDB instance. 
   - The plugin allows you to follow changes in hypercores locally and remotely.
-
-## kappa-db
-
+# kappa-db
 - https://github.com/kappa-db/kappa-core /ISC/202011/js/inactive
   - kappa-core is a minimal peer-to-peer database, based on append-only logs and materialized views.
   - kappa-core is built atop two major building blocks:
@@ -183,15 +180,25 @@ modified: 2023-08-23T17:15:46.484Z
   - https://github.com/dwyl/learn-kappa-architecture
   - https://github.com/tradle/hypercore-workshop
     - we forked it to update to new materials and shift focus to core Hypercore modules.
+  - https://github.com/hypercore-protocol/p2p-multiwriter-with-autobase
+    - For this workshop we'll be focusing almost entirely on our newest feature: support for multiwriter collaboration.
 
 - https://github.com/arso-project/kappa-record-db /202005/js/inactive
   - A peer-to-peer database built on hypercores and kappa-core@experimental.
   - Index a set of hypercores efficiently into materialized-view style secondary indexes
   - Is developed for Sonar which adds full-text search, binary assets, an HTTP API, a CLI and a UI.
   - Internally, the database uses unordered-materialized-kv to have a shared notion of the latest versions of a record.
-- https://github.com/arso-project/sonar /js/ts
+
+- https://github.com/arso-project/sonar /GPLv3/js/ts
   - https://sonar.arso.xyz/
   - A p2p content database and search engine
+  - Each collection has a kappa-record-db that's plugged into a search index through tantivy. 
+  - Each collection has also a list of associated Hyperblobs to store raw file contents.
+  - [Introducing Sonar_201912](https://arso.xyz/blog/2019-12-17-introducing-sonar)
+  - [Full text search in Sonar](https://arso.xyz/blog/2020-04-24-full-text-search)
+
+- https://github.com/arso-project/hyper-content-db /201912/js/inactive
+  - A Kappa-style peer-to-peer content database, on top of hyperdrives.
 
 - https://github.com/mafintosh/hyperdb /201901/js/inactive
   - HyperDB is a scalable peer-to-peer key-value database.
@@ -222,16 +229,13 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/okdistribute/peerfs /js
   - multiwriter peer-to-peer filesystem, built on kappa-core and hyperdrive
 
-- https://github.com/arso-project/hyper-content-db /201912/js/inactive
-  - A Kappa-style peer-to-peer content database, on top of hyperdrives.
-
 - https://gitlab.com/coboxcoop/kappa-drive
   - a peer-to-peer multiwriter filesystem.
   - Supports Hyperdrive V10. Originally known as 'peerfs'.
 - https://gitlab.com/coboxcoop/drive
   - a wrapper for kappa-drive
 
-- https://github.com/eliquious/kappa /go
+- https://github.com/eliquious/kappa /go/inactive
   - an implementation of the Kappa Architecture written in Go.
   - https://github.com/blacklabeldata/kappa
 
@@ -246,8 +250,9 @@ modified: 2023-08-23T17:15:46.484Z
 - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
 
 - [Kappa Architecture - A big data engineering approach](https://pradeepl.com/blog/kappa-architecture/)
-
-## append-only-log
+# append-only-log
+- resources
+  - [History Data Structures](https://gist.github.com/CMCDragonkai/d266a3055735545447439f0fa662a0e1)
 
 - https://github.com/ssbc/async-append-only-log /js
   - A new append-only-log for SSB purposes
@@ -255,7 +260,7 @@ modified: 2023-08-23T17:15:46.484Z
   - A log consists of a number of blocks, that contain a number of records. A record is simply it's length, as a 16-bit unsigned integer, followed by the data bytes. 
   - This module is not compatible with flume without a wrapper around stream as it uses the same terminology as JITDB and ssb-db2 of using offset for the byte position of a record instead of seq.
 - https://github.com/ssbc/jitdb /js
-  - A database on top of async-append-only-log with automatic index generation and maintenance.
+  - A database on top of `async-append-only-log` with automatic index generation and maintenance.
   - Async append only log takes care of persistance of the main log. It is expected to use bipf to encode data.
   - JITDB lazily creates and maintains indexes based on the way the data is queried.
     - JITDB lazily creates and maintains indexes based on the way the data is queried.
@@ -279,15 +284,248 @@ modified: 2023-08-23T17:15:46.484Z
     - Wasm is used for crypto and is around 90% the speed of the C implementation. 
     - A WebSocket is used to connect to pubs or rooms
 
+- https://github.com/orbitdb/ipfs-log /js
+  - an immutable, operation-based CRDT for distributed systems. 
+  - It's an append-only log that can be used to model a mutable, shared state between peers in p2p applications.
+  - Every entry in the log is saved in IPFS and each points to a hash of previous entry(ies) forming a graph. Logs can be forked and joined back together.
+  - originally created for, and currently used in, orbit-db 
+  - https://github.com/berty/go-ipfs-log /go
+    - provide a fully compatible port of the JavaScript version in Go.
+    - Go version of append-only log CRDT on IPFS
+  - https://github.com/eqlabs/ipfs-log-rs
+    - Rust implementation of ipfs-log by Haja Networks: an append-only log on IPFS.
+  - https://github.com/orbitdb/orbit-db-eventstore /js
+    - An append-only log with traversable history. 
+    - Useful for "latest N" use cases or as a message queue.
+  - https://github.com/orbitdb/orbit-db-feedstore /js
+    - A log database with traversable history. 
+    - Entries can be added and removed. 
+    - Useful for "shopping cart" type of use cases, or for example as a feed of blog posts or "tweets".
+
 - https://github.com/digidem/unordered-materialized-kv /js/inactive
   - materialized view key/id store based on unordered log messages
   - This library presents a familiar key/value materialized view for append-only log data which can be inserted in any order. 
-  - This library implements a multi-register conflict strategy, so each key may map to more than one value. To merge multiple values into a single value, point at more than one ancestor id.
+  - This library implements a **multi-register conflict strategy**, so each key may map to more than one value. 
+    - To merge multiple values into a single value, point at more than one ancestor id.
   - This library is useful for kappa architectures with missing or out of order log entries, or where calculating a topological ordering would be expensive
   - This library does not store values itself, only the IDs to look up values. This way you can use an append-only log to store your primary values without duplicating data.
 
 - https://github.com/flumedb/flumedb /MIT/202006/js/inactive
   - A modular database made for moving logs with streams.
-  - Flume is a modular database comprised of an Append Only Log and Streaming Views on that log. 
+  - ✨ Flume is a modular database comprised of an Append Only Log and Streaming Views on that log. 
   - This makes a star shaped pipeline - or rather, there is a pipeline from the log to each view, but the log is part of every pipeline.
+  - https://github.com/sunrise-choir/flumedb-rs
+    - a re-write of the JavaScript flumedb into Rust with a new architecture for better performance and flexibility.
+    - main source of truth is an append-only write-only log: which provides durable storage
+    - secondary derived truths are views on the log: which focus on answering queries about the data
+    - In flume, each view remembers a version number, and if the version number changes, it just rebuilds the view. This means view code can be easily updated, or new views added. It just rebuilds the view on startup.
+
+- https://github.com/Shaance/rust-simple-log-append-db /rust
+  - Simple db using append only log file. 
+  - This runs in a single thread
+  - Implemented for learning purpose
+  - When log file exceeds a certain size (1 MB in the main.rs file usage of the db), compaction process will kick-in.
+
+- https://github.com/rozbb/ct-merkle /rust
+  - an implementation of the append-only log described in the Certificate Transparency specification (RFC 6962). 
+  - The log is a Merkle tree, and its leaves are the items it contains.
+
+- https://github.com/ssbc/margaret /go
+  - a flume-like persisted append-only log implementation
+  - Margaret outputs data according to the offset2 format, which is inspired by (but significantly differs from) flumelog-offset
+
+- https://github.com/embano1/memlog /apache2/go
+  - A Kafka log inspired in-memory and append-only data structure
+  - lightweight, thread-safe and append-only in-memory data structure modeled as a Log.
+
+## oplog
+
+- https://github.com/eugeneware/abstract-log /js/inactive
+  - An abstract interface to build data processing applications on a log-based architecture
+  - The idea would be to have implementations that would allow reading/writing to files, databases, kafka, redis, etc.
+  - This is basically abstract-blob-store for append-only logs.
+  - https://github.com/eugeneware/fs-log
+
+- https://github.com/hackergrrl/append-only-log /js/inactive
+  - Abstract interface for an append-only log.
+  - Like abstract-blob-store, but for append-only logs.
+
+- https://github.com/bigeasy/transcript /js/go/rust
+  - Append-only log that supports JSON or binary formats.
+- https://github.com/adzialocha/append-only-log /rust
+  - Experiment with append-only logs
+
+- https://github.com/felixge/node-dirty /js/inactive
+  - fast key value store with append-only disk log. Ideal for apps with < 1 million records.
+  - The file format is newline separated JSON
+  - Your database lives in the same process as your application, they share memory
+  - There is no query language, you just `forEach` through all records
+
+- https://github.com/arindas/riakv /rust
+  - Log structured, append only, key value store implementation from Rust In Action with some enhancements.
+  - Persistent key value store with a hash table index
+  - Optionally, persistent index for fast loading
+  - The underlying storage used by the key value store is completely generic. It is subject to Read + Write + Seek trait bounds.
+- https://github.com/ollej/akvdb /rust
+  - A simple key-value store with a log-structured, append-only storage architecture where data is encrypted with AES GCM.
+  - Modified from the actionkv example in the book Rust in Action
+  - https://github.com/rust-in-action/code
+  - https://github.com/RottingHorse/actionkv
+  - https://github.com/tony-go/fdb
+
+- https://github.com/pietgeursen/bamboo-rs 
+  - Rust implementation of bamboo.
+  - https://github.com/AljoschaMeyer/bamboo
+    - A cryptographically secure, distributed, single-writer append-only log that supports transitive partial replication and local deletion of data.
+    - this log format can serve as a more efficient alternative to secure-scuttlebutt's linked lists or hypercore's merkle forests.
+
+- https://github.com/pfrazee/queryable-log /js/inactive
+  - A structured append-only log which can be queried. 
+  - Stores as ndjson and applies a log-size limit.
+
+- https://github.com/montyanderson/kog /ts
+  - An append-only log database with replication and high availability
+- https://github.com/marcelsud/snapdb /ts
+  - An append-only log DB just for fun and profit
+- https://github.com/oak-database/oak-lite /js
+  - https://github.com/oak-database/oak-lite
+
+- https://github.com/fasiha/isomorphic-gatty /ts
+  - Append-only log for isomorphic-git, expected to be used as remote sync for local-first web app
+  - Gatty saves a stream of events to a git repo and synchronizes it with a remote git server (e.g., GitHub, Gitlab, Gogs, Azure Repos, etc.). The “events” are just plain strings that your app generates and understands: Gatty doesn’t know anything about them.
+
+- https://github.com/mafintosh/append-tree /js/hypercore/inactive
+  - Model a tree structure on top of an append-only log.
+  - stores a small index for every entry in the log, meaning no external indexing is required to model the tree. 
+  - Also means that you can perform fast lookups on sparsely replicated logs.
+
+- https://github.com/stelar-labs/neutrondb-rs /rust
+  - a log-structured merge-tree key-value store for any implemented data type.
+
+- https://github.com/abcum/syncr /go
+  - a library for storage of append-only log data on local or remote storage.
+  - Thread safe, for use by multiple goroutines
+  - Ability to buffer writes, or sync writes immediately
+  - Support for append-only files locally, and in S3, GCS, RiakCS, CephFS, SeaweedFS
+
+- https://github.com/rosedblabs/wal /go
+  - Write Ahead Log for LSM or bitcask storage, with block cache.
+
+- https://github.com/tomfran/LSM-Tree /java
+  - Log-Structured Merge Tree Java implementation
+  - Sorted String Table (SSTable) is a collection of files modelling key-value pairs in sorted order by key. It is used as a persistent storage for the LSM tree.
+- https://github.com/ingaleniranjan365/lsmdb /java
+  - Implementation of log-structured merge-trees to create a key-value store
+  - Implement a generic key-value database in Java that fulfills /element/:id/timestamp/:timestamp
+  - https://github.com/vardhan/lsmdb
+
+## log-database
+
+- https://github.com/mvayngrib/logbase /js/inactive
+  - Append-only log and log-based database
+
+- https://codeberg.org/small-tech/jsdb /js
+  - A zero-dependency, transparent, in-memory, streaming write-on-update JavaScript database for the Small Web that persists to a JavaScript transaction log.
+  - A small and simple data layer for basic persistence and querying.
+  - For Node.js: will not work in the browser
+  - all data is kept in memory and, without tweaks, cannot exceed 1.4GB in size
+  - Streaming writes on update: writes are streamed to disk to an append-only transaction log as JavaScript statements and are both quick (in the single-digit milliseconds region on a development laptop with an SSD drive) and as safe as we can make them (synchronous at the kernel level).
+  - No schema, no migrations: again, this is meant to be a very simple persistence, query, and observation layer for local server-side data
+  - JSDB tables are written into JavaScript Data Format (JSDF) files. 
+  - A JSDF file is just es6 module 
+  - When you load in a JSDB table, JSDB will, by default, compact the JSDF file.
+
+- https://github.com/khonsulabs/nebari /rust
+  - A pure Rust database implementation using an append-only B-Tree file format.
+  - This crate provides the Roots type, which is the transactional storage layer for BonsaiDb. 
+  - It is loosely inspired by Couchstore.
+  - A TreeFile is a key-value store that uses an append-only file format for its implementation.
+  - The major downside of append-only formats is that deleted data isn't cleaned up until a maintenance process occurs: compaction
+
+- https://github.com/lockbook/db-rs /rust
+  - embedded, single-threaded database for Rustaceans.
+  - All table mutations are persisted to an append only log using the fast & compact bincode representation of your types.
+  - Each table has an in-memory representation and a corresponding log entry format. 
+  - Presently there is no way to abort a transaction. TXs are also a mechanism for batch writing, log entries are kept in memory until the transaction completes and written once to disk.
+  - https://github.com/Parth/hmdb /legacy
+- https://github.com/qoollo/pearl /rust
+  - Append only key-value blob storage on disk
+- https://github.com/GlenDC/alumdb /rust
+  - an embeddable append-log written in Rust that can optionally be used via a server as well.
+
+- https://github.com/ruuda/noblit /rust
+  - Noblit is an embeddable append-only database. 
+  - The database records a history of immutable (entity, attribute, value) tuples. 
+  - Tuples can be asserted and retracted. A retraction is recorded as a new fact; it is not a delete. 
+  - Any historical state of the database can be reproduced, and the history is first-class and queryable.
+
+- https://github.com/nrw/pouchdb-commit-log /js/inactive
+  - cluster-friendly append-only topic-based commit log + materialized view implementation for pouchdb (inspired by apache kafka and samza)
+
+- https://github.com/delta-db/deltadb /201602/js/inactive
+  - DeltaDB is an offline-first database designed to talk directly to clients and works great offline and online.
+  - Stores all data as a series of deltas, which allows for smooth collaborative experiences even in frequently offline scenarios.
+  - https://github.com/delta-db/deltadb-server
+
+- https://github.com/barrucadu/logdb /go/inactive
+  - An efficient log-structured database supporting efficient insertion of new entries and removal from either end of the log.
+  - a Go library for efficient log-structured databases. 
+  - A log-structured database is a very simple data store where writes are only ever appended to the database, there are no random-access writes at all.
+  - To prevent the database from growing indefinitely, a contiguous chunk of entries can be removed from either the beginning or the end.
+- https://github.com/healeycodes/bitcask-lite /go
+  - A log-structured hash table database. 
+  - Speedy K/V store for datasets larger than memory.
+- https://github.com/arriqaaq/flashdb /go
+  - simple, in-memory, key/value store in pure Go. 
+  - It persists to disk, is ACID compliant, and uses locking for multiple readers and a single writer. 
+  - It supports redis like operations for data structures like SET, SORTED SET, HASH and STRING.
+  - ACID semantics with locking transactions that support rollbacks
+- https://github.com/justinethier/keyva /go
+  - distributed key-value store using the log-structured merge tree (LSM tree), a popular alternative to B-trees for persistently storing data.
+  - Data is always added to an LSM tree using sequential writes. That is, data is only written to storage using append operations.
+  - The MemTable, a data structure stored entirely in memory, is initially used to store new data.
+  - In order to recover data across restarts, the same data is also appended to a Write Ahead Log (WAL). The WAL is a simple append-only log that contains a single record for each operation made to the LSM tree.
+  - Eventually the MemTable will become too large to efficiently hold in memory and the data is flushed to a Sorted String Table (SST) file on disk.
+  - SST files can efficiently serve large data sets
+- https://github.com/dgraph-io/badger /go
+  - embeddable, persistent and fast key-value (KV) database written in pure Go. 
+  - It is the underlying database for Dgraph, a fast, distributed graph database. 
+  - It's meant to be a performant alternative to non-Go-based key-value stores like RocksDB.
+  - [Using Badger for storing immutable, append-only logs, FIFO compaction strategy?](https://github.com/dgraph-io/badger/issues/1165)
+    - Badger supports only leveled compaction for now. By default, we keep only a single version of a key. Older versions are dropped by compactions automatically. This means old stale data will be cleaned up eventually.
+
+- https://github.com/google/trillian /go
+  - A transparent, highly scalable and cryptographically verifiable data store.
+  - Trillian implements a Merkle tree whose contents are served from a data storage layer, to allow scalability to extremely large trees. 
+  - On top of this Merkle tree, Trillian provides an append-only Log mode, analogous to the original Certificate Transparency logs. In this mode, the Merkle tree is effectively filled up from the left, giving a dense Merkle tree.
+  - Certificate Transparency (CT) is the most well-known and widely deployed transparency application
+
+- https://github.com/yahoo/HaloDB /apache2/java
+  - simple embedded key-value store written in Java. 
+  - HaloDB is suitable for IO bound workloads, and is capable of handling high throughput reads and writes at submillisecond latencies.
+  - written for a high-throughput, low latency distributed key-value database that powers multiple ad platforms at Yahoo, therefore all its design choices and optimizations were primarily for this use case.
+  - HaloDB comprises of two main components: 
+    - an **index in memory** which stores all the keys, and append-only log files on the persistent layer which stores all the data. 
+    - To reduce Java garbage collection pressure the index is allocated in native memory, outside the Java heap.
+
+- https://github.com/upserve/uppend /java
+  - an append-only, key-multivalue store which is suitable for streaming aggregation of immutable event data. 
+  - It is designed to handle both wide (large number of unique keys) and deep (large number of elements in a particular key) data. 
+  - a multithreaded embedded java database. 
+  - New keys are not durably written immediately, they are added to a temporary cache. The write cache is periodically flushed to disk. 
+  - heavily utilizes the mmap, and the linux page cache.
+
+- https://github.com/pravega/pravega /java
+  - open source storage system implementing Streams as first-class primitive for storing/serving continuous and unbounded data.
+  - A Pravega Stream is similar to but more flexible than a "topic" in popular message oriented middleware such as RabbitMQ or Apache Kafka.
+  - Pravega Streams are based on an append-only log data structure. By using append-only logs, Pravega rapidly ingests data into durable storage. 
+
+## log-state
+
+- https://github.com/fiatjaf/journalstate /js
+  - turn a log of sequential, handwritten facts, into a state
+
+- https://github.com/chinedufn/dipa /rust
+  - designed to generate very tiny diffs by default
+  - does not know anything about networks and has no networking code
 # more
