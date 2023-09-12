@@ -115,6 +115,9 @@ $$('[contenteditable]')
   - 使用hlc: idbsidesync, verdant, harika
   - 结合hlc+crdt: idbsidesync, evolu, rga-crdt
   - 结合hlc+db: piratedb, tinybase, kappa-db-stream, linvodb
+  - 基于oplog的研发方向，架构设计时考虑放在数据库层解决还是应用层解决
+    - db
+    - event-sourcing based framework
 
 - undo/redo与branching可拆分实现
   - undo与versioning/history基于persistent data structure
@@ -135,7 +138,7 @@ $$('[contenteditable]')
 - headless-architecture
   - state + action: 参考autocomplete、search-ui
 
-- 若slate-model层采用扁平化Node
+- 若slate-model层采用扁平化Node(扁平化的思路可参考event-sourcing)
   - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath
   - 优化方向可参考tree的crud及协作
   - 协作时还应该考虑 json patch + last-write-win

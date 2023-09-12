@@ -365,7 +365,7 @@ class Plugins {
 # plugin-examples
 - https://github.com/unjs/unplugin /ts
   - Unified plugin system for Vite, Rollup, Webpack, esbuild, and more
-  - unplugin is very high level to adapt plugins to bundlers
+  - very high level to adapt plugins to bundlers
   - parsing/transforming is still babel
 
 - https://github.com/Webpack/tapable /3.5kStar/MIT/202109/js/inactive
@@ -510,6 +510,13 @@ class Plugins {
 - https://github.com/krakenjs/zoid /js
   - Cross domain components
   - Render an iframe or popup on a different domain, and pass down props, including objects and functions
+# more
+- [The Architecture of Open Source Applications](http://aosabook.org/en/index.html)
+  - 500 Lines or Less
+
+- [如何设计一个JavaScript插件系统，编程思维比死磕API更重要](https://zhuanlan.zhihu.com/p/211072788)
+
+- [前端开发，如何优雅的实现这样一个插件机制？](https://www.zhihu.com/question/294560351)
 # discuss
 - ## 
 
@@ -534,11 +541,3 @@ class Plugins {
   - 1) Manual partial application as Mark described.
   - 2) Automatic partial application by Reader, State, or some another monad.
   - Via monad, core functions can be pure, while dangerous state is handled by monad itself.
-
-# ref
-- [The Architecture of Open Source Applications](http://aosabook.org/en/index.html)
-  - 500 Lines or Less
-
-- [如何设计一个JavaScript插件系统，编程思维比死磕API更重要](https://zhuanlan.zhihu.com/p/211072788)
-
-- [前端开发，如何优雅的实现这样一个插件机制？](https://www.zhihu.com/question/294560351)

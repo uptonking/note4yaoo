@@ -1,14 +1,14 @@
 ---
-title: pattern-dev-time-travel-undo-redo
-tags: [pattern, time-travel, undo]
+title: pattern-arch-time-travel-undo-redo
+tags: [architecture, data-structure, time-travel, undo]
 created: 2023-08-25T21:52:48.494Z
-modified: 2023-08-26T02:51:41.206Z
+modified: 2023-09-12T09:36:25.608Z
 ---
 
-# pattern-dev-time-travel-undo-redo
+# pattern-arch-time-travel-undo-redo
 
 # guide
-- branch和versioning的参考方案
+- branching和versioning的参考方案
   - 同类产品，如git
   - 编辑器，如vscode、ckeditor、ospreadsheet
   - 数据库，如dolt、mongodb-doc-ver
@@ -82,6 +82,10 @@ modified: 2023-08-26T02:51:41.206Z
 - [onlyoffice: Simplify History Structure](https://github.com/ONLYOFFICE/document-server-integration/issues/437)
 
 - [Version Control · vkbo/novelWriter](https://github.com/vkbo/novelWriter/issues/383)
+# more
+- [Data model for storing revision history in FoundationDB · couchdb](https://github.com/apache/couchdb/issues/1957)
+
+- [Immutable Data Structures - DEV Community](https://dev.to/martinhaeusler/immutable-data-structures-2m70)
 # discuss
 - ## 
 
@@ -164,8 +168,3 @@ modified: 2023-08-26T02:51:41.206Z
 - 
 - 
 - 
-
-# more
-- [Data model for storing revision history in FoundationDB · couchdb](https://github.com/apache/couchdb/issues/1957)
-
-- [Immutable Data Structures - DEV Community](https://dev.to/martinhaeusler/immutable-data-structures-2m70)

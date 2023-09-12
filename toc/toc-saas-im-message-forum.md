@@ -369,8 +369,10 @@ modified: 2021-05-14T15:04:15.333Z
   - Single API for all messaging providers (In-App, Email, SMS, Push, Chat)
   - Equipped with a CMS for advanced layouts and design management
 # meetings
-- https://github.com/lukevella/rallly
+- https://github.com/lukevella/rallly /ts
+  - https://rallly.co/
   - an open-source scheduling and collaboration tool designed to make organizing events and meetings easier
+  - Built with Next.js, Prisma, tRPC & TailwindCSS
 # more-forum
 - https://github.com/geekeren/GuangGuForum
   - 过早客论坛微信小程序

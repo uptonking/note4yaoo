@@ -340,127 +340,6 @@ modified: 2023-04-04T22:36:31.529Z
 
 - https://github.com/davidgatti/How-to-Stream-Movies-using-NodeJS
   - a very quick and easy article explaining how to stream movies to an HTML 5 video tag using NodeJS
-# eventsource
-- [EventSource - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/EventSource)
-  - Warning: When not used over HTTP/2, SSE suffers from a limitation to the maximum number of open connections, which can be specially painful when opening various tabs as the limit is per browser and set to a very low number (6)
-  - This limit is per browser + domain
-  - The issue has been marked as "Won't fix" in Chrome and Firefox.
-  - When using HTTP/2, the maximum number of simultaneous HTTP streams is negotiated between the server and the client (defaults to 100).
-  - 对于移动端是够用的
-
-- https://github.com/valkyrjs/valkyr /ts
-  - https://valkyrjs.com/
-  - toolkit for creating event sourced applications using javascript/typescript.
-  - A collection of TypeScript + JavaScript tools and libraries to build full stack software applications.
-  - Valkyr is designed to be framework agnostic and can be used with any framework or no framework at all. We provide initial base support for SolidJS and ReactJS
-- https://github.com/cmdo-toolkit/events /ts/legacy
-  - A distributed event sourcing solution written in TypeScript.
-  - Logical hybrid clock timestamp representing the wall time when the event was created.
-  - https://github.com/cmdo-toolkit/react-starter
-    - A full stack cmdo boilerplate for react.js, node.js and typescript
-    - 全家桶架构: client-db + store + api
-  - https://github.com/cmdo-toolkit/db
-    - Client side database solution written in TypeScript.
-    - 依赖mingo(MongoDB query language for in-memory objects)
-  - https://github.com/valkyrjs/valkyr /ts
-    - toolkit for creating event sourced applications using javascript/typescript.
-
-- https://github.com/xolvio/typescript-event-sourcing
-  - Domain Driven Design, Event Sourcing & Command Query Responsibility Segregation with Typescript
-
-- https://github.com/khaosdoctor/event-sourcing-demo-app
-  - Demo application to demonstrate the power of the event sourcing architecture
-
-- https://github.com/castore-dev/castore /107Star/MIT/202303/ts
-  - Making Event Sourcing easy
-  - Event Sourcing is a data storage paradigm that saves changes in your application state rather than the state itself.
-  - After years of using it at Kumo, we have grown to love it
-
-- https://github.com/snatalenko/node-cqrs
-  - CQRS backbone with event sourcing for Node.js
-  - The package provides building blocks for making a CQRS-ES application. 
-  - It was inspired by Lokad. CQRS, but not tied to a specific storage implementation or infrastructure. 
-  - It favors ES6 classes and dependency injection(di0), so any components can be modified or replaced with your own implementations without hacks to the package codebase.
-
-- https://github.com/oskardudycz/EventSourcing.NodeJS
-  - Examples and Tutorials of Event Sourcing in NodeJS
-
-- https://github.com/assafg/osiris
-  - Simple event sourcing for nodejs
-
-- https://github.com/reimagined/resolve /202212/ts
-  - Full stack CQRS, DDD, Event Sourcing framework for Node.js
-
-- https://github.com/thenativeweb/wolkenkit /202201/ts/inactive
-  - an open-source CQRS and event-sourcing framework based on Node.js
-  - https://github.com/thenativeweb/wolkenkit-eventstore
-
-- https://github.com/mateodelnorte/sourced-repo-mongo
-  - mongo data store and repository for sourced-style event sourcing models
-
-- https://github.com/Azure/fetch-event-source
-  - A better API for making Event Source requests, with all the features of fetch()
-
-- https://github.com/rexxars/eventsource-parser
-  - A streaming parser for server-sent events/eventsource, without any assumptions about how the actual stream of data is retrieved. 
-  - It is intended to be a building block for clients and polyfills in javascript environments such as browsers, node.js and deno.
-
-- https://github.com/mafintosh/event-source-stream
-  - EventSource implemented in node and the browser as a readable stream
-
-- https://github.com/qas/examples-nodejs-cqrs-es-swagger
-  - A Node.js CQRS and Event Sourcing Microservice Example Using Nest.js, Event Store, and Swagger
-
-- https://github.com/binaryminds/react-native-sse
-  - Event Source implementation for React Native. 
-  - Server-Sent Events (SSE) for iOS and Android
-
-- https://github.com/jordanbyron/react-native-event-source
-  - react-native interface for EventSource: Server-Sent Events for iOS and Android
-
-- https://github.com/EventSource/eventsource
-  - EventSource client for Node.js and Browser (polyfill)
-
-- https://github.com/fraktalio/fstore-sql
-  - event store based on the Postgres database
-  - Append events to the ordered, append-only log, using entity id/decider id as a key
-
-## server-sent events
-
-- https://github.com/dpskvn/express-sse
-  - An Express middleware for quick'n'easy server-sent events.
-- https://github.com/toverux/expresse
-  - A better module for working with Server-Sent Events in Express
-
-- https://github.com/triblondon/node-sse-pubsub
-  - Server sent events for NodeJS
-  - A simple NodeJS module to generate Server-Sent-Events streams with a publish/subscribe interface and simple integration with either Node's built in HTTP library or any framework that exposes it, eg. ExpressJS.
-
-- https://github.com/EventSource/node-ssestream
-  - Send Server-Sent Events with a stream
-  - A zero-dependency node stream for writing Server-Sent Events.
-
-- https://github.com/mpangrazzi/redis-subscribe-sse
-  - Stream Redis "SUBSCRIBE" or "PSUBSCRIBE" events to browsers using HTML5 Server-Sent Events (SSE)
-
-- https://github.com/tomkersten/sses-node-example
-  - Example of Express.js application providing Server-Sent Events (SSEs) on top of Redis pub/sub connection
-
-- https://github.com/simonprickett/server-sent-events-demo
-  - A small Server Sent Events demo for San Diego JS Meetup using Node, HTML, JavaScript, CSS. 
-  - [A Look at Server Sent Events](https://simonprickett.dev/a-look-at-server-sent-events/)
-
-- https://github.com/WebReflection/bidi-sse
-  - Bidirectional Server-sent Events
-
-- https://github.com/rexxars/sse-channel /202011/js
-  - Server-Sent Events "channel" where all messages are broadcasted to all connected clients, history is maintained automatically and server attempts to keep clients alive by sending "keep-alive" packets automatically.
-
-- https://github.com/einaros/sse.js /201712/js
-  - Server-Sent Events made easy for node.js
-
-- https://github.com/chrisdickinson/sse-stream
-  - Expose HTML5 Server Sent Events as an installable appliance on Node. JS http servers; connections are emitted as Writable streams.
 # storage
 - https://github.com/maxogden/abstract-blob-store /js/inactive
   - A test suite and interface you can use to implement streaming file (blob) storage modules for various storage backends and platforms.
@@ -469,4 +348,16 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/hackergrrl/append-only-log /js/inactive
   - Abstract interface for an append-only log.
   - Like abstract-blob-store, but for append-only logs.
+
+- https://github.com/debezium/debezium /java
+  - https://debezium.io/
+  - provides a low latency data streaming platform for change data capture (CDC). 
+  - You set up and configure Debezium to monitor your databases, and then your applications consume events for each row-level change made to the database. 
+  - Only committed changes are visible
+  - since Debezium records the history of data changes in durable, replicated logs, your application can be stopped and restarted at any time, and it will be able to consume all of the events it missed while it was not running
+  - Monitoring databases and being notified when data changes has always been complicated. 
+    - Relational database triggers can be useful, but are specific to each database
+    - Debezium provides modules that do this work for you. 
+    - Some modules are generic and work with multiple database management systems
+    - Other modules are tailored for specific database management systems
 # more

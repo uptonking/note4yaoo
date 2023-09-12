@@ -28,9 +28,12 @@ modified: 2023-09-07T15:58:04.082Z
   - Tradle
 
 - 选择与比较
-  - storage
+  - data model
+  - mutable
+  - persistence
   - sync and networking
   - conflicts
+  - auth and permissions
   - ecosystem/layers/stacks
 # dev
 - Dat was renamed to Hypercore in 2020

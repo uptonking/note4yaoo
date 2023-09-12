@@ -237,33 +237,6 @@ modified: 2023-09-07T15:58:27.967Z
 
 - ## 
 
-- ## 🤔 [The Reactive Monolith – How to Move from CRUD to Event Sourcing | Hacker News_202109](https://news.ycombinator.com/item?id=28691728)
-- I used to be really excited about event sourcing but yeah, its usually just over-engineering. 
-  - It appeals to the nerd in me because its a powerful & clean model - events are immutable, your entire database can theoretically be reconstructed at any point in time by just replaying an event log up to time X. 
-  - In the ideal form its sort of the highest fidelity version of data storage, throwing nothing away, supporting all ways of querying as materialized views or dependent DBs built on the stream. Its beautiful.
-- But also we live in reality. 
-- 👉🏻 DBs use checkpoints because storing/replaying an event log from time 0 would take ungodly amounts of space and time. 
-  - You deleted or resized a column to save some space? Lol no, the event log lives forever. 
-  - You wanted to use SQL, a battle tested language to query your data? Lol no, the database is "inside out" so tough luck buddy, you're building the database now. 
-  - Sure you might have to rebuild compaction, joins, query languages, concurrency control and the other 100 things a DB gives you, but on the plus side that one audit log that you could have built with some glue and a few INSERT triggers in Postgres is now an elegant map/reduce on your 100TB dataset! Yay!
-
-- For non-trivial amounts of data you should combine event sourcing with snapshots - i.e. a somewhat up-to-date materialized view/DB table - so you don't have to start for 0. At that point you can delete older events or move them to cold storage.
-  - A valid question then is: "what do you gain over just using the table"? You gain a well-described model of your business domain, with very clear actions about what should happen on which real-world event, and an audit log. Whether that's worth it depend on your use case.
-
-- Secondary benefits include easily being able to share events for new apps or use-cases, business analysts really like them, and making it unlikely things go wrong because data is in an inconsistent state.
-
-- I would like to see answers to the question: why move from Crud to event sourcing. Because I have seen at least 5 moderate projects trying to integrate ES. They all failed in the sense that either people didn't understand the code anymore, huge integration times, performance issues and even complete project cancellation because of all people walking away
-
-- I understand this thread is about dumping on ES... However, I must notice in your case it was an audit log. An ES system wouldn't work at all without access to events.
-  - If the ES is "unnecessary", then it's not ES by definition. If events are not your source of truth, it's not event sourcing, just event logging.
-
-- Two examples of systems that use a variant of event sourcing:
-  - relational database systems (their journals and async replication in particular)
-  - git
-
-- As a proponent of Radical Simplicity, I'm always sceptical about event sourcing.
-
-- I would recommend to rename "Event Sourcing" to "Evil Sourcing". You guy don't even know how many companies went bankrupt just because they tried to introduce this evil technology that makes your app 100x more complex.
 
 - ## [I've been developing high performance databases for the last five years | Hacker News](https://news.ycombinator.com/item?id=8979043)
 - It's tough to beat MVCC for a database that wants isolated concurrent transactions. Append only designs seem attractive, but they don't actually help much with write throughput on SSDs (but avoiding in-place updates does, due to erase blocks.) And they often require writing much more information. E.g. writing 100 bytes in LMDB, which is an append only btree, requires copying all pages from the root to the leaf and writing them all out, typically 64k or more. Writing 100 bytes to a transaction log or WAL costs about 100 bytes. There's a huge write amplification going on.
@@ -284,9 +257,9 @@ modified: 2023-09-07T15:58:27.967Z
 - You can use Datomic for instance or SirixDB on which I'm working in my spare time.
   - The idea is an indexed append-only log-structure and to use a functional tree structure (sharing unchanged nodes between revisions) plus a novel algorithm to balance incremental and full dumps of database pages using a sliding window instead.
 
-- 👉🏻 I agree this is more of an application level concern than a database thing. If you need to maintain a history for the user requirement then you will naturally land on a scheme like this.
+- 👉🏻 I agree this is **more of an application level concern than a database thing**. If you need to maintain a history for the user requirement then you will naturally land on a scheme like this.
 - We also have help from other quarters nowadays.
-- Databases often provide a time travel feature where we can query AS OF a certain date.
+- Databases often provide a time travel feature where we can query `AS OF` a certain date.
 - Some people went down the whole event sourcing/CQRS/Kafka route where there is an immutable audit log of updates.
 - Data warehousing has moved on such that we can implement “slowly changing data” there.
 - All in all, complicating our application logic, migrations and GDPR in order to maintain history in line of business applications might not be worthwhile.

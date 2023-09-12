@@ -80,6 +80,14 @@ const CountingComponent = () => {
   - Desktop apps running natively (no Electron!) in less than 10 lines of code.
   - First-class async support with coroutines and suspense
 # web-ui-framework
+- https://github.com/nanojsx/nano /ts
+  - http://nanojsx.io/
+  - SSR first, lightweight 1kB JSX library.
+  - Partial Hydration: Hydrate and only the parts you really need
+  - Pre-Rendering: Renders your app to static html if you want. This is possible, but requires some knowledge.
+  - Uses Tagged Templates instead of JSX if you prefer
+  - Prefetch: Use the built-in Link Component
+
 - https://github.com/luwes/sinuous
   - /710Star/MIT/202010/js
   - no compile step needed, choose your view syntax.

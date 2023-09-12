@@ -10,9 +10,11 @@ modified: 2023-09-02T09:17:22.992Z
 # guide
 
 # js-sandbox
-- https://github.com/endojs/endo /js
+- https://github.com/endojs/endo /apache2/js
   - a distributed secure JavaScript sandbox, based on SES
-  - [SES is hardened JavaScript](https://github.com/endojs/endo/tree/master/packages/ses)
+  - Endo is a JavaScript platform under development for secure communication among objects within one process and distributed between mutually suspicious machines
+  - [SES is hardened JavaScript. Hardened JavaScript is highly compatible with ordinary JavaScript. ](https://github.com/endojs/endo/tree/master/packages/ses)
+    - SES safely executes third-party JavaScript 'strict' mode programs in compartments that have no excess authority in their global scope. 
 
 - https://github.com/codesandbox/nodebox-runtime /ts
   - Nodebox is a runtime for executing Node.js modules in the browser
@@ -142,4 +144,7 @@ modified: 2023-09-02T09:17:22.992Z
 - https://github.com/DustinBrett/daedalOS
   - https://dustinbrett.com/
   - Desktop environment in the browser
+# dynamic-js
+- https://github.com/unjs/jiti /ts
+  - Runtime Typescript and ESM support for Node.js
 # more

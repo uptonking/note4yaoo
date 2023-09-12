@@ -10,6 +10,9 @@ modified: 2020-12-12T18:59:54.950Z
 # guide
 
 # popular
+- https://github.com/unjs/radix3 /ts
+  - fast router for JavaScript based on Radix Tree.
+
 - https://github.com/router5/router5
   - router5 is a framework and view library agnostic router.
   - view/state separation: router5 processes routing instructions and outputs state updates.

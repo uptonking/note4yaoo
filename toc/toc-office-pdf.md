@@ -35,12 +35,21 @@ modified: 2021-01-04T17:26:43.784Z
   - http://pdfkit.org/
   - A JavaScript PDF generation library for Node and the browser.
 
+- https://github.com/unjs/unpdf /ts
+  - Utilities to work with PDFs in Node.js, browser and workers
+  - unpdf ships with a serverless build/redistribution of Mozilla's PDF.js for serverless environments. 
+  - This library is also intended as a modern alternative to the unmaintained but still popular pdf-parse.
+
 - https://github.com/diegomura/react-pdf
   - React renderer for creating PDF files on the browser and server
   - This package is used to create PDFs using React. 
     - If you wish to display existing PDFs, you may be looking for https://github.com/wojtekmaj/react-pdf
   - https://github.com/enescang/react-pdf-table
     - Simple table generator for @react-pdf/renderer
+
+- https://github.com/wojtekmaj/react-pdf /js
+  - Display PDFs in your React app as easily as if they were images.
+  - For React-PDF to work,  `PDF.js` worker needs to be provided.
 
 - https://github.com/react-pdf-viewer/react-pdf-viewer /ts
   - https://react-pdf-viewer.dev/
@@ -57,10 +66,6 @@ modified: 2021-01-04T17:26:43.784Z
   - No Server, No Install PDF Editor with React
   - https://github.com/oren-l/PdfEditor /js
   - https://github.com/pgarciacamou/pdf-editor /js
-
-- https://github.com/wojtekmaj/react-pdf /js
-  - Display PDFs in your React app as easily as if they were images.
-  - For React-PDF to work,  `PDF.js` worker needs to be provided.
 
 - https://github.com/pdfme/pdfme /MIT/ts
   - https://pdfme.com/

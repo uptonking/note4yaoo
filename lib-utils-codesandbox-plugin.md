@@ -8,6 +8,11 @@ modified: 2023-09-02T09:16:30.412Z
 # lib-utils-codesandbox-plugin
 
 # guide
+
+- tips
+  - 简单场景考虑基于eval/Function的方案
+  - 复杂场景可参考 microsoft-excel-addon script-lab
+# iframe
 - iframe页面没有自己的历史记录，使用的是基座(父页面)的浏览历史
   - 当iframe页在内部进行跳转时，浏览器地址栏无变化，基座中加载的src资源也无变化
   - 当浏览器刷新时，无法停留在iframe内部跳转后的页面上，需要用户重新走一遍操作
@@ -56,8 +61,13 @@ modified: 2023-09-02T09:16:30.412Z
 ## [30 行代码实现 JS 沙箱 - 知乎](https://zhuanlan.zhihu.com/p/589341143)
 
 - 在 JavaScript 中，动态执行代码的方法有 Function 和 eval
-- eval('console.log("aaa:", aaa)')
-- Function('str', 'console.log(str, aaa)')('aaa:')
+
+```JS
+eval('console.log("aaa:", aaa)');
+
+Function('str', 'console.log(str, aaa)')('aaa:');
+```
+
 - `eval` 是在**当前作用域**直接执行代码，代码可以直接访问当前作用域。
   - 而 `Function` 创建的函数只会在**全局作用域**中运行（除主动修改作用域：bind，call 等），所以 Function 相对安全。
 - 因为使用 `Function` 相当于定义一个函数，会进行分词和解析等编译工作，如果 Funcion 中执行的内容有语法错误，还是会报错 Uncaught SyntaxError 语法错误。

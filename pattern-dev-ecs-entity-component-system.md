@@ -9,6 +9,8 @@ modified: 2023-04-12T08:06:04.859Z
 
 # guide
 
+- tips
+  - 协作密集型应用可采用类似游戏的ecs架构，比如im类
 # blogs
 
 ## [漫谈Entity Component System (ECS) - 知乎](https://zhuanlan.zhihu.com/p/270927422)
@@ -36,3 +38,9 @@ modified: 2023-04-12T08:06:04.859Z
 
 - 游戏，大多都会出现这样一个Entity-Manager系统。
   - 因为游戏本质就是大量实体行为（Entity）以及他们之间的交互（Manager）
+# discuss
+- ## 
+
+- ## 
+
+- ## 

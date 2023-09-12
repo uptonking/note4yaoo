@@ -10,7 +10,7 @@ modified: 2023-04-04T22:35:59.255Z
 # guide
 
 - js-tools
-  - [UnJS](https://unjs.io/)
+  - [UnJS: JavaScript Libraries, Tools, and Utilities, Crafted to Elevate Your Coding Journey](https://unjs.io/)
 # popular
 - scheduler
   - https://github.com/facebook/react/tree/main/packages/scheduler
@@ -152,6 +152,15 @@ modified: 2023-04-04T22:35:59.255Z
   - Clone an html element by #id, identify targeted elements using clone_id="" attribute. 
   - Capable of creating nested & complex cloning logic for kanbans, tasklists etc. 
 # web-localStorage
+- https://github.com/unjs/unstorage /ts
+  - Unstorage provides an async Key-Value storage API with conventional features like multi driver mounting, watching and working with metadata, dozens of built-in drivers and a tiny core.
+  - Designed for all environments: Browser, NodeJS, and Workers
+  - Default in-memory storage
+  - Asynchronous API
+  - Binary and raw value support
+  - HTTP Storage with built-in server
+  - State snapshots and hydration
+
 - https://github.com/aykutkardas/lookie
   - Store your data in localStorage with optional expiration time.
 # cross-platform
@@ -215,6 +224,13 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/jhchen/fast-diff
   - a simplified import of the excellent diff-match-patch library into the Node.js environment
   - The diff function is an implementation of "An O(ND) Difference Algorithm and its Variations" (Myers, 1986) with the suggested divide and conquer strategy along with several optimizations Neil added.
+# code-generator
+- https://github.com/unjs/knitwork /ts
+  - Utilities to generate JavaScript code.
+# patterns
+- https://github.com/unjs/unctx /ts
+  - Vue.js introduced an amazing pattern called Composition API that allows organizing complex logic by splitting it into reusable functions and grouping in logical order. 
+  - unctx allows easily implementing composition API pattern in your javascript libraries without hassle.
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

@@ -10,7 +10,8 @@ modified: 2023-08-23T17:15:46.484Z
 # guide
 
 - log-based-db
-  - flume/ssb
+  - flume/ssb/hyperbee
+  - event-sourcing
 # utils
 
 # distributed

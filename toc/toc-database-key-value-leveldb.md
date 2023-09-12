@@ -52,6 +52,11 @@ modified: 2022-11-03T04:14:00.563Z
   - not production ready
   - started building Dice DB to understand Redis better with [Redis Internals Course](https://arpitbhayani.me/redis-internals/)
 
+- https://github.com/mozilla/rkv /rust
+  - typed key-value storage solution. 
+  - It supports multiple backend engines with varying guarantees, such as LMDB for performance, or "SafeMode" for reliability.
+  - The "SafeMode" backend performs well, with two caveats: the entire database is stored in memory, and write transactions are synchronously written to disk (only on commit).
+
 - https://github.com/spacejam/sled /rust/bw-tree
   - https://docs.rs/sled
   - http://sled.rs/
@@ -74,6 +79,16 @@ modified: 2022-11-03T04:14:00.563Z
   - initially developed for JetBrains YouTrack, also used in JetBrains Hub
   - highly concurrent. Reads are completely non-blocking due to MVCC and true snapshot isolation.
   - written in pure Java and Kotlin.
+
+- https://github.com/lmdbjava/lmdbjava /java
+  - Lightning Memory Database (LMDB) for Java: a low latency, transactional, sorted, embedded, key-value store
+  - LmdbJava adds Java-specific features to LMDB
+  - https://github.com/lmdbjava/benchmarks
+    - Benchmark of open source, embedded, memory-mapped, key-value stores available from Java (JMH)
+  - https://github.com/LMDB/lmdb /c
+    - https://www.symas.com/lmdb
+    - fast, memory-efficient database we developed for the OpenLDAP Project. 
+    - With memory-mapped files, LMDB has the read performance of a pure in-memory database while retaining the persistence of standard disk-based databases.
 # leveldb-like
 - https://github.com/Level/bench
   - Benchmark `abstract-level` databases. 
