@@ -1,11 +1,11 @@
 ---
-title: pm-pattern-local-first-compatibility-interoperability
-tags: [compatibility, interoperability, local-first]
+title: pattern-local-first-spec-compatibility
+tags: [compatibility, interoperability, local-first, protocol, spec]
 created: 2022-11-14T20:08:46.332Z
-modified: 2022-11-14T20:12:25.671Z
+modified: 2023-09-13T20:30:20.011Z
 ---
 
-# pm-pattern-local-first-compatibility-interoperability
+# pattern-local-first-spec-compatibility
 
 # guide
 

@@ -7,8 +7,11 @@ modified: 2022-06-11T20:35:11.775Z
 
 # thread-db-sql-search-query
 
-# discuss
+# guide
 
+- datomic-alternative
+  - clojure: datascript, xtdb, datahike, datalevin
+# discuss
 - ## 
 
 - ## 

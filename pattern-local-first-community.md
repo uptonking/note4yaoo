@@ -1,11 +1,11 @@
 ---
-title: pm-pattern-local-first-community
+title: pattern-local-first-community
 tags: [community, local-first, pattern]
 created: 2022-03-03T18:19:36.049Z
-modified: 2022-03-03T18:20:12.075Z
+modified: 2023-09-13T20:24:41.516Z
 ---
 
-# pm-pattern-local-first-community
+# pattern-local-first-community
 
 # guide
 

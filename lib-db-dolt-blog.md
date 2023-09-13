@@ -20,6 +20,8 @@ modified: 2023-08-25T21:17:31.432Z
 - [Maintained Wikipedia ngrams dataset in Dolt | DoltHub Blog](https://www.dolthub.com/blog/2019-12-04-maintained-wikipedia-ngrams-dataset/)
 
 - [How Dolt Types Work | DoltHub Blog](https://www.dolthub.com/blog/2020-04-15-how-dolt-types-work/)
+
+- [Patterns for Managing Source Code Branches](https://martinfowler.com/articles/branching-patterns.html)
 # [Three-Way Merges in Dolt: Modeling Schema Conflicts | DoltHub Blog](https://www.dolthub.com/blog/2023-05-01-schema-conflicts/)
 - At the storage layer, Dolt and Git both leverage Merkle-Trees that enable scalable diff algorithms. 
   - However, Dolt's implementation is specifically tailored to handle database tables and schemas. 

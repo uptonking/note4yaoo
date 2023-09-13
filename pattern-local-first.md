@@ -1,11 +1,11 @@
 ---
-title: pm-pattern-local-first
-tags: [local-first, pattern, pm]
+title: pattern-local-first
+tags: [local-first, pattern]
 created: 2021-08-22T08:05:15.252Z
-modified: 2021-08-22T08:05:39.413Z
+modified: 2023-09-13T20:24:13.701Z
 ---
 
-# pm-pattern-local-first
+# pattern-local-first
 
 # guide
 
@@ -47,6 +47,7 @@ modified: 2021-08-22T08:05:39.413Z
 - ref
   - [local-first tech](https://jaredforsyth.com/posts/)
   - [Local-first data migrations](https://blog.gfor.rest/blog/lofi-migrations)
+  - [Building local-first apps](https://notes.andymatuschak.org/zFJo4Xj8Lo4kjrustUjqh6S)
 # [Local-first software__201910](https://www.inkandswitch.com/local-first.html)
 - Cloud apps like Google Docs and Trello are popular because they enable real-time collaboration with colleagues, and they make it easy for us to access our work ~~from all of our devices~~ anytime anywhere. 
   - However, by centralizing data storage on servers, cloud apps also take away ownership and agency from users. 

@@ -20,6 +20,18 @@ modified: 2023-08-25T21:17:11.979Z
 
 - ## 
 
+- ## [Dolt is like if Git and MySQL had a baby._201912](https://www.reddit.com/r/programming/comments/ec5jez/getting_to_one_9_of_correctness_for_our/)
+- Two big use cases:
+  - Data provenance. For every cell in the table, you know who put it there, when, the commit message associated with it, who approved it, and the full history of all its values it's ever had.
+  - Collaboration. Anytime there is a crowd-sourcing element to data collection, the branching and merging capabilities of dolt let the maintainer of a data set get all the benefits that maintainers of open source software projects already get with GitHub. Your collaborators submit pull requests that you can then merge.
+
+- Why this instead of tried and true methods like date effective records, event sourcing, and annotation tables?
+  - For an **online** production database, the methods you name are the way to go. No question.
+  - Dolt is an **offline-first** database meant for collaboration and distribution of data. We don't just want versioning: we actually want a commit graph so that we can implement git semantics on top of it. This is what allows multiple parties to fork each other's repos and still meaningfully contribute their changes back upstream.
+
+- What database is being used to store the changes to the database? 
+  - The database itself is a Merkle DAG, like Git. That's how we get the branch / merge / diff semantics. It's built on top of a heavily modified fork of noms.
+
 - ## Anyone have a good algorithms for minimum 2-dimensional diff? 
 - https://twitter.com/DoltHub/status/1331751370802642944
   - Input is 2 trimmed and clean CSVs (files don’t end in \n; lines don’t end in , ; no quotes or escaping)
@@ -90,22 +102,41 @@ modified: 2023-08-25T21:17:11.979Z
   - That being said, we think architecturally we can eventually get pretty close to parity with other RDBMS on the read path. We will be slower on the write path given the need to build the Merkle DAG on writes.
   - Long ways to go though, we only launched open source last August. On a suite of MySQL ~6M correctness benchmarks, we currently execute 3-4X more slowly. These aren't large sets either so we suspect we'll run into some non-linearities in performance. This is just normal SQL. We haven't really tested the limits of how many branches we can handle or how long branch creation or merge takes at scale. Not because we don't want to but because it's not the use case we're focused on.
 
-- I work as a SWE at a large AI consultancy. We've been experimenting with "git for data" products for a while, and we've been trying to get rid of them (notably Pachyderm) for -at least- 2 years.
+- 🤔 I work as a SWE at a large AI consultancy. We've been experimenting with "git for data" products for a while, and we've been trying to get rid of them (notably Pachyderm) for -at least- 2 years.
   - What they all share is a) awful performances, and b) bad design.
-  - Git semantics, ("branche", "merge", "commit") are not well suited for data, because merging dataframes and creating "branches" often leads to misunderstandings and delays. Time travel is very nice to have, but it's often the case where you would like to consume your input datasets at different point in time in the same repository (unless you do one dataset per repository, but then, what's the point ?).
-  - Performances are bad, because all updates needs to go through some kind of coordination mechanism (etcd, zookeeper, or raft directly). In a single instance scenario, you often end-up flooding it or needing additional memory to cope with the load. However, you could deliver high throughput and high availability by using proper sharding and distributing updates to specific masters (like you would do in any actor-based architecture).
-  - As a replacement, we're now using a custom event-sourcing framework on top of AWS S3/Azure blob. It's faster, more reliable, and most importantly, better designed.
+  - Git semantics, ("branche", "merge", "commit") are not well suited for data, because merging dataframes and creating "branches" often leads to misunderstandings and delays. 
+    - Time travel is very nice to have, but it's often the case where you would like to consume your input datasets at different point in time in the same repository (unless you do one dataset per repository, but then, what's the point ?).
+  - Performances are bad, because all updates needs to go through some kind of coordination mechanism (etcd, zookeeper, or raft directly). 
+    - In a single instance scenario, you often end-up flooding it or needing additional memory to cope with the load. 
+    - However, you could deliver high throughput and high availability by using proper sharding and distributing updates to specific masters (like you would do in any actor-based architecture).
+  - As a replacement, **we're now using a custom event-sourcing framework on top of AWS S3/Azure blob**. 
+    - It's faster, more reliable, and most importantly, better designed.
 - The shortcomings are not from the tools themselves, it's a fundamental issue with the design.
-  - First, branching and merging. In git, branching allows you to make uncoordinated parallel progress for the price of a reconciliation step. In a datastore, you want the exact opposite: A single, consistent, available source of truth. Having different branches of the same dataset bring more confusion while solving zero problem.
+  - First, branching and merging. In git, branching allows you to make uncoordinated parallel progress for the price of a reconciliation step. In a datastore, you want the exact opposite: A single, consistent, available source of truth. **Having different branches of the same dataset bring more confusion while solving zero problem**. 原作者未考虑到协作与合并的场景
   - Then, commits. In git, a commit represent a snapshot of the entire state of your repository. This is particularly attractive because it guarantees that your code will build no matter what kind of update will follow (without incidence: editing a readme ; severely destructive: removing an src folder). In a datastore, this is nice but unnecessary. As I mentioned it in this thread, datasets move at different speeds, and attaching an new hash to something that didn't change doesn't add value. However, I have to recognize, I failed to mention earlier that datasets are often unrelated and not relational. This would be to reconsider if it were the case, of course. Most of the time, a dataset is represented as a single dataframe (or a single collection of dataframes).
   - There some points where git semantics make sense: immutability of commits, linearizability within branches. Both are extremely important if you want to enable reproducibility of your pipeline. These are traits coming from Event Sourcing.
   - Reproducibility is also claimed by DVC and Pachyderm, but their issue here is more a problem of trying to do too much things at once but not managing to do it right. Running code within Pachyderm pipelines was a recipe for disaster and the first thing we got rid of.
   - As for performances, the write side is where it matters, because it needs to be coordinated. Reads almost never are an issue with good caching. In any case, it should be robust enough to fill the gap between csv files sent to s3 and a full kafka cluster, eg: not complaining for a few TB. To my knowledge, the only multi-leader datastore suitable for storing sharded datasets as a continuous log is Kafka.
 
-- That's very interesting. This is why we think (Luke from TerminusDB again) designing your own full featured graph DB is the best appraoch to the problem - you can work from the ground up and ensure performance is satisfactory for the operations you want to deliver. I don't agree that Git semantics are not well suited to data, but you do have to be very careful about how you advance.
+- That's very interesting. This is why we think (Luke from TerminusDB again) designing your own full featured graph DB is the best approach to the problem - you can work from the ground up and ensure performance is satisfactory for the operations you want to deliver. I don't agree that Git semantics are not well suited to data, but you do have to be very careful about how you advance.
+  - Also, for TerminusDB we don't use a multimaster coordination mechanism - we actually use the same sort of git approach.
   - We like Prolog for Querying, constraint checking and user interaction. Rust is great for low-level data manipulation. Prolog is a superpower - very simple but very powerful, but quite far removed from the hardware and uses abstractions not under our control so not good at nitty-gritty bit manipulation. We like Rust as a low-level memory-safe language (and it has a great community).
+- 👉🏻 for time-travel. One of the most evident architecture when dealing with AI/ML/Optimisation is to design your application as a mesh of small, deterministic, steps (or scripts) reading input data and outputting results. 
+  - As you would expect, output of one step is reusable by another one.
+  - Script A is reading Sales data from source S, Weather data from source W; writing its result to A. Script B is reading data from source A, and Calendar from C; writing its result to B
+  - in the real-world, S, W, C, progress at different speed : new sales could be inserted by the minute, but the weather data would likely change by the day. So, you need a system that would allow you to read S@2fabbg and W@4c4490 while being in the same "repository".
+  - That's why git semantics are not a good fit: you need to have only one "branch" to ensure consistency and limit misunderstandings, but you want to "commit" datasets in the same repository at different pace. For that purpose, event sourcing is much better (BTW, git at its core, is basically event-sourcing). Kafka's architecture is actually the best solution.
+  - I use something very similar to https://www.snowflake.com/. An event-based system sitting on top of s3, indexed with a postgresql, influxDB, or anything else.
 
-- Dolt isn't just time travel. If all you want is time travel (or append-only data), you can do that with Postgres or MySQL pretty easily and get great performance. What Dolt brings to the table is actual Git semantics, a real commit graph you can branch, merge, fork, clone. You can inspect the historical values of each cell and examine the author and commit message for each change. It's a database built for collaboration from the ground up.
+- Dolt actually addresses this need exactly. You can query tables at two different revisions without checking out the two different branches
+  - You can even do joins between the tables as they existed at those revisions
+
+- Dolt isn't just time travel. If all you want is time travel (or append-only data), you can do that with Postgres or MySQL pretty easily and get great performance. 
+  - What Dolt brings to the table is actual Git semantics, a real commit graph you can branch, merge, fork, clone. You can inspect the historical values of each cell and examine the author and commit message for each change. 
+  - It's a database built for collaboration from the ground up like github.
+  - Git demonstrated what a powerful model the commit graph is for code. Dolt brings it to data, with SQL built in.
+  - To answer your question about indexes across schema migrations, indexes are versioned with the schema of the table. This means they can be efficiently synced during a pull operation, but it means that previous versions of the data don't have indexes on them. We're considering adding the ability to add an index to the data from the beginning of the commit history as a rebase operation, but haven't implemented that yet
+- Git uses logical ordering rather than temporal ordering, and their concept of a primary key is rather nebulous.
 
 - ## [Building a branched versioning model for relational databases - Database Administrators Stack Exchange](https://dba.stackexchange.com/questions/74210/building-a-branched-versioning-model-for-relational-databases)
 - Managing and keeping track on data modification (insert, update, delete) can be done quite easy using an audit table with trigger that keep track on every change.

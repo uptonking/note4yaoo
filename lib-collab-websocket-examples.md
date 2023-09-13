@@ -24,7 +24,7 @@ modified: 2023-01-23T19:27:46.948Z
   - https://valkyrjs.com/
   - toolkit for creating event sourced applications using javascript/typescript.
   - A collection of TypeScript + JavaScript tools and libraries to build full stack software applications.
-  - Valkyr is designed to be framework agnostic and can be used with any framework or no framework at all. We provide initial base support for SolidJS and ReactJS
+  - designed to be framework agnostic and can be used with any framework or no framework at all. We provide initial base support for SolidJS and ReactJS
 - https://github.com/cmdo-toolkit/events /ts/legacy
   - A distributed event sourcing solution written in TypeScript.
   - Logical hybrid clock timestamp representing the wall time when the event was created.

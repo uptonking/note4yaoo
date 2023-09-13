@@ -9,6 +9,10 @@ modified: 2023-09-12T09:37:22.608Z
 
 # guide
 
+- https://github.com/heynickc/awesome-ddd
+  - A curated list of Domain-Driven Design (DDD), Command Query Responsibility Segregation (CQRS), Event Sourcing
+
+- [@resolve-js/core vs eventstore vs wolkenkit vs create-resolve-app | npm trends](https://npmtrends.com/@resolve-js/core-vs-eventstore-vs-wolkenkit-vs-create-resolve-app)
 # popular
 - https://github.com/xolvio/typescript-event-sourcing /ts
   - Domain Driven Design, Event Sourcing & Command Query Responsibility Segregation with Typescript
@@ -27,6 +31,7 @@ modified: 2023-09-12T09:37:22.608Z
   - Making Event Sourcing easy
   - Event Sourcing is a data storage paradigm that saves changes in your application state rather than the state itself.
   - After years of using it at Kumo, we have grown to love it
+  - Snapshots are not implemented in Castore yet, but we have big plans for them, so stay tuned 🙂
 
 - https://github.com/oskardudycz/EventSourcing.NodeJS /ts
   - Examples and Tutorials of Event Sourcing in NodeJS
@@ -36,15 +41,43 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/reimagined/resolve /MIT/202212/ts/提供了很多示例
   - https://reimagined.github.io/resolve/
   - Full stack CQRS, DDD, Event Sourcing framework for Node.js
+  - features
+    - Full stack scalable modern app
+    - cqrs + es 
+    - DDD Aggregate support
+    - Integrates with React and Redux for seamless development experience.
   - using events as a source of truth and calculating read models from them.
-  - Integrates with React and Redux for seamless development experience.
   - ReSolve implements the write side as a set of aggregates. 
   - The read side is implemented as a set of read models. 
     - ReSolve also implements a reactive extension of the read model concept called a view model. 
     - A view model rebuilds its state on the fly and uses WebSockets to reactively synchronize the state with the client.
   - A saga describes a long running process as a sequence of events.
   - reSolve application stores its data(a chain of immutable events) in a centralized event store, which can be configured to use different underlying data storages through the mechanism of adapters.
+  - you definitely can use only backend part of reSolve, it does not assume anything about client part.
   - [A Redux-Inspired Backend. Extending React+Redux ideas to the_201901](https://medium.com/resolvejs/resolve-redux-backend-ebcfc79bbbea)
+  - [Snapshots](https://github.com/reimagined/resolve/discussions/1791)
+    - These are low level methods that event store need to implement, app devs unlikely will call them.
+    - Aggregate state is json built by running a projection function as a reducer on event stream.
+    - If number of events used is greater than N, aggregate state is saved to event store as a snapshot.
+    - Next time aggregate state is built from snapshot forward, so building an aggregate state should read not more than N records from event store (including snapshot).
+    - The same mechanism is used for view models.
+  - [Snapshot is always delayed by 1 event](https://github.com/reimagined/resolve/issues/980)
+    - The snapshot is created when reading events, not when persisting
+    - Due to the above, the snapshotted state will always be delayed by 1 event until somebody tries to rehydrate the aggregate root
+    - Most likely there is no issue there. 
+    - Take in mind that snapshot is never used as single source to receive aggregate root (state). Snapshot allows to reduce amount of events, which should be retrieved from eventstore. So, in your case, last event will be used to rehydrate the aggregate root anyway.
+  - [Hosting and Scaling?](https://github.com/reimagined/resolve/discussions/1770)
+    - reSolve local is a node app, so you can host and scale using any container management system.
+    - reSolve 0.28 is tested in multi-instance mode, so it should work in the cluster without problems and additional configuration.
+    - concurrent writes are kept consistent using optimistic locking. For read model notification, all instances are registered in the event store, and instance that modified event store notifies others, so they can pull new events and apply to the read models.
+    - This means that in case of central read model DB, all instances would try to apply the same updates to the read model, but only one would win. This is probably not an efficient approach, but surely - the simplest thing that will work in all cases.
+    - Please note that instances can have different configurations, so some of them can deal with write side, some with read side. Also, it is possible that each instance will have its own read model storage (local db).
+    - No redis there, just one instance notifies others via HTTP call. This is just poking "go check event store".
+  - [Server clustering configuration possible?](https://github.com/reimagined/resolve/discussions/1803)
+    - we have tested multi-instance config, and, as I feared, it doesn't work correctly with the current version. We have fixed the problem, and fix is likely to be included in the next release.
+    - We have released reSolve 0.28_202103. There we have removed event broker process. Now all instances are registered in event store and notify each other without explicit configuration.
+    - reSolve app deployed to the cloud is compiled into AWS lambdas, lambda@edge, and many AWS infrastructure elements like app gateways, step functions, aurora db instances etc.
+    - So here we are describing how to run "local" express-based reSolve version in a multi-instance cluster. I would not call it serverless. It is mostly stateless, works similar to cloud version, but is not serverless.
   - [Why is mongodb adapters discontinued?](https://github.com/reimagined/resolve/issues/1429)
     - The current main goals of the reSolve framework and cloud platform are high load capability and high performance of the event store and read models. 
     - All reSolve adapters, except for MongoDB, are SQL-based and support operations that are especially useful under high loads, including transactions and lightweight mutexes. 
@@ -54,21 +87,39 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/thenativeweb/wolkenkit /AGPLv3/202201/ts/inactive
   - https://docs.wolkenkit.io/
   - an open-source CQRS and event-sourcing framework based on Node.js
+  - features
+    - ddd + es + cqrs
+    - wolkenkit applications are distributed by default and designed to scale. You can run wolkenkit as a single-process runtime on a single machine, or as a set of distinct services spread across your network.
+    - stores domain events from your business over time
+    - contains a vanilla HTTP and a GraphQL endpoint that can be used to send commands, execute queries, and subscribe to domain events.
+    - ready-made yet configurable manifests for Docker and Kubernetes
   - The following databases are supported for the domain event store, the lock store, and the priority queue store: in-memory, mysql, postgresql, redis, mongodb
-  - https://github.com/thenativeweb/wolkenkit-eventstore
+  - https://github.com/thenativeweb/wolkenkit-eventstore /AGPLv3/ja
+    - eventstore for Node.js that is used by wolkenkit.
   - https://github.com/thenativeweb/wolkenkit-boards /js
     - a tool for collaboratively organizing notes.
     - backend is powered by wolkenkit.
   - https://github.com/thenativeweb/cqrs-sample /js
   - [Wolkenkit 3.0 – a CQRS and event-sourcing framework for JavaScript | Hacker News_201812](https://news.ycombinator.com/item?id=18705853)
+    - git stores the state and calculates the deltas, and es stores the deltas and calculates the state.
     - es store deltas instead of the current state
     - Git stores complete snapshots of objects, not diffs 
+  - https://github.com/thenativeweb/node-eventstore /MIT/js/legacy/inactive
+    - http://eventstore.js.org/
+    - EventStore Implementation in node.js
+    - By default the eventstore will use an in-memory Storage.
+    - supported Dbs (in-memory, mongodb, redis, tingodb, elasticsearch, azuretable, dynamodb)
+    - load and store events via EventStream object
+    - snapshot support
+    - I would like to thank Golo Roden, who was there very early at the beginning of my CQRS/ES/DDD journey and is now here again to take over these modules.
+    - forks
+    - https://github.com/saperiuminc/node-eventstore
 
 - https://github.com/valkyrjs/valkyr /ts
   - https://valkyrjs.com/
   - toolkit for creating event sourced applications using javascript/typescript.
   - A collection of TypeScript + JavaScript tools and libraries to build full stack software applications.
-  - Valkyr is designed to be framework agnostic and can be used with any framework or no framework at all. We provide initial base support for SolidJS and ReactJS
+  - designed to be framework agnostic and can be used with any framework or no framework at all. We provide initial base support for SolidJS and ReactJS
   - https://github.com/cmdo-toolkit/events /ts/legacy
     - A distributed event sourcing solution written in TypeScript.
     - Logical hybrid clock timestamp representing the wall time when the event was created.
@@ -81,7 +132,7 @@ modified: 2023-09-12T09:37:22.608Z
   - https://github.com/valkyrjs/valkyr /ts
     - toolkit for creating event sourced applications using javascript/typescript.
 
-- https://github.com/snatalenko/node-cqrs
+- https://github.com/snatalenko/node-cqrs /js
   - CQRS backbone with event sourcing for Node.js
   - The package provides building blocks for making a CQRS-ES application. 
   - It was inspired by Lokad. CQRS, but not tied to a specific storage implementation or infrastructure. 
@@ -115,9 +166,28 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/EventSource/eventsource
   - EventSource client for Node.js and Browser (polyfill)
 
+- https://github.com/message-db/message-db /
+  - http://docs.eventide-project.org/user-guide/message-db/
+  - Microservice Native Event Store and Message Store for Postgres
+  - A fully-featured event store and message store implemented in PostgreSQL for Pub/Sub, Event Sourcing, Messaging, and Evented Microservices applications.
+  - The message store is a single table named messages. 
+  - Interaction with the message store is effected through Postgres server functions that ensure the correct semantics for the writing of messages to streams, and the reading of messages from streams and categories.
+
 - https://github.com/fraktalio/fstore-sql
   - event store based on the Postgres database
   - Append events to the ordered, append-only log, using entity id/decider id as a key
+
+- https://github.com/seikho/evtstore /ts/未实现snapshot
+  - https://seikho.github.io/evtstore
+  - Type-safe Event Sourcing and CQRS with Node. JS and TypeScript
+  - the design is highly opinionated, but still flexible.
+  - We front-load the creation of our Event, Aggregate, and Command types to avoid having to repeatedly import and pass them as generic argument.
+
+- https://github.com/boostercloud/booster /ts/GraphQL
+  - https://www.boosterframework.com/
+  - framework designed to create event-driven backend microservices that focus on extreme development productivity. 
+  - It provides a highly opinionated implementation of the CQRS and Event Sourcing patterns in Typescript, using DDD (Domain-Driven Design)
+  - We adopted GraphQL because it's a self-documenting standard. 
 
 - https://github.com/khaosdoctor/event-sourcing-demo-app /vue
   - Demo application to demonstrate the power of the event sourcing architecture
@@ -129,6 +199,7 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/get-eventually/eventually-rs /rust
   - Collection of traits and other utilities to help you build your Event-sourced applications in Rust.
+  - https://github.com/pholactery/eventsourcing /rust/inactive
 
 - https://github.com/eugene-khyst/postgresql-event-sourcing /java
   - A reference implementation of an event-sourced system that uses PostgreSQL as an event store
@@ -173,6 +244,9 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/EventStore/EventStore /csharp
   - https://eventstore.com/
   - The stream database optimised for event sourcing
+  - https://github.com/EventStore/samples
+  - https://github.com/qooroo/EventStore /legacy
+    - Event Store is written in a mixture of C#, C++ and JavaScript. It can run either on Mono or .NET, however because it contains platform specific code (including hosting the V8 JavaScript engine), it must be built for the platform on which you intend to run it.
 # server-sent events
 - https://github.com/dpskvn/express-sse
   - An Express middleware for quick'n'easy server-sent events.
@@ -208,4 +282,22 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/chrisdickinson/sse-stream
   - Expose HTML5 Server Sent Events as an installable appliance on Node. JS http servers; connections are emitted as Writable streams.
+# event-driven
+- https://github.com/deepstreamIO/deepstream.io /ts
+  - https://deepstream.io/
+  - deepstream is an open source server inspired by concepts behind financial trading technology. 
+  - It allows clients and backend services to sync data, send messages and make rpcs at very high speed and scale.
+  - records are schema-less, persistent json documents that can be edited and observed. Changes are persisted and synced across clients and saved in cache/storage.
+  - events allow for high performance, many-to-many messaging. deepstream provides topic based routing from sender to subscriber, data serialisation and subscription listening.
+  - rpc: Clients can register functions to be called by other clients.
+
+- https://github.com/dapr/dapr /go
+  - https://dapr.io/
+  - a portable, event-driven, runtime for building distributed applications across cloud and edge.
+  - Dapr injects a side-car (container or process) to each compute unit. The side-car interacts with event triggers and communicates with the compute unit via standard HTTP or gRPC protocols
+  - Dapr uses pluggable component state stores and message buses such as Redis as well as gRPC to offer a wide range of communication methods, including direct dapr-to-dapr using gRPC and async Pub-Sub with guaranteed delivery and at-least-once semantics.
 # more
+- https://github.com/MaterializeInc/materialize /rust
+  - designed to help you interactively explore your streaming data, perform analytics against live relational data, or increase data freshness while reducing the load of your dashboard and monitoring tasks. 
+  - Whenever Materialize answers a query, that answer is the correct result on some specific (and recent) version of your data. Materialize does all of this by recasting your SQL queries as dataflows, which can react efficiently to changes in your data as they happen.
+  - Materialize can read data from Kafka (and other Kafka API-compatible systems like Redpanda), directly from a PostgreSQL replication stream, or from SaaS applications via webhooks. It also supports regular database tables to which you can insert, update, and delete rows.

@@ -1,11 +1,11 @@
 ---
-title: pm-pattern-local-first-drawbacks
+title: pattern-local-first-drawbacks
 tags: [drawbacks, local-first]
 created: 2022-11-25T10:56:31.116Z
-modified: 2022-11-25T10:58:09.770Z
+modified: 2023-09-13T20:24:49.401Z
 ---
 
-# pm-pattern-local-first-drawbacks
+# pattern-local-first-drawbacks
 
 # guide
 

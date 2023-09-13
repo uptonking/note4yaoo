@@ -69,6 +69,11 @@ modified: 2022-12-19T01:51:01.389Z
 - https://github.com/aichbauer/express-rest-api-boilerplate
   - Express REST API with JWT Authentication and support for sqlite, mysql, and postgresql
   - routes mapping via express-routes-mapper
+
+- https://github.com/talyssonoc/node-api-boilerplate /ts
+  - DDD/Clean Architecture inspired boilerplate for Node web APIs
+  - Modules are the building pieces of an application built with this boilerplate. You can either encapsulate an integration or a feature using a module 
+  - Both the boot and stopping processes are defined as a sequence of lifecycle events.
 # crud/admin
 - api-server-nodejs /178Star/MIT/202212/ts
   - https://github.com/app-generator/api-server-nodejs

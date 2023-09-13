@@ -47,6 +47,16 @@ modified: 2022-12-14T18:26:38.588Z
 # discuss
 - ## 
 
+- ## 
+
+- ## [question: Is adding an rtree still on the roadmap?](https://github.com/ccorcos/tuple-database/issues/27)
+- I have no immediate plans to implement this until I pick up a project that needs this
+- My plan is more-or-less to consider the storage layer as key-value storage that isn't necessarily ordered. 
+  - Then I'll build a durable tree on top of that abstraction. 
+  - I've done some similar things before: ccorcos/js-avl-tree 
+  - That project is different though because the tree persistent as well (an immutable data structure) inspired by datalog. 
+  - But that seems a bit overkill and performance overhead doesn't seem worth it to me.
+
 - ## My goal is to build a database that makes it easier to build local-first software._202206
 - https://twitter.com/ccorcos/status/1532185301438738433
   - Embedded, reactive, schemaless, and transactional read/write directly to indexes (inspired by FoundationDb)

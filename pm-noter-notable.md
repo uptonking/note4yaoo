@@ -7,7 +7,9 @@ modified: 2022-12-19T02:01:20.161Z
 ---
 
 # pm-noter-notable
+
  
+
 > easy to read， easy to write, content-centric notebook
 
 # guide(for notable/noter/paper)
@@ -107,6 +109,9 @@ modified: 2022-12-19T02:01:20.161Z
   - 跳到页面第一个搜索结果
 
 ## page
+
+- title
+  - auto unique title by username-prefix
 
 - 保存各级标题、字体的样式为类似页面格式刷
 

@@ -27,12 +27,19 @@ modified: 2022-11-07T10:25:12.034Z
   - [如何找到自己在知乎里发表的评论？](https://www.zhihu.com/question/19585656/answers/updated)
 
 - dogedoge 多吉搜索被知乎屏蔽了
-# zhihu
+# 知乎/掘金
 - 有时候评论的内容比回答的内容更有意思
 
 - [知乎违规记录](https://www.zhihu.com/community/reported)
-# hackernews
+# reddit
+
+# hacker-news
+
+- usage-xp
+  - 有时网站无法登录或内容无法显示，可能不是网络原因，可在twitter社交平台搜索 `hacker news down` 按时间倒序判断最新状态
+
 - [搜索版](https://hn.algolia.com/)
+  - 支持rss订阅，如https://hn.algolia.com/userfeed/nullwasamistake
 # twitter
 - search
   - 搜索关键词时，可加上'min_replies:1'的条件，筛选出被讨论过的质量更高的内容
@@ -81,6 +88,9 @@ modified: 2022-11-07T10:25:12.034Z
 # mastodon
 - tips
   - bookmarks支持export，favorites不支持export
+
+- ui-alternatives
+  - https://phanpy.social/ 类似tweetdeck的看板界面
 
 - [Does mastodon has advance search](https://stackoverflow.com/questions/74570622/does-mastodon-has-advance-search)
   - This is not possible (intentionally / by design).
