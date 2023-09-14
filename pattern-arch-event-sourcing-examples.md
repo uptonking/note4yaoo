@@ -17,22 +17,6 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/xolvio/typescript-event-sourcing /ts
   - Domain Driven Design, Event Sourcing & Command Query Responsibility Segregation with Typescript
 
-- https://github.com/cloudnativeentrepreneur/sourced /ts
-  - https://github.com/mateodelnorte/sourced /js
-  - Tiny framework for building models with the event sourcing pattern (events and snapshots) that works in Node.js and the browser
-  - Unlike Active Record where entity state is persisted on a one-model-per row database format, event sourcing stores all the changes (events) to the entity, rather than just its current state. 
-  - The current state is derived by loading all events, or a latest snapshot plus subsequent events, and replaying them against the entity.
-  - Sourced makes no assumptions about how you store your events and snapshots. 
-    - The library is small and tight with only the required functionality to define entities and their logic, enqueue and emit events, and track event state to later be persisted. 
-  - https://github.com/mateodelnorte/sourced-repo-mongo
-    - mongo data store and repository for sourced-style event sourcing models
-
-- https://github.com/castore-dev/castore /107Star/MIT/202303/ts
-  - Making Event Sourcing easy
-  - Event Sourcing is a data storage paradigm that saves changes in your application state rather than the state itself.
-  - After years of using it at Kumo, we have grown to love it
-  - Snapshots are not implemented in Castore yet, but we have big plans for them, so stay tuned 🙂
-
 - https://github.com/oskardudycz/EventSourcing.NodeJS /ts
   - Examples and Tutorials of Event Sourcing in NodeJS
   - I already have samples of Event Versioning and Snapshots in my sample repo. 
@@ -115,6 +99,24 @@ modified: 2023-09-12T09:37:22.608Z
     - forks
     - https://github.com/saperiuminc/node-eventstore
 
+- https://github.com/cloudnativeentrepreneur/sourced /ts
+  - https://github.com/mateodelnorte/sourced /js
+  - Tiny framework for building models with the event sourcing pattern (events and snapshots) that works in Node.js and the browser
+  - Unlike Active Record where entity state is persisted on a one-model-per row database format, event sourcing stores all the changes (events) to the entity, rather than just its current state. 
+  - The current state is derived by loading all events, or a latest snapshot plus subsequent events, and replaying them against the entity.
+  - Sourced makes no assumptions about how you store your events and snapshots. 
+    - The library is small and tight with only the required functionality to define entities and their logic, enqueue and emit events, and track event state to later be persisted. 
+  - https://github.com/mateodelnorte/sourced-repo-mongo
+    - mongo data store and repository for sourced-style event sourcing models
+  - https://github.com/PDMLab/sourced-ts /ts/inactive
+    - forked from sourced for building models with the event sourcing pattern (events and snapshots).
+
+- https://github.com/castore-dev/castore /107Star/MIT/202303/ts
+  - Making Event Sourcing easy
+  - Event Sourcing is a data storage paradigm that saves changes in your application state rather than the state itself.
+  - After years of using it at Kumo, we have grown to love it
+  - Snapshots are not implemented in Castore yet, but we have big plans for them, so stay tuned
+
 - https://github.com/valkyrjs/valkyr /ts
   - https://valkyrjs.com/
   - toolkit for creating event sourced applications using javascript/typescript.
@@ -140,6 +142,12 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/assafg/osiris
   - Simple event sourcing for nodejs
+
+- https://github.com/Silly-Goose-Software/event-sauced-ts /ts/inactive
+  - started out as a re-implementation of ASOS/SimpleEventStore in TypeScript. 
+  - What was initially just a simple re-write, is slowly becoming a more featured library.
+  - The goal is to be provide a database-agnostic API for an event store.
+  - https://github.com/Silly-Goose-Software/event-sauced-ts-postgresql
 
 - https://github.com/Azure/fetch-event-source /ts
   - A better API for making Event Source requests, with all the features of fetch()
@@ -191,6 +199,26 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/khaosdoctor/event-sourcing-demo-app /vue
   - Demo application to demonstrate the power of the event sourcing architecture
+# es-collab
+- https://github.com/andykswong/mithic /MIT/ts
+  - https://andykswong.github.io/mithic/
+  - Modular library for real-time isomorphic JavaScript applications
+  - mithic provides the building blocks for creating real-time, offline-first client-server or decentralized applications, using CQRS architecture with CRDT eventsourcing for storage and data replication.
+  - minimal example to get started. Uses the Redux store preset
+  - crdt基于自己实现的lseq
+  - Linear sequence of values based on `ORMap` of base64 fractional index to values
+  - timestamp基于逻辑时钟
+
+- https://github.com/josephg/statecraft /ISC/201911/ts/inactive
+  - Statecraft is a protocol and set of tools for interacting with data that changes over time. 
+  - It is the spiritual successor to Sharedb.
+  - The store guarantees that the data is immutable with respect to time. (So if the data changes, the version number goes up).
+    - Stores can choose how much historical data to store and return.
+  - Stores provide a standard set of methods to interact with the data: fetch/mutate/subscribe
+  - A Statecraft store is more than just a database abstraction
+    - Unlike traditional transactional databases, Statecraft stores compose together like LEGO. Stores wrap one another
+  - The philosophy of Statecraft is to "ship the architecture diagram". 
+    - The API is designed to make it easy to re-expose a statecraft store over the network. 
 # non-js
 - https://github.com/serverlesstechnology/cqrs /rust
   - A lightweight, opinionated CQRS and event sourcing framework targeting serverless architectures.
@@ -200,6 +228,10 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/get-eventually/eventually-rs /rust
   - Collection of traits and other utilities to help you build your Event-sourced applications in Rust.
   - https://github.com/pholactery/eventsourcing /rust/inactive
+
+- https://github.com/primait/event_sourcing.rs
+  - opinionated library used to achieve cqrs/es in Rust.
+  - Event Sourcing RS uses under the hood sqlx.
 
 - https://github.com/eugene-khyst/postgresql-event-sourcing /java
   - A reference implementation of an event-sourced system that uses PostgreSQL as an event store
@@ -236,6 +268,17 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/looplab/eventhorizon /go
   - a CQRS/ES toolkit for Go.
   - NOTE: Event Horizon is used in production systems but the API is not final!
+- https://github.com/ThreeDotsLabs/watermill /go
+  - library for working efficiently with message streams. 
+  - It is intended for building event driven applications, enabling event sourcing, RPC over messages, sagas
+  - You can use conventional pub/sub implementations like Kafka or RabbitMQ, but also HTTP or MySQL binlog if that fits your use case.
+  - event-driven architecture, messaging, stream processing, CQRS - use it for whatever you need
+  - Flexible with middlewares, plugins and Pub/Sub configurations.
+- https://github.com/dapr/dapr /go
+  - https://dapr.io/
+  - a portable, event-driven, runtime for building distributed applications across cloud and edge.
+  - Dapr injects a side-car (container or process) to each compute unit. The side-car interacts with event triggers and communicates with the compute unit via standard HTTP or gRPC protocols
+  - Dapr uses pluggable component state stores and message buses such as Redis as well as gRPC to offer a wide range of communication methods, including direct dapr-to-dapr using gRPC and async Pub-Sub with guaranteed delivery and at-least-once semantics.
 
 - https://github.com/pyeventsourcing/eventsourcing /python
   - https://eventsourcing.readthedocs.io/
@@ -282,7 +325,16 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/chrisdickinson/sse-stream
   - Expose HTML5 Server Sent Events as an installable appliance on Node. JS http servers; connections are emitted as Writable streams.
-# event-driven
+# examples
+- https://github.com/yysun/apprun /MIT/ts
+  - https://apprun.js.org/
+  - a JavaScript library for developing high-performance and reliable web applications using the elm inspired architecture, events and components.
+  - view is a pure function to display the state
+  - State management and routing included
+  - No proprietary syntax to learn (no hooks)
+  - Use directly in the browser or with a compiler/bundler
+  - Advanced features: JSX, Web Components, Dev Tools, SSR, etc.
+
 - https://github.com/deepstreamIO/deepstream.io /ts
   - https://deepstream.io/
   - deepstream is an open source server inspired by concepts behind financial trading technology. 
@@ -291,11 +343,16 @@ modified: 2023-09-12T09:37:22.608Z
   - events allow for high performance, many-to-many messaging. deepstream provides topic based routing from sender to subscriber, data serialisation and subscription listening.
   - rpc: Clients can register functions to be called by other clients.
 
-- https://github.com/dapr/dapr /go
-  - https://dapr.io/
-  - a portable, event-driven, runtime for building distributed applications across cloud and edge.
-  - Dapr injects a side-car (container or process) to each compute unit. The side-car interacts with event triggers and communicates with the compute unit via standard HTTP or gRPC protocols
-  - Dapr uses pluggable component state stores and message buses such as Redis as well as gRPC to offer a wide range of communication methods, including direct dapr-to-dapr using gRPC and async Pub-Sub with guaranteed delivery and at-least-once semantics.
+- https://github.com/PipedreamHQ/pipedream /7.1kStar/Paid/202309/ts
+  - https://pipedream.com/
+  - an integration platform for developers.
+  - provides a free, hosted platform for connecting apps and developing event-driven automations. 
+  - The platform has over 1, 000 fully-integrated applications, so you can use pre-built components to quickly send messages to Slack, add a new row to Google Sheets, and more.
+  - This repo contains: The code for all pre-built integration components
+  - Pipedream imposes limits on source and workflow execution, the events you send to Pipedream, and other properties by free/paid tier
+  - [If Pipedream doesn't support Self-Host, what's the repo for?_202305](https://github.com/PipedreamHQ/pipedream/issues/6365)
+    - contains all the code for Pipedream's app, actions and triggers. The code is deployed to Pipedream system.
+    - Currently, Pipedream does NOT offer self-host option.
 # more
 - https://github.com/MaterializeInc/materialize /rust
   - designed to help you interactively explore your streaming data, perform analytics against live relational data, or increase data freshness while reducing the load of your dashboard and monitoring tasks. 

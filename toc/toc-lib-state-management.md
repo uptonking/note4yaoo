@@ -44,18 +44,20 @@ modified: 2020-07-14T11:03:53.196Z
   - [React doesn't need state management tool, I said](https://dev.to/tolgee_i18n/react-doesnt-need-state-management-tool-i-said-31l4)
     - https://github.com/tolgee/tolgee-platform/blob/main/webapp/src/fixtures/createProvider.tsx
 # agnostic
-- redux /MIT/53.7kStar/202005/ts/单向数据流
+- redux /53.7kStar/MIT/202005/ts/单向数据流
   - https://github.com/reduxjs/redux
   - https://redux.js.org/
   - Predictable state container for JavaScript apps.
-  - 源码简单，插件丰富，插件有时会导致状态管理变得复杂
+  - 源码简单，中间件丰富
+  - 全局唯一的store可能导致过多的subscriber执行
 
-- mobx /MIT/22.1kStar/202007/ts/响应式数据流/NoDeps
+- mobx /22.1kStar/MIT/202007/ts/响应式数据流/NoDeps
   - https://github.com/mobxjs/mobx
   - https://mobx.js.org/README.html
-  - MobX is a battle tested library that makes state management simple and scalable by transparently applying functional reactive programming (TFRP).
+  - a battle tested library that makes state management simple and scalable by transparently applying functional reactive programming (TFRP).
   - Mobx implements TFRP in a glitch-free, synchronous, predictable and efficient manner.
   - mobx isn't pubsub. It doesn't do change detection
+  - 基于隐式的自动依赖搜集和执行，支持细粒度的修改与通知，但可能代理对象过多，分析排查不便
 
 - nanostores /2.5kStar/MIT/202301/js
   - https://github.com/nanostores/nanostores
@@ -70,22 +72,28 @@ modified: 2020-07-14T11:03:53.196Z
     - [Nano Stores 0.5 · Issue_202109](https://github.com/nanostores/nanostores/issues/57)
   - [Nano Stores in Angular: how to make the state management simpler - DEV Community](https://dev.to/evilmartians/nano-stores-in-angular-how-to-make-the-state-management-simpler-38a1)
 
-- xstate /MIT/12.2kStar/202007/状态机
-  - https://github.com/davidkpiano/xstate
-  - https://xstate.js.org/docs/
-  - JS and TS finite state machines and statecharts for the modern web.
-- state-designer /472Star/MIT/202107/ts
-  - https://github.com/steveruizok/state-designer
-  - https://state-designer.com/
-  - 主要用于自研的tldraw、perfect-freehand、globs.design
-  - library for managing the state of a user interface. 
-  - It prioritizes the design experience, making it easy to experiment with ideas, iterate on solutions, and communicate the final result.
-  - State Designer is heavily inspired by xstate. 
-    - Note that, unlike xstate, State Designer does not adhere to the scxml spec.
-  - Write state-charts in a simple declarative syntax.
-    - Create both global and local component states.
-  - Put simply, a statechart is a beefed up state machine.  
-    - The beefing up solves a lot of the problems that state machines have, especially state explosion that happens as state machines grow.
+- effector /4.3kStar/MIT/202309/ts/event-driven
+  - https://github.com/effector/effector
+  - https://effector.dev/
+  - effective multi-store state manager for Javascript apps (React/Vue/Node.js)
+  - Effector offers the possibility to describe the business logic in the same language as the product development team communicates, using basic primitives: Event, Store, Effect respectively. 
+  - stores should be freely combined - data that the application needs can be statically distributed, showing how it will be converted in runtime.
+  - no decorators, no need to use classes or proxies; the api library uses only functions and plain js objects
+  - [Article "Why did I choose Effector instead of Redux or MobX?"](https://gist.github.com/Chudesnov/03a9338db1826eb1019ea712bedd3e3b)
+    - built to work with lots of different stores simultaneously.
+    - Effector uses immutable state, explicitly combines stores' state and only allows changing it through events.
+  - [The best part of Effector - DEV Community](https://dev.to/effector/the-best-part-of-effector-4c27)
+  - [jotai New APIs: isAtom, watch/unwatch, atom((get) ](https://github.com/pmndrs/jotai/issues/1217)
+    - jotai atoms are just configs and they don't hold values. So, you can't directly read/write atoms. 
+    - It's very different from module state libs such as zustand and effector.
+    - There has been a huge demand on it, so we implemented an experimental feature (merged).
+
+- tanstack-store /90Star/MIT/202309/ts
+  - https://github.com/TanStack/store
+  - https://tanstack.com/store
+  - a framework agnostic data store that ships with framework specific adapters for major frameworks like React, Solid, Vue and Svelte.
+  - primarily used for state management internally for most framework agnostic TanStack libraries. 
+  - It can also be used as a standalone library for any framework or application.
 
 - storeon /1.5kStar/MIT/202009/js
   - https://github.com/storeon/storeon
@@ -117,6 +125,24 @@ modified: 2020-07-14T11:03:53.196Z
   - To manage state with a simple pub/sub pattern and unidirectional data flow
   - [SubState: I abandoned Redux for a Flux/Pub-Sub hybrid](https://medium.com/@t.saporito/substate-why-i-abandoned-redux-26d01419d74b)
 
+- xstate /MIT/12.2kStar/202007/状态机
+  - https://github.com/davidkpiano/xstate
+  - https://xstate.js.org/docs/
+  - JS and TS finite state machines and statecharts for the modern web.
+  - It uses event-driven programming, state machines, statecharts, and the actor model to handle complex logic in predictable, robust, and visual ways.
+- state-designer /472Star/MIT/202107/ts
+  - https://github.com/steveruizok/state-designer
+  - https://state-designer.com/
+  - 主要用于自研的tldraw、perfect-freehand、globs.design
+  - library for managing the state of a user interface. 
+  - It prioritizes the design experience, making it easy to experiment with ideas, iterate on solutions, and communicate the final result.
+  - State Designer is heavily inspired by xstate. 
+    - Note that, unlike xstate, State Designer does not adhere to the scxml spec.
+  - Write state-charts in a simple declarative syntax.
+    - Create both global and local component states.
+  - Put simply, a statechart is a beefed up state machine.  
+    - The beefing up solves a lot of the problems that state machines have, especially state explosion that happens as state machines grow.
+
 - akita /Apache2/2.3kStar/202007/ts
   - https://github.com/datorama/akita
   - https://datorama.github.io/akita/
@@ -130,9 +156,7 @@ modified: 2020-07-14T11:03:53.196Z
   - To handle everything(updating state) from a simple toggle to very complex operations, Cerebral has the concept of sequences. 
     - Sequences allows you to compose functions together into a flow. 
     - sequences are based on function-tree, a project that came out of the initial experimentations in the first version of Cerebral.
-- effector /2.8kStar/MIT/202010/ts
-  - https://github.com/effector/effector
-  - Effector is an effective multi-store state manager for Javascript apps (React/Vue/Node.js)
+
 - store /187Star/MIT/202010
   - https://github.com/fabiospampinato/store
   - simple framework-agnostic modern state management library.
@@ -344,7 +368,7 @@ modified: 2020-07-14T11:03:53.196Z
   - https://recoiljs.org/
   - Recoil is an experimental set of utilities for state management with React
   - Promote an Actor model event-based architecture
-- zustand /4.9kStar/MIT/202010/ts/like-redux
+- zustand /4.9kStar/MIT/202010/ts/redux-like
   - https://github.com/pmndrs/zustand
   - a comfy api based on react hooks, isn't boilerplatey or opinionated, 
   - but still just enough to be explicit and flux-like.
@@ -448,12 +472,16 @@ modified: 2020-07-14T11:03:53.196Z
   - A whirlwind tour of React state management systems by example
   - Examples to help portray the how, why, which, pros, and cons of various state management systems in the React ecosystem.
 
-- https://github.com/josephg/statecraft /201911/ts/inactive
-  - Manage state with finesse
+- https://github.com/josephg/statecraft /ISC/201911/ts/inactive
   - Statecraft is a protocol and set of tools for interacting with data that changes over time. 
   - It is the spiritual successor to Sharedb.
   - The store guarantees that the data is immutable with respect to time. (So if the data changes, the version number goes up).
-  - Unlike traditional transactional databases, Statecraft stores compose together like LEGO. Stores wrap one another
+    - Stores can choose how much historical data to store and return.
+  - Stores provide a standard set of methods to interact with the data: fetch/mutate/subscribe
+  - A Statecraft store is more than just a database abstraction
+    - Unlike traditional transactional databases, Statecraft stores compose together like LEGO. Stores wrap one another
+  - The philosophy of Statecraft is to "ship the architecture diagram". 
+    - The API is designed to make it easy to re-expose a statecraft store over the network. 
 
 - https://github.com/regionjs/region-core
   - region-core is a progressive View Model Management Framework. 

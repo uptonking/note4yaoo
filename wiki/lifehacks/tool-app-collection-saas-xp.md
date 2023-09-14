@@ -27,7 +27,7 @@ modified: 2022-11-07T10:25:12.034Z
   - [如何找到自己在知乎里发表的评论？](https://www.zhihu.com/question/19585656/answers/updated)
 
 - dogedoge 多吉搜索被知乎屏蔽了
-# 知乎/掘金
+# 知乎/掘金/v2ex
 - 有时候评论的内容比回答的内容更有意思
 
 - [知乎违规记录](https://www.zhihu.com/community/reported)
@@ -91,6 +91,26 @@ modified: 2022-11-07T10:25:12.034Z
 
 - ui-alternatives
   - https://phanpy.social/ 类似tweetdeck的看板界面
+
+- yaoo-accounts-social
+  - cons
+    - 用户的toots和retweet服务器可能不会保存，需要用户自己手动备份
+  - pros
+    - 用户可以自己搭建server
+
+- mastodon
+  - https://fosstodon.org/
+    - open source software
+  - https://mastodon.social/
+    - twitter-like
+  - https://vis.social/
+    - data viz and d3
+  - https://en.osm.town/
+    - OpenStreetMap
+  - https://mapstodon.space/
+    - map
+  - https://m.cmx.im/
+    - 中文社区
 
 - [Does mastodon has advance search](https://stackoverflow.com/questions/74570622/does-mastodon-has-advance-search)
   - This is not possible (intentionally / by design).

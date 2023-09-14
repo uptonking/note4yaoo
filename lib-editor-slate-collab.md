@@ -11,6 +11,9 @@ modified: 2023-02-05T19:03:12.722Z
 
 - why use binding to implement collab?
   - flexibility over performance
+
+- not-yet-基于crdt实现text文本协作的问题
+  - 对不同分支的文档在相同位置粘贴相同的文本时，crdt会保留重复的文本
 # collaboration solutions
 
 ## [logux crdt Conflict Resolution](https://logux.io/guide/concepts/state/)

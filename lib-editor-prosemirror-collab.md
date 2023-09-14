@@ -9,6 +9,9 @@ modified: 2021-10-14T05:03:19.234Z
 
 # not-yet
 
+- not-yet-基于crdt实现text文本协作的问题
+  - 对不同分支的文档在相同位置粘贴相同的文本时，crdt会保留重复的文本
+
 - ❓️ 基于轮询的服务端和基于socket的服务端示例，是如何决定接收一个op，然后拒绝其他op的
   - If two editors make changes concurrently, they will both go to this authority with their changes. 
   - The authority will accept the changes from one of them, and broadcast these changes to all editors. 

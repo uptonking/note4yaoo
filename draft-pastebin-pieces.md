@@ -20,24 +20,6 @@ https://us05web.zoom.us/j/7754416829?pwd=TUlMR3dMWEpaajdVR1VNdDR5N29NZz09
 会议号：775 441 6829
 密码：uZKAn9
 
-- yaoo-accounts-social
-  - cons
-    - 用户的toots和retweet服务器不会保存，需要用户自己手动保存
-  - pros
-    - 用户可以自己搭建server
-- mastodon
-  - https://fosstodon.org/
-    - open source software
-  - https://mastodon.social/
-    - twitter-like
-  - https://vis.social/
-    - data viz and d3
-  - https://en.osm.town/
-    - OpenStreetMap
-  - https://mapstodon.space/
-    - map
-  - https://m.cmx.im/
-    - 中文社区
 
 - wechat-luckiikawayii
   - 技术积累

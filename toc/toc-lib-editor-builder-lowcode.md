@@ -90,6 +90,21 @@ modified: 2020-12-28T12:24:09.275Z
     - sharing
   - https://github.com/drudge/n8n-nodes-puppeteer
     - n8n node for requesting webpages using Puppeteer, a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol.
+- https://github.com/windmill-labs/windmill /5.9kStar/AGPLv3/202309/rust/svelte/js
+  - https://windmill.dev/
+  - Open-source developer platform to turn scripts into workflows and UIs. 
+  - Open-source alternative to Airplane/Retool/pipedream.
+  - 依赖svelte-headlessui、d3-dag
+- https://github.com/PipedreamHQ/pipedream /7.1kStar/Paid/202309/ts
+  - https://pipedream.com/
+  - an integration platform for developers.
+  - provides a free, hosted platform for connecting apps and developing event-driven automations. 
+  - The platform has over 1, 000 fully-integrated applications, so you can use pre-built components to quickly send messages to Slack, add a new row to Google Sheets, and more.
+  - This repo contains: The code for all pre-built integration components
+  - Pipedream imposes limits on source and workflow execution, the events you send to Pipedream, and other properties by free/paid tier
+  - [If Pipedream doesn't support Self-Host, what's the repo for?_202305](https://github.com/PipedreamHQ/pipedream/issues/6365)
+    - contains all the code for Pipedream's app, actions and triggers. The code is deployed to Pipedream system.
+    - Currently, Pipedream does NOT offer self-host option.
 
 - baidu-amis /12.9kStar//apache2/202301/ts/编辑器未开源
   - https://github.com/baidu/amis
@@ -395,8 +410,10 @@ modified: 2020-12-28T12:24:09.275Z
   - Low-code programming for event-driven applications
 
 - https://github.com/triggerdotdev/trigger.dev
+  - https://trigger.dev/
   - The developer-first open source Zapier alternative.
   - Trigger.dev is an open source platform that makes it easy for developers to create event-driven background tasks directly in their code. 
+  - open-source platform to create long-running jobs directly in your Next.js project, with features like API integrations, webhooks, scheduling and delays.
   - 后端依赖remix、prisma
   - 前端依赖headless/react、codemirror6、json-query、keyv、pulsar
 

@@ -17,6 +17,9 @@ modified: 2022-04-05T10:08:25.947Z
   - 离线合并
   - 冲突处理算法 + 网络通信
 
+- not-yet-基于crdt实现text文本协作的问题
+  - 对不同分支的文档在相同位置粘贴相同的文本时，crdt会保留重复的文本
+
 - ref
   - https://github.com/alangibson/awesome-crdt
   - [Alternatives · ElectricSQL](https://electric-sql.com/docs/reference/alternatives)
@@ -305,8 +308,9 @@ modified: 2022-04-05T10:08:25.947Z
     - Each Object has an associated ID which is globally unique, and a set of property-value pairs. 
     - Parent-Child relationships are maintained as a link from the child to its parent.
 
-- https://github.com/andykswong/mithic /ts
+- https://github.com/andykswong/mithic /MIT/ts
   - https://andykswong.github.io/mithic/
+  - Modular library for real-time isomorphic JavaScript applications
   - mithic provides the building blocks for creating real-time, offline-first client-server or decentralized applications, using CQRS architecture with CRDT eventsourcing for storage and data replication.
   - minimal example to get started. Uses the Redux store preset
   - crdt基于自己实现的lseq

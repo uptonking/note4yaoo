@@ -84,7 +84,8 @@ modified: 2023-08-25T21:17:11.979Z
 # discuss-dolt
 - ## 
 
-- ## 
+- ## [Feature Request: Is there any chance to support Supabase or VectorDB?](https://github.com/dolthub/dolt/issues/6155)
+- I haven't researched too much into what special features these databases do. Our prolly tree data structure is pretty generalizable and could probably be made to work. 
 
 - ## [I Want Decentralized Version Control for Structured Data | Hacker News](https://news.ycombinator.com/item?id=22843085)
 

@@ -68,7 +68,8 @@ modified: 2021-01-01T16:02:50.598Z
     - [Harvard Dataverse](https://dataverse.harvard.edu/)
     - [Australian Data Archive](https://ada.edu.au/popular-data/)
 
-- https://github.com/magda-io/magda /202301/ts/js/scala
+- https://github.com/magda-io/magda /apache2/202301/ts/js/scala
+  - https://magda.io/
   - A federated, open-source data catalog for all your big data and small data
   - As an open data search engine
   - Powerful and scalable search based on ElasticSearch

@@ -68,8 +68,6 @@ modified: 2021-05-13T03:12:40.723Z
 - The module works by initiating polling when the data module has one or more objects listening for a change and stopping when there are no longer any change events bound. 
   - Polling is also paused when the visibility state of the page changes to hidden and resumed when the page is focused.
 
-
-
 ### [Server-side Rendering](https://github.com/Automattic/wp-calypso/blob/trunk/docs/server-side-rendering.md)
 
 - When rendering on the server, we have a special set of constraints that we need to follow when building components and libraries.
@@ -134,6 +132,31 @@ modified: 2021-05-13T03:12:40.723Z
   - 注意，Mobx 是一个 functional reactive programming，即函数式响应式编程，并不能说是响应式编程，reactive programming，因为 reactive programming 是特指事件流式的编程形式，在 js 里面的相应实现是 Rxjs。
 
 - 除了基本的发布订阅之外，Vue 和 Mobx 还需要处理一些其他问题，比如对于他们都有的 computed 概念，触发顺序是一个重要问题。
+
+## [The best part of Effector - DEV Community_202110](https://dev.to/effector/the-best-part-of-effector-4c27)
+
+- problem
+  - Creating complex business scenarios frequently includes waiting for all computations to be completed. 
+  - Moreover, if an application is built over event-oriented architecture, it will be quite difficult to define the end of events processing. 
+  - In the common case, we need this opportunity in two situations. 
+  - The first one is widely used, any good application requires it. 
+  - The second one is more specific, but it is pretty important too.
+
+- We have identified a problem of waiting for computations to be completed, so let us see how classic state managers solve it.
+- redux itself does not have any mechanism to handle asynchronous actions and side effects. 
+  - A common application uses something like redux-saga or redux-thunk
+  - The simplest way to detect the end of computations is to add the new action “computations is ended”. It is a simple and working solution, but it has a fatal problem — you (as an engineer) should think about “end-of-computations” actions in any scenario, you should adopt a domain-specific logic to it.
+  - Another option is to put the whole scenario logic to a single entity (thunk, saga, whatever). In this case, we can just wait for the end of the entity.
+- MobX uses the same techniques as Redux for the solution of our problem. E.g., we can just add a boolean property to the store and wait for its changes 
+  - So, it is working, except for one thing. We cannot use this solution for a complex scenario, if it works with many stores.
+  - Moreover, we can put the whole scenario in single asynchronous function, it will simplify the tests
+
+- In Effector-world, we can fix it with a special function `allSettled`. 
+  - It starts a unit (event or effect) and waits for end of computations on the specified scope. 
+  - To get a state of store in particular scope, we can use `scope.getState` method.
+  - Fork API has a built-in mechanism to replace any effect-handler in a specific scope
+
+- So, we decided to use Effector because it is based on multi-stores. It helps to create more solid applications and develop them in large teams
 
 ## [My State Management Mistake](https://epicreact.dev/my-state-management-mistake/)
 
@@ -427,7 +450,7 @@ store.setState({ b: 2 });
 - https://github.com/hankchizljaw/beedle
   - /306Star/MIT/201006/js
   - A tiny library inspired by Redux & Vuex to help you manage state in your JS apps
-  - Beedle creates a central store that enables you predictably control 
+  - creates a central store that enables you predictably control 
 
 - Traditionally, we’d keep state within the DOM itself or even assign it to a global object in the window
 - Libraries like Redux, MobX and Vuex make managing cross-component state almost trivial(微不足道的，不重要的)
