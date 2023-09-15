@@ -298,6 +298,56 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/westmark/sequelize-multi-tenant-enhancer /201702/js
   - A Proxy based enhancer function which enables schema based multi tenancy in Sequelize.
+
+- https://github.com/pilagod/uow-sequelize /ts/inactive
+  - Unit of Work pattern implementation for Sequelize, based on uow-template.
+
+## event-driven
+
+- https://github.com/Judahh/flexiblePersistence /ts
+  - A CQRS and Event Sourcing platform
+  - It's possible to use different databases or services implementing IPersistence interface, like MongoDB does (MongoPersistence).
+  - Other implementations: DAO, Sequelize, Service
+  - https://github.com/Judahh/sequelizePersistence
+
+- https://github.com/s4nt14go/white-label /ts
+  - Serverless Domain-Driven Design (DDD) with unit tests
+  - This project exemplifies a CreateUser use case and how we can trigger an event, signaling we have a new user onboard.
+  - DBs: PostgreSQL CockroachDB Serverless and DynamoDB
+  - ORM: Sequelize
+  - AWS services: Lambda, AppSync, Systems Manager Parameter Store
+  - I started this project using Khalil Stemmler's white-label users module and applied some concepts based on Vladimir Khorikov courses where he tackles DDD in a great way.
+
+- https://github.com/QuaNode/beamjs /js
+  - Enterprise full stack web development framework (Backend-JS - ExpressJS - AngularJS - MongoDB)
+  - BeamJS is built above Backend-JS to provide data controllers for SQL and No-SQL databases. It also includes file system controllers that work on a local file system or cloud storage.
+  - These data controllers are abstract adapters above ODM/ORM patterns of MongooseJS and SequelizeJS. These data controllers are abstract adapters above ODM/ORM patterns of MongooseJS and SequelizeJS.
+  - supports CQRS architecture through mixed model definitions over different DBs.
+  - supports Horizontal/DB multi-tenancy by automatically handling multi-DB connection mapping.
+  - https://github.com/quaNode/Backend-JS /js
+    - a layer built above expressjs and socket.io to enable behaviours framework for nodejs applications.
+
+- https://github.com/luizcalaca/ddd-typescript-sequelize-node-api /ts
+  - Domain Drive Design + Clean Architecture + Node.js + Typescript + Sequelize
+
+- https://github.com/joshuaalpuerto/node-ddd-boilerplate /js/inactive
+  - Node DDD Boilerplate
+  - Sequelize is used to define mappings between models and database tables
+
+- https://github.com/rezeus/kernel /js/inactive
+  - Kernel for event-driven applications.
+  - Asynchronous event is a regular event whose listener returns a Promise.
+
+- https://github.com/flux-capacitor/flux-capacitor /js/inactive
+  - Flux architecture for the backend. Realtime data and time travel capabilities included.
+  - Events are persisted, thus tracking the database's history
+  - Pushing realtime data becomes trivial, since you can subscribe to the store for updates
+  - Isomorphic reducers - Share code between back end and front end
+  - Middleware concept, compatible with Redux middleware
+  - No lock-in: Ability to opt-out any time and just use the underlying database directly
+  - Finer-grained access control - Control write access by event type, not only by table
+  - Works with PostgreSQL, MySQL, SQLite & MSSQL using Sequelize right now
+  - It is related to CQRS, but no traditional CQRS. Rather something between common CRUD and traditional CQRS.
 # search
 - https://github.com/mujz/pg-search-sequelize /js/inactive
   - Postgres full-text search in Node.js and Sequelize.

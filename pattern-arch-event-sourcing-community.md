@@ -12,6 +12,32 @@ modified: 2023-09-13T14:28:01.426Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## [What tools/frameworks do you use for event sourcing and CQRS](https://www.reddit.com/r/node/comments/q5u3pj/what_toolsframeworks_do_you_use_for_event/)
+- Use NestJS. It has a package for CQRS. For Aggregates (and Entities, etc) read up on Domain Driven Design. 
+- For DDD I would recommend an ORM like Mikro-orm
+
+- Why do you think Mikro orm is better for DDD? (comparing to something like typeorm?)
+  - Because Mikro-orm has a Unit of Work pattern and as far as I can tell TypeORM does not (or it has to be added in).
+
+- I learned a very valuable lesson. Event Sourcing is not a silver bullet, and I'd wager that 80% of the time it is probably more trouble than it's worth. It takes a long time to implement, and comes with a lot of boilerplate, but that's not the main problem. The problem is onboarding developers who are not used to Event Sourcing. That takes a long time.
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## [Hybrid CQRS-Request/Response with Event Store - EventStoreDB](https://discuss.eventstore.com/t/hybrid-cqrs-request-response-with-event-store/1636)
+  - Would it be possible to have a hybrid system that would have mainly request/response operations and some commands
+- FWIW, we do this. We have a request/response REST API which creates
+commands into aggregates, then events. On return from POST we redirect
+to the view with an extra `?t=<commit position>` query parameter. When
+that GET hits, on any server in the cluster, a filter will pause the
+request until the read model database has been updated with at least
+that commit position, thus providing "read your own writes" semantics.
+
 - ## [Dolt is like if Git and MySQL had a baby._201912](https://www.reddit.com/r/programming/comments/ec5jez/getting_to_one_9_of_correctness_for_our/)
 - Two big use cases:
   - Data provenance. For every cell in the table, you know who put it there, when, the commit message associated with it, who approved it, and the full history of all its values it's ever had.
@@ -23,7 +49,6 @@ modified: 2023-09-13T14:28:01.426Z
 
 - What database is being used to store the changes to the database? 
   - The database itself is a Merkle DAG, like Git. That's how we get the branch / merge / diff semantics. It's built on top of a heavily modified fork of noms.
-
 
 - ## 🤔 Has anybody tried using Dolt? It looks quite young._202006
 - https://news.ycombinator.com/item?id=23533223
@@ -67,27 +92,6 @@ modified: 2023-09-13T14:28:01.426Z
 - ## 
 
 - ## 
-
-- ## 👉🏻 [Mistakes we made adopting event sourcing and how we recovered | Hacker News_201907](https://news.ycombinator.com/item?id=20324021)
-- Not separating persisting the event history and persisting a view of the current state
-  - This seems like the classic half-way that people take when adopting ES without buying into CQRS
-  - If I understand OP correctly they are saying that rather than deriving state by consuming their events, they were maintaining a kind of snapshot that served as both the read/write model representation of a given aggregate in addition to storing the events.
-
-- I worked on multiple Event Sourcing CQRS based systems and I see no advantages vs traditional databases.
-  - The event stream is exactly the same as a commit log in a regular DB. Building "projections" is the same as making views or calculated columns. In my experience storing the whole event history is not useful and consumes huge amounts of space. Just like everyone compacts their commit logs, you don't have to, and if you don't, isn't ES the same thing with extra steps? It stores all the changes to tables and views, which are exactly the same as projections. With ES + CQRS combined you're basically replicating a database, badly.
-  - Sorry to be so negative about this topic but I've worked on several of these projects at a decent scale and it's been the biggest disaster of my professional life. The idea may be viable but tooling is so bad that you're almost surely making a huge mistake implementing these patterns in production code.
-- 🤔 This(es) assumes the content in the commit log are client events, not CRUD on table data actions (events are higher order). When a greenfield project is starting up, data is gold
-  - I disagree. The events tend to relate directly to what would be regular database tables in my experience.
-  - And data is the new oil is definitely a businessweek cargo cult. None of the event data was of any use on the projects I worked on. We were under mandate to find something to do with it and still couldn't. The closest useful thing was allowing undo and replaying past events but we already had that on Postgres with hibernate auditing on interesting tables (money related stuff)
-- 👉🏻 I agree (es)it's a nice pattern. **What you really need though is a "database in code"**. A library that handles all the projections, event stream, and especially replays and upgrading event versions automatically.
-- One thing you do get "for free" pretty much is an audit log though. 
-  - And if you store events with both an event_timestamp and effective_timestamp, you get bi-temporal state for free too.
-  - Invaluable when handing a time series of financial events subject to adjustments and corrections
-- You get audit logs for free on a regular database with an ORM like Hibernate or even support on database snapshot level with Postgres or MSSQL. You get the logging capabilities of CQRS without any of the complexity.
-  - **After working on several such systems, I strongly believe you should keep data storage concerns in the database. Moving it to code implementation is a massive amount of overhead for no benefit**.
-
-- The biggest problem (of es) is the lack of available tooling.
-  - The only custom built ES database is Eventstore, and it has many issues.
 
 - ## [Event Sourcing Is Hard (2019) | Hacker News_202111](https://news.ycombinator.com/item?id=29390483)
 - I've worked with several event sourcing systems 
@@ -216,7 +220,12 @@ modified: 2023-09-13T14:28:01.426Z
 
 - ## 
 
-- ## 
+- ## [Architecture decisions -- retrieving DB data from mysql](https://www.reddit.com/r/node/comments/cd3nb4/architecture_decisions_retrieving_db_data_from/)
+- Event sourcing is an architectural pattern where you store changes over time to an object, instead of object’s entire current state. 
+  - Take a customer object, for example. You might have events like customer moved, order placed, product returned, etc. Events are timestamped and denote something that has happened and is immutable. 
+  - Event sourcing is related to Domain Driven Design (DDD). It can be implemented in a variety of ways, including SQL. 
+  - But in the case of SQL, the database design doesn’t look anything like a traditional normalized relational database. 
+  - However it’s implemented, one of the benefits of an event sourced architecture is the ability to replay through the entire history of all changes made to any object. This in turn allows for a microservice architecture on the backend and disconnected operation on mobile apps
 
 - ## there are various reasons to choose event sourcing:
 - https://twitter.com/SKleanthous/status/1464271243146891289

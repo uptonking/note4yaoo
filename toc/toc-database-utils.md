@@ -460,6 +460,11 @@ modified: 2023-08-23T17:15:46.484Z
   - Tuples can be asserted and retracted. A retraction is recorded as a new fact; it is not a delete. 
   - Any historical state of the database can be reproduced, and the history is first-class and queryable.
 
+- https://github.com/wasmerio/ate /rust
+  - a distributed immutable data store and built in memory based materialized view with strong encryption and authentication.
+  - data is persisted to a distributed commit log.
+  - strong authentication and authorized is by design built into the data model.
+
 - https://github.com/nrw/pouchdb-commit-log /js/inactive
   - cluster-friendly append-only topic-based commit log + materialized view implementation for pouchdb (inspired by apache kafka and samza)
 

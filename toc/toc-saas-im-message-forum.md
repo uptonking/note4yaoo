@@ -43,7 +43,7 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/NodeBB/NodeBB /js
   - Node.js based forum software built for the modern web
 
-- ddd-forum /1.5kStar/ISC/202204/ts/hacker-news
+- ddd-forum /1.8kStar/ISC/202306/ts/hacker-news
   - https://github.com/stemmlerjs/ddd-forum
   - https://dddforum.com/
   - Hacker news-inspired forum app built with TypeScript using DDD practices from solidbook.io.

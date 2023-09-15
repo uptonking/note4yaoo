@@ -10,6 +10,7 @@ modified: 2022-10-13T08:00:21.260Z
 # guide
 
 - ref
+  - [CRDT Tutorial for Beginners](https://github.com/ljwagerfield/crdt)
   - [arXiv: collaborative editing](https://arxiv.org/search/?query=collaborative+editing&searchtype=all&source=header)
 # [Building a BFT JSON CRDT](https://jzhao.xyz/posts/bft-json-crdt/)
 - CRDTs are a family of data structures that are designed to be replicated across multiple computers without needing to worry about conflicts when people write data to the same place. 

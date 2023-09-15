@@ -9,6 +9,9 @@ modified: 2023-09-12T09:37:22.608Z
 
 # guide
 
+- es-db
+  - 还可参考stream/kappa架构
+
 - https://github.com/heynickc/awesome-ddd
   - A curated list of Domain-Driven Design (DDD), Command Query Responsibility Segregation (CQRS), Event Sourcing
 
@@ -21,6 +24,9 @@ modified: 2023-09-12T09:37:22.608Z
   - Examples and Tutorials of Event Sourcing in NodeJS
   - I already have samples of Event Versioning and Snapshots in my sample repo. 
   - https://github.com/oskardudycz/EventSourcing.JVM
+  - https://github.com/PDMLab/mongo-eventstore /ts
+    - Eventstore for Node.js build on top of MongoDB
+    - https://github.com/AlexZeitler/mongo-eventstore-sample
 
 - https://github.com/reimagined/resolve /MIT/202212/ts/提供了很多示例
   - https://reimagined.github.io/resolve/
@@ -110,6 +116,7 @@ modified: 2023-09-12T09:37:22.608Z
     - mongo data store and repository for sourced-style event sourcing models
   - https://github.com/PDMLab/sourced-ts /ts/inactive
     - forked from sourced for building models with the event sourcing pattern (events and snapshots).
+    - https://github.com/PDMLab/sourced-repo-mongo-ts
 
 - https://github.com/castore-dev/castore /107Star/MIT/202303/ts
   - Making Event Sourcing easy
@@ -140,7 +147,7 @@ modified: 2023-09-12T09:37:22.608Z
   - It was inspired by Lokad. CQRS, but not tied to a specific storage implementation or infrastructure. 
   - It favors ES6 classes and dependency injection(di0), so any components can be modified or replaced with your own implementations without hacks to the package codebase.
 
-- https://github.com/assafg/osiris
+- https://github.com/assafg/osiris /ts
   - Simple event sourcing for nodejs
 
 - https://github.com/Silly-Goose-Software/event-sauced-ts /ts/inactive
@@ -191,6 +198,11 @@ modified: 2023-09-12T09:37:22.608Z
   - the design is highly opinionated, but still flexible.
   - We front-load the creation of our Event, Aggregate, and Command types to avoid having to repeatedly import and pass them as generic argument.
 
+- https://github.com/irontitan/tardis /ts/inactive
+  - Event sourcing library to help developers abstract core concepts
+  - The core idea behind Tardis is to implement a generic and easy-to-use interface to interact with the Event Sourcing architecture.
+  - two core concepts: The Event and the Reducer, and we'll call anything from our business logic Entity, it can be a car, a person, a ship or anything else.
+
 - https://github.com/boostercloud/booster /ts/GraphQL
   - https://www.boosterframework.com/
   - framework designed to create event-driven backend microservices that focus on extreme development productivity. 
@@ -202,12 +214,18 @@ modified: 2023-09-12T09:37:22.608Z
 # es-collab
 - https://github.com/andykswong/mithic /MIT/ts
   - https://andykswong.github.io/mithic/
-  - Modular library for real-time isomorphic JavaScript applications
-  - mithic provides the building blocks for creating real-time, offline-first client-server or decentralized applications, using CQRS architecture with CRDT eventsourcing for storage and data replication.
+  - Modular library for real-time, offline-first isomorphic JavaScript applications
+  - provides the building blocks for creating real-time, offline-first client-server or decentralized applications, using CQRS architecture with CRDT eventsourcing for storage and data replication.
   - minimal example to get started. Uses the Redux store preset
   - crdt基于自己实现的lseq
   - Linear sequence of values based on `ORMap` of base64 fractional index to values
   - timestamp基于逻辑时钟
+
+- https://github.com/soundcloud/roshi /3.1kStar/bsd/go/soundcloud
+  - Roshi implements a time-series event storage via a LWW-element-set CRDT with limited inline garbage collection. 
+  - Roshi is a stateless, distributed layer on top of Redis and is implemented in Go. 
+  - It is partition tolerant, highly available and eventually consistent.
+  - [Roshi: a CRDT system for timestamped events | SoundCloud Blog_201405](https://developers.soundcloud.com/blog/roshi-a-crdt-system-for-timestamped-events)
 
 - https://github.com/josephg/statecraft /ISC/201911/ts/inactive
   - Statecraft is a protocol and set of tools for interacting with data that changes over time. 
@@ -232,6 +250,9 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/primait/event_sourcing.rs
   - opinionated library used to achieve cqrs/es in Rust.
   - Event Sourcing RS uses under the hood sqlx.
+
+- https://github.com/palfrey/potboiler /rust
+  - an AP Event Sourcing system. it's an MVP/research prototype 
 
 - https://github.com/eugene-khyst/postgresql-event-sourcing /java
   - A reference implementation of an event-sourced system that uses PostgreSQL as an event store
@@ -265,6 +286,12 @@ modified: 2023-09-12T09:37:22.608Z
   - lightweight. The core is about 300kb only.
   - reveno-cluster – makes it possible to run Reveno in cluster with Master-Slave architecture, thus providing decent failover ability.
 
+- https://github.com/hallgren/eventsourcing /go
+  - an experiment to try to generialize @jen20's way of implementing event sourcing.
+  - [Event Sourcing in Go - jen20.dev](https://jen20.dev/post/event-sourcing-in-go/)
+    - https://github.com/jen20/go-event-sourcing-sample
+  - [Event sourcing a year later](https://www.reddit.com/r/golang/comments/mp8j2h/event_sourcing_a_year_later/)
+    - The main pkg is now totally free from dependencies and instead event stores and snapshot stores are implemented as sub modules making there dependencies isolated.
 - https://github.com/looplab/eventhorizon /go
   - a CQRS/ES toolkit for Go.
   - NOTE: Event Horizon is used in production systems but the API is not final!
@@ -279,6 +306,8 @@ modified: 2023-09-12T09:37:22.608Z
   - a portable, event-driven, runtime for building distributed applications across cloud and edge.
   - Dapr injects a side-car (container or process) to each compute unit. The side-car interacts with event triggers and communicates with the compute unit via standard HTTP or gRPC protocols
   - Dapr uses pluggable component state stores and message buses such as Redis as well as gRPC to offer a wide range of communication methods, including direct dapr-to-dapr using gRPC and async Pub-Sub with guaranteed delivery and at-least-once semantics.
+- https://github.com/get-eventually/go-eventually /go
+  - Idiomatic library to help you build Event Sourced application in Go.
 
 - https://github.com/pyeventsourcing/eventsourcing /python
   - https://eventsourcing.readthedocs.io/
@@ -325,15 +354,65 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/chrisdickinson/sse-stream
   - Expose HTML5 Server Sent Events as an installable appliance on Node. JS http servers; connections are emitted as Writable streams.
-# examples
+# event-driven
+- https://github.com/Judahh/flexiblePersistence /ts
+  - A CQRS and Event Sourcing platform
+  - It's possible to use different databases or services implementing IPersistence interface, like MongoDB does (MongoPersistence).
+  - Other implementations: DAO, Sequelize, Service
+  - https://github.com/Judahh/sequelizePersistence
+
+- https://github.com/s4nt14go/white-label /ts
+  - Serverless Domain-Driven Design (DDD) with unit tests
+  - This project exemplifies a CreateUser use case and how we can trigger an event, signaling we have a new user onboard.
+  - DBs: PostgreSQL CockroachDB Serverless and DynamoDB
+  - ORM: Sequelize
+  - AWS services: Lambda, AppSync, Systems Manager Parameter Store
+  - I started this project using Khalil Stemmler's white-label users module and applied some concepts based on Vladimir Khorikov courses where he tackles DDD in a great way.
+
+- https://github.com/CodelyTV/typescript-ddd-example /ts
+  - Example of a Typescript application following Domain-Driven Design (DDD), Command Query Responsibility Segregation (CQRS) and Event-Driven Architecture (EDA) principles keeping the code as simple as possible
+  - https://github.com/CodelyTV/typescript-ddd-skeleton
+
+- https://github.com/node-ts/ddd /ts
+  - Domain Driven Design framework for software simplicity in node
+- https://github.com/almin/almin /ts
+  - an implementation of Read/Write Stack Architecture that is well-known as Flux/CQRS.
+  - Almin provides some patterns, is not a framework.
+
+- https://github.com/remesh-js/remesh /ts
+  - https://remesh-js.github.io/remesh/dist/index.html
+  - CQRS-based DDD framework for large and complex TypeScript/JavaScript applications
+  - Framework-agnostic(officially supports React/Vue)
+  - Time-Travel/Undo/Redo supports(via remesh/modules/history)
+
+- https://github.com/sebastianwessel/purista /ts
+  - A backend framework for keeping professional software development fast, efficient
+  - This framework adapts and combines a wide range of different patters from domain driven design, cqrs, microservice, event sourcing and lambda functions.
+  - It is built from the ground up in typescript and highly focuses on schema, and auto generation of types, input-output-validation, OpenApi documentation (swagger) and tracing via OpenTelemetry.
+
+- https://github.com/inngest/inngest-js /ts
+  - Serverless event-driven queues, background jobs, and scheduled jobs for Typescript.
+  - Works with any framework and platform.
+  - Reliably respond to webhooks, with retries & payloads stored for history
+
+- ddd-forum /1.8kStar/ISC/202306/ts/hacker-news
+  - https://github.com/stemmlerjs/ddd-forum
+  - https://dddforum.com/
+  - Hacker news-inspired forum app built with TypeScript using DDD practices from solidbook.io.
+  - 后端依赖 express、sequelize、redis
+  - 前端依赖 react、redux、react-quill
+  - https://github.com/dyarleniber/typescript-ddd-forum
+
 - https://github.com/yysun/apprun /MIT/ts
   - https://apprun.js.org/
+  - https://dev.to/yysun
   - a JavaScript library for developing high-performance and reliable web applications using the elm inspired architecture, events and components.
   - view is a pure function to display the state
   - State management and routing included
   - No proprietary syntax to learn (no hooks)
   - Use directly in the browser or with a compiler/bundler
   - Advanced features: JSX, Web Components, Dev Tools, SSR, etc.
+  - [AppRun runs on both client and server side to allow event firing and handling between the frontend app and backend business logic modules using WebSockets, no REST API.](https://twitter.com/apprunjs/status/1237064423191252992)
 
 - https://github.com/deepstreamIO/deepstream.io /ts
   - https://deepstream.io/
@@ -353,8 +432,24 @@ modified: 2023-09-12T09:37:22.608Z
   - [If Pipedream doesn't support Self-Host, what's the repo for?_202305](https://github.com/PipedreamHQ/pipedream/issues/6365)
     - contains all the code for Pipedream's app, actions and triggers. The code is deployed to Pipedream system.
     - Currently, Pipedream does NOT offer self-host option.
+# state-management
+- tips
+  - redux/logux
 # more
+- https://github.com/boyney123/eventcatalog
+  - https://www.eventcatalog.dev/
+  - https://app.eventcatalog.dev/
+  - EventCatalog is an Open Source project that helps you document your events, services and domains. 
+  - Over time our Event Driven Architectures (EDA) grow and it can become difficult to discover and understand our events, schemas, producers, consumers and services. 
+  - EventCatalog is built to help you document, visualise and keep on top of your Event Driven Architectures.
+- https://github.com/diego3g/flowly /ts
+  - helps you document your event driven architecture across your team.
+  - built with Next.js 13, Tailwind, shadcn/ui, Clerk and Radix UI.
+
 - https://github.com/MaterializeInc/materialize /rust
   - designed to help you interactively explore your streaming data, perform analytics against live relational data, or increase data freshness while reducing the load of your dashboard and monitoring tasks. 
   - Whenever Materialize answers a query, that answer is the correct result on some specific (and recent) version of your data. Materialize does all of this by recasting your SQL queries as dataflows, which can react efficiently to changes in your data as they happen.
   - Materialize can read data from Kafka (and other Kafka API-compatible systems like Redpanda), directly from a PostgreSQL replication stream, or from SaaS applications via webhooks. It also supports regular database tables to which you can insert, update, and delete rows.
+
+- https://github.com/oskardudycz/emmett /ts/wip/inactive
+  - This project aims to deliver an opinionated event store based on my experience working on Marten and EventStoreDB.

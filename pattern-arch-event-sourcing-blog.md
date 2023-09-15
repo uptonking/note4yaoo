@@ -11,6 +11,174 @@ modified: 2023-09-13T14:37:51.659Z
 
 # blogs
 - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
+
+## 📝 [Mistakes we made adopting event sourcing (and how we recovered)_201906](http://natpryce.com/articles/000819.html)
+
+- [Mistakes made adopting event sourcing (and how we recovered) - Nat Pryce - DDD Europe 2020 - YouTube_202010](https://www.youtube.com/watch?v=osk0ZBdBbx4)
+
+- Event-sourcing is a good fit for our needs because the organisation wants to preserve an accurate history of information managed by the system and analyse it for (among other things) **fraud detection**. 
+
+### 🐛 Not separating persisting the event history and persisting a view of the current state
+
+- The app maintained a relational model of the current state of its entities alongside the event history. 
+  - That in itself wouldn’t be a bad thing, if it had been implemented as a “projection” of the events. 
+  - However, we implemented the current state by making the command handlers both record events and update the relational model. 
+  - This meant that (a) there was nothing to ensure that entity state could be rebuilt from the recorded events, and (b) managing the migrations of the relational model was a significant overhead while the app was in rapid flux.
+- we didn’t know how this hybrid architecture would work out
+  - Therefore we continued down this road until the difficulties outlined above were clearly outweighing the benefits. 
+  - Then we had a technical retrospective in which we examined the differences between canonical event-sourcing and our architecture. 
+- The outcome was that we all understood why canonical event-sourcing would work better than our application’s current design, and agreed to change its architecture to match.
+
+### 🐛 Confusion between event-driven and event-sourced architecture
+
+- In an event-driven architecture, components perform activity in response to receiving events and emit events to trigger activities in other components. 
+- In an event-sourced architecture, components record a history of events that occurred to the entities they manage, and calculate the state of an entity from the sequence of events that relate to it.
+- We got confused between the two, and had events recorded in the history by one component triggering activity in others.
+- We realised we’d made a mistake when we had to make entities distinguish between reading an event in order to react to it, and reading an event in order to know what happened in the past.
+
+### 🐛 Using the event store as a message bus
+
+- We added notifications to our event store so services could subscribe to updates and keep their projection up to date. Bad idea! 
+- Our event store started being used as an event bus for transient communication between components, and our history included technical events that had no clear relationship to the business process
+  - We noticed that we had to filter technical events out of the history displayed to users. 
+- We came to realise that clearly distinguishing between commands that trigger activity and events that represent what happened in the past is even more important than Command/Query Responsibility Segregation, especially at the modest scale and strict consistency requirements of our system. 
+- The word “event” is such an overused term we had many discussions about how to name different kinds of event to distinguish between those that are part of the event-sourcing history, those that are emitted by our active application monitoring, those that are notifications that should trigger activity, and so on. 
+  - In our new applications we use the term Business Process Event for events recorded in our event-sourcing history.
+
+### 🐛 Seduced by eventual consistency
+
+- Initially we gave the event store an HTTP interface and application components used it to read and store events. 
+  - However, that meant that clients couldn’t process events in ACID transactions and we found ourselves building mechanisms in the application to maintain consistency.
+
+### Noticing our mistakes
+
+- 👉🏻 We decided to **replace our use of HTTP between command processors and the event store with direct database connections** and serialisable transactions.
+  - We kept the HTTP service for traversing the event history, but only for peripheral(次要的；不重要的) services that maintain read-optimised views that can be eventually consistent (daily reports, business metrics, that kind of thing).
+
+- We decided to **stop using notifications from the event store to trigger activity and went back to REST for passing data and control between components**.
+
+- We decided to not update the record of the current state of the entities in command handlers. 
+  - Instead **the application computes the current state from the event history** when the entity is loaded from the database. 
+  - The application still maintains a “projection” of the current entity states, but **treats the projection as a read-through cache**, used to optimise loading entities, so that it doesn’t have to load all of an entity’s events on every transaction, and to select subsets of the currently active entities, so that it doesn’t have to load all events of all entities. 
+  - Entries are expired from the cache by events: each projection is a set of tables and function is passed each event and creates, updates and deletes rows in its tables in response.
+- Logic to execute commands now looks like:
+  - Load the recent state of the entity into an in-memory model
+  - In a write transaction
+    - load events that occurred to the entity since the recent projection into the in-memory model
+    - perform business logic
+    - record events resulting from executing the command
+  - **Save the in-memory state as the most recent projection** if it was created from more recent events than that the projection that is currently persisted (the persisted state may have been updated by a concurrent command)
+- Read transactions don’t record events and can therefore run in parallel with each other and write transactions.
+
+- We decided to **replace the relational model**, which required so much effort to migrate as the app evolved, **with JSON blobs serialised from the domain model** that can be automatically discarded and rebuilt when the persisted state becomes incompatible with the latest version of the application. Thanks to Postgres’ `JSONB` columns, we can still index properties of entity state and select entities in bulk without adding columns of denormalised data for filtering.
+
+- The application also maintains projections for other uses, which have less stringent(严格的; 精确的) consistency requirements. 
+  - For example, we update projections for reporting in the background on a regular schedule.
+
+### Re-engineering the system architecture
+
+- We were concerned that such significant changes to the systems architecture would deliver a blow to our delivery schedule. But it turned out to be very straightforward. 
+- As well as using event-sourcing, the application has a Ports-and-Adapters (aka “hexagonal”) architecture. 
+  - Loading the current state of an entity was hidden from the application logic behind a Port interface that was implemented by an Adapter class.
+  - My colleague was able to switch the app over to calculating an entity’s current state from its event history and treating persistent entity state as a read through cache (as described above) in about one hour.
+  - The team then replaced the relational model, which required so much effort to migrate as the app evolved, with JSON blobs serialised from the domain model that could be automatically discarded and rebuilt when the persisted state became incompatible with the latest version of the application. The change was live by the end of the day.
+- We also have extensive functional tests that run in our continuous deployment pipelines.
+  - The functional tests serve two purposes that paid off handsomely when we had to make significant changes to the application’s architecture.
+  - Firstly, they force us to follow the Ports-and-Adapters architecture. 
+  - second purpose: to rapidly verify that the application still performs the same user visible behaviour as we made large changes to its architecture.
+  - changes to the technical architecture of the application were strictly segregated from the definition and implementation of its functional behaviour, neither of which needed to be changed when we changed the architecture
+
+### Conclusions
+
+- It’s inevitable that you’re going to make mistakes when implementing a system
+  - A system’s architecture has to address how you recover from those mistakes.
+
+### 👥 [Mistakes we made adopting event sourcing and how we recovered | Hacker News_201907](https://news.ycombinator.com/item?id=20324021)
+
+- Ports and Adapters(aka “hexagonal”) is great, though I found it hard to sink my teeth into as it has a thousand different names. But regardless, I am never doing n-layer architecture again if I can help it.
+
+- Not separating persisting the event history and persisting a view of the current state.
+  - This seems like the classic half-way that people take when adopting ES without buying into CQRS
+  - If I understand OP correctly they are saying that rather than deriving state by consuming their events, they were maintaining a kind of snapshot that served as both the read/write model representation of a given aggregate in addition to storing the events.
+
+- I worked on multiple Event Sourcing CQRS based systems and I see no advantages vs traditional databases.
+  - The event stream is exactly the same as a commit log in a regular DB. Building "projections" is the same as making views or calculated columns. In my experience storing the whole event history is not useful and consumes huge amounts of space. Just like everyone compacts their commit logs, you don't have to, and if you don't, isn't ES the same thing with extra steps? It stores all the changes to tables and views, which are exactly the same as projections. With ES + CQRS combined you're basically replicating a database, badly.
+  - Sorry to be so negative about this topic but I've worked on several of these projects at a decent scale and it's been the biggest disaster of my professional life. The idea may be viable but tooling is so bad that you're almost surely making a huge mistake implementing these patterns in production code.
+- 🤔 This(es) assumes the content in the commit log are client events, not CRUD on table data actions (events are higher order). When a greenfield project is starting up, data is gold
+  - I disagree. The events tend to relate directly to what would be regular database tables in my experience.
+  - And data is the new oil is definitely a businessweek cargo cult. None of the event data was of any use on the projects I worked on. We were under mandate to find something to do with it and still couldn't. The closest useful thing was allowing undo and replaying past events but we already had that on Postgres with hibernate auditing on interesting tables (money related stuff)
+- 👉🏻 I agree (es)it's a nice pattern. **What you really need though is a "database in code"**. A library that handles all the projections, event stream, and especially replays and upgrading event versions automatically.
+- One thing you do get "for free" pretty much is an audit log though. 
+  - And if you store events with both an event_timestamp and effective_timestamp, you get bi-temporal state for free too.
+  - Invaluable when handing a time series of financial events subject to adjustments and corrections
+- You get audit logs for free on a regular database with an ORM like Hibernate or even support on database snapshot level with Postgres or MSSQL. You get the logging capabilities of CQRS without any of the complexity.
+  - **After working on several such systems, I strongly believe you should keep data storage concerns in the database. Moving it to code implementation is a massive amount of overhead for no benefit**.
+
+- In most relational database management systems (RDBMS) views are not persisted/materialized or indexed separately.
+  - Some RDBMS have materialized views that update concurrently and meet atomicity, consistency, isolation, and durability (ACID) requirements, but others do not and a separate command is needed to update views, in those cases you lose many of the benefits, but the view is fine for say, analytical queries in which a little lag is fine.
+
+- Views are popular for projecting denormalized information. I pity the fool who inserts into views.
+
+- Event sourcing is most powerful when the data necessary to recompute the state is small but the amount of state you are potentially interested in subsequently accessing is large, most of which is computed.
+  - It is also incredible useful for financial applications where risk models (credit risk, market risk, fraud, etc) need backtesting. 
+  - If you can't read the time-ordering of state events directly, a Risk/Data Science team spends an inordinate amount of time reconstructing time histories of events inferred from a mix of static db tables, audit logs and periodic data warehouse snapshots.
+
+- You almost certainly shouldn't be doing EventSourcing with Kafka. EventStreaming sure, Kafka is pretty idea for this (as your source of truth).
+  - EventSourced aggregates need to reload their entire history (unless you are snapshotting too) before applying a command, so you shouldn't have all your aggregates in a single Kafka topic, as you would have to read all events since forever, for all aggregates, every time you loaded one.
+  - If you put each aggregate into a separate topic, everything is fine, until you want to add projections - how do your projections know to subscribe to all the new topics being created for each aggregate?
+  - You can probably engineer your way around these limitations, but at that point, why not use a tool which is more suitable for the eventsourcing and keep Kafka for the "Business Process Event"?
+
+- Seduced by eventual consistency
+  - Indeed. I work at a very, very large firm suffering from problems caused by this. The system crawls and is quite expensive to run. But it's so entrenched there are no plans to replace it, only more layers put on top to mitigate it.
+  - RDBMS people took a bit more time before implementing temporal features (SQL 2011).
+
+- The biggest problem (of es) is the lack of available tooling.
+  - The only custom built ES database is Eventstore, and it has many issues.
+
+### 👥 [reddit: Mistakes we made adopting event sourcing (and how we recovered)](https://www.reddit.com/r/programming/comments/ca56q7/nat_pryce_mistakes_we_made_adopting_event/)
+
+- It helps if you start by understanding that "event-sourced" is someone trying to rebrand "log-structured" for their VC.
+
+- I highly recommend adopting a proper cqrs+es framework as there are so many nuances to this architecture that you don't think about. Highly recommend axon framework (Java)
+  - I have the opposite advice. If you are doing ES, avoid frameworks at all cost, especially Axon.
+  - Axon promotes a series of patterns (such as sharing domain events outside your aggregates) which can pass as scalable but fail the test of long term evolution and fairly moderate scales. I'll admit it can work as a good learning framework or first generation system but you'll soon need a replacement.
+
+- And there appears the #1 rule in all of software: whatever opinion you hold on a particular subject, there is someone who strongly believes the exact opposite is true.
+
+- Second the recommendation for Axon. We use it for a financial transaction processing system at work and, while it is not a silver bullet, it has been a big help in keeping our architecture clean and consistent and scalable. I especially like how easy it makes writing meaningful, high-quality tests (though that is likely true of any event sourcing framework).
+# blogs-collab-crdt
+- [Replicated Event Sourcing • Akka Documentation](https://doc.akka.io/docs/akka/current/typed/replicated-eventsourcing.html)
+  - The rule for operation-based CRDT’s is that the operations must be commutative
+  - in other words, applying the same events (which represent the operations) in any order should always produce the same final state. 
+  - You may assume each event is applied only once, with causal delivery order.
+
+## 💡 [LWW vs P2P Event Log – vlcn.io](https://vlcn.io/blog/lww-vs-dag)
+
+- [SQLite Peer to Peer Event Log / Matt](https://observablehq.com/d/dc2bbfad6d64fb5e)
+
+- Event sourcing is a fairly common design pattern for deriving application state from a history of events. But is it possible to turn an event log into a CRDT? 
+  - This is possible. What's even better is that it is more powerful than other approaches, such as last write wins, to solving the problem of distributing application state.
+
+- We'll do a brief review of how we can distribute state with last write wins registers, cover how that is a less powerful version of an event log and then build an distributed event log.
+- A common approach to distributing application state is to use last write wins registers. 
+  - Last write wins (LWW), however, is just one interpretation of the events in the system. 
+  - This interpretation discards all the information that was used to derive it. 
+-  A distributed event log on the other hand:
+   - A distributed event log on the other hand:
+   - Can be interpreted as LWW in addition to other ways
+- Unpacking that a bit. Say I have an TODO list application. I can save just the current state of each todo or I can save all of the events that have transpired and build the state later.
+  - Saving just the current state is what LWW does
+  - Saving just the current state is what LWW does
+- The event based approach gives you a set of facts about the system that never change.
+
+- We know that a grow only set of LWW registers is a CRDT from the last article but how do we turn an event log into a CRDT? 
+- The LWW state is pretty straightforward.
+  - a drawback is that we're locked into this specific way of resolving conflicts and we don't have a history of how we got into a given state.
+  - Note that the clock columns could be a variety of options. Here we've done an independent lamport timestamp per column.
+- the DAG example is notional and thoroughly un-optimized. 
+  - We currently re-pull and re-apply the entire DAG on sync rather than doing incremental updates. 
+  - We also sync the entire DAG between nodes rather than delta states. 
+  - How to incrementally process the DAG is a separate topic.
 # blogs-vendors
 
 ## [wix: Event Driven Architecture - 5 Pitfalls to Avoid_202208](https://medium.com/wix-engineering/event-driven-architecture-5-pitfalls-to-avoid-b3ebf885bdb1)

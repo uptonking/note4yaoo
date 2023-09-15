@@ -21,6 +21,7 @@ modified: 2022-04-05T10:08:25.947Z
   - 对不同分支的文档在相同位置粘贴相同的文本时，crdt会保留重复的文本
 
 - ref
+  - [crdt Code (Implementations)](https://crdt.tech/implementations)
   - https://github.com/alangibson/awesome-crdt
   - [Alternatives · ElectricSQL](https://electric-sql.com/docs/reference/alternatives)
   - [CRDTs for Non Academics - YouTube](https://www.youtube.com/watch?v=vBU70EjwGfw)
@@ -917,10 +918,11 @@ modified: 2022-04-05T10:08:25.947Z
     - In this fork, simple collaboration features based on Melda have been implemented. 
     - The implemented paradigm is save and refresh: when the user saves the local copy, changes from other users are merged.
 
-- https://github.com/soundcloud/roshi /go
+- https://github.com/soundcloud/roshi /3.1kStar/bsd/go/soundcloud
   - Roshi implements a time-series event storage via a LWW-element-set CRDT with limited inline garbage collection. 
   - Roshi is a stateless, distributed layer on top of Redis and is implemented in Go. 
   - It is partition tolerant, highly available and eventually consistent.
+  - [Roshi: a CRDT system for timestamped events | SoundCloud Blog_201405](https://developers.soundcloud.com/blog/roshi-a-crdt-system-for-timestamped-events)
 # crdt-rust
 - https://github.com/josephg/diamond-types /rust
   - This repository contains a high performance rust CRDT for text editing. 
