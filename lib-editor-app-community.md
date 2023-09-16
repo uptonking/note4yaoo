@@ -377,3 +377,4 @@ registry.register(objectURL, objectURL + '') // 第二个参数需要是字符�
 - 一个叫“一起写”的产品，创始人是 Google docs 出来的，做的就是类似产品，不过好像已经被快手收购了
 
 # more
+- [Lessons learned from implementing a text editor related to front-end development | Hacker News_201708](https://news.ycombinator.com/item?id=15115874)

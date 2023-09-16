@@ -1,24 +1,14 @@
 ---
-title: lib-db-filesystem-web
-tags: [db, filesystem, indexeddb]
-created: 2022-11-27T14:19:27.900Z
-modified: 2022-11-27T14:20:27.098Z
+title: lib-utils-storage-filesystem-web-blog
+tags: [blog, indexeddb, web-storage]
+created: 2023-09-16T17:43:36.930Z
+modified: 2023-09-16T17:43:50.755Z
 ---
 
-# lib-db-filesystem-web
+# lib-utils-storage-filesystem-web-blog
 
 # guide
 
-# discuss
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
 # blogs
 
 ## [The File System Access API: simplifying access to local files](https://web.dev/file-system-access/)
@@ -30,3 +20,4 @@ modified: 2022-11-27T14:20:27.098Z
   - While the browser might make it seem that there are files, internally—since this is an origin private file system—the browser might store these "files" in a database or any other data structure. 
   - if you use this API, do not expect to find the created files matched one-to-one somewhere on the hard disk. 
   - You can operate as usual on the origin private file system once you have access to the root `FileSystemDirectoryHandle`.
+# more

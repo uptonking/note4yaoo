@@ -415,3 +415,5 @@ modified: 2023-09-13T14:37:51.659Z
   - Now if someone is late to the party, they will initiate a new request to the database, because the response is not cached.
 # more
 - [Datomic: Event Sourcing without the hassle | Hacker News_201811](https://news.ycombinator.com/item?id=18431382)
+
+- [CQRS + Event Sourcing – Step by Step](https://danielwhittaker.me/2020/02/20/cqrs-step-step-guide-flow-typical-application/)

@@ -183,7 +183,20 @@ modified: 2023-03-29T17:23:37.126Z
   - We don’t support “interactive” transaction, where you can read, modify, write as an atomic group. 
   - This just isn’t desirable in a multiplayer or offline system - in cases we need that kind of consistency we use a normal HTTP API which is online-only.
 
-# discuss
+# discuss-notion-like
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [为什么现在流行的笔记软件喜欢用clojure来编写？ - 知乎](https://www.zhihu.com/question/469287561)
+- Roam Research 用了 Clojure
+
+- ## [Logseq 为什么用 clojure 写? - 知乎](https://www.zhihu.com/question/610034256)
+- 作者的高度决定了项目语言的选择。工程师选clojure没毛病
+
+# discuss-showcase
 - ## 
 
 - ## 

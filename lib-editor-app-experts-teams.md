@@ -12,10 +12,6 @@ modified: 2022-08-21T10:16:52.004Z
 - resources
   - https://www.rich-text-js-jobs.com/
 # editor-experts-popular
-- 王福朋 wangEditor  /slate
-  - https://juejin.cn/user/1714893868765373
-  - https://www.zhihu.com/people/wangfupeng1988
-
 - 杨振兴 worktile   /slate
   - https://github.com/pubuzhixing8
   - https://github.com/worktile/slate-angular
@@ -24,6 +20,13 @@ modified: 2022-08-21T10:16:52.004Z
 - 阿扎东 /slate
   - editablejs, 自绘光标
   - https://github.com/big-camel
+
+- 王福朋 wangEditor  /slate
+  - https://juejin.cn/user/1714893868765373
+  - https://www.zhihu.com/people/wangfupeng1988
+
+- 畫筆先生 /textbus
+  - https://www.zhihu.com/people/hua-bi-xian-sheng
 
 - ccorcos /notion
   - https://github.com/ccorcos

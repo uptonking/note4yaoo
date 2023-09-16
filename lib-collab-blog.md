@@ -10,7 +10,7 @@ modified: 2022-04-05T10:10:27.212Z
 # guide
 
 - [数据冲突解决方案 - 最终一致性实现](https://juejin.cn/post/6983237844579909668)
-# 💡 [Top 5 Ways to Implement Real-Time Rich Text Editor (ranked by complexity)_202101](https://exaspark.medium.com/top-5-ways-to-implement-real-time-rich-text-editor-ranked-by-complexity-3bc26e3c777f)
+# 📝💡 [Top 5 Ways to Implement Real-Time Rich Text Editor (ranked by complexity)_202101](https://exaspark.medium.com/top-5-ways-to-implement-real-time-rich-text-editor-ranked-by-complexity-3bc26e3c777f)
 
 > Real-time experience becomes the new norm in building modern online tools.
 

@@ -33,6 +33,7 @@ modified: 2022-08-21T10:11:43.095Z
     - track-change
     - collab
 # blogs
+- [The future of document editing - inspirations](https://lukasmurdock.com/cms/)
 
 ## [vscode: Text Buffer Reimplementation, a Visual Studio Code Story to piece-tree](https://code.visualstudio.com/blogs/2018/03/23/text-buffer-reimplementation)
 

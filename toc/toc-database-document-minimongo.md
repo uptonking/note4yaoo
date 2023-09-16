@@ -118,6 +118,11 @@ modified: 2022-11-30T18:57:26.459Z
   - An algorithm to optimize database queries that run multiple times
   - 提供了使用示例，包括minimongo、nedb、pouchdb
   - EventReduce only works with queries that have a predictable sort-order for any given documents. (you can make any query predicable by adding the primary key as last sort parameter)
+  - At the moment there is only the JavaScript implementation
+  - Is this something like materialized views?
+    - Yes and no. Materialized views solve a similar problem but in a different way with different trade-offs.
+  - Is this something like event sourcing or CQRS?
+    - No, event sourcing is mostly used to calculate a current state by attaching the full event stream to the starting state. This allows for stuff like time travel and so on. EventReduce solves a completely different (performance-) problem and only shares some common keywords like event.
 # utils
 - https://github.com/serby/save /202209/js
   - A simple CRUD based persistence abstraction for storing objects to any backend data store. eg. Memory, MongoDB, Redis, CouchDB, Postgres, Punch Card etc.

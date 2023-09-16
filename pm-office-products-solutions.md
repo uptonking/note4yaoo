@@ -64,6 +64,8 @@ modified: 2021-07-11T08:31:00.660Z
   - 周边产品：Canva、Gravit、Framer
 
 - [效率软件综合测评 知乎专栏](https://www.zhihu.com/column/c_1486707752840425473)
+
+- [【译】深度解析 Roam 数据结构 —— 为什么 Roam 远不只是一个笔记应用 - 知乎](https://zhuanlan.zhihu.com/p/355844756)
 # editor-meeting-psp-block-editor-20220704
 - 编辑器的模型包括renderTree和blockTree
   - 目的是方便实现翻译及原文、database多视图

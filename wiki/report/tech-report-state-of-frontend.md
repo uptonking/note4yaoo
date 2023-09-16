@@ -34,6 +34,7 @@ modified: 2021-01-04T16:00:05.478Z
   - go, 13.24%
   - rust, 13.05%
   - assembly, 5.4%
+  - clojure, 1.3%
 
 - asynchronous collaboration tool 大多数不提供免费套餐
   - jira
@@ -100,6 +101,7 @@ modified: 2021-01-04T16:00:05.478Z
   - go, 11.2%
   - rust, 9.3%
   - assembly, 5.4%
+  - clojure, 1.5%
 
 - asynchronous collaboration tool 大多数不提供免费套餐
   - notion

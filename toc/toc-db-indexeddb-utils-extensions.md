@@ -54,6 +54,15 @@ modified: 2022-11-04T14:22:17.373Z
 - https://github.com/simplifyjs/indexeddb-crud
   - Comparison between native IndexedDB API and using IDB library in operating CRUD workaround
 
+- https://github.com/normalized-db/data-store /ts/inactive
+  - Normalize and persist `JavaScript` objects using `IndexedDB`.
+  - JavaScript data stores for IndexedDB-wrapper using normalized data (implemented with TypeScript).
+  - https://github.com/normalized-db/examples
+  - https://github.com/normalized-db/normalizer
+    - Normalize JavaScript objects based on a simple schema 
+  - https://github.com/normalized-db/denormalizer
+    - Denormalize JavaScript objects from a normalized data structure based on a simple schema 
+
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!
   - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.

@@ -87,13 +87,18 @@ that commit position, thus providing "read your own writes" semantics.
   - It can be done outside of reSolve. 
   - Or you can do system event in the app to trigger this.
 # discuss-cons
-- ## 
+- [When not to use Event Sourcing?](https://event-driven.io/en/when_not_to_use_event_sourcing/)
 
 - ## 
 
 - ## 
+
+- ## [Don't Let the Internet Dupe You, Event Sourcing is Hard](https://www.reddit.com/r/programming/comments/r5p8qj/dont_let_the_internet_dupe_you_event_sourcing_is/)
 
 - ## [Event Sourcing Is Hard (2019) | Hacker News_202111](https://news.ycombinator.com/item?id=29390483)
+
+> [Don't Let the Internet Dupe You, Event Sourcing is Hard_201902](https://chriskiehl.com/article/event-sourcing-is-hard)
+
 - I've worked with several event sourcing systems 
   - it's just too complex for non-infrastructure software without resources measured in the 10s or 100s of man years.
   - 99% of the time when ES sounds like a good idea, the answer is to just use Postgres. 

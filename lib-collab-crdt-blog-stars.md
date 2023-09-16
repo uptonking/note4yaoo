@@ -64,7 +64,7 @@ modified: 2023-03-11T15:37:59.134Z
 - Can you expand? "Transaction" is a bit of a squishy word, but isolated transactions are only possible in a CRDT if you sacrifice durability. I believe durable transactions are possible but AFAIK it has never been demonstrated and would be research-level work.
   - It is certainly possible to have a server be one of the nodes in a CRDT, but it is not easy to have the server actually be authoritative. You can filter operations before applying to server but (a) this is difficult to do well because you end up having to reverse engineer intent, and (b) you have to do something about the client that has now diverged.
 
-## [You might not need a CRDT | Drifting in Space](https://driftingin.space/posts/you-might-not-need-a-crdt)
+## 📝 [You might not need a CRDT | Drifting in Space](https://driftingin.space/posts/you-might-not-need-a-crdt)
 
 - CRDTs differ from simple leader/follower replication in that they do not designate an authoritative source-of-truth that all writes must pass through.
   - Instead, all replicas are treated as equal peers. 
@@ -108,7 +108,7 @@ modified: 2023-03-11T15:37:59.134Z
 - Although CRDTs aren’t always the best solution for always-online collaborative apps, it’s still fascinating tech that has real use cases.
   - Apps that need to run offline in general are good candidates for CRDTs.
 
-## [You might not need a CRDT | Hacker News](https://news.ycombinator.com/item?id=33865672)
+## 👥 [You might not need a CRDT | Hacker News](https://news.ycombinator.com/item?id=33865672)
 
 - This is the most underrated problem with CRDTs:
   - > Both paths will allow us to ensure that each replica converges on the same state, but that alone does not guarantee that this state is the “correct” state from the point of view of user intent.

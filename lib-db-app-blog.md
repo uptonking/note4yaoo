@@ -1,19 +1,16 @@
 ---
-title: lib-db-blog
+title: lib-db-app-blog
 tags: [blog, database]
 created: 2022-12-20T05:38:59.782Z
-modified: 2022-12-20T05:39:08.948Z
+modified: 2023-09-16T17:49:13.534Z
 ---
 
-# lib-db-blog
+# lib-db-app-blog
 
 # guide
 
-# blogs-vendors
-- [TiKV 源码解析系列文章](https://cn.pingcap.com/blog/?tag=TiKV%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90)
-- [TiDB 源码阅读系列文章](https://cn.pingcap.com/blog/?tag=TiDB%20%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB)
-- [DM 源码阅读系列文章 TiDB Data Migration](https://cn.pingcap.com/blog/?tag=DM%20%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB)
 # blogs
+- [DM 源码阅读系列文章 TiDB Data Migration](https://cn.pingcap.com/blog/?tag=DM%20%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB)
 
 ## kappa-lambda
 

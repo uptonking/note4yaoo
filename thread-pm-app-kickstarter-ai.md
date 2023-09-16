@@ -19,7 +19,12 @@ modified: 2023-04-04T03:59:40.928Z
 # discuss
 - ## 
 
-- ## 
+- ## now instead of websites looking mostly the same due to the lack of creative courage, they're now going to look exactly the same due to AI. Cool cool. Good job, industry.
+- https://twitter.com/matthewcp/status/1702702571968762015
+- hot take: it's fine if most websites look mostly the same
+- Would be great if more website designs followed cowpaths and standardized - I want to be able to use websites on autopilot, please don't innovate most of the time
+  - If there is a new innovative UX/design pattern, AI won't be the thing preventing it from becoming reality
+- except they already look the same
 
 - ## 国内类chatgpt产品，看了下私有部署的价格。。
 - https://twitter.com/dingyi/status/1697073290995724431
@@ -44,9 +49,9 @@ modified: 2023-04-04T03:59:40.928Z
 - https://twitter.com/buaaxhm/status/1690559087216578560
   - 感觉他们觉得大模型能干所有事情
 - 在谈的合作里都有哪些需求呢？
-  01.     你们能不能弄个大模型，解决一下演唱会结束交通拥堵的问题
-  02.     你们能不能弄个养老大模型
-  03.     你们弄不能弄一个养猪大模型
+  1.       你们能不能弄个大模型，解决一下演唱会结束交通拥堵的问题
+  2.       你们能不能弄个养老大模型
+  3.       你们弄不能弄一个养猪大模型
 - 这对你们公司是好事，他们要拿这些大概念去申请经费，至于有没有实际效果那是排在第二等级。做政府项目跟纯互联网有很多不同，不只是技术问题
   - 做政府项目其实不怎么赚钱 回款很慢的
   - 能回款就不错了，3年5年都行。现在也已经过了互联网大爆发的时代了，企业要活命，没得选，腾讯，阿里要去做政府项目他们可以签1元钱的合同

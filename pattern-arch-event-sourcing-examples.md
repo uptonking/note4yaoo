@@ -23,6 +23,7 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/oskardudycz/EventSourcing.NodeJS /ts
   - Examples and Tutorials of Event Sourcing in NodeJS
   - I already have samples of Event Versioning and Snapshots in my sample repo. 
+  - [Introduction to Event Sourcing - Self Paced Kit_202203](https://event-driven.io/en/introduction_to_event_sourcing/)
   - https://github.com/oskardudycz/EventSourcing.JVM
   - https://github.com/PDMLab/mongo-eventstore /ts
     - Eventstore for Node.js build on top of MongoDB
@@ -118,11 +119,19 @@ modified: 2023-09-12T09:37:22.608Z
     - forked from sourced for building models with the event sourcing pattern (events and snapshots).
     - https://github.com/PDMLab/sourced-repo-mongo-ts
 
+- https://github.com/fraktalio/fmodel-ts /ts
+  - This project can be used as a library, or as an inspiration, or both. 
+  - It provides just enough tactical Domain-Driven Design patterns, optimised for Event Sourcing and CQRS.
+  - The library is fully isolated from the application and infrastructure layers. It represents a pure declaration of the program logic.
+  - State-stored systems are traditional systems that are only storing the current State by overwriting the previous State in the storage.
+  - Event-sourced systems are storing the events in immutable storage by only appending.
+  - A Materialized view is using/delegating a View to handle events of type E and to maintain a state of denormalized projection(s) as a result. Essentially, it represents the query/view side of the CQRS pattern. It belongs to the Application layer.
+
 - https://github.com/castore-dev/castore /107Star/MIT/202303/ts
   - Making Event Sourcing easy
   - Event Sourcing is a data storage paradigm that saves changes in your application state rather than the state itself.
   - After years of using it at Kumo, we have grown to love it
-  - Snapshots are not implemented in Castore yet, but we have big plans for them, so stay tuned
+  - **Snapshots are not implemented in Castore yet**, but we have big plans for them, so stay tuned
 
 - https://github.com/valkyrjs/valkyr /ts
   - https://valkyrjs.com/
@@ -146,6 +155,18 @@ modified: 2023-09-12T09:37:22.608Z
   - The package provides building blocks for making a CQRS-ES application. 
   - It was inspired by Lokad. CQRS, but not tied to a specific storage implementation or infrastructure. 
   - It favors ES6 classes and dependency injection(di0), so any components can be modified or replaced with your own implementations without hacks to the package codebase.
+
+- https://github.com/flolu/simple-event-sourcing-example /ts
+  - Small Node.js Application to Learn the Concepts of Event Sourcing
+  - To handle CQRS, I have to services: one that mutates the event store and one that just consumes events that happened in the past to update a materialized view of the current state.
+
+- https://github.com/mattbishop/sql-event-store /js
+  - Demonstration of a SQL event store with de-duplication and guaranteed event ordering. 
+  - This event store can be ported to most SQL RDBMS and accessed from concurrent readers and writers, including high-load serverless functions.
+  - The database rules are intended to prevent incorrect information from entering into an event stream.
+  - This project uses a node test suite and SQLite to ensure the DDL complies with the design requirements
+  - This event store can also be ported to most SQL RDBMS and accessed from any number of writers, including high-load serverless functions, without a coordinating “single writer” process. The project includes a Postgres version of the DDL.
+  - An Event is an unalterable statement of fact that has occurred in the past. It has a name, like food-eaten, and it is scoped to an Entity, or an identifiable existence in the world.
 
 - https://github.com/assafg/osiris /ts
   - Simple event sourcing for nodejs
@@ -181,16 +202,30 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/EventSource/eventsource
   - EventSource client for Node.js and Browser (polyfill)
 
-- https://github.com/message-db/message-db /
+- https://github.com/cms-DQM/runregistry /js
+  - run registry is a full-stack javascript application. 
+  - With a frontend built with React and a backend built with Node.js, it uses a PostgreSQL database instance running in CERN DB on demand and a redis microservice to handle the job queue for backend processing.
+  - Run registry is designed using loosely-coupled microservices
+  - There are two ways that Run Registry uses Event Sourcing: for configuration, and for data.
+
+- https://github.com/zeppaman/mongo-event-sourcing /js/inactive
+  - An open-source fully configurable and extendible tool that enables event sourcing in MongoDB.
+  - implement event sourcing listening event from mongodb. 
+  - For who is used to play with traditional RDBMS it's something like triggers, but fire events outside database. This application uses the built-in mongodb feature called `ChangeStream`.
+  - So, adding MESS in your architecture you can forward event for data changes to applications by using webhook or simply add event to a queue like rabbitMQ or Kibana.
+
+- https://github.com/message-db/message-db
   - http://docs.eventide-project.org/user-guide/message-db/
   - Microservice Native Event Store and Message Store for Postgres
   - A fully-featured event store and message store implemented in PostgreSQL for Pub/Sub, Event Sourcing, Messaging, and Evented Microservices applications.
   - The message store is a single table named messages. 
   - Interaction with the message store is effected through Postgres server functions that ensure the correct semantics for the writing of messages to streams, and the reading of messages from streams and categories.
 
-- https://github.com/fraktalio/fstore-sql
+- https://github.com/fraktalio/fstore-sql /psql
   - event store based on the Postgres database
   - Append events to the ordered, append-only log, using entity id/decider id as a key
+  - This project is enabling event-sourcing and pool-based event-streaming patterns by using SQL (PostgreSQL) only. No additional tools, frameworks, or programming languages are required at this level.
+  - Every decider/entity stream of events is an independent partition. The events within a partition are totally ordered. There is no ordering guarantee across different partitions.
 
 - https://github.com/seikho/evtstore /ts/未实现snapshot
   - https://seikho.github.io/evtstore
@@ -202,6 +237,10 @@ modified: 2023-09-12T09:37:22.608Z
   - Event sourcing library to help developers abstract core concepts
   - The core idea behind Tardis is to implement a generic and easy-to-use interface to interact with the Event Sourcing architecture.
   - two core concepts: The Event and the Reducer, and we'll call anything from our business logic Entity, it can be a car, a person, a ship or anything else.
+
+- https://github.com/domagojk/beenion /ts/inactive
+  - Example project using Event Sourcing and CQRS patterns
+  - require aws Serverless framework 
 
 - https://github.com/boostercloud/booster /ts/GraphQL
   - https://www.boosterframework.com/
@@ -251,8 +290,19 @@ modified: 2023-09-12T09:37:22.608Z
   - opinionated library used to achieve cqrs/es in Rust.
   - Event Sourcing RS uses under the hood sqlx.
 
+- https://github.com/tomcumming/simples /rust/inactive
+  - tiny event sourcing database for prototype and small projects.
+  - Designed to preserve data even when crashing mid-write. Ready to relaunch immediately.
+  - Written in Rust, using Tokio and Hyper.
+  - Uses little more disk space than the contents of the topics.
+
 - https://github.com/palfrey/potboiler /rust
   - an AP Event Sourcing system. it's an MVP/research prototype 
+- https://github.com/cosmonic/concordance /rust
+  - opinionated event sourcing framework from Cosmonic
+  - Building on the power, portability, speed, and scalability of wasmCloud, Concordance allows you to reason about your application using the fundamental building blocks of event sourcing: Aggregates/Projectors
+  - https://github.com/wasmCloud/wasmCloud
+    - https://wasmcloud.com/docs/intro
 
 - https://github.com/eugene-khyst/postgresql-event-sourcing /java
   - A reference implementation of an event-sourced system that uses PostgreSQL as an event store
@@ -280,11 +330,36 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/andreschaffer/event-sourcing-cqrs-examples /java
   - examples of how to use Event Sourcing and CQRS applied to a minimalistic bank context.
+- https://github.com/asimkilic/cqrs-event-sourcing-with-kafka /java
+  - Use the mediator pattern to implement command and query dispatchers
+  - Implement an event store/write database in MongoDB
+  - Create a read database in MySQL
+  - Produce event to Apache Kafka
+  - Consume event from Apache Kafka to populate and alter the read database
+  - Replay the event strore to recreate the state of the aggregate
+  - Structure your code using Domain-Driven-Design best practices
 - https://github.com/dmart28/reveno /java
   - an in-memory transactional event-driven framework with CQRS and Event Sourcing intruded
   - modular - use only components you really need to.
   - lightweight. The core is about 300kb only.
   - reveno-cluster – makes it possible to run Reveno in cluster with Master-Slave architecture, thus providing decent failover ability.
+- https://github.com/rieske/event-sourced-account /java
+  - lightweight, frameworkless event sourced Account implementation.
+  - The purpose of this project was for myself to better understand the complexities of event sourcing and apply the lessons learned from hype-driven event sourcing implementations gone wrong.
+- https://github.com/json-event-sourcing/pincette-jes /java
+  - a library that implements event-driven state management for the JSON format, which is used in so many tools. 
+  - It requires Apache Kafka for messaging and MongoDB for storing state.
+- https://github.com/pavankjadda/KafkaStream-CQRS-EventSourcing /java
+  - Event Sourcing(CQRS) and Materialized views with Kafka Streams
+
+- https://github.com/confluentinc/ksql /ConfluentLic/java
+  - https://ksqldb.io/
+  - a database for building stream processing applications on top of Apache Kafka. 
+  - It is distributed, scalable, reliable, and real-time. 
+  - Streams and tables - Create relations with schemas over your Apache Kafka topic data
+  - Materialized views - Define real-time, incrementally updated materialized views over streams using SQL
+  - support push and pull queries
+  - ksqlDB allows you to define materialized views over your streams and tables. Materialized views are defined by what is known as a "persistent query". These queries are known as persistent because they maintain their incrementally updated results using a table.
 
 - https://github.com/hallgren/eventsourcing /go
   - an experiment to try to generialize @jen20's way of implementing event sourcing.
@@ -435,6 +510,23 @@ modified: 2023-09-12T09:37:22.608Z
 # state-management
 - tips
   - redux/logux
+
+- https://github.com/event-storm/event-storm /js
+  - In-memory event store. A powerful, framework-agnostic store management library.
+# examples
+- https://github.com/TomaszRewak/TimeWriter /js/依赖少/inactive
+  - https://text-sourcing.tomasz-rewak.com/
+  - An online collaborative text editor based on event sourcing architecture.
+  - Everything here is written from a scratch: including the text editor as well as the event sourcing logic on the server and the client sides.
+  - 依赖socket.io、express
+
+- https://github.com/StratoKit/strato-db /js
+  - MaybeSQL with Event Sourcing based on SQLite
+  - It works fine with multi-GB databases, and if you choose your queries and indexes well, you can have <1ms query times.
+  - Multi-process behavior is not very worked out for the EventSourcingDB
+
+- https://github.com/power-cms/power-cms /ts/inactive
+  - a Domain Driven, CQRS based CMS project in Microservices architecture, written for developers.
 # more
 - https://github.com/boyney123/eventcatalog
   - https://www.eventcatalog.dev/

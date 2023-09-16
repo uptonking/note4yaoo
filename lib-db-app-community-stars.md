@@ -1,21 +1,22 @@
 ---
-title: lib-db-community-stars
+title: lib-db-app-community-stars
 tags: [community, database]
 created: 2021-08-30T15:51:01.157Z
-modified: 2021-08-30T15:51:28.094Z
+modified: 2023-09-16T17:54:21.231Z
 ---
 
-# lib-db-community-stars
+# lib-db-app-community-stars
 
 # guide
 
-- [Reddit’s database has two tables_201209](https://kevin.burke.dev/kevin/reddits-database-has-two-tables/)
-  - Lesson: Don’t worry about the schema.
-  - it looks like they use two tables for each “thing”, so a thing/data pair for accounts, a thing/data pair for links, etc.
 # discuss-stars
 - ## 
 
 - ## 
+
+- ## [Reddit’s database has two tables_201209](https://kevin.burke.dev/kevin/reddits-database-has-two-tables/)
+  - Lesson: Don’t worry about the schema.
+  - it looks like they use two tables for each “thing”, so a thing/data pair for accounts, a thing/data pair for links, etc.
 
 - ## Most databases were built when data was static and queries were dynamic. 
 - https://twitter.com/tantaman/status/1699826662408409383
@@ -29,6 +30,27 @@ modified: 2021-08-30T15:51:28.094Z
   - [UUIDs are Bad for Performance in MySQL - Is Postgres better? Let us Discuss - YouTube](https://www.youtube.com/watch?v=Y5mWz4vK10A)
 - It makes the code easier as well because you can generate IDs on the client.
   - Exactly! this also makes the system as a whole more scalable. This is not something you need early on, but changing PKs later is super hard and starting with UUIDs is not.
+
+# discuss-sql
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🤔 What database has the best query language that’s not sql?
+- https://twitter.com/aboodman/status/1607790827996327936
+- tinybase > tinyQL
+- I think graphQL occupies a pretty useful and pragmatic niche.
+  - SQL suffers from cartesianification. Results are a square tabular matrix, which does not effeciently express heirarchical data. Probably graphQL tree shaped results actually fits app data better.
+- i’m biased (due to previous employment), but definitely think neo4j and cypher is the answer you’re looking for!  ASCII art ftw!  
+- Vertipaq with DAX language
+- #datomic's #datalog is very intuitive if all you need are inner joins, which is just unification of variables. The minute you need anything else, things get ugly. Uglier than SQL? Who knows, pick your poison.
+- Kusto Query Language (KQL), used by Azure Data Explorer and other Azure products. I'm a skeptic when it comes to query languages and DSLs and yet... KQL is awesome IMO
+- Malloy fixes my vote for SQLs biggest flaw — combining entity relationships with querying. Malloy separates them, which is genius, especially for ML
+- EdgeDB is an open-source database designed as a spiritual successor to SQL and the relational paradigm
+- My biggest gripe with SQL is the lack of composability. When writing complex code, I can easily pull out functions. When complex writing SQL, I end up with a giant unmaintainable blob. I hope whatever solution you find addresses this!
+- @perplexity_ai ‘s birdsql. Query in natural language (English), GPT figures out the sql. Hot take: natural language is the best query language.
 
 # discuss-db-oplog
 - ## 

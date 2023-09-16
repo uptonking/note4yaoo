@@ -35,6 +35,11 @@ modified: 2022-11-04T14:21:31.365Z
   - git-sqlite is a collection of shell scripts that allows a sqlite database to be tracked using the git version control system.
   - It can be used on an existing database, however, UUIDs will make multi-master distribution substantially easier.
   - Instead of storing the transactions as a separate lmdb commit, I decided to store the database in a git repository and expose the diffs using sqlite's sqldiff utility. This allowed my workflow to be almost unchanged and limits the dependencies to git, sqlite, sqldiff, & bash.
+
+- https://github.com/StratoKit/strato-db /js
+  - MaybeSQL with Event Sourcing based on SQLite
+  - It works fine with multi-GB databases, and if you choose your queries and indexes well, you can have <1ms query times.
+  - Multi-process behavior is not very worked out for the EventSourcingDB
 # collab
 - https://github.com/samwillis/yjs-sqlite-test
   - http://samwillis.co.uk/yjs-sqlite-test/
