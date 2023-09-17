@@ -298,7 +298,7 @@ modified: 2023-09-13T14:37:51.659Z
 - 
 - 
 
-- ### 🤔 [How to Move from CRUD to Event Sourcing | Hacker News_202109](https://news.ycombinator.com/item?id=28691728)
+- ### 👥 [How to Move from CRUD to Event Sourcing | Hacker News_202109](https://news.ycombinator.com/item?id=28691728)
 - I used to be really excited about event sourcing but yeah, its usually just **over-engineering**. 
   - It appeals to the nerd in me because its a powerful & clean model - events are immutable, your entire database can theoretically be reconstructed at any point in time by just replaying an event log up to time X. 
   - In the ideal form its sort of the highest fidelity version of data storage, throwing nothing away, supporting all ways of querying as materialized views or dependent DBs built on the stream. Its beautiful.

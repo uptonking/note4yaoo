@@ -12,7 +12,22 @@ modified: 2023-09-13T14:28:01.426Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Towards a text editor construction kit · xi-editor/xi-editor](https://github.com/xi-editor/xi-editor/issues/1187)
+- Maybe I'm imagining your system as having 2 levels of architectural decoupling/distance:
+  - Stuff that happens synchronously, inside the same process / called directly from your onEdit event handler.
+  - Stuff triggered from witnessing a CRDT edit operation. This could be in another process, on another computer.
+- Traditional IDEs do everything in (1), and so they become monoliths which struggle to have clean architectural separation. 
+  - In response, you've been doing lots of things in (2) - which makes decoupling easier, and collaborative editing easier, but maybe its not the right fit for something like for bracket matching. 
+  - I acknowledge that CRDTs are probably the right approach if you want to do P2P editing. 
+  - But having a swarm of small pieces communicating in loosely defined ways seems like a huge source of unexpected / unwanted complexity. 
+  - (I think this is also the reason why I think dataflow style programming > OO style programming.)
+- 👉🏻 So with that in mind I've been approaching this problem space with another architectural layer - basically considering **realtime edits moving through the system as an event sourcing problem**. 
+  - Unfortunately this still doesn't solve your bracket matching issue - you might be right there; maybe the right answer is to just do it synchronously in the editor. 
+  - But for things like compilers, and for generating syntax highlighting information, I think the DDD / Event sourcing / FP / etc philosophy that "data only flows one way" is a really solid grounding. 
+  - It makes a lot of things easy to reason about, and because its async by nature you can still do magic tricks like pull any parts of your system out into separate threads, processes, or run them on different computers.
+- I could imagine doing the whole thing with just synchronous changes and an event sourcing system, but that would struggle with p2p collaborative editing. 
+  - And it sounds like synchronous changes + CRDTs struggle with complexity issues around ordering and priority. As you say, without the CRDT model some problems become quite trivial. 
+  - I'm not sure if it makes sense to use CRDTs + event sourcing. There's overlap there, so you're paying a complexity cost. But maybe its worth it.
 
 - ## [What tools/frameworks do you use for event sourcing and CQRS](https://www.reddit.com/r/node/comments/q5u3pj/what_toolsframeworks_do_you_use_for_event/)
 - Use NestJS. It has a package for CQRS. For Aggregates (and Entities, etc) read up on Domain Driven Design. 
@@ -22,12 +37,6 @@ modified: 2023-09-13T14:28:01.426Z
   - Because Mikro-orm has a Unit of Work pattern and as far as I can tell TypeORM does not (or it has to be added in).
 
 - I learned a very valuable lesson. Event Sourcing is not a silver bullet, and I'd wager that 80% of the time it is probably more trouble than it's worth. It takes a long time to implement, and comes with a lot of boilerplate, but that's not the main problem. The problem is onboarding developers who are not used to Event Sourcing. That takes a long time.
-- 
-- 
-- 
-- 
-- 
-- 
 
 - ## [Hybrid CQRS-Request/Response with Event Store - EventStoreDB](https://discuss.eventstore.com/t/hybrid-cqrs-request-response-with-event-store/1636)
   - Would it be possible to have a hybrid system that would have mainly request/response operations and some commands
@@ -223,7 +232,9 @@ that commit position, thus providing "read your own writes" semantics.
 # discuss
 - ## 
 
-- ## 
+- ## [Can edgeDB as "Graph Relational Database" be used for Data Graphs (\~Graph Database)? · edgedb/edgedb](https://github.com/edgedb/edgedb/discussions/3964)
+- A bit of clarification: EdgeDB is not a classic ORM, i.e. there is no query result post-processing on the "application level" in any case whatsoever. Instead, each EdgeQL query (regardless of its complexity) is always compiled into a single SQL query the results of which are returned to EdgeDB clients directly. Think of EdgeDB not as an ORM but as an alternative frontend to the Postgres query engine.
+- For now, you would have to insert these changes via your application, but the upcoming triggers feature will allow you to do it on the database.
 
 - ## [Architecture decisions -- retrieving DB data from mysql](https://www.reddit.com/r/node/comments/cd3nb4/architecture_decisions_retrieving_db_data_from/)
 - Event sourcing is an architectural pattern where you store changes over time to an object, instead of object’s entire current state. 

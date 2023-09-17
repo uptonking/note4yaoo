@@ -97,7 +97,9 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
-- ## 
+- ## Airtable lays off 50% pivots into enterprise, reportedly only $150M in revenue as of 2023 with 1.4b raised. Not even a unicorn, last 5 years of trumpeting have been optics!
+- https://twitter.com/dustingetz/status/1703001633368506772
+  - 27% (237 ppl) laid in the *second round*, first round was 29% (254 ppl) in Dec '22
 
 - ## If you're starting a SaaS, just remember this: building = fun, marketing = $$
 - https://twitter.com/Timb03/status/1695328737670426935

@@ -57,15 +57,17 @@ modified: 2023-02-08T10:46:26.912Z
   - git shortlog -sn
     - 统计每人commit次数
 # github-usage
-- nice-to-have
-  - 空仓库标记，如搜索时标记出空仓库可省去点开查看
-  - 搜索时显示 latest-push-time, 而不是bot机器人push的时间，方便判断废弃仓库
-  - 若仓库是一个library，查找依赖本仓库的仓库中star最多的，没必要如此做，关注重点依赖即可
-    - https://github.com/hacker-DOM/github-by-stars
-      - /inactive
-  - repo项目名支持中文名，url中部分path支持中文名
 
-## issues
+## nice-to-have
+
+- 空仓库标记，如搜索时标记出空仓库可省去点开查看
+- 搜索时显示 latest-push-time, 而不是bot机器人push的时间，方便判断废弃仓库
+- 若仓库是一个library，查找依赖本仓库的仓库中star最多的，没必要如此做，关注重点依赖即可
+  - https://github.com/hacker-DOM/github-by-stars
+    - /inactive
+- repo项目名支持中文名，url中部分path支持中文名
+
+## unavailable
 
 - [Bring back `sort:indexed` for code searches](https://github.com/orgs/community/discussions/52932)
   - NA
@@ -112,6 +114,9 @@ modified: 2023-02-08T10:46:26.912Z
       - https://github.com/search?q=stars%3A%3E100&s=stars&type=Repositories
     - most forked
       - https://github.com/search?o=desc&q=stars:%3E1&s=forks&type=Repositories
+
+- search-issues/disccussions
+  - 搜索仓库时指定语言后，当下搜索结果中的issues也是指定语言的
 
 - fork
   - 可利用高级搜索，搜索fork仓库中最新被fork的 `fork:only`

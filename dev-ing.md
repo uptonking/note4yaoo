@@ -115,7 +115,7 @@ $$('[contenteditable]')
   - 使用hlc: idbsidesync, verdant, harika
   - 结合hlc+crdt: idbsidesync, evolu, rga-crdt
   - 结合hlc+db: piratedb, tinybase, kappa-db-stream, linvodb
-  - 基于oplog的研发方向，架构设计时考虑放在数据库层解决还是应用层解决
+  - 基于oplog的研发方向, 架构设计时考虑放在数据库层解决还是应用层解决
     - db
     - event-sourcing based framework
 

@@ -310,6 +310,12 @@ modified: 2023-02-05T18:50:32.900Z
   - Other implementations: DAO, Sequelize, Service
   - https://github.com/Judahh/sequelizePersistence
 
+- https://github.com/sugarandmagic/sequelize-mv-support /MIT/ts
+  - This package adds support for Views and Materialized Views in Sequelize.
+  - We're heavy users of views and materialized views, but we use Sequelize a lot for bootstrapping and testing database schema. 
+  - this module adds support for both views and materialized views to Sequelize, as well as properly exporting typescript declarations.
+  - All the original Sequelize methods and options still work with this module
+
 - https://github.com/s4nt14go/white-label /ts
   - Serverless Domain-Driven Design (DDD) with unit tests
   - This project exemplifies a CreateUser use case and how we can trigger an event, signaling we have a new user onboard.

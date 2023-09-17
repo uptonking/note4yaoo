@@ -9,6 +9,8 @@ modified: 2023-09-07T15:57:29.739Z
 
 # guide
 
+- https://github.com/nichoth/ssb-field-guide
+  - A field guide to developing with ssb
 # examples
 
 ## extensions

@@ -23,6 +23,11 @@ modified: 2022-11-25T15:50:48.226Z
   - https://github.com/oguimbal/pg-mem
   - An in memory postgres DB instance for your unit tests
   - It works both in Node or in the browser.
+  - limitations
+    - Materialized views are implemented as views (meaning that they are always up-to-date, without needing them to refresh)
+    - Indices implementations are basic
+    - All number-like types are all handled as javascript numbers, meaning that types like numeric(x,y) could not behave as expected.
+    - No support for timezones
   - https://github.com/oguimbal/pgsql-ast-parser
     - a Postgres SQL syntax parser. 基于nearley、moo实现
     - This parser does not support (yet) PL/pgSQL.

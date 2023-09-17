@@ -21,6 +21,7 @@ modified: 2022-04-05T10:08:25.947Z
   - 对不同分支的文档在相同位置粘贴相同的文本时，crdt会保留重复的文本
 
 - ref
+  - [Comparison of CRDT Libraries - hyoo/automerge/yjs](https://github.com/hyoo-ru/crowd.hyoo.ru?tab=readme-ov-file#comparison-of-crdt-libraries)
   - [crdt Code (Implementations)](https://crdt.tech/implementations)
   - https://github.com/alangibson/awesome-crdt
   - [Alternatives · ElectricSQL](https://electric-sql.com/docs/reference/alternatives)
@@ -923,6 +924,13 @@ modified: 2022-04-05T10:08:25.947Z
   - Roshi is a stateless, distributed layer on top of Redis and is implemented in Go. 
   - It is partition tolerant, highly available and eventually consistent.
   - [Roshi: a CRDT system for timestamped events | SoundCloud Blog_201405](https://developers.soundcloud.com/blog/roshi-a-crdt-system-for-timestamped-events)
+
+- https://github.com/hyoo-ru/crowd.hyoo.ru /ts
+  - Delta based CRDT with additional abilities.
+  - Total Available Real-Time Causal Consistency.
+  - Merge result is independent of merge order (except auth units).
+  - Merge is semilattice.
+  - Wiped data inside some Head stays tombstone to hold place.
 # crdt-rust
 - https://github.com/josephg/diamond-types /rust
   - This repository contains a high performance rust CRDT for text editing. 

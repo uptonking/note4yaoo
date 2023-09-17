@@ -149,6 +149,8 @@ modified: 2022-12-19T02:01:20.161Z
 - 管理链接的多维表格
   - 链接添加tag
   - 链接导出markdown，tag放在下一行
+
+- animated-cards
 # connections
 - 支持mdx，内置开源组件
 # knowledge-base

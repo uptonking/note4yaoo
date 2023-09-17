@@ -134,3 +134,7 @@ modified: 2021-05-25T09:41:29.066Z
 # sass-examples
 
 # more
+
+- https://github.com/yazz/yazz /js
+  - Yazz is a both an IDE for building small web applications and a decentralised app store. 
+  - Yazz allows you to build Web apps visually. Yazz runs on the web, PC/Mac/Linux (desktop application or NodeJS) or as a container (Docker, Kubernetes).

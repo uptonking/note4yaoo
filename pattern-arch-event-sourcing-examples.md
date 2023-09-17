@@ -29,6 +29,12 @@ modified: 2023-09-12T09:37:22.608Z
     - Eventstore for Node.js build on top of MongoDB
     - https://github.com/AlexZeitler/mongo-eventstore-sample
 
+- https://github.com/sugarandmagic/sequelize-mv-support /MIT/ts
+  - This package adds support for Views and Materialized Views in Sequelize.
+  - We're heavy users of views and materialized views, but we use Sequelize a lot for bootstrapping and testing database schema. 
+  - this module adds support for both views and materialized views to Sequelize, as well as properly exporting typescript declarations.
+  - All the original Sequelize methods and options still work with this module
+
 - https://github.com/reimagined/resolve /MIT/202212/ts/提供了很多示例
   - https://reimagined.github.io/resolve/
   - Full stack CQRS, DDD, Event Sourcing framework for Node.js
@@ -120,12 +126,23 @@ modified: 2023-09-12T09:37:22.608Z
     - https://github.com/PDMLab/sourced-repo-mongo-ts
 
 - https://github.com/fraktalio/fmodel-ts /ts
+  - https://fraktalio.com/fmodel/
   - This project can be used as a library, or as an inspiration, or both. 
   - It provides just enough tactical Domain-Driven Design patterns, optimised for Event Sourcing and CQRS.
   - The library is fully isolated from the application and infrastructure layers. It represents a pure declaration of the program logic.
+  - 官方示例基于Axon
   - State-stored systems are traditional systems that are only storing the current State by overwriting the previous State in the storage.
   - Event-sourced systems are storing the events in immutable storage by only appending.
   - A Materialized view is using/delegating a View to handle events of type E and to maintain a state of denormalized projection(s) as a result. Essentially, it represents the query/view side of the CQRS pattern. It belongs to the Application layer.
+  - https://github.com/fraktalio/fmodel-rust /rust
+  - https://github.com/fraktalio/fmodel-java /java
+  - https://github.com/fraktalio/fmodel /kotlin
+  - https://github.com/fraktalio/fmodel-demos /kotlin
+- https://github.com/fraktalio/fstore-sql /psql
+  - event store based on the Postgres database
+  - Append events to the ordered, append-only log, using entity id/decider id as a key
+  - This project is enabling event-sourcing and pool-based event-streaming patterns by using SQL (PostgreSQL) only. No additional tools, frameworks, or programming languages are required at this level.
+  - Every decider/entity stream of events is an independent partition. The events within a partition are totally ordered. There is no ordering guarantee across different partitions.
 
 - https://github.com/castore-dev/castore /107Star/MIT/202303/ts
   - Making Event Sourcing easy
@@ -150,13 +167,13 @@ modified: 2023-09-12T09:37:22.608Z
   - https://github.com/valkyrjs/valkyr /ts
     - toolkit for creating event sourced applications using javascript/typescript.
 
-- https://github.com/snatalenko/node-cqrs /js
+- https://github.com/snatalenko/node-cqrs /MIT/js
   - CQRS backbone with event sourcing for Node.js
   - The package provides building blocks for making a CQRS-ES application. 
   - It was inspired by Lokad. CQRS, but not tied to a specific storage implementation or infrastructure. 
   - It favors ES6 classes and dependency injection(di0), so any components can be modified or replaced with your own implementations without hacks to the package codebase.
 
-- https://github.com/flolu/simple-event-sourcing-example /ts
+- https://github.com/flolu/simple-event-sourcing-example /ts/inactive
   - Small Node.js Application to Learn the Concepts of Event Sourcing
   - To handle CQRS, I have to services: one that mutates the event store and one that just consumes events that happened in the past to update a materialized view of the current state.
 
@@ -220,12 +237,6 @@ modified: 2023-09-12T09:37:22.608Z
   - A fully-featured event store and message store implemented in PostgreSQL for Pub/Sub, Event Sourcing, Messaging, and Evented Microservices applications.
   - The message store is a single table named messages. 
   - Interaction with the message store is effected through Postgres server functions that ensure the correct semantics for the writing of messages to streams, and the reading of messages from streams and categories.
-
-- https://github.com/fraktalio/fstore-sql /psql
-  - event store based on the Postgres database
-  - Append events to the ordered, append-only log, using entity id/decider id as a key
-  - This project is enabling event-sourcing and pool-based event-streaming patterns by using SQL (PostgreSQL) only. No additional tools, frameworks, or programming languages are required at this level.
-  - Every decider/entity stream of events is an independent partition. The events within a partition are totally ordered. There is no ordering guarantee across different partitions.
 
 - https://github.com/seikho/evtstore /ts/未实现snapshot
   - https://seikho.github.io/evtstore
@@ -328,6 +339,13 @@ modified: 2023-09-12T09:37:22.608Z
     - Event store is used as a write database, and SQL or NoSQL database as a read database.
     - Commands generate events. 
 
+- https://github.com/alicanli1995/clean-hexagonal-architecture-kafka-saga-outbox /java
+  - Food Ordering Project with Clean and Hexagonal Architecture With Kafka Messaging System And Outbox Table
+  - Hexagonal (Clean) Architecture -> Port & Adapter Style
+  - CQRS Pattern : Materialized view & Event Sourcing
+  - SAGA Pattern : process & rollback ( compensating transactions )
+  - Outbox Pattern : Pulling Outbox Table With Scheduler , Saga Status
+
 - https://github.com/andreschaffer/event-sourcing-cqrs-examples /java
   - examples of how to use Event Sourcing and CQRS applied to a minimalistic bank context.
 - https://github.com/asimkilic/cqrs-event-sourcing-with-kafka /java
@@ -351,6 +369,15 @@ modified: 2023-09-12T09:37:22.608Z
   - It requires Apache Kafka for messaging and MongoDB for storing state.
 - https://github.com/pavankjadda/KafkaStream-CQRS-EventSourcing /java
   - Event Sourcing(CQRS) and Materialized views with Kafka Streams
+
+- https://github.com/AxonFramework/AxonFramework /apache2/java
+  - https://developer.axoniq.io/
+  - a framework for building evolutionary, event-driven microservice systems based on the principles of Domain-Driven Design (DDD), Command-Query Responsibility Separation (CQRS), and Event Sourcing.
+  - Examples of building blocks are aggregate design handles, aggregate repositories, command buses, saga design handles, event stores, query buses, and more. 
+  - The messaging support for commands, events, and queries is at the core of these building block
+  - The most accessible and quick road forward would be to use Axon Server to seamlessly adjust message buses to distributed implementations. 
+  - https://github.com/m-reza-rahman/gift-card-simple
+    - This simple application demonstrates the CQRS and Event Sourcing patterns using the Axon Java Framework. 
 
 - https://github.com/confluentinc/ksql /ConfluentLic/java
   - https://ksqldb.io/
@@ -507,6 +534,15 @@ modified: 2023-09-12T09:37:22.608Z
   - [If Pipedream doesn't support Self-Host, what's the repo for?_202305](https://github.com/PipedreamHQ/pipedream/issues/6365)
     - contains all the code for Pipedream's app, actions and triggers. The code is deployed to Pipedream system.
     - Currently, Pipedream does NOT offer self-host option.
+
+- https://github.com/moleculerjs/moleculer /js
+  - https://moleculer.services/
+  - powerful microservices framework for Node.js. 
+  - support event driven architecture with balancing
+  - https://github.com/davidnussio/moleculer-cqrs-skeleton /js
+  - https://github.com/davidnussio/moleculer-cqrs /js
+  - https://github.com/moleculerjs/moleculer-db /js
+    - Database access service mixins for Moleculer
 # state-management
 - tips
   - redux/logux
@@ -527,7 +563,16 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/power-cms/power-cms /ts/inactive
   - a Domain Driven, CQRS based CMS project in Microservices architecture, written for developers.
+
+- https://github.com/dmfrey/event-store-demo /java
+  - We recently finished work on a system in which we built an Event Source system. This application is a demo of the architecture we produced.
+  - This application is a simple Kanban. It only allows for minimal board and story management.
+  - The API application is a common gateway layer between Command and Query applications. The lower applications are separated in typical CQRS fashion. It is a Spring Boot 2 application and is simply a proxy service to the lower apps.
 # more
+- https://github.com/digidem/unordered-materialized-kv /js/inactive
+  - materialized view key/id store based on unordered log messages
+  - This library presents a familiar key/value materialized view for append-only log data which can be inserted in any order. 
+
 - https://github.com/boyney123/eventcatalog
   - https://www.eventcatalog.dev/
   - https://app.eventcatalog.dev/

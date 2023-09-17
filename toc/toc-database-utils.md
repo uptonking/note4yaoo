@@ -219,6 +219,7 @@ modified: 2023-08-23T17:15:46.484Z
 
 - https://github.com/kappa-db/kappa-view-level /js
   - make kappa-core views over leveldb
+  - This module handles view lifecycle logic for you: normally a kappa view needs to manage storing and fetching the state of the indexer ("up to what log sequence numbers have I processed?"), as well as purging the view's LevelDB database when the version of the view gets bumped.
   - inspired by https://github.com/flumedb/flumeview-level
 
 - https://github.com/ssbc/ssb-server /js
@@ -303,13 +304,16 @@ modified: 2023-08-23T17:15:46.484Z
     - Entries can be added and removed. 
     - Useful for "shopping cart" type of use cases, or for example as a feed of blog posts or "tweets".
 
-- https://github.com/digidem/unordered-materialized-kv /js/inactive
+- https://github.com/digidem/unordered-materialized-kv /js/inactive/搜索依赖和示例
   - materialized view key/id store based on unordered log messages
   - This library presents a familiar key/value materialized view for append-only log data which can be inserted in any order. 
   - This library implements a **multi-register conflict strategy**, so each key may map to more than one value. 
     - To merge multiple values into a single value, point at more than one ancestor id.
   - This library is useful for kappa architectures with missing or out of order log entries, or where calculating a topological ordering would be expensive
   - This library does not store values itself, only the IDs to look up values. This way you can use an append-only log to store your primary values without duplicating data.
+  - https://github.com/peermaps/unordered-materialized-kv-pubsub
+    - extends the unordered-materialized-kv api with independent sessions that can open() and close() sets of keys
+  - https://github.com/peermaps/unordered-materialized-kv-live
 
 - https://github.com/flumedb/flumedb /MIT/202006/js/inactive
   - A modular database made for moving logs with streams.
@@ -534,4 +538,26 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/chinedufn/dipa /rust
   - designed to generate very tiny diffs by default
   - does not know anything about networks and has no networking code
+
+## log-utils
+
+- https://github.com/y-scope/clp /cpp
+  - https://yscope.com/
+  - Compressed Log Processor (CLP) is a free tool capable of compressing text logs and searching the compressed logs without decompression.
+# materialized-view
+- resources
+  - [ppt: Materialized Views with MongoDB](https://daniloab.github.io/mongodb-materialized-view-talk/)
+
+- https://github.com/Svjard/nepata /ts
+  - A rapid report framework around MongoDB allowing for the generation of materialized views in MongoDB against collections without an in-depth understanding of Mongo queries.
+- https://github.com/ilinieja/node-mongoose-materialized-views-example /ts
+  - [How to create and manage Mongo DB Materialized Views using triggers.](https://bonigopalan.medium.com/how-to-create-and-manage-mongo-db-materialized-views-using-triggers-a2fb58a4d1a0)
+- https://github.com/janez89/mongoose-materialized /js/inactive
+  - A mongoose plugin for the materialized paths.
+
+- https://github.com/viaacode/pulsar2db /rust
+  - Subscribe to Pulsar topics and build final state (or a materialized view) for a certain object or key.
+
+- https://github.com/ilikepi63/turnip-rs /rust
+  - Leaderless, streaming platform based on materialized views
 # more
