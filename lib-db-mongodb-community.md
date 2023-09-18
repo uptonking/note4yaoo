@@ -9,7 +9,20 @@ modified: 2022-06-13T02:59:04.350Z
 
 # guide
 
+# discuss-why-use-mongo
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Ask HN: Do you still use MongoDB? | Hacker News_202005](https://news.ycombinator.com/item?id=23270429)
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 

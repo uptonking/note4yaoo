@@ -166,3 +166,29 @@ modified: 2023-04-21T11:42:46.575Z
   - Currently persistence is just "where can you save and load a JSON string?" at a Store-wise level. So sure! 
   - But I once had an experiment for sharded persistence per table or row. 
   - At that point, keeping it in sync with a 'real' database might be quite scalable and interesting.
+
+- ## [TinyBase: A JavaScript library for structured state | Hacker News_202201](https://news.ycombinator.com/item?id=29945748)
+
+- Pro and Contro vs existing similar projects?
+  - TinyBase lets you set up event handlers with arbitrary data granularity, making the data store reactive.
+
+- The codebase is quite something. 
+  - I thought the author had lost his mind, declaring dozens of new functions to simply wrap inbuilt functions and religiously not using classes. 
+  - Then I realized it probably cuts the bundle size by 2/3rds to remove every "this.longBuiltinFnName()" and replace it with a minified function call.
+- Quite possible. This was a journey
+  - When I first started thinking about this project, classes still meant a bunch of transpilation overhead (which dates the origin story!). I persuaded myself that plain old objects with TypeScript interfaces would strike a better balance between performance, size, and developer experience.
+
+- Web apps are so over-complicated because of piecemeal client side data stores and the need to sync with the latest fashion in api protocol.
+  - Imagine how simple apps would be if your data model and query interface was exactly the same on the server and client. With automatic caching and fetching logic.
+- The requirements on clients are fundamentally different than on the server.
+
+- SQLite on WASM[0] is absolutely what you are looking for. There is also “Absurd SQL”[1] which extends it to use indexedDB as a VFS for storage allowing proper atomic transactions and not loading the whole thing into memory.
+- Absurd is really cool. I've always thought it would be great to have an SQL db implemented in native JS though.
+  - With the database running in the same process as your app, you could store native JS Objects of your table rows in the cache, which you could bind events to. So if you modify a row in a table in the db, events could be instantly propagated to the UI. Haven't thought it through fully yet.
+  - SQL is also a bit cumbersome for things like deeply nested data, hierarchies, trees, graphs which a lot of client-side application state ends up being.
+
+- There's Datascript[0] and Datomic[1]. While not "identical", they are definitely complimentary. There's a (now defunct) library[2] for keeping them in sync too.
+
+- PouchDB has offered something like that for close to a decade now, if I'm not mistaken. Might be worth looking into. 
+  - It is document-based, though, rather than relational+graph, though I suppose you could build graph utilities on top of it.
+- PouchDB is incredible, so much respect for the devs that built it. The trouble is though, it is now quite an ageing codebase with relatively little maintenance.

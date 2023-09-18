@@ -315,7 +315,7 @@ modified: 2022-08-21T10:02:41.845Z
   - It helps you manipulate tree data structure for user interface. (Can be used in Tree, Select, Dropdown, Table, Menu components and ...)
   - In treemate, a tree is composed of node (optional group node and optional ignored).
 
-- https://github.com/Yomguithereal/baobab /js
+- https://github.com/Yomguithereal/baobab /js/inactive
   - JavaScript & TypeScript persistent and optionally immutable data tree with cursors.
   - It is mainly inspired by functional zippers (such as Clojure's ones) and by Om's cursors.
   - It aims at providing a centralized model holding an application's state and can be paired with React easily through mixins, higher order components, wrapper components or decorators

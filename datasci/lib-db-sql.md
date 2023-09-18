@@ -11,7 +11,9 @@ modified: 2020-12-18T05:02:58.499Z
 
 # blogs-query-engine
 
-## [How Query Engines Work by Andy Grove [Leanpub PDF/iPad/Kindle]](https://leanpub.com/how-query-engines-work)
+## [How Query Engines Work](https://howqueryengineswork.com/)
+
+- [How Query Engines Work by Andy Grove [Leanpub PDF/iPad/Kindle]](https://leanpub.com/how-query-engines-work)
 
 - This book provides an introduction to the high-level concepts behind query engines and walks through all aspects of **building a fully working SQL query engine in `Kotlin`**.
   - 本书的重点是查询引擎设计，它通常与编程语言无关。

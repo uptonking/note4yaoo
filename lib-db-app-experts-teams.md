@@ -36,6 +36,11 @@ modified: 2023-02-02T03:22:07.941Z
   - Founder of RisingWave Labs
   - https://www.zhihu.com/people/yingjunwu
 
+
+- wubx
+  - Datafuse Labs · Databend 架构师 & 联合创始人
+  - https://www.zhihu.com/people/wubx
+
 - 郭忠明
   - https://www.zhihu.com/people/guo-zhong-ming-26
   - https://gitee.com/wlmqgzm/libhaisqlmalloc

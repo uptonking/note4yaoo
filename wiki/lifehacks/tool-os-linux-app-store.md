@@ -40,6 +40,8 @@ modified: 2023-06-22T07:22:04.591Z
 
 ## flatpak
 
+- [Flatpak is not the future (2021) | Hacker News](https://news.ycombinator.com/item?id=37210397)
+
 - [Graphical front-end to manage apps](https://github.com/flatpak/flatpak/issues/859)
 
 - [Where are all the installed flatpak apps .desktop files located](https://github.com/flatpak/flatpak/issues/1286)

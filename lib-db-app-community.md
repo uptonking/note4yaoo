@@ -22,3 +22,16 @@ modified: 2023-09-16T17:54:11.257Z
   - Json
   - Graph
   - Open table format (Iceberg, delta)
+
+# discuss-regularly
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Databases in 2022: A Year in Review | Hacker News](https://news.ycombinator.com/item?id=34220524)
+- 多家ceo来回复
+
+- 
+- 

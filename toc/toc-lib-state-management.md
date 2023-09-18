@@ -9,8 +9,8 @@ modified: 2020-07-14T11:03:53.196Z
 
 # guide
 - 实现状态管理的思路
-  - flux
-    - redux
+  - flux/event
+    - redux/logux
     - zustand
     - storeon
     - unistore
@@ -18,6 +18,7 @@ modified: 2020-07-14T11:03:53.196Z
     - jotai
     - nanostores
     - recoil
+    - effector
   - proxy
     - mobx
     - valtio
@@ -35,9 +36,6 @@ modified: 2020-07-14T11:03:53.196Z
     - constate
     - unstated-next
     - react-redux
-  - event
-    - storeon
-    - redux
 
 - 基于hooks模仿redux的api
   - [State Management with React Hooks and Context API](https://devsmitra.medium.com/state-management-with-react-hooks-and-context-api-2968a5cf5c83)
@@ -235,6 +233,41 @@ modified: 2020-07-14T11:03:53.196Z
 
 - https://github.com/Odonno/react-state-management-comparison
   - Comparison of different React state management libraries (hooks, mobx, recoiljs)
+# state-orm
+- https://github.com/redux-orm/redux-orm /202104/js/inactive
+  - https://redux-orm.github.io/redux-orm/
+  - simple and immutable ORM to manage relational data in your Redux store.
+  - Redux-ORM deals with related data, structured similar to a relational database. The database in this case is a simple JavaScript object database.
+  - For simple apps, writing reducers by hand is alright, but when the number of object types you have increases and you need to maintain relations between them, things get hairy. 
+    - ImmutableJS goes a long way to reduce complexity in your reducers, but Redux-ORM is specialized for relational data.
+  - [Call for Maintainer and Contributors](https://github.com/redux-orm/redux-orm/issues/123)
+    - I've been moving away from redux to things like react-query and lost traction on redux-orm
+
+- tinybase /1.4kStar/MIT/202212/ts/NoDeps
+  - https://github.com/tinyplex/tinybase
+  - https://tinybase.org/
+  - TinyBase is a smart new way to structure your local app data
+  - 基于自定义TinyQL(类似SQL)实现查询
+  - 基于checkpoint实现undo
+  - 基于hlc crdt实现冲突处理
+
+- orbit /2.3kStar/MIT/202209/ts/概念特别多
+  - https://github.com/orbitjs/orbit
+  - Orbit is a composable data framework for managing the complex needs of today's web applications.
+  - Although Orbit is primarily used as a flexible client-side ORM, it can also be used server-side in Node.js.
+
+- https://github.com/arnelenero/react-entities /js
+  - provides simplified state management for React apps. 
+  - Uses plain functions to implement state changes
+  - Made specifically for React, and built on React Hooks
+  - An entity is a single-concern data object whose state can be bound to any number of components in the app as a "shared" state. Once bound to a component, an entity's state acts like local state, i.e. it causes the component to update on every change.
+
+- https://github.com/arnelenero/simpler-state /js
+  - provides the simplest state management for React.
+  - Use plain functions to update state (including async)
+  - Highly extensible with plug-ins (e.g. persistence, dev tools)
+  - Multiple times faster than context/reducer solution
+  - This library is an evolution of the already production-proven react-entities that I also wrote. It shares the same stable core, but with a very different API.
 # signals
 - https://github.com/preactjs/signals /ts/实现不依赖proxy
   - Signals is a performant state management library with two primary goals
@@ -294,7 +327,7 @@ modified: 2020-07-14T11:03:53.196Z
 - more-signal
   - https://github.com/dai-shi/valtio-signal
   - https://github.com/react-gx/gx
-# atom-multi-stores
+# multi-stores/atoms
 - https://github.com/Omnistac/zedux /ts
   - A Molecular State Engine for React.
   - Zedux is a multi-paradigm state management tool that features a powerful composable store model wrapped in a DI-driven atomic architecture.
@@ -399,9 +432,16 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/eserozvataf/react-eventmanager
   - /16Star/Apache2/201908/ts/deprecated
   - Event-based simple React state management with decorators
-- https://github.com/aweary/react-copy-write
+
+- https://github.com/aweary/react-copy-write /js/inactive
   - An immutable React state management library with a simple mutable API, memoized selectors, and structural sharing. 
   - Powered by Immer.
+
+- https://github.com/lostpebble/pullstate /ts
+  - https://lostpebble.github.io/pullstate
+  - Simple state stores using immer and React hooks
+  - Uses immer for state updates - easily and safely mutate your state directly
+  - Originally inspired by the now seemingly abandoned library - bey. Although substantially different now- with Server-side rendering and Async Actions built in
 
 - https://github.com/nanxiaobei/flooks
   - State Manager for React Hooks, Auto Optimized

@@ -115,6 +115,30 @@ modified: 2022-11-07T10:25:12.034Z
 - [Does mastodon has advance search](https://stackoverflow.com/questions/74570622/does-mastodon-has-advance-search)
   - This is not possible (intentionally / by design).
   - Mastodon supports full-text search when ElasticSearch is available. Mastodon’s full-text search allows logged in users to find results from their own statuses, their mentions, their favourites, and their bookmarks. It deliberately does not allow searching for arbitrary strings in the entire database.
+# telegram
+- [TG中文群 - TGCNG. COM](https://www.tgcng.com/)
+- [电报频道，群组，机器人列表](https://telegramchannels.me/zh)
+- [telegram群组-电报群大全- Telghub](https://www.telghub.com/)
+- [电报telegram群全网检索 - TgSql.com](https://tgsql.com/search)
+
+- 
+- 
+- 
+- 
+
+- https://github.com/morethanwords/tweb /webk
+  - Telegram Web K, GPL v3
+- https://github.com/Ajaxy/telegram-tt /webz/weba
+  - Telegram Web A, GPL v3
+
+- [Why there are two web versions? WebZ and WebK](https://www.reddit.com/r/Telegram/comments/yjzdq3/why_there_are_two_web_versions/)
+  - Made by two different devs and thus have different code bases, which means they work at different speeds, they might have different features, etc. Both are official.
+  - There’s an internal competition running between the two and eventually one will prevail.
+- [Telegram released 2 new web apps](https://www.reddit.com/r/Telegram/comments/mqp2m4/telegram_released_2_new_web_apps/)
+  - [What is the difference between webk.telegram.org and webz.telegram.org ?](https://www.reddit.com/r/Telegram/comments/mzicwm/what_is_the_difference_between_webktelegramorg/)
+  - Telegram believes that having multiple teams that compete will be beneficial. 
+  - if you look at the dependencies and code, WebZ is written in React/teact, WebK does not have any popular libraries (React, Vue, Angular, Svelte...) in the dependencies and in the source code is written in native js (ts)
+  - I noticed that WebK is running way faster on my potato pc than WebZ, Z has more features tho
 # 邮箱注册
 - 不需要手机号的邮箱
   - mail.protonmail.com

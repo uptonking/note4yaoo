@@ -377,7 +377,7 @@ modified: 2023-08-25T22:31:05.132Z
     - The tree is a function of these records plus a cursor. 
     - The cursor determine which records are active.
 
-- https://github.com/Yomguithereal/baobab /js
+- https://github.com/Yomguithereal/baobab /js/inactive
   - JavaScript & TypeScript persistent and optionally immutable data tree with cursors.
   - It is mainly inspired by functional zippers (such as Clojure's ones) and by Om's cursors.
   - It aims at providing a centralized model holding an application's state and can be paired with React easily through mixins, higher order components, wrapper components or decorators

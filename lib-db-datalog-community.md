@@ -72,3 +72,34 @@ modified: 2023-09-16T17:27:42.089Z
   - just recomputing, but if something end-to-end looks workable i hope to revisit that part and make incremental
 - 👉🏻 Incremental datalog evaluation is not too hard to implement until you hit recursive rules. Then you need differential dataflow
 - If you're just recomputing on diffs, I wonder if it wouldn't be easier to just use DataScript or Datahike (or even Posh), and wrap in a JS API if that's what you want. Then you're just responsible for translating your JSON queries to edn.
+
+
+# discuss-solutions
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why isn't differential dataflow more popular? | Hacker News_202101](https://news.ycombinator.com/item?id=25867693)
+- disclaimer: I work at Materialize and I work with Differential regularly
+  - Differential dataflow lets you write code such that the resulting programs are incremental e.g. if you were computing the most retweeted tweet in all of twitter or something like that and 5 minutes later 1000 new tweets showed up it would only take work proportional to the 1000 new tweets to update the results. It wouldn't need to redo the computation across all tweets.
+  - Unlike every other similar framework I know of, Differential can also do this for programs with loops / recursion which makes it more possible to write algorithms.
+  - Beyond that, as you've noted it parallelizes work nicely.
+
+
+
+
+- I don't think it is possible to compare "differential dataflow" with projects like Spark. (don't know about kafka streams)
+  - Spark is a "product" -- it has extensive documentation, supports multiple languages, and generally is production-grade. It is full of "nice-to-haves", like interactive status monitors, helper functions, serialization layers, and so on. It integrates with existing technologies (Hadoop, K8S, HDFS, etc..). It has this "finished product" feel.
+  - "differential dataflow" seems to be a library. It only supports a single language. The documentation is very basic 
+
+
+- A possible reason not mentioned in the post is that writing efficient incremental algorithms is just fundamentally hard, despite the primitives and tooling afforded by the differential dataflow library. For example, even with a lot of machine learning libraries targeting python, there are only a couple that really implement online algorithms.
+
+
+- 
+- 
+- 
+

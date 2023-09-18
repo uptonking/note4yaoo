@@ -166,6 +166,7 @@ modified: 2022-12-19T02:01:20.161Z
   - 科技分享，类似hacker-news
   - 产品讨论，类似product-hunt
   - 打分评论，类似豆瓣电影与音乐
+  - 论坛圈子，类似贴吧/reddit，支持一个url在不同板块重复讨论、多次讨论
 # faq
 - 如何不使用图床而将图片直接嵌入到笔记中
   - [MarkDown图片存储格式-Textbundle格式](https://zhuanlan.zhihu.com/p/368463926)

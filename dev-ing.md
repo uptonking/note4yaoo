@@ -138,7 +138,7 @@ $$('[contenteditable]')
 - headless-architecture
   - state + action: 参考autocomplete、search-ui
 
-- 若slate-model层采用扁平化Node(扁平化的思路可参考event-sourcing)
+- 若slate-model层采用扁平化Node(扁平化的思路可参考event-sourcing/orm/tinybase)
   - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath
   - 优化方向可参考tree的crud及协作
   - 协作时还应该考虑 json patch + last-write-win

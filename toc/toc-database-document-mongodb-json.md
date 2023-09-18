@@ -185,8 +185,13 @@ modified: 2022-11-03T04:14:11.987Z
 - https://github.com/fabianTMC/mongoToSQL /202204/js
   - Convert MongoDB aggregation pipelines to their SQL equivalent
 # mongodb-utils
-- https://github.com/kofrasa/mingo /202211/ts
+- https://github.com/kofrasa/mingo /MIT/202309/ts
   - MongoDB query language for in-memory objects
+  - Supports dot notation for both `<array>.<index>` and `<document>.<field>` selectors.
+  - Query and Projection Operators
+  - Aggregation Framework Operators
+  - Update Operators
+  - Filtering and aggregation using streaming.
 
 - https://github.com/Ligengxin96/sql-in-mongodb /3Star/GPLv3/202108/ts
   - This tools can convert common sql query to mongodb query
