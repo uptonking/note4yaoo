@@ -20,6 +20,7 @@ modified: 2023-03-16T16:29:47.610Z
   - 分页
   - 页眉、页脚
   - 虚拟渲染
+  - 连动编辑的处理，比如修改page的标题文字后，所有使用该page-url链接的位置都更新标题文字
 
 - 判断数据存放在marks还是编辑器外
   - 需要支持collab的放在marks，如highlight
@@ -164,4 +165,7 @@ modified: 2023-03-16T16:29:47.610Z
 # idea
 - page级别的视图切换
   - 类似codepen的editor/page，注意codepen有tv视图
+
+- formats
+  - diff .docx and .doc
 # more

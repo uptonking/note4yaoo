@@ -78,9 +78,8 @@ modified: 2021-07-21T18:07:43.056Z
   - 若屏幕很窄，官方文档会显示水平滚动条，此时滚动会有严重的漂移感
   - easy way to build technical books or documentation with markdown or MDX
 
-- https://github.com/honkit/honkit
-  - /1.4kStar/Apache2/202009/gitbook
-  - HonKit is building beautiful books using Markdown - Fork of GitBook
+- https://github.com/honkit/honkit /2.7kStar/apache2/202308/ts/gitbook
+  - building beautiful books using Markdown - Fork of GitBook(legacy)
   - honkit is a command line tool (and Node.js lib) for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).
   - 依赖immutable3.8、nunjucks、chokidar、commander、i18n-t、htmlparser2
   - GitBook is only free for open-source and non-profit teams.
@@ -243,7 +242,7 @@ modified: 2021-07-21T18:07:43.056Z
 
 - https://github.com/phenomic/phenomic
   - DEPRECATED. Please use Next.js instead.
-- https://github.com/egoist/docute
+- https://github.com/egoist/docute /js/vue/inactive
   - Leveraging the power of Markdown and Vue.
   - No build process, website is generated on the fly.
 - https://github.com/mkdocs/mkdocs

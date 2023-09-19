@@ -105,6 +105,12 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/mintterteam/mintter /go/ts
   - https://mintter.com/
   - Mintter is a decentralized knowledge collaboration application for open communities powered by a knowledge graph.
+
+- https://github.com/athensresearch/athens /EPL/Clojure/ts/inactive
+  - https://athensresearch.github.io/athens
+  - open-source, collaborative knowledge graph
+  - athens-export converts your pages to markdown and a logseq-compatible directory.
+  - Built on a graph database, Athens helps map and communicate complex knowledge in complex domains.
 # github-wiki-confluence-like
 - MrDoc /2.1kStar/GPL.v3/202208/js/python/仅网页版
   - https://github.com/zmister2016/MrDoc

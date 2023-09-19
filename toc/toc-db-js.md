@@ -9,9 +9,11 @@ modified: 2022-11-25T15:50:48.226Z
 
 # guide
 
-- db-latest
+- db-features
   - sync/collab/local-first
   - 最好支持切换存储层
+  - db for excel
+  - db for markdown
 
 - js-db-popular
   - lowdb, rxdb, pouchdb, nedb, loki, Watermelon, lovefield

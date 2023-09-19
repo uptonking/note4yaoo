@@ -346,3 +346,8 @@ modified: 2023-02-05T18:05:44.122Z
 - https://github.com/FoxUSA/OpenNote /201802/js
   - OpenNote was built to be an open web-based alternative to Microsoft OneNote (T) and EverNote.
   - OpenNote is a progressive web application(PWA)/HTML5 offline app, web based text editor/note taking software
+
+- https://github.com/gsantner/markor /apache2/java
+  - a TextEditor for Android.
+  - utilizes simple markup formats like Markdown and todo.txt for note-taking and list management
+  - Created files are interoperable with any other plaintext software on any platform. 

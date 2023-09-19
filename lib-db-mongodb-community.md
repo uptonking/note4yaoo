@@ -9,7 +9,7 @@ modified: 2022-06-13T02:59:04.350Z
 
 # guide
 
-# discuss-why-use-mongo
+# discuss-alternatives-mongo
 - ## 
 
 - ## 

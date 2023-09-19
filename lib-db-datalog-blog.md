@@ -23,4 +23,9 @@ modified: 2023-09-16T17:27:59.262Z
 - Datalog databases rely on pattern matching. We create “patterns” that match against triples. 
 - In Datalog, we still rely on pattern matching for join. 
   - The trick is to match multiple patterns
+# roam-research
+
+## [【译】Roam Research 自定义组件 —— 跟 {{roam/render}} 来一次亲密接触_202103](https://blog.jimmylv.info/2021-03-10-a-closer-look-at-roamrender-zh-translation/)
+
+- [A closer look at {{roam/render}}_202102](https://www.zsolt.blog/2021/02/a-closer-look-at-roamrender.html)
 # more

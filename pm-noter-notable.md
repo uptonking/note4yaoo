@@ -13,6 +13,13 @@ modified: 2022-12-19T02:01:20.161Z
 > easy to read， easy to write, content-centric notebook
 
 # guide(for notable/noter/paper)
+- features
+  - versioning and branching
+  - markdown support
+    - widely used, enterprise-loved
+    - text files works well with existing tooling
+  - collaboration-ready
+
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好
 
@@ -95,6 +102,9 @@ modified: 2022-12-19T02:01:20.161Z
 
 - observable-notebook默认不支持私有文档
   - 考虑2年后可私有或会员私有
+
+- docx
+  - diff .docx and .doc
 # draft
 - 功能或菜单太多容易使人迷茫，考虑设计多个版本的前端：lite、pro、customized
 

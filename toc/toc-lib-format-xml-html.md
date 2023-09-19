@@ -1,11 +1,11 @@
 ---
-title: toc-lib-format-office-html-xml
+title: toc-lib-format-xml-html
 tags: [format, html, ooxml, toc, xml]
 created: 2023-03-01T15:04:29.279Z
-modified: 2023-03-01T15:04:46.328Z
+modified: 2023-09-19T07:24:15.040Z
 ---
 
-# toc-lib-format-office-html-xml
+# toc-lib-format-xml-html
 
 # guide
 

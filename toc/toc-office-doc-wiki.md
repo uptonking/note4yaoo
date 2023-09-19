@@ -48,9 +48,10 @@ modified: 2021-07-23T08:38:53.805Z
   - A git based wiki engine written for node.js
   - No database: Jingo uses a git repository as the document archive
   - Jingo uses Codemirror or Markitup as the markup editor, with a nice (ajax) preview 
-- https://github.com/gollum/gollum
+- https://github.com/gollum/gollum /ruby/js
   - Git-powered wiki with a sweet API and local frontend.
-  - 依赖 ruby
+  - a simple wiki system built on top of Git. 
+  - strives to be compatible with GitHub and GitLab wikis
 - https://github.com/kawasima/rotom
   - Git based Wiki system (Gollum clone)
 - https://github.com/dijs/wiki

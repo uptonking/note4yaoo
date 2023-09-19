@@ -346,8 +346,10 @@ modified: 2023-08-25T22:31:05.132Z
 
 - https://github.com/cozodb/cozo /MPLv2/rust
   - https://cozodb.org/
-  - A transactional, relational-graph-vector database that uses Datalog for query
-  - You can now create HNSW (hierarchical navigable small world) indices on relations containing vectors.
+  - A transactional, relational-graph-vector database that uses Datalog for query.
+  - a general-purpose, transactional, relational database that uses Datalog for query, is embeddable but can also handle huge amounts of data and concurrency, and focuses on graph data and algorithms. 
+  - It supports time travel and it is performant!
+  - you can run a complete CozoDB instance in your browser with wasm
 
 - https://github.com/knowsys/nemo /rust
   - a datalog-based rule engine for fast and scalable analytic data processing in memory.
