@@ -19,6 +19,8 @@ modified: 2022-12-19T02:01:20.161Z
     - widely used, enterprise-loved
     - text files works well with existing tooling
   - collaboration-ready
+  - local first data storage
+    - open folder as site
 
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好

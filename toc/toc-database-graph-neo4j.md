@@ -23,7 +23,13 @@ modified: 2022-11-03T04:49:42.587Z
   - Supports SPARQL queries via quadstore-comunica, a tailored configuration and distribution of the Comunica querying framework
   - Natively capable of querying across named graphs
 
-- https://github.com/levelgraph/levelgraph  /202108/js
+- https://github.com/worldbrain/storex /MIT/202205/ts/inactive
+  - A modular and portable database abstraction ecosystem for JavaScript
+  - Storex is a minimal storage layer as a foundation for easing common problems around storing and moving data around.
+  - This project started as the storage layer for Memex, a tool to organize your web-research for yourself and collaboratively.
+  - current officially supported back-ends are: dexie/sequelize/firestore
+
+- https://github.com/levelgraph/levelgraph /202108/js
   - LevelGraph is a Graph Database, built on the uber-fast key-value store LevelDB through the powerful LevelUp library. 
   - You can use it inside your node.js application or in any IndexedDB-powered Browser.
   - LevelGraph loosely follows the Hexastore approach, uses six indices for every triple

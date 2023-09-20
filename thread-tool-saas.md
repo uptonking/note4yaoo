@@ -12,7 +12,7 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
-- ## 
+- ## [What are your most used self-hosted applications? | Hacker News_202205](https://news.ycombinator.com/item?id=31260061)
 
 - ## 最近有给自己的 SaaS 接入日志监控的需求，考察了两个服务:
 - https://twitter.com/novoreorx/status/1658323720140881927

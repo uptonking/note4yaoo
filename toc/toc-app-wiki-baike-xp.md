@@ -57,7 +57,7 @@ modified: 2023-02-08T10:47:32.359Z
 - 全文索引fts的位置
   - ~/.var/app/org.goldendict. GoldenDict/cache/goldendict/index/
 
-## community
+## discuss
 
 - ## 
 

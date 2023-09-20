@@ -117,21 +117,41 @@ modified: 2023-09-19T06:35:28.278Z
 - I've now written a book using asciidoc and I am not a fan. It's full of oddities and minilanguages and special cases. For the main body of the work it was no quicker or easier than Markdown. For anything complex I wound up spending hours poring over the docs, stackoverflow, ancient forum posts, github issues trying to learn the magic incantations.
   - I would have greatly preferred LaTeX or DocBook, but the offered alternatives were Word or Google Docs.
 
+- ## [MdBook – A command line tool to create books with Markdown | Hacker News_202306](https://news.ycombinator.com/item?id=36528984)
+- The usage of Highlight.js + MathJax on the front-end is horribly wasteful. 
+  - Why? It demands all clients parse & render the syntax/LaTeX which is not only taxing on CPUs and batteries, but this action is idempotent meaning every user agent on every page visit is going to do the same wasteful parsing to get the same result. 
+  - There is no good reason that syntax highlighting shouldn’t be done at build time, nor should it require JavaScript.
+- Maybe it’s because MathJax loading slow would delay rendering, and using a CDN-hosted MathJax increases the chance the content is cached? That’s usually why people use CDNs. It’s more important for MathJax than, say, interactive scripts, since it can cause rendering. I don’t think MathJax loads any additional files (I don’t remember seeing any additional network requests).
+
+- MDX is not coupled to React. You can also use it with Preact, Vue, Emotion, Theme UI, etc. Both the classic and automatic JSX runtimes are supported.
+  - A sibling comment already mentions a Svelte implementation [1]. So I fail to see how this doesn't open a pandora's box of yet more flavors, this time coupled to frontend frameworks. First in .mdx and then incompatible with .md
+
+- JSX is evidence that new generation of programmers are not taught engineering. There are very valid reasons why we went for encapsulation and **separation of concerns**. JSX throws the baby with the bath water and goes back to PHP5 sites with markup and code interspersed. 
+  - Even authors of JSX cannot make it work reliably in their flagship product. MDX couples JSX with markdown.
+  - I cannot see how this yields maintainable source. 
+  - Sure, spaghetti code is nice for quick, one off scripts, but if you'd volunteer for helpdesk shift to be yelled at rather than fix a bug in 5k SLOC collection of Windows Batch scripts, then maybe you should reconsider mdx.
+
+- Markdown is a really poor storage format. There is quasi-official standard (CommonMark), but since it's feature-poor, people mostly use something else, like GitHub Markdown. Individual apps often extend Markdown in various incompatible ways.
+  - There are better alternatives (e.g. AsciiDoc, but it's specialized towards documentation), but they don't have anything close to the momentum of Markdown.
+
+- Markdown is a late comer to the game, so the better question is - why should books be in Markdown? 
+  - Markdown's biggest (or the only?) advantage compared to binary/XML based formats is sort-of readability in plain text, but that's just not that important for the majority of publishers and readers.
+
+- The point becomes moot(有讨论余地的; 悬而未决的) when your book contains images/illustrations and you (like a normal reader) want to view them within the content. You will use some Markdown formatter/viewer which is again based on browser.
+  - Markdown is just insufficient for any non-trivial document. 
+  - There isn't any standard way to set image size for example. 
+  - There's no standard way to create even rudimentary(基本的, 初步的) tables.
+
+- Something like reStructuredText (.rst) is a similar alternative, but I think that if you're irritated by the limits of Markdown then rST isn't going to be any better. If you really want good formatting options, then LaTeX is the best I can think of at the moment.
+
 - ## 💡 [mdBook – A utility to create modern online books from Markdown files | Hacker News_202004](https://news.ycombinator.com/item?id=22854272)
 - One of the things I love about it is that the toolchain for building and using it is just the Rust standard toolchain, which means no crazy dependency hell to manage. 
   - By comparison I’ve found Jekyll to be a long-term annoyance to keep up-to-date, I’m probably using it wrong. I know.
 
 - I recently switched from Markdown to AsciiDoc.
   - it's more structured, much more fully featured, just two big implementations (AsciiDoc and AsciiDoctor) which are largely compatible. There's only one way to mark the language of a code block, only one way to make lists, only one way to make footnotes, etc. Also it actually has first-class support for things like footnotes and admonitions etc
-  - It is a syntactic sugar layer on the **DocBook** XML format which is apparently used to make actual books. 
-  - But **AsciiDoctor compiles it to everything from DocBook XML to HTML to Markdown to ePub to PDF**.
+  - It is a syntactic sugar layer on the **DocBook** XML format which is apparently used to make actual books. But **AsciiDoctor compiles it to everything from DocBook XML to HTML to Markdown to ePub to PDF**.
   - Another thing I like is that AsciiDoctor actually comes with a good default stylesheet. AsciiDoctor has a good default theme as well as a number of other themes available, and by default will embed the CSS into the HTML so you just have one file to distribute. It even shows anchor links to the headings when you hover over them.
-
-- 
-- 
-- 
-- 
-- 
 
 - ## [Madoko – Write full-blown academic articles in Markdown | Hacker News_201509](https://news.ycombinator.com/item?id=10165395)
 
@@ -164,6 +184,20 @@ modified: 2023-09-19T06:35:28.278Z
 
 - ## 
 
+- ## 💡 [XML is almost always misused | Hacker News](https://news.ycombinator.com/item?id=21391322)
+- I mean, in theory, you could do this in JSON or some other data structure. But you would go insane and be shooting yourself in the head before long.
+- See https://developers.google.com/docs/api/samples/output-json for what Google Docs does - basically **separating markup from the text by using indices**.
+  - which is probably the only way to properly deal with markup and especially commented sections that can span over paragraph start/ends - neither JSON or XML seems to have a proper answer for such annotations and I wonder if there's any standard format that can that, especially if humans still want to reasonable be able to view or edit it
+- **OOXML and its binary equivalents more or less solve this by completely separating paragraph and character formatting, both separately indexing the spans of text they annotate**
+- That is what essentially every WYSIWYG text processor does. And also the reason why getting sane HTML out of text processor is somewhat non-trivial, as the **separately indexed spans can very well overlap, contradict each other or contain completely unnecessary formatting information**.
+
+- I've been getting along fine using JSON for pretty much everything. 
+  - That being said XML has some very sophisticated features like rigorous schema definition, a query language, a formal include syntax, comments (that's a big one), it's a lot easier to do multi-line content and in fact you can mix normal text and structured data. The include syntax doesn't get enough love. It's crazy that JSON doesn't support it.
+
+- ## [The cost of ODF and OOXML | Hacker News](https://news.ycombinator.com/item?id=4032429)
+- TeX doesn't allow separation between markup and presentation very well. 
+  - Something like DocBook with a presentation engine like XSLT might be better, if it wasn't for the verbosity of the XML source.
+
 - ## [AsciiDoc Language Submitted to Eclipse Foundation | Hacker News_202007](https://news.ycombinator.com/item?id=23711607)
 - Most publishers tend to work with more industrial formats like Docbook or DITA, plus there are nice WYSIWYG editors for them.
   - Asciidoc is meant to be semantically and syntactically equivalent (and thus, losslessly round-tripable) to DocBook.
@@ -174,47 +208,6 @@ modified: 2023-09-19T06:35:28.278Z
   - The fundamentals of TeX's typesetting are amazing, but everything else is just bolted on. You'd probably want to rebuild it with its own, custom language, perhaps inspired more by modern XML/markdown rather than the old TeX language.
   - The biggest problem that we're going to have moving past TeX is that it's something of a standard for math representation in text. MathML never _really_ took off. Re-training millions of people skilled in typesetting math is going to be _tough_
 - TeX itself is not really complex. The implementation is fine. The hard part is the ecosystem.
-
-- ## [Today I learned Epub is just HTML/CSS | Hacker News_202104](https://news.ycombinator.com/item?id=26739124)
-
-- You might be surprised to learn just how many files are zip files.
-  - Java software (jar, war): zip files
-  - Android packages (apk): zip files
-  - OpenDocument Format (odt, ods, odp): zip files
-  - Quake 3 / OpenArena / Urban Terror / etc. (pk3): zip files
-  - Firefox/Thunderbird/Chromium extensions (xpi, crx): zip files
-  - EPUB: : D
-  - numpy's npz is also zip.
-- Yeah, it is surprising at first, but after you think about it, maybe not so much. If you need to cram a bunch of files into one package, zip is the obvious candidate. There are well-tested libraries and apps for dealing with zips for essentially every language and operating system.
-
-- It actually goes deeper than that: Epub is basically a specific implementation of DocBook, which is itself a specific XML specification derived from the grand daddy of markup languages SGML.
-
-- It's pretty easy to write code that generates and displays **EPUB2**.
-  - **EPUB3** is a dog's breakfast -- it's hard to think of a better example of "second system effect". As far as I know, **there's still not even one reference implementation that supports the full standard**, even though it's been out for nearly 10 years. 
-  - It gains you very little over EPUB2 for standard novels written in western scripts. 
-  - EPUB3 is only needed if you require embedded scripting, support for non-alphabetical or bidirectional scripts, etc. 
-  - I believe that most commercial "EPUB3" files still have an EPUB2 toc.ncx file and are designed to fall back to EPUB2 if the reader doesn't support EPUB3 (there are a lot of readers like this).
-  - Something that's easy to overlook(忽视): "The mimetype file must be a text document in ASCII that contains the string application/epub+zip. It must also be uncompressed, unencrypted, and the first file in the ZIP archive". What this means in practice is that uncompressing an EPUB is easy (just rename it to .zip, if necessary, and run unzip), but recompressing it requires some care.
-- EPUB 3 Reading Systems may optionally support scripting, which was explicitly discouraged in EPUB 2.
-
-- Epub can do all sort of homecalling / user tracking using HTML or CSS or javascript. 
-  - What's even worse - almost all Epub readers don't do proper sandboxing.
-  - Browsers don't block any homecalling either.
-
-- One of the benefit of EPUB is that text can be reflowed, so the display size doesn't matter much, unlike PDF which sets a specific page size. I'm not sure about the MOBI format, but I assume it has similar features to EPUB?
-  - Mobi is very similar to EPub. It’s almost a 0.9 version of EPub. The main differences are in the container.
-
-- sounds like the kindle format (actually mostly .mobi) is moving towards html/css too
-  - When I checked, years ago, it seemed that .mobi included an embedded EPUB file. 
-  - It's actually always used XHTML. Both .mobi and .epub is based on the Open Ebook format
-
-- Yes it's "just" HTML/CSS, but given the wide range of ePub reader capabilities, it's not like you can just take any web page and put it in an .epub. 
-  - You have be conservative, and use only basic stuff. Also JavaScript is not supported by most ePub readers, so many of the modern web "dynamic" niceties are not available.
-  - For example, rendering math on the web has been a solved problem for many years thanks to MathJax and KaTeX, but these require JS, so cannot be used in ePubs (unless you know the reader supports scripting).
-
-- One of the possible reasons Chromium is a bad for EPUB is its lack of MathML support. But then it's not like all EPUB readers have it, and it's not like MathJax can't be used for rendering.
-- epub supports MathML. are you saying Chrome doesn't support MathML?
-  - Sadly yes. There are solutions such as MathJax, however this is obviously not as nice as having it built into a lower level.
 
 - ## [Write plain text files | Hacker News_202203](https://news.ycombinator.com/item?id=30521545)
 
@@ -299,8 +292,75 @@ modified: 2023-09-19T06:35:28.278Z
 
 - 👉🏻 EPUB doesn't let us set a minimum length. EPUB also doesn't have line-folding glyphs. We are unlikely to release an EPUB or MOBI until they offer some way to deal with this problem.
   - What big tech publishers do to get around this problem is **embed low resolution jpegs** of the source code in their EPUBs. This is a terrible solution and we will not put something out that does this.
+# discuss-wiki/knowledge-base
+- ## 
+
+- ## 
+
+- ## [JSON for Linking Data | Hacker News](https://news.ycombinator.com/item?id=35321493)
+- JSON-LD is an open standard for expressing RDF data as JSON. 
+  - RDF is the most fundamental part of the W3C's Semantic Web and Linked Data projects, which began at the end of the 1990s to make the Web more machine-readable
+- JSON-LD is just a different serialization format for RDF.
+
+- It’s a standard in search of anyone who wants to implement it.
+  - wikidata
+- I want to live in an alternative timeline where RDF was never adopted by wikidata but instead created something that solved its specific problems in a human friendly manner. 
+  - People always point to wikidata as a successful semantic web project but fail to imagine how much more awesome it could have been. 
+  - First off, wikidata has little use for ontologies outside of its own domain because all the types are modeled as dynamic second order concepts. 
+  - Meaning, people organise knowledge using web pages and those webpages are used to structure other knowledge.
+- Wikidata was consciously designed without consideration for the semantic web/rdf. I remember being dismayed by this, but they added some facilities later. It is designed around a purpose built data model
+- Wikidata builds on RDF at its core (the data model behind JSON-LD), and also supports queries with responses in JSON-LD format.
+
+- I used JSON-LD spec because it is preferred by Google, but it requires a lot of duplicate effort of the actual page content. Its almost as if it is designed for sites that use heavy JavaScript frameworks and not for HTML/CSS sites.
+  - Usually the dynamic data would be generated by the server. eg. if you have an eCommerce site, it might update prices, stock remaining, applicable regions, etc. That would then be pulled into Google Shopping or whatever other service might consume it.
+
+- JSON-LD is the reason ActivityPub hasn’t taken off even more. It’s just such a pain to deal with variables that could be URLs or entire object trees. Especially for strongly typed languages, it’s a nightmare.
+  - serializing/de-serializing the data not being difficult, but the problem lies more in how you handle that data down the pipeline after you deserialized it.
+  - after about 4-5 years of trying to implement a clean Go API for processing ActivityPub payloads that the complexity is quite high, at least if you want to build something that can work with more than one client/service.
+
+- Why isn’t semantic web more popular inside companies?
+- Because SemWeb doesn't solve any real problem while create a ton of new ones and uses a complex data model. Any company that would benefit from using graphs will be better served using a simpler and more general graph model and database.
+  - SemWeb is nothing more than stringly typed data with an URI fetish.
+- Because it offers no protection against some team inside the company breaking the whole web by moving to a different URI or refactoring their domain model in incompatible ways. A department pays for some subgraph tailored to their needs and they are not interested in financing this for the whole org.
+
+- 👉🏻 same reason wikis arent, it takes too much effort to maintain and keep it semantic instead of copypasted pile of text
+  - you'd need CMS, CRM, knowledge base, documentation, source control, chat/forum, inventory, point of sale, customer support channels, issues ticketing system, and every other thing interconnected to with each other
+  - do you know of anyone offering this as a complex turn-key integrated solution at a reasonable price?
+- Sounds like an opportunity. In every category you mentioned there are new products released and widely adopted all the time. 
+  - Look at the rise of ClickUp for example in such a crowded space as project management. 
+  - I don't think its too farfetched to one day see a new entrant offering as a key selling point that their api is just a big interoperable graph that you can easily plug your company into...and that's not just GraphQL.
+
+- ## [Show HN: BookStack – An open source wiki platform and alternative to Confluence | Hacker News_202201](https://news.ycombinator.com/item?id=29851834)
+- I remember considering BookStack while looking for a (surprise) replacement for Confluence.
+  - The main thing that led me to stop considering it pretty quickly is precisely the concept of books - I find it both unnecessarily complicated and unnecessarily limiting.
+  - My Org now uses DokuWiki. It has a lot of issues (the prosemirror visual editor is a good start, but in beta and out of development, for example). But it's also the least sucking option I've found. 
+  - Most Wiki software severely screws up the editing experience, which may not be such a good idea when you want to get people to document things. I'm glad Bookstack does this right.
+
+- As a former DokuWiki user (both pro and privately) the biggest issue is when you want to migrate from DokuWiki.
+
+- Mediawiki is page focused, needing a lot of tweaking to make it act like something other than a completely open public page editor. Trying to collect pages is annoying ugly; about the best you can do is with "categories." Mediawiki tries to do too much with document metatags and whatnot. Mediawiki is ugly/outdated looking (IMHO) and requires lots of php config file editing.
+
+- Bookstack has a lot more inherent document organization stuff (ie: books>chapters>pages etc), it's easy as hell to administer, and it looks gorgeous out of the box.
+- On Bookstack you click a link and get a new page instantly. This is nothing like Confluence where you need to wait 5-8 seconds for each page. And no, I will never not shit in Atlassian products until they fix performance.
+
+- 
+- 
+- 
+
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Ask HN: “Git” for Microsoft Office? | Hacker News](https://news.ycombinator.com/item?id=23245552)
+- A couple years back I built this: 
+- https://github.com/tomashubelbauer/modern-office-git-diff /js
+  - It is a pre-commit script which unpacks Office XML into text contents and tracks that alongside the source file. This way you can consider the binary to be a source of truth, but with each commit you also get a textual diff showing what changed content-wise. More or less
+  - This is achieved using a PowerShell script which unpacks the ZIP file to a tracked directory, formats the XML files for nice diff and tracks the formatted files as well.
+
+- An underused feature in MS Word is 'Compare documents' - It's under the Review tab on the ribbon as 'Compare'. It allows you to do a 'diff' style compare on two Word documents - it's invaluable for working out what changed between versions if the place you are working at doesn't have any other document tracking systems.
 
 - ## [Advice: I am planning on self-publishing a very complicated non-fiction book (indexes and endnotes and TONS of images) on two different platforms](https://www.reddit.com/r/selfpublish/comments/nhvtt6/advice_i_am_planning_on_selfpublishing_a_very/)
 - Just wanted to say: the more images you have, the more difficulties you will have getting distributed on the ebook platforms 

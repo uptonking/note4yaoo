@@ -343,8 +343,8 @@ modified: 2023-02-05T18:05:44.122Z
   - [Proposal: Replace OT with CRDTs](https://github.com/hedgedoc/hedgedoc/issues/527)
     - By using y.js we are using CRDTs now.
 
-- https://github.com/FoxUSA/OpenNote /201802/js
-  - OpenNote was built to be an open web-based alternative to Microsoft OneNote (T) and EverNote.
+- https://github.com/FoxUSA/OpenNote /201802/js/inactive
+  - built to be an open web-based alternative to Microsoft OneNote(T) and EverNote.
   - OpenNote is a progressive web application(PWA)/HTML5 offline app, web based text editor/note taking software
 
 - https://github.com/gsantner/markor /apache2/java

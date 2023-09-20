@@ -12,7 +12,13 @@ modified: 2023-05-21T14:54:15.817Z
 # discuss
 - ## 
 
-- ## 
+- ## [WordPress Core to start using SQLite | Hacker News_202307](https://news.ycombinator.com/item?id=36884806)
+- Related - WordPress recently released WordPress Playground
+  - These utilize WebAssembly (php-wasm) and an SQLite database backend to run a whole WordPress instance in the browser or a local Node.js instance.
+
+- Did you consider using the `temporal_tables` extension? I think it's basically like **version history for tables**. 
+  - I haven't used this before personally though. https://pgt.dev/extensions/temporal_tables
+  - Temporal Tables Extension requires PostgreSQL 9.2 or higher.
 
 - ## Announcing Deno KV: A Global Database for Global Apps! Built on FoundationDB and SQLite
 - https://twitter.com/deno_land/status/1651972190965837825

@@ -11,6 +11,10 @@ modified: 2022-06-03T21:34:54.893Z
 
 - 想要分析notion的block架构设计，可以参考clone示例
 
+- 考虑使用epub/docx/docbook这类规范格式存储内容，方便迁移
+  - 支持导入通用格式 markdown/csv
+  - 偏代码的格式可考虑 rdf/json-ld
+
 - resources
   - search: knowledge-base/workspace/wiki
 # notion-like-workspace
@@ -50,9 +54,13 @@ modified: 2022-06-03T21:34:54.893Z
 - logseq /15.9kStar/AGPLv3/202208/clojure/ts
   - https://github.com/logseq/logseq
   - https://logseq.com/
-  - 依赖 clojure
   - A local-first, non-linear, outliner notebook for organizing and sharing your personal knowledge base.
   - A privacy-first, open-source platform for knowledge management and collaboration
+- https://github.com/athensresearch/athens /EPL/Clojure/ts/inactive
+  - https://athensresearch.github.io/athens
+  - open-source, collaborative knowledge graph
+  - athens-export converts your pages to markdown and a logseq-compatible directory.
+  - Built on a graph database, Athens helps map and communicate complex knowledge in complex domains.
 
 - growi /1.1kStar/MIT/202301/ts/remark
   - https://github.com/weseek/growi
@@ -106,11 +114,10 @@ modified: 2022-06-03T21:34:54.893Z
   - https://mintter.com/
   - Mintter is a decentralized knowledge collaboration application for open communities powered by a knowledge graph.
 
-- https://github.com/athensresearch/athens /EPL/Clojure/ts/inactive
-  - https://athensresearch.github.io/athens
-  - open-source, collaborative knowledge graph
-  - athens-export converts your pages to markdown and a logseq-compatible directory.
-  - Built on a graph database, Athens helps map and communicate complex knowledge in complex domains.
+- https://github.com/austinvhuang/openmemex /rust/haskell
+  - local-first knowledge integration platform optimized for automation (including caching and indexing of content) as well as enabling neural network machine learning integrations.
+  - SQLite is the central data storage medium, rather than a collection of markdown documents.
+  - Instead of users manually curating a knowledge graph, data is organized automatically by timestamp.
 # github-wiki-confluence-like
 - MrDoc /2.1kStar/GPL.v3/202208/js/python/仅网页版
   - https://github.com/zmister2016/MrDoc
@@ -126,8 +133,8 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/churichard/notabase
   - https://notabase.io/
   - A personal knowledge base for networked thinking.
-    - 仅支持网页版，可导出
-    - It is inspired by note-taking apps such as Notion, Obsidian, Typora, and Roam Research.
+  - 仅支持网页版，可导出
+  - inspired by note-taking apps such as Notion, Obsidian, Typora, and Roam Research.
   - Notabase uses Supabase as the backend (for authentication, database, and storage), so you'll have to make a Supabase account. 
     - https://github.com/churichard/notabase/blob/main/scripts/schema.sql
 
@@ -295,6 +302,18 @@ modified: 2022-06-03T21:34:54.893Z
 
 - https://github.com/courajs/referent /js
   - An offline-first, realtime-collaborative wiki engine
+# wiki/knowledge-base
+- https://github.com/wikimedia/mediawiki /GPL/php
+  - https://www.mediawiki.org/
+  - open-source wiki software package written in PHP. 
+  - It serves as the platform for Wikipedia and the other Wikimedia projects
+  - feature-rich and extensible, both on-wiki and with hundreds of extensions; 
+  - https://github.com/wbstack/mediawiki /php
+
+- https://github.com/wmde/WikibaseDataModel /php
+  - http://wikiba.se/
+  - PHP implementation of the Wikibase Data Model
+  - It is primarily used by the Wikibase MediaWiki extensions, though has no dependencies whatsoever on these or on MediaWiki itself.
 # workspace built with vscode
 - foam /12.5kStar/MIT/202208/ts/vscode
   - https://github.com/foambubble/foam

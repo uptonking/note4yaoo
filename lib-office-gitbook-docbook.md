@@ -12,12 +12,27 @@ modified: 2023-09-19T07:53:59.349Z
 - 需求分析和优先级
   - 渲染的一致性, pdf/fop
   - 自定义排版, canvas/latex/DonaldKnuth
-  - 导出格式, docx/markdown
+  - 数据导出的格式, docx/markdown
   - 搜索与查询
 
+- 纯文本的缺点
+  - 不方便引用文本块或其他块
+  - 不方便自定义格式，比如内嵌表格、画板
+
 - tips
+  - DocBook is a semantic markup language for doc, 并不是一种具体的文件格式
   - docbook/docx描述了数据模型层， HTML/EPUB/PDF/man-pages描述了视图层，侧重点不同
-  - epub不方便实现编辑
+  - docx大多是单篇文档，而不是整本书，但编辑工具很多，docx/xlsx/pptx都属于ooxml
+  - **epub不方便实现编辑，不适合作为知识库的编辑层，参考sigil将editor分离出去了**
+
+- docbook vs ooxml
+  - docx格式使用广泛得多，docbook格式古老，docx/odf格式新一点
+  - 格式可相互转换
+  - docbook使用类似css的方式设置样式, ooxml使用类似富文本编辑器的方式存储样式
+  - 对大文件的支持
+    - .docx的元数据和样式在多个小文件，但主体内容在document.xml这一个大文件
+    - .epub的元数据和样式在多个小文件，但主体内容在text文件夹下多个小文件
+    - 懒加载、虚拟渲染
 
 - book-formats
   - epub
@@ -44,9 +59,29 @@ modified: 2023-09-19T07:53:59.349Z
   - Adobe Digital Editions uses .epub format for its e-books, with digital rights management (DRM) protection provided through their proprietary ADEPT mechanism.
 
 - resources
-  - [DocBook - Wikipedia](https://en.wikipedia.org/wiki/DocBook)
+  - [Comparison of Office Open XML and OpenDocument - Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Office_Open_XML_and_OpenDocument)
 # blogs
+- 👉🏻 **asciidoc has first class support for blocks and references/attributes**.
+
 - [Lightweight Markup: Markdown, reStructuredText, MediaWiki, AsciiDoc, Org-mode - Hyperpolyglot](https://hyperpolyglot.org/lightweight-markup)
+
+## [DocBook - Wikipedia](https://en.wikipedia.org/wiki/DocBook)
+
+- DocBook is a semantic markup language for technical documentation. 
+- As a semantic language, DocBook enables its users to create document content in a presentation-neutral form that captures the logical structure of the content; 
+  - that content can then be published in a variety of formats, including HTML, XHTML, EPUB, PDF, man pages, WebHelp and HTML Help, without requiring users to make any changes to the source
+- DocBook files are used to prepare output files in a wide variety of formats. 
+  - Nearly always, this is accomplished using DocBook XSL stylesheets. 
+  - These are XSLT stylesheets that transform DocBook documents into a number of formats (HTML, XSL-FO for later conversion into PDF, etc.). 
+  - These stylesheets can be sophisticated enough to generate tables of contents, glossaries, and indexes.
+- Norman Walsh and the DocBook Project development team maintain the key application for producing output from DocBook source documents: A set of XSLT stylesheets (as well as a legacy set of DSSSL stylesheets) that can generate high-quality HTML and print (FO/PDF) output, as well as output in other formats, including RTF, man pages and HTML Help.
+
+- The major features are its fully CSS-based page layout, search of the help content, and a table of contents in collapsible-tree form. 
+
+- 
+- 
+- 
+- 
 
 ## 💡 [Comparison of e-book formats - Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_e-book_formats)
 
@@ -59,6 +94,14 @@ modified: 2023-09-19T07:53:59.349Z
 
 - [Write a Book with Markdown | Hacker News](https://news.ycombinator.com/item?id=36582208)
   - Being built on DocBook is a great insurance policy for Asciidoc, as DocBook has been around approximately forever and opens lots of doors to other XML specifications via XSL or something more sane.
+
+## [EPUB - Wikipedia](https://en.wikipedia.org/wiki/EPUB)
+
+- The .epub or OEBPS format is a technical standard for e-books 
+- The EPUB format has gained some popularity as a vendor-independent XML-based e-book format.
+- The EPUB format is implemented as an archive file consisting of XHTML files carrying the content, along with images and other supporting files. EPUB is the most widely supported vendor-independent XML-based e-book format; that is, it is supported by almost all hardware readers
+- An EPUB file is an archive that contains, in effect, a website. 
+  - It includes HTML files, images, CSS style sheets, and other assets. It also contains metadata.
 # docbook-docs
 
 ## [DocBook: The Definitive Guide - online](https://tdg.docbook.org/)
@@ -91,12 +134,102 @@ modified: 2023-09-19T07:53:59.349Z
 - dita是底层文件格式的方案，word内部也是xml格式，但是没有有人创建word从xml开始的。dita需要专门写dita的工具和工具集，上下游都是厂商去自行设计的。大型航空公司都用dita
 # more
 
-# discuss-epub
+# discuss-ebook/epub
 - ## 
 
 - ## 
 
 - ## 
+
+- ## [Digital books wear out faster than physical books | Hacker News](https://news.ycombinator.com/item?id=33616593)
+- HTML isn't immune from broken backwards compatibility.
+  - The frame element has been completely removed, the hgroup element is gone, and so is the dir element. acronym is deprecated in favour of abbr. isindex, plaintext, xmp, and listing are all dead.
+  - The attributes border, clear, background and bgcolor have all been removed by HTML, and shifted to be CSS' responsibility instead.
+- Just moving between EPUB 2 and EPUB 3, you lose the DAISY format support, and external resources. 
+  - (EPUB2 let you use full URLs to specify parts hosted externally, like webpages, but EPUB3 requires itself to be self-contained. Not a bad change, but still a breaking change.) 
+  - NCX replaces just using a HTML5 nav element, and a few more things.
+
+- ## [Sigil – A free, open-source, multi-platform eBook editor | Hacker News_202008](https://news.ycombinator.com/item?id=24140752)
+- It appears to be largely equivalent to the Calibre editor.
+
+- I prefer markdown -> pandoc -> epub. That way I can use whatever editor I like, and I'm not stuck editing HTML by hand.
+
+- I haven't played much with any of this stuff, but one thing that I'm curious about is what is the advantage of having a container format like this, rather than just having a single giant HTML file (with embedded CSS & data: uri images)?
+  - For editing this would be ridiculous, but for transport and presentation it seems much more compact and useful. It is easy to target as an output format for a variety of tools, without understanding a bunch of quirks of the format. It would be easier to render, since the application has to make all the decisions about where to place content and support reflowing anyway.
+- An .epub is already what you describe; it's a .zip of .xhtml, images, and supporting files you edit directly seen in the sidepanel
+  - An ebook editor just entails helping you edit those .xhtml files in a slightly more domain specific way, generating a few extra files (like table of contents), and producing the distributable zip.
+- One big file is hard to handle. Ereaders choke on them just like the browser does.
+  - They do; probably xhtml/XML is not really an ideal format because it isn't easily linearalizable, but if ereaders are using a reduced set of the functionality, then they can probably safely assume that they can just split the file at a `<p> or <mpb:chapter>` tag without loss of fidelity, and just consider that all style-related content needs to occur in `<head>`.
+- For long books or books containing large images or videos, that giant HTML file would be so gigantic that many e-readers would be slow at loading them or even fall over (the average e-reader doesn’t have a fast CPU or loads of memory).
+  - I also expect data URIs for images would make the HTML file, even if gzipped, larger than the equivalent ePub.
+  - HTML also isn’t good at doing the book-like things such as pagination, tables of content and on-page footnotes.
+
+- What's the value of your tool over using asciidoc tools
+  - It's WYSIWYG, and I can edit existing EPUB files, which is always nifty.
+  - I believe the WYSIWYG part of sigil was forked into PageEdit?
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## [Alexandria: A minimalistic cross-platform eBook reader | Hacker News](https://news.ycombinator.com/item?id=37303960)
+- One fun thing about Calibre is that the library is stored in a SQLite database. So, if you write a wrapper to parse that data, you don’t even need Calibre’s content server running!
+  - I have the library stored on my NAS and am running a fairly simple NodeJS + Express + React web app on my Raspberry Pi that reads the database and provides web access this content.
+- Koreader does awesome stats tracking into a SQLite database of every page you’ve read. You even get a calendar view for months showing what you’ve been reading.
+
+- ## 💡 [Today I learned Epub is just HTML/CSS | Hacker News_202104](https://news.ycombinator.com/item?id=26739124)
+
+- You might be surprised to learn just how many files are zip files.
+  - Java software (jar, war): zip files
+  - Android packages (apk): zip files
+  - OpenDocument Format (odt, ods, odp): zip files
+  - Quake 3 / OpenArena / Urban Terror / etc. (pk3): zip files
+  - Firefox/Thunderbird/Chromium extensions (xpi, crx): zip files
+  - EPUB: 
+  - numpy's npz is also zip.
+- Yeah, it is surprising at first, but after you think about it, maybe not so much. If you need to cram a bunch of files into one package, zip is the obvious candidate. There are well-tested libraries and apps for dealing with zips for essentially every language and operating system.
+
+- It actually goes deeper than that: Epub is basically a specific implementation of DocBook, which is itself a specific XML specification derived from the grand daddy of markup languages SGML.
+
+- 👉🏻 It's pretty easy to write code that generates and displays **EPUB2**.
+  - **EPUB3** is a dog's breakfast -- it's hard to think of a better example of "second system effect". As far as I know, **there's still not even one reference implementation that supports the full standard**, even though it's been out for nearly 10 years. 
+  - It gains you very little over EPUB2 for standard novels written in western scripts. 
+  - **EPUB3 is only needed if you require embedded scripting**, support for non-alphabetical or bidirectional scripts, etc. 
+  - I believe that most commercial "EPUB3" files still have an EPUB2 `toc.ncx` file and are designed to fall back to EPUB2 if the reader doesn't support EPUB3 (there are a lot of readers like this).
+  - Something that's easy to overlook(忽视): "The mimetype file must be a text document in ASCII that contains the string `application/epub+zip`. It must also be uncompressed, unencrypted, and the first file in the ZIP archive". What this means in practice is that **uncompressing an EPUB is easy** (just rename it to .zip, if necessary, and run unzip), but **recompressing it requires some care**.
+- EPUB 3 Reading Systems may optionally support scripting, which was explicitly discouraged in EPUB 2.
+
+- Books should be immutable much like a true real website. Anyone using javascript in a book should not be writing a book. If you're writing javascript then go write an app.
+  - I can see some useful cases. For example, in a computer science book, you could update a caption space that gets its data from the web. This would allow you to display an "obsolete sample code" warning below the examples. When the user is not connected to the internet, you could display "Get online to know code snippet status". And so on.
+  - A better idea: include the "obsolete sample code" warning in the book and ask the user check for the latest practices at a URL also included in the book.
+
+- I've worked on a ePub parser and renderer and the issues you're describing sound pretty familiar.
+  - The three main components of the ePub (aside from the actual pages) are the TOC, the spine(书脊) and the manifest. 
+  - The manifest basically tells you where everything is, the TOC is the table of contents which can link to various pages and the spine gives you the traversal order.
+  - Some mistakes I've seen are using the TOC to traverse the book. Using the spine to traverse the book but not handling hidden pages properly. Not handling two page spread properly.
+  - We ended up writing our own parser because we kept finding issues with the main open source ones.
+
+- Epub can do all sort of homecalling / user tracking using HTML or CSS or javascript. 
+  - What's even worse - almost all Epub readers don't do proper sandboxing.
+  - Browsers don't block any homecalling either.
+
+- One of the benefit of EPUB is that text can be reflowed, so the display size doesn't matter much, unlike PDF which sets a specific page size. I'm not sure about the MOBI format, but I assume it has similar features to EPUB?
+  - Mobi is very similar to EPub. It’s almost a 0.9 version of EPub. The main differences are in the container.
+
+- sounds like the kindle format (actually mostly .mobi) is moving towards html/css too
+  - When I checked, years ago, it seemed that .mobi included an embedded EPUB file. 
+  - It's actually always used XHTML. Both .mobi and .epub is based on the Open Ebook format
+
+- Yes it's "just" HTML/CSS, but given the wide range of ePub reader capabilities, it's not like you can just take any web page and put it in an .epub. 
+  - You have be conservative, and use only basic stuff. Also JavaScript is not supported by most ePub readers, so many of the modern web "dynamic" niceties are not available.
+  - For example, rendering math on the web has been a solved problem for many years thanks to MathJax and KaTeX, but these require JS, so cannot be used in ePubs (unless you know the reader supports scripting).
+
+- One of the possible reasons Chromium is a bad for EPUB is its lack of MathML support. But then it's not like all EPUB readers have it, and it's not like MathJax can't be used for rendering.
+- epub supports MathML. are you saying Chrome doesn't support MathML?
+  - Sadly yes. There are solutions such as MathJax, however this is obviously not as nice as having it built into a lower level.
 # discuss-docbook
 - ## 
 
@@ -106,10 +239,6 @@ modified: 2023-09-19T07:53:59.349Z
 
 - ## [未来有没有可能使用HTML完全替代Word，Latex等文档格式? - 知乎](https://www.zhihu.com/question/479921969)
 - Office的流行，在一定程度上等于把排版的工作转嫁给写作者
-- 
-- 
-- 
-- 
 
 - ## [DocBook 5.1: The Definitive Guide (2020) | Hacker News_202203](https://news.ycombinator.com/item?id=30550354)
 

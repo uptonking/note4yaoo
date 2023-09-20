@@ -41,6 +41,10 @@ modified: 2023-01-09T11:03:32.533Z
 - https://github.com/axa-group/Parsr
   - a minimal-footprint document (image, pdf, docx, eml) cleaning, parsing and extraction toolchain which generates readily available, organized and usable data in JSON, Markdown (MD), CSV/Pandas DF or TXT formats.
 
+- https://github.com/tomashubelbauer/modern-office-git-diff /js
+  - It is a pre-commit script which unpacks Office XML into text contents and tracks that alongside the source file. This way you can consider the binary to be a source of truth, but with each commit you also get a textual diff showing what changed content-wise. More or less
+  - This is achieved using a PowerShell script which unpacks the ZIP file to a tracked directory, formats the XML files for nice diff and tracks the formatted files as well.
+
 - https://github.com/ForNeVeR/ExtDiff /powershell
   - This is a small command line script that will compare two files using Microsoft Word file comparison tool. 
   - Microsoft Word will be started using COM automation.

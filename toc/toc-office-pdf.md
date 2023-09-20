@@ -231,9 +231,8 @@ modified: 2021-01-04T17:26:43.784Z
   - It provides a slick out-of-the-box responsive UI that interacts with the core library to view, annotate and manipulate PDFs that can be embedded into any web project.
 
 - https://github.com/koreader/koreader /lua
+  - http://koreader.rocks/
   - An ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats, running on Cervantes, Kindle, Kobo, PocketBook and Android devices
-  - https://github.com/koreader/koreader-sync-server
-    - koreader is meant for kindle devices. It looks awful on Android.
 # utils
 - https://github.com/YuHuaOu/electron-print
   - 支持直接传PDF、图片的资源地址(将资源地址传到桌面端打印程序的接口中)，完成打印。electron、PDF、PNG

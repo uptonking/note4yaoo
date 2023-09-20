@@ -44,6 +44,11 @@ modified: 2022-11-30T18:56:07.072Z
     - Or it can run using SQLite rather than LevelDB
   - It is modeled after the single-node design of CouchDB 1.x, although it contains some CouchDB 2.x features such as Mango queries.
   - PouchDB Server is much less battle-tested than CouchDB, but it does pass the full PouchDB test suite.
+  - forks
+  - https://github.com/VislaLabs/pouchdb-server
+  - https://github.com/qiaogaojian/contribute_pouchdb-server
+  - https://github.com/grengojbo/pouchdb-server
+  - https://github.com/cognition-app/pouchdb-server
   - https://github.com/gr2m/pouchdb-security
     - fork of pouchdb-security package, fixes pouchdb-server#97
 - https://github.com/gr2m/spawn-pouchdb-server /202103/js
@@ -288,6 +293,12 @@ modified: 2022-11-30T18:56:07.072Z
   - a fake CouchDB server which implements endpoints used in common applications.
   - It does not claim to be use as a regular CouchDB server. 
   - It uses some static data as result for some database requests.
+
+- https://github.com/felixge/node-couchdb /201906/js
+  - A thin node.js idiom based module for CouchDB's REST API that tries to stay close to the metal.
+
+- https://github.com/iriscouch/follow /201709/js
+  - CouchDB changes and db updates notifier for NodeJS
 
 - https://github.com/mikeal/couchup /201307/js
   - A CouchDB implementation on top of levelup.

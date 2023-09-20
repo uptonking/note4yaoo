@@ -157,3 +157,16 @@ modified: 2021-08-30T17:33:20.586Z
 - The WITHOUT ROWID syntax is an optimization. It provides no new capabilities. 
   - Anything that can be done using a WITHOUT ROWID table can also be done in exactly the same way, and exactly the same syntax, using an ordinary rowid table. 
   - The only advantage of a WITHOUT ROWID table is that it can sometimes use less disk space and/or perform a little faster than an ordinary rowid table.
+# [Using the SQLite Online Backup API](https://www.sqlite.org/backup.html)
+- **Historically**, backups (copies) of SQLite databases have been created using the following method:
+  - Establish a shared lock on the database file using the SQLite API (i.e. the shell tool).
+  - Copy the database file using an external tool (for example the unix `cp` utility or the DOS `copy` command).
+  - Relinquish(放弃, 让出) the shared lock on the database file obtained in step 1.
+- This procedure works well in many scenarios and is usually very fast. 
+- However, this technique has the following shortcomings:
+  - Any database clients wishing to write to the database file while a backup is being created must wait until the shared lock is relinquished.
+  - It cannot be used to copy data to or from in-memory databases.
+  - If a power failure or operating system failure occurs while copying the database file, the backup database may be corrupted following system recovery.
+- The Online Backup API was created to address these concerns. 
+- The **online backup API** allows the contents of one database to be copied into another database file, replacing any original contents of the target database. 
+  - The copy operation may be done incrementally, in which case the **source database does not need to be locked for the duration of the copy**, only for the brief periods of time when it is actually being read from  
