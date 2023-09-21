@@ -43,6 +43,17 @@ modified: 2023-08-25T22:31:05.132Z
   - Implementation of peer-to-peer search trees (probabalistic b-trees trees) as used in dolt and noms.
   - It does not have an opinion about how blocks are encoded and hashed.
 
+- https://github.com/fireproof-storage/fireproof /MIT/ts
+  - https://use-fireproof.com/
+  - Live database for the web
+  - Simplify your application state with a live database. Automatically update your UI based on local or remote changes, and optionally integrate with any cloud for replication and sharing.
+  - Fireproof is an embedded JavaScript document database designed to streamline app development. 
+  - Data resides locally, with optional encrypted cloud storage and realtime collaboration. 
+  - Features like live queries, database branches and snapshots, and file attachments make Fireproof ideal for browser-based apps big or small.
+  - Fireproof has a unique take on distributed data integrity, rooted in immutable data and cryptographically verifiable protocols. 
+  - The core Merkle hash-tree clock is based on Alan's Pail
+  - Mikeal wrote the prolly trees implementation.
+
 - https://github.com/versionpress/versionpress /php/ts/inactive
   - https://versionpress.com/
   - a user-friendly versioning solution for WordPress powered by Git

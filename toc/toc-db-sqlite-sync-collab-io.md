@@ -8,7 +8,7 @@ modified: 2022-11-04T14:21:31.365Z
 # toc-db-sqlite-sync-collab-io
 
 # guide
-
+- 参考sqlite+http-range的部分下载示例(sql.js-httpvfs)
 # export/import
 - https://github.com/fitnr/sqlite-json
 

@@ -13,6 +13,8 @@ modified: 2023-01-18T17:04:25.234Z
   - 提供的同步方式偏向于类似文件系统，如google-drive/dropbox
   - 不偏向关系数据库
 
+- 参考sqlite+http-range的部分下载示例(sql.js-httpvfs)
+
 - [remoteStorage Protocol: defines a simple key/value store for apps to save and retrieve data](https://remotestorage.io/protocol/)
 - [remoteStorage Apps](https://remotestorage.io/apps/)
 # popular

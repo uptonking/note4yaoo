@@ -188,7 +188,11 @@ modified: 2023-03-29T17:23:37.126Z
 
 - ## 
 
-- ## 
+- ## [The Fall of Roam | Hacker News_202202](https://news.ycombinator.com/item?id=30320977)
+- This is not the fall of Roam. It is just the usual cycle of note taking apps. 
+  - There was Evernote before, and there was probably even others before. 
+  - And the current trending app is Notion, which will fall at one point too.
+  - The particularity of Roam, is that it was designed for developers, product managers and execs in the tech industry. So its market is pretty small
 
 - ## [为什么现在流行的笔记软件喜欢用clojure来编写？ - 知乎](https://www.zhihu.com/question/469287561)
 - Roam Research 用了 Clojure

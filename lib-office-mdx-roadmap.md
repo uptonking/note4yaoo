@@ -19,7 +19,7 @@ modified: 2021-05-29T14:51:21.929Z
 - [Where MDXjs is different than Markdown](https://github.com/mdx-js/mdx/pull/1039)
 
 - You can’t have random `<` or `{` in text anymore
-  - 需要使用 &lt; 转义字符
+  - 需要使用 `&lt;` 转义字符
 - You can’t have HTML comments anymore
   - use `{/*I'm a comment*/}` , but not `<!--I'm a comment-->`
 - Blocks will be blocks

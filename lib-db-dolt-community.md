@@ -493,6 +493,12 @@ modified: 2023-08-25T21:17:11.979Z
 # discuss-branching/versioning
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Bitemporal History | Hacker News](https://news.ycombinator.com/item?id=26735260)
+
 - ## [Database branching: three-way merge for schema changes | Hacker News](https://news.ycombinator.com/item?id=35716824)
 - Dolt does 3-way merge for both schema and data
 

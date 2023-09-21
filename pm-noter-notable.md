@@ -16,7 +16,7 @@ modified: 2022-12-19T02:01:20.161Z
 - features
   - versioning and branching
   - markdown support
-    - widely used, enterprise-loved
+    - widely used, enterprise-loved(易盈利)
     - text files works well with existing tooling
   - collaboration-ready
   - local first data storage

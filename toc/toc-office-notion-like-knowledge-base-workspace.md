@@ -93,18 +93,25 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/JhinBoard/jhin
   - Next-Gen Collaborative Knowledge Base, A free replacement for Notion & Miro
 
-- https://github.com/aliscie/odoc /rust
+- trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持多端
+  - https://github.com/zadam/trilium
+  - https://github.com/zadam/trilium/wiki/
+  - 依赖 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror5、jsplumb、fancytree、bootstrap
+  - a hierarchical note taking application with focus on building large personal knowledge bases. 
+  - Synchronization with self-hosted sync server
+  - Trilium is provided as either desktop application (Linux and Windows) or web application hosted on your server (Linux). 
+    - Mac OS desktop build is available, but it is unsupported.
+    - If you want to install Trilium on server,currently only recent Chrome and Firefox are supported (tested) browsers.
+  - [Notion like database](https://github.com/zadam/trilium/issues/822)
+
+- https://github.com/aliscie/odoc /rust/ts
   - This app is Notion.so clone, roam research clone and obsidian clone. 
   - The main purpose of this app is not to just clone these note-taking apps but to make an all-in-one Open source note-taking app with automation features.
   - make sure to install zstd llvm, clang and openssl, gcc, rocksdb in order for the desktop app to work (surealdb requirements).
 
-- https://github.com/Requarks/wiki /AGPLv3/js/vue
-  - https://js.wiki/
-  - A modern and powerful wiki app built on Node.js
-
-- https://github.com/slotDumpling/multibility /ts
+- https://github.com/slotDumpling/multibility /ts/协同笔记与PDF批注
   - https://slotdumpling.github.io/multibility/
-  - Collaborative notes and PDF annotations / 协同笔记与PDF批注
+  - Collaborative notes and PDF annotations
 
 - https://github.com/appotry/dootask /php/vue
   - https://www.dootask.com/
@@ -152,17 +159,6 @@ modified: 2022-06-03T21:34:54.893Z
   - 编辑器仅支持简单文本
   - Where applicable, components are uncontrolled by default but can also be controlled, without needing to create any local states.
 
-- trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持多端
-  - https://github.com/zadam/trilium
-  - https://github.com/zadam/trilium/wiki/
-  - 依赖 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror5、jsplumb、fancytree、bootstrap
-  - a hierarchical note taking application with focus on building large personal knowledge bases. 
-  - Synchronization with self-hosted sync server
-  - Trilium is provided as either desktop application (Linux and Windows) or web application hosted on your server (Linux). 
-    - Mac OS desktop build is available, but it is unsupported.
-    - If you want to install Trilium on server,currently only recent Chrome and Firefox are supported (tested) browsers.
-  - [Notion like database](https://github.com/zadam/trilium/issues/822)
-
 - memos /260Star/NALic/202206/ts/go
   - https://github.com/usememos/memos
   - https://usememos.com/
@@ -175,7 +171,7 @@ modified: 2022-06-03T21:34:54.893Z
   - It has no external dependency.
 
 - https://github.com/infobsmi/bsmi-kb
-  - https://kb.bsmi.info/#
+  - https://kb.bsmi.info/
   - 后端依赖 go
   - 样式过于简单
   - 这个项目诞生的原始驱动，是因为对“语雀” 知识库的不满。一直不喜欢语雀的目录，发布流程。
@@ -194,24 +190,6 @@ modified: 2022-06-03T21:34:54.893Z
   - https://ui-test.hedgedoc.org/intro
   - 前端依赖 react、redux-toolkit、codemirror.v6、bootstrap.v4、flowchart.js、markdown-it.v12、katex、vega、i18next、next.v12、react-bootstrap、yjs
   - 支持markdown的分屏预览，一边源码、一边预览，同步滚动
-
-- helpkb /8Star/MIT/202209/js
-  - https://github.com/mrvautin/helpkb
-  - https://docs.helpkb.org/
-  - 后端依赖 express、sequelize、gray-matter
-  - 前端依赖 nextjs、react-bootstrap、react-markdown、sharp处理图片
-  - helpkb is an open-source Next.js knowledge base or FAQ which is super fast, easy to use and quick to develop.
-  - You need a Database for your data. You can use either postgres (recommended), mysql2, mariadb, sqlite3 or mssql.
-
-- openKB /636Star/MIT/202205/js/inactive/view层handlebars/nedb
-  - https://github.com/mrvautin/openKB
-  - https://openkb.markmoffat.com/
-  - 体验和helpkb基本一致
-  - 依赖nedb、express、jquery、lunr、markdown-it
-  - openKB is a Markdown Knowledge base application (FAQ) built with Nodejs and ExpressJS. 
-  - The application uses an embedded database (nedb) by default but can also use a MongoDB server by changing the config
-  - openKB is a search based Knowledge base (FAQ) backed by Lunr.js indexing 
-  - openKB uses the pure Javascript nedb embedded database by default or a MongoDB server.
 
 - monotome /151Star/AGPLv3/202208/js
   - https://github.com/cblgh/monotome
@@ -232,28 +210,9 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/jaredly/local-first /191Star/202104/js/inactive
   - This aims to eventually be a fully-featured solution for managing, syncing, and storing application data, in a way that works offline, and collaboratively.
 
-- https://github.com/Jermolene/TiddlyWiki5
-  - https://tiddlywiki.com/
-  - a unique non-linear notebook for capturing, organising and sharing complex information
-- https://github.com/tiddly-gittly/TidGi-Desktop
-  - 「 太记 」是一个基于「 太微 TiddlyWiki 」的知识管理桌面应用，能保护隐私内容、高级自动化、自动Git云备份、部署为博客，且可通过RESTAPI与Anki等应用连接。
-  - 太微的 NodeJS 版本有无缝的自动保存体验，这是利用 SyncAdaptor 技术（而不是 Saver ）带来的的优势，太记对 NodeJS wiki 有更好的支持，而 TD 主要支持 HTML 版单文件 WIKI，各有优势
-
 - https://github.com/abesamma/oneplaybook /js/inactive
   - https://oneplaybook.app/
   - Oneplaybook app helps you capture, organize and share knowledge better with TiddlyWiki5.
-
-- hamsterbase /158Star/MIT/202211/ts/仅开源sdk
-  - https://github.com/hamsterbase/hamsterbase
-  - https://hamsterbase.com/zh/
-  - 一个本地优先的网页存档应用。 a self-hosted, local-first web archive application.
-  - 本地部署 + 完全离线 + 点对点同步（马上发布了）
-  - 储存、管理和预览 HTML, MHTML and Webarchive 格式的文档。
-  - 对保存的页面进行高亮、批注。
-  - 开源 SDK，目前免费。
-  - Full Text Search
-  - Open source SDK
-  - 推荐使用 SingleFile 保存 html 页面
 
 - Metagraph /19Star/NALic/202205/ts/vue
   - https://github.com/Wizard-wen/Metagraph
@@ -303,6 +262,55 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/courajs/referent /js
   - An offline-first, realtime-collaborative wiki engine
 # wiki/knowledge-base
+- https://github.com/Jermolene/TiddlyWiki5
+  - https://tiddlywiki.com/
+  - a unique non-linear notebook for capturing, organising and sharing complex information
+- https://github.com/tiddly-gittly/TidGi-Desktop
+  - 「 太记 」是一个基于「 太微 TiddlyWiki 」的知识管理桌面应用，能保护隐私内容、高级自动化、自动Git云备份、部署为博客，且可通过RESTAPI与Anki等应用连接。
+  - 太微的 NodeJS 版本有无缝的自动保存体验，这是利用 SyncAdaptor 技术（而不是 Saver ）带来的的优势，太记对 NodeJS wiki 有更好的支持，而 TD 主要支持 HTML 版单文件 WIKI，各有优势
+
+- helpkb /8Star/MIT/202209/js
+  - https://github.com/mrvautin/helpkb
+  - https://docs.helpkb.org/
+  - 后端依赖 express、sequelize、gray-matter
+  - 前端依赖 nextjs、react-bootstrap、react-markdown、sharp处理图片
+  - helpkb is an open-source Next.js knowledge base or FAQ which is super fast, easy to use and quick to develop.
+  - You need a Database for your data. You can use either postgres (recommended), mysql2, mariadb, sqlite3 or mssql.
+
+- openKB /636Star/MIT/202205/js/inactive/view层handlebars/nedb
+  - https://github.com/mrvautin/openKB
+  - https://openkb.markmoffat.com/
+  - 体验和helpkb基本一致
+  - 依赖nedb、express、jquery、lunr、markdown-it
+  - openKB is a Markdown Knowledge base application (FAQ) built with Nodejs and ExpressJS. 
+  - The application uses an embedded database (nedb) by default but can also use a MongoDB server by changing the config
+  - openKB is a search based Knowledge base (FAQ) backed by Lunr.js indexing 
+  - openKB uses the pure Javascript nedb embedded database by default or a MongoDB server.
+
+- hamsterbase /158Star/MIT/202211/ts/仅开源sdk
+  - https://github.com/hamsterbase/hamsterbase
+  - https://hamsterbase.com/zh/
+  - 一个本地优先的网页存档应用。 a self-hosted, local-first web archive application.
+  - 本地部署 + 完全离线 + 点对点同步（马上发布了）
+  - 储存、管理和预览 HTML, MHTML and Webarchive 格式的文档。
+  - 对保存的页面进行高亮、批注。
+  - 开源 SDK，目前免费。
+  - Full Text Search
+  - Open source SDK
+  - 推荐使用 SingleFile 保存 html 页面
+
+- https://github.com/Requarks/wiki /AGPLv3/js/vue
+  - https://js.wiki/
+  - A modern and powerful wiki app built on Node.js
+
+- https://github.com/ryanlelek/Raneto /202208/js
+  - https://docs.raneto.com/
+  - Markdown powered Knowledgebase Wiki for Node.js
+  - 比较典型的问答型知识库
+  - Raneto is a "flat file" CMS, meaning no database problems, no MySQL queries, nothing.
+  - Full-text search powered by Lunr
+  - [Raneto – Markdown Knowledgebase Platform | Hacker News_201707](https://news.ycombinator.com/item?id=14839371)
+
 - https://github.com/wikimedia/mediawiki /GPL/php
   - https://www.mediawiki.org/
   - open-source wiki software package written in PHP. 
@@ -314,6 +322,29 @@ modified: 2022-06-03T21:34:54.893Z
   - http://wikiba.se/
   - PHP implementation of the Wikibase Data Model
   - It is primarily used by the Wikibase MediaWiki extensions, though has no dependencies whatsoever on these or on MediaWiki itself.
+
+- https://github.com/dokuwiki/dokuwiki /GPL/php
+  - http://www.dokuwiki.org/
+  - a simple to use and highly versatile Open Source wiki software that doesn't require a database
+  - Built in access controls and authentication connectors make DokuWiki especially useful in the enterprise context 
+
+- https://github.com/BookStackApp/BookStack /php
+  - https://www.bookstackapp.com/
+  - A platform to create documentation/wiki content built with PHP & Laravel
+
+- https://github.com/Alamantus/FeatherWiki /js
+  - https://codeberg.org/Alamantus/FeatherWiki
+  - Feather Wiki is a lightning fast infinitely extensible tool for creating personal non-linear notebooks, databases, and wikis that is entirely self-contained, runs in your browser, and is only 55 kilobytes. 
+  - The app and all of the content you create using it are **stored within the single HTML file** generated when you save your wiki. 
+  - Publishing your content is as simple as uploading that file to a web server, and **updating is as simple as overwriting the file**.
+  - Tiddlyhost is a free hosting platform that offers the ability to save your Feather Wiki directly instead of needing to download a copy!
+  - [Feather Wiki: app for creating personal non-linear notebooks, databases, wikis | Hacker News_202205](https://news.ycombinator.com/item?id=31474062)
+
+- https://github.com/xwiki/xwiki-platform /java
+  - XWiki Platform is a generic wiki platform offering runtime services for applications built on top of it.
+  - XWiki Commons, XWiki Rendering, and XWiki Platform are part of the XWiki.org software forge. They are released together and share the same version.
+  - Over 600 extensions: applications, macros, skins, plugins, themes, etc.
+  - Learn about XWiki's concept and why it's an alternative to Confluence and MediaWiki
 # workspace built with vscode
 - foam /12.5kStar/MIT/202208/ts/vscode
   - https://github.com/foambubble/foam
@@ -361,6 +392,13 @@ modified: 2022-06-03T21:34:54.893Z
   - go基于向量数据库与GPT3.5的通用本地知识库方案
 - https://github.com/GanymedeNil/document.ai
   - 基于向量数据库与GPT3.5的通用本地知识库方案
+# wikipedia
+- https://github.com/segfall/static-wiki /js
+  - http://static.wiki/
+  - read-only wikipedia using just static files.
+  - 2MB of CSS, JS, WASM; one 43GB SQLite file.
+  - A proof-of-concept inspired and enabled by Hosting SQLite Databases on Github Pages and the ensuing Hacker News post. 
+  - [Show HN: Static.wiki – read-only Wikipedia using a 43GB SQLite file | Hacker News_202107](https://news.ycombinator.com/item?id=28012829)
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

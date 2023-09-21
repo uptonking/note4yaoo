@@ -40,7 +40,6 @@ modified: 2022-08-21T10:12:02.964Z
 # discuss
 - ## 
 
-
 - ## Have we talked about sub-documents?
 - https://twitter.com/blaine/status/1409611697157918728
   - Long story short, we have recursive logic in atjson to render atjson documents that are embedded in annotations. Useful for lots of things; e.g., comments can be fully annotated/formatted, tombstones of deleted text can contain the full deleted text (including formatting, etc)
@@ -100,7 +99,7 @@ modified: 2022-08-21T10:12:02.964Z
   - JOE uses smart pointers to the edit buffer. Each pointer has the address of the header and a memory pointer to the data page (which is always swapped in if there is a pointer to it). The software virtual memory system has a reference count on each page. Each pointer holds a reference on the data page it's pointing to. If there is no pointer to a page, the reference count is zero, so it can be swapped out.
   - The other purpose of the smart pointers is automatically stick to the text they are pointing to, even through insert and delete operations. So if you insert at one point in the file, any pointers to further locations are updated (including line number, byte offset, column number and memory offset).
 
-- ## [Writing Software to Last 50 Years | Hacker News_202001](https://news.ycombinator.com/item?id=22042186)
+- ## 📝 [Writing Software to Last 50 Years | Hacker News_202001](https://news.ycombinator.com/item?id=22042186)
 - Text files are king! I store every single byte I can in text files. Examples:
   - Tabular data     : TSV   (almost all Un*x/GNU tools handle this out of the box)
   - Simple "records" : GNU Recutils format (https://www.gnu.org/software/recutils/)

@@ -27,6 +27,8 @@ modified: 2023-09-07T15:58:04.082Z
 - who is using #hypercore
   - Tradle
 
+- 将git自动生成的.git文件夹改为自定义database，将snapshot改为crdt-changes，似乎可以实现支持时间旅行和协作合并的新工具
+
 - 选择与比较
   - data model
   - mutable

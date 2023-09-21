@@ -20,15 +20,6 @@ modified: 2022-04-05T10:08:25.947Z
 - not-yet-基于crdt实现text文本协作的问题
   - 对不同分支的文档在相同位置粘贴相同的文本时，crdt会保留重复的文本
 
-- ref
-  - [Comparison of CRDT Libraries - hyoo/automerge/yjs](https://github.com/hyoo-ru/crowd.hyoo.ru?tab=readme-ov-file#comparison-of-crdt-libraries)
-  - [crdt Code (Implementations)](https://crdt.tech/implementations)
-  - https://github.com/alangibson/awesome-crdt
-  - [Alternatives · ElectricSQL](https://electric-sql.com/docs/reference/alternatives)
-  - [CRDTs for Non Academics - YouTube](https://www.youtube.com/watch?v=vBU70EjwGfw)
-  - https://github.com/doodlewind/crdt-and-local-first
-  - https://github.com/topics/crdt?l=typescript&o=desc&s=updated
-
 - crdt-text
   - 能不能将协作的粒度从字符提升为句子
   - 或者crdt-text-by-lines, still sequence crdt，参考typewriter-quill
@@ -38,8 +29,20 @@ modified: 2022-04-05T10:08:25.947Z
     - 💡 db很可能只是持久化的位置，计算逻辑仍发生在内存，计算逻辑中的crdt可复用
   - js-db: rxdb, tinybase
 
+- versions
+  - 将git自动生成的.git文件夹改为自定义database，将snapshot改为crdt-changes，似乎可以实现支持时间旅行和协作合并的新工具
+
 - tips
   - 不必执着于hlc的使用案例，可对成熟案例在业务逻辑不变的情况下将其他clock替换成hlc
+
+- resources
+  - [Comparison of CRDT Libraries - hyoo/automerge/yjs](https://github.com/hyoo-ru/crowd.hyoo.ru?tab=readme-ov-file#comparison-of-crdt-libraries)
+  - [crdt Code (Implementations)](https://crdt.tech/implementations)
+  - https://github.com/alangibson/awesome-crdt
+  - [Alternatives · ElectricSQL](https://electric-sql.com/docs/reference/alternatives)
+  - [CRDTs for Non Academics - YouTube](https://www.youtube.com/watch?v=vBU70EjwGfw)
+  - https://github.com/doodlewind/crdt-and-local-first
+  - https://github.com/topics/crdt?l=typescript&o=desc&s=updated
 # popular
 - https://github.com/pubuzhixing8/awesome-collaboration
   - Collaborative editing of technical resources, article translation

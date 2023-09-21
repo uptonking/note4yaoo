@@ -19,27 +19,35 @@ modified: 2023-09-19T07:53:59.349Z
   - 不方便引用文本块或其他块
   - 不方便自定义格式，比如内嵌表格、画板
 
+- 文件格式的实现可理解为数据库序列化导出的一种场景
+
 - tips
   - DocBook is a semantic markup language for doc, 并不是一种具体的文件格式
   - docbook/docx描述了数据模型层， HTML/EPUB/PDF/man-pages描述了视图层，侧重点不同
   - docx大多是单篇文档，而不是整本书，但编辑工具很多，docx/xlsx/pptx都属于ooxml
   - **epub不方便实现编辑，不适合作为知识库的编辑层，参考sigil将editor分离出去了**
 
+- 结合纯文本编辑和数据库同步的方案
+  - 分离文本的方案使用非常广泛，如ooxml/epub/textbundle，常用来处理只读/读多写少的场景
+  - 参考git，文本文件更新由用户编辑，commit更新数据由git生成并放在`.git`文件夹
+    - `markdown + database`的方案也可以有类似实现，但也会与类似git的工具绑定
+
 - docbook vs ooxml
   - docx格式使用广泛得多，docbook格式古老，docx/odf格式新一点
   - 格式可相互转换
   - docbook使用类似css的方式设置样式, ooxml使用类似富文本编辑器的方式存储样式
   - 对大文件的支持
-    - .docx的元数据和样式在多个小文件，但主体内容在document.xml这一个大文件
-    - .epub的元数据和样式在多个小文件，但主体内容在text文件夹下多个小文件
+    - .docx的元数据和样式在多个小文件，但主体内容在`document.xml`这一个大文件
+    - .epub的元数据和样式在多个小文件，但主体内容在text文件夹下多个`.xhtml`小文件
     - 懒加载、虚拟渲染
 
-- book-formats
+- book-formats，只读/readonly的工具较多
   - epub
   - docbook
   - markdown/asciidoc/reStructuredText-sphinx
   - gnu-texinfo
   - emacs-orgmode
+  - wikipedia zim: 高压缩，适合只读
   - O'Reilly HTMLBook Specification: rarely
 
 - who is using #markdown-markup

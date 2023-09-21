@@ -10,6 +10,7 @@ modified: 2023-01-17T19:13:01.845Z
 # guide
 - 考虑到客户端升级的问题
   - 同步前一定要检查一个version，参考indexeddb upgrade
+  - 参考sqlite+http-range的部分下载示例(sql.js-httpvfs)
 # sync-examples
 - verdant/lo-fi /7Star/MIT/202211/ts
   - https://github.com/a-type/verdant

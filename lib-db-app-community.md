@@ -12,7 +12,8 @@ modified: 2023-09-16T17:54:11.257Z
 # discuss
 - ## 
 
-- ## 
+- ## [Ask HN: Why are we so fragmented in databases options? | Hacker News_202210](https://news.ycombinator.com/item?id=33345464)
+- Relational databases have dominated since the 1980s. 
 
 - ## this is an excellent lecture on the history of DB, 
 - https://twitter.com/mim_djo/status/1632318627142852610

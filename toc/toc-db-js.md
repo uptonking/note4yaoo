@@ -354,7 +354,7 @@ modified: 2022-11-25T15:50:48.226Z
 
 - https://github.com/syamdanda/jsonbase
   - A database software completely built as JSON files in backend
-# db-distributed-collab
+# db-distributed
 - orbit-db /7.4kStar/MIT/202301/js
   - https://github.com/orbitdb/orbitdb
   - OrbitDB is a serverless, distributed, peer-to-peer database. 
@@ -417,13 +417,20 @@ modified: 2022-11-25T15:50:48.226Z
   - An algorithm to optimize database queries that run multiple times
   - 提供了使用示例，包括minimongo、nedb、pouchdb
   - EventReduce only works with queries that have a predictable sort-order for any given documents. (you can make any query predicable by adding the primary key as last sort parameter)
-# more-db-js
+# rewrite-db
 - https://github.com/ciochetta/learndb /24Star/202101/js/mongodb
   - my first attempt at creating my own database from scratch.
   - I will not be doing a SQL database, instead, I will follow his steps but try to create a document database, like MongoDB
+
+- https://github.com/weinberg/SQLToy /js/sql-db/NoDeps
+  - https://github.com/weinberg/SQLToy/wiki
+  - SQLToy is an in-memory SQL database written in Javascript. 
+  - It is under 500 lines of code and has zero dependencies.
+  - [Show HN: SQLToy – a tiny relational database for learning SQL via code | Hacker News_202111](https://news.ycombinator.com/item?id=29385432)
 
 - https://github.com/codemix/ts-sql
   - a SQL database implemented purely in TypeScript type annotations.
 
 - https://github.com/leoafarias/neardb /ts/inactive
   - Simple document db made for infinitely scalable globally distributed reads.
+# more-db-js

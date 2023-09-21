@@ -18,7 +18,10 @@ Symbol('a') === Symbol('a'); //false
 
 - ## 
 
-- ## 
+- ## TIL that this is correct syntax and that `finally` runs after the `return` of the function
+- https://twitter.com/alexdotjs/status/1704472735219339585
+  - https://twitter.com/ryanjhunter/status/1704767415228448948
+- You can even `return false` in the finally block and change the return value after the fact.
 
 - ## setTimeout using an AbortController and Promise
 - https://twitter.com/rikschennink/status/1691417576868380674

@@ -22,7 +22,7 @@ modified: 2023-09-17T17:50:49.932Z
 
 - ## 
 
-- ## [Athens Research (YC W21) – Open-Source Roam Research | Hacker News_202103](https://news.ycombinator.com/item?id=26316793)
+- ## 💡 [Athens Research (YC W21) – Open-Source Roam Research | Hacker News_202103](https://news.ycombinator.com/item?id=26316793)
 - My only real reservation is that files are not in Markdown.
 - 👉🏻 The current **major difference between markdown-based and db-based apps is block references**. Over time, the difference will become significant as knowledge bases grow in size.
   - CSV -> Excel -> SQL -> Distributed Cloud DBs

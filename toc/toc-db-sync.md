@@ -12,6 +12,7 @@ modified: 2022-11-25T15:41:47.534Z
 
 - 支持offline的架构
   - 还可以考虑使用多级缓存，不一定全量数据库，类似react-query + indexeddb
+  - 参考sqlite+http-range的部分下载示例(sql.js-httpvfs)
 
 - sync-protocols
   - sync/collab/local-first

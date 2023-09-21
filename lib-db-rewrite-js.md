@@ -9,6 +9,11 @@ modified: 2022-11-27T19:20:02.987Z
 
 # guide
 
+- https://github.com/weinberg/SQLToy /js/NoDeps
+  - https://github.com/weinberg/SQLToy/wiki
+  - SQLToy is an in-memory SQL database written in Javascript. 
+  - It is under 500 lines of code and has zero dependencies.
+  - [Show HN: SQLToy – a tiny relational database for learning SQL via code | Hacker News_202111](https://news.ycombinator.com/item?id=29385432)
 # [Creating a database from scratch with Node.js](https://dev.to/ciochetta/creating-a-database-from-scratch-with-node-js-4dmk)
 - https://github.com/ciochetta/learndb /24Star/202101/js/mongodb
   - https://github.com/ciochetta/testing-luisdb
