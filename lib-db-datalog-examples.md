@@ -24,6 +24,65 @@ modified: 2023-09-16T17:28:29.873Z
   - Fireproof has a unique take on distributed data integrity, rooted in immutable data and cryptographically verifiable protocols. 
   - The core Merkle hash-tree clock is based on Alan's Pail
   - Mikeal wrote the prolly trees implementation.
+# query-datalog
+- datomic-alternative
+  - clojure: datascript, xtdb, datahike, datalevin
+
+- https://github.com/d4hines/datalog-ts
+  - A tiny (<100 LOC), toy implementation of Datalog in Typescript
+  - https://github.com/stopachka/datalogJS /js
+
+- https://github.com/smallhelm/level-fact-base /js
+  - Store immutable "facts" in level and query them with datalog.
+  - level-fact-base is inspired by Datomic. Also check out datascript.
+
+- https://github.com/ccorcos/datalog-prototype /ts
+  - This is a full-stack prototype of collaborate web application backed by a Datalog-inspired database.
+
+- https://github.com/datalogui/datalog /ts
+  - An implementation of Datalog with a focus on managing UIs & UI state.
+  - Differential updates. Only run queries on the differences in data. Don't run the query on everything every time.
+  - Run queries on the results of your queries. It's queries all the way down.
+  - Works with React.
+
+- https://github.com/alexwarth/roomdb /js
+  - a Datalog-style database inspired by the implementation of the Dynamicland project. 
+  - It enables programmers to represent facts using natural language, with a syntax adapted from my `NL-Datalog` project.
+
+- https://github.com/rust-lang/datafrog /rust
+  - a lightweight Datalog engine intended to be embedded in other Rust programs.
+  - https://github.com/frankmcsherry/datafrog
+    - [A relatively simple Datalog engine in Rust](https://github.com/frankmcsherry/blog/blob/master/posts/2018-05-19.md)
+    - In this post we will build up a relatively concise Datalog engine: DataFrog.
+    - One of the design goals is that simple or not, there should be little enough in the way of someone coming to understand how it all works
+    - [A relatively simple Datalog engine | Hacker News_201805](https://news.ycombinator.com/item?id=17107527)
+
+- https://github.com/vilterp/datalog-ts /ts
+  - a datalog interpreter in typescript
+
+- https://github.com/the-kenny/hellschreiber /rust
+  - Experiments in writing a SQLite backed database similar to Datomic.
+
+- https://github.com/knowsys/nemo /rust
+  - a datalog-based rule engine for fast and scalable analytic data processing in memory.
+  - Nemo's data model aims at compatibility with RDF/SPARQL while preserving established logic programming conventions and features.
+  - Rules: datalog dialect with support for existential rules (tuple-generating dependencies), stratified negation, and datatypes (including numeric comparison and arithmetic functions)
+
+- https://github.com/ekzhang/crepe /rust
+  - Datalog compiler embedded in Rust as a procedural macro
+  - a library that allows you to write declarative logic programs in Rust, with a Datalog-like syntax. 
+  - It provides a procedural macro that generates efficient, safe code and interoperates seamlessly with Rust programs.
+
+- https://github.com/wernsey/Jatalog /java
+  - a Datalog implementation in Java. 
+  - It provides a parser for the language and an evaluation engine to execute queries that can be embedded into larger applications.
+  - The engine implements semi-naive, bottom-up evaluation.
+  - It implements stratified negation; Technically, it implements the Stratified Datalog¬ language[ceri].
+  - It can parse and evaluate Datalog programs from files and Strings (actually anything that implements java.io. Reader).
+  - It implements "=", "<>" (alternatively "!="), "<", "<=", ">" and ">=" as built-in predicates.
+  - It avoids third party dependencies.
+  - The class Shell implements a REPL command-line interface.
+  - I remember that doing the stratified negation was quite complex and I won't be able to explain it of the top of my head anymore.
 # datalog-db
 - https://github.com/cozodb/cozo /MPLv2/rust
   - https://cozodb.org/
@@ -31,6 +90,7 @@ modified: 2023-09-16T17:28:29.873Z
   - a general-purpose, transactional, relational database that uses Datalog for query, is embeddable but can also handle huge amounts of data and concurrency, and focuses on graph data and algorithms. 
   - It supports time travel and it is performant!
   - you can run a complete CozoDB instance in your browser with wasm
+  - [Show HN: Cozo – new Graph DB with Datalog, embedded like SQLite | Hacker News_202211](https://news.ycombinator.com/item?id=33518320)
 
 - https://github.com/KnowledgeGarden/java-unidu-pire /apache2/java
   - [PIRE: An extensible IR engine based on probabilistic Datalog](https://www.researchgate.net/publication/225246464_PIRE_An_extensible_IR_engine_based_on_probabilistic_Datalog)
@@ -39,6 +99,28 @@ modified: 2023-09-16T17:28:29.873Z
   - we updated it to jdk 1.8 and tweaked the code a bit to move tests out of the core code. 
   - It is functional. 
   - Runs on several RDBMS platforms (not postgres) using config files.
+
+- https://github.com/sqwishy/owoof /rust
+  - A program for querying and modifying information in a datalog-like format backed by SQLite.
+  - A glorified query-builder inspired by Datomic that uses a datalog-like format for querying and modifying information around a SQLite database.
+  - This is a pet project and probably shouldn't be used for anything serious.
+
+- https://github.com/mozilla/mentat /rust/inactive
+  - https://mozilla.github.io/mentat/
+  - A persistent, relational store inspired by Datomic and DataScript
+  - Mentat is intended to be a flexible relational (not key-value, not document-oriented) store that makes it easy to describe, grow, and reuse your domain schema.
+  - Just like DataScript, Mentat speaks Datalog for querying and takes additions and retractions as input to a transaction.
+  - Unlike DataScript, Mentat exposes free-text indexing, **thanks to SQLite**.
+  - Mentat was designed for embedding, initially in an experimental Electron app 
+  - Mentat uses partial indices, which are available in SQLite 3.8.0 and higher
+  - forks
+  - https://github.com/qpdb/mentat
+
+- https://github.com/leostera/pachadb /rust
+  - an embeddable, immutable, graph, edge database.
+  - edge database means you can run it on edge providers like Cloudflare
+  - graph database means that the data in Pacha is stored as tiny little facts that form a huge graph of knowledge(entity-relation-values)
+  - Pacha uses Datalog instead of SQL for queries. Since the data in Pacha forms a Graph, Datalog is a much easier way to query for it.
 
 - https://github.com/tonsky/datascript /EPLv1/clojure
   - An immutable in-memory database and Datalog query engine in Clojure and ClojureScript.
@@ -76,7 +158,23 @@ modified: 2023-09-16T17:28:29.873Z
   - a fast, reactive client-side triple-store for handling global state in ClojureScript apps. 
   - It is inspired by Datomic and DataScript and works in conjunction with Reagent.
 # examples
-
+- https://github.com/ekzhang/percival /MIT/rust/ts/svelte
+  - https://percival.ink/
+  - Percival is a declarative data query and visualization language. 
+  - It provides a reactive, web-based notebook environment for exploring complex datasets, producing interactive graphics, and sharing results.
+  - Percival combines the flexibility of Datalog as a query language for relational data with the beauty of exploratory visualization grammars.
 # utils
+- https://github.com/austinbirch/reactive-entity /clojure
+  - A reactive version of DataScript’s d/entity API for your Reagent components.
+  - This library allows you to use a reactive version of DataScript entities directly in your Reagent components, re-rendering those components only when the exact attributes they depend on are updated.
 
+## rules
+
+- https://github.com/cerner/clara-rules /clojure
+  - a forward-chaining rules engine written in Clojure(Script) with Java interoperability. 
+  - It aims to simplify code with a developer-centric approach to expert systems. 
+
+- https://github.com/oakes/odoyle-rules /clojure
+  - A rules engine for Clojure(Script)
+  - O'Doyle stores data in id-attribute-value tuples like [::player ::health 10] whereas Clara (by default) uses Clojure records
 # more

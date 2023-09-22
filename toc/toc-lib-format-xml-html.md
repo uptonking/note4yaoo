@@ -44,4 +44,10 @@ modified: 2023-09-19T07:24:15.040Z
   - This library is using tagged template strings to create streaming response bodies on the fly, using no special template syntax and giving you the full power of JS for composition.
 # utils
 
+## html
+
+- https://github.com/wkhtmltopdf/wkhtmltopdf /cpp/inactive
+  - https://wkhtmltopdf.org/
+  - wkhtmltopdf and wkhtmltoimage are command line tools to render HTML into PDF and various image formats using the QT Webkit rendering engine. 
+  - These run entirely "headless" and do not require a display or display service.
 # more

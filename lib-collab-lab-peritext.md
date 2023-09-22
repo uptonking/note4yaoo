@@ -246,6 +246,16 @@ I’m surprised there is not much CRDT literature/projects for dealing with rich
 
 - ## 
 
+- ## ✨ [CRDT-richtext: Rust implementation of Peritext and Fugue | Hacker News_202305](https://news.ycombinator.com/item?id=35988046)
+- I'm happy to see even further performance improvements towards rich-text CRDTs but at this point, I think the barrier to adoption isn't speed or compactness but instead integration with existing backends and databases.
+  - I have a hunch that we're reinventing the wheel by creating new B-Tree implementations in Rust when we could be figuring out how to make an existing database do the hard work of storing and retrieving characters in the correct order. 
+  - I know Martin Kleppmann has looked at Datalog being a potential solution to this problem but until we have a good full-stack solution to collaborative text editing, I don't think we'll see major adoption of these CRDT solutions.
+- I agree that full stack support is the missing pice that's need to make use explode. But I do think the current implementations will get there.
+  - Also most general purpose CRDTs are a combination of JSON and XML like data structures, it's useful to be able to query the structures in your database. For example if you build a notes app that supports inline tags, it's useful to be able to query and index those from within the XML like structure without having to dump the whole thing out at another layer of your stack.
+
+- 
+- 
+
 - ## 🆚️ yjs vs peritext
 - https://news.ycombinator.com/item?id=29328431
 - They way I see it there are two (or maybe more of a spectrum of) types of CRDT, from generic and to domain specific. 

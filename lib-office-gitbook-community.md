@@ -182,7 +182,25 @@ modified: 2023-09-19T06:35:28.278Z
 # discuss-format
 - ## 
 
-- ## 
+- ## [What if OpenDocument used SQLite? (2014) | Hacker News_202309](https://news.ycombinator.com/item?id=37553574)
+- The problem with SQLite is that it's not a standardized file format. 
+  - It's well-documented and pretty well understood for sure, but there's no ISO standard defining how to interpret an SQLite file in excruciating detail. 
+  - Same goes for competing implementations, Zip and XML have a much smaller API surface than SQLite, whose API, apart from a bunch of C functions, is the SQL language itself. 
+  - Writing an XML parser is not a trivial task, but it's still simpler than writing an SQL parser, query optimizer, compiler, bytecode VM, full-text search engine, and whatever else Sqlite offers, without any data corruption in the process. 
+  - If Open Office used SQLite, its programmers would inevitably start using its more esoteric features and writing queries that a less-capable engine wouldn't be able to optimize too well.
+- This isn't a concern for most software. If you're writing a domain-specific, closed-source application where interoperability with other apps or ISO standardization isn't a concern, SQLite is a perfectly fine file format, but as far as I understand the situation, those concerns did exist for Open Office.
+
+- Good article. Although one thing I do like about OpenDocument being just a bunch of XML files in a ZIP archive is that it is fairly easy to generate documents like spreadsheets without using a (potentially hefty) library which knows about the document format.
+  - Doing this with SQLite would be possible of course, just a tad more complex and with a lower development speed. Being able to fire up the office suite, create a template document, and just dig into its XML files in the saved file is a nice feature (although admittedly of niche interest).
+
+- The advantages of XML, specifically, a human-readable format; really only work for small files when the design of the schema is optimized for readable XML. 
+  - Unfortunately, the need to always rewrite the entire XML file, and the "complexities" that come with lots and lots of features will quickly erode XML's biggest advantages.
+
+- Engineering is all about tradeoffs: SQLite is optimized for quick incremental updates where you don't need to rewrite the whole file. Zip & xml aren't. (IE, if you decide to add a letter to a word at the beginning of a document, with zip & XML you have to rewrite the whole document. SQLite can make a minor change without the whole rewrite.)
+
+- 
+- 
+- 
 
 - ## 💡 [XML is almost always misused | Hacker News](https://news.ycombinator.com/item?id=21391322)
 - I mean, in theory, you could do this in JSON or some other data structure. But you would go insane and be shooting yourself in the head before long.
@@ -292,7 +310,6 @@ modified: 2023-09-19T06:35:28.278Z
 
 - 👉🏻 EPUB doesn't let us set a minimum length. EPUB also doesn't have line-folding glyphs. We are unlikely to release an EPUB or MOBI until they offer some way to deal with this problem.
   - What big tech publishers do to get around this problem is **embed low resolution jpegs** of the source code in their EPUBs. This is a terrible solution and we will not put something out that does this.
-
 # discuss
 - ## 
 

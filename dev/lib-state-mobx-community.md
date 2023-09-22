@@ -14,7 +14,14 @@ modified: 2023-04-07T03:10:33.378Z
 
 - ## 
 
-- ## 
+- ## The world converges to 2015's #MobX reactivity system in the end
+- https://twitter.com/mweststrate/status/1704870011850887589
+  - in turn inspired by Meteor Tracker & Knockout. But the object model, and semantic guarantees (topological sorting of deps, strict separation between observables, derivations and effects, sync push dirty state + lazy value pull, transactions), where all introduced then iirc
+
+- Incremental computation and FRP have been around for ages, we’re all reinventing/remixing stuff from decades ago. None of the JS frameworks really invented the core concepts at play here. That’s fine! Each JS framework adds their own take and helps the field move forward.
+  - Yeah it is not a complaint :) Frameworks will do it better as they have more lowlevel control which MobX doesn't have over React. But the convergence in propagation semantics is very interesting.
+
+- i think propagation semantics is still changing though, Ember/Starbeam/Signia are all using a variation on deferred notification and logical clocks rather than pushing "dirty" events
 
 - ## 💡 mobx-react vs signal
 - https://twitter.com/mweststrate/status/1628893187665285127

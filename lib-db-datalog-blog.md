@@ -29,3 +29,8 @@ modified: 2023-09-16T17:27:59.262Z
 
 - [A closer look at {{roam/render}}_202102](https://www.zsolt.blog/2021/02/a-closer-look-at-roamrender.html)
 # more
+- [MiniLitelog: Easy Breezy SQLite Datalog](https://www.philipzucker.com/tiny-sqlite-datalog/)
+  - This blog post about is about a very lightweight encoding of datalog to SQLite.
+
+- [（三）Datalog和程序分析 - 知乎](https://zhuanlan.zhihu.com/p/581748024)
+  - 基本语法简介

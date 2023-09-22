@@ -147,7 +147,13 @@ state1.state.deniz = 11; // nothing
 # discuss
 - ## 
 
-- ## 
+- ## 💡 svelte doing signals now @trueadm I’m curious about the underlying reactivity graph. 
+- https://twitter.com/jitl/status/1704570937465520149
+  - How does change propagation work? How much is “push” vs “pull”?
+- **We only push notifications to effects to mark them as possibly dirty, everything is pull and on-demand to avoid extra work**
+- .
+- Do you use logical clocks? Any pointer to the implementation source?
+- I like reading the different approaches in this space, curious to see what Svelte uses. The problem w/ your algo is it MUST notify the tree of each write synchronously, and reading values during notify will result in incorrect values
 
 - ## Ok what are signals? I literally have no idea
 - https://twitter.com/BenLesh/status/1637751668577038339

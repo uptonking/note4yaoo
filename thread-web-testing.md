@@ -14,14 +14,39 @@ modified: 2021-08-28T11:49:05.730Z
 - 单独的顶层文件夹
   - prosemirror
   - tiptap
+  - java
 
 - 单独的src下文件夹
   - lexical
   - vscode
 
 - 和源码放在一起
+  - rust
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## You're testing the business logic of your database-backed application. 
+- https://twitter.com/gunnarmorling/status/1705025130953580799
+  - For your DAOs (if you have any), do you mock them (e.g. with Mockito), manually create fake implementations (e.g. based on collections), or keep them as-is (e.g. using Testcontainers to spin up a DB)?
+
+- I avoid mocks. I try to implement the complex business logic in a functional style. If it heavily relies on the database I use a real database most often with Testcontainers
+  - +1. with spring boot + postgresql I run tests on real database. one should not ignore existing data and it’s impact in test suite.
+
+- All. 
+  - Mocks for simple unit tests which test all the code flows combinations.
+  - Integration tests with real db to check the main flows end to end. 
+  - Testcontainers for something in between. Or when it is hard to make the mocks.
+
+- IMHO the coolest thing about using Event Sourcing is exactly this: you have a write model with your business rules. 
+  - And all you have to write to your database: events. 
+  - So unit tests for your model (persistence agnostic) and integration/ e2e tests for the whole thing.
+
+- Depends what do you need to test. If it is a DAO containing query and logic I will go for an integration test with these container
+- Started with mocks, found that there are too many edge cases that get missed. Switched to an in-memory fake implementation that is fast and simulates the DB layer well enough to catch any serialization issues. Integration smoke tests that hit each API with real payload.
 
 - ## 将本地开发的 localhost:3000 映射到一个具体网址(还要带 https)有什么办法
 - https://twitter.com/vikingmute/status/1694539022125949393

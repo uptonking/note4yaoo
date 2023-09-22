@@ -20,6 +20,24 @@ modified: 2021-08-10T03:51:01.891Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## So much of SaaS is: build an API to wrap your database so that I can parse the JSON and put it into my own database
+- https://twitter.com/_swanson/status/1704703441338053020
+
+- [Skip the API, Ship Your Database · The Fly Blog](https://fly.io/blog/skip-the-api/)
+
+- And then send me a request when it changes so I can re-request it.
+
+- JSON being a terrible transport format with it's 5 data types.
+  - I think you’re forgetting null!
+- [Steampipe | `select * from cloud;`](https://steampipe.io/)
+- It's all strings over the network.
+- and this is how a database schema becomes the API schema
+- I dubbed this “enterprise crud”
+
 - ## Without any subjective, measurable, and agreed on goals and metrics, striving for "clean code" is a waste of time. 
 - https://twitter.com/gunnarmorling/status/1690685859140411394
   - People will just go forth and back pushing through their favorite patterns and idioms, without creating much value along the way.

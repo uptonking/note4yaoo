@@ -11,9 +11,25 @@ modified: 2021-09-10T14:15:55.903Z
 
 - ## 
 
-- ## 
+- ## 在 apple store 发布了一个使用 react-native + nodejs 开发的项目，审核一次通过。_202309
+- https://twitter.com/hamsterbase/status/1705027776624124315
+  - 使用了 hamsterbase docker 版的源码，直接在 iPad 里启动了一个 nodejs 服务器。 
+  - 服务器启动后，再通过 webview 访问本地服务器。
 
-- ## 
+- ## 在 iOS 中，React Native 还是非常受欢迎的开发工具，App Store 中 前 100 个饮食类应用中：
+- https://twitter.com/vikingmute/status/1705036795594055829
+  * 30个是 React Native 写的
+  * 9 个是 Cordova 写的
+  * 1 个是 Flutter 写的
+  * 其余的应该是原生
+- 对RN和Flutter都比较熟悉，这个结果的一个可能原因是RN出来更早，技术选型一旦确定就很少/难会切换到其它竞品，迁移成本太高。
+- uniapp，已上架苹果，安卓，小程序和 H5 版
+- 建议体验下Expo（http://docs.expo.dev ）和Flutter的例子，都各有优劣。
+  - 如果是小项目我建议flutter，各端的一致性非常好，RN有时候需要android ios微调。
+  - 大项目还是RN，flutter我个人觉得可读性很差
+
+- 关键因素是生态，RN的生态比Flutter好多了，不用各种重复造轮子。
+  - js功不可没
 
 - ## Give me your best one-line explanation of why React Native's new renderer "Fabric" is better than the old one "Paper".
 - https://twitter.com/jamonholmgren/status/1595530569580179457

@@ -102,6 +102,12 @@ modified: 2021-08-30T18:56:14.863Z
 # sql-utils
 - https://github.com/fibo/SQL92-JSON
   - can stringify a JSON into an SQL and viceversa parse an SQL and serialize it into a JSON
+
+- https://github.com/turbot/steampipe /go
+  - https://steampipe.io/
+  - Use SQL to instantly query your cloud services (AWS, Azure, GCP and more). Open source CLI. 
+  - No DB required.
+  - Use SQL to instantly query your cloud services (AWS, Azure, GCP and more). Open source CLI. No DB required.
 # sql-parser
 - https://github.com/DTStack/dt-sql-parser /ts
   - SQL Parsers for BigData, built with antlr4.
