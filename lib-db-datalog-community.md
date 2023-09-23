@@ -17,27 +17,100 @@ modified: 2023-09-16T17:27:42.089Z
 - ## 
 
 - ## 
+# discuss-sql-cte
+- ## 
 
 - ## 
+
+- ## 
+
+- ## 👉🏻 [SQLite now allows multiple recursive SELECT statements in a single recursive CTE | Hacker News_202010](https://news.ycombinator.com/item?id=24843643)
+
+- 🤔 **Anyone have a recommended resource for understanding the practical application of recursive CTEs / Graph DBs**?
+  - Look for a good reference about handling trees in SQL. There are a number of books on the whole area, and many smaller more focused articles online.
+  - The most common place I've encountered recursive CTEs being massively useful in real world work is working with company responsibility & reporting hierarchies (line management, regulatory supervision, "spans of control" reporting, ...) where there is not a fixed number of levels.
+  - When there are a small and fixed number of levels (for instance every drone has a supervisor and senior supervisor and you don't monitor connections above that) there are often other solutions that people find easier to understand and/or perform faster but for deeper trees or those where the level structure is any less static, recursive CTEs are a godsend.
+  - Other examples include nested taxonomies (nature, book or other publication filing, nested tags for categorisation), properly threaded discussion records, family trees (though these are graphs rather than trees unless you impose some strict limits on what you count), representing file-system like structures in the DB, ...
+  - Graphs get tricker (trees are a subset of graphs) as you may need to consider multiple paths to the same node, infinite loops, and other complications, so I suggest looking into trees first then expending your research.
+- The most common example for graphs in DBs would be a graph representing the friends/contacts of users. It's one of these "you'll know when you need it" solutions.
+  - Sometimes your data structure is a graph, and sometimes you want that graph to live in a database.
+  - And in even rarer cases you want to search that graph in your database in some recursive manner.
+- Recursive Common Table Expressions (CTE) are hard to understand until you've worked through at least one real-world example. 
+  - The SQLite documentation on the `WITH` Clause has a couple of simple examples for an Org Chart and a Family; both represent **hierarchical data structures**.
+  - The Fossil discussion involves the SCM's representation of a File System, probably the most common hierarchical data structure we regularly encounter. 
+- Hierarchical data structures are notoriously hard in SQL. 
+  - **Recursive CTEs are not easy but they are useful and efficient for hierarchical data**.
+
+- In the past I used recursive CTEs in Postgres to calculate the BOM of a product. Products consisted of "parts", and each "part" had a cost and could consist of any number of other "parts" (subassemblies). This was for a homemade ERP resembling software.
+
+- A graph database usually means you’re storing the graph nodes and edges as entities, so you can traverse the graph easily from any direction, and express different kinds of relationships.
+
+- One application not mention in this thread is to traverse trees, like in the old forums where you had many levels of categories/subcategories. AKA hierarchical query. SQLite already has support for this[0]. It seems they are supporting multiple selects now.
+
+- This means you can use SQLite as a graph database.
+- why do we want to use SQLite as one
+  - Because SQLite is ubiquitous. It's simply everywhere. And it doesn't need a dedicated server to run.
+  - another good reason is that it's probably going to be the most reliable, best tested part of any stack you decide to use.
+
+- While you can use recursive common table expressions to perform graph queries, **certain queries like breadth-first traversal are not very efficient for anything but trees** (not even DAGs). 
+- Still cannot use window functions in recursive queries, e.g. select row_number() over () to enumerate and distinguish paths along the edges of a graph. This works in PostgreSQL, but is an error in SQLite, just tested with preview 3.34.0 2020-10-20. This greatly diminishes the utility of graph querying because only (nearly) trivial queries don't drag window functions into them.
+
+- Doesn't the graph database community have something better to offer? I would assume by default that anything involving graphs should not involve SQL.
+  - That would be a questionable assumption. SQL databases are a widely tested tool, and SQL itself can allow you to augment your "graph" with constraints and semantics that many graph-focused systems have trouble with. CTE's, while not entirely trivial, are not overly complex; they're not something you'd spend "hours" debugging.
+
+- SQL has a knack(技巧；诀窍) for doing really easy things well, and moderately complicated things badly. I would assume by default that anything involving graphs should not involve SQL
+  - A schema may have only one, or anyway, comparatively very few instances, of recursion.
+  - In this case, using two separate data stores would be too much overhead; if the CTE doesn't do anything particularly fancy, that is, if it just retrieves records recursively associated via keys, it's not implicitly hard to debug (actually, there isn't much to debug).
+  - A point in case is GitLab's users management, which dropped MySQL also because of the lack of CTEs (at the time).
+
+- Some of the early RDF Graph Stores were indeed based on SQL databases (Jena RDB/SDB) but you're correct in that they didn't scale particularly well.
+  - There are pure graph stores out there, AllegroGraph, OpenLink Virtuoso (although this is a strange hybrid of SQL + Graph technologies) and others - and for more advanced graph query constructs like path finding there are optimisations that are difficult/not well supported in SQL.
+
+- use of a well known and mature SQL database is no bad starting point.
+
+- Yes why not? If you have a data model where parts of the data is graph-like, and other classic relational, why would you not want to store the entire thing in the same database?
+  - SQL is an implementation of relational algebra, and databases that implement it are relational databases for storing relational data.
 # discuss
 - ## 
 
-- ## 
+- ## [RDFox uses datalog to apply inference rules to graph data, it has some state of ... | Hacker News](https://news.ycombinator.com/item?id=21666872)
+- RDFox uses datalog to apply inference rules to graph data, it has some state of the art algorithms for making datalog multi-core. It still uses SparQL, which is really similar to datalog for querying. There's some recent work on horizontally scaling datalog queries, but I hadn't seen anything in production.
+  - Probably the most popular implementation is datomic and its free variants. Which has a lot of convenience to it as you can embed custom java functions.
+  - It's not datalog but cypher has a lot of amazing ideas like easily combining algorithms to potentially recursive relationship queries, eg, "Give me the all shortest paths between these two peoples where there's at most 6 hops" -> allShortestPaths((n1: Person)-[*..6]->(n2: Person)) .
+- I work on Crux, which is also a Java-friendly Datalog database. It sits on top of lazy EAV indexes in RocksDB/LMDB so it's pretty fast and scales well (though technologies like Neo4j/GraphBLAS will be faster!).
+  - We don't have online REPL just yet but Nextjournal is pretty great if you want to play through the tutorials interactively [1]. The other unique angle is that Crux gives you "bitemporal" Datalog queries
 
-- ## 
+- ## [Datalevin is good, but its more useful in the same realm as sqlite | Hacker News](https://news.ycombinator.com/item?id=31127793)
+- Not exactly. My goal of developing Datalevin is to replace our use of both Datomic and Postgres, so we have a single DB. 
+- The aim is to provide a versatile(多用途的，多功能的) database that meets data needs of most use cases.
+- I mention Sqlite in README because I have not finished the query engine rewrite of Datalevin, so the query performance is not up to my standard of being competitive with relational databases for large data sets. 
+  - However, even at the current state, Datalevin is already faster than the alternative Datalog stores in the Clojure world for the most part.
+- Finally, since you seems to want to go into this space, I will mention that: **without some new tricks in query algorithms, triple stores would be always slower than standard relational DBs**. 
+  - This is not a solved problem. 
+  - Just be aware what you are getting yourself into.
 
-- ## 
-
-- ## [You could theoretically use Datalog anywhere you're currently using a SELECT SQL... | Hacker News](https://news.ycombinator.com/item?id=33809062)
+- ## [Soufflé: A Datalog Synthesis Tool for Static Analysis | Hacker News_202211](https://news.ycombinator.com/item?id=33806419)
 - You could theoretically use Datalog anywhere you're currently using a SELECT SQL statement - it's a declarative way to produce a set of tuples given some existing sets of tuples.
-  - But, Datalog is much better at deductive reasoning compared to SQL. There's a great interactive tutorial here: https://percival.ink/. 
+  - But, Datalog is much better at deductive(推论的，演绎的) reasoning compared to SQL. There's a great interactive tutorial here: https://percival.ink/. 
   - To see how Datalog and SQL can be equivalent, I have a build of percival.ink that transforms simpler queries to SQLite
 - I've also worked on percival a bit, it compiles (transpiles?) the datalog ast into javascript code on demand and executes it to get the results
 - Depending on what you mean, I'd say datalog is partially characterized as compared to prolog by it's lack of unification (also it's typically executed bottom up and sometimes considered to not have compound terms). 
   - Unification is roughly bidirectional pattern matching whereas datalog rules are in essence performing unidirectional pattern matching / query on a database.
 
 - **You can do "deductive" reasoning in SQL too, via views and possibly-recursive CTE's**.
-  - Sure; you can do most Datalog things in SQL and most SQL things in Datalog. But I find it much clearer to express deductive reasoning in Datalog. I built a toy Datalog-to-CTE compiler 
+  - Sure; you can do most Datalog things in SQL and most SQL things in Datalog. But I find it much clearer to express deductive reasoning in Datalog. I built a toy Datalog-to-CTE compiler
+
+- Datalog is a formalism like relational algebra but additionally supports recursion.
+  - So it can roughly play the role of SQL. Compiler writers have used it to query their symbol tables and identify patterns for example (seems to be the origin of Soufflé, "static analysis").
+- I believe the reemergence of datalog is at least in part due to compute and memory being more plentiful so it is more affordable and practical to use a declarative query language. A lot of databases (or the part that is relevant for answering a particular query) comfortably fits in a single machine's memory and an expressive query language is fun to use. There is also an incremental evaluation story.
+  - Another potential reason is that the logical data model makes it easy to represent any kind of data without schema changes and such.
+- A lot of programs end up either doing SQL or something SQL-like. There are therefore many applications of such datalog like languages.
+- In many places where people use custom "rule languages" they could use datalog instead. (edited: typo & rule languages)
+- As I understand, implicit joins are another selling point
+
+- Souffle Datalog is used for defining program analyses in such projects like Doop  for Java and cclyzer++ for LLVM.
+  - GitHub's CodeQL is another Datalog dialect used for detecting bugs and vulnerabilities.
+  - Datomic is a database that uses Datalog as the query language.
 
 - ## [I dream of a SQLite-like embeddable database engine based on Datomic’s data mode... | Hacker News](https://news.ycombinator.com/item?id=32251654)
 - I dream of a SQLite-like embeddable database engine based on Datomic’s data model and queryable with Datalog. 
@@ -127,7 +200,7 @@ modified: 2023-09-16T17:27:42.089Z
   - These two goals are somewhat at odds with each other, as for queries with lots of joins (very common in graph computations), you can't know whether it's better to compute new results incrementally or to recompute everything until you actually run the query. 
   - Also, Cozo caters for the exploratory phase of data analysis (no need to define types/tables beforehand), whereas in differential-datalog everything must be explicit upfront.
 
-- I thought there was a big class of queries Datalog could not express -- something about negation, queries like "all X for which not Y". Is that not true? Or if it is, is Datalog somehow Turing complete nonetheless?
+- **I thought there was a big class of queries Datalog could not express** -- something about negation, queries like "all X for which not Y". Is that not true? Or if it is, is Datalog somehow Turing complete nonetheless?
   - Technically, Cozo is using something called "Datalog with stratified negation, stratified aggregation, and function symbols", allowing aggregations to be auto-recursive when they form a semi-lattice, together with built-in algorithms which are black boxes taking in relations and giving you back another relation. Your example is taken care of by the "stratified negation" part. I believe "Datalog with function symbols" is already Turing complete, but you are right, what they call "Datalog" without any qualification in academic papers is not.
 
 - What's the max practical graph sizes you anticipate?
@@ -138,6 +211,20 @@ modified: 2023-09-16T17:27:42.089Z
 
 - I like the design choices of Datalog for the query language and Relations for the data model. 
   - This contrasts with the typical choices made for graph databases where the word graph seems to make **links** a mandatory query and representation tool.
+
+- 🆚️ You mention how Cypher is not much of an improvement over CTE in SQL, I was wondering if you could expand on this point a bit if possible?
+  - Some part of me is considering using Apache AGE graph extension for postgres, but another part wonders whether it's worth it considering CTE's can do a lot very similarly.
+- Perhaps I should start by clarifying that I am talking about the number of queries the Cypher language can express, without any vendor-specific extensions, since my consideration was whether to use it as the query language for my own database. And **Cypher is of course much more convenient to _type_ than SQL for expressing graph traversals** - it was built for that.
+  - With that understanding, **any cypher pattern can be translated into a series of joins and projections in SQL**, and **any recursive query in cypher can be translated into a recursive CTE**. 
+  - Theoretically, SQL with recursive CTE is not Turing complete (unless you also add in window functions in recursive CTE, which I don't think any of the Cypher databases currently provide), whereas Datalog with function symbol is. 
+  - Practically, you can easily write a shortest path query in pure Datalog without recourse to built-in algorithms, and at least in Cozo it executes essentially as a variant of Dijkstra's algorithm. 
+  - I'm not sure I can do that in Cypher. I don't think it is doable.
+- Otherwise the thing I have noticed **with the datalog (as well as prolog) syntax, is you are able to build a vocabulary of re-usable queries, in a much more usable was than any of the solutions I've seen in SQL**, or other similar languages.
+  - It thus allows you to raise your level of abstraction, by layer by layer define your definitions (or "classes" if you will) with well crafted queries, that can be used for further refined classifying queries.
+- Re Datalog syntax: yes, the "composability" is the main reason that I decided to adopt it as the query language. This is also the reason why we made storing query results back into the database very easy (no pre-declaration of "tables" necessary) so that intermediate results can be materialized in the database at will and be used by multiple subsequent queries.
+
+- 
+- 
 
 - ## [Ideas for DataScript 2 | Hacker News_202208](https://news.ycombinator.com/item?id=32447636)
 - **Reactive updates** is the big one, in my opinion. 
@@ -229,12 +316,84 @@ modified: 2023-09-16T17:27:42.089Z
 - 
 - 
 
-# discuss-solutions
+# discuss-graph-db
 - ## 
 
 - ## 
 
+- ## [Postgres as a graph database | Hacker News](https://news.ycombinator.com/item?id=35386948)
+- I designed and maintain several graph benchmarks in the Linked Data Benchmark Council, including workloads aimed for databases. We make no restrictions on implementations, they can any query language like Cypher, SQL, etc.
+  - In our last benchmark aimed at analytical systems [2], we found that SQL queries using WITH RECURSIVE can work for expressing reachability and even weighted shortest path queries. However, formulating an efficient algorithm yields very complex SQL queries [3] and their execution requires a system with a sophisticated optimizer such as Umbra developed at TU Munich [4]. Industry SQL systems are not yet at this level but they may attain that sometime in the future.
+  - **Another direction to include graph queries in SQL is the upcoming SQL/PGQ (Property Graph Queries) extension**. I'm involved in a project at CWI Amsterdam to incorporate this language into DuckDB [5].
+
+- 
+- 
+- 
+
+- ## [PageRank algorithm for graph databases | Hacker News_202301](https://news.ycombinator.com/item?id=34577832)
+- is there a good "graph layer" for SQLite? I understand that graph databases use specific data structures to optimize for graph queries instead of row-oriented but sometimes you need something in the middle: representing graphs and doing basic queries.
+- It's nearly a decade old at this point and probably not optimal even for the time, so there may be better approaches, but here's a few basic algorithms on SQLite. PageRank is at the bottom.
+- Common graph databases are network-based for scaling purposes. You do have a database server then you talk to the server somehow for the queries. Sqlite is a single-file database. You do not have a server so you do not need an extra layer in database side.
+  - Instead, Run the graph algorithms on a stringified json stored as a text in sqlite. They will be running in some process in anyway.
+
+- 
+- 
+- 
+
+# discuss-datomic
 - ## 
+
+- ## 
+
+- ## [Datomic is Free | Hacker News_202304](https://news.ycombinator.com/item?id=35727967)
+- 
+- 
+
+- Although it is true that "time traveling" queries are relatively rare for production needs, the basic architecture supports things that many applications really need:
+  - It is possible to make queries against the database PLUS additional data not yet added, that is, "what if" queries
+  - Having a stable database-as-value is really useful for paginating results; you don't have to worry about new values being inserted into your results during execution, the way you do with traditional databases no longer how long (minutes, hours, even days) you take to traverse the data
+  - Reified(物体化；具体化) transactions makes it possible to store extra data with each transaction, trivially, such as who made the update and why
+  - Immutability is amazing for caching at all layers
+
+- 
+- 
+- 
+
+# discuss-alternatives-datalog/datomic
+- ## 
+
+- ## 
+
+- ## [Tree structure query with PostgreSQL | Hacker News](https://news.ycombinator.com/item?id=9111362)
+- Recursive CTEs are a cool feature, but it's a shame the syntax is so awful. You really have to work to understand what the query is trying to do.
+- Other query languages that make recursion much more bearable are SPARQL (on RDF data), Cypher (Neo4j) or Datalog (Datomic, Cascalog, etc). 
+
+
+- ## 🆚️ [Can you elaborate on "datalog queries blows SQL out of the water"? | Hacker News](https://news.ycombinator.com/item?id=13058399)
+- 🤔 at my company we're heavy users of Datomic
+  - Declarative and pattern matching make it elegant to read.
+  - Syntax more appropriate for code generation and introspection (since it's just a bunch of nested lists). A big plus when pairing w/ Clojure.
+  - Allows recursive queries.
+  - You can reference metadata associated to any transaction that ever touched any attribute in your database within the same query constructs.
+  - You can easily query the entire history of records.
+  - You can easily execute a query against how your database looked like months ago using as-of
+
+- 🤔 I'd be interested to know if anyone has compared Datalog and Neo4j/Cypher.
+- Neo4j focuses on modeling nodes and it's relationships, and allows you to attach metadata to the later, but doesn't really have transactions as first-class objects.
+  - Datomic focuses on modeling facts (entity-attribute-value). This is a very stable data representation that allows modelling tables, documents or graphs, on top of carrying transaction explicitly on an additional index for the time-travel magic.
+  - I guess Neo4j might make a good DB for ETL-ing into and running certain kinds of analysis.
+- **Cypher doesn't have named queries** (and thus not recursive ditto either), AFAIK. 
+
+- [Composeability is front and center in GQL, so you may want to consider it. | Hacker News](https://news.ycombinator.com/item?id=22872470)
+  - Cypher is by far the biggest graph query language and they seem to have the most weight in the conversation so far, but we are going to try to represent datalog as far as possible. 
+  - Even if woql isn't the end result, we think datalog it is the best basis for graph query so we'll keep banging the drum (especially as most people realize that composability is so important)
+
+- ## [Graph query languages: Cypher vs. Gremlin vs. nGQL | Hacker News_202003](https://news.ycombinator.com/item?id=22482665)
+- Datalog is such a delight to use especially since queries are just data structures are just code. 
+  - Once the basics clicked I felt empowered to do anything in Datalog, while I feel like I always have to learn or remind myself of more syntax when I want to do anything fancy with SQL.
+
+- I agree that SPARQL must be considered, and so must Datalog and Prolog. Idk but I'm starting to believe that new-fangled standardization efforts (if you want to call those that) are starting over from scratch and actively avoid looking at prior art as a generation thing.
+  - Though I could see **why someone wouldn't like SPARQL and RDF**, with its bulk reuse of other W3C and TBL concepts such as URLs, resulting in atom and predicate names verbosely and pointlessly beginning with "http://".
 
 - ## [Why isn't differential dataflow more popular? | Hacker News_202101](https://news.ycombinator.com/item?id=25867693)
 - disclaimer: I work at Materialize and I work with Differential regularly

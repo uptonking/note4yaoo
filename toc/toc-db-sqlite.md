@@ -107,6 +107,20 @@ modified: 2021-08-30T18:56:18.632Z
 - https://github.com/inloop/sqlite-viewer
   - View SQLite file online
 # db-powered-by-sqlite
+- https://github.com/dpapathanasiou/simple-graph /sql
+  - This is a simple graph database in SQLite, inspired by "SQLite as a document database"
+  - The schema consists of just two structures: Nodes(json) and Edges({id:json})
+  - There are also traversal function templates as native SQLite Common Table Expressions which produce lists of identifiers or return all objects along the path.
+  - [SQLite as a document database_202006](https://dgl.cx/2020/06/sqlite-json-support)
+  - [SQLite as a Document Database | Hacker News_202011](https://news.ycombinator.com/item?id=25226260)
+
+- https://github.com/thenorthbay/doculite /ts
+  - Use SQLite as a Document Database
+  - DocuLite lets you use SQLite like Firebase Firestore. 
+  - It's written in Typescript and an adapter on top of sqlite3 and sqlite. 
+  - It support listeners on documents, collections, and basic queries.
+  - [Show HN: Doculite – Use SQLite as a Document Database | Hacker News_202308](https://news.ycombinator.com/item?id=37040359)
+
 - https://github.com/rqlite/rqlite /go
   - distributed relational database built on SQLite
   - https://github.com/rqlite/rqlite-js

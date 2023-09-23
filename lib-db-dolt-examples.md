@@ -233,7 +233,7 @@ modified: 2023-08-25T22:31:05.132Z
   - https://github.com/atek-cloud/edword
     - A peer-to-peer text editor built on Hypercore's new multiwriter Autobase.
 
-- https://github.com/RecallGraph/RecallGraph /202104/js/inactive
+- https://github.com/RecallGraph/RecallGraph /apache2/202104/js/inactive
   - https://recallgraph.tech/
   - a versioned-graph data store - it retains all changes that its data (vertices and edges) have gone through to reach their current state. 
   - It supports point-in-time graph traversals, letting the user query any past state of the graph just as easily as the present.

@@ -196,7 +196,7 @@ modified: 2023-09-19T06:35:28.278Z
 - The advantages of XML, specifically, a human-readable format; really only work for small files when the design of the schema is optimized for readable XML. 
   - Unfortunately, the need to always rewrite the entire XML file, and the "complexities" that come with lots and lots of features will quickly erode XML's biggest advantages.
 
-- Engineering is all about tradeoffs: SQLite is optimized for quick incremental updates where you don't need to rewrite the whole file. Zip & xml aren't. (IE, if you decide to add a letter to a word at the beginning of a document, with zip & XML you have to rewrite the whole document. SQLite can make a minor change without the whole rewrite.)
+- 👉🏻 Engineering is all about **tradeoffs**: **SQLite is optimized for quick incremental updates where you don't need to rewrite the whole file**. **Zip & xml aren't**. (IE, if you decide to add a letter to a word at the beginning of a document, with zip & XML you have to rewrite the whole document. SQLite can make a minor change without the whole rewrite.)
 
 - 
 - 

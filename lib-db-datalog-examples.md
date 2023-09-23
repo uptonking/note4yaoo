@@ -14,6 +14,13 @@ modified: 2023-09-16T17:28:29.873Z
   - https://github.com/simongray/clojure-graph-resources
     - a curated list of mostly mature and/or actively developed Clojure resources relevant for dealing with graph-like data
 # popular
+- https://github.com/datalogui/datalog /110Star/MIT/202206/ts/inactive
+  - https://datalogui.dev/
+  - An implementation of Datalog with a focus on managing UIs & UI state.
+  - Differential updates. Only run queries on the differences in data. Don't run the query on everything every time.
+  - Run queries on the results of your queries. It's queries all the way down.
+  - Works with React.
+
 - https://github.com/fireproof-storage/fireproof /MIT/ts
   - https://use-fireproof.com/
   - Live database for the web
@@ -24,6 +31,12 @@ modified: 2023-09-16T17:28:29.873Z
   - Fireproof has a unique take on distributed data integrity, rooted in immutable data and cryptographically verifiable protocols. 
   - The core Merkle hash-tree clock is based on Alan's Pail
   - Mikeal wrote the prolly trees implementation.
+
+- https://github.com/dpapathanasiou/simple-graph /sql
+  - This is a simple graph database in SQLite, inspired by "SQLite as a document database"
+  - The schema consists of just two structures: Nodes(json) and Edges({id:json})
+  - There are also traversal function templates as native SQLite Common Table Expressions which produce lists of identifiers or return all objects along the path.
+  - [SQLite as a document database_202006](https://dgl.cx/2020/06/sqlite-json-support)
 # query-datalog
 - datomic-alternative
   - clojure: datascript, xtdb, datahike, datalevin
@@ -38,12 +51,6 @@ modified: 2023-09-16T17:28:29.873Z
 
 - https://github.com/ccorcos/datalog-prototype /ts
   - This is a full-stack prototype of collaborate web application backed by a Datalog-inspired database.
-
-- https://github.com/datalogui/datalog /ts
-  - An implementation of Datalog with a focus on managing UIs & UI state.
-  - Differential updates. Only run queries on the differences in data. Don't run the query on everything every time.
-  - Run queries on the results of your queries. It's queries all the way down.
-  - Works with React.
 
 - https://github.com/alexwarth/roomdb /js
   - a Datalog-style database inspired by the implementation of the Dynamicland project. 
@@ -140,6 +147,9 @@ modified: 2023-09-16T17:28:29.873Z
   - Independent from Datalog, Datalevin can be used as a fast key-value store for EDN data, with support for range queries, predicate filtering and more. 
     - Datalevin packages the underlying LMDB database as a convenient key-value store for EDN data.
   - Datalevin can also run in an event-driven networked client/server mode 
+  - [Datalevin is good, but its more useful in the same realm as sqlite | Hacker News](https://news.ycombinator.com/item?id=31127793)
+    - Not exactly. My goal of developing Datalevin is to replace our use of both Datomic and Postgres, so we have a single DB. 
+    - The aim is to provide a versatile(多用途的，多功能的) database that meets data needs of most use cases.
 
 - https://github.com/xtdb/xtdb /MIT/clojure
   - Bitemporal and dynamic relational database for SQL and Datalog

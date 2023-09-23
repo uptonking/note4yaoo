@@ -14,12 +14,14 @@ modified: 2022-12-19T02:01:20.161Z
 
 # guide(for notable/noter/paper)
 - features
-  - versioning and branching
+  - versioning and branching: 基于oplog/events实现
+  - collaboration-ready: 基于crdt
+  - end-user database: 用户自定义数据支持 graph/relational queries
   - markdown support
     - widely used, enterprise-loved(易盈利)
     - text files works well with existing tooling
-  - collaboration-ready
-  - local first data storage
+    - 备选方案参考git，将文本与git工具绑定
+  - local-first data storage with optional syncing
     - open folder as site
 
 - 难点
@@ -93,6 +95,11 @@ modified: 2022-12-19T02:01:20.161Z
 - 同步
   - 拼写检查cSpell、自定义短语、语法检查
   - 同步编辑器设置项，如缩进、特性启用
+
+- subscription
+  - 订阅知乎文章、博客园博客
+  - 订阅某个用户的文章、资源，如hackernews用户、b站up主更新
+  - 订阅股票数据
 
 - marketplace
   - template/page

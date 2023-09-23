@@ -247,3 +247,5 @@ G. Mutations
 
 - [Database Systems: 8Base, Dolt, MindsDB, Xata – SQL Rob](https://sqlrob.com/2023/04/17/database-systems-8base-dolt-mindsdb-xata/)
   - [15 futuristic databases you’ve never heard of - YouTube](https://www.youtube.com/watch?v=jb2AvF8XzII)
+
+- [dgraph: Build your next app with a graph database | Hacker News](https://news.ycombinator.com/item?id=23783923)

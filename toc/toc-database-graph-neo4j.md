@@ -44,3 +44,22 @@ modified: 2022-11-03T04:49:42.587Z
 - https://github.com/apache/incubator-hugegraph /java
   - A graph database that supports more than 100+ billion data, high performance and scalability (Include OLTP Engine & REST-API & Backends)
   - Billions of vertices and edges can be easily stored into and queried from HugeGraph due to its excellent OLTP ability. 
+# graph-utils
+- https://github.com/unum-cloud/networkxum /python
+  - https://unum.am/storage
+  - NetworkXum is NetworkX-like interface for large persistent graphs stored inside DBMS. 
+  - This lets you upscale from Megabyte-Gigabyte graphs to Terabyte-Petabyte graphs (that won't fit into RAM), without changing your code. 
+  - We provide wrappers for following DBs: mongodb/neo4j/sqlite/mysql/pg
+
+- https://github.com/unum-cloud/ustore /cpp
+  - Multi-Modal Database replacing MongoDB, Neo4J, and Elastic with 1 faster ACID solution, with NetworkX and Pandas interfaces, and bindings for C 99, C++ 17, Python 3, Java, GoLang
+
+- https://github.com/kuzudb/kuzu /cpp
+  - Embeddable property graph database management system built for query speed and scalability. 
+  - Flexible Property Graph Data Model and Cypher query language
+# more
+- https://github.com/dpapathanasiou/simple-graph /sql
+  - This is a simple graph database in SQLite, inspired by "SQLite as a document database"
+  - The schema consists of just two structures: Nodes(json) and Edges({id:json})
+  - There are also traversal function templates as native SQLite Common Table Expressions which produce lists of identifiers or return all objects along the path.
+  - [SQLite as a document database_202006](https://dgl.cx/2020/06/sqlite-json-support)

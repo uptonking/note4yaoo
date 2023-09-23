@@ -48,9 +48,6 @@ modified: 2023-01-17T19:13:01.845Z
   - [Patches | Immer](https://immerjs.github.io/immer/patches/)
     - The generated patches are similar (but not the same) to the RFC-6902 JSON patch standard, except that the path property is an array, rather than a string. 
 
-- https://github.com/Rolands-Laucis/Socio
-  - A WebSocket based realtime duplex Front-End and Back-End syncing API paradigm framework
-
 - https://github.com/serenity-kit/secsync
   - Is an architecture to relay end-to-end encrypted CRDTs over a central service.
   - eg: End-to-end encrypted document using Yjs incl. Cursor Awareness
@@ -208,6 +205,12 @@ modified: 2023-01-17T19:13:01.845Z
   - Simple ExpressJS HTTP server that allows all clients to sync (read or update) a single JSON object. 
 # sync-state
 
+# websocket
+- https://github.com/Rolands-Laucis/Socio /ts
+  - A WebSocket based realtime duplex Front-End and Back-End syncing API paradigm framework
+  - This lets you write SQL in your frontend code, that automagically refreshes on all clients when a resource is changed on any (optionally) connected DB. 
+  - Additionally, create any generic JS variables on your server to be realtime synced across all clients using "Server Props".
+  - Agnostic of framework, build tool, server lib and SQL database.
 # more
 - https://github.com/owojcikiewicz/realtime-sync
   - enables collaborative editing of HTML inputs in real-time across multiple websites and clients.

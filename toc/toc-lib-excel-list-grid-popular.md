@@ -15,6 +15,7 @@ modified: 2022-08-21T10:02:27.788Z
   - _undo/redo+batch-undo_: 存反向op和存值2种方案，存值本身也是反向op
   - _collaborative optional_: 作为插件，似乎将ospreadsheet的ot去掉就是llw了
   - _transaction_
+  - end-user database: 用户自定义数据支持 graph/relational queries
   - headless utils: state/actions/props/api : autocomplete/tanstack，state和a11y不同粒度，可实现为core+plugin
   - view-layer: vdom+reactive(mobx/signal) : autocomplete/typewriter/Simple-DataTables/slate-dom/sleek
   - closer to excel

@@ -189,6 +189,15 @@ modified: 2021-05-14T15:05:02.456Z
   - /5.6kStar/GPL+LGPL/202009
   - source code for the Processing Development Environment (PDE)
   - Processing is a software sketchbook and a language for learning how to code within the context of the visual arts
+
+
+# debugging
+
+- https://github.com/plast-lab/doop-mirror /java
+  - https://bitbucket.org/yanniss/doop
+  - Framework for Java Pointer and Taint Analysis (using P/Taint)
+  - Doop is a collection of various analyses expressed in the form of Datalog rules
+  - The currently maintained version targets Soufflé, an open-source Datalog engine for program analysis
 # java-repos
 - https://github.com/dbeaver/dbeaver
   - Free universal database tool and SQL client

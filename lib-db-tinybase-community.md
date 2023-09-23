@@ -16,6 +16,10 @@ modified: 2023-04-21T11:42:46.575Z
 
 - tinysync的示例存在一定问题
   - 在同步的同时产生的新op因为listening为0而被忽略
+
+- alternatives
+  - sql.js
+  - datascript
 # dev
 
 ## [lofi-meeting-tinybase_20230725](https://www.youtube.com/watch?v=sshvBCK5NDs&t=1140s)

@@ -58,9 +58,10 @@ modified: 2022-08-18T16:57:46.405Z
 
 - nytimes/react-prosemirror /43Star/apache2/202303/ts
   - https://github.com/nytimes/react-prosemirror
-  - [Announcing React ProseMirror_202303](https://discuss.prosemirror.net/t/announcing-react-prosemirror/5328)
   - A fully featured library for safely integrating ProseMirror and React.
   - React separates updates into render and commit phases so that it can process updates in batches
+  - [Announcing React ProseMirror_202303](https://discuss.prosemirror.net/t/announcing-react-prosemirror/5328)
+  - [The Future of @nytimes/react-prosemirror_202309](https://discuss.prosemirror.net/t/the-future-of-nytimes-react-prosemirror/5855)
   - ProseMirror View library renders ProseMirror documents in a single-phase update. 
   - The first phase of a React update should be free of side effects, which requires that updates to the ProseMirror View happen in the second phase.
     - during the first phase, React components actually have access to a different (newer) version of the EditorState than the one in the Editorview. 

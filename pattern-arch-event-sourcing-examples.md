@@ -547,6 +547,25 @@ modified: 2023-09-12T09:37:22.608Z
 - tips
   - redux/logux
 
+- https://github.com/flux-capacitor/flux-capacitor /MIT/js/inactive
+  - Flux architecture for the backend. Realtime data and time travel capabilities included.
+  - Works like Redux. Dispatch events to change database data
+  - Events are persisted, thus tracking the database's history
+  - Pushing realtime data becomes trivial, since you can subscribe to the store for updates
+  - **Isomorphic reducers - Share code between back end and front end**
+  - Middleware concept, compatible with Redux middleware
+  - No lock-in: Ability to opt-out any time and just use the underlying database directly
+  - Finer-grained access control - Control write access by event type, not only by table
+  - Works with PostgreSQL, MySQL, SQLite & MSSQL using Sequelize right now
+  - It is related to CQRS, but no traditional CQRS. Rather something between common CRUD and traditional CQRS.
+  - Differences to Redux
+    - Reducer's signature is `(collection, event) => changeset` instead of `(state, action) => state`. The `action` and the `event` are just synonyms.The real difference is that the flux capacitor reducers take a database collection and return a changeset (a set of database operations).
+    - This is necessary, since we usually cannot hold the complete database in memory as opposed to Redux' state.
+  - Differences to traditional CQRS
+    - No distributed system by default, but just one data storage service (can be easily turned into a cluster, though)
+    - No aggregates, just one read model to check business rules when handling an event
+    - Depends on database transactions to ensure data consistency
+
 - https://github.com/event-storm/event-storm /js
   - In-memory event store. A powerful, framework-agnostic store management library.
 # examples

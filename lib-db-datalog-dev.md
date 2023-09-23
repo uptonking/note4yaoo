@@ -9,11 +9,34 @@ modified: 2023-09-16T17:27:17.186Z
 
 # guide
 
+- features
+  - implicit join
+  - Declarative and pattern matching make it elegant to read
+
+- pros
+  - express recursive relationships
+  - reusable rules for query
+
+- cons
+
+- datalog vs sql
+  - easier to express recursive relationships in Datalog compared to SQL
+  - with the datalog (as well as prolog) syntax, is you are able to build a vocabulary of re-usable queries
+
 - choices
   - 前后端的数据模型有必要保持一样吗，传统架构都是分层的dao/dto/vo
 
+- alternatives
+  - sql
+  - SPARQL
+  - graph query languages: Cypher, Gremlin, nGQL
+  - more: Apache AGE graph extension
+
 - resources
 # dev
+- dev-to
+  - excel-sql
+  - excel-datalog
 
 ## [Datalog programming language - Wikipedia](https://en.wikipedia.org/wiki/Datalog)
 

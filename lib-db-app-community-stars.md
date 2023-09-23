@@ -32,7 +32,11 @@ modified: 2023-09-16T17:54:21.231Z
 
 - ## 
 
-- ## 
+- ## [Things I wished more developers knew about databases | Hacker News_202004](https://news.ycombinator.com/item?id=22942278)
+- 
+- 
+- 
+- 
 
 - ## [Best practices on primary key, auto-increment, and UUID in RDBMs and SQL databases](https://stackoverflow.com/questions/52414414)
 

@@ -52,6 +52,18 @@ modified: 2022-11-18T17:06:54.371Z
   - Sort of. Access had a "Forms" feature that let you create basic GUIs on top of your database. 
 # blog
 
+## [SQLite as a document database_202006](https://dgl.cx/2020/06/sqlite-json-support)
+
+- SQLite has had JSON support for a while.
+- However recently it added a killer feature: **generated columns**. (This was added in 3.31.0, released 2020-01-22.)
+  - This makes it possible to insert JSON straight into SQLite and then have it extract data and index them, i.e. you can treat SQLite as a document database.
+
+- https://github.com/dpapathanasiou/simple-graph /sql
+  - This is a simple graph database in SQLite, inspired by "SQLite as a document database"
+  - The schema consists of just two structures: Nodes(json) and Edges({id:json})
+  - There are also traversal function templates as native SQLite Common Table Expressions which produce lists of identifiers or return all objects along the path.
+  - [SQLite as a document database_202006](https://dgl.cx/2020/06/sqlite-json-support)
+
 ## [What If OpenDocument Used SQLite?](https://www.sqlite.org/affcase1.html)
 
 - The Open Document Format for Office Applications (ODF), also known as OpenDocument, is an open file format for word processing documents, spreadsheets, presentations and graphics and using ZIP-compressed XML files. 

@@ -39,4 +39,8 @@ modified: 2023-09-17T17:35:27.024Z
 
 - ## 
 
-- ## 
+- ## [edgedb: We Can Do Better Than SQL | Hacker News_202008](https://news.ycombinator.com/item?id=24106608)
+- 
+- 
+- 
+- 

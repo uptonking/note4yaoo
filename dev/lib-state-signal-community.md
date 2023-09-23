@@ -151,9 +151,17 @@ state1.state.deniz = 11; // nothing
 - https://twitter.com/jitl/status/1704570937465520149
   - How does change propagation work? How much is “push” vs “pull”?
 - **We only push notifications to effects to mark them as possibly dirty, everything is pull and on-demand to avoid extra work**
-- .
 - Do you use logical clocks? Any pointer to the implementation source?
+
 - I like reading the different approaches in this space, curious to see what Svelte uses. The problem w/ your algo is it MUST notify the tree of each write synchronously, and reading values during notify will result in incorrect values
+  - I think I see what you're saying. You're right that my implementation does have this drawback that you need to setTimeout to ensure that all other dependencies have emitted by the time you flush
+  - Seems like one solution is a two-step emit. Emit one event to mark stale, and then emit another event to run any reactive callbacks.
+  - That clock approach is pretty neat! But notice how it checks for stale dependencies on read rather than marking stale on write... That will incur more cost on read, which probably happens more often than write...
+- yep - tradeoffs; related ideas to clocks
+  - store validated_at and skip O(deps) check when equal to the current time
+  - batch notification of effects until end of frame or txn
+  - recompute derived w/ low-priority scheduler
+  - works better in async/persisted/distributed system
 
 - ## Ok what are signals? I literally have no idea
 - https://twitter.com/BenLesh/status/1637751668577038339
