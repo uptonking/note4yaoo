@@ -304,6 +304,14 @@ modified: 2021-08-30T18:56:09.644Z
   - The goal of the project is to provide a creative outlet for developers who want to experiment with database development 
   - On-disk B+ tree
   - Write-ahead logging (WAL)
+
+- https://github.com/vaticle/typedb /java
+  - a strongly typed database with an intelligent reasoning engine to infer new data and a declarative query language based on composable patterns to find it easily.
+  - Model data naturally – as the entities, relations, and attributes defined in an entity-relationship diagram.
+  - https://github.com/vaticle/typeql /java/rust
+    - TypeQL is a fully declarative query language based on pattern matching. 
+    - TypeQL allows you to model your domain based on logical and object-oriented principles. 
+    - Composed of entity, relationship, and attribute types, as well as type hierarchies, roles, and rules, TypeQL allows you to think higher-level as opposed to join-tables, columns, documents, vertices, edges, and properties.
 # db-streaming
 - https://github.com/MaterializeInc/materialize /rust
   - https://materialize.com/

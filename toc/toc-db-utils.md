@@ -85,6 +85,11 @@ modified: 2022-11-06T11:21:27.612Z
  - https://github.com/dbeaver/cloudbeaver
    - CloudBeaver is a web server which provides rich web interface. 
    - Server itself is a Java application, web part is written on TypeScript and React.
+
+- https://github.com/csanyipal/ajqvue /java/inactive
+  - Ajqvue provides an easy to use Java based user interface frontend for viewing, adding, editing, or deleting entries in several mainstream databases.
+  - Plugin Framework.
+
  # more
 
 - https://github.com/mlaanderson/database-js

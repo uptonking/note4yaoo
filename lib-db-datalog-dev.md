@@ -15,7 +15,7 @@ modified: 2023-09-16T17:27:17.186Z
 
 - pros
   - express recursive relationships
-  - reusable rules for query
+  - **reusable rules for query** (easier to migrate)
 
 - cons
 
@@ -29,6 +29,7 @@ modified: 2023-09-16T17:27:17.186Z
 - alternatives
   - sql
   - SPARQL
+  - **graphql**
   - graph query languages: Cypher, Gremlin, nGQL
   - more: Apache AGE graph extension
 

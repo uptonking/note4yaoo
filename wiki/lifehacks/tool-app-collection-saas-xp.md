@@ -33,7 +33,9 @@ modified: 2022-11-07T10:25:12.034Z
 - [知乎违规记录](https://www.zhihu.com/community/reported)
 
 - alternatives
-  - [NodeSeek](https://www.nodeseek.com/)
+  - B站博客
+  - [CNode：Node.js专业中文社区](https://cnodejs.org/)
+  - [NodeSeek - v2ex-like](https://www.nodeseek.com/)
 # reddit
 
 # hacker-news

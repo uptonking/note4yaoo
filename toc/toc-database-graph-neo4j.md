@@ -44,6 +44,18 @@ modified: 2022-11-03T04:49:42.587Z
 - https://github.com/apache/incubator-hugegraph /java
   - A graph database that supports more than 100+ billion data, high performance and scalability (Include OLTP Engine & REST-API & Backends)
   - Billions of vertices and edges can be easily stored into and queried from HugeGraph due to its excellent OLTP ability. 
+
+- https://github.com/pegurnee/db4o /java/inactive
+  - This is a repo for the java Versant Object-Oriented Database db4o.
+  - Somebody please look at Actian's Versant Object Database (now called "Actian NoSQL") and just clone it. You'll make very big money.
+  - [It's a shame that almost no one knows or uses Versant OODBMS | Hacker News](https://news.ycombinator.com/item?id=23784578)
+    - As the name suggest it's object oriented and queries return graphs of objects.
+    - It's heavily multi-threaded and has been around since 1989 (iirc).
+    - The only big downside (besides being proprietary) is that it's almost impossible to scale out (horizontally). But it scales enormously well vertically (throw resources at it and it will happily use it in a very efficient manner).
+  - [Ask HN: Which project does not have any good open-source alternatives? | Hacker News](https://news.ycombinator.com/item?id=21884828)
+    - P.S. It fell out of favor because the systems that used it tended to be monoliths that did too much to scale well. 
+    - The "right way to do it," IMHO is to build a central stateful brain with it, kick all asynchronous work out to stateless worker microservices and read from active secondaries. 
+    - If the brain's only job is to mutate state by applying business logic, you can scale quite far.
 # graph-utils
 - https://github.com/unum-cloud/networkxum /python
   - https://unum.am/storage

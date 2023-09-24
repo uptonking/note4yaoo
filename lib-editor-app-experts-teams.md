@@ -12,28 +12,34 @@ modified: 2022-08-21T10:16:52.004Z
 - resources
   - https://www.rich-text-js-jobs.com/
 # editor-experts-popular
-- 杨振兴 worktile   /slate
+- ccorcos notion /tuple-db
+  - https://github.com/ccorcos
+  - https://github.com/ccorcos/prosemirror-examples
+
+- jitl notion
+  - https://github.com/justjake
+  - https://jake.tl
+  - https://twitter.com/jitl
+  - https://news.ycombinator.com/threads?id=jitl
+
+- Saul-Mirone /milkdown
+  - https://github.com/Saul-Mirone/milkdown
+
+- 杨振兴 worktile /slate-angular
   - https://github.com/pubuzhixing8
   - https://github.com/worktile/slate-angular
   - https://www.zhihu.com/people/pubuzhixing/posts
 
-- 阿扎东 /slate
+- 阿扎东 /slate-editablejs
   - editablejs, 自绘光标
   - https://github.com/big-camel
 
-- 王福朋 wangEditor  /slate
+- 王福朋 /slate-wangEditor
   - https://juejin.cn/user/1714893868765373
   - https://www.zhihu.com/people/wangfupeng1988
 
 - 畫筆先生 /textbus
   - https://www.zhihu.com/people/hua-bi-xian-sheng
-
-- ccorcos /notion
-  - https://github.com/ccorcos
-  - https://github.com/ccorcos/prosemirror-examples
-
-- Saul-Mirone /milkdown
-  - https://github.com/Saul-Mirone/milkdown
 
 - ocavue /remirror
   - https://github.com/ocavue

@@ -16,14 +16,6 @@ modified: 2023-09-16T17:27:42.089Z
 
 - ## 
 
-- ## 
-# discuss-sql-cte
-- ## 
-
-- ## 
-
-- ## 
-
 - ## 👉🏻 [SQLite now allows multiple recursive SELECT statements in a single recursive CTE | Hacker News_202010](https://news.ycombinator.com/item?id=24843643)
 
 - 🤔 **Anyone have a recommended resource for understanding the practical application of recursive CTEs / Graph DBs**?
@@ -72,6 +64,21 @@ modified: 2023-09-16T17:27:42.089Z
   - SQL is an implementation of relational algebra, and databases that implement it are relational databases for storing relational data.
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Fast Analytics and Graph Traversals with Datalog | Hacker News_202309](https://news.ycombinator.com/item?id=37391333)
+- Although graph databases and knowledge bases are becoming more and more popular for managing and querying complex interconnected data one has to consider the potential trade-offs they present in terms of scalability, performance, and maintenance. Most important, rules specifications and application must be utilized for business logic, data validation and quality, security and access control, automation and inference among others.
+- In the last decade, one approach that has gained traction in addressing the challenges of graph data management is **leveraging Datalog to cope with the complexity of graph data modeling**, data transformations and intricate(错综复杂的, 盘根错节的) queries. Since it is a declarative logic programming language, it also offers the ability to express rules, relationships and constraints in a concise and intuitive manner. But it is only recently that appeared on the scene production systems that are based on *relational knowledge graph data models with analytics capabilities* powered by elevated versions of Datalog.
+- There are two of them that have drawn my attention, Relational AI and CozoDB. The former is a proprietary commercial product that runs on top of Snowflake columnar DBMS and the later is an excellent open-source embed-able production ready DBMS with several storage engines where I spent some time investigating and exploring its features. Bottom line is that these relational graph Datalog systems are covering a huge gap between SQL, noSQL, newSQL, GQL query languages at one side and Prolog/Lisp logic programming languages at the other side. According to Ziyang Hu creator of CozoDB "composability" of Datalog is the main reason that drove him to adopt it as the query language and he is not alone.
+- In my opinion the main obstacle(障碍；妨害物) for a broad adoption of Datalog based systems in graph analytics and traversals is their performance on big datasets. Is it possible to utilize vectorized parallel execution either in-memory with a fast dataframe structure like Polars or on the disk with an equally fast columnar DBMS like ClickHouse ? Truth is that **I have not seen any Datalog system implementation with columnar data processing** but I have discussed informally this with developers and they found that it is an interesting idea. In the past, I attempted to import a file of several hundred megabytes and execute queries on triple store Datalog systems such as Datomic, Datalevin, XTDB and the performance was very disappointing. These are mostly transactional, not built for analytics and queries on big data. CozoDB performance is a lot better, but it is still several orders of magnitude behind columnar engines/dataframes. The URL of my question points to a little benchmark I wrote to compare CozoDB with ClickHouse and Polars.
+
+- Firstly, disclosure: **I work on XTDB, where we are in the process of building out a new columnar SQL engine that also (still) supports edn-flavoured Datalog**.
+  - Perhaps the most fundamental aspect here is the inherent tension between (A) typical columnar relational schemas which primarily target efficient OLAP across very wide & sparse tables, and (B) the nature of 'graph' systems (whether OLAP or OLTP) which tend towards handling a huge number of tables and/or recursive self-joins + incremental view maintenance. I believe Michael Stonebraker's conjecture continues to be that a "one size fits all" database engine is essentially unachievable, and therefore you can't expect a single database system to be competitive across both domains simultaneously. However some databases (SQL Server springs to mind) are apparently pretty good at running multiple engines in parallel.
+
+- Great job, XTDB's utilization of Apache Arrow for in-memory columnar data structures is highly appreciated. Polars dataframe library in my benchmark is also based on Apache arrow. Thank you for the reference on XTDB benchmark datasets. 
 
 - ## [RDFox uses datalog to apply inference rules to graph data, it has some state of ... | Hacker News](https://news.ycombinator.com/item?id=21666872)
 - RDFox uses datalog to apply inference rules to graph data, it has some state of the art algorithms for making datalog multi-core. It still uses SparQL, which is really similar to datalog for querying. There's some recent work on horizontally scaling datalog queries, but I hadn't seen anything in production.
@@ -316,12 +323,107 @@ modified: 2023-09-16T17:27:42.089Z
 - 
 - 
 
+# discuss-graph-query
+- ## 
+
+- ## 
+
+- ## 🆚️ [Can you elaborate on "datalog queries blows SQL out of the water"? | Hacker News](https://news.ycombinator.com/item?id=13058399)
+- 🤔 at my company we're heavy users of Datomic
+  - Declarative and pattern matching make it elegant to read.
+  - Syntax more appropriate for code generation and introspection (since it's just a bunch of nested lists). A big plus when pairing w/ Clojure.
+  - Allows recursive queries.
+  - You can reference metadata associated to any transaction that ever touched any attribute in your database within the same query constructs.
+  - You can easily query the entire history of records.
+  - You can easily execute a query against how your database looked like months ago using as-of
+
+- 🤔 I'd be interested to know if anyone has compared Datalog and Neo4j/Cypher.
+- Neo4j focuses on modeling nodes and it's relationships, and allows you to attach metadata to the later, but doesn't really have transactions as first-class objects.
+  - Datomic focuses on modeling facts (entity-attribute-value). This is a very stable data representation that allows modelling tables, documents or graphs, on top of carrying transaction explicitly on an additional index for the time-travel magic.
+  - I guess Neo4j might make a good DB for ETL-ing into and running certain kinds of analysis.
+- **Cypher doesn't have named queries** (and thus not recursive ditto either), AFAIK. 
+
+- [Composeability is front and center in GQL, so you may want to consider it. | Hacker News](https://news.ycombinator.com/item?id=22872470)
+  - Cypher is by far the biggest graph query language and they seem to have the most weight in the conversation so far, but we are going to try to represent datalog as far as possible. 
+  - Even if woql isn't the end result, we think datalog it is the best basis for graph query so we'll keep banging the drum (especially as most people realize that composability is so important)
+
+- ## [New Query Language for Graph Databases to Become International Standard | Hacker News](https://news.ycombinator.com/item?id=21004115)
+
+- GQL will be a declarative language in the spirit of existing property graph query languages like Cypher, so that gives you an idea. 
+  - Yup, you can think of ISO GQL as the future of Cypher.
+
+- 🤔 What's wrong with SPARQL? What advantages has this over SPARQL?
+  - Very few real advantages on a technical level.
+- Currently it is relatively difficult to move data from one (open)cypher implementation to an other. Also as support is uneven for all features it is not so simple to get started on Neo4J and then evaluate e.g. TigerGraph if you find that Neo4J is not ideal for your usecase.
+  - If your application only uses GQL then you could start on Neo4J but after two years in production cheaply move to a competitor. By just switching your backend and run your test cases etc. your data did not change, your queries remain the same, so evaluation is relatively straightforward.
+- SPARQL is purpose built for the RDF world where you're mixing and matching a zillion different vocabularies, all of which have to be painstakingly declared and name spaced every time.
+  - For most of us working not on the "semantic web", we typically only have 1-2 vocabularies, which is our data model, and SPARQL is super clunky to use.
+- SPARQL requires buy-in into the world of the semantic web even when all you want to do is store and query graph data.
+  - Also, property graphs wouldn't have managed to get the traction they have if SPARQL would have been sufficient. SPARQL simply suffers from being designed in a way that does not sufficiently address the needs of application developers, in expressivity, ease of use, let alone allowing easy migration of existing relational data by sharing the same type system with SQL.
+- Not true at all. You can query an RDF dataset with SPARQL and not have any RDFS/OWL schema. A schema/ontology/vocabulary gives you a domain model, but it’s optional.
+- SPARQL doesn't allow unbound recursive queries.
+- SPARQL suffers from Not Invented Here Syndrome.
+- SPARQL is for RDF data, which not every graph database conforms to.
+- SPARQL is not as easy to read. I can show SQL or Cypher
+
+- GraphQL has nothing to do with graph databases.
+- GraphQL is about modeling business domain objects in graphs [0] and querying them. Isn't that basically what Graph DB languages do too?
+  - It is a query language for APIs, name like RestQL or JsonQL would be much more suitable.
+  - The expressiveness of GraphQL is severely limited, it doesn't allow you to express even simple patterns like triangles, depth n, paths etc..
+- Exactly. **GraphQL solves the same problem as REST. It is not a graph query language despite its unfortunate name**.
+
+- ## 🆚️ [Graph query languages: Cypher vs. Gremlin vs. nGQL | Hacker News_202003](https://news.ycombinator.com/item?id=22482665)
+
+- Datalog is such a delight to use especially since queries are just data structures are just code. 
+  - Once the basics clicked I felt empowered to do anything in Datalog, while I feel like I always have to learn or remind myself of more syntax when I want to do anything fancy with SQL.
+
+- I agree that SPARQL must be considered, and so must Datalog and Prolog. Idk but I'm starting to believe that new-fangled standardization efforts (if you want to call those that) are starting over from scratch and actively avoid looking at prior art as a generation thing.
+  - Though I could see **why someone wouldn't like SPARQL and RDF**, with its bulk reuse of other W3C and TBL concepts such as URLs, resulting in atom and predicate names verbosely and pointlessly beginning with "http://".
 # discuss-graph-db
 - ## 
 
-- ## 
+- ## [Neo4j raises $325M series F | Hacker News_202106](https://news.ycombinator.com/item?id=27541453)
+- Historically, graph databases did a passable job of supporting data models and queries that were not really possible in SQL (absent proprietary, vendor-specific extensions). 
+  - That's all over now, because recent versions of SQL support recursive queries that can handle general graphs quite easily. 
+  - No real need for a specialized solution, even plain vanilla Postgres is good to go.
+- Sql syntax for such queries is super awkward with tones of gottyas, not sure how performance compares
 
-- ## [Postgres as a graph database | Hacker News](https://news.ycombinator.com/item?id=35386948)
+- GQL (ISO/IEC 39075) is a full database language to create and manage property graphs and create, read, update, and delete nodes and edges (or vertices and relationships)
+- SQL/PGQ (ISO/IEC 9075-16) is a new add-on part of the SQL standards which introduces the capabilities to create property graph views on top of existing tables in an SQL database, as well as the ability to query property graphs using a GRAPH_TABLE function in an SQL FROM clause
+- The input to the SQL/PGQ GRAPH_TABLE function is a property graph query, sometimes referred to as Graph Pattern Matching or GPM. Graph Pattern Matching is common between SQL/PGQ and GQL. **That is, the syntax accepted in a GRAPH_TABLE function in an SQL FROM clause is identical to the syntax in a GQL graph query**. Because GPM is the same in both draft standards, changes to GPM for SQL/PGQ also apply to the GPM portions of the GQL specification.
+- I also just came across the Apache AGE project which basically allows you right now to extend PostgreSQL DBs with property graph capabilities and enables full(?) use of Cypher/GQL.
+
+- Also, **nested sets and materialized paths have been around forever to do graphs inside SQL**.
+
+- According to Crunchbase, Neo4j was founded in 2007! Is this correct? 14 years in and they are still raising VC money!?
+
+- ## [Show HN: Simple-graph – a graph database in SQLite | Hacker News_202012](https://news.ycombinator.com/item?id=25544397)
+- I did something similar recently, a block store for a rust implementation of ipfs, which models a directed acyclic graph of content-addressed nodes.
+  - I found that performance is pretty decent if you do almost everything inside SQLite using WITH RECURSIVE.
+
+- if you're looking for more hierarchical support, SQLite does has a transitive closure extension that might be of some assistance
+  - [Querying Tree Structures in SQLite using Python and the Transitive Closure Extension](https://charlesleifer.com/blog/querying-tree-structures-in-sqlite-using-python-and-the-transitive-closure-extension/)
+- I've actually been working on an extension to perform breadth first search queries in SQLite on general graphs. The extension is actually based off of the transitive closure extension. 
+
+- Why not add that functionality directly to SQLite via stored procs*
+  - [Code Generator for SQLite | CG/SQL](https://cgsql.dev/)
+
+- How does this perform compared to a “native” graph database like Neo4J?
+  - I would benchmark the tasks "traversal", "aggregation" and "shortest past" for a 10k to 10M node graph. Anything under 10k would be good enough with most techs and over 10M need to consider more tasks (writes, backup, the precise fields queried can become their particular problems at larger scale).
+
+- There has been a lot of progress on creating standardized query languages for graphs. The two most notable ones are [2]:
+  - SQL/PGQ, a property graph query extension to SQL is planned to be released next year as part of SQL:2021.
+  - GQL, a standalone graph query language will follow later.
+  - While it is a lot of work to design these languages, both graph database vendors (e.g. Neo4j, TigerGraph) and traditional RDBMS companies (e.g. Oracle [2], PostgreSQL/2ndQuadrant [3]) seem serious about them. And with a well-defined query language, it should be possible to build a SQL/PGQ engine in (or on top of) SQLite as well.
+
+- It depends on how the graph is stored in the database. In this project the nodes ids are TEXT so it will likely not scale very well. I know because I use a similar implementation with GUID as string in Sqlite in a project since a couple of years and while it works fine for the graph I have (<1 million nodes, few edges per nodes) it won’t perform too well past that.
+
+- 
+- 
+- 
+- 
+
+- ## 👉🏻 [Postgres as a graph database | Hacker News](https://news.ycombinator.com/item?id=35386948)
 - I designed and maintain several graph benchmarks in the Linked Data Benchmark Council, including workloads aimed for databases. We make no restrictions on implementations, they can any query language like Cypher, SQL, etc.
   - In our last benchmark aimed at analytical systems [2], we found that SQL queries using WITH RECURSIVE can work for expressing reachability and even weighted shortest path queries. However, formulating an efficient algorithm yields very complex SQL queries [3] and their execution requires a system with a sophisticated optimizer such as Umbra developed at TU Munich [4]. Industry SQL systems are not yet at this level but they may attain that sometime in the future.
   - **Another direction to include graph queries in SQL is the upcoming SQL/PGQ (Property Graph Queries) extension**. I'm involved in a project at CWI Amsterdam to incorporate this language into DuckDB [5].
@@ -343,8 +445,6 @@ modified: 2023-09-16T17:27:42.089Z
 # discuss-datomic
 - ## 
 
-- ## 
-
 - ## [Datomic is Free | Hacker News_202304](https://news.ycombinator.com/item?id=35727967)
 - 
 - 
@@ -354,46 +454,88 @@ modified: 2023-09-16T17:27:42.089Z
   - Having a stable database-as-value is really useful for paginating results; you don't have to worry about new values being inserted into your results during execution, the way you do with traditional databases no longer how long (minutes, hours, even days) you take to traverse the data
   - Reified(物体化；具体化) transactions makes it possible to store extra data with each transaction, trivially, such as who made the update and why
   - Immutability is amazing for caching at all layers
-
-- 
-- 
-- 
-
 # discuss-alternatives-datalog/datomic
 - ## 
 
-- ## 
+- ## [Comparing Database Types | Hacker News](https://news.ycombinator.com/item?id=21060866)
+- Deductive databases derive logical consequences based on facts and rules.
+  - Datalog and its superset Prolog are notable instances of this idea, and they make the connection between the relational model and predicate logic particularly evident.
+
+- The column-family databases mentioned (Cassandra, HBase) are both just fancy key-value stores that add semantics for separate tables and cell-level data so you're not rolling it yourself.
+
+- ## [PathQuery, Google's Graph Query Language | Hacker News_202107](https://news.ycombinator.com/item?id=27697191)
+- You might like Google's Logica
+
+- Also, the name is of course justified, but it will be a mess to search for due to (Facebook) GraphQL.
+  - Google's GQL, which is older than either, doesn't help the searchability, either.
+
+- PathQuery looks a lot like GROQ, which is the query language used by the Sanity data store
+  - It seems PathQuery's entire novelty is better handling of recursive querying for query optimization, but "details are admittedly not discussed herein".
+  - From what I can tell, PathQuery is also clever in how queries express the shape of the returned data, which we in GROQ call projection. 
+
+- One issue I have with query languages is how poorly they interact with the "host language" . SQL requires non-composable string templating or complex, low-performance ORM's.
+  - The only query languages that do this "right" are datalog (Datomic) and Q/K (KDB+, Shakti).
+
+- Reminds me of GQL. Anybody know the differences and or similarities?
+  - GQL is much more clear and readable while PathQuery is confusing and non semantic
+
+- ## 🆚️ [Ask HN: Why GraphQL APIs but no Datalog APIs? | Hacker News_201912](https://news.ycombinator.com/item?id=21738331)
+- Why doesn't anyone use Datalog (or another limited-by-design logic programming language) as the query language in a public Web API? 
+  - The adoption of GraphQL suggests demand for letting the API user write more sophisticated queries even at a performance cost per query. 
+  - Datalog would let the user do more, likely saving many HTTP round-trips. 
+  - A lot more research exists on optimizing Datalog than GraphQL. 
+  - It is unclear that the total impact on performance would be significantly negative compared to the typical GraphQL API. If this line of thinking is valid, where are the Datalog API experiments?
+
+- I'm sure they exist out in the wild, but personally I haven't seen a project where GraphQL really shines through. 
+  - In my experience, **HTTP2 and reasonably well designed RESTful endpoints are the right default to go with**. 
+  - There is the argument that building good APIs is hard, but I believe someone who has reasonable experience with a stable technology will outperform someone using a new tool for the job. 
+  - If you're not familiar with it, you won't know what to look out for.
+- GraphQL doesn't make a ton of sense to me, unless you're expecting many clients with significantly different query pattern requirements and prefer to take on performance and (maybe) security uncertainty & complexity to accommodate that more easily.
+
+- GraphQL makes a ton of sense when your queries use data from multiple different and possibly interdependent source APIs. It allows you to hide all manners of ugly hacks behind a single, neat, cacheable endpoint that can even act as a normalisation layer.
+
+- Kinda unfair since it's 1000x easier to get started with GraphQL than Datalog.
+
+- It's all about the data manipulation capabilities that our current programming languages and libraries provide. Datalog and GraphQL are both graph query languages, but they differ significantly in the datastructures they return.
+  - GraphQL queries describe Tree unfoldings of graphs, and thus return trees.
+  - Datalog describes recursive conjunctive queries on hypergraphs (relational model) without or limited negation, and thus return a set or bag of hypergraph edges.
+- The reason why GraphQL is so successful is that it fits well with Reacts data-model (trees) and the way it performs its efficient delta updates (tree walking). 
+  - Furthermore its somewhat easier to implement (albeit(虽然；尽管) not simpler). 
+  - Consider that there are very few actual GraphQL query engines for actual data (e.g. DGraph DB), instead GraphQL backends implement resolver functions which compute the "graph"/tree on the fly, based on side effects. 
+  - Resolvers are what you'd call a computable in prolog or datalog knowledge bases and even though I work full time on incremental query evaluation in said knowledge bases I don't have a clue on how to make those efficient without resorting to the Big Cannon of Differential Dataflow.
+- Datalog queries don't return trees, they return relations a.k.a. hypergraph edges, and that simply doesn't map well to the datastructures (maps/dicts and lists/vectors/arrays, JSON and other tree description formalisms) that we have in basically every mainstream programming language that isn't prolog or some variant on logic programming. 
+  - So the query results are hard to work with, and you'd want a LINQ style embeddable datalog query engine in your language of choice to work with the returned data, which is a much bigger undertaking.
+- 👉🏻 So to recap: **Datalog is great if you have it everywhere and your language is build around it and hypergraphs**, but alas most languages we use today are build around trees, and graphql is a tree language.
+- TerminusDB does use a Datalog-like language as the query language for its public web API. Datalog has long seemed to me to be the obvious "next step" for query languages as it enables richer manipulations than those provided by vanilla SQL-like languages in a clean fashion.
+  - TerminusDB allows you to use both approaches. Due to the way we have designed our graphs, with a strongly typed schema langage, you can extract sub-graphs as unfolded trees using a special predicate exposed in our datalog language.
+  - This approach (hopefully) gives the best of both worlds, allowing graph traversal and extraction of objects/documents in a single framework, all communicating information via JSON-LD.
+
+- Prolog (Datalog) has always been the gold standard for query languages. 
+  - GraphQL is merely the latest attempt to reinvent it by people who obviously don't know what came before (or don't care). 
+  - This might be because CS programs are no longer teaching Prolog, but I think it's more likely because one doesn't get career advancement points for using something "old" unless one reinvents it and renames it so it seems "new."
+
+- GraphQL is a mechanism for clients to specify the data document they want, and for servers to specify the documents they can serve. 
+  - Datalog, or SQL for that matter, is a mechanism to expose data within a database. 
+  - The GraphQL data model must be geared towards the end client point of view, e.g. some internal IDs can be hidden. 
+  - Datalog on the other hand exposes the internal model of a data store, which is domain driven not client driven. 
+  - Also you do not want end client devices to have the full power of datalog or SQL on your database, or else be ready to always watch those crazy queries that bring your server down to a crawl. 
+  - GraphQL at least provides an indirection point where you can apply some form of resource control.
+
+- In my opinion, Datalog or — more generally — Prolog is where many querying APIs will eventually arrive, because this syntax has many nice advantages: It is very convenient, expressive and readable, programs and queries can be easily parsed and analyzed with Prolog's built-in mechanisms, there is an ISO standard for it etc.
+  - When semantic web formalisms were discussed, Prolog was sometimes mentioned. However, it is so far not very widely used as a querying or modeling language even for semantic web applications. Recent advances in Prolog implementations may increase the uptake of this syntax.
+
+- Sure Datalog is a query language, but Prolog isn't.
+  - I object(反对；抗议) to datalog being viewed as a subset of prolog, other than for historical reasons. It's just not useful as both languages differ significantly in philosophy, properties and implementation.
+  - Datalog program equality is undecidable btw so while it's certainly more amenable to correctness proofs than prolog (which isn't at all with it's undecidability and implementation definedness everywhere), you'd still want more restricted logics for that.
+  - Edit: Some systems that arguably implement a superset of Datalog, but for which their Datalog subset is not a subset of Prolog are LogicBlox, Datomic, Datascript and TriQ-Lite.
+
+- EQL is surely a great alternative to Graphql because of namespaced keywords and rich data structure (in contrast of Graphql's string base). It is also inspired by Datomic's Pull API. However, it's a specification and the most popular implementation (Pathom) has nothing to do with Datalog.
+
+- I've got this idea that you can chuck JMESPath into the range header on a standard json endpoint for ghetto graphql
 
 - ## [Tree structure query with PostgreSQL | Hacker News](https://news.ycombinator.com/item?id=9111362)
 - Recursive CTEs are a cool feature, but it's a shame the syntax is so awful. You really have to work to understand what the query is trying to do.
 - Other query languages that make recursion much more bearable are SPARQL (on RDF data), Cypher (Neo4j) or Datalog (Datomic, Cascalog, etc). 
-
-
-- ## 🆚️ [Can you elaborate on "datalog queries blows SQL out of the water"? | Hacker News](https://news.ycombinator.com/item?id=13058399)
-- 🤔 at my company we're heavy users of Datomic
-  - Declarative and pattern matching make it elegant to read.
-  - Syntax more appropriate for code generation and introspection (since it's just a bunch of nested lists). A big plus when pairing w/ Clojure.
-  - Allows recursive queries.
-  - You can reference metadata associated to any transaction that ever touched any attribute in your database within the same query constructs.
-  - You can easily query the entire history of records.
-  - You can easily execute a query against how your database looked like months ago using as-of
-
-- 🤔 I'd be interested to know if anyone has compared Datalog and Neo4j/Cypher.
-- Neo4j focuses on modeling nodes and it's relationships, and allows you to attach metadata to the later, but doesn't really have transactions as first-class objects.
-  - Datomic focuses on modeling facts (entity-attribute-value). This is a very stable data representation that allows modelling tables, documents or graphs, on top of carrying transaction explicitly on an additional index for the time-travel magic.
-  - I guess Neo4j might make a good DB for ETL-ing into and running certain kinds of analysis.
-- **Cypher doesn't have named queries** (and thus not recursive ditto either), AFAIK. 
-
-- [Composeability is front and center in GQL, so you may want to consider it. | Hacker News](https://news.ycombinator.com/item?id=22872470)
-  - Cypher is by far the biggest graph query language and they seem to have the most weight in the conversation so far, but we are going to try to represent datalog as far as possible. 
-  - Even if woql isn't the end result, we think datalog it is the best basis for graph query so we'll keep banging the drum (especially as most people realize that composability is so important)
-
-- ## [Graph query languages: Cypher vs. Gremlin vs. nGQL | Hacker News_202003](https://news.ycombinator.com/item?id=22482665)
-- Datalog is such a delight to use especially since queries are just data structures are just code. 
-  - Once the basics clicked I felt empowered to do anything in Datalog, while I feel like I always have to learn or remind myself of more syntax when I want to do anything fancy with SQL.
-
-- I agree that SPARQL must be considered, and so must Datalog and Prolog. Idk but I'm starting to believe that new-fangled standardization efforts (if you want to call those that) are starting over from scratch and actively avoid looking at prior art as a generation thing.
-  - Though I could see **why someone wouldn't like SPARQL and RDF**, with its bulk reuse of other W3C and TBL concepts such as URLs, resulting in atom and predicate names verbosely and pointlessly beginning with "http://".
 
 - ## [Why isn't differential dataflow more popular? | Hacker News_202101](https://news.ycombinator.com/item?id=25867693)
 - disclaimer: I work at Materialize and I work with Differential regularly

@@ -470,5 +470,6 @@ modified: 2020-12-28T12:24:09.275Z
 
 - https://github.com/centerofci/mathesar /python/svelte
   - https://wiki.mathesar.org/en/home
-  - Web application providing an intuitive user experience to databases.
-  - Mathesar directly operates on PostgreSQL databases
+  - provides a spreadsheet-like interface to a PostgreSQL database.
+  - directly operates on PostgreSQL databases
+  - You can use to build data models, enter data, and even build reports

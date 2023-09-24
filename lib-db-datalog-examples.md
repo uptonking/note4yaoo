@@ -178,6 +178,8 @@ modified: 2023-09-16T17:28:29.873Z
   - A reactive version of DataScript’s d/entity API for your Reagent components.
   - This library allows you to use a reactive version of DataScript entities directly in your Reagent components, re-rendering those components only when the exact attributes they depend on are updated.
 
+- https://github.com/wotbrew/relic /clojure
+  - a Clojure(Script) data structure that provides the functional relational programming model described by the tar pit paper.
 ## rules
 
 - https://github.com/cerner/clara-rules /clojure

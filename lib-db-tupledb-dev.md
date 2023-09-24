@@ -16,6 +16,10 @@ modified: 2022-12-14T18:26:38.588Z
     - pretty much every database has similar abstractions under the hood — an ordered list (or tree) of tuples and binary search. 
     - This is why DynamoDb and FoundationDb can have frontend abstractions that are compatible with Postgres or MongoDb.
   - https://github.com/maccman/tuple-playground
+  - https://github.com/ccorcos/triple-database
+    - A database for storing triples, also know as facts with tooling for querying and indexing
+  - https://github.com/ccorcos/triplestore-repl
+    - a simple application with a DSL for playing with the triple-database
 # docs
 - 👉🏻 The local-first, "end-user database" database.
   - When users own all of their data on their devices, it's a natural way of sharding a database and scaling up a platform.
@@ -44,10 +48,30 @@ modified: 2022-12-14T18:26:38.588Z
 - A simple application for keeping score in games. For example, golf or Settlers of Catan.
 - External effects interface through services defined on the Environment.
 - TupleDatabase as a UI state management system.
+# more
+- [Tuple Database – A reactive, local-first db inspired by FoundationDB | Hacker News_202206](https://news.ycombinator.com/item?id=31630518)
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Local First Tuple Database | Hacker News_202208](https://news.ycombinator.com/item?id=32458293)
+- These kinds of efforts are heading in somewhat the right direction but would be much better if the authors spent some time reading up on the foundations of the relational model -- and instead of rolling their own bespoke map/scan/etc and 'object' and 'type' models based what they were doing on what Date/Codd etc identified as universal operations on relations and sets.
+  - "Database In Depth" is a really good book. Highly recommended. Short and clear.
+
+- The relational algebra is highly idealized and quite abstract from bytes of data. It is “declarative”.
+  - Underneath every relational modeled system, there is a lower-level, much simpler system that implements the actual data storage as bytes - and the data access APIs like “scanKeyRange”, “readKey”, “writeKey” - over a sorted data structure like a B-tree.
+  - An algebraic operation like “filter” or “selection” (σ) requires the relational layer to understand the layout of data in the storage layer if we want any kind of performance better than O(total number of tuples), right? But that adds complexity and indirection, regardless of the syntax / API used to express the relational algebra, SQL or KQL.
+  - **You can think of this project as such a storage layer**. It is imperative, not declarative, as a primary objective. One could build a relational layer on top, though.
+
+- My impression (based on their Readme) is that the author did this not necessarily for readability, but to remove the abstraction that the database engine provides in the form of the query planner.
+  - The developer is then responsible for selecting the index and storing their data appropriately, which gives more predictable performance and makes reasoning about the behavior of the query simpler(for beginners, not necessarily easier).
+  - This is very much in the pattern of DynamoDB (which they cite), which gives highly predictable performance at all scales by removing the query planner layer and leaving the developer to work out what indexes they need, how to mold their data to them, and how too query them.
+
+- Sounds like the author intends this to be a layer to create relational DBs, not in place of directly.
+  - Quite the contrary: the author intended to do away with the abstraction over indexes that SQL engines provide, so that the developer can code against them directly
 
 - ## [question: Is adding an rtree still on the roadmap?](https://github.com/ccorcos/tuple-database/issues/27)
 - I have no immediate plans to implement this until I pick up a project that needs this

@@ -32,15 +32,34 @@ modified: 2023-09-17T17:35:27.024Z
 - My biggest gripe with SQL is the lack of composability. When writing complex code, I can easily pull out functions. When complex writing SQL, I end up with a giant unmaintainable blob. I hope whatever solution you find addresses this!
 - @perplexity_ai ‘s birdsql. Query in natural language (English), GPT figures out the sql. Hot take: natural language is the best query language.
 
+# discuss-sql-cons
+- ## 
+
+- ## [A Short Story About SQL’s Biggest Rival | Hacker News_202010](https://news.ycombinator.com/item?id=24730713)
+- 
+- 
+- 
+
+- ## [Against SQL | Hacker News_202107](https://news.ycombinator.com/item?id=27791539)
+- 
+- 
+
+- GQL makes joins much easier to write than SQL, which is what you want to be using in your components. But GQL is not great for offline-support and caching. You want your frontend to know about how your data relates to each other. Your frontend GQL should query a local SQL db.
+
+- 
+- 
+
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [SQL is 43 years old – Here’s why we still use it today | Hacker News_201705](https://news.ycombinator.com/item?id=14245354&p=2)
+- 
+- 
+- 
 
 - ## [edgedb: We Can Do Better Than SQL | Hacker News_202008](https://news.ycombinator.com/item?id=24106608)
-- 
 - 
 - 
 - 

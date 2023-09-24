@@ -99,6 +99,10 @@ modified: 2022-11-04T14:20:37.172Z
   - Our goal is to help developers quickly migrate web2 applications to Internet Computer.
   - [Internet Computer blockchain](https://internetcomputer.org/)
   - https://github.com/codebase-labs/ic-sqlite
+
+- https://github.com/facebookincubator/CG-SQL /c
+  - CG/SQL is a code generation system for the popular SQLite library that allows developers to write stored procedures in a variant of Transact-SQL (T-SQL) and compile them into C code that uses SQLite’s C API to do the coded operations
+  - SQLite has no stored procedures of its own. 
 # mobile
 
 # gis
