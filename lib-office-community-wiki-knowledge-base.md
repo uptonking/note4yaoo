@@ -9,6 +9,8 @@ modified: 2023-09-21T17:32:15.618Z
 
 # guide
 
+- 尝试将知识库与book/dict/mdx结合的产品
+
 - https://github.com/brettkromkamp/awesome-knowledge-management
   - A curated list of amazingly awesome articles, people, applications, software libraries and projects related to the knowledge management space
 # discuss-stars

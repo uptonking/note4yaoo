@@ -11,6 +11,15 @@ modified: 2022-12-05T19:09:59.634Z
 
 # blogs
 
+## [Glaredb Storage Format_202309](https://datamonkeysite.com/2023/09/24/glaredb-storage-format/)
+
+- I was messing around with GlareDB which is one of the new wave of OLAP DB system (With DuckDB, Datafusion and Databend) it is open source and based on Datafusion
+  - Instead of building a new storage system from scratch, they just used Delta Table, basically they assembled a database using just existing components, apparently all glued together using Apache Arrow
+
+- 🤔 So DB Vendors should stop innovating in Storage Format? 
+  - I have to admit I changed my mind about this subject, I used to think Query Engines Developers  should design the best format that serve their Engine, after using Fabric for a couple of Months, open table format is just too convenient, my current thinking, the cold storage table format  make a lot of of sense **when using a standard format (Delta, Iceberg, Hudi etc), the optimization can be done downstream**, for example tables statistics, In-Memory representations of the data, there are plenty of areas where DB vendor can differentiate their offering, but cold storage is really the common denominator(平均水平或标准).
+  - One thing though I like about Delta is the relative Path. You can move around the folder and data keeps just working. Iceberg is a bit tricky as it does not support relative paths yet.
+
 ## [A Tale of Three Real-Time OLAP Databases: Apache Pinot, Apache Druid, and ClickHouse__202304](https://startree.ai/blog/a-tale-of-three-real-time-olap-databases)
 
 ## [Comparison of the Open Source OLAP Systems for Big Data: ClickHouse, Druid, and Pinot | by Roman Leventov__201802](https://leventov.medium.com/comparison-of-the-open-source-olap-systems-for-big-data-clickhouse-druid-and-pinot-8e042a5ed1c7)

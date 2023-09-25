@@ -265,13 +265,15 @@ modified: 2022-08-21T10:02:05.129Z
   - Notion seems to publicly refers to collections as Notion databases, whereas their API and implementation consistently refers to them as collections and collection views.
   - 提供了Notion中各种blocks的渲染器，但不是可切换视图的database，组件有一定的参考价值
 
-- obsidian dataview
+- obsidian dataview /5.1kStar/MIT/202309/ts
   - https://github.com/blacksmithgu/obsidian-dataview
+  - A high-performance data index and query language over Markdown files, for obsidian
   - Treat your Obsidian Vault as a database which you can query from. 
-    - Provides a JavaScript API and pipeline-based query language for filtering, sorting, and extracting data from Markdown pages.
-    - Dataview generates data from your vault by pulling information from Markdown frontmatter and Inline fields.
-    - Markdown frontmatter is arbitrary YAML enclosed by --- at the top of a markdown document which can store metadata about that document.
-    - Inline fields are a Dataview feature which allow you to write metadata directly inline in your markdown document via Key:: Value syntax.
+  - Provides a JavaScript API and pipeline-based query language for filtering, sorting, and extracting data from Markdown pages.
+  - **Dataview generates data from your vault by pulling information from Markdown frontmatter and Inline fields**.
+  - Markdown frontmatter is arbitrary YAML enclosed by `---` at the top of a markdown document which can store metadata about that document.
+  - Inline fields are a Dataview feature which allow you to write metadata directly inline in your markdown document via `Key:: Value` syntax.
+  - [Obsidian Dataview: Turn Obsidian Vault into a database you can query from | Hacker News_202205](https://news.ycombinator.com/item?id=31407781)
   - https://github.com/obsidianmd/obsidian-releases
     - Obsidian is not open source software and this repo DOES NOT contain the source code of Obsidian. 
     - However, if you wish to contribute to Obsidian, you can easily do so with our extensive plugin system.

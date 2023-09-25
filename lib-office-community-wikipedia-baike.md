@@ -21,18 +21,42 @@ modified: 2023-09-21T17:33:01.520Z
 - ## 
 
 - ## [How to download all of Wikipedia onto a USB flash drive | Hacker News_202210](https://news.ycombinator.com/item?id=33114107)
-- The `.zim` file format is heavily optimized for compactness and ease of serving. 
-  - For starters, it doesn't even store the original MediaWiki markup, but rather pre-rendered basic HTML. Images only have the thumbnail version (the one that's shown inline when reading the article), there's no full-size to zoom in. 
-  - And, of course, no edit history. 
+- I wish one could create new articles in Kiwix’s zim files. Right now, Kiwix is basically a Wikipedia reader. Editing features would be very nice for local wikis to develop, and later on — maybe — to have such local article editions merged into the main Wikipedia, perhaps similar to how git works.
+
+- **The `.zim` file format is heavily optimized for compactness and ease of serving**.
+  - For starters, it doesn't even store the original MediaWiki markup, but rather pre-rendered basic HTML. Images only have the thumbnail version (the one that's shown inline when reading the article), there's no full-size to zoom in.
+  - And, of course, no edit history.
   - Multiple articles then get bundled into clusters of ~1Mb each, and each cluster compressed using ZSTD.
-  - But **it also makes it much more difficult to edit in-place**, and, of course, no MediaWiki means that it cannot possibly work like git pull requests.
+  - This all lets you squeeze English Wikipedia into 90 Gb. But **it also makes it much more difficult to edit in-place**, and, of course, no MediaWiki means that it cannot possibly work like git pull requests.
 - I totally understand the reason why **it is made for read-only consumption**. However, we live in a moment where storage is significant cheaper, and so is processing. There could have a compromise, though I do not see any indication of such. SQLite could very well be used here.
 
+- I was curious how they achieve this. It looks like the underlying file format uses LZMA, or optionally Zstd, compression. **Both achieve pretty high compression ratios against plain text and markup**.
+  - Its file compression uses LZMA2, as implemented by the `xz-utils` library, and, more recently,    `Zstandard`. 
+- The more important thing is that they **aggressively downsize the images and omit the history and talk pages**. Even if they were using LZW it would probably only triple the filesize.
+
+- 👉🏻 File size is always an issue when downloading such big content, so we always produce each Wikipedia file in three flavours:
+  - **95.2 is the "maxi" file. 49.48 is the "nopic" file. 13.39 is the "mini"**.
+  - Mini: only the introduction of each article, plus the infobox. Saves about 95% of space 
+  - vs. the full version. nopic: full articles, but no images. About 75% smaller than 
+  - the full version Maxi: the default full version.
+
+- Kiwix's maxi-all Wikipedia zimfiles have pretty much all the pictures that are used in articles, but not the video and audio. And the pictures are too small; often you can't read the text in them.
+
+- There is a ZIM file that contains all of stack overflow. Super useful if you have to program without access to the internet.
+
+- How does this scale with the need to update data with time, corrections etc? Having to download everything again doesn't seem that elegant. I think this wold benefit a lot from some form of incremental backup support, that is, download only what was changed since last time. A possible implementation of that could be a bittorrent distributed git-like mirror so that everyone could maintain their local synced one and be able to create its snapshot on removable media on the fly.
+- **Given that the ZIM format is highly compressed, I'd assume that any "diff" approach would be computationally quite intensive** – on both sides, unless you require clients to apply all patches, which would allow hosting static patch files on the server side.
+  - Bandwidth is getting cheaper and cheaper, and arguably if you can afford to get that initial 100 GB Wikipedia dump, you can afford downloading it more than once (and vice versa, if you can download multi-gigabyte differential updates periodically, you can afford the occasional full re-download).
+
+- It looks like Kiwix uses the ZIM file format, which appears to have diffing support (see **zimdiff and zimpatch**). That said, it doesn't look like Kiwix actually publishes those diffs.
+
 - FYI, the internet archive hosts a ZIM archive that has dumps of wikipedia and many other works
-  - [ZIM File Archive : Free : Free Download, Borrow and Streaming : Internet Archive](https://archive.org/details/zimarchive)
+  - [ZIM File Archive : Internet Archive](https://archive.org/details/zimarchive)
   - Archive of MediaWiki . ZIM Files. The ZIM file format is an open file format that stores wiki content for offline usage. Its primary focus is the contents of Wikipedia and other Wikimedia projects.
 
 - The zim file format is far from ideal for compression efficiency - all the best algorithms typically don't allow random access without decompressing everything. Also, wikipedia has a lot of spam and orphan pages, insanely long lists, etc. Those are hard to algorithmically filter out.
+
+- Kiwix has Stack Overflow (and various StackExchange subsites), Project Gutenberg, TED talks, and plenty more. You can also request something.
 
 - ## [The kiwix *Wikipedia-en* full scrape with images has been broken for over 18 mon... | Hacker News](https://news.ycombinator.com/item?id=22681589)
 - The whole zim file infrastructure/toolchain is pretty broken. I've been trying to put together a system for generating a WARC file by rendering all the wikitext content in a database dump, which is a lot more reasonable of an approach.
@@ -45,6 +69,14 @@ modified: 2023-09-21T17:33:01.520Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [How to Extract Data from Wikipedia and Wikidata | Hacker News_201703](https://news.ycombinator.com/item?id=13966965)
+- Worth mentioning is dbpedia, which is an open database made from extracting data from Wikipedia.
+- RDF triple stores were the latest hype during Semantic Web era. Wouldn't a more general NoSQL/Graph or SQL database be suitable as well, if soneone wrote an import script. I read someone achieved in with MySQL and a star table schema.
+
+- By coincidence for another project, I was trying to mine Wikipedia. It is better to try and parse the html than mess about with the text. The wikidata stuff can be quite inconsistent also in what it returns.
 
 - ## [Show HN: Static.wiki – read-only Wikipedia using a 43GB SQLite file | Hacker News_202107](https://news.ycombinator.com/item?id=28012829)
 

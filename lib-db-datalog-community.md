@@ -347,12 +347,14 @@ modified: 2023-09-16T17:27:42.089Z
   - Cypher is by far the biggest graph query language and they seem to have the most weight in the conversation so far, but we are going to try to represent datalog as far as possible. 
   - Even if woql isn't the end result, we think datalog it is the best basis for graph query so we'll keep banging the drum (especially as most people realize that composability is so important)
 
-- ## [New Query Language for Graph Databases to Become International Standard | Hacker News](https://news.ycombinator.com/item?id=21004115)
+- ## [New Query Language for Graph Databases to Become International Standard | Hacker News_201909](https://news.ycombinator.com/item?id=21004115)
 
 - GQL will be a declarative language in the spirit of existing property graph query languages like Cypher, so that gives you an idea. 
   - Yup, you can think of ISO GQL as the future of Cypher.
+- Is GQL a new name for Cypher?
+  - Sort of. ISO **GQL is largely about taking the best ideas from Cypher** (and other graph query languages) into a language overseen by an international standards body backed by multiple companies and implementations.
 
-- 🤔 What's wrong with SPARQL? What advantages has this over SPARQL?
+- 🤔 **What's wrong with SPARQL?** What advantages has this over SPARQL?
   - Very few real advantages on a technical level.
 - Currently it is relatively difficult to move data from one (open)cypher implementation to an other. Also as support is uneven for all features it is not so simple to get started on Neo4J and then evaluate e.g. TigerGraph if you find that Neo4J is not ideal for your usecase.
   - If your application only uses GQL then you could start on Neo4J but after two years in production cheaply move to a competitor. By just switching your backend and run your test cases etc. your data did not change, your queries remain the same, so evaluation is relatively straightforward.

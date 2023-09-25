@@ -21,6 +21,16 @@ modified: 2021-04-12T16:30:53.968Z
 
 ## 
 
+## 
+
+## 
+
+## [不想见到除 Type-C 以外的任何接口了](https://twitter.com/realQPomelo/status/1705963110723678429)
+
+- 好的，我明白了，但是请问您说的 Type-C 是以下的哪一种呢： USB-C (2.0), USB-C (USB 3.2 Gen 1), USB-C (USB 3.2 Gen 2), USB-C (USB 3.2 2x2), USB-C (2.0 with DP alt mode), USB-C (3.0 with DP alt mode), USB-C (Thunderbolt 3), USB-C (Thunderbolt 4)？
+
+- Apple用户特有的注意各项细节参数
+
 ## [如何评价苹果、亚马逊、谷歌等共同推出的免费智能家居连接标准 「Matter」? - 知乎](https://www.zhihu.com/question/460883677)
 
 - 很多人第一眼看到「开放协议」想到的就是免费授权

@@ -1,11 +1,11 @@
 ---
-title: lib-db-app-community-model-entity-eav
-tags: [community, database, database-design, eav, entity-attribute-value, graph-database]
+title: lib-db-model-eav-community-triple
+tags: [community, database-design, eav, entity-attribute-value, graph-database, triplestore]
 created: 2023-09-24T15:41:34.538Z
-modified: 2023-09-24T15:43:13.230Z
+modified: 2023-09-25T09:00:49.722Z
 ---
 
-# lib-db-app-community-model-entity-eav
+# lib-db-model-eav-community-triple
 
 # guide
 
@@ -54,13 +54,84 @@ modified: 2023-09-24T15:43:13.230Z
 - This is correct: it's the standardization of the interface between blocks and things using them, which includes structure in the data being passed back and forth, and the structure of the interface itself (e.g. what operations are available).
   - We do want to promote the free exchange of structured data, and to have data captured and marked up according to some structure - we also want to promote the portability and easy-of-setup of UI components.
   - Our FAQ illustrates how we relate to and intend to use existing standards - https://blockprotocol.org/docs/faq - we'd be interested in any others you think worth building on.
-
-- 
-- 
-- 
-
 # discuss
 - ## 
+
+- ## 
+
+- ## 💡 [Dynamic Django Models with Model Models | Hacker News_201808](https://news.ycombinator.com/item?id=17808442)
+- It is essentially EAV isn't it? Well integrated into Django so it works with the admin and migrations.
+- No it's not EAV. EAV is an sql (anti) pattern where you have a table with varchar fields such as name, type and value. This makes it very difficult to do aggregates and you can't do any consistency checks from the db.
+  - **What the article proposes is much better than this: A way to create models (ie tables in the database) dynamically**. 
+  - To make it more clear if you are not familiar with django, it'd be the same as if the `CREATE TABLE` sql was generated dynamically depending on the user selections.
+  - So in this case each model will be in its own table and the fields will have proper types. You may even be able to have referential consistency using a ForeignKey field!
+
+- I know it's possible to take the ModelModel approach a bit further and add ForeignKeys to it. **JSONField is like a better EAV, but it doesn't do dynamic relationships**.
+
+- ## [Is JSONB + Postgres still a viable way of storing varying attributes? : rails](https://www.reddit.com/r/rails/comments/10x3x0d/is_jsonb_postgres_still_a_viable_way_of_storing/)
+- Postgres jsonb columns will probably get you most of what you need, and even scale fairly well if you keep a few things in mind and plan ahead.
+  - They're pretty efficient and queryable these days. I believe you can even use GIN indexes on data within the columns. The main downsides are a lack of column types (and therefore all the activerecord inference and other niceties) and needing to put a little more effort into setting defaults/checking if attributes exist
+- I'd also highly recommend taking a look at the EAV (Entity Attribute Value) design pattern. I can't say whether it'd serve you better than JSON for your requirements here, but it's a great approach to "lots of dynamic/optional attributes" for records.
+
+- Store model and store attributes gems makes jsonb first class activerecord members. Add gin indexes to the field and reads are just as fast as native fields. Writes are always slower
+
+- Completely viable. And if you want formal, "validatable" data in your JSON you can always turn to JSON-LD or any of the other schema systems.
+
+- We use it heavily in production everyday in our pg cluster and it has not failed us yet. Highly recommend!
+
+- In my opinion JSONB is one of the many (or most) awesome aspects of Postgres.
+  - It frees developers to have a hybrid sql/no sql datastore without using something like mongo (yuck).
+  - u/demillir suggested the EAV (Entity Attribute Value) design pattern and I would avoid it like the plague.
+  - JSONB is fast, easy to cache, and can expand or contract as needed - you'll just need some organization, discipline, and a ton of checks in your code as to whether or not an attribute exists.
+  - After adding JSONB columns to very structured tables I haven't really had to run many (if any) db migrations.
+  - The query syntax for JSONB syntax is a little weird, but once you get used to it it's pretty awesome - just make sure queries that need sums, totals, etc. are still in structured fields.
+
+- ## [Anti relational pattern? : Database](https://www.reddit.com/r/Database/comments/ng7akp/anti_relational_pattern/)
+- that's called Entity Attribute Value and is considered an anti-pattern
+  - Use SQL Table Inheritance instead
+- Nice SO answer. I always go for "Concrete Table Inheritance", then use a view to UNION if that's necessary.
+  - The tables remain decoupled from each other which is important for keeping technology debt, and it's a very simple solution with no magic (like a Type field). Simplicity is way more important than DRY.
+  - (I think that antipattern is also called "database in database")
+
+- Which is fine if your DB platform supports table inheritance and your team knows the feature well enough to not make it a disaster.
+
+- Most of my database have this design. It makes maintenance way easier as a user can define a new element without the need for a database structure change. This model also makes it very easy to generate JSON objects that a web page can use. Be sure to always indicate in the element constraints the real data type and precision.
+  - The constraint table holds the definition of the element and then you can put all of the required data types in that such as if it's an integer whether it's a string a date things like that. You can also store validation methods there also
+
+- So the EAV model you have here will work find with smaller amounts of data. However, things get really bad when your data grows. 
+  - I remember, before the elastisearch implementation, there was an issue where a query with multiple properties checked would cause the ORM to create an insane sql query over 100k characters in length.
+
+- I've worked with a few databases that have the need for this flexible metadata. PostgreSQL has both `hstore` and `json` datatypes that are ideal.
+
+- I wish somebody would implement Dynamic Relational. Some domains could really use such. You can incrementally "lock down" columns and/or tables with stricter rules to gradually make it resemble current "static" RDBMS as projects mature.
+
+- ## [Is Entity Attribute Value (EAV) the right move here? : SQL](https://www.reddit.com/r/SQL/comments/vvyi4f/is_entity_attribute_value_eav_the_right_move_here/)
+- An EAV could work in your situation, however performance tanks hard when the database gets very large. Relational databases excel at structured data, and that is not quite what you want to store here. 
+  - Perhaps you would benefit more from a different data store like a NoSQL solution.
+
+- Nowadays I would almost always choose JSON over EAV to store dynamic (unknown) attributes.
+  - Some DBMS also let you index the whole JSON value, so that you arbitrary query conditions can be supported by an index to increase query performance.
+
+- ## [EAV - is it really bad in all scenarios? - Software Engineering Stack Exchange](https://softwareengineering.stackexchange.com/questions/93124/eav-is-it-really-bad-in-all-scenarios)
+- Using an EAV structure for has several implications that are trade offs.
+- You are trading off a 'less space for the row because you don't have 100 columns that are null' against 'more complex queries and model'.
+  - Having an EAV typically means the value is a string that one can stuff any data into. This then has implications on validity and constraint checking.
+  - The thing to realize here is that you can't use an index reasonably on the value. You also can't prevent someone from putting in something that isn't an integer there, or an invalid integer (uses '-1' batteries) because the value column is used again and again for different purposes.
+
+- Some alternatives or modifications to the pattern to consider is instead of a free form key, to have another table with valid keys. It means instead of doing string comparisons in the database, you are checking against the equality of foreign key ids. Changing the key itself is done in one spot. You've got a known set of keys which means that they can be done as an enum.
+
+- An example of this can be seen in the database model for Redmine you can see the `custom_fields` table, and the `custom_values` table -- those are parts of the EAV that allows the system to be extended.
+
+- Note that Postgres actually stores JSONB, not plain text JSON, and it does support indexes on fields inside of a JSONB document / field, in case you discover that you actually do want to query against that data.
+  - Also, note that fields within a JSONB field cannot be modified individually with an UPDATE query; you would have to replace the entire content of the JSONB field.
+- Just to keep others on track, MS SQL was supporting XML columns with ability to index them for a while and starting from 2016 it can do the same with JSON (although JSON is not a native column type in MS SQL, you can still index it). 
+
+- Storing EAV as one big table with three columns entity_id, attribute_id, value is an inefficient implementation of EAV. For more efficiency: attributes should be columns.
+
+- ## [database - Which aspect of normal forms do entity-attribute-value tables violate, if any? - Software Engineering Stack Exchange](https://softwareengineering.stackexchange.com/questions/160700/which-aspect-of-normal-forms-do-entity-attribute-value-tables-violate-if-any)
+- An EAV (aka Key-Question-Answer) table is technically in 3NF
+- It's not Normalized
+  - One of the Rules of Normalization is that : A field should have the same meaning in each row of the table
 
 - ## [Mistakes Beginners Make When Working with Databases | Hacker News_201606](https://news.ycombinator.com/item?id=11862723)
 - EAV isn't all bad, there are use-cases for it. If you have a highly dynamic data (user configurable) then EAV might be a good way to STORE that data.
@@ -97,10 +168,6 @@ modified: 2023-09-24T15:43:13.230Z
 
 - Another commenter illustrated some of the issues you will run into with this pattern at scale.
 - It would probably help to benchmark some complex queries on a sizable data set. And compare against mongo, postgres jsonb, vanilla eav, clickhouse, etc. Without much information to go on, it's hard to know what this is.
-
-- 
-- 
-- 
 
 - ## [Django EAV 2 – Entity-Attribute-Value Storage for Django | Hacker News_201807](https://news.ycombinator.com/item?id=17628685)
 - Or just use JSONField, because that’s exactly the reason why it exists.
@@ -218,6 +285,10 @@ modified: 2023-09-24T15:43:13.230Z
 - The last company I worked at made an application that used the Entity-Attribute-Value pattern in the database. The stated reason was to be dynamic, so we didn't have to worry about adding new columns and the associated downtime (assuming the DB got huge, which of course it would because this app would surely be a huge success). We had that problem on our main app (with 10s of millions of rows) where adding a column was always tricky, so I think management over-corrected. The other supposed win was that since the model didn't change, the code didn't need to be updated.
   - The data that was being stored fit into the relational model pretty well. But thanks to E. A. V. it was very difficult to query. The kinds of questions we often looked at (how many records from this zip code) would have been trivial without the E. A. V. Today you might use a NoSQL database (which were just starting to get noticed at the time), but in reality it fit into MySQL just fine.
 - The real sad part is, we never used that functionality in the 2-3 years after it was developed while I was there. The app wasn't big enough for adding columns to take much time at all. All that "flexibility" we needed? We didn't use it, because it would have taken additional time to implement the additional front-ends and update the other backend systems.
+
+- Wordpress uses the EAV db pattern too (have a look at the `wp_options` and `wp_meta` tables).
+  - Of course, Magento and Wordpress use it in fundamentally different ways 
+- Squiz's Matrix (open-source CMS) also uses an EAV model.
 
 - ## [EAV is considered an antipattern. | Hacker News](https://news.ycombinator.com/item?id=24049559)
 - I've been working on a project using schema.org objects (100's of types of objects) in postgres in a graph/tree like structure. While structured the objects are not consistent enough for me to want separate schemas for them. Using JSONb in postgres allows me to index separate fields within the JSON while still having all the objects in a single graph.

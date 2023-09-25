@@ -15,7 +15,7 @@ modified: 2023-09-16T17:27:17.186Z
 
 - pros
   - express recursive relationships
-  - **reusable rules for query** (easier to migrate)
+  - **composable/reusable rules for query** (easier to migrate)
 
 - cons
 

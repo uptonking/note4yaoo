@@ -62,4 +62,12 @@ modified: 2023-09-17T17:35:27.024Z
 - ## [edgedb: We Can Do Better Than SQL | Hacker News_202008](https://news.ycombinator.com/item?id=24106608)
 - 
 - 
-- 
+
+- [Show HN: EdgeDB 1.0 | Hacker News_202202](https://news.ycombinator.com/item?id=30290225)
+  - EdgeQL is designed to replace SQL, not graph query languages. 
+  - Think of it as SQL getting a proper type system and GraphQL capabilities of reaching into deep relationships in an ergonomic way.
+
+- SC32 WG3 is developing two related standards to support property graphs:
+  1. SQL/PGQ (ISO/IEC JTC1 9075 part 16) -- This adds language to create property graph views on top of existing SQL tables and write property graph queries in a GRAPH_TABLE function in an SQL FROM statement.
+  2. GQL (ISO/IEC JTC1 39075 Database Language GQL) -- This is a full declarative property graph database language to create, maintain, and query graphs. This includes support for both descriptive and prescriptive schemas.
+  - **The Graph Pattern Matching language is identical between the two standards.**

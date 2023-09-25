@@ -17,6 +17,14 @@ modified: 2021-03-31T06:50:19.936Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 开源 Linux 服务器管理面板： 1Panel。完全可以代替商业化的宝塔面板
+- https://twitter.com/vikingmute/status/1706122320660873526
+- 几台到几十台机器，Portainer + Docker更好用，还能集中管理。
+
 - ## 多租户的应用以 uuid 做主键解决了我的精神内耗……
 - https://twitter.com/chloerei/status/1651868638650187776
   - 不能排序也不太方便嘞

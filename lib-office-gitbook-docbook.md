@@ -47,7 +47,7 @@ modified: 2023-09-19T07:53:59.349Z
   - markdown/asciidoc/reStructuredText-sphinx
   - gnu-texinfo
   - emacs-orgmode
-  - wikipedia zim: 高压缩，适合只读
+  - wikipedia zim: 高压缩，为只读设计
   - O'Reilly HTMLBook Specification: rarely
 
 - who is using #markdown-markup
@@ -86,10 +86,20 @@ modified: 2023-09-19T07:53:59.349Z
 
 - The major features are its fully CSS-based page layout, search of the help content, and a table of contents in collapsible-tree form. 
 
+- DBpedia data is served as Linked Data, which is revolutionizing the way applications interact with the Web. 
 - 
 - 
-- 
-- 
+
+## [DBpedia](https://www.dbpedia.org/about/)
+
+- DBpedia is a crowd-sourced community effort to extract structured content from the information created in various Wikimedia projects
+  - This structured information resembles an open knowledge graph (OKG) which is available for everyone on the Web. 
+- The DBpedia RDF Data Set is hosted and published using OpenLink Virtuoso. 
+  - The Virtuoso infrastructure provides access to DBpedia’s RDF data via a SPARQL endpoint, alongside HTTP support for any Web client’s standard GETs for HTML or RDF representations of DBpedia resources.
+  - As the project gained traction, the HTTP demands on Pubby’s out-of-process Linked Data Publishing services increased, and the natural option was to take advantage of Virtuoso’s SPASQL (SPARQL inside SQL) and other Linked Data Deployment features, by moving these services in-process with Virtuoso.
+
+- https://github.com/dbpedia/databus /js
+  - Databus is a transformative platform for agile data integration, collaboration, and automation via a structured metadata Knowledge Graph
 
 ## 💡 [Comparison of e-book formats - Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_e-book_formats)
 
