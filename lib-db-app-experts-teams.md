@@ -9,6 +9,11 @@ modified: 2023-02-02T03:22:07.941Z
 
 # guide
 
+- db架构分析
+  - oltp, olap, htap
+  - schema: strict/none, rdbms/nosql
+  - structure: document/object, flat
+  - value: unique, regular/common
 # db-trending
 - datalog/datomic
   - math-flavor query dsl

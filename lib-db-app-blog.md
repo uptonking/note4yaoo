@@ -175,10 +175,34 @@ modified: 2023-09-16T17:49:13.534Z
   - BeyondStorage 构建 go-storage 是为了满足迁移服务的需求，而迁移服务的需求来自于 go-storage 能力的自然延伸。不难发现这套逻辑中出现了一个可怕的循环，链条中完全没有真实用户的参与，项目从发展伊始就在朝着错误的方向狂奔。
   - BeyondStorage 失败的最直接原因是失去了最大金主：青云科技。
   - OpenDAL 最幸运的地方在于它孵化自 Databend 的真实场景。Databend 持续不断地提出新需求，这些需求帮助我判断需求的必要性、调整任务优先级并修正错误假设。
-# blogs-db-vendors
-- [Building and operating a pretty big storage system called S3](https://www.allthingsdistributed.com/2023/07/building-and-operating-a-pretty-big-storage-system.html)
+# blogs-db-design
 
-- [Database branching: three-way merge for schema changes](https://planetscale.com/blog/database-branching-three-way-merge-schema-changes)
+## [Ten Common Database Design Mistakes - Simple Talk](https://www.red-gate.com/simple-talk/databases/sql-server/database-administration-sql-server/ten-common-database-design-mistakes/)
+
+### Poor design/planning
+
+### Ignoring normalization
+
+### Poor naming standards
+
+### Lack of documentation
+
+### One table to hold all domain values
+
+### Using identity/guid columns as your only key
+
+### Not using SQL facilities to protect data integrity
+
+### Not using stored procedures to access data
+
+### Trying to build generic objects
+
+### Lack of testing
+
+### 👥 discussions
+
+- EAV tables:
+  - Yuk, hate them - think they are better off using a NoSQL solution instead, I believe there are all kinds of options that stop one breaking the data integrity notions of a sql database for generic tables.
 # more
 - [处理海量数据：列式存储综述（存储篇） - 知乎](https://zhuanlan.zhihu.com/p/35622907)
 

@@ -75,6 +75,7 @@ $$('[contenteditable]')
 - deep into lib/fwk
   - src-code, issues, pr, forks, extensions/alternatives
   - storage, sync, conflicts, partial
+  - 直接根据具体框架或产品搜索解决方案如airtable-database，不必拘泥于通用方案如event-sourcing/eav
 # dev-2023-方向+方法+时间
 - 👉🏻 output: 代码产出、产品落地、生态积累
 - slate-wangeditor

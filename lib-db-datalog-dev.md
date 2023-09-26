@@ -20,6 +20,7 @@ modified: 2023-09-16T17:27:17.186Z
 - cons
 
 - datalog vs sql
+  - 对graph模型的查询，当前主流方案是datalog/cypher，未来标准是gql/pgq
   - easier to express recursive relationships in Datalog compared to SQL
   - with the datalog (as well as prolog) syntax, is you are able to build a vocabulary of re-usable queries
 

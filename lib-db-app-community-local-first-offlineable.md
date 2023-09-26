@@ -37,7 +37,7 @@ modified: 2023-09-22T20:15:10.616Z
 - I use the PouchDB/CouchDB combo for exactly the use case your describing. The query language for CouchDB leaves a little to be desired, but ultimately it has worked well for me. I'm self hosting on a digital ocean droplet.
 - I use CouchDB. I love its multi-master replication capability, HTTP API and its ability to monitor for changes easily.
 
-- I had a really great experience building an EAV store with Datalog as the query interface on top of SQLite for embedding in native mobile apps.
+- 🌰 I had a really great experience building an EAV store with Datalog as the query interface on top of SQLite for embedding in native mobile apps.
   - Pros: querying complex data hierarchies was easy, and was able to skip the pain typically associated with managing a SQL schema.
 - What’s the application for this? **EAV is often an anti-pattern when a schema could be defined**, but I’m actually using it as well. Our application is an end-user-defined database for mobile data collection. The EAV model in SQLite is a bit of a cognitive burden but makes offline sync and conflict resolution pretty straight forward. It’s almost a crude(简陋的；粗糙的) CRDT implementation.
 - I wasn't aware that EAV is an anti-pattern in that case. Is it an efficiency thing?
@@ -46,7 +46,7 @@ modified: 2023-09-22T20:15:10.616Z
 
 - 🤔 Are you able to elaborate on why you chose EAV over using something like the json1 extension of SQLite?
 - It was built on a single table that held the entity-attribute-value tuple along with some additional metadata like type information, whether or not the attribute was a pointer to another entity, and the cardinality of that relationship (one or many).
-  - Relationships were walked via self joins and the eav columns were all indexed.
+  - **Relationships were walked via self joins and the eav columns were all indexed**.
 - This sounds very similar to what we’re doing and we are in the process of migrating most of the EAV models (other than the relationships) to a json1 column (Which I’d argue is still EAV just in document format). Keeping the relationship foreign keys outside of the json allows the database itself to enforce referential integrity.
   - The **difficulty with having all attributes be EAV** becomes apparent when having to do multiple joins to fetch a single record type (what would be a “table” traditionally). 
   - Although this is manageable, the **bigger difficulty** I’ve found is synchronizing deletions of records, especially if deletions/insertions are done in bulk. 

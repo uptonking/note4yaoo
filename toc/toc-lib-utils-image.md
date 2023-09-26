@@ -88,6 +88,19 @@ modified: 2023-04-04T22:39:45.442Z
   - web-based viewer for high-resolution zoomable images, implemented in pure JavaScript, for desktop and mobile.
   - Supported Tile Sources: legacy image pyramids、osm、tms
 
+- https://github.com/wojtekmaj/react-pdf /js
+  - Display PDFs in your React app as easily as if they were images.
+  - For React-PDF to work,  `PDF.js` worker needs to be provided.
+
+- https://github.com/vercel/satori /ts
+  - Enlightened library to convert HTML and CSS to SVG
+  - What if there’s a `<Satori>` component that adds fluid layout & style transitions to your elements?
+
+- https://github.com/imgly/background-removal-js /GPLv3/ts
+  - Remove backgrounds from images directly in the browser environment with ease and no additional costs or privacy concerns
+
+## annotation/labelling
+
 - mirador /400Star/Apache2/202105/js
   - https://github.com/ProjectMirador/mirador
   - https://projectmirador.org/
@@ -99,16 +112,9 @@ modified: 2023-04-04T22:39:45.442Z
   - React component for computer vision dataset annotation
   - 依赖fabric、react-draggable、use-gesture
 
-- https://github.com/wojtekmaj/react-pdf /js
-  - Display PDFs in your React app as easily as if they were images.
-  - For React-PDF to work,  `PDF.js` worker needs to be provided.
-
-- https://github.com/vercel/satori /ts
-  - Enlightened library to convert HTML and CSS to SVG
-  - What if there’s a `<Satori>` component that adds fluid layout & style transitions to your elements?
-
-- https://github.com/imgly/background-removal-js /GPLv3/ts
-  - Remove backgrounds from images directly in the browser environment with ease and no additional costs or privacy concerns
+- https://github.com/labelflow/labelflow /ts
+  - https://labelflow.ai/
+  - an open platform for image labeling. 
 # codec
 - https://github.com/GoogleChromeLabs/squoosh /ts
   - Squoosh does not send your image to a server. All image compression processes locally.

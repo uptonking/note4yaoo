@@ -25,4 +25,7 @@ modified: 2023-08-25T21:16:48.485Z
   - 一种实现思路，保存各branch的name/delta-changes/baseBranchId，然后根据以上数据获取分支对应的所有delta-changes，然后计算出对象数据
   - json/tree branching merge
   - 参考方案1: [Upwelling: Combining real-time collaboration with version control for writers](https://www.inkandswitch.com/upwelling/)
+
+- versioning
+  - 多版本的实现方式通常是添加新的列同时复制旧数据，等到数据和api访问都迁移到新的，就废弃旧的
 # more

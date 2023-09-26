@@ -45,6 +45,8 @@ modified: 2020-10-22T10:22:33.292Z
     - Editor/IDE for Vega and Vega-Lite
   - https://github.com/vega/vega-geo
     - This package has been consolidated into the vega/vega repository
+- https://github.com/hyungkwonko/chart-llm /python
+  - Vega-Lite Chart Dataset and NL Generation Pipeline using LLMs
 
 - ag-charts /6.7kStar/MIT/202010/ts/canvas
   - https://github.com/ag-grid/ag-grid

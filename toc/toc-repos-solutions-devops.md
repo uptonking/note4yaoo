@@ -29,4 +29,9 @@ modified: 2020-12-12T19:01:56.749Z
   - https://openstatus.dev/
   - The Open-source Status Page and Alerting System
   - The Statuspage Open Source Alternative.
+
+- https://github.com/webmin/webmin /perl
+  - http://www.webmin.com/
+  - a web-based system administration tool for Unix-like servers, and services
+  - it is possible to configure operating system internals, such as users, disk quotas, services or configuration files, as well as modify, and control open-source apps, such as BIND DNS Server, Apache HTTP Server, PHP, MySQL, and many more.
 # more

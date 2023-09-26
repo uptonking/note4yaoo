@@ -14,7 +14,19 @@ modified: 2023-09-16T17:27:42.089Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## ✨ [Mentat: A persistent, relational store inspired by Datomic and DataScript | Hacker News_201704](https://news.ycombinator.com/item?id=13568559)
+- "DataScript asks the question: "What if creating a database would be as cheap as creating a Hashmap?"
+  - Mentat is not interested in that. Instead, it's strongly interested in persistence and performance, with very little interest in immutable databases/databases as values or throwaway use."
+  - Mentat is designed for embedding, initially in an Electron app
+
+- This is the renamed version of Datomish.
+  - The original implementation was in ClojureScript. This reimplementation is in Rust, and is intended to work anywhere you can run Rust code: inside Node, inside Firefox, and in standalone applications.
+
+- Awesome. Been looking hard for open source datalog-supporting data stores and data processing systems for a couple of years now. 
+
+- RDFox: "A highly scalable in-memory RDF triple store that supports shared memory parallel datalog reasoning. It is a cross-platform software written in C++ that comes with a Java wrapper allowing for an easy integration with any Java-based solution."
+- Dedalus: Datalog in Time and Space, by Peter Alvaro out of UC Berkeley
+- Datalog -> Gremlin: It shouldn't be too hard to implement Datalog on top of the Gremlin Graph Virtual Machine 
 
 - ## 👉🏻 [SQLite now allows multiple recursive SELECT statements in a single recursive CTE | Hacker News_202010](https://news.ycombinator.com/item?id=24843643)
 
@@ -343,11 +355,11 @@ modified: 2023-09-16T17:27:42.089Z
   - I guess Neo4j might make a good DB for ETL-ing into and running certain kinds of analysis.
 - **Cypher doesn't have named queries** (and thus not recursive ditto either), AFAIK. 
 
-- [Composeability is front and center in GQL, so you may want to consider it. | Hacker News](https://news.ycombinator.com/item?id=22872470)
-  - Cypher is by far the biggest graph query language and they seem to have the most weight in the conversation so far, but we are going to try to represent datalog as far as possible. 
+- ## [Composeability is front and center in GQL, so you may want to consider it. | Hacker News](https://news.ycombinator.com/item?id=22872470)
+- Cypher is by far the biggest graph query language and they seem to have the most weight in the conversation so far, but we are going to try to represent datalog as far as possible. 
   - Even if woql isn't the end result, we think datalog it is the best basis for graph query so we'll keep banging the drum (especially as most people realize that composability is so important)
 
-- ## [New Query Language for Graph Databases to Become International Standard | Hacker News_201909](https://news.ycombinator.com/item?id=21004115)
+- ## 💡 [New Query Language for Graph Databases to Become International Standard | Hacker News_201909](https://news.ycombinator.com/item?id=21004115)
 
 - GQL will be a declarative language in the spirit of existing property graph query languages like Cypher, so that gives you an idea. 
   - Yup, you can think of ISO GQL as the future of Cypher.
@@ -374,6 +386,8 @@ modified: 2023-09-16T17:27:42.089Z
   - The expressiveness of GraphQL is severely limited, it doesn't allow you to express even simple patterns like triangles, depth n, paths etc..
 - Exactly. **GraphQL solves the same problem as REST. It is not a graph query language despite its unfortunate name**.
 
+- It would be nice if there were layered language approach, with a core Datalog/SPARQL-like core language specified first, then the sugary language that target it.
+
 - ## 🆚️ [Graph query languages: Cypher vs. Gremlin vs. nGQL | Hacker News_202003](https://news.ycombinator.com/item?id=22482665)
 
 - Datalog is such a delight to use especially since queries are just data structures are just code. 
@@ -384,15 +398,41 @@ modified: 2023-09-16T17:27:42.089Z
 # discuss-graph-db
 - ## 
 
+- ## 
+
+- ## [Ask HN: Why are relational DBs are the standard instead of graph-based DBs? | Hacker News_202110](https://news.ycombinator.com/item?id=28736405)
+- Yet a relational database in 5th normal form is equivalent to a RDF-Like first order Triple graph.
+  - Not quite. The definition of 5NF depends on real-world constraints on valid combinations of attributes in the database; it has nothing to do with any pre-defined data model such as RDF. There can be "wide", horizontally-modeled tables (quite unlike the RDF model) which are in 5NF simply because no real-world constraints apply to the data beyond those that are implied by the candidate keys.
+
+- I'm a huge fan of LogicBlox and RelationalAI, and the research done at both had a huge impact on me as an undergrad! While you're here, could you provide some insight on why you folks went with arbitrary width tuples for your datamodel? Limiting youself to triples seems to drastically ease the implementation of WCOJ algorithms without much loss of expressivity, and provides compatibility with existing RDF research.
+- With triples you need to reify hyper edges into nodes (a relation is just a hyper edge). This can lead to pretty awkward models, for example for temporal data. Most graph databases (eg Neo4J) have the same limitation and as a result struggle with temporal data or other higher-dimensional data.
+  - We prefer to support general relations (hyper edges) and face the complications of query planning. We really want a general relational system that decouples the complications in query processing from the way you need to model your data and write your queries
+  - This gets particularly important for what we do besides graphs: we also aim to support machine learning workloads (we have some references to papers on our website).
+  - We still do automatic index selection, but indeed it is important that you do not create too many of these unnecessarily if you relations with arity bigger than triples.
+
+- 
+- 
+- 
+
+- ## [Show HN: EdgeDB 1.0 | Hacker News_202202](https://news.ycombinator.com/item?id=30290225)
+- EdgeQL is designed to replace SQL, not graph query languages. 
+  - Think of it as SQL getting a proper type system and GraphQL capabilities of reaching into deep relationships in an ergonomic way.
+
+- SC32 WG3 is developing two related standards to support property graphs:
+  1. SQL/PGQ (ISO/IEC JTC1 9075 part 16) -- This adds language to create property graph views on top of existing SQL tables and write property graph queries in a GRAPH_TABLE function in an SQL FROM statement.
+  2. GQL (ISO/IEC JTC1 39075 Database Language GQL) -- This is a full declarative property graph database language to create, maintain, and query graphs. This includes support for both descriptive and prescriptive schemas.
+  - **The Graph Pattern Matching language is identical between the two standards.**
+
 - ## [Neo4j raises $325M series F | Hacker News_202106](https://news.ycombinator.com/item?id=27541453)
 - Historically, graph databases did a passable job of supporting data models and queries that were not really possible in SQL (absent proprietary, vendor-specific extensions). 
   - That's all over now, because recent versions of SQL support recursive queries that can handle general graphs quite easily. 
   - No real need for a specialized solution, even plain vanilla Postgres is good to go.
 - Sql syntax for such queries is super awkward with tones of gottyas, not sure how performance compares
 
-- GQL (ISO/IEC 39075) is a full database language to create and manage property graphs and create, read, update, and delete nodes and edges (or vertices and relationships)
-- SQL/PGQ (ISO/IEC 9075-16) is a new add-on part of the SQL standards which introduces the capabilities to create property graph views on top of existing tables in an SQL database, as well as the ability to query property graphs using a GRAPH_TABLE function in an SQL FROM clause
-- The input to the SQL/PGQ GRAPH_TABLE function is a property graph query, sometimes referred to as Graph Pattern Matching or GPM. Graph Pattern Matching is common between SQL/PGQ and GQL. **That is, the syntax accepted in a GRAPH_TABLE function in an SQL FROM clause is identical to the syntax in a GQL graph query**. Because GPM is the same in both draft standards, changes to GPM for SQL/PGQ also apply to the GPM portions of the GQL specification.
+- 👉🏻 Something I just found out after looking into status updates on the Property Graph Query (PGQ) work being done in SQL, is that it will exactly mirror the work going into GQL (Graph Query Language, a newish standard in its early stages of development based mostly off of Neo4j's Cypher).
+  - GQL (ISO/IEC 39075) is a full database language to create and manage property graphs and create, read, update, and delete nodes and edges (or vertices and relationships)
+  - SQL/PGQ (ISO/IEC 9075-16) is a new add-on part of the SQL standards which introduces the capabilities to create property graph views on top of existing tables in an SQL database, as well as the ability to query property graphs using a GRAPH_TABLE function in an SQL FROM clause
+- The input to the SQL/PGQ GRAPH_TABLE function is a property graph query, sometimes referred to as Graph Pattern Matching or GPM. **Graph Pattern Matching is common between SQL/PGQ and GQL**. **That is, the syntax accepted in a GRAPH_TABLE function in an SQL FROM clause is identical to the syntax in a GQL graph query**. Because GPM is the same in both draft standards, changes to GPM for SQL/PGQ also apply to the GPM portions of the GQL specification.
 - I also just came across the Apache AGE project which basically allows you right now to extend PostgreSQL DBs with property graph capabilities and enables full(?) use of Cypher/GQL.
 
 - Also, **nested sets and materialized paths have been around forever to do graphs inside SQL**.
@@ -413,10 +453,11 @@ modified: 2023-09-16T17:27:42.089Z
 - How does this perform compared to a “native” graph database like Neo4J?
   - I would benchmark the tasks "traversal", "aggregation" and "shortest past" for a 10k to 10M node graph. Anything under 10k would be good enough with most techs and over 10M need to consider more tasks (writes, backup, the precise fields queried can become their particular problems at larger scale).
 
-- There has been a lot of progress on creating standardized query languages for graphs. The two most notable ones are [2]:
+- 👉🏻 There has been a lot of progress on creating standardized query languages for graphs. The two most notable ones are [2]:
   - SQL/PGQ, a property graph query extension to SQL is planned to be released next year as part of SQL:2021.
   - GQL, a standalone graph query language will follow later.
   - While it is a lot of work to design these languages, both graph database vendors (e.g. Neo4j, TigerGraph) and traditional RDBMS companies (e.g. Oracle [2], PostgreSQL/2ndQuadrant [3]) seem serious about them. And with a well-defined query language, it should be possible to build a SQL/PGQ engine in (or on top of) SQLite as well.
+- SQL/PGQ and GQL target the property graph data model and support an ASCII-art like syntax for pattern matching queries (inspired by Cypher). They also offer some graph traversal/shortest path operations (including shortest path and regular path queries). Additionally, GQL supports returning graphs so it's queries can be composed.
 
 - It depends on how the graph is stored in the database. In this project the nodes ids are TEXT so it will likely not scale very well. I know because I use a similar implementation with GUID as string in Sqlite in a project since a couple of years and while it works fine for the graph I have (<1 million nodes, few edges per nodes) it won’t perform too well past that.
 
@@ -427,8 +468,20 @@ modified: 2023-09-16T17:27:42.089Z
 
 - ## 👉🏻 [Postgres as a graph database | Hacker News](https://news.ycombinator.com/item?id=35386948)
 - I designed and maintain several graph benchmarks in the Linked Data Benchmark Council, including workloads aimed for databases. We make no restrictions on implementations, they can any query language like Cypher, SQL, etc.
-  - In our last benchmark aimed at analytical systems [2], we found that SQL queries using WITH RECURSIVE can work for expressing reachability and even weighted shortest path queries. However, formulating an efficient algorithm yields very complex SQL queries [3] and their execution requires a system with a sophisticated optimizer such as Umbra developed at TU Munich [4]. Industry SQL systems are not yet at this level but they may attain that sometime in the future.
+  - In our last benchmark aimed at analytical systems, we found that SQL queries using WITH RECURSIVE can work for expressing reachability and even weighted shortest path queries. However, formulating an efficient algorithm yields very complex SQL queries and their execution requires a system with a sophisticated optimizer such as Umbra developed at TU Munich. Industry SQL systems are not yet at this level but they may attain that sometime in the future.
   - **Another direction to include graph queries in SQL is the upcoming SQL/PGQ (Property Graph Queries) extension**. I'm involved in a project at CWI Amsterdam to incorporate this language into DuckDB [5].
+- This same technique - WITH RECURSIVE - is also supported by SQLite.
+
+- Take a look at RDFox, unlike postgres where you can only derive a column from another column once, you can't derive a column from a derived column, RDFox can derive unlimited columns or even objects through rules incrementally. Kind of like unlimited chaining of materialized views
+
+- I do love PostgreSQL, and I often reach for this approach when working with hierarchical data, but a word of warning: Recursive queries will not scale to handle _very_ large edge tables. The recursive query will always consider _all_ edges, even when the outer query seeks only a single node's relationships. The solution is to build and index denormalized n-th order relationship tables.
+
+- I've since worked on SpiceDB which scales much better by taking the traditional design approach for graph databases and **only treating Postgres as triple-store**. IME, there's no short-cut: if you need a graph, you probably want to use a database optimized for graph access patterns. Most general-purpose graph databases are full of optimizations for common traversals that are uncommon operations in relation databases.
+
+- Postgres is powerful. I've implemented graph DB, mapreduce, huge sparse matrix math (which was cool), and ofc a KV store with it. With actual performance benefits over the alternatives. It's not very ergonomic for those, but it works.
+  - That said, I've had so many jobs where the team decides to fit our whole data model into a fully recursive graph, and it's been a huge mistake every time regardless of whether they use Postgres or a dedicated graph DB. 
+  - **Just because you can do it (you always can!) doesn't mean you should**. 
+  - Start with just a traditional n-hierarchy schema and only look at modeling things as a graph if you're sure it's necessary. Usually it's not. Sometimes you'll have a mostly non-graph schema with a couple of graph tables for the things that really need that.
 
 - 
 - 

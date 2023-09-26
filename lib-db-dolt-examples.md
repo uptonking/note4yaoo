@@ -132,13 +132,14 @@ modified: 2023-08-25T22:31:05.132Z
     - go-mysql-server is a drop-in replacement for MySQL. Any client library, tool, query, SQL syntax, SQL function, etc. that works with MySQL should also work with go-mysql-server.
     - A simple in-memory database implementation is included, and you can query any data source you want by implementing your own backend.
 
-- https://github.com/terminusdb/terminusdb-store /apache2/rust
+- https://github.com/terminusdb/terminusdb-store /341Star/apache2/202309/rust
   - a tokio-enabled data store for triple data
   - This library implements a way to store triple data - data that consists of a subject, predicate and an object, where object can either be some value, or a node
   - This library is intended as a common base for anyone who wishes to build a database containing triple data.
   - This library is tokio-enabled. Any i/o and locking happens through futures, and as a result, many of the functions in this library return futures. 
   - The HDT format, which the terminusdb-store layer format is based on
   - We are constantly developing terminusdb-store to make it a high quality succinct(简洁的) graph representation versioned datastorage layer. 
+  - Starting with version 0.20.0, terminus-store uses a new storage format, which bundles all files into a single archive, and also supports value types. 
 
 - https://github.com/terminusdb/terminusdb /prolog语言
   - https://terminusdb.com/

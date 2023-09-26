@@ -12,7 +12,10 @@ modified: 2023-09-25T09:00:49.722Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Ask HN: What Is Going on with Neo4j? | Hacker News](https://news.ycombinator.com/item?id=33916240)
+- triple stores (or quad stores with providence) never quite worked as well as simple property graphs (at least for the problems I was solving). I was never really looking for inference, more like extracting specific sub-graphs, or "colored" graphs, so property attribution was much simpler. Ended up fitting it into a simple relational and performance was quite good; even better than the "best" NoSQL solutions out there at the time.
+  - And, triple stores just seem to require SO MANY relations! RDF vs Property Graphs feels like XML vs JSON. They both can get the job done, but one just feels "easier" than the other.
+- RDF is the JSON of graphs. OWL is the Json-Schema of RDF.
 
 - ## [“We already store data. In a database. It works well” | Hacker News_202002](https://news.ycombinator.com/item?id=22296659&p=2)
 - Some people would take issue with the "It works well" part. https://lists.wikimedia.org/pipermail/wikidata/2020-February... Turns out that scaling up a general-purpose triple store beyond 10B triples is really, really hard, and that few or no people in the FLOSS community (important due to Wiki's reproducibility and freedom-to-fork requirements) are paying attention to the problem.
@@ -58,6 +61,42 @@ modified: 2023-09-25T09:00:49.722Z
 - ## 
 
 - ## 
+
+- ## [Everything you wanted to know about SQL injection (but were afraid to ask) | Hacker News](https://news.ycombinator.com/item?id=6129669)
+- Whereas traditional EAV is a triple - entity, attribute, value - Datomic is a quad. Datomic adds a timestamp and treats every value as an immutable fact at a point in time. Which is exceptionally valuable for highly regulated systems like finance, pharma and healthcare.
+- yeah, Datomic is EAV (technically EAVT, it's event sourced so there is a notion of time and reads/writes need be acid with transactions and stuff) and EAVT can express even higher level queries than an ORM can, mostly because you can cache the indexes locally so you can do consistent read queries in your app process (Datomic's query engine is a library that runs inside your app, if cache is hot reads don't touch network... like git). From my understanding it doesn't have much to do with sparseness, though you certainly can support sparse objects performantly with EAVT.
+  - EAVT/Datomic is a better fit for apps with complex structured data than an ORM over SQL, but migrating there is no trivial feat. Nor is convincing my customers in their due diligence phase, as they have surely been burned before by some kid pushing MongoDB, but they understand SQL and know the product can be successful with SQL, they know they can go get Oracle consultants to save their ass in 10 years when my company is sold, etc.
+
+- ## [A humble guide to database schema design | Hacker News](https://news.ycombinator.com/item?id=22806142)
+- I’ve been through this before: storing a couple addresses for a few hundred different countries in an otherwise very normalized RDBMS. We couldn’t figure out anyway to do it other than EAV tables and a defined attribute pattern for each country. Anyone come up with something better?
+  - We went the EAV route instead of just a free form text field because we still wanted to expose discrete fields to in the UI and have some front-end validation. But sure, from a data integrity standpoint it’s no better than a text field.
+
+- ## [SAML Is Insecure by Design | Hacker News_202108](https://news.ycombinator.com/item?id=28064835)
+- What kills me about SAML is that instead of this straightforward XML style
+  - It instead encodes elements and attributes using elements and attributes, in the manner of the classic "inner platform effect" anti-pattern
+  - This is roughly the equivalent of the SQL table schema where there's one table with the columns "rowid, columnname, value" along with a "schema table" that some hand-rolled code uses to validate that the data table contains only data that is valid according to the schema.
+
+- Btw I think your SQL example is called "EAV Schema" and does have a legitimate purpose once in a while.
+- I've always wondered why more people didn't actually issue DDL for these kinds of databases. Like if you want to let your user define their own custom fields, just take what they enter and actually CREATE TABLE / ALTER TABLE to build the the tables they need. And then more or less you could just write regular queries.
+- I've worked on a system like that, writing software on a project base for enterprise clients.
+  - Turns out sysadmins get REALLY nervous when you tell them your application needs permission to use DDL at runtime. It required a lot more filling out forms.
+- You can scope the DDL permissions to a single schema while still using the same database (and benefit from all the transactional guarantees a single database offers).
+- Yes, if database supports it (I guess every major ones now do) then it's great. Postgres's transactional DDL seems like great fit.
+- This is how arcgis works and it really sucks when your tier 1 starts adding columns to your schema because they made a typo.
+- Some people do that, and at one point it was much faster to do that so it was more common, but as databases have generally gotten faster that kind of optimization is less interesting to people.
+
+- these days if you are modeling the "sparse, high-dimensional data" of the kind that EAV schema does well, you probably should be reaching for JSON columns instead of EAV schema.
+  - Some databases support "sparse columns", which use EAV under the hood but are better optimised
+- Isn't that the problem that these "columnar store" DBs address?
+  - A bunch of dictionaries containing UUID/data, where each dimension is its own dict, and the dicts might or might not be running on the same system?
+
+- There's a reason for that. The attribute statement / attribute name / attribute value style has a consistent schema that won't change despite any custom attributes that are being added.
+
+- Yeah, that's known as "entity-attribute-value model" (or just "EAV") and is considered an anti-pattern unless you actually need the flexibility it provides (which is fairly rare).
+  - Yup. We run a system that uses this pattern for user-defined data fields. It works, but not without difficulty. It's very difficult to validate with business rules because you can't eliminate nulls and the "value" field is forced to be a character field. The system does have type checking enforced by the application, but multiple applications access the data.
+
+- **Database EAV would likewise be 100% appropriate if users could use the database to store arbitrary attributes. (Think JIRA custom fields.)**
+  - But if users are limited to certain attributes, then encode that in the schema.
 
 - ## 💡 [Dynamic Django Models with Model Models | Hacker News_201808](https://news.ycombinator.com/item?id=17808442)
 - It is essentially EAV isn't it? Well integrated into Django so it works with the admin and migrations.
@@ -172,7 +211,7 @@ modified: 2023-09-25T09:00:49.722Z
 - ## [Django EAV 2 – Entity-Attribute-Value Storage for Django | Hacker News_201807](https://news.ycombinator.com/item?id=17628685)
 - Or just use JSONField, because that’s exactly the reason why it exists.
 
-- ## [When to Avoid JSONB in a PostgreSQL Schema | Hacker News_201609](https://news.ycombinator.com/item?id=12408634)
+- ## 👉🏻 [When to Avoid JSONB in a PostgreSQL Schema | Hacker News_201609](https://news.ycombinator.com/item?id=12408634)
 
 - EAV is typically considered to be an anti-pattern for several reasons: 
   - it becomes very expensive to rematerialize a entity with all of its attributes/values, 
@@ -180,11 +219,14 @@ modified: 2023-09-25T09:00:49.722Z
   - and it's hard for the database to maintain good statistics on the values of different attributes as most databases don't keep multi-column statistics. 
   - Don't worry, I've had similar ideas before.
 
+- If you don't have JSONB, EAV is the only remotely-reasonable way to implement user-defined fields (e.g. product-specific attributes in e-commerce).
+
 - If you want to allow user-defined fields in a relational database, your realistic are either EAV or stuff json into a text column. EAV, if done extremely carefully, can be a good solution, but 99% of the time, it's going to be a huge pain.
+- You did see the article was about JSONB, which is significantly more sophisticated than "json in a text column", yes?
+  - Yes, the person I was replying to was asking about what to do if you don't have jsonb.
 
 - I used JSONB to keep the Tags on an object. Used to be EAV. Works way better here
 
-- 
 - 
 - 
 - 
@@ -276,6 +318,14 @@ modified: 2023-09-25T09:00:49.722Z
   - With Eva and Datomic, transactions are serialised through a single transactor node at a time.
   - **The transaction log design is a fundamental design tradeoff that Eva/Datomic/Crux share**, which means system throughput is limited by the throughput of a single process. The argument in favour of such a design is that most businesses & business applications don't actually experience transactional data volumes over 10K tx/sec.
 
+- ## 🌰 [Adobe to Acquire Magento | Hacker News_201805](https://news.ycombinator.com/item?id=17121721)
+- They had to adopt EAV database schema model because they want to design a schema that can be as generalized and flexible as possible. Obviously performance is the trade off. As a result, every Magneto shop has to use multiple layers of caching, which complicates the maintenance of Magneto, an open-source ecommerce off-the-shelf platform that's supposed to be easier than homebrew your own, ironically.
+
+- Avoiding the EAV model while still being flexible (e.g. sparse attributes for any variety of products) is one place where the JSON datatype really shines. 
+  - Throw your non-standard attributes into a JSON object and use the native DB functions to filter accordingly. 
+  - In Postgres and MySQL 8 you can add conditional/functional/virtual indexes to keep things speedy. Maybe Magento will one day take advantage of these features.
+  - It's basically a modern-day approach to Serialized LOB: https://martinfowler.com/eaaCatalog/serializedLOB.html
+
 - ## 🌰 [Reddit's database has only two tables | Hacker News_201209](https://news.ycombinator.com/item?id=4468265)
 - This is called eav
 - They've built a database in their database. Also known as the **inner platform** antipattern
@@ -324,7 +374,7 @@ modified: 2023-09-25T09:00:49.722Z
 - There are scenarios when you can't avoid EAV and then JSON is great even when it's for denormalized data.
 - More importantly, JSONFields can be used as a substitute for EAV pattern.
 
-- ## [The Inner Json Effect | Hacker News_201607](https://news.ycombinator.com/item?id=12185727)
+- ## 💡 [The Inner Json Effect | Hacker News_201607](https://news.ycombinator.com/item?id=12185727)
 - They describe something akin to Wordpress' custom fields
 - That's because custom fields in WordPress, as well as in Liferay and in a bunch of other products, are implemented as EAV, Entity–attribute–value model, which is an abomination(可憎的事物, 令人厌恶的东西).
   - It is a relational "design pattern" used to implement a database inside a database, instead of using the database itself as it was designed to be used.
@@ -332,6 +382,7 @@ modified: 2023-09-25T09:00:49.722Z
 - So, EAV and even "inner platforms" are not always necessarily bad, so long as you know that's what you're doing.
   - For example, Firefox extensions could be easily considered an inner platform but they have the benefit of providing a platform which is safer and more extensible than the underlying OS.
   - Likewise, EAV provides a poor functional replacement for an actual database. But they also prove a lower curve for implementing very simple extensions and limit the capacity for trivial mistakes. Speaking from experience, it's the WordPress sites where plugins have created a whole bunch of extra poorly-built tables that worry me most.
+
 - The alternative to EAV for custom fields is allowing users to modify the database schema. I'd rather stick with EAV.
 
 - What’s wrong with just namespacing tables per module/app/whatever? `wordpress_%app_table1` etc
@@ -345,10 +396,53 @@ modified: 2023-09-25T09:00:49.722Z
   - Of course, it's worth remembering that real databases do not typically use an EAV storage pattern for their data, so maybe it's not the only way to model a custom data store within a relational system.
 - It's also an option when the properties of objects going in the table are going to be wildly different or are not known at write time.
   - This is a candidate for something like a **schemaless datastore or a PostgreSQL JSONB column**. Depending on your choice of datastore you can still at least get some indexing and schema help if you choose. With EAV you generally throw all of that out.
+# discuss-rdf
+- ## 
+
+- ## [Update of the RDF and SPARQL (RDF star) families of specifications | Hacker News](https://news.ycombinator.com/item?id=36001509)
+- RDF is not dependent on XML as a syntax. 
+  - There's a text-based syntax in common use (Turtle), as well as a separate one based on JSON (JSON-LD).
+
+- As well as a nigh tabular form in "N-triples" and "N-quads" which can end up as the easiest formats to work with sometimes.
+
+- ## [The Future Is Big Graphs: A Community View on Graph Processing Systems | Hacker News](https://news.ycombinator.com/item?id=28499999)
+- I only use RDF triples as a storage format for edges. I don't normally take advantage of triple stores (e.g. apache Jena), sparql query engines, etc.
+  - It's just a simple format and it's easy to build different types of query/analysis capabilities around.
+  - The only thing that's a little awkward is applying types to items in an rdf triple (in a way that's computationally cheap). Typing is a general problem, though.
+- I strongly agree with this - RDF is fine and there are some great concepts in the SemWeb world (IRIs for example), but **OWL and SPARQL are confusing and can be off-putting**, especially when it is all rolled together. The latest iteration of our triple store actually moves radically towards linked-document or a 'document graph' to make it more understandable while keeping RDF at the base.
+
+- 
+- 
+
 # discuss-triplestore
 - ## 
 
 - ## 
+
+- ## 💡 [OrbitDB – serverless, peer-to-peer database on top of IPFS | Hacker News](https://news.ycombinator.com/item?id=18748542)
+- I'm looking for a distributed scalable P2P triple store (or graph database) to store and retrieve RDF using SPARQL.
+  - SOLID (Tim Berners-Lee, RDF)
+  - GUN (ours, graph)
+
+- ## 💡 [How should you build a high-performance column store for the 2020s? | Hacker News](https://news.ycombinator.com/item?id=15672027)
+- I was under the impression, based on its docs, that Datomic only supports processing transactions serially through a single transactor.
+  - To scale writes you shard writes. This generally means running multiple databases (in any DBMS)
+  - The key insight is that **Datomic can cross-query N databases as a first class concept**, like a triple store. 
+  - You can write a sophisticated relational query against Events and Photos and Instagram, as if they are one database (when in fact they are not).
+  - This works because **Datomic reads are distributed**. You can load some triples from Events, and some triples from Photos, and then once you've got all the triples together in the same place you can do your queries as if they are all the same database. (Except **Datomic is a 5-store with a time dimension, not a triple store**.)
+  - In this way, a Datomic system-of-systems can scale writes, you have regional ACID instead of global ACID, with little impact to the programming model of the read-side, because reads were already distributed in the first place.
+  - For an example of the type of problems Datomic doesn't have, see the OP paragraph "To sort, or not to sort?" - Datomic maintains multiple indexes sorted in multiple ways (e.g. a column index, a row index, a value index). You don't have to choose. Without immutability, you have to choose.
+
+- What is the primary reason people choose Datomic? From reading the website, I get the impression that the append-only nature and time-travel features are a major selling point, but in other places its just the datalog and clojure interfaces. I'm sure it's a mix, but what brings people to the system to begin with?
+  - Immutability in-and-of-itself is not the selling point. Consider why everyone moved from CVS/SVN to Git/dvcs. The number of people who moved to git then and said "man I really wish I could go back to SVN" is approximately zero. Immutability isn't why. Git is just better at everything, that's why. Immutability is the "how".
+
+- Datomic is essentially a triple store with a time dimension so it can do what triple stores do. What do you think the use cases are for a key-value-time store?
+- If I understand Datomic correctly, I can think of the time dimension in the triple store as a sequence of transactions each of which produces a new state. How that maps onto real storage is flexible (Datomic supports a number of backends which don't explicitly support the notion of immutable database).
+  - So what would a key-value-time store be useful for? Conceptually it seems that if Datomic triples are mapped onto the key-value database then time in Datomic becomes transactions over the log. So one area of interest is as a database backend for Datomic that is physically designed to be immutable. There is a lot of hand waving, and Datomic has a large number of optimizations. Thanks for answering some of those questions about Datomic. It's a really fascinating system.
+
+- ## [there's also AllegroGraph product implementing triple store (kinda RDF) | Hacker News](https://news.ycombinator.com/item?id=15179)
+- there's also AllegroGraph product implementing triple store (kinda RDF), that can be accessed via Prolog. 
+  - i like that kind of data store very much -- it is as convenient as using plain objects, but supports complex queries, and do not have any additional layers like ORM.
 
 - ## [Fabric – A simple triplestore written in Go | Hacker News_201908](https://news.ycombinator.com/item?id=20806916)
 - What’s the industry take up of data stores like this? It always struck me as much more academic and not used as much in industry. 
@@ -358,7 +452,7 @@ modified: 2023-09-25T09:00:49.722Z
 
 - Triple relationships like the above are the kind of queries a Prolog engine can answer well (and far more).
 
-- 🤔 What's the use-case for a triple store vs a graph DB? Social networks?
+- 🤔 **What's the use-case for a triple store vs a graph DB**? Social networks?
   - People also call triple stores graph DBs.
   - Triple stores support a disciplined set of primitive types that come from xml schema, so you have "xsd:integer", "xsd:datetime", "xsd:decimal", really the critical things that are missing in JSON. That is, there is a kind of fact where the object is a literal.
   - Triple stores also support facts where the object is an identifier for another object. That could be a URI which names it, or it could be an internal "blank node" identifier.
@@ -367,9 +461,9 @@ modified: 2023-09-25T09:00:49.722Z
 - ## [Google Badwolf: Temporal graph store abstraction layer | Hacker News_201510](https://news.ycombinator.com/item?id=10432071)
 - Badwolf is a immutable triple store with temporal predicates.
 
-- 🤔 Why is this better than just using any SQL database?
+- 🤔 **Why is this better than just using any SQL database?**
   - Lots of SQL databases don't have good constructs for dealing with ranges, which make lots of operations you'd want to do with temporal data awkward (PostgreSQL since 9.2 has range types, and lots of useful features attached to them, that address this.)
   - Beyond that, pretty much all the normal SQL vs. NoSQL considerations would seem to apply without much change when you address temporal data, so the usual mix of ACID vs. scalability, schema enforcement vs. schemaless flexibility, etc., considerations apply.
 - If you want to know the advantages of triple stores, there's a lot out there.
-  - One key strength is that triple stores have a "schema as data" approach, meaning that schemas can be made to follow rules on the fly based on the data contained within them. Nothing that application code can't do, of course, but the entire purpose of these kinds of databases is to find a way to have data be as self-descriptive as possible.
-- Triplestores are good for storing and processing graphs, which don't fit the relational database model very well. There is a variant of SQL called SPARQL intended specifically for querying triplestores
+  - One key strength is that **triple stores have a "schema as data" approach**, meaning that schemas can be made to follow rules on the fly based on the data contained within them. Nothing that application code can't do, of course, but the entire purpose of these kinds of databases is to find a way to have data be as self-descriptive as possible.
+- **Triplestores are good for storing and processing graphs**, which don't fit the relational database model very well. There is a variant of SQL called SPARQL intended specifically for querying triplestores

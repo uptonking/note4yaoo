@@ -57,6 +57,7 @@ modified: 2023-09-25T17:52:11.778Z
 
 - 
 - 
+## [Magento 2 EAV Model - Things You May Not Know](https://bsscommerce.com/confluence/magento-2-eav-model/)
 
 ## [Magento Entity Attribute Value (EAV) Model - Magento Tutorial_201709](https://blog.magestore.com/entity-attribute-value-in-magento/)
 

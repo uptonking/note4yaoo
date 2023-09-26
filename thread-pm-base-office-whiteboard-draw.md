@@ -21,7 +21,9 @@ modified: 2023-05-30T21:36:55.391Z
 
 - ## 
 
-- ## 
+- ## What if @figma had a cursor video chat?
+- https://twitter.com/alexeinars/status/1706333517242618342
+  - 鼠标光标移动时，光标旁显示用户视频界面而不是偷笑
 
 - ## Do you prefer @tldraw to @excalidraw ?
 - https://twitter.com/jitl/status/1643764436660899840

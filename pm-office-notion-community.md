@@ -27,7 +27,9 @@ modified: 2023-03-29T17:23:37.126Z
 # discuss
 - ## 
 
-- ## 
+- ## [People who use Notion to plan their whole lives | Hacker News_202304](https://news.ycombinator.com/item?id=35698521)
+- I went from Zim to Dokuwiki to Bookstack (where I've been for the past 3 years). The former is an offline app and the latter two are self hosted. All three are FOSS.
+  - Edit: after reading some other comments, one thing I really appreciate about Bookstack is that its opinionated and batteries included -> no falling into the "waste all your time customizing and perfecting your workflow" trap.
 
 - ## 倍速重听了 21 年这期访谈 Logseq 的播客。 
 - https://twitter.com/mr_easonyang/status/1642902992683950080

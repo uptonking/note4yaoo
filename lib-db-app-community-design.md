@@ -65,7 +65,7 @@ modified: 2023-09-17T17:50:49.932Z
   - I personally like the most this mixed approach of Logseq - app internally uses DataScript, but data is ultimately stored in plain files.
 
 - Roam's performance suffers mainly on first-load because they are server-first, and they load the entire db into memory at the beginning (such that it's quite fast thereafter).
-  - Once we have true local-first data structures with something like https://github.com/replikativ/datahike, we could still have fast in-memory, but also fast initial load.
+  - Once we have true local-first data structures with something like replikativ/datahike, we could still have fast in-memory, but also fast initial load.
 
 - 👉🏻 Not markdown, but **asciidoc has first class support for blocks and references/attributes**.
 

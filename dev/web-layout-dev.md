@@ -47,7 +47,12 @@ modified: 2021-01-01T20:17:05.116Z
 
 - ## 
 
-- ## 
+- ## The more I learn about Figma's auto layout mode in code, the more I realize Flexbox is actually pretty hard
+- https://twitter.com/username_ZAYDEK/status/1706306013253537988
+  - Auto layout: Parent is row, column, children width and height are fixed, hug, fill
+  - Flexbox: Parent is row, column, children are some composition of width, height, flex-grow, flex-shrink, flex-basis, align-self
+  - Interestingly, **Figma doesn't have the equivalent of `align-items` **: stretch, counterAxisAlignItems is basically only min, max, center. There are other quirks, too
+  - This means the the translation from Figma to CSS is very nuanced(细微差别)
 
 - ## [Is it considered bad practice to use absolute positioning? - Stack Overflow](https://stackoverflow.com/questions/186044/is-it-considered-bad-practice-to-use-absolute-positioning)
 - if you were developing a more standard website, such as a site providing some public service, absolute positioning overrides the default flow layout of browsers and so will reduce accessibility for many users. In this case I would avoid it.

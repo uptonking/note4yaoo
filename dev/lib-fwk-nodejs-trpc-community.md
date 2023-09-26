@@ -30,7 +30,7 @@ modified: 2022-12-19T01:50:43.427Z
 - the name trpc sort of implies it being a generic RPC and not a specific type of transport
 - still, there's a lot of http concepts (status codes) etc
 
-- ## [Why isn't JSON-RPC more widely adopted? | Hacker News](https://news.ycombinator.com/item?id=34211796)
+- ## 🤔 [Why isn't JSON-RPC more widely adopted? | Hacker News](https://news.ycombinator.com/item?id=34211796)
 - I was told by the author of tRPC, that they use JSON-RPC behind the scene.
 - Whoa, that's news to me. Is this called out anywhere online? I've been following tRPC a bit and it looks really great. I only wish it wasn't locked into using TypeScript on the server.
   - It's the dream dev experience I've been chasing. I'm trying to get as close as I can using auto-generated gRPC-Web.
@@ -63,7 +63,7 @@ modified: 2022-12-19T01:50:43.427Z
 
 - gRPC actually does have easily identifiable URLs. Protobufs can be heavyweight, but it's trivial to use a different encoding like JSON.
 
-- The problems with JSON-RPC are mostly in its design, it's not ergonomic and its type system is a joke. There are many better alternatives ranging from gRPC (still not ergonomic and not modular) to Protoforce (extremely powerful and ergonomic but only marginally adopted).
+- The problems with JSON-RPC are mostly in its design, it's not ergonomic and its type system is a joke. **There are many better alternatives ranging from gRPC** (still not ergonomic and not modular) **to Protoforce** (extremely powerful and ergonomic but only marginally adopted).
 
 - It's not that parsing JSON to a JSON-like data structure is hard. That's easy.
   - It's the overhead of having to parse it to a generic JSON-like data structure at all, before knowing what the keys and values mean, so you can then transform the JSON-like data structure to the program's API structs.
