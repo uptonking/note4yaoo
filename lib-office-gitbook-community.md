@@ -183,7 +183,7 @@ modified: 2023-09-19T06:35:28.278Z
 - ## 
 
 - ## [What if OpenDocument used SQLite? (2014) | Hacker News_202309](https://news.ycombinator.com/item?id=37553574)
-- The problem with SQLite is that it's not a standardized file format. 
+- The **problem with SQLite** is that it's not a standardized file format. 
   - It's well-documented and pretty well understood for sure, but there's no ISO standard defining how to interpret an SQLite file in excruciating detail. 
   - Same goes for competing implementations, Zip and XML have a much smaller API surface than SQLite, whose API, apart from a bunch of C functions, is the SQL language itself. 
   - Writing an XML parser is not a trivial task, but it's still simpler than writing an SQL parser, query optimizer, compiler, bytecode VM, full-text search engine, and whatever else Sqlite offers, without any data corruption in the process. 
@@ -195,6 +195,12 @@ modified: 2023-09-19T06:35:28.278Z
 
 - The advantages of XML, specifically, a human-readable format; really only work for small files when the design of the schema is optimized for readable XML. 
   - Unfortunately, the need to always rewrite the entire XML file, and the "complexities" that come with lots and lots of features will quickly erode XML's biggest advantages.
+
+- I shipped a product that used both SQLite and XML files.
+  - One of the improvements that I made was moving a few tables that contained small amounts of data to xml files. Because these files were small and rarely written; it simplified the data access layer, and simplified diagnostics. (I made sure the files were multi-line tabbed xml.)
+  - The advantages of XML, specifically, a human-readable format; really only work for small files when the design of the schema is optimized for readable XML. 
+  - Unfortunately, the need to **always rewrite the entire XML file**, and the "complexities" that come with lots and lots of features will quickly erode XML's biggest advantages.
+- IMO: A "lay" person needing to muck around with the internals of an office document is fringe enough that learning to use a SQLite reader is an acceptable speed bump. The limitations of XML + Zip, when it comes to random writes in the middle of a file, just can't be overcome by Moore's law.
 
 - 👉🏻 Engineering is all about **tradeoffs**: **SQLite is optimized for quick incremental updates where you don't need to rewrite the whole file**. **Zip & xml aren't**. (IE, if you decide to add a letter to a word at the beginning of a document, with zip & XML you have to rewrite the whole document. SQLite can make a minor change without the whole rewrite.)
 

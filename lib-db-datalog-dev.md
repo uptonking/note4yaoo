@@ -33,6 +33,7 @@ modified: 2023-09-16T17:27:17.186Z
   - **graphql**
   - graph query languages: Cypher, Gremlin, nGQL
   - more: Apache AGE graph extension
+  - more: ms-power-query
 
 - resources
 # dev

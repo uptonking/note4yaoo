@@ -50,6 +50,30 @@ modified: 2021-08-30T17:33:46.086Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Why isn't SQLite more commonly used for save files or for other user-facing application file formats? : programming](https://www.reddit.com/r/programming/comments/h86v81/why_isnt_sqlite_more_commonly_used_for_save_files/)
+- What did SQLite gave us? SQL.
+  - XML schemas are gnarly, SQL schemas are easy.
+  - Primary keys are great. Foreign keys are gorgeous.
+  - Constraints on columns are handy.
+  - :memory: is awesome for unit-tests.
+- A lot of user applications store some or all their state in sqlite, firefox being a prominent example. That is what embeddable databases are designed for. It is not frequently used as an exchange format though, because it is no designed to be a good exchange format.
+- Why is it not a good exchange format? Relational tables are an excellent exchange format, and SQLItes is specifically designed to be portable across time and architectures.
+  - It's only unportable if you do something like use platform serialization to store your data structures in blobs. Don't do that, or serialize them to JSON/XML/etc before putting them in a blob.
+
+
+
+
+- Also most data in iPhone apps is stored in sqlite files. Rip apart an iphone backup some time and peek at the contents.
+- 
+- 
+- 
+- 
+- 
+
 - ## ✨ [Show HN: Doculite – Use SQLite as a Document Database | Hacker News_202308](https://news.ycombinator.com/item?id=37040359)
 - I'm the core maintainer of the npm sqlite package that your library uses. I recommend that you don't make it a direct dependency, but use dependency injection or an adapter pattern that way your library isn't dependent on a specific package version of sqlite/sqlite3
 
@@ -147,9 +171,27 @@ modified: 2021-08-30T17:33:46.086Z
 - If you really really really absolutely need the rowid to change on a VACUUM, you can avoid this aliasing behavior. Note that it will decrease the performance of any table lookups using your primary key.
   - To avoid the aliasing, and degrade your performance, you can use `INT` instead of `INTEGER` when defining your key
 
-## [Why Is SQLite Coded in C (2017) | Hacker News](https://news.ycombinator.com/item?id=28278859)
+- ## [Why Is SQLite Coded in C (2017) | Hacker News](https://news.ycombinator.com/item?id=28278859)
 
 - But it's still a database, a low level, high performance software system. 
   - Even if you write it in rust, some percentage of the code will be unsafe rust or rust that calls a library written in C. 
   - It will be safer, but still not a panacea. 
   - It would be more viable in my opinion to improve the safety of the C code that currently makes up sqlite.
+
+- ## [SQLite: QEMU All over Again? | Hacker News_202210](https://news.ycombinator.com/item?id=33081159)
+- Just a note that LiteFS isn't a distributed filesystem; despite the name, it's not a filesystem at all, but rather just a filesystem proxy. 
+  - It does essentially the same thing that the VFS layer in SQLite itself does, but it does it with a FUSE filesystem, so you don't have to change SQLite's configuration in your application.
+  - As for the "distributed" part of it: LiteFS has a single-writer multi-reader architecture; it's the same strategy you'd use to scale out Postgres.
+- I'm curious about how such a strategy deals with applications that update a value and then read the updated value back to the user, since there might be a replication delay between the write (that goes to the master) and the read (that comes from the closest replica). Do you make optimistic updates on the client or do you club (write-then-read) operations into a transaction?
+  - LiteFS author here. It depends on the application. You can check the replication position on the replicas and simply wait until the replica catches up. That requires maintaining that position on the client though.
+  - An easier approach that works for a lot of apps is to simply have the client read from the primary for a period of time (e.g. 5 seconds) after they issue a write. That's easy to implement with a cookie and it's typically "good enough" consistency for many read-heavy applications.
+  - This is an application (and frequently data type) dependent decision. Some data is safe to return on acceptance, others need to wait for acknowledged writes. The most naive solution is to just make all writes slow but acknowledged.
+
+- Note that SQLite transactions are also fundamentally single writer, multiple reader (isolation level serializized with snapshot isolation and no work-forking).
+  - So if you want to make SQLite distributed you will have to end up with not just a single writable replicate but a global write log on transaction level. Which is very very bad for performance for many use cases. (E.g. in PostgreSQL if you use serialized & snapshot transaction isolation it's "forking the world" for parallel write transactions and if multiple transactions have no overlap they can complete in parallel without a problem (in parallel but on the same single write enabled replica). This is good enough for quite a bunch of applications and can still have a decent throughput).
+  - As far as I can tell many use-cases which could profit from a distributed SQLite would not really like a per-transaction global lock but would be okay with something like what Postgres does. Through there are always some exceptions.
+
+- ## [The Design of SQLite4 | Hacker News_202206](https://news.ycombinator.com/item?id=31785170)
+- >SQLite4 was an experimental rewrite of SQLite that was active from 2012 through 2014. All development work on SQLite4 has ended. Lessons learned from SQLite4 have been folded into the main SQLite3 product. SQLite4 was never released. There are no plans to revive it. You should be using SQLite3.
+
+- [Work on SQLite4 has concluded | Hacker News_201711](https://news.ycombinator.com/item?id=15648280)

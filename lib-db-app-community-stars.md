@@ -30,7 +30,17 @@ modified: 2023-09-16T17:54:21.231Z
 # discuss
 - ## 
 
-- ## 
+- ## [Skip the API, ship your database | Hacker News](https://news.ycombinator.com/item?id=37497345)
+- If you give access to your DB directly, your API effectively becomes your API with all the contract obligations of the API. Suddenly you don't completely control your schema: you can't freely change it, you need to add things there for your clients only.
+  - Versioned views, materialized views or procedures are the solution to this. It is frequent that even internally, companies don't give access to their raw data but rather to a restricted schema containing a formated subset of it.
+
+- A downside I didn't see mentioned (it was gestured at with contracts and the mention of backwards compatible schema changes, but not addressed directly) was **tight coupling**. 
+  - When you link services with APIs, the downstream changes of a schema migration end at the API boundary. 
+  - If you are connecting services directly at the database level, the changes will propagate into different services.
+
+- 
+- 
+- 
 
 - ## [Things I wished more developers knew about databases | Hacker News_202004](https://news.ycombinator.com/item?id=22942278)
 - 

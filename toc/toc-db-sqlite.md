@@ -162,6 +162,8 @@ modified: 2021-08-30T18:56:18.632Z
   - http://godoc.org/modernc.org/sqlite
   - Package sqlite is a sql/database driver using a CGo-free port of the C SQLite3 library.
   - modernc.org/sqlite is an automatically generated translation of the original C source code of SQLite into Go. It passes the full SQLite test suite.
+  - [SQLite in Go, with and without cgo_202205](https://datastation.multiprocess.io/blog/2022-05-12-sqlite-in-go-with-and-without-cgo.html)
+  - [SQLite in Go, with and Without Cgo | Hacker News_202205](https://news.ycombinator.com/item?id=31364166)
   - https://github.com/zombiezen/go-sqlite /go
     - Low-level Go interface to SQLite 3
     - It is a fork of crawshaw.io/sqlite that uses modernc.org/sqlite
@@ -184,6 +186,12 @@ modified: 2021-08-30T18:56:18.632Z
   - https://github.com/sqlite/sqlite
   - https://sqlite.org/
   - a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. 
+  - https://github.com/sqlite/sqlite/tree/95e961beaae011113aa2431728fbdc5a1a745f58
+    - early code in 200007 
+
+- https://github.com/lucavallin/gnaro /c
+  - A proto-database inspired by SQLite, written in C for educational purposes. 
+  - gnaro takes SQLite as a reference because of the limited feature set, and therefore complexity, when compared to other databases. 
 
 - dqlite /3.2kStar/LGPLv3/202212/clang
   - https://github.com/canonical/dqlite

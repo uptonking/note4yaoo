@@ -20,6 +20,10 @@ modified: 2023-02-27T19:07:31.111Z
   - kanban
   - search-view
   - multi-column
+
+- data-structure
+  - dataframe
+  - open table format
 # not-yet
 - 如何让react组件与非react组件更好的结合
   - 参考autocomplete，将render方法和vnode都暴露出去，支持修改

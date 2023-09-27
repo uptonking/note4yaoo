@@ -36,6 +36,9 @@ modified: 2022-11-07T10:25:12.034Z
   - B站博客
   - [CNode：Node.js专业中文社区](https://cnodejs.org/)
   - [NodeSeek - v2ex-like](https://www.nodeseek.com/)
+# 数据库/pingcap
+- [TiDB 社区](https://asktug.com/)
+- [TiDB Internals](https://internals.tidb.io/)
 # reddit
 
 # hacker-news

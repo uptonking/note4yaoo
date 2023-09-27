@@ -9,6 +9,9 @@ modified: 2022-04-23T18:48:32.550Z
 
 # guide
 
+- ideas
+  - excel + whiteboard: [Subset - A remarkably simple way to create a spreadsheet](https://subset.so/)
+  - 自然语言查询、中文查询优化
 # discuss
 - ## 
 

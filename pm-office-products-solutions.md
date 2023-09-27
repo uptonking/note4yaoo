@@ -232,6 +232,12 @@ modified: 2021-07-11T08:31:00.660Z
 3. Google Sheets makes collaboration simple
 4. Easily view and revert back to previous versions of Sheets spreadsheets
 5. Google Sheets seamlessly integrates with AppSheet
+# products-excel
+- [Subset - A remarkably simple way to create a spreadsheet](https://subset.so/)
+
+- [Ultorg: General-Purpose, User-Friendly Database Software](https://www.ultorg.com/)
+
+- [CloudTables](https://cloudtables.com/)
 # latest-office-products
 - [黑客说，类twitter/知乎的社交与内容平台](https://hackertalk.net/)
 # office-online-products

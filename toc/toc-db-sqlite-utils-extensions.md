@@ -54,6 +54,11 @@ modified: 2022-11-04T14:20:37.172Z
 - https://github.com/jayralencar/sqlite-sync.js /202108/js
   - Node module to sqlite sync and async
   - node.js package for database connection with SQLite , and execute SQL commands synchronously or asynchronously.
+
+- https://github.com/chiselstrike/chiselstore /rust
+  - an embeddable, distributed SQLite for Rust, powered by Little Raft.
+  - ChiselStore extends SQLite to run on a cluster of machines with the Raft consensus algorithm.
+  - https://github.com/andreev-io/little-raft
 # excel
 - https://github.com/x2bool/xlite /202210/rust
   - SQLite extension for querying Excel (.xlsx, .xls, .ods) files as virtual tables

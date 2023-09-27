@@ -117,11 +117,31 @@ modified: 2022-11-18T17:06:54.371Z
 - Journal and Write-Ahead Log (WAL) files: transactional files, which can store recently added or recently deleted data
 - Unallocated space: not to be confused with hard drive unallocated space, this SQLite feature allows finding deleted data even outside of freelists
 
-## [SQLite Internals: Pages & B-trees · Fly.io](https://fly.io/blog/sqlite-internals-btree/)
+## 📝 [SQLite Internals: Pages & B-trees · Fly.io](https://fly.io/blog/sqlite-internals-btree/)
 
-- SQLite is so easy to use and, more importantly, it's simple and reliable.
+- I love SQLite’s 130KLOC core code base
+  - This constrained size means that SQLite doesn’t include every bell and whistle. 
+  - It’s careful to include the 95% of what you need in a database—strong SQL support, transactions, windowing functions, CTEs, etc—without cluttering the source with more esoteric features. This limited feature set also means the structure of the database can stay simple and makes it easy for anyone to understand
 
-### [SQLite Internals: Pages and B-trees | Hacker News](https://news.ycombinator.com/item?id=32250426)
+## 👥 [SQLite Internals: Pages and B-trees | Hacker News_202207](https://news.ycombinator.com/item?id=32250426)
+
+- 
+- 
+- 
+
+- I dream of a SQLite-like embeddable database engine based on Datomic’s data model and queryable with Datalog. Written in something like C, Rust, or Zig. 
+
+- I wonder if it’s possible to build it on top of SQLite somehow?
+  - I tried. It's not easy because of how limiting SQLites indexes are. You have to build your own indexes using TRIGGERs or in a software wrapper and tables.
+  - You can see me prototype here: https://git.sr.ht/~chiefnoah/quark
+- Commendable attempt! I've considered writing a datalog storage backend on sqlite just like your prototype. Thank you for sharing, now I can lazily study your prototype instead of doing the hard work myself. I'm curious, what kinds of limitations of SQLite indexes are you referring to?
+  - 👉🏻 Sparse indexes are pretty limited and it only supports B-tree, which make implementing AVET and VAET difficult. Further efficiently finding the current value for a E + A is difficult to do in SQL in a way that doesn't require maintaining a whole copy of the data. 
+  - I actually bumped up against what I believe are weird edge-case bugs in the SQLite query planner when dealing with sparse indexes as well.
+  - I think I gave up when trying to implement one-many relationships because the SQL was getting too gnarly(困难的; 挑战性的).
+
+- 
+- 
+- 
 
 ## [3 things that surprised me while running SQLite in production](https://www.joseferben.com/posts/3-things-that-surprised-me-while-running-sqlite-in-production/)
 

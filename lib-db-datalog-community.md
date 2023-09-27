@@ -79,7 +79,14 @@ modified: 2023-09-16T17:27:42.089Z
 
 - ## 
 
-- ## 
+- ## [So I've been interested in learning prolog | Hacker News](https://news.ycombinator.com/item?id=22941183)
+- Prolog is a general purpose programming language. You can use it to implement provers, optimization problem solvers, or generally use it as a unification algorithm engine and database.
+  - You could say prolog has branched many ways. There are many similar languages now which take some aspect prolog did well and made it better. Problog, Mercury, Picat, logtalk, Allego Graph prolog
+- There's also datalog, which is like the logic database subset of prolog. There's datomic, datahike, datascript, dlv, abcdatalog, racket datalog.
+- Then there's the RDF / Semantic web side, which feels a lot like datalog. There's many reasoners for triple stores which work like logic databases. 
+  - RDFox is also a bleeding edge datalog implementation for incremental materialization, you can use it as a business rules engine as well as a database, it keeps recursively derived facts always up to date even as you add new facts. 
+  - The biggest triple store implementation is probably wikidata.
+- AI/ML these days try to find patterns in data and reproduce those patterns reliably. Many of the use cases with prolog and prolog-like languages are more about feeding in known facts, and deriving more facts, implications, putting models that represent known and relationships and rules between facts and hierarchical state. Who ever finally makes an ML capable of general intelligence, I'm willing to bet they will interface neural network technologies with a modifiable fact database capable of generating models for the rules and relationships between facts and the hierarchy of those facts.
 
 - ## [Fast Analytics and Graph Traversals with Datalog | Hacker News_202309](https://news.ycombinator.com/item?id=37391333)
 - Although graph databases and knowledge bases are becoming more and more popular for managing and querying complex interconnected data one has to consider the potential trade-offs they present in terms of scalability, performance, and maintenance. Most important, rules specifications and application must be utilized for business logic, data validation and quality, security and access control, automation and inference among others.
@@ -131,7 +138,7 @@ modified: 2023-09-16T17:27:42.089Z
   - GitHub's CodeQL is another Datalog dialect used for detecting bugs and vulnerabilities.
   - Datomic is a database that uses Datalog as the query language.
 
-- ## [I dream of a SQLite-like embeddable database engine based on Datomic’s data mode... | Hacker News](https://news.ycombinator.com/item?id=32251654)
+- ## [I dream of a SQLite-like embeddable database engine based on Datomic’s data model... | Hacker News](https://news.ycombinator.com/item?id=32251654)
 - I dream of a SQLite-like embeddable database engine based on Datomic’s data model and queryable with Datalog. 
 
 - I’m surprised something like this doesn’t exist yet - I wonder if it’s possible to build it on top of SQLite somehow?
@@ -340,6 +347,19 @@ modified: 2023-09-16T17:27:42.089Z
 
 - ## 
 
+- ## [SQL:2023 is finished: Here is what's new | Hacker News_202304](https://news.ycombinator.com/item?id=35562430)
+- I don't believe that adding property graph support to SQL makes much of a difference for SQL and relational databases...
+  - However, the PG query additions (I believe they are close to the Cypher language neo4j) being part of the SQL standard will give a boost to marketing and adoption of PG databases. 
+  - Vendors can now say "our language follows the SQL standard" instead of referencing cypher and indirectly neo4j. Even if neo4j may have the best intentions, marketing is very important in databases and it is unlikely that vendors could have supported Cypher and thus admit that they are following neo4j rather than leading.
+- I think SQL/PGQ have the potential to outright kill the whole field of PG databases (if/once existing databases actually start implementing it).
+  - The big marketing claim of Neo4J & friends has always been that they make graph queries possible, with a big portion of that claim being that those queries would be intractable for RDBMs performance-wise.
+  - With SQL/PGQ it becomes quite apparent that there is next to no magic sauce in PG databases and that it's all just syntactic sugar on top of node/vertex tables. All the rest of their query plans looks 1:1 what you'll find in a RDBMs. Now that they are on a level playing field query syntax-wise, PG databases will have to compete against RDBMs with a lot more advanced query optimizers, better administrative tooling etc..
+- This is my expectation as well. At CIDR this year there was a paper that presented an implementation of SQL/PGQ in DuckDB, and it outperforms Neo4J in a few selected benchmarks
+
+- In relational databases, the property graph queries can be really effective to write authorization queries.
+
+- Cypher has built-in support for traversing relationships between nodes in a graph, which can be more intuitive and efficient than using SQL to join tables.
+
 - ## 🆚️ [Can you elaborate on "datalog queries blows SQL out of the water"? | Hacker News](https://news.ycombinator.com/item?id=13058399)
 - 🤔 at my company we're heavy users of Datomic
   - Declarative and pattern matching make it elegant to read.
@@ -390,6 +410,9 @@ modified: 2023-09-16T17:27:42.089Z
 
 - ## 🆚️ [Graph query languages: Cypher vs. Gremlin vs. nGQL | Hacker News_202003](https://news.ycombinator.com/item?id=22482665)
 
+- 'GQL is an upcoming International Standard language for property graph querying that is currently being created. The idea of a standalone graph query language to complement SQL was raised by ISO SC32/ WG3 members in early 2017, and is echoed in the GQL manifesto of May 2018.
+  - GQL supporters aim to develop a rock-solid next-generation declarative graph query language that builds on the foundations of SQL and integrates proven ideas from the existing openCypher, PGQL, GSQL, and G-CORE languages.
+
 - Datalog is such a delight to use especially since queries are just data structures are just code. 
   - Once the basics clicked I felt empowered to do anything in Datalog, while I feel like I always have to learn or remind myself of more syntax when I want to do anything fancy with SQL.
 
@@ -398,7 +421,18 @@ modified: 2023-09-16T17:27:42.089Z
 # discuss-graph-db
 - ## 
 
-- ## 
+- ## [What Every Competent Graph DBMS Should Do | Hacker News_202301](https://news.ycombinator.com/item?id=34358912)
+
+- SQL is getting a Property Graph Query extension that should finally match the ease of querying of typical graph DB. That said, RDBMS should cover the basic use case quite well unless you are doing very exotic things with network analytics and such.
+  - Yes, this will be interesting to see. This is the SQL/PGQ extension that's coming in 2023. On the one hand, as I articulate in my post, GDBMSs are based on relational principles, so building a system that can seamlessly query in relational and graph model is a good idea. On the other hand, there is this: (1) no SQL extension into a graph-based model has been successful historically (e.g., into RDF or XML or even json). That seems to confuse users, so sticking to a single model seems like a good idea. (2) RDBMSs that implement SQL/PGQ will not be very performant unless they change their cores with several techniques I and my research group has been advocating for (e.g., how to do predefined joins, worst-case optimal joins, factorization etc.).
+
+- As I say in the blog, there is no perfect data model. RDF is great fit for certain things, e.g., when storing dbpedia-like datasets, and doing "automatic" advanced OWL reasoning over it by implementing OWL rules. 
+
+- You can search for this on the link: "GQL will incorporate this prior work, as part of an expanded set of features including regular path queries, graph compositional queries (enabling views) and schema support."
+
+- Kùzu is currently integrating Arrow not as a core storage structure but as a file format from which we can ingest data. We are writing Kùzu's entire storage, so it's our own design. It has three components: Vanilla columns for node properties, columnar compressed sparse row join indices and relationship properties, and a hash index for primary keys of node records. We don't use Arrow to store db files.
+  - For serializability: yes, we support serializable transactions. So when you insert, delete or update node, rel records, you get all or nothing behavior (e.g., if you rollback none of your updates will be visible).
+  - That said, supporting ACID transactions is a completely separate design decision in DBMSs, so our (or other systems') mechanisms to support transactions (for example whether it's based on write ahead logging or not) and storage designs are generally mutually(相互地；共同地) exclusive(独有的; 专有的; ) decisions.
 
 - ## [Ask HN: Why are relational DBs are the standard instead of graph-based DBs? | Hacker News_202110](https://news.ycombinator.com/item?id=28736405)
 - Yet a relational database in 5th normal form is equivalent to a RDF-Like first order Triple graph.
@@ -439,7 +473,7 @@ modified: 2023-09-16T17:27:42.089Z
 
 - According to Crunchbase, Neo4j was founded in 2007! Is this correct? 14 years in and they are still raising VC money!?
 
-- ## [Show HN: Simple-graph – a graph database in SQLite | Hacker News_202012](https://news.ycombinator.com/item?id=25544397)
+- ## 👉🏻 [Show HN: Simple-graph – a graph database in SQLite | Hacker News_202012](https://news.ycombinator.com/item?id=25544397)
 - I did something similar recently, a block store for a rust implementation of ipfs, which models a directed acyclic graph of content-addressed nodes.
   - I found that performance is pretty decent if you do almost everything inside SQLite using WITH RECURSIVE.
 

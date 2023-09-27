@@ -45,10 +45,11 @@ modified: 2023-09-21T17:32:15.618Z
   - May be it exists in their coding guidelines? Although `tablename.tablename_columnname` sounds repetitive and verbose, it might in some cases be of help when one deals with too many tables and too many keys with the same name across tables.
   - in many RDBMS's, you can omit the "tablename." part if columnname is unique in the DB
 
-- ## [JSON for Linking Data | Hacker News](https://news.ycombinator.com/item?id=35321493)
+- ## [JSON for Linking Data | Hacker News_202303](https://news.ycombinator.com/item?id=35321493)
 - JSON-LD is an open standard for expressing RDF data as JSON. 
   - RDF is the most fundamental part of the W3C's Semantic Web and Linked Data projects, which began at the end of the 1990s to make the Web more machine-readable
 - JSON-LD is just a different serialization format for RDF.
+  - For anyone looking for a solution to the link rot problem (as well as versioning and dependency management), they might be interested in [Plow: The ontology package manager](https://plow.pm/).
 
 - It’s a standard in search of anyone who wants to implement it.
   - wikidata
@@ -66,10 +67,20 @@ modified: 2023-09-21T17:32:15.618Z
   - serializing/de-serializing the data not being difficult, but the problem lies more in how you handle that data down the pipeline after you deserialized it.
   - after about 4-5 years of trying to implement a clean Go API for processing ActivityPub payloads that the complexity is quite high, at least if you want to build something that can work with more than one client/service.
 
-- Why isn’t semantic web more popular inside companies?
+- 🤔 Why isn’t semantic web more popular inside companies?
 - Because SemWeb doesn't solve any real problem while create a ton of new ones and uses a complex data model. Any company that would benefit from using graphs will be better served using a simpler and more general graph model and database.
   - SemWeb is nothing more than stringly typed data with an URI fetish.
 - Because it offers no protection against some team inside the company breaking the whole web by moving to a different URI or refactoring their domain model in incompatible ways. A department pays for some subgraph tailored to their needs and they are not interested in financing this for the whole org.
+  - Industrial companies use master data management systems, they are centralized and are considered the single source of truth, everyone else builds on them.
+
+- I think a big reason for lack of popularity is familiarity of graphs in general. Most people wouldn't know of a good graph editor I would guess. Everyone knows documents and spreadsheets/tables/lists/folders, but it's rare to see a graph anywhere.
+  - I think part of this is that graphs always appear like a complicated mess, and we prefer hierarchies and categories.
+  - I would really like a tool like Airtable for graphs. You start with spreadsheets with columns relating to other columns, and then you view the graph next to it as you go. I don't know of a popular tool that does this. It's funny because behind-the-scenes of spreadsheets there is always big dependency graph that updates cells as changes come through.
+  - All the specs feel overly-complex too. Like a relic from the XML/SOAP days. For such a simple base concept (subject-predicate-object / entity-attribute-value) it feels like overkill. It's interesting though thinking about how JSON won, while being extremely inferior to XML. Although I think this ability to move fast has left us with a ton of untyped data lying around, and plenty of ad-hoc data transformations.
+
+- Because it's not what you thing and doesn't solve the problems most companies have.
+  - Firstly jsonld is only a format for serializing semantic metadata, nothing more, so it only specifies how you can attach that metadata, but not what exctly can be attached in what way with what subtle meanings.
+  - Secondly it's one of this very generic tools which "can solve everything" but in practice often only make things more complicated as long as you don't have enough very complicated (and matrue!) tooling around it.
 
 - 👉🏻 same reason wikis arent, it takes too much effort to maintain and keep it semantic instead of copypasted pile of text
   - you'd need CMS, CRM, knowledge base, documentation, source control, chat/forum, inventory, point of sale, customer support channels, issues ticketing system, and every other thing interconnected to with each other
@@ -77,6 +88,14 @@ modified: 2023-09-21T17:32:15.618Z
 - Sounds like an opportunity. In every category you mentioned there are new products released and widely adopted all the time. 
   - Look at the rise of ClickUp for example in such a crowded space as project management. 
   - I don't think its too farfetched to one day see a new entrant offering as a key selling point that their api is just a big interoperable graph that you can easily plug your company into...and that's not just GraphQL.
+
+- JSON-LD is the reason ActivityPub hasn’t taken off even more. It’s just such a pain to deal with variables that could be URLs or entire object trees. Especially for strongly typed languages, it’s a nightmare.
+
+- Every time I get to work with JSON-LD (and json-schema and so on) I keep asking myself: how is this better than XML? (I am convinced it isn't).
+
+- 
+- 
+- 
 
 - ## [Show HN: BookStack – An open source wiki platform and alternative to Confluence | Hacker News_202201](https://news.ycombinator.com/item?id=29851834)
 - I remember considering BookStack while looking for a (surprise) replacement for Confluence.

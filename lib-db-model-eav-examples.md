@@ -148,7 +148,7 @@ modified: 2023-09-25T17:56:50.116Z
 - https://github.com/wallix/triplestore /go/inactive
   - Nifty library to manage, query and store RDF triples. 
 
-- https://github.com/google/badwolf /go
+- https://github.com/google/badwolf /go/inactive
   - BadWolf is a temporal graph store loosely modeled after the concepts introduced by the Resource Description Framework (RDF). 
   - BadWolf began as a `triplestore`, but triples have been expanded to `quads` to allow simpler and flexible temporal reasoning
   - Because BadWolf is designed for generalized relationship storage, most of the web-related idiosyncrasies of RDF are not used and have been toned down or directly removed and focuses on its time reasoning aspects.
@@ -172,9 +172,21 @@ modified: 2023-09-25T17:56:50.116Z
   - https://comunica.dev/
   - A knowledge graph querying framework
   - Flexible SPARQL and GraphQL over decentralized RDF on the Web.
+
+- https://github.com/w3c/EasierRDF /python
+  - This repository is for experimental/exploratory work on making RDF easier to use, with the goal of making it easy enough for most developers.
 # graph-db
 - https://github.com/benjholla/chpg /js/java
   - CHPG is a lightweight graph database for storing property graphs (attributed, multi-relational graphs) with hierarchical and compound relationships.
+
+- https://github.com/AtomGraph/LinkedDataHub /java
+  - https://atomgraph.github.io/LinkedDataHub/
+  - The low-code Knowledge Graph application platform
+  - open source software you can use to manage data, create visualizations and build apps on RDF Knowledge Graphs.
+  - We started the project with the intention to use it for Linked Data publishing, but gradually realized that we've built a multi-purpose data-driven platform.
+  - [LinkedDataHub: The Knowledge Graph Notebook | Hacker News](https://news.ycombinator.com/item?id=31852352)
+
+
 # examples
 - https://github.com/metasoarous/tripl /python
   - This one weird trick turns JSON documents into semantic graph databases!

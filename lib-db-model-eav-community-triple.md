@@ -62,6 +62,41 @@ modified: 2023-09-25T09:00:49.722Z
 
 - ## 
 
+- ## 
+
+- ## If you're familiar with #wordpress databases, you'll recognize the key-value (#EAV) structure. 
+- https://twitter.com/LucasJohnston3/status/1610192301464100864
+  - For Wordpress this structure allows flexibility in which data is stored for posts. That's why a post in WP can represent any sort of #data_entity. Admittedly with a performance penalty.
+  - There is understandable criticism on the #eav_structure. 
+  - But I'd argue it has proven useful for the world-leading #CMS of today (WP), so it can't be that bad.
+- 
+- 
+
+- ## Has anyone in Laravel land integrated an EAV architecture into their app? If so, have any advice or gotchas to look out for?
+- https://twitter.com/MarkShust/status/1698317826564505970
+- 🤔 Please correct me if I’m wrong, but isn’t Notion’s database architecture basically just a giant EAV system?
+- I would look further, salesforce is designed on top of eav too.
+
+- I think, JSON column type wins over the EAV for attributes because of its simplicity and support on RDBMS level. MySQL allows to query and filter JSON fields very efficiently using indexes.
+
+- One gotcha to any EAV is that excluding values on a search can also include the absence of the parameter. Test again 'null' for example should also test against not having the parameter in the join.
+  - Searching on multiple parameters means a join for every one. It gets slow quick.
+- ea filtering attributes is going to be a bit tricky, but I think it’s just an implementation detail. So long as indexes are set up, joins shouldn’t really mean a lot unless there are really a *lot* of attributes being joined in (hundreds). Can also always optimize for something like indexing to flat tables, but that definitely has a sense of some complexity.
+  - Magento’s EAV structure of having a different table for each field type is probably the most optimal way to do this, but it’s inherently very complex, and I think starting out with the simpler table structure, one for E, A & V will be far easier to implement.
+
+- Yeah Magento is a great example. And they also have an optimization where they compile the EAV to a flat table for speed
+  - If anything, I think your right on the simple approach. Optimization can come later.
+  - Might be cursing in church; but WordPress is a great EAV example.
+
+- I have done that in the past on Yii being under impression of eav from M1. 
+  - But nowdays I do not have that addiction. 
+  - EAV is overvalued. We still end up by creating those attributes by data patch, means they are hardcoded. Adding static field to table covers most of requirements
+
+- ## Friends don't let friends use the entity-attribute-value (EAV) model.
+- https://twitter.com/pim_brouwers/status/1599862878932111360
+- It's what drove me to project read-only views to lucene/solr/Elasticsearch so maybe you should?
+  - Have a soft spot for EAV models if the usecase dictates it (rarely though).
+
 - ## [Everything you wanted to know about SQL injection (but were afraid to ask) | Hacker News](https://news.ycombinator.com/item?id=6129669)
 - Whereas traditional EAV is a triple - entity, attribute, value - Datomic is a quad. Datomic adds a timestamp and treats every value as an immutable fact at a point in time. Which is exceptionally valuable for highly regulated systems like finance, pharma and healthcare.
 - yeah, Datomic is EAV (technically EAVT, it's event sourced so there is a notion of time and reads/writes need be acid with transactions and stuff) and EAVT can express even higher level queries than an ORM can, mostly because you can cache the indexes locally so you can do consistent read queries in your app process (Datomic's query engine is a library that runs inside your app, if cache is hot reads don't touch network... like git). From my understanding it doesn't have much to do with sparseness, though you certainly can support sparse objects performantly with EAVT.
@@ -399,6 +434,48 @@ modified: 2023-09-25T09:00:49.722Z
 # discuss-rdf
 - ## 
 
+- ## 
+
+- ## [Apache Jena | Hacker News_201903](https://news.ycombinator.com/item?id=19419025)
+- Wikidata is built mostly on RDF ideas. For example, there's SPARQL query interface for it
+  - Schema.org is heavily used by search engines and metadata in its format is found on many websites. It's an RDF-based format.
+
+- I think Resource Description Framework (RDF) is overkill.
+  - The underlying idea that is triple store (reminiscence of Entity-Attribute-Value model) is a good idea because it allows to model data with less overhead than a graph database will do over the same problem. Think of a list of items attached to a node or hypergraphs. All that is easier to do in a triple store.
+  - Actually, I think that triple stores are not given enough buzz. Most of RDF buzz is around ontologies (aka. standard vocabulary for describing things). Datomic proves that triple store is a great idea in itself.
+  - Datomic is RDF in disguise. That is, it implements a versioned triple store and a language similar to SPARQL (based on core.logic (aka. clojure's minikanren))).
+  - When you think about it, a versioned database is a gem when it comes to debugging. Versioning a database is next to the best idea of the decade and that would not have been possible with another model than the triple store model.
+  - The idea of database versioning or more generally versioning of structured data, especially versioning ala git is making its way
+
+- if I were building a custom Knowledge Graph for a company or organization today, I would likely use a graph database like Neo4J. Maybe not though - it would depend on the application
+- Really? Why not Jena or Marmotta with Postgres backend?
+  - I can't speak for OP, but in my humble opinion, they don't really serve the same purpose. **Jena and Marmotta are implementation of standards**, while Neo4J is more of a proprietary system, and the underlying paradigm is different between triple graphs (for Jena and in a lesser dimension Marmotta) and property graphs (for most graph databases, e.g Neo4J, Apache Tinkerpop, OrientDB...).
+- To make a very short summary, RDF is more concerned with the possibility to link data, so each piece of information is identified by a dereferencable URI, and can be described with an explicit model called an ontology (fancy word for a vocabulary used to describe data). 
+  - On the other hand, Neo4J is more concerned with performance, but does not consider linking data accross the Web, or using an explicit schema. 
+  - And for Marmotta, it is in kind of a bad place right now, the development seems a bit stalled, and the standard it implements is quite complicated compared to the majority of the problem it solves. 
+  - This might evolve however, since Linked Data Platform (said standard) is now promoted by SOLID, a new initiative by Tim Berners Lee et al. to enable a truly distributed Web.
+
+- If performance matters in any way then Dgraph and Neo4J are much much better. **Jena is a relic of semantic web past which you need if you want to do academic stuff like ontolgies, Owl, Sparql and inference**. But hardly for building 'real' applications for actual users and datasets.
+
+- Different use cases. I think RDF/RDFS/OWL excel at combining different linked data sources with SPARQL queries. I think graph databases like Neo4J may be easier to work with if you are building a local knowledge base. These are just my opinions.
+
+- What is the value offering on apache Jena?
+  - RDF, and in particular OWL2 (reformulation of RDF tech based on description logic) is about decidable fragments of first-order logic, whereas Prolog is an existential Horn fragment on terms with Turing-complete extra-logical additions such as negation-as-failure and "cut" hence has undecidable decision problems.
+- Not 100% certain, but I think the killer feature is the ability to manage your own data while exposing semantic representations that external apps can interact with.
+  - The guiding idea behind RDF was (at one point) that users manage their own data while apps they give permission to can use that data.
+
+- 👉🏻 Can anyone compare and contrast Jena in a Java project and/or operation against flat files with Neo4J or other graph systems?
+  - **Jena is an RDF triple store whereas Neo4J, Memgraph, or JanusGraph, for example, are property label graphs**. Two different data models with distinct use-cases. I would compare Jena to other RDF engines like Stardog or Anzo graph
+  - From a java project perspective, it doesn't really matter which one you choose as they all expose JDBC.
+
+- ## [SPARQL Protocol for RDF | Hacker News_201706](https://news.ycombinator.com/item?id=14599462)
+- Triple-stores can, but don't necessarily, layer on top of SQL databases. 
+  - Jena has (had?) a triple-store engine that used JDBC to store the triples in a traditional relational database, but it's been deprecated for years in favor of a specialized engine designed specifically for storing RDF.
+- Jena works for RDF data. But the OP is correct in their broader point that RDF is rarely a good choice and **SPARQL is a pretty horrible solution for querying it**.
+- Jena works for RDF data. But the OP is correct in their broader point that RDF is rarely a good choice and SPARQL is a pretty horrible solution for querying it.
+
+- We use quite a bit of SPARQL to reason over medical ontologies. It's not exactly "semantic web", but ontological knowledge (such as the Gene Database, UMLS, etc) are naturally serialized in graphs, which makes them an excellent fit for RDF triplestores, hence SPARQL. We regularly query millions of concepts with billions of relations in milliseconds. True, RDF under the hood is just a EAV model, but thinking about the identity between triples, graphs, and logic programming makes a lot of sense for us.
+
 - ## [Update of the RDF and SPARQL (RDF star) families of specifications | Hacker News](https://news.ycombinator.com/item?id=36001509)
 - RDF is not dependent on XML as a syntax. 
   - There's a text-based syntax in common use (Turtle), as well as a separate one based on JSON (JSON-LD).
@@ -417,7 +494,9 @@ modified: 2023-09-25T09:00:49.722Z
 # discuss-triplestore
 - ## 
 
-- ## 
+- ## [I've been considering writing a graph database on top of SPARQL and RDF. Beyond ... | Hacker News](https://news.ycombinator.com/item?id=26782333)
+- I've been considering writing a graph database on top of SPARQL and RDF. Beyond the official docs (which are pretty good), can you recommend any other resources for easily getting the hang of SPARQL?
+  - I'll second the recommendation of Jena (and associated sub-project Fuseki). If you know Java (or any JVM language) you can use the Jena API directly for manipulating the triplestore, and submitting SPARQL queries. If you don't want to do that, Fuseki exposes an HTTP based API that you can interact with from any environment you prefer.
 
 - ## 💡 [OrbitDB – serverless, peer-to-peer database on top of IPFS | Hacker News](https://news.ycombinator.com/item?id=18748542)
 - I'm looking for a distributed scalable P2P triple store (or graph database) to store and retrieve RDF using SPARQL.

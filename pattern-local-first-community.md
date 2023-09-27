@@ -38,11 +38,19 @@ modified: 2023-09-13T20:24:41.516Z
 - 
 - 
 - 
-- 
-- 
 
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Why SQLite is so great for the edge | Hacker News_202306](https://news.ycombinator.com/item?id=36208568)
+- 
+- 
+- 
+- 
 
 - ## Are products changing from "one giant DB with all user data mixed" to "Isolated data. E.g., 1 DB per user"?
 - https://twitter.com/tantaman/status/1696165303464468489

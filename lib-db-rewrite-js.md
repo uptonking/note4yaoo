@@ -9,11 +9,28 @@ modified: 2022-11-27T19:20:02.987Z
 
 # guide
 
+# db-toys
+- https://github.com/plexidev/quick.db /MIT/ts
+  - https://quickdb.js.org/
+  - http://docs.plexidev.org/
+  - provide an easy way for beginners and people of all levels to access & store data in a low to medium volume environment.
+  - All data is stored persistently via either better-sqlite3 or promise-mysql
+
 - https://github.com/weinberg/SQLToy /js/NoDeps
   - https://github.com/weinberg/SQLToy/wiki
   - SQLToy is an in-memory SQL database written in Javascript. 
   - It is under 500 lines of code and has zero dependencies.
   - [Show HN: SQLToy – a tiny relational database for learning SQL via code | Hacker News_202111](https://news.ycombinator.com/item?id=29385432)
+
+- https://github.com/yywe/yoursql /rust
+  - Your SQL database for learning purpose
+  - recently I'm learning the source code of arrow-datafusion. I'm trying to a tiny version of it by extracting the most essential parts. 
+  - Although database books talked about query parser, query plan, query execution, etc, I find there is a large gap between theory and implementation
+  - In the latest revision, I'm keep each dev branch named as "MILSTONEn-**"
+
+
+
+
 # [Creating a database from scratch with Node.js](https://dev.to/ciochetta/creating-a-database-from-scratch-with-node-js-4dmk)
 - https://github.com/ciochetta/learndb /24Star/202101/js/mongodb
   - https://github.com/ciochetta/testing-luisdb
@@ -64,7 +81,3 @@ modified: 2022-11-27T19:20:02.987Z
   - B-Tree Leaf Node Format
   - prepare_statement (our “SQL Compiler”) does not understand SQL right now. In fact, it only understands two words select and insert
 # more
-- https://github.com/plexidev/quick.db
-  - https://quickdb.js.org/
-  - provide an easy way for beginners and people of all levels to access & store data in a low to medium volume environment. 
-  - All data is stored persistently via either better-sqlite3 or promise-mysql 
