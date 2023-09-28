@@ -1,11 +1,11 @@
 ---
-title: toc-database-document-nedb
-tags: [database, json, nedb, toc]
+title: lib-db-nedb-examples
+tags: [database, examples, json, nedb, toc]
 created: 2022-11-26T17:34:59.095Z
-modified: 2022-11-26T17:35:24.870Z
+modified: 2023-09-28T20:33:44.333Z
 ---
 
-# toc-database-document-nedb
+# lib-db-nedb-examples
 
 # guide
 - 不支持同步

@@ -949,10 +949,16 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/RhizomeDB/rs-rhizome /MIT/rust
   - https://fission.codes/ecosystem/rhizomedb/
-  - Rhizome is an in-development database for use in building local-first applications over a content addressable store, like IPFS.
+  - an in-development database for use in building local-first applications over a content addressable store, like IPFS.
   - RhizomeDB employs our PomoDB protocol to execute a local-first edge database for querying decentralized data. 
   - It extends support for concurrent access to structured and unstructured data distributed in content-addressable networks and enables the creation of decentralized, collaborative applications.
   - [Ship TodoMVC as an example app later](https://github.com/RhizomeDB/rs-rhizome/issues/83)
+  - [Rhizome on top of RDF?](https://github.com/RhizomeDB/rs-rhizome/discussions/107)
+    - One way of looking at Rhizome is "RDF without the RDF" bits
+    - We use quads and SPOC for example — though we think about it more as EAVC instead of SPOC
+    - We don't use any of the "Resource Description" parts of RDF, and are focused on things like incremental view maintenance for collaborative docs, row-level encryption, and , which the RDF community has historically not needed / explored. 
+    - Rhizome more focused on providing a database and CRDT primitives — despite the surface similarity of being a tuplestore, it's is **closer to something like Datomic or Automerge than RDF**.
+    - I see, incremental view maintenance is a powerful concept. Crucial to make CRDTs at Datalog-level efficient / practical.
 # apps-examples
 - https://github.com/Sambigeara/fuzzynote /go
   - Terminal-based, hyper-fast, CRDT-backed, collaborative note-taking tool

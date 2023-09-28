@@ -15,7 +15,26 @@ modified: 2021-09-24T06:50:06.230Z
 
 - ## 
 
-- ## 
+- ## Open-sourcing "npm-in-browser" as an npm package
+- https://twitter.com/naruaway/status/1706984800081605062
+  - Probably the simplest way to run "npm install react" in browser.
+  - It's not using WebContainers / NodeBox / SharedArrayBuffer / "blackbox 3rd party things".
+- How it works:
+  - It builds the library using Webpack to inject shims. For globals such as "process", it uses ProvidePlugin.
+  - And then the whole code is wrapped by a closure, which makes sure such "globals" are actually not global. "process" will be different per invocation.
+  - I'll follow up with benchmarks with NodeBox and WebContainers. 
+  - spoiler: NodeBox is really fast since it's using optimized dedicated CDN and many things. Somehow WebContainers is on par with npm-in-browser for "npm install"
+  - The most important reason why this is possible is that npm registry allows CORS (with some exception!)
+
+
+- Now let's figure out how to run postinstall scripts so that malware still works
+
+
+- Module loading virtualization in JS as a builtin feature of the engine.
+  - 
+- 
+- 
+- 
 
 - ## nextgen web app framework wishlist:
 - https://twitter.com/tmcw/status/1485379545276551173

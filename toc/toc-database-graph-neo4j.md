@@ -29,7 +29,7 @@ modified: 2022-11-03T04:49:42.587Z
   - This project started as the storage layer for Memex, a tool to organize your web-research for yourself and collaboratively.
   - current officially supported back-ends are: dexie/sequelize/firestore
 
-- https://github.com/levelgraph/levelgraph /202108/js
+- https://github.com/levelgraph/levelgraph /MIT/202108/js/inactive
   - LevelGraph is a Graph Database, built on the uber-fast key-value store LevelDB through the powerful LevelUp library. 
   - You can use it inside your node.js application or in any IndexedDB-powered Browser.
   - LevelGraph loosely follows the Hexastore approach, uses six indices for every triple
@@ -56,6 +56,10 @@ modified: 2022-11-03T04:49:42.587Z
     - P.S. It fell out of favor because the systems that used it tended to be monoliths that did too much to scale well. 
     - The "right way to do it," IMHO is to build a central stateful brain with it, kick all asynchronous work out to stateless worker microservices and read from active secondaries. 
     - If the brain's only job is to mutate state by applying business logic, you can scale quite far.
+# triplestore/rdf
+- https://github.com/enterlab/simplegraph /java
+  - Simple in-memory Graph Database/Cache (Triplestore): learn how a Graph DB works (educational, learner)
+  - The SimpleGraph is implemented as a TripleStore, containing tuples (well, actually triples) of Subject, Object and Predicate.
 # graph-utils
 - https://github.com/unum-cloud/networkxum /python
   - https://unum.am/storage

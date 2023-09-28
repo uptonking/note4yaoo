@@ -52,7 +52,8 @@ modified: 2021-08-30T17:33:46.086Z
 
 - ## 
 
-- ## 
+- ## [Tell HN: SQLite3 does have something like stored procedures | Hacker News](https://news.ycombinator.com/item?id=31913062)
+- However, triggers cannot return result rows, and a SELECT query that a view is defined as cannot take parameters (although there is a work-around by using a virtual table which contains a single row whose value is whichever value it is constrained to be). There is also WITH RECURSIVE, which also has many uses.
 
 - ## [Why isn't SQLite more commonly used for save files or for other user-facing application file formats? : programming](https://www.reddit.com/r/programming/comments/h86v81/why_isnt_sqlite_more_commonly_used_for_save_files/)
 - What did SQLite gave us? SQL.
@@ -68,9 +69,6 @@ modified: 2021-08-30T17:33:46.086Z
 
 
 - Also most data in iPhone apps is stored in sqlite files. Rip apart an iphone backup some time and peek at the contents.
-- 
-- 
-- 
 - 
 - 
 

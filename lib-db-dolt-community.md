@@ -84,6 +84,28 @@ modified: 2023-08-25T21:17:11.979Z
 # discuss-dolt
 - ## 
 
+- ## [Launch HN: Quilt (YC W16) – A versioned data portal for S3_201909](https://news.ycombinator.com/item?id=21062977)
+- (dolt)We've taken the Git and GitHub for data analogy a lot more literally than Quilt has
+  - We are a SQL database with native Git semantics. 
+  - Instead of versioning files like Git, we version table rows. This allows for diff and conflict detection down to the cell level. 
+  - We think there is a ton of room in this space for a bunch of tools: Quilt, Noms, QRI, Pachyderm, and even Git. 
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+- Regarding XML and JSON SirixDB[1] already provides full blown time-travel queries using a fork of Brackit[2], that is basically XQuery to process and query both the XML as well JSON documents. That said SirixDB in principal could also store relational data or graph data. The storage engine has been built from scratch to offer the best possible versioning capabilities. However I've never implemented branching/merging as I didn't come up with good use cases. It seems it's then always more of a versioning system like Git, but more fine granular.
+  - I always struggled to implement this as SirixDB currently only allows a single read-write transaction on a resource. Thus, if it would support branching and merging users would have to manually handling conflicts when merging (or automatically -- using a merge-strategy which is often case not good).
+  - There's however plently of optimization potential, as SirixDB optionally stores a lot of metadata for each node (number of descendants, a rolling hash, Dewey-IDs, number of children... as well as user-defined, typed secondary index-structures). I'll have to look how to build AST rewrite rules and implement a lot of optimizations into my Brackit binding in the future, so it's just the starting point (but everything should at least work already) :-)
+
+- I think if you can use a simple monotonically increasing sequence number, SirixDB has indexing advantages as for instance when storing XML and JSON documents or graph data.
+- The cool thing also is that SirixDB not only copies changed database pages but it implements a sliding window algorithm for versioning the database pages itself along with well known backup versioning strategies. Furthermore user-specified, typed secondary index structures are also naturally versioned.
+- One downside is that **SirixDB doesn't support branching**, even though it would be relatively easily possible to implement I guess, but I'm not convinced that it's needed. I don't want that anyone has to merge merge conflicts. I think automatic algorithms to do this are also not the right thing. But of course it's really interesting and I also thought about it :-) maybe someone has a really good use case?
+- BTW: Everything in SirixDB is immutable regarding updates of resources in databases. Of course you can revert to an old revision and change stuff, but the revisions in-between will still be accessible.
+
 - ## [Feature Request: Is there any chance to support Supabase or VectorDB?](https://github.com/dolthub/dolt/issues/6155)
 - I haven't researched too much into what special features these databases do. Our prolly tree data structure is pretty generalizable and could probably be made to work. 
 
@@ -610,31 +632,16 @@ modified: 2023-08-25T21:17:11.979Z
   - much faster too
   - we also tend to push things down into rust once we understand an area well and the interface to it has stabilized, but we want it to go faster. In that case it's worth spending the extra effort to get a bit more power
 
-# discuss-sirixdb
+# discuss-xtdb
 - ## 
 
 - ## 
 
-- ## 
-
-- ## [Launch HN: Quilt (YC W16) – A versioned data portal for S3_201909](https://news.ycombinator.com/item?id=21062977)
-- (dolt)We've taken the Git and GitHub for data analogy a lot more literally than Quilt has
-  - We are a SQL database with native Git semantics. 
-  - Instead of versioning files like Git, we version table rows. This allows for diff and conflict detection down to the cell level. 
-  - We think there is a ton of room in this space for a bunch of tools: Quilt, Noms, QRI, Pachyderm, and even Git. 
-
+- ## [Great job, XTDB's utilization of Apache Arrow for in-memory columnar data struct... | Hacker News](https://news.ycombinator.com/item?id=37403503)
 - 
 - 
 - 
 - 
 - 
 - 
-
-- Regarding XML and JSON SirixDB[1] already provides full blown time-travel queries using a fork of Brackit[2], that is basically XQuery to process and query both the XML as well JSON documents. That said SirixDB in principal could also store relational data or graph data. The storage engine has been built from scratch to offer the best possible versioning capabilities. However I've never implemented branching/merging as I didn't come up with good use cases. It seems it's then always more of a versioning system like Git, but more fine granular.
-  - I always struggled to implement this as SirixDB currently only allows a single read-write transaction on a resource. Thus, if it would support branching and merging users would have to manually handling conflicts when merging (or automatically -- using a merge-strategy which is often case not good).
-  - There's however plently of optimization potential, as SirixDB optionally stores a lot of metadata for each node (number of descendants, a rolling hash, Dewey-IDs, number of children... as well as user-defined, typed secondary index-structures). I'll have to look how to build AST rewrite rules and implement a lot of optimizations into my Brackit binding in the future, so it's just the starting point (but everything should at least work already) :-)
-
-- I think if you can use a simple monotonically increasing sequence number, SirixDB has indexing advantages as for instance when storing XML and JSON documents or graph data.
-- The cool thing also is that SirixDB not only copies changed database pages but it implements a sliding window algorithm for versioning the database pages itself along with well known backup versioning strategies. Furthermore user-specified, typed secondary index structures are also naturally versioned.
-- One downside is that **SirixDB doesn't support branching**, even though it would be relatively easily possible to implement I guess, but I'm not convinced that it's needed. I don't want that anyone has to merge merge conflicts. I think automatic algorithms to do this are also not the right thing. But of course it's really interesting and I also thought about it :-) maybe someone has a really good use case?
-- BTW: Everything in SirixDB is immutable regarding updates of resources in databases. Of course you can revert to an old revision and change stuff, but the revisions in-between will still be accessible.
+- 

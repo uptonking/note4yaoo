@@ -11,6 +11,36 @@ modified: 2023-09-25T17:52:11.778Z
 
 # blogs
 
+## [Storing user customisations and settings. How do you do it? - DEV Community_201811](https://dev.to/imthedeveloper/storing-user-customisations-and-settings-how-do-you-do-it-1017)
+
+- I've recently embarked on scaling up a side hustle which entails storing a large amount of user settings and customisations that they can make to a web platform. 
+- Now, the methods and scenarios I've come up with after some brainstorming to potentially manage these settings and customisations:
+
+- A single row of settings per customer
+  - I could store all of the settings required for each users application in a single table "settings", with each setting taking up a column and each user taking up a row.
+
+- JSON Storage
+  - I could take my existing JSON and push it into the relational database such as Postgres for storage. 
+
+- A property bag / key value approach
+  - I could create a very simple table containing an id, user_id, key, value in my database and ensure I have the flexibility to store settings with ease, whilst also being able to query for a user_id and pull back the whole set in one go.
+  -  I could create a very simple table containing an id, user_id, key, value in my database and ensure I have the flexibility to store settings with ease, whilst also being able to query for a user_id and pull back the whole set in one go.
+
+- An alternative?
+  - I have to face facts, each option actually is flirting with a nosql equivalent. 
+
+- 👥 discussions
+
+- Your property bag idea is usually called the entity-attribute-value or EAV pattern in database design, and it's notoriously messy. There are some situations where it's called for but it's hard to think of an example where it isn't a compromise with an inherently unpleasant structure.
+  - Attribute per column is effective but leads to really sparse tables and puts major implementation & operational constraints around customizability.
+  - Postgres' JSON/JSONB can do a lot more than you might think. 
+
+- Would love to hear your thoughts 2 years later - how did it go? Thinking of Postgres + JSON most myself in a similar situation.
+  - Ended up with everything in postgres.
+  - Settings table is very wide right now but I'll be converting it over to a few columns of jsonb in postgres.
+  - Running 2 databases really wasn't an issue but I found myself often wanting to join data across both e.g. is setting A turned on and therefore I need some data from table B.
+  - I decided to move everything off mongo once j got myself used to using JSON in postgres. I use the citus extension to scale horizontally as needed.
+
 ## [entity-attribute-value design in PostgreSQL - don't do it!_202111](https://www.cybertec-postgresql.com/en/entity-attribute-value-eav-design-in-postgresql-dont-do-it/)
 
 - What is entity-attribute-value design?
@@ -55,8 +85,6 @@ modified: 2023-09-25T17:52:11.778Z
 - Decide which columns need to be searched/sorted by SQL queries. No, you don't need all the columns to be searchable or sortable. Certain columns are frequently used for selection; identify these. You probably won't use all of them in all queries, but you will use some of them in every query.
   - The solution uses one table for all the EAV stuff. The columns include the searchable fields plus one BLOB. Searchable fields are declared appropriately (INT, TIMESTAMP, etc). The BLOB contains JSON-encoding of all the extra fields.
 
-- 
-- 
 ## [Magento 2 EAV Model - Things You May Not Know](https://bsscommerce.com/confluence/magento-2-eav-model/)
 
 ## [Magento Entity Attribute Value (EAV) Model - Magento Tutorial_201709](https://blog.magestore.com/entity-attribute-value-in-magento/)

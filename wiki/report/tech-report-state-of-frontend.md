@@ -10,12 +10,12 @@ modified: 2021-01-04T16:00:05.478Z
 # guide
 
 # [stackoverflow developer survey](https://survey.stackoverflow.co/)
+- [2023](https://survey.stackoverflow.co/2023/)
+  - In May 2023 over 90, 000 developers responded to our annual survey
+- [2022](https://survey.stackoverflow.co/2022/)
+  - In May 2022 over 70, 000 developers told us how they learn and level up
 
-## [2023](https://survey.stackoverflow.co/2023/)
-
-- In May 2023 over 90, 000 developers responded to our annual survey
-
-- Web frameworks and technologies
+- Web frameworks and technologies /2023
   - react, 40.6%
   - vue, 16.4%
   - angular, 17.5%
@@ -23,7 +23,14 @@ modified: 2021-01-04T16:00:05.478Z
   - solidjs, 1.4%
   - nextjs, 16.7%
 
-- Programming languages
+- Web frameworks and technologies /2022
+  - react, 42.6%
+  - vue, 18.8%
+  - angular, 20.4%
+  - svelte, 4.6%
+  - nextjs, 13.5%
+
+- Programming languages /2023
   - js, 63.6%
   - ts, 38.9%
   - python, 49.3%
@@ -36,7 +43,20 @@ modified: 2021-01-04T16:00:05.478Z
   - assembly, 5.4%
   - clojure, 1.3%
 
-- asynchronous collaboration tool 大多数不提供免费套餐
+- Programming languages /2022
+  - js, 65.4%
+  - ts, 38.5%
+  - python, 48.1%
+  - sql, 49.4%
+  - java, 33.3%
+  - cpp, 22.6%
+  - c, 19.3%
+  - go, 11.2%
+  - rust, 9.3%
+  - assembly, 5.4%
+  - clojure, 1.5%
+
+- asynchronous collaboration tool /2023 大多不免费
   - jira
   - confluence
   - markdown files
@@ -51,7 +71,7 @@ modified: 2021-01-04T16:00:05.478Z
   - monday, airtable
   - doxygen, redmine
 
-- synchronous collaboration tool
+- synchronous collaboration tool /2023
   - microsoft-teams
   - slack
   - zoom
@@ -79,31 +99,7 @@ modified: 2021-01-04T16:00:05.478Z
   - wsl, 15%
   - linux, 40.2%
 
-## [2022](https://survey.stackoverflow.co/2022/)
-
-- In May 2022 over 70, 000 developers told us how they learn and level up
-
-- Web frameworks and technologies
-  - react, 42.6%
-  - vue, 18.8%
-  - angular, 20.4%
-  - svelte, 4.6%
-  - nextjs, 13.5%
-
-- Programming languages
-  - js, 65.4%
-  - ts, 38.5%
-  - python, 48.1%
-  - sql, 49.4%
-  - java, 33.3%
-  - cpp, 22.6%
-  - c, 19.3%
-  - go, 11.2%
-  - rust, 9.3%
-  - assembly, 5.4%
-  - clojure, 1.5%
-
-- asynchronous collaboration tool 大多数不提供免费套餐
+- asynchronous collaboration tool /2022 
   - notion
   - confluence
   - workzone
@@ -119,7 +115,7 @@ modified: 2021-01-04T16:00:05.478Z
   - asana
   - [Wrike: Powerful, Versatile Work Management Platform](https://www.wrike.com/main/)
 
-- synchronous collaboration tool 
+- synchronous collaboration tool /2022
   - slack
   - mattermost
   - coolfire
@@ -128,7 +124,7 @@ modified: 2021-01-04T16:00:05.478Z
   - zoom
   - wire
 
-- Version control platforms
+- Version control platforms /2022
   - github
   - gitlab
   - bitbucket

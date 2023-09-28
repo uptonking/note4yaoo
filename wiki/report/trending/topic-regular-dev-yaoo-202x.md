@@ -9,13 +9,27 @@ modified: 2022-01-03T15:25:20.021Z
 
 # 202x
 
+# 2023
+- watching
+  - crdt
+  - datalog/datomic
+
+- automerge
+  - crdt-rga
+  - yjs
+
+- datalog
+  - level-fact-base
+  - cozodb
+  - xtdb
+# 2022
 - watching
   - tldraw
   - excalidraw
   - katachidraw
     - 依赖 perfect-freehand, xstate,jotai,react-native-web,react-native-svg
   - react-native-skia
-# 2022
+
 - react-table
   - v8 vanillajs
 

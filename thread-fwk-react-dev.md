@@ -10,6 +10,12 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## I generally consider disconnected pieces of react state inside of a component to be a bit of a smell (there are times where it makes sense though)
+- https://twitter.com/alexandereardon/status/1707182253477105954
+  - Usually, you want to have your state in a single object to avoid illegal states (thanks state machines!)
+
 - ## [Bug: useSyncExternalStore update not batched within unstable_batchedUpdates](https://github.com/facebook/react/issues/24831)
 - `unstable_batchedUpdates` is a way to deprioritize an update by delaying it. 
   - The default priority is even more delayed and more batched than unstable_batchedUpdates. **So `unstable_batchedUpdates` is a noop in React 18**.

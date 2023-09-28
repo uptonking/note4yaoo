@@ -20,8 +20,10 @@ modified: 2023-09-25T17:52:46.690Z
   - complex query，sql冗长
   - complex join
 
-- who is using #eav-db
+- who is using #eav/triple
   - magento
+  - wordpress
+  - php-cms
 
 - alternatives-eav
   - jsonb/json: 通常是平台相关的

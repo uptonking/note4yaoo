@@ -49,7 +49,11 @@ modified: 2023-08-25T22:31:05.132Z
   - Simplify your application state with a live database. Automatically update your UI based on local or remote changes, and optionally integrate with any cloud for replication and sharing.
   - Fireproof is an embedded JavaScript document database designed to streamline app development. 
   - Data resides locally, with optional encrypted cloud storage and realtime collaboration. 
-  - Features like live queries, database branches and snapshots, and file attachments make Fireproof ideal for browser-based apps big or small.
+  - JSON Documents - Encrypted changes are persisted locally and to any connected storage.
+  - File Attachments - Share social media or manage uploads within Fireproof's file attachment API.
+  - Live Query - Sort and filter any database with CouchDB-style map functions.
+  - Realtime Updates - Subscribe to query changes in your application
+  - Cryptographic Proofs - Fireproof's Merkle clocks and hash trees are immutable and self-validating
   - Fireproof has a unique take on distributed data integrity, rooted in immutable data and cryptographically verifiable protocols. 
   - The core Merkle hash-tree clock is based on Alan's Pail
   - Mikeal wrote the prolly trees implementation.

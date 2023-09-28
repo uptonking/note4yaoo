@@ -9,8 +9,15 @@ modified: 2022-12-02T11:15:15.257Z
 
 # guide
 
+- alternatives
+  - pouchdb server    /inactive
+  - couchdb(erlang)
+  - [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
+
 - roadmap
   - kappa-architecture?
+
+- pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
 # blogs
 - [A Veteran's Guide to PouchDB](https://garbados.github.io/my-blog/veteran-pouchdb.html)
 # docs

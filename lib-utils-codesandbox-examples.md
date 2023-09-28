@@ -75,6 +75,21 @@ modified: 2023-09-02T09:17:22.992Z
   - ECMAScript E5/E5.1 compliant, with some semantics updated from ES2015
   - Partial support for ECMAScript 2015 (E6) and ECMAScript 2016 (E7)
 
+- https://github.com/naruaway/npm-in-browser /ts
+  - npm package to run npm CLI in web browsers
+  - https://twitter.com/naruaway/status/1706984800081605062
+    - It builds the library using Webpack to inject shims. For globals such as "process", it uses ProvidePlugin.
+    - And then the whole code is wrapped by a closure, which makes sure such "globals" are actually not global. "process" will be different per invocation.
+
+- https://github.com/tc39/proposal-shadowrealm /s3
+  - [ES6 Realms API](https://gist.github.com/dherman/7568885)
+  - A realm object abstracts the notion of a distinct global environment, with its own global object, copy of the standard library, and "intrinsics" (standard objects that are not bound to global variables, like the initial value of Object.prototype).
+  - Extensible web: This is the dynamic equivalent of a same-origin `<iframe>` without DOM.
+  - https://github.com/tc39/proposal-compartments /s1
+    - Compartments are a mechanism for isolating and providing limited power to programs within a shared realm. 
+    - Each compartment shares the intrinsics of a realm, but a different set of evaluators (eval, Function, and a new evaluator, Module) and a global object. 
+    - Having a separate global object allows each compartment to be granted access to only those powerful objects it needs, its own isolated evaluators, powerless constructors, and shared prototypes.
+
 ## iframe-sandbox
 
 - https://github.com/dabbott/javascript-playgrounds /ts

@@ -92,11 +92,11 @@ modified: 2022-12-14T18:26:38.588Z
   - Before yjs I spent considerably time and effort with Logux https://logux.io but hit too many roadblocks.
 
 - Super interesting! May I ask you what you think about the datascript/datomic approach? It does not offer persistence; I'm more particularly asking about the datoms, EAVT/AVET/etc systematic indexes, and it's datalog query engines.
-  - The triplestore indexes are great. This database is a lower level abstraction, and I do in fact use datalog queries and EAV indexes most of the time I use this database(tupledb)
-- As for general thoughts on Datomic…
+  - The triplestore indexes are great. This database is a lower level abstraction, and **I do in fact use datalog queries and EAV indexes most of the time I use this database(tupledb)**
+- 👉🏻 As for general thoughts on Datomic…
   - You cannot construct your own indexes and paginate queries. For example, a contacts app might want to sort by last name, first name, creation time… Only way to do this in Datomic is to manually denormalize into a specific value.
-  - It also isn’t exactly schemaless. Attributes are defined with :symbols which are statically defined and held memory. That means “new column” in an Airtable-like application can’t just generate a new UUID for an attribute…
-  - The whole time travel thing with the T in EAVT is neat. And it’s useful from a UX perspective to inquire about “when did I change this phone number” etc. But I don’t imagine wanting to query the state of the database in the past…
+  - It also isn’t exactly schemaless. Attributes are defined with :symbols which are statically defined and held memory. That means “new column” in an Airtable-like application can’t just generate a new UUID for an attribute
+  - The whole time travel thing with the T in EAVT is neat. And it’s useful from a UX perspective to inquire about “when did I change this phone number” etc. But I don’t imagine wanting to query the state of the database in the past
   - At the end of the day Datomic is awesome. But it is designed for big enterprise consulting workloads (Rich Hickeys day job) and not end-user databases (like Notion, Airtable, Coda, etc) or Local-first software (embedded, smaller amounts of data)…
 
 - Very cool. I've been attacking the same problem from the opposite direction -- a local first & language agnostic ORM(vlcn-orm)

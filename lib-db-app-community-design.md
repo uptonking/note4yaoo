@@ -83,7 +83,37 @@ modified: 2023-09-17T17:50:49.932Z
 # discuss
 - ## 
 
-- ## 
+- ## I am endlessly fascinated with content tagging systems. 
+- https://twitter.com/hillelogram/status/1534301374166474752
+  - They're ubiquitous in software and have so many nuances, but I can't find anything on how to design and implement anymore more than the barebones basics of a system.
+  - A tag is a metadata label associated with content, primarily used for querying and grouping. The tag name is also the id: two tags with the same name are the same tag.
+  - Tags appear everywhere: #hashtags, wikipedia categories, blog post labels, AWS infra tags...
+- we need some kind of relationship between tags
+  - The simplest relationship is tag aliases: if A is aliased to B, then querying A is identical to querying B. The only system I know that does that is the fanfiction site AO3
+- A harder problem: tag hierarchies, or "subtags".
+- There's also implementation considerations. 
+  - First, transitive queries are expensive, how do you optimize them? 
+  - Second, how do you prevent cycles in the tag hierarchy, where A and B are both transitive subtags of each other?
+  - It gets even more complex if tags can have multiple parents, like Wikipedia categories. 
+
+- Postgres "LTREE" data type and associated query operators are an absolute godsend for this
+  - You can write a recursive CTE query that traverses an LTREE node hierarchy, and use a combination of custom alias rules, PG trigram/Levenshtein distance to build a simple but robust system
+
+- You should look at WordPress' data structures. Ignore the taxonomy(分类法) stuff (which is tags in the traditional sense), but the `Post: PostMeta` relationship is implemented as AV and there's a system for querying it. It's the basis of some power features + plugins.
+
+- wikidata might be the solution to your problem.
+
+- One way I think about it is, if you have key-value pair style tags, you basically are implementing entity-attribute-value. That kind of data can be in a triple store, and advanced queries could be semantic web queries, datalog, etc.
+
+- I suspect semantic hashing/search is probably the best way to solve the problems tagging tries to solve - doesn't require maintenance of tag ontology, lets you find documents that don't use the exact word but are v similar
+  - search is basically tagging but better
+  - [Tagging is Broken - Forte Labs](https://fortelabs.com/blog/tagging-is-broken/)
+
+- I implemented a system once that made use of tagging. We ended up with "tags mean whatever the groups/teams using them want them to mean". Remarkable subcultures arose. All were valid, all were useful.
+
+- 
+- 
+- 
 
 - ## 🤔 [Ask HN: What are some examples of good database schema designs? | Hacker News_202002](https://news.ycombinator.com/item?id=22324691)
 
@@ -101,10 +131,6 @@ modified: 2023-09-17T17:50:49.932Z
   - E/R diagrams are your friend
   - So are Venn diagrams for visualizing a complex select
 
-- 
-- 
-- 
-- 
 - 
 - 
 

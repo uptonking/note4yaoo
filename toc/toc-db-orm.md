@@ -165,12 +165,26 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/js-data/js-data /202201/js/inactive
   - JSData is a framework-agnostic, datastore-agnostic ORM for Node.js and the Browser.
   - Adapters allow JSData to connect to various data sources such as Firebase, MySql, RethinkDB, MongoDB, localStorage, Redis, a REST API
+# orm-alternatives
+- https://gitlab.com/dmfay/massive-js /js
+  - a data mapper for Node.js that goes all in on PostgreSQL, and embraces the power and flexibility of SQL itself and of the relational metaphor
+  - Massive is not an object-relational mapper (ORM)! It doesn't use models, it doesn't track state
+  - https://gitlab.com/monstrous/monstrous /js
+    - a lightweight SQL composer for Node.js and PostgreSQL
 # db-state-management
 - https://github.com/oslabs-beta/LiveStateDB /js/inactive
   - LiveStateDB is a database subscription API that enables developers to make state reflect database changes in real time. 
   - Currently, LiveStateDB only supports MongoDB.
   - LiveStateDB features a client side library and a server side library that can be installed via npm or yarn with the following commands. The libraries need to be installed on both sides in order to make use of LiveStateDB's real time updates.
 # orm-non-js
+- https://github.com/SeaQL/sea-orm /rust
+  - https://www.sea-ql.org/SeaORM/
+  - An async & dynamic ORM for Rust
+  - Seaography is a GraphQL framework built on top of SeaORM. 
+  - https://github.com/SeaQL/starfish-ql
+    - a graph database and query engine to enable graph analysis and visualization on the web. 
+    - StarfishQL uses a SQL database internally and is built on top of other libraries in the SeaQL ecosystem.
+
 - https://github.com/upper/db /202208/go
   - Data access layer for PostgreSQL, CockroachDB, MySQL, SQLite and MongoDB with ORM-like features
 # json based database

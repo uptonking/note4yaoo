@@ -12,6 +12,28 @@ modified: 2023-09-25T09:00:49.722Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## Another really cool usecase for JSON is Triplestore/Entity-Attribute-Value (EAV) graph-like data
+- https://twitter.com/GavinRayDev/status/1528434390514159621
+  - The performance difference between a regular table (entity, attribute, value), and JSON columns is obscene(大得惊人的；多得骇人听闻的; 不道德的 )
+  - [Replacing EAV with JSONB in PostgreSQL_201601](https://coussej.github.io/2016/01/14/Replacing-EAV-with-JSONB-in-PostgreSQL/)
+
+- ## 💡 [Is EAV (Entity Attribute Value) equal to SPO (Subject Predicate Object)?](https://answers.knowledgegraph.tech/t/is-eav-entity-attribute-value-equal-to-spo-subject-predicate-object/4815)
+- The Entity-Attribute-Value model is a quite mature knowledge representation structure in the database community. Especially, Kingsley Idehen is utilizing it quite often to propagate a Semantic-Web-independent Linked Data meme. 
+  - On the other side, there is the Subject-Predicate-Object form (knowledge representation structure) which we know at its best from simple natural language sentences and which is applied in the design of RDF Model and viewed there as a specialisation of Semantic Networks.
+  - However, I'm wondering about whether EAV is really a good "generalisation" of SPO. 
+  - As far I understand the EAV model, due its extension to EAV/CR (EAV with Classes and Relationships) it is possible to describe complex substructures, hence it is the basis for a hierarchical structure. 
+  - The SPO model isn't restricted to that issue, it is the basis for a graph structure. 
+  - So, I wouldn't insist an equivalence relation of EAV and SPO. I might endorse(endorse) a subset relation where EAV is a subset of SPO.
+
+- Yes, it is re. my world view.
+  - Semantic Web community align SPO and RDF, and by effect the specifics of some granularity associated with RDF specification e.g., typed literals handling.
+
+- [What is Linked Data, really?](https://www.openlinksw.com/blog/~kidehen/?id=1639)
+  - EAV is just an Entity-Attribute-Value 3-tuple pattern. I equate it to Subject-Predicate-Object. When I do my equivalence though, I explicitly state the addition of Reference Values in the E & A slots with V being optional.
+- EAV or in actuality EAV/CR + URIs == more open approach to Linked Data
+
 - ## [Ask HN: What Is Going on with Neo4j? | Hacker News](https://news.ycombinator.com/item?id=33916240)
 - triple stores (or quad stores with providence) never quite worked as well as simple property graphs (at least for the problems I was solving). I was never really looking for inference, more like extracting specific sub-graphs, or "colored" graphs, so property attribution was much simpler. Ended up fitting it into a simple relational and performance was quite good; even better than the "best" NoSQL solutions out there at the time.
   - And, triple stores just seem to require SO MANY relations! RDF vs Property Graphs feels like XML vs JSON. They both can get the job done, but one just feels "easier" than the other.
@@ -62,15 +84,115 @@ modified: 2023-09-25T09:00:49.722Z
 
 - ## 
 
-- ## 
+- ## 🌰 Triple stores are the main technology behind knowledge graphs. 
+- https://twitter.com/geobrowser/status/1590007004030185485
+- Triples consist of an Entity, Attribute & Value.
+  - An entity is a thing that can be referenced by a globally unique ID
+  - An attribute is a property of that thing
+  - The value is what you want to say about that thing
+- Using triples, we can assert facts and describe relationships between anything! The **data is unstructured** and can include any relevant information or connections.
+  - From there we can add structure to view things in more and more useful ways.
+
+- Geo’s triple store runs on @graphprotocol .
+  - With knowledge graphs on public networks, we have a robust architecture for public software in the internet age.
+
+- ## 🌰 [Launch HN: Narrator (YC S19) – a data modeling platform built on a single table | Hacker News](https://news.ycombinator.com/item?id=24640540)
+- Wish you the best of luck but isn't this just a fancier version of EAV?
+  - Yeah, Entity modeling was one of the big inspirations to our approach. The main difference is how do you reassemble the single time-series table to create any table.
+
+- This is the problem with EAV/nosql/schemaless/etc and ultimately the problem I think you are going to have to solve. Instead of using ETL to model how the activities relate and reifying that model as database objects, EAV just kicks the can down the road to the query/BI tool.
+  - Sprawl - The BI tool will end up containing most of the real business logic sprawled across many reports.
+  - Single source of truth - A lot of the reports will be very similar but they will be based off slightly different activities or slightly different filtering logic. Which report is the correct one?
+  - Traceability - I think this is more of an end-to-end "garbage-in, garbage-out" problem that all ETL/BI tools have that wouldn't be specific to your tool. It's more of an organizational/people problem.
+  - Coherent model - In my experience, EAV isn't enough to cover the breadth of analyses mature businesses need to do and most business users won't be able to wrap their head around it. There will have to be some data person that creates a more coherent, tabular/spreadsheet-like model and in the case of this tool it looks like that model will have to exist in the BI tool. Which brings us back to sprawl/single source of truth issues.
+
+- My last encounter with EAV was briefly said disastrous.
+  - On the other hand, HW gets better and better, and if you are able to do on the fly, what used to be a "cached" entity, then there you go.
+- Often, people think that just creating a time-series table is enough but it is so hard to use and so hard to maintain that you will hate yourself. Narrator.ai solve all those problems so your experience become truly incredible!
+
+- [A data modeling platform built on a single table](https://twitter.com/rob_van_dort/status/1313037246803709952)
+  - This is basically the RDF / Triple or EAV (Entity Attribute Value) approach. Existing implementations known for over 20 years. Most extensive example known to me: Stanford's Protégé. Store metamodel, model, data & user interface layout in one table.
+
+- ## 👉🏻 [Revisit indexes for DB performance · WordPress/performance_202201](https://github.com/WordPress/performance/issues/132)
+
+- 
+- 
+
+- WP is a 2-person boat. More than a year ago, @OllieJones and I provided a plugin that makes it a 4-person boat. This discussion seems to be a debate between these options:
+- The reason that WP will never hold more than 4 persons is the underlying "meta" design. It is based on "Entity-Attribute-Value" (EAV). That design pattern provides flexibility (great tor 2-person boats), but becomes very sluggish as the database grows.
+  - There is no next step after WP gets too sluggish due to too many people on the boat. Throwing it out and starting over is the only real answer.
+  - (I am a developer and have pursued the EAV schema for over 20 years. I speak from frustration with EAV's appeal but inefficiency.)
+
+- WP will not become a 5000 person boat, not with the EAV schema. but can we throw some duct tape and save some people either at sea or about to launch their boat? yes? then there is no reason to not do it.
+
+- 
+- 
+
+- ## [Questions: EAV vs Triplestore, Gremlin, Geographical data, immutability, further readings? · google/badwolf](https://github.com/google/badwolf/issues/82)
+- 
+
+- ## [Directus EAV · directus/directus](https://github.com/directus/directus/discussions/2840)
+- Use relationships
+
+- ## 🤔 [Rhizome on top of RDF · RhizomeDB/rs-rhizome](https://github.com/RhizomeDB/rs-rhizome/discussions/107)
+
+- EAV vs SPO.
+  - From my understanding, the subtle difference between the two is in attempt of SPO to interlink mutable objects/places, whereas EAV aims to provide immutable and persistent values (entities).
+  - Also SPO uses globally unique names in order to identified objects, whereas EAV makes use of content-based addressing.
+  - Overall, I'm all up for EAV.
+  - Because mutability makes a precarious foundation.
+- Also names make it difficult to interlink by content, there may exist multiple objects, like "moon/luna"
+  - RDF folks cleverly try to solve it with content-based addressing for names, however that creates a problem of propagating/superseeding new values, but I guess there is no escaping that.
+- So it's nice that EAV is name-less, akin to content-addressed RDF, making for a simpler model, allowing naming to exist, if one wishes, at a higher level.
+- Overall, immutable and persistent EAV seems to be a great foundation.
+
+- (the approach above (given it makes sense 😄 ) is just one way to have a mutable interface on top of immutable data, other's Datomic's txTime, XTDB's validTime)
+
+- ## [EAV Container Feature in MikroORM · mikro-orm/mikro-orm](https://github.com/mikro-orm/mikro-orm/issues/817)
+- From my experience the best way to work with EAV is by writing own project specific ORM. Which can take into consideration all project specific nuances and can apply optimizations where needed.
+  - But from what I saw in mikro orm it should be quite easy to implement this on top. I’ve never tried though
+
+- [Add support for usage with vanilla JS by B4nan · mikro-orm/mikro-orm](https://github.com/mikro-orm/mikro-orm/pull/13)
+
+- ## 🤔 [Extend QueryBuilder and DataMapper to map Business Model into EAV structure · typeorm/typeorm](https://github.com/typeorm/typeorm/issues/3217)
+- EAV is bad from all perspectives. Maybe you are right, but I didn't ever face issue that only EAV can resolve.
+  - What you are saying is possible, just dig into QueryBuilder internals, but it has a very high complexity. I don't think we would ever support this in TypeORM.
+
+- If you want to add flexibility to your app and give user (or developer or yourself) ability to manipulate with a lot of entity attributes himself, you have three ways:
+  - use array/json column
+  - EAV
+  - document-oriented database
+  - But **if you want have ability to get stats** (or complex reports or filters or other kind of complex SELECT queries) on this "dynamically structured data" - EAV is only way.
+  - And EAV is standard pattern. It would be great if ORM support easy creation of such type of model.
+
+- You can also take a look at PHP based version on top of Doctrine ORM: VincentChalnot/SidusEAVModelBundle
+  - Also, I want to point that this is the only way to store any data for information integration systems (ontology based systems) like Palantir
+  - By the way, later data can be replicated & searched by elastic search.
+  - So, eventually dB is required only for acid & key lookups
+- I did this using sequelize. Frankly speaking, you don’t need ORM for EAV. Use something like knex.js and write your own.
+
+- ## [How to implement inheritance? · agentm/project-m36](https://github.com/agentm/project-m36/discussions/344)
+- In summary, you have a bunch of options depending on how static you want the attributes to be.
+
+- ## [Custom Orders and Products Table using the EAV data model · woocommerce/woocommerce](https://github.com/woocommerce/woocommerce/issues/17241)
+- I'm still puzzled why people thing the EAV data-structure doesn't scale. As far as a DB Server is concerned results are simply reserved memory addresses, there's no concept of rows vs columns having any preference for addressing.
+- The main advantage of EAV is the relationship table being an integer index in its own right, so negating the need for a separate index creation and maintenance expense - and while the horizontal data model creates empty reserved memory addresses for empty fields, the EAV model does not, similarly to NoSQL models - and the blockchain seems to be scaling just fine.
+- So the EAV tables will be smaller, indexed by design and less fragmented.
+- Performance debates aside, EAV is more easily extendable with plugins not needing to include SQL patches and removals for fields & indexes, so in the spirit of extensibility, EAV still serves WP & Woocommerce rather well.
+
+- it does not scale because the data is not in a format that could be indexed well. Sure the data can be stored and inserted efficiently enough, if other modifications were made to how it is inserted. However this does not solve the fact that all reporting and other querying of products or orders will be terrible. 
+
+- who says Woocommerce and the standard Wordpress EAV structure doesn't scale? 
+  - 800, 000 products searched & filtered in ~0.5s on a $40 Digital Ocean droplet with a little tweaking - by Dave Hilditch the SkyScanner.net DBA
+
+- ## [Convert CMS pages into a EAV model · magento/magento2](https://github.com/magento/magento2/issues/17270)
+- We should convert the CMS pages into an EAV model, so fields like `title, URL key and content` can be overridden/translated on a per store basis. Doing so, also makes it possible to link multi-language content using "hreflang" and module developers can have more options to expand on CMS pages.
 
 - ## If you're familiar with #wordpress databases, you'll recognize the key-value (#EAV) structure. 
 - https://twitter.com/LucasJohnston3/status/1610192301464100864
   - For Wordpress this structure allows flexibility in which data is stored for posts. That's why a post in WP can represent any sort of #data_entity. Admittedly with a performance penalty.
   - There is understandable criticism on the #eav_structure. 
   - But I'd argue it has proven useful for the world-leading #CMS of today (WP), so it can't be that bad.
-- 
-- 
 
 - ## Has anyone in Laravel land integrated an EAV architecture into their app? If so, have any advice or gotchas to look out for?
 - https://twitter.com/MarkShust/status/1698317826564505970
@@ -434,7 +556,18 @@ modified: 2023-09-25T09:00:49.722Z
 # discuss-rdf
 - ## 
 
-- ## 
+- ## What are the limitations of RDF (resource description framework) for modeling knowledge / discourse graphs?
+- https://twitter.com/RobertHaisfield/status/1491131538075168769
+
+- RDF is good for structured data. Knowledge/discourse isn't structured data. (At least not in a repeatable way. Lotsa people cargo-culting pseudo-data again....)
+
+- Lack of edges. Isn't RDF modelled on triples rather than edges with properties?
+  - I was under the impression that you can map one to the other but I feel like you're right actually, doesn't seem like it's fully mappable. In any case I find the triple model to be very confusing honestly. A model like neo4j does it feels much more natural.
+- I agree, I definitely find it Neo4j a lot less verbose than RDF and a natural fit for record-centric storage & querying - the price being that it lacks RDF's granularity.
+
+- RDF is still misunderstood, after 25y. It's abstract, implementation-agnostic. Its goal is interoperability. It's limited when used for graph analytics but coz it's not made for that. But that's solvable. It doesn't have built-in streaming capabilities, but that's also solvable.
+
+- RDF itself is not very limited; it's extremely flexible. It can however be cumbersome, and it's a lot for people to learn.
 
 - ## [Apache Jena | Hacker News_201903](https://news.ycombinator.com/item?id=19419025)
 - Wikidata is built mostly on RDF ideas. For example, there's SPARQL query interface for it

@@ -1,20 +1,13 @@
 ---
-title: toc-db-sync-pouchdb-couchdb
-tags: [couchdb, pouchdb, synchronization, toc]
+title: lib-db-pouchdb-examples-couchdb
+tags: [couchdb, database, examples, pouchdb, toc]
 created: 2022-11-30T18:55:16.304Z
-modified: 2022-11-30T18:56:07.072Z
+modified: 2023-09-28T20:35:56.153Z
 ---
 
-# toc-db-sync-pouchdb-couchdb
+# lib-db-pouchdb-examples-couchdb
 
 # guide
-
-- pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
-
-- alternatives
-  - pouchdb server    /inactive
-  - couchdb(erlang)
-  - [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
 
 - [CouchDB Best Practices](https://jo.github.io/couchdb-best-practices/)
   - https://github.com/jo/couchdb-best-practices
@@ -83,6 +76,15 @@ modified: 2022-11-30T18:56:07.072Z
     - I would look up anything related to "Event Sourcing" which perhaps is a superset of this idea. Basically, the idea is that you save the events that happen in your system and then compile those into views.
   - forks
     - https://github.com/Brainsway-Cloud/delta-pouch
+
+- https://github.com/IconCMO/pouch-datalog /js/inactive
+  - Datomic-like Datalog queries for PouchDB
+  - The query engine is a fork from Datascript.
+  - 依赖datascript
+  - https://github.com/IconCMO/datascript
+    - An immutable in-memory database and Datalog query engine in ClojureScript.
+  - https://github.com/dahjelle/dataquery
+    - Forked the query language from Datascript, and changed to only utilize external indexes in an asynchronous manner.
 
 - https://github.com/delta-db/deltadb /201602/js/inactive
   - DeltaDB is an offline-first database designed to talk directly to clients and works great offline and online.

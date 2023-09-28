@@ -16,7 +16,24 @@ modified: 2023-09-17T17:35:27.024Z
 
 - ## 
 
-- ## 
+- ## One thing I think a lot: what would replace SQL? 
+- https://twitter.com/mengxilu/status/1337968087618834432
+  - Not some no-code UX that complies to SQL, but a new paradigm that is still low-level enough to be adopted by the whole ecosystem, what would that look like?
+
+- A supercharged Excel should do it
+
+- I think the future is more a no-code like framework around SQL to auto generate SQL for you, similar to how Looker does this for data visualization.
+
+- If anyone’s ever written Linq in .net I suspect it might be something similar. Abstracted declarative query language.
+
+- You know how initially SQL was meant to be the "language for executives" that was close enough to natural language to make it easy to query for business-related answers. In the end, Excel nailed this vision. Nothing has yet to beat it.
+  - Well except people have written excel as an interface into SQL native systems for data larger than classic excel can handle
+
+- Datomic is the model for the future.
+  - It's built around datalog, which is strictly more powerful than SQL (basically SQL+recursion, making it esp useful for graph data).
+  - It also features pull queries, which are more or less isomorphic to (and predate) graphql (+recursion).
+  - It's also more flexible than SQL from a data modeling perspective, as it's based on some of the good parts of the semantic web (RDF; EAV triple store). Practically, this makes it much easier to define polymorphic relationships, and more robust/growable schema.
+  - If that's not enough, it has super powers, like time travel (give me a database at time t, and run this query on it) and speculative writes (what would the world look like if I ran this transaction (without actually transacting)).
 
 - ## 🤔 What database has the best query language that’s not sql?
 - https://twitter.com/aboodman/status/1607790827996327936
@@ -86,4 +103,3 @@ modified: 2023-09-17T17:35:27.024Z
 
 - While Datalog is really cool and my PhD research is based on it, the fixpoint semantics really do not work well with aggregation, grouping, etc.
   - fixpoint定义 f(x) = x 时x的值
-
