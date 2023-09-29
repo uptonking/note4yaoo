@@ -24,9 +24,26 @@ modified: 2023-09-21T17:32:15.618Z
 
 - ## 
 
-- ## 
+- ## [Silver Bullet: Markdown-based extensible open source personal knowledge platform | Hacker News_202212](https://news.ycombinator.com/item?id=33843009)
+- I'm a huge fan of how Obsidian approaches it- previewing each token if you're not actively editing it. This is always how I use it.
+  - I never use split-screen view for Markdown. Split-screen makes sense for something more abstract like latex or html. But I do not see the benefit for Markdown. I would much rather have 50% of my screen.
+- My biggest frustration with Obsidian is that it doesn't follow any spec when it comes to raw HTML. They seem to have fixed inline raw HTML at some point but HTML blocks are still broken. They know it and they explicitly will not fix it.
 
-- ## 
+- It says it is inspired by obsidian (and roam). It is also keen on "end-user Programming", so the org-mode (and org-roam) comparison is inevitable on HN
+
+- ## [Managing my personal knowledge base | Hacker News_202001](https://news.ycombinator.com/item?id=22000791)
+
+- I can’t help but wonder why it isn’t more common to see people using a local SQLite database, or any other self hosted database, to serve as a personal knowledge base management system. A lot of the paid solutions I’ve seen seem to bend over backwards to offer a limited subset of the features that are trivially available in an actual database.
+- This reminds me of SQLite's own Fossil-SCM product. It's a source control manager with wiki and built-in web interface all stored within one SQLite file. They use it to manage the source of SQLite itself.
+  - It's definitely not geared towards note taking the way other apps in this thread are, but it could have value as a self-contained and portable wiki/kb. I'd be interested to hear of people's experience with this, either for its main purpose or even just as a note taking system.
+- Yes, but there are no good tool to do it. In my case i need to store a a lot of structured data and files. So i need a Document manager / Database. It's hard...
+  - I started with excel a lot of year ago, migrated to access and now i'm trying nixoxdb for android
+  - The main problem is the ease to use, you need to create a table for everything you want to store, and nothing support an hybrid free-form AND structured data(while also been able to store files), so the solutions with good text editing are terrible at structured data and viceversa.
+  - Other problem are the ability to sync or even open the database in more than a couple of platform and the ability to access the file embedded in the database from other application
+  - I'm also evaluating notion, but i really don't want a cloud service since i store basically everything inside my main database and the ability to access years from now is a MUST.
+  - Also i still not have a good solution for my email that are stored mostly in thunderbird and only some message are "exported" to my main database.
+
+- I use airtable now when I need to have structured data. I use tiddly for note taking and enhanced bookmark management.
 
 - ## [Kb: A minimalist hacker-oriented knowledge base manager | Hacker News_202009](https://news.ycombinator.com/item?id=24506280)
 - I much prefer separate text files for any minimal notes solution, since that plays well with nvAlt, Obsidian, 1Writer, etc, and is the safest sync in every file syncing service (they pretty much all know how to deal with text conflicts). It also lets me write side tooling to crawl and process notes much more easily than if I had to hit a database.

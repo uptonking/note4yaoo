@@ -11,7 +11,7 @@ modified: 2022-11-08T19:04:00.289Z
 
 - requirements
   - collaborative
-  - **block-style data model** for editor
+  - **block-style data model** for editor with one large contenteditable
   - virtualized
   - lazy-editor: easier for custom layout
   - draggable

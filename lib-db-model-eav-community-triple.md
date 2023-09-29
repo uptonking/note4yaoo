@@ -14,6 +14,13 @@ modified: 2023-09-25T09:00:49.722Z
 
 - ## 
 
+- ## 💡 [The data model behind Notion's flexibility_202105](https://news.ycombinator.com/item?id=27200177)
+
+- Salesforce and JIRA both did something similar: their underlying database schema is very generic, basically keys and values, allowing arbitrary logical schemas to be defined at runtime. Yet in both cases, they ended up not really taking advantage of this flexibility. The logical schema of both systems is a very ordinary relational schema that could have been implemented directly on the database, with much better performance. I wonder if the Notion developers made a serious attempt to build on top of a more conventional structured schema, and found it really was unworkable?
+- 👉🏻 I actually think Notion's data model is much more conventional than the data stores behind document editors like Google Docs or Figma. Blocks are "just" rows in Postgres.
+  - We **use JSON for properties for flexibility and for user-defined property schemas**.
+  - We could use an entity-attribute-value table as you describe for that, but such a table would complicate our caching techniques. It would also be enormous, but, it might be time for another think about that since we finished sharding.
+
 - ## Another really cool usecase for JSON is Triplestore/Entity-Attribute-Value (EAV) graph-like data
 - https://twitter.com/GavinRayDev/status/1528434390514159621
   - The performance difference between a regular table (entity, attribute, value), and JSON columns is obscene(大得惊人的；多得骇人听闻的; 不道德的 )
@@ -83,6 +90,51 @@ modified: 2023-09-25T09:00:49.722Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## This is a wry(挖苦性幽默的, 讽刺性幽默的) comment on every single CRM's API basically being a massive entity-attribute-value database, 
+- https://twitter.com/rgarner/status/1518918647003201539
+  - and given how "generic" the whole shitshow is, you might as well just store a bunch of JSON somewhere and make it up as you go along.
+  - All CRMs is doing is CRUD for generic "records" with a few templates for how your "customer" thing might look and a bunch of custom typed fields.
+
+- There are tons of headless CMSs. Why aren't headless CRMs a thing?
+
+- Possibly due to the fact that the request for headless CMSs is mainly driven by software development (bring your own frontend) whereas a CMS is mostly driven by humans (marketing).
+A custom frontend for a CMS is a good investment in UX. A CMS isn’t publicy visible towards users.
+
+- ## The pros and cons of modelling measures as a dimension in #PowerBI 
+- https://twitter.com/cwebb_bi/status/1292580437529952256
+  - [The Pros And Cons Of Modelling Measures As A Dimension In Power BI_202008](https://blog.crossjoin.co.uk/2020/08/09/the-pros-and-cons-of-modelling-measures-as-a-dimension-in-power-bi/)
+- not a complete replacement, but prob worth to mention switch pattern for the measure slicers, not 100% dynamic, but avoids model changes/unpivot. use it frequently , biggets benefit for me, reusing mostly generic dashboards for EDA on multiple time series
+  - Arghh, don't talk to me about the SWITCH pattern - that's another source of performance problems, although hopefully for not too much longer
+- Great article! Always pondered the trade offs. Curious if there is any benefit to splitting wide fact tables (lots of measure columns) into multiple facts to improve performance?
+  - No, I don't think so - in fact it might be counter-productive in that it would prevent DAX fusion from taking place.
+- It’s a complex trade off between perf. and UX. Users (rightly) don’t understand why they can’t have dynamic legends etc. so we have used this a lot. Hopefully when the new customise visual capability goes GA it will support specified fields for each visual which would help.
+
+- This is a blog post I would have liked to write. Chris explains and *demonstrates* why the EAV (Entity Attribute Value) pattern is a very bad idea in #powerbi and #dax
+
+- ## Data scientists, avoid the Entity-Attribute-Value pattern. 
+- https://twitter.com/FealaJake/status/1302575751049469953
+  - EAVs simplify complex data models, but are bad for analysis. 
+  - Each column should have meaningful summary stats, but EAVs stuff unrelated data into one column, so no useful summary is possible without a filter or pivot.
+
+- ## I'm actually quite curious to know how much of the "a new approach to data modeling that replaces the star schema" is a breakthrough vs. the well known fact that modern data warehouses handle really wide tables well.
+- https://twitter.com/jamesdensmore/status/1308048835806220288
+- Curious what you think after taking a look at them. Seems like their approach is primarily to structure all data into a singular time-based table.
+
+- ## I wish data in programming wasn't essentially just key/value, but key/value+source. 
+- https://twitter.com/andrewingram/status/1352216781776105473
+  - Knowing where data comes from is hugely useful, and we often end up being forced to either have a JSON audit blob attached to every model, or resorting to EAV for everything.
+- Exactly, especially in ENV variables settings where you often set keys for external services, it is important to know where this key is taken.
+
+- ## Storing "arbitrary JSON data" along with regular structured data was quite a mistake...
+- https://twitter.com/Ocramius/status/1499035159714316297
+
+- And even more fun: Most of the "unstructured" data is just deeply nested JSON for avoiding round trips to the DB. And postgresql has the ability to generate deeply nested JSON *directly* from structured data. You can have *both*!
+  - I find that using JSON data in a well-structured way works fantastically for terrible stuff like EAV replacements, but it must be done in a very controlled way
 
 - ## 🌰 Triple stores are the main technology behind knowledge graphs. 
 - https://twitter.com/geobrowser/status/1590007004030185485
@@ -194,9 +246,9 @@ modified: 2023-09-25T09:00:49.722Z
   - There is understandable criticism on the #eav_structure. 
   - But I'd argue it has proven useful for the world-leading #CMS of today (WP), so it can't be that bad.
 
-- ## Has anyone in Laravel land integrated an EAV architecture into their app? If so, have any advice or gotchas to look out for?
+- ## 🤔 Has anyone in Laravel land integrated an EAV architecture into their app? If so, have any advice or gotchas to look out for?
 - https://twitter.com/MarkShust/status/1698317826564505970
-- 🤔 Please correct me if I’m wrong, but isn’t Notion’s database architecture basically just a giant EAV system?
+- 👉🏻  Please correct me if I’m wrong, but isn’t Notion’s database architecture basically just a giant EAV system?
 - I would look further, salesforce is designed on top of eav too.
 
 - I think, JSON column type wins over the EAV for attributes because of its simplicity and support on RDBMS level. MySQL allows to query and filter JSON fields very efficiently using indexes.
@@ -206,7 +258,7 @@ modified: 2023-09-25T09:00:49.722Z
 - ea filtering attributes is going to be a bit tricky, but I think it’s just an implementation detail. So long as indexes are set up, joins shouldn’t really mean a lot unless there are really a *lot* of attributes being joined in (hundreds). Can also always optimize for something like indexing to flat tables, but that definitely has a sense of some complexity.
   - Magento’s EAV structure of having a different table for each field type is probably the most optimal way to do this, but it’s inherently very complex, and I think starting out with the simpler table structure, one for E, A & V will be far easier to implement.
 
-- Yeah Magento is a great example. And they also have an optimization where they compile the EAV to a flat table for speed
+- Yeah Magento is a great example. And they also have an **optimization where they compile the EAV to a flat table for speed**
   - If anything, I think your right on the simple approach. Optimization can come later.
   - Might be cursing in church; but WordPress is a great EAV example.
 

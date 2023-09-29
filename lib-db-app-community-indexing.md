@@ -24,7 +24,13 @@ modified: 2023-09-17T17:38:11.187Z
 
 - ## 
 
-- ## 
+- ## [How does database indexing work? (2008) | Hacker News_202203](https://news.ycombinator.com/item?id=30594233)
+- If you want to see a dumb example of how you can implement indexing on top of a SQL database without it, I wrote a tutorial on implementing basic indexes as part of a series on making a SQL database from scratch.
+  - [Writing a SQL database from scratch in Go: 3. indexes](https://notes.eatonphil.com/database-basics-indexes.html)
+
+- 
+- 
+- 
 
 - ## [sql server - Will index be fully loaded into memory_201011](https://stackoverflow.com/questions/4296027/will-index-be-fully-loaded-into-memory)
 - No, it's treated like any other data stored on disk. It's loaded into memory disk page by disk page. And a page stays in memory as long as it's regularly accessed.

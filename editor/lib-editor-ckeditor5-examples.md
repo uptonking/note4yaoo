@@ -134,7 +134,7 @@ modified: 2021-11-05T13:31:12.802Z
 - trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持多端
   - https://github.com/zadam/trilium
   - https://github.com/zadam/trilium/wiki/
-  - 依赖 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror5、jsplumb、fancytree、bootstrap
+  - 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror5、jsplumb、fancytree、bootstrap
   - a hierarchical note taking application with focus on building large personal knowledge bases. 
 # ckeditor4
 - https://github.com/liferay/alloy-editor

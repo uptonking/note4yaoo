@@ -58,7 +58,7 @@ modified: 2023-09-17T17:50:49.932Z
 
 - ## 💡 [Athens Research (YC W21) – Open-Source Roam Research | Hacker News_202103](https://news.ycombinator.com/item?id=26316793)
 - My only real reservation is that files are not in Markdown.
-- 👉🏻 The current **major difference between markdown-based and db-based apps is block references**. Over time, the difference will become significant as knowledge bases grow in size.
+- 👉🏻 **The current major difference between markdown-based and db-based apps is block references**. Over time, the difference will become significant as knowledge bases grow in size. 差别还在于同步
   - CSV -> Excel -> SQL -> Distributed Cloud DBs
   - Furthermore, our database supports data types, including numbers, dates, etc. I don't think any networked notetaking app has executed well on tables and non-string types. UX for tables is generally not great for markdown.
 - That should be true, but so far it is Roam with the biggest problems with performance, from 30+ seconds of loading each time you load/refresh tab to constant lags in normal usage for some users
@@ -83,7 +83,7 @@ modified: 2023-09-17T17:50:49.932Z
 # discuss
 - ## 
 
-- ## I am endlessly fascinated with content tagging systems. 
+- ## 💡 I am endlessly fascinated with content tagging systems. 
 - https://twitter.com/hillelogram/status/1534301374166474752
   - They're ubiquitous in software and have so many nuances, but I can't find anything on how to design and implement anymore more than the barebones basics of a system.
   - A tag is a metadata label associated with content, primarily used for querying and grouping. The tag name is also the id: two tags with the same name are the same tag.

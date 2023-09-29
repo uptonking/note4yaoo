@@ -15,7 +15,7 @@ modified: 2023-09-25T17:52:46.690Z
   - eav模型与数据库特性无关，需要自己实现查询和join，而json与db特性绑定
 
 - cons
-  - 在数据增长时，性能下降很快
+  - 在数据增长时，性能下降很快，数据量比rdbms更大
   - 和orm结合起来的查询或操作更繁琐
   - complex query，sql冗长
   - complex join
@@ -25,8 +25,12 @@ modified: 2023-09-25T17:52:46.690Z
   - wordpress
   - php-cms
 
+- eav vs json
+  - json更佳灵活，eav中attribute不能再次添加属性，比如attribute的来源/事务时间
+  - json的实现通常是平台相关的，eav的查询和join通常要在应用层自己实现
+
 - alternatives-eav
-  - jsonb/json: 通常是平台相关的
+  - jsonb/json
   - inner platform
   - **property graph**: PG/GPQ
   - more: ms-power-query
@@ -40,6 +44,7 @@ modified: 2023-09-25T17:52:46.690Z
   - SQL/PGQ: apache-age
 
 - tips
+  - eav vs triple vs json
   - eav和schema并不对立，很多cms都会在固定表外提供eva插件，允许用户自定义部分功能
   - EAV performance at large scale is really dreadful
 # dev

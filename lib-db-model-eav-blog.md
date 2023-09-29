@@ -11,6 +11,100 @@ modified: 2023-09-25T17:52:11.778Z
 
 # blogs
 
+## [Modelling dynamic attributes - Blueprints for the Entity-attribute-value model (EAV)](https://database-modelling.com/article/modelling-dynamic-attributes-blueprints-for-the-entity-attribute-value-model-eav)
+
+- With a growing customer base, your customers often want to have additional input fields in your application. 
+- The obvious solution for this would be simply adding a new column to your database table and extending the frontend with a new input field. 
+- By using this approach you will be confronted with the following issues:
+  - each of your customers sees automatically the new attribute in the user interface.
+  - you have to create and apply a database migration and rollout a new version of the frontend and backend
+  - a customer might want to add a new attribute or a number of attributes. He or she might not be willed to pay for just a new field without any application logic behind it.
+
+- If your application provides a plug-in architecture or a public API through e.g. HTTP(S), you have to think about third party vendors. 
+  - vendors want to keep track of additional information. This information can be either stored in an external database of the vendor or directly in your application's database.
+- Depending on your applications architecture, you can track those additional information in three ways:
+  - If your application provides a plug-in architecture with direct database access, vendors must store their information in additional database tables. Vendors should never change the core database tables of your application, because of security, reporting and other reasons
+  - Each of database tables has an additional column in which structured information can be stored in a flattened way. This could be a column of type json or jsonb or a text type, holding an XML structure.
+  - Your application already provides a generic database model for storing additional information. You are doing this by adding the Entity-attribute-value model to your database schema.
+
+- The EAV model is a data modelling blueprint. It allows the implemented application or database to easily store additional information. Those additional information are also known as metadata.
+
+- Disadvantages of the EAV model
+- each of the models has the fundamental problem of missing referential integrity. Your other application layers have to make sure that the referential integrity can be assured.
+- all metadata values have to be loaded by using JOIN clauses. 
+
+## 📝 [Laravel Custom Fields: JSON, EAV Model, or Same Table?_202301](https://laraveldaily.com/post/laravel-custom-fields-json-eav-model-same-table)
+
+- There are situations when we're not sure what the columns of the DB table would be, they need to be flexible. For example, e-shop product properties: size, color, fabric, there may be more in the future. What is the best DB structure? 
+
+- Option 1. Properties DB Table and EAV Model
+  - We can define a separate DB table properties and then a Pivot table product_property with many-to-many relations, and an extra field for the value.
+
+- Option 2. JSON Column
+  - We can put all properties just as an unstructured JSON column within the same DB table.
+
+- Option 3. More Fields in the Same Table?
+  - the most straightforward approach: you just add the fields that you know for now, make each of them nullable just in case, and then will add more fields to the same table as they appear.
+  - in some cases, it may make sense to "hardcode" things
+
+- Performance Comparison
+  - In my benchmark test, I've seeded 1000 products with all three possible structures
+  - `whereHas` EAV approach is 3-4x slower than other structures
+  - JSON approach is only 10-30% slower than the approach of regular columns
+
+- All in all, my suggestion would be to **avoid the EAV model** unless you REALLY need it. JSON columns are okay-ish in terms of performance, but depending on your (more complex?) structure may also be slower or less convenient to query.
+  - The good old approach of just adding more fields to the same table may not sound "sexy" but if you go for simplicity and the quickest performance "for now", you should consider starting with that structure.
+
+- 👥 discussions
+
+- 6 milliseconds is indeed 3-4x slower than 1.6 ms, but honestly... who cares? Most of the webshops works with fewer than 10 000 products. 
+
+- Allow me a php not Laravel comment, because it has caused me much pain multiple times already: Wordpress is version 1) throughout, and Woocommerce on top of it increases the complexity of your example, because all blog posts, products, orders etc. are in the same table (wp_posts), with the wp_post_meta table holding the different properties. So a customer order of 5 products (that themselves have variations) becomes a SQL nightmare. And to the comment above "it's only milliseconds": exactly this brings web shop databases to their knees, when a few hundred users access it at the same time, and the database must dig through millions of records for each.
+- Thanks for the comment! And again, it's only MY benchmark in certain situation, other situations may bring different results.
+- I think the main problem in Wordpress is storing all that kind of data in one table. That's why in the latest Woocommerce versions you can have separate tables for customers, orders, products etc.
+- Search for Woocommerce 7.1 and High Performance Order Storage (HPOS). Now it's in woocommerce as an option and have to be enabled. Sooner or later will be in the core by default.
+
+## 👥 [Laravel Custom Fields: JSON, EAV Model, or Same Table?_202301](https://twitter.com/PovilasKorop/status/1619633200170500096)
+
+- Is there any downside with having a table with ~100-150 columns, when the product has a LOT of attributes?
+  - Insert is usually slower then. And overall size of one table.
+  - And these properties cannot have properties themselves. Think of language of a description. Or unit of a weight number. JSON is superior in this case.
+- Good thing with ecommerce, inserts are done rarely than querying. And I'm definitely okay with my inserts being slow than my customers query being slow
+- I would rather have two additional tables:
+  - attributes table, containing the list of attributes, possibly with foreign key for product types (you don't need fabric, size or color for a DVD)
+  - attribute table - related with attribute and product IDs
+
+- Nice post. Just remember to put comment on the migration/table column that contains json structure for consistency. It helps a lot.
+
+- I’ve seen big systems (mostly ERPs) using option 3 even if no properties are yet needed. So they add like address_1, address_2 … Then end up with table with 200+ properties
+  - that may be still OK if they don't see performance/maintenance issues with that. If they do see that as a problem, then they need to give budget for refactoring.
+
+- I blogged about this just a couple of days ago as was sick of answering the question on the @laracasts forum
+  - [Modelling Products and Variants for E-Commerce - Blog - Martin Bean_202301](https://martinbean.dev/blog/2023/01/27/product-variants-laravel/)
+- By using your approach. Can you show any examples of a performant query when querying for a product with an attribute of color blue.
+  - It’s redundant because you’d want to use something like Elasticsearch to index and then search a non-trivial amount of products. Otherwise you could do it using simple joins.
+
+- I would say that in this case, option 3. Mainly because it’s relatively easy to migrate to a more complex one in the future. If migration is easy, prioritize YAGNI. If not, choose a flexible structure. Also note that the numbers of records will only be ~10000 for this domain.
+
+- When building something like the EAV model, one is basically building the edge table of a graph structure, which MySQL, Postgres and others ain't really optimized for... but I've seen it done quite a lot! Nice benchmark!
+
+- I am building a system with loads of product data and am using JSON and extra columns on Postgresql. Works very well, is extremely flexible and if you really need to speed up reads there is the option of materialized views.
+
+- We've used this package to simplify the EAV approach.
+
+- We had 100000+ products, I used the many-to-many option with elastisearch key-value indexing
+
+- I prefer EAV over JSON but also always recommend thinking thouroughly about which properties you need for product listings etc. Those are properties you really want to have in a flat table structure and you do not get  nasty performance issues because of too much table joins.
+
+### [Modelling Products and Variants for E-Commerce - Blog - Martin Bean_202301](https://martinbean.dev/blog/2023/01/27/product-variants-laravel/)
+
+- In traditional retail, if a product comes in many variants then each variant will be referred to as a SKU. 
+  - A product would be the top-level representation of a product
+  - A SKU represents a single variant, so its model needs to hold information unique to that particular variant, such as price, inventory, etc.
+- Whilst the above takes care of the one-to-many relation between products and SKUs, it does leave out the topic of product attributes (like colour, size, etc). 
+
+## [How to store schema-less EAV (Entity-Attribute-Value) data using JSON and Hibernate](https://vladmihalcea.com/how-to-store-schema-less-eav-entity-attribute-value-data-using-json-and-hibernate/)
+
 ## [Storing user customisations and settings. How do you do it? - DEV Community_201811](https://dev.to/imthedeveloper/storing-user-customisations-and-settings-how-do-you-do-it-1017)
 
 - I've recently embarked on scaling up a side hustle which entails storing a large amount of user settings and customisations that they can make to a web platform. 
@@ -84,10 +178,6 @@ modified: 2023-09-25T17:52:11.778Z
 
 - Decide which columns need to be searched/sorted by SQL queries. No, you don't need all the columns to be searchable or sortable. Certain columns are frequently used for selection; identify these. You probably won't use all of them in all queries, but you will use some of them in every query.
   - The solution uses one table for all the EAV stuff. The columns include the searchable fields plus one BLOB. Searchable fields are declared appropriately (INT, TIMESTAMP, etc). The BLOB contains JSON-encoding of all the extra fields.
-
-## [Magento 2 EAV Model - Things You May Not Know](https://bsscommerce.com/confluence/magento-2-eav-model/)
-
-## [Magento Entity Attribute Value (EAV) Model - Magento Tutorial_201709](https://blog.magestore.com/entity-attribute-value-in-magento/)
 
 ## [Entity-Attribute-Value Model | Dremio](https://www.dremio.com/wiki/entity-attribute-value-model/)
 
@@ -171,7 +261,7 @@ modified: 2023-09-25T17:52:11.778Z
 
 - I have built my own similar reactive in-memory triple store with typescripts type safety, but then I realized I still need transactions which are a bit of a pain, because transactions are bundling the otherwise separete triplets, so the atomic, independent logic of triplets and related effects breaks a bit. (I am sure it's solvable.)
   - The example code uses a `transact` function. But it really depends on what you mean by “transaction”. 
-  - 👉🏻 We don’t use a triple store at Notion, but we do use an abstraction that ensures a collection of operations either all succeed or all fail. 
+  - 👉🏻 **We don’t use a triple store at Notion, but we do use an abstraction that ensures a collection of operations either all succeed or all fail**. 
   - We don’t support “interactive” transaction, where you can read, modify, write as an atomic group. 
   - This just isn’t desirable in a multiplayer or offline system - in cases we need that kind of consistency we use a normal HTTP API which is online-only.
 - As jitl points out, in multiplayer settings, what you need is some way to commit a series of transactions all-together or not at all. We support this.
@@ -184,6 +274,21 @@ modified: 2023-09-25T17:52:11.778Z
 - tripletstore/datalog actually seems like a decent compromise between SQL and no-SQL that could actually work out! Awesome idea!
 
 - Another product that does all this (relations, reactivity, offline, permissions, sync, etc…) really well, is Realm.
+# blogs-vendor
+
+## [Magento 2 EAV Model - Things You May Not Know](https://bsscommerce.com/confluence/magento-2-eav-model/)
+
+## [Magento Entity Attribute Value (EAV) Model - Magento Tutorial_201709](https://blog.magestore.com/entity-attribute-value-in-magento/)
+
+## [Thoughts on Tableau - Data Modeling and EAV - Data + Tableau + Me_201602](http://www.datatableauandme.com/2016/02/thoughts-on-tableau-data-modeling-and.html)
+
+- Like I've said before, I prefer this approach for a lot of my use cases, mainly because I feel it gives me more flexibility. I like thinking through Tableau in terms of Calculations and Aggregation. 
+  - What can be considered a downside to this approach, is the fact that you have to force yourself to think in terms how Tableau aggregates your result set in the viz. You have to force yourself to see Tableau as drawing graphs based on the results of Aggregated Queries. It can be more difficult to create/use "Row Level Calcs", since you might have to enforce aggregation on the Calcs or use LoDs. 
+  - The other potential downside to this is Size. Using this method will create a lot of additional records, and will increase the overall size of the dataset. So if you are working with very large datasets, that would be made even larger, this might not be the best approach.
+
+- ### do you think EAV Model approach to Data Design is best for most cases in @tableau ?
+- https://twitter.com/RodyZakovich/status/694626637787353088
+- I don't think there's one size fits all, I think you can take the column route too far. All depends what you need IMO
 # more-blogs
 - [Entity-attribute-value model in relational databases. Should globals be emulated on tables? Part 1. - DEV Community](https://dev.to/intersystems/entity-attribute-value-model-in-relational-databases-should-globals-be-emulated-on-tables-part-1-2e49)
 

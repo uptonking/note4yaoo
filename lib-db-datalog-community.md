@@ -14,6 +14,11 @@ modified: 2023-09-16T17:27:42.089Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## Brainstorming ideas for the HYTRADBOI jam.
+- https://twitter.com/sc13ts/status/1566549021363097600
+
 - ## ✨ [Mentat: A persistent, relational store inspired by Datomic and DataScript | Hacker News_201704](https://news.ycombinator.com/item?id=13568559)
 - "DataScript asks the question: "What if creating a database would be as cheap as creating a Hashmap?"
   - Mentat is not interested in that. Instead, it's strongly interested in persistence and performance, with very little interest in immutable databases/databases as values or throwaway use."
@@ -443,7 +448,7 @@ modified: 2023-09-16T17:27:42.089Z
   - For serializability: yes, we support serializable transactions. So when you insert, delete or update node, rel records, you get all or nothing behavior (e.g., if you rollback none of your updates will be visible).
   - That said, supporting ACID transactions is a completely separate design decision in DBMSs, so our (or other systems') mechanisms to support transactions (for example whether it's based on write ahead logging or not) and storage designs are generally mutually(相互地；共同地) exclusive(独有的; 专有的; ) decisions.
 
-- ## [Ask HN: Why are relational DBs are the standard instead of graph-based DBs? | Hacker News_202110](https://news.ycombinator.com/item?id=28736405)
+- ## 🤔 [Ask HN: Why are relational DBs are the standard instead of graph-based DBs? | Hacker News_202110](https://news.ycombinator.com/item?id=28736405)
 - Yet a relational database in 5th normal form is equivalent to a RDF-Like first order Triple graph.
   - Not quite. The definition of 5NF depends on real-world constraints on valid combinations of attributes in the database; it has nothing to do with any pre-defined data model such as RDF. There can be "wide", horizontally-modeled tables (quite unlike the RDF model) which are in 5NF simply because no real-world constraints apply to the data beyond those that are implied by the candidate keys.
 

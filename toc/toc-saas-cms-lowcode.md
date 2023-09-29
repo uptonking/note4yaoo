@@ -144,6 +144,17 @@ modified: 2023-01-20T21:59:47.792Z
   - 前端依赖antd-pro-layout、umi.v3、braft-editor、turndown
   - server基于nodejs的服务端, 启动后可直接访问3000 端口, 也就是内容SSR端
   - admin CMS的管理后 集成了用户管理, 内容审核, 内容发布, 数据统计等模块
+
+- https://github.com/twentyhq/twenty /AGPLv3/ts
+  - https://twenty.com/
+  - We are building an Open Source CRM designed to be: enjoyable to use, easily extendable, and perfectly in-sync with your data.
+  - 后端依赖nestjs、prisma、graphql、apollo/server
+  - 前端依赖recoil、blocknote、chakra-ui、afterframe(raf)
+
+- https://github.com/odoo/odoo /LGPLv3/python/js
+  - https://www.odoo.com/
+  - a suite of web based open source business apps.
+  - The main Odoo Apps include an Open Source CRM, Website Builder, eCommerce, Warehouse Management, Project Management, Billing & Accounting, Point of Sale, Human Resources, Marketing, Manufacturing, ...
 # discuss
 - ## 
 

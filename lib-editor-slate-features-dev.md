@@ -169,3 +169,5 @@ modified: 2023-03-16T16:29:47.610Z
 - formats
   - diff .docx and .doc
 # more
+- 画板或批注类产品要参考规范 [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
+  - 富文本格式也可参考

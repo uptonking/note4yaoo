@@ -9,19 +9,23 @@ modified: 2023-02-02T03:22:07.941Z
 
 # guide
 
-- db架构分析
+- db架构
   - oltp, olap, htap
   - schema: strict/none, rdbms/nosql
   - structure: document/object, flat
   - value: unique, regular/common
 # db-trending
+- db-features
+  - incremental materialized view
+  - graph/relational queries: gql, property graph
+
 - datalog/datomic
   - math-flavor query dsl
 
 - dolt
   - version history
   - branching
-  - 但noms的作者未坚持
+  - 但noms的作者新产品与数据库关系不大
 
 - scuttlebutt
   - log-based

@@ -87,6 +87,7 @@ modified: 2020-11-17T13:38:19.107Z
     - Headless CMS for structured content (or bring your own CMS)
     - Growth optimization tools (A/B testing, personalization, analytics)
   - [Does this repository include the designer UI?](https://github.com/plasmicapp/plasmic/issues/23)
+    - It currently doesn't; will add clarification on this.
 
 - blocks /MIT/4.6kStar/202006/js/inactive
   - https://github.com/blocks/blocks

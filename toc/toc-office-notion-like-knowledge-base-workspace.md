@@ -90,13 +90,13 @@ modified: 2022-06-03T21:34:54.893Z
     - 跨block的操作变得复杂
   - https://github.com/zzj3720/blocksvite
     - simple Block editor like BlockSuite, based on Vue and @blocksuite/store
-- https://github.com/JhinBoard/jhin
-  - Next-Gen Collaborative Knowledge Base, A free replacement for Notion & Miro
+  - https://github.com/JhinBoard/jhin
+    - Next-Gen Collaborative Knowledge Base, A free replacement for Notion & Miro
 
 - trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持多端
   - https://github.com/zadam/trilium
   - https://github.com/zadam/trilium/wiki/
-  - 依赖 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror5、jsplumb、fancytree、bootstrap
+  - 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror5、jsplumb、fancytree、bootstrap
   - a hierarchical note taking application with focus on building large personal knowledge bases. 
   - Synchronization with self-hosted sync server
   - Trilium is provided as either desktop application (Linux and Windows) or web application hosted on your server (Linux). 
@@ -119,13 +119,13 @@ modified: 2022-06-03T21:34:54.893Z
 
 - https://github.com/mintterteam/mintter /go/ts
   - https://mintter.com/
-  - Mintter is a decentralized knowledge collaboration application for open communities powered by a knowledge graph.
+  - a decentralized knowledge collaboration application for open communities powered by a knowledge graph.
 
 - https://github.com/austinvhuang/openmemex /rust/haskell
   - local-first knowledge integration platform optimized for automation (including caching and indexing of content) as well as enabling neural network machine learning integrations.
   - SQLite is the central data storage medium, rather than a collection of markdown documents.
   - Instead of users manually curating a knowledge graph, data is organized automatically by timestamp.
-# github-wiki-confluence-like
+# confluence-like
 - MrDoc /2.1kStar/GPL.v3/202208/js/python/仅网页版
   - https://github.com/zmister2016/MrDoc
   - https://mrdoc.pro/
@@ -261,7 +261,7 @@ modified: 2022-06-03T21:34:54.893Z
 
 - https://github.com/courajs/referent /js
   - An offline-first, realtime-collaborative wiki engine
-# wiki/knowledge-base
+# knowledge-base/wiki
 - https://github.com/Jermolene/TiddlyWiki5
   - https://tiddlywiki.com/
   - a unique non-linear notebook for capturing, organising and sharing complex information
@@ -345,7 +345,7 @@ modified: 2022-06-03T21:34:54.893Z
   - XWiki Commons, XWiki Rendering, and XWiki Platform are part of the XWiki.org software forge. They are released together and share the same version.
   - Over 600 extensions: applications, macros, skins, plugins, themes, etc.
   - Learn about XWiki's concept and why it's an alternative to Confluence and MediaWiki
-# workspace built with vscode
+# workspace with vscode
 - foam /12.5kStar/MIT/202208/ts/vscode
   - https://github.com/foambubble/foam
   - https://foambubble.github.io/foam/
@@ -377,13 +377,14 @@ modified: 2022-06-03T21:34:54.893Z
   - 自动更新文库导航目录，支持多级目录
   - 无需服务端的全文库内容搜索与计分排序
 
-- https://github.com/silverbulletmd/silverbullet /ts
+- https://github.com/silverbulletmd/silverbullet /MIT/ts
   - https://silverbullet.md/
   - SilverBullet is an extensible, open source personal knowledge platform. 
   - implemented as an offline-first PWA
   - At its core it’s a clean markdown-based writing/note taking application that stores your pages (notes) as plain markdown files in a folder referred to as a space. 
   - While SB uses a database for indexing and caching some indexes, all of that can be rebuilt from its markdown source at any time. 
   - extensible with plugs, and you can customize it
+  - [Silver Bullet: Markdown-based extensible open source personal knowledge platform | Hacker News_202212](https://news.ycombinator.com/item?id=33843009)
 
 - https://github.com/danobot/notorious /31Star/GPLv3/202102/inactive
   - Offline-first note taking and knowledge management application 

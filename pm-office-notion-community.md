@@ -24,6 +24,97 @@ modified: 2023-03-29T17:23:37.126Z
 - https://twitter.com/NotionHQ/status/1681364115309334530
   - [The Great Re-shard: adding Postgres capacity (again) with zero downtime](https://www.notion.so/blog/the-great-re-shard)
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## [How Notion pulled itself back from the brink of failure (2019) | Hacker News_202106](https://news.ycombinator.com/item?id=27540471)
+- 
+- 
+
+- I joined Notion two years ago, so this era predates me, but I can shed a little bit of light:
+  1. The web UI used Polymer/Web Components. Simon (CTO/cofounder) described this as building on shifting sand as browsers and poly fills changed the standards and things never seemed to work well for long.
+  2. There was a lot of Redis with Lua action, using Redis instances as a distributed system for some purpose I don’t understand. This never worked well.
+  3. There was experimentation with graph database like Neo4J which turned out to be slow for the kinds of queries Notion needed to do. 
+  - Because of all that, they completely rebuilt the product using the most boring/normal technology possible. Today we run on Postgres/Memcached for data, a Redis for rate limit and queueing, and a Typescript/React front-end
+
+- 
+- 
+
+- ## 💡 [The data model behind Notion's flexibility_202105](https://news.ycombinator.com/item?id=27200177)
+
+- I think it makes us unique among the popular editors of today, but we're very aware that the block model isn't original. Execution matters much more than innovation.
+
+- Not sure how "unique" this model is; for example Claris Works was built out of an even more powerful block model (they called them frames) back in the late 1980s
+
+- Notion clicked for me when I realised that everything is a "page with some attributes". Blocks are interesting at the engineering level, but as a user I found I was normally thinking at the level of pages.
+- The design decision to feel "default-text" is awesome - text is a great foundation for a "custom workspace" product. But, it's only when the bulk of content is in Tables that things get extremely powerful.
+  - Once Notion has in-line text references, ala Coda, the sky is really the limit. I think Notion nailed the UX and speed / performance.
+  - Even if it's slow compared to Apple Notes, it's lightning fast compared to Coda, where "Documents" are extremely heavy, and relatively isolated.
+  - Notion has a clean route towards eating Coda's most powerful functionality ([an incredible charting and formula](https://coda.io/formulas))
+
+- I'm actually building a Confluence/Notion competitor, and it is document based. Being block-based makes a lot of things much more complex
+
+- Salesforce and JIRA both did something similar: their underlying database schema is very generic, basically keys and values, allowing arbitrary logical schemas to be defined at runtime. Yet in both cases, they ended up not really taking advantage of this flexibility. The logical schema of both systems is a very ordinary relational schema that could have been implemented directly on the database, with much better performance. I wonder if the Notion developers made a serious attempt to build on top of a more conventional structured schema, and found it really was unworkable?
+- 👉🏻 I actually think Notion's data model is much more conventional than the data stores behind document editors like Google Docs or Figma. Blocks are "just" rows in Postgres.
+  - We **use JSON for properties for flexibility and for user-defined property schemas**.
+  - We could use an entity-attribute-value table as you describe for that, but such a table would complicate our caching techniques. It would also be enormous, but, it might be time for another think about that since we finished sharding.
+
+- Been working with multiple document API's recently for my start-up. 
+  - It's been a real challenge to understand how different document stores compare -- **Confluence uses undocumented XML markup** that "mostly" mirrors HTML, Google Docs gives you sometimes semantically-incorrect HTML with lots of inline styles, Slack has its own funny Markdown, etc. 
+  - Then there's Notion blocks. I had to write my own HTML-to-Notion block parser, but I think I prefer working with it over everything else because structured data is just easier. 
+  - One interesting gotcha: if you want to completely overwrite a page you currently have to remove every content block one at a time, and then add each new line one at a time. This is using their undocumented API, but the new API doesn't even offer deleting content yet. I'm eager to switch over but it may be a while...
+
+- As author of a Notion browser extension, "everything is block" concept made it significantly easy to understand the notion doc structure and tweak the UI to add multiple customisations on top of it. For instance showing a fixed static ToC, etc.
+
+- I think the power of Notion became apparent to me when I created a Page, accidentally changed it to some other type, then ctrl+z-ed it back to a Page, with all its contents intact. Seriously impressive. I wish search wasn't so crap though.
+
+- I'm curious if Notion has any plans to make the "type" property user-extensible. Given the current data-structure, which decouples the block data from the way its rendered through the type property, a user has to define only one template for rendering arrangements of UI components (boxes, bullets, etc), titles and children. 
+  - This sounds a bit like customized structured data types with style inheritance, à la DITA.
+
+- I'm wondering ... so when a user requests a page which will have a full hierarchy of blocks, how are the db queries done.
+  - It appears that Notion uses Postgres, which supports the recursive/hierarchical queries that are part of standard SQL. While I don't know for sure that Notion uses this, it seems likely.
+
+- 🤔 How do you store, query, and search across documents?
+  - Our source-of-truth data store is Postgres, with a Memcached cache on top.
+  - **Most of our queries are "pointer chasing"** - we follow a reference from one record in memory to fetch another record from the data store. To optimize recursive pointer-chasing queries, we cache the set of visited pointers in Memcached.
+  - We use Elasticsearch for search features like QuickFind.
+
+- Really interessing. This seem to be a really good use case for a NoSQL database. Am I wrong ?
+  - PostgreSQL has Ltree
+  - 👉🏻 **Ltree is interesting, but if I understand correctly, to move a parent block, I'd also need to update the path column in all the child blocks** -- at our scale such write amplification is a non-starter.
+- Yes, you're wrong. You're wrong because you need to JOIN a massive tree of blocks, to form the graph the author is referring to. You can break out the "block" model into several tables and represent it in a relational database that way.
+  - NoSQL = NO JOIN?
+  - Hope that helps.
+- I don’t actually see a graph represented anywhere in the article; the author references wanting a graph at the start, but the only thing I’m seeing described are trees of nested blocks. Even the properties list seems to be a grab-bag of KV pairs that gets permanently attached to a block once initialized, to support roundtripping.
+  - Which is pretty much the ideal scenario for a document store. 
+  - The article describes Notion as being very strictly hierarchal
+- A block has many properties. A property has a name, and a value.
+  - The underlying persisted data doesn't necessarily have to be a bag of KV pairs.
+  - A block is related to its parent and descendant blocks.
+  - These relations are suitably represented in a relational database, not a document store.
+  - EDIT: In graph theory, a tree is an undirected, connected and acyclic graph.
+- A document store is basically optimized for specifically hierarchal data situations — a tree. The data structure you’re describing, and what the article describes, is precisely that: a tree.
+  - A database can encode a tree just fine, but that doesn’t mean it’s the best tool to do so.
+  - There are other properties to a document store I don’t care for, and I don’t like them in general (like the implicit schema, and total lack of data consistency validation by the data store, and the fact that you often don’t truly have a tree), but representing a tree is what’s been described, and it’s exactly what they’re specialized for.
+
+- We don't use JOIN for the content tree; I don't think I've seen one in any of our queries.
+  - We don't use an ORM. Notion's codebase on the back-end is much more functional than object-oriented, in the sense that we have many more code that looks like `transformTheData(theData, theChangeToMake): ResultingData` than we have classes or methods.
+  - We do lean very heavily on the TypeScript type system and try to make invalid states unrepresentable.
+
+- 🤔 Am I the only one who thinks the data model is very complex? How does it compare to a document based data model? What are the pros and cons of each?
+- The **major issue with the document model is storage**. How big can a document grow? How do you persist it, and make small changes inside it? How do you handle "hot" documents that are very popular? Moving data between documents or having part of a document reference part of another document are complex. Complexity comes from building derived data that looks at slices of a document.
+  - With a block-oriented model, your records are much more manageably sized. It's easier to reference or move data between documents, but in turn, you need to do these kinds of recursive shenanigans because your individual records are smaller in scope. Complexity comes from derived data that composes blocks together into a document.
+
+- Is there a reason why you did not use rdf for representation and some rdf aware encoding like jsonld for serialization? Would be significantly easier for others to work with, could easily query it with SPARQL.
+  - An **early version of Notion (before my time) used Neo4j, but it turned out to be very slow** for the kinds of data access Notion does.
+- You don't have to use neo4j or any graph database to use RDF. It is just your current model seems very graph based and actually not that difficult to map to RDF, it would likely be possible to do with a jsonld context, and if you provided such a context then it would make your data a lot easier for others to consume.
+
+- I have a requirement to allow users to create adhoc tables within a web application. I was wohoe beat to represent this on database. Any thoughts?
+  - Tables (ad-hoc ones) are a beast. Code that aspires to do tame them, looks simple at first then evolve into crazy monsters that die at the altar of excel.
+
+- A graph is so natural for pages, web pages are graphs too. So they choose a well fitting model for the problem, congrats
 # discuss
 - ## 
 
@@ -42,44 +133,6 @@ modified: 2023-03-29T17:23:37.126Z
   - https://twitter.com/jitl/status/1483918085384028163
 - This is what I've been building since June 2021. It took ~100+ pull requests with 26247 added lines, 11078 removed lines. 
   - It might seem like a small thing - to let you select text in multiple blocks at once - but we had to upgrade nearly every one of Notion's features to understand the new selection model.
-
-- ## [The data model behind Notion's flexibility](https://news.ycombinator.com/item?id=27200177)
-- Really interessing. This seem to be a really good use case for a NoSQL database. Am I wrong ?
-  - PostgreSQL has Ltree
-  - Ltree is interesting, but if I understand correctly, to move a parent block, I'd also need to update the path column in all the child blocks -- at our scale such write amplification is a non-starter.
-- Yes, you're wrong. You're wrong because you need to JOIN a massive tree of blocks, to form the graph the author is referring to. You can break out the "block" model into several tables and represent it in a relational database that way.
-  - NoSQL = NO JOIN?
-  - Hope that helps.
-- I don’t actually see a graph represented anywhere in the article; the author references wanting a graph at the start, but the only thing I’m seeing described are trees of nested blocks. Even the properties list seems to be a grab-bag of KV pairs that gets permanently attached to a block once initialized, to support roundtripping.
-  - Which is pretty much the ideal scenario for a document store. The article describes Notion as being very strictly hierarchal
-- A block has many properties. A property has a name, and a value.
-  - The underlying persisted data doesn't necessarily have to be a bag of KV pairs.
-  - A block is related to its parent and descendant blocks.
-  - These relations are suitably represented in a relational database, not a document store.
-  - EDIT: In graph theory, a tree is an undirected, connected and acyclic graph.
-- The major issue with the document model is storage. How big can a document grow? How do you persist it, and make small changes inside it? How do you handle "hot" documents that are very popular? Moving data between documents or having part of a document reference part of another document are complex. Complexity comes from building derived data that looks at slices of a document.
-  - With a block-oriented model, your records are much more manageably sized. It's easier to reference or move data between documents, but in turn, you need to do these kinds of recursive shenanigans because your individual records are smaller in scope. Complexity comes from derived data that composes blocks together into a document.
-- Is there a reason why you did not use rdf for representation and some rdf aware encoding like jsonld for serialization? Would be significantly easier for others to work with, could easily query it with SPARQL.
-  - An early version of Notion (before my time) used Neo4j, but it turned out to be very slow for the kinds of data access Notion does.
-  - You don't have to use neo4j or any graph database to use RDF. It is just your current model seems very graph based and actually not that difficult to map to RDF, it would likely be possible to do with a jsonld context, and if you provided such a context then it would make your data a lot easier for others to consume.
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
-- Salesforce and JIRA both did something similar: their underlying database schema is very generic, basically keys and values, allowing arbitrary logical schemas to be defined at runtime. Yet in both cases, they ended up not really taking advantage of this flexibility. The logical schema of both systems is a very ordinary relational schema that could have been implemented directly on the database, with much better performance. I wonder if the Notion developers made a serious attempt to build on top of a more conventional structured schema, and found it really was unworkable?
-  - I actually think Notion's data model is much more conventional than the data stores behind document editors like Google Docs or Figma. Blocks are "just" (these quotes are doing a lot of work) rows in Postgres.
-  - We use JSON for properties for flexibility and for user-defined property schemas. We could use an entity-attribute-value table as you describe for that, but such a table would complicate our caching techniques. It would also be enormous, but, it might be time for another think about that since we finished sharding.
-- Very interested in your data store. How do you store, query, and search across documents? Also, are you adding presentational tables any time soon? :)
-  - Our source-of-truth data store is Postgres, with a Memcached cache on top.
-  - Most of our queries are "pointer chasing" - we follow a reference from one record in memory to fetch another record from the data store. To optimize recursive pointer-chasing queries, we cache the set of visited pointers in Memcached.
-  - We use Elasticsearch for search features like QuickFind.
 
 - ## Notion will not have #offline mode.
 - https://twitter.com/ianberdin/status/1592848167632244736
@@ -189,6 +242,33 @@ modified: 2023-03-29T17:23:37.126Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## ✨ [BlockSuite: An open-source Notion-like editor with multiplayer support | Hacker News_202306](https://news.ycombinator.com/item?id=36505318)
+- I want to be able to open a document in read-only mode. Otherwise, while just navigating through pages or reading content, it's far too easy to accidentally add text
+  - First time I had a job that used Confluence as an idle tick i would just tick-untick-tick-untick the checkboxes on documents. I never realised that a) i was actually editing and saving the page, and b) it would send an email to the owner for every single tick/untick edit.
+  - No, it's an editor, not a immutable website for consumption. The whole goal of them is that you can switch fast between editing and the rendered result. In that sense they are like word processors.
+
+- It seems like there's a lot of recent interest and effort in open-source or self-hosted Notion-like/markdown-with-widgets applications and platforms.
+  - To assuage my internal conflict I remind myself that I think plaintext is fundamentally the right choice for much knowledge collection, and I'm proud to say that if the internet shut down, I'd retain a significant growing fraction of my personal data.
+
+- The approach here is a bit novel i.e treat each block as a separate editor instance (contenteditable) and somehow wire-up cursor movements to behave as if it's one big editable area.
+  - But it comes with its downsides as well. For example cross block selection doesn't work.
+  - If the entire page is one big editable area, then it becomes difficult to embed complex blocks like "kanban views" and calendar.
+  - I guess we should think beyond contenteditable at this point and separate rendering layer from input layer - sort of like how Google Docs has built its editor.
+  - But writing a rich text editor is not just a text-editing problem. It essentially needs you to build a layout engine itself (like webkit) that knows how/when to recalculate and draw the affected parts (render objects) when the rich-text changes. Why? because baking in tables and image-wraps and other complex resizable blocks affect other elements around/after it.
+  - Bottomline: we need a custom built layout engine + text renderer + input handler(that respects accessiblity) + selection handler to build an absolutely powerful rich-text editor. I'd like to start a open source project in this direction.
+- 👉🏻 Notion used this strategy until January 2021, when we rolled over to **one-big-ContentEditable**. I actually tried the tactic Affine is using, that is implementing drag-to-select gesture yourself and forcing that selection on the browser, but I hit a bunch of roadblocks on iOS and Android that made me abandon it and go with big-ContentEditable.
+- Curious about the issues you faced on mobile! At Slite I was part of the mobile team, and the editor is using Slate. So to make it work in React Native we had to go for a WebView (similar to what Notion uses), with all the downside it can bring.. I tickled with the possibilty to do a native adapter of Slate, but the fact that it's based on a content editable, makes it complicated to adapt in React Native.. I have the feeling that block approach might fit better a more native integration on mobile. It seems similar to what Craft does, isn't it ?
+  - Mostly Android input being a hellscape, and wrangling React inside ContentEditable posing weird synchronization challenges with input method editors.
+- Fyi, I'm building an open source block-based editor @ https://www.blocknotejs.org that uses **one large contenteditable** and doesn't have those downsides you mention. It's built on top of Prosemirror.
+
+- On the flip side, with individual contenteditables, you can be more confident you're not accidentally editing a block you didn't mean to.
+
+- ## [Big fan of notion. Not a fan of the data lock-in or haphazard security. | Hacker News](https://news.ycombinator.com/item?id=27145970)
+- I think Roam has been fully collaborative since the launch. The browser keeps the whole database in IndexedDB and syncs it continuously with a WebSocket streaming Datomic-style transactions.
+  - Roam uses Datomic under the hood
 
 - ## [The Fall of Roam | Hacker News_202202](https://news.ycombinator.com/item?id=30320977)
 - This is not the fall of Roam. It is just the usual cycle of note taking apps. 

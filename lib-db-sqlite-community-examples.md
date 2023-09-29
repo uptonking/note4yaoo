@@ -16,7 +16,7 @@ modified: 2022-11-27T18:06:10.599Z
 
 - ## 
 
-- ## [Ask HN: Have you used SQLite as a primary database? | Hacker News](https://news.ycombinator.com/item?id=31152490)
+- ## [Ask HN: Have you used SQLite as a primary database? | Hacker News_202204](https://news.ycombinator.com/item?id=31152490)
 
 - Pros:
   - A single API server, no separate database to worry about, configure, and update.

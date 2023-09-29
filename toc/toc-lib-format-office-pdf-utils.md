@@ -43,6 +43,12 @@ modified: 2022-11-11T10:46:41.519Z
 - https://github.com/esbenp/pdf-bot /js
   - A Node queue API for generating PDFs using headless Chrome. 
   - Comes with a CLI, S3 storage and webhooks for notifying subscribers about generated PDFs
+
+- https://github.com/jbaiter/pdiiif /ts/svelte
+  - https://pdiiif.jbaiter.de/
+  - a JavaScript library to create PDFs from IIIF Manifests, completely client-side (with server-based fallback for unsupported browsers)
+  -  PDF Page for every single-image Canvas in a Manifest
+
 # extension-superset
 
 # converters

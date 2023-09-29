@@ -17,6 +17,8 @@ modified: 2020-12-29T17:52:48.584Z
 - tips
   - pdf-editor参考: acrobat, libre-draw, scribus, inkscape, master, pdf-studio, pdf-sam, edge浏览器, os自带工具
   - pdf-viewer或标注参考: okular, foxit, canva, xournal, 各类电子书阅读器
+
+- 画板或批注类产品要参考规范 [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
 # foxit-reader
 - ui阅读体验更好
 

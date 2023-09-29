@@ -352,8 +352,12 @@ modified: 2022-11-25T15:50:48.226Z
   - A simple "database" that use JSON file for NodeJS
   - Every method are now asynchronous
 
-- https://github.com/syamdanda/jsonbase
+- https://github.com/syamdanda/jsonbase /js
   - A database software completely built as JSON files in backend
+  - [Json-Base – Database built as JSON files | Hacker News](https://news.ycombinator.com/item?id=23715558)
+  - JSON file as backend, So can I directly edit the JSON file?
+    - Bind does something like this (but not with JSON).
+    - You have to run a “freeze” command before editing the database directly (so it can flush the current version of the database, and redirect writes to memory + log), and then “thaw” so it can read your changes and apply the log of updates to it.
 # db-distributed
 - orbit-db /7.4kStar/MIT/202301/js
   - https://github.com/orbitdb/orbitdb

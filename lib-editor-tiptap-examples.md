@@ -59,6 +59,7 @@ modified: 2023-02-05T19:03:27.730Z
   - https://novel.sh/
   - a Notion-style WYSIWYG editor with AI-powered autocompletion. Built with [Tiptap](https://tiptap.dev/) + [Vercel AI SDK](https://sdk.vercel.ai).
   - 依赖tiptap、@vercel/kv/blob、nextjs、react-markdown.v8
+  - [Show HN: I made an open-source Notion-style WYSYWIG editor | Hacker News_202306](https://news.ycombinator.com/item?id=36360789)
 
 - better-virgool /9Star/MIT/NALic/202208/ts/tiptap
   - https://github.com/ahhshm/better-virgool

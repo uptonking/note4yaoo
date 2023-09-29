@@ -630,7 +630,8 @@ modified: 2022-04-05T10:08:25.947Z
     - library for realtime collaboration on JSON structures. 
     - It is a client-oriented, declarative-functional approach to shared application state.
 
-- https://github.com/hyperhyperspace/hyperhyperspace-core
+- https://github.com/hyperhyperspace/hyperhyperspace-core /ts
+  - https://www.hyperhyperspace.org/
   - HHS uses an immutable typed-objects local storage model. 
     - Objects are both retrieved and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
   - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.

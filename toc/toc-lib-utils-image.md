@@ -71,6 +71,38 @@ modified: 2023-04-04T22:39:45.442Z
 
 - https://github.com/fengyuanchen/cropperjs /js
   - JavaScript image cropper.
+# iiif-spec
+- https://github.com/UniversalViewer/universalviewer
+  - http://universalviewer.io/
+  - http://universalviewer.io/examples/#?c=&m=&s=&cv=&manifest=https%3A%2F%2Fedsilv.github.io%2Fbiiif-workshop%2Fcollection%2Findex.json
+  - a community-developed open source project on a mission to help you share your content with the world
+  - 由多个子项目组成，包括 OpenSeadragon
+
+- https://github.com/DDMAL/diva.js /js
+  - http://ddmal.github.io/diva.js
+  - IIIF-compatible document image viewer
+  - Diva.js (Document Image Viewer with AJAX) is a JavaScript book image viewer designed to present multi-page documents at multiple resolutions.
+  - Compatibility with IIIF Presentation API version 2.1 and 3.
+
+- https://github.com/IIIF-Commons/biiif /ts
+  - Organise your files according to a simple naming convention to generate IIIF Presentation API json using nodejs (Dat and IPFS compatible)
+  - Organise your files according to a simple naming convention to generate IIIF content/data using 100% node.js! IPFS compatible.
+  - This uses the IIIF Presentation API v3, and is compatible with the Universal Viewer v3.
+  - biiif will automatically generate IIIF image tiles for any image it finds and put them in a +tiles directory, along with an associated info.json
+  - https://github.com/edsilv/biiif-workshop
+    - Learn how to use biiif to generate IIIF data from static files and host it on github pages.
+
+- https://github.com/jbaiter/pdiiif /ts/svelte
+  - https://pdiiif.jbaiter.de/
+  - a JavaScript library to create PDFs from IIIF Manifests, completely client-side (with server-based fallback for unsupported browsers)
+  -  PDF Page for every single-image Canvas in a Manifest
+
+- https://github.com/glenrobson/SimpleAnnotationServer /js/java
+  - This is an Annotation Server which is compatible with IIIF and Mirador
+  - This Annotation Server includes a copy of Mirador so you can get started creating annotations straight away. 
+  - The annotations are stored as linked data in an Apache Jena triple store by default. 
+  - It is also possible to store the annotations in SOLR.
+  - Now supports IIIF Search API in both the Universal Viewer and Mirador
 # image-upload
 - https://github.com/charlzyx/rush
   - 图片压缩 & 直传图床工具
@@ -86,7 +118,7 @@ modified: 2023-04-04T22:39:45.442Z
   - https://github.com/openseadragon/openseadragon
   - http://openseadragon.github.io/
   - web-based viewer for high-resolution zoomable images, implemented in pure JavaScript, for desktop and mobile.
-  - Supported Tile Sources: legacy image pyramids、osm、tms
+  - Supported Tile Sources: legacy image pyramids, osm, tms, iiif
 
 - https://github.com/wojtekmaj/react-pdf /js
   - Display PDFs in your React app as easily as if they were images.
