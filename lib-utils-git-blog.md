@@ -27,9 +27,9 @@ modified: 2023-08-29T10:24:09.136Z
 - 
 - 
 
+# blogs-fossil
+- [Fossil Versus Git](https://fossil-scm.org/home/doc/trunk/www/fossil-v-git.wiki)
 # more-blogs
 - [Git's database internals I: packed object store - The GitHub Blog](https://github.blog/2022-08-29-gits-database-internals-i-packed-object-store/)
 
 - [Git as a NoSql database](https://www.kenneth-truyers.net/2016/10/13/git-nosql-database/)
-
-- [Fossil Versus Git](https://fossil-scm.org/home/doc/trunk/www/fossil-v-git.wiki)

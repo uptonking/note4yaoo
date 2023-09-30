@@ -87,8 +87,6 @@ modified: 2023-09-19T07:53:59.349Z
 - The major features are its fully CSS-based page layout, search of the help content, and a table of contents in collapsible-tree form. 
 
 - DBpedia data is served as Linked Data, which is revolutionizing the way applications interact with the Web. 
-- 
-- 
 
 ## [DBpedia](https://www.dbpedia.org/about/)
 
@@ -100,6 +98,28 @@ modified: 2023-09-19T07:53:59.349Z
 
 - https://github.com/dbpedia/databus /js
   - Databus is a transformative platform for agile data integration, collaboration, and automation via a structured metadata Knowledge Graph
+
+- [On the Mutually Beneficial Nature of DBpedia and Wikidata_201702](https://medium.com/virtuoso-blog/on-the-mutually-beneficial-nature-of-dbpedia-and-wikidata-5fb2b9f22ada)
+  - DBpedia’s focus is on generating Linked Open Data from Wikipedia documents.
+  - Wikidata’s focus is on creating Linked Open (meta)Data to supplement Wikipedia documents.
+  - Both projects provide access to their respective Linked Open Data via SPARQL Query Service endpoints.
+
+- [A Preliminary Study on Wikipedia, DBpedia and Wikidata_201506](http://andrea-index.blogspot.com/2015/06/wikipedia-dbpedia-wikidata.html)
+  - 提供了比较表格
+
+### [What are the differences between Wikidata and Dbpedia? | ResearchGate](https://www.researchgate.net/post/What_are_the_differences_between_Wikidata_and_Dbpedia)
+
+- DBpedia extracts structured data from the infoboxes in Wikipedia, and publishes them in RDF and a few other formats.
+- Wikidata  provide a secondary and tertiary database of structured data that everyone can edit.  it will allow infoboxes to be created from structured data.
+
+- DBpedia is a project to create a graph from Wikipedia data. 
+  - That is not the goal of Wikidata. Wikidata aims to provide a free knowledge base that anyone can edit.
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## 💡 [Comparison of e-book formats - Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_e-book_formats)
 

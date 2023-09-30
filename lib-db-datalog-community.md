@@ -82,7 +82,37 @@ modified: 2023-09-16T17:27:42.089Z
 # discuss
 - ## 
 
-- ## 
+- ## [Logica, a novel open-source logic programming language | Hacker News_202104](https://news.ycombinator.com/item?id=26805121)
+- Could you point me to codebases that productively use Datalog internally?
+  - Datomic
+  - Datascript
+  - Crux
+  - Souffle
+  - Doop
+  - Ddisasm
+
+- I don't see what's modern about Logica in particular, or why one should use it over plain Datalog (as syntactical Prolog subset) when the available backends are restricted to SQL rewriters or locked-in to BigQuery. Will have to look into the model for aggregate queries which I guess is a selling point for Logica (as is modularization/composition with optimization), and a weak point since typically neither in Datalog (the decidable logic fragment) nor portable.
+  - Edit: also I find the title a bit grandiose since this isn't about Logic Programming in general, but only database querying
+
+- 👉🏻 It seems that it's open source (Apache 2.0) and can generate SQL for PostgreSQL and SQLite in addition to BigQuery.
+- Yeah but that reduces Logica outside Google to SQL rewriting. 
+  - When the **weak point of SQL** isn't so much the syntax but the scalability and expressiveness limitations for big data and document data (fixation on strong ACID/CAP guarantees, schemas). 
+  - SQL syntax has strong points, too; one being that it's not just a query but also update/batch language with ACID semantics; another being that it's standardized with a range of mature options available.
+- 👉🏻 Consider also the practical side: **using Datalog as merely "prettier SQL" still doesn't allow you to dynamically define data properties or go schema-less as in RDF or other logic/deductive graph databases**. Whenever you want a new column, you must execute DDLs (ALTER TABLE ADD COLUMN) also leading to forced commits, overly broad permissions, chaotic backup procedures and/or code artefacts containing the dreaded SELECT * syntax. Also, parsing Datalog queries, reformulating into SQL, then re-parsing SQL in the DB engine isn't the most efficient thing.
+- Basically, the workflows and use cases for SQL RDBMSs and Datalog/graph databases are not the same, and if you're using one on top of the other, you're getting the intersection of possibilities but **the union of problems**, as is well known from O/R mappers
+- That's funny. But I don't think it applies here. SQL and datalog are both relational. The difference is that **Datalog lets you define relations over tables ("rules")**, not just relations over data ("facts"/"rows"). Essentially, SQL is one half of datalog's relational semantics - only information without reasoning. Datalog adds reasoning on top, but the reasoning is still, well, relational (facts, rules and queries are all relations). There's no impedance(阻抗) mismatch here, as in trying to fit relational data into a non-relational program.
+
+- What is the difference between Datalog rules and SQL views?
+  - It's been a while since I used SQL and I'm a bit rusty in it, but views would probably be the equivalent of Datalog rules, yes. The difference, as in my other comment to OP, is that Datalog rules are part of the Datalog program, which also stores the actual "tables" i.e. the facts. Whreas in SQL, views are only sort of ... virtual? Like I say I'm a bit rusty- but from my understanding, SQL vies don't live in the same space as tables.
+
+- The normal SQL way is with a recursive CTE and help from the query optimizer. Differs more in feeling (constructing relations with joins vs. defining predicates with logic) than in substance from the Datalog way.
+
+- The problem Datalog tries to solve is complexity: SQL "pulls" data (what's a query after all) to a calling application. 
+  - Datalog builds up data relationships through declarations. 
+  - That means that: a) that entities can be inferred from these relationships as opposed to large complex queries, b) that some of these relationships can be built up by code/robots as opposed to humans declaring them.
+  - The end result is (you hope) a very complex database where the smaller blocks/relationships can be audited and verified quickly, and where parallelization more or less comes for free.
+- The reality is that Datalog systems end up being massive hairballs(毛团，毛粪石) of declarations that are hard to unravel(解开，拆开) for mere humans (well, regular developers) and that query-based solutions are 10x faster to develop for 80% of the application use cases.
+- The closest parallel is functional-vs-procedural programming (don't flame me); it's a niche solution for niche problems.
 
 - ## [So I've been interested in learning prolog | Hacker News](https://news.ycombinator.com/item?id=22941183)
 - Prolog is a general purpose programming language. You can use it to implement provers, optimization problem solvers, or generally use it as a unification algorithm engine and database.
@@ -320,7 +350,21 @@ modified: 2023-09-16T17:27:42.089Z
   - The query language is basically just better in all ways, although SQL standardization has lead to a lot of great tooling you lose access to.
   - Plus there is, in most of the datomic variants, the time awareness/db-as-value part, which is a huge advantage.
 
-- ## [The Essence of Datalog (2018) | Hacker News](https://news.ycombinator.com/item?id=19351385)
+- ## [The Essence of Datalog (2018) | Hacker News_201903](https://news.ycombinator.com/item?id=19351385)
+- Datalog is also used as query language for Datomic
+  - No it's not. The query language of Datomic, and that taught on learndatalogtoday.com, is a Datomic-proprietary language similar to Prolog-in-LISP implementations or frame-based expert systems of old.
+
+- why hasn't Datalog supplanted SQL for relational querying? What's its limitation?
+- SQL, despite being declarative itself, has a more imperative feel to it for some people (recursion being at the fringes of its standard)
+- It is better at handling recursive queries, and logical inference than SQL. On the flip side SQL can be better at more set style operations (for instance windowing functions are painful in datalog).
+
+- How does Datalog differ from something like MiniKanren?
+- My take on miniKanren is that it's implementation is designed to be small and hackable.
+  - Vs Prolog, the emphasis in miniKanren is on constraint programming --- especially writing new constraints to extend it to more problems. Where (chief variants of) Prolog have been optimized in various ways for certain types of problems.
+  - What I read about Datalog is that it is basically a recursive relational database. It's set up for "deductive queries". This wording reminds me of miniKanren --- but the Kanrens are Turing complete.
+- miniKanren is Turing-complete; Datalog deliberately isn't.
+- Despite that, there are things Datalog can do easily that miniKanren can't. miniKanren can't handle negation natively, but Datalog can (as long as it's stratified, that is, a predicate can't use its own negation).
+  - Datalog is also forward-chaining, so some things that would infinite loop in miniKanren work fine in Datalog - for example, computing the transitive closure of a cyclic graph. If someone added tabling to miniKanren that would solve this.
 
 - ## Are you familiar with Datalog-style queries? 
 - https://twitter.com/ccorcos/status/1534074897294495744

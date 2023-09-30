@@ -60,6 +60,12 @@ modified: 2022-11-03T04:49:42.587Z
 - https://github.com/enterlab/simplegraph /java
   - Simple in-memory Graph Database/Cache (Triplestore): learn how a Graph DB works (educational, learner)
   - The SimpleGraph is implemented as a TripleStore, containing tuples (well, actually triples) of Subject, Object and Predicate.
+
+- https://github.com/blazegraph/database /java
+  - https://blazegraph.com/
+  - a ultra high-performance graph database supporting Blueprints and RDF/SPARQL APIs
+  - It supports up to 50 Billion edges on a single machine. 
+  - It powers the Wikimedia Foundation's Wikidata Query Service.
 # graph-utils
 - https://github.com/unum-cloud/networkxum /python
   - https://unum.am/storage

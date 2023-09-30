@@ -76,6 +76,9 @@ $$('[contenteditable]')
   - src-code, issues, pr, forks, extensions/alternatives
   - storage, sync, conflicts, partial
   - 直接根据具体框架或产品搜索解决方案如airtable-database，不必拘泥于通用方案如event-sourcing/eav
+  - 拆分核心内容和周边功能
+    - split git-src and issues/pr/wiki, split txt/docx/xlsx and api
+    - 将更多精力投入 core content 的创作，以及格式兼容、平台兼容
 # dev-2023-方向+方法+时间
 - 👉🏻 output: 代码产出、产品落地、生态积累
 - slate-wangeditor
@@ -193,7 +196,7 @@ $$('[contenteditable]')
   - 离屏渲染, keep-alive
   - 分层渲染
 
-## 09
+## 10
 
 - not-yet
   - todo remove hashId在编辑器model中有什么作用
@@ -295,6 +298,12 @@ $$('[contenteditable]')
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
+# dev-10
+
+## 01
+
+# dev-09-event-sourcing/db-oplog-eav
+
 # dev-08-pdf-electron/excel-js-scripts/db-kappa-dolt-git
 
 ## 0828

@@ -118,6 +118,10 @@ modified: 2023-02-07T17:38:05.336Z
   - https://kolaente.dev/vikunja/frontend /vue
   - web frontend for Vikunja, written in Vue.js.
   - https://kolaente.dev/vikunja/api /go
+
+- https://github.com/climech/grit /go
+  - an experimental personal task manager that represents tasks as nodes of a multitree, a class of directed acyclic graphs. 
+  - The structure enables the subdivision of tasks
 # user/permissions/scrum/Inventory
 - https://github.com/bissbr01/Command-project-management /ts
   - A Scrum Management App for teams

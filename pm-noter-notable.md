@@ -18,6 +18,7 @@ modified: 2022-12-19T02:01:20.161Z
   - collaboration-ready: 基于crdt
   - end-user database: 支持用户自定义数据和流程
   - local-first data storage with optional syncing
+    - 兼容git的commits
 
 - selling-point-knowledge-base
   - markdown support with git-like database

@@ -78,6 +78,21 @@ modified: 2023-08-29T10:12:22.345Z
   - https://dchest.github.io/fossil-delta-js/
   - Fossil SCM delta compression in JavaScript
   - The cool thing about it is that plain text inputs generate plain text deltas (binary inputs, of course, may generate binary deltas).
+
+- https://github.com/martinvonz/jj /rust
+  - https://martinvonz.github.io/jj
+  - [Other related work](https://martinvonz.github.io/jj/v0.9.0/related-work.html)
+  - A Git-compatible DVCS that is both simple and powerful
+  - It combines features from Git (data model, speed), Mercurial (anonymous branching, simple CLI free from "the index", revsets, powerful history-rewriting), and Pijul/Darcs (first-class conflicts), with features not found in most of them
+  - Jujutsu has two backends. One of them is a Git backend (the other is a native one). This lets you use Jujutsu as an alternative interface to Git.
+  - All operations you perform in the repo are recorded, along with a snapshot of the repo state after the operation. This means that you can easily revert to an earlier repo state, or to simply undo a particular operation
+  - The tool is quite feature-complete, but some important features like (the equivalent of) git blame are not yet supported. 
+  - Git compatibility pretty much rules out the radically different approaches that might actually be better enough to outcompete it. Like:
+    - Patch-based VCS (darcs, pijul)
+    - CRDT (live collaboration)
+    - Image-based systems (Smalltalk)
+    - Features that require the server to do stuff that Git protocol won’t do, like push notifications
+    - In other words, I can’t imagine leaving Git unless it’s as big of an upgrade as Git was to SVN. And you can’t do that while being wire compatible.
 # git-ui
 - https://github.com/corylus-git/corylus /ts/electron
   - https://corylus.dev/
@@ -103,6 +118,15 @@ modified: 2023-08-29T10:12:22.345Z
 - https://github.com/brawnski/git-annex /hs
   - git-annex allows managing files with git, without checking the file contents into git. 
   - While that may seem paradoxical, it is useful when dealing with files larger than git can currently easily handle, whether due to limitations in memory, checksumming time, or disk space.
+
+- https://github.com/filhodanuvem/gitql /go
+  - a Git query language
+
+- https://github.com/mergestat/mergestat-lite /go
+  - https://mergestat.com/
+  - a command-line tool for running SQL queries on git repositories and related data sources. 
+  - It's meant for ad-hoc querying of source-code on disk through a common interface (SQL)
+  - [Gitqlite: Query Git Repositories with SQL | Hacker News_202007](https://news.ycombinator.com/item?id=23730519)
 # git-data
 - https://github.com/CodeForPhilly/jawn /js
   - a node.js module that allows distributed version control of Tabular Data. 
