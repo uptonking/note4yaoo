@@ -194,11 +194,11 @@ modified: 2023-09-16T17:28:29.873Z
 
 - https://github.com/juji-io/datalevin /EPLv1/clojure
   - A simple, fast and versatile Datalog database
-  - It is our observation that many developers prefer the flavor of Datalog popularized by Datomic® over any flavor of SQL, once they get to use it. 
-  - Perhaps it is because Datalog is more declarative and composable than SQL, e.g. the **automatic implicit joins** seem to be its killer feature.
-  - To keep things simple and familiar, Datalevin does not store transaction ids along with the datoms, and behaves the same way as most other databases: when data are deleted, they are gone.
-  - Datalevin started out as a port of Datascript in-memory Datalog database to Lightning Memory-Mapped Database (LMDB). 
-  - Independent from Datalog, Datalevin can be used as a fast key-value store for EDN data, with support for range queries, predicate filtering and more. 
+  - Datalog is more declarative and composable than SQL, e.g. the **automatic implicit joins** seem to be its killer feature.
+  - To keep things simple and familiar, **Datalevin does not store transaction ids along with the datoms**, and behaves the same way as most other databases: when data are deleted, they are gone.
+  - Datalevin started out as a port of Datascript in-memory Datalog database to Lightning Memory-Mapped Database (LMDB).
+  - Datalevin uses a covering index and has no write-ahead log, so once the data are written, they are indexed.
+  - Independent from Datalog, **Datalevin can be used as a fast key-value store** for EDN data, with support for range queries, predicate filtering and more. 
     - Datalevin packages the underlying LMDB database as a convenient key-value store for EDN data.
   - Datalevin can also run in an event-driven networked client/server mode 
   - [Datalevin is good, but its more useful in the same realm as sqlite | Hacker News](https://news.ycombinator.com/item?id=31127793)

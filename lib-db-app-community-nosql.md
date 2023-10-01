@@ -24,7 +24,15 @@ modified: 2023-09-17T18:10:16.361Z
 
 - ## 
 
-- ## 
+- ## [Elasticsearch SQL | Hacker News_202210](https://news.ycombinator.com/item?id=33320477)
+- MongoDB has an SQL interface these days if you need it
+- Seems like all the NoSQL databases eventually implement SQL, maybe we should use EventuallySQL instead NoSQL
+- Even DynamoDb has one
+- Microsoft's CosmosDB (their DocumentDB clone) has a SQL-like (yes) interface.
+- Cassandra added CQL which is very similar to but not exactly SQL.
+- Hadoop (and any other Spark data source) via SparkSQL
+
+- I would like SQL better if jOOQ-style libraries were common across every major language. A standardized query language is good, but passing in queries as strings will never not feel wrong to me.
 
 - ## [到现在为止，NoSQL 运动给数据库系统留下什么宝贵的思想？ - 知乎](https://www.zhihu.com/question/264416654/answers/updated)
 - https://www.zhihu.com/question/264416654/answer/2713792035

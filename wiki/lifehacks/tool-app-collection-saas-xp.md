@@ -155,6 +155,11 @@ modified: 2022-11-07T10:25:12.034Z
 # 图片资源
 - unsplash镜像战
   - https://unsplash.dogedoge.com/
+
+# video/tv
+
+- https://github.com/fanmingming/live
+  - 一个国内可直连的直播源分享项目
 # gfw-proxy
 - [googlehosts 作者放弃维护了吗？几个月没更新了](https://github.com/googlehosts/hosts/issues/503)
   - 新发现了个正在活跃维护的

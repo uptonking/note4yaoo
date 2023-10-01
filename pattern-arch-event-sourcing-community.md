@@ -12,6 +12,10 @@ modified: 2023-09-13T14:28:01.426Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
 - ## [Towards a text editor construction kit · xi-editor/xi-editor](https://github.com/xi-editor/xi-editor/issues/1187)
 - Maybe I'm imagining your system as having 2 levels of architectural decoupling/distance:
   - Stuff that happens synchronously, inside the same process / called directly from your onEdit event handler.
@@ -223,14 +227,28 @@ that commit position, thus providing "read your own writes" semantics.
 - I've found that many of the modern JavaScript UI libraries play very well with event sourcing, IMHO. React and Vue.js in particular work very well when combined with Redux/Vuex and a CRDT database. Both of those stores are essentially event sources themselves, where the actions and mutators are separated and the data store itself is updated only in one place. 
 - What CRDT databases do you use in this sort of application?
   - Currently leveraging CouchDB and it's incremental map-reduce to handle the "CRDT" merging of an event stream. Technically I'm not using a CRDT library or DB, but it's surprisingly easy to implement the core "commutative operations" of CRDT's via a modified deep-merge versioning algorithm.
-- 
-- 
-- 
+
 - 
 - 
 
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Library for building event sourced systems in Go_201508](https://www.reddit.com/r/golang/comments/3i7kgx/library_for_building_event_sourced_systems_in_go/)
+- I've been experimenting a lot with event sourcing, explaining the concept to people and building small applications using this approach. After many iterations I've finally settled on a way of doing things and cast that into code.
+  - The main criticism of event sourcing seems to be that it is "complex". My experience is that it is just a different, unfamiliar kind of complexity. The underlying principles are simple.
+
+- I haven't had the need for snapshotting yet, hence why it is missing here. I'm trying to avoid putting too many things into this package, lest it grows into a framework (it already is a bit too "frameworky" by prescribing a lot of structure).
+
+- Great stuff. I think more libraries and articles about event-based systems would be great. At a high level it feels like your library could have leveraged channels more aggressively though. They do fit event-based models very well.
+- Meteor DDP is a protocol for synchronising incremental model changes, and there are some non-Meteor-backed implementations.
+- PouchDB is another approach, but ties you to CouchDB.
 
 - ## [Can edgeDB as "Graph Relational Database" be used for Data Graphs (\~Graph Database)? · edgedb/edgedb](https://github.com/edgedb/edgedb/discussions/3964)
 - A bit of clarification: EdgeDB is not a classic ORM, i.e. there is no query result post-processing on the "application level" in any case whatsoever. Instead, each EdgeQL query (regardless of its complexity) is always compiled into a single SQL query the results of which are returned to EdgeDB clients directly. Think of EdgeDB not as an ORM but as an alternative frontend to the Postgres query engine.

@@ -11,6 +11,7 @@ modified: 2023-03-20T10:28:16.979Z
 
 - search
   - https://github.com/search?type=code&q=HybridLogicalClock++language%3Ajavascript
+  - https://github.com/search?type=issues&q=hybrid+logical+clock+language%3Ajavascript+language%3Atypescript&s=updated&o=desc
 # hybrid logical clock
 - who is using #hybrid-logical-clock
   - jaredly/local-first: hlc + rga
@@ -280,6 +281,11 @@ else {
   - https://github.com/clintharris/IDBSideSync
   - https://idbsidesync-todo-demo.vercel.app/
   - IDBSideSync is an experimental JavaScript library that makes it possible to sync browser-based IndexedDB databases using CRDT concepts
+
+- https://github.com/andymatuschak/orbit/blob/master/packages/backend/src/db/orderedID.ts
+  - an experimental platform for publishing and engaging with small tasks repeatedly over time
+  - [Project: data architecture improvements](https://github.com/andymatuschak/orbit/issues/192)
+    - The salted HLC does seem to be fine for the purposes of our stable listing contracts
 
 - https://github.com/jaredly/hybrid-logical-clocks-example /js
   - https://hybrid-logical-clocks-example.surge.sh/

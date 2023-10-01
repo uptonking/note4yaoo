@@ -18,6 +18,31 @@ modified: 2023-09-13T20:24:49.401Z
 
 ## There can be conflicts
 
+- The default in many offline first databases is a deterministic(不可抗拒的；不可逆转的) conflict resolution strategy. 
+  - Both conflicting versions of the document are kept in the storage and when you query for the document, a winner is determined by comparing the hashes of the document and only the winning document is returned. 
+  - Because the comparison is deterministic, all clients and servers will always pick the same winner. 
+  - This kind of resolution only works when it is not that important that one of the document changes gets dropped. 
+  - Because conflicts are rare, this might be a viable solution for some use cases.
+- A better resolution can be applied by listening to the changestream of the database. 
+  - The changestream emits an event each time a write happens to the database. 
+  - The event contains information about the written document and also a flag if there is a conflicting version. 
+  - For each event with a conflict, you fetch all versions for that document and create a new document that contains the winning state. 
+  - With that you can implement pretty complex conflict resolution strategies, but you have to manually code it for each collection of documents.
+- Instead of the solving conflict once at every client, it can be made a bit easier by solely relying on the backend. 
+  - This can be done when all of your clients replicate with the same single backend server. 
+  - With RxDB's Graphql Replication each client side change is sent to the server where conflicts can be resolved and the winning document can be sent back to the clients.
+- Sometimes there is no way to solve a conflict with code. 
+  - If your users edit text based documents or images, often only the users themselves can decide how the winning revision has to look. 
+  - For these cases, you have to implement complex UI parts where the users can inspect the conflict and manage its resolution.
+- You do not have to handle conflicts if they cannot happen in the first place. 
+  - You can achieve that by designing a write only database where existing documents cannot be touched. 
+  - Instead of storing the current state in a single document, you store all the events that lead to the current state. 
+  - Sometimes called the "everything is a delta" strategy, others would call it **Event Sourcing**. 
+  - Like an accountant that does not need an eraser, you append all changes and afterwards aggregate the current state at the client.
+- There is this thing called conflict-free replicated data type, short CRDT. 
+  - Using a CRDT library like automerge will magically solve all of your conflict problems. 
+  - Until you use it in production where you observe that implementing CRDTs has basically the same complexity as implementing conflict resolution strategies.
+
 ## Realtime is a lie
 
 - this "realtime" is not the same as in realtime computing

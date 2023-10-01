@@ -244,8 +244,17 @@ modified: 2022-06-03T21:34:54.893Z
   - A next-generation curated knowledge sharing platform for data scientists and other technical professions.
   - Knowledge Repo project is focused on facilitating the sharing of knowledge between data scientists and other technical roles using data formats and tools 
 
-- https://github.com/andymatuschak/orbit
+- https://github.com/andymatuschak/orbit /1.5kStar/apache2/202305/ts
+  - https://withorbit.com/
   - Orbit is an experimental platform for publishing and engaging with small tasks repeatedly over time.
+  - [Project: data architecture improvements_202104](https://github.com/andymatuschak/orbit/issues/192)
+    - The log-driven state model in the current system is more typically called an “event sourcing” model. The idea is basically: you don't transmit the state of the system; you transmit actions, then compute an effective state locally. State is always just a cache, computed over the action stream.
+    - our current model includes several decisions which dramatically increase the complexity
+    - We could create a much simpler event sourcing model
+    - The salted HLC does seem to be fine for the purposes of our stable listing contracts.
+  - https://twitter.com/andy_matuschak/status/1428777459235782660
+    - That’s the approach Orbit takes: simple event structures (simpler than CRDTs, sacrificing some of their key guarantees to reduce complexity), with well-defined merge operations, in a SQLite db. Users can write scripts to insert their own events if they like.
+    - Orbit’s implementations are quite general (i.e. they have almost no specific knowledge of Orbit’s structures), so perhaps they’ll be of use to others. See store-*, sync, and backend packages here
 
 - Ink-wash-docs /472Star/Apache2/202010/js
   - https://github.com/huangwei9527/Ink-wash-docs

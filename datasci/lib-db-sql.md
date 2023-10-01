@@ -11,7 +11,7 @@ modified: 2020-12-18T05:02:58.499Z
 
 # blogs-query-engine
 
-## [How Query Engines Work](https://howqueryengineswork.com/)
+## 📖 [How Query Engines Work](https://howqueryengineswork.com/)
 
 - [How Query Engines Work by Andy Grove [Leanpub PDF/iPad/Kindle]](https://leanpub.com/how-query-engines-work)
 
@@ -45,6 +45,14 @@ modified: 2020-12-18T05:02:58.499Z
   - physical expression有了后，就可以组装起physical plans。
 
 - distributed query execution介绍如何利用multi-core CPU 和 multi-servers。内容主要都是high level层介绍。
+
+## 👥 [How Query Engines Work | Hacker News_202309](https://news.ycombinator.com/item?id=37415494)
+
+- Apache Arrow could (and hopefully will) really shake up the database industry in the years ahead. Whatever eventually supplants(取代, 代替) Postgres is quite likely going to be based on Arrow - polyglot zero-copy vector processing is the future.
+- I don't see the connection. Apache Arrow isn't going to make a b-tree or LSM faster or more efficient. It's not going to make a point look-up query faster against columnar storage, or a range scan faster against row-based storage. It doesn't make distributed quorum faster, or otherwise impact consistency and fault tolerance.
+  - Removing or reducing SerDe overhead is great, and for analytical workloads where SerDe can be 30-50% of clock time then something like Apache Arrow is pure magic. For the remaining 9X% of use cases it's not adding any more value then you'd see from protobuf.
+- 👉🏻 **I agree Arrow by itself doesn't address any novel/fundamental OLTP challenges**, but I'm not arguing that the thing which eventually supplants Postgres will succeed because of best-in-class OLTP performance - anyone needing that today is not choosing Postgres anyway (same as ever).
+  - The real proposition is having a modern, general purpose workhorse underpinned by an ecosystem with strong network effects and polyglot APIs. Assuming analytical systems continue to gravitate towards Arrow I believe the OLTP world will be dragged along also.
 # blogs
 
 ## [DQL、DML、DDL、DCL的概念与区别](https://blog.csdn.net/tomatofly/article/details/5949070)

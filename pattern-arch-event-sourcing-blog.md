@@ -12,6 +12,8 @@ modified: 2023-09-13T14:37:51.659Z
 # blogs
 - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
 
+## [Building offline-first web and mobile apps using event-sourcing_201907](https://flpvsk.com/blog/2019-07-20-offline-first-apps-event-sourcing/)
+
 ## 📝 [Mistakes we made adopting event sourcing (and how we recovered)_201906](http://natpryce.com/articles/000819.html)
 
 - [Mistakes made adopting event sourcing (and how we recovered) - Nat Pryce - DDD Europe 2020 - YouTube_202010](https://www.youtube.com/watch?v=osk0ZBdBbx4)

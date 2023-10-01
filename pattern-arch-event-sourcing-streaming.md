@@ -19,6 +19,10 @@ modified: 2023-09-12T09:34:51.108Z
   - undo/redo
   - 工程类、科学类数据的观测分析
 
+
+- tips
+  - 
+
 - tasks
   - model domain objects and events
   - serialize/des

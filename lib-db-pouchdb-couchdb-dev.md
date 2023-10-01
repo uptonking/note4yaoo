@@ -20,6 +20,8 @@ modified: 2022-12-02T11:15:15.257Z
 - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
 # blogs
 - [A Veteran's Guide to PouchDB](https://garbados.github.io/my-blog/veteran-pouchdb.html)
+
+- [Part 1 — The Database. How to build a real time data sync, multi platform app with CouchDB and PouchDB_202012](https://blog.adaptabi.com/part-1-the-database-b7c575864407)
 # docs
 
 ## [Conflicts](https://pouchdb.com/guides/conflicts.html)

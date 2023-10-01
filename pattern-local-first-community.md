@@ -341,9 +341,8 @@ modified: 2023-09-13T20:24:41.516Z
 - Orbit’s cloud server has its own (third, ugh) backend implementation, which it uses to offer APIs, aggregate analytics (for my research), and services like study reminder notifications.
   - I see now why people don’t generally do this. It was a huge amount of work. 
   - As it happens, Orbit’s implementations are quite general (i.e. they have almost no specific knowledge of Orbit’s structures), so perhaps they’ll be of use to others.
-  - https://github.com/andymatuschak/orbit
-
-    - Orbit is an experimental platform for publishing and engaging with small tasks repeatedly over time.
+- https://github.com/andymatuschak/orbit
+  - Orbit is an experimental platform for publishing and engaging with small tasks repeatedly over time.
 
 - another hard thing about implementing this type of data format is that web browsers demand their own implementation. 
   - @kirkbyo_ kindly implemented an IDB-based Orbit backend. Excited about absurd-sql

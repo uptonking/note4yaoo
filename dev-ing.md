@@ -271,9 +271,9 @@ $$('[contenteditable]')
     - with devtools
 
 - dev-to-collab
-  - 🐷 每次刷新页面，空白行会多一行
+  - 🐛 每次刷新页面，空白行会多一行
     - 每次刷新，observeDeep会执行
-  - 🐷 yOffset out of bounds
+  - 🐛 yOffset out of bounds
     - 位置：getSlatePath > yOffsetToSlateOffsets
     - 复现方法，在一个浏览器输入，在另一个浏览器全选+删除
 
@@ -302,7 +302,7 @@ $$('[contenteditable]')
 
 ## 01
 
-# dev-09-event-sourcing/db-oplog-eav
+# dev-09-event-sourcing/datalog-eav-triple
 
 # dev-08-pdf-electron/excel-js-scripts/db-kappa-dolt-git
 

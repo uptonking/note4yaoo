@@ -411,6 +411,9 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/get-eventually/go-eventually /go
   - Idiomatic library to help you build Event Sourced application in Go.
 
+- https://github.com/dhamidi/ess /go/inactive
+  - provides a library for building event sourced systems.
+
 - https://github.com/pyeventsourcing/eventsourcing /python
   - https://eventsourcing.readthedocs.io/
   - A library for event sourcing in Python.
@@ -574,6 +577,16 @@ modified: 2023-09-12T09:37:22.608Z
   - An online collaborative text editor based on event sourcing architecture.
   - Everything here is written from a scratch: including the text editor as well as the event sourcing logic on the server and the client sides.
   - 依赖socket.io、express
+
+- https://github.com/stockulus/pouchdb-event-store /201708/js
+  - mimimal eventStore on top of pouchdb
+
+- https://github.com/EternalDeiwos/panmnesia /201712/js
+  - An action registry and redux-based aggregate store for a PouchDB-based event stream.
+
+- https://github.com/thomastoye/field-journal /ts/pouchdb
+  - https://field-journal.pages.dev/
+  - An experimental browser-based, offline-first, event-sourced dispatching, messaging, and incident tracking application.
 
 - https://github.com/StratoKit/strato-db /js
   - MaybeSQL with Event Sourcing based on SQLite

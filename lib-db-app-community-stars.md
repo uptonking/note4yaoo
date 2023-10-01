@@ -30,6 +30,24 @@ modified: 2023-09-16T17:54:21.231Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## this isn’t to say that every application should have its own totally bespoke(定制的) database. most of them probably shouldn’t. 
+- https://twitter.com/aboodman/status/1708208649984950515
+  - but these things are not magical and we should remember that they’re just code, too. code we can understand and debug and modify as needed.
+- That’s not to say you shouldn’t write your own database, or web server, or compiler. Just don’t do it because your app is somehow magical and unique. Your app is variables and for loops inside, too
+- There is no magic. It’s just variables, if statements, and loops, arranged cleverly. Every time - every single time - I’ve looked inside a web server, database, browser, or whatever my reaction has been the same.
+- I remember very clearly the first time I got to look at gws -- google web server. Just given the name and aurora of the company, I was expecting something grand, inscrutable, insanely complex. Instead, I got an event loop and some very nicely structured event registration code.
+  - Also usually a bunch of FIXME comments, comments explaining weird code choices, and sometimes even comments expressing frustration. I.e. just the same as in any codebase that you’d work on yourself.
+- This is actually a nice corollary(必然结果): making things simple and easy to understand is the real art of software engineering.
+- Also often the simplest code is the easiest for the computer to run. a compiler from the 2000s will happy unroll normal for loops. Code that stacks abstractions 10 layers deep - probably not
+  - unfortunately I’m addicted to complicated abstractions like incremental programming
+- 
+- 
+- 
+
 - ## [Skip the API, ship your database | Hacker News](https://news.ycombinator.com/item?id=37497345)
 - If you give access to your DB directly, your API effectively becomes your API with all the contract obligations of the API. Suddenly you don't completely control your schema: you can't freely change it, you need to add things there for your clients only.
   - Versioned views, materialized views or procedures are the solution to this. It is frequent that even internally, companies don't give access to their raw data but rather to a restricted schema containing a formated subset of it.

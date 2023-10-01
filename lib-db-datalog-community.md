@@ -502,9 +502,18 @@ modified: 2023-09-16T17:27:42.089Z
   - This gets particularly important for what we do besides graphs: we also aim to support machine learning workloads (we have some references to papers on our website).
   - We still do automatic index selection, but indeed it is important that you do not create too many of these unnecessarily if you relations with arity bigger than triples.
 
-- 
-- 
-- 
+- ### [Ask HN: Why are relational DBs are the standard instead of graph-based DBs? : programming](https://www.reddit.com/r/programming/comments/q0g48b/ask_hn_why_are_relational_dbs_are_the_standard/)
+- apparently reddit did this at the start
+  - Some parts of this were moved into Cassandra when I was at reddit in 2014-2015, but a lot was still in Postgres. I don't think they really tried to get rid of Thing until a couple years after that, and it wouldn't surprise me if a lot of still there.
+- However you usually want to avoid using EAV unless you have no alternative. Performance is usually miserable and you lose most of the advantages an RDBMS offers.
+
+- Exactly the process taken by Apache AGE.
+
+- Unlike some other commenters, I agree that graph models are usually a better fit for most data than relational models. There's been some interesting work in recent years developing this idea: in the Clojure world there's Datomic, XTDB, and a host of competitors, all of which build on work from Semantic Web/SPARQL/triplestores and logic programming.
+
+- Datomic is brilliant imo due mostly to event sourcing at the data layer
+
+- Hierarchies have arguably been a weak spot in relational. However, a good set of API's or new SQL key-words could improve this area. While doing such may not make it better at trees than Datalog, it could at least make it "good enough". Apps that need hierarchies typically also have non-tree needs (queries) such that switching the entire database to Datalog may not be justified(为（某事）的正当理由). It's rare you only need tree-oriented queries.
 
 - ## [Show HN: EdgeDB 1.0 | Hacker News_202202](https://news.ycombinator.com/item?id=30290225)
 - EdgeQL is designed to replace SQL, not graph query languages. 
@@ -593,8 +602,15 @@ modified: 2023-09-16T17:27:42.089Z
 - ## 
 
 - ## [Datomic is Free | Hacker News_202304](https://news.ycombinator.com/item?id=35727967)
-- 
-- 
+
+- Datomic's killer feature is time travel.
+  - We implemented it in Postgres with 'created_at' and 'deleted_at' columns on everything and filtering to make sure that the object 'exists' at the time the query is concerned with. Changes in relationships between objects are modeled as join tables with a boolean indicating whether the relationship is made or broken and at what time. Our data model is not large and we had a very complete test suite already, so it was easy to produce another implementation backed by postgres, RAM, etc.
+- Yeah, it seems you could be able to substitute thoughtful schema design avoiding updates/deletes for time-travel as a feature. I wonder if anyone has made a collection of reference examples implemented this way (and in general think that a substantial compendium good examples of DB schema and thinking behind them could be worthwhile).
+- It’s called a slowly changing dimension. In this example, it’s a type-2.
+- I'm moderately confident you could mechanically transform a time-oblivious schema into a history-preserving one, and then write a view on top of it which gave a slice at a particular time. Moderately.
+
+- Datomic is an event-sourced db, and it makes it hard to introduce retroactive(有追溯效力的) corrections to the data when your program's semantic already rely on using datomic's time travelling abilities: at one point you'll need to to distinguish between event time and recording time 
+  - This is why I' rather use XTDB, a database similar to datomic in spirit, but with bitemporality baked in.
 
 - Although it is true that "time traveling" queries are relatively rare for production needs, the basic architecture supports things that many applications really need:
   - It is possible to make queries against the database PLUS additional data not yet added, that is, "what if" queries

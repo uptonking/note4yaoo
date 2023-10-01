@@ -161,6 +161,31 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/cozy-labs/cozy-desktop
   - File Synchronisation for Cozy on Desktop and Laptop
+
+# pouchdb-event
+
+- https://github.com/stockulus/pouchdb-event-store /201708/js
+  - mimimal eventStore on top of pouchdb
+
+- https://github.com/EternalDeiwos/panmnesia /201712/js
+  - An action registry and redux-based aggregate store for a PouchDB-based event stream.
+
+- https://github.com/thomastoye/field-journal /ts/pouchdb
+  - https://field-journal.pages.dev/
+  - An experimental browser-based, offline-first, event-sourced dispatching, messaging, and incident tracking application.
+
+- https://github.com/patrickpang/perpetual /201809/js
+  - A WIP Life Management System = Todos + Calendar + Notes Implemented as a Progressive Web App
+  - Offline editing
+  - PouchDB
+  - Workbox
+
+- https://github.com/twilson63/vflow-pouchdb /201502/js
+  - an abstraction around pouchDB's changes feed and it creates a simple api for interacting with the write stream system. 
+  - It basically breaks it down into an event emitter.
+
+
+
 # pouchdb-p2p
 - https://github.com/garbados/pouchdb-hypercore /js
   - Synchronize PouchDB or CouchDB with P2P Hypercores
@@ -359,6 +384,10 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/starikan/pouchdb-viewer /202104/js
   - Standalone PouchDB viewer powered by Electron and pouchdb-server
+
+- https://github.com/thomastoye/field-journal /ts/pouchdb
+  - https://field-journal.pages.dev/
+  - An experimental browser-based, offline-first, event-sourced dispatching, messaging, and incident tracking application.
 
 - https://github.com/kbrisso/file-base /202210/js/ts
   - Filebase is a database for your files and directories.
