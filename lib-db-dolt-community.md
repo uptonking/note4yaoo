@@ -533,7 +533,7 @@ modified: 2023-08-25T21:17:11.979Z
 - We built a Git-style version controlled SQL database called Dolt 
   - **You do have to move a copy of your data to Dolt**, it does not sit on top or beside of your current database. So, it is an extra step in your data modification workflow, similar to versioning code. You had to add a version control step into your code modification workflow.
 
-- ## [LiteTree: SQLite with Branches | Hacker News](https://news.ycombinator.com/item?id=17865687)
+- ## ✨ [LiteTree: SQLite with Branches | Hacker News](https://news.ycombinator.com/item?id=17865687)
 - Fossil is a SCM system (like git) created by the very same author of SQLite (D. Richard Hipp). 
   - It uses SQLite as its database and implements versioning and branching and even merging (which LiteTree doesn't do) on its own, by recording the changes on each item on a separate table.
   - This approach is more complex to implement but a lot more versatile and flexible. Most of times you wouldn't want to version or branch the whole database, but only parts of it.

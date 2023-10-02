@@ -105,6 +105,17 @@ modified: 2022-12-02T11:15:15.257Z
   - It saves the changes in order and syncs the changes. 
   - The data is a result of all changes applied in order. 
   - It is mentioned in PouchDB Conflicts guide.
+# discuss-collab
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Distributed offline editing with couch/pouchdb - Yjs Community](https://discuss.yjs.dev/t/distributed-offline-editing-with-couch-pouchdb/340)
+  - Has anyone experimented with using Yjs with pouchdb as both the datastore and communication channel?
+
+- I recommend to mark transactions as remote when the update was created remotely. This is useful meta-information.
 # discuss-couchdb
 - ## 
 

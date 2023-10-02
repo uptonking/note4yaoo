@@ -85,6 +85,20 @@ modified: 2021-05-14T15:05:02.456Z
 - https://github.com/vsch/flexmark-java
   - /1.4kStar/BSD/202006
   - CommonMark/Markdown Java parser with source level AST.
+
+- https://github.com/iluwatar/java-design-patterns
+  - https://java-design-patterns.com/
+  - Design patterns implemented in Java
+  - [Event Sourcing | Java Design Patterns](https://java-design-patterns.com/patterns/event-sourcing/)
+  - [Data Mapper | Java Design Patterns](https://java-design-patterns.com/patterns/data-mapper/)
+  - [Feature Toggle | Java Design Patterns](https://java-design-patterns.com/patterns/feature-toggle/)
+  - [Flux | Java Design Patterns](https://java-design-patterns.com/patterns/flux/)
+  - [Hexagonal Architecture | Java Design Patterns](https://java-design-patterns.com/patterns/hexagonal/)
+  - [Half-Sync/Half-Async | Java Design Patterns](https://java-design-patterns.com/patterns/half-sync-half-async/)
+  - [Lazy Loading | Java Design Patterns](https://java-design-patterns.com/patterns/lazy-loading/)
+  - [Model-View-Controller | Java Design Patterns](https://java-design-patterns.com/patterns/model-view-controller/)
+  - [Monad | Java Design Patterns](https://java-design-patterns.com/patterns/monad/)
+  - [Unit Of Work | Java Design Patterns](https://java-design-patterns.com/patterns/unit-of-work/)
 # popular
 - https://github.com/elastic/elasticsearch
   - /51.4kStar/Apache2/202009/java

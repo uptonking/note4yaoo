@@ -59,6 +59,20 @@ modified: 2021-09-23T18:31:42.015Z
   - [Hooks Pattern](https://www.patterns.dev/posts/hooks-pattern)
   - [JavaScript 设计模式](https://www.freecodecamp.org/chinese/news/javascript-design-patterns-explained/)
     - [JavaScript Design Patterns – Explained with Examples](https://www.freecodecamp.org/news/javascript-design-patterns-explained/)
+
+- https://github.com/iluwatar/java-design-patterns
+  - https://java-design-patterns.com/
+  - Design patterns implemented in Java
+  - [Event Sourcing | Java Design Patterns](https://java-design-patterns.com/patterns/event-sourcing/)
+  - [Data Mapper | Java Design Patterns](https://java-design-patterns.com/patterns/data-mapper/)
+  - [Feature Toggle | Java Design Patterns](https://java-design-patterns.com/patterns/feature-toggle/)
+  - [Flux | Java Design Patterns](https://java-design-patterns.com/patterns/flux/)
+  - [Hexagonal Architecture | Java Design Patterns](https://java-design-patterns.com/patterns/hexagonal/)
+  - [Half-Sync/Half-Async | Java Design Patterns](https://java-design-patterns.com/patterns/half-sync-half-async/)
+  - [Lazy Loading | Java Design Patterns](https://java-design-patterns.com/patterns/lazy-loading/)
+  - [Model-View-Controller | Java Design Patterns](https://java-design-patterns.com/patterns/model-view-controller/)
+  - [Monad | Java Design Patterns](https://java-design-patterns.com/patterns/monad/)
+  - [Unit Of Work | Java Design Patterns](https://java-design-patterns.com/patterns/unit-of-work/)
 # 创建型
 
 ## 建造者

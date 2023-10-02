@@ -161,9 +161,7 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/cozy-labs/cozy-desktop
   - File Synchronisation for Cozy on Desktop and Laptop
-
 # pouchdb-event
-
 - https://github.com/stockulus/pouchdb-event-store /201708/js
   - mimimal eventStore on top of pouchdb
 
@@ -183,9 +181,6 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/twilson63/vflow-pouchdb /201502/js
   - an abstraction around pouchDB's changes feed and it creates a simple api for interacting with the write stream system. 
   - It basically breaks it down into an event emitter.
-
-
-
 # pouchdb-p2p
 - https://github.com/garbados/pouchdb-hypercore /js
   - Synchronize PouchDB or CouchDB with P2P Hypercores
@@ -360,7 +355,11 @@ modified: 2023-09-28T20:35:56.153Z
   - a browser local store capable of remote syncing.
   - It supports several storage strategies and remote pushing and pulling strategies.
   - It works with CouchDB-style APIs and a lot more to come.
-# examples-collab
+# collab
+- resources
+  - [(Alpha) PouchDB integration for Yjs](https://gist.github.com/samwillis/1465da23194d1ad480a5548458864077)
+    - [Inline attachment Blob ignored during deterministic _rev generation resulting in _rev hash collision](https://github.com/pouchdb/pouchdb/issues/8257)
+
 - https://github.com/Mo0812/MKNote
   - a note web app, which uses Markdown to render your notes.
   - verything works totally offline, all the data is stored on your browser and on your machine - no fancy backend

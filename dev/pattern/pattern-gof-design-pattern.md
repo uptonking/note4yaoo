@@ -20,6 +20,20 @@ modified: 2020-12-20T15:43:51.808Z
 
 - https://github.com/EnochGao/typescript-design-patterns
   - typescript 设计模式 demo
+
+- https://github.com/iluwatar/java-design-patterns
+  - https://java-design-patterns.com/
+  - Design patterns implemented in Java
+  - [Event Sourcing | Java Design Patterns](https://java-design-patterns.com/patterns/event-sourcing/)
+  - [Data Mapper | Java Design Patterns](https://java-design-patterns.com/patterns/data-mapper/)
+  - [Feature Toggle | Java Design Patterns](https://java-design-patterns.com/patterns/feature-toggle/)
+  - [Flux | Java Design Patterns](https://java-design-patterns.com/patterns/flux/)
+  - [Hexagonal Architecture | Java Design Patterns](https://java-design-patterns.com/patterns/hexagonal/)
+  - [Half-Sync/Half-Async | Java Design Patterns](https://java-design-patterns.com/patterns/half-sync-half-async/)
+  - [Lazy Loading | Java Design Patterns](https://java-design-patterns.com/patterns/lazy-loading/)
+  - [Model-View-Controller | Java Design Patterns](https://java-design-patterns.com/patterns/model-view-controller/)
+  - [Monad | Java Design Patterns](https://java-design-patterns.com/patterns/monad/)
+  - [Unit Of Work | Java Design Patterns](https://java-design-patterns.com/patterns/unit-of-work/)
 # design-patterns
 
 ## [Observer vs Pub-Sub pattern](https://hackernoon.com/observer-vs-pub-sub-pattern-50d3b27f838c)

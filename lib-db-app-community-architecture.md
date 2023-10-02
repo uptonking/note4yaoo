@@ -16,7 +16,12 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
-- ## 
+- ## [General-purpose databases that never delete or update data in-place - Stack Overflow](https://stackoverflow.com/questions/13508035/general-purpose-databases-that-never-delete-or-update-data-in-place)
+- I'm very much inspired by the approach to data management advocated by Rich Hickey, and implemented in Datomic, where the data is never mutated in-place, all the versions are always preserved and query-able, and the time is a first-class concept.
+
+- I think both the BerkeleyDB Java Edition and CouchDB work like that internally
+- Noms is versioned, forkable, syncable, append-only database. It is possible to see the entire history of the database
+- LiteTree SQLite with Branches
 # discuss
 - ## 
 

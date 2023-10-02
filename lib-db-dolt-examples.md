@@ -179,7 +179,7 @@ modified: 2023-08-25T22:31:05.132Z
     - The underlying storage is a location in an object store where lakeFS keeps your objects and some immutable metadata.
     - In lakeFS, a repository is a set of related objects (or collections of objects).
 
-- https://github.com/aergoio/litetree 202003/c/inactive
+- https://github.com/aergoio/litetree /202003/c/inactive
   - It is a modification of the SQLite engine to support branching, like git!
   - Each database transaction is saved as a commit, and each commit has an incremental number
   - We cannot write to the database when we are in a defined commit, writing is only possible at the head of each branch. If you want to make modifications to some previous commit you must create a new branch that starts at that commit.

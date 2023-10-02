@@ -19,9 +19,8 @@ modified: 2023-09-12T09:34:51.108Z
   - undo/redo
   - 工程类、科学类数据的观测分析
 
-
 - tips
-  - 
+  - event sourcing模式是db无关的，不必执着于标准方案，存储、传输都可替换，可针对场景优化，如offline
 
 - tasks
   - model domain objects and events
@@ -31,6 +30,7 @@ modified: 2023-09-12T09:34:51.108Z
   - cache
   - offline/local-first
   - es-orm: es是一种pattern，成熟的方案都会支持多个db/orm
+  - event store/db
   - integrations: cms的实现可参考通用fwk
 # dev
 - [EventSource - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/EventSource)

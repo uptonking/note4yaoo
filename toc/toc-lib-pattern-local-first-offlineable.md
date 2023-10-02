@@ -164,6 +164,18 @@ modified: 2021-09-04T14:03:39.046Z
 
 - https://github.com/milahu/browserforge
   - run github + github-pages + codesandbox in your browser, offline-first - CONCEPT
+
+- https://github.com/andymatuschak/orbit /1.5kStar/apache2/202305/ts
+  - https://withorbit.com/
+  - Orbit is an experimental platform for publishing and engaging with small tasks repeatedly over time.
+  - [Project: data architecture improvements_202104](https://github.com/andymatuschak/orbit/issues/192)
+    - The log-driven state model in the current system is more typically called an “event sourcing” model. The idea is basically: you don't transmit the state of the system; you transmit actions, then compute an effective state locally. State is always just a cache, computed over the action stream.
+    - our current model includes several decisions which dramatically increase the complexity
+    - We could create a much simpler event sourcing model
+    - The salted HLC does seem to be fine for the purposes of our stable listing contracts.
+  - https://twitter.com/andy_matuschak/status/1428777459235782660
+    - That’s the approach Orbit takes: simple event structures (simpler than CRDTs, sacrificing some of their key guarantees to reduce complexity), with well-defined merge operations, in a SQLite db. Users can write scripts to insert their own events if they like.
+    - Orbit’s implementations are quite general (i.e. they have almost no specific knowledge of Orbit’s structures), so perhaps they’ll be of use to others. See store-*, sync, and backend packages here
 # local-first-examples
 - https://github.com/kndwin/jikan
   - https://jikan-murex.vercel.app/

@@ -101,16 +101,38 @@ modified: 2023-09-12T09:37:22.608Z
     - git stores the state and calculates the deltas, and es stores the deltas and calculates the state.
     - es store deltas instead of the current state
     - Git stores complete snapshots of objects, not diffs 
-  - https://github.com/thenativeweb/node-eventstore /MIT/js/legacy/inactive
-    - http://eventstore.js.org/
-    - EventStore Implementation in node.js
-    - By default the eventstore will use an in-memory Storage.
-    - supported Dbs (in-memory, mongodb, redis, tingodb, elasticsearch, azuretable, dynamodb)
-    - load and store events via EventStream object
-    - snapshot support
-    - I would like to thank Golo Roden, who was there very early at the beginning of my CQRS/ES/DDD journey and is now here again to take over these modules.
-    - forks
-    - https://github.com/saperiuminc/node-eventstore
+
+- https://github.com/thenativeweb/node-eventstore /MIT/js/legacy/inactive
+  - http://eventstore.js.org/
+  - EventStore Implementation in node.js
+  - By default the eventstore will use an in-memory Storage.
+  - supported Dbs (in-memory, mongodb, redis, tingodb, elasticsearch, azuretable, dynamodb)
+  - load and store events via EventStream object
+  - snapshot support
+  - I would like to thank Golo Roden, who was there very early at the beginning of my CQRS/ES/DDD journey and is now here again to take over these modules.
+  - forks
+  - https://github.com/saperiuminc/node-eventstore /js/inactive
+
+- https://github.com/albe/node-event-storage /202306/js
+  - An optimized embedded event store for modern node.js, written in ES6.
+  - [Project Status](https://github.com/albe/node-event-storage/issues/29)
+  - Small event sourced single-server applications that want to get near-optimal write performance. Using it as queryable log storage
+  - Non-Goals
+    - distributed storage/distributed transactions, therefore no network API
+    - arbitrary querying capabilities - only range scans per stream
+  - event stores are purely append-only storages, and the only querying is sequential (range) reading (possibly with some filtering applied)
+  - no write-ahead log or transaction log required - the storage itself is the transaction log!
+  - therefore writes are as fast as they can get, but you only can have a single writer (without implementing complex distributed log with RAFT or Paxos)
+  - indexes are append-only and hence gain the same benefits
+  - since only sequential reading is needed, indexes are simple file position lists - no fancy B+-Tree/fractal tree required
+  - creating backups is easily doable with rsync or by creating file copies on the fly
+  - Using any SQL/NoSQL database for storing events therefore is sub-optimal, as those databases do a lot of work on top which is simply not needed. Write and read performance suffer.
+  - the storage guarantees a consistent global ordering on all events by managing a global primary index.
+  - An Event Stream is implemented as an iterator over an storage index. It is therefore limited to iterating the events at the point the Event Stream was retrieved
+  - An Event Stream is implemented as an iterator over an storage index. It is therefore limited to iterating the events at the point the Event Stream was retrieved
+  - https://github.com/albe/node-event-storage-ui /js
+    - an admin dashboard for inspecting a running node-event-storage on the same machine. 
+    - It is built using nextjs with SSR and based on the creative-tim material dashboard dark.
 
 - https://github.com/cloudnativeentrepreneur/sourced /ts
   - https://github.com/mateodelnorte/sourced /js
@@ -145,7 +167,9 @@ modified: 2023-09-12T09:37:22.608Z
   - Every decider/entity stream of events is an independent partition. The events within a partition are totally ordered. There is no ordering guarantee across different partitions.
 
 - https://github.com/castore-dev/castore /107Star/MIT/202303/ts
+  - https://castore-dev.github.io/castore/
   - Making Event Sourcing easy
+  - You can code your own EventStorageAdapter (simply implement the interface)
   - Event Sourcing is a data storage paradigm that saves changes in your application state rather than the state itself.
   - After years of using it at Kumo, we have grown to love it
   - **Snapshots are not implemented in Castore yet**, but we have big plans for them, so stay tuned
@@ -187,6 +211,14 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/assafg/osiris /ts
   - Simple event sourcing for nodejs
+
+- https://github.com/equinox-project/equinox-js /ts
+  - https://equinox-project.github.io/equinox-js/
+  - Event sourcing library for JavaScript
+  - a JS port of jet's Equinox
+  - Equinox is a set of low dependency libraries that allow for event-sourced processing against stream-based stores handling: Snapshots, Caching, Optimistic concurrency control
+  - [v1.0.0 Checklist_202309](https://github.com/equinox-project/equinox-js/issues/27)
+    - It’s stabilising as we speak. The message-db store is being used in production by a few people including my employer. 
 
 - https://github.com/Silly-Goose-Software/event-sauced-ts /ts/inactive
   - started out as a re-implementation of ASOS/SimpleEventStore in TypeScript. 
@@ -235,8 +267,11 @@ modified: 2023-09-12T09:37:22.608Z
   - http://docs.eventide-project.org/user-guide/message-db/
   - Microservice Native Event Store and Message Store for Postgres
   - A fully-featured event store and message store implemented in PostgreSQL for Pub/Sub, Event Sourcing, Messaging, and Evented Microservices applications.
-  - The message store is a single table named messages. 
+  - The message store is a single table named messages.
   - Interaction with the message store is effected through Postgres server functions that ensure the correct semantics for the writing of messages to streams, and the reading of messages from streams and categories.
+
+- https://github.com/marcopeg/postgres-event-sourcing /202103/js/inactive
+  - an attempt to reproduce a Kafka-like data behavior for event-sourcing using Postgres to coordinate write/read concurrency over a topic of messages from multiple producers/consumers instances.
 
 - https://github.com/seikho/evtstore /ts/未实现snapshot
   - https://seikho.github.io/evtstore
@@ -261,6 +296,11 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/khaosdoctor/event-sourcing-demo-app /vue
   - Demo application to demonstrate the power of the event sourcing architecture
+
+- https://github.com/rkaw92/esdf /201906/js
+  - A minimal event-sourcing / domain-driven design framework for Node.js
+  - This framework is light on the DDD side, only defining an AggregateRoot in terms of the EventSourcingAggregate prototype. It does not deal with ValueObjects (meant to be represented by plain old JavaScript objects) nor embedding aggregates in ARs
+  - ESDF is heavily based on Promises/A (namely, the when.js implementation)
 # es-collab
 - https://github.com/andykswong/mithic /MIT/ts
   - https://andykswong.github.io/mithic/
@@ -605,7 +645,7 @@ modified: 2023-09-12T09:37:22.608Z
   - materialized view key/id store based on unordered log messages
   - This library presents a familiar key/value materialized view for append-only log data which can be inserted in any order. 
 
-- https://github.com/boyney123/eventcatalog
+- https://github.com/boyney123/eventcatalog /ts
   - https://www.eventcatalog.dev/
   - https://app.eventcatalog.dev/
   - EventCatalog is an Open Source project that helps you document your events, services and domains. 
@@ -622,3 +662,6 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/oskardudycz/emmett /ts/wip/inactive
   - This project aims to deliver an opinionated event store based on my experience working on Marten and EventStoreDB.
+
+- https://github.com/eventsauce/eventsauce /201601/js
+  - an event-sourcing/CQRS Framework in Javascript, using ES6 language features.

@@ -132,7 +132,7 @@ modified: 2022-06-03T22:07:49.519Z
 
 # utils
 
-- https://github.com/aergoio/litetree 202003/c/inactive
+- https://github.com/aergoio/litetree /202003/c/inactive
   - It is a modification of the SQLite engine to support branching, like git!
   - Each database transaction is saved as a commit, and each commit has an incremental number
   - We cannot write to the database when we are in a defined commit, writing is only possible at the head of each branch. If you want to make modifications to some previous commit you must create a new branch that starts at that commit.

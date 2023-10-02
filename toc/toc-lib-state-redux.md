@@ -121,6 +121,13 @@ modified: 2020-11-02T19:13:04.103Z
   - In most cases, wiring up action types, action creators, and reducers can be done in one line of code.
   - createTable: Thinking of reducers as database tables, this function builds actions, reducer, and selectors that builds simple and repeatable operations for that table.
 # flux-like
+- https://github.com/isocroft/Radixx /201810/js/inactive
+  - a simple Javascript library that implements the Facebook Flux Architecture with a twist to how the entire application state is managed, changed and updated.
+  - The key deferentiator in both is that Radixx utilizes an actions stack and Redux utilizes an immutable state tree. 
+  - The actions stack allows Radixx to recalulate any state at anytime on demand
+  - Infinite/Finite Undo/Redo + Time Travel
+  - Redux is basically event-sourcing where there is a single projection to consume the application state.
+
 - https://github.com/flux-capacitor/flux-capacitor /MIT/js/inactive
   - Flux architecture for the backend. Realtime data and time travel capabilities included.
   - Works like Redux. Dispatch events to change database data

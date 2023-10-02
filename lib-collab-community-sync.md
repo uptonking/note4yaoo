@@ -479,10 +479,10 @@ modified: 2022-11-29T20:41:25.566Z
   - With Minimongo there is a touch of offline support. This could be taken further and improved. First step most likely being the ability to not loose offline only changes when the app is closed and then improved syncing once connection is restored. The final step possibly being that you could create offline-first Meteor app.
   - There is also Hoodie which uses PouchDB and CouchDB as a pair to achieve this
 
-- ## [Nano-SQL: Offline use with Sync to Server_201801](https://github.com/only-cliches/Nano-SQL/issues/18)
+- ## ✨ [Nano-SQL: Offline use with Sync to Server_201801](https://github.com/only-cliches/Nano-SQL/issues/18)
 - Hey gents, I'm getting close to implementing this as a core feature.
 - [Here's what I'm thinking:](github.com/only-cliches/Nano-SQL/issues/18#issuecomment-392220931)
-  - 1. Implement a conflict resolution feature nearly identical to CouchDB that works on the client and the server. 
+  - 1. Implement a conflict resolution feature nearly identical to CouchDB that wo  rks on the client and the server. 
   - 2. Use websockets with ajax polling fallback to allow syncing between client side databases and servers alike. 
   - 3. Include a simple JSON Web Tokens feature in the client/server model with security baked in. 
   - 4. Make three way data binding super simple using the new observer feature
