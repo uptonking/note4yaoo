@@ -9,6 +9,9 @@ modified: 2023-09-12T09:37:22.608Z
 
 # guide
 
+- tips
+  - event-store类似内存数据库，也可作为一种状态管理方式
+
 - es-db
   - 还可参考stream/kappa架构
 
@@ -17,23 +20,37 @@ modified: 2023-09-12T09:37:22.608Z
 
 - [@resolve-js/core vs eventstore vs wolkenkit vs create-resolve-app | npm trends](https://npmtrends.com/@resolve-js/core-vs-eventstore-vs-wolkenkit-vs-create-resolve-app)
 # popular
+- https://event-driven.io/
+  - https://github.com/oskardudycz/event-driven.io
+  - Resources about Event-Driven Architectures, Event Sourcing and pragmatic development
+
 - https://github.com/xolvio/typescript-event-sourcing /ts
   - Domain Driven Design, Event Sourcing & Command Query Responsibility Segregation with Typescript
+
+- https://github.com/Judahh/flexiblePersistence /ts
+  - A CQRS and Event Sourcing platform
+  - It's possible to use different databases or services implementing IPersistence interface, like MongoDB does (MongoPersistence).
+  - Other implementations: DAO, Sequelize, Service
+  - https://github.com/Judahh/sequelizePersistence
 
 - https://github.com/oskardudycz/EventSourcing.NodeJS /ts
   - Examples and Tutorials of Event Sourcing in NodeJS
   - I already have samples of Event Versioning and Snapshots in my sample repo. 
   - [Introduction to Event Sourcing - Self Paced Kit_202203](https://event-driven.io/en/introduction_to_event_sourcing/)
   - https://github.com/oskardudycz/EventSourcing.JVM
-  - https://github.com/PDMLab/mongo-eventstore /ts
-    - Eventstore for Node.js build on top of MongoDB
-    - https://github.com/AlexZeitler/mongo-eventstore-sample
 
 - https://github.com/sugarandmagic/sequelize-mv-support /MIT/ts
   - This package adds support for Views and Materialized Views in Sequelize.
   - We're heavy users of views and materialized views, but we use Sequelize a lot for bootstrapping and testing database schema. 
   - this module adds support for both views and materialized views to Sequelize, as well as properly exporting typescript declarations.
   - All the original Sequelize methods and options still work with this module
+
+- https://github.com/Skalar/ddes /ts
+  - https://ddes.io/docs/
+  - TypeScript framework that facilitates Event Sourcing and CQRS using distributed cloud services.
+  - persist and access all relevant events within your domain, in an “immutable” store
+  - subscribe to events that are committed to the store
+  - Aggregate snapshots allow you to store the state of aggregate instances manually and/or at given version intervals. This allows for more efficient loading of aggregate instances with a large number of commits.
 
 - https://github.com/reimagined/resolve /MIT/202212/ts/提供了很多示例
   - https://reimagined.github.io/resolve/
@@ -134,15 +151,20 @@ modified: 2023-09-12T09:37:22.608Z
     - an admin dashboard for inspecting a running node-event-storage on the same machine. 
     - It is built using nextjs with SSR and based on the creative-tim material dashboard dark.
 
-- https://github.com/cloudnativeentrepreneur/sourced /ts
+- https://github.com/cloudnativeentrepreneur/sourced /202108/ts
   - https://github.com/mateodelnorte/sourced /js
   - Tiny framework for building models with the event sourcing pattern (events and snapshots) that works in Node.js and the browser
   - Unlike Active Record where entity state is persisted on a one-model-per row database format, event sourcing stores all the changes (events) to the entity, rather than just its current state. 
   - The current state is derived by loading all events, or a latest snapshot plus subsequent events, and replaying them against the entity.
   - Sourced makes no assumptions about how you store your events and snapshots. 
-    - The library is small and tight with only the required functionality to define entities and their logic, enqueue and emit events, and track event state to later be persisted. 
-  - https://github.com/mateodelnorte/sourced-repo-mongo
+    - The library is small and tight with only the required functionality to define entities and their logic, enqueue and emit events, and track event state to later be persisted.
+  - https://github.com/CloudNativeEntrepreneur/sourced-repo-svelte-local-storage-store
+    - https://github.com/CloudNativeEntrepreneur/svelte-local-storage-store
+    - A store that adds pub/sub to local storage. Supports changes across multiple tabs.
+  - https://github.com/mateodelnorte/sourced-repo-mongo /202106/js
     - mongo data store and repository for sourced-style event sourcing models
+  - https://github.com/CloudNativeEntrepreneur/sourced-repo-typeorm
+    - uses TypeORM to persist events
   - https://github.com/PDMLab/sourced-ts /ts/inactive
     - forked from sourced for building models with the event sourcing pattern (events and snapshots).
     - https://github.com/PDMLab/sourced-repo-mongo-ts
@@ -191,11 +213,9 @@ modified: 2023-09-12T09:37:22.608Z
   - https://github.com/valkyrjs/valkyr /ts
     - toolkit for creating event sourced applications using javascript/typescript.
 
-- https://github.com/snatalenko/node-cqrs /MIT/js
-  - CQRS backbone with event sourcing for Node.js
-  - The package provides building blocks for making a CQRS-ES application. 
-  - It was inspired by Lokad. CQRS, but not tied to a specific storage implementation or infrastructure. 
-  - It favors ES6 classes and dependency injection(di0), so any components can be modified or replaced with your own implementations without hacks to the package codebase.
+- https://github.com/PDMLab/mongo-eventstore /202110/ts/inactive
+  - Eventstore for Node.js build on top of MongoDB
+  - https://github.com/AlexZeitler/mongo-eventstore-sample
 
 - https://github.com/flolu/simple-event-sourcing-example /ts/inactive
   - Small Node.js Application to Learn the Concepts of Event Sourcing
@@ -226,22 +246,13 @@ modified: 2023-09-12T09:37:22.608Z
   - The goal is to be provide a database-agnostic API for an event store.
   - https://github.com/Silly-Goose-Software/event-sauced-ts-postgresql
 
-- https://github.com/Azure/fetch-event-source /ts
-  - A better API for making Event Source requests, with all the features of fetch()
-  - This library provides an alternate interface for consuming server-sent events, based on the Fetch API. 
-  - It is fully compatible with the Event Stream format
-
-- https://github.com/rexxars/eventsource-parser
-  - A streaming parser for server-sent events/eventsource, without any assumptions about how the actual stream of data is retrieved. 
-  - It is intended to be a building block for clients and polyfills in javascript environments such as browsers, node.js and deno.
-
 - https://github.com/mafintosh/event-source-stream
   - EventSource implemented in node and the browser as a readable stream
 
 - https://github.com/qas/examples-nodejs-cqrs-es-swagger
   - A Node.js CQRS and Event Sourcing Microservice Example Using Nest.js, Event Store, and Swagger
 
-- https://github.com/binaryminds/react-native-sse
+- https://github.com/binaryminds/react-native-sse /202304/js
   - Event Source implementation for React Native. 
   - Server-Sent Events (SSE) for iOS and Android
 
@@ -251,27 +262,11 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/EventSource/eventsource
   - EventSource client for Node.js and Browser (polyfill)
 
-- https://github.com/cms-DQM/runregistry /js
-  - run registry is a full-stack javascript application. 
-  - With a frontend built with React and a backend built with Node.js, it uses a PostgreSQL database instance running in CERN DB on demand and a redis microservice to handle the job queue for backend processing.
-  - Run registry is designed using loosely-coupled microservices
-  - There are two ways that Run Registry uses Event Sourcing: for configuration, and for data.
-
 - https://github.com/zeppaman/mongo-event-sourcing /js/inactive
   - An open-source fully configurable and extendible tool that enables event sourcing in MongoDB.
   - implement event sourcing listening event from mongodb. 
   - For who is used to play with traditional RDBMS it's something like triggers, but fire events outside database. This application uses the built-in mongodb feature called `ChangeStream`.
   - So, adding MESS in your architecture you can forward event for data changes to applications by using webhook or simply add event to a queue like rabbitMQ or Kibana.
-
-- https://github.com/message-db/message-db
-  - http://docs.eventide-project.org/user-guide/message-db/
-  - Microservice Native Event Store and Message Store for Postgres
-  - A fully-featured event store and message store implemented in PostgreSQL for Pub/Sub, Event Sourcing, Messaging, and Evented Microservices applications.
-  - The message store is a single table named messages.
-  - Interaction with the message store is effected through Postgres server functions that ensure the correct semantics for the writing of messages to streams, and the reading of messages from streams and categories.
-
-- https://github.com/marcopeg/postgres-event-sourcing /202103/js/inactive
-  - an attempt to reproduce a Kafka-like data behavior for event-sourcing using Postgres to coordinate write/read concurrency over a topic of messages from multiple producers/consumers instances.
 
 - https://github.com/seikho/evtstore /ts/未实现snapshot
   - https://seikho.github.io/evtstore
@@ -294,13 +289,29 @@ modified: 2023-09-12T09:37:22.608Z
   - It provides a highly opinionated implementation of the CQRS and Event Sourcing patterns in Typescript, using DDD (Domain-Driven Design)
   - We adopted GraphQL because it's a self-documenting standard. 
 
-- https://github.com/khaosdoctor/event-sourcing-demo-app /vue
-  - Demo application to demonstrate the power of the event sourcing architecture
-
 - https://github.com/rkaw92/esdf /201906/js
   - A minimal event-sourcing / domain-driven design framework for Node.js
   - This framework is light on the DDD side, only defining an AggregateRoot in terms of the EventSourcingAggregate prototype. It does not deal with ValueObjects (meant to be represented by plain old JavaScript objects) nor embedding aggregates in ARs
   - ESDF is heavily based on Promises/A (namely, the when.js implementation)
+
+- https://github.com/kristopolous/db.js /202109/js/inactive
+  - portable Javascript document store event-driven database
+
+## postgresql
+
+- https://github.com/message-db/message-db
+  - http://docs.eventide-project.org/user-guide/message-db/
+  - Microservice Native Event Store and Message Store for Postgres
+  - A fully-featured event store and message store implemented in PostgreSQL for Pub/Sub, Event Sourcing, Messaging, and Evented Microservices applications.
+  - The message store is a single table named messages.
+  - Interaction with the message store is effected through Postgres server functions that ensure the correct semantics for the writing of messages to streams, and the reading of messages from streams and categories.
+
+- https://github.com/marcopeg/postgres-event-sourcing /202103/js/inactive
+  - an attempt to reproduce a Kafka-like data behavior for event-sourcing using Postgres to coordinate write/read concurrency over a topic of messages from multiple producers/consumers instances.
+
+- https://github.com/bahatron/mercurios /ts
+  - Event Sourcing with PostgresSQL
+  - Event ordering is not guaranteed. However, it's possible to use expectedSeq when publishing to control the order of events in a stream
 # es-collab
 - https://github.com/andykswong/mithic /MIT/ts
   - https://andykswong.github.io/mithic/
@@ -328,10 +339,28 @@ modified: 2023-09-12T09:37:22.608Z
   - The philosophy of Statecraft is to "ship the architecture diagram". 
     - The API is designed to make it easy to re-expose a statecraft store over the network. 
 # non-js
-- https://github.com/serverlesstechnology/cqrs /rust
-  - A lightweight, opinionated CQRS and event sourcing framework targeting serverless architectures.
-  - Event sourcing uses the generated events as the source of truth for the state of the application.
-  - https://github.com/serverlesstechnology/cqrs-demo
+- https://github.com/EventStore/EventStore /csharp
+  - https://eventstore.com/
+  - The stream database optimised for event sourcing
+  - https://github.com/EventStore/samples
+  - https://github.com/qooroo/EventStore /legacy
+    - Event Store is written in a mixture of C#, C++ and JavaScript. It can run either on Mono or .NET, however because it contains platform specific code (including hosting the V8 JavaScript engine), it must be built for the platform on which you intend to run it.
+- https://github.com/EventStore/EventStore. UI /js
+  - The user interface for Event Store. This is included as a submodule in the main Event Store repository.
+
+- https://github.com/meilisearch/MeiliES /MIT/201910/rust/inactive
+  - MeiliES is an Event Sourcing database that uses the RESP (REdis Serialization Protocol) to communicate. 
+  - This way it is possible to create clients by reusing the already available protocol. 
+  - it is possible to use the official Redis command line interface program to communicate with MeiliES.
+  - An event store is like a Kafka or a Rabbit MQ but it stores events on disk indefinitely. 
+  - MeiliES stores all the events of all the streams that were sent by all the clients in the order they were received.
+  - Keep in mind that a message queue is not made for event-sourcing.
+  - Full Rust, using `sled` as the internal storage
+  - The current implementation has some limitations related to the whole number of streams subscribed
+- https://github.com/x-cubed/event-store-client /js
+  - JS client library for connecting to Event Store over TCP/IP
+  - Connects to an Event Store server over TCP/IP, to send and receive event information.
+  - The Javascript API is intended to mimic the . Net API as closely as possible.
 
 - https://github.com/get-eventually/eventually-rs /rust
   - Collection of traits and other utilities to help you build your Event-sourced applications in Rust.
@@ -385,6 +414,12 @@ modified: 2023-09-12T09:37:22.608Z
   - CQRS Pattern : Materialized view & Event Sourcing
   - SAGA Pattern : process & rollback ( compensating transactions )
   - Outbox Pattern : Pulling Outbox Table With Scheduler , Saga Status
+
+- https://github.com/dmfrey/event-store-demo /201809/java/inactive
+  - We recently finished work on a system in which we built an Event Source system. This application is a demo of the architecture we produced.
+  - This application is a simple Kanban. It only allows for minimal board and story management.
+  - This application was unique in that we implemented the backend with Apache Kafka, MongoDb and MySQL. 
+  - The final solution was based on MySQL. Kafka and MongoDb would not be available in the production environments, so we adjusted.
 
 - https://github.com/andreschaffer/event-sourcing-cqrs-examples /java
   - examples of how to use Event Sourcing and CQRS applied to a minimalistic bank context.
@@ -451,6 +486,12 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/get-eventually/go-eventually /go
   - Idiomatic library to help you build Event Sourced application in Go.
 
+- https://github.com/inklabs/rangedb /go
+  - an event store database written in Go. 
+  - This package includes a stand-alone database and web server along with a library for embedding event sourced applications.
+  - RangeDB supports various backend database engines: PostgreSQL, LevelDB, EventStoreDB, In Memory
+  - DDD-CQRS-ES slack group channel: #rangedb
+
 - https://github.com/dhamidi/ess /go/inactive
   - provides a library for building event sourced systems.
 
@@ -458,53 +499,50 @@ modified: 2023-09-12T09:37:22.608Z
   - https://eventsourcing.readthedocs.io/
   - A library for event sourcing in Python.
 
-- https://github.com/EventStore/EventStore /csharp
-  - https://eventstore.com/
-  - The stream database optimised for event sourcing
-  - https://github.com/EventStore/samples
-  - https://github.com/qooroo/EventStore /legacy
-    - Event Store is written in a mixture of C#, C++ and JavaScript. It can run either on Mono or .NET, however because it contains platform specific code (including hosting the V8 JavaScript engine), it must be built for the platform on which you intend to run it.
-# server-sent events
-- https://github.com/dpskvn/express-sse
-  - An Express middleware for quick'n'easy server-sent events.
-- https://github.com/toverux/expresse
-  - A better module for working with Server-Sent Events in Express
+- https://github.com/gklijs/bkes /rust/java
+  - Binary Kafka backed Event Store
+  - a POC status project and should not be used in production.
+  - The main goal is to have a fast, low memory event store backed by a Kafka topic.
+  - https://github.com/gklijs/bkes-demo /clojure
+# cqrs/event-driven
+- https://github.com/awakelife93/msa-ddd-with-event-sourcing-cqrs-pattern /ts
+  - Microservice + DDD Architecture + Event Sourcing + CQRS pattern
+  - The RDBMS used in the example is MySQL, and NoSQL is MongoDB. And Redis is used as the message queue (MQ)
 
-- https://github.com/triblondon/node-sse-pubsub
-  - Server sent events for NodeJS
-  - A simple NodeJS module to generate Server-Sent-Events streams with a publish/subscribe interface and simple integration with either Node's built in HTTP library or any framework that exposes it, eg. ExpressJS.
+- https://github.com/Eveble/eveble /ts/提交多
+  - event sourcing framework with modular architecture for DDD(Domain Driven Design) applications in Node.js
 
-- https://github.com/EventSource/node-ssestream
-  - Send Server-Sent Events with a stream
-  - A zero-dependency node stream for writing Server-Sent Events.
+- https://github.com/ddd-ts/monorepo /ts
+  - Tools facilitating Domain Driven Design and Event Sourcing. 
+  - Work in progress, but already used in production.
+  - traits: A typesafe library for implementing the trait pattern.
 
-- https://github.com/mpangrazzi/redis-subscribe-sse
-  - Stream Redis "SUBSCRIBE" or "PSUBSCRIBE" events to browsers using HTML5 Server-Sent Events (SSE)
+- https://github.com/snatalenko/node-cqrs /MIT/js
+  - CQRS backbone with event sourcing for Node.js
+  - The package provides building blocks for making a CQRS-ES application. 
+  - It was inspired by Lokad. CQRS, but not tied to a specific storage implementation or infrastructure. 
+  - It favors ES6 classes and dependency injection(di0), so any components can be modified or replaced with your own implementations without hacks to the package codebase.
 
-- https://github.com/tomkersten/sses-node-example
-  - Example of Express.js application providing Server-Sent Events (SSEs) on top of Redis pub/sub connection
+- https://github.com/coal182/typescript-ddd-shop /ts
+  - Bookstore API with CQRS, Event Sourcing, DDD
+  - This project uses DDD with Hexagonal Architecture, CQRS & Event Sourcing
 
-- https://github.com/simonprickett/server-sent-events-demo
-  - A small Server Sent Events demo for San Diego JS Meetup using Node, HTML, JavaScript, CSS. 
-  - [A Look at Server Sent Events](https://simonprickett.dev/a-look-at-server-sent-events/)
+- https://github.com/hdev14/store /ts/提交多
+  - Application to learn Hexagonal Architecture, DDD, CQS, CQRS and Event Sourcing.
+- https://github.com/wesone/blackrik /js/提交多
+  - a CQRS and Event-Sourcing Framework for Node.js
 
-- https://github.com/WebReflection/bidi-sse
-  - Bidirectional Server-sent Events
+- https://github.com/mauriciomoccelin/neutralize-event-store /ts
+  - Simple event source using node, mongo and Kafka to handler events.
 
-- https://github.com/rexxars/sse-channel /202011/js
-  - Server-Sent Events "channel" where all messages are broadcasted to all connected clients, history is maintained automatically and server attempts to keep clients alive by sending "keep-alive" packets automatically.
+- https://github.com/nivinjoseph/n-domain /ts
+  - Domain Driven Design and Event Sourcing based framework for business layer implementation.
 
-- https://github.com/einaros/sse.js /201712/js
-  - Server-Sent Events made easy for node.js
-
-- https://github.com/chrisdickinson/sse-stream
-  - Expose HTML5 Server Sent Events as an installable appliance on Node. JS http servers; connections are emitted as Writable streams.
-# event-driven
-- https://github.com/Judahh/flexiblePersistence /ts
-  - A CQRS and Event Sourcing platform
-  - It's possible to use different databases or services implementing IPersistence interface, like MongoDB does (MongoPersistence).
-  - Other implementations: DAO, Sequelize, Service
-  - https://github.com/Judahh/sequelizePersistence
+- https://github.com/cms-DQM/runregistry /js
+  - run registry is a full-stack javascript application. 
+  - With a frontend built with React and a backend built with Node.js, it uses a PostgreSQL database instance running in CERN DB on demand and a redis microservice to handle the job queue for backend processing.
+  - Run registry is designed using loosely-coupled microservices
+  - There are two ways that Run Registry uses Event Sourcing: for configuration, and for data.
 
 - https://github.com/s4nt14go/white-label /ts
   - Serverless Domain-Driven Design (DDD) with unit tests
@@ -548,6 +586,9 @@ modified: 2023-09-12T09:37:22.608Z
   - 前端依赖 react、redux、react-quill
   - https://github.com/dyarleniber/typescript-ddd-forum
 
+- https://github.com/tonyfromundefined/eventive /ts
+  - Event Sourcing Framework in MongoDB
+
 - https://github.com/yysun/apprun /MIT/ts
   - https://apprun.js.org/
   - https://dev.to/yysun
@@ -586,9 +627,77 @@ modified: 2023-09-12T09:37:22.608Z
   - https://github.com/davidnussio/moleculer-cqrs /js
   - https://github.com/moleculerjs/moleculer-db /js
     - Database access service mixins for Moleculer
+
+## cqrs-non-js
+
+- https://github.com/serverlesstechnology/cqrs /rust
+  - A lightweight, opinionated CQRS and event sourcing framework targeting serverless architectures.
+  - Event sourcing uses the generated events as the source of truth for the state of the application.
+  - https://github.com/serverlesstechnology/cqrs-demo
+
+- https://github.com/johnbcodes/cqrs-es-demo-sqlite /rust
+  - A demo application for the cqrs-es and sqlite-es crates
+  - A demo application using the cqrs-es framework with a backing SQLite repository.
+
+- https://github.com/johnbcodes/sqlite-es /rust
+  - An SQLite implementation of a cqrs event store.
+  - An SQLite implementation of the PersistedEventRepository trait in cqrs-es.
+
+- https://github.com/serverlesstechnology/dynamo-es /rust
+  - An implementation of a cqrs event store using AWS DynamoDB.
+  - A DynamoDB implementation of the PersistedEventRepository trait in cqrs-es.
+# utils
+- https://github.com/futurist/edata /js
+  - Turn javascript data into observable reactive EventEmitter with value getter/setter, lodash style path, and keep Event Sourcing in mind.
+  - the nested observable reactive EventEmitter with .value getter/setter, lodash style path, and keep Observer Pattern in mind.
+  - It roughly referenced Object.observe API, but instead **using getter/setter to wrap object, lightweight than Proxy**.
+
+- https://github.com/coriolisjs/coriolis /js
+  - Event sourced effect management for Javascript
+  - a Javascript library allowing you to set up an event store supplying effects based on projections (a projection is a state deduced from different events )
+  - The design of Coriolis was inspired by Redux, seeking to give the role of single source of truth not to the state but to the flow of events, and thus join the concept of Event Sourcing.
+
+- https://github.com/rexxars/eventsource-parser /ts
+  - A streaming parser for server-sent events/eventsource, without any assumptions about how the actual stream of data is retrieved. 
+  - It is intended to be a building block for clients and polyfills in javascript environments such as browsers, node.js and deno.
+
+- https://github.com/Azure/fetch-event-source /ts
+  - A better API for making Event Source requests, with all the features of fetch()
+  - This library provides an alternate interface for consuming server-sent events, based on the Fetch API. 
+  - It is fully compatible with the Event Stream format
+
+- https://github.com/Sraleik/sorci /ts
+  - Small library to be able to do full event sourcing without aggregate easily.
+  - an implementation attempt to Dynamic Consistency Boundary (DCB) with typescript & postgres
+- https://github.com/sennentech/dcb-event-store /ts
+  - Dynamic Consistency Boundary Event Store for nodejs/typescript
+
+- https://github.com/shoonia/storeon-velo /js
+  - A tiny event-based state manager Storeon for Velo by Wix.
+- https://github.com/wix/velo-external-db /ts
+  - https://www.wix.com/velo
+  - Velo by Wix is a development platform built on top of Wix, adding a built-in database and node.js backend. 
+  - The built-in database is a document based database optimized for websites and content.
+  - it can support 10K - 100K records, and for some workloads even more
+  - It is globally replicated, has native support for PII encryption, GDPR, and other non-functional features
+  - However, requirements for data locality, regulations, data ownership, dedicated infrastructure, or workloads that demand specific engines may require an external database. This adapter enables connecting external database engines to your site.
+  - Velo lets you connect an “external database” and map the structures of the underlying tables as wix-data collections. Once connected, you can work with the database and it’s collections in your site just as you would with the built-in database.
+
+## distributed-es
+
+- https://github.com/saarw/flushout /201910/ts
+  - a distributed data model based on event sourcing. 
+  - Collaborative applications use it for clients that need responsive interaction without network delay, or need to function offline.
+  - Clients interact with a local proxy of a remote master model without accessing the network. They can then periodically flush changes from the proxy to the master in the background when the network is available.
+  - [Building a collaborative React app with Flushout_202003](https://saarw.github.io/dev/2020/03/02/building-a-collaborative-react-app-with-flushout.html)
+
+- https://github.com/dasmeta/event-manager-backend /ts
+  - Node.js backend that handles event store, monitoring and retries
+  - The service is based on Strapi JS framework.
 # state-management
 - tips
   - redux/logux
+  - event-store类似内存数据库，也可作为一种状态管理方式
 
 - https://github.com/flux-capacitor/flux-capacitor /MIT/js/inactive
   - Flux architecture for the backend. Realtime data and time travel capabilities included.
@@ -609,8 +718,19 @@ modified: 2023-09-12T09:37:22.608Z
     - No aggregates, just one read model to check business rules when handling an event
     - Depends on database transactions to ensure data consistency
 
+- https://github.com/camjackson/redux-eventstore /201710/js/inactive
+  - CQRS, event sourcing, and event collaboration made easy with Node.js, Redux, and Event Store
+  - Use this library on your Node.js backend to easily write Redux-style events (usually known as actions) to an Event Store stream.
+  - You can also subscribe a Redux store (still on the backend) to the stream, allowing you to page through all the events and reduce it to the current, in-memory state.
+
 - https://github.com/event-storm/event-storm /js
   - In-memory event store. A powerful, framework-agnostic store management library.
+- https://github.com/XSpecs/DDK /ts
+  - An Event-Storm to Event-Sourced application library
+  - Some versions of this library has been used to build a number of applications for enterprise clients at our sister company Xolvio
+
+- https://github.com/coderwhy/hy-event-store /js
+  - 一个基于事件的全局状态管理工具，可以在Vue、React、小程序等任何地方使用。
 # examples
 - https://github.com/TomaszRewak/TimeWriter /js/依赖少/inactive
   - https://text-sourcing.tomasz-rewak.com/
@@ -620,6 +740,12 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/stockulus/pouchdb-event-store /201708/js
   - mimimal eventStore on top of pouchdb
+
+- https://github.com/khaosdoctor/event-sourcing-demo-app /vue
+  - Demo application to demonstrate the power of the event sourcing architecture
+
+- https://github.com/totollygeek/node-cqrs /ts
+  - Demo code for my CQRS and Event Sourcing session for nodejs
 
 - https://github.com/EternalDeiwos/panmnesia /201712/js
   - An action registry and redux-based aggregate store for a PouchDB-based event stream.
@@ -640,6 +766,41 @@ modified: 2023-09-12T09:37:22.608Z
   - We recently finished work on a system in which we built an Event Source system. This application is a demo of the architecture we produced.
   - This application is a simple Kanban. It only allows for minimal board and story management.
   - The API application is a common gateway layer between Command and Query applications. The lower applications are separated in typical CQRS fashion. It is a Spring Boot 2 application and is simply a proxy service to the lower apps.
+# server-sent events
+- https://github.com/dpskvn/express-sse
+  - An Express middleware for quick'n'easy server-sent events.
+- https://github.com/toverux/expresse
+  - A better module for working with Server-Sent Events in Express
+
+- https://github.com/triblondon/node-sse-pubsub
+  - Server sent events for NodeJS
+  - A simple NodeJS module to generate Server-Sent-Events streams with a publish/subscribe interface and simple integration with either Node's built in HTTP library or any framework that exposes it, eg. ExpressJS.
+
+- https://github.com/EventSource/node-ssestream
+  - Send Server-Sent Events with a stream
+  - A zero-dependency node stream for writing Server-Sent Events.
+
+- https://github.com/mpangrazzi/redis-subscribe-sse
+  - Stream Redis "SUBSCRIBE" or "PSUBSCRIBE" events to browsers using HTML5 Server-Sent Events (SSE)
+
+- https://github.com/tomkersten/sses-node-example
+  - Example of Express.js application providing Server-Sent Events (SSEs) on top of Redis pub/sub connection
+
+- https://github.com/simonprickett/server-sent-events-demo
+  - A small Server Sent Events demo for San Diego JS Meetup using Node, HTML, JavaScript, CSS. 
+  - [A Look at Server Sent Events](https://simonprickett.dev/a-look-at-server-sent-events/)
+
+- https://github.com/WebReflection/bidi-sse
+  - Bidirectional Server-sent Events
+
+- https://github.com/rexxars/sse-channel /202011/js
+  - Server-Sent Events "channel" where all messages are broadcasted to all connected clients, history is maintained automatically and server attempts to keep clients alive by sending "keep-alive" packets automatically.
+
+- https://github.com/einaros/sse.js /201712/js
+  - Server-Sent Events made easy for node.js
+
+- https://github.com/chrisdickinson/sse-stream
+  - Expose HTML5 Server Sent Events as an installable appliance on Node. JS http servers; connections are emitted as Writable streams.
 # more
 - https://github.com/digidem/unordered-materialized-kv /js/inactive
   - materialized view key/id store based on unordered log messages

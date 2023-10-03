@@ -58,6 +58,12 @@ modified: 2023-01-17T19:13:01.845Z
 - https://github.com/peers/peerjs /202303/ts
   - PeerJS provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams.
 
+- https://github.com/saarw/flushout /201910/ts
+  - a distributed data model based on event sourcing. 
+  - Collaborative applications use it for clients that need responsive interaction without network delay, or need to function offline.
+  - Clients interact with a local proxy of a remote master model without accessing the network. They can then periodically flush changes from the proxy to the master in the background when the network is available.
+  - [Building a collaborative React app with Flushout_202003](https://saarw.github.io/dev/2020/03/02/building-a-collaborative-react-app-with-flushout.html)
+
 - https://github.com/ar-nelson/osmosis-js /202103/ts
   - An in-process JSON database with automatic peer-to-peer background synchronization between devices on a local network. Keep your apps in sync without a cloud!
   - 传输层使用jsonrpc

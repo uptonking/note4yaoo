@@ -274,6 +274,10 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
 
 - [files - How to preview DDS and WEBP images on nautilus? - Ask Ubuntu](https://askubuntu.com/questions/617047/how-to-preview-dds-and-webp-images-on-nautilus)
   - nano ~/.local/share/thumbnailers/webp.thumbnailer
+
+## upgrade-ubuntu
+
+- [2 Ways to Upgrade Ubuntu 20.04 To Ubuntu 22.04 (Graphical & Terminal)](https://www.linuxbabe.com/ubuntu/upgrade-ubuntu-20-04-to-ubuntu-22-04)
 # desktop-gnome
 - https://github.com/G-dH/overview-feature-pack
   - A GNOME Shell extension that adds useful features to the Activities Overview. 
@@ -376,7 +380,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - https://github.com/rbenv/ruby-build
   - 要先更新build中的元数据，再安装最新ruby
   - [rbenv can't change global ruby version - Stack Overflow](https://stackoverflow.com/questions/24736204)
-# win11
+# win
 
 ## guide
 
@@ -416,6 +420,11 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 - adobe 大师版全家桶、sp版独立包
   - https://www.nite07.com/adobe/
   - 密码 nite07
+
+## upgrade-windows
+
+- windows update很容易卡住不动
+  - 可以点击暂停到7天后更新，然后立即取消暂停，如果顺利就会立即检查并下载更新
 # mac
 - [macos 如何实现 windows 的双击触摸板进行拖动 - V2EX](https://v2ex.com/t/846111)
   - 触控板拖动有三种方式可以设置。

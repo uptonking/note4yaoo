@@ -17,4 +17,8 @@ modified: 2020-12-31T15:18:33.994Z
 # fwk-latstest
 - https://github.com/finos/perspective
   - Streaming pivot visualization via WebAssembly
+# rust
+- https://github.com/tokio-rs/axum /rust
+  - modular web framework built with Tokio, Tower, and Hyper
+  - Take full advantage of the tower and tower-http ecosystem of middleware, services, and utilities.
 # more

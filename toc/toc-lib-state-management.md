@@ -191,6 +191,11 @@ modified: 2020-07-14T11:03:53.196Z
   - https://github.com/Olical/EventEmitter
   - brings the power of events from platforms such as node.js to your browser
   - 对应npm包 https://www.npmjs.com/package/wolfy87-eventemitter
+
+- https://github.com/felladrin/create-pubsub /ts
+  - A tiny Event Emitter and Observable Store for JavaScript apps.
+  - a Vanilla JavaScript library, so it's framework-agnostic.
+
 - PubSubJS /3.3kStar/MIT/202008/js
   - https://github.com/mroderick/PubSubJS
   - Dependency free topic-based publish/subscribe library written in JavaScript
