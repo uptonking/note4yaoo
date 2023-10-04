@@ -53,6 +53,10 @@ modified: 2022-10-04T23:32:30.824Z
 - https://github.com/newsdev/prosemirror-change-tracking-prototype /201609/js
   - ProseMirror change tracking proof-of-concept
 
+- https://github.com/dxos/editor  /1Star/AGPLv3/202101/js/archived
+  - Collaborative editor
+  - 依赖 react、material-ui、remark-rehype、yjs、prosemirror、hightlight.js
+
 - https://github.com/dmonad/Yed /js
   - A collaborative editor built with ProseMirror - demo
 
@@ -62,7 +66,6 @@ modified: 2022-10-04T23:32:30.824Z
   - 展示了 quill、draftjs、canvas+mousemove 几个示例
   - 提供了client+server，可作为通用协作方案
 # versions
-
 - https://github.com/inkandswitch/upwelling-code /ts
   - https://upwelling-prototype.netlify.app/
   - [Upwelling: Combining real-time collaboration with version control for writers](https://www.inkandswitch.com/upwelling/)

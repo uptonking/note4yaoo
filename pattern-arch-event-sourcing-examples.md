@@ -14,16 +14,16 @@ modified: 2023-09-12T09:37:22.608Z
 
 - es-db
   - 还可参考stream/kappa架构
+  - kappa-core is built on an abstraction called a kappa architecture, or "event sourcing".
 
 - https://github.com/heynickc/awesome-ddd
   - A curated list of Domain-Driven Design (DDD), Command Query Responsibility Segregation (CQRS), Event Sourcing
-
-- [@resolve-js/core vs eventstore vs wolkenkit vs create-resolve-app | npm trends](https://npmtrends.com/@resolve-js/core-vs-eventstore-vs-wolkenkit-vs-create-resolve-app)
-# popular
 - https://event-driven.io/
   - https://github.com/oskardudycz/event-driven.io
   - Resources about Event-Driven Architectures, Event Sourcing and pragmatic development
 
+- [@resolve-js/core vs eventstore vs wolkenkit vs create-resolve-app | npm trends](https://npmtrends.com/@resolve-js/core-vs-eventstore-vs-wolkenkit-vs-create-resolve-app)
+# popular
 - https://github.com/xolvio/typescript-event-sourcing /ts
   - Domain Driven Design, Event Sourcing & Command Query Responsibility Segregation with Typescript
 
@@ -67,6 +67,12 @@ modified: 2023-09-12T09:37:22.608Z
     - A view model rebuilds its state on the fly and uses WebSockets to reactively synchronize the state with the client.
   - A saga describes a long running process as a sequence of events.
   - reSolve application stores its data(a chain of immutable events) in a centralized event store, which can be configured to use different underlying data storages through the mechanism of adapters.
+    - The reSolve framework saves produced events to a persistent event store. 
+    - A newly created application is configured to use a SQLite event store. 
+  - ReSolve uses the adapter mechanism to provide an abstraction layer above APIs
+    - Event store adapters
+    - Read model store adapters
+    - you may implement a Read Model on top of some arbitrary system, such as a full-text-search engine, OLAP or a particular SQL database
   - you definitely can use only backend part of reSolve, it does not assume anything about client part.
   - [A Redux-Inspired Backend. Extending React+Redux ideas to the_201901](https://medium.com/resolvejs/resolve-redux-backend-ebcfc79bbbea)
   - [Snapshots](https://github.com/reimagined/resolve/discussions/1791)
@@ -108,8 +114,12 @@ modified: 2023-09-12T09:37:22.608Z
     - contains a vanilla HTTP and a GraphQL endpoint that can be used to send commands, execute queries, and subscribe to domain events.
     - ready-made yet configurable manifests for Docker and Kubernetes
   - The following databases are supported for the domain event store, the lock store, and the priority queue store: in-memory, mysql, postgresql, redis, mongodb
-  - https://github.com/thenativeweb/wolkenkit-eventstore /AGPLv3/ja
+  - [Implement architecture for 4.0_201910](https://github.com/thenativeweb/wolkenkit/issues/181)
+    - a rewrite from scratch, including support for TypeScript, GraphQL
+    - 区分event-store和queue-store
+  - https://github.com/thenativeweb/wolkenkit-eventstore /AGPLv3/202111/js/v4未使用
     - eventstore for Node.js that is used by wolkenkit.
+    - supported databases: in-memory/mongodb/mysql/pg
   - https://github.com/thenativeweb/wolkenkit-boards /js
     - a tool for collaboratively organizing notes.
     - backend is powered by wolkenkit.
@@ -312,6 +322,30 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/bahatron/mercurios /ts
   - Event Sourcing with PostgresSQL
   - Event ordering is not guaranteed. However, it's possible to use expectedSeq when publishing to control the order of events in a stream
+
+- https://github.com/eugene-khyst/postgresql-event-sourcing /java
+  - A reference implementation of an event-sourced system that uses PostgreSQL as an event store
+  - Run PostgreSQL, Kafka and event-sourcing-app
+  - We can store all changes to the domain object state as a sequence of events in an append-only event stream. 
+    - Thus, **event streams will contain an entire history of changes**.
+    - But how can we be sure that this history is authentic and error-free? We can use event streams as a primary source of truth in a system.
+    - To get the current state of an object, we have to replay all events in the order of occurrence. This pattern is called event sourcing. 
+  - The audit trail (also called the audit log) is a chronological record of the history and details of the actions that affected the system. 
+    - Event sourcing is an industry standard for implementing audit trail.
+  - State-oriented persistence (CRUD) applications store only the latest version of an entity. Database records present entities. 
+  - Event sourcing applications persist the state of an entity as a sequence of immutable state-changing events.
+  - An entity in event sourcing is called an aggregate.
+  - A sequence of events for the same aggregate is called a stream.
+  - Event sourcing is best suited for short-living entities with a small total number of events (e.g., orders).
+  - For endlessly stored entities (e.g., users, bank accounts) with thousands of events restoring state by replaying all events is not optimal, and snapshotting should be considered.
+  - Snapshotting is an optimization technique where a snapshot of the aggregate's state is also saved, so an application can restore the current state of the aggregate from the snapshot rather than from all the events.
+  - On every `nth` event, make an aggregate snapshot by storing an aggregate state and its version.
+  - The read model is a "denormalized" view of the write model
+    - Read models are projections of the system state. Therefore, read models are also known as projections.
+  - CQRS is a self-sufficient architectural pattern and doesn't require event sourcing. 
+    - But in practice, event sourcing is usually used in conjunction with CQRS. 
+    - Event store is used as a write database, and SQL or NoSQL database as a read database.
+    - Commands generate events. 
 # es-collab
 - https://github.com/andykswong/mithic /MIT/ts
   - https://andykswong.github.io/mithic/
@@ -384,30 +418,6 @@ modified: 2023-09-12T09:37:22.608Z
   - https://github.com/wasmCloud/wasmCloud
     - https://wasmcloud.com/docs/intro
 
-- https://github.com/eugene-khyst/postgresql-event-sourcing /java
-  - A reference implementation of an event-sourced system that uses PostgreSQL as an event store
-  - Run PostgreSQL, Kafka and event-sourcing-app
-  - We can store all changes to the domain object state as a sequence of events in an append-only event stream. 
-    - Thus, **event streams will contain an entire history of changes**.
-    - But how can we be sure that this history is authentic and error-free? We can use event streams as a primary source of truth in a system.
-    - To get the current state of an object, we have to replay all events in the order of occurrence. This pattern is called event sourcing. 
-  - The audit trail (also called the audit log) is a chronological record of the history and details of the actions that affected the system. 
-    - Event sourcing is an industry standard for implementing audit trail.
-  - State-oriented persistence (CRUD) applications store only the latest version of an entity. Database records present entities. 
-  - Event sourcing applications persist the state of an entity as a sequence of immutable state-changing events.
-  - An entity in event sourcing is called an aggregate.
-  - A sequence of events for the same aggregate is called a stream.
-  - Event sourcing is best suited for short-living entities with a small total number of events (e.g., orders).
-  - For endlessly stored entities (e.g., users, bank accounts) with thousands of events restoring state by replaying all events is not optimal, and snapshotting should be considered.
-  - Snapshotting is an optimization technique where a snapshot of the aggregate's state is also saved, so an application can restore the current state of the aggregate from the snapshot rather than from all the events.
-  - On every `nth` event, make an aggregate snapshot by storing an aggregate state and its version.
-  - The read model is a "denormalized" view of the write model
-    - Read models are projections of the system state. Therefore, read models are also known as projections.
-  - CQRS is a self-sufficient architectural pattern and doesn't require event sourcing. 
-    - But in practice, event sourcing is usually used in conjunction with CQRS. 
-    - Event store is used as a write database, and SQL or NoSQL database as a read database.
-    - Commands generate events. 
-
 - https://github.com/alicanli1995/clean-hexagonal-architecture-kafka-saga-outbox /java
   - Food Ordering Project with Clean and Hexagonal Architecture With Kafka Messaging System And Outbox Table
   - Hexagonal (Clean) Architecture -> Port & Adapter Style
@@ -423,6 +433,13 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/andreschaffer/event-sourcing-cqrs-examples /java
   - examples of how to use Event Sourcing and CQRS applied to a minimalistic bank context.
+  - In a distributed world, event timestamps are unreliable for ordering - machines have their own clocks.
+    - Instead we can make the ordering explicit with an event version. 
+  - In this project we use event versioning in two ways
+    - In the write/command side, we use it for protecting ourselves from race conditions via optimistic locking;
+    - In the read/query side, we use it for commutative reasons, meaning events can come out of order and we can still handle them properly.
+    - If you are interested in this topic, we also recommend reading about Lamport timestamps and Vector clocks as alternatives.
+
 - https://github.com/asimkilic/cqrs-event-sourcing-with-kafka /java
   - Use the mediator pattern to implement command and query dispatchers
   - Implement an event store/write database in MongoDB
@@ -562,11 +579,20 @@ modified: 2023-09-12T09:37:22.608Z
   - an implementation of Read/Write Stack Architecture that is well-known as Flux/CQRS.
   - Almin provides some patterns, is not a framework.
 
-- https://github.com/remesh-js/remesh /ts
+- https://github.com/YisusYaro/typescript-ddd-example /ts
+  - Typescript example using driven domain design and cqrs.
+
+- https://github.com/remesh-js/remesh /608Star/MIT/202307/ts
   - https://remesh-js.github.io/remesh/dist/index.html
   - CQRS-based DDD framework for large and complex TypeScript/JavaScript applications
+  - 依赖rxjs
   - Framework-agnostic(officially supports React/Vue)
   - Time-Travel/Undo/Redo supports(via remesh/modules/history)
+  - Domain-Driven-Design inspired the conceptual model
+  - CQRS/ES inspired the architecture model
+  - Redux inspired the implementation of command model
+  - Recoil inspired the implementation of query model
+  - Rxjs inspired the implementation of the event model
 
 - https://github.com/sebastianwessel/purista /ts
   - A backend framework for keeping professional software development fast, efficient
@@ -646,6 +672,10 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/serverlesstechnology/dynamo-es /rust
   - An implementation of a cqrs event store using AWS DynamoDB.
   - A DynamoDB implementation of the PersistedEventRepository trait in cqrs-es.
+
+- https://github.com/brendanzab/chronicle /201703/rust
+  - An event sourced CQRS framework for Rust
+  - [A reading list that I'm collecting while building my Rust ES+CQRS](https://gist.github.com/brendanzab/a6073e73f751a6ca9750f960a92f2afe)
 # utils
 - https://github.com/futurist/edata /js
   - Turn javascript data into observable reactive EventEmitter with value getter/setter, lodash style path, and keep Event Sourcing in mind.
@@ -694,10 +724,19 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/dasmeta/event-manager-backend /ts
   - Node.js backend that handles event store, monitoring and retries
   - The service is based on Strapi JS framework.
-# state-management
+# redux-like-state-management
 - tips
   - redux/logux
   - event-store类似内存数据库，也可作为一种状态管理方式
+
+- https://github.com/Skutopia-org/es-reduxed /ts
+  - offers an easy way to build an event-sourced backend using the redux pattern javascript developers are familiar with.
+  - Comes with a Postgres backed event store
+  - Setting up Redux-Devtools for serverside debugging
+  - Events and actions are very similar, and the difference is mostly a matter of semantics, but in programming, semantics matter. 
+    - Events describe something that occurred in the past tense, and may include a payload of data describing what happened
+    - Actions describe an imperative behaviour or command. They are analogous to CQRS style commands, but not strictly. Actions describe a thing that is occurring or must occur
+    - es-reduxed recommends always using events written in the past tense for your event sourcing solution.
 
 - https://github.com/flux-capacitor/flux-capacitor /MIT/js/inactive
   - Flux architecture for the backend. Realtime data and time travel capabilities included.
@@ -723,15 +762,27 @@ modified: 2023-09-12T09:37:22.608Z
   - Use this library on your Node.js backend to easily write Redux-style events (usually known as actions) to an Event Store stream.
   - You can also subscribe a Redux store (still on the backend) to the stream, allowing you to page through all the events and reduce it to the current, in-memory state.
 
+- https://github.com/pinyin/flock-js /201902/ts
+  - Coordinate React components' states with event sourcing.
+  - Inspired by Flux, Redux and Redux Saga.
+
 - https://github.com/event-storm/event-storm /js
   - In-memory event store. A powerful, framework-agnostic store management library.
+
 - https://github.com/XSpecs/DDK /ts
   - An Event-Storm to Event-Sourced application library
   - Some versions of this library has been used to build a number of applications for enterprise clients at our sister company Xolvio
 
 - https://github.com/coderwhy/hy-event-store /js
   - 一个基于事件的全局状态管理工具，可以在Vue、React、小程序等任何地方使用。
+
+- https://github.com/ngxs/store /ts
+  - State Management for Angular
 # examples
+- https://github.com/thenativeweb/wolkenkit-boards /js
+  - a tool for collaboratively organizing notes.
+  - backend is powered by wolkenkit.
+
 - https://github.com/TomaszRewak/TimeWriter /js/依赖少/inactive
   - https://text-sourcing.tomasz-rewak.com/
   - An online collaborative text editor based on event sourcing architecture.
@@ -754,8 +805,9 @@ modified: 2023-09-12T09:37:22.608Z
   - https://field-journal.pages.dev/
   - An experimental browser-based, offline-first, event-sourced dispatching, messaging, and incident tracking application.
 
-- https://github.com/StratoKit/strato-db /js
+- https://github.com/StratoKit/strato-db /7Star/MIT/202307/js
   - MaybeSQL with Event Sourcing based on SQLite
+  - This project is used in production environments.
   - It works fine with multi-GB databases, and if you choose your queries and indexes well, you can have <1ms query times.
   - Multi-process behavior is not very worked out for the EventSourcingDB
 
@@ -766,6 +818,24 @@ modified: 2023-09-12T09:37:22.608Z
   - We recently finished work on a system in which we built an Event Source system. This application is a demo of the architecture we produced.
   - This application is a simple Kanban. It only allows for minimal board and story management.
   - The API application is a common gateway layer between Command and Query applications. The lower applications are separated in typical CQRS fashion. It is a Spring Boot 2 application and is simply a proxy service to the lower apps.
+
+- https://github.com/leweohlsen/kiba /ts
+  - event-driven kiosk and bank system - built with React and Electron
+  - kiosk and bank system for hassle-free management of accounts, groups, products and transactions
+  - React is used along with the UI component library Ant Design and Redux Toolkit is used for state-management
+  - All transactions (add account, add product, checkout products, ...) are persisted to a JSONL file. When the application is opened, all historic transactions are replayed to generate the current state (e.g. account balances). 
+  - The idea is to keep a complete explainable history that can be inspected in a separate view. Historical events can be used to derive statistics.
+
+- https://github.com/sustainablepace/redux-chess /201708/js
+  - React and Redux, CQRS and Event Sourcing
+
+- https://github.com/joeltadeu/bank-account /202201/java
+  - Learn to build distributed Event-driven Microservices, CQRS, Event Sourcing using Kafka, MySQL and MongoDB
+
+- https://github.com/dgonzo/eventsourcing-kanban /201710/python
+  - Example application to document python eventsourcing library
+- https://github.com/Shaibujnr/kanban-ddd /python
+  - Simple kanban project 
 # server-sent events
 - https://github.com/dpskvn/express-sse
   - An Express middleware for quick'n'easy server-sent events.

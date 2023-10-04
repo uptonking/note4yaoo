@@ -12,6 +12,16 @@ modified: 2023-09-13T14:37:51.659Z
 # blogs
 - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
 
+## [Picking the Event Store for Event Sourcing_202105](https://blog.jaykmr.com/picking-the-event-store-for-event-sourcing-988246a896bf)
+
+- In a relational database, event sourcing can be implemented with only two tables, 
+  - one to store the actual Event Log, storing one entry per event in this table 
+  - and the other to store the Event Sources. 
+- The event itself is stored in the [Data] column. The event is stored using some form of serialization, for the rest of this discussion the mechanism will be assumed to be built-in serialization although the use of the memento pattern can be highly advantageous.
+
+- In conclusion, each data store has its strengths and limitations for Event Sourcing. 
+  - It is essential to consider factors such as scalability, consistency, sequencing, transactionality, and query support when selecting a suitable data store for an event-sourced system.
+
 ## [Building offline-first web and mobile apps using event-sourcing_201907](https://flpvsk.com/blog/2019-07-20-offline-first-apps-event-sourcing/)
 
 ## 📝 [Mistakes we made adopting event sourcing (and how we recovered)_201906](http://natpryce.com/articles/000819.html)

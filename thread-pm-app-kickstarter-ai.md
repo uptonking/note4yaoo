@@ -16,7 +16,18 @@ modified: 2023-04-04T03:59:40.928Z
 ## resources
 
 - [AIGC交流群工具沉淀](https://bytedance.feishu.cn/base/AIMAbnJxQaNgSGsBAtwcdAkLnvf)
+# discuss-stars
+- ## 
+
+- ## 美国版权局的裁决，midjourney生成的图片是没有版权保护的，因为使用AI的作者对于结果是不可控的，无法提前预测Midjourney会创造什么。
+- https://twitter.com/dotey/status/1709310018795770358
+  - 美国版权局认为AI创作的漫画书是可以注册版权的。首先漫画书中的文字、对话是作者写的 然后漫画书中由AI生成的图片是由作者"选择、提炼、裁剪、定位、装帧和安排 “的，这体现了作者的创造力
+  - 但回到最开始的问题，单独的AI生成的图片还是没有版权保护的，除非你进行了二次的编辑创作。
+
+- 如何定义二次创作? 这是一个不断提高认知的过程
 # discuss
+- ## 
+
 - ## 
 
 - ## now instead of websites looking mostly the same due to the lack of creative courage, they're now going to look exactly the same due to AI. Cool cool. Good job, industry.
@@ -49,9 +60,9 @@ modified: 2023-04-04T03:59:40.928Z
 - https://twitter.com/buaaxhm/status/1690559087216578560
   - 感觉他们觉得大模型能干所有事情
 - 在谈的合作里都有哪些需求呢？
-  1.       你们能不能弄个大模型，解决一下演唱会结束交通拥堵的问题
-  2.       你们能不能弄个养老大模型
-  3.       你们弄不能弄一个养猪大模型
+  01.       你们能不能弄个大模型，解决一下演唱会结束交通拥堵的问题
+  02.       你们能不能弄个养老大模型
+  03.       你们弄不能弄一个养猪大模型
 - 这对你们公司是好事，他们要拿这些大概念去申请经费，至于有没有实际效果那是排在第二等级。做政府项目跟纯互联网有很多不同，不只是技术问题
   - 做政府项目其实不怎么赚钱 回款很慢的
   - 能回款就不错了，3年5年都行。现在也已经过了互联网大爆发的时代了，企业要活命，没得选，腾讯，阿里要去做政府项目他们可以签1元钱的合同

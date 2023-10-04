@@ -36,8 +36,9 @@ modified: 2022-11-04T14:21:31.365Z
   - It can be used on an existing database, however, UUIDs will make multi-master distribution substantially easier.
   - Instead of storing the transactions as a separate lmdb commit, I decided to store the database in a git repository and expose the diffs using sqlite's sqldiff utility. This allowed my workflow to be almost unchanged and limits the dependencies to git, sqlite, sqldiff, & bash.
 
-- https://github.com/StratoKit/strato-db /js
+- https://github.com/StratoKit/strato-db /7Star/MIT/202307/js
   - MaybeSQL with Event Sourcing based on SQLite
+  - This project is used in production environments.
   - It works fine with multi-GB databases, and if you choose your queries and indexes well, you can have <1ms query times.
   - Multi-process behavior is not very worked out for the EventSourcingDB
 # collab

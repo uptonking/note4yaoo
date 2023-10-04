@@ -19,6 +19,13 @@ modified: 2023-07-01T07:14:31.456Z
   - flatpak安装后命令行默认无命令
   - flatpak安装的chrome默认使用系统代理，但edge却不使用系统代理
   - 拖拽问题
+# nix
+- [nix.dev documentation](https://nix.dev/)
+  - Reproducible development environments
+  - Easy installation of software over URLs
+  - Easy transfer of software environments between computers
+  - Avoidance of version conflicts with already installed software
+  - First-class cross compilation support
 # discuss
 - ## 
 

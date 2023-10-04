@@ -22,7 +22,16 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
+- ## People often find it strange that I never use `console.log` to debug things when I'm coding in JavaScript.
+- https://twitter.com/trueadm/status/1709361643535143316
+  - Personally, using `debugger` statements and breakpoints work better for my mental mindset. I often want to inspect the call-stack, or check various values at their point in time. However, I can see why folks love using `console.log` too.
+  - I don't think one is better than the other – stick with whatever works best for you!
+
+- Console.log is mood anyway since the introduction of logpoints in Chrome (and likely others)
+
+- I’ve started to often prefer console.warn to console.log for debugging. In many situations, it appears a good balance. It doesn’t interrupt the flow but shows a call stack
+
+- I use console.log for time series data and “debugger” for things that’s don’t involve a time element. Plays to the strengths of both choices!
 
 - ## So much of SaaS is: build an API to wrap your database so that I can parse the JSON and put it into my own database
 - https://twitter.com/_swanson/status/1704703441338053020

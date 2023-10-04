@@ -186,6 +186,13 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/oslabs-beta/ZusTime
   - With ZusTime you can inspect your Zustand store and application by stepping both forward and backwards in your code, allowing you to visualize snapshots of state at various points in time. 
   - This type of debugging tool limits the need for countless console logs and prevents you from having to run your application over and over again
+
+- https://github.com/facebookarchive/flux /js/archived
+  - https://facebookarchive.github.io/flux/
+  - Application Architecture for Building User Interfaces
+  - An application architecture for React utilizing a unidirectional data flow.
+  - Flux is more of a pattern than a framework, and does not have any hard dependencies. However, we often use EventEmitter as a basis for Stores and React for our Views.
+  - The Flux project has been archived and no further changes will be made. We recommend using more sophisticated alternatives like Redux, MobX, Recoil, Zustand, or Jotai.
 # event pub/sub
 - EventEmitter /3kStar/Unlicense/202001/js/NoDeps
   - https://github.com/Olical/EventEmitter

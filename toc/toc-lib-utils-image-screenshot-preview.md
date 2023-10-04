@@ -189,3 +189,11 @@ modified: 2023-04-16T13:34:33.706Z
 # more
 - https://github.com/antfu/broz
   - A simple, frameless browser for screenshots
+# discuss
+- ## 
+
+- ## 
+
+- ## ✨ How do you create the animations for that video? (demo source code)
+- https://twitter.com/elie2222/status/1708888899685433410
+- 👉🏻 Learn how to animate code (and more) using Apple Keynote by using magic move!
