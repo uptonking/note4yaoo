@@ -14,7 +14,67 @@ modified: 2023-09-13T14:28:01.426Z
 
 - ## 
 
-- ## 🤔 [Sagas should rather be totally autonomous · redux-saga/redux-saga](https://github.com/redux-saga/redux-saga/issues/8)
+- ## 
+
+- ## [Local-first software: You own your data, in spite of the cloud | Hacker News_201905](https://news.ycombinator.com/item?id=19804478)
+- I think OT systems are way simpler to reason about, because they’re just an extension of event sourcing. Also CRDTs type implementations have been trailing OT algorithms in terms of features forever. OT got JSON editing support first, and JSON1 also supports arbitrary tree reparenting, which as far as I know is missing from all CRDT algorithms. That’s needed to implement apps like workflowy, where you can drag trees around.
+  - CRDT algorithms have documents which grow without bound. With OT, the documents are always minimal and it’s easy to reason about (and implement) trimming operations.
+  - CRDTs are a better tool for distributed applications, but for server client stuff OT works fine.
+
+- I do agree tho, most CRDT implementations have just as many scaling and compaction problems as any append-only log system.
+
+- ## 👥 [Show HN: Pg_CRDT – an experimental CRDT extension for Postgres | Hacker News_202212](https://news.ycombinator.com/item?id=33931971)
+
+- Just store all updates - as if you do event sourcing - ordered by a timestamp. 
+  - The list of updates will eventually converge as will any function of that list, including any function that merges all the updates into a current state. 
+  - You might have to [partially] reevaluate the function in case a delayed update shows up and has to be inserted into the middle of the list of updates. 
+  - So I guess there are additional requirements in order to qualify as a CRDT, bounded additional space or bounded amount of computation on updates. But I don't know as it turned out my understanding of what qualifies as a good CRDT was too narrow.
+- Yeah **event sourcing and what you described is what these libraries are calling delta CRDTs**. The appeal is they’re hiding away the actual event log, metadata and rebasing/merging parts and exposing data types that look something like what you’d normally use.
+  - And if you tie the conflict resolution logic to the individual delta operations, you get Operational Transforms.
+
+- ## [What they don’t tell you about event sourcing | Hacker News_201808](https://news.ycombinator.com/item?id=17817375)
+- The ideal situation is to create migrations that can always be rolled back, but sometimes this is not possible to do operationally. 
+  - The problem with undoing operations via new events is the same thing -- unless you have foreknowledge of this kind of problem, it is very easy to accidentally create events that perform un-undoable actions. A very simple example of a problematic event would be something that modifies a foreign-key relationship
+- Basically implement double entry accounting.
+  - I think ideally you want something like Rich Hickey speaks about when he speaks of Datomic. An append only database. You can see what the previous values for that row were, along with schema changes.
+- I worry about GDPR with respect to Kafka and other append-only databases.
+  - You can encrypt events and throw away the keys, if data should be made inaccessible. Of course, it adds complexity. But its already being done.
+- If you need to change history you can just create new events that accomplish your mutation -- and even mark them as a type 'change history' or some such obvious identifier so when you inspect the event stream you know exactly what you are looking at.
+
+- I've spent the last year migrating to an event sourced system, so thought I'd share some thoughts.
+  - On the eventual consistency point, I've found you can get quite far with having the read model managing the race condition. This probably doesn't work everywhere
+  - Coming up with the event schema and versioning/granularity are hard. We have version numbers on all our events to make this a bit more manageable/explicit
+  - Storing events in a relational database does make it a bit easier to go back and edit/upgrade/delete them (sort-of cheating, but also relevant for GDPR). 
+  - Also, I think we're going to end up suffering a bit from the 'whole system fallacy', but at the moment namespacing all the events (keeping in mind their expected volume) makes it a lot easier to manage
+
+- I don't see much discussion of event-sourcing simply using a SQL database (i.e. skipping the CQRS part). This would allow you to keep your CP (strongly-consistent) semantics.
+  - TLDR: orm’s + large transactions resulted in a lot of unexpected complexity.
+
+- I was doing event sourcing in 2010, and loved it. It was incredible. But by the time I started hearing people call it "event sourcing" I had already moved on to: State-based, graph CRDTs. They combine the best of event sourcing with the best of distributed state replication. 
+  - Now even the Internet Archive[1] is running it (in 2014 I implemented it into a library that they are now using gundb)
+
+- ## 💡 [What every software engineer should know about Apache Kafka | Hacker News_202005](https://news.ycombinator.com/item?id=23206566)
+- Is using a distributed log as the WAL component of a event-sourcing or distributed database entirely a bad idea? I am of the opinion that it is a viable but sophisticated approach.
+
+- I worked on a project that used CQRS and Event Sourcing years ago. It was an unmitigated disaster, never made it out of prototype phase.
+  - By using Kafka (or anything else) as a "commit log" you've just resigned yourself to building the rest of the database around it. In a real RDBMS the commit log is just a small piece of maintaining consistency.
+  - Every time I've worked on a project where we handle our own "projections" (database tables) we ended up mired(陷入困境/陷入泥潭) deep in the consistency concerns normally handled by our database.
+- 🤔 Whats so hard? 
+- **Compaction is an evil problem**. We figured we could "handle it later". Well it turns out maintaining an un-compactible commit log of every event even for testing data consumes many terabytes. This and "replays" sunk the project indirectly.
+- Replays. The ES crowd pretends this is easy. It's not. If you have 3 months of events to replay every time you make certain schema changes you are screwed. 
+- Data duplication. Turns out "projecting" everything everywhere is way worse on memory and performance than having the DB thats handling your commit log also store it all in one place. Who knew.
+- Data corruption. If you get one bad event somewhere in your commit log you are cooked. This happens all the time from various bugs. We resorted to manually deleting these events, negating all the supposed advantages of an immutable commit log. We would have been fine if we let the db handle the commit log events.
+- Questionable value of replays. You go through a ton of bs to get a system that can rewind to any point in time. When did we use this functionality? Never. We never found a use-case. When we abandoned ES we added Hibernate Auditing to some tables. Its relatively painless, transparent, and handled all of our use cases for replays
+
+- In DBMS the "source of truth" is the log
+  - that's only true in the (frequent) case of write-ahead logs. 
+  - Some database engines may use Rollback logs, or undo logs.
+
+- 
+- 
+- 
+
+- ## 💡 [Sagas should rather be totally autonomous · redux-saga/redux-saga](https://github.com/redux-saga/redux-saga/issues/8)
 - You have to consider the source of truth according to what you will want to record / replay and how the derived source of truth should behave after code change.
 - 👉🏻 state sourcing
   - If you consider state as a source of truth, then you can record state and replay them in the same React app.
@@ -223,6 +283,23 @@ that commit position, thus providing "read your own writes" semantics.
 # discuss-cqrs
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [CQRS and Event Sourcing Intro for Developers | Hacker News_201905](https://news.ycombinator.com/item?id=19978091)
+- Like anything else, it's one tool in the tool bag, but like that giant pipe wrench that you're always looking for a reason to use, it's almost always the wrong tool for the situation. 
+  - CQRS carries horrific complexity and requires commitment to a handful of golden rules or the entire thing comes crashing down.
+- What are the golden rules?
+- Two bigs ones for me:
+  - Don't use the read side from the write side.
+  - Each aggregate should own its data (or more abstractly, the basics of DDD, bounded contexts).
+- Every state change needs to be reflected as event. Does your function need to save something to DB? Then your functionality should create event which will perform the DB save.
+
+- Has anyone tried doing Event sourcing with a redux app? I'd be pretty interested to see the same "store" working on frontend and backend and every redux event being queued up and (eventually) synced to the server to provide a log of what happened. Obviously this leads to building an analytics system for your product quite quickly.
+  - Redux pretty much is CQRS + event sourcing, as applied using functional paradigms.
+  - Same for Re-frame in CLJS
+
 - ## [CQRS in Node.js](https://www.reddit.com/r/node/comments/tm33nh/cqrs_in_nodejs/)
 - It is advisable to begin with the simplest architectures and add complexity when needed. 
 - If this proves to be non-viable, check to see if a materialized view (or a materialized projection via $out in case of MongoDB) can fulfill your needs. 
@@ -237,17 +314,21 @@ that commit position, thus providing "read your own writes" semantics.
 # discuss-collab
 - ## 
 
-- ## 
+- ## [Lasp: a little further down the Erlang rabbithole | Hacker News](https://news.ycombinator.com/item?id=14300763)
 
-- ## My favourite thing about CRDTs (and event sourced data in general) is that they force us to consider the meaning of time and order as it relates to information.
-- https://news.ycombinator.com/item?id=14304306
+- ## [Lasp: a little further down the Erlang rabbithole | Hacker News_201705](https://news.ycombinator.com/item?id=14300763)
+- My favourite thing about CRDTs (and event sourced data in general) is that they force us to consider the meaning of time and order as it relates to information.
   - When handled with clarity of thought there are flow on effects in correctness of processing
   - The downside is that popular frameworks don't mesh well, or at all, with this paradigm. Trying to shoehorn(强挤硬塞) event-based data into say, Rails (which I've done), is an frustrating exercise in resolving massive impedance mismatches and growing technical debt. 
   - Turns out most database-driven MVC frameworks have a very limited understanding of time and order.
   - CQRS helped here, because I realised that my MVC can and should just be a view & query layer, and I should be building the event sourced/CRDT-based logic elsewhere.
-- I've found that many of the modern JavaScript UI libraries play very well with event sourcing, IMHO. React and Vue.js in particular work very well when combined with Redux/Vuex and a CRDT database. Both of those stores are essentially event sources themselves, where the actions and mutators are separated and the data store itself is updated only in one place. 
+- I've found that many of the modern JavaScript UI libraries play very well with event sourcing, IMHO. 
+  - React and Vue.js in particular work very well when combined with Redux/Vuex and a CRDT database. 
+  - Both of those stores are essentially event sources themselves, where the actions and mutators are separated and the data store itself is updated only in one place. 
 - What CRDT databases do you use in this sort of application?
-  - Currently leveraging CouchDB and it's incremental map-reduce to handle the "CRDT" merging of an event stream. Technically I'm not using a CRDT library or DB, but it's surprisingly easy to implement the core "commutative operations" of CRDT's via a modified deep-merge versioning algorithm.
+  - Currently leveraging CouchDB and it's incremental map-reduce to handle the "CRDT" merging of an event stream. 
+  - Technically I'm not using a CRDT library or DB, but it's surprisingly easy to implement the core "commutative operations" of CRDT's via a modified deep-merge versioning algorithm.
+  - Works pretty well as I can deploy 20, 000+ user interactions on an embedded CouchDB instance with steady performance.
 
 - 
 - 
@@ -260,6 +341,38 @@ that commit position, thus providing "read your own writes" semantics.
 - ## 
 
 - ## 
+
+- ## [Ask HN: Options for handling state at the edge? | Hacker News_202205](https://news.ycombinator.com/item?id=31342436)
+- 
+- 
+
+- There are many technical solutions to this problem, as others have pointed out. What I would add is that data at the edge should be considered immutable.
+- Event Sourcing is the most popular implementation of a history of immutable events. But I have found that a different model works better for data at the edge. An event store tends to be centrally localized within your architecture. That is necessary because the event store determines the one true order of events. 
+  - But if you relax that constraint and allow events to be partially ordered, then you can have a history at the edge. 
+  - If you follow a few simple rules, then those histories are guaranteed to converge.
+
+- Check out Macrometa, a data platform that uses CRDTs to manage state a N number of pops and also does real time event processing. - https://macrometa.com (full disclosure, I work at Macrometa)
+
+- ## [Damn Cool Algorithms: Log structured storage (2009) | Hacker News_201705](https://news.ycombinator.com/item?id=14447727)
+- Slightly related perhaps and something I have been curious about for a while... event sourcing seems like a very powerful pattern that I haven't seen wide adoption. The best documentation seems to be some MS dev library notes and a discussion from M Fowler.
+- 🤔 Are there any open source implementations of a database that uses event sourcing?
+- I built https://github.com/amark/gun after I was using MongoDB to event source data. The key piece for me was wanting to have Firebase-like realtime sync for my event sourcing.
+- I've become a bit of a CouchDB zealot of late for this exact reason... Native support for incrementally updating map-reduce combined with change-feeds makes implementing event sourcing straightforward. 
+  - If you wanted to reimplement event sourcing in couch, it can be implemented as a versioned merge in a map-reduce view that takes a sequential ordered events (e.g. ui-event:0000025) and maps those changes into a "versioned" JSON. This versioned JSON changes leaf values into versioned objects like "fieldValue": { "_val": 34.00, "_ver": 25 } which I call property fields. This is necessary because CouchDB is a B+Tree implementation and reduce operations are sequential but not contiguous. The reduce phase merges all events sequentially by choosing property fields with the latest event – making it a CRDT type – and resulting in a single JSON document with the latest fields with "_ver" info for each. This scheme has a drawback that each event needs to have a unique serially ordered ID to work. Not sure how time stamps would work. I chose the ID based scheme to allow the UI be able to know when a user interaction conflicts (a vector clock between) and let it display the conflict to the user or decide how to merge the knew state.
+
+- ## 💡 [Eventual Business Consistency | Hacker News_202308](https://news.ycombinator.com/item?id=37009296)
+- Another approach to this kind of thing would be storing most of your data as a log of events ("event sourcing") and having "Retroactive Address Change" as its own business-process, one which can be linked to the other steps like sending a refund check or crediting an account.
+- I have never seen a productive application of event sourcing at scale. The idea is super elegant but there’s so much extra overhead. Your data size is easily 10x bigger, unless things nearly never change anyway (and then why do it, right?). Even simple things such as fixing a typo require a Command to be stored as an Event etc etc. Fixing fuckups by manual database edits / script runs gets harder because it means you’ll create a mismatch between the events and the main db, so you ought to inject events instead, but you’re under time pressure so what to do, and the list goes on. I wish these things weren’t issues because in a very real way event sourcing feels like the “obviously best way” to deal with pretty much any kind of structured data storage. I want it to succeed.
+- Does anyone know of a system that successfully did/does event sourcing at scale?
+  - The git version control system.
+  - Git doesn't really. It does have a (more or less) immutable, append-only model, but the things stored in git are state snapshots, not events. The UI does tend to present it as if it were events but that's just for convenience.
+- I've implemented a system that uses event sourcing at "scale" (YMMV at what is "scale").
+  - it has distinct advantages when in production and in the CI/CD deployment. It has additional complexity at the architecture and high level design phase and it needs some standardized libraries and infrastructure to support the necessary features (primarily the internal synchronization of entity/event processing between threads/processes to ensure monotonic updates of the state of the entity).
+
+- Event sourcing and CRDT like distributed data using something like the Event Calculus?
+
+- 
+- 
 
 - ## [Library for building event sourced systems in Go_201508](https://www.reddit.com/r/golang/comments/3i7kgx/library_for_building_event_sourced_systems_in_go/)
 - I've been experimenting a lot with event sourcing, explaining the concept to people and building small applications using this approach. After many iterations I've finally settled on a way of doing things and cast that into code.

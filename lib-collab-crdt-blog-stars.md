@@ -64,7 +64,7 @@ modified: 2023-03-11T15:37:59.134Z
 - Can you expand? "Transaction" is a bit of a squishy word, but isolated transactions are only possible in a CRDT if you sacrifice durability. I believe durable transactions are possible but AFAIK it has never been demonstrated and would be research-level work.
   - It is certainly possible to have a server be one of the nodes in a CRDT, but it is not easy to have the server actually be authoritative. You can filter operations before applying to server but (a) this is difficult to do well because you end up having to reverse engineer intent, and (b) you have to do something about the client that has now diverged.
 
-## 📝 [You might not need a CRDT | Drifting in Space](https://driftingin.space/posts/you-might-not-need-a-crdt)
+## 📝 [You might not need a CRDT | Drifting in Space_202212](https://driftingin.space/posts/you-might-not-need-a-crdt)
 
 - CRDTs differ from simple leader/follower replication in that they do not designate an authoritative source-of-truth that all writes must pass through.
   - Instead, all replicas are treated as equal peers. 
@@ -108,7 +108,7 @@ modified: 2023-03-11T15:37:59.134Z
 - Although CRDTs aren’t always the best solution for always-online collaborative apps, it’s still fascinating tech that has real use cases.
   - Apps that need to run offline in general are good candidates for CRDTs.
 
-## 👥 [You might not need a CRDT | Hacker News](https://news.ycombinator.com/item?id=33865672)
+## 👥 [You might not need a CRDT | Hacker News_202212](https://news.ycombinator.com/item?id=33865672)
 
 - This is the most underrated problem with CRDTs:
   - > Both paths will allow us to ensure that each replica converges on the same state, but that alone does not guarantee that this state is the “correct” state from the point of view of user intent.
@@ -123,7 +123,24 @@ modified: 2023-03-11T15:37:59.134Z
   - It's possible for two users to add that caption to the figure concurrently, Yjs will happily merge its XMLFragment structures and place two captions in the figure. However when this is loaded into ProseMirror it will see that the document does not match its schema and dump the second caption. 
   - This is all ok if you are doing the merging on the front end, but if you try to merge the documents on the server, not involving ProseMirror, the structure you save, and potentially index or save as html, will be incorrect.
   - Point is, it's still essential with CRDTs to have a schema and a validation/resolution process. That or you use completely custom CRDTs that encodes into their resolution process the validation of the schema.
-- I'm surprised that MS's concurrent revisions [1] haven't taken off because this is what they do by default: you specify a custom merge function for any versioned data type so you can resolve conflicts using any computable strategy.
+- I'm surprised that MS's concurrent revisions haven't taken off because this is what they do by default: you specify a custom merge function for any versioned data type so you can resolve conflicts using any computable strategy.
+
+- There's actually an approach that sits in between this and formal CRDTs.
+  - I had the same insight that **having a total ordered log of changes solves a lot of the issues with concurrent updates**. 
+  - We solved this by creating one sequence CRDT that ensures all events from clients eventually end up in the same order and then our data structures are just reductions over those events. 
+  - It's a little bit like a distributed, synchronized Redux store. 
+  - This let us avoid having to think in terms of CRDT types (LWW registers, Grow-only sets, sequences, etc) and just think in terms of the domain-specific business logic (e.g. "what should happen when someone marks a todo as done, after it's deleted?").
+- 🤔 Have you considered backing your application's state-synchronization with a centralized CQRS/ES event store? You get the same semantics, without paying the overhead of building them on top of a CRDT abstraction; and the event store itself also "knows" (in the sense that it supplies the framework and you supply the logic) how to reduce over states in order to build snapshot states ("aggregates") for clients to download for fast initial synchronization.
+  - We basically have that as well! We use CRDTs on the client to allow for optimistic updates and fast replication of events directly to other clients but we also do exactly what you describe on the server so that a user loading the data for the first time just gets the "snapshot" and then plays events on top of it.
+- Isn't that essentially doing a CRDT, but the replica is the whole datastore? Ties in nicely with event sourcing - the ordered sequence of events is the CRDT, and sending events between nodes are the delta states.
+- How do you solve the ordering? Timestamps can be wildly out of whack? Be interested to hear more
+  - We use logical timestamps instead of datetime.
+
+- CRDTs have been on HN a lot recently. I'm working on a database that deals in events rather than raw data. Application developers specify event handlers in JavaScript. The database layer then takes the event handlers and distributes them to the clients. Clients receive the raw stream of events and reconcile the final data state independently. The key aspect is all the event handlers are reversible. This allows clients to insert locally generated events immediately. If any remote events are received out-of-order, the client can undo events, insert the new events, and reapply everything on top of the new state.
+
+- 
+- 
+- 
 
 - ### You may not need crdt
 - https://twitter.com/aboodman/status/1663523389133434880

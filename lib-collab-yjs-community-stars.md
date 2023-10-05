@@ -74,20 +74,6 @@ modified: 2022-10-22T18:46:45.456Z
   - That may dwarf those 62+8 bytes. 
   - That's why Causal Tree (my RGAish algo) keeps the data in strings or typed arrays.
 
-- ## It looks like Automerge 2 latest is faster than Yjs, but still uses 2x more memory._202301
-- https://news.ycombinator.com/item?id=34586433
-  - Yjs (pure javascript?) is quoted on the paper benchmark at 1, 074ms and 10, 141, 696 bytes of memory, compared to Automerge 2.0.2-unstable at 661ms and 22, 953, 984 bytes of memory. 
-  - I wonder if this is comparing usage from JS via bindings, or directly comparing two different rust implementations, or comparing Automerge 2.0.2-unstable via Rust to Yjs via NodeJS.
-  - I am still not sure which set of tools I would recommend; I believe Yjs is more actively deployed in production since the Automerge implementation was so far behind performance wise until now. 
-  - However one of the Peritext authors (https://twitter.com/sliminality who is on my team at Notion) tells me that 👉🏻 Automerge is better at text because it doesn't suffer from interleaved characters like Yjs does. So consider it instead of Yjs!
-- 👉🏻 I’ve spent a lot of time benchmarking both libraries and talking to the authors. The main difference is that yjs has an extra optimization that’s still missing from automerge: Yjs does internal run-length encoding of adjacent inserted items. And adjacent inserts come up a lot in real text editing traces.
-  - Adding this optimization to diamond types, in pure rust, improved performance by another order of magnitude (25ms for the same test with this tweak). It also dropped memory usage to about 2MB. 
-  - The automerge engineers know about this trick (I’ve talked to them about it). So I assume it’s in the pipeline somewhere. And yjs is working on a rust reimplementation, which should bring its performance in line too.
-- This optimization is indeed in the pipeline, although there are other things nearer the front because performance is currently Good Enough ™ that other things are more pressing (other things being e.g. completing the Peritext implementation, improving the sync protocol).
-
-- diamond-types (for reference for others [0]) still only supports plain text, is that right? I was thinking of using it for more general use cases such as an offline habit tracker, which isn't text of course, but I was interested to hear more on the progress towards other data types such as generic JSON data.
-  - Currently for this use case I've been using autosurgeon [1] so far which has a nice Rust API for structs, even if it might be slower than yjs (or yrs, its Rust implementation) or diamond-types.
-- Yep; sadly still true. I started some work last year to simultaneously add support for arbitrary JSON data and add a database-like storage layer to allow us to safely stream changes to disk. (Automerge and yjs usually require the entire data set to be re-saved in its entirety when updates happen). Its taken longer than I thought, because I've gone through a bunch of different designs for both pieces. We'll get there; everything just takes longer than you want when you do it for the first time. I'll look at autosurgeon. Having similar APIs is good for everyone.
 
 - ## [Should we do state management directly with yjs, or through bindings like SyncedStore? - Yjs Community](https://discuss.yjs.dev/t/should-we-do-state-management-directly-with-yjs-or-through-bindings-like-syncedstore/1345)
 - It really depends. There are arguably nicer libraries for state management. 

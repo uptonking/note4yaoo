@@ -11,6 +11,12 @@ modified: 2023-09-07T15:59:12.947Z
 
 # blogs
 
+## [A New Direction for Iroh_202302](https://n0.computer/blog/a-new-direction-for-iroh/)
+
+- Iroh has been built as an implementation of the InterPlanetary File System (IPFS) focused on interoperability with Kubo, the reference implementation of IPFS. 
+  - In the near future Iroh will break interoperability with Kubo, with the goal of moving the IPFS project forward.
+- IPFS is a bunch of specs, and we're not breaking from all of them. Iroh is still an IPFS implementation: it continues to use CIDs.
+
 ## [You Don't Need A Blockchain](https://gist.github.com/joepie91/a90e21e3d06e1ad924a1bfdfe3c16902)
 
 - Blockchains aren't a desirable thing; they're defined by having trustless consensus, which necessarily has to involve some form of costly signaling to work; that's what prevents attacks like sybil attacks.
@@ -90,7 +96,6 @@ modified: 2023-09-07T15:59:12.947Z
 
 ### ref
 
-
 ## [IPFS and Friends: A Qualitative Comparison of Next Generation Peer-to-Peer Data Networks](https://arxiv.org/abs/2102.12737)
 
 ### ipfs
@@ -121,10 +126,6 @@ modified: 2023-09-07T15:59:12.947Z
 - Jerry Green made very well articulated points:
   1. Dat/Hypercore indeed is "for geeks interested in p2p" now, but I feel it is nearing the point where it can explode in usage. I am making this point in the above github repo https://github.com/tradle/why-hypercore
   2. The most interesting point you make, Jerry, is that the path to mainstream is in  "decoupling apps from data". I am working exactly on that right now!! 
-- 
-- 
-- 
-- 
 
 ## [Exploring Alternatives to the Centralized Web: ipfs/hypercore/ssb/bitTorrent](https://hypha.coop/dripline/p2p-primer-part-1/)
 

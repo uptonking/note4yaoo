@@ -12,7 +12,13 @@ modified: 2022-10-13T08:00:21.260Z
 - ref
   - [CRDT Tutorial for Beginners](https://github.com/ljwagerfield/crdt)
   - [arXiv: collaborative editing](https://arxiv.org/search/?query=collaborative+editing&searchtype=all&source=header)
-# [Building a BFT JSON CRDT](https://jzhao.xyz/posts/bft-json-crdt/)
+# 🪟 [Conflict-free Replicated Spread Sheets](https://www.bartoszsypytkowski.com/crdt-tables/)
+
+# 📝 [An Interactive Intro to CRDTs | jakelazaroff.com_202310](https://jakelazaroff.com/words/an-interactive-intro-to-crdts/)
+
+# 👥 [An interactive intro to CRDTs | Hacker News_202310](https://news.ycombinator.com/item?id=37764581)
+
+# 📝 [Building a BFT JSON CRDT](https://jzhao.xyz/posts/bft-json-crdt/)
 - CRDTs are a family of data structures that are designed to be replicated across multiple computers without needing to worry about conflicts when people write data to the same place. 
 - Traditional databases focus on a property called linearizability, which guarantees that all operations behave as if executed on a single copy of the data. 
   - Linearizability is a strong correctness condition, which constrains what outputs are possible when an object is accessed by multiple processes concurrently. It is a safety property which ensures that operations do not complete in an unexpected or unpredictable manner.
@@ -191,7 +197,7 @@ modified: 2022-10-13T08:00:21.260Z
 
 - mv
   - Amazon shopping basket. It has a well-known bug when an item re-appears in the basket after deletion. The reason is that MV-Register doesn’t behave like a set even though it stores a set of values (see below). Amazon indeed doesn’t treat that as a bug — it actually increases sales.
-# [supabase: `pg_crdt` - an experimental CRDT extension for Postgres_202212](https://supabase.com/blog/postgres-crdt)
+# 📝 [supabase: `pg_crdt` - an experimental CRDT extension for Postgres_202212](https://supabase.com/blog/postgres-crdt)
 - https://github.com/supabase/pg_crdt
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.
   - It supports Yjs/Yrs and Automerge.
@@ -224,8 +230,20 @@ modified: 2022-10-13T08:00:21.260Z
   - Realtime broadcasts database changes from the Postgres write ahead log (WAL). The WAL includes a complete copy of the the underlying data so small updates cause the entire document to broadcast to all collaborators
   - Frequently updated CRDTs produce a lot of WAL and dead tuples
   - Large CRDT types in Postgres generate significant serialization/deserialization overhead on-update.
+# 👥 [Show HN: Pg_CRDT – an experimental CRDT extension for Postgres | Hacker News_202212](https://news.ycombinator.com/item?id=33931971)
 
-## [Show HN: Pg_CRDT – an experimental CRDT extension for Postgres | Hacker News](https://news.ycombinator.com/item?id=33931971)
+- 
+- 
+
+- Just store all updates - as if you do event sourcing - ordered by a timestamp. 
+  - The list of updates will eventually converge as will any function of that list, including any function that merges all the updates into a current state. 
+  - You might have to [partially] reevaluate the function in case a delayed update shows up and has to be inserted into the middle of the list of updates. 
+  - So I guess there are additional requirements in order to qualify as a CRDT, bounded additional space or bounded amount of computation on updates. But I don't know as it turned out my understanding of what qualifies as a good CRDT was too narrow.
+- Yeah **event sourcing and what you described is what these libraries are calling delta CRDTs**. The appeal is they’re hiding away the actual event log, metadata and rebasing/merging parts and exposing data types that look something like what you’d normally use.
+  - And if you tie the conflict resolution logic to the individual delta operations, you get Operational Transforms.
+
+- 
+- 
 
 - [pg_crdt - a CRDT extension for #postgresql](https://twitter.com/kiwicopple/status/1601553881246609409) 
 
@@ -281,7 +299,7 @@ This is how we might do it with with "Realtime as an authority" approach (and is
 - 以 Op-based CRDT 的思路设计 Last-write-wins Set(LWWSet)
 # [数据库系统小报：CRDT初探](https://zhuanlan.zhihu.com/p/510797688)
 
-# [5000x faster CRDTs: An Adventure in Optimization_202107](https://josephg.com/blog/crdts-go-brrr/)
+# 📝 [5000x faster CRDTs: An Adventure in Optimization__202107](https://josephg.com/blog/crdts-go-brrr/)
 - Automerge (and Yjs and other CRDTs) think of a shared document as a list of characters. 
   - Each character in the document gets a unique ID, and whenever you insert into the document, you name what you're inserting after.
 
@@ -315,7 +333,7 @@ This is how we might do it with with "Realtime as an authority" approach (and is
   - We can use a flat array to store everything, rather than an unbalanced tree. This makes everything smaller and faster for the computer to process.
   - The code is really simple. Being faster and simpler moves the Pareto efficiency frontier. Ideas which do this are rare and truly golden.
   - You can implement lots of CRDTs like this. Yjs, Automerge, Sync9 and others work. You can implement many list CRDTs in the same codebase. In my reference-crdts codebase I have an implementation of both RGA (automerge) and YATA (Yjs). They share most of their code (everything except this one function) and their performance in this test is identical.
-# [I was wrong. CRDTs are the future__202009](https://josephg.com/blog/crdts-are-the-future/)
+# 📝 [I was wrong. CRDTs are the future__202009](https://josephg.com/blog/crdts-are-the-future/)
 - I saw Martin Kleppmann’s talk a few weeks ago about his approach to realtime editing with CRDTs, and I felt a deep sense of despair(绝望). 
   - Maybe all the work I’ve been doing for the past decade won’t be part of the future after all, because Martin’s work will supersede it. Its really good.
 - Around 2010 I worked on Google Wave. 
@@ -399,10 +417,29 @@ This is how we might do it with with "Realtime as an authority" approach (and is
   - But OT is no longer fits into the vision I have for the future. 
   - CRDTs would let us remake Wave, but simpler and better. 
   - And they would let us write software that treats users as digital citizens, not a digital serfs(农奴).
+# 👥 [CRDTs are the future | Hacker News_202204](https://news.ycombinator.com/item?id=31049883)
+- I don't really understand why every single article on CRDTs is about collaborative text editing. Is no one else bothering to build systems with CRDTs outside of this space?
+- Why have I been focussing on collaborative text editing? Because I think performance has been the #1 blocker stopping us from using CRDTs in most software. And text CRDTs are a canary in the coal mine for performance. Uh, thats a tortured metaphor. I mean, If we can make text CRDTs fast, we can make everything fast.
+  - And JSON editing (what everyone actually wants) needs to embed text editing anyway. So we've sort of gotta do that first anyway.
+  - Smart people have also been working on the JSON editing problem. 
+  - Shelf algorithm for last-writer-wins JSON editing is simple enough you can implement it in less than 100 lines of code. But shelf doesn't support collaborative list or text editing (text is a list of characters).
+  - thats something Yjs and automerge both already do, and do quite well.
 
-- discussion
+- 👉🏻 Probably because outside collaborative text editing, it's called more generally, like CQRS or event sourcing
 
-- [CRDTs are the future](https://news.ycombinator.com/item?id=24617542)
+- More generally, CRDTs are useful when syncing any kind of change-events between peers (with no central ability to pre-linearize those events), where the ordering of change-events doesn't matter — i.e. where the operations described by the events are "commutative", such that you'll get the same results out if you apply events {1, 2, 3} or {3, 2, 1} or any other order. 
+  - As long as all peers see all events, all peers arrive at the same eventually-consistent position in the "lattice" of possible states. 
+  - In other words, CRDTs + gossip protocols = the ability for peers to just process events as they hear about them, without a worry about receiving events from peers "out of order"; rather than needing to wait around for a some elected peer to forcibly linearize the events (i.e. without the need to introduce a serial write bottleneck.)
+- A good example of the distributed-systems-backend kind of use of CRDTs, is in the Elixir web framework Phoenix, which does a sort of mesh delivery of web-socket messages between a cluster of backends. CRDTs are used to sync presence information (= which clients are connected to which backend) between the backends.
+- On the other hand: A lot of practical applications are fine with last write
+- I’m more excited about the use of CRDTs outside of text editing, there are so many use cases. However there are still some problems to solve with the existing general purpose toolkits such as Yjs and Automerge. 
+  - Take Yjs and it’s ProseMirror bindings, Yjs can represent any internal state of a ProseMirror document and merge them. However it does not have an understanding of the specific ProseMirror schema being used, this could limit the valid states possible (a max length on a heading for example). When Yjs merges multiple edits you could end up with an invalid document for your schema, Yjs loads this into ProseMirror which then throws away the invalid data (with the heading example it just deletes the excess text, it may be better to dump it into the next line but should be configurable).
+  - Ultimately the general purpose CRDT toolkits need to have more internal types with a wider ability to capture intent. I also think they need to have the ability to understand the schema of the data structure they are tracking and how to handle more complex merges.
+  - The alternative to doing that with a general purpose toolkit is to build your own CRDTs from scratch for your data model. I don’t think many people would go that route though.
+- Not all CRDT libraries focus on text editing. For example, I'm working on a Byzantine fault tolerant general-purpose data sync library loosely based on CRDTs: https://www.hyperhyperspace.org
+
+- We at www.ditto.live will likely get to a SQL like implementation with Delta state CRDTs this year.
+# 👥 [CRDTs are the future | Hacker News_202009](https://news.ycombinator.com/item?id=24617542)
 - I'm part of the team that makes Zoho Writer (a Google Docs alternative)
   - We went with OT for our real-time syncing of edits in 2010 and a decade later, we are still sticking with OT
   - However, in the spirit of "There are no solutions, only trade-offs" CRDTs are absolutely necessary for certain type of syncing - like syncing a set of database nodes.
@@ -412,7 +449,12 @@ This is how we might do it with with "Realtime as an authority" approach (and is
 - Right now if you want you can use yjs or sharedb. But the APIs aren't spectacular. Eventually I want these things integrated into svelte / react / swiftui and postgres / sqlite / whatever so it just sort of all works together and we get nice tutorials taking you through what you need to know.
   - We aren't there yet. Automerge is slow (but this is being worked on). Yjs is hard to use well with databases, and its missing some features. We'll get there. The point of all the mathematical formalisms is that if we do it right, it should just work and you shouldn't have to understand the internals to use it.
 - It's worth noting that many of the CRDT discussions focus on collaborative text editing. That's a really hard problem. CRDTs are (and have been for some time) a useful primitive for building distributed systems.
-# [Are CRDTs suitable for shared editing?__202008](https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing/)
+
+- 
+- 
+- 
+
+# 📝 [Are CRDTs suitable for shared editing?__202008](https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing/)
 - CRDT don't require a central authority to resolve sync conflicts
   - They open up new possibilities to scale the backend infrastructure and are also well-suited as a data-model for distributed apps that don't require a server at all.
 - However, several text editor developers report not to use them because they impose a too significant overhead.
@@ -422,10 +464,7 @@ This is how we might do it with with "Realtime as an authority" approach (and is
 - [CRDT is not pulling its (considerable) weight.__201905](https://github.com/xi-editor/xi-editor/issues/1187#issuecomment-491473599)
   - By now we have lots of examples where trying to design features around the structure imposed by CRDT turned out to be a lot more complicated than it would be in a more synchronous world - we saw the auto-indent stuff above, difficulty getting the selection right in transpose
   - CRDT is a tradeoff
-
-## Are CRDTs suitable for shared editing?_202008
-
-- https://news.ycombinator.com/item?id=24176455
+# 👥 [Are CRDTs suitable for shared editing?_202008](https://news.ycombinator.com/item?id=24176455)
 - I’m part of the team that makes Zoho Writer (Google Docs alternative)
   - Back in 2009, we wrote our real time collaboration component using Operational Transformations (OT). 
 - But when CRDTs started to gain the spotlight, these are the reasons why it didn’t warrant a rewrite to our stack:
@@ -519,7 +558,7 @@ This is how we might do it with with "Realtime as an authority" approach (and is
   - Utilizes a timestamped insertion tree and references hash table lookups for character lookups. 
   - Causal trees are a similar approach (named CT but in RGA it's called a timestamped insertion tree). 
   - In any case, CT/RGA algorithms have been proven to use the same algorithm
-# [CRDTs The Hard Parts 笔记_202010](https://zhuanlan.zhihu.com/p/265074361)
+# 📝 [CRDTs The Hard Parts 笔记_202010](https://zhuanlan.zhihu.com/p/265074361)
 - 包括 Google Docs、Figma、Trello 在内的协同编辑软件，需要依赖收敛算法（convergence algorithms）使得不同节点上发生的修改可以确定地（deterministically）合并到一致的状态。
   - 最常见的收敛算法有两类：OT（Operational Transformation）和 CRDT（Conflict-free replicated data type）。
 

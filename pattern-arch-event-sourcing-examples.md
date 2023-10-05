@@ -778,6 +778,9 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/ngxs/store /ts
   - State Management for Angular
+
+- https://github.com/MichalPaszkiewicz/cqrs-react-router /ts
+  - A cqrs/event sourcing library built directly into a router you can use in your react application
 # examples
 - https://github.com/thenativeweb/wolkenkit-boards /js
   - a tool for collaboratively organizing notes.

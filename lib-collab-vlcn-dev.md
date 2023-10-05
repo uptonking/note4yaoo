@@ -75,10 +75,25 @@ modified: 2023-06-03T14:43:26.987Z
   - A way to know when it is safe to prune events out of the log
 # docs
 
-# discuss-stars
+# more
+
+# discuss-author
+- ## 
 
 - ## 
 
+- ## 🚀 [Crsql – Multi-writer and CRDT support for SQLite | Hacker News_202211](https://news.ycombinator.com/item?id=33606311)
+- 
+- 
+- 
+
+- That isn't how CRDT's work though. In the example of mutating a bank balance, there would be addition operations and subtraction operations. So /eventually/ all nodes would arrive at the same balance. It's a bit like event sourcing but lower-level.
+  - Depends on the type of CRDT. You can have a CRDT which supports setting a register (or column value in a row) to a particular value. This is what Crsql appears to do as one sibling comment indicated. There are a number of ways to resolve conflicting updates, but Crsql chooses LWW (last writer wins).
+
+- 
+- 
+
+# discuss-stars
 - ## 
 
 - ## 
@@ -123,5 +138,3 @@ modified: 2023-06-03T14:43:26.987Z
 - https://twitter.com/tantaman/status/1547954669250457600
   - Having a uuid for every row doesn't make sense when rows created by different peers can have the same identity and need to be merged.
   - E.g., a topic in a collaborative library. If we both create the "Science" topic independently, they should both represent the same thing and merge together.
-
-# more

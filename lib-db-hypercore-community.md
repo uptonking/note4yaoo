@@ -9,6 +9,8 @@ modified: 2023-09-07T15:58:27.967Z
 
 # guide
 
+- forums
+  - [ipfs hypercore - Search / Twitter](https://twitter.com/search?q=ipfs%20hypercore&f=live)
 # discuss-collab
 - ## 
 
@@ -16,7 +18,75 @@ modified: 2023-09-07T15:58:27.967Z
 # discuss-ipfs-ssb
 - ## 
 
-- ## After researching decentralized systems for the last months, I’m sure IPFS was the chosen one protocol, destroyed by implementation by committee. libp2p fuels my nightmares.
+- ## 
+
+- ## 
+
+- ## 💡 [Peer-to-peer social networking with Rotonde and Beaker | Hacker News_201710](https://news.ycombinator.com/item?id=15463721)
+  
+- Hypercore has realtime sync, but is limited to log structured data. Dat can do diffs on data, but is meant for large datasets, not realtime changes. This sounds like it would be difficult (or not scalable) to build something like a Wiki, features in social networks, Trello, or other apps (i.e., anything with shared mutable state). How would you do this?
+- The reason I ask is that me, Mafintosh, Juan at IPFS, Dominic with Scuttlebutt, Feross at WebTorrent, Substack, and others all met back in 2014 for our different P2P projects. 
+  - All of us had slightly different approaches. 
+  - Juan and others seemed mostly interested in hash addressing, which I think is great but doesn't solve the end problem of data sync. 
+  - Seems like Dat deals with that fairly well, but not for highly mutable data (versus large scientific files). 
+  - Meanwhile we ( https://github.com/amark/gun ) tackled that problem first, because it seems like CRDTs are the most relevant for killing traditional centralized Facebook/Twitter/Reddit/gDocs like apps, and hashing is more applicable for killing centralized YouTube/imgur like apps. 
+  - Both are necessary, but it certainly seems harder/easier based on which underlying P2P tools you use.
+- 👉🏻 **The real-time syncing immutable, append-only log that hypercore provides can also be accessed randomly, allowing for lots of cool parallel/distributed log processing architectures (Kappa architecture)**, similar to Kafka (which is also based on immutable, append-only logs). 
+  - We have just focused on syncing a filesystem at first because we had a strong use case there, but you could totally build a CRDT on top of an append only log.
+
+- Is dat more-or-less in the same domain as IPFS?
+  - at least strongly related domains, yes.
+- They are both BitTorrent variants. **I liked Dat's design a little better, and it's more focused on mutable data streams which is better for Web content**. 
+  - IPFS is good though and may end up getting supported in Beaker again at some point. 
+  - Dat's the protocol we chose to start with.
+
+- How is Dat different than IPFS?
+- Dat keeps a secure version log of changes to a dataset over time which allows Dat to act as a version control tool. 
+  - The type of Merkle tree used by Dat lets peers compare which pieces of a specific version of a dataset they each have and efficiently exchange the deltas to complete a full sync. 
+  - It is not possible to synchronize or version a dataset in this way in IPFS without implementing such functionality yourself, as **IPFS provides a CDN and/or filesystem interface but not a synchronization mechanism**
+- Dat has also prioritized efficiency and speed for the most basic use cases, especially when sharing large datasets. 
+  - **Dat does not make a duplicate of the data on the filesystem, unlike IPFS in which storage is duplicated upon import**. 
+  - Dat's pieces can also be easily decoupled for implementing lower-level object stores. See hypercore and hyperdb for more information.
+- In order for IPFS to provide guarantees about interoperability, **IPFS applications must use only the IPFS network stack**. 
+  - In contrast, Dat is only an application protocol and is agnostic to which network protocols (transports and naming systems) are used.
+
+- it appears to me that IPFS really pulls in a lot of stuff about the network layer, because it's trying to be, well, an Interplanetary (distributed) File System.
+- DAT is fundamentally a portable, self-contained, data repository. Replicating DAT archives across a broad network and whatnot is definitely a problem that needs to be solved, but IMO that should be solved at a different layer, without rolling in all sorts of complecting concerns such as network ports, routing, and payments for storage and whatnot.
+- Yes, agreed. Of course overlap among projects is inevitable and it would be nice if there was more effort to coordinate and collaborate as this would allow for potential dev efficiencies (not guaranteed though). In this case, DAT is a practical and pragmatic approach where IPFS is more hinged in the crypto blockchain token space which can be a turn-off and add unnecessary baggage.
+- Ya, we've thought about that. Dat's storage is pretty flexible and we have a content-addressed storage library. A lot of our users do not want or need to storage data in IPFS though so it adds unnecessary complexity to do that by default.
+  - Someone could built a storage that uses IPFS, similar to our dat-http storage.
+
+- ## To be clear: IPFS itself won't work because it is ridiculous, but the promise of P2P addressable databases will materialize and will be so easy and performant that even Fiatjaf will use it._202302
+- https://twitter.com/ArNazeh/status/1627299193533390850
+  - more people realizing the problems with IPFS and they are finding each other.
+
+- I'm curious what aspect you think doesn't work. Certainly can't treat it as a magical db in the sky that does things for free, but if a significant number of people care about a piece of data, the protocols work really well for making that data available.
+- I can't even access my own data from a IPFS machine running in a computer in the same room with the IPFS daemon running at 80% of the CPU
+- In the meantime Hyperswarm hole-punches with a single line of code and zero config. It shouldn't be that hard.
+- Addressing every god damn block of the data structure separately as if you don't know they all belong to the same thing and should colocate, is a sign of systemic silliness and over-abstraction.
+  - Content-addressed storage is fundamentally very simple. Put in data, get hash. Put in hash, get data.
+- We are converging here, I am hell-bent on using blake3 and bao for files/values of the database entry too, but I don't see the point of making 1000s of DHT queries for 1000s of files that all belong to the same author, you should assume that data will colocate at same peers.
+  - IMO, I wouldn't view it as needing to be one or the other, because there are some valid reasons to have the chunks distributed, but to ensure you can stream the chunks of one logical record without requiring a bunch of connections when the/a peer you are connected to has it all.
+- So the question is, why the hell announce on blocks instead of files, since no one can use a shard of a file anyway. The answer as I imagine is deduplication and imagined benefits for cdns. Clearly that was a bad tradeoff and people are moving away from it now, luckily
+
+- Even Iroh folks gave up on it [A New Direction for Iroh_202302](https://n0.computer/blog/a-new-direction-for-iroh/)
+  - It is an infinite pile of bad design decisions, over-abstraction, and ridiculous choices.
+  - I have yet to @#@!% manage to establish a connection between two home devices with it, something I can do with one line in Hyperswarm.
+- Don't get me wrong, I'm definitely interested in other similar systems. I would love to see a doc on the Hyper* stuff that provided a 1:1 mapping of IPFS features/APIs. If they provided 1:1 parity that's just better, they certainly haven't communicated that effectively.
+  - Not only they can do the same shit, they are 100x easier to learn, zero config, works everytime, just like magic. Most IPFS idiocy is in discovering peers for CIDs individually instead of @#%!#% finding peer for the whole damn data structure.
+- I am aware of their goal: filecoin, will never fucking work.
+  - DHTs can be good alternative to DNS.
+  - DHTs can NOT be a performant alternative to the cloud.
+
+- Do you say that based on what? It would probably require some breakthrough discovery in computing that we can't even imagine
+  - 1- Hyperswarm is already working like a charm, and can only get better with more caching, TTL, and tolerance to occasional churned data (max ~10 minutes).
+  - 2- Agent-based addressing (max one topic per identity) makes the problem _much_ more manageable.
+- Hyperswarm's Rust efforts are individual and it is not my only bet, more likely, Iroh from @n0computer folks will become as good as Hyperswarm as it abandons IPFS compatibility.
+- From what I read they still want to make each chunk of bytes content-addressable, they just think they can do better than 10 years of dedicated IPFS development.
+  - The biggest harm IPFS has brought to the world was to say something (p2p content-addressable global filesystem) is not only possible but already done and working -- and then waste the time and resources of anyone who is convinced enough to try to make it work for some use case.
+- We do plan to content address all data within the system, and that creates some very real scaling constraints. That will naturally rule out use cases, like, uh, replacing the Internet. But doing fewer things well will hopefully add up to an improvement.
+
+- ## After researching decentralized systems for the last months, I’m sure IPFS was the chosen one protocol, destroyed by implementation by committee. libp2p fuels my nightmares._202303
 - https://twitter.com/LuaSolDel/status/1630663906946326552
   - An over complex stack of modular libraries that you have to pray for to work together. 
   - The TS/JS implementation is mainly focused on node. So much bloat, so little documentation. Things are changing slowly through yet some new slow moving working groups.
@@ -134,7 +204,7 @@ modified: 2023-09-07T15:58:27.967Z
   - You could easily do this on any React project
   - [browser-dht.js](https://gist.github.com/LuKks/c144fa0f72ebfd303515d0ce7dadb477)
 
-- ## 💰 blue sky is doing a lot of stuff and was born from jack/twitter who is also making "web5". theres motive there. 
+- ## blue sky is doing a lot of stuff and was born from jack/twitter who is also making "web5". theres motive there. 
 - https://discord.com/channels/985129863348371516/1057659276778274986/1085946345031995495
   - ipfs/filecoin have their own VC's. 
   - every pure p2p project has no real funding. 
@@ -173,11 +243,6 @@ modified: 2023-09-07T15:58:27.967Z
 
 - The one last *very insider* piece of info: the networking logic now optimistically replicates any hypercore in memory. 
   - That should hopefully mean we don't need any custom logic for replicating multi-core data structures.
-
-- ## [Hypercore has realtime sync, but is limited to log structured data.| Hacker News](https://news.ycombinator.com/item?id=15467438)
-- Hypercore has realtime sync, but is limited to log structured data. Dat can do diffs on data, but is meant for large datasets, not realtime changes. This sounds like it would be difficult (or not scalable) to build something like a Wiki, features in social networks, Trello, or other apps (i.e., anything with shared mutable state). How would you do this?
-  - 👉🏻 The real-time syncing immutable, append-only log that hypercore provides can also be accessed randomly, allowing for lots of cool parallel/distributed log processing architectures (Kappa architecture), similar to Kafka (which is also based on immutable, append-only logs). 
-  - We have just focused on syncing a filesystem at first because we had a strong use case there, but you could totally build a CRDT on top of an append only log.
 
 - ## Hyperbee is just one writter. If you want "multiple writters" (which is multiple hypercores combined into one) then you can use autobase
 - https://discord.com/channels/985129863348371516/985129863348371519/1034609699552776222
