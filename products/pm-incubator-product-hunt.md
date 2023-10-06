@@ -29,6 +29,8 @@ modified: 2023-08-15T16:49:24.915Z
   - [今日热榜: 聚合36氪、虎嗅](https://tophub.today/c/tech)
 # product-hunting
 
+> updated at 20231006
+
 ## productivity
 
 - [Swimm](https://swimm.io/)
@@ -97,6 +99,12 @@ modified: 2023-08-15T16:49:24.915Z
   - Never leave important tasks behind by turning things into to-dos.
   - Built for web, iOS, Android, Windows, Mac, Linux, and Chrome
 
+- Datatera.ai
+  - /202309/产品形式是浏览器扩展
+  - [Datatera.ai](https://datatera.ai/)
+  - Convert ANY file text or website to a dataset/spreadsheet/CRM/ERP/etc. in seconds. 
+  - No code, no data modeling, no mappings, no IT skills needed.
+
 - Heptabase
   - /202308
   - Heptabase is a visual note-taking tool that helps you make sense of your learning, research, and projects.
@@ -105,6 +113,11 @@ modified: 2023-08-15T16:49:24.915Z
   - /ppt~ai/202302
   - Your on-demand presentation generator
   - Our AI-powered presentation builder is easy-to-use, intuitive, and packed with features like slide layouts and interactive forms.
+
+- Tally
+  - /form/202309
+  - the free, intuitive form builder
+  - [Free Online Form Builder | Tally](https://tally.so/)
 
 - pdf.ai
   - /chatgpt/202305
@@ -144,6 +157,11 @@ modified: 2023-08-15T16:49:24.915Z
   - /whiteboard~ai/202303
   - Miro AI - your new launchpad for creativity, collaboration, and productivity
 
+- NotionApps
+  - /202309
+  - [Convert Notion databases into powerful apps • NotionApps](https://www.notionapps.com/)
+  - Build apps from Notion databases without coding.
+
 - Obsidian Canvas
   - /2022
   - You can lay out text, notes, images, PDFs, or even interactive websites on your canvas, and make sense of your ideas in this infinite space.
@@ -161,6 +179,18 @@ modified: 2023-08-15T16:49:24.915Z
 - Documenso
   - /202305
   - Documenso is a digital signing platform and DocuSign alternative.
+
+- Papermark
+  - /202309
+  - [Papermark](https://www.papermark.io/)
+  - The Open-Source Docsend Alternative to securely share documents with real-time analytics.
+  - https://github.com/mfts/papermark /ts
+
+- Notionlytics
+  - /202309
+  - [Notionlytics - Advanced analytics for Notion](https://notionlytics.com/en)
+  - Notion analytics for company wikis, community knowledge bases, and shared documents. 
+  - Monitor key metrics + collect direct feedback through interactive widgets. 
 
 ### task/planner
 
@@ -183,28 +213,6 @@ modified: 2023-08-15T16:49:24.915Z
   - Suggest Team Meeting Time
   - Plan Your Week with AI
 
-- [Bardeen](https://www.bardeen.ai/)
-  - /workflow/2022
-  - Bardeen is an automation app to replace your repetitive tasks with a single shortcut and control your webapps from anywhere.
-  - Explore our integrations with your favorite apps and hundreds of pre-built playbooks that help you stay in the flow!
-  - Simply type in your desired workflow, and watch Magic Box AI generate the entire automation from scratch.
-  - Set a trigger to run, or on a schedule
-  - Our scraper can copy data from websites and send it to your web apps whether it is one entry or thousands.
-  - Build automations without code.
-
-- [Akiflow 3.0](https://akiflow.com/)
-  - /workflow/2022
-  - Get your tasks and calendars together and plan your day
-  - Use Shortcuts and the Command Bar to create tasks/events
-  - Consolidate(联合，整合) all your tools in one place and block time for tasks in your calendar
-  - Easily import all your tasks from your favorite tools into a single Inbox
-  - Easily drag and drop the task to an open slot in your calendar.
-  - Quick task actions
-  - Share availability
-  - Recurrent tasks
-  - Automatically link content from your tools to avoid context switching.
-  - Command Bar: Forget about your mouse when creating a task. Use the command bar to schedule date, time, duration and categorize the task with labels and priority
-
 - Stellar AI
   - /202307
   - Stellar drives alignment with an AI-powered OKR platform that simplifies writing and tracking goals. 
@@ -214,10 +222,6 @@ modified: 2023-08-15T16:49:24.915Z
   - /2022
   - The joyful productivity app. 
   - Schedule time for todos, events, and contacts.
-
-- Recast
-  - /202308
-  - Turn your read-later list into bite-size audio convos w/ AI
 
 - Sessions 2.0
   - /2022
@@ -232,6 +236,14 @@ modified: 2023-08-15T16:49:24.915Z
 - [Dokably](https://dokably.com/)
   - /202305
   - Dokably blends docs, whiteboards, notes, tasks, or anything — all in one place
+
+- Heyscribe
+  - /202309
+  - [Heyscribe](https://www.heyscribe.com/)
+  - All-in-one platform for creators that unites project management, membership features, and audience engagement
+  - Monetize your content from the very beginning
+  - Plan and create in the task tracker
+  - It combines a Trello-like task tracker and an Instagram-like social network for showcasing and authenticating your content with your followers before going public. Unleash your creativity!
 
 - [folk crm 2.0](https://www.folk.app/)
   - /202305
@@ -293,7 +305,7 @@ modified: 2023-08-15T16:49:24.915Z
 
 - [Klu](https://klu.so/)
   - /search/202304
-  - Internal search engine powered by AI. 
+  - Internal search engine powered by AI.
   - With Klu, you can find, save, and organize information in one centralized place.
   - With Klu AI, you can ask about your next meeting, flight, or launch date, and it will provide you with an answer based on your data.
   - SECURITY: All your data is securely encrypted at rest with AES-256 and in transit with TLS.  Data is also encrypted in our database.
@@ -328,6 +340,45 @@ modified: 2023-08-15T16:49:24.915Z
 - SaaS Examples
   - /2022
   - Inspiration gallery for your SaaS website, product & emails
+
+### workflow-automation
+
+- n8n 1.0
+  - /202307
+  - a source-available workflow automation tool designed for technical users.
+
+- [Bardeen](https://www.bardeen.ai/)
+  - /workflow/2022
+  - Bardeen is an automation app to replace your repetitive tasks with a single shortcut and control your webapps from anywhere.
+  - Explore our integrations with your favorite apps and hundreds of pre-built playbooks that help you stay in the flow!
+  - Simply type in your desired workflow, and watch Magic Box AI generate the entire automation from scratch.
+  - Set a trigger to run, or on a schedule
+  - Our scraper can copy data from websites and send it to your web apps whether it is one entry or thousands.
+  - Build automations without code.
+
+- [Akiflow 3.0](https://akiflow.com/)
+  - /workflow/2022
+  - Get your tasks and calendars together and plan your day
+  - Use Shortcuts and the Command Bar to create tasks/events
+  - Consolidate(联合，整合) all your tools in one place and block time for tasks in your calendar
+  - Easily import all your tasks from your favorite tools into a single Inbox
+  - Easily drag and drop the task to an open slot in your calendar.
+  - Quick task actions
+  - Share availability
+  - Recurrent tasks
+  - Automatically link content from your tools to avoid context switching.
+  - Command Bar: Forget about your mouse when creating a task. Use the command bar to schedule date, time, duration and categorize the task with labels and priority
+
+- Beau Workflows
+  - /202309
+  - [Beau: automate client-facing workflows](https://beau.to/)
+  - Automate client-facing workflows
+  - Create a workflow, share a link, and get validated data extracted from what your customers submit
+
+- Fastgen
+  - /202306
+  - low-code backend builder
+  - a low-code API and workflow builder with an integrated Postgres DB to create any custom business logic or complete backends
 
 ### design/site-builder
 
@@ -404,11 +455,6 @@ modified: 2023-08-15T16:49:24.915Z
   - /design~mobile/202302/202305
   - no code mobile app builder to automatically convert ANY websites to high quality & fully customized native Android & iOS apps. 
 
-- Fastgen
-  - /202306
-  - low-code backend builder
-  - a low-code API and workflow builder with an integrated Postgres DB to create any custom business logic or complete backends
-
 - Spline
   - /2022
   - Design and collaborate in 3D
@@ -429,20 +475,48 @@ modified: 2023-08-15T16:49:24.915Z
   - /202305
   - Export production-ready animations from Figma
 
-### dev-toolchain
+### demo-showcase
+
+- [Arcade 2.0](https://www.arcade.software/)
+  - /2022
+  - Create interactive demos in minutes that can be embedded on websites, blog posts, email, or tweets. 
+
+- Supademo
+  - /202309
+  - [Supademo: Create Engaging Interactive Demos and Guides](https://supademo.com/)
+  - Create engaging interactive demos and guides with AI
 
 - [Floik](https://www.floik.com/)
   - /202308
   - Showcase the power of your product in minutes
   - Create engaging product content in a breeze with Floik—no matter how quickly your product changes.
 
-- [Arcade 2.0](https://www.arcade.software/)
-  - /2022
-  - Create interactive demos in minutes that can be embedded on websites, blog posts, email, or tweets. 
+### apps & features
 
-- n8n 1.0
-  - /202307
-  - a source-available workflow automation tool designed for technical users.
+- Permit.io
+  - /auth/202309
+  - [Never Build Permissions Again | Permit.io](https://www.permit.io/)
+  - provides permissions as a service (ReBAC, Policy as Code, APIs, and customer-facing UI)
+  - Plug & Play App-Level Authorization. Enforce in Frontend or Backend, control via No-Code UI Elements
+
+- Commented
+  - /202309
+  - [Commented: Seamless Feedback & Collaboration tool](https://www.commented.io/)
+  - Collect pinned feedback and collaborate on any live web & mobile projects
+
+- Keep
+  - /202309
+  - [Keep](https://www.keephq.dev/)
+  - The open-source alerts management and automation platform
+  - consolidate all your alerts into a single pane of glass and to orchestrate workflows to automate your end-to-end processes.
+  - https://github.com/keephq/keep /python/ts
+
+- Jimo
+  - /202309
+  - [Jimo | The Smartest Product Adoption and Success Platform](https://www.usejimo.com/)
+  - Create contextual in-product interactions like user onboarding, product tours, tooltips, and surveys without engineering.
+
+### dev-toolchain
 
 - Typo
   - /devops/202302
@@ -455,7 +529,20 @@ modified: 2023-08-15T16:49:24.915Z
 
 - AI SQL Editor by Supabase
   - /202308
-  - AI powered SQL editor 
+  - AI powered SQL editor
+
+- Graphite
+  - /202309
+  - [Graphite - How the fastest developers ship code](https://graphite.dev/)
+  - [The stacking workflow](https://stacking.dev/)
+  - Graphite helps you create smaller pull requests, stay unblocked, and ship faster.
+  - Built for stacking, integrated with GitHub & VS Code.
+
+- DevHunt
+  - /202309
+  - [Dev Hunt – The best new Dev Tools every day.](https://devhunt.org/)
+  - Open source Product Hunt for dev tools
+  - https://github.com/MarsX-dev/devhunt /ts
 
 ### text-audio-video
 
@@ -467,6 +554,12 @@ modified: 2023-08-15T16:49:24.915Z
 - AudioPen
   - /audio-to-text/202305
   - AudioPen will transform your unstructured voice note into clearly summarized text.
+
+- Recast
+  - /text-to-audio/202308
+  - Turn your read-later list into bite-size audio convos w/ AI
+  - [This is recast](https://www.letsrecast.ai/)
+    - Turn your want-to-read articles into rich audio summaries.
 
 - Speechki ChatGPT Plugin
   - /text-to-audio/202306
@@ -667,6 +760,10 @@ modified: 2023-08-15T16:49:24.915Z
   - /202304
   - Find contracts that lead to full-time jobs. 
   - Pangea opens doors at startups seeking marketing, engineering, ops, design, and growth talent.
+
+- FirstHR
+  - /202309
+  - the brand new all-in-one HR platform that will unite all HR processes from hiring to firing 
 
 ### edu
 

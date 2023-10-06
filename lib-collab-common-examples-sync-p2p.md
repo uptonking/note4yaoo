@@ -55,6 +55,13 @@ modified: 2023-01-17T19:13:01.845Z
   - Why use a central relay service?
     - The main reason is to exchange data asynchronously.
 
+- https://github.com/aspen-cloud/triplit /AGPLv3/202310/ts
+  - https://triplit.dev/
+  - Triplit is a complete solution to data persistence, state management, and realtime synchronization for web applications
+  - TriplitDB - Designed to run in any JS environment (browser, node, deno, React Native, etc) and provide expressive, fast, and live updating queries while maintaining consistency with many writers over a network.
+  - Client - Browser library to interact with local and remote TriplitDBs.
+  - React - React bindings for @triplit/client
+
 - https://github.com/peers/peerjs /202303/ts
   - PeerJS provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams.
 
@@ -131,8 +138,12 @@ modified: 2023-01-17T19:13:01.845Z
   - Persistence options are provided based on the following currently supported databases:
     - In memory, MySQL, PostgreSQL, CouchDB
 
-- https://github.com/hyperhyperspace/hyperhyperspace-core
-  - HHS uses an immutable typed-objects local storage model. Objects are both retreived and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
+- https://github.com/hyperhyperspace/hyperhyperspace-core /MIT/ts
+  - https://www.hyperhyperspace.org/
+  - A library to create p2p applications, using the browser as a full peer.
+  - An offline-first shared data library for creating p2p apps that work in the browser (and now also NodeJs).
+  - HHS uses an immutable typed-objects local storage model. 
+    - Objects are both retrieved and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
   - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
   - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
 

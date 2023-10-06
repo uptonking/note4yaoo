@@ -534,8 +534,16 @@ This is how we might do it with with "Realtime as an authority" approach (and is
   - In practice, it is much easier to implement the former than the latter.
 
 - Op-based and State-based synchronizations can be emulated(仿真，模拟) by each other with keeping CRDT requirements. 
-# [Introduction to CRDTs for Realtime Collaboration](https://dev.to/nyxtom/introduction-to-crdts-for-realtime-collaboration-2eb1)
+# 📝 [Introduction to CRDTs for Realtime Collaboration](https://dev.to/nyxtom/introduction-to-crdts-for-realtime-collaboration-2eb1)
 - 对各种数据类型进行了简介
+
+- Data consistency is hard.
+  - Approaches to this usually take the form of ACID guarantees, BASE (basically available, eventually consistent) and in the case of CRDT strong eventual consistency. 
+
+- How do we get events to be in the right order?
+  - We can use the server's timestamp in a typical architecture to serve as the authoritative clock but this isn't available in distributed systems.
+  - Logical Timestamps. Doing this kind of ordering helps us get closer to total ordering.
+  - Event Logs. this is typically called event sourcing, where every operation is stored as data and playback is used when you need to construct the model. To give a log total ordering we need to sort operations by time and then by unique origin.
 
 - Consider how Figma makes these tradeoffs by combining multiple CRDT-inspired techniques (associativity, commutativity, idempotent) with a last-write-wins (LWW) approach and a central server to coordinate some aspects of conflicts and updates.
   - Other things like tree re-ordering in the document, undo/redo behaviors, are resolved with domain specific desired implementations. 
@@ -548,7 +556,10 @@ This is how we might do it with with "Realtime as an authority" approach (and is
 
 - OR-Set (Observed-Remove Set) 
   - Similar to LWW-Element-Set except uses tags instead of timestamps. 
-  - For each element in the set, a list of add-tags and a list of remove-tags are maintained. Insertions are done by generating a unique tag and added to the add-tag list for the element. Elements are removed by having all the tags in the element's add-tag list added to the element's remove tag set (tombstone list). > Merging is done by the union of the add-tag list for each element, and the union of remove-tag lists for each element. > An element is a member if the element's add tag list - remove tag list is nonempty.
+  - For each element in the set, a list of add-tags and a list of remove-tags are maintained. 
+  - Insertions are done by generating a unique tag and added to the add-tag list for the element. Elements are removed by having all the tags in the element's add-tag list added to the element's remove tag set (tombstone list). 
+  - Merging is done by the union of the add-tag list for each element, and the union of remove-tag lists for each element. 
+  - An element is a member if the element's add tag list - remove tag list is nonempty.
 
 - Logoot/LSEQ/TreeDoc does not store tombstone deletions and instead takes an approach with fractional/unbounded divisible indexing. 
   - This, as discussed earlier, can cause issues with interleaving edits so it becomes impractical to guarantee proper sane convergence with concurrent operations.

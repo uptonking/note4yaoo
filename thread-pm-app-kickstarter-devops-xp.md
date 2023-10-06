@@ -95,7 +95,11 @@ modified: 2022-11-07T11:00:28.824Z
 # discuss
 - ## 
 
-- ## 
+- ## 我们做的是2B的产品。2B产品有一个公认的难点就是用户和决策者（或者付款人）不是一组人。
+- https://twitter.com/PenngXiao/status/1709836955783999779
+  - 那么你要影响决策者就要有额外的技巧。这个thread我就分享一下2C和2B的互动。
+- 我们用灰色高亮出来的那一块表示最可能被2C的产品影响。它的含义是一般来说客户对2B产品的first thought都是来自于团队里面有人在别的公司(1)或者场景(2)使用过。我们要影响(1)就需要我们在B端已经存在优势了，这一点我们不具备。所以我们最能做的就是影响(2)。这时2C的快速反馈的优势就体现出来了
+- 当然这只是一个理论模型。你有了很多的2C用户，他们如何才能跟2B结合起来呢？他可以发邮件给领导，但是这种方式毕竟不自然。为了让2C用户成为天热的2B推动者我们还要做一些工作，让他们更加自然的接触到2B的决策者，并给决策者提供基于事实的建议
 
 - ## Airtable lays off 50% pivots into enterprise, reportedly only $150M in revenue as of 2023 with 1.4b raised. Not even a unicorn, last 5 years of trumpeting have been optics!
 - https://twitter.com/dustingetz/status/1703001633368506772

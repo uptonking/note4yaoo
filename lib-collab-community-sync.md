@@ -414,12 +414,45 @@ modified: 2022-11-29T20:41:25.566Z
 
 - ## 
 
-- ## 
+- ## It's astonishing to me how difficult it (still) is to design a syncable local-first data model.
+- https://twitter.com/andy_matuschak/status/1393620663257100288?s=12
+  - I keep thinking I've found a decent way, then realizing its flaws
+- Take Firebase, for instance: it implements offline caching, but that's very different from sync. You have to design a whole replication strategy on top to get something like "a synced file format."
+
+- CouchDB seems like the closest solution, if you can design a conflict-free model. But I spent the last week getting into the details of actually operating a multi-user service, and I am now quite thoroughly spooked!
+- I've noticed that a lot of modern solutions to this problem assume that it's viable to read the entire data store from disk into memory on load (and, often, write the entire thing on save)—which I guess is a nice simplifying assumption… but quite limiting!
+  - Microsoft sync framework (for all of its flaws) had so much of this solved 10+ years ago but because it’s such a complex problem, solving it generally like MSF did required a complex solution.
+- Happy to discuss my approach with @actualbudget :) Uses CRDT-based data that is stored in local sqlite that is query-able with normal sql queries. Seamlessly syncs in background. Uses hybrid local clocks & merkle tries to verify.
+  - Yeah, that's roughly the approach I'm using… but jeez, so much complexity—so painful.
+- There's definitely space for a this to be abstracted away. imho, the tradeoff of this complexity is a powerful model for features like undo. Worth it for me.
+- Founder of @FISSIONcodes here. We designed a file system on top of IPFS
+  - Thanks! I'm very excited about the distributed design direction. Unfortunately a file system doesn't quite fit my application model: I'd still need to build a database on top of this for querying/indexing.
+- At Quip, we wrote data to a local leveldb bundled with native apps and synced in background using a checksumming mechanism. We had a model layer handled data loading / live updates / mutations & wrote to leveldb on native and sent api requests on web
+  - Thanks! I'm using a similar model—leveldb locally, syncing in background. Wasn't clear from this article how you handle conflict-free resolution. Do the handlers all implement associative/idempotent/commutative functions?
+    - Actually much simpler. Each entity has a global id and a sequence #. When updates are made, fields are marked dirty by client and changes are sent along with the current sequence. When there are no conflicts, changes are merged, sequence is bumped, new data is broadcasted.
+
+- Abandoned the very general approach for my event sourcing-based model Flushout. Figured consistency requirements are app-specific and can be implemented on top with interceptors or even CRDTs, without incurring their impractical model size for other apps
+  - This is a very graceful implementation, suggests event sourcing can be made general and compact. I'll see if I can adapt something like this to my purposes, where the data model is large and I must avoid grabbing a full snapshot except on first run
+- Realized models in my side-project apps aren't large enough to really need incremental updates, but get it for free with Flushout if I start saving command history to support undo or history views...
+
+- It’s really difficult. I’ve had success applying event sourcing to the problem, but schema evolution is a pain and it means my data model takes up a lot of my complexity budget
+  - Yeah, I'm using event sourcing on a custom transport/storage system now, and it's eating up *way* too much complexity.
+- At least for me, the one saving grace is that this is very amenable to TDD and testing in general; easy+fast to replay events and then verify the final state
+- **I use event sourcing on @stayinsession based on that article. Helped a lot, and yeah it's really complex. But I don't believe there's other alternative than that approach**. Been researching about offline first for years too.
+- In Mintter we have been working on this for more than a year... it is a challenge to ride the complexity
+
+- do you think there's value in non-syncable, non-collaborative "local-first" ?
+  - You may be able to separate the DB features from the data sync. Obsidian is just md files that it syncs, but there must be indexes around to speed things up.
+
+- As long as the DB is fully recoverable by replaying the history of change nodes it doesn't matter what the datastore is. Indices are orthogonal side effects of the relevant history of changes / commands.
+  - This is totally true, but on a practical level, I've encountered enormous and persistent complexity in the details of constructing and maintaining snapshots by replaying events.
+
+- Tuple/triple stores sync fairly easily
 
 - ## what solutions/libraries exist for real-time server-owned state synchronization?
 - https://twitter.com/heyImMapleLeaf/status/1582180994752589824
-  - ❌not firebase or liveblocks. state is controlled and updated directly by client
-  - ❌not socket io or pusher. it's just generic messaging, no handling of state
+  - ❌ not firebase or liveblocks. state is controlled and updated directly by client
+  - ❌ not socket io or pusher. it's just generic messaging, no handling of state
 - My @logux_io was created to sync state via web sockets. 
   - It is self-hosted and very flexible system. You can limit a state control by the server only.
   - It has types for all API. I am specially proud that you can define a one interface for Map and then re-use it between client and server as an API contract.

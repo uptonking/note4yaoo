@@ -12,6 +12,17 @@ modified: 2022-10-22T18:46:45.456Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 🤔🌰 [How would you model a complex diagram page? - Yjs Community](https://discuss.yjs.dev/t/how-would-you-model-a-complex-diagram-page/2114)
+- I have 2 ideas:
+  - 1. State as sequence of actions
+  - 2. Represent everything as map
+  - 3. Integrate yjs deeply into the system and build an object graph
+
+
+
+
 - ## 💡 [Document branches like git branches? - Yjs Community](https://discuss.yjs.dev/t/document-branches-like-git-branches/697)
   - I’m wondering if I can build like a branch structure with Yjs docs.
   - My use case, imagine I have a parent document with a lot of work made on it, then we want to make a copy of this document to derivate some content.
@@ -73,7 +84,6 @@ modified: 2022-10-22T18:46:45.456Z
 - In JS and other higher-level languages, objects have quite a lot of overhead: headers, gc bookkeeping, etc. 
   - That may dwarf those 62+8 bytes. 
   - That's why Causal Tree (my RGAish algo) keeps the data in strings or typed arrays.
-
 
 - ## [Should we do state management directly with yjs, or through bindings like SyncedStore? - Yjs Community](https://discuss.yjs.dev/t/should-we-do-state-management-directly-with-yjs-or-through-bindings-like-syncedstore/1345)
 - It really depends. There are arguably nicer libraries for state management. 

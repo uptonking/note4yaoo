@@ -517,7 +517,32 @@ modified: 2023-08-25T21:17:11.979Z
 
 - ## 
 
-- ## 
+- ## [Version Control for Structure Editing | Hacker News_202110](https://news.ycombinator.com/item?id=28922140)
+- Just a reminder that git stores files, not diffs, and you can replace the merging strategy (e.g. how it handles multiple heads), merge driver (e.g. word vs. line based merging), and interactive diffing tool with anything you want. In this sense git is purely concerned with version control (what instance do I have of this data and what is its provenance in regards to other instances), and doesn't really give a crap how those files got there.
+  - I see a new structured editing project kicking off 3-4 times a year and for some reason all of them seem to start by replacing git. Thereby they immediately have to contend with storage, branching, naming, and distribution, rather than using git as an object store and focusing on their new editing algorithms.
+  - (There are also very real workflow issues with the snapshot model! But these structure editing projects don't try to address those either.)
+- True, indeed JetBrains MPS has its own git driver
+
+- The answer for successfully applying VCS to higher-dimensional spaces will demand more mathematically-elegant intermediate representations. Most source code files are highly structured by default. Image files are mostly feasible to diff as-is. Typical 3d models, not so much. 3d models with animation, even less so.
+  - To be clear - the problem isn't that we cant detect a difference, it's that we cannot produce a useful view of the difference such that a human can make an informed decision
+
+- Ooh this is exactly what I've been thinking about. Text is such a slow, clunky medium. It'd be interesting if you could think of versions as events modifying a tree. Renaming a variable and inserting a character would both be an event. Also I wonder if structural editing will take over. IDEs are already so powerful 
+- Text is so clunky, especially in languages with superfluous syntax (semicolon, braces). My tree based outliner allows me to easily rearrange arbitrarily large blocks while never creating invalid syntax, why the heck doesn’t my IDE? Code is just a damn tree
+
+- I don’t think that always keeping a valid AST is important. Realtime highlighting of syntax errors already resumes parsing after invalid code, usually mapping to error nodes internally. That is, you still have an AST, just with additional node types.
+
+- Darcs (and Pijul?) can support more patch types than textual diffs, but I doubt much use has ever been made of that. I don't know about the more general case, but it supports the extra type now for identifier replacement, at least as basically s/x/y/g. (One place where another type might be useful is changelogs, but I never looked at what that might take.)
+
+- Since the beginning of computer time people have been working on structure editing, because academically it's very compelling, yet **in practice text wins out over and over**. That said, there's probably a lot of opportunity to have "structure under the hood", but that's kind of a moot point in general because that's what linters, compilers, etc., are.
+
+- The challenge with implementing this is dealing with half a dozen types of operations or maybe more. In typical string OT/CRDT we are dealing with a minimal set of operations (insert/delete) but when it comes to a structure (= semantic trees) the ops are very tailored for that semantic structure and could span and evolve with the structure.
+- Even if we get the OT part right, it’d be huge effort to port this to support other semantic structures with different set of ops. Also I can’t wrap my head around how transformations and conflict detections work under these cases.
+- Its very doable, and its been done. Eg, in json1[1] we have support for lots of tree operations on a set of data stored as a JSON tree:
+  - Insert / delete in lists
+  - Move (reparent) any object in the tree
+  - Embedded edits (so if you have a custom type inside a field and define your own operations)
+  - This is all very general purpose. You don't need to do reinvent any of this per application.
+- I agree trees(or json) in general can have a fixed set of general purpose ops. This particular paper though, the author claims changing the type of a record struct is itself an operation. This allows to treat it as a special kind, thereby applying it means it has to touch a whole other set of nodes. This is just one example, there could be ops like this tailored for the structure he is working with which is what got me into thinking
 
 - ## [Bitemporal History | Hacker News](https://news.ycombinator.com/item?id=26735260)
 

@@ -340,7 +340,26 @@ that commit position, thus providing "read your own writes" semantics.
 
 - ## 
 
-- ## 
+- ## [CRDTs are the future : programming](https://www.reddit.com/r/programming/comments/j1iy5h/crdts_are_the_future/)
+- How about event sourcing?
+  - You could think of CRDTs as a form of event sourcing with the property that events can be processed in any order and still arrive at the same end result.
+- Event Sourcing is just a technique for producing and recording a history using events. By itself it provides no guarantees: it’s up to the devs to design the events and the application to produce them, whether the events are actually useful is dependent on the devs and what they built.
+  - CRDT’s are backed by probable mathematical theory, which lets them provide guarantees about behaviour.
+  - You could, for example, use event sourcing to produce events that are CRDT’s.
+
+- ## [The Future Needs Files | Hacker News_202109](https://news.ycombinator.com/item?id=28391570)
+- I agree with the author on the merits(优点; 价值) of the file abstraction, but I think the concept should be updated for networked devices. **We need file formats that support both offline usage and seamless sync over the network**.
+- For example, here I use a merkle DAG-based file format to represent CRDT-like types: https://www.hyperhyperspace.org
+- I am interested in the distributed computing/P2P space and study it.
+  - I think a combination of event sourcing and CRDTs could be used to provide arbitrary synchronisation and merging between peers that handles bad actors through web of trust.
+- There are other projects that take an approach similar to what you're describing (Automerge and its derivatives, mainly).
+  - I guess there is a distinction between distributed databases and permission-less p2p applications. Having a data center where you can trust the compute nodes running your distributed database is very different than having random untrusted peers over the net. But maybe data validation can be done in a less intrusive way, something like what Automerge does for JSON merging (maybe in a typed setting?).
+- I see you're going for a zero trust model where you have baked identities into the data structure. Which is very cool.
+  - One idea is to strictly review all distributed apps, so sign them by a central party.
+
+- ## [Ask HN: How does your development team handle database migrations? | Hacker News_201905](https://news.ycombinator.com/item?id=19880334)
+- Would be cool to have git for databases.
+  - That’s basically the proposition of any event sourcing system. but you’re kinda right, that involves a level of code complication (but then it would be so simple as you described to restore / rebase / etc)
 
 - ## [Ask HN: Options for handling state at the edge? | Hacker News_202205](https://news.ycombinator.com/item?id=31342436)
 - 

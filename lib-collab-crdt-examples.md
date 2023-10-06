@@ -630,12 +630,14 @@ modified: 2022-04-05T10:08:25.947Z
     - library for realtime collaboration on JSON structures. 
     - It is a client-oriented, declarative-functional approach to shared application state.
 
-- https://github.com/hyperhyperspace/hyperhyperspace-core /ts
+- https://github.com/hyperhyperspace/hyperhyperspace-core /MIT/ts
   - https://www.hyperhyperspace.org/
+  - A library to create p2p applications, using the browser as a full peer.
+  - An offline-first shared data library for creating p2p apps that work in the browser (and now also NodeJs).
   - HHS uses an immutable typed-objects local storage model. 
     - Objects are both retrieved and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
   - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
-  - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
+- Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
 
 - https://github.com/twfarland/count-them-beans
   - Displays use of a GCounter conflict-free replicated data type (CRDT), web workers, signals, and virtual dom.
@@ -961,6 +963,20 @@ modified: 2022-04-05T10:08:25.947Z
     - Rhizome more focused on providing a database and CRDT primitives — despite the surface similarity of being a tuplestore, it's is **closer to something like Datomic or Automerge than RDF**.
     - I see, incremental view maintenance is a powerful concept. Crucial to make CRDTs at Datalog-level efficient / practical.
 # apps-examples
+- https://github.com/josephg/statecraft /ISC/201911/ts/inactive
+  - Statecraft is a protocol and set of tools for interacting with data that changes over time. 
+  - It is the spiritual successor to Sharedb.
+  - The store guarantees that the data is immutable with respect to time. (So if the data changes, the version number goes up).
+    - Stores can choose how much historical data to store and return.
+  - Stores provide a standard set of methods to interact with the data: fetch/mutate/subscribe
+  - A Statecraft store is more than just a database abstraction
+    - Unlike traditional transactional databases, Statecraft stores compose together like LEGO. Stores wrap one another
+  - The philosophy of Statecraft is to "ship the architecture diagram". 
+    - The API is designed to make it easy to re-expose a statecraft store over the network.
+  - [Show FDB: A scalable realtime text editor on top of foundationdb_201901](https://forums.foundationdb.org/t/show-fdb-a-scalable-realtime-text-editor-on-top-of-foundationdb/1082)
+    - I’m working on a realtime data processing pipeline / event sourcing system lately called statecraft 45. Over the last few days I’ve added foundationdb backend support.
+    - The current code also re-stores the whole text document with every edit, but this is just because I haven’t tuned it. 
+
 - https://github.com/Sambigeara/fuzzynote /go
   - Terminal-based, hyper-fast, CRDT-backed, collaborative note-taking tool
 

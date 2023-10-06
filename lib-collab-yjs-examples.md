@@ -100,6 +100,9 @@ modified: 2022-09-21T15:47:41.340Z
 
 - https://github.com/JonnysCode/y-solid
   - An experimental Solid protocol provider for Yjs
+# apps
+- https://github.com/cybersemics/em /ts/yjs/web/ios/android
+  - minimalistic note-taking app for personal sensemaking.
 # examples
 - yboard /301Star/MIT/202206/js/vue
   - https://github.com/felipeleivav/yboard

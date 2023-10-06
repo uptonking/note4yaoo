@@ -93,6 +93,20 @@ modified: 2022-11-07T17:36:22.236Z
   - This library has no dependency on Convergence.
   - 只依赖textarea-caret，不依赖其他
 
+- https://github.com/josephg/statecraft /ISC/201911/ts/inactive
+  - Statecraft is a protocol and set of tools for interacting with data that changes over time. 
+  - It is the spiritual successor to Sharedb.
+  - The store guarantees that the data is immutable with respect to time. (So if the data changes, the version number goes up).
+    - Stores can choose how much historical data to store and return.
+  - Stores provide a standard set of methods to interact with the data: fetch/mutate/subscribe
+  - A Statecraft store is more than just a database abstraction
+    - Unlike traditional transactional databases, Statecraft stores compose together like LEGO. Stores wrap one another
+  - The philosophy of Statecraft is to "ship the architecture diagram". 
+    - The API is designed to make it easy to re-expose a statecraft store over the network.
+  - [Show FDB: A scalable realtime text editor on top of foundationdb_201901](https://forums.foundationdb.org/t/show-fdb-a-scalable-realtime-text-editor-on-top-of-foundationdb/1082)
+    - I’m working on a realtime data processing pipeline / event sourcing system lately called statecraft 45. Over the last few days I’ve added foundationdb backend support.
+    - The current code also re-stores the whole text document with every edit, but this is just because I haven’t tuned it. 
+
 - https://github.com/Rishabh-malhotraa/caucus
   - Realtime Collaborate Editor with Embedded Compiler
   - 类似协作codepen

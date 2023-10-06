@@ -267,6 +267,15 @@ modified: 2023-04-05T19:35:14.347Z
 # file-utils
 - https://github.com/plantain-00/files2text
   - A CLI tool and library to get text structure of files in a folder.
+
+- https://github.com/hyperhyperspace/hyperhyperspace-core /MIT/ts
+  - https://www.hyperhyperspace.org/
+  - A library to create p2p applications, using the browser as a full peer.
+  - An offline-first shared data library for creating p2p apps that work in the browser (and now also NodeJs).
+  - HHS uses an immutable typed-objects local storage model. 
+    - Objects are both retrieved and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
+  - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
+  - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
 # undo/history
 - https://github.com/pomber/git-history
   - https://githistory.xyz/

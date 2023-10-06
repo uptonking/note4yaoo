@@ -33,8 +33,23 @@ modified: 2023-03-30T13:31:09.049Z
 - ## 小朋友入门学编程，推荐在 iPad 上玩 Playground 应用、程序员升职记（Human Resource Machine）游戏。
 - https://twitter.com/onlyice0328/status/1692364789996229022
   - 这些都是编程游戏，边学边练，难度循序渐进，甚至不需要大人帮助
+
 # discuss-cases
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Actual is going open-source | Hacker News_202204](https://news.ycombinator.com/item?id=31206536)
+- Similarly, a local-first (PouchDB) budgeting app I built went open source a few years ago. It's worked out well, I love seeing what everyone does with it in their forks. Unlike Actual however, I maintain a paid subscription service while being open source.
+  - It's worked out quite well. Luckily it's not a huge time commitment as a side project, probably due to no native apps. I've also shifted from active development to maintenance
+
+- What's shutting down is the public syncing server. That server is literally just a message store: it takes CRDT changes and puts them in a big table. And it servers them back out. Now that the server is public, it's incredibly easy for you to run your own. It's such a simple server (no postgres etc requirement) that this model is actually way better.
+  - The server can be application agnostic. It shouldn't care whether the CRDT update is from a budget app or an RSS reader or whatever else, because the sync job for the server is exactly the same. You should also be able to encrypt the content, and therefore set up generic shared CRDT servers instead of requiring people to run their own.
+
+- I wonder why James didn't attempt to sell it at the very least?36K ARR means you could have rather quickly found a buyer for 60k+ and gotten rid of the thing for a small but not in-significant payday. 
+  - You have no control over what the buyer would do with it. They might decide to slurp up all of the user financial data flowing through the server, for example.
 
 - ## 我是如何开发我的第一款产品BilibiliSummary，为什么放弃收费，最后如何在放弃开发的！！！
 - https://twitter.com/lxfater/status/1657646711735730176

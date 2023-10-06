@@ -51,3 +51,11 @@ modified: 2021-01-04T17:31:49.998Z
   - a desktop application to extract pages, split, merge, mix and rotate PDF files
 - https://github.com/caryyu/excel2pdf
   - 利用 JAVA 编写把 Excel 转 PDF 解决方案，依赖POI与IText库的实现
+# sharing
+- https://github.com/mfts/papermark /AGPLv3/ts
+  - https://papermark.io/
+  - open-source document sharing alternative to DocSend with built-in analytics. 
+  - Built with Vercel Storage and Vercel Edge Functions.
+  - Share your document securely by sending a custom link
+  - Get insights via document tracking and soon page-by-page analytics
+# more

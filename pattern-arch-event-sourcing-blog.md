@@ -22,7 +22,7 @@ modified: 2023-09-13T14:37:51.659Z
 - In conclusion, each data store has its strengths and limitations for Event Sourcing. 
   - It is essential to consider factors such as scalability, consistency, sequencing, transactionality, and query support when selecting a suitable data store for an event-sourced system.
 
-## [Building offline-first web and mobile apps using event-sourcing_201907](https://flpvsk.com/blog/2019-07-20-offline-first-apps-event-sourcing/)
+## 🌰 [Building offline-first web and mobile apps using event-sourcing_201907](https://flpvsk.com/blog/2019-07-20-offline-first-apps-event-sourcing/)
 
 ## 📝 [Mistakes we made adopting event sourcing (and how we recovered)_201906](http://natpryce.com/articles/000819.html)
 
@@ -168,26 +168,32 @@ modified: 2023-09-13T14:37:51.659Z
 
 - [SQLite Peer to Peer Event Log / Matt](https://observablehq.com/d/dc2bbfad6d64fb5e)
 
-- Event sourcing is a fairly common design pattern for deriving application state from a history of events. But is it possible to turn an event log into a CRDT? 
-  - This is possible. What's even better is that it is more powerful than other approaches, such as last write wins, to solving the problem of distributing application state.
+- 🤔 Event sourcing is a fairly common design pattern for deriving application state from a history of events. But **is it possible to turn an event log into a CRDT**? 
+  - **This is possible**. What's even better is that it is more powerful than other approaches, such as last write wins, to solving the problem of distributing application state.
 
 - We'll do a brief review of how we can distribute state with last write wins registers, cover how that is a less powerful version of an event log and then build an distributed event log.
 - A common approach to distributing application state is to use last write wins registers. 
   - Last write wins (LWW), however, is just one interpretation of the events in the system. 
   - This interpretation discards all the information that was used to derive it. 
--  A distributed event log on the other hand:
-   - A distributed event log on the other hand:
-   - Can be interpreted as LWW in addition to other ways
+- A distributed event log on the other hand:
+  - A distributed event log on the other hand:
+  - Can be interpreted as LWW in addition to other ways
 - Unpacking that a bit. Say I have an TODO list application. I can save just the current state of each todo or I can save all of the events that have transpired and build the state later.
   - Saving just the current state is what LWW does
   - Saving just the current state is what LWW does
 - The event based approach gives you a set of facts about the system that never change.
 
 - We know that a grow only set of LWW registers is a CRDT from the last article but how do we turn an event log into a CRDT? 
+- we're going to set up two different examples. One for LWW and one for a P2P event log. Each example will have three todo lists that are running on different peers.
+
 - The LWW state is pretty straightforward.
   - a drawback is that we're locked into this specific way of resolving conflicts and we don't have a history of how we got into a given state.
   - Note that the clock columns could be a variety of options. Here we've done an independent lamport timestamp per column.
-- the DAG example is notional and thoroughly un-optimized. 
+
+- the DAG example keeps a record of every event
+  - These events are linked together into a "causal graph" to represent which events caused which others. 
+  - Processing the graph gives us the final state.
+  - the DAG example is notional and thoroughly un-optimized. 
   - We currently re-pull and re-apply the entire DAG on sync rather than doing incremental updates. 
   - We also sync the entire DAG between nodes rather than delta states. 
   - How to incrementally process the DAG is a separate topic.
@@ -429,3 +435,5 @@ modified: 2023-09-13T14:37:51.659Z
 - [Datomic: Event Sourcing without the hassle | Hacker News_201811](https://news.ycombinator.com/item?id=18431382)
 
 - [CQRS + Event Sourcing – Step by Step](https://danielwhittaker.me/2020/02/20/cqrs-step-step-guide-flow-typical-application/)
+
+- [Event Sourcing with Apache Kafka — Trustbit](https://www.trustbit.tech/blog/2023/7/14/event-sourcing-with-apache-kafka)

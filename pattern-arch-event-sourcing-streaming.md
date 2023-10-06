@@ -20,6 +20,8 @@ modified: 2023-09-12T09:34:51.108Z
   - 工程类、科学类数据的观测分析
 
 - tips
+  - event sourcing会记录所有events，可以根据events计算state，但不同client计算的结果不一定一致
+    - crdt是通用的能实现最终一致性的数据结构，可将对crdt数据结构的crud操作用events记录，这样计算的state就是一致的
   - event sourcing模式是db无关的，不必执着于标准方案，存储、传输都可替换，可针对场景优化，如offline
   - 探索es pattern的最佳实现，然后总结 examples/kanban/framework
 

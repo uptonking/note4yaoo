@@ -12,6 +12,10 @@ modified: 2022-04-05T13:25:40.892Z
 # discuss
 - ## 
 
+- ## 
+
+- ## [Request for Comments: CRDTish approach to Solid - Build a Solid App - Solid Community Forum_202104](https://forum.solidproject.org/t/request-for-comments-crdtish-approach-to-solid/4211)
+
 - ## What properties would the design of a programming language need to have to be sync / collaboration friendly?
 - https://twitter.com/JungleSilicon/status/1673146654818725889
   - Which programming concepts would be best represented by tree's, lists, ranges, etc? Is plain text a poor binding between what we write and the AST, would some kind of rich-text format for code be more effective?

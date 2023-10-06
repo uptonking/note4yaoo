@@ -136,7 +136,8 @@ modified: 2023-03-05T08:55:03.696Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Data fetching on the web still sucks | Hacker News_202101](https://news.ycombinator.com/item?id=25930177)
+- Completely agree! I believe that op-log sync with CRDT-based atomic operations are a better solution.
 
 - ## [using the data of one query to fetch the data for another](https://github.com/TanStack/query/discussions/3147)
 - The dependent queries section in the docs shows that quite nicely, and I would just put the two things into a custom hook so that the GC issue doesn't even arise because as long as queryB is used (which uses query A, query A will also be used)

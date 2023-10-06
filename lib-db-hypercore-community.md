@@ -194,7 +194,10 @@ modified: 2023-09-07T15:58:27.967Z
 # discuss
 - ## 
 
-- ## 
+- ## We're happy to announce that NLnet will be funding Hyper Hyper Space development in the near future
+- https://twitter.com/The_lolness/status/1496088630808485890
+- any relation to the hypercore protocol?
+  - Nope, we're unrelated
 
 - ## do you have any hello-world type example of hypercore running in the browser?
 - https://discord.com/channels/709519409932140575/709519410557222964/1068520819204051084

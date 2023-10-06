@@ -356,12 +356,6 @@ modified: 2023-09-12T09:37:22.608Z
   - Linear sequence of values based on `ORMap` of base64 fractional index to values
   - timestamp基于逻辑时钟
 
-- https://github.com/soundcloud/roshi /3.1kStar/bsd/go/soundcloud
-  - Roshi implements a time-series event storage via a LWW-element-set CRDT with limited inline garbage collection. 
-  - Roshi is a stateless, distributed layer on top of Redis and is implemented in Go. 
-  - It is partition tolerant, highly available and eventually consistent.
-  - [Roshi: a CRDT system for timestamped events | SoundCloud Blog_201405](https://developers.soundcloud.com/blog/roshi-a-crdt-system-for-timestamped-events)
-
 - https://github.com/josephg/statecraft /ISC/201911/ts/inactive
   - Statecraft is a protocol and set of tools for interacting with data that changes over time. 
   - It is the spiritual successor to Sharedb.
@@ -371,7 +365,16 @@ modified: 2023-09-12T09:37:22.608Z
   - A Statecraft store is more than just a database abstraction
     - Unlike traditional transactional databases, Statecraft stores compose together like LEGO. Stores wrap one another
   - The philosophy of Statecraft is to "ship the architecture diagram". 
-    - The API is designed to make it easy to re-expose a statecraft store over the network. 
+    - The API is designed to make it easy to re-expose a statecraft store over the network.
+  - [Show FDB: A scalable realtime text editor on top of foundationdb_201901](https://forums.foundationdb.org/t/show-fdb-a-scalable-realtime-text-editor-on-top-of-foundationdb/1082)
+    - I’m working on a realtime data processing pipeline / event sourcing system lately called statecraft 45. Over the last few days I’ve added foundationdb backend support.
+    - The current code also re-stores the whole text document with every edit, but this is just because I haven’t tuned it. 
+
+- https://github.com/soundcloud/roshi /3.1kStar/bsd/go/soundcloud
+  - Roshi implements a time-series event storage via a LWW-element-set CRDT with limited inline garbage collection. 
+  - Roshi is a stateless, distributed layer on top of Redis and is implemented in Go. 
+  - It is partition tolerant, highly available and eventually consistent.
+  - [Roshi: a CRDT system for timestamped events | SoundCloud Blog_201405](https://developers.soundcloud.com/blog/roshi-a-crdt-system-for-timestamped-events)
 # non-js
 - https://github.com/EventStore/EventStore /csharp
   - https://eventstore.com/
@@ -521,6 +524,15 @@ modified: 2023-09-12T09:37:22.608Z
   - a POC status project and should not be used in production.
   - The main goal is to have a fast, low memory event store backed by a Kafka topic.
   - https://github.com/gklijs/bkes-demo /clojure
+
+- https://github.com/RBMHTechnology/eventuate /scala/201810/inactive
+  - http://rbmhtechnology.github.io/eventuate/
+  - a toolkit for building applications composed of event-driven and event-sourced services that communicate via causally ordered event streams.
+  - Services can either be co-located on a single node or distributed up to global scale.
+  - written in Scala and built on top of Akka
+  - provides implementations of operation-based CRDTs
+  - [A service framework for operation-based CRDTs - Martin Krasser's Blog](http://krasserm.github.io/2016/10/19/operation-based-crdt-framework/)
+    - The two CmRDT update phases, prepare and effect, are closely related to the update phases of event-sourced entities, command handling and event handling
 # cqrs/event-driven
 - https://github.com/awakelife93/msa-ddd-with-event-sourcing-cqrs-pattern /ts
   - Microservice + DDD Architecture + Event Sourcing + CQRS pattern
@@ -715,11 +727,20 @@ modified: 2023-09-12T09:37:22.608Z
 
 ## distributed-es
 
-- https://github.com/saarw/flushout /201910/ts
+- https://github.com/saarw/flushout /MIT/201910/ts/NoDeps
   - a distributed data model based on event sourcing. 
   - Collaborative applications use it for clients that need responsive interaction without network delay, or need to function offline.
   - Clients interact with a local proxy of a remote master model without accessing the network. They can then periodically flush changes from the proxy to the master in the background when the network is available.
+  - Minimizes network traffic by only initializing clients with the latest model snapshot and then only send updates
+  - Storing update history is optional and command history is kept separate from the model state
+  - A document in Flushout is a simple JavaScript object that may contain primitive fields or additional object fields to form a tree graph. Applications modify the model by applying commands. A snapshot is simply a document and a count of how many commands have been applied to the document.
   - [Building a collaborative React app with Flushout_202003](https://saarw.github.io/dev/2020/03/02/building-a-collaborative-react-app-with-flushout.html)
+  - https://github.com/saarw/flushout-example /ts
+    - A collaborative todo-list application using Flushout
+  - https://twitter.com/saarw/status/1393631422150320133
+    - Abandoned the very general approach for my event sourcing-based model Flushout 
+    - Figured consistency requirements are app-specific and can be implemented on top with interceptors or even CRDTs, without incurring their impractical model size for other apps
+    - Realized models in my side-project apps aren't large enough to really need incremental updates, but get it for free with Flushout if I start saving command history to support undo or history views...
 
 - https://github.com/dasmeta/event-manager-backend /ts
   - Node.js backend that handles event store, monitoring and retries

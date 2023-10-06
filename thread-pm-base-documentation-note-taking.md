@@ -9,6 +9,68 @@ modified: 2021-08-16T06:56:53.061Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 💡 It seems that there are just three approaches that "knowledge management" apps take:
+- https://twitter.com/jessmartin/status/1710261497786413516
+  - Document-first (Notion, Obsidian, etc)
+  - Spatial-first (Miro, Muse, etc)
+  - Table-first (Airtable, Tana?, etc)
+  - ...and then they try to add the other two.
+- Thought of another one: Notebook-first. Observable, Jupyter Notebooks, etc.
+- How you answer the question determines many things:
+  - primary/secondary nav metaphors
+  - which components you spend the most time on
+  - what should be embeddable in what
+  - how you visually present an entity/object throughout(各方面)
+
+- Also http://getguru.com - they look similar but take a different approach (with verification features) and are very successful with it
+  - [Guru | Your company’s all-in-one solution for trusted information | Guru](https://www.getguru.com/)
+  - 3 products. 1 platform: AI-powered enterprise search, wiki, and intranet
+- On the surface, it looks like document-first (an enterprise wiki)
+- What would you say differs about their approach?
+  - One differentiator is verification. Each "card" needs checking and verifying within a certain time-period. This ensures that information doesn't grow stale which is a problem in so many company wikis. By default the card creator is the verifier, but they can also be nominated.
+
+- Tana, Roam, and Logseq all seem like Outline-first, where the primary unit is actually a point in the outline.
+  - Good point! Outline ≠ document. When I’ve tried to treat an outliner as a normal document, I’ve been incredibly frustrated
+
+- I would consider http://rewind.ai a tool for knowledge management, a very novel one.
+
+- This makes me wonder about Anki’s use for PKM where it is very document-first but the primary interaction is at a sub-document level. The relationship to and navigation of the corpus is also distinct. Then primary-nav: folders, tags, piles, search (inc. keyword or semantic).
+- This is helping me think - perhaps representation/medium should be tied to activity:
+  - capture/ingest/create new
+  - search/recall
+  - browse/explore
+  - organize/curate/interlink
+  - edit/remix
+
+- Maybe this is the mythical graph-first? Curious how this feels in practice. Many people who use tools with knowledge graphs seem to only use as an auxiliary view, kinda like a dynamic plot
+
+- https://get.mem.ai is interesting from this lens... "Snippet first" maybe?
+  - but I'd argue that snippets are just short documents.
+
+- I was going to joking reply, "clipboard first" to your original. I'm working on a clipboard manager that takes influence from the tools of thought space, particularly obsidian
+
+- I would describe Fabric as entity-first (like Finder), we don't try to coerce things into a new shape
+  - So I thought about that, too. The problem is entity/object is too generic. Items on a spatial canvas are entities.
+- How I think about it for my entity-first product: One has to focus on some components/UI first.
+  - The difference is how deeply those metaphors are baked into the core. Airtable will always have tables as primary view, while others are more neutral towards how the app should be used
+- I’m also working on an entity-first system and pondering the same concerns. Formable looks interesting!
+
+- I've been using Notion since they launched and they definitely started Document-first and have added more Table features over time.
+  - Document is the organizing metaphor navigationally (they call them Pages).
+
+- Arguably wikis are supposed to be hyperlink-first.
+  - I was cheekily thinking of hypertext as the Platonic(纯友谊的，柏拉图式的) form of the Document.
+
+- Command line first perhaps?
+  - maybe this overlaps with cmd-K / cmd-space first (Raycast, Alfred, Quicksilver)?
+
+- @RoamResearch is block-first, even in a way that Notion is not (I think you're right to call Notion "Document-first") 
+  - It then *composes* the three approaches you list here by combining together the same underlying items in different forms (slightly different than "adding on")
+
+- Task-first. @clickup Docs function as my primary knowledge base with links to Tasks in Lists that track my long-term and ongoing projects. It’s powerful to have knowledge management and project management in a single tool.
 # discuss
 - ## 
 

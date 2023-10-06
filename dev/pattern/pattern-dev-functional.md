@@ -140,3 +140,32 @@ expect(o2).toEqual({ foo: 10, bar: "hello" });
 let o3 = Something.foo.update(o, i => i+1);
 expect(o3).toEqual({ foo: 2, bar: 'hello'})
 ```
+
+# discuss-functional
+- ## 
+
+- ## 
+
+- ## 
+
+- ## OOP really disillusioned generations of programmers into thinking the way to do polymorphism is to construct overly complex class hierarchies instead of just using sum types (tagged/discriminated unions)
+- https://twitter.com/zack_overflow/status/1709670429680353718
+- What are sum types?
+  - The non-insane way to represent data that takes up multiple forms: Sum types fall under a category types known as "Algebraic data types" which just mean types that can be composed. ez way to think of sum types is they can be composed by "adding" multiple types together
+- Isn’t the polymorphic example actually Shape.area() vs area(shape)?
+  - I take polymorphism to mean types that can take up multiple shapes.
+  - The example I gave is a case where there is a finite amount of shapes, it's just better to construct a sum type
+  - The other non-OOP approach which I think you are thinking of is typeclasses/interfaces/traits (depending on which language you use), which let you accept any type that implements an interface
+
+- If only the first ANSI standardized OOP system was mainstream, where classes do not own their methods. Instead most langs went with something like the structs with function pointers approach, and this world is the result.
+
+- The one thing I can't get around is dynamic dispatch. Still end up with classes between layers and procedural within each layer
+  - Not to mention the performance implications of it
+- we don't need dynamic dispatch through sum types, we have dynamic dispatch at home
+
+- Sum types are better for many cases but one goal of Java style OOP was PitL: allow many teams working separately to contribute to a whole. Can sum types that require all variants (whether they are represented as sub-types) to appear in the same compilation help with PitL?
+  - Scala style sealed classes (and as adopted by Kotlin) have really nicely integrated discriminated unions and by-construction style programming into an ecosystem that still allows for OOP-style modelling where it's appropriate.
+
+- The biggest benefit of classes is not polymorphism, it is data abstraction. Which sum types do not give you.
+
+- It's all good until you realize you need to extend the sum. Or someone else's sum.
