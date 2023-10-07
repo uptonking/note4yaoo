@@ -40,7 +40,11 @@ modified: 2022-12-02T11:16:05.028Z
   - CRDT can only be use when your business logic allows to represent document changes via static json operators. 
   - If you can have cases where user interaction is required to correctly merge conflicting document states, you cannot use CRDTs for that.
 - Also when CRDTs are used, it is no longer allowed to do non-CRDT writes to the document properties.
-# discuss
+# more
+
+# discuss-rxdb
+- forums
+  - https://news.ycombinator.com/from?site=rxdb.info
 - ## 
 
 - ## 
@@ -83,5 +87,3 @@ modified: 2022-12-02T11:16:05.028Z
 - Meteor uses `minimongo` on the client which sync's with the server; effectively doing the same thing. It's actually amazing how much better the UX is when you have spotty coverage.
 - I think Oracle APEX works on the same premise? Store locally in indexedDB and sync up when the connection is back on-line. No need for difficult programming, APEX does this out of the box .
   - Anyhow, a way to force this behaviour in APEX is to make every user interaction a write action on the DB. This way you either save locally or to the backend (but you don't have to worry about the sync between the two).
-# more
-- https://news.ycombinator.com/from?site=rxdb.info

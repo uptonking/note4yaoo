@@ -162,6 +162,10 @@ modified: 2023-03-16T16:29:47.610Z
 - 复制粘贴时，处理伪元素::before/::after
 # search
 - 搜索时能够搜索emoji
+# collab
+- cursor
+  - 鼠标图标支持显示头像或实时视频截图
+  - 鼠标轨迹能显示其他用户鼠标移动的动画
 # idea
 - page级别的视图切换
   - 类似codepen的editor/page，注意codepen有tv视图

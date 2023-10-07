@@ -20,7 +20,15 @@ modified: 2021-08-10T03:51:01.891Z
 # discuss
 - ## 
 
-- ## 
+- ## 想问问大家，真的觉得这样好看吗？我宁愿多写几个 if else + for loop
+- https://twitter.com/junairez/status/1710167177054355864
+- 这种链式写法，自己写的爽了，可读性差，出问题调试麻烦，新手的代码总爱越写越复杂，老手的代码喜欢越写越简单，Python 之禅不是说么：简单胜于复杂，优美胜于丑陋，平铺胜于嵌套
+  - 加上隐藏了不少中间值，出问题跟踪调试麻烦死你，特别那些还写成一行的，调试器又不支持按列下断点的时候
+  - 中间想加行日志看看中间值都麻烦
+- 让rust 社区自嗨吧
+- 还是要保守一点，怕过段时间自己都看不懂的
+- 这种写法其实扩展性不好，写的很精致，出现一些业务变化了，改着改着就成屎山了，一个方法只完成一个功能，其实是最好的
+- 团队工作里在不是特别影响效率的地方，我觉得可读性的重要性是最高的。
 
 - ## People often find it strange that I never use `console.log` to debug things when I'm coding in JavaScript.
 - https://twitter.com/trueadm/status/1709361643535143316

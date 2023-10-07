@@ -79,6 +79,7 @@ Instead, it provides the math, calculations, and props for managing common table
   - Solution consists in verifying if the cursor is moving in a virtual triangle area. This was one of the rare moments that I had to use Math from school in web dev. But school wasn't really helpful as I had to learn everything again to fix this.
   - https://github.com/ariakit/ariakit/blob/reakit/packages/reakit/src/Menu/__utils/useTransitToSubmenu.ts
   - 可参考 [useHover#safePolygon | Floating UI](https://floating-ui.com/docs/usehover#safepolygon)
+  - [Better Context Menus With Safe Triangles — Smashing Magazine](https://www.smashingmagazine.com/2023/08/better-context-menus-safe-triangles/)
 
 - ### Notion 优化了走直线选不中子级菜的问题，想起之前 @height_app 的一篇关于 context menus 细节的文章。
 - https://twitter.com/leadream4/status/1629307997175549952

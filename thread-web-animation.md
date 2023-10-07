@@ -22,7 +22,12 @@ modified: 2021-01-08T17:14:34.841Z
 # discuss
 - ## 
 
-- ## 
+- ## It’s actually weird to me that the View Transitions API accepts an async function. 
+- https://twitter.com/mattgperry/status/1710630573339787561
+  - startViewTransition shouldn’t be fired until anything asynchronous has finished and we’re ready to start a single sync job - updating the DOM. 
+  - Because this function freezes the whole UI anyway.
+- So allowing the encapsulation of jobs that could normally be discarded, interrupted, or persisting animations etc while they happen, is encouraging bad practise
+- Although I am reminded of the example where you await fonts requested on the new page - that’s pretty nice.
 
 - ## Preact Signals-inspired API for useTransform
 - https://twitter.com/mattgperry/status/1691442096279064576

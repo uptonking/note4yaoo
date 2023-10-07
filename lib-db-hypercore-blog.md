@@ -145,3 +145,4 @@ modified: 2023-09-07T15:59:12.947Z
   - In my opinion the latest DHT (hyperswarm) improvements are even more important. A DHT node does not share the IP of a peer if does not consent. And I's all E2EE(!)
 - What the blogpost gets a little bit wrong is that hypercore does NOT use content addressing, instead it uses the public key used for signing the data address (which is then hashed for discovery).
 # more
+- [Hypercore 10 and other projects - Related Projects - Safe Network Forum](https://safenetforum.org/t/hypercore-10-and-other-projects/36567)

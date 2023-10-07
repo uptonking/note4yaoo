@@ -346,6 +346,11 @@ modified: 2023-09-12T09:37:22.608Z
     - But in practice, event sourcing is usually used in conjunction with CQRS. 
     - Event store is used as a write database, and SQL or NoSQL database as a read database.
     - Commands generate events. 
+
+- https://github.com/factcast/factcast /java
+  - https://docs.factcast.org/
+  - Simple EventStore based on PostgreSQL
+  - a 'good enough' event store using PostgreSQL for persistence, and offers remoting via GRPC.
 # es-collab
 - https://github.com/andykswong/mithic /MIT/ts
   - https://andykswong.github.io/mithic/
@@ -387,13 +392,20 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/meilisearch/MeiliES /MIT/201910/rust/inactive
   - MeiliES is an Event Sourcing database that uses the RESP (REdis Serialization Protocol) to communicate. 
-  - This way it is possible to create clients by reusing the already available protocol. 
-  - it is possible to use the official Redis command line interface program to communicate with MeiliES.
+    - it is possible to use the official Redis command line interface program to communicate with MeiliES.
   - An event store is like a Kafka or a Rabbit MQ but it stores events on disk indefinitely. 
   - MeiliES stores all the events of all the streams that were sent by all the clients in the order they were received.
   - Keep in mind that a message queue is not made for event-sourcing.
   - Full Rust, using `sled` as the internal storage
   - The current implementation has some limitations related to the whole number of streams subscribed
+  - [MeiliES - Event sourcing in Rust_201903](https://blog.meilisearch.com/meilies-release/)
+
+- https://github.com/tomcumming/simples /rust/inactive
+  - tiny event sourcing database for prototype and small projects.
+  - Designed to preserve data even when crashing mid-write. Ready to relaunch immediately.
+  - Written in Rust, using Tokio and Hyper.
+  - Uses little more disk space than the contents of the topics.
+
 - https://github.com/x-cubed/event-store-client /js
   - JS client library for connecting to Event Store over TCP/IP
   - Connects to an Event Store server over TCP/IP, to send and receive event information.
@@ -401,17 +413,13 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/get-eventually/eventually-rs /rust
   - Collection of traits and other utilities to help you build your Event-sourced applications in Rust.
+  - eventually exposes all the necessary abstraction to model your Domain Entities (in lingo, Aggregates) using Domain Events, and to save these Events using an Event Store (the append-only event log).
+  - officially-supported backend: in-memory, pg
   - https://github.com/pholactery/eventsourcing /rust/inactive
 
 - https://github.com/primait/event_sourcing.rs
   - opinionated library used to achieve cqrs/es in Rust.
   - Event Sourcing RS uses under the hood sqlx.
-
-- https://github.com/tomcumming/simples /rust/inactive
-  - tiny event sourcing database for prototype and small projects.
-  - Designed to preserve data even when crashing mid-write. Ready to relaunch immediately.
-  - Written in Rust, using Tokio and Hyper.
-  - Uses little more disk space than the contents of the topics.
 
 - https://github.com/palfrey/potboiler /rust
   - an AP Event Sourcing system. it's an MVP/research prototype 
@@ -420,6 +428,11 @@ modified: 2023-09-12T09:37:22.608Z
   - Building on the power, portability, speed, and scalability of wasmCloud, Concordance allows you to reason about your application using the fundamental building blocks of event sourcing: Aggregates/Projectors
   - https://github.com/wasmCloud/wasmCloud
     - https://wasmcloud.com/docs/intro
+
+- https://github.com/bfil/exar-db /201703/rust
+  - http://bfil.github.io/exar-db/exar_db
+  - An event store with streaming support, it uses flat-file based collections.
+  - The database is split into modules
 
 - https://github.com/alicanli1995/clean-hexagonal-architecture-kafka-saga-outbox /java
   - Food Ordering Project with Clean and Hexagonal Architecture With Kafka Messaging System And Outbox Table
@@ -464,6 +477,17 @@ modified: 2023-09-12T09:37:22.608Z
   - It requires Apache Kafka for messaging and MongoDB for storing state.
 - https://github.com/pavankjadda/KafkaStream-CQRS-EventSourcing /java
   - Event Sourcing(CQRS) and Materialized views with Kafka Streams
+
+- https://github.com/egetman/jes /202006/java
+  - Java Event Store implementation
+- https://github.com/eventsourcing/es4j /201702/java
+  - Event capture and querying framework for Java
+  - Instead of mutating data in a database, Eventsourcing stores all changes (events) and what caused them (commands).
+  - To make this data useful, Eventsourcing builds indices over it.
+
+- https://github.com/Splitet/SplitetFramework /java
+  - a Java based Event Sourcing framework 
+  - It has a unique architecture called Operation Store™ together with the stack elements including Docker, Kafka, Hazelcast and Cassandra.
 
 - https://github.com/AxonFramework/AxonFramework /apache2/java
   - https://developer.axoniq.io/

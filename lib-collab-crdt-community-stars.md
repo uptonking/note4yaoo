@@ -12,9 +12,61 @@ modified: 2022-04-05T10:09:51.343Z
  
 
 - resources
-# discuss
+# discuss-crdt-event
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🌰 [Show HN: fuzzynote - CRDTs+WASM for local-first, collaborative note-taking in the browser | Hacker News_202204](https://news.ycombinator.com/item?id=30904405)
+- A little while ago I shared the terminal based version of the project (https://github.com/Sambigeara/fuzzynote /golang) with the community. I since got inspired, and disappeared into my loft for 9 months to work on leveraging the core logic for use in a WASM-based web client. So you can now sync your notes between your terminal and any reasonable modern browser (some early limitations in mobile)!
+
+- https://twitter.com/fzn_sam/status/1578782505792143363 _202210
+  - New tree CRDT is live, sync is an order of magnitude faster, and it now loads on iOS again
+  - Next, complete revamp of sync algo for more efficiency gainzz (and infra cost reduction)
+  - For anyone curious about the tree #CRDT implementation, it's here
+    - https://github.com/Sambigeara/fuzzynote/blob/main/pkg/service/tree.go
+  - The hardest bit was supporting "move" operations. Wreaks havoc.
+
+- What CRDT library are you using? Or is this something new?
+  - I built this one myself, it's an event log which is used to progressively build onto a secondary data structure (which is more closely tied to the client)
+
+- Did you implement CRDTs manually or depend on yjs?
+  - Manually! The CRDT itself is an event log. The client state is built from a secondary data structure which replays from the log (the extent of the "replay" determined by how much data needs to be merged etc)
+
+- What's the worst edge case you're aware of that you're not handling?
+  - It's probably not even an edge case (dependent on usage), but a limitation right now is that **a unique "unit" of collaboration is a single item/line**, so if two people update a line offline, the winning line will the most recently updated. I can imagine that would get pretty annoying pretty fast. Granular collaboration (updating per character rather than per line) is on the backlog, priority will be determined by feedback of course.
+  - Another thing to solve is **ever-growing data sets**. I've tinkered with some mechanisms to combat this (namely compacting the CRDT event log based on a bunch of rules) but this is tricky and I'd prefer the app to mature a little before I implemented this. Also on the backlog! Lots to do for sure.
+
+- ## [Lasp: a little further down the Erlang rabbithole | Hacker News_201705](https://news.ycombinator.com/item?id=14300763)
+- My favourite thing about CRDTs (and event sourced data in general) is that they force us to consider the meaning of time and order as it relates to information.
+  - When handled with clarity of thought there are flow on effects in correctness of processing
+  - The downside is that popular frameworks don't mesh well, or at all, with this paradigm. Trying to shoehorn(强挤硬塞) event-based data into say, Rails (which I've done), is an frustrating exercise in resolving massive impedance mismatches and growing technical debt. 
+  - Turns out most database-driven MVC frameworks have a very limited understanding of time and order.
+  - CQRS helped here, because I realised that my MVC can and should just be a view & query layer, and I should be building the event sourced/CRDT-based logic elsewhere.
+- I've found that many of the modern JavaScript UI libraries play very well with event sourcing, IMHO. 
+  - React and Vue.js in particular work very well when combined with Redux/Vuex and a CRDT database. 
+  - Both of those stores are essentially event sources themselves, where the actions and mutators are separated and the data store itself is updated only in one place. 
+- What CRDT databases do you use in this sort of application?
+  - Currently leveraging CouchDB and it's incremental map-reduce to handle the "CRDT" merging of an event stream. 
+  - Technically I'm not using a CRDT library or DB, but it's surprisingly easy to implement the core "commutative operations" of CRDT's via a modified deep-merge versioning algorithm.
+  - Works pretty well as I can deploy 20, 000+ user interactions on an embedded CouchDB instance with steady performance.
+
+# discuss-gc
+- ## 
+
+- ## 
+
+- ## [A highly-available move opertaion for replicated trees | Hacker News_202203](https://news.ycombinator.com/item?id=30811072)
+- Question for the authors (if they are around): any ideas for how we might get to efficient pruning of old operations? I don't have any ideas. Do you all have some idea of how we might be able to prune this old log? Or even sketches of ideas?
+  - The authors actually do briefly mention this concern in the section titled 3.7 Algorithm extensions (under Log truncation):
+  - > However, in practice it is easy to truncate the log, because apply_op only examines the log prefix of operations whose timestamp is greater than that of the operation being applied. Thus, once it is known that all future operations will have a timestamp greater than t, then operations with timestamp t or less can be discarded from the log.
+  - The main issue seems to be that we need to know about all the replicas that we want to be able to synchronize with - but I guess there isn't really a way around this.
+- You're right that in order to ensure that you won't receive timestamps lower than some threshold, you need to know all the nodes in the system, and you need to hear from all of them (if even just one node is unreachable, that will be enough to hold up the process). That's quite a big assumption to make, but unfortunately there doesn't really seem to be a good way around it. Lots of CRDT algorithms have this problem of requiring causal stability for garbage collection.
+  - Using a consensus protocol is possible, and would have the advantage that it only requires communication with a quorum (typically a majority of nodes), rather than all nodes. However, it has the downside that now a node cannot generate timestamps independently any more — generating a timestamp would then also require a round trip to a quorum, making the algorithm a lot more expensive.
+
+# discuss
 - ## 
 
 - ## 

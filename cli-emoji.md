@@ -13,6 +13,7 @@ modified: 2021-11-19T06:53:19.649Z
 
 - emoji-resources
   - https://www.emojiall.com/en/all-emojis
+  - [EmojiDB](https://emojidb.org/)
 
 - 缺点
   - 缺少中文相关表情，如抱拳感谢
@@ -147,7 +148,8 @@ modified: 2021-11-19T06:53:19.649Z
   - 火箭
 - 🌀
   - 旋风
-- 
+- 🎯
+  - 打靶 命中
 - 
 - 
 - 
@@ -206,7 +208,7 @@ modified: 2021-11-19T06:53:19.649Z
 - 
 - 
 
-### coding
+### coding/git
 
 - git相关emoji
   - https://gitmoji.dev/
@@ -220,7 +222,7 @@ modified: 2021-11-19T06:53:19.649Z
   - :beetle:
 - 🚨
   - :rotating_light:
-  - 警车灯 删除Linter警告
+  - 危险 删除Linter警告
 - 🚑
   - :ambulance:
   - 急救车 紧急修复、重要补丁
@@ -372,7 +374,7 @@ modified: 2021-11-19T06:53:19.649Z
   - :twisted_rightwards_arrows:
   - 分支合并
 - 🚧 
-  - :construction:
+  - :construction: 施工
   - 工作进行中
 - 🔥
   - :fire:

@@ -313,6 +313,9 @@ modified: 2022-11-25T15:50:48.226Z
     - The keys (digests) are sorted by binary comparison 
     - and the tree's structure is chunked using randomness derived from the tail of each hash. 
     - This produces a self-balancing and well sorted structure on-disc.
+
+- https://github.com/serby/save /js
+  - A simple CRUD based persistence abstraction for storing objects to any backend data store. eg. Memory, MongoDB, Redis, CouchDB, Postgres, Punch Card etc.
 # db-json
 - lowdb /18.7Star/MIT/202211/ts
   - https://github.com/typicode/lowdb

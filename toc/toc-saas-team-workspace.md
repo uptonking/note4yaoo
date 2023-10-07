@@ -261,9 +261,13 @@ modified: 2023-02-07T17:38:05.336Z
   - https://notion-kanboard-mukul.netlify.app/
   - 暂不支持视图切换
 
-- https://github.com/shellyln/kanban-board-app /ts/redux/inactive
+- https://github.com/shellyln/kanban-board-app /202101/ts/redux/inactive
+  - https://shellyln.github.io/knbn
   - Kanban style task management board app
-  - Synchronize multiple device boards with CouchDB remote server
+  - 依赖redux、material-ui.v4、pouchdb-find、codemirror5、
+  - Calendar view
+  - Synchronize multiple device boards with **CouchDB** remote server
+  - Write kanban in Markdown syntax
 
 - https://github.com/DawidBugajski/kanban-task-management /ts/提交多/样式友好
   - https://kanban-task-management-ecru.vercel.app/

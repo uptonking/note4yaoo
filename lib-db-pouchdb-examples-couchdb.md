@@ -12,8 +12,26 @@ modified: 2023-09-28T20:35:56.153Z
 - [CouchDB Best Practices](https://jo.github.io/couchdb-best-practices/)
   - https://github.com/jo/couchdb-best-practices
   - Apache CouchDB™ is a database that uses JSON for documents, JavaScript for MapReduce indexes, and regular HTTP for its API.
-# couchdb-pouchdb
-- pouchdb /15.4kStar/apache2/202211/js/core代码量不大
+
+- fans-pouchdb
+  - https://github.com/redgeoff/delta-pouch
+  - https://github.com/garrensmith/couch_hack_week
+# pouchdb-couchdb
+- https://github.com/pubkey/client-side-databases
+  - https://pubkey.github.io/client-side-databases/database-comparison/index.html
+  - I have implemented the exact same chat application with different database technologies.
+  - The chat app is a web based angular application, with functionality similar to Whatsapp Web.
+  - PouchDB with IndexedDB adapter & CouchDB replication
+  - RxDB PouchDB with PouchDB Storage & GraphQL replication
+  - RxDB LokiJS with LokiJS Storage & GraphQL replication
+  - RxDB Dexie.js with Dexie.js Storage & GraphQL replication
+  - WatermelonDB with LokiJS adapter (no backend sync atm)
+
+- https://github.com/AugurProject/pouchdb-perf /ts
+  - https://augurproject.github.io/pouchdb-perf/
+  - PouchDB Perf Test
+
+- pouchdb /16kStar/apache2/202310/js/core代码量不大
   - https://github.com/pouchdb/pouchdb
   - https://pouchdb.com/
   - PouchDB is an open-source JavaScript database inspired by Apache CouchDB that is designed to run well within the browser.
@@ -28,6 +46,8 @@ modified: 2023-09-28T20:35:56.153Z
     - PouchDB has some performance issues because of how it has to store the document revision tree to stay compatible with the CouchDB API.
   - [how to to do partial (descending)l sync? F.e. chat messages](https://github.com/pouchdb/pouchdb/issues/8221)
     - You can use filtered replication
+  - forks
+  - https://github.com/emtee40/pouchdb-js
 
 - pouchdb-server /894Star/apache2/202108/js/内存/sqlite
   - https://github.com/pouchdb/pouchdb-server
@@ -37,6 +57,10 @@ modified: 2023-09-28T20:35:56.153Z
     - Or it can run using SQLite rather than LevelDB
   - It is modeled after the single-node design of CouchDB 1.x, although it contains some CouchDB 2.x features such as Mango queries.
   - PouchDB Server is much less battle-tested than CouchDB, but it does pass the full PouchDB test suite.
+  - https://github.com/eingress/docker-pouchdb-server
+    - a drop-in replacement for CouchDB, using PouchDB and Node.js
+  - https://github.com/CliffCrerar/poucdb-server-docker-image
+    - Create a couchdb like pouchdb server docker image with a fauxton console
   - forks
   - https://github.com/VislaLabs/pouchdb-server
   - https://github.com/qiaogaojian/contribute_pouchdb-server
@@ -101,29 +125,10 @@ modified: 2023-09-28T20:35:56.153Z
     - It allows you to use PouchDB's tools to save replication checkpoints for syncing with your API. 
     - Using those checkpoints, we can start the next replication from the last good checkpoint.
 
-- jscouch /159Star/apache2/201202/js
-  - https://github.com/janl/jscouch
-  - A partial JavaScript re-implementation of CouchDB.
-
 - shootingstick /1Star/apache2/202210/ts
   - https://github.com/AndyA/shootingstick
   - A CouchDB clone
   - 依赖sqlite、express、lodash
-
-- couchdb /5.5kStar/apache2/202211/erlang
-  - https://github.com/apache/couchdb
-  - https://couchdb.apache.org/
-  - Seamless multi-master syncing database with an intuitive HTTP/JSON API, designed for reliability
-  - CouchDB is a database that completely embraces the web. 
-    - Store your data with JSON documents. 
-    - Access your documents with your web browser, via HTTP. 
-    - Query, combine, and transform your documents with JavaScript. 
-    - You can distribute your data, efficiently using CouchDB’s incremental replication.
-    - CouchDB comes with a suite of features, such as on-the-fly document transformation and real-time change notifications
-  - [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
-    - Couch Replication Protocol is implemented in a variety of projects and products that span every imaginable computing environment from globally distributed server-clusters, over mobile phones to web browsers.
-- https://github.com/apache/couchdb-nano
-  - The official Apache CouchDB library for Node.js
 
 - hoodie /4.3kStar/apache2/202101/js
   - https://github.com/hoodiehq/hoodie
@@ -138,6 +143,39 @@ modified: 2023-09-28T20:35:56.153Z
   - Meteor database driver for CouchDB and Cloudant
   - an efficient Livequery implementation providing real-time updates from the database by consuming the CouchDB _changes feed
   - Distributed Data Protocol (DDP) RPC end-points for updating the data from clients connected over the wire
+
+## couch-like
+
+- https://github.com/demsking/fakecouch /202101/ts/inactive
+  - A fake CouchDB server for testing.
+  - a fake CouchDB server which implements endpoints used in common applications.
+  - It does not claim to be use as a regular CouchDB server. 
+  - It uses some static data as result for some database requests.
+
+- jscouch /159Star/apache2/201202/js
+  - https://github.com/janl/jscouch
+  - A partial JavaScript re-implementation of CouchDB.
+
+- https://github.com/garrensmith/couch_hack_week /rust/inactive
+  - An implementation of CouchDB using Rust and FoundationDB for Cloudant's hackweek 25 May 2020 - 4 June 2020.
+  - The aim was to be able to read `/{db}/_all_docs`.
+  - [MiniCouchDB in Rust_202006](https://www.garrensmith.com/minicouchdb-in-rust/)
+
+- https://github.com/mikeal/couchup /201307/js
+  - A CouchDB implementation on top of levelup.
+  - The goal is to build a data model well suited for mobile applications that may need to work offline and sync later on and maintain smart client side caches. 
+  - The goal is to build a data model well suited for mobile applications that may need to work offline and sync later on and maintain smart client side caches. 
+  - This data model is inspired by CouchDB but diverges greatly in the way it handles and resolves the revision history and conflicts. 
+  - couchup implements a "most writes wins" conflict resolution scheme and does not require or even allow user specific conflict resolution.
+
+- https://github.com/kowsik/memcouchd /201103/js
+  - a pure JavaScript in-memory implementation of some aspects of CouchDB with a nodejs/connect Web front-end.
+
+- https://github.com/chris-l/mock-couch /201807/js
+  - A node.js module designed to mock a CouchDB server, mostly for unit testing purposes.
+
+- https://github.com/marten-de-vries/chairdb /python/inactive
+  - A small CouchDB-compatible database with sync support
 # mobile-pc
 - https://github.com/craftzdog/pouchdb-adapter-react-native-sqlite /202108/js
   - PouchDB adapter using ReactNative SQLite as its backing store
@@ -146,15 +184,14 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/craftzdog/pouchdb-react-native-demo /202108/js
   - A working demo for PouchDB on React Native with SQLite3 storage
 
-- pouchdb-react-native /472Star/MIT/202010/js
-  - https://github.com/seigel/pouchdb-react-native
-  - PouchDB, the React Native-only edition. A preset representing the PouchDB code that runs in React Native.
-  - preset contains the version of PouchDB that is designed for React Native. In particular, it ships with the AsyncStorage adapter as its default adapter. 
-
 - https://github.com/craftzdog/react-native-sqlite-2 /202211/ts
   - SQLite3 Native Plugin for React Native for Android, iOS, Windows and macOS.
   - It works pretty well with PouchDB on React Native app.
   - The reason for this plugin is that react-native-sqlite-storage has some problems when used with PouchDB
+
+- https://github.com/seigel/pouchdb-react-native /472Star/MIT/202010/js
+  - PouchDB, the React Native-only edition. A preset representing the PouchDB code that runs in React Native.
+  - preset contains the version of PouchDB that is designed for React Native. In particular, it ships with the AsyncStorage adapter as its default adapter. 
 
 - https://github.com/demon24ru/pouchdb-adapter-sqlite-node /202108/js
   - pouchdb-adapter-sqlite for Node.js
@@ -181,36 +218,59 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/twilson63/vflow-pouchdb /201502/js
   - an abstraction around pouchDB's changes feed and it creates a simple api for interacting with the write stream system. 
   - It basically breaks it down into an event emitter.
-# pouchdb-p2p
-- https://github.com/garbados/pouchdb-hypercore /js
-  - Synchronize PouchDB or CouchDB with P2P Hypercores
-  - A PouchDB plugin that maps records in hypercores, a P2P append-only datastructure, to a PouchDB or CouchDB instance. 
-  - The plugin allows you to follow changes in hypercores locally and remotely.
-
-- https://github.com/garbados/pouchdb-cabal /js
-  - Interact with Cabal using PouchDB
-  - Comparable to cabal-core
-# pouchdb-utils
-- https://github.com/pouchdb-community/relational-pouch /202211/ts
-  - a plugin for PouchDB that allows you to interact with PouchDB/CouchDB like a relational data store, with types and relations.
-  - The main goal of this is to provide an API that is as similar to Ember Data and jsonapi as possible, while still being performant and Pouch-like.
-- https://github.com/iyobo/pouchorm /202205/ts
-  - The definitive ORM for working with PouchDB.
-  - Introduces the concept of Collections to pouchdb
-  - Supports web, electron, react-native, and anything else
-- https://github.com/Agrejus/pouchdb-entity-fabric /202209/ts
-  - PouchDB ORM modeled after .net's Entity Framework
-- https://github.com/compactd/slothdb /201808/ts
-  - A typescript ORM that uses annotation and classes to describe the database
-
+# server
 - https://github.com/infinity-arc/ts-express-pouchdb-server /202003/js
   - powerful API that can be run as a micro service to power progressive web applications.
 - https://github.com/pouchdb/pouchdb-express-router /201911/js
   - an expressjs routing module that provides the minimal API to allow PouchDB instance to replicate over HTTP, 
   - it is designed to be mounted into expressjs web application to prove the an endpoint for PouchDB applications to sync with.
+
+- https://github.com/CoMfUcIoS/session-pouchdb-store /js
+  - PouchDB express session store. Can do realtime session data synchronization via PouchDB server
+  - Default in-memory PouchDB instance.
+
+- https://github.com/CoMfUcIoS/socket.io-pouch /js
+  - PouchDB and CouchDB over WebSockets, using Socket.io
+
+- https://github.com/DEEJ4Y/pouchdb-services /ts
+  - A set of PouchDB service functions and a class version of them, with `mongodb` style `ObjectID` id's for all your documents.
+
+- https://github.com/stanlemon/couchdb-userdb /js
+  - A tool for managing user specific databases in an Apache CouchDB tool. If you are using CouchDB and are able to flip on the "user db" setting you have no need for this tool
+# pouchdb-utils
+- https://github.com/i-mizzle/electron-react-pouchdb-boilerplate /202309/js
+  - Boilerplate template for an electron application. with react and pouchDB
+- https://github.com/quepas/electron-leveldown-pouchdb-webpack /202211/js
+  - example
+
+- https://github.com/nicolas-albert/prebuilt-pouchdb
+  - Experiment the duration of a prebuilt PouchDB database, including replication and index computing to allow a fast client initialization.
+
+- https://github.com/serby/save /js
+  - A simple CRUD based persistence abstraction for storing objects to any backend data store. eg. Memory, MongoDB, Redis, CouchDB, Postgres, Punch Card etc.
+
+- https://github.com/pouchdb-community/relational-pouch /202211/ts
+  - a plugin for PouchDB that allows you to interact with PouchDB/CouchDB like a relational data store, with types and relations.
+  - The main goal of this is to provide an API that is as similar to Ember Data and jsonapi as possible, while still being performant and Pouch-like.
+- https://github.com/Agrejus/pouchdb-entity-fabric /202209/ts
+  - PouchDB ORM modeled after .net's Entity Framework
+- https://github.com/iyobo/pouchorm /202205/ts
+  - The definitive ORM for working with PouchDB.
+  - Introduces the concept of Collections to pouchdb
+  - Supports web, electron, react-native, and anything else
+- https://github.com/compactd/slothdb /201808/ts
+  - A typescript ORM that uses annotation and classes to describe the database
+- https://github.com/ldavidsp/pouchdb-sql /js
+  - plugin that allows SQL queries to be performed against PouchDB databases
+  - It requires the pouchdb-find plugin.
+
 - https://github.com/marten-de-vries/pouchdb-seamless-auth /201706/js
   - Seamless switching between online (CouchDB) and offline (PouchDB) authentication.
   - This plug-in stores password hashes in a local PouchDB, not a smart thing
+- https://github.com/pouchdb-community/pouchdb-authentication
+  - User authentication plugin for PouchDB and CouchDB.
+- https://github.com/dscsa/pouch /js
+  - Library to add validation and syncing to PouchDB
 
 - https://github.com/pouchdb-community/pouchdb-quick-search /370Star/apache2/201702/js/lunr/inactive
   - efficient and accurate full-text search engine built on top of PouchDB
@@ -221,11 +281,15 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/onyxcodes/dbmanager-ui /202208/ts
   - UI for managing PouchDB databases through DBManager interface layer
 
+- https://github.com/puncoz-official/redux-pouchdb-middleware /202001/ts
+  - redux middleware to sync data between redux with pouchdb and vice-versa.
 - https://github.com/vicentedealencar/redux-pouchdb /201912/js
   - sync store state to pouchdb
   - The PouchDB database persists the state of chosen parts of the Redux store every time it changes.
 - https://github.com/medihack/redux-pouchdb-plus /201806/js
   - Synchronize Redux store with PouchDB to have a persistent store.
+- https://github.com/alexcorvi/PouchX /mobx
+  - Seamless synchronization between PouchDB and MobX
 
 - https://github.com/Terreii/use-pouchdb /apache2/202304/ts
   - a collection of React Hooks to access data in a PouchDB database from React components.
@@ -257,6 +321,12 @@ modified: 2023-09-28T20:35:56.153Z
   - It does this by overriding some of CouchDB's endpoints where permissions are checked on the transmitted entities. 
   - The permission rules are defined through CASL.
 
+- https://github.com/pouchdb/geopouch /201703/js
+  - Spatial plugin from PouchDB extracted and supporting N dimensional coordinates.
+  - https://github.com/couchbase/geocouch /erlang
+
+- https://github.com/hermanho/react-leaflet-pouchdb-tilelayer /202309/ts
+  - React version of Leaflet. TileLayer. PouchDBCached
 - https://github.com/MazeMap/Leaflet.TileLayer.PouchDBCached /202203/js
   - A Leaflet tile layer which caches into PouchDB for offline use
 
@@ -264,12 +334,18 @@ modified: 2023-09-28T20:35:56.153Z
   - Pouchy wraps & extends PouchDB and provides various sorely needed sugar methods.
   - most methods provided are very simple PouchDB-native method modifiers, but are targeted to save you frequent boilerplate re-typing!
 
+- https://github.com/Zardoz89/filestore-pouchdb /js
+  - Handles a simple file storage over PouchDB. Mimics some functionality of a virtual file system like directories and file hierarchy, but avoids to try to be a full virtual file system.
+
+- https://github.com/garbados/comdb /202205/js
+  - A PouchDB plugin that transparently encrypts and decrypts its data
 - https://github.com/calvinmetcalf/crypto-pouch /202110/js
   - plugin for encrypted pouchdb/couchdb databases
   - This only encrypts the contents of documents, not the `_id` or `_rev`, nor view keys and values
   - encrypts documents using TweetNaCl.js, an audited encryption library. It uses the xsalsa20-poly1305 algorithm.
-- https://github.com/garbados/comdb
-  - A PouchDB plugin that transparently encrypts and decrypts its data
+- https://github.com/jo/pouch-box /201505/js
+  - Asymmetric encrypted PouchDB, powered by NaCl's curve25519-xsalsa20-poly1305.
+  - uses TweetNaCl.js, a port of TweetNaCl / NaCl to JavaScript for modern browsers and Node.js by Dmitry Chestnykh
 
 - https://github.com/pouchdb-community/worker-pouch /201802/js
   - Adapter plugin to use PouchDB over Web Workers and Service Workers. 
@@ -301,39 +377,58 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/genbliz/mocody
   - Implementation of single table design, and unified query access for MongoDB, CouchDB, and dynamoDB.
 
+- https://github.com/sudzy-group/pouchable /ts
+  - PouchDB simplified by TypeScript Decorators
+
 - https://github.com/thaibault/couchdb-web-node-plugin
   - PouchDB with model specification/checking, user authentication and right management as web-node plugin.
   - A database server, model instance conflict handler, rest api, authentication, session management, schema validator and model relation guarantee for webNode.
+
+- https://github.com/balazsgrill/tw-pouchdb-sync /js
+  - TiddlyWiki synchronizer plugin for CouchDB/PouchDB
+
+- https://github.com/thaibault/couchdb-web-node-plugin /ts
+  - A couchdb server, model instance conflict handler, rest api, authentication, session management, schema validator and model relation guarantee for webNode.
+  - PouchDB with model specification/checking, user authentication and right management as web-node plugin.
 # couchdb-utils
+- couchdb /5.5kStar/apache2/202211/erlang
+  - https://github.com/apache/couchdb
+  - https://couchdb.apache.org/
+  - Seamless multi-master syncing database with an intuitive HTTP/JSON API, designed for reliability
+  - CouchDB is a database that completely embraces the web. 
+    - Store your data with JSON documents. 
+    - Access your documents with your web browser, via HTTP. 
+    - Query, combine, and transform your documents with JavaScript. 
+    - You can distribute your data, efficiently using CouchDB’s incremental replication.
+    - CouchDB comes with a suite of features, such as on-the-fly document transformation and real-time change notifications
+  - [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
+    - Couch Replication Protocol is implemented in a variety of projects and products that span every imaginable computing environment from globally distributed server-clusters, over mobile phones to web browsers.
+  - https://github.com/apache/couchdb-nano
+    - The official Apache CouchDB library for Node.js
+
+- https://github.com/dianabarsan/couchdb-perf /js
+  - CouchDb 2 vs CouchDb 3 superficial performance bench
+
+- https://github.com/apache/couchdb-fauxton /js
+  - the new Web UI for CouchDB
+
+- https://github.com/antal0x11/express-couchdb /js
+  - A simple CRUD application with ExpressJS and CouchDB.
+- https://github.com/NinjaGrandpa/nodejs-couchdb-demo /js
+  - A simple customer database built with CouchDB and NodeJs
+
 - https://github.com/glynnbird/couchmigrate
   - CouchDB command-line design document migration tool
   - https://github.com/glynnbird/couchimport
   - https://github.com/glynnbird/couchfirehose
 
-- https://github.com/demsking/fakecouch /202101/ts/inactive
-  - A fake CouchDB server for testing.
-  - a fake CouchDB server which implements endpoints used in common applications.
-  - It does not claim to be use as a regular CouchDB server. 
-  - It uses some static data as result for some database requests.
+- https://github.com/garrensmith/fortuna-rs /js/rust
+  - A javascript view engine for CouchDB 4.x written in Rust using Google V8.
+  - Install FoundationDB Install CouchDB dependancies Setup CouchDB
+  - [Building a faster CouchDB View Server in Rust](https://www.garrensmith.com/building-a-faster-couchdb-view-server-in-rust/)
 
 - https://github.com/felixge/node-couchdb /201906/js
   - A thin node.js idiom based module for CouchDB's REST API that tries to stay close to the metal.
-
-- https://github.com/iriscouch/follow /201709/js
-  - CouchDB changes and db updates notifier for NodeJS
-
-- https://github.com/mikeal/couchup /201307/js
-  - A CouchDB implementation on top of levelup.
-  - The goal is to build a data model well suited for mobile applications that may need to work offline and sync later on and maintain smart client side caches. 
-  - The goal is to build a data model well suited for mobile applications that may need to work offline and sync later on and maintain smart client side caches. 
-  - This data model is inspired by CouchDB but diverges greatly in the way it handles and resolves the revision history and conflicts. 
-  - couchup implements a "most writes wins" conflict resolution scheme and does not require or even allow user specific conflict resolution.
-
-- https://github.com/kowsik/memcouchd /201103/js
-  - It's a pure JavaScript in-memory implementation of some aspects of CouchDB with a nodejs/connect Web front-end.
-
-- https://github.com/chris-l/mock-couch /201807/js
-  - A node.js module designed to mock a CouchDB server, mostly for unit testing purposes.
 
 - https://github.com/medic/couch2pg /202209/js
   - Library and app to replicate a CouchDB database to PostgreSQL
@@ -341,7 +436,7 @@ modified: 2023-09-28T20:35:56.153Z
   - Node libary to stream CouchDB changes into PostgreSQL
 
 - https://github.com/iriscouch/couchjs
-  - CouchJS is a command-line Node.js program. 
+  - a command-line Node.js program. 
   - It is 100% compatible with Apache CouchDB's built-in JavaScript system.
 
 - https://github.com/jcrugzz/changes-stream
@@ -355,10 +450,40 @@ modified: 2023-09-28T20:35:56.153Z
   - a browser local store capable of remote syncing.
   - It supports several storage strategies and remote pushing and pulling strategies.
   - It works with CouchDB-style APIs and a lot more to come.
-# collab
+
+- https://github.com/rnewson/couchdb-lucene /java
+  - Enables full-text searching of CouchDB documents using Lucene
+
+- https://github.com/MalekovAzat/CouchDbStressTesting /python/ts
+  - CouchDb synchronization stress testing
+# collab/sync
 - resources
   - [(Alpha) PouchDB integration for Yjs](https://gist.github.com/samwillis/1465da23194d1ad480a5548458864077)
     - [Inline attachment Blob ignored during deterministic _rev generation resulting in _rev hash collision](https://github.com/pouchdb/pouchdb/issues/8257)
+
+- https://github.com/jo/pouch-resolve-conflicts /201803/js
+  - plugin to assist in PouchDB conflict resolving.
+
+- https://github.com/garbados/pouchdb-hypercore /js
+  - Synchronize PouchDB or CouchDB with P2P Hypercores
+  - A PouchDB plugin that maps records in hypercores, a P2P append-only datastructure, to a PouchDB or CouchDB instance. 
+  - The plugin allows you to follow changes in hypercores locally and remotely.
+
+- https://github.com/garbados/pouchdb-cabal /js
+  - Interact with Cabal using PouchDB
+  - Comparable to cabal-core
+
+- https://github.com/redgeoff/spiegel /202303/js
+  - Scalable replication and change listening for CouchDB
+- https://github.com/iriscouch/follow /201709/js
+  - CouchDB changes and db updates notifier for NodeJS
+
+- https://github.com/pouchdb-community/pouchdb-replication-stream /js
+  - Replicate PouchDB/CouchDB databases with Node.js-style streams
+  - you can replicate two databases by just attaching the streams together
+
+- https://github.com/pouchdb/pouchbase /201604/js
+  - Server that lets PouchDB applications sync with passwordless logins
 
 - https://github.com/Mo0812/MKNote
   - a note web app, which uses Markdown to render your notes.
@@ -370,7 +495,15 @@ modified: 2023-09-28T20:35:56.153Z
 # examples
 - https://github.com/acailly/easy-pouchdb-server /202105/js
   - Deploy a PouchDB server easily
-  - running pouchdb server is perfect for small hobby projects or proof of concepts. 
+  - running pouchdb server is perfect for small hobby projects or proof of concepts.
+
+- https://github.com/shellyln/kanban-board-app /202101/ts/redux/inactive
+  - https://shellyln.github.io/knbn
+  - Kanban style task management board app
+  - 依赖redux、material-ui.v4、pouchdb-find、codemirror5、
+  - Calendar view
+  - Synchronize multiple device boards with **CouchDB** remote server
+  - Write kanban in Markdown syntax
 
 - https://github.com/mradultiw/Wassup /202105/js
   - a client-server based desktop chat application written in Javascript
@@ -390,11 +523,15 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/kbrisso/file-base /202210/js/ts
   - Filebase is a database for your files and directories.
+  - You can tag, add notes, organize, categorize, filter, search and quickly find your needed files with an easy-to-use application
   - Filebase does not modify your existing files or directories 
 
 - https://github.com/GustavoLopez04/pouchdb
   - getting started tutorial for PouchDB
   - The newest push has code to replicate the PouchDB database to CouchDB and UI testing with WDIO.
+
+- https://github.com/terichadbourne/offline-first-project-manager /js
+  - Offline First project management tool, built as a Progressive Web App with PouchDB, CouchDB, and service workers
 
 - https://github.com/genglefr/my-gallery /201804/js
   - Image gallery, in sync thx to PouchDB and Couchbase Sync Gateway websocket
@@ -431,8 +568,11 @@ modified: 2023-09-28T20:35:56.153Z
   - this is a sample PWA app for download video and store to indexedDB with pouchDB
 
 - https://github.com/ayastreb/money-tracker /202211/js
+  - https://moneytracker.cc/
   - an open-source progressive web app that allows you to track your income and expenses.
   - Data is stored locally on device in PouchDB database and can be synced to the cloud.
+- https://github.com/medic/cht-core
+  - The CHT Core Framework makes it faster to build responsive, offline-first digital health apps that equip health workers to provide better care in their communities.
 
 - https://github.com/duytq94/react-native-note-with-pouchdb /201910/js
   - Making a simple note app with PouchDB in React Native
@@ -448,8 +588,22 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/danobot/notorious /202102/ts
   - Offline-first note taking application for desktop and the web
-  - Notorious backend is a CouchDB database and an optional web interface for accessing Notorious through a web browser. 
+  - Notorious backend is a CouchDB database and an optional web interface for accessing Notorious through a web browser.
+
+- https://github.com/cloudless-hq/atreyu /js/svelte
+  - https://atreyu.dev/docs/
+  - an edge- and serviceworker first metaframework for personal, data centric web applications. 
+  - It supports real time data sync, offline usage and values minimal boilerplate with opt in to most features.
+  - Falcor is used for state management, caching, batching and data sharing. 
+  - Svelte views are bound to a virtual data object with a js proxy based store implementation
 # more
 - https://github.com/KouchDB/replication-source-poc /202211/java
-  - CouchDB mock replication source Proof Of Concept. 
-  - Demonstrates how to stand-up a Java Springboot service as a source for CouchDB replication.
+  - Demonstrates how to stand-up a Java Springboot service as a source for CouchDB replication
+  - CouchDB mock replication source Proof Of Concept.
+
+- https://github.com/oknosoft/metadata.js
+  - Library for building offline-first browser-based applications 
+  - To manage data on the browser side, Pouchdb and AlaSQL are used
+  - Couchdb was chosen as the main server data storage
+  - Supported the ability to connect data adapters to 1C and other ORM, SQL and NoSQL servers
+  - For developers of mobile and browser applications who are cramped(受限制) within the 1C platform

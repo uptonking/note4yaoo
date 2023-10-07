@@ -42,6 +42,7 @@ Problem 9: Browser bugs
 # docs
 - docs-repeat
   - [useHover#safePolygon | Floating UI](https://floating-ui.com/docs/usehover#safepolygon)
+  - [Better Context Menus With Safe Triangles — Smashing Magazine](https://www.smashingmagazine.com/2023/08/better-context-menus-safe-triangles/)
 
 - floating-ui offers two main features:
 - Anchor positioning: 

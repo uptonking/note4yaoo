@@ -48,12 +48,20 @@ modified: 2022-11-11T10:46:41.519Z
   - https://pdiiif.jbaiter.de/
   - a JavaScript library to create PDFs from IIIF Manifests, completely client-side (with server-based fallback for unsupported browsers)
   -  PDF Page for every single-image Canvas in a Manifest
-
 # extension-superset
 
 # converters
 - https://github.com/yWorks/svg2pdf.js /MIT/ts
   - A javascript-only SVG to PDF conversion utility that runs in the browser leveraging jsPDF.
+
+- https://github.com/pdf2htmlEX/pdf2htmlEX /GPLv3
+  - https://pdf2htmlex.github.io/pdf2htmlEX/
+  - Convert PDF to HTML without losing text or format.
+  - This is my branch of pdf2htmlEX 
+  - Rewritten handling of obscured/partially obscured text - now much more accurate
+  - Some support for transparent text
+  - Supporting links, outlines (bookmarks), printing, SVG background, Type 3 fonts and more...
+  - 利用的Chrome Headless，让Chrome渲染PDF，再导出成HTML，甚至图片都转成了 base64 字符，所以一个网页就可以包含完整的文本、字体和图片等内容
 # utils
 
 # more

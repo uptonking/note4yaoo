@@ -401,3 +401,29 @@ else {
 - Here you can see that the binary representation never exceeds the 96bit limit but the JSON representation does so by a lot. 
   - An attacker could use this to break your system by providing a very large timestamp and every subsequent timestamp would need to be even larger.
 # more
+
+# discuss-hlc
+
+- ## 
+
+- ## 
+
+- ## UUIDv7 高位自带了时间戳
+- https://twitter.com/fuyufjh/status/1710500237788459100
+  - UUIDv7 is a time-ordered UUID which encodes a Unix timestamp with millisecond precision in the most significant 48 bits. 
+- 48bits 的时间戳相比 snowflake 已经很够用了，等后续数据库的支持，大部分不需要向用户暴露ID的服务用起来就很方便。
+- snowflake 要统一分配 node_id，很劝退
+  - 对，这玩意很麻烦为 worker_id 单独搞 zookeeper 也很浪费。
+
+- 所以 UUID 用在分布式系统中到底靠谱吗 
+- 感觉直接拿来做 PK 挺好的
+- pros: 
+  1. 不用像 snowflake 一样维护分配 node_id
+  2. 大致是自增，对于大多数 DB 都更友好
+  3. 长度 128bit 相比很多文本的key（比如X宝的订单号）已经好太多了
+- cons:
+  1. UUID类型在语言上的支持远不如 int64 和 string
+  2. 打印出来还是有点长，不如自增  id
+
+- v1 高位也有时间戳，不过最高位是时间戳的低位；做个变换弄个私有varaint也能将就一下
+  - 私有的方案一大堆，这下有个通用的，可喜可贺

@@ -119,6 +119,12 @@ modified: 2021-08-30T18:56:09.644Z
   - https://github.com/feathersjs-ecosystem/feathers-objection
     - Feathers database adapter for Objection.js
 
+- https://github.com/Agrejus/db-framework /ts
+  - Database agnostic ORM for NodeJS and the web
+  - a TypeScript first ORM designed to wrap existing database frameworks such as PouchDB to augment its functionality
+  - Inspired by . NET's Entity Framework, Db Framework operates the same way and tries to keep method names as close as possible.
+  - Db Framework provides a ton of flexibility, even going as far as offering a local state store (think Redux).
+
 - orbit /2.3kStar/MIT/202209/ts
   - https://github.com/orbitjs/orbit
   - Orbit is a composable data framework for managing the complex needs of today's web applications.

@@ -311,34 +311,17 @@ that commit position, thus providing "read your own writes" semantics.
 - Last but not least, EventStoreDB has built-in support for projections. As a dedicated database built for Event Sourcing, it has drivers for many popular languages. Then, more of the CQRS machinery is pushed to the DB side.
 - Other design possibilities exist, however. Some systems may benefit from a message-first approach, where things are put on a stream/queue first, and only processed later, with only minimal, stateless validation performed.
 
-# discuss-collab
-- ## 
-
-- ## [Lasp: a little further down the Erlang rabbithole | Hacker News](https://news.ycombinator.com/item?id=14300763)
-
-- ## [Lasp: a little further down the Erlang rabbithole | Hacker News_201705](https://news.ycombinator.com/item?id=14300763)
-- My favourite thing about CRDTs (and event sourced data in general) is that they force us to consider the meaning of time and order as it relates to information.
-  - When handled with clarity of thought there are flow on effects in correctness of processing
-  - The downside is that popular frameworks don't mesh well, or at all, with this paradigm. Trying to shoehorn(强挤硬塞) event-based data into say, Rails (which I've done), is an frustrating exercise in resolving massive impedance mismatches and growing technical debt. 
-  - Turns out most database-driven MVC frameworks have a very limited understanding of time and order.
-  - CQRS helped here, because I realised that my MVC can and should just be a view & query layer, and I should be building the event sourced/CRDT-based logic elsewhere.
-- I've found that many of the modern JavaScript UI libraries play very well with event sourcing, IMHO. 
-  - React and Vue.js in particular work very well when combined with Redux/Vuex and a CRDT database. 
-  - Both of those stores are essentially event sources themselves, where the actions and mutators are separated and the data store itself is updated only in one place. 
-- What CRDT databases do you use in this sort of application?
-  - Currently leveraging CouchDB and it's incremental map-reduce to handle the "CRDT" merging of an event stream. 
-  - Technically I'm not using a CRDT library or DB, but it's surprisingly easy to implement the core "commutative operations" of CRDT's via a modified deep-merge versioning algorithm.
-  - Works pretty well as I can deploy 20, 000+ user interactions on an embedded CouchDB instance with steady performance.
-
-- 
-- 
-
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [Possible innovations in Event Sourcing frameworks. : microservices](https://www.reddit.com/r/microservices/comments/z10u7s/possible_innovations_in_event_sourcing_frameworks/)
+  - So, I want to propose solutions (provided by frameworks) to the following issues that haunt developer: Event Versioning & Migration, Transactions Between Aggregates. 
+
+- This is totally the opposite of DDD btw. Like, the spirit of DDD is being more specific and using the ubiquitous language.
+
+- Liveness and linearizability were something I was trying to reuse from existing EventStores. But what you propose is probably something rebuilt from scratch.
 
 - ## [CRDTs are the future : programming](https://www.reddit.com/r/programming/comments/j1iy5h/crdts_are_the_future/)
 - How about event sourcing?

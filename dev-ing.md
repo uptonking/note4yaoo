@@ -74,11 +74,11 @@ $$('[contenteditable]')
 
 - deep into lib/fwk
   - src-code, issues, pr, forks, extensions/alternatives
-  - storage, sync, conflicts, partial
+  - storage, sync/partial, conflicts, concistency
   - 直接根据具体框架或产品搜索解决方案如airtable-database，不必拘泥于通用方案如event-sourcing/eav
   - 拆分核心内容和周边功能
     - split git-src and issues/pr/wiki, split txt/docx/xlsx and api
-    - 将更多精力投入 core content 的创作，以及格式兼容、平台兼容
+    - 将更多精力投入 core content 的创作，以及格式兼容、平台兼容、产品集成
 # dev-2023-方向+方法+时间
 - 👉🏻 output: 代码产出、产品落地、生态积累
 - slate-wangeditor

@@ -18,9 +18,24 @@ modified: 2023-09-07T15:58:27.967Z
 # discuss-ipfs-ssb
 - ## 
 
-- ## 
+- ## [Storing users data into ipfs : ipfs](https://www.reddit.com/r/ipfs/comments/wk5wph/storing_users_data_into_ipfs/)
+- If you do a little research, you will find a decent number of projects that are experimenting with ideas for distributed social media, some using ipfs. There's a paper on a project called plebbit. 
+- There are distributed database solutions, but nearly all of them require the user to "own" some part if not all of the database. I find gun database fascinating, but it requires everyone to run a node.js client iirc. 
+- There's also non ipfs tech that is peer to peer such as hypercore protocol (not to be confused with hypercore networks).
+- GUN does not require everyone run NodeJS. GUN is one of the few that runs in-browser.
 
-- ## 
+- ## [Quiet – Encrypted P2P team chat with no servers, just Tor | Hacker News_202309](https://news.ycombinator.com/item?id=37477512)
+- The performance issues that come along with running OrbitDB/IPFS on a machine, let alone a mobile device, are still significant unfortunately. Adding Electron on top of what is already a heavy-weight application is probably going to make people's devices go brrrrr all the time. Not only that, but I would argue that for instant communication this stack might not be the best idea in terms of performance in first place.
+  - Besides, the way IPFS has been (and still keeps) changing their dozens of libraries doesn't make development particularly smooth either. OrbitDB is always behind the latest IPFS version due to all these changes that are being introduced. Hence unless you're planning to allocate developer time on these two things as well, my guess is that you probably won't have too much fun with your back-end.
+  - The integration with Tor is another thing that will likely be a time drain for developers, as other people here already pointed out, and that will lead to even more performance issues down the line.
+- All of these things are true and it's clear you know the problem space well! We avoid the primary "go brrrrr" performance issue with IPFS by using small private IPFS networks and never touching the noisy, CPU-intensive global network.
+
+- I think far more interesting these days would be projects like Veilid, Hyphanet's Locutus and ultimately Nostr -- even though not truly P2P in that sense -- which already happens to have a first try going with nostrchat.io. If P2P is something that is truly desired, I feel like projects like Briar (https://briarproject.org/how-it-works/) have solved this with Bramble (https://code.briarproject.org/briar/briar-spec/blob/master/p...) more eloquently than it could be done on top of IPFS.
+
+- The hard part about making a new P2P protocol is that first you have to invent the internet.
+
+- Isn't orbitdb mostly abandoned now by the core team? I looked into it a few months ago and read that it's in a maintenance state.
+  - OrbitDB is not well-funded, but there's fresh work happening recently by some dedicated volunteers
 
 - ## 💡 [Peer-to-peer social networking with Rotonde and Beaker | Hacker News_201710](https://news.ycombinator.com/item?id=15463721)
   

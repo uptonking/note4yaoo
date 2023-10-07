@@ -21,7 +21,10 @@ modified: 2021-01-31T08:40:11.675Z
 
 - ## 
 
-- ## 
+- ## 首个中文古籍影像一站式阅读系统——“全球汉籍影像开放集成系统”于今日正式发布
+- https://twitter.com/yun_chuang/status/1710484218696884437
+  - 第一期著录中外各大古籍馆藏机构公开影像数据共17万条（约13.7万部又3.3万册）。系统由安徽大学唐宸老师主持研发。
+  - 顺便说一下，唐老师同时也是“奎章阁·中国古典文献资源导航系统”的制作者。
 
 - ## [The most used languages on the internet - Rest of World](https://restofworld.org/2023/internet-most-used-languages/)
 

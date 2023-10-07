@@ -977,7 +977,7 @@ modified: 2022-04-05T10:08:25.947Z
     - I’m working on a realtime data processing pipeline / event sourcing system lately called statecraft 45. Over the last few days I’ve added foundationdb backend support.
     - The current code also re-stores the whole text document with every edit, but this is just because I haven’t tuned it. 
 
-- https://github.com/Sambigeara/fuzzynote /go
+- https://github.com/Sambigeara/fuzzynote /AGPLv3/go
   - Terminal-based, hyper-fast, CRDT-backed, collaborative note-taking tool
 
 - https://github.com/courajs/referent
