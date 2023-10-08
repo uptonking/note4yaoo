@@ -28,4 +28,8 @@ modified: 2023-04-15T08:19:14.117Z
 - https://github.com/bloomberg/ipydatagrid
   - Fast Datagrid widget for the Jupyter Notebook and JupyterLab
   - [I see some cons using Web Workers like it is done in ipysheet](https://github.com/bloomberg/ipydatagrid/issues/3)
+# examples
+- https://github.com/sspaeti-com/practical-data-engineering
+  - This is a practical example of a data engineering project with real-estates.
+  - [Building a Data Engineering Project in 20 Minutes](https://www.ssp.sh/blog/data-engineering-project-in-twenty-minutes/)
 # more

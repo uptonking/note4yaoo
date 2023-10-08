@@ -45,6 +45,18 @@ modified: 2021-05-14T14:33:13.599Z
   - 字节跳动，不提倡用PPT进行工作汇报
   - 美团、微信，纷纷直接禁用PPT
 # discuss
+- ## 
+
+- ## 
+
+- ## I took a walk today to think about our docs site, ended up convinced that I needed to remove the site from our monorepo. 
+- https://twitter.com/steveruizok/status/1711083978277466541
+  - 合并还是不合并，需要尝试和实践
+- The issue is that we need to make changes to the docs site (in production) without updating the site in a way that publishes unreleased changes.
+  - Because the api json files are pulled from the packages in the monorepo, they default consume those new changes.
+  - What this has meant in the past is either having a separate branch for the production version of the docs, which needs to be merged back to main whenever there are changes, or else not being able to update the prod version until we make a release.
+- I've sort of got the inverse problem with the Redux docs sites. We've got 3 libs, 3 repos, 3 separate docs sites, w/ some overlap in content but mostly different
+
 - ## [如何看待字节跳动的飞书（LARK）的前景？](https://www.zhihu.com/question/362435888/answers/updated)
 - 看了下评论里大多都是在以自身作为c端用户的视角评价这几个tob产品，说实话连门都没摸到，看起来很尴尬
 

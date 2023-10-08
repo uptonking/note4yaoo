@@ -34,4 +34,13 @@ modified: 2023-09-01T03:56:10.056Z
   - GumTree is a syntax-aware diff tool. 
   - It improves text-based diff tools in two important ways
   - We already deal with a wide range of languages: C, Java, JavaScript, Python, R, Ruby
+# command-line
+- https://github.com/Textualize/rich /python3.7+
+  - https://rich.readthedocs.io/en/latest/
+  - a Python library for rich text and beautiful formatting in the terminal.
+  - The Rich API makes it easy to add color and style to terminal output. 
+  - Rich can also render pretty tables, progress bars, markdown, syntax highlighted source code, tracebacks, and more.
+  - All Rich renderables make use of the [Console Protocol](https://rich.readthedocs.io/en/latest/protocol.html), which you can also use to implement your own Rich content.
+  - Rich works with Linux, OSX, and Windows. True color / emoji works with new Windows Terminal
+  - Rich works with Jupyter notebooks with no additional configuration required.
 # more

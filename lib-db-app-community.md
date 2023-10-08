@@ -31,14 +31,7 @@ modified: 2023-09-16T17:54:11.257Z
 - i relied on a SQL ORM which in short is a tool that makes writing SQL easier to pick up and faster to develop. the biggest downside is that it might execute 50 queries to your database to get a list of information, when it probably only needs 1, which will cause slowdown
   - I appreciate this honesty. Listen to this old man's advise: learn SQL properly. It's not that hard. Focus on it for a few weeks intensely and you've mastered it for life. Then just write SQL directly.
 
-- 
-- 
-
 # discuss-regularly
-- ## 
-
-- ## 
-
 - ## 
 
 - ## [Databases in 2022: A Year in Review | Hacker News](https://news.ycombinator.com/item?id=34220524)

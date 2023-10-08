@@ -25,7 +25,9 @@ modified: 2021-01-19T04:46:23.100Z
 
 - ## 
 
-- ## 
+- ## I've been working on a new gauge component with @glennui
+- https://twitter.com/timolins/status/1710991444717297856
+  - Getting all the details right was trickier
 
 - ## 💡 [Is it wise to build a carousel with purely CSS and no JS?](https://www.reddit.com/r/Frontend/comments/zoxf1y/is_it_wise_to_build_a_carousel_with_purely_css/)
 - More importantly, ask yourself if you should use a carousel at all.

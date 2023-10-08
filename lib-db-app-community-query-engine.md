@@ -16,7 +16,16 @@ modified: 2023-09-17T17:41:51.689Z
 
 - ## 
 
-- ## 
+- ## I’m seeing more and more devs writing db queries directly inside their API route handlers and I find it quite bizarre. Where do you write your db queries?
+- https://twitter.com/ImSh4yy/status/1711092090103267784
+- In NestJS: Controller => service => DB query using Prisma
+- In the repository: Repository -> Service -> Controller
+- For a POC, the router. 
+  - For an serious app, i follow the adaptor pattern (glorified way of saying domain based functions called by the routers/controllers)
+- 
+- 
+- 
+
 # discuss-view
 - ## 
 

@@ -53,4 +53,59 @@ modified: 2023-09-16T17:49:28.532Z
 - "Flat is better than nested" is a guideline, not a rule.
 - To ensure nothing crazy will ever happen, our storage metaphor of "documents" must play by the rules. The dictionary says our database must store immutable facts on a timeline. Computer Science says our database must speak a standard query language. Our experience and intuition says our database should provide us lightweight references between our documents and discourage deep nesting.
 - These are not abstruse or mystical ideas, but they do demand a reappraisal of the database. We can’t just tack immutability onto MongoDB or temporality onto Postgres. We must rebuild the foundation. We must record a graph of immutable facts on a timeline tolerant of growth and query them by time-aware logic. That’s a mouthful, so let’s just call it a Record. This is the new metaphor.  
+# blogs-sync/change-data-capture
+
+## [Change Data Capture in practice 2_202310](https://medium.com/fever-engineering/implementing-change-data-capture-in-practice-part-2-89e6b8d4fdd)
+
+- Implementing Change Data Capture was relatively easy, but along the way we found some challenges that we did not foresee. 
+- Limited availability of previous values
+- PostgreSQL TOASTED fields
+- Schema evolution
+- Handling tombstones
+
+## [Change Data Capture in practice 1_202309](https://medium.com/fever-engineering/implementing-change-data-capture-in-practice-part-1-38259260d9a2)
+
+- As software systems move towards models of distributed data, more and more copies of the same information are required, each of them reformatted for a specific purpose. 
+  - The copying process takes time, but users expect a unified view of the system as if the source of all information was the same.
+- 👉🏻 One of the solutions to address this replication challenge in a scalable way is known as **Change Data Capture (CDC)**: 
+  - capturing and publishing changes made to the primary source of the data, known as the system of record; 
+  - and then listening to those changes in the derived systems to keep a near-real-time up-to-date copy of the information.
+
+- This post explores the reasons why we decided to adopt this technology at Fever and how we implemented it. 
+
+- Our platform receives tens of thousands of requests per minute and as such, we’re always looking to continue growing while offering the best user experience, which ultimately, is what drives us to use techniques such as Change Data Capture.
+- As a platform offering a huge variety of experiences, ranging from art exhibitions or beer tasting sessions to big stadium-filling events, there is no one-size-fits-all alternative for the purchase flow.
+- For the different selectors to work, we need aggregated information about all the sessions of the experience, which in quantity, could range in the thousands depending on the kind of event. 
+  - At first, the aggregations were happening each time a client visited the page, but shortly after, we decided to **use PostgreSQL materialized views as a simple way to pre-compute them**. 
+  - They were calculated every minute, and were working perfectly fine for our needs at the time. 
+- After a certain point, our database was struggling to compute the materialized views, and this is a use case where near real-time is important because it has a direct impact on sales. 
+  - To put this into numbers, the total database execution time of the refresh process for the calendar materialized view was 7.05 minutes per hour. 
+
+- At the heart of every data use case, from recommendation algorithm execution to partner-facing dashboards, lies the Data Warehouse (DWH). This is where information from multiple sources is gathered, curated and organized using Apache Airflow.
+  - Airflow is based on the concept of DAGs (Directed Acyclic Graphs): collections of tasks that constitute a batch data processing job, most of which are used as ETLs (Extract-Transform-Load) and scheduled to run at a configured interval. 
+  - These processes are heavy by nature, and even though a lot of optimizations are regularly done, they have one essential shortcoming: they work by “pulling” rather than “pushing”.
+
+- When analyzing all of these issues, the first idea that came to mind was to use domain events to swap from a pull to an incremental push model by subscribing to the events from each derived data system. 
+  - The first problem of using domain events here is the initial synchronization.
+
+- smart people in the software world already came up with a solution for this issue: Event Sourcing. 
+  - The idea is to have the application’s source of truth be an append-only sequence of domain events so that the current state of an application is determined by examining all change events associated with it since its inception, rather than saving only the current state. 
+  - This allows applications to rebuild the state at any point in time by replaying events.
+- we discarded event sourcing as a valid solution for our issues, mainly for 2 reasons:
+  - Having the source of truth be the domain events requires a profound technical and mentality change that was not worth the cost for us. migrating our core application’s main design is too high a price to pay for the data integration problem we’re trying to solve.
+  - There are many legacy use cases without domain events integration. One of the most prevalent entities in the derived data systems is our Session, and a quick usage search for this entity in our main application yields 723 usages. 
+
+- The solution - CDC
+- Having discarded replication at the domain level, we started looking for replication solutions at the infrastructure level, and thus arrived to Change Data Capture (CDC). 
+- This is the process of observing all data changes written to a database and extracting them in a form in which they can be replicated to other systems 
+  - The source of information to observe is the database replication log, a persistent log where the engine first writes the changes before actually changing the data in the corresponding disk pages. 
+  - The replication log’s main purpose is to provide durability guarantees on crash recovery scenarios
+- In our particular case, we’re using PostgreSQL so this replication log is the WAL (Write-Ahead Log). 
+  - Initially, the WAL format was considered to be an internal implementation detail, but in order to support logical replication, PostgreSQL 9 introduced a Streaming Replication protocol standardizing a format for the WAL contents to be streamed.
+  - Later, in release 9.4, they added the logical decoding feature, introducing the concept of replication slot and allowing to customize the output format for each slot using output plugins. And this is exactly what Debezium, our CDC tool of choice, uses under the hood.
+- Debezium is a piece of software for CDC that monitors a database replication log and converts that log of changes into Kafka records with a structured format. 
+  - It runs on top of Apache Kafka as a set of Kafka Connect connectors, one for each of the supported database technologies: PostgresSQL, Oracle, MySQL, MongoDB, Cassandra, DB2…
+- Once we have the set of database changes serialized as Kafka records, we need a way to transform them into the format required at the derived system. 
+
+- The benefit of CDC becomes apparent once we start using it as a solution for the rest of the issues mentioned in the beginning of the article. 
 # more

@@ -16,10 +16,21 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
-- ## 
+- ## 刚刚搜索Rust怎么实现双链表。Rust的某reddit社区坚持认为，Rust不需要双链表，因为XX性能原因，所以你写不出双链表也不是大问题，Rust把这个弄得很难写，不是大问题。
+- https://twitter.com/JXQNHZr1yUAj5Be/status/1710474773954768987
+  - 但这问题是在双链表上吗？人家是抛砖引玉，问有cyclic引用的数据结构在Rust怎么处理的一般问题。
+- 所有循环引用结构在 Rust 都难写，目前我体验最好的 safe 的方案还是 index arena 的形式（需要依赖 unsafe 的 dep）
 
-- ## tokio IS "thread-per-core" - the controversy in the Rust community is about a tradeoff between work-stealing and share-nothing
-- https://twitter.com/withoutboats/status/1710279468206485941
-  - [Thread-per-core - Without boats, dreams dry up](https://without.boats/blog/thread-per-core/)
-- I have never implemented work-stealing approach so cannot really comment on its effectiveness. My paper was investigating the impact of thread-per-core (with partitioning) on tail latency in comparison to traditional share-everything model. As you rightly point out in your post, you cannot draw any conclusions from my findings about partitioning vs. work stealing.
-- I’ve always referred to thread-per-core with work-stealing as thread-per-core-until-things-get-tough. It’s a slippery slope from work-stealing to not pinning threads to CPUs but yeah usually the hot partition issue is the motivator for WS
+- 问题是rust连做一棵有环的树，都是天方夜谭啊……链表本身也是树，rust在数据结构方面的局限性不应该被无视
+  - 没办法，rust 用了所有权这种东西，循环引用确实很难实现
+- 生命周期/所有权要求的偏序结构，和环状数据结构的固有矛盾。
+
+- 我觉得这是对 rust 有点苛求了，难写应该是只考虑使用 safe rust 的部分。如果能在 unsafe 实现的基础上封装出 safe 的 public API ，就够了
+- 每次看到这种牺牲自由度，换取安全性的编程语言，我都忍不住想到点别的东西
+
+- 不是bug, 是feature。 双向链表用 `LinkedList<T>` 就好。
+
+- 
+- 
+- 
+- 

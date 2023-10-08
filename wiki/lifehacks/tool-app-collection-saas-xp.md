@@ -46,8 +46,12 @@ modified: 2022-11-07T10:25:12.034Z
 - usage-xp
   - 有时网站无法登录或内容无法显示，可能不是网络原因，可在twitter社交平台搜索 `hacker news down` 按时间倒序判断最新状态
 
+
 - [搜索版](https://hn.algolia.com/)
   - 支持rss订阅，如https://hn.algolia.com/userfeed/nullwasamistake
+
+- 检测github或其他url是否在hn/reddit讨论过
+  - [Discussions around the Web - discu.eu](https://discu.eu/)
 # twitter
 - search
   - 搜索关键词时，可加上'min_replies:1'的条件，筛选出被讨论过的质量更高的内容

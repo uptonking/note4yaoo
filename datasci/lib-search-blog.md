@@ -10,7 +10,7 @@ modified: 2023-01-03T14:52:51.355Z
 # guide
 - tips
   - 传统全文搜索的效果不如llm，因为llm可以用英文数据训练，然后用中文搜索
-# blogs
+# blogs-search-engine
 
 ## [全文检索的索引设计 - 知乎](https://zhuanlan.zhihu.com/p/520001238)
 
@@ -114,6 +114,16 @@ modified: 2023-01-03T14:52:51.355Z
   - There are some big wins on the size of the index as well.
 
 - To determine the optimal ingest order, we need a way to tell how similar one repository is to another (similar in terms of their content), so we invented a new probabilistic data structure to do this in the same class of data structures as MinHash and HyperLogLog. This data structure, which we call a geometric filter, allows computing set similarity and the symmetric difference between sets with logarithmic space. 
+# blogs
+
+## [The holistic(整体的；全盘的) UX of integrated search filters](https://rystorm.com/blog/integrated-search-filters)
+
+- What is an integrated search filter?
+  - It is a search that goes across the entire toolset you are using, and filters down to the features that are possible. 
+  - It filters the results down to what the user is intending
+  - I think macOS and its apps have this kind of search done in a fantastically good way. 
+
+- the search does also need to be made fuzzy enough so that if someone searches for a particular feature, they find what they intend
 # more-blog
 - [【总结】推荐系统——召回篇【1】 - 知乎](https://zhuanlan.zhihu.com/p/351716045)
   - 召回阶段负责从海量数据中快速筛选出部分数据，供后面排序阶段使用
@@ -135,4 +145,3 @@ modified: 2023-01-03T14:52:51.355Z
   2.1 NGram
   3 词袋模型与文本向量化
   3.1 词袋模型
-

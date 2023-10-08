@@ -14,9 +14,15 @@ modified: 2023-09-17T17:46:07.620Z
 
 - ## 
 
-- ## 
+- ## do you use Postgres or MySQL at work?
+- https://twitter.com/jarredsumner/status/1710737550292423152
+  - pg vs mysql = 0.56: 0.21
+  - mongodb
 
-- ## 
+- ## A cheat sheet of various databases in cloud services, along with their corresponding open-source/3rd-party options.
+- https://twitter.com/alexxubyte/status/1710680670568394996
+  - Note: Google has limited documentation for their database use cases. Even though we did our best to look at what was available and arrived at the best option, some of the entries may be not accurate.
+
 # discuss
 - ## 
 

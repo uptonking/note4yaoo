@@ -17,6 +17,13 @@ modified: 2021-08-12T20:21:51.264Z
   - 应用自身常常存在很多请求处理的其他逻辑和中间件，所以不一定要在全局实现mock和test，将更多的精力放在测试重要的场景
 # blogs
 
+## [Test Anything Protocol](https://testanything.org/)
+
+- TAP, the Test Anything Protocol, is a simple text-based interface between testing modules in a test harness. 
+  - It decouples the reporting of errors from the presentation of the reports.
+  - One of its major uses is for noise reduction
+  - TAP started life as part of the test harness for Perl but now has implementations in C, C++, Python, PHP, Perl, Java, JavaScript, Go, Rust, and others.
+
 ## [Choosing a JavaScript testing framework: Jest vs. Jasmine vs. Mocha_202205](https://mattermost.com/blog/comparing-javascript-testing-frameworks/)
 
 - Jest’s primary use is strong front-end testing. 

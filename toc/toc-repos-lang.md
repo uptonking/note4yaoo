@@ -45,9 +45,23 @@ modified: 2020-11-03T06:56:19.448Z
   - /30.9kStar/BSD/202002
   - a fast open framework for deep learning.
   - https://github.com/BUPTLdy/Caffe_Code_Analysis
-- https://github.com/ipkn/crow
-  - /6kStar/BSD/201712
+
+- https://github.com/ipkn/crow /6kStar/BSD/201712
   - Crow is very fast and easy to use C++ micro web framework (inspired by Python Flask)
+- https://github.com/the-moisrex/webpp /cpp
+  - a web framework written in C++ that uses multiple underlying protocols.
+- https://github.com/drogonframework/drogon /cpp
+  - A C++14/17/20 based HTTP web application framework running on Linux/macOS/Unix/Windows
+  - Use a non-blocking I/O network lib based on epoll (kqueue under macOS/FreeBSD) to provide high-concurrency, high-performance network IO
+  - Based on template, a simple reflection mechanism is implemented to completely decouple the main program framework, controllers and views.
+  - Support cookies and built-in sessions; 
+  - Support AOP with build-in joinpoints.
+
+- https://github.com/lemire/Code-used-on-Daniel-Lemire-s-blog/tree/master/2023/10/07/Lithium /cpp/7900loc
+  - https://twitter.com/lemire/status/1710793694981361921
+  - Shamefully, I was stuck for a long time, unable to write a small web app in C++. Turns out that it is easy enough.
+  - I am unhappy about the boost dependency. I avoid anything having to do with boost in my own code because it is a difficult dependency to satisfy.
+
 - more
   - https://github.com/ariya/phantomjs
     - Scriptable Headless Browser

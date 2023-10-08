@@ -7,8 +7,13 @@ modified: 2021-05-13T16:14:15.415Z
 
 # toc-lib-data-processing
 
-# data-model
+# guide
 
+# popular
+- https://github.com/jinyus/related_post_gen
+  - Data Processing benchmark featuring Rust, Go, Swift, Zig etc.
+  - Given a list of posts, compute the top 5 related posts for each post based on the number of shared tags.
+# data-model
 - https://github.com/apache/arrow
   - https://github.com/apache/arrow/tree/master/js    /ts
    - Apache Arrow is a columnar memory layout specification for encoding vectors and table-like containers of flat and nested data. 
@@ -48,7 +53,6 @@ modified: 2021-05-13T16:14:15.415Z
     - https://github.com/jupyterlite/jupyterlite
     - https://github.com/gzuidhof/starboard-notebook
     - https://github.com/iodide-project/iodide
-
 
 - https://github.com/pyscript/pyscript
   - https://pyscript.net/

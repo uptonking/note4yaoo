@@ -884,6 +884,39 @@ modified: 2023-09-12T09:37:22.608Z
   - Example application to document python eventsourcing library
 - https://github.com/Shaibujnr/kanban-ddd /python
   - Simple kanban project 
+# cdc/change-data-capture
+- https://github.com/fuchstim/horton /202308/ts/未完成
+  - an unintrusive Change Data Capture library for postgreSQL databases
+
+- https://github.com/celador/cdc /js
+  - Change Data Capture POC
+- https://github.com/haiaty/mysql-cdc-redis-stream-poc /js
+  - A poc of a mysql change data capture to redis stream
+
+- https://github.com/SurajMazar/postgres-kafka /js
+  - Postgres CDC (CHANGE DATA CAPTURE) with debezium and kafka
+  - Debezium's PostgreSQL connector captures row-level changes in the database and publishes them as events to Kafka, which can be consumed by other systems in real-time.
+- https://github.com/uozuAho/postgres_cdc_demo /js
+  - Postgres change data capture (CDC) using Kinesis, to maintain an up to date materialized view
+  - A demonstration of CDC usage - maintaining an up-to-date materialized view of a document-oriented database. 
+  - Uses postgres, wal2json, nodejs & kinesis.
+
+- https://github.com/groeney/streaming-serverless /201812/js/inactive
+  - A framework for business automation using change data capture (CDC) and event driven serverless architecture
+  - This tool uses Change Data Capture as the event source and Serverless Architecture as the fundamental design pattern for data processing.
+  - As opposed to Apache Kafka where all of the streaming components are packaged up into a platform, this tool aims to give you more control of your event-driven system
+
+- https://github.com/debezium/debezium /java
+  - https://debezium.io/
+  - provides a low latency data streaming platform for change data capture (CDC). 
+  - You set up and configure Debezium to monitor your databases, and then your applications consume events for each row-level change made to the database. 
+  - Only committed changes are visible
+  - since Debezium records the history of data changes in durable, replicated logs, your application can be stopped and restarted at any time, and it will be able to consume all of the events it missed while it was not running
+  - Monitoring databases and being notified when data changes has always been complicated. 
+    - Relational database triggers can be useful, but are specific to each database
+    - Debezium provides modules that do this work for you. 
+    - Some modules are generic and work with multiple database management systems
+    - Other modules are tailored for specific database management systems
 # server-sent events
 - https://github.com/dpskvn/express-sse
   - An Express middleware for quick'n'easy server-sent events.

@@ -92,6 +92,19 @@ modified: 2022-11-07T11:00:28.824Z
   - 不是给安卓上架用的，是税收优惠用的
   - 「软件企业两免三减半税收优惠政策」。知道的太晚了，两免已经享受不到
 
+# discuss-vc
+- ## 
+
+- ## 
+
+- ## Sentry raised $217M in VC_202310
+- https://twitter.com/1Marc/status/1710866233845801353
+  - I’m glad they are contributing $500k to open source, and I do hope other companies follow suit. 
+  - But we’ll see… it’s definitely better than ads and dev rel which is where most of these companies dump their investor’s money.
+- Another one transitioning to BSL soon.
+  - Sentry has using BSL for some of their code for a long time
+- All components powering the main Sentry backend use BUSL-1.1 license which limits their usage in a commercial Sentry-like offering
+
 # discuss
 - ## 
 

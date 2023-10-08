@@ -213,6 +213,32 @@ modified: 2022-11-25T15:41:47.534Z
     - DagDB treats any async generator as a binary stream. 
     - Node.js Streams are valid async generators so they work right away.
 # sync-utils
+
+- https://github.com/abrarsheikhsony/SFDC-change-data-capture
+  - explains specifically for Change Data Capture (CDC)
+  - https://github.com/abrarsheikhsony/SFDC-streaming-api-events
+
+- https://github.com/debezium/debezium /java
+  - https://debezium.io/
+  - provides a low latency data streaming platform for change data capture (CDC). 
+  - You set up and configure Debezium to monitor your databases, and then your applications consume events for each row-level change made to the database. 
+  - Only committed changes are visible
+  - since Debezium records the history of data changes in durable, replicated logs, your application can be stopped and restarted at any time, and it will be able to consume all of the events it missed while it was not running
+  - Monitoring databases and being notified when data changes has always been complicated. 
+    - Relational database triggers can be useful, but are specific to each database
+    - Debezium provides modules that do this work for you. 
+    - Some modules are generic and work with multiple database management systems
+    - Other modules are tailored for specific database management systems
+
+- https://github.com/linkedin/databus /java/inactive
+  - https://github.com/linkedin/databus
+
+- https://github.com/speculare-cloud/speculare-pgcdc /rust
+  -  allows you to listen to changes in your PostgreSQL database via logical replication and then broadcast those changes over websockets.
+
+- https://github.com/canertosuner/postgresql-change-data-capture-using-debezium
+  - PostgreSQL Change Data Capture (CDC) Using Debezium
+
 - https://github.com/siliconjungle/tick-network-server
   - An example of a server that sends messages at a regular interval.
   - 依赖express、ws、messagepack

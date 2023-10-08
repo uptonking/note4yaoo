@@ -17,7 +17,13 @@ modified: 2023-08-01T08:59:45.360Z
 
 - ## 
 
-- ## 
+- ## 💡 How to build social reacts using CRDTs
+- https://twitter.com/JungleSilicon/status/1676195595990732800
+  - Each react-emoji has an index
+  - Store each agents react in an object. The key is the agent id, the value is an index into the reacts
+  - Agents that haven't reacted don't need to store a value
+  - But we need to know which per agent is the latest. We compare the current react for that agent with the new change. Whichever value is highest wins.
+- This pattern is an optimised version specifically for reacts, but you can **generalise it by using lamport clocks per agent** associated with a value and allowing multiple types of reducers to act on the same data. e.g. median, mean, sum, etc.
 
 - ## I think there is quite a bit of potential in the CRDT space for pruning(修剪; 精简) using distributed reference counters. 
 - https://twitter.com/JungleSilicon/status/1688782836533522432

@@ -12,6 +12,20 @@ modified: 2021-01-21T17:52:13.333Z
 # discuss
 - ## 
 
+- ## 
+
+- ## Designing an entire MVP without any design!
+- https://twitter.com/puruvjdev/status/1710731659535118552
+  - Trying something new for once, to ship really fast. Gonna keep this design unstyled while finishing up the logic and everything. And then at the end sprinkle in the style
+  - I did this once with neodrag.dev where I built just the unstyled kitchen sink demo, and that shaped the entire website and the logo as well. Hoping to hit that same sweet spot here as well!
+  - Update: Added picocss.
+
+- My preferred development order has always been:
+  01. Structure for everything: HTML, content, ARIA, some JS
+  02. Style a component: CSS, interaction states, transitions/animations
+  03. Then make the component functional with JavaScript
+  04. Repeat steps 2 and 3 for each component.
+
 - ## uid 不需要可读性，如果需要可读性可以添加一个新的 id 属性。
 - https://twitter.com/ThaddeusJiang/status/1694915724354142678
 
@@ -92,9 +106,9 @@ modified: 2021-01-21T17:52:13.333Z
 - ## 我视能不能解决庞大的屎山为新手老手的分水岭
 - https://twitter.com/Soulogic/status/1659386692904816641
 - 软件工程师 3 个进阶的思考维度，也是任何严肃的系统，从设计阶段就应该考虑的：
-  01.            Debugability, 运行中出了错误，是否能快速定位到根本原因？
-  02.            Testability, 重构了代码，任何原因修改了代码，是否可以保证没有引入 bug.
-  03.            Toolability, 性能有问题，是否可以很快用自动化工具定位到瓶颈。
+  01.             Debugability, 运行中出了错误，是否能快速定位到根本原因？
+  02.             Testability, 重构了代码，任何原因修改了代码，是否可以保证没有引入 bug.
+  03.             Toolability, 性能有问题，是否可以很快用自动化工具定位到瓶颈。
 
 - ## Tip: Write a design doc (what, why, how, whatever) for any feature you are going to implement. 
 - https://twitter.com/evoluhq/status/1261766649679667208

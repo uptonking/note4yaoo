@@ -64,7 +64,7 @@ modified: 2023-01-23T19:27:46.948Z
   - built on top of uWebSockets.js - a C application ported to Node.js
   - soketi implements the Pusher Protocol v7. Therefore, any Pusher-maintained or compatible client can connect to it
 
-- https://github.com/kartikk221/hyper-express
+- https://github.com/kartikk221/hyper-express /js
   - High performance Node.js webserver with a simple-to-use API powered by uWebsockets.js under the hood
   - Limited Express.js API Compatibility Through Shared Methods/Properties
 

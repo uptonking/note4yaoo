@@ -18,7 +18,8 @@ modified: 2021-09-20T18:38:00.319Z
 
 - ## 
 
-- ## 
+- ## Forward Proxy vs Reverse Proxy
+- https://twitter.com/hackinarticles/status/1710756805037445619
 
 - ## A big optimization that could be added to @trpcio
 - https://twitter.com/fabiospampinato/status/1692653720306151712

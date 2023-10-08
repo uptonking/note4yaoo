@@ -26,7 +26,18 @@ if(val) // doSth
 
 - ## 
 
-- ## 
+- ## Is there an alternative to `JSON.stringify` for getting a stable string representation of a serializable JS object that’s suitable for use in a hot path?
+- https://twitter.com/andrewingram/status/1710799442050200048
+- What’s your goal? Speed? Obfuscation? Predictability?
+  - Using as a lookup key on a hot path
+
+- Relay code is here: https://github.com/facebook/relay/blob/main/packages/relay-runtime/util/stableCopy.js
+- IME any optimizations on JSON stringify only work on smaller objects, in which case the optimizations are hardly meaningful. On larger objects the runtime is better optimized to serialize. I would only worry about the stable order fn in terms of time cost.
+
+- https://twitter.com/andrewingram/status/1710981678284312997
+  - Related question, looking for prior art of a Map implementation that works in scenarios where the keys are argument arrays. The solution seems to be nested maps, one per array position, only falling back to JSON.stringify for non-primitive arguments.
+
+- hmm isn't this technically just a Trie? (over arbitrary values instead of characters)
 
 - ## What if you could store a global state at typelevel in typescript.
 - https://twitter.com/ecyrbedev/status/1686852448915189760

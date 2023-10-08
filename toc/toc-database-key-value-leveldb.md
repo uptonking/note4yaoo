@@ -74,7 +74,7 @@ modified: 2022-11-03T04:14:00.563Z
     - LevelDB is a LSM database. 
     - LSM is generally better for write workloads over BTree DBs like LMDB and sled. LMDB also has a single writer restriction.
 
-- https://github.com/JetBrains/xodus /java
+- https://github.com/JetBrains/xodus /apache2/java
   - a transactional schema-less embedded database
   - initially developed for JetBrains YouTrack, also used in JetBrains Hub
   - highly concurrent. Reads are completely non-blocking due to MVCC and true snapshot isolation.

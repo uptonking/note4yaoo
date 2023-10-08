@@ -79,3 +79,18 @@ modified: 2023-02-08T10:47:19.056Z
 - ## 侧边面板宽度
 - [Sidebar defaultWidth, View-Specific Sidebar widths, & View-Specific Sidebar defaultWidths](https://github.com/microsoft/vscode/issues/158603)
 - [Find a way to fit panel headers into the smaller minimum width](https://github.com/microsoft/vscode/issues/87347)
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## VSCode 现在已经原生支持了内网穿透，你只需要在工具栏中设置本地的具体端口，它就会生成一个临时域名，帮你把服务暴露出去。
+- https://twitter.com/Barret_China/status/1710846764121821296
+  - 有两种可见性配置策略：
+  - 1）专用模式，需要使用与当前 VSCode 相同的登录账户才能够访问到服务，较为安全；
+  - 2）公开模式，任何人都可以访问，需要注意避免敏感信息对外。
+  - 目前一个账户允许开 5 条隧道，且存在带宽限制，不过对于一般的研发、协同和调试场景，完全够用。它的原理是与 server 端建立一条 ssh 隧道，然后开了一个反向代理。
+
+- 这个在做服务器的调试的时候也是非常有用的，它还可以将服务器内部的端口通过 ssh 通道映射到开发机上，真的是太便利了

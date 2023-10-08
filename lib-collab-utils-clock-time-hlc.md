@@ -412,8 +412,17 @@ else {
 - https://twitter.com/fuyufjh/status/1710500237788459100
   - UUIDv7 is a time-ordered UUID which encodes a Unix timestamp with millisecond precision in the most significant 48 bits. 
 - 48bits 的时间戳相比 snowflake 已经很够用了，等后续数据库的支持，大部分不需要向用户暴露ID的服务用起来就很方便。
+- 数据库索引友好
+
 - snowflake 要统一分配 node_id，很劝退
   - 对，这玩意很麻烦为 worker_id 单独搞 zookeeper 也很浪费。
+- 那就不需要snowflake一类的方案了？
+
+- v1 高位也有时间戳，不过最高位是时间戳的低位；做个变换弄个私有varaint也能将就一下
+  - 私有的方案一大堆，这下有个通用的，可喜可贺
+
+- 我都不知道 UUID 已经不用 Mac 地址了。
+- 用了好久cuid
 
 - 所以 UUID 用在分布式系统中到底靠谱吗 
 - 感觉直接拿来做 PK 挺好的
@@ -424,6 +433,10 @@ else {
 - cons:
   1. UUID类型在语言上的支持远不如 int64 和 string
   2. 打印出来还是有点长，不如自增  id
+- 咋说呢，会让方案简单，然后如果这个分布式系统是有点容错率的话其实可以用的，完全看取舍，比如短链接服务。
+- 用本地时钟生成的？
 
-- v1 高位也有时间戳，不过最高位是时间戳的低位；做个变换弄个私有varaint也能将就一下
-  - 私有的方案一大堆，这下有个通用的，可喜可贺
+- 淘宝基本上所有主键都是用 sequence 实现的自增 ID，分布式和性能都久经考验，这个uuidv7还是不够成熟，至少要等RFC发布后观望几年
+  - 什么久经考验，都是草台班子
+  - 不能这么说，设计好的发号器的可靠性非常高
+  - 我写的 snowflake 版本 guid 跑 4 年，除了一次时间回拨被坑到，平时没人在意这个东西，用 zk 下发 node_id

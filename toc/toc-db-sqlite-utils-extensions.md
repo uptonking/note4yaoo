@@ -59,6 +59,10 @@ modified: 2022-11-04T14:20:37.172Z
   - an embeddable, distributed SQLite for Rust, powered by Little Raft.
   - ChiselStore extends SQLite to run on a cluster of machines with the Raft consensus algorithm.
   - https://github.com/andreev-io/little-raft
+
+- [db-helper.ts](https://gist.github.com/surma/53cb57219eea5217d02083b7dd19b711)
+  - https://twitter.com/DasSurma/status/1711013536950784460
+  - I just wrote a quick JS template tag for SQLite where I can use string interpolation with SQL queries without skipping the driver’s escaping mechanism.
 # excel
 - https://github.com/x2bool/xlite /202210/rust
   - SQLite extension for querying Excel (.xlsx, .xls, .ods) files as virtual tables
