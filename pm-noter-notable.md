@@ -19,6 +19,7 @@ modified: 2022-12-19T02:01:20.161Z
   - end-user database: 支持用户自定义数据和流程
   - local-first data storage with optional syncing
     - 兼容git的commits
+  - office viewer
 
 - selling-point-knowledge-base
   - markdown support with git-like database
@@ -27,6 +28,7 @@ modified: 2022-12-19T02:01:20.161Z
     - 备选方案参考git，将文本与git工具绑定
     - sync: 本地文件自动生成delta
   - open folder as site
+  - office editor
 
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好

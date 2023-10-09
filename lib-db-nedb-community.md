@@ -177,14 +177,11 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
 
 > A simple local JSON database. Use native JavaScript API to query. Written in TypeScript. 
 > ([typicode/lowdb](https://github.com/typicode/lowdb))
->  
 
 #### Pros
 
 - Very lightweight in terms of dependencies
 - Simple API which natively supports async Promises.
-
->  
 
 #### Cons
 
@@ -234,8 +231,6 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
 - If your question is how to do full text search, then it doesn't have anything to do with this project. 
   - Maybe you're looking at how to do a `LIKE` search
   - [SQLite query, 'LIKE' - Stack Overflow](https://stackoverflow.com/questions/12613926)
-
-
 
 - ## [MongoDB到Nedb的迁移_202106](https://blog.csdn.net/qq_43171049/article/details/117661855)
 - 为了实现项目的轻量化，对项目中原本使用的MongoDB进行替换，替换成相似的嵌入式数据库Nedb。

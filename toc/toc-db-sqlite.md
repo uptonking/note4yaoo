@@ -202,8 +202,9 @@ modified: 2021-08-30T18:56:18.632Z
   - https://loladb.com/
   - LolaDB is an HTTP client that pulls all your db clients on a centralized server infra & wraps the calls into a unified interface 
 
-- https://github.com/haltcase/trilogy
-  - trilogy is a simple Promise-based wrapper for SQLite databases. 
+- https://github.com/haltcase/trilogy /202205/ts
+  - https://trilogy.js.org/
+  - a simple Promise-based wrapper for SQLite databases. 
   - It supports both the native C++ sqlite3 driver and the pure JavaScript sql.js backend
   - It's not an ORM and isn't intended to be one — it doesn't have any relationship features. 
   - Instead it focuses on providing a simple, clear API that's influenced more by Mongoose than by SQL.

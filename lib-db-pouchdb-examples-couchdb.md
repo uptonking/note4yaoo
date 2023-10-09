@@ -31,6 +31,10 @@ modified: 2023-09-28T20:35:56.153Z
   - https://augurproject.github.io/pouchdb-perf/
   - PouchDB Perf Test
 
+- https://github.com/ezpaarse-project/dbbench /201412/archived
+  - A basic benching tool to compare node.js embedded databases
+  - It inserts randomly generated objects with string identifiers, then queries random identifiers for a given period of time.
+
 - pouchdb /16kStar/apache2/202310/js/core代码量不大
   - https://github.com/pouchdb/pouchdb
   - https://pouchdb.com/

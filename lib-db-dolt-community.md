@@ -425,7 +425,7 @@ modified: 2023-08-25T21:17:11.979Z
 - We didn't initially build Noms for this type of p2p, masterless architecture, but more and more recently, I find myself thinking it's a great fit.
 - There's still more work that needs to be done to make Noms work really well for this kind of use case, but I think it's one that makes a lot of sense.
 
-- ## [Noms – A new decentralized database based on ideas from Git | Hacker News_201608](https://news.ycombinator.com/item?id=12211754)
+- ## 🚀 [Noms – A new decentralized database based on ideas from Git | Hacker News_201608](https://news.ycombinator.com/item?id=12211754)
 
 - In case of conflicts, CouchDB assumes the most modified branch of the document (i.e., the document with the higher revision number) is the winner. You can resolve the conflict by choosing a different branch/revision manually, but you can also choose to not do anything.
   - But it also keeps conflicts around, so users who care about them can correctly resolve them.

@@ -74,6 +74,18 @@ modified: 2021-08-16T06:56:53.061Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 很多人都在问简单简历 http://easycv.cn 下载的 PDF 文件为什么效果那么好？
+- https://twitter.com/vikingmute/status/1711188708316336252
+- 如果你使用的 React 技术栈，使用 React PDF 肯定是没错的，可以直接使用各种 css 属性，同时完美实现渲染/下载等功能
+  - 甚至还可以配合 React PDF Tailwind，使用 Tailwind.css 来写 PDF 的模版，这个是基于 React PDF 的。
+  - 通过这两个，就可以实现比较完美的 PDF 样式展示和布局了。
+
+- 我会用jspdf去构建一两页的PDF
+# discuss
+- ## 
+
 - ## 从我加入飞书开放平台开始，眼睁睁的看着这个部门从飞书直属的大部门，一点点被缩减，被合并，最终变成了 aPaaS 下面的一个小部门。
 - https://twitter.com/XGHeaven/status/1710940437299761325
   - 回想这一路，不由得为这个部门感到悲伤和难过。开放，本身是一件多么有价值和有意义的事情，最终却……

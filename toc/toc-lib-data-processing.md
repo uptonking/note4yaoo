@@ -15,7 +15,7 @@ modified: 2021-05-13T16:14:15.415Z
   - Given a list of posts, compute the top 5 related posts for each post based on the number of shared tags.
 # data-model
 - https://github.com/apache/arrow
-  - https://github.com/apache/arrow/tree/master/js    /ts
+  - https://github.com/apache/arrow/tree/master/js /ts
    - Apache Arrow is a columnar memory layout specification for encoding vectors and table-like containers of flat and nested data. 
   - The Arrow spec aligns columnar data in memory to minimize cache misses and take advantage of the latest SIMD (Single input multiple data) and GPU operations on modern processors.
   - 👉🏻 Apache Arrow is the emerging standard for large in-memory columnar data (Spark, Pandas, Drill, Graphistry, ...). 

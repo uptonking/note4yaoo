@@ -213,8 +213,21 @@ modified: 2022-11-03T04:14:11.987Z
   - Mongita is a lightweight embedded document database that implements a commonly-used subset of the MongoDB/PyMongo interface
   - instead of being a server, Mongita is a self-contained Python library. 
   - Mongita can be configured to store its documents either on disk or in memory.
+# NoSQL
+- https://github.com/petersirka/nosql /201907/js/inactive
+  - NoSQL embedded database for small node.js projects
+  - Supports views
+  - Supports simple filtering
+  - Total.js framework uses NoSQL embedded database
+
+- https://github.com/finalclass/finaldb /201402/js
+  - Database system using streams and file system. NoSql way
+  - Final DB is a NoSQl database that uses file system as a storage.
+  - It's totally asynchronous. No synchronous function is called in it's code.
+  - It uses `when` library for async calls. Every async function returns a `Promise`.
+  - Uses `final-fs` library for file system manipulation.
 # non-js-json-db
-- https://github.com/Softmotions/ejdb
+- https://github.com/Softmotions/ejdb /c
   - Embeddable JSON Database engine C library. 
   - Simple XPath like query language (JQL).
 

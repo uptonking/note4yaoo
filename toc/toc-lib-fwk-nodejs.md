@@ -200,6 +200,11 @@ modified: 2022-12-19T01:49:01.371Z
 - https://github.com/nodosjs/nodos
   - https://nodosjs.github.io/
   - Node.js framework for humans (inspired by rails, phoenix, django)
+
+- https://github.com/totaljs/framework /202308/js/示例很多
+  - http://www.totaljs.com/
+  - a framework for Node.js platfrom written in pure JavaScript similar to PHP's Laravel or Python's Django or ASP. NET MVC.
+  - It can be used as web, desktop, service or IoT application.
 # rust
 - https://github.com/patr0nus/rust-nodejs
   - Embedding Node.js in Rust.

@@ -171,7 +171,13 @@ modified: 2023-04-21T11:42:46.575Z
   - But I once had an experiment for sharded persistence per table or row. 
   - At that point, keeping it in sync with a 'real' database might be quite scalable and interesting.
 
-- ## [TinyBase: A JavaScript library for structured state | Hacker News_202201](https://news.ycombinator.com/item?id=29945748)
+- ## 🚀 [TinyBase: A JavaScript library for structured state | Hacker News_202201](https://news.ycombinator.com/item?id=29945748)
+- I used to use `redux-orm` which offered a similar promise. 
+  - My app is still alive and kicking and I ended up implementing many of the ideas here myself, in a less reusable fashion. A primary motivator was that **as the use cases evolve, a storage model optimized for application specific access patterns becomes compelling**.
+  - The convenience of having properly implemented relational semantics and performance enhancements of Indices is huge, but the risk of hitting assumptions that don't fit your use case is also non-trivial
+- I agree with your very final point. The same might be true of the undo stack implementation too - at some point the usage patterns might invalidate some of my performance assumptions.
+- I'd been using an early version of Redux-ORM on a project
+  - We did eventually add a createEntityAdapter API to Redux Toolkit 
 
 - Pro and Contro vs existing similar projects?
   - TinyBase lets you set up event handlers with arbitrary data granularity, making the data store reactive.
@@ -184,9 +190,16 @@ modified: 2023-04-21T11:42:46.575Z
 
 - Web apps are so over-complicated because of piecemeal client side data stores and the need to sync with the latest fashion in api protocol.
   - Imagine how simple apps would be if your data model and query interface was exactly the same on the server and client. With automatic caching and fetching logic.
+  - What we lack is a good client-side relational+graph database that has an identical server-side implementation.
 - The requirements on clients are fundamentally different than on the server.
+  1. Batching, to avoid network waterfalls (a consequence of network use being more expensive on clients than on the server).
+  2. Data dependencies, so the framework knows how to stitch queries together when batching them.
+  3. Consistency, so all UIs update when an update comes in (a consequence of SPAs being long-lived, as opposed to the typical stateless server request).
+  - These all take some code/framework overhead. It’s valuable to pay that cost on clients, but is unnecessarily verbose for the server.
+  - People have been trying to unify local and remote function calls for years, and it’s a similar problem: the two are fundamentally different.
+- "code/framework overhead" is fine as long as its hidden in a library. Too many people re-implement a data layer client-side that is always a poor mapping to the server data model. My frontend should act as if its running off a local database and sync with the server. It could batch together all requests made to this database that it cannot fulfil or that are stale.
 
-- SQLite on WASM[0] is absolutely what you are looking for. There is also “Absurd SQL”[1] which extends it to use indexedDB as a VFS for storage allowing proper atomic transactions and not loading the whole thing into memory.
+- SQLite on WASM is absolutely what you are looking for. There is also “Absurd SQL” which extends it to use indexedDB as a VFS for storage allowing proper atomic transactions and not loading the whole thing into memory.
 - Absurd is really cool. I've always thought it would be great to have an SQL db implemented in native JS though.
   - With the database running in the same process as your app, you could store native JS Objects of your table rows in the cache, which you could bind events to. So if you modify a row in a table in the db, events could be instantly propagated to the UI. Haven't thought it through fully yet.
   - SQL is also a bit cumbersome for things like deeply nested data, hierarchies, trees, graphs which a lot of client-side application state ends up being.
@@ -194,5 +207,20 @@ modified: 2023-04-21T11:42:46.575Z
 - There's Datascript[0] and Datomic[1]. While not "identical", they are definitely complimentary. There's a (now defunct) library[2] for keeping them in sync too.
 
 - PouchDB has offered something like that for close to a decade now, if I'm not mistaken. Might be worth looking into. 
-  - It is document-based, though, rather than relational+graph, though I suppose you could build graph utilities on top of it.
+  - It is **document-based, though, rather than relational+graph**, though I suppose you could build graph utilities on top of it.
 - PouchDB is incredible, so much respect for the devs that built it. The trouble is though, it is now quite an ageing codebase with relatively little maintenance.
+- rxdb is the best client side database. RxDB syncs with GraphQL and Pouch/CouchDBs.
+  - There's WatermelonDB which uses IndexedDB on web and SQLite on native, it's nice for syncing to custom backends.
+  - There's GUN and Orbit for distributed graph databases.
+  - TinyBase looks really really nice, fills the gap in-between hefty client side databases and state system solutions like Redux + Persist. I'd like to see Redux middleware integration for time travel debugging, event lots, and snapshotting if possible. The analytics and rollback APIs are a nice touch. Size is enticing.
+
+- Orbit.js does some of these things and coordinates client with a variety of data sources through a standard set of interfaces and using normalized data structures.
+  - Orbit.js does some of these things and coordinates client with a variety of data sources through a standard set of interfaces and using normalized data structures.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 

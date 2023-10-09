@@ -263,6 +263,16 @@ modified: 2020-07-14T11:03:53.196Z
   - 基于checkpoint实现undo
   - 基于hlc crdt实现冲突处理
 
+- https://github.com/dmaevsky/tinyx /202211/js/NoDeps/inactive
+  - A tiny state manager for big applications
+  - Redux inspired
+  - Middleware: logging, time travel, etc. out of the box
+  - Expressive syntax for describing transactions, ImmerJS inspired, but using plain JS objects.
+  - Automatic individual patches recording, again ImmerJS inspired, and without Proxy voodoo magic
+  - Directly usable in SvelteJS applications: follows Svelte's store API
+  - Plugin available for VueJS (so you can use it instead of, say, VueX)
+  - You can put anything into your store: functions, promises, whatever you please, it is your store ! It is never augmented with proxies or tampered with in any way.
+
 - orbit /2.3kStar/MIT/202209/ts/概念特别多
   - https://github.com/orbitjs/orbit
   - Orbit is a composable data framework for managing the complex needs of today's web applications.
@@ -280,6 +290,16 @@ modified: 2020-07-14T11:03:53.196Z
   - Highly extensible with plug-ins (e.g. persistence, dev tools)
   - Multiple times faster than context/reducer solution
   - This library is an evolution of the already production-proven react-entities that I also wrote. It shares the same stable core, but with a very different API.
+
+- https://github.com/Yomguithereal/baobab /js/inactive
+  - JavaScript & TypeScript persistent and optionally immutable data tree with cursors.
+  - It is mainly inspired by functional zippers (such as Clojure's ones) and by Om's cursors.
+  - It aims at providing a centralized model holding an application's state and can be paired with React easily through mixins, higher order components, wrapper components or decorators
+  - you can create cursors to easily access nested data in your tree and listen to changes concerning the part of the tree you selected.
+  - Note that the tree, being a persistent data structure, will shift the references of the objects it stores in order to enable immutable comparisons between one version of the state and another
+  - Baobab lets you record the successive states of any cursor so you can seamlessly implement undo/redo features.
+  - https://github.com/Yomguithereal/baobab-react
+    - React integration for Baobab.
 # signals
 - https://github.com/preactjs/signals /ts/实现不依赖proxy
   - Signals is a performant state management library with two primary goals
