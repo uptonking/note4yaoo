@@ -12,6 +12,14 @@ modified: 2021-10-29T16:09:36.091Z
 - [Collaboration features release notes](https://ckeditor.com/collaboration/changelog/)
 # [changelog](https://github.com/ckeditor/ckeditor5/blob/master/CHANGELOG.md)
 
+## v40.0__202310
+
+- [CKEditor v40.0.0: AI Assistant brings content creation into the future](https://ckeditor.com/blog/ckeditor-40-0-0-release-highlights/)
+
+- exciting AI Assistant feature
+  - Generate, rephrase, and enhance content in seconds without leaving the editor. 
+  - Also, enjoy updates to Document List, Comments Archive, Image Height, and Drag & Drop
+
 ## v31.0.0__202110
 
 - Introduce the `Command#affectsData` property to indicate whether a given command should stay enabled in editor modes with restricted write permissions. 

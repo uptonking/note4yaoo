@@ -16,6 +16,9 @@ modified: 2021-06-02T15:26:19.890Z
 - markdown-filename-suffix
   - ["md", "markdown", "mdown", "mkdn", "mkd", "mdwn", "mkdown", "ron", "rmd"]
 
+- hashtag🤔
+  - 有助于提取结构化内容
+
 - markdown-extensions
   - mdx
   - [R Markdown](https://rmarkdown.rstudio.com/)

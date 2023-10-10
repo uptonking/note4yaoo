@@ -208,6 +208,17 @@ modified: 2022-04-05T10:08:25.947Z
     - This PR implements an RGA CRDT + Peritext. It's also optimized for high speed with a relatively low memory footprint.
     - Under the hood, it uses the generic-btree crate to store the text content, the text ops, and the Peritext range anchors in a unified way.
 
+- https://github.com/serenity-kit/secsync /ts
+  - https://www.secsync.com/
+  - Is an architecture to relay end-to-end encrypted CRDTs over a central service.
+  - It was created out of the need to have an end-to-end encrypted protocol to allow data synchronization/fetching incl. real-time updates to support local-first apps in combination with a web clients without locally stored data.
+  - eg: End-to-end encrypted document using Yjs incl. Cursor Awareness
+  - eg: End-to-end encrypted todo list using Automerge
+  - Why use a central relay service?
+    - The main reason is to exchange data asynchronously.
+  - https://github.com/serenity-kit/Serenity /ts
+    - End-to-end encrypted pages for your team
+
 - https://github.com/composablesys/collabs /ts
   - https://collabs.readthedocs.io/
   - Collabs is a collections library for collaborative data structures. 
@@ -278,16 +289,6 @@ modified: 2022-04-05T10:08:25.947Z
   - Examples for the Convergence Real-time Collaboration Engine
   - https://github.com/convergencelabs/input-element-bindings
   - https://github.com/convergencelabs/html-text-collab-ext
-
-- https://github.com/serenity-kit/secsync /ts
-  - Is an architecture to relay end-to-end encrypted CRDTs over a central service.
-  - It was created out of the need to have an end-to-end encrypted protocol to allow data synchronization/fetching incl. real-time updates to support local-first apps in combination with a web clients without locally stored data.
-  - eg: End-to-end encrypted document using Yjs incl. Cursor Awareness
-  - eg: End-to-end encrypted todo list using Automerge
-  - Why use a central relay service?
-    - The main reason is to exchange data asynchronously.
-  - https://github.com/serenity-kit/Serenity /ts
-    - End-to-end encrypted pages for your team
 
 - https://github.com/PsychoLlama/graph-crdt /201707/js/inactive
   - Designed for serializing arbitrary data structures, making offline edits, and seamlessly merging changes back in. All data is observable and event driven.

@@ -12,7 +12,34 @@ modified: 2023-09-13T20:24:41.516Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🤔 Is it wrong to build all blog content into a SQLite database that you ship alongside your blog and access serverside via RSC
+- https://twitter.com/steveruizok/status/1711466753711128633
+  - So my situation is: I have a bunch of markdown files with frontmatter (section, category, order) and some authors and sections and categories. I’m currently parsing them all and putting them in a big json blob that I can pull from on the server
+  - It’s more than good enough, but it’s quite big (>5mb) and likely to grow as more content gets added. And it seems like a good excuse to learn some sqlite
+  - update: its fine and it rules actually
+  - I could probably do the same for search / chat bot with a vector database right?
+
+- it's a really good pattern, particularly if you then serve the blog from an edge platform. @simonw coined the term the "baked data architecture" for this.
+  - [The Baked Data architectural pattern](https://simonwillison.net/2021/Jul/28/baked-data/)
+- The more I use this pattern the more I like it! My https://til.simonwillison.net site is a blog served directly out of a SQLite database on Vercel - code here: https://github.com/simonw/til
+  - I'm not using edge functions, it's on regular Vercel functions - I don't know if edge functions differ in a way that would cause it not to work 
+  - **The DB file is treated as if it was a code file and uploaded as part of the deployment**
+
+- Why building the content? :) **You could have SQLite as the source of truth for content**. We've used that approach for http://postowl.com.
+  - Aside from that, I think SQLite can also serve as a cache instead of SSG
+
+- Only downside is lack of diffs/binary format. Not sure it’s better than MDX + frontmatter.
+
+- I don’t know about RSC. But Kent C Dots uses SQLite for his site
+- Just did this for my personal blog! The ergonomics are amazing and no longer have to fumble with all of this unstructured data
+
+- it’s good imo. you don’t need a managed database for something a file can do
+- Sounds similar to how we serve mdx. Except we use files instead of Sqlite.
+- For me it works to redeploy my static blog on every change
+
+- A couple markdown files, totally fine. 1000s of markdown files, no please, data is really expensive in some parts of the world.
+
+- Sounds like you just want query engine  on top of your blob. Maybe some json based query is fast enough or maybe you want to put only some parts of the data into the database. I generally like jsons, so not sure you got reason to pump it all into sqlite
 
 - ## what's the Component-level big idea for local first apps? 
 - https://twitter.com/threepointone/status/1691454722518208513

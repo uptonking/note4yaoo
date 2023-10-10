@@ -84,6 +84,10 @@ modified: 2022-11-06T15:45:36.913Z
 - https://github.com/WebReflection/flatted /js
   - A super light (0.5K) and fast circular JSON parser, directly from the creator of CircularJSON.
 
+- https://github.com/nolanlawson/vuvuzela /201409/js
+  - Simple and non-recursive JSON parse/stringify library
+  - No functions-within-functions, just a while loop and a stack.
+
 - https://github.com/simdjson/simdjson-java /java
   - A Java version of simdjson - a JSON parser using SIMD instructions, based on the paper Parsing Gigabytes of JSON per Second
   - Support for Unicode characters

@@ -131,6 +131,17 @@ modified: 2021-05-25T09:41:29.066Z
 - https://github.com/casbin/node-casbin /ts
   - https://casbin.org/
   - An authorization library that supports access control models like ACL, RBAC, ABAC in Node.js and Browser
+# ide-like
+- https://github.com/labring/laf /ts
+  - https://laf.dev/
+  - laf 是开源的云开发平台，提供云函数、云数据库、云存储等开箱即用的应用资源。
+  - 让开发者专注于业务开发，无需折腾服务器，快速释放创意。
+  - 云函数
+  - 云数据库
+  - 云存储
+  - WebIDE，像写博客一样写代码
+  - 网站托管
+  - WebSocket 支持
 # sass-examples
 
 # more

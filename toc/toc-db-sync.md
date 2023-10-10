@@ -199,6 +199,7 @@ modified: 2022-11-25T15:41:47.534Z
   - DagDB is a portable and syncable database for the Web.
   - It can run as a distributed database in Node.js, including using AWS services as a backend.
   - It also runs in the browser. 
+  - 依赖@ipld/block、@ipld/fbl、datastore-car、levelup4
   - In fact, there is no "client and server" in DagDB, everything is just a DagDB database replicating from another database. 
     - In this way, it's closer to git than a traditional database workflow.
   - The closest thing to DagDB replication you're familiar with is git. 

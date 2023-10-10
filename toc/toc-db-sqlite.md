@@ -66,6 +66,7 @@ modified: 2021-08-30T18:56:18.632Z
   - persistent, SQLite database for Web and Workers, based on sql.js and sqlite-tag.
 
 - libsql /1.8kStar/MIT/202212/clang
+  - https://github.com/tursodatabase/libsql
   - https://github.com/libsql/libsql
   - https://libsql.org/
   - a fork of SQLite, to suit many more use cases than SQLite was originally designed for
@@ -76,7 +77,7 @@ modified: 2021-08-30T18:56:18.632Z
     - randomized ROWID
     - WebAssembly User Defined Functions
 
-- https://github.com/libsql/sqld /rust
+- https://github.com/libsql/sqld /MIT/rust
   - sqld is a server mode for libSQL. 
   - Access over HTTP and WebSockets from any Edge platform
   - SQLite-compatible API that you can drop-in with LD_PRELOAD in your application to switch from local database to a remote database.

@@ -29,7 +29,9 @@ modified: 2021-03-10T11:38:16.053Z
 # discuss
 - ## 
 
-- ## 
+- ## the simplest way to work out letter spacing
+- https://twitter.com/aleksliving/status/1711725832757035098
+  - 一黑板的函数曲线和公式
 
 - ## 给自己的网站添加了一个鼠标轨迹的效果
 - https://twitter.com/ArvinnWang/status/1710254783486210403

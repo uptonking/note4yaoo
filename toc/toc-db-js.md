@@ -369,6 +369,9 @@ modified: 2022-11-25T15:50:48.226Z
   - It's an eventually consistent database that uses Merkle-CRDTs for conflict-free database writes and merges
   - OrbitDB provides various types of databases for different data models and use cases
   - All databases are implemented on top of `ipfs-log`, an immutable, cryptographically verifiable, operation-based CRDT
+  - https://github.com/berty/go-orbit-db
+    - Go version of P2P Database on IPFS
+    - The majority of this code was vastly derived from the JavaScript's orbit-db project.
   - https://news.ycombinator.com/item?id=22918714
     - OrbitDB's core is an append-only, immutable log CRDT.The log in OrbitDB is a Merkle-DAG, so, a graph.
     - Key-Value databases, feeds, and other data model types that OrbitDB supports by default, are all built on that log. You can also create your custom database types, ie. custom data models.

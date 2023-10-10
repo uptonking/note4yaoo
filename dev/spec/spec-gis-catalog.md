@@ -27,9 +27,8 @@ modified: 2021-09-30T07:45:22.343Z
       - protoc generated model for Mapbox Vector Tiles v2.1.
       - Provides MVT encoding through use of the jts library
 # ogc
-
+- [Cloud-Native Geospatial Foundation](https://cloudnativegeo.org/)
 # more-gis-format
-
 - CityJSON
   - https://www.cityjson.org/
   - CityJSON is a JSON-based encoding for a well-documented subset of the OGC CityGML data model (version 2.0.0). 

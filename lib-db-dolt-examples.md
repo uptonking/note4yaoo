@@ -48,7 +48,8 @@ modified: 2023-08-25T22:31:05.132Z
   - Live database for the web
   - Simplify your application state with a live database. Automatically update your UI based on local or remote changes, and optionally integrate with any cloud for replication and sharing.
   - Fireproof is an embedded JavaScript document database designed to streamline app development. 
-  - Data resides locally, with optional encrypted cloud storage and realtime collaboration. 
+  - Data resides locally, with optional encrypted cloud storage and realtime collaboration.
+  - 依赖 @ipld/dag-json|car|unixfs、@web3-storage/clock、idb、prolly-trees
   - JSON Documents - Encrypted changes are persisted locally and to any connected storage.
   - File Attachments - Share social media or manage uploads within Fireproof's file attachment API.
   - Live Query - Sort and filter any database with CouchDB-style map functions.

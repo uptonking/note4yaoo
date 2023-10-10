@@ -12,9 +12,23 @@ modified: 2021-01-06T14:40:11.360Z
 # discuss
 - ## 
 
-- ## 
+- ## 个人觉得比较理想的非受控表单验证和定义
+- https://twitter.com/__oQuery/status/1711301515707810123
+- 非受控会不会存在很多校验逻辑都得手动处理
+- 非受控的场景太局限了，日常开发中占比百分之 10 都不到。
 
-- ## 
+- ## In React, I group related state into one useState. Here’s why
+- https://twitter.com/housecor/status/1711362678696874369
+  - ✅Requires less code.
+  - ✅Makes it easy to send to the server.
+  - ✅Can create a single onChange handler that sets the relevant property.
+  - ✅Clarifies the relationship between fields, which makes the code easier to understand. These values represent something. What is the name of the "thing" they represent, together? Grouping state answers this important question.
+- Just one tiny step away from useReducer
+- 如果 react 中有多个状态需要存储，为了简单省事，我一般都是用简化版 useReducer
+
+- I personally dislike that approach because it makes updating the state more complicated. You must always remember to include or spread the other properties, and you lose the built-in React feature that prevents re-rendering when the state remains unchanged.
+
+- Also using this, although it seems this pattern is not super popular People either use multiple useState, or one useReducer. I use useState with objects all the time and I'm fine.
 
 - ## How many React perf problems are in this block?
 - https://twitter.com/jasonlaster11/status/1697740863588417641
@@ -216,7 +230,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                      `ValueFront`,                                      `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                        `ValueFront`,                                        `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

@@ -119,3 +119,13 @@ modified: 2020-12-29T11:27:41.474Z
 
 - https://www.retrospected.com/
   - 卡片
+# discuss-landing-ux
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Creative live product demo in the hero section
+- https://twitter.com/d__raptis/status/1711712001788170465
+  - [Ellipsus | Collaborative writing software](https://ellipsus.com)

@@ -237,6 +237,15 @@ modified: 2023-01-01T13:24:35.994Z
   - fast search engine that fits effortlessly into your apps, websites, and workflow.
   - [Elasticsearch like alternative · Issue · mastodon/mastodon](https://github.com/mastodon/mastodon/issues/20743)
 
+- https://github.com/paradedb/paradedb /AGPLv3/rust
+  - https://paradedb.com/
+  - an ElasticSearch alternative built on PostgreSQL, engineered for lightning-fast full text, similarity, and hybrid search.
+  - It offers the most comprehensive, Postgres-native search features of any Postgres database, so you don't need to glue cumbersome services like a search engine or vector database on top.
+  - built in Rust on top of PostgreSQL and Tantivy, a Rust-based implementation of Apache Lucene
+  - Consolidate your database and search engine into a single system, so you don't need to worry about keeping separate services in sync.
+  - Write search queries in SQL with ACID transactions.
+  - Scale to millions of rows with support for distributed search, high availability, backups, and point-in-time-recovery.
+
 - https://github.com/valeriansaliou/sonic /202210/rust
   - lightweight & schema-less search backend. 
   - An alternative to Elasticsearch that runs on a few MBs of RAM.

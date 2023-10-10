@@ -25,16 +25,16 @@ modified: 2020-12-20T12:36:17.694Z
   - 对于hashtag，pinterest也没有一个正式的规则和限制
 
 - [新浪帮助-微博-微博发“话题”](https://help.sina.com.cn/i/204/422_12.html)
-  - 简单地说“话题”就是微博搜索时的关键字，其书写形式是将关键字放在两个井号之间
+  - 简单地说“话题”就是微博搜索时的关键字，其书写形式是**将关键字放在两个井号之间**
 
 - 微信 话题标签_202007
-  - 朋友圈释放了“话题标签”这一重要的功能，格式为“#+文字”，这一内容就会变成一个可点击的超链接。近日，话题标签功能同样适用于微信聊天页面。
+  - 朋友圈释放了“话题标签”这一重要的功能，格式为`#+文字`，这一内容就会变成一个可点击的超链接。近日，话题标签功能同样适用于微信聊天页面。
   - 微信内循环再放大招：话题标签全面打通公众号、视频号、小程序
   - 微信跟进微博，与好友聊天也能添加话题，可以点击这一话题词，跳转到的结果包括微信公众号、视频号和微信视频等。
 
 - 头条
   - 头条文章标题不支持话题标签，内容中间支持插入热门话题 
-  - 微头条test #测试#，支持话题标签，要用2个# 井号
+  - 微头条test `#测试#`，支持话题标签，要用2个# 井号
 
 - ## https://github.com/twitter/twitter-text
   - how characters are treated when composing Tweets and across the Twitter API.
@@ -42,7 +42,30 @@ modified: 2020-12-20T12:36:17.694Z
   - Twitter began as an SMS text-based service. This limited the original Tweet length to 140 characters (which was partly driven by the 160 character limit of SMS, with 20 characters reserved for commands and usernames). 
   - Over time as Twitter evolved, the maximum Tweet length grew to 280 characters - still short and brief, but enabling more expression. 
   - In most cases, the text content of a Tweet can contain up to 280 characters or Unicode glyphs.
-# seo
+# discuss-seo
+- ## 
+
+- ## 
+
+- ## Build "alternative" pages as marketing. They rank easily and bring high quality traffic.
+- https://twitter.com/Timb03/status/1711563242697535773
+  - These compare & alterative pages have brought Pallyy over 300 signups so far.
+  - They don't bring a lot of traffic, but the traffic is so targeted it has a high conversion rate.
+  - It only took a day or so to setup, so it's well worth it.
+
+- It indeed beneficial for targeted SEO.
+
+- How did you pick up the right set of competitors?
+  - Just went for the top 10 in the market as they have the most searches.
+
+- how you tracking conversions?
+  - Just Plausible, using events
+
+- Do you use server side rendering for these pages?
+  - Yeah, need those SEO benefits!
+
+- This is good advice, all the best SaaS products do it. Don’t be scared to write positive things about your competitors. I think the best example I have found of alternative/comparison pages is @Mailtrap - they even go as far as doing tutorials for their competitors.
+
 - ## [SEO网站收录一般几天](https://zhuanlan.zhihu.com/p/147597341)
 - 大多数网站在上线提交之后，通常在20天左右就能够被搜索引擎收录，搜索引擎对于新网站的收录一般比较积极，
   - 但是搜索引擎对于新网站设置了1到3个月的考核期，根据网站内容质量决定内页的收录时间，不同的网站考核时间也会有所差异。
@@ -68,6 +91,7 @@ modified: 2020-12-20T12:36:17.694Z
   - 注意，抓取后不一定被收录
   - 最好的方式是，更新文件后也更新sitemap，爬虫先爬取sitemap，如果没有sitemap在根据链接一个一个的爬。
   - 在网页更新上，建议规律化，定时，定量，定质量，特别是网站内容的质量好坏，直接决定收录！
+
 # ref
 - [更改 Googlebot 抓取速度](https://support.google.com/webmasters/answer/48620)
   - 抓取速度是指 Googlebot 在抓取网站时每秒向网站发出的请求次数，例如每秒发出 5 次请求。

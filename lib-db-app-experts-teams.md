@@ -15,6 +15,10 @@ modified: 2023-02-02T03:22:07.941Z
   - structure: document/object, flat
   - value: unique, regular/common
 # db-trending
+- resources
+  - [DB Weekly: The Weekly Database Newsletter](https://dbweekly.com/issues)
+  - [Postgres Weekly](https://postgresweekly.com/issues)
+
 - db-features
   - incremental materialized view
   - graph/relational queries: gql, property graph

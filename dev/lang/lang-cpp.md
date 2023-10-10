@@ -99,3 +99,24 @@ modified: 2020-07-14T09:26:25.358Z
   - 模块化设计: Clang采用基于库的模块化设计，易于IDE集成及其他用途的重用
   - 诊断信息可读性强: 在编译过程中，Clang创建并保留了大量详细的元数据，利于调试和错误报告
   - 设计清晰简单，容易理解，易于扩展增强
+# discuss-toolchain
+- ## 
+
+- ## CMake is the standard way to build C and C++ software portably. 
+- https://twitter.com/lemire/status/1711801773042630665
+  - It is currently challenging but we can make it easier by documenting best practices.
+
+- There is actually no standard nor consensus for C/C++. 
+  - There is no consensus, that’s for sure, but it is as close to a standard as it gets.
+
+- CMake's problem is not just the documentation, it's its constant changing APIs, the growing amount of code required to just get something seemingly simple going on, over-complicating the build process, the syntax, and so on! CMake is too big to be too good!
+
+- CMake needs to be decomposed: config | make | cache
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 

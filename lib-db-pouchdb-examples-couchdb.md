@@ -16,6 +16,7 @@ modified: 2023-09-28T20:35:56.153Z
 - fans-pouchdb
   - https://github.com/redgeoff/delta-pouch
   - https://github.com/garrensmith/couch_hack_week
+  - https://github.com/pouchdb/pouchdb
 # pouchdb-couchdb
 - https://github.com/pubkey/client-side-databases
   - https://pubkey.github.io/client-side-databases/database-comparison/index.html
@@ -410,6 +411,9 @@ modified: 2023-09-28T20:35:56.153Z
   - https://github.com/apache/couchdb-nano
     - The official Apache CouchDB library for Node.js
 
+- https://github.com/couchbase/couchbase-lite-core /202310/cpp/c
+  - Cross-platform C++ core library for Couchbase Lite
+
 - https://github.com/dianabarsan/couchdb-perf /js
   - CouchDb 2 vs CouchDb 3 superficial performance bench
 
@@ -600,6 +604,11 @@ modified: 2023-09-28T20:35:56.153Z
   - It supports real time data sync, offline usage and values minimal boilerplate with opt in to most features.
   - Falcor is used for state management, caching, batching and data sharing. 
   - Svelte views are bound to a virtual data object with a js proxy based store implementation
+
+- https://github.com/NoteSelf/NoteSelf.github.io /202005/js/inactive
+  - https://noteself.org/
+  - built on top of TiddlyWiki, a powerful, free, highly customizable and open-source personal wiki.
+  - We took the best of it, it's powerful customization system, and mixed it with one of the best embedded databases available, PouchDb, to bring in the synchronization capabilities you need.
 # more
 - https://github.com/KouchDB/replication-source-poc /202211/java
   - Demonstrates how to stand-up a Java Springboot service as a source for CouchDB replication

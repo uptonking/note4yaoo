@@ -95,6 +95,11 @@ $$('[contenteditable]')
   - [x] 流式数据: linvodb, tingodb; 可参考kappa架构
   - tuple-database 支持内存和持久化
   - tinybase 支持内存和持久化
+- db-sync/collab
+  - pouchdb
+  - piratedb
+  - crsqlite
+  - fireproof/ipld
 
 - cache/stream for web storage
   - 参考 tanstack-query, localforage
@@ -115,7 +120,6 @@ $$('[contenteditable]')
   - evolu: hlc + merkle + worker
   - automerge: hypermerge
   - remoteStorage: google-drive、网盘、七牛对象存储
-  - pouchdb
   - 使用hlc: idbsidesync, verdant, harika
   - 结合hlc+crdt: idbsidesync, evolu, rga-crdt
   - 结合hlc+db: piratedb, tinybase, kappa-db-stream, linvodb

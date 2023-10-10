@@ -51,11 +51,12 @@ modified: 2021-09-23T18:31:42.015Z
   - queue队列: 异步任务队列
   - 哈希表: vue diff算法key作用
   - 图: GC标记清除算法在标记过程中维护可达图、webpack在编译过程中维护可达图
+  - 尝试oop与fp两种实现方式
 
 - resources
   - [JavaScript设计模式与开发实践 | 汪图南](https://wangtunan.github.io/blog/designPattern/)
   - [JavaScript设计模式es6（23种) - 掘金](https://juejin.cn/post/6844904032826294286)
-  - [JavaScript中常见的十五种设计模式 - -渔人码头- - 博客园](https://www.cnblogs.com/imwtr/p/9451129.html)
+  - [JavaScript中常见的十五种设计模式 -渔人码头- 博客园](https://www.cnblogs.com/imwtr/p/9451129.html)
   - [Hooks Pattern](https://www.patterns.dev/posts/hooks-pattern)
   - [JavaScript 设计模式](https://www.freecodecamp.org/chinese/news/javascript-design-patterns-explained/)
     - [JavaScript Design Patterns – Explained with Examples](https://www.freecodecamp.org/news/javascript-design-patterns-explained/)
@@ -222,3 +223,6 @@ modified: 2021-09-23T18:31:42.015Z
 - 一种场景是，你要把数据丢到MQ，但是MQ暂时不可用，那么你把数据暂存到DB，后面再轮询丢到MQ。
 # more
 - [24种设计模式的通俗理解](https://www.cnblogs.com/shoshana-kong/p/10787629.html)
+
+- [Design Patterns Using Functional JavaScript](https://gist.github.com/34fame/612cd8c4abc452ffd7220d438a79315b)
+  - 数据库操作相关抽象

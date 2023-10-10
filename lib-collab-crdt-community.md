@@ -12,7 +12,13 @@ modified: 2022-04-05T13:25:40.892Z
 # discuss
 - ## 
 
-- ## 
+- ## So many people in the crdt & data sync space now. Feels like it is time for me to move on to the next frontier of problems
+- https://twitter.com/tantaman/status/1711538960277602496
+  - To be clear, I'll still be supporting my existing projects but tipping the balance further towards new research.
+  - Not going away! Still supporting cr-sqlite and all my new ideas still center around what applications need from an embedded database.
+- I don't think it'll be "solved" so much as a good set of opinionated defaults that work for most cases are surfacing (replicache, cr-sqlite, electric, triplit) as well as primitives for power users to compose (cr-sqlite, replicache, collabs, ?) for custom solutions.
+- Low level building blocks, sure, but I haven’t seen anyone get high level DX right yet
+- It's very tilted towards B2C SAAS and collaborative apps. Industrial solutions (that don't run on a phone) are what still excite me. We're still so far away.
 
 - ## [Request for Comments: CRDTish approach to Solid - Build a Solid App - Solid Community Forum_202104](https://forum.solidproject.org/t/request-for-comments-crdtish-approach-to-solid/4211)
 

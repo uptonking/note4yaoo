@@ -86,11 +86,6 @@ modified: 2021-08-16T06:56:53.061Z
 # discuss
 - ## 
 
-- ## 从我加入飞书开放平台开始，眼睁睁的看着这个部门从飞书直属的大部门，一点点被缩减，被合并，最终变成了 aPaaS 下面的一个小部门。
-- https://twitter.com/XGHeaven/status/1710940437299761325
-  - 回想这一路，不由得为这个部门感到悲伤和难过。开放，本身是一件多么有价值和有意义的事情，最终却……
-  - 总人数我不好说怎么变化，但是单块业务负责的人是变少了。另外偏向开放能力的投入也少了，更多的放在了一些有比较直接产出的业务上。
-
 - ## In Europe, Estonia has had the digital signature for some time and it works really well:
 - https://www.reddit.com/r/InternetIsBeautiful/comments/zxdz3e/i_made_a_free_pdf_editor_that_works_in_your/
   - https://github.com/open-eid – it's all open-source.

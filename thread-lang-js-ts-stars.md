@@ -24,7 +24,13 @@ if(val) // doSth
 # discuss
 - ## 
 
-- ## 
+- ## Why does TypeScript make us use "./foo.js" extensions when importing?
+- https://twitter.com/mattpocockuk/status/1711697978140852695
+  - To me, it makes sense - it speeds up Node startup and means your TS code more closely resembles your compiled .js code.
+  - But, it can be pretty confusing on first look.
+  - [Relative import paths need explicit file extensions in EcmaScript imports | Total TypeScript](https://www.totaltypescript.com/relative-import-paths-need-explicit-file-extensions-in-ecmascript-imports)
+
+- Node always complicating our lives
 
 - ## Is there an alternative to `JSON.stringify` for getting a stable string representation of a serializable JS object that’s suitable for use in a hot path?
 - https://twitter.com/andrewingram/status/1710799442050200048

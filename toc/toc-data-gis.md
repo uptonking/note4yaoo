@@ -38,3 +38,9 @@ modified: 2021-01-04T16:20:47.941Z
 
 - https://www2.gov.bc.ca/gov/content/data/geographic-data-services/lidarbc
   - This LiDAR data includes LAZ point cloud data and various LiDAR-derived products.
+
+- https://github.com/opengeos/open-buildings /python
+  - https://opengeos.github.io/open-buildings
+  - a set of useful scripts for getting and converting Open Building Datasets using Cloud Native Geospatial formats. 
+  - Initially the focus is on Google's Open Buildings dataset and Overture's building dataset.
+  - get_buildings command lets you supply a GeoJSON file to a command-line interface and it'll download all buildings in the area supplied, output in common GIS formats (GeoPackage, FlatGeobuf, Shapefile, GeoJSON and GeoParquet).

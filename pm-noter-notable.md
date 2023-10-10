@@ -29,6 +29,7 @@ modified: 2022-12-19T02:01:20.161Z
     - sync: 本地文件自动生成delta
   - open folder as site
   - office editor
+  - encrypted elements: 有权限的用户或有密码的用户才可看到的数据
 
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好

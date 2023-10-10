@@ -81,11 +81,11 @@ modified: 2022-09-21T15:47:41.340Z
   - Scales horizontally with a session backend model.
   - Provides document-level access control via client tokens.
 # utils
-- https://github.com/rozek/y-lwwmap
+- https://github.com/rozek/y-lwwmap /ts
   - Yjs provides a complete ecosystem for (persisting and) sharing "Conflict-free replicated data types" (CRDT) among multiple clients using a variety of persistence and communication providers. 
   - The shared data types include arrays and maps, with shared maps becoming inefficient in most practical cases, which is why there is an alternative implementation based on shared arrays in the `y-utility` package.
   - Being compatible to the Yjs ecosystem, LWWMaps can be shared as part of a Y. Doc using y-websocket, y-webrtc
-  - Its implementation is based on that of YKeyValue but uses a "last-write-wins" strategy during synchronization
+  - Its implementation is based on that of `YKeyValue` but uses a "last-write-wins" strategy during synchronization
 
 - https://github.com/samwillis/yjs-sqlite-test
   - http://samwillis.co.uk/yjs-sqlite-test/

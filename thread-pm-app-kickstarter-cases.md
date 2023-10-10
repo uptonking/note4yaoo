@@ -39,7 +39,23 @@ modified: 2023-03-30T13:31:09.049Z
 
 - ## 
 
-- ## 
+- ## 关键词：00后，大三，20万用户，60万月访问，若干收入
+- https://twitter.com/FinanceYF5/status/1711425606620241983
+  - 团队不仅创建了ChatMind AI，一个类似http://C.AI的产品，而且已经吸引了20万的用户
+  - 该项目自3月启动，团队由四人组成，截止到10月初，已经累计获得20万用户，若干收入。产品主要服务于学生群体，手机端：PC端=6:4
+- 项目增长历程：
+  - 第一阶段：在4月获取了一波自然流量， 为他们带来了第一波收入，随后将全部收入投入到市场推广中，
+  - 第二阶段：他们的产品在4-5月间通过KOL（意见领袖）的推广获得了65万的播放量，转化了约3万用户，投放成本每获取一个用户大约为1元钱。
+  - 第三阶段：随着AI热度下降，投放没有继续实施，但令人惊讶的是，从6月到10月，他们获得了7万新用户，完全依赖于用户自传播。这显示了他们产品的自传播能力和市场的认可度。他们的优势之一在于价格较低。
+- 未来规划
+  - 他感受到了prompt+3.5的局限性，下一阶段是希望试水自己训练模型精细做场景化需求，希望进一步探索如何更好地满足学生的需求，
+
+- 这种水平对我们团队来讲很差劲 没有核心技术兜底  只是一味设计prompt，该产品技术只是在于前后端实施而已 活不长的
+  - 典型的程序员思维，有几个东西能技术兜底；除了做底层模型的，应用层就不会有出现技术兜底这种事情。大三，学生，能做出这么多用户，真的很牛逼了。这种用户量级吊打现在90%的团队
+- 投资人的第一个问题： 如果腾讯跟你出同质化的产品，你们怎么办？
+
+- 除了chatgpt，和sd，所有的应用，其他哪些不是套壳？套壳套出收入，套出用户，增长经验，不香吗
+- 这产品国内已死，可看看 glow。海外应该干不过
 
 - ## [Actual is going open-source | Hacker News_202204](https://news.ycombinator.com/item?id=31206536)
 - Similarly, a local-first (PouchDB) budgeting app I built went open source a few years ago. It's worked out well, I love seeing what everyone does with it in their forks. Unlike Actual however, I maintain a paid subscription service while being open source.

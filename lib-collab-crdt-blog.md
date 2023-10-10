@@ -16,8 +16,19 @@ modified: 2022-10-13T08:00:21.260Z
 
 # 📝 [An Interactive Intro to CRDTs | jakelazaroff.com_202310](https://jakelazaroff.com/words/an-interactive-intro-to-crdts/)
 
+- A register is a CRDT that holds a single value. 
+    - There are a couple kinds of registers, but the simplest is the Last Write Wins Register (or LWW Register).
+- LWW Registers simply overwrite their current value with the last value written. 
+  - They determine which write occurred last using timestamps, represented here by integers that increment whenever the value is updated.
+
+- You might ask: why not use the actual time? 
+  - Unfortunately, accurately syncing clocks between two computers is an extremely hard problem. 
+  - Using incrementing integers like this is **one simple version of a logical clock**, which captures the order of events relative to each other rather than to the “wall clock”.
 # 👥 [An interactive intro to CRDTs | Hacker News_202310](https://news.ycombinator.com/item?id=37764581)
 
+# 📝 [Building a Collaborative Pixel Art Editor with CRDTs | jakelazaroff.com](https://jakelazaroff.com/words/building-a-collaborative-pixel-art-editor-with-crdts/)
+- In An Interactive Intro to CRDTs, we learned what CRDTs are, and implemented two: a **Last Write Wins Register** and a **Last Write Wins Map**. 
+  - We now have everything we need to build a collaborative pixel art editor
 # 📝 [Building a BFT JSON CRDT](https://jzhao.xyz/posts/bft-json-crdt/)
 - CRDTs are a family of data structures that are designed to be replicated across multiple computers without needing to worry about conflicts when people write data to the same place. 
 - Traditional databases focus on a property called linearizability, which guarantees that all operations behave as if executed on a single copy of the data. 

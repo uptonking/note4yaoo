@@ -9,6 +9,15 @@ modified: 2022-12-02T11:15:15.257Z
 
 # guide
 
+- pros
+  - offlineable
+
+- cons
+  - 与couchdb耦合: data model, sync protocol
+
+- features
+  - storage adapter: levelup, indexeddb
+
 - alternatives
   - pouchdb server    /inactive
   - couchdb(erlang)
@@ -18,108 +27,6 @@ modified: 2022-12-02T11:15:15.257Z
   - kappa-architecture?
 
 - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
-# blogs
-- [A Veteran's Guide to PouchDB](https://garbados.github.io/my-blog/veteran-pouchdb.html)
+# dev
 
-- [Part 1 — The Database. How to build a real time data sync, multi platform app with CouchDB and PouchDB_202012](https://blog.adaptabi.com/part-1-the-database-b7c575864407)
-# docs
-
-## [Conflicts](https://pouchdb.com/guides/conflicts.html)
-
-- PouchDB exactly implements CouchDB's replication algorithm, so conflict resolution works the same in both. 
-  - For the purposes of this article, "CouchDB" and "PouchDB" may be used interchangeably.
-
-- CouchDB and PouchDB differ from many other sync solutions, because they bring the issue of conflicts front-and-center. 
-  - With PouchDB, conflict resolution is entirely under your control.
-
-- In CouchDB, conflicts can occur in two places: immediately, when you try to commit a new revision, or later, when two peers have committed changes to the same document. 
-  - Let's call these immediate conflicts and eventual conflicts.
-
-- you can present both versions to the user, or resolve the conflict automatically using your preferred conflict resolution strategy: last write wins, first write wins, RCS, etc.
-- Another conflict resolution strategy is to design your database so that conflicts are impossible. 
-  - In practice, this means that you never update or remove existing documents – you only create new documents.
-  - This strategy has been called the "every doc is a delta" strategy. 
-  - There is also a PouchDB plugin that implements this strategy: delta-pouch.
-# discuss-stars
-- ## 
-
-- ## [LevelUP Proposal_201401](https://github.com/pouchdb/pouchdb/issues/1250)
-- theres work to experiment using a level based backend 
-
-- ## [Sync Issue](https://github.com/pouchdb/pouchdb/issues/5291)
-  - would like to know if theres a way to sync between local and remote db's only some specific documents, and only some specific attributes in each document, instead of the default behavior that syncs every document and attribute ?
-
-- Sounds like you want to do a filtered replication
-- In CouchDB (and PouchDB) there is a concept of a design document, this can give you a partial representation of your database (like a view).
-
-- ## [how to to do partial (descending)l sync? F.e. chat messages](https://github.com/pouchdb/pouchdb/issues/8221)
-  - Imagine I have chat app, and chat may have potentially million of messages in a room. What is a best practice to sync such a database to web browser? Is it possible to sync f.e. last 1000 messages, then if user scrolls, resync last 2000 messages?
-  - As I understand I can achieve this passing query_selector to replicate method, but the question is, will it resync items with sequence_number lower then last sync? I mean will it sync oldest messages after newer message was synced?
-
-- You can use filtered replication
-# discuss
-- ## 
-
-- ## 
-
-- ## [Are partial indexes supported when passing a selector to replication?](https://github.com/pouchdb/pouchdb/issues/7342)
-- No it isn’t supported. Partial indexes are only supported for querying for CouchDB not for replication.
-  - It would need to be implemented in CouchDB first
-
-- ## @pouchdb wont lose data, the conflict is stored and reported, both(all) documents available to choose/create winner, 
-- https://twitter.com/daleharvey/status/1043057187113848832
-  - we do have encryption plugins (https://github.com/calvinmetcalf/crypto-pouch), no server copy however we dont do
-- Yeah I know :) but since the version is only stored per-document, not per-field, you will end up losing data. You could try to auto-resolve by ways merging conflicts... but in which order? You can’t be sure and have to ask the user or something
-  - By losing data, I mean from the UX perspective. User syncs, from their view the data is gone. Sure it’s internally there, but they’d have to manually bring it back. This is fully conflict free
-- 👉🏻 The app decides which conflict resolution to take of which Last Write Wins, Merge strategies, CRDT or Users Choice are various options, tradeoffs involved in giving that choice to the app developer but prefer to not hear people advertising @pouchdb loses data since it doesnt :)
-- Fair enough, good to clarify. Still a big problem that versions are document-level and not field-level though, hard to use CRDTs accurately with that
-  - 👉🏻 You could have versions be change level if you wanted (https://github.com/redgeoff/delta-pouch), having fields merge and report only on same field changes is a pretty easy thing to write but I would like to see @pouchdb one day expose these choices as far simpler options
-- Nice :) With last-write-win though, you don't even need to store the entire history of changes, just the latest one. Anyway, all tradeoffs. I was able to still leverage sqlite with very efficient storage of this info. Pouch has different tradeoffs, still good!
-
-- ## Using couch as your backend db ends up being a nonstarter for most applications. 
-- https://news.ycombinator.com/item?id=22175530
-  - A distributed multitenant database is a big big thing and a hugely important technical decision. 
-  - Most orgs are not going to go with couch just to get sync.
-  - The couchdb replication protocol offers no help with conflict resolution. 
-  - It just tells you there was a conflict and gives you two conflicting documents. This isn't practical for most applications.
-
-- I think it's fair to offer a look at what CouchDB says about conflict resolution and what's provided to help manage it.
-  - [2.3. Replication and conflict model — Apache CouchDB® 3.3 Documentation](https://docs.couchdb.org/en/stable/replication/conflicts.html)
-
-- PouchDB author here
-  - I certainly agree that switching backends to CouchDB has made it hard for people to adopt Pouch/Couch. I have often considered how I could make Pouch work with arbitrary data sources, but as you well know its a tricky problem.
-- Thank you for the comment. I think there is a technical difference and an ergonomic difference:
-1. The technical difference is that when you do conflict resolution with Replicache you have more information, specifically the intent of the mutations. Consider something very simple like a positive-only counter. The parent is `1` and the forks are `2` and `0`. Is the correct resolution `2`? Is it `0`? Or is it `1`? There's no way to know because we don't know what the intent of those changes was. Was fork 1 incrementing? Was it multiplying? Was fork 2 decrementing? By how much? Now multiply this simple example by real applications with many developers, many features, and many client versions in the wild. Having the intent of each change travel with the change is crucial.
-2. The ergonomic difference is that conflict resolution in Replicache isn't something separate that is done after-the-fact. Replicache applies mutations to the server by calling normal HTTP APIs, just with potentially old arguments. This forces developers to consider conflict resolution at the point they are writing APIs, and keeps conflict resolution code colocated with the corresponding services.
-
-- ## [Automatic Conflict Resolution_202008](https://github.com/pouchdb/pouchdb/issues/8163)
-- There is a plugin for pouchdb that helps with conflict resolution
-  - https://github.com/pouchdb/upsert
-  - There is also a guide in the pouchdb docs about using upserts to help manage conflicts. 
-- There's a big difference: 
-  - 👉🏻 C/PouchDB's Conflict resultion suggestion is to **use an arbitrary version of two conflicting items** (I think on default it is to just ignore conflicts). 
-  - Ex: JSON Item A and JSON Item B have both the same rev number when they want to be added to the main database. 
-  - Since both have different changes, only one item can be used (like the last submitted). In contrast, automerge would look for the differences in the actual JSON objects, and automatically merge both, so that the latest changes of each version is added to the database.
-
-- 👉🏻 This looks to me like what https://github.com/redgeoff/delta-pouch does. 
-  - It saves the changes in order and syncs the changes. 
-  - The data is a result of all changes applied in order. 
-  - It is mentioned in PouchDB Conflicts guide.
-# discuss-collab
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [Distributed offline editing with couch/pouchdb - Yjs Community](https://discuss.yjs.dev/t/distributed-offline-editing-with-couch-pouchdb/340)
-  - Has anyone experimented with using Yjs with pouchdb as both the datastore and communication channel?
-
-- I recommend to mark transactions as remote when the update was created remotely. This is useful meta-information.
-# discuss-couchdb
-- ## 
-
-- ## 
-
-- ## [What is the difference between CouchDB and Couchbase? - Stack Overflow](https://stackoverflow.com/questions/5578608/what-is-the-difference-between-couchdb-and-couchbase)
-- [Couchbase vs CouchDB NoSQL Systems: Difference Between Them](https://www.couchbase.com/comparing-couchbase-vs-couchdb/)
+# more

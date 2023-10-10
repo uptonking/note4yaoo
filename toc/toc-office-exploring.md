@@ -58,4 +58,8 @@ modified: 2021-01-04T17:31:49.998Z
   - Built with Vercel Storage and Vercel Edge Functions.
   - Share your document securely by sending a custom link
   - Get insights via document tracking and soon page-by-page analytics
+# office-ai
+- https://github.com/arc53/DocsGPT /python/ts
+  - https://docsgpt.arc53.com/
+  - GPT-powered chat for documentation, chat with your documents
 # more

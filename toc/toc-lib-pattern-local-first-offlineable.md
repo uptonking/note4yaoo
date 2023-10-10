@@ -106,7 +106,7 @@ modified: 2021-09-04T14:03:39.046Z
     - a hybrid logical clock (blog post, code)
     - a nested object CRDT (code)
     - a rich-text CRDT (code, example integration with quill, visualization of the data structure)
-  - [Local-first database: RxDB + PouchDB](https://jaredforsyth.com/posts/local-first-database-rxdb-pouchdb/)
+  - [Local-first database: RxDB + PouchDB_202005](https://jaredforsyth.com/posts/local-first-database-rxdb-pouchdb/)
 
 - IDBSideSync /8Star/MIT/202104/ts
   - https://github.com/clintharris/IDBSideSync

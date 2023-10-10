@@ -22,6 +22,14 @@ modified: 2022-11-04T14:21:31.365Z
   - Optimistic reads and writes
   - Cross-tab sync
 
+- https://github.com/superfly/litefs /go
+  - FUSE-based file system for replicating SQLite databases across a cluster of machines
+  - It works as a passthrough file system that intercepts writes to SQLite databases in order to detect transaction boundaries and record changes on a per-transaction level in LTX files.
+  - It's a goal of LiteFS to pass the SQLite TCL test suite
+  - [Skip the API, Ship Your Database · The Fly Blog](https://fly.io/blog/skip-the-api/)
+  - https://github.com/superfly/litevfs
+    - a Virtual Filesystem extension for SQLite that uses LiteFS Cloud as a backing store.
+
 - https://github.com/aNinjaMonk/sync-server /201911/js
   - Syncing between local SQLite & remote PostgreSQL
 

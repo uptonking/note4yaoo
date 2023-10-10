@@ -58,6 +58,12 @@ modified: 2023-03-27T17:45:27.440Z
   - QueryList - 查询表格
 - https://github.com/charlzyx/da
   - https://charlzyx.github.io/da/
+
+## utils
+
+- https://github.com/fabian-hiller/decode-formdata /ts
+  - When the values of your form are encoded to FormData, for example to send them to a server via HTTP, some information is lost. 
+  - Using this library, you can decode FormData into a JavaScript object and supplement the information that was lost during encoding.
 # form-builder/lowcode
 - https://github.com/surveyjs/survey-library /MIT/ts
   - https://surveyjs.io/form-library

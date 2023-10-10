@@ -835,7 +835,8 @@ modified: 2023-02-05T19:03:12.723Z
   - 每次同步全量数据
   - 注意测试时要用相同url代表在一个房间里面
 
-- https://github.com/transcribee/slate-automerge-doc /ts
+- https://github.com/bugbakery/slate-automerge-doc /ts
+  - https://github.com/transcribee/slate-automerge-doc /ts
   - Syncs slate with an automerge document. Bring your own transport.
   - https://github.com/transcribee/slate-collaborative
   - https://github.com/transcribee/automerge-py

@@ -30,7 +30,7 @@ modified: 2023-09-22T20:15:10.616Z
 
 - ## 
 
-- ## 💡 [Offline-First Database Comparison | Hacker News_202110](https://news.ycombinator.com/item?id=28995268)
+- ## 🆚️ [Offline-First Database Comparison | Hacker News_202110](https://news.ycombinator.com/item?id=28995268)
 
 - So glad to see PouchDB included. We use it and have generally had a great experience! We use it with CouchDB on the backend, and Couch seems like a fantastic way to go for use cases involving syncing data between devices with an offline mode and syncing between clients. It was built from the ground up with replication in mind.
   - The nature of pouchdb/couchdb and the design philosophy behind it makes it relatively easy to scale to additional servers. Couchdb is master-master, which is a good eventually consistent model that should help in any horizontal scaling. The base process is erlang/elixir which should scale vertically well.
@@ -44,7 +44,7 @@ modified: 2023-09-22T20:15:10.616Z
   - For clarity, my design wasn't schemaless, values (can) have defined datatypes and relationships are first-class. I meant that I found adding to or modifying the schema was less cumbersome and error prone than traditional SQL schema additions or changes. I feel like SQL schema management is more suited to server-based dbs where you have tight control over the db lifecycle, which you don't when it lives on a bunch of mobile devices.
   - Totally agree with the ease of sync and conflict resolution, another strong pro.
 
-- 🤔 Are you able to elaborate on why you chose EAV over using something like the json1 extension of SQLite?
+- 🤔 Are you able to elaborate on **why you chose EAV over using something like the json1 extension of SQLite**?
 - It was built on a single table that held the entity-attribute-value tuple along with some additional metadata like type information, whether or not the attribute was a pointer to another entity, and the cardinality of that relationship (one or many).
   - **Relationships were walked via self joins and the eav columns were all indexed**.
 - This sounds very similar to what we’re doing and we are in the process of migrating most of the EAV models (other than the relationships) to a json1 column (Which I’d argue is still EAV just in document format). Keeping the relationship foreign keys outside of the json allows the database itself to enforce referential integrity.
@@ -61,22 +61,26 @@ modified: 2023-09-22T20:15:10.616Z
   - Really depends on your use case. If that's the user's data anyway, no need to put it in an inner database.
 - I've actually been using Couch DB with Pouch directly to authenticate users on a small app, with a DB per user. Tbf, my app isn't all that large or complex at this stage, so I don't know if there's any overlap in what we're doing. But from your post, relational joins aside, I can't understand what's breaking for you specifically. You're offering nebulous gripes tbf, not discrete problems.
 
-- I use couch and pouch frequently. For replication mostly. I’ve copied airtable data to it in the past. 
+- 👉🏻 I use couch and pouch frequently. For replication mostly. I’ve copied airtable data to it in the past. 
   - Recently I implemented an event store CQRS system designed to be usable offline. I considered syncing events to the client via sockets but I needed to implement diffs. So I use couch and pouch as read only side of CQRS with an append only event CouchDB. The actual data is in Postgres. 
   - Authorization is tricky. I do not recommend trying to do document level access control. I simply added an express endpoint that allows only reads and checks the session user for which table they can access. Then pass the request to couch. 
   - Overall works really well. I recently turned off live sync for web and react native and loop over all of my databases on a set timeout interval. I had trouble with many connections at once.
+- When i used it for web I hit a max of 6 simultaneous connections in chrome. I seem to recall that it was an (intended) browser limitation - but it doesn't throw any errors, so it's not very obvious. I forked the socket-pouch library and changed it a bit to sync unlimited db's over a single websocket connection. It worked like a charm (despite my messy code).
+
 
 - Biggest bummer(令人不开心的事；令人失望的事) of CouchDB? If you’re not hosting it yourself, there’s only one major player in the market that I know of: IBM Cloudant.
   - That's the biggest problem my projects using Pouch/Couch are facing. 
 
 - You can use CouchDB installed on a desktop PC and tell PouchDB to use that instead of the web browser's IndexedDB for offline-first apps. This approach gets you pretty close to native app speed.
-- 
-- 
-- 
 
 - Last write wins is not a strategy for conflict resolution, it's a surrender. So I'm glad to hear something else apart from Pouch actually handles it. Anyone familiar with rxdb and can chime in on how they do it?
 - It sounds like rxdb is built on top of pouch, so probably the same set of options with the possibility of some opinionated design or sensible defaults though I can't find anything. obvious.
   - Yes RxDB conflict resolution is equal to PouchDBs. At least for now, there are plans to improve from there where you have a global resoluting function instead of listening for conflicts in the changestream.
+
+
+- What kind of consistency models do Offline-first databases like RxDB and PouchDB have?
+  - [2.1. Introduction to Replication — Apache CouchDB® 3.3 Documentation](https://docs.couchdb.org/en/stable/replication/intro.html)
+
 
 - Apparently, both android and ios tend to wipe browser/web-view local storage at random/when space is needed(?).
   - Lesson of the story, even if it isn't dependent on indexeddb, if you're looking for a local storage option for a mobile app and happen to be using a js framework with capacitor or anything that utilizes a web-view, stay away from anything that uses indexeddb. If a wipe like this were to happen post release, the chance that your app succeeds afterwards would be near 0%
@@ -102,8 +106,10 @@ modified: 2023-09-22T20:15:10.616Z
   - Personably I kinda like the fact that it’s a relational DB. The stuff you gain by having users only allowed to do certain things based on certain fields using Policies makes life a lot easier and more relaxing.
 
 - For offline-first use PouchDB can connect directly to a CouchDB installed on your desktop PC as opposed to storing user data in your browser's built-in IndexedDB and syncing that with a Cloud based CouchDB.
-- When you compare the CouchDB replication with other replication protocols, it is slow. The reason is that CouchDB supports replication with many instances at the same time. This creates big overhead in handling revision trees. Many requests have to be made all the time. You can observe that by starting the PouchDB subproject in the comparison repo. Watch the network tab in dev tools. Another problem is that CouchDB does not support Websocket replication, everything is long polling and plain http requests.
+  - Syncing that local CouchDB to your web based CouchDB is very fast and it's done in the background so it doesn't affect the performance of actually using the app. 
+- 👉🏻 This is not true.**When you compare the CouchDB replication with other replication protocols, it is slow**. **The reason is that CouchDB supports replication with many instances at the same time**. This creates big overhead in handling revision trees. Many requests have to be made all the time. You can observe that by starting the PouchDB subproject in the comparison repo. Watch the network tab in dev tools. Another problem is that CouchDB does not support Websocket replication, everything is long polling and plain http requests.
   - Other replications that only support many-clients-to-one-server are way faster. Both, on the initial load and on ongoing changes. This was the main reason why I build GraphQL replication for RxDB.
+- while I've not done benchmark studies with CouchDB I have monitored the logs to watch those syncs and we're not talking painfully "slow" in real world use. It is reliable though. 
 
 - I've used CouchDB and PouchDB on a previous project, and it was a blast. The built-in features like replication and HTTP API are great. My only regret is the limited support (at the time) for full text search and complex queries.
   - Yeah although the docs claim to support things like regex-based searches, it's so horrendously slow it shouldn't even be listed as a feature.

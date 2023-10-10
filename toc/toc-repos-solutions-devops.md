@@ -24,6 +24,9 @@ modified: 2020-12-12T19:01:56.749Z
   - Parseable uses a simple, index-free mechanism to organize and query data allowing low latency, and high throughput ingestion and query. 
   - It can use either a local mount point or object storage (S3/compatible stores) for data storage.
   - For comparison, Parseable consumes up to ~80% lower memory and ~50% lower CPU than Elastic for similar ingestion throughput. 
+
+- https://github.com/spiritLHLS/ecs /shell
+  - VPS融合怪服务器测评脚本(VPS Fusion Monster Server Test Script)(尽量做最全能测试服务器的脚本)
 # status-page
 - https://github.com/openstatusHQ/openstatus
   - https://openstatus.dev/
@@ -34,4 +37,6 @@ modified: 2020-12-12T19:01:56.749Z
   - http://www.webmin.com/
   - a web-based system administration tool for Unix-like servers, and services
   - it is possible to configure operating system internals, such as users, disk quotas, services or configuration files, as well as modify, and control open-source apps, such as BIND DNS Server, Apache HTTP Server, PHP, MySQL, and many more.
+
+
 # more

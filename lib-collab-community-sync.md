@@ -16,10 +16,10 @@ modified: 2022-11-29T20:41:25.566Z
   - client发送内容op/patch/changes, 发送时机，接收内容
   - server接收，发送内容
 
-- partial/selective-sync
+- **partial/selective-sync**
   - sync by table/collection/doc，可参考 pouchdb
   - sync by versionNumber/timestamp
-  - 👉🏻 query-based sync: 取数基于query，query时可使用各种filter，可参考mongo-realm
+  - 👉🏻 **query-based sync**: 取数基于query，query时可使用各种filter，可参考mongo-realm
 
 - 协作方案参考
   - Liveblocks, synced-store, FluidFramework, gun, pouchdb
@@ -318,7 +318,7 @@ modified: 2022-11-29T20:41:25.566Z
 
 - You can use filtered replication
 
-- ## [🤔 I created PouchDB. After a year... | Hacker News](https://news.ycombinator.com/item?id=24355263)
+- ## 🤔 [I created PouchDB. After a year... | Hacker News](https://news.ycombinator.com/item?id=24355263)
 - I created PouchDB. After a year or so I handed that project off to some great maintainers that made it much better as I had grown a little skeptical of the replication model and wanted to pursue some alternatives.
 - It’s been about 10 years, much longer than I thought it would take, but I have a young project that finally realizes the ideas I had back then.
 - Sometime after PouchDB was created I realized that it just **wasn’t going to work to replicate a whole database to every client**. 
@@ -336,7 +336,7 @@ modified: 2022-11-29T20:41:25.566Z
 - ## [CouchDB 2.1.0 | Hacker News](https://news.ycombinator.com/item?id=14950060)
 - If you are looking for something like CouchDB but only syncs partial subsets of the data you request (rather than the whole thing), try checking out gundb
 
-- ## [PouchDB, the JavaScript Database That Syncs | Hacker News](https://news.ycombinator.com/item?id=13101870)
+- ## [PouchDB, the JavaScript Database That Syncs | Hacker News_201612](https://news.ycombinator.com/item?id=13101870)
 - PouchDB's replication capability is interesting, but is there a way to make it lazy load to the local DB instead of doing everything up front? I hesitate to use it for a web project with 10+ MB of docs where it would otherwise be ideal.
   - You can provide a **server-side filter function** to replication and progressively filter partial replications until eventually everything gets replicated. At that point it becomes a question of architecture of your documents: how much is needed to replicate before a user may be productive?
   - You can also explore **pouchdb-replication-stream** to build bundles that PouchDB can bootstrap from a little bit faster than a chatty replication.
@@ -400,10 +400,6 @@ modified: 2022-11-29T20:41:25.566Z
 - My first idea was to limit the sync size to a number of versions (or timestamps as per the default implementation) so it chunked the data. 
   - Once i tried this i quickly realised that i cannot guarantee how much data is between the 2 timestamps/versions as the data may or may not have been added to certain tables, therefore impossible to gauge.
   - So the core of the problem is that there is a risk of passing too much data between a server and a device, so i decided it would be better to calculate the size of the data between 2 versions and store this in a table. version_from	version_to	size
-
-- 
-- 
-- 
 
 - ## [vlcn: Partial CRR Sync](https://vlcn.io/docs/networking/partial-crr-sync)
 - While it is possible to implement partial sync with the primitives available to you today, it is not advised and not supported. 

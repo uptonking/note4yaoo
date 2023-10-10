@@ -48,7 +48,8 @@ modified: 2023-01-17T19:13:01.845Z
   - [Patches | Immer](https://immerjs.github.io/immer/patches/)
     - The generated patches are similar (but not the same) to the RFC-6902 JSON patch standard, except that the path property is an array, rather than a string. 
 
-- https://github.com/serenity-kit/secsync
+- https://github.com/serenity-kit/secsync /ts
+  - https://www.secsync.com/
   - Is an architecture to relay end-to-end encrypted CRDTs over a central service.
   - eg: End-to-end encrypted document using Yjs incl. Cursor Awareness
   - eg: End-to-end encrypted todo list using Automerge

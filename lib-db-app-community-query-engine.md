@@ -22,10 +22,19 @@ modified: 2023-09-17T17:41:51.689Z
 - In the repository: Repository -> Service -> Controller
 - For a POC, the router. 
   - For an serious app, i follow the adaptor pattern (glorified way of saying domain based functions called by the routers/controllers)
-- 
-- 
-- 
+- Why is this bizarre? With a good ORM like Prisma, this is becoming the norm tbh
+  - It's a matter of "separation of concerns, " which is then translated into several important "abilities" in the code: readability, maintainability, scalability, reusability, etc.
+  - Accessing the database from all over the place is a code smell, in fact a big one, imo, and could cause many issues as things start to grow. 
+  - As a basic example, imagine you want to start caching certain queries. If your db is being accessed from all over the place, you'd most likely run into many issues trying to ensure every query is properly cached and invalidated at the right time.
+- I break all the queries into their own Query controllers and only expose them to the rest of the code as an abstracted layer.
+  - Router -> Controller -> Query
 
+- I abstract all DB queries inside “services” or “controller” classes. Not just DB queries but all IO related operations.
+
+- "Early stage, " "iteration speed, " "MVP, " etc., are all excuses for writing shitty code.
+  - **it's bad practice to write db queries inside your router** alongside all its other responsibilities.
+  - Spending a few seconds abstracting away some database queries is negligible compared to the time it takes to debug issues that arise from the few seconds you thought you were saving.
+  - Premature optimization and overengineering are indeed a waste of time during the MVP and early stages of a product. However, writing clean, well-structured code isn't either of these.
 # discuss-view
 - ## 
 
