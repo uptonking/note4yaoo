@@ -29,8 +29,21 @@ modified: 2023-10-06T16:26:57.557Z
 - 每次看到这种牺牲自由度，换取安全性的编程语言，我都忍不住想到点别的东西
 
 - 不是bug, 是feature。 双向链表用 `LinkedList<T>` 就好。
+# discuss-rs-js
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I’m kinda fascinated by how Rust was the harbinger of next-gen JS tooling
+- https://twitter.com/DasSurma/status/1712005157611774056
+- One that hasn’t been mentioned is that it borrows some ideas from functional languages (sum types, monads, etc.) which makes it more elegant for AST manipulation. Same reason compiler devs love OCaml.
 
 - 
-- 
-- 
+
+- I think it actually wasn’t Rust. It was esbuild showing the way. SWC existed years before but didn’t really catch on until later. It wasn’t end to end (no bundler). ESBuild showed how fast native tools could be and others had to follow to keep up.
+
 - 

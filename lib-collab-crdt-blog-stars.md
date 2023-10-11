@@ -167,3 +167,8 @@ modified: 2023-03-11T15:37:59.134Z
 - Two-Phase Set (2P-Set)
   - It combines a G-Set for adding with another for removing; the latter is colloquially known as the tombstone set. 
   - To avoid anomalies, removing an element is allowed only if the source observes that the element is in the set.
+# blogs-text
+
+## [cola: a text CRDT for real-time collaborative editing_202309](https://nomad.foo/blog/cola)
+
+# more

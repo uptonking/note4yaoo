@@ -14,8 +14,6 @@ modified: 2023-09-13T14:28:01.426Z
 
 - ## 
 
-- ## 
-
 - ## [Local-first software: You own your data, in spite of the cloud | Hacker News_201905](https://news.ycombinator.com/item?id=19804478)
 - I think OT systems are way simpler to reason about, because they’re just an extension of event sourcing. Also CRDTs type implementations have been trailing OT algorithms in terms of features forever. OT got JSON editing support first, and JSON1 also supports arbitrary tree reparenting, which as far as I know is missing from all CRDT algorithms. That’s needed to implement apps like workflowy, where you can drag trees around.
   - CRDT algorithms have documents which grow without bound. With OT, the documents are always minimal and it’s easy to reason about (and implement) trimming operations.
@@ -180,6 +178,22 @@ that commit position, thus providing "read your own writes" semantics.
   - Yes. Or you can do this as a part of maintenance job. Like, once a week. 
   - It can be done outside of reSolve. 
   - Or you can do system event in the app to trigger this.
+# discuss-cdc/change-data-capture
+- ## 
+
+- ## 
+
+- ## 💡 Someone got me wondering yesterday: would it be hard to simulate a stream of change-data-capture?
+- https://twitter.com/MichaelDrogalis/status/1711844926642848132
+  - It required a few extra functions, but it works great. It builds off the idea of state machines that I talked about last week.
+  - Modeled after @gunnarmorling 's Debezium
+  - 提供了事件数据json示例
+- Harder than it looks!
+  - It was! Lots of little rules, like an upsert can't happen before an insert, and not all keys should change on every upsert, etc.
+  - I've been there for sure! Wracked my brain. Probably top 5 hardest programming problems I've worked on.
+- Is this a paid only offering? 
+  - yeah
+
 # discuss-cons
 - [When not to use Event Sourcing?](https://event-driven.io/en/when_not_to_use_event_sourcing/)
 

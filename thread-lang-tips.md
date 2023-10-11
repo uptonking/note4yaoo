@@ -16,12 +16,14 @@ modified: 2021-04-30T11:10:26.083Z
   - Filter by language and code usage
   - Lurk(潜伏；诡计) pull requests to learn the why
   - I have this as my go to..have done for years.
-# pieces
+# discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## 🆚️ rust vs js toolchain
+- https://twitter.com/kiyov09/status/1712126491402645878
+- Now we need to ship a 'Make' with rules that that implicitly detect the language and based on the folder structure and call the appropriate commands
 
 - ## promise.unthen(cb) would be pretty useful
 - https://twitter.com/justinfagnani/status/1422783049159221250

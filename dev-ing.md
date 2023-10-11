@@ -81,6 +81,9 @@ $$('[contenteditable]')
     - 将更多精力投入 core content 的创作，以及格式兼容、平台兼容、产品集成
 # dev-2023-方向+方法+时间
 - 👉🏻 output: 代码产出、产品落地、生态积累
+- cms
+  - business-features, 盈利支持自身
+  - outline, payloadcms, undb, nocobase
 - slate-wangeditor
   - model, view, sync, collab
   - slate-docs-examples
@@ -96,8 +99,8 @@ $$('[contenteditable]')
   - tuple-database 支持内存和持久化
   - tinybase 支持内存和持久化
 - db-sync/collab
+  - 为db实现crdt: piratedb, evolu, triplitdb
   - pouchdb
-  - piratedb
   - crsqlite
   - fireproof/ipld
 

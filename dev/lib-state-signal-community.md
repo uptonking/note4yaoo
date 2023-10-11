@@ -147,6 +147,23 @@ state1.state.deniz = 11; // nothing
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 今天抽空研究了下火了许久的 signal 的实现，和我想的差不多，尤其是 preact 的 signal 实现，就 800 行代码，非常小巧迷你。
+- https://twitter.com/XGHeaven/status/1712117141498175664
+  - 不过我目前对这个玩意没啥太多的想法，我感觉就是简化版 Mobx，但功能上却不如 Mobx。
+  - 这个能否经得起大型项目的检验，尚未可知，需要某位大佬来一份最佳实践了学习学习了。
+- 实际上signal有两种实现方式
+  - 一种是类似solidjs的实现，在jsx中使用函数类型来进行细粒度依赖收集
+  - 而另一种就是Proxy的实现方式，这属于炒冷饭，preact和vue属于这种，本质上粗粒度的，你不应该看这种的
+- preact 不是基于 Proxy 的，他和 solid 差不多。至少我今天看的是这样的，这中间是否有变动我就不了解了，我也是最近才抽空看下源码的。preact 也是可以一定程度上做到 solid 那种在 jsx 里面直接用，然后做到 DOM 粒度的更新。不过限制比较多
+  - 是的，你说的对，preact 也是细粒度的，我以为你没注意到，因为你拿它和 mbox 类比preact 确实是细粒度的没错，也就是我知乎上那种做法，在 h 函数里找到 signal 直接操作 dom，但是我看到的它只能用于单节点，不能用于 map 列表啥的吧，大概，以前看的了，现在没关注了
+- 我之所以说 preact 实现的很简单，就是因为他根本没打算支持 Array/Object 这类复杂的数据结构。
+  - 而且我看似乎就 preact 的包是可以独立使用的，社区很多其他框架也封装了 preact 这一版的实现，所以主要研究了研究它。
+- 这个包用到react里面就和mobx一样，只能是粗粒度，因为react就没有打开细粒度依赖收集的口子
+
 - ## 💡 svelte doing signals now @trueadm I’m curious about the underlying reactivity graph. 
 - https://twitter.com/jitl/status/1704570937465520149
   - How does change propagation work? How much is “push” vs “pull”?

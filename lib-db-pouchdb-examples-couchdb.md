@@ -518,9 +518,12 @@ modified: 2023-09-28T20:35:56.153Z
   - It has a central server and database which is used to connect clients together. 
   - Each client has it's own local database. 
 
-- https://github.com/roldaojr/ra-data-pouchdb /202204/js
+- https://github.com/roldaojr/ra-data-pouchdb /LGPLv3/202204/js/inactive
   - PouchDB/CouchDB data provider for [react-admin](https://github.com/marmelab/react-admin)
   - This data provider takes a PouchDB object as input, then creates a client-side data provider around it.
+  - Requires PouchDB-find plugin.
+  - working: pagination, sorting(requires secondary indexes)
+  - not working： filtering by column，full text search
 
 - https://github.com/starikan/pouchdb-viewer /202104/js
   - Standalone PouchDB viewer powered by Electron and pouchdb-server

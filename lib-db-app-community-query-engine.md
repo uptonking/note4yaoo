@@ -14,7 +14,21 @@ modified: 2023-09-17T17:41:51.689Z
 
 - ## 
 
-- ## 
+- ## 🌰 ai based search for tldraw's docs
+- https://twitter.com/tldraw/status/1712099716966547787
+  - uses @OpenAI to create vector embeddings from our docs files
+  - stores the embeddings into a local vector database (vectra by @stevenic)
+  - creates an embedding from each query
+  - searches the vector database using that embedding
+  - results and ranks the results
+- I think the hard part here is setting priorities, like articles should be more important than headings inside of the articles, etc. So we've still got some work to do!
+
+- 🤔 is it wrong to ship a local vector database with your app
+- nah, don't even have to call it a db, just a scan through a bunch of arrays is fine
+- No it’s good. do it but for layers on the canvas
+- What is the service behind? Algolia?
+  - Nope, literally a vector db and a call to openAI's embeddings endpoint
+- Nope, literally a vector db and a call to openAI's embeddings endpoint
 
 - ## I’m seeing more and more devs writing db queries directly inside their API route handlers and I find it quite bizarre. Where do you write your db queries?
 - https://twitter.com/ImSh4yy/status/1711092090103267784

@@ -12,7 +12,9 @@ modified: 2023-04-12T08:40:44.109Z
 # discuss
 - ## 
 
-- ## 
+- ## It's such a shame that WebRTC didn't get wider adoption in fields other than audio/video conferencing.
+- https://twitter.com/Horusiath/status/1712091176487293222
+  - But tbh. it's its own fault - it's overcomplicated on many fronts and basically designed to drive you into a corner and repent at some point.
 
 - ## [纯JS实现多个音频的拼接或者合并 « 张鑫旭](https://www.zhangxinxu.com/wordpress/2023/10/js-audio-audiobuffer-concat-merge/)
 

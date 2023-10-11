@@ -26,6 +26,32 @@ modified: 2023-09-25T17:56:50.116Z
     - That project is different though because the tree persistent as well (an immutable data structure) inspired by datalog. 
     - But that seems a bit overkill and performance overhead doesn't seem worth it to me.
 
+- triplitdb /AGPLv3/202310/ts/crdt/llw/eav
+  - https://github.com/aspen-cloud/triplit
+  - https://triplit.dev/
+  - [Triplit Roadmap](https://aspencloud.notion.site/7362bdf6512243fcbdfe03c9d56a5998?v=acd301c4bd3942b9b30a15f636cecd00)
+  - ✨ https://github.com/aspen-cloud/triplit/tree/main/packages/db
+  - 依赖tuple-database、sorted-btree、zod、idb
+  - the embedded database that powers Triplit, a complete solution to data persistence, state management, and realtime synchronization for web applications 
+  - Built-in storage providers for in-memory, IndexedDB, and Sqlite
+  - Automatic indexing of object properties for fast querying
+  - Combine multiple storage layers in the same DB with granular scoping on reads and writes
+  - Transactions with rollback
+  - Schema for validation, type hinting and enhanced CRDT-based storage.
+  - A schema can comprise multiple ‘collections’ (similar to a table in SQL). Using a schema with TriplitDB will enable type checking and the full the benefit of our CRDT-based data structures, like sets.
+  - By default your data will be stored ephemerally in memory and not persist through page refreshes
+  - Under the hood, TriplitDB utilizes a timestamped Triple Store to support efficiently merging changes from multiple sources whether that’s multiple writers or multiple storage layers. 
+  - Each object that’s inserted is decomposed into a EAV triple of Entity (ID), Attribute (path in the object), and a Value. 
+  - Each triple is stored with a Lamport Timestamp and treated as a Last Writer Wins Register (LWW). 
+  - To support its tuple based storage system, TriplitDB uses Tuple Database as a generic querying interface and transaction manager.
+  - [An interactive intro to CRDTs | Hacker News_202310](https://news.ycombinator.com/item?id=37764581)
+    - We've built a auto-syncing database that uses CRDTs under the hood but never exposes them through the API. So if you want all of the benefits of CRDTs e.g. offline-first user experience, checkout our project, Triplit!
+    - why didn't/don't you build Triplit on cr-sqlite?
+      - We're aware of cr-sqlite and I've talked to the author, Matt, a few times. 
+      - Short answer: SQLite has serious shortcomings when it comes to reactivity and we think we can be as fast as SQLite for the application-type queries we aim to support. 
+      - The long answer would be about supporting all of features we don't need in SQLite and all of the quirks that come with it like having `null` as a primary key
+      - We also recently came up with a relational-style querying system without joins
+
 - https://github.com/comunica/comunica /379Star/MIT/202309/ts
   - https://comunica.dev/
   - A knowledge graph querying framework

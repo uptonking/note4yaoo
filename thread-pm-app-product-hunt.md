@@ -31,10 +31,11 @@ modified: 2022-12-04T16:34:29.342Z
 - 此前，自定义裁剪照片和拼贴画应用风靡一时，后来Instagram添加了这些功能，这些APP便逐渐消失了。Link in Bio功能也面临着同样的问题。
 - Instagram曾因为不允许在帖子中添加链接而备受诟病，但这也正是它成功的原因之一。但对创作者们来说，赚钱才是第一位，他们需要在这片净土中获得商机。从这个角度来看，Link in Bio并不会因为社交媒体功能的增加而失去生存空间，二者并没有本质上的冲突。
 
-- ## open source alternatives 
+- ## open source alternatives
 - https://github.com/junaid33/opensource.builders
   - https://opensource.builders/
   - a website to find and request open-source alternatives to popular software
+  - 仅列出了产品与竞品，无单独的产品信息页面与评论信息
   - /米白色背景
 
 - ## Photo restoration with GFP-GAN

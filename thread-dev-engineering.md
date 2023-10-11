@@ -12,7 +12,10 @@ modified: 2021-01-21T17:52:13.333Z
 # discuss
 - ## 
 
-- ## 
+- ## 说老实话，有实时Preview真的快了好多。
+- https://twitter.com/JidanzaiDashan/status/1712063417652011083
+  - 打算把项目拆成两个workspace，一个workspace专门preview，iOS 17+ only（不然预览不了UIKit），再搞一个blank project测试一些需要真机手感的东西。
+  - 另一个workspace专门负责打包。
 
 - ## Designing an entire MVP without any design!
 - https://twitter.com/puruvjdev/status/1710731659535118552
@@ -21,10 +24,10 @@ modified: 2021-01-21T17:52:13.333Z
   - Update: Added picocss.
 
 - My preferred development order has always been:
-  01. Structure for everything: HTML, content, ARIA, some JS
-  02. Style a component: CSS, interaction states, transitions/animations
-  03. Then make the component functional with JavaScript
-  04. Repeat steps 2 and 3 for each component.
+  01.  Structure for everything: HTML, content, ARIA, some JS
+  02.  Style a component: CSS, interaction states, transitions/animations
+  03.  Then make the component functional with JavaScript
+  04.  Repeat steps 2 and 3 for each component.
 
 - ## uid 不需要可读性，如果需要可读性可以添加一个新的 id 属性。
 - https://twitter.com/ThaddeusJiang/status/1694915724354142678

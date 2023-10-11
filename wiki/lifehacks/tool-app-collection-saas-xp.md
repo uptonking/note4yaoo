@@ -44,8 +44,7 @@ modified: 2022-11-07T10:25:12.034Z
 # hacker-news
 
 - usage-xp
-  - 有时网站无法登录或内容无法显示，可能不是网络原因，可在twitter社交平台搜索 `hacker news down` 按时间倒序判断最新状态
-
+  - 有时网站无法登录或内容无法显示，可能不是网络原因而是服务器宕机了，可在twitter社交平台搜索 `hacker news down` 按时间倒序判断最新状态
 
 - [搜索版](https://hn.algolia.com/)
   - 支持rss订阅，如https://hn.algolia.com/userfeed/nullwasamistake
@@ -128,15 +127,16 @@ modified: 2022-11-07T10:25:12.034Z
   - This is not possible (intentionally / by design).
   - Mastodon supports full-text search when ElasticSearch is available. Mastodon’s full-text search allows logged in users to find results from their own statuses, their mentions, their favourites, and their bookmarks. It deliberately does not allow searching for arbitrary strings in the entire database.
 # telegram
-- [TG中文群 - TGCNG. COM](https://www.tgcng.com/)
-- [电报频道，群组，机器人列表](https://telegramchannels.me/zh)
-- [telegram群组-电报群大全- Telghub](https://www.telghub.com/)
-- [电报telegram群全网检索 - TgSql.com](https://tgsql.com/search)
+- 资源搜索
+  - [Meow. TG-做最懂你的TG搜索](https://meow.tg/)
+  - [sssoou.com](https://www.sssoou.com/)
+  - [千帆搜索 - 资源超丰富的电报中文搜索引擎，需注册](https://tg.qianfan.app/)
 
-- 
-- 
-- 
-- 
+- [TG中文群 - TGCNG. COM](https://www.tgcng.com/)
+  - 不建议随意搜索，从相关群或论坛的讨论信息能找到更准确的信息
+  - [电报频道，群组，机器人列表](https://telegramchannels.me/zh)
+  - [telegram群组-电报群大全- Telghub](https://www.telghub.com/)
+  - [电报telegram群全网检索 - TgSql.com](https://tgsql.com/search)
 
 - https://github.com/morethanwords/tweb /webk
   - Telegram Web K, GPL v3
@@ -159,9 +159,7 @@ modified: 2022-11-07T10:25:12.034Z
 # 图片资源
 - unsplash镜像战
   - https://unsplash.dogedoge.com/
-
 # video/tv
-
 - https://github.com/fanmingming/live
   - 一个国内可直连的直播源分享项目
 # gfw-proxy
@@ -224,3 +222,7 @@ modified: 2022-11-07T10:25:12.034Z
   - hpts -s 127.0.0.1:1081 -p 8002
   - npm config set proxy http://127.0.0.1:8002
   - npm config set https-proxy http://127.0.0.1:8002
+# law
+- [中国执行信息公开网](http://zxgk.court.gov.cn/index.jsp)
+
+- [中国裁判文书网](https://wenshu.court.gov.cn/website/wenshu/181029CR4M5A62CH/index.html)

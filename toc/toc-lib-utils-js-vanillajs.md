@@ -179,6 +179,17 @@ modified: 2023-04-04T22:35:59.255Z
   - Support for diffing the real DOM with a virtual DOM was introduced in v2.1.0
   - Both morphdom and virtual DOM based solutions update the real DOM with the minimum number of changes. The only difference is in how the differences are determined. **morphdom compares real DOM nodes while virtual-dom and others only compare virtual DOM nodes**.
 
+- https://github.com/bigskysoftware/idiomorph /js
+  - a javascript library for morphing one DOM tree to another
+  - Both morphdom and nanomorph use the `id` property of a node to match up elements within a given set of sibling nodes. When an id match is found, the existing element is not removed from the DOM, but is instead morphed in place to the new content.
+  - However, in both these algorithms, the structure of the children of sibling nodes is not considered when morphing two nodes: only the ids of the nodes are considered. This is due to performance: it is not feasible to recurse through all the children of siblings when matching things up.
+  - Idiomorph takes a different approach: before node-matching occurs, both the new content and the old content are processed to create id sets, a mapping of elements to a set of all ids found within that element. Id sets can be computed relatively efficiently via a query selector + a bottom up algorithm.
+  - idiomorph 来自于框架 htmx。
+  - https://twitter.com/chloerei/status/1712027755259560298
+    - React 成名于 shadow dom，它让开发者尽管 render，库来计算差异然后更新到页面上，提高了开发效率。
+    - Turbo 8 有点类似这个机制，服务端尽管 render，浏览器拿到 html body 之后对比之间的差异，然后更新变化的部分。Turbo 8 用到库是 idiomorph
+    - Phoenix 的 LiveView 也是类似机制，用的库是 morphdom
+
 - https://github.com/natemoo-re/micromorph /ts
   - A very tiny library for diffing live DOM nodes.
   - With the /nav entrypoint, Micromorph automatically converts your MPA into a SPA while only re-rendering content that has changed.

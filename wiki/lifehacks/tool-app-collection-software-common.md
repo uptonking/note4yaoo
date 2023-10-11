@@ -58,46 +58,7 @@ modified: 2022-11-07T10:26:22.510Z
     - https://www.splayer.org/
         - https://github.com/chiflix/splayerx
           - GPLv3
-- music
-  - local: clementine 
-    - 1.31 - 201907
-    - win/linux/mac
-    - 支持last.fm，支持播放列表保存到本地
-    - 可手动添加歌词并显示在左侧面板
-    - https://www.clementine-player.org/
-      - https://github.com/clementine-player/clementine
-      - GPLv3
-    - [last.fm plugin not submitting scrobbles when track has finished](https://github.com/clementine-player/Clementine/issues/6829)
-      - 对Linux，创建 `mkdir ~/.local/share/Last.fm` 目录
-      - 对win10，In order to have Clementine scrobble tracks on Windows you need to create a folder at:` %HOMEPATH%\AppData\Local\Last.fm` 目录
-  - local-more
-    - Tauon Music Box: linux only
-      - 可显示滚动歌词/synced lyrics，但歌词的时间戳毫秒位不能是3位
-    - quodlibet 显示歌词的界面较简单
-  - online: 洛雪音乐助手
-    - 整合第3方音乐搜索与下载
-    - 可选择同时下载歌词
-  - online-more
-    - netease cloud music
-    - spotify
-    - apple music 资源较全，元数据较全
-  - music-tag-id3
-    - last.fm: 记录听歌信息
-    - kid3 支持编辑各种标签，缺点是year属性格式只能到年，不能到月日(月份前是否有0)
-    - mp3tag: win only
-  - lyric
-    - 歌词要考虑
-      - 歌词自身格式：lrc，txt，每行是否带有时间戳，时间戳毫秒支持几位，是否要去头无效行
-      - id3版本，很多itunes下载的音乐是mp4标签，mp4标签难修改
-      - 读写id3的播放器
-      - 推荐方案：单文件包含所有信息，附加歌词用于滚动显示
-    - 歌词搜索
-      - 直接搜索歌词lrc文件，国外歌词很少有带时间戳的lrc
-      - 类似洛雪音乐助手可直接下载音乐文件及歌词，但很多都有版权问题
-      - https://www.azlyrics.com/
-      - https://mojim.com/ 魔镜歌词网
-      - https://www.kugeci.com 酷歌词，带时间戳
-      - 木兰词
+
 - office
   - notable: note-taking
   - pocket
@@ -143,6 +104,56 @@ modified: 2022-11-07T10:26:22.510Z
   - [猫狸盘搜 - 阿里云盘搜索神器](https://www.alipansou.com/)
   - [易搜-网盘搜索](https://yiso.fun/)
   - [咔帕搜索 - 资源超丰富的综合云盘资源搜索网站！](https://www.cuppaso.com/)
+# music
+- local: clementine 
+  - 1.31 - 201907
+  - win/linux/mac
+  - 支持last.fm，支持播放列表保存到本地
+  - 可手动添加歌词并显示在左侧面板
+  - https://www.clementine-player.org/
+    - https://github.com/clementine-player/clementine
+    - GPLv3
+  - [last.fm plugin not submitting scrobbles when track has finished](https://github.com/clementine-player/Clementine/issues/6829)
+    - 对Linux，创建 `mkdir ~/.local/share/Last.fm` 目录
+    - 对win10，In order to have Clementine scrobble tracks on Windows you need to create a folder at:` %HOMEPATH%\AppData\Local\Last.fm` 目录
+- local-more
+  - Tauon Music Box: linux only
+    - 可显示滚动歌词/synced lyrics，但歌词的时间戳毫秒位不能是3位
+  - quodlibet 显示歌词的界面较简单
+
+- online: 洛雪音乐助手
+  - 整合第3方音乐搜索与下载
+  - 可选择同时下载歌词
+- online-more
+  - netease cloud music
+  - spotify
+  - apple music 资源较全，元数据较全
+
+- music-tag-id3
+  - last.fm: 记录听歌信息
+  - kid3 支持编辑各种标签，缺点是year属性格式只能到年，不能到月日(月份前是否有0)
+  - mp3tag: win only
+- lyric
+  - 歌词要考虑
+    - 歌词自身格式：lrc，txt，每行是否带有时间戳，时间戳毫秒支持几位，是否要去头无效行
+    - id3版本，很多itunes下载的音乐是mp4标签，mp4标签难修改
+    - 读写id3的播放器
+    - 推荐方案：单文件包含所有信息，附加歌词用于滚动显示
+  - 歌词搜索
+    - 直接搜索歌词lrc文件，国外歌词很少有带时间戳的lrc
+    - 类似洛雪音乐助手可直接下载音乐文件及歌词，但很多都有版权问题
+    - https://www.azlyrics.com/
+    - https://mojim.com/ 魔镜歌词网
+    - https://www.kugeci.com 酷歌词，带时间戳
+    - 木兰词
+
+- 音乐资源aac/mp3
+  - [CD包音乐网 - 专业的无损音乐论坛, APE, FLAC, WAV, CD, MP3专辑网站！](https://www.cdbao.net/)
+  - [易音 - SACDR. NET](https://sacdr.net/)
+  - [91flac](https://www.91flac.com/album_list)
+    - 主页无法访问，但二级页面可访问
+  - ❌ 已倒闭
+    - [mixrnb](http://www.mixrnb.com/)
 # calendar
 - https://github.com/lwlsw/Chinese-Lunar-Calendar-ics
   - 现成的中国农历ics文件 2015-2100

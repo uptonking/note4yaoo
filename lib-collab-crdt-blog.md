@@ -25,7 +25,13 @@ modified: 2022-10-13T08:00:21.260Z
   - Unfortunately, accurately syncing clocks between two computers is an extremely hard problem. 
   - Using incrementing integers like this is **one simple version of a logical clock**, which captures the order of events relative to each other rather than to the “wall clock”.
 # 👥 [An interactive intro to CRDTs | Hacker News_202310](https://news.ycombinator.com/item?id=37764581)
-
+- In practice, most apps will only need Last-Writer-Wins registers and not the more complicated sequence CRDT's that you find in Y.js and Automerge.
+  - We've built a auto-syncing database that uses CRDTs under the hood but never exposes them through the API. So if you want all of the benefits of CRDTs e.g. offline-first user experience, checkout our project, Triplit!
+- why didn't/don't you build Triplit on cr-sqlite?
+  - We're aware of cr-sqlite and I've talked to the author, Matt, a few times. 
+  - Short answer: SQLite has serious shortcomings when it comes to reactivity and we think we can be as fast as SQLite for the application-type queries we aim to support. 
+  - The long answer would be about supporting all of features we don't need in SQLite and all of the quirks that come with it like having `null` as a primary key
+  - We also recently came up with a relational-style querying system without joins
 # 📝 [Building a Collaborative Pixel Art Editor with CRDTs | jakelazaroff.com](https://jakelazaroff.com/words/building-a-collaborative-pixel-art-editor-with-crdts/)
 - In An Interactive Intro to CRDTs, we learned what CRDTs are, and implemented two: a **Last Write Wins Register** and a **Last Write Wins Map**. 
   - We now have everything we need to build a collaborative pixel art editor
@@ -212,8 +218,8 @@ modified: 2022-10-13T08:00:21.260Z
 - https://github.com/supabase/pg_crdt
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.
   - It supports Yjs/Yrs and Automerge.
-  - Our goal was to evaluate if we could leverage a Postgres-backed CRDT and Supabase's existing Realtime API for change-data-capture to enable development of collaborative apps on the Supabase platform.
-  - pg_crdt extension is a proof-of-concept that wraps rust's yrs and automerge libraries using the pgx framework to add a Postgres native CRDT, crdt.ydoc.
+  - **Our goal was to evaluate if we could leverage a Postgres-backed CRDT and Supabase's existing Realtime API for change-data-capture to enable development of collaborative apps on the Supabase platform**.
+  - pg_crdt extension is a proof-of-concept that wraps rust's yrs and automerge libraries using the 66 framework to add a Postgres native CRDT, crdt.ydoc.
 
 - CRDTs are a special type of data structure designed to solve a specific problem: they can merge changes in a way that the final state of the data will be the same, no matter the order in which the updates were applied.
   - In simple terms, a CRDT allows multiple users to make changes to the same data without the need for a central authority to coordinate their actions.

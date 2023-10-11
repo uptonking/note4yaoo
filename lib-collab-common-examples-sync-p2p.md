@@ -56,13 +56,6 @@ modified: 2023-01-17T19:13:01.845Z
   - Why use a central relay service?
     - The main reason is to exchange data asynchronously.
 
-- https://github.com/aspen-cloud/triplit /AGPLv3/202310/ts
-  - https://triplit.dev/
-  - Triplit is a complete solution to data persistence, state management, and realtime synchronization for web applications
-  - TriplitDB - Designed to run in any JS environment (browser, node, deno, React Native, etc) and provide expressive, fast, and live updating queries while maintaining consistency with many writers over a network.
-  - Client - Browser library to interact with local and remote TriplitDBs.
-  - React - React bindings for @triplit/client
-
 - https://github.com/peers/peerjs /202303/ts
   - PeerJS provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams.
 

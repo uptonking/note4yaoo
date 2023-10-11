@@ -67,7 +67,30 @@ modified: 2022-04-05T10:08:25.947Z
     - We plan to do at least two security audits.
   - Evolu is not pure P2P software. For syncing and backup, there needs to be a server. 
   - Evolu CRDT has no support for transactions because CRDT transactions are still an unsolved issue. 
-  - All table columns except for ID are nullable by default. It's not a bug; it's a feature. Local-first data are meant to last forever, but schemas evolve. 
+  - All table columns except for ID are nullable by default. It's not a bug; it's a feature. Local-first data are meant to last forever, but schemas evolve.
+
+- triplit /AGPLv3/202310/ts/crdt/llw/eav
+  - https://github.com/aspen-cloud/triplit
+  - https://triplit.dev/
+  - [Triplit Roadmap](https://aspencloud.notion.site/7362bdf6512243fcbdfe03c9d56a5998?v=acd301c4bd3942b9b30a15f636cecd00)
+  - Triplit is a complete solution to data persistence, state management, and realtime synchronization for web applications
+  - TriplitDB - Designed to run in any JS environment (browser, node, deno, React Native, etc) and provide expressive, fast, and live updating queries while maintaining consistency with many writers over a network.
+  - Client - Browser library to interact with local and remote TriplitDBs.
+  - React - React bindings for @triplit/client
+  - ✨ https://github.com/aspen-cloud/triplit/tree/main/packages/db
+  - 依赖tuple-database、sorted-btree、zod、idb
+  - the embedded database that powers Triplit, a complete solution to data persistence, state management, and realtime synchronization for web applications 
+  - Built-in storage providers for in-memory, IndexedDB, and Sqlite
+  - Automatic indexing of object properties for fast querying
+  - Combine multiple storage layers in the same DB with granular scoping on reads and writes
+  - Transactions with rollback
+  - Schema for validation, type hinting and enhanced CRDT-based storage.
+  - A schema can comprise multiple ‘collections’ (similar to a table in SQL). Using a schema with TriplitDB will enable type checking and the full the benefit of our CRDT-based data structures, like sets.
+  - By default your data will be stored ephemerally in memory and not persist through page refreshes
+  - Under the hood, TriplitDB utilizes a timestamped Triple Store to support efficiently merging changes from multiple sources whether that’s multiple writers or multiple storage layers. 
+  - Each object that’s inserted is decomposed into a EAV triple of Entity (ID), Attribute (path in the object), and a Value. 
+  - Each triple is stored with a Lamport Timestamp and treated as a Last Writer Wins Register (LWW). 
+  - To support its tuple based storage system, TriplitDB uses Tuple Database as a generic querying interface and transaction manager.
 
 - https://github.com/logux/core /202209/js/提供了ts声明
   - https://logux.io/
@@ -814,6 +837,11 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/mweidner037/vlcn-rich-text
   - Collaborative rich text editor over vlcn.io
+
+- https://github.com/nomad/cola /rust
+  - A text CRDT for real-time collaborative editing
+  - [cola: a text CRDT for real-time collaborative editing_202309](https://nomad.foo/blog/cola)
+    - It’s about as fast as (if not faster than) the fastest rope libraries in both directions, and it’s currently the fastest text CRDT implementation I know of.
 
 - https://github.com/mweidner037/uniquely-dense-total-order
   - Uniquely Dense Total Orders for List/Text CRDTs

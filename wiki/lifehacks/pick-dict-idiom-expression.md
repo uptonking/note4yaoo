@@ -11,8 +11,16 @@ modified: 2020-08-17T07:50:37.963Z
 
 - meh
   - 令人印象不深刻的，一般 so-so
-
 # expression
+
+- 
+- 
+- 
+- 
+- 
+
+- drop the ball
+  - 犯错，把事情弄糟
 
 - nit/nits
   - 在与国外开源项目合作的时候，我们经常看review 者会留下「nit/nits」这样的黑话，可能开始会一脸懵逼。

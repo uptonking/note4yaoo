@@ -13,6 +13,8 @@ modified: 2023-04-07T04:09:30.491Z
 
 # blogs
 
+## [可恶，signal 太简单撑不起 fre3 - 知乎](https://zhuanlan.zhihu.com/p/657166455)
+
 ## [从 Signals 看响应式状态管理 - 掘金](https://juejin.cn/post/7148001367947214856)
 
 - signals解决了哪些问题？
