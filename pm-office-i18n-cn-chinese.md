@@ -34,6 +34,8 @@ modified: 2023-01-14T15:47:04.431Z
   - 渲染时
   - 复制粘贴时
   - 带有中文的url，要考虑转换与编辑
+# search
+- 中文按拼音首字母排序
 # translation
 - 很多自动翻译的工具会翻译code block里面的代码单词
 # i18n-utils

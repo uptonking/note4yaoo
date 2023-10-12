@@ -24,7 +24,44 @@ docker update --restart=no containerId
 docker stop containerId
 ```
 
+# discuss-stars
+- ## 
+
+- ## 🆚️ [虚拟化软件Docker、Wine、Qemu、KVM有什么区别？ - 知乎](https://www.zhihu.com/question/540942002)
+- 你把模拟和虚拟混淆掉，OS级别和软件级别也混淆了，当然傻傻分不清了。
+- Docker不存在模拟，也不存在虚拟。
+  - 它是隔离工具，需要运行特定的image，就是你想运行的软件大集合。不同image帮你隔离开互相不可见。 
+  - 这一切让你误以为是OS级别，**其实是软件级别**。
+- **Wine也是软件级别的模拟**，只模拟windows，让Linux也能运行win程序，
+  - 这个和微软提供WSL提供windows上模拟Linux道理是一样的，只是正好相反。
+- KVM是虚拟硬件的，非常底层。但是它是内核的一部分，所以强绑Linux平台。
+  - Qemu在中层配合KVM使用。上层的客户OS可以完全不知道自己在哪，是谁。
+- **KVM和Qemu都是用在OS级别的模拟或者虚拟**。他们都支持。 到底是哪个，决定在于你怎么使用他们。
+  - 你可以单独使用Qemu进行OS模拟。这个时候就无所谓底层是什么操作系统了。但是实现不了完全虚拟化。
+- Linux系列，kvm负责cpu虚拟化+内存虚拟化，实现了cpu和内存的虚拟化，但kvm不能模拟其他设备；qemu是模拟IO设备（网卡，磁盘），kvm加上qemu之后就能实现真正意义上服务器虚拟化。因为用到了上面两个东西，所以一般都称之为qemu-kvm。
+  - libvirt则是调用kvm虚拟化技术的接口用于管理的，用libvirt管理方便，直接用qemu-kvm的接口太繁琐。
+  - 对应Windows的，大概就是Hyper-V，还有一个就是开源的VirtualBox，比较轻量；另外一个独立发展的就是VMWare ESXi。
+- wine和wsl1差别还挺大的，wsl是自己搞了套和windows系统调用平级的linux系统调用，wine是加了个api中间层，用的系统调用还是linux自己的。
+
+- 👉🏻 准确来说，qemu是模拟器，换句话说qemu模拟的环境里不依赖硬件平台。
+  - kvm是虚拟机，用来在某一个操作系统下，提供一个虚拟的硬件环境（CPU和内存）
+
+- Docker不是虚拟化软件，它是一串cgroup 的命令链，收窄以此运行的软件的权限
+- Wine是一套提供Windows API 的软件
+- Qemu是电脑处理器模拟器，包括而不限于x86, arm, mips...，而以此基础上构成的电脑模拟器
+- KVM不是一个模拟器，是一个可以让上面软件绕过kernel 访问硬件（主要是cpu 和pci)的kernel 模组
+
+- Docker不能运行windows程序吧，也并不是完全的虚拟化，只是实现了资源限制和隔离。
+- Qemu是模拟器，KVM是内核模块，一般是一起用来达到虚拟化的功能。
+
+- 在Linux上的Docker和Wine不提供任何虚拟化。
+  - Docker是一款容器软件，里面跑的环境是没有内核的，也不运行在虚拟机器上。
+  - Wine是一款用于在Linux上运行Windows程序的运行时，既不提供虚拟化也不提供容器化（除非你使用包含容器功能的第三方wine发行版）。
+- KVM是Linux的一个内核模块，提供内核级的虚拟化支持。
+- Qemu是一款虚拟机软件。在Linux上通常和KVM配合使用。
 # discuss
+- ## 
+
 - ## 
 
 - ## Lazydocker: 在终端可以使用图形化的方式来管理 docker 的一系列服务。

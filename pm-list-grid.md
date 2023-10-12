@@ -35,8 +35,11 @@ modified: 2021-05-23T16:34:27.206Z
 - refactor pivot table  to vanillajs
 - refactor to plugins support
 
-- features
+- more
   - dependencies management
+
+- 开发方向
+  - ❓ 偏向产品feature vs 偏向office兼容性
 # guide
 - ag-grid源码要点
   - ioc

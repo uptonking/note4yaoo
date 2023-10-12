@@ -167,6 +167,9 @@ modified: 2023-03-16T16:29:47.610Z
   - 鼠标图标支持显示头像或实时视频截图
   - 鼠标轨迹能显示其他用户鼠标移动的动画
 # idea
+- 开发方向
+  - ❓ 偏向产品feature vs 偏向office兼容性
+
 - page级别的视图切换
   - 类似codepen的editor/page，注意codepen有tv视图
 

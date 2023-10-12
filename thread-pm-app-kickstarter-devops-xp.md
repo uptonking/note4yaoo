@@ -95,9 +95,11 @@ modified: 2022-11-07T11:00:28.824Z
 # discuss-vc
 - ## 
 
-- ## 
+- ## Atlassian acquires Loom for $975m __/202310
+- https://twitter.com/FrancescoD_Ales/status/1712467243022577927
+- Loom is a $1B company? 
 
-- ## Sentry raised $217M in VC_202310
+- ## Sentry raised $217M in VC __/202310
 - https://twitter.com/1Marc/status/1710866233845801353
   - I’m glad they are contributing $500k to open source, and I do hope other companies follow suit. 
   - But we’ll see… it’s definitely better than ads and dev rel which is where most of these companies dump their investor’s money.
@@ -108,7 +110,20 @@ modified: 2022-11-07T11:00:28.824Z
 # discuss
 - ## 
 
-- ## 
+- ## 几个在我看来对独立开发初期完全没有必要的事项：
+- https://twitter.com/LuoSays/status/1712317185715273757
+  - 暗色模式
+  - Cookie 提示
+  - 动画效果
+  - 多语言支持
+  - 给产品注册多个社交媒体平台账号
+- 几个非常有必要的事项：
+  - 表达清晰的落地页
+  - 收费价格表
+  - 详尽的帮助文档
+  - 活跃的个人社交媒体账号 & build in public
+- SEO 是一个效果相对滞后的营销渠道，在初期并不能作为重点。 
+  - 我知道这么说肯定会有人喷我，但事实是，即使在一开始就花很大功夫做了 SEO，到开始涌入流量也要几个月的时间，这几个月的时间用来做验证和寻找 PMF 更有实践意义。
 
 - ## ☁️ 为什么北美的SaaS生态能够做到如此开放和健康，各领域软件和平台可以链动互通，而中国的2B企业就恨不得一家独大全部通吃。
 - https://twitter.com/0xthefool/status/1711142427111670202

@@ -23,7 +23,17 @@ modified: 2022-11-23T17:48:48.839Z
 
 - ## 
 
-- ## 
+- ## Change my mind: The “this” keyword in JavaScript has gotten a bad wrap.
+- https://twitter.com/jpschroeder/status/1712500964085670069
+  1. It really isn’t hard to understand.
+  2. It provides a native mechanism for instance data (like context).
+  3. JavaScript has native tools for it like apply, bind, and arrow fns.
+
+- I don't mind "this", especially with arrow funcs. 
+  - But function params + closures to capture instance data are such nicer patterns for dealing with objects. 
+  - "this" is only best for dealing with inheritance, which is not great.
+- 
+- 
 
 - ## I'm beginning to think we will be "stuck" with class components in @Angular for the long term. 
 - https://twitter.com/brandontroberts/status/1711110538103558207

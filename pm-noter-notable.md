@@ -17,6 +17,7 @@ modified: 2022-12-19T02:01:20.161Z
   - versioning and branching: 基于oplog/events实现
   - collaboration-ready: 基于crdt
   - end-user database: 支持用户自定义数据和流程
+  - mobile-app-generator
   - local-first data storage with optional syncing
     - 兼容git的commits
   - office viewer

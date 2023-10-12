@@ -1,6 +1,6 @@
 ---
 title: lib-db-triplitdb-dev
-tags: [triplitdb, database]
+tags: [database, triplitdb]
 created: 2023-10-11T21:36:32.775Z
 modified: 2023-10-11T21:37:11.168Z
 ---

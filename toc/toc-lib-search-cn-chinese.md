@@ -9,6 +9,7 @@ modified: 2023-01-14T15:46:16.644Z
 
 # guide
 - 主流搜索引擎自身或社区大多已提供中文搜索方案
+  - 中文按拼音首字母排序
 # search-chinese
 - level-min /4Star/MIT/202208/ts
   - https://github.com/heyauri/level-min

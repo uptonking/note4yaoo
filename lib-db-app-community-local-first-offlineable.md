@@ -17,6 +17,19 @@ modified: 2023-09-22T20:15:10.616Z
 - ## 
 
 - ## 
+
+- ## "The log is the DB, everything else is just a cache" lives rent-free(不收租金) in my head.
+- https://twitter.com/LewisCTech/status/1712207592963854453
+  - So for multi-master systems, we takes the log/DB, cache it as a set, (causal history?) , and if the causal histories (caches) are equal, it's converged.
+  - If I'm wrong or unclear in my thinking or you have a paper I need to read/re-read - bring it. 
+
+- If your log is a sequence CRDT, then it'll eventually converge across multiple master. The caches are then just a pure function/reduction of the log. If the logs converge then the cache converges as well
+- the append log of a db replica would have to record events in the exact (transactional) order that particular replica received them in. So I don't think they could ever converge on that level, the order would always be different. Or am I missing something?
+  - Yeah I'm assuming you reorder when syncing. So each event would have a causal parent so it basically becomes eventually consistent linked list. It creates a total order but obviously won't be able to guarantee that events are ordered chronologically across replicas
+  - The caches would have to be able to replay events but if it's designed to be a side-effect-free reducer then you can just use snapshots of previous states that can act like checkpoints so you don't have to regenerate from the very beginning
+- Hmm. whenever people say 'log' in the context of databases, I assume append only, so no re-ordering. Should check out some WAL implementations though. Food for thought!
+- Yeah conceptually it's still append-only. You can even model it so that each master maintains it's own isolated log for each other master that are literally only appended to but then it's the job of the "cache" to monitor the ends of each and rebase/replay some events when necessary
+  - 👉🏻 This is the most simple implementation: @evoluhq
 # discuss
 - ## 
 
@@ -28,9 +41,7 @@ modified: 2023-09-22T20:15:10.616Z
 
 - ## 
 
-- ## 
-
-- ## 🆚️ [Offline-First Database Comparison | Hacker News_202110](https://news.ycombinator.com/item?id=28995268)
+- ## 🆚️💡 [Offline-First Database Comparison | Hacker News_202110](https://news.ycombinator.com/item?id=28995268)
 
 - So glad to see PouchDB included. We use it and have generally had a great experience! We use it with CouchDB on the backend, and Couch seems like a fantastic way to go for use cases involving syncing data between devices with an offline mode and syncing between clients. It was built from the ground up with replication in mind.
   - The nature of pouchdb/couchdb and the design philosophy behind it makes it relatively easy to scale to additional servers. Couchdb is master-master, which is a good eventually consistent model that should help in any horizontal scaling. The base process is erlang/elixir which should scale vertically well.
@@ -67,7 +78,6 @@ modified: 2023-09-22T20:15:10.616Z
   - Overall works really well. I recently turned off live sync for web and react native and loop over all of my databases on a set timeout interval. I had trouble with many connections at once.
 - When i used it for web I hit a max of 6 simultaneous connections in chrome. I seem to recall that it was an (intended) browser limitation - but it doesn't throw any errors, so it's not very obvious. I forked the socket-pouch library and changed it a bit to sync unlimited db's over a single websocket connection. It worked like a charm (despite my messy code).
 
-
 - Biggest bummer(令人不开心的事；令人失望的事) of CouchDB? If you’re not hosting it yourself, there’s only one major player in the market that I know of: IBM Cloudant.
   - That's the biggest problem my projects using Pouch/Couch are facing. 
 
@@ -77,10 +87,8 @@ modified: 2023-09-22T20:15:10.616Z
 - It sounds like rxdb is built on top of pouch, so probably the same set of options with the possibility of some opinionated design or sensible defaults though I can't find anything. obvious.
   - Yes RxDB conflict resolution is equal to PouchDBs. At least for now, there are plans to improve from there where you have a global resoluting function instead of listening for conflicts in the changestream.
 
-
 - What kind of consistency models do Offline-first databases like RxDB and PouchDB have?
   - [2.1. Introduction to Replication — Apache CouchDB® 3.3 Documentation](https://docs.couchdb.org/en/stable/replication/intro.html)
-
 
 - Apparently, both android and ios tend to wipe browser/web-view local storage at random/when space is needed(?).
   - Lesson of the story, even if it isn't dependent on indexeddb, if you're looking for a local storage option for a mobile app and happen to be using a js framework with capacitor or anything that utilizes a web-view, stay away from anything that uses indexeddb. If a wipe like this were to happen post release, the chance that your app succeeds afterwards would be near 0%
@@ -102,7 +110,7 @@ modified: 2023-09-22T20:15:10.616Z
 
 - I considered to add Supabase, RethinkDB and meteor. But they are not really client side databases. They realtime stream query results from the server to the client.
 
-- I have a question, how do you manage the fact that Supabase is based on a relational db[1]? Do you just put all fields (except the primary key) in a JSON column[2]?
+- how do you manage the fact that Supabase is based on a relational db? Do you just put all fields (except the primary key) in a JSON column?
   - Personably I kinda like the fact that it’s a relational DB. The stuff you gain by having users only allowed to do certain things based on certain fields using Policies makes life a lot easier and more relaxing.
 
 - For offline-first use PouchDB can connect directly to a CouchDB installed on your desktop PC as opposed to storing user data in your browser's built-in IndexedDB and syncing that with a Cloud based CouchDB.
