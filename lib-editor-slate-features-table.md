@@ -137,7 +137,7 @@ modified: 2023-02-27T19:07:31.111Z
 # editor-table-solutions
 - [Tables - CKEditor 5 Documentation](https://ckeditor.com/docs/ckeditor5/latest/features/table.html)
 # dev-later
-
+- 支持event sourcing架构
 # dev-maybe
 - table using canvas
 # more

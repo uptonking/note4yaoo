@@ -95,9 +95,21 @@ modified: 2022-11-07T11:00:28.824Z
 # discuss-vc
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## Atlassian acquires Loom for $975m __/202310
 - https://twitter.com/FrancescoD_Ales/status/1712467243022577927
-- Loom is a $1B company? 
+
+- ### Atlassian 今天宣布，以10亿美元收购录屏软件 Loom
+- https://twitter.com/ruanyf/status/1712842503656001568
+  - 成立于2015年，只是一个 Chrome 插件（图二），后来陆续发布了桌面端和手机端。它会把你的录屏自动发到云端，生成一个链接，你把这个 URL 发给其他人，对方就能在 Loom 的网站看到这个视频
+  - 对企业用户非常有用，有些事情说不清，录一段屏就能让别人明白。它现在有20万用户，每月生成500万段视频，就能价值10亿美元。
+- 这卖的不是录屏功能而是在线视频saas服务，数据存储，社交分享功能。
+-  一堆免费截屏软件作者表示可惜。
 
 - ## Sentry raised $217M in VC __/202310
 - https://twitter.com/1Marc/status/1710866233845801353

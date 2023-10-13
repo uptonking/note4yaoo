@@ -12,6 +12,17 @@ modified: 2023-01-13T10:47:36.755Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Very excited about OPFS support in browsers but performance still has a long time to go. 
+- https://twitter.com/schickling/status/1712883575354171795
+  - Reading a local file (4 MB) taking 170ms in Chrome and 570ms in Safari doesn't feel right to me.
+- Not sure about reads but Chrome is very very slow at writes on Mac
+- I got someone to try those benchmarks on a Linux and Window machine. It's a little more like Safari is faster on Mac than, chrome was slow. A little disappointing. But we don't have larger numbers of inserts outside of a wrapped transaction. So not impacted too much.
+- 
+
 - ## [logseq-webapp, no browser support_202301](https://github.com/logseq/logseq/discussions/8183)
 - I think they are using Linux. The file protocol used by Logseq currently has bad support for browsers or Linux.
   - The team plans to transition to OPFS in the future. Hopefully that resolves the issue

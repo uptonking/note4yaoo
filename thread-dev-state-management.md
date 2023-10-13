@@ -86,7 +86,19 @@ modified: 2021-02-28T07:29:07.622Z
 
 - ## 
 
-- ## 
+- ## 求问万推的各位大佬，现在有个codebase所有的state management都是基于MobX的，state change都是隐默的(cnt++, array.push等)，没有显式的dispatch/setState。
+- https://twitter.com/hd_nvim/status/1712312915360190533
+  - 希望要改成能兼容vanilla React，不用observer也能用，跪求推上大佬指个方向能怎么改 
+  - MobX必须要搭配observer，对接入方有强依赖性。（是一个SDK产品，不能假设接入方的技术形态）
+- 也许 immer 可以兼容这种可变的写法
+- 后来怎么改的？
+  - Observe 所有数据，callback 是force update
+
+- https://twitter.com/hd_nvim/status/1712675288013021571
+- 多多所有项目都是基于mobx的状态管理，有什么问题吗
+  - 那估计你还没发觉代码里可能出现的问题
+- 我们的项目都是线上跑了好多年的，应该不至于有啥大问题
+  - 用mobx，list[0].count++ 在observer包裹的component里会重渲染。useMemo在这种情况下会产生stale data
 
 - ## IMO some things cleanly map to state machines, but a lot don’t. 
 - https://twitter.com/devongovett/status/1528013087470649345

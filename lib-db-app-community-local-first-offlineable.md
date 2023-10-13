@@ -16,12 +16,18 @@ modified: 2023-09-22T20:15:10.616Z
 
 - ## 
 
-- ## 
+- ## Re-wrote DB logic. Order of magnitude faster, order of magnitude less chatty, order of magnitude smaller payloads. 
+- https://twitter.com/LewisCTech/status/1712674992100642976
+  - Source of truth is now 1 dynamic array vs 3 binary search trees. 
+  - Logical clock entries half the size. 
+  - Still converges per CvRDT laws.
+  - TL; DR thinking more, coding less works!
+- Employing tiger style - design is cheap
 
-- ## "The log is the DB, everything else is just a cache" lives rent-free(不收租金) in my head.
+- ## 💡 "The log is the DB, everything else is just a cache" lives rent-free(不收租金) in my head.
 - https://twitter.com/LewisCTech/status/1712207592963854453
   - So for multi-master systems, we takes the log/DB, cache it as a set, (causal history?) , and if the causal histories (caches) are equal, it's converged.
-  - If I'm wrong or unclear in my thinking or you have a paper I need to read/re-read - bring it. 
+  - If I'm wrong or unclear in my thinking or you have a paper I need to read/re-read - bring it.
 
 - If your log is a sequence CRDT, then it'll eventually converge across multiple master. The caches are then just a pure function/reduction of the log. If the logs converge then the cache converges as well
 - the append log of a db replica would have to record events in the exact (transactional) order that particular replica received them in. So I don't think they could ever converge on that level, the order would always be different. Or am I missing something?
@@ -30,6 +36,16 @@ modified: 2023-09-22T20:15:10.616Z
 - Hmm. whenever people say 'log' in the context of databases, I assume append only, so no re-ordering. Should check out some WAL implementations though. Food for thought!
 - Yeah conceptually it's still append-only. You can even model it so that each master maintains it's own isolated log for each other master that are literally only appended to but then it's the job of the "cache" to monitor the ends of each and rebase/replay some events when necessary
   - 👉🏻 This is the most simple implementation: @evoluhq
+  - This is 100% the model I am trying to implement! appending to the end of a block of memory is snappier(snappier) than inserting it into a B-Tree.
+- When you have a distributed multi-master append only log, and it can have branches, you can sync them by picking the longest branch. There, you get a blockchain
+
+- Crdts, imo, work best when they’re based on event logs. Each node has its own append only log. All nodes agree on the same state by agreeing on how to traverse the tree of logs.
+
+- understanding undo/redo/undo-redo logs will give you an epiphany
+- Chapter 17 seems very relevant, appreciate the link had no idea this existed.
+  - Happy that you find it useful! DBs are the most noble art in system programming… one you enter this rabbit hole everything is a DB
+- It all started out because I wanted web apps to work offline... wtf happened to me!
+- I should probably just write my own transactional append only log, right? How hard can it be..
 # discuss
 - ## 
 
@@ -39,7 +55,15 @@ modified: 2023-09-22T20:15:10.616Z
 
 - ## 
 
-- ## 
+- ## [Show HN: Anki alternative with integrated notes and import/export | Hacker News_202106](https://news.ycombinator.com/item?id=27662266)
+- can anyone tell me why anki is implemented so poorly in its core functionality? it works, but its slow, clunky, and error prone. that's the drawback for me and reason i am even willing to check out competition in this tech.
+- I'm building an open source Anki clone, and lemme tell you shit's surprisingly hard. Getting syncing working without resorting to uploading entire SQLite databases is nontrivial. You're basically doing multi-master database replication... but you gotta build it yourself (there's no easy way to sync sqlite with some serverside database (ignoring firebase/couchdb/pouchdb for various technical reasons))
+- I've built my own flashcard app and I ended up just syncing a journal of all your actions on a device (creating/edit cardings, evaluating them) and having all your other devices play those back to get to the "shared state". I store data using SQLite as well. It works pretty well for me.
+  - you're describing "event sourcing" and it's the technique I'm using
+- Yup, I'm doing event sourcing.
+  - For my approach, I really just have each device append to its own journal file. I use iCloud's file storage, so I don't even have a service that I run. **Each peer device just uploads the latest version of its journal to a shared folder and downloads its peers' journals and plays back the delta as needed**.
+  - I intentionally chose this architecture since I didn't want to run my own sync service. It keeps the sync system free, but iCloud can be slow. Unfortunately for me, if iCloud is slow, the app gets blamed for it.
+- I am using event sourcing, and git is basically event sourcing for code
 
 - ## 🆚️💡 [Offline-First Database Comparison | Hacker News_202110](https://news.ycombinator.com/item?id=28995268)
 

@@ -69,9 +69,27 @@ modified: 2023-09-17T17:35:27.024Z
 # discuss
 - ## 
 
-- ## 
+- ## Never underestimate the power of SQL. We tried everything: more memory, parallel processing, optimized queries, but nothing worked.
+- https://twitter.com/RaulJuncoV/status/1712824571202596912
+  - SQL `MERGE` was more than a fix; it changed how we handle the data.
+- Requirements:
+  - Users need to upload the data.
+  - Compare and avoid duplications.
+  - Delete not matching records.
+- We used upsert in Postgres. Now, Postgres 16 introduced Merge
+- The biggest change was performance since almost all the processing was moved to the DB. Also, the time taken to INSERT and UPDATE records was reduced significantly as it condensed multiple operations into a single statement.
+- I have need to synchronize two tables in two DB many times. The idea is doing like a Merge. The order of the operations is critically important when you do it manually.
 
-- ## 
+- ## SQL 只要涉及计算，要么不好写，要么性能差。
+- https://twitter.com/ruanyf/status/1712408004031840521
+- 不用这么麻烦，postgres 内嵌python，plsql 也能简单数据处理
+- CQRS啊，写入和读取分离。
+- 第一反应还是 map + reduce 一把梭
+- SQL又臭又长、无法调试，简直反人类。还是map+reduce香，有没有人能把map+reduce编译成存储过程的，那就爽了。
+- 以前也讨厌sql，但是自从见识了elasticsearch和databrick的query后发现还是sql容易理解，然后es和databrick都增加了sql query的支持。
+  - 后来想了一下，主要是因为sql是很严谨的建立在一套数学理论（关系代数）基础上的。
+- 大数据程序员基本操作，各种开窗，session就解决了
+- 开发总把db当作黑盒，结果就是一堆垃圾sql
 
 - ## [SQL:2023 is finished: Here is what's new | Hacker News_202304](https://news.ycombinator.com/item?id=35562430)
 - I don't believe that adding property graph support to SQL makes much of a difference for SQL and relational databases...

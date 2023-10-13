@@ -15,6 +15,10 @@ modified: 2022-08-21T09:57:46.814Z
 - cons
   - 代码混乱
 
+- resources
+  - [Luckysheet 兔小巢支持论坛](https://support.qq.com/products/288322/)
+  - [梦数科技开源平台](http://www.lashuju.com/)
+
 ## features
 
 - 表格设置

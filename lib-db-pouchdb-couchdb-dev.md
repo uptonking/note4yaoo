@@ -13,7 +13,7 @@ modified: 2022-12-02T11:15:15.257Z
   - offlineable
 
 - cons
-  - 与couchdb耦合: data model, sync protocol
+  - 与couchdb耦合: data-model, database, sync protocol
 
 - features
   - storage adapter: levelup, indexeddb

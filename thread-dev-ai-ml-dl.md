@@ -11,6 +11,12 @@ modified: 2021-05-18T19:33:51.768Z
 
 - read-books
   - [Interpretable Machine Learning_Christoph Molnar](https://christophm.github.io/interpretable-ml-book/)
+# discuss-stars
+- ## 
+
+- ## I've now completed 45 of the 68 Python notebooks that accompany my forthcoming book "Understanding Deep Learning".
+- https://twitter.com/SimonPrinceAI/status/1712801009741815965
+  - [udlbook.github.io/udlbook/](https://udlbook.github.io/udlbook/)
 # discuss
 - ## 
 

@@ -19,7 +19,11 @@ modified: 2021-03-31T06:50:19.936Z
 
 - ## 
 
-- ## 
+- ## tail -F will monitor a file, such as a log file, until you type Ctrl-c.
+- https://twitter.com/abhi9u/status/1712892253944139949
+- The -F option forces tail to periodically check that the file has not been moved or has not been shortened. 
+  - If either of those events has happened, it reopens the file, dumps the existing content on stdout and continues to tail the new content just like usual. 
+  - This is handy in situations such as when the log file gets automatically rotated and you want to automatically start following the new file. 
 
 - ## 开源 Linux 服务器管理面板： 1Panel。完全可以代替商业化的宝塔面板
 - https://twitter.com/vikingmute/status/1706122320660873526

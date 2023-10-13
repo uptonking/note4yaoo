@@ -16,7 +16,10 @@ modified: 2023-09-28T20:35:56.153Z
 - fans-pouchdb
   - https://github.com/redgeoff/delta-pouch
   - https://github.com/garrensmith/couch_hack_week
-  - https://github.com/pouchdb/pouchdb
+  - https://github.com/daleharvey/pouchbase
+  - https://github.com/nolanlawson/pouchdb-find
+    - https://github.com/nolanlawson/pouchdb-mapreduce-no-ddocs
+    - https://news.ycombinator.com/threads?id=nolanl
 # pouchdb-couchdb
 - https://github.com/pubkey/client-side-databases
   - https://pubkey.github.io/client-side-databases/database-comparison/index.html

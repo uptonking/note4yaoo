@@ -14,6 +14,8 @@ modified: 2023-01-12T10:26:41.060Z
   - displays a directory picker which allows the user to select a directory
   - This feature is available only in secure contexts (HTTPS), in some or all supporting browsers.
 # blogs
+- [The origin private file system  |  web.dev](https://web.dev/articles/origin-private-file-system)
+
 - [Origin Private File System (OPFS)](https://github.com/web-platform-tests/interop/issues/172)
   - The OPFS is what powers, among other things, Photoshop on the Web.
   - [Photoshop's journey to the web_202110](https://web.dev/ps-on-the-web/)

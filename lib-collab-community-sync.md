@@ -405,6 +405,23 @@ modified: 2022-11-29T20:41:25.566Z
 - While it is possible to implement partial sync with the primitives available to you today, it is not advised and not supported. 
   - In Q3/Q4 2023 we will be releasing primitives specifically intended to support partial sync, row level security, and large scale multi-tenant databases.
 
+# discuss-solutions
+- ## 
+
+- ## 🚀 [Ditto: Real-time sync for apps even without the internet | Hacker News_202209](https://news.ycombinator.com/item?id=32934849)
+- since Ditto's replication is "delta-based" it will only sync differences. 
+  - Our protocol is designed to overlay on top of custom arbitrary links, including unreliable ones. Not familiar with CCSDS, but we have explored Link16, and even built-in we replicate over BLE GATT.
+
+- 🤔 How is it different than all the open source peer-to-peer sync tools, such as Dat/Hypercore, or PouchDB?
+  - We use multihop ad hoc network connections! That’s the BIG thing that we add to the mix!
+  - A) PouchDB, Couchbase, Firebase, Realm are all databases that can sync to a "master" node in the cloud.
+  - B) AODV and BATMAN are really an ad-hoc mesh networking and routing protocol.
+  - Ditto is both A and B. You work with Ditto as a database on your mobile, IoT, web app with common database functions (querying, updating, deleting etc...) and we will sync the changes between edge and cloud devices. Most developers cannot sensibly use AODV and BATMAN to build robust collaborative applications, it's too hard. We abstract all of the routing, network resiliency, and replication away from you; just work with the database
+
+- 
+- 
+- 
+
 # discuss
 - ## 
 

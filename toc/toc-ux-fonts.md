@@ -7,8 +7,7 @@ modified: 2020-07-17T10:54:16.341Z
 
 # toc-ux-fonts
 
-# discuss
-
+# guide
 - 参考文献列表中link的字体应该用monospace，合适的是有
   - consolas (Monospaced, sans-serif)
     - Consolas is a monospaced typeface
@@ -19,39 +18,6 @@ modified: 2020-07-17T10:54:16.341Z
   - JetBrains Mono (sans serif, monospaced, fixed-width)
   - TeX Gyre Cursor can be used as a replacement for Courier
     - https://www.1001fonts.com/monospaced+serif-fonts.html
-
-- ## I'm not sure WOFF and WOFF2 actually make sense as font formats. 
-- https://twitter.com/fabiospampinato/status/1697942557265650050
-  - They are basically just TTF fonts but with individually compressed tables, with deflate and brotli respectively.
-  - Isn't it better to simply let the server compress the entire TTF file (presumably with better compression ratios, since tables wouldn't get compressed individually) and potentially with better algorithms (I think people are working on adding support for Zstandard to browsers)?
-- We are basically sending `.zip` files over the network
-- You can also use OTF format for WOFF instead of TTF. But they can be significantly slower on Windows
-
-- ## [安卓系统的默认中文字体是什么？](https://www.zhihu.com/question/23487706)
-- android 4.0（<=4.0）之前只有三种字体: 有衬线、无衬线、等宽
-  - normal (Droid Sans), serif (Droid Serif), and monospace(Droid Sans Mono).
-- android高版本 >= 4.1
-  - 英文：Roboto
-  - 中文：Noto （思源黑体）
-- ref
-  - [material design typography](https://material.io/design/typography/the-type-system.html)
-
-- ## How to get the fastest web fonts (Updated 2021)
-- https://twitter.com/leeerob/status/1345554813375938561
-  - Use a variable font 
-    - Variable fonts allow you to combine multiple styles and weights (e.g. bold, italic) into a single font file.
-  - Preload your font file
-    - The browser assigns loading priorities to different types of resources. 
-    - You can influence which resources are most important by preloading critical assets.
-    - `<link rel="preload" href="fonts/inter-var.woff2" />`
-  - Self-host instead of Google Fonts
-    - Since 202010, Chrome no longer allows a shared cache across sites (Safari has worked this way since 2013).
-    - Then, you can control caching and add `immutable`.
-    - e.g. `Cache-Control: immutable, max-age=31536000`
-  - Use `font-display: optional` to prevent layout shift
-    - Most browsers have a default strategy similar to `font-display: block`. 
-    - The only option that prevents layout shift is `optional` (including FOUT and FOIT).
-    - Supported by all modern browsers.
 # fonts
 - free
   - catalog
@@ -144,3 +110,55 @@ modified: 2020-07-17T10:54:16.341Z
 - 腾讯的Font-Spider
   - 可以把页面中没有的字从字库剔除掉，使用的是NodeJS
   - 适合静态页面
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 干掉 Windows 系统中的微软雅黑
+- https://twitter.com/sun0225SUN/status/1712760249747382701
+  - 图一：微软雅黑
+  - 图二：PingFang
+  - 图三：MiSans
+
+- ## I'm not sure WOFF and WOFF2 actually make sense as font formats. 
+- https://twitter.com/fabiospampinato/status/1697942557265650050
+  - They are basically just TTF fonts but with individually compressed tables, with deflate and brotli respectively.
+  - Isn't it better to simply let the server compress the entire TTF file (presumably with better compression ratios, since tables wouldn't get compressed individually) and potentially with better algorithms (I think people are working on adding support for Zstandard to browsers)?
+- We are basically sending `.zip` files over the network
+- You can also use OTF format for WOFF instead of TTF. But they can be significantly slower on Windows
+
+- ## [安卓系统的默认中文字体是什么？](https://www.zhihu.com/question/23487706)
+- android 4.0（<=4.0）之前只有三种字体: 有衬线、无衬线、等宽
+  - normal (Droid Sans), serif (Droid Serif), and monospace(Droid Sans Mono).
+- android高版本 >= 4.1
+  - 英文：Roboto
+  - 中文：Noto （思源黑体）
+- ref
+  - [material design typography](https://material.io/design/typography/the-type-system.html)
+
+- ## How to get the fastest web fonts (Updated 2021)
+- https://twitter.com/leeerob/status/1345554813375938561
+  - Use a variable font 
+
+    - Variable fonts allow you to combine multiple styles and weights (e.g. bold, italic) into a single font file.
+
+  - Preload your font file
+
+    - The browser assigns loading priorities to different types of resources. 
+    - You can influence which resources are most important by preloading critical assets.
+    - `<link rel="preload" href="fonts/inter-var.woff2" />`
+
+  - Self-host instead of Google Fonts
+
+    - Since 202010, Chrome no longer allows a shared cache across sites (Safari has worked this way since 2013).
+    - Then, you can control caching and add `immutable` .
+    - e.g. `Cache-Control: immutable, max-age=31536000`
+
+  - Use `font-display: optional` to prevent layout shift
+
+    - Most browsers have a default strategy similar to `font-display: block` . 
+    - The only option that prevents layout shift is `optional` (including FOUT and FOIT).
+    - Supported by all modern browsers.

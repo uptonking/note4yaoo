@@ -303,7 +303,13 @@ modified: 2023-04-05T19:35:14.347Z
 
 - ## 
 
-- ## 
+- ## Use `fetch()` to check if a file exists without downloading the entire thing.
+- https://twitter.com/wesbos/status/1712485929255051592
+- For cases where `HEAD` is not supported (ex. S3 GET signed URL), you can also do a `GET` with the `Range` header and get only the first byte to confirm the file.
+  - Would this be the code? `fetch('...', { headers: { Range: 'bytes=0-0' }})` ; 
+  - Correct, by doing so you don't need to worry about the server supporting HEAD, very handy
+- Wouldn’t that require also to finish the request via .text(), as example, to avoid dangling promises around? 
+  - not sure. 是否要手动释放资源
 
 - ## To find out whether a file is UTF-8 text file in browser.
 - https://twitter.com/__enix__/status/1681710341372117003

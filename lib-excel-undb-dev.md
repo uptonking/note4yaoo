@@ -52,6 +52,8 @@ modified: 2023-05-17T07:36:07.757Z
   - 去掉react-hook-form devtool
   - [x] 去掉loadable-component
 
+- 支持event sourcing架构
+
 - 统一enum的const和类型定义的命名和位置
 # dev-maybe
 - column-virtualizer

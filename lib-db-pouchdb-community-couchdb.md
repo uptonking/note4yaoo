@@ -253,11 +253,19 @@ modified: 2023-10-07T17:29:16.871Z
 - No it isn’t supported. Partial indexes are only supported for querying for CouchDB not for replication.
   - It would need to be implemented in CouchDB first
 
-- ## [Replicache: Easy Offline-First for Existing Applications | Hacker News_202001](https://news.ycombinator.com/item?id=22173500)
+- ## 🚀 [Replicache: Easy Offline-First for Existing Applications | Hacker News_202001](https://news.ycombinator.com/item?id=22173500)
+
+- RxDB:
+  - Doesn't guarantee convergence. It's up to the developer to provide a feed of deltas to the client and ensure they have the correct effect when applied to the client. This is the one of the hardest parts!
+  - Provides no help with conflict resolution. Push replication just pushes the new version of each document. The server must figure out how the document differs from the stored version and what that must mean in terms of logical operations.
+  - Implemented in JavaScript. Difficult to use in native apps.
+- RxDB maker here. You can do conflict-resolution by subscribing to the changeFeed and when multiple versions with the same revision-height exist, you create a new version with a 'merged' document. Depending on your dataset this can be tricky and painful.
+
 - I have been digging deep into sync for the past few months and am very interested in how this works. I am currently trying to understand automerge and delta patching trying to implement from scratch. I have looked at Gun and couch db + pouch db but both did not feel like the right answer.
-- Be aware that CRDTs like automerge are solving a different (and harder) problem than Replicache. **They are trying to implement convergence in an asynchronous system where there is no central authority**. 
+- 👉🏻 Be aware that CRDTs like automerge are solving a different (and harder) problem than Replicache. **They are trying to implement convergence in an asynchronous system where there is no central authority**. 
   - Most classic web services don't have this requirement because they do in fact have a central authority -- the service itself.
   - Moreover, for web services, it is crucial that the central authority actually be authoritative. You don't want client and server state kind of gets smooshed together arbitrarily, but for the client's view of the state to be a mere suggestion - one which the server always overrides.
+  - Replicache actually started out as a true CRDT and moved to its current design after extensive iteration with customers
 
 - Using couch as your backend db ends up being a nonstarter for most applications. A distributed multitenant database is a big big thing and a hugely important technical decision. Most orgs are not going to go with couch just to get sync. 
   - The couchdb replication protocol offers no help with conflict resolution. It just tells you there was a conflict and gives you two conflicting documents. This isn't practical for most applications.

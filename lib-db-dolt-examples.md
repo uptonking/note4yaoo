@@ -158,6 +158,10 @@ modified: 2023-08-25T22:31:05.132Z
     - TerminusDB has full schema and data versioning capability. 
     - but offers a graph database interface using a custom query language called Web Object Query Language (WOQL). WOQL is schema optional. 
     - TerminusDB just released the option to query JSON directly, similar to MongoDB, giving users a more document database style interface.
+  - [Recently minted database technologies that I find intriguing | Hacker News](https://news.ycombinator.com/item?id=23531825)
+    - We are focused on the revision control aspects of Terminus - trying to make the lives of data intensive (ML etc.) teams a little easier. 
+    - We use a delta encoding approach to updates like source control systems such as git and provide the whole suite of revision control features: branch, merge, squash, rollback, blame, and time-travel. Idea is to provide continuous integration for the data layer. 
+    - Basically squash(压扁，挤碎) all the tools and processes mentioned here into a versioned graph
 
 - https://github.com/perkeep/perkeep /apache2/go
   - https://perkeep.org/

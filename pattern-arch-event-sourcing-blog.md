@@ -24,6 +24,11 @@ modified: 2023-09-13T14:37:51.659Z
 
 ## 🌰 [Building offline-first web and mobile apps using event-sourcing_201907](https://flpvsk.com/blog/2019-07-20-offline-first-apps-event-sourcing/)
 
+- 👥 discussion
+
+- [Building offline-first web and mobile apps using event-sourcing](https://www.reddit.com/r/javascript/comments/cfz5aj/building_offlinefirst_web_and_mobile_apps_using/)
+  - There's another con to the approach which the article doesn't state explicitly - the requirement to move the business logic to the client, which may be an issue due to intellectual property. By the way, finally Redux "reducers" make sense to me.
+
 ## 📝 [Mistakes we made adopting event sourcing (and how we recovered)_201906](http://natpryce.com/articles/000819.html)
 
 - [Mistakes made adopting event sourcing (and how we recovered) - Nat Pryce - DDD Europe 2020 - YouTube_202010](https://www.youtube.com/watch?v=osk0ZBdBbx4)
