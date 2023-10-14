@@ -287,6 +287,9 @@ modified: 2021-05-14T15:04:42.225Z
 - https://github.com/Leaflet/Leaflet
   - /29kStar/BSD/202009/js
   - JavaScript library for mobile-friendly interactive maps
+# ast/compiler
+- https://github.com/jquery/esprima /BSD/ts
+  - a high performance, standard-compliant ECMAScript parser written in ECMAScript
 # js-repos
 - https://github.com/axios/axios
   - Promise based HTTP client for the browser and node.js
@@ -369,6 +372,11 @@ modified: 2021-05-14T15:04:42.225Z
   - Lightweight, robust, elegant syntax highlighting.
 - https://github.com/mobz/elasticsearch-head
   - A web front end for an elasticsearch cluster
+# nodejs
+- https://github.com/OptimalBits/node_acl /201805/js/inactive
+  - This module provides a minimalistic ACL implementation inspired by Zend_ACL.
+  - When you develop a web site or application you will soon notice that sessions are not enough to protect all the available resources. Avoiding that malicious users access other users content proves a much more complicated task than anticipated. ACL can solve this problem in a flexible and elegant way.
+  - Create roles and assign roles to users. 
 # more
 - https://github.com/liljenzin/confluent /cpp
   - Confluent sets and maps are sorted associative containers written in C++11.

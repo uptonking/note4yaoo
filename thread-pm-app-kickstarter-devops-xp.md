@@ -92,32 +92,6 @@ modified: 2022-11-07T11:00:28.824Z
   - 不是给安卓上架用的，是税收优惠用的
   - 「软件企业两免三减半税收优惠政策」。知道的太晚了，两免已经享受不到
 
-# discuss-vc
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## Atlassian acquires Loom for $975m __/202310
-- https://twitter.com/FrancescoD_Ales/status/1712467243022577927
-
-- ### Atlassian 今天宣布，以10亿美元收购录屏软件 Loom
-- https://twitter.com/ruanyf/status/1712842503656001568
-  - 成立于2015年，只是一个 Chrome 插件（图二），后来陆续发布了桌面端和手机端。它会把你的录屏自动发到云端，生成一个链接，你把这个 URL 发给其他人，对方就能在 Loom 的网站看到这个视频
-  - 对企业用户非常有用，有些事情说不清，录一段屏就能让别人明白。它现在有20万用户，每月生成500万段视频，就能价值10亿美元。
-- 这卖的不是录屏功能而是在线视频saas服务，数据存储，社交分享功能。
--  一堆免费截屏软件作者表示可惜。
-
-- ## Sentry raised $217M in VC __/202310
-- https://twitter.com/1Marc/status/1710866233845801353
-  - I’m glad they are contributing $500k to open source, and I do hope other companies follow suit. 
-  - But we’ll see… it’s definitely better than ads and dev rel which is where most of these companies dump their investor’s money.
-- Another one transitioning to BSL soon.
-  - Sentry has using BSL for some of their code for a long time
-- All components powering the main Sentry backend use BUSL-1.1 license which limits their usage in a commercial Sentry-like offering
 
 # discuss
 - ## 

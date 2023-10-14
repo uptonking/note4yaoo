@@ -9,6 +9,13 @@ modified: 2023-09-13T20:24:13.701Z
 
 # guide
 
+- pros
+  - data control and privacy
+
+- cons
+  - 首次数据拉取和计算需要较长时间
+  - 全局搜索在本地难以实现
+
 - 支持offline的架构
   - 还可以考虑使用多级缓存，不一定全量数据库，类似react-query + indexeddb
 

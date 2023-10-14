@@ -386,8 +386,10 @@ modified: 2022-11-25T15:50:48.226Z
 - https://github.com/cypsela/sailplane-web /js
   - https://cypsela.github.io/sailplane-web
   - Collaborative p2p file sharing in the browser
+
 - orbit /2.3kStar/MIT/202209/ts
   - https://github.com/orbitjs/orbit
+  - https://orbitjs.com/
   - Orbit is a composable data framework for managing the complex needs of today's web applications.
   - Although Orbit is **primarily used as a flexible client-side ORM**, it can also be used server-side in Node.js.
   - Interact with data from a variety of sources: a REST server, a WebSocket stream, an IndexedDB backup, an in-memory store, etc.
@@ -401,11 +403,11 @@ modified: 2022-11-25T15:50:48.226Z
 - https://github.com/beakerbrowser/webdb /201807/js
   - A database that reads and writes records on dat:// websites.
 
-- https://github.com/Telios-org/nebula
+- https://github.com/Telios-org/nebula /202301/js/hypercore
   - Real-time distributed storage for files and key value databases built on top of Hypercore Protocol
 
 - https://github.com/holepunchto/hypercore
-  - Hypercore is a secure, distributed append-only log.
+  - a secure, distributed append-only log.
   - Built for sharing large datasets and streams of real time data
 # db-js-utils
 - https://github.com/pubkey/event-reduce /202212/ts

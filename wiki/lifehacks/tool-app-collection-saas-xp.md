@@ -162,6 +162,15 @@ modified: 2022-11-07T10:25:12.034Z
 # video/tv
 - https://github.com/fanmingming/live
   - 一个国内可直连的直播源分享项目
+
+- 在线影视
+  - closed
+
+- 下载资源
+  - [BT天堂 - 最新高清电影720P|1080P免费下载](https://www.bt-tt.com/)
+
+- youtube
+  - https://x2mate.com/
 # gfw-proxy
 - [googlehosts 作者放弃维护了吗？几个月没更新了](https://github.com/googlehosts/hosts/issues/503)
   - 新发现了个正在活跃维护的

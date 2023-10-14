@@ -152,10 +152,33 @@ modified: 2023-04-21T11:42:46.575Z
 - I've started a dedicated disposable repo for these half-baked ideas. 
   - https://github.com/tinyplex/tinysync
 
-- ## [TinyBase v2.0: reactive data store for local-first apps | Hacker News_202209](https://news.ycombinator.com/item?id=32871392)
+- ## 🎯 [TinyBase v2.0: reactive data store for local-first apps | Hacker News_202209](https://news.ycombinator.com/item?id=32871392)
+- what is a "reactive data store"?
+  - By "reactive" I mean... if the data changes, the UI does (or at least, an event is fired, and then you can drive a React render, for example, from that). In contrast, you expect to have to poll an RDBMS for updates.
+  - With "data store", rather than "database", I'll admit I am hedging my bets. Through one lens, this library can look more like an app-level store in a classic React sort of way. Through another (most notably the table/row/cell structure), it looks like an RDBMS. I'm not ready to go all-in and declare it's a database yet. Such nomenclature comes with Assumptions™.
+
+- From what I can see in 2 mins of reading, it looks like it's more relational which should be a plus, 
+  - but then on the downside there's much less of a story on the sync side, with remote persistence ending at offering you interfaces to persist your data but not an actual data store that works. By comparison, PouchDB connected to a server side CouchDB makes an amazing combo.
+- I didn't have much trouble binding PouchDB into a Vue reactive data store so the reactive part didn't seem as novel to me. What does seem novel is supporting a proper relational schema for this, whereas all the other options I know in this space are schemaless / key-value type approaches.
+- I wonder if it might be a high-value / low effort proposition to come up with an out-of-the-box setup with something like PostgREST that would then work end to end? This was the super compelling part for me with the Pouch/Couch combo, as with a couple of configs and barely any code your browser localStorage is suddenly sync'd and saved remotely in real time 
+- I actually love it when people invent things without full knowledge of prior art - a lot of innovation happens only when people aren't biased by what is already there. Perhaps if you knew all about PouchDB you might not have had enough motivation to do this, and then this gap of a relational reactive store would not have been explored. What you have done looks really great!!!
+
 - RxDB with PouchDB has support for typescript, json schema, and binary attachments. Moving the attachments to the file system will be up to you.
 
 - I’m my limited experience, a reliable CRDT implementation necessitates a CRDT-first design baked into the core of any data / transaction model. Like I’ve heard some game developers say- multiplayer needs to come first because tacking it onto a single player game is a nightmare.
+
+- I really aspire to some sort of CRDT implementation that can be considered a bit more state-of-the-art 
+  - I think that CRDT and OTs are a bit overkill for TinyBase. Most apps are not text editors or figma. Most apps are just forms. The general solution for forms is to track which fields on a record have been modified by the user. The user’s change is the source truth and never gets overwritten by the network. Other fields are free to be updated collaboratively from the network. Once the user has synced that field it is free to be updated by the network. This kind of solution can be built on top of TinyBase without CRDTs.
+
+- The main limitation I see with tiny base is that it has to load all data in one batch and modifying any record results in the whole data store being persisted to disk. Surely this can’t scale well…
+  - The data is in memory, and the persistence strategy is kind of up to you. So it would scale reasonably if you put the sync/persist on a different schedule to the UI - perhaps when the browser is idle.
+
+- Wait so can you actually connect tiny base to SQLite?
+  - No, there's no _actual_ RDBMS involved. The query engine uses a functional style of query that has similar concepts to SQL, but all the evaluation (and reactivity) is first party, in the library itself.
+  - Of course it would be pretty easy/fun to persist your TinyBase content into a SQLite database, or pull a dataset from it
+
+- is this web based, built on top of IndexedDB?
+  - No, there are no dependencies. It has its own in-memory data structure, and ways to serialize it to other, more persistent, formats. I could imagine an option for more fully fledged RDBMSs being those persistence layers though.
 
 - ## Here's an interesting browser state solution: A database, written in JS, called TinyBase._202202
 - https://twitter.com/housecor/status/1492859757941637126

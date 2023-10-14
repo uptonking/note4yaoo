@@ -265,11 +265,6 @@ modified: 2021-08-30T18:56:09.644Z
   - Mentat was designed for embedding, initially in an experimental Electron app 
   - Mentat uses partial indices, which are available in SQLite 3.8.0 and higher
 
-- https://github.com/surrealdb/echodb /rust
-  - An embedded, in-memory, immutable, copy-on-write, key-value database engine
-  - Multi-version concurrency control
-  - Rich transaction support with rollbacks
-
 - https://github.com/unum-cloud/ukv /cpp/modular
   - Modular Transactional NoSQL Database
   - choose either: RocksDB • LevelDB • UDisk • UMem 

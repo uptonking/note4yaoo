@@ -291,8 +291,8 @@ modified: 2023-08-25T22:31:05.132Z
   - [SurrealDB Features Documentation](https://surrealdb.com/docs/introduction/features)
     - 已支持: 单击或分布式架构、multi-tenancy、schema-optional、table-events
     - 未支持: Versioned temporal tables、Table indexes、fts
-  - [Feature: Database Branching · surrealdb](https://github.com/surrealdb/surrealdb/issues/2323)
-  - Until this is supported by the database itself, I've had a good experience playing with the branching tool found in odonno/surrealdb-migrations#database-branching.
+  - [Feature: Database Branching](https://github.com/surrealdb/surrealdb/issues/2323)
+    - Until this is supported by the database itself, I've had a good experience playing with the branching tool found in odonno/surrealdb-migrations#database-branching.
   - [Feature request: Data Versioning (Dolt/Dolthub like)](https://github.com/surrealdb/surrealdb/issues/2371)
   - https://github.com/Odonno/surrealdb-migrations
     - SurrealDB migration tool, with a user-friendly CLI and a versatile Rust library

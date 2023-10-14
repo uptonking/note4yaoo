@@ -245,10 +245,15 @@ modified: 2023-09-13T20:24:41.516Z
 - It's possible to receive changes to data that target the old shape from peers after you've already upgraded your local copy, even ones that are timestamped after your migration. This can corrupt your local data, and there's no canonical server copy to fall back on.
 - This problem can quickly expand to require checks and guards all over the codebase, ruining the free feeling of local first development. And at least for me, it would keep me up at night to wonder if a user will lose their data because I didn't think it through.
 
-- ## [rxdb: Offline First_202109](https://news.ycombinator.com/item?id=28690427)
+- ## 🆚️💡 [rxdb: Offline First_202109](https://news.ycombinator.com/item?id=28690427)
 - I still haven't found the "holy grail architecture" for offline-first with backend sync where the backend isn't just a simple data store but also has business logic and interacts with external systems.
+  - When the backend isn't very smart it's not too hard, you can just encapsulate any state-changing action into an event, when offline process the events locally + cache the chain of events, when online send the chain to the backend and have the backend apply the events one by one. Periodically sync new events from the backend and apply them locally to stay in sync. This is what classic Todo apps like OmniFocus do.
   - The problems start when the backend is smarter and also applies business logic that generates new events (for example enriching new entities with data from external systems, or adding new tasks to a timeline etc). 
   - When trying to make the offline experience as feature-rich as possible I always end up duplicating almost all of the backend logic into the clients as well. And in that case, what is even the point of having a smart backend.
+- Seems like you're describing event sourcing. I'm building an offline-first app and doing pretty much what you're describing.
+  - Yes it looks like event sourcing. But most of the classic event sourcing implementations I've seen are mostly backend only.
+  - The project I'm currently hacking on has an MQTT broker that is used by both clients and backend and the events can come from anywhere.
+  - Enabling all this in an offline-first paradigm is hard and requires a lot of duplication, I am very close to just saying screw this and requiring network connectivity for most of the features.
 
 - Offline first is a dream to me, I build a big note-taking app (midinote.me) which is 100% offline, 
   - 👉🏻 but now the biggest pain point is the full text search, yes, we can use DB like this and PouchDB to store data, 
@@ -258,6 +263,14 @@ modified: 2023-09-13T20:24:41.516Z
   - now I am going to re-think all these things, and considering give up offline and switch to server side full text search, it will save huge effort comparing to client-side search!
 - pouchdb-quick-search didn't work for you?
   - Yes, I used it, generally, on JS platform, the performance is not so good to do FTS, especially when document is long and the data getting huge.
+
+- Using CouchDB with PouchDB.js provides a "Live Sync" option that syncs data both ways and that feature works very well with the apps I've made which do not have 1000s of users accessing the same DB. In my case there are probably not more than a dozen users accessing the same DB. 
+  - And in my case there is not much chance more than one user is modifying a document at any given time. 
+  - Also, in my case, there is no "backend logic" being processed. That's all done in the user's web browser.
+
+- 
+- 
+- 
 
 - ## How many records can you sort/filter/paginate in a web browser?
 - https://twitter.com/jamespearce/status/1605273072851886090

@@ -57,6 +57,11 @@ modified: 2022-11-03T04:14:00.563Z
   - It supports multiple backend engines with varying guarantees, such as LMDB for performance, or "SafeMode" for reliability.
   - The "SafeMode" backend performs well, with two caveats: the entire database is stored in memory, and write transactions are synchronously written to disk (only on commit).
 
+- https://github.com/surrealdb/echodb /rust
+  - An embedded, in-memory, immutable, copy-on-write, key-value database engine
+  - Multi-version concurrency control
+  - Rich transaction support with rollbacks
+
 - https://github.com/spacejam/sled /rust/bw-tree
   - https://docs.rs/sled
   - http://sled.rs/
