@@ -569,6 +569,15 @@ modified: 2021-09-14T18:58:58.275Z
   - there is only one thing you cannot do, and that is use it to make a competing SaaS offering. 
   - For example, it does not allow hosting of Confluent ksqlDB, Confluent Schema Registry, Confluent REST Proxy, or other software licensed under the Confluent Community License as online service offerings that compete with Confluent SaaS products or services that provide the same software.  
   - If you are not doing what is excluded, this license change will not affect you.
+# Cryptographic Autonomy License
+- [Understanding the Cryptographic Autonomy License - Holochain Blog](https://blog.holochain.org/understanding-the-cryptographic-autonomy-license/)
+  - Public Performance of Software? 类似歌曲的著作权、表演权
+  - TL; DR; Copyleft + Performance
+  - Holochain’s license boils down to this: You can run Holochain as free and open source software with a couple of conditions:
+  - The source code of Holochain and **any derivative works must be provided under compatible open source terms** which include this condition and the following condition related to privacy of cryptographic keys.
+  - You only have permission for “public performance” of Holochain (including use of its APIs for running your dApp) if you preserve each end-user’s privacy and autonomy of their private cryptographic keys.
+  - If the privacy of user keys is compromised, then so is the ownership of their data, as well as user’s control of their own copies of the software.
+  - I’ve never seen a software license invoke this kind of “public performance” clause, so it may stir up some controversy and make it challenging to get our license accepted by OpenSource.org; but it is the only way we’ve found to release Holochain with responsible protections for end-users.
 # data - CDLA(Community Data License Agreement Permissive 2.0)
 
 > aka. CDLA-Permissive-2.0

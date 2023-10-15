@@ -24,6 +24,7 @@ modified: 2022-12-02T11:15:15.257Z
   - [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
 
 - roadmap
+  - alternative-backend: mysql/pg
   - kappa-architecture?
 
 - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)

@@ -681,6 +681,10 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/braid-org/braidjs/tree/master/sync9
   - Sync9 is interesting given that it stores actual character indices in the CRDT so appending new writes does not require any lookups of parent events and constructing a doc from the event log is trivial. 
   - Sync9 also solves the same interleaving problems as Fugue.
+
+- https://github.com/zackradisic/learning-crdts-rust /rust
+  - CRDT implementations I write as I learn more about them
+  - Following along and porting the code from convergent CRDT half of Bartosz Sypytkowski's blog post series in F# to Rust
 # crdt-editing
 - https://github.com/KristoferSundequist/Collaborative-texteditor
   - Collaborative texteditor based on a Conflict free replicated datatype(CRDT) with a NodeJS client/server. 
@@ -991,6 +995,10 @@ modified: 2022-04-05T10:08:25.947Z
     - We don't use any of the "Resource Description" parts of RDF, and are focused on things like incremental view maintenance for collaborative docs, row-level encryption, and , which the RDF community has historically not needed / explored. 
     - Rhizome more focused on providing a database and CRDT primitives — despite the surface similarity of being a tuplestore, it's is **closer to something like Datomic or Automerge than RDF**.
     - I see, incremental view maintenance is a powerful concept. Crucial to make CRDTs at Datalog-level efficient / practical.
+
+- https://github.com/iambriccardo/causal /rust/Operation-based
+  - a simple Reliable Causal Broadcast (RCB) protocol written in Rust that implements several CmRDTs.
+  - The operations are commutative. However, they are not necessarily idempotent. The communications infrastructure must therefore ensure that all operations on a replica are delivered to the other replicas, without duplication, but in any order.
 # apps-examples
 - https://github.com/josephg/statecraft /ISC/201911/ts/inactive
   - Statecraft is a protocol and set of tools for interacting with data that changes over time. 

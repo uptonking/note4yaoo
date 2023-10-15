@@ -149,6 +149,7 @@ modified: 2023-04-11T02:24:25.572Z
 
 - ubuntu开机自动挂载win-ntfs硬盘
   - [ubuntu 配置/etc/fstab参数实现开机自动挂载硬盘](https://blog.csdn.net/u010632165/article/details/89597522)
+    - 示例 /dev/nvme0n1p3  /media/yaoo/win  ntfs  defaults  0  2
   - [UbuntuHelp: fstab](https://wiki.ubuntu.org.cn/UbuntuHelp:Fstab)
     - [Device] [Mount Point] [File System Type] [Options] [Dump/backup] [Pass]
     - [pass]: Controls the order in which fsck checks the device/partition for errors at boot time. The root device should be 1. Other partitions should be 2, or 0 to disable checking.
@@ -422,6 +423,8 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - 密码 nite07
 
 ## upgrade-windows
+
+- windows大版本更新后，ubuntu的磁盘位置可能发生变化，需要先检查/etc/fstab挂载点是否正确，否则常用软件或数据无法读取
 
 - windows update很容易卡住不动
   - 可以点击暂停到7天后更新，然后立即取消暂停，如果顺利就会立即检查并下载更新

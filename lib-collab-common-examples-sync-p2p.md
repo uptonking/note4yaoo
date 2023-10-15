@@ -11,7 +11,7 @@ modified: 2023-01-17T19:13:01.845Z
 - 考虑到客户端升级的问题
   - 同步前一定要检查一个version，参考indexeddb upgrade
   - 参考sqlite+http-range的部分下载示例(sql.js-httpvfs)
-# sync-examples
+# sync-solutions
 - verdant/lo-fi /7Star/MIT/202211/ts
   - https://github.com/a-type/verdant
   - https://github.com/a-type/lo-fi
@@ -59,6 +59,13 @@ modified: 2023-01-17T19:13:01.845Z
 - https://github.com/peers/peerjs /202303/ts
   - PeerJS provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams.
 
+- https://github.com/holochain/holochain /CAL/202212/rust
+  - https://developer.holochain.org/
+  - Holochain is a framework for building peer-to-peer distributed applications, also known as hApps. 
+  - It emphasizes agent-centric architecture, intrinsic data integrity, and scalability. 
+  - Holochain enables developers to build applications that run on just the devices of the participants without relying on centralized servers or blockchain tokens and it provides a robust and efficient means of managing data.
+  - This repository contains the Holochain core libraries, not the runtime intended for end-users of Holochain applications.
+
 - https://github.com/saarw/flushout /201910/ts
   - a distributed data model based on event sourcing. 
   - Collaborative applications use it for clients that need responsive interaction without network delay, or need to function offline.
@@ -75,7 +82,7 @@ modified: 2023-01-17T19:13:01.845Z
   - Prototype of a syncing game state between a p2p, host switching network through an action system & event history.
 
 - https://github.com/spreadjs/spread /js
-  - Spread.js is a local JavaScript datastructure, that is instantly synced across devices/nodes/instances
+  - a local JavaScript datastructure, that is instantly synced across devices/nodes/instances
   - It can be used, when building distributed applications, that need local in-memory data for fast access.
   - Use Plain JavaScript Objects
   - Technically the process is pretty simple. 

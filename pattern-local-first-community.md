@@ -245,15 +245,49 @@ modified: 2023-09-13T20:24:41.516Z
 - It's possible to receive changes to data that target the old shape from peers after you've already upgraded your local copy, even ones that are timestamped after your migration. This can corrupt your local data, and there's no canonical server copy to fall back on.
 - This problem can quickly expand to require checks and guards all over the codebase, ruining the free feeling of local first development. And at least for me, it would keep me up at night to wonder if a user will lose their data because I didn't think it through.
 
-- ## 🆚️💡 [rxdb: Offline First_202109](https://news.ycombinator.com/item?id=28690427)
+- ## 💡 [rxdb: Offline First_202109](https://news.ycombinator.com/item?id=28690427)
+- what's a good solution for syncing with the main database after the device goes back online?
+- 👉🏻 CouchDB/PouchDB(the JS compatible cousin) make use of a global sequence counter to track which documents have changed between sync.
+- Each database uses an arbitrary byte string to mark a position in a sequence of updates to the database. 
+  - Each document has the sequence counter of when it was created/updated/deleted. 
+  - This sequence counter only matters to that particular database (it does not need to be mirrored, it's just a local ref. of WHEN the doc was modified in that particular database).
+- **Syncing is then a process of looking up the last read sequence counter from a checkpoint document** (i.e. what was the last modification) and passing that sequence counter to the `changes` endpoint to get a list of all documents with a sequence counter AFTER that, and then pulling/pushing those documents to the local/remote database, and saving the new latest sequence counter.
+- The official docs give some more info. One key point is if I modify a document several times between syncs, it will only show once in the changes feed with the latest sequence counter for that document. Couch's conflict resolution strategy is a topic for another time, but an interesting one.
+
+- It’s an open question and ultimately depends on your app. 
+  - For our mobile app we try to merge simple changes automatically and for trickier ones we allow the user to merge or select changes with a UI, a bit like git. 
+  - We try to keep our objects small and granular enough that this very rarely occurs. 
+  - **For a lot of apps last write wins (e.g compare and always take the lastest timestamp) is enough** and probably the most common solution you’ll see but you have to be OK with a certain amount of data loss. 
+  - Newer, fancier CRDT based merging solutions are on the horizon, like Automerge for example but I feel they’re a little way off mainstream adoption.
+
+- Get all entities whose `updated_at` is larger than the max `updated_at` in your local database.
+  - Then what if the schema changed? Columns renamed, dropped or new columns added that is non-nullable, or new foreign keys with non-null constraints?
+- I am considering to add a version field to my documents so that I can **migrate the document to the most recent version before persisting in to the server's database**. When sending documents to the client you may have to force it to update to the latest application version though.
+  - True. For simple apps with not much logic, you can get away with different front-ends/offline-syncs adding their own rows, and then only respecting the latest row in the main db, usually based on timestamp. But if you have something more complex where multiple workflows get triggered as side effects, then you may run into trouble when the latest row is in fact not the truth of the reality that we wanted, so there is still some risk ending up with states or workflows based on a false reality. This can become a nightmare if you a have few scheduled events/tasks/crons that does things periodically, thus the only way to mitigate that is to fully embrace eventual consistency and idempotency, and the "easiest" way to get there is to embrace the actor model paradigm
+  - Point being, comparing two versions of applications against each other is not enough - you may need to version your data too and use timestamps to make a final decision on which version is truth. You may also need to set or build a tolerance system to say it will only sync "old" data if within x amount of days, lets say less than 7 days old. And so on.
+- Earlier this year I experimented with combining CRDTs using the incredible yjs with PouchDB. It worked really well, completely magic syncing with full automatic handling of sync conflicts! 
+  - [(Alpha) PouchDB integration for Yjs](https://gist.github.com/samwillis/1465da23194d1ad480a5548458864077)
+- I think my main problem with PouchDB and by extension CouchDB was that it seemed **hard to add validation in the backend** (including authentication/authorization). I remember having to build some kind of proxy that hooks into the CouchDB protocol to deny certain requests. I am pretty sure that's solved by now 
+  - That was a problem I always had with replicating directly to CouchDB. They have added more authentication methods now, like proxy auth and JWT, so authorizing on a per-database basis isn't too bad.
+  - However, I gave up on CouchDB after my server kept getting hacked by crypto miners. I'm sure whatever exploit they were using has been patched, but I'm hesitant now to use a DB that's open to the world.
+- I think the most common CRDT libraries try hard to reduce the overhead of CRDTs. I am not expert but I could imagine that you could also remove some of the historical data if you know that all clients are reasonably up to date and if they aren't they have to discard their changes that are too old.
+
 - I still haven't found the "holy grail architecture" for offline-first with backend sync where the backend isn't just a simple data store but also has business logic and interacts with external systems.
+  - Doing offline-first well implies that the app has a (sqlite or similar) local database, does work on that database and periodically syncs the changes to the backend. 
+  - This means you have N+1 databases to keep in sync (with N=number of clients).
   - When the backend isn't very smart it's not too hard, you can just encapsulate any state-changing action into an event, when offline process the events locally + cache the chain of events, when online send the chain to the backend and have the backend apply the events one by one. Periodically sync new events from the backend and apply them locally to stay in sync. This is what classic Todo apps like OmniFocus do.
   - The problems start when the backend is smarter and also applies business logic that generates new events (for example enriching new entities with data from external systems, or adding new tasks to a timeline etc). 
-  - When trying to make the offline experience as feature-rich as possible I always end up duplicating almost all of the backend logic into the clients as well. And in that case, what is even the point of having a smart backend.
-- Seems like you're describing event sourcing. I'm building an offline-first app and doing pretty much what you're describing.
+  - When trying to make the offline experience as feature-rich as possible, I always end up duplicating almost all of the backend logic into the clients as well. And in that case, what is even the point of having a smart backend.
+- 👉🏻 Seems like you're describing event sourcing. I'm building an offline-first app and doing pretty much what you're describing.
   - Yes it looks like event sourcing. But most of the classic event sourcing implementations I've seen are mostly backend only.
   - The project I'm currently hacking on has an MQTT broker that is used by both clients and backend and the events can come from anywhere.
   - Enabling all this in an offline-first paradigm is hard and requires a lot of duplication, I am very close to just saying screw this and requiring network connectivity for most of the features.
+
+- Check out WatermelonDB 
+- pouchdb is mostly unmaintained and issues are just closed by the state bot instead of being fixed.
+  - So in the last major RxDB release, I abstracted the underlaying pouchdb in a way that it can be swapped out for a different storage engine. 
+  - This means you could in theory use RxDB directly on SQLite or indexeddb. 
+  - In practice of course someone has to first create a working implementation of the RxStorage interface.
 
 - Offline first is a dream to me, I build a big note-taking app (midinote.me) which is 100% offline, 
   - 👉🏻 but now the biggest pain point is the full text search, yes, we can use DB like this and PouchDB to store data, 
@@ -264,13 +298,9 @@ modified: 2023-09-13T20:24:41.516Z
 - pouchdb-quick-search didn't work for you?
   - Yes, I used it, generally, on JS platform, the performance is not so good to do FTS, especially when document is long and the data getting huge.
 
-- Using CouchDB with PouchDB.js provides a "Live Sync" option that syncs data both ways and that feature works very well with the apps I've made which do not have 1000s of users accessing the same DB. In my case there are probably not more than a dozen users accessing the same DB. 
-  - And in my case there is not much chance more than one user is modifying a document at any given time. 
-  - Also, in my case, there is no "backend logic" being processed. That's all done in the user's web browser.
-
-- 
-- 
-- 
+- Meteor uses `minimongo` on the client which sync's with the server; effectively doing the same thing. It's actually amazing how much better the UX is when you have spotty coverage.
+- I think Oracle APEX works on the same premise? Store locally in indexedDB and sync up when the connection is back on-line. No need for difficult programming, APEX does this out of the box .
+  - Anyhow, a way to force this behaviour in APEX is to make every user interaction a write action on the DB. This way you either save locally or to the backend (but you don't have to worry about the sync between the two).
 
 - ## How many records can you sort/filter/paginate in a web browser?
 - https://twitter.com/jamespearce/status/1605273072851886090

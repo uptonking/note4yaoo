@@ -12,7 +12,8 @@ modified: 2023-10-07T17:29:16.871Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Show HN: ElectricSQL, Postgres to SQLite active-active sync for local-first apps | Hacker News](https://news.ycombinator.com/item?id=37584049)
+- Hey, I work at Electric, The CouchDB/PouchDB pattern is how I originally got interested in local first, they are such a good tool, but having the full power of Postgres and then SQLite on the client, I believe, is a real game change.
 
 - ## 🚀 [Realm Mobile Platform – Realtime Sync Plus Fully Open Source Database | Hacker News_201609](https://news.ycombinator.com/item?id=12589426)
 - So this is like alternative to Firebase? How different is their offering?

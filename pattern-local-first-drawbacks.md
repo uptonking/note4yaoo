@@ -9,7 +9,7 @@ modified: 2023-09-13T20:24:49.401Z
 
 # guide
 
-# [rxdb: Downsides of Offline First](https://rxdb.info/downsides-of-offline-first.html)
+# 📝 [rxdb: Downsides of Offline First](https://rxdb.info/downsides-of-offline-first.html)
 - [Downsides of Offline First](https://github.com/pubkey/rxdb/blob/master/docs-src/downsides-of-offline-first.md)
 
 ## It only works with small datasets
@@ -86,22 +86,24 @@ modified: 2023-09-13T20:24:49.401Z
   - To implement a robust replication protocol for relational data, you need some stuff like a reliable atomic clock and you have to block queries over multiple tables while a transaction replicated.
 - So creating replication for an SQL offline first database is way more work than just adding some network protocols on top of PostgreSQL. 
   - It might not even be possible for clients that have no reliable clock.
-# hackernews: Downsides of Offline First__202110
-- https://news.ycombinator.com/item?id=28717848
-  - https://news.ycombinator.com/from?site=rxdb.info
-  - [rxdb: Downsides of Offline First](https://rxdb.info/downsides-of-offline-first.html)
+# 👥 [Downsides of Offline First | Hacker News__202110](https://news.ycombinator.com/item?id=28717848)
 - I’m a “true believer” in CRDTs, which I have some experience in. 
-  - You can implement a useful CRDT for simple applications in under 100 lines if all you care about are standard database objects - like maps, sets and values. 
-  - List CRDTs are where they get complicated, but most applications aren’t collaborative text editors.
+  - You can implement a useful CRDT for simple applications in under 100 lines if all you care about are standard database objects - like maps, sets and values. **List CRDTs are where they get complicated, but most applications aren’t collaborative text editors**.
   - The promise of CRDTs is that unlike most conflict resolution systems, you can layer over a crdt library and basically ignore all the implantation details. 
   - Applications should (can) mostly ignore how a CRDT works when building up the stack.
-- The biggest roadblock to their use is that they’re poorly understood. Well, that and implementation maturity. 
+  - 👉🏻 The biggest roadblock to their use is that they’re poorly understood. Well, that and implementation maturity. 
   - Automerge-rs merged a PR the other day which brought a 5 minute benchmark run down to 2 seconds. But by bit we’re getting there.
-
-- My biggest open question is how to design my centralized server side storage system for CRDT data. 
-  - To service writes from old clients I need to retain a total history of a document, but I don’t want to force new clients to download the entire history nor do I want these big histories in my cache, so I end up wanting a hot/cold system; 
-  - and building that kind of thing and dealing with the edge cases seems like more than 100 lines of code.
-- It seems like the Yjs authors also recognize that CRDT storage on the server is an area to address, there was some work on a custom database in 2018, although my thinking is more about how to retrofit(改进，翻新) text CRDTs into my existing very conservative production cloud software stack than about writing to block storage.
-
+- I agree with your assessments here - CRDT is the way forward for most applications; no user wants to fiddle with a merge UI or picking versions like with iCloud. I think RxDB’s position here is from their CouchDB lineage.
+  - My biggest open question is how to design my centralized server side storage system for CRDT data. To service writes from old clients I need to retain a total history of a document, but I don’t want to force new clients to download the entire history nor do I want these big histories in my cache, so I end up wanting a hot/cold system; and building that kind of thing and dealing with the edge cases seems like more than 100 lines of code.
+  - It seems like the Yjs authors also recognize that CRDT storage on the server is an area to address, there was some work on a custom database in 2018, although my thinking is more about how to retrofit(改装，对…翻新改进) text CRDTs into my existing very conservative(保守的) production cloud software stack than about writing to block storage.
 - For prose text, what do you think about combining a document-scale CRDT, with fine-grained locking — e.g. splitting the document into a "list of lines/sentences", where lines have identity, and then only allowing one person to be modifying a given line at a time?
   - I almost thought Notion would be a good example of this, but apparently not — they actually do allow multiple users to be editing the same leaf-node content block at the same time, and so have taken on the full scope of the CRDT problem.
+
+- I was also a "true believer" in CRDTs for a long time, implementing my first ones in Erlang about 9 years ago, but my opinion of where they fit has changed significantly.
+  - The one issue with CRDT that I find is rarely mentioned and often ignored is the case where you've deployed these data structures that include merge logic to a set of participating nodes that you can't necessarily update at will. Think phones that people don't update
+  - When you include merge logic – really any code or rules that dictate what happens when the the data of 2 or more CRDTs are merged – and you have bugs in this code running on devices you can never update, this can be a huge mess
+
+- In an true offline-first approach with CouchDB/PouchDB, the client-side database can be considered to be main data store and the Server-Side DB could just be a backup. Or it might not be needed at all/ might only be used to migrate from one device to another.
+
+- In practice I believe last write wins or compare last two writes is sufficient. Any thoughts on this in practice?
+  - Last write wins is a simple CRDT merge type. It’s just that their are others depending on the data type. LWW might be good for an avatar photo, but not great for a counter.

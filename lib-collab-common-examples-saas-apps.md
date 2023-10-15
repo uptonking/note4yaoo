@@ -238,10 +238,6 @@ modified: 2023-01-17T19:14:47.611Z
   - Capable of providing realtime updates.
   - Works in the Browser and Nodejs seamlessly.
 
-- https://github.com/holochain/holochain /202212/rust
-  - Holochain is an open-source framework to develop peer-to-peer applications with high levels of security, reliability, and performance.
-  - simplified version of Holochain on Rust (sometimes called Holochain RSM for Refactored State Model)
-
 - https://github.com/gundb/panic-server
   - Panic is an end-to-end testing framework, designed specifically for distributed systems and collaborative apps.
   - At gunDB, we're building a real-time, distributed JS database.

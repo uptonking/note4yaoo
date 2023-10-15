@@ -169,8 +169,21 @@ modified: 2022-11-07T10:25:12.034Z
 - 下载资源
   - [BT天堂 - 最新高清电影720P|1080P免费下载](https://www.bt-tt.com/)
 
-- youtube
+- youtube-download
+  - https://save.tube/
+    - 支持video、audio
   - https://x2mate.com/
+    - 下载速度快
+  - https://yt1s.ltd/
+  - https://downloaderto.com/
+  - https://entiretools.com/youtube-downloader
+
+- youtube-playlist-download
+  - https://github.com/shaked6540/YoutubePlaylistDownloader
+    - windows only
+  - https://y2down.cc/en/youtube-playlist.html
+  - https://playlist.downloader.is/
+  - https://ytshorts.savetube.me/youtube-playlist-downloader-1
 # gfw-proxy
 - [googlehosts 作者放弃维护了吗？几个月没更新了](https://github.com/googlehosts/hosts/issues/503)
   - 新发现了个正在活跃维护的

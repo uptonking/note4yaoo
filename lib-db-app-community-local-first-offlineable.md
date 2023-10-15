@@ -109,7 +109,7 @@ modified: 2023-09-22T20:15:10.616Z
 
 - Last write wins is not a strategy for conflict resolution, it's a surrender. So I'm glad to hear something else apart from Pouch actually handles it. Anyone familiar with rxdb and can chime in on how they do it?
 - It sounds like rxdb is built on top of pouch, so probably the same set of options with the possibility of some opinionated design or sensible defaults though I can't find anything. obvious.
-  - Yes RxDB conflict resolution is equal to PouchDBs. At least for now, there are plans to improve from there where you have a global resoluting function instead of listening for conflicts in the changestream.
+  - Yes **RxDB conflict resolution is equal to PouchDBs**. At least for now, there are plans to improve from there where you have a global resoluting function instead of listening for conflicts in the changestream.
 
 - What kind of consistency models do Offline-first databases like RxDB and PouchDB have?
   - [2.1. Introduction to Replication — Apache CouchDB® 3.3 Documentation](https://docs.couchdb.org/en/stable/replication/intro.html)
@@ -143,7 +143,7 @@ modified: 2023-09-22T20:15:10.616Z
   - Other replications that only support many-clients-to-one-server are way faster. Both, on the initial load and on ongoing changes. This was the main reason why I build GraphQL replication for RxDB.
 - while I've not done benchmark studies with CouchDB I have monitored the logs to watch those syncs and we're not talking painfully "slow" in real world use. It is reliable though. 
 
-- I've used CouchDB and PouchDB on a previous project, and it was a blast. The built-in features like replication and HTTP API are great. My only regret is the limited support (at the time) for full text search and complex queries.
+- I've used CouchDB and PouchDB on a previous project, and it was a blast. The built-in features like replication and HTTP API are great. My only regret is the **limited support (at the time) for full text search and complex queries**.
   - Yeah although the docs claim to support things like regex-based searches, it's so horrendously slow it shouldn't even be listed as a feature.
 
 - 🤔 What is the advantages of using one of these client side databases vs using indexeddb directly?
