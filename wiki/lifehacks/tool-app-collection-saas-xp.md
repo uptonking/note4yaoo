@@ -160,6 +160,20 @@ modified: 2022-11-07T10:25:12.034Z
 - unsplash镜像战
   - https://unsplash.dogedoge.com/
 # video/tv
+- 资源搜索
+  - 可直接查找资源典型名称，参考字幕组的命名规则
+
+- 资源下载
+  - 各个网盘有的已限速，有的即将限速
+
+- 迅雷技巧
+  - 种子或磁力无法下载时，可尝试添加到云盘，然后直接从迅雷云盘下载，大多很快有时也慢
+  - 针对有版权问题的资源，在下载时可重命名任务或文件，但仍可能失败
+  - 新建任务时，可选择下载到 本地 和或 迅雷云盘，若下载到本地的任务失败，可检查下载到云盘的任务是否成功，若成功则可以取消本地任务，直接从云盘下载资源
+  - 磁力转种子
+    - https://magnet-vip.com/
+  
+
 - https://github.com/fanmingming/live
   - 一个国内可直连的直播源分享项目
 
@@ -168,6 +182,9 @@ modified: 2022-11-07T10:25:12.034Z
 
 - 下载资源
   - [BT天堂 - 最新高清电影720P|1080P免费下载](https://www.bt-tt.com/)
+  - https://www.domp4.net/
+  - 磁力猫 https://clm8.in/
+  - 人人电影网 https://www.rrdynb.com/movie/2022/1210/31616.html
 
 - youtube-download
   - https://save.tube/
