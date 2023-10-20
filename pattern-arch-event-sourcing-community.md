@@ -12,7 +12,21 @@ modified: 2023-09-13T14:28:01.426Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 💡 This confluence of things is going to unlock some stellar new infrastructure.
+- https://twitter.com/tantaman/status/1715046327892025526
+  - Event sourcing
+  - CRDTs & Causal Graphs
+  - Incremental View Maintenance
+  1. Event source your entire app.
+  2. Incrementally maintain app state as a view of events.
+  3. Rebase events for multiplayer.
+- I'm experimenting with this stuff - I believe that massively scalable multi-master even stores could be implemented with an append only log and some kind of index of event ID -> index-in-log. The index could just be resident in memory too.
+
+- 🤔 Any thoughts on compressing the log? People have made a ton of progress in terms of compacting sequence crdt event logs. Not sure about generic event logs.
+  - I do feel as if history pruning would go against event sourcing though. Compaction makes a lot of sense - probably for events that have gone offline? (IE not accepting any more writes for last years events... following businesss rules).
+- Abtimatter is interesting since it finds history that doesn’t matter and can be dropped even if peers never saw it and things still converge to the same state without those events.
+- Ideas for log pruning exists almost from the very beginning. The problem is always the same - you need to be able to restrict the set of writers or deny concurrent updates.
+- No I just naiively assume storage will keep getting better and it's fine
 
 - ## [Local-first software: You own your data, in spite of the cloud | Hacker News_201905](https://news.ycombinator.com/item?id=19804478)
 - I think OT systems are way simpler to reason about, because they’re just an extension of event sourcing. Also CRDTs type implementations have been trailing OT algorithms in terms of features forever. OT got JSON editing support first, and JSON1 also supports arbitrary tree reparenting, which as far as I know is missing from all CRDT algorithms. That’s needed to implement apps like workflowy, where you can drag trees around.

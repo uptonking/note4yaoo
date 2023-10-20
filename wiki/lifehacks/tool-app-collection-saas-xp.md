@@ -161,6 +161,7 @@ modified: 2022-11-07T10:25:12.034Z
   - https://unsplash.dogedoge.com/
 # video/tv
 - 资源搜索
+  - 搜索资源前先确定资源准确或替代品，豆瓣 doulist 名著 电影
   - 可直接查找资源典型名称，参考字幕组的命名规则
 
 - 资源下载
@@ -184,7 +185,26 @@ modified: 2022-11-07T10:25:12.034Z
   - [BT天堂 - 最新高清电影720P|1080P免费下载](https://www.bt-tt.com/)
   - https://www.domp4.net/
   - 磁力猫 https://clm8.in/
+  - 电影天堂 https://dytt89.com/
   - 人人电影网 https://www.rrdynb.com/movie/2022/1210/31616.html
+  - domp4.com
+  - bt世界 btsj5.com
+  - www.bdys.me
+  - 66影视 https://www.66yingshi.com/
+  - 电影镇 https://dy.town/
+  - sites-blacklist
+    - uump4悠悠 蓝光特效字幕系列 画质偏红
+    - 不喜欢黄色字幕样式且不可隐藏
+  
+- 历史/文学/小说/名著
+  - 阿里云盘
+    - https://www.aliyundrive.com/s/ihS2xuUjrEq/folder/6219e157b4212ec85ef94bb7b597f11efd57a227
+    - https://www.aliyundrive.com/s/WAsmRweh9QP/folder/629f5a635a2062e682d94f6fb5473c2fe62fdba2
+  - 资源参考
+    - [中国小说改编的电影](https://www.douban.com/doulist/42582881/)
+
+- 网盘
+  - yunpan1域名更换频繁, https://yunpan1.cc/
 
 - youtube-download
   - https://save.tube/

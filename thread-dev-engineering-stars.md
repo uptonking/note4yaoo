@@ -11,7 +11,20 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
+- ## I told you barrel(桶) files were evil
+- https://twitter.com/_developit/status/1712906859877629983
+  - Barrel files are files that only export other files and contain no code themselves. 
+
+- We are using index.ts only to export things, no other code than export is in there. It allows us to treat any folder like its a single module, if there is an index, we don't import directly. This gives us "private modules" and prevents stuffing everything into a single file.
+- This i  s what a barrel file is... and they are to be avoided. @marvinhagemeist wrote about it sufficiently, I'm not going to bother repeating or quoting.
+- that is a barrel file, and they are a very bad idea.
+  - AOT bundling can apply tree-shaking to index.ts, but it doesn't work like folks think it does.
+- Maybe opting in to the non-safe mode of dropping all unused imports might be a good compromise. It just means we have to explicitly add `import "specifier"` in addition to `import {x} from "specifier"` when importing for side effects, which seems like a good idea anyways.
+  - is it a good idea? why not just write code in a way that expresses intent?
+
+- ### [Speeding up the JavaScript ecosystem - The barrel file debacle](https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-7/)
+  - In such a setup a module very likely imports another barrel file which pulls in a bunch of other files
+  - Get rid of all barrel files.
 
 - ## You don’t like something? Fix it, instead of complaining.
 - https://twitter.com/catalinmpit/status/1693165227183837429
@@ -19,6 +32,22 @@ modified: 2021-08-10T03:51:01.891Z
 
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## I'm a big fan of "build it yourself" because it gives you control over your own destiny.
+- https://twitter.com/ccorcos/status/1714035814735487462
+  - If there’s a bug or limitation in some third party framework you’re using, you’re stuck! 
+  - But if you build it yourself, then the only thing holding you back is your own talent.
+
+- And time
+  - everything takes time though, even using a framework... 
+  - People seem to underestimate how much time they spend learning a framework and then chasing down bugs and designing workarounds to get it to do what they need.
+- I’d much rather use Quill than write a rich-text editor for web! You can always reach into the internals of a third party library and fork it
+- Try building something like the Notion editor with Quill and you’ll rage-quit pretty fast
+  - I’ve tried both ways. I’d rather just not build that. 
 
 - ## 想问问大家，真的觉得这样好看吗？我宁愿多写几个 if else + for loop
 - https://twitter.com/junairez/status/1710167177054355864

@@ -515,7 +515,9 @@ modified: 2023-08-25T21:17:11.979Z
 # discuss-branching/versioning
 - ## 
 
-- ## 
+- ## I'm presenting some early ideas about CRDTs & branch-and-merge documents.
+- https://twitter.com/MatthewWeidner3/status/1715023602976764299
+  - [Proposal: Versioned Collaborative Documents (PLF 2023 - Programming Local-first Software) - SPLASH 2023](https://2023.splashcon.org/details/plf-2023-papers/4/Proposal-Versioned-Collaborative-Documents)
 
 - ## [Version Control for Structure Editing | Hacker News_202110](https://news.ycombinator.com/item?id=28922140)
 - Just a reminder that git stores files, not diffs, and you can replace the merging strategy (e.g. how it handles multiple heads), merge driver (e.g. word vs. line based merging), and interactive diffing tool with anything you want. In this sense git is purely concerned with version control (what instance do I have of this data and what is its provenance in regards to other instances), and doesn't really give a crap how those files got there.

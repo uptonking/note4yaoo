@@ -16,7 +16,11 @@ Symbol('a') === Symbol('a'); //false
 # discuss
 - ## 
 
-- ## 
+- ## Problem: If a function accepts multiple parameters of the same type, we may accidentally pass arguments in the wrong order. Types can’t protect us. 
+- https://twitter.com/housecor/status/1715052861417980207
+  - Solution: Accept an object instead.
+- I do this when I have more than 3+ params.
+- I agree with you, but only on non-performance centric stuff (so, frontend) When you pass an object you need to allocate that space in memory just to destructure that on the other side.
 
 - ## TIL that this is correct syntax and that `finally` runs after the `return` of the function
 - https://twitter.com/alexdotjs/status/1704472735219339585

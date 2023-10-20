@@ -9,6 +9,21 @@ modified: 2023-02-08T06:56:54.945Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## Is there appetite for learning about the AI architecture we built for @getwebstudio ?
+- https://twitter.com/oleg008/status/1715013865644101992
+- What we solved so far:
+  1. Multi-model interface
+  2. Serialization/deserialization of messages (jsx/Tailwind)
+  3. Streaming
+  4. Chaining
+  5. Operations
+  6. Structured data
+- 
+- 
+
 # discuss
 - ## 
 

@@ -12,6 +12,12 @@ modified: 2022-10-13T08:00:21.260Z
 - ref
   - [CRDT Tutorial for Beginners](https://github.com/ljwagerfield/crdt)
   - [arXiv: collaborative editing](https://arxiv.org/search/?query=collaborative+editing&searchtype=all&source=header)
+# [CRDT Survey, Part 1: Introduction - Matthew Weidner](https://mattweidner.com/2023/09/26/crdt-survey-1.html)
+- the beginning of a survey of CRDT techniques and how to apply them to collaborative apps.
+  - This post gives a gentle definition of op-based and state-based CRDTs and outlines my goals for the survey.
+  - Part 2 of my CRDT survey blog series is out! This post covers "semantic techniques": deciding what a collaborative should do for users, independent of implementation details like op-based vs state-based.
+
+
 # 🪟 [Conflict-free Replicated Spread Sheets](https://www.bartoszsypytkowski.com/crdt-tables/)
 
 # 📝 [An Interactive Intro to CRDTs | jakelazaroff.com_202310](https://jakelazaroff.com/words/an-interactive-intro-to-crdts/)

@@ -19,6 +19,22 @@ modified: 2022-04-05T10:09:51.343Z
 
 - ## 
 
+- ## 💡 This confluence of things is going to unlock some stellar new infrastructure.
+- https://twitter.com/tantaman/status/1715046327892025526
+  - Event sourcing
+  - CRDTs & Causal Graphs
+  - Incremental View Maintenance
+  1. Event source your entire app.
+  2. Incrementally maintain app state as a view of events.
+  3. Rebase events for multiplayer.
+- I'm experimenting with this stuff - I believe that massively scalable multi-master even stores could be implemented with an append only log and some kind of index of event ID -> index-in-log. The index could just be resident in memory too.
+
+- 🤔 Any thoughts on compressing the log? People have made a ton of progress in terms of compacting sequence crdt event logs. Not sure about generic event logs.
+  - I do feel as if history pruning would go against event sourcing though. Compaction makes a lot of sense - probably for events that have gone offline? (IE not accepting any more writes for last years events... following businesss rules).
+- Abtimatter is interesting since it finds history that doesn’t matter and can be dropped even if peers never saw it and things still converge to the same state without those events.
+- Ideas for log pruning exists almost from the very beginning. The problem is always the same - you need to be able to restrict the set of writers or deny concurrent updates.
+- No I just naiively assume storage will keep getting better and it's fine
+
 - ## 🌰 [Show HN: fuzzynote - CRDTs+WASM for local-first, collaborative note-taking in the browser | Hacker News_202204](https://news.ycombinator.com/item?id=30904405)
 - A little while ago I shared the terminal based version of the project (https://github.com/Sambigeara/fuzzynote /golang) with the community. I since got inspired, and disappeared into my loft for 9 months to work on leveraging the core logic for use in a WASM-based web client. So you can now sync your notes between your terminal and any reasonable modern browser (some early limitations in mobile)!
 
@@ -66,12 +82,40 @@ modified: 2022-04-05T10:09:51.343Z
 - You're right that in order to ensure that you won't receive timestamps lower than some threshold, you need to know all the nodes in the system, and you need to hear from all of them (if even just one node is unreachable, that will be enough to hold up the process). That's quite a big assumption to make, but unfortunately there doesn't really seem to be a good way around it. Lots of CRDT algorithms have this problem of requiring causal stability for garbage collection.
   - Using a consensus protocol is possible, and would have the advantage that it only requires communication with a quorum (typically a majority of nodes), rather than all nodes. However, it has the downside that now a node cannot generate timestamps independently any more — generating a timestamp would then also require a round trip to a quorum, making the algorithm a lot more expensive.
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## I'm presenting some early ideas about CRDTs & branch-and-merge documents.
+- https://twitter.com/MatthewWeidner3/status/1715023602976764299
+  - [Proposal: Versioned Collaborative Documents (PLF 2023 - Programming Local-first Software) - SPLASH 2023](https://2023.splashcon.org/details/plf-2023-papers/4/Proposal-Versioned-Collaborative-Documents)
+
 # discuss
 - ## 
 
-- ## 
+- ## ✨ Announcing Reflect ✨ – A new way to build multiplayer apps like Figma or Notion._202310
+- https://twitter.com/aboodman/status/1714682920495919520
+  - Rather than CRDTs, Reflect syncs the way video games do.
+  - Reflect isn't open source. We're considering that, but in the meantime a source license and on-prem is available.
+  - [Ready Player Two – Bringing Game-Style State Synchronization to the Web](https://rocicorp.dev/blog/ready-player-two)
+- Super interesting! One drawback I see is that syncing stops working when the server is down. The extra authority on the server makes all clients dependent. I understood CRDTs enabled p2p syncing, which allows collaboration on a local network.
+  - Yes, that's true. Although this approach can continue to work *locally* offline and resync when server comes back, it can't sync just within the local network. That's a tradeoff that matters in some cases, but we find that it is a relatively rare need.
+- Looks cool! Is this a framework I can run myself for free on my own infra?
+  - No, it's a managed service. We do have an on-prem option and a generous free tier.
 
-- ## 
+- Looks amazing! Client-side prediction technique along with the linearization of transactions by arrival time on the server is exactly how the sync engine of Pitch works.
+  - We also greatly benefited from the immutable data structures that you get for free in Clojure(Script) to rollback to the canonical snapshot in a performant way. I think you briefly mentioned on HN that you're  using persistent data structures under the hood as well which is cool
+
+- You picked one CRDT that Yjs didn't implement ; ) But don't worry, here's the implementation that's relatively perf-wise and doesn't loose updates
+  - Well it depends on how many clients you have right? Each unique instance of Y. Doc is a client ID. That can really add up over time. And I think this suffers the same problem that it's not really an intuitive solution to a counter.
+
+- ## I'm basically only interested in 3 CRDTs - g-sets, multi-value registers, and OR-maps whose values are multi-value registers. 
+- https://twitter.com/LewisCTech/status/1715268425629716784
+  - These are the core constructs for database syncing insofar(到这种程度) as I see it - the rest have applications in collaborative software.
+  - To be clear - obviously syncing complicated stuff like relational databases needs a lot more sophistication. 
+  - But the above 3 can be applied to someones existing NoSQL data solution in industry a lot more easily.
+- But I want to apply CRDTs to playlist synchronization. I need support for arrays where the user defines the position of the items.
 
 - ## 💡 You can move CRDT data over whatever data layer you have on hand, and insert them into whatever data stores you want. 
 - https://news.ycombinator.com/item?id=30984776

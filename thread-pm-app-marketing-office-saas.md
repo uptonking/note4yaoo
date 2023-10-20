@@ -9,6 +9,18 @@ modified: 2023-10-10T14:20:13.855Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## Immutable software means people *can* create workflows, can learn, become experts, and optimize their experiences through automation. 
+- https://twitter.com/andrestaltz/status/1433782109458649102
+  - Software should become a foundational building block for productivity habits, not a "service" that changes every year. 
+  - SaaS has poisoned software.
+- There is now a real opportunity for the "please don't change this software anymore" monetization model, simply because the pursuit of endless ROI drives business to force bloat onto the same piece of software. This has to stop, but under capitalism, it cannot stop.
+  - This is the reason why FOSS alternatives are rightfully filling the gap, because SaaS is making software become worse over time.
+
 # discuss
 - ## 
 

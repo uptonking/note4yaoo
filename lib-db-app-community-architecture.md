@@ -14,7 +14,14 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
-- ## 
+- ## I think I want to change the way I write code from ‘projects’ to a library of code that is tagged in a database and queryable. 
+- https://twitter.com/JungleSilicon/status/1713939838624501941
+  - The queries could compose software dynamically or even be used as part of static site generation.
+- Are there many examples of similar efforts? It would work really well with sync & user defined behaviours.
+  - Check out @ValDotTown and @observablehq . Both store code in a database and let you import between the database entries. Observable has real-time sync, http://val.town does not.
+  - That's very similar to what @ValDotTown is doing, a database of code snippets.
+
+- Some former teammates of mine used https://glean.software to query code at the level of language constructs. IIRC you can extend it to include additional information in the code index.
 
 - ## [General-purpose databases that never delete or update data in-place - Stack Overflow](https://stackoverflow.com/questions/13508035/general-purpose-databases-that-never-delete-or-update-data-in-place)
 - I'm very much inspired by the approach to data management advocated by Rich Hickey, and implemented in Datomic, where the data is never mutated in-place, all the versions are always preserved and query-able, and the time is a first-class concept.
