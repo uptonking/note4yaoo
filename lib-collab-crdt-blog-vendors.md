@@ -31,6 +31,10 @@ modified: 2023-05-30T15:50:39.683Z
   - Ditto uses a `UInt128` to represent the `Site_ID` and `64bit` timestamp for the `HLC`. But for educational purposes, this documentation will often use strings and numbers for readability.
 - In Ditto's distributed system, the HLC is a `64-bit` timestamp comprised of `48 bits` of a physical timestamp and `16 bits` of a monotonically increasing logical clock.
 
+## [Using Ditto as a Local Database](https://ditto.live/blog/local-database)
+
+- you can use Ditto in your apps as a regular document database
+
 ## [jupyterlab-rtc: We can class the RTC Algorithms into 3 main categories crdt/ot/diff](https://jupyterlab-rtc.readthedocs.io/en/latest/about-rtc/algorithms.html)
 
 - We can class the RTC Algorithms into 3 main categories:
@@ -41,3 +45,4 @@ modified: 2023-05-30T15:50:39.683Z
 ## [zed: How CRDTs make multiplayer text editing part of Zed's DNA_2022212](https://zed.dev/blog/crdts)
 
 # more
+- [Collaborative and Offline Editing Using CRDTs • Decipad's Blog_202309](https://www.decipad.com/blog/decipads-innovative-method-collaborative-and-offline-editing-using-crdts)

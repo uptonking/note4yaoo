@@ -58,6 +58,7 @@ modified: 2022-08-18T16:57:15.296Z
   - 服务端数据同步代码未找到
   - [Option to add custom server url in notesnook apps_20221010](https://github.com/streetwriters/notesnook/issues/1162)
     - We are planning to open source sync server early next month.
+  - [A fully open-source and end-to-end encrypted note taking alternative to Evernote | Hacker News_202209](https://news.ycombinator.com/item?id=32708019)
 
 - bear-plus /5Star/ISC/202008/js/ejs
   - https://github.com/yk9331/bear-plus

@@ -157,6 +157,12 @@ modified: 2023-04-21T11:42:46.575Z
   - By "reactive" I mean... if the data changes, the UI does (or at least, an event is fired, and then you can drive a React render, for example, from that). In contrast, you expect to have to poll an RDBMS for updates.
   - With "data store", rather than "database", I'll admit I am hedging my bets. Through one lens, this library can look more like an app-level store in a classic React sort of way. Through another (most notably the table/row/cell structure), it looks like an RDBMS. I'm not ready to go all-in and declare it's a database yet. Such nomenclature comes with Assumptions™.
 
+- I was whining(抱怨, 嘀咕; 发牢骚) in the surrealdb thread for new advances in this space over couch/pouch (which we have been using for over a decade). Would be great to see comparisons, especially in areas where couch/pouch are bad and new solutions are better. 
+  - We have not moved anywhere yet because couch/pouch, when you are used to it development wise, is automatic. You do nothing and it works. 
+  - Other solutions we tried require way too much domain knowledge (which we have but don't want to think about when doing things we think should just automatically work, like synching; like replicache which is just too much work for us on our existing datasets) or are very hacky, as in, lose data and require you to write code to fix that.
+- Interesting to hear that Couch/Pouch “just work”. I’ve been looking at using them and I find there’s a lot to wrap your head around. In particular for apps where different users should see different sets of shared records.
+  - Yes, that’s correct, but we have been used to thinking that way for a decade. I don’t remember how painful it was in the first place, but once you think in that way, things fall in place.
+
 - From what I can see in 2 mins of reading, it looks like it's more relational which should be a plus, 
   - but then on the downside there's much less of a story on the sync side, with remote persistence ending at offering you interfaces to persist your data but not an actual data store that works. By comparison, PouchDB connected to a server side CouchDB makes an amazing combo.
 - I didn't have much trouble binding PouchDB into a Vue reactive data store so the reactive part didn't seem as novel to me. What does seem novel is supporting a proper relational schema for this, whereas all the other options I know in this space are schemaless / key-value type approaches.
@@ -167,8 +173,13 @@ modified: 2023-04-21T11:42:46.575Z
 
 - I’m my limited experience, a reliable CRDT implementation necessitates a CRDT-first design baked into the core of any data / transaction model. Like I’ve heard some game developers say- multiplayer needs to come first because tacking it onto a single player game is a nightmare.
 
-- I really aspire to some sort of CRDT implementation that can be considered a bit more state-of-the-art 
-  - I think that CRDT and OTs are a bit overkill for TinyBase. Most apps are not text editors or figma. Most apps are just forms. The general solution for forms is to track which fields on a record have been modified by the user. The user’s change is the source truth and never gets overwritten by the network. Other fields are free to be updated collaboratively from the network. Once the user has synced that field it is free to be updated by the network. This kind of solution can be built on top of TinyBase without CRDTs.
+- 🤔 What are the gaps relative to something like PouchDB?
+  - Honestly, just my personal confidence currently. There's very basic locking and store-wide read-write. I really aspire(渴望, 有志于) to some sort of CRDT implementation that can be considered a bit more state-of-the-art and tolerant to the innumerable challenges of that problem.
+- I think that CRDT and OTs are a bit overkill for TinyBase. Most apps are not text editors or figma. Most apps are just forms. 
+  - The general solution for forms is to track which fields on a record have been modified by the user. 
+  - The user’s change is the source truth and never gets overwritten by the network. 
+  - Other fields are free to be updated collaboratively from the network. Once the user has synced that field it is free to be updated by the network. 
+  - This kind of solution can be built on top of TinyBase without CRDTs.
 
 - The main limitation I see with tiny base is that it has to load all data in one batch and modifying any record results in the whole data store being persisted to disk. Surely this can’t scale well…
   - The data is in memory, and the persistence strategy is kind of up to you. So it would scale reasonably if you put the sync/persist on a different schedule to the UI - perhaps when the browser is idle.

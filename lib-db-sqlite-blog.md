@@ -101,7 +101,7 @@ modified: 2022-11-18T17:06:54.371Z
   - The memory footprint of the application can be dramatically reduced by only loading content that is relevant to the current display and keeping the bulk of the content on disk.
   - The schema of an SQL database is able to represent information more directly and succinctly than a key/value database such as a ZIP archive. 
 
-## [Consider SQLite](https://blog.wesleyac.com/posts/consider-sqlite)
+## [Consider SQLite_202112](https://blog.wesleyac.com/posts/consider-sqlite)
 
 - There are a few legitimate downsides to using SQLite. 
   - First off, the data type system. It's bad. Luckily, as of a month ago, you can use strict typing instead, which somewhat improves the situation. 
@@ -143,7 +143,7 @@ modified: 2022-11-18T17:06:54.371Z
 - 
 - 
 
-## [3 things that surprised me while running SQLite in production](https://www.joseferben.com/posts/3-things-that-surprised-me-while-running-sqlite-in-production/)
+## 📝 [3 things that surprised me while running SQLite in production_202307](https://www.joseferben.com/posts/3-things-that-surprised-me-while-running-sqlite-in-production/)
 
 - In-memory SQLite is not too exciting
   - At least not in my JavaScript benchmarks where I compared SQLite in-memory and SQLite backed by a file.
@@ -155,14 +155,14 @@ modified: 2022-11-18T17:06:54.371Z
 - SQLite feels surprisingly concurrent
   - SQLite is not truly concurrent. No matter what you do, there can only be a single writer process.
 
-### [Things that surprised me while running SQLite in production | Hacker News](https://news.ycombinator.com/item?id=36579347)
+## 👥 [Things that surprised me while running SQLite in production | Hacker News_202307](https://news.ycombinator.com/item?id=36579347)
 
 - There are massive performance gains to be had by using transactions. 
   - In other RDBMSs transactions are about atomicity/consistency. 
   - But in SQLite, transactions are about batching inserts for awesome speed gains. Use them!
 
 - 👉🏻 SQLite is unlike other RDBMS in that **you typically do NOT want to create a new connection per logical unit of work**, because that means opening an actual file on disk each time. The more you can re-use a SQLite connection instance the better.
-  - SQLite is internally handling the locking for you under most providers[0]. Any sort of external attempts at the same will just make things go slower. The only thing that could really beat the internal SQLite mutex is to put a very high performance MPSC queue in front of your single SQLite connection and take resulting micro batches of logical requests into transactions as noted above, or some more consolidated form of representation.
+  - SQLite is internally handling the locking for you under most providers. Any sort of external attempts at the same will just make things go slower. The only thing that could really beat the internal SQLite mutex is to put a very high performance MPSC queue in front of your single SQLite connection and take resulting micro batches of logical requests into transactions as noted above, or some more consolidated form of representation.
 # more
 - [SQLite的文艺复兴 - 知乎](https://zhuanlan.zhihu.com/p/601510076)
 

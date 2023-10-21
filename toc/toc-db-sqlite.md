@@ -124,6 +124,7 @@ modified: 2021-08-30T18:56:18.632Z
 
 - https://github.com/rqlite/rqlite /go
   - distributed relational database built on SQLite
+  - [Rqlite: The lightweight, distributed relational database built on SQLite | Hacker News_202101](https://news.ycombinator.com/item?id=25871605)
   - https://github.com/rqlite/rqlite-js
     - promise based client library for rqlite
   - https://github.com/dkulchenko/watchdb /go/inactive

@@ -17,7 +17,10 @@ modified: 2023-10-13T16:44:29.825Z
 
 - ## 
 
-- ## 
+- ## 🌰 Just built a mini video generator and shipped it to Vercel in less than 100 minutes!
+- https://twitter.com/JNYBGR/status/1715035990446723101
+  - github日历热力图的动画
+- That’s a simple square div with background. Nothing fancy
 
 - ## No need for `moment` or `date-fns` .
 - https://twitter.com/cpojer/status/1712697130589344192

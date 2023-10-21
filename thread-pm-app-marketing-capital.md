@@ -16,7 +16,12 @@ modified: 2023-10-14T12:11:39.039Z
 
 - ## 
 
-- ## 
+- ## tiptap: Raised $2.6M for our Series Seed. __/202310
+- https://twitter.com/tiptap_editor/status/1714991359201771592
+  - Tiptap is one of the leading open-source dev tools for rich content editors, with over 2 million downloads per month and used by companies like @SubstackInc , @AxiosHQ , and @gitlab .
+  - Over the next few months, we'll be doubling down on our two major features: real-time collaboration and AI for the Tiptap editor. We will also be providing more features and open-source extensions to turn every text box on the web into a smart and collaborative one.
+- Does this mean that you can opensource the Pro plugins?
+  - They are already available for free (but no OSS at the moment)
 
 - ## Atlassian acquires Loom for $975m __/202310
 - https://twitter.com/FrancescoD_Ales/status/1712467243022577927

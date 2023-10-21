@@ -17,6 +17,11 @@ modified: 2023-01-18T17:04:25.234Z
 
 - [remoteStorage Protocol: defines a simple key/value store for apps to save and retrieve data](https://remotestorage.io/protocol/)
 - [remoteStorage Apps](https://remotestorage.io/apps/)
+# blogs
+- [Local-first database: remoteStorage.js | Jared Forsyth.com_202005](https://jaredforsyth.com/posts/local-first-database-remotestorage/)
+  - Conflicts are not automatically handled – they must be dealt with (or not) by the client using bespoke conflict merging code. 
+  - If two clients change the same document, whichever client syncs to the server first wins, and the second one gets an “conflict event” when it tries to sync. A particularly clever client imeplementation could use a `json-crdt` to encode the data, and thereby automatically handle merge conflicts without developer or user intervention 🤔 but I haven’t seen anyone try that yet.
+  - remoteStorage occupies an interesting place in my mind. On the one hand, it’s an 8 year old project that still receives active maintenance, which is a pretty big achievement in and of itself. On the other hand, its simplicity means that it’s lacking a lot of features that people have come to expect from modern web applications. Overall, given that it’s still actively being developed, it could very well gain some of those features and become a strong solution for building modern local-first apps in the future.
 # popular
 - remotestorage.js /2.2kStar/MIT/202211/ts
   - https://github.com/remotestorage/remotestorage.js

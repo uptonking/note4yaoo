@@ -615,6 +615,11 @@ modified: 2023-09-28T20:35:56.153Z
   - https://noteself.org/
   - built on top of TiddlyWiki, a powerful, free, highly customizable and open-source personal wiki.
   - We took the best of it, it's powerful customization system, and mixed it with one of the best embedded databases available, PouchDb, to bring in the synchronization capabilities you need.
+
+- https://github.com/steve-1820/memex /ts/inactive
+  - This a POC on how a memex could potentially work.
+  - [Show HN: Open-Source Memex – Alternative Approach to Roam/Obsidian | Hacker News](https://news.ycombinator.com/item?id=24572449)
+    - This blog is a summary of a fun 1 month adventure I had with Knowledge Management Systems and building a POC
 # more
 - https://github.com/KouchDB/replication-source-poc /202211/java
   - Demonstrates how to stand-up a Java Springboot service as a source for CouchDB replication

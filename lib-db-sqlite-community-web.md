@@ -211,6 +211,8 @@ modified: 2022-11-25T09:47:43.079Z
 - ## [SQLite in the browser with WASM/JS_202210](https://news.ycombinator.com/item?id=33374402)
 - You may have seen “Absurd SQL” which was a proof of concept for building a SQLite Virtual FS backend using IndexedDB. It provided full ACID compliment transactions. Incredible work but a hack at best.
   - The OPFS supersedes all that and makes it possible to have proper consistent and resilient transactions.
+  - WASM SQLite with the OPFS is the future of offline first web app development. The concept of a single codebase web/mobile/desktop app with proper offline storage is here.
+- I previously experimented with combining Yjs (CRDT toolkit) with Pouch/CouchDB to create an eventually consistent db, but decided that CouchDB was the wrong backend.
 
 - ## 👉🏻 A long, tragic history of SQLite, the web, and my career.
 - https://twitter.com/aboodman/status/1633351945464475648

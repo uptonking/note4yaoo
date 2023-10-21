@@ -346,8 +346,10 @@ modified: 2022-04-05T10:08:25.947Z
   - Linear sequence of values based on `ORMap` of base64 fractional index to values
   - timestamp基于逻辑时钟
 # crdt-rewrite
-- https://github.com/josephg/crdt-examples
+- https://github.com/josephg/crdt-examples /js
   - CRDT examples from a DWEB talk
+- https://github.com/genderev/crdt-examples /js
+  - Practical examples of CRDTs that you can reference for your p2p app.
 
 - https://github.com/jlongster/crdt-example-app /201912/js
   - https://crdt.jlongster.com/client/

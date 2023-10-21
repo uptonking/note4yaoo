@@ -30,6 +30,20 @@ modified: 2022-11-27T18:06:10.599Z
   - The type system (even with the newish stricter option) has nothing on Postgres. I realise this is basically a non-goal but I’d seriously love to somehow combine the two and get PG’s typing in a fast, single file embedded DB library.
   - Postgres JSON support is also better/nicer IMO.
 
+- 👉🏻 For me, SQLite's lack of online schema changes seems like perhaps the biggest blocker to actual production. I've never had a production project where the schema didn't change a lot.
+  - I have this beef too. Tooling for dumping and restoring into a new schema are easy/simple/fast. So, these schema migrations can happen w/o issue. Some tricks with the `PRAGMA` directive in SQLite so you can roll out changes (eg: code supports old/new schema while migrating)
+  - I'm just using shell scripts and the SQLite CLI. I dump/restore files to the same FS so I can mv into place when ready. Checkout the PRAGMA `user_version`, I just modify on schema change, so app knows where stuff is.
+- We also used SQLite and leverage PRAGMA `user_version` to do the trick. But **decided to move to PostgreSQL mainly due to the schema migration constraints**. Our experience is SQLite is OK for small to medium projects, but when the business logic/data model becomes more complex, SQLite is not sufficient.
+
+- What is the point of using SQLite under a web service?
+  - SQLite is far faster than Postgres or MySQL, however, the price you pay for this is having a single writer thread, and it's a library incorporated into your process, not a shared DB. It's faster because those other features of a server have a cost as well, particularly the cost of write arbitration.
+  - SQLite is fine when all your load can be served by a single backend process on a single machine. The moment you need multiple backends to handle more load, or the moment you need high availability, you can't do it with SQLite. **SQLite has very limited DDL operations**, so you also can't evolve your schema over time without downtime. Now, for streaming backups - how do you come back from node failure? You're going to incur downtime downloading your DB.
+  - I love SQLite, and use it regularly, just not for production web services.
+- 👉🏻 SQLite has write ahead logging as well
+  - It doesn't let you run an active replica from WAL.
+- your app has full access to the SQLite file. MySQL/PostgreSQL have users and permissions. Security is about layers, and SQLite is removing one layer of security. You can, for example, put DELETEs or access to certain tables on a separate user that your web app has no access to. With SQLite, if your app gets hacked then they can do anything with the whole DB they want to. In addition, with a separate DB process you get audit logs. If someone hacks your SQLite app they may have access for months before you realize it, if you ever do. Especially if they are doing something subtle like UPDATEs on specific tables/fields that may go unnoticed but provide the hacker some benefit. This is why you can't simply rely on the idea of using a backup. That's only going to help if the hacker totally trashes your DB.
+- Take a look at the Consider SQLite post I linked. They address your performance questions too.
+
 - The reason I decided against it is that it doesn’t have proper stored procedures. I use them a lot in PGSQL. They result in far fewer lines of code.
 
 - I switched from Postgres to SQLite for a couple of versions, put mainly because Postgres wasn't "supported" I called SQLite an "internal database thing".

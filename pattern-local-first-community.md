@@ -69,9 +69,47 @@ modified: 2023-09-13T20:24:41.516Z
 # discuss
 - ## 
 
-- ## 
+- ## [Offline-First Apps: Why Should Apps Be Made to Work in an Offline State? | Hacker News_202208](https://news.ycombinator.com/item?id=32544837)
+- My startup built an SDK framework that’s allows companies to build offline apps that can even sync over a multihop mesh network. It’s powered by a CRDT to handle the conflict resolution.
+  - From my experience most of our customers are not mobile developers (they’re JavaScript developers asked by their bosses to build mobile apps) and don’t even want to spend time learning coredata or room for iOS or Android. So most of the time they just stick to what they know, HTTP requests.
+  - Luckily we made our SDK easy to use so that these JavaScript developers can get both the network communication and the offline first caching in one product. They absolutely love it.
+  - Most apps aren’t offline first because it’s so hard to build the infrastructure to pull it off without a lot of bugs. Most apps focus entirely on the UI code layer. If infrastructure and frameworks made this a lot easier to use, I bet offline first would be a lot more popular
+- Ditto is the real deal and the best CRDT database out there atm. 
+  - There are expressive CRDT libraries like Yjs and Automerge but these don’t give you persistence. 
+  - There are mature databases out there that include CRDTs, like Redis and Postgres EDB, but these have very limited semantics. 
+  - Ditto is a proper database with a rich set of CRDTs. It’s well engineered, the team are great and it has a compelling DX / realtime APIs.
+- Ditto is both an embedded + cloud database + a mesh network, it's really 2 startups in 1.
+  - A) If you're looking for just offline-first and data sync, there are some company's that have done this: Realm (MongoDB), Firebase, Firebase
+  - B) If you're looking for just mesh networks: Build it yourself using Bluetooth Low Energy, Local Area Network, P2P Wi-Fi Direct, Apple Wireless Direct
+- Ditto is a combination of both families of problems, it's basically creating 2 startups at the same time (mesh + distributed database)
+- ditto: It’s powered by a CRDT to handle the conflict resolution.
+  - Ditto is a distributed database, each peer has it's own database. The database is organized into collections and each collection is a Ditto Document (this does not work like most NoSQL document databases). 
+  - Each property of the document is it's own CRDT, you as the user can pick which CRDT you'd like to use, our current catalog includes:register/counter/binary/RGA
+- A CRDT is a way to solve multi-leader replication without having the application code resolve conflicts.
+  - To implement this, every application node keeps a vector clock per register (an atomic piece of shared state). 
+- 
+- 
 
-- ## 
+- I’ve tried PouchDB before but only on “toy” projects not deployed production. What challenges have there been with PouchDB or other offline-first techniques?
+  - I like offline first app design, and have built several. However, I don't do it anymore unless there is a very clear use case and direct customer benefit. Some apps just don't work offline at all.
+  - One of the decision trees is you often have some API needs and can't just live within the pouch db database. Particularly account creation and such. It may need to plug into other services and initiate them, you could use a database as a message queue, but it's awkward compared to an API.
+  - The couch/pouch models gets somewhat more complex when you leave the one db per user model. If there are shared data buckets, the database access patterns require a good deal of thought and experience with the couch db auth model. Particularly it's limitations.
+  - Offline access also requires thought around sensitive data. If a user has had their access revoked, an offline first app may preserve it which can rub against security requirements.
+  - Initial sync can be very slow if you're dealing with a lot of data. This can be a poor experience if you make a new user wait minutes to get started. Or you can also build a backend so they can start immediately and then switch to the local copy after replication. I've build this kind of system before.
+  - There are advantages to the route. Minimal data transfer from the server can represent lower load for your services. You can also do an offline only model for data, potentially lowering cloud costs for the number of users you serve - a definite boon for free tiers.
+
+- 
+- 
+
+- ## 缓存与身份问题: Local-first state machine puzzlers:
+- https://twitter.com/jamespearce/status/1715419614530994471
+  - 1) You're anon, create content cached locally, then authenticate. Is it joined to the account?
+  - 2) Log out. Is the content still cached and visible?
+  - 3) Create more content, authenticate as different user. What is joined to the new account?
+- On http://typecell.org I chose to only copy content on sign up. Tried other scenarios as well but imo was getting quite difficult to follow what was happening (without investing more in ux patterns to, for example, give the user the option to choose)
+- Log out, cache cleared. The risk of adding content to a previous account instead of the one you just logged into could have big implications.
+- My best solution so far has been to default all non-logged-in content to an “anon” user, and then provide an api that allow devs to associate some or all current “anon” content to an actual user.
+  - They can write an auto association algorithm that works for them, or provide pop-ups asking the user what they want to do with the data.
 
 - ## [Why SQLite is so great for the edge | Hacker News_202306](https://news.ycombinator.com/item?id=36208568)
 - 

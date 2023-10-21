@@ -99,7 +99,8 @@ $$('[contenteditable]')
   - tuple-database 支持内存和持久化
   - tinybase 支持内存和持久化
 - db-sync/collab
-  - 为db实现crdt: piratedb, evolu, triplitdb
+  - 为db实现crdt的参考: piratedb, evolu, triplitdb, mithic, indexeddb
+    - 不必执着于寻找indexeddb的实现，很多时候只是作为一种持久化的方式
   - pouchdb
   - crsqlite
   - fireproof/ipld

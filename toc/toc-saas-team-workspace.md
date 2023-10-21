@@ -206,6 +206,9 @@ modified: 2023-02-07T17:38:05.336Z
   - https://nullboard.io/preview
   - Nullboard is a minimalist take on a kanban board / a task list manager, designed to be compact, readable and quick in use.
   - All data is stored locally, for now using localStorage.
+  - [Kanban board in one HTML using localstorage | Hacker News_202102](https://news.ycombinator.com/item?id=26151207)
+    - Exclusive use of jQuery, not using browser drag and drop (manually edits element position), using JS to animate and fade/transition instead of CSS, etc. Is localStorage the only modern/HTML5 concept being used?
+    - It was written when I needed a kanban board done to my specs in a minimum amount of time using whatever things I was most comfortable with.
   - https://github.com/justinpchang/nullboard-agent-express /js
     - Local backup agent for Nullboard (MacOS/Linux compat)
 

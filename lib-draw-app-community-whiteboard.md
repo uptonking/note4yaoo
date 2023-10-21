@@ -10,6 +10,18 @@ modified: 2023-09-07T04:17:31.787Z
 # guide
 
 - 画板或批注类产品要参考规范 [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
+# discuss-figma/prototyping
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 看了一下 http://Builder.io 新的博客，介绍了他们的从 Figma 到前端代码是如何实现的。
+- https://twitter.com/iguangzhengli/status/1714976679943368985
+  - 首先将 Figma 设计稿通过专门训练的 Builder AI 模型转化为JSON结构化数据，再通过开源编译器Mitosis 将结构化数据转成 React/Vue 的代码。最后通过一个微调的模型进行优化代码。
+  - [Introducing Visual Copilot: A Better Figma-to-Code Workflow](https://www.builder.io/blog/figma-to-code-visual-copilot)
+
 # discuss-stars
 - ## 
 

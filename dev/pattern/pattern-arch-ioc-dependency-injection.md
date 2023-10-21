@@ -105,3 +105,35 @@ values.push(ctx2.get(num));
 
 expect(values).toEqual([0, 1, 0]);
 ```
+
+# discuss-design-pattern-ioc
+- ## 
+
+- ## 
+
+- ## I couldn't understand Dependency Injection until I discovered this trick.
+- https://twitter.com/RaulJuncoV/status/1715338944185827575
+- The 5 questions I ask myself before creating an object.
+1. Is this object a service or a utility class?
+Service classes contain important business logic.
+Utility classes are stateless and have helper methods.
+If it's a service, use DI to inject it instead.
+
+2. Will I need to swap this implementation for another?
+Using "new" creates tight coupling to a specific class.
+This makes it hard to swap out implementations for testing or extended functionality.
+Use interfaces and inject the dependency to make swapping implementations easier.
+
+3. Does this object have external dependencies?
+If the object has its dependencies, you're also coupling your class to its dependencies.
+It's better to let a DI framework handle the instantiation and resolve all the dependencies.
+
+4. Is the object for carrying data?
+You don't need to inject objects that hold data (DTOs, POCOs, etc.)
+If it's just a data carrier, using "new" is OK.
+
+5. Is the object relevant within a limited scope?
+You don't need to inject temporary collections or other transient state-holding objects.
+In simple terms, always question the "new".
+
+- I would even go further and forget "the object" and focus on roles. 

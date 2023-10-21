@@ -22,8 +22,8 @@ modified: 2023-09-17T18:47:01.460Z
 
 - ## 
 
-- ## [Don’t we all just want to use SQL on the front end? | Hacker News_202104](https://news.ycombinator.com/item?id=26822884)
-- Because it exposes a lot of inner details and potential security/privacy risks if clients are able to change parameters.
+- ## 🤔 [Don’t we all just want to use SQL on the front end? | Hacker News_202104](https://news.ycombinator.com/item?id=26822884)
+- Because it exposes a lot of inner details and potential security/privacy risks if clients are able to change parameters. But... it seems like if you're willing to expose your data model to the client, then it seems like some combination of code signing the SQL (with parameters left empty) along with the acceptable list of named parameters
 
 - Why hasn’t this been tried?
   - Of course it's been tried. It's because it's been tried enough that people now tell you to hide SQL behind a middle layer...
@@ -68,8 +68,11 @@ modified: 2023-09-17T18:47:01.460Z
   - For two, at least if the SQL is on the backend, a fix for an exponential query DDOSing your DB is fairly quick; you don't have to worry about some client keeping a cached copy of the frontend around for months at a time.
   - Finally, if you let the frontend send SQL, you have lost any and all ability to do a static audit against the queries that will be run against your database - because you have no control over what the client does.
 
-- 
-- 
+- > We need a restrictive SQL parser to run server-side to restrict what can be run and prevent SQL injection. Maybe we need a query-builder/ORM to generate a safe intermediary SQL language in JSON so that we can validate it.
+  - What you are describing here is an API.
+
+- The front-end and back-end data models are vastly different for any non-trivial application.
+
 - 
 - 
 

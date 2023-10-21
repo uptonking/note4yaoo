@@ -117,17 +117,28 @@ modified: 2022-04-05T10:09:51.343Z
   - But the above 3 can be applied to someones existing NoSQL data solution in industry a lot more easily.
 - But I want to apply CRDTs to playlist synchronization. I need support for arrays where the user defines the position of the items.
 
-- ## 💡 You can move CRDT data over whatever data layer you have on hand, and insert them into whatever data stores you want. 
+- ## 💡💡 You can move CRDT data over whatever data layer you have on hand, and insert them into whatever data stores you want. _202204
 - https://news.ycombinator.com/item?id=30984776
   - Care for the special **semantics of CRDT are only needed when merging CRDTs**, storage and transportation is like any other encoded format, like moving a JPEG encoded image over HTTP, or storing a JPEG as a byte stream in a database. 
   - Neither the HTTP client or the database need to know how to turn the JPEG bytes into screen pixels.
 - Here’s a possible design for a CRDT editor system:
-- Browser client composes a CRDT locally in-memory, and saves the CRDT data into IndexedDB periodically as a Blob of bytes.
+  - Browser client composes a CRDT locally in-memory, and saves the CRDT data into IndexedDB periodically as a Blob of bytes.
 - When the client is online, it periodically performs a sync with the server using HTTP, with this protocol:
+  1. HTTP GET /doc/:id/stateVector - returns the latest state vector on the central server. A little analogous for checking the refs of a git remote.
+  2. HTTP POST /doc/:id/push - send the difference between the state vector returned from (1) and the client’s local state to the server. This is kinda like `git push` .
+  3. The server responds to (2) with the missing state on the client. It can compute this from the data the client sent.
+- Inside the server, writes are handled like this:
+  1. Start a RW transaction on a Postgres row containing the CRDT data.
+  2. Read the data from the DB and merge it with the incoming data in the client post.
+  3. Compute the update delta for the client
+  4. Write the merged data back into the DB
+  5. Commit.
+  6. Respond with the delta computed in (3).
 - This scheme is not optimally efficient, but shows that you can put together a CRDT system with a normal database and a bit of HTTP.
 - See https://docs.yjs.dev/api/document-updates#syncing-clients for more info on how Yjs (the most production ready library) handles these concepts.
 
-- Yep. I've done something very similar on top of Diamond Types for a little personal wiki.
+- Yep. I've done something very similar on top of Diamond Types for a little personal wiki. This page is synced between all users who have the page open. Its a remarkably small piece of code, outside of the CRDT library itself (which is in rust via wasm).
+  - Code is here, if anyone is interested. The whole thing is a few hundred lines all up
 
 - ## [JSON CRDT 2.0](https://github.com/streamich/json-joy/issues/228)
 - Things to consider:

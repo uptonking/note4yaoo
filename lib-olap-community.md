@@ -12,7 +12,10 @@ modified: 2022-12-05T19:10:15.451Z
 # discuss
 - ## 
 
-- ## 
+- ## do you think in the long term for OLAP DB, native storage format will basically disappear and will be replace by OSS Table format like #DeltaTable and #Apacheiceberg etc
+- https://twitter.com/mim_djo/status/1715544800840269854
+- Why not an open source OLAP-optimized native format?
+  - I thought that is Delta table raison
 
 - ## I've been advocating to add measures (columns whose value is evaluated as a context-sensitive expression) to SQL's data model. 
 - https://twitter.com/julianhyde/status/1674128899977154562

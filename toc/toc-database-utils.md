@@ -67,6 +67,13 @@ modified: 2023-08-23T17:15:46.484Z
   - Real-time distributed storage for files and key value databases built on top of Hypercore Protocol
   - A lot of inspiration was taken from Hyperdrive, but Hyperdrive didn't have options for fine-grain access control, multiple writers, and the ability to delete files from disk once added to the drives.
 
+- https://github.com/genderev/assassin /202009/js/inactive
+  - Assassin is a decentralized database that uses background threads to kill slow JavaScript.
+  - I ended up creating this database partly because IndexedDB is disabled in private browsing, which means none of these databases work for me.
+  - Assassin is a key/value store that supports mapping a key to its corresponding value.
+  - System Architecture: The DAT protocol distributes and hosts data between many computers, so there is no one location where data is stored. Assassin relies on the the DAT protocol for data persistence. The metadata of the key-value pairs are stored in a distributed `trie` structure.
+  - Storage Model: Assassin sends data to the server, which then stores the metadata in the distributed file system Hyperdrive, which is built on the DAT protocol
+
 - https://github.com/holepunchto/hyperblobs /js
   - A simple blob store for Hypercore.
   - Each blob is identified by its unique bounds within the Hypercore, which makes them easy to save and retrieve

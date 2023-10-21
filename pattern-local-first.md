@@ -349,3 +349,5 @@ modified: 2023-09-13T20:24:13.701Z
   - we see the outline of an approach where user interfaces are expressed as queries, those queries are executed by a fast, performant incremental maintenance system, 
 # ref
 - [Optimistic, Offline-First Apps__202001](https://www.swyx.io/svelte-amplify-datastore/)
+
+- [Building offline-ready apps: the scale of offline functionality_202204](https://erwinkn.com/offline-ready/)

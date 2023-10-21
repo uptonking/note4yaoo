@@ -79,7 +79,7 @@ modified: 2023-01-12T10:26:41.060Z
 - https://github.com/tomayac/opfs-explorer
   - https://tomayac.github.io/opfs-explorer/
 
-- ### [SQLite Wasm in the browser backed by the Origin Private File System | Hacker News](https://news.ycombinator.com/item?id=34352935)
+- ### [SQLite Wasm in the browser backed by the Origin Private File System | Hacker News_202301](https://news.ycombinator.com/item?id=34352935)
 - what is exactly the use case for this?
   - It's an alternative to using IndexedDB which is a browser provided API.
   - On use cases, you can give your web app offline support by locally caching data in an SQL database and have it be fully queryable.
@@ -95,7 +95,7 @@ modified: 2023-01-12T10:26:41.060Z
 - 👀 That means a file or directory created via the File System Access API may not be easily retrieved from outside of the browser.
 - If your web app needs to interact with files, you should try the new File System Access API. It provides interfaces that are similar to the native file system API, with optimized performance.
 
-## [Safari now supports File System Access API with private origin | Hacker News_202202](https://news.ycombinator.com/item?id=30394737)
+## ✨ [Safari now supports File System Access API with private origin | Hacker News_202202](https://news.ycombinator.com/item?id=30394737)
 
 - This is brilliant! Being called a “file system access” api will confuse many people into thinking it’s about traditional file storage for “people” to use, like a file picker/save dialog. 
   - 👉🏻 It’s not, this is about providing a block storage that can be used for other things.
@@ -107,16 +107,14 @@ modified: 2023-01-12T10:26:41.060Z
   - If I were Supabase I would be looking to create a “Mini Supabase” for mobile, and make it work in browser too.
   - Couchbase Mobile as an alternative to PouchDB
 
-- I don’t see how this is fundamentally any different from IndexedDB: both are asynchronous transactional key-value databases. One is byte-oriented and the other object-oriented, but it looks to me like they’re essentially completely equivalent in what’s possible with them—except insofar(到这种程度) as File System Access may allow you to avoid loading the entire thing into memory. 
-- Implementing SQLite on top of this would require that a commit write the changes, close the file, and then reopen it, since writes are only performed when you close the file. That could perform tolerably or terribly (there’s no way of knowing), but certainly won’t be as good as what you get natively, where you can truly write only part of a file, especially once you get to large databases where it will certainly be drastically slower. If you want performance out of any of these sorts of things, you’re going to need to stop putting everything in one “file” and split it into many, so that you can avoid touching most of them on most writes.
-
+- This is brilliant! Being called a “file system access” api will confuse many people into thinking it’s about traditional file storage for “people” to use, like a file picker/save dialog. It’s not, this is about providing a block storage that can be used for other things.
+  - I don’t see how this is fundamentally any different from IndexedDB: both are asynchronous transactional key-value databases. One is byte-oriented and the other object-oriented, but it looks to me like they’re essentially completely equivalent in what’s possible with them—except insofar(到这种程度) as File System Access may allow you to avoid loading the entire thing into memory. 
+  - Implementing SQLite on top of this would require that a commit write the changes, close the file, and then reopen it, since writes are only performed when you close the file. That could perform tolerably or terribly (there’s no way of knowing), but certainly won’t be as good as what you get natively, where you can truly write only part of a file, especially once you get to large databases where it will certainly be drastically slower. If you want performance out of any of these sorts of things, you’re going to need to stop putting everything in one “file” and split it into many, so that you can avoid touching most of them on most writes.
 - I’m aware the spec is somewhat a moving target. 
   - The point of this over “abusing” IndexedDB, jlongster who created Absurd SQL had to perform some pretty unholy hacks to get it to work. When porting these db engines to WASM they expect a FS to look and behave like a FS, that’s what this does that IndexedDB doesn’t.
-
-- This FS doesn’t much look like an FS either—certainly it’s way off what SQLite needs. 
-  - For mutating a file, you get the options write, seek, and truncate, but they don’t do anything until you close the file. 
-  - It’s essentially equivalent to the write-to-a-temporary-file-and-then-atomic-rename-overwrite pattern.
-- You can implement exactly the same thing on top of an `ArrayBuffer` that you’ll put in an IndexedDB with no fuss—and if you were doing it that way, then you could even decide whether to go for something like a rope for intermediate editing, or mutating the `ArrayBuffer` directly, whereas if you use FSA you have no control over which of the two approaches it might use, or something else altogether.
+  - Quite true you could build a new SQL/DB engin on top of IndexedDB with a storage architecture designed for it. But that’s not what the existing engines are expecting.
+- This FS doesn’t much look like an FS either—certainly it’s way off what SQLite needs. For mutating a file, you get the options write, seek, and truncate, but they don’t do anything until you close the file. It’s essentially equivalent to the write-to-a-temporary-file-and-then-atomic-rename-overwrite pattern.
+  - You can implement exactly the same thing on top of an `ArrayBuffer` that you’ll put in an IndexedDB with no fuss—and if you were doing it that way, then you could even decide whether to go for something like a rope for intermediate editing, or mutating the `ArrayBuffer` directly, whereas if you use FSA you have no control over which of the two approaches it might use, or something else altogether.
 
 - For Origin Private File Systems, I would not expect any user agent to map things to the actual file system: there are notable functional problems especially on Windows, and it’s a very significant security hazard(危险；危害), all of which is neatly avoided by putting it all in the likes of a SQLite database.
 - First, the functional problems: 

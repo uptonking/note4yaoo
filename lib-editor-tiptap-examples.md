@@ -44,6 +44,7 @@ modified: 2023-02-05T19:03:27.730Z
   - @notesnook/streamable-fs: Streaming interface around an IndexedDB based file system
   - Notesnook encrypts everything on your device using XChaCha20-Poly1305 & Argon2.
   - 服务端数据同步代码未找到
+  - [A fully open-source and end-to-end encrypted note taking alternative to Evernote | Hacker News_202209](https://news.ycombinator.com/item?id=32708019)
 
 - https://github.com/chenyuncai/tiptap-track-change-demo /vue
   - https://track-change.onrender.com/

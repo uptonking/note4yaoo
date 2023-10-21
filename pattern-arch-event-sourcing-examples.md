@@ -315,6 +315,7 @@ modified: 2023-09-12T09:37:22.608Z
   - A fully-featured event store and message store implemented in PostgreSQL for Pub/Sub, Event Sourcing, Messaging, and Evented Microservices applications.
   - The message store is a single table named messages.
   - Interaction with the message store is effected through Postgres server functions that ensure the correct semantics for the writing of messages to streams, and the reading of messages from streams and categories.
+  - [Message DB: Event Store and Message Store for PostgreSQL | Hacker News_201912](https://news.ycombinator.com/item?id=21810272)
 
 - https://github.com/marcopeg/postgres-event-sourcing /202103/js/inactive
   - an attempt to reproduce a Kafka-like data behavior for event-sourcing using Postgres to coordinate write/read concurrency over a topic of messages from multiple producers/consumers instances.
@@ -356,10 +357,11 @@ modified: 2023-09-12T09:37:22.608Z
   - https://andykswong.github.io/mithic/
   - Modular library for real-time, offline-first isomorphic JavaScript applications
   - provides the building blocks for creating real-time, offline-first client-server or decentralized applications, using CQRS architecture with CRDT eventsourcing for storage and data replication.
-  - minimal example to get started. Uses the Redux store preset
+  - minimal example to get started. Uses the `Redux` store preset
+  - 插件支持level/redis/ipfs
   - crdt基于自己实现的lseq
-  - Linear sequence of values based on `ORMap` of base64 fractional index to values
   - timestamp基于逻辑时钟
+  - Linear sequence of values based on `ORMap` of base64 fractional index to values
 
 - https://github.com/josephg/statecraft /ISC/201911/ts/inactive
   - Statecraft is a protocol and set of tools for interacting with data that changes over time. 

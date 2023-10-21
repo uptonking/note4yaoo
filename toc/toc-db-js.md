@@ -398,6 +398,14 @@ modified: 2022-11-25T15:50:48.226Z
   - [How difficult is to create an offline-first app?](https://github.com/orbitjs/orbit/issues/790)
     - There is currently no CRDT implementation in orbit. There is no server implementation at all.
 
+- https://github.com/genderev/assassin /202009/js/inactive
+  - Assassin is a decentralized database that uses background threads to kill slow JavaScript.
+  - I ended up creating this database partly because IndexedDB is disabled in private browsing, which means none of these databases work for me.
+  - Assassin is a key/value store that supports mapping a key to its corresponding value.
+  - System Architecture: The DAT protocol distributes and hosts data between many computers, so there is no one location where data is stored. Assassin relies on the the DAT protocol for data persistence. The metadata of the key-value pairs are stored in a distributed `trie` structure.
+  - Storage Model: Assassin sends data to the server, which then stores the metadata in the distributed file system Hyperdrive, which is built on the DAT protocol
+  - [Assassin ⚡️ - An open source, free database for killing slow webpages - DEV Community](https://dev.to/ender_minyard/assassin-an-open-source-free-database-for-killing-slow-webpages-3fip)
+
 - https://github.com/mafintosh/hyperdb /201808/js
   - Distributed scalable database.
 - https://github.com/beakerbrowser/webdb /201807/js

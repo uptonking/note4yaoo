@@ -54,6 +54,12 @@ modified: 2023-09-01T10:18:14.842Z
   - Hypermerge stores an automerge document as a set of separate Hypercores, one per actor ID. Each actor ID in the document is the discovery key of a Hypercore, which allows recursive lookup.
   - This strategy works for a small number of documents, but is very slow to synchronize due to the vast number of Hypercores required for a large collection.
   - [Every opened hypercore keeps a file handle open permanently](https://github.com/automerge/hypermerge/issues/69)
+  - [Local-first database: Hypermerge | Jared Forsyth.com_202009](https://jaredforsyth.com/posts/local-first-database-hypermerge/)
+    - It is designed as a fully peer-to-peer data storage system, and is electron/nodejs-only (no browser support).
+    - Conflicts are automatically resolved by Automerge, although the exact behavior is undocumented. 
+    - Hypercore, the underlying persistence layer, uses hashing to verify consistency (from what I can tell).
+    - Both client and server store a full replica of all changes made, and from some preliminary testing, it looks like the constant factor is rather high (the on-disk size increasing by multiple kilobytes when adding a single change to an attribute).
+    - it is a research tool primarily, and not meant to be production ready.
 
 - https://github.com/jonfk/text-crdt-experiment-automerge-ts
   - test out Automerge text features to see if it would be a usable for the core data structure of an offline first syncing text editor.

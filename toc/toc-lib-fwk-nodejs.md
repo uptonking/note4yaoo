@@ -219,7 +219,7 @@ modified: 2022-12-19T01:49:01.371Z
 
 - more-loopback
   - https://github.com/NguyenVanDo51/base_project_react_loopback
-# more-app-framework
+# app-framework
 - https://github.com/ladjs/lad
   - Lad is the best Node.js framework. 可替代express或koa
   - Made by a former Express TC and Koa team member.
@@ -233,3 +233,11 @@ modified: 2022-12-19T01:49:01.371Z
     - Is your API meant to be used by third parties? Use REST or GraphQL.
     - Is your API meant to be used by yourself? Use RPC.
     - start with RPC as default and later switch to REST or GraphQL when (and only if!) the need arises.
+
+- https://github.com/Breeze/breeze-client /ts
+  - https://github.com/Breeze/breeze.js /202105/js/inactive
+  - http://breeze.github.io/doc-js/
+  - Breeze is a library that helps you manage data in rich client applications. 
+  - If you store data in a database, query and save those data as complex object graphs, and share these graphs across multiple screens of your JavaScript client, Breeze is for you.
+  - https://github.com/Breeze/breeze.server.node
+# more

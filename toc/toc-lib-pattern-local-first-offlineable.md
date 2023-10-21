@@ -229,6 +229,10 @@ modified: 2021-09-04T14:03:39.046Z
   - I have decided to suspend development of DeltaDB for the following reasons:
   - last-write-wins policy is nice when starting a new project as it is automatic, but other conflict resolution policies that force the user to manually resolve the conflict, like CouchDB’s revision protocol, have become more of the standard in the offline-first world.
   - Building a DB that scales and is Building a DB that scales and is distributed over many nodes, takes a lot of work. distributed over many nodes, takes a lot of work. 
+
+- https://github.com/aerogear/offix /archived
+  - GraphQL Offline Client and Server
+  - NOTE: GraphQL ecosystem evolved since creation of offix. If you are planning to start new project with offline support please consider react-query
 # collab
 - https://github.com/YousefED/Matrix-CRDT
   - Use Matrix as a backend for local-first applications with the Matrix-CRDT Yjs provider.

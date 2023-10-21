@@ -22,7 +22,7 @@ modified: 2022-11-04T14:21:31.365Z
   - Optimistic reads and writes
   - Cross-tab sync
 
-- https://github.com/superfly/litefs /go
+- https://github.com/superfly/litefs /apache2/go
   - FUSE-based file system for replicating SQLite databases across a cluster of machines
   - It works as a passthrough file system that intercepts writes to SQLite databases in order to detect transaction boundaries and record changes on a per-transaction level in LTX files.
   - It's a goal of LiteFS to pass the SQLite TCL test suite
