@@ -567,4 +567,11 @@ modified: 2023-08-23T17:15:46.484Z
 
 - https://github.com/ilikepi63/turnip-rs /rust
   - Leaderless, streaming platform based on materialized views
+# etl
+- https://github.com/obi1kenobi/trustfall /apache2/rust
+  - A query engine for any combination of data sources.
+  - databases, APIs, file systems, anything else you can think of + any combination of them.
+  - The easiest way to plug in a new data source is by implementing the BasicAdapter trait.
+  - In the Playground, Trustfall is configured to run client-side as WASM, performing all aspects of query processing (parsing, compilation, and execution) within the browser. 
+  - it is of course able to be used in a more traditional client-server context as well.
 # more

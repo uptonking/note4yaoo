@@ -67,11 +67,13 @@ modified: 2023-10-08T10:54:57.575Z
 
 - Data security is a huge issue, Facebook.com has very specific whitelisted access patterns encoded as CRUD endpoints. 
 
-- 
-- 
+- Meteor do this since inception with MongoDB on server and MiniMongo in client.
+  - Yes, mongodb and meteor and minimongo do something similar but with much more restrictions on what you can do.
+  - RxDB does exactly one thing which is being a client side database. You are not tied to a specific ecosystem or backend database.
+- Yeah, with RxDB, we are tied with RxJS, PouchDB and CouchDB.
 
 - ## [RxDB – Local JavaScript-Database | Hacker News_201701](https://news.ycombinator.com/item?id=13507367)
 - Before I started creating RxDB, I used pouchdb, minimongo, gunJS and lokiDB and had just too many things to handle by myself. RxDB is an approach to create a database which is easier to use and does not create discussing-point when using it in a big team.
 
-- Possible replacement for Meteor's minimongo?
-  - It depends. RxDB can be used completely serverless, while minimongo always needs a stream to the server. But minimongo is better integrated into your meteor-server-side. The approach of RxDB is to fullfill the principles of offline-first
+- 🤔 Possible replacement for Meteor's minimongo?
+  - It depends. **RxDB can be used completely serverless, while minimongo always needs a stream to the server**. But minimongo is better integrated into your meteor-server-side. The approach of RxDB is to fullfill the principles of offline-first

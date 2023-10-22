@@ -80,12 +80,10 @@ modified: 2020-11-02T19:13:04.103Z
   - [Call for Maintainer and Contributors](https://github.com/redux-orm/redux-orm/issues/123)
     - I've been moving away from redux to things like react-query and lost traction on redux-orm
 
-- redux-database /18Star/MIT/202005/ts/NoDeps/inactive
-  - https://github.com/nerdgeschoss/redux-database
-  - https://nerdgeschoss.github.io/redux-database
-  - Simple reducer based in-memory database with strong typings and immutable documents, with plugins for redux and react.
-  - Client side data normalization is hard. This library helps you to organize your state in a relational way, with queries and joins as you would expect from an SQL based database. 
-  - There is a storage adaper for redux or you can use it as a standalone library (redux-database has no dependencies!).
+- redux-db /25Star/MIT/201902/ts
+  - https://github.com/msolvaag/redux-db
+  - redux-db provides a normalized redux store and easy object management.
+  - Having a normalized state is a good strategy if your data is nested in different ways.
 
 - https://github.com/msolvaag/redux-db /201902/ts/inactive
   - provides a normalized redux store and easy object management.

@@ -25,6 +25,14 @@ modified: 2022-11-03T04:14:11.987Z
   - Use Mongodb queries in JavaScript
   - Supports node.js, and web
 
+- https://github.com/kofrasa/mingo /MIT/202309/ts
+  - MongoDB query language for in-memory objects
+  - Supports dot notation for both `<array>.<index>` and `<document>.<field>` selectors.
+  - Query and Projection Operators
+  - Aggregation Framework Operators
+  - Update Operators
+  - Filtering and aggregation using streaming.
+
 - tingodb /1.1kStar/MIT/201901/js
   - https://github.com/sergeyksv/tingodb
   - http://www.tingodb.com/
@@ -118,7 +126,17 @@ modified: 2022-11-03T04:14:11.987Z
 - redux-db /25Star/MIT/201902/ts
   - https://github.com/msolvaag/redux-db
   - redux-db provides a normalized redux store and easy object management.
-  - Having a normalized state is a good strategy if your data is nested in different ways. 
+  - Having a normalized state is a good strategy if your data is nested in different ways.
+
+- kinto /4.2kStar/apache2/202210/python
+  - https://github.com/Kinto/kinto
+  - http://docs.kinto-storage.org/
+  - A generic JSON document store with sharing and synchronisation capabilities.
+  - Backends: In-memory (development), PostgreSQL 9.5+ (production)
+  - [How does Kinto compare to other solutions?](https://docs.kinto-storage.org/en/stable/faq.html)
+    - 比较了parse、firebase、couchdb、kuzzle、remoteStorage、Hoodie
+  - https://github.com/Kinto/kinto.js
+    - An Offline-First JavaScript client for Kinto.
 # object-storage/s3
 - minio /36.1kStar/AGPLv3/202211/go
   - https://github.com/minio/minio
@@ -185,14 +203,6 @@ modified: 2022-11-03T04:14:11.987Z
 - https://github.com/fabianTMC/mongoToSQL /202204/js
   - Convert MongoDB aggregation pipelines to their SQL equivalent
 # mongodb-utils
-- https://github.com/kofrasa/mingo /MIT/202309/ts
-  - MongoDB query language for in-memory objects
-  - Supports dot notation for both `<array>.<index>` and `<document>.<field>` selectors.
-  - Query and Projection Operators
-  - Aggregation Framework Operators
-  - Update Operators
-  - Filtering and aggregation using streaming.
-
 - https://github.com/Ligengxin96/sql-in-mongodb /3Star/GPLv3/202108/ts
   - This tools can convert common sql query to mongodb query
 - https://github.com/orgoldfus/sql2mongo /202012/js
@@ -213,6 +223,12 @@ modified: 2022-11-03T04:14:11.987Z
   - Mongita is a lightweight embedded document database that implements a commonly-used subset of the MongoDB/PyMongo interface
   - instead of being a server, Mongita is a self-contained Python library. 
   - Mongita can be configured to store its documents either on disk or in memory.
+
+- https://github.com/danstocker-legacy/jorder /201507/js/inactive
+  - Jorder makes working with in-memory table data fast and simple. 
+  - Based on Sntls, it allows you to re-interpret table and index data structures as collections, trees, etc. and thus formulate very expressive and effective data queries.
+  - Smarter indexes: Jorder allows multi-field full-text indexes.
+  - [Benchmarks](https://github.com/danstocker-legacy/jorder/wiki/Benchmarks)
 # NoSQL
 - https://github.com/petersirka/nosql /201907/js/inactive
   - NoSQL embedded database for small node.js projects
@@ -231,10 +247,13 @@ modified: 2022-11-03T04:14:11.987Z
   - Embeddable JSON Database engine C library. 
   - Simple XPath like query language (JQL).
 
-- https://github.com/FerretDB/FerretDB /5kStar/apache2/202212/go
+- https://github.com/FerretDB/FerretDB /5kStar/apache2/202310/go
+  - https://www.ferretdb.io/
   - FerretDB (previously MangoDB) was founded to become the de-facto open-source substitute to MongoDB
   - 直接在PostgreSQL上对外提供 MongoDB 的 API
-  - FerretDB is an open-source proxy, converting the MongoDB 6.0+ wire protocol queries to SQL - using PostgreSQL as a database engine.
+  - FerretDB is an open-source proxy, converting the MongoDB 6.0+ wire protocol queries to SQL - using PostgreSQL or SQLite as a database engine
+  - It functions as a drop-in replacement for MongoDB 6.0+ in many cases. 
+  - [FerretDB: open-source MongoDB alternative | Hacker News_202304](https://news.ycombinator.com/item?id=35539464)
   - [FerretDB v1.2.0_20230522](https://blog.ferretdb.io/ferretdb-v-1-2-0-minor-release/)
     - support SQLite database backend. 
 # more-document-json

@@ -61,13 +61,39 @@ modified: 2023-09-13T20:24:41.516Z
 - Most apps we use nowadays are cloud-first apps which mostly become useless when:
   - there is no stable internet connection
   - the service is offline or discontinued (h/t Google)
-
-- 
-- 
-- 
-
 # discuss
 - ## 
+
+- ## 
+
+- ## [Local-first software: You own your data, in spite of the cloud (2019) | Hacker News_202310](https://news.ycombinator.com/item?id=37743517)
+- Couchdb/pouchdb remains one of the best: it's super easy to setup and is production-ready, but it's gonna be json docs with no transactions, so it can be limiting.
+- Y.js and automerge emerged as solutions combining CRDTs and content transfer, they look really promising. There is a Y.rs version if that's better for you.
+
+- I've used tRPC and GraphQL before and I've really been thinking of something where we'd have the same DX as the client-server model such as with tRPC and GraphQL but in a way where there is no difference between client and server state, there is only "state." This makes sense because for local-first, the entire state of the app must be replicated locally anyway. Recently there have been CRDT solutions that try to solve this problem, however, such as Triplit, or ElectricSQL
+  - Meteor wrapped the MongoDB API for this purpose. You are working with collections and can run the same queries over them, regardless of whether you are connected to a DB instance or the browser's local storage.
+  - For CouchDB an equivalent exists in the form of PouchDB
+
+- 🤔 How do CRDTs work with blobs/files?
+  - I don't know. I guess they simply don't.
+  - My approach would be to categorize user content into
+    - CRDT-enabled content considered as the norm, and
+    - content trapped in legacy containers that do not support CRDT.
+  - With an implied warning for the user: legacy content offers a limited user experience.
+  - Migration from "legacy" to "normal" should be fully supported, and as transparent as possible (but needs dedicated support for each file format). 
+  - Converting "normal" (CRDT-enabled) content into files/blobs should be treated as a "take an snapshot" export operation.
+
+- ## [Offline First – A Better HTML5 User Experience | Hacker News_201612](https://news.ycombinator.com/item?id=13245647)
+- Offline is not a mere feature you can bolt on to existing architectures because you are really building a distributed system. 
+  - Architectures that work well for distributed systems and especially p2p architectures thrive in this environment. 
+  - 👉🏻 Instead, you can take this idea further and implement a kappa architecture (sometimes also called "event sourcing") where you **maintain a log locally on every client which is the source of truth, not a server**. 
+  - When a network connection is available, you can replicate the log to a server or directly to other clients. 
+  - You can build indexes (materialized views) that sit on top of this log to answer queries more quickly than reading the entire log out every time. 
+  - You can also blow away these indexes and rebuild them from the log whenever your requirements change (migrations).
+- Unfortunately the web is missing a few pieces that would make it a very good platform for fully p2p, distributed apps. 
+  - Service workers are a good start, but they have a 24-hour upper cap on max-age of the service worker itself, so users can't trust on first use (TOFU) and then be more secure against kinds of active targeting. 
+  - The suborigin specification and iframe sandboxes for distributing apps offline and p2p would be much more useful for offline sandboxes if they didn't require that a server send an http header. 
+  - These will become much more important as the web bluetooth API matures, which can allow distributing user data and application updates in a totally offline environment.
 
 - ## [Offline-First Apps: Why Should Apps Be Made to Work in an Offline State? | Hacker News_202208](https://news.ycombinator.com/item?id=32544837)
 - My startup built an SDK framework that’s allows companies to build offline apps that can even sync over a multihop mesh network. It’s powered by a CRDT to handle the conflict resolution.
@@ -87,8 +113,6 @@ modified: 2023-09-13T20:24:41.516Z
   - Each property of the document is it's own CRDT, you as the user can pick which CRDT you'd like to use, our current catalog includes:register/counter/binary/RGA
 - A CRDT is a way to solve multi-leader replication without having the application code resolve conflicts.
   - To implement this, every application node keeps a vector clock per register (an atomic piece of shared state). 
-- 
-- 
 
 - I’ve tried PouchDB before but only on “toy” projects not deployed production. What challenges have there been with PouchDB or other offline-first techniques?
   - I like offline first app design, and have built several. However, I don't do it anymore unless there is a very clear use case and direct customer benefit. Some apps just don't work offline at all.

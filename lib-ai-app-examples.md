@@ -15,7 +15,7 @@ modified: 2023-02-08T07:20:48.475Z
 
 - https://github.com/xenova/transformers.js
   - Run Transformers in your browser! We currently support BERT, ALBERT, DistilBERT, MobileBERT, SqueezeBERT, T5, T5v1.1, FLAN-T5, mT5, BART
-  - [宝玉 on Twitter: "这有必要吗？" / Twitter](https://twitter.com/dotey/status/1643801825580122115)
+  - [宝玉 on Twitter: "这有必要吗？"](https://twitter.com/dotey/status/1643801825580122115)
     - 毕竟浏览器有沙盒，相对在本地运行一个没审计过的程序放心一点，但现在浏览器对gpu硬件支持还是拉胯。
     - 这是分布式算力啊，这不就是挖矿嘛
 # chatgpt
@@ -125,4 +125,22 @@ modified: 2023-02-08T07:20:48.475Z
 
 - https://github.com/BrainJS/brain.js
   - robot GPU accelerated Neural networks in JavaScript for Browsers and Node.js
+# ml-dl
+- https://github.com/xenova/transformers.js /js
+  - https://huggingface.co/docs/transformers.js
+  - State-of-the-art Machine Learning for the web. 
+  - Run Transformers directly in your browser, with no need for a server!
+  - Transformers.js is designed to be functionally equivalent to Hugging Face's transformers python library
+  - Transformers.js uses ONNX Runtime to run models in the browser. The best part about it, is that you can easily convert your pretrained PyTorch, TensorFlow, or JAX models to ONNX using Optimum.
+
+- https://github.com/ml5js/ml5-library /js
+  - provides access to machine learning algorithms and models in the browser, building on top of TensorFlow.js
+
+- https://github.com/alibaba/pipcook /ts
+  - https://alibaba.github.io/pipcook/
+  - provides subprojects including machine learning pipeline framework, management tools, a JavaScript runtime for machine learning, and these can be also used as building blocks in conjunction with other projects.
+  - provides access to Python packages by bridging the interface of `CPython` using N-API. so pytorch/tensorflow/scikit is available
+
+- https://github.com/mljs/ml /js
+  - Machine learning tools in JavaScript
 # more

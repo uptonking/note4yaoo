@@ -95,6 +95,14 @@ modified: 2023-09-16T17:27:42.089Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Datomic Update: Client API, Unlimited Peers, Enterprise Edition, and More | Hacker News_201611](https://news.ycombinator.com/item?id=13055961)
+- SQL views don't compose at the same level that Datalog expressions do, but that's because they aren't typically expressed as raw graph data (i.e. lists of strings where each list item is a node in the graph). If you could just name arbitrary chunks of SQL AST and mash them together, it would be just as composable (though perhaps more cumbersome due to boilerplate).
+- you might give CouchDB a look. It's a document datastore that offers map/reduce views written in Javascript (use as much or as little composition/abstraction as you want). The distributed features are pretty cool (bidirectional sync, versioned documents) and writing apps with it is awesome
+
 - ## [Logica, a novel open-source logic programming language | Hacker News_202104](https://news.ycombinator.com/item?id=26805121)
 - Could you point me to codebases that productively use Datalog internally?
   - Datomic

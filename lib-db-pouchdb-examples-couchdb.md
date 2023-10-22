@@ -184,6 +184,12 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/marten-de-vries/chairdb /python/inactive
   - A small CouchDB-compatible database with sync support
+
+- https://github.com/fiatjaf/summadb /go/inactive
+  - A hierarchical database that stores computed values.
+  - For more fine-grained permissions and other features I'm also developing a small Go database compatible with PouchDB
+  - https://github.com/fiatjaf/summuladb
+    - A SummaDB that runs in the browser.
 # mobile-pc
 - https://github.com/craftzdog/pouchdb-adapter-react-native-sqlite /202108/js
   - PouchDB adapter using ReactNative SQLite as its backing store
@@ -427,6 +433,10 @@ modified: 2023-09-28T20:35:56.153Z
   - A simple CRUD application with ExpressJS and CouchDB.
 - https://github.com/NinjaGrandpa/nodejs-couchdb-demo /js
   - A simple customer database built with CouchDB and NodeJs
+
+- https://github.com/ermouth/covercouch /js
+  - CoverCouch implements per-document r/w/d ACL for CouchDB. 
+  - CoverCouch acts as proxy – original CouchDB REST API kept untouched, but all requests to Couch – r/w/d, _changes feed, _view, _update, _list or other fn call, replication – everything is filtered.
 
 - https://github.com/glynnbird/couchmigrate
   - CouchDB command-line design document migration tool

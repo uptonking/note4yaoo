@@ -109,9 +109,12 @@ modified: 2022-12-14T18:26:38.588Z
   - Then you want to hoist subqueries as functions so you can reuse and compose them... Building a DSL is not a "wrong" approach. I just remember in my early programming days getting really frustrated with HTML templating engines because I just wanted a proper programming language.
 - I noticed the same thing w.r.t. "reuse and compose subqueries" — that's essentially what the macros in my query language are
 - I wonder if we're talking past one another. The query builder is a native api and inspired by https://entgo.io/docs/traversals. During ~8 years of using (and supporting users of) the internal version @Meta , I hit very few walls in terms of unsupported query patterns.
-- https://github.com/obi1kenobi/trustfall /rust
+- https://github.com/obi1kenobi/trustfall /apache2/rust
   - A query engine for any combination of data sources.
   - databases, APIs, file systems, anything else you can think of + any combination of them.
+  - The easiest way to plug in a new data source is by implementing the BasicAdapter trait.
+  - In the Playground, Trustfall is configured to run client-side as WASM, performing all aspects of query processing (parsing, compilation, and execution) within the browser. 
+  - it is of course able to be used in a more traditional client-server context as well.
 
 - Interesting. Are you familiar with Datalog-style queries? 
   - Seems pretty similar, except the edges are traversed recursively without having to define methods to traverse school edge. 

@@ -48,15 +48,30 @@ modified: 2023-09-16T17:54:21.231Z
 - 
 - 
 
-- ## [Skip the API, ship your database | Hacker News](https://news.ycombinator.com/item?id=37497345)
-- If you give access to your DB directly, your API effectively becomes your API with all the contract obligations of the API. Suddenly you don't completely control your schema: you can't freely change it, you need to add things there for your clients only.
-  - Versioned views, materialized views or procedures are the solution to this. It is frequent that even internally, companies don't give access to their raw data but rather to a restricted schema containing a formated subset of it.
+- ## 🤔 [Skip the API, ship your database | Hacker News](https://news.ycombinator.com/item?id=37497345)
+- If you give access to your DB directly, your API effectively becomes your API with all the contract obligations of the API. Suddenly you don't completely control your schema: you can't freely change it, you need to add things there for your clients only. 👉🏻 I've seen it done multiple times and it always end up poorly. You save some time now by removing the need to build API, but later you end up spending much more time trying to decouple your internal representation from schema you made public.
+- The system that I'm currently responsible for made this exact decision. The database is the API, and all the consuming services dip(浸；泡) directly into each other's data. This is all within one system with one organisation in charge, and it's an unmanageable mess. The pattern suggested here is exactly the same, but with each of the consuming services owned by different organisations, so it will only be worse.
+- Versioned views, materialized views or procedures are the solution to this. It is frequent that even internally, companies don't give access to their raw data but rather to a restricted schema containing a formated subset of it.
+  - Views will severely restrict the kinds of changes you might want to do in the future.
+  - Stored procedures technically can do anything, I guess, but at that point you would be better with traditional services which will give you more flexibility.
+- Of course it’s possible, but now you need more people with DB and SQL knowledge. Also, using views and stored procedures with source control is a pain. Deploying these into prod is also much more cumbersome than just normal backend code. Accessing a view will also be slower than accessing an “original” table since the view needs to be aggregated.
 
 - A downside I didn't see mentioned (it was gestured at with contracts and the mention of backwards compatible schema changes, but not addressed directly) was **tight coupling**. 
   - When you link services with APIs, the downstream changes of a schema migration end at the API boundary. 
   - If you are connecting services directly at the database level, the changes will propagate into different services.
 
-- 
+- A very interesting idea to be sure, but IME the biggest downside (which tbf is mentioned in the article) is the contract. If you have clients with knowledge of and dependency on the schema, you can't change it in a breaking way unless you update all the client's code.
+  - I've tried various patterns in the past like one that just exposes database columns as an API, and this pain point always comes calling and it hurts. 
+- I've freelanced with several teams, primarily comprised of front-end devs, who decided to use Firebase for their product. When they first told me they query the database directly from both their website and their mobile app, I immediately was like "so...what happens if you need to change the structure of the database"?
+
+- The solution to this is the same as with APIs: versioning. Instead of naming your table "my_foo", you name it "my_foo_v1". Then, when you want to make a breaking change to the schema, you: 
+  1. Create a new table "my_foo_v2" with your desired schema
+  2. Modify write queries for "my_foo_v1" so that they also write to "my_foo_v2"
+  3. Copy over existing data in "my_foo_v1" to "my_foo_v2" with a migration script
+  4. Modify read queries for "my_foo_v1" so that they read from "my_foo_v2" instead
+  5. Remove all write queries to "my_foo_v1"
+  6. Drop the "my_foo_v1" table
+
 - 
 - 
 

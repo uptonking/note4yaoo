@@ -9,8 +9,9 @@ modified: 2023-09-16T17:49:13.534Z
 
 # guide
 
+- [TiKV 源码解析 | PingCAP](https://cn.pingcap.com/blog/tag/tikv-source-code-analysis/)
+- [TiDB 源码阅读 | PingCAP](https://cn.pingcap.com/blog/tag/tidb-source-code-reading/)
 # blogs
-- [DM 源码阅读系列文章 TiDB Data Migration](https://cn.pingcap.com/blog/?tag=DM%20%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB)
 
 ## kappa-lambda
 
@@ -32,7 +33,6 @@ modified: 2023-09-16T17:49:13.534Z
   - The core of Flink is a streaming dataflow engine. 
   - Flink is based on Kappa architecture. 
   - Kappa architecture was introduced in 2014 by Jay Kreps
-  - 
 
 - [Apache Flink 101: Understanding the Architecture](https://techlake.dev/apache-flink-101-understanding-the-architecture)
   - In Kappa architecture, batch processing is a special case of stream processing hence it is able to perform both batch and real-time processing, especially for analytics, with a single technology stack.
@@ -147,34 +147,67 @@ modified: 2023-09-16T17:49:13.534Z
 - 如果把向量化计算改成批量化处理应该就好理解多了，但是low，向量化多玄乎啊
 - 为了支持这种批量处理数据的需求，CPU设计厂家又搞出了SIMD这种大杀器，SIMD (Single Instruction Multiple Data，单指令多数据)
 - SIMD指令的作用是向量化执行(Vectorized Execution)，中文通常翻译成向量化，但是这个词并不是很好，更好的翻译是数组化执行，表示一次指令操作数组中的多个数据，而不是一次处理一个数据；向量则代表有数值和方向，显然在这里的意义用数组更能准确的表达。
+# blogs-db-dev-xp
+- [BeyondStorage: why we failed](https://xuanwo.io/2023/01-beyond-storage-why-we-failed/)
+  - 介绍了 BeyondStorage 开源社区的失败并分享了 #OpenDAL 在此基础上的经验教训
+  - BeyondStorage 构建 go-storage 是为了满足迁移服务的需求，而迁移服务的需求来自于 go-storage 能力的自然延伸。不难发现这套逻辑中出现了一个可怕的循环，链条中完全没有真实用户的参与，项目从发展伊始就在朝着错误的方向狂奔。
+  - BeyondStorage 失败的最直接原因是失去了最大金主：青云科技。
+  - OpenDAL 最幸运的地方在于它孵化自 Databend 的真实场景。Databend 持续不断地提出新需求，这些需求帮助我判断需求的必要性、调整任务优先级并修正错误假设。
+# blogs-data-model-lsm/btree
+- [What is a LSM Tree? - DEV Community](https://dev.to/creativcoder/what-is-a-lsm-tree-3d75)
+  - Sled is another embedded key value store in Rust, that uses a hybrid architecture of B+ Trees and LSM Tree (Bw Trees)
+
+- [Bw-Trees](https://sinsay.github.io/db/chapter_6_6_bw_trees.html)
+  - Bw-Tree 是 B-Tree 的一个有趣的变种，做了许多重要的优化：写放大，非堵塞的访问以及缓存友好性。一个修改过的实现版本是 Sled，CMU 数据库组织实现了一个基于内存的 Bw-Tree 版本，称为 OpenBw-Tree
+# blogs-materialized-view
+
+## [Incremental View Maintenance - PostgreSQL wiki](https://wiki.postgresql.org/wiki/Incremental_View_Maintenance)
+
+- PostgreSQL has supported materialized views since 9.3. 
+  - This feature is used to speed up query evaluation by storing the results of specified queries. 
+  - One problem of materialized view is its maintenance. Materialized views have to be brought up to date when the underling base relations are updated.
+- Incremental View Maintenance (IVM) is a technique to maintain materialized views which computes and applies only the incremental changes to the materialized views rather than recomputing the contents as the current REFRESH command does. 
+  - This feature is not implemented on PostgreSQL yet. 
+- IVM computes and applies only the incremental changes to the materialized views. 
+  - Suppose that `view V` is defined by `query Q` over a state of base `relations D`.
+  - When D changes `D' = D + dD`, we can get the new view state V' by calculating from D' and Q, and this is re-computation performed by `REFRESH MATERIALIZED VIEW` command. 
+  - On the other hand, IVM calculates the delta for view (dV) from the base tables delta (dD) and view definition (Q), and applies this to get the new view state,     `V' = V + dV`.
+- In theory, the view definition is described in a relational algebra (or bag algebra) form. For example, a (inner) join view of table R and S is defined as V = R ⨝ S.
+
+- How to extract changes on base tables
+  - There are at least two approaches. 
+  - One is using AFTER triggers and Transition Tables, which is a feature of AFTER trigger introduced from PostgreSQL 10. This was implemented originally aiming to support IVM, and in fact the proposed patch uses this. This enables collect row sets that include all of the rows inserted, deleted, or modified by the current SQL statement.
+  - Another candidate is using logical decoding of WAL.
+
+- How to calculate the delta to be applied to materialized views
+  - This is basically based on relational algebra or bag algebra. 
+  - In theory, we can handle various view definition. Views can be defined using several operations: selection, projection, join, aggregate, union, difference, intersection, etc. 
+  - If we can prepare a module for each operation, there is possibility of extensive implementation of IVM.
+
+- When to maintain materialized views
+  - There are two approaches, immediate maintenance and deferred maintenance.
+  - In immediate maintenance, views are updated in the same transaction where the base table is updated. The proposed patch implements a kind of immediate maintenance, that is, materialized views are updated immediately in AFTER triggers when a base table is modified. SQL statement modify only one base table and the changes can be extracted by using Transition Tables mentioned above.
+  - In deferred maintenance, views are updated after the transaction is committed, for example, when the view is accessed, as a response to user command like REFRESH, or updated periodically, and so on.
+
+- How to identify rows to be modified in materialized views
+  - When applying the delta to materialized views, we have to identify which tuple in materialized views is corresponding to a tuple in the delta. 
+  - A naive method is matching by using all columns in a tuple, but clearly this is inefficient. If a materialized view has unique index, we can use this. 
 
 ## [Caching Partially Materialized Views Consistently](https://blog.the-pans.com/caching-partially-materialized-views-consistently/)
 
 - According to the PostgreSQL wiki
-  - A materialized view is a table that actually contains rows, but behaves like a view. 
+  - A materialized view is a table that actually contains rows, but behaves like a view.
   - That is, the data in the table changes when the data in the underlying tables changes.
 
 - According to Wikipedia
   - a materialized view is a database object that contains the results of a query.
   - For example, it may be a local copy of data located remotely, or may be a subset of the rows and/or columns of a table or join result, or may be a summary using an aggregate function.
 
-- A materialized view is a cache. 
+- 👉🏻 A materialized view is a cache.
   - Since any data can be described with the relational model, we can also say every cache is a partially materialized view – I mean every cache. 
   - No matter if it is a cpu cacheline, a DNS entry cached in your browser, or some value in memory your application memoized, it can be reasoned about as a partially materialized view. 
   - Even a cached computation result is a partially materialized view; 
 - A cache and a partially materialized view are essentially the same thing. In a database (e.g. PostgreSQL, Oracle, etc.), the materialized view is explicitly defined.
-# data-model-lsm/btree
-- [What is a LSM Tree? - DEV Community](https://dev.to/creativcoder/what-is-a-lsm-tree-3d75)
-  - Sled is another embedded key value store in Rust, that uses a hybrid architecture of B+ Trees and LSM Tree (Bw Trees)
-
-- [Bw-Trees](https://sinsay.github.io/db/chapter_6_6_bw_trees.html)
-  - Bw-Tree 是 B-Tree 的一个有趣的变种，做了许多重要的优化：写放大，非堵塞的访问以及缓存友好性。一个修改过的实现版本是 Sled，CMU 数据库组织实现了一个基于内存的 Bw-Tree 版本，称为 OpenBw-Tree
-# db-dev-xp
-- [BeyondStorage: why we failed](https://xuanwo.io/2023/01-beyond-storage-why-we-failed/)
-  - 介绍了 BeyondStorage 开源社区的失败并分享了 #OpenDAL 在此基础上的经验教训
-  - BeyondStorage 构建 go-storage 是为了满足迁移服务的需求，而迁移服务的需求来自于 go-storage 能力的自然延伸。不难发现这套逻辑中出现了一个可怕的循环，链条中完全没有真实用户的参与，项目从发展伊始就在朝着错误的方向狂奔。
-  - BeyondStorage 失败的最直接原因是失去了最大金主：青云科技。
-  - OpenDAL 最幸运的地方在于它孵化自 Databend 的真实场景。Databend 持续不断地提出新需求，这些需求帮助我判断需求的必要性、调整任务优先级并修正错误假设。
 # blogs-db-design
 
 ## [Ten Common Database Design Mistakes - Simple Talk](https://www.red-gate.com/simple-talk/databases/sql-server/database-administration-sql-server/ten-common-database-design-mistakes/)

@@ -31,7 +31,9 @@ modified: 2023-09-16T17:53:29.322Z
 ## [Migrating Facebook to MySQL 8.0 | Hacker News_202107](https://news.ycombinator.com/item?id=27922097)
 
 # db-vendors
-- [Building and operating a pretty big storage system called S3](https://www.allthingsdistributed.com/2023/07/building-and-operating-a-pretty-big-storage-system.html)
+- [Building and operating a pretty big storage system called S3_202307](https://www.allthingsdistributed.com/2023/07/building-and-operating-a-pretty-big-storage-system.html)
 
-- [Database branching: three-way merge for schema changes](https://planetscale.com/blog/database-branching-three-way-merge-schema-changes)
+- [planetscale - Database branching: three-way merge for schema changes_202304](https://planetscale.com/blog/database-branching-three-way-merge-schema-changes)
+
+- [Turning the database inside-out with Apache Samza | Confluent_201503](https://www.confluent.io/blog/turning-the-database-inside-out-with-apache-samza/)
 # more

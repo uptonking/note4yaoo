@@ -12,6 +12,16 @@ modified: 2023-09-13T14:28:01.426Z
 # discuss-stars
 - ## 
 
+- ## [Damn Cool Algorithms: Log structured storage (2009) | Hacker News_201705](https://news.ycombinator.com/item?id=14447727)
+- event sourcing seems like a very powerful pattern that I haven't seen wide adoption. The best documentation seems to be some MS dev library notes and a discussion from M Fowler.
+- 🤔 Are there any open source implementations of a database that uses event sourcing?
+- I built https://github.com/amark/gun after I was using MongoDB to event source data. The key piece for me was wanting to have Firebase-like realtime sync for my event sourcing.
+- I've become a bit of a CouchDB zealot(狂热者) of late for this exact reason... Native support for incrementally updating map-reduce combined with change-feeds makes implementing event sourcing straightforward. 
+  - If you wanted to reimplement event sourcing in couch, it can be implemented as a versioned merge in a map-reduce view that takes a sequential ordered events (e.g. ui-event:0000025) and maps those changes into a "versioned" JSON. This versioned JSON changes leaf values into versioned objects like "fieldValue": { "_val": 34.00, "_ver": 25 } which I call property fields. 
+  - This is necessary because CouchDB is a B+Tree implementation and reduce operations are sequential but not contiguous(相邻的). 
+  - The reduce phase merges all events sequentially by choosing property fields with the latest event – making it a CRDT type – and resulting in a single JSON document with the latest fields with "_ver" info for each. 
+  - This scheme has a drawback that each event needs to have a unique serially ordered ID to work. Not sure how time stamps would work. I chose the ID based scheme to allow the UI be able to know when a user interaction conflicts (a vector clock between) and let it display the conflict to the user or decide how to merge the knew state.
+
 - ## 💡 This confluence of things is going to unlock some stellar new infrastructure.
 - https://twitter.com/tantaman/status/1715046327892025526
   - Event sourcing
@@ -195,7 +205,13 @@ that commit position, thus providing "read your own writes" semantics.
 # discuss-cdc/change-data-capture
 - ## 
 
-- ## 
+- ## [Why NoSQL | Hacker News_202110](https://news.ycombinator.com/item?id=28767996)
+- > Use Debezium or similar to broadcast entity changes to a Kafka topic keyed on entity id. If you want to retain all changes (e.g., for event streaming), then use an appropriate retention strategy. If you want to retain only the latest state, use log compaction - it will retain the latest record with a given key.
+- Yes, now keep tugging(沿某方向拉或拖) on the thread of that thought. 
+  - If you try to write code to reconstruct the state of your relational database based on those changes, you've got two copies of your logic that will inevitably get out of sync, and you'll have bugs that you only discover when you try to actually do it. (And if you only record differences between writes that actually made it into the relational database, you haven't solved the original problem of data being lost because writes are rejected). 
+  - What you want to do is instead make those Kafka events the primary "source of truth" and construct the "current state of the world" based on that, i.e. event sourcing.
+  - You don't, and can't, make use of transactions with that approach - you get (eventual) consistency because each log is ordered, which gives you the properties that you want with less of the downsides (deadlocks), but writing and reading the eventual results of that write is a fundamentally async process (which is good in the long term - it forces you think about your dataflow and avoid loops - though it might involve more work upfront). 
+  - 👉🏻 And you don't really have relationality - if you need a relation in your live dataflow, you'll generally join at the event pipeline level and make the joined thing its own stream (much like a materialized view in SQL-land). You can build secondary indices etc. but those are explicitly a secondary thing layered on top of your primary datastore.
 
 - ## 💡 Someone got me wondering yesterday: would it be hard to simulate a stream of change-data-capture?
 - https://twitter.com/MichaelDrogalis/status/1711844926642848132
@@ -382,13 +398,6 @@ that commit position, thus providing "read your own writes" semantics.
   - If you follow a few simple rules, then those histories are guaranteed to converge.
 
 - Check out Macrometa, a data platform that uses CRDTs to manage state a N number of pops and also does real time event processing. - https://macrometa.com (full disclosure, I work at Macrometa)
-
-- ## [Damn Cool Algorithms: Log structured storage (2009) | Hacker News_201705](https://news.ycombinator.com/item?id=14447727)
-- Slightly related perhaps and something I have been curious about for a while... event sourcing seems like a very powerful pattern that I haven't seen wide adoption. The best documentation seems to be some MS dev library notes and a discussion from M Fowler.
-- 🤔 Are there any open source implementations of a database that uses event sourcing?
-- I built https://github.com/amark/gun after I was using MongoDB to event source data. The key piece for me was wanting to have Firebase-like realtime sync for my event sourcing.
-- I've become a bit of a CouchDB zealot of late for this exact reason... Native support for incrementally updating map-reduce combined with change-feeds makes implementing event sourcing straightforward. 
-  - If you wanted to reimplement event sourcing in couch, it can be implemented as a versioned merge in a map-reduce view that takes a sequential ordered events (e.g. ui-event:0000025) and maps those changes into a "versioned" JSON. This versioned JSON changes leaf values into versioned objects like "fieldValue": { "_val": 34.00, "_ver": 25 } which I call property fields. This is necessary because CouchDB is a B+Tree implementation and reduce operations are sequential but not contiguous. The reduce phase merges all events sequentially by choosing property fields with the latest event – making it a CRDT type – and resulting in a single JSON document with the latest fields with "_ver" info for each. This scheme has a drawback that each event needs to have a unique serially ordered ID to work. Not sure how time stamps would work. I chose the ID based scheme to allow the UI be able to know when a user interaction conflicts (a vector clock between) and let it display the conflict to the user or decide how to merge the knew state.
 
 - ## 💡 [Eventual Business Consistency | Hacker News_202308](https://news.ycombinator.com/item?id=37009296)
 - Another approach to this kind of thing would be storing most of your data as a log of events ("event sourcing") and having "Retroactive Address Change" as its own business-process, one which can be linked to the other steps like sending a refund check or crediting an account.

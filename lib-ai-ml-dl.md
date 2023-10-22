@@ -9,10 +9,22 @@ modified: 2023-03-21T07:54:11.468Z
 
 # guide
 
+- dev-xp
+  - 处理数据和提取特征要花费大量精力
+  - 结果的可解释性不高，调参原理和可复现性经常出现问题
+  - 数据样本和计算资源壁垒很高
+  - 传统算法也可以解决分类和回归问题
+
+- ai-use-case
+  - chat and answer
+  - summarization
+  - translation
+  - text generation
+
 - tips
   - 数据样本，大量
   - 计算资源，GPU、集群
-  - 业务变化快，可能还能训练出来就换了方向
+  - 业务变化快，可能还没训练出来就换了方向
   - 传统模型和算法效果如何，是否只是锦上添花
 # discuss
 - ## 

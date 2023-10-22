@@ -17,21 +17,6 @@ modified: 2023-09-17T18:17:13.008Z
 - ## 
 
 - ## 
-# discuss
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [Is ORM still an anti-pattern? | Hacker News_202306](https://news.ycombinator.com/item?id=36497613)
-- Materialized views are almost criminally underused. I feel most people don't know about or understand them. 
-  - They can be a very effective "caching layer" for one thing. 
-  - I have used them to great effect.
-  - A lot of times I see people pulling things out of the database and caching them in Redis. 
-  - When in fact a materialized view would accomplish the same thing with less effort.
-- They are great if the frequency of changes isn't very high and the underlying tables are read-heavy and running it directly against the tables would be expensive (e.g. complex joins).
-- Typically Redis is used in medium to high volume of many smallish but repetitive queries where you want to store some key bits of information (not entire records at which point going to database might be simpler) that are sought often and you don't want to hit the database again and again for them - a bit different from the materialized view scenario.
 
 - ## [Damn Cool Algorithms: Log structured storage (2009) | Hacker News_201705](https://news.ycombinator.com/item?id=14447727)
 - In the 8 years since this was written, Log-Structured Merge Trees have basically "won". 
@@ -57,6 +42,21 @@ modified: 2023-09-17T18:17:13.008Z
 - I built https://github.com/amark/gun after I was using MongoDB to event source data. The key piece for me was wanting to have Firebase-like realtime sync for my event sourcing.
 - I've become a bit of a CouchDB zealot of late for this exact reason... Native support for incrementally updating map-reduce combined with change-feeds makes implementing event sourcing straightforward. 
   - If you wanted to reimplement event sourcing in couch, it can be implemented as a versioned merge in a map-reduce view that takes a sequential ordered events (e.g. ui-event:0000025) and maps those changes into a "versioned" JSON. This versioned JSON changes leaf values into versioned objects like "fieldValue": { "_val": 34.00, "_ver": 25 } which I call property fields. This is necessary because CouchDB is a B+Tree implementation and reduce operations are sequential but not contiguous. The reduce phase merges all events sequentially by choosing property fields with the latest event – making it a CRDT type – and resulting in a single JSON document with the latest fields with "_ver" info for each. This scheme has a drawback that each event needs to have a unique serially ordered ID to work. Not sure how time stamps would work. I chose the ID based scheme to allow the UI be able to know when a user interaction conflicts (a vector clock between) and let it display the conflict to the user or decide how to merge the knew state.
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Is ORM still an anti-pattern? | Hacker News_202306](https://news.ycombinator.com/item?id=36497613)
+- Materialized views are almost criminally underused. I feel most people don't know about or understand them. 
+  - They can be a very effective "caching layer" for one thing. 
+  - I have used them to great effect.
+  - A lot of times I see people pulling things out of the database and caching them in Redis. 
+  - When in fact a materialized view would accomplish the same thing with less effort.
+- They are great if the frequency of changes isn't very high and the underlying tables are read-heavy and running it directly against the tables would be expensive (e.g. complex joins).
+- Typically Redis is used in medium to high volume of many smallish but repetitive queries where you want to store some key bits of information (not entire records at which point going to database might be simpler) that are sought often and you don't want to hit the database again and again for them - a bit different from the materialized view scenario.
 
 - ## Write-ahead logging is a standard way to ensure data integrity and reliability. 
 - https://twitter.com/arpit_bhayani/status/1508665078929047552

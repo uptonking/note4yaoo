@@ -100,7 +100,13 @@ modified: 2023-08-25T22:31:05.132Z
 
 - https://github.com/neondatabase/neon /rust
   - https://neon.tech/
-  - separates storage and compute and substitutes the PostgreSQL storage layer by redistributing data across a cluster of nodes.
+  - Neon is a serverless open-source alternative to AWS Aurora Postgres. 
+  - It separates storage and compute and substitutes the PostgreSQL storage layer by redistributing data across a cluster of nodes.
+  - A Neon installation consists of compute nodes and the Neon storage engine. Compute nodes are stateless PostgreSQL nodes backed by the Neon storage engine.
+  - Compute is fully client-compatible with Postgres because a Neon compute is Postgres.
+  - Neon allows you to instantly branch your Postgres database to support modern development workflows. 
+    - You can create branches for test environments and for every deployment in your CI/CD pipeline.
+    - Branches are created using the "copy on write" technique, making them virtually free.
 
 - https://github.com/attic-labs/noms /apache2/go/archived
   - The versioned, forkable, syncable database

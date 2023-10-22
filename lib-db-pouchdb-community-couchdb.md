@@ -74,14 +74,16 @@ modified: 2023-10-07T17:29:16.871Z
   - This site storage _can_ be cleared by the browser (it's "temporary" per the spec), but in practice it isn't very frequently cleared unless the machine is running low on space. E.g. Chrome only does it if a site exceeds 20% of total per-origin browser storage
   - In any case, when the browser does clear this storage, it clears everything at once for that origin, so the user essentially has the experience of visiting the site for the first time. 
   - This is why it's a good practice to periodically sync your PouchDB data to CouchDB because it can be lost in rare cases.
-
 - Client side pouch happily syncs directly with server side couch
 - Right, but how do you scale that out on the server-side while protecting data on a per-user basis? Sorry if I'm missing something obvious.
   - Usually you create a separate database for every user. This sounds _nuts_ from a traditional database mindset, but works great in Couch. You can then create another database that replicates from all the user databases in order to perform your aggregate queries on the back end.
 - Seconded. This is the standard CouchDB approach: one database per user.
   - Sounds weird coming from my Postgres and MySQL background, but works great in practice, depending on your use case and if you clear out old revisions and unused docs, which for our use case can number into the thousands fairly rapidly.
-- You can then create another database that replicates from all the user databases in order to perform your aggregate queries on the back end. That sounds horribly space inefficient.
+- You can then create another database that replicates from all the user databases in order to perform your aggregate queries on the back end. **That sounds horribly space inefficient**.
   - Yep. Everything in software is a trade-off. This trades space efficiency for multi master replication with first class offline app experiences. For many cases, that's a fine trade. Disks are cheap. If that isn't a fine trade for a particularly large dataset, use a different technology that's better at space efficiency and worse at other stuff.
+
+- Any guidance on moving from Cloudant to CouchDB? Are you hosting it yourself? If so, has the amount of maintenance been more than you expected, or was it mostly setup time and then forget about it?
+  - Yup, hosting it ourselves. Its a peach. There are few things that it doesnt come with out of the box - clustering, Full text search, geoindexing, chained map reduce, auto compaction, index auto-updation. Once thats done, if anything it was more forget about it than Cloudant, which bills on requests / thoroughput. This can catch you out because continuous replications between databases on the same cloudant account are also counted as requests and billed as such. 
 
 - I let the user decide to logout and destroy or just logout if it's a trusted device but obviously the local db could be accessed. Most users don't logout and I set a long cookie expiration. You could also encrypt data.
 
@@ -118,9 +120,65 @@ modified: 2023-10-07T17:29:16.871Z
 # discuss-couchdb/couchbase
 - ## 
 
-- ## 
+- ## [MiniCouchDB in Rust | Hacker News_202006](https://news.ycombinator.com/item?id=23446852)
+- The only thing I'm struggling with is running code when a document is updated. I have a polling client that watches for the _global_changes updates, but it seems really hacky. I wish there was a better way to get access to all database changes that looked like firestore functions.
+- _changes should be available in an event stream format for continuous consumption, and you can apply filter functions to the feed?
+  - It is, but I am using the global changes feed (so I don't need to create a process for each database which doesn't scale for me). And you have to manually create that database to have it work. And I have to filter based on my own code, I just wish there was a way to subscribe to high level events. In general it works fine but I keep thinking there could be a better way.
 
-- ## 
+- 👉🏻 In general, we are trying to move away from running your whole application in CouchDB. We would prefer that you **have an application layer in front of your CouchDB** instance. We recommend that you put up a proxy if you want to expose your replication to PouchDB. That way you can add security around that endpoint.
+
+- ## [We have a problem with promises | Hacker News_201505](https://news.ycombinator.com/item?id=9564076)
+- as I mention in the article, ES7 async/await should help fix that
+
+- ## [Datomic Update: Client API, Unlimited Peers, Enterprise Edition, and More | Hacker News_201611](https://news.ycombinator.com/item?id=13055961)
+- SQL views don't compose at the same level that Datalog expressions do, but that's because they aren't typically expressed as raw graph data (i.e. lists of strings where each list item is a node in the graph). If you could just name arbitrary chunks of SQL AST and mash them together, it would be just as composable (though perhaps more cumbersome due to boilerplate).
+- you might give CouchDB a look. It's a document datastore that offers map/reduce views written in Javascript (use as much or as little composition/abstraction as you want). The distributed features are pretty cool (bidirectional sync, versioned documents) and writing apps with it is awesome
+
+- ## [Cloudant/IBM back off from FoundationDB based CouchDB rewrite | Hacker News_202203](https://news.ycombinator.com/item?id=30652281)
+- [Important update on couchdb's foundationdb work-Apache Mail Archives](https://lists.apache.org/thread/9gby4nr209qc4dzf2hh6xqb0cn1439b7)
+  - CouchDB embarked(开始；从事) on an attempt to build a next-generation version of CouchDB using the FoundationDB database engine as its new base.
+  - The principal sponsors of this work, the Cloudant team at IBM, have informed us that, unfortunately, they will not be continuing to fund the development of this version and are refocusing their efforts on CouchDB 3.x.
+
+- The FoundationDB rewrite would introduce a size limit on document attachments, there currently isn’t one. Arguably the attachments are a rarely used feature but I found a useful use case for them.
+  - I combined the CRDT Yjs toolkit with CouchDB (PouchDB on the client) to automatically handle sync conflicts. Each couch document was an export of the current state of the Yjs Doc (for indexing and search), all changes done via Yjs. The Yjs doc was then attached to the Couch document as an attachment. When there was a sync conflict the Yjs documents would be merged and re-exported to create a new version. 
+  - The issue being that the FoundationDB rewrite would limit the size and that makes this architecture more difficult. It’s partly why I ultimately put the project on hold.
+  - (Slight aside, a CouchDB like DB with native support for a CRDT toolkit such as Yjs or Automerge would be awesome, when syncing mirrors you would be able to just exchange the document state vectors - the changes to it - rather than the whole document)
+- As others have noted, the solution to storing attachments in FDB, where keys and values have an enforced maximum length, is to split the attachments over multiple key/values, which is exactly what the CouchDB-FDB code currently does.
+  - The other limit in FDB is the five second transaction duration, which is a more fundamental constraint on how large attachments can be, as we are keen to complete a document update in a single transaction. The S3 approach of uploading multiple parts of a file and then joining them together in another request would also work for CouchDB-FDB. While it _could_ be done, there's no interest in the CouchDB project to support it.
+- Exactly, almost all the time you would be better to save the attachment to an object store. However I think I found that small edge case where the attachment system was perfect. It was essential to save the binary Yjs doc with the couch document, it needed to be synced to clients with the main document. Saving it to an object store is not viable due to the overhead during syncing.
+  - yup. the purpose of couchdb's original attachment support was for "couchapps". The notion that you'd serve your entire application from couchdb. Attachments were therefore for html, javascript, image, font assets, which are all relatively small. The attachment support in CouchDB <= 3.x is a bit more capable than that due to its implementation, but storing large binaries was not strictly a goal of the project.
+
+- SyncedStore is a brilliant Yjs reactive store for SPAs, it’s not a database. It like an automatically distributed real-time reactive redux/vuex for collaborative apps.
+  - The y-IndexedDB you linked to is actually part of the Yjs toolkit, it is a way of persisting a Yjs document in the browser for offline editing in a PWA. It doesn’t provide a way to sync a whole (or subset of a) database like Couch/PouchDB does. It’s a very important part of the Yjs toolkit but doesn’t do what I’m describing (it’s just a key value store).
+
+- I don't see why there would be a fundamental reason why there would be an attachment size limit. I guess it would just need to be implemented by breaking the attachment into multiple keys? There may be some overhead but it seems that this is valuable because it allows large attachments to be split across servers as required.
+  - FoundationDB has size limitations on the k/v pairs it can accept and splitting documents and writing those chunks in small transactional batches is the recommended workaround (along with some other 'switch over' transactional write which makes the complete document visible all at once.)
+  - If I remember the fdb docs, there's also a time limit on transactions that further limits the feasible max size.
+
+- So what's the deal with the unpopularity of CouchDB?
+  - Querying in a more ad-hoc way (vs. building indexes ahead of time and querying by key, etc) is a bit janky / not 1st class (I think mango addresses this but not entirely sure).
+  - The runtime being erlang? It certainly seemed to be the cause of some issues when I tried to run it in WSL, or atleast my lack of knowledge with erlang made diagnosing it more trouble.
+  - The JS query server engine is/was fairly old (I think it might have jumped to a more recent version of Spidermonkey at some point), and hooked up in a way that, while more modular, limits the performance (documents have to be serialized to/from the engine in another process, rather than just natively passed in)
+  - The authorization model is... unique. You can limit down to a doc/field level who can submit changes 
+  - the admin interface "fauxton" never really felt finished and debugging views is not welcoming for new users.
+  - It's been a while, but seems like many people wanted something simpler like MongoDB for a NoSQL document database. CouchDBs map/reduce queries were hard to get people's heads around, many people didn't need attachments, etc.
+
+- The FoundationDB Document Layer is compatibile with MongoDb 3.x API. https://github.com/FoundationDB/fdb-document-layer .and you get the transaction Al integrity. I stopped using MongoDB and switched to this.
+  
+- ## [Kinto by Mozilla – An open-source Parse alternative | Hacker News_201601](https://news.ycombinator.com/item?id=10994736)
+- CouchDB is so underrated in this space.
+  - I get it: CouchDB was a very early (the first real?) document-based database, and it got some things wrong, or at least weird early on (e.g. map/reduce queries, a reduce step to the map/reduce query that is actually one-to-many (on purpose! there are concrete reasons in real life you want this!), etc.).
+  - But they also got so much right:
+  - The database is all HTTP, all the time.
+  - Offline replication and database streaming, standardized at the protocol level
+  - You can store your HTTP assets right alongside the DB for Firebase-like asset hosting.
+  - You can store full-blown files, which is great for lots of practical app these days.
+  - Trivial replication. The scaling of CouchDB itself is honestly a bit crappy, but Couchbase has great scaling
+- 
+- 
+- 
+- 
+- 
 
 - ## 💡 [Ask HN: Pros and Cons of Using CouchDB? | Hacker News_202205](https://news.ycombinator.com/item?id=31423986)
 
@@ -169,11 +227,6 @@ modified: 2023-10-07T17:29:16.871Z
   - Seller.id, Review.id won't be used as extensively, you can then go for UUIDs.
   - But Ids can be used creatively for filtering or sorting prod-{yyyy-mm-dd}-iphone13, if that's your use case, you should forget about the id length. Id length matters mostly for disk usage in indexes.
 
-- 
-- 
-- 
-- 
-- 
 - 
 - 
 
@@ -232,15 +285,31 @@ modified: 2023-10-07T17:29:16.871Z
 
 - Mobile support: CouchDB stands out, in that it can run on an Android or iOS mobile device. In addition to being mobile, the database can also synchronize with a remote master database, allowing the data to be shared easily between mobile devices and servers.
   - Meteor actually provides exactly this for MongoDB; it has a "minimongo" package in the browser that supports Mongo's query language, running it synchronously against an in-memory copy of the collection. And with Meteor, you can specify "subscriptions" declaratively that enable bidirectional synchronization while their owner components are in scope.
+- The CouchDB one is actually a fully persisted database, not just an in-memory cache. Both are useful, but it's not quite the same thing.
 
 - CouchDB replication has got to be among the easiest and nicest in the industry. Setting up master/master is a breeze.
 
-- Snapshots: Any changes to a document occur as a revision and appends the information to the file. This means you can grab a “snapshot” of the file and copy it to another location even while the database is running without having issues with corruption.
+  - Snapshots: Any changes to a document occur as a revision and appends the information to the file. This means you can grab a “snapshot” of the file and copy it to another location even while the database is running without having issues with corruption.
   - This is the main feature I sell when pushing CouchDB. 
   - Use it to project events and you'll see what I mean.
 
+- 🤔 We've found the Postgres json store works just fine for our purposes
+- The reason I rejected PG's JSON store, was it's inability to update fields inside of a JSON doc, without replacing the whole document. In your case, does this constraint push you to use more types of smaller documents, or do you just read the whole doc, update it in the application, and then write it back to the DB?
+  - JSONB data-type allows for specific field modifications in the JSON object. Operators look ugly in hand-crafted SQL but, works a treat.
+- Does PG's Jason support multi-master sync? Native db level support for that feature simplifies a lot of my use cases. It'd be interesting to see a SQLite/WebSQL <-> Postgres multi-master syncing system. It'd be the equivalent of CouchDB <-> PouchDB. Maybe even using the same CouchDB protocol
+  - CouchDB and Couchbase both support only whole document updates. So you get document conflicts in those document stores as well, meaning your app needs to understand and handle 409's. But those conflicts are relatively easy to handle in most cases, at the cost of a new round trip. Mostly it's a matter of downloading the new document state and merging your change to it and re-post. If you're using Redux/Vuex/Event Sourcing this becomes trivial to support. Another way to handle it is to split a single large document into smaller pieces and write a map/reduce view that returns a composite document. That should be possible in Postgres as well with a prepared statement.
+- Mongo really isn't about storing JSON. At least that shouldn't be it's selling point. The selling point that is since it's basically just a glorified key value store it's very replicable and distributable. Postgres is very much not either of those things. The JSON is nice for a few things and I use it sometimes but Postgres is and will always be extremely difficult to cluster and replicate.
+  - Postgres 10 added support logical replication. It makes horizontal scaling fairly painless.
+  - Until you need to reseed the original master, want to do quick rolling restarts or want any automation in automatic failover. PG has a long way to go.
+- Logical replication by default doesn't even handle DDL statements so something as simple as adding a new column requires extra process. Postgres is probably the weakest of all relational databases when it comes to scalability, both vertical and horizontal.
+
+- I use couch, pouch, elasticsearch and sql dbs. I never really got the "schemaless" selling point of nosql though. I do see the point of storing documents rather than rows for some use cases, or dbs extra strong on searches, etc. But what is the problem with an "add column" or "change datatype" operation is sql..?
+  - Partly because MySQL requires a full table lock and full table copy to implement those operations. Much of the nosql movement originated from implementing schema changes on production MySQL databases. In many if not most cases, NoSQL is really NoMySQL.
+  - Many other engines, PostgreSQL for example, can add a new column without constraints as a nearly instant metadata change only. Data type changes that do not require validation (expanding a VARCHAR vs CHAR to INT) are also rapid.
+- In my experience, "schemaless" just means that I'll have to manage the schema manually through some "updater" scripts. Any data without schema is just noise, so if you have any data, it means that you have schema for it somewhere.
+
 - ## 🎯 [CouchDB 3.0 | Hacker News_202002](https://news.ycombinator.com/item?id=22425834)
-- CouchDB is awesome, full stop. While it's missing some popularity from MongoDB and having wide adoption of things like mongoose in lots of open source CMS-type projects, it wins for the (i believe) unique take on map / reduce and writing custom javascript view functions that run on every document, letting you really customize the way you can query slice and access parts of your data...
+- CouchDB is awesome, full stop. While it's missing some popularity from MongoDB and having wide adoption of things like mongoose in lots of open source CMS-type projects, it wins for the (i believe) unique take on map/reduce and writing custom javascript view functions that run on every document, letting you really customize the way you can query slice and access parts of your data...
 
 - It works very poorly as a relational DB.
 
@@ -281,7 +350,16 @@ modified: 2023-10-07T17:29:16.871Z
   - If the goal is just to limit document size, or throttle clients trying to hammer the API, this doesn't even have to be a custom proxy, and reverse proxy with the needed control knobs (such as NGINX) will do. 
   - At scale there's a decent chance you want a proxy in front of your Couch instance anyway, since Couch is truly multi-master, meaning you probably want to balance your clients across all your nodes anyway.
 
-- Custom backend means no synchronisation and no advantages over postgres.
+- Custom backend means no synchronisation and no advantages over postgres. Is there any secure open source code with pouchdb/couchdb integrations?
+- Your backend can be a reverse proxy that authenticates requests then passes them off to CouchDB (or PouchDB, since that also runs on the server). I have an example up @ https://github.com/daleharvey/noted. The server is 200 lines and does signup / email authentication etc.
+  - This server can't prevent authenticated user from uploading huge document of running expensive query.
+- Any reverse proxy can limit the the size of a document upload. Even just plain NGINX can do that. Just set the client max body size.
+  - As for queries, it kind of depends on your model. Mango queries are pretty limited (no joins, no arbitrary filters), so it's not necessarily as easy as you think to write one that hosed performance. A client could of course write one that doesn't use an index, which may or may not be a concern.
+  - An easy option if it is though is just don't expose the _find endpoint, which effectively limits your users to the map/reduce queries you've written (unless you give them admin they don't have the ability to create their own).
+- A popular model is for the clients to run the queries locally, the server doesnt need to expose any query endpoints, only the ones necessary for replication.
+- I feel like your thinking about Couch as exposing your entire PostgreSQL DB to the internet, whereas with couch, a common model is to have a single database per user. In the Postgres model, providing the end user with any direct access is a nightmare, because every other users data is in there and I have to keep other users from viewing/modifying it. In Couch, you give them access to their database and only their database, that's how you isolate users.
+- If I use backend I can create all validation logic in application server. But in this case no automatic synchronisation. One of the major selling point of couchdb is replication protocol for client-server data syncing. When you design product with posgress you don't allow to execute raw sql queries from clients without any application server. But looks like it is recommended way to update data in couchdb world if you want to have synchronisation. I can't understand how can this architecture be secure?
+  - Couchdb has options for controlling which documents are replicated. This may help depending on your use case.
 
 - 👉🏻 You can replicate all per-user DBs into a central database today.
   - We are working on per-document-access-control at the moment, to support this use-case out of the box
@@ -289,6 +367,23 @@ modified: 2023-10-07T17:29:16.871Z
 - there are no changes to the replication protocol in Couch 3.0, so PouchDB already works.
 
 - The newest version of CouchBase mobile no longer supports CouchDB as a replication target. It can still be accomplish with the CouchBase Sync Gateway, but get complicated quickly.
+
+- ## [Why Replication is Awesome | Hacker News_201311](https://news.ycombinator.com/item?id=6690607)
+- my own opinion that Couchdb is highly overrated. Not because it is not a good implementation of a document style database, but because the document store itself is not a good match for most use cases.
+  - If the only requirement is a replicated JSON document store, it may work OK for you. But so would Riak, Postgres and some others.
+  - If you need to update the data in those documents or ever need to query the data in ways you did not initially envision, you will quickly find yourself missing features which even traditional SQL databases are very good at. Development is slower.
+  - Writing map/reduce for queries seems particularly cumbersome, particularly if you prefer not to use Javascript. And you have to plug them into a textarea in a webpage interface, or manually put them into Couchdb over http using curl or some library that abstracts this away. Either way it is a degree of separation that makes the data feel more out of reach than through a console interface like psql or mysql.
+  - Consider the scenario where you want to update the value in an attribute on several thousand, or even just several documents that match some criteria. In SQL, you would simply jump in the console and `update table set col=val where criteria` . There is no such feature in Couchdb. You will need to write code to filter and fetch each matching document, manipulate it as needed, then write the entire thing back. 
+- I agree with some but not all of what you write.
+  - 0) CouchDB will never lose your data. Period. Not many other stores are 'append only, copy on write'. 
+  - 1) I think document DB's are as good or better than a key value store like riak. It's great to have the choice, at a later point in time, to reach inside your documents, build indexes, etc.
+  - 2) The biggest wart(缺点；错误) with couchdb from a scaling point is the single server, master-slave, and master-master. There is no dynamo style clustering, ala cassandra, risk, etc. 
+  - 3) Finally, the biggest wart from a usability standpoint is the need to build materialized views. Ad hoc queries are painful. In Apache CouchDB most folks use Elastic Search in conjunction. 
+
+- When criticising CouchDB, don't forget about its killer features:
+  - Replication: slave, master, multi-master, pull, push, single, continuous over http(s), you name it.
+  - Update handlers: You don't have to fetch, modify and save in every case.
+  - MVCC semantics: Lock-free write access. Never, ever database dead-locks.
 # discuss-sync/collab
 - ## 
 
@@ -478,6 +573,12 @@ I’ve copied airtable data to it in the past.
 
 - ## [Paperwork: An open source Evernote alternative | Hacker News_201501](https://news.ycombinator.com/item?id=8942823)
 - You can use PouchDB for the browser side, CouchDB for the server, and Couchbase Mobile for the eventual mobile apps. 
-  - Pros: offline and online; natural fit for document management; git-like revision and conflict management; simple to set up replication for backup. 
-  - Cons: it's fallen out of favor; nobody seems to like writing the mapreduce code for searching and views.
+- Pros: 
+  - offline and online; 
+  - natural fit for document management; 
+  - git-like revision and conflict management; 
+  - simple to set up replication for backup. 
+- Cons: 
+  - it's fallen out of favor; 
+  - nobody seems to like writing the mapreduce code for searching and views.
 - PouchDB dev here. The map/reduce API is definitely a bit cumbersome, which is why we're replacing it with pouchdb-find

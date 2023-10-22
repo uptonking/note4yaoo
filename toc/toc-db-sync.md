@@ -189,8 +189,8 @@ modified: 2022-11-25T15:41:47.534Z
   - http://docs.kinto-storage.org/
   - A generic JSON document store with sharing and synchronisation capabilities.
   - Backends: In-memory (development), PostgreSQL 9.5+ (production)
-  - 比较了parse、firebase、couchdb、kuzzle、remoteStorage、Hoodie
-    - [How does Kinto compare to other solutions?](https://docs.kinto-storage.org/en/stable/faq.html)
+  - [How does Kinto compare to other solutions?](https://docs.kinto-storage.org/en/stable/faq.html)
+    - 比较了parse、firebase、couchdb、kuzzle、remoteStorage、Hoodie
   - https://github.com/Kinto/kinto.js
     - An Offline-First JavaScript client for Kinto.
 
