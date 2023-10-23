@@ -12,6 +12,49 @@ modified: 2022-12-05T19:10:15.451Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [The Rise and Fall of the OLAP Cube (2020) | Hacker News_202107](https://news.ycombinator.com/item?id=27736713)
+- Modern data warehouses don't need to build cubes for performance reasons. 
+  - Low latency data warehouses like ClickHouse or Druid can aggregate directly off source data. 
+  - The biggest driver for modeling is allowing non-coders to access data and perform their own analyses. 
+  - I don't see that problem ever going away. Cube modeling with dimensions and measures solves it well.
+
+- OLAP Cube is not dead, as long as you use some form of:
+  1. GROUP BY multiple fields (your dimensions), or
+  2. partition/shuffle/reduceByKey
+  - and materializing/caching the result of this query for later reuse, you are rolling your own OLAP Cube with whatever data processing ecosystem you have on hands.
+  - The technology itself has clear use cases and incredible business value on a daily basis, only implementation details differ depending on surroinding ecosystem
+
+- I'm a bit opinionated on data modelling, so a couple points.
+1. "OLAP Cubes" arguably belong to Microsoft and refer to SQL Server cubes that require MDX queries. It's a solution given to us by Microsoft that comes with well understood features.
+2. OLAP Cubes started to decrease in population in 2015 (I'd argue).
+3. Any solution to fixing "OLAP" that comes from a commercial vendor is suspicious. As painful as Kimbal & Inmon are, they are ideas that don't require vendor lock in.
+4. At my current company, we recently wrapped up a process where we set out to define the future of our DW. The end result looks eerily close to Kimball but with our own naming conventions.
+5. Columnar databases are so pervasive(无处不在的) these days that you should no longer need to worry about a lack of options when choosing the right storage engine for your OLAP db.
+6. More and more data marts are being defined by BI Teams w/little modeling/CS skills. To that end, I think it's important to educate your BI teams as a means to minimize the fallout, and be accommodating in your DW as means to work efficiently with your BI teams. This is to say settle on a set of data modelling principles that work for you, but may not work for someone else.
+
+- Snowflake is the cubeless column store.
+- The OLAP cube needs to come back, as an optimization of a data-warehouse-centric workflow
+
+- A data warehouse is always “OLAP” but it isn’t often a “cube”.
+- The difference as I understand it is that a cube specifically is the multidimensional schema definition of your data set. So for instance typically in an OLTP system you’d have customer data, product data, sales data, performance data, etc. Usually that data is in separate tables.
+  - OLAP is the combined methods that allow you to analyze the data, roll it up, aggregate it, combine it across dimensions etc. Usually by using a star schema.
+  - A OLAP Cube, then, is the full multidimensional schema and relations of all the data. Typically a cube lets you define how each type of field is aggregated, whether it’s summing count fields, averaging dollar fields, or special rules for date fields etc. In addition you specify hierarchies of the data
+
+- I never liked OLAP cubes because they discouraged ad-hoc data exploration since if there wasn't already a cube that modeled the data a certain way you couldn't do it. You had to develop it, or hope a DBA had time to develop it sometime in the next two months. They were fine if you already knew the questions you needed answered, but they probably contributed to some companies focussing on the wrong things because they couldn't easily explore data for new insights.
+  - This is why sometimes you end up with BOTH a traditional ETL data warehouse, for common, structured reporting and analytics and also an unstructured data lake(s) that pull raw data in from many sources to allow for ad-hoc exploration.
+- I think OLAP cubes are falling out of fashion because traditional BI and reporting in general is falling out of fashion. With self-service BI tools like looker and other tools, Business folks are running more adhoc queries than traditionally piped data through ETL processes.
+
+- 👉🏻 We still use MDX. Did some testing with DAX, but I don't believe its step in the right direction. As for tools, we mostly use in-house tools build either on Mondrian or connecting to MS Analysis Services trough XMLA - depending on the use case.
+
+- i think the article misses a big point parametric queries
+  - cubes whether tabular (columnar database) or multidimensional provide a language mdx or dax, that basically allows parametric measures (or queries)
+  - which is essential in data analysis
+  - sql for now, doesnt allow parametric functions or queries in the same way dax or mdx does
+
 - ## do you think in the long term for OLAP DB, native storage format will basically disappear and will be replace by OSS Table format like #DeltaTable and #Apacheiceberg etc
 - https://twitter.com/mim_djo/status/1715544800840269854
 - Why not an open source OLAP-optimized native format?

@@ -16,7 +16,7 @@ modified: 2023-04-20T08:05:44.256Z
   - RocksDB
     - TiKV
   - ClickHouse中的MergeTree也是LSM树的思想
-  - Flink Table Store 目前采用了类似于 RocksDB 的通用合并策略。
+  - Flink Table Store 目前采用了类似于 RocksDB 的通用合并策略
   - 新的InfluxDB的存储引擎看起来和LSM树很像
 # blogs
 - [LSM树由来、设计思想以及应用到HBase的索引 - yanghuahui - 博客园](https://www.cnblogs.com/yanghuahui/p/3483754.html)

@@ -401,10 +401,9 @@ modified: 2022-08-21T10:02:41.845Z
   - Pack tree nodes into a flat object and unpack them again!
   - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
   - Limitations
-
-    - It is assumed that you have children of each node in a single array object
-    - Self referencing objects at any point in the tree are not supported
-    - An id field is required to perform better change detection (using idKey option).
+  - It is assumed that you have children of each node in a single array object
+  - Self referencing objects at any point in the tree are not supported
+  - An id field is required to perform better change detection (using idKey option).
 
 - https://github.com/Voronenko/Storing_TreeView_Structures_WithMongoDB
   - Educational repository demonstrating approaches for storing tree structures with NoSQL database MongoDB
@@ -415,9 +414,13 @@ modified: 2022-08-21T10:02:41.845Z
   - Data is stored in JSON files which are branched into smaller JSON files as size tresholds are met. 
   - static-json-db can be a lower-cost alternative to traditional databases that do not need to be updated frequently. 
 
-- https://github.com/epochtalk/treedb
+- https://github.com/epochtalk/treedb /js/inactive
   - Database for tree structured data
   - LevelDB backend for hierarchical data.
+
+- https://github.com/ClosureTree/closure_tree /ruby
+  - Closure_tree lets your ActiveRecord models act as nodes in a tree data structure
+  - Common applications include modeling hierarchical data, like tags, threaded comments, page graphs in CMSes, and tracking user referrals.
 # json tree
 - https://github.com/measuredco/react-from-json
   - Declare your React component tree in JSON

@@ -26,7 +26,7 @@ modified: 2021-10-14T05:03:19.234Z
   - This means that everybody ends up applying the changes in the same order, so convergence is trivial.
 # blogs
 
-## [Collaborative text editor with ProseMirror and a syncing database_202007](https://emergence-engineering.com/blog/prosemirror-sync-1)
+## 🌰 [Collaborative text editor with ProseMirror and a syncing database_202007](https://emergence-engineering.com/blog/prosemirror-sync-1)
 
 - [blog src code](https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1)
 

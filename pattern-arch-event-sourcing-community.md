@@ -358,7 +358,18 @@ that commit position, thus providing "read your own writes" semantics.
 # discuss
 - ## 
 
-- ## 
+- ## [Why Are People into Event Sourcing? | Hacker News_201610](https://news.ycombinator.com/item?id=12627944)
+- Event sourcing isn't nearly as common knowledge among new programmers as the CRUD-one-row-per-entity pattern, and it really should be. 
+  - I liken it to introducing version control for your data; when immutable updates are your canonical source, no matter how much the system behind them changes, or the business requirements change, and no matter how many teams are deriving different things from them in parallel, they can all work off of the same data and "merge" their efforts together.
+- The one downside is that shifting your business logic to read-time means that you need to have very efficient ways of accessing and memoizing derived data. 
+  - For some applications, this can be as simple as having the correct database indices over your WhateverUpdates tables, fetching all updates into memory and merging on each request. 
+  - For others, you'll need to have a real-time stream processing pipeline to preemptively get your derived data into the right shape into a cache. 
+  - And those are more moving parts than your typical monolith app
+- One benefit to actually using event sourcing with a stream processing system is that, in many cases, it can be the most effective way to scale both traffic capacity and organizational bandwidth, much in the same way that individually scalable microservices can (and fully compatible with that approach!).
+
+- The CRUD one-row-per-pattern is common because it's enough for most projects. It works well with ORMs so you can build quickly and securely. And most of the time, performance isn't an issue and having a history of an entity is unnecessary.
+
+- Maybe some day there will be a system that helps with this. Until then, my main advice is to make sure you have solved your system with a naive solution before you move on.
 
 - ## [Possible innovations in Event Sourcing frameworks. : microservices](https://www.reddit.com/r/microservices/comments/z10u7s/possible_innovations_in_event_sourcing_frameworks/)
   - So, I want to propose solutions (provided by frameworks) to the following issues that haunt developer: Event Versioning & Migration, Transactions Between Aggregates. 

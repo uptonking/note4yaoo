@@ -15,40 +15,6 @@ modified: 2023-09-17T17:50:49.932Z
 - ## 
 
 - ## 
-
-- ## 
-
-- ## 💡 I am endlessly fascinated with content tagging systems. 
-- https://twitter.com/hillelogram/status/1534301374166474752
-  - They're ubiquitous in software and have so many nuances, but I can't find anything on how to design and implement anymore more than the barebones basics of a system.
-  - A tag is a metadata label associated with content, primarily used for querying and grouping. The tag name is also the id: two tags with the same name are the same tag.
-  - Tags appear everywhere: #hashtags, wikipedia categories, blog post labels, AWS infra tags...
-- we need some kind of relationship between tags
-  - The simplest relationship is tag aliases: if A is aliased to B, then querying A is identical to querying B. The only system I know that does that is the fanfiction site AO3
-- A harder problem: tag hierarchies, or "subtags".
-- There's also implementation considerations. 
-  - First, transitive queries are expensive, how do you optimize them? 
-  - Second, how do you prevent cycles in the tag hierarchy, where A and B are both transitive subtags of each other?
-  - It gets even more complex if tags can have multiple parents, like Wikipedia categories. 
-
-- Postgres "LTREE" data type and associated query operators are an absolute godsend for this
-  - You can write a recursive CTE query that traverses an LTREE node hierarchy, and use a combination of custom alias rules, PG trigram/Levenshtein distance to build a simple but robust system
-
-- You should look at WordPress' data structures. Ignore the taxonomy(分类法) stuff (which is tags in the traditional sense), but the `Post: PostMeta` relationship is implemented as AV and there's a system for querying it. It's the basis of some power features + plugins.
-
-- wikidata might be the solution to your problem.
-
-- One way I think about it is, if you have key-value pair style tags, you basically are implementing entity-attribute-value. That kind of data can be in a triple store, and advanced queries could be semantic web queries, datalog, etc.
-
-- I suspect semantic hashing/search is probably the best way to solve the problems tagging tries to solve - doesn't require maintenance of tag ontology, lets you find documents that don't use the exact word but are v similar
-  - search is basically tagging but better
-  - [Tagging is Broken - Forte Labs](https://fortelabs.com/blog/tagging-is-broken/)
-
-- I implemented a system once that made use of tagging. We ended up with "tags mean whatever the groups/teams using them want them to mean". Remarkable subcultures arose. All were valid, all were useful.
-
-- 
-- 
-
 # discuss-markdown/ooxml/epub-db
 - ## 
 
@@ -117,15 +83,16 @@ modified: 2023-09-17T17:50:49.932Z
 
 - ## 
 
-- ## 
+- ## 🤔 [Ask HN: How to handle 50GB of transaction data each day? (200GB during peak) | Hacker News_201602](https://news.ycombinator.com/item?id=11157829)
+- Can confirm, don't use mongo. We're stuck with it now, and I really wish we had used Postgres for biz data and Cassandra for the high volume non-relational data. They're just materialized views on-top of your event stream anyway.
+
+- Check out LinkedIn's posts about log processing and Apache Kafka. Handling data as streams of events lets you avoid spikey query-based processing, and helps you scale out horizontally. Partitioning lets you do joins, and you can still add databases as "materialized views" for query-ability. Add Secor to automatically write logs to S3 so you can feel secure in the face of data loss, and use replication of at least 3 in your Kafka topics.
 
 - ## [We put a distributed database in the browser and made a game of it | Hacker News_202307](https://news.ycombinator.com/item?id=36680535)
 - Is this something similar to couch/pouchdb?
   - TigerBeetle is more domain-specific, i.e. focused on financial transactions and high-performance, high-availability. There are just two entity types in the database: accounts and transfers between accounts. 
 - > In comparison to {C, P}ouchDB, I think the question is around offline-first availability.
   - Got it, thanks! Yeah that is indeed not how TigerBeetle works. If you ever cannot connect to the cluster, you keep retry messages (idempotently) until you connect and the message succeeds.
-- 
-- 
 
 - ## 🤔 [Ask HN: What are some examples of good database schema designs? | Hacker News_202002](https://news.ycombinator.com/item?id=22324691)
 
@@ -142,9 +109,6 @@ modified: 2023-09-17T17:50:49.932Z
   - If you really want a string for your primary key make it a candidate key (why, because someone will insist on changing it)
   - E/R diagrams are your friend
   - So are Venn diagrams for visualizing a complex select
-
-- 
-- 
 
 - ## 和ChatGPT聊DB设计获得新知，Nested Set Model：
 - https://twitter.com/TooooooBug/status/1659041013800001536

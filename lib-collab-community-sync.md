@@ -321,11 +321,11 @@ modified: 2022-11-29T20:41:25.566Z
 - ## 🤔 [I created PouchDB. After a year... | Hacker News](https://news.ycombinator.com/item?id=24355263)
 - I created PouchDB. After a year or so I handed that project off to some great maintainers that made it much better as I had grown a little skeptical of the replication model and wanted to pursue some alternatives.
 - It’s been about 10 years, much longer than I thought it would take, but I have a young project that finally realizes the ideas I had back then.
-- Sometime after PouchDB was created I realized that it just **wasn’t going to work to replicate a whole database to every client**. 
+- 👉🏻 **Sometime after PouchDB was created I realized that it just wasn’t going to work to replicate a whole database to every client**. 
   - In fact, even a view of the database wasn’t going to work, because the developer isn’t in a position to really understand the replication profile of every user on all of their devices, you need a model that has partial, or more accurately “selective” replication based on what the application accesses in real time.
 - I became convinced that the right primitives were already present in git: merkle trees. Unfortunately, git did a very poor job of surfacing those primitives for general use and I wasn’t having much luck finding the right approach myself.
 - Shortly after joining Protocol Labs I realized they had already figured this out in a project called IPLD. Not long after that, I started leading the IPLD project/team and then putting together my ideal database whenever I found a free moment.
-- It’s very young, lots of missing features, still working on some better data-structures for indexing, but it is very much a database that replicates the way git does and approaches indexing over a primary store the way CouchDB does, but there’s a lot more too.
+- It’s very young, lots of missing features, still working on some better data-structures for indexing, but **it is very much a database that replicates the way git does and approaches indexing over a primary store the way CouchDB does, but there’s a lot more too**.
 - With these primitives we can easily **nest databases inside of other databases** (and create unified indexes over them) and we can easily extend the data types in the database to user provided types. Using some of these features it already supports streams of binary data, databases in databases, and linking between pieces of data.
 
 - dagdb /133Star/MIT/202010/js/leveldb/git/inactive

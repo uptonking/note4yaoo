@@ -319,7 +319,6 @@ modified: 2023-09-13T14:37:51.659Z
 
 - 
 - 
-- 
 
 - ### 👥 [How to Move from CRUD to Event Sourcing | Hacker News_202109](https://news.ycombinator.com/item?id=28691728)
 - I used to be really excited about event sourcing but yeah, its usually just **over-engineering**. 
@@ -369,14 +368,14 @@ modified: 2023-09-13T14:37:51.659Z
 - As a proponent of Radical Simplicity, I'm always sceptical about event sourcing.
   - There are some benefits (I found it useful to replay events for example), but where I have seen it at work it makes things much more complex, the understanding of the system and the development of new features takes much longer.
 
-- then you realize that the CRUD db you moved away from operates on event sourcing (WAL) anyway. And thus you’re just doing inner platform effect.
-  - Correct, and many applications are using WAL via **CDC (Change Data Capture)** to gain some of the benefits of the CQRS/ES.
+- 👉🏻 then you realize that the CRUD db you moved away from operates on event sourcing (WAL) anyway. And thus you’re just doing inner platform effect.
+  - Correct, and many applications are using WAL via CDC (Change Data Capture) to gain some of the benefits of the CQRS/ES.
   - The problem is that the CRUD is only recording "What" change/mutation was done, but not "Why" by "Whom", and "When" it was done. With tailing WAL / CDC you can also capture the "When".
   - This can be partially mitigated by adding audit fields
 - Yup a few fields gets you a long way, though I would recommend an audit log updated by triggers, rather than audit fields.
   - For example on my CRUD rails app, we use audit triggers in combination with setting a postgres local config variable with the username, the audit triggers pull the user info from the variables and record them into the DB. 
-  - What kind of technology/data model do you use for the audit log? A timeseries db, just another table, or something else?
-    - Another table in a different schema. Roughly this https://wiki.postgresql.org/wiki/Audit_trigger_91plus
+- What kind of technology/data model do you use for the audit log? A timeseries db, just another table, or something else?
+  - Another table in a different schema. Roughly this https://wiki.postgresql.org/wiki/Audit_trigger_91plus
 - If you use log-based CDC, you typically don't need those timestamps, the WAL will contain and expose that information.
   - One way for capturing these intents is to log that information transaction-scoped in a separate table and then use downstream stream-processing to enrich actual change events (which contain the TX id themselves) with that metadata. 
   - I've blogged about one way for implementing this using Debezium and Kafka Streams a while ago

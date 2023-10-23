@@ -94,6 +94,10 @@ modified: 2022-11-03T04:14:00.563Z
     - https://www.symas.com/lmdb
     - fast, memory-efficient database we developed for the OpenLDAP Project. 
     - With memory-mapped files, LMDB has the read performance of a pure in-memory database while retaining the persistence of standard disk-based databases.
+
+- https://github.com/mikeal/dkv /js/inactive
+  - Decentralized key-value store running on IPFS
+  - DKV offers a simple interface for storing key/value pairs. Values can include links to other values recursively, giving you the ability to create complex graphs that de-duplicate commonly linked data.
 # leveldb-like
 - https://github.com/Level/bench
   - Benchmark `abstract-level` databases. 

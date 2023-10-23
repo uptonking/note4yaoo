@@ -12,6 +12,36 @@ modified: 2023-10-07T17:29:16.871Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [What Is JSON Patch? | Hacker News_202205](https://news.ycombinator.com/item?id=31301627)
+- Last year I experimented with an app architecture that used CouchDB/PouchDB for for synchronising data for a single user, multi device app. Then using Yjs to merge the conflicting edits - it worked incredible well. If I had the time I would love to build a Yjs/CRDT native CouchDB like database that could use the Yjs state vectors as a wire protocol for syncing…
+  - This is the very rough code behind the PouchDB/Yjs datastore. Effectively each Pouch/Couch document is actually "managed" by Yjs, all changes/operations via it. It then saves the binary Yjs blob as an attachment on the Pouch document with the current Yjs state exported as JSON for the main Pouch document. This gives you all the indexing/search you get with Pouch/Couch but with automatic merging of conflicting edits.
+  - **Ultimately though I don't think PouchDB is a good platform for this**, building something that is native Yjs would be much better. If anyone is interested I would love to hear from them though!
+- Something that stands out immediately to me is that reliance on binary attachments. 
+  - 👉🏻 In my own CouchDB ecosystem work binary attachments have turned out to be just about the worst part of the ecosystem. 
+  - PouchDB stores them pretty reliably, but every other CouchDB ecosystem database (Couchbase, Cloudant) including different versions of CouchDB itself (1.x is different from 2.x is different from 3.x in all sorts of ways) all have very different behavior when synchronizing attachments, the allowed size of attachments, the allowed types of attachments, the allowed characters in attachment names, and in general the sync protocol itself is prone to failures/timeouts with large attachments that are tough to work around because the break in the middle of replications. 
+  - The number of times I've had to delete an attachment that PouchDB stored just fine to get a sync operation to complete with another server has been way too many already.
+  - I've had to build bespoke attachment sync tools because I haven't been able to rely on attachments working in the CouchDB ecosystem.
+  - I've been thinking that I need to replace the CouchDB ecosystem as a whole. PouchDB is great, but the flux I've seen in the Apache CouchDB project and the issues I've had with the managed service providers especially Cloudant after IBM makes it really hard to recommend the ecosystem. Overall it seems unhealthy/in-decline, which is sad when the core sync infrastructure seems so nice to work with when it works
+
+- ## 🤔 [I created PouchDB. After a year... | Hacker News](https://news.ycombinator.com/item?id=24355263)
+- I created PouchDB. After a year or so I handed that project off to some great maintainers that made it much better as I had grown a little skeptical of the replication model and wanted to pursue some alternatives.
+- It’s been about 10 years, much longer than I thought it would take, but I have a young project that finally realizes the ideas I had back then.
+- 👉🏻 **Sometime after PouchDB was created I realized that it just wasn’t going to work to replicate a whole database to every client**. 
+  - In fact, even a view of the database wasn’t going to work, because the developer isn’t in a position to really understand the replication profile of every user on all of their devices, you need a model that has partial, or more accurately “selective” replication based on what the application accesses in real time.
+- I became convinced that the right primitives were already present in git: merkle trees. Unfortunately, git did a very poor job of surfacing those primitives for general use and I wasn’t having much luck finding the right approach myself.
+- Shortly after joining Protocol Labs I realized they had already figured this out in a project called IPLD. Not long after that, I started leading the IPLD project/team and then putting together my ideal database whenever I found a free moment.
+- It’s very young, lots of missing features, still working on some better data-structures for indexing, but **it is very much a database that replicates the way git does and approaches indexing over a primary store the way CouchDB does, but there’s a lot more too**.
+- With these primitives we can easily **nest databases inside of other databases** (and create unified indexes over them) and we can easily extend the data types in the database to user provided types. Using some of these features it already supports streams of binary data, databases in databases, and linking between pieces of data.
+
+- dagdb /133Star/MIT/202010/js/leveldb/git/inactive
+  - https://github.com/mikeal/dagdb
+  - DagDB is a portable and syncable database for the Web.
+  - It can run as a distributed database in Node.js, including using AWS services as a backend.
+
 - ## [Show HN: ElectricSQL, Postgres to SQLite active-active sync for local-first apps | Hacker News](https://news.ycombinator.com/item?id=37584049)
 - Hey, I work at Electric, The CouchDB/PouchDB pattern is how I originally got interested in local first, they are such a good tool, but having the full power of Postgres and then SQLite on the client, I believe, is a real game change.
 
@@ -119,6 +149,13 @@ modified: 2023-10-07T17:29:16.871Z
   - That said, I've found initial replications of large databases (one I've worked with this week is a 25+ MB CouchDB database full of photos) is **quick enough** (and mostly bandwidth constrained) that I haven't had much in the way of concern over it.
 # discuss-couchdb/couchbase
 - ## 
+
+- ## 
+
+- ## [Ask HN: To everybody who uses MapReduce: what problems do you solve? | Hacker News_201311](https://news.ycombinator.com/item?id=6706545)
+- 👉🏻 It's worth noting that CouchDB is using map-reduce to define materialized views. Whereas normally MR parallelization is used to scale out, in this case it's used instead to allow incremental updates for the materialized views, which is to say incremental updates for arbitrarily defined indexes! 
+  - By contrast SQL databases allow incremental updates only for indexes whose definition is well understood by the database engine. I found this to be pretty clever.
+- I've been using CouchDB (and now BigCouch) for about four years and it's both clever and useful. We're storing engineering documents (as attachments) and using map/reduce (CouchDB views) to segment the documents by the metadata stored in the fields. The only downside is that adding a view with trillions of rows can take quite a while.
 
 - ## [MiniCouchDB in Rust | Hacker News_202006](https://news.ycombinator.com/item?id=23446852)
 - The only thing I'm struggling with is running code when a document is updated. I have a polling client that watches for the _global_changes updates, but it seems really hacky. I wish there was a better way to get access to all database changes that looked like firestore functions.
@@ -438,7 +475,9 @@ modified: 2023-10-07T17:29:16.871Z
 # discuss
 - ## 
 
-- ## 
+- ## [Django, HTMX and Alpine.js: Modern websites, JavaScript optional | Hacker News](https://news.ycombinator.com/item?id=29319034)
+- we use pouch+couch to one way sync from our server to thousands device. And from our sales force device to our server while we still save the data in pouch, we choose to use pwa's service worker to send directly to postgresql instead of pouchdb-couchdb sync.
+  - Thanks for the reply. And I guess you do the service worker -> postgresql thing to avoid the database-per-user setup with pouch-couch 2-way sync?
 
 - ## [Local-first software: you own your data, in spite of the cloud | Hacker News_201911](https://news.ycombinator.com/item?id=21581444)
 - I may be biased as the maintainer of PouchDB but you can do all this today (and for the last 5+ years) with PouchDB.

@@ -54,6 +54,73 @@ modified: 2023-09-17T17:41:51.689Z
 
 - ## 
 
+- ## [A Data Pipeline Is a Materialized View | Hacker News_202102](https://news.ycombinator.com/item?id=26217911)
+- although built-in materialized views don't allow partial updates in Postgres, you can get a similar thing with normal tables and triggers.
+- Of the traditional RDBMSs, I believe Oracle has the most comprehensive support for materialized views, including for incremental refreshes.
+- SQL Server has indexed views, which is "real time" refresh since it's a separate clustered index that's written to at the same time as the base tables.
+- Well, indexed views aren't materialized views per se, they are a tradeoff between maintenance and deterministic performance.
+  - A materialized view is nothing more than a snapshot cache, a one time ETL job. So it can abide by any constraints and is completely untethered from the data that created it. So you have to create your own maintenance cycle, including schema validation and any dynamic / non-deterministic aspects of the MV.
+  - An indexed view is modified just like the clustered index of any tablr object upon which it depends, as an affected "partition" of the DML. That's what the SCHEMABINDING keyword is for, binding the view to any DML statements of its underlying base table(s). So no need to maintain it at all, at the expense of conforming to a fairly rigid(刻板的；严格的) set of constraints to ensure that maintenance is ..umm ..maintainable.
+  - In practice most views' logic are perfectly simpatico with the constraints of an indexed view - the tradeoff is write performance vs the "cache hit" of your view.
+  - I do way more OLAP/HTAP engineering in my day job so indexed views are less common vs. Columnstores, but indexed views are a highly underutilized feature of SQL Server.
+
+- Data engineering really is just a maintenance of incrementally updated materialized views, but no tool out there yet recognizes it. They at best help you orchestrate and parallelize your ETLs across multiple threads and machines. They become glorified makefiles at the cost of introducing several layers of infrastructure into the picture (eg. Airflow) for what should have been solved by simple bash scripting.
+
+
+- DBT is interesting, but is far from what I'm describing.
+  1. It is only for structured SQL, not for arbitrary data. I can't use it to unpack raw zipped data for example
+  2. It couples logic for data transformation and view state management. Actually it makes you do it yourself, so it doesn't really help at all. You'll get burned by storing view state together with your data, eg. when a batch increment contains no data.
+  3. It is not built with "incremental materialized views" in mind. It still thinks in a batch refill mode and incremental mode according to this [0].
+  - It is certainly an improvement over managing sql scripts by hand, but far from the ultimate goal of maintaining materialized views in a declarative way.
+- dbt doesn't do much automation/ETL outside of the database you're working in, as other tools might be able to.
+
+- 
+- 
+
+- ## [Materialize Raises a $32M Series B | Hacker News](https://news.ycombinator.com/item?id=25277511)
+- Materialize is an "RDBMS" (though it's not, really) engineered from the ground up to make these sorts of dataflow graphs of matviews-on-matviews-on-matviews practical, by doing its caching completely differently.
+  - Materialize looks like a SQL RDBMS from the outside, but Materialize is not a database — not really. (Materialize has no tables. You can't "put" data in it!) 
+  - Instead, Materialize is a data streaming platform, that caches any intermediate materialized data it's forced to construct during the streaming process, so that other consumers can work off those same intermediate representations, without recomputing the data.
+- If you've ever worked with Akka's Streams, or Elixir's Flows, or for that matter with Apache Beam (nee Google Dataflow), Materalize is that same kind of pipeline. 
+  - But where all the plumbing work of creating intermediate representations — normally a procedural map/reduce/partition kind of thing — is done by defining SQL matviews; and where the final output isn't a fixed output of the pipeline, but rather comes from running an arbitrary SQL query against any arbitrary matview defined in the system.
+
+- RDBMSes enable you to create materialized views only for data in the database. 
+  - Materialize enables you to do this for any streaming data source in your organization, with the ease of writing SQL. This enables you to simply write a SQL statement joining data from Salesforce + SAP + Siebel as soon as the data changes, and store the results as a near real-time up to date database table. 
+  - It does depend on a lot of underlying plumbing: streaming platform (e.g. kafka), and streaming data sources (e.g., kafka connect + debezium).
+
+- What exactly are "materialized views"?
+  - It's a query of which you save the results in a cache database table, so next time when it is queried, you can provide the results from the cache.
+  - Typically, in a traditional RDBMS, the query is defined as a sql view, which you either have to manually refresh, or can be refreshed periodically.
+  - Using streaming systems like kafka, it's possible to continously update the cached results based in the incoming data, so the result is a near realtime up to date query result.
+  - Writing the stream processing to update the materialized view can be complex, using SQL like materialize enables you to do, makes it a lot more productive.
+- a materialized view is a view with a cached result-set
+  - But like any cache, it needs to be maintained, and can become out-of-sync with its source.
+- Although materialized views are part of the SQL standard, not all SQL RDBMSes implement them. 
+  - MySQL/MariaDB does not, which is why you'll find that much of the software world just pretends matviews don't exist when designing their DB architectures.
+- The naive approach that some other RDBMSes (e.g. Postgres) take to materialized views, is to only offer manual, full-pass recalculation of the cached result-set, via some explicit command (REFRESH MATERIALIZED VIEW foo). 
+  - This works with "small data"; but at scale, this approach can be so time-consuming for large and complex backing queries, that by the time cache is rebuilt, it's already out-of-date again!
+- Because there are RDBMSes that either don't have matviews, or don't have scalable matviews, many application developers just avoid the RDBMS's built in matview abstraction, and build their own.
+  - Thus, another large swathe(长而宽的一条) of the world's database architecture either will use cron-jobs to regular run+materialize a query, and then dump its results back into a table in the same DB; 
+  - or it will define on-INSERT/UPDATE/DELETE triggers on "primary" tables, that transform and upsert data into "secondary" denormalized tables. 
+  - These are both approaches to "simulating" matviews, portably, on an RDBMS substrate that isn't guaranteed to have them.
+- Other RDBMSes (e.g. Oracle, SQL Server, etc.) do have scalable materialized views, a.k.a. "incrementally materialized" views. 
+  - These work less like a view with a cache, and more like a secondary table with write-triggers on primary tables to populate it — but all handled under-the-covers by the RDBMS itself. 
+  - You just define the matview, and the RDBMS sees the data-dependencies and sets up the write-through data flow.
+- Incrementally-materialized views are great for what they're designed for (reporting, mostly); but they aren't intended to be the bedrock for an entire architecture. Building matviews on top of matviews on top of matviews gets expensive fast. These RDBMS's matviews were never intended to support complex "dataflow graphs" of updates like this, and so there's too much overhead (e.g. read-write contention on index locks) to actually make these setups practical. And it's very hard for these DBMSes to change this, as their matviews' caches are fundamentally reliant on database table storage engines, which just aren't the right ADT to hold data with this sort of lifecycle.
+
+- How were previous implementations of materialized views deficient?
+  - Not really mentioned here, but in standard postgres it might be quite expensive to update the view so you can only do it periodically. Materialize keeps that up-to-date continuously.
+  - Joins were unavailable or subject to extreme limitations. Or just plain wrong!
+
+- Isn't this pretty similar to what Dremio does?
+  - Dremio is a batch processor, not a stream processor. The fundamental difference is that a batch processor will need to recompute a query from scratch whenever the input data changes, while a stream processor can incrementally update the existing query result based on the change to the input.
+  - This can make a huge difference when making small changes to large datasets. 
+
+- The headline refers to "incrementally updated materialize views". How does a company get funding for a feature that has already existed in other DBs for at least a decade?
+  - Incrementally-maintained views in existing database systems typically come with huge caveats. In Materialize, they largely don't.
+  - Most other systems place severe restrictions on the kind of queries that can be incrementally maintained, limiting the queries to certain functions only, or aggregations only, or only queries without joins—or if they do support maintaining joins, often the joins must occur only on the involved tables' keys. In Materialize, by contrast, there are approximately no such restrictions. Want to incrementally-maintain a five-way join where some of the join keys are expressions, not key columns? No problem.
+  - That's not to say there aren't some caveats. We don't yet have a good story for incrementally-maintaining queries that observe the current wall-clock time. And our query optimizer is still young
+
 - ## [Practical advice for creating (and updating) materialized views? : PostgreSQL](https://www.reddit.com/r/PostgreSQL/comments/hvysvi/practical_advice_for_creating_and_updating/)
 - Dimtri Fontaine recommends using the publish / subscribe messaging queue feature, ON UPDATE and have a listener that consumes the message and triggers the refresh
 

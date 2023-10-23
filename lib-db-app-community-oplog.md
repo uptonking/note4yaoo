@@ -18,7 +18,7 @@ modified: 2023-09-17T18:17:13.008Z
 
 - ## 
 
-- ## [Damn Cool Algorithms: Log structured storage (2009) | Hacker News_201705](https://news.ycombinator.com/item?id=14447727)
+- ## 🆚️ [Damn Cool Algorithms: Log structured storage (2009) | Hacker News_201705](https://news.ycombinator.com/item?id=14447727)
 - In the 8 years since this was written, Log-Structured Merge Trees have basically "won". 
   - BigTable, AppEngine, LevelDB, Cassandra, HBase, MongoDB, and several others are all built around them.
 - There's a powerful hardware trend driving this, namely that disk capacities and write bandwidth are still increasing rapidly, but **seek times have basically plateaued(达到稳定时期；进入停滞状态)**. 
@@ -28,7 +28,7 @@ modified: 2023-09-17T18:17:13.008Z
 
 - there is already a lot of thought that goes into LSM trees on flash storage - check out RocksDB for example, which goes to great lengths to allow the user to deal with Read / Write amplification, a problem specific to flash storage. 
 
-- The tradeoff from LSM tree to B-tree, very generally speaking, is more about access patterns: 
+- 👉🏻 The tradeoff from LSM tree to B-tree, very generally speaking, is more about access patterns: 
   - LSM trees lend themselves to insert-heavy workloads because the structure is conceptually just a big array that you very quickly append stuff to the end of without checking the rest of the array. 
   - That's the magic of why it's so fast for insertions - there's no overhead. 
   - You just ignore the older key/values. 
@@ -37,7 +37,7 @@ modified: 2023-09-17T18:17:13.008Z
 - Another point is that oftentimes these data structures span storage layers (or the "cache hierarchy" as database systems people like calling it) - e.g. you could have an LSM tree that has a top layer fitting in L3, then a bunch more in memory, then the majority of it spilling over to disk. 
   - Another example is the Bw-Tree, which introduces a mapping table that is a storage-agnostic lookup table that tells you wherever a record is, disk or memory or otherwise, and is smart about paging stuff in and out of memory based on hotness.
 
-- Slightly related perhaps and something I have been curious about for a while... event sourcing seems like a very powerful pattern that I haven't seen wide adoption. The best documentation seems to be some MS dev library notes and a discussion from M Fowler.
+- event sourcing seems like a very powerful pattern that I haven't seen wide adoption. The best documentation seems to be some MS dev library notes and a discussion from M Fowler.
 - 🤔 Are there any open source implementations of a database that uses event sourcing?
 - I built https://github.com/amark/gun after I was using MongoDB to event source data. The key piece for me was wanting to have Firebase-like realtime sync for my event sourcing.
 - I've become a bit of a CouchDB zealot of late for this exact reason... Native support for incrementally updating map-reduce combined with change-feeds makes implementing event sourcing straightforward. 
