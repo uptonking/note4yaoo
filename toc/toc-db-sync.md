@@ -55,6 +55,20 @@ modified: 2022-11-25T15:41:47.534Z
   - [Bramble Synchronisation Protocol, version 0](https://code.briarproject.org/briar/briar-spec/-/blob/master/protocols/BSP.md)
     - BSP is an application layer data synchronisation protocol suitable for delay-tolerant networks.
   - [A Quick Overview of the Protocol Stack](https://code.briarproject.org/briar/briar/-/wikis/A-Quick-Overview-of-the-Protocol-Stack)
+# collab/distributed
+- https://github.com/okdistribute/piratedb /js/inactive
+  - A multiwriter peer-to-peer database with a last-writer-wins CRDT.
+  - 依赖subleveldown、unordered-materialized-kv、randombytes
+  - 测试用例使用kappa-core、memdb、random-access-memory
+
+- orbit-db /7.4kStar/MIT/202301/js
+- https://github.com/orbitdb/orbit-db
+  - OrbitDB is a serverless, distributed, peer-to-peer database. 
+  - OrbitDB uses IPFS as its data storage and IPFS Pubsub to automatically sync databases with peers. 
+  - It's an eventually consistent database that uses CRDTs for conflict-free database merges making OrbitDB an excellent choice for decentralized apps (dApps), blockchain applications and local-first web applications.
+- https://github.com/dappkit/aviondb
+  - A Distributed, MongoDB-like Database
+  - AvionDB uses OrbitDB stores to model MongoDB-like Databases.
 # db-sync
 - synceddb-multi-backends /388Star/MIT/201803/js/indexeddb/支持多种后端存储
   - https://github.com/paldepind/synceddb
@@ -214,7 +228,6 @@ modified: 2022-11-25T15:41:47.534Z
     - DagDB treats any async generator as a binary stream. 
     - Node.js Streams are valid async generators so they work right away.
 # sync-utils
-
 - https://github.com/abrarsheikhsony/SFDC-change-data-capture
   - explains specifically for Change Data Capture (CDC)
   - https://github.com/abrarsheikhsony/SFDC-streaming-api-events
@@ -266,15 +279,6 @@ modified: 2022-11-25T15:41:47.534Z
   - Sync data from one Postgres database to another (like pg_dump/pg_restore).
   - tables are transferred in parallel
   - sync partial tables, groups of tables, and related records
-# db-distributed-collab
-- orbit-db /7.4kStar/MIT/202301/js
-- https://github.com/orbitdb/orbit-db
-  - OrbitDB is a serverless, distributed, peer-to-peer database. 
-  - OrbitDB uses IPFS as its data storage and IPFS Pubsub to automatically sync databases with peers. 
-  - It's an eventually consistent database that uses CRDTs for conflict-free database merges making OrbitDB an excellent choice for decentralized apps (dApps), blockchain applications and local-first web applications.
-- https://github.com/dappkit/aviondb
-  - A Distributed, MongoDB-like Database
-  - AvionDB uses OrbitDB stores to model MongoDB-like Databases.
 # more
 - https://github.com/rethinkdb/rethinkdb /202211/cpp/python
   - The open-source database for the realtime web.

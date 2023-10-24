@@ -16,7 +16,11 @@ modified: 2023-08-28T06:14:28.873Z
 
 - ## 
 
-- ## 
+- ## 👀 TIL python does not recreate default function params each function call
+- https://twitter.com/ethanniser/status/1716612454568861903
+- Yep if the param is mutable this issue happens sadly
+- Yea that’s known and not fixed
+- One of the most annoying known quirks of Python
 
 - ## 你们现在是用什么来管理Python版本和库依赖的？_202310
 - https://twitter.com/river_leaves/status/1710489478924783778

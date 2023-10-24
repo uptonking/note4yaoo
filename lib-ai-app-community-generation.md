@@ -11,10 +11,21 @@ modified: 2023-04-16T12:52:03.130Z
 
 - resources
   - [【轻科普】StableDiffusion那些事儿，关于LoRA、DreamBooth、模型分层融合等](https://www.bilibili.com/video/BV1RT411D7h7/)
-# discuss
+# discuss-tts/audio
 - ## 
 
 - ## 
+
+- ## In-browser TTS in 3 lines of code
+- https://twitter.com/xenovacom/status/1716711760982319429
+  - `import { pipeline } from '@​xenova/transformers';`
+
+# discuss
+- ## 
+
+- ## 🆚️ 用 Midjourney、DALL-E 3、Adobe Firefly 2 还是 Stable Diffusion？
+- https://twitter.com/FinanceYF5/status/1716288468186431811
+  - 在过去的 6 个月里，作者在所有 4 个平台上生成了 50, 000 多张图像。
 
 - ## Generated Photos：这个网站提供了10万个不存在的人的照片，这些照片全部由AI生成。
 - https://twitter.com/xiaohuggg/status/1675480188023615489

@@ -161,6 +161,19 @@ modified: 2023-02-06T09:14:40.114Z
   - [为什么网页版微信/QQ，GTalk的IM通讯用的都是comet长连接而不用websocket？](https://www.zhihu.com/question/350007333)
 # blog
 
+## [PUT vs PATCH & PUT vs POST - DEV Community](https://dev.to/mehmehmehlol/put-vs-patch-put-vs-post-56i9)
+
+- PUT vs POST
+  - The most obvious difference is that PUT can both create and modify a resource while POST can only create a resource.
+  - The PUT method is idempotent. Meaning if you (re)try to send a request multiple times, this is equivalent to a single request modification.
+  - Whereas, the POST method is NOT idempotent. If you retry to send a request multiple times, you will end up having multiple resources with multiple different URIs on the server.
+  - Generally, PUT method is used for UPDATE operations while the POST method is used for the CREATE operations.
+
+- PUT vs PATCH
+  - PUT and PATCH can both be used for updating resources. However, the biggest difference between these two is that one can update and replace the resource while the other one can update partially.
+  - In other words, when making a PUT request, the enclosed entity is viewed as the modified version of the resource, and the client is requesting to replace with the new info; when making a PATCH request, it modifies only some part of the resource.
+  - PUT is idempotent, while PATCH is not idempotent. If a request is reattempted to be made, it will result a failed request (Method Not Allowed). If a PATCH request is made to a non-existent URI, it would simply fail without creating a new resource like PUT.
+
 ## Why I still use XHR instead of the Fetch API
 
 - [Why I still use XHR instead of the Fetch API_2018](https://gomakethings.com/why-i-still-use-xhr-instead-of-the-fetch-api/)

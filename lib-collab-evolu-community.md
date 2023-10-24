@@ -57,7 +57,12 @@ modified: 2023-05-14T04:32:30.696Z
 
 - ## 
 
-- ## 
+- ## Experimental new feature: Local only tables
+- https://twitter.com/evoluhq/status/1716515808182992963
+  - A local-only table is a table prefixed with "_" that will never be synced—a small but handy addition. 
+  - Imagine editing huge JSON. Should we store it on any change or allow the user to "commit" data later? In an ideal world, we would have CRDT abstraction for any data, and we will have, but for now, we can postpone or even cancel sync with local-only tables. 
+  - Another use-case is device-only data, for example, some settings that should not be shared with other devices. 
+  - Local-only tables also allow real deletion. Use the isDeleted common column and the row will be deleted instead of marked as deleted.
 
 - ## I'm keen on adding a few things that Evolu doesn't have atm
 - https://twitter.com/kndwindev/status/1663431276119085057

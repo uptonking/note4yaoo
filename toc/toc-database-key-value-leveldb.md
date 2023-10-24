@@ -98,6 +98,12 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/mikeal/dkv /js/inactive
   - Decentralized key-value store running on IPFS
   - DKV offers a simple interface for storing key/value pairs. Values can include links to other values recursively, giving you the ability to create complex graphs that de-duplicate commonly linked data.
+
+- https://github.com/alicebob/miniredis /go
+  - Miniredis implements (parts of) the Redis server, to be used in unittests. 
+  - It enables a simple, cheap, in-memory, Redis replacement, with a real TCP interface. 
+  - Think of it as the Redis version of net/http/httptest.
+  - There are no dependencies on external binaries, so you can easily integrate it in automated build processes.
 # leveldb-like
 - https://github.com/Level/bench
   - Benchmark `abstract-level` databases. 

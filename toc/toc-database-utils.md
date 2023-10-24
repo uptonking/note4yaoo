@@ -277,9 +277,15 @@ modified: 2023-08-23T17:15:46.484Z
   - For this to be feasible it must be really fast to do a full log scan. 
     - It turns out that the combination of push streams and bipf makes streaming the full log not much slower than reading the file.
 
-- https://github.com/ssbc/ssb-db2 /js
+- https://github.com/ssbc/ssb-db2 /42Star/LGPLv3/202305/js
   - a new database for secure-scuttlebutt, it is meant as a replacement for ssb-db
+  - 依赖async-append-only-log、bipf、jitdb、level6、flumecodec、jitdb、pull-stream、pull-stream、typedarray-to-buffer
   - Run in the browser via ssb-browser-core
+  - the database stores data in bipf
+  - Replace flume with jitdb and specialized indexes
+  - Run in the browser via ssb-browser-core
+  - Work well with partial replication
+  - The log used underneath ssb-db2 is different than that one in ssb-db, this means we need to scan over the old log and copy all messages onto the new log
   - https://github.com/ssbc/ssb-db /js/flumedb团队
     - ssb-db provides tools for dealing with unforgeable append-only message feeds.
     - secret-stack plugin which provides storing of valid secure-scuttlebutt messages in an append-only log.

@@ -20,7 +20,9 @@ modified: 2022-12-02T11:16:05.028Z
     - Also purging these document revisions is not possible so the database storage size will only increase over time. 
   - Another problem was that many issues in PouchDB have never been fixed, but only closed by the issue-bot
   - The whole PouchDB RxStorage code was full of workarounds and monkey patches to resolve these issues for RxDB users.
-  - In version 10.0.0 RxDB introduced the RxStorage layer which allows users to swap out the underlying storage engine where RxDB stores and queries documents from. 
+- In version 10.0.0 RxDB introduced the RxStorage layer which allows users to swap out the underlying storage engine where RxDB stores and queries documents from. 
+
+- Since v12, RxDB is no longer based on PouchDB but has its own storage layer. Using PouchDB with RxDB is also deprecated. 
 # docs
 
 ## [crdt plugin](https://github.com/pubkey/rxdb/blob/master/docs-src/crdt.md)

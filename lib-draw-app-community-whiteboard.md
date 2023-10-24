@@ -25,7 +25,7 @@ modified: 2023-09-07T04:17:31.787Z
 # discuss-stars
 - ## 
 
-- ## just got this nice little auto-layout algorithm working
+- ## 🕸️ just got this nice little auto-layout algorithm working
 - https://twitter.com/dragonman225/status/1714612402527109504
   - there's a catch - while it produces interesting patterns for multimedia content, it's terrible at tidying up document-like long rectangles
   - 适合自动整理短卡片，不适合自动整理长图片
@@ -41,6 +41,11 @@ modified: 2023-09-07T04:17:31.787Z
 - kind of reverse: auto-grouping (using AI/algorithims) based on content possible ?
   - good idea! I think that with AI, it's common to classify content by positive/negative attributes or emotions.
 
+- a different algorithm, which looks "tidier" 
+  - this one is using potpack (https://mapbox.github.io/potpack/) with some modifications, such as adding gaps between items and aiming for a rectangular bounding box with a ratio similar to the computer screen's.
+
+- 
+- 
 - 
 
 # discuss

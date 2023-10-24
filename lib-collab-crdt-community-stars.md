@@ -85,7 +85,12 @@ modified: 2022-04-05T10:09:51.343Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Slapping(~on添加) a CRDT on something isn't enough to make a truly collaborative or offline friendly app. 
+- https://twitter.com/c_pick/status/1716827138253529578
+  - CRDTs can make your app consistent, but consistently wrong if you're not preserving user intent. This is nowhere near a solved problem yet, the general case might never be solved!
+- We don't need a perfect solution for general cases. We just need a good enough one and allow users to resolve conflicts manually when the default merge result is unsatisfactory. So, the worst case is to fall back to something like git.
+- Counterpoint(形成对比的论点): I’ve supported more peer-to-peer database applications in prod than almost anyone out there. Only a handful of times did conflict resolution strategies have to be proactively(积极的; 主动的) coded. Getting document granularity right is most of the work.
+- Having built on top of crdts quite a bit, I think that the replicache model is probably the more explicit, better abstraction. It's very clear what effect concurrent edits will have as you write reducers and very hard to model the same with crdts without simulation.
 
 - ## I'm presenting some early ideas about CRDTs & branch-and-merge documents.
 - https://twitter.com/MatthewWeidner3/status/1715023602976764299

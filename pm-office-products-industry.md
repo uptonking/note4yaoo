@@ -20,10 +20,14 @@ modified: 2023-03-18T09:44:00.939Z
 - scripts
   - 类似script-lab/react-live/mdx-live
   - 类似vscode像codepen的实时预览扩展
-# 飞书
+# discuss-office
+- ## 
 
-## [字节跳动，投了一个EDA专家_202211](https://www.chinaventure.com.cn/news/113-20221123-372283.html)
+- ## 
 
+- ## [Zoom introduces Zoom Docs, expands platform for next-generation flexible collaboration | Zoom_202310](https://news.zoom.us/zoom-docs/)
+
+- ## [字节跳动，投了一个EDA专家_202211](https://www.chinaventure.com.cn/news/113-20221123-372283.html)
 - EDA是电子设计的基石产业，有“芯片之母”“百亿美金市场规模的EDA支撑起万亿美金的电子产业”等评价
 - 在字节的投资生态里，投资的首要驱动力往往是补齐业务生态补全短板。
   - 在2019年正式推出飞书前，字节先后投资Tower、石墨文档、幕布、蓝猫微会等多个协作办公软件。

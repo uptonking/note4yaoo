@@ -13,7 +13,7 @@ modified: 2022-11-11T06:57:09.670Z
   - kilo-editor
   - crdt
   - rust-kv, terminusdb-store, git-like
-  - utils: persistent-data-structure
+  - utils: persistent-data-structure, arrow
   - more: wasm, json-parser, tree, kanban
 
 - who is using #rust

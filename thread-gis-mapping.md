@@ -11,6 +11,14 @@ modified: 2021-05-25T08:41:02.257Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## https://protomaps.com and PMTiles are a brilliant way to serve static vector mapping tiles using clever HTTP Range header tricks to download just what you need
+- https://twitter.com/simonw/status/1716679413394485535
+  - I figured out how to create a tiny (2MB) file for my local area and serve it with maplibre-gl
+
 - ## Protomaps is moving from being "open-core", or partly proprietary, to an open source project. 
 - https://twitter.com/protomaps/status/1642060504741867520
   - The only closed part has been the basemap planet.pmtiles generation; an open source implementation is WIP here! 

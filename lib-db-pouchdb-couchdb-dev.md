@@ -34,10 +34,13 @@ modified: 2022-12-02T11:15:15.257Z
   - 不必执着于寻找indexeddb的实现，很多时候只是作为一种持久化的方式
 
 - roadmap
+  - pouchdb + kappa-crdt +eav => pouchdb-crdt-eav
   - alternative-backend: mysql/pg
   - kappa-architecture?
 
 - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
+# draft
+- nonsyncable/local-only tables for config/temporary-data
 # dev
 
 # more

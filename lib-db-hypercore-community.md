@@ -18,6 +18,45 @@ modified: 2023-09-07T15:58:27.967Z
 # discuss-ipfs-ssb
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Quiet – Encrypted P2P team chat with no servers, just Tor | Hacker News_202309](https://news.ycombinator.com/item?id=37477512)
+- While I do like the idea behind a P2P E2EE chat, I believe that unless you're willing to invest heavily into OrbitDB and IPFS, this project will stay niche at best.
+  - The performance issues that come along with running OrbitDB/IPFS on a machine, let alone a mobile device, are still significant unfortunately. Adding Electron on top of what is already a heavy-weight application is probably going to make people's devices go brrrrr all the time. Not only that, but I would argue that for instant communication this stack might not be the best idea in terms of performance in first place.
+  - Besides, the way IPFS has been (and still keeps) changing their dozens of libraries doesn't make development particularly smooth either. OrbitDB is always behind the latest IPFS version due to all these changes that are being introduced. 
+  - The integration with Tor is another thing that will likely be a time drain for developers, as other people here already pointed out, and that will lead to even more performance issues down the line.
+
+- ## [Merklizing the key/value store for fun and profit | Hacker News_202306](https://news.ycombinator.com/item?id=36265429)
+- I think that syncing and CRDTs (y.js and automerge) can be excellent for collaborating on documents, but not so great for chatrooms and smart contracts / crypto where order of operations matters. For those, you can implement optimistic interface updates but when conflicts (rarely) arise, your interface may roll back changes it displayed. This is especially true after a netsplit.
+  - I thought about using PouchDB but the thing is that CouchDB is an extra process people have to run and we want our stuff to run anywhere Wordpress does. Ditto for hypercore.
+- Automerge and y.js are absolutely great for collaboration on blocks of text or structured documents (or anything that can be modelled as such). They are purely for conflict resolution, so if you don't have conflicts, or your use case manages to make the impact of conflicts negligible, don't bother with them. They are very easy to implement if you do need them - the barrier most people face is understanding them enough to decide if and how to use them. Just keep it simple.
+- Hypercore is a p2p solution for synchronising streams of data. It can be used raw, for streaming updates, or you can use the abstractions over it to keep filesystems or databases in sync. 
+  - There's a significant difference between the decision about hypercore vs CRDTs - hypercore can potentially remove the need for you to maintain and operate a specific server, allowing all clients to be servers. This also reduces the dependency of the user on infrastructure - your servers, the Internet, a friendly government, etc. If that might be useful to you or your users, it's worth considering. Unlike PouchDB, it's a low level abstraction that can open up really new ways of thinking about shared information. PouchDB by contrast is 'just' a p2p syncing database. 
+  - Also important: hypercore doesn't require its own process - you can roll it into your code directly, or have it in a separate process if you want.
+  - Of all the things you mentioned, I'd say that hypercore is the only one worth diving into regardless of whether you seem to need it. You'll be a better systems designer and engineer once you understand it, and will have an expanded landscape of possibility when you can leverage it.
+
+- ## I am struggling to get libp2p to holepunch out of the box in the first place so it seems few massive steps are skipped here! 
+- https://twitter.com/ArNazeh/status/1584522803449323520
+  - I share their goal for a p2p alternative to Google drive that can be the backend of distributed local first apps
+- Yup, we’ve felt the networking pain too! We’re working on new transports for the browser that operate over mature channels like HTTPS. 
+  - We have given up on browsers and use a websocket connection to a full DHT node that still doesn't hold the relayed node keys. Seems the best possible compromise and keep the burden on the user or their app provider instead of tangling the rest of the DHT with multiple transports
+- Outside of browsers, Hyperswarm DHT is as perfect as it gets honestly, only failed me in ridiculous situations like a WSL in a windows VM in the cloud :) 
+- The only reason I checked Libp2p with its over abstraction tendency, is that Hyperswarm is JS only still
+- Also, while I am inspired by wnfs, I think it would be much better served by Hypercore, Hyperbee, and Hyperdrive. The only reason I can't argue for that stack over IPFS is that it is also JS only.
+- Lots of examples of wiser and more focused design decisions made on the Hyper stack, even if it is not implemented in a language that helps its adoption, and even if the devs involved are not investing as much as protocol labs in marketing and DX for quick wide adoption.
+
+- ## I'm a bit bummed the BitTorrent mutable torrents proposal (BEP-46) never got standardised. 
+- https://twitter.com/liamzebedee/status/1537347394613878784
+  - That would have been so useful for building easy p2p apps.
+  - Like imagine a decentralized sequencer where you can just join a p2p swarm and mirror the txs for the chain, contributing bandwidth. Probably someone would write some form of airdrop for nodes that share bandwidth (a la private trackers).
+- The sad thing is @libp2p and @IPFS just don't have this functionality, the focus seems to be on pinning but it's realistically a very clunky UX. IPFS is like boomer centralized orderbooks compared to bittorrents's uniswap-like ux (just join and seed, easy)
+- hypercore has swarming, mutability, and generally seems very clean
+- Hey! `ipfs add {file}` starts "seeding" right away. `pin add` does the same, and persists it. Let me know if you have ideas for making that simpler or easier, I'm happy to file an issue.
+- Yeah the API’s make sense, it’s the opaqueness that gets me - how do you know how well replicated your IPFS file is? And when you start your node, how well connected is it? (Eg to cloudflare)
+  - different trade-offs really. libp2p is designed around transport agnosticism. maybe could build a torrent transport for it 
+
 - ## [Storing users data into ipfs : ipfs](https://www.reddit.com/r/ipfs/comments/wk5wph/storing_users_data_into_ipfs/)
 - If you do a little research, you will find a decent number of projects that are experimenting with ideas for distributed social media, some using ipfs. There's a paper on a project called plebbit. 
 - There are distributed database solutions, but nearly all of them require the user to "own" some part if not all of the database. I find gun database fascinating, but it requires everyone to run a node.js client iirc. 
@@ -125,8 +164,11 @@ modified: 2023-09-07T15:58:27.967Z
 - ipfs is more like hyperdrive but it doesnt use an append only log/blockchain. you want to compare libp2p to hypercore 
 - gun.js also does work but I had to dump it because how mark writes his code makes it impossible to maintain/debug
 
-- ## [Just today I was looking into IPFS vs DAT_201906](https://news.ycombinator.com/item?id=20162171)
-- I consider dat:// to be the better protocol, in part because of what you mentioned. Other advantages are the lack of duplicating data on disk (IPFS makes a copy of all data it shares) as well as having a versioned history of all changes. That way app owners can't publish malicious versions while preventing people from using the non-malicious ones.
+- ## 🆚️ [Just today I was looking into IPFS vs DAT_201906](https://news.ycombinator.com/item?id=20162171)
+- I was looking into IPFS vs DAT, does anybody have any insights about the similarities/differences other than the ones listed here
+  - From far away, DAT looks smaller and better documented (perhaps less ambitious, too?) Apparently the best IPFS overview is the 2015 paper which looks pretty daunting and does not seem to cover any practical considerations.
+- I consider dat:// to be the better protocol, in part because of what you mentioned. 
+  - 👉🏻 Other advantages are the lack of duplicating data on disk (IPFS makes a copy of all data it shares) as well as having a versioned history of all changes. That way app owners can't publish malicious versions while preventing people from using the non-malicious ones.
   - Essentially, dat:// behaves like BitTorrent but the torrent data can change.
   - The only downside for both protocols I can think of is that the integration story outside the browser and CLI tools is very poor (there is no FFI/C lib Ic an bind my Rust app to)
 

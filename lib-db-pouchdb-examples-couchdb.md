@@ -513,6 +513,10 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/patgoddard/codeMate /2014/js
   - A code editor for online or offline use using the chromium or chrome browser. It uses AceEditor, Pouchdb and an optional remote couchdb.
+
+- https://github.com/natevw/PeerPouch /js/inactive
+  - A plugin for PouchDB which allows a remote PouchDB instance to be used locally. 
+  - It transfers data over WebRTC, for simple lower-latency remote access and even particularly peer-to-peer replication!
 # examples
 - https://github.com/acailly/easy-pouchdb-server /202105/js
   - Deploy a PouchDB server easily

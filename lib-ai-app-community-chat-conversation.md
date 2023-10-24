@@ -13,6 +13,18 @@ modified: 2023-04-16T10:02:58.738Z
   - [魔搭社区](https://modelscope.cn/home)
     - 汇聚各领域最先进的机器学习模型，提供模型探索体验、推理、训练、部署和应用的一站式服务
 # discuss-stars
+- ## 
+
+- ## 
+
+- ## 💡 Embeddings: What they are and why they matter
+- https://twitter.com/simonw/status/1716449601505657224
+  - [Embeddings: What they are and why they matter](https://simonwillison.net/2023/Oct/23/embeddings/)
+
+- I've done some cool project with embeddings in computer vision a few weeks back
+  - 三维示例
+  - [Leverage Embeddings and Clustering in Computer Vision](https://blog.roboflow.com/embeddings-clustering-computer-vision-clip-umap/)
+
 - ## AutoGPT现在超火，它是一个由开发者 Significant Gravitas 推出的项目，​可以根据用户设置的目标，​使用 GPT-4 自动帮助完成任务。
 - https://twitter.com/duanzi/status/1647284362541662213
   - ​用户只需提供 OpenAI 的 API Key，​AutoGPT 就可以根据用户设定的目标，​采用Google搜索、​浏览网站、​执行脚本等方式帮助用户完成目标
@@ -38,6 +50,7 @@ modified: 2023-04-16T10:02:58.738Z
   - 我对比了一下，效果一样。没有关键词也不会迷失，ChatGPT 会按照要求根据上下文补齐。
 - 很好的思路，本质上就是通过对每句话进行句子表述上的补全，让每句话都是独立且完整的表述，保证了能进行可靠的向量搜索
 - plugins 的思路也类似这样
+
 # discuss
 - ## 
 

@@ -231,6 +231,10 @@ modified: 2023-01-09T11:04:13.958Z
 # table-format
 - https://github.com/microsoft/lst-bench /java
   - a framework that allows users to run benchmarks specifically designed for evaluating the performance, efficiency, and stability of Log-Structured Tables (LSTs), also commonly referred to as table formats, such as Delta Lake, Apache Hudi, and Apache Iceberg.
+# canvas
+- https://github.com/tzhangchi/canvas-table /js
+  - https://tzhangchi.github.io/canvas-table/
+  - define render function to calculate the visible range of cells based on the current scroll position and the viewport size
 # more
 - https://github.com/rohanhrk/Excel-clone
   - I've made a google sheet clone using HTML, CSS, Javascript

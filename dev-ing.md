@@ -16,16 +16,14 @@ https://meeting.tencent.com/p/9606972663
 #腾讯会议：960-697-2663
 
 # dev-xp
-- ui-starter
-  - css: open-props, glass-ui, 渐变字体
 - dev-starter
+  - css: open-props, glass-ui, 渐变字体
   - patterns: react, typescript
 - list-grid-starter
-  - plain
-    - no sort/filter/group
-    - no reorder
-    - no column width resize
-    - custom cell renderer
+  - no sort/filter/group
+  - no reorder
+  - no column width resize
+  - custom cell renderer
   - searchable
   - virtualizable
 - list-grid-solutions
@@ -35,15 +33,15 @@ https://meeting.tencent.com/p/9606972663
   - inline editing
   - orm integration
   - sortable-filterable-groupable-table
+  - dropdown-menu & tabs switcher
 - 产品日历组件: headless-date-picker
 - module/fwk/server: 灵活的tag/bookmark系统, cms, tables, bi
 - 编辑器参考
-  - atlassian-editor
-    - https://atlaskit.atlassian.com/packages/editor/editor-core
-    - https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink
-    - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-minimal
-    - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-with-toolbar
-    - https://ckeditor.com/docs/ckeditor5/latest/examples/builds-custom/full-featured-editor.html
+  - https://atlaskit.atlassian.com/packages/editor/editor-core
+  - https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink
+  - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-minimal
+  - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-with-toolbar
+  - https://ckeditor.com/docs/ckeditor5/latest/examples/builds-custom/full-featured-editor.html
   - more-editor
     - https://demo.grammarly.com/
 # dev-review
@@ -67,7 +65,6 @@ $$('[contenteditable]')
   - 事项--截止日期(0730+休整)--重要性(hml/s1-s3)
   - rich-editor-vanillajs
   - pivot-table-grid--0828--h
-    - dropdown-menu vs tabs
   - app-wiki-knowledge-base--0904
   - dashboard/webapp-template--0901
   - ui: zag/ark, ariakit, radix-ui, mantine
@@ -82,8 +79,8 @@ $$('[contenteditable]')
 # dev-2023-方向+方法+时间
 - 👉🏻 output: 代码产出、产品落地、生态积累
 - cms
-  - business-features, 盈利支持自身
   - outline, payloadcms, undb, nocobase
+  - business-features, 盈利支持自身
 - slate-wangeditor
   - model, view, sync, collab
   - slate-docs-examples
@@ -96,15 +93,20 @@ $$('[contenteditable]')
   - [ ] 方便接入已有的外部数据源
   - [x] 内存数据: nedb, blinkdb
   - [x] 流式数据: linvodb, tingodb; 可参考kappa架构
-  - tuple-database 支持内存和持久化
-  - tinybase 支持内存和持久化
+  - 支持内存和持久化: tupledb, tinybase
 - db-sync/collab
   - 为db实现crdt的参考: piratedb, evolu, triplitdb, mithic, indexeddb
     - 不必执着于寻找indexeddb的实现，很多时候只是作为一种持久化的方式
   - pouchdb
-  - crsqlite
+  - crsqlite, hypermerge
   - fireproof/ipld
 
+- long-term-support
+  - cms, airtable, lowcode
+- techstacks-to
+  - async/generator, stream, buffer, binary, scheduler, arrow
+  - 样式片段也可在线尝试: codepen, w3schools.com 
+  
 - cache/stream for web storage
   - 参考 tanstack-query, localforage
 
@@ -140,12 +142,6 @@ $$('[contenteditable]')
   - evolu(hlc+worker)
   - absurd-sql-ts: read ArrayBuffer
   - kikko
-
-- long-term
-  - cms, airtable, lowcode
-- techstacks-to
-  - async/generator, stream, buffer, binary, scheduler, arrow
-  - 样式片段也可在线尝试: codepen, w3schools.com 
 
 - headless-architecture
   - state + action: 参考autocomplete、search-ui
@@ -186,6 +182,8 @@ $$('[contenteditable]')
   - 06-ospreadsheet2watarble
   - 07-mdx-styling-QTWebkitEngine
   - 08-db-kappa-dolt-git
+  - 09-event-sourcing-eav
+  - 10-pouchdb
 
 - why use es6 class
   - 运行时类型检查，instanceof
@@ -207,6 +205,7 @@ $$('[contenteditable]')
 ## 10
 
 - not-yet
+  - pouchdb + kappa-crdt +eav => pouchdb-crdt-eav
   - todo remove hashId在编辑器model中有什么作用
   - 处理初试
   - 做完tailwind-table就面试
@@ -329,6 +328,12 @@ $$('[contenteditable]')
   - 一个请求全符合简单请求时，也会出现预请求现象，根源就是同源策略；谷歌浏览器版本最新的话，你不符合同源策略，也会触发预请求，甚至浏览器会主动禁止你的预请求，哪怕你后端进行了预请求处理，也没有用，浏览器都不会让你的请求发出去
   - 需预检的请求要求必须首先使用 OPTIONS 方法发起一个预检请求到服务器，以获知服务器是否允许该实际请求。预检请求 的使用，可以避免跨域请求对服务器的用户数据产生未预期的影响。
   - 一旦服务器通过了 预检请求，以后每次浏览器正常的 CORS 请求，就都跟简单请求一样，会有一个 Origin 头信息字段。服务器的回应，也都会有一个 Access-Control-Allow-Origin 头信息字段。
+
+- [Preflight request - MDN Web Docs Glossary](https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request)
+  - A CORS preflight request is a CORS request that checks to see if the CORS protocol is understood and a server is aware using specific methods and headers.
+  - It is an OPTIONS request, using two or three HTTP request headers: `Access-Control-Request-Method`, Origin, and optionally Access-Control-Request-Headers
+  - A preflight request is automatically issued by a browser and in normal cases, front-end developers don't need to craft such requests themselves.
+  - If the server allows it, then it will respond to the preflight request with an `Access-Control-Allow-Methods` response header, which lists DELETE
 
 ## 0810
 

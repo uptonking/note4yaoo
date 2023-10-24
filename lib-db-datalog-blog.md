@@ -66,6 +66,10 @@ modified: 2023-09-16T17:27:59.262Z
     - **Queries** have no positive literal, 
     - **rules** have exactly one positive literal and at least one negative literal, 
     - and **facts** consist of a single positive literal.
+
+## [Building Differential Dataflow from scratch using python_202302](https://materialize.com/blog/differential-from-scratch/)
+
+- Let's build (in Python) the Differential Dataflow framework at the heart of Materialize
 # roam-research
 
 ## [【译】Roam Research 自定义组件 —— 跟 {{roam/render}} 来一次亲密接触_202103](https://blog.jimmylv.info/2021-03-10-a-closer-look-at-roamrender-zh-translation/)

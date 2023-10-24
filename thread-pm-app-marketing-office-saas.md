@@ -26,6 +26,8 @@ modified: 2023-10-10T14:20:13.855Z
 
 - ## 
 
+- ## [Zoom introduces Zoom Docs, expands platform for next-generation flexible collaboration | Zoom_202310](https://news.zoom.us/zoom-docs/)
+
 - ## DocsGPT：一个开源的基于GPT模型的文档助手，可和任意文档进行聊天，可本地部署。在处理文本数据方面具有很高的准确性和灵活性。
 - https://twitter.com/xiaohuggg/status/1711657836252688443
 

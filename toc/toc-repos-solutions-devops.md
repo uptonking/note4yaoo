@@ -12,6 +12,10 @@ modified: 2020-12-12T19:01:56.749Z
 - https://github.com/xuxueli/xxl-job
   - /15.8kStar/GPLv3/202009
   - 分布式任务调度平台
+# performance-testing
+- https://github.com/perfsee/perfsee /ts
+  - https://perfsee.com/
+  - provides a set of tool for measuring and debugging performance of frontend applications, including bundle analysis, lighthouse auditing, flamegraph visualization, and more.
 # debug
 - https://github.com/acrazing/dpdm
   - Detect circular dependencies in your TypeScript projects.
@@ -37,6 +41,4 @@ modified: 2020-12-12T19:01:56.749Z
   - http://www.webmin.com/
   - a web-based system administration tool for Unix-like servers, and services
   - it is possible to configure operating system internals, such as users, disk quotas, services or configuration files, as well as modify, and control open-source apps, such as BIND DNS Server, Apache HTTP Server, PHP, MySQL, and many more.
-
-
 # more

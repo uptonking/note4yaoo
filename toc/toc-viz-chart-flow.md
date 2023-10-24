@@ -62,6 +62,11 @@ modified: 2020-10-22T10:22:55.878Z
   - [Is that possible to undo dragging and revert it to original position in some condition?](https://github.com/jsplumb/jsplumb/issues/628)
     - in pro
     - the short answer is you'd have to do this manually right now. but a "can drop in group" callback is something we could think about adding if you were interested.
+  - https://twitter.com/jsplumblib/status/1716839513903776034
+    - 3 reasons to choose jsPlumb over Jointjs
+    1. jsPlumb is not limited to SVG but JointJS is
+    2. jsPlumb integrates with Angular, React, Vue (2/3) and Svelte
+    3. jsPlumb has no external dependencies. JointJS has 3. And more if you want touch events.
   - [前端可视化建模技术概览](https://leungwensen.github.io/blog/2015/frontend-visual-modeling.html)
   - examples
     - https://github.com/jsplumb-toolkit-demonstrations/flowchart-builder
@@ -136,7 +141,7 @@ modified: 2020-10-22T10:22:55.878Z
   - 依赖react-draggable、react-zoom-pan-pinch
   - [Automatic layout](https://github.com/MrBlenny/react-flow-chart/issues/61)
 
-- joint /3.9kStar/MPL/202305/js
+- joint /3.9kStar/MPL/202305/js/svg-only
   - https://github.com/clientIO/joint
   - http://www.jointjs.com/
   - SVG-based JavaScript diagramming library powering exceptional UIs
@@ -254,6 +259,11 @@ modified: 2020-10-22T10:22:55.878Z
 - https://github.com/cytoscape/cytoscape.js /js
   - Cytoscape.js is a fully featured graph theory library. 
   - Cytoscape.js contains a graph theory model and an optional renderer to display interactive graphs. 
+
+- https://github.com/mapbox/potpack /js
+  - https://mapbox.github.io/potpack/
+  - fast JavaScript library for packing boxes of varying size into a near-square container, which is useful for generating CSS sprites and WebGL textures.
+  - Similar to shelf-pack, but static (you can't add items once a layout is generated), and aims for maximal space utilization.
 # more
 - https://github.com/aislelabs/react-flowchart-editor
   - http://data.aislelabs.com/demo/index.html

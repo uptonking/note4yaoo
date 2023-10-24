@@ -36,10 +36,13 @@ modified: 2023-09-16T17:53:29.322Z
 - I'm not sold on Samza, but I can tell you that creating isolated services that create their datastore from a stream of events is a really useful pattern in some use cases (ad-tech).
 - 
 - 
-- 
-- 
 
 # db-usecase
+
+## [S3 as the universal infrastructure backend_202310](https://medium.com/innovationendeavors/s3-as-the-universal-infrastructure-backend-a104a8cc6991)
+
+- 
+- 
 
 ## 📝 [Reddit’s database has two tables_201209](https://kevin.burke.dev/kevin/reddits-database-has-two-tables/)
 

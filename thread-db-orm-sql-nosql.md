@@ -9,6 +9,18 @@ modified: 2021-05-23T10:17:05.993Z
 
 # discuss-stars
 
+- ## 
+
+- ## 
+
+- ## 真的不能理解喜欢用mybatisplus的QueryWapper的人，手写一个SQL三十秒写完了，QueryWapper 写了我5分钟。而且直接写SQL还能用IDE的代码检查，批量重构，真不理解。
+- https://twitter.com/jihuayu123/status/1716749205010837877
+- 这玩意只适合单边操作 写复杂sql用wapper就是找罪受
+  - 即使是简单操作，Wapper也没见的比sql好写，也没见的比sql可读性高啊
+- 我觉得querybuilder最大的优势是能带来编译时检查，但是mybatis plus 的querybuilder做不到这一点，写起来还很不方便
+  - 而且mybatis plus写简单sql方面还不如jpa好用
+  - 特别是在java template string出来以后
+
 - ## "Hosting SQLite databases on Github Pages" is absolutely brilliant: it adds a virtual filesystem to SQLite-compiled-to-WebAssembly in order to fetch pages from the database using HTTP range requests 
 - https://twitter.com/simonw/status/1388933092216164352
   - [Hosting SQLite databases on Github Pages](https://phiresky.github.io/blog/2021/hosting-sqlite-databases-on-github-pages/)

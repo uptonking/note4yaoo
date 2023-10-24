@@ -76,7 +76,16 @@ modified: 2023-03-27T17:45:27.440Z
 
 - ## 
 
-- ## 
+- ## Unpopular opinion: Don't use http verbs PUT, PATCH, DELETE. Just use POST for everything. Reasons:
+- https://twitter.com/matthewcp/status/1716549522015310116
+  - `<form>` doesn't support the others. Frameworks that allow it do so through hacks.
+  - URLs are free, you don't gain anything by overloading them.
+  - Purity < practicality
+- A bunch of infra-adjacent stuff is easier if you use proper verbs. Eg. PATCH is idempotent, POST is not.
+  - *PUT is idempotent, PATCH is not necessarily. (According to MDN)
+  - This is good in theory but broken in modern practice. E.g. Next.js caches POST requests, probably because GraphQL uses them even for reads without side-effects.
+  - I used to make this argument, but now I think it's over-rated and I agree with the OP. It's just too hard to make every form do the right thing with respect to updates vs. creates. Also, it's rare that retrying an update is really what you want.
+- Simplicity that works >>>> anything else.
 
 - ## 使用fetch()上传formData数据时，千万不要在headers中设定content-type！
 - https://twitter.com/ahshengchen/status/1687377120459378688

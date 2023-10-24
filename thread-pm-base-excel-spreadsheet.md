@@ -15,6 +15,20 @@ modified: 2022-04-23T18:48:32.550Z
 # discuss
 - ## 
 
+- ## 
+
+- ## Introducing Python in Excel
+- https://twitter.com/Sumanth_077/status/1716468495129661552
+  - To get started all you need to use is the new PY function which allows you to input the Python code directly into Excel cells.
+
+- ## 谷歌刚刚在谷歌表格中添加了一项令人惊叹的人工智能功能。“智能填充”会自动检测两列之间的关系并预测您要输入的值。
+- https://twitter.com/FinanceYF5/status/1716292981886775690
+- 以下是一些使用示例：
+  - 按主题对反馈进行分类
+  - 按主题组织新闻文章
+  - 将地址数据转换为一致的格式
+  - 从文本字段中提取电话号码
+
 - ## 🎙 Recording → ✍️ Text → 💭 Analysis with AI now available in Glide! 
 - https://twitter.com/glideapps/status/1646603234096848896
   - The “Speech to Text” action uses Whisper and our @OpenAI integration to dictate and analyze text. 

@@ -14,7 +14,27 @@ modified: 2023-10-07T17:29:16.871Z
 
 - ## 
 
-- ## 
+- ## 🚀 fireproof.storage Light up your data!
+- https://twitter.com/jchris/status/1633113469179314179
+  - check out my new project, a real-time database that runs in any page, with indexes, event feeds, automatic replication, and cryptographic verifiability. 
+- It either took me two weeks to write this JSON database, or 14 years.
+  - Part of what makes it so easy to use is that it’s an embedded database with network support, like PouchDB or Couchbase Lite. So developers don’t have to worry about setting it up, nor do they have to worry about where the data is stored.
+  - The current version just keeps data in browser local storage, but it manages transactions and blocks using the immutable IPFS protocol. This means you can save and load data from almost anywhere.
+  - The combination of lightweight runtime, and the ability to reach across the network for blocks, makes me tell my kids I’m making an “infinite database.”
+- Limitations: currently encryption is living on a branch that I will merge as soon as I figure out the last webpack issues
+- Some of the prime use cases for this sort of technology:
+  - adding dynamic features to static pages 
+  - saving/memoizing pure functional transforms in a verifiable way (cough: prompt, model, params) 
+  - serving as a content-addressed oracle for smart-contract execution 
+  - games!
+
+- Are the indexes local-only or also synced? For integration in non-JS codebases, is there a spec to interoperate?
+  - The indexes use the same block store as the database, so when you activate replication, they also sync to @Web3Storage , but I think this will be optional, as you’d rather rebuild than copy when you’re on a slow connection.
+  - Another option I’ll be adding soon is the ability to serialize the current state as a single car file so that you can embed it in your app for instant preload
+  - As far as a spec, not yet. I plan to swap out some of the core data structures with more nuanced implementations, at which point that will be front of mind.
+
+- How does it differ from Pouch?
+  - One of the stand-out use cases for this is adding features to Web3 style link in profile pages. Because if you’re deploying HTML that has its content hash in a block chain somewhere, and the html contains the root hash of your database. Merkle!
 
 - ## [What Is JSON Patch? | Hacker News_202205](https://news.ycombinator.com/item?id=31301627)
 - Last year I experimented with an app architecture that used CouchDB/PouchDB for for synchronising data for a single user, multi device app. Then using Yjs to merge the conflicting edits - it worked incredible well. If I had the time I would love to build a Yjs/CRDT native CouchDB like database that could use the Yjs state vectors as a wire protocol for syncing…
@@ -158,11 +178,20 @@ modified: 2023-10-07T17:29:16.871Z
 - I've been using CouchDB (and now BigCouch) for about four years and it's both clever and useful. We're storing engineering documents (as attachments) and using map/reduce (CouchDB views) to segment the documents by the metadata stored in the fields. The only downside is that adding a view with trillions of rows can take quite a while.
 
 - ## [MiniCouchDB in Rust | Hacker News_202006](https://news.ycombinator.com/item?id=23446852)
-- The only thing I'm struggling with is running code when a document is updated. I have a polling client that watches for the _global_changes updates, but it seems really hacky. I wish there was a better way to get access to all database changes that looked like firestore functions.
+
+- One of the things that really turned me off from firebase is the rules system where you have to build an ACL there. I really disliked trying to essentially build my authorization system into a backend which I couldn't run locally and was primarily edited in their web console.
+  - For me, writing a proxy that sits in front of couchdb is very simple. I use JWT tokens that get passed between components in the system. I keep my authorization logic out of couch. I can write normal unit tests on my proxy. And my pouchdb client code mirrors the structure of my backend structure, which is a mental model I really prefer.
+  - I guess I'm saying I think having a separate database for each user makes more sense to me, not less.
+  - The only thing I'm struggling with is running code when a document is updated. I have a polling client that watches for the _global_changes updates, but it seems really hacky. I wish there was a better way to get access to all database changes that looked like firestore functions.
 - _changes should be available in an event stream format for continuous consumption, and you can apply filter functions to the feed?
   - It is, but I am using the global changes feed (so I don't need to create a process for each database which doesn't scale for me). And you have to manually create that database to have it work. And I have to filter based on my own code, I just wish there was a way to subscribe to high level events. In general it works fine but I keep thinking there could be a better way.
 
 - 👉🏻 In general, we are trying to move away from running your whole application in CouchDB. We would prefer that you **have an application layer in front of your CouchDB** instance. We recommend that you put up a proxy if you want to expose your replication to PouchDB. That way you can add security around that endpoint.
+- If you look back on the history of couchdb on HN for example, the lack of document based ACLs continues to come up as a serious limitation of couchdb. Because it speaks http(s) natively, it is a perfect db that can be used directly in place of a lot of the rest of your stack if your use case is a MBaaS.
+
+- This is an architecture I use a lot. The reverse proxy is there to implement the replication, having your application understand the replication protocol is a big ask. Instead, your app takes http requests, handles the ones it is supposed to, and forwards database requests directly to (c|p)ouchdb (after checking auth)
+
+- You're probably write about writing your own authentication layer but it still shouldn't be part of CouchDB or PouchDB. A better solution is for some OSS project to build a standard proxy that applies the document level authorization that everyone is asking for. No reason for it to be built-in.
 
 - ## [We have a problem with promises | Hacker News_201505](https://news.ycombinator.com/item?id=9564076)
 - as I mention in the article, ES7 async/await should help fix that
@@ -424,6 +453,24 @@ modified: 2023-10-07T17:29:16.871Z
 # discuss-sync/collab
 - ## 
 
+- ## in the pouch/couch model this will create a conflict that apps need to resolve, because they can’t know if the server or the client has the “correct” lastest change.
+- https://twitter.com/CouchDB/status/1313857978181844992
+- see [Use JSON Patch to Resolve Conflicts for CouchDB](https://neighbourhood.ie/blog/2020/09/15/use-json-patch-to-resolve-conflicts/) for automating some of that conflict resolution.
+
+- ## Has anyone here ever used PouchDB, or some other IndexedDB adapter to create a distributed sort of "peer-to-peer" database? 
+- https://twitter.com/BenLesh/status/1316085574697136128
+- gundb should help you with p2p stuff
+- CRDT 
+- https://github.com/natevw/PeerPouch /js/inactive
+  - A plugin for PouchDB which allows a remote PouchDB instance to be used locally. 
+  - It transfers data over WebRTC, for simple lower-latency remote access and even particularly peer-to-peer replication!
+
+- ## Anyone have experience using automerge CRDT in their apps for offline mode and cross-device sync? Would you recommend it over something like PouchDB/CouchDB? _202011
+- https://twitter.com/andrey_butov/status/1333419124878417920
+  - The one-db-per-user with proxy-auth approach is a bit hard to swallow.
+- I don't use automerge, I use my own crdt implementation. I'm happy with it, but I'd only recommend it if local apps give you a real advantage. It is difficult to make schema changes some features are hard without a centralized point
+  - but the payoff is very good, so it's worth it if you can take on the challenges. For auth, I just use my centralized server for that.
+
 - ## [LevelUP Proposal_201401](https://github.com/pouchdb/pouchdb/issues/1250)
 - theres work to experiment using a level based backend 
 
@@ -474,6 +521,14 @@ modified: 2023-10-07T17:29:16.871Z
 
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## I am actually using @pouchdb instead of the native @CouchDB . Which they are similar in many, there are differences that can throw one off. In my case, PouchDB's _sum can't do js object.
+- https://twitter.com/yuankuan_/status/1316634065747943424
+- The proposal is to disable them by default, not to remove the functionality.
 
 - ## [Django, HTMX and Alpine.js: Modern websites, JavaScript optional | Hacker News](https://news.ycombinator.com/item?id=29319034)
 - we use pouch+couch to one way sync from our server to thousands device. And from our sales force device to our server while we still save the data in pouch, we choose to use pwa's service worker to send directly to postgresql instead of pouchdb-couchdb sync.

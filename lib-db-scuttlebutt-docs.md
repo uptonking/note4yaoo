@@ -12,8 +12,10 @@ modified: 2023-09-07T15:56:25.565Z
 - [Scuttlebutt · GitBook](https://handbook.scuttlebutt.nz/)
 # blogs
 - 🆚️ [Nostr v SSB](https://mattlorentz.com/weblog/2023/01/18/nostr-v-ssb.html)
-  - [How is this different than Secure Scuttlebutt? | Hacker News](https://news.ycombinator.com/item?id=35691461)
-  - After using Nostr a bit, I don't think there's a huge difference between SSB and it except that **Nostr has no blob sync and they abandoned append-only logs** and use different signing key cryptography.
+
+- [How is this different than Secure Scuttlebutt? | Hacker News](https://news.ycombinator.com/item?id=35691461)
+
+- After using Nostr a bit, I don't think there's a huge difference between SSB and it except that **Nostr has no blob sync and they abandoned append-only logs** and use different signing key cryptography.
   - Scuttlebutt just suffers from an inaccessible implementation at the moment, but there is a team coming together to make a working implementation again.
 
 - [nostr: The problem with SSB (Secure Scuttlebutt)](https://github.com/nostr-protocol/nostr#the-problem-with-ssb-secure-scuttlebutt)
