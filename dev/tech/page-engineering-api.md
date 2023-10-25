@@ -92,4 +92,13 @@ modified: 2020-12-27T10:32:58.026Z
 
 - ## 
 
-- ## 
+- ## Here are 6 tips for effective API design:
+- https://twitter.com/mjovanovictech/status/1717149101509222598
+  - Use resource names in plural (/todo/123 vs. /todos/123)
+  - Pagination (/todos?page=1&pageSize=10)
+  - Filtering (/todos?searchTerm='. NET')
+  - Sorting (/todos?sort_col=deadline)
+  - Use versioning (/v1/todos)
+  - Rate limiting
+
+- What are the benefits of plural vs singular?

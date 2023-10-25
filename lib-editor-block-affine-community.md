@@ -12,7 +12,13 @@ modified: 2023-02-03T16:12:13.346Z
 # discuss
 - ## 
 
-- ## 
+- ## 传统上基于文件的文档同步粒度很粗，容易产生冲突。AFFiNE 则是将一篇文档的 block tree 编码到类似 protobuf 的 CRDT binary 格式，在多人协作时分发各自的 patch 来驱动状态更新。
+- https://twitter.com/ewind1994/status/1717050757546168667
+  - 你可以认为 AFFiNE 的 workspace 就是 clone 到你本地的特殊格式 git 仓库，自带字符粒度的冲突解决。
+  - AFFiNE 的路线相比使用 JSON 或 protobuf 的不同之处在于，作为文档状态 source of truth 的 CRDT binary 支持在各个设备上以任意顺序互相合并 patch，同时保证最终一致性。这可以去掉在多人协作时传统上对中央节点的依赖，甚至允许 P2P 的数据同步（还没做，好多更优先的事情）
+  - 但 CRDT 虽然对 local first 应用至关重要，它和 cloud app 并不冲突。一个想支持多人协作的 SaaS 产品完全可以将 CRDT 作为房间中同步数据的传输层来使用，这也是 AFFiNE 在自己的 cloud 服务中所使用的模式。所以基于 CRDT 的协作技术栈其实还是相当 progressive 的。
+- 为什么这个协议不能是git
+  - 基于 git 来做 local first 应用当然可行，只是这时的产品往往会更适合（或者说受限在）单人的数据同步，而不是多人实时协作。注意 git 的冲突处理粒度是单个文件，而 CRDT 是单个字符（且能自动合并），所以基于 git 天然地就要用户更多地手动解决冲突，不那么适合应用在重视实时协作的产品中。
 
 - ## why you switch from Slate to Quill
 - https://community.affine.pro/c/questions-answers/i-found-out-you-switched-from-slate-to-quill-in
@@ -23,7 +29,7 @@ modified: 2023-02-03T16:12:13.346Z
   2. The state synchronization between Slate and Yjs was too coarse grained. Every single edit within a text block will reset the block-level content, which bloats the history size and can't support character-wise collaboration.
   3. The code pattern was abusing hooks and didn't align to the best practice in React.
 
-- So when I created BlockSuite, our own framework, I chose to leverage the block-based pattern with a more predictable tech stack. A major design decision here was to replace the rich text model with multiple Y.Text instances, so that we can support character-level time traveling.
+- So when I created BlockSuite, our own framework, I chose to leverage the block-based pattern with a more predictable tech stack. A major design decision here was to replace the rich text model with multiple Y. Text instances, so that we can support character-level time traveling.
 
 - ## I would say that BlockSuite works very differently from traditional rich text editors_202301
 - https://discord.com/channels/959027316334407691/1006208074316521573/1062287261724577822

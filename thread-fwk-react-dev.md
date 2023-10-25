@@ -10,7 +10,10 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 💡 TLDR: morphing on the server to make smaller HTML payloads doesnt make as much difference as you think and introduces complexity
+- https://twitter.com/RogersKonnor/status/1717185649839657168
+  - Seems like they came to the same conclusion as the @stimulusreflex team did a few years ago about diffing on the server
+  - [37signals Dev — Exploring server-side diffing in Turbo_202310](https://dev.37signals.com/exploring-server-side-diffing-in-turbo/)
 
 - ## I generally consider disconnected pieces of react state inside of a component to be a bit of a smell (there are times where it makes sense though)
 - https://twitter.com/alexandereardon/status/1707182253477105954

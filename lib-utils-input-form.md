@@ -74,7 +74,11 @@ modified: 2023-03-27T17:45:27.440Z
 
 - ## 
 
-- ## 
+- ## How to use JavaScript's FormData to collect form fields without refs or state
+- https://twitter.com/ReactTraining/status/1716822590533353817
+  - 1. Start by giving inputs names
+  - 2. Use `new FormData` on the `event.target` . 
+  - 3. Use `.get` to access fields by name.
 
 - ## Unpopular opinion: Don't use http verbs PUT, PATCH, DELETE. Just use POST for everything. Reasons:
 - https://twitter.com/matthewcp/status/1716549522015310116

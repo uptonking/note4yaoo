@@ -329,7 +329,11 @@ that commit position, thus providing "read your own writes" semantics.
 
 - ## 
 
-- ## 
+- ## How do you apply the 𝗖𝗤𝗥𝗦 𝗽𝗮𝘁𝘁𝗲𝗿𝗻 to your system? Here's my approach to implementing the 𝗹𝗼𝗴𝗶𝗰𝗮𝗹 𝗮𝗿𝗰𝗵𝗶𝘁𝗲𝗰𝘁𝘂𝗿𝗲.
+- https://twitter.com/mjovanovictech/status/1717076357434179852
+  - I prefer using MediatR - but this idea works fine without it.
+  - MediatR implements the mediator pattern. It decouples the in-process sending of messages from handling messages.
+  - [CQRS Pattern With MediatR](https://www.milanjovanovic.tech/blog/cqrs-pattern-with-mediatr)
 
 - ## [CQRS and Event Sourcing Intro for Developers | Hacker News_201905](https://news.ycombinator.com/item?id=19978091)
 - Like anything else, it's one tool in the tool bag, but like that giant pipe wrench that you're always looking for a reason to use, it's almost always the wrong tool for the situation. 
@@ -357,6 +361,39 @@ that commit position, thus providing "read your own writes" semantics.
 
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## I’ve built and over-engineered the hell out of this before. The ideal solution for me was push-based event sourcing the feed in memory for each user and the type of feed, i.e., following, notifications, etc., 
+- https://twitter.com/ImSh4yy/status/1716882569260597619
+- Here's a tl; dr, keep in mind that this is likely way over-engineered for what you may need.
+  - Create and update the feeds on push (when a post is published or updated), not on pull (when a feed is requested).
+  - Event-source the feed into a time-series database, and store the last X entries in memory for quick retrieval.
+  - To reduce costs, only create feeds for users who have been active in the last X days. If they come back, we can create their feed then, which will be a bit slower, but that's fine. 
+  - For users with large followings, switch to "pull-based" feeds to avoid touching millions of feeds on every push (the Justin Bieber problem).
+- To be clear, each user has their own feed and, at times, multiple of them, depending on how your product works: user feed, timeline feed, notification feed, etc. The same principles apply to all of them. The only difference is how you populate them and sometimes the schema.
+  - This also gets a bit more complicated once you have to handle deletes, unfollows, and blocks, but at the end of the day, it's a fan-out queue system under the hood.
+
+- [The Architecture Twitter Uses to Deal with 150M Active Users, 300K QPS, a 22 MB/S Firehose, and Send Tweets in Under 5 Seconds - High Scalability -](http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html)
+
+- This is basically what this article I was reading earlier says haha
+  - [Design a News Feed System - System Design](https://liuzhenglaichn.gitbook.io/system-design/news-feed/design-a-news-feed-system)
+
+- At scale a pull based solution is way better than a push based one
+  - Pre-materialized feeds will require persisting multiple copies of each record which increases data size. When you consider personalized feeds, it will need to be persisted based on your relevance algo, and accommodating new relevance models and scores will require reordering
+  - evicting records with low scores and ingesting new ones with higher scores, which is IO intensive and makes A/B iteration much harder
+  - I work on the feed at another company and everything is done on the fly. I guess there's no one size fits all when it comes to a system as complex as this
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## [Why Are People into Event Sourcing? | Hacker News_201610](https://news.ycombinator.com/item?id=12627944)
 - Event sourcing isn't nearly as common knowledge among new programmers as the CRUD-one-row-per-entity pattern, and it really should be. 

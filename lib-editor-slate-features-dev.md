@@ -8,6 +8,12 @@ modified: 2023-03-16T16:29:47.610Z
 # lib-editor-slate-features-dev
 
 # guide
+
+- features
+  - virtual render
+  - track changes and branching
+  - collaborative editing
+
 - 编辑器较通用的功能
   - editor-features-playground: migrate lexical for slate, with devtools
   - 复制、粘贴

@@ -39,7 +39,8 @@ modified: 2023-04-04T03:59:40.928Z
 # discuss
 - ## 
 
-- ## 
+- ## AI 助手现在可谓是风头无两, 它们已经渗透到了各个行业，而且每个领域都有超过 100 种工具和丰厚的资金支持。
+- https://twitter.com/dotey/status/1716886364212388227
 
 - ## now instead of websites looking mostly the same due to the lack of creative courage, they're now going to look exactly the same due to AI. Cool cool. Good job, industry.
 - https://twitter.com/matthewcp/status/1702702571968762015

@@ -124,6 +124,19 @@ modified: 2023-01-03T14:52:51.355Z
   - I think macOS and its apps have this kind of search done in a fantastically good way. 
 
 - the search does also need to be made fuzzy enough so that if someone searches for a particular feature, they find what they intend
+# blogs-recsys
+- [推荐系统常用算法总结（适合刚入门的同学）-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1614209)
+# discuss-recsys
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [推荐算法和机器学习算法之间是什么关系？ - 知乎](https://www.zhihu.com/question/53040164)
+- 推荐系统可以说是机器学习的一种应用，比如针对特定的电影打分模型，通过线性回归代价函数，迭代获取用户特征θ和电影特征x，用于推荐电影给用户。
+
+- 看项亮的《推荐系统实践》
 # more-blog
 - [【总结】推荐系统——召回篇【1】 - 知乎](https://zhuanlan.zhihu.com/p/351716045)
   - 召回阶段负责从海量数据中快速筛选出部分数据，供后面排序阶段使用

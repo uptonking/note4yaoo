@@ -12,7 +12,10 @@ modified: 2023-05-26T11:09:41.593Z
 # discuss
 - ## 
 
-- ## 
+- ## Do you know that webpack can share ast between loaders and parser, 
+- https://twitter.com/rspack_dev/status/1716962318804988101
+  - but because babel acorn and swc have different ast so it's hard to share ast between them, 
+  - but it's not a problem of Rspack, you can share ast passed from builtin:swc-loader to swc parser in next Rspack release
 
 - ## 有个疑问想问下万能的推友（非引战），为什么最新的注重性能的 web 基础工具大多采用了 rust 而非 golang？
 - https://twitter.com/rxliuli/status/1661999393258762240

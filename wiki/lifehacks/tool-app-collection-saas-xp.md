@@ -8,9 +8,30 @@ modified: 2022-11-07T10:25:12.034Z
 # tool-app-collection-saas-xp
 
 # guide
+
+- username
+  - uptonking/yaork/yorke
+
 - https://github.com/iamadamdev/bypass-paywalls-chrome
   - help bypass paywalls for selected sites.
   - Bypass the following sites' paywalls: bloomberg, fortune, glassdoor, medium, national geographic, quora, vanity fair, vulture
+# tech-community
+- discord
+  - tiptap
+  - plate
+  - tanstack
+  - luckysheet
+  - evolu/cr-sqlite
+  - yjs
+  - more: nocodb
+
+- slack
+  - automerge
+  - slate
+  - react-data-grid
+  - sequelize
+  - lightdash
+  - more: d3, prisma
 # search-google
 - [Tips for efficiently Googling. Search by:](https://twitter.com/addyosmani/status/1444195449095737346)
   - Exact match > `"javascript modules"`

@@ -15,6 +15,12 @@ modified: 2023-02-09T18:23:43.486Z
 - ## 
 
 - ## 
+# discuss-stars
+- ## 
+
+- ## was not expecting figma to use quill editor... that was the first text editor lib i used too, but wasn't maintained for a while
+- https://twitter.com/soupdumplingcat/status/1717036069194240048
+
 # discuss
 - ## 
 

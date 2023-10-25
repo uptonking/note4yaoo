@@ -26,7 +26,8 @@ modified: 2021-05-10T04:06:02.843Z
 
 - ## 
 
-- ## 
+- ## 切换轮播图片的立体效果
+- https://twitter.com/AlexFisla/status/1716839073963241740
 
 - ## 设计一个标识，一共有七个字，不同的位置摆法，感受完全不同
 - https://twitter.com/NodYoung/status/1697844929064780142

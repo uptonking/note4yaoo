@@ -531,11 +531,10 @@ modified: 2022-08-18T16:57:46.405Z
   - CodeBlock.tsx基于MonacoEditor
   - Collaborative powered by prosemirror-collab and Socket. IO
   - Video powered by dashjs and ffmpeg.wasm
-  - ref
-    - https://github.com/li-yechao/paper
-      - https://paper.yechao.xyz/
-      - Paper powered by jsipfs and ProseMirror
-    - https://github.com/li-yechao/paper-collab
+  - https://github.com/li-yechao/paper
+    - https://paper.yechao.xyz/
+    - Paper powered by jsipfs and ProseMirror
+  - https://github.com/li-yechao/paper-collab
 
 - react-tinacms-editor /ts
   - https://github.com/tinacms/tinacms/blob/main/packages/react-tinacms-editor

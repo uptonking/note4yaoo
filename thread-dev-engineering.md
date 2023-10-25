@@ -16,6 +16,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 请问登录接口的 payload 中的密码在有 https 的情况下是否应该加密（比如 rsa ）？
 - https://twitter.com/fuergaosi/status/1716812916123742501
+  - [网站前端打API 时把密码加密，有意义吗？ - Huli's blog](https://blog.huli.tw/2023/01/10/security-of-encrypt-or-hash-password-in-client-side/)
+
+
 - 不加, payload需要加个屁，上个前向安全的https就行了。
 - 密码这东西从头到尾不就应该是一个hash值而已吗？又不是明文，加密是什么酷炫操作
 - 一般都是向后端发送hashed password

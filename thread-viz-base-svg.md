@@ -7,11 +7,20 @@ modified: 2021-03-11T11:26:06.670Z
 
 # thread-viz-base-svg
 
-# pieces
+# guide
+
+# discuss
+- ## 
+
+- ## 
 
 - ## 
 
 - ## 
+
+- ## use CSS transforms on part of an SVG icon 
+- https://twitter.com/jh3yy/status/1716920662525116741
+  - https://codepen.io/jh3y/pen/poGJowE
 
 - ## 💡 My latest blog post goes in-depth on why & how to remove SVGs from your JS bundle
 - [Breaking Up with SVG-in-JS in 2023 | Jacob Groß | kurtextrem.de](https://kurtextrem.de/posts/svg-in-js)

@@ -23,6 +23,7 @@ modified: 2022-11-11T06:57:09.670Z
 - resource
   - [Rust语言圣经(Rust Course)](https://course.rs/about-book.html)
   - [24 days from node.js to Rust](https://candle.dev/blog/javascript-to-rust/javascript-to-rust-day-1-rustup/)
+  - [Rust Language Cheat Sheet](https://cheats.rs/)
   - [This Week in Rust](https://this-week-in-rust.org/)
   - https://github.com/Mercateo/rust-for-node-developers
     - I initially wrote this tutorial in the summer of 2016 for Rust 1.0, though I haven't added new chapters.

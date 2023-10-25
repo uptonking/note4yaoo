@@ -14,7 +14,7 @@ modified: 2023-09-16T17:54:21.231Z
 
 - ## 
 
-- ## Most databases were built when data was static and queries were dynamic. 
+- ## 💡 Most databases were built when data was static and queries were dynamic. 
 - https://twitter.com/tantaman/status/1699826662408409383
   - For applications, most queries are static and the data is dynamic
 - What you really want is a database where a query is the same things as an index, is the same thing as a subscription... These are all the same underlying mechanic.

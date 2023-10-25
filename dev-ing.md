@@ -99,7 +99,7 @@ $$('[contenteditable]')
     - 不必执着于寻找indexeddb的实现，很多时候只是作为一种持久化的方式
   - pouchdb
   - crsqlite, hypermerge
-  - fireproof/ipld
+  - fireproof/ipld, hypercore, level
 
 - long-term-support
   - cms, airtable, lowcode
@@ -205,7 +205,7 @@ $$('[contenteditable]')
 ## 10
 
 - not-yet
-  - pouchdb + kappa-crdt +eav => pouchdb-crdt-eav
+  - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
   - todo remove hashId在编辑器model中有什么作用
   - 处理初试
   - 做完tailwind-table就面试

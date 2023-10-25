@@ -213,8 +213,20 @@ modified: 2023-02-06T09:14:40.114Z
   - The second difference is that async servlets only carry HTTP, and you need more than that to handle remote Comet clients.
     - Quickly you realize that you're building another protocol on top of HTTP.
     - At that point, it's better to reuse an existing protocol like Bayeux, and proven solutions like CometD
+# more
+- [AsyncAPI 2.0: Enabling the Event-Driven World_202105](https://tech.ebayinc.com/engineering/asyncapi-2-0-enabling-the-event-driven-world/)
+  - Learn about how eBay is standardizing on and publishing AsyncAPI Specification 2.0-based contracts for event notifications.
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## HTTP verbs: I agree there should be only GET and POST.
+- https://twitter.com/diegohaz/status/1717196146232246280
+  - The issue is that we already have a well-established convention around HTTP verbs, which simplifies the process of building and consuming REST APIs.
+  - What if we POST everything? /things/create, /create-thing, /things/id/delete? Or perhaps /delete-thing with the ID included in the body? At this point, it seems too arbitrary.
 
 - ## Here's a wrapper around `fetch()` that validates the response body against a zod schema.
 - https://twitter.com/gimenete/status/1688297547243077632
@@ -337,6 +349,3 @@ modified: 2023-02-06T09:14:40.114Z
 - Yep. Undici is more reliable, it's well designed and tested, and it has better defaults for serverless environments. 
   - We're already using it inside some places of the @vercel core production infrastructure which gives us the confidence to adopt it more broadly.
   - I could even see it providing the `fetch` global in the default Node.js distribution 
-# ref
-- [AsyncAPI 2.0: Enabling the Event-Driven World_202105](https://tech.ebayinc.com/engineering/asyncapi-2-0-enabling-the-event-driven-world/)
-  - Learn about how eBay is standardizing on and publishing AsyncAPI Specification 2.0-based contracts for event notifications.

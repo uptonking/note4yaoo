@@ -122,9 +122,11 @@ modified: 2020-12-29T11:27:41.474Z
 # discuss-landing-ux
 - ## 
 
-- ## 
+- ## logo文字上动态顺序闪光斜纹
+- https://twitter.com/DanielKanem/status/1717125649083605044
 
-- ## 
+- ## Baserow 1.21 is now available, packed with many shiny new features.
+- https://twitter.com/baserow/status/1717160373319573906
 
 - ## Creative live product demo in the hero section
 - https://twitter.com/d__raptis/status/1711712001788170465

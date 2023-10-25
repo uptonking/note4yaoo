@@ -24,6 +24,11 @@ modified: 2022-12-02T11:15:15.257Z
 - features
   - storage adapter: levelup, indexeddb
 
+- who is using #pouchdb
+  - ?
+- who is using #couchdb
+  - budibase
+
 - alternatives
   - pouchdb server    /inactive
   - couchdb(erlang)
@@ -39,6 +44,10 @@ modified: 2022-12-02T11:15:15.257Z
   - kappa-architecture?
 
 - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
+
+- community-pouchdb
+  - 
+
 # draft
 - nonsyncable/local-only tables for config/temporary-data
 # dev

@@ -49,6 +49,11 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## 
 
+- ## 💡 TLDR: morphing on the server to make smaller HTML payloads doesnt make as much difference as you think and introduces complexity
+- https://twitter.com/RogersKonnor/status/1717185649839657168
+  - Seems like they came to the same conclusion as the @stimulusreflex team did a few years ago about diffing on the server
+  - [37signals Dev — Exploring server-side diffing in Turbo_202310](https://dev.37signals.com/exploring-server-side-diffing-in-turbo/)
+
 - ## Just built another app that will probably never benefit from server components or streaming. 
 - https://twitter.com/tannerlinsley/status/1657652038749265920
   - It’s an SPA, behind a login, with zero SEO concerns for users that will never care about or appreciate “It streams, baby” and instead immediately asked about offline support. 
@@ -60,20 +65,16 @@ modified: 2021-04-24T08:29:02.272Z
 - 首屏加载很快的话用户体验确实可以优化不少。
   - 有一种很古老的设计叫 application shell，用户体验也很快。
 
-
 - 看场景。做 marketing 页面用 Server Component or SSG 真的很有必要 否则可以完全不用的
-
-
-
 
 - ## [reactjs - How single-page application works in SSR (React) - Stack Overflow](https://stackoverflow.com/questions/57243697/how-single-page-application-works-in-ssr-react)
 - When implementing Server Side Rendering (SSR), the server knows how to generate a full page with markup so the user gets a fully rendered page and from that moment, when the js resources get downloaded, the application will be live (event listeners will be enabled, the react lifecycle will be active and so on).
-1.  Get a request for a specific path
-2.  Initiate a new store instance for the request
-3.  In case of using react router (or other router solution), fill the state with the requested route
-4.  Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
-5.  Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
-6.  Return the markup as a response. The markup can look similar to the following: 
+01.   Get a request for a specific path
+02.   Initiate a new store instance for the request
+03.   In case of using react router (or other router solution), fill the state with the requested route
+04.   Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
+05.   Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
+06.   Return the markup as a response. The markup can look similar to the following: 
 
 ```HTML
 <html>

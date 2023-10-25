@@ -14,7 +14,13 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
-- ## 
+- ## Q: Does RSC still use fibers (just one render)?
+- https://twitter.com/sebmarkbage/status/1716927877915275640  
+- No.
+  - react-dom/client is implemented using Fiber (for now)
+  - react-dom/server is implemented using Fizz
+  - react-server-dom-webpack is implemented using Flight Server/Client/Reply Server/Reply Client.
+  - 6 separate implementations.
 
 - ## I've used useCallback maybe once or twice in the last 3 years, never useMemo 
 - https://twitter.com/samselikoff/status/1712826463706075209
@@ -245,7 +251,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                          `ValueFront`,                                          `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                            `ValueFront`,                                            `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

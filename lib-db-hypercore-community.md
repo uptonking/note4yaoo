@@ -20,7 +20,19 @@ modified: 2023-09-07T15:58:27.967Z
 
 - ## 
 
-- ## 
+- ## 💡 One of the biggest challenges in creating @FireproofStorge is that I refused to take on infrastructure operations. 
+- https://twitter.com/jchris/status/1717195946822660289
+  - This means the entire database has to be built to run anywhere. (It eats trash, so you don’t have to.)
+  - Fireproof is like SQLite, it runs embedded in your application. This means it’s my job to make it so nobody has to worry about compiling dependencies, or making a misconfiguration that loses data.
+  - I could have created a minimal backend that runs in a container or some other abstraction layer. But that is not the path of simplicity, and simplicity is one of the competitive advantages someone like me can offer.
+  - Instead, the focus is on making it work with any backend from S3 to the file system to @IPFS and @partykit_io — this requires a level of focus on the storage engine that I haven’t seen in other browser databases.
+  - Because we use content addressed data, our files are self-verifying. But that is only half the battle, because a database that stores files anywhere could be putting your data everywhere. I couldn’t in good conscience be writing app data to random public buckets, in the clear for anyone to read.
+  - Fireproof is end-to-end encrypted by default. This means if you manage your keys correctly, it can be as secure as you want. And if you don’t know what you are doing, at least you’re not spraying clear data all over the place.
+  - The result is a database that any front-end developer will feel at home with, but also lets them get work done without asking for anything from the backend team.
+
+- 🤔 why do u choose ipfs instead of hypercore ?
+  - If hypercore can shuffle binary blobs, then they work the same for Fireproof.  I started with IPFS because of the IPLD data structures, which are the center of interesting research for immutability. But that stuff is independent of the actual transport.
+  - The content addressable trees and CRDTs that come from @mikeal , @_alanshaw and friends are at the forefront of the industry. I saw my opportunity to package that fundamental advancement for the masses.
 
 - ## [Quiet – Encrypted P2P team chat with no servers, just Tor | Hacker News_202309](https://news.ycombinator.com/item?id=37477512)
 - While I do like the idea behind a P2P E2EE chat, I believe that unless you're willing to invest heavily into OrbitDB and IPFS, this project will stay niche at best.

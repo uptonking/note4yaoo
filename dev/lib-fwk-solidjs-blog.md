@@ -375,6 +375,8 @@ const useReducer = (reducer, state) => {
 - [Comparative study of reactivity across frameworks and implications for Resumability_202308](https://www.youtube.com/watch?v=vf1v7n2ApHI)
   - It has my favorite visualization of the differences between Signals and Observables and a great example to show the difference between reactivity in frameworks.
 
+- [Unveiling the Magic: Exploring Reactivity Across Various Frameworks_202305](https://www.builder.io/blog/reactivity-across-frameworks)
+
 - [Designing SolidJS: Components](https://t.co/JBBZSaanu1?amp=1)
 - [Designing SolidJS: JSX](https://t.co/Y3MQ34um1R?amp=1)
 - [Designing SolidJS: Reactivity](https://t.co/P9aD3WHBZe?amp=1)

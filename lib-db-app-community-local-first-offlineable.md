@@ -24,7 +24,7 @@ modified: 2023-09-22T20:15:10.616Z
   - TL; DR thinking more, coding less works!
 - Employing tiger style - design is cheap
 
-- ## 💡 "The log is the DB, everything else is just a cache" lives rent-free(不收租金) in my head.
+- ## 💡💡 "The log is the DB, everything else is just a cache" lives rent-free(不收租金) in my head.
 - https://twitter.com/LewisCTech/status/1712207592963854453
   - So for multi-master systems, we takes the log/DB, cache it as a set, (causal history?) , and if the causal histories (caches) are equal, it's converged.
   - If I'm wrong or unclear in my thinking or you have a paper I need to read/re-read - bring it.

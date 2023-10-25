@@ -243,7 +243,15 @@ modified: 2023-03-29T17:23:37.126Z
 
 - ## 
 
-- ## 
+- ## [Notion.clone: open-source notes editor like in Notion | Hacker News_202011](https://news.ycombinator.com/item?id=25063122)
+- A library that does half of the stuff that notion does and manages to create some sort of consistent markdown output would be amazing. This is amazing work and I think the main thing I see missing is navigation.
+  - I couldn’t agree more with this. It would be nice to have an open source text editor with markdown shortcuts and auto-formatting. Bear.app, Typora and outline’s rich text formatter are close but the first two are closed and the latter I find clunky and hard to build on top of. I am excited to see this clone and where it goes
+
+- One of the really great parts of Notion is that you can view your data in multiple ways (table, schedule, timeline view, etc.); 
+  - You can configure views, filtering, sorting, summary’s, and foreign keys with roll ups....
+
+- Does it work offline?
+  - No, not yet - but that what be interesting to add!
 
 - ## ✨ [BlockSuite: An open-source Notion-like editor with multiplayer support | Hacker News_202306](https://news.ycombinator.com/item?id=36505318)
 - I want to be able to open a document in read-only mode. Otherwise, while just navigating through pages or reading content, it's far too easy to accidentally add text

@@ -11,9 +11,11 @@ modified: 2021-05-23T16:34:27.206Z
 # roadmap
 
 - features
-  - local-first
-  - database views
+  - virtual render
+  - track changes and branching
   - collaborative editing
+  - local-first
+  - multiple views
 
 - table-view
   - sort/filter/group + test

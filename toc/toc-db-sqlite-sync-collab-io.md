@@ -8,12 +8,11 @@ modified: 2022-11-04T14:21:31.365Z
 # toc-db-sqlite-sync-collab-io
 
 # guide
-- 参考sqlite+http-range的部分下载示例(sql.js-httpvfs)
-# export/import
-- https://github.com/fitnr/sqlite-json
 
-- https://github.com/isaiahnields/csv-to-sqlite
-  - A desktop app to convert CSV files to SQLite databases!
+- sqlite-sync-solutions
+  - cr-sqlite, evolu, sqlsync
+
+- 参考sqlite+http-range的部分下载示例(sql.js-httpvfs)
 # sync
 - https://github.com/orbitinghail/sqlsync /rust
   - a collaborative offline-first wrapper around SQLite. 
@@ -80,4 +79,10 @@ modified: 2022-11-04T14:21:31.365Z
   - https://mycelial.com/
   - Mycelite is a SQLite extension that allows you to synchronize changes from one instance of SQLite to another
   - Currently, it only supports one-way synchronization, but eventually, it will support two-way synchronization.
+# export/import
+- https://github.com/fitnr/sqlite-json /js
+  - Convert Sqlite3 tables to JSON
+
+- https://github.com/isaiahnields/csv-to-sqlite
+  - A desktop app to convert CSV files to SQLite databases!
 # more
