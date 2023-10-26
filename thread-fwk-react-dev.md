@@ -661,7 +661,7 @@ const [counter, dispatch] = useReducer(counterSlice.reducer, 0)
   - if react had fast updates nothing externally would change, it would all just be technical details for libraries to implement.
 - Completely agree with this -- we're building something highly interactive and made the deliberate decision against using React for exactly this reason. Seriously wish JQuery UI wasn't abandoned in 2016.
 
-- ## The html `...` alternative to JSX is 🔥, as it allows React without transpiling. But there's no TS checking on components in the literal
+- ## The html `...` alternative to JSX is fire, as it allows React without transpiling. But there's no TS checking on components in the literal
 - https://twitter.com/giltayar/status/1371443623573749760
 - It's a problem I really really hope the TS folks find a solution for - right now it would require implementing a complete XML parser in TS Types. There are some demos, but they make my head spin and I have no idea how they could be feasibly generalized (v slow).
 - The current recommendation is basically that, if you are working in an environment like VSCode where TS types are super helpful, you should author in JSX and transpile to HTM. The transpile process can be extremely fast, but we haven't released a pure token-based approach yet.

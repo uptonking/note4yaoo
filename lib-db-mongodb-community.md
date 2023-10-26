@@ -20,6 +20,15 @@ modified: 2022-06-13T02:59:04.350Z
 
 - ## [Ask HN: Do you still use MongoDB? | Hacker News_202005](https://news.ycombinator.com/item?id=23270429)
 
+# discuss-usecase-xp
+- ## 
+
+- ## 
+
+- ## 🔥 [HSBC moves from 65 relational databases into one global MongoDB database | Hacker News_202006](https://news.ycombinator.com/item?id=23507197)
+- 
+- 
+- 
 # discuss
 - ## 
 

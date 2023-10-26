@@ -276,3 +276,13 @@ modified: 2022-10-05T04:57:38.647Z
 - https://github.com/Apostolique/apos-docs
   - https://apostolique.github.io/apos-docs/markdown/
   - 依赖eleventy，右侧toc无法高亮
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Chrome 正在实现 CSS 标点挤压，这对 CJK 文字排版是巨大的飞跃
+- https://twitter.com/yisibl/status/1717392998793896092
+  - text-spacing-trim: space-first

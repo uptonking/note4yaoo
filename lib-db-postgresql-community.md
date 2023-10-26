@@ -9,12 +9,6 @@ modified: 2022-06-13T03:01:05.956Z
 
 # guide
 
-# discuss-stars
-- ## 
-
-- ## 
-
-- ## 
 # discuss-cons
 - ## 
 
@@ -31,12 +25,40 @@ modified: 2022-06-13T03:01:05.956Z
   - Basically you create a regular table in place of a materialised one, only aggregate data newer than what's currently in the table then store the new aggregates in table. Repeat this an interval.
 - Interestingly, DBT does not support creating materialized views.
 
+# discuss-distributed
+- ## 
+
+- ## 
+
+- ## 🔥 [Citus 6.1 Released – Horizontally scale your Postgres database | Hacker News_201702](https://news.ycombinator.com/item?id=13662166)
+- 
+- 
+- 
+
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## 🔥 [How Postgres is more than a relational database: Extensions | Hacker News_201811](https://news.ycombinator.com/item?id=18555276)
+- 
+- 
+- 
+
+- ## 🔥 [Designing a SaaS Database for Scale with Postgres | Hacker News_201610](https://news.ycombinator.com/item?id=12649734)
+- 
+- 
+- 
+
+- ## 🤔🔥 [How to Manage Connections Efficiently in Postgres, or Any Database | Hacker News_201810](https://news.ycombinator.com/item?id=18220906)
+- 
+- 
+- 
+
+- ## 🔥 [Listen to your to PostgreSQL database in realtime via WebSockets | Hacker News_202104](https://news.ycombinator.com/item?id=26968449)
+- 
+- 
+- 
 
 - ## I was today years old when I learned about the "\watch" option of psql for repeatedly running a query and examining its changing output.
 - https://twitter.com/gunnarmorling/status/1693868171931914288

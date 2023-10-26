@@ -75,7 +75,7 @@ modified: 2022-11-03T04:14:00.563Z
   - https://github.com/panicfarm/sltest
     - Demonstrates potential memory leak in SLED.
   - [Subscriptions and the Pit of Success](https://github.com/spacejam/sled/issues/1162)
-  - [Sled: Embedded Database Written in Rust | Hacker News](https://news.ycombinator.com/item?id=22375979)
+  - [Sled: Embedded Database Written in Rust | Hacker News_202002](https://news.ycombinator.com/item?id=22375979)
     - LevelDB is a LSM database. 
     - LSM is generally better for write workloads over BTree DBs like LMDB and sled. LMDB also has a single writer restriction.
 

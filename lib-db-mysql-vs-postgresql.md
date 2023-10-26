@@ -39,9 +39,20 @@ modified: 2020-12-18T13:23:43.939Z
 
 - [PostgreSQL 与 MySQL 相比，优势何在？](https://www.zhihu.com/question/20010554/answers/updated)
   - pg有很多数据库的新特性，很多学术的都会用postgresql
+# dev
 
-# pieces
+# discuss-mysql-pg
 
-# ref
+- ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚️🔥 [Ask HN: What could a modern database do that PostgreSQL and MySQL can't | Hacker News_202109](https://news.ycombinator.com/item?id=28425379)
+- 
+- 
+- 
+
+# more
 - [postgresql也很强大，为何在中国大陆，mysql成为主流](https://www.zhihu.com/question/31955622/answers/updated)

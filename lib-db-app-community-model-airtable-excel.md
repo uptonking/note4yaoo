@@ -1,11 +1,11 @@
 ---
-title: lib-db-app-community-model-airtable
-tags: [airtable, community, database-design, notion-database, spreadsheet]
+title: lib-db-app-community-model-airtable-excel
+tags: [airtable, community, database-design, excel, notion-database, spreadsheet]
 created: 2023-09-26T20:06:23.313Z
-modified: 2023-09-26T20:06:50.056Z
+modified: 2023-10-26T21:54:54.201Z
 ---
 
-# lib-db-app-community-model-airtable
+# lib-db-app-community-model-airtable-excel
 
 # guide
 
@@ -20,25 +20,15 @@ modified: 2023-09-26T20:06:50.056Z
 
 - To put it coarsely, outside ZigZag there are three different kinds of structures in computers today: linear lists (and grids i.e.~lists of lists), hierarchical trees and messes. That is really messes, not meshes. By a mess, I mean any complicated data structure, usually with one-directional links to make things even more unmanageable.
   - That's not a mess, that's a graph.
-
-- ## ✨ [Show HN: Airtable, a real-time spreadsheet-database hybrid | Hacker News_201409](https://news.ycombinator.com/item?id=8373914)
-- Airtable is fantastic. My only wish is that they formalize a “Airtable open format specification”. 
-  - At the moment, in spite of all its shortcomings, an excel file is far more portable than an Airtable doc. 
-  - We need the Airtable data structure to become an open standard.
-
-- 
-- 
-- 
-- 
-- 
-- 
-
-# discuss-dataframe/tabular
+# discuss-dataframe/tabular/excel
 - ## 
 
 - ## 
 
-- ## 
+- ## 🔥 [Excel as a database | Hacker News_201304](https://news.ycombinator.com/item?id=5515290)
+- 
+- 
+- 
 
 - ## [Why isn’t there a decent file format for tabular data? | Hacker News_202205](https://news.ycombinator.com/item?id=31220841)
 - several high quality and well-developed formats
@@ -68,21 +58,25 @@ modified: 2023-09-26T20:06:50.056Z
   - Its possible but you can't just diff the file bytes. Because you will get spurious differences due to metadata, etc.
 
 - There is a decent file format for tabular data, and the author dismisses it: parquet.
-
-- 
-- 
-- 
-- 
-- 
-- 
-
 # discuss
 - ## 
 
+- ## 🔥 [On Anki's Database | Hacker News_202202](https://news.ycombinator.com/item?id=30427549)
+- 
+- 
+- 
+
+- ## 🔥 [Retool Database | Hacker News_202303](https://news.ycombinator.com/item?id=35369279)
+- 
+- 
+- 
+
+- ## 🔥 [Ask HN: Best low-/no-code solution for simple web-based database frontends | Hacker News_202104](https://news.ycombinator.com/item?id=26657803)
+- 
+- 
+- 
+
 - ## [Excel never dies (2021) | Hacker News](https://news.ycombinator.com/item?id=32346288)
-- 
-- 
-- 
 
 - It's true that Google sheets and LibreOffice don't have Powerquery, and that's a big pain. But the worse thing is that they don't have tables. As in, the "format as table" button in Excel. 
 - Maybe it's a problem of naming -- "format" makes people think it's just about aesthetics, but actually it imparts real semantic structure onto a rectangular grid of data.
@@ -90,9 +84,6 @@ modified: 2023-09-26T20:06:50.056Z
 - The point is the semantic structure that makes your spreadsheet more than just a rectangular soup of cells, so you don't have to claw through endless cryptic "G70:$K100" cell references. 
   - Think of it like a mutable resizable dataframe. 
   - It's the core data structure of an efficient, scalable, maintainable Excel document
-
-- 
-- 
 
 - ## ✨ [Grist – Open core alternative to Airtable and Google Sheets | Hacker News_202202](https://news.ycombinator.com/item?id=30392227)
 - 
@@ -104,11 +95,7 @@ modified: 2023-09-26T20:06:50.056Z
 
 - I like notion because it’s a hybrid of wiki, table/database, calendar, kanban. You can do a lot more than just tables.
 
-- 
-- 
-- 
-
-- ## ✨ [Undb – Private first, unified, self-hosted no code database | Hacker News_202306](https://news.ycombinator.com/item?id=36404622)
+- ## 🚀🔥 [Undb – Private first, unified, self-hosted no code database | Hacker News_202306](https://news.ycombinator.com/item?id=36404622)
 - I love the idea of an Airtable/Notion open source alternative, but I haven't seen any projects yet that look like a solid long-term bet.
   - NocoDB is neat, but looks like it's a single vendor-driven project that could go open core or die altogether if funding dries up.
   - Baserow also looks good, but already appears to be open core and another single-vendor project.
@@ -118,12 +105,7 @@ modified: 2023-09-26T20:06:50.056Z
 
 - I'd be much more interested in a clean library that abstracts sqlite data access, but stores it in the same format. That way, I could implement the library in my frontend app to store data, and then use the sqlite files that can be exported to load into your Undb app to inspect them
 
-- 
-- 
-- 
-
 - ## ✨ [Show HN: NocoDB – Open-Source Airtable Alternative | Hacker News_202105](https://news.ycombinator.com/item?id=27303783)
-- 
 - 
 - 
 - 
@@ -155,10 +137,6 @@ modified: 2023-09-26T20:06:50.056Z
 
 - Seems like you'd want to look into eavt databases for a universal schema, Datomic has a lot of resources explaining it's schema
 
-- 
-- 
-- 
-
 - ## [Excel 2.0 – Is there a better visual data model than a grid of cells? | Hacker News_202203](https://news.ycombinator.com/item?id=30868696)
 - UltOrg is roughly "spreadsheets re-built atop the RDBMS datamodel". The UI supports nested joins, aggregations, filtering, for both display and data update.
 
@@ -173,10 +151,6 @@ modified: 2023-09-26T20:06:50.056Z
   * Data validation
   * Large tables
   * Formula Error checking
-
-- 
-- 
-- 
 
 - ## [Airtable raises $100M at a $1.1B valuation | Hacker News_201811](https://news.ycombinator.com/item?id=18460902)
 
@@ -194,3 +168,29 @@ modified: 2023-09-26T20:06:50.056Z
 
 - It's a database primarily operated upon using a spreadsheet interface. You can create different representations (literally Views) of your data / rows. You can add custom logic "blocks" to rows / entries / tables that, for example, send a text message to a customer in the table.
   - You're not going to build a brand new consumer app on Airtable, but all of the backoffice and internal crap we write over and over and over again... it's a really good option for simplifying those processes and is accessible to non-developers.
+
+- ## 🔥 [Show HN: We made a real-time editor for web database apps | Hacker News_201810](https://news.ycombinator.com/item?id=18113779)
+- 
+- 
+- 
+
+- ## 🔥 [Show HN: SpreadsheetDB – A database that you can query with spreadsheets | Hacker News_201703](https://news.ycombinator.com/item?id=13978271)
+- 
+- 
+- 
+
+- ## 🔥 [Dropplets - A simple database-less CMS | Hacker News_201310](https://news.ycombinator.com/item?id=6508043)
+- 
+- 
+- 
+
+- ## ✨🔥 [Show HN: Airtable, a real-time spreadsheet-database hybrid | Hacker News_201409](https://news.ycombinator.com/item?id=8373914)
+- Airtable is fantastic. My only wish is that they formalize a “Airtable open format specification”. 
+  - At the moment, in spite of all its shortcomings, an excel file is far more portable than an Airtable doc. 
+  - We need the Airtable data structure to become an open standard.
+
+
+- ## 🔥 [A web-based Excel/database hybrid | Hacker News_201205](https://news.ycombinator.com/item?id=3959486)
+- 
+- 
+- 

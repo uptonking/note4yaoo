@@ -12,6 +12,13 @@ modified: 2021-08-30T18:56:18.632Z
 - ref
   - [wa-sqlite benchmarks](https://rhashimoto.github.io/wa-sqlite/demo/benchmarks.html)
 # popular
+- sqlite /3.3kStar/public/202212/clang
+  - https://github.com/sqlite/sqlite
+  - https://sqlite.org/
+  - a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. 
+  - https://github.com/sqlite/sqlite/tree/95e961beaae011113aa2431728fbdc5a1a745f58
+    - early code in 200007 
+
 - kikko /75Star/MIT/202211/ts
   - https://github.com/kikko-land/kikko
   - https://kikko-doc.netlify.app/
@@ -107,7 +114,7 @@ modified: 2021-08-30T18:56:18.632Z
 
 - https://github.com/inloop/sqlite-viewer
   - View SQLite file online
-# db-powered-by-sqlite
+# powered-by-sqlite
 - https://github.com/dpapathanasiou/simple-graph /sql
   - This is a simple graph database in SQLite, inspired by "SQLite as a document database"
   - The schema consists of just two structures: Nodes(json) and Edges({id:json})
@@ -132,7 +139,7 @@ modified: 2021-08-30T18:56:18.632Z
     - Synchronization is one-way only (changes made on the master will overwrite changes made on slaves). Slave databases are kept read-only to prevent accidental writes from application code.
     - watchdb replication is eventually consistent by design, so it's AP in CAP. If you need strong consistency (at the expense of performance and required changes to application code), take a look at rqlite.
 
-- https://github.com/rusqlite/rusqlite
+- https://github.com/rusqlite/rusqlite /rust
   - an ergonomic wrapper for using SQLite from Rust.
   - Historically, the API was based on the one from rust-postgres. However, the two have diverged in many ways, and no compatibility between the two is intended.
 
@@ -153,7 +160,7 @@ modified: 2021-08-30T18:56:18.632Z
   - [What would SQLite look like if written in Rust? — Part 0_202102](https://dev.to/thepolyglotprogrammer/what-would-sqlite-look-like-if-written-in-rust-part-0-4f4k)
   - [Column or row oriented store](https://github.com/sqlrite/design/discussions/6)
 
-- https://github.com/cstack/db_tutorial /c
+- https://github.com/cstack/db_tutorial /clang
   - Writing a sqlite clone from scratch in C
   - B-Tree Leaf Node Format
   - prepare_statement (our “SQL Compiler”) does not understand SQL right now. In fact, it only understands two words select and insert
@@ -175,23 +182,14 @@ modified: 2021-08-30T18:56:18.632Z
 - https://github.com/LMDB/sqlightning /201504/c/inactive
   - SQLite3 ported to use LMDB instead of its original Btree code.
   - LumoSQL as a fork
-- https://github.com/LumoSQL/LumoSQL /c
+- https://github.com/LumoSQL/LumoSQL /MIT/c
   - a modification (not a fork) of the SQLite
-  - LumoSQL adds security, privacy, performance and measurement features to SQLite.
+  - LumoSQL adds security, privacy, performance and measurement features to SQLite. 
   - LumoSQL can swap back end key-value store engines in and out of SQLite.
 
-- https://github.com/CsharpDatabase/csharp-sqlite /201401/inactive
-  - C# port of the SQLite library
-  - https://code.google.com/archive/p/csharp-sqlite/
-# sqlite-like
-- sqlite /3.3kStar/public/202212/clang
-  - https://github.com/sqlite/sqlite
-  - https://sqlite.org/
-  - a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. 
-  - https://github.com/sqlite/sqlite/tree/95e961beaae011113aa2431728fbdc5a1a745f58
-    - early code in 200007 
+## sqlite-like
 
-- https://github.com/lucavallin/gnaro /c
+- https://github.com/lucavallin/gnaro /clang
   - A proto-database inspired by SQLite, written in C for educational purposes. 
   - gnaro takes SQLite as a reference because of the limited feature set, and therefore complexity, when compared to other databases. 
 
@@ -199,6 +197,10 @@ modified: 2021-08-30T18:56:18.632Z
   - https://github.com/canonical/dqlite
   - dqlite is a C library that implements an embeddable and replicated SQL database engine with high-availability and automatic failover.
   - dqlite extends SQLite with a network protocol that can connect together various instances of your application and have them act as a highly-available cluster, with no dependency on external databases.
+
+- https://github.com/CsharpDatabase/csharp-sqlite /201401/inactive
+  - C# port of the SQLite library
+  - https://code.google.com/archive/p/csharp-sqlite/
 # more
 - https://github.com/loladb/nodejs-examples
   - https://loladb.com/

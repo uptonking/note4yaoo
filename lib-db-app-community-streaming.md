@@ -17,6 +17,15 @@ modified: 2023-09-17T18:00:17.315Z
 - ## 
 
 - ## 
+# discuss-stream-db
+- ## 
+
+- ## 
+
+- ## 🔥 [Building a Cloud Database from Scratch: Why We Moved from C++ to Rust (2022) | Hacker News_202302](https://news.ycombinator.com/item?id=34737626)
+- 
+- 
+- 
 # discuss
 - ## 
 

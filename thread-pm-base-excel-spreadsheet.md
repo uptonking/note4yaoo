@@ -65,7 +65,7 @@ modified: 2022-04-23T18:48:32.550Z
 - It also makes program state extremely visible, something that I think PLs generally don’t think about much. Not saying the idea wasn’t there, eg, with smalltalk, but excel goes way beyond.
 - Arguably the UX comes down to just having a visible location for a value, rather than the idea of a constant or variable held in a named location off screen.
 
-- ## Need a versatile function that can make static spreadsheets fun & interactive? It’s gotta be the 🔥 IF function 🔥
+- ## Need a versatile function that can make static spreadsheets fun & interactive? It’s gotta be the IF function
 - https://twitter.com/GRID_hq/status/1524796293004107776
 
 - ## The QUERY function: the most powerful and versatile spreadsheet function in existence.

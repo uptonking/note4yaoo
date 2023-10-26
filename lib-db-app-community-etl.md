@@ -20,9 +20,15 @@ modified: 2023-09-17T18:10:33.050Z
 # discuss
 - ## 
 
-- ## 
+- ## 🔥 [Show HN: Stein – Use Google Sheets as a No-Setup Database | Hacker News_201907](https://news.ycombinator.com/item?id=20426682)
+- 
+- 
+- 
 
-- ## 
+- ## 🔥 [Show HN: OctoSQL – Query and join multiple databases and files, written in Go | Hacker News_201907](https://news.ycombinator.com/item?id=20449610)
+- 
+- 
+- 
 
 - ## [SQL should be the default choice for data transformation logic | Hacker News_202301](https://news.ycombinator.com/item?id=34578324)
 

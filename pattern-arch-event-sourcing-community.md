@@ -364,7 +364,10 @@ that commit position, thus providing "read your own writes" semantics.
 
 - ## 
 
-- ## 
+- ## 🔥 [EventStore: Open-Source, Functional Database with Complex Event Processing in JS | Hacker News_201811](https://news.ycombinator.com/item?id=18377219)
+- 
+- 
+- 
 
 - ## I’ve built and over-engineered the hell out of this before. The ideal solution for me was push-based event sourcing the feed in memory for each user and the type of feed, i.e., following, notifications, etc., 
 - https://twitter.com/ImSh4yy/status/1716882569260597619

@@ -21,26 +21,6 @@ modified: 2021-05-23T10:17:05.993Z
   - 而且mybatis plus写简单sql方面还不如jpa好用
   - 特别是在java template string出来以后
 
-- ## "Hosting SQLite databases on Github Pages" is absolutely brilliant: it adds a virtual filesystem to SQLite-compiled-to-WebAssembly in order to fetch pages from the database using HTTP range requests 
-- https://twitter.com/simonw/status/1388933092216164352
-  - [Hosting SQLite databases on Github Pages](https://phiresky.github.io/blog/2021/hosting-sqlite-databases-on-github-pages/)
-  - Check out this demo: I run the SQL query `select country_code, long_name from wdi_country order by rowid desc limit 100` and it fetches just 54.2KB of new data (across 49 small HTTP requests) to return 100 results - from a statically hosted database file that's 668.8MB!
-  - Looks like the core magic here is only around 300 lines of (devastatingly clever) code
-  - https://github.com/phiresky/sql.js-httpvfs
-- But it does not support updates, right?
-  - Of course it can’t write to this file, but a read-only database is still very useful
-- I love SQLite but it has it's limitations and if handled improperly it can be a nightmare and even degrade performance & security issues.
-  - e.g. not using block SQL transactions will quickly result in read-writes that take millennial(一千年的).
-- It used to take me 15 hrs plus to write 10, 000 records to a sqlite file and block commits using transactions reduced that to a few minutes.
-  - I used to do a big transaction in sqlite for this, copy the DB file, # pragma synchronized off, write everything, done.
-- Are service workers good enough that we can write full stack apps (possibly with @vercel 's NextJs) with SQL + RestAPI + SPA and deploy the whole thing to a CDN?
-- We have some fun experiments going with this and actions
-  - the hard part is dealing with concurrent actions (and teaching git to diff/merge sqlite) 
-  - but the kludgy(不成熟的，蹩脚的) solution of "if push rejected, reset pull and retry" is surprisingly effective
-  - Have you got a prototype of git diffing SQLite? That could be fantastic for a whole bunch of my projects. I have a sqlite-diffable thing I've been playing with
-  - https://github.com/simonw/sqlite-diffable
-  - it works by dumping the DB to plain text (ndjson)
-  - ultimately my use-case was append-only, so I went with the retry-upon-failure strategy (which only really matters in case of concurrent action execution). Not elegant but did the trick!
 
 - ## 💡 On the debate between raw SQL & ORMs, I find myself flip-flopping over the years.
 - https://twitter.com/tantaman/status/1662123332051914758

@@ -1,21 +1,20 @@
 ---
 title: lib-db-app-blog-vendors
-tags: [blog, database, vendor]
+tags: [blog, database, vendors]
 created: 2023-09-16T17:53:11.838Z
-modified: 2023-09-16T17:53:29.322Z
+modified: 2023-10-26T18:14:17.038Z
 ---
 
 # lib-db-app-blog-vendors
 
 # guide
-
+- [TiKV 源码解析 | PingCAP](https://cn.pingcap.com/blog/tag/tikv-source-code-analysis/)
+- [TiDB 源码阅读 | PingCAP](https://cn.pingcap.com/blog/tag/tidb-source-code-reading/)
 # blogs-vendors
-- [TiKV 源码解析系列文章](https://cn.pingcap.com/blog/?tag=TiKV%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90)
-- [TiDB 源码阅读系列文章](https://cn.pingcap.com/blog/?tag=TiDB%20%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB)
 
 ## 📝 [Turning the database inside-out with Apache Samza | Confluent_201503](https://www.confluent.io/blog/turning-the-database-inside-out-with-apache-samza/)
 
-## [Turning the database inside-out with Apache Samza | Hacker News_201503](https://news.ycombinator.com/item?id=9145197)
+## 👥🔥 [Turning the database inside-out with Apache Samza | Hacker News_201503](https://news.ycombinator.com/item?id=9145197)
 
 - Immutability is hardly a cure-all, see the discussion here for why RethinkDB moved away from it
   - The reality is shared, mutable state is the most efficient way of working with memory-sized data. People can rant and rave all they want about the benefits of immutability vs mutability, but at the end of the day, if performance is important to you, you'd be best to ignore them.
@@ -37,31 +36,21 @@ modified: 2023-09-16T17:53:29.322Z
 - 
 - 
 
-# db-usecase
+## 📝 [Reddit’s database has two tables_201209](https://kevin.burke.dev/kevin/reddits-database-has-two-tables/)
+
+- Lesson: Don’t worry about the schema.
+  - it looks like they use two tables for each “thing”, so a thing/data pair for accounts, a thing/data pair for links, etc.
+
+## 👥🔥 [Reddit’s database has two tables (2012) | Hacker News_202208](https://news.ycombinator.com/item?id=32407873)
+
+# blogs-aws-s3
 
 ## [S3 as the universal infrastructure backend_202310](https://medium.com/innovationendeavors/s3-as-the-universal-infrastructure-backend-a104a8cc6991)
 
 - 
 - 
 
-## 📝 [Reddit’s database has two tables_201209](https://kevin.burke.dev/kevin/reddits-database-has-two-tables/)
+## [Building and operating a pretty big storage system called S3_202307](https://www.allthingsdistributed.com/2023/07/building-and-operating-a-pretty-big-storage-system.html)
 
-- Lesson: Don’t worry about the schema.
-  - it looks like they use two tables for each “thing”, so a thing/data pair for accounts, a thing/data pair for links, etc.
-
-## 👥 [Reddit’s database has two tables (2012) | Hacker News_202208](https://news.ycombinator.com/item?id=32407873)
-
-# blogs-postgresql
-
-## [从 Notion 分片 Postgres 中吸取的教训(Notion 工程团队) - 为少 - 博客园_202110](https://www.cnblogs.com/hacker-linner/p/16243380.html)
-
-- [Herding elephants: Lessons learned from sharding Postgres at Notion_202110](https://www.notion.so/blog/sharding-postgres-at-notion)
-# blogs-mysql
-
-## [Migrating Facebook to MySQL 8.0 | Hacker News_202107](https://news.ycombinator.com/item?id=27922097)
-
-# db-vendors
-- [Building and operating a pretty big storage system called S3_202307](https://www.allthingsdistributed.com/2023/07/building-and-operating-a-pretty-big-storage-system.html)
-
-- [planetscale - Database branching: three-way merge for schema changes_202304](https://planetscale.com/blog/database-branching-three-way-merge-schema-changes)
 # more
+- [planetscale - Database branching: three-way merge for schema changes_202304](https://planetscale.com/blog/database-branching-three-way-merge-schema-changes)

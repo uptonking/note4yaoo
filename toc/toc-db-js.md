@@ -21,14 +21,17 @@ modified: 2022-11-25T15:50:48.226Z
 - ref
   - [Offline-First Database Options for Web Applications in 2020](https://joshuatz.com/posts/2020/offline-first-database-options-for-web-applications-in-2020/)
 # db-js
-- pg-mem /1.1kStar/MIT/202211/ts
+- pg-mem /1.6kStar/MIT/202310/ts
   - https://github.com/oguimbal/pg-mem
+  - https://oguimbal.github.io/pg-mem-playground/
   - An in memory postgres DB instance for your unit tests
   - It works both in Node or in the browser.
+  - 依赖immutable.v4、functional-red-black-tree、json-stable-stringify、lru-cache、moment、pgsql-ast-parser、@mikro-orm/core~pg
+  - The sql syntax parser is home-made. Which means that some features are not implemented, and will be considered as invalid syntaxes.
   - limitations
     - Materialized views are implemented as views (meaning that they are always up-to-date, without needing them to refresh)
     - Indices implementations are basic
-    - All number-like types are all handled as javascript numbers, meaning that types like numeric(x,y) could not behave as expected.
+    - All number-like types are all handled as javascript numbers, meaning that types like `numeric(x,y)` could not behave as expected.
     - No support for timezones
   - https://github.com/oguimbal/pgsql-ast-parser
     - a Postgres SQL syntax parser. 基于nearley、moo实现
@@ -196,6 +199,7 @@ modified: 2022-11-25T15:50:48.226Z
   - Lazy: Nothing is loaded until it's requested. 
     - And since all querying is performed directly on the rock-solid SQLite database on a separate native thread, most queries resolve in an instant.
     - But unlike using SQLite directly, Watermelon is fully observable.
+  - [WatermelonDB, a database for React and React Native apps | Hacker News_201809](https://news.ycombinator.com/item?id=17950992)
   - [Adapters - WatermelonDB documentation](https://nozbe.github.io/WatermelonDB/Implementation/Adapters.html)
     - The idea for the Watermelon architecture is to be database-agnostic.
     - Collection/Model/Query is the reactive layer
@@ -227,6 +231,7 @@ modified: 2022-11-25T15:50:48.226Z
   - The super fast in-memory javascript document oriented database.
   - Its purpose is to store javascript objects as documents in a nosql fashion and retrieve them with a similar mechanism. 
   - Runs in node (including cordova/phonegap and node-webkit), nativescript and the browser.
+  - [LokiJS – Lightweight JavaScript in-memory database | Hacker News_201411](https://news.ycombinator.com/item?id=8557386)
 - https://github.com/LokiJS-Forge/LokiDB /202008/ts/inactive
   - a document oriented feature-rich in-memory database written in TypeScript
   - LokiDB is the official successor of LokiJS.
@@ -355,9 +360,9 @@ modified: 2022-11-25T15:50:48.226Z
   - A simple "database" that use JSON file for NodeJS
   - Every method are now asynchronous
 
-- https://github.com/syamdanda/jsonbase /js
+- https://github.com/syamdanda/jsonbase /202205/js/inactive
   - A database software completely built as JSON files in backend
-  - [Json-Base – Database built as JSON files | Hacker News](https://news.ycombinator.com/item?id=23715558)
+  - [Json-Base – Database built as JSON files | Hacker News_202007](https://news.ycombinator.com/item?id=23715558)
   - JSON file as backend, So can I directly edit the JSON file?
     - Bind does something like this (but not with JSON).
     - You have to run a “freeze” command before editing the database directly (so it can flush the current version of the database, and redirect writes to memory + log), and then “thaw” so it can read your changes and apply the log of updates to it.
@@ -423,10 +428,12 @@ modified: 2022-11-25T15:50:48.226Z
   - An algorithm to optimize database queries that run multiple times
   - 提供了使用示例，包括minimongo、nedb、pouchdb
   - EventReduce only works with queries that have a predictable sort-order for any given documents. (you can make any query predicable by adding the primary key as last sort parameter)
+  - [EventReduce: An algorithm to optimize database queries that run multiple times | Hacker News_202004](https://news.ycombinator.com/item?id=22888239)
 # rewrite-db
 - https://github.com/ciochetta/learndb /24Star/202101/js/mongodb
   - my first attempt at creating my own database from scratch.
   - I will not be doing a SQL database, instead, I will follow his steps but try to create a document database, like MongoDB
+  - [LearnDB: Learn how to build a database | Hacker News_201811](https://news.ycombinator.com/item?id=18557260)
 
 - https://github.com/weinberg/SQLToy /js/sql-db/NoDeps
   - https://github.com/weinberg/SQLToy/wiki
@@ -434,8 +441,9 @@ modified: 2022-11-25T15:50:48.226Z
   - It is under 500 lines of code and has zero dependencies.
   - [Show HN: SQLToy – a tiny relational database for learning SQL via code | Hacker News_202111](https://news.ycombinator.com/item?id=29385432)
 
-- https://github.com/codemix/ts-sql
+- https://github.com/codemix/ts-sql /ts/inactive
   - a SQL database implemented purely in TypeScript type annotations.
+  - [Show HN: A SQL database implemented purely in TypeScript type annotations | Hacker News_202009](https://news.ycombinator.com/item?id=24615185)
 
 - https://github.com/leoafarias/neardb /ts/inactive
   - Simple document db made for infinitely scalable globally distributed reads.

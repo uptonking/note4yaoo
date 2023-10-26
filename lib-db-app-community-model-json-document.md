@@ -1,11 +1,11 @@
 ---
-title: lib-db-app-community-model-json
+title: lib-db-app-community-model-json-document
 tags: [community, database, json, jsonb]
 created: 2023-09-26T17:18:52.637Z
-modified: 2023-09-26T17:19:13.941Z
+modified: 2023-10-26T15:01:36.462Z
 ---
 
-# lib-db-app-community-model-json
+# lib-db-app-community-model-json-document
 
 # guide
 
@@ -15,24 +15,21 @@ modified: 2023-09-26T17:19:13.941Z
 - ## 
 
 - ## 
-
-- ## 
 # discuss
 - ## 
 
-- ## 
+- ## 🔥 [Writing a document database from scratch in Go: Lucene-like filters and indexes | Hacker News_202203](https://news.ycombinator.com/item?id=30835444)
+- 
+- 
+- 
 
 - ## [JSON and Virtual Columns in SQLite | Hacker News](https://news.ycombinator.com/item?id=31396578)
-- 
-- 
-- 
 - 
 - 
 
 - ## [JSON with Sqlite | Hacker News](https://news.ycombinator.com/item?id=19277809)
 - At that point you can somehow normalize your schema, but only if you really have to! That is because you can get away with a NoSQL-like denormalized schema performance wise, by carefully defining index on expressions. You can somehow normalize it with views (SQLite doesn't support materialized views).
 
-- 
 - 
 - 
 
@@ -42,8 +39,17 @@ modified: 2023-09-26T17:19:13.941Z
 - It's perfectly fine. one column for a timestamp and one column to store the json. You then build materialized views pulling out whatever json fields you need.
 - Just because its easier doesn't mean its better - json is just one possible materialization for your set.
 
+- ## 🔥 [Cloud Firestore: A New Document Database for Apps | Hacker News_201710](https://news.ycombinator.com/item?id=15393396)
 - 
 - 
+- 
+
+# discuss-jsonb
+- ## 
+
+- ## 
+
+- ## 
 
 - ## [Jsonb: Stories about performance | Hacker News_201712](https://news.ycombinator.com/item?id=15993768)
 - 

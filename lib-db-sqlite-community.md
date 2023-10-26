@@ -9,7 +9,7 @@ modified: 2021-08-30T17:33:46.086Z
 
 # guide
 
-# discuss
+# discuss-stars
 - ## 
 
 - ## imagine there was a sqlite extension for making KV virtual tables. What features would you expect? 
@@ -30,6 +30,12 @@ modified: 2021-08-30T17:33:46.086Z
   - For notions cache we have a row count limit, but need to carefully schedule our delete & LRU time stamp update transactions for low read & update IO times to avoid degrading app performance
 - SQLite doesn’t have this kind of hard limit. You can limit max pages, but you’ll need at most 2x the page limit of the DB to VACUUM, and WAL things may go over too
 - Yup, mostly to enforce the ttl so you don't have to do it manually. Otherwise `CREATE TABLE kv (key TEXT PRIMARY KEY, value ANY)` is just fine
+# discuss-libsql
+- ## 
+
+- ## 
+
+- ## 
 
 - ## I used to think forking sqlite (e.g., @libsqlhq ) was crazy but I'm on board now. 
 - https://twitter.com/tantaman/status/1684917032096030722
@@ -47,10 +53,69 @@ modified: 2021-08-30T17:33:46.086Z
   - `sqlite3_update_hook` works for us
 
 - Yeah let’s do it and add cell-level reactivity while we are at it.
+
+- ## Folks, if somebody is interested in contributing to libSQL but finds the main code base too complex for their first contribution, we're kickstarting a new shell, written from scratch in Rust: _20230314
+- https://discord.com/channels/1026540227218640906/1026540227218640909/1085099589633331221
+  - https://github.com/libsql/libsql/tree/main/src/rust/libsql-shell .
+  - It still has lots of missing features and our goal is that it's 100% compatible with the original shell (and beyond).
+
+- ## 🔥 [Why SQLite succeeded as a database (2016) | Hacker News_202301](https://news.ycombinator.com/item?id=34258858)
+- 
+- 
+- 
+
+- ## 🔥 [Why SQLite succeeded as a database (2016) | Hacker News_202002](https://news.ycombinator.com/item?id=22367104)
+- 
+- 
+- 
+
+# discuss-sync/collab
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 🔥 [Joining CSV and JSON data with an in-memory SQLite database | Hacker News_202106](https://news.ycombinator.com/item?id=27565482)
+- 
+- 
+- 
+
+- ## 🔥 [The SQLite Database File Format | Hacker News_201409](https://news.ycombinator.com/item?id=8385259)
+- 
+- 
+- 
+
+- ## 🔥 [There are over one trillion SQLite databases in active use | Hacker News_202112](https://news.ycombinator.com/item?id=29461127)
+- 
+- 
+- 
+
+- ## 🔥 [VFS shim that allows a SQLite database to be appended to another file | Hacker News_201806](https://news.ycombinator.com/item?id=17264629)
+- 
+- 
+- 
+
+- ## 🔥 [How to Corrupt a SQLite Database File | Hacker News_202204](https://news.ycombinator.com/item?id=31214131)
+- 
+- 
+- 
+
+- ## 🔥 [How to Corrupt a SQLite Database File | Hacker News_202001](https://news.ycombinator.com/item?id=22098832)
+- 
+- 
+- 
+
+- ## 🔥 [How to Corrupt an SQLite Database File | Hacker News_201310](https://news.ycombinator.com/item?id=6502229)
+- 
+- 
+- 
 
 - ## [Tell HN: SQLite3 does have something like stored procedures | Hacker News](https://news.ycombinator.com/item?id=31913062)
 - However, triggers cannot return result rows, and a SELECT query that a view is defined as cannot take parameters (although there is a work-around by using a virtual table which contains a single row whose value is whichever value it is constrained to be). There is also WITH RECURSIVE, which also has many uses.
@@ -65,14 +130,11 @@ modified: 2021-08-30T17:33:46.086Z
 - Why is it not a good exchange format? Relational tables are an excellent exchange format, and SQLItes is specifically designed to be portable across time and architectures.
   - It's only unportable if you do something like use platform serialization to store your data structures in blobs. Don't do that, or serialize them to JSON/XML/etc before putting them in a blob.
 
-
-
-
 - Also most data in iPhone apps is stored in sqlite files. Rip apart an iphone backup some time and peek at the contents.
 - 
 - 
 
-- ## ✨ [Show HN: Doculite – Use SQLite as a Document Database | Hacker News_202308](https://news.ycombinator.com/item?id=37040359)
+- ## ✨🔥 [Show HN: Doculite – Use SQLite as a Document Database | Hacker News_202308](https://news.ycombinator.com/item?id=37040359)
 - I'm the core maintainer of the npm sqlite package that your library uses. I recommend that you don't make it a direct dependency, but use dependency injection or an adapter pattern that way your library isn't dependent on a specific package version of sqlite/sqlite3
 
 - Just curious if this is using the JSON functions/operators for SQLite under the covers?
@@ -94,7 +156,7 @@ modified: 2021-08-30T17:33:46.086Z
 - 
 - 
 
-- ## [SQLite as a Document Database | Hacker News_202011](https://news.ycombinator.com/item?id=25226260)
+- ## 🔥 [SQLite as a Document Database | Hacker News_202011](https://news.ycombinator.com/item?id=25226260)
 - 
 - 
 - 

@@ -20,11 +20,17 @@ modified: 2023-09-17T17:38:11.187Z
 # discuss
 - ## 
 
-- ## 
+- ## 🔥 [Why Can't Database Tables Index Themselves? (2006) | Hacker News_202207](https://news.ycombinator.com/item?id=31990836)
+- 
+- 
+- 
 
-- ## 
+- ## 🔥 [Spending $5k to learn how database indexes work | Hacker News_202111](https://news.ycombinator.com/item?id=29132572)
+- 
+- 
+- 
 
-- ## [How does database indexing work? (2008) | Hacker News_202203](https://news.ycombinator.com/item?id=30594233)
+- ## 🔥 [How does database indexing work? (2008) | Hacker News_202203](https://news.ycombinator.com/item?id=30594233)
 - If you want to see a dumb example of how you can implement indexing on top of a SQL database without it, I wrote a tutorial on implementing basic indexes as part of a series on making a SQL database from scratch.
   - [Writing a SQL database from scratch in Go: 3. indexes](https://notes.eatonphil.com/database-basics-indexes.html)
 

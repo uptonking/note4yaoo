@@ -114,7 +114,7 @@ modified: 2023-08-25T21:17:11.979Z
 - ## [Show HN: Sortabase, a collaborative, visual database builder for communities | Hacker News](https://news.ycombinator.com/item?id=35951126)
 - This feels like a combination of Airtable (before the push to be a no-code app platform) and Reddit. This seems way better than the public Google Sheets that make their way around the latter site.
 
-- ## [Recently minted database technologies that I find intriguing | Hacker News](https://news.ycombinator.com/item?id=23531825)
+- ## 🛢️🔥 [Recently minted database technologies that I find intriguing | Hacker News](https://news.ycombinator.com/item?id=23531825)
 - Has anybody tried using Dolt? It looks quite young.
   - I think this idea is really valuable, but I usually see it implemented as a time-series extension on top of Postgres or MySQL, like SQLAlchemy-Continuum or TimescaleDB. i.e. you caan get most of the useful git-like time-travel semantics (modulo schema migrations) out of timeseries data with a separate transaction history table.
   - edit: TerminusDB also looks very cool, although it's approaching this problem from a graph-database angle rather than a relational one. Their architecture (prolog server on top of a rust persistence core) also seems super fascinating, I'd love to read more on how they chose it.
@@ -164,7 +164,7 @@ modified: 2023-08-25T21:17:11.979Z
 - ## [Building a branched versioning model for relational databases - Database Administrators Stack Exchange](https://dba.stackexchange.com/questions/74210/building-a-branched-versioning-model-for-relational-databases)
 - Managing and keeping track on data modification (insert, update, delete) can be done quite easy using an audit table with trigger that keep track on every change.
 
-- ## [Dolt is Git for data | Hacker News_202003](https://news.ycombinator.com/item?id=22731928)
+- ## 🚀 [Dolt is Git for data | Hacker News_202003](https://news.ycombinator.com/item?id=22731928)
 
 - Does Dolt have any benchmarks against other databases at scale? I would think that a git SQL database would not be very snappy at scale
   - We're working on building performance benchmarks right now. We started with correctness. 
@@ -237,7 +237,7 @@ modified: 2023-08-25T21:17:11.979Z
   - Yes, the project used to associate itself as a git for data, but I guess not in the sense of a db.
   - That project looks like a command-line p2p file sharing system. There doesn't appear to be any branching. It also doesn't appear to be a database (like with a schema), but simply raw files being passed around. There's no data types or queries.
 
-- ## [Dolt is Git for Data | Hacker News_202103](https://news.ycombinator.com/item?id=26370572)
+- ## 🚀🔥 [Dolt is Git for Data | Hacker News_202103](https://news.ycombinator.com/item?id=26370572)
 - Dolt might be good but never underestimate the power of Type 2 Slowly Changing Dimension tables
 
 - I don't see how it can be for production databases involving lots of users, because while it seems appealing as a way to upgrade and then roll back, you'd lose all the new data inserted in the meantime. When you roll back, you generally want to roll back changes to the schema (e.g. delete the added column) but not remove all the rows that were inserted/deleted/updated in the meantime.
@@ -262,7 +262,7 @@ modified: 2023-08-25T21:17:11.979Z
 - Is this mysql only?
   - It uses the mysql SQL dialect for queries. But it's its own database.
 
-- ## [Dolt is Git for Data | Hacker News_202206](https://news.ycombinator.com/item?id=31847416)
+- ## 🚀 [Dolt is Git for Data | Hacker News_202206](https://news.ycombinator.com/item?id=31847416)
 - This is the future of databases, but nobody seems to realize it yet.
 - One of the biggest problems with databases (particularly SQL ones) is they're a giant pile of mutable state. 
 - The whole idea of "migrations" exists because it is impossible to "just" revert any arbitrary change to a database, diff changes automatically, merge changes automatically. 
@@ -425,7 +425,12 @@ modified: 2023-08-25T21:17:11.979Z
 - We didn't initially build Noms for this type of p2p, masterless architecture, but more and more recently, I find myself thinking it's a great fit.
 - There's still more work that needs to be done to make Noms work really well for this kind of use case, but I think it's one that makes a lot of sense.
 
-- ## 🚀 [Noms – A new decentralized database based on ideas from Git | Hacker News_201608](https://news.ycombinator.com/item?id=12211754)
+- ## 🔥 [Noms – A versioned, forkable, syncable database | Hacker News_201610](https://news.ycombinator.com/item?id=12716254)
+- 
+- 
+- 
+
+- ## 🚀🔥 [Noms – A new decentralized database based on ideas from Git | Hacker News_201608](https://news.ycombinator.com/item?id=12211754)
 
 - In case of conflicts, CouchDB assumes the most modified branch of the document (i.e., the document with the higher revision number) is the winner. You can resolve the conflict by choosing a different branch/revision manually, but you can also choose to not do anything.
   - But it also keeps conflicts around, so users who care about them can correctly resolve them.
@@ -515,6 +520,13 @@ modified: 2023-08-25T21:17:11.979Z
 # discuss-branching/versioning
 - ## 
 
+- ## 
+
+- ## 🔥 [Database versioning best practices | Hacker News_201508](https://news.ycombinator.com/item?id=10034546)
+- 
+- 
+- 
+
 - ## I'm presenting some early ideas about CRDTs & branch-and-merge documents.
 - https://twitter.com/MatthewWeidner3/status/1715023602976764299
   - [Proposal: Versioned Collaborative Documents (PLF 2023 - Programming Local-first Software) - SPLASH 2023](https://2023.splashcon.org/details/plf-2023-papers/4/Proposal-Versioned-Collaborative-Documents)
@@ -551,7 +563,7 @@ modified: 2023-08-25T21:17:11.979Z
 - ## [Database branching: three-way merge for schema changes | Hacker News](https://news.ycombinator.com/item?id=35716824)
 - Dolt does 3-way merge for both schema and data
 
-- ## [Show HN: Version Control for Databases | Hacker News](https://news.ycombinator.com/item?id=21742222)
+- ## 🔥 [Show HN: Version Control for Databases | Hacker News_201912](https://news.ycombinator.com/item?id=21742222)
 - there are purpose-built databases for this purpose such as Dolt
   - Because it's baked into the database, you can do complex things like diffs and merges, but it requires that you run everything on that RDBMS vs. something standard. 
   - Generic diffing from two arbitrary data states of any database is pretty challenging, even if you have all the transaction history.
@@ -599,7 +611,7 @@ modified: 2023-08-25T21:17:11.979Z
 - https://discord.com/channels/689805612053168129/722568409211994194/951039054722510868
   - Was looking into Fluree before, but no branching
 
-- ## [TerminusDB – An open source in-memory graph database | Hacker News_202004](https://news.ycombinator.com/item?id=22867767)
+- ## 🔥 [TerminusDB – An open source in-memory graph database | Hacker News_202004](https://news.ycombinator.com/item?id=22867767)
 - TerminusDB is an open source (GPLv3) full featured in-memory graph database management system with a rich query language: WOQL (the Web Object Query Language).
 - the linked-data and RDF tool-chains were severely lacking. We evaluated several tools in an attempt to architect a solution, including Virtuoso and the most mature technology StarDog, but found the tools were not really up to the task.
 - the HDT library exhibited a number of problems. 
@@ -661,7 +673,7 @@ modified: 2023-08-25T21:17:11.979Z
   - much faster too
   - we also tend to push things down into rust once we understand an area well and the interface to it has stabilized, but we want it to go faster. In that case it's worth spending the extra effort to get a bit more power
 
-# discuss-xtdb
+# discuss-xtdb/crux
 - ## 
 
 - ## 
@@ -671,6 +683,11 @@ modified: 2023-08-25T21:17:11.979Z
 - 
 - 
 - 
+- 
+- 
+- 
+
+- ## 🔥 [Crux: Open-source document database with bi-temporal graph queries | Hacker News_202006](https://news.ycombinator.com/item?id=23493163)
 - 
 - 
 - 

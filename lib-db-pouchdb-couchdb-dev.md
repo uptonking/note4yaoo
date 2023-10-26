@@ -43,11 +43,23 @@ modified: 2022-12-02T11:15:15.257Z
   - alternative-backend: mysql/pg
   - kappa-architecture?
 
+- database-features
+  - standards: postgresql, sqlite, clickhouse, duckdb
+  - persistence
+  - indexing
+  - query planner
+  - query engine: sql or not?
+  - concurrency
+  - replication
+  - conflicts
+  - search: fts, fuzzy
+  - auth
+
 - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
 
-- community-pouchdb
-  - 
-
+- community-pouchdb/couchdb
+  - [Couchbase Forums](https://www.couchbase.com/forums/)
+  - couchbase discord
 # draft
 - nonsyncable/local-only tables for config/temporary-data
 # dev

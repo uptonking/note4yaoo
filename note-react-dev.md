@@ -1,9 +1,8 @@
 ---
 title: note-react-dev
 tags: [dev, react]
-favorited: true
 created: 2019-08-01T05:09:11.917Z
-modified: 2020-07-14T10:38:48.217Z
+modified: 2023-10-26T14:57:07.218Z
 ---
 
 # note-react-dev

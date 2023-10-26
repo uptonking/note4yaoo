@@ -25,6 +25,8 @@ modified: 2022-11-01T01:05:07.873Z
   - A 2kb shim for import and export. Allows you to use JavaScript modules in all browsers, including dynamic import().
   - if they are, just use the native module loader
   - if not, use Shimport
+# npm
+- [npmmirror 镜像站, 一个完整 npmjs.com 镜像](https://npmmirror.com/)
 # webpack
 
 ## wp-ext

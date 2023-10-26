@@ -20,7 +20,10 @@ modified: 2023-09-24T19:05:33.866Z
 # discuss
 - ## 
 
-- ## 
+- ## 🔥 [Prisma – Database tools for modern application development | Hacker News_201904](https://news.ycombinator.com/item?id=19598287)
+- 
+- 
+- 
 
 - ## [Is ORM still an anti-pattern? | Hacker News_202306](https://news.ycombinator.com/item?id=36497613&p=2)
 - In any sufficiently complex application, something like a query builder that allows different parts of the application to work together to lazily compose queries (vs combining/filtering/sorting the data in memory) will be created at some point.

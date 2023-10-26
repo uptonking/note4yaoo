@@ -381,7 +381,7 @@ A custom frontend for a CMS is a good investment in UX. A CMS isn’t publicy vi
 - It's not Normalized
   - One of the Rules of Normalization is that : A field should have the same meaning in each row of the table
 
-- ## [Mistakes Beginners Make When Working with Databases | Hacker News_201606](https://news.ycombinator.com/item?id=11862723)
+- ## 🔥 [Mistakes Beginners Make When Working with Databases | Hacker News_201606](https://news.ycombinator.com/item?id=11862723)
 - EAV isn't all bad, there are use-cases for it. If you have a highly dynamic data (user configurable) then EAV might be a good way to STORE that data.
   - Is it ugly, it sure is. **Moving read out to a cache layer, and search out a purpose built system, the DB becomes a persistence engine**. You have solved the other issue you don't mention with EAV, and thats performance.
 - Most EAV implementations I've seen had under 10 distinct "schema-less" virtual tables (sorry about lack of terminology) with perhaps 40-60 distinct "columns" and the different variations of a record types usually had consistent attributes.
@@ -405,7 +405,7 @@ A custom frontend for a CMS is a good investment in UX. A CMS isn’t publicy vi
 
 - I believe it leads to datomic, a database you can try out on Aws (datomic cloud) to see the implementation of all the things he's getting excited about.
 
-- ## [Never Write Your Own Database (2017) | Hacker News_201805](https://news.ycombinator.com/item?id=16995612)
+- ## 🛢️🔥 [Never Write Your Own Database (2017) | Hacker News_201805](https://news.ycombinator.com/item?id=16995612)
 - As soon as you allow some kind of user-defined meta data, you basically end up with the entity-attribute-value pattern.
   - Every sufficiently advanced system does that, be it a CRM that allows custom fields, or a project management or ticket system, a workflow system etc. And basically all enterprise software contains elements of these systems.
 
@@ -491,7 +491,7 @@ A custom frontend for a CMS is a good investment in UX. A CMS isn’t publicy vi
   - Likewise[We saved $50k/year with a Go microservice coded in a hackathon | Hacker News](https://news.ycombinator.com/item?id=16806388) you can get away with a full document GIN index.
   - I played around with some basic report stuff at work last year, the EAV data on my local machine, the report took ~7 seconds to run. I shoved the same data into PostgreSQL as JSONB, indexed it just as full doc cos I was lazy, the same report took ~80ms.
 
-- ## ✨ [Eva – A distributed entity-attribute-value database in Clojure | Hacker News_201906](https://news.ycombinator.com/item?id=20304686)
+- ## 🛢️🔥 [Eva – A distributed entity-attribute-value database in Clojure | Hacker News_201906](https://news.ycombinator.com/item?id=20304686)
 - I was really interested in the now defunct mentat project, but was written in Rust - it's a game changer to have a JVM-powered datomic-ish project with time as a first class citizen.
 
 - time as a first class citizen
@@ -535,7 +535,7 @@ A custom frontend for a CMS is a good investment in UX. A CMS isn’t publicy vi
   - In Postgres and MySQL 8 you can add conditional/functional/virtual indexes to keep things speedy. Maybe Magento will one day take advantage of these features.
   - It's basically a modern-day approach to Serialized LOB: https://martinfowler.com/eaaCatalog/serializedLOB.html
 
-- ## 🌰 [Reddit's database has only two tables | Hacker News_201209](https://news.ycombinator.com/item?id=4468265)
+- ## 🌰🔥 [Reddit's database has only two tables | Hacker News_201209](https://news.ycombinator.com/item?id=4468265)
 - This is called eav
 - They've built a database in their database. Also known as the **inner platform** antipattern
 
@@ -683,7 +683,7 @@ A custom frontend for a CMS is a good investment in UX. A CMS isn’t publicy vi
 - I've been considering writing a graph database on top of SPARQL and RDF. Beyond the official docs (which are pretty good), can you recommend any other resources for easily getting the hang of SPARQL?
   - I'll second the recommendation of Jena (and associated sub-project Fuseki). If you know Java (or any JVM language) you can use the Jena API directly for manipulating the triplestore, and submitting SPARQL queries. If you don't want to do that, Fuseki exposes an HTTP based API that you can interact with from any environment you prefer.
 
-- ## 💡 [OrbitDB – serverless, peer-to-peer database on top of IPFS | Hacker News](https://news.ycombinator.com/item?id=18748542)
+- ## 💡 [OrbitDB – serverless, peer-to-peer database on top of IPFS | Hacker News_201812](https://news.ycombinator.com/item?id=18748542)
 - I'm looking for a distributed scalable P2P triple store (or graph database) to store and retrieve RDF using SPARQL.
   - SOLID (Tim Berners-Lee, RDF)
   - GUN (ours, graph)

@@ -24,6 +24,10 @@ modified: 2023-01-12T10:26:41.060Z
   - https://glitch.com/edit/#!/sqlite-wasm-opfs
 
 - [Let installed web applications be file handlers - Chrome Developers](https://developer.chrome.com/en/articles/file-handling/)
+
+- [What is the Databricks File System (DBFS)?](https://docs.databricks.com/en/dbfs/index.html)
+  - The Databricks File System (DBFS) is a distributed file system mounted into a Databricks workspace and available on Databricks clusters. 
+  - DBFS is an abstraction on top of scalable object storage that maps Unix-like filesystem calls to native cloud storage API calls.
 # docs
 
 ## [File System Access API - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API)

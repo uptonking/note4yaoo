@@ -1,0 +1,36 @@
+---
+title: lib-db-postgresql-community-extensions-utils
+tags: [community, extensions, postgresql, utils]
+created: 2023-10-26T21:43:22.791Z
+modified: 2023-10-26T21:43:43.231Z
+---
+
+# lib-db-postgresql-community-extensions-utils
+
+# guide
+
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss
+- ## 
+
+- ## 
+
+- ## 🔥 [Dbdev – A database package manager for PostgreSQL trusted language extensions | Hacker News_202304](https://news.ycombinator.com/item?id=35570758)
+- 
+- 
+- 
+
+- ## 🔥 [Launch HN: Hydra (YC W22) – Query any database via Postgres | Hacker News_202202](https://news.ycombinator.com/item?id=30442718)
+- Hydra is a Postgres extension that intelligently routes queries through Postgres to other databases. 
+  - Engineers query regular Postgres, and Hydra extends a Postgres-compliant SQL layer to non-relational, columnar, and graph DBs. 
+  - It currently works with Postgres and Snowflake, and we have a roadmap to support MongoDB, Google BigQuery, and ClickHouse.
+- 
+- 
+- 

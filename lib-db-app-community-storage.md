@@ -17,6 +17,15 @@ modified: 2023-09-17T17:36:36.118Z
 - ## 
 
 - ## 
+# discuss-filesystem
+- ## 
+
+- ## 
+
+- ## 🔥 [Database as Filesystem [video] | Hacker News_201907](https://news.ycombinator.com/item?id=20394088)
+- 
+- 
+- 
 # discuss
 - ## 
 

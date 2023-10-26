@@ -9,7 +9,10 @@ modified: 2023-01-02T08:26:21.177Z
 
 # guide
 
-# [6 Rules of Thumb for MongoDB Schema Design_201406](https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design)
+# blogs-stars
+
+## 💡💡 [6 Rules of Thumb for MongoDB Schema Design_201406](https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design)
+
 - 设计表时考虑
   - 属性值的基数有多大，是否embed/referencing
   - 是否要直接获取或查询属性值或子文档
@@ -127,7 +130,12 @@ modified: 2023-01-02T08:26:21.177Z
   - When embedding would result in duplication of data but would not provide sufficient read performance advantages to outweigh the implications of data duplication.
   - To represent more complex many-to-many relationships.
   - To model large hierarchical data sets.
-# [Full-Text Search: What Is It And How It Works | MongoDB](https://www.mongodb.com/basics/full-text-search)
+# blogs
+
+# blogs-internals
+
+## 🔍 [Full-Text Search: What Is It And How It Works | MongoDB](https://www.mongodb.com/basics/full-text-search)
+
 - Full-text search refers to searching some text inside extensive text data stored electronically and returning results that contain some or all of the words from the query. 
 - In contrast, traditional search would return exact matches.
 - traditional string searches can be performed on smaller text fields. These methods are not as efficient as modern indexed searches but require fewer resources. 

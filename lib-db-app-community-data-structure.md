@@ -16,7 +16,11 @@ modified: 2023-09-17T18:17:41.377Z
 
 - ## 
 
-- ## 
+- ## 🤔🔥 [Why databases use ordered indexes but programming uses hash tables | Hacker News_201912](https://news.ycombinator.com/item?id=21738802)
+- 
+- 
+- 
+
 # discuss-tree
 - ## 
 
@@ -104,7 +108,10 @@ modified: 2023-09-17T18:17:41.377Z
 
 - ## 
 
-- ## 
+- ## 🔥 [Understanding LSM trees: What powers write-heavy databases (2020) | Hacker News_202202](https://news.ycombinator.com/item?id=30269286)
+- 
+- 
+- 
 
 - ## 🆚️ [Damn Cool Algorithms: Log structured storage (2009) | Hacker News_201705](https://news.ycombinator.com/item?id=14447727)
 - In the 8 years since this was written, Log-Structured Merge Trees have basically "won". 
@@ -149,7 +156,30 @@ modified: 2023-09-17T18:17:41.377Z
 
 - ## 
 
-- ## 
+- ## 🔥 [Are You Sure You Want to Use MMAP in Your Database Management System? (2022) | Hacker News_202307](https://news.ycombinator.com/item?id=36563187)
+- 
+- 
+- 
+
+- ## 🔥 [Are you sure you want to use MMAP in your database management system? [pdf] | Hacker News_202201](https://news.ycombinator.com/item?id=29936104)
+- 
+- 
+- 
+
+- ## 🔥 [But how, exactly, do databases use mmap? | Hacker News_202101](https://news.ycombinator.com/item?id=25881911)
+- 
+- 
+- 
+
+- ## 🔥 [BTrDB: Berkeley Tree Database | Hacker News_201906](https://news.ycombinator.com/item?id=20280135)
+- 
+- 
+- 
+
+- ## 🔥 [Memory-Efficient Search Trees for Database Management Systems [pdf] | Hacker News_202003](https://news.ycombinator.com/item?id=22543125)
+- 
+- 
+- 
 
 - ## 今天发现 在 DB 里面对于 时间/空间或者多维的数据操作 , 用 R tree 来减少工作量似乎是个冷知识了.
 - https://twitter.com/fuergaosi/status/1658470145109680132

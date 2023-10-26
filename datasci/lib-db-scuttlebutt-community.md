@@ -45,3 +45,8 @@ modified: 2023-09-07T15:56:52.778Z
   - It's a decentralized open source database and protocol. 
   - Think Firebase meets Scuttlebutt.
 - The big difference between SSB (and earthstar, pigeon protocol, etc) is that they're based around the idea of being social with multiple people writing to what is read as a combined local social db
+
+- ## 🚀🔥 [Scuttlebot: Peer-to-peer database, identity provider, and messaging system | Hacker News_202004](https://news.ycombinator.com/item?id=22909984)
+- 
+- 
+- 

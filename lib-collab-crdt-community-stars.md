@@ -99,22 +99,6 @@ modified: 2022-04-05T10:09:51.343Z
 # discuss
 - ## 
 
-- ## ✨ Announcing Reflect ✨ – A new way to build multiplayer apps like Figma or Notion._202310
-- https://twitter.com/aboodman/status/1714682920495919520
-  - Rather than CRDTs, Reflect syncs the way video games do.
-  - Reflect isn't open source. We're considering that, but in the meantime a source license and on-prem is available.
-  - [Ready Player Two – Bringing Game-Style State Synchronization to the Web](https://rocicorp.dev/blog/ready-player-two)
-- Super interesting! One drawback I see is that syncing stops working when the server is down. The extra authority on the server makes all clients dependent. I understood CRDTs enabled p2p syncing, which allows collaboration on a local network.
-  - Yes, that's true. Although this approach can continue to work *locally* offline and resync when server comes back, it can't sync just within the local network. That's a tradeoff that matters in some cases, but we find that it is a relatively rare need.
-- Looks cool! Is this a framework I can run myself for free on my own infra?
-  - No, it's a managed service. We do have an on-prem option and a generous free tier.
-
-- Looks amazing! Client-side prediction technique along with the linearization of transactions by arrival time on the server is exactly how the sync engine of Pitch works.
-  - We also greatly benefited from the immutable data structures that you get for free in Clojure(Script) to rollback to the canonical snapshot in a performant way. I think you briefly mentioned on HN that you're  using persistent data structures under the hood as well which is cool
-
-- You picked one CRDT that Yjs didn't implement ; ) But don't worry, here's the implementation that's relatively perf-wise and doesn't loose updates
-  - Well it depends on how many clients you have right? Each unique instance of Y. Doc is a client ID. That can really add up over time. And I think this suffers the same problem that it's not really an intuitive solution to a counter.
-
 - ## I'm basically only interested in 3 CRDTs - g-sets, multi-value registers, and OR-maps whose values are multi-value registers. 
 - https://twitter.com/LewisCTech/status/1715268425629716784
   - These are the core constructs for database syncing insofar(到这种程度) as I see it - the rest have applications in collaborative software.

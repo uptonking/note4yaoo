@@ -12,8 +12,6 @@ modified: 2023-09-16T17:54:21.231Z
 # discuss-stars
 - ## 
 
-- ## 
-
 - ## 💡 Most databases were built when data was static and queries were dynamic. 
 - https://twitter.com/tantaman/status/1699826662408409383
   - For applications, most queries are static and the data is dynamic
@@ -32,7 +30,10 @@ modified: 2023-09-16T17:54:21.231Z
 
 - ## 
 
-- ## 
+- ## 🛢️🔥 [The Next 50 Years of Databases (2015) | Hacker News_201911](https://news.ycombinator.com/item?id=21508210)
+- 
+- 
+- 
 
 - ## this isn’t to say that every application should have its own totally bespoke(定制的) database. most of them probably shouldn’t. 
 - https://twitter.com/aboodman/status/1708208649984950515
@@ -72,12 +73,6 @@ modified: 2023-09-16T17:54:21.231Z
   5. Remove all write queries to "my_foo_v1"
   6. Drop the "my_foo_v1" table
 
-- 
-- 
-
-- ## [Things I wished more developers knew about databases | Hacker News_202004](https://news.ycombinator.com/item?id=22942278)
-- 
-- 
 - 
 - 
 

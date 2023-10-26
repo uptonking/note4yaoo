@@ -113,3 +113,13 @@ We're tracking 10 read heads per file and increase the read(ahead) size whenever
   - Nice! In the Python world, it should be possible with the HTTP filesystem abstraction and Arrow.
 - Any reason mobile browsers don't work with that? My iPhone runs WASM quite happily
 - Bandwidth is magnitude cheaper than storage.
+
+- ## 🔥 [DuckDB – An in-process SQL OLAP database management system | Hacker News_202302](https://news.ycombinator.com/item?id=34741195)
+- 
+- 
+- 
+
+- ## 🚀🔥 [DuckDB – An embeddable SQL database like SQLite, but supports Postgres features | Hacker News_202009](https://news.ycombinator.com/item?id=24531085)
+- 
+- 
+- 

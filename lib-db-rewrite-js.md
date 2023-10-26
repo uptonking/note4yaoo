@@ -22,20 +22,19 @@ modified: 2022-11-27T19:20:02.987Z
   - It is under 500 lines of code and has zero dependencies.
   - [Show HN: SQLToy – a tiny relational database for learning SQL via code | Hacker News_202111](https://news.ycombinator.com/item?id=29385432)
 
+## db-rs
+
 - https://github.com/yywe/yoursql /rust
   - Your SQL database for learning purpose
   - recently I'm learning the source code of arrow-datafusion. I'm trying to a tiny version of it by extracting the most essential parts. 
   - Although database books talked about query parser, query plan, query execution, etc, I find there is a large gap between theory and implementation
   - In the latest revision, I'm keep each dev branch named as "MILSTONEn-**"
-
-
-
-
 # [Creating a database from scratch with Node.js](https://dev.to/ciochetta/creating-a-database-from-scratch-with-node-js-4dmk)
 - https://github.com/ciochetta/learndb /24Star/202101/js/mongodb
   - https://github.com/ciochetta/testing-luisdb
   - my first attempt at creating my own database from scratch.
   - I will not be doing a SQL database, instead, I will follow his steps but try to create a document database, like MongoDB
+  - [LearnDB: Learn how to build a database | Hacker News_201811](https://news.ycombinator.com/item?id=18557260)
   - https://github.com/ciochetta/lql-parser
     - parser for my database project. 基于nearley moo
     - Moo is a highly-optimised tokenizer/lexer generator. Use it to tokenize your strings, before parsing 'em with a parser like nearley or whatever else you're into.
@@ -62,6 +61,17 @@ modified: 2022-11-27T19:20:02.987Z
     - This parser does not support (yet) PL/pgSQL.
 # db-non-js
 
+## [Build Your Own Database From Scratch using cpp](https://build-your-own.org/database/)
+
+- Part I: Simple KV Store
+- Part II: Mini Relational DB
+
+## 👥🔥[The “Build Your Own Database” book is finished | Hacker News_202304](https://news.ycombinator.com/item?id=35666598)
+
+- 
+- 
+- 
+
 ## [Writing a SQL database from scratch in Go](https://notes.eatonphil.com/tags/databases.html)
 
 - [1. SELECT, INSERT, CREATE and a REPL](https://notes.eatonphil.com/database-basics.html)
@@ -80,4 +90,7 @@ modified: 2022-11-27T19:20:02.987Z
   - Writing a sqlite clone from scratch in C
   - B-Tree Leaf Node Format
   - prepare_statement (our “SQL Compiler”) does not understand SQL right now. In fact, it only understands two words select and insert
+
+### 👥🔥 [Let’s Build a Simple Database (2017) | Hacker News_201904](https://news.ycombinator.com/item?id=19581721)
+
 # more

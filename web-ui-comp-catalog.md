@@ -1,9 +1,8 @@
 ---
 title: web-ui-comp-catalog
 tags: [components]
-favorited: true
 created: 2020-08-09T05:13:36.363Z
-modified: 2021-04-11T17:38:29.829Z
+modified: 2023-10-26T14:56:56.839Z
 ---
 
 # web-ui-comp-catalog

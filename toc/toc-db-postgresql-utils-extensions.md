@@ -1,17 +1,17 @@
 ---
-title: toc-db-postgres-examples
-tags: [db, examples, postgresql, toc]
-created: 2023-10-11T20:33:41.839Z
-modified: 2023-10-11T20:34:10.999Z
+title: toc-db-postgresql-utils-extensions
+tags: [extensions, postgresql, toc, utils]
+created: 2023-10-26T15:29:07.458Z
+modified: 2023-10-26T15:29:40.053Z
 ---
 
-# toc-db-postgres-examples
+# toc-db-postgresql-utils-extensions
 
 # guide
 
 # popular
 
-# apps
+# plugins
 
 # utils
 - https://github.com/pgcentralfoundation/pgrx /rust

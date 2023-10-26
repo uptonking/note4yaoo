@@ -152,12 +152,26 @@ modified: 2023-08-29T10:13:31.070Z
 - Git has no first-class concept of file name changes. Instead it tries to use heuristics to spot renames and sometimes they work and sometimes they won’t.
 - The data model in Git is hardly more complex than Fossil's or Mercurial's, and it's copy-on-write all the way, which makes it very safe (think ZFS).
 - The simple data model is the best part of git so I have no idea what you are referring to. I do not see how one could make it any simpler and still use it to implement a DVCS. The main reasons I picked Git over Mercurial were the data model and the performance.
+
+- ## 🔥 [Git’s database internals II: commit history queries | Hacker News_202208](https://news.ycombinator.com/item?id=32651934)
+- 
+- 
+- 
+
+- ## 🔥 [Git’s database internals I: packed object store | Hacker News_202208](https://news.ycombinator.com/item?id=32637643)
+- 
+- 
+- 
+
 # discuss-git-db
 - ## 
 
 - ## 
 
-- ## 
+- ## 🔥 [Git as a NoSql Database (2016) | Hacker News_202104](https://news.ycombinator.com/item?id=26703808)
+- 
+- 
+- 
 
 - ## [GitDB, a distributed embeddable database on top of Git | Hacker News](https://news.ycombinator.com/item?id=31987240)
 - version control in general turns out to be highly applicable in many areas far beyond source code. I think it's still under-utilized.

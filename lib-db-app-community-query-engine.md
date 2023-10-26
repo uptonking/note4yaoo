@@ -52,7 +52,16 @@ modified: 2023-09-17T17:41:51.689Z
 # discuss-view
 - ## 
 
-- ## 
+- ## 🚀🔥 [EventReduce: An algorithm to optimize database queries that run multiple times | Hacker News_202004](https://news.ycombinator.com/item?id=22888239)
+- Materialize exists to efficiently solve the view maintenance problem: https://materialize.io/
+- Any database which offers what are called "continuous queries" also solves this problem. 
+
+- 🤔 Sooo...is this Materialized/Indexed Views?
+- Materialized views solve a similar problem but in a different way with different trade-offs. 
+  - When you have many users, all subscribing to different queries, you cannot create that many views because they are all recalculated on each write access to the database. EventReduce however has a better scalability because I does not affect write performance and the calculation is done when the fresh query results are requested not beforehand.
+  - Others have pointed this out already: This is wholly dependent on the RDBMS used, and Oracle offers incremental refresh on demand. I have to admit though that I mistakenly thought that MSSQL would as well...
+- Correct me if I'm wrong, but Materialized Views have the limitation that you need to refresh the entire view! Often you know which rows will change based on the data you receive.
+  - This depends on the RDBMS. Oracle for example has incremental materialized view updates.
 
 - ## [A Data Pipeline Is a Materialized View | Hacker News_202102](https://news.ycombinator.com/item?id=26217911)
 - although built-in materialized views don't allow partial updates in Postgres, you can get a similar thing with normal tables and triggers.
@@ -65,7 +74,6 @@ modified: 2023-09-17T17:41:51.689Z
   - I do way more OLAP/HTAP engineering in my day job so indexed views are less common vs. Columnstores, but indexed views are a highly underutilized feature of SQL Server.
 
 - Data engineering really is just a maintenance of incrementally updated materialized views, but no tool out there yet recognizes it. They at best help you orchestrate and parallelize your ETLs across multiple threads and machines. They become glorified makefiles at the cost of introducing several layers of infrastructure into the picture (eg. Airflow) for what should have been solved by simple bash scripting.
-
 
 - DBT is interesting, but is far from what I'm describing.
   1. It is only for structured SQL, not for arbitrary data. I can't use it to unpack raw zipped data for example

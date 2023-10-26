@@ -1,8 +1,8 @@
 ---
 title: lib-collab-crdt-blog-vendors
-tags: [blog, collaboration, crdt, vendor]
+tags: [blog, collaboration, crdt, vendors]
 created: 2023-05-30T15:50:07.368Z
-modified: 2023-05-30T15:50:39.683Z
+modified: 2023-10-26T18:14:17.038Z
 ---
 
 # lib-collab-crdt-blog-vendors

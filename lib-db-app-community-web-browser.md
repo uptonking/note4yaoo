@@ -16,11 +16,30 @@ modified: 2023-09-17T18:47:01.460Z
 
 - ## 
 
-- ## 
+- ## 🔥 [Lovefield – A relational database for web apps | Hacker News_201509](https://news.ycombinator.com/item?id=10197672)
+- 
+- 
+- 
+
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 🔥 [How Modern SQL Databases Are Changing Web Development: Part 1 | Hacker News_202308](https://news.ycombinator.com/item?id=37246740)
+- 
+- 
+- 
+
+
+- ## 🔥 [TabDB: Using browser tabs as a database like only a maniac would | Hacker News_202307](https://news.ycombinator.com/item?id=36548055)
+- 
+- 
+- 
 
 - ## 🤔 [Don’t we all just want to use SQL on the front end? | Hacker News_202104](https://news.ycombinator.com/item?id=26822884)
 - Because it exposes a lot of inner details and potential security/privacy risks if clients are able to change parameters. But... it seems like if you're willing to expose your data model to the client, then it seems like some combination of code signing the SQL (with parameters left empty) along with the acceptable list of named parameters
@@ -76,7 +95,7 @@ modified: 2023-09-17T18:47:01.460Z
 - 
 - 
 
-- ## 👥 [Web Applications from the Future: A Database in the Browser | Hacker News_202106](https://news.ycombinator.com/item?id=27424496)
+- ## 🔥 [Web Applications from the Future: A Database in the Browser | Hacker News_202106](https://news.ycombinator.com/item?id=27424496)
 - Having been a dev on EtherPad, Google Wave, Coda, and other real-time collaborative apps with OT, undo, and so on...
   - I think it's correct that, ideally, there would be a framework that handles real-time collaboration, undo/redo, and offline support for you, and then you build your app with these problems already solved. 
   - I will probably create such a framework eventually. 

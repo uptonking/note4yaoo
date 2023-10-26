@@ -11,12 +11,16 @@ modified: 2021-11-19T06:53:19.649Z
 
 ## emoji
 
+- cons
+  - 缺少中文相关表情，如抱拳感谢
+
+- git相关emoji
+  - https://gitmoji.dev/
+  - [Git-emoji 中文版](https://www.thisfaner.com/o/git-emoji/)
+
 - emoji-resources
   - https://www.emojiall.com/en/all-emojis
   - [EmojiDB](https://emojidb.org/)
-
-- 缺点
-  - 缺少中文相关表情，如抱拳感谢
 
 ### face
 
@@ -152,7 +156,22 @@ modified: 2021-11-19T06:53:19.649Z
   - 打靶 命中
 - ⛳️
   - 高尔夫 果岭
-- 
+- 🧮
+  - 算盘
+- 💻
+  - 笔记本
+- 💿 📀
+  - 光盘 数字光盘
+- 💾
+  - 磁盘
+- 🛢
+  - 油桶
+- 🗄️
+  - 文件柜
+- 📥
+  - 收件箱
+- ⏳
+  - 计时
 - 
 - 
 
@@ -210,10 +229,6 @@ modified: 2021-11-19T06:53:19.649Z
 - 
 
 ### coding/git
-
-- git相关emoji
-  - https://gitmoji.dev/
-  - [Git-emoji 中文版](https://www.thisfaner.com/o/git-emoji/)
 
 - 🐛
   - :bug:

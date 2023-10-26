@@ -305,6 +305,8 @@ modified: 2023-08-25T22:31:05.132Z
     - [Pull, push and diff data from/to remote and other databases (Dolt/Dolthub like)](https://github.com/Odonno/surrealdb-migrations/issues/47)
     - Database Branching is currently a feature in progress. 
     - The idea is to be able to work with branches locally, for your development workflow. Or even with a production database, giving you full control over data management.
+  - [SurrealDB – Document-graph database, for the realtime web | Hacker News_202208](https://news.ycombinator.com/item?id=32550543)
+  - [SurrealDB: Distributed document-graph database for the realtime web | Hacker News_202209](https://news.ycombinator.com/item?id=32874597)
 
 - https://github.com/flyway/flyway java
   - https://flywaydb.org/

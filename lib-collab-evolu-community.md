@@ -57,6 +57,12 @@ modified: 2023-05-14T04:32:30.696Z
 
 - ## 
 
+- ## evolu Switch to the official sqlite3 WASM client with a friendly MIT license
+- https://twitter.com/evoluhq/status/1622708143670042625
+  - Evolu no longer uses IndexedDB for persisting sqlite3 files. Instead, it uses modern Origin-Private FileSystem (OPFS) in Chrome and good old LocalStorage in other browsers.
+- The LocalStorage implementation leverages VFS, so it doesn't load and save whole files. In other words, it's fast enough. The only limit is LocalStorage max size (5MB), which is sufficient unless a lot of data are stored.
+- The Origin-Private FileSystem (OPFS) is currently supported only in Chrome, but both Safari and Firefox are finishing their support. Meanwhile, Evolu is using LocalStorage.
+
 - ## Experimental new feature: Local only tables
 - https://twitter.com/evoluhq/status/1716515808182992963
   - A local-only table is a table prefixed with "_" that will never be synced—a small but handy addition. 

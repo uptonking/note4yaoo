@@ -1,15 +1,13 @@
 ---
-title: lib-db-postgresql-docs
-tags: [docs, postgresql]
-created: 2022-06-13T03:00:31.773Z
-modified: 2022-06-13T03:00:51.734Z
+title: lib-db-postgresql-blog
+tags: [blog, postgresql]
+created: 2023-10-26T17:28:21.438Z
+modified: 2023-10-26T17:28:41.701Z
 ---
 
-# lib-db-postgresql-docs
+# lib-db-postgresql-blog
 
 # guide
-
-# docs
 
 # blogs
 
@@ -29,7 +27,5 @@ modified: 2022-06-13T03:00:51.734Z
   - But eventually, an outdated or deleted row version is no longer of interest to any transaction. 
   - The space it occupies must then be reclaimed for reuse by new rows, to avoid unbounded growth of disk space requirements. 
   - This is done by running VACUUM.
-- 
-- 
-- 
-- 
+# more
+- [StackOverflow的开发者调研 PostgreSQL is the Linux of Database](https://mp.weixin.qq.com/s/xewE87WEaZHp-K5hjuk65A)

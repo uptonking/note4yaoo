@@ -94,6 +94,7 @@ modified: 2022-08-21T10:02:05.129Z
   - Create Views : Grid, Gallery, Kanban, Form
   - Database: Any SQL (postgres, mysql, sqlite, maria DB, SQL server)
   - API: REST and graphql
+  - [NocoDB – Turn your SQL database into a Nocode platform | Hacker News_202111](https://news.ycombinator.com/item?id=29176436)
 
 - locokit /47Star/MIT/202301/ts
   - https://github.com/locokit/locokit

@@ -14,6 +14,21 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
+- ## 
+
+- ## 扫地机器人最大的bug是会挑衅到狗，然后被狗翻过来
+- https://twitter.com/syeerzy/status/1717518202027331904
+
+- ## 备份方法
+- https://twitter.com/Ruohai/status/1717178829612187852
+  - 新手：移动硬盘冷备
+  - 中级：买nas组raid
+  - 高级：买多套nas做321备份和功能区分
+  - 骨灰：旧电脑装debian用rsync和rclone
+- 我用 nuc 挂了一堆硬盘，都是独立的。
+- 就想知道旧电脑不考虑功耗的么？
+- 可以裝Unraid
+
 - ## 一个有趣的网站「12英尺」，http://12ft.io，一位外国程序员受不了互联网充满了付费高墙，他撸了一个 12 英尺的高梯来帮助读者们翻越各种付费围墙——Show me a 10ft paywall, I’ll show you a 12ft ladder.
 - https://twitter.com/Barret_China/status/1711042013230256476
 - The idea is pretty simple, news sites want Google to index their content so it shows up in search results. So **they don't show a paywall to the Google crawler**. We benefit from this because the Google crawler will cache a copy of the site every time it crawls it.

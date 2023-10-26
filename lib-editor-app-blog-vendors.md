@@ -1,8 +1,8 @@
 ---
 title: lib-editor-app-blog-vendors
-tags: [blog, editor, vendor]
+tags: [blog, editor, vendors]
 created: 2022-10-19T20:08:55.194Z
-modified: 2022-10-19T20:09:13.427Z
+modified: 2023-10-26T18:14:17.037Z
 ---
 
 # lib-editor-app-blog-vendors

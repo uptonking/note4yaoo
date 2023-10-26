@@ -27,7 +27,19 @@ modified: 2021-08-28T11:49:05.730Z
 
 - ## 
 
-- ## 
+- ## 💡 I dislike JSDOM. It runs in Node, pretends to be a browser, but is intentionally neither. It's a hack.
+- https://twitter.com/kettanaito/status/1717085912545247557
+  - Test browser things in the browser. There's no excuse not to use Playwright in 2023.
+- Why do I say it's neither? Because it explicitly strips away Node.js globals, like TextEncoder or Fetch or Headers, and then manually re-adds them. That's the reason it still lacks global fetch although it's been more than a year that Node ships with it.
+  - Here's what baffles me the most: when you run a test in Node.js 20, which has global fetch, JSDOM won't give it to you. It will throw. 
+
+- How would you test a library with Playwright? I've come up with solutions before, but they are always hacky.
+  - You create a test environment for it that resembles the library's usage and test it there. This approach composes 90% of MSW tests. Real browser, real usage example, a bit of testing setup to make it work with less noise in tests themselves.
+
+- Agree, I've spent more time trying to figure out hidden quirks of JSDOM than writing the actual tests. Overall it's just the most hacky way to test UIs.
+
+- https://twitter.com/mjackson/status/1717206924343869481
+  - Strong agree. JSDOM was built for a world without playwright. But playwright is so good, there’s really no reason to use JSDOM anymore.
 
 - ## You're testing the business logic of your database-backed application. 
 - https://twitter.com/gunnarmorling/status/1705025130953580799

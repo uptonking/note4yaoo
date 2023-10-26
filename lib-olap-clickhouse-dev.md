@@ -22,6 +22,11 @@ modified: 2023-01-08T15:31:39.189Z
   2. 性能比对工具
   3. 分析热点
 
+- ## 🔥 [ClickHouse: An open-source column-oriented database management system | Hacker News_202105](https://news.ycombinator.com/item?id=27310247)
+- 
+- 
+- 
+
 # blogs
 
 ## [Extracting, converting, and querying data in local files using clickhouse-local_202301](https://clickhouse.com/blog/extracting-converting-querying-local-files-with-sql-clickhouse-local)

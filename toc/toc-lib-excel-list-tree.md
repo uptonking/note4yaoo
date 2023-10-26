@@ -355,7 +355,8 @@ modified: 2022-08-21T10:02:41.845Z
   - This tree is based on top-down splaying algorithm by D. Sleator.
 
 - https://github.com/mikolalysenko/functional-red-black-tree /js
-  - A fully persistent red-black tree written 100% in JavaScript. Works both in node.js and in the browser 
+  - A fully persistent red-black tree written 100% in JavaScript. Works both in node.js and in the browser
+  - 被使用在pg-mem, leveljs-memory
   - Functional (or fully persistent) data structures allow for non-destructive updates.
   - Functional (or fully persistent) data structures allow for non-destructive updates. So if you insert an element into the tree, it returns a new tree with the inserted element rather than destructively updating the existing tree in place. Doing this requires using extra memory
   - this data structure saves some memory by recycling references to previously allocated subtrees. This requires using only O(log(n)) additional memory per update instead of a full O(n) copy.

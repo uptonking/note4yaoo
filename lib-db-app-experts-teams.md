@@ -39,8 +39,13 @@ modified: 2023-02-02T03:22:07.941Z
 - Yingjun Wu /RisingWave
   - Founder of RisingWave Labs
   - https://www.zhihu.com/people/yingjunwu
+  - https://yingjunwu.github.io/
 
-- wubx /Databend
+- BohuTANG /databend
+  - CEO@DatabendCloud
+  - https://www.zhihu.com/people/bohutang
+
+- wubx /databend
   - Datafuse Labs · Databend 架构师 & 联合创始人
   - https://www.zhihu.com/people/wubx
 

@@ -34,6 +34,7 @@ modified: 2022-11-25T16:16:52.713Z
   - This benchmark represents typical workload in the following areas: clickstream and traffic analysis, web analytics, machine-generated data, structured logs, and events data. 
   - The dataset from this benchmark was obtained from the actual traffic recording of one of the world's largest web analytics platforms. 
   - The dataset is available in CSV, TSV, JSONlines and Parquet formats
+  - [Show HN: A benchmark for analytical databases (Snowflake, Druid, Redshift) | Hacker News_202207](https://news.ycombinator.com/item?id=32084571)
 
 - https://github.com/pubkey/client-side-databases
   - https://pubkey.github.io/client-side-databases/database-comparison/index.html

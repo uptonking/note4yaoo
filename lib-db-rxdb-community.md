@@ -43,7 +43,7 @@ modified: 2023-10-08T10:54:57.575Z
 - I think Oracle APEX works on the same premise? Store locally in indexedDB and sync up when the connection is back on-line. No need for difficult programming, APEX does this out of the box .
   - Anyhow, a way to force this behaviour in APEX is to make every user interaction a write action on the DB. This way you either save locally or to the backend (but you don't have to worry about the sync between the two).
 
-- ## 💡 [RxDB – a real-time database on top of PouchDB | Hacker News_202009](https://news.ycombinator.com/item?id=24340802)
+- ## 💡🔥 [RxDB – a real-time database on top of PouchDB | Hacker News_202009](https://news.ycombinator.com/item?id=24340802)
 
 - 
 - 
@@ -52,7 +52,7 @@ modified: 2023-10-08T10:54:57.575Z
   - Subscribe-on-update databases are, almost by definition, problematic to use at scale as a generic storage solution. 
   - The fundamental problem is that they do not solve many real world problems efficiently enough to warrant the significantly higher running cost. Of course there are exceptions but it'll be hard to launch a MongoDB type of product that uses a subscription only model
 
-- ## [Rxdb: A reactive database where you can subscribe to the result of a query | Hacker News_201910](https://news.ycombinator.com/item?id=21353020)
+- ## 🔥 [Rxdb: A reactive database where you can subscribe to the result of a query | Hacker News_201910](https://news.ycombinator.com/item?id=21353020)
 
 - Having client state just be a replica of server state solves so many problems I don't understand why the concept never caught on. Pouchdb/couchdb are still the only ones doing it afaik. Instead we have a bajillion layers of CRUD all in slightly different protocols just to do the same read or write to the database.
   - When your data is public and immutable, this approach is very pleasant. The client becomes just another caching layer and worst case it's presenting a historical version of the truth. You can even extend this across tabs with things like local storage. This breaks down quickly once you have data that could become private or mutate rather than append.

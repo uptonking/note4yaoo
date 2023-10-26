@@ -23,6 +23,11 @@ modified: 2023-09-17T17:46:07.620Z
 - https://twitter.com/alexxubyte/status/1710680670568394996
   - Note: Google has limited documentation for their database use cases. Even though we did our best to look at what was available and arrived at the best option, some of the entries may be not accurate.
 
+- ## 🛢️🔥 [Never Write Your Own Database (2017) | Hacker News_201805](https://news.ycombinator.com/item?id=16995612)
+- As soon as you allow some kind of user-defined meta data, you basically end up with the entity-attribute-value pattern.
+  - Every sufficiently advanced system does that, be it a CRM that allows custom fields, or a project management or ticket system, a workflow system etc. And basically all enterprise software contains elements of these systems.
+
+- A good alternative would be to use JSON types in RDBMS in combination with classic field types. EAV is really just free form data and JSON is easier to query in MySQL or Postgres.
 # discuss
 - ## 
 

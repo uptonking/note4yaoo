@@ -218,6 +218,7 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/erikgrinaker/toydb /202205/rust
   - Distributed SQL database in Rust, written as a learning project
   - 内部自己实现了SQL Parser、Query Planner、Storage（包括一个B+Tree）和Raft，都是直接编写的（简化版本）的源码而不是用外部库，确实很适合用来学习
+  - [ToyDB: Distributed SQL Database in Rust | Hacker News_202107](https://news.ycombinator.com/item?id=27874992)
 
 - https://github.com/nukep/llamadb /201712/rust/inactive
   - a simple SQL database, written entirely in Rust 
@@ -327,6 +328,13 @@ modified: 2021-08-30T18:56:09.644Z
     - TypeQL is a fully declarative query language based on pattern matching. 
     - TypeQL allows you to model your domain based on logical and object-oriented principles. 
     - Composed of entity, relationship, and attribute types, as well as type hierarchies, roles, and rules, TypeQL allows you to think higher-level as opposed to join-tables, columns, documents, vertices, edges, and properties.
+# db-popular
+- https://github.com/vitessio/vitess /go
+  - http://vitess.io/
+  - Vitess is a database clustering system for horizontal scaling of MySQL through generalized sharding.
+  - Vitess is the cloud-native, open source technology powering PlanetScale.
+  - By encapsulating shard-routing logic, Vitess allows application code and database queries to remain agnostic to the distribution of data onto multiple shards
+  - Vitess has been a core component of YouTube's database infrastructure since 2011, and has grown to encompass tens of thousands of MySQL nodes.
 # db-streaming
 - https://github.com/MaterializeInc/materialize /rust
   - https://materialize.com/

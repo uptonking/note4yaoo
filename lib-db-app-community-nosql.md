@@ -22,17 +22,10 @@ modified: 2023-09-17T18:10:16.361Z
 
 - ## 
 
-- ## 
-
-- ## [Elasticsearch SQL | Hacker News_202210](https://news.ycombinator.com/item?id=33320477)
-- MongoDB has an SQL interface these days if you need it
-- Seems like all the NoSQL databases eventually implement SQL, maybe we should use EventuallySQL instead NoSQL
-- Even DynamoDb has one
-- Microsoft's CosmosDB (their DocumentDB clone) has a SQL-like (yes) interface.
-- Cassandra added CQL which is very similar to but not exactly SQL.
-- Hadoop (and any other Spark data source) via SparkSQL
-
-- I would like SQL better if jOOQ-style libraries were common across every major language. A standardized query language is good, but passing in queries as strings will never not feel wrong to me.
+- ## 🔥 [How NoSQL forced the evolution of a scalable relational database | Hacker News_201807](https://news.ycombinator.com/item?id=17520809)
+- 
+- 
+- 
 
 - ## [到现在为止，NoSQL 运动给数据库系统留下什么宝贵的思想？ - 知乎](https://www.zhihu.com/question/264416654/answers/updated)
 - https://www.zhihu.com/question/264416654/answer/2713792035
@@ -50,3 +43,8 @@ modified: 2023-09-17T18:10:16.361Z
 - 一开始直接快刀斩乱麻，BigTable就是KV抽象加GFS，结果这种架构抛弃了事务和SQL能力，解决了一些问题和带来了新的问题，有新的问题就要解决。
 
 - 说白了NOSQL就是仅提供原子层面的存储（结构化及非结构化）服务至于事务及SQL兼容性不是NOSQL必须该负责的内容，从而大大提升了扩展性和性能
+
+- ## 🔥 [Database expert on why NoSQL mattered – and SQL still matters | Hacker News_201507](https://news.ycombinator.com/item?id=9964306)
+- 
+- 
+- 

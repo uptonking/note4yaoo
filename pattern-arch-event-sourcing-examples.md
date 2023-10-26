@@ -423,6 +423,22 @@ modified: 2023-09-12T09:37:22.608Z
   - opinionated library used to achieve cqrs/es in Rust.
   - Event Sourcing RS uses under the hood sqlx.
 
+- https://github.com/PumpkinDB/PumpkinDB /201708/rust/inactive
+  - an immutable ordered key-value database engine
+  - By guaranteeing the immutability of key's value once it is set, PumpkinDB forces its users to think of their data through a temporal perspective.
+  - The core ideas behind PumpkinDB stem from the so called lazy event sourcing approach which is based on storing and indexing events while delaying domain binding for as long as possible.
+  - [Show HN: PumpkinDB, an event sourcing database engine | Hacker News_201702](https://news.ycombinator.com/item?id=13738051)
+
+- https://github.com/mit-pdos/noria /202110/rust/inactive
+  - Noria is a new streaming data-flow system designed to act as a fast storage backend for read-heavy web applications based on Jon Gjengset's Phd Thesis
+  - It acts like a database, but precomputes and caches relational query results so that reads are blazingly fast. 
+  - Noria automatically keeps cached results up-to-date as the underlying data, stored in persistent base tables, change. 
+  - Noria uses partially-stateful data-flow to reduce memory overhead, and supports dynamic, runtime data-flow and query change.
+  - Noria comes with a MySQL adapter that implements the binary MySQL protocol. This lets any application that currently talks to MySQL or MariaDB switch to Noria with minimal effort.
+  - At a high level, Noria takes a set of parameterized SQL queries (think prepared statements), and produces a data-flow program that maintains materialized views for the output of those queries. Reads now become fast lookups directly into these materialized views, as if the value had been directly cached in memcached. The views are then kept up-to-date incrementally through the data-flow, which yields high write throughput.
+  - Like most databases, Noria follows a server-client model where many clients connect to a (potentially distributed) server. 
+  - Noria also uses Apache ZooKeeper to announce the location of its servers, so ZooKeeper must be running.
+
 - https://github.com/palfrey/potboiler /rust
   - an AP Event Sourcing system. it's an MVP/research prototype 
 - https://github.com/cosmonic/concordance /rust

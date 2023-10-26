@@ -61,6 +61,11 @@ modified: 2022-11-06T11:21:27.612Z
 - https://github.com/sensedeep/onetable-migrate /js/参考kv存储的迁移
   - This library provides migrations support for DynamoDB OneTable.
 # utils
+- https://github.com/Qovery/Replibyte /rust
+  - https://www.replibyte.com/
+  - fast tool to seed your databases with your production data while keeping sensitive data safe
+  - [Replibyte – Seed your database with real data | Hacker News_202207](https://news.ycombinator.com/item?id=32047535)
+
 - https://github.com/w3tecch/typeorm-seeding
   - A delightful way to seed test data into your database.
   - Inspired by the awesome framework laravel in PHP and of the repositories from pleerock

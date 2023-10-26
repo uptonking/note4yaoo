@@ -156,6 +156,7 @@ modified: 2023-09-16T17:28:29.873Z
   - It supports time travel and it is performant!
   - you can run a complete CozoDB instance in your browser with wasm
   - [Show HN: Cozo – new Graph DB with Datalog, embedded like SQLite | Hacker News_202211](https://news.ycombinator.com/item?id=33518320)
+  - [Show HN: CozoDB, Hybrid Relational-Graph-Vector Database | Hacker News_202304](https://news.ycombinator.com/item?id=35641164)
 
 - https://github.com/KnowledgeGarden/java-unidu-pire /apache2/java
   - [PIRE: An extensible IR engine based on probabilistic Datalog](https://www.researchgate.net/publication/225246464_PIRE_An_extensible_IR_engine_based_on_probabilistic_Datalog)
@@ -192,6 +193,7 @@ modified: 2023-09-16T17:28:29.873Z
 - https://github.com/replikativ/datahike /clojure
   - a durable Datalog database powered by an efficient Datalog query engine
   - This project started as a port of DataScript to the hitchhiker-tree.
+  - [Datahike: Durable Datalog database powered by an efficient Datalog query engine | Hacker News_202007](https://news.ycombinator.com/item?id=23937676)
 
 - https://github.com/juji-io/datalevin /EPLv1/clojure
   - A simple, fast and versatile Datalog database

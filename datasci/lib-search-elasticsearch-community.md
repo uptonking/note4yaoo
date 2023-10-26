@@ -9,10 +9,22 @@ modified: 2023-01-02T08:49:39.114Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## My favorite hack from early days of Lucene/ES was how queries on numbers (+ranges) are rough on an inverted index (huge cardinality for e.g. prices), 
+- https://twitter.com/Sirupsen/status/1717187132790288490
+  - so you they did bucketing: 138, 150, 212, 500, 512 => 1xx, 1xx, 2xx, 5xx, 5xx 
+  - terrible computer science, excellent engineering
+- They've long since implemented these on KD-trees (which work in multiple dimensions too for geographic queries), but doing it on a trie like that was a cool hack. The tens of hours I spent studying the Lucene implementation a few years ago are really paying off as I start to implement filtering in turbopuffer. not easy.
+  - Trie has been deprecated for years, but the pro secret is that it was/is still more efficient for some use cases. I saw this in production on some of the world’s largest retail applications that still run Solr. I know Shopify moved to ES long ago, though.
+
 # discuss
 - ## 
 
-- ## 搜索功能实现不便宜，一篇短文介绍几种方案的成本对比(成本从低到高排序)：
+- ## 
+
+- ## 💡 搜索功能实现不便宜，一篇短文介绍几种方案的成本对比(成本从低到高排序)：
 - https://twitter.com/zhdsuperman/status/1663791183565570050
   1. pg/mysql 全文搜索
   2. SaaS 版：Algolia

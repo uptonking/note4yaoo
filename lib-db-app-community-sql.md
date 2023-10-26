@@ -66,8 +66,32 @@ modified: 2023-09-17T17:35:27.024Z
 - 
 - 
 
+# discuss-join
+- ## 
+
+- ## 🔥 [Joining CSV and JSON data with an in-memory SQLite database | Hacker News_202106](https://news.ycombinator.com/item?id=27565482)
+- 
+- 
+- 
+
+- ## 🔥 [Doing a database join with CSV files | Hacker News_201912](https://news.ycombinator.com/item?id=21923911)
+- 
+- 
+- 
+
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## I'm considering submitting a talk for @DataCouncilAI (April in Austin, TX) talking about different paradigms for query languages. What would be interesting to cover? 
+- https://twitter.com/julianhyde/status/1717283455074259318
+  - Paradigms include relational algebra (SQL + Pig); relational calculus (Datalog); deductive & graph; analytic (DAX, MDX); constraint programming; builders (Cascading, Flink, Spark); and data frames.
+  - In my work on @morel_lang I've noticed that the algebra, calculus and constraint-programming paradigms fit together quite nicely; and my work on measures is unifying SQL with analytic languages.
+- How do you see constraint programming fitting in? In the past, I prototyped a way to convert a SQL schema into constraints
+  - In Morel you can iterate over data types, e.g. 'from i, j where i > 0 andalso i < j andalso j < 10'. Even though the extents are infinite, constraints create a finite result.
 
 - ## Never underestimate the power of SQL. We tried everything: more memory, parallel processing, optimized queries, but nothing worked.
 - https://twitter.com/RaulJuncoV/status/1712824571202596912

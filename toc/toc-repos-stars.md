@@ -25,6 +25,9 @@ modified: 2021-01-12T18:49:13.490Z
     - Absolute separation of logic and content by avoiding template tags
   - alternatives
     - https://github.com/WebReflection/linkedom
+  - https://twitter.com/kettanaito/status/1717085912545247557
+    - I dislike JSDOM. It runs in Node, pretends to be a browser. It's a hack.
+    - Test browser things in the browser. There's no excuse not to use Playwright in 2023.
 # app
 - https://github.com/outline/tiley
   - Tiley creates consistent colored squares with initials that can be used for default avatars

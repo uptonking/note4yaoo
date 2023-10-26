@@ -54,6 +54,7 @@ modified: 2021-05-14T15:04:42.225Z
   - Persistent data presents a mutative API which does not update the data in-place, but instead always yields new updated data.
   - Immutable.js provides many Persistent Immutable data structures including: List, Stack, Map, OrderedMap, Set, OrderedSet and Record.
   - These data structures are highly efficient on modern JavaScript VMs by using structural sharing via hash maps tries and vector tries as popularized by Clojure and Scala, minimizing the need to copy or cache data.
+  - While Immutable.js is inspired by Clojure, Scala, Haskell..., it's designed to bring these powerful concepts to JavaScript, and therefore has an Object-Oriented API that closely mirrors that of ES2015 Array, Map, and Set.
 
 - https://github.com/skeate/lambdata /ts
   - https://skeate.github.io/lambdata/
