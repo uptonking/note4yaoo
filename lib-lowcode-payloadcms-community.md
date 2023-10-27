@@ -106,6 +106,16 @@ modified: 2023-02-05T18:40:43.969Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔🎯 Should Payload move to @nextjs from Express?_20231027
+- https://twitter.com/payloadcms/status/1717643250201219245
+- Why associate your starter with a react only framework when you can be used with any front end?
+- Deployment (cheap and easy) is still the biggest problem. Making it serverless, no matter how you achieve it, is a real win and definitely the future. Edge runtime for cold starts would be the icing on the cake
+- Only if you make that as an option. There are benefits with express, since I need it for central tendency functionality
+
 - ## drizzle doesn't support Mongo, would it even be a potential option for payload?_20230504
 - https://discord.com/channels/967097582721572934/1102950643259424828/1103351664188076144
 - Our expectation is that there will never be an ORM that handles SQL and noSQL well. It is on us to abstract all of Payload's database interactions into an adapter pattern. This way a project can choose which database adapter plugin to use and only install the dependencies for that ORM.

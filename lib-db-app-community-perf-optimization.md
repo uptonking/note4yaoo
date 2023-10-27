@@ -17,6 +17,16 @@ modified: 2023-10-26T19:00:02.186Z
 - ## 
 
 - ## 
+# discuss-vendors
+- ## 
+
+- ## 
+
+- ## 🔥 [Techniques for Microsoft SQL database design and optimization | Hacker News_201612](https://news.ycombinator.com/item?id=13277061)
+- 
+- 
+- 
+
 # discuss
 - ## 
 

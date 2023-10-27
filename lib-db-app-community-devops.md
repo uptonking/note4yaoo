@@ -9,6 +9,8 @@ modified: 2023-10-26T18:47:22.664Z
 
 # guide
 
+> about database migration/upgrade
+
 # discuss-stars
 - ## 
 
@@ -17,10 +19,15 @@ modified: 2023-10-26T18:47:22.664Z
 - ## 
 
 - ## 
-# discuss-migration
+# discuss-migration/upgrade
 - ## 
 
 - ## 
+
+- ## 🔥 [Ask HN: How do you manage direct updates to databases in a production system | Hacker News_202112](https://news.ycombinator.com/item?id=29563226)
+- 
+- 
+- 
 
 - ## 🔥 [Migrating a 40TB SQL Server Database | Hacker News_202007](https://news.ycombinator.com/item?id=23998503)
 - 

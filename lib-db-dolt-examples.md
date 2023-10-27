@@ -255,6 +255,7 @@ modified: 2023-08-25T22:31:05.132Z
   - It supports point-in-time graph traversals, letting the user query any past state of the graph just as easily as the present.
   - It is a Foxx Microservice for ArangoDB that features VCS-like semantics in many parts of its interface
   - It is currently being developed and tested on ArangoDB v3.6
+  - [RecallGraph – an open-source graph database, for version controlled graph data | Hacker News_202006](https://news.ycombinator.com/item?id=23455516)
 
 - https://github.com/koordinates/kart /python
   - https://kartproject.org/

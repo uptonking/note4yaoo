@@ -1,11 +1,11 @@
 ---
-title: lib-db-app-community-timeseries
-tags: [community, database, timeseries]
+title: lib-db-app-community-event-timeseries
+tags: [community, database, events, timeseries]
 created: 2023-10-26T18:56:20.572Z
-modified: 2023-10-26T18:56:43.853Z
+modified: 2023-10-27T07:03:12.118Z
 ---
 
-# lib-db-app-community-timeseries
+# lib-db-app-community-event-timeseries
 
 # guide
 
@@ -32,6 +32,11 @@ modified: 2023-10-26T18:56:43.853Z
 - 
 - 
 
+
+- ## 🔥 [A Comparison of Time Series Databases and Netsil’s Use of Druid | Hacker News_201610](https://news.ycombinator.com/item?id=12686445)
+- 
+- 
+- 
 # discuss
 - ## 
 

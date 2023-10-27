@@ -14,12 +14,15 @@ modified: 2022-11-04T14:21:31.365Z
 
 - 参考sqlite+http-range的部分下载示例(sql.js-httpvfs)
 # sync
-- https://github.com/orbitinghail/sqlsync /rust
+- https://github.com/orbitinghail/sqlsync /381Star/apache2/202310/rust
+  - https://sqlsync.dev/
   - a collaborative offline-first wrapper around SQLite. 
   - It is designed to synchronize web application state between users, devices, and the edge.
   - Eventually consistent SQLite
   - Optimistic reads and writes
   - Cross-tab sync
+  - https://twitter.com/tantaman/status/1717634582000865632
+    - Similar to this idea https://vlcn.io/blog/crdt-substrate but simplified by going through a central server
 
 - https://github.com/superfly/litefs /apache2/go
   - FUSE-based file system for replicating SQLite databases across a cluster of machines

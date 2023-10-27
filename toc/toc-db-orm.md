@@ -278,6 +278,7 @@ modified: 2021-08-30T18:56:09.644Z
   - Native graphs, an integrated search engine, and JSON support, via a single query language. 
   - ArangoDB runs on-prem, in the cloud – anywhere.
   - ArangoDB is available in a free and open-source Community Edition, as well as a commercial Enterprise Edition with additional features.
+  - [ArangoDB: Multi-model highly available NoSQL database | Hacker News_201901](https://news.ycombinator.com/item?id=18926054)
 
 - https://github.com/engula/engula /apache2/rust/inactive/selectdb成员项目
   - https://engula.io/
@@ -328,6 +329,19 @@ modified: 2021-08-30T18:56:09.644Z
     - TypeQL is a fully declarative query language based on pattern matching. 
     - TypeQL allows you to model your domain based on logical and object-oriented principles. 
     - Composed of entity, relationship, and attribute types, as well as type hierarchies, roles, and rules, TypeQL allows you to think higher-level as opposed to join-tables, columns, documents, vertices, edges, and properties.
+
+## db-olap
+
+- https://github.com/splitgraph/seafowl /rust
+  - https://seafowl.io/
+  - Analytical database for data-driven Web applications
+  - Its CDN and HTTP cache-friendly query execution API lets you deliver data to your visualizations, dashboards and notebooks by running SQL straight from the user's browser.
+  - built around Apache DataFusion, a fast and extensible query execution framework. 
+  - It uses Apache Parquet columnar storage, adhering to the Delta Lake protocol, making it perfect for analytical workloads.
+  - For SELECT queries, Seafowl supports a large subset of the PostgreSQL dialect. 
+  - It ships as a single binary, making it simple to run anywhere, letting you separate storage and compute. 
+  - Seafowl's query execution API follows HTTP cache semantics. This means you can put Seafowl behind a CDN like Cloudflare 
+  - We (Splitgraph) implemented WASM UDFs in Seafowl, Users can call CREATE FUNCTION within an SQL query to create a WASM UDF.
 # db-popular
 - https://github.com/vitessio/vitess /go
   - http://vitess.io/

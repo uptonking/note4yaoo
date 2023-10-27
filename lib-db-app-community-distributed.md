@@ -9,10 +9,16 @@ modified: 2023-10-26T19:04:00.318Z
 
 # guide
 
+> about database distributed/decentralized
+
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🔥 [A history of the distributed transactional database | Hacker News_201812](https://news.ycombinator.com/item?id=18600404)
+- 
+- 
+- 
+
 # discuss-decentralized/p2p
 - ## 
 
@@ -61,6 +67,11 @@ modified: 2023-10-26T19:04:00.318Z
 - 
 
 - ## 🛢️🔥 [Azure Cosmos DB, a globally distributed database | Hacker News_201705](https://news.ycombinator.com/item?id=14308814)
+- 
+- 
+- 
+
+- ## 💫🔥 [Distributed algorithms in NoSQL databases | Hacker News_201709](https://news.ycombinator.com/item?id=15367003)
 - 
 - 
 - 

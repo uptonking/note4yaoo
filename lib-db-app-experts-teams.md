@@ -18,6 +18,8 @@ modified: 2023-02-02T03:22:07.941Z
 - resources
   - [DB Weekly: The Weekly Database Newsletter](https://dbweekly.com/issues)
   - [Postgres Weekly](https://postgresweekly.com/issues)
+  - [hot database stories in hacker news | Search powered by Algolia](https://hn.algolia.com/?dateRange=all&page=1&prefix=true&query=database&sort=byPopularity&type=story)
+    - points > 110 的讨论议题
 
 - db-features
   - incremental materialized view

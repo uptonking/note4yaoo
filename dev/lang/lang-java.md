@@ -7,7 +7,7 @@ modified: 2020-07-14T09:26:35.281Z
 
 # lang-java
 
-# guide
+# guide ☕️
 
 - classic-examples-java
   - office: apache-poi, pdf

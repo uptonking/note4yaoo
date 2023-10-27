@@ -173,7 +173,7 @@ modified: 2023-08-29T10:13:31.070Z
 - 
 - 
 
-- ## [GitDB, a distributed embeddable database on top of Git | Hacker News](https://news.ycombinator.com/item?id=31987240)
+- ## 🌵🔥 [GitDB, a distributed embeddable database on top of Git | Hacker News_202207](https://news.ycombinator.com/item?id=31987240)
 - version control in general turns out to be highly applicable in many areas far beyond source code. I think it's still under-utilized.
   - Yes, it's extremely common to see applications which need a datastore to end up needing lots of version control type features later on, which end up implemented ad-hoc over a general database.
 - Git is an abstraction over file trees (or even more generally just chunks of data), and it turns out a ton of problems in software are easily modeled and dealt with as files in a tree.

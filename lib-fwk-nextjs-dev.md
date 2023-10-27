@@ -6,11 +6,8 @@ modified: 2020-12-12T19:22:00.735Z
 ---
 
 # lib-fwk-nextjs-dev
-
 - The React Framework with all the features you need for production
-
 # guide
-
 - meta-framework
   - 接管 打包、路由、布局、请求api、ssr、mock
 
@@ -43,11 +40,24 @@ modified: 2020-12-12T19:22:00.735Z
 
 - tips
   - 考虑引入nextjs的收益是否够高，适合开发应用而不适合库
-
-# pieces
+# blogs
 - ## [Gatsby vs Nextjs vs Storybook](https://component-controls.com/blogs/gatsby-vs-nextjs-vs-storybook)
 - gatsby is the original static site generator for react and continues to be a leader in this space.
 - nextjs was known for SSR, however recent builds allow creating highly optimized static sites.
 - while storybook is not a general-purpose SSG, it comes with its own SSG engine under the hood.
+# more
 
-# ref
+# discuss
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Looks like we didn't learn our lesson with patching fetch. Now we're breaking built-in browser behavior by overriding the `formAction` property_202310
+- https://twitter.com/RogersKonnor/status/1717648866114171180
+  - I want to believe this compiles down to: `document.createElement("button").formAction = "/route"` .
+- Now I'm even more curious how it can differentiate when it's meant to be used as a string property like the built in, and when it uses the server action....do they have any posts on how they can make the distinction? Because `formAction` is an existing property on form elements.
+  - because nextAction would collide with formAction. which one takes priority?
+- Now I'm even more confused. Someone's hinting it may just compile to a string, so formAction in the end may just be an actual server endpoint? but if that's the case, how does it work when used an onClick handler?

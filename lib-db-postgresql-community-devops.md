@@ -29,6 +29,18 @@ modified: 2023-10-26T19:18:19.584Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🔥 [Recovering a PostgreSQL database after a hard drive failure | Hacker News_202112](https://news.ycombinator.com/item?id=29744815)
+- 
+- 
+- 
+
+
+
+
 - ## 🔥 [Cleaning Up Your Postgres Database | Hacker News_202103](https://news.ycombinator.com/item?id=26367080)
 - 
 - 

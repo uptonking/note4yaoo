@@ -115,7 +115,7 @@ modified: 2023-02-08T10:46:26.912Z
     - most forked
       - https://github.com/search?o=desc&q=stars:%3E1&s=forks&type=Repositories
 
-- search-issues/disccussions
+- search-issues/discussions
   - 搜索仓库时指定语言后，当下搜索结果中的issues也是指定语言的
 
 - fork

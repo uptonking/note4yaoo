@@ -141,6 +141,17 @@ modified: 2023-10-26T15:04:42.968Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🕸️🌵🔥 [RecallGraph – an open-source graph database, for version controlled graph data | Hacker News_202006](https://news.ycombinator.com/item?id=23455516)
+- 
+- 
+- 
+
 - ## 🔥 [RedisGraph: a fast, queryable property graph database for Redis | Hacker News_201810](https://news.ycombinator.com/item?id=18270996)
 - 
 - 
@@ -237,7 +248,6 @@ modified: 2023-10-26T15:04:42.968Z
 - It's nearly a decade old at this point and probably not optimal even for the time, so there may be better approaches, but here's a few basic algorithms on SQLite. PageRank is at the bottom.
 - Common graph databases are network-based for scaling purposes. You do have a database server then you talk to the server somehow for the queries. Sqlite is a single-file database. You do not have a server so you do not need an extra layer in database side.
   - Instead, Run the graph algorithms on a stringified json stored as a text in sqlite. They will be running in some process in anyway.
-
 
 - ## 🔥 [Ask HN: What was your experience using a graph database? | Hacker News_201812](https://news.ycombinator.com/item?id=18795498)
 - 

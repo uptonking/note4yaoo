@@ -1,11 +1,11 @@
 ---
-title: lib-db-app-community-nosql
-tags: [community, database, nosql]
+title: lib-db-app-community-model-nosql
+tags: [community, database, database-design, nosql]
 created: 2023-09-17T18:10:03.415Z
-modified: 2023-09-17T18:10:16.361Z
+modified: 2023-10-27T07:07:52.778Z
 ---
 
-# lib-db-app-community-nosql
+# lib-db-app-community-model-nosql
 
 # guide
 

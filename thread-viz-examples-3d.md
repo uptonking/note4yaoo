@@ -17,7 +17,14 @@ modified: 2021-08-25T05:56:00.431Z
 
 - ## 
 
-- ## 
+- ## I vectorised 10, 000 words from the english language & used tsne to visualise them in 3D space. This is a random sample of 250.
+- https://twitter.com/JungleSilicon/status/1717775617104691491
+  - The idea is to get a *mapping* of how Chat GPT thinks & clusters ideas together.
+  - I've learnt two things.
+  - English has a tonne of words nobody uses these days.
+  - This would be much more interesting when comparing sentences within more specific domains.
+- sweet 3d view! for #2 i'd amend it to *ideas* within a domain. It'd be like traversing ideas clustered by semantic relevance in an @obsdmd graph
+  - I actually had the idea whilst using @obsdmd haha.
 
 - ## We're loving these 3d histograms coming out of the Plotly #MATLAB library
 - https://twitter.com/plotlygraphs/status/1430179870429097988

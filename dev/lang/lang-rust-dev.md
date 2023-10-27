@@ -7,7 +7,7 @@ modified: 2022-11-11T06:57:09.670Z
 
 # lang-rust-dev
 
-# guide
+# guide 🦀
 
 - classic-examples-rust
   - kilo-editor

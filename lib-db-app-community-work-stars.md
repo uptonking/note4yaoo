@@ -1,11 +1,11 @@
 ---
-title: lib-db-app-community-stars
+title: lib-db-app-community-work-stars
 tags: [community, database]
 created: 2021-08-30T15:51:01.157Z
-modified: 2023-09-16T17:54:21.231Z
+modified: 2023-10-27T06:54:20.487Z
 ---
 
-# lib-db-app-community-stars
+# lib-db-app-community-work-stars
 
 # guide
 
@@ -28,7 +28,10 @@ modified: 2023-09-16T17:54:21.231Z
 # discuss
 - ## 
 
-- ## 
+- ## 🕛🔥 [Big problems at the timezone database | Hacker News_202109](https://news.ycombinator.com/item?id=28650019)
+- 
+- 
+- 
 
 - ## 🛢️🔥 [The Next 50 Years of Databases (2015) | Hacker News_201911](https://news.ycombinator.com/item?id=21508210)
 - 

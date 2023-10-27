@@ -1,11 +1,13 @@
 ---
-title: lib-db-app-community-encoding
-tags: [community, database, encoding]
+title: lib-db-app-community-serdes-encoding
+tags: [community, database, encoding, serdes]
 created: 2023-09-17T17:43:41.484Z
-modified: 2023-09-17T17:44:01.998Z
+modified: 2023-10-27T07:04:15.549Z
 ---
 
-# lib-db-app-community-encoding
+# lib-db-app-community-serdes-encoding
+
+> about database serdes
 
 # guide
 
@@ -55,4 +57,7 @@ modified: 2023-09-17T17:44:01.998Z
 
 - ## 
 
-- ## 
+- ## 🔥 [Database character sets and collations explained – why utf8 is not UTF-8 | Hacker News_202201](https://news.ycombinator.com/item?id=29793916)
+- 
+- 
+- 

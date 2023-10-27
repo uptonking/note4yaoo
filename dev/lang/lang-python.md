@@ -7,7 +7,7 @@ modified: 2020-07-14T09:27:30.503Z
 
 # lang-python
 
-# guide
+# guide 🐍
 
 - classic-examples-python
   - jupyter

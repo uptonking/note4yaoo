@@ -9,6 +9,8 @@ modified: 2023-10-26T22:04:11.502Z
 
 # guide
 
+> about database usage experience
+
 # discuss-stars
 - ## 
 
@@ -17,20 +19,8 @@ modified: 2023-10-26T22:04:11.502Z
 - ## 
 
 - ## 
-# discuss-tools
-- ## 
 
-- ## 🔥 [Show HN: Data Diff – compare tables of any size across databases | Hacker News_202206](https://news.ycombinator.com/item?id=31837307)
-- 
-- 
-- 
-
-- ## 🔥 [Show HN: A tool to seed your dev database with real data | Hacker News](https://news.ycombinator.com/item?id=31165538)
-- 
-- 
-- 
-
-- ## 🔥 [Exploring Databases Visually | Hacker News_202104](https://news.ycombinator.com/item?id=26693705)
+- ## 🔥 [Leveraging Rust in our Java database | Hacker News_202309](https://news.ycombinator.com/item?id=37557880)
 - 
 - 
 - 
@@ -42,7 +32,10 @@ modified: 2023-10-26T22:04:11.502Z
 
 - ## 
 
-- ## 
+- ## 🔥 [Replacing Linux with a Database System | Hacker News_201807](https://news.ycombinator.com/item?id=17634424)
+- 
+- 
+- 
 
 - ## 🔥 [Scrumdog – a program to download Jira Issues to a local database | Hacker News_202207](https://news.ycombinator.com/item?id=32109461)
 - 

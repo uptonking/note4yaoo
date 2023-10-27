@@ -1,11 +1,11 @@
 ---
-title: lib-db-app-community-streaming
-tags: [community, database, streaming]
+title: lib-db-app-community-event-streaming
+tags: [community, database, events, streaming]
 created: 2023-09-17T17:58:24.440Z
-modified: 2023-09-17T18:00:17.315Z
+modified: 2023-10-27T07:02:42.391Z
 ---
 
-# lib-db-app-community-streaming
+# lib-db-app-community-event-streaming
 
 # guide
 
@@ -22,10 +22,7 @@ modified: 2023-09-17T18:00:17.315Z
 
 - ## 
 
-- ## 🔥 [Building a Cloud Database from Scratch: Why We Moved from C++ to Rust (2022) | Hacker News_202302](https://news.ycombinator.com/item?id=34737626)
-- 
-- 
-- 
+
 # discuss
 - ## 
 
@@ -33,7 +30,10 @@ modified: 2023-09-17T18:00:17.315Z
 
 - ## 
 
-- ## 
+- ## 🔥 [Streaming Databases in Real-Time with Kafka, Debezium, and MySQL | Hacker News_201703](https://news.ycombinator.com/item?id=13995648)
+- 
+- 
+- 
 
 - ## Understanding the Differences between Lambda and Kappa Data Processing Architectures for Big Data_202303
 - https://twitter.com/moderndatastack/status/1637808211565891584
@@ -47,3 +47,8 @@ modified: 2023-09-17T18:00:17.315Z
   - and the serving layer, which provides queryable views of the data.
 - Kappa Architecture, on the other hand, eliminates the batch layer and processes real-time data using a stream processing system, which stores the data in a database.
 - Lambda is ideal for scenarios where historical data analysis is important, while Kappa is perfect for situations where real-time insights are critical.
+
+- ## 🔥 [Queues are Databases (1995) | Hacker News202007](https://news.ycombinator.com/item?id=23727877)
+- 
+- 
+- 

@@ -164,5 +164,5 @@ modified: 2023-08-29T10:12:22.345Z
 
 - https://github.com/gogitdb/gitdb /go/inactive
   - GitDB is a decentralized document database written in Go that uses Git under the hood to provide database-like functionalities via strictly defined interfaces.
-  - [GitDB, a distributed embeddable database on top of Git | Hacker News](https://news.ycombinator.com/item?id=31987240)
+  - [GitDB, a distributed embeddable database on top of Git | Hacker News_202207](https://news.ycombinator.com/item?id=31987240)
 # more

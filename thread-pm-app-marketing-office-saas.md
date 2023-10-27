@@ -12,7 +12,10 @@ modified: 2023-10-10T14:20:13.855Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 在 CRUD Boy 很便宜的环境里，做本质上用来取代 CRUD Boy 的 Retool，肯定是不那么直观的。
+- https://twitter.com/CatChen/status/1717648929679114356
+  - 美国公司进行 IT 采购时，往往会先看 Gartner Report 上这个领域的竞品都有什么，然后发 RFP。中国公司如果上不了行业报告，别人根本不会发 RFP 给你。
+- 在国内，大企业不会采购，小公司的采购会把你转化为外包公司
 
 - ## Immutable software means people *can* create workflows, can learn, become experts, and optimize their experiences through automation. 
 - https://twitter.com/andrestaltz/status/1433782109458649102

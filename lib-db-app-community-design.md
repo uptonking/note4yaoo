@@ -9,8 +9,17 @@ modified: 2023-09-17T17:50:49.932Z
 
 # guide
 
+> about database schema design and examples
+
 # discuss-stars
 - ## 
+
+- ## 
+
+- ## 🔥 [Use singular nouns for database table names | Hacker News_202304](https://news.ycombinator.com/item?id=35762682)
+- 
+- 
+- 
 
 - ## 🔥 [A one-size-fits-all database doesn't fit anyone | Hacker News_201806](https://news.ycombinator.com/item?id=17404517)
 - 
@@ -22,34 +31,11 @@ modified: 2023-09-17T17:50:49.932Z
 - 
 - 
 
-- ## 💡🔥 [Old, Good Database Design | Hacker News_202009](https://news.ycombinator.com/item?id=24467136)
-- 
-- 
-- 
-
 - ## 💡🔥 [A humble guide to database schema design | Hacker News_202004](https://news.ycombinator.com/item?id=22806142)
 - 
 - 
 - 
 
-- ## 🌰🔥 [Gallery of database schema diagrams of open-source packages | Hacker News_202004](https://news.ycombinator.com/item?id=23006159)
-- 
-- 
-- 
-
-- ## 🤔🌰🔥 [Ask HN: What are some examples of good database schema designs? | Hacker News_202002](https://news.ycombinator.com/item?id=22324691)
-
-- Northwind Traders
-- That made me laugh. My 2 cents after doing this long enough to recognise it
-  - Aim for 3NF but not religiously. Still, if you need a flat table try a view.
-  - Any ternary relationship can be modeled as a pair of binary relations (you'll never regret keeping it simpler)
-  - You don't need EAV (Magento is a good example of why you shouldn't)
-  - On the other hand don't serialize data (looking at you WordPress)
-  - XML and JSON data types though are perfectly fine when you need to store an object
-  - Every table should have a primary key (preferably an integer)
-  - If you really want a string for your primary key make it a candidate key (why, because someone will insist on changing it)
-  - E/R diagrams are your friend
-  - So are Venn diagrams for visualizing a complex select
 # discuss-schema
 - ## 
 
@@ -76,26 +62,12 @@ modified: 2023-09-17T17:50:49.932Z
 - 
 - 
 
-- ## 🔥 [Three things you should never put in your database | Hacker News_201205](https://news.ycombinator.com/item?id=3916497)
-- 
-- 
-- 
-
 - ## 🔥 [A table that should exist in all projects with a database | Hacker News_201012](https://news.ycombinator.com/item?id=1984325)
 - 
 - 
 - 
 
 - ## 🔥 [The Database Inside Your Codebase | Hacker News_202102](https://news.ycombinator.com/item?id=26160186)
-- 
-- 
-- 
-
-- ## 🔥 [Mistakes Beginners Make When Working with Databases | Hacker News_201606](https://news.ycombinator.com/item?id=11862723)
-- 
-- 
-
-- ## 🔥 [Database development mistakes made by application developers | Hacker News_201012](https://news.ycombinator.com/item?id=1999874)
 - 
 - 
 - 
@@ -124,7 +96,3 @@ modified: 2023-09-17T17:50:49.932Z
 - ## 和ChatGPT聊DB设计获得新知，Nested Set Model：
 - https://twitter.com/TooooooBug/status/1659041013800001536
   - 将父子关系映射到数轴上变为数字范围的包含关系，然后通过数字范围大小就能计算出各条记录的父子关系，避免反复递归。
-
-- ## 🔥 [Ask HN: Is Hackernews still using the file system as database? | Hacker News_201705](https://news.ycombinator.com/item?id=14371189)
-- 
-- 

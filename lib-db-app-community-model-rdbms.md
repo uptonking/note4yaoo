@@ -68,3 +68,8 @@ modified: 2023-10-26T18:42:55.635Z
 - 
 - 
 - 
+
+- ## 🔥 [SQL Databases Don't Scale | Hacker News_200907](https://news.ycombinator.com/item?id=690656)
+- 
+- 
+- 

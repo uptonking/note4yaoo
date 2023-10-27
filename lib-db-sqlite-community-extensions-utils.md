@@ -29,3 +29,8 @@ modified: 2023-10-26T22:12:54.831Z
 - 
 - 
 - 
+
+- ## 🔥 [Use LibreOffice Base as a GUI for an SQLite Database in OS X (2016) | Hacker News_202212](https://news.ycombinator.com/item?id=34137264)
+- 
+- 
+- 

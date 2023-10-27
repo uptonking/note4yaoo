@@ -1,11 +1,11 @@
 ---
-title: toc-lib-data-engineering
-tags: [data, engineering, lib, toc]
+title: toc-lib-data-etl
+tags: [data, etl, lib, toc]
 created: 2020-10-05T09:34:33.467Z
-modified: 2020-12-31T15:32:40.135Z
+modified: 2023-10-27T15:39:10.466Z
 ---
 
-# toc-lib-data-engineering
+# toc-lib-data-etl
 
 # popular
 
@@ -38,10 +38,17 @@ modified: 2020-12-31T15:32:40.135Z
   - **Every job can have as many destinations (outputs)** as needed. For example, one job can load processed data into a **database**, **log** this data to stdout and post it by **HTTP** simultaneously.
   - New processors and destinations can be made by extending existing ones.
 
+- 
+
 - https://github.com/cloudquery/cloudquery /go
   - https://cloudquery.io/
   - high-performance data integration framework built for developers.
   - CloudQuery extracts, transforms, and loads configuration from cloud APIs to variety of supported destinations such as databases, data lakes, or streaming platforms for further analysis.
+# data-platform
+- https://github.com/infinyon/fluvio /rust
+  - https://www.fluvio.io/
+  - Fluvio is a high-performance distributed data streaming platform that's written in Rust, built to make it easy to run real-time applications.
+  - Fluvio is an open source data pipeline project w/ plugin wasm modules for data transformations as "SmartModules". In our case we can run wasm plugins on frontend or backend (none of which require a browser). 
 # infrastructure
 - https://github.com/coollabsio/coolify
   - https://coollabs.io/coolify

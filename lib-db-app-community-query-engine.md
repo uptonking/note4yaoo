@@ -148,7 +148,10 @@ modified: 2023-09-17T17:41:51.689Z
 # discuss
 - ## 
 
-- ## 
+- ## 🔥 [Show HN: Query your database using plain English, fully on-premises | Hacker News_202308](https://news.ycombinator.com/item?id=37315667)
+- 
+- 
+- 
 
 - ## ✨ This brilliant technique for handling database queries literally saved Discord.
 - https://twitter.com/ProgressiveCod2/status/1708007839170482666

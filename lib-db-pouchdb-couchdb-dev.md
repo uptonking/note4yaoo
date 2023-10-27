@@ -53,7 +53,7 @@ modified: 2022-12-02T11:15:15.257Z
   - replication
   - conflicts
   - search: fts, fuzzy
-  - auth
+  - auth: 权限控制的粒度，row/doc, column/property
 
 - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
 

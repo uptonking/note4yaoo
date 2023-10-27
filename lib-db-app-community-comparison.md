@@ -9,6 +9,8 @@ modified: 2023-09-17T17:46:07.620Z
 
 # guide
 
+> about databases comparison
+
 # discuss-stars
 - ## 
 
@@ -31,7 +33,7 @@ modified: 2023-09-17T17:46:07.620Z
 # discuss
 - ## 
 
-- ## [How to Efficiently Choose the Right Database for Your Applications | Hacker News_202102](https://news.ycombinator.com/item?id=26290252)
+- ## 💡 [How to Efficiently Choose the Right Database for Your Applications | Hacker News_202102](https://news.ycombinator.com/item?id=26290252)
 - I kinda disagree with separate branch for "document database" for Mongo. Mongo is a key-value storage, with a thin wrapper that converts BSON<->JSON, and indices on subfields.
   - You can achieve exactly the same thing with PostgreSQL tables with two columns (key JSONB PRIMARY KEY, value JSONB), including indices on subfields. With way more other functionality and support options.
 - Not really true. MongoDB natively supports sharding, multiple indexes, high availability, arrays, sub documents, array traversal, etc - all able to be accessed in your native language with get/set functionality (or via MQL if you want). While PostgreSQL is a really powerful database, the JSON support is really painful to program against.
@@ -48,7 +50,7 @@ modified: 2023-09-17T17:46:07.620Z
 - A good simple use-case for a document database (could be MongoDB, but not necessarily) is configuration and system "schema" type data. For example, storing all of a user's settings and preferences into a document keyed by the user's Id.
 - We use it for event storage in the event sourced parts of our app. For the rest of our data, we're currently migrating off of Mongo to Postgres due to an experience similar to the OP's.
 
-- ## [Mongo (Atlas) vs. Planetscale for my simple SaaS?](https://www.reddit.com/r/Database/comments/wh9rd1/mongo_atlas_vs_planetscale_for_my_simple_saas/)
+- ## 🆚️ [Mongo (Atlas) vs. Planetscale for my simple SaaS?](https://www.reddit.com/r/Database/comments/wh9rd1/mongo_atlas_vs_planetscale_for_my_simple_saas/)
 - Mongo:
 - Pros: I have the most experience with it, super easy to get up and running, built for simple document structure like my use case, very cheap pay-as-you-go pricing on Atlas.
 - Cons: Database doesn't enforce schema (ofc) so while as a dev I love it, as a business owner it feels maybe too risky. Has low connection limit (500) which could possibly bottleneck with serverless connections.

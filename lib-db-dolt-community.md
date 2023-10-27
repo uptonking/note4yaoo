@@ -520,7 +520,10 @@ modified: 2023-08-25T21:17:11.979Z
 # discuss-branching/versioning
 - ## 
 
-- ## 
+- ## 🔥 [Database Version Control with Liquibase | Hacker News_202009](https://news.ycombinator.com/item?id=24577239)
+- 
+- 
+- 
 
 - ## 🔥 [Database versioning best practices | Hacker News_201508](https://news.ycombinator.com/item?id=10034546)
 - 

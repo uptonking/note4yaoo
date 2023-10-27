@@ -9,14 +9,17 @@ modified: 2022-06-13T02:59:04.350Z
 
 # guide
 
-# discuss-alternatives-mongo
+# discuss-alternatives-mongo-like
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## 🔥 [Show HN: AvionDB: A Decentralised Database with MongoDB-like Developer Interface | Hacker News_202005](https://news.ycombinator.com/item?id=23058070)
+- 
+- 
+- 
 
 - ## [Ask HN: Do you still use MongoDB? | Hacker News_202005](https://news.ycombinator.com/item?id=23270429)
 

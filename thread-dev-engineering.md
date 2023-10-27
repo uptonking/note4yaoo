@@ -18,14 +18,16 @@ modified: 2021-01-21T17:52:13.333Z
 - https://twitter.com/fuergaosi/status/1716812916123742501
   - [网站前端打API 时把密码加密，有意义吗？ - Huli's blog](https://blog.huli.tw/2023/01/10/security-of-encrypt-or-hash-password-in-client-side/)
 
-
 - 不加, payload需要加个屁，上个前向安全的https就行了。
 - 密码这东西从头到尾不就应该是一个hash值而已吗？又不是明文，加密是什么酷炫操作
 - 一般都是向后端发送hashed password
 - 这有什么争议，自己加密如果比https更安全更方便，那https可以废弃了。
 - 加了也没法完全防 mitm 吧，和 ssl pinning bypass 一个道理吧
-
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 说老实话，有实时Preview真的快了好多。
@@ -40,10 +42,10 @@ modified: 2021-01-21T17:52:13.333Z
   - Update: Added picocss.
 
 - My preferred development order has always been:
-  01.  Structure for everything: HTML, content, ARIA, some JS
-  02.  Style a component: CSS, interaction states, transitions/animations
-  03.  Then make the component functional with JavaScript
-  04.  Repeat steps 2 and 3 for each component.
+  01.   Structure for everything: HTML, content, ARIA, some JS
+  02.   Style a component: CSS, interaction states, transitions/animations
+  03.   Then make the component functional with JavaScript
+  04.   Repeat steps 2 and 3 for each component.
 
 - ## uid 不需要可读性，如果需要可读性可以添加一个新的 id 属性。
 - https://twitter.com/ThaddeusJiang/status/1694915724354142678

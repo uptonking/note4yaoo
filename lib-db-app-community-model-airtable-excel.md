@@ -61,6 +61,15 @@ modified: 2023-10-26T21:54:54.201Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🔥 [Show HN: Plato – Airtable for your SQL database | Hacker News_202303](https://news.ycombinator.com/item?id=35070488)
+- 
+- 
+- 
+
 - ## 🔥 [On Anki's Database | Hacker News_202202](https://news.ycombinator.com/item?id=30427549)
 - 
 - 
@@ -188,7 +197,6 @@ modified: 2023-10-26T21:54:54.201Z
 - Airtable is fantastic. My only wish is that they formalize a “Airtable open format specification”. 
   - At the moment, in spite of all its shortcomings, an excel file is far more portable than an Airtable doc. 
   - We need the Airtable data structure to become an open standard.
-
 
 - ## 🔥 [A web-based Excel/database hybrid | Hacker News_201205](https://news.ycombinator.com/item?id=3959486)
 - 

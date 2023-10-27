@@ -1,11 +1,11 @@
 ---
-title: lib-db-app-community-realtime-event
+title: lib-db-app-community-event-realtime
 tags: [community, database, events, realtime]
 created: 2023-10-26T19:21:33.302Z
-modified: 2023-10-26T20:59:45.666Z
+modified: 2023-10-27T07:01:45.080Z
 ---
 
-# lib-db-app-community-realtime-event
+# lib-db-app-community-event-realtime
 
 # guide
 
@@ -20,18 +20,25 @@ modified: 2023-10-26T20:59:45.666Z
 - 
 - 
 - 
+
 # discuss
 - ## 
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🔥 [Scylla – Real-Time Big Data Database | Hacker News_202108](https://news.ycombinator.com/item?id=28294501)
+- 
+- 
+- 
+
 - ## 🔥 [Serverless Databases: The Future of Event-Driven Architecture | Hacker News_201802](https://news.ycombinator.com/item?id=16376727)
 - 
 - 
 - 
-
-
-
 
 - ## 🔥 [When an SQL Database Makes a Great Pub/Sub | Hacker News_201912](https://news.ycombinator.com/item?id=21834152)
 - 

@@ -7,10 +7,24 @@ modified: 2023-09-17T17:37:19.913Z
 
 # lib-db-app-community-architecture
 
+> about database and application architecture
+
 # guide
 
 # discuss-stars
 - ## 
+
+- ## 🤔🔥 [Databases = Frameworks for Distributed Systems | Hacker News_202205](https://news.ycombinator.com/item?id=31459745)
+- I was watching a video by one of Amazon’s distinguished engineers a while ago and for the life of me I can’t find it now but the thing that stuck with me from it is, 
+  - “There are only three modes for a distributed system - it implements paxos/raft itself, it relies on a data store that implements paxos/raft or it’s wrong.”
+  - Look at k8s and etcd for a very widely used example of this approach as well.
+
+- While databases having been converging on composability for a long time, the model presented here is not the correct one and causes problems for many important and emerging use cases.
+  - As an elementary observation, isolating the designs of storage, compute, and networking as separate modules is a reliable way to achieve poor performance and resource efficiency. Some of the most important scalability and performance optimizations in modern database architecture are schedule-driven, which requires tight coupling across the design of storage, compute, and networking. Ignoring this class of optimizations produces very large reductions in real-world workload performance, and feeds a narrative that the software is wasteful and not environmentally friendly.
+  - Most of our distributed systems are modeled as giant distributed file systems, and that fits okay with the idea of horizontally partitioning compute, storage, and network. This is easy for developers to reason about because they are familiar with file systems. However, it is difficult to express important database-y operations in this model. For example, if you want to do ad hoc joins in a scale-out environment, you need mechanics like decentralized parallel orchestration which isn't really a concept in a "distributed file system" model of "distributed".
+
+- I would say the author just tried to redefined "distributed", and ignored those real distributed systems, e.g. Paxos/Raft-based ones.
+  - You are thinking of fully decentralised systems. A system where there is a centralised leader is still a distributed system so long as at least some of the processing takes place on other nodes.
 
 - ## 💡🔥 [Immutable Databases | Hacker News_202005](https://news.ycombinator.com/item?id=23290769)
 - 
@@ -48,14 +62,6 @@ modified: 2023-09-17T17:37:19.913Z
 - 
 - 
 
-# discuss-db-future
-- ## 
-
-- ## 🔥 [The Future Database | Hacker News_202205](https://news.ycombinator.com/item?id=31481175)
-- 
-- 
-- 
-
 # discuss
 - ## 
 
@@ -89,7 +95,6 @@ modified: 2023-09-17T17:37:19.913Z
 - 
 
 - ## 🔥 [The program is the database is the interface | Hacker News_202302](https://news.ycombinator.com/item?id=34761768)
-- 
 - 
 - 
 - 

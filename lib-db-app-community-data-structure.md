@@ -7,6 +7,8 @@ modified: 2023-09-17T18:17:41.377Z
 
 # lib-db-app-community-data-structure
 
+> about database internal data structure like btree/lsm/index
+
 # guide
 
 # discuss-stars
@@ -143,7 +145,7 @@ modified: 2023-09-17T18:17:41.377Z
 - ## This document from ScyllaDB makes a strong case why B-trees make a good choice for in-memory collections as well
 - https://twitter.com/debasishg/status/1688551567044251648
   - B-trees are usually used for disk based storage. 
-  - [The Taming(驯服) of the B-Trees - ScyllaDB](https://www.scylladb.com/2021/11/23/the-taming-of-the-b-trees/)
+  - [The Taming(驯服) of the B-Trees - ScyllaDB_202111](https://www.scylladb.com/2021/11/23/the-taming-of-the-b-trees/)
 - Also TIL: Google has implemented a C++ template library that implements B-tree containers with an analogous interface to the standard STL map, set, multimap, and multiset containers
 - I tested several B-tree implementations on the JVM in https://github.com/szeiger/forest/tree/master/main/src/main/scala/forest/mutable. 
   - I don't remember the exact benchmark results but there was no conclusive case to use them instead of the red-black trees in Scala's TreeMaps.
@@ -157,6 +159,11 @@ modified: 2023-09-17T18:17:41.377Z
 - ## 
 
 - ## 🔥 [Are You Sure You Want to Use MMAP in Your Database Management System? (2022) | Hacker News_202307](https://news.ycombinator.com/item?id=36563187)
+- 
+- 
+- 
+
+- ## 🔥 [Are You Sure You Want to Use MMAP in Your Database Management System? [pdf] | Hacker News_202205](https://news.ycombinator.com/item?id=31504052)
 - 
 - 
 - 
