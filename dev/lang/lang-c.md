@@ -7,6 +7,8 @@ modified: 2020-07-14T09:26:21.056Z
 
 # lang-c
 
+# guide 🧲
+
 # basis
 
 # discuss

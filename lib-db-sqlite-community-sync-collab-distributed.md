@@ -35,7 +35,9 @@ modified: 2023-10-26T19:03:22.063Z
 - 
 - 
 
-- ## 🔥 [Turning SQLite into a Distributed Database | Hacker News_202208](https://news.ycombinator.com/item?id=32539360)
+- ## 🔥 [mvSQLite: Turning SQLite into a Distributed Database | Hacker News_202208](https://news.ycombinator.com/item?id=32539360)
+  - [Turning SQLite into a distributed database_202208](https://su3.io/posts/mvsqlite)
+
 - 
 - 
 - 

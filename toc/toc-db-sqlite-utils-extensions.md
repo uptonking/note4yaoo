@@ -19,6 +19,7 @@ modified: 2022-11-04T14:20:37.172Z
 # extensions
 - https://github.com/asg017/sqlite-loadable-rs
   - A framework for writing fast and performant SQLite extensions in Rust
+  - [SQLite-loadable-rs: A framework for building SQLite Extensions in Rust | Hacker News](https://news.ycombinator.com/item?id=33973888)
 
 - https://github.com/asg017/sqlite-lines  /clang/python
   - A SQLite extension for reading large files line-by-line (NDJSON, logs, txt, etc.)
@@ -58,6 +59,7 @@ modified: 2022-11-04T14:20:37.172Z
 - https://github.com/chiselstrike/chiselstore /rust
   - an embeddable, distributed SQLite for Rust, powered by Little Raft.
   - ChiselStore extends SQLite to run on a cluster of machines with the Raft consensus algorithm.
+  - [Chiselstore: an embeddable, distributed SQLite for Rust | Hacker News_202112](https://news.ycombinator.com/item?id=29572756)
   - https://github.com/andreev-io/little-raft
 
 - [db-helper.ts](https://gist.github.com/surma/53cb57219eea5217d02083b7dd19b711)

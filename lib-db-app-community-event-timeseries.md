@@ -22,7 +22,7 @@ modified: 2023-10-27T07:03:12.118Z
 - 
 - 
 
-- ## ⏳🔥 [Write a time-series database engine from scratch | Hacker News_202107](https://news.ycombinator.com/item?id=27730854)
+- ## 🌰⏳🔥 [Write a time-series database engine from scratch | Hacker News_202107](https://news.ycombinator.com/item?id=27730854)
 - 
 - 
 - 
@@ -32,11 +32,11 @@ modified: 2023-10-27T07:03:12.118Z
 - 
 - 
 
-
 - ## 🔥 [A Comparison of Time Series Databases and Netsil’s Use of Druid | Hacker News_201610](https://news.ycombinator.com/item?id=12686445)
 - 
 - 
 - 
+
 # discuss
 - ## 
 

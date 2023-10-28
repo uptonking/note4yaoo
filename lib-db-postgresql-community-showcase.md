@@ -48,7 +48,7 @@ modified: 2023-10-26T16:45:47.318Z
 - 
 - 
 
-- ## ☁️ [fly.io: Free Postgres databases for small projects | Hacker News_202201](https://news.ycombinator.com/item?id=30018197)
+- ## ☁️🔥 [fly.io: Free Postgres databases for small projects | Hacker News_202201](https://news.ycombinator.com/item?id=30018197)
 
 - Free tier of CloudFlare Pages/functions runs the app at the edge by default. For Fly.io, this scaling has to be manually configured for both the app and the DB. Are there any plans to offer it by default for the free tier? It is hard to evaluate the benefits of having the data center near the end user when it is not offered out of the box, especially since all the Fly.io blog posts talk about how great their service is for HTML-over-the-wire UIs like Phoenix live view and Rails Hotwire.
   - You can squeeze a hell of a lot more perf out of general purpose compute that is maybe an extra 15 ms away than one-shot workers lacking any in-RAM persistence, or ability to do much more than limited local k/v lookups. The equation is totally different. Many workers I've seen (or written) start by reaching out over the Internet to another backend. There goes most of your edge benefit almost immediately.

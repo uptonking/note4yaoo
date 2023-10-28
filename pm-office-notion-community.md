@@ -116,7 +116,7 @@ modified: 2023-03-29T17:23:37.126Z
 
 - A graph is so natural for pages, web pages are graphs too. So they choose a well fitting model for the problem, congrats
 
-- ## 🚀🔥 [Notion – All-in-one workspace for notes, tasks, wikis, and databases | Hacker News_201901](https://news.ycombinator.com/item?id=18904648)
+- ## ✨🔥🔥 [Notion – All-in-one workspace for notes, tasks, wikis, and databases | Hacker News_201901](https://news.ycombinator.com/item?id=18904648)
 - 
 - 
 - 

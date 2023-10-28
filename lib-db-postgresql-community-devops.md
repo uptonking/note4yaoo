@@ -13,7 +13,22 @@ modified: 2023-10-26T19:18:19.584Z
 - ## 
 
 - ## 
+# discuss-perf
+- ## 
 
+- ## 
+
+- ## 🔥 [Lessons learned scaling a PostgreSQL database to 1.2bn records/month | Hacker News_201901](https://news.ycombinator.com/item?id=19024872)
+- 
+- 
+- 
+
+- ## 🔥 [Simple script to analyse your PostgreSQL database config, give tuning advice | Hacker News_201903](https://news.ycombinator.com/item?id=19423036)
+- 
+- 
+- 
+
+# discuss-migration/upgrade
 - ## 
 
 - ## 🔥 [Migrating 1200 databases from MySQL to Postgres | Hacker News_201708](https://news.ycombinator.com/item?id=15026887)
@@ -21,7 +36,17 @@ modified: 2023-10-26T19:18:19.584Z
 - 
 - 
 
-- ## 🔥 [Lessons learned scaling a PostgreSQL database to 1.2bn records/month | Hacker News_201901](https://news.ycombinator.com/item?id=19024872)
+- ## 🔥 [Better Database Migrations in Postgres | Hacker News_201709](https://news.ycombinator.com/item?id=15235221)
+- 
+- 
+- 
+
+# discuss-docker
+- ## 
+
+- ## 
+
+- ## 🔥 [A PostgreSQL Docker container that automatically upgrades your database | Hacker News_202307](https://news.ycombinator.com/item?id=36746274)
 - 
 - 
 - 
@@ -38,15 +63,7 @@ modified: 2023-10-26T19:18:19.584Z
 - 
 - 
 
-
-
-
 - ## 🔥 [Cleaning Up Your Postgres Database | Hacker News_202103](https://news.ycombinator.com/item?id=26367080)
-- 
-- 
-- 
-
-- ## 🔥 [PgSync: Sync Postgres data between databases | Hacker News_202003](https://news.ycombinator.com/item?id=22676112)
 - 
 - 
 - 
@@ -61,22 +78,7 @@ modified: 2023-10-26T19:18:19.584Z
 - 
 - 
 
-- ## 🔥 [A PostgreSQL Docker container that automatically upgrades your database | Hacker News_202307](https://news.ycombinator.com/item?id=36746274)
-- 
-- 
-- 
-
-- ## 🔥 [Ora2Pg – Oracle to PostgreSQL database schema converter | Hacker News_202009](https://news.ycombinator.com/item?id=24598785)
-- 
-- 
-- 
-
 - ## 🔥 [Securing a Postgres Database | Hacker News_202104](https://news.ycombinator.com/item?id=26674756)
-- 
-- 
-- 
-
-- ## 🔥 [Better Database Migrations in Postgres | Hacker News_201709](https://news.ycombinator.com/item?id=15235221)
 - 
 - 
 - 

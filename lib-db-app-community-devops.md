@@ -73,7 +73,16 @@ modified: 2023-10-26T18:47:22.664Z
 
 - ## 
 
+- ## 
+
+- ## 
+
 - ## 🔥 [What we learned after I deleted the main production database by mistake | Hacker News_202209](https://news.ycombinator.com/item?id=32903367)
+- 
+- 
+- 
+
+- ## 🔥 [We deleted the production database by accident | Hacker News_202010](https://news.ycombinator.com/item?id=24813795)
 - 
 - 
 - 

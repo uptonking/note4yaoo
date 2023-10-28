@@ -114,7 +114,7 @@ modified: 2023-08-25T21:17:11.979Z
 - ## [Show HN: Sortabase, a collaborative, visual database builder for communities | Hacker News](https://news.ycombinator.com/item?id=35951126)
 - This feels like a combination of Airtable (before the push to be a no-code app platform) and Reddit. This seems way better than the public Google Sheets that make their way around the latter site.
 
-- ## 🛢️🔥 [Recently minted database technologies that I find intriguing | Hacker News](https://news.ycombinator.com/item?id=23531825)
+- ## 🛢️🔥 [Recently minted database technologies that I find intriguing | Hacker News_202006](https://news.ycombinator.com/item?id=23531825)
 - Has anybody tried using Dolt? It looks quite young.
   - I think this idea is really valuable, but I usually see it implemented as a time-series extension on top of Postgres or MySQL, like SQLAlchemy-Continuum or TimescaleDB. i.e. you caan get most of the useful git-like time-travel semantics (modulo schema migrations) out of timeseries data with a separate transaction history table.
   - edit: TerminusDB also looks very cool, although it's approaching this problem from a graph-database angle rather than a relational one. Their architecture (prolog server on top of a rust persistence core) also seems super fascinating, I'd love to read more on how they chose it.

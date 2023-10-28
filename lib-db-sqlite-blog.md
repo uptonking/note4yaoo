@@ -11,7 +11,7 @@ modified: 2022-11-18T17:06:54.371Z
 
 # blog
 
-## [Show HN: Reduce SQLite database size by up to 80% with transparent compression | Hacker News_202208](https://news.ycombinator.com/item?id=32303762)
+## 👥🔥 [Show HN: Reduce SQLite database size by up to 80% with transparent compression | Hacker News_202208](https://news.ycombinator.com/item?id=32303762)
 
 - 
 - 
@@ -54,7 +54,7 @@ modified: 2022-11-18T17:06:54.371Z
   - The memory footprint of the application can be dramatically reduced by only loading content that is relevant to the current display and keeping the bulk of the content on disk.
   - The schema of an SQL database is able to represent information more directly and succinctly than a key/value database such as a ZIP archive. 
 
-## [Consider SQLite_202112](https://blog.wesleyac.com/posts/consider-sqlite)
+## 📝 [Consider SQLite_202112](https://blog.wesleyac.com/posts/consider-sqlite)
 
 - There are a few legitimate downsides to using SQLite. 
   - First off, the data type system. It's bad. Luckily, as of a month ago, you can use strict typing instead, which somewhat improves the situation. 
@@ -62,6 +62,8 @@ modified: 2022-11-18T17:06:54.371Z
 - It's significantly harder to geo-shard your app, although you can get very far with CDNs and caches, and once Litestream supports read replicas, there'll be another excellent tool for improving this.
 - Using SQLite has some failure modes that most programmers are not used to — most notably, if you begin a transaction, then go off and do some blocking operation, you will be blocking all writes for the time that you're doing that, unlike in a connection-based database with a connection pool. If you want to write fast and scalable apps with SQLite, you need to think carefully about your architecture and schema.
 - On the whole, I think using SQLite is a good tradeoff for a lot of projects
+
+## 👥 [Consider SQLite | Hacker News_202112](https://news.ycombinator.com/item?id=29727707)
 
 ## [SQLite Forensics with Belkasoft X](https://belkasoft.com/sqlite)
 
@@ -77,7 +79,7 @@ modified: 2022-11-18T17:06:54.371Z
 
 ## 👥🔥 [SQLite is not a toy database (2021) | Hacker News_202208](https://news.ycombinator.com/item?id=32478907)
 
-## 👥🔥 [SQLite is not a toy database | Hacker News_202103](https://news.ycombinator.com/item?id=26580614)
+## 👥🔥🔥 [SQLite is not a toy database | Hacker News_202103](https://news.ycombinator.com/item?id=26580614)
 
 - 
 - 
@@ -95,7 +97,7 @@ modified: 2022-11-18T17:06:54.371Z
 - 
 - 
 
-## 👥🔥 [SQLite the only database you will ever need in most cases | Hacker News_202104](https://news.ycombinator.com/item?id=26816954)
+## 👥🔥🔥 [SQLite the only database you will ever need in most cases | Hacker News_202104](https://news.ycombinator.com/item?id=26816954)
 
 - 
 - 

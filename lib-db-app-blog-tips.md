@@ -1,11 +1,11 @@
 ---
-title: lib-db-app-blog-xp
+title: lib-db-app-blog-tips
 tags: [blog, database, dev-xp]
 created: 2023-10-26T17:23:29.916Z
-modified: 2023-10-26T17:24:12.181Z
+modified: 2023-10-28T07:03:58.197Z
 ---
 
-# lib-db-app-blog-xp
+# lib-db-app-blog-tips
 
 # guide
 
@@ -17,7 +17,7 @@ modified: 2023-10-26T17:24:12.181Z
 - 
 - 
 
-## 👥 [Things I learned from building a production database | Hacker News_202111](https://news.ycombinator.com/item?id=29322515)
+## 👥🔥🔥 [Things I learned from building a production database | Hacker News_202111](https://news.ycombinator.com/item?id=29322515)
 
 - 
 - 
@@ -43,8 +43,9 @@ modified: 2023-10-26T17:24:12.181Z
 - Online migrations are complex but possible.
 - Significant database growth introduces unpredictability.
 
-## 👥🔥 [Things I wished more developers knew about databases | Hacker News_202004](https://news.ycombinator.com/item?id=22942278)
+## 👥🔥🔥 [Things I wished more developers knew about databases | Hacker News_202004](https://news.ycombinator.com/item?id=22942278)
 
+- 
 - 
 - 
 
@@ -60,7 +61,7 @@ modified: 2023-10-26T17:24:12.181Z
 - 
 - 
 
-## 👥🔥 [Things to know about databases | Hacker News_202206](https://news.ycombinator.com/item?id=31895623)
+## 👥🔥🔥 [Things to know about databases | Hacker News_202206](https://news.ycombinator.com/item?id=31895623)
 
 - 
 - 

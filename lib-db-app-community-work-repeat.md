@@ -28,6 +28,10 @@ modified: 2023-10-27T06:54:11.911Z
 # discuss-regularly
 - ## 
 
+- ## 
+
+- ## 
+
 - ## [Confluent收购Immerok：我的观点 - 知乎_202301](https://zhuanlan.zhihu.com/p/597220515)
 
 - ## [重新思考流处理与流数据库 - 知乎](https://zhuanlan.zhihu.com/p/600701331)
@@ -74,6 +78,16 @@ modified: 2023-10-27T06:54:11.911Z
 
 - ## 🎯🔥 [Building a Database in the 2020s (2022) | Hacker News_202304](https://news.ycombinator.com/item?id=35491682)
 - 
+- 
+- 
+- 
+
+- ## 🎯🔥 [A database for 2022 | Hacker News_202204](https://news.ycombinator.com/item?id=30883015)
+- 
+- 
+- 
+
+- ## 🛢️🔥 [Recently minted(创造) database technologies that I find intriguing | Hacker News_202006](https://news.ycombinator.com/item?id=23531825)
 - 
 - 
 - 

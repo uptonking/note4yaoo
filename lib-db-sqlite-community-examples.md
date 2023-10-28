@@ -14,7 +14,11 @@ modified: 2022-11-27T18:06:10.599Z
 
 - ## 
 
-- ## 
+- ## 🔥 [The Winamp Skin Museum is powered by a SQLite3 database with 1.2GB of metadata | Hacker News_202206](https://news.ycombinator.com/item?id=31703874)
+- 
+- 
+- 
+- 
 
 - ## 🤔🔥 [Ask HN: Have you used SQLite as a primary database? | Hacker News_202204](https://news.ycombinator.com/item?id=31152490)
 

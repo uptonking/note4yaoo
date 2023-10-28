@@ -193,11 +193,11 @@ modified: 2023-10-26T21:54:54.201Z
 - 
 - 
 
-- ## ✨🔥 [Show HN: Airtable, a real-time spreadsheet-database hybrid | Hacker News_201409](https://news.ycombinator.com/item?id=8373914)
+- ## 🚀🔥 [Show HN: Airtable, a real-time spreadsheet-database hybrid | Hacker News_201409](https://news.ycombinator.com/item?id=8373914)
 - Airtable is fantastic. My only wish is that they formalize a “Airtable open format specification”. 
   - At the moment, in spite of all its shortcomings, an excel file is far more portable than an Airtable doc. 
   - We need the Airtable data structure to become an open standard.
-
+  
 - ## 🔥 [A web-based Excel/database hybrid | Hacker News_201205](https://news.ycombinator.com/item?id=3959486)
 - 
 - 

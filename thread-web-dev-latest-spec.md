@@ -7,7 +7,25 @@ modified: 2021-04-27T09:19:37.711Z
 
 # thread-web-dev-latest-spec
 
+# guide
+
 # discuss
+- ## 
+
+- ## 
+
+- ## URL Patterns is now a proper standard It's maintained by the WHATWG
+- https://mastodon.social/@tomayac@toot.cafe/111294689989406401
+  - For example, the pathname pattern `/blog/:title` will match `/blog/hello-world` but not `/blog/2012/02` . 
+  - If you've worked with HTTP frameworks like Express.js in Node.js, this will look very familiar.
+- Now for a proper parser in browsers and nodejs! The regex compilation is a beast(动物；野蛮的人；令人生厌的人) and not incredibly performant at scale.
+- I immediately want to write a parser
+- Having a date component - especially for content where the temporal aspect might be relevant - is IMHO more user friendly.
+
+# discuss
+- ## 
+
+- ## 
 
 - ## 
 

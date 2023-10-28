@@ -26,20 +26,7 @@ modified: 2023-10-26T19:17:54.537Z
 
 - ## 
 
-- ## 🔥 [Get PostgreSQL Database Structure as a Detailed JavaScript Object | Hacker News_201912](https://news.ycombinator.com/item?id=21714500)
-- 
-- 
-- 
 
-- ## 🔥 [Tips for a healthier Postgres database (2021) | Hacker News_202302](https://news.ycombinator.com/item?id=34734021)
-- 
-- 
-- 
-
-- ## 🔥 [Tips for a Healthier Postgres Database | Hacker News_202201](https://news.ycombinator.com/item?id=29858083)
-- 
-- 
-- 
 
 - ## 🔍🔥 [Postgres full-text search: A search engine in a database (2021) | Hacker News_202207](https://news.ycombinator.com/item?id=32059566)
 - 

@@ -31,7 +31,7 @@ modified: 2023-09-17T17:50:49.932Z
 - 
 - 
 
-- ## 💡🔥 [A humble guide to database schema design | Hacker News_202004](https://news.ycombinator.com/item?id=22806142)
+- ## 💡🔥🔥 [A humble guide to database schema design | Hacker News_202004](https://news.ycombinator.com/item?id=22806142)
 - 
 - 
 - 
@@ -55,7 +55,10 @@ modified: 2023-09-17T17:50:49.932Z
 
 - ## 
 
-- ## 
+- ## 🔥 [How to build a IP geolocation database from scratch? | Hacker News_202309](https://news.ycombinator.com/item?id=37507355)
+- 
+- 
+- 
 
 - ## 🔥 [Why you might want a domain-specific database like TigerBeetleDB | Hacker News_202209](https://news.ycombinator.com/item?id=32779851)
 - 

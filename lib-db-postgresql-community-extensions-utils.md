@@ -16,7 +16,8 @@ modified: 2023-10-26T21:43:43.231Z
 
 - ## 
 
-- ## 
+- ## [PGX: Write Postgres extensions in Rust instead of C | Hacker News_202007](https://news.ycombinator.com/item?id=23821112)
+
 # discuss
 - ## 
 

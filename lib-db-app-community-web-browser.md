@@ -14,7 +14,7 @@ modified: 2023-09-17T18:47:01.460Z
 
 - ## 
 
-- ## 〰️🤔🔥 [WebAssembly is eating the database? | Hacker News_202305](https://news.ycombinator.com/item?id=36044112)
+- ## 🫐🤔🔥 [WebAssembly is eating the database? | Hacker News_202305](https://news.ycombinator.com/item?id=36044112)
 - Again nothing new on the horizon, DB2, Oracle and MS SQL Server have had JVM and CLR available for UDF for the last 20 years. Naturally one needs to sell WebAssembly as being the first of a kind.
 - 👉🏻 Your examples of novelty are all things that were possible decades ago in most mainstream DBMSes. The SQLite one in particular is bizarre: it’s inherently an embedded db with bindings in every language.
   - Supporting user defined functions as compiled objects loaded into the database is as old as the hills. The sandboxing part is silly since no one in their right mind is going to expose their database to untrusted users in the first place.

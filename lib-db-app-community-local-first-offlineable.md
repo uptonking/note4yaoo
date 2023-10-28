@@ -65,7 +65,7 @@ modified: 2023-09-22T20:15:10.616Z
   - I intentionally chose this architecture since I didn't want to run my own sync service. It keeps the sync system free, but iCloud can be slow. Unfortunately for me, if iCloud is slow, the app gets blamed for it.
 - I am using event sourcing, and git is basically event sourcing for code
 
-- ## 🆚️🔥 [Offline-First Database Comparison | Hacker News_202110](https://news.ycombinator.com/item?id=28995268)
+- ## 🆚️🔥🔥 [Offline-First Database Comparison | Hacker News_202110](https://news.ycombinator.com/item?id=28995268)
 
 - So glad to see PouchDB included. We use it and have generally had a great experience! We use it with CouchDB on the backend, and Couch seems like a fantastic way to go for use cases involving syncing data between devices with an offline mode and syncing between clients. It was built from the ground up with replication in mind.
   - The nature of pouchdb/couchdb and the design philosophy behind it makes it relatively easy to scale to additional servers. Couchdb is master-master, which is a good eventually consistent model that should help in any horizontal scaling. The base process is erlang/elixir which should scale vertically well.

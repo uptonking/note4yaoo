@@ -15,7 +15,7 @@ modified: 2023-10-26T18:14:17.038Z
 
 ## [从 Notion 分片 Postgres 中吸取的教训(Notion 工程团队) - 为少 - 博客园_202110](https://www.cnblogs.com/hacker-linner/p/16243380.html)
 
-## 🔥 [retool: How we upgraded our 4TB Postgres database | Hacker News_202204](https://news.ycombinator.com/item?id=31084147)
+## 🔥🔥 [retool: How we upgraded our 4TB Postgres database | Hacker News_202204](https://news.ycombinator.com/item?id=31084147)
 
 - 
 - 
@@ -32,7 +32,7 @@ modified: 2023-10-26T18:14:17.038Z
 - 
 - 
 
-# blogs-powered-by-pg
+# blogs-pg-powered
 
 ## 🔥 [Building a distributed time-series database on PostgreSQL | Hacker News_201908](https://news.ycombinator.com/item?id=20760324)
 

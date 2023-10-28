@@ -442,7 +442,7 @@ modified: 2023-09-16T17:27:42.089Z
 # discuss-alternatives-datalog/datomic
 - ## 
 
-- ## [Comparing Database Types | Hacker News](https://news.ycombinator.com/item?id=21060866)
+- ## 🔥 [Comparing Database Types | Hacker News](https://news.ycombinator.com/item?id=21060866)
 - Deductive databases derive logical consequences based on facts and rules.
   - Datalog and its superset Prolog are notable instances of this idea, and they make the connection between the relational model and predicate logic particularly evident.
 

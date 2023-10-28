@@ -16,13 +16,20 @@ modified: 2023-10-27T09:17:22.424Z
 
 - ## 
 
-- ## 
+- ## 🔥🔥 [When your data doesn’t fit in memory: the basic techniques | Hacker News_201911](https://news.ycombinator.com/item?id=21508542)
+- 
+- 
+- 
+
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## 🔥🔥 [Show HN: I wrote a free eBook about many lesser-known/secret database tricks | Hacker News_202212](https://news.ycombinator.com/item?id=33833836)
+- 
+- 
+- 
 
 - ## 🔥 [Mistakes Beginners Make When Working with Databases | Hacker News_201606](https://news.ycombinator.com/item?id=11862723)
 - 

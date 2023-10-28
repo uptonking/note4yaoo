@@ -24,6 +24,20 @@ modified: 2022-11-25T09:47:43.079Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [SQLite WASM: Something subtle in the browser | Hacker News_202302](https://news.ycombinator.com/item?id=34774357)
+- 
+- 
+- 
+
+- ## 🤔🔥 [Why SQLite is so great for the edge | Hacker News_202306](https://news.ycombinator.com/item?id=36208568)
+- 
+- 
+- 
+
 - ## SQLite is just corruption-prone under Windows?
 - https://twitter.com/fabiospampinato/status/1693284873581060429
   - SQLite is very clear that you can corrupt a database if file locking APIs are not working correctly.

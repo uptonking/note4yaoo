@@ -19,7 +19,7 @@ modified: 2023-10-26T17:33:04.929Z
 - 
 - 
 
-## 👥🔥 [Hosting SQLite databases on GitHub Pages or any static file hoster_202105](https://news.ycombinator.com/item?id=27016630)
+## 👥🔥🔥 [Hosting SQLite databases on GitHub Pages or any static file hoster_202105](https://news.ycombinator.com/item?id=27016630)
 
 - how is this possible???
   - Use Http Range (normally used for pausing and continuing large file downloads) to request specific byte ranges from the file. 
@@ -145,7 +145,7 @@ modified: 2023-10-26T17:33:04.929Z
 - 
 - 
 
-## 👥🔥 [How SQL Database Engines Work, by the Creator of SQLite (2008) [video] | Hacker News_201806](https://news.ycombinator.com/item?id=17387851)
+## 👥🔥🔥 [How SQL Database Engines Work, by the Creator of SQLite (2008) [video] | Hacker News_201806](https://news.ycombinator.com/item?id=17387851)
 
 - 
 - 

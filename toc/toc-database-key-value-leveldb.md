@@ -46,12 +46,6 @@ modified: 2022-11-03T04:14:00.563Z
   - https://github.com/w41ter/sekas /rust
     - a distributed key-value store, used as cache, database, and storage engine for other distributed system.
 
-- https://github.com/dicedb/dice /go
-  - Re-implementation of Redis in Golang
-  - simple Golang-based in-memory KV store that speaks the Redis dialect
-  - not production ready
-  - started building Dice DB to understand Redis better with [Redis Internals Course](https://arpitbhayani.me/redis-internals/)
-
 - https://github.com/mozilla/rkv /rust
   - typed key-value storage solution. 
   - It supports multiple backend engines with varying guarantees, such as LMDB for performance, or "SafeMode" for reliability.
@@ -75,6 +69,7 @@ modified: 2022-11-03T04:14:00.563Z
   - https://github.com/panicfarm/sltest
     - Demonstrates potential memory leak in SLED.
   - [Subscriptions and the Pit of Success](https://github.com/spacejam/sled/issues/1162)
+  - [An embedded database written in Rust | Hacker News_201805](https://news.ycombinator.com/item?id=17170733)
   - [Sled: Embedded Database Written in Rust | Hacker News_202002](https://news.ycombinator.com/item?id=22375979)
     - LevelDB is a LSM database. 
     - LSM is generally better for write workloads over BTree DBs like LMDB and sled. LMDB also has a single writer restriction.
@@ -103,12 +98,6 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/mikeal/dkv /js/inactive
   - Decentralized key-value store running on IPFS
   - DKV offers a simple interface for storing key/value pairs. Values can include links to other values recursively, giving you the ability to create complex graphs that de-duplicate commonly linked data.
-
-- https://github.com/alicebob/miniredis /go
-  - Miniredis implements (parts of) the Redis server, to be used in unittests. 
-  - It enables a simple, cheap, in-memory, Redis replacement, with a real TCP interface. 
-  - Think of it as the Redis version of net/http/httptest.
-  - There are no dependencies on external binaries, so you can easily integrate it in automated build processes.
 # leveldb-like
 - https://github.com/Level/bench
   - Benchmark `abstract-level` databases. 
@@ -189,6 +178,23 @@ modified: 2022-11-03T04:14:00.563Z
   - But in an LSM Tree, all write operations, i.e., insertions, updates, deletions, are performed in somewhere else. These operations will be batched into SST (sorted string table) files and be written to the disk. Once written to the disk, the file will not be changed. These operations are applied lazily on disk with a special task called compaction. The compaction job will merge multiple SST files and remove unused data.
 - https://github.com/Fullstop000/wickdb
   - Pure Rust LSM-tree based embedded storage engine
+# redis-like
+- https://github.com/seppo0010/rsedis /1.7kStar/bsd/202011/rust
+  - Redis re-implemented in Rust. To learn Rust.
+  - rsedis does not rely on UNIX-specific features. Windows users can run it as a replacement of Redis.
+  - rsedis uses multiple threads which may be more useful in machines with multiple cores.
+
+- https://github.com/dicedb/dice /go
+  - Re-implementation of Redis in Golang
+  - simple Golang-based in-memory KV store that speaks the Redis dialect
+  - not production ready
+  - started building Dice DB to understand Redis better with [Redis Internals Course](https://arpitbhayani.me/redis-internals/)
+
+- https://github.com/alicebob/miniredis /go
+  - Miniredis implements (parts of) the Redis server, to be used in unittests. 
+  - It enables a simple, cheap, in-memory, Redis replacement, with a real TCP interface. 
+  - Think of it as the Redis version of net/http/httptest.
+  - There are no dependencies on external binaries, so you can easily integrate it in automated build processes.
 # level-search
 - search-index /1.3kStar/MIT/202207/js
   - https://github.com/fergiemcdowall/search-index

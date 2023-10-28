@@ -135,12 +135,6 @@ modified: 2023-09-13T20:24:41.516Z
 - My best solution so far has been to default all non-logged-in content to an “anon” user, and then provide an api that allow devs to associate some or all current “anon” content to an actual user.
   - They can write an auto association algorithm that works for them, or provide pop-ups asking the user what they want to do with the data.
 
-- ## [Why SQLite is so great for the edge | Hacker News_202306](https://news.ycombinator.com/item?id=36208568)
-- 
-- 
-- 
-- 
-
 - ## Are products changing from "one giant DB with all user data mixed" to "Isolated data. E.g., 1 DB per user"?
 - https://twitter.com/tantaman/status/1696165303464468489
 - collaboration in a "db per user" model is a disaster.

@@ -54,6 +54,13 @@ modified: 2023-03-07T04:43:58.713Z
   - https://github.com/josephg
   - https://github.com/josephg/diamond-types
 # crdt-algorithms
+- rga
+- logoot
+  - sparse n-ary tree
+- lseq
+  - exponential tree
+- treedoc
+  - binary tree
 
 ## RGA(Replicated Growable Array) / Causal Tree
 
@@ -110,7 +117,7 @@ modified: 2023-03-07T04:43:58.713Z
   - First we need to find an actual index, where a predecessor of inserted element can be found. 
   - Then just insert our element under next index. 
 
-- 👉🏻 what if two actors will concurrently insert different elements after the same predecessor?
+- 🤔 what if two actors will concurrently insert different elements after the same predecessor?
   - Again we'll use our virtual pointers, and extend them with one important property - we'll make them ordered (first by sequence number, then replica ID), just like in the case of LSeq. 
 - Now the rule is: recursively, we shift our insertion index by one to the right every time when virtual pointer of the element living under that index already had a higher value than virtual pointer of inserted element.
   - 插入位置的id要比现有节点id大
@@ -532,8 +539,8 @@ modified: 2023-03-07T04:43:58.713Z
 
 - [Faster CRDTs: An Adventure in Optimization | Hacker News_202108](https://news.ycombinator.com/item?id=28017204)
   - This is still hard for me to determine when position-based list CRDT (Logoot, LogootSPlit, ...) are better than tombstone-based list CRDT (RGA, RgaSplit, Yata, ...). It could be worth to assess that.
-  - 3 year ago I started an update of LogootSplit. The new CRDT is named Dotted LogootSplit [1] and enables delta-synchronizations. The work is not finished: I had other priorities such as writing my thesis
-  - I have to perform some benchmark. However I'm more interested in the hypothetical advantages of Dotted LogootSplit regarding synchronization over unreliable networks. From an engineering point-of-view, I'm using a partially-persistent-capable AVL tree [2]. Eventually I would like to switch to a partially-persistent-capable b-tree. Unfortunately writing a paper is very time consuming, and time is missing.
+  - 3 year ago I started an update of LogootSplit. The new CRDT is named Dotted LogootSplit and enables delta-synchronizations. The work is not finished: I had other priorities such as writing my thesis
+  - I have to perform some benchmark. However I'm more interested in the hypothetical advantages of Dotted LogootSplit regarding synchronization over unreliable networks. From an engineering point-of-view, I'm using a partially-persistent-capable AVL tree. Eventually I would like to switch to a partially-persistent-capable b-tree. Unfortunately writing a paper is very time consuming, and time is missing.
 
 - https://news.ycombinator.com/item?id=18193094
   - My hunch(预感；直觉) is that because CRDTs are so much easier to grok(通过感觉意会) than OT, engineers are empowered to make use case-specific improvements that aren't reflected in academic literature.
@@ -542,7 +549,7 @@ modified: 2023-03-07T04:43:58.713Z
   - Additionally, the best CRDTs (like Logoot/LSEQ) don't require tombstones, garbage collection, or "quiescence." The complexity burden is far lower.
   - To top it off, CRDTs are offline-capable by default.
 
-### [LSEQ: an Adaptive Structure for Sequences in Distributed Collaborative Editing](https://hal.science/hal-00921633/en)
+### 📕 [LSEQ: an Adaptive Structure for Sequences in Distributed Collaborative Editing_201309](https://www.researchgate.net/publication/262162421_LSEQ_an_Adaptive_Structure_for_Sequences_in_Distributed_Collaborative_Editing)
 
 - In order to preserve the total order on the elements of the sequence, a unique and immutable identifier is associated with each basic element of the structure (character, line or paragraph according to the chosen granularity). 
 - This allows distinguishing two classes of sequence CRDTs: 
@@ -550,16 +557,16 @@ modified: 2023-03-07T04:43:58.713Z
   - This class includes WOOT [11], WOOTO [20], WOOTH [1], CT [7], RGA [13], [23]. 
   - In this class, a tombstone replaces each suppressed element. 
   - Although it enjoys a fixed length for identifiers and it has a space complexity which depends on the number of operations. 
-  - For example, a document with an history of a million operations and ﬁnally containing a single line can have as much as 499999 tombstones. 
+  - For example, a document with an history of a million operations and finally containing a single line can have as much as 499999 tombstones. 
   - Garbaging tombstones requires costly protocols in decentralized distributed systems. 
 - (ii) Variable-size identifiers. 
   - This class includes for example Logoot [21]. It does not require tombstones, but its identifiers can grow unbounded. Consequently, although it does not require garbage protocols, its space complexity remains till now linear with the number of insert operations. Thus, it is possible to have only a single element in the sequence having an identifier of length 499999. 
   - Treedoc [12] uses both tombstones and variable size identifiers but relies on a complex garbage protocol when identifiers grow too much.
-- In this paper, we propose a new approach, called LSEQ, that belongs to the variable-size identifiers class of sequence CRDTs.
+- ✨ In this paper, we propose a new approach, called LSEQ, that belongs to the variable-size identifiers class of sequence CRDTs.
   - LSEQ is an adaptive allocation strategy with a sub-linear upper-bound in its spatial complexity. 
 - We choose Logoot (for comparison) as it delivers overall best performances for variable-size sequence CRDTs
 
-- The Logoot paper [21] already highlighted the importance of allocation strategies (alloc). 
+- The Logoot paper already highlighted the importance of allocation strategies (alloc). 
 - Indeed, experiments concerned two strategies. 
   - (1) Random: randomly choosing between the identifiers of the two neighbours. It delivers poor performance because the identifiers quickly saturate the space, resulting in the creation of new levels. As consequence, the size of identifiers grows quickly. 
   - (2) Boundary: randomly choosing between the identifiers of the two neighbours bounded by a boundary maximum value. The strategy allocates the new identifiers closer to their preceding identifier. Of course, it works well when the editions are performed right-to-left.
@@ -567,7 +574,7 @@ modified: 2023-03-07T04:43:58.713Z
   - boundary+ allocates from p plus a fixed boundary, boundary– allocates from q minus a fixed boundary. 
   - The boundary never changes whatever the depth of the tree.
 
-- Logoot’s [21] underlying allocation strategy always uses the same base to allocate its identifiers. 
+- Logoot’s underlying allocation strategy always uses the same base to allocate its identifiers. 
   - With regard to the tree representation, it means that the arity is set to base.
 - A high base value is not profitable if the number of insert operations in this part of the sequence is low.
   - On the contrary, keeping a constant base value when the number of insert operations starts to be very high does not allow to fully benefit of the boundary strategy.
@@ -576,10 +583,10 @@ modified: 2023-03-07T04:43:58.713Z
 - Doubling the base at each depth implies an exponential growth of the number of available identifiers. 
   - Thus, the model corresponds to the exponential trees and consequently it benefits of their complexities. 
 
-- The variable-size identifiers class of CRDT includes Logoot [21] and Treedoc [12]. 
+- The variable-size identifiers class of CRDT includes Logoot and Treedoc. 
 - These CRDTs use growing identifiers to encode the total order among elements of the sequence. 
-  - In the worst case, the size of identifiers is linear in the total number of insert operations done on the document [1]. 
-- Logoot and Treedoc [12] have different allocation strategies. 
+  - In the worst case, the size of identifiers is linear in the total number of insert operations done on the document. 
+- 🆚️ Logoot and Treedoc have different allocation strategies. 
 - Treedoc has two allocation strategies: 
   - (i) the first strategy allocates an identifier by directly appending a bit on one of its neighbour identifier. 
   - (ii) The second strategy increases the depth of this new identifier by ⌈log2(h)⌉+1 (where h is the highest depth of the identifiers already allocated) and allocates the lowest value possible with this growth, in prevision of future insertions. 
@@ -596,7 +603,7 @@ modified: 2023-03-07T04:43:58.713Z
   - (3) a random strategy choice.
   - Although each component cannot achieve sub-linear complexity, the conjunction of three components provides the expected behaviour.
 
-### TreeDoc: A Commutative Replicated Data Type for Cooperative Editing
+### 📕 [TreeDoc: A Commutative Replicated Data Type for Cooperative Editing_200906](https://www.researchgate.net/publication/221460068_A_Commutative_Replicated_Data_Type_for_Cooperative_Editing)
 
 - Logoot uses a sparse n-ary tree rather than Treedoc's dense binary tree. 
   - A position identifier is a list of (long) unique identifiers, and Logoot does not flatten.

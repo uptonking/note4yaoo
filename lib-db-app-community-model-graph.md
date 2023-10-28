@@ -18,7 +18,7 @@ modified: 2023-10-26T15:04:42.968Z
 
 - ## 
 
-- ## 🕸️🔥 [Postgres as a graph database | Hacker News_202303](https://news.ycombinator.com/item?id=35386948)
+- ## 🕸️🔥🔥 [Postgres as a graph database | Hacker News_202303](https://news.ycombinator.com/item?id=35386948)
 - I designed and maintain several graph benchmarks in the Linked Data Benchmark Council, including workloads aimed for databases. We make no restrictions on implementations, they can any query language like Cypher, SQL, etc.
   - In our last benchmark aimed at analytical systems, we found that SQL queries using WITH RECURSIVE can work for expressing reachability and even weighted shortest path queries. However, formulating an efficient algorithm yields very complex SQL queries and their execution requires a system with a sophisticated optimizer such as Umbra developed at TU Munich. Industry SQL systems are not yet at this level but they may attain that sometime in the future.
   - **Another direction to include graph queries in SQL is the upcoming SQL/PGQ (Property Graph Queries) extension**. I'm involved in a project at CWI Amsterdam to incorporate this language into DuckDB.
@@ -57,7 +57,7 @@ modified: 2023-10-26T15:04:42.968Z
 
 - It depends on how the graph is stored in the database. In this project the nodes ids are TEXT so it will likely not scale very well. I know because I use a similar implementation with GUID as string in Sqlite in a project since a couple of years and while it works fine for the graph I have (<1 million nodes, few edges per nodes) it won’t perform too well past that.
 
-- ## [Bullshit graph database performance benchmarks | Hacker News_202301](https://news.ycombinator.com/item?id=34342371)
+- ## 🆚️🔥 [Bullshit graph database performance benchmarks | Hacker News_202301](https://news.ycombinator.com/item?id=34342371)
 - 
 - 
 - 

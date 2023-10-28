@@ -10,7 +10,12 @@ modified: 2023-09-17T18:17:41.377Z
 > about database internal data structure like btree/lsm/index
 
 # guide
-
+- mysql
+- postgresql
+  - b-tree index
+- sqlite
+  - b-tree index
+- mongodb
 # discuss-stars
 - ## 
 
@@ -19,6 +24,11 @@ modified: 2023-09-17T18:17:41.377Z
 - ## 
 
 - ## 🤔🔥 [Why databases use ordered indexes but programming uses hash tables | Hacker News_201912](https://news.ycombinator.com/item?id=21738802)
+- 
+- 
+- 
+
+- ## 🔥 [Foundations of Databases (1995) | Hacker News_201904](https://news.ycombinator.com/item?id=19726520)
 - 
 - 
 - 
@@ -192,3 +202,8 @@ modified: 2023-09-17T18:17:41.377Z
 - https://twitter.com/fuergaosi/status/1658470145109680132
 - 已经见过好几次有老哥为了计算时间区间, 把数据拉到内存里面 For loop 计算了
 - 当年 LBS 跟现在的 AIGC 一样火的时候，R tree 都可以写到简历上来吹牛逼了。
+
+- ## 🔥 ["I've isolated the bug to a database query" | Hacker News_201111](https://news.ycombinator.com/item?id=3215317)
+- 
+- 
+- 

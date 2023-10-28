@@ -33,6 +33,11 @@ modified: 2023-10-26T17:12:59.665Z
 - 
 - 
 
+- ## 🔥 [Immudb 1.0 – open-source, immutable database with SQL and verified timetravel | Hacker News_202105](https://news.ycombinator.com/item?id=27275691)
+- 
+- 
+- 
+
 - ## 🔥 [Umbra: an ACID-compliant database built for in-memory analytics speed | Hacker News_202001](https://news.ycombinator.com/item?id=22153515)
 - 
 - 
@@ -64,6 +69,17 @@ modified: 2023-10-26T17:12:59.665Z
 - 
 
 - ## 🛢️🔥 [Microsoft Access: The Database Software That Won't Die | Hacker News_201910](https://news.ycombinator.com/item?id=21401198)
+- 
+- 
+- 
+
+
+- ## 🔥 [BayesDB - a Bayesian database table | Hacker News_201312](https://news.ycombinator.com/item?id=6864339)
+- 
+- 
+- 
+
+- ## 🔥 [RethinkDB: An open-source distributed database built with love over three years | Hacker News_201211](https://news.ycombinator.com/item?id=4763879)
 - 
 - 
 - 

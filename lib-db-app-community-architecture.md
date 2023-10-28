@@ -57,7 +57,7 @@ modified: 2023-09-17T17:37:19.913Z
 - Noms is versioned, forkable, syncable, append-only database. It is possible to see the entire history of the database
 - LiteTree SQLite with Branches
 
-- ## 🤔 [How not to structure database-backed web apps: performance bugs in the wild | Hacker News_201806](https://news.ycombinator.com/item?id=17414383)
+- ## 🤔🔥 [How not to structure database-backed web apps: performance bugs in the wild | Hacker News_201806](https://news.ycombinator.com/item?id=17414383)
 - 
 - 
 - 
@@ -108,6 +108,8 @@ modified: 2023-09-17T17:37:19.913Z
 - 
 - 
 - 
+
+- 🔥 [Database of Databases | Hacker News](https://news.ycombinator.com/item?id=37314622)
 
 - ## 🔥 [The magic of small databases | Hacker News_202301](https://news.ycombinator.com/item?id=34558054)
 - 

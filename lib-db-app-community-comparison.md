@@ -30,6 +30,12 @@ modified: 2023-09-17T17:46:07.620Z
   - Every sufficiently advanced system does that, be it a CRM that allows custom fields, or a project management or ticket system, a workflow system etc. And basically all enterprise software contains elements of these systems.
 
 - A good alternative would be to use JSON types in RDBMS in combination with classic field types. EAV is really just free form data and JSON is easier to query in MySQL or Postgres.
+
+- ## 🔥 [Comparing Database Types | Hacker News](https://news.ycombinator.com/item?id=21060866)
+- Deductive databases derive logical consequences based on facts and rules.
+  - Datalog and its superset Prolog are notable instances of this idea, and they make the connection between the relational model and predicate logic particularly evident.
+
+- The column-family databases mentioned (Cassandra, HBase) are both just fancy key-value stores that add semantics for separate tables and cell-level data so you're not rolling it yourself.
 # discuss
 - ## 
 

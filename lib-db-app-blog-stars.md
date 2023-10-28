@@ -108,4 +108,12 @@ modified: 2023-09-16T17:49:28.532Z
 - Once we have the set of database changes serialized as Kafka records, we need a way to transform them into the format required at the derived system. 
 
 - The benefit of CDC becomes apparent once we start using it as a solution for the rest of the issues mentioned in the beginning of the article. 
+# blogs-internals
+
+## 👥🔥 [Basic Data Structures and Algorithms in the Linux Kernel | Hacker News_201311](https://news.ycombinator.com/item?id=6787836)
+
+- 
+- 
+- 
+
 # more

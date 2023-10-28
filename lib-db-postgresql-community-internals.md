@@ -1,0 +1,42 @@
+---
+title: lib-db-postgresql-community-internals
+tags: [codebase, community, database, internals, postgresql]
+created: 2023-10-28T13:45:28.278Z
+modified: 2023-10-28T13:46:14.957Z
+---
+
+# lib-db-postgresql-community-internals
+
+# guide
+
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Postgres is an amazing database. It’s only significant weakness now is in Materialized views, with their lack of incremental refresh._202207
+- https://news.ycombinator.com/item?id=32097663
+  - Was disappointing to see there was no progress towards this in v15.
+- That work towards incrementally updated views is happening and progressing. 
+  - For now, it's a separate extension, though: https://github.com/sraoss/pg_ivm
+- I wanted incremental refresh in Postgres as well and found that you can manage your own table to get something close.
+  - Basically you create a regular table in place of a materialised one, only aggregate data newer than what's currently in the table then store the new aggregates in table. Repeat this an interval.
+- Interestingly, DBT does not support creating materialized views.
+
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🔥 [Get PostgreSQL Database Structure as a Detailed JavaScript Object | Hacker News_201912](https://news.ycombinator.com/item?id=21714500)
+- 
+- 
+- 

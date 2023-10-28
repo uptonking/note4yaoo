@@ -11,7 +11,7 @@ modified: 2023-10-26T18:14:17.038Z
 
 # blogs
 
-# blogs-powered-by-sqlite
+# blogs-sqlite-powered
 
 ## [Announcing D1: our first SQL database_202211](https://blog.cloudflare.com/introducing-d1/)
 

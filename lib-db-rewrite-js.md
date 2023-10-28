@@ -61,7 +61,7 @@ modified: 2022-11-27T19:20:02.987Z
     - This parser does not support (yet) PL/pgSQL.
 # db-non-js
 
-## [Build Your Own Database From Scratch using cpp](https://build-your-own.org/database/)
+## 📝 [Build Your Own Database From Scratch using cpp](https://build-your-own.org/database/)
 
 - Part I: Simple KV Store
 - Part II: Mini Relational DB
@@ -82,7 +82,7 @@ modified: 2022-11-27T19:20:02.987Z
 - https://github.com/eatonphil/gosql /go
   - An early PostgreSQL implementation in Go
 
-- [Writing a SQL database from scratch in Go | Hacker News](https://news.ycombinator.com/item?id=22850817)
+- 🔥 [Writing a SQL database from scratch in Go | Hacker News](https://news.ycombinator.com/item?id=22850817)
 
 ## [Writing a sqlite clone from scratch in C](https://cstack.github.io/db_tutorial/)
 
@@ -91,6 +91,10 @@ modified: 2022-11-27T19:20:02.987Z
   - B-Tree Leaf Node Format
   - prepare_statement (our “SQL Compiler”) does not understand SQL right now. In fact, it only understands two words select and insert
 
-### 👥🔥 [Let’s Build a Simple Database (2017) | Hacker News_201904](https://news.ycombinator.com/item?id=19581721)
+### 👥🔥🔥 [Let’s Build a Simple Database (2017) | Hacker News_201904](https://news.ycombinator.com/item?id=19581721)
+
+- 
+- 
+- 
 
 # more

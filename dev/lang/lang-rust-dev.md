@@ -19,17 +19,24 @@ modified: 2022-11-11T06:57:09.670Z
 - who is using #rust
   - 国内: tikv
   - .
-
-- resource
-  - [Rust语言圣经(Rust Course)](https://course.rs/about-book.html)
-  - [24 days from node.js to Rust](https://candle.dev/blog/javascript-to-rust/javascript-to-rust-day-1-rustup/)
-  - [Rust Language Cheat Sheet](https://cheats.rs/)
-  - [This Week in Rust](https://this-week-in-rust.org/)
+# rust-resources
+- [24 days from node.js to Rust](https://candle.dev/blog/javascript-to-rust/javascript-to-rust-day-1-rustup/)
   - https://github.com/Mercateo/rust-for-node-developers
-    - I initially wrote this tutorial in the summer of 2016 for Rust 1.0, though I haven't added new chapters.
+  - I initially wrote this tutorial in the summer of 2016 for Rust 1.0, though I haven't added new chapters.
+
+- [Blessed.rs - An unofficial guide to the Rust ecosystem](https://blessed.rs/crates)
+  - https://github.com/nicoburns/blessed-rs
+  - a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust. This list attempts to answer those questions.
+  - [Blessed.rs – An unofficial guide to the Rust ecosystem | Hacker News_202211](https://news.ycombinator.com/item?id=33506132)
+
+- [Rust语言圣经(Rust Course)](https://course.rs/about-book.html)
   - https://github.com/google/comprehensive-rust
-    - Rust course used by the Android team at Google
-# tips
+  - Rust course used by the Android team at Google
+
+- [Rust Language Cheat Sheet](https://cheats.rs/)
+
+- [This Week in Rust](https://this-week-in-rust.org/)
+# rust-env
 - rustup自带版本管理
   - [Rustup 镜像安装帮助 清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/help/rustup/)
   - [Rust crates.io 索引镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/crates.io-index.git/)

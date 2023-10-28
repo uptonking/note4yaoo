@@ -149,11 +149,6 @@ modified: 2023-03-11T15:37:59.134Z
   - Replicache is instead built on an older technique from multiplayer games. 
   - Turns out there's still a lot to love in that smooth old-school sync.
 
-## [Designing Data Structures for Collaborative Apps - Matthew Weidner](https://mattweidner.com/2022/02/10/collaborative-data-design.html)
-
-- A good starting point is to design an ordinary (non-CRDT) data model, using ordinary objects, collections, etc., then convert it to a CRDT version. 
-  - So variables become Registers, objects become CRDT Objects, lists become List CRDTs, sets become Unique Sets or Add-Wins Sets, etc
-
 ## [A comprehensive study of Convergent and Commutative CRDT_201101](https://www.researchgate.net/publication/50949847_A_comprehensive_study_of_Convergent_and_Commutative_Replicated_Data_Types)
 
 - Sets constitute one of the most basic data structures. 
@@ -167,8 +162,4 @@ modified: 2023-03-11T15:37:59.134Z
 - Two-Phase Set (2P-Set)
   - It combines a G-Set for adding with another for removing; the latter is colloquially known as the tombstone set. 
   - To avoid anomalies, removing an element is allowed only if the source observes that the element is in the set.
-# blogs-text
-
-## [cola: a text CRDT for real-time collaborative editing_202309](https://nomad.foo/blog/cola)
-
 # more

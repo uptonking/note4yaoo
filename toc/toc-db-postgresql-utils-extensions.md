@@ -14,9 +14,10 @@ modified: 2023-10-26T15:29:40.053Z
 # plugins
 
 # utils
-- https://github.com/pgcentralfoundation/pgrx /rust
+- https://github.com/pgcentralfoundation/pgrx /202310/rust
   - a framework for developing PostgreSQL extensions in Rust and strives to be as idiomatic and safe as possible.
   - supports Postgres v11-v15
+  - [PGX: Write Postgres extensions in Rust instead of C | Hacker News_202007](https://news.ycombinator.com/item?id=23821112)
 # query
 - https://github.com/tozd/node-reactive-postgres /202204/js/inactive
   - brings reactive (or live) queries to PostgreSQL.

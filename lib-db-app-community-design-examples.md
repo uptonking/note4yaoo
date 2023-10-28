@@ -22,14 +22,12 @@ modified: 2023-10-27T09:14:12.088Z
 - 
 - 
 
-
-
 - ## 🌰🔥 [Gallery of database schema diagrams of open-source packages | Hacker News_202004](https://news.ycombinator.com/item?id=23006159)
 - 
 - 
 - 
 
-- ## 🤔🌰🔥 [Ask HN: What are some examples of good database schema designs? | Hacker News_202002](https://news.ycombinator.com/item?id=22324691)
+- ## 🌰🔥 [Ask HN: What are some examples of good database schema designs? | Hacker News_202002](https://news.ycombinator.com/item?id=22324691)
 
 - Northwind Traders
 - That made me laugh. My 2 cents after doing this long enough to recognise it
@@ -42,7 +40,6 @@ modified: 2023-10-27T09:14:12.088Z
   - If you really want a string for your primary key make it a candidate key (why, because someone will insist on changing it)
   - E/R diagrams are your friend
   - So are Venn diagrams for visualizing a complex select
-
 # discuss
 - ## 
 

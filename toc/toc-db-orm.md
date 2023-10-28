@@ -222,6 +222,8 @@ modified: 2021-08-30T18:56:09.644Z
 
 - https://github.com/nukep/llamadb /201712/rust/inactive
   - a simple SQL database, written entirely in Rust 
+  - SQLite documentation helped shed some light on the SQL syntax and other crucial details such as their B-Tree implementation.
+  - [LlamaDB: A simple SQL database written in Rust | Hacker News_201504](https://news.ycombinator.com/item?id=9395690)
 
 - https://github.com/khonsulabs/bonsaidb /MIT/rust
   - https://bonsaidb.io/

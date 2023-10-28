@@ -30,7 +30,10 @@ modified: 2023-10-26T22:04:11.502Z
 
 - ## 
 
-- ## 
+- ## 🔥🔥 [How to steal a developer's local database | Hacker News_201609](https://news.ycombinator.com/item?id=12406310)
+- 
+- 
+- 
 
 - ## 🔥 [Replacing Linux with a Database System | Hacker News_201807](https://news.ycombinator.com/item?id=17634424)
 - 

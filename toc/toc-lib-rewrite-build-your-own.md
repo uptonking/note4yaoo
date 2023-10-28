@@ -9,12 +9,12 @@ modified: 2021-09-29T13:23:09.969Z
 
 # guide
 
+- search: rewrite, alternative, clone
+# catalog
 - https://github.com/aosabook/500lines
   - https://aosabook.org/en/
   - This is the source for the book 500 Lines or Less, the fourth in the Architecture of Open Source Applications series.
   - 示例包括 spreadsheet、template-engine、crawler、server
-
-
 
 - https://github.com/gouflv/build-my-own-x
   - 再次发明轮子, 重写常用api和工具库

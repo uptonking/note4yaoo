@@ -1,11 +1,11 @@
 ---
-title: lib-db-app-blog-usecase
-tags: [blog, database-design, tree, usecase]
+title: lib-db-app-blog-design-examples
+tags: [blog, database-design, examples, tree, usecase]
 created: 2023-10-26T18:19:36.493Z
-modified: 2023-10-26T18:20:15.359Z
+modified: 2023-10-28T07:04:50.432Z
 ---
 
-# lib-db-app-blog-usecase
+# lib-db-app-blog-design-examples
 
 # guide
 

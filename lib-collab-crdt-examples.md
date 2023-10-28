@@ -912,6 +912,39 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/codesandbox/crdt-tree /ts
   - A highly-available move operation for replicated trees and distributed filesystems
   - https://github.com/maidsafe/crdt_tree /rust
+# crdt-table/spreadsheet/excel
+- https://github.com/Horusiath/crdt-table /5Star/GPLv3/202309/js
+  - This is proof of concept for Conflict-free Replicated Data Type representing 2-dimensional table
+  - Insert or update existing rows (conflict resolution timestamp per cell basis)
+  - Insert new series of rows in between existing rows.
+  - Row/column inserts are resolved using `LSeq` - while it has interleaving issues, we believe its not that important on that field as when it comes to ie. collaborative text editing.
+    - Cell updates and cell updates against row/column deletions are resolved using Last-Write-Wins semantics.
+    - There's a minimal overhead related to keeping tombstone information when entire rows/columns are deleted. This could also be shifted to partially ordered log for keeping info about commutative updates.
+  - This implementation uses a combination `{HybridLogicalTimestamp,PeerID}` as a means of conflict resolution, which on positive side is quite lightweight, but otherwise is pretty cumbersome: possible clock drifts on client devices; no ability to recognize concurrent updates ie. conflict resolution for things like update cell / delete column now depends on the clock timestamp
+    - Easiest proposal is to switch to vector versions, with optional clock timestamps where useful, but they can be quite heavy (especially if used on per cell basis). 
+    - Another proposal is to use partially-ordered log to detect concurrent conflicts (which would be also usefull ie. for undo/redo feature).
+  - Selections represents focused areas within a table/grid. In this PoC selections defined by user API using similar `{row:number,col:number}` pairs of opposite corners, however as row and column numbers can change under concurrent updates, **the internal representation of selection uses fractional keys (keys used internally by `LSeq` to establish order)**.
+    - Quite often we need to react on changes happening within the boundaries of the selection.This requires efficient way to find selections that contain given cell or intersect with range of changed cells (ie. when we copy paste multiple rows/columns).
+    - For small number of selection brute(纯体力的) force over all known selections wouldn't be an issue. 
+    - For bigger number, we could modify indexing structures for 2-dimensional data such as R-Trees (used ie. to index geospatial data).
+
+- @fluid-example/table-view /MIT/ts
+  - https://github.com/microsoft/FluidFramework/tree/main/examples/data-objects/table-view
+  - Table View is a basic table/grid view built on top of the @fluid-example/table-document data object. 
+  - Since Table View uses the data model provided by Table Document it only uses it's DDS to store a reference to the created Table Document.
+  - Table View uses the following distributed data structures: SharedDirectory - root
+
+- https://github.com/itoumlilt/CRDT-Spreasheet /ts
+  - CRDT based collaborative Spreadsheet
+  - 依赖concordant-crdtlib、delta-crdts
+  - This demo app shows a collaborative application developed using a draft implementation of the `Concordant` API.
+  - The application uses the C-Service API which currently supports two eventual consistency backends: revision-based and CRDT-based
+
+- https://github.com/Roffelchen/spreadsheet-crdt /js/yjs
+  - /yjs
+
+- https://github.com/fabian-gubler/cellster 
+  - Local-first collaborative spreadsheet editing: Harnessing CRDTs for seamless offline formula merges.
 # crdt-utils
 - https://github.com/mweidner037/fugue /ts
   - Code and benchmarks for the paper "The Art of the Fugue: Minimizing Interleaving in Collaborative Text Editing"
@@ -972,6 +1005,10 @@ modified: 2022-04-05T10:08:25.947Z
   - Merge result is independent of merge order (except auth units).
   - Merge is semilattice.
   - Wiped data inside some Head stays tombstone to hold place.
+# crdt-db
+- https://github.com/AntidoteDB/antidote /erlang
+  - A planet scale, highly available, transactional database built on CRDT technology
+  - [Antidote: CRDT-based distributed database | Hacker News_201712](https://news.ycombinator.com/item?id=15862895)
 # crdt-rust
 - https://github.com/josephg/diamond-types /rust
   - This repository contains a high performance rust CRDT for text editing. 
@@ -1028,15 +1065,6 @@ modified: 2022-04-05T10:08:25.947Z
   - export/import drawing to/from local file encoded in ISO/IEC 19500-2
   - 偏向画板
   - 依赖knex
-
-- https://github.com/itoumlilt/CRDT-Spreasheet
-  - CRDT based collaborative Spreadsheet
-  - 依赖concordant-crdtlib、delta-crdts
-  - This demo app shows a collaborative application developed using a draft implementation of the Concordant API.
-  - The application uses the C-Service API which currently supports two eventual consistency backends: revision-based and CRDT-based
-
-- https://github.com/Roffelchen/spreadsheet-crdt
-  - /yjs
 # state-management-crdt
 - redux-crdt
   - logux
