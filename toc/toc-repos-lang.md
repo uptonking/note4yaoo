@@ -96,6 +96,11 @@ modified: 2020-11-03T06:56:19.448Z
     - Cross-platform asynchronous I/O
   - https://github.com/taosdata/TDengine
     - big data platform designed and optimized for the Internet of Things (IoT).
+
+- https://github.com/antirez/smallchat /c
+  - A minimal programming example for a chat server
+  - https://github.com/smallnest/smallchat /go
+  - https://github.com/iamshaynez/ChatRoom /java
 # python
 - https://github.com/pallets/flask
   - /52.2kStar/BSD/202009

@@ -10,6 +10,16 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚️ generating html on backend  🆚️  running backend on frontend ?
+- https://twitter.com/ChShersh/status/1718208809011712074
+- who is running backend on frontend?
+  - many such cases https://localfirstweb.dev @tantaman @schickling @FireproofStorge @pvh
+  - I am always looking to run more of my backend on the frontend
+
 - ## 💡 TLDR: morphing on the server to make smaller HTML payloads doesnt make as much difference as you think and introduces complexity
 - https://twitter.com/RogersKonnor/status/1717185649839657168
   - Seems like they came to the same conclusion as the @stimulusreflex team did a few years ago about diffing on the server
@@ -78,8 +88,6 @@ modified: 2021-01-06T14:40:03.364Z
 - This is a huge topic of mine. I've been promoting this along with React Context to get super clean APIs.
 
 # discuss
-- ## 
-
 - ## 
 
 - ## 

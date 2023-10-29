@@ -265,6 +265,11 @@ modified: 2020-10-05T06:22:02.107Z
   - Interactive UI animation engine for the Web. Core renderer for Haiku Animator.
 - https://github.com/wadackel/sweet-scroll
   - dependency-free smooth scroll library using raf
+# physics
+- https://github.com/liabru/matter-js /MIT/202308/js
+  - https://brm.io/matter-js/
+  - a 2D rigid body physics engine for the web
+  - 一个高性能的 2D 物理 js 库
 # more
 - awesome-web-animation /202006
   - https://github.com/sergey-pimenov/awesome-web-animation

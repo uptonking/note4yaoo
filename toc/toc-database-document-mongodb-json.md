@@ -115,6 +115,9 @@ modified: 2022-11-03T04:14:11.987Z
   - JOQULAR is a query language specification. 
   - Like SQL, JOQULAR allows you to mutate the returned records to meet you needs.
   - 不如json patch
+
+- https://github.com/JerrySievert/mongolike /201408/js
+  - A proof of concept MongoDB clone built on Postgres
 # db-document-json
 - redux-database /18Star/MIT/202005/ts/NoDeps
   - https://github.com/nerdgeschoss/redux-database
@@ -229,7 +232,14 @@ modified: 2022-11-03T04:14:11.987Z
   - Based on Sntls, it allows you to re-interpret table and index data structures as collections, trees, etc. and thus formulate very expressive and effective data queries.
   - Smarter indexes: Jorder allows multi-field full-text indexes.
   - [Benchmarks](https://github.com/danstocker-legacy/jorder/wiki/Benchmarks)
-# NoSQL
+
+- https://github.com/mongodb-js/mongodb-language-model /202004/js/inactive
+  - Parses MongoDB query language and creates hierarchical Ampersand.js models to interact with the query tree
+  - Parses a MongoDB query and creates an abstract syntax tree (AST) with part of speech tagging. 
+  - Currently, only strict extended json syntax is supported
+- https://github.com/fcoury/mongodb-language-model-rust 
+  - ported from Node.js and PEGjs to Rust and pest.rs
+# nosql
 - https://github.com/petersirka/nosql /201907/js/inactive
   - NoSQL embedded database for small node.js projects
   - Supports views

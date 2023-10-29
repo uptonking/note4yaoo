@@ -82,7 +82,7 @@ modified: 2022-11-04T14:21:31.365Z
   - https://mycelial.com/
   - Mycelite is a SQLite extension that allows you to synchronize changes from one instance of SQLite to another
   - Currently, it only supports one-way synchronization, but eventually, it will support two-way synchronization.
-# export/import
+# etl/export/import
 - https://github.com/fitnr/sqlite-json /js
   - Convert Sqlite3 tables to JSON
 

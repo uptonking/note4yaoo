@@ -63,7 +63,16 @@ modified: 2021-05-25T09:40:55.797Z
 
 - https://github.com/TheHadiAhmadi/minibase /202211/js
   - minimal (and slow) firebase alternative
- 
+
+- https://github.com/endpointservices/mps3 /ts
+  - Infraless Database over any s3 storage API.
+  - [mps3 - Offline-first DB over S3-compatible storage](https://observablehq.com/@tomlarkworthy/mps3-vendor-examples)
+  - https://twitter.com/tomlarkworthy/status/1688132733246033920
+    - I've been noodling with the concept of a vendorless BaaS by using an s3-compatible API as the backend. 
+    - By hacking object versioning you get serialisability and atomic bulk updates. 
+    - Its a real DB! Here it's using a local minio instance. Might try backblaze next.
+    - Oh I have to expose the ETag header in the CORS config thats improved things to 400ms sometimes but I still have too many preflight requests
+    - The sync protocol was designed using object versioning so that the logical names intuitively map to storage names, but then I realised R2, my favourite s3-like doesn't do versions. So now I had to redo it with timestamped suffixes. Total redesign with tricky clock skew defenses
 
 - CoCreateJS /19Star/MIT/202212/js
   - https://github.com/CoCreate-app/CoCreateJS

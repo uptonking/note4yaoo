@@ -188,7 +188,14 @@ modified: 2023-03-05T08:55:03.696Z
 
 - ## 
 
-- ## 
+- ## 🆚️ useSWR or React Query?_202310
+- https://twitter.com/iamjonjackson/status/1718016755136671999
+- And the most important reason: RQ has @TkDodo - one of the most skills devs I know and a very helpful attitude and open to support its community.
+- 
+- 
+- 
+- 
+
 
 - ## Common scenario: You want to pre-fill some local state (e.g. the selection of a Dropdown component) with server state, e.g. a PersonSelect that fetches person data and selects the first option.
 - https://twitter.com/TkDodo/status/1672168421339938818

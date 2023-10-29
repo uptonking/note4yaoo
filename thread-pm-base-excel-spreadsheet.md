@@ -15,7 +15,10 @@ modified: 2022-04-23T18:48:32.550Z
 # discuss
 - ## 
 
-- ## 
+- ## 🪟👾 Introducing Rows AI, the ultimate AI tool that makes Excel look like a toy
+- https://twitter.com/heyshrutimishra/status/1718165718816968712
+  - Import your data from files ( like: csv, xlsx ) or from over 50+ integrations
+  - With its GPT integration, Rows is like a data analyst with superpowers.
 
 - ## Introducing Python in Excel
 - https://twitter.com/Sumanth_077/status/1716468495129661552

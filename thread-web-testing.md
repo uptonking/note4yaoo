@@ -27,6 +27,19 @@ modified: 2021-08-28T11:49:05.730Z
 
 - ## 
 
+- ## 
+
+- ## Found out today that `userEvent.type` is pretty slow because it types each char separately, causing a rerender every time 
+- https://twitter.com/tsirlucas/status/1718374050408333671
+  - Depending on whats running on rerender, it can be slow 
+  - Debounce is usually disabled on testing env for perf reasons 
+  - This is local, can you imagine on CI?
+- [Performance issues with `userEvent.type()` · testing-library/user-event](https://github.com/testing-library/user-event/issues/577)
+  - Sometimes is till worth it for you to type each char, but most of times you should be fine with just pasting like I did
+
+- ## 🗒️ Explaining 9 types of API testing. 
+- https://twitter.com/alexxubyte/status/1718297723177402400
+
 - ## 💡 I dislike JSDOM. It runs in Node, pretends to be a browser, but is intentionally neither. It's a hack.
 - https://twitter.com/kettanaito/status/1717085912545247557
   - Test browser things in the browser. There's no excuse not to use Playwright in 2023.

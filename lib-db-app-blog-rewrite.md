@@ -1,11 +1,11 @@
 ---
-title: lib-db-rewrite-js
-tags: [database, js, rewrite]
+title: lib-db-app-blog-rewrite
+tags: [blog, database, postgresql, rewrite, sqlite, toys]
 created: 2022-11-27T19:19:22.406Z
-modified: 2022-11-27T19:20:02.987Z
+modified: 2023-10-29T02:09:26.414Z
 ---
 
-# lib-db-rewrite-js
+# lib-db-app-blog-rewrite
 
 # guide
 
@@ -29,7 +29,10 @@ modified: 2022-11-27T19:20:02.987Z
   - recently I'm learning the source code of arrow-datafusion. I'm trying to a tiny version of it by extracting the most essential parts. 
   - Although database books talked about query parser, query plan, query execution, etc, I find there is a large gap between theory and implementation
   - In the latest revision, I'm keep each dev branch named as "MILSTONEn-**"
-# [Creating a database from scratch with Node.js](https://dev.to/ciochetta/creating-a-database-from-scratch-with-node-js-4dmk)
+# db-js
+
+## ⤴️ [Creating a database from scratch with Node.js](https://dev.to/ciochetta/creating-a-database-from-scratch-with-node-js-4dmk)
+
 - https://github.com/ciochetta/learndb /24Star/202101/js/mongodb
   - https://github.com/ciochetta/testing-luisdb
   - my first attempt at creating my own database from scratch.
@@ -61,18 +64,13 @@ modified: 2022-11-27T19:20:02.987Z
     - This parser does not support (yet) PL/pgSQL.
 # db-non-js
 
-## 📝 [Build Your Own Database From Scratch using cpp](https://build-your-own.org/database/)
-
-- Part I: Simple KV Store
-- Part II: Mini Relational DB
-
 ## 👥🔥[The “Build Your Own Database” book is finished | Hacker News_202304](https://news.ycombinator.com/item?id=35666598)
 
 - 
 - 
 - 
 
-## [Writing a SQL database from scratch in Go](https://notes.eatonphil.com/tags/databases.html)
+## 🐭 [Writing a SQL database from scratch in Go](https://notes.eatonphil.com/tags/databases.html)
 
 - [1. SELECT, INSERT, CREATE and a REPL](https://notes.eatonphil.com/database-basics.html)
 - [2. binary expressions and WHERE filters](https://notes.eatonphil.com/database-basics-expressions-and-where.html)
@@ -82,19 +80,28 @@ modified: 2022-11-27T19:20:02.987Z
 - https://github.com/eatonphil/gosql /go
   - An early PostgreSQL implementation in Go
 
-- 🔥 [Writing a SQL database from scratch in Go | Hacker News](https://news.ycombinator.com/item?id=22850817)
+## 👥🐭🔥 [Writing a SQL database from scratch in Go | Hacker News](https://news.ycombinator.com/item?id=22850817)
 
-## [Writing a sqlite clone from scratch in C](https://cstack.github.io/db_tutorial/)
+## 📝🧲 [Writing a sqlite clone from scratch in C](https://cstack.github.io/db_tutorial/)
 
 - https://github.com/cstack/db_tutorial /c
   - Writing a sqlite clone from scratch in C
   - B-Tree Leaf Node Format
   - prepare_statement (our “SQL Compiler”) does not understand SQL right now. In fact, it only understands two words select and insert
 
-### 👥🔥🔥 [Let’s Build a Simple Database (2017) | Hacker News_201904](https://news.ycombinator.com/item?id=19581721)
+- [Writing a SQLite Clone from Scratch in C (2022) | Hacker News_202305](https://news.ycombinator.com/item?id=35800109)
+- [Writing a SQLite clone from scratch in C (2017) | Hacker News_202104](https://news.ycombinator.com/item?id=27731966)
+
+### 👥🧲🔥 [Let’s Build a Simple Database (2017) | Hacker News_201904](https://news.ycombinator.com/item?id=19581721)
 
 - 
 - 
 - 
 
+### 👥🧲🔥 [Writing a SQLite clone from scratch in C | Hacker News_201709](https://news.ycombinator.com/item?id=15168467)
+
+## 🧲 [Build Your Own Database From Scratch using cpp](https://build-your-own.org/database/)
+
+- Part I: Simple KV Store
+- Part II: Mini Relational DB
 # more

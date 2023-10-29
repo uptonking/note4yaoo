@@ -12,6 +12,10 @@ modified: 2022-11-07T10:25:12.034Z
 - username
   - uptonking/yaork/yorke
 
+- 提高feed内容流中有效信息的密度
+  - 暂停浏览较长时间后，平台recsys推荐流的信息更有效
+  - 长时间高频率浏览时，个人的follow关注流信息更有效
+
 - https://github.com/iamadamdev/bypass-paywalls-chrome
   - help bypass paywalls for selected sites.
   - Bypass the following sites' paywalls: bloomberg, fortune, glassdoor, medium, national geographic, quora, vanity fair, vulture

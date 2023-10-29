@@ -33,6 +33,13 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## You can use `<hr />` in `<select>` now for chrome 119+
+- https://twitter.com/zhaojinjiang/status/1718549113594376206
+
 - ## People sometimes to to replicate lit-html with a system that returns an HTML strings and replaces the whole DOM each render.
 - https://twitter.com/justinfagnani/status/1687119365001592832
   - Yes, that's simpler and a lot less code.

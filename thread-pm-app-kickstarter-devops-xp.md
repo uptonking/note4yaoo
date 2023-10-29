@@ -101,7 +101,11 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
-- ## 
+- ## In the last two years, I have learned many lessons about what kind of startup is worth joining:
+- https://twitter.com/cdz_solo/status/1718609511777484926
+  1. At least Series B
+  2. The boss is not a weird person
+  3. The salary is sufficient
 
 - ## 因为和国内的模型厂商有较多接触了，既有收获也知道一点点内幕。提醒开发者朋友们与模型厂商合作仍然要谨慎、保留一些，包括参加一些黑客松：
 - https://twitter.com/goocarlos/status/1717075490455097713

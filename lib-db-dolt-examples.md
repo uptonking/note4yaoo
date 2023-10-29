@@ -195,7 +195,7 @@ modified: 2023-08-25T22:31:05.132Z
   - Each database transaction is saved as a commit, and each commit has an incremental number
   - We cannot write to the database when we are in a defined commit, writing is only possible at the head of each branch. If you want to make modifications to some previous commit you must create a new branch that starts at that commit.
 
-- https://github.com/postgres-ai/database-lab-engine /go
+- https://github.com/postgres-ai/database-lab-engine /apache2/go
   - Blazing-fast Postgres cloning and branching
   - Provide temporary full-size database clones for SQL query analysis and optimization
   - Available for any PostgreSQL, including self-managed and managed* like AWS RDS, GCP CloudSQL, Supabase, Timescale.
@@ -203,6 +203,9 @@ modified: 2023-08-25T22:31:05.132Z
     - DBLab employs two technologies for enabling thin cloning: ZFS (default) and LVM.
     - Using ZFS, DBLab routinely takes new snapshots of the data directory, managing a collection of them and removing old or unused ones. When requesting a fresh clone, users have the option to select their preferred snapshot.
   - [How Database Lab Works | Database branching for any Postgres DB](https://postgres.ai/products/how-it-works)
+  - [Thin PostgreSQL Clones | Hacker News_202201](https://news.ycombinator.com/item?id=30068669)
+    - It’s a tool that clones Postgres databases. It’s not a clone of Postgres the application.
+    - It's much more sophisticated than cloning - it's only cloning the changes between the databases instead of the full databases. 
 
 - https://github.com/sirixdb/sirix /BSD/java
   - https://sirix.io/docs/index.html

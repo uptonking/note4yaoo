@@ -9,13 +9,13 @@ modified: 2020-07-17T10:54:16.341Z
 
 # guide
 - 参考文献列表中link的字体应该用monospace，合适的是有
-  - consolas (Monospaced, sans-serif)
+  - consolas (sans-serif, Monospaced)
     - Consolas is a monospaced typeface
     - It has been included with Windows since Windows Vista, Microsoft Office 2007
-  - source code pro (Sans-serif, Monospace)
+  - source code pro (sans-serif, Monospace)
     - Source Code Pro is a monospaced sans serif typeface
+  - JetBrains Mono (sans-serif, monospaced, fixed-width)
   - Latin Modern Mono (serif, monospace)
-  - JetBrains Mono (sans serif, monospaced, fixed-width)
   - TeX Gyre Cursor can be used as a replacement for Courier
     - https://www.1001fonts.com/monospaced+serif-fonts.html
 # fonts
@@ -94,6 +94,12 @@ modified: 2020-07-17T10:54:16.341Z
 - tools for fonts
   - https://github.com/wentin/font-playground
       - 在线修改和预览
+
+- [MiSans 免费使用](https://hyperos.mi.com/font/about)
+  - 2016年在 MIUI 8 中推出小米兰亭；是全球第三家定制移动端中文字体的厂商
+  - 2019年在 MIUI 11 中推出小米兰亭Pro；由原有的 3 个字重升级为 10 个字重并采用了可变字体技术
+  - 2021年在 MIUI 13 中推出全新系统字体 MiSans, 加入了丰富的 OpenType Features
+  - 2023年在全新系统 Xiaomi HyperOS 中推出全球语言定制字体项目— MiSans Global。这是一个庞大的字体家族，涵盖 20 多种书写系统，支持 600 多种语言，字符数量累计超过10万个。
 
 ## web fonts
 

@@ -20,6 +20,13 @@ modified: 2023-09-17T17:38:11.187Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## how bitmap index scans work
+- https://twitter.com/hnasr/status/1718592877658538228
+
 - ## 🔥 [Why Can't Database Tables Index Themselves? (2006) | Hacker News_202207](https://news.ycombinator.com/item?id=31990836)
 - 
 - 

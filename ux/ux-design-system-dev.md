@@ -9,8 +9,7 @@ modified: 2021-01-01T20:08:38.154Z
 
 # guide
 
-# pieces
-
+- [2022设计年鉴](https://www.yuque.com/paidaxin/dkopg8/knob94hbnn0dmx8f)
 # discuss
 
  

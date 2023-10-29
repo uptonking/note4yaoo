@@ -14,14 +14,25 @@ modified: 2021-04-30T15:26:55.024Z
   - ChromeOS支持的太少
   - 普通的办公软件支持的多不多
   - 专业软件如ps设计、机械、地图几乎都不可能支持
-# pieces
+# discuss
 - ## 
 
 - ## 
 
-- ## 有哪些使用 PWA 的 app ？
-- https://www.zhihu.com/question/59108831/answers/updated
+- ## 
 
+- ## 
+
+- ## 🚀 I'm please to announce that Node.js Mobile is rebooted! New docs, new version, new CLI tool_202310
+- https://twitter.com/andrestaltz/status/1718591964235362642
+  - Node.js can run inside a mobile app
+  - Its core component is a library – available for Android and iOS – that lets you add a Node.js background worker to any mobile app.
+- If its what am thinking that means with this package we can achieve ssr on react-native? Since the package brings node runtime to our app
+  - In theory yes. I don't know if it's actually easy, or if it makes sense.
+- What do people build with nodejs on mobile?
+  - @manyver_se , has a TCP server, a UDP server on LANs, and an HTTP server, all running from a mobile app
+- That means my app can run a self hosted server function like NextJs which fullstack?
+  - Yes
 
 - ## if I were working on React Native stuff, I would seriously consider statically linking JavaScriptCore on iOS. 
 - https://twitter.com/jarredsumner/status/1416842049823772673

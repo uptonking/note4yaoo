@@ -45,7 +45,16 @@ modified: 2021-01-01T20:17:05.116Z
 # discuss
 - ## 
 
-- ## 
+- ## 💡 One of the easiest ways to improve your layouts is to use intentional spacing
+- https://twitter.com/ridd_design/status/1718322324561334331
+  - ❌ Avoid equidistant(等距的) spacing
+  - ✅ Create clear content groups
+  - It's a great technique for adding visual interest to your designs 
+
+- Autolayout doesn’t really help here and imo made it worse. Autolayout gives you the even spacing between default, and folks have to intentionally group and apply another. Some don’t do that and stick with the initial.
+- 
+- 
+- 
 
 - ## The more I learn about Figma's auto layout mode in code, the more I realize Flexbox is actually pretty hard
 - https://twitter.com/username_ZAYDEK/status/1706306013253537988

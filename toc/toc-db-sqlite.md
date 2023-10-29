@@ -157,7 +157,7 @@ modified: 2021-08-30T18:56:18.632Z
   - a simple embedded database modeled off SQLite, but developed with Rust. 
   - The goal is get a better understanding of database internals by building one.
   - [SQLRite – SQLite clone from scratch in Rust | Hacker News_202104](https://news.ycombinator.com/item?id=26749737)
-  - [What would SQLite look like if written in Rust? — Part 0_202102](https://dev.to/thepolyglotprogrammer/what-would-sqlite-look-like-if-written-in-rust-part-0-4f4k)
+  - [What would SQLite look like if written in Rust? — Part 3_202104](https://medium.com/the-polyglot-programmer/what-would-sqlite-look-like-if-written-in-rust-part-3-edd2eefda473)
   - [Column or row oriented store](https://github.com/sqlrite/design/discussions/6)
 
 - https://github.com/cstack/db_tutorial /clang
@@ -166,6 +166,19 @@ modified: 2021-08-30T18:56:18.632Z
   - prepare_statement (our “SQL Compiler”) does not understand SQL right now. In fact, it only understands two words select and insert
   - [How Does a Database Work? | Let’s Build a Simple Database](https://cstack.github.io/db_tutorial/)
   - [Writing a SQLite clone from scratch in C (2017) | Hacker News](https://news.ycombinator.com/item?id=27731966)
+- https://github.com/KCNyu/db_tutorial_cpp /cpp
+  - 如何用C++实现一个简易数据库, 基于cstack/db_tutorial C语言版本
+
+- https://github.com/c-bata/db_tutorial /rust
+  - Writing a sqlite clone from scratch in Rust (and Python3 for testing).
+- https://github.com/pmk21/rsqlite /rust
+  - A simple SQLite clone in Rust. This is basically a translation of the C code
+  - A simple SQLite clone in Rust. This is basically a translation of the C code
+
+- https://github.com/spandanb/learndb-py /202308/python
+  - Learn database internals by implementing it from scratch
+  - the goal of this project is to better understand the internals of databases by implementing a relational database management system (RDBMS) (sqlite clone) from scratch.
+  - [Show HN: I wrote a RDBMS (SQLite clone) from scratch in pure Python | Hacker News_202308](https://news.ycombinator.com/item?id=37114141)
 
 - https://gitlab.com/cznic/sqlite /BSD/go
   - http://godoc.org/modernc.org/sqlite
@@ -189,7 +202,8 @@ modified: 2021-08-30T18:56:18.632Z
 
 ## sqlite-like
 
-- https://github.com/lucavallin/gnaro /clang
+- https://github.com/lucavallin/gnaro /MIT/202310/clang
+  - https://cavall.in/
   - A proto-database inspired by SQLite, written in C for educational purposes. 
   - gnaro takes SQLite as a reference because of the limited feature set, and therefore complexity, when compared to other databases. 
 
@@ -201,6 +215,9 @@ modified: 2021-08-30T18:56:18.632Z
 - https://github.com/CsharpDatabase/csharp-sqlite /201401/inactive
   - C# port of the SQLite library
   - https://code.google.com/archive/p/csharp-sqlite/
+
+- https://github.com/adargut/SQLiteClone /cpp
+  - Clone of SQLite written in C/C++, using B-trees
 # more
 - https://github.com/loladb/nodejs-examples
   - https://loladb.com/

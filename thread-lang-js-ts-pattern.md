@@ -12,7 +12,9 @@ modified: 2023-08-04T18:28:26.530Z
 # discuss
 - ## 
 
-- ## 
+- ## Did you know that JS modules are the fastest way to create a singleton in JavaScript?
+- https://twitter.com/browsermage/status/1718374661585547579
+- I alway create db.js/log.js and import to module i wanted to use. I dont create instance, just use module as singleton. I know not good for unit testing but dont forget you can mock modules too.
 
 - ## I think I have a nice pattern for being able to add extensions without an JS, 
 - https://twitter.com/justinfagnani/status/1687512185201893376

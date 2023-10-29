@@ -19,3 +19,7 @@ modified: 2023-10-26T15:18:22.207Z
 # examples
 
 # more
+
+- https://github.com/miguelpinto128/Wix-like-DataBase /js
+  - A PostGreSQL database for a "Wix" like website. Contains all database structure.
+  - for the course “Web and Multimedia Development – Post-Labor”

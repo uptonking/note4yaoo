@@ -20,9 +20,6 @@ modified: 2022-10-22T18:46:45.456Z
   - 2. Represent everything as map
   - 3. Integrate yjs deeply into the system and build an object graph
 
-
-
-
 - ## 💡 [Document branches like git branches? - Yjs Community](https://discuss.yjs.dev/t/document-branches-like-git-branches/697)
   - I’m wondering if I can build like a branch structure with Yjs docs.
   - My use case, imagine I have a parent document with a lot of work made on it, then we want to make a copy of this document to derivate some content.

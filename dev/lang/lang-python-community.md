@@ -14,9 +14,19 @@ modified: 2023-08-28T06:14:28.873Z
 
 - ## 
 
-- ## 
+- ## What is wrong with “is” in Python
+- https://twitter.com/clcoding/status/1718350871610708374
+- “is” operator compares address of both variable and return True if they are pointing at same address, otherwise False
+  - If number is between 0 to 256, then that variable will point at fixed address only irrespective of shallow copy, deep copy or separate variable.
+  - If number is >256 then it’ll create new address if they are deep copied or created separately.
+  - But for larger numbers like 257, "a is b" is False because they are stored in different places in memory.
 
-- ## 👀 TIL python does not recreate default function params each function call
+- The behavior we are observing is due to a memory optimization in Python, which is specific to small integer objects. 
+  - In Python, small integer objects (typically in the range -5 to 256) are cached and reused for memory efficiency. 
+  - When you assign the same integer value to multiple variables within this range, they will refer to the same memory location, which is why `is` returns `True` in such cases. 
+  - 👉🏻 This is an optimization mechanism known as "interning."
+
+- ## 🧐 TIL python does not recreate default function params each function call
 - https://twitter.com/ethanniser/status/1716612454568861903
 - Yep if the param is mutable this issue happens sadly
 - Yea that’s known and not fixed

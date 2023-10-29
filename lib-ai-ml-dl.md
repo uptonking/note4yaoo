@@ -29,7 +29,13 @@ modified: 2023-03-21T07:54:11.468Z
 # discuss
 - ## 
 
-- ## 
+- ## When evaluating the performance of Time Series forecasting models, several metrics can be used to assess their accuracy and predictive power.
+- https://twitter.com/daansan_ml/status/1718575478276239512
+  - Here are 4️⃣ of the most used metrics for time series forecasting
+  - 1️⃣ Mean Absolute Error (MAE)
+  - 2️⃣ Mean Squared Error (MSE)
+  - 3️⃣ Root Mean Squared Error (RMSE)
+  - 4️⃣ Mean Absolute Percentage Error (MAPE)
 
 - ## 在机器学习领域，过度拟合（或称过拟合、过配，英文：overfitting）是指机器学习算法模型在训练集上的误差和测试集上的误差之间差异过大。
 - https://twitter.com/erchenlu1/status/1681860160711712768

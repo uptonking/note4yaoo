@@ -7,9 +7,18 @@ modified: 2022-08-21T10:15:01.987Z
 
 # lib-excel-app-list-grid-community
 
+# guide
+
 # discuss
+- ## 
 
 - ## 
+
+- ## 
+
+- ## Interesting side effect of the FLIP animation technique when applied to table rows: it looks as if its not the rows themselves that change position, but the cells within them. I'm not sure if I like I better or not
+- https://twitter.com/fabiospampinato/status/1718398614983078040
+  - 插入删除row的动画设计
 
 - ## What would a programming language based on unstructured data look like?
 - https://twitter.com/JungleSilicon/status/1632519196751069184

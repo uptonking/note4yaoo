@@ -54,6 +54,15 @@ modified: 2023-04-16T10:02:58.738Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Many startups just died today. Because OpenAI added PDF chat. You can also chat with data files and other document types.
+- https://twitter.com/thealexker/status/1718445317559902371
+
 - ## 目前市面上“用户提供 PDF 文件，得到一个专向 AI 聊天工具” 的产品，哪个效果最好？
 - https://twitter.com/taresky/status/1693112350075965841
   - ChatGPT Code Interpreter 无法顺利阅读 PDF，有第三方插件好用吗？

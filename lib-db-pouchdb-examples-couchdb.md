@@ -169,6 +169,13 @@ modified: 2023-09-28T20:35:56.153Z
   - The aim was to be able to read `/{db}/_all_docs`.
   - [MiniCouchDB in Rust_202006](https://www.garrensmith.com/minicouchdb-in-rust/)
 
+- https://github.com/glynnbird/postdb /apache2/202011/js/inactive
+  - A CouchDB-like database that uses PostgreSQL as the storage engine.
+  - PostDB is proof-of-concept database that exposes a Apache CouchDB-like API but which is backed by a PostgreSQL database.
+  - It does not implement CouchDB's MVCC, Design Documents, attachments, MapReduce, "Mango" search or any other CouchDB feature.
+  - It does however provide a "consistent" data store where the documents and secondary indexes are in lock-step. Documents are limited to 100KB in size.
+  - Optionally, PostDB nodes can be run in readonly mode and configured to read data from PostgreSQL read replicas to scale out read performance.
+
 - https://github.com/mikeal/couchup /201307/js
   - A CouchDB implementation on top of levelup.
   - The goal is to build a data model well suited for mobile applications that may need to work offline and sync later on and maintain smart client side caches. 

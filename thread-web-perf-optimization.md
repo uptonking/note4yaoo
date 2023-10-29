@@ -7,11 +7,14 @@ modified: 2021-02-26T16:42:06.878Z
 
 # thread-web-perf-optimization
 
-# pieces
+# guide
 
+# discuss
 - ## 
 
-- ## 
+- ## 想要提高网页的加载体验，其实有个非常简单且实用的技巧，那就是改变请求资源的加载优先级
+- https://twitter.com/zhangxinxu/status/1718665721646075925
+- [聊聊Web网页中资源加载的优先级 « 张鑫旭-鑫空间-鑫生活](https://www.zhangxinxu.com/wordpress/2023/10/img-js-preload-fetch-priority/)
 
 - ## How I typically test performance
 - https://twitter.com/iamakulov/status/1661475656050556930

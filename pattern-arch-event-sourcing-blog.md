@@ -390,7 +390,7 @@ modified: 2023-09-13T14:37:51.659Z
 - 
 - 
 
-## [How Discord Stores Trillions of Messages_202303](https://discord.com/blog/how-discord-stores-trillions-of-messages)
+## 📝💬 [How Discord Stores Trillions of Messages_202303](https://discord.com/blog/how-discord-stores-trillions-of-messages)
 
 - 
 - 

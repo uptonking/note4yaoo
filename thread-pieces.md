@@ -13,6 +13,19 @@ modified: 2021-01-11T12:10:50.900Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Long ago one a friend shared his approach to prioritizing work: 
+- https://twitter.com/aboodman/status/1718343204104532049
+  - * Make a table with three columns * Column A: task * Column B: importance (1-5) * Column C: fun (1-5) 
+  - Then ignore column B.
+- Something related I heard @jwaaaap say once (game dev context, paraphrased) there are only 3 kinds of task: fun, hard and important 
+  - Do important, then fun, ignore hard until it becomes easy or important
+
 - ## 一句忠告：没有密切相处或共事半年以上的人，都谈不上了解。
 - https://twitter.com/mike_d1213/status/1712703435957780919
   - 千万别急着给一上来就聊得不错的人押重注，或者投入大成本搭伙做事。

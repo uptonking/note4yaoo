@@ -63,6 +63,19 @@ modified: 2021-10-29T15:06:33.422Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Google kills/shuts down >50% of its products it builds. 
+- https://twitter.com/bandanjot/status/1718477808307986807
+  - As of Sept 2023, Google developed 550+ products. 
+  - Here's more amazing statistics on how Google kills its own products
+  - 👉🏻 Out of 550+ products built till date, Google has killed 250+ and this brings average lifetime of a Google Product to **just ~4 years**.
+- Some most popular ones include Google Hangouts, Google Plus, Google Reader. 
+  - Products with shortest lifespan include Google Spaces 
+  - Whereas most expensive killed product is Google Fiber (Billions invested in its infrastructure)
+
 - ## NeevaAI 宣布不做搜索了。 原因是“让用户换搜索引擎比让用户付费还要难！” 
 - https://twitter.com/oran_ge/status/1661143423800471552
   - 一个经过验证的宝贵认知。 再叠加入住 poe，看来还是要做 chatbot

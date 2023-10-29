@@ -79,6 +79,9 @@ modified: 2022-11-11T03:09:56.491Z
 
 - ## 
 
+- ## 有哪些使用 PWA 的 app ？
+- https://www.zhihu.com/question/59108831/answers/updated
+
 - ## PWA过了那么久为什么还没有发展起来呢?
 - https://www.zhihu.com/question/325432140/answers/updated
 - 感觉还是国内厂商的环境比较差，大家都希望通过APP去吸引更多的流量，不愿意去尝试PWA，如果有成功的案例可以尝到PWA的甜头，应该就会有更多的厂商参与进来了。

@@ -7,7 +7,40 @@ modified: 2021-08-06T08:32:26.142Z
 
 # thread-dev-http-ajax-cookie-session
 
+# guide
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 📶 How Programs Communicate Over the Network: Sockets
+- https://twitter.com/iximiuz/status/1718230339976389015
+  - Browsers opening web pages
+  - Services talking to services
+  - Your code querying the DB
+  - Kubernetes launching its Pods
+  - Most of the program communications today happen over the network, and sockets are at the heart of it.
+- To understand what sockets represent, let's start with the basics.
+- Sockets help abstract this complexity and make interaction over the network look similar to reading and writing data to any other file descriptor.
+
+- 🌰 A beginner-friendly socket programming example
+  - Create a server TCP socket
+  - Bind it to a network interface
+  - Wait for client connections
+  - Accept client connection
+  - Create client TCP socket
+  - Send and receive data
+  - Close sockets
+
+- These particular illustrations were done in http://sketch.io. However today I switched to @excalidraw because it allows me to sketch faster. At the price of authenticity, I guess
+# discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 为什么很少见用 MessagePack 代替 JSON 的 Web 服务，不是更省流量吗？

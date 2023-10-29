@@ -35,7 +35,9 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
+- ## Stop making fun of code just because you think it's bad.  All code is bad.
+- https://twitter.com/DavidKPiano/status/1718666356059471968
+- Wrong. My code is _horrendous_, which is not the same thing as "bad"
 
 - ## I'm a big fan of "build it yourself" because it gives you control over your own destiny.
 - https://twitter.com/ccorcos/status/1714035814735487462

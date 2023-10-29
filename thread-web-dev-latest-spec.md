@@ -9,7 +9,7 @@ modified: 2021-04-27T09:19:37.711Z
 
 # guide
 
-# discuss
+# discuss-stars
 - ## 
 
 - ## 
@@ -27,7 +27,9 @@ modified: 2021-04-27T09:19:37.711Z
 
 - ## 
 
-- ## 
+- ## Safari 17.2 beta! requestIdleCallback support _202310
+- https://twitter.com/jensimmons/status/1717937227190460797
+  - Actually `requestIdleCallback` is not in Safari 17.2 beta. It *is* in Safari Technology Preview. My mistake.
 
 - ## Recently learned about the bfcache (backward/forward cache) which is an in-memory dump of the page including javascript heap so that JS execution state can pick up when the page is restored.
 - https://twitter.com/hnasr/status/1685459417842806785

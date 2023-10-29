@@ -86,6 +86,20 @@ modified: 2021-08-16T06:56:53.061Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## A math teacher at @GVSU used Obsidian to create a course textbook with exhaustive linking
+- https://twitter.com/kepano/status/1718008501589639321
+  - [START HERE - MTH 225 Fall 2023 - Obsidian Publish](https://publish.obsidian.md/mth225/START+HERE)
+  - I like this structure because you can easily dig deeper on any concept you don't understand. Very well done!
+
+- 
+- 
+
+
+
 - ## In Europe, Estonia has had the digital signature for some time and it works really well:
 - https://www.reddit.com/r/InternetIsBeautiful/comments/zxdz3e/i_made_a_free_pdf_editor_that_works_in_your/
   - https://github.com/open-eid – it's all open-source.

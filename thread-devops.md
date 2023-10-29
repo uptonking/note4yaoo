@@ -19,6 +19,15 @@ modified: 2021-03-31T06:50:19.936Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## yaml 多按了个 tab 调试几小时
+- https://twitter.com/zhdsuperman/status/1718617613092475257
+  - 不喜欢也得用，很多系统都用 yaml 来配置：AWS CloudFormation、K8S、Spring boot config、Github Action、AWS Codebuild……
+  - yaml 的语法太飘了，string 数组就有 n 种写法，不同平台支持的写法还不一样。
+
 - ## tail -F will monitor a file, such as a log file, until you type Ctrl-c.
 - https://twitter.com/abhi9u/status/1712892253944139949
 - The -F option forces tail to periodically check that the file has not been moved or has not been shortened. 

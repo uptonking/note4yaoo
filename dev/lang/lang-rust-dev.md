@@ -36,6 +36,8 @@ modified: 2022-11-11T06:57:09.670Z
 - [Rust Language Cheat Sheet](https://cheats.rs/)
 
 - [This Week in Rust](https://this-week-in-rust.org/)
+# changelog
+- [Generators are dead, long live coroutines, generators are back | Inside Rust Blog_202310](https://blog.rust-lang.org/inside-rust/2023/10/23/coroutines.html)
 # rust-env
 - rustup自带版本管理
   - [Rustup 镜像安装帮助 清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/help/rustup/)
