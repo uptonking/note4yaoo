@@ -69,9 +69,8 @@ modified: 2021-05-13T16:14:28.745Z
   - /14.3kStar/Apache2/202012/ts
   - A WebGL accelerated JavaScript library for training and deploying ML models.
 
-- https://github.com/stdlib-js/stdlib
+- https://github.com/stdlib-js/stdlib /3.5kStar/Apache2/202310/js
   - https://stdlib.io/
-  - /2.6kStar/Apache2/202005
   - a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing applications. 
   - provides a collection of robust, high performance libraries for mathematics, statistics, data processing, streams, and more
 # statictics

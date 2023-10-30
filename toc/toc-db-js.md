@@ -106,8 +106,13 @@ modified: 2022-11-25T15:50:48.226Z
   - [Offline use with Sync to Server](https://github.com/only-cliches/Nano-SQL/issues/18)
   - [Is this project still maintained?](https://github.com/only-cliches/Nano-SQL/issues/217)
     - I was about halfway through rewriting NanoSQL from the ground up. The plan was to add a query compilation step similar to SQLite
+- snap-db /58Star/MIT/202001/ts/NoDeps/Nano-SQL
   - https://github.com/only-cliches/snap-db
-    - Simple & Robust LSM Powered Javascript key-value store
+  - Simple & Robust LSM Powered Javascript key-value store
+  - SnapDB is a pure javascript persistent key-value store that provides ordered mapping from keys to string values. 
+  - Data is persisted to disk using a Log Structure Merge Tree (LSM Tree) inspired by LevelDB/RocksDB. 
+  - SnapDB has 100% API compatibility with LevelDB & RocksDB and also includes additional functionality.
+  - Uses synchronous filesystem methods to exclusively perform append writes to disk, this puts the performance of SnapDB near the theoretical maximum write performance for ACID compliant javascript databases.
 
 - ydn-db /502Star/apache2/201902/js/功能丰富/仅支持浏览器
   - https://github.com/yathit/ydn-db
@@ -332,7 +337,7 @@ modified: 2022-11-25T15:50:48.226Z
     - Oh I have to expose the ETag header in the CORS config thats improved things to 400ms sometimes but I still have too many preflight requests
     - The sync protocol was designed using object versioning so that the logical names intuitively map to storage names, but then I realised R2, my favourite s3-like doesn't do versions. So now I had to redo it with timestamped suffixes. Total redesign with tricky clock skew defenses
 # db-json
-- lowdb /18.7Star/MIT/202211/ts
+- lowdb /20.2kStar/MIT/202310/ts
   - https://github.com/typicode/lowdb
   - Simple to use local JSON database.
   - supports Node, Electron and the browser
@@ -419,7 +424,7 @@ modified: 2022-11-25T15:50:48.226Z
   - Assassin is a key/value store that supports mapping a key to its corresponding value.
   - System Architecture: The DAT protocol distributes and hosts data between many computers, so there is no one location where data is stored. Assassin relies on the the DAT protocol for data persistence. The metadata of the key-value pairs are stored in a distributed `trie` structure.
   - Storage Model: Assassin sends data to the server, which then stores the metadata in the distributed file system Hyperdrive, which is built on the DAT protocol
-  - [Assassin ⚡️ - An open source, free database for killing slow webpages - DEV Community](https://dev.to/ender_minyard/assassin-an-open-source-free-database-for-killing-slow-webpages-3fip)
+  - [Assassin - An open source, free database for killing slow webpages - DEV Community](https://dev.to/ender_minyard/assassin-an-open-source-free-database-for-killing-slow-webpages-3fip)
 
 - https://github.com/mafintosh/hyperdb /201808/js
   - Distributed scalable database.

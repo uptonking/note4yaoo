@@ -69,6 +69,15 @@ modified: 2023-10-27T06:54:11.911Z
 - 
 - 
 
+- ## ⚖️ [Poll: What database does your company use? | Hacker News_201106](https://news.ycombinator.com/item?id=2684620)
+
+> polled at 201106
+
+- mysql      2432
+- postgresql 1239
+- sql-server 839
+- mongo      683
+- oracle     535
 # discuss
 - ## 
 

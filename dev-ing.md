@@ -100,6 +100,10 @@ $$('[contenteditable]')
   - pouchdb
   - crsqlite, hypermerge
   - fireproof/ipld, hypercore, level
+  - kappa + lsm => kdtree/r-tree
+  - 基于oplog的研发方向, 架构设计时考虑放在数据库层解决还是应用层解决
+    - 实现db，还是sourcing based framework
+    - 基于log能提升write性能，基于materialized-view能提升read性能
 
 - long-term-support
   - cms, airtable, lowcode
@@ -129,9 +133,6 @@ $$('[contenteditable]')
   - 使用hlc: idbsidesync, verdant, harika
   - 结合hlc+crdt: idbsidesync, evolu, rga-crdt
   - 结合hlc+db: piratedb, tinybase, kappa-db-stream, linvodb
-  - 基于oplog的研发方向, 架构设计时考虑放在数据库层解决还是应用层解决
-    - db
-    - event-sourcing based framework
 
 - undo/redo与branching可拆分实现
   - undo与versioning/history基于persistent data structure

@@ -119,6 +119,8 @@ modified: 2021-05-23T16:34:27.206Z
 
 - auto-collecting
   - 支持自动统计平台上仓库相关信息
+
+- binary-data-model using arrow
 # extensions
 - grid-config(defaults+utils)
 

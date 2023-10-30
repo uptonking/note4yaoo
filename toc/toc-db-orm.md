@@ -211,6 +211,11 @@ modified: 2021-08-30T18:56:09.644Z
   - https://github.com/iFaceless/tinkv
     - fast key-value storage engine written in Rust. Inspired by basho/bitcask, written after attending the Talent Plan courses.
     - provides a bultin CLI and a Redis compatible server
+- https://github.com/talent-plan/tinykv /go
+  - The TinyKV course builds a key-value storage system with the Raft consensus algorithm. It is inspired by MIT 6.824 and TiKV Project.
+- https://github.com/talent-plan/tinysql /go
+  - a course designed to teach you how to implement a distributed relational database in Go. 
+  - The name TinySQL indicates it is a simplified version of TiDB.
 
 - https://github.com/risinglightdb/risinglight /rust
   - An OLAP database system for educational purpose
@@ -360,10 +365,10 @@ modified: 2021-08-30T18:56:09.644Z
   - Materialize is a fast, distributed SQL database built on streaming internals.
   - Materialize is a streaming database powered by Timely and Differential Dataflow, purpose-built for low-latency applications. 
   - [adapter: Switch to Hybrid Logical Timestamps (HLT)_202303](https://github.com/MaterializeInc/materialize/issues/17936)
-  - https://github.com/TimelyDataflow/timely-dataflow
-    - A modular implementation of timely dataflow in Rust
-  - https://github.com/TimelyDataflow/differential-dataflow
-    - An implementation of differential dataflow over timely dataflow on Rust.
+- https://github.com/TimelyDataflow/timely-dataflow
+  - A modular implementation of timely dataflow in Rust
+- https://github.com/TimelyDataflow/differential-dataflow
+  - An implementation of differential dataflow over timely dataflow on Rust.
 # more-database
 - https://github.com/lealone/Lealone
   - /1.6kStar/Apache2+H2MPL2/202012/java

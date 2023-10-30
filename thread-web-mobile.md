@@ -7,6 +7,15 @@ modified: 2021-09-29T06:38:35.002Z
 
 # thread-web-mobile
 
+# guide
+
+# discuss-stars
+
+## 
+
+## [Web App vs Site vs Hybrid_202310](https://icing.space/2023/web-app-vs-site-vs-hybrid)
+
+- Rather than worry about framework features, I think in terms of URLs, HTTP status, HTML `<head> & <body>`.
 # discuss
 
 ## 

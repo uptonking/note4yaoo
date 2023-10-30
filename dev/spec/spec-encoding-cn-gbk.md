@@ -9,6 +9,8 @@ modified: 2021-02-16T05:17:27.642Z
 
 # guide
 
+# blogs
+- [（译）2023 年每个软件开发者都必须知道的关于 Unicode 的基本知识 | 新世界的大门](https://blog.xinshijiededa.men/unicode/)
 # discuss
 - ## [GB2312、GBK、GB18030 这几种字符集的主要区别是什么？](https://www.zhihu.com/question/19677619)
 - 首先应当指出，目前的提问是有问题的，因为将三者定性为「字符集」是明显错误的，更妥当的提法是「几份文件」, 而非「几种字符集」。

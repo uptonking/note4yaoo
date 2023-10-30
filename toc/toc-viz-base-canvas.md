@@ -83,6 +83,20 @@ modified: 2020-10-05T06:17:42.467Z
   - https://github.com/raphamorim/react-tv
     - deprecated for react-ape
 
+- https://github.com/leaferjs/leafer /MIT/ts
+  - https://www.leaferjs.com/
+  - HTML5 Canvas 2D 图形渲染引擎，可结合 AI 绘图、生成界面。
+  - Leafer 定义了图形渲染引擎的核心功能，可以瞬间创建 100 万个图形，与具体 UI、业务场景无关
+  - 提供了性能优化和可扩展的空间，遵循 Leafer 接口之上开发的渲染器、布局器、UI 框架之间可以互通有无。
+  - [leaferjs，全新的 Canvas 渲染引擎 - 掘金](https://juejin.cn/post/7256386855721074747)
+    - 以前做过类似的大数据量下的canvas渲染，优化思路收益最大的也无非就是可视区渲染 + buff区缓存，移动画布动态渲染。
+    - 基于这个逻辑来讲，性能比较都不成立，因为其他方案确实渲染了 100 万个节点，而你这个只渲染了可视区有限个，可能是百十来个。 这没有比较的意义。
+  - https://github.com/leaferjs/in
+    - 官方增强功能插件中心
+  - https://github.com/leaferjs/ui
+    - 提供了常用的 UI 绘图组件，和开箱即用的功能，方便与 Figma、Sketch 等产品进行数据交换，并为跨平台开发提供了统一、丰富的交互事件，如拖拽、旋转、缩放手势等。
+    - 逐步稳定，正式版即将到来
+
 - easy-canvas /106Star/MIT/202010/js/NoDeps
   - https://github.com/Gitjinfeiyang/easy-canvas
   - https://gitjinfeiyang.github.io/easy-canvas/example/ui.html
@@ -172,6 +186,9 @@ modified: 2020-10-05T06:17:42.467Z
 
 - https://github.com/datavized/morph /201809
   - 5 steps to create generative art from tabular data (e.g. spreadsheets and comma-separated values).
+# utils
+- https://github.com/yinguangyao/canvas-flex /ts
+  - Canvas 结合 Yoga 实现的一个 Flex 布局，支持部分 Flex 语法
 # more-repos
 - https://github.com/c-zhuo/easycanvas /2019
   - 一个同时支持2D和3D渲染、轻量、高效、MVVM模式的渐进式canvas渲染库

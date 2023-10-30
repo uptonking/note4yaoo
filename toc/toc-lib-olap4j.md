@@ -23,6 +23,14 @@ modified: 2020-10-22T06:50:47.668Z
   - The use of Apache Arrow as the memory model and network protocol means that data can be exchanged efficiently between executors using the Flight Protocol, and between clients and schedulers/executors using the Flight SQL Protocol
   - Supports HDFS as well as cloud object stores. S3 is supported today and GCS and Azure support is planned.
   - Clients can connect to a Ballista cluster using Flight SQL.
+
+- https://github.com/hetudb/hetu /rust/inactive
+  - https://www.hetudb.com/
+  - a real-time OLAP database management system in the cloud
+  - Apache Arrow memory model and compute kernels for efficient processing of data.
+  - DataFusion Query Engine for query execution
+  - Apache Arrow Flight Protocol for efficient data transfer between processes.
+  - Google Protocol Buffers for serializing query plans
 # olap4j
 - CBoard /2.9kStar/apache2/202104/js+java/angularjs/inactive
   - https://github.com/TuiQiao/CBoard
@@ -44,10 +52,11 @@ modified: 2020-10-22T06:50:47.668Z
   - http://www.datagear.tech/
   - 源免费的数据可视化分析平台，使用Java语言开发，采用浏览器/服务器架构，支持SQL、CSV、Excel、HTTP接口、JSON等多种数据源， 
   - 主要功能包括数据管理、SQL工作台、数据导入/导出、数据集管理、图表管理、看板管理等。
-- https://github.com/activeviam/autopivot
+- https://github.com/activeviam/autopivot /apache2/202304/java
   - https://www.activeviam.com/
-  - /19Star/Apache2/202009
   - AutoPivot is a standalone application for online analysis (OLAP) of CSV files.
+  - automatically creates in-memory OLAP cubes from CSV files, that you can explore from Excel, Tableau or using the embedded Atoti UI web frontend
+  - 依赖spring-boot、activeui
 
 - https://github.com/dataease/dataease
   - 开源的数据可视化分析工具

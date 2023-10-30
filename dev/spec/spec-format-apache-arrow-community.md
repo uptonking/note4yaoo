@@ -52,3 +52,48 @@ modified: 2021-07-24T08:16:41.076Z
 
 - ## [Apache Arrow, Parquet, Flight and Their Ecosystem are a Game Changer for OLAP | InfluxData_202004](https://www.influxdata.com/blog/apache-arrow-parquet-flight-and-their-ecosystem-are-a-game-changer-for-olap/)
   - Apache Arrow, a specification for an in-memory columnar data format, and associated projects: Parquet for compressed on-disk data, Flight for highly efficient RPC, and other projects for in-memory query processing will likely shape the future of OLAP and data warehousing systems.
+
+# discuss-roadmap-changelog
+- ## 
+
+- ## 
+
+- ## 🎯 [Apache Arrow 3.0 | Hacker News_202102](https://news.ycombinator.com/item?id=26018187)
+- Arrow is the most important thing happening in the data ecosystem right now. 
+  - It's going to allow you to run your choice of execution engine, on top of your choice of data store, as though they are designed to work together. 
+  - It will mostly be invisible to users, the key thing that needs to happen is that all the producers and consumers of batch data need to adopt Arrow as the common interchange format.
+- Google BigQuery recently implemented the storage API, which allows you to read BQ tables, in parallel, in Arrow format
+  - Snowflake has adopted Arrow as the in-memory format for their JDBC driver, though to my knowledge there is still no way to access data in parallel from Snowflake, other than to export to S3.
+  - As Arrow spreads across the ecosystem, users are going to start discovering that they can store data in one system and query it in another, at full speed, and it's going to be amazing.
+
+- The premise around arrow is that when you want share data with another system, or even on the same machine between processes, most of the compute time spent is in serializing and deserializing data. 
+  - Arrow removes that step by defining a common columnar format that can be used in many different programming languages. 
+  - Theres more to arrow than just the file format that makes working with data even easier like better over the wire transfers (arrow flight). 
+- 👉🏻 Not only in between processes, but also in between languages in a single process. In this POC I spun up a Python interpreter in a Go process and pass the Arrow data buffer between processes in constant time
+
+- 🆚️ How is this any better than something like flatbuffers though?
+  - For one, Arrow is columnar. 👉🏻 The idea of zero-copy serialization is shared between Arrow and FlatBuffers.
+  - This is explained in the FAQS for Arrow, saying they use flatbuffers internally. Arrow supports more complex data types.
+  - Only for IPC support - Arrow data format does not use flatbuffers.
+
+- 🆚️ The big thing is that it is one of the first standardized, cross language binary data formats. 
+  - CSV is an OK text format, but parsing it is really slow because of string escaping. The files it produces are also pretty big since it's text.
+  - Arrow is really fast to parse (up to 1000x faster than CSV), supports data compression, enough data-types to be useful, and deals with metadata well. 
+  - The closest competitor is probably protobuf, but protobuf is a total pain to parse.
+
+- 😩 Until arrow has proper support for multidimensional arrays, its not really appropriate for many use cases.
+  - FWIW, you can support tensors etc. natively today by using Arrow's structs
+- Almost no database systems support multidimensional arrays. So they are not appropriate for many use cases?
+  - * BigQuery: no * Redshift: no * Spark SQL: no * Snowflake: no * Clickhouse: no * Dremio: no * Impala: no * Presto: no ... list continues
+  - We've invited developers to add the extension types for tensor data, but no one has contributed them yet. I'm not seeing a lot of tabular data with embedded tensors out in the wild.
+- ClickHouse has support for multidimensional arrays with arbitrary types and number of dimensions. They are stored in tables in efficient column-oriented format.
+- The only database I know of that natively supports multidimensional arrays is SciDB (one of Stonebraker's products)
+- TileDB supports both sparse and dense multidimensional arrays. We support returning data in arrow arrays or an arrow table as one of many ways we interoperate with computational tools. You can also access the data directly via numpy array, pandas, R data.frames and a number of integrations with MariaDB, Presto, Spark, GDAL, PDAL and more.
+
+- What are the use cases where multi-dimensional arrays are important and why?
+  - R&D/manufacturing of consumer facing sensors, in my case.
+  - Astronomy, seismology, microscopy. There's an interesting query language, SciQL, built to support such use cases. It can be used with MonetDB
+
+- 
+- 
+- 

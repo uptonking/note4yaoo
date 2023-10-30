@@ -14,6 +14,17 @@ modified: 2021-03-31T06:50:19.936Z
     - 在/etc/apache2/sites-available目录下，建立单独文件，如kanban.conf
     - 保存后执行a2ensite kanban.conf，执行后会自动在/etc/apache2/sites-available建立相应的文件链接。
     - 注意要做域名解析
+# discuss-security
+- ## 
+- 
+- ## 
+
+- ## 
+
+- ## 才知道还有这种 CRLF 漏洞... 通过在网址里塞入 %0d%0aSet-Cookie: xxxx 的方式，让一些跳转登录页的网站被注入cookie。
+- https://twitter.com/zQwQs/status/1718893609905455519
+  - 不过也有前提就是 server 侧读取 pathname 的时候 decode 了
+
 # discuss
 - ## 
 

@@ -148,8 +148,6 @@ modified: 2022-11-25T15:41:47.534Z
   - [Offline use with Sync to Server](https://github.com/only-cliches/Nano-SQL/issues/18)
   - [Is this project still maintained?](https://github.com/only-cliches/Nano-SQL/issues/217)
     - https://github.com/only-cliches/snap-db  /inactive
-  - https://github.com/only-cliches/snap-db
-    - Simple & Robust LSM Powered Javascript key-value store
 
 - debe /35Star/MIT/201907/ts/inactive
   - https://github.com/bkniffler/debe

@@ -111,7 +111,7 @@ ctx.fillText('中', 0, 0)
 - WOPI协议约定了Office Online服务和集成业务侧之间的通信协议，协议约定了一组接口操作，指明怎么从集成业务方获取和改变文件，该操作基于REST协议，这样对集成方而言只要提供了这些接口实现即可，开发成本可控。
 
 - 在文档编辑器领域微软是业界的标杆，它设计了好几种开放协议，包括本文讨论的WOPI协议，还有后来者Vscode为了支持多语言的语法补全功能提出了LSP协议等，这些平台设计思路是类似的：希望开发者能基于协议共建平台的生态，放大平台的价值和产品生命力
-# blogs-products
+# blogs-pm-excel
 - [Building abstractions on spreadsheets - The cost of flexibility and potential solutions](https://subset.so/blog/building-abstractions-on-spreadsheets)
 # blogs
 

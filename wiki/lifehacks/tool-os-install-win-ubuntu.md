@@ -276,6 +276,9 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
 - [files - How to preview DDS and WEBP images on nautilus? - Ask Ubuntu](https://askubuntu.com/questions/617047/how-to-preview-dds-and-webp-images-on-nautilus)
   - nano ~/.local/share/thumbnailers/webp.thumbnailer
 
+- https://github.com/rime/librime
+  - [弄个Web版 Try Rime Input Tools online](https://github.com/rime/librime/issues/317)
+  - [My RIME：我把你最喜欢的输入法做成了网页版 - 知乎](https://zhuanlan.zhihu.com/p/609505137)
 ## upgrade-ubuntu
 
 - [2 Ways to Upgrade Ubuntu 20.04 To Ubuntu 22.04 (Graphical & Terminal)](https://www.linuxbabe.com/ubuntu/upgrade-ubuntu-20-04-to-ubuntu-22-04)

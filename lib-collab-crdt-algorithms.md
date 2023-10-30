@@ -57,9 +57,9 @@ modified: 2023-03-07T04:43:58.713Z
 - rga
 - logoot
   - sparse n-ary tree
-- lseq
+- lseq/2013
   - exponential tree
-- treedoc
+- treedoc/2009
   - binary tree
 
 ## RGA(Replicated Growable Array) / Causal Tree

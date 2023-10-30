@@ -24,6 +24,7 @@ modified: 2023-09-28T20:33:44.333Z
     - For a browser-side database it's `localforage`, which uses the best backend available (IndexedDB then localStorage)
     - Under the hood, NeDB's **persistence uses an append-only format**, meaning that all updates and deletes actually result in lines added at the end of the datafile, for performance reasons.
   - I consider NeDB to be feature-complete, i.e. it does everything I think it should and nothing more. As a general rule I will not accept pull requests anymore
+  - 依赖 https://github.com/louischatriot/node-binary-search-tree
   - [Is this still maintained?](https://github.com/louischatriot/nedb/issues/492)
 
 - https://github.com/seald/nedb /202209/js/active
@@ -228,6 +229,7 @@ modified: 2023-09-28T20:33:44.333Z
 - https://github.com/4strid/nekodb /201910/js
   - Tiny ODM for MongoDB/NeDB
   - NekoDB comes with NeDB built in
+  - [Nekodb A tiny ODM for Nedb and Mongodb](https://aghae.github.io/post/Nekodb%20A%20tiny%20ODM%20for%20Nedb%20and%20Mongodb/)
 - https://github.com/bengl/mongosmash
   - simple ODM for MongoDB and NeDB on Node.js (using JS Harmony).
 
@@ -241,7 +243,7 @@ modified: 2023-09-28T20:33:44.333Z
   - 依赖sift
   - Written to be an lightweight functional alternative to `@apollo/client`
 
-- lowdb /18.7Star/MIT/202211/ts
+- lowdb /20.2kStar/MIT/202310/ts
   - https://github.com/typicode/lowdb
   - Simple to use local JSON database.
   - supports Node, Electron and the browser

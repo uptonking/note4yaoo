@@ -18,7 +18,13 @@ modified: 2023-09-17T18:10:33.050Z
 
 - ## 
 
-- ## 
+- ## 🆚️ How are you propagating changes from your operational database to your data warehouse / analytics system?
+- https://twitter.com/gunnarmorling/status/1718681535803449394
+  - batch vs streaming  =  0.52: 0.48  /145votes
+- It is a tough question. A lot of factor should be considered. Such as how the change impacts reports, is there any realtime report got impacted … if all is “yes”, you will need realtime pipeline, else, batch processing is preferable.
+- Streaming is much higher than expected and seen in the wild in this poll.  I suspect it’s influenced by your audience.
+- Both!
+
 # discuss
 - ## 
 

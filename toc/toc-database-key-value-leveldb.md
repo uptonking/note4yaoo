@@ -17,12 +17,17 @@ modified: 2022-11-03T04:14:00.563Z
   - https://github.com/Level/awesome
   - [LSM-Tree 论文的中文翻译](https://github.com/tangwz/LSM-Tree-CN/blob/main/LSM-Tree-CN.md)
 # db-key-value
-- snap-db /58Star/MIT/202001/ts/Nano-SQL
+- snap-db /58Star/MIT/202001/ts/NoDeps/Nano-SQL
   - https://github.com/only-cliches/snap-db
   - Simple & Robust LSM Powered Javascript key-value store
   - SnapDB is a pure javascript persistent key-value store that provides ordered mapping from keys to string values. 
-  - Data is persisted to disk using a Log Structure Merge Tree (LSM Tree) inspired by LevelDB / RocksDB. 
+  - Data is persisted to disk using a Log Structure Merge Tree (LSM Tree) inspired by LevelDB/RocksDB. 
   - SnapDB has 100% API compatibility with LevelDB & RocksDB and also includes additional functionality.
+  - Uses synchronous filesystem methods to exclusively perform append writes to disk, this puts the performance of SnapDB near the theoretical maximum write performance for ACID compliant javascript databases.
+
+- https://github.com/heineiuo/rippledb /MIT/202010/ts/lsm/inactive
+  - https://rippledb.github.io/
+  - an embeddable key-value database engine in pure TypeScript, based on LSM-Tree, Inspired by LevelDB.
 
 - https://github.com/apple/foundationdb /Apache2/cpp
   - a distributed database designed to handle large volumes of structured data across clusters of commodity servers.
@@ -73,6 +78,9 @@ modified: 2022-11-03T04:14:00.563Z
   - [Sled: Embedded Database Written in Rust | Hacker News_202002](https://news.ycombinator.com/item?id=22375979)
     - LevelDB is a LSM database. 
     - LSM is generally better for write workloads over BTree DBs like LMDB and sled. LMDB also has a single writer restriction.
+
+- https://github.com/WyattJia/Pomegranate /rust/archived
+  - A tiny skiplist based log-structured merge-tree written in Rust.
 
 - https://github.com/JetBrains/xodus /apache2/java
   - a transactional schema-less embedded database
@@ -153,9 +161,6 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/jed/sheet-down
   - This library uses abstract-leveldown to turn a worksheet within a Google Spreadsheet into a leveldown-compatible store for use with levelup.
 
-- https://github.com/heineiuo/rippledb /MIT/ts/inactive
-  - an embeddable key-value database engine in pure TypeScript, based on LSM-Tree, Inspired by LevelDB.
-
 - https://github.com/belayeng/quadstore /MIT/ts
   - https://belayeng.github.io/quadstore
   - Quadstore is a LevelDB-backed RDF graph database / triplestore for JavaScript runtimes (browsers, Node.js, Deno, Bun, ...) written in TypeScript.
@@ -163,7 +168,7 @@ modified: 2022-11-03T04:14:00.563Z
   - Supports SPARQL queries via quadstore-comunica, a tailored configuration and distribution of the Comunica querying framework
   - Natively capable of querying across named graphs
 
-- https://github.com/lotusdblabs/lotusdb /go
+- https://github.com/lotusdblabs/lotusdb /go/lsm
   - LotusDB is a fast k/v database compatible with LSM tree and B+ tree, optimization of badger and bbolt.
   - Much lower read and space amplification(倍率，放大率) than typical LSM
   - LotusDB is inspired by a paper named SLM-DB in USENIX FAST ’19, and the Wisckey paper also helps a lot.
@@ -176,13 +181,33 @@ modified: 2022-11-03T04:14:00.563Z
   - RocksDB, based on LevelDB, is an implementation of LSM-Tree storage engine.
   - For RB-Tree and B-Tree, all data operations are in-place. That is to say, when you update the value corresponding to the key, the value will be overwritten at its original memory or disk space. 
   - But in an LSM Tree, all write operations, i.e., insertions, updates, deletions, are performed in somewhere else. These operations will be batched into SST (sorted string table) files and be written to the disk. Once written to the disk, the file will not be changed. These operations are applied lazily on disk with a special task called compaction. The compaction job will merge multiple SST files and remove unused data.
-- https://github.com/Fullstop000/wickdb
+
+- https://github.com/adambcomer/database-engine /rust
+  - LSM-Tree Key-Value Store based on RocksDB
+  - [Build a Database Pt. 1: Motivation & Design | Adam Comer](https://adambcomer.com/blog/simple-database/motivation-design/)
+    - In this series, we will design and build a simple Log Structured Merge(LSM) tree storage engine similar to RocksDB
+    - A LSM-Tree storage pattern is very efficient for writes
+
+- https://github.com/KipData/KipDB /apache2/rust/lsm
+  - 轻量级键值存储引擎, 整体设计参考LevelDB，旨在作为NewSQL分布式数据库的存储引擎
+  - 支持嵌入式/单机存储/远程调用等多应用场景
+  - 实现MVCC以支持ACID
+  - 高性能，BenchMark写入吞吐量约为Sled的两倍，且大数据量下的顺序读取平均延迟为1μs左右
+  - 远程连接使用ProtoBuf实现，支持多语言通信
+  - https://github.com/KipData/KipSQL
+    - Lightweight SQL calculation engine, as the SQL layer of KipDB, implemented with TalentPlan's TinySQL as the reference standard
+
+- https://github.com/Fullstop000/wickdb /bsd/202108/rust/inactive
   - Pure Rust LSM-tree based embedded storage engine
+
+- https://github.com/burhanxz/Distributed-KV /java
+  - 根据LSM论文，并结合CPP已有的实现，利用Java实现了LSM架构；
+  - 综合Dubbo等框架的特点，实现了简洁的RPC框架。
 # redis-like
 - https://github.com/seppo0010/rsedis /1.7kStar/bsd/202011/rust
   - Redis re-implemented in Rust. To learn Rust.
   - rsedis does not rely on UNIX-specific features. Windows users can run it as a replacement of Redis.
-  - rsedis uses multiple threads which may be more useful in machines with multiple cores.
+  - uses multiple threads which may be more useful in machines with multiple cores.
 
 - https://github.com/dicedb/dice /go
   - Re-implementation of Redis in Golang

@@ -114,6 +114,10 @@ modified: 2023-01-09T11:04:13.958Z
 
 - https://github.com/plantain-00/expression-engine
   - An expression tokenizer, parser and evaluator.
+
+- https://github.com/vinci1it2000/formulas /python
+  - formulas implements an interpreter for Excel formulas, which parses and compile Excel formulas expressions.
+  - it compiles Excel workbooks to python and executes without using the Excel COM server. Hence, Excel is not needed.
 # template
 - https://github.com/Siemienik/XToolset /ts
   - Export data to Ecma-376 . XLSX Excel files based on template

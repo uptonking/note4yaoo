@@ -53,6 +53,9 @@ modified: 2021-01-04T16:21:40.119Z
 - https://github.com/mourner/flatbush
   - A really fast static spatial index for 2D points and rectangles in JavaScript.
   - An efficient implementation of the packed Hilbert R-tree algorithm.
+# spatial-db
+- https://github.com/qalocate/qalgeohash-tsql /tsql
+  - SQL Server TSQL Implementation of Geohash types and conversion functions
 # opengis
 - geoserver /GPLv2/java
   - https://github.com/geoserver/geoserver

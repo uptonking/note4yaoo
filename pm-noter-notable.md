@@ -172,6 +172,10 @@ modified: 2022-12-19T02:01:20.161Z
   - 网盘：百度OAuth2.0, 腾讯文档/微云，onedrive
   - 云服务商：七牛
   - 非主流存储：github、gitee
+
+## comment
+
+- 页面底部的comment、侧边栏跟随内容的comment、侧边弹框的comment
 # experimental
 - notion like block editor
 - roam like editor with bidirectional links，国内思源笔记

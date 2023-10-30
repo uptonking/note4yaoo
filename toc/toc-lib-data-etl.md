@@ -38,12 +38,17 @@ modified: 2023-10-27T15:39:10.466Z
   - **Every job can have as many destinations (outputs)** as needed. For example, one job can load processed data into a **database**, **log** this data to stdout and post it by **HTTP** simultaneously.
   - New processors and destinations can be made by extending existing ones.
 
-- 
-
 - https://github.com/cloudquery/cloudquery /go
   - https://cloudquery.io/
   - high-performance data integration framework built for developers.
   - CloudQuery extracts, transforms, and loads configuration from cloud APIs to variety of supported destinations such as databases, data lakes, or streaming platforms for further analysis.
+# query
+- https://github.com/obi1kenobi/trustfall /apache2/rust
+  - A query engine for any combination of data sources.
+  - databases, APIs, file systems, anything else you can think of + any combination of them.
+  - The easiest way to plug in a new data source is by implementing the BasicAdapter trait.
+  - In the Playground, Trustfall is configured to run client-side as WASM, performing all aspects of query processing (parsing, compilation, and execution) within the browser. 
+  - it is of course able to be used in a more traditional client-server context as well.
 # data-platform
 - https://github.com/infinyon/fluvio /rust
   - https://www.fluvio.io/

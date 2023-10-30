@@ -227,7 +227,12 @@ modified: 2023-01-17T19:14:47.611Z
   - GUN is an ecosystem of tools that let you build community run and encrypted applications - like an Open Source Firebase or a Decentralized Dropbox.
   - GUN supports more than just key/value pairs, it is a graph database that can store SQL-like tables, JSON-like documents, files and livestreaming video, plus relational and hypergraph data!
   - Gun is a graph database. I don't think Orbit uses a graph system, but instead uses feeds or KV stores. So that's a another difference. But Gun can use IPFS as a storage adapter if you wanted.
+  - [GUN — the database for freedom fighters - Docs v2.0](https://gun.eco/docs/Conflict-Resolution-with-Guns)
+    - The conflict resolution algorithm (also called HAM) is at the center of everything gun does. It's how peers eventually arrive at the same state, and how offline edits are merged. Every change in the system goes through HAM.
   - [Is GUN suitable for building collaborative text editor using causal-tree merging strategy?](https://github.com/amark/gun/issues/459)
+    - Yes, I did a demo a long time ago.
+    - GUN's base CRDT allows for other CRDTs (like a causal-tree) to be implemented on top, so you could do your own custom algorithm.
+  - [CRDT semantics](https://github.com/amark/gun/issues/602)
 - https://github.com/TopGunBuild/topgun /ts/gundb
   - Reimplementation of gunDB in TypeScript
   - A graph data synchronisation engine for building realtime, offline-first, secure and scalable applications.

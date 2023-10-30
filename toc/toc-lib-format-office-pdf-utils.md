@@ -35,8 +35,9 @@ modified: 2022-11-11T10:46:41.519Z
   - Tabula only works on text-based PDFs, not scanned documents
 # examples
 
-# parser-generator
+## viewer
 
+# parser-generator
 - https://github.com/tradle/pdf-parse /js
   - Pure javascript cross-platform module to extract texts from PDFs.
 
@@ -64,6 +65,23 @@ modified: 2022-11-11T10:46:41.519Z
   - 利用的Chrome Headless，让Chrome渲染PDF，再导出成HTML，甚至图片都转成了 base64 字符，所以一个网页就可以包含完整的文本、字体和图片等内容
 # utils
 
+# latex
+
+- https://github.com/dginev/ar5iv /MIT/rust
+  - https://ar5iv.org/
+  - A web service offering HTML5 articles from arXiv.org as converted with latexml
+  - Authors can reproduce locally using ar5ivist.
+  - Not a live preview service.
+  - Goal: incremental improvement until worthy of native arXiv adoption.
+  - View any arXiv article URL by changing the X to a 5
+
+- https://github.com/arxiv-vanity/arxiv-vanity /apache2/python
+  - https://www.arxiv-vanity.com/
+  - Renders papers from arXiv as responsive web pages so you don't have to squint(眯着眼看) at a PDF.
+  - This is the web interface for viewing papers. 
+  - The actual LaTeX to HTML conversion (the interesting bit) is done by Engrafo.
+  - https://github.com/arxiv-vanity/engrafo
+    - Convert LaTeX documents into beautiful responsive web pages using LaTeXML.
 # more
 - [PDF to JSON (by PDFLite.co)](https://chrome.google.com/webstore/detail/pdf-to-json-by-pdfliteco/aapoejhdejkncgnbpngckmddecnfjiob)
   - Extract PDF To JSON with 100% privacy for your files and no uploads to Internet, works offline.

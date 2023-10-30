@@ -12,6 +12,24 @@ modified: 2021-02-26T16:42:06.878Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## ~3000 of the "elements" that needed a style recalculation according to @ChromeDevTools were due to this rule:
+- https://twitter.com/fabiospampinato/status/1718764978499444895
+  - If this isn't a bug I don't know what to call it. There isn't even a selection on this page.
+  - Turns out another ~2000 "elements" of those were caused by another rule like that. Basically a very sizable chunk of the style recalculation was wasted styling selections that don't exist. You can't even have more than one selection at a time, I think.
+
+```CSS
+::selection {
+  background-color: blue;
+  color: white;
+}
+```
+
 - ## 想要提高网页的加载体验，其实有个非常简单且实用的技巧，那就是改变请求资源的加载优先级
 - https://twitter.com/zhangxinxu/status/1718665721646075925
 - [聊聊Web网页中资源加载的优先级 « 张鑫旭-鑫空间-鑫生活](https://www.zhangxinxu.com/wordpress/2023/10/img-js-preload-fetch-priority/)
@@ -23,15 +41,15 @@ modified: 2021-02-26T16:42:06.878Z
 
 - ## How to optimize style recalculations
 - https://twitter.com/fabiospampinato/status/1652326018613379074
-01. Open chrome://tracing
-02. Record
-03. Manual settings -> turn on "blink.debug"
-04. Record
-05. Interact with the page
-06. Select everything
-07. Click "Slices"
-08. Click "SelectorStats"
-09. Spot overly-broad selectors
+01.  Open chrome://tracing
+02.  Record
+03.  Manual settings -> turn on "blink.debug"
+04.  Record
+05.  Interact with the page
+06.  Select everything
+07.  Click "Slices"
+08.  Click "SelectorStats"
+09.  Spot overly-broad selectors
 10. Make them more specific
 
 - A bit easier in MS Edge, just turn on ‘advanced rendering instrumentation’ in the performance tab, and then the ‘selector stats’ tab will appear when you inspect a style recalc

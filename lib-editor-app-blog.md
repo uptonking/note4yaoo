@@ -8,8 +8,7 @@ modified: 2022-08-21T10:11:37.453Z
 # lib-editor-app-blog
 
 # guide
-- tldr: Unless browsers will open for the Web multiple crucial features (such as IME, keyboard, selection, touch, on-screen keyboard, spellchecker, etc.) contentEditable is the only sane way to handle text editing.
-
+- tldr: Unless browsers will open for the Web multiple crucial features (such as IME, keyboard, selection, touch, on-screen keyboard, spellchecker, etc.), contentEditable is the only sane way to handle text editing.
 - contenteditable gives you one very important feature that you can't fake yourself: access to the browser's spell check and corrections
 - Yep, we do use contentEditable as an input source and also as the view to which we render (you wouldn't be able to reliably handle the keyboard otherwise).
 # blogs

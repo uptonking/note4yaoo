@@ -20,15 +20,39 @@ modified: 2023-10-26T21:54:54.201Z
 
 - To put it coarsely, outside ZigZag there are three different kinds of structures in computers today: linear lists (and grids i.e.~lists of lists), hierarchical trees and messes. That is really messes, not meshes. By a mess, I mean any complicated data structure, usually with one-directional links to make things even more unmanageable.
   - That's not a mess, that's a graph.
-# discuss-dataframe/tabular/excel
+# discuss-excel
 - ## 
 
 - ## 
 
-- ## 🔥 [Excel as a database | Hacker News_201304](https://news.ycombinator.com/item?id=5515290)
+- ## [Dealing with massive data structures in roguelikes : roguelikedev](https://www.reddit.com/r/roguelikedev/comments/xxiu4b/dealing_with_massive_data_structures_in_roguelikes/)
+- I'm working on a game that has a silly scale (think milions of objects in a billion cube units having to talk among themselves all the time).
+  - A data structure that has made my life much easier is the kd-tree. It's super easy to implement and allows for very fast lookups.
+
+- ## [I'm stuck for reactive incremental computation. : ProgrammingLanguages](https://www.reddit.com/r/ProgrammingLanguages/comments/w8kjfl/im_stuck/)
+- I would look into spatial trees (like quadtree, a 2d generalisation of binary tree, or r-tree (a n-dimension generalisation of b-tree).
+  - I'm trying to understand what you're doing, and I think your spreadsheet essentially acts like a single giant 2d database table, with (i assume) dynamic typing (ie you can put any type of value in any cell).
+  - In that case, assuming you have a well-defined total ordering for the values that can go in the cells, then maybe you could have a r tree acting as a single index for the entire spreadsheet.
+  - You'd have to keep it updated whenever you change anything in the spreadsheet (which should be efficient since it's a tree) and in return it would allow you to quickly look up elements inside any rectangular range of cells, as well as finding their min/max values.
+- Your understanding is correct and your suggestion sounds viable. I feel much better now, thanks! If `Max(a:b)` can be evaluated efficiently in log time using the single big index, then I guess I don't even need to worry about incremental evaluation yet.
+
+- You might be looking for differential dataflow
+
+- ## 👥🪟📕 [Efficient and Compact Spreadsheet Formula Graphs | Hacker News_202302](https://news.ycombinator.com/item?id=34800138)
+- cool! The authors exploit the fact that neighboring cells often have similar formulas to compress the evaluation graph.
+- This seems odd to me. This is basically just ways of finding database-esque tables in spreadsheets to then leverage for vector/matrix operations.
+  - It is a non-problem for anyone who really cares about performance as they've probably already realised they can just use a database some efficiently programmed transformations.
+- Being able to have intricate computation definition being user-modifiable is a big feature. I have successfully 'appified' such Excel sheets in the past, only to be recognized as the new business rule maintenance guy. I no longer do that anymore: I identify moving parts, and these stay in the Excel world instead of going into the DB or a config file. I do clean the inputs and harden access control though.
+
+- ## 🪟🔥 [Excel as a database | Hacker News_201304](https://news.ycombinator.com/item?id=5515290)
 - 
 - 
 - 
+
+# discuss-dataframe/tabular
+- ## 
+
+- ## 
 
 - ## [Why isn’t there a decent file format for tabular data? | Hacker News_202205](https://news.ycombinator.com/item?id=31220841)
 - several high quality and well-developed formats

@@ -64,3 +64,12 @@ modified: 2023-02-07T09:22:03.120Z
 
 - https://github.com/nateshmbhat/pyttsx3
   - Fully OFFLINE text to speech conversion
+# discuss
+- ## 
+
+- ## 
+
+- ## 现在的视频翻译突然间火了，推友们，可以告诉我使用了什么技术吗？
+- https://twitter.com/lxfater/status/1718639301813215543
+- VideoReTalking：让视频中的人物的嘴型与输入的声音同步。
+- [HeyGen - AI Spokesperson Video Creator](https://app.heygen.com/login)

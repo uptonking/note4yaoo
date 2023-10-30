@@ -235,6 +235,9 @@ modified: 2023-02-05T19:03:27.730Z
   - That proofreader can work locallyin the browser, or it can call an online service, 
   - This extension is inspired by the tiptap-languagetool extension.
 
+- [Tiptap CodeBlock Extension](https://gist.github.com/Itsnotaka/7eb107dcfe18225eeab66263339a8074)
+  - Decided to ditch shiki and use highlightjs
+
 ## tiptap-ruby
 
 - rhino-editor /26Star/MIT/202212/ts/ruby

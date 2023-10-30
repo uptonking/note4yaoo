@@ -69,10 +69,7 @@ modified: 2023-04-04T22:35:59.255Z
   - https://lightue.netlify.app/
   - A lightweight and simple model-view framework inspired by Vue.js
   - https://github.com/smalllong/lightuepress
-# render
-- https://github.com/arthurhovhannisyan31/offscreen-canvas-worker
-  - Application allows to fetch and process data in the background using workers api.
-  - This applications does data fetching and processing in the background with submission of final result to main app.
+
 # lang-typescript
 - https://github.com/remeda/remeda
   - The first "data-first" and "data-last" utility library designed especially for TypeScript.
@@ -125,6 +122,11 @@ modified: 2023-04-04T22:35:59.255Z
 
 - https://github.com/adobe/ferrum /js
   - Features from the rust language in javascript: Provides Traits/Type classes & a hashing infrastructure and an advanced library for working with sequences/iterators in js
+
+- https://github.com/stdlib-js/stdlib /3.5kStar/Apache2/202310/js
+  - https://stdlib.io/
+  - a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing applications. 
+  - provides a collection of robust, high performance libraries for mathematics, statistics, data processing, streams, and more
 # lang-nodejs
 - https://github.com/RafaelGSS/nodejs-bench-operations
   - This repository provides benchmarks for basic operations to aid in determining a high-performance solution.
@@ -151,6 +153,11 @@ modified: 2023-04-04T22:35:59.255Z
   - https://cocreate.app/docs/clone
   - Clone an html element by #id, identify targeted elements using clone_id="" attribute. 
   - Capable of creating nested & complex cloning logic for kanbans, tasklists etc. 
+
+# render
+- https://github.com/arthurhovhannisyan31/offscreen-canvas-worker
+  - Application allows to fetch and process data in the background using workers api.
+  - This applications does data fetching and processing in the background with submission of final result to main app.
 # web-localStorage
 - https://github.com/unjs/unstorage /ts
   - Unstorage provides an async Key-Value storage API with conventional features like multi driver mounting, watching and working with metadata, dozens of built-in drivers and a tiny core.

@@ -256,8 +256,14 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/DEEJ4Y/pouchdb-services /ts
   - A set of PouchDB service functions and a class version of them, with `mongodb` style `ObjectID` id's for all your documents.
 
-- https://github.com/stanlemon/couchdb-userdb /js
+- https://github.com/stanlemon/couchdb-userdb /202007/js
   - A tool for managing user specific databases in an Apache CouchDB tool. If you are using CouchDB and are able to flip on the "user db" setting you have no need for this tool
+
+- https://github.com/solzimer/session-pouchdb-store /js
+  - A PouchDB session store for express.js.
+  - Can do realtime session data synchronization via PouchDB server
+  - Default in-memory PouchDB instance.
+  - Scavenge and purge invalid/expired sessions.
 # pouchdb-utils
 - https://github.com/i-mizzle/electron-react-pouchdb-boilerplate /202309/js
   - Boilerplate template for an electron application. with react and pouchDB
