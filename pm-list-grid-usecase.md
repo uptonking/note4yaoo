@@ -12,7 +12,7 @@ modified: 2021-05-14T14:34:59.116Z
 - 特点
   - 偏向数据密集型功能，而不是格网布局
 
-- **偏浏览类**
+- **偏展示类**
 - component for developer: grid/list/tree
 - file-explorer
 - color-palette
@@ -21,6 +21,7 @@ modified: 2021-05-14T14:34:59.116Z
 - ecommerce-order-list
 - comparison-table: 产品参数对比，参考国内手机厂商新品发布会的ppt
 - github-awesome-list enrich
+- calendar heatmap: github like
 
 - **layout**
 

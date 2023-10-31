@@ -66,19 +66,6 @@ modified: 2023-09-17T17:35:27.024Z
 - 
 - 
 
-# discuss-join
-- ## 
-
-- ## 🔥 [Joining CSV and JSON data with an in-memory SQLite database | Hacker News_202106](https://news.ycombinator.com/item?id=27565482)
-- 
-- 
-- 
-
-- ## 🔥 [Doing a database join with CSV files | Hacker News_201912](https://news.ycombinator.com/item?id=21923911)
-- 
-- 
-- 
-
 # discuss
 - ## 
 

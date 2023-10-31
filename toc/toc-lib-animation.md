@@ -270,6 +270,11 @@ modified: 2020-10-05T06:22:02.107Z
   - https://brm.io/matter-js/
   - a 2D rigid body physics engine for the web
   - 一个高性能的 2D 物理 js 库
+# page-transition
+
+- https://github.com/michalzalobny/plain-page-transition
+  - https://zesty-cocada-b5eb44.netlify.app/
+  - Transition between pages made from scratch with plain JavaScript and no external libraries
 # more
 - awesome-web-animation /202006
   - https://github.com/sergey-pimenov/awesome-web-animation

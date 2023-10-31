@@ -15,6 +15,14 @@ modified: 2021-08-07T16:44:32.377Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Over the past few month I experimented building beautiful shaders of cloudscapes with Volumetric Raymarching
+- https://twitter.com/MaximeHeckel/status/1719372655923486966
+  - [Real-time dreamy Cloudscapes with Volumetric Raymarching](https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/)
+
 - ## I feel like `@react-three/fiber` is *almost* what I want. 
 - https://twitter.com/JungleSilicon/status/1645699043388170242
   - I want a data-driven version of Three JS, but I'd like Three JS to be ejected from React and have React update based on changes to the internal state.

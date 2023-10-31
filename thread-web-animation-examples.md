@@ -40,6 +40,20 @@ modified: 2021-04-21T15:01:12.882Z
 
 - ## 
 
+- ## Today we have some ideas for speedy layered image animations for page transitions using clip paths
+- https://twitter.com/codrops/status/1719374467548242383
+  - [Image Layer Animations with Clip-Path](https://tympanus.net/codrops/2023/10/31/image-layer-animations-with-clip-path/)
+
+- ## Polishing case study transitions with all plain JavaScript
+- https://twitter.com/michalzalobny/status/1718922552523866426
+  - https://github.com/michalzalobny/plain-page-transition
+  - [Case Studies](https://zesty-cocada-b5eb44.netlify.app/)
+
+- ## 🌰 How does Stripe do that really cool morphing animation with their menus?
+- https://twitter.com/Steve8708/status/1719083969931882597
+  - See how to easily replicate it with React, Tailwind, and AI
+  - [Make an Animated Menu like Stripe with React, Tailwind, and AI](https://www.builder.io/blog/stripe-menus)
+
 - ## You can use @sveltejs crossfade to transition item from 1 layout to another
 - https://twitter.com/lihautan/status/1274876595170238465
 

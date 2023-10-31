@@ -28,7 +28,7 @@ modified: 2021-07-28T19:22:07.339Z
   - [Use svg sprite icons in React](https://www.jacobparis.com/content/svg-icons)
 - Good writeup! One suggestion I have would be that if you're going to write a JSON file to disk as part of the SVG generation script, you might as well just write out a Typescript type definition instead to simplify things. Same goes for the Icon component itself!
 
-- ## Please don't import SVGs as JSX. 
+- ## 🚫💡 Please don't import SVGs as JSX. _202104
 - https://twitter.com/_developit/status/1382838799420514317
   - It's the most expensive form of sprite sheet: costs a minimum of 3x more than other techniques, and hurts both runtime (rendering) performance and memory usage.
   - This bundle from a popular site is almost 50% SVG icons (250kb), and most are unused.

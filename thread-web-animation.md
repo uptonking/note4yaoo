@@ -22,6 +22,18 @@ modified: 2021-01-08T17:14:34.841Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Scroll-driven animations coming in Safari
+- https://twitter.com/anatudor/status/1719012021398589824
+  - [scroll-driven animations – Bram.us](https://www.bram.us/tag/scroll-driven-animations/)
+- Most of those fall deeply into the "just because you can doesn't mean you should" territory. Otoh the flip book example is divine.
+
+
+
+
 - ## It’s actually weird to me that the View Transitions API accepts an async function. 
 - https://twitter.com/mattgperry/status/1710630573339787561
   - startViewTransition shouldn’t be fired until anything asynchronous has finished and we’re ready to start a single sync job - updating the DOM. 

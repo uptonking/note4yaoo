@@ -7,9 +7,9 @@ modified: 2023-09-17T18:10:33.050Z
 
 # lib-db-app-community-etl
 
-# guide
-
 > about data sources and integration
+
+# guide
 
 # discuss-stars
 - ## 
@@ -29,11 +29,6 @@ modified: 2023-09-17T18:10:33.050Z
 - ## 
 
 - ## 🔥 [Show HN: Stein – Use Google Sheets as a No-Setup Database | Hacker News_201907](https://news.ycombinator.com/item?id=20426682)
-- 
-- 
-- 
-
-- ## 🔥 [Show HN: OctoSQL – Query and join multiple databases and files, written in Go | Hacker News_201907](https://news.ycombinator.com/item?id=20449610)
 - 
 - 
 - 

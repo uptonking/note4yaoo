@@ -14,6 +14,14 @@ modified: 2022-12-19T01:59:37.634Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ##  what if JS had a simple way to share structured data across Worker (without postMessage)?
+- https://twitter.com/jarredsumner/status/1719259259840684417
+  - Shared structs proposal is a better approach for the “objects” but a Map is useful for concurrency
+
 - ## What if you could use web workers directly from JSX?
 - https://twitter.com/manucorporat/status/1657419808336486400
 

@@ -306,6 +306,9 @@ modified: 2020-12-21T07:44:14.728Z
   - And for React Native, I will be sticking to Animated. 
   - Once Animated is more mature, I will also probably switch to it as well on the web, though I am starting to enjoy using React Motion!
 # ref
+- [Scroll-driven Animations](https://scroll-driven-animations.style/)
+  - A bunch of demos and tools to show off Scroll-driven Animations
+
 - [A method for animating browser layouts at 60fps](https://mattperry.is/writing-code/layout-projection-animate-browser-layout-60fps)
 
 - [Responsive Animations with Framer Motion](https://samuelkraft.com/blog/responsive-animation-framer-motion)

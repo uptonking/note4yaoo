@@ -272,6 +272,9 @@ modified: 2022-11-03T04:14:00.563Z
 # level-utils
 - https://github.com/fergiemcdowall/pumbledb /201308/js
   - a Node.js key-value server that uses LevelDB
+
+- https://github.com/laixintao/iredis /python
+  - Interactive Redis: A Cli for Redis with AutoCompletion and Syntax Highlighting
 # kv-based
 - https://github.com/earthstar-project/earthstar /LGPLv3/ts
   - Storage for private, distributed, offline-first applications.

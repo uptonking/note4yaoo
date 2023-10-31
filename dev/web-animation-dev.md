@@ -32,6 +32,10 @@ modified: 2021-01-01T20:12:36.651Z
     - 可中断的动画
     - 方便实现动画生命周期hooks，工具函数丰富
   - 方便将动画迁移到其他平台
+
+- [Scroll-driven Animations](https://scroll-driven-animations.style/)
+  - A bunch of demos and tools to show off Scroll-driven Animations
+  - [Scroll-driven Animations · web-platform-tests/interop](https://github.com/web-platform-tests/interop/issues/439)
 # faq
 - 组件的hover effect如何实现
 - 类似条形图悬停时加长某根柱子，饼状图加长某个扇形

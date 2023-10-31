@@ -14,6 +14,19 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
+- ## 
+
+- ## Avoid using conditionals to render views in React
+- https://twitter.com/_georgemoller/status/1719150019918418421
+  - Instead use Maps/Enums
+- Nice approach. Also i think that in these examples might worry adding dynamic imports to only import the component to be render es. This way you have both boosts: maintanability and performance.
+
+- ## Using a key prop to reset @reactjs components is a great technique. 
+- https://twitter.com/aarongarciah/status/1719297001714487507
+  - It resets the state *and* re-creates the underlying DOM elements. 
+  - 👉🏻 Sadly, lots of devs are not aware that the focus gets lost when it's contained within an element inside the component whose key is changing
+  - IMO managing focus is one of the most challenging problems in complex web apps
+
 - ## Q: Does RSC still use fibers (just one render)?
 - https://twitter.com/sebmarkbage/status/1716927877915275640  
 - No.
@@ -251,7 +264,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                            `ValueFront`,                                            `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                               `ValueFront`,                                               `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

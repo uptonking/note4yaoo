@@ -63,6 +63,9 @@ modified: 2021-01-12T18:49:07.422Z
 - https://github.com/DKirwan/calendar-heatmap
   - A d3 heatmap for representing time series data similar to github's contribution chart
   - 依赖d3 v3
+
+- https://github.com/leadream/FigmaActivityCalendar /swift
+  - The Figma Activity Calendar is a menu application designed to monitor and track the amount of time you spend using Figma.
 # timeline
 - https://github.com/prabhuignoto/react-chrono /ts
   - https://5f985eb478dcb00022cfd60e-wfennyutax.chromatic.com/

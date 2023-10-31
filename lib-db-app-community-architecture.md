@@ -62,6 +62,31 @@ modified: 2023-09-17T17:37:19.913Z
 - 
 - 
 
+- ## 🌐️🛢️ [为什么 JS 不能绕过后端代码直接调数据库，有哪些后端处理的逻辑，JS 不能写？ - 知乎](https://www.zhihu.com/question/307461543)
+
+- 之所以不能直接对接到数据库，要中间服务代理一下（graphql 也需要“代理”），主要有几个原因：
+  - 安全问题：直接暴露数据库连接地址、连接 token（不管是密码账号还是中间token），都可能导致数据库被脱库，容易被爆破、篡改
+  - 性能问题：数据库 SQL 的优化很复杂，不是看到的简单 select 语句、CRUD，分库分表、索引优化都难以在前端实现，即使 GraphQL，也需要 db 的中间层
+
+- 在前端用字符串拼接SQL语句，后端数据库直接执行，然后查询结果送回前端处理。写起来是挺爽的，开发效率奇高，因为基本不需要写后端了。
+  - 但是这样会带来很大的安全性问题，很快我就决定全部重写。
+- 主流的关系型数据库，比如MySQL, 只能支持到表级别的鉴权。也就是说，一个用户如果被授权访问一张表，那么他就能访问这张表里的所有数据。
+  - 但是现实中的业务逻辑，通常不希望用户可以访问表里的所有数据。
+  - 用户可以篡改一些信息
+- 前端发来的请求都是不受信任的。后端要对它进行各种校验审查，最后才能执行并返回结果。
+  - 比如要检查用户的登录状态，输入的参数是否合法有效，SQL语句要用专门的逻辑去清洁，而不能用简单的字符串拼接，以避免SQL注入这种攻击。
+  - JavaScript运行在浏览器里，很容易被篡改。网络请求也可以在浏览器里被查看和修改。
+- 当然，一些传统的桌面版信息管理系统软件，前端不是JavaScript写的，比如用C#, 甚至C++实现的。这些软件部署在企业内部的系统里，网络环境相对更加安全可靠。在这种情况下，其实是可以在“前端”直接操纵数据库的。传统的ERP软件很多都是这么做的。
+
+- 直接用 SQL 也不是不能保障安全，有大概两种方法：
+  - 1、用户与数据库用户统一，在创建网站用户时创建数据库用户并设置权限；
+  - 2、代理层解析前端的 SQL，检测是否超过必要限定，或者附加限制条件等。
+  - 方法 1 不太好实施，为了管理和统计方便，通常会把数据集中到一起，即使细分了账号也难以限定行级的操作；
+  - 方法 2 要先将 SQL 解析成另一个方便检测和处理的数据结构，在检测和附加限定之后再拼装回 SQL，难度有点大。 
+
+- 技术上根本没有障碍。JS可以做几乎任何事，但是很多事情会被浏览器给拦下来。
+  - 比如你用js不借助file控件直接读写一个本地文件你觉得可能吗？如果真的可以后台直接操作，那当你打开某个网页时，你的所有电脑信息都可以被拷贝走
+  - 但凡有点经验的开发都知道，所有放到前端的东西都是不安全的。
 # discuss
 - ## 
 
@@ -130,14 +155,6 @@ modified: 2023-09-17T17:37:19.913Z
   - In OLAP this is all about loading and caching data in the browser, and then letting @duckdb rip.
 - Figuring out which data you’ve loaded and knowing when to load more is a Really Hard Problem. Ideally you can also push filters or full queries to the backend depending on their shape/size. But if you solve it — the UX is truly magical
 - Keeping it in the browser is an orthogonal problem, but yes once it’s in the browser Duckdb is magic
-
-- ## [For Want of a JOIN | Hacker News](https://news.ycombinator.com/item?id=34092645)
-
-- With that said, the JOIN is a very powerful concept which, unfortunately, has been given a terrible reputation by the NoSQL community. Moving such logic out of the database and into to DB's client is just a waste of IO and computing bandwidth.
-  - SQL has been the ONLY technology/language that has stuck with me for > 25 years. The fact that it is (apparently) not being taught by institutions of higher learning is just a shame.
-- I agree. It took me 3 years or so to actually land in a project and learn SQL for the first time. Before it was all with ORMs. I didn't know what a join was for the first couple of years of my career. Understanding SQL and being able to work with data interactively has made me a better software engineer. This tech is important enough that it should be taught in university/coding camps.
-
-- I often wonder how often this exact problem happens, but where A and B are [micro]services owned by two different teams, one is required by company policy to use their APIs not their raw databases, and escalation of each of these issues e.g. query size/rate limiting runs the risk of burning political capital on top of everything else.
 
 - ## 🤔 [Ask HN: Has anybody shipped a web app at scale with 1 DB per account? | Hacker News_202005](https://news.ycombinator.com/item?id=23305111)
 - My startup currently does just this 'at scale', which is for us ~150 b2b customers with a total database footprint of ~500 GB. We are using Rails and the Apartment gem to do mutli-tenancy via unique databases per account with a single master database holding some top-level tables.

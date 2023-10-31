@@ -62,13 +62,18 @@ modified: 2022-11-25T15:41:47.534Z
   - 测试用例使用kappa-core、memdb、random-access-memory
 
 - orbit-db /7.4kStar/MIT/202301/js
-- https://github.com/orbitdb/orbit-db
+  - https://github.com/orbitdb/orbit-db
   - OrbitDB is a serverless, distributed, peer-to-peer database. 
   - OrbitDB uses IPFS as its data storage and IPFS Pubsub to automatically sync databases with peers. 
   - It's an eventually consistent database that uses CRDTs for conflict-free database merges making OrbitDB an excellent choice for decentralized apps (dApps), blockchain applications and local-first web applications.
 - https://github.com/dappkit/aviondb
   - A Distributed, MongoDB-like Database
   - AvionDB uses OrbitDB stores to model MongoDB-like Databases.
+
+- https://github.com/unmeshjoshi/replicate /java
+  - This is a basic framework for quickly building and testing replication algorithms. 
+  - It doesn't require any additional setup (e.g., Docker) for setting up a cluster and allows writing simple JUnit tests for testing replication mechanisms. 
+  - The framework was created to learn and teach various distributed system techniques, enabling the testing of working code while exploring distributed systems concepts
 # db-sync
 - synceddb-multi-backends /388Star/MIT/201803/js/indexeddb/支持多种后端存储
   - https://github.com/paldepind/synceddb

@@ -7,11 +7,21 @@ modified: 2021-07-25T12:49:10.410Z
 
 # thread-web-css-stars
 
-# pieces
+# guide
+
+# discuss
+- ## 
+
+- ## 
 
 - ## 
 
 - ## 
+
+- ##  `isolation: isolate` 在CSS中被用作创建新的堆叠上下文，特别适用于局部 z-index 控制。
+- https://twitter.com/lencx_/status/1719206813512704302
+  - 当不想让子元素的 z-index 影响其他元素或被其他元素所影响时，可以通过为父元素设置此属性来实现，从而确保子元素的堆叠范围仅限于其父元素内部。
+  - https://codepen.io/lencx/pen/BaMKvLE
 
 - ## Atomic CSS is surprisingly effective performance wise (if done well) which is why I'm all about it lately. 
 - https://twitter.com/sebmarkbage/status/1529622374575923206

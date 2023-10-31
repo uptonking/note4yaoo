@@ -17,7 +17,7 @@ modified: 2023-09-16T17:54:11.257Z
 - 
 - 
 
-- ## 🔥 [If All You Have Is a Database, Everything Looks Like a Nail | Hacker News_202012](https://news.ycombinator.com/item?id=25330223)
+- ## 🔥 [If All You Have Is a Database, Everything Looks Like a Nail(钉子) | Hacker News_202012](https://news.ycombinator.com/item?id=25330223)
 - 
 - 
 - 

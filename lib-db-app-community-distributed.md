@@ -7,14 +7,14 @@ modified: 2023-10-26T19:04:00.318Z
 
 # lib-db-app-community-distributed
 
-# guide
-
 > about database distributed/decentralized
 
+# guide
+- openraft's raft implementation is solid!
 # discuss-stars
 - ## 
 
-- ## 🔥 [A history of the distributed transactional database | Hacker News_201812](https://news.ycombinator.com/item?id=18600404)
+- ## 🕛🔥 [A history of the distributed transactional database | Hacker News_201812](https://news.ycombinator.com/item?id=18600404)
 - 
 - 
 - 

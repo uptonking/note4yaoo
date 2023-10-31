@@ -490,3 +490,6 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
 - [富文本编辑器：TinyMCE、Editor.js、Lexical、CKEditor与CodeMirror对比 - ercwang](https://0x763ad28bc4436590fd61998561730b0f7790e955.xlog.app/TinyMCEEditorjsLexicalCKEditorCodeMirror)
 
 - [Ask HN: How to do cross platform GUI? | Hacker News](https://news.ycombinator.com/item?id=24242412)
+
+- [Future Text Publishing](https://futuretextpublishing.com/)
+  - The aim is to inspire a powerfully rich future of text in a multitude of ways today, and for the work to still have value in a thousand years & beyond.

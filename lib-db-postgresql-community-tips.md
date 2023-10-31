@@ -49,12 +49,18 @@ modified: 2023-10-28T17:52:17.942Z
 - ## [RustgreSQL | Hacker News_201701](https://news.ycombinator.com/item?id=13354099)
 - I would suggest that the author creates a clone of a "simpler" DB like SQLite or Redis. Those have, as far as I understand, good C codebases, so understanding the system should be much easier.
 
-- 
-
 # discuss
 - ## 
 
-- ## 
+- ## How to use subtransactions in Postgres
+- https://twitter.com/samokhvalov/status/1719228501658882268
+  - TL; DR Don't use subtransactions, unless absolutely necessary.
+  - A subtransaction, also known as "nested transaction", is a transaction started by instruction within the scope of an already started transaction 
+- As a bottom line:
+  - 1. If you can, don't use subtransactions
+  - 2. Keep an eye on pgsql-hackers threads related to them and if you can, participate (help test and improve)
+  - 3. If absolutely necessary, use them in lower-TPS systems only
+  - avoid deep nesting
 
 - ## [Things I hate about PostgreSQL (2020) | Hacker News_202104](https://news.ycombinator.com/item?id=26709019)
 - 

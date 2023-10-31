@@ -25,6 +25,14 @@ modified: 2023-01-02T10:30:19.459Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Am I right in thinking that Electron apps can't have "type": "module" in their package.json? Getting errors when I try.
+- https://twitter.com/mattpocockuk/status/1719028975945531724
+  - its landing in v28 - use @28 .0.0-alpha.6 to get it now
+
 - ## Would anyone like to partner on creating an Electron alternative that builds on top of React Server Components?
 - https://twitter.com/tomus_sherman/status/1684522055696351234
   - It would take the good parts of Electron, Tauri, and React Native. The IPC would be replaced with the server components (React Flight)

@@ -254,6 +254,11 @@ myEmitter.emit('event');
   - Unlike EventEmitter, any given listener can be registered at most once per event type. Attempts to register a listener multiple times are ignored.
   - The NodeEventTarget does not implement any special default behavior for events with type 'error'.
 # blogs
+- [Unlocking the power of Node.js](https://blog.platformatic.dev/unlocking-the-power-of-nodejs)
+  - Module management
+  - Dependency injections
+  - The drawbacks of singletons for holding state variables
+
 - [Reducing the cost of string serialization in Node.js core](https://www.yagiz.co/reducing-the-cost-of-string-serialization-in-nodejs-core)
 # discuss
 - ## [Node.js架构剖析](http://www.ayqy.net/blog/node-js-architecture-overview/)

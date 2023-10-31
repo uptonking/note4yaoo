@@ -114,6 +114,9 @@ modified: 2022-11-04T14:20:37.172Z
 - https://github.com/facebookincubator/CG-SQL /c
   - CG/SQL is a code generation system for the popular SQLite library that allows developers to write stored procedures in a variant of Transact-SQL (T-SQL) and compile them into C code that uses SQLite’s C API to do the coded operations
   - SQLite has no stored procedures of its own. 
+
+- https://github.com/guardianproject/libsqlfs /LGPLv2/c
+  - a library that implements a POSIX style filesystem on top of an SQLite database
 # mobile
 
 # gis

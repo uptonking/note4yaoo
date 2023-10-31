@@ -31,13 +31,13 @@ modified: 2023-09-28T20:35:56.153Z
   - RxDB Dexie.js with Dexie.js Storage & GraphQL replication
   - WatermelonDB with LokiJS adapter (no backend sync atm)
 
-- https://github.com/AugurProject/pouchdb-perf /ts
-  - https://augurproject.github.io/pouchdb-perf/
-  - PouchDB Perf Test
-
 - https://github.com/ezpaarse-project/dbbench /201412/archived
   - A basic benching tool to compare node.js embedded databases
   - It inserts randomly generated objects with string identifiers, then queries random identifiers for a given period of time.
+
+- https://github.com/AugurProject/pouchdb-perf /ts
+  - https://augurproject.github.io/pouchdb-perf/
+  - PouchDB Perf Test
 
 - pouchdb /16kStar/apache2/202310/js/core代码量不大
   - https://github.com/pouchdb/pouchdb
@@ -85,18 +85,6 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/demon24ru/PouchDB-server-test-proxy
   - pouchdb proxy with JWT authentication
 
-- microcouch-js /3Star/apache2/202209/js
-  - https://github.com/jo/microcouch-js
-  - A minimal Pouch-like implementation of a CouchDB compatible in-browser couch, for educational purpose.
-  - Data model is the same as PouchDBs new `indexeddb` adapter.
-  - Microcouch uses PouchDBs `pouchdb-merge` module.
-  - Microcouch is quiet small, currently less than 30kB minified. It is about five times smaller and replicates almost ten times faster than PouchDB, depending on the document structure.
-- https://github.com/jo/microcouch-rs /202205/rust
-  - A minimal Pouch-like implementation of a CouchDB compatible embeddable couch. 
-  - Work in progress.
-- https://github.com/jo/rouchdb /202204/rust
-  - Minimal CouchDB compatible database written in Rust.
-
 - delta-pouch /184Star/apache2/201706/js
   - https://github.com/redgeoff/delta-pouch
   - Conflict-free collaborative editing for PouchDB
@@ -118,6 +106,23 @@ modified: 2023-09-28T20:35:56.153Z
   - https://github.com/dahjelle/dataquery
     - Forked the query language from Datascript, and changed to only utilize external indexes in an asynchronous manner.
 
+- pouchdb-sync-to-anything /43Star/MIT/201807/js
+  - https://github.com/karlwestin/pouchdb-sync-to-anything
+  - This is a plugin that lets you use CouchDBs replication algorithm with checkpointing, resuming, etc, but provide your own function to write the documents. 
+  - This can be used to sequentially write updates to a REST API, 
+  - 👉🏻 This is a partial implementation of the CouchDB replication protocol. 
+    - It allows you to use PouchDB's tools to save replication checkpoints for syncing with your API. 
+    - Using those checkpoints, we can start the next replication from the last good checkpoint.
+  - Using this works best for one way data-flows only. If you're interested in a 2-way data flow, consider syncing data from the server to a different PouchDB instance, and write changes that are to be sent to the server separately.
+
+- https://github.com/WoelkiM/AutoCouch /MIT/202004/ts/inactive
+  - AutoCouch is a TypeScript framework to create object-oriented CRDTs that supports a simple way of distribution.
+  - Database is a simplified wrapper of a PouchDB that allows getting and putting documents.
+  - 📕 [AutoCouch: a JSON CRDT framework_202004](https://www.researchgate.net/publication/340954717_AutoCouch_a_JSON_CRDT_framework)
+    - AutoCouch is a JSON framework combining the benefits of the Automerge CRDT library and CouchDB
+  - https://github.com/WoelkiM/Polly_React_Example_AutoCouch
+    - an example for a React app using AutoMerge
+
 - https://github.com/delta-db/deltadb /201602/js/inactive
   - DeltaDB is an offline-first database designed to talk directly to clients and works great offline and online.
   - Stores all data as a series of deltas, which allows for smooth collaborative experiences even in frequently offline scenarios.
@@ -125,40 +130,39 @@ modified: 2023-09-28T20:35:56.153Z
   - last-write-wins policy is nice when starting a new project as it is automatic, but other conflict resolution policies that force the user to manually resolve the conflict, like CouchDB’s revision protocol, have become more of the standard in the offline-first world.
   - Building a DB that scales and is Building a DB that scales and is distributed over many nodes, takes a lot of work. distributed over many nodes, takes a lot of work. 
 
-- pouchdb-sync-to-anything /43Star/MIT/201807/js
-  - https://github.com/karlwestin/pouchdb-sync-to-anything
-  - This is a plugin that lets you use CouchDBs replication algorithm with checkpointing, resuming, etc, but provide your own function to write the documents. 
-  - This can be used to sequentially write updates to a REST API, 
-  - This is a partial implementation of the CouchDB replication protocol. 
-    - It allows you to use PouchDB's tools to save replication checkpoints for syncing with your API. 
-    - Using those checkpoints, we can start the next replication from the last good checkpoint.
-
-- shootingstick /1Star/apache2/202210/ts
-  - https://github.com/AndyA/shootingstick
-  - A CouchDB clone
-  - 依赖sqlite、express、lodash
-
-- hoodie /4.3kStar/apache2/202101/js
+- hoodie /4.3kStar/apache2/202101/js/inactive
   - https://github.com/hoodiehq/hoodie
   - The Offline First JavaScript Backend
   - hoodie can be used standalone or as a hapi plugin. 
+  - Hoodie is using `PouchDB` for its in-browser storage.
+  - Hoodie uses PouchDB for storing data locally. Hoodie saves all data here first, before doing anything else.
   - https://github.com/hoodiehq/hoodie-server
     - Hapi plugin for Hoodie’s server core module
   - https://github.com/hoodiehq/hoodie-client
     - Client API for the Hoodie server
-
-- https://github.com/cloudant/meteor-couchdb
-  - Meteor database driver for CouchDB and Cloudant
-  - an efficient Livequery implementation providing real-time updates from the database by consuming the CouchDB _changes feed
-  - Distributed Data Protocol (DDP) RPC end-points for updating the data from clients connected over the wire
-
-## couch-like
+# couch-like
+- microcouch-js /3Star/apache2/202209/js
+  - https://github.com/jo/microcouch-js
+  - A minimal Pouch-like implementation of a CouchDB compatible in-browser couch, for educational purpose.
+  - Data model is the same as PouchDBs new `indexeddb` adapter.
+  - Microcouch uses PouchDBs `pouchdb-merge` module.
+  - Microcouch is quiet small, currently less than 30kB minified. It is about five times smaller and replicates almost ten times faster than PouchDB, depending on the document structure.
+- https://github.com/jo/microcouch-rs /202205/rust
+  - A minimal Pouch-like implementation of a CouchDB compatible embeddable couch. 
+  - Work in progress.
+- https://github.com/jo/rouchdb /202204/rust
+  - Minimal CouchDB compatible database written in Rust.
 
 - https://github.com/demsking/fakecouch /202101/ts/inactive
   - A fake CouchDB server for testing.
   - a fake CouchDB server which implements endpoints used in common applications.
   - It does not claim to be use as a regular CouchDB server. 
   - It uses some static data as result for some database requests.
+
+- shootingstick /1Star/apache2/202210/ts
+  - https://github.com/AndyA/shootingstick
+  - A CouchDB clone
+  - 依赖sqlite、express、lodash
 
 - jscouch /159Star/apache2/201202/js
   - https://github.com/janl/jscouch
@@ -417,6 +421,11 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/thaibault/couchdb-web-node-plugin /ts
   - A couchdb server, model instance conflict handler, rest api, authentication, session management, schema validator and model relation guarantee for webNode.
   - PouchDB with model specification/checking, user authentication and right management as web-node plugin.
+
+- https://github.com/cloudant/meteor-couchdb
+  - Meteor database driver for CouchDB and Cloudant
+  - an efficient Livequery implementation providing real-time updates from the database by consuming the CouchDB _changes feed
+  - Distributed Data Protocol (DDP) RPC end-points for updating the data from clients connected over the wire
 # couchdb-utils
 - couchdb /5.5kStar/apache2/202211/erlang
   - https://github.com/apache/couchdb

@@ -11,13 +11,14 @@ modified: 2022-08-21T10:16:45.637Z
 
 - 类似ruby的ActionText
 # popular
-
 - [RichTextEditor](https://richtexteditor.com/)
   - 可以参考主题设计，纯白简洁设计
 # more
-
 - https://imperavi.com/redactor/
   - Redactor is a fantastic editor 
   - Provides smooth and clean design, extensibility, limitless flexibility, super-efficient API and amazing user experience.
   - Buy Redactor One time-payment, not a subscription.
   - 样式友好，纯白简洁
+
+- [Future Text Publishing](https://futuretextpublishing.com/)
+  - The aim is to inspire a powerfully rich future of text in a multitude of ways today, and for the work to still have value in a thousand years & beyond.

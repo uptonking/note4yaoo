@@ -151,7 +151,10 @@ modified: 2023-10-29T02:23:35.064Z
 # discuss-couchdb
 - ## 
 
-- ## 
+- ## [Couchdb有在实际生产环境中使用的例子吗？ - 知乎](https://www.zhihu.com/question/20112928/answers/updated)
+
+- [CouchDB in the wild_201812](https://cwiki.apache.org/confluence/display/COUCHDB/CouchDB+in+the+wild)
+  - Software & Websites
 
 - ## [Ask HN: To everybody who uses MapReduce: what problems do you solve? | Hacker News_201311](https://news.ycombinator.com/item?id=6706545)
 - 👉🏻 It's worth noting that CouchDB is using map-reduce to define materialized views. Whereas normally MR parallelization is used to scale out, in this case it's used instead to allow incremental updates for the materialized views, which is to say incremental updates for arbitrarily defined indexes! 

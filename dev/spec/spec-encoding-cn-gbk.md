@@ -11,7 +11,28 @@ modified: 2021-02-16T05:17:27.642Z
 
 # blogs
 - [（译）2023 年每个软件开发者都必须知道的关于 Unicode 的基本知识 | 新世界的大门](https://blog.xinshijiededa.men/unicode/)
+# discuss-emoji
+- ## 
+
+- ## 
+
+- ## Swift 是全球唯一一门能正确判断“🤦🏼‍♂️”这个字符长度的语言。
+- https://twitter.com/tualatrix/status/1718884629162463370
+- 这个其实不是语言的能力，而是 Swift 标准库的能力。但在语言层面，Swift 的 Character 类型确实能表示所有“字符”，而其他语言最多做到 Unicode scalar（或者 rune）
+  - 考虑到 Swift 设计之初把 @UIApplicationMain、 @IBDesignable 等都硬编码到编译器里，说明它的定位就是服务上层应用开发。对于类似 C++、Rust 这种系统编程语言，在语言层面做这种事情就很重了，况且 ICU Segmentation 还是有时效性的。
+- ICU Segmentation 是有时效性的？这个有什么具体的例子吗
+  - 因为规则是随着 Unicode 版本更新的，分词逻辑也要定期更新
+- 有意思，我来看看。总之 Unicode 默认不包含在 Embedded 领域应该是没有争议的；另一方面，其他通用编程领域应该默认处理好 Unicode 应该也是没有争议的。
+  - 嵌入式领域甚至可能都不会用 GB2312，我这边的屏幕显示模块的代码都是直接硬编码用到的字，总数不超过十个
+- The behavior of the length method depends on how it is defined in a particular programming language/library. For instance, In Swift  String.length represents the number of characters in a string. However, in Rust, String.len refers to the length of the string in bytes.
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## [GB2312、GBK、GB18030 这几种字符集的主要区别是什么？](https://www.zhihu.com/question/19677619)
 - 首先应当指出，目前的提问是有问题的，因为将三者定性为「字符集」是明显错误的，更妥当的提法是「几份文件」, 而非「几种字符集」。
   - GB/T 2312—1980《信息交换用汉字编码字符集　基本集》；

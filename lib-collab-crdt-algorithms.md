@@ -758,8 +758,9 @@ ba => v5
 
 - ## 
 
-- ## Here's a visual comparison of the data structures underlying three different "collaborative text editing" algorithms.
+- ## 🆚️ Here's a visual comparison of the data structures underlying three different "collaborative text editing" algorithms.
 - https://twitter.com/jaredforsyth/status/1232532781936173056
+  - [yjs vs automerge vs rga](https://text-crdt-compare.surge.sh/)
   - yjs uses a doubly-linked list of nodes
   - mine(local-first-rga) uses a tree
   - automerge uses a transaction log (and has in-memory caches for perf)

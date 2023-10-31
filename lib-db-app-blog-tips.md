@@ -69,6 +69,8 @@ modified: 2023-10-28T07:03:58.197Z
 
 # blog-design
 
+## [Data modeling in SQL: A Beginner's Guide_202305](https://medium.com/@guowili16/data-modeling-in-sql-584e56e3b6ff)
+
 ## [Ten Common Database Design Mistakes - Simple Talk](https://www.red-gate.com/simple-talk/databases/sql-server/database-administration-sql-server/ten-common-database-design-mistakes/)
 
 ### Poor design/planning

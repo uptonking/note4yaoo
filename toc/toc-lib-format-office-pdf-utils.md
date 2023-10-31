@@ -64,9 +64,12 @@ modified: 2022-11-11T10:46:41.519Z
   - Supporting links, outlines (bookmarks), printing, SVG background, Type 3 fonts and more...
   - 利用的Chrome Headless，让Chrome渲染PDF，再导出成HTML，甚至图片都转成了 base64 字符，所以一个网页就可以包含完整的文本、字体和图片等内容
 # utils
-
+- https://github.com/RussCoder/djvujs /js
+  - https://djvu.js.org/
+  - library for working with .djvu files online without any connection with the server. 
+  - DjVu.js Viewer is a widget that allows viewing .djvu files right in the browser
+  - .djvu is a computer file format designed primarily to store scanned documents
 # latex
-
 - https://github.com/dginev/ar5iv /MIT/rust
   - https://ar5iv.org/
   - A web service offering HTML5 articles from arXiv.org as converted with latexml

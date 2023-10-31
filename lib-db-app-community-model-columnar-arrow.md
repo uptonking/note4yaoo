@@ -20,10 +20,12 @@ modified: 2023-10-26T15:03:56.115Z
 - 
 - 
 - 
-# discuss-vector
+
+# discuss-vector-db
 - ## 
 
-- ## 
+- ## Vector Databases clearly explained!
+- https://twitter.com/Sumanth_077/status/1719362859879285022
 
 - ## 🔥 [Rewriting a high performance vector database in Rust | Hacker News_202210](https://news.ycombinator.com/item?id=33252137)
 - 

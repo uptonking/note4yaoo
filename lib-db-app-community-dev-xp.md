@@ -9,8 +9,6 @@ modified: 2023-10-26T22:04:11.502Z
 
 # guide
 
-> about database usage experience
-
 # discuss-stars
 - ## 
 
@@ -20,7 +18,7 @@ modified: 2023-10-26T22:04:11.502Z
 
 - ## 
 
-- ## 🔥 [Leveraging Rust in our Java database | Hacker News_202309](https://news.ycombinator.com/item?id=37557880)
+- ## 🦀☕️🔥 [Leveraging Rust in our Java database | Hacker News_202309](https://news.ycombinator.com/item?id=37557880)
 - 
 - 
 - 

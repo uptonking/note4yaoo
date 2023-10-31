@@ -9,8 +9,6 @@ modified: 2023-09-17T17:46:07.620Z
 
 # guide
 
-> about databases comparison
-
 # discuss-stars
 - ## 
 
@@ -49,13 +47,6 @@ modified: 2023-09-17T17:46:07.620Z
 # discuss-mongo
 - ## 
 
-- ## [Why You Should Never Use MongoDB | Hacker News_201311](https://news.ycombinator.com/item?id=6712703)
-- We have a CMS application that supports creating custom web forms, which each have a different set of fields which hold different types of data. Email addresses, multi-select radio buttons, text areas, etc. Some forms only gets submitted once or twice, others are submitted many thousands of times. To store this in a normal relational database you either need many tables, or you need to normalize your data (probably Entity-Attribute-Value (EAV) style). We didn't want hundreds of tables, and designing a good EAV system can be tough (Magento anyone?), so we looked at other options.
-  - We've settled currently on using MongoDb, with one collection to hold the (versioned) definition of each form's fields (data type, order, validation rules, etc), and another collection to hold all of the submissions (this is a laaarge collection). There _is_ a "relation" between the form definition and the submissions, but because you always query for submissions based on the form (by form_id), you don't really need to do "JOINs" (you just query out the form definition once, before the submissions). Also, because the forms are versioned, and each submission is associated with a particular version of a form, there is no need to retroactively update the de-normalized schema of past submissions (although this does limit your ability to query the submissions if a form is updated frequently - or drastically). It's not perfect, but this use case for MongoDb has been working well for us so far.
-
-- A good simple use-case for a document database (could be MongoDB, but not necessarily) is configuration and system "schema" type data. For example, storing all of a user's settings and preferences into a document keyed by the user's Id.
-- We use it for event storage in the event sourced parts of our app. For the rest of our data, we're currently migrating off of Mongo to Postgres due to an experience similar to the OP's.
-
 - ## 🆚️ [Mongo (Atlas) vs. Planetscale for my simple SaaS?](https://www.reddit.com/r/Database/comments/wh9rd1/mongo_atlas_vs_planetscale_for_my_simple_saas/)
 - Mongo:
 - Pros: I have the most experience with it, super easy to get up and running, built for simple document structure like my use case, very cheap pay-as-you-go pricing on Atlas.
@@ -74,3 +65,10 @@ modified: 2023-09-17T17:46:07.620Z
 - my advice would be to stick to what you know. If you know Mongo well go for it. 
   - If you're starting a business, proving the idea and marketing it is going to be a lot more important than the tech unless you're doing something bleeding-edge. 
   - Try to not overfocus on the tech. NextJS + your preferred DB seems like a good place to start.
+
+- ## [Why You Should Never Use MongoDB | Hacker News_201311](https://news.ycombinator.com/item?id=6712703)
+- We have a CMS application that supports creating custom web forms, which each have a different set of fields which hold different types of data. Email addresses, multi-select radio buttons, text areas, etc. Some forms only gets submitted once or twice, others are submitted many thousands of times. To store this in a normal relational database you either need many tables, or you need to normalize your data (probably Entity-Attribute-Value (EAV) style). We didn't want hundreds of tables, and designing a good EAV system can be tough (Magento anyone?), so we looked at other options.
+  - We've settled currently on using MongoDb, with one collection to hold the (versioned) definition of each form's fields (data type, order, validation rules, etc), and another collection to hold all of the submissions (this is a laaarge collection). There _is_ a "relation" between the form definition and the submissions, but because you always query for submissions based on the form (by form_id), you don't really need to do "JOINs" (you just query out the form definition once, before the submissions). Also, because the forms are versioned, and each submission is associated with a particular version of a form, there is no need to retroactively update the de-normalized schema of past submissions (although this does limit your ability to query the submissions if a form is updated frequently - or drastically). It's not perfect, but this use case for MongoDb has been working well for us so far.
+
+- A good simple use-case for a document database (could be MongoDB, but not necessarily) is configuration and system "schema" type data. For example, storing all of a user's settings and preferences into a document keyed by the user's Id.
+- We use it for event storage in the event sourced parts of our app. For the rest of our data, we're currently migrating off of Mongo to Postgres due to an experience similar to the OP's.

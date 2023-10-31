@@ -14,7 +14,10 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
-- ## 
+- ## Misgif：一款可以将你的脸放入你喜欢的GIF 表情包中的应用
+- https://twitter.com/xiaohuggg/status/1719186332319416388
+  - [misgif: ai powered memes](https://misgif.app/)
+  - 可以免费使用三次。
 
 - ## 扫地机器人最大的bug是会挑衅到狗，然后被狗翻过来
 - https://twitter.com/syeerzy/status/1717518202027331904

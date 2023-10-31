@@ -33,7 +33,13 @@ modified: 2021-08-10T03:51:01.891Z
 # discuss
 - ## 
 
-- ## 
+- ## 🌰 sentry 现在居然已经这么复杂了，上一次部署的时候只需要 postgres + redis + worker + web 就可以了。
+- https://twitter.com/laixintao/status/1719198693822431517
+- 这个架构已经没有开源和self-host的必要了。引入的复杂度太高。超出了它能解决的复杂度。
+- 我当专门找了很旧的版本装上。
+- 毕竟 sentry 要为大团队服务，发展方向决定的
+- 前段时间 部署过一次 组件奇多 我感觉是为了直接用云服务
+- 可以让你放弃自己部署，选择花钱买它的服务，几年前就已经这样了，不少开源解决方案是这个套路，架构设计是为千万级用户设计的，然而自己部署实际用户只有一个人
 
 - ## Stop making fun of code just because you think it's bad.  All code is bad.
 - https://twitter.com/DavidKPiano/status/1718666356059471968

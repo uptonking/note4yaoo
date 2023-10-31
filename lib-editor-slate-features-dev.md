@@ -122,6 +122,9 @@ modified: 2023-03-16T16:29:47.610Z
   - image, table, link, blockquote, code...
 # 悬浮工具条 toolbar
 
+# toc/目录
+
+- toc和多维表格切换
 # editor-elements
 
 ## formats

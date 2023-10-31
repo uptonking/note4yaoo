@@ -93,6 +93,10 @@ modified: 2022-11-06T15:45:36.913Z
   - Support for Unicode characters
   - Full support for parsing floats
   - Support for 512-bit vectors
+
+- https://github.com/Breus/json-masker /java
+  - used to mask string and/or numeric values from JSON messages, corresponding to a (set of) target key(s). 
+  - The implementation is focused on maximum (time) performance using Java and requires no additional runtime dependencies.
 # diff
 - https://github.com/zgrossbart/jdd /js
   - JSON Diff expands on the amazing work by the team at jsonlint.com and provides a semantic compare tool for JSON documents.

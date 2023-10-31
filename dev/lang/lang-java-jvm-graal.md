@@ -241,7 +241,10 @@ fs.writeFileSync(__dirname + "/test.jsb", byteCode);
 
 - ## 
 
-- ## 
+- ## 试了下 Spring Boot 3.0 的 native image，体积直接降到100M，启动时间 20.67s -> 0.62s，性能提升明显，但构建时间 18min, 22s 
+- https://twitter.com/zhdsuperman/status/1719371800533217378
+- 被 oracle 摆烂那么多年后，Java 11 => Java 17 => Java 21、graalvm、virtual threads 提升非常大，多亏 golang/rust 给的压力。
+- golang 的生态还是不够规范完整，语言上数据抽象能力其实不如 java/c#，java 的速度是个迷，如果上了 jit，可以追平 c++/rust，没有的话就在各种笨重的设计模式下绕来绕去了
 
 - ## [如何看待 Java11 即将弃用 Nashorn 引擎？ - 知乎](https://www.zhihu.com/question/282928698/answers/updated)
 - nashorn其实做得一般般，js这个社区已经接近是v8一家撑着了，

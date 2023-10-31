@@ -10,7 +10,13 @@ modified: 2023-09-01T10:18:14.842Z
 # guide
 
 # popular
-
+- https://github.com/WoelkiM/AutoCouch /MIT/202004/ts/inactive
+  - AutoCouch is a TypeScript framework to create object-oriented CRDTs that supports a simple way of distribution.
+  - Database is a simplified wrapper of a PouchDB that allows getting and putting documents.
+  - 📕 [AutoCouch: a JSON CRDT framework_202004](https://www.researchgate.net/publication/340954717_AutoCouch_a_JSON_CRDT_framework)
+    - AutoCouch is a JSON framework combining the benefits of the Automerge CRDT library and CouchDB
+  - https://github.com/WoelkiM/Polly_React_Example_AutoCouch
+    - an example for a React app using AutoMerge
 # examples
 - https://github.com/jonfk/text-crdt-experiment-automerge-ts /ts
   - http://jonfk.github.io/text-crdt-experiment-automerge-ts
