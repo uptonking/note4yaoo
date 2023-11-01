@@ -74,6 +74,16 @@ modified: 2022-11-25T15:41:47.534Z
   - This is a basic framework for quickly building and testing replication algorithms. 
   - It doesn't require any additional setup (e.g., Docker) for setting up a cluster and allows writing simple JUnit tests for testing replication mechanisms. 
   - The framework was created to learn and teach various distributed system techniques, enabling the testing of working code while exploring distributed systems concepts
+
+- https://github.com/superfly/corrosion /apache2/202310/rust
+  - https://superfly.github.io/corrosion/
+  - Gossip-based service discovery (and more) for large distributed systems.
+  - We built Corrosion specifically for service discovery across a large global network, replacing Consul’s central state database with eventually consistent state distributed across our hosts.
+  - Maintains a SQLite database on each node
+  - Gossips local changes throughout the cluster
+  - Uses CR-SQLite for conflict resolution with CRDTs
+  - Uses Foca to manage cluster membership using a SWIM protocol
+  - Periodically synchronizes with a subset of other cluster nodes, to ensure consistency
 # db-sync
 - synceddb-multi-backends /388Star/MIT/201803/js/indexeddb/支持多种后端存储
   - https://github.com/paldepind/synceddb

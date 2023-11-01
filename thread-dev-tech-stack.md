@@ -16,7 +16,24 @@ modified: 2022-12-03T15:30:59.732Z
 
 - ## 
 
-- ## 
+- ## Stack Overflow bucks(反抗, 抵制) the microservices trend, _202311
+- https://twitter.com/sahnlam/status/1719568996297740759
+  - handling 1.3 billion monthly pageviews across its 200 sites using a remarkably efficient monolithic architecture with minimal infrastructure.
+  - [Performance - Stack Exchange](https://stackexchange.com/performance)
+- Web Servers:
+  - Uses only 9 on-prem IIS web servers
+  - Each server has 64GB RAM and runs highly optimized . NET code
+  - Handles 450 peak requests/second per server with just 12% CPU usage
+  - Code minimizes memory allocations to limit garbage collection
+- SQL Servers:
+  - Organized into 2 failover clusters of 2 servers each
+  - First cluster: 1.5TB RAM per server
+  - Second cluster: 768GB RAM per server
+  - About a third of the Q&A dataset resides in memory
+  - Each cluster handles over 10, 000 peak queries/second at ~15% CPU
+- Redis:
+  - A single 256GB main server with a replica
+  - Handles 60000 peak ops/sec at 2% CPU
 
 - ## 记录一下简单简历(http://easycv.cn) 用到的所有优质的免费服务
 - https://twitter.com/vikingmute/status/1597417185470992384

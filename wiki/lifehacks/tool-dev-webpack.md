@@ -195,3 +195,12 @@ alert(process.env.NODE_ENV)
 - [Webpack vs webpack-dev-server vs webpack-dev-middleware vs webpack-hot-middleware](https://stackoverflow.com/questions/42294827/webpack-vs-webpack-dev-server-vs-webpack-dev-middleware-vs-webpack-hot-middlewar)
 
 - [How does the CodeSandbox browser-side webpack work? ](https://developpaper.com/how-does-the-codesandbox-browser-side-webpack-work-part-one/)
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Do you know webpack supports skipping the parsing of large files through the use of the `module.noParse` option?
+- https://twitter.com/rspack_dev/status/1719707638496125128

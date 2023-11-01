@@ -15,7 +15,10 @@ modified: 2021-08-25T05:56:00.431Z
 
 - ## 
 
-- ## 
+- ## Wrote a simplified Wavefunction Collapse algorithm in Rooms to procedurally generate a little voxel city from tiles. 
+- https://twitter.com/btco_code/status/1719672645938016484
+  - You can edit the tiles/template
+  - https://rooms.xyz/btco/city
 
 - ## I vectorised 10, 000 words from the english language & used tsne to visualise them in 3D space. This is a random sample of 250.
 - https://twitter.com/JungleSilicon/status/1717775617104691491

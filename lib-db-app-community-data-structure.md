@@ -125,24 +125,6 @@ modified: 2023-09-17T18:17:41.377Z
 - 
 - 
 
-- ## 🆚️ [Damn Cool Algorithms: Log structured storage (2009) | Hacker News_201705](https://news.ycombinator.com/item?id=14447727)
-- In the 8 years since this was written, Log-Structured Merge Trees have basically "won". 
-  - BigTable, AppEngine, LevelDB, Cassandra, HBase, MongoDB, and several others are all built around them.
-- There's a powerful hardware trend driving this, namely that disk capacities and write bandwidth are still increasing rapidly, but **seek times have basically plateaued(达到稳定时期；进入停滞状态)**. 
-  - 👉🏻 That means that data structures that rely on append-only operations can continue to scale to take advantage of bigger disks, 
-  - but **data structures that rely on disk seeks (eg. B-trees) have hit a bottleneck**. 
-  - Also, as number of cores continues to increase, playback & processing from a sequential log can often be parallelized, but updating your on-disk indexes blocks on I/O.
-
-- there is already a lot of thought that goes into LSM trees on flash storage - check out RocksDB for example, which goes to great lengths to allow the user to deal with Read / Write amplification, a problem specific to flash storage. 
-
-- 👉🏻 The tradeoff from LSM tree to B-tree, very generally speaking, is more about access patterns: 
-  - LSM trees lend themselves to insert-heavy workloads because the structure is conceptually just a big array that you very quickly append stuff to the end of without checking the rest of the array. 
-  - That's the magic of why it's so fast for insertions - there's no overhead. 
-  - You just ignore the older key/values. 
-  - When doing a read, you read backwards from the end, reading only the newest values. When you fill your memory budget, you flush your array to a lower layer, removing the duplicate old values. 
-
-- Another point is that oftentimes these data structures span storage layers (or the "cache hierarchy" as database systems people like calling it) - e.g. you could have an LSM tree that has a top layer fitting in L3, then a bunch more in memory, then the majority of it spilling over to disk. 
-  - Another example is the Bw-Tree, which introduces a mapping table that is a storage-agnostic lookup table that tells you wherever a record is, disk or memory or otherwise, and is smart about paging stuff in and out of memory based on hotness.
 # discuss-tree-btree
 - ## 
 
@@ -150,7 +132,22 @@ modified: 2023-09-17T18:17:41.377Z
 
 - ## 
 
-- ## 
+- ## [为什么 MongoDB 使用 B 树 · Why's THE Design? · /whys-the-design-mongodb-b-tree](https://github.com/draveness/blog-comments/discussions/581)
+- 本文说的不太对。现在mongo默认使用WiredTiger作为存储引擎。
+  - WiredTiger实际是用B+树。
+
+- MongoDB官方版本中，WiredTiger仅会使用B-Tree（我用作者给的createCollection做了试验，用stats看到存储结构仍旧是B-Tree）。
+  - 仅有Percona Server for MongoDB的个别版本对WiredTiger开启了LSM，以及支持了另一个用LSM-Tree的RocksDB引擎
+- 我又确定了一下这个问题，使用的是最新版本的 MongoDB，wiredTiger.type 确实是 lsm，默认情况是 file
+
+- 我感觉只讲读多写少一个原因是没办法解释 MongoDB 为什么使用 B-tree 而不是 LSM 的，因为按照这个逻辑，OLTP 数据库就不应该用 LSM，而现实是 TiDB 和 CockroachDB 之类的数据库都选择了 LSM。
+- TiDB 解释说 LSM 写放大、空间放大要相比 B-Tree 好一些，另外 RocksDB 本身牛逼（社区、接口等），还提到说使用缓存提高读性能要比提高写性能简单。
+- CockroachDB 直接就说选 RocksDB 跟它用 LSM 关系不大，主要是 RocksDB 本身牛逼。
+
+- LevelDB 看起来只有一个 LRU Cache
+  - RocksDB 里的 Cache 还挺多的
+- Influxdata 做了一个 LevelDB 和 RocksDB 的基准测试，结果表明 LevelDB 在磁盘磁盘空间利用率方面有优势，而 RocksDB 在读写上都优于 LevelDB，其中 RocksDB 的写入比 LevelDB 好很多，从这个结果来看 RocksDB 确实比 LevelDB 牛逼，不过正向文中说的，基准测试不够可靠，尤其是别人做的基准测试...
+- HackerNews 的讨论中说 WiredTiger 跑的 Benchmark 目前已经过时了，但是我还没有找到其他来源的可靠 Benchmark。
 
 - ## This document from ScyllaDB makes a strong case why B-trees make a good choice for in-memory collections as well
 - https://twitter.com/debasishg/status/1688551567044251648

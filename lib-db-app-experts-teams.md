@@ -12,7 +12,7 @@ modified: 2023-02-02T03:22:07.941Z
 - db架构
   - oltp, olap, htap
   - schema: strict/none, rdbms/nosql
-  - structure: document/object, flat
+  - model: document/object, flat
   - value: unique, regular/common
 # db-trending
 - resources
@@ -51,6 +51,10 @@ modified: 2023-02-02T03:22:07.941Z
   - Datafuse Labs · Databend 架构师 & 联合创始人
   - https://www.zhihu.com/people/wubx
 
+- 姚维 /tidb
+  - https://github.com/winkyao
+  - https://www.zhihu.com/people/wink
+
 - Zongzhi Chen (baotiao)
   - https://github.com/baotiao
   - http://baotiao.github.io/archive.html
@@ -74,8 +78,18 @@ modified: 2023-02-02T03:22:07.941Z
 - eklem
   - search-index
   - https://github.com/eklem
-# bigdata-bi
-- 观远技术团队博客
+# blogs-db/bigdata/bi
+- tidb
+  - [TiDB 的问答社区](https://asktug.com/)
+  - [TiKV 源码解析 | PingCAP](https://cn.pingcap.com/blog/tag/tikv-source-code-analysis/)
+  - [TiDB 源码阅读 | PingCAP](https://cn.pingcap.com/blog/tag/tidb-source-code-reading/)
+
+- oceanbase
+  - [OceanBase 源码解读](https://open.oceanbase.com/blog/topics/3983502080)
+  - [OceanBase 存储层代码解读](https://open.oceanbase.com/blog/topics/3983518464)
+  - [OceanBase 生态工具解析及用户实践](https://open.oceanbase.com/blog/topics/3983572480)
+
+- 观远技术团队博客 偏向数据平台
   - [观远技术团队博客 - 知乎](https://www.zhihu.com/column/c_1473064639017254912)
 # viz
 - 周宁奕

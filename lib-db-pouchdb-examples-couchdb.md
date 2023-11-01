@@ -147,11 +147,41 @@ modified: 2023-09-28T20:35:56.153Z
   - Data model is the same as PouchDBs new `indexeddb` adapter.
   - Microcouch uses PouchDBs `pouchdb-merge` module.
   - Microcouch is quiet small, currently less than 30kB minified. It is about five times smaller and replicates almost ten times faster than PouchDB, depending on the document structure.
+
+- https://github.com/garrensmith/couch_hack_week /rust/inactive
+  - An implementation of CouchDB using Rust and FoundationDB for Cloudant's hackweek 25 May 2020 - 4 June 2020.
+  - The aim was to be able to read `/{db}/_all_docs`.
+  - [MiniCouchDB in Rust_202006](https://www.garrensmith.com/minicouchdb-in-rust/)
+
+- https://github.com/nlfiedler/mokuroku /apache2/rust/202309
+  - Secondary indices for RocksDB in Rust.
+  - designed to provide a secondary index on top of the RocksDB key/value store, similar to what PouchDB does for LevelDB.
+  - Your application will provide implementations of the `Document` trait to suit the various types of data to be stored in the database, and this library will invoke the mapping function on those Document instances to produce index key/value pairs.
+  - The behavior of this library is similar to PouchDB, albeit(虽然；尽管) with an API suitable for the language. 
+  - Unlike PouchDB, this library does not put any constraints on the format of the database records.
+  - You may see the term `view` used here and there. This is what CouchDB and PouchDB call the indices in their documentation. 
+    - The function name `emit` also comes from the `map/reduce` API of CouchDB, and makes as much sense as anything else.
+  - What this library does exactly: the indices managed by this library are "stand-alone", meaning they are not embedded within the database files (e.g. zone maps or bloom filters). Additionally, the index is updated in a lazy fashion
+
 - https://github.com/jo/microcouch-rs /202205/rust
   - A minimal Pouch-like implementation of a CouchDB compatible embeddable couch. 
   - Work in progress.
 - https://github.com/jo/rouchdb /202204/rust
   - Minimal CouchDB compatible database written in Rust.
+
+- https://github.com/glynnbird/postdb /apache2/202011/js/inactive
+  - A CouchDB-like database that uses PostgreSQL as the storage engine.
+  - PostDB is proof-of-concept database that exposes a Apache CouchDB-like API but which is backed by a PostgreSQL database.
+  - It does not implement CouchDB's MVCC, Design Documents, attachments, MapReduce, "Mango" search or any other CouchDB feature.
+  - It does however provide a "consistent" data store where the documents and secondary indexes are in lock-step. Documents are limited to 100KB in size.
+  - Optionally, PostDB nodes can be run in readonly mode and configured to read data from PostgreSQL read replicas to scale out read performance.
+
+- https://github.com/mikeal/couchup /201307/js
+  - A CouchDB implementation on top of levelup.
+  - The goal is to build a data model well suited for mobile applications that may need to work offline and sync later on and maintain smart client side caches. 
+  - The goal is to build a data model well suited for mobile applications that may need to work offline and sync later on and maintain smart client side caches. 
+  - This data model is inspired by CouchDB but diverges greatly in the way it handles and resolves the revision history and conflicts. 
+  - couchup implements a "most writes wins" conflict resolution scheme and does not require or even allow user specific conflict resolution.
 
 - https://github.com/demsking/fakecouch /202101/ts/inactive
   - A fake CouchDB server for testing.
@@ -168,25 +198,6 @@ modified: 2023-09-28T20:35:56.153Z
   - https://github.com/janl/jscouch
   - A partial JavaScript re-implementation of CouchDB.
 
-- https://github.com/garrensmith/couch_hack_week /rust/inactive
-  - An implementation of CouchDB using Rust and FoundationDB for Cloudant's hackweek 25 May 2020 - 4 June 2020.
-  - The aim was to be able to read `/{db}/_all_docs`.
-  - [MiniCouchDB in Rust_202006](https://www.garrensmith.com/minicouchdb-in-rust/)
-
-- https://github.com/glynnbird/postdb /apache2/202011/js/inactive
-  - A CouchDB-like database that uses PostgreSQL as the storage engine.
-  - PostDB is proof-of-concept database that exposes a Apache CouchDB-like API but which is backed by a PostgreSQL database.
-  - It does not implement CouchDB's MVCC, Design Documents, attachments, MapReduce, "Mango" search or any other CouchDB feature.
-  - It does however provide a "consistent" data store where the documents and secondary indexes are in lock-step. Documents are limited to 100KB in size.
-  - Optionally, PostDB nodes can be run in readonly mode and configured to read data from PostgreSQL read replicas to scale out read performance.
-
-- https://github.com/mikeal/couchup /201307/js
-  - A CouchDB implementation on top of levelup.
-  - The goal is to build a data model well suited for mobile applications that may need to work offline and sync later on and maintain smart client side caches. 
-  - The goal is to build a data model well suited for mobile applications that may need to work offline and sync later on and maintain smart client side caches. 
-  - This data model is inspired by CouchDB but diverges greatly in the way it handles and resolves the revision history and conflicts. 
-  - couchup implements a "most writes wins" conflict resolution scheme and does not require or even allow user specific conflict resolution.
-
 - https://github.com/kowsik/memcouchd /201103/js
   - a pure JavaScript in-memory implementation of some aspects of CouchDB with a nodejs/connect Web front-end.
 
@@ -201,6 +212,12 @@ modified: 2023-09-28T20:35:56.153Z
   - For more fine-grained permissions and other features I'm also developing a small Go database compatible with PouchDB
   - https://github.com/fiatjaf/summuladb
     - A SummaDB that runs in the browser.
+
+- https://github.com/RipcordSoftware/AvanceDB /201810/cpp
+  - An in-memory database based on the CouchDB REST API and containing the CouchDB Futon and Fauxton web sites
+  - If you are currently using CouchDB and struggle with view build times, then AvanceDB should be a seamless replacement for your view workload.
+  - AvanceDB is not designed to replace CouchDB for document storage. 
+  - The core is written in C++ 11 with Boost and map/reduce executed by an embedded SpiderMonkey JSAPI instance
 # mobile-pc
 - https://github.com/craftzdog/pouchdb-adapter-react-native-sqlite /202108/js
   - PouchDB adapter using ReactNative SQLite as its backing store
@@ -507,7 +524,7 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/jo/pouch-resolve-conflicts /201803/js
   - plugin to assist in PouchDB conflict resolving.
 
-- https://github.com/garbados/pouchdb-hypercore /js
+- https://github.com/garbados/pouchdb-hypercore /202007/js
   - Synchronize PouchDB or CouchDB with P2P Hypercores
   - A PouchDB plugin that maps records in hypercores, a P2P append-only datastructure, to a PouchDB or CouchDB instance. 
   - The plugin allows you to follow changes in hypercores locally and remotely.

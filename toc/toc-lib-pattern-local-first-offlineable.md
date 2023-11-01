@@ -22,12 +22,12 @@ modified: 2021-09-04T14:03:39.046Z
   - https://github.com/ccorcos/tuple-database
   - 依赖fs-extra, lodash, fractional-indexing
   - The architecture of this database draws inspiration from a bunch of different places (although, primarily from FoundationDb).
-  - 👉🏻 The local-first, "end-user database" database.
-  - 👉🏻 All queries are reactive.
-  - 👉🏻 ✨ Schemaless — schemas are enforced by the application, not the database.
-  - 👉🏻 Asynchronous or Synchronous, Persisted or In-Memory Storage
+  - The local-first, "end-user database" database.
+  - All queries are reactive.
+  - ✨ Schemaless — schemas are enforced by the application, not the database.
+  - Asynchronous or Synchronous, Persisted or In-Memory Storage
   - Transactional read/writes written in TypeScript.
-  - 👉🏻 Directly read/write indexes with the ability to index graph/relational queries.
+  - Directly read/write indexes with the ability to index graph/relational queries.
     - The logic we've written here for the tuple-database code is exactly what any SQL database is doing under the hood.
   - Suitable for frontend state management.
   - https://github.com/maccman/tuple-playground
@@ -59,6 +59,12 @@ modified: 2021-09-04T14:03:39.046Z
   - Evolu is not pure P2P software. For syncing and backup, there needs to be a server. 
   - Evolu CRDT has no support for transactions because CRDT transactions are still an unsolved issue. 
 
+- https://github.com/vlcn-io/vlcn-orm
+  - https://github.com/aphrodite-sh/aphrodite
+  - Aphrodite is a schema layer whose first goal is to make P2P & Local-First software as easy to develop as traditional client-server software.
+  - You can think of Aphrodite as an ORM of sorts that is designed for the needs of Local-First applications and P2P data transfer.
+  - everything in Aphrodite begins with a schema. This schema encodes the application's data
+
 - dxos /20Star/MIT/202306/ts
   - https://github.com/dxos/dxos
   - https://www.dxos.org/
@@ -72,6 +78,16 @@ modified: 2021-09-04T14:03:39.046Z
   - Persistent Redux store for Reasonaboutable Offline-First applications, with first-class support for optimistic UI. 
   - Use with React, React Native, or as standalone state container for any web app.
   - 🤔 没必要执着于寻找已有的offline方案，使用 persist + crdt 也可以实现协作，甚至普通的协作同步
+
+- https://github.com/endpointservices/mps3 /ts
+  - Infraless Database over any s3 storage API.
+  - [mps3 - Offline-first DB over S3-compatible storage](https://observablehq.com/@tomlarkworthy/mps3-vendor-examples)
+  - https://twitter.com/tomlarkworthy/status/1688132733246033920
+    - I've been noodling with the concept of a vendorless BaaS by using an s3-compatible API as the backend. 
+    - By hacking object versioning you get serialisability and atomic bulk updates. 
+    - Its a real DB! Here it's using a local minio instance. Might try backblaze next.
+    - Oh I have to expose the ETag header in the CORS config thats improved things to 400ms sometimes but I still have too many preflight requests
+    - The sync protocol was designed using object versioning so that the logical names intuitively map to storage names, but then I realised R2, my favourite s3-like doesn't do versions. So now I had to redo it with timestamped suffixes. Total redesign with tricky clock skew defenses
 
 - turtleDB /443Star/MIT/201809/js
   - https://github.com/turtle-DB/turtleDB
@@ -93,11 +109,6 @@ modified: 2021-09-04T14:03:39.046Z
     - a fork of SingleFile that allows you to save a webpage as a self-extracting HTML file
   - https://github.com/gildas-lormeau/SingleFile-Lite /js
     - This is the new version of SingleFile compatible with the long-awaited Manifest V3!
-
-- https://github.com/aphrodite-sh/aphrodite
-  - Aphrodite is a schema layer whose first goal is to make P2P & Local-First software as easy to develop as traditional client-server software.
-  - You can think of Aphrodite as an ORM of sorts that is designed for the needs of Local-First applications and P2P data transfer.
-  - everything in Aphrodite begins with a schema. This schema encodes the application's data
 
 - local-first /191Star/202104/js/inactive
   - https://github.com/jaredly/local-first

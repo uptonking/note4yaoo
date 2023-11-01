@@ -28,7 +28,16 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## This is why we at Infinite Red have team lead as a fluid position (we call it “primary”). 
+- https://twitter.com/jamonholmgren/status/1719588874715042200
+  - That is, someone can be a team lead with someone else working with them, and then in the next project their roles can flip. 
+  - It’s much less about their experience level and much more about what they want and the project’s needs.
+  - Even great team leads want to just code and let someone else deal with meetings and requirements. So we have this one dev who was leading a project for 4+ years. He just wrapped up, and now he’s a secondary dev on a new project and loving being able to just code.
+- My employer does something similar by spreading mgmt responsibilities among ICs:
+  - team lead: mentorship/advocate for people
+  - task lead: PM role, scoped to single project. Still able to code, often also tech lead.
+  - Works well, lets people try out roles.
+  - Also interesting: project leadership structures ignore the org chart entirely! CEO will report to task leads when working directly on contracts like anyone else.
 
 - ## 说老实话，有实时Preview真的快了好多。
 - https://twitter.com/JidanzaiDashan/status/1712063417652011083
@@ -42,10 +51,10 @@ modified: 2021-01-21T17:52:13.333Z
   - Update: Added picocss.
 
 - My preferred development order has always been:
-  01.   Structure for everything: HTML, content, ARIA, some JS
-  02.   Style a component: CSS, interaction states, transitions/animations
-  03.   Then make the component functional with JavaScript
-  04.   Repeat steps 2 and 3 for each component.
+  01.    Structure for everything: HTML, content, ARIA, some JS
+  02.    Style a component: CSS, interaction states, transitions/animations
+  03.    Then make the component functional with JavaScript
+  04.    Repeat steps 2 and 3 for each component.
 
 - ## uid 不需要可读性，如果需要可读性可以添加一个新的 id 属性。
 - https://twitter.com/ThaddeusJiang/status/1694915724354142678

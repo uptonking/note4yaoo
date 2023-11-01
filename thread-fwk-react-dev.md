@@ -92,6 +92,17 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Inject HTML data attributes with query-string / search params
+- https://twitter.com/docusaurus/status/1719398440239792384
+  - This can be useful for various reasons
+  - For example, you can customize CSS based on query-string params
+  - Tip: use this to embed Docusaurus as an iframe in another website, and customize the layout
+  - No FOUC expected!
+
 - ## I've been doing some digging into how various frameworks handle rendering of values different types of value to the UI.
 - https://twitter.com/trueadm/status/1681215292058238977
   - What should happen if `value` is null, undefined, a boolean, function, object, array or function? Should it render an empty string?

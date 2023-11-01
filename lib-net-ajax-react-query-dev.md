@@ -188,10 +188,25 @@ modified: 2023-03-05T08:55:03.696Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Where’s the best place to put a useQuery when using TanStack’s React Query? 
+- https://twitter.com/dkapper01/status/1719439612257489116
+  1.  Inside a component
+  2.  Within context
+  3.  In a custom hook
+  4.  Somewhere else
+- custom hook
+- custom hook and use it anywhere within context or component
+- Custom hooks and expose the query key constants so that they can be used to invalidate queries.
+
+
+
 - ## 🆚️ useSWR or React Query?_202310
 - https://twitter.com/iamjonjackson/status/1718016755136671999
 - And the most important reason: RQ has @TkDodo - one of the most skills devs I know and a very helpful attitude and open to support its community.
-- 
 - 
 - 
 - 

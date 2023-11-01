@@ -20,7 +20,17 @@ modified: 2023-09-17T17:36:36.118Z
 # discuss-filesystem
 - ## 
 
-- ## 
+- ## [Ash HN: What if we use file system as database? | Hacker News](https://news.ycombinator.com/item?id=37777463)
+- The main reason is that I can use a variety of tools to view and manipulate files.
+  - But other software can also mess with your "database", including the operating system itself. For example, Syncthing was breaking my static site by changing the unicode normalisation of file names. MacOS being case insensitive brought issues. Illegal filename characters brought issues.
+  - This approach works well if you want to make data accessible to humans, but it's wildly inefficient if you expect machines to operate on that data, and comes with a few caveats(告诫，警告).
+
+- This chapter from "Database design" by Adrienne Watt has a very good explanation why this approach didn't stick
+
+- For simple apps and app components, it's very convenient and manageable.
+  - It becomes a problem when you: (1) scale up (2) have to deal with multiple relationships between objects. 
+  - The "Database design" by Adrienne Watt posted in another comment covers the scale concerns well, but another scale problem she doesn't mention is hitting inode limit, at least if you're on a single machine. 
+  - You can of course use a distributed filesystem as database, but at that point, you might want to use a database proper.
 
 - ## 🔥 [Database as Filesystem [video] | Hacker News_201907](https://news.ycombinator.com/item?id=20394088)
 - 

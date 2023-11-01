@@ -11,15 +11,16 @@ modified: 2023-04-20T08:05:44.256Z
 
 # guide
 - who is using #LSM-Tree
-  - HBase、Cassandra
   - LevelDB
-  - RocksDB
-    - TiKV
+  - RocksDB: TiKV, CockroachDB
+  - HBase, Cassandra
   - ClickHouse中的MergeTree也是LSM树的思想
   - Flink Table Store 目前采用了类似于 RocksDB 的通用合并策略
   - 新的InfluxDB的存储引擎看起来和LSM树很像
 # blogs
-- [LSM树由来、设计思想以及应用到HBase的索引 - yanghuahui - 博客园](https://www.cnblogs.com/yanghuahui/p/3483754.html)
+
+## [LSM树由来、设计思想以及应用到HBase的索引 - yanghuahui - 博客园](https://www.cnblogs.com/yanghuahui/p/3483754.html)
+
 - 讲LSM树之前，需要提下三种基本的存储引擎，这样才能清楚LSM树的由来：
 - 哈希存储引擎
   - 是哈希表的持久化实现，支持增、删、改以及随机读取操作，但**不支持顺序扫描**，对应的存储系统为key-value存储系统。
@@ -57,6 +58,13 @@ modified: 2023-04-20T08:05:44.256Z
 - 与RocksDB中实现一样，OceanBase的增量层(C0)多个SSTable之间Key会存在区间重叠的关系，读取的时候需要遍历查找每个增量SSTable才能确定Key是否存在，
 - 本文将以OceanBase 3.x版本为例，讲解其如何针对这一问题进行优化。
 - OceanBase 的基线层数据是全局有序的，所有SSTable之间的Key不会存在区间重叠的问题。
+
+## [TiKV | B-Tree vs LSM-Tree](https://tikv.org/deep-dive/key-value-engine/b-tree-vs-lsm/)
+
+## [RocksDB 简介 | PingCAP 文档中心](https://docs.pingcap.com/zh/tidb/stable/rocksdb-overview)
+
+## [Tokutek White Paper: A Comparison of Log-Structured Merge (LSM) and Fractal Tree Indexing_201408](http://highscalability.com/blog/2014/8/6/tokutek-white-paper-a-comparison-of-log-structured-merge-lsm.html)
+
 # more-lsm
 - [LSM树详解 - 知乎](https://zhuanlan.zhihu.com/p/181498475)
 - [万字详解常用存储结构：B+树、B-Link树、LSM树一网打尽](https://dbaplus.cn/news-141-4980-1.html)

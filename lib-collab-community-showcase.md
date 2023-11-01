@@ -16,12 +16,34 @@ modified: 2023-05-21T15:46:35.896Z
 
 - ## 
 
-- ## Stellar(优秀的；杰出的) example of the difficulty of maintaining global invariants with CRDTs. 
-- https://twitter.com/tomlarkworthy/status/1660217410517979137
-  - It's probably possible via a clever change of representation but if you have the option of a server authority, take it and save yourself the PhD work and keep the intuitive representation.
-- Yeah, 100% I do think CRDTs are in a hype cycle and the enthusiasts will eventually have to reconsider that they are not a good choice for vanilla app development. They have unique strengths but huge drawbacks too so the problem has be matched for CRDTs to be the answer
+- ## 🚀👥 [Reflect – Multiplayer web app framework with game-style synchronization | Hacker News_202310](https://news.ycombinator.com/item?id=37931373)
+- Reflect adds a fully managed, incredibly fast sync server.
+  - One plus point compared to CRDTs is that you get to decide how you want to deal with conflicts yourself, with simple, sequential code. I'm not up to date with the latest in CRDT-land but I believe it can be complicated to add application specific conflict resolution if the built-in rules don't fit your needs.
+- I agree wholeheartedly — we took the same approach for PowerSync with a server reconciliation architecture over CRDTs, which is also mentioned elsewhere in the comments here. For applications that have a central server, I think the simplicity of this kind of architecture is very appealing.
 
-- ## ✨ Announcing Reflect – A new way to build multiplayer apps like Figma or Notion._202310
+- Congrats! I've been watching this space for a while, having built a couple multiplayer sync systems in the past in private codebases, including a "redux-pubsub" library with rebasing and server canonicity that is (IIUC?) TCR-like. There's a lot to like about this model, and I find the linked article quite clear - thank you for writing and releasing this!
+  - Do you have a recommendation for use-cases that involve substantial shared text editing in a TCR system? I'd usually default to Yjs and Tiptap/Prosemirror here (and am watching Automerge Prosemirror with interest). The best idea I've come up with is running two data stores in parallel: a CRDT doc that is a flat key/value identifying a set of text docs keyed by UUID, and a TCR doc representing the data, which occasionally mentions CRDT text UUIDs.
+- What does this mean for Replicache development, is the client-side codebase mostly shared and can expect continued updates, or more likely to replace the primary focus for you?
+  - The clients are almost entirely shared. We will continue to develop Replicache.
+- What is the maximum number of users that can be concurrently in a room?
+  - There's no max enforced. Right now, it will fall apart pretty quick around 25-50, depending on how much work is going on. For the GA, we plan to implement a scheme that will allow the room to support up to ~100 concurrent active users (actually doing things) and thousands just watching.
+
+- 🆚️ Curious what your thoughts are on ElectricSQL?
+  - It seems really interesting. The key thing to understand is that there are deep architectural choices made in each of these systems that really influence what you can do. There is "mechanical sympathy" with certain kinds of applications.
+  - ElectricSQL is a distributed database. It's not going to run anywhere near 60fps with tons of users, because it's not running in memory on the server like Reflect/PartyKit/Liveblocks do. OTOH it will allow you to filter/query interact with much more data at the same time than Reflect/PartyKit/Liveblocks do – Reflect has a limit currently of 50MB per room and it's not practical to have dozens of rooms open at one time to get around this.
+  - Systems in the Reflect room/document based model are well suited for applications where you primarily interact with one "document" at a time and you want that to be as realtime as possible. Figma is the canonical example. You want the entire document to move together at 60 FPS, completely fluidly. It's not going to be possible to do this well in the ElectricSQL model IMO. Spreadsheets, presentations and documents are other examples. Systems in the ElectricSQL model are more suited for applications where you are interacting with lots of documents at the same time. Think CRMs, bug trackers, etc.
+  - Both types of systems are going to track toward the other to support the needs of real applications.
+
+- 🆚️ Is this in a similar vein to https://partykit.io/?
+  - Yes they are in the same space. The key difference is in how opinionated each is.
+  - PartyKit is extremely unopinionated. It's essentially lightweight javascript server, that launches fast and autoscales (I don't say this as as a bad thing, it's a useful primitive). Most people seem to run yjs in PartyKit, but you can also run automerge or even Replicache – my company's other project.
+  - Reflect is entirely focused on providing the best possible multiplayer experience. We make a lot of choices up and down the stack to tightly integrate everything so that multiplayer just works and you can focus on building your app.
+
+- 
+- 
+- 
+
+- ## 🚀 Announcing Reflect – A new way to build multiplayer apps like Figma or Notion._202310
 - https://twitter.com/aboodman/status/1714682920495919520
   - Rather than CRDTs, Reflect syncs the way video games do.
   - Reflect isn't open source. We're considering that, but in the meantime a source license and on-prem is available.
@@ -37,7 +59,7 @@ modified: 2023-05-21T15:46:35.896Z
 - You picked one CRDT that Yjs didn't implement ; ) But don't worry, here's the implementation that's relatively perf-wise and doesn't loose updates
   - Well it depends on how many clients you have right? Each unique instance of Y. Doc is a client ID. That can really add up over time. And I think this suffers the same problem that it's not really an intuitive solution to a counter.
 
-- ## ✨ Announcing Reflect – high-performance sync for the multiplayer web_202305
+- ## 🚀 Announcing Reflect – high-performance sync for the multiplayer web_202305
 - https://twitter.com/aboodman/status/1658251815929126913
   - This is the next step for @replicache and something we’ve been working on and dreaming of for some time.
 

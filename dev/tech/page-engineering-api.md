@@ -90,7 +90,15 @@ modified: 2020-12-27T10:32:58.026Z
 
 - ## 
 
-- ## 
+- ## I often hear "minimal APIs are just for toy apps" - I use them all the time and love them, for big and small projects, 
+- https://twitter.com/TessFerrandez/status/1719376588825919826
+  - so I decided to jolt down some quick notes about how we organize our minimal APIs to make them maintainable and testable
+  - [Organizing ASP.NET Core Minimal APIs - If broken it is, fix it you should](https://www.tessferrandez.com/blog/2023/10/31/organizing-minimal-apis.html)
+  - since minimal APIs were introduced in ASP.NET Core, I’ve been using them for all our projects, and I’ve been very happy with them. 
+  - Before then, I have also used similar minimal apis in python (FastAPI and Flask).
+- I always use Minimal APIs, pretty much the way you're describing, using an EndpointConfiguration file where all the routes are described, and separate endpoint files per feature. Using groups makes it even cleaner. Couldn't be happier with this approach!
+- Often use minimal APIs where we compose multiple APIs behind one api gateway. Makes it easy to confidently and reliably develop, test and maintain
+- I prefer minimal API too, however the lock in of System.Text.Json is a draw back when you need the power of Newtonsoft.Json
 
 - ## Here are 6 tips for effective API design:
 - https://twitter.com/mjovanovictech/status/1717149101509222598

@@ -282,6 +282,8 @@ modified: 2022-04-05T10:08:25.947Z
   - First-class integrations with popular collaboration frameworks and libraries. Y.js, automerge, replicache, they all Just Work
   - `y-partykit` is an addon library for partykit designed to host backends for Yjs
   - [automerge backend](https://github.com/partykit/partykit/issues/97)
+  - PartyKit is extremely unopinionated. It's essentially lightweight javascript server, that launches fast and autoscales 
+  - Most people seem to run yjs in PartyKit, but you can also run automerge or even Replicache
 
 - https://github.com/supabase/pg_crdt /rust
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.

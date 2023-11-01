@@ -21,8 +21,6 @@ modified: 2023-02-08T06:56:54.945Z
   4. Chaining
   5. Operations
   6. Structured data
-- 
-- 
 
 # discuss
 - ## 

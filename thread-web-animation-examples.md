@@ -38,7 +38,9 @@ modified: 2021-04-21T15:01:12.882Z
 
 - ## 
 
-- ## 
+- ## Animating clip-paths on layers of images makes really interesting page transitions!
+- https://twitter.com/crnacura/status/1719413040947372420
+  - [Image Layer Animations with Clip-Path | Codrops](https://tympanus.net/codrops/2023/10/31/image-layer-animations-with-clip-path/)
 
 - ## Today we have some ideas for speedy layered image animations for page transitions using clip paths
 - https://twitter.com/codrops/status/1719374467548242383

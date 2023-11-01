@@ -18,7 +18,13 @@ modified: 2023-09-07T15:58:27.967Z
 # discuss-ipfs-ssb
 - ## 
 
-- ## 
+- ## To date, IPFS has been a project focused on data. 
+- https://twitter.com/FISSIONcodes/status/1719685936068391232
+  - IPVM is a spec for bringing content-addressed execution to content-addressed data on IPFS. 
+  - To this end, the IPVM standard aims to be the easiest, fastest, most secure, and open way to run decentralized compute jobs everywhere.
+- All without a token
+  - It's all self-hosted. It's very rare that you have state is globally contested and needs consensus. Instead you (the client running in your browser) runs the compute and publishes a verifiable proof to the IFPS network. Anyone who cares about the same stuff you do can gossip.
+  - And ofc, your browser is also self-hosting. User never knows about it. 100% verifiable, recoverable, decentralized, however you wanna call it.
 
 - ## 💡 One of the biggest challenges in creating @FireproofStorge is that I refused to take on infrastructure operations. 
 - https://twitter.com/jchris/status/1717195946822660289

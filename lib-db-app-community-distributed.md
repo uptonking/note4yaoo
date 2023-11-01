@@ -44,7 +44,9 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
-- ## 
+- ## 💡 Database Sharding Explained
+- https://twitter.com/arcnotes/status/1719692415995425014
+  - [Database Sharding Explained](https://architecturenotes.co/database-sharding-explained/)
 
 - ## 🔥 [From coding bootcamp graduate to building distributed databases | Hacker News_202102](https://news.ycombinator.com/item?id=26209594)
 - 

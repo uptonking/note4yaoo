@@ -1,11 +1,11 @@
 ---
-title: lib-db-mysql-vs-postgresql
+title: lib-db-postgresql-vs-mysql
 tags: [comparison, database, mysql, postgresql]
 created: 2020-12-18T13:23:08.190Z
-modified: 2020-12-18T13:23:43.939Z
+modified: 2023-11-01T14:13:41.390Z
 ---
 
-# lib-db-mysql-vs-postgresql
+# lib-db-postgresql-vs-mysql
 
 # guide
 
@@ -47,7 +47,12 @@ modified: 2020-12-18T13:23:43.939Z
 
 - ## 
 
-- ## 
+- ## 🆚️ Old Postgres and old MySQL had similar performance on sysbench. 
+- https://twitter.com/MarkCallaghanDB/status/1719500763666452654
+  - But modern Postgres is usually faster than modern MySQL because Postgres has avoided CPU perf regressions over time.
+  - [Small Datum: Postgres vs MySQL: the impact of CPU overhead on performance](https://smalldatum.blogspot.com/2023/10/postgres-vs-mysql-impact-of-cpu.html)
+- Do you mean that new features introduced perf regression in MySQL?
+  - Yes. Have seen the same in other DBMS too, just not in Postgres.
 
 - ## 🆚️🔥 [Ask HN: What could a modern database do that PostgreSQL and MySQL can't | Hacker News_202109](https://news.ycombinator.com/item?id=28425379)
 - 

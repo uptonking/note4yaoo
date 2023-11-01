@@ -9,7 +9,31 @@ modified: 2022-12-24T07:31:48.493Z
 
 # guide
 
+# discuss-wasm-compatibility
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🫐 WasmGC is now available in Chrome v119!_202311
+- https://twitter.com/kevmoo/status/1719458695703326774
+  - great to see the Kotlin demo! 
+  - Here's a Dart/Flutter demo
+  - [WebAssembly Garbage Collection (WasmGC) now enabled by default in Chrome - Chrome for Developers](https://developer.chrome.com/en/blog/wasmgc/)
+  - [Flutter WasmGC Preview - Material demo](https://flutterweb-wasm.web.app/)
+- Chrome on Android still handles wasm touch events poorly
+  - What do you mean by "wasm" touch events? The actual browsers events are the exact same as the JS version. The code is just compiled to Wasm instead.
+- But for some reason they don't work as in regular JS. When I browse wasm pages from my phone the touch feels like lagging
+
+- The Flutter demo runs terribly on Firefox Nightly - an absolute jank fest.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 用 WebAssembly 做 Faas 和 JavaScript 相比很大的问题是服务商应该没有源代码的。

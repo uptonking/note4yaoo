@@ -37,6 +37,22 @@ modified: 2023-09-17T17:46:07.620Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I want a database where I can subscribe to a complex query, 
+- https://twitter.com/steveruizok/status/1719442425398038900
+  - eg “select id, name from all files in any of the groups that this user is a member of”. What do I pick in 2023?
+- @supabase pretty good for this. (Postgres based)
+  - think supabase only does it for tables?
+  - Hm. You might be right
+- evolu: We do that. But only for local SQLite and without any magic. It's just brutal force in Web Worker. It’s good enough for local-first.
+- always go for Mongo, you don't want a boring life.
+  - [mongodb Watch for Changes — Node.js](https://www.mongodb.com/docs/drivers/node/current/usage-examples/changeStream/)
+
 - ## 💡 [How to Efficiently Choose the Right Database for Your Applications | Hacker News_202102](https://news.ycombinator.com/item?id=26290252)
 - I kinda disagree with separate branch for "document database" for Mongo. Mongo is a key-value storage, with a thin wrapper that converts BSON<->JSON, and indices on subfields.
   - You can achieve exactly the same thing with PostgreSQL tables with two columns (key JSONB PRIMARY KEY, value JSONB), including indices on subfields. With way more other functionality and support options.

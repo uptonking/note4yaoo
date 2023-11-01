@@ -22,7 +22,9 @@ modified: 2023-10-26T18:47:22.664Z
 # discuss-migration/upgrade
 - ## 
 
-- ## 
+- ## 太久没做数据迁移都忘了要后建索引。
+- https://twitter.com/forevertjt/status/1719732968636465590
+  - 插入到千万级之后索引就明显影响插入速度了，把索引都干掉就快很多了。
 
 - ## 🔥 [Ask HN: How do you manage direct updates to databases in a production system | Hacker News_202112](https://news.ycombinator.com/item?id=29563226)
 - 

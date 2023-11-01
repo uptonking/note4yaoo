@@ -80,11 +80,21 @@ modified: 2023-04-11T12:34:16.725Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## If laptops keep getting faster, cloud based developer tooling is going to become less appealing. 
+- https://twitter.com/ericsimons40/status/1719473082459378041
+  - These machines are so powerful that most of the value add can run locally. 
+  - Maybe we'll get a hybrid model, SaaS running locally, but it's clear where things are heading.
+- This is a core reason why we bet big on Wasm building http://WebContainers.io. Unlocks SaaS experiences powered entirely by (ever increasing) client side compute. 
+
 - ## Browsix does this by mapping low-level Unix primitives, like processes and system calls, onto existing browser APIs, like Web Workers and postMessage.
 - https://twitter.com/randomdross/status/1062827514597232640
 - Browsix is cool. The web is not bound to a particular UX paradigm, but CLI is bound to a particular set of OS semantics.  CLI gets to work on the web too.
 
-- ## [Open-sourcing for the webplatform ? · stackblitz/webcontainer-core](https://github.com/stackblitz/webcontainer-core/issues/458)
+- ## ❓ [Open-sourcing for the webplatform ? · stackblitz/webcontainer-core](https://github.com/stackblitz/webcontainer-core/issues/458)
 
 - webcontainer is a compatibility layer for node apps, similar to wine (Wine Is Not an Emulator)
 
@@ -112,3 +122,7 @@ modified: 2023-04-11T12:34:16.725Z
   - Run Node.js in any browser, any device
   - Nodebox is the first runtime that allows you to run Node.js in any browser, any context, and any application 
   - One of the biggest challenges of enabling this was performance. So, we took the time to redesign the Sandpack transpiler using Rust, refined our caching and made many other optimizations.
+
+- ## [Does anyone have a idea how to run Webpack in the browser? : javascript_201601](https://www.reddit.com/r/javascript/comments/40oi1b/does_anyone_have_a_idea_how_to_run_webpack_in_the/)
+- 
+- 

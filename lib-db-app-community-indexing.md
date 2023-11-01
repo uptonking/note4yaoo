@@ -22,7 +22,14 @@ modified: 2023-09-17T17:38:11.187Z
 
 - ## 
 
-- ## 
+- ## 💡 Database Indexing Explained.
+- https://twitter.com/NikkiSiapno/status/1719352895169265797
+  - An index is a key-value pair where the key is used to search for data instead of the corresponding indexed column(s), and the value is a pointer to the relevant row(s) in the table.
+  - Indexing speeds up queries, but it also takes up storage space and adds overhead to operations
+  - B-tree is one of the most commonly used indexing structures where keys are hierarchically sorted. B-tree is most commonly used because of its efficiency in storing and searching through ordered data. Their balanced structure means that all keys can be accessed in the same number of steps, making performance consistent.
+  - Hash indexes are best used when you are searching for an exact value match. The key component of a hash index is the hash function. 
+  - Bitmap indexing is used for columns with few unique values. 
+  - A composite index may be used when multiple columns are often used in a WHERE clause together. 
 
 - ## how bitmap index scans work
 - https://twitter.com/hnasr/status/1718592877658538228

@@ -110,6 +110,13 @@ modified: 2023-09-16T17:49:28.532Z
 - The benefit of CDC becomes apparent once we start using it as a solution for the rest of the issues mentioned in the beginning of the article. 
 # blogs-internals
 
+## [How MVCC databases work internally_201712](https://kousiknath.medium.com/how-mvcc-databases-work-internally-84a27a380283)
+
+- it’s pretty clear that such systems maintain different versions of data with identifier like rev_no or version_no etc & when data is queried, the latest version is returned.
+- Typically traditional database systems use locking when multiple readers & writes access some resource. 
+- 
+- 
+
 ## 👥🔥 [Basic Data Structures and Algorithms in the Linux Kernel | Hacker News_201311](https://news.ycombinator.com/item?id=6787836)
 
 - 

@@ -16,15 +16,6 @@ modified: 2022-04-05T13:25:40.892Z
 
 - ## 
 
-- ## [What do you recommend for conflict-free replicated data type (CRDT) support in Rust? : rust_202301](https://www.reddit.com/r/rust/comments/1064f9s/what_do_you_recommend_for_conflictfree_replicated/)
-- May or may not be useful for you, you may find the hybrid logical clock approach more convenient than trying to maintain and manage a vector clock etc...
-- That's the exact same talk I watched too! It's what started me down this path of offline-first apps. And I'm assuming if the timestamps produced by the client and the ones produced by the server are not compatible (due to a mistake in the code, or implementation language, or whatever) then the CRDT would be basically unusable right? Since the timestamps must be compatible in order to be compared.
-  - Yes, although there are a few things you could do to prevent the case of an implementation being incorrect:
-  - You make some compatibility methods which extracts the raw information out and back into an HLC.
-  - You use the string format for communicating rather than the bit packed u64 which has a common way of serializing and deserializing their information so they're the same.
-  - u should provide 100% test coverage including testing that the clock accuracies 
-
-- Another Rust-based offline-first CRDT framework is Holochain.
 
 - ## So many people in the crdt & data sync space now. Feels like it is time for me to move on to the next frontier of problems
 - https://twitter.com/tantaman/status/1711538960277602496

@@ -14,6 +14,18 @@ modified: 2023-08-28T06:14:28.873Z
 
 - ## 
 
+- ## 
+
+- ## Did you know that #Python supports chained comparison? 
+- https://twitter.com/driscollis/status/1719731090750071245
+  - It's only valuable for niche circumstances, but it's super handy!
+  - if 60 < num_variable < 100
+
+- ## Flask today is a different framework than the one I have created. 
+- https://twitter.com/mitsuhiko/status/1719716779532931466
+  - But that is in many ways what it should be. 
+  - It took me many years to realize that projects are not just code and I did not know how to onboard people.
+
 - ## What is wrong with “is” in Python
 - https://twitter.com/clcoding/status/1718350871610708374
 - “is” operator compares address of both variable and return True if they are pointing at same address, otherwise False

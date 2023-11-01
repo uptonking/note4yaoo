@@ -14,6 +14,11 @@ modified: 2023-10-29T02:23:48.086Z
 
 - ## 
 
+- ## [Local-first software: You own your data, in spite of the cloud (2019) | Hacker News_202310](https://news.ycombinator.com/item?id=37743517)
+- Couchdb/pouchdb remains one of the best: it's super easy to setup and is production-ready, but it's gonna be json docs with no transactions, so it can be limiting.
+  - Y.js and automerge emerged as solutions combining CRDTs and content transfer, they look really promising. There is a Y.rs version if that's better for you.
+  - I feel like you're not really interested in full p2p but want some centralization point to manage some auth stuff, so I'd investigate couchdb/pouchdb first.
+
 - ## 🚀 fireproof.storage Light up your data!
 - https://twitter.com/jchris/status/1633113469179314179
   - check out my new project, a real-time database that runs in any page, with indexes, event feeds, automatic replication, and cryptographic verifiability. 
@@ -33,11 +38,11 @@ modified: 2023-10-29T02:23:48.086Z
   - Another option I’ll be adding soon is the ability to serialize the current state as a single car file so that you can embed it in your app for instant preload
   - As far as a spec, not yet. I plan to swap out some of the core data structures with more nuanced implementations, at which point that will be front of mind.
 
-- How does it differ from Pouch?
+- 🆚️ How does it differ from Pouch?
   - One of the stand-out use cases for this is adding features to Web3 style link in profile pages. Because if you’re deploying HTML that has its content hash in a block chain somewhere, and the html contains the root hash of your database. Merkle!
 
 - ## [What Is JSON Patch? | Hacker News_202205](https://news.ycombinator.com/item?id=31301627)
-- Last year I experimented with an app architecture that used CouchDB/PouchDB for for synchronising data for a single user, multi device app. Then using Yjs to merge the conflicting edits - it worked incredible well. If I had the time I would love to build a Yjs/CRDT native CouchDB like database that could use the Yjs state vectors as a wire protocol for syncing…
+- Last year I experimented with an app architecture that used CouchDB/PouchDB for for synchronising data for a single user, multi device app. Then using Yjs to merge the conflicting edits - it worked incredible well. If I had the time, I would love to build a Yjs/CRDT native CouchDB like database that could use the Yjs state vectors as a wire protocol for syncing…
   - This is the very rough code behind the PouchDB/Yjs datastore. Effectively each Pouch/Couch document is actually "managed" by Yjs, all changes/operations via it. It then saves the binary Yjs blob as an attachment on the Pouch document with the current Yjs state exported as JSON for the main Pouch document. This gives you all the indexing/search you get with Pouch/Couch but with automatic merging of conflicting edits.
   - **Ultimately though I don't think PouchDB is a good platform for this**, building something that is native Yjs would be much better. If anyone is interested I would love to hear from them though!
 - Something that stands out immediately to me is that reliance on binary attachments. 

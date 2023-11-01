@@ -9,6 +9,12 @@ modified: 2023-09-17T18:17:41.377Z
 
 # guide
 
+- who is using #b-tree
+  - postgresql
+  - sqlite
+- who is using #b+tree
+  - mongodb
+  - couchdb
 # dev
 
 # more

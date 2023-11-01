@@ -12,7 +12,7 @@ modified: 2022-04-05T10:09:51.343Z
  
 
 - resources
-# discuss-crdt-event
+# discuss-crdt-event/log
 - ## 
 
 - ## 
@@ -74,7 +74,7 @@ modified: 2022-04-05T10:09:51.343Z
 
 - ## 
 
-- ## [A highly-available move opertaion for replicated trees | Hacker News_202203](https://news.ycombinator.com/item?id=30811072)
+- ## [A highly-available move operation for replicated trees | Hacker News_202203](https://news.ycombinator.com/item?id=30811072)
 - Question for the authors (if they are around): any ideas for how we might get to efficient pruning of old operations? I don't have any ideas. Do you all have some idea of how we might be able to prune this old log? Or even sketches of ideas?
   - The authors actually do briefly mention this concern in the section titled 3.7 Algorithm extensions (under Log truncation):
   - > However, in practice it is easy to truncate the log, because apply_op only examines the log prefix of operations whose timestamp is greater than that of the operation being applied. Thus, once it is known that all future operations will have a timestamp greater than t, then operations with timestamp t or less can be discarded from the log.
@@ -92,14 +92,22 @@ modified: 2022-04-05T10:09:51.343Z
 - Counterpoint(形成对比的论点): I’ve supported more peer-to-peer database applications in prod than almost anyone out there. Only a handful of times did conflict resolution strategies have to be proactively(积极的; 主动的) coded. Getting document granularity right is most of the work.
 - Having built on top of crdts quite a bit, I think that the replicache model is probably the more explicit, better abstraction. It's very clear what effect concurrent edits will have as you write reducers and very hard to model the same with crdts without simulation.
 
-- ## I'm presenting some early ideas about CRDTs & branch-and-merge documents.
+- ## 🌵📄 I'm presenting some early ideas about CRDTs & branch-and-merge documents.
 - https://twitter.com/MatthewWeidner3/status/1715023602976764299
   - [Proposal: Versioned Collaborative Documents (PLF 2023 - Programming Local-first Software) - SPLASH 2023](https://2023.splashcon.org/details/plf-2023-papers/4/Proposal-Versioned-Collaborative-Documents)
 
 # discuss
 - ## 
 
-- ## I'm basically only interested in 3 CRDTs - g-sets, multi-value registers, and OR-maps whose values are multi-value registers. 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 💡 I'm basically only interested in 3 CRDTs - g-sets, multi-value registers, and OR-maps whose values are multi-value registers. 
 - https://twitter.com/LewisCTech/status/1715268425629716784
   - These are the core constructs for database syncing insofar(到这种程度) as I see it - the rest have applications in collaborative software.
   - To be clear - obviously syncing complicated stuff like relational databases needs a lot more sophistication. 
@@ -129,18 +137,18 @@ modified: 2022-04-05T10:09:51.343Z
 - Yep. I've done something very similar on top of Diamond Types for a little personal wiki. This page is synced between all users who have the page open. Its a remarkably small piece of code, outside of the CRDT library itself (which is in rust via wasm).
   - Code is here, if anyone is interested. The whole thing is a few hundred lines all up
 
+- ## Stellar(优秀的；杰出的) example of the difficulty of maintaining global invariants with CRDTs. 
+- https://twitter.com/tomlarkworthy/status/1660217410517979137
+  - It's probably possible via a clever change of representation but if you have the option of a server authority, take it and save yourself the PhD work and keep the intuitive representation.
+- Yeah, 100% I do think CRDTs are in a hype cycle and the enthusiasts will eventually have to reconsider that they are not a good choice for vanilla app development. They have unique strengths but huge drawbacks too so the problem has be matched for CRDTs to be the answer
+
 - ## [JSON CRDT 2.0](https://github.com/streamich/json-joy/issues/228)
 - Things to consider:
   - Move operations across different document nodes.
   - Low-level multi-value register support. (MV register can be done in user-space using an RGA array.)
   - Currently, JSON CRDT is operation-based CRDT. Consider if it also should work as state-based CRDT and delta CRDT.
 
-- ## [What do you recommend for conflict-free replicated data type (CRDT) support in Rust?](https://www.reddit.com/r/rust/comments/1064f9s/what_do_you_recommend_for_conflictfree_replicated/)
-- you may find the hybrid logical clock approach more convenient than trying to maintain and manage a vector clock etc...
-
-- I think CRDTs are the correct solution here. Another Rust-based offline-first CRDT framework is Holochain. It frequently gets mistaken for blockchain due to the name and its proximity to that space, but it is not a blockchain in any way
-
-- ## Has anyone seen a good comparison between @partykit_io @liveblocks @replicache ?
+- ## 🆚️ Has anyone seen a good comparison between @partykit_io @liveblocks @replicache ?
 - https://twitter.com/ptsi/status/1676064189385785344
 - I've used @liveblocks and the DX is insane with zustand which my projects previously used. But it's very expensive. I think pricing is fair for enterprise products but hard to do for freemium.
   - @partykit_io sounds cool too, but never tried that... 
@@ -168,13 +176,6 @@ modified: 2022-04-05T10:09:51.343Z
 - Convex doesn't e.g. store pending mutations past closing the browser tab. You could do this in userspace (and maybe Convex will add this) but approaching the problem holistically, Replicache does it right.
 
 - A terrific amount of work has been put into Replicache to do background sync + partial offline support Right
-
-- ## GPT-4 as a viable alternative to text CRDTs? 
-- https://twitter.com/geoffreylitt/status/1645961623289438208
-- Yes I think this is promising for async merges!
-  - Probably still want tools to review what it did, but in simple cases like this can just be a ✅
-  - Auto-merging code seems easier than prose since easier to verify...
-- For more synchronous workflows you probably still want something fast and deterministic, but CRDTs are already good at that part; it's these "semantic merges" that are harder
 
 - ## I remember having read about Gun a few years ago and there was a lot of (apparently) valid criticism. Do you know how much of that is still valid today?_201803
 - https://news.ycombinator.com/item?id=16523087
@@ -226,36 +227,6 @@ modified: 2022-04-05T10:09:51.343Z
   - This constant transformation of operations turned out to have too many edge cases where clients were found to not produce the same baseline (the "wrong" papers above). When that happens, the clients will never converge on the same result and break the fundamental assumption of collaboration.
   - exactly right. It’s fairly easy to have an OT system that is very vulnerable, because clients can cheaply generate change sets that are extremely computationally expensive on the server side. I’ve seen a system where a single mobile phone could, in a few seconds, lock up the synchronisation server for days.
 
-- ## 分享我设计的基于CRDT的软件架构 hamsterbase
-- https://twitter.com/hamsterbase/status/1590005075581497344
-  1. 以 CRDT 文件作为 single source of truth, 保证向前向后兼容。
-  2. 以 sqlite 数据库作为缓存。 sqlite 的数据库格式可以按照需求任意设计，可以随意修改。
-  3. 不同客户端直接通过点对点同步 CRDT 文件，支持完全离线可用，同步无冲突。
-- 数据库的crdt同步怎么设计的
-  - 一个网页对应一个 CRDT 的文件（类似于 JSON）
-  - 每次同步的时候，获取对方的文件列表、本地的文件列表
-  - 对列表进行 DIFF, 发送本地多的，拉取本地少的。
-
-- 你可以在本地跑 hamsterbase 试试看。 文件结构都在本地的
-  - 可以把文件的版本号放在前面，这样可以在不读取完整文件的情况下获取当前的所有 CRDT 文件。
-
-- 可以把 CRDT 同步抽象出来，同步服务不需要关心 CRDT 的格式
-  - 这个是我从零设计的。 CRDTSyncDir 可以用 webdav , fs , oss , http 实现。 
-  - 每次同步就是拿本地 fs 实现的 dir 和 http 实现的 remote dir 同步。
-
-```typescript
-
-interface CRDTSyncDir{
-  listAllFiles();
-  fileStat(id,version)
-  listVersions(id)
-  getVersion(id)
-  read(id,version,filter)
-  write(id,content)
-}
-
-```
-
 - ## The future of apps is local-first and CRDTs
 - https://twitter.com/AdventureBeard/status/1495973698846736387
   - [Local-first software](https://www.inkandswitch.com/local-first/)
@@ -303,8 +274,7 @@ interface CRDTSyncDir{
   - Gaming is instructive here. Every type of multiplayer game has diff strategies. Some send pure inputs from the clients, others do a lot more simulation locally and most do a bit of both, depending on the game and reqs(RTS, FPS, cheating) And it’s never good enough!
 - The best examples I can think of violate #1 (game server architectures), and they are generally written custom for every game, or at least every studio/franchise. Even Unity has very limited support for a generic solution, despite being a slam dunk feature.
 
-- ## Why CRDT didn't work out as well for collaborative editing xi-editor _201905
-- https://news.ycombinator.com/item?id=19886883
+- ## 🌰🤔 [Why CRDT didn't work out as well for collaborative editing xi-editor _201905](https://news.ycombinator.com/item?id=19886883)
 - TL; DR 
   - CRDT is completely irrelevant to any of the highlighting/etc stuff
   - Most highlighters are lexers. Advanced highlighters/folders are parsers.
@@ -320,12 +290,6 @@ interface CRDTSyncDir{
   - The lexer only cares about knowing what character ranges changed, which does not require CRDT. The typical model for this kind of edit is what vscode's document text changes provide (IE For a given text edit, old start , old end, new start , new end)
   - **The parser only cares about what token ranges changed, which does not require CRDT**.
 
-# discuss-more
-- Open source collaborative text editors _201905
-  - https://news.ycombinator.com/item?id=19845776
+- ## [CRDTs: The Hard Parts [video] _202007](https://news.ycombinator.com/item?id=23802208)
 
-- An Introduction to Conflict-Free Replicated Data Types _202006
-  - https://news.ycombinator.com/item?id=23737639
-
-- CRDTs: The Hard Parts [video]_202007
-  - https://news.ycombinator.com/item?id=23802208
+- ## [An Introduction to Conflict-Free Replicated Data Types _202006](https://news.ycombinator.com/item?id=23737639)

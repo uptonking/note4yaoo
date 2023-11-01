@@ -171,6 +171,8 @@ modified: 2023-03-16T16:29:47.610Z
 - 复制粘贴时，处理伪元素::before/::after
 # search
 - 搜索时能够搜索emoji
+
+- CSS Custom Highlight API
 # collab
 - cursor
   - 鼠标图标支持显示头像或实时视频截图

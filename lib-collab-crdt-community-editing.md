@@ -14,7 +14,8 @@ modified: 2023-10-28T09:00:45.811Z
 
 - ## 
 
-- ## 
+- ## The representation of comments in rich text Delta is awkward, because multiple styles cannot be merged like bold/link. Which solution do you prefer?
+- https://twitter.com/zxch3n/status/1719578599517556748
 # discuss
 - ## 
 
@@ -23,3 +24,12 @@ modified: 2023-10-28T09:00:45.811Z
 - ## While CRDT algorithms go over and beyond to let conflict resolution keep user's intent in mind, most of the rich text editors don't even try to represent it in their APIs. 
 - https://mastodon.social/@horusiath@fosstodon.org/111293175245189294
   - So you want to *quote* that *paragraph*? What a weird way to say "insert formatted text at this index".
+
+- ## GPT-4 as a viable alternative to text CRDTs? 
+- https://twitter.com/geoffreylitt/status/1645961623289438208
+- Yes I think this is promising for async merges!
+  - Probably still want tools to review what it did, but in simple cases like this can just be a ✅
+  - Auto-merging code seems easier than prose since easier to verify...
+- For more synchronous workflows you probably still want something fast and deterministic, but CRDTs are already good at that part; it's these "semantic merges" that are harder
+
+- ## [Open source collaborative text editors _201905](https://news.ycombinator.com/item?id=19845776)

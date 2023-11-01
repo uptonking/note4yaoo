@@ -99,6 +99,18 @@ modified: 2022-11-07T11:00:28.824Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Vercel 的 Framework defined Infra 是目前垂直领域切入 PaaS 最成功的。
+- https://twitter.com/mingwb/status/1719716927755714997
+  - Infra as Code (Pulumi) 离应用太远；
+  - Infra From Code https://infrastructurefromcode.com 和 Infra 耦合太紧；
+  - 还有把 Infra 直接放到编程语言里去的 https://winglang.io，就走得太激进了。
+
 - ## 👥💬 我一直挺佩服做社交产品的朋友。都是操纵人性的高手。社交产品的冷启动过程，就是一个左脚踩右脚飞上天的过程。
 - https://twitter.com/JourneymanChina/status/1718971857242865865
   - 没有足够多好的内容，无法吸引到用户。没有足够多的用户，无法吸引到优质的内容提供商进驻。

@@ -44,6 +44,10 @@ modified: 2023-02-07T09:22:03.120Z
   - 此应用基于AI语音识别模型 Whisper
   - 先把视频放到Google Drive，然后从Google Colab上运行代码，调用OpenAI的Whisper API生成字幕，再借助ChatGPT的API对字幕逐行翻译，最后人工再校对就好了
 
+- https://github.com/huggingface/distil-whisper /CodeNA
+  - Distil-Whisper is a distilled version of Whisper that is 6 times faster, 49% smaller, and performs within 1% WER on out-of-distribution evaluation sets.
+  - https://twitter.com/sanchitgandhi99/status/1719409022246220184
+
 ## more-asr
 
 - https://github.com/wenet-e2e/wenet

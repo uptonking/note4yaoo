@@ -266,5 +266,9 @@ modified: 2021-08-23T05:27:08.068Z
 - https://github.com/chenhb23/lanzouyun-disk
   - 蓝奏云网盘、客户端，界面美观。支持登录、大文件批量断点上传 / 下载、URL 解析，使用 electron 构建
 
-- https://github.com/spacedriveapp/spacedrive
+- https://github.com/spacedriveapp/spacedrive /AGPLv3/rust/ts
   - Spacedrive is an open source cross-platform file manager, powered by a virtual distributed filesystem (VDFS) written in Rust.
+  - Prisma, Rust, React, TypeScript, Tauri
+  - Tauri allows us to create a pure Rust native OS webview
+  - We also use rspc which allows us to define functions in Rust and call them on the Typescript frontend
+  - The core (sdcore) is written in pure Rust.

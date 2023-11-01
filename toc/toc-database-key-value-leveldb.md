@@ -276,6 +276,16 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/laixintao/iredis /python
   - Interactive Redis: A Cli for Redis with AutoCompletion and Syntax Highlighting
 # kv-based
+- https://github.com/nlfiedler/mokuroku /apache2/rust/202309
+  - Secondary indices for RocksDB in Rust.
+  - designed to provide a secondary index on top of the RocksDB key/value store, similar to what PouchDB does for LevelDB.
+  - Your application will provide implementations of the `Document` trait to suit the various types of data to be stored in the database, and this library will invoke the mapping function on those Document instances to produce index key/value pairs.
+  - The behavior of this library is similar to PouchDB, albeit(虽然；尽管) with an API suitable for the language. 
+  - Unlike PouchDB, this library does not put any constraints on the format of the database records.
+  - You may see the term `view` used here and there. This is what CouchDB and PouchDB call the indices in their documentation. 
+    - The function name `emit` also comes from the `map/reduce` API of CouchDB, and makes as much sense as anything else.
+  - What this library does exactly: the indices managed by this library are "stand-alone", meaning they are not embedded within the database files (e.g. zone maps or bloom filters). Additionally, the index is updated in a lazy fashion
+
 - https://github.com/earthstar-project/earthstar /LGPLv3/ts
   - Storage for private, distributed, offline-first applications.
   - Earthstar is an offline-first key-value database which supports author versions.

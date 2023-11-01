@@ -1,19 +1,15 @@
 ---
-title: lib-db-app-community-oplog
-tags: [append-only-log, community, database, oplog]
+title: lib-db-app-community-event-oplog
+tags: [append-only-log, community, database, events, oplog]
 created: 2023-09-17T18:16:50.624Z
-modified: 2023-09-17T18:17:13.008Z
+modified: 2023-11-01T10:08:09.232Z
 ---
 
-# lib-db-app-community-oplog
+# lib-db-app-community-event-oplog
 
 # guide
 
 # discuss-stars
-- ## 
-
-- ## 
-
 - ## 
 
 - ## 
@@ -25,23 +21,38 @@ modified: 2023-09-17T18:17:13.008Z
   - 👉🏻 That means that data structures that rely on append-only operations can continue to scale to take advantage of bigger disks, 
   - but **data structures that rely on disk seeks (eg. B-trees) have hit a bottleneck**. 
   - Also, as number of cores continues to increase, playback & processing from a sequential log can often be parallelized, but updating your on-disk indexes blocks on I/O.
+- what will replace this once enterprise SSDs start replacing spinning disks?
+  - SSDs have even more unique access patterns - they give you (relatively) fast seek times, there's no particular penalty for random-access vs. sequential usage, but you really want to avoid writes, both to preserve the lifetime of the drive and because mixing reads & writes with a SSD lowers performance.
+  - I don't see SSDs replacing mechanical disks. Rather, they're being used for different functions. Disks are becoming a data warehouse; they're the new tape(磁带)
+  - Operational serving is moving toward SSDs and RAM, with a periodic processing step that pulls data off disks and builds a pre-made shard that gets written all at once to the SSD. 
+  - LSM trees are well-adapted to the data-warehousing part of this, which is why you continue to see big uptake of BigTable/Cassandra/Mongo.
+- random access has a penalty compared to sequential access. the unique characteristic would be that SSDs have more channels*banks than e.g. RAM, which has similar characteristics regarding access patterns.
+- SSDs don't have seek times at all as there is no actuator arm and read/write head to "seek" into place in order to read/write data.
+  - the fact that SSDs do not have seek times is an important distinction when discussing storage engines. You might want to read the following by Jay Kreps one of the authors of Kafka, Voldermort and Samza
 
-- there is already a lot of thought that goes into LSM trees on flash storage - check out RocksDB for example, which goes to great lengths to allow the user to deal with Read / Write amplification, a problem specific to flash storage. 
-
-- 👉🏻 The tradeoff from LSM tree to B-tree, very generally speaking, is more about access patterns: 
+- there is already a lot of thought that goes into LSM trees on flash storage - check out RocksDB for example, which goes to great lengths to allow the user to deal with Read/Write amplification(放大或增强), a problem specific to flash storage. So I don't think that more SSD adoption will fundamentally change anything.
+- 🆚️ The tradeoff from LSM tree to B-tree, very generally speaking, is more about access patterns: 
   - LSM trees lend themselves to insert-heavy workloads because the structure is conceptually just a big array that you very quickly append stuff to the end of without checking the rest of the array. 
   - That's the magic of why it's so fast for insertions - there's no overhead. 
   - You just ignore the older key/values. 
-  - When doing a read, you read backwards from the end, reading only the newest values. When you fill your memory budget, you flush your array to a lower layer, removing the duplicate old values. 
-
+  - When doing a read, you read backwards from the end, reading only the newest values. 
+  - When you fill your memory budget, you flush your array to a lower layer, removing the duplicate old values. 
 - Another point is that oftentimes these data structures span storage layers (or the "cache hierarchy" as database systems people like calling it) - e.g. you could have an LSM tree that has a top layer fitting in L3, then a bunch more in memory, then the majority of it spilling over to disk. 
   - Another example is the Bw-Tree, which introduces a mapping table that is a storage-agnostic lookup table that tells you wherever a record is, disk or memory or otherwise, and is smart about paging stuff in and out of memory based on hotness.
+
+- My layman's guess is something that combines the two. larger immutable storage using B-Tree's (or similar), and more live data using log structured stuff. With semi-regular promotion of data from log to b-tree and eventual clean-up of data no longer referencable in the b-tree.
 
 - event sourcing seems like a very powerful pattern that I haven't seen wide adoption. The best documentation seems to be some MS dev library notes and a discussion from M Fowler.
 - 🤔 Are there any open source implementations of a database that uses event sourcing?
 - I built https://github.com/amark/gun after I was using MongoDB to event source data. The key piece for me was wanting to have Firebase-like realtime sync for my event sourcing.
 - I've become a bit of a CouchDB zealot of late for this exact reason... Native support for incrementally updating map-reduce combined with change-feeds makes implementing event sourcing straightforward. 
-  - If you wanted to reimplement event sourcing in couch, it can be implemented as a versioned merge in a map-reduce view that takes a sequential ordered events (e.g. ui-event:0000025) and maps those changes into a "versioned" JSON. This versioned JSON changes leaf values into versioned objects like "fieldValue": { "_val": 34.00, "_ver": 25 } which I call property fields. This is necessary because CouchDB is a B+Tree implementation and reduce operations are sequential but not contiguous. The reduce phase merges all events sequentially by choosing property fields with the latest event – making it a CRDT type – and resulting in a single JSON document with the latest fields with "_ver" info for each. This scheme has a drawback that each event needs to have a unique serially ordered ID to work. Not sure how time stamps would work. I chose the ID based scheme to allow the UI be able to know when a user interaction conflicts (a vector clock between) and let it display the conflict to the user or decide how to merge the knew state.
+  - If you wanted to reimplement event sourcing in couch, it can be implemented as a versioned merge in a map-reduce view that takes a sequential ordered events (e.g. ui-event:0000025) and maps those changes into a "versioned" JSON. 
+  - This versioned JSON changes leaf values into versioned objects like "fieldValue": { "_val": 34.00, "_ver": 25 } which I call property fields. 
+  - This is necessary because CouchDB is a B+Tree implementation and reduce operations are sequential but not contiguous. 
+  - The reduce phase merges all events sequentially by choosing property fields with the latest event – making it a CRDT type – and resulting in a single JSON document with the latest fields with "_ver" info for each. 
+  - This scheme has a drawback that each event needs to have a unique serially ordered ID to work. Not sure how time stamps would work. I chose the ID based scheme to allow the UI be able to know when a user interaction conflicts (a vector clock between) and let it display the conflict to the user or decide how to merge the knew state.
+  - It's not the most efficient but for most moderate sized UI's with a single state tree, it performs fine.
+- In addition to the other solutions mentioned, Apache Samza lands somewhere in that neighborhood.
 # discuss
 - ## 
 

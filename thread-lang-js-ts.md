@@ -16,6 +16,16 @@ Symbol('a') === Symbol('a'); //false
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## TIL: in TS `satisfies` doesn't set the type of an object, which means you can't assign properties to it later. 
+- https://twitter.com/matthewcp/status/1719391086345363664
+  - So if you want to both have type safe object literals and mutate them later, you need to use both satisfies and a type annotation.  
+- There's never any reason to write `const p: T = e satisfies T;` . It's the same thing as `const p: T = e;` in every case
+- To me, the use-case of "satisfies" is kind of like an "instanceof" check. It doesn't cast to the type, but instead tells the compiler its "type-like" but can still be narrowed to a more specific type. So its almost acting like a discriminating union. `{ one: string } | Props`
+
 - ## Problem: If a function accepts multiple parameters of the same type, we may accidentally pass arguments in the wrong order. Types can’t protect us. 
 - https://twitter.com/housecor/status/1715052861417980207
   - Solution: Accept an object instead.

@@ -68,7 +68,8 @@ modified: 2023-09-13T20:24:41.516Z
 
 - ## [Local-first software: You own your data, in spite of the cloud (2019) | Hacker News_202310](https://news.ycombinator.com/item?id=37743517)
 - Couchdb/pouchdb remains one of the best: it's super easy to setup and is production-ready, but it's gonna be json docs with no transactions, so it can be limiting.
-- Y.js and automerge emerged as solutions combining CRDTs and content transfer, they look really promising. There is a Y.rs version if that's better for you.
+  - Y.js and automerge emerged as solutions combining CRDTs and content transfer, they look really promising. There is a Y.rs version if that's better for you.
+  - I feel like you're not really interested in full p2p but want some centralization point to manage some auth stuff, so I'd investigate couchdb/pouchdb first.
 
 - I've used tRPC and GraphQL before and I've really been thinking of something where we'd have the same DX as the client-server model such as with tRPC and GraphQL but in a way where there is no difference between client and server state, there is only "state." This makes sense because for local-first, the entire state of the app must be replicated locally anyway. Recently there have been CRDT solutions that try to solve this problem, however, such as Triplit, or ElectricSQL
   - Meteor wrapped the MongoDB API for this purpose. You are working with collections and can run the same queries over them, regardless of whether you are connected to a DB instance or the browser's local storage.
