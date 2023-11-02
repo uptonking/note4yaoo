@@ -12,7 +12,11 @@ modified: 2023-11-01T12:33:20.763Z
 # discuss-formats-comments
 - ## 
 
-- ## 
+- ## 浏览器已经支持通过 JavaScript 对内容进行高亮操作了，从此网页上可以告别使用 mark/span 作为搜索高亮标签了。
+- https://twitter.com/Barret_China/status/1719891344259485792
+  - 1）定义一个 ::highlight 的 CSS 样式，当前仅支持 background 和 color
+  - 2）使用 Range API 获取到文本的起始位置
+  - 3）通过 CSS.highlights 将高亮样式赋值给（多个）选中的文本
 
 - ## new API is starting to hit browsers! The CSS Custom Highlight API. 
 - https://twitter.com/wesbos/status/1719367659119079492

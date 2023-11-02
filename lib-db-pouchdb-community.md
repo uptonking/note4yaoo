@@ -12,7 +12,15 @@ modified: 2023-10-29T02:23:48.086Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Store incremental data for views · pouchdb/pouchdb_201208](https://github.com/pouchdb/pouchdb/issues/99)
+
+- [Persisted indexes for map/reduce_201403](https://github.com/pouchdb/pouchdb/issues/1658)
+- 
+- 
+
+- [cache queries_201401](https://github.com/pouchdb/mapreduce/issues/12)
+  - currently all non-http queries are done from scratch each time, we could save the result from the map query to a _local document and the sequence number, subsequent queries to avoid having to iterate through the whole database, we could even listen to the changes feed and update cache every time a document is created/updated.
+  - After three months of debate and about a half-dozen false starts, we finally figured it out. 
 
 - ## [Local-first software: You own your data, in spite of the cloud (2019) | Hacker News_202310](https://news.ycombinator.com/item?id=37743517)
 - Couchdb/pouchdb remains one of the best: it's super easy to setup and is production-ready, but it's gonna be json docs with no transactions, so it can be limiting.
@@ -104,23 +112,34 @@ modified: 2023-10-29T02:23:48.086Z
 
 - ## 🚀🔥 [PouchDB, the JavaScript Database That Syncs | Hacker News_201612](https://news.ycombinator.com/item?id=13101870)
 
-- Do you mind me asking why you choose to use PouchDB in this way instead of Realm for React Native?
+- 🆚️ Do you mind me asking why you choose to use PouchDB in this way instead of Realm for React Native?
   - 1) Realm works only in React Native and not in React web. This has paid off in the prototype mode because it allowed us to build some simple reports in our web product.
   - 2) Realm was very new and I felt we were already using too many new frameworks. 
   - 3) On the server side, CouchDB has Futon to simplify our learning curve and give us a basic GUI to have a sanity check when our code wasn't functioning as expected. Not sure what Realm's server side looks like.
+- Realm looks very promising, but the lack of a version that can run in the browser is also why I had to cross it off my list of potential DBs for the project I'm working on.
+- We opted to use Realm instead because it offers encrypted storage exposed to React-Native. Would have loved to use *ouchDB but this was a missing critical piece.
+- 1. Realm on the server/sync is closed beta at the moment. It's not ready. 
+  - 2. Realms design does not gel well if you use Redux architecture.
 
-- 👉🏻 We've been running PouchDB in production for ~15 months now. We chose it because it was a greenfield project and it gave us 2 things: Easy offline support and real-time syncing that makes it easy to create collaboration a-la Google Docs.
+- 🆚️ Did you also consider Couchbase Lite?
+  - I've used pouch on a few projects and also attempted to use cb lite. I found pouch dramatically easier to get up and running with.
+  - Cb lite was complicated since it needs a native plugin rather than being just js. That wasn't too bad.
+  - The thing that put the nail in it for me was all the setup on the server side with sync gateways, multiple databases that then sync with one another, etc etc.
+- I explored using Couchbase Lite in an app and realized that PouchDB was still the best client library for it, and at least in my testing of Couchbase Lite's Cordova plugin I saw a bunch of bugs 
+  - and didn't see much in the way of a performance benefit on even iOS/Android over PouchDB's performance with IndexedDB and/or SQLite.
+
+- 🌰 We've been running PouchDB in production for ~15 months now. We chose it because it was a greenfield project and it gave us 2 things: Easy offline support and real-time syncing that makes it easy to create collaboration a-la Google Docs.
   - In terms of architecture we have about 250 tenants with separate Couch databases per each. We're still running Couch 1.6. We have yet to evaluate Couch 2.0.
 - we had to tackle few interesting problems that came along
   1. Load times. Once you get over certain db size the initial load time from clean slate takes ages due to PouchDB being super chatty. I'm talking about 15-30 mins to do initial sync of 20-30mb database. We had to resort to pouch-dump to produce dump files periodically. That helped a lot. I think this issue has been rectified with Couch 2.0 and sync protocol update.
   2. Browser limits. Once we hit the inherent capacity of some browsers (namely Safari on iOS, 50mb) we had to get creative. Now we're running 2 CouchDB databases for each tenant where 1 has full data and the other only contains last 7-8 days. Pouch syncs to the latter one. We run filtered replications between the full db and the reduced db and do periodic purging. On the client side if a customer tries to go back more than 7 days we just use the Pouch in online only mode where it acts as a client library to remote couch and doesn't sync locally.
   3. Dealing with conflicts. This might matter or it might not depending on the domain but you have to be aware of data conflicts. Because CouchDB/PouchDb is eventually consistent multi-master setup and you will get data conflicts where people update the same entity based on the same source revision. PouchDB has nice hooks to let you deal with this but you have to architect for it.
   4. Custom back-end logic. Because Pouch talks directly to Couch you can't exactly execute custom back-end logic when needed. We had to introduce a REST back-channel to make sure our back-end runs extra logic when needed.
-  5. We had some nasty one-off surprises. Last one was with an object that had 1700 or so revisions in couch and once it synced to PouchDB it would crash the Chrome tab in a matter of seconds. Due to the way PouchDB stores revision tree (lot's of nested arrays) Chrome would choke during `JSON.parse()` call and eat up memory until crash. We resolved this one by reducing the revision history limit that is kept.
+  5. We had some nasty one-off surprises. Last one was with an object that had 1700 or so revisions in couch and once it synced to PouchDB it would crash the Chrome tab in a matter of seconds. Due to the way PouchDB stores revision tree (lot's of nested arrays), Chrome would choke during `JSON.parse()` call and eat up memory until crash. We resolved this one by reducing the revision history limit that is kept.
 - That chattiness is what has driven me away from Pouch, sadly. It's a flaw in the Couch replication protocol design that won't be fixed until the spec is changed.
   - The chattiness is mostly addressed with _bulk_get in CouchDB 2.0 - Pouch will automatically use it if the server supports it. Another option is to stick a HTTP/2 proxy in front of your CouchDB instance - the chatter to the db is ultimately still there but it significantly reduces the latency cost to the PouchDB client. There are plans to add first class HTTP/2 support to Couch but for remote client architectures just adding a proxy should be a significant improvement.
 - nested recision tree: I think Nolan ended up writing a non recursive JSON parser to deal with this and there was some debate about whether it made sense to be used as it was significantly slower (though could handle deeply nested structures)
-  - Yup, exactly. We use JSON.parse inside of a try/catch and then fall back to vuvuzela which is a non-recursive JSON parser in cases of stack overflows
+  - Yup, exactly. We use `JSON.parse` inside of a try/catch and then fall back to `vuvuzela` which is a non-recursive JSON parser in cases of stack overflows
   - Unfortunately the only way to resolve this without vuvuzela would have been to change the structure of the stored documents which would have required a large migration, so I'm glad to hear that the vuvuzela solution was the right way to go.
 
 - 🤔 on the server side, is one database per user feasible? IIRC Couch can only handle 100 or so different databases on one instance. And you can't do views across them.
@@ -152,7 +171,7 @@ modified: 2023-10-29T02:23:48.086Z
 - I'm interested in PouchDB to make my JavaScript app easily sync to the server, but I don't want to switch my server's database from Postgres to CouchDB. Surely I'm not the only one in this situation?
   - A lot of people would like their current data to just be able to sync, but it almost always needs changes in the way data is stored and complementary changes to the application code
 
-- 🤔 what's the benefit of using PouchDB as opposed to vanilla localStorage functionality?
+- 🆚️ what's the benefit of using PouchDB as opposed to vanilla localStorage functionality?
   - the main use case of PouchDB over plain browser storage is its ability to sync data.
   - It can sync data between CouchDB servers (e.g. IBM Cloudant) and the browser.
 - The sync happens in an unmanaged fashion, without the user or the application programmer having to care about the state of the connection.
@@ -170,8 +189,44 @@ modified: 2023-10-29T02:23:48.086Z
 
 - 🤔 PouchDB's replication capability is interesting, but is there a way to make it **lazy load to the local DB instead of doing everything up front**? I hesitate to use it for a web project with 10+ MB of docs where it would otherwise be ideal.
   - You can provide a **server-side filter function** to replication and progressively filter partial replications until eventually everything gets replicated. At that point it becomes a question of architecture of your documents: how much is needed to replicate before a user may be productive?
-  - You can also explore **pouchdb-replication-stream** to build bundles that PouchDB can bootstrap from a little bit faster than a chatty replication.
+  - You can also explore `pouchdb-replication-stream` to build bundles that PouchDB can bootstrap from a little bit faster than a chatty replication.
   - That said, I've found initial replications of large databases (one I've worked with this week is a 25+ MB CouchDB database full of photos) is **quick enough** (and mostly bandwidth constrained) that I haven't had much in the way of concern over it.
+
+- ## [Show HN: PouchDB - The JavaScript database that syncs | Hacker News_201307](https://news.ycombinator.com/item?id=6044892)
+- 🤔 How does authentication with the Couch server work, though? 
+  - CouchDB had some quirks related to user accounts as it has the added burden of trying to be an application server as well as a database server.
+  - With PouchDB a lot of the application server logic doesnt apply and you can use CouchDB as a private data server that requires any connection to be authenticated, in the example we use basic auth but other methods are available and none of the security quirks with 'couchapps' apply.
+- 🤔 How do I keep one user from accessing another user's data?
+  - By giving each user their own database
+  - You can configure databases to require the correct user to authenticate before touching it.
+- Sadly it's not possible to have CouchDB make that happen for you! You can very easily allow unauthenticated requests to create users, but there's no way to create those per-user databases without writing some trusted code that runs separately from CouchDB.
+
+- I especially like PouchDB-Server as a mini CouchDB replacement
+- In the browser PouchDB will store its data in IndexedDB or WebSQL, in node its LevelDB, with the HTTP adapter you can use any product that implements the CouchDB HTTP Api protocol, currently this is CouchDB, Cloudant, PouchDB-Server and Couchbase Lite (previously TouchDB)
+  - The important part is that it can only sync with a backend that implements the same replication protocol.
+
+- 🤔 Can PouchDB sync with MySQL / my current non CouchDB database?
+  - No, the data model of your application has a lot of impact on its ability to sync, relational data with the existence of transactions make this harder. It may be possible given some tradeoffs but right now we are focussing on making PouchDB <-> (PouchDB / CouchDB) sync as reliable and easy to use as possible.
+
+- I'm not too familiar with Couch, but as I understand it caches views and updates them. Does Pouch do something similar, or does the query function filter all the documents in the database?
+  - Currently PouchDB views do a full table scan, there is an open bug to do incremental views more inline with CouchDB
+
+- Its not really like cassandra, which has functionality aimed towards managing and querying huge volumes of data. 
+  - The main feature here is the syncing, which is reasonably unique to the CouchDB world
+
+- PouchDB is the database, you never need to be online to use it and it isnt queuing writes, its doing them locally. 
+  - The ability to sync is to let you use the same data across various devices.
+# discuss-auth
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Yet Another Database Design question (pouchdb and couchdb) : CouchDB](https://www.reddit.com/r/CouchDB/comments/119s2q8/yet_another_database_design_question_pouchdb_and/)
+- So there’s some thing called design-docs & filters in couchdb.
+  - So based on the role of user you can select which documents to sync…
+
 # discuss
 - ## 
 
@@ -212,9 +267,9 @@ modified: 2023-10-29T02:23:48.086Z
 
 - ## 💡 [RxDB – a real-time database on top of PouchDB | Hacker News_202009](https://news.ycombinator.com/item?id=24340802)
 - I built the first version of NoteBrook on top of couch/pouch, and the biggest pain points were:
-1. Pouchdb was before async/await and typescript. The typings can be inconsistent, and it’s very difficult to properly manage the lifetimes of local databases because of the promise chaining.
-2. A database technology for Real time replication Needs ACLs on a per-document basis. I built provisioning scripts to manage separate databases per user, as suggested, and it’s very cumbersome. It prevents me from lots of data sharing models like promoting one record to public view, or sharing a record with another user in a different tenant.
-3. Personally I feel that the naming / marketing of the product is poor. It does not feel professional ( couch, futon, fauxton, pouch, couchbase) do not feel like professional grade products I can depend on to run a business.
+  1. Pouchdb was before async/await and typescript. The typings can be inconsistent, and it’s very difficult to properly manage the lifetimes of local databases because of the promise chaining.
+  2. A database technology for Real time replication Needs ACLs on a per-document basis. I built provisioning scripts to manage separate databases per user, as suggested, and it’s very cumbersome. It prevents me from lots of data sharing models like promoting one record to public view, or sharing a record with another user in a different tenant.
+  3. Personally I feel that the naming/marketing of the product is poor. It does not feel professional ( couch, futon, fauxton, pouch, couchbase) do not feel like professional grade products I can depend on to run a business.
 
 - I don't see any authentification related suff like pouchDB have, like create an user with password hash, auto handle cookie in the browser, restrict document to user or group.
 
@@ -329,3 +384,34 @@ I’ve copied airtable data to it in the past.
   - it's fallen out of favor; 
   - nobody seems to like writing the mapreduce code for searching and views.
 - PouchDB dev here. The map/reduce API is definitely a bit cumbersome, which is why we're replacing it with pouchdb-find
+
+- ## [PouchDB, the In-Browser Database That Replicates | Hacker News_201310](https://news.ycombinator.com/item?id=6611745)
+- 🤔 How does this handle security? Sending data directly into a database from the browser with no application layer sounds a bit scary.
+  - PouchDB is optimized for the use case of one database per user, a logged in user has full access to a specific database that only they have access to (for shared data access you can use replication on the server side)
+- Think of it like this:
+  1. Any application layer is in effect a transform, with security and sanity constraints, on user input.
+  2. There is at least the degenerate case where user input does not need to be transformed, only constrained
+  3. And about those constraints. CouchDB requires you write a validation function, and it lives inside the database, again obviating(消除) the need for that logic in the application layer.
+  4. What was your anxiety again?
+- It's supposed to be used with one db per user for a subset of data I think, in which case security would not matter much.
+- If you look at their demo code it has a username and password right in the javascript source - as you would expect - which means keen users could do all kinds of things.
+  - Aye, which is why putting your administrative credentials in client-side JavaScript is an unspeakably bad idea.
+  - Instead, serve {client, user}-specific keys from the server on request, or let the user generate them through a signin process in the frontend, say by using the _users database that CouchDB and Cloudant allow.
+- And this is why your database server needs row-level security
+- it can work with cookie authentication with just a little more lines of code.
+
+- Does it store data serialized or in object form? I am not sure how JS reacts to a few millions objects.
+  - It stored plain objects, they are persisted to disk so memory shouldnt really be a concern, it uses idb in firefox / chrome, websql in others (or leveldb in node)
+
+- ## [PouchDB (Portable CouchDB JavaScript implementation) | Hacker News_201108](https://news.ycombinator.com/item?id=2866447)
+- to implement a couch you need a key/value store with transactions so you can atomically update the by-sequence index and the key/value storage simultaneously. 
+  - pouch is neat because it does this in your browser (or on top of any leveldb) so that you can replicate and sync databases anywhere you can run pouch. 
+  - i'd love to see more databases implement replication but sadly not many database developers think to store by-sequence indexes or expose their databases over http
+- Yes and no. The most important part of replication is to have an algorithm that's capable of merging two document histories that are not identical. 
+  - This core bit of CouchDB is quite important and often overlooked in terms of its replication scheme. 
+  - Randal Leeds is currently hacking this into PouchDB and I'm quite excited to see the algorithm in a non-functional language so that more people can see its simplicity without worrying about learning a new programming paradigm.
+  - On the other hand the atomic update of the two indexes is quite important for efficient replication. Without the atomic update of a by-update-sequence index it would require a full table scan for each replication. Its definitely a necessary optimization, but not a sufficient optimization. The per-doc revision history merging is the special sauce that makes things work.
+
+- I would go so far as to "bypass" the spec of CouchDB -- at least for Pouch -- by doing a sort of auto-compaction, clearing out the database of the previous revision at storage time, and only storing the latest revision. 
+  - This doesn't stop you from doing an effective merge, it simply stops the original notion of Couch having multiple branches of the same document. Again, in the browser, to sacrifice indexedDB space, I think that's an okay step to take.
+  - The real win will be when a WebWorker is able to run through a view and automatically add the results of that to a separate dbspace. It looks like viewQuery is the beginnings of that.

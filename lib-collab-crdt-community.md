@@ -16,6 +16,45 @@ modified: 2022-04-05T13:25:40.892Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 The meaning of the term "CRDT" is really starting to drift.
+- https://twitter.com/LewisCTech/status/1719807159217844603
+  - Libraries like automerge and yjs are just *implementations* that happen to be a CRDT. 
+  - But the idea of a CRDT itself is much older. I've seen "proto-CRDTs" described as far back as 4 decades.
+- CRDTs are just abstract data types with operations that follow some algebraic laws, that guarantee they will converge in a sensible way. That's really it. They don't need to be complicated. They don't even need to be single record - a whole DB could itself constitute a CRDT.
+  - Agree. @CouchDB is a CRDT at the database level and at the document level. @FireproofStorge is one at the database level. Also, all Merkle-diffs are CRDTs.
+- I've been telling myself for months I was going to sit down and actually figure out if Couch was formally a CRDT - so I'll take your word for it!
+  - I think part of the lesson here is that formality matters less than the behavioral characteristics. Never throw away data, allow conflicts to be surfaced to the user.
+  - Damien’s og Couch has some additional behavioral characteristics, like fairness on the changes feed and group commit, that have mechanical sympathy with the append-only implementation and the Erlang scheduler. I haven’t seen anything else quite like it. 
+  - Binary attachments can be streamed in and out of the same file in parallel with write workload. And the whole code was smaller than your average Rails app.
+
+- Same with “event sourcing.” RTS games were doing “event sourcing” 35 years ago without knowing it.
+  - This was well-known architecture by ~1990.
+
+- ## 👥 The whole idea of "conflict-free data structures for offline-capable apps" is dubious(不大可靠的；有争议的).
+- https://twitter.com/msimoni/status/1719778725514883255
+  - It cannot work in the general case, so you have to resort to horrors like "last write wins" if you can't resolve a conflict.
+  - Much better to bite the bullet and let the user resolve conflicts.
+- I don't think this post is really understanding the benefits of crdts. It isn't that they are conflict free. Nothing really is. It's that you can make them behave anywhere from automatic resolution to full user resolution depending on context.
+- Would you be comfortable in using a CRDT instead of Git for your source code?
+  - Yes, if anything I would feel *more* confident. 
+  - Git is a *lossy* format that only shows you the state at each commit. 
+  - CRDTs and OT would allow you to have a full history of every change that has ever happened (as well as snapshots at particular points in time). You could make a CRDT have the *exact same* workflow as git. 
+  - If you also add event sourcing data, not only do you know *what operations* caused the changes from the first snapshot to the next, but you'd also know *what actions* a user took to create those operations.
+- I'm curious, assuming you're not comfortable using CRDTs for source code, why is that?
+  - Because every CRDT I've looked at mentions last write wins semantics.
+- That's an implementation detail rather than something that is inherent to CRDTs. If you use multi-value registers, you can just store a full causal graph and only resolve when either a) a user chooses to, or b) business logic decides on which wins.
+- I agree that for async coding (as opposed to pair programming), I'd want most of concurrent changes to be merged manually. But CRDTs could still yield better merges than git
+
+- What do you do when you can't resolve a conflict?
+  - Intelligent application design is about setting document granularity so those instances are rare. Because CRDTs never throw away data, you can always bubble conflicts to the user if it matters. In practice, I almost never see that happen.
+
+- The most general case for this stuff is not "last write wins", it's "multi-values". As in we have multiple values for this key, the nodes have to agree on which value it is.
+
+- One compromise is to use a git-like arch (full history, merge reviews) but store CRDT updates instead of git's patches. The CRDT enables live collaboration, and first-pass merges for non-code data (e.g. spreadsheets).
 
 - ## So many people in the crdt & data sync space now. Feels like it is time for me to move on to the next frontier of problems
 - https://twitter.com/tantaman/status/1711538960277602496

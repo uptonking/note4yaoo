@@ -187,6 +187,14 @@ modified: 2021-09-04T14:03:39.046Z
   - https://twitter.com/andy_matuschak/status/1428777459235782660
     - That’s the approach Orbit takes: simple event structures (simpler than CRDTs, sacrificing some of their key guarantees to reduce complexity), with well-defined merge operations, in a SQLite db. Users can write scripts to insert their own events if they like.
     - Orbit’s implementations are quite general (i.e. they have almost no specific knowledge of Orbit’s structures), so perhaps they’ll be of use to others. See store-*, sync, and backend packages here
+
+- https://github.com/Actyx/Actyx /apache2/rust/ts
+  - https://developer.actyx.com/
+  - Actyx is a decentralized event database, streaming and processing engine that allows you to easily build local-first cooperative apps.
+  - durable event stream storage in peer-to-peer network using libp2p and ipfs-embed
+  - tag-based and time-based indexing of events
+  - full-fledged support for event-sourcing, guaranteeing eventual consistency
+  - aql: full-fledged support for event-sourcing, guaranteeing eventual consistency
 # local-first-examples
 - https://github.com/kndwin/jikan
   - https://jikan-murex.vercel.app/

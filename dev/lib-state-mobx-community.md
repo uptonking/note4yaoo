@@ -61,7 +61,8 @@ const fc = memo(() => {
 
 - ## 
 
-- ## 
+- ## #MobX decorators are 32% faster when using standard decorators, compared to legacy decorators. Yay for standardisation!
+- https://twitter.com/mweststrate/status/1719828168075366452
 
 - ## dan_abramov, BlueSky uses Mobx.what are your thoughts on using Mobx now?
 - https://twitter.com/acemarke/status/1695569310498914357

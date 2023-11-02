@@ -14,7 +14,9 @@ modified: 2021-02-26T16:42:06.878Z
 
 - ## 
 
-- ## 
+- ## browser javascript profiling is no longer confined to chrome devtools on your local machine
+- https://twitter.com/bentlegen/status/1719891903317934374
+  - you can now now analyze flame graphs and other profiling insights post-hoc in @getsentry
 
 - ## My Top 3 of missing Performance features: 
 - https://twitter.com/TimVereecke/status/1719665087865147695
@@ -45,15 +47,15 @@ modified: 2021-02-26T16:42:06.878Z
 
 - ## How to optimize style recalculations
 - https://twitter.com/fabiospampinato/status/1652326018613379074
-01.   Open chrome://tracing
-02.   Record
-03.   Manual settings -> turn on "blink.debug"
-04.   Record
-05.   Interact with the page
-06.   Select everything
-07.   Click "Slices"
-08.   Click "SelectorStats"
-09.   Spot overly-broad selectors
+1.    Open chrome://tracing
+2.    Record
+3.    Manual settings -> turn on "blink.debug"
+4.    Record
+5.    Interact with the page
+6.    Select everything
+7.    Click "Slices"
+8.    Click "SelectorStats"
+9.    Spot overly-broad selectors
 10. Make them more specific
 
 - A bit easier in MS Edge, just turn on ‘advanced rendering instrumentation’ in the performance tab, and then the ‘selector stats’ tab will appear when you inspect a style recalc

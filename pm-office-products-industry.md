@@ -20,6 +20,21 @@ modified: 2023-03-18T09:44:00.939Z
 - scripts
   - 类似script-lab/react-live/mdx-live
   - 类似vscode像codepen的实时预览扩展
+# office-industry
+
+## [峥研软件](https://www.peerup.work/)
+
+- 创始人 & CEO: 李严峰
+  - 要做EDA行业的 Notion+Figma+github
+
+- EDA（Electronic Design Automation，电子设计自动化）是在20世纪90年代初从计算机辅助设计（CAD）、计算机辅助制造（CAM）、计算机辅助测试（CAT）和计算机辅助工程（CAE）的概念发展而来的一种技术。
+
+- 先把几个开源的EDA列出来：
+  - Icarus Verilog: 解释型verilog，含verilog语法解析，中间码生成和模拟器
+  - nextpnr：针对Lattice器件的布线器
+  - IceStorm：针对Lattice 器件的烧录工具
+  - ABC：综合和验证器，我记得Yosys用它来做综合优化的
+  - OpenSTA：静态时序分析器
 # discuss-office
 - ## 
 

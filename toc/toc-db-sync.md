@@ -20,7 +20,6 @@ modified: 2022-11-25T15:41:47.534Z
   - 是否支持冲突处理
   - database realtime
   - minimongo/meteor 的replication协议参考 [meteor: Distributed Data Protocol (DDP)](https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md)
-  - [MongoDB Realm: Device Sync Protocol](https://www.mongodb.com/docs/atlas/app-services/sync/details/protocol/)
   - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
   - [remoteStorage Protocol](https://remotestorage.io/protocol/): defines a simple key/value store for apps to save and retrieve data
   - [Watermelon sync protocol](https://nozbe.github.io/WatermelonDB/Advanced/Sync.html)
@@ -31,6 +30,29 @@ modified: 2022-11-25T15:41:47.534Z
 - [Comparison of Offline Sync Protocols and Implementations](https://offlinefirst.org/sync/)
   - couchdb/realm/firebase
 # blogs-sync
+- [MongoDB Realm: Device Sync Protocol](https://www.mongodb.com/docs/atlas/app-services/sync/details/protocol/)
+  - Atlas Device Sync uses a protocol to correctly and efficiently sync data changes in real time across multiple clients that each maintain their own local Realm files
+  - The Realm SDKs internally implement and manage the sync protocol, so for most applications you don't need to understand the sync protocol to use Device Sync
+  - Changesets are the base unit of the sync protocol.
+  - Synced realm clients send changesets to the Device Sync server whenever they perform a write operation. 
+  - The server sends each connected client the changesets for write operations executed by other clients.
+  - 👉🏻 The Device Sync server accepts changesets from any connected sync client (including changes in a synced MongoDB cluster) at any time and uses an **operational transformation** algorithm to serialize changes into a linear order and resolve conflicting changesets before sending them to connected clients.
+
+- [PostgreSQL: Documentation: 16: 55.4. Streaming Replication Protocol](https://www.postgresql.org/docs/current/protocol-replication.html)
+  - To initiate streaming replication, the frontend sends the `replication` parameter in the startup message.
+  - it tells the backend to go into physical replication walsender mode, wherein a small set of replication commands, shown below, can be issued instead of SQL statements.
+  - In either physical replication or logical replication walsender mode, only the simple query protocol can be used.
+  - [PostgreSQL: Documentation: 16: 55.5. Logical Streaming Replication Protocol](https://www.postgresql.org/docs/current/protocol-logical-replication.html)
+
+- [MySQL :: MySQL 8.0 Reference Manual :: 17 Replication](https://dev.mysql.com/doc/refman/8.0/en/replication.html)
+  - Replication enables data from one MySQL database server (known as a source) to be copied to one or more MySQL database servers (known as replicas). 
+  - Replication is asynchronous by default; 
+  - you can replicate all databases, selected databases, or even selected tables within a database.
+  - MySQL 8.0 supports different methods of replication. 
+    - The traditional method is based on replicating events from the source's binary log, and requires the log files and positions in them to be synchronized between source and replica. 
+    - The newer method based on global transaction identifiers (GTIDs) is transactional and therefore does not require working with log files
+  - [MySQL: Replication Protocol](https://dev.mysql.com/doc/dev/mysql-server/latest/page_protocol_replication.html)
+    - Replication uses binlogs to ship changes done on the master to the slave and can be written to Binlog File and sent over the network as Binlog Network Stream.
 
 ## [RxDB replication protocol](https://rxdb.info/replication.html)
 
@@ -70,6 +92,26 @@ modified: 2022-11-25T15:41:47.534Z
   - A Distributed, MongoDB-like Database
   - AvionDB uses OrbitDB stores to model MongoDB-like Databases.
 
+- dagdb /133Star/MIT/202010/js/leveldb/git/inactive
+  - https://github.com/mikeal/dagdb
+  - DagDB is a portable and syncable database for the Web.
+  - It can run as a distributed database in Node.js, including using AWS services as a backend.
+  - It also runs in the browser. 
+  - 依赖@ipld/block、@ipld/fbl、datastore-car、levelup4
+  - In fact, there is no "client and server" in DagDB, everything is just a DagDB database replicating from another database. 
+    - In this way, it's closer to git than a traditional database workflow.
+  - The closest thing to DagDB replication you're familiar with is git. 
+    - The way changes are merged from one branch to another and from one remote to another. 
+    - We even have a system for keeping track of remote databases that feels a lot like git.
+    - if you have two database instances locally you can easily merge one into the other without using the remote system.
+  - DagDB's primary storage system is a simple key-value store. 
+    - Keys can be any string, and values can be almost anything.
+  - DagDB uses a technique called "content addressing" that links data by hashing the value. 
+    - This means that, even if you create the link again with the same data, the link will be the same and the data will be deduplicated.
+  - Since it is often problematic to store large amounts of binary as a single value, DagDB also natively supports storing streams of binary data.
+    - DagDB treats any async generator as a binary stream. 
+    - Node.js Streams are valid async generators so they work right away.
+
 - https://github.com/unmeshjoshi/replicate /java
   - This is a basic framework for quickly building and testing replication algorithms. 
   - It doesn't require any additional setup (e.g., Docker) for setting up a cluster and allows writing simple JUnit tests for testing replication mechanisms. 
@@ -84,6 +126,25 @@ modified: 2022-11-25T15:41:47.534Z
   - Uses CR-SQLite for conflict resolution with CRDTs
   - Uses Foca to manage cluster membership using a SWIM protocol
   - Periodically synchronizes with a subset of other cluster nodes, to ensure consistency
+
+- https://github.com/drifting-in-space/driftdb /ts/rust
+  - https://driftdb.com/
+  - A real-time data backend for browser-based applications.
+  - core Rust driftdb implementation.
+
+- debe /35Star/MIT/201907/ts/inactive
+  - https://github.com/bkniffler/debe
+  - 依赖automerge(delta)
+  - offline-first Javascript datastore for browsers, node, electron and react-native with focus on performance and simplicity. 
+  - Please note, Debe is currently not supporting relations, and probably never really will.
+  - Includes support for concurrent multi-master/client database replication via plugin.
+  - Rich querying using SQL-alike syntax
+  - Automatic conflict resolution (CRDT)
+  - Undo/Redo capabilities
+  - PouchDB/RxDB are great and very mature solutions for replicating databases, but being forced to build your services on top of CouchDB can be unfitting for some users. 
+  - Debe, and having the whole data flow in Javascript, offers some cool possibilities to control data access and filter & transform incoming/outgoing data according to user permissions. This works through middlewares.
+  - https://github.com/bkniffler/workerdb /201901/ts
+    - offline-first, syncable Database in WebWorker based on PouchDB/RxDB
 # db-sync
 - synceddb-multi-backends /388Star/MIT/201803/js/indexeddb/支持多种后端存储
   - https://github.com/paldepind/synceddb
@@ -130,11 +191,6 @@ modified: 2022-11-25T15:41:47.534Z
   - Command line utility to synchronize and version control relational database objects across databases.
   - This utility uses Knex under the hood
 
-- https://github.com/drifting-in-space/driftdb /ts/rust
-  - https://driftdb.com/
-  - A real-time data backend for browser-based applications.
-  - core Rust driftdb implementation.
-
 - turtleDB-indexeddb /443Star/MIT/201809/js/代码量少
   - https://github.com/turtle-DB/turtleDB
   - https://turtle-db.github.io/
@@ -163,20 +219,6 @@ modified: 2022-11-25T15:41:47.534Z
   - [Offline use with Sync to Server](https://github.com/only-cliches/Nano-SQL/issues/18)
   - [Is this project still maintained?](https://github.com/only-cliches/Nano-SQL/issues/217)
     - https://github.com/only-cliches/snap-db  /inactive
-
-- debe /35Star/MIT/201907/ts/inactive
-  - https://github.com/bkniffler/debe
-  - 依赖automerge(delta)
-  - offline-first Javascript datastore for browsers, node, electron and react-native with focus on performance and simplicity. 
-  - Please note, Debe is currently not supporting relations, and probably never really will.
-  - Includes support for concurrent multi-master/client database replication via plugin.
-  - Rich querying using SQL-alike syntax
-  - Automatic conflict resolution (CRDT)
-  - Undo/Redo capabilities
-  - PouchDB/RxDB are great and very mature solutions for replicating databases, but being forced to build your services on top of CouchDB can be unfitting for some users. 
-  - Debe, and having the whole data flow in Javascript, offers some cool possibilities to control data access and filter & transform incoming/outgoing data according to user permissions. This works through middlewares.
-  - https://github.com/bkniffler/workerdb /201901/ts
-    - offline-first, syncable Database in WebWorker based on PouchDB/RxDB
 
 - clientdb /506Star/apache2/202207/ts/同步未完成
   - https://github.com/clientdb/clientdb
@@ -220,27 +262,15 @@ modified: 2022-11-25T15:41:47.534Z
     - 比较了parse、firebase、couchdb、kuzzle、remoteStorage、Hoodie
   - https://github.com/Kinto/kinto.js
     - An Offline-First JavaScript client for Kinto.
-
-- dagdb /133Star/MIT/202010/js/leveldb/git/inactive
-  - https://github.com/mikeal/dagdb
-  - DagDB is a portable and syncable database for the Web.
-  - It can run as a distributed database in Node.js, including using AWS services as a backend.
-  - It also runs in the browser. 
-  - 依赖@ipld/block、@ipld/fbl、datastore-car、levelup4
-  - In fact, there is no "client and server" in DagDB, everything is just a DagDB database replicating from another database. 
-    - In this way, it's closer to git than a traditional database workflow.
-  - The closest thing to DagDB replication you're familiar with is git. 
-    - The way changes are merged from one branch to another and from one remote to another. 
-    - We even have a system for keeping track of remote databases that feels a lot like git.
-    - if you have two database instances locally you can easily merge one into the other without using the remote system.
-  - DagDB's primary storage system is a simple key-value store. 
-    - Keys can be any string, and values can be almost anything.
-  - DagDB uses a technique called "content addressing" that links data by hashing the value. 
-    - This means that, even if you create the link again with the same data, the link will be the same and the data will be deduplicated.
-  - Since it is often problematic to store large amounts of binary as a single value, DagDB also natively supports storing streams of binary data.
-    - DagDB treats any async generator as a binary stream. 
-    - Node.js Streams are valid async generators so they work right away.
 # sync-utils
+- https://github.com/sueddeutsche/json-sync /201803/js
+  - Enables real-time collaborative editing of arbitrary JSON objects
+  - Client and Server are syncing with the Differential Synchronization algorithm
+  - The client fetches the initial state of the data and enters a sync-room via WebSockets
+  - Every change of this state is synced via the sync method
+  - Clients receive events about changes from the server which are automatically applied to a shared object (in-place)
+  - The server takes care of syncing the state of all connected clients
+
 - https://github.com/abrarsheikhsony/SFDC-change-data-capture
   - explains specifically for Change Data Capture (CDC)
   - https://github.com/abrarsheikhsony/SFDC-streaming-api-events

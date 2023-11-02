@@ -71,7 +71,14 @@ modified: 2023-09-17T17:35:27.024Z
 
 - ## 
 
-- ## 
+- ## Sometimes you want to get e.g. the last three orders for *every* customer. 
+- https://twitter.com/tobias_petry/status/1719811788441538645
+  - Regular joins can't do that. You have to execute n+1 queries in code, which is slow!
+  - But with lateral joins, you can do a for-each loop join in SQL
+  - [For each loops with LATERAL Joins - Database Tip](https://sqlfordevs.com/for-each-loop-lateral-join)
+- Is it possible in SQLite or there’s an alternative?
+  - SQLite doesn‘t have lateral joins. But n+1 queries are no performance problem with SQLite as it is running within your app and no network calls are needed.
+  - For that specific example I would check Window functions. You can use "partition by" to divide a table by a value, eg. CustomerID. Then it will be easy to retrieve what you need.
 
 - ## I'm considering submitting a talk for @DataCouncilAI (April in Austin, TX) talking about different paradigms for query languages. What would be interesting to cover? 
 - https://twitter.com/julianhyde/status/1717283455074259318

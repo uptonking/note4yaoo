@@ -117,6 +117,8 @@ modified: 2021-08-30T17:33:20.586Z
   - in many cases, SQLite is a far better choice than either a custom file format, a pile-of-files, or a wrapped pile-of-files. 
   - SQLite is a high-level, stable, reliable, cross-platform, widely-deployed, extensible, performant, accessible, concurrent file format. 
   - It deserves your consideration as the standard file format on your next application design.
+# sync
+- [SQLite Over a Network, Caveats and Considerations](https://www.sqlite.org/useovernet.html)
 # sqlite3_vfs
 
 # [Many Small Queries Are Efficient In SQLite](https://www.sqlite.org/np1queryprob.html)

@@ -19,7 +19,7 @@ modified: 2022-12-02T11:36:42.735Z
   - Changesets are the base unit of the sync protocol. 
   - Synced realm clients send changesets to the Device Sync server whenever they perform a write operation. 
   - The server sends each connected client the changesets for write operations executed by other clients.
-- 👉🏻 The Device Sync server accepts changesets from any connected sync client (including changes in a synced MongoDB cluster) at any time and uses an operational transformation algorithm to serialize changes into a linear order and resolve conflicting changesets before sending them to connected clients.
+- 👉🏻 The Device Sync server accepts changesets from any connected sync client (including changes in a synced MongoDB cluster) at any time and uses an **operational transformation** algorithm to serialize changes into a linear order and resolve conflicting changesets before sending them to connected clients.
   - When you make a change to a synced object, App Services does not re-upload the entire object. 
   - Instead, App Services sends only the difference ("delta") between before and after. 
   - The service compresses the deltas with zlib compression.

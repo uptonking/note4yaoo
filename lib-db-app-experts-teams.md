@@ -55,6 +55,17 @@ modified: 2023-02-02T03:22:07.941Z
   - https://github.com/winkyao
   - https://www.zhihu.com/people/wink
 
+- nolan lawson /pouchdb
+  - https://github.com/nolanlawson
+  - https://nolanlawson.com/
+
+- dale harvey /pouchdb
+  - https://github.com/daleharvey
+  - https://twitter.com/daleharvey
+
+- Mikeal Rogers /pouchdb
+  - https://github.com/mikeal
+
 - Zongzhi Chen (baotiao)
   - https://github.com/baotiao
   - http://baotiao.github.io/archive.html

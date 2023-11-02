@@ -12,7 +12,10 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
-- ## 
+- ## [My IP Address - BrowserLeaks](https://browserleaks.com/ip)
+- https://twitter.com/RkMonoChrome_CN/status/1719747686679597141
+  - 检测ip，还能检测dns，DNS Leak Test
+  - 如果DNS服务器里有自己手机or宽带的运营商的话那么运营商就已经知道你在翻墙了
 
 - ## Misgif：一款可以将你的脸放入你喜欢的GIF 表情包中的应用
 - https://twitter.com/xiaohuggg/status/1719186332319416388

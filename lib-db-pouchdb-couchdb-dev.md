@@ -64,4 +64,10 @@ modified: 2022-12-02T11:15:15.257Z
 - nonsyncable/local-only tables for config/temporary-data
 # dev
 
+# changelog
+
+- [Secondary indexes have landed in PouchDB_201405](https://pouchdb.com/2014/05/01/secondary-indexes-have-landed-in-pouchdb.html)
+  - With the release of PouchDB 2.2.0, we're happy to introduce a feature that's been cooking on the slow simmer for some time: secondary indexes, a.k.a. persistent map/reduce.
+  - it allows you to index anything in your JSON documents – not just the doc IDs.
+  - the new API is modeled after CouchDB's
 # more

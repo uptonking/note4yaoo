@@ -220,7 +220,7 @@ modified: 2020-12-28T12:24:09.275Z
     - [已实现 Move in block editor exclusive extension](https://github.com/directus/directus/pull/18525)
   - [[RFC] Directus Offline First SDK_202303](https://github.com/directus/directus/discussions/17808)
 
-- webstudio-designer /172Star/MIT/202212/ts
+- webstudio-designer /172Star/MIT>AGPLv3/202212/ts
   - https://github.com/webstudio-is/webstudio-designer
   - https://webstudio.is/
   - Webstudio Designer is a NoCode Visual Tool inspired by Webflow
@@ -230,6 +230,7 @@ modified: 2020-12-28T12:24:09.275Z
   - With Webstudio you can use any headless CMS or e-commerce back-end.
   - Webstudio features a UI to create API bindings. You can add a GraphQL binding to any component and choose which endpoint and data properties to bind to each component property. 
   - block块级元素不支持拖拽
+  - [Change license from MIT to AGPL V3_202307](https://github.com/webstudio-is/webstudio/pull/1980)
 
 - https://github.com/codebdy/rxdrag /ts/antd
   - https://rxdrag.vercel.app/

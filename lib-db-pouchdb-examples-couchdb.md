@@ -218,6 +218,10 @@ modified: 2023-09-28T20:35:56.153Z
   - If you are currently using CouchDB and struggle with view build times, then AvanceDB should be a seamless replacement for your view workload.
   - AvanceDB is not designed to replace CouchDB for document storage. 
   - The core is written in C++ 11 with Boost and map/reduce executed by an embedded SpiderMonkey JSAPI instance
+
+- https://github.com/jchris/booth /201003/js
+  - Booth is an implementation of CouchDB in Ruby. It's meant as an illustration of CouchDB as a protocol.
+  - CouchDB uses a robust append only B-Tree implementation for storage
 # mobile-pc
 - https://github.com/craftzdog/pouchdb-adapter-react-native-sqlite /202108/js
   - PouchDB adapter using ReactNative SQLite as its backing store
@@ -553,13 +557,16 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/patgoddard/codeMate /2014/js
   - A code editor for online or offline use using the chromium or chrome browser. It uses AceEditor, Pouchdb and an optional remote couchdb.
 
-- https://github.com/natevw/PeerPouch /js/inactive
+- https://github.com/natevw/PeerPouch /201311/js/inactive
   - A plugin for PouchDB which allows a remote PouchDB instance to be used locally. 
   - It transfers data over WebRTC, for simple lower-latency remote access and even particularly peer-to-peer replication!
 # examples
 - https://github.com/acailly/easy-pouchdb-server /202105/js
   - Deploy a PouchDB server easily
   - running pouchdb server is perfect for small hobby projects or proof of concepts.
+
+- https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1
+  - [Collaborative text editor with ProseMirror and a syncing database_202007](https://emergence-engineering.com/blog/prosemirror-sync-1)
 
 - https://github.com/shellyln/kanban-board-app /202101/ts/redux/inactive
   - https://shellyln.github.io/knbn
@@ -607,8 +614,9 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/pouchdb/pouchbase /201604/js
   - PouchBase is a service that lets your PouchDB applications easily provide login and online sync functionality.
-- https://github.com/daleharvey/pouchbase
+- https://github.com/daleharvey/pouchbase /201605/js
   - a test server for PouchDB, it provides open online databases that you can use to test PouchDB sync with.
+  - Data stored here is publically available and is pediodically deleted, please do not use for anything other than testing.
 
 - https://github.com/wonderwhy-er/offline-first-seed /201603/js
   - Minimalistic JavaScript offline first application seed using PouchDB and ServiceWorker
@@ -673,6 +681,12 @@ modified: 2023-09-28T20:35:56.153Z
   - This a POC on how a memex could potentially work.
   - [Show HN: Open-Source Memex – Alternative Approach to Roam/Obsidian | Hacker News](https://news.ycombinator.com/item?id=24572449)
     - This blog is a summary of a fun 1 month adventure I had with Knowledge Management Systems and building a POC
+
+- [Show HN: TinyMCE and PouchDB Text App | Hacker News](https://news.ycombinator.com/item?id=34860605)
+  - This simple text app uses an older version of TinyMCE and one of their older demos.
+  - I also use Bootstrap, jQuery
+  - It lets you create "Folders" (PouchDBs) to store and manage documents. You can CRUD and search for documents.
+  - You don't need a webserver to use it. Just load the index.html file from the textapp folder.
 # more
 - https://github.com/KouchDB/replication-source-poc /202211/java
   - Demonstrates how to stand-up a Java Springboot service as a source for CouchDB replication
@@ -684,3 +698,7 @@ modified: 2023-09-28T20:35:56.153Z
   - Couchdb was chosen as the main server data storage
   - Supported the ability to connect data adapters to 1C and other ORM, SQL and NoSQL servers
   - For developers of mobile and browser applications who are cramped(受限制) within the 1C platform
+
+- https://github.com/kristopolous/db.js /202109/js/inactive
+  - portable Javascript document store event-driven database
+  - It's been feature-complete and stable for years

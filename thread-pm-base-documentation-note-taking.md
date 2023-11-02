@@ -71,7 +71,7 @@ modified: 2021-08-16T06:56:53.061Z
   - It then *composes* the three approaches you list here by combining together the same underlying items in different forms (slightly different than "adding on")
 
 - Task-first. @clickup Docs function as my primary knowledge base with links to Tasks in Lists that track my long-term and ongoing projects. It’s powerful to have knowledge management and project management in a single tool.
-# discuss
+# discuss-pdf
 - ## 
 
 - ## 
@@ -88,7 +88,11 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 
 
-- ## 
+- ## There's a new breed of note-taking apps in town. These apps help to better visualize your ideas, notes, and thoughts.
+- https://twitter.com/FrancescoD_Ales/status/1719731096634687952
+- @Heptabase Enhance your research and make detailed connections between notes in a combination of canvas & structured notes.
+- @Napkin_Ideas A flow of ideas is amazing, but the capture and connect process can unlock even greater results, Napkin wants to solve this.
+- @Scrintal Mind mapping & notes, married. This experience wants to be a blend of traditional note-taking & visual note-taking.
 
 - ## A math teacher at @GVSU used Obsidian to create a course textbook with exhaustive linking
 - https://twitter.com/kepano/status/1718008501589639321
@@ -97,8 +101,6 @@ modified: 2021-08-16T06:56:53.061Z
 
 - 
 - 
-
-
 
 - ## In Europe, Estonia has had the digital signature for some time and it works really well:
 - https://www.reddit.com/r/InternetIsBeautiful/comments/zxdz3e/i_made_a_free_pdf_editor_that_works_in_your/

@@ -282,6 +282,12 @@ modified: 2023-10-29T02:23:35.064Z
 
 - The newest version of CouchBase mobile no longer supports CouchDB as a replication target. It can still be accomplish with the CouchBase Sync Gateway, but get complicated quickly.
 
+- ## [CouchDB 2.0 | Hacker News_201609](https://news.ycombinator.com/item?id=12543342)
+- 
+- 
+- 
+- 
+
 - ## [Why Replication is Awesome | Hacker News_201311](https://news.ycombinator.com/item?id=6690607)
 - my own opinion that Couchdb is highly overrated. Not because it is not a good implementation of a document style database, but because the document store itself is not a good match for most use cases.
   - If the only requirement is a replicated JSON document store, it may work OK for you. But so would Riak, Postgres and some others.

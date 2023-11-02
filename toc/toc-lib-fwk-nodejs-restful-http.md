@@ -55,6 +55,12 @@ modified: 2022-12-19T01:51:01.389Z
   - annotation-based expressjs extension for typescript.
   - typescript-rest、typescript-ioc、typescript-rest-ioc
 
+- https://github.com/PostgREST/postgrest
+  - https://postgrest.org/
+  - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
+  - It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
+  - 可直接将 PostgreSQL 数据库发布成 REST API，甚至有基于此库的 SaaS 服务如 supabase 可提供类 Google Firebase 的功能。
+
 - https://github.com/developit/express-es6-rest-api
   - boilerplate for building REST APIs with ES6 and Express.
 

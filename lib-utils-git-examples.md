@@ -127,6 +127,10 @@ modified: 2023-08-29T10:12:22.345Z
   - a command-line tool for running SQL queries on git repositories and related data sources. 
   - It's meant for ad-hoc querying of source-code on disk through a common interface (SQL)
   - [Gitqlite: Query Git Repositories with SQL | Hacker News_202007](https://news.ycombinator.com/item?id=23730519)
+
+- https://github.com/developmeh/diff_event_source /rust
+  - Creates a diff event source for a given file filter
+  - In preparation for a tool that can identify which files have changed in a repo so they can be incremntally published to a knowledge base. I created my first rust CLI that can give produce an event source from libgit2.
 # git-data
 - https://github.com/CodeForPhilly/jawn /js
   - a node.js module that allows distributed version control of Tabular Data. 

@@ -23,12 +23,13 @@ modified: 2022-05-15T18:37:27.994Z
   - 基于lexical实现
   - Any content other than text are what we call cards.
 
-- webstudio-designer /172Star/MIT/202212/ts
+- webstudio-designer /172Star/MIT>AGPLv3/202212/ts
   - https://github.com/webstudio-is/webstudio-designer
   - https://webstudio.is/
   - Webstudio Designer is a NoCode Visual Tool inspired by Webflow
   - block块级元素不支持拖拽
   - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
+  - [Change license from MIT to AGPL V3_202307](https://github.com/webstudio-is/webstudio/pull/1980)
 
 - https://github.com/mdx-editor/editor /ts/lexical
   - https://mdxeditor.dev/

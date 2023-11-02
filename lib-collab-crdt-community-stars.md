@@ -92,10 +92,6 @@ modified: 2022-04-05T10:09:51.343Z
 - Counterpoint(形成对比的论点): I’ve supported more peer-to-peer database applications in prod than almost anyone out there. Only a handful of times did conflict resolution strategies have to be proactively(积极的; 主动的) coded. Getting document granularity right is most of the work.
 - Having built on top of crdts quite a bit, I think that the replicache model is probably the more explicit, better abstraction. It's very clear what effect concurrent edits will have as you write reducers and very hard to model the same with crdts without simulation.
 
-- ## 🌵📄 I'm presenting some early ideas about CRDTs & branch-and-merge documents.
-- https://twitter.com/MatthewWeidner3/status/1715023602976764299
-  - [Proposal: Versioned Collaborative Documents (PLF 2023 - Programming Local-first Software) - SPLASH 2023](https://2023.splashcon.org/details/plf-2023-papers/4/Proposal-Versioned-Collaborative-Documents)
-
 # discuss
 - ## 
 

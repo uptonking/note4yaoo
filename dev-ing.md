@@ -306,9 +306,15 @@ $$('[contenteditable]')
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-10
+# dev-11
 
-## 01
+## 1102
+
+- 事件冒泡的案例
+  - https://twitter.com/matthewcp/status/1720062244807901542
+  - click事件中的 document.addEventListener('click', cb1), cb1会立即执行
+  - Yeah, calls the callback before propagating, not after, because it needs to give callback ability to stop propagation
+# dev-10-event-sourcing-pouchdb
 
 # dev-09-event-sourcing/datalog-eav-triple
 

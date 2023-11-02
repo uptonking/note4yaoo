@@ -53,12 +53,13 @@ modified: 2020-11-17T13:38:19.107Z
     - building a renderer for Reka simply means taking this JSON structure and rendering it in your preferred UI framework.
   - Reka provides an external package that allows real-time collaboration via a fully-featured CRDT backed by Yjs
 
-- webstudio-designer /172Star/MIT/202212/ts
+- webstudio-designer /172Star/MIT>AGPLv3/202212/ts
   - https://github.com/webstudio-is/webstudio-designer
   - https://webstudio.is/
   - Webstudio Designer is a NoCode Visual Tool inspired by Webflow
   - block块级元素不支持拖拽
   - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
+  - [Change license from MIT to AGPL V3_202307](https://github.com/webstudio-is/webstudio/pull/1980)
 
 - https://github.com/plantain-00/schema-based-json-editor
   - https://plantain-00.github.io/schema-based-json-editor/packages/react/demo/

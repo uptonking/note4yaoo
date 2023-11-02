@@ -306,7 +306,7 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/kristopolous/db.js /202109/js/inactive
   - portable Javascript document store event-driven database
-
+  - It's been feature-complete and stable for years
 ## postgresql
 
 - https://github.com/message-db/message-db
@@ -382,7 +382,7 @@ modified: 2023-09-12T09:37:22.608Z
   - Roshi is a stateless, distributed layer on top of Redis and is implemented in Go. 
   - It is partition tolerant, highly available and eventually consistent.
   - [Roshi: a CRDT system for timestamped events | SoundCloud Blog_201405](https://developers.soundcloud.com/blog/roshi-a-crdt-system-for-timestamped-events)
-# non-js
+# es-non-js
 - https://github.com/EventStore/EventStore /csharp
   - https://eventstore.com/
   - The stream database optimised for event sourcing
@@ -391,8 +391,27 @@ modified: 2023-09-12T09:37:22.608Z
     - Event Store is written in a mixture of C#, C++ and JavaScript. It can run either on Mono or .NET, however because it contains platform specific code (including hosting the V8 JavaScript engine), it must be built for the platform on which you intend to run it.
 - https://github.com/EventStore/EventStore. UI /js
   - The user interface for Event Store. This is included as a submodule in the main Event Store repository.
+- https://github.com/x-cubed/event-store-client /js
+  - JS client library for connecting to Event Store over TCP/IP
+  - Connects to an Event Store server over TCP/IP, to send and receive event information.
+  - The Javascript API is intended to mimic the . Net API as closely as possible.
 
-- https://github.com/meilisearch/MeiliES /MIT/201910/rust/inactive
+- https://github.com/thalo-rs/thalo /583Star/MIT/202212/rust/inactive
+  - https://thalo.rs/
+  - Thalo is an event sourcing runtime for building distributed systems. 
+  - It is built on top of Wasmtime for components, and uses Message DB for the message store.
+  - Aggregates, commands and events are defined in the ESDL schema language.
+  - only Rust is supported
+  - https://github.com/thalo-rs/esdl
+    - Heavily inspired by GraphQL syntax
+
+- https://github.com/get-eventually/eventually-rs /482Star/MIT/202303/rust
+  - Collection of traits and other utilities to help you build your Event-sourced applications in Rust.
+  - eventually exposes all the necessary abstraction to model your Domain Entities (in lingo, Aggregates) using Domain Events, and to save these Events using an Event Store (the append-only event log).
+  - officially-supported backend: in-memory, pg
+  - https://github.com/pholactery/eventsourcing /202303/rust/inactive
+
+- https://github.com/meilisearch/MeiliES /326Star/MIT/201910/rust/inactive
   - MeiliES is an Event Sourcing database that uses the RESP (REdis Serialization Protocol) to communicate. 
     - it is possible to use the official Redis command line interface program to communicate with MeiliES.
   - An event store is like a Kafka or a Rabbit MQ but it stores events on disk indefinitely. 
@@ -408,18 +427,7 @@ modified: 2023-09-12T09:37:22.608Z
   - Written in Rust, using Tokio and Hyper.
   - Uses little more disk space than the contents of the topics.
 
-- https://github.com/x-cubed/event-store-client /js
-  - JS client library for connecting to Event Store over TCP/IP
-  - Connects to an Event Store server over TCP/IP, to send and receive event information.
-  - The Javascript API is intended to mimic the . Net API as closely as possible.
-
-- https://github.com/get-eventually/eventually-rs /rust
-  - Collection of traits and other utilities to help you build your Event-sourced applications in Rust.
-  - eventually exposes all the necessary abstraction to model your Domain Entities (in lingo, Aggregates) using Domain Events, and to save these Events using an Event Store (the append-only event log).
-  - officially-supported backend: in-memory, pg
-  - https://github.com/pholactery/eventsourcing /rust/inactive
-
-- https://github.com/primait/event_sourcing.rs
+- https://github.com/primait/event_sourcing.rs /202310/rust
   - opinionated library used to achieve cqrs/es in Rust.
   - Event Sourcing RS uses under the hood sqlx.
 
@@ -428,6 +436,14 @@ modified: 2023-09-12T09:37:22.608Z
   - By guaranteeing the immutability of key's value once it is set, PumpkinDB forces its users to think of their data through a temporal perspective.
   - The core ideas behind PumpkinDB stem from the so called lazy event sourcing approach which is based on storing and indexing events while delaying domain binding for as long as possible.
   - [Show HN: PumpkinDB, an event sourcing database engine | Hacker News_201702](https://news.ycombinator.com/item?id=13738051)
+
+- https://github.com/Actyx/Actyx /apache2/202311/rust/ts
+  - https://developer.actyx.com/
+  - Actyx is a decentralized event database, streaming and processing engine that allows you to easily build local-first cooperative apps.
+  - durable event stream storage in peer-to-peer network using libp2p and ipfs-embed
+  - tag-based and time-based indexing of events
+  - full-fledged support for event-sourcing, guaranteeing eventual consistency
+  - aql: full-fledged support for event-sourcing, guaranteeing eventual consistency
 
 - https://github.com/mit-pdos/noria /202110/rust/inactive
   - Noria is a new streaming data-flow system designed to act as a fast storage backend for read-heavy web applications based on Jon Gjengset's Phd Thesis
@@ -451,6 +467,10 @@ modified: 2023-09-12T09:37:22.608Z
   - http://bfil.github.io/exar-db/exar_db
   - An event store with streaming support, it uses flat-file based collections.
   - The database is split into modules
+
+- https://github.com/mjc-gh/esper /201705/rust
+  - Event Source powered by hyper written in Rust
+  - Esper is a standalone Event Source / Server Sent Events (SSE) broker. 
 
 - https://github.com/alicanli1995/clean-hexagonal-architecture-kafka-saga-outbox /java
   - Food Ordering Project with Clean and Hexagonal Architecture With Kafka Messaging System And Outbox Table
@@ -710,10 +730,12 @@ modified: 2023-09-12T09:37:22.608Z
 
 ## cqrs-non-js
 
-- https://github.com/serverlesstechnology/cqrs /rust
+- https://github.com/serverlesstechnology/cqrs /278Star/apache2/202309/rust
   - A lightweight, opinionated CQRS and event sourcing framework targeting serverless architectures.
   - Event sourcing uses the generated events as the source of truth for the state of the application.
+  - Three backing data stores are supported: mysql, pg, dynamodb
   - https://github.com/serverlesstechnology/cqrs-demo
+    - Demo application using the axum http server.
 
 - https://github.com/johnbcodes/cqrs-es-demo-sqlite /rust
   - A demo application for the cqrs-es and sqlite-es crates
@@ -722,6 +744,12 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/johnbcodes/sqlite-es /rust
   - An SQLite implementation of a cqrs event store.
   - An SQLite implementation of the PersistedEventRepository trait in cqrs-es.
+
+- https://github.com/cq-rs/cqrs /201909/rust
+  - An event-sourced command-query system for Rust
+  - cqrs is an event-driven framework for writing software that uses events as the "source of truth" and implements command–query responsibility separation (CQRS).
+  - The framework is written to be applicable to a generic backend, with an implementation provided for a PostgreSQL backend.
+  - The source repository also contains a binary in the cqrs-todoql-psql directory which demonstrates the use of the todo domain in concert with the `PostgreSQL` backend and a `GraphQL` frontend using the `juniper` crate.
 
 - https://github.com/serverlesstechnology/dynamo-es /rust
   - An implementation of a cqrs event store using AWS DynamoDB.

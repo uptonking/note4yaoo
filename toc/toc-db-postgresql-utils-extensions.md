@@ -12,6 +12,9 @@ modified: 2023-10-26T15:29:40.053Z
 # popular
 - https://github.com/PeerDB-io/peerdb /rust/go
   - a Postgres-first data-movement platform that makes moving data in and out of Postgres fast and simple. 
+
+- https://github.com/michaelpq/pg_plugins/tree/main/blackhole_am /c
+  - This module is a PostgreSQL extension template
 # plugins
 
 # utils

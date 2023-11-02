@@ -254,19 +254,6 @@ modified: 2021-08-30T18:56:09.644Z
     - The B-Tree implementation in Nebari is designed to offer those exact guarantees.
     - The major downside of append-only formats is that deleted data isn't cleaned up until a maintenance process occurs: compaction. 
 
-- https://github.com/PostgREST/postgrest
-  - https://postgrest.org/
-  - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
-  - It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
-  - 可直接将 PostgreSQL 数据库发布成 REST API，甚至有基于此库的 SaaS 服务如 supabase 可提供类 Google Firebase 的功能。
-
-- https://github.com/dolthub/go-mysql-server /go
-  - A MySQL compatible database engine written in pure Go
-  - go-mysql-server is a drop-in replacement for MySQL. Any client library, tool, query, SQL syntax, SQL function, etc. that works with MySQL should also work with go-mysql-server.
-  - go-mysql-server is a data-source agnostic SQL engine and server which runs queries on data sources you provide, using the MySQL dialect and wire protocol. 
-  - A simple in-memory database implementation is included, and you can query any data source you want by implementing your own backend.
-  - dolt is the main production database implementation of this package.
-
 - https://github.com/mozilla/mentat /rust/inactive
   - https://mozilla.github.io/mentat/
   - A persistent, relational store inspired by Datomic and DataScript
@@ -359,6 +346,17 @@ modified: 2021-08-30T18:56:09.644Z
   - Vitess is the cloud-native, open source technology powering PlanetScale.
   - By encapsulating shard-routing logic, Vitess allows application code and database queries to remain agnostic to the distribution of data onto multiple shards
   - Vitess has been a core component of YouTube's database infrastructure since 2011, and has grown to encompass tens of thousands of MySQL nodes.
+
+- https://github.com/dolthub/go-mysql-server /go
+  - A MySQL compatible database engine written in pure Go
+  - go-mysql-server is a drop-in replacement for MySQL. Any client library, tool, query, SQL syntax, SQL function, etc. that works with MySQL should also work with go-mysql-server.
+  - go-mysql-server is a data-source agnostic SQL engine and server which runs queries on data sources you provide, using the MySQL dialect and wire protocol. 
+  - A simple in-memory database implementation is included, and you can query any data source you want by implementing your own backend.
+  - dolt is the main production database implementation of this package.
+
+- https://github.com/facebook/mysql-5.6 /GPLv2/cpp/c
+  - http://myrocks.io/
+  - Facebook's branch of the Oracle MySQL v5.6 database. This includes MyRocks.
 # db-streaming
 - https://github.com/MaterializeInc/materialize /rust
   - https://materialize.com/

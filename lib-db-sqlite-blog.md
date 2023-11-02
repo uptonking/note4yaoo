@@ -11,6 +11,10 @@ modified: 2022-11-18T17:06:54.371Z
 
 # blog
 
+## 📝 [What I learned about SQLite…at a PostgreSQL conference_201405](https://use-the-index-luke.com/blog/2014-05/what-i-learned-about-sqlite-at-a-postgresql-conference)
+
+## 👥 [What I learned about SQLite…at a PostgreSQL conference : programming](https://www.reddit.com/r/programming/comments/26la2f/what_i_learned_about_sqliteat_a_postgresql/)
+
 ## 👥🔥 [Show HN: Reduce SQLite database size by up to 80% with transparent compression | Hacker News_202208](https://news.ycombinator.com/item?id=32303762)
 
 - 

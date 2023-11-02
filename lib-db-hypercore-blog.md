@@ -49,7 +49,7 @@ modified: 2023-09-07T15:59:12.947Z
   - As I ended up more in the dat/hyper ecosystem, IPFS was often raised as a competing technology and I was frequently asked to comment on the differences. I never went negative, and thank goodness I didn't because one of my colleagues at Bluesky is a core contributor on IPFS, and we've become exceedingly good friends. Besides, going negative is a bad look.
 # blogs-comparisons
 
-## [Comparing Peer to Peer Protocols_202203](https://blog.mauve.moe/posts/protocol-comparisons)
+## 🆚️ [Comparing Peer to Peer Protocols_202203](https://blog.mauve.moe/posts/protocol-comparisons)
 
 - BitTorrent, IPFS, Secure Scuttlebutt (SSB) and Hypercore
 
@@ -96,7 +96,7 @@ modified: 2023-09-07T15:59:12.947Z
 
 ### ref
 
-## [IPFS and Friends: A Qualitative Comparison of Next Generation Peer-to-Peer Data Networks](https://arxiv.org/abs/2102.12737)
+## 🆚️ [IPFS and Friends: A Qualitative Comparison of Next Generation Peer-to-Peer Data Networks](https://arxiv.org/abs/2102.12737)
 
 ### ipfs
 
@@ -127,7 +127,7 @@ modified: 2023-09-07T15:59:12.947Z
   1. Dat/Hypercore indeed is "for geeks interested in p2p" now, but I feel it is nearing the point where it can explode in usage. I am making this point in the above github repo https://github.com/tradle/why-hypercore
   2. The most interesting point you make, Jerry, is that the path to mainstream is in  "decoupling apps from data". I am working exactly on that right now!! 
 
-## [Exploring Alternatives to the Centralized Web: ipfs/hypercore/ssb/bitTorrent](https://hypha.coop/dripline/p2p-primer-part-1/)
+## 🆚️ [Exploring Alternatives to the Centralized Web: ipfs/hypercore/ssb/bitTorrent](https://hypha.coop/dripline/p2p-primer-part-1/)
 
 - [Exploring Data Models and Mutability](https://hypha.coop/dripline/p2p-primer-part-2/)
 
@@ -144,5 +144,13 @@ modified: 2023-09-07T15:59:12.947Z
   - Via the Hypercore Protocol it is necessary to know the CID and Discovery hash for every file request. This added layer protects hosts from being asked for everything & anything they've got from curious snoopers.
   - In my opinion the latest DHT (hyperswarm) improvements are even more important. A DHT node does not share the IP of a peer if does not consent. And I's all E2EE(!)
 - What the blogpost gets a little bit wrong is that hypercore does NOT use content addressing, instead it uses the public key used for signing the data address (which is then hashed for discovery).
+
+## [How IPFS is broken – fiatjaf_202001](https://fiatjaf.com/d5031e5b.html)
+
+- One of the core advertised features of IPFS was that it made content future-proof. 
+  - I’m not sure they used this expression, but basically you have content, you hash that, you get an address that never expires for that content, now everybody can refer to the same thing by the same name. 
+  - Actually, it’s better: content is split and hashed in a merkle-tree, so there’s fine-grained deduplication, people can store only chunks of files and when a file is to be downloaded lots of people can serve it at the same time, like torrents.
+- But then come the protocol upgrades. IPFS has used different kinds of hashing algorithms, different ways to format the hashes, and will change the default algorithm for building the merkle-trees, so basically the same content now has a gigantic number of possible names/addresses, which defeats the entire purpose, and yes, files hashed using different strategies aren’t automagically compatible.
+- Actually, the merkle algorithm could have been changed by each person on a file-by-file basis since the beginning (you could for example split a book file by chapter or page instead of by chunks of bytes) 
 # more
 - [Hypercore 10 and other projects - Related Projects - Safe Network Forum](https://safenetforum.org/t/hypercore-10-and-other-projects/36567)

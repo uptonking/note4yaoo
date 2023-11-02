@@ -18,7 +18,12 @@ Symbol('a') === Symbol('a'); //false
 
 - ## 
 
-- ## 
+- ## Apparently Array.from(arr) is like 70x slower than arr.slice() 
+- https://twitter.com/fabiospampinato/status/1719825922407186723
+  - I guess it goes through iterators even for normal arrays, for no reason I guess?
+  - const arr = new Array ( 10_000 ).fill ( 0 ).map ( Math.random ); 
+- slice() without args is particularly fast. It's a fast path for cloning.
+- I guess they would need to check that the array is not proxied and the Symbol.iterator they get is equal to the built-in one?
 
 - ## TIL: in TS `satisfies` doesn't set the type of an object, which means you can't assign properties to it later. 
 - https://twitter.com/matthewcp/status/1719391086345363664

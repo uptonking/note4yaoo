@@ -14,12 +14,18 @@ modified: 2023-10-28T09:00:45.811Z
 
 - ## 
 
-- ## The representation of comments in rich text Delta is awkward, because multiple styles cannot be merged like bold/link. Which solution do you prefer?
-- https://twitter.com/zxch3n/status/1719578599517556748
+- ## 🌵📄 I'm presenting some early ideas about CRDTs & branch-and-merge documents.
+- https://twitter.com/MatthewWeidner3/status/1715023602976764299
+  - [Proposal: Versioned Collaborative Documents (PLF 2023 - Programming Local-first Software) - SPLASH 2023](https://2023.splashcon.org/details/plf-2023-papers/4/Proposal-Versioned-Collaborative-Documents)
+
+- One compromise is to use a git-like arch (full history, merge reviews) but store CRDT updates instead of git's patches. The CRDT enables live collaboration, and first-pass merges for non-code data (e.g. spreadsheets).
 # discuss
 - ## 
 
 - ## 
+
+- ## The representation of comments in rich text Delta is awkward, because multiple styles cannot be merged like bold/link. Which solution do you prefer?
+- https://twitter.com/zxch3n/status/1719578599517556748
 
 - ## While CRDT algorithms go over and beyond to let conflict resolution keep user's intent in mind, most of the rich text editors don't even try to represent it in their APIs. 
 - https://mastodon.social/@horusiath@fosstodon.org/111293175245189294

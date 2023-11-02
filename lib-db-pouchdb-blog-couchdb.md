@@ -19,6 +19,55 @@ modified: 2023-10-07T17:30:26.998Z
 - I’ve thought about using a state-based json-crdt for each document, which would allow a client implementation to automatically resolve conflicts in a way that better preserves intent, but I haven’t attempted this. 
   - One option that’s mentioned in the docs is delta-pouch, which “stores every change as its own document”, and then reads out those changes to construct the “current” state of a document.
   - I’m a little wary about the “production-readiness” of this plugin, though, as shoehorning(强挤硬塞) a delta-based system onto pouchdb seems like it would introduce some pretty significant performance penalties(处罚；不利；损失).
+
+## 📝 [10 things I learned from reading (and writing) the PouchDB source_201410](https://pouchdb.com/2014/10/26/10-things-i-learned-from-reading-and-writing-the-pouchdb-source.html)
+
+- I first joined the project around December of last year, at which point PouchDB was already fairly mature. (The first commit from Mikeal Rodgers is already 4 years old!)
+- The main goals I had with PouchDB were to increase its performance and browser compatibility
+
+01. Nobody can agree on what the Web SQL "estimated size" means
+- User agent sniffing! 
+- W3C has done everyone a disservice by using 5*1024*1024 in their sample code
+02. IE has race conditions in IndexedDB
+- we ensure all "open" and "destroy" operations on the databases are done sequentially
+03. Binary data in Web SQL is a mess
+- At the time the Web SQL spec was hammered out, nothing like Blobs or ArrayBuffers had been standardized
+- As of PouchDB 3.1.0, we will also avoid hexing entirely for large binary attachments, because it causes performance problems. 
+04. Binary data in IndexedDB is a mess too
+- Blobs were not supported in Chrome until v37
+  - PouchDB falls back to storing Blobs as base64-encoded strings. 
+05. IE doesn't support complex keys
+- CouchDB is one of the grandaddies(祖师爷) of NoSQL databases, so unsurprisingly it influenced IndexedDB's design. 
+- we're basically trying to rewrite CouchDB on top of IndexedDB.
+- it's intentional: we concatenate the strings together, because IE does not support complex keys.
+- This also heavily influenced our design for persistent map/reduce, because instead of assuming the underlying database can sort by more than one value, we invented a toIndexableString() function that converts any JSON object into a big CouchDB-collation-ordered string. Yeah, we went there.
+06. IndexedDB throws an error if you try to iterate backwards with start/end keys
+- You can actually swap the start and end in the `IDBKeyRange`, and that allows you to iterate backwards in all browsers
+07. IndexedDB and Web SQL are jealous of other callbacks
+- In both IndexedDB and Web SQL, you can forget about using Promises or even invoking another callback within a transaction. Whenever control is returned to the event loop, the transaction auto-closes.
+- under the hood, PouchDB's own code is pure callback hell.
+08. Recursion is a double-edged sword
+- The gist is that any native JavaScript function that takes an object as input, such as `JSON.stringify()` or IndexedDB's `put()`, has a maximum limit on the depth of the object you can pass in. 
+- The limit itself will vary based on the available memory, but in any case, if you hit that limit, you get a "too much recursion" or "maximum call stack" error.
+- The limit itself will vary based on the available memory, but in any case, if you hit that limit, you get a "too much recursion" or "maximum call stack" error.
+09. In IndexedDB, unique indexes throw constraint errors, but keyPaths don't
+- This is one of those counter-intuitive things that probably made sense to IndexedDB creator Nikunj Mehta, but surprised the hell out of me.
+- In IndexedDB, however, object stores with primary keys will not throw an error upon insertion, but instead silently overwrite the existing object. In other words, the put() is an upsert. 
+  - Unique indexes, however, behave totally differently and will indeed throw.
+- you can use add() instead of put() to get a constraint error with keyPaths. 
+10. CouchDB influenced IndexedDB influenced LevelDB influenced...
+- Databases are not designed in a vacuum, and the more I learn about this stuff, the more I find that everything is related somehow.
+- Web SQL was originally inspired by Google Gears
+  - Web SQL also lives on indirectly in IndexedDB, given that both Mozilla's and Apple's implementations are independently (!) implemented on top of SQLite.
+- you can even find the influence of CouchDB in early discussions of IndexedDB
+- Google went on to create LevelDB as their implementation of the IndexedDB spec
+- PouchDB itself has hopped on the LevelUP bandwagon, and today we have PouchDB Server, which is a nearly-complete implementation of CouchDB's HTTP API, but based on Node.js and LevelDB.
+
+## 👥 [Things I learned from reading and writing the PouchDB source | Hacker News_201411](https://news.ycombinator.com/item?id=8589376)
+
+- I wouldnt write couchbase-lite off entirely, sync is extremely hard and with Pouch we are still struggling with slow replications and bugs with binary objects. 
+  - The couchbase-lite devs have been contributing to PouchDB and couchbase-lite, PouchDB and CouchDB should all interoperatate in a p2p environment, if they dont then its a bug
+
 # blogs-sync/collab
 - [Use JSON Patch to Resolve Conflicts for CouchDB_202009](https://neighbourhood.ie/blog/2020/09/15/use-json-patch-to-resolve-conflicts/)
 

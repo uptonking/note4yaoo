@@ -11,6 +11,13 @@ modified: 2023-10-26T17:33:04.929Z
 
 # blog-stars
 
+## 🌵 [Tracking SQLite Database Changes in Git_202311](https://garrit.xyz/posts/2023-11-01-tracking-sqlite-database-changes-in-git)
+
+- SQLite stores data in binary.If you want to track changes and updates to a database using Git, you won't be able to see full diffs by default. 
+- Here's a diff between two states of the SQLite database of GnuCash
+- 
+- 
+
 ## 📝 [Hosting SQLite databases on Github Pages_202104](https://phiresky.github.io/blog/2021/hosting-sqlite-databases-on-github-pages/)
 
 ## 👥🔥 [Hosting SQLite databases on any static file hoster (2021) | Hacker News_202210](https://news.ycombinator.com/item?id=33182417)
