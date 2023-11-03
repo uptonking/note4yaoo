@@ -66,6 +66,14 @@ modified: 2023-09-13T20:24:41.516Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 如果不使用 React 这类框架的话，如何优雅地实现 offline web app 呢？
+- https://twitter.com/beihuo/status/1720168712421204477
+  - 我理解 Service Worker 可以实现这点，但是如果使用后端生成 HTML 的框架，比如 Hotwire 或者 LiveView，好像很难实现 offline？
+
 - ## [Local-first software: You own your data, in spite of the cloud (2019) | Hacker News_202310](https://news.ycombinator.com/item?id=37743517)
 - Couchdb/pouchdb remains one of the best: it's super easy to setup and is production-ready, but it's gonna be json docs with no transactions, so it can be limiting.
   - Y.js and automerge emerged as solutions combining CRDTs and content transfer, they look really promising. There is a Y.rs version if that's better for you.

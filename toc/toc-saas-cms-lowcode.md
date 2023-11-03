@@ -172,7 +172,7 @@ modified: 2023-01-20T21:59:47.792Z
 - Webiny co-founder here. 
   - If you're looking for a system that's not developer dependant, we are just wrapping up several new features on the Page Builder side of our product, making it much more powerful and easier to use and in Q1/2023 
   - we'll be launching also the ability to build fully dynamic pages by combining our Page Builder with our Headless CMS. Happy to share more details if you're interested.
-# cms-framework
+# popular
 - https://github.com/apstanisic/zmaj /ts
   - https://zmaj.vercel.app/
   - a headless CMS with RESTful API for your database and admin panel to easily manage your data
@@ -190,6 +190,8 @@ modified: 2023-01-20T21:59:47.792Z
   - Auto-generated CRUD UIs from your API data structure
   - state management & mutations with React Query
   - Out-of-the-box support for live/real-time applications
+# in-memory
+
 # cms
 - netlify-cms /16kStar/MIT/202204/js
   - https://github.com/netlify/netlify-cms

@@ -9,8 +9,17 @@ modified: 2022-06-13T02:58:29.596Z
 
 # guide
 
+
+- pros
+  - easy to start and scale horizontally
+
+
+- cons
+  - 如果涉及到join类型的查询，该用rdbms
+
 - who is using #mongodb
   - ?
+
 
 - doc size limit?
 # more

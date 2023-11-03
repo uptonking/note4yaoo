@@ -9,8 +9,12 @@ modified: 2023-09-16T17:49:13.534Z
 
 # guide
 
+- [DB-Engines Ranking - popularity ranking of database management systems](https://db-engines.com/en/ranking)
+  - ranks database management systems according to their popularity. The ranking is updated monthly.
+
 - [TiKV 源码解析 | PingCAP](https://cn.pingcap.com/blog/tag/tikv-source-code-analysis/)
 - [TiDB 源码阅读 | PingCAP](https://cn.pingcap.com/blog/tag/tidb-source-code-reading/)
+
 # blogs
 
 ## kappa-lambda

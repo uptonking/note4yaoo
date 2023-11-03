@@ -16,10 +16,10 @@ modified: 2022-12-02T11:15:15.257Z
   - 与couchdb耦合: data-model, database, sync protocol
     - 不必纠结于耦合度过高，sync protocol是公开的，可自行实现相关工具
   - pouchdb适合 one-db-per-user 的场景，跨user/db的搜索没有很好的解决方案
-  - doc级别的权限管理没有最佳实践
+  - doc级别的权限管理没有最佳实践, Read access is on a per-database basis
   - 数据初始化时可能处理超级大量数据的问题
   - 本地创建用户的问题
-  - 对二进制数据存储和同步的支持
+  - 对二进制数据存储和同步的支持不够好，attachment的设计是针对image/html
 
 - features
   - storage adapter: levelup, indexeddb

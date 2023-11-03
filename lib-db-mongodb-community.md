@@ -9,29 +9,26 @@ modified: 2022-06-13T02:59:04.350Z
 
 # guide
 
-# discuss-alternatives-mongo-like
+# discuss-stars
 - ## 
 
 - ## 
 
 - ## 
-
-- ## 🔥 [Show HN: AvionDB: A Decentralised Database with MongoDB-like Developer Interface | Hacker News_202005](https://news.ycombinator.com/item?id=23058070)
-- 
-- 
-- 
-
-- ## [Ask HN: Do you still use MongoDB? | Hacker News_202005](https://news.ycombinator.com/item?id=23270429)
-
 # discuss-usecase-xp
 - ## 
 
 - ## 
 
 - ## 🔥 [HSBC moves from 65 relational databases into one global MongoDB database | Hacker News_202006](https://news.ycombinator.com/item?id=23507197)
-- 
-- 
-- 
+- Jepsen's latest analysis of MongoDB -- https://jepsen.io/analyses/mongodb-4.2.6 -- finds that it doesn't even preserve snapshot isolation when set at the highest consistency level. This seems like a pretty terrible decision.
+
+- There’s been a lot of talk about the Jepsen-Mongo affair on HN lately, but the problem I have with Mongo and NoSQL in general is much more basic - it’s modeling relationships, which always end up appearing in every data model I’ve ever designed. I’m aware you can keep references from one doc to another but it always ends up being a messy affair even at smallish scales, and it feels as if the cognitive burden of managing these relationships ends up falling on the dev, instead of being managed by the DB.
+- Mongodb now supports effectively "Joins" in its aggregation framework, so it can do some relational style data representation. The latest versions also support transactions.
+  - Yeah but they do not recommend using that. I think the one nosql afficianado in my team spoke with mongo support and they recommended reassessing our document structure for it
+  - We’re still concerned that $lookup can be misused to treat MongoDB like a relational database
+
+- Mongodbs newer versions support schema validation by allowing you to register a JSON-Schema description against a collection and validate writes against It.
 # discuss
 - ## 
 
@@ -67,3 +64,8 @@ modified: 2022-06-13T02:59:04.350Z
   - 全文检索
 - 网易游戏几乎全部MongoDB
   - 做游戏用mongo绝对是爽，需求变化太快了，
+
+- ## 🔥 [Show HN: AvionDB: A Decentralised Database with MongoDB-like Developer Interface | Hacker News_202005](https://news.ycombinator.com/item?id=23058070)
+- 
+- 
+- 

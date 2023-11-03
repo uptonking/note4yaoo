@@ -59,8 +59,7 @@ $$('[contenteditable]')
 - dev-goals 不能在产品中检验的技术不玩
   - rich-editor: text/block
   - pivot-table: editable
-  - collaboration
-  - local-first database
+  - collaboration, local-first database
   - flowchart/whiteboard/pdf/annotation/comment
   - 事项--截止日期(0730+休整)--重要性(hml/s1-s3)
   - rich-editor-vanillajs
@@ -72,7 +71,7 @@ $$('[contenteditable]')
 - deep into lib/fwk
   - src-code, issues, pr, forks, extensions/alternatives
   - storage, sync/partial, conflicts, concistency
-  - 直接根据具体框架或产品搜索解决方案如airtable-database，不必拘泥于通用方案如event-sourcing/eav
+  - 直接根据具体框架或产品搜索解决方案如airtable-database，不必拘泥于通用方案如event-sourcing/eav，在产品讨论中常有细节和ideas
   - 拆分核心内容和周边功能
     - split git-src and issues/pr/wiki, split txt/docx/xlsx and api
     - 将更多精力投入 core content 的创作，以及格式兼容、平台兼容、产品集成
@@ -95,11 +94,13 @@ $$('[contenteditable]')
   - [x] 流式数据: linvodb, tingodb; 可参考kappa架构
   - 支持内存和持久化: tupledb, tinybase
 - db-sync/collab
-  - 为db实现crdt的参考: piratedb, evolu, triplitdb, mithic, indexeddb
-    - 不必执着于寻找indexeddb的实现，很多时候只是作为一种持久化的方式
-  - pouchdb
-  - crsqlite, hypermerge
-  - fireproof/ipld, hypercore, level
+  - db+crdt的参考: piratedb, evolu, triplitdb, mithic
+    - 不必执着于基于indexeddb的实现，只是作为一种持久化的方式
+  - base: level/rocksdb/foundationdb, hypercore, ipfs
+  - pouchdb: doc-db, incremental view
+  - crsqlite, hypermerge: crdt + db
+  - triplitdb: crdt + tupledb + eav
+  - fireproof: ipld, live-sync, replication, prolly-tree
   - kappa + lsm => kdtree/r-tree
   - 基于oplog的研发方向, 架构设计时考虑放在数据库层解决还是应用层解决
     - 实现db，还是sourcing based framework
@@ -144,7 +145,7 @@ $$('[contenteditable]')
   - absurd-sql-ts: read ArrayBuffer
   - kikko
 
-- headless-architecture
+- ui: headless-architecture
   - state + action: 参考autocomplete、search-ui
 
 - 若slate-model层采用扁平化Node(扁平化的思路可参考event-sourcing/orm/tinybase)
@@ -181,10 +182,10 @@ $$('[contenteditable]')
   - 04-slate-editor-toolbar, dnd-kit
   - 05-tanstack-table-database, rtk-query
   - 06-ospreadsheet2watarble
-  - 07-mdx-styling-QTWebkitEngine
-  - 08-db-kappa-dolt-git
-  - 09-event-sourcing-eav
-  - 10-pouchdb
+  - 07-mdx-styling, QTWebkitEngine
+  - 08-kappa-db, dolt-git
+  - 09-event-sourcing, datalog, eav/triple
+  - 10-event-sourcing, pouch, sqlite/postgresql
 
 - why use es6 class
   - 运行时类型检查，instanceof
@@ -203,7 +204,7 @@ $$('[contenteditable]')
   - 离屏渲染, keep-alive
   - 分层渲染
 
-## 10
+## 11
 
 - not-yet
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
@@ -314,7 +315,7 @@ $$('[contenteditable]')
   - https://twitter.com/matthewcp/status/1720062244807901542
   - click事件中的 document.addEventListener('click', cb1), cb1会立即执行
   - Yeah, calls the callback before propagating, not after, because it needs to give callback ability to stop propagation
-# dev-10-event-sourcing-pouchdb
+# dev-10-event-sourcing-sqlite-postgresql
 
 # dev-09-event-sourcing/datalog-eav-triple
 

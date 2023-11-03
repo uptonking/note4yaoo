@@ -29,6 +29,17 @@ modified: 2021-03-10T11:38:16.053Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I design and code, so I used to browse dribble, and behance to take design inspiration, but now I use them very rarely, 
+- https://twitter.com/sidi_jeddou_dev/status/1720022709789237512
+- Instead I use twitter and:
+  - https://layers.to
+  - https://recent.design
+  - https://darkmodedesign.com
+
 - ## the simplest way to work out letter spacing
 - https://twitter.com/aleksliving/status/1711725832757035098
   - 一黑板的函数曲线和公式

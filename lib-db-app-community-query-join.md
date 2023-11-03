@@ -34,6 +34,42 @@ modified: 2023-10-31T11:17:48.697Z
 
 - I often wonder how often this exact problem happens, but where A and B are [micro]services owned by two different teams, one is required by company policy to use their APIs not their raw databases, and escalation of each of these issues e.g. query size/rate limiting runs the risk of burning political capital on top of everything else.
 
+- ## 🆚️🍃🐘 [Comparison of Joins: MongoDB vs. PostgreSQL | Hacker News_202004](https://news.ycombinator.com/item?id=22834036)
+- why one would choose mongo over postgres?
+- There's really only one reason to choose mongo over a competent RDBMS, and that's schemalessness at the database level--which most users of mongo then toss away by adding a schema package at the code layer.
+  - If your data is relatively freeform with good indices on stable fields, mongo is hugely convenient, and can be easily structured to scale horizontally. For non-join based aggregation (i.e, aggregation within a collection), mongo is very performant, and works fine for a lot of use cases. I'm using it storing large amounts of simple timeseries data and it's great, largely because my use case doesn't require more complex data structures.
+  - As soon as you want to deal with more complex structured data, mongo is worse than any RDBMS. The only viable noSQL solution to complex structures is denormalization, which is sometimes a legit choice. But unless you know your primary use is just retrieving a set of documents based on indexed fields (and many are), get an RDBMS.
+
+- MongoDB has built-in auto-failover with replica sets. It is possible to set this up for PGSQL with third-party tools but it's hard to get right.
+  - MongoDB has built-in multi-instance sharding support. Again this is possible for PostgreSQL with table partitioning and FDW but it is hard to maintain.
+
+- I can’t address MongoDB, but nosql vs relational generally, there are two reasons:
+  - (1) what’s faster than a fast join? No join. With nosql you have more flexibility to store the data organized in the same way it is accessed. You don’t need to join to another table if the data your app needs is already directly part of the main data the app requests. You do need to understand your access patterns well, and develop migration plans when they change.
+  - (2) scalability. nosql databases generally let you scale horizontally more easily/gracefully than relational databases, though there are trade offs.
+  - Put it together and you get performance at scale, though you generally need to understand your data access patterns and usually need to be more resilient to inconsistencies.
+- I've found that being able to change quickly is more valuable that the marginal performance boost that mongo would give. Denormalization is possible in postgres.
+- > what’s faster than a fast join? No join. With nosql you have more flexibility to store the data organized in the same way it is accessed.
+  - You can definitely do this in PostgreSQL via materialized views. They're directly supported in recent releases, and they don't require you to denormalize the underlying datamodel unlike NoSQL.
+- Well, a materialized view is denormalized data. You distinguish it from the “underlying data model”, but you can do that in nosql as well. Also, materialized views still tend to be oriented to rectangular data, which isn’t always how you want to access data.
+  - I agree with the general point that Postgres and other relational databases can do nosql things (and nosql databases can do relational things).
+
+- You can do that by using a JSONB column in postgres (including indexes), and that way you can upgrade to typed columns at yout leisure (and on a per-column basis).
+- PostgreSQL has the JSONB data type which is essentially the same as the BSON type except slightly better optimized for reading partial documents. And PostgreSQL also provides good indexing support for them, and did so before MongoDB.
+
+- Can someone who is using MongoDB and a RDBMS at the same time tell me the exact use cases where MongoDB is fitter? Structured logs? Caching? Sessions? And why MongoDB does it better?
+- Cluster is very easy in MongoDB and for unstructured data. I've looked into clustering postgresql a few time and it seems like a pain in the butt. TBH, storing data without thinking about relation is just kicking the can down the road.
+- Relational DBs for everything that needs joins. MongoDB is horrible with that and should not be used. One would not put an off-road vehicle on a race track and expect it to win.
+- The biggest one is searching jsons. You essentially have a database that stores jsons and you can search it. Just dump a json and search it goes a long way. My problems are more the atomicity guarantees which are not very consistent.
+
+- A basis for the apples to oranges argument is that you don't use MongoDB when you need JOINs.
+  - You almost always need JOINs
+  - The only way I see it being useful is for scaling purposes. But there are way better, more stable, more resistant to failure kv stores out there.
+
+- If you picked mongodb and you are using joins, you've picked a wrong tool for a job.
+
+- 🤔 Is there any real reason why a document store can't have good joins between collections?
+  - I don't think most document stores enforce foreign key relationships (and hence consistency) like RDBMS do, so in practice that would make joins difficult.
+
 - ## 🔥 [Joining CSV and JSON data with an in-memory SQLite database | Hacker News_202106](https://news.ycombinator.com/item?id=27565482)
 - 
 - 

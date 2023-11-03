@@ -437,6 +437,10 @@ modified: 2022-11-25T15:50:48.226Z
 - https://github.com/holepunchto/hypercore
   - a secure, distributed append-only log.
   - Built for sharing large datasets and streams of real time data
+
+- https://github.com/jepsen-io/maelstrom /clojure
+  - a workbench for learning distributed systems by writing your own. 
+  - It uses the Jepsen testing library to test toy implementations of distributed systems. 
 # db-js-utils
 - https://github.com/pubkey/event-reduce /202212/ts
   - https://pubkey.github.io/event-reduce/

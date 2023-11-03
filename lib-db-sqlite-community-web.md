@@ -13,6 +13,17 @@ modified: 2022-11-25T09:47:43.079Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 🌰 eidos 用 sqlite-wasm 做存储，到目前为止丢了两次数据，
+- https://twitter.com/mayneyao/status/1720141066240991347
+  - 最后发现 OPFS 需要请求数据持久化权限，否则数据可能被浏览器清理掉。
+  - API 比较新，相关的文章比较少，记录下。希望你不要丢数据
+  - 📝 [Web OPFS 数据持久化](https://gine.me/posts/70f8e931bc17426fb54127948bcf4a0e)
+  - 跑去 sqlite 论坛发帖问了下，终于找到问题所在。因为我没有向用户请求数据持久化权限。如果你没有向用户请求持久化权限。数据还是会给你存储，但是浏览器可能会把数据清理掉。 
+  - 这一点很隐晦，MDN 只给了代码，在代码里面提了下，但是文档里面没怎么说。
+  - 如何获取数据持久化权限呢？ `navigator.storage.persist()`
+
 - ## Feature table of all the possible ways of using a sqlite database in a JavaScript environment
 - https://twitter.com/fabiospampinato/status/1693379882409922788
 - better-sqlite3: it's good, but it's a native dependency, and those can be painful to work with (Electron, C++), and it only works with Node.

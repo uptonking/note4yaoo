@@ -12,6 +12,9 @@ modified: 2023-10-26T18:14:17.038Z
 - [TiDB 源码阅读 | PingCAP](https://cn.pingcap.com/blog/tag/tidb-source-code-reading/)
 # blogs-vendors
 
+## [当 TiDB 遇上 Jepsen | PingCAP](https://cn.pingcap.com/blog/tidb-jepsen/)
+- Jepsen 是由 Kyle Kingsbury 采用函数式编程语言 Clojure 编写的验证分布式系统一致性的测试框架，作者使用它对许多著名的分布式系统（etcd, cockroachdb...）进行了“攻击”（一致性验证）
+
 ## 📝 [Turning the database inside-out with Apache Samza | Confluent_201503](https://www.confluent.io/blog/turning-the-database-inside-out-with-apache-samza/)
 
 ## 👥🔥 [Turning the database inside-out with Apache Samza | Hacker News_201503](https://news.ycombinator.com/item?id=9145197)

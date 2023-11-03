@@ -189,4 +189,27 @@ SELECT * FROM menus WHERE MATCH(item) AGAINST("pasta");
 
 - Conclusion
   - Full-text search is a complex topic. It requires a good amount of expertise to set up correctly. Adding additional features such as fuzzy search, highlights, or synonyms might also require a lot of extra work.
+
+## 📝 [Inside New Query Engine of MongoDB_202309](https://laplab.me/posts/inside-new-query-engine-of-mongodb/)
+
+- 
+- 
+- 
+
+## 👥 [MongoDB’s new query engine | Hacker News](https://news.ycombinator.com/item?id=37583147)
+
+- it looks like it was available from 5.1, also interesting is that you can't choose which engine to use, so I suppose it only works on subsets or queries that meet certain conditions.
+
+- 🆚️ Serious question: Why use MongoDB when Postgres supports indexed dynamic json?
+- MongoDB:
+  - a) has a proven, supported, easy-to-use horizontal scaling solution. PostgreSQL doesn't.
+  - b) is ridiculously faster than PostgreSQL at per-tuple document updates.
+  - c) has clients which are tailored for operations and data structures around documents.
+  - d) is easier to install, configure and manage.
+- 👉🏻 PostgreSQL will be horizontally scaling if you can avoid joins and index range locks. But the thing is you don't want to, or why do you need SQL database then. I found MongoDB good for cases when you need a lot of upserts, your data model is looks like document and you don't need joins. Like you store events data for further processing or collect stats or counters with tags/indexes.
+
+- one killer feature for me is ChangeStreams. It's miles ahead of what Postgres offers
+
+- Does MongoDB still lose data?
+  - No. Since 5.0 the default write concern is majority, if that's what you were referring to.
 # more-blogs

@@ -32,6 +32,8 @@ modified: 2022-11-03T04:14:11.987Z
   - Aggregation Framework Operators
   - Update Operators
   - Filtering and aggregation using streaming.
+- https://github.com/flex-development/mango /ts/inactive
+  - MongoDB-like API for in-memory object collections
 
 - tingodb /1.1kStar/MIT/201901/js
   - https://github.com/sergeyksv/tingodb
@@ -98,6 +100,15 @@ modified: 2022-11-03T04:14:11.987Z
   - forks
     - https://github.com/pdepip/yunodb
 
+- https://github.com/FoundationDB/fdb-document-layer /201909/cpp/python
+  - [Known Differences | FoundationDB Document Layer](https://foundationdb.github.io/fdb-document-layer/known-differences.html)
+  - A document data model on FoundationDB, implementing MongoDB® wire protocol
+  - implements a subset of the MongoDB® API (v 3.0.0) with some differences. 
+  - allow the use of the MongoDB® API via existing MongoDB® client bindings. 
+  - All persistent data are stored in the FoundationDB Key-Value Store.
+  - The Problem with Document Layer it implements MongoDB API v 3.0.0 and has not been significantly updated for years.
+
+
 - https://github.com/usmakestwo/githubDB /201811/js
   - A Lightweight Cloud based JSON Database with a MongoDB like API for Node.
   - You will never know that you are interacting with a Github
@@ -118,6 +129,33 @@ modified: 2022-11-03T04:14:11.987Z
 
 - https://github.com/JerrySievert/mongolike /201408/js
   - A proof of concept MongoDB clone built on Postgres
+
+- https://github.com/go-kivik/mango /go/inactive
+  - Go implementation of the Mango query language used by CouchDB and PouchDB
+
+- https://github.com/at30in/lucene-mongo-query /202304/js
+  - Lucene-inspired string-based mongodb query language for humans (and ferrets).
+
+- https://github.com/onur1/tango /202301/js
+  - textual syntax for the mango query language.
+  - tango expressions are based on the C syntax. Currently it supports basic comparison operators (==, >, >=, <, <=, ||, &&) and parentheses for explicit operator precedence.
+
+- https://github.com/glynnbird/sqltomango /202206/js
+  - converts Structured Query Language (SQL) into CouchDB Mango / Cloudant Query JSON objects
+  - This tool converts SQL strings into Mango objects, to allow users to interact with CouchDB/Cloudant database with SQL queries.
+  - https://github.com/glynnbird/mangogrep
+    - A command-line tool for "grepping" streams of JSON with CouchDB Mango selectors, or SQL
+
+- https://github.com/thomas4019/pgmongo /201812/js/inactive
+  - Replace MongoDB with PostgreSQL using jsonb fields
+  - Drop-in replacement Applications do not need code changes
+  - pgmongo rewrites queries and proxies them to a Postgres database.
+  - This implements the MongoDB wire protocol and adapts queries to work with a PostgreSQL database using jsonb fields. 
+
+- https://github.com/torodb/server /201707/java
+  - open source NoSQL database that runs on top of a RDBMS. 
+  - turns your RDBMS into a MongoDB-compatible server, supporting the MongoDB query API and MongoDB's replication, but storing your data into a reliable and trusted ACID database. 
+  - ToroDB currently supports PostgreSQL as a backend, but others will be added in the future.
 # db-document-json
 - redux-database /18Star/MIT/202005/ts/NoDeps
   - https://github.com/nerdgeschoss/redux-database
@@ -223,9 +261,10 @@ modified: 2022-11-03T04:14:11.987Z
   - a lightweight, schemaless, Pythonic Object-Oriented interface to MongoDB
 
 - https://github.com/scottrogowski/mongita /202210/python
-  - Mongita is a lightweight embedded document database that implements a commonly-used subset of the MongoDB/PyMongo interface
+  - a lightweight embedded document database that implements a commonly-used subset of the MongoDB/PyMongo interface
   - instead of being a server, Mongita is a self-contained Python library. 
   - Mongita can be configured to store its documents either on disk or in memory.
+  - 
 
 - https://github.com/danstocker-legacy/jorder /201507/js/inactive
   - Jorder makes working with in-memory table data fast and simple. 

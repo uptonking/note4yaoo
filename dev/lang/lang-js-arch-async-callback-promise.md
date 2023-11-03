@@ -96,7 +96,9 @@ modified: 2021-08-30T07:01:09.493Z
 
 - ## 
 
-- ## 
+- ## I think we should have an ESLint rule that stops you from `await` -ing in an inline `Promise.all` array
+- https://twitter.com/karlhorky/status/1720194025695719503
+- You can pass any value in the promise all array so nothing for TS to ‘catch’. Maybe a lint rule would be handy as you suggest
 
 - ## [Why people still compare Observables as "better" than promise as a primitive?](https://www.reddit.com/r/angular/comments/w9ipf4/why_people_still_compare_observables_as_better/)
 - Because observables are much more powerful.

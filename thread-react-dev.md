@@ -14,7 +14,12 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
-- ## 
+- ## If you want cleaner event handlers in your jsx in React you can use currying
+- https://twitter.com/_georgemoller/status/1720237969087373716
+- The problem with this is if handlers are passed around, folks will eventually forget to call the function. I had few hard to debug problems like that when a curried function was used as event handler - compiler is happy but the handler is not being called.
+- Just because you can, doesn't mean you should. Personally, I find this harder to read.
+- why don't you skip all of that and simply do this: `<li onClick={setSelectedItem} />`?
+  - sometimes you need to put extra logic
 
 - ## Avoid using conditionals to render views in React
 - https://twitter.com/_georgemoller/status/1719150019918418421

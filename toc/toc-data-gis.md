@@ -28,6 +28,9 @@ modified: 2021-01-04T16:20:47.941Z
 - https://github.com/hobu/usgs-lidar
   - https://registry.opendata.aws/usgs-lidar/
   - WS Entwine Point Tiles USGS LiDAR Public Dataset
+# countries/regions
+- https://github.com/glynnbird/countriesgeojson /json
+  - Countries of the world as GeoJSON
 # more-geo-data
 - https://github.com/djaiss/mapsicon
   - /2kStar/MentionLic/201707/python

@@ -132,7 +132,7 @@ modified: 2023-09-17T18:17:41.377Z
 
 - ## 
 
-- ## [为什么 MongoDB 使用 B 树 · Why's THE Design? · /whys-the-design-mongodb-b-tree](https://github.com/draveness/blog-comments/discussions/581)
+- ## 🤔🍃 [为什么 MongoDB 使用 B 树 · Why's THE Design? · /whys-the-design-mongodb-b-tree](https://github.com/draveness/blog-comments/discussions/581)
 - 本文说的不太对。现在mongo默认使用WiredTiger作为存储引擎。
   - WiredTiger实际是用B+树。
 

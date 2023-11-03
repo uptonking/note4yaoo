@@ -11,8 +11,27 @@ modified: 2021-08-16T06:57:03.570Z
 
 - [Welcome Google Sheets fans](https://www.benlcollins.com/)
 # discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+# discuss-table-styling
+- ## 
+
+- ## 
+
+- ## Responsive HTML table with sticky columns and mobile view created using only CSS and HTML
+- https://twitter.com/viki_code/status/1720155979134714078
+  - https://codepen.io/viki-code/pen/JjxGgmm
+  - For the first and last column, I added the property "position: sticky", and for the container, I added "overflow-x: auto"
+- On the xs scale make each row collapsing.  Should just show checkbox and name of user.  Then it should have an expandable button to see other column data.  That’s my preference.
 
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## is there a company building a meta-spreadsheet-api that abstracts around google sheets / notion / coda / airtable / etc? or a module that does that?
