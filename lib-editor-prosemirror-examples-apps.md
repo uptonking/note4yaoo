@@ -85,13 +85,15 @@ modified: 2022-08-18T16:57:15.296Z
   - 依赖 prosemirror、katex、bootstrap4、jquery、highlight.js
   - A free note-taking software for programmers and Computer Science students
 
-- mdSilo-web /208Star/AGPLv3/202208/ts/web+桌面
-  - https://github.com/mdSilo/mdSilo-web
+- mdSilo-web /208Star/AGPLv3/202309/ts/web+桌面
   - https://github.com/danloh/mdSilo-web
+  - https://github.com/mdSilo/mdSilo-web
   - https://mdsilo.com/
-  - A mind silo for storing ideas, thought, knowledge with a powerful writing tool.
+  - A local-first mind silo for storing ideas, thought, knowledge with a powerful writing tool, running fully in the browser.
   - 核心编辑器mdsmirror未开源，基于rich-markdown-editor
-  - 依赖 react、tauri/rust、dnd-kit、headlessui、popperjs、react-spring、tailwindcss、d3-drag/selection、fuse.js、immer、codemirror.v6、styled-comp、react-virtualized、zustand
+  - 依赖 react、tauri/rust、localforage、dnd-kit、headlessui-react、popperjs、react-spring、tailwindcss、d3-drag/selection、fuse.js、immer、codemirror.v6、styled-comp、react-virtualized、zustand
+  - If your browser doesn't support local file system APIs, you'll still be able to open individual local files or import JSON file 
+  - Since mdSilo Web app is running completely within the browser, some experiences will naturally be more constrained
   - Available for Web, Linux, Windows and macOS. 
 - mdSilo-app /93Star/AGPLv3/202208/ts/tauri
   - https://github.com/mdSilo/mdSilo-app
@@ -207,16 +209,19 @@ modified: 2022-08-18T16:57:15.296Z
 - https://github.com/dasmikko/strapi-tiptap-editor
   - A drop-in replacement for the strapi editor.
 
-- alinea /654Star/MIT/202301/ts
+- alinea /654Star/MIT/202311/ts
   - https://github.com/alineacms/alinea
   - https://alinea.sh/
+  - https://demo.alinea.sh/
   - an open source headless CMS written in Typescript.
   - 非wysiwyg，左侧编辑块数据，右侧预览
   - 依赖dnd-kit、yjs、react-query、tiptap
   - Content is stored in flat files and committed to your repository
-  - 👀 Content is easily queryable through an in-memory SQLite database
+  - 👉🏻 Content is easily queryable through an in-memory SQLite database
   - Content is fully typed
+  - Content is available during static site generation and when server side querying. Content is bundled with your code and can be queried with zero network overhead.
   - Alinea supports custom backends that can be hosted as a simple Node.js process or on serverless runtimes.
+    - Hosting an Alinea backend requires several services such as storing and retrieving drafts, publishing changes and authenticating users
 
 - https://github.com/PelagicCreatures/marlin /202204/js/inactive
   - An ExpressJS CMS for sites with Sequelize db backends

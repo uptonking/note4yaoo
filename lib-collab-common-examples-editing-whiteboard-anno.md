@@ -43,6 +43,10 @@ modified: 2022-11-07T17:36:22.236Z
   - All the client-side javascript is vanilla javascript and requires no bundling or external dependencies.
   - using Redis PubSub
 
+- https://github.com/markboard-io/markboard /MIT/ts
+  - Wysiwyg markdown whiteboard for note-taking and building team knowledge base.
+  - Markboard brings together Markdown and Whiteboard for all your writing, diagramming, sketching, and drawing needs in one place
+
 - https://github.com/gouravanand662/collaborative-whiteboard
   - collaborative whiteboard using socketIO 
 

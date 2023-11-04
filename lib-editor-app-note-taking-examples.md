@@ -14,10 +14,14 @@ modified: 2023-02-05T18:05:44.122Z
 
 - 开发桌面版和vscode扩展的区别
 # popular
-- TiddlyWiki5 /6.9kStar/BSD/202209/js
+- TiddlyWiki5 /7.5kStar/BSD/202311/js
   - https://github.com/Jermolene/TiddlyWiki5
-  - https://tiddlywiki.com/dev/
+  - https://tiddlywiki.com/
+  - https://tiddlywiki.com/dev/ Developer documentation
   - A self-contained JavaScript wiki for the browser, Node.js, AWS Lambda etc.
+  - a non-linear personal web notebook that anyone can use and keep forever
+  - It can be used as a single HTML file in the browser or as a powerful Node.js application. 
+  - Except of a micro-kernel written in JavaScript the whole application consist of a own data-structure called tiddlers and a own markup language called wikiText. 
   - view层基于tid文件
   - https://github.com/TiddlyWiki/TiddlyWiki
     - the Classic version (2.x.x) of TiddlyWiki
@@ -256,6 +260,11 @@ modified: 2023-02-05T18:05:44.122Z
 
 - https://github.com/zhuowenli/githuber /202011/js/vue
   - 帮助 GitHub 开发者每日发现优质内容的浏览器主页拓展。
+
+- https://github.com/WorldBrain/Memex /4.2kStar/MIT/202311/ts
+  - https://worldbrain.io/
+  - Browser extension to curate, annotate, and discuss the most valuable content and ideas on the web
+  - Its name and functionalities are heavily inspired by Vannevar Bush's vision of a Memex.
 
 ## more-note-editor
 

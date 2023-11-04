@@ -17,6 +17,7 @@ modified: 2022-06-03T21:34:54.893Z
 
 - resources
   - search: knowledge-base/workspace/wiki
+  - self-contained, in the browser
 # notion-like-workspace
 - siyuan /6.6kStar/AGPLv3/202208/ts/go/支持协作
   - https://github.com/siyuan-note/siyuan
@@ -56,11 +57,12 @@ modified: 2022-06-03T21:34:54.893Z
   - https://logseq.com/
   - A local-first, non-linear, outliner notebook for organizing and sharing your personal knowledge base.
   - A privacy-first, open-source platform for knowledge management and collaboration
-- https://github.com/athensresearch/athens /EPL/Clojure/ts/inactive
+- https://github.com/athensresearch/athens /EPL/202212/Clojure/ts/inactive
   - https://athensresearch.github.io/athens
   - open-source, collaborative knowledge graph
   - athens-export converts your pages to markdown and a logseq-compatible directory.
   - Built on a graph database, Athens helps map and communicate complex knowledge in complex domains.
+  - athens-export converts your pages to markdown and a logseq-compatible directory
 
 - growi /1.1kStar/MIT/202301/ts/remark
   - https://github.com/weseek/growi
@@ -191,15 +193,6 @@ modified: 2022-06-03T21:34:54.893Z
   - 前端依赖 react、redux-toolkit、codemirror.v6、bootstrap.v4、flowchart.js、markdown-it.v12、katex、vega、i18next、next.v12、react-bootstrap、yjs
   - 支持markdown的分屏预览，一边源码、一边预览，同步滚动
 
-- monotome /151Star/AGPLv3/202208/js
-  - https://github.com/cblgh/monotome
-  - a personal knowledge base system. markdown markup, runs in the browser
-  - 依赖 marked
-  - 原理是 根据url动态读取解析markdown文件，并渲染显示所有文件名
-  - 代码量不大，思路清晰
-  - Monotome has support for the common `[[wiki]]` syntax, 
-  - Subjects are ordered into a simple directory structure which is mirrored by index.json.
-
 - pervane /200Star/MIT/202205/js/python
   - https://github.com/hakanu/pervane
   - https://hakanu.github.io/pervane/
@@ -209,10 +202,6 @@ modified: 2022-06-03T21:34:54.893Z
 
 - https://github.com/jaredly/local-first /191Star/202104/js/inactive
   - This aims to eventually be a fully-featured solution for managing, syncing, and storing application data, in a way that works offline, and collaboratively.
-
-- https://github.com/abesamma/oneplaybook /js/inactive
-  - https://oneplaybook.app/
-  - Oneplaybook app helps you capture, organize and share knowledge better with TiddlyWiki5.
 
 - Metagraph /19Star/NALic/202205/ts/vue
   - https://github.com/Wizard-wen/Metagraph
@@ -270,13 +259,75 @@ modified: 2022-06-03T21:34:54.893Z
 
 - https://github.com/courajs/referent /js
   - An offline-first, realtime-collaborative wiki engine
-# knowledge-base/wiki
-- https://github.com/Jermolene/TiddlyWiki5
+# TiddlyWiki/in-memory
+- TiddlyWiki5 /7.5kStar/BSD/202311/js
+  - https://github.com/Jermolene/TiddlyWiki5
   - https://tiddlywiki.com/
-  - a unique non-linear notebook for capturing, organising and sharing complex information
-- https://github.com/tiddly-gittly/TidGi-Desktop
+  - https://tiddlywiki.com/dev/ Developer documentation
+  - A self-contained JavaScript wiki for the browser, Node.js, AWS Lambda etc.
+  - a non-linear personal web notebook that anyone can use and keep forever
+  - It can be used as a single HTML file in the browser or as a powerful Node.js application. 
+  - Except of a micro-kernel written in JavaScript the whole application consist of a own data-structure called tiddlers and a own markup language called wikiText.
+  - view层基于tid文件
+  - https://github.com/TiddlyWiki/TiddlyWiki
+    - the Classic version (2.x.x) of TiddlyWiki
+
+- https://github.com/tiddly-gittly/TidGi-Desktop /1.2kStar/MPLv2/202309/ts
+  - https://tidgi.fun/
   - 「 太记 」是一个基于「 太微 TiddlyWiki 」的知识管理桌面应用，能保护隐私内容、高级自动化、自动Git云备份、部署为博客，且可通过RESTAPI与Anki等应用连接。
-  - 太微的 NodeJS 版本有无缝的自动保存体验，这是利用 SyncAdaptor 技术（而不是 Saver ）带来的的优势，太记对 NodeJS wiki 有更好的支持，而 TD 主要支持 HTML 版单文件 WIKI，各有优势
+  - 太微的NodeJS版本有无缝的自动保存体验，这是利用 SyncAdaptor 技术（而不是 Saver ）带来的的优势，太记对 NodeJS wiki 有更好的支持，而 TD 主要支持 HTML 版单文件 WIKI，各有优势
+
+- https://github.com/abesamma/TW5-editions
+  - A (still growing) collection of useful editions of Tiddlywiki5(TW5) that I use.
+  - Empty edition: The "empty" edition of TiddlyWiki is a vanilla distribution, with only maarfapad plugin
+  - JD Whitespace: a beautiful edition with a sidebar that has extended functionality with a UI that focused on whitespace
+  - Streambook: a RoamResearch-esque edition with a 2 panel story view and outline system
+- https://github.com/abesamma/oneplaybook-app /MPLv2/202105/js/inactive
+  - https://oneplaybook.app/
+  - a web app that allows you to quickly get started building federated internal wiki systems with TiddlyWiki
+  - helps you capture, organize and share knowledge better with TiddlyWiki5.
+  - offline-ready
+  - This webpage runs on Gatsby, Reactjs, TailwindCSS and Material-UI.
+
+- https://github.com/OokTech/TW5-Bob /202311/js
+  - A plugin that makes tiddlywiki a multi-user wiki on node
+  - Multi-User support for using/editing the same wiki(s) simultaneously
+  - Two-way real-time syncing between the browser and file system
+  - Inter-server federation. Different Bob servers can communicate to share tiddlers and as chat servers/relays
+
+- https://github.com/Alamantus/FeatherWiki /91Star/AGPLv3/202310/js
+  - https://codeberg.org/Alamantus/FeatherWiki
+  - Feather Wiki is a lightning fast infinitely extensible tool for creating personal non-linear notebooks, databases, and wikis that is entirely self-contained, runs in your browser, and is only 55 kilobytes. 
+  - The idea is that it's like TiddlyWiki but as small as possible.
+  - 👉🏻 The app and all of the content you create using it are stored within the single HTML file generated when you save your wiki. 
+  - Publishing your content is as simple as uploading that file to a web server, and **updating is as simple as overwriting the file**.
+  - Tiddlyhost is a free hosting platform that offers the ability to save your Feather Wiki directly instead of needing to download a copy!
+  - [Feather Wiki: app for creating personal non-linear notebooks, databases, wikis | Hacker News_202205](https://news.ycombinator.com/item?id=31474062)
+
+- mdSilo-web /208Star/AGPLv3/202309/ts/web+桌面
+  - https://github.com/danloh/mdSilo-web
+  - https://mdsilo.com/
+  - A local-first mind silo for storing ideas, thought, knowledge with a powerful writing tool, running fully in the browser.
+  - 核心编辑器mdsmirror未开源，基于rich-markdown-editor
+  - 依赖 react、tauri/rust、localforage、dnd-kit、headlessui-react、popperjs、react-spring、tailwindcss、d3-drag/selection、fuse.js、immer、codemirror.v6、styled-comp、react-virtualized、zustand
+  - If your browser doesn't support local file system APIs, you'll still be able to open individual local files or import JSON file 
+  - Since mdSilo Web app is running completely within the browser, some experiences will naturally be more constrained
+
+- https://github.com/benweet/stackedit /apache2/js/vue
+  - https://stackedit.io/
+  - Full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.
+- https://github.com/josephernest/writing /202208/js
+  - a lightweight distraction-free text editor, in the browser (Markdown and LaTeX supported).
+  - no server needed, you can run it offline
+# knowledge-base/wiki
+- monotome /151Star/AGPLv3/202208/js
+  - https://github.com/cblgh/monotome
+  - a personal knowledge base system. markdown markup, runs in the browser
+  - 依赖 marked
+  - 原理是 根据url动态读取解析markdown文件，并渲染显示所有文件名
+  - 代码量不大，思路清晰
+  - Monotome has support for the common `[[wiki]]` syntax, 
+  - Subjects are ordered into a simple directory structure which is mirrored by index.json.
 
 - helpkb /8Star/MIT/202209/js
   - https://github.com/mrvautin/helpkb
@@ -326,6 +377,14 @@ modified: 2022-06-03T21:34:54.893Z
   - It serves as the platform for Wikipedia and the other Wikimedia projects
   - feature-rich and extensible, both on-wiki and with hundreds of extensions; 
   - https://github.com/wbstack/mediawiki /php
+    - This ultimately repackages MediaWiki together with its extensions, skins, then creates a new "application" with a much tighter(紧密的) external interface (particularly around configuration).
+  - https://github.com/wikimedia/VisualEditor /185Star/MIT/202311/js
+    - https://www.mediawiki.org/wiki/VisualEditor
+    - https://doc.wikimedia.org/VisualEditor/master/js/lib/ve/demos/ve/desktop-wikimediaui.html
+    - Standalone rich HTML5 editor, based on ContentEditable.
+    - 依赖自研oojs、oojs-ui、jquery
+    - was created by the Editing team for MediaWiki's HTML+RDFa document format (generated by Parsoid) and is available as a MediaWiki extension. 
+    - As of 2020, VisualEditor is enabled by default here on mediawiki.org and on most Wikipedia and Wikivoyage language editions.
 
 - https://github.com/wmde/WikibaseDataModel /php
   - http://wikiba.se/
@@ -341,20 +400,24 @@ modified: 2022-06-03T21:34:54.893Z
   - https://www.bookstackapp.com/
   - A platform to create documentation/wiki content built with PHP & Laravel
 
-- https://github.com/Alamantus/FeatherWiki /js
-  - https://codeberg.org/Alamantus/FeatherWiki
-  - Feather Wiki is a lightning fast infinitely extensible tool for creating personal non-linear notebooks, databases, and wikis that is entirely self-contained, runs in your browser, and is only 55 kilobytes. 
-  - The app and all of the content you create using it are **stored within the single HTML file** generated when you save your wiki. 
-  - Publishing your content is as simple as uploading that file to a web server, and **updating is as simple as overwriting the file**.
-  - Tiddlyhost is a free hosting platform that offers the ability to save your Feather Wiki directly instead of needing to download a copy!
-  - [Feather Wiki: app for creating personal non-linear notebooks, databases, wikis | Hacker News_202205](https://news.ycombinator.com/item?id=31474062)
-
 - https://github.com/xwiki/xwiki-platform /java
   - XWiki Platform is a generic wiki platform offering runtime services for applications built on top of it.
   - XWiki Commons, XWiki Rendering, and XWiki Platform are part of the XWiki.org software forge. They are released together and share the same version.
   - Over 600 extensions: applications, macros, skins, plugins, themes, etc.
   - Learn about XWiki's concept and why it's an alternative to Confluence and MediaWiki
-# workspace with vscode
+
+- https://github.com/OpenKnowledgeMaps/Headstart /js/python
+  - a web-based knowledge mapping software intended to give researchers a head start on their literature review
+  - It comes with a powerful backend that is is capable of automatically producing knowledge maps from a variety of data, including text, metadata and references.
+  - Interactive, web-based knowledge maps based on D3.js, following Shneiderman's principle of "overview first, zoom and filter, then details-on-demand"
+  - Integrated PDF viewer and annotation tool, courtesy of Hypothes.is
+  - Persistence and versioning system based on SQLite
+  - Powerful server component written in PHP and R for the creation of knowledge maps, including algorithms for clustering, ordination and labelling
+
+- https://github.com/elastic/app-search-kb-demo /202005/js/inactive
+  - A beautiful, modern customer support/knowledge base search experience for App Search using Search UI.
+  - If you wish to test the full stack build locally, you have to boot all the required services (Elasticsearch, App Search)
+# vscode-powered
 - foam /12.5kStar/MIT/202208/ts/vscode
   - https://github.com/foambubble/foam
   - https://foambubble.github.io/foam/

@@ -43,6 +43,20 @@ modified: 2020-10-22T10:22:55.878Z
     - mxGraph is pretty much feature complete, production tested in many large enterprises and stable for many years.
     - [mxGraph - Known Issues](https://jgraph.github.io/mxgraph/docs/known-issues.html)
 
+- drawio /36.5kStar/apache2/202310/js
+  - https://github.com/jgraph/drawio
+  - https://www.drawio.com/
+  - draw.io, this project, is a configurable diagramming/whiteboarding visualization application
+  - draw.io is not suitable as a framework for building other products from. For this try either Tldraw or Excalidraw.
+  - It is not an SVG editing app, the SVG export is designed only for embedding in web pages, not for further editing in other tools.
+  - Additional minified JavaScript files and Java libraries are used in this project. All of the licenses are deemed compatible with the Apache 2.0, nothing is GPL or AGPL
+  - draw.io is also closed to contributions.
+
+- https://github.com/nicoespeon/gitgraph.js /MIT/202209/ts
+  - https://www.nicoespeon.com/gitgraph.js
+  - https://www.nicoespeon.com/gitgraph.js/stories/
+  - A JavaScript library to draw pretty git graphs in the browser
+
 - jsplumb /7.3kStar/MIT/202302/ts/NoDeps
   - https://github.com/jsplumb/jsplumb
   - https://jsplumbtoolkit.com/
@@ -134,6 +148,11 @@ modified: 2020-10-22T10:22:55.878Z
   - it takes a text diagram as input and returns an image.
   - Kroki provides a unified HTTP API with support for BlockDiag (BlockDiag, SeqDiag, ActDiag, NwDiag, PacketDiag, RackDiag), BPMN, Bytefield, C4 (with PlantUML), Ditaa, Erd, Excalidraw, GraphViz, Mermaid, Nomnoml, Pikchr, PlantUML, SvgBob, UMLet, Vega, Vega-Lite and WaveDrom…​ and more to come!
 
+- https://github.com/jsxgraph/jsxgraph /994Star/LGPLv3/202310/js
+  - https://jsxgraph.org/wp/about/index.html
+  - a cross-browser library for interactive geometry, function plotting, charting, and data visualization in a web browser.
+  - Dynamic Mathematics with JavaScript
+
 - react-flow-chart /MIT/719Star/202006
   - https://github.com/MrBlenny/react-flow-chart
   - https://mrblenny.github.io/react-flow-chart/index.html
@@ -207,6 +226,10 @@ modified: 2020-10-22T10:22:55.878Z
   - /6.1kStar/Apache2/202011/archived
   - mxGraph is a fully client side JavaScript diagramming library that uses SVG and HTML for rendering.
   - [Future of types after mxgraph EOL announcement](https://github.com/typed-mxgraph/typed-mxgraph/issues/12)
+
+- https://github.com/hikerpig/pintora /MIT/ts
+  - An extensible text-to-diagrams library that works in both browser and node.js
+  - Heavily inspired by Mermaid.js and PlantUML.
 # node-graph
 - https://github.com/awslabs/diagram-maker
   - https://awslabs.github.io/diagram-maker

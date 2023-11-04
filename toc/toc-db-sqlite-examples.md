@@ -40,7 +40,7 @@ modified: 2022-06-03T22:07:49.519Z
   - Authentication Flow uses json web tokens via Passport library - passport-jwt strategy.
   - TypeScript, Joy for validation
 
-- https://github.com/lana-k/sqliteviz
+- https://github.com/lana-k/sqliteviz /apache2/js/vue
   - https://lana-k.github.io/sqliteviz/
   - Sqliteviz is a single-page offline-first PWA for fully client-side visualisation of SQLite databases or CSV files.
   - 依赖vue2、jquery、pivottable、plotly.js.v1、sql.js、react-chart-editor

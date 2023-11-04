@@ -69,7 +69,6 @@ modified: 2023-04-04T22:35:59.255Z
   - https://lightue.netlify.app/
   - A lightweight and simple model-view framework inspired by Vue.js
   - https://github.com/smalllong/lightuepress
-
 # lang-typescript
 - https://github.com/remeda/remeda
   - The first "data-first" and "data-last" utility library designed especially for TypeScript.
@@ -153,7 +152,6 @@ modified: 2023-04-04T22:35:59.255Z
   - https://cocreate.app/docs/clone
   - Clone an html element by #id, identify targeted elements using clone_id="" attribute. 
   - Capable of creating nested & complex cloning logic for kanbans, tasklists etc. 
-
 # render
 - https://github.com/arthurhovhannisyan31/offscreen-canvas-worker
   - Application allows to fetch and process data in the background using workers api.
@@ -249,6 +247,10 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/unjs/unctx /ts
   - Vue.js introduced an amazing pattern called Composition API that allows organizing complex logic by splitting it into reusable functions and grouping in logical order. 
   - unctx allows easily implementing composition API pattern in your javascript libraries without hassle.
+# media/audio/video
+- https://github.com/hughfenghen/WebAV /MIT/ts
+  - 使用纯Web技术构建的音视频工具，计划包含创建、编辑、导出功能，可应用于直播、教程录制、视频剪辑等产品中。
+  - Chrome 94 开放了 WebCodecs API，意味着 JS 也能处理音视频了。在此之前，前端开发在会在有限的场景使用 ffmpeg.js，经过简单地测试解码和重编码视频发现，WebCodecs 性能是 ffmpeg.js 的 20 倍。
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

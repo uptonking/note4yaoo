@@ -140,6 +140,10 @@ modified: 2023-09-02T09:17:22.992Z
   - A Linux shell in the browser via forked v86, with bi-directional POSIX filesystem (via Filer) shared over Plan 9 resource sharing.
   - The Filer filesystem in the browser is mounted in the Linux VM at /mnt.
 
+- https://github.com/humphd/nohost /201904/js
+  - A web server in your web browser
+  - nohost uses Filer to run a node'js style, POSIX filesystem inside a Service Worker, and handle requests for static files and directories.
+
 - browsix /3.1kStar/MIT/201904/ts/inactive
   - https://github.com/plasma-umass/browsix
   - Browsix is a Unix-like operating system for the browser.
@@ -167,4 +171,11 @@ modified: 2023-09-02T09:17:22.992Z
 # dynamic-js
 - https://github.com/unjs/jiti /ts
   - Runtime Typescript and ESM support for Node.js
+# playground
+- https://github.com/voronianski/esnextbin /201905/js
+  - Prototype JavaScript apps in the browser with ES2015's latest features and importing modules directly from NPM.
 # more
+- https://github.com/BrowserBox/BrowserBox /AGPLv3/js
+  - https://dosyago.com/
+  - BrowserBox is Web application virtualization via zero trust remote browser isolation and secure document gateway technology.
+  - Remote browser isolation is a cybersecurity model that physically isolates a user's browsing activity away from their local networks and infrastructure. With BrowserBox, this isolation provides an extra layer of security against web-based threats.

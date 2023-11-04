@@ -347,12 +347,17 @@ modified: 2021-08-30T18:56:09.644Z
   - By encapsulating shard-routing logic, Vitess allows application code and database queries to remain agnostic to the distribution of data onto multiple shards
   - Vitess has been a core component of YouTube's database infrastructure since 2011, and has grown to encompass tens of thousands of MySQL nodes.
 
-- https://github.com/dolthub/go-mysql-server /go
+- https://github.com/dolthub/go-mysql-server /1.2kStar/apache2/202311/go
   - A MySQL compatible database engine written in pure Go
   - go-mysql-server is a drop-in replacement for MySQL. Any client library, tool, query, SQL syntax, SQL function, etc. that works with MySQL should also work with go-mysql-server.
   - go-mysql-server is a data-source agnostic SQL engine and server which runs queries on data sources you provide, using the MySQL dialect and wire protocol. 
   - A simple in-memory database implementation is included, and you can query any data source you want by implementing your own backend.
   - dolt is the main production database implementation of this package.
+
+- https://github.com/dolthub/doltgresql /365Star/apache2/202311/go
+  - a Postgres-flavored version of Dolt. 
+  - Doltgres offers all the Git-style log, diff, branch, and merge functionality of Dolt on your Postgres database schema and data.
+  - connect to Doltgres with a Postgres client and use Postgres SQL
 
 - https://github.com/facebook/mysql-5.6 /GPLv2/cpp/c
   - http://myrocks.io/

@@ -438,16 +438,16 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/mvayngrib/logbase /js/inactive
   - Append-only log and log-based database
 
-- https://codeberg.org/small-tech/jsdb /js
+- https://codeberg.org/small-tech/jsdb /202311/js/NoDeps
   - A zero-dependency, transparent, in-memory, streaming write-on-update JavaScript database for the Small Web that persists to a JavaScript transaction log.
   - A small and simple data layer for basic persistence and querying.
   - For Node.js: will not work in the browser
-  - all data is kept in memory and, without tweaks, cannot exceed 1.4GB in size
+  - all data is kept in memory and, without tweaks, cannot exceed 1.4GB in size(nodejs limit)
   - Streaming writes on update: writes are streamed to disk to an append-only transaction log as JavaScript statements and are both quick (in the single-digit milliseconds region on a development laptop with an SSD drive) and as safe as we can make them (synchronous at the kernel level).
   - No schema, no migrations: again, this is meant to be a very simple persistence, query, and observation layer for local server-side data
   - JSDB tables are written into JavaScript Data Format (JSDF) files. 
-  - A JSDF file is just es6 module 
-  - When you load in a JSDB table, JSDB will, by default, compact the JSDF file.
+    - A JSDF file is just es6 module 
+    - When you load in a JSDB table, JSDB will, by default, compact the JSDF file.
 
 - https://github.com/khonsulabs/nebari /rust
   - A pure Rust database implementation using an append-only B-Tree file format.

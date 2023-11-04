@@ -86,7 +86,7 @@ modified: 2020-12-09T09:30:24.694Z
   - A curated selection of charts provided through RAWGraphs interface
   - It uses the RAWGraphs core API to define charts behaviours.
 
-- https://github.com/getredash/redash
+- https://github.com/getredash/redash /24.1kStar/BSD/202311/python/flask
   - http://redash.io/
   - 依赖flask、antd、d3.v3.5.17
   - SQL users leverage Redash to explore, query, visualize, and share data from any data sources.

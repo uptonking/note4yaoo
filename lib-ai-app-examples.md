@@ -126,6 +126,11 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/BrainJS/brain.js
   - robot GPU accelerated Neural networks in JavaScript for Browsers and Node.js
 # ml-dl
+- https://github.com/visheratin/web-ai /MIT/ts
+  - run modern deep learning models directly in the web browser or in Node.js
+  - Powered by ONNX runtime. Web AI runs the models using ONNX Runtime, which has rich support for of all kinds of operators.
+  - Web worker support. All heavy operations - model creation and inference - are offloaded to a separate thread so the UI does not freeze.
+
 - https://github.com/xenova/transformers.js /js
   - https://huggingface.co/docs/transformers.js
   - State-of-the-art Machine Learning for the web. 

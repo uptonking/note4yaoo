@@ -153,12 +153,13 @@ modified: 2022-10-05T04:57:38.647Z
 - https://github.com/mixu/markdown-styles
   - Markdown to static HTML generator and multiple CSS themes for Markdown
 # reader/book/documentation layout/ui
-- https://github.com/evnbr/bindery
+- https://github.com/evnbr/bindery /202101/ts
   - https://evanbrooks.info/bindery/docs/
   - 提供了多种视图，打印预览、grid多页、flip翻页
   - 依赖只有1个 regionize
   - a library for designing printable books with HTML and CSS.
   - At its simplest, Bindery flows content over multiple pages.
+  - no longer in development. You may be interested in similar open-source projects like paged.js or weasyprint, or commercial offerings like PrinceXML.
 
 - https://github.com/SaraVieira/starter-book
   - https://wizardly-snyder-c98440.netlify.app/

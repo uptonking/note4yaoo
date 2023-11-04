@@ -58,7 +58,7 @@ modified: 2022-11-06T15:45:36.913Z
 - https://github.com/josdejong/jsoneditor
   - A web-based tool to view, edit, format, and validate JSON
 
-- https://github.com/json-editor/json-editor /js
+- https://github.com/json-editor/json-editor /4kStar/MIT/202310/js
   - https://json-editor.github.io/json-editor/
   - JSON Schema Based Editor
 

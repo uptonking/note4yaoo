@@ -78,6 +78,12 @@ modified: 2021-07-27T15:12:39.959Z
 - https://github.com/juliankrispel/zettel
   - Javascript framework for writing rich text applications
 # markdown-editor
+- web-editor-markdown /90Star/MIT/202211/ts
+  - https://github.com/Ben-love-zy/web-editor-markdown
+  - 基于 Web 浏览器，即时渲染的 Markdown 编辑器。它基于 TypeScript 和 vanillajs 打造，并且不依赖任何第三方框架，对中文支持友好
+  - 提供源码模式、双屏渲染模式、实时编辑模式和只读模式四种渲染模式。
+  - 如果有需要，它的底层同时也支持了协同编辑的能力，提供了原子操作 Operation 用于扩展协同编辑。
+
 - https://github.com/youking-lib/marktion
   - https://editor.marktion.io/
   - 可切换阅读和文本，阅读模式可编辑

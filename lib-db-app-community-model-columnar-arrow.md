@@ -72,6 +72,23 @@ modified: 2023-10-26T15:03:56.115Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Most discussions of row vs columnar layout I see are pretty abstract.
+- https://twitter.com/eatonphil/status/1720453837566197947
+  - The impact really only clicked for me when I tried some benchmarks of workloads on in memory data: sort data stored row and column wise, add all cells of one columns stored row and column wise.
+- Think about the (1) branches, (2) data dependencies, and (3) memory overhead that row representation creates on loops processing the records. CPUs hate 1, 2, and 3.
+
+- 💡 Column layout = compression. Thats the key feature. Columns are all the same type! For instance parquet format. **Uncompressing can be cheaper than reading uncompressed data as CPU are fast** and cache misses (both disk pages and cache lines) kill performance.
+  - From my tests, you don't even need compression to get the wins (of most likely: cache locality) on analytics workloads like summing a column. But yes compression is another thing made feasible in columnar layouts.
+- Absolutely! Columnar storage basically feel like a disk resident ECS
+
+- I like browsing InnoDB (typical row-oriented db) vs. Kudu (column-oriented, with per-column disk structures, but with a row-wise memrowset ("insert buffer") to see differences. 
+
 - ## 🤔 [Why do database columns have a character length of 191? | Hacker News_202105](https://news.ycombinator.com/item?id=27186385)
 - 
 - 

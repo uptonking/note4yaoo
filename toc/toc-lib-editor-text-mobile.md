@@ -10,10 +10,11 @@ modified: 2022-11-09T10:00:04.044Z
 # guide
 
 # mobile-editor
-- zx-editor /319Star/MIT/202209/ts
+- zx-editor /319Star/MIT/202308/ts
   - https://github.com/capricorncd/zx-editor
   - https://capricorncd.github.io/zx-editor/
   - 移动端HTML文档（富文本）编辑器，支持图文混排、引用、大标题、无序列表，字体颜色、加粗、斜体
+  - SpEditor is a HTML5 rich text editor in smartphone browsers, and it's extends Editor.
 
 - https://github.com/amjadbouhouch/markup
   - https://mark-up.netlify.app/
@@ -68,7 +69,6 @@ modified: 2022-11-09T10:00:04.044Z
   - https://github.com/ymm-tech/gods-pen-server
     - 码良系统由3个项目构成，分别是 gods-pen-server 码良服务端、gods-pen-admin码良管理后台以及于7月份就已经开源的 gods-pen 码良编辑器。
 # mobile-editor-apps
-
 - https://github.com/Theobasallaje/betterletter
   - A text editor that is mobile optimized for temporary drafts of written things, such as social media posts.
 # more-mobile

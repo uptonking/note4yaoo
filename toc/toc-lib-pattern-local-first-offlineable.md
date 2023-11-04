@@ -234,7 +234,7 @@ modified: 2021-09-04T14:03:39.046Z
 - https://github.com/hoodiehq/hoodie
   - A generic backend with a client API for Offline First applications
 
-- https://github.com/lana-k/sqliteviz
+- https://github.com/lana-k/sqliteviz /apache2/js/vue
   - Sqliteviz is a single-page offline-first PWA for fully client-side visualisation of SQLite databases or CSV files.
   - Instant offline SQL-powered data visualisation in your browser
   - run SQL queries against a SQLite database and create Plotly charts and pivot tables based on the result sets

@@ -15,6 +15,12 @@ modified: 2023-04-15T08:19:14.117Z
 
 - https://github.com/ElixirNote/elixirnote
   - a next-generation web-based user interface for Project Jupyter.
+
+- https://github.com/jsvine/notebookjs /MIT/js
+  - Render Jupyter/IPython notebooks on the fly, in the browser. 
+  - Notebook.js parses raw Jupyter/IPython notebooks, and lets you render them as HTML.
+  - https://github.com/jsvine/nbpreview /js
+    - Render Jupyter/IPython notebooks without running a notebook server.
 # jupyter-extensions
 - https://github.com/yunabe/tslab
   - tslab is an interactive programming environment and REPL with Jupyter for JavaScript and TypeScript users. 

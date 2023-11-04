@@ -52,7 +52,7 @@ modified: 2022-11-11T10:46:41.519Z
 # extension-superset
 
 # converters
-- https://github.com/yWorks/svg2pdf.js /MIT/ts
+- https://github.com/yWorks/svg2pdf.js /MIT/202308/ts
   - A javascript-only SVG to PDF conversion utility that runs in the browser leveraging jsPDF.
 
 - https://github.com/pdf2htmlEX/pdf2htmlEX /GPLv3

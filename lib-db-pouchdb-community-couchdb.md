@@ -9,6 +9,18 @@ modified: 2023-10-29T02:23:35.064Z
 
 # guide
 
+# changelog-couchdb
+- v4.0_202x
+- v3.0_202002
+  - User-defined partitioned databases for faster querying
+  - Live Shard Splitting for incremental scale-out
+  - Automatic view index warmer
+- v2.0_201609
+  - Clustering
+  - New Query Language: mango
+  - 2.0 is the unification of BigCouch(Cloudant's work) with the old single node CouchDB
+  - New Admin Interface (written in React): fauxton
+- v1.0_201007
 # discuss-stars
 - ## 
 
@@ -96,7 +108,7 @@ modified: 2023-10-29T02:23:35.064Z
   - map/reduce
   - CouchApps
 - CONs:
-  - corporate supported development is dwindeling (I believe, not entirely up to date on this)
+  - corporate supported development is dwindeling
   - only REST API, no wire protocol
   - CouchApps
 
@@ -122,7 +134,6 @@ modified: 2023-10-29T02:23:35.064Z
 - The CouchDB one is actually a fully persisted database, not just an in-memory cache. Both are useful, but it's not quite the same thing.
 
 - CouchDB replication has got to be among the easiest and nicest in the industry. Setting up master/master is a breeze.
-
   - Snapshots: Any changes to a document occur as a revision and appends the information to the file. This means you can grab a “snapshot” of the file and copy it to another location even while the database is running without having issues with corruption.
   - This is the main feature I sell when pushing CouchDB. 
   - Use it to project events and you'll see what I mean.

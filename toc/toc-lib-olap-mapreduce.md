@@ -10,7 +10,12 @@ modified: 2020-10-05T09:12:01.565Z
 # guide
 
 # popular
-
+- https://github.com/chdb-io/chdb /cpp
+  - https://clickhouse.com/blog/chdb-embedded-clickhouse-rocket-engine-on-a-bicycle
+  - an embedded SQL OLAP Engine powered by ClickHouse
+  - In-process SQL OLAP Engine, powered by ClickHouse
+  - Minimized data copy from C++ to Python with python memoryview
+  - Input&Output support Parquet, CSV, JSON, Arrow, ORC and 60+more formats, samples
 # rust
 - https://github.com/apache/arrow-datafusion /rust
   - extensible query engine for building high-quality data-centric systems in Rust, using the Apache Arrow in-memory format. 

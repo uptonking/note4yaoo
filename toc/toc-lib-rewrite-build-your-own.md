@@ -128,4 +128,9 @@ modified: 2021-09-29T13:23:09.969Z
 
 - https://github.com/JokerLHF/mini-vue3
   - 模拟vue3，实现了模板编译、创建组件实例、运行渲染函数、挂载虚拟 dom、接合响应式系统、patch 更新渲染、scheduler 任务调度， 基本上完成主线任务。
+
+- https://github.com/Ubugeeei/chibivue /ts/代码多
+  - https://ubugeeei.github.io/chibivue/en/
+  - minimal Vue.js v3 core implementations (reactivity, virtual DOM, component, compiler (template, SFC))
+  - This project began in February 2023 with the goal of simplifying the understanding of Vue's core implementation.
 # more

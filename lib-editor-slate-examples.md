@@ -294,7 +294,7 @@ modified: 2023-02-05T19:03:12.723Z
     - Upload Images and Attachments Plugin for Slate
     - Add beautiful and intuitive images and attachments to Slate with support for paste, drag and drop and `<input type="file">` uploads.
 
-- https://github.com/react-page/react-page
+- https://github.com/react-page/react-page /8.3kStar/MIT/202304/ts/redux
   - https://react-page.github.io/
   - 使用redux作为状态管理
   - 提供了 @react-page/plugins-slate

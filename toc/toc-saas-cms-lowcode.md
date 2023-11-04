@@ -70,10 +70,10 @@ modified: 2023-01-20T21:59:47.792Z
   - Payload allows bringing your own Express server.
   - Directus only supports role-based access control (RBAC). However, Payload supports function-based access control which can be used on either a document or field-by-field basis 
   - dev-xp
-    - 登录界面一直白屏，排查了很久未定位到原因，但firefox可正常打开，chrome体系都是白屏
-      - [Unable to run Directus locally](https://github.com/directus/directus/issues/17786)
-      - You have to set SERVE_APP=true in your .env file in order to run the api in dev mode with the build app.
-      - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
+  - 登录界面一直白屏，排查了很久未定位到原因，但firefox可正常打开，chrome体系都是白屏
+    - [Unable to run Directus locally](https://github.com/directus/directus/issues/17786)
+    - You have to set SERVE_APP=true in your .env file in order to run the api in dev mode with the build app.
+    - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
 
 - vrite /1kStar/AGPLv3/202307/ts
   - https://github.com/vriteio/vrite
@@ -120,7 +120,7 @@ modified: 2023-01-20T21:59:47.792Z
     - since Webiny is a Serverless product, using MySQL or MongoDB is far from recommended, as they don’t have serverless implementations.
 
 - https://github.com/burdy-io/burdy /202202/ts/inactive
-  - Headless CMS built in NodeJS and React. Written in Typescript!
+  - Headless CMS built in NodeJS and React. Written in Typescript
   - Node.js, TypeORM, Express
   - React, Fluent UI
   - Content types - 16 fields types out of the box, and you can easily extend it with your custom
@@ -129,7 +129,8 @@ modified: 2023-01-20T21:59:47.792Z
   - a lightweight content management system (CMS) self-hosted on Cloudflare. 
   - microfeed is built by Listen Notes and is hosted on Cloudflare's Pages, R2, D1, and Zero Trust.
 
-- https://github.com/Thinkmill/keystatic /ts
+- https://github.com/Thinkmill/keystatic /MIT/202311/ts
+  - https://keystatic.com/
   - First-class CMS experience, TypeScript API, Markdown & YAML/JSON based, no DB.
   - Built with DNA from Keystone, connects directly to GitHub and doesn’t mess with your source code. 
   - Conceived(构想；设想) for modern front-end frameworks like Next.js, Remix and Astro, designed to fit into your workflow.
@@ -138,11 +139,25 @@ modified: 2023-01-20T21:59:47.792Z
   - Turn your audience into a business. 
   - Publishing, memberships, subscriptions and newsletters.
 
+- alinea /654Star/MIT/202311/ts
+  - https://github.com/alineacms/alinea
+  - https://alinea.sh/
+  - https://demo.alinea.sh/
+  - an open source headless CMS written in Typescript.
+  - 非wysiwyg，左侧编辑块数据，右侧预览
+  - 依赖dnd-kit、yjs、react-query、tiptap
+  - Content is stored in flat files and committed to your repository
+  - 👉🏻 Content is easily queryable through an in-memory SQLite database
+  - Content is fully typed
+  - Content is available during static site generation and when server side querying. Content is bundled with your code and can be queried with zero network overhead.
+  - Alinea supports custom backends that can be hosted as a simple Node.js process or on serverless runtimes.
+    - Hosting an Alinea backend requires several services such as storing and retrieving drafts, publishing changes and authenticating users
+
 - https://github.com/MrXujiang/lowcode-cms
   - 基于dooring低台, 代码社区的开源cms系统
   - 后端依赖koa-session、koa-views、pug、qiniu
   - 前端依赖antd-pro-layout、umi.v3、braft-editor、turndown
-  - server基于nodejs的服务端, 启动后可直接访问3000 端口, 也就是内容SSR端
+  - server基于nodejs的服务端, 启动后可直接访问3000端口, 也就是内容SSR端
   - admin CMS的管理后 集成了用户管理, 内容审核, 内容发布, 数据统计等模块
 
 - https://github.com/twentyhq/twenty /AGPLv3/ts
@@ -155,24 +170,7 @@ modified: 2023-01-20T21:59:47.792Z
   - https://www.odoo.com/
   - a suite of web based open source business apps.
   - The main Odoo Apps include an Open Source CRM, Website Builder, eCommerce, Warehouse Management, Project Management, Billing & Accounting, Point of Sale, Human Resources, Marketing, Manufacturing, ...
-# discuss
-- ## 
 
-- ## 
-
-- ## [Self-hosted headless cms - WEBINY OR PAYLOAD? : opensource](https://www.reddit.com/r/opensource/comments/zbq7z9/selfhosted_headless_cms_webiny_or_payload/)
-- I'm part of the core team at Payload and I want to get your thoughts on how to show the security standards for Payload.
-  - We do a bunch of best practices that anyone building their own Node/Express app should. 
-  - The auth that we have is built to a higher standard than some of other competitors as it uses http only secure cookies.
-  - If you dig a little you'll find that other headless CMS are not doing this meaning that any javascript code in your project could have access to the user state where it really shouldn't. 
-  - We have other cool things in place that make it easy to turn on user verification, locking accounts, API rate limiting, CSRF and CORS.
-- Regarding security, BCMS provides, out of the box, even in its (generous) free plan, fine-grained control over the API keys and user roles. It offers enterprise-grade permissions features, making it super secure at no cost. Other than the server.
-
-- https://www.reddit.com/r/selfhosted/comments/zbp1z7/exploring_webiny_and_payload_for_a_web_project/
-- Webiny co-founder here. 
-  - If you're looking for a system that's not developer dependant, we are just wrapping up several new features on the Page Builder side of our product, making it much more powerful and easier to use and in Q1/2023 
-  - we'll be launching also the ability to build fully dynamic pages by combining our Page Builder with our Headless CMS. Happy to share more details if you're interested.
-# popular
 - https://github.com/apstanisic/zmaj /ts
   - https://zmaj.vercel.app/
   - a headless CMS with RESTful API for your database and admin panel to easily manage your data
@@ -190,8 +188,67 @@ modified: 2023-01-20T21:59:47.792Z
   - Auto-generated CRUD UIs from your API data structure
   - state management & mutations with React Query
   - Out-of-the-box support for live/real-time applications
-# in-memory
+# in-memory/json-cms
+- TiddlyWiki5 /7.5kStar/BSD/202311/js
+  - https://github.com/Jermolene/TiddlyWiki5
+  - https://tiddlywiki.com/
+  - https://tiddlywiki.com/dev/ Developer documentation
+  - A self-contained JavaScript wiki for the browser, Node.js, AWS Lambda etc.
+  - a non-linear personal web notebook that anyone can use and keep forever
+  - It can be used as a single HTML file in the browser or as a powerful Node.js application. 
+  - Except of a micro-kernel written in JavaScript the whole application consist of a own data-structure called tiddlers and a own markup language called wikiText.
+  - view层基于tid文件
 
+- https://github.com/amelki/cms-json /133Star/MIT/201810/ts
+  - http://tenorcms.com/
+  - A lightweight CMS loading and saving its data from/to a json file
+  - 依赖react-router.v4、react-redux、react-dnd、markdown-it、express
+  - It runs the CMS with a default JSON and Schema files. 
+  - forks
+  - https://github.com/luke-lewandowski/cms-json
+
+- https://github.com/sidharthmenon/simple-json-flat-file-cms /201807/js
+  - https://sidharthmenon.github.io/simple-json-flat-file-cms/
+  - https://sidharthmenon.github.io/simple-json-flat-file-cms/example-website/
+  - Simple and dirty flat file CMS with data saved on JSON file.
+  - No Backend No Database
+  - 依赖vue-markdown，在线编辑后保存会下载json
+
+- https://github.com/mikelinden1/crayon-cms /202309/js
+  - a Frontend CMS written in React + Redux + Reselect that is completely configurable with a JSON files and works with any REST API.
+  - Rename src/config-sample to src/config and configure cms modules.
+
+- https://github.com/chrisdiana/cms.js /3kStar/MIT/202103/js/NoDeps/inactive
+  - CMS.js is a fully Client-side, JavaScript Markdown Site generator in the spirit of Jekyll that uses plain ol' HTML, CSS and JavaScript to generate your website. 
+  - CMS.js is like a file-based CMS. It takes your content, renders Markdown and delivers a complete website in Single-Page App
+  - CMS.js supports two website modes, Github and Server. 
+  - [Server Mode](https://github.com/chrisdiana/cms.js/wiki/Server-Mode)
+    - In Server mode, CMS.js takes advantage of the Server's Directory Indexing feature. 
+    - By allowing indexes, CMS.js sends an AJAX call to your specified fo
+# cloud-cms
+- https://github.com/jadeallencook/gdoc-js /202110/js
+  - http://jadeallencook.github.io/gDoc.js/
+  - Use Google Spreadsheets as your CMS & to save your inputs!
+  - 基于第三方服务的cms可参考基于git的cms
+
+- https://github.com/misterfresh/react-drive-cms /202204/js
+  - http://misterfresh.github.io/react-drive-cms/
+  - Publish articles directly from Google Drive to your blog with React JS
+
+- https://github.com/jansmolders86/github-pages-cms /202002/js/inactive
+  - https://jansmolders86.github.io/github-pages-cms/
+  - A simple CMS for Github Pages
+  - 未实现数据的更新和保存
+  - The content is exported as a base64 encoded .bin file but is in fact, a simple JSON file 
+  - On the client side you can retrieve the data and assign it to elements using, for example; data attributes
+  - convert the initial content.json to a base64 Blob and save that as a bin file. 
+    - do an AJAX call, get the Blob, convert it back to a JSON and substitute or fill html with said content
+  - You can use a Schema JSON file to control the way the CMS is rendering the fields.
+  - The "CMS" grabs the JSON, renders the contents using jdorn's
+    - https://github.com/jdorn/json-editor
+  - https://github.com/jansmolders86/gh-cms-starter-template
+    - https://jansmolders86.github.io/gh-cms-starter-template/
+    - A starter template for a website managed with GH-CMS
 # cms
 - netlify-cms /16kStar/MIT/202204/js
   - https://github.com/netlify/netlify-cms
@@ -234,6 +291,33 @@ modified: 2023-01-20T21:59:47.792Z
   - Hermes uses Golang for the backend and Ember.js for the front end. 
   - It uses a PostgreSQL database for storage and Algolia to power its search capabilities. 
   - It also leverages several Google Workspace services for creating and modifying documents, sending email, etc.
+
+- https://github.com/ganskef/mdwiki /js
+  - CMS/Wiki using Markdown - 100% client side single-page application 
+  - No special software installation or server side processing is required. Just upload the mdwiki.html into the same directory as your Markdown files and you are good to go!
+  - This is a fork of the stable Dynalon MDwiki release branch v0.6.x containing updated dependencies with all the beloved features (like Markdown include which is missed in the master branch). The original repository is unmaintained and archived (read-only).
+  - forks
+  - https://github.com/Dynalon/mdwiki /201810
+  - https://github.com/unmacaque/mdwiki
+    - marked was updated to support more GFM syntax
+  - https://github.com/stephanedenis/mdwiki
 # more
 - https://github.com/FactorJS/factor
   - Factor is an expressive & modular framework for JavaScript applications.
+# discuss
+- ## 
+
+- ## 
+
+- ## [Self-hosted headless cms - WEBINY OR PAYLOAD? : opensource](https://www.reddit.com/r/opensource/comments/zbq7z9/selfhosted_headless_cms_webiny_or_payload/)
+- I'm part of the core team at Payload and I want to get your thoughts on how to show the security standards for Payload.
+  - We do a bunch of best practices that anyone building their own Node/Express app should. 
+  - The auth that we have is built to a higher standard than some of other competitors as it uses http only secure cookies.
+  - If you dig a little you'll find that other headless CMS are not doing this meaning that any javascript code in your project could have access to the user state where it really shouldn't. 
+  - We have other cool things in place that make it easy to turn on user verification, locking accounts, API rate limiting, CSRF and CORS.
+- Regarding security, BCMS provides, out of the box, even in its (generous) free plan, fine-grained control over the API keys and user roles. It offers enterprise-grade permissions features, making it super secure at no cost. Other than the server.
+
+- https://www.reddit.com/r/selfhosted/comments/zbp1z7/exploring_webiny_and_payload_for_a_web_project/
+- Webiny co-founder here. 
+  - If you're looking for a system that's not developer dependant, we are just wrapping up several new features on the Page Builder side of our product, making it much more powerful and easier to use and in Q1/2023 
+  - we'll be launching also the ability to build fully dynamic pages by combining our Page Builder with our Headless CMS. Happy to share more details if you're interested.

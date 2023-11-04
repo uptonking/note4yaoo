@@ -15,7 +15,9 @@ modified: 2021-09-10T18:35:00.465Z
 
 - ## 
 
-- ## 
+- ## http://roadmap.sh architecture
+- https://twitter.com/kamrify/status/1720598139491516679
+  - 手画草图的效果，但可通过设计字体实现
 
 - ## See why the modern #GIS professional is turning to @CARTO , a faster & easier to learn platform, to build map-centric apps & carry out #spatial analytics
 - https://twitter.com/CARTO/status/1436234753833934849

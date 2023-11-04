@@ -108,7 +108,6 @@ modified: 2022-11-03T04:14:11.987Z
   - All persistent data are stored in the FoundationDB Key-Value Store.
   - The Problem with Document Layer it implements MongoDB API v 3.0.0 and has not been significantly updated for years.
 
-
 - https://github.com/usmakestwo/githubDB /201811/js
   - A Lightweight Cloud based JSON Database with a MongoDB like API for Node.
   - You will never know that you are interacting with a Github
@@ -157,6 +156,16 @@ modified: 2022-11-03T04:14:11.987Z
   - turns your RDBMS into a MongoDB-compatible server, supporting the MongoDB query API and MongoDB's replication, but storing your data into a reliable and trusted ACID database. 
   - ToroDB currently supports PostgreSQL as a backend, but others will be added in the future.
 # db-document-json
+- https://github.com/Alex-Werner/SBTree /MIT/202310/js
+  - https://alex-werner.github.io/SBTree/
+  - Fast document store using B+ Tree for fields. 
+  - Adapters support for In-Memory and FileSystem
+  - This library's goal is to provide a way to quickly store document-based data in-memory or on the filesystem.
+  - It uses a field-specific indexing system relying on B+Tree structure.
+  - This allow to handle a lot of data, and have them indexed without the need to keep the whole dataset in-memory.
+  - Most of the databases uses B-Tree (MongoDB) or B+Tree (CouchDB, InnoDB, MariaDB, MySQL).
+  - By default. Everything except specifically excluded field are indexed. Nested object are also indexed. Optional support for uniques key provided.
+
 - redux-database /18Star/MIT/202005/ts/NoDeps
   - https://github.com/nerdgeschoss/redux-database
   - https://nerdgeschoss.github.io/redux-database
@@ -264,7 +273,6 @@ modified: 2022-11-03T04:14:11.987Z
   - a lightweight embedded document database that implements a commonly-used subset of the MongoDB/PyMongo interface
   - instead of being a server, Mongita is a self-contained Python library. 
   - Mongita can be configured to store its documents either on disk or in memory.
-  - 
 
 - https://github.com/danstocker-legacy/jorder /201507/js/inactive
   - Jorder makes working with in-memory table data fast and simple. 
@@ -291,7 +299,7 @@ modified: 2022-11-03T04:14:11.987Z
   - It's totally asynchronous. No synchronous function is called in it's code.
   - It uses `when` library for async calls. Every async function returns a `Promise`.
   - Uses `final-fs` library for file system manipulation.
-# non-js-json-db
+
 - https://github.com/Softmotions/ejdb /c
   - Embeddable JSON Database engine C library. 
   - Simple XPath like query language (JQL).

@@ -35,10 +35,15 @@ modified: 2022-11-11T11:04:29.007Z
   - Flame is self-hosted startpage for your server. inspired (heavily) by SUI.
   - Easily manage your apps and bookmarks with built-in editors.
 
-- https://github.com/kormyen/memex
+- https://github.com/kormyen/memex /202210/js
   - https://kormyen.github.io/memex/
-  - Simple bookmarks and notes
+  - Simple bookmarks and notes. Memex is a personal knowledge base.
   - 卡片形式
+
+- https://github.com/WorldBrain/Memex /4.2kStar/MIT/202311/ts
+  - https://worldbrain.io/
+  - Browser extension to curate, annotate, and discuss the most valuable content and ideas on the web
+  - Its name and functionalities are heavily inspired by Vannevar Bush's vision of a Memex.
 
 - https://github.com/zotero/zotero
   - a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.

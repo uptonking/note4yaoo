@@ -36,8 +36,11 @@ modified: 2023-01-09T11:03:32.533Z
   - A .docx file writer with Rust/WebAssembly.
 # extension-superset
 
-# utils
+# converter
 
+- https://github.com/evidenceprime/html-docx-js /201605/js
+  - small library that is capable of converting HTML documents to DOCX format 
+# utils
 - https://github.com/axa-group/Parsr
   - a minimal-footprint document (image, pdf, docx, eml) cleaning, parsing and extraction toolchain which generates readily available, organized and usable data in JSON, Markdown (MD), CSV/Pandas DF or TXT formats.
 

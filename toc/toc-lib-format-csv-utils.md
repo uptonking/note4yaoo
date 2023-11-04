@@ -33,6 +33,13 @@ modified: 2022-11-06T15:46:05.676Z
   - react-dropzone for file upload
   - @use-gesture/react for drag-and-drop
 
+- https://github.com/Bunlong/react-papaparse /MIT/202310/ts
+  - https://react-papaparse.js.org/
+  - https://react-papaparse.js.org/demo
+  - the fastest in-browser CSV (or delimited text) parser for React
+  - Stream large files (even via HTTP)
+  - One of the only parsers that correctly handles line-breaks and quotations
+
 - https://github.com/mirite/csv-magic /ts
   - https://csvmagic.cloud/
   - CSV Magic is a spreadsheet editor that allows for sorting, filtering, and other large scale manipulations within one or multiple CSV files. 

@@ -21,10 +21,10 @@ modified: 2022-11-09T11:53:13.093Z
   - zettlr
   - mermaid
 # markdown-editor
-- https://github.com/Ben-love-zy/web-editor-markdown
-  - 基于web端的Markdown编辑器，支持协同编辑扩展和方便的插件扩展
-  - 不依赖任何第三方框架
-  - 类似Typora的Markdown编辑器，提供源码模式、双屏渲染模式、实时编辑模式和只读模式四种渲染模式
+- web-editor-markdown /90Star/MIT/202211/ts
+  - https://github.com/Ben-love-zy/web-editor-markdown
+  - 基于 Web 浏览器，即时渲染的 Markdown 编辑器。它基于 TypeScript 和 vanillajs 打造，并且不依赖任何第三方框架，对中文支持友好
+  - 提供源码模式、双屏渲染模式、实时编辑模式和只读模式四种渲染模式。
   - 如果有需要，它的底层同时也支持了协同编辑的能力，提供了原子操作 Operation 用于扩展协同编辑。
 
 - react-universal-markdown /202107/js/inactive

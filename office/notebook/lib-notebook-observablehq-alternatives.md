@@ -44,7 +44,7 @@ modified: 2021-05-14T14:46:37.026Z
 
 ## jupyter-notebook-extensions
 
-- JupyterLite
+- JupyterLite /3.4kStar/bsd/202310/python/ts/pyodide/wasm
   - https://github.com/jupyterlite/jupyterlite
   - https://jupyterlite.rtfd.io/en/latest/try/lab
   - A full JupyterLab distribution running in the browser

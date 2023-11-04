@@ -59,6 +59,9 @@ modified: 2023-01-09T11:04:13.958Z
   - xlsx，是sheetjs出的，这个功能最广，支持读取xls格式。但是这个库其实是个社区版，阉割了加解密功能
   - [推荐一个新的excel处理库，支持xlsx文件的解密功能](https://cnodejs.org/topic/647e911256d983d3ff9d9cfa)
 
+- https://github.com/dtjohnson/xlsx-populate /202003/js
+  - Excel XLSX parser/generator written in JavaScript with Node.js and browser support, jQuery/d3-style method chaining, encryption, and a focus on keeping existing workbook features and styles in tact.
+
 - https://github.com/vweevers/spreadsheet-stream /js
   - Semi-streaming XLS(X) / ODS / QPW (and more) parser.
   - "Semi" because these spreadsheet formats are not streamable so the whole thing is buffered in memory. Same as excel-stream but faster because there's no filesystem IO or child process.

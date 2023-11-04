@@ -308,8 +308,7 @@ modified: 2023-02-07T17:38:05.336Z
   - Kanban project management software
   - https://github.com/aljawaid/KanboardCSS
 
-- https://github.com/kiswa/TaskBoard /php
-  - /1.1kStar/MIT/202009
+- https://github.com/kiswa/TaskBoard /1.1kStar/MIT/202009/php
   - A Kanban-inspired app for keeping track of things that need to get done
 
 - https://github.com/ParabolInc/parabol /ts

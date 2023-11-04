@@ -43,7 +43,7 @@ modified: 2021-09-04T16:35:14.449Z
 
 - https://github.com/williamngan/pts
   - A library for visualization and creative-coding
-- https://github.com/mattdesl/canvas-sketch
+- https://github.com/mattdesl/canvas-sketch /js
   - a loose collection of tools, modules and resources for creating generative art in JavaScript and the browser.
 - https://github.com/winkerVSbecks/sketchbook
   - experiments in generative art using canvas-sketch

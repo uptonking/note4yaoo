@@ -23,6 +23,10 @@ modified: 2023-04-05T19:35:14.347Z
     - https://github.com/whatwg/fs
   - I also built native-file-system-adapter so you can have it in all Browsers, Deno, and NodeJS with different storages
     - https://github.com/jimmywarting/native-file-system-adapter
+
+- https://github.com/streamich/memfs /apache2/ts
+  - JavaScript file system utilities for Node.js and browser.
+  - This demo shows how to run isomorphic-git on memfs in-memory file system.
 # file-upload
 - https://github.com/johndatserakis/file-upload-with-preview /ts/框架无关
   - Simple file-upload utility that shows a preview of the uploaded image. 
@@ -94,7 +98,7 @@ modified: 2023-04-05T19:35:14.347Z
 - https://github.com/nmeibergen/bare-sqlite-opfs
   - This is a bare minimum package to run Sqlite with OPFS in a worker.
 
-- https://github.com/jvilk/BrowserFS /202001/ts
+- https://github.com/jvilk/BrowserFS /MIT/202309/ts
   - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
   - 支持 memory/localStorage/indexeddb/dropbox/Emscripten file systems
   - [File System Access Backend by DustinBrett](https://github.com/jvilk/BrowserFS/pull/321)
@@ -286,9 +290,13 @@ modified: 2023-04-05T19:35:14.347Z
   - Detect the file type of a Buffer/Uint8Array/ArrayBuffer
   - file type is detected by checking the magic number of the buffer.
   - This package is for detecting binary-based file formats, not text-based formats like .txt, .csv, .svg, etc.
-# archive/zip/rar
+# archive/encoding/zip/rar
 - https://github.com/SheetJS/cfb-editor
   - Archive (ZIP/CFB/MAD) Editor
+
+- https://github.com/cthackers/adm-zip /202212/js
+  - A Javascript implementation of zip for nodejs. 
+  - Allows user to create or extract zip files both in memory or to/from disk
 
 ## formats
 

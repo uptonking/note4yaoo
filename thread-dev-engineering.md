@@ -42,6 +42,17 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Twitter现在的代码行数减少了90%
+- https://twitter.com/skywind3000/status/1720778734922342786
+- 看他们几篇文章，主要是砍掉了两个最近两年臭大街的东西：微服务+云服务，微服务最大的问题就是过度设计，明明一个进程里调用两个函数就能直接解决的问题，偏要做成 N 个接口互相调用；明明一件事情顺着步骤就搞完了，非要弄个管道，分成多个服务多个异步状态来处理，大多数除了让代码量膨胀外别无他用
+  - 当然，可能也砍掉了很多内部不能盈利的子项目，子功能。
+
+- 还有一个问题就是滥用异步方法。异步有异步的好处，但不是所有请求都适合使用异步方法，有的调用就应该同步返回一个明确的执行结果，但是很多接口全部做成了异步的，反而引起很多问题
+
 - ## This is why we at Infinite Red have team lead as a fluid position (we call it “primary”). 
 - https://twitter.com/jamonholmgren/status/1719588874715042200
   - That is, someone can be a team lead with someone else working with them, and then in the next project their roles can flip. 
@@ -65,10 +76,10 @@ modified: 2021-01-21T17:52:13.333Z
   - Update: Added picocss.
 
 - My preferred development order has always been:
-  01.    Structure for everything: HTML, content, ARIA, some JS
-  02.    Style a component: CSS, interaction states, transitions/animations
-  03.    Then make the component functional with JavaScript
-  04.    Repeat steps 2 and 3 for each component.
+  01.     Structure for everything: HTML, content, ARIA, some JS
+  02.     Style a component: CSS, interaction states, transitions/animations
+  03.     Then make the component functional with JavaScript
+  04.     Repeat steps 2 and 3 for each component.
 
 - ## uid 不需要可读性，如果需要可读性可以添加一个新的 id 属性。
 - https://twitter.com/ThaddeusJiang/status/1694915724354142678

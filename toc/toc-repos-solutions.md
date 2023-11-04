@@ -20,7 +20,7 @@ modified: 2020-12-12T19:32:36.255Z
   - It scrapes, stores and exports data.
   - At its core, an ordered list of plugins is executed against each to be scraped URL.
 
-- https://github.com/openzim/mwoffliner /ts
+- https://github.com/openzim/mwoffliner /GPLv3/ts
   - Mediawiki scraper: all your wiki articles in one highly compressed ZIM file
   - 依赖linux/mac环境、redis、libzim
   - MWoffliner is a tool for making a local offline HTML snapshot of any online MediaWiki instance.

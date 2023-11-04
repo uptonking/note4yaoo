@@ -18,7 +18,12 @@ modified: 2021-07-28T19:22:07.339Z
 
 - ## 
 
-- ## 
+- ## Rendering lots of SVGs in React Native (especially Android) is surprisingly terrible for performance. You're better off with PNGs
+- https://twitter.com/kadikraman/status/1720502412077580603
+- This is a known issue, due to how android handles rendering svg. Each has to be rendered as a component, whereas ios offers native svg handling last I knew. The solution is to use font icons for svgs and pngs for anything over 50x50
+- I found out this the hard way, thankfully  plain old views worked really well for my use case
+- This seem more like a react native problem. Works fine in native android
+- I’ve had this feeling as well (without digging deeper). Would be interesting to compare rendering performance with SVGs rendered through react-native-skia
 
 - ## Your icons should be SVG sprites instead of JSX
 - https://twitter.com/jacobmparis/status/1682904429366857732

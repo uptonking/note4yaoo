@@ -500,6 +500,13 @@ modified: 2022-08-21T10:02:27.788Z
   - Performant (yet not virtualized)
   - 支持async cell data
   - 输入数据的类型是二维数组 matrix
+
+- websheets /274Star/MIT/202102/js/inactive
+  - https://github.com/WebSheets/websheets
+  - https://websheets.github.io/websheets/demo/
+  - A ready-to-use component for spreadsheets in the browser
+  - https://github.com/WebSheets/websheets-core /js
+    - spreadsheet engine in JS for the browser and Node.
 # excel-like-apps
 - https://github.com/infinite-table/infinite-react
   - https://infinite-table.com/
@@ -1102,7 +1109,7 @@ modified: 2022-08-21T10:02:27.788Z
   - React components for rendering large scrollable data
 - https://github.com/qimus/semantic-ui-grid
   - Extended grid for data
-- https://github.com/GigaTables/reactables
+- https://github.com/GigaTables/reactables /201906/js
   - a ReactJS plug-in to help web-developers process table-data
 
 ## table-tr-td-more

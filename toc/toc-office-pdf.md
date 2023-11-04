@@ -21,7 +21,7 @@ modified: 2021-01-04T17:26:43.784Z
   - PDF.js is a Portable Document Format (PDF) viewer that is built with HTML5.
   - Our goal is to create a general-purpose, web standards-based platform for parsing and rendering PDFs.
 
-- jsPDF /25.7kStar/MIT/202202/js
+- jsPDF /25.7kStar/MIT/202202/js/inactive
   - https://github.com/parallax/jsPDF
   - https://parall.ax/products/jspdf
   - A library to generate PDFs in JavaScript.
@@ -75,9 +75,13 @@ modified: 2021-01-04T17:26:43.784Z
   - https://react-pdf-repl.vercel.app/
   - REPL for `@react-pdf/renderer` with interactive debugger
 
-- https://github.com/bpampuch/pdfmake
+- https://github.com/bpampuch/pdfmake /11kStar/MIT/202302/js
   - http://pdfmake.org/
+  - https://pdfmake.github.io/docs/
   - PDF document generation library for server-side and client-side in pure JavaScript.
+  - images and vector graphics
+  - tables and columns
+  - page headers and footers
 
 - https://github.com/Hopding/pdf-lib /202111/ts/inactive
   - Create and modify PDF documents in any JavaScript environment.
@@ -137,6 +141,10 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/betterwrite/pdfeasy /ts
   - JavaScript Client/Server Side PDF-Generator based in PDFKit
   - Plugins Ready!
+
+- https://github.com/eKoopmans/html2pdf.js /3.6kStar/MIT/202109/js
+  - Client-side HTML-to-PDF rendering using pure JS.
+  - html2pdf.js converts any webpage or element into a printable PDF entirely client-side using `html2canvas` and `jsPDF`.
 
 - https://github.com/PejmanNik/jikji /ts
   - report generator with React and NodeJS

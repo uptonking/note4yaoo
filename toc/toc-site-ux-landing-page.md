@@ -122,6 +122,13 @@ modified: 2020-12-29T11:27:41.474Z
 # discuss-landing-ux
 - ## 
 
+- ## 
+
+- ## 
+
+- ## One of the coolest & most impactful landing page hero sections I've ever seen → http://cycle.app
+- https://twitter.com/steventey/status/1720533213729444181
+
 - ## logo文字上动态顺序闪光斜纹
 - https://twitter.com/DanielKanem/status/1717125649083605044
 

@@ -55,10 +55,13 @@ modified: 2023-09-19T07:26:04.103Z
 
 ## epub
 
-- https://github.com/futurepress/epub.js /js
-  - http://futurepress.org/
+- https://github.com/futurepress/epub.js /bsd/202305/js
   - a JavaScript library for rendering ePub documents in the browser, across many devices.
   - provides an interface for common ebook functions (such as rendering, persistence and pagination) without the need to develop a dedicated application or plugin
+  - https://github.com/futurepress/epubjs-reader /MIT/201805/js
+    - https://futurepress.github.io/epubjs-reader/
+    - You can change the ePub it opens by passing a link to bookPath in the url: ?bookPath=https://s3.amazonaws.com/epubjs/books/alice.epub
+  - https://github.com/futurepress/epubjs-rn /201912/js
 
 - https://github.com/Sigil-Ebook/Sigil /GPLv3/cpp
   - http://sigil-ebook.com/
@@ -129,4 +132,9 @@ modified: 2023-09-19T07:26:04.103Z
   - An ebook generator from asciidoc to html/pdf/epub/mobi
 # solutions
 
+# wikidata
+- https://github.com/inventaire/inventaire /js
+  - https://inventaire.io/
+  - Its a collaborative resources mapper project, while yet only focused on exploring books mapping with wikidata and ISBNs
+  - https://github.com/inventaire/inventaire-client
 # more

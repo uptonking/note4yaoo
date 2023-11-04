@@ -205,6 +205,12 @@ that commit position, thus providing "read your own writes" semantics.
 # discuss-cdc/change-data-capture
 - ## 
 
+- ## 
+
+- ## Seven Ways to Put CDC to Work
+- https://twitter.com/gunnarmorling/status/1720468080281702888
+  - [Seven Ways to Put CDC to Work](https://www.decodable.co/blog/seven-ways-to-put-cdc-to-work)
+
 - ## [Why NoSQL | Hacker News_202110](https://news.ycombinator.com/item?id=28767996)
 - > Use Debezium or similar to broadcast entity changes to a Kafka topic keyed on entity id. If you want to retain all changes (e.g., for event streaming), then use an appropriate retention strategy. If you want to retain only the latest state, use log compaction - it will retain the latest record with a given key.
 - Yes, now keep tugging(沿某方向拉或拖) on the thread of that thought. 

@@ -93,7 +93,14 @@ modified: 2023-09-25T09:00:49.722Z
 
 - ## 
 
-- ## 
+- ## this is why I believe postgres' jsonb types were a mistake. 
+- https://twitter.com/meijer_s/status/1720368213899297235
+- JSONB is the perfect solution for unstructured data. It removes 80% of the use-cases for Mongo.
+  - But the query syntax for Mongo is so much better than the json queries of postgres. Also, I love Mongo features like storing javascript functions, TTL indexes, aggregation pipelines, and change streams.
+-  I tend to use jsonb for stuff I don't have common access patterns for, then refactor as I discover what columns I really need. For most of those other features, I use Postgres triggers and pg_cron. They have somewhat worse DX, but they're more powerful primitives and they're easier to version control.
+- You shouldn't be querying into json generally. The point is that json blobs + indexed columns = mongo - one layer of abstraction.
+  - Performance reasons. You never want to have to index on a json field. You can use queries for transformation, and indeed you use json over text for transformation and validation reasons.
+- Performance is fine. JSONB can be indexed and it’s fast. MartenDB is a document database for .net using PostgreSQL and it’s fast. Performance is not a reason.
 
 - ## This is a wry(挖苦性幽默的, 讽刺性幽默的) comment on every single CRM's API basically being a massive entity-attribute-value database, 
 - https://twitter.com/rgarner/status/1518918647003201539

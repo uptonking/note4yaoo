@@ -44,7 +44,7 @@ modified: 2023-02-08T10:47:32.359Z
 - https://github.com/kiwix/kiwix-js-windows
   - Kiwix JS Offline Browser for Windows and Linux, packaged as PWA, Electron, NWJS and UWP
 
-- https://github.com/openzim/mwoffliner /ts
+- https://github.com/openzim/mwoffliner /GPLv3/ts
   - Mediawiki scraper: all your wiki articles in one highly compressed ZIM file
   - 依赖linux/mac环境、redis、libzim
   - MWoffliner is a tool for making a local offline HTML snapshot of any online MediaWiki instance.

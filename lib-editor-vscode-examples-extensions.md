@@ -59,6 +59,10 @@ modified: 2023-01-21T19:02:58.833Z
   - Modifies the VSCode toolbar and context menu to include a few useful commands 
 # utils
 
+# vscode-browser
+
+- https://github.com/antfu/vscode-browse-lite /ts
+  - Embedded browser in VS Code
 # extensions
 
 # more

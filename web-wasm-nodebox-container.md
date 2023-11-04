@@ -13,6 +13,10 @@ modified: 2023-04-11T12:34:16.725Z
   - 让原生程序在浏览器、移动端执行
   - 让浏览器中的文件系统更方便
 # examples
+- https://github.com/Sandpack/nodebox-runtime
+  - https://sandpack.codesandbox.io/docs/advanced-usage/nodebox
+  - [Docs don't explain how to self host a Nodebox instance?](https://github.com/Sandpack/nodebox-runtime/issues/48)
+
 - browsix /3.1kStar/MIT/201904/ts/inactive
   - https://github.com/plasma-umass/browsix
   - Browsix is a Unix-like operating system for the browser.

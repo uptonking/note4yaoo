@@ -76,6 +76,11 @@ modified: 2022-11-14T15:12:02.783Z
   - Simple PWA news app built with react
   - use api: https://open-platform.theguardian.com/access/
 # pwa-examples
+- https://github.com/GoogleChromeLabs/squoosh /apache2/202310/ts
+  - https://squoosh.app/
+  - Make images smaller using best-in-class codecs, right in the browser.
+  - Squoosh does not send your image to a server. All image compression processes locally.
+
 - https://github.com/soup-bowl/whatsth.is /202208/ts
   - https://whatsth.is/
   - React-based progressive web app proof-of-concept designed to provide a toolbox of assorted helpful development tools.

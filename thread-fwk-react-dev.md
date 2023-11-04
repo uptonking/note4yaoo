@@ -94,7 +94,9 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
-- ## 
+- ## Are there specific reasons why there is no built-in primitive for deep reactivity in Svelte?
+- https://twitter.com/_mql/status/1720439445382426982
+- Rich(Creator) is philosophically against nested mutability. You will have to rely on the community to help you.
 
 - ## Inject HTML data attributes with query-string / search params
 - https://twitter.com/docusaurus/status/1719398440239792384

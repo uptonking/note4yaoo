@@ -324,8 +324,19 @@ modified: 2022-11-25T15:50:48.226Z
     - and the tree's structure is chunked using randomness derived from the tail of each hash. 
     - This produces a self-balancing and well sorted structure on-disc.
 
-- https://github.com/serby/save /js
+- https://github.com/serby/save /143Star/ISC/202209/js
   - A simple CRUD based persistence abstraction for storing objects to any backend data store. eg. Memory, MongoDB, Redis, CouchDB, Postgres, Punch Card etc.
+
+- https://codeberg.org/small-tech/jsdb /202311/js/NoDeps
+  - A zero-dependency, transparent, in-memory, streaming write-on-update JavaScript database for the Small Web that persists to a JavaScript transaction log.
+  - A small and simple data layer for basic persistence and querying.
+  - For Node.js: will not work in the browser
+  - all data is kept in memory and, without tweaks, cannot exceed 1.4GB in size(nodejs limit)
+  - Streaming writes on update: writes are streamed to disk to an append-only transaction log as JavaScript statements and are both quick (in the single-digit milliseconds region on a development laptop with an SSD drive) and as safe as we can make them (synchronous at the kernel level).
+  - No schema, no migrations: again, this is meant to be a very simple persistence, query, and observation layer for local server-side data
+  - JSDB tables are written into JavaScript Data Format (JSDF) files. 
+    - A JSDF file is just es6 module 
+    - When you load in a JSDB table, JSDB will, by default, compact the JSDF file.
 
 - https://github.com/endpointservices/mps3 /ts
   - Infraless Database over any s3 storage API.
@@ -351,13 +362,17 @@ modified: 2022-11-25T15:50:48.226Z
   - used-by
     - json-server
 
-- https://github.com/sius/fakerdb /202005/js
-  - Generate an unlimited stream of JSON schema instances using json-schema-faker, faker, chance and insert the data into a supported database, e.g.: nedb, mongodb, postgres, mssql.
-
-- https://github.com/hexojs/warehouse /188Star/MIT/202211/ts
+- https://github.com/hexojs/warehouse /188Star/MIT/202309/ts/hexo
   - https://hexojs.github.io/warehouse/
   - A JSON database with Models, Schemas, and a flexible querying interface. 
   - It powers the wildly successful static site generator Hexo.
+  - the major performance overhead of Hexo is not reading or writing db.json, but processing the cross-refs, e.g. finding posts with a tag or tags of a post.
+  - [Why does hexo use this database implementation?](https://github.com/hexojs/warehouse/issues/13)
+    - One idea I can think of is that you can index all the assets and get access to it for use synchronously
+    - nedb doesn't have schemas
+
+- https://github.com/sius/fakerdb /202005/js
+  - Generate an unlimited stream of JSON schema instances using json-schema-faker, faker, chance and insert the data into a supported database, e.g.: nedb, mongodb, postgres, mssql.
 
 - https://github.com/crisdosyago/sirdb /202203/js
   - A simple database on the file system.

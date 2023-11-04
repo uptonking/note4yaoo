@@ -92,7 +92,7 @@ $$('[contenteditable]')
   - [ ] 方便接入已有的外部数据源
   - [x] 内存数据: nedb, blinkdb
   - [x] 流式数据: linvodb, tingodb; 可参考kappa架构
-  - 支持内存和持久化: tupledb, tinybase
+  - 支持内存和持久化: tupledb, tinybase, tiddlywiki
 - db-sync/collab
   - db+crdt的参考: piratedb, evolu, triplitdb, mithic
     - 不必执着于基于indexeddb的实现，只是作为一种持久化的方式
@@ -119,6 +119,7 @@ $$('[contenteditable]')
   - tanstack-table server-side row model
   - abstract-level, localforage
   - tupledb, tinybase
+  - tiddlywiki
 
 - collab-sync, partial-sync
   - string-crdt: ? list-crdt

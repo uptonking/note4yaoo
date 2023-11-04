@@ -77,6 +77,12 @@ modified: 2021-04-30T20:14:17.669Z
   - Minimalistic javascript presentation-library. 
   - Zero dependencies. 
   - Can be used in combination with frameworks like Bootstrap, Materialize, Vue etc.
+
+# markdown-slide
+
+- https://github.com/gnab/remark /MIT/202306/js
+  - http://remarkjs.com/
+  - A simple, in-browser, markdown-driven slideshow tool 
 # examples
 
 # more

@@ -64,7 +64,7 @@ modified: 2023-01-01T13:24:35.994Z
   - [whether this library supports reading from IndexedDb instead of memory](https://github.com/nextapps-de/flexsearch/issues/289)
     - This is actually not supported(202210). Supporting interfaces may be provided in future. Since the "flat index" instance hold the whole data structure of one index, it has a good chance to make interfaces for every database.
 
-- orama/lyra /5.1kStar/apache2/202212/ts
+- orama/lyra /5.1kStar/apache2/202311/ts
   - https://github.com/oramasearch/orama
   - https://github.com/LyraSearch/lyra
   - https://docs.lyrasearch.io/

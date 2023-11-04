@@ -148,8 +148,24 @@ modified: 2023-04-04T22:39:45.442Z
   - https://labelflow.ai/
   - an open platform for image labeling. 
 # codec
-- https://github.com/GoogleChromeLabs/squoosh /ts
+- https://github.com/GoogleChromeLabs/squoosh /apache2/202310/ts
+  - https://squoosh.app/
+  - Make images smaller using best-in-class codecs, right in the browser.
   - Squoosh does not send your image to a server. All image compression processes locally.
+
+- https://github.com/nodeca/pica /202201/js
+  - http://nodeca.github.io/pica/demo/
+  - Resize image in browser with high quality and high speed
+
+- https://github.com/Donaldcwl/browser-image-compression /202303/js
+  - Javascript module to be run in the web browser for image compression.
+
+- https://github.com/imgix/imgix.js /202310/js
+  - https://imgix.com/
+  - a dependency-free JavaScript library for the browser that allows for easy integration of imgix into websites.
+
+- https://github.com/MattKetmo/darkroomjs /201512/js
+  - Extensible image editing tool in your browser
 # gif/animated
 - https://github.com/yahoo/gifshot
   - JavaScript library that can create animated GIFs from media streams, videos, or images.

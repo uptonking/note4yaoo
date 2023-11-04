@@ -24,15 +24,18 @@ modified: 2021-01-08T17:14:34.841Z
 
 - ## 
 
-- ## 
+- ## morphing tip prototype with View Transitions
+- https://twitter.com/argyleink/status/1720550871300493541
+  ✅ fixed position tip
+  ✅ animates display: none
+  ✅ just set innerText and left/top
+  - https://codepen.io/argyleink/pen/GRzNZNe
+  - i mouse into squares causing a tip to move to the center with some text. the tip morphs and moves to position!
 
 - ## Scroll-driven animations coming in Safari
 - https://twitter.com/anatudor/status/1719012021398589824
   - [scroll-driven animations – Bram.us](https://www.bram.us/tag/scroll-driven-animations/)
 - Most of those fall deeply into the "just because you can doesn't mean you should" territory. Otoh the flip book example is divine.
-
-
-
 
 - ## It’s actually weird to me that the View Transitions API accepts an async function. 
 - https://twitter.com/mattgperry/status/1710630573339787561
