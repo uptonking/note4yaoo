@@ -12,6 +12,8 @@ modified: 2023-10-29T02:23:48.086Z
 # discuss-stars
 - ## 
 
+- ## 
+
 - ## [Store incremental data for views · pouchdb/pouchdb_201208](https://github.com/pouchdb/pouchdb/issues/99)
 
 - [Persisted indexes for map/reduce_201403](https://github.com/pouchdb/pouchdb/issues/1658)
@@ -216,6 +218,52 @@ modified: 2023-10-29T02:23:48.086Z
 
 - PouchDB is the database, you never need to be online to use it and it isnt queuing writes, its doing them locally. 
   - The ability to sync is to let you use the same data across various devices.
+# discuss-search
+- ## 
+
+- ## 
+
+- ## 
+# discuss-mvcc-concurrency
+- ## 
+
+- ## 
+
+- ## [Possible to write local doc without knowing rev?_201803](https://github.com/pouchdb/pouchdb/issues/7139)
+- local docs are a bit weird, we don't do all the MVCC stuff for them
+
+- ## [use a bloomfilter for idb_201502](https://github.com/pouchdb/pouchdb/pull/3485)
+- _local docs do not have MVCC and are not replicated around a
+cluster. If you write two copies simultaneously then I think it will be
+last write wins (which might not be the same as last request wins). This
+actually might cause some strange behaviour in a cluster (a discussion for
+#couchdb-dev) but my understanding is that's how it's worked in Cloudant
+forever...
+
+- ## [Read/Write Consistency_201401](https://github.com/pouchdb/pouchdb/issues/1249)
+- My concurrency issue was that we read data and write it from/to leveljs. there is no transaction around that or mvcc mechanism so I dont know anyway in which it cant be broken, ie 2 writes, both read the same metadata, last write overwrites first's data
+  - to be honest I am really surprised it hasnt come up, so its possible I am missing something, but I just assumed the way we write our tests didnt expose it. Our Indexeddb (or websql) implementation does not have this issue
+
+- ## [Create conflicting documents?_201407](https://github.com/pouchdb/pouchdb/issues/2486)
+- We do not support all_or_nothing, and it's definitely going away in Couch 2.0, so it's not what you want.
+  - If you are making frequent changes to a document, you will want to upsert instead. I.e. you keep trying to PUT, catching 409s and repeating the GET/PUT as necessary.
+  - Once thing you should know about this, though, is that if you are generating a new document for every keystroke, your history is going to grow very quickly unless you turn on auto-compaction. And auto-compaction will slow down your database, 💡 so as an alternative, you may just want to **use `setInterval` to occasionally update, rather than updating for every single keystroke**.
+
+- ## 🔀 [Transaction control feature request_201311](https://github.com/pouchdb/pouchdb/issues/1013)
+  - Since Pouch can use a single thread and the underlying database supports transaction control I think it might be feasible.
+
+- Not all of our underlying storage protocols support transactions, we also lean towards not implementing things that CouchDB cant support so we get a symmetrical API
+  - I would definitely love transaction support, but I feel like this may be a while away
+
+- CouchDB's all_or_nothing, if its not already taken out, most definitely will be with the bigcouch merge
+
+- This cant be implemented
+
+- ## 🔀 [Transaction control_201310](https://github.com/pouchdb/pouchdb/issues/954)
+- Couchdb doesn't support transactions and it's architecture prevents this. but I assume there's no reason pouchdb can't support them. Though there are workarounds it would be amazing if pouch could support them.
+  - PouchDB is supposed to be backend independent, so the backend may be CouchDB (or indexedDB) and the users should not have to worry about the difference, introducing this would break that assumption.
+  - I would like to see alternative apis that do support things like transactions, but it would be too big a change from what PouchDB already does
+
 # discuss-auth
 - ## 
 
@@ -232,7 +280,7 @@ modified: 2023-10-29T02:23:48.086Z
 
 - ## 
 
-- ## 
+- ## [Level.js concerns](https://github.com/pouchdb/pouchdb/issues/1678)
 
 - ## I am actually using @pouchdb instead of the native @CouchDB . Which they are similar in many, there are differences that can throw one off. In my case, PouchDB's _sum can't do js object.
 - https://twitter.com/yuankuan_/status/1316634065747943424

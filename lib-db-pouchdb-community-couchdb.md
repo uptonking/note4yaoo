@@ -24,9 +24,28 @@ modified: 2023-10-29T02:23:35.064Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🤔 [Does multiple versions of couchDB keeps redundant data? - Stack Overflow](https://stackoverflow.com/questions/41510495/does-multiple-versions-of-couchdb-keeps-redundant-data)
+- CouchDB holds multiple complete revisions of documents, it does not store incremental changes. 
+  - The internals of CouchDB use an append-only data structure, so each new revision is added to the database file.
+  - In addition, CouchDB uses MVCC (multi-version concurrency control) which prevents the need for locks while allowing concurrent writers. 
+- 👉🏻 In short, you will have duplicates in your database each time you modify a document. 
+  - Thus, modifying the same document many times can lead to an inflated(膨胀的) database file. 
+  - In addition, very large documents with fewer modifications also have this same effect. For each document, only the latest version is considered "active" by the database, but old revisions may still be around. 
+- This might sound inefficient and wasteful, but CouchDB has you covered with a feature called compaction. 
+  - This process removes all revisions (except for the most recent) from the database file altogether. 
+  - Prior to CouchDB 2.0, this was generally invoked manually by an admin, but now it is much more automated.
+- One common misconception about CouchDB is that the multiple versions can be used like a version-control system (eg: git, svn), so you can always keep some sort of historical record of your database. 
+  - However, this is completely false, as MVCC is purely for concurrency control. 
+  - As stated before, compaction removes the old revisions, so you should only depend on the most recent revision existing in your database at any time.
 
-- ## 
+- ## [Can I do transactions and locks in CouchDB? - Stack Overflow](https://stackoverflow.com/questions/299723/can-i-do-transactions-and-locks-in-couchdb)
+- The answer is valid for CouchDB v1 only. CouchDB v2 is ignoring the "all_or_nothing" property.
+
+- No. CouchDB uses an "optimistic concurrency" model. In the simplest terms, this just means that you send a document version along with your update, and CouchDB rejects the change if the current document version doesn't match what you've sent.
+
+- Couch is probably not the best choice here. Using views is a great way to keep track of inventory
+  - A view is a good way to handle things like balances / inventories in CouchDB.
+  - With this model, you're never updating any data, only appending. This means there's no opportunity for update conflicts. All the transactional issues of updating data go away
 
 - ## 🛢️ [Cloudant/IBM back off from FoundationDB based CouchDB rewrite | Hacker News_202203](https://news.ycombinator.com/item?id=30652281)
 - [Important update on couchdb's foundationdb work-Apache Mail Archives](https://lists.apache.org/thread/9gby4nr209qc4dzf2hh6xqb0cn1439b7)
@@ -222,11 +241,16 @@ modified: 2023-10-29T02:23:35.064Z
   - Yeah, we did this in 2003 on commodity hardware, and even it built indexes faster than CouchDB builds map/reduce indexes. Fix the external view server protocol or be honest with people and kill it off – the status quo is unacceptable.
 - 👉🏻 For balance: there is a newer query/index system called **Mango** in Apache CouchDB 2.0+, that IIRC is internal and doesn't rely on any external view server. It wasn't in 1.7.1, though, so if you're coming from there, it's very much a "switch query APIs to get tolerable performance" situation.
 
-- I have never heard of anyone saying erlang is bad because of couchdb. I've heard criticisms of couchdb itself, sure. But they've been more along the lines of "MVCC multi-master document stores are not a good solution for this problem" more than "CouchDB is a bad MVCC multi-master document store".
+- 🔀 I have never heard of anyone saying erlang is bad because of couchdb. I've heard criticisms of couchdb itself, sure. But they've been more along the lines of "MVCC multi-master document stores are not a good solution for this problem" more than "CouchDB is a bad MVCC multi-master document store".
 - It doesn't use real node-local/shard-local MVCC AFAICT. It's O_APPEND on flat files.
   - It _is_ append only. But doesn’t use flat files. The main storage files have 2 different immutable btrees to find documents (by id and by sequence num). And it does have mvcc for both storage and secondary indexes. Internally it has transactions but they aren’t exposed to the user, as multi document transactions don’t make sense for the replicated document model.
 - Can I ask how the MVCC is implemented (e.g. WAL, MVTO, MVRC, etc.), or if there's documentation around that might give some additional insight?
-  - Here’s a link that describes the Couchstore file format. It’s the storage engine for Couchbase and is essentially the same design as CouchDB. https://github.com/couchbaselabs/couchstore/wiki/Format
+  - Here’s a link that describes the Couchstore file format. It’s the storage engine for Couchbase and is essentially the same design as CouchDB. 
+  - [The CouchBase Database File Format](https://github.com/couchbaselabs/couchstore/wiki/Format)
+- Sorry, wasn't clear if you were talking about MVCC in a replication context or in a node-local context. It does the former, it definitely does not do the latter.
+  - From the point of view of a single cluster or node (ignoring replication for a moment), it just doesn't have any strong notion of transactions. There's no write-ahead log, no rollback, and no situation where you'd be able to operate in a mode equivalent to something like SERIALIZABLE on a relational database.
+- Are their good master-master systems out there with local transactions?
+  - The claim from daimenkatz was that transactions and MVCC are supported internally, but not externally. It's unclear to me if any of this is accurate. 
 
 - The main point is to sync server side data to a client side database, smoothly, so that the application can continue to function offline and then resync once the connection is re-established.
   - The main point is to sync server side data to a client side database, smoothly, so that the application can continue to function offline and then resync once the connection is re-established.**Couch has always been good at this use case** where systems on both ends may have changed in the disconnect time.

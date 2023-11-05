@@ -98,8 +98,9 @@ modified: 2021-05-25T09:41:29.066Z
   - 前端依赖svelte
   - An open-source, hassle-free, self-hostable Heroku & Netlify alternative
 # micro-frontend
-- https://github.com/microsoft/redux-micro-frontend
+- https://github.com/microsoft/redux-micro-frontend /202202/ts/inactive
   - This library can be used for using Redux in a Micro Frontend based architecture.
+  - Micro Frontends is an architectural pattern for breaking up a monolith Frontend application into manageable, decoupled and smaller applications.
 # auth
 - https://github.com/nextauthjs/next-auth /ISC/ts
   - https://authjs.dev/

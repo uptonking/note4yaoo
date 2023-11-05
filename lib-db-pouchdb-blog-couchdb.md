@@ -10,9 +10,8 @@ modified: 2023-10-07T17:30:26.998Z
 # guide
 
 # blogs
-- [Part 1 — The Database. How to build a real time data sync, multi platform app with CouchDB and PouchDB_202012](https://blog.adaptabi.com/part-1-the-database-b7c575864407)
 
-## [A Veteran's(老兵) Guide to PouchDB](https://garbados.github.io/my-blog/veteran-pouchdb.html)
+## 📝 [A Veteran's(老兵) Guide to PouchDB](https://garbados.github.io/my-blog/veteran-pouchdb.html)
 
 ## [Local-first database: RxDB + PouchDB_202005](https://jaredforsyth.com/posts/local-first-database-rxdb-pouchdb/)
 
@@ -67,7 +66,6 @@ modified: 2023-10-07T17:30:26.998Z
 
 - I wouldnt write couchbase-lite off entirely, sync is extremely hard and with Pouch we are still struggling with slow replications and bugs with binary objects. 
   - The couchbase-lite devs have been contributing to PouchDB and couchbase-lite, PouchDB and CouchDB should all interoperatate in a p2p environment, if they dont then its a bug
-
 # blogs-sync/collab
 - [Use JSON Patch to Resolve Conflicts for CouchDB_202009](https://neighbourhood.ie/blog/2020/09/15/use-json-patch-to-resolve-conflicts/)
 
@@ -110,7 +108,7 @@ modified: 2023-10-07T17:30:26.998Z
 - Query Language
   - couchdb: If you require more complex queries, you will need to use views and map-reduce aggregations to filter and query your documents.
 - Transactions
-  - CouchDB does not support transactions.
+  - 😩 CouchDB does not support transactions.
 - Concurrency
   - CouchDB is eventually consistent and uses optimistic locking as part of its database operations. Write operations do not lock database objects and conflict errors need to be resolved by the application developer.
   - MongoDB uses document level locking so writes to a single document occur either in full or not at all, and clients always see consistent data.
@@ -156,3 +154,5 @@ modified: 2023-10-07T17:30:26.998Z
 - Magma combines the performance of a log-structured merge trees (LSM) with the compaction, reorganizability, and immutability of sorted string tables (SSTables) to provide a high performance in a well organized, low latency engine that suits write-heavy, low latency point lookup workloads. 
   - This design minimizes disk space increases, called “storage amplifications, ” and the accompanying complexity which occurs when documents are heavily mutated without being reorganized.
 # more
+- [Building Multi-platform apps with React, Cordova, CouchDB/PouchDB, . NET, Kubernetes and Azure_202012](https://blog.adaptabi.com/building-multi-platform-apps-with-react-cordova-couchdb-pouchdb-net-kubernetes-and-azure-9c1a946ccc36)
+  - [Part 1 — The Database. How to build a real time data sync, multi platform app with CouchDB and PouchDB_202012](https://blog.adaptabi.com/part-1-the-database-b7c575864407)

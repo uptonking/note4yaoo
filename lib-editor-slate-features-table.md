@@ -26,6 +26,9 @@ modified: 2023-02-27T19:07:31.111Z
   - dataframe
   - open table format
   - kappa + lsm => kdtree/r-tree: 表格数据不必用kdtree，选区和索引均可用kdtree
+
+- non-goals
+  - rest-api
 # not-yet
 - 如何让react组件与非react组件更好的结合
   - 参考autocomplete，将render方法和vnode都暴露出去，支持修改

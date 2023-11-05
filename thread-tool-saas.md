@@ -12,6 +12,18 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 还没用过 Whisper 语音转文字？ 这里有一个在线版本，
+- https://twitter.com/finedtune/status/1721049768464667127
+  - 可以直接输入 YouTube 链接，也支持自己上传音频文件，不需要安装和部署，速度比初版 Whisper 快 70 倍， 1 小时音频 1 分钟就转好，关键还免费
+- 我确实还没用过，因为找不到合适的使用场景，比如现在用的语音输入，讯飞输入法用的语音转文字也还挺顺手。如果需要做实时会议转录成文字之类的，可能用得上。
+- 长远看油管视频的语音转文字没必要做，现在的很多油管视频已经包含了文字，用油管自己的功能几秒就把文字复制出来了
+
 - ## [My IP Address - BrowserLeaks](https://browserleaks.com/ip)
 - https://twitter.com/RkMonoChrome_CN/status/1719747686679597141
   - 检测ip，还能检测dns，DNS Leak Test

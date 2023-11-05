@@ -177,6 +177,11 @@ modified: 2022-11-08T19:04:00.289Z
   - powerful JavaScript rich text editor
   - [Can I use Froala Editor in an Open Source project? – Froala](https://wysiwyg-editor.froala.help/hc/en-us/articles/115000385169-Can-I-use-Froala-Editor-in-an-Open-Source-project-)
     - No, none of our licenses allow you to use the Froala WYSIWYG HTML Editor in an Open Source project.
+# editor-apps
+- https://github.com/pagebrain/lexeme /GPLv3/202311/ts
+  - https://pagebrain.ai/lexeme/
+  - Open source ChatGPT Text Editor
+  - Inspired by SQL Workbench
 # flat/linear-editors
 - https://github.com/NickStefan/tome-editor /201512/js
   - A hidden Input is the user input

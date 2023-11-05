@@ -88,6 +88,10 @@ modified: 2022-11-06T15:45:36.913Z
   - Simple and non-recursive JSON parse/stringify library
   - No functions-within-functions, just a while loop and a stack.
 
+- https://github.com/simdjson/simdjson /apache2/cpp
+  - https://simdjson.org/
+  - Parsing gigabytes of JSON per second : used by Facebook/Meta Velox, WatermelonDB, Apache Doris, StarRocks
+  - The simdjson library uses commonly available SIMD instructions and microparallel algorithms to parse JSON 4x faster than RapidJSON and 25x faster than JSON for Modern C++.
 - https://github.com/simdjson/simdjson-java /java
   - A Java version of simdjson - a JSON parser using SIMD instructions, based on the paper Parsing Gigabytes of JSON per Second
   - Support for Unicode characters

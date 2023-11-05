@@ -39,24 +39,24 @@ modified: 2023-09-03T15:31:12.260Z
 
 - Foundational idea: physicality
   - we want users to feel like they are moving physical objects around
-- Application 1: no instant movement (no snapping)
+- 👉🏻 Application 1: no instant movement (no snapping)
   - For a more natural drag we animate the movement of items as they need to move out of the way while dragging to more clearly show a drags effect. 
   - We also animate the drop of an item so that it animates into its new home position.
-- Application 2: knowing when to move
+- 👉🏻 Application 2: knowing when to move
   - a dragging items impact is based on its centre of gravity — regardless of where a user grabs an item from
   - A list is dragged over when the centre position of a dragging item goes over one of the boundaries of the list
   - Once the centre position of an item (A) goes over the edge of another item (B), B moves out of the way.
-- Application 3: movement to communicate positioning
+- 👉🏻 Application 3: movement to communicate positioning
   - @hello-pangea/dnd relies on movement to communicate positioning. I
   - Drop shadows, lines and other affordances are useful in drag and drop contexts where natural movement is not possible.
   - The answer to these is often: snapping (where something just appears in the right spot). We are trying hard to avoid any snapping as it breaks the physicality we are trying to model.
-- Application 4: maximise interactivity
+- 👉🏻 Application 4: maximise interactivity
   - avoid as many periods of non-interactivity as possible
   - The user should feel like they are in control of the interface and not waiting for an animation to finish before they can continue to interact with the interface. 
-- Application 5: no drag axis locking
+- 👉🏻 Application 5: no drag axis locking
   - For now, the library does not support drag axis locking
   - The current thinking is this breaks the physical metaphor we are going for and sends a message to the user that they are interacting with a piece of software rather than moving physical objects around. 
-- Application 6: natural cross list movement
+- 👉🏻 Application 6: natural cross list movement
   - Rather than using an index based approach for keyboard movement between lists, @hello-pangea/dnd performs cross list movement based on inertia, gravity and collisions. 
 
 ## [pattern: Reparenting a `<Draggable />` ](https://github.com/hello-pangea/dnd/blob/main/docs/guides/reparenting.md)
@@ -64,7 +64,7 @@ modified: 2023-09-03T15:31:12.260Z
 - There are situations were you want to change the parent element of the dragging item while a drag is occurring. 
 - There are two approaches you can use to do this:
   - Using our 1st class cloning API (required for virtual lists)
-  - Using your own portal with ReactDOM.createPortal
+  - Using your own portal with `ReactDOM.createPortal`
 
 - We leave elements in place when dragging. We apply `position: fixed` on elements when we are moving them around. 
   - This is quite robust and allows for you to have `position: relative | absolute | fixed` parents. 
@@ -137,7 +137,7 @@ modified: 2023-09-03T15:31:12.260Z
 ## [pattern: Virtual lists](https://github.com/hello-pangea/dnd/blob/main/docs/patterns/virtual-lists.md)
 
 - As a general rule, you will want to start using a virtual list when your list size is more than 500 items.
-- @hello-pangea/dnd is designed to work with existing virtual list solutions and does not have it's own virtual list abstraction
+- 👉🏻 @hello-pangea/dnd is designed to work with existing virtual list solutions and **does not have it's own virtual list abstraction**
   - We have created examples for react-window, react-virtualized, react-virtuoso
 - Virtualisation libraries often have overscanning enabled by default
   - Overscanning is where a small about of non-visible items are rendered near the boundary of the window. 
@@ -151,7 +151,7 @@ modified: 2023-09-03T15:31:12.260Z
 ## [pattern: Multi drag](https://github.com/hello-pangea/dnd/blob/main/docs/patterns/multi-drag.md)
 
 - Dragging multiple `<Draggable />`s at once (multi drag) is currently a pattern not out of the box
-  - We have not included the interaction into the library itself. 
+  - **We have not included the interaction into the library itself**. 
   - This is done because a multi drag experience introduces a lot of concepts, decisions and opinions
 - We have decided on a simple, but very flexible and scalable multi drag pattern to start with.
 - 👉🏻 We can break the user experience down in three phases.
@@ -168,7 +168,7 @@ modified: 2023-09-03T15:31:12.260Z
   - The core thing you want to do is to avoid calling render() on components that do not need to update. 
   - The **current best practice** for this is to use `redux` in combination with `react-redux`,  `reselect` and `memoize-one`.
 - avoid calling render for selection style changes.
-  - You could apply a unique data attribute to each item and then apply the selected style to it using selectors dynamically in a parent component.
+  - You could apply a unique `data` attribute to each item and then apply the selected style to it using selectors dynamically in a parent component.
   - You could look into using the dynamic shared styles pattern.
 
 ## [Combining](https://github.com/hello-pangea/dnd/blob/main/docs/guides/combining.md)
@@ -300,7 +300,7 @@ modified: 2023-09-03T15:31:12.260Z
 - There seems to also be an additional requirement that we have not been able to accurately quantify(量化) regarding the relationship of the sizes of the `html` and `body` elements.
 
 - It looks like when the `html` element has some `width` and `height` related properties set then this can impact things. 
-- However, finding a purely javascript solution for detecting this has alluded us so far
+- However, finding a purely javascript solution for detecting this has alluded(间接提到；暗指) us so far
 
 ## [sensors](https://github.com/hello-pangea/dnd/blob/main/docs/sensors/sensor-api.md)
 

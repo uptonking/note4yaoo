@@ -9,7 +9,12 @@ modified: 2022-06-13T02:57:07.648Z
 
 # guide
 
-# [rxdb: Why IndexedDB is slow and what to use instead](https://rxdb.info/slow-indexeddb.html)
+# [Speeding up IndexedDB reads and writes_202108](https://nolanlawson.com/2021/08/22/speeding-up-indexeddb-reads-and-writes/)
+- in this post, I’d like to show how raw IndexedDB performance can be improved using a few tricks that are available as of IndexedDB v2 and v3:
+  - Pagination (v2)
+  - Relaxed durability (v3)
+  - Explicit transaction commits (v3)
+# 🤔 [rxdb: Why IndexedDB is slow and what to use instead](https://rxdb.info/slow-indexeddb.html)
 - [Why IndexedDB is slow and what to use instead](https://github.com/pubkey/rxdb/blob/master/docs-src/slow-indexeddb.md)
 
 - For in-browser data storage, you have some options:
@@ -254,12 +259,5 @@ modified: 2022-06-13T02:57:07.648Z
 - Internet Explorer 10 uses the Extensible Storage Engine as its underlying storage model. 
   - This is the same database format that many of Windows features use including the Desktop Search (very common in Windows 8), Active Directory on Windows Servers and even Exchange.
   - `%AppData%\Local\Microsoft\Internet Explorer\Indexed DB\Internet.edb`
-# rxdb
-
-## [Alternatives for realtime offline-first JavaScript applications](https://rxdb.info/alternatives.html)
-
-- this page contains all known alternatives to RxDB
-
-- RxDB supports using Dexie.js as RxStorage which enhances IndexedDB with RxDB features like MongoDB-like queries etc
 # more
 - [local-first tech](https://jaredforsyth.com/posts/)

@@ -13,7 +13,11 @@ modified: 2021-08-25T05:56:00.431Z
 
 - ## 
 
-- ## 
+- ## 使用Dall-E 3制作城市3D立体天气海报
+- https://twitter.com/xiaohuggg/status/1720792193848484000
+  - 可以把城市标志性建筑进行3D化，然后结合天气展示。
+  - 结合GPT-4 ALL Tools可以将实时天气直接展示在立体图里。
+- 导入runwayml做成动态，那就太帅了
 
 - ## Wrote a simplified Wavefunction Collapse algorithm in Rooms to procedurally generate a little voxel city from tiles. 
 - https://twitter.com/btco_code/status/1719672645938016484

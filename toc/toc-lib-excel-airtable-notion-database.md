@@ -143,6 +143,7 @@ modified: 2022-08-21T10:02:05.129Z
   - [apitable 和 vika.cn 是有啥关系吗？怎么两个产品看起来一模一样？](https://discord.com/channels/1016320471010115666/1062551587718959224/1062555700246618193)
     - APITable is the open-source and community version of Vika.
     - Vika is a SaaS distribution for China mainland built on APITable open-source core
+  - [chore: update BSL license by mr-kelly](https://github.com/apitable/apitable/pull/1428)
 
 - nocobase /3.7kStar/apache2/202212/ts/国内
   - https://github.com/nocobase/nocobase

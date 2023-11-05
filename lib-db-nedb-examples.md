@@ -243,7 +243,7 @@ modified: 2023-09-28T20:33:44.333Z
   - 依赖sift
   - Written to be an lightweight functional alternative to `@apollo/client`
 
-- lowdb /20.2kStar/MIT/202310/ts
+- lowdb /20.2kStar/MIT/202310/ts/代码少
   - https://github.com/typicode/lowdb
   - Simple to use local JSON database.
   - supports Node, Electron and the browser

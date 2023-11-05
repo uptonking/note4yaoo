@@ -272,10 +272,17 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/TiddlyWiki/TiddlyWiki
     - the Classic version (2.x.x) of TiddlyWiki
 
+- https://github.com/TiddlyWiki/TiddlyDesktop /202307/js
+  - A custom desktop browser for TiddlyWiki 5 and TiddlyWiki Classic, based on nw.js
+
 - https://github.com/tiddly-gittly/TidGi-Desktop /1.2kStar/MPLv2/202309/ts
   - https://tidgi.fun/
   - 「 太记 」是一个基于「 太微 TiddlyWiki 」的知识管理桌面应用，能保护隐私内容、高级自动化、自动Git云备份、部署为博客，且可通过RESTAPI与Anki等应用连接。
   - 太微的NodeJS版本有无缝的自动保存体验，这是利用 SyncAdaptor 技术（而不是 Saver ）带来的的优势，太记对 NodeJS wiki 有更好的支持，而 TD 主要支持 HTML 版单文件 WIKI，各有优势
+
+- https://github.com/jokroese/tiddlyroam /202005/html/inactive
+  - TiddlyRoam is a TiddlyWiki with bi-directional links and graph maps.
+  - The project aims to provide a free and open source alternative to the popular Roam.
 
 - https://github.com/abesamma/TW5-editions
   - A (still growing) collection of useful editions of Tiddlywiki5(TW5) that I use.
@@ -294,6 +301,10 @@ modified: 2022-06-03T21:34:54.893Z
   - Multi-User support for using/editing the same wiki(s) simultaneously
   - Two-way real-time syncing between the browser and file system
   - Inter-server federation. Different Bob servers can communicate to share tiddlers and as chat servers/relays
+
+- https://github.com/postkevone/tiddlystudy
+  - https://postkevone.github.io/tiddlystudy
+  - note-taking tool based on tiddlywiki
 
 - https://github.com/Alamantus/FeatherWiki /91Star/AGPLv3/202310/js
   - https://codeberg.org/Alamantus/FeatherWiki
@@ -319,6 +330,9 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/josephernest/writing /202208/js
   - a lightweight distraction-free text editor, in the browser (Markdown and LaTeX supported).
   - no server needed, you can run it offline
+
+- https://github.com/Arlen22/TiddlyServer /202111/ts
+  - A static file server that can also save files and mount TiddlyWiki folders
 # knowledge-base/wiki
 - monotome /151Star/AGPLv3/202208/js
   - https://github.com/cblgh/monotome

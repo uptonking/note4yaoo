@@ -9,6 +9,14 @@ modified: 2023-10-12T14:06:30.848Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## CI/CD explained in simple terms.
+- https://twitter.com/NikkiSiapno/status/1720810644713455793
+  - [CI/CD Demystified — Build, Test, Deploy, Repeat](https://blog.levelupcoding.co/p/luc-26-cicd-demystified-build-test-deploy-repeat)
+  - 使用流程图解释
+
 # discuss
 - ## 
 

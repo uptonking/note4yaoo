@@ -42,4 +42,11 @@ modified: 2022-12-02T11:16:05.028Z
   - CRDT can only be use when your business logic allows to represent document changes via static json operators. 
   - If you can have cases where user interaction is required to correctly merge conflicting document states, you cannot use CRDTs for that.
 - Also when CRDTs are used, it is no longer allowed to do non-CRDT writes to the document properties.
+# blogs-rxdb
+
+## [Alternatives for realtime offline-first JavaScript applications](https://rxdb.info/alternatives.html)
+
+- this page contains all known alternatives to RxDB
+
+- RxDB supports using Dexie.js as RxStorage which enhances IndexedDB with RxDB features like MongoDB-like queries etc
 # more

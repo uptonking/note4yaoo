@@ -174,3 +174,9 @@ modified: 2020-11-03T06:54:59.051Z
 - https://github.com/SolidZORO/zpix-pixel-font
   - https://zpix.vercel.app/
   - Zpix (最像素) is a pixel font (像素字体), supporting English, Traditional Chinese, Simplified Chinese and Japanese.
+
+- 使用Dall-E 3制作城市3D立体天气海报
+  - https://twitter.com/xiaohuggg/status/1720792193848484000
+  - 可以把城市标志性建筑进行3D化，然后结合天气展示。
+  - 结合GPT-4 ALL Tools可以将实时天气直接展示在立体图里。
+  - 导入runwayml做成动态，那就太帅了

@@ -69,7 +69,30 @@ modified: 2023-09-17T17:35:27.024Z
 # discuss
 - ## 
 
-- ## 
+- ## “ansi sql standard” 
+- https://twitter.com/Captaintobs/status/1720881752238166412
+- Dialects where 1 / 2 yields 0.5:
+  •BigQuery
+  •ClickHouse
+  •DataBricks / Spark
+  •DuckDB
+  •Hive
+  •MySQL
+  •Oracle
+  •Snowflake
+- Dialects where 1 / 2 yields 0:
+  •Drill
+  •Postgres
+  •Presto/Trino
+  •Redshift
+  •SQLite
+  •Teradata
+  •T-SQL
+- One of the things that PRQL standarizes, with `/` & `//`
+- funny, in substrait 1/2 is 0
+  - it’s still very early and I think the output will still depend on how a given consumer (backend) interprets and executed the plan — the intent is a standard IR various SQL dialects, Python dataframe APIs, and other DSLs (PRQL, Malloy, dplyr, etc) can produce
+
+- Do a post about datetime conversion
 
 - ## Sometimes you want to get e.g. the last three orders for *every* customer. 
 - https://twitter.com/tobias_petry/status/1719811788441538645

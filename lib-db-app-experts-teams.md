@@ -95,6 +95,10 @@ modified: 2023-02-02T03:22:07.941Z
   - [TiKV 源码解析 | PingCAP](https://cn.pingcap.com/blog/tag/tikv-source-code-analysis/)
   - [TiDB 源码阅读 | PingCAP](https://cn.pingcap.com/blog/tag/tidb-source-code-reading/)
 
+- [PolarDB 数据库内核月报](http://mysql.taobao.org/monthly/)
+  - https://github.com/tangwz/db-monthly
+    - 阿里云数据库内核月报分类整理
+
 - oceanbase
   - [OceanBase 源码解读](https://open.oceanbase.com/blog/topics/3983502080)
   - [OceanBase 存储层代码解读](https://open.oceanbase.com/blog/topics/3983518464)

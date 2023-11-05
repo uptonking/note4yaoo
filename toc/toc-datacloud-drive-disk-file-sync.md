@@ -265,6 +265,15 @@ modified: 2022-09-10T02:26:52.062Z
   - Simple, private file sharing
   - A fork of Mozilla's Firefox Send. Mozilla discontinued Send, this fork is a community effort to keep the project up-to-date and alive.
 
+- https://github.com/RobinLinus/snapdrop /GPLv3/202303/js
+  - https://snapdrop.net/
+  - local file sharing in your browser. Inspired by Apple's Airdrop.
+  - Vanilla HTML5/ES6/CSS3 frontend
+  - WebRTC/WebSockets
+  - https://github.com/schlagmichdoch/PairDrop /js
+    - PairDrop is a sublime alternative to AirDrop that works on all platforms.
+    - File Sharing on your local network
+
 - https://github.com/hyperhyperspace/hyperhyperspace-core /MIT/ts
   - https://www.hyperhyperspace.org/
   - A library to create p2p applications, using the browser as a full peer.

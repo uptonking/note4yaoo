@@ -12,13 +12,23 @@ modified: 2021-01-06T14:40:11.360Z
 # discuss
 - ## 
 
-- ## 
+- ## React tip: stop using forwardRef() for your custom components. 
+- https://twitter.com/DavidKPiano/status/1720874496427446770
+  - Just name the `ref` prop something else in your custom component (like `inputRef` ) if you can.
+  - Key phrases here: "your custom components" and "if you can".
+  - A ref is just an object. Passing it *through* a custom component shouldn't be anything special.
+
+- I don't think this is good advice. Most libraries and frameworks work on the assumption that 'ref' is the name of the prop (e.g. HeadlessUI for focus management).
+
+- Is forwardRef() deprecated from now on?
+  - It is not, but I believe it will be removed in the future.
+  - yes but the goal is to allow you to pass a vanilla ref prop directly so teaching people to not do that should probably come with a note that the goal is to enable exactly that
 
 - ## If you want cleaner event handlers in your jsx in React you can use currying
 - https://twitter.com/_georgemoller/status/1720237969087373716
 - The problem with this is if handlers are passed around, folks will eventually forget to call the function. I had few hard to debug problems like that when a curried function was used as event handler - compiler is happy but the handler is not being called.
 - Just because you can, doesn't mean you should. Personally, I find this harder to read.
-- why don't you skip all of that and simply do this: `<li onClick={setSelectedItem} />`?
+- why don't you skip all of that and simply do this: `<li onClick={setSelectedItem} />` ?
   - sometimes you need to put extra logic
 
 - ## Avoid using conditionals to render views in React
@@ -269,7 +279,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                               `ValueFront`,                                               `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                 `ValueFront`,                                                 `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

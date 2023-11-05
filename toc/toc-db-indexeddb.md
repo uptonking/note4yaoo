@@ -69,7 +69,7 @@ modified: 2022-06-03T22:06:16.249Z
     - Full text search module for YDN-DB 
     - build on top of two excellent full text search libraries, [natural](https://github.com/NaturalNode/natural) for stemming, normalization, analyzer and fullproof for tokenization.
 
-- localForage /20.5kStar/Apache2/202110/js/inactive
+- localForage /20.5kStar/Apache2/202108/js/inactive
   - https://github.com/localForage/localForage
   - https://localforage.github.io/localForage
   - localForage is a fast and simple storage library for JavaScript. 
@@ -224,8 +224,6 @@ modified: 2022-06-03T22:06:16.249Z
 # more-indexeddb
 - https://github.com/falsandtru/clientchannel
   - Persist objects and sync them between tabs via IndexedDB or LocalStorage.
-- https://github.com/pubkey/broadcast-channel
-  - BroadcastChannel to send data between different browser-tabs or nodejs-processes satellite + LeaderElection over the channels
 
 - https://github.com/piotr-cz/redux-persist-idb-storage
   - Storage adapter to use IndexedDB via idb v3 with `redux-persist` ripped from idb v3 

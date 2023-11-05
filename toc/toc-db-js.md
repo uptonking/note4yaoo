@@ -194,10 +194,11 @@ modified: 2022-11-25T15:50:48.226Z
   - WIP: Satya is a distributed database using Apache Arrow as a Storage format and aims to support both OTLP(transaction processing) and OLAP(analytical processing) workloads. 
   - 依赖 duckdb-wasm、apache-arrow
 
-- WatermelonDB /8.7kStar/MIT/202211/js
+- WatermelonDB /9.6kStar/MIT/202310/js+flow
   - https://github.com/Nozbe/WatermelonDB
   - https://nozbe.github.io/WatermelonDB/
   - Reactive & asynchronous database for powerful React and React Native apps
+  - 依赖sqlite、simdjson、lokijs、rxjs7
   - Relational. Built on rock-solid SQLite foundation
   - Framework-agnostic. Use JS API to plug into other UI frameworks
   - Reactive. (Optional) RxJS API
@@ -222,7 +223,7 @@ modified: 2022-11-25T15:50:48.226Z
     - sync could only send changed fields and server could automatically always just apply those changed fields to the server version (since that's what per-column client-wins resolver will do anyway)
   - [Sync implementation - WatermelonDB documentation](https://nozbe.github.io/WatermelonDB/Implementation/SyncImpl.html)
     - master/replica - server is the source of truth, client has a full copy and syncs back to server (no peer-to-peer syncs)
-    - two phase sync: first pull remote changes to local app, then push local changes to server
+    - 👉🏻 two phase sync: first pull remote changes to local app, then push local changes to server
     - client resolves conflicts
     - content-based, not time-based conflict resolution
     - eventual consistency (client and server are consistent at the moment of successful pull if no local changes need to be pushed)
@@ -348,7 +349,7 @@ modified: 2022-11-25T15:50:48.226Z
     - Oh I have to expose the ETag header in the CORS config thats improved things to 400ms sometimes but I still have too many preflight requests
     - The sync protocol was designed using object versioning so that the logical names intuitively map to storage names, but then I realised R2, my favourite s3-like doesn't do versions. So now I had to redo it with timestamped suffixes. Total redesign with tricky clock skew defenses
 # db-json
-- lowdb /20.2kStar/MIT/202310/ts
+- lowdb /20.2kStar/MIT/202310/ts/代码少
   - https://github.com/typicode/lowdb
   - Simple to use local JSON database.
   - supports Node, Electron and the browser

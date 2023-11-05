@@ -63,10 +63,14 @@ modified: 2022-11-11T03:09:56.491Z
 - crossnote
   - https://crossnote.app/
 
-- https://github.com/RobinLinus/snapdrop
+- https://github.com/RobinLinus/snapdrop /GPLv3/202303/js
+  - https://snapdrop.net/
   - local file sharing in your browser. Inspired by Apple's Airdrop.
   - Vanilla HTML5/ES6/CSS3 frontend
   - WebRTC/WebSockets
+  - https://github.com/schlagmichdoch/PairDrop /js
+    - PairDrop is a sublime alternative to AirDrop that works on all platforms.
+    - File Sharing on your local network
 
 - https://github.com/blenderskool/blaze
   - File sharing progressive web app built using WebTorrent and WebSockets

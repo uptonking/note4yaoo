@@ -17,7 +17,19 @@ modified: 2022-04-05T10:09:51.343Z
 
 - ## 
 
-- ## 
+- ## CRDTs can _technically_ represent any computable data structure. Informal proof:
+- https://twitter.com/paulgb/status/1720865931243504039
+  - Every data structure can be represented as a sequence of mutations starting applied to an initial value.
+  - Put those mutations in a list CRDT, then apply them in the same order on every client.
+- Some data structures have mutations that are only valid in certain states (for example, deleting item 8 in a 4-item list is an error). Simply treat these as a no-op.
+  - This is not generally a good idea! The performance is not good and it does not preserve intent well. But it is useful to understand when thinking about CRDTs that need to maintain invariants (like a tree CRDT), since they implicitly do something like this in disguise.
+- Transactions could either be combined into one mutation or transaction start and end could be represented as mutations of their own. You could guarantee that a transaction is all-or-nothing, but not that a transaction could not be undone.
+- does a crdt guarantee ordering of mutations?
+  - The mutations that go in to a CRDT are unordered, but a list CRDT can turn them into an ordered list. The trick is to combine that ability with the fact that every data structure can be represented as a state machine.
+
+- yeah!! have you seen @martinkl 's work on OpSets which explores this? I find it to be a really elegant way to think about CRDT behavior independent of performance
+
+- ie: As long as you maintain a newtonian(牛顿学说的) absolute time for all observers, changes can be viewed in an absolute way
 
 - ## 💡 This confluence of things is going to unlock some stellar new infrastructure.
 - https://twitter.com/tantaman/status/1715046327892025526

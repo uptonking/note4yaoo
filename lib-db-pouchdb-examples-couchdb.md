@@ -18,11 +18,12 @@ modified: 2023-09-28T20:35:56.153Z
   - Apache CouchDB™ is a database that uses JSON for documents, JavaScript for MapReduce indexes, and regular HTTP for its API.
 
 - fans-pouchdb
-  - https://github.com/redgeoff/delta-pouch
   - https://github.com/daleharvey/pouchbase
   - https://github.com/nolanlawson/pouchdb-find
     - https://github.com/nolanlawson/pouchdb-mapreduce-no-ddocs
     - https://news.ycombinator.com/threads?id=nolanl
+  - https://github.com/redgeoff/delta-pouch
+  - https://github.com/janl/couchdb-test-couchjs
   - https://github.com/garrensmith/couch_hack_week
   - https://github.com/jo/couchdb-best-practices
   - https://github.com/glynnbird/couchimport
@@ -637,6 +638,10 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/mgp/iron-cushion /201309/java
   - A benchmark and load test for CouchDB
+
+- https://github.com/janl/couchdb-test-couchjs /201402/js
+  - A test suite for CouchDB’s query server. 
+  - Replaces test/query_server/query_server_spec.rb
 # examples
 - https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1 /ts
   - [Collaborative text editor with ProseMirror and a syncing database_202007](https://emergence-engineering.com/blog/prosemirror-sync-1)

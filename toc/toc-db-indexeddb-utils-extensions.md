@@ -67,6 +67,9 @@ modified: 2022-11-04T14:22:17.373Z
   - Pack tree nodes into a flat object and unpack them again!
   - The original use case is to allow path based trees (such as the one used by Slate) to be stored in NoSQL based storage and be able to update them partially without sending the full tree.
 
+- https://github.com/pubkey/broadcast-channel /MIT/202310/js
+  - BroadcastChannel to send data between different browser-tabs or nodejs-processes satellite + LeaderElection over the channels
+
 - https://github.com/falsandtru/clientchannel
   - Persist objects and sync them between tabs via IndexedDB or LocalStorage.
 
