@@ -36,9 +36,7 @@ modified: 2023-01-23T19:27:46.948Z
     - 依赖mingo(MongoDB query language for in-memory objects)
   - https://github.com/valkyrjs/valkyr /ts
     - toolkit for creating event sourced applications using javascript/typescript.
-# collab
-
-# apps-networking
+# examples
 - https://github.com/paulgreg/semi-persistent-chat
   - a simple semi-persistent PWA chat using web socket. 
   - Messages are kept in memory and purged after X hours on the server (configurable).

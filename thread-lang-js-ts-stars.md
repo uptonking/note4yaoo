@@ -24,6 +24,21 @@ if(val) // doSth
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## unwrap: 即使我能理解这段代码的语法，我还是理解不了这代码的作用
+- https://twitter.com/ThaddeusJiang/status/1678316196318552064
+- 主要是获得强类型，类似于int vs Integer。至于价值和成本，要看具体的应用场景。我大概率不会这么做，就算是要获得强类型，用一个enum就够了。这个设计类型本身已经有了信息，还要再暴露isSuccess, isFailure有冗余。但是这个还要结合具体场景才好判断，比如调用的地方强制实现这个接口。
+- rust和rescript都有类似的Result类型，也有点类似于 Golang 的函数返回值类型（如果第二个返回值不是 err 就是有异常）
+  - 同感，第一眼看到就觉得是模仿 rust 的风格。但 rust 有问号的语法糖，这里没有，所以我觉得即使模仿了这个形式，也没有带来太大收益。
+- 要是忙到最后还是throw了，前面那些反复横跳就算全白费劲了。在我印象里这种模拟option/either的写法一般是为了实现“never fail”吧。
+  - unwrap 就是强制解包，实际必须使用它的场景很少，但还是需要有这么个 escape hatch
+- 就是为了让你强制检查错误。
+
 - ## Why does TypeScript make us use "./foo.js" extensions when importing?
 - https://twitter.com/mattpocockuk/status/1711697978140852695
   - To me, it makes sense - it speeds up Node startup and means your TS code more closely resembles your compiled .js code.

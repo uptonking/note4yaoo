@@ -23,6 +23,13 @@ modified: 2023-04-16T12:52:03.130Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## #DALLE3 ChatGPT 输出的风格似乎很稳定，太美了！
+- https://twitter.com/lencx_/status/1721331238219506111
+
 - ## 🆚️ 用 Midjourney、DALL-E 3、Adobe Firefly 2 还是 Stable Diffusion？
 - https://twitter.com/FinanceYF5/status/1716288468186431811
   - 在过去的 6 个月里，作者在所有 4 个平台上生成了 50, 000 多张图像。

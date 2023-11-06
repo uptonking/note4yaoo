@@ -11,6 +11,7 @@ modified: 2022-12-02T11:15:15.257Z
 
 - pros
   - offlineable
+  - CouchDB Replication Protocol 
 
 - cons
   - 与couchdb耦合: data-model, database, sync protocol
@@ -21,6 +22,7 @@ modified: 2022-12-02T11:15:15.257Z
   - 数据初始化时可能处理超级大量数据的问题
   - 对二进制数据存储和同步的支持不够好，attachment的设计是针对image/html
   - 不支持transaction
+  - js引擎基于firefox的SpiderMonkey
 
 - features
   - storage adapter: levelup, indexeddb
@@ -66,10 +68,24 @@ modified: 2022-12-02T11:15:15.257Z
 - nonsyncable/local-only tables for config/temporary-data
 # dev
 
-# changelog
+# changelog-pouchdb
 
 - [Secondary indexes have landed in PouchDB_201405](https://pouchdb.com/2014/05/01/secondary-indexes-have-landed-in-pouchdb.html)
   - With the release of PouchDB 2.2.0, we're happy to introduce a feature that's been cooking on the slow simmer for some time: secondary indexes, a.k.a. persistent map/reduce.
   - it allows you to index anything in your JSON documents – not just the doc IDs.
   - the new API is modeled after CouchDB's
+# changelog-couchdb
+- [Release Notes — Apache CouchDB® Documentation](https://docs.couchdb.org/en/stable/whatsnew/index.html)
+
+- v4.0_202x
+- v3.0_202002
+  - User-defined partitioned databases for faster querying
+  - Live Shard Splitting for incremental scale-out
+  - Automatic view index warmer
+- v2.0_201609
+  - Clustering
+  - New Query Language: mango
+  - 2.0 is the unification of BigCouch(Cloudant's work) with the old single node CouchDB
+  - New Admin Interface (written in React): fauxton
+- v1.0_201007
 # more

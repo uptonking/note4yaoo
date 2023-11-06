@@ -9,18 +9,6 @@ modified: 2023-10-29T02:23:35.064Z
 
 # guide
 
-# changelog-couchdb
-- v4.0_202x
-- v3.0_202002
-  - User-defined partitioned databases for faster querying
-  - Live Shard Splitting for incremental scale-out
-  - Automatic view index warmer
-- v2.0_201609
-  - Clustering
-  - New Query Language: mango
-  - 2.0 is the unification of BigCouch(Cloudant's work) with the old single node CouchDB
-  - New Admin Interface (written in React): fauxton
-- v1.0_201007
 # discuss-stars
 - ## 
 
@@ -183,7 +171,19 @@ modified: 2023-10-29T02:23:35.064Z
 
 - ## 
 
-- ## 
+- ## after CouchDB is configured as cluster, can I make it a single node again? In a case of docker swarm setup
+- https://couchdb.slack.com/archives/C49LEE7NW/p1699208662136709
+- Set up a single new node and replicate all databases to it. Way way way easier. But you don’t learn as much about CouchDB internals
+- OR
+  - Make sure all your databases have shards on at least one node (this is the default in a three node cluster)
+  - Turn all nodes off except one.
+  - Remove the other nodes from that node’s _nodes database
+  - Update each db’s _dbs doc to only reference the one node.
+
+- Updating each db's doc to reference one node might be an overkill of you have TBs of data. What do you think?
+  - You are only updating one doc per database.
+  - TBs of data will take a while to replicate, so using the originally outline procedure will be a lot faster.
+  - If more complicated. Read up on the details in the “moving a shard” section of the doc. Just do the reverse
 
 - ## [Couchdb有在实际生产环境中使用的例子吗？ - 知乎](https://www.zhihu.com/question/20112928/answers/updated)
 

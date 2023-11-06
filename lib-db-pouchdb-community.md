@@ -280,6 +280,23 @@ forever...
 
 - ## 
 
+- ## 
+
+- ## do local docs have revision trees?
+- https://app.slack.com/client/T49P1AZRT/C016TJAE7A4
+- They don’t have rev trees, but IIRC we increment their _rev so we know what’s older and what’s newer
+
+- ## is it expected that .get() with open_revs would load every rev in a separate db transaction?  specifically looking at idb & indexeddb adapters...
+- https://couchdb.slack.com/archives/C016TJAE7A4/p1697458610217519
+- This might be a perf optimisation so this doesn’t  block other operations if you have a lot of open revs.
+  - Happens during replication
+  - Well, less perf, more not occupying transactions
+
+- so probably deliberate?
+  - Possibly, yeah. That said, I could see a more complex implementation that batches, say, up to 10 revs to get a best of both worlds
+- i think indexeddb adapter stores all the revs directly in the doc. so could be big perf wins by just overriding api.get(). so N+1 db transactions would collapse to 1. sounds like if this was possible, i should see impact on replication.  perhaps in the replication perf tests
+  - Totally worth a try!
+
 - ## [Level.js concerns](https://github.com/pouchdb/pouchdb/issues/1678)
 
 - ## I am actually using @pouchdb instead of the native @CouchDB . Which they are similar in many, there are differences that can throw one off. In my case, PouchDB's _sum can't do js object.

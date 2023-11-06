@@ -16,7 +16,12 @@ modified: 2023-09-17T17:36:36.118Z
 
 - ## 
 
-- ## 
+- ## 🤔 How do major SQL databases store data? (not indexes)
+- https://twitter.com/eatonphil/status/1721536449881796685
+  - Postgres: only unorganized heap files
+  - SQLite & MySQL: only organized btrees
+  - SQL Server & Oracle: unorganized heap files or organized btrees
+
 # discuss-filesystem
 - ## 
 

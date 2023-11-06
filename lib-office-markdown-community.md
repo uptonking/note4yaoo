@@ -207,7 +207,9 @@ export default FrontPage
 
 - ## 
 
-- ## 
+- ## Why are there no built-in tabs in markdown?
+- https://twitter.com/artalar_dev/status/1721228826296889517
+- I am doing that with `<details>` but it is still not pure Markdown and HTML injection
 
 - ## [Obsidian → Foam → Marksman: the evolution of bi-directional linking implementation](https://twitter.com/novoreorx/status/1695445709666030033)
 - 最早选择使用 Obsidian 是由于它简洁的界面、好用的 Markdown 编辑器和本地化纯文本存储，但随着使用越来越顺手，我意识到它为我带来的价值远不止于此。

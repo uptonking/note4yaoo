@@ -17,7 +17,8 @@ modified: 2021-01-11T12:10:50.900Z
 
 - ## 
 
-- ## 
+- ## latency numbers you should know
+- https://twitter.com/alexxubyte/status/1721203706555998345
 
 - ## Long ago one a friend shared his approach to prioritizing work: 
 - https://twitter.com/aboodman/status/1718343204104532049

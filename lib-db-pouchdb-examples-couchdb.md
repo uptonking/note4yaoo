@@ -42,9 +42,13 @@ modified: 2023-09-28T20:35:56.153Z
   - A basic benching tool to compare node.js embedded databases
   - It inserts randomly generated objects with string identifiers, then queries random identifiers for a given period of time.
 
-- https://github.com/AugurProject/pouchdb-perf /ts
+- https://github.com/AugurProject/pouchdb-perf /201911/ts
   - https://augurproject.github.io/pouchdb-perf/
   - PouchDB Perf Test
+
+- https://github.com/alxndrsn/pouch-replication-exploration /201601/js
+  - https://alxndrsn.github.io/pouch-replication-exploration/
+  - Exploration of pouchdb replication
 
 - pouchdb /16kStar/apache2/202310/js/core代码量不大
   - https://github.com/pouchdb/pouchdb

@@ -14,9 +14,18 @@ modified: 2021-03-31T06:50:19.936Z
     - 在/etc/apache2/sites-available目录下，建立单独文件，如kanban.conf
     - 保存后执行a2ensite kanban.conf，执行后会自动在/etc/apache2/sites-available建立相应的文件链接。
     - 注意要做域名解析
+# discuss-known
+- ## 
+
+- ## 
+
+- ## [Post Mortem on Cloudflare Control Plane and Analytics Outage_202311](https://blog.cloudflare.com/post-mortem-on-cloudflare-control-plane-and-analytics-outage/)
+- Beginning on Thursday, November 2, 2023, at 11:43 UTC Cloudflare's control plane and analytics services experienced an outage. 
+  - The incident lasted from November 2 at 11:44 UTC until November 4 at 04:25 UTC.
+
 # discuss-security
 - ## 
-- 
+
 - ## 
 
 - ## 

@@ -22,7 +22,10 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## 大模型的这些 benchmark 应该是全宇宙最没用的 benchmark 了吧？
+- https://twitter.com/yihong0618/status/1721401347533324688
+- 也不是全没用，也有一些有用的, 尤其细分任务上的，还是挺有用的。当前相比其他benchmark，可操作空间确实大
+- 公开的只能全看自觉
 
 - ## 中文开源模型虽多，数据集却很少开源。
 - https://twitter.com/9hills/status/1718828132046942218

@@ -189,6 +189,7 @@ modified: 2023-07-08T12:47:00.141Z
 
 - ebooks-searching
   - [求一个进Z-library的方法? - 知乎](https://www.zhihu.com/question/532521148/answers/updated)
+  - [Anna’s Archive. Mirrors Sci-Hub, Library Genesis, Z-Library, and more.](https://annas-archive.org/)
   - [zhelper search 配置小工具](https://tool.yibook.org/)
   - [图书检索系统](https://ps.uuttdx.com/)
 

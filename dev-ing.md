@@ -100,7 +100,7 @@ $$('[contenteditable]')
   - pouchdb: doc-db, incremental view
   - crsqlite, hypermerge: crdt + db
   - triplitdb: crdt + tupledb + eav
-  - fireproof: ipld, live-sync, replication, prolly-tree
+  - fireproof: ipld, live-sync, replication, branching-prolly-tree
   - kappa + lsm => kdtree/r-tree
   - 基于oplog的研发方向, 架构设计时考虑放在数据库层解决还是应用层解决
     - 实现db，还是sourcing based framework
