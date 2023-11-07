@@ -37,7 +37,13 @@ modified: 2022-11-25T09:47:43.079Z
 
 - ## 
 
-- ## 
+- ## [Cloud Backed SQLite | Hacker News_202307](https://news.ycombinator.com/item?id=36610595)
+- I've just been exploring serving large SQLite databases in chunks and querying them with http range requests to prevent downloading the entire database. It's pretty awesome! I found a really interesting library called sql.js-httpvfs that does pretty much all the work. I chunked up my 350Mb sqlite db into 43 x 8Mb pieces with the included script and uploaded them with my static files to GitHub, which gets deployed via GitHub Pages
+
+- 
+- 
+- 
+- 
 
 - ## [SQLite WASM: Something subtle in the browser | Hacker News_202302](https://news.ycombinator.com/item?id=34774357)
 - 

@@ -95,7 +95,10 @@ modified: 2023-09-16T17:27:42.089Z
 # discuss
 - ## 
 
-- ## 
+- ## [Show HN: Instant API – Build type-safe web APIs with JavaScript | Hacker News_202310](https://news.ycombinator.com/item?id=38021461)
+- 
+- 
+- 
 
 - ## 🔥 [Codebase as Database: Turning the IDE Inside Out with Datalog (2020) | Hacker News_202010](https://news.ycombinator.com/item?id=33076092)
 - 

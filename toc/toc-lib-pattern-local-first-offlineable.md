@@ -274,7 +274,7 @@ modified: 2021-09-04T14:03:39.046Z
   - Materializes views on top of the known data.
   - Answers filtered, sorted and paginated data queries via GraphQL.
   - Awaits signed operations from clients via GraphQL.
-  - [P2panda: P2P protocol for secure, energy-efficient local-first web applications | Hacker News](https://news.ycombinator.com/item?id=37212462)
+  - [P2panda: P2P protocol for secure, energy-efficient local-first web applications | Hacker News_202308](https://news.ycombinator.com/item?id=37212462)
     - We're using our own CRDT called "Operations" giving us multi-writer conflict-free editing. It's a simple key/value map with a last-write win rule while we keep some sort of vector clock for every write to understand what every peer has seen when they updated the Document.
     - we could model many applications already with such simple CRDT. It is also possible to add your own or already existing CRDT frameworks on top of p2panda.
     - The basic data sync is based on an append only log. 

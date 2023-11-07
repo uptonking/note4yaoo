@@ -30,21 +30,26 @@ modified: 2022-12-02T11:15:15.257Z
 - who is using #pouchdb
   - ?
 - who is using #couchdb
+  - npm
   - budibase
 
 - alternatives
   - pouchdb server    /inactive
-  - couchdb(erlang)
+  - couchdb(erlang): 使用b+tree
   - [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
 
 - collab
   - 为db实现crdt的参考: piratedb, evolu/idbsidesync, triplitdb, indexeddb
   - 不必执着于寻找indexeddb的实现，很多时候只是作为一种持久化的方式
 
+- tips
+  - couchdb fauxton http://127.0.0.1:5984/_utils/
+
 - roadmap
   - pouchdb + kappa-crdt +eav => pouchdb-crdt-eav
   - alternative-backend: mysql/pg
   - kappa-architecture?
+  - 针对图片、视频的blob二进制存储数据库: 参考 mongodb-gridfs, pg-lo
 
 - database-features
   - standards: postgresql, sqlite, clickhouse, duckdb
@@ -59,11 +64,18 @@ modified: 2022-12-02T11:15:15.257Z
   - auth: 权限控制的粒度，row/doc, column/property
   - arrow
 
+- [CouchDB Best Practices](https://jo.github.io/couchdb-best-practices/)
+  - https://github.com/jo/couchdb-best-practices
+  - Apache CouchDB™ is a database that uses JSON for documents, JavaScript for MapReduce indexes, and regular HTTP for its API.
+
 - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
 
 - community-pouchdb/couchdb
+  - [Apache CouchDB Wiki - Confluence](https://cwiki.apache.org/confluence/display/COUCHDB/)
   - [Couchbase Forums](https://www.couchbase.com/forums/)
   - couchbase discord
+  - [pouchdb blog](https://pouchdb.com/blog/)
+  - [couchdb blog](https://blog.couchdb.org/)
 # draft
 - nonsyncable/local-only tables for config/temporary-data
 # dev

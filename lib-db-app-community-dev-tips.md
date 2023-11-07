@@ -1,11 +1,11 @@
 ---
-title: lib-db-app-community-design-tips
+title: lib-db-app-community-dev-tips
 tags: [community, database-design]
 created: 2023-10-27T09:17:03.711Z
-modified: 2023-10-27T09:17:22.424Z
+modified: 2023-11-07T16:47:11.499Z
 ---
 
-# lib-db-app-community-design-tips
+# lib-db-app-community-dev-tips
 
 # guide
 

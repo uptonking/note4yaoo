@@ -347,6 +347,21 @@ modified: 2022-04-05T10:08:25.947Z
   - crdt基于自己实现的lseq
   - Linear sequence of values based on `ORMap` of base64 fractional index to values
   - timestamp基于逻辑时钟
+
+- https://github.com/p2panda/aquadoggo /rust
+  - https://p2panda.org/
+  - aquadoggo is a reference node implementation for p2panda. 
+  - It is a intended as a tool for making the design and build of local-first, collaborative p2p applications as simple as possible
+  - aquadoggo can run both on your own device for local-first applications, or on a public server when acting as shared community infrastructure. 
+  - Stores operations of the network in an SQL database of your choice (SQLite, PostgreSQL).
+  - Materializes views on top of the known data.
+  - Answers filtered, sorted and paginated data queries via GraphQL.
+  - Awaits signed operations from clients via GraphQL.
+  - [P2panda: P2P protocol for secure, energy-efficient local-first web applications | Hacker News_202308](https://news.ycombinator.com/item?id=37212462)
+    - We're using our own CRDT called "Operations" giving us multi-writer conflict-free editing. It's a simple key/value map with a last-write win rule while we keep some sort of vector clock for every write to understand what every peer has seen when they updated the Document.
+    - we could model many applications already with such simple CRDT. It is also possible to add your own or already existing CRDT frameworks on top of p2panda.
+    - The basic data sync is based on an append only log. 
+    - Check out our section on "Operations", this is the data type we've built on top of the append-only log structure for multi-writer and conflict free data editing
 # crdt-rewrite
 - https://github.com/josephg/crdt-examples /js
   - CRDT examples from a DWEB talk

@@ -12,28 +12,23 @@ modified: 2023-10-29T02:23:35.064Z
 # discuss-stars
 - ## 
 
-- ## 🤔 [Does multiple versions of couchDB keeps redundant data? - Stack Overflow](https://stackoverflow.com/questions/41510495/does-multiple-versions-of-couchdb-keeps-redundant-data)
-- CouchDB holds multiple complete revisions of documents, it does not store incremental changes. 
-  - The internals of CouchDB use an append-only data structure, so each new revision is added to the database file.
-  - In addition, CouchDB uses MVCC (multi-version concurrency control) which prevents the need for locks while allowing concurrent writers. 
-- 👉🏻 In short, you will have duplicates in your database each time you modify a document. 
-  - Thus, modifying the same document many times can lead to an inflated(膨胀的) database file. 
-  - In addition, very large documents with fewer modifications also have this same effect. For each document, only the latest version is considered "active" by the database, but old revisions may still be around. 
-- This might sound inefficient and wasteful, but CouchDB has you covered with a feature called compaction. 
-  - This process removes all revisions (except for the most recent) from the database file altogether. 
-  - Prior to CouchDB 2.0, this was generally invoked manually by an admin, but now it is much more automated.
-- One common misconception about CouchDB is that the multiple versions can be used like a version-control system (eg: git, svn), so you can always keep some sort of historical record of your database. 
-  - However, this is completely false, as MVCC is purely for concurrency control. 
-  - As stated before, compaction removes the old revisions, so you should only depend on the most recent revision existing in your database at any time.
+- ## [Structured Query Server: SQL Queries for Apache CouchDB | Hacker News_202307](https://news.ycombinator.com/item?id=36679556)
+  - paid
 
-- ## [Can I do transactions and locks in CouchDB? - Stack Overflow](https://stackoverflow.com/questions/299723/can-i-do-transactions-and-locks-in-couchdb)
-- The answer is valid for CouchDB v1 only. CouchDB v2 is ignoring the "all_or_nothing" property.
+- ## [What if OpenDocument used SQLite? (2014) | Hacker News_202309](https://news.ycombinator.com/item?id=37553574)
+- > I like taking the approach of CouchDB where the only correct way to close the system is to crash it.
+  - The term you're looking for is (aptly named) crash-only software.
+  - [Crash-only software - Wikipedia](https://en.wikipedia.org/wiki/Crash-only_software)
 
-- No. CouchDB uses an "optimistic concurrency" model. In the simplest terms, this just means that you send a document version along with your update, and CouchDB rejects the change if the current document version doesn't match what you've sent.
+- Why do you use a secondary, volatile database ? Performance-wise you won't gain a lot more (we're talking about a user editing a file, so not even 1 write per second).
+- A proposal: write directly, and automatically in the database. No more Save button. There are multiple advantages:
+  - the system is crash-resistant. I like taking the approach of CouchDB where the only correct way to close the system is to crash it. That way a crash is an expected situation that you actually account for, not a special case that you might forget
+  - there is only one database. Less code, fewer bugs.
+  - it is safe. A write to SQLite works or doesn't work, there is no in-between. 
+  - it is how SQLite was intended to work. 
 
-- Couch is probably not the best choice here. Using views is a great way to keep track of inventory
-  - A view is a good way to handle things like balances / inventories in CouchDB.
-  - With this model, you're never updating any data, only appending. This means there's no opportunity for update conflicts. All the transactional issues of updating data go away
+- 
+- 
 
 - ## 🛢️ [Cloudant/IBM back off from FoundationDB based CouchDB rewrite | Hacker News_202203](https://news.ycombinator.com/item?id=30652281)
 - [Important update on couchdb's foundationdb work-Apache Mail Archives](https://lists.apache.org/thread/9gby4nr209qc4dzf2hh6xqb0cn1439b7)
@@ -164,12 +159,44 @@ modified: 2023-10-29T02:23:35.064Z
 - [Couchbase vs CouchDB NoSQL Systems: Difference Between Them](https://www.couchbase.com/comparing-couchbase-vs-couchdb/)
 - I think CouchBase seem to be perceived as CouchDB's 'enterprise' alternative. Which in a way seem to be true. Apart from lack of ability to attach files to records ( documents) and 'out-of-box' REST endpoints compared to CouchDB, CouchBase has sql like language i.e. N1QL (sometimes pronounced a Nickel, UPDATE renamed to SQL++ in Couchbase 7.0). This is one of the reason why I don't really like / recommend using the term 'NoSQL'. I personally like term 'Non-relational'.
 
+# discuss-couchdb-mvcc
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🤔 [Does multiple versions of couchDB keeps redundant data? - Stack Overflow](https://stackoverflow.com/questions/41510495/does-multiple-versions-of-couchdb-keeps-redundant-data)
+- CouchDB holds multiple complete revisions of documents, it does not store incremental changes. 
+  - The internals of CouchDB use an append-only data structure, so each new revision is added to the database file.
+  - In addition, CouchDB uses MVCC (multi-version concurrency control) which prevents the need for locks while allowing concurrent writers. 
+- 👉🏻 In short, you will have duplicates in your database each time you modify a document. 
+  - Thus, modifying the same document many times can lead to an inflated(膨胀的) database file. 
+  - In addition, very large documents with fewer modifications also have this same effect. For each document, only the latest version is considered "active" by the database, but old revisions may still be around. 
+- This might sound inefficient and wasteful, but CouchDB has you covered with a feature called compaction. 
+  - This process removes all revisions (except for the most recent) from the database file altogether. 
+  - Prior to CouchDB 2.0, this was generally invoked manually by an admin, but now it is much more automated.
+- One common misconception about CouchDB is that the multiple versions can be used like a version-control system (eg: git, svn), so you can always keep some sort of historical record of your database. 
+  - However, this is completely false, as MVCC is purely for concurrency control. 
+  - As stated before, compaction removes the old revisions, so you should only depend on the most recent revision existing in your database at any time.
+
+- ## [Can I do transactions and locks in CouchDB? - Stack Overflow](https://stackoverflow.com/questions/299723/can-i-do-transactions-and-locks-in-couchdb)
+- The answer is valid for CouchDB v1 only. CouchDB v2 is ignoring the "all_or_nothing" property.
+
+- No. CouchDB uses an "optimistic concurrency" model. In the simplest terms, this just means that you send a document version along with your update, and CouchDB rejects the change if the current document version doesn't match what you've sent.
+
+- Couch is probably not the best choice here. Using views is a great way to keep track of inventory
+  - A view is a good way to handle things like balances / inventories in CouchDB.
+  - With this model, you're never updating any data, only appending. This means there's no opportunity for update conflicts. All the transactional issues of updating data go away
 # discuss-couchdb
 - ## 
 
 - ## 
 
-- ## 
+- ## [Show HN: Open-source obsidian.md sync server | Hacker News_202308](https://news.ycombinator.com/item?id=37247767)
+- MongoDB was gaining a lot of traction, and I think because of that many people overlooked CouchDB.
+  - I have been obsessed by it(couchdb) the past months. Coming from MongoDB the querying is a bit more limited, but I'd use it over MongoDB in a heartbeat. Very simple to host and even to set up multiple instances. 
+  - Also CouchDB was embracing serverless before it was cool with their HTTP API.
 
 - ## after CouchDB is configured as cluster, can I make it a single node again? In a case of docker swarm setup
 - https://couchdb.slack.com/archives/C49LEE7NW/p1699208662136709

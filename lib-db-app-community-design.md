@@ -26,11 +26,6 @@ modified: 2023-09-17T17:50:49.932Z
 - 
 - 
 
-- ## 📄🔥 [Xata File Attachments: Databases can now store files and images | Hacker News_202308](https://news.ycombinator.com/item?id=37324370)
-- 
-- 
-- 
-
 - ## 💡🔥🔥 [A humble guide to database schema design | Hacker News_202004](https://news.ycombinator.com/item?id=22806142)
 - 
 - 
@@ -89,12 +84,6 @@ modified: 2023-09-17T17:50:49.932Z
 - Can confirm, don't use mongo. We're stuck with it now, and I really wish we had used Postgres for biz data and Cassandra for the high volume non-relational data. They're just materialized views on-top of your event stream anyway.
 
 - Check out LinkedIn's posts about log processing and Apache Kafka. Handling data as streams of events lets you avoid spikey query-based processing, and helps you scale out horizontally. Partitioning lets you do joins, and you can still add databases as "materialized views" for query-ability. Add Secor to automatically write logs to S3 so you can feel secure in the face of data loss, and use replication of at least 3 in your Kafka topics.
-
-- ## 🔥 [We put a distributed database in the browser and made a game of it | Hacker News_202307](https://news.ycombinator.com/item?id=36680535)
-- Is this something similar to couch/pouchdb?
-  - TigerBeetle is more domain-specific, i.e. focused on financial transactions and high-performance, high-availability. There are just two entity types in the database: accounts and transfers between accounts. 
-- > In comparison to {C, P}ouchDB, I think the question is around offline-first availability.
-  - Got it, thanks! Yeah that is indeed not how TigerBeetle works. If you ever cannot connect to the cluster, you keep retry messages (idempotently) until you connect and the message succeeds.
 
 - ## 和ChatGPT聊DB设计获得新知，Nested Set Model：
 - https://twitter.com/TooooooBug/status/1659041013800001536

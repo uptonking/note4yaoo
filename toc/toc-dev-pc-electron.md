@@ -102,6 +102,10 @@ modified: 2021-01-16T20:50:23.893Z
 - https://github.com/pkolchanov/tablesapp
   - Tablesapp is an local-first table design tool.
   - All tables are ready for one-click cloud sharing. Hosted on Google Firebase.
+
+- https://github.com/CatsJuice/electron-hero-window-demo /ts
+  - window expansion animation hack with electron
+  - 卡片内容变宽和缩窄的渐变动画
 # tauri
 - https://github.com/12joan/ping-ui
   - A simple GUI for the ping command-line utility built using Tauri.

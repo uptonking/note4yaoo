@@ -113,6 +113,15 @@ modified: 2020-10-05T06:18:29.671Z
   - A-Frame is a three.js framework with an entity-component-system (ECS) architecture. 
   - ECS architecture is a common and desirable pattern in 3D and game development that follows the composition over inheritance and hierarchy principle.
 
+- https://github.com/unconed/mathbox /202301/js
+  - a library for rendering presentation-quality math diagrams in a browser using WebGL. 
+  - Built on top of Three.js and ShaderGraph it provides a clean API to visualize mathematical relationships and animate them declaratively.
+
+- https://github.com/thoughtspile/grafar /202105/ts
+  - https://blog.thoughtspile.tech/grafar/#/README
+  - a javascript library for reactive, 3D mathematical visualization (data visualization capabilities coming sometime)
+  - Built on top of WebGL (via Three.js)
+
 ## r3f
 
 - https://github.com/try-triplex/triplex

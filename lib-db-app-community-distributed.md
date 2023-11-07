@@ -19,6 +19,12 @@ modified: 2023-10-26T19:04:00.318Z
 - 
 - 
 
+- ## 🔥 [We put a distributed database in the browser and made a game of it | Hacker News_202307](https://news.ycombinator.com/item?id=36680535)
+- Is this something similar to couch/pouchdb?
+  - TigerBeetle is more domain-specific, i.e. focused on financial transactions and high-performance, high-availability. There are just two entity types in the database: accounts and transfers between accounts. 
+- > In comparison to {C, P}ouchDB, I think the question is around offline-first availability.
+  - Got it, thanks! Yeah that is indeed not how TigerBeetle works. If you ever cannot connect to the cluster, you keep retry messages (idempotently) until you connect and the message succeeds.
+
 # discuss-decentralized/p2p
 - ## 
 

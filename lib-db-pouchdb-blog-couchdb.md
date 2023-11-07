@@ -9,6 +9,9 @@ modified: 2023-10-07T17:30:26.998Z
 
 # guide
 
+- resources
+  - [pouchdb blog](https://pouchdb.com/blog/)
+  - [couchdb blog](https://blog.couchdb.org/)
 # blogs
 
 ## 📝 [A Veteran's(老兵) Guide to PouchDB](https://garbados.github.io/my-blog/veteran-pouchdb.html)
@@ -78,6 +81,24 @@ modified: 2023-10-07T17:30:26.998Z
 - We realized that we needed a more general framework that would allow product developers to declaratively define data subscriptions. 
   - A natural choice for this interface was to use GraphQL, which would allow the system to automatically fetch and keep the data live-updated. We decided to build it in-house and call it LiveGraph.
 # blogs-couchdb
+
+## [Upscaling LinkedIn's Profile Datastore While Reducing Costs | LinkedIn Engineering_202305](https://engineering.linkedin.com/blog/2023/upscaling-profile-datastore-while-reducing-costs)
+
+- Instead, we chose to introduce Couchbase as a centralized storage tier cache for read scaling. 
+  - This solution achieved a cache hit rate of over 99%, reduced tail latencies by more than 60%, and trimmed the cost to serve by 10% annually. 
+- 
+- 
+- 
+
+### [How LinkedIn Serves 5 Million User Profiles per Second](https://blog.quastor.org/p/linkedin-serves-5-million-user-profiles-per-second)
+
+- Couchbase is a combination of ideas from Membase and CouchDB, where you have the highly scalable caching layer of Membase and the flexible data model of CouchDB.
+  - It’s both a key/value store and a document store, so you can perform Create/Read/Update/Delete (CRUD) operations using the simple API of a key/value store (add, set, get, etc.) but the value can be represented as a JSON document.
+  - With this, you can access your data with the primary key (like you would with a key/value store), or you can use N1QL (pronounced nickel). This is an SQL-like query language for Couchbase that allows you to retrieve your data arbitrarily and also do joins and aggregation.
+
+- 
+- 
+- 
 
 ## 🆚️ [CouchDB and MongoDB Compared](https://www.mongodb.com/compare/couchdb-vs-mongodb)
 

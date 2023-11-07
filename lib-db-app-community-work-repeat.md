@@ -67,6 +67,12 @@ modified: 2023-10-27T06:54:11.911Z
 - 👥🔥 [Databases in 2021: A Year in Review | Hacker News_202112](https://news.ycombinator.com/item?id=29731885)
 - 
 - 
+
+- ## ⏰ [Database Review 2021 | Hacker News_202211](https://news.ycombinator.com/item?id=33558509)
+- 📝 [Database Review 2021 and 2022 Prediction_202202](https://www.bytebase.com/blog/database-review-2021/)
+
+- 
+- 
 - 
 
 - ## ⚖️ [Poll: What database does your company use? | Hacker News_201106](https://news.ycombinator.com/item?id=2684620)

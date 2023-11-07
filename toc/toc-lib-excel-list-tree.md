@@ -397,6 +397,12 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/krasun/lsmtree /go
   - a log-structured merge-tree implementation in Go.
   - not goroutine-safe - calling any methods on it from a different goroutine without synchronization is not safe and might lead to data corruption
+
+## btree
+
+- https://github.com/loro-dev/generic-btree /rust
+  - a pure safe BTree that can be used to build your own special-purpose btree data structure
+  - mainly developed to optimize the performance of Loro CRDT’s components.
 # tree-like/nested
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!

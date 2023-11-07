@@ -148,11 +148,6 @@ modified: 2020-10-22T10:22:55.878Z
   - it takes a text diagram as input and returns an image.
   - Kroki provides a unified HTTP API with support for BlockDiag (BlockDiag, SeqDiag, ActDiag, NwDiag, PacketDiag, RackDiag), BPMN, Bytefield, C4 (with PlantUML), Ditaa, Erd, Excalidraw, GraphViz, Mermaid, Nomnoml, Pikchr, PlantUML, SvgBob, UMLet, Vega, Vega-Lite and WaveDrom…​ and more to come!
 
-- https://github.com/jsxgraph/jsxgraph /994Star/LGPLv3/202310/js
-  - https://jsxgraph.org/wp/about/index.html
-  - a cross-browser library for interactive geometry, function plotting, charting, and data visualization in a web browser.
-  - Dynamic Mathematics with JavaScript
-
 - react-flow-chart /MIT/719Star/202006
   - https://github.com/MrBlenny/react-flow-chart
   - https://mrblenny.github.io/react-flow-chart/index.html
@@ -287,6 +282,15 @@ modified: 2020-10-22T10:22:55.878Z
   - https://mapbox.github.io/potpack/
   - fast JavaScript library for packing boxes of varying size into a near-square container, which is useful for generating CSS sprites and WebGL textures.
   - Similar to shelf-pack, but static (you can't add items once a layout is generated), and aims for maximal space utilization.
+# math/physics
+- https://github.com/jsxgraph/jsxgraph /994Star/LGPLv3/202310/js
+  - https://jsxgraph.org/wp/about/index.html
+  - a cross-browser library for interactive geometry, function plotting, charting, and data visualization in a web browser.
+  - Dynamic Mathematics with JavaScript
+
+- https://github.com/jcoglan/sylvester /201302/js
+  - http://sylvester.jcoglan.com/
+  - a vector, matrix and geometry library for JavaScript, that runs in the browser and on the server side
 # more
 - https://github.com/aislelabs/react-flowchart-editor
   - http://data.aislelabs.com/demo/index.html

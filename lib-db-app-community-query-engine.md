@@ -148,6 +148,15 @@ modified: 2023-09-17T17:41:51.689Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Fine-grained caching strategies of dynamic queries | Hacker News_202309](https://news.ycombinator.com/item?id=37587233)
+- 
+- 
+- 
+
 - ## 🔥 [Show HN: Query your database using plain English, fully on-premises | Hacker News_202308](https://news.ycombinator.com/item?id=37315667)
 - 
 - 

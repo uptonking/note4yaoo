@@ -27,7 +27,12 @@ modified: 2021-04-27T09:19:37.711Z
 
 - ## 
 
-- ## 
+- ## I'm working on a new post on CSS nesting, and I noticed that the use of the "&" symbol isn't needed anymore for selectors.
+- https://twitter.com/shadeed9/status/1721570978096877999
+- As per my research, this behavior is called the "Relaxed CSS nesting", and is available in:
+  - Chrome 120 beta
+  - Safari TP 179+
+- Chrome 112-118 nesting works only with the "&" symbol for elements without a class or an ID.
 
 - ## Safari 17.2 beta! requestIdleCallback support _202310
 - https://twitter.com/jensimmons/status/1717937227190460797

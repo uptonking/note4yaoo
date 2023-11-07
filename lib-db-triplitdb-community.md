@@ -73,4 +73,6 @@ modified: 2023-10-11T21:37:25.329Z
 - ## 
 
 - ## [Some notes on local-first development | Hacker News_202309](https://news.ycombinator.com/item?id=37488034)
-- One common misconception with local-first, is that it's essentially local-only. But I believe the best experience is where the server and client are equally capable and only a partial set of data is stored on the client. The server still maintains authority but the client is always snappy(迅速的) when updated data or changing queries/views. We basically call this a full-stack database and we're building that at Triplit.
+- One common misconception with local-first, is that it's essentially local-only. 
+  - But I believe the best experience is where the server and client are equally capable and only a partial set of data is stored on the client. The server still maintains authority but the client is always snappy(迅速的) when updated data or changing queries/views. 
+  - We basically call this a full-stack database and we're building that at Triplit.

@@ -14,6 +14,8 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss-stars
 - ## 
 
+- ## 
+
 - ## 🤔🔥 [Databases = Frameworks for Distributed Systems | Hacker News_202205](https://news.ycombinator.com/item?id=31459745)
 - I was watching a video by one of Amazon’s distinguished engineers a while ago and for the life of me I can’t find it now but the thing that stuck with me from it is, 
   - “There are only three modes for a distributed system - it implements paxos/raft itself, it relies on a data store that implements paxos/raft or it’s wrong.”

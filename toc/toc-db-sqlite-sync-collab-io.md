@@ -89,10 +89,10 @@ modified: 2022-11-04T14:21:31.365Z
 - https://github.com/isaiahnields/csv-to-sqlite
   - A desktop app to convert CSV files to SQLite databases!
 # utils
-- https://github.com/WeWatchWall/stark-db /ts
+- https://github.com/WeWatchWall/stark-db /MIT/202310/ts
   - SQLite-backed, change-tracking database available over HTTP.
   - By default, the DB engine is configured to run over SSL. 
-  - This database tracks changes to all entities in the auto-created column(on all tables) stark_version.
+  - This database tracks changes to all entities in the auto-created column(on all tables) `stark_version`. With the help of this change tracking, synchronization mechanisms can be built later.
   - Interactive queries are supported due to the stateful nature of the API.
   - [Stark-DB: SQLite-backed, change-tracking database available over HTTP | Hacker News](https://news.ycombinator.com/item?id=37862532)
     - Doesn't this lose the primary latency benefit of Sqlite by introducing a network connection?

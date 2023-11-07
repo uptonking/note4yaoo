@@ -14,7 +14,9 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
-- ## 
+- ## Just build a small demo in Loro. It can record the entire edit history in a DAG, just like git, making playback and diff viewing easy.
+- https://twitter.com/zxch3n/status/1721898524403798457
+  - 文档历史的滑块交互动画
 
 - ## 使用飞书的时候查看图片不是用mac自带的“预览”，而是在飞书自己的窗口中打开，
 - https://twitter.com/TooooooBug/status/1630761293924945920

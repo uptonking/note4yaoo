@@ -18,6 +18,12 @@ modified: 2021-08-30T18:56:18.632Z
   - a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. 
   - https://github.com/sqlite/sqlite/tree/95e961beaae011113aa2431728fbdc5a1a745f58
     - early code in 200007 
+  - https://github.com/mackyle/sqlite
+    - Unofficial git mirror of SQLite sources
+  - https://github.com/rurban/hardsqlite
+    - patches for the Hardened SQLite database engine
+    - What is really needed would be a hardened sqlite, to rip out the many openssl-like insanities and insecure defaults. 
+    - For those who cannot use Dqlite
 
 - kikko /75Star/MIT/202211/ts
   - https://github.com/kikko-land/kikko
@@ -147,6 +153,12 @@ modified: 2021-08-30T18:56:18.632Z
   - Query SQLite databases in S3 using s3fs
   - [Show HN: Query SQLite files stored in S3 | Hacker News](https://news.ycombinator.com/item?id=32828799)
 
+- https://github.com/benbjohnson/postlite /202203/go/inactive
+  - a proof of concept of wrapping SQLite with the Postgres wire protocol.
+  - Postlite is a network proxy to allow access to remote SQLite databases over the Postgres wire protocol.
+  - The proxy works by translating Postgres frontend wire messages into SQLite transactions and converting results back into Postgres response wire messages.
+  - Postlite expects you to connect over the postgres wire protocal. Sqld is compiled into your application so your application behaves like it's talking to an embedded sqlite, the calls are then made over the network (using one of three available transports) before being returning to your application.
+
 - https://github.com/benbjohnson/litestream /202211/go
   - Streaming replication for SQLite.
   - Litestream is a standalone disaster recovery tool for SQLite. 
@@ -195,6 +207,7 @@ modified: 2021-08-30T18:56:18.632Z
 - https://github.com/LMDB/sqlightning /201504/c/inactive
   - SQLite3 ported to use LMDB instead of its original Btree code.
   - LumoSQL as a fork
+  - SQLightning greatly improved SQLite performance but due to LMDB's requirement to have keys fit in 2/3 of a page it wasn't really useful as a general purpose replacement of SQLite's internal b-tree implementation.
 - https://github.com/LumoSQL/LumoSQL /MIT/c
   - a modification (not a fork) of the SQLite
   - LumoSQL adds security, privacy, performance and measurement features to SQLite. 
@@ -209,7 +222,7 @@ modified: 2021-08-30T18:56:18.632Z
 
 - dqlite /3.2kStar/LGPLv3/202212/clang
   - https://github.com/canonical/dqlite
-  - dqlite is a C library that implements an embeddable and replicated SQL database engine with high-availability and automatic failover.
+  - a C library that implements an embeddable and replicated SQL database engine with high-availability and automatic failover.
   - dqlite extends SQLite with a network protocol that can connect together various instances of your application and have them act as a highly-available cluster, with no dependency on external databases.
 
 - https://github.com/CsharpDatabase/csharp-sqlite /201401/inactive

@@ -231,7 +231,9 @@ modified: 2022-11-08T10:34:34.820Z
 
 - ## 
 
-- ## 
+- ## The biggest problem I've observed for #Rust beginners: They read too much and write too little.
+- https://twitter.com/OnlyXuanwo/status/1721776231245643833
+- Read too much lifetime part and can't write a line code
 
 - ## 你在大厂和小厂都做过，如果你现在要给还在大厂的产品同学一个建议，会是什么？
 - https://twitter.com/XDash/status/1719873187117502941

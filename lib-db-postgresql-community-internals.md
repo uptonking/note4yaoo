@@ -66,7 +66,13 @@ modified: 2023-10-28T13:46:14.957Z
 
 - ## 
 
-- ## 
+- ## [Unexpected downsides of UUID keys in PostgreSQL | Hacker News_202306](https://news.ycombinator.com/item?id=36429986)
+- CouchDB uses sequential UUID by default
+  - the choice of UUID has a significant impact on the layout of the B-tree, prior to compaction.
+
+- 
+- 
+- 
 
 - ## 🔥 [Get PostgreSQL Database Structure as a Detailed JavaScript Object | Hacker News_201912](https://news.ycombinator.com/item?id=21714500)
 - 

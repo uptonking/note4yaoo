@@ -106,7 +106,7 @@ modified: 2022-08-21T10:11:43.095Z
 
 - If you need a well-made, edit-first data grid, consider Handsontable
 
-## [Browsertech Digest: Figma is a File Editor](https://digest.browsertech.com/archive/browsertech-digest-figma-is-a-file-editor/)
+## 📝 [Browsertech Digest: Figma is a File Editor](https://digest.browsertech.com/archive/browsertech-digest-figma-is-a-file-editor/)
 
 - Most desktop applications are what I call file editors.
   - By file editor, I mean that the user selects a file on disk, and the program loads it into memory. User changes are applied in-memory and periodically saved back to disk.
@@ -150,6 +150,12 @@ modified: 2022-08-21T10:11:43.095Z
 - Generalizing Figma’s approach
   - This post came out of research we’ve been doing towards building an open-source document database that takes a similar approach.
   - Recently, we introduced “locking” into Jamsocket and Plane, which can guarantee that at most one backend runs per document, motivated by desire for a Figma-like data architecture.
+
+## 👥 [Figma Is a File Editor | Hacker News_202307](https://news.ycombinator.com/item?id=36702939)
+
+- 
+- 
+- 
 
 ## [ContentEditable  —  The Good, the Bad and the Ugly_201508](https://ckeditor.com/blog/ContentEditable-The-Good-the-Bad-and-the-Ugly/)
 

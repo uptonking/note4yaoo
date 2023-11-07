@@ -58,7 +58,11 @@ modified: 2023-04-16T10:02:58.738Z
 
 - ## 
 
-- ## 
+- ## Anyone figured out the most useful format to feed documentation into a GPT Assistant yet?
+- https://twitter.com/simonw/status/1721714675182899509
+  - I've tried PDFs but I'm interested in the optimal format, ideally supporting returning citation links if possible
+
+- currently i'm preprocessing PDFs into markdown in chunks, I am putting the filename as a header within each file's chunk. I have had the best luck so far with GPT & markdown, will let you know when i've had a chance to play more
 
 - ## Many startups just died today. Because OpenAI added PDF chat. You can also chat with data files and other document types.
 - https://twitter.com/thealexker/status/1718445317559902371

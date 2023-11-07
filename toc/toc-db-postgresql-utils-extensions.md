@@ -30,6 +30,10 @@ modified: 2023-10-26T15:29:40.053Z
 - https://github.com/sastraxi/pgsh /js
   - Branch your PostgreSQL Database like Git
   - pgsh provides a slightly-more-user-friendly interface to knex's migration system.
+
+- https://github.com/zknill/sqledge /202308/go
+  - SQLedge uses Postgres logical replication to stream the changes in a source Postgres database to a SQLite database that can run on the edge. 
+  - [SQLedge: Replicate Postgres to SQLite on the Edge | Hacker News_202308](https://news.ycombinator.com/item?id=37063238)
 # search
 - https://github.com/paradedb/paradedb /AGPLv3/rust
   - https://paradedb.com/

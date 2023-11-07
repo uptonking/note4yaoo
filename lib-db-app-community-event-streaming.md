@@ -21,14 +21,15 @@ modified: 2023-10-27T07:02:42.391Z
 - ## 
 
 - ## 
-
-
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [Yelp rebuilds corrupted Cassandra cluster using its data streaming architecture | Hacker News_202307](https://news.ycombinator.com/item?id=36771331)
+- 
+- 
+- 
 
 - ## 🔥 [Streaming Databases in Real-Time with Kafka, Debezium, and MySQL | Hacker News_201703](https://news.ycombinator.com/item?id=13995648)
 - 

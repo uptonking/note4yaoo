@@ -37,6 +37,11 @@ modified: 2023-09-17T17:36:36.118Z
   - The "Database design" by Adrienne Watt posted in another comment covers the scale concerns well, but another scale problem she doesn't mention is hitting inode limit, at least if you're on a single machine. 
   - You can of course use a distributed filesystem as database, but at that point, you might want to use a database proper.
 
+- Why not, is because you want ACID guarantees (ie, what if two people are editing a file at once), ability to scale, or a query language.
+  - That all can be achieved by using file system as database. Not even complicated to implement. 
+  - See couchDB for how to handle "what if two people are editing a file at once".
+- You're not getting that just from the file system though. Depending on the performance requirements and use case it may or may not be complicated. You are going down the rabbit hole of creating your own foundation for a database at that point.
+
 - ## 🔥 [Database as Filesystem [video] | Hacker News_201907](https://news.ycombinator.com/item?id=20394088)
 - 
 - 

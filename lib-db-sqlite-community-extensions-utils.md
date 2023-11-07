@@ -29,7 +29,6 @@ modified: 2023-10-26T22:12:54.831Z
 - For *analytical* queries 
   - directly on CSVs (ex GROUP BYs and ORDER BYs), both sqlite-xsv and sqlite in general fall short compared to new-age tools like @DuckDB , DataFusion, and clickhouse.
 
-
 - ## 🪟 [Xlite: Query Excel and Open Document spreadsheets as SQLite virtual tables | Hacker News](https://news.ycombinator.com/item?id=31874767)
 - Sqlite does not allow table valued functions to return results with varying schemas. The schema must be defined once up front and then cannot change.
   - That forum post is a request I made to them to allow dynamic columns but they don't seem interested so far.
@@ -83,9 +82,23 @@ modified: 2023-10-26T22:12:54.831Z
 - 
 
 - ## 🔥 [SQLite-based databases on the Postgres protocol | Hacker News_202301](https://news.ycombinator.com/item?id=34517474)
-- 
-- 
-- 
+- SQLite has announced a new backend that hopes to support concurrent writes and streaming replication: https://sqlite.org/hctree/doc/hctree/doc/hctree/index.html
+
+- > - Bottomless is a sqlite extension, not a separate process? Pros and cons compared to litestream?
+  - The only con I see is that a bug in the extension could interfere with the database. As for pros: way less maintenance work, because everything is already embedded, we're also hooked into the database via a virtual WAL interface (libSQL-only), so we have full control over when to replicate, without having to observe the .wal file and reason about it from a separate process.
+
+- Basically re-inventing MySQL / PG but worse. Next step, we don't have auth over the network, let's bake in RBAC into SQLite.
+- From what else they're doing, it appears the point is to be able to use sqlite in serverless setups where MySQL/Postgres would be way too heavy to deploy on a per-customer or per-function basis.
+
+- 🤔🔒 I never thought people take restricting access from within database seriously. Like row security policies in postgres. Is anybody here using it in production with success?
+-  my company uses Postgres RLS for a pretty big project for a client in the finance sector. It's the foundation of our multi-tenant setup there. We connect with a single DB user, but set a session variable at the start of each transaction. This session variable is then used by the RLS policies to filter the data.
+   -  Works like a charm, you basically get to build your app like it was dealing with a single tenant DB. Just make sure it's as hard as humanly possible for application developers to forget setting that tenant ID when they query... In our case we have a custom JPA base repository which takes care of that, and some PMD rules to catch rogue repos/queries.
+- If I understand correctly, it seems to be a cornerstone of Supabase’s Authorization features. https://supabase.com/docs/guides/auth/row-level-security
+- Yes I've used it a bunch in production it's great. It is highly valued in some PII-conscious fields for compliance reasons that I don't fully understand, but becoming competent with postgres RLS has been a huge benefit for my career. The main practical downside is that it is more precise and rigorous than your app- or business-level auth logic is likely to be, and has no real escape hatches. If you're trying to drop it on an existing system you're going to spend a lot of time going back and forth with whoever to shake out edge case ambiguities in your rbac policy that weren't obvious or relevant before.
+- You can do pretty much everything within Postgres, from ETL to Authz to serving HTML templates and GIS apps. However, that doesn't mean you should, or that anyone is seriously using it in production on a large scale (after evaluating alternatives).
+
+- Dumb question, with all of this newfangled WASM stuff, why couldn't we also bake the Postgres server (and then client) into the code? I know the WASM runtime would need to expose the low-level ability to do filesystem operations, mmap()ing, network sockets, etc.
+  - Then you'd need to run and maintain Postgres, which is much more complicated, not just a single database file. Postgres also can't be embedded (according to some brief googling), so you'd need to run it as a separate process.
 
 - ## 🔥 [Use LibreOffice Base as a GUI for an SQLite Database in OS X (2016) | Hacker News_202212](https://news.ycombinator.com/item?id=34137264)
 - 

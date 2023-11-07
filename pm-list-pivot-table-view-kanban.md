@@ -15,3 +15,16 @@ modified: 2023-01-22T18:45:58.936Z
 
 - [Building a Kanban Board With React](https://marmelab.com/blog/2023/07/28/create-a-kanban-board-in-react-admin.html)
 # more
+
+# discuss-kanban
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Kanboard: free and open source Kanban project management software | Hacker News_202305](https://news.ycombinator.com/item?id=36047861)
+- 
+- 
+- 

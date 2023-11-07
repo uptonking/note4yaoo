@@ -77,8 +77,11 @@ modified: 2023-10-29T02:23:48.086Z
   - DagDB is a portable and syncable database for the Web.
   - It can run as a distributed database in Node.js, including using AWS services as a backend.
 
-- ## [Show HN: ElectricSQL, Postgres to SQLite active-active sync for local-first apps | Hacker News](https://news.ycombinator.com/item?id=37584049)
-- Hey, I work at Electric, The CouchDB/PouchDB pattern is how I originally got interested in local first, they are such a good tool, but having the full power of Postgres and then SQLite on the client, I believe, is a real game change.
+- ## [Show HN: ElectricSQL, Postgres to SQLite active-active sync for local-first apps | Hacker News_202309](https://news.ycombinator.com/item?id=37584049)
+- Conceptually sounds like this is what Firebase, Couchbase Lite, and Mongo Reach do in the NoSQL world.
+
+- I'm looking forward to trying this out. Currently I get this functionality by using PouchDB on the client with a CouchDB sever. Then on my API server I have some janky code in a cron job to sync changes from CouchDB to PostgreSQL.
+  - Hey, I work at Electric, The CouchDB/PouchDB pattern is how I originally got interested in local first, they are such a good tool, but having the full power of Postgres and then SQLite on the client, I believe, is a real game change.
 
 - ## 🚀 [Realm Mobile Platform – Realtime Sync Plus Fully Open Source Database | Hacker News_201609](https://news.ycombinator.com/item?id=12589426)
 - So this is like alternative to Firebase? How different is their offering?

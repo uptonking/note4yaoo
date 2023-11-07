@@ -99,7 +99,7 @@ modified: 2023-09-17T17:46:07.620Z
 - Mongo's sharding is nice but I'm really tired of their support. They force you to run smaller machines in the contract so they can charge more for # of nodes, and it adds complexity to your architecture so you're swayed into buying Atlas. I could replace it all with a few PG shards with bigger machines.
   - Yes this is one of the reasons we started FerretDB. Atlas is very easy to use, but it is nearly impossible to move away from later on, as there is no alternative (unless you are ready to rewrite your app). We think that most of its killer features, like easy sharding, can be done with Postgres and/or SQLite.
 
-- Honest question: why doesn't Couchdb receive any love on HN?
+- 🤔🛋️ Honest question: why doesn't Couchdb receive any love on HN?
   - CouchDB needed to periodically run a gargage-collection-like operation. (If I remember correctly, records were not deleted, but instead hidden until you run the cleanup.) The problem was that the cleanup process was so unoptimized that CouchDB copied the entire database without the deleted records. In our case, the disk we had was about 90% occupied, so we couldn't run cleanup.
 
 - Is there any documentation on the native schema used to store the documents. Is it sane enough that you could manually roll your own JSON1 queries in SQL to facilitate more relational join like features?

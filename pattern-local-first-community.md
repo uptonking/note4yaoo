@@ -70,6 +70,21 @@ modified: 2023-09-13T20:24:41.516Z
 
 - ## 
 
+- ## [Show HN: ElectricSQL, Postgres to SQLite active-active sync for local-first apps | Hacker News_202309](https://news.ycombinator.com/item?id=37584049)
+- Conceptually sounds like this is what Firebase, Couchbase Lite, and Mongo Reach do in the NoSQL world.
+
+- 🤔 I want to be able to have a Postgres database as the central source of truth for all data and user accounts, but then have each users private content to be siloed and synced to their own SQLite database which they alone have access to. Is this possible with electricSQL?
+  - This is the exact pattern we target. Drop Electric onto an existing Postgres data model and use the Shape-based sync to manage dynamic partial replication of subsets of data between central Postgres and local SQLites: https://electric-sql.com/docs/usage/data-access/shapes
+- This is also the pattern targeted by PowerSync (disclosure: co-founder) — selectively syncing scoped data for the user from Postgres to their own client SQLite database. Sync Rules are used to define which data is synced to which users: https://docs.powersync.co/usage/sync-rules
+
+- 
+- 
+- 
+- 
+
+- I'm looking forward to trying this out. Currently I get this functionality by using PouchDB on the client with a CouchDB sever. Then on my API server I have some janky code in a cron job to sync changes from CouchDB to PostgreSQL.
+  - Hey, I work at Electric, The CouchDB/PouchDB pattern is how I originally got interested in local first, they are such a good tool, but having the full power of Postgres and then SQLite on the client, I believe, is a real game change.
+
 - ## 如果不使用 React 这类框架的话，如何优雅地实现 offline web app 呢？
 - https://twitter.com/beihuo/status/1720168712421204477
   - 我理解 Service Worker 可以实现这点，但是如果使用后端生成 HTML 的框架，比如 Hotwire 或者 LiveView，好像很难实现 offline？
