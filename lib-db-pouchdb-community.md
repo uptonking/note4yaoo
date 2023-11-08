@@ -12,7 +12,14 @@ modified: 2023-10-29T02:23:48.086Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [What is the CouchDB replication protocol? Is it like Git? - Stack Overflow](https://stackoverflow.com/questions/4766391/what-is-the-couchdb-replication-protocol-is-it-like-git)
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## [Store incremental data for views · pouchdb/pouchdb_201208](https://github.com/pouchdb/pouchdb/issues/99)
 
@@ -52,15 +59,15 @@ modified: 2023-10-29T02:23:48.086Z
   - One of the stand-out use cases for this is adding features to Web3 style link in profile pages. Because if you’re deploying HTML that has its content hash in a block chain somewhere, and the html contains the root hash of your database. Merkle!
 
 - ## [What Is JSON Patch? | Hacker News_202205](https://news.ycombinator.com/item?id=31301627)
-- Last year I experimented with an app architecture that used CouchDB/PouchDB for for synchronising data for a single user, multi device app. Then using Yjs to merge the conflicting edits - it worked incredible well. If I had the time, I would love to build a Yjs/CRDT native CouchDB like database that could use the Yjs state vectors as a wire protocol for syncing…
+- 🌰 Last year I experimented with an app architecture that used CouchDB/PouchDB for for synchronising data for a single user, multi device app. Then using Yjs to merge the conflicting edits - it worked incredible well. If I had the time, I would love to build a Yjs/CRDT native CouchDB like database that could use the Yjs state vectors as a wire protocol for syncing…
   - This is the very rough code behind the PouchDB/Yjs datastore. Effectively each Pouch/Couch document is actually "managed" by Yjs, all changes/operations via it. It then saves the binary Yjs blob as an attachment on the Pouch document with the current Yjs state exported as JSON for the main Pouch document. This gives you all the indexing/search you get with Pouch/Couch but with automatic merging of conflicting edits.
-  - **Ultimately though I don't think PouchDB is a good platform for this**, building something that is native Yjs would be much better. If anyone is interested I would love to hear from them though!
+  - 🧐 **Ultimately though I don't think PouchDB is a good platform for this**, building something that is native Yjs would be much better. If anyone is interested I would love to hear from them though!
 - Something that stands out immediately to me is that reliance on binary attachments. 
   - 👉🏻 In my own CouchDB ecosystem work binary attachments have turned out to be just about the worst part of the ecosystem. 
-  - PouchDB stores them pretty reliably, but every other CouchDB ecosystem database (Couchbase, Cloudant) including different versions of CouchDB itself (1.x is different from 2.x is different from 3.x in all sorts of ways) all have very different behavior when synchronizing attachments, the allowed size of attachments, the allowed types of attachments, the allowed characters in attachment names, and in general the sync protocol itself is prone to failures/timeouts with large attachments that are tough to work around because the break in the middle of replications. 
+  - PouchDB stores them pretty reliably, but every other CouchDB ecosystem database (Couchbase, Cloudant) including different versions of CouchDB itself (1.x is different from 2.x is different from 3.x in all sorts of ways) all have very different behavior when synchronizing attachments, the allowed size of attachments, the allowed types of attachments, the allowed characters in attachment names, and 😩 in general the sync protocol itself is prone(易于做某事；有做某事的倾向) to failures/timeouts with large attachments that are tough to work around because the break in the middle of replications. 
   - The number of times I've had to delete an attachment that PouchDB stored just fine to get a sync operation to complete with another server has been way too many already.
-  - I've had to build bespoke attachment sync tools because I haven't been able to rely on attachments working in the CouchDB ecosystem.
-  - I've been thinking that I need to replace the CouchDB ecosystem as a whole. PouchDB is great, but the flux I've seen in the Apache CouchDB project and the issues I've had with the managed service providers especially Cloudant after IBM makes it really hard to recommend the ecosystem. Overall it seems unhealthy/in-decline, which is sad when the core sync infrastructure seems so nice to work with when it works
+  - I've had to build bespoke(定制的) attachment sync tools because I haven't been able to rely on attachments working in the CouchDB ecosystem.
+  - I've been thinking that I need to replace the CouchDB ecosystem as a whole. PouchDB is great, but the flux(一系列的变化；持续的变化) I've seen in the Apache CouchDB project and the issues I've had with the managed service providers especially Cloudant after IBM makes it really hard to recommend the ecosystem. Overall it seems unhealthy/in-decline, which is sad when the core sync infrastructure seems so nice to work with when it works
 
 - ## 🤔 [I created PouchDB. After a year... | Hacker News](https://news.ycombinator.com/item?id=24355263)
 - I created PouchDB. After a year or so I handed that project off to some great maintainers that made it much better as I had grown a little skeptical of the replication model and wanted to pursue some alternatives.

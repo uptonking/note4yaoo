@@ -12,6 +12,8 @@ modified: 2023-02-05T19:03:12.722Z
 - 块级元素前后的光标处理
 
 - table-model
+# not-yet
+
 # dev-to
 - src
   - createDraft + applyToDraft + finishDraft
@@ -35,10 +37,9 @@ modified: 2023-02-05T19:03:12.722Z
 
 - 解决方法有2种
 - 方法1 通用解法
-  - 在零宽字符元素的外层div min-width:1px;
+  - 在零宽字符元素的外层div min-width:1px; 
 - 方法2 只针对bullet list
   - 在列表符号后添加空字符''，然后才是列表项内容
-
 # done
 - src
   - toSlateRange

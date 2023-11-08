@@ -9,6 +9,8 @@ modified: 2023-11-07T10:22:34.529Z
 
 # guide
 
+- resources
+  - [Fauxton Visual Guide: 提供了admin界面使用说明、faq](https://couchdb.apache.org/fauxton-visual-guide/index.html#answers)
 # [docs-couchdb](https://docs.couchdb.org/en/stable/)
 - features-couchdb
   - Single Node Database: works just like any other database behind an application server of your choice

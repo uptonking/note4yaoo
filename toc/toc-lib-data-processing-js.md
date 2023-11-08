@@ -73,6 +73,13 @@ modified: 2021-05-13T16:14:28.745Z
   - https://stdlib.io/
   - a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing applications. 
   - provides a collection of robust, high performance libraries for mathematics, statistics, data processing, streams, and more
+# database-stats
+- https://github.com/nalgeon/sqlean /3.1kStar/MIT/202311/c
+  - https://github.com/nalgeon/sqlean/blob/main/docs/stats.md
+  - There are a lot of SQLite extensions out there, but they are incomplete, inconsistent and scattered across the internet. sqlean brings them together, neatly packaged into domain modules, documented, tested
+
+- https://github.com/nalgeon/sqlite-stats /202102/c/archived
+  - This library provides common statistical functions for SQLite. 
 # statictics
 - https://github.com/simple-statistics/simple-statistics
   - https://simplestatistics.org/docs/

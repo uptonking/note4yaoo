@@ -19,19 +19,17 @@ modified: 2021-05-14T15:06:46.615Z
 - qt-creator
   - https://github.com/mervick/Qt-Creator-Darcula
 - hbuilder
-
 # ide-cloud
-
 - eclipse-theia-ide
   - https://theia-ide
   - VSCode和Theia用的都是Monaco editor
   - VSCode虽然也是开源的但是他对第三方的支持不是很好
-
 # ide-paid
-
 - sublime text
 - ultra edit
-
+# examples-ide
+- https://github.com/withfig/autocomplete
+  - https://fig.io/
+  - IDE-style autocomplete for your existing terminal & shell
 # discuss
-
 - ## 

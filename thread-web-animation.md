@@ -9,6 +9,16 @@ modified: 2021-01-08T17:14:34.841Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## animating numbers? use a monospace font or `font-variant-numeric: tabular-nums` to avoid layout shifts
+- https://twitter.com/JohnPhamous/status/1721954437839872383
+- Also great for tables to keep numbers nice and neat across rows
+
+- https://twitter.com/jh3yy/status/1715409590320288041
+  - font-variant: tabular-nums; Is shorthand for font-variant-numeric.
+- This can be used anywhere you want to align numbers
 # discuss-raf
 - ## 
 

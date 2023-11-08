@@ -20,6 +20,14 @@ modified: 2023-09-24T19:05:33.866Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I agree  with @ThePrimeagen that SQL ORMs are a leaky abstraction 
+- https://twitter.com/matthew_linkous/status/1721930302321295426
+  - but the real takeaway is that SQL is not a good fit for building apps - that's why there's so many people reaching for ORMs in the first place
+
 - ## 🔥 [Prisma – Database tools for modern application development | Hacker News_201904](https://news.ycombinator.com/item?id=19598287)
 - 
 - 

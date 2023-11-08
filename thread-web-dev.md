@@ -35,7 +35,14 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
-- ## 
+- ## 🤔 is importNode any better or different than cloneNode ?
+- https://twitter.com/WebReflection/status/1721837891276431706
+  - well, importNode for fragments uses a nodeType check + isShadowRoot check
+  - cloneNode just clones the node
+  - if you create nodes via template then: content.cloneNode(true) 👍
+
+- I have observed that templates whose content is not imported/adopted but only cloned, if they have web components within them, those WCs will exhibit different upgrade timing behavior, often undesired behavior, such as elements not being upgraded when you would expect them to be. This could be browser specific. I can't recall if I observed this in only Chromium-based browsers or not.
+  - Dunno but code speaks … in WebKit they end up doing the exact same thing, and as WebKit passes same W3C compat tests Chromium does, I expect Chromium or Firefox to be aligned there too. adoptNode is irrelevant in this thread as well + it does something completely different too.
 
 - ## You can use `<hr />` in `<select>` now for chrome 119+
 - https://twitter.com/zhaojinjiang/status/1718549113594376206

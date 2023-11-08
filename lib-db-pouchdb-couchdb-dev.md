@@ -23,6 +23,8 @@ modified: 2022-12-02T11:15:15.257Z
   - 对二进制数据存储和同步的支持不够好，attachment的设计是针对image/html
   - 不支持transaction
   - js引擎基于firefox的SpiderMonkey
+  - 不方便在服务端进行数据处理etl
+  - Unlike most other databases, whenever you update a document in PouchDB or CouchDB, you must present the entire document along with its current revision marker.
 
 - features
   - storage adapter: levelup, indexeddb
@@ -49,7 +51,7 @@ modified: 2022-12-02T11:15:15.257Z
   - pouchdb + kappa-crdt +eav => pouchdb-crdt-eav
   - alternative-backend: mysql/pg
   - kappa-architecture?
-  - 针对图片、视频的blob二进制存储数据库: 参考 mongodb-gridfs, pg-lo
+  - attachment/针对图片视频的blob二进制存储数据库: 参考 mongodb-gridfs, pg-lo
 
 - database-features
   - standards: postgresql, sqlite, clickhouse, duckdb
@@ -57,9 +59,10 @@ modified: 2022-12-02T11:15:15.257Z
   - indexing
   - query planner
   - query engine: sql or not?
-  - concurrency
   - replication
+  - concurrency
   - conflicts
+  - extensions/plugins: 参考sqlite、pg
   - search: fts, fuzzy
   - auth: 权限控制的粒度，row/doc, column/property
   - arrow

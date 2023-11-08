@@ -282,7 +282,7 @@ modified: 2020-10-22T10:22:55.878Z
   - https://mapbox.github.io/potpack/
   - fast JavaScript library for packing boxes of varying size into a near-square container, which is useful for generating CSS sprites and WebGL textures.
   - Similar to shelf-pack, but static (you can't add items once a layout is generated), and aims for maximal space utilization.
-# math/physics
+# math/statistics
 - https://github.com/jsxgraph/jsxgraph /994Star/LGPLv3/202310/js
   - https://jsxgraph.org/wp/about/index.html
   - a cross-browser library for interactive geometry, function plotting, charting, and data visualization in a web browser.
@@ -291,6 +291,11 @@ modified: 2020-10-22T10:22:55.878Z
 - https://github.com/jcoglan/sylvester /201302/js
   - http://sylvester.jcoglan.com/
   - a vector, matrix and geometry library for JavaScript, that runs in the browser and on the server side
+
+- https://github.com/eurostat/gridviz /EUPL/202311/js
+  - https://eurostat.github.io/gridviz/
+  - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
+  - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
 # more
 - https://github.com/aislelabs/react-flowchart-editor
   - http://data.aislelabs.com/demo/index.html

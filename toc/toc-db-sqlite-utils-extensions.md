@@ -16,6 +16,10 @@ modified: 2022-11-04T14:20:37.172Z
 - https://github.com/asg017/sqlite-hello /c
   - The smallest possible "hello world" SQLite extension. 
   - Meant for testing and debugging loadable SQLite extensions.
+
+- https://github.com/nalgeon/sqlean /3.1kStar/MIT/202311/c
+  - https://github.com/nalgeon/sqlean/blob/main/docs/stats.md
+  - There are a lot of SQLite extensions out there, but they are incomplete, inconsistent and scattered across the internet. sqlean brings them together, neatly packaged into domain modules, documented, tested
 # extensions
 - https://github.com/asg017/sqlite-loadable-rs
   - A framework for writing fast and performant SQLite extensions in Rust

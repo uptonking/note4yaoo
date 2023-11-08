@@ -143,6 +143,8 @@ modified: 2023-02-27T19:07:31.111Z
 - [Tables - CKEditor 5 Documentation](https://ckeditor.com/docs/ckeditor5/latest/features/table.html)
 # dev-later
 - 支持event sourcing架构
+
+- table中的数字使用monospace等宽字体方便对齐
 # dev-maybe
 - table using canvas
 # more

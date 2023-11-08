@@ -36,7 +36,10 @@ modified: 2021-04-21T15:01:12.882Z
 # discuss
 - ## 
 
-- ## 
+- ## Responsive login form with fun animation Using HTML, CSS and JS.
+- https://twitter.com/viki_code/status/1721979187127353709
+  - https://codepen.io/viki-code/pen/rNPjzpX
+  - 眼睛跟随鼠标的动画
 
 - ## Animating clip-paths on layers of images makes really interesting page transitions!
 - https://twitter.com/crnacura/status/1719413040947372420
