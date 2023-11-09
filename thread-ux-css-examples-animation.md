@@ -12,6 +12,16 @@ modified: 2022-11-21T15:27:20.974Z
 # ux-examples
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## You can create this sparkly backdrop with a single element using mask-composite whilst animating the mask-position
+- https://twitter.com/jh3yy/status/1722397114532048959
+  - https://codepen.io/jh3y/pen/ExrWOJe
+
 - ## Here’s a quick tutorial on how to create the popular shimmer effect on the @linear website using @framer .
 - https://twitter.com/jurrehoutkamp/status/1630213441901264903
   - https://www.youtube.com/watch?v=HDYoDRg-nGA

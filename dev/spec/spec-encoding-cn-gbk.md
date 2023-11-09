@@ -9,6 +9,10 @@ modified: 2021-02-16T05:17:27.642Z
 
 # guide
 
+# base64
+- [Base64 - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Glossary/Base64)
+  - When the term "Base64" is used on its own to refer to a specific algorithm, it typically refers to the version of Base64 outlined in RFC 4648, section 4
+  - [RFC 4648 - The Base16, Base32, and Base64 Data Encodings](https://datatracker.ietf.org/doc/html/rfc4648)
 # blogs
 - [（译）2023 年每个软件开发者都必须知道的关于 Unicode 的基本知识 | 新世界的大门](https://blog.xinshijiededa.men/unicode/)
 # discuss-emoji

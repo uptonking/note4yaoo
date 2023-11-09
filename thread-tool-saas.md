@@ -12,7 +12,12 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
-- ## 
+- ## 刚发现 Syncthing 这个强大的跨平台文件同步工具，适用于 Mac/Win/Linux。
+- https://twitter.com/hylarucoder/status/1722536795626471723
+  - 自从使用 Stable Diffusion 后，越来越多的文件使得我的文件同步流程变得复杂。
+- 它这个文件传输是通过什么做的呢，以及安全性如何
+  - 点对点传输, 通信通过TLS加密。
+  - 我的场景是: 局域网内的几台机器数据同步, 那就很安全. 如果走公网的话, 可以自己搭中继服务器
 
 - ## Anna的档案馆称他们获得了读秀图书数据库，包含750万本、总计359TB的中文非小说书籍的收藏，这个数字超过Library Genesis （530万本）。
 - https://twitter.com/xiaohuggg/status/1721532104998105264

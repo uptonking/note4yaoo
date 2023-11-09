@@ -32,7 +32,7 @@ modified: 2023-09-01T10:13:59.044Z
 - What you have run into here is what we have been referring to as the "initial data problem". The problem is that individual objects within automerge have their own identity
   - 👉🏻 The solution to this problem for now is to create a skeleton document which contains the top level keys you know you need and ship it with your app.
 
-- ## [Speed Comparisons Between Automerge Implementations](https://github.com/automerge/automerge/issues/41)
+- ## 📈 [Speed Comparisons Between Automerge Implementations_202101](https://github.com/automerge/automerge/issues/41)
 
 - ## A hypercore conflates(合并，混合) several things in hypermerge
 - https://twitter.com/pvh/status/1219777305632894976
@@ -62,12 +62,6 @@ modified: 2023-09-01T10:13:59.044Z
 - I'd be interested in seeing an automerge-repo-network-hyperswarm but I don't have any current plans to implement it. I'm not sure exactly how it would work but having written a few takes on it with hypermerge, I'm sure it's doable.
 - We would love to explore that one and not waste time on hyperswarm if it does not meet automerge requirements
 
-- ## Is there any chance that we can eventually get an improved Text API on the roadmap?_202308
-- https://automerge.slack.com/archives/C61RJCM9S/p1692886056954899
-  - I still don't think it's possible to do real text editor integration without linear scans of text to reconcile javascript vs automerge string representations, but it seems like that stuff could be hidden behind an API anyway (which I believe libraries like yjs do). I understand that this may not be a priority, but is there an intention to improve this situation eventually?
-- Good text editor bindings are the next thing on the list after we get the automerge-repo release out. 
-  - I already have half complete prosemirror and codemirror bindings which we will be officially supporting so yes, a good text API is on the list
-
 - ## [is amfs means AutoMerge Filesystem?](https://github.com/ConradIrwin/amfs/issues/1)
 - That’s correct, and it uses automerge-go under the hood.
   - the goal was to play with file systems that sync in real time, so as you type in VSCode it is immediately reflected on the filesystem. 
@@ -88,11 +82,3 @@ modified: 2023-09-01T10:13:59.044Z
 - ## is there an accompanying paper to describe the CRDT behind ‘micromerge’ or is ‘A Conflict-Free Replicated JSON Datatype’ the closest?
 - https://automerge.slack.com/archives/C61RJCN9J/p1683034175607929
 - There isn't really a good paper describing this, sorry. Micromerge/Automerge differ from the JSON CRDT paper in terms of the deletion semantics: the paper implements deletion as recursive clearing, which leads to the weird behaviour shown in Fig. 6. Micromerge/Automerge instead implement deletion as removing the reference to the deleted object, which means that any concurrent changes to the deleted object are simply discarded.
-
-- ## [Automerge 2.0_202301](https://automerge.org/blog/automerge-2/)
-- Earlier versions of Automerge were implemented in pure JavaScript. 
-  - Our initial implementations were theoretically sound but much too slow and used too much memory for most production use cases.
-  - JavaScript support on mobile devices and embedded systems is limited. 
-- Instead of trying to coordinate multiple distinct versions of Automerge, we decided to rewrite Automerge in Rust and use platform-specific wrappers to make it available in each language ecosystem. 
-  - This way we can be confident that the core CRDT logic is identical across all platforms and that everyone benefits from new features and optimizations together.
-- For JavaScript applications, this means compiling the Rust to WebAssembly and providing a JavaScript wrapper that maintains the existing Automerge API.

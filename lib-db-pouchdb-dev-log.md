@@ -11,7 +11,15 @@ modified: 2023-11-08T17:07:50.967Z
 
 # not-yet
 
-## ❓ pouchdb初始化的问题，fauxton管理页面和示例页面eg1必须在同一浏览器打开后才能初始化？
+# dev-to
+
+# dev-later
+
+# dev-maybe
+
+# faq
+
+## pouchdb初始化的问题，fauxton管理页面和示例页面eg1必须在同一浏览器打开后才能初始化？
 
 - related
   - [PouchDB 7.0.0 breaks cookie authentication](https://github.com/pouchdb/pouchdb/issues/7390)
@@ -22,10 +30,8 @@ modified: 2023-11-08T17:07:50.967Z
 
 - 原因推断，
   - ~~同一ip下的不同pdb客户端连接同一个couchdb时，只有第一个客户端能通过set-cookie拿到AuthSession，其他客户端无法拿到cookie会认证失败~~
-# dev-to
 
-# dev-later
-
-# dev-maybe
-
+- 💡 解决方法
+  - 初始化pdb时需要传入用户名密码，类似典型的数据库连接url
+  - `new PouchDB('http://user:pass@localhost:5984/testdb');`
 # done

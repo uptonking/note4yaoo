@@ -22,6 +22,18 @@ modified: 2023-10-07T17:30:26.998Z
   - One option that’s mentioned in the docs is delta-pouch, which “stores every change as its own document”, and then reads out those changes to construct the “current” state of a document.
   - I’m a little wary about the “production-readiness” of this plugin, though, as shoehorning(强挤硬塞) a delta-based system onto pouchdb seems like it would introduce some pretty significant performance penalties(处罚；不利；损失).
 
+## 📝 [12 pro tips for better code with PouchDB_201406](https://pouchdb.com/2014/06/17/12-pro-tips-for-better-code-with-pouchdb.html)
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 ## 📝 [10 things I learned from reading (and writing) the PouchDB source_201410](https://pouchdb.com/2014/10/26/10-things-i-learned-from-reading-and-writing-the-pouchdb-source.html)
 
 - I first joined the project around December of last year, at which point PouchDB was already fairly mature. (The first commit from Mikeal Rodgers is already 4 years old!)

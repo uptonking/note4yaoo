@@ -121,7 +121,10 @@ modified: 2020-07-17T10:54:16.341Z
 
 - ## 
 
-- ## 
+- ## Variable font animation
+- https://twitter.com/vponamariov/status/1722521972754522582
+  - Some CSS and one line of JS
+  - https://codepen.io/michellebarker/pen/bPEWGK
 
 - ## 干掉 Windows 系统中的微软雅黑
 - https://twitter.com/sun0225SUN/status/1712760249747382701

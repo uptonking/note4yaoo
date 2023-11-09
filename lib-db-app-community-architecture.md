@@ -98,7 +98,19 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
-- ## 
+- ## People always talk about Create, Read, Update and Delete.
+- https://twitter.com/andrewingram/status/1722291782564602202
+  - They never talk about Duplicate, Split and Merge. The far more gnarly actions that are commonly required in any real system.
+- CRUD erases any intent in our system. Why did the address change ? Has the user moved ? Was he correcting a typo ? I do not understand why CRUD is a thing. Any CRUD system becomes unmaintainable when we need to implement workflows such as duplicating, etc as you mentioned
+  - Yeah, I prefer my "write" operations to be centred around use cases (Jobs To Be Done) rather than just plain old entity manipulation. I tend to enjoy the CQRS-type approach that GraphQL gives me when set up effectively.
+
+- Don't forget reorder!
+
+- Duplicate = Read + Create
+  - Split = Read + Create
+  - Merge = Read + Read + Create + Delete
+
+- But we don't have HTTP verbs for them, making them un-possible.
 
 - ## 🔥 [Oops, You Wrote a Database | Hacker News_202302](https://news.ycombinator.com/item?id=34941650)
 - 

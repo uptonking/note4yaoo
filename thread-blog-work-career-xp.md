@@ -229,7 +229,11 @@ modified: 2022-11-08T10:34:34.820Z
 # discuss
 - ## 
 
-- ## 
+- ## 为什么国内互联网上到处都有喷子出没？
+- https://twitter.com/lencx_/status/1722426860594995244
+- 在快节奏和各种压力下，心态出了问题。暴躁易怒，缺乏谦卑，不管看到什么都一副眼高手低，自以为是的样子（嘴永远都在脑子和手前面）。
+  - 没有基本的思考力，逻辑混乱，很自然就跟着风走了。潜移默化下，价值观自然就变了。人人都在吐槽割韭菜，但人人都想成为那个挥舞镰刀的人（成为自己最讨厌的人）。
+- 同意. 則來自壓力. 深層一點就是都處於毫無安全感之上.
 
 - ## The biggest problem I've observed for #Rust beginners: They read too much and write too little.
 - https://twitter.com/OnlyXuanwo/status/1721776231245643833

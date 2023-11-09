@@ -10,7 +10,7 @@ modified: 2023-03-16T16:29:47.610Z
 # guide
 
 - features
-  - virtual render
+  - virtual-render, streaming data model
   - track changes and branching
   - collaborative editing
 

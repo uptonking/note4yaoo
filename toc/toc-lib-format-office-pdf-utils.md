@@ -37,6 +37,13 @@ modified: 2022-11-11T10:46:41.519Z
 
 ## viewer
 
+- https://github.com/rwv/lookscanned.io /ts/vue
+  - https://lookscanned.io/
+  - a pure frontend site that makes your PDFs look scanned
+  - 预览效果是图片
+  - Based on WebAssembly, No waiting for your PDF to be scanned. Just click the button and your PDF will be scanned in a second
+  - offline-capable. It works even if you don't have a network connection.
+  - Tweak the settings to make your PDF look better. See the preview in real time.
 # parser-generator
 - https://github.com/tradle/pdf-parse /js
   - Pure javascript cross-platform module to extract texts from PDFs.

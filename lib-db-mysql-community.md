@@ -48,7 +48,10 @@ modified: 2022-06-13T03:00:06.041Z
 
 - ## 
 
-- ## 
+- ## 美团做的这个MySQL的优化也太极限了
+- https://twitter.com/changwei1006/status/1722343947459330417
+  - [Intel PAUSE指令变化影响到MySQL的性能，该如何解决？ - 掘金](https://juejin.cn/post/6844904129626636302)
+- 还不够极限，既然他已经 target 具体 intel 处理器，sapphire rapids 上还可以用 tpause 指令来替代这种多次 pause 在自旋锁场景下。能够更好优化 CPU 的 thermal 管理从而让锁的另一侧的性能提升，能有更好的性能。dpdk 里就是这么做的。
 
 - ## GitHub 使用MySQL的原因😂：
 - https://twitter.com/Hooopo/status/1629399543740788742

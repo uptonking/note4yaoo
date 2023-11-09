@@ -310,6 +310,16 @@ $$('[contenteditable]')
   - [x] streaming infinite-list/tree
 # dev-11
 
+## 111
+
+## 1109
+
+- [Why were Javascript `atob()` and `btoa()` named like that? - Stack Overflow](https://stackoverflow.com/questions/33854103/why-were-javascript-atob-and-btoa-named-like-that)
+  - The names carried over from Unix into the Netscape codebase. I reflected them into JS in a big hurry in 1995 
+  - atob stands for ASCII to binary e.g.: atob("ZXhhbXBsZSELCg==") == "example!^K"
+  - btoa stands for binary to ASCII e.g.: btoa("\x01\x02\xfe\xff") == "AQL+/w=="
+  - Base64, by design, expects binary data as its input. In terms of JavaScript strings, this means strings in which the code point of each character occupies only one byte. So if you pass a string into btoa() containing characters that occupy more than one byte, you will get an error, 
+
 ## 1102
 
 - 事件冒泡的案例

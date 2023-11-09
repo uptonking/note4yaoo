@@ -24,7 +24,10 @@ modified: 2023-11-01T10:15:06.245Z
 
 - ## 
 
-- ## 
+- ## Cool thread-safe triple buffering approach made lock-free by atomically swapping the pointers to the buffers
+- https://twitter.com/zack_overflow/status/1722275195594133817
+  - Thinking about using this for my code editor when I add LSP support
+  - The main render thread needs to get data from the second thread which manages the LSP server process
 
 - ## 今年 gopher 大会上的分享：Building a Highly Concurrent Cache in Go: A Hitchhiker's Guide
 - https://twitter.com/kscooooo/status/1719976363166498889

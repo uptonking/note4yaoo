@@ -247,6 +247,7 @@ modified: 2022-04-05T10:08:25.947Z
   - Collabs is a collections library for collaborative data structures. 
   - These are data structures that look like Set, Map, Array, etc., except they are synchronized between multiple users
   - Collabs is a library for collaborative data structures, not just a menu of built-in options (but we provide those too). So if our data structures don’t meet your needs, you can create your own
+  - [Collabs: A Flexible and Performant CRDT Collaboration Framework_202212](https://arxiv.org/abs/2212.02618)
   - [Text and List Optimizations_202203](https://github.com/composablesys/collabs/pull/218)
     - Replaces RgaDenseLocalList with ListPositionSource. This uses the same underlying CRDT design (Double RGA)
   - [Network and Storage Providers](https://collabs.readthedocs.io/en/latest/guide/providers.html)

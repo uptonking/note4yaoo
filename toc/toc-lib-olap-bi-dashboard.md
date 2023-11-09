@@ -72,9 +72,10 @@ modified: 2020-12-09T09:30:24.694Z
   - A modern, enterprise-ready business intelligence web application.
   - 依赖flask-appbuilder、sqlalchemy
 
-- https://github.com/rawgraphs/rawgraphs-app
-  - https://rawgraphs.io/
+- https://github.com/rawgraphs/rawgraphs-app /8.5kStar/apache2/202311/js
+  - https://www.rawgraphs.io/
   - RAWGraphs is an open web tool to create custom vector-based visualizations on top of the amazing d3.js
+  - 依赖d3.v7、sparqljs、@rdfjs-elements/sparql-editor、dayjs、lit-html、react-bootstrap、react-dnd
   - RAWGraphs works with tabular data (e.g., spreadsheets and comma-separated values) as well as with copied-and-pasted texts from other applications. 
   - Based on the SVG format, visualizations can be easily edited with vector graphics applications 
   - data injected into RAWGraphs is processed only by the web browser: no server-side operations or storages are performed.

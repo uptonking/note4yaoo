@@ -12,6 +12,18 @@ modified: 2021-01-06T14:40:11.360Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Thanks to `flushSync` , you can finally manage focus in React again. (but I will always love this.setState)
+- https://twitter.com/ryanflorence/status/1722358755499913582
+- setTimeout won't always work, and adds some gross flashing and gross UX for assistive tech too
+  - if it was noticeable maybe a requestAnimationFrame. But that may not work either depending how updates are batched. I'm really curious if it's a micro / macro / event loop task with flushSync. Yea UX with assistive tech could get weird with jumping focus so rapidly
+- Nifty! So it essentially "flushes DOM updates synchronously", I'll have to keep this one in my back pocket.
+
 - ## React tip: stop using forwardRef() for your custom components. 
 - https://twitter.com/DavidKPiano/status/1720874496427446770
   - Just name the `ref` prop something else in your custom component (like `inputRef` ) if you can.
@@ -279,7 +291,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                 `ValueFront`,                                                 `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                  `ValueFront`,                                                  `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

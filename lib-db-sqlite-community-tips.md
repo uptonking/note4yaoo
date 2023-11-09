@@ -52,7 +52,7 @@ modified: 2023-10-28T13:38:46.522Z
   - > Rewriting SQLite in Rust, or some other trendy “safe” language, would not help. In fact it might hurt.
   - Prof. Regehr did not find problems with SQLite. He found constructs in the SQLite source code which under a strict reading of the C standards have “undefined behaviour”, which means that the compiler can generate whatever machine code it wants without it being called a compiler bug. That’s an important finding. But as it happens, no modern compilers that we know of actually interpret any of the SQLite source code in an unexpected or harmful way. We know this, because we have tested the SQLite machine code – every single instruction – using many different compilers, on many different CPU architectures and operating systems and with many different compile-time options. So there is nothing wrong with the sqlite3.so or sqlite3.dylib or winsqlite3.dll library that is happily running on your computer. Those files contain no source code, and hence no UB.
 
-- ## Nobody is feasibly going to rewrite Sqlite in Rust.
+- ## 👉🏻 Nobody is feasibly going to rewrite Sqlite in Rust.
 - https://news.ycombinator.com/item?id=25464846
   - Is making a file based database that hard, compared to creating new programming language for example ?
 

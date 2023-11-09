@@ -16,7 +16,11 @@ modified: 2023-11-01T03:15:20.195Z
 
 - ## 
 
-- ## 
+- ## A long-standing issue in Jupyter is about to get fixed: getting back a notebook state when reconnecting.
+- https://twitter.com/davidbrochart/status/1722564382813516093
+  - It will be available in jpterm and jupyverse first, then in JupyterLab.
+  - This demo shows that outputs are restored but it will also work with widgets. It's all powered by CRDT.
+- I think jpterm will be the playground for most innovations in the Jupyter ecosystem, before they land in JupyterLab. The reason is the same as the one behind Textual: it's easier to use than web technology.
 
 - ## 🌰 分享我设计的基于CRDT的软件架构 hamsterbase
 - https://twitter.com/hamsterbase/status/1590005075581497344

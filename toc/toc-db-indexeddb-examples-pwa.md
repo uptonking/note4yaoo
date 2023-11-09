@@ -153,6 +153,11 @@ modified: 2022-11-14T15:12:02.783Z
 - https://github.com/ErKeLost/react-music-pwa
   - react18 + ts + vite4.0 + pwa Music
 # pwa-utils
+- https://github.com/InBrowserApp/inbrowser.app /ts/vue
+  - https://inbrowser.app/
+  - InBrowser. App is a project to build and collect web apps that fully run in the browser without backend servers.
+  - Works without network connection using PWA.
+
 - https://github.com/GoogleChrome/workbox /ts/inactive
   - JavaScript libraries for Progressive Web Apps
   -  Workbox is a set of modules that simplify common service worker routing and caching. 

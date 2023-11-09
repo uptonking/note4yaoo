@@ -23,6 +23,9 @@ modified: 2023-09-28T20:35:56.153Z
   - https://github.com/garrensmith/couch_hack_week
   - https://github.com/jo/couchdb-best-practices
   - https://github.com/glynnbird/couchimport
+
+- resources
+  - [Plugins and External Projects](https://pouchdb.com/external.html)
 # popular
 - https://github.com/pubkey/client-side-databases
   - https://pubkey.github.io/client-side-databases/database-comparison/index.html
@@ -76,6 +79,7 @@ modified: 2023-09-28T20:35:56.153Z
     - Or it can run using SQLite rather than LevelDB
   - 🧐 It is modeled after the single-node design of CouchDB 1.x, although it contains some CouchDB 2.x features such as Mango queries.
   - PouchDB Server is much less battle-tested than CouchDB, but it does pass the full PouchDB test suite.
+  - PouchDB Server is a standalone REST server that implements the CouchDB API, while using a LevelDB-based PouchDB under the hood. It also supports an --in-memory mode and any LevelDOWN adapter
   - [Replication stream endpoint](https://github.com/pouchdb/pouchdb-server/issues/175)
     - The goal is to replace the existing replication algorithm with a less chatty protocol. Thoughts?
     - We have discussed this at CouchDB Dev Summit and for now our hypothesis is that Http/2 solves most of these issues

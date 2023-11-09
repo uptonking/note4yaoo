@@ -63,7 +63,8 @@ modified: 2023-02-07T09:22:03.120Z
   - [离线语音识别的解决方案](https://github.com/PaddlePaddle/PaddleSpeech/issues/2622)
   - [这个 demo 是一个启动离线语音服务和访问服务的实现](https://github.com/PaddlePaddle/PaddleSpeech/blob/develop/demos/speech_server/README_cn.md)
 
-- https://github.com/coqui-ai/TTS
+- https://github.com/coqui-ai/TTS /MPL/python
+  - http://coqui.ai/
   - a deep learning toolkit for Text-to-Speech
 
 - https://github.com/nateshmbhat/pyttsx3

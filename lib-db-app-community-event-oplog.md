@@ -58,7 +58,12 @@ modified: 2023-11-01T10:08:09.232Z
 
 - ## 
 
-- ## 
+- ## 今日 Rust 小震撼: 把 logstash 换成 vector 之后内存用量从 7G 降至不到 200M
+- https://twitter.com/electroniclunar/status/1722457277305950556
+- logstash是ruby+java，内存大也正常。不过logstash的管道过滤和fanout 还是挺好用的。
+- 用 loggie（golang）也是 200M
+
+- 以前写过中心日志处理器，绝大部分内存都用来保障 at-least-once 的缓存。而且因为一些特殊原因不能用 MQ，只能靠服务器硬抗。 如果有 MQ，内存要多小都行。
 
 - ## [Is ORM still an anti-pattern? | Hacker News_202306](https://news.ycombinator.com/item?id=36497613)
 - Materialized views are almost criminally underused. I feel most people don't know about or understand them. 
