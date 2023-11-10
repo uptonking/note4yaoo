@@ -186,7 +186,8 @@ modified: 2022-04-05T10:10:27.212Z
   - If you build a text editor that is meant to be used P2P, then you probably want to choose CRDT.
   - If you use ProseMirror, then you might consider using its prosemirror-collab plugin.
   - If you know that real-time rich text editing will be your primary feature, then you’d probably want to double down and use OT.
-# [协同文档：OT与CRDT实现协同编辑笔记，偏理论](https://www.zhoulujun.cn/html/webfront/engineer/Architecture/8564.html)
+# blogs-ot-crdt
+## [协同文档：OT与CRDT实现协同编辑笔记，偏理论](https://www.zhoulujun.cn/html/webfront/engineer/Architecture/8564.html)
 - 实时协同编辑，是指多人同时编辑一个文档，你可以实时看到别人做出的修改，不用手动刷新页面，最典型的例子是 Google Docs。
 - 要实现实时编辑，我们需要解决两个技术点：实时通信问题、编辑冲突问题，其中实时通信问题比较好解决，可以使用 long pull 或 WebSocket
 - 一个文档可以被抽象为一系列操作的集合，这个集合便是 changeset。
@@ -195,7 +196,7 @@ modified: 2022-04-05T10:10:27.212Z
   - 定义运算 $AB$，意为将 changeset $B$ 应用到 $A$ 上
   - 定义 $C = AB$，意为 changeset $C$  产生的效果等等价于依次应用 $A$, $B$ 产生的效果
 
-## OT与CRDT的区别
+### OT与CRDT的区别
 
 - OT主要用于文本，CRDT更通用
   - CRDT不仅仅应用在协同编辑，还有分布式系统的最终一致性上也有应用。
@@ -210,7 +211,7 @@ modified: 2022-04-05T10:10:27.212Z
 - 因为OT中的 transformation 流程太复杂，OT概念不是很清楚，
   - 而CRDT很好理解，实现起来也不难。
 
-## OT
+### OT
 
 - 实时协同编辑，通俗来讲，是指多人同时在线编辑一个文档，且当一个参与者编辑文档的某处时，这个修改会立即同步到其他参与者的计算机上。归纳起来，需要下面几个步骤：
   - 计算出当前参与者对文档做出的修改，并发送到服务器
@@ -239,7 +240,7 @@ modified: 2022-04-05T10:10:27.212Z
 - changeset 中 action 的顺序必须保留，因为 index 的位置可能会被改变。
   - 一般每 500ms 收集一次 action （变更动作），并生成一个 changeset
 
-## CRDT
+### CRDT
 
 - CRDT有两种形式：
 - 基于状态
@@ -258,15 +259,14 @@ modified: 2022-04-05T10:10:27.212Z
 
 - 每个客户端都有一个唯一UUID，再加上 Lamport timeStamp 就可以为每个操作添加唯一可排序的 ID。
 - 每个操作都有唯一的ID，接下来就是定义操作的数据结构，并且符合 CRDT 的特性，ID的唯一性可以保证操作的幂等性，操作可以排序保证了交换性，接下来只要保证每个操作都可以被合并就可以了。
-# [Under the Hood of the Grammarly Editor, Part One: Real-Time Collaborative Text Editing using OT_202204](https://www.grammarly.com/blog/engineering/real-time-collaborative-text-editing/)
+# 📝🌰 [Under the Hood of the Grammarly Editor, Part One: Real-Time Collaborative Text Editing using OT_202204](https://www.grammarly.com/blog/engineering/real-time-collaborative-text-editing/)
 - We use QuillJS as a basis for the Grammarly Editor. 
   - It utilizes the Delta format for text changes, which is expressive, readable, and extensible enough to fit most of our needs. 
 
 - Conclusion
   - The OT protocol and Delta format are our basis for real-time collaboration in the Grammarly Editor, ensuring that even when users are working on text across multiple devices or browser windows, their changes are always synchronized, and there are no losses or corruptions to the text. 
-# experiments
 
-## [Braid: Synchronization for HTTP](https://braid.org/)
+# [Braid: Synchronization for HTTP](https://braid.org/)
 
 - https://github.com/toomim
   - https://github.com/braid-org/braidjs
@@ -278,7 +278,5 @@ modified: 2022-04-05T10:10:27.212Z
   - Subscriptions to GET requests
   - Patches to Range Requests
   - Merge-Types to specify OT or CRDT behavior
-# ref
-- [How Figma’s multiplayer technology works__201910](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
-
+# more
 - [CRDT与协同编辑 简介](https://www.herui.club/archives/1066)

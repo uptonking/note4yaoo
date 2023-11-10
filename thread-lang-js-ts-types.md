@@ -47,6 +47,12 @@ modified: 2021-08-05T04:31:02.298Z
 
 - ## 
 
+- ## TIL: in TS `satisfies` doesn't set the type of an object, which means you can't assign properties to it later. 
+- https://twitter.com/matthewcp/status/1719391086345363664
+  - So if you want to both have type safe object literals and mutate them later, you need to use both satisfies and a type annotation.  
+- There's never any reason to write `const p: T = e satisfies T;` . It's the same thing as `const p: T = e;` in every case
+- To me, the use-case of "satisfies" is kind of like an "instanceof" check. It doesn't cast to the type, but instead tells the compiler its "type-like" but can still be narrowed to a more specific type. So its almost acting like a discriminating union. `{ one: string } | Props`
+
 - ## TIL that `typeof v === 'function'` and `isFunction(v)` behave differently in TS
 - https://twitter.com/AndaristRake/status/1676574933407735808
 - this might be because **JS classes have typeof 'function' too**, and they can't be invoked like functions
@@ -149,7 +155,6 @@ type C = [string, ...number[], ...Aliased]
 
 - ## [typescript package visibility (create library) - Stack Overflow](https://stackoverflow.com/questions/44821327/typescript-package-visibility-create-library)
 - typescript skipped all fields annotated with `/** @internal */` even with public modificator
-
 
 - ## What are your favourite type helpers? I.e. helpers which return types from other types.
 - https://twitter.com/mattpocockuk/status/1597955503480414208
@@ -359,12 +364,14 @@ const bar: T = 'bar'
   - `this` parameters are fake parameters that come first in the parameter list of a function
 - Notice that `this` won't get translated into js, so it's not a real argument in the function.
 - function f(this: void)  // make sure `this` is unusable in this standalone function
+
 - ## how do people handle functions that can throw in typescript? 
 - https://twitter.com/tmcw/status/1423404151149580292
   - half-considering starting to use an Either type of returning result | Error, don’t want to rely on just remembering which functions are throwy
 - In majority of the cases it should be fine, but in some weird cases you might encounter some of the system errors `RangeError` or `TypeError` to name a few. Which makes me think exhaustively typing all the possible errors  is impossible.
 - I would even recommend creating a simple `Err` class for the error side of it's a logical error and not an actual unrecoverable error. Switching our parser to our own error type was a massive perf boost (somewhere around 100x for us)
+
 - ## how do you type a memoize function that accepts an arbitrary length of arbitrarily-typed arguments?
 - https://twitter.com/Rich_Harris/status/1423023727680315392
   - we have a winner! guardian alumni network to the rescue 
-  - `type Fn<T extends any[]> = (...args: T) => any; `
+  - `type Fn<T extends any[]> = (...args: T) => any;`

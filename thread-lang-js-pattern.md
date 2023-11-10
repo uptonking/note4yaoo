@@ -1,11 +1,11 @@
 ---
-title: thread-lang-js-ts-pattern
+title: thread-lang-js-pattern
 tags: [architecture, js, pattern]
 created: 2023-08-04T18:28:05.397Z
-modified: 2023-08-04T18:28:26.530Z
+modified: 2023-11-10T08:05:12.852Z
 ---
 
-# thread-lang-js-ts-pattern
+# thread-lang-js-pattern
 
 # guide
 
@@ -19,12 +19,12 @@ modified: 2023-08-04T18:28:26.530Z
 - ## I think I have a nice pattern for being able to add extensions without an JS, 
 - https://twitter.com/justinfagnani/status/1687512185201893376
   - which should make this pretty unique in the ability to drop into plain HTML contexts
-  - https://github.com/justinfagnani/codemirror-elements
+- https://github.com/justinfagnani/codemirror-elements
   - A set of CodeMirror custom HTML elements
 
-- This is amazing! Very unique way of packing extensions using declarative syntax, and lets you circumvent needing to load all extensions then enable / disable them ... I may need to steal this for Rhino!!
+- This is amazing! Very unique way of packing extensions using declarative syntax, and lets you circumvent needing to load all extensions then enable/disable them ... I may need to steal this for Rhino!!
 
-- I am curious how you worked around the getSelection API not working if you're rendering the editor in the shadow DOM, I faced it with ProseMirror / TipTap.
+- I am curious how you worked around the getSelection API not working if you're rendering the editor in the shadow DOM, I faced it with ProseMirror/TipTap.
   - Does CodeMirror use getSelection()?
   - I imagine it would for highlighting and transforming
 

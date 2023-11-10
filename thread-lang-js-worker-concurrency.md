@@ -115,3 +115,44 @@ modified: 2022-12-19T01:59:37.634Z
   - a library for nodejs which gives you access to v8's Isolate interface. 
   - This allows you to create JavaScript environments which are completely isolated from each other. 
   - This can be a powerful tool to run code in a fresh JavaScript environment completely free of extraneous capabilities provided by the nodejs runtime.
+
+- ## What's something you know should be done in a Worker, but ended up running on the main thread due to feasibility/time/complexity reasons?
+- https://twitter.com/_developit/status/1428731551794278402
+- All my state management. React depends heavily on stable references and I would have to use some complex patch set method to keep things stable. @dai_shi has some done some cool redux stuff on that but... I still have to keep all of my app state on the main thread
+  - my recent experimental project is to render react components in worker
+  - https://github.com/dai-shi/react-worker-components
+- This is a tricky one IMO - moving UI update calculation into a Worker; this way also means **moving input handling to the Worker**, which means your best-case input response times are 2 x postMessage cost (base of around 5ms IIRC). Not unworkable, but tricky to scale.
+  - Yeah, 5ms is big. We have control which components to offload. The question is if developers can predict whether a component takes more than 5ms to render... Sounds impossible. The main use case in my mind is async stuff like data fetching from server.
+- Isn’t data fetching off the main thread anyway?
+  - Yeah, I mean data fetching + rendering with the fetched data. My motivation is to realize "React Suspense for Data Fetching". While React Server Components seems the way forward, it would be nice to have a solution without server.
+- An ideal solution might **serialize input responders and send them to the main thread** so they can execute immediately instead of calling handlers in the worker. The Worker still handles large updates (change screens, etc), but the **UI thread handles most interactions**.
+  - An ideal solution is proper shared memory primitives which are available on worker and main thread
+  - Maybe, though there'd still be a cost. Shared Memory is really difficult to spec in browsers because of the security implications.
+  - Record and tuples may be shared without any security (races) problem.
+  - True! Now you have a locking problem
+- Procedural Generation. I would love to do it in a worker but **Off Screen Canvas isn't widely supported** and I spend more time trying to think about the typed array transfer protocol than having fun making art.
+- A huge performance boost for HTML-over-the-wire libs (like Hotwire, @htmx_org or @unpoly ) would be the ability to parse HTML in a separate thread.
+- Charting library calculations. Animation tween calculations
+- Text parsing to build an ast, for syntax highlighting and validation.
+- Aggregate stats on Geospatial data to fit it into a fixed tile, aka give me the average temperature in this tile based on a bunch of points from GeoJSON. Can be done using an R-tree, but would be even smoother in a worker.
+- We test between sending images blur url or image blur hash and decoding it on client(by getting url from canvas). 
+  - second solution had better performance because no extra connection to server needed after getting hashes. 
+  - Next require string for blur url but we can get it onmessage
+- not really in topic but merging 2 big immutable objects is always a pain specially if you wanna try to keep the same reference to avoid rerenders
+  - https://github.com/developit/object-diff-patch
+- Re-rendering needs low latency, doesn't the cost of round-trip IO op (serialize via msg, db, network) + worker compute outweigh the cost of thread blocking? Sure this is just one task example, worker is better for multiple tasks.
+  - I depends. I once faced a problem where I was dealing with multiple images uploading so I had to show the upload progress for each image. Meanwhile, the user could add more images from another local folder and start a new bulk upload. That would hit the backend and then do a big state update with all the images. All of this while the upload indicator shows for each image (not really ideal i know, **we switched to a global progress bar later**) and the user still needs to be able to scroll the image grid, move the images around to reorder and rename
+  - The state update would be the main thing to move off-thread there. Anything else would be pretty directly UI-related, which is main thread territory.
+- All of it! We should only listen to events on the main thread, and pass them into a worker. If the worker isn't loaded, enqueue them until it is.
+  - This gets tricky for things like responding to text input. It can be done with a worker roundtrip, but it's hard.
+- Webcrypto encrypting ANY file
+  - The browser uses a dedicated thread for webcrypto already, so you likely won’t see much of a difference putting this into a web worker.
+  - The only downside is that you can't really run multiple webcrypto's in parallel; the browser will schedule them to run sequentially in the same WebCrypto thread (the browser only has one of these...). But yes, it's good in that the main thread is never blocked by WebCrypto...
+- Image manipulation via canvas (scale, crop, rotate, hue/bright/contrast etc)
+- client-side image downsizing
+  - Yup. Nearly instant on a desktop but 5+ seconds on a mobile device. But changing the code to a worker has lots of risk for a .001% of the application feature.
+- Heavy numeric data transformations prior to plotting (eg smoothing, grouping/mean, etc, done client side for interactivity). Ideally should also be ported to WASM.
+- Mostly audio stuff, like encoding. But it matters mostly for external projects, sometimes worker overhead isn't worth it.
+- pdf generation - QR code reading
+  - counter-question: what do you think of using indexedDB as a communication channel/ cache for data heavy communication between main thread and worker thread
+  - **IndexedDB is pretty slow**. I'd sooner use a basic in-memory sync setup, or postMessage with a cache on the Worker side if you can afford the 5ms 2-hop cost.

@@ -11,7 +11,7 @@ modified: 2022-12-02T11:15:15.257Z
 
 - pros
   - offlineable
-  - CouchDB Replication Protocol 
+  - CouchDB Replication Protocol
 
 - cons
   - 与couchdb耦合: data-model, database, sync protocol
@@ -35,11 +35,6 @@ modified: 2022-12-02T11:15:15.257Z
   - npm
   - budibase
 
-- alternatives
-  - pouchdb server    /inactive
-  - couchdb(erlang): 使用b+tree
-  - [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
-
 - collab
   - 为db实现crdt的参考: piratedb, evolu/idbsidesync, triplitdb, indexeddb
   - 不必执着于寻找indexeddb的实现，很多时候只是作为一种持久化的方式
@@ -48,7 +43,7 @@ modified: 2022-12-02T11:15:15.257Z
   - couchdb fauxton http://127.0.0.1:5984/_utils/
 
 - roadmap
-  - pouchdb + kappa-crdt +eav => pouchdb-crdt-eav
+  - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
   - alternative-backend: mysql/pg
   - kappa-architecture?
   - attachment/针对图片视频的blob二进制存储数据库: 参考 mongodb-gridfs, pg-lo
@@ -77,10 +72,11 @@ modified: 2022-12-02T11:15:15.257Z
   - [Apache CouchDB Wiki - Confluence](https://cwiki.apache.org/confluence/display/COUCHDB/)
   - [Couchbase Forums](https://www.couchbase.com/forums/)
   - couchbase discord
-  - [pouchdb blog](https://pouchdb.com/blog/)
-  - [couchdb blog](https://blog.couchdb.org/)
+  - couchdb(erlang): 使用b+tree
+  - [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
 # draft
 - nonsyncable/local-only tables for config/temporary-data
+  - local documents解决了此问题
 # dev
 
 # changelog-pouchdb

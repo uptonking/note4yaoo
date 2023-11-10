@@ -1,11 +1,11 @@
 ---
-title: thread-lang-js-ts-stars
+title: thread-lang-js-stars
 tags: [js, lang, thread, typescript]
 created: 2021-06-22T11:54:15.957Z
-modified: 2021-06-22T11:54:44.506Z
+modified: 2023-11-10T08:05:31.982Z
 ---
 
-# thread-lang-js-ts-stars
+# thread-lang-js-stars
 
 # guide
 
@@ -60,7 +60,7 @@ if(val) // doSth
 
 - hmm isn't this technically just a Trie? (over arbitrary values instead of characters)
 
-- ## What if you could store a global state at typelevel in typescript.
+- ## ✝️ What if you could store a global state at typelevel in typescript.
 - https://twitter.com/ecyrbedev/status/1686852448915189760
   - Thanks to interface and function overriding, you can
 - I use this in all my tanstack libraries
@@ -137,69 +137,12 @@ if(val) // doSth
   - This should work with both plain classes and with custom elements. 
   - It is important that this does not require subclassing.
 
-- ## I really wish there were Promises in JS that could be evaluated sync. It’s a complex problem.
-- https://twitter.com/trueadm/status/1630739165045194752
-- For UI frameworks you want to allow the user to pass a promise, but ensure that if it is ready that you can render synchronously. But `T | Promise<T>` doesn’t compose the way promises do, so either you accept a perf/UX hit, create your own alternate async ecosystem, etc.
-  - I use a WeakMap for this. Only pass promise. Lookup resolution value sync via weakmap where you want to do this. Still agree though: custom thenables are great and Promise.resolve using them is great, async/await not using them sucks
-- This was discussed ad nauseum a decade ago. If you want sync promises try jQuery. Deferred.
-- https://github.com/abbr/deasync
-  - DeAsync turns async function into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. 
-  - The core of deasync is written in C++.
-- conclure js Using generators instead of promises allows for a LOT more flexibility, including cancellation, sync resolution, and better testing. The API is strictly the same as async/await
-
-- I definitely want eager await that resolves sync if the promise resolves sync. That’s more in the style of callbacks, and allows you to write a single api for both sync and async interfaces.
-  - I struggle with this issue in tuple-database. I want to write the same code that works for an async backend or a sync backend. I don’t want to create an intermediate query language…
-- My problem is actually pretty specific:
-  - For tuple-database, there's an async storage interface and a sync storage interface. 
-  - The sync interface is important if you want to use it for application state management and stuff. Or maybe you just want to use local storage...
-- Since the lowest level abstraction is either sync or async, it pollutes all the code above it which needs to be written to handle both cases.
-  - I looked into coroutines, higher-kinded types, monkey-patching promise... 
-  - My solution? Regex lol
-- Replicache is designed to be used for application state and it is async. We are religious about 60fps. Promises that resolve immediately *are* slower than sync code but we’re taking microseconds. It works great for 60fps in our experience.
-  - We have tons of customers in production using Replicache exactly this way (among them @vercel ) and it’s ~instant.
-- Yeah, you can definitely get away with async state management most of the time...
-  - I'm curious if that can get in the way of typing into an `<input>` if the input's value is updating async as you type...
-- Yes you can. We do this while animating at 60fps.
-  - We have many users who back input boxes by @replicache directly. It's a design goal of ours to enable this exactly. Try it out, I think it's an overlooked design pattern.
-- 👉🏻 关于架构层sync或async api的设计 
-  - The other nice thing about making the api to Replicache asynchronous is that it permits falling back to io as necessary. Many sync systems have this problem where these choose sync apis for perf but eventually data gets large and causes excessive gc.
-  - If the core API is async it can be up to the sync system to dynamically manage cache size. Replicache does this, lazily caching data from IDB and paging it out after awhile.
-- Getting into the weeds though: on iOS Safari, if you want to call focus() on an element to bring up the keyboard, it must be called synchronously in response to a user action event callback... Now, what if they press a button and you want to open a popup and focus the input?
-  - https://twitter.com/ccorcos/status/1631159120043835392
-  - In React, at least, you're going to want to update the state, synchronously re-render, and then call focus... This *could* work with a sync state update. Unfortunately, React's move towards async rendering throws a wrench in it. But the problem remains the same.
-- I am pretty sure it only needs to be called in the same task (queueing a microtask is fine). So if your data is in memory it will still work.
-
-```js
-const foo = await Promise.resolve("foo");
-
-// vs:
-
-const foo = await new Promise((res, rej) => setTimeout(res, 0));
-```
-
-- The first runs in *same turn* of event loop as calling code, guaranteed. Second gets queued in event loop.
-- Microtasks are crazy fast. All they are doing is delaying a function to run later in the turn of the event loop. No actual IO (to disk, network, whatever) can possibly get between the queuing of a microtask and its execution.
-- `setImmediate` is not part of the spec or implemented by browsers, but was meant to queue a task. So shorthand for `setTimeout(fn, 0)`.
-- A microtask enqueued from within another microtask would execute immediately I believe, but I bet React's whole rendering model probably has its own considerations for this.
-  - I think they were also doing some weird stuff with unwrapping resolved promises.. somehow.. maybe an RFC.
-
-- It’s important to understand that `async` does not mean “yield to event loop”. When the underlying promise resolves in same event loop task, the resolution will also run in same event loop task. This usually happens when the data needed is already in memory, because it’s cached.
-  - Mutations don't need to go through useEffect or similar in the first place because they aren't an effect of render, but of some UI event. So the whole cycle should happen in one frame if your data is in memory, even if all the methods are `async`.
-
-- Yeah, but my goal was to just have one system that can work either sync or async... Perhaps, that's not a great goal, but that's where I landed on these problems... If generators could have a typed yield (similar to  await), then my problem would be solved...
-- It's worked really surprisingly well for us. I think UI developers have a phobia of `async` because it often means 'network activity' in classic web apps. But that isn't actually what `async` means to the browser. It just means >= microtask.
-
-- This is good news. I’ve done cr-sqlite / vlcn as completely async (and had to part ways with collaborators over that decision) so this gives me some reassurance(肯定，保证).
-
-- Gotta convince everyone to switch to generator-based effects.
-
 - ## [Suggestion: avoid `delete` keyword](https://github.com/ianstormtaylor/slate/issues/4425)
   - we could look at swapping set_node to do node[key] = undefined and improve performance instead of using delete node[key].
 - While this was once true (delete being slow), I think there's sufficient evidence that it's no longer a primary issue
 - I'm not 100% convinced but you're right performance characteristics can change.
 
-- ## The number of times I see this makes me want to cry: `element.addEventListener("click", (e) => handleClick(e))`
-
+- ## 💡 The number of times I see this makes me want to cry: `element.addEventListener("click", (e) => handleClick(e))` .
 - https://twitter.com/RogersKonnor/status/1620437284498870272
   - Youre creating an anonymous function callback which means if this script runs more than once you'll have multiple event handlers.
   - Whereas, if you just reference the function, you'll get automatic deduping.
@@ -228,45 +171,7 @@ const foo = await new Promise((res, rej) => setTimeout(res, 0));
   - setTimeout 系统时间补偿
   - 当每一次定时器执行时后，都去获取系统的时间来进行修正，虽然每次运行可能会有误差，但是通过系统时间对每次运行的修复，能够让后面每一次时间都得到一个补偿。
 
-- ## Promise resolvers are one of my absolute favorite little programming tools
-- https://twitter.com/aboodman/status/1619426079399350272
-
-- I've been looking for a name for this pattern for years. IIRC I've used it mainly in tests
-
-- I think some people call this "deferred"
-  - https://github.com/ljharb/promise-deferred
-
-```JS
-// https://github.com/rocicorp/resolver
-
-import { resolver } from '@rocicorp/resolver';
-
-const { promise, resolve } = resolver();
-resolve(42);
-await promise; // 42
-
-class LongRunning {
-  async stop() {
-    this._stopper = resolve();
-    await this._stopper.promise;
-  }
-
-  async run() {
-    while (!this._stopper) {
-      // ...complex asynchronous process...
-    }
-    this._stopper.resolve();
-  }
-}
-```
-
-- ## is it a good practice to use Proxy objects in your app, or I should let that shit to library authors?
-- https://twitter.com/hhg2288/status/1602323703198523394
-- I don’t like them, they feel a bit convoluted and aren’t that performant either.
-  - Greg who made Shelf tried to add them to the Shelf library but found they were slowing things down significantly.
-- if the problem can be solved more simply I wouldn’t touch them. I have yet to run into a problem in app code that proxies are the obvious answer for 
-
-- ## I'm not a fan of premature optimisation but if you know a structure is going to be created *a lot* you're probably better off with a class over a factory function.
+- ## 💡 I'm not a fan of premature optimisation but if you know a structure is going to be created *a lot* you're probably better off with a class over a factory function.
 - https://twitter.com/mattgperry/status/1588479452908060673
   - There's an upcoming Motion PR that makes this switch, leading to 20-25% lower memory usage across all @framer sites
   - With a factory function, everything is created anew. 
@@ -281,7 +186,6 @@ function createThing() {
     method1: () => {}
   }
 }
-
 createThing().method1 === createThing().method1 // false
 
 // after
@@ -290,7 +194,6 @@ class Thing {
   /** class instance methods are shared on the prototype */
   method1() {}
 }
-
 new Thing().method1 === new Thing().method1 // true
 ```
 
@@ -316,12 +219,6 @@ new Thing().method1 === new Thing().method1 // true
 - any way you could show this concept in a typescript playground? I was also intrigued after I watched the vid but my googling is failing me
   - @prisma is also doing that, it just so happens that I wrote a blog post about that a few days ago. I think the generic `T` in all the examples would be called a Generic Map.
   - [How Prisma adapts Result Types based on the Actual Arguments given](https://pkerschbaum.com/blog/how-prisma-adapts-result-types-based-on-the-actual-arguments-given)
-
-- ## Performance tip: if you need to set a lot of dynamic keys to an object, a Map can give you better perf
-- https://twitter.com/Steve8708/status/1508502291170484224
-  - In short, JS VMs try to assume a shape of an object using a hidden class. When the shape changes, this can lead to a deopt
-  - It's the same reason why setting a property to null/undefined can be faster than deleting
-  - A Map, on the other hand, is optimized for this very use case of frequently adding and removing keys (see the "performance" table row here)
 
 - ## How to specified an optional argument in #javascript ?
 - https://twitter.com/rauschma/status/1510961319268306948
@@ -397,44 +294,6 @@ It's always easy to do _.keyBy(users, 'username') to get the object you mentione
 - In this case, it's clearly a set of objects. If needed for data access then reduce the array into a map and use either the objects themselves as the key and the desired result as the value.
 - Another benefit of object is you can enforce uniqueness of your object keys.
 
-- ## Just a reminder that using `reduce` doesn't always mean iterating less. 
-- https://twitter.com/i_like_robots/status/1418874992146755584
-  - 追求极致性能时可适度放弃immutable，使用mutable方法
-  - The first example using has O(n²) complexity due to the additional iterations required by the spread operator and is ~50x slower than `filter/map` and ~100x slower than using array `push` .
-
-```JS
-// slow
-items.reduce((acc, item) => item.prop ? [...acc, item.prop] : acc, []);
-
-// equivalent to slow
-items.reduce((acc, item) => {
-  if (item.name) {
-    return [].concat(
-      typeof acc[Symbol.iterator] === 'function' ? acc.map(i => i) : [], item.name
-    )
-
-    return acc;
-  }
-}, []);
-
-// fast
-items.filter((item) => item.prop).map((item) => item.prop);
-
-// faster
-items.reduce((acc, item) => {
-  item.prop && acc.push(item.prop);
-  return acc;
-}, []);
-```
-
-- if you're thinking "that's cool in theory but I'm sure engines have optimisations for this" then nope, you're wrong. And 100x slower is generous, some browsers are 1000x slower! If you're doing this lots of times in your apps then you could make them noticeably faster.
-- And of course **`reduce` with object spread creating a newly cloned object for each iteration is no better - it's also super slow**.
-
-- Ditch the `reduce` in the final example for a `for-of` loop to make it more readable. If you're using reduce simple for looping, just use a loop. Way less for the reader to think about, and it reads sequentially.
-
-- Nice! It's also doesn't counted as a harmful mutation because it's internal scoped one with no effect on externals. @getify talked nicely about this in his book "Functional-light JavaScript"
-  - tbh I don’t bother sticking to theory and mutate when it is ok
-
 - ## If you were to quickly explain the fetch API to someone and you don't have an URL handy, data: URLs for the rescue!
 - https://twitter.com/GNUmanth/status/1415560838472105984
   - const resp = await fetch('data:, {"name":"yoda"}')
@@ -452,19 +311,6 @@ items.reduce((acc, item) => {
   - const { yawn, sigh, ...usefulProperties } = obj; 
 - I do a lot of that with React where the caller could pass lots of things but I only need to deal with a few.
 - Removing a property from an object immutably by destructuring it
-
-- ## TypeScript: How do you format members of enums?
-- https://twitter.com/justinfagnani/status/1413886888528605184
-- Solution: don't use enums. Stick to the type-system portion of TypeScript.
-- Are there any other TS features that are not simply type-strippable?
-  - enums, namespaces, constructor parameter properties, JSX, and debatably import assignment. 
-  - TypeScript stopped adding non-type features and joined TC39 though, so that's all there ever will be now.
-  - Oh and decorators, kind of, but that's a whole other story
-- we can write an object that gives nice names to "enum" values, derive the type of the allowed values, and do exhaustiveness.
-  - The thing I like about this pattern is the code is what you'd write in JS. The TS is just added types.
-  - What you don't get as easily is the reverse mapping from value to name, but I find that I rarely use that, and you can write the utility pretty easily.
-- Good points. Objects-as-enums really are easier to understand (compared to the subtle quirks of TS enums).
-  - Depending on what is needed, a Java-style enum pattern can be useful, too
 
 - ##  `export default thing` is different to `export { thing as default }`
 
@@ -504,30 +350,3 @@ items.reduce((acc, item) => {
 - Default exports de-sugar roughly to the below, which is why incrementing num has no effect. It's assignment by value, not reference.(Invalid syntax since you can't name an export "default", but you get the point).
   - `export const default = num'` 类似
 - Same if you actually define a function at the module to update the variable thats being exported. Defaults exports are immutable, it seems
-
-# ts-enum
-- ## [The difference between enum, const enum and declare enum in Typescript : javascript](https://www.reddit.com/r/javascript/comments/pp08u5/the_difference_between_enum_const_enum_and/)
-- i recommend using union types instead of enums, like: `type DownloadStatus = 'IDLE' | 'LOADING' | 'DONE';` , 
-  - it will cause a lot less problems than enums when dealing with webpack&babel&etc.
-- For me the thing that really eliminated the desire to use enums, was deriving union type alias from an array, so the values can also be iterated without being repeated. Like:
-
-```typescript
-export const colors = ['red', 'green', 'blue'] as const;
-export type Color = typeof colors[number];
-
-export const COLORS = Object.freeze(['red', 'green', 'blue'] as const);
-```
-
-- That's very close to what we had to do at my job. We now define our "enums" as a `const` object, which lets us change the const object without having to also change the type
-
-```typescript
-export const Example = { First: "first", Second: "second" } as const;
-export type Example = (typeof Example)[keyof typeof Example];
-```
-
-- The only downside so far is that array's type is narrowed to a tuple of literals
-  - 数组的includes方法会异常
-  - Because this is an extremely common pattern for us, we've taken to using the `lodash` function includes which is typed differently but performs the exact same check under the hood.
-
-- [enum vs "as const" vs Object.freeze() what is the difference between those 3? : typescript](https://www.reddit.com/r/typescript/comments/ztpl9k/enum_vs_as_const_vs_objectfreeze_what_is_the/)
-  - `Object.freeze` is a runtime thing whereas `as const` is purely in compile time

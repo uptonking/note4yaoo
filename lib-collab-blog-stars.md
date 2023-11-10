@@ -28,6 +28,16 @@ modified: 2022-04-05T10:10:22.091Z
 - local-first + realtime协作的示例
   - https://github.com/gongojs/project
   - https://github.com/a-type/lo-fi
+# [figma: How Figma’s multiplayer technology works__201910](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
+
+# [figma: LiveGraph: real-time data fetching at Figma | Figma Blog_202110](https://www.figma.com/blog/livegraph-real-time-data-fetching-at-figma/)
+
+- how do we empower our product engineers to build these real-time views easily, while abstracting away the complexity of pushing data back and forth?
+  - 👉🏻 To provide a general solution to this fundamental business need, we developed LiveGraph, **a data fetching layer on top of Postgres that allows our frontend code to request real-time data subscriptions expressed with GraphQL**. 
+  - It issues queries directly to the database and provides live updates in the order of(~of/in the order of sth, 大约、数量级) milliseconds by reading the database replication stream.
+
+- We realized that we needed a more general framework that would allow product developers to declaratively define data subscriptions. 
+  - A natural choice for this interface was to use GraphQL, which would allow the system to automatically fetch and keep the data live-updated. We decided to build it in-house and call it LiveGraph.
 # Portable Text
 - portabletext /1kStar/MIT/202202/md/text
   - https://github.com/portabletext/portabletext
@@ -39,8 +49,7 @@ modified: 2022-04-05T10:10:22.091Z
 - Portable Text is built on the idea of rich text as an array of blocks, themselves arrays of children spans. 
   - Each block can have a style and a set of mark definitions, which describe data structures distributed on the children spans. 
   - Portable Text also allows for custom content objects in the root array, enabling editing- and rendering environments to mix rich text with custom content types.
-# Collaborative Editing in ProseMirror__201508
-- https://news.ycombinator.com/item?id=10002553
+# [Collaborative Editing in ProseMirror__201508](https://news.ycombinator.com/item?id=10002553)
 - Hi! Joseph Gentle here, author of ShareJS.
   - You're right about OT - it gets crazy complicated if you implement it in a distributed fashion. 
   - But implementing it in a centralized fashion is actually not so bad. Its the perfect choice for google docs.
@@ -66,7 +75,10 @@ modified: 2022-04-05T10:10:22.091Z
 - A correct OT transform, yes. But I'm not using OT's invariants, so this is not something my transforms do. For example, in my system, if you have "insert X at pos 5" and "insert Y at pos 5", the document will contain "XY" or "YX", depending on which arrived first.
 
 - A minimal backend can be extremely simple, just relaying changes, but if you want it to keep a running snapshot of the current document, you'll need the capacity to apply those changes to document, so you'd need to use the module used by the client, or a port of that.
-# [tinymce: To OT or CRDT, that is the question_202001](https://www.tiny.cloud/blog/real-time-collaboration-ot-vs-crdt/)
+# blogs-ot-crdt
+
+## [tinymce: To OT or CRDT, that is the question_202001](https://www.tiny.cloud/blog/real-time-collaboration-ot-vs-crdt/)
+
 - At a very high level, this is what we're dealing with:
   - OT relies on an active server connection (not quite correct but we'll get to that in a moment) to coordinate and guarantee all clients operate correctly.
   - CRDT is capable of working peer-to-peer with end-to-end encryption; if a server is used at all it only needs to coordinate connections between clients. It is resilient to transient network connections. It even works if clients go offline for a period of time, make changes, and synchronise when the network returns.
@@ -102,7 +114,9 @@ modified: 2022-04-05T10:10:22.091Z
 
 - [How to migrate from Slate.js to TinyMCE_202209](https://www.tiny.cloud/blog/migrate-from-slatejs-to-tinymce/)
 - The Real-Time Collaboration plugin built for TinyMCE makes use of Slate.js for the core model.
-# [Collaboration needs a clean Slate_202002](https://www.tiny.cloud/blog/real-time-collaborative-editing-slate-js/)
+
+## [tinymce: Collaboration needs a clean Slate_202002](https://www.tiny.cloud/blog/real-time-collaborative-editing-slate-js/)
+
 - 👉🏻️ Note: this model will only be used for RTC, not the default editing experience
 
 - Although we may eventually decide to write our own model, we quickly settled on Slate as the library to use to build a high-quality product.
@@ -113,7 +127,9 @@ modified: 2022-04-05T10:10:22.091Z
   - A layer that loads TinyMCE configuration and content to set up and compose the low-level features into a working editor
   - Collaboration control (transforms, cursors, server interaction)
   - Hooks in the TinyMCE core to relinquish control of ContentEditable and redirect all model APIs to the external RTC code
-# [ckeditor5: Lessons learned from creating a rich-text editor with real-time collaboration_201802](https://ckeditor.com/blog/Lessons-learned-from-creating-a-rich-text-editor-with-real-time-collaboration/)
+
+## [ckeditor5: Lessons learned from creating a rich-text editor with real-time collaboration_201802](https://ckeditor.com/blog/Lessons-learned-from-creating-a-rich-text-editor-with-real-time-collaboration/)
+
 - Our take on Operational Transformation
   - CKEditor 5 uses OT to make sure it is able to resolve conflicts. 
   - OT is based on a set of operations (objects describing changes) and algorithms that transform these operations accordingly, so that all users end up with the same editor content regardless of the order in which these operations were received. 
@@ -155,5 +171,9 @@ modified: 2022-04-05T10:10:22.091Z
 - Summary
   - We started building our next generation rich-text editor with the assumption that real-time collaborative editing must be the core feature that lies at its very foundation — and this meant a rewrite from scratch. 
   - we created an Operational Transformation implementation, extended to support tree-based data structures (rich-text content) for advanced conflict resolution. 
-# [A light exploration of collaborative editing and synchronization algorithms_202108](https://blog.jakubholy.net/2021/light-exploration-of-collaborative-editing/)
+# blogs-collab
+
+## [A light exploration of collaborative editing and synchronization algorithms_202108](https://blog.jakubholy.net/2021/light-exploration-of-collaborative-editing/)
+
 - 引用和总结了很多协作编辑器相关的技术选型
+# more

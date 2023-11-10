@@ -58,3 +58,49 @@ modified: 2022-11-23T17:48:48.839Z
 
 - Where else do you see classes being primarily used besides web components? React, Svelte, Vue, Solid? None use them primarily
 - In the JavaScript ecosystem, Angular is the only one that nowadays is using classes heavily. A good portion of the ecosystem is using functional approaches instead. I don’t understand, why Angular is not there.
+
+- ## Trick—JavaScript superclass that can’t be instantiated 
+- https://twitter.com/rauschma/status/1356134928707153920
+- why is this pattern useful, when we have structural typing and interfaces? 
+  - This is when you do OOP-style abstract superclasses: You want the subclasses to be instantiated, but not the superclass.
+
+- ## Yet again I'm reminded that JavaScript class fields are a bad design
+- https://twitter.com/justinfagnani/status/1355665301979897860
+  - Define semantics means you can't meta-program over them like other class members, and you can't override them with accessors.
+  - Class fields should have been sugar for accessors.
+  - ES Classes in general feel like an opportunity to carve out some static niche and forgo metaprogramming altogether.
+  - Which really limits them. The list opportunity here is that they don't need to have false equivalences to object literals because they aren't.
+- A similar issue is happening for decorators as a decorator won’t be able to convert a field to an accessor unless you prefix with prop, as in: `@example prop field` . 
+  - I wonder if this could lead to some `prop field` as sugar to set accessors without the decorator.
+  - It’s a workaround and honest I’d just prefer the decorator without prop but that’s the much we can do in the consensus model.
+
+- ## In JavaScript, there are no classes.
+- https://twitter.com/SimonHoiberg/status/1355453046617108484
+  - t’s syntactical sugar added to please developers from other languages such as Java or C#.
+  - Most of the time, they don’t serve a good purpose, and are not really useful.
+  - Instead, use modules.
+- don’t you think classes help maintain order and principles of programming that have been established over a longer period of time?
+- The singleton pattern would like to have a word with you.
+
+- ## No, js classes have never been just sugar, various things are better/different.
+- https://twitter.com/WebReflection/status/1380809258095247360
+- [JS classes are not “just syntactic sugar”](https://webreflection.medium.com/js-classes-are-not-just-syntactic-sugar-28690fedf078)
+
+- ## You'll never convince me that: `fn({ // One thousand random things here })` Is better than a class.
+- https://twitter.com/matthewcp/status/1380610388467793920
+- This is so prevalence with web component libraries, and I just don't get it.
+  - How is writing special object properties named "props" and "methods" any better than using plain class fields and methods? Just to avoid the class keyword? It's so weird.
+- There’s no problem with classes per se, the problem is subclassing. 
+  - A struct with a million random things is fine compared to a function with a million random things. 
+  - The issue is wrangling covariance/contravariance, jumping between definitions of overridden methods, etc.
+- You'll never convince me that 1, 000 random things in a class is better than 1, 000 random things in a function.
+  - 1, 000 random things anywhere is bad.
+- I like classes, as long as I don't do any inheritance with them.
+  - What I don't like is the sea of `.this` that easily ends up being almost 50% of the code. I'd rather take a `<div>` soup or a HOC hell anytime.
+
+- ## Classes were a good addition to JS. Private fields I'm more skeptical about—mostly because classes are not a good level for managing visibility, modules are.
+- https://twitter.com/MarijnJH/status/1408004016752283648
+
+- ## Some people still think that JavaScript classes are just sugar for prototypes, even though that was never actually true and is most definitely not true now.
+- https://twitter.com/justinfagnani/status/1524481337855410176
+- Class fields for instance

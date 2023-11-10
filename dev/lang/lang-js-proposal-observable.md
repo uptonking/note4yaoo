@@ -168,3 +168,18 @@ let subscription = commandKeys(inputElement).subscribe({
   - [signals are the most primitive of the Observables in Solid, and resemble BehaviorSubjects in RxJS](https://github.com/solidjs/solid/blob/b99587cd8be8b26a92d0ae89d3c46e62effebe48/documentation/observables.md#signals)
 - Curious on what angular’s version looks like
   - It's similar
+
+- ## I think most JS libraries that vend some kind of observable value could just use async iterables instead of an actual observable library.
+- https://twitter.com/justinfagnani/status/1360793286781247491
+  - Clients mostly need to be able to subscribe and unsubscribe to new values. 
+  - The rest isn't strictly needed and a client can pipe the async iterable into their library of choice if they really want.
+  - No need for clients to read about rxjs/wonka/zen-observable or whatever is used.
+- I think the platform should have added a simple type like observables, instead of a heavy complicated type like AsyncIterables.
+  - A promise allocation for each event?
+  - No cancellation other than not iterating, ignoring the next event, or rejecting the next event and handling it?
+- It always surprised that Angular 2+ went all in on RxJS, while other frameworks could perfectly live with only promises.
+  - IMO the choice for RXJS causes a way too high learning curve. 
+  - And also are error prone because unsubscribe is sometimes automatically but not always.
+- I disagree with things like react being able to live with only promises. 
+  - You end up building your own ad-hoc chains in likely buggy async/await code and probably doing it in some complex hook with race conditions or difficult to debug code. 
+  - I don't use rxjs but I see the appeal.

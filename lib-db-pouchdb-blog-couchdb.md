@@ -22,6 +22,8 @@ modified: 2023-10-07T17:30:26.998Z
   - One option that’s mentioned in the docs is delta-pouch, which “stores every change as its own document”, and then reads out those changes to construct the “current” state of a document.
   - I’m a little wary about the “production-readiness” of this plugin, though, as shoehorning(强挤硬塞) a delta-based system onto pouchdb seems like it would introduce some pretty significant performance penalties(处罚；不利；损失).
 
+## [Pagination strategies with PouchDB_201404](https://pouchdb.com/2014/04/14/pagination-strategies-with-pouchdb.html)
+
 ## 📝 [12 pro tips for better code with PouchDB_201406](https://pouchdb.com/2014/06/17/12-pro-tips-for-better-code-with-pouchdb.html)
 
 - 
@@ -84,7 +86,7 @@ modified: 2023-10-07T17:30:26.998Z
 # blogs-sync/collab
 - [Use JSON Patch to Resolve Conflicts for CouchDB_202009](https://neighbourhood.ie/blog/2020/09/15/use-json-patch-to-resolve-conflicts/)
 
-## [LiveGraph: real-time data fetching at Figma | Figma Blog_202110](https://www.figma.com/blog/livegraph-real-time-data-fetching-at-figma/)
+## [figma: LiveGraph: real-time data fetching at Figma | Figma Blog_202110](https://www.figma.com/blog/livegraph-real-time-data-fetching-at-figma/)
 
 - how do we empower our product engineers to build these real-time views easily, while abstracting away the complexity of pushing data back and forth?
   - 👉🏻 To provide a general solution to this fundamental business need, we developed LiveGraph, **a data fetching layer on top of Postgres that allows our frontend code to request real-time data subscriptions expressed with GraphQL**. 
@@ -107,10 +109,6 @@ modified: 2023-10-07T17:30:26.998Z
 - Couchbase is a combination of ideas from Membase and CouchDB, where you have the highly scalable caching layer of Membase and the flexible data model of CouchDB.
   - It’s both a key/value store and a document store, so you can perform Create/Read/Update/Delete (CRUD) operations using the simple API of a key/value store (add, set, get, etc.) but the value can be represented as a JSON document.
   - With this, you can access your data with the primary key (like you would with a key/value store), or you can use N1QL (pronounced nickel). This is an SQL-like query language for Couchbase that allows you to retrieve your data arbitrarily and also do joins and aggregation.
-
-- 
-- 
-- 
 
 ## 🆚️ [CouchDB and MongoDB Compared](https://www.mongodb.com/compare/couchdb-vs-mongodb)
 

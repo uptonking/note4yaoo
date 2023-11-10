@@ -9,6 +9,14 @@ modified: 2023-08-16T15:50:16.335Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## Did you know you can use the built-in browser validation API with JavaScript to control how error messages are rendered? Besides the simplicity, you also get i18n for free.
+- https://twitter.com/diegohaz/status/1526874008049811461
+
 # discuss
 - ## 
 
@@ -30,3 +38,13 @@ modified: 2023-08-16T15:50:16.335Z
 - My only concern there is that inferring types from the library’s definitions seems substantially slower than declaring them straight out; and that our opaque type tricks don’t work with the lib, so we may have to change that
   - Have you tried the alternatives? I've used Valita with no issues, but ts-runtime-checks looks pretty interesting.
   - You can use tozod to define a zod schema from an existing interface
+
+- ## Zod is a fantastic, powerful primitive to have in a dev's toolkit. 
+- https://twitter.com/mattpocockuk/status/1612397810183274497
+  - It lets you validate data at runtime - making a whole class of problems easier.
+  - So, when should you use it? And when should you NOT use it?
+
+- when you don't trust the data coming into your app, Zod is a priceless addition. That means:
+  - Forms
+  - Public API Endpoints/Webhooks
+  - localStorage

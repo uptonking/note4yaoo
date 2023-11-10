@@ -18,11 +18,38 @@ modified: 2022-11-23T17:49:54.052Z
 
 # more
 
-- [Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？](https://vue3js.cn/interview/vue3/proxy.html)
-  - Object.defineProperty只能遍历对象属性进行劫持
-    - Proxy直接可以劫持整个对象，并返回一个新对象
-    - Proxy有多达13种拦截方法,不限于apply、ownKeys、deleteProperty、has等等，这是Object.defineProperty不具备的
-  - 数组API方法无法监听到
-    - Proxy可以直接监听数组的变化（push、shift、splice）
-  - 检测不到对象属性的添加和删除
-  - 需要对每个属性进行遍历监听，如果嵌套对象，需要深层监听，造成性能问题
+# discuss
+- ## 
+
+- ## [Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？](https://vue3js.cn/interview/vue3/proxy.html)
+- Object.defineProperty只能遍历对象属性进行劫持
+  - Proxy直接可以劫持整个对象，并返回一个新对象
+  - Proxy有多达13种拦截方法, 不限于apply、ownKeys、deleteProperty、has等等，这是Object.defineProperty不具备的
+- 数组API方法无法监听到
+  - Proxy可以直接监听数组的变化（push、shift、splice）
+- 检测不到对象属性的添加和删除
+- 需要对每个属性进行遍历监听，如果嵌套对象，需要深层监听，造成性能问题
+
+- ## Working with (JavaScript) Proxies is kind of a pain
+- https://twitter.com/brian_d_vaughn/status/1443202951368089601
+  - Can't detect them. Can't iterate over them (in some cases).
+
+- ## now that IE/Edge (legacy) are gone, I am using Proxy all over and one of the most compelling cases is the one-off cache through a Map
+- https://twitter.com/WebReflection/status/1528013495924666370
+
+```JS
+const speedy = new Proxy(new Map, {
+  get(map, key) {
+    if (!map.has(key)) {
+      map.set(key, compute(key));
+    }
+    return map.get(key);
+  }
+});
+```
+
+- ## is it a good practice to use Proxy objects in your app, or I should let that shit to library authors?
+- https://twitter.com/hhg2288/status/1602323703198523394
+- I don’t like them, they feel a bit convoluted and aren’t that performant either.
+  - Greg who made Shelf tried to add them to the Shelf library but found they were slowing things down significantly.
+- if the problem can be solved more simply I wouldn’t touch them. I have yet to run into a problem in app code that proxies are the obvious answer for 

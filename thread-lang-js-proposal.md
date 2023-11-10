@@ -1,14 +1,15 @@
 ---
-title: thread-lang-js-ts-proposal
+title: thread-lang-js-proposal
 tags: [js, proposal, thread]
 created: 2021-09-14T06:29:14.993Z
-modified: 2021-09-14T06:29:41.503Z
+modified: 2023-11-10T08:05:25.474Z
 ---
 
-# thread-lang-js-ts-proposal
+# thread-lang-js-proposal
+
+# guide
 
 # discuss
-
 - ## 
 
 - ## 
@@ -16,6 +17,16 @@ modified: 2021-09-14T06:29:41.503Z
 - ## 
 
 - ## 
+
+- ## JS should have a builtin FIFO type, imo
+- https://twitter.com/jarredsumner/status/1532503267455795200
+  - array.shift() and array.unshift() implementations are poorly optimized for this. fifo’s are very common
+- Most user-facing queues where the order matters actually want a fifo instead of a stack — you want to send stuff back in the same order the user provided it instead of the reverse order
+  - I mention .unshift() because often you want a prioritized queue — to be able to move some element to the front efficiently as well
+- What’s wrong with unshift and pop? Or push and shift?
+  - Don’t know if it’s true, but some articles claim that array.shift ist O(n) which would make a Queue iteration pretty inefficient.
+  - internally, it clones the entire array each shift() if the list is longer than a handful of elements
+  - JSC hasn't implemented the optimization for skipping that on small arrays so it's a little worse in JSC too
 
 - ## I've taken the time to articulate all of my thoughts in a single space about the current pipeline proposal. (It's opinionated, sorry)
 - https://twitter.com/BenLesh/status/1436890184449236994

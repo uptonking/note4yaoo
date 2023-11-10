@@ -47,6 +47,25 @@ modified: 2021-08-30T07:01:09.493Z
 
 - https://github.com/Paciolan/remote-component /ts
   - Dynamically load a React Component from a URL
+
+## async-utils
+
+- https://github.com/abbr/deasync
+  - DeAsync turns async function into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. 
+  - The core of deasync is written in C++.
+
+- https://github.com/dmaevsky/conclure
+  - Brings cancellation and testability to your async flows.
+  - It is a tiny (core is < 200 lines of code), zero dependencies generator runner.
+  - Using generators instead of promises allows for a LOT more flexibility, including cancellation, sync resolution, and better testing. The API is strictly the same as async/await
+  - You should avoid Promises for two major reasons:
+    - Promises are greedy: once created, cannot be cancelled
+    - `await promise` always inserts a tick into your async flow, even if the promise is already resolved or can be resolved synchronously.
+  - You can see a Promise as a particular type of an iterator for which the JS VM provides a built-in runner, a quite poorly designed one nonetheless.
+  - Conclure JS is a custom generator runner that
+    - allows you to cancel your async flows
+    - ensures that sync flows always resolve synchronously
+    - delivers better testability through the use of effects as popularized by redux-saga.
 # discuss-async-loading
 - ## 
 
@@ -95,6 +114,15 @@ modified: 2021-08-30T07:01:09.493Z
 - ## 
 
 - ## 
+
+- ## is there a way to wait for N promises on tests?
+- https://twitter.com/sseraphini/status/1365297469911937025
+  - I have a test that will receive N messages and process each of them using an async code
+  - so I need to wait N process to be processed to do some assertion
+- Promise.all() or Promise.allSettled() might be work.
+- `await new Promise(setImmediate)` .
+  - will this awaits a single promise or all the pending promises?
+  - This awaits all promises that are to be resolved in the same event loop
 
 - ## I think we should have an ESLint rule that stops you from `await` -ing in an inline `Promise.all` array
 - https://twitter.com/karlhorky/status/1720194025695719503
@@ -192,20 +220,179 @@ tasksAndMicroTasks()
 - 异步底层实现不一定是多线程吧，某些异步任务，如果 IO 任务直接交给硬件，然后等待系统事件通知
   - 是这样，比如 dma 就是，libuv 是通过多线程封装了一些同步系统 api，异步系统 api 的部分不一定是多线程
   - 限定在软件级别的异步就是靠线程了，软件的执行是靠cpu，也就是需要线程。硬件级别的异步是靠电路，就不用线程了。
-# async-utils
+
+- ## Are you using async/await safely in Node.js? @simonplend explains why Express is not a safe choice and why you should consider an alternative like Fastify instead.
+- https://twitter.com/sebastienlorber/status/1374029709210701831
+- [Are you using promises and async/await safely in Node.js?](https://simonplend.com/are-you-using-promises-and-async-await-safely-in-node-js/)
+
+- ## I was chasing the race conditions today in the code that is using observers and async/await syntax. Oh, boy, a day full of fun.
+- https://twitter.com/maciejadamczak/status/1374286061543718916
+- I still need to fix the root problem
+
+- ## Deleted a thread about async/await flows since I hadn’t realized that it made error-handling more complicated.
+- https://twitter.com/JoshWComeau/status/1374056481524482054
+- I still think it's a valuable tip. I use it all the time - it really helps to speed things up when you've got independent parallel requests.
+- You can use try catch.
+  - I think it doesn't work when you don't `await` the async function! And that's what Josh means.
+- Now I'm interested in a thread about proper error-handling when working with async functions
+  - imo async makes it _easier_ (you just use try/catch). I think the difficulty is when you're mixing async/await with raw promises.
+
+- ## When you have a complex series of async functions to call, how do you manage them? 
+- https://twitter.com/JoshWComeau/status/1374027384119263233
+  - we'll look at 3 different ways, including an *awesome* way that isn't super well-known.
+- First, though, let's look at the most straightforward way: serially, one at a time.
+  - The beauty of `async/await` is that it lets us read the code in the order it executes. I love how easy it is to understand.
+  - The trouble is that it can be quite slow, since none of these tasks can start until the previous one finishes.
+- What about `Promise.all` ? Well, we can't dump all 5 into a single call, since there are dependencies.
+- From a performance standpoint, this is quite a lot better, since we can let 3 operations run in parallel.
+  - But we can make this even faster 
+- This final way makes selective use of the `await` keyword. 
+  - We can weave the promises together to create a tapestry without gaps. 
+  - Each function starts as soon as possible! 
+  - The key insight is that promises can be await-ed at any time, not just on creation!
+- Which way is best? Well, it depends on the circumstances.
+  - The third way is the fastest, but it's also (IMO) the hardest to follow. 
+  - We're trading away some simplicity in order to gain some performance.
+
+- ## I don't like much Promise.all
+- https://twitter.com/sebastienlorber/status/1379731789707632640
+  - Too sensitive to array destructuring typo
+  - Code becomes verbose when input to transform is an object
+  - Finally published this little utility: combine-promises
+- Reminds me of `Promise.props` in Bluebird. 
+  - I wonder why something like this wasn’t part of the Promise spec.
+- Another big pain point with Promise.all and variations, is error handling IMO (ex: calling 3 APIs from diff providers). It would be awesome if you could solve this in the lib too. I'd love to help, got some ideas on how to go about doing it.
+
+- ## Problem with `Promise.all()` : Once it encounters a rejection, it doesn’t wait until all Promises are settled (short-circuiting (*)). Consequence: Unexpected things can happen after error handling.
+- https://twitter.com/rauschma/status/1405568325724291080
+- Tentative idea: Promise.forkJoin(objOrArr). Once all Promises are settled:
+  - All fulfilled: fulfill result with obj/arr of values
+  - 1+ rejected: reject with AggregateError
+  - This is what an implementation of forkJoin() could look like:
+  - https://gist.github.com/rauschma/bdc56a046b18528959ad1db3eed05386
+- What about `Promise.allSettled` ? I’ve taken to chaining the outcome to array filter and map (depending on intent, of course).
+- There’s `Promise.allSettled` , combine it with `Promise.all`
+
+- ## Async functions & microtasks
+- https://whistlr.info/2021/async-and-tasks/
+- When you invoke an `async` function, the function will run its synchronous prefix immediately, but whenever you `await` something, the rest of its code will be put into a microtask.
+
+```JS
+console.info('a');
+const p = foo(); // call async and hold Promise in p
+console.info('b');
+p.then(() => {
+  console.info('c');
+});
+
+async function foo() {
+  console.info('1');
+  await Promise.resolve(); // actually do something async
+  console.info('2');
+}
+// a 1 b 2 c
+```
+
+- Any time we `.then()` a Promise, that callback is executed as a microtask—broadly, that code is queued to run "immediately", but after the current execution and other microtasks. (And, the same happens when we use `await` on them.) 
+
+- ## With the rise of async-await, I've noticed more and more JS developers have less understanding of concurrency and how to work with async code flow
+- https://twitter.com/dev__adi/status/1417554978130915328
+- [How to escape from the async/await hell](https://devadi.netlify.app/blog/async-await-hell)
+  - While working with Asynchronous JavaScript, people often write multiple statements one after the other and slap an await before a function call. 
+  - **This causes performance issues, as many times one statement doesn’t depend on the previous one** — but you still have to wait for the previous one to complete.
+  - One interesting property of promises is that you can get a promise in one line and wait for it to resolve in another. This is the key to escaping async/await hell.
+- How to get out of async/await hell ?
+  - Find statements which depend on the execution of other statements
+  - Group-dependent statements in async functions
+  - Execute these async functions concurrently: Two common patterns of doing this is returning promises early and the `Promise.all` method.
+
+- ## setTimeout using an AbortController and Promise
+- https://twitter.com/rikschennink/status/1691417576868380674
+
+- ## Promise resolvers are one of my absolute favorite little programming tools
+- https://twitter.com/aboodman/status/1619426079399350272
+
+- I've been looking for a name for this pattern for years. IIRC I've used it mainly in tests
+
+- I think some people call this "deferred"
+  - https://github.com/ljharb/promise-deferred
+
+```JS
+// https://github.com/rocicorp/resolver
+
+import { resolver } from '@rocicorp/resolver';
+
+const { promise, resolve } = resolver();
+resolve(42);
+await promise; // 42
+
+class LongRunning {
+  async stop() {
+    this._stopper = resolve();
+    await this._stopper.promise;
+  }
+
+  async run() {
+    while (!this._stopper) {
+      // ...complex asynchronous process...
+    }
+    this._stopper.resolve();
+  }
+}
+```
+
+- ## I really wish there were Promises in JS that could be evaluated sync. It’s a complex problem.
+- https://twitter.com/trueadm/status/1630739165045194752
+- For UI frameworks you want to allow the user to pass a promise, but ensure that if it is ready that you can render synchronously. But `T | Promise<T>` doesn’t compose the way promises do, so either you accept a perf/UX hit, create your own alternate async ecosystem, etc.
+  - I use a WeakMap for this. Only pass promise. Lookup resolution value sync via weakmap where you want to do this. Still agree though: custom thenables are great and Promise.resolve using them is great, async/await not using them sucks
+- This was discussed ad nauseum a decade ago. If you want sync promises try jQuery. Deferred.
 - https://github.com/abbr/deasync
   - DeAsync turns async function into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. 
   - The core of deasync is written in C++.
+- conclure js Using generators instead of promises allows for a LOT more flexibility, including cancellation, sync resolution, and better testing. The API is strictly the same as async/await
 
-- https://github.com/dmaevsky/conclure
-  - Brings cancellation and testability to your async flows.
-  - It is a tiny (core is < 200 lines of code), zero dependencies generator runner.
-  - Using generators instead of promises allows for a LOT more flexibility, including cancellation, sync resolution, and better testing. The API is strictly the same as async/await
-  - You should avoid Promises for two major reasons:
-    - Promises are greedy: once created, cannot be cancelled
-    - `await promise` always inserts a tick into your async flow, even if the promise is already resolved or can be resolved synchronously.
-  - You can see a Promise as a particular type of an iterator for which the JS VM provides a built-in runner, a quite poorly designed one nonetheless.
-  - Conclure JS is a custom generator runner that
-    - allows you to cancel your async flows
-    - ensures that sync flows always resolve synchronously
-    - delivers better testability through the use of effects as popularized by redux-saga.
+- I definitely want eager await that resolves sync if the promise resolves sync. That’s more in the style of callbacks, and allows you to write a single api for both sync and async interfaces.
+  - I struggle with this issue in tuple-database. I want to write the same code that works for an async backend or a sync backend. I don’t want to create an intermediate query language…
+- My problem is actually pretty specific:
+  - For tuple-database, there's an async storage interface and a sync storage interface. 
+  - The sync interface is important if you want to use it for application state management and stuff. Or maybe you just want to use local storage...
+- Since the lowest level abstraction is either sync or async, it pollutes all the code above it which needs to be written to handle both cases.
+  - I looked into coroutines, higher-kinded types, monkey-patching promise... 
+  - My solution? Regex lol
+- Replicache is designed to be used for application state and it is async. We are religious about 60fps. Promises that resolve immediately *are* slower than sync code but we’re taking microseconds. It works great for 60fps in our experience.
+  - We have tons of customers in production using Replicache exactly this way (among them @vercel ) and it’s ~instant.
+- Yeah, you can definitely get away with async state management most of the time...
+  - I'm curious if that can get in the way of typing into an `<input>` if the input's value is updating async as you type...
+- Yes you can. We do this while animating at 60fps.
+  - We have many users who back input boxes by @replicache directly. It's a design goal of ours to enable this exactly. Try it out, I think it's an overlooked design pattern.
+- 👉🏻 关于架构层sync或async api的设计 
+  - The other nice thing about making the api to Replicache asynchronous is that it permits falling back to io as necessary. Many sync systems have this problem where these choose sync apis for perf but eventually data gets large and causes excessive gc.
+  - If the core API is async it can be up to the sync system to dynamically manage cache size. Replicache does this, lazily caching data from IDB and paging it out after awhile.
+- Getting into the weeds though: on iOS Safari, if you want to call focus() on an element to bring up the keyboard, it must be called synchronously in response to a user action event callback... Now, what if they press a button and you want to open a popup and focus the input?
+  - https://twitter.com/ccorcos/status/1631159120043835392
+  - In React, at least, you're going to want to update the state, synchronously re-render, and then call focus... This *could* work with a sync state update. Unfortunately, React's move towards async rendering throws a wrench in it. But the problem remains the same.
+- I am pretty sure it only needs to be called in the same task (queueing a microtask is fine). So if your data is in memory it will still work.
+
+```js
+const foo = await Promise.resolve("foo");
+
+// vs:
+
+const foo = await new Promise((res, rej) => setTimeout(res, 0));
+```
+
+- The first runs in *same turn* of event loop as calling code, guaranteed. Second gets queued in event loop.
+- Microtasks are crazy fast. All they are doing is delaying a function to run later in the turn of the event loop. No actual IO (to disk, network, whatever) can possibly get between the queuing of a microtask and its execution.
+- `setImmediate` is not part of the spec or implemented by browsers, but was meant to queue a task. So shorthand for `setTimeout(fn, 0)`.
+- A microtask enqueued from within another microtask would execute immediately I believe, but I bet React's whole rendering model probably has its own considerations for this.
+  - I think they were also doing some weird stuff with unwrapping resolved promises.. somehow.. maybe an RFC.
+
+- It’s important to understand that `async` does not mean “yield to event loop”. When the underlying promise resolves in same event loop task, the resolution will also run in same event loop task. This usually happens when the data needed is already in memory, because it’s cached.
+  - Mutations don't need to go through useEffect or similar in the first place because they aren't an effect of render, but of some UI event. So the whole cycle should happen in one frame if your data is in memory, even if all the methods are `async`.
+
+- Yeah, but my goal was to just have one system that can work either sync or async... Perhaps, that's not a great goal, but that's where I landed on these problems... If generators could have a typed yield (similar to  await), then my problem would be solved...
+- It's worked really surprisingly well for us. I think UI developers have a phobia of `async` because it often means 'network activity' in classic web apps. But that isn't actually what `async` means to the browser. It just means >= microtask.
+
+- This is good news. I’ve done cr-sqlite / vlcn as completely async (and had to part ways with collaborators over that decision) so this gives me some reassurance(肯定，保证).
+
+- Gotta convince everyone to switch to generator-based effects.

@@ -1,11 +1,11 @@
 ---
-title: lang-js-base-arraybuffer-blob
+title: lang-js-base-buffer-blob
 tags: [arraybuffer, blob, ECMAScript, js, lang]
 created: 2022-11-23T17:50:41.004Z
-modified: 2022-11-23T17:51:08.635Z
+modified: 2023-11-10T07:30:17.500Z
 ---
 
-# lang-js-base-arraybuffer-blob
+# lang-js-base-buffer-blob
 
 # guide
 
