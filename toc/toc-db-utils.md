@@ -58,6 +58,13 @@ modified: 2022-11-06T11:21:27.612Z
   - 使用TypeScript开发的Node的数据提取工具
   - 仅支持postgres
 # migrate
+- https://github.com/wekan/minio-metadata /202304/js
+  - Transfer files from MongoDB GridFS to Minio file server, and MongoDB text to SQLite
+  - Bash scripts to transfer attachment and avatar files from MongoDB GridFS to Minio file server
+    - To make MongoDB Server database size smaller (like from 800 GB tIo 10 GB), store files elsewhere, and have files visible in upcoming version of WeKan.
+    - Meteor WeKan will continue using MongoDB for text data. Files can be stored outside of MongoDB.
+    - Upcoming WeKan will use SQLite database for text data. Files are stored outside of SQLite.
+
 - https://github.com/sensedeep/onetable-migrate /js/参考kv存储的迁移
   - This library provides migrations support for DynamoDB OneTable.
 # utils

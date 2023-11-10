@@ -20,7 +20,10 @@ modified: 2023-10-29T02:22:57.939Z
 
 - ## 
 
-- ## 
+- ## [Make `_rev` generation deterministic (similar to CouchDB)_201512](https://github.com/pouchdb/pouchdb/issues/4642)
+  - PouchDB currently generates _rev values using a uuid. This presents problems when, for instance, an application has conflict resolution logic which might run on different devices concurrently (because they would both resolve the conflict but, in doing so, generate a new one).
+  - CouchDB has an optimisation here where the _rev is deterministic, based on the contents of the document, attachments, deleted flag and rev history
+  - It would be useful for PouchDB to have a similarly deterministic rev generation, though it's not really necessary to match the CouchDB one.
 
 - ## in the pouch/couch model this will create a conflict that apps need to resolve, because they can’t know if the server or the client has the “correct” lastest change.
 - https://twitter.com/CouchDB/status/1313857978181844992

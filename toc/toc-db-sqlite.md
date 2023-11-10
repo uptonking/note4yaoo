@@ -104,7 +104,7 @@ modified: 2021-08-30T18:56:18.632Z
   - Query Excel spreadsheets (.xlsx, .xls, .ods) using SQLite
   - allow working with spreadsheets from SQLite exposing them as virtual tables.
   - XLite is a SQLite extension written in Rust. 
-# sqlite-viewer
+# sqlite-viewer/manager
 - https://github.com/inukshuk/sqleton
   - Visualizes your SQLite database schema.
 
@@ -120,6 +120,9 @@ modified: 2021-08-30T18:56:18.632Z
 
 - https://github.com/inloop/sqlite-viewer
   - View SQLite file online
+
+- https://github.com/pawelsalawa/sqlitestudio /202309/c
+  - multi-platform SQLite database manager written in C++, with use of Qt framework
 # powered-by-sqlite
 - https://github.com/dpapathanasiou/simple-graph /sql
   - This is a simple graph database in SQLite, inspired by "SQLite as a document database"
@@ -220,10 +223,18 @@ modified: 2021-08-30T18:56:18.632Z
   - A proto-database inspired by SQLite, written in C for educational purposes. 
   - gnaro takes SQLite as a reference because of the limited feature set, and therefore complexity, when compared to other databases. 
 
-- dqlite /3.2kStar/LGPLv3/202212/clang
+- dqlite /3.6kStar/LGPLv3/202310/clang/canonical
   - https://github.com/canonical/dqlite
   - a C library that implements an embeddable and replicated SQL database engine with high-availability and automatic failover.
   - dqlite extends SQLite with a network protocol that can connect together various instances of your application and have them act as a highly-available cluster, with no dependency on external databases.
+  - Data replication based on the Raft algorithm and its efficient `C-raft` implementation.
+  - Asynchronous single-threaded implementation using libuv as event loop
+  - Custom wire protocol optimized for SQLite primitives and data types.
+  - dqlite runs on Linux and requires a kernel with support for native async I/O (not to be confused with POSIX AIO), which is used by the libuv backend of C-raft.
+  - [Embeddable, replicated and fault tolerant SQL engine based on Sqlite | Hacker News_202202](https://news.ycombinator.com/item?id=30135401)
+    - What I found to be the biggest problem with SQLite is concurrent write operations. WAL helps for concurrent read but not for concurrent write.
+      - On a moderate use case (< 20 write operations per s) I kept getting timeouts so I first devised a quick fix system using RQ jobs passing writes to a single process and migrated to postgres as fast as I could.
+    - With exclusive access using a single connection in WAL mode, I can insert tens of thousands of rows per second on flash storage no problem.
 
 - https://github.com/CsharpDatabase/csharp-sqlite /201401/inactive
   - C# port of the SQLite library

@@ -10,6 +10,8 @@ modified: 2021-08-30T17:33:20.586Z
 # guide
 
 - [Database File Format](https://www.sqlite.org/fileformat.html)
+# sqlite-utils-docs
+- [Blob Input/Output — APSW documentation](https://rogerbinns.github.io/apsw/blob.html)
 # [SQLite As An Application File Format](https://www.sqlite.org/appfileformat.html)
 
 > [Benefits of SQLite As A File Format](https://www.sqlite.org/aff_short.html)

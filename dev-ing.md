@@ -96,7 +96,8 @@ $$('[contenteditable]')
 - db-sync/collab
   - db+crdt的参考: piratedb, evolu, triplitdb, mithic
     - 不必执着于基于indexeddb的实现，只是作为一种持久化的方式
-  - base: level/rocksdb/foundationdb, hypercore, ipfs
+  - base: level/rocksdb/foundationdb, hypercore, ipfs, kappa-db
+  - sqlite: rust_sqlite, extension
   - pouchdb: doc-db, incremental view
   - crsqlite, hypermerge: crdt + db
   - triplitdb: crdt + tupledb + eav

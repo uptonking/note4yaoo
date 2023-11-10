@@ -25,6 +25,13 @@ modified: 2023-09-17T17:36:36.118Z
 # discuss-filesystem
 - ## 
 
+- ## 
+
+- ## [What "filetype" is a database? : learnprogramming_202209](https://www.reddit.com/r/learnprogramming/comments/xhqlk7/what_filetype_is_a_database/)
+- the important thing to note is that a database isn't a file, it's a program. Now obviously the program will write the contents to disk somehow so that the data isn't lost when the computer restarts, but that's an implementation detail of the database and should never be interacted with directly. For example, you would never try to read/write a .doc file but instead always use Microsoft Word to interact with it since that is their special format and not intended for direct consumption.
+
+- A database doesn't have a filetype, because it's not a file. It's a program that stores records, and can fetch and update them faster than writing anything to a file. 
+
 - ## [Ash HN: What if we use file system as database? | Hacker News](https://news.ycombinator.com/item?id=37777463)
 - The main reason is that I can use a variety of tools to view and manipulate files.
   - But other software can also mess with your "database", including the operating system itself. For example, Syncthing was breaking my static site by changing the unicode normalisation of file names. MacOS being case insensitive brought issues. Illegal filename characters brought issues.

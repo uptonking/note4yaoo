@@ -124,6 +124,12 @@ modified: 2023-04-05T19:35:14.347Z
 # file-parser/generator
 - https://github.com/plantain-00/js-split-file
   - A library to split big file to small binary data for nodejs and browsers.
+
+- https://github.com/jimsmart/peanut /202301/go
+  - a Go package to write tagged data structs to disk in a variety of formats, simply and without ceremony.
+  - Its primary purpose is to provide a single consistent interface for easy, ceremony-free persistence of record-based struct data.
+  - Currently supported formats are CSV, TSV, Excel (.xlsx), JSON Lines (JSONL), and SQLite. Additional writers are also provided to assist with testing and debugging. 
+  - All writers perform atomic file operations, writing data to a temporary location and moving it to the final output location when Close is called.
 # file-server
 - https://github.com/vercel/serve /ts
   - serve helps you serve a static site, single page application or just a static file

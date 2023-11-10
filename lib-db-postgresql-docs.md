@@ -9,6 +9,7 @@ modified: 2022-06-13T03:00:51.734Z
 
 # guide
 
+- [PostgreSQL wiki](https://wiki.postgresql.org/wiki/Main_Page)
 # docs
 
 # more

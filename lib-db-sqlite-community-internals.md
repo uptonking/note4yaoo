@@ -16,6 +16,12 @@ modified: 2023-10-28T13:45:16.973Z
 
 - ## 
 
+- ## 🪶⚖️🔥 [The SQLite Database File Format | Hacker News_201409](https://news.ycombinator.com/item?id=8385259)
+- The problem with SQLite is that there's no official RFC, it's a pseudo database. When you're weighing up what to implement, it certainly helps when there is an agreed upon technical specification.
+- On thing that caught my eye here was the section on the B-tree in the sqlite file format. I've written these, they are hard to get right. But the section here is an english description of a very complex data structure, and if this appeared in an RFC and you asked ten different developers to reimplement it then you'd wind up with wildy different interpretations of the text, all non-interoperable until the world finally decided to have some kind of "interop fest".
+  - So I'm happy that SQLite already has a publically available b-tree implementation. Because you won't have a "standard" without that code, and QED.
+  - Complex standards need reference implementations. Just calling something an RFC doesn't make it more useful. 
+
 - ## [The lack of proper “alter table” support in SQLite | Hacker News_201306](https://news.ycombinator.com/item?id=5886898)
 - I am very familiar with SQLite internals. The answer is already in there. 
   - SQLite stores each row as each column value encoded sequentially corresponding to the declared order of the columns. Changing column order or deletions/inserts require a rewrite of every row. The one special case that is allowed is adding a column on the end of the schema providing it has a default value.
@@ -31,7 +37,13 @@ modified: 2023-10-28T13:45:16.973Z
 
 - ## 
 
-- ## 
+- ## 🪶🌲 [B-Trees: More Than I Thought I'd Want to Know | Hacker News_202108](https://news.ycombinator.com/item?id=28221612)
+- The best B-tree resource is SQLite3's documentation of its B-tree on-disk format.
+- Postgres has great documentation for their concurrent btree algorithm based on the Lehman Yao paper
+  - Just FYI, adding right-sibling pointers to a B-tree makes it impossible to implement a COW B-tree. Kinda like COW semantics makes it impossible to have doubly-linked lists. But if you're not going to COW, then right-sibling pointers are probably a good idea.
+
+- B+Trees minimize the maximum depth of the lookup. All the values have exactly the same cost. In all honesty, I don't care about the lookup cost of the values I never need.
+  - Sounds like you are looking for a Splay Tree implementation. Their dynamic optimality properties ensure your most popular data lives right at the root.
 
 - ## 🔥 [VFS shim that allows a SQLite database to be appended to another file | Hacker News_201806](https://news.ycombinator.com/item?id=17264629)
 - 

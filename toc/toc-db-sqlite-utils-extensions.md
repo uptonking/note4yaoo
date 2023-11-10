@@ -20,6 +20,13 @@ modified: 2022-11-04T14:20:37.172Z
 - https://github.com/nalgeon/sqlean /3.1kStar/MIT/202311/c
   - https://github.com/nalgeon/sqlean/blob/main/docs/stats.md
   - There are a lot of SQLite extensions out there, but they are incomplete, inconsistent and scattered across the internet. sqlean brings them together, neatly packaged into domain modules, documented, tested
+
+- https://github.com/wekan/minio-metadata /202304/js
+  - Transfer files from MongoDB GridFS to Minio file server, and MongoDB text to SQLite
+  - Bash scripts to transfer attachment and avatar files from MongoDB GridFS to Minio file server
+    - To make MongoDB Server database size smaller (like from 800 GB tIo 10 GB), store files elsewhere, and have files visible in upcoming version of WeKan.
+    - Meteor WeKan will continue using MongoDB for text data. Files can be stored outside of MongoDB.
+    - Upcoming WeKan will use SQLite database for text data. Files are stored outside of SQLite.
 # extensions
 - https://github.com/asg017/sqlite-loadable-rs
   - A framework for writing fast and performant SQLite extensions in Rust
@@ -119,8 +126,49 @@ modified: 2022-11-04T14:20:37.172Z
   - CG/SQL is a code generation system for the popular SQLite library that allows developers to write stored procedures in a variant of Transact-SQL (T-SQL) and compile them into C code that uses SQLite’s C API to do the coded operations
   - SQLite has no stored procedures of its own. 
 
-- https://github.com/guardianproject/libsqlfs /LGPLv2/c
+- https://github.com/alicebob/sqlittle /202302/go
+  - Pure Go SQLite file reader
+  - SQLittle reads SQLite3 tables and indexes. It iterates over tables, and can search efficiently using indexes.
+  - There is no support for SQL
+# file
+- https://github.com/narumatt/sqlitefs /202003/rust/inactive
+  - allows Linux and MacOS to mount a sqlite database file as a normal filesystem.
+  - libfuse(Linux) or osxfuse(MacOS) is requied by fuse-rs
+
+- https://github.com/guardianproject/libsqlfs /LGPLv2/201812/c
   - a library that implements a POSIX style filesystem on top of an SQLite database
+
+- https://github.com/KyleBruene/sqlar /201708/c
+  - a proof-of-concept "SQLite Archiver" program. 
+  - This program (named "sqlar") operates much like "zip", except that the compressed archive it builds is stored in an SQLite database instead of a ZIP archive.
+
+- https://github.com/alicebob/bakelite /202206/go/inactive
+  - Pure Go SQLite file exporter
+  - This library writes SQLite files from scratch. You hand it the data you want in the tables, and you get back your . SQLite file.
+  - No dependencies. No C. No SQL.
+  - dealing with 500Mb files in `Excel` is no fun. Bakelite gives a light way to generate a `.sqlite` file.
+
+- https://github.com/jilio/sqlitefs /202202/go
+  - https://github.com/jilio/sqlitefs
+- https://github.com/jacobsa/fuse /202310/go
+  - This package allows for writing and mounting user-space file systems from Go
+
+- https://github.com/nileshph/Database_Storage_Engine_Implementation /201707/java
+  - Relational database storage engine implementation using Java.
+  - The goal of this project is to implement a (very) rudimentary database engine that is loosely based on a hybrid between MySQL and SQLite, which I call DavisBase.
+
+- https://github.com/jimsmart/peanut /202301/go
+  - a Go package to write tagged data structs to disk in a variety of formats, simply and without ceremony.
+  - Its primary purpose is to provide a single consistent interface for easy, ceremony-free persistence of record-based struct data.
+  - Currently supported formats are CSV, TSV, Excel (.xlsx), JSON Lines (JSONL), and SQLite. Additional writers are also provided to assist with testing and debugging. 
+  - All writers perform atomic file operations, writing data to a temporary location and moving it to the final output location when Close is called.
+
+- https://github.com/simonw/airtable-export /python
+  - Export Airtable data to YAML, JSON or SQLite files on disk
+  - If you run this command against an existing SQLite database records with matching primary keys will be over-written by new records from the export.
+# binary/attachment
+- https://gist.github.com/jacobian/5000515 /python
+  - Benchmarking MongoDB's GridFS vs PostgreSQL's LargeObjects
 # mobile
 
 # gis

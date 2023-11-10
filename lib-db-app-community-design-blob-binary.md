@@ -57,7 +57,10 @@ modified: 2023-11-07T16:49:03.314Z
 # discuss
 - ## 
 
-- ## 
+- ## [Is it worth sticking to mongodb with GridFS or should I just use MySQL? : node_201705](https://www.reddit.com/r/node/comments/6bzf1d/is_it_worth_sticking_to_mongodb_with_gridfs_or/)
+- 
+- 
+- 
 
 - ## [Self-hosted photo and video backups directly from your mobile phone | Hacker News_202307](https://news.ycombinator.com/item?id=36673224)
 - 

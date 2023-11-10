@@ -517,6 +517,13 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/onyxcodes/dbmanager-ui /202208/ts
   - UI for managing PouchDB databases through DBManager interface layer
 
+- https://github.com/jo/docuri /201701/js
+  - Rich document ids for CouchDB
+  - DocURIs can tell a lot about the document
+
+- https://github.com/raviraju/CRUD_Videos /201606/js
+  - CRUD operations for video attachments in pouchDb-couchDb NoSQL databases
+
 - https://github.com/puncoz-official/redux-pouchdb-middleware /202001/ts
   - redux middleware to sync data between redux with pouchdb and vice-versa.
 - https://github.com/vicentedealencar/redux-pouchdb /201912/js
@@ -603,6 +610,24 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/dungeonfog/pouchdb-rs /202010/Rust
   - Rust wrapper around PouchDB, using wasm-bindgen
+
+- https://github.com/neoskop/bouch /201911/ts
+  - CouchDB/PouchDB Backup/Restore Tool with Attachments Support
+  - an CLI Tool to backup and restore CouchDB and PouchDB databases.
+
+- https://github.com/Squarespace/pouchdb-lru-cache /201803/js
+  - An LRU (least recently used) cache designed for storing binary data in PouchDB. 
+  - Runs in modern browsers and Node.js.
+  - this could be used for caching images so that you don't have to re-load them every time.
+- https://github.com/HitomiTenshi/pouchdb-binary-utils /201907/js
+  - PouchDB utilities for operating on binary strings and Buffers/Blobs.
+
+- https://github.com/DamonOehlman/attachmate /201706/js
+  - An experiment in using @isaacs useful fstream project to stream files in and out of CouchDB as attachments to documents.
+- https://github.com/KlausTrainer/couch_image_resizer /201209/js
+  - a simple web service that can serve CouchDB document attachments and, if the attachment is an image, is able to resize it using the convert program that is part of the ImageMagick tool suite. 
+  - Resized images are held in an in-memory LRU cache, whose configurable size is 128 megabytes by default.
+
 # couchdb-utils
 - couchdb /5.5kStar/apache2/202211/erlang
   - https://github.com/apache/couchdb
@@ -744,6 +769,19 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/onur1/couchilla /js
   - Use couchilla to bundle a CouchDB design document from a directory of JavaScript files.
   - [Bundle your CouchDB map/reduce functions with ease](https://ogu.nz/couchilla.html)
+# test
+- https://github.com/GustavoLopez04/pouchdb /202211/js
+  - The source repository for the getting started tutorial for PouchDB
+- https://github.com/chxyang/couchdb-demo-app
+  - The source repository for the getting started tutorial for PouchDB
+
+- https://github.com/cozy/pouchdb-playground /202104/js
+  - Make queries with PouchDB and measure performances.
+  - Hacking the Cozy Pouchdb playground app requires you to setup a dev environment.
+
+- https://github.com/gr2m/pouchdb-attachments-sync-test /js
+  - https://gr2m.github.io/pouchdb-attachments-sync-test/
+  - Current PouchDB downloads all attachments from all revisions when replicating from a remote repository, instead of smartly checking what attachments already exist locally
 # examples
 - https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1 /ts
   - [Collaborative text editor with ProseMirror and a syncing database_202007](https://emergence-engineering.com/blog/prosemirror-sync-1)
@@ -794,15 +832,6 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/ErikVerheul/OneBacklog /202310/js
   - A Vue SPA for maintaining multi team product backlogs using CouchDB
-
-- https://github.com/GustavoLopez04/pouchdb /202211/js
-  - The source repository for the getting started tutorial for PouchDB
-- https://github.com/chxyang/couchdb-demo-app
-  - The source repository for the getting started tutorial for PouchDB
-
-- https://github.com/cozy/pouchdb-playground /202104/js
-  - Make queries with PouchDB and measure performances.
-  - Hacking the Cozy Pouchdb playground app requires you to setup a dev environment.
 
 - https://github.com/chaosprinz/webapp-boilerplate /201911/js
   - Boilerplate for developing webapps based on react with express/socket.io-backend using couchdb

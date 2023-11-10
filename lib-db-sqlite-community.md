@@ -44,16 +44,10 @@ modified: 2021-08-30T17:33:46.086Z
 - 
 - 
 
-- ## 🔥 [The SQLite Database File Format | Hacker News_201409](https://news.ycombinator.com/item?id=8385259)
-- 
-- 
-- 
-
 - ## 🔥 [There are over one trillion SQLite databases in active use | Hacker News_202112](https://news.ycombinator.com/item?id=29461127)
 - 
 - 
 - 
-
 
 - ## 🔥 [How to Corrupt a SQLite Database File | Hacker News_202204](https://news.ycombinator.com/item?id=31214131)
 - 
@@ -72,12 +66,6 @@ modified: 2021-08-30T17:33:46.086Z
 
 - ## [Tell HN: SQLite3 does have something like stored procedures | Hacker News](https://news.ycombinator.com/item?id=31913062)
 - However, triggers cannot return result rows, and a SELECT query that a view is defined as cannot take parameters (although there is a work-around by using a virtual table which contains a single row whose value is whichever value it is constrained to be). There is also WITH RECURSIVE, which also has many uses.
-
-
-
-
-
-
 
 - ## [ What is the SQLite of nosql databases? | Hacker News](https://news.ycombinator.com/item?id=27490361)
 - As others have mentioned you have lots of options: LMDB, LevelDB/RocksDB, BerkeleyDB. 
@@ -105,7 +93,6 @@ modified: 2021-08-30T17:33:46.086Z
 - Chiselstrike is SQLite over WASM with HTTP client (so you don’t need a TCP pipe or access to process aka Node; works in edge /serverless/workers)
   - LolaDB is an HTTP client that pulls all your db clients on a centralized server infra & wraps the calls into a unified interface 
   - Prisma Data Proxy gives you a prisma:// protocol connection. Should work on serverless HTTP as well … haven’t tested it
-
 
 - ## [SQLite: QEMU All over Again? | Hacker News_202210](https://news.ycombinator.com/item?id=33081159)
 - Just a note that LiteFS isn't a distributed filesystem; despite the name, it's not a filesystem at all, but rather just a filesystem proxy. 

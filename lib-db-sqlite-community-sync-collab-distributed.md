@@ -52,14 +52,33 @@ modified: 2023-10-26T19:03:22.063Z
 - Since RxDB v13 or so, the sync works in parallel in both directions for better performance. So maybe there should be a throttle when much data is synced.
   - [FIX Throttle calls to forkInstance on push-replication to not cause m…](https://github.com/pubkey/rxdb/pull/5194) 
 
-- ## 💡🔥 [Cross-Database Queries in SQLite | Hacker News_202102](https://news.ycombinator.com/item?id=26217754)
-- 
-- 
-- 
+- ## 🪶🔁 [dqlite: Embeddable, replicated and fault tolerant SQL engine based on Sqlite | Hacker News_202202](https://news.ycombinator.com/item?id=30135401)
+- What I found to be the biggest problem with SQLite is concurrent write operations. WAL helps for concurrent read but not for concurrent write. On a moderate use case (< 20 write operations per s) I kept getting timeouts so I first devised a quick fix system using RQ jobs passing writes to a single process and migrated to postgres as fast as I could. Does this software help with concurrent write operations?
+  - I have no problem with concurrent writes and wal mode on a recent build of SQLite. Perhaps you are standing up a new sqlite connection per operation or otherwise sharing between separate processes? With exclusive access using a single connection in WAL mode, I can insert tens of thousands of rows per second on flash storage no problem.
+  - 💡 Something that is not widely announced is the fact that SQLite serializes all writes by default, so you should share the same connection instance as often as possible.
+- SQLite does have a branch that solves the concurrent write issue - not sure if this dqlite uses it
+  - [The "server-process-edition" Branch](https://sqlite.org/src/doc/754ad35c/README-server-edition.html)
+  - The "server-process-edition" branch contains two modifications to stock(供应, 供给) SQLite that work together to provide concurrent read/write transactions using pessimistic page-level-locking.
+
+- 🆚️ when would someone choose this or rqlite over something like Postgres?
+  - rqlite has limitations on "safe" SQL statements. As dqlite replicates the pages and not the SQL statements over raft, which means dqlite doesn't have _that_ problem. Using random() and now() are classified as non-deterministic
+- Yes, that's correct. rqlite does statement-based replication, which means it has the limitation you outlined. This could be solved by parsing the entire SQLite statement passed into rqlite before it's written to the Raft log, but I haven't got around to that yet.
+
+- is there any similar database that allows offline replicas or delayed synchronization? I.e. allow for copies to have local offline writes and be brought up to synchronize? There is couchdb, but that seems to have fallen out of favor. I'm totally fine with having to explicitly handle collisions or prevent collisions client-side. Both dqlite and rqlite seem to use raft which requires an online quorum (I assume).
+  - The SQLite built-in changeset and patchset extensions might be what you're looking for:
+
+- Using CRDTs requires that you define all the relevant operations as monoids. A lot of work has to go into the choices of monoids to yield usable results. Monoids work fantastically well for things like upvotes on videos or whatever (so you'll notice that's always the first example given), but they don't really work for things like primary / unique keys, yet primary/unique keys are a critical requirement of most RDBMSes and schemas. Ergo, CRDTs don't work that well for relational databases. The situation is very different for collaborative text editing as there's no primary keys nor schema there, and humans are able to detect and correct nonsensical results.
+
+- I've read about couchdb every few years, and people in the last ~5 years were complaining about an awkward query syntax, slow embedded JS engine (IIRC), client-side complexity of the document data model and effort to maintain.
 
 - ## 🔥 [mvSQLite: Turning SQLite into a Distributed Database | Hacker News_202208](https://news.ycombinator.com/item?id=32539360)
   - [Turning SQLite into a distributed database_202208](https://su3.io/posts/mvsqlite)
 
+- 
+- 
+- 
+
+- ## 💡🔥 [Cross-Database Queries in SQLite | Hacker News_202102](https://news.ycombinator.com/item?id=26217754)
 - 
 - 
 - 

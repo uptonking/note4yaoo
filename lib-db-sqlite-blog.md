@@ -10,6 +10,8 @@ modified: 2022-11-18T17:06:54.371Z
 # guide
 
 # blog
+- [The "server-process-edition" Branch](https://sqlite.org/src/doc/754ad35c/README-server-edition.html)
+  - The "server-process-edition" branch contains two modifications to stock(供应, 供给) SQLite that work together to provide concurrent read/write transactions using pessimistic page-level-locking.
 
 ## 📝 [What I learned about SQLite…at a PostgreSQL conference_201405](https://use-the-index-luke.com/blog/2014-05/what-i-learned-about-sqlite-at-a-postgresql-conference)
 

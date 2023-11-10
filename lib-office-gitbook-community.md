@@ -182,35 +182,22 @@ modified: 2023-09-19T06:35:28.278Z
 # discuss-format
 - ## 
 
-- ## [What if OpenDocument used SQLite? (2014) | Hacker News_202309](https://news.ycombinator.com/item?id=37553574)
+- ## 🪶📄⚖️ [What if OpenDocument used SQLite? (2014) | Hacker News_202309](https://news.ycombinator.com/item?id=37553574)
+
+- OpenDocument - Initial release: 1 May 2005; 18 years ago
+  - SQLite - Initial release: 17 August 2000; 23 years ago
+  - OpenDocument traces it's ancestry to OpenOffice XML format, which traces it's ancestry to StarOffice, which was xmlized around the time Sun bought it in 1999
+  - Not to be confused with Office Open XML (OOXML), Microsoft's "standard".
+
+- ⚖️ Is SQLite’s disk format an open, versioned standard? Or is it just “however SQLite saves data to disk”?
+  - [Database File Format](https://www.sqlite.org/fileformat2.html)
+  - Note that there have been no breaking changes since the file format was designed in 2004. 
+
 - The **problem with SQLite** is that it's not a standardized file format. 
   - It's well-documented and pretty well understood for sure, but there's no ISO standard defining how to interpret an SQLite file in excruciating detail. 
   - Same goes for competing implementations, Zip and XML have a much smaller API surface than SQLite, whose API, apart from a bunch of C functions, is the SQL language itself. 
   - Writing an XML parser is not a trivial task, but it's still simpler than writing an SQL parser, query optimizer, compiler, bytecode VM, full-text search engine, and whatever else Sqlite offers, without any data corruption in the process. 
   - If Open Office used SQLite, its programmers would inevitably start using its more esoteric features and writing queries that a less-capable engine wouldn't be able to optimize too well.
-- This isn't a concern for most software. If you're writing a domain-specific, closed-source application where interoperability with other apps or ISO standardization isn't a concern, SQLite is a perfectly fine file format, but as far as I understand the situation, those concerns did exist for Open Office.
-
-- Good article. Although one thing I do like about OpenDocument being just a bunch of XML files in a ZIP archive is that it is fairly easy to generate documents like spreadsheets without using a (potentially hefty) library which knows about the document format.
-  - Doing this with SQLite would be possible of course, just a tad more complex and with a lower development speed. Being able to fire up the office suite, create a template document, and just dig into its XML files in the saved file is a nice feature (although admittedly of niche interest).
-
-- The advantages of XML, specifically, a human-readable format; really only work for small files when the design of the schema is optimized for readable XML. 
-  - Unfortunately, the need to always rewrite the entire XML file, and the "complexities" that come with lots and lots of features will quickly erode XML's biggest advantages.
-
-- I shipped a product that used both SQLite and XML files.
-  - One of the improvements that I made was moving a few tables that contained small amounts of data to xml files. Because these files were small and rarely written; it simplified the data access layer, and simplified diagnostics. (I made sure the files were multi-line tabbed xml.)
-  - The advantages of XML, specifically, a human-readable format; really only work for small files when the design of the schema is optimized for readable XML. 
-  - Unfortunately, the need to **always rewrite the entire XML file**, and the "complexities" that come with lots and lots of features will quickly erode XML's biggest advantages.
-- IMO: A "lay" person needing to muck around with the internals of an office document is fringe enough that learning to use a SQLite reader is an acceptable speed bump. The limitations of XML + Zip, when it comes to random writes in the middle of a file, just can't be overcome by Moore's law.
-
-- 👉🏻 Engineering is all about **tradeoffs**: **SQLite is optimized for quick incremental updates where you don't need to rewrite the whole file**. **Zip & xml aren't**. (IE, if you decide to add a letter to a word at the beginning of a document, with zip & XML you have to rewrite the whole document. SQLite can make a minor change without the whole rewrite.)
-
-- > I like taking the approach of CouchDB where the only correct way to close the system is to crash it.
-  - The term you're looking for is (aptly named) crash-only software.
-  - [Crash-only software - Wikipedia](https://en.wikipedia.org/wiki/Crash-only_software)
-
-- 
-- 
-- 
 
 - ## 💡 [XML is almost always misused | Hacker News](https://news.ycombinator.com/item?id=21391322)
 - I mean, in theory, you could do this in JSON or some other data structure. But you would go insane and be shooting yourself in the head before long.

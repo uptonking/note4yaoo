@@ -187,6 +187,11 @@ modified: 2022-11-03T04:14:11.987Z
     - 比较了parse、firebase、couchdb、kuzzle、remoteStorage、Hoodie
   - https://github.com/Kinto/kinto.js
     - An Offline-First JavaScript client for Kinto.
+
+- https://github.com/mkrd/DictDataBase /202310/python
+  - A python NoSQL dictionary database, with concurrent access and ACID compliance
+  - a fast document-based database that uses json files or compressed json files for storage.
+  - [I made DictDataBase, it‘s like SQLite but for JSON! : Python_202210](https://www.reddit.com/r/Python/comments/yemdn4/i_made_dictdatabase_its_like_sqlite_but_for_json/)
 # object-storage/s3
 - minio /36.1kStar/AGPLv3/202211/go
   - https://github.com/minio/minio

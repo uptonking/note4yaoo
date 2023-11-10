@@ -22,19 +22,191 @@ modified: 2023-10-07T17:30:26.998Z
   - One option that’s mentioned in the docs is delta-pouch, which “stores every change as its own document”, and then reads out those changes to construct the “current” state of a document.
   - I’m a little wary about the “production-readiness” of this plugin, though, as shoehorning(强挤硬塞) a delta-based system onto pouchdb seems like it would introduce some pretty significant performance penalties(处罚；不利；损失).
 
+## [Filtered replication: from Couch to Pouch and back_201504](https://pouchdb.com/2015/04/05/filtered-replication.html)
+
+- Filtered replication can become a vital feature for many applications, when you realize you don't need the whole dataset to be replicated to each client. 
+- At the same time, filtered replication can be the wrong solution to your problem if:
+  - You're trying to address security concerns. Replicating only the user's documents via filtering might seem simplest, but filtering isn't a substitute for proper authentication.
+  - you'd like to provide a better per-user or per-role experience
+
+- Filters in PouchDB
+- Client-side filtering takes nothing more than a JS function. 
+  - This will prevent useless documents from being stored locally, 
+  - but it means the documents will still go over the wire, and the client will waste CPU cycles to handle them properly.
+- Server-side filtering, again, takes nothing more than a JS function, 
+  - but it's executed by CouchDB. 
+  - This will prevent documents from going over the wire in the first place! So obviously we prefer this one.
+
+- you might be wondering about the difference between a view and a filter. 
+- My reason for using filters is easy: I want to emit the whole document, and I want to emit documents according to a parameter provided by the client. 
+  - While you could create a view that emits the whole document, taking parameters becomes a bit too complicated for my taste.
+
+- When using filtered replication, you should not use the DELETE method to remove documents, but instead use PUT and add a _deleted:true field to the document, preserving the fields required for the filter. Your Document Update Handler should make sure these fields are always present. 
+  - This will ensure that the filter will propagate deletions properly.
+
+- To make two-way filtered replication work, the design document needs to be in both the remote database and the local database. 
+  - To do this, we might decide to simply replicate the design document alongside the other documents.
+- It is enough to have it stored locally; Pouch will handle the rest. The downside is that now we need to remember to handle the design document, by not letting it mingle with the documents needed in the UI.
+- If you feel you'd rather keep the filter function clean and not worry about filtering the design document itself, then you could also have two different design documents by the same id, one in Couch and one in Pouch, not replicating.
+
+## [How we test PouchDB](https://pouchdb.com/2014/11/27/testing-pouchdb.html)
+
+- Test library
+  - Mocha
+- Test platform
+  - Travis CI
+- Test runner
+  - Selenium
+- Performance tests
+  - choose which version of PouchDB to test
+
+## [Secondary indexes have landed in PouchDB_201405](https://pouchdb.com/2014/05/01/secondary-indexes-have-landed-in-pouchdb.html)
+
+- With the release of PouchDB 2.2.0, we're happy to introduce a feature that's been cooking on the slow simmer for some time: secondary indexes, a.k.a. persistent map/reduce.
+  - it allows you to index anything in your JSON documents – not just the doc IDs.
+  - the new API is modeled after CouchDB's
+
+- Indexes in SQL databases
+  - in relational databases like MySQL and PostgreSQL, you can usually query whatever field you want
+  - if you don't want your performance to be terrible, you first add an index
+  - The job of the index is to ensure the field is stored in a B-tree within the database, so your queries run in O(log(n)) time instead of O(n) time.
+
+- Indexes in NoSQL databases
+  - All of the above is also true in document stores like CouchDB and MongoDB, but conceptually it's a little different. 
+  - By default, documents are assumed to be schemaless blobs with one primary key (called _id in both Mongo and Couch), and any other keys need to be specified separately. 
+  - The concepts are largely the same; it's mostly just the vocabulary that's different.
+- In CouchDB, queries are called map/reduce functions. 
+  - This is because, like most NoSQL databases, CouchDB is designed to scale well across multiple computers, and to perform efficient query operations in parallel. 
+  - Basically, the idea is that you divide your query into a map function and a reduce function, each of which may be executed in parallel in a multi-node cluster.
+
+- PouchDB has actually had map/reduce queries since way before version 2.2.0, via the query() API. 😩 It had a big flaw, though: all queries were performed in-memory, reading in every document in the entire database just to perform a single operation.
+- The new persistent query() method is much more memory-efficient, and it won't read in the entire database unless you tell it to. 
+- It has two modes:
+  - Temporary views (like the old system)
+  - Persistent views (new system)
+
+- CouchDB calls indexes views, and these views are stored in a special document called a design document. 
+  - Basically, a design document describes a view, and a view describes a map/reduce query, which tells the database that you plan to use that query later, so it better start indexing it now. 
+- In other words, creating a view is the same as saying `CREATE INDEX` in a SQL database.
+- Temporary views are exactly that – temporary. Instead of using a design document, you just call pouch.query(), so the view is created, written to disk, queried, and then poof, it's deleted. That's why, in older version of PouchDB, we could get away with doing it all in-memory.
+  - temporary views have to do a full scan of all documents every time you execute them, along with all the reading and writing to disk that that entails, only to throw it away at the end.
+- Persistent views need to be saved in a design document (hence "persistent"), so that the emitted fields are already indexed by the time you look them up. 
+  - Subsequent lookups don't need to do any additional writes to disk, unless documents have been added or modified, in which case only the updated documents need to be processed.
+- Design documents are special meta-documents that CouchDB uses for things like indexes, security, and schema validation (think: "designing" your database). 
+  - They are stored, updated, and deleted exactly like normal documents, but their `_ids` are prefixed with the reserved string `_design/`. They also show up in allDocs() queries, but you can filter them out by using `{startkey: '_design0'}`.
+- Technically, a design doc can contain multiple views, but there's really no advantage to this. Plus, it can even cause performance problems in CouchDB, since all the indexes are written to a single file. 
+  - 💡 So we recommend that you create one view per design doc, and use the same name for both, in order to make things simpler.
+
+- Just like regular documents, design docs can always be deleted or changed later. The index will be updated automatically the next time you query() it.
+  - Technically, the view will not be built up on disk until the first time you query() it. 
+  - So a good trick is to always call query(viewName, {stale: 'update_after'}) after creating a view, to ensure that it starts building in the background. 
+  - You can also use {stale: 'ok'} to avoid waiting for the most up-to-date results.
+
+- allDocs() API will read all documents into memory, just like before
+  - But in general, we strongly recommend upgrading your apps to the new map/reduce API instead.
+
+- When not to use map/reduce
+- views can take awhile to build up, both in CouchDB and PouchDB. 
+  - Each document has to be fetched from the database, passed through the map function, and indexed, which is a costly procedure for large databases. 
+  - And if your database is constantly changing, you will also incur the penalty at query() time of running the map function over the changed documents.
+  - Luckily, it turns out that the primary index, _id, is often good enough for a variety of querying and sorting operations. So if you're clever about how you name your document _ids, you can avoid using map/reduce altogether.
+
+- if you're just using the randomly-generated doc IDs, then you're not only missing out on an opportunity to get a free index – you're also incurring the overhead of building an index you're never going to use. So use and abuse your doc IDs!
+
+- Tips for writing views
+- Don't index it if you don't need it
+  - If the null field is meaningful for some reason, though, you can emit it and look it up later using query(viewName, {key: null}). Any undefined fields are treated as null.
+- Move logic to the query params
+- Use high characters for prefix search
+  - Or you can set inclusive_end to false
+- Use {} for complex key ranges
+  - In CouchDB collation ordering, {} is higher than everything except other objects.
+
+- 🧐💡 For the database geeks: implementation details
+- One of the neat things about how we implemented map/reduce is that we managed to do it entirely within PouchDB itself. 
+- your map/reduce view is just a regular old PouchDB database, and map/reduce itself is a plugin with no special privileges, creating databases in exactly the same way a regular user would. Since the implementation sits on top of the PouchDB API, it's exactly the same for all three backends: LevelDB, IndexedDB, and WebSQL.
+- In fact, as we were debating how to implement this feature, we originally ran on the assumption that we'd need to build additional functionality on top of PouchDB. It was only after a few months of discussions and experiments that we realized the whole thing could be done in PouchDB proper.
+  - In the end, the only additional functionality we had to add to the main PouchDB code was a hook to tell PouchDB to destroy the map/reduce database when its parent database was destroyed. That's it.
+- This technique also has a nice parallel in CouchDB: it turns out that they, too, reused the core _view code in order to write _all_docs. In CouchDB, _all_Docs is just a special kind of _view, whereas in PouchDB, we built map/reduce views on top of allDocs(). We did it backwards, but the spirit of the idea was the same.
+- As for the index itself, what it basically boils down to is clever serialization of arbitrary JSON values into CouchDB collation ordering – i.e. nulls before booleans, booleans before numbers, numbers before strings, strings before arrays, arrays before objects, and so on recursively. 
+  - Every JSON object maps to an indexable string that guarantees the same ordering in every database backend, and we only deviate from CouchDB by using ASCII string ordering instead of ICU ordering (since that's what our backends use).
+  - Then, we take this value and concatenate it with whatever else needs to be indexed (usually just the doc _id), meaning the entire lookup key is a single string. 
+- We decided on this implementation because:
+  - LevelDB does not support complex indexes.
+  - IndexedDB does support complex indexes, but not in IE.
+  - WebSQL supports multi-field indexes, but it's also a dead spec, so we're not going to prioritize it above the others.
+- The next part of the design was to divide the data we needed to store into two kinds of documents: 
+  - 1) emitted key/values with doc IDs, which are used for querying and pagination, and 
+  - 2) mappings from doc IDs to those key/values, so that we can delete or update them when their parent documents are deleted or updated. 
+- Since by design, PouchDB databases do not have multi-document transaction semantics, we implemented a task queue on top of the database to serialize writes.
+- Aside from that, the only other neat trick was a liberal(不严格的；自由的) use of `_local` documents, which are a special class of documents that aren't counted in the `total_rows` count, don't show up in `allDocs`, but can still be accessed using the normal put() and get() methods. This is all it takes to fully reimplement CouchDB map/reduce in a tiny JavaScript database
+
 ## [Pagination strategies with PouchDB_201404](https://pouchdb.com/2014/04/14/pagination-strategies-with-pouchdb.html)
+
+- allDocs(), doesn't do any pagination by default.
+  - allDocs() doesn't return the full document data by default, unless you pass in the option `{include_docs : true}`.
+  - It only returns the document `id` and revision hash `rev`.
+- Since PouchDB is modeled after CouchDB, we can learn about these parameters by directly consulting the Couch docs
+  - both `startkey` and `endkey` are inclusive — i.e., the matching value itself is included in the results.
+  - `skip` tells PouchDB how many documents to skip from its normal starting point.
+  - limit: maximum number of docs to return
+- you might recognize `skip` and `limit` as our old friends from SQL: `OFFSET` and `LIMIT`. 
+  - You might also imagine that these parameters are the only ones you need for proper pagination. But this is a trap!
+  - once `skip` grows to a large number, your performance will start to degrade pretty drastically. 
+  - That's because those documents must literally be skipped over with each query, and the database will still read into memory every document that it's skipping. 
+- Smart method: leveraging `startkey`, instead of relying on the performance-killer `skip`.
+- To be fair, WebSQL and CouchDB (since version 1.1.1) do not suffer from this problem, due to their ability to efficiently count SQLite rows/B-tree offsets. 
+  - However, since IndexedDB and LevelDB (and other backends modeled on LevelDOWN) are traditional key-value stores, they don't have a good way to count offsets. 
+  - Also, some experimental data suggests that CouchDB 1.5 is still faster with the `startkey` pattern. So you're better off just using `startkey` everywhere.
+
+- PouchDB uses standard JavaScript string ordering. 
+  - if you provide your own IDs, you can make sorting incredibly easy for a variety of applications.
+
+- total_rows, you can think of this as your COUNT(*).
 
 ## 📝 [12 pro tips for better code with PouchDB_201406](https://pouchdb.com/2014/06/17/12-pro-tips-for-better-code-with-pouchdb.html)
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+01. Use put(), not post(). put() requires you to supply your own doc ID, whereas post() generates a random one for you
+02. Don't `emit(doc.foo, doc)`; use `emit(doc.foo)`;
+- you never need to emit() the full document in your map/reduce functions. You can always just use {include_docs: true} when you query
+- if you emit the full doc, then it will actually serialize and write out that entire document to disk. 
+  - This is true in both PouchDB and CouchDB, and it's pure waste.
+03. Don't emit(doc.foo, 1) and then _sum; don't use `_sum` when a simple `_count` will do.
+04. Attachments are overrated
+- Replicating large attachments is still not recommended, but attachments can be handy if used correctly. blob-util can help.
+- NPM has moved away from storing attachments in CouchDB
+  - Nowadays they use a CDN for the binaries, and CouchDB just stores the metadata
+- In PouchDB, attachments have been one of the biggest sources of bugs, since every browser seems to handle them differently. 
+- In general, both CouchDB and PouchDB are just poor fits for storing binary data. (Databases rarely are.) 
+- Instead of attachments, try using a CDN or a simple fileserver, and store the URLs or checksums in the database if you need to.
+- you should never put your binaries in the database. It's a terrible idea. It always goes wrong. I have never met a database in 15 years of which it is not true, and it's definitely not true of CouchDB.
+05. Use plugins, or write your own
+06. Don't just update docs for the hell of it
+- Every time you modify a document, another revision is added to its revision history – think Git. 
+- Except unlike Git, these revisions contain the full document data (not just the diffs), which can take up a lot of space on disk. 
+- So if nothing changed in a document, don't bother put()ing it again.
+07. Use and abuse your doc IDs
+- if you don't want bad performance from your secondary indexes, the best strategy is to avoid secondary indexes altogether. The primary index should be sufficient for sorting and searching in nearly all of your applications, or at least for the hot-path code.
+- if you really want to get fancy with your doc IDs, you can use PouchDB Collate to serialize arbitrary data into strings that are sorted according to CouchDB collation ordering. This allows you to index on arrays, objects, numbers
+- This is actually what persistent map/reduce uses under the hood!
+- for cases where you only need to build complex IDs out of strings, there is also the fantastic DocURI project, which can build a more human-readable ID like this: `movie/gallery-image/12/medium`.
+- Choose whichever one fits your app better, or just concatenate the strings yourself.
+08. Use Web SQL for better performance.
+- since this post was written, IndexedDB performance has improved, and is often better than WebSQL in Chrome. 
+09.  Move logic from the map function to query()
+- every `map` function you write has to be executed for every single document in your database. No exceptions.
+- the query() options like startkey, endkey, key, and keys have been optimized to hell, and they leverage the native indexes in the database to deliver the maximum possible performance.
+- Each of those db.query() calls represents a separate temporary index. I.e., all your docs are read in, run through the map function, spit out to an index, queried, and then the whole thing is thrown away. For every query! 
+- No need to completely rebuild the index when your query changes; just switch around `startkey/endkey/descending` and friends at query time to get the data you want.
+10. You probably don't need reduce
+- unless you're running your queries against the server, they don't buy you any performance benefits.
+- PouchDB runs in Node or the browser, meaning it's a single-threaded, single-process environment. 
+- There's no massive parallelization of the map/reduce functions like you could get with CouchDB
+- PouchDB takes a shortcut and just runs every reduce function in memory (there's no point in writing it to disk), meaning it's not doing anything you couldn't just do yourself.
+- So if you find yourself writing three different design documents that all emit the same thing but have different reduce functions: don't bother. You can get better performance and smaller code by just writing a single design document with no reduce, and then doing the reduce yourself.
+11. Debug with the CouchDB UI. http://localhost:5984/_utils
+12. Contribute!
+- database isn't really that hard. Keys map to values, stuff's written to disk: it's a cinch(容易做的事情) once you learn the basics.
 
 ## 📝 [10 things I learned from reading (and writing) the PouchDB source_201410](https://pouchdb.com/2014/10/26/10-things-i-learned-from-reading-and-writing-the-pouchdb-source.html)
 
@@ -96,19 +268,29 @@ modified: 2023-10-07T17:30:26.998Z
   - A natural choice for this interface was to use GraphQL, which would allow the system to automatically fetch and keep the data live-updated. We decided to build it in-house and call it LiveGraph.
 # blogs-couchdb
 
+## [10 Common Misconceptions about Apache CouchDB - Speaker Deck_201311](https://speakerdeck.com/wohali/10-common-misconceptions-about-apache-couchdb)
+
+### [Another 10 Common Misconceptions about Apache CouchDB - Speaker Deck_201809](https://speakerdeck.com/wohali/another-10-common-misconceptions-about-apache-couchdb)
+
 ## [Upscaling LinkedIn's Profile Datastore While Reducing Costs | LinkedIn Engineering_202305](https://engineering.linkedin.com/blog/2023/upscaling-profile-datastore-while-reducing-costs)
 
 - Instead, we chose to introduce Couchbase as a centralized storage tier cache for read scaling. 
   - This solution achieved a cache hit rate of over 99%, reduced tail latencies by more than 60%, and trimmed the cost to serve by 10% annually. 
-- 
-- 
-- 
 
 ### [How LinkedIn Serves 5 Million User Profiles per Second](https://blog.quastor.org/p/linkedin-serves-5-million-user-profiles-per-second)
 
 - Couchbase is a combination of ideas from Membase and CouchDB, where you have the highly scalable caching layer of Membase and the flexible data model of CouchDB.
   - It’s both a key/value store and a document store, so you can perform Create/Read/Update/Delete (CRUD) operations using the simple API of a key/value store (add, set, get, etc.) but the value can be represented as a JSON document.
   - With this, you can access your data with the primary key (like you would with a key/value store), or you can use N1QL (pronounced nickel). This is an SQL-like query language for Couchbase that allows you to retrieve your data arbitrarily and also do joins and aggregation.
+
+## 🆚️ [Couchbase vs. MongoDB: NoSQL Misconceptions Part 1 - What about SQL?_202206](https://www.couchbase.com/blog/couchbase-mongodb-nosql-misconceptions-1/)
+
+- [Couchbase vs. MongoDB: Part 2 - Is Couchbase just a Key-Value Store? _202206](https://www.couchbase.com/blog/couchbase-mongodb-nosql-misconceptions-2/)
+- [Is NoSQL Database Secure? Couchbase vs. MongoDB (Part 3)_202207](https://www.couchbase.com/blog/couchbase-mongodb-nosql-misconceptions-3/)
+- [Are NoSQL Databases Scalable? Couchbase vs. MongoDB (Part 4)_202207](https://www.couchbase.com/blog/couchbase-mongodb-nosql-misconceptions-4/)
+- [Memory Usage in Databases: Buffering & Caching (Part 5)_202207](https://www.couchbase.com/blog/couchbase-mongodb-nosql-misconceptions-5/)
+
+- [NoSQL Document Database Replication - MongoDB vs. Couchbase_202003](https://www.couchbase.com/blog/replication-in-nosql-document-databases-mongo-db-vs-couchbase/)
 
 ## 🆚️ [CouchDB and MongoDB Compared](https://www.mongodb.com/compare/couchdb-vs-mongodb)
 
@@ -156,18 +338,6 @@ modified: 2023-10-07T17:30:26.998Z
 
 ## 🆚️ [Couchbase vs CouchDB NoSQL Systems: Difference Between Them](https://www.couchbase.com/comparing-couchbase-vs-couchdb/)
 
-## [Magma Storage Engine: Couchstore and Magma Comparison_202210](https://www.couchbase.com/blog/magma-next-gen-document-storage-engine/)
-
-- The Couchbase database platform supports two storage mechanisms: Couchstore, the default, and Magma, the recently released engine.
-
-- Couchstore is a mature storage engine that is optimized for high performance with large datasets, particularly ones that can fit in memory. 
-  - The minimum bucket size for Couchstore is 100MB. 
-  - It’s ideal for caching use cases and situations where data compression is not a primary deciding factor. 
-- Magma is a new storage engine that is designed to be highly performant even with very large datasets that do not fit in memory.
-  - Magma is optimized to run on very low amounts of memory even with very large datasets
-
-- The performance evaluation results showed that Magma outperformed both Couchstore and RocksDB engines in write-heavy YCSB workloads with datasets that were too large for memory.
-
 ## 📕 [Couchbase Under the Hood](https://info.couchbase.com/rs/302-GJY-034/images/Couchbase_Under_The_Hood_WP.pdf)
 
 - The original multi-model NoSQL database Couchbase was originally founded through the merger of two open source database companies, CouchOne and Membase.
@@ -184,6 +354,18 @@ modified: 2023-10-07T17:30:26.998Z
 - Couchbase has also introduced a new storage engine format which is defined as buckets are created
 - Magma combines the performance of a log-structured merge trees (LSM) with the compaction, reorganizability, and immutability of sorted string tables (SSTables) to provide a high performance in a well organized, low latency engine that suits write-heavy, low latency point lookup workloads. 
   - This design minimizes disk space increases, called “storage amplifications, ” and the accompanying complexity which occurs when documents are heavily mutated without being reorganized.
+
+### [Magma Storage Engine: Couchstore and Magma Comparison_202210](https://www.couchbase.com/blog/magma-next-gen-document-storage-engine/)
+
+- The Couchbase database platform supports two storage mechanisms: Couchstore, the default, and Magma, the recently released engine.
+
+- Couchstore is a mature storage engine that is optimized for high performance with large datasets, particularly ones that can fit in memory. 
+  - The minimum bucket size for Couchstore is 100MB. 
+  - It’s ideal for caching use cases and situations where data compression is not a primary deciding factor. 
+- Magma is a new storage engine that is designed to be highly performant even with very large datasets that do not fit in memory.
+  - Magma is optimized to run on very low amounts of memory even with very large datasets
+
+- The performance evaluation results showed that Magma outperformed both Couchstore and RocksDB engines in write-heavy YCSB workloads with datasets that were too large for memory.
 # more
 - [Building Multi-platform apps with React, Cordova, CouchDB/PouchDB, . NET, Kubernetes and Azure_202012](https://blog.adaptabi.com/building-multi-platform-apps-with-react-cordova-couchdb-pouchdb-net-kubernetes-and-azure-9c1a946ccc36)
   - [Part 1 — The Database. How to build a real time data sync, multi platform app with CouchDB and PouchDB_202012](https://blog.adaptabi.com/part-1-the-database-b7c575864407)

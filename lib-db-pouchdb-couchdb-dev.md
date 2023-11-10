@@ -77,14 +77,42 @@ modified: 2022-12-02T11:15:15.257Z
 # draft
 - nonsyncable/local-only tables for config/temporary-data
   - local documents解决了此问题
+
+- binary-attachment
+  - video
+  - 方案参考: sqlite文本+video文件
+
+- sqlite [Database File Format](https://www.sqlite.org/fileformat2.html)
 # dev
 
 # changelog-pouchdb
 
-- [Secondary indexes have landed in PouchDB_201405](https://pouchdb.com/2014/05/01/secondary-indexes-have-landed-in-pouchdb.html)
-  - With the release of PouchDB 2.2.0, we're happy to introduce a feature that's been cooking on the slow simmer for some time: secondary indexes, a.k.a. persistent map/reduce.
-  - it allows you to index anything in your JSON documents – not just the doc IDs.
-  - the new API is modeled after CouchDB's
+- [v8.0.0_202212](https://pouchdb.com/2022/12/14/pouchdb-8.0.0.html)
+  - ✨ Embracing modern ES6 + JS syntax
+  - PouchDB now has `activeTasks` like couchdb
+  - Add `purge` to the indexeddb adapter
+- [v7.0.0_201806](https://pouchdb.com/2018/06/21/pouchdb-7.0.0.html)
+  - drop WebSQL from our default builds
+  - Removed Promise Polyfill
+  - Switch to fetch
+  - use the documents contents to determine its revision
+- [v6.0.0_201609](https://pouchdb.com/2016/09/05/pouchdb-6.0.0.html)
+  - Remove new PouchDB(dbName).then
+  - Remove extras API, extracted out into separate packages
+  - Remove SQLite Plugin support
+- [v5.0.0_201510](https://pouchdb.com/2015/10/06/pouchdb-5.0.0-five-years-of-pouchdb.html)
+  - Implement `bulkGet()`.
+- [v4.0.0_201508](https://pouchdb.com/2015/08/03/pouchdb-4.0.0-ballast-overboard.html)
+  - Return Blobs (or Buffers) in get() + allDocs() + changes() + query() with {binary: true}. 
+  - Remove `onChange` and `complete` callbacks; use the EventEmitter-style `changes()`,  `replicate()` and `sync()`.
+  - Allow chaining of plugin registration
+- [v3.0.0_201408](https://pouchdb.com/2014/08/12/pouchdb-3.0.0.html)
+  - `_local` documents are now unversioned in the underlying backend for better map/reduce performance
+  - MD5 hashes are now calculated incrementally in a way that won't freeze the DOM
+  - You can no longer rely on errors to have an identifying name. Instead, rely on CouchDB-centric errors to have a status
+- [v2.2.0_201405](https://pouchdb.com/2014/05/01/pouchdb-2.2.0.html)
+  - ✨ secondary indexes, a.k.a. persistent map/reduce
+  - `.changes()` API switched to an EventEmitter
 # changelog-couchdb
 - [Release Notes — Apache CouchDB® Documentation](https://docs.couchdb.org/en/stable/whatsnew/index.html)
 
@@ -95,8 +123,11 @@ modified: 2022-12-02T11:15:15.257Z
   - Automatic view index warmer
 - v2.0_201609
   - Clustering
-  - New Query Language: mango
+  - ✨ New Query Language: mango
   - 2.0 is the unification of BigCouch(Cloudant's work) with the old single node CouchDB
   - New Admin Interface (written in React): fauxton
 - v1.0_201007
+  - Faster implementation of pread_iolist().
+  - Use O_APPEND to save lseeks.
+  - Faster default view collation.
 # more

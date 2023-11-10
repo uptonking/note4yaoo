@@ -41,7 +41,7 @@ modified: 2022-11-04T14:21:31.365Z
 - https://github.com/rkusa/do-sqlite
   - Persist SQLite in a Cloudflare Durable Object
 
-- https://github.com/cannadayr/git-sqlite
+- https://github.com/cannadayr/git-sqlite /202108/shell
   - git-sqlite is a collection of shell scripts that allows a sqlite database to be tracked using the git version control system.
   - It can be used on an existing database, however, UUIDs will make multi-master distribution substantially easier.
   - Instead of storing the transactions as a separate lmdb commit, I decided to store the database in a git repository and expose the diffs using sqlite's sqldiff utility. This allowed my workflow to be almost unchanged and limits the dependencies to git, sqlite, sqldiff, & bash.
