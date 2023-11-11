@@ -77,6 +77,9 @@ modified: 2022-11-25T15:41:47.534Z
   - [Bramble Synchronisation Protocol, version 0](https://code.briarproject.org/briar/briar-spec/-/blob/master/protocols/BSP.md)
     - BSP is an application layer data synchronisation protocol suitable for delay-tolerant networks.
   - [A Quick Overview of the Protocol Stack](https://code.briarproject.org/briar/briar/-/wikis/A-Quick-Overview-of-the-Protocol-Stack)
+
+- https://github.com/vaibhawvipul/minimal-raft /rust
+  - a minimalistic implementation of RAFT algorithm
 # collab/distributed
 - https://github.com/okdistribute/piratedb /js/inactive
   - A multiwriter peer-to-peer database with a last-writer-wins CRDT.

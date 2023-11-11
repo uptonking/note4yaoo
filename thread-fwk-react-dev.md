@@ -12,7 +12,11 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
-- ## 
+- ## This is the @laravelphp ecosystem: 
+- https://twitter.com/hanspagel/status/1722967918462287895
+  - Auth starter kits, payment, browser testing, websockets, deployment, provisioning, monitoring, docker images, search … all work together seamlessly. 
+  - Meanwhile, the JS community is busy inventing new ways of rendering React components. 🤡
+- JS/TS has all of it available too, and more. It's just not as coherently glued together as a rapid app framework, like Laravel
 
 - ## 🆚️ generating html on backend  🆚️  running backend on frontend ?
 - https://twitter.com/ChShersh/status/1718208809011712074

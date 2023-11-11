@@ -66,6 +66,8 @@ modified: 2023-02-07T09:22:03.120Z
 - https://github.com/coqui-ai/TTS /MPL/python
   - http://coqui.ai/
   - a deep learning toolkit for Text-to-Speech
+  - [Support offline mobile](https://github.com/coqui-ai/TTS/discussions/407)
+    - You can use sherpa-onnx to run VITS models from Coqui on Android and also embedded devices, e.g., raspberry pi.
 
 - https://github.com/nateshmbhat/pyttsx3
   - Fully OFFLINE text to speech conversion

@@ -81,6 +81,13 @@ modified: 2023-04-05T19:35:14.347Z
   - Automatic video thumbnail generation
 - https://github.com/TannerReynolds/ShareX-Upload-Server /js
   - Feature full & Stable ShareX and file server in node. Includes images, videos, code, text, markdown rendering, password protected uploads, logging via discord, administration through Discord, url shortening, and a full front end. Use standalone or via reverse proxy
+
+- https://github.com/sailshq/skipper /202109/js
+  - Streaming multi-uploads for Sails/Express - supports disk, S3, gridfs, and custom file adapters
+
+- https://github.com/Vinnu1/express-mongodb-storefiles-nogridfs /201902/js
+  - App to upload and store files in mongodb without using gridfs.
+  - Upload image, audio/video files upto 16 mb.
 # opfs/Origin Private File System
 - [chromium sqlite3-api-opfs.js](https://www.blick-newwsch.com/?_=%2Fexternal%2Fgithub.com%2Fsqlite%2Fsqlite%2F%2B%2Frefs%2Fheads%2Fopfs-lock-without-xlock%2Fext%2Fwasm%2Fapi%2Fsqlite3-api-opfs.js%23Zn%2F56Y4trIg2C2EYQD%2F9g5ZYfX%2BnMC3zulsbohqB0K9j)
   - This file holds the synchronous half of an sqlite3_vfs

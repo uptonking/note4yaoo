@@ -34,10 +34,16 @@ modified: 2023-08-29T10:11:26.348Z
   - 离线编辑再合并，在ui交互上会增加复杂度，使用体验真的会方便吗，基于db实现同步不难
   - 对所有数据实现自动冲突解决和合并不实际，特别是二进制数据或不重要的评论数据
 
+- 基于delta/patch
+  - Pijul
+  - Darcs
+
 - resources
   - [精通Git | 汪图南](https://wangtunan.github.io/blog/books/git/)
 # rewrite
 - 在实现branching时使用structural sharing，尽可能复用数据
+
+- event/patch-based
 
 - [Write yourself a Git!](https://wyag.thb.lt/)
 # fossil

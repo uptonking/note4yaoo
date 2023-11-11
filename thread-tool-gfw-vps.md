@@ -20,7 +20,12 @@ modified: 2023-03-18T17:53:25.909Z
 # discuss
 - ## 
 
-- ## 
+- ## 各家网站对 IP 的封禁策略都不一样，大陆用户真的很头疼。
+- https://twitter.com/LaiskyCai/status/1723152619739476078
+  - 有的网站必须挂 warp 才行，比如 openai、strip 等。
+  - 有的网站禁用了 warp，比如 vultr。
+  - 有的网站对 warp 非常不友好，比如 google。
+  - 所以出口 ip 不但不要是跨境 ip，具体怎么出也得看情况切换。
 
 - ## 大家检测某网站在国内的连通性都使用什么工具呀？用站长之家这个不知道准不准。（感觉网站上广告太多了
 - https://twitter.com/EryouHao/status/1644164933855363072

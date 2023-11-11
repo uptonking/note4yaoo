@@ -48,6 +48,12 @@ modified: 2023-08-29T10:12:22.345Z
   - Each database transaction is saved as a commit, and each commit has an incremental number
   - We cannot write to the database when we are in a defined commit, writing is only possible at the head of each branch. If you want to make modifications to some previous commit you must create a new branch that starts at that commit.
   - not-yet: merge
+
+- https://github.com/inlang/inlang /apache2/202311/ts
+  - https://inlang.com/
+  - globalization infrastructure for software && version control for apps
+  - [Ask HN: Apps that are built with Git as the back end? | Hacker News_202210](https://news.ycombinator.com/item?id=33261862)
+  - [discussion about reactivity architecture](https://github.com/inlang/inlang/issues/1122)
 # git-like
 - https://github.com/GerritCodeReview/jgit /EDL(BSD)/java
   - https://eclipse.dev/jgit/
@@ -93,6 +99,30 @@ modified: 2023-08-29T10:12:22.345Z
     - Image-based systems (Smalltalk)
     - Features that require the server to do stuff that Git protocol won’t do, like push notifications
     - In other words, I can’t imagine leaving Git unless it’s as big of an upgrade as Git was to SVN. And you can’t do that while being wire compatible.
+
+- Pijul /GPLv2
+  - [Pijul is a free and open source (GPL2) distributed version control system](https://pijul.org/)
+  - Pijul is instead a CRDT, meaning that independent patches can be applied in any order without changing the result, which makes rearrangement unnecessary, and the system much faster.
+  - https://nest.pijul.com/pijul/pijul /GPLv2/rust
+    - fast distributed version control system based on a mathematical theory of asynchronous work
+  - https://github.com/jneem/pijul
+    - a temporary fork of pijul
+
+- Darcs /GPLv2
+  - [Darcs is a free and open source, cross-platform version control system, like git/svn](https://darcs.net/)
+  - the primary datastructure in Darcs is indeed a list of patches, and the main operation is rearrangement.
+  - [darcs: a distributed, interactive, smart revision control system](https://hackage.haskell.org/package/darcs)
+
+- https://github.com/terabyte/jgit /BSD/201104/java
+  - https://www.eclipse.org/jgit/
+  - JGit is an EDL (new-style BSD) licensed, lightweight, pure Java library implementing the Git version control system
+  - A pure Java library capable of being run standalone, with no additional support libraries.
+  - Symbolic links are not supported because java does not support it. Such links could be damaged.
+  - [Distributed file system as storage layer over git - Stack Overflow](https://stackoverflow.com/questions/24178074/distributed-file-system-as-storage-layer-over-git)
+- https://github.com/spearce/jgit_cassandra /201103/java
+  - Cassandra based storage layer for JGit
+  - This package is a trivial implementation of the org.eclipse.jgit.storage.dht.spi interface, binding JGit's generic DHT storage onto the Apache Cassandra NoSQL database.
+  - Install Cassandra 0.7 or later, and start it on at least one node.
 # git-ui
 - https://github.com/corylus-git/corylus /ts/electron
   - https://corylus.dev/
@@ -110,6 +140,9 @@ modified: 2023-08-29T10:12:22.345Z
   - https://about.gitea.com/
   - Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD
 # apps
+- https://github.com/creationix/wheaty /201512/js
+  - JS-Git based application hosting platform
+
 - [Git as a Database | GitRows](https://gitrows.com/)
   - GitRows makes it easy to use and store data in GitHub and GitLab repos and deliver them with a powerful API.
 # examples
@@ -122,15 +155,22 @@ modified: 2023-08-29T10:12:22.345Z
 - https://github.com/filhodanuvem/gitql /go
   - a Git query language
 
-- https://github.com/mergestat/mergestat-lite /go
+- https://github.com/mergestat/mergestat-lite /202308/go
   - https://mergestat.com/
   - a command-line tool for running SQL queries on git repositories and related data sources. 
   - It's meant for ad-hoc querying of source-code on disk through a common interface (SQL)
   - [Gitqlite: Query Git Repositories with SQL | Hacker News_202007](https://news.ycombinator.com/item?id=23730519)
 
+- https://github.com/src-d/gitbase /201910/go
+  - a SQL database interface to Git repositories.
+  - It can be used to perform SQL queries about the Git history and about the Universal AST of the code itself. gitbase is being built to work on top of any number of git repositories.
+  - gitbase implements the MySQL wire protocol, it can be accessed using any MySQL client or library from any language.
+  - https://github.com/src-d/go-mysql-server /201910/go
+    - An extensible MySQL server implementation in Go.
+
 - https://github.com/developmeh/diff_event_source /rust
   - Creates a diff event source for a given file filter
-  - In preparation for a tool that can identify which files have changed in a repo so they can be incremntally published to a knowledge base. I created my first rust CLI that can give produce an event source from libgit2.
+  - In preparation for a tool that can identify which files have changed in a repo so they can be incrementally published to a knowledge base. I created my first rust CLI that can give produce an event source from libgit2.
 # git-data
 - https://github.com/CodeForPhilly/jawn /js
   - a node.js module that allows distributed version control of Tabular Data. 

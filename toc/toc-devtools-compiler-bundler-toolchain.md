@@ -27,6 +27,10 @@ modified: 2022-11-01T01:05:07.873Z
   - if not, use Shimport
 # npm
 - [npmmirror 镜像站, 一个完整 npmjs.com 镜像](https://npmmirror.com/)
+
+- https://github.com/pnpm/pacquet /MIT/rust
+  - experimental package manager for node.js
+  - A Rust rewrite of pnpm
 # webpack
 
 ## wp-ext

@@ -23,6 +23,7 @@ modified: 2021-02-09T19:25:11.641Z
 - [8 Examples of Icon-Based Navigation, Enhanced with CSS and JavaScript](https://speckyboy.com/icon-based-navigation-css-javascript/)
 - [一步一步解码 PNG 图片 - vivaxy's Blog](https://vivaxyblog.github.io/2019/12/07/decode-a-png-image-with-javascript-cn.html)
 # frontend-dev
+- [重新理解 Web - 知乎](https://zhuanlan.zhihu.com/p/581977751)
 - [Everything you need to know about change detection in Angular](https://indepth.dev/posts/1053/everything-you-need-to-know-about-change-detection-in-angular)
 - [We can finally animate CSS gradient](https://dev.to/afif/we-can-finally-animate-css-gradient-kdk)
 - [The Evolution Of Jamstack](https://www.smashingmagazine.com/2021/05/evolution-jamstack/)

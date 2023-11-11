@@ -48,6 +48,14 @@ modified: 2023-01-17T19:13:01.845Z
   - [Patches | Immer](https://immerjs.github.io/immer/patches/)
     - The generated patches are similar (but not the same) to the RFC-6902 JSON patch standard, except that the path property is an array, rather than a string. 
 
+- https://github.com/gardencmp/jazz /MIT/202311/ts
+  - https://jazz.tools/
+  - open-source toolkit for building apps with secure sync.
+  - File upload and real-time media streaming
+  - Set fine-grained, role-based permissions in Groups that are synced along with your data
+  - Permissions verifiably enforced everywhere, using encryption & signatures under the hood.
+  - Change roles dynamically for evolving teams, expiring invite links and more.
+
 - https://github.com/serenity-kit/secsync /ts
   - https://www.secsync.com/
   - Is an architecture to relay end-to-end encrypted CRDTs over a central service.

@@ -12,7 +12,89 @@ modified: 2023-08-29T10:13:31.070Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🌵📡 [What comes after Git | Hacker News_202207](https://news.ycombinator.com/item?id=31984450)
+- Kubernetes didn't brought open-source collaboration to a new level. No matter how relevant Kubernetes is today, it's just a drop in the huge ocean of OSS. Maybe level in this context refers to 'gitops' which many of us where doing years before the term was coined and without K8s involved. Or perhaps the author refers to the fact that most gitops K8s frameworks will work via polling which is a fundamental scalability flaw.
+
+- My main complaint is it's leaking abstractions. You basically need a PhD in git's internal data structures to use git. Well not the 5% of git you typically need in your day-to-day, but the other 95%, which you need when the 5% you do need somehow goes wrong, through one of the many foot-guns git offers.
+
+- The model's basically a directed acyclic graph (not a tree), with each edge being the diff between the two nodes it connects. I think the UX could be improved if it built on the language of graphs to make that model more apparent - node, edge, etc.
+  - There are a lot of people, even in this comment section, whose internal model of git is "it's a tree". Langauge like "branch" reinforces that model, and I don't think it does beginners any favours in the long run.
+- It stores a full copy of every node, not the diff. The diff is just something that's rendered on-demand, and "gc"/"repack" compaction and it being content-addressable makes sure that the storage space doesn't balloon as a result of everything being a full snapshot. This distinction makes a difference in some cases, there are other VCSs that store diffs as a fundamental property.
+
+- I personally believe that making diffs more human friendly is the next step of evolution we need. I feel like git was perfect when "code" was nearly almost completely text and patches were sent over email, but there's a lot more boilerplate+blob data that goes into git today and git needs to evolve to support this.
+- Semantic diffs are great, but we can't entirely automate away "narrative problems" in a PR. No matter how good a diff is, a diff tells you what changed but not why and sometimes not even how. That's what we need good commit messages for. That's what we need good PR descriptions to do. If a branch has a ton of seemingly unrelated files modified (automated tool output or not), sometimes you have to ask the narrative questions: "Why did this change? What does it have to do with the other changes in this branch?"
+- Semantic diff – Can we figure out how to use version control to have more context-aware merges? Can you believe that we still rely on a text diffing algorithm from 1976 (and its shortcomings)? Git still has trouble with file renaming. GitHub Copilot, but for merge conflicts? Semantic diff has been tried before, but language-specific implementations will likely never work.
+  - in case anyone missed it: https://github.com/Wilfred/difftastic
+  - Difftastic output is intended for human consumption, and it does not generate patches that you can apply later.
+
+- 🪨 I've been using fossil for personal projects for like a decade now and I much prefer it over git. The characteristics that get me to stick with it are 
+  - 1. Single file executable. No dependencies to "install". Just the executable and you're good. 
+  - 2. The whole repo is a single sqlite DB file. Fabulous for backups, sharing, hosting etc. 
+  - 3. You cannot rewrite history unlike git. Hence the name. Folks using git have no idea what kind of a peace of mind this gives me. 
+  - 4. Integrated issue tracker stored in the same repo. Complete with cross references to commits. 
+  - 5. Allows repeated use of same tag name. This is so convenient in personal projects I miss it in git. You can mark a commit as "published" and later look at the whole history of all previous commits tagged as "published".
+- Other niceties
+  - 1. Integrated wiki - I've occasionally used it, but usually prefer to write documentation in separate files. 
+  - 2. Integrated webserver - fossil ui runs on the same thing so I do use it. The webserver comes complete with user account management and permissioning. 
+  - 3. Can export and import to/from git.
+- How is large file support? What strategy is employed for binary file handling? How does it compare to git LFS / annex / mercurial? Aside from that, Fossil is very intriguing.
+  - Fossil is, because of its sqlite dependency, limited to blobs no larger than 2GB each. Some of its algorithms require keeping two versions of a file in memory at once, so "stupidly huge" blobs are not something it's ideal for. 
+  - it handles binaries just fine and can delta them just fine. It cannot do automatic merging of binary files which have been edited concurrently by 2+ users because doing so requires file-format-specific logic. (AFAIK _no_ SCM can merge (as opposed to delta) binaries of any sort.)
+- I do hope someday git and others employ either a git annex or mercurial-style scheme where if it's a large binary file: 1. no diff is performed, and 2. only the latest version is kept within the history. This would blow wide open the possibilities for using Fossil in binary-heavy projects such as machine learning, games, simulation. I could see the SQLite limitation worked around by just splitting up binary data into multiple pieces.
+  - 👉🏻 That will never happen in fossil: one of fossil's core-most design features and goals is that it remembers _everything_, not just the latest copy of a file. The way it records checkins, as a list of files and their hashes, is fundamentally incompatible with the notion of tossing out files. It is capable of permanently removing content, but that's a feature best reserved for removal of content which should never have been checked in (e.g. passwords, legally problematic checkins, etc.). Removing content from a fossil repo punches holes in the DAG/blockchain and is always to be considered a measure of last resort. In my 14+ years in the fossil community, i can count on 2 fingers the number of times i've recommended that a user use that capability.
+  - Sharding large files over multiple blobs doesn't solve some of the underlying limitations, e.g. performing deltas. Fossil's delta algorithm requires that both the "v1" and "v2" versions of a given piece of content be in memory at once (along with the delta itself), and rewriting it to account for sharded blobs would be an undertaking in and of itself. That's almost certain to never happen until/unless the sqlite project needs such a feature (which, i'm confident in saying, it never will).
+  - TL; DR: fossil is, plain and simple, not the SCM for projects which need massive blobs.
+
+- The only major problem I see with Git is that it's just a pain if you're working in a gigantic monorepo.
+  - Separate version control software can be designed for solving a specific problem - but I don't think Git should need to evolve beyond the problems it's designed to take on.
+
+- The large file problem is a major issue in games, and basically means that developers who would much rather use Git, don't have the option of using Git because it would be crushed under the weight of all the art assets. So instead everyone's forced to use Perforce or Subversion, with all the workflow impediments that involves.
+  - A lot of groups with large file problems seem to be converging on Git LFS at this point over Perforce/Subversion. Most of the major hosts (Github, Bitbucket, Gitlab) all have LFS hosting support, though it is not always cheap. (Arguably still cheaper than Perforce/Subversion, especially in accounting for those workflow impediments and the developer time they cost.)
+  - LFS is a plugin to install, but that's maybe a strong indicator in favor of the git model that there are common plugins to solve some things like this. (And many distributions of git now also bundle LFS.)
+
+- The project management features don’t have to live inside VCS, but it would be nice to sync them there or derive some of the primitive data structures there — comment trees, approvals, CI red/green results at integration time.
+
+- My main headache with git — which is absent from the list in the blog – is that it tracks snapshots instead of tracking changes. 
+  - All git can do is to compare snapshots and allow you to impose a resemblance causal order onto them (which you can freely manipulate anyway with rebasing, squashing etc.). If your workflow consists of trying out many different ideas and then choosing which of them to keep and which to discard, git can be extremely painful — you either end up with a history that is a complete mess or waste a lot of time rebasing and reorganising the (fake anyway) order of snapshots. That's why I am exited for tools like Pijul that attempt to actually track changes.
+
+- Snapshots do have the advantage of not having to know anything about the data. Tracking changes necessarily needs to define a way to describe how things may change. Perhaps another take on the issue is that changing data should be structured to be more snapshot friendly?
+
+- >Git is line-oriented and has no notion of semantic diffs and semantic merges. This makes it a raw tool when working with, ironically, source code.
+  - Git is a content addressable snapshot system, with bolted on code to make it retrospectively appear to be a line-oriented system. It's worse than you thought.
+- It's not worse. Snapshots are exactly what you want if you would like to have format-aware diff/merge or to experiment with alternate algorithms. But it's easier to complain about git and throw out pie-in-the-sky ideas about "modernizing our tools" than to try the actually-existing AST-based diff/merge tools and realize it's 100x more complex for no workflow gain.
+
+- Diffs aren't actually a first-class object either, they're made up on the spot. Git just stores a complete snapshot for each commit; delta compression in the repo is incidental(次要的; 伴随的；补充的；附属的) and unrelated to the diffs you see.
+
+- 😩 Git doesn't understand move and copy operations very well, and has to be tricked into doing it.
+
+- I’m not qualified to go into specifics but I hate it. All version control needs to do is pull, push and branch. Version on branch is newer? You need to pull down before you can check in. Instead what we get is over complicated nonsense with commits and stashes, rebases and heads, reparenting etc. I get it you don’t want to store your code on your local machine but that’s what backups are for, that’s not what the version control system should be doing.
+
+- I like the patch-based approach of Pijul and Darcs: rearranging patches seems less fragile than rebasing snapshots.
+  - Pijul works quite differently from Darcs: the primary datastructure in Darcs is indeed a list of patches, and the main operation is rearrangement.
+  - Pijul is instead a CRDT, meaning that independent patches can be applied in any order without changing the result, which makes rearrangement unnecessary, and the system much faster.
+
+- Implicit branching in Pijul is a killer feature (IMO)
+- for distributed version control, the "first-class conflicts" of Pijul seems to be a step in the right direction.
+
+- My main issue with Git, other than the terrible UX of the CLI, is just how common it is for one to want to rewrite the commit history - an operation for which there's no version control.
+
+- You might be interested in my project git-branchless https://github.com/arxanas/git-branchless or the Git-compatible Jujutsu SCM https://github.com/martinvonz/jj, both of which have version control for commit history via an operation log. Both feature sensible undo commands.
+
+- A client side virtual file system (FUSE), so that you can work with large repos that exceed the size of your own system.
+  - Version control systems like Piper (Google internal) and Eden (Facebook), GitVFS (Microsoft) already do this, but adoption is marginal.
+- I really want a system-wide content addressable store that a lot of different things can use.
+- It's also interesting to note that at this point Microsoft seems to be pivoting away from GitVFS. They've put a lot of collective engineering work in git sparse clones and git partial clones and the intersection of the two ("sparse cones") and optimizations like git commit graph pushing git itself to better at virtualizing its object store, not touching objects it doesn't need, and better handling just-in-time scenarios for object retrieval when it really does need them.
+
+- Native large file support. Git annex functionality built in = gg every other source control system.
+  - Git annex "competitor" Git LFS is bundled in many distros of git today and supported by most of the major hosting providers at this point (if you are willing to pay for LFS space).
+
+- most of my problems with git went away when I started using worktrees
+
+- The semantic diffing bullet point has me wondering what attempts there are at making open source semantic diff tools. I love the closed source tool SemanticMerge, but the company behind it decided to be shitwads and pull the product so they could add a selling point to their proprietary version control system.
+
+- git is like cpp, you have to use a subset
+
+- ## [What comes after Git? | Hacker News_202012](https://news.ycombinator.com/item?id=25535844)
 
 - ## [Fossil versus Git | Hacker News_202309](https://news.ycombinator.com/item?id=37622064)
 
@@ -169,6 +251,24 @@ modified: 2023-08-29T10:13:31.070Z
 - ## 
 
 - ## 🔥 [Git as a NoSql Database (2016) | Hacker News_202104](https://news.ycombinator.com/item?id=26703808)
+- In almost every database-backed application I've ever built someone, at some point, inevitable asks for the ability to see what changes were made when and by whom. My current preferred strategy for dealing with this (at least for any table smaller than a few GBs) is to dump the entire table contents to a git repository on a schedule.
+
+- I store all my dates in sql as text in iso format so I can easily sort them
+  - Strong SQLite vibes... (SQLite doesn't have a date format, it has builtin functions that accept ISO format text or unix timestamps)
+- Why is this bad?
+  - Sql databases usually come with their own date types that are implemented with integers behind the curtains. They take up less space and are easier to sort than text fields.
+
+- Why not have a history table and use SQL triggers to insert the new data as JSON everytime someone changes something?
+  - Indeed. I have on multiple occasions written scripts to automatically generate the triggers and audit tables
+
+- Git annex is pretty flexible, more of a framework for storing large files in git than a basic sync utility. ("Large" meaning larger than you'd want to directly commit to git.) If you're running Git Annex Assistant, it does pretty much work as basic file sync of a directory. But you can also use it with normal git commits, like you would Git LFS. Or as a file repository as chubot suggested. The flexibility makes it a little difficult to get started.
+
+- Isn't the problem attempting to be solved here solved by event sourcing? Which lets you 're-create' your changes and is - ultimately- suppose to allow you effectively log each change in such a way its re-playable backwards and forwards
+  - Kind of, but there’s more to it. “Event sourcing” is the pattern being implemented by git’s immutable object database, but there’s also all the hashing and reference management.
+
+- 
+- 
+- 
 - 
 - 
 - 
@@ -207,7 +307,14 @@ modified: 2023-08-29T10:13:31.070Z
 
 - ## 
 
-- ## 
+- ## 🌰 [Ask HN: Apps that are built with Git as the back end? | Hacker News_202210](https://news.ycombinator.com/item?id=33261862)
+- The Office 365 backend uses git to store snapshots of documents
+  - https://github.com/microsoft/FluidFramework/tree/main/server/gitrest
+  - the content-addressable filesystem that it uses is git. It uses git with a javascript implementation of it 
+
+- Using Git for content has some great benefits. Like complete version history, easy reverts (for devs at least), (feature) branch support, Git hooks, ... And of course, you own your content at all times.
+
+- Git is good at creating files and managing versions/branches but not good at search files or their content. I'm not a git expert to fully backup that claim but that's been our experience. You can layer on your own search capabilities if you need it but then you might want to start asking if a full DB is better.
 
 - ## 用 git 来当网盘用如何？
 - https://v2ex.com/t/525782

@@ -12,15 +12,6 @@ modified: 2023-10-29T02:23:48.086Z
 # discuss-stars
 - ## 
 
-- ## [What is the CouchDB replication protocol? Is it like Git? - Stack Overflow](https://stackoverflow.com/questions/4766391/what-is-the-couchdb-replication-protocol-is-it-like-git)
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
 - ## [Store incremental data for views · pouchdb/pouchdb_201208](https://github.com/pouchdb/pouchdb/issues/99)
 
 - [Persisted indexes for map/reduce_201403](https://github.com/pouchdb/pouchdb/issues/1658)
@@ -69,15 +60,15 @@ modified: 2023-10-29T02:23:48.086Z
   - I've had to build bespoke(定制的) attachment sync tools because I haven't been able to rely on attachments working in the CouchDB ecosystem.
   - I've been thinking that I need to replace the CouchDB ecosystem as a whole. PouchDB is great, but the flux(一系列的变化；持续的变化) I've seen in the Apache CouchDB project and the issues I've had with the managed service providers especially Cloudant after IBM makes it really hard to recommend the ecosystem. Overall it seems unhealthy/in-decline, which is sad when the core sync infrastructure seems so nice to work with when it works
 
-- ## 🤔 [I created PouchDB. After a year... | Hacker News](https://news.ycombinator.com/item?id=24355263)
+- ## 🤔🛢️ [I created PouchDB. After a year... | Hacker News](https://news.ycombinator.com/item?id=24355263)
 - I created PouchDB. After a year or so I handed that project off to some great maintainers that made it much better as I had grown a little skeptical of the replication model and wanted to pursue some alternatives.
 - It’s been about 10 years, much longer than I thought it would take, but I have a young project that finally realizes the ideas I had back then.
-- 👉🏻 **Sometime after PouchDB was created I realized that it just wasn’t going to work to replicate a whole database to every client**. 
+- 🧐 **Sometime after PouchDB was created I realized that it just wasn’t going to work to replicate a whole database to every client**. 
   - In fact, even a view of the database wasn’t going to work, because the developer isn’t in a position to really understand the replication profile of every user on all of their devices, you need a model that has partial, or more accurately “selective” replication based on what the application accesses in real time.
 - I became convinced that the right primitives were already present in git: merkle trees. Unfortunately, git did a very poor job of surfacing those primitives for general use and I wasn’t having much luck finding the right approach myself.
 - Shortly after joining Protocol Labs I realized they had already figured this out in a project called IPLD. Not long after that, I started leading the IPLD project/team and then putting together my ideal database whenever I found a free moment.
-- It’s very young, lots of missing features, still working on some better data-structures for indexing, but **it is very much a database that replicates the way git does and approaches indexing over a primary store the way CouchDB does, but there’s a lot more too**.
-- With these primitives we can easily **nest databases inside of other databases** (and create unified indexes over them) and we can easily extend the data types in the database to user provided types. Using some of these features it already supports streams of binary data, databases in databases, and linking between pieces of data.
+  - 🛢️ It’s very young, lots of missing features, still working on some better data-structures for indexing, but **it is very much a database that replicates the way git does and approaches indexing over a primary store the way CouchDB does, but there’s a lot more too**.
+  - With these primitives we can easily **nest databases inside of other databases** (and create unified indexes over them) and we can easily extend the data types in the database to user provided types. Using some of these features it already supports streams of binary data, databases in databases, and linking between pieces of data.
 
 - dagdb /133Star/MIT/202010/js/leveldb/git/inactive
   - https://github.com/mikeal/dagdb
@@ -460,7 +451,7 @@ I’ve copied airtable data to it in the past.
   - nobody seems to like writing the mapreduce code for searching and views.
 - PouchDB dev here. The map/reduce API is definitely a bit cumbersome, which is why we're replacing it with pouchdb-find
 
-- ## [PouchDB, the In-Browser Database That Replicates | Hacker News_201310](https://news.ycombinator.com/item?id=6611745)
+- ## 🚀 [PouchDB, the In-Browser Database That Replicates | Hacker News_201310](https://news.ycombinator.com/item?id=6611745)
 - 🤔 How does this handle security? Sending data directly into a database from the browser with no application layer sounds a bit scary.
   - PouchDB is optimized for the use case of one database per user, a logged in user has full access to a specific database that only they have access to (for shared data access you can use replication on the server side)
 - Think of it like this:

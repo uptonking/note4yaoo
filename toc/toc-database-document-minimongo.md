@@ -197,7 +197,7 @@ modified: 2022-11-30T18:57:26.459Z
   - Subscriptions/ methods (queries) parameters are evaluated by selectors and all you need to do is to extract collection data from the redux store. 
   - Most typical DDP "commands" are accessible by simply dispatching a redux action
 
-- https://github.com/veliovgroup/Meteor-Files
+- https://github.com/veliovgroup/Meteor-Files /bsd/202304/js
   - Upload files via DDP or HTTP to Meteor server FS, AWS, GridFS, DropBox or Google Drive.
   - well-maintained Meteor.js package for files management using MongoDB Collection API.
   - Upload via HTTP and DDP transports

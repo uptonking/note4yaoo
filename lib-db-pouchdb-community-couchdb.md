@@ -190,6 +190,43 @@ modified: 2023-10-29T02:23:35.064Z
 - Couch is probably not the best choice here. Using views is a great way to keep track of inventory
   - A view is a good way to handle things like balances / inventories in CouchDB.
   - With this model, you're never updating any data, only appending. This means there's no opportunity for update conflicts. All the transactional issues of updating data go away
+# discuss-couchdb-git-revision
+- ## 
+
+- ## 
+
+- ## 
+
+
+- ## [Is there a git implementation that runs on top of couchdb? - Stack Overflow](https://stackoverflow.com/questions/6115519/is-there-a-git-implementation-that-runs-on-top-of-couchdb)
+- If you mean an implementation where the data of a Git repository is stored in a database rather than in filesystem, then there is some work done by Shawn Pearce in JGit to achieve this
+- 
+- 
+- 
+- 
+- 
+- 
+
+
+- ## 🆚️🌵🛋️ [Is Git more than a version control system? Reimplementing CouchDB with Git+Bash... | Hacker News_200904](https://news.ycombinator.com/item?id=573699)
+- I've been waiting for this. Ever since:
+1. I learned from Linus that git is a decentralized "content" database that gives identity to different versions of the same content and allows them to be compared and merged. (as opposed to a traditional VCS which is more of a "delta" database)
+2. I learned from Damien that CouchDB is a decentralized "document" database that gives identity to different versions of the same document and allows them to be compared and merged.
+- I've been wondering just what the difference really is.
+- 👉🏻 Git retains its change history, and if I remember correctly, uses the sha hash to verify that no one changed the history. Couchdb retains the change history until someone compresses the db (garbage collect). Its revision history is only used as a means of merging out of sync documents.
+  - In addition, Git makes individual merges in a document, and when there's a conflict, it resorts to human intervention. Couchdb does not make merges inside a document, and will not do conflict resolution. Instead, using a brief set of rules, it picks one version of the document over another.
+- Is there a way to make Git choose one over the other rather than merging? --mine or --yours or something?
+  - There's a git merge strategy called "ours" which - as you might guess - does a quasimerge(类似-merge) which always results in whatever you have in your HEAD.
+
+- Not really a new idea to use a VCS as a document database, other folks have back-ended Wikis and document management systems with SVN, for example. 
+  - It's not the same thing. Using SVN as a document database is equivalent to using the filesystem as a document database. The only thing extra you get with SVN is a revision history.
+  - Git actually is a content database. Its version control capabilities are built on top of that.
+
+- Git and Darcs have very different underlying models. Most importantly, Git is content-centric (diffs are generated only as byproducts) while Darcs is patch-centric (any given "version" is just a sum of all the patches that produce it). Linus, for one, feels strongly that this is an important distinction.
+
+- 🤔 Can Git be made to handle binary files as nicely as Dropbox does? Dropbox is also smart with how it tracks changes to files. Every time you make a change, Dropbox only transfers the piece of the file that changed (also known as block-level or delta sync), making it easy to work with big files like Photoshop or Powerpoint documents.
+  - First off, the "block-level" sync is exactly what rsync is for. You'll probably have better results using that. You could track a list of local file paths in git, but sync the binaries themselves with rsync. (They complement each other well.)
+  - Tracking changes in binary files (which cannot be merged in any reasonably generic fashion) is a fundamentally different issue than tracking changes in text, particularly source code. Git is designed to do the latter. While you can use it to track changes in binaries, merging doesn't make sense anymore, and hashing/scanning big binary files for changes is significantly slower. (A bunch of images generally won't matter, but I wouldn't use it to track, say, video, or large database dumps.)
 # discuss-couchdb
 - ## 
 

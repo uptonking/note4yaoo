@@ -98,7 +98,7 @@ modified: 2023-08-29T10:23:33.198Z
   - Spokes stores multiple replicas of a repo and keeps all replicas in sync. It does replication at Git application level, replacing the older system that did replication at the file system block level.
   - GitHub makes use of the three-phase commit protocol in order to update replicas, and also a distributed lock to ensure the correct update order
 
-- How data is stored in file storage?
+- 📂🤔 How data is stored in file storage?
   - **All data in a Git repo is stored in a Direct Acyclic Graph**. 
   - Every commit has a link with it’s parent commit. 
   - It also has a link to a tree which keeps a snapshot of the working directory in the moment when the commit was created. 

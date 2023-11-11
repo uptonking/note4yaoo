@@ -55,7 +55,7 @@ modified: 2023-01-14T15:47:04.431Z
   - 使用 useTranslation() 返回的 t 方法，类似ckeditor
   - 翻译可集中定义
 
-- https://github.com/inlang/inlang /ts
+- https://github.com/inlang/inlang /apache2/202311/ts
   - https://inlang.com/
   - globalization infrastructure for software && version control for apps
   - [discussion about reactivity architecture](https://github.com/inlang/inlang/issues/1122)

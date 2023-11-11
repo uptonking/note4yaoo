@@ -39,6 +39,11 @@ modified: 2022-12-02T11:15:15.257Z
   - 为db实现crdt的参考: piratedb, evolu/idbsidesync, triplitdb, indexeddb
   - 不必执着于寻找indexeddb的实现，很多时候只是作为一种持久化的方式
 
+- couchdb vs git
+  - git默认保存所有历史版本，couchdb默认会在compact/gc时删除旧版
+  - git的冲突处理粒度为doc内的line/行，couchdb冲突处理粒度为doc
+  - git的冲突可能需要手动处理，couchdb会自动选择一个作为解决冲突的结果
+
 - tips
   - couchdb fauxton http://127.0.0.1:5984/_utils/
 
@@ -80,7 +85,9 @@ modified: 2022-12-02T11:15:15.257Z
 
 - binary-attachment
   - video
-  - 方案参考: sqlite文本+video文件
+  - 方案参考: sqlite-文本 + gridfs-文件
+  - 实现类似mongodb-gridfs/pg-large-object/s3的系统，处理TB规模的文件，超大规模的文件建议自研方案
+  - fossil受到sqlite对blob支持为最大2G的限制
 
 - sqlite [Database File Format](https://www.sqlite.org/fileformat2.html)
 # dev

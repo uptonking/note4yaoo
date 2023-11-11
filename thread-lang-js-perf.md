@@ -22,7 +22,7 @@ modified: 2023-11-10T08:05:19.107Z
   - It's the same reason why setting a property to null/undefined can be faster than deleting
   - A Map, on the other hand, is optimized for this very use case of frequently adding and removing keys (see the "performance" table row here)
 
-- ## And as a principal dev, I've had the map/filter/reduce ripped out in hot paths where copying Arrays is a lot more expensive than just a for loop.
+- ## 💡 And as a principal dev, I've had the map/filter/reduce ripped out in hot paths where copying Arrays is a lot more expensive than just a for loop.
 - https://twitter.com/mattpodwysocki/status/1722687839660376469
 - Absolutely. Just this week I found an optimization where I reduced sudden +700MB bursts of allocations (and consequentially, OOMs) due to 3 .map()s with a simple for loop, where heap stays at maximum 100MB.
   - Yeah, most languages/runtimes aren't suited for that style, especially with eager evaluation and intermediate allocations will just blow the memory
@@ -34,6 +34,14 @@ modified: 2023-11-10T08:05:19.107Z
   - Mostly size, but also intent, such as side effects or simply projecting to a new collection, etc. If we can avoid extra allocations, then that's what's important in some hot paths
 
 - 9 times out of 10 optimizing JS to this degree is pointless. There are almost always bigger fish to fry, and if you're at the point where for loops vs map actually matters then you shouldn't be using JS.
+
+- ### Unpopular opinion: I often prefer for-loops over map calls. 
+- https://twitter.com/elmd_/status/1722957524062576975
+  - I find them easier to read. 
+  - Also `map` and then `filter` iterates the array twice as it's not like a stream (as in RxJS for instance) where each value flows through the entire pipeline.
+  - Or maybe, if you want, use `reduce` instead to map and filter.
+- That's premature optimization. It's not like an order of magnitude improvement, right? Unless you're building a framework, it's good to prefer declarative code. 
+  - I find the declarative version far more readable.  The noise from the for loop is annoying.
 
 - ## Apparently Array.from(arr) is like 70x slower than arr.slice() 
 - https://twitter.com/fabiospampinato/status/1719825922407186723

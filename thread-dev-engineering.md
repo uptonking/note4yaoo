@@ -42,7 +42,7 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## [新人也能懂的调试方法 01 - 通过 syscall 进行定位](https://blog.dreamfever.me/posts/2023-10-24-how-to-debug-01-syscall/)
 
 - ## Twitter现在的代码行数减少了90%
 - https://twitter.com/skywind3000/status/1720778734922342786
@@ -74,10 +74,10 @@ modified: 2021-01-21T17:52:13.333Z
   - Update: Added picocss.
 
 - My preferred development order has always been:
-  01.      Structure for everything: HTML, content, ARIA, some JS
-  02.      Style a component: CSS, interaction states, transitions/animations
-  03.      Then make the component functional with JavaScript
-  04.      Repeat steps 2 and 3 for each component.
+  01.       Structure for everything: HTML, content, ARIA, some JS
+  02.       Style a component: CSS, interaction states, transitions/animations
+  03.       Then make the component functional with JavaScript
+  04.       Repeat steps 2 and 3 for each component.
 
 - ## uid 不需要可读性，如果需要可读性可以添加一个新的 id 属性。
 - https://twitter.com/ThaddeusJiang/status/1694915724354142678

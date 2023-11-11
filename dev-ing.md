@@ -106,6 +106,7 @@ $$('[contenteditable]')
   - 基于oplog的研发方向, 架构设计时考虑放在数据库层解决还是应用层解决
     - 实现db，还是sourcing based framework
     - 基于log能提升write性能，基于materialized-view能提升read性能
+  - pijul: crdt + vcs
 
 - long-term-support
   - cms, airtable, lowcode

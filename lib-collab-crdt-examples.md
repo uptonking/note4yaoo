@@ -363,6 +363,14 @@ modified: 2022-04-05T10:08:25.947Z
     - we could model many applications already with such simple CRDT. It is also possible to add your own or already existing CRDT frameworks on top of p2panda.
     - The basic data sync is based on an append only log. 
     - Check out our section on "Operations", this is the data type we've built on top of the append-only log structure for multi-writer and conflict free data editing
+
+- https://github.com/KyleAMathews/trpc-crdt /MIT/ts
+  - tRPC integrations for CRDTs: CRDT-native RPC calls
+  - the goal is to support all CRDT implementations, including yjs/automerge/jazz
+  - [Announcing trpc-crdt _202311](https://bricolage.io/announcing-trpc-crdt/)
+  - https://twitter.com/kylemathews/status/1723006206032101875
+    - trpc-crdt includes integrations for tRPC for Yjs and ElectricSQL w/ two more almost finished for Automerge and Jazz.
+    - The big advantage of this approach is that the server can write directly to the CRDT data so all server mutations get replicated immediately to clients.
 # crdt-rewrite
 - https://github.com/josephg/crdt-examples /js
   - CRDT examples from a DWEB talk

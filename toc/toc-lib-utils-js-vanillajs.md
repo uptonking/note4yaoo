@@ -156,7 +156,7 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/arthurhovhannisyan31/offscreen-canvas-worker
   - Application allows to fetch and process data in the background using workers api.
   - This applications does data fetching and processing in the background with submission of final result to main app.
-# web-localStorage
+# web-storage
 - https://github.com/unjs/unstorage /ts
   - Unstorage provides an async Key-Value storage API with conventional features like multi driver mounting, watching and working with metadata, dozens of built-in drivers and a tiny core.
   - Designed for all environments: Browser, NodeJS, and Workers
@@ -165,6 +165,10 @@ modified: 2023-04-04T22:35:59.255Z
   - Binary and raw value support
   - HTTP Storage with built-in server
   - State snapshots and hydration
+
+- https://github.com/tweedegolf/storage-abstraction /71Star/MIT/202311/ts
+  - Provides an abstraction layer for interacting with a storage; the storage can be local or in the cloud.
+  - Currently local disk storage, Backblaze B2, Google Cloud and Amazon S3 and compliant cloud services are supported.
 
 - https://github.com/aykutkardas/lookie
   - Store your data in localStorage with optional expiration time.

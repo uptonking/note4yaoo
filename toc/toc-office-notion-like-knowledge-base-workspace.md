@@ -373,9 +373,10 @@ modified: 2022-06-03T21:34:54.893Z
   - Open source SDK
   - 推荐使用 SingleFile 保存 html 页面
 
-- https://github.com/Requarks/wiki /AGPLv3/js/vue
+- https://github.com/Requarks/wiki /AGPLv3/202310/js/vue
   - https://js.wiki/
   - A modern and powerful wiki app built on Node.js
+  - [Wiki.js | Hacker News_202007](https://news.ycombinator.com/item?id=23904193)
 
 - https://github.com/ryanlelek/Raneto /202208/js
   - https://docs.raneto.com/

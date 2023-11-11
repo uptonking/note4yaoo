@@ -168,6 +168,11 @@ modified: 2020-12-19T18:22:27.577Z
   - [Workbox - Chrome Developers](https://developer.chrome.com/docs/workbox/)
   - [Maintain status](https://github.com/GoogleChrome/workbox/issues/3149)
 
+- https://github.com/GoogleChromeLabs/comlink /apache2/ts
+  - Comlink makes WebWorkers enjoyable.
+  - At a more abstract level it is an RPC implementation for postMessage and ES6 Proxies
+  - Comlink turns this messaged-based API into a something more developer-friendly by providing an RPC implementation: Values from one thread can be used within the other thread (and vice versa) just like local values.
+
 - https://github.com/gauntface/simple-push-demo /js
   - A simple example of use push notifications on the web using Service Workers
 
@@ -187,6 +192,5 @@ modified: 2020-12-19T18:22:27.577Z
 - https://github.com/markwylde/workerbox
   - A secure sandbox to execute untrusted user JavaScript, in a web browser, without any risk to your own domain/site/page.
 # more
-
 - https://github.com/GoogleChromeLabs/clooney /ts/201910/inactive
   - Clooney is an actor library for the web. Use workers without thinking about workers.

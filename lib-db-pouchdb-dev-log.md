@@ -9,6 +9,12 @@ modified: 2023-11-08T17:07:50.967Z
 
 # guide
 
+- features
+  - version history
+  - branching
+  - search
+  - aggregation/cube/bi
+  - dataflow: git uses dag not tree
 # not-yet
 
 # dev-to
