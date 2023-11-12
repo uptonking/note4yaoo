@@ -245,10 +245,17 @@ modified: 2021-07-21T18:07:43.056Z
 - https://github.com/egoist/docute /js/vue/inactive
   - Leveraging the power of Markdown and Vue.
   - No build process, website is generated on the fly.
-- https://github.com/mkdocs/mkdocs
+
+- https://github.com/mkdocs/mkdocs /17.3kStar/BSD/202311/python/ts
+  - https://www.mkdocs.org/
   - Project documentation with Markdown built with python
+  - static site generator that's geared towards building project documentation
+  - 依赖Jinja2、Markdown、pathspec
+  - Documentation source files are written in Markdown, and configured with a single YAML configuration file. 
+  - Use Plugins and Markdown Extensions to enhance MkDocs.
   - https://github.com/squidfunk/mkdocs-material
     - Write your documentation in Markdown and create a professional static site for your Open Source or commercial project in minutes – searchable, customizable, more than 50 languages, for all devices.
+
 - https://github.com/star7th/showdoc
   - https://www.showdoc.com.cn/
   - https://www.showdoc.com.cn/demo/10

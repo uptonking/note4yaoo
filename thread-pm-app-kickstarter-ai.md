@@ -16,6 +16,7 @@ modified: 2023-04-04T03:59:40.928Z
 ## resources
 
 - [AIGC交流群工具沉淀](https://bytedance.feishu.cn/base/AIMAbnJxQaNgSGsBAtwcdAkLnvf)
+- [AI 产品榜 aicpb.com - Feishu Docs](https://dnipkggqxh.feishu.cn/wiki/YTIUwM6Vmij4IQkSm9PctPWunIb)
 # discuss-stars
 - ## 
 

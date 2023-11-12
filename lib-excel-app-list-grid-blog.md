@@ -9,110 +9,6 @@ modified: 2022-08-21T10:14:49.838Z
 
 # guide
 
-# blogs-excel-web
-
-## [精读onlyoffice在线表格存储设计 - 掘金](https://juejin.cn/post/7202252704978386999)
-
-- 由于表格分布本质上是m*n矩阵，所以问题转换为矩阵的存储方案，目前主要有两种：二维矩阵和稀疏矩阵。
-
-- 二维矩阵
-  - 这种方案就是用二维数组存储数据，适合在纯数据展示场景下使用，在大数据量下进行插入/删除操作时性能差。所以一般不作为在线表格的存储方案
-
-- 稀疏矩阵
-  - 稀疏矩阵存储方案有多种
-- 基于字典：这种实现有多种表达方式
-  - 针对前端开发者，比较常见的写法是：`dict[row] = {}; dict[row][col]=value；`其执行效率和Javascript的执行引擎有关，
-  - 以Chrome浏览器内部的V8为例，数组/对象默认就支持稀疏存储形式，查询、插入效率高，而且对象的key是有序的，但删除操作下由于引擎内部设计决定其效率不高；所以在数据量不大时，可以作为表格的存储方案
-- 基于压缩稀疏列：这个本意是通过压缩技术减少空单元格的数量，实际工程里有多种实现方式
-  - 用三个数组（value、row、column偏移）来存储矩阵
-  - **葡萄城开发的SpreadJs也是使用类似方案**
-- 上述介绍的存储方案只考虑value数组中每个元素值为数值的情况，
-  - 从表格功能看，每个单元格的内容还包括其他类型信息，包括存储值value、UI属性信息、状态标记（比如是否公式）、公式内容、行/列信息，value可能的数据类型包括数字、字符串、多行文本等
-- 如果用普通对象形式作为格子的底层存储结构，受制于V8引擎内部内存分配策略，其很难支撑千万量级格子下的操作，因此考虑通过压缩技术来节省内存消耗
-
-- 通过观察Cell内部结构字段内容，这里列出以下直观想法
-  - 从数据类型看，Cell内部包含boolean、string、number三种基本类型，boolean和number类型的数据考虑通过字段压缩技术，将这几个字段的内容编码在一个Byte内，例如：type是一个枚举类型，假设有三种类型，用2个bit来表示，加上isDirty和isCalc类型，基本上一个Byte就能表示三个字段的值
-  - 一般来说业务表格内会包含重复的字符串，或者单元格之间共享默认的样式信息，所以参照XLSX协议，引入共享字符串表技术，保证workbook中唯一的字符串类型出现一次，然后单元格通过索引（而不是内联方式存储到单元格中）来引用字符串。
-
-- 上述也是Onlyoffice内部使用思路，结合矩阵的稀疏列存储思想，Sdk内部最终的存储效果如下，
-  - 简单来说，是通过类型数组，将表格数据以二进制格式存储，通过字段压缩+共享字符串表来优化内存空间。
-- 这里说明下和上述稀疏列存储的区别
-  - 由于单元格通过字段压缩技术，所以row数组按照索引顺序依次排列，而不是只保存非空的行。
-  - col索引数组是稀疏的，其内容指向具体row数组，这和上述提到的column数组是不一样。当然好处是直接通过下标访问到row数组，编程上更符合开发者的直觉
-
-- 单元格信息压缩
-  - 通过二进制形式，将一个Cell内容压缩成如下结构
-  - 一个Cell的基本信息占用了17B，即使是空的Cell。
-  - 如果单元格实际数据是Number类型，那么数据直接存储在Cell结构内；
-  - 如果是字符串类型，那么通过索引+SST表来表示一个字符串
-  - 样式下标、公式索引下标也是类似的，它们都存在类似SST的表，同样实现内存压缩目的。
-  - 关于Cell内部状态信息，通过字段压缩技术，事先枚举所有状态信息的可能值，确定每个状态占用的bit大小，然后约定好协议在单个Byte内编码各个状态位置和bit大小，最后通过位操作从Byte内设置/获取对应的状态信息。
-
-- 单元格列表
-  - 为了存储单元格列表，onlyoffice内部开发SheetMemory数据结构，通过Js提供的类型数组（TypeArray）用来存储某段连续的二进制格式数据，包括某行/某列下单元格列表。
-- 关于SheetMemory的设计读者可以先尝试想下需要考虑的因素，这里根据表格上层支持的功能，总结如下考虑要点：
-  - 支持灵活扩容：由于表格稀疏特性，决定了调用者可以在任何一个Cell位置设置内容；所以如果设置的Cell行/列索引超过当前数据结构大小时，就要扩容，那么在具体编码时就要考虑扩容的策略
-  - 支持批量插入/删除单元格：想象下用户批量插入/删除多行数据，这个行为对底层存储的要求就是在指定位置插入多个空的记录
-  - 支持拷贝某个范围内的数据，比如用户通过拷贝/移动某个列的数据到另一个列，或者某个列进行排序操作结束后交换单元格区域
-  - 在指定数据类型下，支持设置/获取某个位置的数据：数据类型有UInt8、Uint32、Uint64等，所以需要提供API方便上层调用设置Cell数据
-
-- 扩容策略是在（当前数据量大小*1.5倍）和index之间取最大值，为何是1.5？
-  - 这和分配时间复杂度有关，假设当前数据大小要扩大到maxIndex位置，如果按照structSize块大小进行扩容，那么内部会按照线性递增进行扩大，时间复杂度是O(N)；
-  - 按照指数倍数（比如2倍）扩容，那么执行log(N)次数即可，时间复杂度最优。
-  - 但是考虑到2倍的扩容策略可能会使内存浪费比较多，所以在时间和空间之间做了权衡，取1.5作为扩容指数。
-
-- onlyoffice设计的这套存储方案支持在千万个格子下内存消耗足够少，这就为表格上层计算、渲染环节的缓存机制提供更多内存空间。
-  - 该方案也说明了在设计数据结构时要结合语言特性来优化，特别是前端应用程序涉及大数据量存储，要考虑脚本执行引擎的限制，了解引擎内部的内存管理机制，方便应用层编写更高性能的程序。
-
-## [onlyoffice表格字体渲染实现思路 - 掘金](https://juejin.cn/post/7175924445490446393)
-
-- 字体渲染是浏览器自带的基本能力，不管是基于HTML还是Canvas渲染技术；
-- 针对大型Excel表格，onlyoffice内部使用Canvas技术来渲染表格内容
-- 现代浏览器实现Canvas内字体设置和渲染的方案有成熟的API直接使用，代码简写如下：
-
-```JS
-const canvas = document.createElement('canvas');
-const ctx = canvas.getContext('2d');
-ctx.font = '微软雅黑';
-ctx.fillText('中', 0, 0)
-```
-
-- 这种方案能满足大部分场景需求，不过不同浏览器在字体解析和渲染实现存在差异，这会出现一致性问题
-  - 同样的字符，在不同操作系统、不同浏览器展示效果可能不一致
-  - 如果编辑器产品方案要考虑浏览器兼容性和渲染一致性问题时，那么编辑器内部就要接管字体的解析和渲染工作。
-
-- onlyoffice整体方案类似浏览器底层文本渲染引擎的实现思路，浏览器内部展示文本的整体流程包括三个步骤：
-  - 查找字体：根据CSS font-face语法指定一系列字体列表，查找时按照顺序遍历列表，找到第一个符合条件（比如本地是否有该字体的TTF文件）的字体
-  - 加载字体：加载符合条件的本地字体文件
-  - 渲染字体：这个步骤浏览器调用OS提供的文本排版引擎，然后调用浏览器的渲染引擎（一般是CG图形接口）直接绘制，不同OS实现了不同文本排版引擎，比如IOS提供CoreText，Window7后提供DirectWrite引擎，每种排版引擎都是各自自研的。
-- 读到这里了解到字符展示的全流程，但是网页包括很多字符，这些是通过HTML标签和CSS来组织结构，最终通过浏览器布局引擎决定文本位置，而布局引擎内部涉及到文本排版相关也是调用了OS提供的文本排版API实现。
-
-- 本文介绍onlyoffice表格编辑器内部文字渲染的基本流程，
-  - 为了效果一致性考虑，它并没有直接调用浏览器内部提供的fillText这样API，而是基于FreeType字体库重新实现了一套全生命周期的渲染逻辑，包括字体查找、加载和渲染的流程；
-  - 通过前后端协同，服务端事先准备字体的元信息、字体集列表、字体索引区间表信息并返回给前端页面，然后页面内部根据指定的文字和设置的字体集，查找对应的字体文件，通过FreeType库渲染得到该文字对应的位图信息，最终绘制该位图到Canvas画布上以展示文字
-
-- 当然这套逻辑比较定制化，这部分源码不那么清晰易懂，而且FreeType渲染引擎和操作系统自带的文字渲染引擎差异可能会出现同样的文字渲染出细微差异，这给用户体验上也带来困扰，所以上述技术实现思路在大部分业务场景是使用不到的。
-  - 但不妨作为一次学习机会了解文字渲染底层思路，以及wasm技术的应用，也能帮助理解基于Canvas技术内部的文字渲染原理
-
-## [onlyoffice webExcel整体架构解读 - 掘金](https://juejin.cn/post/7139915650964815909)
-
-- 最近由于业务需要，需要一个web-excel平台给用户提供数据分析能力，经过一番评估，确定使用onlyoffice提供的web-excel能力
-- 文档管理服务
-- 协同服务
-- 转换服务
-
-## [精读《WOPI协议》 - 掘金](https://juejin.cn/post/7105322391597187103)
-
-- WOPI是微软基于REST API的协议，定义了一组Http操作，使客户端能够访问和改变服务器存储的文件。
-- 假设开发者在Host机器上部署某个业务Web服务，某天产品提到要在这个Web服务上展示和编辑Excel文件，这个需求解决方案目前主要有两种：
-  - 利用Javascript SDK，以纯前端方案打开该Excel文件，这类库包括LuckySheet、SpreadJS等
-  - 集成已有的在线office平台，比如微软提供了Office Online App Server平台，允许第三方集成业务直接在网页中以Iframe方式嵌入Office页面，Office页面内部打开指定的Excel文档
-- 第二种就是本文要讨论内容依赖的前提，它的好处是对前端开发者而言集成成本低，只需要通过Iframe嵌入到Host页面即可。那Office页面是如何知道去哪里打开获取到文档内容，文档信息是怎么告知给在线Office平台？这就是WOPI协议解决的问题。
-- WOPI协议约定了Office Online服务和集成业务侧之间的通信协议，协议约定了一组接口操作，指明怎么从集成业务方获取和改变文件，该操作基于REST协议，这样对集成方而言只要提供了这些接口实现即可，开发成本可控。
-
-- 在文档编辑器领域微软是业界的标杆，它设计了好几种开放协议，包括本文讨论的WOPI协议，还有后来者Vscode为了支持多语言的语法补全功能提出了LSP协议等，这些平台设计思路是类似的：希望开发者能基于协议共建平台的生态，放大平台的价值和产品生命力
-# blogs-pm-excel
-- [Building abstractions on spreadsheets - The cost of flexibility and potential solutions](https://subset.so/blog/building-abstractions-on-spreadsheets)
 # blogs
 
 ## [OpenOffice Sparse Matrix](https://iq.opengenus.org/data-structure-for-spreadsheet/#openofficesimplementation)
@@ -124,4 +20,221 @@ ctx.fillText('中', 0, 0)
 ## [A spreadsheet in fewer than 30 lines of JavaScript, no library used | Hacker News_201311](https://news.ycombinator.com/item?id=6725387)
 
 - http://jsfiddle.net/ondras/hYfN3/
+
+## [在线Excel项目到底有多刺激-腾讯文档Excel_202012](https://mp.weixin.qq.com/s/f1vwzuPryc8ag6nd5Ngr5A)
+
+- 冲突处理
+- 版本管理
+- 房间管理
+- 多种通信方式
+- 每个格子都是一个富文本编辑器
+- 富文本
+- 复制粘贴
+- 表格渲染有多复杂
+- 数据管理的难题
+
+## [精读《高性能表格》_202104](https://zhuanlan.zhihu.com/p/364094849)
+
+- 要做表格首先要选择基于 DOM 还是 Canvas，这是技术选型的第一步
+  - Canvas 渲染效率比 DOM 高，这是浏览器实现导致的。
+  - DOM 可拓展性比 Canvas 好，渲染自定义内容首选 DOM 而非 Canvas。
+- 技术选型要看具体的业务场景，钉钉表格其实就是在线 Excel，Excel 这种形态决定了单元格内一定是简单文本加一些简单图标，
+  - 因此不用考虑渲染自定义内容的场景，所以选择 Canvas 渲染在未来也不会遇到不好拓展的麻烦。
+- 而自助分析表格天然可能拓展图形、图片、操作按钮到单元格中，对轴的拖拽响应交互也非常复杂，为了不让 Canvas 成为以后拓展的瓶颈，还是选择 DOM 实现比较妥当。
+- 我们应该如何用 DOM 实现一个高性能表格呢？
+  - 其实业界已经有许多 DOM 表格优化方案了，主要以按需渲染、虚拟滚动为主，即预留一些 Buffer 区域用于滑动时填充，表格仅渲染可视区域与 Buffer 区域部分。
+  - 但这些方案都不可避免的存在快速滑动时白屏问题，笔者通过不断尝试终于发现了一种完美解决的方案，我们一起往下看吧！
+
+- 单元格使用 DIV 绝对定位
+- 模拟滚动而非原生滚动
+- 零 buffer 区域
+- 预计算
+- 局部预计算
+- Map Reduce
+
+## [Five Fast JavaScript Data Grids — A Performance Review_201909](https://dzone.com/articles/data-grid-performance-comparison)
+
+- The following popular data grids were used in this comparison:
+  - ag-grid (ag-grid.com)
+  - Bryntum Grid (bryntum.com/products/grid)
+  - DevExtreme Grid (js.devexpress.com/Overview/DataGrid)
+  - DHTMLX Grid (dhtmlx.com/docs/products/dhtmlxGrid)
+  - Ext JS Modern Grid (sencha.com/products/extjs)
+- git repo: https://github.com/bryntum/grid-performance
+- Benchmarking Methodology
+  - Two test cases were created per grid, one with locked/fixed/pinned columns and one without.
+  - The same dataset was used for all grids, consisting of 10, 000 JSON objects with ten fields each
+  - Columns were configured as similar as possible for all grids
+    - Ten columns, some with custom settings:
+      - One column with cells that has their background color set from data.
+      - One column with a custom progress bar.
+      - One date column.
+      - One boolean column displaying Yes/No.
+    - The first three columns locked/fixed/pinned in the relevant test case.
+    - For fairness, all non-essential features such as sorting, grouping, filtering and so on were turned off
+    - All grids were rendered into a 1280 x 1024 px sized container.
+    - All measurements were taken on a 2016 MacBook Pro 13" (2 GHz Intel Core i5, 8GB RAM).
+    - Scrollbars were turned on
+- Measuring
+  - JavaScripts `performance.now()` was used to measure time in the benchmarks.
+- Initial Rendering Time(ms) Result 
+  - for simple grid 
+    - dhtmlX: 55
+    - bryntum: 104
+    - ag-grid: 210
+    - devExtreme: 216
+    - extjs: 281
+  - For all practical applications though, the difference between the best and the worst, in this case, is negligible. 
+  - A real world application loading and displaying 10, 000 records will spend much more time retrieving the data from the backend than the time it takes to display it.
+  - 带有locked/pinned/fixed列的首屏渲染测试结果排名与上面相同
+- Scrolling FPS Result 肉眼更易察觉
+  - for scrolling simple grid
+    - dhtmlX: 25
+    - devExtreme: 38
+    - ag-grid: 57
+    - extjs: 59
+    - brytum: 60
+  - for scrolling grid with pinned
+    - dhtmlX: 19
+    - devExtreme: 29
+    - ag-grid: 53
+    - extjs: 54
+    - brytum: 59
+
+## [The Fastest JavaScript Data Grid — A Performance Analysis_202006](https://dzone.com/articles/the-fastest-javascript-data-grid-a-performance-ana)
+
+- The data grid performance was measured on 3 main metrics. 
+  - Initial Load Time — How long does it take to load the initial set of static data.
+  - Filtering speed — Time to dynamically filter on a field (eg: characters in a name).
+  - Scrolling speed — How long does it take to scroll through various portions of the grid (eg: first few entries, scroll through a certain section of the grid and back up, mid grid and up a few entries, scroll to end of grid etc.)
+
+- Experiments were conducted on server-side data containing small (10, 000), medium (100, 000)  and large (1 million+) datasets (number of rows). 
+- For each vendor, their respective Grid Infinite/Virtual Scrolling capabilities were used to gather the metrics.
+
+- Performance Results 
+  - Test results indicate that while most grids do equally well with initial static load time and dynamic filtering speeds, Ext JS and DevExtreme data grid outperformed other competitors on scrolling performance when tested with medium to large datasets (100, 000 to 1, 000, 000+ data volumes). 
+  - Although other metrics are important, scrolling performance is a key indicator of grid stability given a user’s frequent need to scroll through huge amounts of filtered data. 
+  - Data grids provide different scrolling experiences but efficiently implemented virtual scrolling feature retrieves and displays large data requests within a second vs minutes for certain grids as observed in this experiment. 
+
+## [Tabelify - The simplest way to create a Data Grid in React_201606](https://medium.com/myntra-engineering/the-simplest-way-to-create-a-data-grid-in-react-ccdd4368ee7a)
+
+- [react-tabelify](https://github.com/rishabhbits038/react-tabelify)
+  - /NALic/28Star/201606
+
+- We finally decided to create our own library 'Tabelify' from scratch.
+- Tableify is a highly customisable library that can be used to display data in different formats. 
+  - Tabelify is a controlled react component. 
+  - Its parent has complete control over its state.
+  - Any change in tabelify triggers an event, which can be caught at a central location. 
+  - The required changes are made in the store/state and then modified data is passed to tabely as props.
+- Some of the important ways to modify the way data is represented are:
+  - Custom Columns: 
+    - User can pass a render method as params in `columnMetadata` . 
+    - The method renders a custom column.
+  - CustomRow: 
+    - User can choose not to display the data in a tabular format as well. 
+    - The user can pass a `CustomRow` as a prop to Tabelify. 
+    - Tabelify renders the Custom Row instead of the default.
+    - `CustomRow` takes in the data as props and the value it returns is rendered in the row
+  - Similarly, user can also pass a `CustomHeader` and a `CustomFooter` to the table.
+  - There is also an option to enable/disable the checkbox by just passing a flag
+  - There is a search box at the bottom left of the grid. It filters the data and shows only the ones which contain the text typed.
+  - Tabelify also supports pagination by default. 
+  - It supports in build sort on columns.
+  - A function ‘onRowClick’ is passed as a callback to Tabelify which returns the row data when a it is clicked. Appropriate actions can be performed on it.
+- Tablelify takes in data as props. Whenever a change is to be trigerred, tableify return the event along with the updated data to its parent via a callback onChangeGrid.
+- react component tree diagram of Tabelify
+  - GridHeader
+  - GridRows
+  - GridFooter
+- any change in the header, footer or rows is passed on to the parent via callback(onChangeGrid)
+  - onChangeGrid modifies the state of the page. 
+  - The updated state is then passed on as props to tabelify which passes it down to each of the components and thus the updated values are rendered.
+- To keep things simple, we kept the entire props to be passed to tabelify in a single json object, tableConfig, which it stores in the state.
+- The entire state of tabelify is stored in the state of page in the variable tableConfig.
+- Whenever there is some change inside the grid, onChangeGrid is called, which is a callback. 
+  - It takes in event and the updated data as parameter. 
+  - TableConfig is modified and setState is called. 
+  - setState triggers rerender of the Page with updated state. 
+  - Thus the updated values are passed on to Tabelify as well.
+
+## [React — Code Your Own DataTable Step by Step (Video Tutorial by udemy)](https://codeburst.io/react-code-your-own-datatable-step-by-step-video-tutorial-34fca0ca34e7)
+
+- [udemy-react-datatable](https://github.com/rajeshpillai/udemy-react-datatable)
+  - /NALic/9Star/201810
+- Code a working version of a simple data table using no 3rd party library and using pure React.
+- The following features are covered in the tutorial
+  - Binding data to the datatable dynamically
+  - Sorting
+  - Searching on multiple columns/fields
+  - Pagination with customization
+  - Reorder columns by dragging and dropping
+  - Custom Cell renderer using Render prop pattern
+  - Basic CRUD template
+  - ...
+# [Building a Data Table Component in React_by polaris_201810](https://engineering.shopify.com/blogs/engineering/building-data-table-component-react)
+- The Challenge
+  - Must Be Responsive
+    - Typically, responsive designs either stack or collapse elements at narrow widths
+    - but these solutions break the grid structure of a data table
+  - Must Be Readable
+    - The purpose of the data table is to organize the information in a way that makes it easy for the users to compare and analyze
+    - so proper alignment is important
+  - Must Be Contextual
+    - a well-designed data table that provides context around the information, preventing the user from getting confused by seemingly random cell values. 
+    - This means keeping headings visible at all times so that whichever data a user is seeing, it still has meaning.
+  - Must Be Accessible
+    - Finally, to accommodate users with screen readers a data table needs to have proper semantic markup and attributes.
+
+- Here’s how to create a stripped down version of the data table we built for Polaris using React
+  - note: This post requires `polaris-react` .
+  - 基于table标签和display:table布局实现
+  - 基本功能有scroll, fixed column, variable height
+
+- **Building a Data Table**
+- ## Start With a Basic React Data Table
+  - table-thead-tbody-tr-td
+  - With this many columns, the width of the table exceeds the screen width and scrolls the entire document horizontally, which isn’t ideal.
+  - One way to handle a wide table is to collapse the columns and make them expandable, but this solution only works with a limited number of columns. 
+  - Beyond a certain number, the collapsed width of each column still exceeds the total screen width, especially in portrait orientation. 
+  - The columns are also awkward to expand and collapse, which is a poor experience for users. 
+  - To solve this, restrict the width of the table.
+
+- ## Making it Responsive: Add Max-width
+  - Wrap the entire table in a div element with `max-width: 100vw` and give the table itself `width: 100%` .
+  - Unfortunately, this doesn’t work properly at very narrow screen widths when the cell content contains long words. 
+  - The longest word forces the cell width to expand and pushes the table width beyond the screen’s right edge.
+  - you can solve this with word-break: break-all, but that violates the design requirements to keep the data readable
+  - So, the next thing to do is force only the table to scroll instead of the entire document.
+
+- ## Making it Responsive and Readable: Create a Scroll Container
+  - Wrap the `table` in a `div` element with `overflow: auto` to cause a scrolling behavior for the overflow content.
+  - The data is difficult to understand without the context of the first column header 只能看到后几列
+  - We chose to keep the first column visible at all times by fixing it in place and preventing it from scrolling along with the other columns as a solution.
+
+- ## Adding Context: Create a Fixed First Column
+  - Give each cell in the first column an explicit width, then position them with `position: absolute` and `left: 0` . 
+    - Then add `margin-left: 145px` to the remaining columns’ cells (the value must be equal to the width of the first column cells).
+    - Add `className='Cell-fixed'` to the first cell of each row.
+  - Using an absolute position on each cell gives us a fixed first column, but creates another problem.
+  - Typically, the DOM renders each cell height to match the height of the tallest cell in the same row, but this behavior breaks when the cells are positioned absolutely, so cell heights need to be adjusted manually.
+
+- ## Fixing a Bug: Adjust Cell Heights
+  - Absolute positioning converts the fixed column to a block and breaks the natural behavior of the table, so the cell heights no longer adjust according to the height of the other cells in their row. 
+  - To fix this, pull the `clientHeight` value from both the fixed cell and the remaining cells for each row in the array. 
+  - Write a function that uses `Math.max` to find the highest number (the tallest height) of each cell in each row and return an array of those values.
+  - The `handleCellHeightResize()` is called after the component is mounted and is never called again unless the page is refreshed. This means the height values for each cell remain the same even if the window is resized.
+  - Set up an event listener and call the function any time the window is resized, so the cell heights readjust.
+
+- ## Making it Accessible
+  - Two important attributes make a data table accessible. 
+  - Add a `caption` that a screen reader will read and a `scope` tag for each cell. 
+  - For more details, the a11y project has an article about how to create accessible data tables.
 # more
+- [A React Data Grid Template Powered By ElasticSearch](https://medium.appbase.io/a-react-data-grid-template-powered-by-elasticsearch-a-react-data-grid-template-powered-by-10b21609b67b)
+  - build a data grid app from ground up using ReactiveSearch, react-virtualized, and ElasticSearch.
+- [How to Make a Data Grid Scale_201708](https://www.smartly.io/blog/how-to-make-a-data-grid-scale)
+  - Find the right tools: react-virtualized
+  - make it scroll 
+- [基于 Angular Material 的 Data Grid 设计实现](https://zhuanlan.zhihu.com/p/150868481)
+  - declaration, row selection, expandable row, column hide 

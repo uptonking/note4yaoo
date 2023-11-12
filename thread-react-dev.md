@@ -16,7 +16,14 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
-- ## 
+- ## I often group related props into an object.
+- https://twitter.com/housecor/status/1723706241048809898
+- Advantages:
+  ✅ Less code, so easier to read
+  ✅ Clarifies the relationship between related fields
+  ✅ Makes it easier to pass the data around
+  ✅ Don’t need to change the component’s API when properties change
+- But be careful, you might need to useMemo to avoid rerenders.
 
 - ## Thanks to `flushSync` , you can finally manage focus in React again. (but I will always love this.setState)
 - https://twitter.com/ryanflorence/status/1722358755499913582
@@ -291,7 +298,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                  `ValueFront`,                                                  `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                   `ValueFront`,                                                   `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

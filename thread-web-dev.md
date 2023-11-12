@@ -33,8 +33,6 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
-- ## 
-
 - ## 🤔 is importNode any better or different than cloneNode ?
 - https://twitter.com/WebReflection/status/1721837891276431706
   - well, importNode for fragments uses a nodeType check + isShadowRoot check

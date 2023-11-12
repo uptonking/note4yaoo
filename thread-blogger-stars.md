@@ -14,7 +14,6 @@ modified: 2021-02-09T19:27:07.664Z
 
 - 在开源项目comments多的issue里面，很容易找到项目难点和业务使用场景
   - 甚至直接找到其他扩展开发者，以及他们的插件、轮子
-
 # dev-blogs
 - [前端进阶知识汇总 - 掘金](https://juejin.cn/post/6844904061838295047)
   - 手写系列多
@@ -108,6 +107,11 @@ modified: 2021-02-09T19:27:07.664Z
 - 张志敏
   - https://beginor.github.io/pages.html
 # data-analysis
+- Simon Eskildsen
+  - https://github.com/sirupsen/napkin-math
+    - Techniques and numbers for estimating system's performance from first-principles
+  - https://sirupsen.com/
+
 - 空白白白白
   - 数据分析专家，pointer创始人
   - https://www.zhihu.com/people/jiafeimao/activities

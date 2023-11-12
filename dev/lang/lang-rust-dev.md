@@ -48,9 +48,13 @@ modified: 2022-11-11T06:57:09.670Z
 - tips
   - 经典示例可参考wasm、tauri、数据库、搜索、reader/parser/generator/stream
 
-- https://github.com/tw93/Pake
+- https://github.com/tw93/Pake /tauri
   - Turn any webpage into a desktop app with Rust with ease.
   - 很简单的用 Rust 打包网页生成很小的桌面App
+  - [这个项目和直接在浏览器里面打开有什么区别](https://github.com/tw93/Pake/issues/5)
+    - 适合分发app，浏览器url不适合分发和记录
+    - 没啥区别，相当于快速做了一个网页mac app，不适合所有场景
+    - 底层使用的 Rust tauri.app 这个框架
 
 - https://github.com/asg017/sqlite-loadable-rs
   - A framework for writing fast and performant SQLite extensions in Rust

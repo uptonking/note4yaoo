@@ -15,6 +15,13 @@ modified: 2022-04-23T18:48:32.550Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 第一个 GPTs：合并 Excel 文件。 实现了一个 WPS 的付费功能，上传多个 Excel 文档，合并为一个文件后下载。
+- https://twitter.com/yeshu_in_future/status/1723331524161122366
+
 - ## 🪟👾 Introducing Rows AI, the ultimate AI tool that makes Excel look like a toy
 - https://twitter.com/heyshrutimishra/status/1718165718816968712
   - Import your data from files ( like: csv, xlsx ) or from over 50+ integrations

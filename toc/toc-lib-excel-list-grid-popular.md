@@ -400,22 +400,6 @@ modified: 2022-08-21T10:02:27.788Z
     - A Grid.js plugin is a Preact Functional Component that render a Virtual Node. 
     - Grid.js will take care of rendering your plugin.
 
-- hyperformula /1.5kStar/GPLv3/202304/ts
-  - https://github.com/handsontable/hyperformula
-  - https://handsontable.com/docs/hyperformula
-  - HyperFormula is a headless spreadsheet built on top of TypeScript. 
-  - It is a parser and evaluator of Excel formulas for web applications. 
-  - You can use it in a browser or as a service, with Node.js as your back-end technology.
-  - Function syntax compatible with Microsoft Excel and Google Sheets
-  - HyperFormula comes with a huge library of 391 built-in functions grouped into categories
-  - It also supports the use of cross-sheet references, named expressions, different data types, and custom functions.
-  - HyperFormula doesn't assume any existing user interface, which makes it a great general-purpose library that can be used in various business applications.
-  - [Key concepts | HyperFormula ](https://hyperformula.handsontable.com/guide/key-concepts.html)
-    - Data processing consists of three phases.
-    - Phase 1. Parsing and construction of ASTs
-    - Phase 2. Construction of the dependency graph. find the right order of processing cells, also known as topological order
-    - Phase 3. Evaluation
-
 - tabulator /MIT/3.4kStar/202202/js/NoDeps
   - https://github.com/olifolkerd/tabulator
   - http://tabulator.info/
@@ -1195,12 +1179,36 @@ modified: 2022-08-21T10:02:27.788Z
 - https://github.com/tim-band/js-dataentrygrid
   - Featherweight Excel-like grid for data entry
 # excel
-- https://github.com/handsontable/formula.js /MIT/js
+- hyperformula /1.6kStar/GPLv3/202309/ts
+  - https://github.com/handsontable/hyperformula
+  - https://handsontable.com/docs/hyperformula
+  - HyperFormula is a headless spreadsheet built on top of TypeScript. 
+  - It is a parser and evaluator of Excel formulas for web applications. 
+  - 依赖chevrotain
+  - You can use it in a browser or as a service, with Node.js as your back-end technology.
+  - Function syntax compatible with Microsoft Excel and Google Sheets
+  - HyperFormula comes with a huge library of 391 built-in functions grouped into categories
+  - It also supports the use of cross-sheet references, named expressions, different data types, and custom functions.
+  - HyperFormula doesn't assume any existing user interface, which makes it a great general-purpose library that can be used in various business applications.
+  - [Key concepts | HyperFormula ](https://hyperformula.handsontable.com/guide/key-concepts.html)
+    - Data processing consists of three phases.
+    - Phase 1. Parsing and construction of ASTs
+    - Phase 2. Construction of the dependency graph. find the right order of processing cells, also known as topological order
+    - Phase 3. Evaluation
+  - [Hyperformula support for ag grid](https://github.com/handsontable/hyperformula/discussions/817)
+    - The only supported integration of HyperFormula with a spreadsheet solution with an advanced scope of features is with the Handsontable.
+- https://github.com/formulajs/formulajs /500Star/MIT/202310/js
+  - https://formulajs.info/
   - JavaScript implementation of most Microsoft Excel formula functions
+  - originally forked from @handsontable/formulajs version 2.0.2 (released in January 2020). There is no regression, only fixes and new functions since the fork.
   - forks
-  - https://github.com/formulajs/formulajs /MIT/js
+  - https://github.com/handsontable/formula.js /MIT/202001/js
   - https://github.com/jspreadsheet/formulajs
   - https://github.com/sutoiku/formula.js
+- https://github.com/vogtb/spreadsheet /MIT/201807/ts
+  - TypeScript/javascript spreadsheet parser, with formulas.
+  - This is largely a re-write of Handsontable's https://github.com/handsontable/ruleJS, and https://github.com/sutoiku/formula.js/.
+  - The parser was derived from Handsontable's, and many of the formulas were created with FormulaJS's formulas as a reference point.
 
 - https://github.com/wx-chevalier/excel.ts /ts
   - excel.ts 是基于 TypeScript 编写的前端 Excel 综合解决方案，包含了 POJO Schema 定义、多框架支持的 Web 端渲染以及 Node 导出服务

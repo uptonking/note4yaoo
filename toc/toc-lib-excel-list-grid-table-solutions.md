@@ -1,11 +1,11 @@
 ---
-title: toc-lib-excel-list-grid-table-sheet
-tags: [grid, lib, list, table, toc]
+title: toc-lib-excel-list-grid-table-solutions
+tags: [excel, grid, list, solutions, spreadsheet, table, toc]
 created: 2020-07-12T13:01:37.487Z
-modified: 2022-08-21T10:02:36.042Z
+modified: 2023-11-12T06:25:03.307Z
 ---
 
-# toc-lib-excel-list-grid-table-sheet
+# toc-lib-excel-list-grid-table-solutions
 
 # guide
 

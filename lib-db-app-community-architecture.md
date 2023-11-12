@@ -96,9 +96,42 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
-- ## 
+- ## There has been several startups building an operational relational databases focused on OLTP with a shared nothing architecture. 
+- https://twitter.com/nikitabase/status/1723579854266966399
+  - @neondatabase is using a different approach - shared storage.  What's the difference?
+- In a shared nothing architecture you take a cluster of machines and assign a subset of data (shard) to each machine using range or hash partitioning.
+  - Incoming SQL queries are split into parts that can be  run on each machine. If need be the results of those queries are reshuffled, potentially multiple times, and finally collected on one node to generate the final result.
+  - While this architecture allows you to scale your TPS for simple reads and writes it has several disadvantages:
+  - 1. Some write transactions are only touching one shard and some multiple. So some write queries scale MUCH (10-100x) worse than others.
+  - 2. To achieve consistency you need to implement 2 phase commit (or other distributed protocols) to preserve transactional semantics, which requires two network roundtrips with each participant so you transaction latency is inconsistent.
+  - 3. Cross shard foreign keys and uniqueness are super hard to implement in a shared nothing system. You need to go over the network to validate presence of foreign keys and uniqueness. Radical performance implications.
+  - The list can go on. Mature shared nothing systems achieved an incredible engineering feat of supporting all the query processing use cases, but even the best ones sacrifice surface area and DEFINITELY break compatibility with the single node system they are based upon.
+  - Because even if in fullness of time you implement all the surface area it's impossible to preserve performance compatibility. In addition to having to go over the network for some queries, you also have a different query optimizer which breaks performance compatibility.
+  - The result is that most shared nothing systems support a subset of features of single node systems and try to convince their users that those don't matter or don't scale.
+  - This means you can't migrate back and forth from Postgres or MySQL to a shared nothing system. Most developers start on Postgres or MySQL, so companies building shared nothing systems need to find workloads that ran out of scale on single node databases.
+  - Attempts to build a popular shared nothing system have been here since the 80ies. None of the shared nothing OLTP systems took off. Microsoft had two attempts with SQL Server - both failed.
+- Lets now look at shared storage systems. In a shared storage system there is a separate storage: either page based or row based. 
+  - E.g. Postgres stores everything in 8k pages.
+  - Storage systems like this is MUCH easier to make distributed - it's a glorified key value store.
+  - Then you can "attach" compute - a single node database system to the distributed storage. Which has the following benefits.
+  - 1. I/O is infinite. You can still run out of network for pushing writes into the system, but you won't run out of iops.
+  - 2. 100% compatibility with the single node system. Which means your apps don't need to change. Just change the connection string.
+  - 3. Compute is now stateless - you can move it around nodes in a multi-tenant system. And this allows you to build serverless compute on top of a traditional SQL database
+  - 4. Read replicas don't need to copy data to start replicating. They attach to the same storage.
+  - The most successful systems are shared storage: Oracle RAC, SQL Server Hyperscale, and AWS Aurora. @neondatabase is shared storage which lets us be serverless.
+- Oracle RAC is different from others as it provides HA (resilience to node failure, online patching). All cluster nodes are full-feature read-write, sharing not only the storage but also the buffer cache, the prepared statements and the distributed locks
+  - I was about to reply that Oracle RAC has been around in this segment for a while now until I read this last tweet. Even RAC had its own issues which shared nothing databases actually solved. Even Oracle introduced the concept of sharding recently.
+  - RAC is only one part of the Maximum Availability Solution and is about global cache and lock manager. They distribute storage with ASM, they replicate with Data Guard, they shard on top of it. It is not binary like shared nothing or shared storage
 
-- ## People always talk about Create, Read, Update and Delete.
+- Shared storage systems are not reliable: you can’t have efficient replication and assume storage is “local” so no way to allow entire continents to lose connection. Any system which needs more than one machine is niche
+
+- nice write-up! shared storage also means some of your data will come from over the network everytime, depending on how you've distributed your data across the shared storage -- if you have fast drives and good bandwidth on the network this becomes less of concern.. how are failover to DR sites handled in this architecture?
+
+- There is also a combined approach where you build a fully distributed database on shared storage. In this design, the database nodes share the storage, while the storage nodes share nothing. This approach is used at @YDBPlatform
+
+- Detached compute from storage is the right approach when possible.
+
+- ## 💡 People always talk about Create, Read, Update and Delete.
 - https://twitter.com/andrewingram/status/1722291782564602202
   - They never talk about Duplicate, Split and Merge. The far more gnarly actions that are commonly required in any real system.
 - CRUD erases any intent in our system. Why did the address change ? Has the user moved ? Was he correcting a typo ? I do not understand why CRUD is a thing. Any CRUD system becomes unmaintainable when we need to implement workflows such as duplicating, etc as you mentioned

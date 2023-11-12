@@ -10,6 +10,15 @@ modified: 2021-08-05T04:31:02.298Z
 # guide
 
 # discuss-stars
+- ## 
+
+- ## 
+
+- ## Avoid type and code duplication. Make types and code in sync without having to maintain both whenever you can.
+- https://twitter.com/ecyrbedev/status/1723411440000799006
+  - https://tsplay.dev/m0VjDw
+  - 常用的从object中提取类型定义的技巧
+
 - ## React TypeScript Cheatsheet
 - https://github.com/typescript-cheatsheets/react
   - https://react-typescript-cheatsheet.netlify.app/docs/basic/setup

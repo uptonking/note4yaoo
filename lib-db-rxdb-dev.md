@@ -43,6 +43,7 @@ modified: 2022-12-02T11:16:05.028Z
   - If you can have cases where user interaction is required to correctly merge conflicting document states, you cannot use CRDTs for that.
 - Also when CRDTs are used, it is no longer allowed to do non-CRDT writes to the document properties.
 # blogs-rxdb
+- [Internal of RXDB: Plugins, Storages Adapters - DEV Community_202303](https://dev.to/dhrn/internal-of-rxdb-plugins-storages-adapters-3bi3)
 
 ## [Alternatives for realtime offline-first JavaScript applications](https://rxdb.info/alternatives.html)
 

@@ -9,6 +9,12 @@ modified: 2023-09-17T17:35:27.024Z
 
 # guide
 
+- sql-pros
+  - standardized and stable
+
+- sql-cons
+  - not good at recursive query
+  - 无法提供excel计算所需要的细粒度缓存和依赖管理 won’t do smart caching and dependency management for the cache
 # discuss-stars
 - ## 
 

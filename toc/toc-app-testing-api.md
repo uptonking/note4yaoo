@@ -80,7 +80,10 @@ modified: 2023-02-08T10:25:14.173Z
   - Webhook payloads are never stored on the server, or in any database; 
     - the Smee.io server is simply a pass-through. 
     - However, we do store payloads in localStorage in your browser
-# web-performance
+# performance
+- https://github.com/sirupsen/napkin-math /rust/go
+  - Techniques and numbers for estimating system's performance from first-principles
+
 - https://github.com/nolanlawson/fuite /js
   - a CLI tool for finding memory leaks in web apps.
 # web-testing

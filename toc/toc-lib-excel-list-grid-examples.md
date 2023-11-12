@@ -32,7 +32,7 @@ modified: 2022-08-21T10:03:52.222Z
 
 - https://github.com/turbolent/collection-view
   - A container for displaying large ordered collections of data items and presenting them using arbitrary layouts (e.g. lists, grids). 
-# app
+# apps
 - https://github.com/bruceleejie/exceldemo /js/vue
   - 管理系统中可能需要的导出、导入功能，前端导出、导入excel文件的demo
   - 在Export2Excel.js文件中新增了适合自己的方法，可以给大家伙借鉴
@@ -212,3 +212,6 @@ modified: 2022-08-21T10:03:52.222Z
 - https://github.com/hung1503/SpreadSheet /js
   - An application used to fetch data from SPARQL api and display it on an Excel like table, built with React, JavaScript, and SCSS.
 # more
+- https://github.com/EqualTo-Software/SureSheet /202311/ts
+  - We created this product to show what you can build with EqualTo Sheets, our "Spreadsheets as a service for developers" platform.
+  - Note that to deploy EqualTo SureSheet, you'll need a (freely available) EqualTo Sheets license key.

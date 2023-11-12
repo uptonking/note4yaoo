@@ -97,11 +97,14 @@ modified: 2023-01-09T11:04:13.958Z
 - https://github.com/harunou/SheetsDB
   - SheetsDB is a simple tool to read and write data from/to Google spreadsheet as JavaScript objects
 # formula
-- https://github.com/handsontable/formula.js /MIT/js
+- https://github.com/formulajs/formulajs /500Star/MIT/202310/js
+  - https://formulajs.info/
   - JavaScript implementation of most Microsoft Excel formula functions
+  - originally forked from @handsontable/formulajs version 2.0.2 (released in January 2020). There is no regression, only fixes and new functions since the fork.
   - forks
+  - https://github.com/handsontable/formula.js /MIT/202001/js
   - https://github.com/jspreadsheet/formulajs
-  - https://github.com/formulajs/formulajs
+  - https://github.com/sutoiku/formula.js
 
 - https://github.com/borgar/fx /js
   - Utilities for working with Excel formulas
@@ -114,6 +117,11 @@ modified: 2023-01-09T11:04:13.958Z
 - https://github.com/LeanyLabs/formula-engine
   - Extendable formula parser and executor.
   - It supports three types of literals (data types): string/number/boolean
+
+- https://github.com/vogtb/spreadsheet /MIT/201807/ts
+  - TypeScript/javascript spreadsheet parser, with formulas.
+  - This is largely a re-write of Handsontable's https://github.com/handsontable/ruleJS, and https://github.com/sutoiku/formula.js/.
+  - The parser was derived from Handsontable's, and many of the formulas were created with FormulaJS's formulas as a reference point.
 
 - https://github.com/plantain-00/expression-engine
   - An expression tokenizer, parser and evaluator.

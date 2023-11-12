@@ -51,6 +51,12 @@ modified: 2021-07-28T20:11:24.350Z
 
 - ## 
 
+- ## Apparently "email" and "number" inputs don't support setting a selection programmatically? That's a very very weird limitation
+- https://twitter.com/fabiospampinato/status/1723356899037298691
+  - "use the platform" should really be "use the good parts of the platform", not everything that's built into the browser is good, or even passable. 
+  - And accidentally using a buggy part of a browser is a pretty important issue, because those the bugs that you basically can't fix.
+- That was actually multiple times a reason for me to use text inputs instead of number inputs.
+
 - ## Using the JavaScript `FormData` Web API, you can progressively enhance a simple, accessible form, into a more dynamic form, without the downsides of heavy JS frameworks that do the same thing.
 - https://twitter.com/SaraSoueidan/status/1521469586691997696
   - [Progressive Enhancement and HTML Forms: use FormData](https://www.bram.us/2022/04/22/progressive-enhancement-and-html-forms-use-formdata/)

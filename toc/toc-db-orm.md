@@ -372,6 +372,11 @@ modified: 2021-08-30T18:56:09.644Z
   - A modular implementation of timely dataflow in Rust
 - https://github.com/TimelyDataflow/differential-dataflow
   - An implementation of differential dataflow over timely dataflow on Rust.
+# gis
+- https://github.com/digidem/bkd-tree /BSD/201906/js
+  - multi-dimensional spatial database based on the bkd paper
+  - bkd tree implementation using random-access storage
+  - This module implements some of the bkd tree paper and is very fast. However, the memory usage can be high at times and some features of the paper, such as the grid bulk load algorithm, are not yet implemented.
 # more-database
 - https://github.com/lealone/Lealone
   - /1.6kStar/Apache2+H2MPL2/202012/java
