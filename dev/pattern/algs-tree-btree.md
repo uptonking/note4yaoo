@@ -15,6 +15,9 @@ modified: 2023-09-17T18:17:41.377Z
 - who is using #b+tree
   - mongodb
   - couchdb
+
+- viz
+  - [B-Tree Visualization](https://www.cs.usfca.edu/~galles/visualization/BTree.html)
 # dev
 
 # more

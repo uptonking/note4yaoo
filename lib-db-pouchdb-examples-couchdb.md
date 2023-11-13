@@ -376,6 +376,10 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/eigenfunctor/doc-sync /201912/ts
   - a library that leverages Typescript and Pouchdb/CouchDB to enforce a sychronized document model between the browser and Node.js
+
+- https://github.com/vrtmrz/self-hosted-livesync-server /shell
+  - CouchDB Server which configured about CORS for Obsidian and Self-hosted LiveSync.
+  - Automatically set up SSL Certificates by Let's Encrypt (With Caddy).
 # mobile-pc-utils
 - https://github.com/craftzdog/react-native-sqlite-2 /202211/ts
   - SQLite3 Native Plugin for React Native for Android, iOS, Windows and macOS.
@@ -627,7 +631,6 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/KlausTrainer/couch_image_resizer /201209/js
   - a simple web service that can serve CouchDB document attachments and, if the attachment is an image, is able to resize it using the convert program that is part of the ImageMagick tool suite. 
   - Resized images are held in an in-memory LRU cache, whose configurable size is 128 megabytes by default.
-
 # couchdb-utils
 - couchdb /5.5kStar/apache2/202211/erlang
   - https://github.com/apache/couchdb
@@ -659,6 +662,11 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/apache/couchdb-fauxton /js
   - the new Web UI for CouchDB
 
+- https://github.com/ermouth/couch-photon /json
+  - an alternative CouchDB admin panel
+  - Photon is a single CouchDB design document with attachments, so it can be installed on any running CouchDB without rebuilding or reconfiguring.
+  - Photon never existed as source files, its sources are CouchDB docs. 
+
 - https://github.com/garrensmith/fortuna-rs /202103/js/rust
   - A javascript view engine for CouchDB 4.x written in Rust using Google V8.
   - Install FoundationDB Install CouchDB dependencies Setup CouchDB
@@ -669,9 +677,26 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/NinjaGrandpa/nodejs-couchdb-demo /js
   - A simple customer database built with CouchDB and NodeJs
 
-- https://github.com/ermouth/covercouch /js
+- https://github.com/minni-im/tape-recorder /202105/js
+  - Thin ORM for CouchDB on top of Nano
+- https://github.com/Wemotive-POC/couchdb-orm /202201/js
+  - 提供了example
+- https://github.com/jimpo/couch-monster /2012/js
+  - CouchDB ORM for Node.js
+- https://github.com/paperhive/octonom /201802/ts
+  - General-purpose models and collections with multi-database support, written in TypeScript
+  - Collections are specific to the database you use (e.g. MongoCollection, CouchCollection)
+- https://github.com/EternalDeiwos/model /201711/js
+  - PouchDB adapter for the json-document modelling framework
+  - https://github.com/anvilresearch/json-document /201705/js
+    - Model and manipulate data with ES6 classes, JSON Schema initialization and validation, JSON Patch, JSON Pointer, and JSON Mappings.
+
+- https://github.com/ermouth/covercouch /201902/js
   - CoverCouch implements per-document r/w/d ACL for CouchDB. 
   - CoverCouch acts as proxy – original CouchDB REST API kept untouched, but all requests to Couch – r/w/d, _changes feed, _view, _update, _list or other fn call, replication – everything is filtered.
+
+- https://github.com/ermouth/cloudwall /201903/js
+  - A platform for developing, testing, building, deploying and running CouchDB hosted apps.
 
 - https://github.com/thaibault/couchdb-web-node-plugin /202311/ts
   - A database server, model instance conflict handler, rest api, authentication, session management, schema validator and model relation guarantee for webNode.
@@ -801,6 +826,10 @@ modified: 2023-09-28T20:35:56.153Z
   - working: pagination, sorting(requires secondary indexes)
   - not working： filtering by column，full text search
 
+- https://github.com/marmelab/reactive-beers /201910/js
+  - an example application using CouchDB and PouchDB
+  - [CouchDB, The Open-Source Cloud Firestore Alternative? - DEV Community_201909](https://dev.to/juliendemangeon/couchdb-the-open-source-cloud-firestore-alternative-2gc0)
+
 - https://github.com/mradultiw/Wassup /202105/js
   - a client-server based desktop chat application written in Javascript
   - It has a central server and database which is used to connect clients together.
@@ -859,6 +888,8 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/flysteur-dev/pager /202104/js
   - Minimalist serverless RSS reader (PWA, React, CouchDB, Web worker, Offline persistance, Docker)
+- https://github.com/MalyanaSkyrim/docker-mern-app /201911/js
+  - Dockerize mern app, implement flux and implement offline-first pattern using pouchdb with couchdb
 
 - https://github.com/1-Platform/idea-hub /202201/ts
   - a place to share ideas and innovations

@@ -11,7 +11,7 @@ modified: 2023-03-11T15:37:59.134Z
 
 # blogs
 
-## [You might not need a CRDT, but server reconciliation _Replicache](https://pitch.com/public/a49fccb0-da65-4d64-966e-e519674d951f)
+## 📝 [You might not need a CRDT, but server reconciliation _Replicache](https://pitch.com/public/a49fccb0-da65-4d64-966e-e519674d951f)
 
 - replicache doesn't use crdt
   - it uses server reconciliation, technology from the late 2000s
@@ -162,4 +162,20 @@ modified: 2023-03-11T15:37:59.134Z
 - Two-Phase Set (2P-Set)
   - It combines a G-Set for adding with another for removing; the latter is colloquially known as the tombstone set. 
   - To avoid anomalies, removing an element is allowed only if the source observes that the element is in the set.
+
+## [Some notes on Local-First Development_202309](https://bricolage.io/some-notes-on-local-first-development/)
+
+- I see “local-first” as shifting reads and writes to an embedded database in each client via“sync engines” that facilitate data exchange between clients and servers. 
+  - Applications like Figma and Linear pioneered this approach, but it’s becoming increasingly easy to do. 
+
+- The benefits are multiple:
+  - Simplified state management for developers
+  - Built-in support for real-time sync, offline usage, and multiplayer collaborative features
+  - Faster (60 FPS) CRUD
+  - More robust applications for end-users
+
+- What Approaches are People Exploring Now?
+  1. Replicated Data Structures
+  2. Replicated Database Tables
+  3. Replication as a Protocol
 # more

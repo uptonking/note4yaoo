@@ -159,6 +159,7 @@ modified: 2023-07-26T11:23:38.282Z
 
 - https://github.com/Riim/cellx /ts
   - fast implementation of reactivity for javascript
+  - Important feature of cellx is that it tries to get rid of unnecessary calls of the event handlers as well as of unnecessary calls of the dependent cells calculation formulas. 
 
 - https://github.com/emberjs/data /ts
   - a lightweight reactive data library for JavaScript applications that provides composable primitives for ordering query/mutation/peek flows, managing network and cache, and reducing data for presentation.

@@ -14,7 +14,10 @@ modified: 2023-11-10T08:05:25.474Z
 
 - ## 
 
-- ## 
+- ## Almost 1 year ago I tried using WeakRef but had to abandon it because it caused bizarre bugs. 
+- https://twitter.com/gaforres/status/1723818760346259631
+  - Wrote a bunch of regression tests while diagnosing but ultimately rolled it back.
+  - Today I enabled them again and my tests all pass. So I guess I'm trying this again (behind a flag).
 
 - ## you can't async iterate over ReadableStream. It's only supported in Node, Deno, and Firefox
 - https://twitter.com/pilcrowonpaper/status/1723406435579834728

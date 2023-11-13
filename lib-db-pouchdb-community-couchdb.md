@@ -12,6 +12,30 @@ modified: 2023-10-29T02:23:35.064Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## CouchDB is great but it is NOT made for the web. 
+- https://twitter.com/rxdbjs/status/1542161610940243968
+  - The replication protocol is way to slow to be used in anything more then a prototype. It is made for server-server sync, not server-client.
+  - this is the first thing clients tell me when they try out the CouchDB replication in their production app. I use CouchDB myself on the backend and it is great especially when you work with microservices and you need to share data between them
+
+- What I meant is that its REST api makes it a natural fit for web applications, not to mention that it allows for the creation of couchapps by virtue of it acting like a web server. The client-server sync perf issue is another matter.
+
+- ## 🚀🔍 released our first (in a series) of #CouchDB-adjacent products: Structured Query Server __202306
+- https://twitter.com/janl/status/1674328745140690944
+  - It brings #SQL-querying (as in data retrieval, not manipulation) to almost all CouchDB users and extends CouchDB’s native querying ability significantly
+  - Here is a short behind-the-scenes thread about the motivations for making this. 
+
+- why doesn’t CouchDB do this?
+- One of the promises of CouchDB is seamless scalability. If you build an app that runs on a single-node CouchDB instance it works the same on a 3-node, 16-node or 48-node cluster. That’s a pretty bold claim, how does it do that?
+  - 👉🏻 The trade-off CouchDB makes here is that it does not have any features that support this scaling at the expense of just not having that many features.
+  - 👉🏻 You may have heard that large MySQL installations “do not use JOINs”. That happens for the same reason, SQL JOINs inherently are hard to scale. CouchDB as such just does not have a JOIN feature on its own.
+- We spent a good amount of time making it fast and proving it is fast so it is comparable with indexing speed, query speed and concurrency with CouchDB’s other querying facilities. 
+- Finally: this is a commercial product. We love Open Source and we contribute to CouchDB et. al. any chance we get, but we’d like to do even more, and products like Structured Query Server allow us to make #CouchDB better for everyone.
+- In our estimation, 95% of #CouchDB users run a deployment with 1–6 cluster nodes. Structured Query Server is for those 95% that can reach decent scale, but that have no need for CouchDB’s more extreme scaling options.
+
+- Finally a bit of a blast from the past. Used to be a few options for SQL in Couch but they where just a translation to Mango. I had success with joins in views, then abused the lists functions to get a nested JSON response.
+
 - ## [Structured Query Server: SQL Queries for Apache CouchDB | Hacker News_202307](https://news.ycombinator.com/item?id=36679556)
   - paid
 
@@ -197,16 +221,8 @@ modified: 2023-10-29T02:23:35.064Z
 
 - ## 
 
-
 - ## [Is there a git implementation that runs on top of couchdb? - Stack Overflow](https://stackoverflow.com/questions/6115519/is-there-a-git-implementation-that-runs-on-top-of-couchdb)
 - If you mean an implementation where the data of a Git repository is stored in a database rather than in filesystem, then there is some work done by Shawn Pearce in JGit to achieve this
-- 
-- 
-- 
-- 
-- 
-- 
-
 
 - ## 🆚️🌵🛋️ [Is Git more than a version control system? Reimplementing CouchDB with Git+Bash... | Hacker News_200904](https://news.ycombinator.com/item?id=573699)
 - I've been waiting for this. Ever since:

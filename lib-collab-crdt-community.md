@@ -25,7 +25,7 @@ modified: 2022-04-05T13:25:40.892Z
   - Libraries like automerge and yjs are just *implementations* that happen to be a CRDT. 
   - But the idea of a CRDT itself is much older. I've seen "proto-CRDTs" described as far back as 4 decades.
 - CRDTs are just abstract data types with operations that follow some algebraic laws, that guarantee they will converge in a sensible way. That's really it. They don't need to be complicated. They don't even need to be single record - a whole DB could itself constitute a CRDT.
-  - Agree. @CouchDB is a CRDT at the database level and at the document level. @FireproofStorge is one at the database level. Also, all Merkle-diffs are CRDTs.
+  - Agree. 🛋️ @CouchDB is a CRDT at the database level and at the document level. @FireproofStorge is one at the database level. Also, all Merkle-diffs are CRDTs.
 - I've been telling myself for months I was going to sit down and actually figure out if Couch was formally a CRDT - so I'll take your word for it!
   - I think part of the lesson here is that formality matters less than the behavioral characteristics. Never throw away data, allow conflicts to be surfaced to the user.
   - Damien’s og Couch has some additional behavioral characteristics, like fairness on the changes feed and group commit, that have mechanical sympathy with the append-only implementation and the Erlang scheduler. I haven’t seen anything else quite like it. 

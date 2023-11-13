@@ -195,6 +195,13 @@ modified: 2021-09-04T14:03:39.046Z
   - tag-based and time-based indexing of events
   - full-fledged support for event-sourcing, guaranteeing eventual consistency
   - aql: full-fledged support for event-sourcing, guaranteeing eventual consistency
+
+- https://github.com/cloudless-hq/atreyu /apache2/202309/js/svelte
+  - https://atreyu.dev/docs/
+  - Atreyu is an edge- and serviceworker first metaframework for personal, data centric web applications. 
+  - It supports real time data sync, offline usage and values minimal boilerplate with opt in to most features.
+  - Falcor is used for state management, caching, batching and data sharing. 
+  - Svelte views are bound to a virtual data object with a js proxy based store implementation. 
 # local-first-examples
 - https://github.com/kndwin/jikan
   - https://jikan-murex.vercel.app/

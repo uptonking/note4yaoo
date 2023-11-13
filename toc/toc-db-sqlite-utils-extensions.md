@@ -80,6 +80,11 @@ modified: 2022-11-04T14:20:37.172Z
 - https://github.com/x2bool/xlite /202210/rust
   - SQLite extension for querying Excel (.xlsx, .xls, .ods) files as virtual tables
 
+- https://github.com/0x6b/libgsqlite /MIT/202210/rust
+  - A SQLite extension which loads a Google Sheet as a virtual table.
+  - [Libgsqlite: A SQLite extension which loads a Google Sheet as a virtual table | Hacker News_202303](https://news.ycombinator.com/item?id=35208113)
+    - started as a fork of xlite
+
 - https://github.com/thombashi/sqlitebiter /202203/python
   - a CLI tool to convert CSV / Excel / HTML / JSON / Jupyter Notebook / LDJSON / LTSV / Markdown / SQLite / SSV / TSV / Google-Sheets to a SQLite database file.
 # search

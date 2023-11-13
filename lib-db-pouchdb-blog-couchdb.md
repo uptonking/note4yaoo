@@ -14,6 +14,14 @@ modified: 2023-10-07T17:30:26.998Z
   - [couchdb blog](https://blog.couchdb.org/)
 # blogs
 
+## 🌰 [CouchDB, The Open-Source Cloud Firestore Alternative? - DEV Community_201909](https://dev.to/juliendemangeon/couchdb-the-open-source-cloud-firestore-alternative-2gc0)
+
+- There is no per-document rights, only per-DB.
+  - A common recommendation around this is to use many (think thousands) of DBs, i.e. DB-per-user, and set up filtered replications to maintain each user's access. Unfortunately this has very poor performance - I found that for a small project (~150 users with a few admin roles) the CPU usage for replication became unwieldy.
+- Couchbase, does a much better job of security and rights, though has its own quirks. 
+  - It requires a secondary layer (called Sync Gateway) to give it a Couch-like API which can connect to PouchDB. 
+  - This also provides a very useful "sync function" that allows very smooth per-document rights. I'm mostly happy with it. 
+
 ## 📝 [A Veteran's(老兵) Guide to PouchDB](https://garbados.github.io/my-blog/veteran-pouchdb.html)
 
 ## [Local-first database: RxDB + PouchDB_202005](https://jaredforsyth.com/posts/local-first-database-rxdb-pouchdb/)
@@ -367,5 +375,7 @@ modified: 2023-10-07T17:30:26.998Z
 
 - The performance evaluation results showed that Magma outperformed both Couchstore and RocksDB engines in write-heavy YCSB workloads with datasets that were too large for memory.
 # more
+- [Database Deep Dives: CouchDB - IBM Blog_201907](https://www.ibm.com/blog/database-deep-dives-couchdb/)
+
 - [Building Multi-platform apps with React, Cordova, CouchDB/PouchDB, . NET, Kubernetes and Azure_202012](https://blog.adaptabi.com/building-multi-platform-apps-with-react-cordova-couchdb-pouchdb-net-kubernetes-and-azure-9c1a946ccc36)
   - [Part 1 — The Database. How to build a real time data sync, multi platform app with CouchDB and PouchDB_202012](https://blog.adaptabi.com/part-1-the-database-b7c575864407)

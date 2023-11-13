@@ -16,4 +16,7 @@ modified: 2022-12-16T01:57:20.630Z
 
 - ## 
 
-- ## 
+- ## [The pivot table, the spreadsheet's most powerful tool (2020) | Hacker News_202310](https://news.ycombinator.com/item?id=37820877)
+- 
+- 
+- 

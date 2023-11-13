@@ -12,8 +12,6 @@ modified: 2023-09-17T17:46:07.620Z
 # discuss-stars
 - ## 
 
-- ## 
-
 - ## do you use Postgres or MySQL at work?
 - https://twitter.com/jarredsumner/status/1710737550292423152
   - pg vs mysql = 0.56: 0.21

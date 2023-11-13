@@ -35,7 +35,7 @@ modified: 2022-08-21T10:03:57.063Z
   - create strong user interfaces with high quality web components.
   - 依赖stencil、tabulator-tables.v4
 # handsontable-extensions
-- https://github.com/laomu1988/handsontable
+- https://github.com/laomu1988/handsontable /201910/js
   - 在线表格编辑，可编辑公式、添加Object对象
 - https://github.com/handsontable/performance-lab
   - JavaScript performance tests for Handsontable

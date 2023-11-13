@@ -9,6 +9,15 @@ modified: 2023-03-21T09:03:05.361Z
 
 # guide
 
+# discuss-register
+- ## 
+
+- ## 
+
+- ## 终于备案完了，备到最后两个才知道可以一次提交多个。一个ECS只可以备5个，多了另外可以从淘宝买一个什么码。
+- https://twitter.com/haozes/status/1723949186985378276
+- 
+
 # discuss
 - ## 
 

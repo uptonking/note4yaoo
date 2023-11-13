@@ -48,6 +48,17 @@ modified: 2022-08-24T10:49:48.139Z
 # discuss
 - ## 
 
+- ## 
+
+- ## Any react virtualization libraries that don’t use offset based pagination? 
+- https://twitter.com/tantaman/status/1723773505584418910
+  - In other words: I want ‘getNextPage’ to be a function of the data in the current page, not a page number.
+  - Offsets aren’t stable for pagination. Someone could have deleted the entire first page. Then when someone who was already looking at the first page requests page two via “offset 100”, they miss a whole page of results.
+- Instead of arbitrary page slice number URL, use time span based URL.
+- Does this mean cursor-based or based on content of the last item? Seems like the cursor logic would need to be plumbed into the virtualization library
+  - Either but content of the last item so I can compute a cursor works.
+- I'm pretty sure tanstack virtual can do this using react-query useInfiniteQuery. The getNextPageParam gets all the context it would need to get your cursor key
+
 - ## An interesting virtualization strategy: just render some placeholder content and replace it with the actual content once it becomes visible.
 - https://twitter.com/fabiospampinato/status/1653083336510783489
   - See how much less lag my EmojiPicker virtualized like this causes. 

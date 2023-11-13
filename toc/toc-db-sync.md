@@ -242,6 +242,10 @@ modified: 2022-11-25T15:41:47.534Z
   - for `remoteStorage.local`, a choice is made between `RemoteStorage.IndexedDB`,  `RemoteStorage.LocalStorage` and `RemoteStorage.InMemoryCaching`, depending on what the environment (browser, node.js, Electron, WebView, or other) supports.
   - Data modules make your app and its data interoperable with other apps.
   - Conflicts are resolved by calling storeObject() or storeFile() on the device where the conflict surfaced. 
+  - https://twitter.com/JFriedensreich/status/1596884820352798725
+    - the problem with @remotestorage_ is that the storage model fits 
+      - neither the couchdb/json document well where you want a flat bucket with arbitrary sorted indexes 
+      - nor the file/blob where you want a DAG of content addressed storage like ipfs.
 
 - orbit /2.3kStar/MIT/202209/ts/概念特别多
   - https://github.com/orbitjs/orbit

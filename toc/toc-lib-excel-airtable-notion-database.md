@@ -235,6 +235,7 @@ modified: 2022-08-21T10:02:05.129Z
   - Columns can be filled by formula
   - A portable, self-contained format. Based on SQLite
   - Full Python syntax is supported, and the standard library.
+  - [Grist is a modern, relational spreadsheet | Hacker News_202311](https://news.ycombinator.com/item?id=38080951)
 - irelia /18Star/apache2/202211/ts/python
   - https://github.com/IreliaTable/irelia
   - https://ireliatable.github.io/irelia-web/

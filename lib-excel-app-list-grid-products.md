@@ -24,5 +24,8 @@ modified: 2022-08-21T10:38:26.289Z
 
 - [Causal: Modern Business Planning](https://www.causal.app/)
   - [Blog - Causal](https://www.causal.app/blog)
+
+- [Self-hosted visual software builder | FormBeaver](https://www.formbeaver.com/)
+  - "AirTable meets Webflow". It's basically a no-code database with drag-and-drop page builder
 # more
 - [北大团队搞出ChatExcel，说人话自动处理表格，免费且不限次使用-36氪](https://36kr.com/p/2158219573305094)

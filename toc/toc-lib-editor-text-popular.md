@@ -183,8 +183,12 @@ modified: 2022-11-08T19:04:00.289Z
   - Open source ChatGPT Text Editor
   - Inspired by SQL Workbench
 # flat/linear-editors
-- https://github.com/NickStefan/tome-editor /201512/js
+- https://github.com/NickStefan/tome-editor /201602/js
+  - A rich text editor written in javascript. 
+  - Content editable is treated as mere IO to the actual json data model.
+  - ContentEditable is the render output (for the text and cursor)
   - A hidden Input is the user input
+  - Javascript application code makes up the actual text editing engine that acts against an internal JSON structure
   - we use a 'range based' data model, and then serialize it into a tree only for rendering purposes.
 
 - https://github.com/simplygreatwork/textbase /202105/js

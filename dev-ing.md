@@ -15,7 +15,7 @@ modified: 2022-05-24T17:53:08.400Z
 https://meeting.tencent.com/p/9606972663
 #腾讯会议：960-697-2663
 
-# dev-xp
+# dev-features
 - dev-starter
   - css: open-props, glass-ui, 渐变字体
   - patterns: react, typescript
@@ -56,15 +56,13 @@ DEBUG=* npm install --legacy-peer-deps --no-audit --loglevel silly
 $$('[contenteditable]')
 ```
 
-- dev-goals 不能在产品中检验的技术不玩
-  - rich-editor: text/block
+- dev-goals 不能在产品中检验的技术不玩，注意产品化
+  - rich-editor: text/block, vanillajs
   - pivot-table: editable
   - collaboration, local-first database
   - flowchart/whiteboard/pdf/annotation/comment
   - 事项--截止日期(0730+休整)--重要性(hml/s1-s3)
-  - rich-editor-vanillajs
-  - pivot-table-grid--0828--h
-  - app-wiki-knowledge-base--0904
+  - apps-wiki-knowledge-base--0904
   - dashboard/webapp-template--0901
   - ui: zag/ark, ariakit, radix-ui, mantine
 
@@ -80,6 +78,7 @@ $$('[contenteditable]')
 - cms
   - outline, payloadcms, undb, nocobase
   - business-features, 盈利支持自身
+  - 不必执着于engine如db/excel-dataflow, 产品的形式大多cms
 - slate-wangeditor
   - model, view, sync, collab
   - slate-docs-examples
@@ -122,6 +121,7 @@ $$('[contenteditable]')
   - abstract-level, localforage
   - tupledb, tinybase
   - tiddlywiki
+  - falcor
 
 - collab-sync, partial-sync
   - string-crdt: ? list-crdt

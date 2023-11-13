@@ -231,6 +231,15 @@ modified: 2022-04-05T10:08:25.947Z
     - This PR implements an RGA CRDT + Peritext. It's also optimized for high speed with a relatively low memory footprint.
     - Under the hood, it uses the generic-btree crate to store the text content, the text ops, and the Peritext range anchors in a unified way.
 
+- https://github.com/loro-dev/loro /MIT/202311/rust
+  - https://loro.dev/
+  - a CRDTs(Conflict-free Replicated Data Types) library that makes building local-first apps easier.
+  - Support for `List` for ordered collections, LWW(Last Write Win) `Map` for key-value pairs,  `Tree` for hierarchical data, and `Text` for rich text manipulation, enabling various applications.
+  - Drawing inspiration from Peritext, Loro manages rich text CRDTs that excel at merging concurrent rich text style edits
+  - Moveable Tree: For applications requiring directory-like data manipulation
+  - track changes effortlessly as it records the editing history with low overhead.
+  - https://github.com/loro-dev/loro-examples-deno
+
 - https://github.com/serenity-kit/secsync /ts
   - https://www.secsync.com/
   - Is an architecture to relay end-to-end encrypted CRDTs over a central service.

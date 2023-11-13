@@ -457,6 +457,14 @@ modified: 2022-11-25T15:50:48.226Z
 - https://github.com/jepsen-io/maelstrom /clojure
   - a workbench for learning distributed systems by writing your own. 
   - It uses the Jepsen testing library to test toy implementations of distributed systems. 
+
+## distributed-utils
+
+- https://github.com/jepsen-io/jepsen /clojure
+  - https://jepsen.io/
+  - A framework for distributed systems verification, with fault injection
+  - A test is a Clojure program which uses the Jepsen library to set up a distributed system, run a bunch of operations against that system, and verify that the history of those operations makes sense. 
+  - Jepsen has been used to verify everything from eventually-consistent commutative databases to linearizable coordination systems to distributed task schedulers
 # db-js-utils
 - https://github.com/pubkey/event-reduce /202212/ts
   - https://pubkey.github.io/event-reduce/

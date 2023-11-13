@@ -211,6 +211,20 @@ modified: 2022-08-21T10:03:52.222Z
 
 - https://github.com/hung1503/SpreadSheet /js
   - An application used to fetch data from SPARQL api and display it on an Excel like table, built with React, JavaScript, and SCSS.
+# excel-engine
+- https://github.com/NickStefan/rixif /201602/js
+  - In early 2015, I had wanted to implement an entire excel experience in javascript.
+  - With React, Immutable.js, and old school vanilla flux, I got pretty far
+  - https://news.ycombinator.com/item?id=9942859
+    - I implemented a spreadsheet in react, flux, immutable, and used a command pattern
+    - I did not take the approach of cells actually observing each other. Instead I had a recursive function that worked from the entered cell 
+    - The hardest part was updating the string representations of the formulas when you insert a new column or row, and then re-updating each cell's dependencies arrays.
+    - One mistake I made was trying to implement the undo/redo to be totally reversable at every step. So every command stores the way to go both back and forward. In hindsight, I should have just stored forward commands and rebaked from the beginning when someone wanted to go back in time.
+    - Handsontable.js. That library has some major design flaws. Handsontable only takes simple 'number' or 'string' value for each cell
+
+
+
+
 # more
 - https://github.com/EqualTo-Software/SureSheet /202311/ts
   - We created this product to show what you can build with EqualTo Sheets, our "Spreadsheets as a service for developers" platform.

@@ -143,6 +143,9 @@ modified: 2022-08-21T10:02:27.788Z
 - https://gitee.com/zhouweng/mini_sheet /js
   - 我花了两周时间，通读了LuckySheet的源码，并且裁剪出了可执行的最小项目MiniSheet
   - [MiniSheet目录_舟翁的博客](https://blog.csdn.net/u010593516/article/details/113743472)
+  - https://github.com/dream-num/LuckysheetServer /java
+    - Luckysheet official Java version backend.
+    - [LuckysheetServer – Google Sheets-like realtime collaborative spreadsheet | Hacker News_202012](https://news.ycombinator.com/item?id=25261004)
 
 - fortune-sheet /1.4kStar/MIT/202208/ts
   - https://github.com/ruilisi/fortune-sheet
@@ -353,6 +356,7 @@ modified: 2022-08-21T10:02:27.788Z
   - http://ui.toast.com/tui-grid/
   - https://nhn.github.io/tui.grid/latest/tutorial-example26-infinite-scroll
   - 基于table标签实现，合并表头列实际样式为.tui-grid-lside/rside-area
+  - 不支持plugin
   - 支持sort, filter, 不支持group
   - 支持Merging-cell、支持级联列(column-relations)
   - 依赖xlsx、tui-date-picker、tui-pagination
@@ -437,6 +441,7 @@ modified: 2022-08-21T10:02:27.788Z
     - [Is there anyway I can implement Undo, Update button just after addRow button ?](https://github.com/nick-keller/react-datasheet-grid/discussions/221)
   - [V2 status update_202106](https://github.com/Equify/react-datasheet-grid/issues/37)
   - [Feature Roadmap_202106](https://github.com/Equify/react-datasheet-grid/issues/38)
+  - [Show HN: DataSheetGrid, an Airtable-like React component | Hacker News_202311](https://news.ycombinator.com/item?id=38228788)
 
 - react-base-table /1.4kStar/MIT/202303/js
   - https://github.com/Autodesk/react-base-table
@@ -491,6 +496,12 @@ modified: 2022-08-21T10:02:27.788Z
   - A ready-to-use component for spreadsheets in the browser
   - https://github.com/WebSheets/websheets-core /js
     - spreadsheet engine in JS for the browser and Node.
+
+- https://github.com/soquel/spreadsheet-in-js /201507/js
+  - http://soquel.github.io/spreadsheet-in-js/
+  - One idea to implement a spreadsheet in html and javascript.
+  - doesn't support more than 26 columns, no AA/AB/...
+  - written in pure js, no dependencies
 # excel-like-apps
 - https://github.com/infinite-table/infinite-react
   - https://infinite-table.com/
@@ -617,6 +628,12 @@ modified: 2022-08-21T10:02:27.788Z
   - formula公式几乎未实现
   - Use SQL syntax in formulas
   - Sync data via Remote Storage
+
+- https://github.com/audreyt/ethercalc /Artistic/202012/js/inactive
+  - https://ethercalc.net/
+  - Node.js port of Multi-user SocialCalc
+  - 依赖xlsx、jquery-ui、jszip
+  - Your data is saved on the web, and people can edit the same document at the same time. Everybody's changes are instantly reflected on all screens.
 # async/concurrency/worker
 - https://github.com/Magnithor/CanvasTable /202201/ts/inactive
   - https://magni.strumpur.net/CanvasTable/
@@ -884,6 +901,7 @@ modified: 2022-08-21T10:02:27.788Z
   - Exporter - Excel Export plugin
   - Formulas with Cross-sheet references
   - Konva Grid is a pure renderer, that will work with many third-party table plugins
+  - [Show HN: React SpreadSheet – Google Sheets-like performance | Hacker News_202007](https://news.ycombinator.com/item?id=23930268)
 
 - canvas-datagrid /BSD/636Star/202202/js/支持vanillajs和web-comp
   - https://github.com/TonyGermaneri/canvas-datagrid
@@ -951,8 +969,8 @@ modified: 2022-08-21T10:02:27.788Z
   - free for all non-commercial purposes since 7.0
   - 不支持协作
   - 支持undo，[Q: Possible to combine multiple actions into single undo/redo step?](https://github.com/handsontable/handsontable/issues/7324)
-  - https://github.com/handsontable/handsontable/releases/tag/7.0.0
   - [Handsontable drops open source for a non-commercial license_201903](https://github.com/handsontable/handsontable/issues/5831)
+    - https://github.com/handsontable/handsontable/releases/tag/7.0.0
     - [Handsontable v7 and later versions are fully commercial so it really depends on your case](https://twitter.com/handsontable/status/1164198101726433282). 
     - If you want to fully integrate it with your software while maintaining the OSS license, then your only option is to use v6.2.2 - the last one released under the MIT license.
   - forks
@@ -1203,12 +1221,17 @@ modified: 2022-08-21T10:02:27.788Z
   - originally forked from @handsontable/formulajs version 2.0.2 (released in January 2020). There is no regression, only fixes and new functions since the fork.
   - forks
   - https://github.com/handsontable/formula.js /MIT/202001/js
+  - https://github.com/davidpolberger/formulajs /201801/js
+    - improved error handling, cutting down on dependencies
   - https://github.com/jspreadsheet/formulajs
   - https://github.com/sutoiku/formula.js
 - https://github.com/vogtb/spreadsheet /MIT/201807/ts
   - TypeScript/javascript spreadsheet parser, with formulas.
   - This is largely a re-write of Handsontable's https://github.com/handsontable/ruleJS, and https://github.com/sutoiku/formula.js/.
   - The parser was derived from Handsontable's, and many of the formulas were created with FormulaJS's formulas as a reference point.
+
+- https://github.com/hoplon/javelin /clojure
+  - Spreadsheet-like dataflow programming in ClojureScript.
 
 - https://github.com/wx-chevalier/excel.ts /ts
   - excel.ts 是基于 TypeScript 编写的前端 Excel 综合解决方案，包含了 POJO Schema 定义、多框架支持的 Web 端渲染以及 Node 导出服务

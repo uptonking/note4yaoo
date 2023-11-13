@@ -231,6 +231,10 @@ modified: 2022-08-21T10:14:49.838Z
   - Add a `caption` that a screen reader will read and a `scope` tag for each cell. 
   - For more details, the a11y project has an article about how to create accessible data tables.
 # more
+
+- [A Relational Spreadsheet](https://kevinlynagh.com/relational-spreadsheet/)
+  - [A Relational Spreadsheet | Hacker News_202302](https://news.ycombinator.com/item?id=34946189)
+
 - [A React Data Grid Template Powered By ElasticSearch](https://medium.appbase.io/a-react-data-grid-template-powered-by-elasticsearch-a-react-data-grid-template-powered-by-10b21609b67b)
   - build a data grid app from ground up using ReactiveSearch, react-virtualized, and ElasticSearch.
 - [How to Make a Data Grid Scale_201708](https://www.smartly.io/blog/how-to-make-a-data-grid-scale)

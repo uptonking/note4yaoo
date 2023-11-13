@@ -62,3 +62,33 @@ modified: 2023-11-12T16:48:11.308Z
   - There's plenty of obvious inefficiency in some of these reactions that show up in profiling, like O(DOM nodes) or O(text spans) scans that recompute something on the inside of their loop or could be memoized more – but those aren't new.
 
 - I wonder if there is an equivalent of cache blocks for v8; jump between scopes too much and the “context switching” starts to dominate?
+
+- ## [Spreadsheet is a software development paradigm | Hacker News_202104](https://news.ycombinator.com/item?id=26645253)
+- 😩 To add to (usual/frequent) spreadsheet software as a database cons:
+- No who when what
+- No formula/value separation: Only trees, no cycles
+- No named references 
+- No (easy) functions
+- No (easy) SQL-like
+  - Views
+  - Triggers
+  - Default values
+  - Constraints: Advisory at least, No linter
+- No birdeye for a schema
+- Shit typed
+  - Even if you insist
+- Theoretically these are all problems with Excel, not with spreadsheets in general.
+
+- Excel is just reactive programming. One thing that I always thought was missing was the ability to do looping until a condition is met in Excel. It’s actual very possible if you enable “iterative calculation” in the settings. This will allow you to walk data structures and perform complex calculations until you reach a goal.
+
+- I think two stated downsides have been somewhat addressed in excel in recent years:
+  - The “high code duplication” downside has definitely been addressed in recent versions of excel, first with dynamic array formulas (which let you apply one formula to a number of cells, which can resize according to the data with use of unique/filter) and then with new expressions such as Let / Lambda.
+  - Secondly Vlookup has been replaced with the faster, simpler and easier to read Xlookup. Using this with named ranges and dynamic arrays
+
+- ## [How to implement a spreadsheet | Hacker News_201507](https://news.ycombinator.com/item?id=9940126)
+- If you're interested in spreadsheets, don't miss sc, the Standard Unix Spreadsheet™ which nobody has ever heard of, originally written by James Gosling in the 1980s and is in Debian
+- Emacs comes with a couple of built in spreadsheets: ses-mode supports emacs lisp formula in cells, org-mode tables allow simple formulas in table cells.
+
+- You can use OpenDocument Format files. These are supported by most spreadsheet implementations. It comes in two variants: 1) a zip file with XML inside 2) a single XML file
+
+- Every time I read about reactive patterns, I hope that some data dependency or cells like behavior is included, and every time it's just some thin wrapper around basic pub/sub.

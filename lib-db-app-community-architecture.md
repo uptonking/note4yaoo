@@ -94,7 +94,25 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
-- ## 
+- ## 🐛 The biggest problem with shared-storage OLTP is that the data volume is limited by single machine. 
+- https://twitter.com/YingjunWu/status/1723832509098766801
+  - Some big customers moved away from Aurora to CRDB/TiDB because they felt frustrated when hitting the storage limit. 
+  - But most companies don’t store so much data in OLTP DBs and won’t hit the limit.
+
+- 🤔 This is not a problem for shared storage, you can split the data into different storage nodes via sharding. Where each shard is a shared storage architecture (multi tenant) and lives on its own machine - CRDB does this.
+  - Aurora could theoretically do this as well. The storage limit has nothing to do with the shared storage architecture.
+
+- But what you said is not quite true -- Oracle RAC is there. Also we need to look and see whether the issue is raw storage capacity or or read througput/tps or write throughput/tps, etc., each has its own answers.
+- Haven’t studied Oracle RAC before, but the 128 TB hard limit is a pain for Aurora.
+  - Aurora has limitations for sure but most workloads don’t need a lot and secondly you can add more clusters. But RAC I believe scales to multiple PBs.
+- The storage capacity is not a problem for those who run on Aurora. The last time I checked it was possible to scale beyond 60 TB. The inability to scale write workloads across zones and regions is what shared-storage architecture doesn’t deal with. That’s why Amazon turns to DynamoDB to scale both reads & writes. But that should change soon once Amazon introduces a distributed shared-nothing version of Aurora
+- 
+- 
+- 
+
+- ## what is the reason in your mind that none of the database vendors are able to crack the moat(城壕；护城河) of Oracle and RAC, in a meaningful way?  I am curious to hear your thoughts.
+- https://twitter.com/sv_techie/status/1723777534406332517
+- Snowflake and Databricks in the analytics space. OLTP is tricky, hard to build, hard to earn developer trust. That's why @neondatabase bets on Postgres and strive to become default cloud Postgres
 
 - ## There has been several startups building an operational relational databases focused on OLTP with a shared nothing architecture. 
 - https://twitter.com/nikitabase/status/1723579854266966399

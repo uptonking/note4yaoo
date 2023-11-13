@@ -83,11 +83,16 @@ modified: 2022-12-02T11:15:15.257Z
 - nonsyncable/local-only tables for config/temporary-data
   - local documents解决了此问题
 
+- auth
+  - auth per-doc
+
 - binary-attachment
   - video
   - 方案参考: sqlite-文本 + gridfs-文件
   - 实现类似mongodb-gridfs/pg-large-object/s3的系统，处理TB规模的文件，超大规模的文件建议自研方案
   - fossil受到sqlite对blob支持为最大2G的限制
+
+- continue to rearchitect couchdb on top of foundationdb
 
 - sqlite [Database File Format](https://www.sqlite.org/fileformat2.html)
 # dev

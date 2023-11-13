@@ -14,6 +14,31 @@ modified: 2023-05-21T15:44:39.196Z
 
 - ## 
 
+- ## [subset: Excel 2.0 – Is there a better visual data model than a grid of cells? | Hacker News_202203](https://news.ycombinator.com/item?id=30868696)
+- UltOrg is roughly "spreadsheets re-built atop the RDBMS datamodel". The UI supports nested joins, aggregations, filtering, for both display and data update.
+  - The result is essentially a general purpose app that can display just about any Microsoft Access UI that would been written in the 90s/2000s to provide editable views into relational data.
+
+- 
+- 
+- 
+- 
+- 
+
+- ## [Excel Labs, a Microsoft Garage Project | Hacker News_202305](https://news.ycombinator.com/item?id=36081851)
+- Some things in Excel have not improved since 2003, that should be fixed before toying with "AI" . For example, when importing a CSV
+
+- The universal language and portability of a spreadsheet is really hard to beat.
+
+- ## 🪟 [Show HN: DataSheetGrid, an Airtable-like React component | Hacker News_202311](https://news.ycombinator.com/item?id=38228788)
+- Two things I ran into:
+  - Doesn't have column resizing built in (not a deal breaker for my use)
+  - I wanted to disable the "select row or column by clicking in header or gutter" functionality. 
+- This is nice, but it's missing a few of the killer features from things like Airtable or MUI DataGrid: sorting/filtering, row/column pinning, aggregation rows, pivoting, etc.
+  - DSG was not built to compete on features, it was built to have the best UX/UI possible and be extensible. So you would have to implement those parts yourself.
+- it looks very promising. It has range selection out of the box (a pro feature in some alternative solutions) and you can customize cells. 
+- I wish every new thing coming out wasn’t React based
+- DSG is not meant to manage your data like tanstack (filtering, sorting, paginating...), it is meant to give your users the best possible UI / UX to edit data (which tanstack does not do since it is headless). But those two work very well together actually, I should probably write an example.
+
 - ## open sourcing my blazing fast DOM-grid
 - https://twitter.com/GabrielPeterss4/status/1658546768240599041
 - https://github.com/gabrielpetersson/fast-grid

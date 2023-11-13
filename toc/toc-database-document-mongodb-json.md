@@ -166,6 +166,13 @@ modified: 2022-11-03T04:14:11.987Z
   - Most of the databases uses B-Tree (MongoDB) or B+Tree (CouchDB, InnoDB, MariaDB, MySQL).
   - By default. Everything except specifically excluded field are indexed. Nested object are also indexed. Optional support for uniques key provided.
 
+- https://github.com/losfair/RefineDB /202109/rust/inactive
+  - A strongly-typed document database that runs on any transactional key-value store.
+  - Currently supported backends are:
+    - FoundationDB for distributed deployment.
+    - SQLite for single-machine deployment.
+    - A simple in-memory key-value store for the web playground.
+
 - redux-database /18Star/MIT/202005/ts/NoDeps
   - https://github.com/nerdgeschoss/redux-database
   - https://nerdgeschoss.github.io/redux-database

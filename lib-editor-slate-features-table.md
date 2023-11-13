@@ -9,7 +9,7 @@ modified: 2023-02-27T19:07:31.111Z
 
 # guide
 
-- 版本 cms first, then excel
+- 研发方向 cms first, then excel
   - viewer: 仅展示，类似tanstack-table
   - editing: 支持编辑/undo，类似o-spreadsheet
   - 支持hide header
@@ -26,6 +26,10 @@ modified: 2023-02-27T19:07:31.111Z
   - dataframe
   - open table format
   - kappa + lsm => kdtree/r-tree: 表格数据不必用kdtree，选区和索引均可用kdtree
+
+- excel-table vs cms-table
+  - excel公式的支持
+  - cms附件的支持
 
 - non-goals
   - rest-api

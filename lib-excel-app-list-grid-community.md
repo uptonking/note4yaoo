@@ -14,7 +14,17 @@ modified: 2022-08-21T10:15:01.987Z
 
 - ## 
 
-- ## 
+- ## [Use Spreadsheets Everywhere | Hacker News_202108](https://news.ycombinator.com/item?id=28049255)
+- 
+- 
+
+- ## [Excel Never Dies | Hacker News_202103](https://news.ycombinator.com/item?id=26386419)
+- 
+- 
+
+- ## [Ask HN: Easiest low-code way to convert spreadsheet to app? | Hacker News_202208](https://news.ycombinator.com/item?id=32331063)
+- 
+- 
 
 - ## Interesting side effect of the FLIP animation technique when applied to table rows: it looks as if its not the rows themselves that change position, but the cells within them. I'm not sure if I like I better or not
 - https://twitter.com/fabiospampinato/status/1718398614983078040

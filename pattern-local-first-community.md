@@ -68,7 +68,18 @@ modified: 2023-09-13T20:24:41.516Z
 
 - ## 
 
-- ## 
+- ## The three main approaches people are taking with local-first are:
+- https://twitter.com/kylemathews/status/1701663361145135126
+  - crdt datatypes: replicated data structures like yjs and Jazz w/ js data types that sync
+  - crdt+table: Replicated Database Tables that sync Postgres to SQLite in client
+  - The unique "Replication as a Protocol" approach Replicache is taking
+- The tools really shine for real-time, multiplayer, and offline use cases.
+
+- Also replicated DB like CouchDB and Couchbase has had for years
+
+- 
+- 
+- 
 
 - ## [Show HN: ElectricSQL, Postgres to SQLite active-active sync for local-first apps | Hacker News_202309](https://news.ycombinator.com/item?id=37584049)
 - Conceptually sounds like this is what Firebase, Couchbase Lite, and Mongo Reach do in the NoSQL world.

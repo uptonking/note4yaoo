@@ -9,7 +9,6 @@ modified: 2022-08-21T09:57:42.969Z
 
 # guide
 
-
 - fans
   - 图图
 # discuss-stars
@@ -41,12 +40,8 @@ modified: 2022-08-21T09:57:42.969Z
 - ## 
 
 - ## 
-
-
-
 # discuss
 - ## 
-
 
 - ## 各位好，鉴于目前Univer新版开发进度的问题，大家都在使用Luckysheet进行相关的应用系统的开发，
   - 但是由于版本bug比较多，给大家都带来很多困扰，为了能够更好服务大家，现团队会空出部分人力进行支持，帮助项目顺利开展。团队会根据大家报名顺序进行优先沟通交流。
@@ -138,7 +133,12 @@ modified: 2022-08-21T09:57:42.969Z
   - 永中有web版本
   - onlyoffice有web版本
 
-- ## [hacker news: Luckysheet, an open-source spreadsheet ](https://news.ycombinator.com/item?id=23994619)
+- ## 10 powerful Google Sheets formulas advanced users should know
+- https://twitter.com/benlcollins/status/1511054363363524621
+- 1) QUERY
+- 2) SPARKLINE
+
+- ## 🚀 [Luckysheet, an open-source spreadsheet | Hacker News_202007](https://news.ycombinator.com/item?id=23994619)
 - One reason I prefer Apple Numbers to Excel is that in Numbers you arrange tables on a canvas. 
   - The tables can refer to each other. 
   - I think it makes it easier to work with, for example, an input table and an output table because they are separate entities and not just different ranges on the same grid. 
@@ -157,11 +157,7 @@ modified: 2022-08-21T09:57:42.969Z
 - The way I solved this in my own (not finished) web-based spreadsheet app is to have a scrollable div positioned over the canvas and to size the transparent div contents to the width/height of the sheet. Then I register scroll event handlers and redraw the canvas appropriately when the scroll changes. I think this is how Google sheets works, although it's a bit difficult to tell for sure.
 - It seems difficult for a canvas-based spreadsheet to do native scrolling. The DOM is drawn in advance and there is no cost to scroll. But canvas is different, every frame of scrolling means calculation. In this case, the use of native scrolling will cause jamming and poor experience.
 
-- ## 10 powerful Google Sheets formulas advanced users should know
-- https://twitter.com/benlcollins/status/1511054363363524621
-- 1) QUERY
-- 2) SPARKLINE
-
+- With infinite scrolling, you can also just set the container to be absolutely huge, and use the scroll position to index. This works especially well for computed layouts like tables, where culling rows and columns is a simple scan over run lengths of row and column sizes. Likewise if you know things will be inserted at the top of a scroll view, you can pre-allocate above the “top”. The one thing that is hard to do well (but less hard now with new CSS features I think) is scrolling that feels good but always ends with the border of a cell being aligned to an edge of the scroll view (the Excel behaviour).
 # discuss-collab
 - ## 
 

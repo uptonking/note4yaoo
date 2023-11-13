@@ -310,18 +310,27 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/qualiancy/breeze-dag /201211/js
   - Async flow control for directed-acyclic-graph iteration.
 
+## dataflow
+
+- https://github.com/hoplon/javelin /202310/clojure
+  - Spreadsheet-like dataflow programming in ClojureScript
+
+- https://github.com/Day8/re-frame /202311/clojure
+  - a ClojureScript framework for building user interfaces. It has a data-oriented, functional design.
+
 ## excel/sheet-formula
 
-- https://github.com/snapview/sunrise /ts
+- https://github.com/snapview/sunrise /MIT/202206/ts
   - Spreadsheet-like dataflow programming in TypeScript
   - Sunrise provides a spreadsheet-like computing environment consisting of source cells and formula cells and introduces the Cell interface to represent both
 
 - https://github.com/taggon/tiny-formula /ts/NoDeps
   - A toolset for parsing excel-like formula and calculating with custom functions.
 
-- https://github.com/elis/djit /js
+- https://github.com/elis/djit /202005/js/inactive
   - Javascript Spreadsheet Engine
   - Create an Excel-like object in Javascript that automagically computes itself whenever updated.
+  - [I made a Spreadsheet engine in Javascript](https://www.reddit.com/r/javascript/comments/g4o075/i_made_a_spreadsheet_engine_in_javascript/)
 # stream-examples
 - https://github.com/nagix/chartjs-plugin-streaming
   - Chart.js plugin for live streaming data

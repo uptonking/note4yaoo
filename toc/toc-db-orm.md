@@ -171,6 +171,10 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/js-data/js-data /202201/js/inactive
   - JSData is a framework-agnostic, datastore-agnostic ORM for Node.js and the Browser.
   - Adapters allow JSData to connect to various data sources such as Firebase, MySql, RethinkDB, MongoDB, localStorage, Redis, a REST API
+
+- https://github.com/paperhive/octonom /201802/ts
+  - General-purpose models and collections with multi-database support, written in TypeScript
+  - Collections are specific to the database you use (e.g. MongoCollection, CouchCollection)
 # orm-alternatives
 - https://gitlab.com/dmfay/massive-js /js
   - a data mapper for Node.js that goes all in on PostgreSQL, and embraces the power and flexibility of SQL itself and of the relational metaphor

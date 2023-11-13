@@ -15,7 +15,11 @@ modified: 2021-01-11T12:10:50.900Z
 
 - ## 
 
-- ## 
+- ## Midtown是市区？俺总是以为Downtown才是市区，可能我理解错了？
+- https://twitter.com/stephenzhang233/status/1723738986328571916
+- downtown这个词很古老, 以前的城市大都依水而建, 水边的地势最低也最繁华(因为要取水), 涨水的时候也是最危险的, 因此有钱人都住在地势高的uptown, downtown就是人多热闹并且穷的区. midtown的意思指的就是中心, 跟上面两个没关系.
+- 看城市大小，小城市的市区就是 downtown ，中型城市（比如亚特兰大）就有 downtown 和 midtown ，大型城市就有很多了，还有 uptown 什么的。（我自己归纳总结的
+- 还是英国的city center好理解
 
 - ## latency numbers you should know
 - https://twitter.com/alexxubyte/status/1721203706555998345

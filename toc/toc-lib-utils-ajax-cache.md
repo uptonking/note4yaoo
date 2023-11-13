@@ -20,12 +20,9 @@ modified: 2023-02-07T09:43:01.972Z
   - a normalized redux store and easy object management.
   - redux-db uses internal indexes to speed up lookups and is quite fast at the current state.
   - inspired by libraries such as normalizr and redux-orm.
-
 # query-react
 - https://github.com/data-client/rest-hooks
   - Normalized state management for async data. Safe. Fast. Reusable.
-
-
 # fetch/axios
 - https://github.com/sindresorhus/ky /ts
   - Tiny & elegant JavaScript HTTP client based on the browser Fetch API
@@ -41,4 +38,14 @@ modified: 2023-02-07T09:43:01.972Z
 
 - https://github.com/developit/redaxios /js
   - The Axios API, as an 800 byte Fetch wrapper.
+
+- https://github.com/Netflix/falcor /202105/js/inactive
+  - http://netflix.github.io/falcor
+  - A JavaScript library for efficient data fetching
+  - Falcor lets you represent all your remote data sources as a single domain model via a virtual JSON graph. You code the same way no matter where the data is, whether in memory on the client or over the network on the server.
+  - A JavaScript-like path syntax makes it easy to access as much or as little data as you want, when you want it. 
+  - Falcor transparently handles all network communications, opportunistically batching and de-duping requests.
+  - [Is Falcor being actively maintained?](https://github.com/Netflix/falcor/issues/1016)
+    - there are many mentions of netflix moving away from falcor. while they certainly have their reasons falcor still has its place and has no real alternative in many usecases where graphQL is not a good fit!
+    - graphQL is too complex to automatically map to simple plain old js object interactions plus i dont want to write schemas for everything up front 
 # more
