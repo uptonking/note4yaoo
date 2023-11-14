@@ -133,4 +133,12 @@ modified: 2021-09-29T13:23:09.969Z
   - https://ubugeeei.github.io/chibivue/en/
   - minimal Vue.js v3 core implementations (reactivity, virtual DOM, component, compiler (template, SFC))
   - This project began in February 2023 with the goal of simplifying the understanding of Vue's core implementation.
+# react-ecosystem
+- https://github.com/atlassubbed/atlas-relax /201904/js
+  - Minimal, powerful declarative VDOM and reactive programming library.
+  - This tiny 2.5KB (.min.gz) engine lets you define data-driven apps using declarative components. Relax combines ideas from Meteor, Mithril and Preact into one simple library.
+  - https://github.com/atlassubbed/atlas-munchlax
+    - Mobx clone
+  - https://github.com/atlassubbed/atlas-mini-dom
+    - React clone
 # more

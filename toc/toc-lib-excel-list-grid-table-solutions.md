@@ -89,9 +89,19 @@ modified: 2023-11-12T06:25:03.307Z
   - https://github.com/DataGridXL/DataGridXL
   - Vanilla Javascript data grid with Excel-like controls
   - 只开源了源码编译后的bundle，不友好
+  - https://github.com/DataGridXL/DataGridXL2 /432Star/linkware/202303/js/canvas
+    - https://www.datagridxl.com/
+    - Excel-like Experience for Web Apps 
+    - The performant & reliable Vanilla Javascript data grid with Excel-like controls
+    - 开源了压缩后的代码
+    - v3 ing
+    - [Show HN: Datagridxl2.js – Fast Excel-like data table library | Hacker News_202204](https://news.ycombinator.com/item?id=30919257)
 
 - DHTMLX Spreadsheet /GPLv2/26Star/201909/js
   - https://dhtmlx.com/
+  - https://github.com/DHTMLX/dhtmlx-suite-gpl
+    - 仅公开打包后未压缩的代码
+    - Standard edition
   - https://github.com/DHTMLX/gantt
   - To use dhtmlxSuite in non-GPL projects (and get Pro version), please obtain Commercial/Enterprise License
   - 只开源了源码编译后的bundle，不友好
@@ -100,4 +110,15 @@ modified: 2023-11-12T06:25:03.307Z
   - https://www.sencha.com/
   - 基于Ext JS实现
   - 基于div实现表格，单元格中可包含canvas图表
+
+- Webix SpreadSheet 产品线齐全，包括表格、透视表、看板、文件管理器、gantt
+  - https://webix.com/spreadsheet/
+  - a customizable web widget which offers all functions of Excel-style spreadsheets
 # more
+- [Alternatives to Handsontable and ag-Grid - DZone](https://dzone.com/articles/alternatives-to-handsontable-and-ag-grid)
+  - DHTMLX JavaScript Components
+  - Webix Widgets
+  - Syncfusion Essential JS 2
+  - Ignite UI components
+  - Kendo UI for jQuery
+  - GrapeCity’s JavaScript UI Components

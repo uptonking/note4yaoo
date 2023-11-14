@@ -30,6 +30,12 @@ modified: 2023-09-16T17:28:29.873Z
   - https://github.com/dahjelle/dataquery
     - Forked the query language from Datascript, and changed to only utilize external indexes in an asynchronous manner.
 
+- https://github.com/vlcn-io/materialite /202311/ts
+  - Differential Dataflow & Incremental View Maintenance for JavaScript
+  - You have a pipeline: `data.map(...).filter(...).reduce(...)` which you don't want to re-run from scratch each time something in data changes. 
+  - Instead you'd like to only run against the data that changed and have your result incrementally updated. That's what this is for.
+  - [Materialite / Matt | Observable](https://observablehq.com/d/3244e97e61ba5bd1)
+
 - https://github.com/mozilla/mentat /rust/inactive
   - https://mozilla.github.io/mentat/
   - A persistent, relational store inspired by Datomic and DataScript

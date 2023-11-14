@@ -344,10 +344,10 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/jotaijs/jotai-signal
   - 支持jotai v1和v2
 
-- https://github.com/starbeamjs/starbeam
+- https://github.com/starbeamjs/starbeam /MIT/202310/ts
   - Starbeam is a new kind of reactive library. 
   - It interoperates natively with React state management patterns, Svelte stores, the Vue composition API, and Ember's auto-tracking system.
-  - Use normal JavaScript APIs and access patterns. 
+  - Use normal JavaScript APIs and access patterns.
 
 - https://github.com/maverick-js/signals /ts
   - a tiny (~1kB minzipped) library for creating reactive observables via functions called signals. 

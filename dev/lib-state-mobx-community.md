@@ -59,7 +59,12 @@ const fc = memo(() => {
 # discuss
 - ## 
 
-- ## 
+- ## MobX now supports standard decorators! 
+- https://twitter.com/mweststrate/status/1724428973063700705
+  - 👉 Clean (no constructor code)
+  - 👉 30% less overhead
+  - 👉 Works out of the box in TypeScript
+  - 👉 Some cool news around MobX & signals!
 
 - ## #MobX decorators are 32% faster when using standard decorators, compared to legacy decorators. Yay for standardisation!
 - https://twitter.com/mweststrate/status/1719828168075366452

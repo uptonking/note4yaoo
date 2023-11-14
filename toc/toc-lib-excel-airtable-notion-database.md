@@ -244,11 +244,14 @@ modified: 2022-08-21T10:02:05.129Z
   - Python formulas. Full Python syntax is supported, and the standard library.
   - A portable, self-contained format based on SQLite
 
-- quadratic /1.5kStar/MIT/202304/python
+- quadratic /1.5kStar/MIT/202304/rust/ts
   - https://github.com/quadratichq/quadratic
-  - https://quadratichq.com/
+  - https://www.quadratichq.com/
   - Quadratic is a Web-based spreadsheet application that runs in the browser and as a native app (via Electron).
   - Our goal is to build a spreadsheet that enables you to pull your data from its source (SaaS, Database, CSV, API, etc) and then work with that data using the most popular data science tools today (Python, Pandas, SQL, JS, Excel Formulas, etc).
+  - WebGL Grid (pinch and zoom grid)
+  - Python, Pandas Support (WASM)
+  - [Show HN: Quadratic – Open-Source Spreadsheet with Python, AI (WASM and WebGL) | Hacker News_202304](https://news.ycombinator.com/item?id=35456509)
 
 - refine /6.5kStar/MIT/202212/ts
   - https://github.com/refinedev/refine

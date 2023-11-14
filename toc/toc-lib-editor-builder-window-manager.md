@@ -270,7 +270,7 @@ modified: 2021-01-08T11:48:16.590Z
   - https://tomkp.github.io/react-split-pane
   - Split-Pane component, can be nested or split vertically or horizontally!
 # resize-grid-layout
-- muuri /10.1kStar/MIT/202107/js
+- muuri /10.6kStar/MIT/202107/js/inactive
   - https://github.com/haltu/muuri
   - https://muuri.dev/
   - a JavaScript layout engine that allows you to build all kinds of layouts 

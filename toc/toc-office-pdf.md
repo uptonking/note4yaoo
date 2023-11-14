@@ -134,6 +134,9 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/GoDinRyu/editor.md-electron /js
   - 基于Editor.md的markdown编辑客户端，支持docx转化md，导出到pdf文档。
 # generator
+- https://github.com/rkusa/pdfjs /202309/js
+  - A Portable Document Format (PDF) generation library targeting both the server- and client-side.
+
 - https://github.com/carboneio/carbone /js
   - simple report generator, from JSON to pdf, xslx, docx, odt...
   - Powerful report generator in any format PDF, DOCX, XLSX, ODT, PPTX, ODS, XML, CSV using templates and your JSON data as input !

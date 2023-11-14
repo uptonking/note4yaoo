@@ -143,3 +143,16 @@ modified: 2023-02-05T18:40:43.969Z
   - Access to underlying database transactions
 
 - Sweet, thanks. We're thinking of migrating from Directus, because it doesn't handle S3 images very well (all are streamed through the directus server rather than with S3 links). Currently just using it as a PIM for ecommerce data, but will hopefully be powering our new website and potentially B2B web store
+
+- ## 🆚️ [Self-hosted headless cms - WEBINY OR PAYLOAD? : opensource](https://www.reddit.com/r/opensource/comments/zbq7z9/selfhosted_headless_cms_webiny_or_payload/)
+- I'm part of the core team at Payload and I want to get your thoughts on how to show the security standards for Payload.
+  - We do a bunch of best practices that anyone building their own Node/Express app should. 
+  - The auth that we have is built to a higher standard than some of other competitors as it uses http only secure cookies.
+  - If you dig a little you'll find that other headless CMS are not doing this meaning that any javascript code in your project could have access to the user state where it really shouldn't. 
+  - We have other cool things in place that make it easy to turn on user verification, locking accounts, API rate limiting, CSRF and CORS.
+- Regarding security, BCMS provides, out of the box, even in its (generous) free plan, fine-grained control over the API keys and user roles. It offers enterprise-grade permissions features, making it super secure at no cost. Other than the server.
+
+- https://www.reddit.com/r/selfhosted/comments/zbp1z7/exploring_webiny_and_payload_for_a_web_project/
+- Webiny co-founder here. 
+  - If you're looking for a system that's not developer dependant, we are just wrapping up several new features on the Page Builder side of our product, making it much more powerful and easier to use and in Q1/2023 
+  - we'll be launching also the ability to build fully dynamic pages by combining our Page Builder with our Headless CMS. Happy to share more details if you're interested.

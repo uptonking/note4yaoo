@@ -955,6 +955,12 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/IvanAprea/react-client-couchdb 202206/ts
   - sudo docker-compose -f docker-compose.dev.yml
 
+- https://github.com/NoteSelf/NoteSelf.github.io /202005/js/inactive
+  - https://noteself.org/
+  - built on top of TiddlyWiki, a powerful, free, highly customizable and open-source personal wiki.
+  - We took the best of it, it's powerful customization system, and mixed it with one of the best embedded databases available, PouchDb, to bring in the synchronization capabilities you need.
+  - This TiddlyWiki-variant stores documents in the browser (pouchdb) and can sync to a couchdb-server.
+  - 
 - https://github.com/cloudless-hq/atreyu /js/svelte
   - https://atreyu.dev/docs/
   - an edge- and serviceworker first metaframework for personal, data centric web applications. 
@@ -970,11 +976,6 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/patgoddard/codeMate /201404/js
   - A code editor for online or offline use using the chromium or chrome browser. 
   - It uses AceEditor, Pouchdb and an optional remote couchdb.
-
-- https://github.com/NoteSelf/NoteSelf.github.io /202005/js/inactive
-  - https://noteself.org/
-  - built on top of TiddlyWiki, a powerful, free, highly customizable and open-source personal wiki.
-  - We took the best of it, it's powerful customization system, and mixed it with one of the best embedded databases available, PouchDb, to bring in the synchronization capabilities you need.
 
 - https://github.com/steve-1820/memex /ts/inactive
   - This a POC on how a memex could potentially work.

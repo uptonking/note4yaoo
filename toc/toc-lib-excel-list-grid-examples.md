@@ -75,11 +75,17 @@ modified: 2022-08-21T10:03:52.222Z
   - https://kevinschaich.io/mintable/
   - Automate your personal finances – for free, with no ads, and no data collection.
 
-- gridstudio /AGPLv3/7.8kStar/202006/go/python
+- gridstudio /8.8kStar/AGPLv3/202010/go/python/js/inactive
   - https://github.com/ricklamers/gridstudio
   - https://gridstudio.io/
   - a high-performance, spreadsheet-like calculation engine for web applications
   - a web-based application for data science with full integration of open source data science frameworks and languages.
+  - [How I built a spreadsheet app with Python to make data science easier | HackerNoon_201907](https://hackernoon.com/introducing-grid-studio-a-spreadsheet-app-with-python-to-make-data-science-easier-tdup38f7)
+    - While this project was originally intended for commercial release, I've decided it might be better off as an open source project
+    - The reason for this is that during the initial development of the project I've discovered a number of projects that offer similar functionality to Grid studio.
+    - First, there is an open source plug-in that integrates Python directly into Microsoft Excel called xlwings. 
+    - Second, Python has evolved from IPython to Jupyter Notebooks to JupyterLab. 
+    - Overall, projects like these meant that commercializing Grid studio would mean competing with these product substitutes that are frankly available for the incredibly low price of free.
 - baserow /127Star/MIT/202010/python/vue
   - https://gitlab.com/bramw/baserow
   - Baserow is an open source online database tool and Airtable alternative.
@@ -215,16 +221,12 @@ modified: 2022-08-21T10:03:52.222Z
 - https://github.com/NickStefan/rixif /201602/js
   - In early 2015, I had wanted to implement an entire excel experience in javascript.
   - With React, Immutable.js, and old school vanilla flux, I got pretty far
-  - https://news.ycombinator.com/item?id=9942859
+  - [How to implement a spreadsheet | Hacker News_201507](https://news.ycombinator.com/item?id=9940126)
     - I implemented a spreadsheet in react, flux, immutable, and used a command pattern
     - I did not take the approach of cells actually observing each other. Instead I had a recursive function that worked from the entered cell 
     - The hardest part was updating the string representations of the formulas when you insert a new column or row, and then re-updating each cell's dependencies arrays.
     - One mistake I made was trying to implement the undo/redo to be totally reversable at every step. So every command stores the way to go both back and forward. In hindsight, I should have just stored forward commands and rebaked from the beginning when someone wanted to go back in time.
     - Handsontable.js. That library has some major design flaws. Handsontable only takes simple 'number' or 'string' value for each cell
-
-
-
-
 # more
 - https://github.com/EqualTo-Software/SureSheet /202311/ts
   - We created this product to show what you can build with EqualTo Sheets, our "Spreadsheets as a service for developers" platform.

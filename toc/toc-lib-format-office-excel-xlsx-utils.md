@@ -70,7 +70,7 @@ modified: 2023-01-09T11:04:13.958Z
   - 简单的操作生成漂亮的EXCEL，快速上手。提供漂亮模板直接使用
   - 组件依附 exceljs 和 file-saver 进行封装
 
-- https://github.com/jmaister/excellentexport /ts
+- https://github.com/jmaister/excellentexport /MIT/202305/ts
   - JavaScript library to create export to Excel/CSV from HTML tables in the browser. No server required.
   - support XLSX
 # examples

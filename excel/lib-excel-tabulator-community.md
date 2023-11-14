@@ -10,12 +10,10 @@ modified: 2022-08-21T09:59:33.314Z
 # guide
 
 # discuss-stars
-
-- ## Tabulator – Easy-to-use JavaScript library for interactive tables_201811
-- https://news.ycombinator.com/item?id=18568072
+- ## 🚀🪟 [Tabulator – Easy-to-use JavaScript library for interactive tables_201811](https://news.ycombinator.com/item?id=18568072)
 - It seems standard that all of these JS table libraries are rendering using `<div>` elements instead of a `<table>` element. Why? As far as I can tell, all of the features could be implemented using the correct HTML element rather than using `<div>` to mimic a table.
 
-- Let me preface my answer by saying im the chap(对男子的友好称呼，家伙，伙计) that built Tabulator
+- 🪟 Let me preface my answer by saying im the chap(对男子的友好称呼，家伙，伙计) that built Tabulator
 - This is because the `<table>` element introduces a lot of design constraints.
   - There is a lot of inherent styling that would have to be overridden if a `table` element was to be used. 
   - It could also mess with the standard behaviour of other table elements that have been generically styled.
@@ -43,7 +41,7 @@ modified: 2022-08-21T09:59:33.314Z
   - Because Tabulator uses a virtual DOM it makes it a since to redraw parts of the table when needed
   - I wrote my own VDOM library, Tabulator has zero dependencies for its core functionality
 
-- Author of Handsontable, here. We actually use `<table>` , but there are many things that are easier with `<div>` :
+- 🪟 Author of Handsontable, here. We actually use `<table>` , but there are many things that are easier with `<div>` :
   - With `<div>` , you have complete control over the positioning of the cells. 
     - With `<table>` , you delegate(v,委托，选派) the layout to the browser engine. 
   - `<table>` has lots of semantic meaning, which makes it slower to render than a `<div>` , because the browser engine needs to make a sense of it. 
@@ -68,5 +66,4 @@ modified: 2022-08-21T09:59:33.314Z
     - where as no one generically styles divs or spans and they come with very little built in styling making them the ideal choice for a library that wants to keeps its functionality isolated from the rest of the site
   - table libraries using table tags:
     - handsontable, datatables.net(for jQuery)
-
 # discuss

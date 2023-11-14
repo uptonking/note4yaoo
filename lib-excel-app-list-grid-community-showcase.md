@@ -14,16 +14,6 @@ modified: 2023-05-21T15:44:39.196Z
 
 - ## 
 
-- ## [subset: Excel 2.0 – Is there a better visual data model than a grid of cells? | Hacker News_202203](https://news.ycombinator.com/item?id=30868696)
-- UltOrg is roughly "spreadsheets re-built atop the RDBMS datamodel". The UI supports nested joins, aggregations, filtering, for both display and data update.
-  - The result is essentially a general purpose app that can display just about any Microsoft Access UI that would been written in the 90s/2000s to provide editable views into relational data.
-
-- 
-- 
-- 
-- 
-- 
-
 - ## [Excel Labs, a Microsoft Garage Project | Hacker News_202305](https://news.ycombinator.com/item?id=36081851)
 - Some things in Excel have not improved since 2003, that should be fixed before toying with "AI" . For example, when importing a CSV
 

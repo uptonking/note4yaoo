@@ -225,6 +225,17 @@ modified: 2023-01-20T21:59:47.792Z
   - [Server Mode](https://github.com/chrisdiana/cms.js/wiki/Server-Mode)
     - In Server mode, CMS.js takes advantage of the Server's Directory Indexing feature. 
     - By allowing indexes, CMS.js sends an AJAX call to your specified fo
+
+- https://github.com/servuscms/servus /26Star/GPLv3/202311/rust
+  - a simple CMS / blogging engine that is fully self-contained within one executable file.
+  - rendered HTML files are stored in memory and served directly by Servus.
+  - Posting can be done using the Nostr protocol's Long-form Content event kind, so any Nostr client compatible with NIP-23 can be used for posting.
+  - all content and settings are stored in a local directory (on the machine running Servus).a full backup is just a rsync command
+  - All content served to the readers is plain HTML served over HTTP(S). No Javascript that generates the UI elements on the client side
+  - Multiple websites in one instance, that can be separately administered. 
+  - All web pages are pre-rendered so they can immediately be served when a HTTP request is received.
+
+
 # cloud-cms
 - https://github.com/jadeallencook/gdoc-js /202110/js
   - http://jadeallencook.github.io/gDoc.js/
@@ -301,23 +312,12 @@ modified: 2023-01-20T21:59:47.792Z
   - https://github.com/unmacaque/mdwiki
     - marked was updated to support more GFM syntax
   - https://github.com/stephanedenis/mdwiki
+
+- https://github.com/Ulbora/ulboracms /MIT/202303/go/js
+  - http://ulbora.github.io/ulboracms
+  - a self-contained CMS (no database needed) written in Golang. 
+  - It uses a JSON datastore with content saved in both json files and in memory.
+  - You can download and upload a single binary backup file containing content, images, and templates as needed.
 # more
 - https://github.com/FactorJS/factor
   - Factor is an expressive & modular framework for JavaScript applications.
-# discuss
-- ## 
-
-- ## 
-
-- ## [Self-hosted headless cms - WEBINY OR PAYLOAD? : opensource](https://www.reddit.com/r/opensource/comments/zbq7z9/selfhosted_headless_cms_webiny_or_payload/)
-- I'm part of the core team at Payload and I want to get your thoughts on how to show the security standards for Payload.
-  - We do a bunch of best practices that anyone building their own Node/Express app should. 
-  - The auth that we have is built to a higher standard than some of other competitors as it uses http only secure cookies.
-  - If you dig a little you'll find that other headless CMS are not doing this meaning that any javascript code in your project could have access to the user state where it really shouldn't. 
-  - We have other cool things in place that make it easy to turn on user verification, locking accounts, API rate limiting, CSRF and CORS.
-- Regarding security, BCMS provides, out of the box, even in its (generous) free plan, fine-grained control over the API keys and user roles. It offers enterprise-grade permissions features, making it super secure at no cost. Other than the server.
-
-- https://www.reddit.com/r/selfhosted/comments/zbp1z7/exploring_webiny_and_payload_for_a_web_project/
-- Webiny co-founder here. 
-  - If you're looking for a system that's not developer dependant, we are just wrapping up several new features on the Page Builder side of our product, making it much more powerful and easier to use and in Q1/2023 
-  - we'll be launching also the ability to build fully dynamic pages by combining our Page Builder with our Headless CMS. Happy to share more details if you're interested.

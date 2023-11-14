@@ -12,76 +12,17 @@ modified: 2023-10-26T21:54:54.201Z
 # discuss-stars
 - ## 
 
-- ## [A Gentle Introduction to Ted Nelson's ZigZag Structure (2002) | Hacker News_202105](https://news.ycombinator.com/item?id=27210008)
+- ## 🧮 [A Gentle Introduction to Ted Nelson's ZigZag Structure (2002) | Hacker News_202105](https://news.ycombinator.com/item?id=27210008)
 - Happily, Nelson's patent has finally expired.
 
-- In its simplest form, a ZigZag structure can be an n-dimensional grid, where each node is connected to its direct neighbors in the grid. In 2D, that would give you a spreadsheet. However, ZigZag can do more: you can have loops along any axis, e.g. a spreadsheet where the columns "wrap around". Furthermore, ZigZag supports looping the columns of only one particular row: a normal 2D spreadsheet, except that row 13 only has 4 columns, and those columns are wrapped up in a loop. You could also have sparse grids - where nodes are missing, and the edges skip over the missing node.
+- In its simplest form, a ZigZag structure can be an n-dimensional grid, where each node is connected to its direct neighbors in the grid. 
+  - In 2D, that would give you a spreadsheet. 
+  - However, ZigZag can do more: you can have loops along any axis, e.g. a spreadsheet where the columns "wrap around". 
+  - Furthermore, ZigZag supports looping the columns of only one particular row: a normal 2D spreadsheet, except that row 13 only has 4 columns, and those columns are wrapped up in a loop. You could also have sparse grids - where nodes are missing, and the edges skip over the missing node.
   - The idea is to have something that locally, if you look only at the surrounding nodes, always looks like a neat n-dimensional grid. But the global topology can be totally whacky.
 
 - To put it coarsely, outside ZigZag there are three different kinds of structures in computers today: linear lists (and grids i.e.~lists of lists), hierarchical trees and messes. That is really messes, not meshes. By a mess, I mean any complicated data structure, usually with one-directional links to make things even more unmanageable.
   - That's not a mess, that's a graph.
-# discuss-excel
-- ## 
-
-- ## 
-
-- ## [Dealing with massive data structures in roguelikes : roguelikedev](https://www.reddit.com/r/roguelikedev/comments/xxiu4b/dealing_with_massive_data_structures_in_roguelikes/)
-- I'm working on a game that has a silly scale (think milions of objects in a billion cube units having to talk among themselves all the time).
-  - A data structure that has made my life much easier is the kd-tree. It's super easy to implement and allows for very fast lookups.
-
-- ## [I'm stuck for reactive incremental computation. : ProgrammingLanguages](https://www.reddit.com/r/ProgrammingLanguages/comments/w8kjfl/im_stuck/)
-- I would look into spatial trees (like quadtree, a 2d generalisation of binary tree, or r-tree (a n-dimension generalisation of b-tree).
-  - I'm trying to understand what you're doing, and I think your spreadsheet essentially acts like a single giant 2d database table, with (i assume) dynamic typing (ie you can put any type of value in any cell).
-  - In that case, assuming you have a well-defined total ordering for the values that can go in the cells, then maybe you could have a r tree acting as a single index for the entire spreadsheet.
-  - You'd have to keep it updated whenever you change anything in the spreadsheet (which should be efficient since it's a tree) and in return it would allow you to quickly look up elements inside any rectangular range of cells, as well as finding their min/max values.
-- Your understanding is correct and your suggestion sounds viable. I feel much better now, thanks! If `Max(a:b)` can be evaluated efficiently in log time using the single big index, then I guess I don't even need to worry about incremental evaluation yet.
-
-- You might be looking for differential dataflow
-
-- ## 👥🪟📕 [Efficient and Compact Spreadsheet Formula Graphs | Hacker News_202302](https://news.ycombinator.com/item?id=34800138)
-- cool! The authors exploit the fact that neighboring cells often have similar formulas to compress the evaluation graph.
-- This seems odd to me. This is basically just ways of finding database-esque tables in spreadsheets to then leverage for vector/matrix operations.
-  - It is a non-problem for anyone who really cares about performance as they've probably already realised they can just use a database some efficiently programmed transformations.
-- Being able to have intricate computation definition being user-modifiable is a big feature. I have successfully 'appified' such Excel sheets in the past, only to be recognized as the new business rule maintenance guy. I no longer do that anymore: I identify moving parts, and these stay in the Excel world instead of going into the DB or a config file. I do clean the inputs and harden access control though.
-
-- ## 🪟🔥 [Excel as a database | Hacker News_201304](https://news.ycombinator.com/item?id=5515290)
-- 
-- 
-- 
-
-# discuss-dataframe/tabular
-- ## 
-
-- ## 
-
-- ## [Why isn’t there a decent file format for tabular data? | Hacker News_202205](https://news.ycombinator.com/item?id=31220841)
-- several high quality and well-developed formats
-  - csv/tsv -- Simple for simple use cases, text-based, however many edge cases, feature lacking etc
-  - xlsx -- Works in excel, ubiquitous format with a standard, however complicated and missing scientific features
-  - sqlite -- Designed for relational data, somewhat ubiquitous, types defined but not enforced
-  - parquet / hdf5 / apache feather / etc -- Designed for scientific use cases, robust, efficient, less ubiquitous
-  - capn proto, prototype buffers, avro, thrift -- Has specific features for data communication between systems
-  - xml -- Useful if you are programming in early 2000s
-  - GDBM, Kyoto Cabinet, etc -- Useful if you are programming in late 1990s
-
-- The latest version of SQLite has a STRICT command to enforce the data types. 
-  - This option is set per table, but **even in a STRICT table you can specify the type of some columns as ANY** if you want to allow any type of data in that column (this is not the same meaning of ANY in non-strict tables).
-
-- One major limitation with quoted values that can this contain record delimiters (as opposed to escaping the delimiters) is that it stops systems from being able to load records in parallel.
-  - Some systems ban embedded record delimiters, for this reason.
-
-- Parquet is a wonderful file format and is a dream to work with compared to CSV. 
-  - Parquet embeds the schema in the footer metadata, so the query engines don't need to guess what the column names / data types are.
-- Parquet is still relatively poorly supported in the JVM world 
-- The other problem with Parquet is that it's overly flexible/supports application-specific metadata. 
-  - It's all fine when you use a single tool/library for reading and writing files but cross-platform is problematic. 
-  - Saving a Pandas dataframe to parquet, for example, will include a bunch of Pandas-specific metadata which is ignored or skipped by other libraries.
-- I've been pretty impressed with parquet lately. One thing I've missed is a way to group tables. Is there a standard for that? While parquet is generally column oriented it has support for metadata about tables of multiple columns. However, I'm not aware of any format that groups the tables, short of just zipping a bunch of files.
-
-- It's it possible to diff a parquet file?
-  - Its possible but you can't just diff the file bytes. Because you will get spurious differences due to metadata, etc.
-
-- There is a decent file format for tabular data, and the author dismisses it: parquet.
 # discuss
 - ## 
 
@@ -170,7 +111,7 @@ modified: 2023-10-26T21:54:54.201Z
 
 - Seems like you'd want to look into eavt databases for a universal schema, Datomic has a lot of resources explaining it's schema
 
-- ## [Excel 2.0 – Is there a better visual data model than a grid of cells? | Hacker News_202203](https://news.ycombinator.com/item?id=30868696)
+- ## [subset: Excel 2.0 – Is there a better visual data model than a grid of cells? | Hacker News_202203](https://news.ycombinator.com/item?id=30868696)
 - UltOrg is roughly "spreadsheets re-built atop the RDBMS datamodel". The UI supports nested joins, aggregations, filtering, for both display and data update.
 
 - Airtable really ought to be killing Excel, but the SaaS model combined with a stupidly low artificial row count limit (over 50000 rows is listed as "contact us for pricing") means that it will never achieve penetration into weird and wonderful use cases like Excel has.

@@ -11,6 +11,11 @@ modified: 2023-09-16T17:27:59.262Z
 
 # blog
 
+## [A Left-to-Right Mental Model for Datalog • Buttondown_202311](https://buttondown.email/jaffray/archive/a-left-to-right-mental-model-for-datalog/)
+
+- Last week we talked about a surprising behaviour of scoping and aggregates in SQL `SELECT (SELECT sum(a) FROM xx LIMIT 1) FROM aa;`.
+  - try this query out on a couple of different databases, it turns out not all of them answer it correctly!
+
 ## 📝 [Datalog in Javascript](https://www.instantdb.com/essays/datalogjs)
 
 - Datalog is a logic-based query language that’s as powerful as SQL. 

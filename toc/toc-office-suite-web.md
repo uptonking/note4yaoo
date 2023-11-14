@@ -25,6 +25,12 @@ modified: 2023-03-09T13:47:07.317Z
       - 示例依赖server api，本地无法运行
     - https://github.com/ONLYOFFICE/document-editor-react
       - 示例依赖server api，本地无法运行
+- https://github.com/ibisheng/onlyoffice-ibisheng /201911/js
+  - 毕升文档在线文件服务部分在编辑和预览Office时集成了onlyOffice。我们在集成onlyOffice主要是使用了sdkjs部分代码
+  - 抛弃了only Office的原来的UI，整体UI重新设计实现
+  - 抛弃了原来only Office开源部分的服务器实现，使用golang 和node js重新了实现Office在线编辑时的服务器逻辑
+  - 文件的底层存储也抛弃了原来only Office的方案，按照毕升文档在线文件服务的设计，全部采用s3 api的存储。 本地部署时可以使用minio来实现s3服务
+  - 与开源版的only office相比，毕升文档在线Office部分主要增加了文件加水印预览以及文件的版本对比功能
 - https://github.com/ONLYOFFICE/DocumentServer
   - Starting from version 6.0, Document Server is distributed under a new name - ONLYOFFICE Docs.
   - https://github.com/ONLYOFFICE/CommunityServer /c#/apache2

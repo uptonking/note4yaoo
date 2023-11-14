@@ -24,7 +24,7 @@ modified: 2022-08-21T09:57:42.969Z
   - （3）葡萄城的开发组件 grapecity.com.cn 等
   - 都是通过云服务收费，提供在线预览。
 
-- 你这个如果做成这种最好，通过URL传递远程word或者exel， 然后在线预览。
+- 你这个如果做成这种最好，通过URL传递远程word或者excel， 然后在线预览。
   - dream-num.github.io/xls?url=http://xx.com/test.xls
 
 - ## [Feature request]精简数据结构
@@ -138,7 +138,7 @@ modified: 2022-08-21T09:57:42.969Z
 - 1) QUERY
 - 2) SPARKLINE
 
-- ## 🚀 [Luckysheet, an open-source spreadsheet | Hacker News_202007](https://news.ycombinator.com/item?id=23994619)
+- ## 🚀🪟 [Luckysheet, an open-source spreadsheet | Hacker News_202007](https://news.ycombinator.com/item?id=23994619)
 - One reason I prefer Apple Numbers to Excel is that in Numbers you arrange tables on a canvas. 
   - The tables can refer to each other. 
   - I think it makes it easier to work with, for example, an input table and an output table because they are separate entities and not just different ranges on the same grid. 

@@ -33,8 +33,8 @@ modified: 2021-01-01T18:00:01.202Z
   - Table of contents generator in es6
   - http://gajus.com/sandbox/contents/examples/good-looking/
 
-- https://github.com/paulhodel/jsuites
-  - /321Star/MIT/202009
+- https://github.com/jsuites/jsuites /476Star/MIT/202311
+  - https://github.com/paulhodel/jsuites
   - https://bossanova.uk/jsuites
   - a collection of lightweight common required javascript components. 
   - It is composed of fully responsive vanilla plugins

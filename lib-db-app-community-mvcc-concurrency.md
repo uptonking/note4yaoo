@@ -9,6 +9,7 @@ modified: 2023-11-01T10:15:06.245Z
 
 # guide
 
+- [高并发系统设计 40 问 | JAVA 架构师笔记](https://zq99299.github.io/note-architect/hc/)
 # discuss-stars
 - ## 
 

@@ -54,7 +54,42 @@ modified: 2023-03-30T13:31:09.049Z
 # discuss-cases
 - ## 
 
-- ## 
+- ## 🌰💡 I'm excited to share our story: How #ReactAdmin became a profitable #OpenSource project!
+- https://twitter.com/francoisz/status/1724092927113056327
+  - Peek behind the curtain at nearly €1M in revenue while staying open-source.
+  - [Anatomy Of A Profitable Open-Source Project](https://marmelab.com/blog/2023/11/13/open-source-profit-2.html)
+- The core of react-admin is free and open-source. 
+  - The paid version, react-admin Enterprise Edition, contains additional modules and support. 
+  - This follows the OpenCore business model, popularized by renowned libraries like Kafka, GitLab, and Elastic.
+  - In July 2020, we launched an Enterprise Edition of react-admin
+- Enterprise Edition is subscription-based, starting at €135/month. Customers pay for the duration of their project development. 
+  - Once development concludes, they may discontinue the subscription and still use the code for free. 
+  - On average, customers subscribe for 9 months.
+- About one-third of our customers choose a yearly plan (which is 10% cheaper), while the rest opt for monthly plans.
+  - Subscription pricing is team-size dependent
+  - team/2p/135￥; business/10p/270￥; corporate/Np/540￥
+- 90% of our customers are on the “Team” plan. 
+  - We operate on a trust basis regarding team size; we verify only that those contacting our support are part of the subscription.
+  - Since 2020, we've had over 600 paying customers.
+- The Enterprise Edition includes 16 private modules, offering features like authorization, live updates, and navigation
+  - The Enterprise Edition also gives access to support by email. We handle about a dozen support requests daily. This equates to approximately 4 hours of support work daily.
+- React-Admin's revenue is solely from customer subscriptions. 
+  - We don’t utilize ads, donations, training, certifications, or sponsorships. 
+  - Although React-Admin generates significant business opportunities for our web agency, these are not included in the React-Admin revenue.
+- we dedicate 4 full-time employees to this product: 3 developers, and combined roles of half Sales and half Marketing assistant.
+  - Our technical costs are minimal, around €2k annually (for hosting an npm registry and a customer dashboard). 
+  - Blog content creation is part of the development team’s responsibilities, so it's included in the cost of the 4 full-time employees.
+- Sales tool expenses are modest. 
+  - We use LinkedIn for lead generation and a cost-effective CRM (Highrise) for tracking. 
+  - Communication is through email, WhatsApp, and chat (powered by Chatwoot).
+  - Our marketing budget is around €20k this year, primarily for tech newsletter sponsorships.
+- In total, the development, support, updates, prospecting, and operations amount to approximately 350k€ annually. This confirms that react-admin is profitable.
+- As for the Average Rate of Return (ARR), we don't calculate it; React-Admin is not viewed as an investment. All profits are reinvested into the product.
+
+- Conclusion
+- The revenue from the Enterprise Edition covers the full-time salaries of our four-person team and also funds the development of the open-source version of React-Admin.
+- An annual revenue of €400k may seem modest compared to larger SaaS and enterprise software companies. Indeed, there is potential for much greater earnings
+- But this business line is profitable, and a great bonus to our core business (web development). We have no debt, and we're free to do whatever we want. We operate debt-free, with the autonomy to make our own decisions. There's no pressure to satisfy investors or pursue aggressive growth. In essence, we are happy with what we have. We consider ourselves extremely lucky to earn a living through open-source work, and we are immensely thankful to our customers for making this possible.
 
 - ## 关键词：00后，大三，20万用户，60万月访问，若干收入
 - https://twitter.com/FinanceYF5/status/1711425606620241983

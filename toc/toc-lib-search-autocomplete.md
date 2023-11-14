@@ -275,6 +275,10 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/manticoresoftware/manticoresearch /202211/cpp
   - an easy to use open source fast database for search. 
   - Good alternative for Elasticsearch.
+
+- https://github.com/leontoeides/indicium /apache2/202310/rust
+  - simple in-memory search for collections (Vec, HashMap, BTreeMap, etc) and key-value stores. Features autocompletion.
+  - Indicium easily can handle millions of records without breaking a sweat thanks to Rust's BTreeMap. 
 # search-ui-examples
 - Faceted Search ui
   - [Tailwind CSS Faceted Search Drawers](https://flowbite.com/blocks/application/faceted-search-drawers/)

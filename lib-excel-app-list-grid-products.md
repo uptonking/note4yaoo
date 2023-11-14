@@ -27,5 +27,9 @@ modified: 2022-08-21T10:38:26.289Z
 
 - [Self-hosted visual software builder | FormBeaver](https://www.formbeaver.com/)
   - "AirTable meets Webflow". It's basically a no-code database with drag-and-drop page builder
+
+- [Quadratic - The data spreadsheet with AI, Python, and SQL](https://www.quadratichq.com/)
 # more
+- [11 Excel Alternatives & Competitors 2023 (Features & Pricing) | ClickUp](https://clickup.com/blog/excel-alternatives/)
+
 - [北大团队搞出ChatExcel，说人话自动处理表格，免费且不限次使用-36氪](https://36kr.com/p/2158219573305094)

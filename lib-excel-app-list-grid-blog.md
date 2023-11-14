@@ -13,13 +13,7 @@ modified: 2022-08-21T10:14:49.838Z
 
 ## [OpenOffice Sparse Matrix](https://iq.opengenus.org/data-structure-for-spreadsheet/#openofficesimplementation)
 
-## [How to Recalculate a Spreadsheet | Hacker News](https://news.ycombinator.com/item?id=25039393)
 
-- [How to Recalculate a Spreadsheet – Lord.io](https://lord.io/spreadsheets/)
-
-## [A spreadsheet in fewer than 30 lines of JavaScript, no library used | Hacker News_201311](https://news.ycombinator.com/item?id=6725387)
-
-- http://jsfiddle.net/ondras/hYfN3/
 
 ## [在线Excel项目到底有多刺激-腾讯文档Excel_202012](https://mp.weixin.qq.com/s/f1vwzuPryc8ag6nd5Ngr5A)
 

@@ -85,4 +85,14 @@ modified: 2021-05-13T16:14:28.745Z
   - https://simplestatistics.org/docs/
   - A JavaScript implementation of descriptive, regression, and inference statistics.
   - Implemented in literate JavaScript with no dependencies
+# sort/filter/group
+- https://github.com/crossfilter/crossfilter /202208/js
+  - https://crossfilter.github.io/crossfilter/
+  - Fast n-dimensional filtering and grouping of records.
+  - a JavaScript library for exploring large multivariate datasets in the browser.
+
+- https://github.com/NYTimes/pourover /201510/js
+  - a library for simple, fast filtering and sorting of large collections -- think 100, 000s of items -- in the browser. 
+  - PourOver is built around the ideal of simple queries that can be arbitrarily composed with each other, without having to recalculate their results. You can union, intersect, and difference queries. 
+  - Underscore.js is the only dependency. Optionally, you may use Lo-dash instead of underscore.
 # more

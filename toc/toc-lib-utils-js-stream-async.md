@@ -310,13 +310,16 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/qualiancy/breeze-dag /201211/js
   - Async flow control for directed-acyclic-graph iteration.
 
-## dataflow
+## dataflow/reactive
 
 - https://github.com/hoplon/javelin /202310/clojure
   - Spreadsheet-like dataflow programming in ClojureScript
 
 - https://github.com/Day8/re-frame /202311/clojure
   - a ClojureScript framework for building user interfaces. It has a data-oriented, functional design.
+
+- https://github.com/observablehq/runtime /ISC/js
+  - The Observable runtime lets you run Observable notebooks as true reactive programs in any JavaScript environment
 
 ## excel/sheet-formula
 

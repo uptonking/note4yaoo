@@ -16,6 +16,7 @@ modified: 2022-08-21T10:02:27.788Z
   - _collaborative optional_: 作为插件，似乎将ospreadsheet的ot去掉就是llw了
   - _transaction_
   - end-user database: 用户自定义数据支持 graph/relational queries
+  - formula: excel, google-sheet, powerbi
   - headless utils: state/actions/props/api : autocomplete/tanstack，state和a11y不同粒度，可实现为core+plugin
   - view-layer: vdom+reactive(mobx/signal) : autocomplete/typewriter/Simple-DataTables/slate-dom/sleek
   - closer to excel
@@ -810,13 +811,15 @@ modified: 2022-08-21T10:02:27.788Z
   - SlickGrid 4.x drops jQuery requirement
   - https://github.com/mleibman/SlickGrid
     - /archived/6.7kStar
-- revogrid /MIT/58Star/202010/ts/web-comp/stencil
+- revogrid /2.5kStar/MIT/202310/ts/web-comp/stencil
   - https://github.com/revolist/revogrid
   - https://revolist.github.io/revogrid
   - https://github.com/revolist/revogrid-react
   - 基于div实现
   - Powerful data grid component built on top of StencilJS.
   - Millions of cells virtual viewport scroll with a powerful core is in-build by default.
+  - [Show HN: RevoGrid – Spreadsheet data table for all frameworks | Hacker News_202101](https://news.ycombinator.com/item?id=25894174)
+    - Seems more like an alternative to Handsontable than for LibreOffice Calc. That is, its not an end-user spreadsheet, but rather a spreadsheet/datatable component for use in your web applications.
 - recline /2kStar/MIT/202008/js
   - https://github.com/datopian/recline
   - https://github.com/datopian/portaljs
@@ -987,6 +990,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://bossanova.uk/jspreadsheet/v4
   - Vanilla JavaScript data grid plugin to create amazing web-based interactive HTML tables, and spreadsheets compatible data grid with other spreadsheet software
   - 基于table标签实现
+  - 
 - https://github.com/sorryljt/react-jexcel
   - 基于jspreadsheet v4版本，封装的React 版本的轻量级Excel插件
 
@@ -1204,11 +1208,12 @@ modified: 2022-08-21T10:02:27.788Z
   - It is a parser and evaluator of Excel formulas for web applications. 
   - 依赖chevrotain
   - You can use it in a browser or as a service, with Node.js as your back-end technology.
-  - Function syntax compatible with Microsoft Excel and Google Sheets
   - HyperFormula comes with a huge library of 391 built-in functions grouped into categories
+    - Function syntax compatible with Microsoft Excel and Google Sheets
   - It also supports the use of cross-sheet references, named expressions, different data types, and custom functions.
   - HyperFormula doesn't assume any existing user interface, which makes it a great general-purpose library that can be used in various business applications.
-  - [Key concepts | HyperFormula ](https://hyperformula.handsontable.com/guide/key-concepts.html)
+  - Think of it as of the calculation engine behind Excel, but without Excel.
+  - [Key concepts | HyperFormula](https://hyperformula.handsontable.com/guide/key-concepts.html)
     - Data processing consists of three phases.
     - Phase 1. Parsing and construction of ASTs
     - Phase 2. Construction of the dependency graph. find the right order of processing cells, also known as topological order

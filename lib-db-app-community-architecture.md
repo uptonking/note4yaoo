@@ -189,9 +189,22 @@ modified: 2023-09-17T17:37:19.913Z
 - 
 
 - ## 🔥 [The program is the database is the interface | Hacker News_202302](https://news.ycombinator.com/item?id=34761768)
-- 
-- 
-- 
+- You nailed it, it's a spreadsheet - but one that doesn't constraint all data to live on the same application window, but could access and transform it throughout the whole system - just like copy/paste can transfer data from one program to another, where it can be transformed with a different toolset.
+  - Copy/paste is the most fundamental tool in the toolbox of the end user, since it's the only universal* way to transfer data between apps without accessing an API programmatically, so I think it's undeservedly(不该得到的; 不该受的) neglected as a tool to build real life practical workflows.
+  - Intents on mobile devices are similar, but they are not universal - many times the app to which you want to transfer data is not recognized as a valid target for the shared data.
+- Incidentally, spreadsheets are one of the most versatile and successful End-User Development tools, allowing users to build information systems tailored to their business purposes. A system combining those design capabilities with the flexibility of building system-wide workflows could transcend the current model of siloed apps.
+
+- The Unix pipe seems like scriptable copy & paste.
+  - It's not, because you can't easily spawn transient pipes between running processes. The OS probably allows this, but I've never seen it exposed in the UI layer.
+  - Pipes are primarily used to build ad-hoc pipelines that run in batch mode. Copy&paste is a tool for moving specific bits of data on demand between two running programs, or within the same program. Copy&paste interaction model is "please take this and put it there", and the ability to select the this and the there is just as important as transferring the data itself.
+
+- 🤔 Whenever I stumble on an article like that*, I can't stop wondering why do so many developers think that SQL is hard/clunky in comparaison?
+- > A database introduces a different data model - I have to translate between database data-types and my programming languages native data-types.
+  - It doesn't matter how difficult or simple it is; the problem is that it's a different model, so it creates translation inefficiencies and makes it more difficult to reason about.
+  - The object-relational impedance mismatch is a known problem; having data in one place and format, accessed through a single programming model will typically be easier than a separate service with a different language and model, no matter how efficient.
+- I wonder about going the other way, and turning SQL into a full scripting language.
+  - That's what PL/SQL and T-SQL basically are. They work, but they have a somewhat weird programming model, halfway between programming and declarative sql but being neither, with table cursors and stateful SQL queries. And of course, their scope is limited to interacting with the database itself, not the outer world.
+- SQL is... clunky, but it's still a wonderful way of working with data, compared to hand-rolling imperative loops or functional transforms.
 
 - ## 🔥 [We are splitting our database into Main and CI | Hacker News_202207](https://news.ycombinator.com/item?id=31956871)
 - 
