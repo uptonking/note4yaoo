@@ -930,7 +930,8 @@ modified: 2023-09-28T20:35:56.153Z
   - A centralized Node.js server for your PouchDB-wielding local-first apps to sync to. Multiple users ok, multiple apps ok. Login with GitHub.
   - This repo is intended to service apps that use PouchDB to store their data locally—web apps or mobile apps or wherever PouchDB is supported.
 
-- https://github.com/ibm-watson-data-lab/shopping-list-react-pouchdb /202004/js
+- https://github.com/ibm-watson-data-lab/shopping-list-vanillajs-pouchdb /201802/js
+  - https://github.com/ibm-watson-data-lab/shopping-list-react-pouchdb /202004/js
   - an Offline First demo Progressive Web App built using React and PouchDB
   - PouchDB syncs its data with a remote IBM Cloudant database.
   - PouchDB can synchronize with CouchDB and compatible servers.

@@ -29,6 +29,8 @@ modified: 2022-08-21T10:38:26.289Z
   - "AirTable meets Webflow". It's basically a no-code database with drag-and-drop page builder
 
 - [Quadratic - The data spreadsheet with AI, Python, and SQL](https://www.quadratichq.com/)
+
+- [Tinysheet](https://tinysheet.com/)
 # more
 - [11 Excel Alternatives & Competitors 2023 (Features & Pricing) | ClickUp](https://clickup.com/blog/excel-alternatives/)
 

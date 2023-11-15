@@ -112,7 +112,7 @@ modified: 2021-05-13T03:19:30.464Z
 - koa 1.x的时候支持了generator，现在支持了async函数，
   - 所以现在的koa的中间件系统是“洋葱圈”式的处理方式，也就是上面的先执行每个中间件的before，再倒叙执行xxx函数。
   - 值得一提的点就是koa为async函数特制的compose函数，async函数的awiat需要每次异步都是一个promise，如果为值，那就是同步处理。所以返回的middleware都被包了一层Promise.resolve。
-# [Redux without React — State Management in Vanilla JavaScript](https://www.sitepoint.com/redux-without-react-state-management-vanilla-javascript/)
+# [Redux without React — State Management in Vanilla JavaScript_201610](https://www.sitepoint.com/redux-without-react-state-management-vanilla-javascript/)
 - https://github.com/morkro/tetrys
 
 - What makes Redux great is that it forces you to think ahead and get an early picture of your application design. 

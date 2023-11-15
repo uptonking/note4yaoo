@@ -229,6 +229,12 @@ modified: 2023-04-04T22:36:31.529Z
   - Offload CPU-intensive tasks to worker threads in node.js, web browsers and electron using one uniform API.
   - Uses web workers in the browser, worker_threads in node 12+ and tiny-worker in node 8 to 11.
 
+- https://github.com/austinksmith/Hamsters.js /564Star/Artistic/202310/js
+  - https://www.hamsters.io/
+  - 100% Vanilla Javascript Multithreading & Parallel Execution Library
+  - Node.js, ReactNative
+  - Inside existing worker threads (Threading inside Threads)
+
 ## task-scheduler/dag
 
 - https://github.com/caolan/async
@@ -310,7 +316,7 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/qualiancy/breeze-dag /201211/js
   - Async flow control for directed-acyclic-graph iteration.
 
-## dataflow/reactive
+## dataflow/reactive/functional-programming
 
 - https://github.com/hoplon/javelin /202310/clojure
   - Spreadsheet-like dataflow programming in ClojureScript

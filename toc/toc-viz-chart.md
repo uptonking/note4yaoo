@@ -275,6 +275,10 @@ modified: 2020-10-22T10:22:33.292Z
   - Lightweight, interactive planning tool that visualizes a series of tasks using an HTML canvas
 - https://github.com/frappe/gantt
   - https://frappe.io/gantt
+
+- https://github.com/Grible/timetable.js /201809/js
+  - http://timetablejs.org/
+  - Vanilla javascript plugin for building nice responsive timetables. 
 # scatter
 - https://github.com/nomic-ai/deepscatter /ts
   - Zoomable, animated scatterplots in the browser that scales over a billion points

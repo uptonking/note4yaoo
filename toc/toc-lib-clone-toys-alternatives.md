@@ -77,6 +77,7 @@ modified: 2021-07-21T10:03:38.002Z
   - 依赖antd
 
 - https://github.com/hr0123/vanillajs-notion-clone-haeri /202210/ts/starter
+  - brew install pkg-config cairo pango libpng jpeg giflib
 
 - https://github.com/wendelchinsamy/notion-clone-web
   - https://github.com/wendelchinsamy/notion-clone-api

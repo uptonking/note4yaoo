@@ -169,8 +169,10 @@ modified: 2022-02-05T18:45:34.558Z
   - a JS library for reorderable drag-and-drop lists.
   - You can use any element for the list and its elements, not just ul/li
 
-- https://github.com/bevacqua/dragula /js
+- https://github.com/bevacqua/dragula /202009/js/inactive
+  - https://bevacqua.github.io/dragula/
   - Drag and drop so simple it hurts
+  - Framework support includes vanilla JavaScript, Angular, and React.
 
 - https://github.com/Shopify/draggable /js
   - Draggable is no longer maintained by its original authors

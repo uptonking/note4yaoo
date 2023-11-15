@@ -16,7 +16,7 @@ modified: 2023-01-23T11:24:41.943Z
 - [Curated Datasets Overview / ObservableHQ](https://observablehq.com/@observablehq/curated-datasets)
   - [Sample Datasets / Observable](https://observablehq.com/@observablehq/sample-datasets)
 # pivot
-- pivottable /3.5kStar/MIT/201902/CoffeeScript
+- pivottable /3.5kStar/MIT/201811/CoffeeScript
   - https://github.com/nicolaskruchten/pivottable
   - https://pivottable.js.org/examples/
   - a JS Pivot Table library with drag'n'drop functionality built on top of jQuery/jQueryUI

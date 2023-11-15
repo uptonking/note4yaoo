@@ -32,9 +32,8 @@ modified: 2023-04-05T19:35:14.347Z
   - Simple file-upload utility that shows a preview of the uploaded image. 
   - Written in TypeScript. No dependencies.
 
-- https://github.com/pqina/filepond
-  - https://github.com/pqina/filepond
-  - /NoDeps/active
+- https://github.com/pqina/filepond /202311/js/NoDeps/active
+  - https://pqina.nl/filepond/
   - A flexible JavaScript file upload library that can upload anything you throw at it, optimizes images for faster uploads, and offers a great, accessible, silky smooth user experience.
   - Accepts directories, files, blobs, local URLs, remote URLs and Data URIs.
   - Drop files, select on filesystem, copy and paste files, or add files using the API.
@@ -47,7 +46,7 @@ modified: 2023-04-05T19:35:14.347Z
   - https://github.com/shahnawaz-pabon/File-Upload-With-Multer
     - Uploading files with Multer in Node
 
-- https://github.com/FineUploader/fine-uploader
+- https://github.com/FineUploader/fine-uploader /201811/js
   - Multiple file upload plugin with image previews, drag and drop, progress bars. 
   - Dependency-free
   - [Fine Uploader is shutting down](https://github.com/FineUploader/fine-uploader/issues/2073)

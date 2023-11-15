@@ -74,7 +74,7 @@ modified: 2020-12-19T18:22:27.577Z
 - https://github.com/cloudflare/lol-html /rust
   - Low Output Latency streaming HTML rewriter/parser with CSS-selector based API.
   - It is designed to modify HTML on the fly with minimal buffering. 
-  - It can quickly handle very large documents, and operate in environments with limited memory resources. 
+  - It can quickly handle very large documents, and operate in environments with limited memory resources.
 # worker-examples
 - [Excel export web worker script](https://gist.github.com/damoresa/77b40cd393d1606ea10c92a4d802d32c)
 

@@ -103,8 +103,8 @@ modified: 2020-11-03T06:54:59.051Z
 - https://github.com/FelippeChemello/podcast-maker
   - This project takes tech news, creates a 5 minute daily briefing, renders it in 3 different formats, and uploads it to YouTube, Instagram and AnchorFM - fully automated using Remotion and Github Actions!
 # nice
-- https://github.com/kamranahmedse/driver.js
-  - /11.7kStar/MIT/202003
+- https://github.com/kamranahmedse/driver.js /11.7kStar/MIT/202311/ts
+  - https://driverjs.com/
   - vanilla JavaScript engine to drive the user's focus across the page
 
 - https://github.com/daybrush/scenejs

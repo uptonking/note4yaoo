@@ -142,3 +142,7 @@ modified: 2021-09-29T13:23:09.969Z
   - https://github.com/atlassubbed/atlas-mini-dom
     - React clone
 # more
+- https://github.com/bradtraversy/vanillawebprojects /202311/js
+  - https://vanillawebprojects.com/
+  - Mini projects built with HTML5, CSS & JavaScript. No frameworks or libraries
+  - This is the main repository for all of the projects in the course.

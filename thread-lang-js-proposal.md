@@ -57,6 +57,15 @@ modified: 2023-11-10T08:05:25.474Z
 
 - ## 
 # discuss-feat-number
+- ## 
+
+- ## 
+
+- ## protobuf-ts 竟然提供了参数将 int64 数据转成 JS string，以保证精度不丢失。 虽然，需要额外安装插件
+- https://twitter.com/ThaddeusJiang/status/1724686886781047040
+  - npm install @protobuf -ts/plugin
+  - 不过 TS 社区里 protobuf codegen 可真多，而且名字起的都很像，我快被搞晕了
+
 - ## 虽然我知道 JavaScript 的 number 在精度上和其他语言不匹配，没有 int32 int64 这种细分，但我也不喜欢 long.js ，很容易出 bug。
 - https://twitter.com/ThaddeusJiang/status/1693578008601526470
   - 建议轻易不要使用 long.js， 除非，你也上了 #gRPC #protobuf 的破船

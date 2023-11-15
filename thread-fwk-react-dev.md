@@ -10,7 +10,19 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [TodoMVC App Written in Vanilla JavaScript | Hacker News_202205](https://news.ycombinator.com/item?id=31293750)
+- This code reminds me of Backbone. 
+  - I think we all started here and then abstracted event handling and reactivity into a tiny framework like Backbone. 
+  - React and other declarative approaches are inherently different. 
+  - In React I hardly think of when my component renders. 
+  - In Backbone days, I remember having to debug why some part of code is not running when I'm expecting it to run. React does this really well.
+- A cool thing about react is that it’s easy to reason about as well. The reconciliation algorithm is fundamentally pretty simple and there isn’t any magic happening. It can get confusing to track down unexpected renders when you think the result of the algorithm should be different, but that’s not really an issue with react so much a the nature of managing complex state, memoization algorithms which potentially use different diffing strategies, and logic which might be mutating state in ways you don’t quite expect, and so on.
+
+- I’m sorry but this is not a fairly complex app. When things do get more complex (and not even that much) is when you start hitting problems. How would you reuse a “component”? 
+
+- My bet is that as soon as someone popularizes a way to manage state across a set of web components the pendulum will swing back to the “Vanilla JS” approach. It’s so nice to work on web apps without having to install NodeJS, builders, cli tools, and so on. And it encourages software engineers to learn the web platform APIs instead of learning frameworks.
+
+- Please do not re-implement HTML sanitization. Just replace that `escapeForHTML` and `innerHTML` assignment with a later `textContent` assignment. Please.
 
 - ## This is the @laravelphp ecosystem: 
 - https://twitter.com/hanspagel/status/1722967918462287895

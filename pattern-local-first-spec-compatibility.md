@@ -103,8 +103,11 @@ modified: 2023-09-13T20:30:20.011Z
     - Changes to the information are propagated to all other app instances, so they are all eventually consistent.
   - https://github.com/m-ld/m-ld-spec
     - m-ld is a decentralised live information sharing component with a JSON-based API.
-  - https://github.com/m-ld/m-ld-js
-    - the code of the Javascript engine for m-ld, for node.js, modern browsers and other Javascript platforms
+- https://github.com/m-ld/m-ld-js
+  - the code of the Javascript engine for m-ld, for node.js, modern browsers and other Javascript platforms
+- https://github.com/m-ld/m-ld-todomvc-vanillajs /js
+  - Collaborative TodoMVC with Modern (ES6+), Vanilla JavaScript and m-ld
+  - This is a vanilla Javascript implementation of TodoMVC, with collaboration enabled using m-ld
 
 ## nostr(Notes and Other Stuff Transmitted by Relays)
 

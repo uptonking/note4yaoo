@@ -21,7 +21,6 @@ modified: 2021-01-11T23:21:37.132Z
   - 白背景，主题色时红黄暖色系
   - 标准的落地页，不算特别亮眼
 
-## bootstrap.v4
 
 # landing-pm
 - https://github.com/papa28x4/Watches-Product-Page
@@ -85,6 +84,10 @@ modified: 2021-01-11T23:21:37.132Z
   - https://tympanus.net/Freebies/scribbler/
   - Scribbler is a responsive HTML/CSS/Javascript template designed for developers 
     - who want to set up a small landing page and a documentation/usage page
+# startpage
+- https://github.com/eromatiya/squareup /202010/js
+  - https://eromatiya.github.io/squareup/
+  - A sleek and modern startpage
 # more
 - https://github.com/Kvaibhav01/Landing-Page-Animation
   - https://kvaibhav01.github.io/Landing-Page-Animation/

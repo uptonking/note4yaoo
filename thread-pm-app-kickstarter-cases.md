@@ -54,6 +54,19 @@ modified: 2023-03-30T13:31:09.049Z
 # discuss-cases
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🌰 [Placemark is going open source and shutting down | Hacker News_202311](https://news.ycombinator.com/item?id=38250459)
+- My only note is that it would be nice if it was open sourced before the servers shut down, so that if there were any users who were dependent on it they have time to make a transition.
+  - The concern may be that there could be undiscovered vulnerabilities in the service and releasing the source before shutdown could make it easier for malicious actors to discover those vulnerabilities and compromise user data.
+
+- For anyone else who follows along in this domain, there's an interesting competitor in the space I stumbled across recently: https://felt.com/
+
+- Small companies are often happy with a free tier of a service provided by big corporations. This perverse gatekeeping makes it hard for newcomer startups to compete and just get their foot in a door.
+  - It also allows newcomer startups to exploit(利用或开发) the free tier and create a business with only time investment.
+
 - ## 🌰💡 I'm excited to share our story: How #ReactAdmin became a profitable #OpenSource project!
 - https://twitter.com/francoisz/status/1724092927113056327
   - Peek behind the curtain at nearly €1M in revenue while staying open-source.

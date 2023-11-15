@@ -210,6 +210,29 @@ modified: 2022-08-21T10:02:05.129Z
   - S2是多维交叉分析领域的表格解决方案，数据驱动视图，提供底层核心库、基础组件库、业务场景库
   - 依赖 @antv/g-canvas、g-gesture、d3-interpolate
 
+- grist-core /5.3kStar/apache2/202311/ts/python
+  - https://github.com/gristlabs/grist-core
+  - https://support.getgrist.com/
+  - 表格不支持视图切换，支持各种widgets，类似dashboard
+  - 前端依赖backbone、knockout、bootstrap3、jquery、ace-builds、exceljs
+  - Grist is a modern relational spreadsheet. 
+  - It combines the flexibility of a spreadsheet with the robustness of a database to organize your data and make you more productive.
+  - Columns work like they do in databases.
+  - Columns can be filled by formula
+  - A portable, self-contained format. Based on SQLite
+  - Full Python syntax is supported, and the standard library.
+  - `grist-core` has what you need to run a powerful spreadsheet hosting server. 
+  - And to show Grist spreadsheets on a website without any special back-end support, your options include `grist-static`.
+  - [Grist is a modern, relational spreadsheet | Hacker News_202311](https://news.ycombinator.com/item?id=38080951)
+  - https://github.com/gristlabs/grist-static
+    - https://gristlabs.github.io/grist-static/
+    - Showing Grist spreadsheets on a static website, without a special backend.
+    - Use Grist as the PDF of data
+    - Changes aren't stored.Changes are not shared with other viewers.
+    - No specific access control.
+    - No special server is needed for grist-static, it works straight from a CDN or any standard web server.
+    - Grist spreadsheets by default store a lot of history in the `.grist` file. You can prune that history
+
 - baserow /1.3kStar/MIT/202212/python/js/vue/多视图
   - https://github.com/bram2w/baserow
   - https://baserow.io/
@@ -224,18 +247,6 @@ modified: 2022-08-21T10:02:05.129Z
   - Uses popular frameworks and tools like Django, Vue.js and PostgreSQL.
   - Baserow is not completely open source, there are features they reserve for premium users (like kanban view).
 
-- grist-core /3.4kStar/apache2/202211/ts/python
-  - https://github.com/gristlabs/grist-core
-  - https://support.getgrist.com/
-  - 表格不支持视图切换，支持各种widgets，类似dashboard
-  - 前端基于backbone、jquery
-  - Grist is a modern relational spreadsheet. 
-  - It combines the flexibility of a spreadsheet with the robustness of a database to organize your data and make you more productive.
-  - Columns work like they do in databases.
-  - Columns can be filled by formula
-  - A portable, self-contained format. Based on SQLite
-  - Full Python syntax is supported, and the standard library.
-  - [Grist is a modern, relational spreadsheet | Hacker News_202311](https://news.ycombinator.com/item?id=38080951)
 - irelia /18Star/apache2/202211/ts/python
   - https://github.com/IreliaTable/irelia
   - https://ireliatable.github.io/irelia-web/

@@ -94,7 +94,12 @@ modified: 2022-12-02T11:15:15.257Z
 
 - continue to rearchitect couchdb on top of foundationdb
 
+- plugins
+  - math/statistics
+  - gis
+
 - sqlite [Database File Format](https://www.sqlite.org/fileformat2.html)
+  - 导出或直接兼容 sqlite格式
 # dev
 
 # changelog-pouchdb

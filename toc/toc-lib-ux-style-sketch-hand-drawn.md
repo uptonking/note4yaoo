@@ -296,6 +296,11 @@ modified: 2021-01-13T19:30:59.508Z
   - It's HTML5 canvas based and uses variable width Bézier curve interpolation based on Smoother Signatures post by Square. 
   - It doesn't depend on any external libraries.
 
+- https://github.com/MyScript/iinkJS
+  - https://developer.myscript.com/
+  - integrate rich handwriting recognition features in your webapp.
+  - Get your keys and the free monthly quota to access MyScript Cloud at developer.myscript.com
+
 - d3-canvas
   - https://observablehq.com/@d3/draw-me
 

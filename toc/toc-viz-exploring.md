@@ -13,6 +13,12 @@ modified: 2021-01-01T20:21:03.780Z
   - Dynamic Mathematics with JavaScript
   - JSXGraph is a cross-browser JavaScript library for interactive geometry, function plotting, charting, and data visualization in the web browser.
   - JSXGraph is implemented in pure JavaScript, does not rely on any other library, and uses SVG, VML, or canvas. 
+# viz-framework
+- https://github.com/f5/unovis /202311/ts
+  - https://unovis.dev/
+  - Modular data visualization framework for React, Angular, Svelte, Vue, and vanilla TypeScript or JavaScript
+  - It has charts, maps, network graphs, and more!
+  - Highly customizable, thanks to the CSS-variables support.
 # tableau
 - https://github.com/tableau/tableau-ui
   - https://tableau.github.io/tableau-ui/
@@ -27,7 +33,6 @@ modified: 2021-01-01T20:21:03.780Z
 - https://github.com/shzlw/zeu
 # rendering
 - https://github.com/BabylonJS/Babylon.js
-
 # tools
 - https://github.com/visualize-admin/visualization-tool
   - https://visualize.admin.ch/en

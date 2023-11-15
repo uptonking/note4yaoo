@@ -237,7 +237,8 @@ modified: 2021-04-11T06:17:51.318Z
   - Uses Image implementation and canvas from node-canvas. 
   - Tiles, Markers and vector layers work well with leaflet-image
 
-- https://github.com/jshjohnson/Choices /ts
+- https://github.com/Choices-js/Choices /ts
+  - https://github.com/jshjohnson/Choices /ts
   - https://choices-js.github.io/Choices/
   - configurable select box/text input plugin.
   - Similar to Select2 and Selectize but without the jQuery dependency.

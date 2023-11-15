@@ -12,7 +12,19 @@ modified: 2023-05-21T15:44:39.196Z
 # discuss
 - ## 
 
-- ## 
+- ## 🪟 [Tinysheet | Hacker News_202110](https://news.ycombinator.com/item?id=28967514)
+- Where is the data for this stored? 
+  - It appears to be stored in the url. As you update the cells there's an encoded # variable that, when removed, wipes the table.
+- And if you put the URL into a URL shortener, you can (ab)use it as cloud storage for your spreadsheet.
+- But... URLs have a char length limit
+  - And this has a cell limit. Perfectly aligned.
+
+
+- I spent several minutes trying to figure out how to add columns or rows, but it turns out you can't. It's a 'tiny sheet', after all.
+
+
+- 
+- 
 
 - ## [Excel Labs, a Microsoft Garage Project | Hacker News_202305](https://news.ycombinator.com/item?id=36081851)
 - Some things in Excel have not improved since 2003, that should be fixed before toying with "AI" . For example, when importing a CSV

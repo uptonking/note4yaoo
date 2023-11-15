@@ -820,6 +820,14 @@ modified: 2022-08-21T10:02:27.788Z
   - Millions of cells virtual viewport scroll with a powerful core is in-build by default.
   - [Show HN: RevoGrid – Spreadsheet data table for all frameworks | Hacker News_202101](https://news.ycombinator.com/item?id=25894174)
     - Seems more like an alternative to Handsontable than for LibreOffice Calc. That is, its not an end-user spreadsheet, but rather a spreadsheet/datatable component for use in your web applications.
+
+- https://github.com/xem/sheet /public/201710/html/js
+  - https://xem.github.io/sheet/
+  - A 188b/253b spreadsheet app in HTML/JS
+  - supports any value: texts, numbers, floats, and formulae. Ex: "=A1+8"
+  - cells update in cascade, circular reference protection
+  - localStorage persistence
+
 - recline /2kStar/MIT/202008/js
   - https://github.com/datopian/recline
   - https://github.com/datopian/portaljs
@@ -977,12 +985,15 @@ modified: 2022-08-21T10:02:27.788Z
     - [Handsontable v7 and later versions are fully commercial so it really depends on your case](https://twitter.com/handsontable/status/1164198101726433282). 
     - If you want to fully integrate it with your software while maintaining the OSS license, then your only option is to use v6.2.2 - the last one released under the MIT license.
   - forks
-    - https://github.com/swsvindland/opentable /inactive
+    - https://github.com/swsvindland/opentable /202201/js/inactive
     - https://github.com/rathbone-labs/jacksontable /inactive
     - https://github.com/pingyuanChen/handsontable /inactive
   - repos
-    - https://github.com/warpech/walkontable
+    - https://github.com/warpech/walkontable /MIT/201304/js
+      - This is a playground for next table view engine that will enable virtual rendering in Handsontable.
       - This project is currently not maintained in this repo, but as part of Handsontable
+      - [Refactor Walkontable Selection rendering module](https://github.com/handsontable/handsontable/pull/10265)
+        - The PR refactors and extends the Walkontable Selection rendering module for the ability to highlight the table's headers. The work presented here will be the basis for the navigation in headers
 
 - jspreadsheet-ce /6.4kStar/MIT/202305/js
   - https://github.com/jspreadsheet/ce
@@ -990,7 +1001,6 @@ modified: 2022-08-21T10:02:27.788Z
   - https://bossanova.uk/jspreadsheet/v4
   - Vanilla JavaScript data grid plugin to create amazing web-based interactive HTML tables, and spreadsheets compatible data grid with other spreadsheet software
   - 基于table标签实现
-  - 
 - https://github.com/sorryljt/react-jexcel
   - 基于jspreadsheet v4版本，封装的React 版本的轻量级Excel插件
 

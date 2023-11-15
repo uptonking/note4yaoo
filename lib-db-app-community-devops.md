@@ -77,7 +77,11 @@ modified: 2023-10-26T18:47:22.664Z
 
 - ## 
 
-- ## 
+- ## Lukewarm(微温的; 不热烈的) take for database products - focus on winning new workloads, don't worry so much about migrations. 
+- https://twitter.com/MarkCallaghanDB/status/1724454882785304672
+  - RoI on features that win new workloads >>> RoI on features that get migrations.
+- One way to “hack” this paradigm is to build based on Postgres, and then contribute/collaborate on open source migration tooling.
+- Even more lukewarm take - don’t build a database. Build a data based product within a niche. Then generalize from there if you survive year four.
 
 - ## 🔥 [What we learned after I deleted the main production database by mistake | Hacker News_202209](https://news.ycombinator.com/item?id=32903367)
 - 

@@ -28,8 +28,10 @@ modified: 2023-02-27T19:07:31.111Z
   - kappa + lsm => kdtree/r-tree: 表格数据不必用kdtree，选区和索引均可用kdtree
 
 - excel-table vs cms-table
-  - excel公式的支持
-  - cms附件的支持
+  - excel支持公式
+  - cms支持附件attachment
+  - cms支持comment，单元格级别、行级别、表级别
+  - cms支持share，分享时可将表格数据放在url，可参考tinysheet
 
 - non-goals
   - rest-api

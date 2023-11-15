@@ -12,7 +12,13 @@ modified: 2022-08-21T10:11:19.219Z
 # discuss
 - ## 
 
-- ## 
+- ## [Ask HN: What is your favorite FOSS WYSIWYG editor? | Hacker News_202310](https://news.ycombinator.com/item?id=37974321)
+- This space has a lot of churn(搅乳器); a hot new project is started by a dev who claims they'll finally have "the solution" for the WYSIWYG space. Then it gets dropped after a few years. In fact many of the comments are listing archived projects no longer under development.
+  - The only two WYSIWYG editors I can recommend are OSS but have premium plugins
+  - tinymce; ckeditor
+
+- ProseMirror. It's by far the best codebase I've seen so far with regard to web editors.
+- I've been using Prosemirror on LegendKeeper for 5 years now. It's a challenging library to use, but there's very little you can't do with it. Chasing down cross-platform bugs is a nasty business though.
 
 - ## Thinking about Makepad's continuous code folding animation again. 
 - https://twitter.com/thesephist/status/1668074952681988098

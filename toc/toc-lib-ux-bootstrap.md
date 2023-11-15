@@ -105,9 +105,11 @@ modified: 2021-01-10T22:18:36.696Z
   - A lightweight component library for developing fast web interfaces.
   - 只提供了css，很多组件交互依赖于bootstrap5的js，传递依赖popper.js
 
-- https://github.com/adminkit/adminkit
+- https://github.com/adminkit/adminkit /1.3kStar/MIT/202306/js/scss
+  - https://demo.adminkit.io/
   - Dashboard template based on Bootstrap 5
-  - AdminKit does not require jQuery and neither does one of the 3rd party libraries AdminKit is using.
+  - 依赖bootstrap、flatpickr、chartjs.v2、simplebar
+  - AdminKit, and all third-party libraries used in the admin template, do not require jQuery as a dependency.
   - 付费版才提供多个color schemes
 - https://github.com/mdbootstrap/mdb-ui-kit
   - https://mdbootstrap.com/docs/standard/

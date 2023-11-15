@@ -70,7 +70,15 @@ modified: 2023-10-11T21:37:25.329Z
 
 - ## 
 
-- ## 
+- ## Ever wonder what it would take to make your app feel faster? Let’s speed-run optimizing a typical web app so we can see how challenging it actually is. 
+- https://twitter.com/matthew_linkous/status/1724501205701783899
+- You have your local database setup and you've re-implemented every endpoint on your backend server as a client-side query. You app is running seamlessly even when disconnected from the network but you still need to figure out how to sync data between the frontend and backend
+- On first blush, you think all you need to do is insert data from your backend when your app starts and then read from the SQLite database exclusively, but soon you realize it's much more complicated than you thought...
+- For starters, how do you even subscribe to changes on your remote database? As you unravel(解开，拆开) the challenge ahead of you you're left with more questions than answers:
+  - How do you keep a schema in sync between your local and remote database? 
+  - How do you rollback changes on the client when they're rejected by the server? 
+  - How do you handle conflicting changes from different users?
+  - Are you polling the remote database too often?
 
 - ## [Some notes on local-first development | Hacker News_202309](https://news.ycombinator.com/item?id=37488034)
 - One common misconception with local-first, is that it's essentially local-only. 

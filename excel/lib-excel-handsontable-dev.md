@@ -17,7 +17,8 @@ modified: 2022-08-21T09:57:32.451Z
 
 - ## 
 
-- ## 
+- ## 🤔 [WTF is a Walkontable?_201508](https://github.com/handsontable/handsontable/issues/2716)
+- Walkontable is for internal use only. It used to be a separate library, but now it is included to HOT repository and it's core functionality is to render HTML table.
 
 - ## 🤑 [Handsontable drops open source for a non-commercial license | Hacker News_201903](https://news.ycombinator.com/item?id=19488642)
 - About ag-Grid and Handsontable... I am founder of another JavaScript Grid product. FancyGrid. I know much about this market and situation. 

@@ -54,9 +54,6 @@ modified: 2022-11-11T03:09:56.491Z
     - https://appsco.pe/toplist
   - [zero data app](https://0data.app/glance/)
 # pwa-sites
-- ref
-  - https://github.com/hemanth/awesome-pwa
-
 - MConverter - File Converter: AVIF, JXL, WebP
   - https://mconverter.eu/
 # pwa-product-examples

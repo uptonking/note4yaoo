@@ -188,7 +188,7 @@ modified: 2023-01-20T21:59:47.792Z
   - Auto-generated CRUD UIs from your API data structure
   - state management & mutations with React Query
   - Out-of-the-box support for live/real-time applications
-# in-memory/json-cms
+# in-memory/json-cms/dashboard
 - TiddlyWiki5 /7.5kStar/BSD/202311/js
   - https://github.com/Jermolene/TiddlyWiki5
   - https://tiddlywiki.com/
@@ -234,8 +234,6 @@ modified: 2023-01-20T21:59:47.792Z
   - All content served to the readers is plain HTML served over HTTP(S). No Javascript that generates the UI elements on the client side
   - Multiple websites in one instance, that can be separately administered. 
   - All web pages are pre-rendered so they can immediately be served when a HTTP request is received.
-
-
 # cloud-cms
 - https://github.com/jadeallencook/gdoc-js /202110/js
   - http://jadeallencook.github.io/gDoc.js/

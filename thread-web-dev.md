@@ -33,6 +33,15 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## script标签会不会阻塞html加载
+- https://twitter.com/wulianwen1/status/1724699387300069380
+  - async支持html-parse时下载js，但js执行会阻塞html-parse
+  - defer支持延迟下载和执行js，js在html-parse完成后才会执行
+
 - ## 🤔 is importNode any better or different than cloneNode ?
 - https://twitter.com/WebReflection/status/1721837891276431706
   - well, importNode for fragments uses a nodeType check + isShadowRoot check

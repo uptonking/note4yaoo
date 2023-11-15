@@ -63,10 +63,10 @@ modified: 2021-08-23T05:27:08.068Z
 - https://github.com/GamEditor/Node.js-FileManager
   - This is a simple file manager for download and upload files on the server by categories.
 
-- https://github.com/rocketseat-content/youtube-clone-dropbox-menu
-  - https://github.com/maykbrito/vanilla-ui-clone-dropbox-home
-  - 模仿dropbox的首页，简洁大方
+- https://github.com/maykbrito/vanilla-ui-clone-dropbox-home /202008/js
+  - https://github.com/rocketseat-content/youtube-clone-dropbox-menu
   - https://cranky-einstein-aff725.netlify.app/
+  - 模仿dropbox的首页，简洁大方
 
 - https://github.com/emkis/dropbox-clone /202011/js
   - an easy way to store, share and access files from anywhere

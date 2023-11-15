@@ -145,8 +145,10 @@ modified: 2023-04-04T22:35:59.255Z
   - This class is a wrapper over MutationObservers, allowing you to observe changes even of those nodes that are not already in the DOM
   - Observation will automatically start as soon as the target node appends in the DOM.
 
-- https://github.com/wilsonpage/fastdom /js
+- https://github.com/wilsonpage/fastdom /202206/js
   - Eliminates layout thrashing by batching DOM measurement and mutation tasks
+  - Eliminates layout thrashing by batching DOM read/write operations 
+  - Each measure/mutate job is added to a corresponding measure/mutate queue. The queues are emptied (reads, then writes) at the turn of the next frame using `window.requestAnimationFrame`.
 
 - https://github.com/CoCreate-app/CoCreate-clone /js
   - https://cocreate.app/docs/clone

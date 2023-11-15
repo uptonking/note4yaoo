@@ -190,9 +190,16 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/arthurfigueiredo/Kanban.js /MIT/js
   - http://arthurfigueiredo.github.io/Kanban.js/
   - Javascript plugin to build kanban boards only 2KB
-- https://github.com/riktar/jkanban /914Star/apache2/js/202112/inactive
+
+- https://github.com/waterrmalann/kards /MIT/202309/js
+  - https://waterrmalann.github.io/kards/
+  - A simple cards-based kanban board app inspired by Trello in pure vanilla JS
+
+- https://github.com/riktar/jkanban /914Star/apache2/js/202111/inactive
   - https://www.riccardotartaglia.it/jkanban/
   - Vanilla Javascript plugin for manage kanban boards
+  - jKanban use dragula for drag&drop
+
 - https://github.com/otiagosoares/kanban-vanilla-js
   - https://codepen.io/otiagosoares/pen/rNWQGeb
 - https://github.com/Eshh/kanban-board /js
