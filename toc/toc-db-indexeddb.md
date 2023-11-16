@@ -177,6 +177,8 @@ modified: 2022-06-03T22:06:16.249Z
   - https://github.com/ujjwalguptaofficial/jsstore-examples
 - https://github.com/ujjwalguptaofficial/idbstudio
   - a cli tool for indexeddb library jsstore. It helps users to execute , debug and learn jsstore query.
+- https://github.com/ujjwalguptaofficial/idbstudio /202308/ts
+  - idbstudio is a management tools for indexeddb library jsstore. It helps users to execute , debug and learn jsstore query.
 - https://github.com/ujjwalguptaofficial/sqlweb
   - SqlWeb is an extension of JsStore which allows to use sql query for performing database operation in IndexedDB.
   - var connection = new JsStore. Instance('jsstore worker path'); 

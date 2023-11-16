@@ -48,6 +48,9 @@ modified: 2023-02-07T09:22:03.120Z
   - Distil-Whisper is a distilled version of Whisper that is 6 times faster, 49% smaller, and performs within 1% WER on out-of-distribution evaluation sets.
   - https://twitter.com/sanchitgandhi99/status/1719409022246220184
 
+- https://github.com/Vaibhavs10/insanely-fast-whisper
+  - TL;DR - Transcribe 150 minutes (2.5 hours) of audio in less than 98 seconds - with OpenAI's Whisper Large v3.
+  - https://github.com/chenxwh/insanely-fast-whisper
 ## more-asr
 
 - https://github.com/wenet-e2e/wenet

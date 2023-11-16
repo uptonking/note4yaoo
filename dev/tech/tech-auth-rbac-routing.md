@@ -28,7 +28,7 @@ modified: 2022-01-06T17:30:03.280Z
   - 缺点
     - 内层路由的可读性差
 
-```JS
+```tsx
  <Route path='id'>
     <Route path='*' element={<AuthRedirect />} />
   </Route>

@@ -18,7 +18,11 @@ modified: 2023-04-19T07:30:34.872Z
 # discuss
 - ## 
 
-- ## 
+- ## TIL that a “data lake” is just an S3 bucket stuffed choke full o’ good ol’ csv files
+- https://twitter.com/ChiefScientist/status/1724918222066159857
+- And you put a table abstraction on top, that gets you a lakehouse
+- It becomes a Data Ocean soon enough.
+- Same with a data stream
 
 - ## In ascending order of importance for Data Engineering:
 - https://twitter.com/Ubunta/status/1718275186074730997

@@ -202,3 +202,12 @@ const setAnotherTimeout = () => {
   - https://wicg.github.io/sanitizer-api/
 - While using Trusted Types + document.createTextNode to inert XSS code, I find Sanitizer API useful against social attacks, like "Hey noob copy paste this inert code stored on my page into your dev tools it's a surprise". allowElements:[] will just nuke payload and it's great.
 - Userland sanitizers like DOMPurify have existed for years. Browsers are now trying to pave those cowpaths.
+
+# discuss-a11y
+- ## 
+
+- ## 
+
+- ## This is when you truly learn how harmful "outline: none" is and replacing it with box shadows.
+- https://twitter.com/RogersKonnor/status/1724911403436327164
+  - "outline: transparent" will at least show up in high contrast mode, and the box shadows will be nonexistent!

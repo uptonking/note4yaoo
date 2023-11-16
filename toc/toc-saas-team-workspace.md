@@ -20,6 +20,26 @@ modified: 2023-02-07T17:38:05.336Z
   - focalboard, nocodb
   - 可以从主流产品的issues/discussions里面找替代品
 # popular
+- growi /1.2kStar/MIT/202311/ts/remark
+  - https://github.com/weseek/growi
+  - https://docs.growi.org/en/guide/
+  - https://demo.growi.org/
+  - Team collaboration software using markdown
+  - 依赖 express、mongoose、es、redis、swr
+  - Simultaneously edit with multiple people by HackMD(CodiMD) integration
+  - Create hierarchical pages with markdown
+  - Slack/Mattermost, IFTTT Integration
+  - 各种集成
+
+- crowi /1.1kStar/MIT/202211/ts/inactive
+  - https://github.com/crowi/crowi
+  - http://demo.crowi.wiki/
+  - The Markdown Wiki - Empower the team with sharing your knowledge
+  - URL Based Page Tree
+  - pages that end with slashes (/) are automatically generated as list views. 
+  - 功能和样式都很普通
+  - 依赖mongoose、es、redis、swig
+
 - https://github.com/makeplane/plane /AGPLv3/python/ts
   - https://plane.so/
   - Open Source JIRA, Linear and Height Alternative.
@@ -37,36 +57,16 @@ modified: 2023-02-07T17:38:05.336Z
   - a desktop app that helps you organize how you use your favourite apps by combining them into one application. 
   - It is based on Franz - a software already used by thousands of people - with the difference that Ferdium gives you many additional features and doesn't restrict its usage! 
 # microsoft-teams/org
-- growi /1.1kStar/MIT/202301/ts/remark
-  - https://github.com/weseek/growi
-  - https://docs.growi.org/en/guide/
-  - https://demo.growi.org/
-  - Team collaboration software using markdown
-  - 依赖 express、mongoose、es、redis、swr
-  - Simultaneously edit with multiple people by HackMD(CodiMD) integration
-  - Create hierarchical pages with markdown
-  - Slack/Mattermost, IFTTT Integration
-  - 各种集成
-
-- crowi /1.1kStar/MIT/202211/ts
-  - https://github.com/crowi/crowi
-  - http://demo.crowi.wiki/
-  - The Markdown Wiki - Empower the team with sharing your knowledge
-  - URL Based Page Tree
-  - pages that end with slashes (/) are automatically generated as list views. 
-  - 功能和样式都很普通
-  - 依赖mongoose、es、redis、swig
-
 - https://github.com/xiweicheng/tms /MIT/js/java
   - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
 
-- https://github.com/bennymeier/mern-stack-project-management
+- https://github.com/bennymeier/mern-stack-project-management /202111/ts/js
   - A project management platform built with the MERN-Stack.
   - Jira clone with MongoDB, Express, React and Node.js
   - 后端js，mongoose
   - 前端ts，redux、semantic-ui、react-beautiful-dnd
 
-- https://github.com/vishwajeetraj11/projectboard
+- https://github.com/vishwajeetraj11/projectboard /202308/ts
   - https://github.com/vishwajeetraj11/projectboard-backend
   - A project management application that allows you to track tasks process
   - 后端js，mongoose

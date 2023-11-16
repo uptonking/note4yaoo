@@ -20,7 +20,16 @@ Symbol('a') === Symbol('a'); //false
 
 - ## 
 
-- ## 
+- ## TIL: `structuredClone()` will clone only once a reference to the same object
+- https://twitter.com/oriSomething/status/1725144694059851866
+  - structureClone works with cycles
+
+```JS
+const obj1 = { p: 11 };
+const obj2 = { a: obj1, b: obj1 }
+const c = structuredClone(obj2)
+c.a === c.b // true
+```
 
 - ## Problem: If a function accepts multiple parameters of the same type, we may accidentally pass arguments in the wrong order. Types can’t protect us. 
 - https://twitter.com/housecor/status/1715052861417980207

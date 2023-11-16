@@ -291,3 +291,17 @@ yaoohpu18
 
 - lscpu
 - lsblk
+
+
+# discuss
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## If I have no idea what's occupying a specific port, I run this command. It gives me a PID so I can kill the process.
+- https://twitter.com/alex35mil/status/1725091399337480413
+  - https://github.com/alex35mil/dotfiles/blob/47f4cfb5f4c165f5d84e2e42cb57db61e4bd32da/home/.config/shell/shortcuts.sh#L146-L170
+

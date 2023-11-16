@@ -17,7 +17,12 @@ modified: 2022-04-23T18:48:32.550Z
 
 - ## 
 
-- ## 
+- ## Here are some handy CHAR functions that you can use to add context to your #GoogleSheets
+- https://twitter.com/benlcollins/status/1724774908972921219
+  - ▪️ CHAR(8594) produces the right arrow ➡️
+  - ▪️ CHAR(10) produces a carriage return (new line)
+  - ▪️ CHAR(8595) produces a down arrow ⬇️
+- My tracker with char()
 
 - ## 第一个 GPTs：合并 Excel 文件。 实现了一个 WPS 的付费功能，上传多个 Excel 文档，合并为一个文件后下载。
 - https://twitter.com/yeshu_in_future/status/1723331524161122366

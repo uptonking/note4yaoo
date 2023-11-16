@@ -74,7 +74,10 @@ modified: 2021-08-16T06:56:53.061Z
 # discuss-pdf
 - ## 
 
-- ## 
+- ## 我想要写一个 HTML 转图片/PDF 的微服务，底层是 chrome，开源。是否已经有同类项目？
+- https://twitter.com/chloerei/status/1724724703317934102
+  - 我可能没说清楚背景，我有个应用已经在用chrome生成图片了，但是把 chrome 打包进主应用里让镜像大了几百M，我想把调用chrome API这个部分独立成服务。
+  - 类似的项目有 vercel/og。类似的服务有 htmlcsstoimage。
 
 - ## 很多人都在问简单简历 http://easycv.cn 下载的 PDF 文件为什么效果那么好？
 - https://twitter.com/vikingmute/status/1711188708316336252

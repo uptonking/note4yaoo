@@ -89,7 +89,17 @@ modified: 2023-09-17T17:36:36.118Z
 
 - ## 
 
-- ## 
+- ## Direct IO can easily be misunderstood: Is it required for database durability?
+- https://twitter.com/jorandirkgreef/status/1724950847035941074
+  - The crux of the problem is that DBMS's do need to distinguish between volatile data (kernel page cache) and durable data when they externalize transaction commitments to users.
+  - It's hard to do that (at least correctly) if the DBMS is only able to read from the kernel page cache, i.e. if the DBMS has no way to read directly from the disk itself.
+  - Granted, there's still the disk's own cache to consider, which Direct IO alone doesn't address (you can fsync the fd when you call open to address this—a FoundationDB trick, which inspired the same for @TigerBeetleDB )... but Direct IO is a vital(极重要的，必不可少的) building block in designing a DBMS for durability.
+  - To be clear, the non-intuitive thing about DBMS durability is that it’s often surprisingly as much as how you read() from the disk, for example, when recovering from the WAL at startup, as how you write() to the disk and call fsync.
+
+- looks like `fsync` flushes both the kernel page cache and the disk cache from the man page doc
+  - Yes, exactly. Direct IO bypasses the kernel page cache, but you still need `fsync` to flush writes from the disk cache all the way to durable disk.
+- It also ensures that the write is flushed from the various queues. Queues at the OS level like the staging queue and the hardware dispatch queue. And the submission queue between OS and the SSD.
+- Enterprise grade SSDs have Power Loss Protection (PLP). Effectively a bunch of capacitors having sufficient charge for tens of milliseconds to flush the content from the cache (DRAM) to the NAND based flash. The fsync to the drive can effectively be a noop.
 
 - ## [Soft deletion probably isn't worth it | Hacker News_202207](https://news.ycombinator.com/item?id=32156009)
 - I've been a software dev since the 90s and at this point, I've learned to basically do things like audit trails and soft deletion by default, unless there's some reason not to.

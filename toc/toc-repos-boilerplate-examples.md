@@ -1,38 +1,128 @@
 ---
-title: toc-app-demo-examples
-tags: [app, examples, starter]
-created: 2020-09-25T07:50:19.733Z
-modified: 2020-10-22T13:02:56.929Z
+title: toc-repos-boilerplate-examples
+tags: [boilerplate, examples, starter, toc]
+created: 2023-11-16T14:51:47.934Z
+modified: 2023-11-16T15:00:11.503Z
 ---
 
-# toc-app-demo-examples
+# toc-repos-boilerplate-examples
 
+# guide
+- vanillajs类型的架构可以参考流行的dashboard、shop/ecommerce
 # common-examples
 
-- counter
-  - https://github.com/kentcdodds/dom-testing-library-with-anything
-    - This repo is a bunch of simple examples of using DOM Testing Library to test a Counter component in various frameworks
+## counter
 
-- todomvc
-  - https://todomvc.com/
-  - https://github.com/tastejs/todomvc
-  - https://github.com/twinstae/todomvc-for-all
-  - https://github.com/rokoroku/react-redux-typescript-boilerplate
-  - https://github.com/dwyl/javascript-todo-list-tutorial /js
-    - A step-by-step complete beginner example/tutorial for building a Todo List App (TodoMVC) from scratch
-  - https://github.com/1Marc/modern-todomvc-vanillajs /js
-    - TodoMVC with Modern (ES6+), Vanilla JavaScript
-    - 200 lines of code total, No build tools
-    - [TodoMVC App Written in Vanilla JavaScript | Hacker News_202205](https://news.ycombinator.com/item?id=31293750)
-      - that's exactly what I would imagine vanilla js code look like, and I'm glad we moved on to frameworks. Just this small app seems not so fun to maintain
+- https://github.com/kentcdodds/dom-testing-library-with-anything
+  - This repo is a bunch of simple examples of using DOM Testing Library to test a Counter component in various frameworks
 
-- realword
+## todomvc
+
+- https://todomvc.com/
+- https://github.com/tastejs/todomvc
+- https://github.com/twinstae/todomvc-for-all
+- https://github.com/rokoroku/react-redux-typescript-boilerplate
+- https://github.com/dwyl/javascript-todo-list-tutorial /js
+  - A step-by-step complete beginner example/tutorial for building a Todo List App (TodoMVC) from scratch
+- https://github.com/1Marc/modern-todomvc-vanillajs /js
+  - TodoMVC with Modern (ES6+), Vanilla JavaScript
+  - 200 lines of code total, No build tools
+  - [TodoMVC App Written in Vanilla JavaScript | Hacker News_202205](https://news.ycombinator.com/item?id=31293750)
+    - that's exactly what I would imagine vanilla js code look like, and I'm glad we moved on to frameworks. Just this small app seems not so fun to maintain
+
+## realword
+
+- resources
   - https://github.com/gothinkster/realworld
-# web
-- https://github.com/googlechromelabs/houdini-samples
-  - https://googlechromelabs.github.io/houdini-samples/
-  - Demos for different Houdini APIs
-  - no vendor has published a version of their browser with support for any of the Houdini standards yet.
+  - [RealWorld](https://www.realworld.how/)
+  - [CodebaseShow – RealWorld Example Apps](https://codebase.show/projects/realworld)
+
+- https://github.com/chagweyh/react-hooks-typescript-realworld /202011/ts/inactive
+  - https://react-hooks-typescript-realworld.netlify.com/
+  - Exemplary real world application built with React Hooks + Typescript
+  - 依赖react、axios、reach-router
+- https://github.com/Allianzcortex/react-typescript-hooks-realworld /202110/ts/redux
+  - https://react-typescript-hooks-realworld.vercel.app/
+  - React FC + Immer + Redux + Hooks + axios + Testing Library
+
+- https://github.com/gothinkster/web-components-realworld-example-app /201705/js/archived
+  - Exemplary real world application built with Vanilla JS Web Components
+- https://github.com/mits-gossau/event-driven-web-components-realworld-example-app /202303/js
+  - https://mits-gossau.github.io/event-driven-web-components-realworld-example-app/
+  - Exemplary real world application built with Vanilla JS Web Components in an Event Driven Architecture
+  - Frontend Event Driven Architecture works basically like the DOM itself. There are loosely coupled components (nodes), which emit events and those get captured by controllers also called stores, routers, etc. Those controllers emit events on their behalf, which the components can consume.
+
+- https://github.com/mutoe/preact-realworld-example-app /202112/js
+  - https://mutoe.github.io/preact-realworld-example-app
+  - 依赖zustand
+- https://github.com/romansndlr/react-vite-realworld-example-app /202204/js
+  - 依赖valtio、react-query.v3
+
+- https://github.com/7anshuai/react-mobx-typescript-realworld-example-app /202212/ts
+  - https://7anshuai.js.org/react-mobx-typescript-realworld-example-app/
+  - Realworld app built with React Hooks + Mobx + TypeScript
+
+- https://github.com/solidjs/solid-realworld /202204/js
+  - Solid.js codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
+
+- https://github.com/Coding-Dodo/owl-realworld-app /202112/js
+  - OWL RealWorld App Implementation. This application make use of Odoo Web Library as a standalone JavaScript project
+
+### api-realworld
+
+- https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/ts/be+fe
+  - Node.js + Express.js + Sequelize + SQLite/PostgreSQL + Next.js fullstack static/SSG/ISG Example Realworld App
+
+- https://github.com/TonyMckes/conduit-realworld-example-app /202303/js/be+fe
+  - created to demonstrate a fully fledged fullstack application built with React / Express.js / Sequelize / PostgreSQL including CRUD operations, authentication, routing, pagination, and more.
+
+- https://github.com/skopekreep/typescript-node-express-realworld-example-app /202007/ts
+  - Rewrite of JS-based node-express RealWorld backend app using Typescript
+  - 依赖express-jwt、jsonwebtoken、mongoose、passport
+
+- https://github.com/Varun-Hegde/Conduit_NodeJS /202105/js
+  - Express and NodeJS based backend implementation of the RealWorld API Spec.
+  - MySQL + Sequelize
+- https://github.com/coding-blocks-archives/Realworld_NodeJS_Sequelize /201902/js
+  - an implementation of Thinkster's realworld.io API 
+  - MySQL/SQLite/Postgres
+
+- https://github.com/gothinkster/koa-knex-realworld-example /201910/js
+  - Example Node. Js (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
+
+- https://github.com/tranlehaiquan/nodejs-api-realworld /202308/ts
+  - RestFul with Express, Typescript
+  - 依赖mongoose、jsonwebtoken
+
+- https://github.com/gothinkster/node-express-realworld-example-app /201802/js
+- Example Node (Express + Mongoose) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld API spec
+
+- https://github.com/hseeberger/realworld-backend /202311/rust
+  - RealWorld backend implementations in Rust, using different frameworks (enabled via respective features)
+  - axum
+  - poem-openapi
+  - https://github.com/hseeberger/realworld-frontend
+    - RealWorld frontend implementation in Rust, using Leptos
+- https://github.com/dxps/fullstack-rust-axum-dioxus-rwa /202306/rust
+  - RealWorld app implementation as a Fullstack Rust project using Axum (be) and Dioxus (fe)
+- https://github.com/snamiki1212/realworld-v1-rust-actix-web-diesel /202306/rust
+  - RealWorld with Rust + ActixWeb + Diesel on Clean Architecture
+- https://github.com/jetli/rust-yew-realworld-example-app /202310/rust
+  - https://jetli.github.io/rust-yew-realworld-example-app/
+  - Rust + Yew + WebAssembly codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
+  - created to demonstrate a fully fledged WebAssembly web application built with Yew including CRUD operations, authentication, routing, pagination, and more.
+  - It utilizes Yew's latest function components and hooks. 
+  - It also supports desktop application powered by Tauri.
+- https://github.com/JoeyMckenzie/realworld-rust-axum-sqlx /202208/rust
+  - A fullstack RealWorld implementation using rust, axum, sqlx, and yew!
+- https://github.com/fairingrey/actix-realworld-example-app /201909/rust
+  - Implementation of the RealWorld backend API spec in Actix
+
+- https://github.com/DataDog/flask-realworld-example-app /202311/python
+  - Exemplary real world JSON API built with Flask
+
+- https://github.com/err0r500/go-realworld-clean /201808/go
+  - a clean architecture implementation of the realworldapp
 # vanillajs
 - https://github.com/aman-maharshi/vanilla-js /202304/js
   - Projects using pure JavaScript without any external libraries or frameworks
@@ -42,10 +132,80 @@ modified: 2020-10-22T13:02:56.929Z
   - Mini projects built with HTML5, CSS & JavaScript. No frameworks or libraries
   - This is the main repository for all of the projects in the course.
 
+- DoX /6Star/NALic/202308/js/ejs
+  - https://github.com/AlbertCerfeda/DoX
+  - https://doxeditor.herokuapp.com/
+  - 依赖 prosemirror-collab、express、passport、socket.io、bootstrap4、mongodb、html-to-image
+  - features
+    - 文档支持简单分享、权限设置
+    - 协作支持显示光标
+  - DoX Editor aims to be a web text editor application that allows users to create, edit, store and share several documents.
+  - A web text editor application that allows users to create, edit, store and share several documents, with support for real-time collaborative editing.
+  - DoX is clearly inspired to well known online word processors such as Google Docs
+
+- https://github.com/ibm-watson-data-lab/shopping-list-vanillajs-pouchdb /201802/js
+  - Shopping List is an Offline First demo Progressive Web App built using Vanilla JS and PouchDB.
+
+- https://github.com/basir/node-javascript-ecommerce /188Star/202211/js
+  - Build ECommerce Like Amazon Using Vanilla JS
+  - Node & Express: Web API, Body Parser, File Upload, JWT
+  - MongoDB: Mongoose, Aggregation
+
+- https://github.com/HimanshuMishir/Shopping /202302/js
+  - a simple Shopping website I tried to make using vanilla JavaScript, nodeJs, MongoDB.
+
+- https://github.com/8mecem8/Vanilla-Js-eCommerce /202108/js
+  - Mini Amazon like pure-Js eCommerce project
+  - used OOP programming model with JS 'Class' to write components
+  - I used dynamic routing with JS without page refresh. For payment Methods I used paypal api.
+- https://github.com/mav-raj/eCommerce-vanillaJS /201908/js
+  - https://ecommerce-ca4fb.firebaseapp.com/
+  - a eCommerce web app built using HTML, CSS and vanilla JS
+
+- https://github.com/Anthony29p/Online-Shop-VanillaJS /202209/js
+  - https://online-shop-vanilla-js.vercel.app/
+  - online shop on Vanilla JS source.
+
+- https://github.com/egrep6021ad/VanillaJS-MongoDB-FullStack /202210/js
+  - https://egrep6021ad.github.io/VanillaJS-MongoDB-FullStack/
+  - a collaborative project intended to create a small website that has similar functionality to Zillow or a related website.
+
+- https://github.com/Jaykhun/vanilla-js-online-store /202305/js
+  - https://jaykhun.github.io/vanilla-js-online-store
+  - My online store built with Vanilla JavaScript and IndexedDB offers product search, registration, login, and cart functions. 
+  - It also features an admin panel for adding products, managing users, and changing order status.
+
+- https://github.com/Nemwel-Boniface/awesomeBooksModules /202204/js
+  - https://nemwel-boniface.github.io/awesomeBooksModules/
+  - a vanilla Javascript which offers CRUD functionalities allowing you to add, remove edit books info and store it to the local storage.
+
+- https://github.com/Flo-314/Members-only /202201/js
+  - an app created with PUG(jadeJS), Express, NodeJS, Passport JS, CSS vanilla.
+
+- https://github.com/tmmluis/user-management /202310/ts
+  - https://candid-sunburst-c11b14.netlify.app/
+  - A simple user management dashboard created with vanilla javascript (and CSS) for educational purposes.
+  - to explore some of the native web APIs, most notably custom elements
+  - It utilizes Reqres as a source of fake backend data to simulate a login flow and load initial user information
+  - https://github.com/Faisalramzan282/User-Admin_Role_Auth_VanillaJS /js
+
+- https://github.com/HarshitRoy812/notes-app /202301/js
+  - Developed a full-authenticated notes app using Vanilla and Express JS. Authenticated the app using JWT library.
+
 - https://github.com/dcode-youtube/single-page-app-vanilla-js /js
   - Taken from my YouTube Tutorial: https://www.youtube.com/watch?v=6BozpmSjk-Y
 - https://github.com/dcode-youtube/notes-app-javascript-localstorage /2020107/js
   - A Notes App built with vanilla JavaScript and Local Storage.
+- https://github.com/navdeepm20/Notes_app_in_JavaScript /202211/js
+  - Notes App build using Vanilla Js that saves notes on your browser local storage
+
+- https://github.com/CodePapa360/Friends-TvSeries-Site /202308/js
+  - https://friends-tv-series-codepapa360.netlify.app/
+  - Built entirely from scratch using only JavaScript – no frameworks or libraries involved.
+- https://github.com/CodePapa360/Forkify-Recipe-App /202304/js
+  - https://forkify-alamin.netlify.app/
+  - a recipe search and saving app, built with HTML5, CSS3, and JavaScript.
+  - The app uses advanced JavaScript concepts like asynchronous programming, ES6 modules, and object-oriented programming
 
 - https://github.com/alireza-mh/multipage-vanilla-js-app /202012/ts
   - create multipage dynamic pages with vanilla JS
@@ -57,6 +217,7 @@ modified: 2020-10-22T13:02:56.929Z
 - https://github.com/Aditya-Mankar/Expenses-Manager /202008/js
   - https://expenses-manager-app.netlify.app/
   - A Vanilla JavaScript application for managing your Expenses
+  - https://github.com/hamzayousuf121/expense-tracker /js
 
 - https://github.com/kitsaway/todo-app /202301/js
   - https://kitsaway.github.io/todo-app/
@@ -89,10 +250,6 @@ modified: 2020-10-22T13:02:56.929Z
 - https://github.com/theodoremoreland/WeatherDashboard /202309/js
   - https://theodoremoreland.github.io/WeatherDashboard/
   - A weather dashboard built atop the OpenWeather API using vanilla JavaScript and vanilla CSS.
-
-- https://github.com/mav-raj/eCommerce-vanillaJS /201908/js
-  - https://ecommerce-ca4fb.firebaseapp.com/
-  - a eCommerce web app built using HTML, CSS and vanilla JS
 
 ## vanilla-clone
 
@@ -269,8 +426,10 @@ modified: 2020-10-22T13:02:56.929Z
 
 - https://github.com/Bakaji/simple-postman-clone /202207/js
   - a simple postman clone app using vanillaJS, Ace editor, bootstrap and vite
-
-## admin/dashboard
+# admin/dashboard
+- https://github.com/webDevSaiF/bank_app_JS /202308/js
+  - https://webdevsaif.github.io/bank_app_JS/
+  - learn while building an interactive banking application using vanilla JavaScript. 
 
 - https://github.com/zernonia/Dashboard-BI /202003/js/inactive
   - https://zernonia.github.io/Dashboard-BI/
@@ -294,20 +453,47 @@ modified: 2020-10-22T13:02:56.929Z
 - https://github.com/PlainAdmin/plain-free-bootstrap-admin-template /202309/js
   - https://plainadmin.com/
   - open-source Vanilla JS admin dashboard template based on Bootstrap 5
-# apps
-- https://github.com/ibm-watson-data-lab/shopping-list-vanillajs-pouchdb /201802/js
-  - Shopping List is an Offline First demo Progressive Web App built using Vanilla JS and PouchDB.
 
+- https://github.com/mostafizurhimself/admintoolkit-html /202307/js
+  - https://getadmintoolkit.com/
+  - Admin template based on TailwindCSS and Vanilla JavaScript
+
+- https://github.com/asterginete/vanillajs-admin-dashboard /202308/js/jquery
+  - An admin dashboard using VanillaJS and Jquery
+  - This admin dashboard provides CRUD functionality for user profiles.
+
+## admin-fwk
+
+- https://github.com/jetlinks/jetlinks-ui-antd
+  - 演示地址：http://demo.jetlinks.cn
+  - 项目多处采用了SSE接口交互，开发需要使用dev环境变量（生产环境使用nginx代理了EventSource接口）
+
+- https://github.com/CoCreate-app/CoCreate-dashboard /202311/js/单文件
+  - A simple dashboard component in vanilla javascript.
+  - 依赖CoCreate.js
+# apps
+- https://github.com/Veri5ied/slack-ui-clone /202012/js
+  - React, Vanilla CSS, Material UI Icons, Reach Router and Firestore Slack Clone
+# apps-api
+- https://github.com/1FarZ1/Task-Manager-NodeJs /202310/js
+  - A Complete Task Manager Built Using NodeJs, Express, MongoDb, VanillaJs
+
+- https://github.com/matt212/Nodejs_Postgresql_VanillaJS_Fastify /202208/js
+  - Config based Node.js and PostgreSQL Web App Boilerplate/Scaffolding with custom RBAC and stream-based CSV upload and download mechanics.
+# auth
 - https://github.com/auth0-blog/spa-jwt-authentication-tutorial /201507/js
   - Add authentication to a vanilla js single page app
 
-- https://github.com/Veri5ied/slack-ui-clone /202012/js
-  - React, Vanilla CSS, Material UI Icons, Reach Router and Firestore Slack Clone
-# api
-- https://github.com/matt212/Nodejs_Postgresql_VanillaJS_Fastify /202208/js
-  - Config based Node.js and PostgreSQL Web App Boilerplate/Scaffolding with custom RBAC and stream-based CSV upload and download mechanics.
-  - 
+- https://github.com/rajeshpillai/node-jwt-step-by-step /202005/js
+  - A simple express jwt server with vanilla javascript client for testing
+  - backend + frontend
 
+- https://github.com/LeeSoMyoung/Express-NodeJS-Auth-with-JWT /202202/js
+  - NodeJS, Express, MySQL, Vanilla JS로 구현한 Authentication
+
+- https://github.com/cornflourblue/node-mongo-registration-login-api /202007/js
+  - NodeJS + MongoDB API for User Management, Authentication and Registration
+  - [NodeJS + MongoDB - Simple API for Authentication, Registration and User Management | Jason Watmore's Blog](https://jasonwatmore.com/post/2018/06/14/nodejs-mongodb-simple-api-for-authentication-registration-and-user-management)
 # pwa
 - https://github.com/hemanth/awesome-pwa
   - Useful resources for creating Progressive Web Apps
@@ -317,41 +503,3 @@ modified: 2020-10-22T13:02:56.929Z
   - Hacker News readers as Progressive Web Apps. A spiritual successor to TodoMVC
 - https://github.com/cristianbote/hnpwa-vanilla /202111/js
   - Hacker News PWA implement ed using no framework just javascript
-# list-grid
-
-# bi-olap-search
-
-- elasticsearch
-  - [search ui](https://search-ui-stable.netlify.app)
-    - https://github.com/elastic/search-ui
-    - /1.2kStar/Apache2/202008
-    - A React library that allows you to quickly implement search experiences
-- [searchkit imdb demo](http://demo.searchkit.co/)
-- [dejavu datasets: movies, hacker news, airbeds](https://opensource.appbase.io/dejavu/)
-- appbaseio
-  - [Marketplace for Reactive Apps](https://reactiveapps.io/)
-  - [Reactive Apps: GraphQL Elasticsearch Boilerplate](https://vigorous-noether-ab7748.netlify.app/)
-  - [airbeds](https://opensource.appbase.io/reactivesearch/demos/airbeds/)
-  - [gitxplore](https://opensource.appbase.io/reactivesearch/demos/gitxplore/)
-  - [producthunt](https://opensource.appbase.io/reactivesearch/demos/producthunt/)
-  - [goodbooks](https://opensource.appbase.io/reactivesearch/demos/goodbooks/)
-  - [ecommerce](https://opensource.appbase.io/reactivesearch/demos/ecommerce/)
-- [loklak_search](https://loklak.org/)
-  - https://github.com/fossasia/loklak_search
-  - creates a website using the loklak server as a data source. 
-  - Requirements: angular6
-- [VTEX Search app](https://github.com/vtex-apps/search)
-  - for handling the new VTEX Intelligent Search solution in IO stores by providing new UI components
-- [Coveo Search UI framework](https://coveo.github.io/search-ui/)
-- [Hacker News Search](https://hn.algolia.com/)
-  - https://github.com/algolia/hn-search
-  - /MIT/372Star/202009
-- algolia demos
-  - https://github.com/algolia/awesome-algolia#demos
-  - [imdb](https://community.algolia.com/instantsearch.js/v1/examples/media/)
-  - [ecommerce amazon](https://community.algolia.com/instantsearch.js/v1/examples/e-commerce/)
-  - [airbnb](https://community.algolia.com/instantsearch.js/v1/examples/tourism/)
-# dashboard
-- https://github.com/jetlinks/jetlinks-ui-antd
-  - 演示地址：http://demo.jetlinks.cn
-  - 项目多处采用了SSE接口交互，开发需要使用dev环境变量（生产环境使用nginx代理了EventSource接口）

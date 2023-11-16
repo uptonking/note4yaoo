@@ -47,10 +47,10 @@ modified: 2022-09-05T03:41:15.727Z
   - https://ccorcos.github.io/prosemirror-examples/
   - ProseMirror rich text editor with @mentions with autocomplete and nested inline nodes.
 
-- DoX /6Star/NALic/202208/js
+- DoX /6Star/NALic/202308/js/ejs
   - https://github.com/AlbertCerfeda/DoX
   - https://doxeditor.herokuapp.com/
-  - 依赖 prosemirror-collab、express、passport、socket.io、bootstrap4
+  - 依赖 prosemirror-collab、express、passport、socket.io、bootstrap4、mongodb、html-to-image
   - features
     - 文档支持简单分享、权限设置
     - 协作支持显示光标

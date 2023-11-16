@@ -103,6 +103,21 @@ modified: 2022-12-19T01:51:01.389Z
   - redux-toolkit: 全局状态管理工具
   - 使用 access_token refresh_token 进行无感刷新
   - Antd 组件库
+- https://github.com/heerey525/express_mongoDB /202203/js
+  - https://heerey525.github.io/express_mongoDB/apidoc/
+  - express+mongoDB的一套后台管理系统
+  - 功能点：邮箱验证、注册、登录、jwt验证、用户管理、权限列表、角色列表、商品的增删改查、国际化管理（增删改查、批量添加、excel导入导出、导出js文件）、图片上传等
+  - 依赖mongoose
+  - https://github.com/heerey525/express_mongodb_web /202012/js/vue
+
+- fast-crud /512Star/MIT/202311/ts/vue
+  - https://github.com/fast-crud/fast-crud
+  - http://fast-crud.docmirror.cn/
+  - 面向配置的crud开发框架，快速开发crud功能，可作为低代码平台的基础框架
+  - 可以直接使用示例中的fs-admin，特点是简单
+  - 也可以采用其他的admin开源项目，然后集成fast-crud
+  - 基于目前市面上开源的高星admin项目fork，集成fast-crud，Antdv 3x 、Element-Plus 、NaiveUI 三选一
+    - https://github.com/fast-crud/fs-admin-antdv /vue
 
 - adminjs /6.2kStar/MIT/202211/ts/仅参考db设计
   - https://github.com/SoftwareBrothers/adminjs
@@ -128,16 +143,9 @@ modified: 2022-12-19T01:51:01.389Z
   - makes it easy to create basic APIs by using JSON schema
   - django-like admin interface for creating collection-REST endpoints and managing permissions
 
-- https://github.com/heerey525/express_mongoDB /202203/js
-  - https://heerey525.github.io/express_mongoDB/apidoc/
-  - express+mongoDB的一套后台管理系统
-  - 功能点：邮箱验证、注册、登录、jwt验证、用户管理、权限列表、角色列表、商品的增删改查、国际化管理（增删改查、批量添加、excel导入导出、导出js文件）、图片上传等
-  - 依赖mongoose
-  - https://github.com/heerey525/express_mongodb_web /202012/js/vue
-
 - https://github.com/AndhikaBukh/Storify /202208/ts/starter
   - http://storify-six.vercel.app/
-  - Storify is a social media app built with React. 
+  - a social media app built with React. 
   - We are building a platform for users to share their stories and connect with others.
   - 前端依赖react-router、react  /ts
   - 后端依赖express、mongoose    /js
@@ -147,6 +155,14 @@ modified: 2022-12-19T01:51:01.389Z
   - a NodeJS tool for easy creation of user friendly administrative interface for MySQL, MariaDB, SQLite and PostgreSQL databases.
   - It's built with: Hogan.js (mustache.js), Express, mysql and Bootstrap.
   - https://github.com/simov/express-admin-examples /201407/js
+
+- https://github.com/pratiksh404/adminetic /202309/php/js
+  - https://pratikdai404.gitbook.io/adminetic/
+  - Admin starter kit with user, role and permission, activity, settings and preference management along with CRUD, ACL, BREAD Permission, Repo Pattern, SuperAdmin Generator
+# auth
+- https://github.com/rajeshpillai/node-jwt-step-by-step /202005/js
+  - A simple express jwt server with vanilla javascript client for testing
+  - backend + frontend
 # web-framework
 - https://github.com/plantain-00/protocol-first-design-demo
   - API 协议优先，相关数据只需要相对集中地、相对方便地定义一次，其它信息由此派生或生成出来

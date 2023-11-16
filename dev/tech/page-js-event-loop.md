@@ -40,7 +40,6 @@ document.getElementById('btn').onclick = evt => {
 
 - This example won't block the task from where it came from, but since microtasks queued from the microtask endpoint will get queued inside the same microtask queue that is being emptied, you'll actually end up in an endless loop and the event loop won't be able to process any future task.
 - Also microtask are tasks, and their processing itself will also block the event loop like any other task
-
 # [Event loop: microtasks and macrotasks](https://javascript.info/event-loop)
 - Browser JavaScript execution flow, as well as in Node.js, is based on an event loop.
 - The event loop concept is very simple. There’s an endless loop, where the JavaScript engine waits for tasks, executes them and then sleeps, waiting for more tasks.
@@ -178,3 +177,9 @@ count();
 
 - A very interesting property of the event loop model is that JavaScript, unlike a lot of other languages, never blocks. 
   - Handling I/O is typically performed via events and callbacks, so when the application is waiting for an `IndexedDB` query to return or an `XHR` request to return, it can still process other things like user input.
+# [The Node.js Event Loop - A Deep Dive into Inner Workings and Best Practices_202311](https://blog.platformatic.dev/the-nodejs-event-loop)
+- Best Practice for Event Loops
+  - Do not block the event loop
+  - Deduplicate Asynchronous Calls
+  - How to Configure Under-Pressure in Platformatic Service
+# more

@@ -26,6 +26,12 @@ modified: 2020-12-20T08:23:22.808Z
 
 - https://github.com/guardian/discussion-rendering
   - Standalone React UI for Guardian comments
+
+- https://github.com/CodePapa360/Interactive-comments-section /202308/js
+  - https://interactive-comments-section-codepapa360.vercel.app/
+  - Nested comment section with Vanilla JS, utilizing MVC & Pub-Sub patterns.
+  - The project follows the Model-View-Controller (MVC) architectural pattern to separate data, presentation, and user interaction. 
+  - Additionally, the Publisher-Subscriber pattern is utilized for event handling
 # comment-github
 - giscus /3.3kStar/MIT/202211/ts
   - https://github.com/giscus/giscus

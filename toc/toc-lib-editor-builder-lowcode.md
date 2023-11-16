@@ -200,7 +200,7 @@ modified: 2020-12-28T12:24:09.275Z
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
   - [change license of plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
 
-- fast-crud /512Star/MIT/202306/ts
+- fast-crud /512Star/MIT/202311/ts/vue
   - https://github.com/fast-crud/fast-crud
   - http://fast-crud.docmirror.cn/
   - 面向配置的crud开发框架，快速开发crud功能，可作为低代码平台的基础框架

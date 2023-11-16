@@ -24,7 +24,13 @@ modified: 2023-11-07T16:47:11.499Z
 # discuss
 - ## 
 
-- ## 
+- ## Data Engineering Anti patterns
+- https://twitter.com/Ubunta/status/1724771152860741748
+  - Overkill: A data warehouse for tiny public datasets.
+  - One-offs: Data pipelines for yearly tasks.
+  - Misjudged Scale: Treating under 50Gb as big data.
+  - Underestimation: Overlooking Postgres/MySQL's capacity
+  - Neglecting CSV->strict schema conversion
 
 - ## 🔥🔥 [Show HN: I wrote a free eBook about many lesser-known/secret database tricks | Hacker News_202212](https://news.ycombinator.com/item?id=33833836)
 - 

@@ -12,6 +12,19 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 多次看到有人推荐，可以跳过付费墙直接免费查看各大网站内容的 Chrome 插件，把源码 down 下来研究了下，原来核心代码只有一句
+- https://twitter.com/Barret_China/status/1724978017922093540
+  - h++ps://webcache.googleusercontent.com/search?q=cache:${window.location.href}
+  - 这些付费内容平台为了可以获得更多的流量，针对搜索引擎的爬虫是输出全文的，因此只需要通过 Google Cache Page 打开对应的网页，或者通过 Achieve 网站打开，就可以看到全文了。
+- 大部分关掉 js 就可以了。
+  - 有些服务端渲染的，根源上就不发给你
+- 有一些是这样的。需要用到原文的技巧，走搜索引擎的 cache 或者搜索结果的跳转有时候也允许阅读全文。
+- 还不如直接右键 源码，就可看到web里面的内容
+
 - ## 刚发现 Syncthing 这个强大的跨平台文件同步工具，适用于 Mac/Win/Linux。
 - https://twitter.com/hylarucoder/status/1722536795626471723
   - 自从使用 Stable Diffusion 后，越来越多的文件使得我的文件同步流程变得复杂。

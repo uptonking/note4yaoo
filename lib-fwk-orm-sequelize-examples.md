@@ -29,6 +29,10 @@ modified: 2023-02-05T18:50:32.900Z
   - https://github.com/masb0ymas/expresso-gateway
     - Api Gateway with Express TypeScript
 
+- https://github.com/Varun-Hegde/Conduit_NodeJS /202105/js
+  - Express and NodeJS based backend implementation of the RealWorld API Spec.
+  - MySQL + Sequelize
+
 - https://github.com/bissbr01/Command-project-management /ts
   - A Scrum Management App for teams
   - 依赖reduxjs-toolkit、mantine、dnd-kit、formik

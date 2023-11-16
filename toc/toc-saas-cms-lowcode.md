@@ -306,7 +306,7 @@ modified: 2023-01-20T21:59:47.792Z
   - No special software installation or server side processing is required. Just upload the mdwiki.html into the same directory as your Markdown files and you are good to go!
   - This is a fork of the stable Dynalon MDwiki release branch v0.6.x containing updated dependencies with all the beloved features (like Markdown include which is missed in the master branch). The original repository is unmaintained and archived (read-only).
   - forks
-  - https://github.com/Dynalon/mdwiki /201810
+  - https://github.com/Dynalon/mdwiki /201810/ts/js
   - https://github.com/unmacaque/mdwiki
     - marked was updated to support more GFM syntax
   - https://github.com/stephanedenis/mdwiki

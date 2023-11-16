@@ -33,12 +33,12 @@ modified: 2021-05-14T15:04:15.333Z
   - bridge between mattermost, IRC, gitter, xmpp, slack, discord, telegram, rocketchat, twitch, ssh-chat, zulip, whatsapp, keybase, matrix, microsoft teams, nextcloud, mumble, vk and more with REST API
   - Mattermost isn't required to run matterbridge
 
-- https://github.com/withspectrum/spectrum /archived
-  - 依赖express、graphql、apollo、draft-js、redux、rethinkdb
-  - Spectrum aims to be the best platform to build any kind of community online by combining the best of forums and real-time chat apps.
 - https://github.com/discourse/discourse
   - 依赖ruby、emberjs、postgresql、redis
   - discussion platform built for the next decade of the Internet.
+- https://github.com/withspectrum/spectrum /archived
+  - 依赖express、graphql、apollo、draft-js、redux、rethinkdb
+  - Spectrum aims to be the best platform to build any kind of community online by combining the best of forums and real-time chat apps.
 
 - https://github.com/NodeBB/NodeBB /js
   - Node.js based forum software built for the modern web

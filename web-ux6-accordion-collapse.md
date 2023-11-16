@@ -41,6 +41,18 @@ modified: 2021-07-29T20:37:05.228Z
 - https://github.com/springload/react-accessible-accordion
   - Accessible Accordion component for React
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Check out the `name` attribute inside `details` . 示例不work
+- https://twitter.com/jensimmons/status/1724885940416450810
+  - Name a series of `detail` elements with the same name. When a user clicks to open a second one, the first automatically closes. 
+  - https://codepen.io/jensimmons/pen/wvNPBZa
+- Now, the important question : is it accessible ?
+
 - ## How to collapse a div with reactjs?
 - https://stackoverflow.com/questions/40629319/
 - setting the right CSS class on the `<div>` it renders.
@@ -49,7 +61,7 @@ modified: 2021-07-29T20:37:05.228Z
 
 - ## How can I expand and collapse a `<div>` using javascript?
 - https://stackoverflow.com/questions/17460116
-- `ele.style.display = "none"`; 
+- `ele.style.display = "none"` ; 
 
 - ## Add Accordion component
 - https://github.com/adobe/react-spectrum/issues/848
@@ -80,6 +92,7 @@ modified: 2021-07-29T20:37:05.228Z
   - Another good reason is it can help users know which sections they already looked at.
 
 - ## What HTML element do you feel is still not used enough these days? How about `<details>`
+
 - https://twitter.com/stackblitz/status/1312021847123390464
   - for doing this common "show more" feature in a nice semantic way, and with no JavaScript needed
 - Nice, but can't customize with css
@@ -115,9 +128,11 @@ modified: 2021-07-29T20:37:05.228Z
   - Main issue: it wasn't designed with CSS in mind. 
   - No way to override show/hide with media queries, weird incompatibilities between browsers, no state pseudoclass = no easy fallback, no control over the toggle icon.
   - Now, most of those issues are being addressed in the specs, but it's been slow & painful & there are still too many inconsistencies.
-  - I mean, this isn't legacy like `<fieldset>`. CSS was standard when `<details>` was introduced. But the “separation of concerns” mindset took over.
+  - I mean, this isn't legacy like `<fieldset>` . CSS was standard when `<details>` was introduced. But the “separation of concerns” mindset took over.
+
     - E.g., the toggle icon is now defined as a CSS marker, with a keyword content value. But only Firefox implements it that way.
     - The content re-ordering & hiding is defined using shadow DOM. Not sure if we have consistency yet for how it interacts with pseudos.
+
   - But I can't see us ever getting a CSS-only way to force content open (other than by using the sibling selector hack), nor a CSS selector to distinguish `details[open]` in browsers that can and can't close it (but luckily that's becoming less & less of an issue over time).
 - `<details>` is meant to model a disclosure control. 
   - A pure CSS way to open or close would be like a pure CSS way to check or uncheck a checkbox. 

@@ -414,6 +414,13 @@ modified: 2021-01-08T11:48:16.590Z
   - https://react-admin.hyyar.com/dashboard
   - 依赖rtk、antd4、emotion、driver.js、recharts、mockjs
 # css dashboard
+- https://github.com/Boel21/Sales_DashBoard_VanillaJS /202309/js
+  - https://htmlpreview.github.io/?https://github.com/Boel21/Sales_DashBoard_VanillaJS/blob/main/index.html
+  - Sales Dashboard using Vanilla JS, HTML. CSS
+
+- https://github.com/ciubiadi/Vanilla-Admin-Dashboard /202310/js
+  - Created from scratch a responsive Admin Dashboard with HTML, vanilla CSS and vanilla JS.
+
 - https://codepen.io/TurkAysenur/pen/ZEpxeYm
   - theming-黑色，macOS风格，可切换明暗主题
   - 依赖jquery，不依赖bootstrap
@@ -470,6 +477,20 @@ modified: 2021-01-08T11:48:16.590Z
 - https://github.com/Ahadul360/Admin-Panel-Template
   - 过于简单
 # admin dashboard
+- https://github.com/fantastic-admin/basic /202311/ts/vue
+  - https://github.com/fantastic-admin/basic
+  - 一款开箱即用的 Vue 中后台管理系统框架，支持多款 UI 组件库，兼容PC、移动端
+  - 可自由替换 UI 组件库，默认使用 Element Plus
+
+- fast-crud /512Star/MIT/202311/ts/vue
+  - https://github.com/fast-crud/fast-crud
+  - http://fast-crud.docmirror.cn/
+  - 面向配置的crud开发框架，快速开发crud功能，可作为低代码平台的基础框架
+  - 可以直接使用示例中的fs-admin，特点是简单
+  - 也可以采用其他的admin开源项目，然后集成fast-crud
+  - 基于目前市面上开源的高星admin项目fork，集成fast-crud，Antdv 3x 、Element-Plus 、NaiveUI 三选一
+    - https://github.com/fast-crud/fs-admin-antdv /vue
+
 - Dashboard UI kit /28.2kStar/MIT/202005/ts/paid/broken
   - https://github.com/march08/dashboard-ui-kit
   - https://developer.dashboard-ui.com/docs/react/installation

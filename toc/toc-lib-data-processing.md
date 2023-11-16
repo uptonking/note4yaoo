@@ -20,6 +20,11 @@ modified: 2021-05-13T16:14:15.415Z
   - The Arrow spec aligns columnar data in memory to minimize cache misses and take advantage of the latest SIMD (Single input multiple data) and GPU operations on modern processors.
   - 👉🏻 Apache Arrow is the emerging standard for large in-memory columnar data (Spark, Pandas, Drill, Graphistry, ...). 
     - By standardizing on a common binary interchange format, big data systems can reduce the costs and friction associated with cross-system communication.
+
+- https://github.com/onetable-io/onetable /apache2/202311/java
+  - https://github.com/onetable-io/onetable
+  - OneTable is an omni-directional converter for table formats that facilitates interoperability across data processing systems and query engines. 
+  - Currently, OneTable supports widely adopted open-source table formats such as Apache Hudi, Apache Iceberg, and Delta Lake.
 # data-tools
 - https://github.com/malloydata/malloy
   - https://www.malloydata.dev/

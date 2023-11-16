@@ -56,7 +56,10 @@ modified: 2023-03-30T13:31:09.049Z
 
 - ## 
 
-- ## 
+- ## TailwindUI 运行在一个 $84/月的 VPS 上，但是一年产生的收入可以达到 $2.5M，养活了 Tailwind 整个团队
+- https://twitter.com/beihuo/status/1724847917159035151
+  - [Tailwind CSS: From Side-Project Byproduct to Multi-Million Dollar Business – Adam Wathan_202008](https://adamwathan.me/tailwindcss-from-side-project-byproduct-to-multi-mullion-dollar-business/)
+  - https://twitter.com/adamwathan/status/1289645193038192641
 
 - ## 🌰 [Placemark is going open source and shutting down | Hacker News_202311](https://news.ycombinator.com/item?id=38250459)
 - My only note is that it would be nice if it was open sourced before the servers shut down, so that if there were any users who were dependent on it they have time to make a transition.

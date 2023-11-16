@@ -9,6 +9,12 @@ modified: 2023-10-26T17:28:41.701Z
 
 # guide
 
+- https://github.com/Vonng/pg
+  - 关于PostgreSQL应用开发，监控管理 与 内核架构 的 文章与 笔记
+  - [PostgreSQL指南：内幕探索](https://pg-internal.vonng.com/)
+
+- https://github.com/Vonng/ddia
+  - 《Designing Data-Intensive Application》DDIA中文翻译
 # blogs
 
 ## [Is UPDATE the same as DELETE + INSERT in PostgreSQL?_202012](https://www.cybertec-postgresql.com/en/is-update-the-same-as-delete-insert-in-postgresql/)

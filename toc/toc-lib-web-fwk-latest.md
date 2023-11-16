@@ -24,4 +24,9 @@ modified: 2020-12-31T15:18:33.994Z
   - Take full advantage of the tower and tower-http ecosystem of middleware, services, and utilities.
   - what sets axum apart from other frameworks: axum doesn't have its own middleware system but instead uses `tower::Service`.
   - axum is a relatively thin layer on top of hyper and adds very little overhead. So axum's performance is comparable to hyper.
+# css
+- https://github.com/googlechromelabs/houdini-samples
+  - https://googlechromelabs.github.io/houdini-samples/
+  - Demos for different Houdini APIs
+  - no vendor has published a version of their browser with support for any of the Houdini standards yet.
 # more

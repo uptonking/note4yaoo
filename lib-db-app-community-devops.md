@@ -75,7 +75,18 @@ modified: 2023-10-26T18:47:22.664Z
 
 - ## 
 
-- ## 
+- ## 我在探探当 PostgreSQL DBA时，10分钟故障弄不好奖金泡汤，再久Job没了
+- https://twitter.com/GobeUncleWang/status/1724677788811264261
+  - 软件故障基本没有，数据库变更发布由我们自己在工作时间窗口内处理，更主要还是研发同事给力靠谱。有全局监控（https://demo.pigsty.cc），别说28分钟，2.8分钟都不用就够定位绝大多数故障根因了。
+  - 要验证也很简单，因为我把整套数据库架构方案与工具都开源出来了
+  - https://github.com/Vonng/pigsty /python/plpgsql
+- pigsty 有没有计划支持下 http://fly.io 这种基于容器的环境呢？
+  - 暂时没有，其他组件放容器都行。数据库我选择基于裸OS做。就是为了尽可能减少不必要的依赖，比如阿里云里对认证的额外依赖一样
+- 吹牛没问题，不对称对比加拉踩就没必要了。
+- 你这只是一家后端服务集群，人家是整个云服务供应商，两者不在一个水平上吧。其实阿里云真正的问题在于很多东西依赖于Java，它早就应该分散这种对单一语言的依赖的
+- 
+- 
+- 
 
 - ## Lukewarm(微温的; 不热烈的) take for database products - focus on winning new workloads, don't worry so much about migrations. 
 - https://twitter.com/MarkCallaghanDB/status/1724454882785304672
