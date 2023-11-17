@@ -257,6 +257,12 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/hughfenghen/WebAV /MIT/ts
   - 使用纯Web技术构建的音视频工具，计划包含创建、编辑、导出功能，可应用于直播、教程录制、视频剪辑等产品中。
   - Chrome 94 开放了 WebCodecs API，意味着 JS 也能处理音视频了。在此之前，前端开发在会在有限的场景使用 ffmpeg.js，经过简单地测试解码和重编码视频发现，WebCodecs 性能是 ffmpeg.js 的 20 倍。
+# js-runtime-context
+- https://github.com/web-infra-dev/unport /ts
+  - A Universal Port with strict type inference capability for cross-JSContext communication.
+  - Unport emerges as a well-architected solution, meticulously designed to simplify the complexity revolving around various JSContext environments.
+  - Node.js, ChildProcess, Webview, Web Worker, worker_threads, WebSocket, iframe, MessageChannel, ServiceWorker, and much more.
+  - Each of these JSContext environments exhibits distinct methods of communicating with the external world
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

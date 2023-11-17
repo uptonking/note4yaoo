@@ -40,7 +40,8 @@ modified: 2021-01-21T17:52:13.333Z
 # discuss
 - ## 
 
-- ## 
+- ## ERP软件打成镜像，因为软件包太大到好几个G，所以发明了启动base镜像+初始化拉包。在金融行业还挺流行。
+- https://twitter.com/xds2000/status/1725294546727153717
 
 - ## [新人也能懂的调试方法 01 - 通过 syscall 进行定位](https://blog.dreamfever.me/posts/2023-10-24-how-to-debug-01-syscall/)
 

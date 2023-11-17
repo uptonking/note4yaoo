@@ -14,7 +14,11 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
-- ## 
+- ## 一个视频处理库，提交记录12000多次，非常古早且强大
+- https://twitter.com/chenbimo/status/1725213333991931992
+  - 比如你的官网要放一个视频背景，该视频有几十M，你可以用这个软件，把它变成几M甚至几百K！
+- https://github.com/HandBrake/HandBrake
+  - open-source video transcoder available for Linux, Mac, and Windows
 
 - ## 多次看到有人推荐，可以跳过付费墙直接免费查看各大网站内容的 Chrome 插件，把源码 down 下来研究了下，原来核心代码只有一句
 - https://twitter.com/Barret_China/status/1724978017922093540

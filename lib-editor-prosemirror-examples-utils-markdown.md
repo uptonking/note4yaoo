@@ -67,7 +67,7 @@ modified: 2022-11-08T21:14:54.399Z
   - Just a little writing tool with markdown shortcuts that saves every change to local indexeddb.
   - 跨平台客户端基于tauri实现，tauri部分使用rust实现
 
-- rino /26Star/GPL.v3/202208/ts/remirror/markdown-it
+- rino /26Star/GPLv3/202208/ts/remirror/markdown-it
   - https://github.com/ocavue/rino
   - https://rino-editor.vercel.app/
   - https://rino.app/

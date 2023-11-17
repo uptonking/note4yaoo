@@ -475,7 +475,7 @@ modified: 2022-08-18T16:57:46.405Z
     - That was extended further by the Licit Editor
     - This fork converts from flow to Typescript, adds a few plugins
 
-- nib /215Star/GPL.v3/202205/ts
+- nib /215Star/GPLv3/202205/ts
   - https://github.com/nib-edit/nib
   - https://nib-edit.github.io/nib/
   - 高级功能未开源如comment/collab

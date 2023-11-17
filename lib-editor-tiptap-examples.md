@@ -36,7 +36,7 @@ modified: 2023-02-05T19:03:27.730Z
   - 后端依赖 nestjs、passport、typeorm、mysql、yjs
   - Think 是一款开源知识管理工具。通过独立的知识库空间，结构化地组织在线协作文档，实现知识的积累与沉淀，促进知识的复用与流通。同时支持多人协作文档。
 
-- notesnook /2.8kStar/GPL.v3/202209/js+ts/tiptap
+- notesnook /2.8kStar/GPLv3/202209/js+ts/tiptap
   - https://github.com/streetwriters/notesnook
   - https://notesnook.com/
   - open source & end-to-end encrypted note taking alternative to Evernote.
@@ -95,7 +95,7 @@ modified: 2023-02-05T19:03:27.730Z
   - 提供了纯文本和富文本2种输入模式
   - Typist also supports a plain-text mode, and comes with HTML/Markdown serializers.
 
-- linked-daily /561Star/GPL.v3/202208/js/vue/electron
+- linked-daily /561Star/GPLv3/202208/js/vue/electron
   - https://github.com/lostdesign/linked
   - https://uselinked.com/
   - Daily journaling without distraction.
@@ -281,7 +281,7 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/justinmoon/tiptap-markdown-demo
   - TipTap rich text editor doesn't support markdown, but this repo shows how to hack it in yourself.
 
-- notes /4Star/GPL.v3/202208/js
+- notes /4Star/GPLv3/202208/js
   - https://github.com/keymorph/notes
   - https://notes.keymorph.com/
   - 依赖tiptap2、dnd-kit、mui、tanstack-query、nextjs、@azure/cosmos--db

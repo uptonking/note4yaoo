@@ -1,6 +1,6 @@
 ---
 title: pattern-gof-design-pattern
-tags: [design-pattern]
+tags: [design-pattern-gof]
 created: 2020-11-06T13:31:45.556Z
 modified: 2020-12-20T15:43:51.808Z
 ---

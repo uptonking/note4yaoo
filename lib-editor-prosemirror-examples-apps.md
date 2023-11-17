@@ -48,7 +48,7 @@ modified: 2022-08-18T16:57:15.296Z
   - 编辑器已分离，基于rich-markdown-editor和prosemirror
   - 前端基于lit
 
-- notesnook /2.8kStar/GPL.v3/202209/js+ts/tiptap
+- notesnook /2.8kStar/GPLv3/202209/js+ts/tiptap
   - https://github.com/streetwriters/notesnook
   - https://notesnook.com/
   - open source & end-to-end encrypted note taking alternative to Evernote.

@@ -57,7 +57,7 @@ modified: 2023-02-07T17:38:05.336Z
   - a desktop app that helps you organize how you use your favourite apps by combining them into one application. 
   - It is based on Franz - a software already used by thousands of people - with the difference that Ferdium gives you many additional features and doesn't restrict its usage! 
 # microsoft-teams/org
-- https://github.com/xiweicheng/tms /MIT/js/java
+- https://github.com/xiweicheng/tms /MIT/202309/js/java
   - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
 
 - https://github.com/bennymeier/mern-stack-project-management /202111/ts/js

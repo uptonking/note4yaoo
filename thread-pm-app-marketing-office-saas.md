@@ -27,6 +27,14 @@ modified: 2023-10-10T14:20:13.855Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## how did Dropbox end up looking more like Microsoft than Microsoft?
+- https://twitter.com/blankresident/status/1725475017767428479
+- They had a great product, got greedy and took on lots of capital to build a mess that no one wants
+
 - ## 云计算最近十年确实过热了，热到无脑上云的地步，
 - https://twitter.com/skywind3000/status/1718599103565742409
   - 创业公司业务变化大，可以理解，但业务稳定后需要下云缩减成本时，

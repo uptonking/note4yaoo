@@ -307,6 +307,7 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/kristopolous/db.js /202109/js/inactive
   - portable Javascript document store event-driven database
   - It's been feature-complete and stable for years
+
 ## postgresql
 
 - https://github.com/message-db/message-db
@@ -649,9 +650,14 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/node-ts/ddd /ts
   - Domain Driven Design framework for software simplicity in node
-- https://github.com/almin/almin /ts
-  - an implementation of Read/Write Stack Architecture that is well-known as Flux/CQRS.
-  - Almin provides some patterns, is not a framework.
+
+- https://github.com/almin/almin /503Star/MIT/202108/ts/class风格/inactive
+  - https://almin.js.org/
+  - Client-side DDD/CQRS for JavaScript.
+  - Almin is an implementation of Read/Write Stack Architecture that is well-known as Flux/CQRS.
+  - I often hear a story that "Control flow of Flux/Redux is cool, but where to implement domain logic."
+    - Almin aim to fill the Missing things between MV* and Flux/Redux.
+  - Responsibility Layers patten - well-known as DDD(Domain-Driven Design)/CQRS
 
 - https://github.com/YisusYaro/typescript-ddd-example /ts
   - Typescript example using driven domain design and cqrs.

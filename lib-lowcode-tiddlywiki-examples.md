@@ -85,6 +85,10 @@ modified: 2023-11-14T16:20:25.792Z
 - https://github.com/BurningTreeC/tiddlywiki-codemirror-6
   - https://burningtreec.github.io/tiddlywiki-codemirror-6/
   - adds the CodeMirror 6 editor to TiddlyWiki
+
+- https://github.com/felixhayashi/TW5-TiddlyMap /bsd/202302/js
+  - a TiddlyWiki plugin that turns your favourite personal note taking software in a wiki-concept-map hybrid.
+  - Vis.js is used for graph visualization and manipulation
 # utils
 - https://github.com/jimpick/dat-tiddlywiki /201806/js
   - Multiwriter Dat + TiddlyWiki

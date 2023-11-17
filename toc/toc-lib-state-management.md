@@ -366,6 +366,13 @@ modified: 2020-07-14T11:03:53.196Z
   - Zedux borrows ideas from Redux, Recoil, and React Query. 
   - Zedux takes the unique approach of separating the state layer (stores) from the architecture layer (atoms). This allows for a powerful Dependency Injection model, conceptually similar to Angular's but simpler and more dynamic.
 # state-machine
+- https://github.com/beekai-oss/little-state-machine /1.4kStar/202212/ts
+  - React custom hook for persist state management
+  - Tiny with 0 dependency and simple
+  - Persist state by default (sessionStorage or localStorage)
+  - 依赖react
+  - 似乎采用flux架构
+
 - https://github.com/jakesgordon/javascript-state-machine
   - /7.4kStar/MIT/201807/js
   - A library for finite state machines. xstate也是
@@ -394,16 +401,21 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/alexmdodge/ts-state-machine
   - A package with a simple state machine for the purpose of learning
 # react
+- https://github.com/developit/unistore /2.9kStar/MIT/202006/js/inactive
+  - A tiny 350b centralized state container with component bindings for Preact & React.
+  - names and ideas from Redux-like libraries
+  - https://github.com/developit/stockroom
+    - Offload your store management to a worker.
+    - Stockroom seamlessly runs a Unistore store (and its actions) in a Web Worker, setting up optimized bidirectional sync so you can also use & subscribe to it on the main thread.
+    - same API as unistore - a simple add-on
+    - centralized actions with the option of running on the main thread
+
 - react-redux-useMutableSource(api已升级为useSyncExternalStore)
   - https://codesandbox.io/s/react-redux-usemutablesource-eyxoe
 - mut /7Star/MIT/202008/ts
   - https://github.com/snakeUni/mut
   - state management library based on Immer and useMutableSource
   - if useMutableSource is available then use useMutableSource otherwise use useSubscribe
-
-- https://github.com/developit/unistore
-  - A tiny 350b centralized state container with component bindings for Preact & React.
-  - names and ideas from Redux-like libraries
 
 - constate /3.7kStar/MIT/202204/ts
   - https://github.com/diegohaz/constate
@@ -475,7 +487,12 @@ modified: 2020-07-14T11:03:53.196Z
   - Uses immer for state updates - easily and safely mutate your state directly
   - Originally inspired by the now seemingly abandoned library - bey. Although substantially different now- with Server-side rendering and Async Actions built in
 
-- https://github.com/nanxiaobei/flooks
+- https://github.com/vigetlabs/microcosm /201909/js/inactive
+  - a state management tool for React 
+  - Other Flux implementations treat actions as static events; the result of calling a dispatch method or resolving some sort of data structure like a Promise.
+  - Microcosm actions are first-class citizens.
+
+- https://github.com/nanxiaobei/flooks /202310/ts
   - State Manager for React Hooks, Auto Optimized
   - flooks realizes a gorgeous auto optimization, only actually used data will be injected into the component, re-render completely on demand
   - zustand, need a selector; flooks, no selector needed
@@ -508,6 +525,18 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/jamesknelson/govern
   - Component-based state management for JavaScript.
 # redux-like
+- https://github.com/davezuko/re-frame /13Star/MIT/201912/js/inactive
+  - Vanilla JavaScript port of the popular ClojureScript library for pragmatic, flux-like state management
+  - Re-frame helps make state management predictable, testable, and pragmatic. It achieves this via message passing, which decouples action from intent. 
+  - On top of this, it provides first-class semantics for dealing with side-effects
+  - From a high-level, re-frame is flux-like with events and event handlers, which are similar to redux's actions and reducers. 
+  - Compared to redux, re-frame is more feature complete out of the box, with built-in interceptors, effects, subscriptions, and test utilities. 
+
+- https://github.com/redux-zero/redux-zero /1.9kStar/MIT/202008/ts/inactive
+  - lightweight state container based on Redux
+  - 不依赖redux
+  - [Introducing Redux Zero. Redux Zero is a lightweight state… | by Matheus Lima | Medium_201710](https://medium.com/@matheusml/introducing-redux-zero-bea42214c7ee)
+
 - easy-peasy /MIT/3.6kStar/202006
   - https://github.com/ctrlplusb/easy-peasy
   - https://easy-peasy.now.sh/
@@ -515,9 +544,6 @@ modified: 2020-07-14T11:03:53.196Z
   - Vegetarian friendly state for React
 - https://github.com/nanxiaobei/retalk
   - The Simplest Redux. 依赖redux、react-redux
-- https://github.com/redux-zero/redux-zero
-  - /1.9kStar/MIT/202008/ts
-  - lightweight state container based on Redux
 # observable
 - https://github.com/xolvio/pojo-observer
   - A minimalist object observer with React hooks support. 

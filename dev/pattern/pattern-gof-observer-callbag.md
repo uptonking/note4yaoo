@@ -1,11 +1,11 @@
 ---
-title: lib-pattern-observer-callbag
-tags: [callbag, observer, pattern]
+title: pattern-gof-observer-callbag
+tags: [callbag, design-pattern-gof, observer, pattern, pubsub]
 created: 2020-12-15T09:40:19.722Z
-modified: 2021-05-13T04:20:16.734Z
+modified: 2023-11-17T10:23:41.291Z
 ---
 
-# lib-pattern-observer-callbag
+# pattern-gof-observer-callbag
 
 # guide
 

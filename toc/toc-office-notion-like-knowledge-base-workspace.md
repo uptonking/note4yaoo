@@ -64,7 +64,7 @@ modified: 2022-06-03T21:34:54.893Z
   - Built on a graph database, Athens helps map and communicate complex knowledge in complex domains.
   - athens-export converts your pages to markdown and a logseq-compatible directory
 
-- growi /1.1kStar/MIT/202301/ts/remark
+- growi /1.2kStar/MIT/202311/ts/remark
   - https://github.com/weseek/growi
   - https://docs.growi.org/en/guide/
   - https://demo.growi.org/
@@ -95,7 +95,7 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/JhinBoard/jhin
     - Next-Gen Collaborative Knowledge Base, A free replacement for Notion & Miro
 
-- trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持多端
+- trilium /23.3kStar/AGPLv3/202311/js/ckeditor5/支持多端
   - https://github.com/zadam/trilium
   - https://github.com/zadam/trilium/wiki/
   - 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror5、jsplumb、fancytree、bootstrap
@@ -105,6 +105,14 @@ modified: 2022-06-03T21:34:54.893Z
     - Mac OS desktop build is available, but it is unsupported.
     - If you want to install Trilium on server,currently only recent Chrome and Firefox are supported (tested) browsers.
   - [Notion like database](https://github.com/zadam/trilium/issues/822)
+  - [Can trilium save each note as separate text/md files instead of being stored in a database?](https://github.com/zadam/trilium/issues/244)
+    - The reason why Trilium uses database instead of file structure is that filesystem isn't flexible/powerful enough for features I want (mainly cloning/分身的效果-多处引用且同步更新).
+  - 🤔 [Why database instead of flat files? - trilium Wiki FAQ](https://github.com/zadam/trilium/wiki/FAQ#why-database-instead-of-flat-files)
+    - Using filesystem would mean fewer features with probably more problems.
+    - clones are what you might call "hard directory link" in filesystem lingo, but this concept is not implemented in any filesystem
+    - filesystems make a distinction between directory and file while there's intentionally no such difference in Trilium
+    - Trilium makes links / relations between different notes which can be quickly retrieved / navigated (e.g. for note map).There's no such support in file systems 
+    - Filesystems are generally not transactional. While this is not completely required for a note-taking application, having transactions make it way easier to keep notes and their metadata in predictable and consistent state.
 
 - https://github.com/aliscie/odoc /rust/ts
   - This app is Notion.so clone, roam research clone and obsidian clone. 
@@ -128,7 +136,7 @@ modified: 2022-06-03T21:34:54.893Z
   - SQLite is the central data storage medium, rather than a collection of markdown documents.
   - Instead of users manually curating a knowledge graph, data is organized automatically by timestamp.
 # confluence-like
-- MrDoc /2.1kStar/GPL.v3/202208/js/python/仅网页版
+- MrDoc /2.1kStar/GPLv3/202208/js/python/Django/仅网页版
   - https://github.com/zmister2016/MrDoc
   - https://mrdoc.pro/
   - http://mrdoc.zmister.com/project-20/
@@ -215,7 +223,7 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/c2d7fa/nextool
     - GTD-oriented task manager with support for nested tasks and a focus on finding actionable tasks.
 
-- https://github.com/documize/community
+- https://github.com/documize/community /go/emberjs
   - https://docs.documize.com/
   - 依赖 go、js、handlebars、EmberJS
   - Modern Confluence alternative designed for internal & external docs, built with Golang + EmberJS
@@ -349,11 +357,11 @@ modified: 2022-06-03T21:34:54.893Z
   - A modern and powerful wiki app built on Node.js
   - [Wiki.js | Hacker News_202007](https://news.ycombinator.com/item?id=23904193)
 
-- https://github.com/ryanlelek/Raneto /202208/js
+- https://github.com/ryanlelek/Raneto /MIT/202311/js
   - https://docs.raneto.com/
   - Markdown powered Knowledgebase Wiki for Node.js
   - 比较典型的问答型知识库
-  - Raneto is a "flat file" CMS, meaning no database problems, no MySQL queries, nothing.
+  - a "flat file" CMS, meaning no database problems, no MySQL queries, nothing.
   - Full-text search powered by Lunr
   - [Raneto – Markdown Knowledgebase Platform | Hacker News_201707](https://news.ycombinator.com/item?id=14839371)
 
@@ -427,7 +435,7 @@ modified: 2022-06-03T21:34:54.893Z
     - But this is difficult to do in practice.
     - My solution is something I call hierarchical note taking.
 
-- https://github.com/TevinLi/amWiki  /885Star/MIT/201711/js/NoDeps
+- https://github.com/TevinLi/amWiki /885Star/MIT/201711/js/NoDeps
   - http://amwiki.org/doc
   - 由 JS 开发、依赖 Atom 或 Nodejs-Npm 的 Markdown 轻量级前端化开源文库系统。
   - 不用数据库，文档使用 .md 格式保存本地文件
@@ -455,6 +463,17 @@ modified: 2022-06-03T21:34:54.893Z
   - 2MB of CSS, JS, WASM; one 43GB SQLite file.
   - A proof-of-concept inspired and enabled by Hosting SQLite Databases on Github Pages and the ensuing Hacker News post. 
   - [Show HN: Static.wiki – read-only Wikipedia using a 43GB SQLite file | Hacker News_202107](https://news.ycombinator.com/item?id=28012829)
+
+- https://github.com/maxlath/wikibase-sdk /202310/ts
+  - JS utils functions to query a Wikibase instance and simplify its results
+
+## viewer
+
+- [Modern for Wikipedia](https://www.modernwiki.app/)
+  - redesigned user interface for Wikipedia
+  - Themes (light, dark, sepia, slate, black)
+  - view history (quickly jump to articles you've previously viewed)
+  - [chrome-ext](https://chrome.google.com/webstore/detail/modern-for-wikipedia/emdkdnnopdnajipoapepbeeiemahbjcn)
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

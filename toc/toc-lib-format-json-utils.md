@@ -21,7 +21,7 @@ modified: 2022-11-06T15:45:36.913Z
 - https://github.com/gregsdennis/json-everything /c#
   - System. Text. Json-based support for all of your JSON needs.
 
-- https://github.com/paularmstrong/normalizr
+- https://github.com/paularmstrong/normalizr /202010/js
   - Many APIs, public or not, return JSON data that has deeply nested objects. Using data in this kind of structure is often very difficult for JavaScript applications, especially those using Flux or Redux.
   - Normalizr is a small, but powerful utility for taking JSON with a schema definition and returning nested entities with their IDs, gathered in dictionaries.
   - https://github.com/anseal/normalizr

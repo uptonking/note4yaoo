@@ -109,6 +109,16 @@ modified: 2023-09-13T14:28:01.426Z
   - The intent is generally translated to events in actionCreators and jsx views where we transform low-level dom-events to Redux actions.
   - Command sourcing would permit to hot-reload the interpretation layer too and would replace the "WentLeft" by a"Jump" in the event log before computing the state log and before injection states in React. In practice it has not much interest and may be more complicated to do (not sure but maybe ELM is doing this no?)
 
+- ## 🤔 [What do you mean by “Event-Driven”? | Hacker News_201702](https://news.ycombinator.com/item?id=13593683)
+- Event-sourcing implies CQRS, but the reverse is not true.
+
+- I see CQRS as an implementation detail orthogonal to ES, but which dovetails nicely as they both work well with distributed systems. ES has immutable events (monotonically increasing), and CQRS implies a distributed system and allows for more efficient retrieval, leveraging ES's immutability.
+
+- I think that most of the time event-sourcing will impact your model/business-logic layer, because you often want to capture the intent of changes, rather than calculating a naive combined delta of all changes that occurred in memory.
+
+- A good summary. However too many choose to view it only as Event-Sourcing/CQRS, a silver-bullet applicable to a minority of applications.
+  - Event-Driven as an architecture that is based on recording changes to a baseline state, should be applied only where really suited.
+
 - ## 🤔 [Why did you reinvented Event Sourcing, a concept that had existed for almost a decade, and renamed it to "Redux" instead of keeping the original name?_201607](https://github.com/gaearon/ama/issues/110)
 - Redux is JS library inspired by Flux, Elm and Om. **Both Flux and Elm are inspired by event sourcing**. Redux is not called EventSourcing.js (is this what you propose) for the same reason Flux and Elm are not called EventSourcing.
   - PS. Redux is actually somewhat different from event sourcing (see all those discussions) but again, I’m not claiming it’s somehow better, or that Redux is a pattern.

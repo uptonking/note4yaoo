@@ -13,14 +13,6 @@ modified: 2021-07-23T08:38:53.805Z
   - 文章pages、知乎专栏、掘金小册、文集
 # popular
 
-# wikipedia-utils
-
-# wikipedia-browser
-- [Modern for Wikipedia](https://www.modernwiki.app/)
-  - redesigned user interface for Wikipedia
-  - Themes (light, dark, sepia, slate, black)
-  - view history (quickly jump to articles you've previously viewed)
-  - [chrome-ext](https://chrome.google.com/webstore/detail/modern-for-wikipedia/emdkdnnopdnajipoapepbeeiemahbjcn)
 # yuque
 - https://github.com/yuque/yuque-exporter
   - 用于批量导出语雀文档。

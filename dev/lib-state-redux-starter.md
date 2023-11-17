@@ -1,11 +1,11 @@
 ---
-title: tmpl-redux
-tags: [redux, starter, template]
+title: lib-state-redux-starter
+tags: [redux, starter, state, template]
 created: 2020-11-02T08:27:42.124Z
-modified: 2020-11-02T08:29:11.847Z
+modified: 2023-11-17T10:09:21.711Z
 ---
 
-# tmpl-redux
+# lib-state-redux-starter
 
 # demo
 

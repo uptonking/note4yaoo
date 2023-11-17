@@ -28,6 +28,19 @@ modified: 2023-09-17T18:10:33.050Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Do you want a #database that can:
+- https://twitter.com/OnlyXuanwo/status/1725494564755325036
+  - SELECT * FROM 'gdrive://*.csv'
+  - COPY FROM 'dropbox://*.xlsx' INTO table
+- It seems that @duckdb supports both features. It may not support `gdrive://` or `dropbox://` scheme, but with the help of fuse i think it is possible to perform IO directly over these webdrivers
+  - Yep, many databases support load data from services like s3. As known as data lake house 
+- Taking a look at the popularity of projects like dsq, clickhouse-local, duckdb, sqlite-utils, datafusion-cli, etc.
+- TiDB does support importing data from S3/GCS, but I agree GDrive/Dropbox sounds much cooler for personal usage. 
+
 - ## 🔥 [Show HN: Stein – Use Google Sheets as a No-Setup Database | Hacker News_201907](https://news.ycombinator.com/item?id=20426682)
 - 
 - 

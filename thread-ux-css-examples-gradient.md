@@ -25,7 +25,9 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
-- ## 
+- ## How to use #CSS scroll driven animation to enable gradient progress fill in an `input[type=range]` .
+- https://twitter.com/argyleink/status/1725409663125254294
+  - [Custom range input progress fill](https://nerdy.dev/add-a-rad-gradient-progress-fill-to-a-range-input-with-no-JS)
 
 - ## Made this Glassmorphic credit card
 - https://twitter.com/theShounakDas/status/1415326842102468610

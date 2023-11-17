@@ -16,6 +16,10 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
+- ## Data Pipelines Overview
+- https://twitter.com/huangyun_122/status/1725519643580760501
+  - 动画示意图
+
 - ## 🤔🔥 [Databases = Frameworks for Distributed Systems | Hacker News_202205](https://news.ycombinator.com/item?id=31459745)
 - I was watching a video by one of Amazon’s distinguished engineers a while ago and for the life of me I can’t find it now but the thing that stuck with me from it is, 
   - “There are only three modes for a distributed system - it implements paxos/raft itself, it relies on a data store that implements paxos/raft or it’s wrong.”
@@ -92,7 +96,10 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss
 - ## 
 
-- ## 
+- ## Been thinking about S3 as primary storage for serverless infra. 
+- https://twitter.com/criccomini/status/1725183323474190704
+  - For OLTP, a transactional KV store on S3 would id a necessary building block. @PingCAP ’s TiKV is one such example. 
+  - [Production Flink Usage, Key-Value Stores on S3, Titan is Terraform for Data, and more...](https://materializedview.io/p/flink-usage-kv-store-on-s3-terraform-for-data)
 
 - ## 🐛 The biggest problem with shared-storage OLTP is that the data volume is limited by single machine. 
 - https://twitter.com/YingjunWu/status/1723832509098766801

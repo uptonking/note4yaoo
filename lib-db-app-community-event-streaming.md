@@ -14,9 +14,15 @@ modified: 2023-10-27T07:02:42.391Z
 
 - ## 
 
-- ## 
+- ## ➿ Any unexpected downsides to offering streaming HTTP API endpoints that serve up eg 100, 000 JSON objects in a go rather than asking users to paginate 100 at a time over 1, 000 requests, assuming efficient implementation of that streaming endpoint? _202106
+- https://twitter.com/simonw/status/1405554676993433605
+  - [Notes on streaming large API responses](https://simonwillison.net/2021/Jun/25/streaming-large-api-responses/)
 
-- ## 
+- ## Parquet + HTTP range headers = efficient retrieval of just the required columns
+- https://twitter.com/gunnarmorling/status/1725414843119710524
+  - Nice write-up by @markhneedham (inspired by similar write-up on #DuckDB by @simonw ).
+  - [Summing columns in remote Parquet files using ClickHouse | Mark Needham](https://www.markhneedham.com/blog/2023/11/15/clickhouse-summing-columns-remote-files/)
+
 # discuss-stream-db
 - ## 
 

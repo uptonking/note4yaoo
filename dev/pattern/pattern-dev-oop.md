@@ -9,6 +9,9 @@ modified: 2020-12-20T15:48:03.553Z
 
 # guide
 
+- oop-examples
+  - jdk
+  - wikimedia-oojs
 # [Event Listeners: Delegation VS Direct Binding - JASON Format](https://jasonformat.com/event-delegation-vs-direct-binding/)
 - The DOM provides a mechanism for registering event handlers that supports two techniques for observing events: 
   - directly-bound per-element listeners, 

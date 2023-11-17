@@ -56,6 +56,11 @@ modified: 2023-03-30T13:31:09.049Z
 
 - ## 
 
+- ## After 3.8 years, I’m stepping away from @remnote to build a new company.
+- https://twitter.com/MoritzW42/status/1725390647518179511
+  - It was an incredible journey. I’m grateful for everyone who supported us along the way, and proud of what we accomplished! 
+  - (Built an incredibly talented team of 15, scaled to 800k+ signups, and 100k+ MAUs)
+
 - ## TailwindUI 运行在一个 $84/月的 VPS 上，但是一年产生的收入可以达到 $2.5M，养活了 Tailwind 整个团队
 - https://twitter.com/beihuo/status/1724847917159035151
   - [Tailwind CSS: From Side-Project Byproduct to Multi-Million Dollar Business – Adam Wathan_202008](https://adamwathan.me/tailwindcss-from-side-project-byproduct-to-multi-mullion-dollar-business/)
