@@ -68,7 +68,7 @@ modified: 2021-09-29T13:23:09.969Z
     - children: VNode[]
     - text: string
     - elm: 每个VNode对应的真实dom节点
-  - who is using #snabbdom
+  - who is using #snabbdom 用例
     - vue, owl1
   - Snabbdom consists of an extremely simple, performant and extensible core that is only ≈ 200 SLOC. 
   - It offers a modular architecture with rich functionality for extensions through custom modules. 
@@ -97,6 +97,7 @@ modified: 2021-09-29T13:23:09.969Z
 
 - https://github.com/Matt-Esch/virtual-dom /10.8kStar/MIT/201604/js
   - A JavaScript DOM model supporting element creation, diff computation and patch operations for efficient re-rendering
+  - 用例: reflex
 
 - https://github.com/patrick-steele-idem/morphdom /js
   - Fast and lightweight DOM diffing/patching (no virtual DOM needed)
@@ -105,6 +106,9 @@ modified: 2021-09-29T13:23:09.969Z
 
 - https://github.com/trueadm/t7 /js
   - lightweight JavaScript template library that compiles ES2015 template strings into virtual DOM objects.
+
+- https://github.com/elm/virtual-dom /202205/elm
+  - A virtual DOM implementation that backs Elm's core libraries for HTML and SVG.
 # 3d-threejs
 - Build your own react-three-fiber
   - https://codesandbox.io/s/build-your-own-react-three-fiber-zlq3c
@@ -146,3 +150,7 @@ modified: 2021-09-29T13:23:09.969Z
   - https://vanillawebprojects.com/
   - Mini projects built with HTML5, CSS & JavaScript. No frameworks or libraries
   - This is the main repository for all of the projects in the course.
+
+- https://github.com/pierregoudjo/build-your-own-excel /202308/ts
+  - A Javascript version of a talk showing how to build a simle version of Excel based on functional principles.
+  - This javascript version use Preact and Redux with Typescript instead of Elmish and Fable with F#.

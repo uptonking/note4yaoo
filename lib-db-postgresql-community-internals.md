@@ -64,7 +64,10 @@ modified: 2023-10-28T13:46:14.957Z
 
 - ## 
 
-- ## 
+- ## Postgres code has this habit of making some code 1-based indexed and some 0-based indexed.
+- https://twitter.com/eatonphil/status/1725572175292158096
+  - For example, in a query: to find the relation (table, in simple cases) being referred to, you get a 1-based index. To look up that relation in the list of relations it's 0-based.
+- I'm still not used to Postgres arrays being 1-based.
 
 - ## [Unexpected downsides of UUID keys in PostgreSQL | Hacker News_202306](https://news.ycombinator.com/item?id=36429986)
 - CouchDB uses sequential UUID by default

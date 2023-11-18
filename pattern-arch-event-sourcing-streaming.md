@@ -11,13 +11,14 @@ modified: 2023-09-12T09:34:51.108Z
 
 - who is using #event-sourcing
   - wix
-  - products: undb
 
 - usecases
-  - logux/redux ? 
+  - logux/redux ?
   - gundb
+  - Datomic/CouchDB
   - undo/redo
   - 工程类、科学类数据的观测分析
+  - products: undb
 
 - tips
   - event sourcing会记录所有events，可以根据events计算state，但不同client计算的结果不一定一致

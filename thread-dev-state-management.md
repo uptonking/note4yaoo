@@ -8,7 +8,8 @@ modified: 2021-02-28T07:29:07.622Z
 # thread-dev-state-management
 
 # repeat
-<!-- #region /folded state-repeated -->
+
+- ## [The new wave of React state management | Hacker News_202207](https://news.ycombinator.com/item?id=31959289)
 
 - ## Believe it or not, most my effort in @ReactJS global state libs is to _avoid_ selectors that are only required for render optimization. It just didn't feel a good abstraction.
 - https://twitter.com/dai_shi/status/1428155847536873479
@@ -79,7 +80,6 @@ modified: 2021-02-28T07:29:07.622Z
 - [RTK Query comparison](https://rtk-query-docs.netlify.app/introduction/comparison/)
 - [React Query vs SWR vs Apollo vs RTK Query](https://react-query.tanstack.com/comparison)
 
-<!-- #endregion /folded state-repeated -->
 
 # discuss
 - ## 

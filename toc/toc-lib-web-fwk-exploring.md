@@ -72,6 +72,7 @@ const CountingComponent = () => {
 - https://github.com/jorgebucaran/hyperapp
   - /18.2kStar/MIT/202012/js
   - The tiny framework for building hypertext applications
+  - Hyperapp is an ultra-lightweight Virtual DOM, highly-optimized diff algorithm, and state management library obsessed with minimalism.
 # rust-web
 - https://github.com/DioxusLabs/dioxus
   - https://dioxuslabs.com/
@@ -133,7 +134,7 @@ const CountingComponent = () => {
   - Unicycle is an Electron application built using TypeScript, React and ant.design. 
   - Its purpose is to unify the design/development cycle.
   - Unicycle allows you to create, live edit and test presentational components and export them to different frameworks (React and Vue.js by now). 
-- https://github.com/MithrilJS/mithril.js
+- https://github.com/MithrilJS/mithril.js /202307/js
   - client-side JS framework for building Single Page Applications. 
   - It's small (9.79 KB gzipped), fast and provides routing and XHR utilities out of the box.
   - used by companies like Vimeo and Nike

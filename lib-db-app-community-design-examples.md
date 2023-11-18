@@ -45,4 +45,4 @@ modified: 2023-10-27T09:14:12.088Z
 
 - ## 
 
-- ## 
+- ## [The Evolution of Reddit’s Architecture (2017) | Hacker News_201809](https://news.ycombinator.com/item?id=18013727)

@@ -695,7 +695,7 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/tonyfromundefined/eventive /ts
   - Event Sourcing Framework in MongoDB
 
-- https://github.com/yysun/apprun /MIT/ts
+- https://github.com/yysun/apprun /1.2kStar/MIT/202309/ts
   - https://apprun.js.org/
   - https://dev.to/yysun
   - a JavaScript library for developing high-performance and reliable web applications using the elm inspired architecture, events and components.
@@ -704,6 +704,7 @@ modified: 2023-09-12T09:37:22.608Z
   - No proprietary syntax to learn (no hooks)
   - Use directly in the browser or with a compiler/bundler
   - Advanced features: JSX, Web Components, Dev Tools, SSR, etc.
+  - An AppRun component is a mini-application with elm architecture, which means inside a component, there are state, view, and update. In addition, components provide a local scope.
   - [AppRun runs on both client and server side to allow event firing and handling between the frontend app and backend business logic modules using WebSockets, no REST API.](https://twitter.com/apprunjs/status/1237064423191252992)
 
 - https://github.com/deepstreamIO/deepstream.io /ts

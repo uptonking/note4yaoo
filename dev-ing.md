@@ -151,6 +151,8 @@ $$('[contenteditable]')
 
 - ui: headless-architecture
   - state + action: 参考autocomplete、search-ui
+- headless组件是否表明react将view与logic耦合在一起封装为component的思路是错误的?
+  - 与view视图无关的component本身就是个简单的函数或eventemitter-pattern
 
 - 若slate-model层采用扁平化Node(扁平化的思路可参考event-sourcing/orm/tinybase)
   - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath

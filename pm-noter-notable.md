@@ -212,4 +212,7 @@ modified: 2022-12-19T02:01:20.161Z
 - 参考
   - jupytext: jupyter notebooks as readable, editable documents
   - executable document
+# examples
+- awesome-list
+  - 将类似github上awesome-list的内容转换为多维表格
 # more

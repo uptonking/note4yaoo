@@ -22,6 +22,15 @@ modified: 2020-11-13T07:28:27.824Z
 - refs
   - https://github.com/SaraVieira/ui-libraries /组件库对比
 # framework-agnostic components
+- https://github.com/dmitriz/un /202304/js
+  - Unframework for Universal Uncomponents
+  - We do not think in terms of reusable components. Instead, we focus on reusable functions.
+  - Write your business logic as pure functions with no external dependencies
+  - Why "uncomponent"? Because there isn't really much of a "component", the `reducer` and the `view` are just two plain functions and the initial `state` is a plain value.
+    - your simply import your favorite familiar libraries that you are already using anyway
+  - Currently a single tiny factory function called `createMount`. Its role is similar to `React.render`.
+  - Streams are in the core of un
+
 - zag /1.5kStar/MIT/202210/ts/state-machine/panda-css
   - https://github.com/chakra-ui/zag
   - https://zagjs.com/overview/introduction

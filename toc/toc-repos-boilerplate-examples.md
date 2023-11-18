@@ -97,6 +97,9 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/gothinkster/node-express-realworld-example-app /201802/js
 - Example Node (Express + Mongoose) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld API spec
 
+- https://github.com/launchbadge/realworld-axum-sqlx /202203/rust
+  - A Rust implementation of the Realworld demo app spec using Axum and SQLx
+  - Best practices are always in flux, and a major point of this project was to experiment with project architecture and suss out what those best practices might look like.
 - https://github.com/hseeberger/realworld-backend /202311/rust
   - RealWorld backend implementations in Rust, using different frameworks (enabled via respective features)
   - axum

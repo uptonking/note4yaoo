@@ -25,6 +25,9 @@ modified: 2021-04-11T06:17:51.318Z
 - 有状态无渲染，有渲染无状态，且状态尽量与具体业务解耦，状态逻辑尽量通用，这也是hooks设计的思路
 - I wonder... should these be called ui patterns rather than components.
 
+- headless组件是否表明react将view与logic耦合在一起封装为component的思路是错误的?
+  - 与view视图无关的component本身就是个简单的函数或eventemitter-pattern
+
 - headless-ui-examples
   - popular: floating-ui, dnd-kit, autocomplete
   - radix-ui

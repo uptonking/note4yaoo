@@ -12,6 +12,20 @@ modified: 2023-09-13T14:28:01.426Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## [Real World Microservices: When Services Stop Playing Well and Start Getting Real | Hacker News_201605](https://news.ycombinator.com/item?id=11649999)
+- From my own experience building a platform of products on top of microservices, I find that the most difficult part about this architecture (and the one that nobody ever talks about) is how to share data between microservices via message bus instead of direct requests. If you can get this down the rest, in my opinion, is just pure bliss and a piece of cake.
+  - Event sourcing is the thing you're looking for and something that will probably be the focus of many building microservice platforms.
+- About 2 years ago, I started to notice the incredible usefulness of event sourcing and its applicability at various layers of the stack.
+  - 👉🏻 From the React/Flux frontend paradigm, to the "everything is a stream" philosophy of Unix systems, to Erlang actors, to event sourcing for application backends, to databases like Datomic and CouchDB.
+  - This is why I'm so excited about Elm right now - it explicitly puts this at the core of every application, and gives you a really nice language and type system for encoding your domain logic and manipulating data.
+- I think the real network-level win comes from rigorous events, period. 
+  - Event sourcing, on the other hand, is an internal implementation detail of a particular service... 
+  - Which happens to get you a good stream of events as a side-effect.
+- Have you tried Erlang? It's basically designed around solving that problem. Many people use RabbitMQ to solve that problem and it's no coincidence that RabbitMQ is written in Erlang. Elixir is possibly a similar option (don't know, haven't tried it).
+  - Erlang's raison d'etre is not message passing but fault tolerance. 
+
 - ## [Damn Cool Algorithms: Log structured storage (2009) | Hacker News_201705](https://news.ycombinator.com/item?id=14447727)
 - event sourcing seems like a very powerful pattern that I haven't seen wide adoption. The best documentation seems to be some MS dev library notes and a discussion from M Fowler.
 - 🤔 Are there any open source implementations of a database that uses event sourcing?
@@ -405,12 +419,6 @@ that commit position, thus providing "read your own writes" semantics.
   - evicting records with low scores and ingesting new ones with higher scores, which is IO intensive and makes A/B iteration much harder
   - I work on the feed at another company and everything is done on the fly. I guess there's no one size fits all when it comes to a system as complex as this
 
-- 
-- 
-- 
-- 
-- 
-- 
 - 
 - 
 

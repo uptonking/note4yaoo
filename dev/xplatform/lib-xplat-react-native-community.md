@@ -7,9 +7,26 @@ modified: 2021-09-10T14:15:55.903Z
 
 # lib-xplat-react-native-community
 
+# guide
+
 # discuss
+- ## 
 
 - ## 
+
+- ## 
+
+- ## Why does #ReactNative rely so heavily on #Yoga? 
+- https://twitter.com/tomekzaw_/status/1725886444344844673
+  - Yes, it’s faster than iOS layout engines in some benchmarks. 
+  - But sometimes we need to calculate layout in 60 fps (e.g. resize window). 
+  - Wouldn’t it be easier to just map CSS styles to platform-specific layouts like React does on web?
+- Yoga is one layout engine for ios and android, plus it's super fast in certain benchmarks.
+
+- It could work well to bypass Yoga for individual nodes but as soon as they have children or there are other nodes in the tree that would need to react to those changing – we end up again needing a layout engine to do its job.
+  - We still need to bypass it for Switch, Modal or Screen components which should have size dictated by the platform. On Fabric, we assume the initial size is (0, 0), then we mount the tree and finally we check the actual size. This causes layout jumps and looks bad.
+
+- By using one cross-platform layout engine, you don’t have to implement layout once for each platform, and can be sure of consistency. Also it’s hard enough to implement flexbox from the ground up, let alone having to translate it to AutoLayout
 
 - ## 在 apple store 发布了一个使用 react-native + nodejs 开发的项目，审核一次通过。_202309
 - https://twitter.com/hamsterbase/status/1705027776624124315

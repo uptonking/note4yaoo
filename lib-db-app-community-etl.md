@@ -30,7 +30,11 @@ modified: 2023-09-17T18:10:33.050Z
 
 - ## 
 
-- ## 
+- ## DuckDB don't support RAM cache when querying Parquet files(to be fair none of the OSS engine support it), 
+- https://twitter.com/mim_djo/status/1725848821681541295
+  - current workaround is to load the whole tables into Memory, this is basically what #PowerBI did with import mode, at least before 2021
+  - [Announcing on-demand loading capabilities for large models in Power BI_202112](https://powerbi.microsoft.com/en-us/blog/announcing-on-demand-loading-capabilities-for-large-models-in-power-bi/)
+- so in a sense the biggest innovation of #Fabric direct lake is the capability to load and transcode from Parquet to the in-memory format that PowerBI understand, that's none trivial at all 
 
 - ## Do you want a #database that can:
 - https://twitter.com/OnlyXuanwo/status/1725494564755325036

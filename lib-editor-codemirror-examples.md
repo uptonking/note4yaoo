@@ -24,6 +24,13 @@ modified: 2023-06-23T12:46:53.288Z
   - The backend is stateless and even avoids WebSockets by relying on HTTP/2.
   - Unlike most toy examples, this application persists data and cleans up database memory. 
   - Documents are stored in Postgres, and real-time changes are resolved over Redis, with compaction.
+# extensions
+- https://github.com/val-town/codemirror-ts /ISC/ts
+  - https://val-town.github.io/codemirror-ts/
+  - a set of extensions for CodeMirror 6 that add support for TypeScript.
+  - Hover hints for types 
+  - Autocomplete 
+  - Diagnostics (lints, in CodeMirror's terminology)
 # utils
 
 # examples

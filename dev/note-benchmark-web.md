@@ -129,6 +129,14 @@ modified: 2020-07-14T09:28:43.976Z
   - so they're not suitable for anything that might get deployed with a content security policy
   - Yes, it was acceptable as proof-of-concept. 
 
+- https://github.com/the-benchmarker/web-frameworks /202311
+  - https://web-frameworks-benchmark.netlify.app/result
+  - The purpose of this project is to identify frameworks and attempt to measure their differences (performance is only one metric).
+
+- https://github.com/ivanceras/todomvc-perf-comparison /202007/js
+  - http://lhorie.github.io/todomvc-perf-comparison/todomvc-benchmark/
+  - todomvc performance benchmarks
+
 - https://github.com/matteofigus/api-benchmark
   - A node.js tool that measures and compares performances of single and multiple apis inspired by BenchmarkJs
 - https://github.com/jeffbski/bench-rest
