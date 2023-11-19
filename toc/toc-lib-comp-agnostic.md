@@ -95,6 +95,8 @@ modified: 2020-11-13T07:28:27.824Z
 - https://github.com/DouyinFE/semi-design
   - https://semi.design/zh-CN/start/overview
   - 得益于 Foundation/Adapter 架构设计以及样式文件分层原则，Semi 非常易于迁移到其他前端框架
+  - [Semi Design 设计系统管理](https://semi.design/dsm/landing)
+    - 支持在线定制基于semi-design的主题样式，并发布npm包
   - [Semi Design - UI组件库如何分层设计，使其具备适配多种mvvm框架能力](https://bytedance.feishu.cn/wiki/wikcnOVYexosCS1Rmvb5qCsWT1f)
   - [希望官方支持 Vue 版本](https://github.com/DouyinFE/semi-design/issues/311)
     - 我们的工作重点依然是React体系。没有计划去重新实现一个Vue版本

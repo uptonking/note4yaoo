@@ -12,6 +12,18 @@ modified: 2023-11-17T10:27:28.695Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚️ [Why use Redux over Facebook Flux? - Stack Overflow](https://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux)
+- Redux is not that different from Flux. Overall it has same architecture, but Redux is able to cut some complexity corners by using functional composition where Flux uses callback registration.
+- Flux makes it unnatural to reuse functionality across stores. 
+- People have been rendering on the server fine with Flux
+  - In traditional Flux, stores are singletons. This means it's hard to separate the data for different requests on the server. Not impossible, but hard. 
+  - This is why most Flux libraries (as well as the new Flux Utils) now suggest you use classes instead of singletons, so you can instantiate stores per request.
+- Redux just goes further: there's just a single store, and you can read its current state, or create a new store with a new state. Each request gets a separate store instance. Read more about server rendering with Redux.
+
 - ## 🤔 [Redux - multiple stores, why not? - Stack Overflow](https://stackoverflow.com/questions/33619775/redux-multiple-stores-why-not)
 - 单个store 容易维护，修改，读取。
 - 单个store 易于 rollback 或 undo
@@ -116,6 +128,21 @@ modified: 2023-11-17T10:27:28.695Z
 - In Flux/redux the unidirectional nature comes from all updates targeting and emanating(来自) from a single source (store), and being routed to views accordingly. An interaction from one component will never result in a disconnect where you failed to update the correct model(s) or to notify the right components of a change (hi Backbone.js).
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Application Architecture with React: Rethinking Flux | Hacker News_201509](https://news.ycombinator.com/item?id=10213905)
+- With each next article about React (and more generally javascript) it's more apparent that the final result is a mongo/rethink like db in the front-end with a transparent sync to the server
+  - Maybe something like PouchDB, lazily synced with a CouchDB instance on the server ? I'd love to see a better integration, where for example global state would be automatically saved in PouchDB. You'd get pub/sub, history and synchronization for free, at the cost of PouchDB's performance
+
+- If you're going to borrow every idea from ClojureScript and Om, why not simply switch to these technologies instead of relying on so many libraries?
+  - Many companies will simply not use ClojureScript, it's too niche and too hard to find developers for at the moment. It's much easier to find JavaScript developers.
+
+- I feel like every new architecture for flux lately comes at the cost of a lot of code complexity. The global state is becoming extremely common too, and it feels like a big anti-pattern. Not really a fan. I do like the more pure-flux Alt at the moment. I felt quickly put off from Redux after going through docs for a while.
+- Only the states that can be global need to be global. It's not an anti pattern to manage state inside the component.
+- 👉🏻 databases are global state (The design pattern here is separation of code from state. OOP couples code (methods) and state (members))
 
 - ## [UIs are not pure functions of the model (2018) | Hacker News_202207](https://news.ycombinator.com/item?id=31979347)
 

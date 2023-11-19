@@ -20,7 +20,9 @@ modified: 2023-04-19T07:30:34.872Z
 
 - ## 
 
-- ## 
+- ## TIL about Apache paimon a new table format for batch and streaming
+- https://twitter.com/mim_djo/status/1726143809313198423
+  - [Apache Paimon](https://paimon.apache.org/)
 
 - ## TIL that a “data lake” is just an S3 bucket stuffed choke full o’ good ol’ csv files
 - https://twitter.com/ChiefScientist/status/1724918222066159857

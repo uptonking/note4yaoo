@@ -108,7 +108,13 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
-- ## 
+- ## React had to come up with an arbitrary `use` prefix to denote they own this specific function. 
+- https://twitter.com/puruvjdev/status/1725954832840769872
+  - Svelte came swinging out of the door with `new Class()` and bam!! Hijacked another JS feature/convention for themselves. And its far more performant as well!
+  - And it works amazingly, because classes are so unused by many devs, that seeing a class in Svelte template will automatically mark it as reactive in their mind. Svelte maintainers chose the perfect timing for this!
+  - Vue could have done something similar, but they chose React's syntax choices and claimed that this is not a hook
+- Angular devs reading this post
+- Why using Class if we could just use Module ?
 
 - ## Are there specific reasons why there is no built-in primitive for deep reactivity in Svelte?
 - https://twitter.com/_mql/status/1720439445382426982

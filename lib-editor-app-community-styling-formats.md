@@ -44,6 +44,16 @@ modified: 2023-11-01T12:33:20.763Z
 - that's a great solution! I used to use `mark.js` and I'll continue to use it, but as soon as Safari adds support, I'll definitely move to the built-in JavaScript features.
 
 - I wonder if this would help with http://pelicanizer.com... it might save me the trouble of span-wrapping everything.
+# discuss-highlighting
+- ## 
+
+- ## Highlight.js makes per-line highlighting really challenging without recursing through every node which is just gonna be a no from me.
+- https://twitter.com/RogersKonnor/status/1726112759518024188
+  - PrismJS being a global UMD is gross. 
+  - Are there any other syntax highlighting libraries I'm missing?
+- Rouge. It's Ruby only tho.
+- He made Torchlight. https://torchlight.dev Making HTTP requests to highlight on every keystroke probably isn't a good idea either.
+
 # discuss
 - ## 
 

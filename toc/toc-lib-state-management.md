@@ -365,6 +365,9 @@ modified: 2020-07-14T11:03:53.196Z
   - Zedux is a multi-paradigm state management tool that features a powerful composable store model wrapped in a DI-driven atomic architecture.
   - Zedux borrows ideas from Redux, Recoil, and React Query. 
   - Zedux takes the unique approach of separating the state layer (stores) from the architecture layer (atoms). This allows for a powerful Dependency Injection model, conceptually similar to Angular's but simpler and more dynamic.
+
+- https://github.com/acacode/reffect /202006/ts/archived
+  - a declarative and reactive multi-store state manager for JavaScript/TypeScript applications inspired by Reatom and Effector
 # state-machine
 - https://github.com/beekai-oss/little-state-machine /1.4kStar/202212/ts
   - React custom hook for persist state management

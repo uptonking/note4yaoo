@@ -10,13 +10,18 @@ modified: 2023-11-17T10:28:14.247Z
 # guide
 
 - tips
-  - flux的参考案例比elm多, 但event-sourcing架构更经典
+  - flux的参考案例比elm多, event-sourcing架构更经典
   - 支持undo/history/snapshot: flux, elm
+  - 考虑将redux-devtools的协议和交互作为time-travel的通用方案，在api/ui/数据结构
   - 支持多store
+  - 应用层级的store不适合保存变化频率很高的状态，如input输入框、scroll、animation
+  - 参考: 跨框架的component使用adapter模式，跨框架的app应用使用flux/elm
 
 - resources
+  - [Fluxxor - What is Flux?](http://fluxxor.com/what-is-flux.html)
   - [The Elm Architecture · An Introduction to Elm](https://guide.elm-lang.org/architecture/)
   - [Elmish · F#](https://elmish.github.io/elmish/)
+  - [Redux without the sanity checks in a single file](https://gist.github.com/gaearon/ffd88b0e4f00b22c3159)
 # popular
 - https://github.com/voronianski/flux-comparison /2.8kStar/MIT/202006/js
   - Practical comparison of different Flux solutions
@@ -38,6 +43,8 @@ modified: 2023-11-17T10:28:14.247Z
   - Flux is more of a pattern than a framework
   - However, we often use `EventEmitter` as a basis for `Store`s and React for our `View`s
   - The one piece of Flux not readily available elsewhere is the `Dispatcher`.
+  - https://github.com/huanghaiyang/fluxory /201608/js
+    - flux history; back([actionType]); forward([actionType])
 
 - https://github.com/yahoo/fluxible /1.8kStar/BSD/202311/js/函数式风格
   - https://fluxible.io/faq.html
@@ -95,6 +102,11 @@ modified: 2023-11-17T10:28:14.247Z
     - https://alt-ng.koliseo.com/
     - A flux implementation without the boilerplate
 
+- https://github.com/zalmoxisus/remotedev /MIT/201812/js
+  - Remote debugging for any flux architecture.
+  - Monitoring flux app's actions along with states to a remote monitor. 
+  - Meant to be used even in production with any flux architecture for web, universal, React Native, hybrid, desktop and server side apps.
+
 - https://github.com/almin/almin /503Star/MIT/202108/ts/class风格/inactive
   - https://almin.js.org/
   - Client-side DDD/CQRS for JavaScript.
@@ -124,6 +136,8 @@ modified: 2023-11-17T10:28:14.247Z
     - because Flummox does not rely on singletons, you get isomorphism for free: just create a new Flux instance on each request
     - Flummox also gives you the ability to serialize the initial state of your application on the server, send it down to the client as a string
   - The dispatcher and constants are implementation details — no need to interact with them unless you want to
+  - https://github.com/acdlite/flummox-immutable-store /201504/js
+    - Flummox store with Immutable.js support for serialization and undo/redo
 
 - https://github.com/HubSpot/general-store /202110/ts
   - http://github.hubspot.com/general-store
@@ -136,18 +150,19 @@ modified: 2023-11-17T10:28:14.247Z
 - https://github.com/Kuasr/flux /202212/ts
   - a library that implements flux architecture designed by Meta with some modifications used in Kuasr's projects.
 
-- https://github.com/threepointone/disto /201507/js
+- https://github.com/threepointone/disto /201507/js/支持undo和snapshot
   - mildly opinionated flux
   - deprecated, consider using redux instead
   - follows the original flux architecture, with no new concepts
   - leans heavily on regular functions
-  - timetravel helper
+  - timetravel helper: r.record(); r.stop(); r.play(); r.snapshot(); 
 - https://github.com/NoMoreDeps/shadow-flux /202009/ts
   - https://nomoredeps.github.io/shadowjs
   - Flux implementation in typescript
+  - S-Flux V3 comes with an integrated State Visualizer
   - roadmap: Improve Debug visualizer to allow time travel
 
-- https://github.com/ohager/nanoflux /201702/js
+- https://github.com/ohager/nanoflux /201702/js/functional
   - lightweight and dependency-free Flux implementation
   - uses a pure functional approach as a performant solution.
   - The idea of this implementation is to support a very small, but full Flux implementation (separated Action, Dispatcher, and Store), and also a "fluxy" version, with Action and Dispatcher merged in one unit.
@@ -155,6 +170,10 @@ modified: 2023-11-17T10:28:14.247Z
   - 一个使用原生JS实现Flux架构的库
 - https://github.com/victorpotasso/fluxo /202205/ts
   - A Vanilla FLUX library
+
+- https://github.com/youwol/flux-view /202311/ts/rxjs
+  - Tiny library to render HTML documents using reactive programming primitives.
+  - It leverage reactive programming primitives provided by RxJS to enable HTML elements being defined not only using plain values but also in terms of stream.
 
 - https://github.com/geotrev/core-flux /202307/js
   - functional flux utility. Control the flow of state data between subscribers
@@ -351,7 +370,7 @@ modified: 2023-11-17T10:28:14.247Z
   - A tui-rs framework inspired by Elm and React
   - a framework for tui and ratatui to simplify the implementation of terminal user interfaces
 # examples
-- https://github.com/jorinvo/miniflux-todomvc /201612/js
+- https://github.com/jorinvo/miniflux-todomvc /201612/js/immutable-js
   - https://jorinvo.github.io/miniflux-todomvc
   - I rebuilt TodoMVC to learn how to use the ideas behind the Flux architecture
   - you can try out time traveling and you can access the global helpers render, actions, state and states.
@@ -369,7 +388,7 @@ modified: 2023-11-17T10:28:14.247Z
     - I implemented a spreadsheet in react, flux, immutable, and used a command pattern
     - I did not take the approach of cells actually observing each other. Instead I had a recursive function that worked from the entered cell 
     - The hardest part was updating the string representations of the formulas when you insert a new column or row, and then re-updating each cell's dependencies arrays.
-    - One mistake I made was trying to implement the undo/redo to be totally reversable at every step. So every command stores the way to go both back and forward. In hindsight, I should have just stored forward commands and rebaked from the beginning when someone wanted to go back in time.
+    - One 🛑 mistake I made was trying to implement the undo/redo to be totally reversable at every step. So every command stores the way to go both back and forward. In hindsight, I should have just stored forward commands and rebaked from the beginning when someone wanted to go back in time.
     - Handsontable.js. That library has some major design flaws. Handsontable only takes simple 'number' or 'string' value for each cell
 
 - https://github.com/stonarini/bike-web-b2b /202304/js
@@ -408,9 +427,6 @@ modified: 2023-11-17T10:28:14.247Z
   - a full-stack web application inspired by the popular team-collaboration application Slack
   - using the Flux architecture and React.js on the front-end and Ruby on Rails on the back-end
 # utils
-- https://github.com/zalmoxisus/remotedev /201812/js
-  - Remote debugging for any flux architecture.
-
 - https://github.com/lmiller1990/flux-entities /202007/ts
   - The flux entity pattern, or simply the entity pattern, is a common pattern I identified and extracted over the last few years of working on various single page apps
   - This pattern, however is applicable to any flux library
@@ -438,6 +454,46 @@ modified: 2023-11-17T10:28:14.247Z
 - https://github.com/ajpocus/adventure-kit /201708/js
   - A toolkit for making adventure and RPG games in the browser.
   - I used the Flux architecture here, but it was before I heard about Redux, so I used alt.js instead
+
+## undo/history
+
+- https://github.com/isocroft/Radixx /201810/js/代码是ng风格
+  - This is a simple library that implements the Facebook Flux Architecture with a twist to how the entire application state is managed and changed/updated.
+  - It resembles Redux in a lot of ways. The key deferentiator in both is that Radixx utilizes an actions stack and Redux utilizes an immutable state tree.
+    - 偏向event-sourcing
+    - Redux is basically event-sourcing where there is a single projection to consume the application state.
+    - A single state tree can grow big really fast for a single store but an actions stack grows subtlely for a number of stores when dealing with complex single-page applications(SPAs)
+  - Infinite/Finite Undo/Redo + Time Travel
+  - 😁 Gains of Redux single store, Same applies to Radixx
+    - Infinite Undo/Redo + Live-Editing Time Travel (As application state is immutable).
+    - Predictable Atomic Operation on Application state object (As actions are run in a specific predictable order).
+    - Single source of truth (No Guesswork!!) for applicaton state
+  - 😩 Troubles with Redux single store
+    - Dynamically structured state is impossible. (mature, complex apps need this the most).
+    - Increased probability of state key(s) collisions between reducers (very likely in a big complex web app)
+    - Global variables are most times a bad thing (This applies to the composition of the Redux application state itself) as you could clobber(痛打；猛揍) them unknowingly. 类似数据库的单点故障问题
+    - Performance suffers as your state tree gets larger
+    - Each time the connect() decorator is called, it pulls in the entire application state (when using react-redux project library).
+  - Use of Traits (as Mixins) for ReactJS and VueJS (even though most people think mixins are dead and composition should be the only thing in used, i still think mixins have a place)
+  - Use with Single Page App Frameworks/Libraries e.g. VueJS 1.x/2.x, AngularJS 1.x, Angular 2.x, Ractive, ReactJS, jQuery
+  - don't store this in Radixx stores (e.g. Text Input - being entered, Animation Tween Properties/Values, Scroll Position Values, Text Box Caret Position, Mouse Position Values, Unserializable State - like functions)
+
+- https://github.com/conatus/flame /MIT/201601/js
+  - Opinionated single-state-tree immutable Flux
+  - 依赖flux、immutable.v3、immutable-diff
+  - The key difference between Flux and Flame, is that the stores themselves do not hold onto any state whatsoever, instead they are provided access to a subtree of a single, immutable global tree which they are able to modify. Components are not able to access the raw state tree, instead they request access to a store(s) subtree within that tree.
+  - Flame keeps it like Flux. Anyone with an existing Flux implementation will be able to use and understand Flame with very little modifications
+  - Flame's state tree is immutable - every action handler inside a store is expected to provide a new ImmutableJS instance for every action it handles, with a history of changes recorded.
+  - What's unique about Flame however is how that history is stored - each of those changes described by a store's handler is recorded as a diff between two immutable states, instead of another instance of the entire state tree
+
+- https://github.com/mj1618/reckon-js /201609/js
+  - an event-based, immutable state container for javascript apps.
+  - Reckon manages state as Facebook Immutable objects. 
+  - Reckon provides cursors, views and scoped events so that a single Reckon instance can be used for all state in an application.
+
+- https://github.com/yoshuawuyts/state-atom /201508/js
+  - Create an immutable state atom. Forms the basis for hot reloading, infinite undo/redo (time-travel) and more.
+  - Backend applications have both persistant state (database) and application state (memory). state-atom takes this analogy and applies it to the frontend. Changes saved to the atom are immutable, returning mutable copies when read. Only when actively persisting the state back to the atom will listeners fire and changes propagate throughout the application.
 # flux-like
 - [A Redux-like Flux implementation in <75 lines of code](https://gist.github.com/acdlite/9f1b5883d132ad242323)
 
@@ -495,10 +551,13 @@ modified: 2023-11-17T10:28:14.247Z
   - Usage with Preact and React
 
 - https://github.com/microsoft/satcheljs /395Star/MIT/202203/ts
-  - https://microsoft.github.io/satcheljs
+  - https://microsoft.github.io/satcheljs/book/core-concepts.html
   - Satchel is a data store based on the Flux architecture. 
-  - It is characterized by exposing an observable state that makes view updates painless and efficient.
   - we found reducers and immutable state cumbersome to deal with
+  - Satchel is an opinionated implementation of Flux.
+    - Orchestrators are Satchel's mechanism for dealing with side effects. For instance, an orchestrator might make a service call and dispatch more actions once it returns.
+    - The root store (and therefore the entire store underneath it) is a MobX observable
+  - It is characterized by exposing an observable state that makes view updates painless and efficient.
   - Satchel uses MobX under the covers to allow React components to observe the data they depend on.
   - 依赖mobx.v4、mobx-react.v5
 

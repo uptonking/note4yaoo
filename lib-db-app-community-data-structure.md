@@ -36,7 +36,22 @@ modified: 2023-09-17T18:17:41.377Z
 # discuss-tree
 - ## 
 
-- ## 
+- ## Reading the Adaptive Radix Tree paper - Having the realisation that trie is such an underrated data structure. 
+- https://twitter.com/debasishg/status/1725966931830923489
+  - Wondering why we should use any other data structure for in memory database indexes.
+- Here are some rough notes from the paper ..
+- Tree based indexes (e.g. binary search tree or b-tree needs special care for cache friendliness), are expensive for updates and can show pipeline stall(熄火) for branch misprediction.
+- Hash based indexes are great for point queries, not so for range queries, are expensive to grow with O(n) complexity for reorganisation.
+- Tries have O(k) complexity where k is the size of the key, which means independence from n (that is a HUGE plus). 
+  - The trie height can be controlled through the span s of the radix tree and is usually smaller than the height of a binary search tree. 
+  - Hence search can be faster - O(k) compared to O(k lg n) in BSTs. 
+  - 🛑 One problem with tries is they can have higher space consumption compared to trees. 
+  - But Adaptive Radix Tree manages this through variable sized data structures for inner nodes and leaves.
+- 🌰 Oh yes, Cassandra recently moved to tries for memtables and SSTables and I wrote about it a few days ago
+- That is what @duckdb supports if I’m not mistaken.
+- DuckDB has good article on ART and compression.
+  - Also, in latest Cassandra release they have Trie based implementation which seems to do better than B Trees, even on storage if I am not wrong. they also have included byte comparable keys to get performance gain on comparisons.
+- Here’s an initial impl in Swift as well from FoundationDB team
 
 - ## 🌲 [Hierarchical Structures in PostgreSQL (2020) | Hacker News_202106](https://news.ycombinator.com/item?id=27631765)
 - A great overview of the pros and cons of different approaches is given in [Models for hierarchical data | PPT](https://www.slideshare.net/billkarwin/models-for-hierarchical-data)

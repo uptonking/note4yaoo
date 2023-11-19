@@ -23,7 +23,14 @@ modified: 2023-11-01T10:15:06.245Z
 
 - ## 
 
-- ## 
+- ## 🏘️ When Uber created their in-house database (known as Schemaless), they wanted high-availability writes.
+- https://twitter.com/ProgressiveCod2/status/1726136613468852376
+  - This was difficult to achieve because all writes in their setup went to the Leader node.
+  - And if the Leader node goes down, HA becomes difficult to achieve.
+  - To get around this issue, Uber used a technique known as Buffered Writes.
+  - Buffered Writes meant that every write request was stored on at least two nodes: - The Primary Leader - The Secondary Leader
+  - But there's a lot that goes behind the scenes to make the whole thing work
+  - [PC#16 - The Secret Trick to High-Availability_202310](https://progressivecoder.beehiiv.com/p/the-secret-trick-to-high-availability)
 
 - ## Cool thread-safe triple buffering approach made lock-free by atomically swapping the pointers to the buffers
 - https://twitter.com/zack_overflow/status/1722275195594133817

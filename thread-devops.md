@@ -39,9 +39,15 @@ modified: 2021-03-31T06:50:19.936Z
 
 - ## 
 
-- ## 
+- ## Recently I noticed that chrome sent some DNS requests bypassing my router (which is my system's DNS server), 
+- https://twitter.com/baffin_lee/status/1726239447937950182
+  - which prevented my from controlling traffic base on DNS and IP address. 
+  - After some digging, disable "Async DNS resolver" flag in Chrome solved the problem.
 
-- ## 
+- ## 把域名从 http://name.com 迁到 cloudflare 了，便宜一半
+- https://twitter.com/fuyufjh/status/1726166801854451881
+- 为啥你们迁移都更省钱……我的域名从阿里云迁移过来，99->150
+- cloudflare域名只收成本费，不盈利
 
 - ## yaml 多按了个 tab 调试几小时
 - https://twitter.com/zhdsuperman/status/1718617613092475257

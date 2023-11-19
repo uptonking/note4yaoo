@@ -21,6 +21,19 @@ modified: 2023-05-30T21:36:55.391Z
 
 - ## 
 
+- ## 
+
+- ## Added a timeline view to the @remix_run DevTools! (WIP) made with @vite_js
+- https://twitter.com/aryan__deora/status/1725909619644461144
+  - A neat way to visualize link prefetches too!
+  - 页面fetch时序动画
+  - 上面是页面，下面是devtools
+
+- ## new discovery! use numbered figures (e.g. fig 1, fig 2) to describe different stages of an interaction
+- https://twitter.com/tldraw/status/1726047257403830736
+- Wait until I can import my figma into this
+  - just copy a screenshot and paste it in 
+
 - ## What if @figma had a cursor video chat?
 - https://twitter.com/alexeinars/status/1706333517242618342
   - 鼠标光标移动时，光标旁显示用户视频界面而不是偷笑

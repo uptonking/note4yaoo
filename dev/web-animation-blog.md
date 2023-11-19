@@ -305,7 +305,12 @@ modified: 2020-12-21T07:44:14.728Z
   - Overall, I think I will be using JS style animations for basic animations, and React Motion for anything crazy on the web. 
   - And for React Native, I will be sticking to Animated. 
   - Once Animated is more mature, I will also probably switch to it as well on the web, though I am starting to enjoy using React Motion!
-# ref
+# blogs-shape-animation
+
+## [Bézier Curves - and the logic behind them | Richard Ekwonye_202308](https://blog.richardekwonye.com/bezier-curves)
+
+- I have used Bézier curves extensively in my work - in animations and SVG paths of illustrations and icons.
+# more
 - [Scroll-driven Animations](https://scroll-driven-animations.style/)
   - A bunch of demos and tools to show off Scroll-driven Animations
 

@@ -14,7 +14,11 @@ modified: 2023-09-17T17:36:36.118Z
 
 - ## 
 
-- ## 
+- ## Databases have tables and indexes stored in files. 
+- https://twitter.com/hnasr/status/1725905694111498532
+  - As you create rows, the database system writes to data pages in memory which is then written to data files on disk. 
+  - But what happens when the db crashes while writing to the file?
+  - [What happens when databases crash?](https://medium.com/@hnasr/what-happens-when-databases-crash-74540fd97ea9)
 
 - ## 🤔 How do major SQL databases store data? (not indexes)
 - https://twitter.com/eatonphil/status/1721536449881796685

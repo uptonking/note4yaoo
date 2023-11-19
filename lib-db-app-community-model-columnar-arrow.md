@@ -24,6 +24,13 @@ modified: 2023-10-26T15:03:56.115Z
 # discuss-vector-db
 - ## 
 
+- ## 
+
+- ## pgvector is the de facto standard for vectorized processing in Postgres. 
+- https://twitter.com/denismagda/status/1726071145235874059
+  - But its dominance can be challenged soon by http://pgvecto.rs - a Postgres extension for vector similarity search written in Rust. 
+- I doubt that... pgvector has won all the approvals for all the public clouds. This is a cool project but the go-to-market is nearly impossible compared to pgvector
+
 - ## Vector Databases clearly explained!
 - https://twitter.com/Sumanth_077/status/1719362859879285022
 

@@ -27,6 +27,11 @@ modified: 2023-10-26T15:28:53.748Z
 
 # powered-by-pg
 
+- https://github.com/tensorchord/pgvecto.rs /202311/rust
+  - Vector database plugin for Postgres, written in Rust, specifically designed for LLM
+  - a Postgres extension that provides vector similarity search functions. 
+  - It is written in Rust and based on pgrx
+
 - https://github.com/kapilratnani/pgfire /202006/python/inactive
   - A Firebase like real time database based on Postgresql. 
   - Leverages the JSON data type and Listen/Notify constructs of postgresql.

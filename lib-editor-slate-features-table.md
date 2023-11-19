@@ -145,6 +145,12 @@ modified: 2023-02-27T19:07:31.111Z
 
 - 如何在上下2个表格中间添加新元素
   - 利用表格左上角的块级菜单
+# table-diff
+- 使用数字编号或日期编号展示内容变化
+  - use numbered figures (e.g. fig 1, fig 2) to describe different stages of an interaction
+
+## diff-timeline-animation
+
 # editor-table-solutions
 - [Tables - CKEditor 5 Documentation](https://ckeditor.com/docs/ckeditor5/latest/features/table.html)
 # dev-later
