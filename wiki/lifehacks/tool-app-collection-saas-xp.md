@@ -10,7 +10,8 @@ modified: 2022-11-07T10:25:12.034Z
 # guide
 
 - username
-  - uptonking/yaork/yorke
+  - uptonking/yorke/yaork
+  - [names.org - The Meaning Of Names](https://www.names.org/)
 
 - 提高feed内容流中有效信息的密度
   - 暂停浏览较长时间后，平台recsys推荐流的信息更有效
@@ -23,6 +24,7 @@ modified: 2022-11-07T10:25:12.034Z
 - discord
   - tiptap
   - plate
+  - lexical
   - tanstack
   - luckysheet
   - evolu/cr-sqlite
@@ -30,9 +32,9 @@ modified: 2022-11-07T10:25:12.034Z
   - more: nocodb, payloadcms
 
 - slack
+  - slate
   - automerge
   - couchdb
-  - slate
   - react-data-grid
   - sequelize
   - lightdash

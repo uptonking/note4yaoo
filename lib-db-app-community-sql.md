@@ -75,6 +75,17 @@ modified: 2023-09-17T17:35:27.024Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ##  `SELECT *` can have many problems, but by far I think the worst is unpredictability. 
+- https://twitter.com/hnasr/status/1726602781815955467
+  - However, later the admin decided to add an XML field, JSON, blob and other fields that are populated and used by other apps
+  - it will suddenly slow down because it is now picking up all the extra fields that your app didn’t need to begin with.
+  - [How Slow is SELECT \* ? (A deep dive) | by Hussein Nasser | Medium](https://medium.com/@hnasr/how-slow-is-select-8d4308ca1f0c)
+- TLDR is: You should NEVER use it while coding. Use it only if you want to manually browse a database via the command line and probably in the end of the statement you will want to add a "limit 1" (just in case) 
+
 - ## “ansi sql standard” 
 - https://twitter.com/Captaintobs/status/1720881752238166412
 - Dialects where 1 / 2 yields 0.5:

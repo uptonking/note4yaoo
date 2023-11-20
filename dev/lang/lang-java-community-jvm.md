@@ -41,6 +41,24 @@ modified: 2023-08-28T04:37:45.327Z
 
 - 在ap这一块，jvm对向量化支持不佳，现在很多厂都在换成c++写的执行引擎，性能提升还是挺显著的
   - 现在jdk也有vector api了
+# discuss-ffi
+- resources
+  - [JEP 412: Foreign Function & Memory API (Incubator)](https://openjdk.org/jeps/412)
+
+- https://github.com/zakgof/java-native-benchmark /202308/java
+  - Benchmarking Java's native call APIs: JNI, JNA, JNR, BridJ and Project Panama
+  - JMH performance benchmark for Java's native call APIs: JNI (via JavaCpp), JNA, JNR, Bridj and JDK JEP-424 Foreign Function/Memory APIs (Preview).
+
+- ## 
+
+- ## [Foreign function interface in JDK? : java_202201](https://www.reddit.com/r/java/comments/sfiq9k/foreign_function_interface_in_jdk/)
+- Take a look at the Project Panama, foreign linker API and particularly this JEP 412
+
+- Try JNI
+  - This is not pure Java. It requires special native code.
+  - The special native code can be automatically generated using JavaCPP
+
+- Depending on whether you have full control of the JVM you could also look at GraalVM's native interface
 # discuss-clojure
 - ## 
 

@@ -77,7 +77,12 @@ modified: 2023-11-10T08:05:19.107Z
 
 - ## 
 
-- ## 
+- ## benchmarking JS parsers' napi speed.
+- https://twitter.com/hd_nvim/status/1726505034287030367
+  - I am not confident in the benchmark code. 
+- I'm pretty sure serialization/ffi is the bottleneck of most Rust parser. e.g. oxc can outperform tsc by twofold if no serde is done.
+- tree-sitter itself is on-par with babel parser, both of which are slower than tsc.
+  - one more thing: @babel/core is slower than @babel/parser . I used core here because only core has the async API. Under the hood core still uses sync parser and the extra code around core makes it slower.  That said, core is probably the better choice to emulate real-life usage.
 
 - ## Timers are expensive in general. 
 - https://twitter.com/jarredsumner/status/1660421032027750400

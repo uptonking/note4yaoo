@@ -13,6 +13,9 @@ modified: 2023-07-08T12:47:00.141Z
   - 4大权威+词频: oald, ahd, ldoce, webster, coca词频6w/2w
   - 4大英汉+词根: 新世纪英汉大、21世纪大英汉、英汉大、词根词缀(、新时代英汉)、新世纪汉英、cedict
   - 中文必备: 现代汉语、辞海、汉语大词典
+
+- tips
+  - 书籍评分与高质量内容筛选: 豆瓣图书、Goodreads、[Amazon Book Review](https://www.amazon.com/amazonbookreview)
 # dict
 - tips
   - 平时用谷歌就行了
@@ -215,7 +218,14 @@ modified: 2023-07-08T12:47:00.141Z
 
 - ## 
 
-- ## 
+- ## [国外有没有类似豆瓣读书这种优秀的书评网站？ - 知乎](https://www.zhihu.com/question/21402081)
+- Goodreads：功能最全面、用户最多的书评网站。
+  - 😩 不支持 sort search results
+- LibraryThing：图书馆和图书馆员的必备工具。
+- Shelfari：女性读者的聚集地。
+- Booklikes：推荐书籍的好帮手。
+- BookRiot：书籍新闻和评论的权威来源。
+- Book Marks：书籍摘录和书评的宝库。
 
 - ## [关于开源词典软件项目的一点想法](https://forum.freemdict.com/t/topic/17929)
 - 目前最好的词典开源软件就是 GoldenDict，与其期待新的开源项目，不如紧密团结在 Xiaoyifang 同志周围，为实现 GoldenDict 的伟大复兴贡献自己的力量。

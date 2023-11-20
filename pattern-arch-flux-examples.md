@@ -15,7 +15,10 @@ modified: 2023-11-17T10:28:14.247Z
   - 考虑将redux-devtools的协议和交互作为time-travel的通用方案，在api/ui/数据结构
   - 支持多store
   - 应用层级的store不适合保存变化频率很高的状态，如input输入框、scroll、animation
-  - 参考: 跨框架的component使用adapter模式，跨框架的app应用使用flux/elm
+
+- component vs app
+  - 跨框架的component常使用adapter模式，跨框架的app应用使用flux/elm
+  - component层的数据流常是内存+sync，app层的数据流尝试client-server+async
 
 - resources
   - [Fluxxor - What is Flux?](http://fluxxor.com/what-is-flux.html)
@@ -206,7 +209,10 @@ modified: 2023-11-17T10:28:14.247Z
 - https://github.com/sporto/awesome-elm
   - useful Elm tutorials, libraries and software
 
-- https://github.com/ccorcos/elmish /201601/js/支持undo
+- https://github.com/dwyl/learn-elm-architecture-in-javascript /201903/js/inactive
+  - Learn how to build web apps using the Elm Architecture in "vanilla" JavaScript (step-by-step TDD tutorial)
+
+- https://github.com/ccorcos/elmish /201601/js/支持undo/示例多
   - A Javascript UI library inspired by Elm
   - This is functional programming pattern inspired by the Elm Architecture for building user interfaces.
   - [Library status](https://github.com/ccorcos/elmish/issues/1)
@@ -220,6 +226,9 @@ modified: 2023-11-17T10:28:14.247Z
   - subscriptions are out of scope for ts-elmish - just use view layer capabilities for listening to events (e.g. useEffect hook in react).
   - https://github.com/iyegoroff/ts-railway
     - ROP flavoured Result & AsyncResult types. Based on Railway oriented programming article by Scott Wlaschin.
+
+- https://github.com/ScepLab/fun-ts /202303/ts
+  - Monorepo with features like the elmish architecture or a rest client based on functional programming with TypeScript.
 
 - https://github.com/andrejewski/raj /MIT/201806/js
   - https://jew.ski/raj/
@@ -270,6 +279,9 @@ modified: 2023-11-17T10:28:14.247Z
   - https://github.com/mozilla/reflex-react-driver
     - This is a reflex application view driver that uses react for rendering into a DOM
 
+- https://github.com/gordonbrander/store-element /202210/js
+  - A deterministic web component class, loosely inspired by The Elm App Architecture pattern.
+
 - https://github.com/derrickbeining/effect-mvu /202311/ts
   - A port of the Elm application architecture to the effect-ts ecosystem
   - provides a minimal setup to get React working in Vite with HMR 
@@ -288,9 +300,6 @@ modified: 2023-11-17T10:28:14.247Z
   - https://github.com/hydux/hydux-preact
   - https://github.com/hydux/hydux-react-router
 
-- https://github.com/pocarist/elmish-ts /201811/ts
-  - The Elm Architecture by Typescript implementation like Elmish.
-
 - https://github.com/jamesbirtles/fpreact /201710/ts
   - provides an alternative api for creating preact components, heavily inspired by elm.
   - The api includes redux style state management and lends itself to functional programming
@@ -304,7 +313,7 @@ modified: 2023-11-17T10:28:14.247Z
   - And a Mastodon App built with it.
   - This library is using Elmish. The code was copied and converted to TypeScript by me
 
-- https://github.com/jas-chen/elm-architecture /201611/js
+- https://github.com/jas-chen/elm-architecture /MIT/201611/js
   - The Elm Architecture in JavaScript
   - Code structure is almost the same as The Elm Architecture in elm
   - It works with React, Snabbdom, Deku or any virtual DOM library.
@@ -318,6 +327,44 @@ modified: 2023-11-17T10:28:14.247Z
   - This is just an experiment. It’s neither reactive nor does it actually work anything like Elm at all.
   - If you’re looking for a true Elm-like FRP implementation in JavaScript check out reflex.
   - [Elm Architecture for React. An Experiment in React App Architecture_201601](https://medium.com/javascript-inside/elm-architecture-for-react-951b383fcd65)
+
+- https://github.com/typescript-tea/core /202207/ts
+  - an implementation of The Elm Architecture (TEA) for typescript
+  - Note: TEA has managed effects, meaning that things like HTTP requests or writing to disk are all treated as data in TEA. When this data is given to an Effect Manager, it can do some "query optimization" before actually performing the effect. Your application should consist of pure functions only and all effects should be handled in Effect Managers outside your application.
+  - TEA has two kinds of managed effects: commands and subscriptions.
+
+- https://github.com/hojberg/gongfu /202004/ts
+  - The Elm Architecture in TypeScript
+  - It has composable update functions and Effects build-in.
+
+- https://github.com/pocarist/elmish-ts /201811/ts
+  - The Elm Architecture by Typescript implementation like Elmish.
+
+- https://github.com/blackChef/rce /201911/js
+  - https://blackchef.github.io/rce/
+  - rce 代表 react, cursor, elm。是一个轻量级的 react 架构
+  - 仅有两个 api，设计思路与 react 一致
+  - 利用数据指针，让你能把组件的 state 保存 app 的最上一层，但又能让将管理 state 的方法写在组件内部。
+  - 受 elm 启发的模式，你能轻易写出可高度复用的组件，每个组件都分为 init/view/update
+
+- https://github.com/kaleidos/olmo /201602/js
+  - attempt to port the core ideas of The Elm Architecture to a JavaScript library
+  - There's a standarized interface for effects.
+  - Rendering is no different and is treated as an effect. Actually Olmo don't take any action in which library it uses for rendering, that's your app's decision.
+
+- https://github.com/xaviervia/tessellation /201612/js
+  - https://xaviervia.github.io/tessellation/
+  - Tessellation is a Redux-inspired architecture for applications
+  - A JavaScript way of doing the Elm architecture
+
+- https://github.com/ChristophP/react-model-view-update /202301/ts
+  - A React microframework for pure state management and managed side effects. Inspired by the Elm architecture, no redux needed.
+
+- https://github.com/vankeisb/react-tea-cup /202305/ts
+  - thin library that helps following The Elm Architecture, in React.
+
+- https://github.com/levo-framework/core /202007/ts/inactive
+  - a frontend framework that supports Server-Side Rendering (SSR) and The Elm Architecture (TEA) out of the box.
 
 - https://github.com/yysun/apprun /1.2kStar/MIT/202309/ts
   - https://apprun.js.org/
@@ -333,6 +380,12 @@ modified: 2023-11-17T10:28:14.247Z
 
 ## elm-examples
 
+- https://github.com/yelouafi/snabbdom-todomvc /201507/js
+  - TodoMVC using snabbdom and Elm architecture
+
+- https://github.com/dmy/elm-realworld-example-app /202005/elm/inactive
+  - Elm RealWorld example application architected with the Effect pattern
+
 - https://github.com/jxxcarlson/elm-editor /41Star/BSD/202104/elm
   - https://jxxcarlson.github.io/app/text-editor/index.html
   - a pure Elm text editor. It relies heavily on prior work of Martin Janiczek and Sidney Nemzer.
@@ -342,6 +395,12 @@ modified: 2023-11-17T10:28:14.247Z
 - https://github.com/leahsteinberg/co /42Star/NALic/201603/elm
   - a collaborative text editor based on WoOT (Without Operational Transform)
   - front end in Elm, back in node.
+
+- https://github.com/foxbunny/duckweed /201711/ts
+  - JavaScript microframework for programming reactive interfaces using Model-Action-View architecture
+  - inspired by Elm and Simon Friis Vindum's Functional Frontend Architecture. 
+  - Duckweed's primary goal is not to promote or enforce functional programming paradigm. It's main goal is to provide a simple API, and functions happen to be a good step in that direction.
+  - https://github.com/foxbunny/duckweed-tasks
 
 ## elm-non-js
 

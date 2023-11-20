@@ -149,6 +149,33 @@ Action -> Dispatcher -> Store -> View
   - Update — a way to update your state based on messages
 - These three concepts are the core of The Elm Architecture.
 
+- You can think of `Browser.sandbox` as setting up a system runtime
+  - The runtime system figures out how to render `Html` efficiently. 
+  - It also figures out when someone clicks a button or types into a text field. It turns that into a `Msg` and feeds it into your Elm code
+- In addition to producing `Html` values, our programs will also send `Cmd` and `Sub` values to the runtime system. 
+  - In this world, our programs can command the runtime system to make an HTTP request or to generate a random number.
+  - They can also subscribe to the current time.
+
+### [Side Effects](https://elmprogramming.com/side-effects.html)
+
+- A function or expression is said to have a side effect if it modifies some state or has an observable interaction with calling functions or the outside world. 
+  - For example, a particular function might modify a global variable or static variable, modify one of its arguments, raise an exception, write data to a display or file, read data, or call other side-effecting functions
+
+- Most scenarios in which an Elm app needs to interact with the outside world tend to fall into two categories:
+- Ask Elm runtime to do something. 
+  - use Command
+- Get notified when something happens.
+  - use Subscription
+
+- Everything is Data
+  - Elm runtime handles all interactions between them and the outside world
+  - The model is just some data. Msg is data too.
+  - Similarly commands and subscriptions are also data.
+- Program as a Data Transformation Machine
+  - elm treats everything in our program as data, except the functions that operate on that data. 
+  - We can treat our programs as a series of data transformation operations. 
+  - This approach to building applications drastically reduces the overall complexity.
+
 ## 🕹️ [Elmish · F#](https://elmish.github.io/elmish/)
 
 - Elmish implements core abstractions that can be used to build F# applications following the “model view update” style of architecture, as made famous by Elm.
@@ -199,19 +226,26 @@ Action -> Dispatcher -> Store -> View
 
 - In a usual Elm application the update function returns `(Model, Cmd Msg)`. 
   - Cmd in Elm is an opaque type so update functions are not easy to test. We cannot easily inspect the commands and see if they are doing the right thing. We cannot also simulate these commands as we don't know what they are doing.
-- The effects pattern allows us to deal with these issues by returning an `Effect` type instead of `Cmd msg` from `update`
+- The effects pattern allows us to deal with these issues by returning an `Effect` type instead of `Cmd msg` from `update`.
+  - At the last possible moment we convert the Effect into actual commands. E.g. in the root module of the app we would have a function like: `runEffects : List Effect -> Cmd Msg`.
+  - This makes a Elm application a lot more testable.
 
-## 📖 [The Elmish Book](https://zaid-ajaj.github.io/the-elmish-book/)
+## 📖 [Beginning Elm: a gentle introduction to Elm programming language](https://elmprogramming.com/)
+
+## 📖 [The Elmish Book 偏实战示例](https://zaid-ajaj.github.io/the-elmish-book/#/)
+
+- https://github.com/Zaid-Ajaj/the-elmish-book
+  - A practical guide to building modern and reliable web applications in F# from first principles
 
 - The Elmish Book is a practical guide to building modern and reliable web applications in F#
 - Using the Elmish library, we will build and design our applications following The Elm Architecture
 
-## [Make your own TEA (The Elm Architecture) - by Noah - Derw](https://derw.substack.com/p/make-your-own-tea-the-elm-architecture)
+## 🚧 [Make your own TEA (The Elm Architecture) - by Noah - Derw](https://derw.substack.com/p/make-your-own-tea-the-elm-architecture)
 
 - https://github.com/eeue56/make-your-own-tea/pull/1/files /ts
   - demonstrates how to build an Elm-style event loop in TypeScript
 
-## [The Elm Architecture is the wrong abstraction for the web_202309](https://gist.github.com/chexxor/23ccf35add7dbdd33ecdd26888663140)
+## 🤼🏻 [The Elm Architecture is the wrong abstraction for the web_202309](https://gist.github.com/chexxor/23ccf35add7dbdd33ecdd26888663140)
 
 - There are lots of reasons to love The Elm Architecture:
   - It is easy to understand.
@@ -220,7 +254,7 @@ Action -> Dispatcher -> Store -> View
 
 - And there are reasons to dislike The Elm Architecture:
   - Can't easily create components which encapsulate their own state.
-  - Semi-encapulated components require "wiring" through every semi-encapsulated component up to the app root.
+  - Semi-encapsulated components require "wiring" through every semi-encapsulated component up to the app root.
   - Leads you to think it scales to big websites, but its docs don't even mention how to handle links and URLs.
 
 - Incorrect abstractions for the web
@@ -231,4 +265,121 @@ Action -> Dispatcher -> Store -> View
 - URLs and support for different paradigms
 - Code-splitting and lazy-loading routes
 - Components & re-using 3rd-party components
+
+## 🛑 [The Biggest Problem with Elm_201911](https://cscalfani.medium.com/the-biggest-problem-with-elm-4faecaa58b77)
+
+- The biggest problem with Elm isn’t that the language lacks higher level abstractions like many Haskellers complain. Or that the language keeps removing advanced features in favor of the beginner experience.
+- The FFI (Foreign Function Interface) mechanism, which allows developers to call Javascript from Elm, leaves a lot to be desired especially compared to other functional languages. 
+  - And while this mechanism would benefit from returning a Task instead of a Cmd, it too is not the biggest problem.
+- The fact that Elm is the only language I’ve worked with in almost 4 decades that has NO official support for private libraries is still not its biggest problem.
+
+- 🛑 These problems pale in comparison to the biggest reason we’re leaving Elm for PureScript: the Elm Architecture.
+
+- The Elm Architecture works well for lots of cases, but one size never fits all.
+
+- As your program grows in complexity, you find yourself creating modules or actually sets of modules that contain the following files: model/view/update/sub/msg
+  - Except for the top-level `update`, we have to manage calling `update` in each of these lower-level Update modules. This is complicated further with the need to call Cmd.map.
+  - Same goes for calling `view` in the View module. And like `update`, Subscriptions are complicated by having to call Sub.map.
+- All of this Plumbing boilerplate is necessary because TEA doesn’t have a mechanism for handling anything but a single Update, Model, View, and Subscription at the top-most level. The rest is up to you.
+- This is only part of the problem.
+
+- State Management Nightmare
+- Imagine when your user navigates to a page, you need to make multiple calls to the backend to retrieve data. 
+  - There are two choices: make the requests in parallel or serial.
+  - Those new to Elm may think that this code could be helped by an `async` library. That was my first reaction. I thought I could just build a function to do this, but you can’t because update functions must return to the Elm Runtime before all of the async calls have completed.
+  - If you try to do this in a library, you’ll quickly realize that you’re burdening the caller with managing yet another update function and Model. The limitations of TEA really become apparent here.
+
+- Spaghetti Execution
+- We use Websockets in our app, but since we’re no longer allowed to write our own Effects Managers and since the Websocket support was recently removed from Elm, we are forced to do Websocket communication over Ports and write our Websocket code in Javascript.
+- This means that we have to listen for messages coming back from the Websocket using Subscriptions in every single place Websockets are used.
+
+- The real problem isn’t that the hammer is too small. It’s that the job is too big
+- Learning the limitations of a tool is really important. 
+  - You can work around them, but the cost is complexity and lines of code.
+
+- My team has a ~half-million LOC Elm app in production and is having a similar experience with the Elm architecture. The signal-to-noise ratio of the code-base is just too low. The majority of the code is state plumbing rather than actual business logic.
+
+## 🏘️⤴️ [The Elm Architecture in JavaScript | by Jas Chen | Medium_201611](https://medium.com/@JasChen/the-elm-architecture-in-javascript-eb4d5201272b)
+
+- Compare The Elm Architecture to Redux
+- 👉🏻 Something happened: Messages vs Actions
+  - In Redux, an action is a plain object, it’s type is a property.
+  - **messages in The Elm Architecture is a function**
+- 👉🏻 Side Effects: Cmd/Sub vs Middleware
+  - Middleware in Redux can be a mess. As a middleware user I have to make sure they applied in proper order, which one should I apply first? Are they going to conflict to each other? As a middleware author I have to think, Redux-Thunk intercepts functions, so I can’t make a middleware intercepts functions too. Also I have to remember to pass actions I don’t know to next middleware
+  - cmd/sub: Unlike middleware of Redux, it’s not chain-able, each side effect manager only take care of it’s job.
+- 👉🏻 State Management: Model/Update vs Reducers
+  - Both Redux and The Elm Architecture take single central state approach. 
+  - The difference is Redux slice state into several reducers, 
+  - and The Elm Architecture only have one model with an update function (You can think it as a single reducer).
+  - The bad part is, you have to spend time to decide how to divide your state, if you doing it wrong, you may face scaling problems. Also you will encounter questions like How do I share state between two reducers?
+- 👉🏻 Connect to view: Call view function vs Provider/Connect
+  - Redux encourages users wrap components with Connect component when needed. The main concept is to decouple View and State, this goal sounds great, but the price is also very high, you write more and more code such as mapStateToProps, mapDispatchToProps, Provider and Connect to achieve it
+  - In The Elm Architecture, you pass model to view function to render your view. As the result view is coupled with Model. That sounds bad. But this is the idea of The Elm Architecture — no components, only view pieces.
+  - Which one is better? It depends on your needs. 
+- > Scaling The Elm Architecture
+  - We do not think in terms of reusable components. Instead, we focus on reusable functions…we create reusable views by breaking out helper functions to display our data.
+
+## 📖 [Scaling The Elm Architecture · Elm 가이드](https://kyunooh.gitbooks.io/elm/content/reuse/)
+
+- If you are coming from JavaScript, you are probably wondering “where are my reusable components?” and “how do I do parent-child communication between them?” A great deal of time and effort is spent on these questions in JavaScript, but it just works different in Elm. 
+  - We do not think in terms of reusable components. Instead, we focus on reusable functions. It is a functional language after all!
+  - So this chapter will go through a few examples that show how we create reusable views by 💡 breaking out helper functions to display our data.
+
+## [Elmish: Functional Programming in Javascript | by Chet Corcos | Medium_201602](https://medium.com/@chetcorcos/elmish-functional-programming-in-javascript-50995f1d4b9e)
+
+- I’d try to test my understanding of the Elm Architecture by implementing the same concepts in Javascript
+
+- In Elm, everything is a pure function.
+
+```typescript
+type Program = {
+  init   : () => state,
+  update : (state, action) => state,
+  view   : (dispatch, state) => html
+}
+```
+
+- One benefit of building components using the init-update-view pattern is composition. 
+- My favorite example that shows the abstraction power of the Elm Architecture is the undoable component. 
+- Two other features that really excite me are reproducible error reporting and automated testing.
+
+- There are sadly a couple drawbacks to this approach that I’ve noticed so far:
+  - There’s an annoying amount of boilerplate needed to wrap child actions. I think Clojurescript is an interesting option to alleviate this pain because of its incredibly powerful macros
+  - The entire DOM tree is re-computed after every action. I do think that this will eventually be a problem if you’re running lots of animations through the action-update cycle. It is possible to wrap these Elmish components in React components to introduce lazy evaluation. 
+
+- The last thing we didn’t talk about yet is side-effects. Side-effects are typically the culprit of making your entire app a mess. Maybe if I have some time next week and people are interested, I’ll write another article about that.
+
+- 👥 discussions
+
+- Now that’s not as bad as it seems because the new state object will refer, mostly, to data in the old state object. Additionally, this allows the use of referential equality to figure out precisely the parts of the state that require re-rendering. This is what `Html.lazy` does.
+- Finally, I would suggest that there are compiler optimizations that can elide the copying of immutable objects. Such optimizations are automatic, comprehensive and safe. They allow you to work in high-level immutable code that compiles down to lower-level mutable code only where the compiler detects it to be safe. I don’t think Elm implements this yet but if it ever does, all Elm code everywhere will get the optimizations for free.
+
+- To get `bind(add, 1) === bind(add, 1)`, you should just need to memoize your bind function. Since you are using Ramda, that should just be putting `const bind = R.memoize(R.partial)` in your top-level scope.
+
+## [Fable · Elmish Components with Elmish 4 and UseElmish_202210](https://fable.io/blog/2022/2022-10-13-use-elmish.html)
+
+- Elmish, the F# implementation of the Elm Architecture, has proven to be a simple yet powerful way of managing state in UI apps. 
+- However, it's been often criticized because it was designed for monolithic applications that couldn't take advantage of the component architecture of modern UI frameworks like React. 
+  - Although it made your app more robust, users didn't like the boilerplate necessary to glue the full component hierarchy into a single global Elmish program.
+
+- Feliz. UseElmish appeared as a custom React hook to solve this situation, allowing you to use Elmish at the component-level. 
+- This was a great advancement but its full potential was still blocked by two problems:
+  - React hooks were not designed with external stores in mind.
+  - Elmish didn't check for termination of Elmish programs and didn't clean up subscriptions.
+- Thankfully, these problems have been solved now thanks to React 18 (with the new useSyncExternalStore hook) and Elmish 4
+
+- The new Elmish version includes termination capabilities and subscription cleanup, so instead of assuming there is one single global Elmish program, now you have full control of its lifecycle, which makes integration with React components a breeze.
+
+- Elmish 4 Subscriptions
+- Subscriptions must include now an IDisposable that will be invoked by Elmish when cleaning up.
+- The Program.withSubscription function is now evaluated after every update. This makes it really easy to activate or deactivate subscriptions on demand.
+
+- Fable. React. UseElmish is the spiritual successor of Feliz. UseElmish and takes advantage of React 18 and Elmish 4
 # more
+- [Managed effects and Elm. One really neat thing about Elm is that… | by Kevin Welcher | Medium](https://medium.com/@kaw2k/managed-effects-and-elm-36b7fcd246a9)
+  - Normal Effects: for every step we go and do it in real time.
+  - Managed Effects: we describe a task and someone else does it on their own time.
+
+- [Learning Elm by porting a medium-sized web frontend from React_201910](https://benhoyt.com/writings/learning-elm/)
+  - I don’t know the language at a deep level yet by any means, but I didn’t feel I needed to explore every nook and cranny to get the project built.

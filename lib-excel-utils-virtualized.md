@@ -45,6 +45,10 @@ modified: 2022-08-24T10:49:48.139Z
 - [Virtualization: A method to render your data efficiently](https://medium.com/@unnatibamania8/virtualization-a-method-to-render-your-data-efficiently-f5b325214ce8)
   - List virtualization is a concept where a window or a section loads and renders when you keep scrolling.
   - we’ll use tanstack-virtual library in this tutorial.
+
+## [Rendering array of billion of records At 60 f/s in Angular or Vanilla JS_201709](https://medium.com/@manju_reddys/rendering-array-of-billion-of-records-at-60-f-s-in-angular-or-vanilla-js-2613e5983a10)
+
+- https://codepen.io/manju-reddys/pen/eEjOZo
 # discuss
 - ## 
 

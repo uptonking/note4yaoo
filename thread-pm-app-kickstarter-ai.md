@@ -39,9 +39,18 @@ modified: 2023-04-04T03:59:40.928Z
   - 但回到最开始的问题，单独的AI生成的图片还是没有版权保护的，除非你进行了二次的编辑创作。
 
 - 如何定义二次创作? 这是一个不断提高认知的过程
-# discuss
-- ## 
+- ## GPTs工具 Top20 流量排行榜（非官方）
+- https://twitter.com/FinanceYF5/status/1726456413227298905
+- 几个结论：
+  - 1、设计，编程，研究类工具是最受欢迎作品
+  - 2、在推特上有影响力的作者更容易得到传播
+  - 3、除了成熟公司公司外，不少独立开发者抓住了这一波机会。
 
+- [GPTs数据 - Feishu Docs](https://zw73xyquvv.feishu.cn/wiki/OckUw1zARiB5Rhkd22oc53HMnvf)
+
+- https://github.com/1mrat/gpt-stats
+  - This includes csv files with stats for Custom Chat GPTs not created by OpenAI. Initially ill try and post a file a day.
+# discuss
 - ## 
 
 - ## OpenAI目前放开的唯一缺口是function calling，给开源的专家模型一丝机会。
@@ -112,9 +121,9 @@ modified: 2023-04-04T03:59:40.928Z
 - https://twitter.com/buaaxhm/status/1690559087216578560
   - 感觉他们觉得大模型能干所有事情
 - 在谈的合作里都有哪些需求呢？
-  01.           你们能不能弄个大模型，解决一下演唱会结束交通拥堵的问题
-  02.           你们能不能弄个养老大模型
-  03.           你们弄不能弄一个养猪大模型
+  01.             你们能不能弄个大模型，解决一下演唱会结束交通拥堵的问题
+  02.             你们能不能弄个养老大模型
+  03.             你们弄不能弄一个养猪大模型
 - 这对你们公司是好事，他们要拿这些大概念去申请经费，至于有没有实际效果那是排在第二等级。做政府项目跟纯互联网有很多不同，不只是技术问题
   - 做政府项目其实不怎么赚钱 回款很慢的
   - 能回款就不错了，3年5年都行。现在也已经过了互联网大爆发的时代了，企业要活命，没得选，腾讯，阿里要去做政府项目他们可以签1元钱的合同

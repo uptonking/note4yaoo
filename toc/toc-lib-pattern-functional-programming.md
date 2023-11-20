@@ -171,7 +171,7 @@ modified: 2023-07-26T11:23:38.282Z
   - You can convert any HTML snippet into VanJS code with our online converter.
   - VanJS helps you manage states and UI bindings as well, with a more natural API
 # functional dom ui
-- choo /6.5kStar/MIT/202001/js/在benchmark非常靠后
+- choo /6.5kStar/MIT/202001/js/inactive/在benchmark非常靠后
   - https://github.com/choojs/choo
   - A 4kb framework for creating sturdy frontend applications
   - At the core of Choo is an event emitter, which is used for both application logic but also to interface with the framework itself. The package we use for this is nanobus.

@@ -15,6 +15,12 @@ modified: 2021-07-28T20:11:14.714Z
 
 - ## 
 
+- ## 
+
+- ## When tired of the basic sliders
+- https://twitter.com/zhenyary/status/1726597979333890337
+  - 动画效果，滑动时会切换书的封面
+
 - ## how the hell do I code GUI state? Menus and submenus and different modes and cancelling actions.... 
 - https://twitter.com/liz_love_lace/status/1690100806983233536
   - Surely no one actually models this stuff using finite state machines?
