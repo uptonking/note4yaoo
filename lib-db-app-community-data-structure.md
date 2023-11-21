@@ -131,9 +131,23 @@ modified: 2023-09-17T18:17:41.377Z
 # discuss-tree-lsm
 - ## 
 
-- ## 
+- ## Revisiting Bloom Filter Efficiency in LSM Trees
+- https://twitter.com/debasishg/status/1726912592437035478
+- Almost all LSM based storage structures use bloom filters in front of their memtable structures to reduce IO overhead at least for the target keys not present in the underlying secondary storage. 
+  - This decision to use bloom filters is based on the fact that accessing data on secondary storage, e.g., hard disk drives (HDD) or solid-state drives (SSD), is several orders of magnitude more expensive than probing the filter in memory. 
+  - Overall, BFs reduce the number of disk accesses and the overall query latency at the price of additional memory footprint and CPU computation.
+- The question is - is this scenario likely to change in the context of newer and faster storage devices ? 
+- Faster storage devices like SSDs and non-volatile memories (NVMs) - These can turn out to be the game changer. Quoting from this paper
+  - Taking into account that current SSD devices have several orders of magnitude lower access latency than disk, and that future SSDs and NVMs are bound to be faster, hashing latency is on its way to becoming comparable with data access latency.
+- And this LSM hashing overhead gets further magnified as each lookup in the tree needs multiple bloom filter queries, at least one per level in the current implementations. Such repeated hash calculations turn querying over fast storage (or cached data) into a CPU-intensive operation.
+- In order to address this issue we are seeing quite a few improvements and optimizations being suggested in various research papers and some of them have possibly been implemented in current LSM based stores as well (e.g. RocksDB). 
+- Here are a few of them
+  1. Reducing the computational complexity of hashing. ​​Bloom filters are based on a number of hash functions and for each LSM tree we need to have multiple bloom filters
+  2. Improving cache efficiency of bloom filters. A Bloom filter using k hash functions performs the same number of memory accesses.
+  3. Hash Sharing. Once the CPU computational complexity of hash computation is reduced as in 1 above, this efficiency can further be extended to implement sharing hash computations across multiple LSM levels 
 
-- ## 
+- If you’re going to have 1kb keys (somewhat avoidable if you’re building a database system on top of LSM storage), you could speed up hashing for bloom filters by hashing only a fixed-size tail of the keys.
+  - true, but the idea is that u still have to compute hash for *all* the bloom filters and you will have one per level. Hence still CPU computation intensive.
 
 - ## 🔥 [Understanding LSM trees: What powers write-heavy databases (2020) | Hacker News_202202](https://news.ycombinator.com/item?id=30269286)
 - 
@@ -146,6 +160,16 @@ modified: 2023-09-17T18:17:41.377Z
 - ## 
 
 - ## 
+
+- ## I would like to understand write-amplification in B Tree vs LSM Tree. Is there any survey/research paper explaining the same? or a blog post?
+- https://twitter.com/iavins/status/1726563472522244518
+  - [TiKV | B-Tree vs LSM-Tree](https://tikv.org/deep-dive/key-value-engine/b-tree-vs-lsm/)
+
+- Did you see the MyRocks experiment from Meta a few years back? This showed MyRocks (MySQL but with LSM) as “10x more write efficient”.
+  - For another perspective, you can also cf. the recent TreeLine paper. However, I believe the evaluation of block size vs queue depth in there may have a lurking variable—you need to benchmark past the overprovisioning of the flash device, to get a real sense of sustained throughput—the YCSB data set is probably too small to show this.
+  - Beyond write performance, LSM does have some nice systems architecture properties in that it follows the general memory hierarchy (snapshots can be easier, as well as hot/cold data tiering).
+
+- LSM trees have lower write amplification than b-trees. LSM trees write data sequentially on disk in large chunks, while b-trees usually need small in-place data updates, which result in high write amplification on SSD drives
 
 - ## 🤔🍃 [为什么 MongoDB 使用 B 树 · Why's THE Design? · /whys-the-design-mongodb-b-tree](https://github.com/draveness/blog-comments/discussions/581)
 - 本文说的不太对。现在mongo默认使用WiredTiger作为存储引擎。

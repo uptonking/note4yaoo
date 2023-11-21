@@ -151,6 +151,6 @@ modified: 2021-09-29T13:23:09.969Z
   - Mini projects built with HTML5, CSS & JavaScript. No frameworks or libraries
   - This is the main repository for all of the projects in the course.
 
-- https://github.com/pierregoudjo/build-your-own-excel /202308/ts
+- https://github.com/pierregoudjo/build-your-own-excel /202308/ts/redux
   - A Javascript version of a talk showing how to build a simle version of Excel based on functional principles.
   - This javascript version use Preact and Redux with Typescript instead of Elmish and Fable with F#.

@@ -14,7 +14,6 @@ modified: 2023-09-16T17:49:13.534Z
 
 - [TiKV 源码解析 | PingCAP](https://cn.pingcap.com/blog/tag/tikv-source-code-analysis/)
 - [TiDB 源码阅读 | PingCAP](https://cn.pingcap.com/blog/tag/tidb-source-code-reading/)
-
 # blogs
 
 ## kappa-lambda
@@ -46,7 +45,6 @@ modified: 2023-09-16T17:49:13.534Z
 
 - [Kappa Architecture 1:1 - How to Build a Modern Streaming Data Architecture?](https://nexocode.com/blog/posts/kappa-architecture/)
 
-
 ## [数据库计算向量化 | plantegg](https://plantegg.github.io/2021/11/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%A1%E7%AE%97%E5%90%91%E9%87%8F%E5%8C%96/)
 
 - 在做向量化之前数据库一直用的是volcano模型来处理SQL
@@ -75,10 +73,10 @@ modified: 2023-09-16T17:49:13.534Z
 - 为了支持这种批量处理数据的需求，CPU设计厂家又搞出了SIMD这种大杀器，SIMD (Single Instruction Multiple Data，单指令多数据)
 - SIMD指令的作用是向量化执行(Vectorized Execution)，中文通常翻译成向量化，但是这个词并不是很好，更好的翻译是数组化执行，表示一次指令操作数组中的多个数据，而不是一次处理一个数据；向量则代表有数值和方向，显然在这里的意义用数组更能准确的表达。
 
-
 ## [What is a Vector Database? | Pinecone](https://www.pinecone.io/learn/vector-database/)
 
 ### 👥🔥 [What is a Vector Database? (2021) | Hacker News_202305](https://news.ycombinator.com/item?id=35826929)
+
 # blogs-data-model-lsm/btree
 - [What is a LSM Tree? - DEV Community](https://dev.to/creativcoder/what-is-a-lsm-tree-3d75)
   - Sled is another embedded key value store in Rust, that uses a hybrid architecture of B+ Trees and LSM Tree (Bw Trees)
@@ -134,8 +132,17 @@ modified: 2023-09-16T17:49:13.534Z
   - No matter if it is a cpu cacheline, a DNS entry cached in your browser, or some value in memory your application memoized, it can be reasoned about as a partially materialized view. 
   - Even a cached computation result is a partially materialized view; 
 - A cache and a partially materialized view are essentially the same thing. In a database (e.g. PostgreSQL, Oracle, etc.), the materialized view is explicitly defined.
-
 # more
+- [Linearizability versus Serializability | Peter Bailis_201409](http://www.bailis.org/blog/linearizability-versus-serializability/)
+  - Linearizability and serializability are both important properties about interleavings of operations in databases and distributed systems, and it’s easy to get them confused.
+  - Linearizability: single-operation, single-object, real-time order
+    - Linearizability is a guarantee about single operations on single objects. It provides a real-time (i.e., wall-clock) guarantee on the behavior of a set of single operations (often reads and writes) on a single object (e.g., distributed register or data item).
+    - Linearizability for read and write operations is synonymous with the term “atomic consistency” and is the “C,” or “consistency,” 
+  - Serializability: multi-operation, multi-object, arbitrary total order
+    - Serializability is a guarantee about transactions, or groups of one or more operations over one or more objects. 
+    - It guarantees that the execution of a set of transactions (usually containing read and write operations) over multiple items is equivalent to some serial execution (total ordering) of the transactions.
+    - Serializability is the traditional “I,” or isolation, in ACID.
+
 - [处理海量数据：列式存储综述（存储篇） - 知乎](https://zhuanlan.zhihu.com/p/35622907)
 
 - [Database in the Browser, a Spec](https://stopa.io/post/279)
@@ -144,4 +151,3 @@ modified: 2023-09-16T17:49:13.534Z
 
 - [Database Systems: 8Base, Dolt, MindsDB, Xata – SQL Rob](https://sqlrob.com/2023/04/17/database-systems-8base-dolt-mindsdb-xata/)
   - [15 futuristic databases you’ve never heard of - YouTube](https://www.youtube.com/watch?v=jb2AvF8XzII)
-

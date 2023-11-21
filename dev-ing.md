@@ -66,7 +66,7 @@ $$('[contenteditable]')
   - dashboard/webapp-template--0901
   - ui: zag/ark, ariakit, radix-ui, mantine
 
-- deep into lib/fwk
+- deep into lib/fwk 书籍原理与代码实践要分开
   - src-code, issues, pr, forks, extensions/alternatives
   - storage, sync/partial, conflicts, concistency
   - 直接根据具体框架或产品搜索解决方案如airtable-database，不必拘泥于通用方案如event-sourcing/eav，在产品讨论中常有细节和ideas

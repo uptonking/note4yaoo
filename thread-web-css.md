@@ -24,7 +24,10 @@ modified: 2021-01-08T17:15:13.906Z
 # discuss
 - ## 
 
-- ## 
+- ## Today I learned about the media scripting feature. It's about detecting JS support via a CSS media query.
+- https://twitter.com/shadeed9/status/1726851509634441259
+  - Soon, we won't need the `.no-js` or `.js` classes once this is widely available. Currently supported in Chrome 120, Firefox 119, Safari 17.
+  - `@media (scripting: enabled){ }`
 
 - ##  `min-width: 0` with flexbox fixes my issues all the time and I still have no idea what's going on.
 - https://twitter.com/TarikBoschi/status/1619446020336939009

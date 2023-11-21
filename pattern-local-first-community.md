@@ -66,7 +66,26 @@ modified: 2023-09-13T20:24:41.516Z
 
 - ## 
 
-- ## 
+- ## Provide a better user experience by making your app offline-first:
+- https://twitter.com/dannymoerkerke/status/1719285753677512849
+  1. cache all assets
+  2. make sure network calls are deferred when offline until back online (background sync)
+  3. make sure downloads are continued in the background when the app is closed and deferred when offline (background fetch)
+  - Start by adding a service worker.
+  - [How To Make Your Website Work Offline | by Danny Moerkerke | ITNEXT_202003](https://itnext.io/how-to-make-your-website-work-offline-b5be47b92adc)
+  - [How To Make Your Website Work Offline part 2 | by Danny Moerkerke | ITNEXT](https://itnext.io/how-to-make-your-website-work-offline-part-2-6923b9038dd6)
+- This is the direction frameworks should be taking, not further reliance on a server for UI like RSC. Vercel is trying to convince everyone server rendering is the right direction, because Vercel sells time on those servers.
+  - Exactly, the future of web apps is installability, not workarounds for problems those frameworks created.
+
+- How do you work with cache when the content changes? Take static JSON as an example... Would you change name at every update? Append a version number as a query parameter?
+  - You can use different strategies like networkFirst or staleWhileRevalidate
+
+- "Deferring" network calls until online sounds easy on paper but requires basically a complete rearchitecture of most applications. It's not realistic and it counterproductive to make such sweeping statements. Most apps are fine with just showing a "you're offline" message.
+  - Let me then add that network calls should be deferred when offline where it makes sense, for example when sending a message. When offline you can store the message in IndexedDB for example and send it when the network is back. This doesn't have to be hard with background sync.
+- This is what I mean, once you start putting things in IndexedDB now you have to add a synchronization protocol, add UX to show users if something failed or the server rejected the message for whatever reason. What happens if user logs out and in again? Etc. It's a huge task.
+- With the Background Sync API, the mechanism is already there
+- You still have to handle UX for many error states this can end up in and you still have to handle login/logout in a privacy friendly way. And it doesnt' work on ~half of mobile devices. I'm building a local-first app right now! Sometimes it makes sense, but mostly not.
+- dev.to is just one of the better documented cases of failed ServiceWorker adoption. People mostly broadcast their successes, rarely their failures. I've come across a lot of SW moaning over the past five years. I attribute that to lack of familiarity.
 
 - ## The three main approaches people are taking with local-first are:
 - https://twitter.com/kylemathews/status/1701663361145135126

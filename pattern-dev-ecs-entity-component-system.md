@@ -43,4 +43,16 @@ modified: 2023-04-12T08:06:04.859Z
 
 - ## 
 
-- ## 
+- ## I dream of entity-component-systems in React
+- https://twitter.com/jacobmparis/status/1726858870856048980
+  - Each route is an entity
+  - components work the usual way
+  - the system fetches data + processes actions based on the components within a route
+  - Remix is pretty close except we have to declare components in both React and the loaders
+
+- I think you’re confusing entities and components. React components are entities, not components. Hooks are more like components.
+
+- My only question - if not a game loop, what is triggering the systems “update” function?
+  - it's a web app, so it updates on network request
+
+- It feels like older SSR approaches where you would render the whole React tree within a wrapper function that collects all queries, fires them, and output a warm cache. For instance with Apollo. I feel like this wouldn't be React though, because don't use the tree structure

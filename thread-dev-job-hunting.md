@@ -12,7 +12,27 @@ modified: 2023-04-25T17:57:27.061Z
 # discuss
 - ## 
 
-- ## 
+- ## 面经不写了，写个thread写点我遇到的不会的题目吧
+- https://twitter.com/wulianwen1/status/1726793525956862125
+
+- 同时发起1w个请求，http1.0/1.1/2.0分别需要建立多少个tcp连接（抖音电商二面）
+  - http1.0 应该是1w个，因为连接会立即断开
+  - http1.1 应该是浏览器支持的并发数量，因为是长连接
+  - http2.0 应该是1个，多路复用支持在一个连接上并发多个请求
+
+- React和Vue更新视图的区别？为什么React上粗粒度更新，Vue是细粒度更新？
+  - 简单来说, React是比较渲染树新旧DOM的差异, 并且可能会重新渲染整个组件树，而Vue是精确的更新受影响的部份。
+
+- chatgpt等平台为什么使用SSE的方式进行流式打字？
+  - [ChatGPT对话为什么不用Websocket而使用EventSource？ - 掘金](https://juejin.cn/post/7246955055109210149)
+  - 在ChatGPT官网我们可以看到，对话的方式仅仅只有一个post请求，而没有使用IM中使用的websocket链接。
+  - 与普通的post请求不一样的是，返回信息Response没有了，取而代之的是EventStream。
+  - EventSource 接口是 web 内容与服务器发送事件 一个 EventSource 实例会对HTTP服务器开启一个持久化的连接，以 text/event-stream 格式发送事件
+  - EventSource只支持从服务器到客户端的单向通信，客户端无法向服务器发送数据。
+
+- react为什么要推出fiber架构?  
+  - react15只能同步地更新 相当于while(true) 很卡 
+  - fiber是一种协程的实现，可以中断让出js线程
 
 - ## 站酷上看到的UI作品集，大部分都只能用“人云亦云”来形容，
 - https://twitter.com/cosmoslee007/status/1650542502943031296

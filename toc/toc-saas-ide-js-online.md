@@ -32,10 +32,17 @@ modified: 2021-05-14T15:03:38.010Z
 - It comes fully equipped with all the features you'll need to build, test, share, collaborate and even deploy your websites.
 
 - open source alternatives
+
 - https://github.com/chinchang/web-maker
   - https://webmaker.app/
   - an offline playground for your web experiments. 
   - Something like CodePen or JSFiddle, but much more faster and offline supported because it runs completely on your system.
+
+- https://github.com/konnorrogers/light-pen /MIT/202311/js
+  - https://konnorrogers.github.io/light-pen/
+  - A lightweight codepen implementation using web components
+  - 依赖lit、prismjs、web-component-define
+
 - https://github.com/lostintangent/codeswing
   - an interactive coding playground for VS Code
   - It's like having the magic of a traditional web playground (e.g. CodePen, JSFiddle), but available directly from your highly-personalized editor

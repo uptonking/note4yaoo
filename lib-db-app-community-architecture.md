@@ -96,6 +96,19 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Separating storage and compute is cool, but separating data and metadata is cooler
+- https://twitter.com/richardartoul/status/1726642180473909752
+  - [Unlocking Idempotency with Retroactive Tombstones - WarpStream](https://www.warpstream.com/blog/unlocking-idempotency-with-retroactive-tombstones)
+  - WarpStream is an Apache Kafka protocol compatible data streaming system built directly on top of object storage. 
+  - It has zero local disks, and incurs zero inter-zone bandwidth costs. 
+  - many people aren’t aware that Kafka supports more advanced features like idempotent produce requests which allows a Kafka client to produce the same batch of data multiple times, but ensure it’s only appended to the log once.
+  - it was one of the primary reasons why we created our own metadata store instead of reusing something off the shelf.
+  - In this post, we’ll go over in detail how we added support for the idempotent producer functionality to WarpStream’s storage engine.
+
 - ## Been thinking about S3 as primary storage for serverless infra. 
 - https://twitter.com/criccomini/status/1725183323474190704
   - For OLTP, a transactional KV store on S3 would id a necessary building block. @PingCAP ’s TiKV is one such example. 

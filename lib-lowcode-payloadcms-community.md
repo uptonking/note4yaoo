@@ -108,7 +108,9 @@ modified: 2023-02-05T18:40:43.969Z
 
 - ## 
 
-- ## 
+- ## 快捷指令的编辑体验太屎了，难以想象做 20 行以上的指令有多痛苦。
+- https://twitter.com/acghnu/status/1726963155585417612
+- No code 所以并不会成为全部的未来
 
 - ## 🤔🎯 Should Payload move to @nextjs from Express?_20231027
 - https://twitter.com/payloadcms/status/1717643250201219245

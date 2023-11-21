@@ -96,12 +96,15 @@ modified: 2020-10-22T10:22:55.878Z
     - https://github.com/bpmn-io/bpmn-auto-layout
     - https://github.com/bpmn-io/diagram-js-examples
 
-- react-flow /2.8kStar/MIT/202103/ts
+- xyflow/react-flow /18.6kStar/MIT/202311/ts/d3
+  - https://github.com/xyflow/xyflow 
   - https://github.com/wbkd/react-flow
+  - https://xyflow.com/
   - https://reactflow.dev/
   - https://pro.reactflow.dev/
   - https://reactflow.dev/docs/examples/layout/auto-layout/
     - One using d3-hierarchy and the other one using dagre.js as a layout engine.
+  - open source libraries for building node-based UIs with React or Svelte
   - core依赖 react, d3-drag, d3-selection, d3-zoom, zustand
   - library for building interactive node-based UIs, editors, flow charts and diagrams
   - React Flow Pro is not an additional library, it is a paid subscription around the React Flow

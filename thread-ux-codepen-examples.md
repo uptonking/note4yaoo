@@ -7,21 +7,15 @@ modified: 2021-07-16T08:06:58.402Z
 
 # thread-ux-codepen-examples
 
-# codepen-stars
-
 # admin dashboard
 
 - [Project Management Dashboard UI](https://codepen.io/aybukeceylan/pen/OJRNbZp)  
   - 未实现侧边栏打开的功能，但有显示图标
 - [Task Management Dashboard UI](https://codepen.io/aybukeceylan/pen/gOpbRPO)
-
 # sidebar/menu
-
 - [Side Sliding Menu CSS](https://codepen.io/EduardL/pen/aBGAy)
   - 可只显示图标
-
 # multiple sidebars
-
 - [GRID PILE: Stacking CSS Grids for Impossible Layouts](https://codepen.io/mor10/pen/rzGqzr)
   - 基于css grid实现
   - 桌面端显示左右2个sidebars

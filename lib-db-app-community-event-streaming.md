@@ -30,7 +30,19 @@ modified: 2023-10-27T07:02:42.391Z
 # discuss
 - ## 
 
-- ## 
+- ## IBM MQ -> RabbitMQ -> Kafka ->Pulsar, How do message queue architectures evolve? 
+- https://twitter.com/bytebytego/status/1726861680880304638
+- IBM MQ was launched in 1993. It was originally called MQSeries and was renamed WebSphere MQ in 2002. It was renamed to IBM MQ in 2014. 
+  - IBM MQ is a very successful product widely used in the financial sector. 
+- RabbitMQ architecture differs from IBM MQ and is more similar to Kafka concepts. 
+  - The producer publishes a message to an exchange with a specified exchange type. It can be direct, topic, or fanout. The exchange then routes the message into the queues based on different message attributes and the exchange type. The consumers pick up the message accordingly. 
+- LinkedIn open sourced Kafka in 2011. Kafka is optimized for writing. 
+  - It offers a high-throughput, low-latency platform for handling real-time data feeds. 
+  - It provides a unified event log to enable event streaming and is widely used in internet companies. 
+- Pulsar, developed originally by Yahoo, is an all-in-one messaging and streaming platform. 
+  - Compared with Kafka, Pulsar incorporates many useful features from other products. 
+  - Pulsar architecture is more cloud-native, providing better support for cluster scaling and partition migration, etc.
+  - There are two layers in Pulsar architecture: the serving layer and the persistent layer. Pulsar natively supports tiered storage, where we can leverage cheaper object storage like AWS S3 to persist messages for a longer term. 
 
 - ## [Yelp rebuilds corrupted Cassandra cluster using its data streaming architecture | Hacker News_202307](https://news.ycombinator.com/item?id=36771331)
 - 
