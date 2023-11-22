@@ -12,6 +12,19 @@ modified: 2023-11-20T19:04:12.672Z
 # discuss-stars
 - ## 
 
+- ## 🤔💫 [Using Elm (or React) is a bad idea for performant graphics in the web_201601](https://github.com/elm/compiler/issues/1247)
+- The reason is because using Elm's functional diffing algorithm to calculate graphics is not a good idea (it's not a good idea to do this with React, Mercury, Om, Mithril, or any library with these concepts). 
+  - To have control of graphics, the pipeline to the browser renderer needs to be pure and have the smallest layer above the browser's renderer.
+  - Making a game like that in Elm (or React, etc) causes the render path to go through Elm's (or React's) diffing algorithms on each and every tick of the frame that needs to be drawn. That just isn't a good idea.
+- If you'd like to animate things with Elm (or React, Mithril, etc) one technique you can use for basic web sites is to use Elm only to modify CSS classes, then let the browser handle animations with CSS transitions. 
+- Another technique for things like a WebGL or Canvas app would be to let Elm (or React) components care only about start and end states, then let a renderer algorithm perform the animation to/from those states.
+- When using the better technique, Elm will only be put in charge of calculating state at two possible moments: at the beginning of an animation or at the end. A renderer (for example one made in Three.js) will do the hard work between the two states. 
+  - Compare that to the not-so-good approach of have Elm calculate all the animation positions between the two states. Invoking the diffing algorithm (and whatever else Elm (or React) do) in each frame is overkill.
+
+- It works by using requestAnimationFrame instead of setTimeout.
+
+- [Rendering other things besides DOM · MithrilJS/mithril.js_201601](https://github.com/MithrilJS/mithril.js/issues/830)
+
 - ## [Composing Programs in the Elm Architecture - Stack Overflow](https://stackoverflow.com/questions/51156702/composing-programs-in-the-elm-architecture)
 - However, you should try not to emulate a component approach like React. 
   - Just use functions. Separate pages in an SPA are one example where it makes sense to have a dedicated message type and corresponding functions like you would with a program.
@@ -55,7 +68,16 @@ modified: 2023-11-20T19:04:12.672Z
 # discuss-elm-component
 - ## 
 
-- ## 
+- ## 🤔🤔 [Two ways to reuse views? Which do I choose?_201908](https://www.reddit.com/r/elm/comments/cqd93z/two_ways_to_reuse_views_which_do_i_choose/)
+  - The first is to make it a mini elm app. I.e. `Model, Msg, init, view, update` . The caller then uses `Html.map, Cmd.map` and so on.
+  - The second is like elm-sortable-table which exposes a State, init, view.
+
+- #2 is way simpler to integrate, but your view won't be able to produce side effect via commands e.g. make an http call, get information from the DOM, etc. All the commands will need to be produced by wrapping app.
+  - If you want your view to trigger side effects then you need #1.
+
+- The rule of thumb is to use the second approach if you can and if you cannot, switch to the first approach. 
+  - The first one brings in way more complexity. I can have an entire module of small reusable views implemented with the second approach BUT, the first approach would mandate one module per component.
+  - this second approach for views that have to have some state in them and use the first approach only as the last resort. This usually happens if I need side-effects in the update of the component.
 
 - ## [Does TEA mean single state at root? : elm_202112](https://www.reddit.com/r/elm/comments/ronzbo/does_tea_mean_single_state_at_root/)
 - Your knowledge of React is going to be a problem for learning TEA at least that's what I found. 
@@ -101,7 +123,7 @@ modified: 2023-11-20T19:04:12.672Z
 - It is true that objects can be represented as recursive records and functions in an immutable language
 - The same operational semantics works for "components" too. I am talking about the technical details, not the "looks". That's my whole point.
 
-- ## 🏘️ [Components in Elm: why (not) and how? : elm_201708](https://www.reddit.com/r/elm/comments/6x5w07/components_in_elm_why_not_and_how/)
+- ## 🏘️ [Components in Elm: why (not) and how?_201708](https://www.reddit.com/r/elm/comments/6x5w07/components_in_elm_why_not_and_how/)
   - I've looked at the view functions over components paradigm. This works well for small item, such as text fields and buttons. 
   - However, larger elements, such as whole pages in SPA's, often require update and subscription functions as well.
   - We can implement these functions either in their separate functions, or add all their logic in the main update and subscription functions. The later option seems like pure madness to me in terms of code quality.
@@ -139,13 +161,6 @@ modified: 2023-11-20T19:04:12.672Z
 
 - Just completed a 'flattening rewrite'. 1300 lines down to 1000 lines and pleasant to strip away the communication code which was mostly parent updates calling child updates and wrangling the results.
   - Main issue is naming as I now have much more in one file and there are a few places where previous reasonable names now conflict.
-
-- 
-- 
-- 
-- 
-- 
-
 # discuss-effects
 - ## 
 

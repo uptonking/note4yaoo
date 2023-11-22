@@ -10,6 +10,7 @@ modified: 2023-11-18T09:48:30.897Z
 # guide
 
 - flux with event-sourcing
+- functional 插件架构
 
 - redux [数据流](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
   - action -> state -> view

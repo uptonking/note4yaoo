@@ -54,7 +54,24 @@ modified: 2021-08-05T04:31:02.298Z
 
 - ## 
 
-- ## 
+- ## Four ways to define an object type in TypeScript
+- https://twitter.com/wesbos/status/1524040757518258176
+
+```typescript
+// 1️⃣ 枚举key: 类型
+
+type SizeList = 'small'|'medium'|'large';
+
+// 2️⃣ type Sizes = { [key in SizeList]: number ｝
+// sizes2 needs to be a type not an interface, as interfaces don't allow mapped types to declare properties or methods
+
+// 3️⃣ Record<SizeList, number>
+
+// 4️⃣ CustomRecord<SizeList, number>
+```
+
+- My rule is just type it straight up until you can't.
+  - Usually when the keys of an object are also being generated, or passed in when you need to do this. Is most cases `Record<>` is what you want.
 
 - ## TIL: in TS `satisfies` doesn't set the type of an object, which means you can't assign properties to it later. 
 - https://twitter.com/matthewcp/status/1719391086345363664

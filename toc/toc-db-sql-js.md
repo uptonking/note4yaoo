@@ -108,6 +108,10 @@ modified: 2021-08-30T18:56:14.863Z
   - Use SQL to instantly query your cloud services (AWS, Azure, GCP and more). Open source CLI. 
   - No DB required.
   - Use SQL to instantly query your cloud services (AWS, Azure, GCP and more). Open source CLI. No DB required.
+
+- https://github.com/atheck/db-sql-toolkit /202311/ts
+  - Helps with SQL statements, database migration, and bulk execution
+  - `sql` function is a tagged template function to write SQL statements and include parameters in the correct places.
 # sql-parser
 - https://github.com/DTStack/dt-sql-parser /ts
   - SQL Parsers for BigData, built with antlr4.

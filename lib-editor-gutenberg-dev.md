@@ -118,7 +118,9 @@ modified: 2023-02-05T19:12:13.098Z
 # discuss
 - ## 
 
-- ## 
+- ## [Choosing the JavaScript Framework for Gutenberg(~WordPress) if dropping react_201710](https://github.com/WordPress/gutenberg/issues/2733)
+
+- [Try: Framework-agnostic block interoperability (Vanilla, Vue)](https://github.com/WordPress/gutenberg/pull/2463)
 
 - ## [Thoughts on RichText & Performance](https://github.com/WordPress/gutenberg/issues/15033)
 - Perhaps we can do something like AsyncMode in #13056, but instead of just the page AND the selected block re-rendering (correct me if I'm wrong), re-render only the selected RichText instance, and the rest of the page and block lazily.

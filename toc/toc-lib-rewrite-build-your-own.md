@@ -99,6 +99,11 @@ modified: 2021-09-29T13:23:09.969Z
   - A JavaScript DOM model supporting element creation, diff computation and patch operations for efficient re-rendering
   - 用例: reflex
 
+- https://github.com/jorgebucaran/superfine /1.6kStar/MIT/202104/js/hyperapp作者
+  - a minimal view layer for building web interfaces. 
+  - we use the `h()` and `text()` functions to create a lightweight representation of the DOM (or virtual DOM for short), and `patch()` to actually render the DOM.
+  - Superfine won't re-create the entire DOM every time we use patch(). By comparing the old and new virtual DOM we are able to change only the parts of the DOM that need to change instead of rendering everything from scratch.
+
 - https://github.com/patrick-steele-idem/morphdom /js
   - Fast and lightweight DOM diffing/patching (no virtual DOM needed)
   - Instead of replacing the existing DOM tree with a new DOM tree, we want to transform the existing DOM tree to match the new DOM tree while minimizing the number of changes to the existing DOM tree. This is exactly what the morphdom module does! 

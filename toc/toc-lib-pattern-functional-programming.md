@@ -176,6 +176,10 @@ modified: 2023-07-26T11:23:38.282Z
   - A 4kb framework for creating sturdy frontend applications
   - At the core of Choo is an event emitter, which is used for both application logic but also to interface with the framework itself. The package we use for this is nanobus.
   - Choo uses nanomorph, which diffs real DOM nodes instead of virtual nodes
+  - [choo v5 release checklist_201703](https://github.com/choojs/choo/issues/429)
+    - v5 seems to not be ELM-like anymore, everything is just events
+    - I am unconvinced after building larger apps that an elm-style architecture is necessary and might actually cause much unneeded complexity and slowness.
+    - Javascript is not an immutable language and forcing it to be one is expensive in terms of memory and cpu cycles.
   - https://github.com/choojs/nanocomponent
     - Isolate native DOM libraries from DOM diffing algorithms
     - Class based components offering a familiar component structure

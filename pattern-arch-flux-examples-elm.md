@@ -8,6 +8,10 @@ modified: 2023-11-21T10:17:34.596Z
 # pattern-arch-flux-examples-elm
 
 # guide
+
+- tips
+  - popular-elm: elmish, hyperapp, hydux, raj, apprun
+
 - resources
   - [The Elm Architecture · An Introduction to Elm](https://guide.elm-lang.org/architecture/)
   - [Elmish · F#](https://elmish.github.io/elmish/)
@@ -25,21 +29,11 @@ modified: 2023-11-21T10:17:34.596Z
     - master branch is "stable" but has some flaws that I've been trying to address, primarily having to do with large-scale performance.
   - [Elmish: Functional Programming in Javascript | by Chet Corcos | Medium_201602](https://medium.com/@chetcorcos/elmish-functional-programming-in-javascript-50995f1d4b9e)
 
-- https://github.com/iyegoroff/ts-elmish /202206/ts/inactive
-  - https://elmish.github.io/elmish/
-  - Elmish architecture in Typescript
-  - modular, supports different view layers and effect handling strategies
-  - subscriptions are out of scope for ts-elmish - just use view layer capabilities for listening to events (e.g. useEffect hook in react).
-  - https://github.com/iyegoroff/ts-railway
-    - ROP flavoured Result & AsyncResult types. Based on Railway oriented programming article by Scott Wlaschin.
-
 - https://github.com/jonaskello/tea-minimal /202201/ts
   - Minimal The Elm Architecture implementation in typescript
   - https://github.com/andrejewski/raj/issues/31
     - I wrote something similar to raj in typescript and since then I have re-written that library several times as I needed to add more advanced stuff like GraphQL subscriptions, caching etc.
     - Now I've ended up with a library that is much closer to the original Elm Architecture. It uses managed effects which means commands and subscriptions that are declared as data and are handled by effect managers outside the application. This way the application can consist of only pure functions. 
-- https://github.com/ScepLab/fun-ts /202303/ts
-  - Monorepo with features like the elmish architecture or a rest client based on functional programming with TypeScript.
 
 - https://github.com/andrejewski/raj /MIT/201806/js
   - https://jew.ski/raj/
@@ -55,6 +49,10 @@ modified: 2023-11-21T10:17:34.596Z
     - In Raj any side-effect can be a subscription. 
     - In Elm there are commands (single dispatch) and subscriptions (multi-dispatch).
     - In Elm, the same subscription uses effect managers and requires help from the low-level Elm runtime to work. Elm's solution fits its language. The Raj solution fits JavaScript.
+  - [Raj, the Elm Architecture for JavaScript, releases v1.0!_201806](https://www.reddit.com/r/javascript/comments/8st3bi/raj_the_elm_architecture_for_javascript_releases/)
+    - I try to follow HyperApp closely. When it first came out I was so anxious that something had beaten Raj to the market.They are pretty different and I think HyperApp 2.0 will widened the gap
+    - Raj is view-layer agnostic.HyperApp is doing it's own baked in thing
+    - Raj has a huge value prop of forcing side-effects to the edges of your system. In HyperApp you have async actions which I don't care for. In Raj the nasty async bits do not "infect" the business logic.
   - https://github.com/andrejewski/raj-ts /202301/ts
     - Raj written in Typescript
     - Raj.ts re-packages the standard library of Raj packages in a single package
@@ -67,7 +65,11 @@ modified: 2023-11-21T10:17:34.596Z
     - Program composition for Raj
 - https://github.com/RonaldDijks/ts-elmish /201812/ts
   - A lightweight general purpose Elm-like runtime for TypeScript, based off of raj
-  - view layer agnostic. Here we use the browser's built-in view to play the part.
+  - view layer agnostic. Here we use the browser's built-in view to play the part
+- https://github.com/Zhang-WJ/Elmish-with-javascript /202009/js
+  - function UI component with raj/react implement the elm language theory
+- https://github.com/rluiten/rajts /201807/ts
+  - Convert raj into typescript
 
 - https://github.com/Gozala/reflex /202204/js
   - https://gozala.gitbooks.io/reflex/content/
@@ -90,31 +92,18 @@ modified: 2023-11-21T10:17:34.596Z
   - https://github.com/mozilla/reflex-react-driver
     - This is a reflex application view driver that uses react for rendering into a DOM
 
-- https://github.com/gordonbrander/store-element /202210/js
-  - A deterministic web component class, loosely inspired by The Elm App Architecture pattern.
+- https://github.com/iyegoroff/ts-elmish /202206/ts/archived
+  - https://elmish.github.io/elmish/
+  - Elmish architecture in Typescript
+  - modular, supports different view layers and effect handling strategies
+  - subscriptions are out of scope for ts-elmish - just use view layer capabilities for listening to events (e.g. useEffect hook in react).
+  - https://github.com/iyegoroff/ts-railway
+    - ROP flavoured Result & AsyncResult types. 
+    - Based on Railway oriented programming article by Scott Wlaschin.
 
-- https://github.com/derrickbeining/effect-mvu /202311/ts
-  - A port of the Elm application architecture to the effect-ts ecosystem
-  - provides a minimal setup to get React working in Vite with HMR 
-
-- https://github.com/hydux/hydux /201902/ts/未实现undo
-  - A light-weight Elm-like alternative for Redux ecosystem, inspired by Hyperapp and Elmish.
-  - Elm Architecture, split your whole app with init, state, actions.
-  - Elm-like side effect manager and subscribe API
-  - Support any vdom library, including react
-  - hyperapp compatible API
-  - Official support for react-router
-  - 未实现undo，但devtools支持时间旅行
-  - logger, persist, Redux Devtools with time traveling, ultradom(1kb vdom), **All in One**
-  - built-in support for HMR, logger, persist, Redux Devtools
-  - I create this to support different vdom libraries, like React(official support), ultradom(built-in), Preact, inferno 
-  - https://github.com/hydux/hydux-preact
-  - https://github.com/hydux/hydux-react-router
-
-- https://github.com/SantaClaas/elmish-web-components /202306/ts
-  - Web App Component Framework built with Elmish on top of lit-html. 
-  - And a Mastodon App built with it.
-  - This library is using Elmish. The code was copied and converted to TypeScript by me
+- https://github.com/ScepLab/fun-ts /202303/ts
+  - Monorepo with features like the elmish architecture or a rest client based on functional programming with TypeScript.
+  - 提供了 elmish-react-client 和 rest-client-api 的示例
 
 - https://github.com/jas-chen/elm-architecture /MIT/201611/js
   - The Elm Architecture in JavaScript
@@ -123,6 +112,18 @@ modified: 2023-11-21T10:17:34.596Z
   - It comes with an observable model, you can use RxJS, Most.js or xstream to transform it.
   - 依赖rxjs.v5或xtream
   - [The Elm Architecture in JavaScript | by Jas Chen | Medium_201611](https://medium.com/@JasChen/the-elm-architecture-in-javascript-eb4d5201272b)
+
+- https://github.com/gordonbrander/store-element /202210/js
+  - A deterministic web component class, loosely inspired by The Elm App Architecture pattern.
+
+- https://github.com/derrickbeining/effect-mvu /202311/ts
+  - A port of the Elm application architecture to the effect-ts ecosystem
+  - provides a minimal setup to get React working in Vite with HMR 
+
+- https://github.com/SantaClaas/elmish-web-components /202306/ts
+  - Web App Component Framework built with Elmish on top of lit-html. 
+  - And a Mastodon App built with it.
+  - This library is using Elmish. The code was copied and converted to TypeScript by me
 
 - https://github.com/steos/elmar.js /201610/js
   - https://steos.github.io/elmar.js
@@ -176,6 +177,9 @@ modified: 2023-11-21T10:17:34.596Z
   - Advanced features: JSX, Web Components, Dev Tools, SSR, etc.
   - An AppRun component is a mini-application with elm architecture, which means inside a component, there are state, view, and update. In addition, components provide a local scope.
   - [AppRun runs on both client and server side to allow event firing and handling between the frontend app and backend business logic modules using WebSockets, no REST API.](https://twitter.com/apprunjs/status/1237064423191252992)
+  - [What is your take on AppRun?_201904](https://www.reddit.com/r/elm/comments/beizxg/what_is_your_take_on_apprun/)
+    - it looks basically like Hyperapp.
+    - No tracking of effects, so reasoning about anything becomes much more difficult when compared to Elm - in Elm everything is pure and the runtime does all the effectful stuff
 
 - https://github.com/artydev/mvu /202310/js
   - Simple Model View Update library for in Browser use
@@ -189,6 +193,98 @@ modified: 2023-11-21T10:17:34.596Z
 
 - https://github.com/0918nobita/mvu /202301/ts/自研vdom
   - MVU framework + VDOM runtime (inspired by Elm)
+# hyperapp
+- https://github.com/jorgebucaran/hyperawesome
+  - https://hyperapp.dev/
+  - A curated list of awesome projects built with Hyperapp
+
+- hyperapp /19kStar/MIT/202205/js
+  - https://github.com/jorgebucaran/hyperapp
+  - The tiny framework for building hypertext applications
+  - an ultra-lightweight Virtual DOM, highly-optimized diff algorithm, and state management library obsessed with minimalism.
+  - [Hyperapp V2_201905](https://github.com/jorgebucaran/hyperapp/pull/726)
+    - Middleware: const enhance = oldDispatch => newDispatch
+    - Payload creators: const NewValue = (state, value) => ({ ...state, value })
+  - [RFC: Hyperapp 2.0_201804](https://github.com/jorgebucaran/hyperapp/issues/672)
+    - Hyperapp holds firm on the functional programming front when managing your state, but takes a pragmatic approach to allowing for side effects, asynchronous actions, and DOM manipulations.
+    - All Things Dynamic — First class support for code splitting and dynamically loading actions and views using import()
+    - Introduce a subscriptions API inspired by Elm
+  - [V2 What if?_201810](https://github.com/jorgebucaran/hyperapp/issues/765)
+    - Effects need to be represented as objects.If you use a function to represent an effect, then it's impossible to test effects using a strict equality check
+    - I designed this part of the API looking at Elm.
+
+- https://github.com/hydux/hydux /201902/ts/未实现undo
+  - A light-weight Elm-like alternative for Redux ecosystem, inspired by Hyperapp and Elmish.
+  - Elm Architecture, split your whole app with init, state, actions.
+  - Elm-like side effect manager and subscribe API
+  - Support any vdom library, including react
+  - hyperapp compatible API
+  - Official support for react-router
+  - 未实现undo，但devtools支持时间旅行
+  - logger, persist, Redux Devtools with time traveling, ultradom(1kb vdom), **All in One**
+  - built-in support for HMR, logger, persist, Redux Devtools
+  - I create this to support different vdom libraries, like React(official support), ultradom(built-in), Preact, inferno 
+  - https://github.com/hydux/hydux-preact
+  - https://github.com/hydux/hydux-react-router
+
+- https://github.com/jorgebucaran/superfine /1.6kStar/MIT/202104/js
+  - a minimal view layer for building web interfaces. 
+  - we use the `h()` and `text()` functions to create a lightweight representation of the DOM (or virtual DOM for short), and `patch()` to actually render the DOM.
+  - Superfine won't re-create the entire DOM every time we use patch(). By comparing the old and new virtual DOM we are able to change only the parts of the DOM that need to change instead of rendering everything from scratch.
+
+- https://github.com/loteoo/hyperapp-starter /202104/ts
+  - Clean web app starter using Hyperapp with strong focus on developer experience.
+  - https://github.com/anticrisis/hyperapp-starter /202003/ts
+  - https://github.com/bonniss/hyparcel /202005/js
+  - https://github.com/antsegcan/ts-hyperapp /202004/ts
+
+- https://github.com/dangvanthanh/hyperapp-todomvc /202109/js
+  - TodoMVC using Hyperapp
+
+- https://github.com/adamdawkins/elm-tutorials-in-hyperapp /201909/ts
+  - Copies of the Elm Tutorials in Hyperapp v2
+
+- https://github.com/hlibco/hypersamples /202007/ts
+  - https://hypersamples.vercel.app/
+  - an unofficial collection of components and recipes for Hyperapp V2
+
+- https://github.com/kwasniew/hyperapp2-real-world-example /202006/js
+  - Real Word Example App in Hyperapp v2
+- https://github.com/kwasniew/hyperapp-realworld-example-app /201908/js
+  - A Single Page Application written in Hyperapp 1
+
+- https://github.com/jacobtipp/hypernews /201807/js
+  - hackernews clone with hyperapp
+- https://github.com/mrozbarry/hyperapp-hn /202003/js
+  - Hacker News Reader using Hyperapp
+  - 依赖hyperapp、firebase
+
+- https://github.com/zaceno/sevenguis-hyperapp /202104/js
+  - https://zaceno.github.io/sevenguis-hyperapp/
+  - 7GUIs implemented in hyperapp v2
+
+- https://github.com/lanceturbes/hyperapp-drag-n-drop /202308/js
+  - 依赖hyperapp.v2、hyperlit
+
+- https://github.com/amoutonbrady/ha-sticky /202001/js
+  - A semi-advanced sticky notes inspired by windows with offline capabilities
+
+- https://github.com/os-js/osjs-gui /202209/js
+  - https://manual.os-js.org/
+  - open-source web desktop platform with a window manager, application APIs, GUI toolkit, filesystem abstractions and much more.
+  - 依赖hyperapp.v1、hyperapp-nestable
+
+- https://github.com/icylace/uy /202204/ts
+  - a UI library for Hyperapp.
+
+- https://github.com/PacktPublishing/Hands-On-Web-Development-with-Hyperapp-V2 /201906/js
+  - Hands-On Web Development with Hyperapp V2, published by Packt
+
+- https://github.com/SteveALee/hyperapp2-explore /201910/js
+  - An exploration of the features of hyperapp v2.0
+
+- https://github.com/sergey-shpak/hyperapp-middlewares /202105/js
+  - Frequently used hyperapp#2 middlewares
 # elm-react
 - https://github.com/acdlite/realm /201601/js
   - A total rip-off(仿冒品; 抄袭之作) of the Elm Architecture, in React.
@@ -210,10 +306,19 @@ modified: 2023-11-21T10:17:34.596Z
 - https://github.com/atheck/react-elmish /202311/ts
   - brings the elmish pattern to react.
   - https://github.com/atheck/react-elmish-utils
+  - https://github.com/atheck/react-elmish-snippets
 
 - https://github.com/vankeisb/react-tea-cup /202305/ts
   - thin library that helps following The Elm Architecture, in React.
+
+- https://github.com/iyegoroff/react-use-backlash /202308/ts
+  - useReducer with effects, the elmish way
+- https://github.com/iyegoroff/react-use-railway /202309/ts
+  - useReducer with effects, the elmish way
 # examples
+- https://github.com/evancz/elm-architecture-tutorial /201912/elm
+  - How to create modular Elm code that scales nicely with your app
+
 - https://github.com/yelouafi/snabbdom-todomvc /201507/js
   - TodoMVC using snabbdom and Elm architecture
   - [React-less Virtual DOM with Snabbdom_201507](https://medium.com/@yelouafi/react-less-virtual-dom-with-snabbdom-functions-everywhere-53b672cb2fe3)
@@ -229,6 +334,13 @@ modified: 2023-11-21T10:17:34.596Z
 
 - https://github.com/dmy/elm-realworld-example-app /202005/elm/inactive
   - Elm RealWorld example application architected with the Effect pattern
+
+- https://github.com/SidneyNemzer/elm-text-editor /201904/elm
+  - https://sidneynemzer.github.io/elm-text-editor/
+  - A text editor written completely in Elm
+
+- https://github.com/huytd/kanelm /201904/elm
+  - Kanban board built with Elm
 
 - https://github.com/jxxcarlson/elm-editor /41Star/BSD/202104/elm
   - https://jxxcarlson.github.io/app/text-editor/index.html
@@ -250,6 +362,13 @@ modified: 2023-11-21T10:17:34.596Z
   - inspired by Elm and Simon Friis Vindum's Functional Frontend Architecture. 
   - Duckweed's primary goal is not to promote or enforce functional programming paradigm. It's main goal is to provide a simple API, and functions happen to be a good step in that direction.
   - https://github.com/foxbunny/duckweed-tasks
+# utils
+- https://github.com/Zaid-Ajaj/elmish-composition /202012/js/f#
+  - This repository includes two projects: traditional and hybrid to compare the composition technique of an Elmish application.
+  - The traditional directory contains an application that follows Elm-style technique for composition.
+  - The hybrid directory contains an application that is a hybrid of Elm with React to compose the application with help of Feliz. ElmishComponents.
+  - [Works great](https://github.com/Zaid-Ajaj/elmish-composition/issues/5)
+    - Thanks! Though I believe this sample is using the old Feliz.ElmishComponents library. Currently we recommend using Feliz.UseElmish library instead to achieve the same functionality but it is much better and gives more control. 
 # elm-non-js
 - [elm architecture in rust. 43loc](https://gist.github.com/kuon/b81f6397f454f0254f7476563b1794c0)
 
@@ -278,7 +397,14 @@ modified: 2023-11-21T10:17:34.596Z
 - https://github.com/veeso/tui-realm /202311/rust
   - A tui-rs framework inspired by Elm and React
   - a framework for tui and ratatui to simplify the implementation of terminal user interfaces
+
+- https://github.com/mitchmindtree/elmesque /201512/rust
+  - An attempt at porting Elm's incredibly useful, purely functional std graphics modules.
 # more
 - https://github.com/pierregoudjo/build-your-own-excel /202308/ts/redux
   - A Javascript version of a talk showing how to build a simle version of Excel based on functional principles.
   - This javascript version use Preact and Redux with Typescript instead of Elmish and Fable with F#.
+
+- https://github.com/tpetricek/elmish-spreadsheet /201810/f#
+  - Implement your own Excel 365 in 100 lines of F#
+  - a minimal tutorial showing how to use F#, Fable and Elmish

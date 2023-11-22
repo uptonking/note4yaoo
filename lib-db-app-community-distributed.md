@@ -147,7 +147,7 @@ modified: 2023-10-26T19:04:00.318Z
 - 
 - 
 
-- ## 💫🔥 [Distributed algorithms in NoSQL databases | Hacker News_201709](https://news.ycombinator.com/item?id=15367003)
+- ## 🔥 [Distributed algorithms in NoSQL databases | Hacker News_201709](https://news.ycombinator.com/item?id=15367003)
 - 
 - 
 - 

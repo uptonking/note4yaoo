@@ -218,6 +218,15 @@ type Program = {
 
 - When your app Elm start growing, you will want to break it apart in smaller pieces to be able to scale
 - I believe Child-Parent Communication is often more importante when scaling and doing SPAs, that’s why lots of stuff I found was reading this reddit thread about Scaling Elm App
+
+## ⏰ [Elm 2022, a year in review - DEV Community_202302](https://dev.to/lucamug/elm-2022-a-year-in-review-33pp)
+
+- 按月份和日期整理
+
+## 🆚️🏘️ [Elm and Event Sourcing_201607](http://marcosh.github.io/post/2016/07/09/elm-event-sourcing.html)
+
+- Event sourcing is somehow already present in the Elm Architecture, but not at a userland level. 
+  - Anyway, as we saw, it is quite straightforward to bring it at the user level. This allows us not to lose any data in the interaction between our application and the user
 # blogs-cons
 
 ## 🤼🏻 [The Elm Architecture is the wrong abstraction for the web_202309](https://gist.github.com/chexxor/23ccf35add7dbdd33ecdd26888663140)

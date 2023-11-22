@@ -67,12 +67,6 @@ const CountingComponent = () => {
 };
 ```
 
-## Hyperapp
-
-- https://github.com/jorgebucaran/hyperapp
-  - /18.2kStar/MIT/202012/js
-  - The tiny framework for building hypertext applications
-  - Hyperapp is an ultra-lightweight Virtual DOM, highly-optimized diff algorithm, and state management library obsessed with minimalism.
 # rust-web
 - https://github.com/DioxusLabs/dioxus
   - https://dioxuslabs.com/
