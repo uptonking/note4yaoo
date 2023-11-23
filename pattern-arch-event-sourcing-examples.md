@@ -884,11 +884,15 @@ modified: 2023-09-12T09:37:22.608Z
   - a tool for collaboratively organizing notes.
   - backend is powered by wolkenkit.
 
-- https://github.com/TomaszRewak/TimeWriter /js/依赖少/inactive
+- https://github.com/TomaszRewak/TimeWriter /45Star/MIT/201902/js/依赖少/inactive
   - https://text-sourcing.tomasz-rewak.com/
   - An online collaborative text editor based on event sourcing architecture.
-  - Everything here is written from a scratch: including the text editor as well as the event sourcing logic on the server and the client sides.
+  - 简单的文本编辑器，不是wysiwyg
   - 依赖socket.io、express
+  - Everything here is written from a scratch: including the text editor as well as the event sourcing logic on the server and the client sides.
+  - This app doesn't send the entire content of the file between users after each change is made, but rather just basic events. 
+  - Event history is also used for undo/redo operations. 
+  - The order of events is synchronized based on the server's internal clock so that the impact of communication delay can be neutralized.
 
 - https://github.com/stockulus/pouchdb-event-store /201708/js
   - mimimal eventStore on top of pouchdb

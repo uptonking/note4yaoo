@@ -66,27 +66,6 @@ modified: 2021-01-12T18:49:07.422Z
 
 - https://github.com/leadream/FigmaActivityCalendar /swift
   - The Figma Activity Calendar is a menu application designed to monitor and track the amount of time you spend using Figma.
-# timeline
-- https://github.com/prabhuignoto/react-chrono /ts
-  - https://5f985eb478dcb00022cfd60e-wfennyutax.chromatic.com/
-  - Modern Timeline Component for React
-  - Render timelines in three different modes (Horizontal, Vertical, Vertical-Alternating).
-  - Auto play the timeline with the slideshow mode.
-  - Nested timelines
-  - Styled with emotion.
-
-- https://github.com/visjs/vis-timeline /js
-  - https://visjs.github.io/vis-timeline/
-  - customizable, interactive timelines and 2d-graphs with items and ranges.
-
-- TimelineJS /2.6kStar/MPLv2/202303/js
-  - https://github.com/NUKnightLab/TimelineJS3
-  - http://timeline.knightlab.com/
-  - A Storytelling Timeline built in JavaScript.
-
-- https://github.com/metricsgraphics/metrics-graphics /7.3kStar/MPLv2/202004/ts/inactive
-  - a library built for visualizing and laying out time-series data
-  - currently supports line charts, scatterplots and histograms, as well as features like rug plots.
 # react-list-keyboard
 - react-window默认显示滚动条，但可通过css隐藏滚动条同时使内容支持滚动
   - [Add option to FixedSizeList for hiding scrollbar](https://github.com/bvaughn/react-window/issues/375)

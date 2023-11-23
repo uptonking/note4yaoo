@@ -85,7 +85,16 @@ modified: 2021-05-25T12:02:08.398Z
 # electron
 - https://github.com/mozilla/positron /201703/cpp/archived
   - a experimental, Electron-compatible runtime on top of Gecko
+# cross-platform
+- https://github.com/lzyzsd/JsBridge /java
+  - android java and javascript bridge, inspired by wechat webview jsbridge
+  - [JS Bridge 通信原理与实践](https://github.com/yinguangyao/blog/issues/50)
 # more
 - https://github.com/vincentriemer/react-native-dom /201901/archived
   - https://rntester.now.sh/
   - An experimental port of React Native to the web.
+
+- https://github.com/bfortunato/aj-framework /201906/swift/java/js
+  - a simple framework that allows developers to share code in different platforms, such as iOS, Android and Web browsers.
+  - Applications built with AJ are hybrid, written in JS and native code following an unidirectional dataflow architecture, inspired by Flux and Redux. 
+  - application state and business logic is managed in Javascript side. Views are in native side, that is the most productive place to write high-quality user interfaces

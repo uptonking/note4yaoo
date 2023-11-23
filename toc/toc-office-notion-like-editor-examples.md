@@ -245,6 +245,28 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/fedeloterstein/open-notion
   - Notion clone using Next.js with Typescript
+
+- https://github.com/BadaHertz52/notion /202212/ts/提交多
+  - cloning Notion with React
+  - 依赖react-contenteditable、redux、styled-components
+- https://github.com/genuine-seok/motion-web /202209/ts
+  - https://genuine-seok.github.io/motion-web/
+  - [toy project] notion basic features cloning project
+
+- https://github.com/Lameck1/simple_notion /202212/js/NoDeps
+  - https://simplenotion.netlify.app/
+  - lightweight clone of a Notion-like editor.
+
+- https://github.com/girishsontakke/notion-task-board-clone /202211/js
+  - https://notion-task-board-clone.netlify.app/
+  - Notion task board clone having drag and drop functionality.
+  - 依赖antd
+
+- https://github.com/hr0123/vanillajs-notion-clone-haeri /202210/ts/starter
+  - brew install pkg-config cairo pango libpng jpeg giflib
+
+- https://github.com/wendelchinsamy/notion-clone-web
+  - https://github.com/wendelchinsamy/notion-clone-api
 # notion-ecosystem
 - https://github.com/NotionX/react-notion-x
   - https://react-notion-x-demo.transitivebullsh.it/

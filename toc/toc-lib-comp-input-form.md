@@ -1,15 +1,15 @@
 ---
-title: lib-utils-input-form
-tags: [form, input, utils]
+title: toc-lib-comp-input-form
+tags: [components, form, input, toc, ui]
 created: 2023-03-27T17:44:58.947Z
-modified: 2023-03-27T17:45:27.440Z
+modified: 2023-11-23T18:01:59.304Z
 ---
 
-# lib-utils-input-form
+# toc-lib-comp-input-form
 
 # guide
 
-# forms-examples
+# examples
 - https://github.com/jaredpalmer/formik /ts/react/代码少
   - https://formik.org/
   - Build forms in React, without the tears.
@@ -59,7 +59,19 @@ modified: 2023-03-27T17:45:27.440Z
 - https://github.com/charlzyx/da
   - https://charlzyx.github.io/da/
 
-## utils
+# form-elements
+
+- tom-select /947Star/apache2/202212/ts/vanillajs
+  - https://github.com/orchidjs/tom-select
+  - https://tom-select.js.org/examples/remote/
+  - Tom Select is a dynamic, framework agnostic, and lightweight (~16kb gzipped) `<select>` UI control.
+  - Tom Select was forked from `selectize.js` with the goal of modernizing the code base, decoupling from jQuery, and expanding functionality.
+  - Options are efficiently scored and sorted on-the-fly (using sifter). 
+  - https://github.com/orchidjs/sifter.js
+    - A library for textually searching arrays and hashes of objects by property (or multiple properties). 
+    - Designed specifically for autocomplete.
+
+# utils
 
 - https://github.com/fabian-hiller/decode-formdata /ts
   - When the values of your form are encoded to FormData, for example to send them to a server via HTTP, some information is lost. 
@@ -70,34 +82,3 @@ modified: 2023-03-27T17:45:27.440Z
   - Free JavaScript form builder library with integration for React, Angular, Vue, jQuery, and Knockout.
 # more
 
-# discuss
-
-- ## 
-
-- ## How to use JavaScript's FormData to collect form fields without refs or state
-- https://twitter.com/ReactTraining/status/1716822590533353817
-  - 1. Start by giving inputs names
-  - 2. Use `new FormData` on the `event.target` . 
-  - 3. Use `.get` to access fields by name.
-
-- ## Unpopular opinion: Don't use http verbs PUT, PATCH, DELETE. Just use POST for everything. Reasons:
-- https://twitter.com/matthewcp/status/1716549522015310116
-  - `<form>` doesn't support the others. Frameworks that allow it do so through hacks.
-  - URLs are free, you don't gain anything by overloading them.
-  - Purity < practicality
-- A bunch of infra-adjacent stuff is easier if you use proper verbs. Eg. PATCH is idempotent, POST is not.
-  - *PUT is idempotent, PATCH is not necessarily. (According to MDN)
-  - This is good in theory but broken in modern practice. E.g. Next.js caches POST requests, probably because GraphQL uses them even for reads without side-effects.
-  - I used to make this argument, but now I think it's over-rated and I agree with the OP. It's just too hard to make every form do the right thing with respect to updates vs. creates. Also, it's rare that retrying an update is really what you want.
-- Simplicity that works >>>> anything else.
-
-- ## 使用fetch()上传formData数据时，千万不要在headers中设定content-type！
-- https://twitter.com/ahshengchen/status/1687377120459378688
-
-- multipart/form-data 如果修改了content type会覆盖解析数据需要的boundary。标准server就解析不到数据了，可以用postman or paw之类的查看一下和application/x-www-form-urlencoded的报文区别。
-
-- 可以 postman 里测好了，用他的代码生成代码
-
-- ## Wrote a guide about 11 popular HTML and JS mistakes in forms.
-- https://twitter.com/sitnikcode/status/1661411602443247616
-  - [11 HTML best practices for login & sign-up forms—Martian Chronicles, Evil Martians’ team blog](https://evilmartians.com/chronicles/html-best-practices-for-login-and-signup-forms)

@@ -187,9 +187,27 @@ In React I can use componentDidMount to also attach e.g. a good jQuery UI dialog
 
 - ## 
 
-- ## 
+- ## [[Question] Is Elm a smart decision for a long term project in 2023? : elm_202308](https://www.reddit.com/r/elm/comments/164ipl0/question_is_elm_a_smart_decision_for_a_long_term/)
+- It’s bear market for Elm XD. Builders are still building:
+  - Evan preparing work related to backend
+  - Mario continuing to improve Lamdera
+  - Simon continuing to improve tooling (elm-watch)
+  - Matthew continuing to improve ui (elm-ui v2 in preparation)
+  - Ryan continuing to improve SPAs (elm-land)
+  - Dillon continuing to improve SPAs (elm-pages)
+  - Jeroen continuing to improve linting (elm-review)
 
-- ## 
+- ## [Why does TEA use separate `msg` type and `update` function? Why not just pass `model -> (model, Cmd)` functions to `Html` ](https://discourse.elm-lang.org/t/messages-purpose/6778)
+- Msgs are the way an Elm program communicates with the world outside Elm. 
+  - Msgs come from user interactions events, such as clicks on html elements, but they also come from IO events like http requests and ports.
+- `update` is a central place to interpret all incoming msgs in to changes to the model.
+- Elm could have picked an architecture with lots of call back functions being passed to the runtime for it to call but having a central place to deal with things that can change the model makes it easier to see how and why the model can change.
+- A model -> (model, Cmd) passed to an onClick makes it tricky to figure out exactly what kind of things can change the model, that Cmd would need to include it’s own callback to update the model in someway too, which might also return other Cmd that would have it’s own call backs. While this can work (clearly, it’s how most JS apps work), it does make it harder to find which code interacts with the model.
+- Having a single callback function for all events mean that you have a single tree of functions to look at when evaluating how and why the model can change.
+
+- Having a single Msg type is great for listing what interactions are possible in the project, which has a number of benefits. Spreading all of that into view and subscriptions makes it very hard to know what can happen and can’t. 
+
+- Cutting msg out, is similar to how the folks of Hyperapp 27 have decided to do it. One plus you get from that, is a “free” splitting of your update into smaller functions, since you pretty much don’t have one anymore.
 
 - ## [Does Elm compile to JS, or JS+HTML? If I only use a function to create a node, does it make a JS function, or just create the HTML? : elm_201604](https://www.reddit.com/r/elm/comments/4g3wtk/does_elm_compile_to_js_or_jshtml_if_i_only_use_a/)
 - your Elm code all turns into JS. What elm-html does is create DOM nodes at runtime as required

@@ -220,6 +220,10 @@ modified: 2023-01-01T13:24:35.994Z
   - Simple autocomplete pure vanilla Javascript library.
   - Powerful Search Engine with two different modes: strict/loose
   - Works on anything (<`input>`,  `<textarea>` and `contentEditable` elements)
+
+- https://github.com/webscopeio/react-textarea-autocomplete /202210/js
+  - React component implements configurable GitHub's like textarea autocomplete.
+  - It can be used for example for emoji autocomplete or for @mentions.
 # search-data
 - https://github.com/searchkit/searchkit/tree/main/sample-data
   - movies, electronics-ecommerce

@@ -1,16 +1,16 @@
 ---
-title: toc-lib-clone-toys-alternatives
-tags: [alternatives, lib, rewrite, toc]
+title: toc-repos-clone-toys-alternatives
+tags: [alternatives, rewrite, toc, toys]
 created: 2021-07-21T10:03:20.513Z
-modified: 2021-07-21T10:03:38.002Z
+modified: 2023-11-23T17:24:53.472Z
 ---
 
-# toc-lib-clone-toys-alternatives
+# toc-repos-clone-toys-alternatives
 
 # guide
 
 - ref
-  - 高仿玩具
+  - 高仿玩具rip-off
   - [Repository dedicated to all my UI(clonoe) projects!](https://github.com/Pedro-Murilo/user-interface)
 # toys-react
 - https://github.com/leoronne/github-ui-clone
@@ -49,38 +49,6 @@ modified: 2021-07-21T10:03:38.002Z
   - A simplified Jira clone built with React/Babel (Client), and Node/TypeScript (API). 
   - 前端依赖 react-router、formik、history、jwt、moment、quill(Editor)、react-beautiful-dnd、styled-components、sweet-pubsub
   - 后端依赖 express、jsonwebtoken、faker、pg、typeorm
-# notion-clone
-- https://github.com/konstantinmuenster/notion-clone  /202106/js
-  - https://notion-clone.kmuenster.com/
-  - 前端依赖 next9、react-beautiful-dnd、react-contenteditable，未使用复杂编辑器
-  - 后端依赖 express、jsonwebtoken、mongoose
-  - This clone tries to replicate some of the great note-taking features Notion has.
-  - The frontend is built with Next.js and fully server-side rendered. 
-    - Next.js · React.js · SCSS/SASS
-  - On the backend, a REST API handles saving user content and user management.
-    - Express.js · MongoDB with Mongoose · Nodemailer · JWT (Cookie-based)
-
-- https://github.com/BadaHertz52/notion /202212/ts/提交多
-  - cloning Notion with React
-  - 依赖react-contenteditable、redux、styled-components
-- https://github.com/genuine-seok/motion-web /202209/ts
-  - https://genuine-seok.github.io/motion-web/
-  - [toy project] notion basic features cloning project
-
-- https://github.com/Lameck1/simple_notion /202212/js/NoDeps
-  - https://simplenotion.netlify.app/
-  - lightweight clone of a Notion-like editor.
-
-- https://github.com/girishsontakke/notion-task-board-clone /202211/js
-  - https://notion-task-board-clone.netlify.app/
-  - Notion task board clone having drag and drop functionality.
-  - 依赖antd
-
-- https://github.com/hr0123/vanillajs-notion-clone-haeri /202210/ts/starter
-  - brew install pkg-config cairo pango libpng jpeg giflib
-
-- https://github.com/wendelchinsamy/notion-clone-web
-  - https://github.com/wendelchinsamy/notion-clone-api
 # toys-vanillajs-css
 - https://github.com/leocosta1/instagram-clone
   - https://leocosta1.github.io/instagram-clone/

@@ -22,6 +22,11 @@ modified: 2023-09-13T14:37:51.659Z
 - In conclusion, each data store has its strengths and limitations for Event Sourcing. 
   - It is essential to consider factors such as scalability, consistency, sequencing, transactionality, and query support when selecting a suitable data store for an event-sourced system.
 
+## 🌰 [Event Source your Spreadsheets for Flexibility and Maintainability_202208](https://berk.es/2022/08/16/event-source-your-spreadsheets-for-flexibility-and-maintainability/)
+
+- Spreadsheets can be kept clean, clear, extendable, by organizing them with ideas from Event Sourcing.
+  - It is an architecture to clearly distinguish logic from input from presentation in a spreadsheet. 
+
 ## 🌰 [Building offline-first web and mobile apps using event-sourcing_201907](https://flpvsk.com/blog/2019-07-20-offline-first-apps-event-sourcing/)
 
 - 👥 discussion

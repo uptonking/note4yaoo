@@ -93,6 +93,20 @@ modified: 2023-01-09T11:04:13.958Z
 - https://github.com/NickStefan/parsexcel.js /201412/js
   - Parse entire excel workbooks in native node.js. 
   - Get cell styles, formats, formulas, and values.
+
+- https://github.com/HarvestProfit/DocFlux /202009/js
+  - https://harvestprofit.github.io/DocFlux/
+  - Flux/React framework for creating any document, just define a few DOM components to transform into the document.
+  - You will define a few document metadata options and specify which component it will render. 
+  - 实现了react style Component class, 不依赖react
+  - https://github.com/HarvestProfit/DocFlux-Spreadsheets
+    - XLSX Spreadsheets parser for DocFlux
+  - https://github.com/humphreyja/sample-doc-flux-spreadsheets
+    - https://humphreyja.github.io/sample-doc-flux-spreadsheets/
+    - Example of using DocFlux to generate spreadsheets with xlsx lib
+  - https://github.com/HarvestProfit/DocFlux-PDFs
+    - Allows you to create pdfMake pdfs using DocFlux.
+    - 依赖pdfmake
 # extension-superset
 - https://github.com/harunou/SheetsDB
   - SheetsDB is a simple tool to read and write data from/to Google spreadsheet as JavaScript objects

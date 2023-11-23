@@ -30,9 +30,10 @@ modified: 2021-01-04T17:26:43.784Z
     - https://jspdf-editor.vercel.app/
     - *WIP* Design pdfs and generate code for jspdf
 
-- pdfkit /8.5kStar/MIT/202110/js
+- pdfkit /8.5kStar/MIT/202311/js
   - https://github.com/foliojs/pdfkit
   - http://pdfkit.org/
+  - http://pdfkit.org/demo/browser.html
   - A JavaScript PDF generation library for Node and the browser.
 
 - https://github.com/unjs/unpdf /ts
@@ -75,10 +76,11 @@ modified: 2021-01-04T17:26:43.784Z
   - https://react-pdf-repl.vercel.app/
   - REPL for `@react-pdf/renderer` with interactive debugger
 
-- https://github.com/bpampuch/pdfmake /11kStar/MIT/202302/js
+- https://github.com/bpampuch/pdfmake /11kStar/MIT/202311/js
   - http://pdfmake.org/
   - https://pdfmake.github.io/docs/
   - PDF document generation library for server-side and client-side in pure JavaScript.
+  - 依赖pdfkit、xmldoc
   - images and vector graphics
   - tables and columns
   - page headers and footers

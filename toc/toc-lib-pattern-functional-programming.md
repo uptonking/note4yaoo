@@ -268,6 +268,11 @@ modified: 2023-07-26T11:23:38.282Z
   - Persisted Queries (indexes) are updated as Entity composition changes.
   - Not all systems need to run every frame.
   - The Entity-Component-System paradigm is great for managing dynamic objects in games and simulations.
+# effects
+- https://github.com/andrejewski/affection /201810/js
+  - Declarative side-effects
+  - a library for describing side-effects as plain data and providing composition utilities. 
+  - This project aims to improve on similar libraries by not using generators.
 # more-fp
 - https://github.com/paldepind/flyd
   - /1.5kStar/MIT/201809/js

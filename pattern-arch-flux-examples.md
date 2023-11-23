@@ -203,6 +203,20 @@ modified: 2023-11-17T10:28:14.247Z
   - Baobab lets you record the successive states of any cursor so you can seamlessly implement undo/redo features.
   - https://github.com/Yomguithereal/baobab-react
     - React integration for Baobab.
+# examples-flux-editor
+- https://github.com/NickStefan/rixif /201602/js
+  - In early 2015, I had wanted to implement an entire excel experience in javascript.
+  - With React, Immutable.js, and old school vanilla flux, I got pretty far
+  - [How to implement a spreadsheet | Hacker News_201507](https://news.ycombinator.com/item?id=9940126)
+    - I implemented a spreadsheet in react, flux, immutable, and used a command pattern
+    - I did not take the approach of cells actually observing each other. Instead I had a recursive function that worked from the entered cell 
+    - The hardest part was updating the string representations of the formulas when you insert a new column or row, and then re-updating each cell's dependencies arrays.
+    - One 🛑 mistake I made was trying to implement the undo/redo to be totally reversable at every step. So every command stores the way to go both back and forward. In hindsight, I should have just stored forward commands and rebaked from the beginning when someone wanted to go back in time.
+    - Handsontable.js. That library has some major design flaws. Handsontable only takes simple 'number' or 'string' value for each cell
+
+- https://github.com/davidtimmons/react-csv /201601/js
+  - a React/Flux module written in JSX and JavaScript (ES2015) that simulates a CSV spreadsheet.
+  - Undo/Redo a change with CTRL-Z/Y
 # examples
 - https://github.com/jorinvo/miniflux-todomvc /201612/js/immutable-js
   - https://jorinvo.github.io/miniflux-todomvc
@@ -214,16 +228,6 @@ modified: 2023-11-17T10:28:14.247Z
   - http://mandarinconlabarba.github.io/flux-immutable-todomvc/
   - A TodoMVC Implementation with Flux and ImmutableJS
   - instead of undoing you load a previous state as the new state
-
-- https://github.com/NickStefan/rixif /201602/js
-  - In early 2015, I had wanted to implement an entire excel experience in javascript.
-  - With React, Immutable.js, and old school vanilla flux, I got pretty far
-  - [How to implement a spreadsheet | Hacker News_201507](https://news.ycombinator.com/item?id=9940126)
-    - I implemented a spreadsheet in react, flux, immutable, and used a command pattern
-    - I did not take the approach of cells actually observing each other. Instead I had a recursive function that worked from the entered cell 
-    - The hardest part was updating the string representations of the formulas when you insert a new column or row, and then re-updating each cell's dependencies arrays.
-    - One 🛑 mistake I made was trying to implement the undo/redo to be totally reversable at every step. So every command stores the way to go both back and forward. In hindsight, I should have just stored forward commands and rebaked from the beginning when someone wanted to go back in time.
-    - Handsontable.js. That library has some major design flaws. Handsontable only takes simple 'number' or 'string' value for each cell
 
 - https://github.com/stonarini/bike-web-b2b /202304/js
   - front-end in vanilla.js for bike-service-hub. 
@@ -260,6 +264,12 @@ modified: 2023-11-17T10:28:14.247Z
 - https://github.com/SJern/slamk /201609/js
   - a full-stack web application inspired by the popular team-collaboration application Slack
   - using the Flux architecture and React.js on the front-end and Ruby on Rails on the back-end
+
+- https://github.com/GuilleAngulo/movie-reviews /202002/js
+  - This component implements a data table
+  - It is implemented the flux pattern at 'flux' folder. The store is at 'CRUDStore' and actions are declared at 'CRUDActions'. 
+  - At the store an EventEmitter is initialized, and everytime the app data is set an event is emitted to the components subscribed to have a data update. 
+  - In this app the data is stored at localStorage in the browser. This makes the things much easier in order to comunicate the data updates between components.
 # utils
 - https://github.com/lmiller1990/flux-entities /202007/ts
   - The flux entity pattern, or simply the entity pattern, is a common pattern I identified and extracted over the last few years of working on various single page apps

@@ -7,9 +7,15 @@ modified: 2021-08-23T09:58:18.490Z
 
 # thread-fwk-vdom-jsx
 
+# guide
+
 # discuss
+- ## 
 
 - ## 
+
+- ## [Is there any good standalone implementation of the Virtual DOM? : javascript_201410](https://www.reddit.com/r/javascript/comments/2jav2q/is_there_any_good_standalone_implementation_of/)
+- jsdom?
 
 - ## Panapasi (alpha) is the first I see based on @builderio Mitosis
 - https://twitter.com/sebastienlorber/status/1534221702502178816

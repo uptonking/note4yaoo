@@ -315,6 +315,75 @@ modified: 2023-11-21T10:17:34.596Z
   - useReducer with effects, the elmish way
 - https://github.com/iyegoroff/react-use-railway /202309/ts
   - useReducer with effects, the elmish way
+# examples-elm-editor
+- https://github.com/mweiss/elm-rte-toolkit /142Star/BSD/202202/elm
+  - https://mweiss.github.io/elm-rte-toolkit/
+  - A toolkit for creating rich text editors in Elm
+- https://github.com/mweiss/elm-rte /201912/elm
+  - https://mweiss.github.io/elm-rte/build/
+  - An early prototype rich text editor built with elm
+
+- https://github.com/dkodaj/rte /202309/elm
+  - Pure Elm rich text editor for relatively short texts (< 2000 words / 12K characters)
+  - It gets sluggish for longer texts.
+  - If you need better performance, use mweiss/elm-rte-toolkit.
+  - It cannot justify text.
+  - Non-Western Keyboard Input. This is currently not supported, because it is hard to channel CompositionEvents to the Elm RTE object (which is not an input or textarea node).
+  - To communicate with the browser's clipboard (to be able to copy text from the RTE to other apps and paste text from other apps into the RTE), you'll need to add two ports to your app
+
+
+
+
+
+
+
+
+
+
+
+- https://github.com/SidneyNemzer/elm-text-editor /201904/elm
+  - https://sidneynemzer.github.io/elm-text-editor/
+  - A text editor written completely in Elm
+  - This library implements an editor (duh) and a buffer. The buffer is separate from the editor to allow multiple editors to use the same buffer, such as in a multi-panel text editor
+
+- https://github.com/jxxcarlson/elm-editor /41Star/BSD/202104/elm
+  - https://jxxcarlson.github.io/app/text-editor/index.html
+  - a pure Elm text editor. It relies heavily on prior work of Martin Janiczek and Sidney Nemzer.
+  - The approach taken is for the editor to "see" only a small window into the full array of lines of text. That window is currently initialized in EditorModel.init at 300 lines, about ten times the number of lines visible in the editor of smalldemo.
+  - distinguish between the viewport and the window. The former consists of what is visible, while the latter populates the scene defines what can be visible without moving the window in the document from which it is derived.
+
+- https://github.com/Janiczek/elm-editor /70Star/BSD/202003/elm
+  - Basic text editor written in Elm
+  - 未实现 copy/paste; context-menu
+  - [Text editor done in pure Elm - Show and Tell - Elm_201806](https://discourse.elm-lang.org/t/text-editor-done-in-pure-elm/1365)
+
+- https://github.com/leahsteinberg/co /42Star/NALic/201603/elm
+  - a collaborative text editor based on WoOT (Without Operational Transform)
+  - front end in Elm, back in node.
+
+- https://github.com/3tty0n/elm-online-markdown-editor /201708/elm
+  - https://3tty0n.github.io/elm-online-markdown-editor/
+  - An online markdown editor written in Elm.
+- https://github.com/DavidTobin/elm-editor /201710/elm
+  - WYSIWYG editor in Elm
+
+- https://github.com/rofrol/elm-code-editor /201705/elm
+  - Elm code editor - embeddable
+  - elm-0.18
+
+- https://github.com/Orange-OpenSource/elm-advanced-grid /202009/elm/archived
+  - An Elm module to display feature rich grids in web apps.
+  - a dynamically configurable grid of data
+  - in-place filtering and sorting, multiple selection
+
+- https://github.com/pierregoudjo/build-your-own-excel /202308/ts/redux
+  - A Javascript version of a talk showing how to build a simle version of Excel based on functional principles.
+  - This javascript version use Preact and Redux with Typescript instead of Elmish and Fable with F#.
+
+- https://github.com/tpetricek/elmish-spreadsheet /201810/f#
+  - Implement your own Excel 365 in 100 lines of F#
+  - a minimal tutorial showing how to use F#, Fable and Elmish
+  - [Write your own Excel in 100 lines of F# - Tomas Petricek](https://tomasp.net/blog/2018/write-your-own-excel/)
 # examples
 - https://github.com/evancz/elm-architecture-tutorial /201912/elm
   - How to create modular Elm code that scales nicely with your app
@@ -335,27 +404,13 @@ modified: 2023-11-21T10:17:34.596Z
 - https://github.com/dmy/elm-realworld-example-app /202005/elm/inactive
   - Elm RealWorld example application architected with the Effect pattern
 
-- https://github.com/SidneyNemzer/elm-text-editor /201904/elm
-  - https://sidneynemzer.github.io/elm-text-editor/
-  - A text editor written completely in Elm
-
 - https://github.com/huytd/kanelm /201904/elm
   - Kanban board built with Elm
 
-- https://github.com/jxxcarlson/elm-editor /41Star/BSD/202104/elm
-  - https://jxxcarlson.github.io/app/text-editor/index.html
-  - a pure Elm text editor. It relies heavily on prior work of Martin Janiczek and Sidney Nemzer.
-  - The approach taken is for the editor to "see" only a small window into the full array of lines of text. That window is currently initialized in EditorModel.init at 300 lines, about ten times the number of lines visible in the editor of smalldemo.
-  - distinguish between the viewport and the window. The former consists of what is visible, while the latter populates the scene defines what can be visible without moving the window in the document from which it is derived.
-
-- https://github.com/leahsteinberg/co /42Star/NALic/201603/elm
-  - a collaborative text editor based on WoOT (Without Operational Transform)
-  - front end in Elm, back in node.
-
-- https://github.com/Orange-OpenSource/elm-advanced-grid /202009/elm/archived
-  - An Elm module to display feature rich grids in web apps.
-  - a dynamically configurable grid of data
-  - in-place filtering and sorting, multiple selection
+- https://github.com/joakin/elm-7guis /202210/elm
+  - https://eugenkiss.github.io/7guis
+  - Elm implementation of the 7GUIs tasks
+  - [7GUIs implementation in Elm - Show and Tell - Elm_201901](https://discourse.elm-lang.org/t/7guis-implementation-in-elm/3003)
 
 - https://github.com/foxbunny/duckweed /201711/ts
   - JavaScript microframework for programming reactive interfaces using Model-Action-View architecture
@@ -401,10 +456,3 @@ modified: 2023-11-21T10:17:34.596Z
 - https://github.com/mitchmindtree/elmesque /201512/rust
   - An attempt at porting Elm's incredibly useful, purely functional std graphics modules.
 # more
-- https://github.com/pierregoudjo/build-your-own-excel /202308/ts/redux
-  - A Javascript version of a talk showing how to build a simle version of Excel based on functional principles.
-  - This javascript version use Preact and Redux with Typescript instead of Elmish and Fable with F#.
-
-- https://github.com/tpetricek/elmish-spreadsheet /201810/f#
-  - Implement your own Excel 365 in 100 lines of F#
-  - a minimal tutorial showing how to use F#, Fable and Elmish

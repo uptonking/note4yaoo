@@ -36,7 +36,7 @@ modified: 2023-04-04T22:35:59.255Z
 
 - https://github.com/pgte/konphyg
   - Cascading configuration files made easy in Node.js.
-# date-time
+# datetime
 - https://github.com/dmtrKovalenko/date-io
   - Abstraction over common JavaScript date management libraries.
   - exposes an abstraction interface over luxon, date-fns v2, dayjs and moment.
@@ -139,78 +139,10 @@ modified: 2023-04-04T22:35:59.255Z
   - Node.js Native Messaging host
 - https://github.com/browserext/native-messaging
   - Native Messaging for Browser Extensions Specification
-# web-dom
-- https://github.com/retentioneering/retentioneering-dom-observer
-  - The package contains tools for parsing DOM data, observing DOM and tracking changes.
-  - This class is a wrapper over MutationObservers, allowing you to observe changes even of those nodes that are not already in the DOM
-  - Observation will automatically start as soon as the target node appends in the DOM.
-
-- https://github.com/wilsonpage/fastdom /202206/js
-  - Eliminates layout thrashing by batching DOM measurement and mutation tasks
-  - Eliminates layout thrashing by batching DOM read/write operations 
-  - Each measure/mutate job is added to a corresponding measure/mutate queue. The queues are emptied (reads, then writes) at the turn of the next frame using `window.requestAnimationFrame`.
-
-- https://github.com/CoCreate-app/CoCreate-clone /js
-  - https://cocreate.app/docs/clone
-  - Clone an html element by #id, identify targeted elements using clone_id="" attribute. 
-  - Capable of creating nested & complex cloning logic for kanbans, tasklists etc. 
 # render
 - https://github.com/arthurhovhannisyan31/offscreen-canvas-worker
   - Application allows to fetch and process data in the background using workers api.
   - This applications does data fetching and processing in the background with submission of final result to main app.
-# web-storage
-- https://github.com/unjs/unstorage /ts
-  - Unstorage provides an async Key-Value storage API with conventional features like multi driver mounting, watching and working with metadata, dozens of built-in drivers and a tiny core.
-  - Designed for all environments: Browser, NodeJS, and Workers
-  - Default in-memory storage
-  - Asynchronous API
-  - Binary and raw value support
-  - HTTP Storage with built-in server
-  - State snapshots and hydration
-
-- https://github.com/tweedegolf/storage-abstraction /71Star/MIT/202311/ts
-  - Provides an abstraction layer for interacting with a storage; the storage can be local or in the cloud.
-  - Currently local disk storage, Backblaze B2, Google Cloud and Amazon S3 and compliant cloud services are supported.
-
-- https://github.com/aykutkardas/lookie
-  - Store your data in localStorage with optional expiration time.
-# cross-platform
-- https://github.com/lzyzsd/JsBridge /java
-  - android java and javascript bridge, inspired by wechat webview jsbridge
-  - [JS Bridge 通信原理与实践](https://github.com/yinguangyao/blog/issues/50)
-# vdom
-- https://github.com/patrick-steele-idem/morphdom /js
-  - lightweight DOM diffing/patching (no virtual DOM needed)
-  - Lightweight module for morphing an existing DOM node tree to match a target DOM node tree. 
-  - Instead of replacing the existing DOM tree with a new DOM tree we want to transform the existing DOM tree to match the new DOM tree while minimizing the number of changes to the existing DOM tree. 
-  - morphdom does not rely on any virtual DOM abstractions. Because morphdom is using the real DOM, the DOM that the web browser is maintaining will always be the source of truth. 
-  - morphdom can be used with any templating language that produces an HTML string.
-  - The transformation is done in a single pass of both the original DOM tree and the target DOM tree and is designed to minimize changes to the DOM 
-  - the algorithm used by this module will automatically match up elements that have corresponding IDs and that are found in both the original and target DOM tree
-  - Support for diffing the real DOM with a virtual DOM was introduced in v2.1.0
-  - Both morphdom and virtual DOM based solutions update the real DOM with the minimum number of changes. The only difference is in how the differences are determined. **morphdom compares real DOM nodes while virtual-dom and others only compare virtual DOM nodes**.
-
-- https://github.com/bigskysoftware/idiomorph /js
-  - a javascript library for morphing one DOM tree to another
-  - Both morphdom and nanomorph use the `id` property of a node to match up elements within a given set of sibling nodes. When an id match is found, the existing element is not removed from the DOM, but is instead morphed in place to the new content.
-  - However, in both these algorithms, the structure of the children of sibling nodes is not considered when morphing two nodes: only the ids of the nodes are considered. This is due to performance: it is not feasible to recurse through all the children of siblings when matching things up.
-  - Idiomorph takes a different approach: before node-matching occurs, both the new content and the old content are processed to create id sets, a mapping of elements to a set of all ids found within that element. Id sets can be computed relatively efficiently via a query selector + a bottom up algorithm.
-  - idiomorph 来自于框架 htmx。
-  - https://twitter.com/chloerei/status/1712027755259560298
-    - React 成名于 shadow dom，它让开发者尽管 render，库来计算差异然后更新到页面上，提高了开发效率。
-    - Turbo 8 有点类似这个机制，服务端尽管 render，浏览器拿到 html body 之后对比之间的差异，然后更新变化的部分。Turbo 8 用到库是 idiomorph
-    - Phoenix 的 LiveView 也是类似机制，用的库是 morphdom
-
-- https://github.com/natemoo-re/micromorph /ts
-  - A very tiny library for diffing live DOM nodes.
-  - With the /nav entrypoint, Micromorph automatically converts your MPA into a SPA while only re-rendering content that has changed.
-
-- https://github.com/google/incremental-dom /ts
-  - Incremental DOM is a library for building up DOM trees and updating them in-place when data changes. 
-  - 👉🏻 It differs from the established virtual DOM approach in that no intermediate tree is created (the existing tree is mutated in-place). 
-  - This approach significantly reduces memory allocation and GC thrashing
-  - Incremental DOM is primarily intended as a compilation target for templating languages. 
-  - Think of it as ASM.dom
 # diff
 - https://github.com/google/diff-match-patch
   - https://github.com/JackuB/diff-match-patch
@@ -250,6 +182,12 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/unjs/knitwork /ts
   - Utilities to generate JavaScript code.
 # patterns
+- https://github.com/web-infra-dev/unport /ts/cross-runtime
+  - A Universal Port with strict type inference capability for cross-JSContext communication.
+  - Unport emerges as a well-architected solution, meticulously designed to simplify the complexity revolving around various JSContext environments.
+  - Node.js, ChildProcess, Webview, Web Worker, worker_threads, WebSocket, iframe, MessageChannel, ServiceWorker, and much more.
+  - Each of these JSContext environments exhibits distinct methods of communicating with the external world
+
 - https://github.com/unjs/unctx /ts
   - Vue.js introduced an amazing pattern called Composition API that allows organizing complex logic by splitting it into reusable functions and grouping in logical order. 
   - unctx allows easily implementing composition API pattern in your javascript libraries without hassle.
@@ -257,12 +195,6 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/hughfenghen/WebAV /MIT/ts
   - 使用纯Web技术构建的音视频工具，计划包含创建、编辑、导出功能，可应用于直播、教程录制、视频剪辑等产品中。
   - Chrome 94 开放了 WebCodecs API，意味着 JS 也能处理音视频了。在此之前，前端开发在会在有限的场景使用 ffmpeg.js，经过简单地测试解码和重编码视频发现，WebCodecs 性能是 ffmpeg.js 的 20 倍。
-# js-runtime-context
-- https://github.com/web-infra-dev/unport /ts
-  - A Universal Port with strict type inference capability for cross-JSContext communication.
-  - Unport emerges as a well-architected solution, meticulously designed to simplify the complexity revolving around various JSContext environments.
-  - Node.js, ChildProcess, Webview, Web Worker, worker_threads, WebSocket, iframe, MessageChannel, ServiceWorker, and much more.
-  - Each of these JSContext environments exhibits distinct methods of communicating with the external world
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

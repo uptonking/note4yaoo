@@ -27,7 +27,7 @@ modified: 2021-06-09T01:09:55.241Z
   - The intent is generally translated to events in actionCreators and jsx views where we transform low-level dom-events to Redux actions.
   - Command sourcing would permit to hot-reload the interpretation layer too and would replace the "WentLeft" by a"Jump" in the event log before computing the state log and before injection states in React. In practice it has not much interest and may be more complicated to do (not sure but maybe ELM is doing this no?)
 
-- ## [Redux is half of a pattern (1/2) - DEV Community](https://dev.to/davidkpiano/redux-is-half-of-a-pattern-1-2-1hd7)
+- ## 📝 [Redux is half of a pattern (1/2) - DEV Community](https://dev.to/davidkpiano/redux-is-half-of-a-pattern-1-2-1hd7)
 - the article completely misses the point about Redux being an event store that implicitly leverages several good patterns that are seen in highly-available distributed systems.
 - it forces you to separate your write model (dispatch) from your read model (props). this is known as CQRS.
 - the reducers are actually referred to as projections in event sourcing.
