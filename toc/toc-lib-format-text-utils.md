@@ -15,13 +15,42 @@ modified: 2023-09-01T03:56:10.056Z
 
 # utils
 
-# diff
+# diff-match-patch
+- https://github.com/google/diff-match-patch
+  - https://github.com/JackuB/diff-match-patch
+  - The Diff Match and Patch libraries offer robust algorithms to perform the operations required for synchronizing plain text.
+- https://github.com/karak/diff-match-patch-line-and-word /ts
+  - An extension module that adds line-mode and word-mode on google-diff-match-patch, hosted as diff-patch-merge at NPM
+- https://github.com/gamedevsam/diff-match-patch-emoji-issue
+  - isolates and demonstrates the emoji diff problem in the diff-match-patch
 
+- ts-port
+  - https://github.com/rars/diff-match-patch-ts
+  - https://github.com/nonoroazoro/diff-match-patch-typescript
+
+- https://github.com/jhchen/fast-diff /202305/js
+  - a simplified import of the excellent diff-match-patch library into the Node.js environment
+  - The diff function is an implementation of "An O(ND) Difference Algorithm and its Variations" (Myers, 1986) with the suggested divide and conquer strategy along with several optimizations Neil added.
+
+- https://github.com/NPCDW/HtmlDiff
+  - Html文本比对实现，基于google的diff_match_patch
+
+- https://github.com/ace-diff/ace-diff
+  - A diff/merging wrapper for Ace Editor built on google-diff-match-patch
+# diff
 - https://github.com/icflorescu/textdiff-patch /ISC/js
   - simple module for applying lean text diff delta patches created by textdiff-create.
   - https://github.com/icflorescu/textdiff-create /ISC/js
     - simple module for creating lean text diff deltas, based on the excellent fast-diff by Jason Chen.
     - Instead of sending the entire block of text to the server on each save, you'd ideally want to submit a "minimal patch" for each operation
+
+- https://github.com/davidar/pandiff
+  - Prose diffs for any document format supported by Pandoc
+  - Supported output formats:
+    - HTML
+    - PDF, via LaTeX
+    - Word docx with Track Changes
+    - CriticMarkup
 
 - https://github.com/wickedest/Mergely /js/LGPL
   - http://www.mergely.com/

@@ -138,7 +138,7 @@ modified: 2022-02-05T18:45:34.558Z
   - https://github.com/ccorcos/draggable-list
   - A well-contained abstraction with simple performant animations.
 
-- https://github.com/taye/interact.js /ts
+- https://github.com/taye/interact.js /11.8kStar/MIT/202311/ts
   - http://interactjs.io/
   - JavaScript drag and drop, resizing and multi-touch gestures with inertia and snapping for modern browsers
   - not modifying the DOM except to change the cursor (but you can disable that)

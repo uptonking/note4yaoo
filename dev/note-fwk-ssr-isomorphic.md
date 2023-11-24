@@ -27,6 +27,13 @@ modified: 2020-12-19T13:05:23.294Z
   - 营销页面、产品介绍页面(Marketing pages)
 # blogs
 
+## [LiveViewJS Introduction](https://www.liveviewjs.com/docs/overview/introduction)
+
+- LiveViewJS is an open-source framework for "LiveView"-based, full-stack applications in NodeJS and Deno.
+- The LiveView pattern, as popularized in Elixir’s Phoenix framework, shifts your UI’s state management, event handling to the server, calculating minimal diffs to drive updates in your HTML over WebSockets.
+- a LiveView is a server-rendered HTML page that, when loaded, connects back to the server via a persistent web socket. As the user interacts with the LiveView, the client to sends user events (click, keys, etc) via the websocket back to the server and the server responds with diffs to the HTML page in return.
+- LiveViewJS is a protocol compliant, implementation of Phoenix LiveView but written in Typescript and runs on NodeJS and Deno. We want to bring the magic and productivity of LiveView to the NodeJS and Deno ecosystems
+
 ## [新时代的 SSR 框架破局者：qwik - 知乎](https://zhuanlan.zhihu.com/p/597473358)
 
 - 所谓 CSR 的意味着当发出一个请求时，服务器会返回一个空的 HTML 页面以及对应的 JavaScript 脚本。

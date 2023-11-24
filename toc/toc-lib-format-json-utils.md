@@ -101,10 +101,17 @@ modified: 2022-11-06T15:45:36.913Z
 - https://github.com/Breus/json-masker /java
   - used to mask string and/or numeric values from JSON messages, corresponding to a (set of) target key(s). 
   - The implementation is focused on maximum (time) performance using Java and requires no additional runtime dependencies.
-# diff
+# diff-json/object
 - https://github.com/zgrossbart/jdd /js
   - JSON Diff expands on the amazing work by the team at jsonlint.com and provides a semantic compare tool for JSON documents.
   - JSON Diff sorts, formats, and compares two JSON documents to find the actual semantic differences instead of just the text ones.
+
+- https://github.com/Swizz/trdis /201908/js
+  - a 350 Bytes diff function returning a patch object, allowing you to perform time traveling to an object or an array using your own merge functions with ease.
+  - const present = diff(past, future)
+  - const past = { ...future, ...present.undo }
+  - const future = { ...past, ...present.do }
+  - The patch hold two properties, the do and the undo. Both are simple objects, ready to be merged with the current object
 # merge
 - https://github.com/avian2/jsonmerge /python
   - merge a series of JSON documents into a single one

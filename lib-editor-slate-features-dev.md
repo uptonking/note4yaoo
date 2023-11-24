@@ -37,6 +37,7 @@ modified: 2023-03-16T16:29:47.610Z
   - chart
   - calendar
   - image-editor
+  - model层使用ast?
 
 - alternatives & ideas
   - 国内: wangEditor, vditor, textbus, am-editor/editablejs, ueditor
@@ -183,6 +184,7 @@ modified: 2023-03-16T16:29:47.610Z
 # idea
 - 开发方向
   - ❓ 偏向产品feature vs 偏向office兼容性
+  - model层使用ast?
 
 - page级别的视图切换
   - 类似codepen的editor/page，注意codepen有tv视图

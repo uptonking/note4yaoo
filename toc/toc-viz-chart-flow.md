@@ -52,10 +52,12 @@ modified: 2020-10-22T10:22:55.878Z
   - Additional minified JavaScript files and Java libraries are used in this project. All of the licenses are deemed compatible with the Apache 2.0, nothing is GPL or AGPL
   - draw.io is also closed to contributions.
 
-- https://github.com/nicoespeon/gitgraph.js /MIT/202209/ts
+- https://github.com/nicoespeon/gitgraph.js /2.9kStar/MIT/202209/ts/inactive
   - https://www.nicoespeon.com/gitgraph.js
   - https://www.nicoespeon.com/gitgraph.js/stories/
   - A JavaScript library to draw pretty git graphs in the browser
+  - core无依赖，支持vanillajs、React
+  - @gitgraph/core contains the main logic for manipulating git-like API and compute the graph that should be rendered.
 
 - jsplumb /7.3kStar/MIT/202302/ts/NoDeps
   - https://github.com/jsplumb/jsplumb

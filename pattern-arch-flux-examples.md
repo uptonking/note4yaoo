@@ -70,6 +70,7 @@ modified: 2023-11-17T10:28:14.247Z
     - Support React Hooks in @fleur/react
     - Fleur recommends Re-ducks like directory structure.
     - Support Redux DevTools，支持时间旅行
+    - [Introduction of Fleur - It's a new Flux framework_201905](https://dev.to/hanakla/introduction-of-fleur-it-s-a-new-flux-framework-19d9)
     - https://github.com/fleur-js/froute
       - Framework independent Router for React. redux/Fleur
 

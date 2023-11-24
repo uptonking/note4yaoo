@@ -50,8 +50,12 @@ modified: 2022-10-04T23:32:30.824Z
   - https://milahu.github.io/prosemirror-track-changes-demo/
   - add a "track changes" feature to prosemirror
 
+- https://github.com/Atypon-OpenSource/manuscripts-track-changes-plugin /202311/ts
+  - ProseMirror plugin to track inserts/deletes to nodes and text.
+
 - https://github.com/newsdev/prosemirror-change-tracking-prototype /201609/js
   - ProseMirror change tracking proof-of-concept
+  - https://github.com/nytimes/prosemirror-change-tracking-prototype
 
 - https://github.com/dxos/editor  /1Star/AGPLv3/202101/js/archived
   - Collaborative editor

@@ -56,7 +56,16 @@ modified: 2023-11-01T10:08:09.232Z
 # discuss
 - ## 
 
-- ## 
+- ## ❌ One JSON file per application log event. 
+- https://twitter.com/gunnarmorling/status/1727586416413077924
+  - It's this kind of inefficiencies which make me think that our industry probably could do with 1/10th of the compute resources, when designing systems just a bit more carefully.
+- You or I would see these JSON docs as records in a (streaming) database, or as (remote) method arguments in (persistent) memory. But when all you have is a hammer… and that hammer is a (pretty good) distributed file system., this is what happens.
+
+- Seen this a few times. Kafka sink to S3, IoT, event sourcing, etc as a raw backup.
+
+- Easy to see how you end up with this design. It makes the producer side very simple, just a stateless call to the AWS API per event. And it scales well for large message sizes.
+
+- Me, I would process and ingest all those within AWS in any convenient database. Then, even reexport in a more suitable format . Sure it will take time, but a few speeding tricks and some patience should do it especially since the bulk of the work is only done once.
 
 - ## 今日 Rust 小震撼: 把 logstash 换成 vector 之后内存用量从 7G 降至不到 200M
 - https://twitter.com/electroniclunar/status/1722457277305950556

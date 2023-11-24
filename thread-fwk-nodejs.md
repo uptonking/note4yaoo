@@ -14,7 +14,15 @@ modified: 2022-12-19T01:48:53.761Z
 
 - ## 
 
-- ## 
+- ## 在Node环境中跑起了PHP框架Laravel。
+- https://twitter.com/TooooooBug/status/1727896108591178194
+  - 去年7月左右 WordPress被成功在WASM PHP环境中跑起来 https://wasmlabs.dev/articles/wordpress-in-the-browser/
+  - PHP-WASM项目地址 https://github.com/seanmorris/php-wasm
+  - @php-wasm/node包https://npmjs.com/package/@php-wasm/node
+  - 基于php-wasm的Laravel环境
+- 意义在于用serverless 环境来跑Laravel？
+  - 项目README中写得很直白：解决PHP开发环境搭建的问题。
+  - 但这类项目确实可以有更深远的意义，相当于编程语言/环境有大一统的可能性了，无论是serverless环境还是浏览器环境还是什么其他的环境，都更容易支持。也许也还能带来其它新的特性和玩法或者性能上的提升之类之类的。
 
 - ## 🆚️ Web server 'hello world' benchmark : Go vs Node.js vs Nim vs Bun
 - https://twitter.com/lemire/status/1710538462460256437

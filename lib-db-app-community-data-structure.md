@@ -36,6 +36,10 @@ modified: 2023-09-17T18:17:41.377Z
 # discuss-tree
 - ## 
 
+- ## 
+
+- ## 
+
 - ## Reading the Adaptive Radix Tree paper - Having the realisation that trie is such an underrated data structure. 
 - https://twitter.com/debasishg/status/1725966931830923489
   - Wondering why we should use any other data structure for in memory database indexes.
@@ -52,6 +56,9 @@ modified: 2023-09-17T18:17:41.377Z
 - DuckDB has good article on ART and compression.
   - Also, in latest Cassandra release they have Trie based implementation which seems to do better than B Trees, even on storage if I am not wrong. they also have included byte comparable keys to get performance gain on comparisons.
 - Here’s an initial impl in Swift as well from FoundationDB team
+
+- https://twitter.com/debasishg/status/1727963715952402658
+  - TIL: A persistent version of the Adaptive Radix Tree exists, a map data structure designed for in-memory analytics that supports efficient fine-grained updates without compromising immutability. 
 
 - ## 🌲 [Hierarchical Structures in PostgreSQL (2020) | Hacker News_202106](https://news.ycombinator.com/item?id=27631765)
 - A great overview of the pros and cons of different approaches is given in [Models for hierarchical data | PPT](https://www.slideshare.net/billkarwin/models-for-hierarchical-data)

@@ -55,6 +55,12 @@ modified: 2021-01-13T19:30:59.508Z
   - 只依赖react
   - 画板元素都是svg元素
 
+- https://github.com/LHRUN/paint-board /MIT/202309/ts
+  - https://songlh.top/paint-board/
+  - 基于canvas的多功能画板
+  - 依赖react-dnd、daisyui
+  - Canvas based drawing board, including free drawing, eraser, text, select, layer, undo, redo, clear, save, drag
+
 - roughViz /MIT/5.4kStar/202006
   - https://github.com/jwilber/roughViz
   - https://github.com/rough-stuff/rough

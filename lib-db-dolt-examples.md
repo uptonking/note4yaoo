@@ -15,6 +15,10 @@ modified: 2023-08-25T22:31:05.132Z
   - 数据库，如dolt、mongodb-doc-ver
   - version/revision history可以在orm层实现，不必执着于数据库内置
   - branch的粒度在table-row，而不是全库-文件
+
+- usecase-branching
+  - testing/drafting
+  - form editing
 # popular
 - https://github.com/mikolalysenko/version-tree /201404/js/inactive
   - A data structure for maintaining a tree of versions. 
@@ -71,6 +75,13 @@ modified: 2023-08-25T22:31:05.132Z
   - a "GitHub for Writers" built using the MERN stack -- Express, MongoDB, and React/Redux.
   - We enabled writers to execute complex version control actions by recreating the committing and branching workflows natively and simplifying processes by removing the use of terminal and using custom React modals in its place. 
     - We used **Myers' diff** algorithm to identify the text differences between commits and branches.
+
+- https://github.com/nicoespeon/gitgraph.js /2.9kStar/MIT/202209/ts/inactive
+  - https://www.nicoespeon.com/gitgraph.js
+  - https://www.nicoespeon.com/gitgraph.js/stories/
+  - A JavaScript library to draw pretty git graphs in the browser
+  - core无依赖，支持vanillajs、React
+  - @gitgraph/core contains the main logic for manipulating git-like API and compute the graph that should be rendered.
 # data-branching-versioning/revisions
 - https://github.com/snowtrack/snowfs /GPLv3/ts/inactive
   - https://www.snowtrack.io/
@@ -382,7 +393,7 @@ modified: 2023-08-25T22:31:05.132Z
   - https://organizationing.vercel.app/
   - A test to do an undo, redo action with no cloning, with tree-like model.
 
-- https://github.com/sdq/history-tree /js
+- https://github.com/sdq/history-tree /201901/js
   - https://sdq.github.io/history-tree/
   - An interactive history tree for undo/redo/reset/revisit in javascript
 

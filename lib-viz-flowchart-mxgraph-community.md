@@ -14,7 +14,11 @@ modified: 2023-05-29T15:09:48.766Z
 
 - ## 
 
-- ## 
+- ## Have someone tried to build a graph like this in HTML and CSS?
+- https://twitter.com/hhg2288/status/1727836911899676856
+- I'd consider constructing this kind of thing with SVG. Also, it might end up being easiest to actually measure locations of the adjacent history parts rather than trying to predict them.
+- Drawing this is only part of the problem. And indeed I think you gotta need SVG at least.
+  - But before starting the drawing you’d need to compute the layout of the DAG first, and figure out the minimum number of columns and how to pack the nodes onto them.
 
 - ## 💡 [Performance on loading \ inserting \ zooming in mxgraph](https://github.com/jgraph/mxgraph/issues/265)
 - The main issue here is manipulating a large SVG DOM takes time. The change for zooming involved SVG zoom, to avoid the SVG DOM API.

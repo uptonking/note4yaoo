@@ -243,6 +243,13 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/b-kelly/prosemirror-highlightjs
   - Due to how ProseMirror renders decorations, some existing highlight.js themes might not work as expected.
   - ProseMirror collapses all nested/overlapping decoration structures
+# selection
+- https://github.com/xnimorz/selection-range-enhancer /202010/ts
+  - A project, which enhances abilities of selectionRange. It allows to track changes, works with carets and so on
+
+- https://github.com/retentioneering/retentioneering-dom-observer /202111/ts
+  - tools for parsing DOM data, observing DOM and tracking changes
+  - a wrapper over MutationObservers, allowing you to observe changes even of those nodes that are not already in the DOM.
 # more-utils
 - https://github.com/remirror/prosemirror-migration
   - a tool for migrating ProseMirror documents when you have breaking changes to your document schema.

@@ -535,6 +535,19 @@ modified: 2023-09-28T20:35:56.153Z
   - The PouchDB database persists the state of chosen parts of the Redux store every time it changes.
 - https://github.com/medihack/redux-pouchdb-plus /201806/js
   - Synchronize Redux store with PouchDB to have a persistent store.
+- https://github.com/jurassix/redux-pouchdb-store-enhancer /201611/js
+  - to store actions locally, sync with remote CouchDB, and time travel by applying remote actions locally and then compute distributed nextState.
+  - Every action that a single client emits as part of the regular Redux architecture will be intercepted and pushed into a local PouchDB database.
+  - All local PouchDB actions are sync'd to a remote CouchDB database. 
+  - All actions are added to the DB in accountant style, where every record is additive, and conflicts are almost guaranteed to be nonexistent.
+  - Actions ordering is guaranteed to be deterministic by using a PouchDB `_id` that is a composite of `TIMESTAMP-UUIDv4`.
+  - [Performance with large number of stored events](https://github.com/jurassix/redux-pouchdb-store-enhancer/issues/2)
+    - I love idea of automatic state syncing, and generating new state based on saved events. 
+    - However, I've made some benchmarks and find out that the most time-consuming part of loading state is getting all stored actions from local PouchDB instance.
+    - this test shows main bottleneck of loading all store events from PouchDB. We need to figure out some way to efficiently load inital state
+    - My plan to prevent this issue was to consolidate actions into a single action given a threshold. When to do this is the hard part
+    - Maybe if we chunked the batching we could mitigate some of the time traveling conflicts. So instead of condensing all actions at a threshold we could just condense partitions of the actions.
+    - I have thought about moving the reducer to the server too. 
 - https://github.com/alexcorvi/PouchX /mobx
   - Seamless synchronization between PouchDB and MobX
 

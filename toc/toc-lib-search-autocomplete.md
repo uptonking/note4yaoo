@@ -102,12 +102,13 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/bvaughn/js-worker-search
   - Full text client-side search based on js-search but with added web-worker support for better performance.
 
-- minisearch /1.9kStar/MIT/202212/ts/NoDeps
+- minisearch /1.9kStar/MIT/202311/ts/NoDeps
   - https://github.com/lucaong/minisearch
   - a tiny but powerful in-memory fulltext search engine written in JavaScript. 
   - It is respectful of resources, and it can comfortably run both in Node and in the browser.
   - MiniSearch addresses use cases where full-text search features are needed (e.g. prefix search, fuzzy search, ranking, boosting of fields…)
   - Memory-efficient index, designed to support memory-constrained use cases like mobile browsers.
+  - 支持中文
 
 - itemsjs /274Star/apache2/202208/js/NoDeps
   - https://github.com/itemsapi/itemsjs

@@ -117,6 +117,13 @@ modified: 2023-02-05T18:50:53.563Z
   - [How to create and manage Mongo DB Materialized Views using triggers.](https://bonigopalan.medium.com/how-to-create-and-manage-mongo-db-materialized-views-using-triggers-a2fb58a4d1a0)
 - https://github.com/janez89/mongoose-materialized /js/inactive
   - A mongoose plugin for the materialized paths.
+
+- https://github.com/Walcu-Engineering/mongoose-track-changes /202309/js
+  - a Mongoose plugin that tracks every change that is made to a model at runtime in a transparent way for the developer.
+  - The changes array is not stored in the database, this array only lives at runtime in `$locals.changes` document path.
+  - What if I want to store the changes in the database? This plugin does not support 
+- https://github.com/nosuchip/mongoose-track /201806/js
+  - Mongoose model change history tracking and storing into model's "history" field.
 # mongo
 
 - https://github.com/maggregor/maggregor /ts

@@ -25,6 +25,13 @@ modified: 2020-12-19T13:04:40.865Z
 - https://github.com/childrentime/island-architecture
   - a demo of implementing the Island Architecture in React.
 
+- https://github.com/floodfx/liveviewjs /646Star/MIT/202306/ts
+  - https://www.liveviewjs.com/docs/overview/introduction
+  - LiveViewJS is an open-source framework for "LiveView"-based, full-stack applications in NodeJS and Deno.
+  - The LiveView pattern, as popularized in Elixir’s Phoenix framework, shifts your UI’s state management, event handling to the server, calculating minimal diffs to drive updates in your HTML over WebSockets.
+  - a LiveView is a server-rendered HTML page that, when loaded, connects back to the server via a persistent web socket. As the user interacts with the LiveView, the client to sends user events (click, keys, etc) via the websocket back to the server and the server responds with diffs to the HTML page in return.
+  - LiveViewJS is a protocol compliant, implementation of Phoenix LiveView but written in Typescript and runs on NodeJS and Deno. We want to bring the magic and productivity of LiveView to the NodeJS and Deno ecosystems
+
 - https://github.com/winwiz1/crisp-react /202201/ts
   - Crisp React can optionally split a monolithic React app into multiple Single Page Applications (SPAs) and selectively prerender the landing/index page of any SPA at the build time.
   - Helps to split a monolithic React app into multiple SPAs and avoid vendor lock-in.

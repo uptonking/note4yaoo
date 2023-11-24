@@ -59,6 +59,15 @@ docker stop containerId
   - Wine是一款用于在Linux上运行Windows程序的运行时，既不提供虚拟化也不提供容器化（除非你使用包含容器功能的第三方wine发行版）。
 - KVM是Linux的一个内核模块，提供内核级的虚拟化支持。
 - Qemu是一款虚拟机软件。在Linux上通常和KVM配合使用。
+# discuss-container-dev
+- ## 
+
+- ## 发现同节点的两个容器之间的吞吐量只有跨节点的 30%，
+- https://twitter.com/liumengxinfly/status/1727680591917973607
+  - 一开始以为可能收发包在一个CPU上资源被抢占了，今天 profile 一下发现同节点的时候内核处理多了个 ip_local_deliever 直接占了快 30% 的 CPU。图1同节点，图2跨节点。
+  - 试了下调大 udp_mem 吞吐量上升了不少，不过profile瓶颈还是在这块，应该是buffer多大最终都被占满了。估计是同主机通信数据包进了接收队列就等另一边去拿了，另一侧处理不过来buf就满了，跨主机直接扔出去buf就不会满了
+- 在uds dgram也碰到过类似的情况 多个客户端通过uds dgram往服务端写数据 当recv buf满的时候客户端会加到sock waitq上, 这个过程会拿锁 因为conetless 没有建连 都在一个sock上导致竞争 后来就改成了stream
+
 # discuss
 - ## 
 

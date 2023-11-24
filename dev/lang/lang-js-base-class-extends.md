@@ -21,7 +21,11 @@ modified: 2022-11-23T17:48:48.839Z
 
 - ## 
 
-- ## 
+- ## I think classes make more sense for a component model than functions
+- https://twitter.com/passle_/status/1727733249844064534
+- Classes are okay *in general* for a component model, but if we’re talking about React, I don’t miss needing to use componentWillReceiveProps where we now use useEffect.
+- Classes don't compose, which is kind of a deal breaker for components.
+- Classes are fine, but I'm not sure coupling state instantiation and render was ever a good approach.
 
 - ## Change my mind: The “this” keyword in JavaScript has gotten a bad wrap.
 - https://twitter.com/jpschroeder/status/1712500964085670069

@@ -14,7 +14,9 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
-- ## 
+- ## Not enough people, me included, understand how suspense works
+- https://twitter.com/TkDodo/status/1727806048910651628
+- What seems to surprise people the most is timing though. I get asked a lot how dependent queries work with suspense and the answer is: they just do, because it fires the first query, then suspends, then fires the second. It just surprised me that people have been using suspense for quite some time but don't know this because it means they've had unintentional waterfalls ...
 
 - ## I often group related props into an object.
 - https://twitter.com/housecor/status/1723706241048809898
@@ -298,7 +300,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                   `ValueFront`,                                                   `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                    `ValueFront`,                                                    `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

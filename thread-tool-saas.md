@@ -12,7 +12,10 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
-- ## 
+- ## Live coding is hard to be perfect (I'm so good at typo), so why don't we automate it?
+- https://twitter.com/antfu7/status/1505236765447458817
+  - Take the snapshots for the changes(clicks), and then play it! Saves as plain text so you can edit it afterward and even commit to git
+  - 基于编辑记录文件，在vscode播放代码编写的过程
 
 - ## 一个视频处理库，提交记录12000多次，非常古早且强大
 - https://twitter.com/chenbimo/status/1725213333991931992

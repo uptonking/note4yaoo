@@ -240,6 +240,11 @@ modified: 2022-04-05T10:08:25.947Z
   - track changes effortlessly as it records the editing history with low overhead.
   - https://github.com/loro-dev/loro-examples-deno
 
+- https://github.com/loro-dev/loro-time-travel-demo /202311/ts
+  - https://loro-dev.github.io/loro-time-travel-demo/
+  - demonstrate Loro's high performance and time travel capabilities. 
+  - The entire code is only about 100 lines.
+
 - https://github.com/serenity-kit/secsync /ts
   - https://www.secsync.com/
   - Is an architecture to relay end-to-end encrypted CRDTs over a central service.

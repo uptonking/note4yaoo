@@ -49,6 +49,7 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/chenyuncai/tiptap-track-change-demo /vue
   - https://track-change.onrender.com/
   - [Implement new track changes in current document, just lice office review mode](https://discuss.prosemirror.net/t/implement-new-track-changes-in-current-document-just-lice-office-review-mode/4890)
+  - https://github.com/chenyuncai/tiptap-track-change-extension
 
 - https://github.com/johnpuddephatt/gutentap
   - https://gutentap.letsdance.agency/

@@ -143,41 +143,6 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/arthurhovhannisyan31/offscreen-canvas-worker
   - Application allows to fetch and process data in the background using workers api.
   - This applications does data fetching and processing in the background with submission of final result to main app.
-# diff
-- https://github.com/google/diff-match-patch
-  - https://github.com/JackuB/diff-match-patch
-  - The Diff Match and Patch libraries offer robust algorithms to perform the operations required for synchronizing plain text.
-- https://github.com/karak/diff-match-patch-line-and-word /ts
-  - An extension module that adds line-mode and word-mode on google-diff-match-patch, hosted as diff-patch-merge at NPM
-- https://github.com/gamedevsam/diff-match-patch-emoji-issue
-  - isolates and demonstrates the emoji diff problem in the diff-match-patch
-- ts-port
-  - https://github.com/rars/diff-match-patch-ts
-  - https://github.com/nonoroazoro/diff-match-patch-typescript
-- https://github.com/NPCDW/HtmlDiff
-  - Html文本比对实现，基于google的diff_match_patch
-
-- https://github.com/davidar/pandiff
-  - Prose diffs for any document format supported by Pandoc
-  - Supported output formats:
-    - HTML
-    - PDF, via LaTeX
-    - Word docx with Track Changes
-    - CriticMarkup
-
-- https://github.com/ace-diff/ace-diff
-  - A diff/merging wrapper for Ace Editor built on google-diff-match-patch
-
-- https://github.com/wickedest/Mergely /js/LGPL
-  - http://www.mergely.com/
-  - [Mergely Visualized Diff demo](https://codepen.io/wickedest/pen/yLowrde)
-  - a JavaScript component for differencing and merging files interactively in a browser (diff/merge).
-  - It is suitable for comparing text files online, such as .txt, .html, .xml, .c, .cpp, .java, .js, etc.
-  - Mergely has a JavaScript implementation of the Longest Common Subsequence (LCS) diff algorithm, and a customizable markup engine. It computes the diff within the browser.
-
-- https://github.com/jhchen/fast-diff
-  - a simplified import of the excellent diff-match-patch library into the Node.js environment
-  - The diff function is an implementation of "An O(ND) Difference Algorithm and its Variations" (Myers, 1986) with the suggested divide and conquer strategy along with several optimizations Neil added.
 # code-generator
 - https://github.com/unjs/knitwork /ts
   - Utilities to generate JavaScript code.
@@ -187,6 +152,11 @@ modified: 2023-04-04T22:35:59.255Z
   - Unport emerges as a well-architected solution, meticulously designed to simplify the complexity revolving around various JSContext environments.
   - Node.js, ChildProcess, Webview, Web Worker, worker_threads, WebSocket, iframe, MessageChannel, ServiceWorker, and much more.
   - Each of these JSContext environments exhibits distinct methods of communicating with the external world
+
+- https://github.com/jcubic/sysend.js /202306/js
+  - a small library that allows to send messages between pages that are open in the same browser
+  - It also supports Cross-Domain communication (Cross-Origin). 
+  - The library doesn't have any dependencies and uses the HTML5 `LocalStorage` API or `BroadcastChannel` API. 
 
 - https://github.com/unjs/unctx /ts
   - Vue.js introduced an amazing pattern called Composition API that allows organizing complex logic by splitting it into reusable functions and grouping in logical order. 

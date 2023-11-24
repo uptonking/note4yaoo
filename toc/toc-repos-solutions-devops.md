@@ -22,6 +22,10 @@ modified: 2020-12-12T19:01:56.749Z
 - https://github.com/pahen/madge
   - Create graphs from your CommonJS, AMD or ES6 module dependencies
 # monitoring
+- https://github.com/openreplay/openreplay /8.2kStar/Elastic/202311/ts/go/python
+  - https://openreplay.com/
+  - a session replay suite you can host yourself, that lets you see what users do on your web app, helping you troubleshoot issues faster.
+
 - https://github.com/parseablehq/parseable /rust
   - Parseable is a lightweight, cloud native log observability and analytics engine. 
   - It is written in Rust and uses Apache Arrow and Parquet.
@@ -34,6 +38,10 @@ modified: 2020-12-12T19:01:56.749Z
 
 - https://github.com/M-cheng-web/web-tracing /ts
   - 为前端项目提供【 埋点、行为、性能、异常、请求、资源、路由、曝光、录屏 】监控手段
+
+- https://github.com/del-systems/swatcher /202311/js
+  - https://del.systems/2021/06/22/swatcher.html
+  - This project aimed to collect screenshots from UI tests and store them to S3 compatible storage. 
 # status-page
 - https://github.com/openstatusHQ/openstatus
   - https://openstatus.dev/

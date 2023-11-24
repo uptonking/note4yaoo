@@ -43,10 +43,12 @@ modified: 2022-11-08T19:03:33.865Z
 - https://github.com/hzpeng57/plain-text-editor /ts/vue
   - A plain text editor (based on textarea)
 
-- https://github.com/taufik-nurrohman/text-editor  /202209/js
+- https://github.com/taufik-nurrohman/text-editor /202304/js
   - https://taufik-nurrohman.github.io/text-editor
   - Text Editor is a simple JavaScript application that aims to provide accessibility improvements to the native HTML `<textarea>` elements
   - 侧重api，过于简单
+  - https://github.com/taufik-nurrohman/text-editor.history
+    - http://taufik-nurrohman.js.org/text-editor.history
 
 - https://github.com/lovasoa/react-contenteditable
   - React component for a div with editable contents
