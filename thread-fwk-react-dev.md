@@ -10,6 +10,16 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## I love the simplicity of React's reuse model.
+- https://twitter.com/housecor/status/1728385239611789758
+  - Repeating JSX? Create a component.
+  - Repeating logic? Create a hook.
+  - I can compose these simple building blocks in infinite ways.
+- Components and hooks are functions. So they compose much like any other function.
+- The complexity arises when sharing state, aka state management. Recently it got even more complex with server components: server vs client state
+
 - ## [TodoMVC App Written in Vanilla JavaScript | Hacker News_202205](https://news.ycombinator.com/item?id=31293750)
 - This code reminds me of Backbone. 
   - I think we all started here and then abstracted event handling and reactivity into a tiny framework like Backbone. 
@@ -107,6 +117,15 @@ modified: 2021-01-06T14:40:03.364Z
 - ## 
 
 - ## 
+
+- ## Classes combine state and behavior - just what you need for components.
+- https://twitter.com/justinfagnani/status/1728128464946098539
+  - Things like hooks try to turn functions into classes by emulating fields and methods, but do it poorly.
+- With classes it is too easy to combine things that should be separated. With functions you are forced to use composition avoiding many mistakes that are easy to make when using classes.
+  - his is clearly not a useful distinction with hooks. It's very easy to have a stateful function that does too many things. Plus, you can use composition with classes: they can even call functions
+- 👉🏻 The highest ideal is that a UI component has no state at all and is purely rendered from props. If you can separate state from this, you have a pure render fn. Obviously state has to be managed _somewhere_. Class components have instance members, and FCs have hooks. If you have no state, a FC is best.
+- The problem with classes was that there was no good way to extract and share behavior across multiple different classes. Things like mixins, inheritance, HOC’s, render props all had severe downsides.
+- for reusable components, if used in isolation where they need their own state, it’s a better fit I think. I like functional components more when used with a global state and using only props not dealing with other complexity like shadowdom and attributes.
 
 - ## React had to come up with an arbitrary `use` prefix to denote they own this specific function. 
 - https://twitter.com/puruvjdev/status/1725954832840769872

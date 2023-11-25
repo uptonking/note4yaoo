@@ -133,6 +133,11 @@ modified: 2021-01-01T22:26:57.773Z
   - A GNOME Shell Extension to manage shortcuts in Top Bar (Inspired by Shuttle and SSHMenu)
   - [Standard Icon Names](https://specifications.freedesktop.org/icon-naming-spec/latest/ar01s04.html)
   - [use multiple commands](https://github.com/arunk140/gnome-command-menu/issues/6)
+
+## nautilus
+
+- https://github.com/costales/clipboard-to-file /202210/python
+  - Paste Linux clipboard (text/image) into a file
 # wayland
 - ## 
 

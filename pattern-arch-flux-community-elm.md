@@ -12,6 +12,13 @@ modified: 2023-11-20T19:04:12.672Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## [How to reuse elm view/logic on different projects?_201812](https://github.com/dwyl/learn-elm/issues/125)
+- I've done more research and reading (especially evancz/elm-sortable-table) to try to understand how to make the code reusable. I think the main two concepts to remember is
+  - to have one source of truth for your data. Do not store the data in your package model
+  - Elm doesn't work well to create reusable components. Instead create your package as a reusable view. On previous project I've done this mistake and I think I start to understand the difference and see the advantages of creating reusable views.
+
 - ## 🤔💫 [Using Elm (or React) is a bad idea for performant graphics in the web_201601](https://github.com/elm/compiler/issues/1247)
 - The reason is because using Elm's functional diffing algorithm to calculate graphics is not a good idea (it's not a good idea to do this with React, Mercury, Om, Mithril, or any library with these concepts). 
   - To have control of graphics, the pipeline to the browser renderer needs to be pure and have the smallest layer above the browser's renderer.
@@ -123,7 +130,7 @@ modified: 2023-11-20T19:04:12.672Z
 - It is true that objects can be represented as recursive records and functions in an immutable language
 - The same operational semantics works for "components" too. I am talking about the technical details, not the "looks". That's my whole point.
 
-- ## 🏘️ [Components in Elm: why (not) and how?_201708](https://www.reddit.com/r/elm/comments/6x5w07/components_in_elm_why_not_and_how/)
+- ## 🏘️🤔 [Components in Elm: why (not) and how?_201708](https://www.reddit.com/r/elm/comments/6x5w07/components_in_elm_why_not_and_how/)
   - I've looked at the view functions over components paradigm. This works well for small item, such as text fields and buttons. 
   - However, larger elements, such as whole pages in SPA's, often require update and subscription functions as well.
   - We can implement these functions either in their separate functions, or add all their logic in the main update and subscription functions. The later option seems like pure madness to me in terms of code quality.
@@ -142,13 +149,24 @@ modified: 2023-11-20T19:04:12.672Z
   - Try to find dependencies in your model and extract those into a datastructure.
   - Once your Msg type becomes too big, group related messages into sub messages.
 
-- Maybe and erlang approach where each component has an state and be a separate module, and the components communicate through messages, ok no
+- TL/DR; For now use functions and if you need to extract something it is common to have a (model, update, view) triplet with a sub Msg type that a parent needs to incorporate.
+
+- It is worth noting that most so called "components" have the entirety of the state being essential state and as such they can be implemented as simple functions.
+  - You will then have another subset of components that don't need effects and those can be implemented with the elm-sortable-table pattern.
+  - Only a very tiny minority need the full triad(三件套). This means that the boilerplate issue is often over-emphasized.
+  - These being said, there are contexts where this stops being true.one needs accidental state in most UI components and this explodes the boilerplate use.
+
+- 👉🏻 Maybe and erlang approach where each component has an state and be a separate module, and the components communicate through messages, ok no
 
 - 💡 Because state is immutable in a functional language, attempting to encapsulate state does two things. a) try to destroy all the benefits of having immutable state to begin by bringing it back. b) wreak(造成破坏, 伤害) havoc(破坏) on the type signatures because of the weaving you have to do. 
   - The units of composition in FP are datastructures on one side and regular functions on the other. 
   - The units of composition in FP are NOT objects, for the very reason that the purpose of objects is to encapsulate a state which FP just does not even have. 
   - 👉🏻 Try to reason about your code as a series of data transformations and not a progression of state.
 
+- If all the state of the component is essential state (e.g. the toggle state of a checkbox), you can use a function and messages that would alter that state in the way that it needs to be altered (e.g. toggle it).
+- If you have accidental state (state that is local to the component but is not essential to the larger context that is using the component) you have two choices.
+  - If the component requires effects, you use the triad(三件套).
+  - If the component does not require effects (http, random, time, etc), you can use the pattern you find in elm-sortable-table which is basically the same as the triad, 👉🏻 but the state is updated in the view and the call to update is replaced with a simple replacement of the component state.
 - Invisible state that mutates can create hard to understand bugs
 
 - ## 🤔 [Help! Am I using components? : elm_201609](https://www.reddit.com/r/elm/comments/54en9u/help_am_i_using_components/)
@@ -181,6 +199,41 @@ In React I can use componentDidMount to also attach e.g. a good jQuery UI dialog
 
 - ## 🏘️ [RealWorld example app architected with the Effect pattern - Show and Tell - Elm_202005](https://discourse.elm-lang.org/t/realworld-example-app-architected-with-the-effect-pattern/5753)
   - The extended Effect pattern used in this application consists in defining an `Effect` custom type that can represent all the effects that `init` and `update` functions want to produce.
+
+# discuss-cons-elm
+- ## 
+
+- ## 
+
+- ## 👥 [Elm 0.19 Broke Us | Hacker News_201808](https://news.ycombinator.com/item?id=17842400)
+- I think Elm can learn a lot from Rust before 1.0 here. Rust made some "insane" decisions that should have pissed off the community but did not mostly because of the way the communication was handled. There were obviously some disagreements along the way which caused some valuable community members to jump ship, but overall it was really well handled and the language became better as a result.
+
+- What was the capability of native modules which enabled the dev.to essayist to use them, where ports would have been unreasonable
+- Ports are an `asynchronous` interop boundary. You basically subscribe to a port from Javascript and attach a callback to handle data as it passes from Elm -> JS. Javascript errors then are relegated outside of Elm or they fail at the boundary (like serialization errors when passing data from JS to an Elm port). They're kept outside of Elm.
+  - Native modules, on the other hand, let you create Elm functions that `synchronously` call Javascript. That means that what look like regular Elm functions can now synchronously blow up at callsite inside Elm.
+- [ELM or ReasonML with ReasonReact : elm](https://www.reddit.com/r/elm/comments/99bzf8/comment/e4n83jk/?context=3)
+  - Ports work by sending JSON data as messages (think window.postMessage). That means that
+- basically Elm treats talking to JS similar to talking to an HTTP server
+  - data needs to be marshalled to a JSON data structure, and unmarshalled on the way back
+  - every call is async; synchronous JS function calls are not allowed in user code (it is allowed only in packages written by the Elm maintainers)
+  - request/response-type interactions with the JS code (like promises) use manual boilerplate and are hard to get right
+  - unlike the JS promises seen in your snippet, messages don't compose well; it becomes unwieldy if you need to go back and forth between the JS part and the Elm part of your application
+
+- One of Elm’s main focuses is code that is not possible to crash. Once I groked that, native modules going away in favor of ports made much more sense.
+
+- ## 📝 [Elm 0.19 Broke Us _201809](https://dev.to/kspeakman/elm-019-broke-us--khn)
+- Two changes that placed the proverbial "straw that broke the camel's back": Removal of custom operators and native modules. 
+  - But the real kicker is that native modules are still there. They are just reserved for a few Elm contributors only. The rest of us should not have access to this expert feature. 
+
+- Out of curiosity, what sort of cases are you not able to do with ports or custom elements and must use native code to do?
+
+- Ports have been the better way for JS interop for a while now. 
+
+- ## [Why I'm leaving Elm_202004](https://lukeplant.me.uk/blog/posts/why-im-leaving-elm/)
+- The technical limitation that is really killing me on my usage of Elm is the restriction on native modules. For those not in the know, native modules in Elm allow you to write part of an Elm module in Javascript. This feature is absolutely necessary in Elm and is used by many of the core libraries
+  - In Elm 0.19, however, the compiler itself limits the feature to certain official libraries – you cannot use it at all in your own projects.
+  - I blogged before about my need for native modules, and since then a bigger thing came up – the need for a Intl wrapper that I mentioned above.
+  - The restriction causes huge problems for lots of other people too
 
 # discuss
 - ## 
@@ -220,6 +273,3 @@ In React I can use componentDidMount to also attach e.g. a good jQuery UI dialog
   - Rust has a much more expressive type system than Elm. The Rust world is much more open, responsive
 - Both rust and elm are geared more toward enforcing correctness through their type systems to tame complexity in large projects. In my experience, clojure, being dynamic, fits more as a comparison to vanilla JavaScript.
   - ClojureScript is compile-to-JS and can run on the backend in Node or on the frontend in browsers.
-
-- ## [Elm 0.19 Broke Us | Hacker News_201808](https://news.ycombinator.com/item?id=17842400)
-- I think Elm can learn a lot from Rust before 1.0 here. Rust made some "insane" decisions that should have pissed off the community but did not mostly because of the way the communication was handled. There were obviously some disagreements along the way which caused some valuable community members to jump ship, but overall it was really well handled and the language became better as a result.

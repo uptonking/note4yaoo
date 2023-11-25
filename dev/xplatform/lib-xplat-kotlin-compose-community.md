@@ -11,7 +11,12 @@ modified: 2021-05-13T07:52:46.653Z
 
 - ## 
 
-- ## 
+- ## 💡 Jetpack Compose was essentially a Kotlin clone of Flutter, literally to the point of translating large chunks of code.
+- https://twitter.com/timsneath/status/1727853284684386404
+  - That all happened, and set a bar that others had to invest heavily to compete with. 
+
+- https://twitter.com/JimSproch/status/1728081821114466785
+  - It's true. If you look hard enough, you'll still find some ktdocs that were copy-pasted from flutter. That said, we also made many different design choices, like our usage of an optimizing compiler, and positional memoization, and widgets as functions.
 
 - ## Compose for iOS is officially in Alpha!_202304
 - https://twitter.com/JimSproch/status/1646488217519288321

@@ -29,12 +29,6 @@ modified: 2023-11-21T10:17:34.596Z
     - master branch is "stable" but has some flaws that I've been trying to address, primarily having to do with large-scale performance.
   - [Elmish: Functional Programming in Javascript | by Chet Corcos | Medium_201602](https://medium.com/@chetcorcos/elmish-functional-programming-in-javascript-50995f1d4b9e)
 
-- https://github.com/jonaskello/tea-minimal /202201/ts
-  - Minimal The Elm Architecture implementation in typescript
-  - https://github.com/andrejewski/raj/issues/31
-    - I wrote something similar to raj in typescript and since then I have re-written that library several times as I needed to add more advanced stuff like GraphQL subscriptions, caching etc.
-    - Now I've ended up with a library that is much closer to the original Elm Architecture. It uses managed effects which means commands and subscriptions that are declared as data and are handled by effect managers outside the application. This way the application can consist of only pure functions. 
-
 - https://github.com/andrejewski/raj /MIT/201806/js
   - https://jew.ski/raj/
   - https://github.com/andrejewski/raj-by-example /使用说明
@@ -71,6 +65,12 @@ modified: 2023-11-21T10:17:34.596Z
 - https://github.com/rluiten/rajts /201807/ts
   - Convert raj into typescript
 
+- https://github.com/jonaskello/tea-minimal /202201/ts
+  - Minimal The Elm Architecture implementation in typescript
+  - https://github.com/andrejewski/raj/issues/31
+    - I wrote something similar to raj in typescript and since then I have re-written that library several times as I needed to add more advanced stuff like GraphQL subscriptions, caching etc.
+    - Now I've ended up with a library that is much closer to the original Elm Architecture. It uses managed effects which means commands and subscriptions that are declared as data and are handled by effect managers outside the application. This way the application can consist of only pure functions. 
+
 - https://github.com/Gozala/reflex /202204/js
   - https://gozala.gitbooks.io/reflex/content/
   - a reactive UI library that is heavily inspired by (pretty much is a port of) elm
@@ -91,6 +91,16 @@ modified: 2023-11-21T10:17:34.596Z
     - This is a reflex application view driver that uses virtual-dom library for rendering into a DOM.
   - https://github.com/mozilla/reflex-react-driver
     - This is a reflex application view driver that uses react for rendering into a DOM
+
+- https://github.com/typescript-tea/core /202207/ts
+  - an implementation of The Elm Architecture (TEA) for typescript
+  - Note: TEA has managed effects, meaning that things like HTTP requests or writing to disk are all treated as data in TEA. When this data is given to an Effect Manager, it can do some "query optimization" before actually performing the effect. Your application should consist of pure functions only and all effects should be handled in Effect Managers outside your application.
+  - TEA has two kinds of managed effects: commands and subscriptions.
+  - `Msg` was renamed to Action;  `Model` was renamed to State
+  - it is possible to write your own Effect Manager to do whatever you want.
+  - It does not have a built-in view library
+  - https://github.com/typescript-tea/react-runtime
+    - add support for react as a view library in a program.
 
 - https://github.com/iyegoroff/ts-elmish /202206/ts/archived
   - https://elmish.github.io/elmish/
@@ -132,12 +142,7 @@ modified: 2023-11-21T10:17:34.596Z
   - If you’re looking for a true Elm-like FRP implementation in JavaScript check out reflex.
   - [Elm Architecture for React. An Experiment in React App Architecture_201601](https://medium.com/javascript-inside/elm-architecture-for-react-951b383fcd65)
 
-- https://github.com/typescript-tea/core /202207/ts
-  - an implementation of The Elm Architecture (TEA) for typescript
-  - Note: TEA has managed effects, meaning that things like HTTP requests or writing to disk are all treated as data in TEA. When this data is given to an Effect Manager, it can do some "query optimization" before actually performing the effect. Your application should consist of pure functions only and all effects should be handled in Effect Managers outside your application.
-  - TEA has two kinds of managed effects: commands and subscriptions.
-
-- https://github.com/hojberg/gongfu /202004/ts
+- https://github.com/hojberg/gongfu /202004/ts/inactive
   - The Elm Architecture in TypeScript
   - It has composable update functions and Effects build-in.
 
@@ -181,10 +186,6 @@ modified: 2023-11-21T10:17:34.596Z
     - it looks basically like Hyperapp.
     - No tracking of effects, so reasoning about anything becomes much more difficult when compared to Elm - in Elm everything is pure and the runtime does all the effectful stuff
 
-- https://github.com/artydev/mvu /202310/js
-  - Simple Model View Update library for in Browser use
-  - Based on DML, Morphdom and HTL
-
 - https://github.com/foxbunny/movium /202107/js
   - an implementation of the MVU architecture (a.k.a. Elm architecture) in JavaScript. 
   - This package provides the base framework built on top of Snabbdom as well a few helper functions.
@@ -193,6 +194,20 @@ modified: 2023-11-21T10:17:34.596Z
 
 - https://github.com/0918nobita/mvu /202301/ts/自研vdom
   - MVU framework + VDOM runtime (inspired by Elm)
+
+- https://github.com/wwwsolutions/solutions-mvu-starter /201905/js
+  - A modular front-end boilerplate using the power and simplicity of MVU architecture
+
+- https://github.com/wildlyinaccurate/plait /201808/js/基于thunk而不是cmd
+  - https://plait.js.org/
+  - a minimal JavaScript framework for building isomorphic reactive web components. 
+  - It is loosely based on The Elm Architecture and Elm's StartApp.
+  - 依赖redux、redux-thunk、virtual-dom
+  - In Plait, an application is composed of one or more encapsulated components.
+  - Components can perform asynchronous actions by dispatching a `thunk` instead of an action object.
+  - [Combining Components · Plait](https://plait.js.org/basics/CombiningComponents.html)
+    - Each component exposes its functionality only as init, update, and view functions. 
+    - This restricted interface makes it impossible to know the implementation details of a component, which is a good foundation for creating truly modular code.
 # hyperapp
 - https://github.com/jorgebucaran/hyperawesome
   - https://hyperapp.dev/
@@ -294,7 +309,7 @@ modified: 2023-11-21T10:17:34.596Z
   - [Pin to 0.16 Elm Arch](https://github.com/acdlite/realm/issues/4)
     - 0.17 is quite different architecture from this.
 
-- https://github.com/ChristophP/react-model-view-update /202301/ts/100loc
+- https://github.com/ChristophP/react-model-view-update /202301/ts/react/100loc
   - A React microframework for pure state management and managed side effects. 
   - Inspired by the Elm architecture, no redux needed.
   - all-in-one: State management and effect handling out of the box.
@@ -315,6 +330,12 @@ modified: 2023-11-21T10:17:34.596Z
   - useReducer with effects, the elmish way
 - https://github.com/iyegoroff/react-use-railway /202309/ts
   - useReducer with effects, the elmish way
+
+- https://github.com/cultureamp/react-elm-components /201810/elm/js
+  - https://cultureamp.github.io/react-elm-components/
+  - This package makes it easy to turn Elm code into React components.
+- https://github.com/Parasrah/elm-react-component /202110/ts
+  - The goal of this library is to make trying out Elm in your existing React code-base as easy as possible
 # examples-elm-editor
 - https://github.com/mweiss/elm-rte-toolkit /142Star/BSD/202202/elm
   - https://mweiss.github.io/elm-rte-toolkit/
@@ -330,16 +351,6 @@ modified: 2023-11-21T10:17:34.596Z
   - It cannot justify text.
   - Non-Western Keyboard Input. This is currently not supported, because it is hard to channel CompositionEvents to the Elm RTE object (which is not an input or textarea node).
   - To communicate with the browser's clipboard (to be able to copy text from the RTE to other apps and paste text from other apps into the RTE), you'll need to add two ports to your app
-
-
-
-
-
-
-
-
-
-
 
 - https://github.com/SidneyNemzer/elm-text-editor /201904/elm
   - https://sidneynemzer.github.io/elm-text-editor/
@@ -387,6 +398,10 @@ modified: 2023-11-21T10:17:34.596Z
 # examples
 - https://github.com/evancz/elm-architecture-tutorial /201912/elm
   - How to create modular Elm code that scales nicely with your app
+- https://github.com/evancz/elm-sortable-table /201611/elm
+  - Sortable tables for whatever data you want to display
+- https://github.com/evancz/elm-todomvc
+  - TodoMVC app written in Elm, nice example for beginners.
 
 - https://github.com/yelouafi/snabbdom-todomvc /201507/js
   - TodoMVC using snabbdom and Elm architecture
@@ -403,6 +418,8 @@ modified: 2023-11-21T10:17:34.596Z
 
 - https://github.com/dmy/elm-realworld-example-app /202005/elm/inactive
   - Elm RealWorld example application architected with the Effect pattern
+- https://github.com/rtfeldman/elm-spa-example /201911/elm
+  - Elm codebase containing real world examples that adheres to the RealWorld spec and API.
 
 - https://github.com/huytd/kanelm /201904/elm
   - Kanban board built with Elm
@@ -417,6 +434,11 @@ modified: 2023-11-21T10:17:34.596Z
   - inspired by Elm and Simon Friis Vindum's Functional Frontend Architecture. 
   - Duckweed's primary goal is not to promote or enforce functional programming paradigm. It's main goal is to provide a simple API, and functions happen to be a good step in that direction.
   - https://github.com/foxbunny/duckweed-tasks
+
+- https://github.com/n1k0/elm-daterange-picker /202205/elm
+  - https://n1k0.github.io/elm-daterange-picker/
+  - A date range picker written in Elm
+  - [Stateful components in Elm | Allo-Media](https://www.allo-media.net/en/tech/elm/2019/07/16/stateful-components-in-elm.html)
 # utils
 - https://github.com/Zaid-Ajaj/elmish-composition /202012/js/f#
   - This repository includes two projects: traditional and hybrid to compare the composition technique of an Elmish application.
@@ -424,6 +446,26 @@ modified: 2023-11-21T10:17:34.596Z
   - The hybrid directory contains an application that is a hybrid of Elm with React to compose the application with help of Feliz. ElmishComponents.
   - [Works great](https://github.com/Zaid-Ajaj/elmish-composition/issues/5)
     - Thanks! Though I believe this sample is using the old Feliz.ElmishComponents library. Currently we recommend using Feliz.UseElmish library instead to achieve the same functionality but it is much better and gives more control. 
+
+- https://github.com/andrewMacmurray/elm-concurrent-task /202311/elm
+  - An alternative Task api - run a tree of tasks concurrently.
+  - A hack free implementation of Task Ports - call JavaScript functions as tasks.
+
+- https://github.com/lue-bird/elm-state-interface /202311/elm
+  - TEA but simpler, safer and more declarative
+  - The Elm Architecture with its model, view, msg, update, sub, cmd, task can be reduced down to state and interface, making it simpler, safer and more declarative.
+
+- https://github.com/artydev/mvu /202310/js
+  - Simple Model View Update library for in Browser use
+  - Based on DML, Morphdom and HTL
+  - https://github.com/efpage/DML
+    - An Object Oriented Web Programming Framework
+
+- https://github.com/burabure/start-mvu /201602/js
+  - Model-View-Update reactive pattern for Javascript
+
+- https://github.com/vkopytin/databinding/tree/master/src/examples/reflux-ts /202007/ts
+  - [Implementing Model View Update Pattern in Typescript - CodeProject](https://www.codeproject.com/Articles/5274726/Implementing-Model-View-Update-Pattern-in-Typescri)
 # elm-non-js
 - [elm architecture in rust. 43loc](https://gist.github.com/kuon/b81f6397f454f0254f7476563b1794c0)
 

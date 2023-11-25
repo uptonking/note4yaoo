@@ -92,6 +92,12 @@ modified: 2023-11-21T10:18:24.650Z
 - Every message going through the dispatch loop can be traced, along with the current state of the app. 
   - Just augment the program instance with a trace function
 
+## [Elm Architecture in 8 lines of TypeScript for AppRun | by Yiyi Sun | Medium_201803](https://medium.com/@yiyisun/elm-architecture-in-8-lines-of-typescript-d5a33aca75c1)
+
+- I like Elm. The main reason for me to like it is its architecture, the famous Elm Architecture.
+- I have created the AppRun library to help build applications of the Elm architecture. 
+- The type definition in the AppRun library is a little more complicated because AppRun uses event pub-sub, virtual DOM, async/await, and has stateful component and stateless component. 
+
 ## 📖 [Elm Patterns](https://sporto.github.io/elm-patterns/architecture/effects.html)
 
 - https://github.com/sporto/elm-patterns
@@ -227,6 +233,30 @@ type Program = {
 
 - Event sourcing is somehow already present in the Elm Architecture, but not at a userland level. 
   - Anyway, as we saw, it is quite straightforward to bring it at the user level. This allows us not to lose any data in the interaction between our application and the user
+
+## 🆚️🟦⤴️ [Differences between TypeScript and Elm - DEV Community](https://dev.to/lucamug/typescript-and-elm-3g38)
+
+- TypeScript's type system is not sound, by design. 
+- Elm's type system is sound and it infers all types. It uses the Hindley-Milner type system that is complete and able to infer the most general type of a given program without programmer-supplied type annotations or other hints.
+
+- TypeScript mitigates the problem but runtime exceptions can still happen. “Mutation by reference” is one of the cases that can generate runtime exceptions.
+- Elm's sound type system together with other design choices guarantees no runtime exceptions.
+
+- TypeScript mitigates the issue with the strictNullChecks flag. When it is set to true, null and undefined have their distinct types and you’ll get a type error
+- Elm does not have either null or undefined. Elm leverages the type system in case of missing values, with the types Maybe (called Option in other languages) and Result.
+
+- TypeScript does not support pattern matching. It can support "exhaustiveness" with switch statements under certain conditions
+- Elm's support pattern matching (with the case...of syntax). Elm's pattern matching always applies exhaustiveness.
+
+- TypeScript doesn't support real immutable data structures. In JavaScript, mutability is the default
+- Elm's data is fully immutable, by design. Including also in all the dependencies.
+
+- ### [TypeScript feels worth it until you use something like Elm | Hacker News](https://news.ycombinator.com/item?id=22057260)
+- TypeScript feels worth it until you use something like Elm, then you realize just how lacking and TypeScript's type system truly is.
+  - TypeScript's major weakness is that it doesn't want to break away from Javascript. That strict dedication to being a superset means the type system explodes into ten thousand builtin types the come, seemingly at times, from nowhere, simply to control for the wildness of Javascript. 
+  - This leads to nearly impenetrable error messages regarding types, especially if you have a stack trace involving more than one object/record type (whatever you want to call it), it will expand all of them and just, no. It's unreadable. It can be read, but it cannot simply be grokked.
+  - TypeScript just doesn't impress me. I get far better results from other languages for a whole lot less work. TypeScript claims to want a balance between correctness and productivity but the language gives me neither of those things. My typical experience is that I wrote almost the same amount of actual code, but now also with types. Elm lets me write far less total code. Less code means less bugs and more productivity, and better types and better correctness is what gives you those things.
+- typescripts goal is to be a superset of javascript, which has resulted in many many libraries now shipping with typescript type definitions as officially supported things within libraries. Elm ( or any other client side language) simply hasn't had that kind of impact.
 # blogs-cons
 
 ## 🤼🏻 [The Elm Architecture is the wrong abstraction for the web_202309](https://gist.github.com/chexxor/23ccf35add7dbdd33ecdd26888663140)
@@ -307,8 +337,8 @@ type Program = {
 - we acquired another company whose entire codebase was written in React
 - Around this same time the momentum around Elm’s own development and that of its tooling was losing steam. 
 # more
-- [Managed effects and Elm. One really neat thing about Elm is that… | by Kevin Welcher | Medium](https://medium.com/@kaw2k/managed-effects-and-elm-36b7fcd246a9)
-  - Normal Effects: for every step we go and do it in real time.
+- [Managed effects and Elm_201610](https://medium.com/@kaw2k/managed-effects-and-elm-36b7fcd246a9)
+  - Normal Effects: for every step we go and (we) do it in real time.
   - Managed Effects: we describe a task and someone else does it on their own time.
 
 - [Learning Elm by porting a medium-sized web frontend from React_201910](https://benhoyt.com/writings/learning-elm/)

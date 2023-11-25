@@ -14,7 +14,11 @@ modified: 2023-05-21T15:46:35.896Z
 
 - ## 
 
-- ## 
+- ## We are studying @replicache 's awesome blog post at @taktile_org 's internal reading group. We built a somewhat similar linearized serverside reconciliation algorithm. 
+- https://twitter.com/tomlarkworthy/status/1727986810238697837
+  - Main diff is we send JSON-merge-PATCHes not mutator calls.
+  - JSON-merge-patch is the RESTful dual of operational based sync. 
+  - Main drawback is it does not work with arrays or nulls and its not as expressive as arbitrary functions, but it has some nice composability when you want a change log or combine writes
 
 - ## 🚀👥 [Reflect – Multiplayer web app framework with game-style synchronization | Hacker News_202310](https://news.ycombinator.com/item?id=37931373)
 - Reflect adds a fully managed, incredibly fast sync server.
@@ -39,15 +43,11 @@ modified: 2023-05-21T15:46:35.896Z
   - PartyKit is extremely unopinionated. It's essentially lightweight javascript server, that launches fast and autoscales (I don't say this as as a bad thing, it's a useful primitive). Most people seem to run yjs in PartyKit, but you can also run automerge or even Replicache – my company's other project.
   - Reflect is entirely focused on providing the best possible multiplayer experience. We make a lot of choices up and down the stack to tightly integrate everything so that multiplayer just works and you can focus on building your app.
 
-- 
-- 
-- 
-
 - ## 🚀 Announcing Reflect – A new way to build multiplayer apps like Figma or Notion._202310
 - https://twitter.com/aboodman/status/1714682920495919520
   - Rather than CRDTs, Reflect syncs the way video games do.
   - Reflect isn't open source. We're considering that, but in the meantime a source license and on-prem is available.
-  - [Ready Player Two – Bringing Game-Style State Synchronization to the Web](https://rocicorp.dev/blog/ready-player-two)
+  - [Ready Player Two – Bringing Game-Style State Synchronization to the Web_202310](https://rocicorp.dev/blog/ready-player-two)
 - Super interesting! One drawback I see is that syncing stops working when the server is down. The extra authority on the server makes all clients dependent. I understood CRDTs enabled p2p syncing, which allows collaboration on a local network.
   - Yes, that's true. Although this approach can continue to work *locally* offline and resync when server comes back, it can't sync just within the local network. That's a tradeoff that matters in some cases, but we find that it is a relatively rare need.
 - Looks cool! Is this a framework I can run myself for free on my own infra?

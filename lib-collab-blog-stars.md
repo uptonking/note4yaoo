@@ -173,6 +173,8 @@ modified: 2022-04-05T10:10:22.091Z
   - we created an Operational Transformation implementation, extended to support tree-based data structures (rich-text content) for advanced conflict resolution. 
 # blogs-collab
 
+## [Ready Player Two – Bringing Game-Style State Synchronization to the Web_202310](https://rocicorp.dev/blog/ready-player-two)
+
 ## [A light exploration of collaborative editing and synchronization algorithms_202108](https://blog.jakubholy.net/2021/light-exploration-of-collaborative-editing/)
 
 - 引用和总结了很多协作编辑器相关的技术选型

@@ -69,6 +69,11 @@ modified: 2023-02-03T05:55:22.102Z
 - 真的不难吗？感觉第一个要*做好*就已经非常复杂了，preview 到底什么时候截取呢？observer 观察 dom 没有变化为止？经过一定时间？什么分辨率渲染？未登录跳转？cookie 弹窗？广告？这个列表可以非常非常长。
   - 至于第二个，由于页面排版的不可确定性，首先什么是“干净全文”就值得商榷
 
+- [开一个 thread 记录一下可能的方案](https://twitter.com/beihuo/status/1727926571082875382)
+- 最靠谱的方式就是在 Serverless 服务上跑一个 Headless Chrome。
+  - Cloudflare 支持 Browser Rendering。Cloudflare 稍微便宜一些。而且我记得 Cloudflare 没有 egress fee。
+  - AWS Lambda 灵活性更好。因为 Cloudflare 目前绑定在 NodeJS 和 puppeteer。
+
 - ## 折腾了一下终于把外链预览图做到鼠标悬浮了
 - https://twitter.com/thecalicastle/status/1656456586922164224
   - 前端组件思路很简单，主要就是搭建了一个后端 API 服务，专门用 Playwright + Chromium 可以生成截图，然后缓存起来

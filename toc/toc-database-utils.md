@@ -484,7 +484,6 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/delta-db/deltadb /201602/js/inactive
   - DeltaDB is an offline-first database designed to talk directly to clients and works great offline and online.
   - Stores all data as a series of deltas, which allows for smooth collaborative experiences even in frequently offline scenarios.
-  - https://github.com/delta-db/deltadb-server
 
 - https://github.com/barrucadu/logdb /go/inactive
   - An efficient log-structured database supporting efficient insertion of new entries and removal from either end of the log.
@@ -544,9 +543,15 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/fiatjaf/journalstate /js
   - turn a log of sequential, handwritten facts, into a state
 
-- https://github.com/chinedufn/dipa /rust
+- https://github.com/colyseus/schema /202311/ts
+  - An incremental binary state serializer with delta encoding for games.
+  - Although it was born to be used on Colyseus, this library can be used as standalone.
+
+- https://github.com/chinedufn/dipa /202109/rust/inactive
+  - https://chinedufn.github.io/dipa
   - designed to generate very tiny diffs by default
   - does not know anything about networks and has no networking code
+  - It is only focused on encoding deltas, not transmitting them.
 
 ## log-utils
 

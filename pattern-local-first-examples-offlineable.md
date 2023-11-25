@@ -255,6 +255,7 @@ modified: 2023-11-17T10:12:06.357Z
   - I have decided to suspend development of DeltaDB for the following reasons:
   - last-write-wins policy is nice when starting a new project as it is automatic, but other conflict resolution policies that force the user to manually resolve the conflict, like CouchDB’s revision protocol, have become more of the standard in the offline-first world.
   - Building a DB that scales and is Building a DB that scales and is distributed over many nodes, takes a lot of work. distributed over many nodes, takes a lot of work. 
+  - https://github.com/delta-db/deltadb-server
 
 - https://github.com/aerogear/offix /archived
   - GraphQL Offline Client and Server

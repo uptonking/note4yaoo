@@ -36,7 +36,7 @@ modified: 2022-11-06T16:47:43.444Z
     - It does not handle adding/removing array items, though entire arrays can be set. 
     - It should work great for documents that don't need merging text like Figma
 
-- https://github.com/benjamine/jsondiffpatch /45kStar/MIT/ts
+- https://github.com/benjamine/jsondiffpatch /4.5kStar/MIT/ts
   - https://benjamine.github.io/jsondiffpatch/demo/index.html
   - Diff & patch JavaScript objects
   - simplistic, pure JSON, low footprint delta format
@@ -73,6 +73,11 @@ modified: 2022-11-06T16:47:43.444Z
 - https://github.com/wizedix/json-patch-apply
   - an implementation of JSON patch RFC 6902
 
+- https://github.com/riagominota/ts-merge-patch /202207/ts
+  - Typescript ready attempt of RFC 7396 JSON Merge Patch method
+- https://github.com/pierreinglebert/json-merge-patch /202107/js
+  - An implementation of the JSON Merge Patch (RFC 7396)
+
 - https://github.com/eugeneware/changeset /js
   - Library to diff JSON objects into atomic put and delete operations, and apply change sets to objects. 
   - Useful with Levelup/LevelDB object synchronization.
@@ -89,11 +94,6 @@ modified: 2022-11-06T16:47:43.444Z
 
 - https://github.com/ken107/jsonpatch-observe
   - Observe an object tree for changes and generate JSON Patches (RFC 6902).
-
-- https://github.com/pierreinglebert/json-merge-patch
-  - An implementation of the JSON Merge Patch (RFC 7396)
-- https://github.com/riagominota/ts-merge-patch
-  - Typescript ready attempt of RFC 7396 JSON Merge Patch method
 
 - https://github.com/Palindrom/JSONPatcherProxy
   - ES6 proxy powered JSON Object observer that emits JSON patches when changes occur to your object tree.

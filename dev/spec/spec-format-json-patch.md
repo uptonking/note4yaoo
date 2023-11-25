@@ -66,8 +66,8 @@ modified: 2023-02-26T21:03:56.167Z
 
 ## [JSON Patch](https://atbug.com/json-patch/)
 
-- JSON Path是一直描述JSON文档变化的格式. 使用它可以避免在只需要修改某一部分的时候发送整个文档内容. 
-  - 当与HTTP PATCH方法混合使用的时候, 它允许在标准规范的基础上使用HTTP APIs进行部分更新.
+- JSON Path是一直描述JSON文档变化的格式, 使用它可以避免在只需要修改某一部分的时候发送整个文档内容
+  - 当与HTTP PATCH方法混合使用的时候, 它允许在标准规范的基础上使用HTTP APIs进行部分更新
 
 ## [Kubernetes中的JSON patch - 掘金](https://juejin.cn/post/6993618347904466957)
 
@@ -97,6 +97,26 @@ modified: 2023-02-26T21:03:56.167Z
 - 综上所述，如果面对的是结构比较简单，校验不要求很强烈的场景，可以选择JSON Merge Patch，
   - 但是更为复杂的场景，建议选择JSON Patch，因为这种方式确保原子执行和错误报告。
 - Kubernetes中的webhook采用的就是上文提到的第一种方案（JSON Patch）
-# examples
 
+## 💡 [JSON Merge Patch: Algebra and Applications](https://github.com/endpointservices/mps3/blob/main/docs/JSON_merge_patch.md)
+
+- JSON Merge patch is a standardized way to encode sparse updates to a JSON document.
+
+- 🆚️ Comparison to JSON Patch (RFC 6902)
+  - JSON Patch (RFC 6902) attempts to update a state by applying a sequence of operations
+  - The is more expressive, it can represent null values and can also express insertion into an array. 
+  - However, it is more complex and imperative. 
+  - It does not have as many nice algebraic properties as JSON-merge-patch
+  - JSON-merge-patch is functional and elegant, but restricts you to non-null values and dictionaries. JSON patch is applicable in more situations but clunky. I suspect that JSON-merge-patch's constraints force better schema design, smaller code, and fewer edge cases
+
+- If you view a JSON document as the state of a system, then patching can be seen as updating the state.
+- Arrays and null values don't work
+  - Merge patches have a huge disadvantage in that they only really work well with dictionaries. 
+  - Furthermore, because `null` is used to represent delete, it is impossible to use `null` as a value. 
+  - You can use arrays, but they are not merged efficiently, and thus array mutations tend to conflict more frequently.
+
+- Merges are associative for structured documents
+- Non-overlapping patches are commutative.
+- Overlapping writes are last-write-wins
+- Merges are idempotent
 # more

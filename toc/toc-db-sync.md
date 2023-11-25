@@ -269,6 +269,25 @@ modified: 2022-11-25T15:41:47.534Z
     - 比较了parse、firebase、couchdb、kuzzle、remoteStorage、Hoodie
   - https://github.com/Kinto/kinto.js
     - An Offline-First JavaScript client for Kinto.
+
+- https://github.com/endpointservices/mps3 /202311/ts
+  - Vendorless Multiplayer Database over any s3-compatible storage API
+  - MPS3 is a key-value document store. A manifest lists all keys in the DB as references to files hosted on s3.
+  - Setting a key first writes the content to storage, then updates the manifest. 
+  - To enable subscriptions, the client polls the manifest for changes. 
+  - To enable causally consistent concurrent writes, the manifest is represented as a time indexed log of patches and checkpoints which is resolved on read.
+  - sync protocol is causally consistent under concurrent writes.
+  - Offline-first, fast page loads and no lost writes.
+  - Tested with S3, Backblaze, R2 and self-hosted solutions like Minio.
+  - [sync protocol of MPS3](https://github.com/endpointservices/mps3/blob/main/docs/sync_protocol.md)
+    - MPS3 is a Key-Value store. The values are stored in versioned storage locations on S3. There is a layer of indirection that maps DB logical keys to storage locations hosted in a manifest
+    - To enable consistent atomic updates of multiple keys, first the client writes the new values, and then it updates the manifest, not dissimilar to write-ahead-logging. Other clients use the manifest to access the DB
+    - client sends the operation as a JSON_merge_patch. 
+    - it is inefficient for a client to replay the entire DB history.
+    - A client only needs to read an imperfect guess of the latest state, then replay all patches within a lag window to correct an estimate of the final state
+    - Large clock skew is detected by MPS3 by comparing the manifest key timestamp against the server-provided `LastModified` time.
+    - The algorithm is deceptively(欺骗性的；造成假象的) simple in implementation but leans heavily on the algebraic property of JSON-merge-patch and wiggle(扭动; 摆动) room in causal consistency to accommodate client-side clock_skew. 
+    - The same algorithm is used also to synchronize state transfer between tabs in the local-first setting. 
 # sync-utils
 - https://github.com/sueddeutsche/json-sync /201803/js
   - Enables real-time collaborative editing of arbitrary JSON objects

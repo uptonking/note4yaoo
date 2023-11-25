@@ -7,13 +7,25 @@ modified: 2022-11-24T10:12:29.526Z
 
 # pick-discuss-marketing-kickstarter
 
+# guide
+
 # discuss
 
 ## 
 
 ## 
 
-## 
+## [奇绩创坛2023秋季路演日，67个项目，51个AI相关](https://twitter.com/FinanceYF5/status/1728260510670618647)
+
+- 为了方便创业者研究，我重新整理了这67个项目，分类，并做成了表格。
+  - 几个感受：
+  - 1、方向在营销，开发者，数字人等离钱近的方向多一些
+  - 2、团队背景很好
+  - 3、AI比例很高
+  - [奇绩2023秋季 67 - Feishu Docs](https://zw73xyquvv.feishu.cn/wiki/IqNrwjr80iJ72gkNr9EcWx7undf?table=tblS2Jv7isKtSODz&view=vewfCdOf0U)
+- 项目赛道涉及人工智能（包含大模型和 agent）、机器人、游戏、教育、B2B、企业服务、开发者工具、B2C、社区等 34 个细分行业。 创始人平均年龄 28.8 岁，65.6% 拥有硕士及以上学位，51.9% 具有海外背景。
+
+- 做工具的感觉都啥前途。还是本身有垂直业务的，拓展ai的生产力才是王道。
 
 ## [微信支付需要营业执照吗？ - 知乎](https://www.zhihu.com/question/517797619/answers/updated)
 

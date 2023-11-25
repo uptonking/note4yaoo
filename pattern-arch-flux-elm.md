@@ -18,6 +18,8 @@ modified: 2023-11-18T09:48:30.897Z
   - action -> dispatcher -> store -> view
 - elm [数据流](https://elmbridge.github.io/curriculum/The%20Elm%20Architecture.html)
   - message -> update -> model -> view (-> native-ui)
+
+- 渲染层的架构和实现可参考flutter
 # faq
 
 ## 🆚️ redux vs flux
@@ -67,8 +69,10 @@ modified: 2023-11-18T09:48:30.897Z
   - 每个event保存op，undo时从头开始计算一遍
   - 缺点是异步op要特殊处理，可能部分要忽略
 - 👉🏻 基于delta-state实现undo
-  - 优点是数据量小，replay状态时无需考虑
+  - 优点是数据量小，replay状态时无需考虑异步op/effects
 - 👉🏻 基于全量state实现undo
-  - 优点是实现简单，replay状态时无需考虑
+  - 优点是实现简单，replay状态时无需考虑异步op/effects
   - 缺点是每次保存全量数据可能导致性能问题和空间浪费
+# elm-dev
+
 # more

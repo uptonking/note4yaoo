@@ -333,6 +333,7 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/PsychoLlama/graph-crdt /201707/js/inactive
   - Designed for serializing arbitrary data structures, making offline edits, and seamlessly merging changes back in. All data is observable and event driven.
   - graph-crdt is a modified version of a LWW-E-Set with inline garbage collection using lamport clocks and JavaScript's lexicographic comparison on deterministically serialized JSON for the predetermined conflict resolution bias.
+  - This library implements a delta graph CvRDT.
 - https://github.com/PsychoLlama/mytosis /202003/js/基于graph-crdt
   - A peer-to-peer data sync framework
   - Mytosis organizes data as one massive object which contains other objects. The root is called the graph, and its children are called nodes.
