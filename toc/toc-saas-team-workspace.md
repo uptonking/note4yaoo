@@ -195,7 +195,7 @@ modified: 2023-02-07T17:38:05.336Z
   - https://waterrmalann.github.io/kards/
   - A simple cards-based kanban board app inspired by Trello in pure vanilla JS
 
-- https://github.com/riktar/jkanban /914Star/apache2/js/202111/inactive
+- https://github.com/riktar/jkanban /914Star/apache2/202111/js/inactive
   - https://www.riccardotartaglia.it/jkanban/
   - Vanilla Javascript plugin for manage kanban boards
   - jKanban use dragula for drag&drop

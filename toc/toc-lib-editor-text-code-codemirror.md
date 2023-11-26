@@ -65,8 +65,15 @@ modified: 2022-08-18T11:29:26.644Z
   - https://octo.app/tags/examples
   - A plain-text javascript markdown editor library that renders formatting live and in-place without the need for a preview pane. 
   - Built on CodeMirror 6. Powers https://octo.app/
-
-## code-editor
+# code-editor
+- ace-editor /26kStar/BSD/202311/js
+  - https://github.com/ajaxorg/ace
+  - https://ace.c9.io/
+  - Ace is a standalone code editor written in JavaScript. 
+  - 支持virtual_renderer
+  - Our goal is to create a browser based editor that matches and extends the features, usability and performance of existing native editors such as TextMate, Vim or Eclipse
+  - Ace is developed as the primary editor for Cloud9 IDE
+    - AWS Cloud9: A cloud IDE for writing, running, and debugging code
 
 - https://github.com/acode/copenhagen /202110/js/inactive
   - https://copenhagen.autocode.com/
@@ -78,9 +85,7 @@ modified: 2022-08-18T11:29:26.644Z
 
 - https://github.com/maxmcd/plum
   - A mobile AST-based editor for Javascript
-
-## apps
-
+# apps
 - https://github.com/TeamCodeStream/codestream /ts
   - https://www.codestream.com/
   - CodeStream is a free open-source extension for VS Code, Visual Studio, and JetBrains.

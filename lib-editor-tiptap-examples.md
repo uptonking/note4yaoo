@@ -246,9 +246,9 @@ modified: 2023-02-05T19:03:27.730Z
   - https://rhino-editor.vercel.app/
   - a grab and go WYSIWYG editing experience that can hook into Ruby on Rails ActionText backend.
   - Currently this package does so using TipTap but will most likely include another integration for ProseMirror to allow for both Markdown + WYSIWYG editing.
+  - A drop-in Trix replacement which creates ActionText compatible HTML and can parse your existing Trix views allowing a seamless migration without updating any existing db columns
 
 - https://github.com/afomera/richer-text.js /js
-  - https://github.com/afomera/richer_text /ruby
   - A Richer Text Editor experience based on Tiptap
   - written in React, using the TipTap libraries and extensions, compiled into a web component
   - RicherText aims to provide a richer text editing experience than what comes out of the box with ActionText in Rails. 
@@ -258,6 +258,9 @@ modified: 2023-02-05T19:03:27.730Z
   - not-yet
     - Support for disabling extensions/portions out of the library.
     - There is a hardcoded requirement for `ActionStorage` to be installed and setup for Image support to work. 
+  - https://github.com/afomera/richer_text /ruby
+    - provide a richer text editing experience than what comes out of the box with ActionText in Rails
+    - there's currently a hard requirement for ActiveStorage
 
 - https://github.com/decidim/decidim
   - Decidim is a participatory democracy framework, written in Ruby on Rails, originally developed for the Barcelona City government online and offline participation website

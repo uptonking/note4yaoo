@@ -21,6 +21,7 @@ modified: 2020-11-13T07:28:27.824Z
 
 - refs
   - https://github.com/SaraVieira/ui-libraries /组件库对比
+  - [The Vanilla Javascript Component Pattern](https://dev.to/megazear7/the-vanilla-javascript-component-pattern-37la)
 # framework-agnostic components
 - https://github.com/dmitriz/un /202304/js
   - Unframework for Universal Uncomponents
@@ -45,7 +46,7 @@ modified: 2020-11-13T07:28:27.824Z
     - excited to push all interactive components from Zag.js into Chakra UI in v4.
     - [The Future of Chakra UI in 4 parts_202102: styling build time, state-machine, a11y, motion](https://www.youtube.com/watch?v=I5xEc9t-HZg)
 
-- papanasi /298Star/MIT/202211/ts
+- papanasi /298Star/MIT/202211/ts/Mitosis
   - https://github.com/CKGrafico/papanasi
   - http://papanasi.js.org/
   - a UI library to use cross Frameworks. 
@@ -55,8 +56,7 @@ modified: 2020-11-13T07:28:27.824Z
     - Write components once, compile to every framework
     - While `Zag.js` focuses on writing framework-agnostic interactions, `Mitosis` focuses on writing framework-specific components.
 
-- https://github.com/phonon-framework/phonon
-  - /421Star/MIT/202004/ts/inactive
+- https://github.com/phonon-framework/phonon /421Star/MIT/202004/ts/inactive
   - responsive front-end framework with a focus on flexibility in Sass and TS
   - theming基于sass vars
   - 提供了在react/vue(无angular)项目中使用phonon组件的示例
@@ -78,19 +78,19 @@ modified: 2020-11-13T07:28:27.824Z
     - /1.4kStar/MIT/202009/ts/hooks
     - a React UI Kit built on Google's official Material Components Web library v5
   - ref
-    - https://github.com/material-components/material-components-web-react
-      - /1.9kStar/MIT/201911/ts/deprecated
-      - deprecated in order to increase our focus on implementing the core, framework-independent libraries (MDC-Web and MWC)
-      - 基于class组件实现
-    - https://github.com/material-components/material-components-web-components
-      - /2.2kStar/Apache2/202009/ts/agnostic/MWC
-      - a collection of Web Components maintained by Google that implement Material Design
-    - https://github.com/prateekbh/preact-material-components
-      - /531Star/MIT/202007/ts/deprecated
-      - preact wrapper for material-components-web
-    - https://github.com/material-components/material-components-android
-      - /11.2kStar/Apache2/2020209/java
-      - Modular and customizable Material Design UI components for Android
+  - https://github.com/material-components/material-components-web-react
+    - /1.9kStar/MIT/201911/ts/deprecated
+    - deprecated in order to increase our focus on implementing the core, framework-independent libraries (MDC-Web and MWC)
+    - 基于class组件实现
+  - https://github.com/material-components/material-components-web-components
+    - /2.2kStar/Apache2/202009/ts/agnostic/MWC
+    - a collection of Web Components maintained by Google that implement Material Design
+  - https://github.com/prateekbh/preact-material-components
+    - /531Star/MIT/202007/ts/deprecated
+    - preact wrapper for material-components-web
+  - https://github.com/material-components/material-components-android
+    - /11.2kStar/Apache2/2020209/java
+    - Modular and customizable Material Design UI components for Android
 
 - https://github.com/DouyinFE/semi-design
   - https://semi.design/zh-CN/start/overview
@@ -100,6 +100,8 @@ modified: 2020-11-13T07:28:27.824Z
   - [Semi Design - UI组件库如何分层设计，使其具备适配多种mvvm框架能力](https://bytedance.feishu.cn/wiki/wikcnOVYexosCS1Rmvb5qCsWT1f)
   - [希望官方支持 Vue 版本](https://github.com/DouyinFE/semi-design/issues/311)
     - 我们的工作重点依然是React体系。没有计划去重新实现一个Vue版本
+    - https://github.com/rashagu/semi-design-vue /202311/ts
+      - Vue3 UI components based on semi-design and Vue
 
 - https://github.com/carbon-design-system/carbon
   - /3.5kStar/Apache2/202009/js
@@ -129,20 +131,13 @@ modified: 2020-11-13T07:28:27.824Z
     - This is done via a simple Node script which literally copies the CSS over.
     - The above approach forces our framework-specific implementations to use the same single stylesheet. 
 
-- https://github.com/stacksjs/stacks
-  - https://stacksjs.dev/
-  - The goal of the framework is to help you create & maintain frontends, backends, and clouds
-  - Because Stacks optimizes the development of easily reusable & composable component & function libraries, the primary intention is to always keep it simple, yet configurable.
-  - After you installed your Stacks generated library, you can use a "Custom Element" (Web Component)
-
 - Reef /631Star/MIT/202010/js/NoDeps
   - https://github.com/cferdinandi/reef
   - https://reefjs.com/
   - A lightweight library for creating reactive, state-based components and UI. 
   - Reef is a simpler alternative to React, Vue, and other large frameworks.
 
-- https://github.com/prasannavl/icomponent
-  - /28Star/MIT/201902/ts
+- https://github.com/prasannavl/icomponent /28Star/MIT/201902/ts
   - 只提供了一致的接口和架构，没有实现具体组件
   - A super simple, render-agnostic component library for the modern web that emphasizes framework and renderer freedom
   - icomponent provides the web component model. 
@@ -191,27 +186,54 @@ modified: 2020-11-13T07:28:27.824Z
   - paste file from clipboard
   - progress bar
 # vanillajs
-- https://github.com/thepassle/generic-components /js/inactive
-  - A collection of generic web components with a focus on accessibility, and ease of use
-
-- https://github.com/vitmalina/w2ui /202305/js
-  - UI widgets for modern apps. 
-  - Data table, forms, toolbars, sidebar, tabs, tooltips, popups. 
-  - All under 120kb (gzipped).
+- https://github.com/vitmalina/w2ui /2.6kStar/MIT/202310/js
+  - http://w2ui.com/
+  - UI widgets for modern apps.
+  - Data table, forms, toolbars, sidebar, tabs, tooltips, popups.
   - Since v2.0, w2ui has no dependencies
   - All the widgets are written as es6 classes
   - All classes in w2ui are extended from w2base class that provides basic event functionality.
-# css
+  - All under 120kb (gzipped).
+
+- https://github.com/jsuites/jsuites /476Star/MIT/202311/js
+  - https://github.com/paulhodel/jsuites
+  - https://bossanova.uk/jsuites
+  - a collection of lightweight common required javascript components. 
+  - It is composed of fully responsive vanilla plugins
+
 - https://github.com/themesberg/flowbite /ts
   - https://flowbite.com/blocks/
   - UI components based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, templates, and more.
   - All of the elements are built using the utility classes from Tailwind CSS and vanilla JavaScript with support for TypeScript.
   - Flowbite also offers an API for using the components programmatically with vanillajs
+
+- https://github.com/pqina/filepond /202311/js/NoDeps/active
+  - https://pqina.nl/filepond/
+  - A flexible JavaScript file upload library that can upload anything you throw at it, optimizes images for faster uploads, and offers a great, accessible, silky smooth user experience.
+  - Accepts directories, files, blobs, local URLs, remote URLs and Data URIs.
+  - https://github.com/pqina/react-filepond
+  - https://github.com/pqina/vue-filepond
+
+- https://github.com/xtendui/xtendui /362Star/MIT/202309/js
+  - https://xtendui.com/
+  - a powerful frontend library of Tailwind CSS components enhanced by vanilla js
+  - Some animations and interactions with Gsap
+  - Positioning with Popperjs
+
+- https://github.com/thepassle/generic-components /js/inactive
+  - A collection of generic web components with a focus on accessibility, and ease of use
 # xplat-ios/android
 - https://github.com/framework7io/framework7
   - open source mobile HTML framework to develop hybrid mobile apps or web apps with iOS & Android native look and feel.
   - Current documentation currently doesn't cover process of compilation of Framework7 app to Cordova app.
 # more
+- https://github.com/abuseofnotation/vanilla-fp /202310/js
+  - The no-framework framework for building component-based purely-functional UIs.
+  - A component is a pure-ish function that typically receives two parameters (called 'state' and 'setState', but can vary across components)
+  - Each vanilla-fp , a component is in charge of keeping the states of its children, instead of utilizing some external global functions and frameworks.
+  - In vanilla-js, the state is handled by passing some simple event-handling functions from the parent component to the children, which means that you have to write the 'setState' implementation of your children every time
+  - https://github.com/abuseofnotation/fediscope
+
 - https://github.com/vicentedealencar/react-agnostic
   - you can write your components without any direct dependencies from platform specific components. 
   - It applies inversion of control using react context pass around components.
@@ -232,10 +254,9 @@ modified: 2020-11-13T07:28:27.824Z
     - CoreUI for React.js replaces and extends the Bootstrap javascript.
     - Components built from scratch as true React hook components, without jQuery and unneeded dependencies.
     - Components are styled using @coreui/coreui CSS, but you can use them also with bootstrap CSS
-- https://github.com/GoldWorker/SluckyUI
-  - /16Star/Apache2/202001
+- https://github.com/GoldWorker/SluckyUI /16Star/Apache2/202001
   - 理念是所有组件使用纯css去实现，以最小代价进行二次开发成各个框架的组件库
-    - 但作者但实现，源码只是普通的react class组件
+    - 但作者未实现，源码只是普通的react class组件
   - 提供了创建React，Angular，Vue组件的示例
 - https://github.com/winjs/winjs
   - /4kStar/MIT/201809/js
@@ -247,9 +268,9 @@ modified: 2020-11-13T07:28:27.824Z
   - /214Star/MIT/202009
   - A UI Components Library for Intact, Vue, React and Angular.
   - kpc是基于intact框架实现的js组件库，通过胶水层自动生成react/vue/angular的组件
-- https://github.com/Javey/intact /46Star/MIT/202006/js/inactive
-  - An inheritable and strong logic template front-end mvvm framework
-  - 基于vdt，vdt是基于虚拟DOM实现的模板引擎，支持前后端渲染
+  - https://github.com/Javey/intact /46Star/MIT/202006/js/inactive
+    - An inheritable and strong logic template front-end mvvm framework
+    - 基于vdt，vdt是基于虚拟DOM实现的模板引擎，支持前后端渲染
   - https://github.com/ksc-fe/intact-react
     - A compatibility layer for running intact component in react
     - intact提供了react、vue、angular的胶水层
@@ -306,24 +327,22 @@ modified: 2020-11-13T07:28:27.824Z
   - https://github.com/final-form/react-final-form
   - Framework agnostic, high performance, subscription-based form state management
 
-- more
-  - https://github.com/amazeui/amazeui
-    - https://github.com/amazeui/amazeui-react
-  - https://github.com/audi/audi-ui
-    - Audi UI components in CSS, Vanilla JavaScript, and HTML
-  - https://github.com/DavidVujic/vanillajs-components
-    - examples on how to create a web site with reusable building blocks (aka components)
+- https://github.com/amazeui/amazeui
+  - https://github.com/amazeui/amazeui-react
+- https://github.com/audi/audi-ui
+  - Audi UI components in CSS, Vanilla JavaScript, and HTML
 
-  - https://github.com/davatron5000/awesome-standalones
-    - A curated list of awesome framework-agnostic standalone web components
-  - https://github.com/Wildhoney/Standalone
-    - /205Star/MIT/201609
-    - using the HTML5 custom elements API to extend HTML's vocabulary.
-  - https://storybook.js.org/
-    - Interactive UI component dev & test: React, React Native, Vue, Angular
-  - https://github.com/uswds/uswds
-  - https://github.com/qlik-demo-team/qdt-components
-    - 封装一个通过ReactDOM.render渲染出DOM节点的方法，每个单独的组件都会命令式地调用此方法渲染
-    - React Components to be used with Angular 6, React 16 and Vue 2.
+- https://github.com/DavidVujic/vanillajs-components /202010/js/archived
+  - examples on how to create a web site with reusable building blocks (aka components)
 
-- [The Vanilla Javascript Component Pattern](https://dev.to/megazear7/the-vanilla-javascript-component-pattern-37la)
+- https://github.com/davatron5000/awesome-standalones
+  - A curated list of awesome framework-agnostic standalone web components
+- https://github.com/Wildhoney/Standalone
+  - /205Star/MIT/201609
+  - using the HTML5 custom elements API to extend HTML's vocabulary.
+- https://storybook.js.org/
+  - Interactive UI component dev & test: React, React Native, Vue, Angular
+- https://github.com/uswds/uswds
+- https://github.com/qlik-demo-team/qdt-components
+  - 封装一个通过ReactDOM.render渲染出DOM节点的方法，每个单独的组件都会命令式地调用此方法渲染
+  - React Components to be used with Angular 6, React 16 and Vue 2.

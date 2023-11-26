@@ -12,6 +12,14 @@ modified: 2023-08-29T10:13:31.070Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## [what's the difference between a DAG and a tree, specifically with regards to Git?](https://stackoverflow.com/questions/26395521/dag-vs-tree-using-git)
+- The difference between them is that nodes in a DAG can have multiple parents. The most common case of this in Git is when you do a merge. A merge commit will have all of the commits that were merged as parents. 
+  - A tree doesn't allow nodes to have multiple parents.
+- a tree can have at most only one root, whereas a DAG can contain several roots, and even multiple disconnected subgraphs
+- Most git repositories that I've worked with only have a single root commit. Although it's technically possible to create multiple root commits
+
 - ## 🌵📡 [What comes after Git | Hacker News_202207](https://news.ycombinator.com/item?id=31984450)
 - Kubernetes didn't brought open-source collaboration to a new level. No matter how relevant Kubernetes is today, it's just a drop in the huge ocean of OSS. Maybe level in this context refers to 'gitops' which many of us where doing years before the term was coined and without K8s involved. Or perhaps the author refers to the fact that most gitops K8s frameworks will work via polling which is a fundamental scalability flaw.
 

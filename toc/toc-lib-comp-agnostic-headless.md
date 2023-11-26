@@ -160,7 +160,7 @@ modified: 2021-04-11T06:17:51.318Z
 
 - https://github.com/webeetle/react-headless-hooks
   - Hooks for build and design powerful components while retaining 100% control over markup and styles.
-# headless-component
+# headless-vanillajs
 - tips
   - tanstack
 
@@ -210,7 +210,7 @@ modified: 2021-04-11T06:17:51.318Z
 - https://github.com/TanStack/ranger
   - Headless utilities for building range and multi-range sliders in React, Preact, Solid, Vue, Svelte and Angular
 
-- https://github.com/roginfarrer/collapsed
+- https://github.com/roginfarrer/collapsed /485Star/MIT/202311/ts
   - https://react-collapsed.netlify.app/
   - Headless UI for for creating flexible and accessible expand/collapse components
   - Includes adapter for React.
@@ -250,6 +250,21 @@ modified: 2021-04-11T06:17:51.318Z
 
 - https://github.com/ivkan/ts-select2
   - a version of Select2 written in typescript without any dependencies.
+
+- https://github.com/appbaseio/searchbox /js
+  - a lightweight and performance focused search UI component library to query and display results from your ElasticSearch index using declarative props. 
+  - It's available for React, Vue, React Native and Flutter.
+  - https://github.com/appbaseio/reactivesearch
+    - https://opensource.appbase.io/reactivesearch
+    - Search UI components for React and Vue: powered by appbase.io / Elasticsearch
+  - https://github.com/appbaseio/reactivecore
+    - Core architecture of reactive UI libraries
+    - 依赖redux、redux-thunk、xdate
+
+- https://github.com/yairEO/tagify /js
+  - https://yaireo.github.io/tagify/
+  - Transforms an input field or a textarea into a Tags component
+  - Tags input component in VanillaJS/React/Angular/Vue
 # headless-react
 - https://github.com/chatscope/use-chat
   - https://chatscope.io/demo/
@@ -302,31 +317,15 @@ modified: 2021-04-11T06:17:51.318Z
   - /9Star/MIT/202009
   - A headless UI component libray for managing complex table state in React.
   - Inspired by react-table but with Typescript support built in and a simpler API.
-- https://github.com/Zertz/react-headless-tabs
-  - Headless, simple, and highly flexible tab-like primitives built with react hooks
+
+- https://github.com/Zertz/react-headless-tabs /202303/ts
+  - https://react-headless-tabs.pierluc.io/#examples
+  - Headless and highly flexible tab-like primitives built with react hooks
+  - 支持dropdown显示更多
+
 - https://github.com/headless-components/headless-components-react
   - /2Star/NALic/202004
   - Headless component in React with Custom hooks
-# framework-agnostic
-- https://github.com/appbaseio/searchbox /js
-  - a lightweight and performance focused search UI component library to query and display results from your ElasticSearch index using declarative props. 
-  - It's available for React, Vue, React Native and Flutter.
-  - https://github.com/appbaseio/reactivesearch
-    - https://opensource.appbase.io/reactivesearch
-    - Search UI components for React and Vue: powered by appbase.io / Elasticsearch
-  - https://github.com/appbaseio/reactivecore
-    - Core architecture of reactive UI libraries
-    - 依赖redux、redux-thunk、xdate
-
-- https://github.com/yairEO/tagify /js
-  - https://yaireo.github.io/tagify/
-  - Transforms an input field or a textarea into a Tags component
-  - Tags input component in VanillaJS/React/Angular/Vue
-# headless-based-on-browser-puppeteer
-- https://github.com/PDFTron/web-to-pdf
-  - Convert any web technology to PDF (HTML to PDF, html2pdf)
-  - 依赖chokidar、live-server、passport、puppeteer、react
-  - Please note that React components are not required for web-to-pdf to work. It supports all frameworks, and even vanilla JS/HTML/CSS.
 # more-headless-ui
 - https://github.com/coveo/ui-kit
   - Coveo UI kit repository, home of @coveo/headless, @coveo/atomic, and more.

@@ -77,7 +77,7 @@ modified: 2020-10-05T06:22:02.107Z
   - It's a specialized tool designed to create informative vector animations and synchronize them with voice-overs. 
   - It's not meant to be a replacement for traditional video editing software.
 
-- https://github.com/theatre-js/theatre
+- https://github.com/theatre-js/theatre /10kStar/apache2/202311/ts
   - https://www.theatrejs.com/
   - Motion design editor for the web
   - Theatre.js is an animation library for high-fidelity motion graphics.

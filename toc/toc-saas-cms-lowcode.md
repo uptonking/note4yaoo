@@ -139,7 +139,7 @@ modified: 2023-01-20T21:59:47.792Z
   - Turn your audience into a business. 
   - Publishing, memberships, subscriptions and newsletters.
 
-- alinea /654Star/MIT/202311/ts
+- alinea /654Star/MIT/202311/ts/query、tiptap
   - https://github.com/alineacms/alinea
   - https://alinea.sh/
   - https://demo.alinea.sh/
@@ -188,6 +188,20 @@ modified: 2023-01-20T21:59:47.792Z
   - Auto-generated CRUD UIs from your API data structure
   - state management & mutations with React Query
   - Out-of-the-box support for live/real-time applications
+
+- https://github.com/atomicdata-dev/atomic-server /587Star/MIT/202311/rust/ts
+  - https://atomicserver.eu/
+  - a lightweight, yet powerful CMS / Graph Database
+  - powered by actix-web and sled database
+  - Documents, collaborative, rich text, similar to Google Docs / Notion.
+  - Tables, with strict schema validation, keyboard support, copy / paste support. Similar to Airtable.
+  - Event-sourced versioning / history powered by Atomic Commits
+  - Synchronization using websockets
+  - Full-text search with fuzzy search and various operators, often <3ms responses. Powered by tantivy.
+  - [Atomic Data is a modular specification for sharing, modifying and modeling graph data](https://docs.atomicdata.dev/)
+    - It combines the ease of use of JSON, the connectivity of RDF (linked data) and the reliability of type-safety.
+    - Atomic Data is Linked Data, as it is a strict subset of RDF.
+    - The default serialization format for Atomic Data is JSON-AD
 # in-memory/json-cms/dashboard
 - TiddlyWiki5 /7.5kStar/BSD/202311/js
   - https://github.com/Jermolene/TiddlyWiki5

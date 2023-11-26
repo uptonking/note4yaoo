@@ -14,7 +14,15 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🔁 at Facebook, our experience was that client–server roundtrips are expensive and server–DB roundtrips are mostly fine; 
+- https://twitter.com/sophiebits/status/1728536177110905215
+  - this is reflected in the design of both Relay and XHP/RSC
+  - (whether this is applicable outside FB depends on how your DB is set up)
+- Does relay hoist fragments to the top or no?
+  - relay does (to avoid client–server waterfalls); xhp doesn’t
+
+- https://twitter.com/OlegLustenko/status/1728498563292811385
+- 90% of time we do need top-level fetching. Waterfall is a real perf bottleneck for the first meaningful screen.
 
 - ## Data Pipelines Overview
 - https://twitter.com/huangyun_122/status/1725519643580760501

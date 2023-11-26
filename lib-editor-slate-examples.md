@@ -391,7 +391,7 @@ modified: 2023-02-05T19:03:12.723Z
   - https://github.com/rojer95/dslate
   - https://rojer95.github.io/dslate/#/
   - https://rojer95.github.io/dslate/#/docs/getting-started
-  - DSlate 是一个基于 Slate 构建的 Ant Design 风格的富文本编辑器
+  - 基于 Slate 构建的 Ant Design | Semi Design 风格的富文本编辑器。你可以通过插件的方式轻松自定义节点、工具等元素。
   - core依赖slate-react
 
 - https://github.com/qirong77/SlatePad

@@ -88,7 +88,7 @@ modified: 2022-06-03T22:07:23.308Z
   - Currently, the document tree of BlockyEditor supports collaborative editing using operation transforming(known as OT).
   - You can also use a CRDT library such as YJS and bind the data model to it.
 
-- NotionEditor /30Star/GPL.v2/202103/ts/inactive
+- NotionEditor /30Star/GPLv2/202103/ts/inactive
   - https://github.com/Xheldon/NotionEditor
   - A Notion's editor implement based on ProseMirror, just for feasibility studies.
   - 不允许跨 block 选择部分文本内容

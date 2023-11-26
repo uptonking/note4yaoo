@@ -36,6 +36,7 @@ modified: 2022-12-19T02:01:20.161Z
     - 针对视频的笔记，如历史片/纪录片
   - pdf chat
   - split-table
+  - ActionText
 
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好
@@ -201,6 +202,8 @@ modified: 2022-12-19T02:01:20.161Z
 # ux
 - 当视口宽度变窄时，tab页或宽卡片可以像tweetdeck一样折叠以缩小空间，折叠的过程可显示动画
 # business-features
+- ActionText
+
 - 规避版权问题的内容讨论平台
   - 科技分享，类似hacker-news
   - 产品讨论，类似product-hunt

@@ -150,3 +150,10 @@ modified: 2021-05-25T09:41:29.066Z
 - https://github.com/yazz/yazz /js
   - Yazz is a both an IDE for building small web applications and a decentralised app store. 
   - Yazz allows you to build Web apps visually. Yazz runs on the web, PC/Mac/Linux (desktop application or NodeJS) or as a container (Docker, Kubernetes).
+
+- https://github.com/stacksjs/stacks /202311/ts
+  - https://stacksjs.dev/
+  - Type-safe full-stack framework for Artisans
+  - The goal of the framework is to help you create & maintain frontends, backends, and clouds
+  - Stacks UI: Powered by Bun, Nitro, Tauri, UnoCSS, Vite & Vue
+  - Stacks Functions: Develop serverless (or server) functions with countless helpers 

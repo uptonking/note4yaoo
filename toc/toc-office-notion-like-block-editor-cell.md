@@ -83,7 +83,7 @@ modified: 2022-08-14T16:26:48.558Z
   - https://github.com/omegion/horul-editor
     - horul-editor is editorjs wrapper component with vue
 
-- gutenberg /8.1kStar/GPL.v2/202208/js
+- gutenberg /9.2kStar/GPLv2/202311/js
   - https://github.com/WordPress/gutenberg
   - https://wordpress.org/gutenberg/
   - 支持跨block选择部分文字

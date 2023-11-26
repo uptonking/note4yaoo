@@ -109,6 +109,11 @@ modified: 2023-04-04T22:39:45.442Z
   - 拖拽批量压缩图片, 支持格式 jpg/png/gif
   - 拖拽批量上传图片到对象存储, 并默认开启图片压缩
   - 支持 阿里云 OSS、 腾讯云 COS、 七牛云 Qiniu、 Github
+
+- https://github.com/elninotech/uppload /MIT/202308/ts
+  - https://uppload.js.org/
+  - JavaScript image uploader and editor, no backend required
+  - It's highly customizable with 30+ plugins
 # images-utils
 - https://github.com/TonySpegel/image-comparison /lit
   - Compare two images using a slider, an overlay, or a side by side split view.
@@ -127,6 +132,10 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/vercel/satori /ts
   - Enlightened library to convert HTML and CSS to SVG
   - What if there’s a `<Satori>` component that adds fluid layout & style transitions to your elements?
+  - https://github.com/natemoo-re/satori-html
+    - satori is built on top of React's JSX and expects "React-elements-like objects". 
+    - This library (satori-html) bridges that gap, generating the necessary VDOM object from a string of HTML.
+    - Please use inline styles rather than class-based styling
 
 - https://github.com/imgly/background-removal-js /GPLv3/ts
   - Remove backgrounds from images directly in the browser environment with ease and no additional costs or privacy concerns

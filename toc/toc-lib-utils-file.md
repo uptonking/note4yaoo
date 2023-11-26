@@ -55,6 +55,11 @@ modified: 2023-04-05T19:35:14.347Z
     - Traditional upload examples (upload to your own server): java, nodejs, php, python
     - Fine Uploader S3/Azure examples
 
+- https://github.com/elninotech/uppload /MIT/202308/ts
+  - https://uppload.js.org/
+  - JavaScript image uploader and editor, no backend required
+  - It's highly customizable with 30+ plugins
+
 ## file-upload-utils
 
 - https://github.com/shadowings-zy/easy-file-uploader

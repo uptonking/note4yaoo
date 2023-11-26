@@ -206,7 +206,7 @@ modified: 2022-11-25T15:41:47.534Z
     - Takes a document that has conflicting versions and deletes all the other versions, making the version passed in the default winner.
 - https://github.com/turtle-DB/tortoiseDB /mongodb
   - Enables offline-first applications built with turtleDB to be fully collaborative with automated document versioning, history merging, and synchronization management.
-    - Built using Express and Mongo DB Native NodeJS Driver.
+  - Built using Express and Mongo DB Native NodeJS Driver.
 
 - Nano-SQL /773Star/MIT/201911/ts/inactive/未实现同步
   - https://github.com/only-cliches/Nano-SQL

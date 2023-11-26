@@ -136,7 +136,7 @@ modified: 2022-11-09T11:53:13.093Z
   - ByteMD could be used in the Server-side rendering(SSR) environment without extra config.
   - ByteMD uses remark and rehype ecosystem to process Markdown
 
-- https://github.com/Tencent/cherry-markdown /202211/js
+- https://github.com/Tencent/cherry-markdown /3kStar/apache2/202311/js
   - https://tencent.github.io/cherry-markdown/examples/index.html
   - a Javascript Markdown editor
   - 代码结构很清晰

@@ -224,8 +224,6 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/bpmn-io/scroll-tabs
   - ScrollTabs adds scroll buttons on the left and right side of the tabs container if not all tabs are visible. 
   - It also adds a mouse wheel listener on the container.
-- https://github.com/elninotech/uppload
-  - image uploader with 30+ plugins
 - https://github.com/garronej/evt
   - EventEmitter's typesafe replacement
   - Why would someone pick EVT over RxJS:

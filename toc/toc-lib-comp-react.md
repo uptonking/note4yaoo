@@ -293,7 +293,7 @@ modified: 2020-11-13T07:31:20.012Z
 
 ## tab 标签页
 
-- https://github.com/Zertz/react-headless-tabs  /ts
+- https://github.com/Zertz/react-headless-tabs /202303/ts
   - https://react-headless-tabs.pierluc.io/#examples
   - Headless and highly flexible tab-like primitives built with react hooks
   - 支持dropdown显示更多

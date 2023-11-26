@@ -131,13 +131,15 @@ modified: 2022-08-18T16:57:46.405Z
     - https://github.com/QinHongZhe/hongzhe-tui.editor
 
 - bangle.dev-editor /527Star/MIT/202208/ts
+  - https://github.com/bangle-io/bangle-editor
   - https://github.com/bangle-io/bangle.dev
   - https://bangle.dev/docs/examples/markdown-editor
   - https://app.bangle.io/
   - 支持拖拽标题section，但不支持拖拽section内的段落
   - 使用了浏览器文件系统api来支持打开本地文件
   - Collection of higher level rich text editing tools. It powers the local only note taking app https://bangle.io
-  - bangle.io /711Star/AGPLv3/202208/ts
+  - Bangle is written in a framework agnostic way, we have support for React and I have plans to add Vue support
+  - bangle.io /909Star/AGPLv3/202310/ts/react
     - https://github.com/bangle-io/bangle-io
     - https://bangle.io/
     - 提供了 indexed-db-storage-provider, fs
@@ -325,7 +327,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 不支持拖拽block修改顺序，但有上下箭头按钮
   - intuitive block based wysiwyg editor built with React and ProseMirror
 
-- Xheldon/NotionEditor /30Star/GPL.v2/202103/ts/inactive
+- Xheldon/NotionEditor /30Star/GPLv2/202103/ts/inactive
   - https://github.com/Xheldon/NotionEditor
   - A Notion's editor implement based on ProseMirror, just for feasibility studies.
   - 不允许跨 block 选择部分文本内容
@@ -545,7 +547,7 @@ modified: 2022-08-18T16:57:46.405Z
 - https://github.com/SeogJongYu/editor-demo
   - Django Backend / React Frontend ，使用@toast-ui/editor.v3
 
-- pubpub-editor /100Star/GPL.v2/202003/js/inactive
+- pubpub-editor /100Star/GPLv2/202003/js/inactive
   - https://github.com/pubpub/pubpub-editor
   - A stand alone, extensible WSIWYG editor based on ProseMirror.
   - https://github.com/pubpub/pubpub/tree/master/client/components/Editor

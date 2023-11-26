@@ -84,6 +84,11 @@ modified: 2022-11-11T10:46:41.519Z
   - Some support for transparent text
   - Supporting links, outlines (bookmarks), printing, SVG background, Type 3 fonts and more...
   - 利用的Chrome Headless，让Chrome渲染PDF，再导出成HTML，甚至图片都转成了 base64 字符，所以一个网页就可以包含完整的文本、字体和图片等内容
+
+- https://github.com/PDFTron/web-to-pdf
+  - Convert any web technology to PDF (HTML to PDF, html2pdf)
+  - 依赖chokidar、live-server、passport、puppeteer、react
+  - Please note that React components are not required for web-to-pdf to work. It supports all frameworks, and even vanilla JS/HTML/CSS.
 # utils
 - https://github.com/RussCoder/djvujs /js
   - https://djvu.js.org/

@@ -238,9 +238,13 @@ modified: 2020-10-22T10:22:55.878Z
   - 基于svg实现，没有canvas
   - 提供了layout、circular、theming等多种示例
   - A library to display an interactive editor for any graph-like data.
-- https://github.com/reaviz/reaflow
+- https://github.com/reaviz/reaflow /202311/ts
   - Node-based Visualizations for React
   - REAFLOW is a modular diagram engine for build static or interactive editors. 
+  - 依赖d3-shape、elkjs、kld-affine、framer-motion、rdk、undoo
+  - [Huge bundle size](https://github.com/reaviz/reaflow/issues/224)
+    - ELK.js is the core layout library - i will investigate if there is a better way to bundle it
+    - Ya, ELK is not fun to work with either but it has the best layout engine that I've found.
 
 - https://github.com/dagrejs/dagre /201801/js/deprecated
   - Directed graph layout for JavaScript

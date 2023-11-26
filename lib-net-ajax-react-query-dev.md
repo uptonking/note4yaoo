@@ -136,6 +136,29 @@ modified: 2023-03-05T08:55:03.696Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🔁 When the React teams says "waterfalls don't matter" and now people parrot it back, 
+- https://twitter.com/ryanflorence/status/1728516213448605901
+  - remember that Facebook's XHP stuff that RSC is based on hoists component GraphQL fragments to the top of the render tree
+  - If waterfalls don't matter 90% of the time, they wouldn't do that
+  - The reason this architecture works at Facebook is because they have a sophisticated compiler that hoists data for them.
+  - You can do it manually by ensuring the majority of your data loading happens at the route level.
+- I'm grateful the React team and Vercel have been pushing RSC forward. It's great tech and we're adopting it in Remix. But we saw first-hand how ignoring the waterfall trap brought some RSC-based Shopify stores to their knees.
+
+- 👉🏻 at Facebook, our experience was that client–server roundtrips are expensive and server–DB roundtrips are mostly fine; 
+  - this is reflected in the design of both Relay and XHP/RSC
+  - (whether this is applicable outside FB depends on how your DB is set up)
+- Does relay hoist fragments to the top or no?
+  - relay does (to avoid client–server waterfalls); xhp doesn’t
+
+- You may have waterfalls in the backend too, it’s not a React problem. Having good observability to proactively fix them is key.
+
+- https://twitter.com/OlegLustenko/status/1728498563292811385
+- 90% of time we do need top-level fetching. Waterfall is a real perf bottleneck for the first meaningful screen.
+
 - ## [Data fetching on the web still sucks | Hacker News_202101](https://news.ycombinator.com/item?id=25930177)
 - Completely agree! I believe that op-log sync with CRDT-based atomic operations are a better solution.
 
@@ -202,15 +225,12 @@ modified: 2023-03-05T08:55:03.696Z
 - custom hook and use it anywhere within context or component
 - Custom hooks and expose the query key constants so that they can be used to invalidate queries.
 
-
-
 - ## 🆚️ useSWR or React Query?_202310
 - https://twitter.com/iamjonjackson/status/1718016755136671999
 - And the most important reason: RQ has @TkDodo - one of the most skills devs I know and a very helpful attitude and open to support its community.
 - 
 - 
 - 
-
 
 - ## Common scenario: You want to pre-fill some local state (e.g. the selection of a Dropdown component) with server state, e.g. a PersonSelect that fetches person data and selects the first option.
 - https://twitter.com/TkDodo/status/1672168421339938818

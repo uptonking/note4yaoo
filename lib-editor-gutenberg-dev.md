@@ -12,7 +12,7 @@ modified: 2023-02-05T19:12:13.098Z
 - usecase
   - 开源建站编辑器工具可参考gutenberg、wix
 # docs
-- gutenberg /8.1kStar/GPL.v2/202208/js
+- gutenberg /8.1kStar/GPLv2/202208/js
   - https://github.com/WordPress/gutenberg
   - https://wordpress.org/gutenberg/
   - The Block Editor project for WordPress and beyond

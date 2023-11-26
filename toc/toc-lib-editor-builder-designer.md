@@ -94,7 +94,7 @@ modified: 2020-11-17T13:38:19.107Z
   - https://github.com/blocks/blocks
   - https://blocks-ui.com/
   - A JSX-based page builder for creating websites without writing code
-- openchakra /MIT/1.6kStar/202008
+- openchakra /MIT/1.6kStar/202209/inactive
   - https://github.com/premieroctet/openchakra
   - https://openchakra.app/
   - 画布编辑区全部基于dom实现

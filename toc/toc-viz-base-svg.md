@@ -25,6 +25,10 @@ modified: 2020-10-05T06:18:21.639Z
 # svg-utils
 - https://github.com/vercel/satori /ts
   - Enlightened library to convert HTML and CSS to SVG
+  - https://github.com/natemoo-re/satori-html
+    - satori is built on top of React's JSX and expects "React-elements-like objects". 
+    - This library (satori-html) bridges that gap, generating the necessary VDOM object from a string of HTML.
+    - Please use inline styles rather than class-based styling
 
 - https://github.com/yisibl/resvg-js
   - high-performance SVG renderer and toolkit, powered by Rust based resvg and napi-rs.

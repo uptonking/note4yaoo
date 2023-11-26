@@ -9,7 +9,12 @@ modified: 2021-01-04T17:26:25.032Z
 
 # guide
 
-# md-examples
+# examples
+- https://github.com/marktext/marktext /42.5kStar/MIT/202308/js/vue
+  - https://www.marktext.cc/
+  - simple and elegant markdown editor, available for Linux, macOS and Windows.
+  - MarkText uses virtual DOM to render pages
+
 - https://github.com/Harry-Hopkinson/markdown-editor
   - A markdown editor written in Typescript.
   - Vite+Electron

@@ -63,6 +63,10 @@ modified: 2022-05-15T18:37:27.994Z
 - https://github.com/facebook/lexical-ios
   - An extensible text editor/renderer written in Swift, built on top of TextKit, and sharing a philosophy and API with Lexical JavaScript.
 # utils
+- https://github.com/RegiByte/lexi-kit /19Star/MIT/202305/ts
+  - a set of tools that can be used to build rich text editors with Lexical without having to reinvent the wheel every time.
+  - We try to follow the coding standards found in the Lexical framework, so if you are familiar with it, you should feel right at home.
+
 - https://github.com/fedemartinm/lexical-minifier
   - Exporting the state of the lexical editor can result in a large and unoptimized JSON structure. 
   - This package offers a solution by minifying and unminifying the code produced by the lexical editor, reducing the time it takes to obtain or send the serialized state in a request and freeing up valuable storage space.

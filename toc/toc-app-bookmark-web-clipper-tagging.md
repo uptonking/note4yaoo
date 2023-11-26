@@ -31,7 +31,7 @@ modified: 2022-11-11T11:04:29.007Z
   - The all-in-one tool to supercharge your productivity
   - With Omni you can use your browser like a pro. Manage tabs, bookmarks, your browser history, perform all sorts of actions and more with a simple command interface.
 
-- https://github.com/pawelmalak/flame
+- https://github.com/pawelmalak/flame /MIT/202307/ts
   - Flame is self-hosted startpage for your server. inspired (heavily) by SUI.
   - Easily manage your apps and bookmarks with built-in editors.
 

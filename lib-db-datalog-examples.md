@@ -88,6 +88,20 @@ modified: 2023-09-16T17:28:29.873Z
   - https://harvardpl.github.io/AbcDatalog/
   - open-source Java implementation of Datalog
   - AbcDatalog has been developed as part of the Privacy Tools for Sharing Research Data project at Harvard University
+
+- https://github.com/atomicdata-dev/atomic-server /587Star/MIT/202311/rust/ts
+  - https://atomicserver.eu/
+  - a lightweight, yet powerful CMS / Graph Database
+  - powered by actix-web and sled database
+  - Documents, collaborative, rich text, similar to Google Docs / Notion.
+  - Tables, with strict schema validation, keyboard support, copy/paste support. Similar to Airtable.
+  - Event-sourced versioning/history powered by Atomic Commits
+  - Synchronization using websockets
+  - Full-text search with fuzzy search and various operators, often <3ms responses. Powered by tantivy.
+  - [Atomic Data is a modular specification for sharing, modifying and modeling graph data](https://docs.atomicdata.dev/)
+    - It combines the ease of use of JSON, the connectivity of RDF (linked data) and the reliability of type-safety.
+    - Atomic Data is Linked Data, as it is a strict subset of RDF.
+    - The default serialization format for Atomic Data is JSON-AD
 # query-datalog
 - datomic-alternative
   - clojure: datascript, xtdb, datahike, datalevin

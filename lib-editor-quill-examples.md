@@ -18,6 +18,9 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/gtgalone/react-quilljs /202209/ts
   - React Hook Wrapper for Quill, powerful rich text editor.
 
+- https://stackblitz.com/edit/quill-editor-demo
+  - [Render React Component inside Quill without losing context_202004](https://culture.kissflow.com/render-react-component-inside-quill-without-losing-context-151eac4eda08)
+
 - https://github.com/soccerloway/quill-better-table /js
   - https://codepen.io/soccerloway/pen/WWJowj
   - Module for better table in Quill, more useful features are supported.

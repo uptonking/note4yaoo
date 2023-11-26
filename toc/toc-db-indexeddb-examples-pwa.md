@@ -85,7 +85,7 @@ modified: 2022-11-14T15:12:02.783Z
   - https://whatsth.is/
   - React-based progressive web app proof-of-concept designed to provide a toolbox of assorted helpful development tools.
 
-- https://github.com/bangle-io/bangle-io
+- https://github.com/bangle-io/bangle-io /909Star/AGPLv3/202310/ts/react
   - A web only WYSIWYG note taking app that saves notes locally in markdown format.
 
 - https://github.com/ygkn/emoji-picker

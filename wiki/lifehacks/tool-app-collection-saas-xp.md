@@ -83,6 +83,9 @@ modified: 2022-11-07T10:25:12.034Z
 
 - 检测github或其他url是否在hn/reddit讨论过
   - [Discussions around the Web - discu.eu](https://discu.eu/)
+
+- hn-like
+  - https://lobste.rs/
 # twitter
 - search
   - 搜索关键词时，可加上'min_replies:1'的条件，筛选出被讨论过的质量更高的内容

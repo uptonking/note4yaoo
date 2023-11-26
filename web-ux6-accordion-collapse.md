@@ -22,7 +22,7 @@ modified: 2021-07-29T20:37:05.228Z
 
 > 要参考主流组件库实现
 
-- https://github.com/roginfarrer/collapsed /ts
+- https://github.com/roginfarrer/collapsed /485Star/MIT/202311/ts
   - https://react-collapsed.netlify.app/
   - Headless UI for for creating flexible and accessible expand/collapse components
   - Includes adapter for React.

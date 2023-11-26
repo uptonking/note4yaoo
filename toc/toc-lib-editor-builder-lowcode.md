@@ -148,6 +148,14 @@ modified: 2020-12-28T12:24:09.275Z
   - 全家桶
     - https://jdfed.github.io/drip-form/
 
+- tmagic-editor /3.9kStar/apache2/202311/ts
+  - https://github.com/Tencent/tmagic-editor
+  - https://tencent.github.io/tmagic-editor/docs/index.html
+  - https://tencent.github.io/tmagic-editor/playground/index.html
+  - 页面可视化平台
+  - 编辑器是使用 vue3 开发的，但使用编辑器的业务可以不限框架，可以用 vue2、react 等开发业务组件。
+  - runtime 概念，tmagic-editor编辑器中心的模拟器画布，是一个 iframe（这里的 runtimeUrl 配置的，就是你提供的 iframe 的 url），其中渲染了一个 runtime，用来响应编辑器中的组件增删改等操作。
+
 - apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队开源
   - https://github.com/apitable/apitable
   - https://apitable.com/
