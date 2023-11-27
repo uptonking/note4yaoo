@@ -276,9 +276,6 @@ modified: 2023-02-05T19:03:12.723Z
   - Payload dynamically generates a React admin panel to manage your data. 
     - Admin panel is built with Webpack, code-split, highly performant (even with 100+ fields), and written fully in TypeScript.
 
-- https://www.npmjs.com/package/@nocobase/client
-  - 依赖react-quill.v1
-
 - https://github.com/seafileltd/seafile-editor /RepoNA
   - 项目是基于 react-slate 组件库的二次封装, 用于满足公司富文本编辑器的使用需求
 
@@ -296,6 +293,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/react-page/react-page /8.3kStar/MIT/202304/ts/redux
   - https://react-page.github.io/
+  - 依赖react-redux、redux-undo、mui.v5、react-dnd、uniforms
   - 使用redux作为状态管理
   - 提供了 @react-page/plugins-slate
   - 提供了集成react-admin的例子
@@ -498,7 +496,7 @@ modified: 2023-02-05T19:03:12.723Z
   - A rich text editor based on SlateJS framework and slate-plugin-next
   - Supports slate 0.57 only
 
-- https://github.com/quillforms/quillforms
+- https://github.com/quillforms/quillforms /php/ts/slate-react
   - https://www.quillforms.com/
   - Open Source TypeForm Alternative Based on React JS and Typescript | Best Typeform Clone
 
@@ -800,9 +798,6 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/makeswift/makeswift
   - Setup a new Next.js app with Makeswift in less than 5 minutes.
-
-- https://github.com/quillforms/quillforms /PHP
-  - Open Source TypeForm Alternative Based on React JS and Typescript 
 
 - https://github.com/dittofeed/dittofeed
   - https://dittofeed.com/

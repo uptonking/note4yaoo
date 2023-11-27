@@ -313,7 +313,13 @@ modified: 2023-08-29T10:13:31.070Z
 # discuss
 - ## 
 
-- ## 
+- ## A rewindable file system demo I cooked up.
+- https://twitter.com/JungleSilicon/status/1729012610048360626
+- Have you ever managed to get a conflict free data type in front of git, so you can sync to GitHub? 
+  - You can do it, but it usually involves diffs - there's also a problem that git uses snapshots where as crdt's/ot are more granular.
+  - So let's say we are both collaborating using crdts, if someone then goes and makes a commit outside of that system, we need to then have a bridging layer that converts that snapshot into operations.
+- I'm guessing because that git commit would likely be larger than a crdt change, that'd also cause issues?
+  - The size isn't really a big issue, it's mostly that there's less information with git than crdts. Git just have *snapshots*, you don't *really* know how A transformed into B.
 
 - ## 🌰 [Ask HN: Apps that are built with Git as the back end? | Hacker News_202210](https://news.ycombinator.com/item?id=33261862)
 - The Office 365 backend uses git to store snapshots of documents

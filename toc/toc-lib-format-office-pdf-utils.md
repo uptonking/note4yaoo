@@ -35,6 +35,10 @@ modified: 2022-11-11T10:46:41.519Z
   - Tabula only works on text-based PDFs, not scanned documents
 # examples
 
+- https://github.com/xitanggg/open-resume /AGPLv3/202308/ts
+  - https://open-resume.com/
+  - powerful open-source resume builder and resume parser
+  - 依赖@react-pdf/renderer、pdfjs、@reduxjs/toolkit
 ## viewer
 
 - https://github.com/rwv/lookscanned.io /ts/vue

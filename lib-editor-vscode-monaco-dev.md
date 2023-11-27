@@ -9,4 +9,8 @@ modified: 2023-01-21T18:55:29.555Z
 
 # guide
 
+- tips
+  - monaco-editor未使用contenteditable，而使用隐藏的textarea接收输入
 # dev
+
+# more

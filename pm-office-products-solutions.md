@@ -45,15 +45,15 @@ modified: 2021-07-11T08:31:00.660Z
 
 - 文本编辑器
   - 自研：ms-word, google-docs, wps
-  - 腾讯文档：Etherpad转自研
-  - 飞书文档：Etherpad转自研
+  - 腾讯：Etherpad转自研
+  - 飞书：Etherpad转自研
   - 语雀：slate转自研
-  - 石墨文档：quill
+  - 石墨：quill
   - 美团学城：prosemirror
 
 - 表格编辑器
   - 自研canva：ms-excel, google-spreadsheets, wps
-  - 腾讯：handsontable转自研 
+  - 腾讯：handsontable转自研
   - 飞书：spreadjs
   - 石墨：spreadjs
 

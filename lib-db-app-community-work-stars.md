@@ -28,6 +28,20 @@ modified: 2023-10-27T06:54:20.487Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚️ How does ULID compare to UUIDv7?
+- https://twitter.com/hnasr/status/1729062666621055366
+  - They're both timestamp+random, but is there any functional difference?
+- I don’t think there is much difference, both are time based (which is the key here). ULID came before UUID7 that is why Shopify went with it. 
+  - there are more bits dedicated for time in UUID7 than ULID (60 vs 48) but honestly I can’t think of a use case needing more than 48 bits
+- I thought UUIDv7 provides 48 bits for UNIX timestamp in milliseconds precision.
+  - you are right, I confused it with UUIDv6 when I looked it up. 
+
+- FWIW Shopify doesn't use ulid/uuid as primary keys, so @bdewater is likely referencing either (a) one index, (b) a specific table—not across the platform Far more about capacity planning, tenant isolation primitives, horizontal everything, and bottleneck whack-a-mole
+
 - ## 🕛🔥 [Big problems at the timezone database | Hacker News_202109](https://news.ycombinator.com/item?id=28650019)
 - 
 - 

@@ -32,7 +32,13 @@ modified: 2023-10-27T07:02:42.391Z
 
 - ## 
 
-- ## 
+- ## Extremely annoying fact: Kafka transactional producers and consumers do not offer read-your-writes consistency.
+- https://twitter.com/nikhilbenesch/status/1728874132161564986
+- The “original sin” is the fact that uncommitted transactions produce real records into the partition, so uncommitted transactions can block future transactional consumers indefinitely in order to preserve read committed isolation.
+  - 💯 this. I wish the records would be staged elsewhere and then get stitched into the topic with contiguous offsets at the time of commit. But I guess that would have strained the produce API (i.e., every produced message gets an offset immediately).
+- How do you define “read your write” consistency in this context? A read_committed consumer only returns committed records. So you should always read only the committed writes.
+  - As Jepsen does! If I produce a message to a topic transactionally, get an ack, then in the same process fetch and read to the high water mark using a read_committed consumer, I’m not guaranteed to see the message I *know* exists.
+- You can do it (we have system tests for RYOW in our entirely Kafka-Stream based system), but you need an RPC layer which allows the producer and the consumer to communicate with each other. It only makes sense if you expose an API and use kafka as an implementation detail
 
 - ## Schema drift is inevitable in streaming data. Consciously designed data contracts can encapsulate stream consumers from schema changes.
 - https://twitter.com/dunithd/status/1727941660053504454

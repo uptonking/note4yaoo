@@ -151,8 +151,9 @@ modified: 2021-07-27T15:12:39.959Z
   - Hypertext is both a web app for creating and editing these documents, as well as a proposal for a new `.htmd` document format. 
   - The vision is to create a specification for a standard, safe, guaranteed-editable document using a strict-subset of HTML and CSS which replaces the variety of Markdown, AsciiText, Office file formats, etc. 
 
-- https://github.com/digabi/rich-text-editor
+- https://github.com/digabi/rich-text-editor /67Star/MIT/202311/js
   - http://digabi.github.io/rich-text-editor/
+  - Math editor
   - Rich text editor with math support for Finnish Matriculation Examination Board
   - allow candidates to attach screenshots and write equations as part of their submissions.
   - by MathJax and MathQuill, jquery

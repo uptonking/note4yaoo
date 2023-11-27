@@ -166,9 +166,6 @@ modified: 2022-11-14T15:12:02.783Z
 - https://github.com/ionic-team/capacitor
   - Build cross-platform Native Progressive Web Apps for iOS, Android, and the Web
 
-- https://github.com/Atri-Labs/atrilabs-engine
-  - Full stack web development framework to build Progressive Web Apps (PWA) faster.
-
 - https://github.com/pwa-builder/PWABuilder
   - https://docs.pwabuilder.com/
   - The simplest way to create progressive web apps across platforms and devices.

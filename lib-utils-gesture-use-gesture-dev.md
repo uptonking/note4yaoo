@@ -63,7 +63,7 @@ modified: 2023-07-03T08:55:09.372Z
   - https://www.jotform.com/open-source/dnd-builder/
   - accessible drag and drop page builder with React
   - 依赖use-gesture、fuse.js、react-dnd-cjs、react-quill、recharts
-  - 示例很好
+  - 示例友好
 
 - https://github.com/qiuxiang/canvas-tilemap /ts
   - Super smooth 2d tilemap build with canvas2d.

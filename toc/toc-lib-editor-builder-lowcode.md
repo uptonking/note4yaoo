@@ -409,6 +409,12 @@ modified: 2020-12-28T12:24:09.275Z
   - 组件独立依赖，解耦了组件和基础框架的依赖库，方便后续独立开发组件。
   - https://gitee.com/small_bud_star/open-data-backend
     - 低代码可拖拽前端库OpenDataV的Python后端实现
+
+- https://github.com/Atri-Labs/atrilabs-engine /GPLv3/ts
+  - https://atrilabs.com/
+  - Open-source no-code & code web app builder
+  - a suite of productivity tools such as visual editor, asset management tools, etc
+  - developers do not need to write and document REST APIs. Instead, they rely upon the object model which acts as a single source of truth.
 # workflow-automation-tasks-pipeline
 - tips
   - 考虑跨平台/系统的task兼容性、分享，主流的airflow/ifttt

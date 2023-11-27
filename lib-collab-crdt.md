@@ -9,6 +9,13 @@ modified: 2022-04-05T10:10:08.537Z
 
 # guide
 
+- pros
+  - 支持自动解决冲突
+
+- cons
+  - 不方便外部数据接入，因为字符的id在外部系统修改合并时会丢失
+  - ot算法的转换方法更标准化更普及，crdt的实现依赖元数据而导致原理和实现不一致
+
 - 协作方案参考
   - Liveblocks, synced-store, FluidFramework, gundb, pouchdb
   - automerge (2017), yjs (2015), sharedb (2013)
@@ -126,8 +133,8 @@ update("transactions", {
   - Clocks (particularly HLCs) and CRDTs are an elegant solution to distributed apps
 
 - [crdt-example-app with notes that help describe how things work](https://github.com/clintharris/crdt-example-app_annotated/blob/master/NOTES.md)
-
 # [liveblocks: Multiplayer isn't enough](https://www.youtube.com/watch?v=Z0nzsxhoToo&t=849s)
+
 # [聊聊CRDT](https://segmentfault.com/a/1190000019109149)
 - CRDT是Conflict-free Replicated Data Type的简称，也称为a passive synchronisation，即免冲突的可复制的数据类型，这种数据类型可以用于数据跨网络复制并且可以自动解决冲突达到一致，非常适合使用AP架构的系统在各个partition之间复制数据时使用；
   - 具体实现上可以分为State-based的CvRDT、Operation-based的CmRDT、Delta-based、Pure operation-based等

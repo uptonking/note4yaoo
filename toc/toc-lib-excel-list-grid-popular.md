@@ -9,7 +9,8 @@ modified: 2022-08-21T10:02:27.788Z
 
 # focus
 
-- requirements
+- features
+  - multi views
   - group/aggregate/**pivot**: tanstack-table(大量缓存)
   - **editable operations support**: logux/ospreadsheet/slate/typewriter
   - _undo/redo+batch-undo_: 存反向op和存值2种方案，存值本身也是反向op
@@ -17,8 +18,8 @@ modified: 2022-08-21T10:02:27.788Z
   - _transaction_
   - end-user database: 用户自定义数据支持 graph/relational queries
   - formula: excel, google-sheet, powerbi
-  - headless utils: state/actions/props/api : autocomplete/tanstack，state和a11y不同粒度，可实现为core+plugin
-  - view-layer: vdom+reactive(mobx/signal) : autocomplete/typewriter/Simple-DataTables/slate-dom/sleek
+  - headless utils: state/actions/props/api: autocomplete/tanstack，state和a11y不同粒度，可实现为core+plugin
+  - view-layer: vdom+reactive(mobx/signal): autocomplete/typewriter/Simple-DataTables/slate-dom/sleek
   - closer to excel
   - virtualized
   - keyboard/a11y

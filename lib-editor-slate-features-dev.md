@@ -41,8 +41,6 @@ modified: 2023-03-16T16:29:47.610Z
   - model层使用ast?
 
 - alternatives & ideas
-  - 国内: wangEditor, vditor, textbus, am-editor/editablejs, ueditor
-  - 国外: prosemirror, slate, quill, lexical, tinymce, etherpad, ckeditor
   - mobile
   - [GitHub Blocks](https://blocks.githubnext.com/)
 # duseditor

@@ -88,6 +88,7 @@ modified: 2023-02-05T19:03:27.730Z
   - https://github.com/EvitanRelta/markgh
   - https://evitanrelta.github.io/markgh/
   - 依赖 mui5、redux-toolkit、tiptap、dexie、highlight.js、markdown-it、quill
+  - Online WYSIWYG GFM editor. Same look as Github's markdown. Supports HTML-in-Markdown
 
 - typist /8Star/MIT/202211/ts
   - https://github.com/Doist/typist
@@ -133,6 +134,9 @@ modified: 2023-02-05T19:03:27.730Z
   - wix公司开源了自己的内容编辑器，公开了自己的json schema规范，提供了wix-rich-content-editor、wix-rich-content-viewer
   - 还支持在基于tiptap v2的编辑器中编辑内容，提供了draftToTiptap()转换方法，将ricos-draft的json格式转换成tiptap支持的json格式
   - 内部插件大多严重依赖自研ui库和基础库，如wix-rich-content-ui-components、ricos-content
+
+- https://github.com/thematters/matters-editor /202309/ts
+  - Rich editor for matters.town, built on top of Tiptap/ProseMirror
 
 - nextcloud-text /366Star/AGPLv3/202208/js/tiptap/php
   - https://github.com/nextcloud/text

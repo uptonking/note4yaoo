@@ -9,17 +9,12 @@ modified: 2023-02-09T18:23:43.486Z
 
 # guide
 
-# discuss-delta
+# not-yet
 - ## 
 
-- ## 
-
-- ## 
-# discuss-stars
-- ## 
-
-- ## was not expecting figma to use quill editor... that was the first text editor lib i used too, but wasn't maintained for a while
-- https://twitter.com/soupdumplingcat/status/1717036069194240048
+- ## [Add support for tables](https://github.com/quilljs/quill/issues/117)
+- https://github.com/volser/quill-table-ui
+  - https://codepen.io/volser/pen/QWWpOpr
 
 # discuss
 - ## 
@@ -28,10 +23,7 @@ modified: 2023-02-09T18:23:43.486Z
 
 - ## 
 
-- ## [IME / Composing breaks when receiving ops](https://github.com/quilljs/quill/issues/3143)
-- When using an IME, like Chinese input — or even these days, an English swiping keyboard on mobile — Quill enters "batch" mode to avoid committing the change until compositionend. However, if we call updateContents before the end of composition, then Editor.applyDelta prematurely calls batchEnd, which flushes the intermediary IME input, which is undesirable.
-
-- ## [What Quill version to use?](https://github.com/quilljs/quill/issues/3356)
+- ## 🎯 [What Quill version to use?](https://github.com/quilljs/quill/issues/3356)
   - 1.3.7 which is installed from npm by npm install quill and was published 2 years ago.
   - 2.0.0-dev3 - this version is required for modules quill-better-table and quill-table-ui . It was published 3 years ago (???).
   - 2.0.0-dev4 - this version I found in npm versions history. It was published a year ago

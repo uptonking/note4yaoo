@@ -35,7 +35,7 @@ modified: 2023-09-01T05:13:55.075Z
   - This algorithm is largely based on RGA, with support for rich-text formatting added, along with a number of optimizations.
   - integrate with Quill.
   - Your approach seems to resemble RGASplit which I believe is bases for
-  - Hybric Logical Clocks was very much based on [this go implementation] and [james long's demo]
+  - Hybrid Logical Clocks was very much based on [this go implementation] and [james long's demo]
 # issues
 - [Peritext algorithm may attach deleted mark to new inserted text](https://github.com/inkandswitch/peritext/issues/32)
 

@@ -9,7 +9,8 @@ modified: 2022-11-08T19:04:00.289Z
 
 # guide
 
-- requirements
+- features
+  - ActionText fullstack
   - collaborative
   - **block-style data model** for editor with one large contenteditable
   - virtualized
@@ -19,7 +20,7 @@ modified: 2022-11-08T19:04:00.289Z
   - search
 
 - 开源编辑器
-  - 国内: wangEditor, vditor, textbus, am-editor/editablejs, ueditor
+  - 国内: wangEditor, editablejs/am-editor, textbus, vditor, ueditor
   - 国外: prosemirror, slate, quill/typewriter, lexical, tinymce, etherpad, ckeditor
 
 - ref
@@ -134,10 +135,11 @@ modified: 2022-11-08T19:04:00.289Z
   - https://www.tiny.cloud/
   - web-based WYSIWYG editor. Available for React, Vue and Angular
 
-- quill /34kStar/BSD/202211/ts
+- quill /37.5kStar/BSD/202311/ts
   - https://github.com/quilljs/quill
   - https://quilljs.com/
-  - Quill is a modern rich text editor built for compatibility and extensibility.
+  - https://quilljs.com/playground/
+  - a modern WYSIWYG editor built for compatibility and extensibility
 
 - typewriter /308Star/MIT/202301/ts
   - https://github.com/typewriter-editor/typewriter
@@ -145,7 +147,7 @@ modified: 2022-11-08T19:04:00.289Z
   - 依赖 svelte、popperjs2、typewriter/delta
   - Built on the same data model as Quill.js, the Delta format, and using a tiny virtual DOM, Superfine, Typewriter aims to make custom rich text editors faster, easier, and more powerful
 
-- https://github.com/caiwuu/Typex /js/GPL/vanillajs
+- https://github.com/caiwuu/Typex /GPL/202311/js/vanillajs
   - https://caiwuu.github.io/Typex/
   - 不依赖contentEditable
   - 一款全新架构的编辑器内核，该内核不依赖contenteditable; 自主实现了光标、模拟输入、模拟选区
@@ -172,11 +174,6 @@ modified: 2022-11-08T19:04:00.289Z
   - It is used by outlook.com, and some other projects.
   - https://github.com/JiuqingSong/contentModel
 
-- https://github.com/froala/wysiwyg-editor /paid/NonOpen
-  - powerful JavaScript rich text editor
-  - [Can I use Froala Editor in an Open Source project? – Froala](https://wysiwyg-editor.froala.help/hc/en-us/articles/115000385169-Can-I-use-Froala-Editor-in-an-Open-Source-project-)
-    - No, none of our licenses allow you to use the Froala WYSIWYG HTML Editor in an Open Source project.
-
 - gutenberg /9.2kStar/GPLv2/202311/js
   - https://github.com/WordPress/gutenberg
   - https://wordpress.org/gutenberg/
@@ -185,23 +182,29 @@ modified: 2022-11-08T19:04:00.289Z
   - The Block Editor project for WordPress and beyond
   - 依赖react
   - 第三方的插件特别丰富
+
+- https://github.com/froala/wysiwyg-editor /paid/NonOpen
+  - powerful JavaScript rich text editor
+  - [Can I use Froala Editor in an Open Source project? – Froala](https://wysiwyg-editor.froala.help/hc/en-us/articles/115000385169-Can-I-use-Froala-Editor-in-an-Open-Source-project-)
+    - No, none of our licenses allow you to use the Froala WYSIWYG HTML Editor in an Open Source project.
 # flat/linear-editors
+- https://github.com/simplygreatwork/textbase /MIT/202105/js
+  - https://simplygreatwork.github.io/textbase/
+  - Textbase is a clean, simple, composable, event-driven, rich text editor framework for the web which can be extended with custom block and inline elements in a non-opinionated manner.
+  - Aim to follow the concept that flat is better than nested.
+  - Uses an event-based infrastructure based around a shared message bus
+  - This project does not use `document.executeCommand`. All editing is achieved by manipulating the DOM directly.
+  - 👉🏻 This project does not yet use a JSON data model. It's quite simple and uses HTML DOM nodes as the model.
+  - This project does not yet support collaboration
+  - Document integrity is ruled by a content scanner
+
 - https://github.com/NickStefan/tome-editor /201602/js
   - A rich text editor written in javascript. 
-  - Content editable is treated as mere IO to the actual json data model.
+  - Content editable is treated as mere IO to the actual json data model. 类似trix
   - ContentEditable is the render output (for the text and cursor)
   - A hidden Input is the user input
   - Javascript application code makes up the actual text editing engine that acts against an internal JSON structure
   - we use a 'range based' data model, and then serialize it into a tree only for rendering purposes.
-
-- https://github.com/simplygreatwork/textbase /202105/js
-  - https://simplygreatwork.github.io/textbase/
-  - Textbase is a clean, simple, composable, event-driven, rich text editor framework for the web which can be extended with custom block and inline elements in a non-opinionated manner.
-  - Aim to follow the concept that flat is better than nested.
-  - This project does not use `document.executeCommand`. All editing is achieved by manipulating the DOM directly.
-  - This project does not yet use a JSON data model. 
-  - 👉🏻 It's quite simple and uses HTML DOM nodes as the model.
-  - This project does not yet support collaboration
 # editable-apps
 - https://github.com/pagebrain/lexeme /GPLv3/202311/ts
   - https://pagebrain.ai/lexeme/
@@ -230,7 +233,7 @@ modified: 2022-11-08T19:04:00.289Z
   - https://github.com/overleaf/overleaf/wiki
   - A web-based collaborative LaTeX editor
   - 编辑器依赖ace
-  - https://github.com/overleaf/ace
+  - https://github.com/overleaf/ace /Ajax.org Cloud9 Editor
 
 - trix /18kStar/MIT/202311/js
   - https://github.com/basecamp/trix

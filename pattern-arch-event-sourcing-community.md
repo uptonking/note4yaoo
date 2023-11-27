@@ -357,7 +357,8 @@ that commit position, thus providing "read your own writes" semantics.
 # discuss-cqrs
 - ## 
 
-- ## 
+- ## 7 reasons why an Event Broker is essential in Event-Driven Architecture
+- https://twitter.com/dunithd/status/1729046649983668276
 
 - ## How do you apply the 𝗖𝗤𝗥𝗦 𝗽𝗮𝘁𝘁𝗲𝗿𝗻 to your system? Here's my approach to implementing the 𝗹𝗼𝗴𝗶𝗰𝗮𝗹 𝗮𝗿𝗰𝗵𝗶𝘁𝗲𝗰𝘁𝘂𝗿𝗲.
 - https://twitter.com/mjovanovictech/status/1717076357434179852

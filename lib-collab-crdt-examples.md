@@ -224,7 +224,6 @@ modified: 2022-04-05T10:08:25.947Z
   - This CRDT lib combines Peritext and Fugue's power, delivering impressive performance specifically tailored for rich text. 
   - It leverages the `generic-btree` library to boost speed, and the `serde-columnar` simplifies the implementation of efficient columnar encoding.
   - loro-wasm and fugue only support plain text for now
-  - This crate contains a subset of Loro CRDT(which is not yet open-source)
   - [富文本 CRDT crdt-richtext 开源啦 - 知乎](https://zhuanlan.zhihu.com/p/629580388)
   - [The Art of the Fugue: Minimizing Interleaving in Collaborative Text Editing](https://arxiv.org/abs/2305.00583)
   - [Feat richtext ](https://github.com/loro-dev/crdt-richtext/pull/1)
@@ -822,11 +821,6 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/MatherLyn/co-editing-engine
   - A co-editing engine based on crdt written in JavaScript.
 
-- https://github.com/kindone/text-versioncontrol
-  - Text-VersionControl provides version and concurrency control for text editing based on OT(Operational Transformation) and CRDT(Conflict-free Replicated Data Type) ideas
-  - Text-VersionControl utilizes Quill's Delta representation in JSON. 
-  - Text-VersionControl borrows Quill Delta's representation and many of its method names but does not behave the same in a few cases.
-
 ## rust
 
 - https://github.com/bazed-editor/bazed /rust/rope/inactive
@@ -905,8 +899,8 @@ modified: 2022-04-05T10:08:25.947Z
   - [yjs_testcase.ts](https://gist.github.com/josephg/88c006724435a61afaec5ff3f1bacd87)
 
 - https://github.com/kindone/text-versioncontrol
-  - provides version and concurrency control for text editing 
-  - utilizes Quill's Delta representation in JSON.
+  - provides version and concurrency control for text editing based on OT(Operational Transformation) and CRDT(Conflict-free Replicated Data Type) ideas
+  - Text-VersionControl utilizes Quill's Delta representation in JSON. 
   - Text-VersionControl borrows Quill Delta's representation and many of its method names but does not behave the same in a few cases.
 
 - https://github.com/disordinary/crdtstring

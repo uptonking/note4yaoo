@@ -105,17 +105,19 @@ modified: 2020-11-17T13:38:19.107Z
   - Drag and drop website builder javascript library.
   - 依赖jquery和bootstrap4
 
-- grapesjs /BSD/17.2kStar/202301/ts
+- grapesjs /19.1kStar/BSD/202311/ts
+  - https://github.com/GrapesJS/grapesjs
   - https://github.com/artf/grapesjs
   - https://grapesjs.com/
   - a free and open source Web Builder Framework 
-  - 依赖underscore，backbone，codemirror5
+  - 依赖backbone、codemirror5、underscore
 
 - react-page /8.3kStar/MIT/202304/ts/redux
   - https://github.com/react-page/react-page
   - https://react-page.github.io/
   - 画布编辑区全部基于dom实现
   - content editor for the browser - based on React and Redux and written in TypeScript. WYSIWYG on steroids.
+  - 依赖react-redux、redux-undo、mui.v5、react-dnd、uniforms
   - LGPLv3 to MIT_202010
 
 - https://github.com/sitebud
@@ -173,6 +175,14 @@ modified: 2020-11-17T13:38:19.107Z
   - https://components.ai/css-gui
   - Visual development environment for CSS
   - 效果类似page-builder
+
+- silex /1.8kStar/AGPLv3/202311/ts
+  - https://github.com/silexlabs/Silex
+  - http://www.silex.me/
+  - a no-code tool for building websites. 
+  - It can be used online, offline or in a JAMStack project.
+  - Silex lets you create websites without coding, but it also has built-in editors for HTML, CSS, and JavaScript for when you need more control
+  - it has a plugin system and can integrate with headless CMS and static site generators, it is part of the JSAMStack ecosystem since the v3.
 # designer-prototype
 - alva /MIT/3.5kStar/201907/ts
   - https://github.com/meetalva/alva
@@ -188,9 +198,7 @@ modified: 2020-11-17T13:38:19.107Z
     - This means that all your stuff in Penpot is portable and editable in many other vector tools and easy to use on the web.
 - react-proto
 - ReacType
-- silex /201907/GPLv3/680star
-  - https://github.com/silexlabs/Silex
-  - http://www.silex.me/
+
 - 基于vue
   - https://github.com/fireyy/vue-page-designer
   - https://github.com/baianat/vuse
